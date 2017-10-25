@@ -1,0 +1,862 @@
+<Type Name="RouteCollection" FullName="System.Web.Routing.RouteCollection">
+  <TypeSignature Language="C#" Value="public class RouteCollection : System.Collections.ObjectModel.Collection&lt;System.Web.Routing.RouteBase&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RouteCollection extends System.Collections.ObjectModel.Collection`1&lt;class System.Web.Routing.RouteBase&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Routing.RouteCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.ObjectModel.Collection&lt;System.Web.Routing.RouteBase&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="!0">System.Web.Routing.RouteBase</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("System.Web.Routing, Version=3.5.0.0, Culture=Neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ASP.NET ルーティングのルートのコレクションを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Routing.RouteCollection>クラスから派生したオブジェクトのコレクションを管理することができるようにするメソッドを提供する、<xref:System.Web.Routing.RouteBase>クラスです。  
+  
+ 通常は使用、 `static` <xref:System.Web.Routing.RouteTable.Routes%2A>のプロパティ、<xref:System.Web.Routing.RouteTable>取得するクラス、<xref:System.Web.Routing.RouteCollection>オブジェクト。 <xref:System.Web.Routing.RouteTable.Routes%2A>プロパティは、ASP.NET アプリケーションのすべてのルートを格納します。 ASP.NET ルーティングでルートを反復処理、 <xref:System.Web.Routing.RouteTable.Routes%2A> URL に一致するルートを検索するプロパティです。  
+  
+ URL を作成するを呼び出す、<xref:System.Web.Routing.RouteCollection.GetVirtualPath%2A>メソッドと値のコレクションを渡します。 <xref:System.Web.Routing.RouteCollection.GetVirtualPath%2A>メソッドを渡されたを返す値に一致するパラメーターを持つ最初のルートの検索、<xref:System.Web.Routing.VirtualPathData>一致するルートに関する情報を含むオブジェクト。 使用して URL を取得する、<xref:System.Web.Routing.VirtualPathData.VirtualPath%2A>のプロパティ、<xref:System.Web.Routing.VirtualPathData>オブジェクト。  
+  
+ 名前を持つか、名前のないルートを追加することができます。 名を含むには、類似のルート Url の構築時に区別することができます。 名前を指定しない場合は、URL を作成する最初の一致するルートをコレクションに使用 ASP.NET ルーティングされます。  
+  
+ 名前のないルートを追加すると、<xref:System.Web.Routing.RouteCollection>オブジェクトをコレクションに既に存在するルートを追加することはできません。 名前付きのルートを追加する場合は、既にコレクション内のルートを識別する名前を使うことはできません。  
+  
+ 使用する、<xref:System.Web.Routing.RouteCollection.GetReadLock%2A>メソッドおよび<xref:System.Web.Routing.RouteCollection.GetWriteLock%2A>メソッドを他のプロセスから競合することがなく、コレクションと対話するかどうかを確認します。  
+  
+ ルートのコレクションにルートを追加する方法の詳細については、次を参照してください。 [ASP.NET ルーティング](http://msdn.microsoft.com/library/892441af-8f1d-483e-ab5f-b82c23576f5a)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RouteCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.RouteCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Routing.RouteCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RouteCollection (System.Web.Hosting.VirtualPathProvider virtualPathProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.Hosting.VirtualPathProvider virtualPathProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.RouteCollection.#ctor(System.Web.Hosting.VirtualPathProvider)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="virtualPathProvider" Type="System.Web.Hosting.VirtualPathProvider" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPathProvider">仮想ファイル システムからリソースを取得するためのプロバイダーです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Routing.RouteCollection" />指定された仮想パス プロバイダーを使用してクラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (string name, System.Web.Routing.RouteBase item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(string name, class System.Web.Routing.RouteBase item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.RouteCollection.Add(System.String,System.Web.Routing.RouteBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="item" Type="System.Web.Routing.RouteBase" />
+      </Parameters>
+      <Docs>
+        <param name="name">ルートを識別する値。 値を指定できます<see langword="null" />または空の文字列。</param>
+        <param name="item">コレクションの末尾に追加するルート。</param>
+        <summary>末尾にルートを追加、<see cref="T:System.Web.Routing.RouteCollection" />オブジェクトをルートに指定した名前を割り当てます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Routing.RouteCollection.Add%2A>メソッドでは、ルートのコレクションに追加すると、ルートの名前を定義することができます。 ルートの名前を定義すると、ルーティングの URL を構築するために使用するときに使用する特定のルートを指定できます。 複数のルートに渡す値に一致するときに特定のルートを指定することが重要、<xref:System.Web.Routing.RouteCollection.GetVirtualPath%2A>メソッドです。 名前付きのルートを指定しない場合、ASP.NET ルーティングと、最初のルートが値に一致するコレクション内で使用されます。 詳細については、次を参照してください。[する方法: ルートからの Url の構築](http://msdn.microsoft.com/library/1ffd4085-71f6-4822-be8f-f682ca638650)です。  
+  
+ 1 回だけ名前を使用することができます、<xref:System.Web.Routing.RouteCollection>オブジェクト。  
+  
+ 呼び出すことによって、ルートを追加するには、ルートの名前を指定していない場合、<xref:System.Collections.ObjectModel.Collection%601.Add%2A>メソッドです。  
+  
+ 使用して、<xref:System.Web.Routing.RouteCollection.GetReadLock%2A>メソッドおよび<xref:System.Web.Routing.RouteCollection.GetWriteLock%2A>メソッドを他のプロセスから競合することがなく、コレクションと対話するかどうかを確認します。  
+  
+   
+  
+## Examples  
+ 次の例へのルートを追加する方法を示します、<xref:System.Web.Routing.RouteCollection>オブジェクトをルートに名前を割り当てます。  
+  
+ [!code-csharp[System.Web.Routing.RouteCollection.MapPageRoute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.routing.routecollection.mappageroute/cs/global.asax#1)]
+ [!code-vb[System.Web.Routing.RouteCollection.MapPageRoute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.routing.routecollection.mappageroute/vb/global.asax#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="item" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" />コレクションで既に使用されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendTrailingSlash">
+      <MemberSignature Language="C#" Value="public bool AppendTrailingSlash { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AppendTrailingSlash" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Routing.RouteCollection.AppendTrailingSlash" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または仮想パスが正規化されたときに、末尾のスラッシュが追加されたかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は末尾のスラッシュが追加されます。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearItems">
+      <MemberSignature Language="C#" Value="protected override void ClearItems ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ClearItems() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.RouteCollection.ClearItems" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Routing.RouteCollection" /> オブジェクトからすべての要素を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.Routing.RouteCollection.GetReadLock%2A>メソッドおよび<xref:System.Web.Routing.RouteCollection.GetWriteLock%2A>メソッドを他のプロセスから競合することがなく、コレクションと対話するかどうかを確認します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetReadLock">
+      <MemberSignature Language="C#" Value="public IDisposable GetReadLock ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IDisposable GetReadLock() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.RouteCollection.GetReadLock" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IDisposable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションからオブジェクトを取得する場合に、スレッド セーフを管理するためのオブジェクトを提供します。</summary>
+        <returns>スレッド セーフを管理するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Routing.RouteCollection>オブジェクトは、アプリケーションで複数のプロセスに利用できます。 したがって、アプリケーションが実行されているときに、ルートを取得する場合は、使用、<xref:System.Web.Routing.RouteCollection.GetReadLock%2A>スレッド セーフを確保するためにメソッドです。 ルートのコレクションの読み取りロックを取得するには、それを取得しようとしているときに、コレクションは変更されないことを確認します。  
+  
+ <xref:System.Web.Routing.RouteCollection.GetReadLock%2A>メソッドは、スレッド ロックを取得するまで続行を停止します。 書き込みロックする場合、スレッドは、更新が完了し、書き込みロックが解放されるまで待機します。 ルート コレクションの読み取りロックが解放されるときに、<xref:System.IDisposable>このメソッドによって返されるオブジェクトを破棄します。  
+  
+ 使用しない場合<xref:System.Web.Routing.RouteCollection.GetReadLock%2A>、表示中にエラーが発生する可能性があります、<xref:System.Web.Routing.RouteCollection>コレクション。 たとえば、ループ内のオブジェクトの処理を行う、<xref:System.Web.Routing.RouteCollection>を呼び出さずに、それらを読み取るコレクション<xref:System.Web.Routing.RouteCollection.GetReadLock%2A>です。 別の要求から別のスレッドを呼び出すことを行う、中に<xref:System.Web.Routing.RouteCollection.GetWriteLock%2A>し、コレクションへのルートを追加します。 最初のスレッドには、エラーが、失敗します。  
+  
+ 2 つのシナリオでを呼び出す必要はありませんがある<xref:System.Web.Routing.RouteCollection.GetReadLock%2A>:  
+  
+-   パブリック メソッド、<xref:System.Web.Routing.RouteCollection>などクラス<xref:System.Web.Routing.RouteCollection.GetVirtualPath%2A>と<xref:System.Web.Routing.RouteCollection.GetRouteData%2A>呼び出す<xref:System.Web.Routing.RouteCollection.GetReadLock%2A>内部的にします。 したがってがありませんを明示的に呼び出す<xref:System.Web.Routing.RouteCollection.GetReadLock%2A>のパブリック メソッドを呼び出す場合、<xref:System.Web.Routing.RouteCollection>クラス、コレクションからデータを取得します。  
+  
+-   アプリケーションが開始とはないまだ要求の処理などの`Application_Start`イベント ハンドラーでは、1 つのスレッドが実行されています。 他のスレッドは、表示中にコレクションを更新することがありますがないためを呼び出す必要はありません<xref:System.Web.Routing.RouteCollection.GetReadLock%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.Routing.RouteCollection.GetReadLock%2A>メソッドは、アプリケーションの実行中にルートを取得するとします。 `Using`ステートメントを読み込んだとき、コレクションから (コードが正常に完了したか、例外がスローされる) かどうか、実行時の動作に関係なく、ロックがする安全が解放されるように、最後の`Using`コード ブロック。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRouteData">
+      <MemberSignature Language="C#" Value="public System.Web.Routing.RouteData GetRouteData (System.Web.HttpContextBase httpContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.Routing.RouteData GetRouteData(class System.Web.HttpContextBase httpContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.RouteCollection.GetRouteData(System.Web.HttpContextBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Routing.RouteData</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="httpContext" Type="System.Web.HttpContextBase" />
+      </Parameters>
+      <Docs>
+        <param name="httpContext">HTTP 要求に関する情報をカプセル化するオブジェクト。</param>
+        <summary>指定した値に一致するコレクション内のルートに関する情報を返します。</summary>
+        <returns>ルート定義からの値を含むオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Web.HttpContextBase.Request" />内のオブジェクトのプロパティ、<paramref name="context" />パラメーターは<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetVirtualPath">
+      <MemberSignature Language="C#" Value="public System.Web.Routing.VirtualPathData GetVirtualPath (System.Web.Routing.RequestContext requestContext, System.Web.Routing.RouteValueDictionary values);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.Routing.VirtualPathData GetVirtualPath(class System.Web.Routing.RequestContext requestContext, class System.Web.Routing.RouteValueDictionary values) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.RouteCollection.GetVirtualPath(System.Web.Routing.RequestContext,System.Web.Routing.RouteValueDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Routing.VirtualPathData</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="requestContext" Type="System.Web.Routing.RequestContext" />
+        <Parameter Name="values" Type="System.Web.Routing.RouteValueDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="requestContext">要求されたルートに関する情報をカプセル化するオブジェクト。</param>
+        <param name="values">ルートのパラメーターを格納するオブジェクト。</param>
+        <summary>指定のコンテキストとパラメーター値に基づいて、ルートに関連付けられている URL パスに関する情報を返します。</summary>
+        <returns>ルートに関連付けられている URL パスに関する情報を格納するオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetVirtualPath">
+      <MemberSignature Language="C#" Value="public System.Web.Routing.VirtualPathData GetVirtualPath (System.Web.Routing.RequestContext requestContext, string name, System.Web.Routing.RouteValueDictionary values);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.Routing.VirtualPathData GetVirtualPath(class System.Web.Routing.RequestContext requestContext, string name, class System.Web.Routing.RouteValueDictionary values) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.RouteCollection.GetVirtualPath(System.Web.Routing.RequestContext,System.String,System.Web.Routing.RouteValueDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Routing.VirtualPathData</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="requestContext" Type="System.Web.Routing.RequestContext" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="values" Type="System.Web.Routing.RouteValueDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="requestContext">要求されたルートに関する情報をカプセル化するオブジェクト。</param>
+        <param name="name">URL パスに関する情報を取得するときに使用するルートの名前。</param>
+        <param name="values">ルートのパラメーターを格納するオブジェクト。</param>
+        <summary>指定したコンテキスト、ルート名、およびパラメーター値の条件下で、名前付きのルートに関連付けられている URL パスに関する情報を返します。</summary>
+        <returns>ルートに関連付けられている URL パスに関する情報を格納するオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">ルートが見つかりませんでしたで指定された名前を持つ、<paramref name="name" />パラメーター。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetWriteLock">
+      <MemberSignature Language="C#" Value="public IDisposable GetWriteLock ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IDisposable GetWriteLock() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.RouteCollection.GetWriteLock" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IDisposable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクション内の要素を追加または削除する場合に、スレッド セーフを管理するためのオブジェクトを提供します。</summary>
+        <returns>スレッド セーフを管理するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルートを追加することを ASP.NET アプリケーションのルートを定義する方法をお勧めです、<xref:System.Web.Routing.RouteTable.Routes%2A>のイベント ハンドラーのプロパティ、 `Application_Start` Global.asax ファイル内のイベントです。 詳細については、「<xref:System.Web.Routing.RouteCollection>」を参照してください。  
+  
+ 使用するアプリケーションが実行されている場合は、ルートを追加していれば、<xref:System.Web.Routing.RouteCollection.GetWriteLock%2A>スレッド セーフを確保する方法です。 ルート コレクションの書き込みロックが解放されるときに、<xref:System.IDisposable>このメソッドによって返されるオブジェクトを破棄します。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.Routing.RouteCollection.GetWriteLock%2A>メソッドは、アプリケーションの実行中にルートを追加するとします。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Ignore">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>チェックが必要ないルートの照合の URL パターンを定義します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドにマップされているルートが作成、<xref:System.Web.Routing.StopRoutingHandler>ルート ハンドラー。 このメソッドを呼び出すと、指定した URL パターンに一致する要求はルート要求として処理されません。  
+  
+ URL には、イメージ ファイルなどの物理ファイルが一致する場合、要求を無視自動的に ASP.NET ルーティングします。 場合によってはすることもルーティングで物理ファイルが存在しない場合は、要求を無視します。 たとえば、ASP.NET は .axd ファイルに対して自動的に作成される要求扱うことはできませんルート要求として .axd ファイル名拡張子に対応する物理ファイルがない場合でもです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Ignore">
+      <MemberSignature Language="C#" Value="public void Ignore (string url);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Ignore(string url) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.RouteCollection.Ignore(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="url">無視するように URL パターン。</param>
+        <summary>チェックが必要ないルートの照合の URL パターンを定義します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドにマップされているルートが作成、<xref:System.Web.Routing.StopRoutingHandler>ルート ハンドラー。 このメソッドを呼び出すと、指定した URL パターンに一致する要求はルート要求として処理されません。  
+  
+ URL には、イメージ ファイルなどの物理ファイルが一致する場合、要求を無視自動的に ASP.NET ルーティングします。 場合によってはすることもルーティングで物理ファイルが存在しない場合は、要求を無視します。 たとえば、ASP.NET は .axd ファイルに対して自動的に作成される要求扱うことはできませんルート要求として .axd ファイル名拡張子に対応する物理ファイルがない場合でもです。  
+  
+   
+  
+## Examples  
+ MVC プロジェクトの既定のテンプレートは、次の例で示すように、.axd ファイル、ルーティングから除外するのにこのメソッドを使用します。  
+  
+ [!code-csharp[MvcDefaultApp#2](~/samples/snippets/csharp/VS_Snippets_WebNet/mvcdefaultapp/cs/global.asax.cs#2)]
+ [!code-vb[MvcDefaultApp#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/mvcdefaultapp/vb/global.asax.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Ignore">
+      <MemberSignature Language="C#" Value="public void Ignore (string url, object constraints);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Ignore(string url, object constraints) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.RouteCollection.Ignore(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="constraints" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="url">無視するように URL パターン。</param>
+        <param name="constraints">要求の URL パターンに一致するかどうかを決定する追加の条件は無視されます。</param>
+        <summary>要求 URL が指定された制約を満たしている場合、ルートの照合の確認いない必要がある URL パターンを定義します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドにマップされているルートが作成、<xref:System.Web.Routing.StopRoutingHandler>ルート ハンドラー。 このメソッドを呼び出すと、指定した URL パターンに一致する要求はルート要求として処理されません。  
+  
+ URL には、イメージ ファイルなどの物理ファイルが一致する場合、要求を無視自動的に ASP.NET ルーティングします。 場合によってはすることもルーティングで物理ファイルが存在しない場合は、要求を無視します。 たとえば、ASP.NET は .axd ファイルに対して自動的に作成される要求扱うことはできませんルート要求として .axd ファイル名拡張子に対応する物理ファイルがない場合でもです。  
+  
+   
+  
+## Examples  
+ 次の例では、このメソッドを使用して、.aspx 拡張子を持つすべての Url を無視する方法を示します。 拡張子".aspx"を持つファイルのすべての Url を処理するカスタム HTTP ハンドラーを登録する場合にこの作業する可能性があります。 .Aspx のすべての要求に一致する、単一の URL パターンは、2 つの汎用パラメーターなど`{*path}.aspx/{*pathinfo}`です。 (このパターンは一致任意で終わる URL をクエリ文字列パラメーターを持つものも含め、.aspx)。ただし、ルーティングと、最後に汎用パラメーターの 1 つだけができます。 代わりに、すべての Url と一致する単一の汎用パラメーターを持つ URL パターンを指定して、次の例で示すように、拡張子が .aspx を持たないすべてを除外する制約を指定できます。  
+  
+```vb  
+routes.Ignore("{*allaspx}", new With {.allaspx = ".*\.aspx(/.*)?"})  
+```  
+  
+```csharp  
+routes.Ignore("{*allaspx}", new {allaspx=@".*\.aspx(/.*)?"});  
+```  
+  
+ 前のコード行から呼び出されるメソッドに通常追加される、`Application_Start`メソッドの例に示すように、Global.asax で、<xref:System.Web.Routing.RouteCollection.Ignore%28System.String%29>オーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="url" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertItem">
+      <MemberSignature Language="C#" Value="protected override void InsertItem (int index, System.Web.Routing.RouteBase item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InsertItem(int32 index, class System.Web.Routing.RouteBase item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.RouteCollection.InsertItem(System.Int32,System.Web.Routing.RouteBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="item" Type="System.Web.Routing.RouteBase" />
+      </Parameters>
+      <Docs>
+        <param name="index">位置の 0 から始まるインデックス<c>項目</c>を挿入します。</param>
+        <param name="item">挿入するルートです。</param>
+        <summary>指定されたルートを挿入、<see cref="T:System.Web.Routing.RouteCollection" />指定したインデックスにあるオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前のないルートを追加すると、<xref:System.Web.Routing.RouteCollection>オブジェクトをコレクションに既に存在するルートを追加することはできません。  
+  
+ 使用して、<xref:System.Web.Routing.RouteCollection.GetReadLock%2A>メソッドおよび<xref:System.Web.Routing.RouteCollection.GetWriteLock%2A>メソッドを他のプロセスから競合することがなく、コレクションと対話するかどうかを確認します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="item" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="item" />既にコレクションです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.Routing.RouteBase this[string name] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Routing.RouteBase Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Routing.RouteCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Routing.RouteBase</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">取得するルートを識別する値。</param>
+        <summary>指定した名前を持つコレクションのルートを取得します。</summary>
+        <value>指定した名前を持つオブジェクトまたは<see langword="null" />場合<paramref name="name" />は<see langword="null" />、空の文字列、またはコレクション内のすべてのルートと一致しません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.Routing.RouteCollection.GetReadLock%2A>メソッドおよび<xref:System.Web.Routing.RouteCollection.GetWriteLock%2A>メソッドを他のプロセスから競合することがなく、コレクションと対話するかどうかを確認します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LowercaseUrls">
+      <MemberSignature Language="C#" Value="public bool LowercaseUrls { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool LowercaseUrls" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Routing.RouteCollection.LowercaseUrls" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または仮想パスが正規化されたときに、Url を小文字に変換するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />Url を; 小文字に変換するにはそれ以外の場合<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クエリ文字列が URL に含まれている場合、URL の部分は小文字に変換されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="MapPageRoute">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Web フォーム アプリケーションのルートを定義する方法を提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コーディングの利便性を提供します。 呼び出すことと等価である、<xref:System.Web.Routing.RouteCollection.Add%2A>メソッドと受け渡しを<xref:System.Web.Routing.Route>を使用して作成されたオブジェクトに、<xref:System.Web.Routing.PageRouteHandler>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例では、このメソッドを使用して、Web フォーム アプリケーションのルートを定義する方法を示します。 この例は、という名前のメソッドを示しています。`RegisterRoutes`から呼び出される`Application_Start`Global.asax ファイルでします。 メソッドの各オーバー ロードを使用して<xref:System.Web.Routing.RouteCollection.MapPageRoute%2A>アプリケーションにルートを追加します。 Web フォーム アプリケーションのルートを定義する方法の詳細については、次を参照してください。[する方法: Web フォーム アプリケーションのルートを定義する](http://msdn.microsoft.com/library/200fe812-d0a6-4531-b9b4-cfc4ee83a678)です。  
+  
+ [!code-csharp[System.Web.Routing.RouteCollection.MapPageRoute#122](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.routing.routecollection.mappageroute/cs/global.asax#122)]
+ [!code-vb[System.Web.Routing.RouteCollection.MapPageRoute#122](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.routing.routecollection.mappageroute/vb/global.asax#122)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="MapPageRoute">
+      <MemberSignature Language="C#" Value="public System.Web.Routing.Route MapPageRoute (string routeName, string routeUrl, string physicalFile);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.Routing.Route MapPageRoute(string routeName, string routeUrl, string physicalFile) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.RouteCollection.MapPageRoute(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Routing.Route</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="routeName" Type="System.String" />
+        <Parameter Name="routeUrl" Type="System.String" />
+        <Parameter Name="physicalFile" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="routeName">ルートの名前。</param>
+        <param name="routeUrl">ルートの URL パターン。</param>
+        <param name="physicalFile">ルートの物理 URL です。</param>
+        <summary>Web フォーム アプリケーションのルートを定義する方法を提供します。</summary>
+        <returns>ルートのコレクションに追加されるルートです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コーディングの利便性を提供します。 呼び出すことと等価である、<xref:System.Web.Routing.RouteCollection.Add%2A>メソッドと受け渡しを<xref:System.Web.Routing.Route>を使用して作成されたオブジェクトに、<xref:System.Web.Routing.PageRouteHandler>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例では、このメソッドを使用して、ルートを定義する方法を示します。 最初のステートメントでは、名前がないルートを定義します。 2 番目のステートメントでは、名前付きのルートを定義します。 この例で使用可能なサンプルが大きくの一部である、<xref:System.Web.Routing.RouteCollection.MapPageRoute%2A>メソッドの概要です。  
+  
+ [!code-csharp[System.Web.Routing.RouteCollection.MapPageRoute#140](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.routing.routecollection.mappageroute/cs/global.asax#140)]
+ [!code-vb[System.Web.Routing.RouteCollection.MapPageRoute#140](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.routing.routecollection.mappageroute/vb/global.asax#140)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MapPageRoute">
+      <MemberSignature Language="C#" Value="public System.Web.Routing.Route MapPageRoute (string routeName, string routeUrl, string physicalFile, bool checkPhysicalUrlAccess);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.Routing.Route MapPageRoute(string routeName, string routeUrl, string physicalFile, bool checkPhysicalUrlAccess) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.RouteCollection.MapPageRoute(System.String,System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Routing.Route</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="routeName" Type="System.String" />
+        <Parameter Name="routeUrl" Type="System.String" />
+        <Parameter Name="physicalFile" Type="System.String" />
+        <Parameter Name="checkPhysicalUrlAccess" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="routeName">ルートの名前。</param>
+        <param name="routeUrl">ルートの URL パターン。</param>
+        <param name="physicalFile">ルートの物理 URL です。</param>
+        <param name="checkPhysicalUrlAccess">ASP.NET ことを検証する必要があるかどうかを示す値、ユーザーは、物理的な URL (が常にオン URL ルート) にアクセスする権限を持っています。 このパラメーターは、<see cref="P:System.Web.Routing.PageRouteHandler.CheckPhysicalUrlAccess" /> プロパティを設定します。</param>
+        <summary>Web フォーム アプリケーションのルートを定義する方法を提供します。</summary>
+        <returns>ルートのコレクションに追加されるルートです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コーディングの利便性を提供します。 呼び出すことと等価である、<xref:System.Web.Routing.RouteCollection.Add%2A>メソッドと受け渡しを<xref:System.Web.Routing.Route>を使用して作成されたオブジェクトに、<xref:System.Web.Routing.PageRouteHandler>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例では、このメソッドを使用して、ルートを定義する方法を示します。 この例で使用可能なサンプルが大きくの一部である、<xref:System.Web.Routing.RouteCollection.MapPageRoute%2A>メソッドの概要です。  
+  
+ [!code-csharp[System.Web.Routing.RouteCollection.MapPageRoute#145](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.routing.routecollection.mappageroute/cs/global.asax#145)]
+ [!code-vb[System.Web.Routing.RouteCollection.MapPageRoute#145](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.routing.routecollection.mappageroute/vb/global.asax#145)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MapPageRoute">
+      <MemberSignature Language="C#" Value="public System.Web.Routing.Route MapPageRoute (string routeName, string routeUrl, string physicalFile, bool checkPhysicalUrlAccess, System.Web.Routing.RouteValueDictionary defaults);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.Routing.Route MapPageRoute(string routeName, string routeUrl, string physicalFile, bool checkPhysicalUrlAccess, class System.Web.Routing.RouteValueDictionary defaults) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.RouteCollection.MapPageRoute(System.String,System.String,System.String,System.Boolean,System.Web.Routing.RouteValueDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Routing.Route</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="routeName" Type="System.String" />
+        <Parameter Name="routeUrl" Type="System.String" />
+        <Parameter Name="physicalFile" Type="System.String" />
+        <Parameter Name="checkPhysicalUrlAccess" Type="System.Boolean" />
+        <Parameter Name="defaults" Type="System.Web.Routing.RouteValueDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="routeName">ルートの名前。</param>
+        <param name="routeUrl">ルートの URL パターン。</param>
+        <param name="physicalFile">ルートの物理 URL です。</param>
+        <param name="checkPhysicalUrlAccess">ASP.NET ことを検証する必要があるかどうかを示す値、ユーザーは、物理的な URL (が常にオン URL ルート) にアクセスする権限を持っています。 このパラメーターは、<see cref="P:System.Web.Routing.PageRouteHandler.CheckPhysicalUrlAccess" /> プロパティを設定します。</param>
+        <param name="defaults">ルート パラメーターの既定値です。</param>
+        <summary>Web フォーム アプリケーションのルートを定義する方法を提供します。</summary>
+        <returns>ルートのコレクションに追加されるルートです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コーディングの利便性を提供します。 呼び出すことと等価である、<xref:System.Web.Routing.RouteCollection.Add%2A>メソッドと受け渡しを<xref:System.Web.Routing.Route>を使用して作成されたオブジェクトに、<xref:System.Web.Routing.PageRouteHandler>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例では、このメソッドを使用して、ルートを定義する方法を示します。 この例で使用可能なサンプルが大きくの一部である、<xref:System.Web.Routing.RouteCollection.MapPageRoute%2A>メソッドの概要です。  
+  
+ [!code-csharp[System.Web.Routing.RouteCollection.MapPageRoute#150](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.routing.routecollection.mappageroute/cs/global.asax#150)]
+ [!code-vb[System.Web.Routing.RouteCollection.MapPageRoute#150](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.routing.routecollection.mappageroute/vb/global.asax#150)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MapPageRoute">
+      <MemberSignature Language="C#" Value="public System.Web.Routing.Route MapPageRoute (string routeName, string routeUrl, string physicalFile, bool checkPhysicalUrlAccess, System.Web.Routing.RouteValueDictionary defaults, System.Web.Routing.RouteValueDictionary constraints);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.Routing.Route MapPageRoute(string routeName, string routeUrl, string physicalFile, bool checkPhysicalUrlAccess, class System.Web.Routing.RouteValueDictionary defaults, class System.Web.Routing.RouteValueDictionary constraints) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.RouteCollection.MapPageRoute(System.String,System.String,System.String,System.Boolean,System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteValueDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Routing.Route</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="routeName" Type="System.String" />
+        <Parameter Name="routeUrl" Type="System.String" />
+        <Parameter Name="physicalFile" Type="System.String" />
+        <Parameter Name="checkPhysicalUrlAccess" Type="System.Boolean" />
+        <Parameter Name="defaults" Type="System.Web.Routing.RouteValueDictionary" />
+        <Parameter Name="constraints" Type="System.Web.Routing.RouteValueDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="routeName">ルートの名前。</param>
+        <param name="routeUrl">ルートの URL パターン。</param>
+        <param name="physicalFile">ルートの物理 URL です。</param>
+        <param name="checkPhysicalUrlAccess">ASP.NET ことを検証する必要があるかどうかを示す値、ユーザーは、物理的な URL (が常にオン URL ルート) にアクセスする権限を持っています。 このパラメーターは、<see cref="P:System.Web.Routing.PageRouteHandler.CheckPhysicalUrlAccess" /> プロパティを設定します。</param>
+        <param name="defaults">ルートの既定値です。</param>
+        <param name="constraints">URL 要求がこのルートとして処理するために満たす必要がある制約。</param>
+        <summary>Web フォーム アプリケーションのルートを定義する方法を提供します。</summary>
+        <returns>ルートのコレクションに追加されるルートです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コーディングの利便性を提供します。 呼び出すことと等価である、<xref:System.Web.Routing.RouteCollection.Add%2A>メソッドと受け渡しを<xref:System.Web.Routing.Route>を使用して作成されたオブジェクトに、<xref:System.Web.Routing.PageRouteHandler>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例では、このメソッドを使用して、ルートを定義する方法を示します。 この例で使用可能なサンプルが大きくの一部である、<xref:System.Web.Routing.RouteCollection.MapPageRoute%2A>メソッドの概要です。  
+  
+ [!code-csharp[System.Web.Routing.RouteCollection.MapPageRoute#155](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.routing.routecollection.mappageroute/cs/global.asax#155)]
+ [!code-vb[System.Web.Routing.RouteCollection.MapPageRoute#155](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.routing.routecollection.mappageroute/vb/global.asax#155)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MapPageRoute">
+      <MemberSignature Language="C#" Value="public System.Web.Routing.Route MapPageRoute (string routeName, string routeUrl, string physicalFile, bool checkPhysicalUrlAccess, System.Web.Routing.RouteValueDictionary defaults, System.Web.Routing.RouteValueDictionary constraints, System.Web.Routing.RouteValueDictionary dataTokens);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.Routing.Route MapPageRoute(string routeName, string routeUrl, string physicalFile, bool checkPhysicalUrlAccess, class System.Web.Routing.RouteValueDictionary defaults, class System.Web.Routing.RouteValueDictionary constraints, class System.Web.Routing.RouteValueDictionary dataTokens) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.RouteCollection.MapPageRoute(System.String,System.String,System.String,System.Boolean,System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteValueDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Routing.Route</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="routeName" Type="System.String" />
+        <Parameter Name="routeUrl" Type="System.String" />
+        <Parameter Name="physicalFile" Type="System.String" />
+        <Parameter Name="checkPhysicalUrlAccess" Type="System.Boolean" />
+        <Parameter Name="defaults" Type="System.Web.Routing.RouteValueDictionary" />
+        <Parameter Name="constraints" Type="System.Web.Routing.RouteValueDictionary" />
+        <Parameter Name="dataTokens" Type="System.Web.Routing.RouteValueDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="routeName">ルートの名前。</param>
+        <param name="routeUrl">ルートの URL パターン。</param>
+        <param name="physicalFile">ルートの物理 URL です。</param>
+        <param name="checkPhysicalUrlAccess">ASP.NET ことを検証する必要があるかどうかを示す値、ユーザーは、物理的な URL (が常にオン URL ルート) にアクセスする権限を持っています。 このパラメーターは、<see cref="P:System.Web.Routing.PageRouteHandler.CheckPhysicalUrlAccess" /> プロパティを設定します。</param>
+        <param name="defaults">ルート パラメーターの既定値です。</param>
+        <param name="constraints">URL 要求がこのルートとして処理するために満たす必要がある制約。</param>
+        <param name="dataTokens">ルートが URL パターンに一致するかどうかを決定に使用されていないルートに関連付けられている値。</param>
+        <summary>Web フォーム アプリケーションのルートを定義する方法を提供します。</summary>
+        <returns>ルートのコレクションに追加されるルートです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コーディングの利便性を提供します。 呼び出すことと等価である、<xref:System.Web.Routing.RouteCollection.Add%2A>メソッドと受け渡しを<xref:System.Web.Routing.Route>を使用して作成されたオブジェクトに、<xref:System.Web.Routing.PageRouteHandler>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例では、このメソッドを使用して、ルートを定義する方法を示します。 この例で使用可能なサンプルが大きくの一部である、<xref:System.Web.Routing.RouteCollection.MapPageRoute%2A>メソッドの概要です。  
+  
+ [!code-csharp[System.Web.Routing.RouteCollection.MapPageRoute#160](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.routing.routecollection.mappageroute/cs/global.asax#160)]
+ [!code-vb[System.Web.Routing.RouteCollection.MapPageRoute#160](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.routing.routecollection.mappageroute/vb/global.asax#160)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="routeUrl" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveItem">
+      <MemberSignature Language="C#" Value="protected override void RemoveItem (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void RemoveItem(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.RouteCollection.RemoveItem(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除するルートの 0 から始まるインデックス。</param>
+        <summary>ルートを削除、<see cref="T:System.Web.Routing.RouteCollection" />指定したインデックスにあるオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.Routing.RouteCollection.GetReadLock%2A>メソッドおよび<xref:System.Web.Routing.RouteCollection.GetWriteLock%2A>メソッドを他のプロセスから競合することがなく、コレクションと対話するかどうかを確認します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RouteExistingFiles">
+      <MemberSignature Language="C#" Value="public bool RouteExistingFiles { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RouteExistingFiles" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Routing.RouteCollection.RouteExistingFiles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既存のファイルと一致する URL を ASP.NET ルーティングが処理するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />ASP.NET ルーティングは、すべての要求を処理する場合も含め、既存のファイルに一致します。それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は動的に変更できますが、ASP.NET ルーティング統合を使用する場合、サービスがアクティブになった後の変更は無視されます。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][ASP.NET ルーティング統合](http://go.microsoft.com/fwlink/?LinkId=195235)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetItem">
+      <MemberSignature Language="C#" Value="protected override void SetItem (int index, System.Web.Routing.RouteBase item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetItem(int32 index, class System.Web.Routing.RouteBase item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.RouteCollection.SetItem(System.Int32,System.Web.Routing.RouteBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="item" Type="System.Web.Routing.RouteBase" />
+      </Parameters>
+      <Docs>
+        <param name="index">置き換えるルートの 0 から始まるインデックス番号。</param>
+        <param name="item">指定したインデックス位置に追加するルート。</param>
+        <summary>指定したインデックス位置にあるルートを置き換えます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前のないルートを追加すると、<xref:System.Web.Routing.RouteCollection>オブジェクトをコレクションに既に存在するルートを追加することはできません。  
+  
+ 使用して、<xref:System.Web.Routing.RouteCollection.GetReadLock%2A>メソッドおよび<xref:System.Web.Routing.RouteCollection.GetWriteLock%2A>メソッドを他のプロセスから競合することがなく、コレクションと対話するかどうかを確認します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="item" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="item" />既にコレクションです。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

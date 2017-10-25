@@ -1,0 +1,104 @@
+<Type Name="SettingsSerializeAsAttribute" FullName="System.Configuration.SettingsSerializeAsAttribute">
+  <TypeSignature Language="C#" Value="public sealed class SettingsSerializeAsAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SettingsSerializeAsAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.SettingsSerializeAsAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Property)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>設定プロバイダーが使用するシリアル化機構を指定します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 多くの場合、設定プロバイダーでは、.NET Framework シリアル化の標準スキームの 1 つ以上サポートしています。 これらのパターンが記載されている、<xref:System.Configuration.SettingsSerializeAs>列挙され、プレーン テキスト、XML、およびバイナリのシリアル化します。 さらに、プロバイダーは、カスタムのシリアル化スキームをサポート必要に応じて可能性があります。  
+  
+ <xref:System.Configuration.SettingsSerializeAsAttribute>、特定のアプリケーション設定クラスまたはプロパティのシリアル化メカニズムを使用する必要がありますを指定することができます。 この属性は設定プロバイダーへの要求と見なされます。 無視されるか、エラーが発生する場合は、プロバイダーまたは個々 のプロパティの型が、指定したシリアル化のスキームをサポートしていません。 この属性が存在しない場合、プロバイダーは通常プレーン テキストでは通常、既定のシリアル化機構を提供します。  
+  
+ 設定プロバイダーは、実行時にシリアル化メカニズムを動的に変更する方法を提供することがあります、これは一般的な機能です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SettingsSerializeAsAttribute (System.Configuration.SettingsSerializeAs serializeAs);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Configuration.SettingsSerializeAs serializeAs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.SettingsSerializeAsAttribute.#ctor(System.Configuration.SettingsSerializeAs)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="serializeAs" Type="System.Configuration.SettingsSerializeAs" />
+      </Parameters>
+      <Docs>
+        <param name="serializeAs">A<see cref="T:System.Configuration.SettingsSerializeAs" />シリアル化のスキームを指定する値を列挙します。</param>
+        <summary>
+          <see cref="T:System.Configuration.SettingsSerializeAsAttribute" /> クラスのインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換するには、設定プロバイダーまたはプロパティの型がで指定されたシリアル化のスキームをサポートしていない場合、`serializeAs`パラメーター、結果は、次のいずれかの操作があります。  
+  
+-   設定プロバイダーは、属性を無視し、その既定のシリアル化のスキームを使用する可能性があります。  
+  
+-   シリアル化プロセスの応答なし失敗します。 アプリケーション設定のプロパティは保持されません。  
+  
+-   シリアル化中に例外が発生する可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SerializeAs">
+      <MemberSignature Language="C#" Value="public System.Configuration.SettingsSerializeAs SerializeAs { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Configuration.SettingsSerializeAs SerializeAs" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SettingsSerializeAsAttribute.SerializeAs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.SettingsSerializeAs</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Configuration.SettingsSerializeAs" />シリアル化のスキームを指定する列挙値。</summary>
+        <value>A<see cref="T:System.Configuration.SettingsSerializeAs" />シリアル化のスキームを指定する値を列挙します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティ、<xref:System.Configuration.SettingsSerializeAsAttribute.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

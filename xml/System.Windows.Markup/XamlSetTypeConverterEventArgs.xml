@@ -1,0 +1,126 @@
+<Type Name="XamlSetTypeConverterEventArgs" FullName="System.Windows.Markup.XamlSetTypeConverterEventArgs">
+  <TypeSignature Language="C#" Value="public class XamlSetTypeConverterEventArgs : System.Windows.Markup.XamlSetValueEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XamlSetTypeConverterEventArgs extends System.Windows.Markup.XamlSetValueEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.XamlSetTypeConverterEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Markup.XamlSetValueEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XAML ライターが型コンバーターの呼び出しを使用して値を設定するときに呼び出されるコールバックのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型コンバーターの使用法を使用してコールバック、<xref:System.EventHandler%601>デリゲートと<xref:System.Windows.Markup.XamlSetTypeConverterEventArgs>イベント データの制約。  
+  
+ によって参照される型コンバーターの使用状況のコールバック<xref:System.Windows.Markup.XamlSetTypeConverterAttribute>クラス レベルで適用される (たとえば<xref:System.Windows.Setter>wpf クラス)。 カスタム<xref:System.Xaml.Schema.XamlTypeInvoker>を介してコールバック参照も、<xref:System.Xaml.Schema.XamlTypeInvoker.SetTypeConverterHandler%2A>値。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlSetTypeConverterEventArgs (System.Xaml.XamlMember member, System.ComponentModel.TypeConverter typeConverter, object value, System.ComponentModel.ITypeDescriptorContext serviceProvider, System.Globalization.CultureInfo cultureInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xaml.XamlMember member, class System.ComponentModel.TypeConverter typeConverter, object value, class System.ComponentModel.ITypeDescriptorContext serviceProvider, class System.Globalization.CultureInfo cultureInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XamlSetTypeConverterEventArgs.#ctor(System.Xaml.XamlMember,System.ComponentModel.TypeConverter,System.Object,System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="member" Type="System.Xaml.XamlMember" />
+        <Parameter Name="typeConverter" Type="System.ComponentModel.TypeConverter" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="serviceProvider" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="cultureInfo" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="member">XAML 型システム/メンバーのスキーマ情報が設定されています。</param>
+        <param name="typeConverter">呼び出されている特定の型コンバーター インスタンス。</param>
+        <param name="value">設定されているメンバーを提供する値。</param>
+        <param name="serviceProvider">サービスで使用できるプロバイダーの情報、 <c>typeConverter</c>クラスです。</param>
+        <param name="cultureInfo">カルチャで使用できる情報を<c>typeConverter</c>クラスを呼び出すときに<see cref="M:System.ComponentModel.TypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)" />およびその他のメソッドです。</param>
+        <summary><see cref="T:System.Windows.Markup.XamlSetTypeConverterEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CallBase">
+      <MemberSignature Language="C#" Value="public override void CallBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void CallBase() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XamlSetTypeConverterEventArgs.CallBase" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在機能している型の基底クラスに定義されているコールバックを呼び出す方法を提供します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CultureInfo">
+      <MemberSignature Language="C#" Value="public System.Globalization.CultureInfo CultureInfo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.CultureInfo CultureInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.XamlSetTypeConverterEventArgs.CultureInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得<see cref="T:System.Globalization.CultureInfo" />を呼び出すときに、型コンバーターのクラスで使用できる情報<see cref="M:System.ComponentModel.TypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)" />およびその他のメソッドです。</summary>
+        <value>型コンバーターのクラスで使用できるカルチャ情報</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceProvider">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.ITypeDescriptorContext ServiceProvider { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.ITypeDescriptorContext ServiceProvider" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.XamlSetTypeConverterEventArgs.ServiceProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.ITypeDescriptorContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得<see cref="T:System.IServiceProvider" />については、型コンバーター クラスによって使用されることができます。</summary>
+        <value>サービスで使用できるプロバイダーの情報、<paramref name="typeConverter" />クラスです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeConverter">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.TypeConverter TypeConverter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.TypeConverter TypeConverter" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.XamlSetTypeConverterEventArgs.TypeConverter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.TypeConverter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.ComponentModel.TypeConverter" />が呼び出され、型変換動作を提供するインスタンス。</summary>
+        <value>型変換動作を提供する型コンバーター。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

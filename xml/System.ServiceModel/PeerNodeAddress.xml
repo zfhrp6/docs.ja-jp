@@ -1,0 +1,84 @@
+<Type Name="PeerNodeAddress" FullName="System.ServiceModel.PeerNodeAddress">
+  <TypeSignature Language="C#" Value="public sealed class PeerNodeAddress" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PeerNodeAddress extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.PeerNodeAddress" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.Serialization.DataContract(Name="PeerNodeAddress", Namespace="http://schemas.microsoft.com/net/2006/05/peer")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.Serialization.KnownType(typeof(System.Net.IPAddress[]))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ピア ノードの <see cref="T:System.ServiceModel.EndpointAddress" /> と、オプションのマルチホーム IP アドレスのコレクションを格納する型を指定します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PeerNodeAddress (System.ServiceModel.EndpointAddress endpointAddress, System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Net.IPAddress&gt; ipAddresses);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.EndpointAddress endpointAddress, class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Net.IPAddress&gt; ipAddresses) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.PeerNodeAddress.#ctor(System.ServiceModel.EndpointAddress,System.Collections.ObjectModel.ReadOnlyCollection{System.Net.IPAddress})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="endpointAddress" Type="System.ServiceModel.EndpointAddress" />
+        <Parameter Name="ipAddresses" Type="System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Net.IPAddress&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="endpointAddress">メッシュ内のピア ノードのアドレスを表す <see cref="T:System.ServiceModel.EndpointAddress" />。</param>
+        <param name="ipAddresses">ローカル コンピューター用に構成された IP アドレスと、ピア ノードに接続するために使用できる <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />。</param>
+        <summary><see cref="T:System.ServiceModel.PeerNodeAddress" /> と、ローカル コンピューター用に構成されたマルチホーム IP アドレスのコレクションを指定して、<see cref="T:System.ServiceModel.EndpointAddress" /> の新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">コンストラクターに指定された引数のいずれかに <see langword="null" /> が設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EndpointAddress">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.EndpointAddress EndpointAddress { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.EndpointAddress EndpointAddress" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.PeerNodeAddress.EndpointAddress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.EndpointAddress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.ServiceModel.EndpointAddress" /> に関連付けられている <see cref="T:System.ServiceModel.PeerNodeAddress" /> を取得します。</summary>
+        <value>この <see cref="T:System.ServiceModel.EndpointAddress" /> に関連付けられている <see cref="T:System.ServiceModel.PeerNodeAddress" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IPAddresses">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Net.IPAddress&gt; IPAddresses { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Net.IPAddress&gt; IPAddresses" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.PeerNodeAddress.IPAddresses" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Net.IPAddress&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.ServiceModel.PeerNodeAddress" /> のマルチホーム IP アドレスのコレクションを取得します。</summary>
+        <value>この <see cref="T:System.ServiceModel.PeerNodeAddress" /> に関連付けられているマルチホーム IP アドレスのコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

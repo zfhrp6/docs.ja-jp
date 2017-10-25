@@ -1,0 +1,980 @@
+<Type Name="SignatureHelper" FullName="System.Reflection.Emit.SignatureHelper">
+  <TypeSignature Language="C#" Value="public sealed class SignatureHelper : System.Runtime.InteropServices._SignatureHelper" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit SignatureHelper extends System.Object implements class System.Runtime.InteropServices._SignatureHelper" />
+  <TypeSignature Language="DocId" Value="T:System.Reflection.Emit.SignatureHelper" />
+  <AssemblyInfo>
+    <AssemblyName>System.Reflection.Emit.ILGeneration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.InteropServices._SignatureHelper</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.None)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComDefaultInterface(typeof(System.Runtime.InteropServices._SignatureHelper))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>署名を作成するためのメソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Reflection.Emit.SignatureHelper>に渡すことができるシグネチャ blob を作成するクラス、<xref:System.Reflection.Emit.DynamicILInfo.SetLocalSignature%2A>のメソッド、<xref:System.Reflection.Emit.DynamicILInfo>クラスです。 A<xref:System.Reflection.Emit.SignatureHelper>にオブジェクトを渡すことも、<xref:System.Reflection.Emit.ILGenerator.Emit%28System.Reflection.Emit.OpCode%2CSystem.Reflection.Emit.SignatureHelper%29?displayProperty=nameWithType>命令、および署名のトークンを Microsoft intermediate language (MSIL) ストリームに挿入するメソッドのオーバー ロードします。 詳細については、シグネチャ blob とシグネチャのメタデータは、ECMA Partition II メタデータ ドキュメントを参照してください。  
+  
+> [!NOTE]
+>  ECMA Partition II ドキュメントはオンラインです。参照してください[ECMA c# および共通言語基盤規格](http://go.microsoft.com/fwlink/?LinkID=99212)msdn および[標準 ECMA 335 - 共通言語基盤 (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552) Ecma International Web サイトです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddArgument">
+      <MemberSignature Language="C#" Value="public void AddArgument (Type clsArgument);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddArgument(class System.Type clsArgument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.SignatureHelper.AddArgument(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.ILGeneration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clsArgument" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="clsArgument">引数の型。</param>
+        <summary>シグネチャに引数を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 省略可能または必須のカスタム修飾子を使用して引数を追加するには、使用、<xref:System.Reflection.Emit.SignatureHelper.AddArgument%28System.Type%2CSystem.Type%5B%5D%2CSystem.Type%5B%5D%29>メソッドのオーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">署名は既に終了しました。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="clsArgument" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddArgument">
+      <MemberSignature Language="C#" Value="public void AddArgument (Type argument, bool pinned);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddArgument(class System.Type argument, bool pinned) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.SignatureHelper.AddArgument(System.Type,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.ILGeneration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="argument" Type="System.Type" />
+        <Parameter Name="pinned" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="argument">引数の型。</param>
+        <param name="pinned">
+          <see langword="true" />場合は、引数がピン留めします。それ以外の場合、<see langword="false" />です。</param>
+        <summary>引数が固定されているかどうかを指定する、シグネチャに指定した型の引数を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 省略可能または必須のカスタム修飾子を使用して引数を追加するには、使用、<xref:System.Reflection.Emit.SignatureHelper.AddArgument%28System.Type%2CSystem.Type%5B%5D%2CSystem.Type%5B%5D%29>メソッドのオーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="argument" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddArgument">
+      <MemberSignature Language="C#" Value="public void AddArgument (Type argument, Type[] requiredCustomModifiers, Type[] optionalCustomModifiers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddArgument(class System.Type argument, class System.Type[] requiredCustomModifiers, class System.Type[] optionalCustomModifiers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.SignatureHelper.AddArgument(System.Type,System.Type[],System.Type[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.ILGeneration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="argument" Type="System.Type" />
+        <Parameter Name="requiredCustomModifiers" Type="System.Type[]" />
+        <Parameter Name="optionalCustomModifiers" Type="System.Type[]" />
+      </Parameters>
+      <Docs>
+        <param name="argument">引数の型。</param>
+        <param name="requiredCustomModifiers">など、引数は必須のカスタム修飾子を表す型の配列<see cref="T:System.Runtime.CompilerServices.IsConst" />または<see cref="T:System.Runtime.CompilerServices.IsBoxed" />です。 引数が必須のカスタム修飾子を持たない場合は、指定<see langword="null" />です。</param>
+        <param name="optionalCustomModifiers">など、引数は省略可能なカスタム修飾子を表す型の配列<see cref="T:System.Runtime.CompilerServices.IsConst" />または<see cref="T:System.Runtime.CompilerServices.IsBoxed" />です。 引数は省略可能カスタム修飾子を持たない場合は、指定<see langword="null" />です。</param>
+        <summary>指定したカスタム修飾子を使用して、シグネチャに引数を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください、<xref:System.Runtime.CompilerServices>のカスタム修飾子を表すクラスの名前空間。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="argument" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ 要素<paramref name="requiredCustomModifiers" />または<paramref name="optionalCustomModifiers" />は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentException">署名は既に終了しました。  
+  
+ または  
+  
+ 指定したカスタム修飾子の 1 つは、配列型です。  
+  
+ または  
+  
+ 指定したカスタム修飾子の 1 つは、オープン ジェネリック型です。 つまり、<see cref="P:System.Type.ContainsGenericParameters" />プロパティは<see langword="true" />のカスタム修飾子です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddArguments">
+      <MemberSignature Language="C#" Value="public void AddArguments (Type[] arguments, Type[][] requiredCustomModifiers, Type[][] optionalCustomModifiers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddArguments(class System.Type[] arguments, class System.Type[][] requiredCustomModifiers, class System.Type[][] optionalCustomModifiers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.SignatureHelper.AddArguments(System.Type[],System.Type[][],System.Type[][])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.ILGeneration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="arguments" Type="System.Type[]" />
+        <Parameter Name="requiredCustomModifiers" Type="System.Type[][]" />
+        <Parameter Name="optionalCustomModifiers" Type="System.Type[][]" />
+      </Parameters>
+      <Docs>
+        <param name="arguments">追加する引数の型。</param>
+        <param name="requiredCustomModifiers">型の配列の配列。 各型の配列など、対応する引数の必須カスタム修飾子を表す<see cref="T:System.Runtime.CompilerServices.IsConst" />または<see cref="T:System.Runtime.CompilerServices.IsBoxed" />です。 特定の引数が必須のカスタム修飾子を持たない場合は、指定<see langword="null" />型の配列の代わりにします。 指定する場合は、引数のいずれも必須のカスタム修飾子が、<see langword="null" />配列の配列の代わりにします。</param>
+        <param name="optionalCustomModifiers">型の配列の配列。 各型の配列など、対応する引数は省略可能なカスタム修飾子を表す<see cref="T:System.Runtime.CompilerServices.IsConst" />または<see cref="T:System.Runtime.CompilerServices.IsBoxed" />です。 特定の引数は省略可能カスタム修飾子を持たない場合は、指定<see langword="null" />型の配列の代わりにします。 省略可能カスタム修飾子がある引数のいずれも、指定<see langword="null" />配列の配列の代わりにします。</param>
+        <summary>指定したカスタム修飾子を使用して、シグネチャに引数のセットを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素の順序で、署名の最後に、引数を追加`arguments`です。  
+  
+ 参照してください、<xref:System.Runtime.CompilerServices>のカスタム修飾子を表すクラスの名前空間。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="arguments" /> の要素は <see langword="null" /> です。  
+  
+ または  
+  
+ 指定したカスタム修飾子の 1 つは<see langword="null" />します。 (ただし、<see langword="null" />のカスタム修飾子をいずれかの引数の配列を指定することができます)。</exception>
+        <exception cref="T:System.ArgumentException">署名は既に終了しました。  
+  
+ または  
+  
+ 指定したカスタム修飾子の 1 つは、配列型です。  
+  
+ または  
+  
+ 指定したカスタム修飾子の 1 つは、オープン ジェネリック型です。 つまり、<see cref="P:System.Type.ContainsGenericParameters" />プロパティは<see langword="true" />のカスタム修飾子です。  
+  
+ または  
+  
+ <paramref name="requiredCustomModifiers" /> または <paramref name="optionalCustomModifiers" /> のサイズは <paramref name="arguments" /> のサイズと同じではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddSentinel">
+      <MemberSignature Language="C#" Value="public void AddSentinel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddSentinel() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.SignatureHelper.AddSentinel" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.ILGeneration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>マーク、vararg の末尾には、一部が固定されています。 呼び出し元が vararg 署名の呼び出しサイトを作成する場合にのみ使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.SignatureHelper.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.ILGeneration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">このインスタンスの比較するオブジェクト。</param>
+        <summary>このインスタンスが、指定したオブジェクトと等しいかどうかを確認します。</summary>
+        <returns>
+          <see langword="true" />指定したオブジェクトがある場合、<see langword="SignatureHelper" />同じシグネチャを表すと、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFieldSigHelper">
+      <MemberSignature Language="C#" Value="public static System.Reflection.Emit.SignatureHelper GetFieldSigHelper (System.Reflection.Module mod);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Reflection.Emit.SignatureHelper GetFieldSigHelper(class System.Reflection.Module mod) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.SignatureHelper.GetFieldSigHelper(System.Reflection.Module)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.ILGeneration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.SignatureHelper</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mod" Type="System.Reflection.Module" />
+      </Parameters>
+      <Docs>
+        <param name="mod">対象のフィールドを含む動的モジュール、<see langword="SignatureHelper" />を要求します。</param>
+        <summary>フィールドの署名ヘルパーを返します。</summary>
+        <returns><see langword="SignatureHelper" />フィールドのオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.SignatureHelper.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.ILGeneration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成し、このインスタンスのハッシュ コードを返します。</summary>
+        <returns>名前に基づくハッシュ コードを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハッシュ コードがこのインスタンスの名前から作成されるため、戻り値は、同じよう、`GetHashCode`の値でメソッドが呼び出された、`Name`プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLocalVarSigHelper">
+      <MemberSignature Language="C#" Value="public static System.Reflection.Emit.SignatureHelper GetLocalVarSigHelper ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Reflection.Emit.SignatureHelper GetLocalVarSigHelper() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.SignatureHelper.GetLocalVarSigHelper" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.ILGeneration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.SignatureHelper</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ローカル変数のシグネチャ ヘルパーを返します。</summary>
+        <returns>A<see cref="T:System.Reflection.Emit.SignatureHelper" />のローカル変数。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLocalVarSigHelper">
+      <MemberSignature Language="C#" Value="public static System.Reflection.Emit.SignatureHelper GetLocalVarSigHelper (System.Reflection.Module mod);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Reflection.Emit.SignatureHelper GetLocalVarSigHelper(class System.Reflection.Module mod) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.SignatureHelper.GetLocalVarSigHelper(System.Reflection.Module)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.ILGeneration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.SignatureHelper</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mod" Type="System.Reflection.Module" />
+      </Parameters>
+      <Docs>
+        <param name="mod">対象のローカル変数を含む動的モジュール、<see langword="SignatureHelper" />を要求します。</param>
+        <summary>ローカル変数のシグネチャ ヘルパーを返します。</summary>
+        <returns><see langword="SignatureHelper" />ローカル変数のオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMethodSigHelper">
+      <MemberSignature Language="C#" Value="public static System.Reflection.Emit.SignatureHelper GetMethodSigHelper (System.Reflection.CallingConventions callingConvention, Type returnType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Reflection.Emit.SignatureHelper GetMethodSigHelper(valuetype System.Reflection.CallingConventions callingConvention, class System.Type returnType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.SignatureHelper.GetMethodSigHelper(System.Reflection.CallingConventions,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.ILGeneration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.SignatureHelper</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callingConvention" Type="System.Reflection.CallingConventions" />
+        <Parameter Name="returnType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="callingConvention">メソッドの呼び出し規則。</param>
+        <param name="returnType">メソッドの戻り値の型または<see langword="null" />void の戻り値の型 (<see langword="Sub" /> Visual Basic でプロシージャ) です。</param>
+        <summary>メソッドを指定して、メソッドのシグネチャ ヘルパーの呼び出しの規則と戻り値の型を返します。</summary>
+        <returns><see langword="SignatureHelper" />メソッドのオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMethodSigHelper">
+      <MemberSignature Language="C#" Value="public static System.Reflection.Emit.SignatureHelper GetMethodSigHelper (System.Runtime.InteropServices.CallingConvention unmanagedCallingConvention, Type returnType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Reflection.Emit.SignatureHelper GetMethodSigHelper(valuetype System.Runtime.InteropServices.CallingConvention unmanagedCallingConvention, class System.Type returnType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.SignatureHelper.GetMethodSigHelper(System.Runtime.InteropServices.CallingConvention,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.SignatureHelper</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="unmanagedCallingConvention" Type="System.Runtime.InteropServices.CallingConvention" />
+        <Parameter Name="returnType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="unmanagedCallingConvention">メソッドのアンマネージ呼び出し規約。</param>
+        <param name="returnType">メソッドの戻り値の型または<see langword="null" />void の戻り値の型 (<see langword="Sub" /> Visual Basic でプロシージャ) です。</param>
+        <summary>メソッドのアンマネージ呼び出し規約、および戻り値の型を指定して、メソッドのシグネチャ ヘルパーを返します。</summary>
+        <returns><see langword="SignatureHelper" />メソッドのオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="unmanagedCallConv" />不明なアンマネージ呼び出し規約、します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMethodSigHelper">
+      <MemberSignature Language="C#" Value="public static System.Reflection.Emit.SignatureHelper GetMethodSigHelper (System.Reflection.Module mod, System.Reflection.CallingConventions callingConvention, Type returnType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Reflection.Emit.SignatureHelper GetMethodSigHelper(class System.Reflection.Module mod, valuetype System.Reflection.CallingConventions callingConvention, class System.Type returnType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.SignatureHelper.GetMethodSigHelper(System.Reflection.Module,System.Reflection.CallingConventions,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.ILGeneration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.SignatureHelper</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mod" Type="System.Reflection.Module" />
+        <Parameter Name="callingConvention" Type="System.Reflection.CallingConventions" />
+        <Parameter Name="returnType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="mod"><see cref="T:System.Reflection.Emit.ModuleBuilder" />対象のメソッドを格納している、<see langword="SignatureHelper" />を要求します。</param>
+        <param name="callingConvention">メソッドの呼び出し規則。</param>
+        <param name="returnType">メソッドの戻り値の型または<see langword="null" />void の戻り値の型 (<see langword="Sub" /> Visual Basic でプロシージャ) です。</param>
+        <summary>メソッドのモジュール、呼び出し規約、戻り値の型を指定して、メソッドのシグネチャのヘルパーを返します。</summary>
+        <returns><see langword="SignatureHelper" />メソッドのオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="mod" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="mod" /> が <see cref="T:System.Reflection.Emit.ModuleBuilder" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMethodSigHelper">
+      <MemberSignature Language="C#" Value="public static System.Reflection.Emit.SignatureHelper GetMethodSigHelper (System.Reflection.Module mod, System.Runtime.InteropServices.CallingConvention unmanagedCallConv, Type returnType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Reflection.Emit.SignatureHelper GetMethodSigHelper(class System.Reflection.Module mod, valuetype System.Runtime.InteropServices.CallingConvention unmanagedCallConv, class System.Type returnType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.SignatureHelper.GetMethodSigHelper(System.Reflection.Module,System.Runtime.InteropServices.CallingConvention,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.SignatureHelper</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mod" Type="System.Reflection.Module" />
+        <Parameter Name="unmanagedCallConv" Type="System.Runtime.InteropServices.CallingConvention" />
+        <Parameter Name="returnType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="mod"><see cref="T:System.Reflection.Emit.ModuleBuilder" />対象のメソッドを格納している、<see langword="SignatureHelper" />を要求します。</param>
+        <param name="unmanagedCallConv">メソッドのアンマネージ呼び出し規約。</param>
+        <param name="returnType">メソッドの戻り値の型または<see langword="null" />void の戻り値の型 (<see langword="Sub" /> Visual Basic でプロシージャ) です。</param>
+        <summary>メソッドのモジュールを指定して、メソッドはアンマネージ呼び出し規約、および戻り値の型は、署名ヘルパーを返します。</summary>
+        <returns><see langword="SignatureHelper" />メソッドのオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="mod" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="mod" /> が <see cref="T:System.Reflection.Emit.ModuleBuilder" /> ではありません。  
+  
+ または  
+  
+ <paramref name="unmanagedCallConv" />不明なアンマネージ呼び出し規約、します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMethodSigHelper">
+      <MemberSignature Language="C#" Value="public static System.Reflection.Emit.SignatureHelper GetMethodSigHelper (System.Reflection.Module mod, Type returnType, Type[] parameterTypes);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Reflection.Emit.SignatureHelper GetMethodSigHelper(class System.Reflection.Module mod, class System.Type returnType, class System.Type[] parameterTypes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.SignatureHelper.GetMethodSigHelper(System.Reflection.Module,System.Type,System.Type[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.ILGeneration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.SignatureHelper</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mod" Type="System.Reflection.Module" />
+        <Parameter Name="returnType" Type="System.Type" />
+        <Parameter Name="parameterTypes" Type="System.Type[]" />
+      </Parameters>
+      <Docs>
+        <param name="mod"><see cref="T:System.Reflection.Emit.ModuleBuilder" />対象のメソッドを格納している、<see langword="SignatureHelper" />を要求します。</param>
+        <param name="returnType">メソッドの戻り値の型または<see langword="null" />void の戻り値の型 (<see langword="Sub" /> Visual Basic でプロシージャ) です。</param>
+        <param name="parameterTypes">メソッドの引数の型または<see langword="null" />メソッドに引数があるない場合。</param>
+        <summary>メソッドのモジュール、戻り値の型と引数の型指定された標準の呼び出し規約を持つメソッドのシグネチャ ヘルパーを返します。</summary>
+        <returns><see langword="SignatureHelper" />メソッドのオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードは、標準呼び出し規約を署名を作成します。  
+  
+ カスタム修飾子を持つメソッドのシグネチャを作成するには、使用、<xref:System.Reflection.Emit.SignatureHelper.GetMethodSigHelper%28System.Reflection.Module%2CSystem.Reflection.CallingConventions%2CSystem.Type%29>メソッドのオーバー ロードし、使用して、<xref:System.Reflection.Emit.SignatureHelper.AddArgument%28System.Type%2CSystem.Type%5B%5D%2CSystem.Type%5B%5D%29>または<xref:System.Reflection.Emit.SignatureHelper.AddArguments%28System.Type%5B%5D%2CSystem.Type%5B%5D%5B%5D%2CSystem.Type%5B%5D%5B%5D%29>カスタム修飾子を使用して引数を追加するメソッドのオーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="mod" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="parameterTypes" /> の要素は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="mod" /> が <see cref="T:System.Reflection.Emit.ModuleBuilder" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertySigHelper">
+      <MemberSignature Language="C#" Value="public static System.Reflection.Emit.SignatureHelper GetPropertySigHelper (System.Reflection.Module mod, Type returnType, Type[] parameterTypes);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Reflection.Emit.SignatureHelper GetPropertySigHelper(class System.Reflection.Module mod, class System.Type returnType, class System.Type[] parameterTypes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.SignatureHelper.GetPropertySigHelper(System.Reflection.Module,System.Type,System.Type[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.ILGeneration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.SignatureHelper</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mod" Type="System.Reflection.Module" />
+        <Parameter Name="returnType" Type="System.Type" />
+        <Parameter Name="parameterTypes" Type="System.Type[]" />
+      </Parameters>
+      <Docs>
+        <param name="mod"><see cref="T:System.Reflection.Emit.ModuleBuilder" />対象のプロパティを格納する、<see cref="T:System.Reflection.Emit.SignatureHelper" />を要求します。</param>
+        <param name="returnType">プロパティの型。</param>
+        <param name="parameterTypes">引数の型、または<see langword="null" />プロパティに引数があるない場合。</param>
+        <summary>プロパティ、プロパティの型、およびプロパティの引数を含む動的モジュールを指定するプロパティの署名ヘルパーを返します。</summary>
+        <returns>A<see cref="T:System.Reflection.Emit.SignatureHelper" />プロパティのオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 省略可能または必須のカスタム修飾子を持つプロパティの署名ヘルパーを作成するには、使用、<xref:System.Reflection.Emit.SignatureHelper.GetPropertySigHelper%28System.Reflection.Module%2CSystem.Type%2CSystem.Type%5B%5D%2CSystem.Type%5B%5D%2CSystem.Type%5B%5D%2CSystem.Type%5B%5D%5B%5D%2CSystem.Type%5B%5D%5B%5D%29>メソッドのオーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="mod" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="parameterTypes" /> の要素は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="mod" /> が <see cref="T:System.Reflection.Emit.ModuleBuilder" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertySigHelper">
+      <MemberSignature Language="C#" Value="public static System.Reflection.Emit.SignatureHelper GetPropertySigHelper (System.Reflection.Module mod, Type returnType, Type[] requiredReturnTypeCustomModifiers, Type[] optionalReturnTypeCustomModifiers, Type[] parameterTypes, Type[][] requiredParameterTypeCustomModifiers, Type[][] optionalParameterTypeCustomModifiers);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Reflection.Emit.SignatureHelper GetPropertySigHelper(class System.Reflection.Module mod, class System.Type returnType, class System.Type[] requiredReturnTypeCustomModifiers, class System.Type[] optionalReturnTypeCustomModifiers, class System.Type[] parameterTypes, class System.Type[][] requiredParameterTypeCustomModifiers, class System.Type[][] optionalParameterTypeCustomModifiers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.SignatureHelper.GetPropertySigHelper(System.Reflection.Module,System.Type,System.Type[],System.Type[],System.Type[],System.Type[][],System.Type[][])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.ILGeneration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.SignatureHelper</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mod" Type="System.Reflection.Module" />
+        <Parameter Name="returnType" Type="System.Type" />
+        <Parameter Name="requiredReturnTypeCustomModifiers" Type="System.Type[]" />
+        <Parameter Name="optionalReturnTypeCustomModifiers" Type="System.Type[]" />
+        <Parameter Name="parameterTypes" Type="System.Type[]" />
+        <Parameter Name="requiredParameterTypeCustomModifiers" Type="System.Type[][]" />
+        <Parameter Name="optionalParameterTypeCustomModifiers" Type="System.Type[][]" />
+      </Parameters>
+      <Docs>
+        <param name="mod"><see cref="T:System.Reflection.Emit.ModuleBuilder" />対象のプロパティを格納する、<see cref="T:System.Reflection.Emit.SignatureHelper" />を要求します。</param>
+        <param name="returnType">プロパティの型。</param>
+        <param name="requiredReturnTypeCustomModifiers">戻り値の型の必須カスタム修飾子をなどを表す型の配列<see cref="T:System.Runtime.CompilerServices.IsConst" />または<see cref="T:System.Runtime.CompilerServices.IsBoxed" />です。 戻り値の型が必須のカスタム修飾子を持たない場合は、<see langword="null" /> を指定します。</param>
+        <param name="optionalReturnTypeCustomModifiers">戻り値の型の省略可能なカスタム修飾子をなどを表す型の配列<see cref="T:System.Runtime.CompilerServices.IsConst" />または<see cref="T:System.Runtime.CompilerServices.IsBoxed" />です。 戻り値の型が省略可能なカスタム修飾子を持たない場合は、<see langword="null" /> を指定します。</param>
+        <param name="parameterTypes">プロパティの引数の型または<see langword="null" />プロパティに引数があるない場合。</param>
+        <param name="requiredParameterTypeCustomModifiers">型の配列の配列。 各型の配列では、プロパティの対応する引数の必須カスタム修飾子を表します。 特定の引数が必須のカスタム修飾子を持たない場合は、指定<see langword="null" />型の配列の代わりにします。 プロパティは、引数を持たないか、どの引数の必須カスタム修飾子が場合は、指定<see langword="null" />配列の配列の代わりにします。</param>
+        <param name="optionalParameterTypeCustomModifiers">型の配列の配列。 各型の配列では、プロパティの対応する引数の場合は、省略可能なカスタム修飾子を表します。 特定の引数は省略可能カスタム修飾子を持たない場合は、指定<see langword="null" />型の配列の代わりにします。 プロパティがあるない場合、引数または引数のいずれも省略可能カスタム修飾子がある場合、指定<see langword="null" />配列の配列の代わりにします。</param>
+        <summary>プロパティ、プロパティの型、プロパティの引数、および引数および戻り値の型のカスタム修飾子を含む動的モジュールを指定するプロパティの署名ヘルパーを返します。</summary>
+        <returns>A<see cref="T:System.Reflection.Emit.SignatureHelper" />プロパティのオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください、<xref:System.Runtime.CompilerServices>のカスタム修飾子を表すクラスの名前空間。  
+  
+ プロパティにカスタム修飾子があるない場合を使用して、<xref:System.Reflection.Emit.SignatureHelper.GetPropertySigHelper%28System.Reflection.Module%2CSystem.Type%2CSystem.Type%5B%5D%29>メソッドのオーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="mod" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="parameterTypes" /> の要素は <see langword="null" /> です。  
+  
+ または  
+  
+ 指定したカスタム修飾子の 1 つは<see langword="null" />します。 (ただし、<see langword="null" />のカスタム修飾子をいずれかの引数の配列を指定することができます)。</exception>
+        <exception cref="T:System.ArgumentException">署名は既に終了しました。  
+  
+ または  
+  
+ <paramref name="mod" /> が <see cref="T:System.Reflection.Emit.ModuleBuilder" /> ではありません。  
+  
+ または  
+  
+ 指定したカスタム修飾子の 1 つは、配列型です。  
+  
+ または  
+  
+ 指定したカスタム修飾子の 1 つは、オープン ジェネリック型です。 つまり、<see cref="P:System.Type.ContainsGenericParameters" />プロパティは<see langword="true" />のカスタム修飾子です。  
+  
+ または  
+  
+ <paramref name="requiredParameterTypeCustomModifiers" /> または <paramref name="optionalParameterTypeCustomModifiers" /> のサイズは <paramref name="parameterTypes" /> のサイズと同じではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertySigHelper">
+      <MemberSignature Language="C#" Value="public static System.Reflection.Emit.SignatureHelper GetPropertySigHelper (System.Reflection.Module mod, System.Reflection.CallingConventions callingConvention, Type returnType, Type[] requiredReturnTypeCustomModifiers, Type[] optionalReturnTypeCustomModifiers, Type[] parameterTypes, Type[][] requiredParameterTypeCustomModifiers, Type[][] optionalParameterTypeCustomModifiers);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Reflection.Emit.SignatureHelper GetPropertySigHelper(class System.Reflection.Module mod, valuetype System.Reflection.CallingConventions callingConvention, class System.Type returnType, class System.Type[] requiredReturnTypeCustomModifiers, class System.Type[] optionalReturnTypeCustomModifiers, class System.Type[] parameterTypes, class System.Type[][] requiredParameterTypeCustomModifiers, class System.Type[][] optionalParameterTypeCustomModifiers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.SignatureHelper.GetPropertySigHelper(System.Reflection.Module,System.Reflection.CallingConventions,System.Type,System.Type[],System.Type[],System.Type[],System.Type[][],System.Type[][])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.ILGeneration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.SignatureHelper</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mod" Type="System.Reflection.Module" />
+        <Parameter Name="callingConvention" Type="System.Reflection.CallingConventions" />
+        <Parameter Name="returnType" Type="System.Type" />
+        <Parameter Name="requiredReturnTypeCustomModifiers" Type="System.Type[]" />
+        <Parameter Name="optionalReturnTypeCustomModifiers" Type="System.Type[]" />
+        <Parameter Name="parameterTypes" Type="System.Type[]" />
+        <Parameter Name="requiredParameterTypeCustomModifiers" Type="System.Type[][]" />
+        <Parameter Name="optionalParameterTypeCustomModifiers" Type="System.Type[][]" />
+      </Parameters>
+      <Docs>
+        <param name="mod"><see cref="T:System.Reflection.Emit.ModuleBuilder" />対象のプロパティを格納する、<see cref="T:System.Reflection.Emit.SignatureHelper" />を要求します。</param>
+        <param name="callingConvention">プロパティ アクセサーの呼び出し規約。</param>
+        <param name="returnType">プロパティの型。</param>
+        <param name="requiredReturnTypeCustomModifiers">戻り値の型の必須カスタム修飾子をなどを表す型の配列<see cref="T:System.Runtime.CompilerServices.IsConst" />または<see cref="T:System.Runtime.CompilerServices.IsBoxed" />です。 戻り値の型が必須のカスタム修飾子を持たない場合は、<see langword="null" /> を指定します。</param>
+        <param name="optionalReturnTypeCustomModifiers">戻り値の型の省略可能なカスタム修飾子をなどを表す型の配列<see cref="T:System.Runtime.CompilerServices.IsConst" />または<see cref="T:System.Runtime.CompilerServices.IsBoxed" />です。 戻り値の型が省略可能なカスタム修飾子を持たない場合は、<see langword="null" /> を指定します。</param>
+        <param name="parameterTypes">プロパティの引数の型または<see langword="null" />プロパティに引数があるない場合。</param>
+        <param name="requiredParameterTypeCustomModifiers">型の配列の配列。 各型の配列では、プロパティの対応する引数の必須カスタム修飾子を表します。 特定の引数が必須のカスタム修飾子を持たない場合は、指定<see langword="null" />型の配列の代わりにします。 プロパティは、引数を持たないか、どの引数の必須カスタム修飾子が場合は、指定<see langword="null" />配列の配列の代わりにします。</param>
+        <param name="optionalParameterTypeCustomModifiers">型の配列の配列。 各型の配列では、プロパティの対応する引数の場合は、省略可能なカスタム修飾子を表します。 特定の引数は省略可能カスタム修飾子を持たない場合は、指定<see langword="null" />型の配列の代わりにします。 プロパティがあるない場合、引数または引数のいずれも省略可能カスタム修飾子がある場合、指定<see langword="null" />配列の配列の代わりにします。</param>
+        <summary>プロパティ、呼び出し規約、プロパティの型、プロパティの引数、および引数および戻り値の型のカスタム修飾子を含む動的モジュールを指定するプロパティの署名ヘルパーを返します。</summary>
+        <returns>A<see cref="T:System.Reflection.Emit.SignatureHelper" />プロパティのオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください、<xref:System.Runtime.CompilerServices>のカスタム修飾子を表すクラスの名前空間。  
+  
+ プロパティにカスタム修飾子があるない場合を使用して、<xref:System.Reflection.Emit.SignatureHelper.GetPropertySigHelper%28System.Reflection.Module%2CSystem.Type%2CSystem.Type%5B%5D%29>メソッドのオーバー ロードします。  
+  
+> [!NOTE]
+>  このメソッドのオーバー ロードがで導入された、[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]またはそれ以降。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="mod" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="parameterTypes" /> の要素は <see langword="null" /> です。  
+  
+ または  
+  
+ 指定したカスタム修飾子の 1 つは<see langword="null" />します。 (ただし、<see langword="null" />のカスタム修飾子をいずれかの引数の配列を指定することができます)。</exception>
+        <exception cref="T:System.ArgumentException">署名は既に終了しました。  
+  
+ または  
+  
+ <paramref name="mod" /> が <see cref="T:System.Reflection.Emit.ModuleBuilder" /> ではありません。  
+  
+ または  
+  
+ 指定したカスタム修飾子の 1 つは、配列型です。  
+  
+ または  
+  
+ 指定したカスタム修飾子の 1 つは、オープン ジェネリック型です。 つまり、<see cref="P:System.Type.ContainsGenericParameters" />プロパティは<see langword="true" />のカスタム修飾子です。  
+  
+ または  
+  
+ <paramref name="requiredParameterTypeCustomModifiers" /> または <paramref name="optionalParameterTypeCustomModifiers" /> のサイズは <paramref name="parameterTypes" /> のサイズと同じではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSignature">
+      <MemberSignature Language="C#" Value="public byte[] GetSignature ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int8[] GetSignature() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.SignatureHelper.GetSignature" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.ILGeneration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>終了トークン署名を追加し、さらにトークンを追加することはできませんので、終了すると、署名をマークします。</summary>
+        <returns>完全署名で構成のバイト配列を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._SignatureHelper.GetIDsOfNames">
+      <MemberSignature Language="C#" Value="void _SignatureHelper.GetIDsOfNames (ref Guid riid, IntPtr rgszNames, uint cNames, uint lcid, IntPtr rgDispId);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._SignatureHelper.GetIDsOfNames([in]valuetype System.Guid&amp; riid, native int rgszNames, unsigned int32 cNames, unsigned int32 lcid, native int rgDispId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.SignatureHelper.System#Runtime#InteropServices#_SignatureHelper#GetIDsOfNames(System.Guid@,System.IntPtr,System.UInt32,System.UInt32,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="riid" Type="System.Guid&amp;" RefType="ref" />
+        <Parameter Name="rgszNames" Type="System.IntPtr" />
+        <Parameter Name="cNames" Type="System.UInt32" />
+        <Parameter Name="lcid" Type="System.UInt32" />
+        <Parameter Name="rgDispId" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="riid">将来使用するために予約されています。 IID_NULL にする必要があります。</param>
+        <param name="rgszNames">マッピング対象として渡される名前の配列。</param>
+        <param name="cNames">マッピングされる名前のカウント。</param>
+        <param name="lcid">名前を解釈するロケール コンテキスト。</param>
+        <param name="rgDispId">名前に対応する ID を受け取る、呼び出し元が割り当てた配列。</param>
+        <summary>一連の名前を対応する一連のディスパッチ識別子に割り当てます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。 詳細については`IDispatch::GetIDsOfNames`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">COM を使用して遅延バインディング アクセス<c>IDispatch</c>インターフェイスはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._SignatureHelper.GetTypeInfo">
+      <MemberSignature Language="C#" Value="void _SignatureHelper.GetTypeInfo (uint iTInfo, uint lcid, IntPtr ppTInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._SignatureHelper.GetTypeInfo(unsigned int32 iTInfo, unsigned int32 lcid, native int ppTInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.SignatureHelper.System#Runtime#InteropServices#_SignatureHelper#GetTypeInfo(System.UInt32,System.UInt32,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="iTInfo" Type="System.UInt32" />
+        <Parameter Name="lcid" Type="System.UInt32" />
+        <Parameter Name="ppTInfo" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="iTInfo">返される型情報。</param>
+        <param name="lcid">型情報のロケール ID。</param>
+        <param name="ppTInfo">要求された型情報オブジェクトへのポインターを取得します。</param>
+        <summary>オブジェクトの型情報を取得します。この型情報を使用して、インターフェイスの型情報を取得できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。 詳細については`IDispatch::GetTypeInfo`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">COM を使用して遅延バインディング アクセス<c>IDispatch</c>インターフェイスはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._SignatureHelper.GetTypeInfoCount">
+      <MemberSignature Language="C#" Value="void _SignatureHelper.GetTypeInfoCount (out uint pcTInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._SignatureHelper.GetTypeInfoCount([out] unsigned int32&amp; pcTInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.SignatureHelper.System#Runtime#InteropServices#_SignatureHelper#GetTypeInfoCount(System.UInt32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pcTInfo" Type="System.UInt32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="pcTInfo">オブジェクトにより提供される型タイプ情報インターフェイスの数を受け取る場所を指定します。</param>
+        <summary>オブジェクトが提供する型情報インターフェイスの数 (0 または 1) を取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。 詳細については`IDispatch::GetTypeInfoCount`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">COM を使用して遅延バインディング アクセス<c>IDispatch</c>インターフェイスはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._SignatureHelper.Invoke">
+      <MemberSignature Language="C#" Value="void _SignatureHelper.Invoke (uint dispIdMember, ref Guid riid, uint lcid, short wFlags, IntPtr pDispParams, IntPtr pVarResult, IntPtr pExcepInfo, IntPtr puArgErr);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._SignatureHelper.Invoke(unsigned int32 dispIdMember, [in]valuetype System.Guid&amp; riid, unsigned int32 lcid, int16 wFlags, native int pDispParams, native int pVarResult, native int pExcepInfo, native int puArgErr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.SignatureHelper.System#Runtime#InteropServices#_SignatureHelper#Invoke(System.UInt32,System.Guid@,System.UInt32,System.Int16,System.IntPtr,System.IntPtr,System.IntPtr,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dispIdMember" Type="System.UInt32" />
+        <Parameter Name="riid" Type="System.Guid&amp;" RefType="ref" />
+        <Parameter Name="lcid" Type="System.UInt32" />
+        <Parameter Name="wFlags" Type="System.Int16" />
+        <Parameter Name="pDispParams" Type="System.IntPtr" />
+        <Parameter Name="pVarResult" Type="System.IntPtr" />
+        <Parameter Name="pExcepInfo" Type="System.IntPtr" />
+        <Parameter Name="puArgErr" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="dispIdMember">メンバーを識別します。</param>
+        <param name="riid">将来使用するために予約されています。 IID_NULL にする必要があります。</param>
+        <param name="lcid">引数を解釈する対象のロケール コンテキスト。</param>
+        <param name="wFlags">呼び出しのコンテキストを記述するフラグ。</param>
+        <param name="pDispParams">引数の配列、名前付き引数の DISPID の配列、配列内の要素数のカウントを格納している構造体へのポインター。</param>
+        <param name="pVarResult">結果が格納される場所へのポインター。</param>
+        <param name="pExcepInfo">例外情報を格納する構造体へのポインター。</param>
+        <param name="puArgErr">エラーが存在する最初の引数のインデックス。</param>
+        <summary>オブジェクトによって公開されたプロパティおよびメソッドへのアクセスを提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。 詳細については`IDispatch::Invoke`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">COM を使用して遅延バインディング アクセス<c>IDispatch</c>インターフェイスはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.SignatureHelper.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.ILGeneration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>署名の引数を表す文字列を返します。</summary>
+        <returns>この署名の引数を表す文字列を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

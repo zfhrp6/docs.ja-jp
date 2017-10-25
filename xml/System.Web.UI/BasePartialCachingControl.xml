@@ -1,0 +1,185 @@
+<Type Name="BasePartialCachingControl" FullName="System.Web.UI.BasePartialCachingControl">
+  <TypeSignature Language="C#" Value="public abstract class BasePartialCachingControl : System.Web.UI.Control" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit BasePartialCachingControl extends System.Web.UI.Control" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.BasePartialCachingControl" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Control</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>基本的な機能を提供、<see cref="T:System.Web.UI.StaticPartialCachingControl" />と<see cref="T:System.Web.UI.PartialCachingControl" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.BasePartialCachingControl>クラスは、ユーザー コントロールをプログラムでのシナリオで有効なキャッシュには出力を表します。 ASP.NET には、コントロールの出力キャッシュを有効にするいくつかの方法が用意されています。 次に、出力キャッシュの有効化に使用できる方法を説明します。  
+  
+-   使用して、`@ OutputCache`ディレクティブを有効にするは、宣言型のシナリオでのキャッシュを出力します。  
+  
+-   使用して、<xref:System.Web.UI.PartialCachingAttribute>分離コード ファイル内のユーザー コントロールのキャッシュを有効にするクラス。  
+  
+-   使用して、<xref:System.Web.UI.ControlCachePolicy>クラスを使用しているプログラムのシナリオでキャッシュの設定を指定する<xref:System.Web.UI.BasePartialCachingControl>インスタンス。  
+  
+   
+  
+## Examples  
+ 次のコード例への参照を作成する方法を示します、<xref:System.Web.UI.BasePartialCachingControl>の値に設定し、<xref:System.Web.UI.Control.Parent%2A>プロパティです。 コードを設定し、<xref:System.Web.UI.BasePartialCachingControl.Dependency%2A>プロパティを<xref:System.Web.Caching.CacheDependency>コントロールは、テキスト ファイルに依存するオブジェクト。  
+  
+ [!code-csharp[BasePartialCachingControl#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BasePartialCachingControl/CS/dep1cs.ascx#1)]
+ [!code-vb[BasePartialCachingControl#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BasePartialCachingControl/VB/dep1vb.ascx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected BasePartialCachingControl ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.BasePartialCachingControl.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.BasePartialCachingControl" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CachePolicy">
+      <MemberSignature Language="C#" Value="public System.Web.UI.ControlCachePolicy CachePolicy { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ControlCachePolicy CachePolicy" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.BasePartialCachingControl.CachePolicy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ControlCachePolicy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.ControlCachePolicy" />ラップされたユーザー コントロールに関連付けられているオブジェクト。</summary>
+        <value>A<see cref="T:System.Web.UI.ControlCachePolicy" />ラップされたユーザー コントロールの出力キャッシュに関連するプロパティを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.BasePartialCachingControl.CachePolicy%2A>プロパティにプログラムでアクセスを使用して、<xref:System.Web.UI.ControlCachePolicy>に含まれるユーザー コントロールに関連付けられているオブジェクト、<xref:System.Web.UI.BasePartialCachingControl>インスタンス。 <xref:System.Web.UI.ControlCachePolicy>オブジェクトは、ユーザー コントロールのキャッシュの動作と設定に影響を与えるプログラムで操作できます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ユーザー コントロールを動的に読み込まれ、実行時にプログラムで操作する方法を示します。 この例では、3 つの部分があります。  
+  
+-   部分クラス`LogOnControl`から継承する、<xref:System.Web.UI.UserControl>基底クラスとする、<xref:System.Web.UI.PartialCachingAttribute>属性を適用します。  
+  
+-   ユーザー コントロールで使用される、`LogOnControl`部分クラスです。  
+  
+-   ユーザー コントロールをホストする Web フォーム ページです。  
+  
+ この例を正常に実行するには、ユーザー コントロール ファイル (.ascx)、その分離コード ファイル (.cs または .vb) およびユーザー コントロール (.aspx) をホストする Web フォーム ページは同じディレクトリになっていることを確認します。  
+  
+ 例では、最初の部分を示しています、<xref:System.Web.UI.PartialCachingAttribute>という名前のユーザー コントロールに適用する`LogOnControl`、によってラップされた、つまり、ユーザー コントロール、<xref:System.Web.UI.PartialCachingControl>実行時にコントロールです。 `LogOnControl`オブジェクトのキャッシュ設定をプログラムで指定できますを通じてそれに関連する操作<xref:System.Web.UI.ControlCachePolicy>への参照によって使用されるオブジェクト、<xref:System.Web.UI.PartialCachingControl>ラップします。 この例ではキャッシュの設定はページの初期化中に確認して、いくつかの条件が満たされた場合に変更します。  
+  
+ [!code-csharp[System.Web.UI.ControlCachePolicy#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ControlCachePolicy/CS/LogonControl.cs#2)]
+ [!code-vb[System.Web.UI.ControlCachePolicy#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ControlCachePolicy/VB/logoncontrol.vb#2)]  
+  
+ この例の 2 番目の部分では、ユーザー コントロールのキャッシュを示すために、前の例で使用されるユーザー コントロールを示します。  
+  
+ [!code-aspx-csharp[System.Web.UI.ControlCachePolicy#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ControlCachePolicy/CS/Logonformcs.ascx#3)]
+ [!code-aspx-vb[System.Web.UI.ControlCachePolicy#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ControlCachePolicy/VB/Logonformvb.ascx#3)]  
+  
+ この例の 3 番目の部分では、使用方法を示します、 `LogOnControl` Web フォーム ページからユーザー コントロールです。  
+  
+ [!code-aspx-csharp[System.Web.UI.ControlCachePolicy#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ControlCachePolicy/CS/controlcachepolicy_loadcontrolcs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ControlCachePolicy#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ControlCachePolicy/VB/controlcachepolicy_loadcontrolvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dependency">
+      <MemberSignature Language="C#" Value="public System.Web.Caching.CacheDependency Dependency { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Caching.CacheDependency Dependency" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.BasePartialCachingControl.Dependency" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Caching.CacheDependency</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のインスタンス、<see cref="T:System.Web.Caching.CacheDependency" />キャッシュされたユーザー コントロールの出力に関連付けられているクラスです。</summary>
+        <value><see cref="T:System.Web.Caching.CacheDependency" />サーバー コントロールに関連付けられています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、関連付けられているキャッシュの依存関係が変更されたときに、出力キャッシュからユーザー コントロールの出力を削除することができます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、<xref:System.Web.UI.BasePartialCachingControl.Dependency%2A>プロパティを<xref:System.Web.Caching.CacheDependency>コントロールは、テキスト ファイルに依存するオブジェクト。 このコード例に示されている例の一部である、<xref:System.Web.UI.BasePartialCachingControl>クラスです。  
+  
+ [!code-csharp[BasePartialCachingControl#2](~/samples/snippets/csharp/VS_Snippets_WebNet/BasePartialCachingControl/CS/dep1cs.ascx#2)]
+ [!code-vb[BasePartialCachingControl#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BasePartialCachingControl/VB/dep1vb.ascx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public override void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.BasePartialCachingControl.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.BasePartialCachingControl" /> クラスによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="protected override void Render (System.Web.UI.HtmlTextWriter output);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Render(class System.Web.UI.HtmlTextWriter output) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.BasePartialCachingControl.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="output" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="output"><see cref="T:System.Web.UI.HtmlTextWriter" />キャッシュされたコントロールに書き込みを行うページです。</param>
+        <summary>指定されたユーザー コントロールのコンテンツを出力<see cref="T:System.Web.UI.HtmlTextWriter" />出力ストリーム。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

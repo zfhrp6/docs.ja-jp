@@ -1,0 +1,84 @@
+<Type Name="ResolveCompletedEventArgs" FullName="System.Net.PeerToPeer.ResolveCompletedEventArgs">
+  <TypeSignature Language="C#" Value="public class ResolveCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ResolveCompletedEventArgs extends System.ComponentModel.AsyncCompletedEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Net.PeerToPeer.ResolveCompletedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.AsyncCompletedEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>組み合わせて使用、<see cref="E:System.Net.PeerToPeer.PeerNameResolver.ResolveCompleted" />イベントで、特定の解決要求のときに通知される<see cref="T:System.Net.PeerToPeer.PeerName" />が完了しました。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ResolveCompletedEventArgs オブジェクトを使用するインスタンスを作成、<xref:System.Net.PeerToPeer.PeerNameResolver>オブジェクトおよび Resolve メソッドは、のいずれかを利用します。 非同期処理を使用して、<xref:System.Net.PeerToPeer.PeerNameResolver.ResolveAsync%2A>メソッドです。  
+  
+ ときに、競合回避モジュールはクエリの実行にクラウドの末尾に到達、 <xref:System.Net.PeerToPeer.PeerName>、エントリを記録の最大数に到達したか、<xref:System.Net.PeerToPeer.PeerNameRecordCollection>構築、解決プロセスを完了するイベントが発生し、関連付けられているデリゲートが ResolveAsync を完了すると、します。 コレクションを返さない異常の完了イベントを発生させることができますも。  
+  
+ このイベントは、すべてのエンドポイントが見つかったとき 1 回だけ発生します。  
+  
+ この競合回避モジュールのオブジェクトのインスタンスへのすべての参照は、指定されたトークンは、この非同期解決要求の開発者が決定した一意の識別子を使用して調整されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ResolveCompletedEventArgs (System.Net.PeerToPeer.PeerNameRecordCollection peerNameRecordCollection, Exception error, bool canceled, object userToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Net.PeerToPeer.PeerNameRecordCollection peerNameRecordCollection, class System.Exception error, bool canceled, object userToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.ResolveCompletedEventArgs.#ctor(System.Net.PeerToPeer.PeerNameRecordCollection,System.Exception,System.Boolean,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="peerNameRecordCollection" Type="System.Net.PeerToPeer.PeerNameRecordCollection" />
+        <Parameter Name="error" Type="System.Exception" />
+        <Parameter Name="canceled" Type="System.Boolean" />
+        <Parameter Name="userToken" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="peerNameRecordCollection">解決されたピア名に関連付けられているコレクション。</param>
+        <param name="error">エラーが発生すると、例外を返します。</param>
+        <param name="canceled">
+          <see langword="True" />場合、<see cref="Overload:System.Net.PeerToPeer.PeerNameResolver.ResolveAsync" />操作が取り消された、それ以外の場合<see langword="False" />です。</param>
+        <param name="userToken"><see cref="Overload:System.Net.PeerToPeer.PeerNameResolver.ResolveAsync" /> 操作が開始された時点で指定されたユーザー トークン。</param>
+        <summary><see cref="T:System.Net.PeerToPeer.ResolveCompletedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PeerNameRecordCollection">
+      <MemberSignature Language="C#" Value="public System.Net.PeerToPeer.PeerNameRecordCollection PeerNameRecordCollection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.PeerToPeer.PeerNameRecordCollection PeerNameRecordCollection" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.ResolveCompletedEventArgs.PeerNameRecordCollection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.PeerNameRecordCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Net.PeerToPeer.PeerNameRecordCollection" />を解決するオブジェクト。</summary>
+        <value><see cref="T:System.Net.PeerToPeer.PeerNameRecordCollection" />オブジェクトを解決するのへの応答で、 <see cref="Overload:System.Net.PeerToPeer.PeerNameResolver.ResolveAsync" /> 、特定の操作<see cref="T:System.Net.PeerToPeer.PeerName" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのクラウドは、このピア名の照会が完了時に、またはピアの名前のレコードの最大数が取得されたときに、このイベントが発生します。 ピア名のレコード コレクションに配置することによって生成される、 <xref:System.Net.PeerToPeer.ResolveCompletedEventArgs> OnResolveCompleted メソッドが待機しているイベント引数。  状態の変更には、プロセスが起動します。  
+  
+ すべてのプロパティの既定値は、明示的に指定しない限り、`null`ゼロ (0) のプロパティの型の参照型で`int`です。 レコードが見つからなかった場合`null`が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

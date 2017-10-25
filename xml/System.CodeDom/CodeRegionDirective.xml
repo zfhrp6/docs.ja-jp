@@ -1,0 +1,174 @@
+<Type Name="CodeRegionDirective" FullName="System.CodeDom.CodeRegionDirective">
+  <TypeSignature Language="C#" Value="public class CodeRegionDirective : System.CodeDom.CodeDirective" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CodeRegionDirective extends System.CodeDom.CodeDirective" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.CodeRegionDirective" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.CodeDom.CodeDirective</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コード領域のモードと名前を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.CodeRegionDirective.RegionMode%2A>プロパティは、インスタンスが開始または領域の終端を表すかどうかを指定します。  
+  
+> [!NOTE]
+>  すべてのコンパイラでは、コード領域ディレクティブをサポートします。 コンパイラ エラーを防ぐためには、コード プロバイダー通常コード領域ディレクティブに含めないプロバイダーの出力をサポートしていないコンパイラです。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.CodeDom.CodeRegionDirective>もコンパイルされたコードを生成するために使用されるグラフの作成時にします。  
+  
+ [!code-csharp[System.CodeDom.CodeDirectives#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.CodeDom.CodeDirectives/CS/codedirective.cs#1)]
+ [!code-vb[System.CodeDom.CodeDirectives#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.CodeDom.CodeDirectives/VB/codedirective.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeRegionDirective ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeRegionDirective.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.CodeDom.CodeRegionDirective" /> クラスの新しいインスタンスを既定値で初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用する場合も設定し、<xref:System.CodeDom.CodeRegionDirective.RegionMode%2A>と<xref:System.CodeDom.CodeRegionDirective.RegionText%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeRegionDirective (System.CodeDom.CodeRegionMode regionMode, string regionText);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.CodeDom.CodeRegionMode regionMode, string regionText) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeRegionDirective.#ctor(System.CodeDom.CodeRegionMode,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="regionMode" Type="System.CodeDom.CodeRegionMode" />
+        <Parameter Name="regionText" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="regionMode"><see cref="T:System.CodeDom.CodeRegionMode" /> 値のいずれか。</param>
+        <param name="regionText">領域の名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeRegionDirective" />クラス、そのモードと名前を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.CodeDom.CodeRegionDirective.%23ctor%28System.CodeDom.CodeRegionMode%2CSystem.String%29>コンス トラクターです。 このコード例に示されている例の一部である、<xref:System.CodeDom.CodeRegionDirective>クラスです。  
+  
+ [!code-csharp[System.CodeDom.CodeDirectives#9](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.CodeDom.CodeDirectives/CS/codedirective.cs#9)]
+ [!code-vb[System.CodeDom.CodeDirectives#9](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.CodeDom.CodeDirectives/VB/codedirective.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegionMode">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeRegionMode RegionMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.CodeDom.CodeRegionMode RegionMode" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeRegionDirective.RegionMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeRegionMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または領域ディレクティブのモードを設定します。</summary>
+        <value><see cref="T:System.CodeDom.CodeRegionMode" /> 値のいずれか。 既定値は、<see cref="F:System.CodeDom.CodeRegionMode.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.CodeDom.CodeRegionDirective.RegionMode%2A>プロパティです。 この例に示されている例の一部である、<xref:System.CodeDom.CodeRegionDirective>クラスです。  
+  
+ [!code-csharp[System.CodeDom.CodeDirectives#11](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.CodeDom.CodeDirectives/CS/codedirective.cs#11)]
+ [!code-vb[System.CodeDom.CodeDirectives#11](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.CodeDom.CodeDirectives/VB/codedirective.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegionText">
+      <MemberSignature Language="C#" Value="public string RegionText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RegionText" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeRegionDirective.RegionText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または領域の名前を設定します。</summary>
+        <value>領域の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.CodeDom.CodeRegionDirective.RegionText%2A>プロパティです。 この例に示されている例の一部である、<xref:System.CodeDom.CodeRegionDirective>クラスです。  
+  
+ [!code-csharp[System.CodeDom.CodeDirectives#12](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.CodeDom.CodeDirectives/CS/codedirective.cs#12)]
+ [!code-vb[System.CodeDom.CodeDirectives#12](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.CodeDom.CodeDirectives/VB/codedirective.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

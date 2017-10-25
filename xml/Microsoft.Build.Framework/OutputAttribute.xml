@@ -1,0 +1,55 @@
+<Type Name="OutputAttribute" FullName="Microsoft.Build.Framework.OutputAttribute">
+  <TypeSignature Language="C#" Value="public sealed class OutputAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OutputAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Framework.OutputAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property, AllowMultiple=false, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>タスクからのデータを出力するタスクのプロパティを識別するタスクの作成者が使用してメタデータの属性を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[vstecmsbuild](~/includes/vstecmsbuild-md.md)]エンジンはタスクからは、データを出力する、この属性でマークされたタスクのプロパティのみを許可します。 プロジェクトの作成者でこの属性でマークされたプロパティにのみ使用できます、`Output`プロジェクト ファイルの要素。 その他のすべてのタスクのプロパティは、タスクへの入力として扱われます。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性を使用してメタデータの拡張](~/docs/standard/attributes/index.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、1 つまたは複数のディレクトリを作成するタスクのコードを示します。  
+  
+ [!code-csharp[msbuild_MakeDirTask#1](~/samples/snippets/csharp/VS_Snippets_Misc/msbuild_MakeDirTask/CS/msbuild_MakeDirTask.cs#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OutputAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Framework.OutputAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.Build.Framework.OutputAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

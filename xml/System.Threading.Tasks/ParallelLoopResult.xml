@@ -1,0 +1,100 @@
+<Type Name="ParallelLoopResult" FullName="System.Threading.Tasks.ParallelLoopResult">
+  <TypeSignature Language="C#" Value="public struct ParallelLoopResult" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit ParallelLoopResult extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.Tasks.ParallelLoopResult" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>実行の完了ステータスを示します、<see cref="T:System.Threading.Tasks.Parallel" />ループします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Threading.Tasks.ParallelLoopResult.IsCompleted%2A>ループのすべてのイテレーションが実行されるようにすると、ループの実行が完了、し、true を返します。 場合<xref:System.Threading.Tasks.ParallelLoopResult.IsCompleted%2A>false を返しますと<xref:System.Threading.Tasks.ParallelLoopResult.LowestBreakIteration%2A>は null を返します、呼び出しを<xref:System.Threading.Tasks.ParallelLoopState.Stop%2A>ループが途中で終了するために使用されました。 場合<xref:System.Threading.Tasks.ParallelLoopResult.IsCompleted%2A>false を返しますと<xref:System.Threading.Tasks.ParallelLoopResult.LowestBreakIteration%2A>null 以外の整数値を返す<xref:System.Threading.Tasks.ParallelLoopState.Break%2A>ループが途中で終了するために使用されました。  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>すべてのパブリック メンバー<see cref="T:System.Threading.Tasks.ParallelLoopResult" />スレッド セーフである、複数のスレッドから同時に呼び出すことができます。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName="IsCompleted">
+      <MemberSignature Language="C#" Value="public bool IsCompleted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCompleted" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.ParallelLoopResult.IsCompleted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ループのすべてのイテレーションが実行され、ループが途中で終了する要求を受信しませんでしたが、完了、まで、ループが実行されたかどうかを取得します。</summary>
+        <value>true の場合は、ループの実行が完了します。場合は false です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LowestBreakIteration">
+      <MemberSignature Language="C#" Value="public Nullable&lt;long&gt; LowestBreakIteration { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;int64&gt; LowestBreakIteration" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.ParallelLoopResult.LowestBreakIteration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int64&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>元となる最下位のイテレーションのインデックスを取得<see cref="M:System.Threading.Tasks.ParallelLoopState.Break" />が呼び出されました。</summary>
+        <value>Break ステートメントを呼び出した元となる最下位のイテレーションを表す整数を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Threading.Tasks.ParallelLoopState.Break%2A>が使用されている、このプロパティは null を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

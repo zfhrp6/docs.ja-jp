@@ -1,0 +1,113 @@
+<Type Name="TrackingChannel" FullName="System.Workflow.Runtime.Tracking.TrackingChannel">
+  <TypeSignature Language="C#" Value="public abstract class TrackingChannel" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit TrackingChannel extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.Tracking.TrackingChannel" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>追跡チャネルを表す <see langword="abstract" /> 基本クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.Runtime.Tracking.TrackingService> が存在する場合、ランタイム追跡インフラストラクチャはワークフロー インスタンスの追跡チャネルを取得するために <xref:System.Workflow.Runtime.Tracking.TrackingService.GetTrackingChannel%2A> を呼び出します。 ワークフロー インスタンスに関連した <xref:System.Workflow.Runtime.Tracking.TrackingProfile> 内の追跡ポイントを追跡インフラストラクチャが照合するごとに、ワークフロー インスタンスに関連した追跡レコードをホスト アプリケーションに戻すために、ランタイム追跡インフラストラクチャはこの追跡チャネルを使用します。 アプリケーションでは、任意の方法でこの追跡情報を扱うことができます。 たとえば、<xref:System.Workflow.Runtime.Tracking.SqlTrackingService> は追跡情報を SQL データベースに書き込みます。  
+  
+ 追跡サービス用の追跡チャネルを作成するには、<xref:System.Workflow.Runtime.Tracking.TrackingChannel> 基本クラスからクラスを派生させます。  <xref:System.Workflow.Runtime.Tracking.TrackingParameters> の実装の呼び出し時にランタイム追跡インフラストラクチャによって渡される <xref:System.Workflow.Runtime.Tracking.TrackingService.GetTrackingChannel%2A> オブジェクトを使用すれば、追跡チャネルの各インスタンスを特定のワークフロー インスタンスに関連付けることができます。 ワークフロー ランタイム エンジンは、ワークフロー インスタンスに <xref:System.Workflow.Runtime.Tracking.TrackingProfile> を提供したそれぞれの追跡サービスから追跡チャネルを要求します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TrackingChannel ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.TrackingChannel.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスとして実装された場合、<see cref="T:System.Workflow.Runtime.Tracking.TrackingChannel" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceCompletedOrTerminated">
+      <MemberSignature Language="C#" Value="protected abstract void InstanceCompletedOrTerminated ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void InstanceCompletedOrTerminated() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.TrackingChannel.InstanceCompletedOrTerminated" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスに実装された場合、追跡チャネルに関連したワークフロー インスタンスが完了または終了したことを、追跡チャネル上のデータ受信側に通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この追跡チャネルに関連したワークフロー インスタンスが完了または終了したことを追跡チャネル上のデータ受信側に通知するために、ランタイム追跡インフラストラクチャは <xref:System.Workflow.Runtime.Tracking.TrackingChannel.InstanceCompletedOrTerminated%2A> を呼び出します。 追跡チャネル上には、これ以上のデータは送信されません。 <xref:System.Workflow.Runtime.Tracking.TrackingChannel.InstanceCompletedOrTerminated%2A> が呼び出されたとき、<xref:System.Workflow.Runtime.Tracking.TrackingChannel> クラス実装の必要に応じて、任意のアクションを実行できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Send">
+      <MemberSignature Language="C#" Value="protected abstract void Send (System.Workflow.Runtime.Tracking.TrackingRecord record);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void Send(class System.Workflow.Runtime.Tracking.TrackingRecord record) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.TrackingChannel.Send(System.Workflow.Runtime.Tracking.TrackingRecord)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="record" Type="System.Workflow.Runtime.Tracking.TrackingRecord" />
+      </Parameters>
+      <Docs>
+        <param name="record">送信する <see cref="T:System.Workflow.Runtime.Tracking.TrackingRecord" />。</param>
+        <summary>派生クラスで実装された場合、<see cref="T:System.Workflow.Runtime.Tracking.TrackingRecord" /> 上に <see cref="T:System.Workflow.Runtime.Tracking.TrackingChannel" /> を送出します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.TrackingChannel.Send%2A> 内の追跡ポイントを照合するとき、ランタイム追跡インフラストラクチャは <xref:System.Workflow.Runtime.Tracking.TrackingRecord> 上に <xref:System.Workflow.Runtime.Tracking.TrackingChannel> を送出するために <xref:System.Workflow.Runtime.Tracking.TrackingProfile> を呼び出します。 <xref:System.Workflow.Runtime.Tracking.TrackingChannel> 上に送られる追跡情報は、アプリケーションの必要に応じて任意の方法で扱うことができます。  
+  
+   
+  
+## Examples  
+ Send メソッドの実装例を次に示します。  この実装では、ワークフローの終了時に追跡メッセージがイベント ログに書き込まれます。  このサンプルは、終了追跡サービスの SDK サンプルです。  詳細については、次を参照してください。[終了追跡サービスのサンプル](http://msdn.microsoft.com/en-us/29b7c0d7-cece-4bb9-96d0-c5b6c6e14439)です。  
+  
+ [!code-csharp[WF_Samples#117](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#117)]
+ [!code-vb[WF_Samples#117](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#117)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

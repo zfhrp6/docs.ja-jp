@@ -1,0 +1,170 @@
+<Type Name="SecurityRoleAttribute" FullName="System.EnterpriseServices.SecurityRoleAttribute">
+  <TypeSignature Language="C#" Value="public sealed class SecurityRoleAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SecurityRoleAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.SecurityRoleAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly | System.AttributeTargets.Class | System.AttributeTargets.Method | System.AttributeTargets.Interface, AllowMultiple=true, Inherited=true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アプリケーションまたはコンポーネントの役割を構成します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.EnterpriseServices.SecurityRoleAttribute>アプリケーションにロールを追加して、コンポーネントに関連付けられています。 ときに<xref:System.EnterpriseServices.SecurityRoleAttribute>が適用される、全体としてアセンブリには、ロールがアプリケーションの構成 (COM + カタログ) に存在するをによりします。 COM + エクスプ ローラーを使用して、ロールのメンバーを追加することができます。  
+  
+ コンポーネントに適用されるときに、<xref:System.EnterpriseServices.SecurityRoleAttribute>によりの役割は、アプリケーションの構成内に存在して、対象のコンポーネントをロールに関連付けます。  
+  
+ 既定では、作成したロール メンバーを持つありません。 場合、<xref:System.EnterpriseServices.SecurityRoleAttribute.SetEveryoneAccess%2A>プロパティに設定されている`true`、Everyone ユーザー グループは、ロールに自動的に追加します。 これは、システムに対する最小限の制御が与えられているすべてのアクセスの種類のロールに最適です。  
+  
+ メソッドごと、およびインターフェイスごとに、コンポーネント レベルでセキュリティ ロールを指定することができます。 同様に他のメソッドの属性では、セキュリティの構成がない現在間で共有インターフェイスの定義とメソッドの実装です。  
+  
+   
+  
+## Examples  
+ アセンブリが含まれているロールを関連付けるには、この属性の使用を次のコード例に示します<xref:System.EnterpriseServices.ServicedComponent>クラスです。  
+  
+ [!code-cpp[EnterpriseServices_Security#3](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServices_Security/CPP/employeeinformation.cpp#3)]
+ [!code-csharp[EnterpriseServices_Security#3](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices_Security/CS/employeeinformation.cs#3)]
+ [!code-vb[EnterpriseServices_Security#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServices_Security/VB/employeeinformation.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.EnterpriseServices.SecurityRoleAttribute" />クラスとセット、<see cref="P:System.EnterpriseServices.SecurityRoleAttribute.Role" />プロパティです。</summary>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SecurityRoleAttribute (string role);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string role) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.SecurityRoleAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="role" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="role">アプリケーション、コンポーネント、インターフェイス、またはメソッドのセキュリティ ロール。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.EnterpriseServices.SecurityRoleAttribute" />クラスとセット、<see cref="P:System.EnterpriseServices.SecurityRoleAttribute.Role" />プロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ アセンブリが含まれているロールを関連付けるには、この属性の使用を次のコード例に示します<xref:System.EnterpriseServices.ServicedComponent>クラスです。  
+  
+ [!code-cpp[EnterpriseServices_Security#3](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServices_Security/CPP/employeeinformation.cpp#3)]
+ [!code-csharp[EnterpriseServices_Security#3](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices_Security/CS/employeeinformation.cs#3)]
+ [!code-vb[EnterpriseServices_Security#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServices_Security/VB/employeeinformation.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SecurityRoleAttribute (string role, bool everyone);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string role, bool everyone) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.SecurityRoleAttribute.#ctor(System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="role" Type="System.String" />
+        <Parameter Name="everyone" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="role">アプリケーション、コンポーネント、インターフェイス、またはメソッドのセキュリティ ロール。</param>
+        <param name="everyone">
+          <see langword="true" />新しく作成されたロールが、すべてのユーザーであることを必要とするユーザー グループにユーザーとして追加それ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.EnterpriseServices.SecurityRoleAttribute" />クラスとセット、<see cref="P:System.EnterpriseServices.SecurityRoleAttribute.Role" />と<see cref="P:System.EnterpriseServices.SecurityRoleAttribute.SetEveryoneAccess" />プロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public string Description { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.SecurityRoleAttribute.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはロールの説明を設定します。</summary>
+        <value>ロールの説明です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Role">
+      <MemberSignature Language="C#" Value="public string Role { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Role" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.SecurityRoleAttribute.Role" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはセキュリティ ロールを設定します。</summary>
+        <value>アプリケーション、コンポーネント、インターフェイス、またはメソッドに適用するセキュリティ ロール。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetEveryoneAccess">
+      <MemberSignature Language="C#" Value="public bool SetEveryoneAccess { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SetEveryoneAccess" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.SecurityRoleAttribute.SetEveryoneAccess" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーとしてユーザー グループのすべてのユーザーを追加するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />新しく作成されたロールが、すべてのユーザーであることを要求するユーザー グループの追加 (アプリケーションに既に存在するロールは変更されません)、ユーザーとしてそれ以外の場合、<see langword="false" />ユーザーとしてを抑制する状況、すべてのユーザーを追加するユーザーをグループ化します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定`false`を抑制する状況、すべてのユーザーを追加するユーザー グループに新しくユーザーとして作成されたロールです。 プロパティを設定`true`を新しく作成されたロールが Everyone ユーザーとして追加する必要があります。 アプリケーションに既に存在するロールは変更されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

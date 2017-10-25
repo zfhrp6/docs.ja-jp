@@ -1,0 +1,259 @@
+<Type Name="HtmlHistory" FullName="System.Windows.Forms.HtmlHistory">
+  <TypeSignature Language="C#" Value="public sealed class HtmlHistory : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HtmlHistory extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.HtmlHistory" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>ユーザーが現在のセッションで表示したドキュメントと Web サイトの一覧を管理します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マネージ HTML ドキュメント オブジェクト モデル (DOM) の追跡サイトで表示したユーザーを指定された*セッション*です。 A*セッション*は、アプリケーションの起動時、マネージ HTML DOM をホストしているアプリケーションが終了するまでの時間の長さとして定義されています。  
+  
+ 使用すると、<xref:System.Windows.Forms.WebBrowser.Url%2A>プロパティまたは<xref:System.Windows.Forms.WebBrowser.Navigate%2A>のメソッド、<xref:System.Windows.Forms.WebBrowser>新しい Web ページに移動するコントロールを Internet Explorer がサーバーから取得されたページの最新バージョンを取得または Internet Explorer のキャッシュでは現在のバージョンが表示されます。 使用するとこれに対し、<xref:System.Windows.Forms.HtmlHistory>前方と後方このスタック内を移動する Internet Explorer と、表示、ダウンロードした Web コンテンツのローカル コンピューターのキャッシュからページ場合、サーバーは、ドキュメントのコンテンツのすぐに有効期限をことを示します。 履歴の一覧と Internet Explorer でのキャッシュの詳細については、234067、"方法に防ぐためのキャッシュで Internet Explorer、"で、Microsoft サポート技術情報の記事を参照してください。 [http://support.microsoft.com](http://go.microsoft.com/fwlink/?linkid=37115)です。  
+  
+ プリンシパル メソッド<xref:System.Windows.Forms.HtmlHistory>は<xref:System.Windows.Forms.HtmlHistory.Go%2A>、移動スタック内の指定した位置にまたはを新しい Uniform Resource Locator (URL) を移動します。 <xref:System.Windows.Forms.HtmlHistory.Forward%2A>と<xref:System.Windows.Forms.HtmlHistory.Back%2A>メソッド ダウンおよび移動ナビゲーション スタックをそれぞれ、エントリの必要な数だけです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Back">
+      <MemberSignature Language="C#" Value="public void Back (int numberBack);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Back(int32 numberBack) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlHistory.Back(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="numberBack" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="numberBack">移動スタック内で後ろへ移動するエントリの数。 この数は、正の整数である必要があります。</param>
+        <summary>指定したエントリの数だけ、移動スタック内の後ろへ移動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合は、番号を指定する`numBack`、履歴内の過去のエントリの数を超えています、<xref:System.Windows.Forms.WebBrowser>コントロールを履歴の最初の項目に移動、たとえば、最初の Uniform Resource Locator (URL) 訪問した現在のブラウザー セッション中にします。  
+  
+ 移動スタック内の現在のページの背後にあるエントリがない場合は、呼び出す<xref:System.Windows.Forms.HtmlHistory.Back%2A>効果はありませんが、エラーは発生しません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">引数は正の 32 ビット整数ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlHistory.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Windows.Forms.HtmlHistory" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Windows.Forms.HtmlHistory.Dispose%2A>が完了したら、メソッドを使用して、<xref:System.Windows.Forms.HtmlHistory>オブジェクト。 <xref:System.Windows.Forms.HtmlHistory.Dispose%2A>まま、<xref:System.Windows.Forms.HtmlHistory>使用不可の状態オブジェクト。 呼び出した後<xref:System.Windows.Forms.HtmlHistory.Dispose%2A>へのすべての参照を解放する必要があります<xref:System.Windows.Forms.HtmlHistory>ガベージ コレクターがメモリを再利用できるようにする<xref:System.Windows.Forms.HtmlHistory>占有されていた。 詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+> [!NOTE]
+>  常に呼び出す<xref:System.Windows.Forms.HtmlHistory.Dispose%2A>への参照を解放する前に<xref:System.Windows.Forms.HtmlHistory>です。 それ以外の場合、リソース<xref:System.Windows.Forms.HtmlHistory>を使用しては解放されません、ガベージ コレクターがオブジェクトを呼び出すまで`Finalize`メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DomHistory">
+      <MemberSignature Language="C#" Value="public object DomHistory { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DomHistory" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlHistory.DomHistory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスによってラップされたアンマネージ インターフェイスを取得します。</summary>
+        <value><see langword="IOmHistory" /> インターフェイス ポインターにキャストできる <see cref="T:System.Object" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用するためにアンマネージ MSHTML.dll への参照を追加する必要があります<xref:System.Windows.Forms.HtmlHistory.DomHistory%2A>です。 詳細については、次を参照してください。[タイプ ライブラリのアセンブリとしてインポート](~/docs/framework/interop/importing-a-type-library-as-an-assembly.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Forward">
+      <MemberSignature Language="C#" Value="public void Forward (int numberForward);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Forward(int32 numberForward) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlHistory.Forward(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="numberForward" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="numberForward">移動スタック内で前へ移動するエントリの数。 この数は、正の整数である必要があります。</param>
+        <summary>指定したエントリの数だけ、移動スタック内の前へ移動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 数を指定する場合`numForward`、履歴内の過去のエントリの数を超えています、<xref:System.Windows.Forms.WebBrowser>コントロールは最後のアイテム履歴を移動します。  
+  
+ 移動スタック内の現在のページの前のエントリがない場合は、呼び出す<xref:System.Windows.Forms.HtmlHistory.Forward%2A>効果はありませんが、エラーは発生しません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">引数は正の 32 ビット整数ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Go">
+      <MemberSignature Language="C#" Value="public void Go (int relativePosition);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Go(int32 relativePosition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlHistory.Go(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="relativePosition" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="relativePosition">表示する移動スタック内のエントリ。</param>
+        <summary>ブラウザーの履歴内の指定した相対位置に移動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Windows.Forms.HtmlHistory.Go%2A>は負の引数を使用すると、<xref:System.Windows.Forms.HtmlHistory.Back%2A>メソッドを使用してこれに対し、<xref:System.Windows.Forms.HtmlHistory.Go%2A>正の値の引数を持つを使用すると、<xref:System.Windows.Forms.HtmlHistory.Forward%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Go">
+      <MemberSignature Language="C#" Value="public void Go (string urlString);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Go(string urlString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlHistory.Go(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="urlString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="urlString">表示する URL。 相対 URL または仮想 URL (page.html、path/page.html、/path/to/page.html など) も指定できます。この場合、現在の Web ページの URL が基準として使用されます。</param>
+        <summary>指定した URL に移動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Windows.Forms.HtmlHistory.Go%2A>がいずれかを使用すると、<xref:System.Windows.Forms.WebBrowser.Url%2A>プロパティまたは<xref:System.Windows.Forms.WebBrowser.Navigate%2A>のメソッド、<xref:System.Windows.Forms.WebBrowser>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Go">
+      <MemberSignature Language="C#" Value="public void Go (Uri url);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Go(class System.Uri url) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlHistory.Go(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="url">URL (<see cref="T:System.Uri" /> オブジェクト)。</param>
+        <summary>指定した URL に移動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Windows.Forms.HtmlHistory.Go%2A>がいずれかを使用すると、<xref:System.Windows.Forms.WebBrowser.Url%2A>プロパティまたは<xref:System.Windows.Forms.WebBrowser.Navigate%2A>のメソッド、<xref:System.Windows.Forms.WebBrowser>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Length">
+      <MemberSignature Language="C#" Value="public int Length { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Length" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlHistory.Length" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>履歴スタックのサイズを取得します。</summary>
+        <value>URL 履歴に保存されている現在のエントリの数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 移動スタック内の現在の URL の前後に存在するエントリの数を特定する場合は、この数を維持する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

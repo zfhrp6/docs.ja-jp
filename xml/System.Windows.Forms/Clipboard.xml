@@ -1,0 +1,1166 @@
+<Type Name="Clipboard" FullName="System.Windows.Forms.Clipboard">
+  <TypeSignature Language="C#" Value="public sealed class Clipboard" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Clipboard extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Clipboard" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを配置し、システムのクリップボードからデータを取得するメソッドを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する定義済みの形式の一覧については、<xref:System.Windows.Forms.Clipboard>クラスを参照してください、<xref:System.Windows.Forms.DataFormats>クラスです。  
+  
+ 呼び出す<xref:System.Windows.Forms.Clipboard.SetDataObject%2A>を現在の内容を置き換える、クリップボードにデータを格納します。 クリップボードのデータの永続的なコピーを配置するには設定、`copy`パラメーターを`true`です。  
+  
+> [!NOTE]
+>  複数の形式でクリップボードにデータを配置するには、<xref:System.Windows.Forms.DataObject>クラスまたは<xref:System.Windows.Forms.IDataObject>実装します。 わからない場合があります、ある形式の要件の対象アプリケーションがデータを正常に取得できます可能性を最大化する複数の形式でクリップボードにデータを配置します。  
+  
+ 呼び出す<xref:System.Windows.Forms.Clipboard.GetDataObject%2A>クリップボードからデータを取得します。 実装するオブジェクトとしてデータが返されます、<xref:System.Windows.Forms.IDataObject>インターフェイスです。 指定されたメソッドを使用して<xref:System.Windows.Forms.IDataObject>およびフィールド<xref:System.Windows.Forms.DataFormats>オブジェクトからデータを抽出します。 取得したデータの形式がわからない場合、<xref:System.Windows.Forms.IDataObject.GetFormats%2A>のメソッド、<xref:System.Windows.Forms.IDataObject>にすべての形式の一覧にそのデータを取得するインターフェイスを格納します。 まず、<xref:System.Windows.Forms.IDataObject.GetData%2A>のメソッド、<xref:System.Windows.Forms.IDataObject>インターフェイス、およびアプリケーションで使用できる形式を指定します。  
+  
+ [!INCLUDE[dnprdnext](~/includes/dnprdnext-md.md)]、<xref:System.Windows.Forms.Clipboard>クラスは、システムのクリップボードを使用するより簡単にする追加のメソッドを提供します。 呼び出す、<xref:System.Windows.Forms.Clipboard.Clear%2A>クリップボードからすべてのデータを削除する方法です。 特定の形式のデータをクリップボードに追加するには、適切な呼び出し、既存のデータを交換`Set`*形式*メソッドなど<xref:System.Windows.Forms.Clipboard.SetText%2A>を呼び出したり、<xref:System.Windows.Forms.Clipboard.SetData%2A>形式を指定します。 クリップボードから特定の形式のデータを取得、まず、適切な`Contains`*形式*メソッド (など<xref:System.Windows.Forms.Clipboard.ContainsText%2A>) を書式を設定し、適切なメソッドをクリップボードにデータが含まれるかどうかを判断`Get`*形式*メソッド (など<xref:System.Windows.Forms.Clipboard.GetText%2A>) クリップボードに含まれる場合は、データを取得します。 これらの操作の形式を指定するには、呼び出し、<xref:System.Windows.Forms.Clipboard.ContainsData%2A>と<xref:System.Windows.Forms.Clipboard.GetData%2A>メソッド代わりにします。  
+  
+> [!NOTE]
+>  すべての Windows ベースのアプリケーションは、別のアプリケーションに切り替えるときに、内容が変更される可能性がありますがように、システム クリップボードを共有します。  
+>   
+>  オブジェクトをクリップボードに保存するのには、シリアル化可能にする必要があります。 クリップボードのメソッドにシリアル化できないオブジェクトを渡すと、例外をスローせず、メソッドは失敗します。 参照してください<xref:System.Runtime.Serialization>詳細については、シリアル化します。 ターゲット アプリケーションには、非常に特定のデータ形式が必要とする場合、シリアル化プロセス内のデータに追加されたヘッダーからデータを認識するアプリケーションを使用できなくなります。 データ形式を保持するために、データを追加として、<xref:System.Byte>配列を<xref:System.IO.MemoryStream>を渡すと、<xref:System.IO.MemoryStream>を<xref:System.Windows.Forms.DataObject.SetData%2A>メソッドです。  
+>   
+>  <xref:System.Windows.Forms.Clipboard>クラスは、シングル スレッド アパートメント (STA) モードに設定のスレッドでのみ使用できます。 このクラスを使用することを確認、`Main`メソッドが付いて、<xref:System.STAThreadAttribute>属性。  
+>   
+>  クリップボードをメタファイル形式を使用すると、特別な考慮事項が必要な可能性があります。 現在の実装の制限により、<xref:System.Windows.Forms.DataObject>クラス、.NET Framework で使用されるメタファイル形式は、古いメタファイル形式を使用するアプリケーションで認識されない可能性があります。 この場合、クリップボードの Win32 アプリケーション プログラミング インターフェイス (Api) と相互運用する必要があります。 詳細については、記事、323530「メタファイルでクリップボードはいない表示する、すべてのアプリケーション」http://support.microsoft.com で Microsoft サポート技術情報を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例では<xref:System.Windows.Forms.Clipboard>メソッドにデータを配置し、システムのクリップボードから取得します。 このコード`button1`、 `button2`、 `textBox1`、および`textBox2`が作成され、フォーム上に配置します。  
+  
+ `button1_Click`メソッド呼び出し<xref:System.Windows.Forms.Clipboard.SetDataObject%2A>をテキスト ボックスから選択したテキストを取得し、システムのクリップボードに置きます。  
+  
+ `button2_Click`メソッド呼び出し<xref:System.Windows.Forms.Clipboard.GetDataObject%2A>システム クリップボードからデータを取得します。 コードを使用して<xref:System.Windows.Forms.IDataObject>と<xref:System.Windows.Forms.DataFormats>返されるデータを抽出するのデータを表示および`textBox2`です。  
+  
+ [!code-cpp[Classic Clipboard Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Clipboard Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Clipboard Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Clipboard Example/CS/source.cs#1)]
+ [!code-vb[Classic Clipboard Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Clipboard Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public static void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Clipboard.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クリップボードからすべてのデータを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クリップボードは複数のプロセスで共有されるため、このメソッドを呼び出すと、影響を与えるがこれらのプロセスでがあります。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.Clipboard>クラスは、シングル スレッド アパートメント (STA) モードに設定のスレッドでのみ使用できます。 このクラスを使用することを確認、`Main`メソッドが付いて、<xref:System.STAThreadAttribute>属性。  
+  
+   
+  
+## Examples  
+ 次の例では、このメンバーを示します。  
+  
+ [!code-csharp[System.Windows.Forms.Clipboard#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.Clipboard#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/vb/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.ExternalException">クリップボードをクリアできませんでした。 これは通常、クリップボードが別のプロセスによって使用されている場合に発生します。</exception>
+        <exception cref="T:System.Threading.ThreadStateException">現在のスレッドは、シングル スレッド アパートメント (STA) モードではありません。 追加、<see cref="T:System.STAThreadAttribute" />をアプリケーションの<see langword="Main" />メソッドです。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">システム クリップボードをクリアします。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionClipboard.OwnClipboard" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsAudio">
+      <MemberSignature Language="C#" Value="public static bool ContainsAudio ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool ContainsAudio() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Clipboard.ContainsAudio" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クリップボードにデータがあるかどうかを示す、<see cref="F:System.Windows.Forms.DataFormats.WaveAudio" />形式です。</summary>
+        <returns>
+          <see langword="true" />オーディオ データがクリップボードにある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得する前に、クリップボードにオーディオ データが含まれるかどうかを判断するには、このメソッドを使用して、<xref:System.Windows.Forms.Clipboard.GetAudioStream%2A>メソッドです。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.Clipboard>クラスは、シングル スレッド アパートメント (STA) モードに設定のスレッドでのみ使用できます。 このクラスを使用することを確認、`Main`メソッドが付いて、<xref:System.STAThreadAttribute>属性。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。  
+  
+ [!code-csharp[System.Windows.Forms.Clipboard#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/CS/form1.cs#20)]
+ [!code-vb[System.Windows.Forms.Clipboard#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/vb/form1.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.ExternalException">クリップボードをクリアできませんでした。 これは通常、クリップボードが別のプロセスによって使用されている場合に発生します。</exception>
+        <exception cref="T:System.Threading.ThreadStateException">現在のスレッドは、シングル スレッド アパートメント (STA) モードではありません。 追加、<see cref="T:System.STAThreadAttribute" />をアプリケーションの<see langword="Main" />メソッドです。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">システム クリップボードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsData">
+      <MemberSignature Language="C#" Value="public static bool ContainsData (string format);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool ContainsData(string format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Clipboard.ContainsData(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="format">検索するデータの形式です。 参照してください<see cref="T:System.Windows.Forms.DataFormats" />定義済みの形式です。</param>
+        <summary>クリップボードにある指定された形式では、またはその形式に変換できるデータがあるかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />指定したが、クリップボードにデータがあるかどうかは<paramref name="format" />またはその形式に変換後、それ以外のできます<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataFormats>クラスには、このメソッドで使用できる事前定義された形式名が含まれています。  
+  
+ このメソッドで取得する前に、指定した書式と互換性のある形式のデータが、クリップボードに含まれているかどうかを使用して、<xref:System.Windows.Forms.Clipboard.GetData%2A>メソッドです。  
+  
+> [!NOTE]
+>  データは、格納されている変換が許可されている場合、要求の形式が格納されている形式に互換性がある場合、別の形式に変換できます。 テキストに変換できる Unicode として格納されているデータなどです。  
+>   
+>  <xref:System.Windows.Forms.Clipboard>クラスは、シングル スレッド アパートメント (STA) モードに設定のスレッドでのみ使用できます。 このクラスを使用することを確認、`Main`メソッドが付いて、<xref:System.STAThreadAttribute>属性。  
+  
+   
+  
+## Examples  
+ 次の例では、このメンバーを示します。  
+  
+ [!code-csharp[System.Windows.Forms.Clipboard#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/CS/form1.cs#10)]
+ [!code-vb[System.Windows.Forms.Clipboard#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/vb/form1.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.ExternalException">クリップボードをクリアできませんでした。 これは通常、クリップボードが別のプロセスによって使用されている場合に発生します。</exception>
+        <exception cref="T:System.Threading.ThreadStateException">現在のスレッドは、シングル スレッド アパートメント (STA) モードではありません。 追加、<see cref="T:System.STAThreadAttribute" />をアプリケーションの<see langword="Main" />メソッドです。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">システム クリップボードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsFileDropList">
+      <MemberSignature Language="C#" Value="public static bool ContainsFileDropList ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool ContainsFileDropList() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Clipboard.ContainsFileDropList" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>内にあるクリップボードにデータがあるかどうかを示す、<see cref="F:System.Windows.Forms.DataFormats.FileDrop" />書式設定するか、その形式に変換することができます。</summary>
+        <returns>
+          <see langword="true" />クリップボードにファイルのドロップダウン リストがある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイルのドロップダウン リストは、ファイルのパス情報を格納する文字列のコレクションです。  
+  
+ クリップボードで取得する前にファイルのドロップダウン リストに含まれるかどうかを判断するには、このメソッドを使用して、<xref:System.Windows.Forms.Clipboard.GetFileDropList%2A>メソッドです。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.Clipboard>クラスは、シングル スレッド アパートメント (STA) モードに設定のスレッドでのみ使用できます。 このクラスを使用することを確認、`Main`メソッドが付いて、<xref:System.STAThreadAttribute>属性。  
+  
+   
+  
+## Examples  
+ 次の例では、このメンバーを示します。  
+  
+ [!code-csharp[System.Windows.Forms.Clipboard#30](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/CS/form1.cs#30)]
+ [!code-vb[System.Windows.Forms.Clipboard#30](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/vb/form1.vb#30)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.ExternalException">クリップボードをクリアできませんでした。 これは通常、クリップボードが別のプロセスによって使用されている場合に発生します。</exception>
+        <exception cref="T:System.Threading.ThreadStateException">現在のスレッドは、シングル スレッド アパートメント (STA) モードではありません。 追加、<see cref="T:System.STAThreadAttribute" />をアプリケーションの<see langword="Main" />メソッドです。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">システム クリップボードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsImage">
+      <MemberSignature Language="C#" Value="public static bool ContainsImage ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool ContainsImage() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Clipboard.ContainsImage" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>内にあるクリップボードにデータがあるかどうかを示す、<see cref="F:System.Windows.Forms.DataFormats.Bitmap" />書式設定するか、その形式に変換することができます。</summary>
+        <returns>
+          <see langword="true" />クリップボードにイメージ データがある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得する前に、クリップボードにイメージ データが含まれるかどうかを判断するには、このメソッドを使用して、<xref:System.Windows.Forms.Clipboard.GetImage%2A>メソッドです。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.Clipboard>クラスは、シングル スレッド アパートメント (STA) モードに設定のスレッドでのみ使用できます。 このクラスを使用することを確認、`Main`メソッドが付いて、<xref:System.STAThreadAttribute>属性。  
+  
+   
+  
+## Examples  
+ 次の例では、このメンバーを示します。  
+  
+ [!code-csharp[System.Windows.Forms.Clipboard#40](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/CS/form1.cs#40)]
+ [!code-vb[System.Windows.Forms.Clipboard#40](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/vb/form1.vb#40)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.ExternalException">クリップボードをクリアできませんでした。 これは通常、クリップボードが別のプロセスによって使用されている場合に発生します。</exception>
+        <exception cref="T:System.Threading.ThreadStateException">現在のスレッドは、シングル スレッド アパートメント (STA) モードではありません。 追加、<see cref="T:System.STAThreadAttribute" />をアプリケーションの<see langword="Main" />メソッドです。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">システム クリップボードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsText">
+      <MemberSignature Language="C#" Value="public static bool ContainsText ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool ContainsText() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Clipboard.ContainsText" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クリップボードにデータがあるかどうかを示す、<see cref="F:System.Windows.Forms.TextDataFormat.Text" />または<see cref="F:System.Windows.Forms.TextDataFormat.UnicodeText" />形式、オペレーティング システムによって異なります。</summary>
+        <returns>
+          <see langword="true" />クリップボードにテキスト データがある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッド内のデータの存在を確認、<xref:System.Windows.Forms.TextDataFormat.UnicodeText>でフォーマットする[!INCLUDE[WinXpFamily](~/includes/winxpfamily-md.md)]と[!INCLUDE[Win2kFamily](~/includes/win2kfamily-md.md)]です。 それ以外の場合、このメソッドは内のデータの存在を確認、<xref:System.Windows.Forms.TextDataFormat.Text>形式です。  
+  
+ このメソッドを使用して、使用して取得する前に、クリップボードにテキスト データが含まれるかどうかを判断、<xref:System.Windows.Forms.Clipboard.GetText%2A>メソッドです。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.Clipboard>クラスは、シングル スレッド アパートメント (STA) モードに設定のスレッドでのみ使用できます。 このクラスを使用することを確認、`Main`メソッドが付いて、<xref:System.STAThreadAttribute>属性。  
+  
+   
+  
+## Examples  
+ 次の例でのオーバー ロード、<xref:System.Windows.Forms.Clipboard.ContainsText%2A>メソッドには、このオーバー ロードに似ています。  
+  
+ [!code-csharp[System.Windows.Forms.Clipboard#50](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/CS/form1.cs#50)]
+ [!code-vb[System.Windows.Forms.Clipboard#50](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/vb/form1.vb#50)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.ExternalException">クリップボードをクリアできませんでした。 これは通常、クリップボードが別のプロセスによって使用されている場合に発生します。</exception>
+        <exception cref="T:System.Threading.ThreadStateException">現在のスレッドは、シングル スレッド アパートメント (STA) モードではありません。 追加、<see cref="T:System.STAThreadAttribute" />をアプリケーションの<see langword="Main" />メソッドです。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">システム クリップボードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsText">
+      <MemberSignature Language="C#" Value="public static bool ContainsText (System.Windows.Forms.TextDataFormat format);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool ContainsText(valuetype System.Windows.Forms.TextDataFormat format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Clipboard.ContainsText(System.Windows.Forms.TextDataFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.Windows.Forms.TextDataFormat" />
+      </Parameters>
+      <Docs>
+        <param name="format"><see cref="T:System.Windows.Forms.TextDataFormat" /> 値のいずれか。</param>
+        <summary>指定した形式でクリップボードにテキスト データがあるかどうかを示します<see cref="T:System.Windows.Forms.TextDataFormat" />値。</summary>
+        <returns>
+          <see langword="true" />テキスト上にデータがクリップボードに指定された値の場合<paramref name="format" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、使用して取得する前に、クリップボードにテキスト データが含まれるかどうかを判断、<xref:System.Windows.Forms.Clipboard.GetText%2A>メソッドです。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.Clipboard>クラスは、シングル スレッド アパートメント (STA) モードに設定のスレッドでのみ使用できます。 このクラスを使用することを確認、`Main`メソッドが付いて、<xref:System.STAThreadAttribute>属性。  
+  
+   
+  
+## Examples  
+ 次の例では、このメンバーを示します。  
+  
+ [!code-csharp[System.Windows.Forms.Clipboard#50](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/CS/form1.cs#50)]
+ [!code-vb[System.Windows.Forms.Clipboard#50](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/vb/form1.vb#50)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.ExternalException">クリップボードをクリアできませんでした。 これは通常、クリップボードが別のプロセスによって使用されている場合に発生します。</exception>
+        <exception cref="T:System.Threading.ThreadStateException">現在のスレッドは、シングル スレッド アパートメント (STA) モードではありません。 追加、<see cref="T:System.STAThreadAttribute" />をアプリケーションの<see langword="Main" />メソッドです。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="format" /> は有効な <see cref="T:System.Windows.Forms.TextDataFormat" /> 値ではありません。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">システム クリップボードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAudioStream">
+      <MemberSignature Language="C#" Value="public static System.IO.Stream GetAudioStream ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.Stream GetAudioStream() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Clipboard.GetAudioStream" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クリップボードからオーディオ ストリームを取得します。</summary>
+        <returns>A<see cref="T:System.IO.Stream" />オーディオ データを含むまたは<see langword="null" />内のデータがクリップボードに含まれていない場合、<see cref="F:System.Windows.Forms.DataFormats.WaveAudio" />形式です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.Clipboard.ContainsAudio%2A>クリップボードに、このメソッドを使用して取得する前にオーディオ データが含まれるかどうかを調べます。  
+  
+ 使用して、<xref:System.Windows.Forms.Clipboard.SetAudio%2A>オーディオ データをクリップボードに追加するメソッド。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.Clipboard>クラスは、シングル スレッド アパートメント (STA) モードに設定のスレッドでのみ使用できます。 このクラスを使用することを確認、`Main`メソッドが付いて、<xref:System.STAThreadAttribute>属性。  
+  
+   
+  
+## Examples  
+ 次の例では、このメンバーを示します。  
+  
+ [!code-csharp[System.Windows.Forms.Clipboard#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/CS/form1.cs#20)]
+ [!code-vb[System.Windows.Forms.Clipboard#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/vb/form1.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.ExternalException">クリップボードをクリアできませんでした。 これは通常、クリップボードが別のプロセスによって使用されている場合に発生します。</exception>
+        <exception cref="T:System.Threading.ThreadStateException">現在のスレッドは、シングル スレッド アパートメント (STA) モードではありません。 追加、<see cref="T:System.STAThreadAttribute" />をアプリケーションの<see langword="Main" />メソッドです。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">システム クリップボードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetData">
+      <MemberSignature Language="C#" Value="public static object GetData (string format);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetData(string format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Clipboard.GetData(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="format">取得するデータの形式。 参照してください<see cref="T:System.Windows.Forms.DataFormats" />定義済みの形式です。</param>
+        <summary>指定された形式でクリップボードからデータを取得します。</summary>
+        <returns><see cref="T:System.Object" />クリップボード データを表すまたは<see langword="null" />クリップボードに、指定されているデータが含まれていないかどうかは<paramref name="format" />か、またはその形式に変換します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.Clipboard.ContainsData%2A>クリップボードに、このメソッドを使用して取得する前に指定の形式または互換性のある形式のデータが含まれるかどうかを調べます。  
+  
+ このメソッドは、指定された形式でデータを見つけることはできません、データ形式に変換しようとします。 自動変換に設定とデータが格納されている場合、データは、指定された形式に変換できない場合または`false`、このメソッドが戻る`null`です。  
+  
+> [!NOTE]
+>  データは、格納されている変換が許可されている場合、要求の形式が格納されている形式に互換性がある場合、別の形式に変換できます。 テキストに変換できる Unicode として格納されているデータなどです。  
+>   
+>  <xref:System.Windows.Forms.Clipboard>クラスは、シングル スレッド アパートメント (STA) モードに設定のスレッドでのみ使用できます。 このクラスを使用することを確認、`Main`メソッドが付いて、<xref:System.STAThreadAttribute>属性。  
+  
+ 使用して、<xref:System.Windows.Forms.Clipboard.SetData%2A>特定の形式でクリップボードにデータを追加します。  
+  
+   
+  
+## Examples  
+ 次の例では、このメンバーを示します。  
+  
+ [!code-csharp[System.Windows.Forms.Clipboard#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/CS/form1.cs#10)]
+ [!code-vb[System.Windows.Forms.Clipboard#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/vb/form1.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.ExternalException">クリップボードをクリアできませんでした。 これは通常、クリップボードが別のプロセスによって使用されている場合に発生します。</exception>
+        <exception cref="T:System.Threading.ThreadStateException">現在のスレッドは、シングル スレッド アパートメント (STA) モードではありません。 追加、<see cref="T:System.STAThreadAttribute" />をアプリケーションの<see langword="Main" />メソッドです。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">システム クリップボードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDataObject">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.IDataObject GetDataObject ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Forms.IDataObject GetDataObject() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Clipboard.GetDataObject" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.IDataObject</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在、システムのクリップボードにあるデータを取得します。</summary>
+        <returns><see cref="T:System.Windows.Forms.IDataObject" />現在、クリップボードにデータを表すまたは<see langword="null" />クリップボードにデータがない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが内のデータを返します、クリップボードから返されるオブジェクトのデータ型が異なるので、<xref:System.Windows.Forms.IDataObject>です。 メソッドを使用することができ、<xref:System.Windows.Forms.IDataObject>その適切なデータ型のデータを抽出するインターフェイスです。  
+  
+ このメソッドは、100 ミリ秒間隔内でその 10 倍のデータの取得を試み、スロー、<xref:System.Runtime.InteropServices.ExternalException>のすべての試行が成功した場合。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.Clipboard>クラスは、シングル スレッド アパートメント (STA) モードに設定のスレッドでのみ使用できます。 このクラスを使用することを確認、`Main`メソッドが付いて、<xref:System.STAThreadAttribute>属性。  
+  
+   
+  
+## Examples  
+ 次のコード例では<xref:System.Windows.Forms.Clipboard>メソッドにデータを配置し、システムのクリップボードから取得します。 このコード`button1`、 `button2`、 `textBox1`、および`textBox2`フォームに配置されています。  
+  
+ `button1_Click`メソッド呼び出し<xref:System.Windows.Forms.Clipboard.SetDataObject%2A>をテキスト ボックスから選択したテキストを取得し、システムのクリップボードに置きます。  
+  
+ `button2_Click`メソッド呼び出し<xref:System.Windows.Forms.Clipboard.GetDataObject%2A>システム クリップボードからデータを取得します。 コードを使用して<xref:System.Windows.Forms.IDataObject>と<xref:System.Windows.Forms.DataFormats>を返されるデータを抽出します。 データが表示される`textBox2`です。  
+  
+ [!code-cpp[Classic Clipboard Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Clipboard Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Clipboard Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Clipboard Example/CS/source.cs#1)]
+ [!code-vb[Classic Clipboard Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Clipboard Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.ExternalException">クリップボードからデータを取得できませんでした。 これは通常、クリップボードが別のプロセスによって使用されている場合に発生します。</exception>
+        <exception cref="T:System.Threading.ThreadStateException">現在のスレッドがシングル スレッド アパートメント (STA) モードではないと、<see cref="P:System.Windows.Forms.Application.MessageLoop" />プロパティの値が<see langword="true" />です。 追加、<see cref="T:System.STAThreadAttribute" />をアプリケーションの<see langword="Main" />メソッドです。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">システム クリップボードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFileDropList">
+      <MemberSignature Language="C#" Value="public static System.Collections.Specialized.StringCollection GetFileDropList ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Specialized.StringCollection GetFileDropList() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Clipboard.GetFileDropList" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.StringCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クリップボードからファイル名のコレクションを取得します。</summary>
+        <returns>A<see cref="T:System.Collections.Specialized.StringCollection" />ファイル名を含むまたは<see langword="null" />クリップボードに内にあるデータが含まれていないかどうか、<see cref="F:System.Windows.Forms.DataFormats.FileDrop" />書式設定するか、その形式に変換することができます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイルのドロップダウン リストは、ファイルのパス情報を格納する文字列のコレクションです。  
+  
+ ファイルのドロップダウン リストとしてクリップボードに格納されている、<xref:System.String>配列。 このメソッドは変換するには、この配列は<xref:System.Collections.Specialized.StringCollection>し、コレクションを返します。  
+  
+ 使用して、<xref:System.Windows.Forms.Clipboard.ContainsFileDropList%2A>クリップボードに、このメソッドを使用して取得する前にファイルのドロップダウン リストが含まれるかどうかを調べます。  
+  
+ 使用して、<xref:System.Windows.Forms.Clipboard.SetFileDropList%2A>をクリップボードにファイルのドロップダウン リストを追加するメソッド。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.Clipboard>クラスは、シングル スレッド アパートメント (STA) モードに設定のスレッドでのみ使用できます。 このクラスを使用することを確認、`Main`メソッドが付いて、<xref:System.STAThreadAttribute>属性。  
+  
+   
+  
+## Examples  
+ 次の例では、このメンバーを示します。  
+  
+ [!code-csharp[System.Windows.Forms.Clipboard#30](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/CS/form1.cs#30)]
+ [!code-vb[System.Windows.Forms.Clipboard#30](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/vb/form1.vb#30)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.ExternalException">クリップボードをクリアできませんでした。 これは通常、クリップボードが別のプロセスによって使用されている場合に発生します。</exception>
+        <exception cref="T:System.Threading.ThreadStateException">現在のスレッドは、シングル スレッド アパートメント (STA) モードではありません。 追加、<see cref="T:System.STAThreadAttribute" />をアプリケーションの<see langword="Main" />メソッドです。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">システム クリップボードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetImage">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Image GetImage ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Drawing.Image GetImage() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Clipboard.GetImage" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Image</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クリップボードからイメージを取得します。</summary>
+        <returns><see cref="T:System.Drawing.Image" />クリップボードのイメージ データを表すまたは<see langword="null" />クリップボードに内にあるデータが含まれていないかどうか、<see cref="F:System.Windows.Forms.DataFormats.Bitmap" />書式設定するか、その形式に変換することができます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.Clipboard.ContainsImage%2A>クリップボードに、このメソッドを使用して取得する前にイメージ データが含まれるかどうかを調べます。  
+  
+ 使用して、<xref:System.Windows.Forms.Clipboard.SetImage%2A>イメージ データをクリップボードに追加するメソッド。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.Clipboard>クラスは、シングル スレッド アパートメント (STA) モードに設定のスレッドでのみ使用できます。 このクラスを使用することを確認、`Main`メソッドが付いて、<xref:System.STAThreadAttribute>属性。  
+  
+   
+  
+## Examples  
+ 次の例では、このメンバーを示します。  
+  
+ [!code-csharp[System.Windows.Forms.Clipboard#40](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/CS/form1.cs#40)]
+ [!code-vb[System.Windows.Forms.Clipboard#40](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/vb/form1.vb#40)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.ExternalException">クリップボードをクリアできませんでした。 これは通常、クリップボードが別のプロセスによって使用されている場合に発生します。</exception>
+        <exception cref="T:System.Threading.ThreadStateException">現在のスレッドは、シングル スレッド アパートメント (STA) モードではありません。 追加、<see cref="T:System.STAThreadAttribute" />をアプリケーションの<see langword="Main" />メソッドです。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">システム クリップボードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetText">
+      <MemberSignature Language="C#" Value="public static string GetText ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetText() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Clipboard.GetText" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クリップボードからテキスト データを取得、<see cref="F:System.Windows.Forms.TextDataFormat.Text" />または<see cref="F:System.Windows.Forms.TextDataFormat.UnicodeText" />形式、オペレーティング システムによって異なります。</summary>
+        <returns>クリップボードのテキスト データまたは<see cref="F:System.String.Empty" />クリップボードにデータが含まれていない場合、<see cref="F:System.Windows.Forms.TextDataFormat.Text" />または<see cref="F:System.Windows.Forms.TextDataFormat.UnicodeText" />形式、オペレーティング システムによって異なります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、内のテキスト データを返します、<xref:System.Windows.Forms.TextDataFormat.UnicodeText>でフォーマットする[!INCLUDE[WinXpFamily](~/includes/winxpfamily-md.md)]と[!INCLUDE[Win2kFamily](~/includes/win2kfamily-md.md)]です。 このメソッドはテキスト データを返しますそれ以外の場合、<xref:System.Windows.Forms.TextDataFormat.Text>形式です。  
+  
+ 使用して、<xref:System.Windows.Forms.Clipboard.ContainsText%2A>このメソッドを使用して取得する前に、クリップボードにテキスト データが含まれるかどうかを調べます。  
+  
+ 使用して、<xref:System.Windows.Forms.Clipboard.SetText%2A>をクリップボードにテキスト データを追加するメソッド。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.Clipboard>クラスは、シングル スレッド アパートメント (STA) モードに設定のスレッドでのみ使用できます。 このクラスを使用することを確認、`Main`メソッドが付いて、<xref:System.STAThreadAttribute>属性。  
+  
+   
+  
+## Examples  
+ 次の例でのオーバー ロード、<xref:System.Windows.Forms.Clipboard.GetText%2A>メソッドには、このオーバー ロードに似ています。  
+  
+ [!code-csharp[System.Windows.Forms.Clipboard#50](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/CS/form1.cs#50)]
+ [!code-vb[System.Windows.Forms.Clipboard#50](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/vb/form1.vb#50)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.ExternalException">クリップボードをクリアできませんでした。 これは通常、クリップボードが別のプロセスによって使用されている場合に発生します。</exception>
+        <exception cref="T:System.Threading.ThreadStateException">現在のスレッドは、シングル スレッド アパートメント (STA) モードではありません。 追加、<see cref="T:System.STAThreadAttribute" />をアプリケーションの<see langword="Main" />メソッドです。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">システム クリップボードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetText">
+      <MemberSignature Language="C#" Value="public static string GetText (System.Windows.Forms.TextDataFormat format);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetText(valuetype System.Windows.Forms.TextDataFormat format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Clipboard.GetText(System.Windows.Forms.TextDataFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.Windows.Forms.TextDataFormat" />
+      </Parameters>
+      <Docs>
+        <param name="format"><see cref="T:System.Windows.Forms.TextDataFormat" /> 値のいずれか。</param>
+        <summary>指定された、指定された形式でクリップボードからテキスト データを取得<see cref="T:System.Windows.Forms.TextDataFormat" />値。</summary>
+        <returns>クリップボードのテキスト データまたは<see cref="F:System.String.Empty" />クリップボードに指定された形式でデータが含まれていない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.Clipboard.ContainsText%2A>このメソッドを使用して取得する前に、クリップボードにテキスト データが含まれるかどうかを調べます。  
+  
+ 使用して、<xref:System.Windows.Forms.Clipboard.SetText%2A>をクリップボードにテキスト データを追加するメソッド。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.Clipboard>クラスは、シングル スレッド アパートメント (STA) モードに設定のスレッドでのみ使用できます。 このクラスを使用することを確認、`Main`メソッドが付いて、<xref:System.STAThreadAttribute>属性。  
+  
+   
+  
+## Examples  
+ 次の例では、このメンバーを示します。  
+  
+ [!code-csharp[System.Windows.Forms.Clipboard#50](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/CS/form1.cs#50)]
+ [!code-vb[System.Windows.Forms.Clipboard#50](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/vb/form1.vb#50)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.ExternalException">クリップボードをクリアできませんでした。 これは通常、クリップボードが別のプロセスによって使用されている場合に発生します。</exception>
+        <exception cref="T:System.Threading.ThreadStateException">現在のスレッドは、シングル スレッド アパートメント (STA) モードではありません。 追加、<see cref="T:System.STAThreadAttribute" />をアプリケーションの<see langword="Main" />メソッドです。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="format" /> は有効な <see cref="T:System.Windows.Forms.TextDataFormat" /> 値ではありません。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">システム クリップボードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAudio">
+      <MemberSignature Language="C#" Value="public static void SetAudio (byte[] audioBytes);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetAudio(unsigned int8[] audioBytes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Clipboard.SetAudio(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="audioBytes" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="audioBytes">A<see cref="T:System.Byte" />オーディオ データを含む配列。</param>
+        <summary>クリップボードをクリアし、追加、<see cref="T:System.Byte" />配列、<see cref="F:System.Windows.Forms.DataFormats.WaveAudio" />形式に変換した後、<see cref="T:System.IO.Stream" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クリップボードからオーディオ データを取得する、<xref:System.Windows.Forms.Clipboard.ContainsAudio%2A>で取得する前に、クリップボードにオーディオ データが含まれるかどうかを決定するメソッド、<xref:System.Windows.Forms.Clipboard.GetAudioStream%2A>メソッドです。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.Clipboard>クラスは、シングル スレッド アパートメント (STA) モードに設定のスレッドでのみ使用できます。 このクラスを使用することを確認、`Main`メソッドが付いて、<xref:System.STAThreadAttribute>属性。  
+  
+   
+  
+## Examples  
+ 次の例でのオーバー ロード、<xref:System.Windows.Forms.Clipboard.SetAudio%2A>メソッドには、このオーバー ロードに似ています。  
+  
+ [!code-csharp[System.Windows.Forms.Clipboard#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/CS/form1.cs#20)]
+ [!code-vb[System.Windows.Forms.Clipboard#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/vb/form1.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.ExternalException">クリップボードをクリアできませんでした。 これは通常、クリップボードが別のプロセスによって使用されている場合に発生します。</exception>
+        <exception cref="T:System.Threading.ThreadStateException">現在のスレッドは、シングル スレッド アパートメント (STA) モードではありません。 追加、<see cref="T:System.STAThreadAttribute" />をアプリケーションの<see langword="Main" />メソッドです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="audioBytes" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">システム クリップボードにオーディオ データを追加します。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAudio">
+      <MemberSignature Language="C#" Value="public static void SetAudio (System.IO.Stream audioStream);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetAudio(class System.IO.Stream audioStream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Clipboard.SetAudio(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="audioStream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="audioStream">A<see cref="T:System.IO.Stream" />オーディオ データを格納します。</param>
+        <summary>クリップボードをクリアし、追加、<see cref="T:System.IO.Stream" />で、<see cref="F:System.Windows.Forms.DataFormats.WaveAudio" />形式です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クリップボードからオーディオ データを取得する、<xref:System.Windows.Forms.Clipboard.ContainsAudio%2A>で取得する前に、クリップボードにオーディオ データが含まれるかどうかを決定するメソッド、<xref:System.Windows.Forms.Clipboard.GetAudioStream%2A>メソッドです。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.Clipboard>クラスは、シングル スレッド アパートメント (STA) モードに設定のスレッドでのみ使用できます。 このクラスを使用することを確認、`Main`メソッドが付いて、<xref:System.STAThreadAttribute>属性。  
+  
+   
+  
+## Examples  
+ 次の例では、このメンバーを示します。  
+  
+ [!code-csharp[System.Windows.Forms.Clipboard#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/CS/form1.cs#20)]
+ [!code-vb[System.Windows.Forms.Clipboard#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/vb/form1.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.ExternalException">クリップボードをクリアできませんでした。 これは通常、クリップボードが別のプロセスによって使用されている場合に発生します。</exception>
+        <exception cref="T:System.Threading.ThreadStateException">現在のスレッドは、シングル スレッド アパートメント (STA) モードではありません。 追加、<see cref="T:System.STAThreadAttribute" />をアプリケーションの<see langword="Main" />メソッドです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="audioStream" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">システム クリップボードにオーディオ データを追加します。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetData">
+      <MemberSignature Language="C#" Value="public static void SetData (string format, object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetData(string format, object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Clipboard.SetData(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="format">設定するデータの形式です。 参照してください<see cref="T:System.Windows.Forms.DataFormats" />定義済みの形式です。</param>
+        <param name="data"><see cref="T:System.Object" />を追加するデータを表します。</param>
+        <summary>クリップボードをクリアし、指定された形式でデータを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ターゲット アプリケーションの形式がわからない場合は、このメソッドを使用して複数の形式でデータを格納できます。  
+  
+ このメソッドを使用して格納されているデータは、取得されるときに、互換性のある形式に変換できます。  
+  
+ 特定の形式でクリップボードからデータを取得、最初に使用して、<xref:System.Windows.Forms.Clipboard.ContainsData%2A>で取得する前に、クリップボードにその形式でデータが含まれるかどうかを決定するメソッド、<xref:System.Windows.Forms.Clipboard.GetData%2A>メソッドです。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.Clipboard>クラスは、シングル スレッド アパートメント (STA) モードに設定のスレッドでのみ使用できます。 このクラスを使用することを確認、`Main`メソッドが付いて、<xref:System.STAThreadAttribute>属性。  
+  
+   
+  
+## Examples  
+ 次の例では、このメンバーを示します。  
+  
+ [!code-csharp[System.Windows.Forms.Clipboard#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/CS/form1.cs#10)]
+ [!code-vb[System.Windows.Forms.Clipboard#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/vb/form1.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.ExternalException">クリップボードをクリアできませんでした。 これは通常、クリップボードが別のプロセスによって使用されている場合に発生します。</exception>
+        <exception cref="T:System.Threading.ThreadStateException">現在のスレッドは、シングル スレッド アパートメント (STA) モードではありません。 追加、<see cref="T:System.STAThreadAttribute" />をアプリケーションの<see langword="Main" />メソッドです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="data" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">任意の種類または形式のデータをシステム クリップボードに追加するためです。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDataObject">
+      <MemberSignature Language="C#" Value="public static void SetDataObject (object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetDataObject(object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Clipboard.SetDataObject(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="data">クリップボードに配置するデータ。</param>
+        <summary>クリップボードをクリアし、非永続的データをその上に配置します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データは、アプリケーションの終了時にシステム クリップボードから削除されます。  
+  
+ このメソッドは、100 ミリ秒間隔内でその 10 倍のデータを設定しようとし、スロー、<xref:System.Runtime.InteropServices.ExternalException>のすべての試行が成功した場合。  
+  
+> [!NOTE]
+>  オブジェクトをクリップボードに保存するのには、シリアル化可能にする必要があります。 このメソッドにシリアル化できないオブジェクトを渡す場合は、例外をスローせず失敗します。 参照してください<xref:System.Runtime.Serialization>詳細については、シリアル化します。  
+>   
+>  <xref:System.Windows.Forms.Clipboard>クラスは、シングル スレッド アパートメント (STA) モードに設定のスレッドでのみ使用できます。 このクラスを使用することを確認、`Main`メソッドが付いて、<xref:System.STAThreadAttribute>属性。  
+  
+   
+  
+## Examples  
+ 次のコード例では<xref:System.Windows.Forms.Clipboard.SetDataObject%2A>システム クリップボードに非永続的テキスト データを配置します。 `button1_Click`メソッド、選択したテキストがからコピーが`textBox1`してクリップボードから貼り付けます。 `button2_Click`メソッド、情報がクリップボードから取得されに表示される`textBox2`です。 このコード`button1`、 `button2`、 `textBox1`、および`textBox2`が作成され、フォーム上に配置します。  
+  
+ [!code-cpp[Classic Clipboard Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Clipboard Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Clipboard Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Clipboard Example/CS/source.cs#1)]
+ [!code-vb[Classic Clipboard Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Clipboard Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.ExternalException">データがクリップボードに配置できませんでした。 これは通常、クリップボードが別のプロセスによって使用されている場合に発生します。</exception>
+        <exception cref="T:System.Threading.ThreadStateException">現在のスレッドは、シングル スレッド アパートメント (STA) モードではありません。 追加、<see cref="T:System.STAThreadAttribute" />をアプリケーションの<see langword="Main" />メソッドです。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="data" /> の値が <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">任意の種類または形式のデータをシステム クリップボードに追加するためです。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDataObject">
+      <MemberSignature Language="C#" Value="public static void SetDataObject (object data, bool copy);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetDataObject(object data, bool copy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Clipboard.SetDataObject(System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Object" />
+        <Parameter Name="copy" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="data">クリップボードに配置するデータ。</param>
+        <param name="copy">
+          <see langword="true" />このアプリケーションが終了した後に、クリップボードに残しておくデータが必要な場合それ以外の場合、<see langword="false" />です。</param>
+        <summary>クリップボードをクリアし、データをその上に配置およびアプリケーションが終了した後、データは継続するかどうかを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`copy`パラメーターは`false`アプリケーションの終了時、データはシステム クリップボードから削除されます。  
+  
+ このメソッドは、100 ミリ秒間隔内でその 10 倍のデータを設定しようとし、スロー、<xref:System.Runtime.InteropServices.ExternalException>のすべての試行が成功した場合。  
+  
+> [!NOTE]
+>  オブジェクトをクリップボードに保存するのには、シリアル化可能にする必要があります。 このメソッドにシリアル化できないオブジェクトを渡す場合は、例外をスローせず失敗します。 参照してください<xref:System.Runtime.Serialization>詳細については、シリアル化します。  
+>   
+>  <xref:System.Windows.Forms.Clipboard>クラスは、シングル スレッド アパートメント (STA) モードに設定のスレッドでのみ使用できます。 このクラスを使用することを確認、`Main`メソッドが付いて、<xref:System.STAThreadAttribute>属性。  
+  
+   
+  
+## Examples  
+ 次のメソッドは、アプリケーションで実行されます。 システム クリップボードにテキスト ボックスで選択されているテキスト データの永続的なコピーを配置します。 このコード`button1`、 `textBox1`、および`textBox2`が作成され、フォーム上に配置します。  
+  
+ [!code-cpp[Classic Clipboard.SetDataObject1 Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Clipboard.SetDataObject1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Clipboard.SetDataObject1 Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Clipboard.SetDataObject1 Example/CS/source.cs#1)]
+ [!code-vb[Classic Clipboard.SetDataObject1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Clipboard.SetDataObject1 Example/VB/source.vb#1)]  
+  
+ 別のアプリケーションで、次のメソッドが、システムのクリップボードからテキストを取得しにテキストを貼り付けます`textBox2`です。 このコード`button2`と`textBox2`が作成され、フォーム上に配置します。  
+  
+ [!code-cpp[Classic Clipboard.SetDataObject1 Example#2](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Clipboard.SetDataObject1 Example/CPP/source.cpp#2)]
+ [!code-csharp[Classic Clipboard.SetDataObject1 Example#2](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Clipboard.SetDataObject1 Example/CS/source.cs#2)]
+ [!code-vb[Classic Clipboard.SetDataObject1 Example#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Clipboard.SetDataObject1 Example/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.ExternalException">データがクリップボードに配置できませんでした。 これは通常、クリップボードが別のプロセスによって使用されている場合に発生します。</exception>
+        <exception cref="T:System.Threading.ThreadStateException">現在のスレッドは、シングル スレッド アパートメント (STA) モードではありません。 追加、<see cref="T:System.STAThreadAttribute" />をアプリケーションの<see langword="Main" />メソッドです。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="data" /> の値が <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">任意の種類または形式のデータをシステム クリップボードに追加するためです。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDataObject">
+      <MemberSignature Language="C#" Value="public static void SetDataObject (object data, bool copy, int retryTimes, int retryDelay);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetDataObject(object data, bool copy, int32 retryTimes, int32 retryDelay) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Clipboard.SetDataObject(System.Object,System.Boolean,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Object" />
+        <Parameter Name="copy" Type="System.Boolean" />
+        <Parameter Name="retryTimes" Type="System.Int32" />
+        <Parameter Name="retryDelay" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="data">クリップボードに配置するデータ。</param>
+        <param name="copy">
+          <see langword="true" />このアプリケーションが終了した後に、クリップボードに残しておくデータが必要な場合それ以外の場合、<see langword="false" />です。</param>
+        <param name="retryTimes">クリップボードにデータを配置することを試行する回数。</param>
+        <param name="retryDelay">試行間の待ち時間 (ミリ秒) の数。</param>
+        <summary>クリップボードし、指定したオプションで、データをアプリケーションが終了した後、クリップボードに残して、再試行間隔と回数、指定した数のデータを配置する試行を消去します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クリップボードにデータを追加する場合によっては失敗する場合、クリップボードは別のスレッドまたはアプリケーションでビジー状態です。 このメソッドは、大量のクリップボードの使用による、環境でこの問題を回避すると便利です。  
+  
+ 場合、`copy`パラメーターは`false`アプリケーションの終了時、データはシステム クリップボードから削除されます。  
+  
+> [!NOTE]
+>  オブジェクトをクリップボードに保存するのには、シリアル化可能にする必要があります。 このメソッドにシリアル化できないオブジェクトを渡す場合は、例外をスローせず失敗します。 参照してください<xref:System.Runtime.Serialization>詳細については、シリアル化します。  
+>   
+>  <xref:System.Windows.Forms.Clipboard>クラスは、シングル スレッド アパートメント (STA) モードに設定のスレッドでのみ使用できます。 このクラスを使用することを確認、`Main`メソッドが付いて、<xref:System.STAThreadAttribute>属性。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Threading.ThreadStateException">現在のスレッドは、シングル スレッド アパートメント (STA) モードではありません。 追加、<see cref="T:System.STAThreadAttribute" />をアプリケーションの<see langword="Main" />メソッドです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="data" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="retryTimes" /> が 0 未満です。  
+  
+ -または-  
+  
+ <paramref name="retryDelay" /> が 0 未満です。</exception>
+        <exception cref="T:System.Runtime.InteropServices.ExternalException">データがクリップボードに配置できませんでした。 これは通常、クリップボードが別のプロセスによって使用されている場合に発生します。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">任意の種類または形式のデータをシステム クリップボードに追加するためです。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFileDropList">
+      <MemberSignature Language="C#" Value="public static void SetFileDropList (System.Collections.Specialized.StringCollection filePaths);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetFileDropList(class System.Collections.Specialized.StringCollection filePaths) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Clipboard.SetFileDropList(System.Collections.Specialized.StringCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filePaths" Type="System.Collections.Specialized.StringCollection" />
+      </Parameters>
+      <Docs>
+        <param name="filePaths">A<see cref="T:System.Collections.Specialized.StringCollection" />ファイル名を含むです。</param>
+        <summary>クリップボードをクリアし、ファイル名のコレクションを追加、<see cref="F:System.Windows.Forms.DataFormats.FileDrop" />形式です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイルのドロップダウン リストは、ファイルのパス情報を格納する文字列のコレクションです。  
+  
+ ファイルのドロップダウン リストとしてクリップボードに格納されている、<xref:System.String>配列。 このメソッドは変換`filePaths`を<xref:System.String>をクリップボードに追加する前に配列。  
+  
+ クリップボードからファイルのドロップダウン リストを取得する、<xref:System.Windows.Forms.Clipboard.ContainsFileDropList%2A>で取得する前に、クリップボードにその形式でデータが含まれるかどうかを決定するメソッド、<xref:System.Windows.Forms.Clipboard.GetFileDropList%2A>メソッドです。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.Clipboard>クラスは、シングル スレッド アパートメント (STA) モードに設定のスレッドでのみ使用できます。 このクラスを使用することを確認、`Main`メソッドが付いて、<xref:System.STAThreadAttribute>属性。  
+  
+   
+  
+## Examples  
+ 次の例では、このメンバーを示します。  
+  
+ [!code-csharp[System.Windows.Forms.Clipboard#30](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/CS/form1.cs#30)]
+ [!code-vb[System.Windows.Forms.Clipboard#30](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/vb/form1.vb#30)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.ExternalException">クリップボードをクリアできませんでした。 これは通常、クリップボードが別のプロセスによって使用されている場合に発生します。</exception>
+        <exception cref="T:System.Threading.ThreadStateException">現在のスレッドは、シングル スレッド アパートメント (STA) モードではありません。 追加、<see cref="T:System.STAThreadAttribute" />をアプリケーションの<see langword="Main" />メソッドです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="filePaths" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="filePaths" />任意の文字列は含まれません。  
+  
+ または  
+  
+ 少なくとも 1 つの文字列の<paramref name="filePaths" />は<see cref="F:System.String.Empty" />、空白文字のみが含まれています、によって定義された 1 つまたは複数の無効な文字が含まれています<see cref="F:System.IO.Path.InvalidPathChars" />は<see langword="null" />、コロン (:)、またはシステム定義の最大長を超えています。  
+  
+ 参照してください、<see cref="P:System.Exception.InnerException" />のプロパティ、<see cref="T:System.ArgumentException" />詳細についてはします。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">内のデータを追加するため、<see cref="F:System.Windows.Forms.DataFormats.FileDrop" />システム クリップボードの形式です。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /></permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイル システムにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetImage">
+      <MemberSignature Language="C#" Value="public static void SetImage (System.Drawing.Image image);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetImage(class System.Drawing.Image image) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Clipboard.SetImage(System.Drawing.Image)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="image" Type="System.Drawing.Image" />
+      </Parameters>
+      <Docs>
+        <param name="image"><see cref="T:System.Drawing.Image" />をクリップボードに追加します。</param>
+        <summary>クリップボードをクリアし、追加、<see cref="T:System.Drawing.Image" />で、<see cref="F:System.Windows.Forms.DataFormats.Bitmap" />形式です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クリップボードから画像データを取得する、<xref:System.Windows.Forms.Clipboard.ContainsImage%2A>で取得する前に、クリップボードにイメージ データが含まれるかどうかを決定するメソッド、<xref:System.Windows.Forms.Clipboard.GetImage%2A>メソッドです。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.Clipboard>クラスは、シングル スレッド アパートメント (STA) モードに設定のスレッドでのみ使用できます。 このクラスを使用することを確認、`Main`メソッドが付いて、<xref:System.STAThreadAttribute>属性。  
+  
+   
+  
+## Examples  
+ 次の例では、このメンバーを示します。  
+  
+ [!code-csharp[System.Windows.Forms.Clipboard#40](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/CS/form1.cs#40)]
+ [!code-vb[System.Windows.Forms.Clipboard#40](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/vb/form1.vb#40)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.ExternalException">クリップボードをクリアできませんでした。 これは通常、クリップボードが別のプロセスによって使用されている場合に発生します。</exception>
+        <exception cref="T:System.Threading.ThreadStateException">現在のスレッドは、シングル スレッド アパートメント (STA) モードではありません。 追加、<see cref="T:System.STAThreadAttribute" />をアプリケーションの<see langword="Main" />メソッドです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="image" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">内のデータを追加するため、<see cref="F:System.Windows.Forms.DataFormats.Bitmap" />システム クリップボードの形式です。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetText">
+      <MemberSignature Language="C#" Value="public static void SetText (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetText(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Clipboard.SetText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">クリップボードに追加するテキスト。</param>
+        <summary>クリップボードをクリアし、内のテキスト データを追加、<see cref="F:System.Windows.Forms.TextDataFormat.Text" />または<see cref="F:System.Windows.Forms.TextDataFormat.UnicodeText" />形式、オペレーティング システムによって異なります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッド内のテキスト データは追加、<xref:System.Windows.Forms.TextDataFormat.UnicodeText>でフォーマットする[!INCLUDE[WinXpFamily](~/includes/winxpfamily-md.md)]と[!INCLUDE[Win2kFamily](~/includes/win2kfamily-md.md)]です。 それ以外の場合、このメソッドは、内のテキスト データを追加、<xref:System.Windows.Forms.TextDataFormat.Text>形式です。  
+  
+ クリップボードからテキスト データを取得する、<xref:System.Windows.Forms.Clipboard.ContainsText%2A>で取得する前に、クリップボードにテキスト データが含まれるかどうかを決定するメソッド、<xref:System.Windows.Forms.Clipboard.GetText%2A>メソッドです。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.Clipboard>クラスは、シングル スレッド アパートメント (STA) モードに設定のスレッドでのみ使用できます。 このクラスを使用することを確認、`Main`メソッドが付いて、<xref:System.STAThreadAttribute>属性。  
+  
+   
+  
+## Examples  
+ 次の例でのオーバー ロード、<xref:System.Windows.Forms.Clipboard.SetText%2A>メソッドには、このオーバー ロードに似ています。  
+  
+ [!code-csharp[System.Windows.Forms.Clipboard#50](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/CS/form1.cs#50)]
+ [!code-vb[System.Windows.Forms.Clipboard#50](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/vb/form1.vb#50)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.ExternalException">クリップボードをクリアできませんでした。 これは通常、クリップボードが別のプロセスによって使用されている場合に発生します。</exception>
+        <exception cref="T:System.Threading.ThreadStateException">現在のスレッドは、シングル スレッド アパートメント (STA) モードではありません。 追加、<see cref="T:System.STAThreadAttribute" />をアプリケーションの<see langword="Main" />メソッドです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="text" /> は <see langword="null" /> または <see cref="F:System.String.Empty" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">システム クリップボードにテキスト データを追加します。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionClipboard.OwnClipboard" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetText">
+      <MemberSignature Language="C#" Value="public static void SetText (string text, System.Windows.Forms.TextDataFormat format);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetText(string text, valuetype System.Windows.Forms.TextDataFormat format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Clipboard.SetText(System.String,System.Windows.Forms.TextDataFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="format" Type="System.Windows.Forms.TextDataFormat" />
+      </Parameters>
+      <Docs>
+        <param name="text">クリップボードに追加するテキスト。</param>
+        <param name="format"><see cref="T:System.Windows.Forms.TextDataFormat" /> 値のいずれか。</param>
+        <summary>クリップボードをクリアし、指定された、指定された形式でテキスト データを追加<see cref="T:System.Windows.Forms.TextDataFormat" />値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クリップボードからテキスト データを取得する、<xref:System.Windows.Forms.Clipboard.ContainsText%2A>で取得する前に、クリップボードにテキスト データが含まれるかどうかを決定するメソッド、<xref:System.Windows.Forms.Clipboard.GetText%2A>メソッドです。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.Clipboard>クラスは、シングル スレッド アパートメント (STA) モードに設定のスレッドでのみ使用できます。 このクラスを使用することを確認、`Main`メソッドが付いて、<xref:System.STAThreadAttribute>属性。  
+  
+   
+  
+## Examples  
+ 次の例では、このメンバーを示します。  
+  
+ [!code-csharp[System.Windows.Forms.Clipboard#50](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/CS/form1.cs#50)]
+ [!code-vb[System.Windows.Forms.Clipboard#50](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/vb/form1.vb#50)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.ExternalException">クリップボードをクリアできませんでした。 これは通常、クリップボードが別のプロセスによって使用されている場合に発生します。</exception>
+        <exception cref="T:System.Threading.ThreadStateException">現在のスレッドは、シングル スレッド アパートメント (STA) モードではありません。 追加、<see cref="T:System.STAThreadAttribute" />をアプリケーションの<see langword="Main" />メソッドです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="text" /> は <see langword="null" /> または <see cref="F:System.String.Empty" /> です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="format" /> は有効な <see cref="T:System.Windows.Forms.TextDataFormat" /> 値ではありません。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">システム クリップボードにテキスト データを追加します。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionClipboard.OwnClipboard" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

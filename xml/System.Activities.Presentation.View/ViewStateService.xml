@@ -1,0 +1,225 @@
+<Type Name="ViewStateService" FullName="System.Activities.Presentation.View.ViewStateService">
+  <TypeSignature Language="C#" Value="public abstract class ViewStateService" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ViewStateService extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Presentation.View.ViewStateService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities.Presentation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ワークフロー アプリケーションの実行における特定の時点での、ワークフロー アプリケーションのユーザー操作コンポーネントに関連付けられたすべてのデータ値の保存およびアクセスを可能にします。 <see cref="T:System.Activities.Presentation.View.ViewStateService" /> には、モデル アイテムのビュー ステートが格納されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、アプリケーションの制御がポストバックと共に移動する場合に、ステートを継続して取得するのに役立ちます。 <xref:System.Activities.Presentation.View.ViewStateService> は抽象クラスです。 派生クラスでは、<xref:System.Activities.Presentation.View.ViewStateService.StoreViewState%2A> が呼び出されたときにビュー ステートを格納し、<xref:System.Activities.Presentation.View.ViewStateService.RetrieveViewState%2A> が呼び出されたときにビュー ステートを取得する必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ViewStateService ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.ViewStateService.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Activities.Presentation.View.ViewStateService" /> クラスの新しいインスタンスを開始します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveViewState">
+      <MemberSignature Language="C#" Value="public abstract bool RemoveViewState (System.Activities.Presentation.Model.ModelItem modelItem, string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool RemoveViewState(class System.Activities.Presentation.Model.ModelItem modelItem, string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.ViewStateService.RemoveViewState(System.Activities.Presentation.Model.ModelItem,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="modelItem" Type="System.Activities.Presentation.Model.ModelItem" />
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="modelItem">現在のビュー ステートに関連付けられているワークフロー アクティビティ <see cref="T:System.Activities.Presentation.Model.ModelItem" />。</param>
+        <param name="key">保存するビュー ステート項目を識別する <see cref="T:System.String" />。</param>
+        <summary>派生クラスで実装された場合、指定したキーによって表され、指定したモデル アイテムに関連付けられているビュー ステートを削除します。</summary>
+        <returns>
+          <see langword="true" />ビュー ステートが削除された場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RetrieveAllViewState">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.Generic.Dictionary&lt;string,object&gt; RetrieveAllViewState (System.Activities.Presentation.Model.ModelItem modelItem);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.Dictionary`2&lt;string, object&gt; RetrieveAllViewState(class System.Activities.Presentation.Model.ModelItem modelItem) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.ViewStateService.RetrieveAllViewState(System.Activities.Presentation.Model.ModelItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.Dictionary&lt;System.String,System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="modelItem" Type="System.Activities.Presentation.Model.ModelItem" />
+      </Parameters>
+      <Docs>
+        <param name="modelItem">ビュー ステートが適用される <see cref="T:System.Activities.Presentation.Model.ModelItem" />。</param>
+        <summary>指定した <paramref name="modelItem" /> に対して保存されている、指定した <paramref name="key" /> に一致するビュー ステートの部分を返します。</summary>
+        <returns><see cref="T:System.Collections.Generic.Dictionary`2" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビュー ステート情報を取得するためには、最初に <xref:System.Activities.Presentation.View.ViewStateService.StoreViewState%2A> を呼び出してビュー ステート情報を保存しておく必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RetrieveViewState">
+      <MemberSignature Language="C#" Value="public abstract object RetrieveViewState (System.Activities.Presentation.Model.ModelItem modelItem, string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object RetrieveViewState(class System.Activities.Presentation.Model.ModelItem modelItem, string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.ViewStateService.RetrieveViewState(System.Activities.Presentation.Model.ModelItem,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="modelItem" Type="System.Activities.Presentation.Model.ModelItem" />
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="modelItem">現在のビュー ステートに関連付けられているワークフロー アクティビティ <see cref="T:System.Activities.Presentation.Model.ModelItem" />。</param>
+        <param name="key">取得するビュー ステートの部分を識別する <see cref="T:System.String" />。</param>
+        <summary>指定した <paramref name="modelItem" /> の指定した <paramref name="key" /> に一致するビュー ステートの部分を取得します。</summary>
+        <returns>としてビュー ステートの部分、 <see cref="T:System.Object" />、または<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビュー ステート情報を取得するためには、最初に <xref:System.Activities.Presentation.View.ViewStateService.StoreViewState%2A> を呼び出してビュー ステート情報を保存しておく必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StoreViewState">
+      <MemberSignature Language="C#" Value="public abstract void StoreViewState (System.Activities.Presentation.Model.ModelItem modelItem, string key, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void StoreViewState(class System.Activities.Presentation.Model.ModelItem modelItem, string key, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.ViewStateService.StoreViewState(System.Activities.Presentation.Model.ModelItem,System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="modelItem" Type="System.Activities.Presentation.Model.ModelItem" />
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="modelItem">ビュー ステートが適用される <see cref="T:System.Activities.Presentation.Model.ModelItem" />。</param>
+        <param name="key">保存するビュー ステートの部分を識別する <see cref="T:System.String" />。</param>
+        <param name="value">保存する <see cref="T:System.Object" />。</param>
+        <summary>指定した <paramref name="modelItem" /> の指定した <paramref name="key" /> に一致するビュー ステートの部分を保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Activities.Presentation.View.ViewStateService.RetrieveViewState%2A> を呼び出し、`modelItem` と `key` に同じ値を渡すことによって、保存したオブジェクトを取得することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StoreViewStateWithUndo">
+      <MemberSignature Language="C#" Value="public abstract void StoreViewStateWithUndo (System.Activities.Presentation.Model.ModelItem modelItem, string key, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void StoreViewStateWithUndo(class System.Activities.Presentation.Model.ModelItem modelItem, string key, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.ViewStateService.StoreViewStateWithUndo(System.Activities.Presentation.Model.ModelItem,System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="modelItem" Type="System.Activities.Presentation.Model.ModelItem" />
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="modelItem">ビュー ステートが適用される <see cref="T:System.Activities.Presentation.Model.ModelItem" />。</param>
+        <param name="key">保存するビュー ステートの部分を識別する <see cref="T:System.String" />。 保存するビュー ステート項目を識別する <see cref="T:System.String" />。</param>
+        <param name="value">保存する <see cref="T:System.Object" />。</param>
+        <summary>派生クラスで実装された場合、指定したキーによって表される項目の現在の設定を記録して、元に戻す操作を可能にします。 その後、指定したキーによって表される項目を、指定したモデル アイテムのビュー ステートに保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Activities.Presentation.View.ViewStateService.RetrieveViewState%2A> を呼び出し、`modelItem` と `key` に同じ値を渡すことによって、保存したオブジェクトを取得することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UndoableViewStateChanged">
+      <MemberSignature Language="C#" Value="public abstract event System.Activities.Presentation.View.ViewStateChangedEventHandler UndoableViewStateChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Activities.Presentation.View.ViewStateChangedEventHandler UndoableViewStateChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Activities.Presentation.View.ViewStateService.UndoableViewStateChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.View.ViewStateChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスで実装された場合、コントロールの取り消し可能なビュー ステートが変更されたことを通知するイベントを宣言します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewStateChanged">
+      <MemberSignature Language="C#" Value="public abstract event System.Activities.Presentation.View.ViewStateChangedEventHandler ViewStateChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Activities.Presentation.View.ViewStateChangedEventHandler ViewStateChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Activities.Presentation.View.ViewStateService.ViewStateChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.View.ViewStateChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスで実装された場合、コントロールのビュー ステートが変更されたことを通知するイベントを宣言します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

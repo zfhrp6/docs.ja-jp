@@ -1,0 +1,150 @@
+<Type Name="RegisterInfo" FullName="System.ServiceModel.PeerResolvers.RegisterInfo">
+  <TypeSignature Language="C#" Value="public class RegisterInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RegisterInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.PeerResolvers.RegisterInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ServiceModel.MessageContract(IsWrapped=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ピア リゾルバー サービスに提供するピア登録情報を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、ピア リゾルバー サービスにピア ノードとメッシュ ID のタプルを登録するために使用する情報を定義します。 この情報はリゾルバー サービスの登録ルックアップ テーブルにエントリとして挿入され、他のピアは、挿入されたピアのエンドポイント アドレスをこの情報で照会できます。  
+  
+ ピア リゾルバー サービスに登録するために <xref:System.ServiceModel.PeerResolvers.CustomPeerResolverService.Register%2A> (または <xref:System.ServiceModel.PeerResolvers.IPeerResolverContract.Register%2A> の実装) が呼び出されると、このクラスのインスタンスが作成されます。 これらは主に、ピア リゾルバー サービスのネットワーク クライアントからピア リゾルバー サービスに登録要求情報を渡すために使用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RegisterInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.PeerResolvers.RegisterInfo.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.ServiceModel.PeerResolvers.RegisterInfo" /> クラスの新しい既定のインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RegisterInfo (Guid client, string meshId, System.ServiceModel.PeerNodeAddress address);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Guid client, string meshId, class System.ServiceModel.PeerNodeAddress address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.PeerResolvers.RegisterInfo.#ctor(System.Guid,System.String,System.ServiceModel.PeerNodeAddress)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="client" Type="System.Guid" />
+        <Parameter Name="meshId" Type="System.String" />
+        <Parameter Name="address" Type="System.ServiceModel.PeerNodeAddress" />
+      </Parameters>
+      <Docs>
+        <param name="client">
+          登録するピア ノードを一意に識別する <see cref="T:System.Guid" />。</param>
+        <param name="meshId">
+          ピア ノードが参加するメッシュの ID を指定する <see cref="T:System.String" />。</param>
+        <param name="address">
+          登録するピア ノードのエンドポイント アドレスを指定する <see cref="T:System.ServiceModel.PeerNodeAddress" />。</param>
+        <summary>指定したクライアント ID、メッシュ ID、およびエンドポイント アドレスを使用して、<see cref="T:System.ServiceModel.PeerResolvers.RegisterInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientId">
+      <MemberSignature Language="C#" Value="public Guid ClientId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid ClientId" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.PeerResolvers.RegisterInfo.ClientId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ピア ノードの登録エントリを一意に識別する <see cref="T:System.Guid" /> を取得します。</summary>
+        <value>
+          ピア ノードの登録エントリを一意に識別する <see cref="T:System.Guid" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasBody">
+      <MemberSignature Language="C#" Value="public bool HasBody ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool HasBody() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.PeerResolvers.RegisterInfo.HasBody" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この型のシリアル化されたインスタンスを含むメッセージの本文が正しく書式設定されているかどうかを示します。</summary>
+        <returns>送信側が登録更新情報の本文を正しく書式設定している場合は True。正しくない場合は False。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MeshId">
+      <MemberSignature Language="C#" Value="public string MeshId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MeshId" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.PeerResolvers.RegisterInfo.MeshId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>登録エントリに関連付けられているメッシュ ID を取得します。</summary>
+        <value>
+          登録エントリに関連付けられたメッシュ ID (メッシュ名) が格納されている <see cref="T:System.String" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NodeAddress">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.PeerNodeAddress NodeAddress { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.PeerNodeAddress NodeAddress" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.PeerResolvers.RegisterInfo.NodeAddress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.PeerNodeAddress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リゾルバー サービスに登録しているノードと関連付けるエンドポイント アドレスを取得します。</summary>
+        <value>
+          リゾルバー サービスに登録しているノードと関連付けるエンドポイント アドレスが格納されている <see cref="T:System.ServiceModel.PeerNodeAddress" />。 このインスタンスに格納されているアドレス (1 つまたは複数) を使用して、メッシュ内のピア ノードに接続できます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

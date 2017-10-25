@@ -1,0 +1,2639 @@
+<Type Name="DateTimeFormatInfo" FullName="System.Globalization.DateTimeFormatInfo">
+  <TypeSignature Language="C#" Value="public sealed class DateTimeFormatInfo : ICloneable, IFormatProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit DateTimeFormatInfo extends System.Object implements class System.ICloneable, class System.IFormatProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Globalization.DateTimeFormatInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Globalization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IFormatProvider</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>日付と時刻の値の書式に関するカルチャ固有の情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティ、<xref:System.Globalization.DateTimeFormatInfo>クラスは、書式設定操作または解析、次のように日付と時刻の値のカルチャに固有の情報を含めます。  
+  
+-   日付値を書式設定するために使用するパターンです。  
+  
+-   時刻の値の書式を設定するために使用するパターンです。  
+  
+-   週の曜日の名前。  
+  
+-   年の月の名前。  
+  
+-   午前 午後 時刻の値で使用されている指定子。  
+  
+-   カレンダーの日付を表すです。  
+  
+ このセクションの内容:  
+  
+-   [DateTimeFormatInfo オブジェクトをインスタンス化します。](#instantiating)  
+  
+    -   [インバリアント カルチャ](#instantiating_Invariant)  
+  
+    -   [特定のカルチャ](#instantiating_Specific)  
+  
+    -   [ニュートラル カルチャ](#instantiating_neutral)  
+  
+    -   [現在のカルチャ](#instantiating_Current)  
+  
+-   [DateTimeFormatInfo と動的なデータ](#dynamic)  
+  
+-   [日付と時刻の書式設定](#Formatting_dates_times)  
+  
+-   [DateTimeFormatInfo のプロパティおよび書式指定文字列](#properties)  
+  
+-   [DateTimeFormatInfo のプロパティを変更します。](#Modifying)  
+  
+<a name="instantiating"></a>   
+## <a name="instantiating-a-datetimeformatinfo-object"></a>DateTimeFormatInfo オブジェクトをインスタンス化します。  
+ A<xref:System.Globalization.DateTimeFormatInfo>オブジェクトは、インバリアント カルチャ、特定のカルチャ、ニュートラル カルチャまたは現在のカルチャの書式指定規則を表すことができます。 このセクションでは、各型のインスタンスを作成する方法を説明<xref:System.Globalization.DateTimeFormatInfo>オブジェクト。  
+  
+<a name="instantiating_Invariant"></a>   
+### <a name="instantiating-a-datetimeformatinfo-object-for-the-invariant-culture"></a>インバリアント カルチャ DateTimeFormatInfo オブジェクトをインスタンス化します。  
+ インバリアント カルチャでは、カルチャに依存しないられるカルチャを表します。 これは、英語ではなく、英語を話す国や地域に基づいています。 特定のカルチャのデータは、動的であることし、新しい文化的慣習やユーザー設定を反映するように変更することができます、インバリアント カルチャのデータは変わりません。 インスタンス化することができます、<xref:System.Globalization.DateTimeFormatInfo>を次のように、インバリアント カルチャの書式指定規則を表すオブジェクト。  
+  
+-   値を取得することによって、<xref:System.Globalization.DateTimeFormatInfo.InvariantInfo%2A>プロパティです。 返された<xref:System.Globalization.DateTimeFormatInfo>オブジェクトは読み取り専用です。  
+  
+-   パラメーターなしで呼び出すことによって<xref:System.Globalization.DateTimeFormatInfo.%23ctor%2A>コンス トラクターです。 返された <xref:System.Globalization.DateTimeFormatInfo> オブジェクトは読み取り/書き込み可能です。  
+  
+-   値を取得することによって、<xref:System.Globalization.CultureInfo.DateTimeFormat%2A>プロパティから、<xref:System.Globalization.CultureInfo>によって返されるオブジェクト、<xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>プロパティです。 返された<xref:System.Globalization.DateTimeFormatInfo>オブジェクトは読み取り専用です。  
+  
+ 次の例を使用してこれらのメソッドの各インスタンスを作成する、<xref:System.Globalization.DateTimeFormatInfo>インバリアント カルチャを表すオブジェクト。 オブジェクトは読み取り専用であるかどうかを示します。  
+  
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/cs/create1.cs#1)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/vb/create1.vb#1)]  
+  
+<a name="instantiating_Specific"></a>   
+### <a name="instantiating-a-datetimeformatinfo-object-for-a-specific-culture"></a>特定のカルチャの DateTimeFormatInfo オブジェクトをインスタンス化します。  
+ 特定のカルチャでは、特定の国/地域で話される言語を表します。 たとえば、EN-US では、特定のカルチャを英語、米国での音声を表す、EN-CA カナダで話される英語の言語を表す特定のカルチャ。 インスタンス化することができます、<xref:System.Globalization.DateTimeFormatInfo>を次のように、特定のカルチャの書式指定規則を表すオブジェクト。  
+  
+-   呼び出して、<xref:System.Globalization.CultureInfo.GetCultureInfo%28System.String%29?displayProperty=nameWithType>メソッドと、返された値を取得する<xref:System.Globalization.CultureInfo>オブジェクトの<xref:System.Globalization.CultureInfo.DateTimeFormat%2A?displayProperty=nameWithType>プロパティです。 返された<xref:System.Globalization.DateTimeFormatInfo>オブジェクトは読み取り専用です。  
+  
+-   静的なを渡すことによって<xref:System.Globalization.DateTimeFormatInfo.GetInstance%2A>メソッド、<xref:System.Globalization.CultureInfo>カルチャを表すオブジェクトを<xref:System.Globalization.DateTimeFormatInfo>オブジェクトを取得します。 返された <xref:System.Globalization.DateTimeFormatInfo> オブジェクトは読み取り/書き込み可能です。  
+  
+-   呼び出して、静的な<xref:System.Globalization.CultureInfo.CreateSpecificCulture%2A?displayProperty=nameWithType>メソッドと、返された値を取得する<xref:System.Globalization.CultureInfo>オブジェクトの<xref:System.Globalization.CultureInfo.DateTimeFormat%2A?displayProperty=nameWithType>プロパティです。 返された <xref:System.Globalization.DateTimeFormatInfo> オブジェクトは読み取り/書き込み可能です。  
+  
+-   呼び出して、<xref:System.Globalization.CultureInfo.%23ctor%2A?displayProperty=nameWithType>クラス コンス トラクターと、返された値を取得する<xref:System.Globalization.CultureInfo>オブジェクトの<xref:System.Globalization.CultureInfo.DateTimeFormat%2A?displayProperty=nameWithType>プロパティです。 返された <xref:System.Globalization.DateTimeFormatInfo> オブジェクトは読み取り/書き込み可能です。  
+  
+ 次の例では、各インスタンスを作成する次のようを示す、<xref:System.Globalization.DateTimeFormatInfo>オブジェクトし、結果のオブジェクトは読み取り専用であるかどうかを示します。  
+  
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.Class#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/cs/create1.cs#3)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.Class#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/vb/create1.vb#3)]  
+  
+<a name="instantiating_neutral"></a>   
+### <a name="instantiating-a-datetimeformatinfo-object-for-a-neutral-culture"></a>ニュートラル カルチャの DateTimeFormatInfo オブジェクトをインスタンス化します。  
+ ニュートラル カルチャを表すカルチャまたは言語とは別の国/地域。1 つまたは複数の特定のカルチャの親では通常です。 たとえば、Fr は、フランス語の言語および FR-FR カルチャの親のニュートラル カルチャです。 インスタンス化することができます、<xref:System.Globalization.DateTimeFormatInfo>を作成するのと同じ方法でニュートラル カルチャの書式指定規則を表すオブジェクト、<xref:System.Globalization.DateTimeFormatInfo>を特定のカルチャの書式指定規則を表すオブジェクト。 さらに、ニュートラル カルチャを取得できます<xref:System.Globalization.DateTimeFormatInfo>から特定のカルチャのニュートラル カルチャを取得することによってオブジェクト<xref:System.Globalization.CultureInfo.Parent%2A?displayProperty=nameWithType>プロパティを取得する、<xref:System.Globalization.DateTimeFormatInfo>によって返されるオブジェクトの<xref:System.Globalization.CultureInfo.DateTimeFormat%2A?displayProperty=nameWithType>プロパティです。 親カルチャは、返されるインバリアント カルチャを表す場合を除き、<xref:System.Globalization.DateTimeFormatInfo>オブジェクトは読み取り/書き込みです。 次の例では、次の方法をインスタンス化した、<xref:System.Globalization.DateTimeFormatInfo>ニュートラル カルチャを表すオブジェクト。  
+  
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.Class#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/cs/create1.cs#2)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.Class#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/vb/create1.vb#2)]  
+  
+> [!NOTE]
+>  .NET Framework バージョン 1.0 で[!INCLUDE[net_v35_short](~/includes/net-v35-short-md.md)]を取得しようとして、<xref:System.Globalization.DateTimeFormatInfo>がニュートラル カルチャの書式指定規則を反映するオブジェクトをスロー、<xref:System.NotSupportedException>例外。  
+  
+ ただし、特定の国/地域の独立したになっているために、ニュートラル カルチャは、カルチャに固有の書式情報がありません。 設定するのではなく、<xref:System.Globalization.DateTimeFormatInfo>汎用的な値は、オブジェクト、.NET Framework が返されます、<xref:System.Globalization.DateTimeFormatInfo>ニュートラル カルチャの子である、特定の書式指定規則のカルチャを反映するオブジェクト。 たとえば、 <xref:System.Globalization.DateTimeFormatInfo> en のニュートラル カルチャは EN-US カルチャの書式指定規則を反映するためのオブジェクトと<xref:System.Globalization.DateTimeFormatInfo>fr カルチャ FR-FR カルチャの書式指定規則を反映するためのオブジェクトします。  
+  
+ 次のようにコードを使用すると、ニュートラル カルチャを表すどの特定のカルチャの書式指定規則を決定します。 この例では、リフレクションを使用して、比較、<xref:System.Globalization.DateTimeFormatInfo>がニュートラル カルチャのプロパティを特定の子のカルチャのプロパティでします。 カレンダーの種類が同じ場合に等価である 2 つのカレンダーを考慮し、構成のグレゴリオ暦カレンダー場合は、その<xref:System.Globalization.GregorianCalendar.CalendarType%2A?displayProperty=nameWithType>プロパティと同じ値であります。  
+  
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.Class#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/cs/instantiate6c.cs#6)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.Class#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/vb/instantiate6c.vb#6)]  
+  
+<a name="instantiating_Current"></a>   
+### <a name="instantiating-a-datetimeformatinfo-object-for-the-current-culture"></a>現在のカルチャの DateTimeFormatInfo オブジェクトをインスタンス化します。  
+ インスタンス化することができます、<xref:System.Globalization.DateTimeFormatInfo>を次のように、現在のカルチャの書式指定規則を表すオブジェクト。  
+  
+-   値を取得することによって、<xref:System.Globalization.DateTimeFormatInfo.CurrentInfo%2A>プロパティです。 返された<xref:System.Globalization.DateTimeFormatInfo>オブジェクトは読み取り専用です。  
+  
+-   値を取得することによって、<xref:System.Globalization.CultureInfo.DateTimeFormat%2A>プロパティから、<xref:System.Globalization.CultureInfo>によって返されるオブジェクト、<xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>プロパティです。 返された<xref:System.Globalization.DateTimeFormatInfo>オブジェクトは読み取り専用です。  
+  
+-   呼び出して、<xref:System.Globalization.NumberFormatInfo.GetInstance%2A>メソッドを<xref:System.Globalization.CultureInfo>を現在のカルチャを表すオブジェクト。 返された<xref:System.Globalization.DateTimeFormatInfo>オブジェクトは読み取り専用です。  
+  
+ 次の例を使用してこれらのメソッドの各インスタンスを作成する、<xref:System.Globalization.DateTimeFormatInfo>を現在のカルチャの書式指定規則を表すオブジェクト。 オブジェクトは読み取り専用であるかどうかを示します。  
+  
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.Class#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/cs/create2.cs#4)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.Class#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/vb/create2.vb#4)]  
+  
+ 書き込み可能な作成<xref:System.Globalization.DateTimeFormatInfo>以下の方法のいずれかで現在のスレッド カルチャの規則を表すオブジェクト。  
+  
+-   取得することによって、<xref:System.Globalization.DateTimeFormatInfo>オブジェクトの 3 つの方法は前と呼び出し元のいずれかで、<xref:System.Globalization.DateTimeFormatInfo.Clone%2A>メソッドで返された<xref:System.Globalization.DateTimeFormatInfo>オブジェクト。 元のコピーを作成してこの<xref:System.Globalization.DateTimeFormatInfo>点を除いて、オブジェクト、<xref:System.Globalization.DateTimeFormatInfo.IsReadOnly%2A>プロパティは`false`です。  
+  
+-   呼び出して、<xref:System.Globalization.CultureInfo.CreateSpecificCulture%2A?displayProperty=nameWithType>メソッドを作成、 <xref:System.Globalization.CultureInfo> 、現在のカルチャを表すオブジェクトし、を使用してその<xref:System.Globalization.CultureInfo.DateTimeFormat%2A?displayProperty=nameWithType>取得するプロパティを<xref:System.Globalization.DateTimeFormatInfo>オブジェクト。  
+  
+ 次の例は、読み取り/書き込みをインスタンス化するには、各方法を示しています。<xref:System.Globalization.DateTimeFormatInfo>オブジェクトとの値を表示、<xref:System.Globalization.DateTimeFormatInfo.IsReadOnly%2A>プロパティです。  
+  
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.Class#7](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/cs/instantiate2.cs#7)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.Class#7](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/vb/instantiate2.vb#7)]  
+  
+ Windows では、ユーザーがの一部を無効、<xref:System.Globalization.DateTimeFormatInfo>プロパティの値の書式設定および解析での操作で使用される、**地域と言語**コントロール パネルの アプリケーションです。 たとえば、カルチャが英語 (米国) は、ユーザーは、値を表示する長い時間 (HH:mm:ss 形式) に 24 時間制を使用する (形式 h:mm:ss tt) で既定の 12 時間形式ではなくこともできます。 <xref:System.Globalization.DateTimeFormatInfo>説明した方法で取得したオブジェクト以前すべて反映ユーザーによるオーバーライドします。 これが望ましくない場合は、作成、<xref:System.Globalization.NumberFormatInfo>オーバーライド (およびは読み取り専用ではなく読み取り/書き込みでも) ユーザーが反映されていないオブジェクトを呼び出して、<xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType>コンス トラクターの値を渡すと`false`の`useUserOverride`引数。 次の例を示します、システムの現在のカルチャが英語 (米国) と長い時刻パターンを持つが HH:mm:ss に h:mm:ss tt の既定値から変更されました。  
+  
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.Class#8](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/cs/instantiate3.cs#8)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.Class#8](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/vb/instantiate3.vb#8)]  
+  
+<a name="dynamic"></a>   
+## <a name="datetimeformatinfo-and-dynamic-data"></a>DateTimeFormatInfo と動的なデータ  
+ カルチャに固有のデータによって提供される日付と時刻の値の書式設定を<xref:System.Globalization.DateTimeFormatInfo>クラスは動的で、によって提供されるデータのカルチャと同じように、<xref:System.Globalization.CultureInfo>クラスです。 値の安定性に関する仮定をする必要がありますいない<xref:System.Globalization.DateTimeFormatInfo>関連付けられているオブジェクトの特定の<xref:System.Globalization.CultureInfo>オブジェクト。 インバリアント カルチャとそれに関連付けられたによって提供されるデータのみ<xref:System.Globalization.DateTimeFormatInfo>オブジェクトが安定化します。 アプリケーション セッション間で、またはアプリケーションの実行中にも、その他のデータを変更できます。 変更の 4 つの主要なソースがあります。  
+  
+-   システムの更新プログラム。 使用する暦または一般的な日付と時刻の形式などのカルチャの設定は、時間の経過と共に変更します。 Windows Update がに対する変更を含むこのような場合は、<xref:System.Globalization.DateTimeFormatInfo>特定のカルチャのプロパティの値。  
+  
+-   置換カルチャ。 <xref:System.Globalization.CultureAndRegionInfoBuilder>既存のカルチャのデータを置換するクラスを使用できます。  
+  
+-   プロパティの値に変更を連鎖します。 これにより、実行時にカルチャ関連のプロパティの数を変更することができます<xref:System.Globalization.DateTimeFormatInfo>データを変更します。 たとえば、プログラム、またはユーザーの操作によっては、現在のカルチャを変更できます。 この場合、<xref:System.Globalization.DateTimeFormatInfo>によって返されるオブジェクト、<xref:System.Globalization.DateTimeFormatInfo.CurrentInfo%2A>プロパティに対する変更を現在のカルチャに関連付けられているオブジェクト。 同様に、カルチャの暦変更できますが、変更が発生するさまざまな<xref:System.Globalization.DateTimeFormatInfo>プロパティの値。  
+  
+-   ユーザー設定。 アプリケーションのユーザーは、一部のコントロール パネルの 地域と言語のオプションでは、現在のシステム カルチャに関連付けられている値をオーバーライドすることもできます。 たとえば、ユーザーは、別の形式で日付を表示することもできます。 場合、<xref:System.Globalization.CultureInfo.UseUserOverride%2A?displayProperty=nameWithType>プロパティに設定されている`true`のプロパティ、<xref:System.Globalization.DateTimeFormatInfo>オブジェクトは、ユーザーの設定からも取得します。 ユーザーの設定が、カルチャに関連付けられていると互換性がないかどうか、<xref:System.Globalization.CultureInfo>オブジェクト (選択したカレンダーは、によって示される予定表のいずれかでがない場合など、<xref:System.Globalization.CultureInfo.OptionalCalendars%2A>プロパティ)、メソッドの結果と、プロパティの値が定義されていません。  
+  
+ 一貫性のないデータのすべてのユーザーがオーバーライドできるプロパティの可能性を最小限に抑える、<xref:System.Globalization.DateTimeFormatInfo>オブジェクトが、オブジェクトが作成されるときに初期化されます。 可能性があるまだ不整合のため、オブジェクトの作成もユーザーのオーバーライド処理はアトミックであり、関連する値は、オブジェクトの作成時に変更できます。 ただし、このような状況は非常にまれにする必要があります。  
+  
+ ユーザーのオーバーライドを反映するかどうかを制御する<xref:System.Globalization.DateTimeFormatInfo>システムのカルチャと同じカルチャを表すオブジェクト。 次の表に、方法、<xref:System.Globalization.DateTimeFormatInfo>オブジェクトを取得して、結果のオブジェクトがユーザーのオーバーライドを反映するかどうかを示します。  
+  
+|CultureInfo と DateTimeFormatInfo オブジェクトのソース|ユーザー オーバーライドが反映されます。|  
+|---------------------------------------------------------|-----------------------------|  
+|`CultureInfo.CurrentCulture.DateTimeFormat` プロパティ|はい|  
+|<xref:System.Globalization.DateTimeFormatInfo.CurrentInfo%2A?displayProperty=nameWithType> プロパティ|はい|  
+|<xref:System.Globalization.CultureInfo.CreateSpecificCulture%2A?displayProperty=nameWithType> メソッド|はい|  
+|<xref:System.Globalization.CultureInfo.GetCultureInfo%2A?displayProperty=nameWithType> メソッド|いいえ|  
+|<xref:System.Globalization.CultureInfo.%23ctor%28System.String%29?displayProperty=nameWithType> コンストラクター|はい|  
+|<xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> コンストラクター|値に依存`useUserOverride`パラメーター|  
+  
+ 使用するときに、ユーザーのオーバーライドを遵守する必要は、それ以外に特別な理由がある場合を除き、<xref:System.Globalization.DateTimeFormatInfo>を書式設定し、ユーザー入力を解析またはデータを表示するクライアント アプリケーション内のオブジェクト。 サーバー アプリケーションまたは自動アプリケーションでは、しないようにしています。 ただし、使用する場合、<xref:System.Globalization.DateTimeFormatInfo>明示的にオブジェクトのいずれかまたは暗黙的に文字列の形式で日付と時刻のデータを保持するため、使用するか、<xref:System.Globalization.DateTimeFormatInfo>インバリアント カルチャの書式指定規則を反映するオブジェクトには、カスタムの日時書式指定文字列のカルチャに関係なく使用することを指定する必要があります。  
+  
+<a name="Formatting_dates_times"></a>   
+## <a name="formatting-dates-and-times"></a>日付と時刻の書式設定  
+ A<xref:System.Globalization.DateTimeFormatInfo>オブジェクトを使用して暗黙的または明示的にすべての日付と時刻の書式設定操作でします。 次のメソッドを呼び出す例を示します。  
+  
+-   すべての日付と時刻など、書式設定メソッド、<xref:System.DateTime.ToString?displayProperty=nameWithType>と<xref:System.DateTimeOffset.ToString%28System.String%29?displayProperty=nameWithType>です。  
+  
+-   メジャーの複合書式指定メソッドで、これは<xref:System.String.Format%2A?displayProperty=nameWithType>します。  
+  
+-   など、書式設定メソッド、他の複合<xref:System.Console.WriteLine%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>と<xref:System.Text.StringBuilder.AppendFormat%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>です。  
+  
+ すべての日付と時刻の書式設定操作の作成を使用して、<xref:System.IFormatProvider>実装します。 <xref:System.IFormatProvider>インターフェイスには、1 つのメソッドが含まれています。<xref:System.IFormatProvider.GetFormat%28System.Type%29?displayProperty=nameWithType>です。 このコールバック メソッドに渡されます、<xref:System.Type>の書式情報を提供するために必要な型を表すオブジェクト。 メソッドは、その型のインスタンスを返しますまたは`null`型のインスタンスを提供できない場合。 .NET Framework には、2 つが含まれます<xref:System.IFormatProvider>日付と時刻の書式設定を実装します。  
+  
+-   <xref:System.Globalization.CultureInfo>クラスで、特定のカルチャ (または特定の国/地域における特定の言語) を表します。 日付と時刻の書式設定操作で、<xref:System.Globalization.CultureInfo.GetFormat%2A?displayProperty=nameWithType>メソッドを返します、<xref:System.Globalization.DateTimeFormatInfo>オブジェクトに関連付けられているその<xref:System.Globalization.CultureInfo.DateTimeFormat%2A?displayProperty=nameWithType>プロパティです。  
+  
+-   <xref:System.Globalization.DateTimeFormatInfo>クラスで、対応するカルチャの書式指定規則に関する情報を提供します。 <xref:System.Globalization.DateTimeFormatInfo.GetFormat%2A?displayProperty=nameWithType>メソッド自体のインスタンスを返します。  
+  
+ 場合、<xref:System.IFormatProvider>実装が指定されていない書式指定メソッドに明示的に、<xref:System.Globalization.CultureInfo>によって返されるオブジェクト、<xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>を現在のスレッド カルチャを表すプロパティを使用します。  
+  
+ 次の例の間のリレーションシップを示しています、<xref:System.IFormatProvider>インターフェイスおよび<xref:System.Globalization.DateTimeFormatInfo>書式設定操作でのクラスです。 カスタム定義<xref:System.IFormatProvider>実装が<xref:System.IFormatProvider.GetFormat%2A>メソッドは、書式設定操作によって要求されたオブジェクトの種類を表示します。 要求している場合、<xref:System.Globalization.DateTimeFormatInfo>オブジェクト、メソッドは、提供、<xref:System.Globalization.DateTimeFormatInfo>現在のスレッド カルチャ オブジェクト。 例から出力として、<xref:System.Decimal.ToString%28System.IFormatProvider%29?displayProperty=nameWithType>メソッド要求、<xref:System.Globalization.DateTimeFormatInfo>一方の書式情報を提供するオブジェクト、<xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>メソッド要求<xref:System.Globalization.NumberFormatInfo>と<xref:System.Globalization.DateTimeFormatInfo>オブジェクトだけでなく、<xref:System.ICustomFormatter>実装します。  
+  
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.Class#9](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/cs/formatprovider1.cs#9)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.Class#9](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/vb/formatprovider1.vb#9)]  
+  
+<a name="properties"></a>   
+## <a name="format-strings-and-datetimeformatinfo-properties"></a>DateTimeFormatInfo のプロパティおよび書式指定文字列  
+ <xref:System.Globalization.DateTimeFormatInfo>オブジェクトには、書式設定操作の日付と時刻の値で使用されるプロパティの 3 種類が含まれています。  
+  
+-   カレンダーに関連するプロパティです。 などのプロパティ<xref:System.Globalization.DateTimeFormatInfo.AbbreviatedDayNames%2A>、 <xref:System.Globalization.DateTimeFormatInfo.AbbreviatedMonthNames%2A>、 <xref:System.Globalization.DateTimeFormatInfo.DayNames%2A>、および<xref:System.Globalization.DateTimeFormatInfo.MonthNames%2A>で定義されている、カルチャで使用されるカレンダーに関連付けられている、<xref:System.Globalization.DateTimeFormatInfo.Calendar%2A>プロパティです。 これらのプロパティは、長い形式の日付が使用され、時刻形式。  
+  
+-   標準で定義されている結果の文字列を生成するプロパティです。 <xref:System.Globalization.DateTimeFormatInfo.RFC1123Pattern%2A>、 <xref:System.Globalization.DateTimeFormatInfo.SortableDateTimePattern%2A>、および<xref:System.Globalization.DateTimeFormatInfo.UniversalSortableDateTimePattern%2A>プロパティが国際標準で定義された結果文字列を生成するカスタム書式指定文字列が含まれます。 これらのプロパティは読み取り専用と、変更できません。  
+  
+-   カルチャに依存した結果の文字列を定義するプロパティです。 一部のプロパティなど<xref:System.Globalization.DateTimeFormatInfo.FullDateTimePattern%2A>と<xref:System.Globalization.DateTimeFormatInfo.ShortDatePattern%2A>が含まれて[カスタム書式指定文字列](~/docs/standard/base-types/custom-date-and-time-format-strings.md)結果の文字列の形式を指定します。 他のユーザーなど<xref:System.Globalization.DateTimeFormatInfo.AMDesignator%2A>、 <xref:System.Globalization.DateTimeFormatInfo.DateSeparator%2A>、 <xref:System.Globalization.DateTimeFormatInfo.PMDesignator%2A>、および<xref:System.Globalization.DateTimeFormatInfo.TimeSeparator%2A>カルチャに依存したシンボル、または結果の文字列に含めることができる部分文字列を定義します。  
+  
+ [標準の日付と時刻の書式指定文字列](~/docs/standard/base-types/standard-date-and-time-format-strings.md)"d"、"D"、"f"および"F"は、特定の対応するエイリアスなど、<xref:System.Globalization.DateTimeFormatInfo>パターンのプロパティの書式を設定します。 ほとんどの[カスタム日付/時刻の書式指定文字列](~/docs/standard/base-types/custom-date-and-time-format-strings.md)結果ストリームに書式設定操作を挿入する文字列またはサブスト リングに関連します。 次の表は、標準およびカスタムの日付と時刻の書式指定子と関連付けられた<xref:System.Globalization.DateTimeFormatInfo>プロパティです。 これらを使用する方法の詳細については書式指定子を参照してください[標準の日付と時刻の書式指定文字列](~/docs/standard/base-types/standard-date-and-time-format-strings.md)と[カスタムの日付と時刻の書式指定文字列](~/docs/standard/base-types/custom-date-and-time-format-strings.md)です。 各標準書式指定文字列に対応しています、<xref:System.Globalization.DateTimeFormatInfo>プロパティの値は、カスタムの日付と時刻の書式指定文字列。 このカスタム書式指定文字列で個別の指定子は、さらに他の対応<xref:System.Globalization.DateTimeFormatInfo>プロパティです。 テーブルだけを表示、<xref:System.Globalization.DateTimeFormatInfo>プロパティを標準書式指定文字列のエイリアス、およびはリスト プロパティではなく、これらの別名のプロパティに割り当てられているカスタム書式指定文字列にアクセスできます。 さらに、表に対応するカスタム書式指定子のみ<xref:System.Globalization.DateTimeFormatInfo>プロパティです。  
+  
+|書式指定子|関連付けられたプロパティ|  
+|----------------------|---------------------------|  
+|"d"(短い形式の日付以外の標準書式指定文字列)|<xref:System.Globalization.DateTimeFormatInfo.ShortDatePattern%2A>、全体的な結果の文字列の形式を定義します。|  
+|"D"(長い形式の日付以外の標準書式指定文字列)|<xref:System.Globalization.DateTimeFormatInfo.LongDatePattern%2A>、全体的な結果の文字列の形式を定義します。|  
+|"f"(完全な日付/時間以外の標準の短い書式設定文字列を)|<xref:System.Globalization.DateTimeFormatInfo.LongDatePattern%2A>、結果の文字列の日付部分の形式を定義します。<br /><br /> <xref:System.Globalization.DateTimeFormatInfo.ShortTimePattern%2A>、結果の文字列の時刻要素の形式を定義します。|  
+|"F"(完全な日付と長い時刻以外の標準書式指定文字列)|<xref:System.Globalization.DateTimeFormatInfo.LongDatePattern%2A>、結果の文字列の日付部分の形式を定義します。<br /><br /> <xref:System.Globalization.DateTimeFormatInfo.LongTimePattern%2A>、結果の文字列の時刻要素の形式を定義します。|  
+|"g"(一般的な日付と短い形式の時刻以外の標準書式指定文字列)|<xref:System.Globalization.DateTimeFormatInfo.ShortDatePattern%2A>、結果の文字列の日付部分の形式を定義します。<br /><br /> <xref:System.Globalization.DateTimeFormatInfo.ShortTimePattern%2A>、結果の文字列の時刻要素の形式を定義します。|  
+|"G"(一般的な日付/時間以外の標準書式指定文字列)|<xref:System.Globalization.DateTimeFormatInfo.ShortDatePattern%2A>、結果の文字列の日付部分の形式を定義します。<br /><br /> <xref:System.Globalization.DateTimeFormatInfo.LongTimePattern%2A>、結果の文字列の時刻要素の形式を定義します。|  
+|"M"、"m"(月/日標準書式指定文字列)。|<xref:System.Globalization.DateTimeFormatInfo.MonthDayPattern%2A>、全体的な結果の文字列の形式を定義します。|  
+|"O"、"o"(ラウンド トリップ日付/時刻以外の標準書式指定文字列)|なし。|  
+|"R"、"r"(RFC1123 標準書式指定文字列)。|<xref:System.Globalization.DateTimeFormatInfo.RFC1123Pattern%2A>、、RFC 1123 標準に準拠している結果の文字列を定義します。 プロパティは読み取り専用です。|  
+|"s"(並べ替え可能な日付/時刻以外の標準書式指定文字列)|<xref:System.Globalization.DateTimeFormatInfo.SortableDateTimePattern%2A>、ISO 8601 標準に準拠している結果の文字列を定義します。 プロパティは読み取り専用です。|  
+|"t"(短い形式の時刻以外の標準書式指定文字列)|<xref:System.Globalization.DateTimeFormatInfo.ShortTimePattern%2A>、全体的な結果の文字列の形式を定義します。|  
+|"T"(長い形式の時刻以外の標準書式指定文字列)|<xref:System.Globalization.DateTimeFormatInfo.LongTimePattern%2A>、全体的な結果の文字列の形式を定義します。|  
+|"u"(ユニバーサル並べ替え可能な日付/時刻以外の標準書式指定文字列)|<xref:System.Globalization.DateTimeFormatInfo.UniversalSortableDateTimePattern%2A>、協定世界時の ISO 8601 標準に準拠する結果文字列を定義します。 プロパティは読み取り専用です。|  
+|"U"(ユニバーサル完全な日付/時刻以外の標準書式指定文字列)|<xref:System.Globalization.DateTimeFormatInfo.FullDateTimePattern%2A>、全体的な結果の文字列の形式を定義します。|  
+|"Y"、"y"(年、月、標準書式指定文字列)|<xref:System.Globalization.DateTimeFormatInfo.YearMonthPattern%2A>、全体的な結果の文字列の形式を定義します。|  
+|"ddd"(カスタム書式指定子)|<xref:System.Globalization.DateTimeFormatInfo.AbbreviatedDayNames%2A>、週の曜日の省略名を結果の文字列に含める。|  
+|"g"、"gg"(カスタム書式指定子)|呼び出し、<xref:System.Globalization.DateTimeFormatInfo.GetEraName%2A>結果の文字列に時代 (年号) の名前を挿入します。|  
+|"MMM"(カスタム書式指定子)|<xref:System.Globalization.DateTimeFormatInfo.AbbreviatedMonthNames%2A>、結果の文字列の月の省略名を含める。|  
+|"MMMM"(カスタム書式指定子)|<xref:System.Globalization.DateTimeFormatInfo.MonthNames%2A>または<xref:System.Globalization.DateTimeFormatInfo.MonthGenitiveNames%2A>結果の文字列に完全な月名を含めます。|  
+|"t"(カスタム書式指定子)|<xref:System.Globalization.DateTimeFormatInfo.AMDesignator%2A>または<xref:System.Globalization.DateTimeFormatInfo.PMDesignator%2A>結果の文字列に AM/PM 指定子の最初の文字を含める。|  
+|"tt"(カスタム書式指定子)|<xref:System.Globalization.DateTimeFormatInfo.AMDesignator%2A>または<xref:System.Globalization.DateTimeFormatInfo.PMDesignator%2A>結果の文字列に完全 AM/PM 指定子を含める。|  
+|":"(カスタム書式指定子)|<xref:System.Globalization.DateTimeFormatInfo.TimeSeparator%2A>、結果の文字列に時刻の区切り記号を含める。|  
+|「/」(カスタム書式指定子)|<xref:System.Globalization.DateTimeFormatInfo.DateSeparator%2A>、結果の文字列に日付の区切り記号を含める。|  
+  
+<a name="Modifying"></a>   
+## <a name="modifying-datetimeformatinfo-properties"></a>DateTimeFormatInfo のプロパティを変更します。  
+ 関連付けられているプロパティの書き込み可能な変更で日付と時刻の書式指定文字列によって生成される結果の文字列を変更することができます<xref:System.Globalization.DateTimeFormatInfo>オブジェクト。 かどうかを<xref:System.Globalization.DateTimeFormatInfo>オブジェクトが書き込み可能なを使用して、<xref:System.Globalization.DateTimeFormatInfo.IsReadOnly%2A>プロパティです。 カスタマイズする、<xref:System.Globalization.DateTimeFormatInfo>この方法でオブジェクト。  
+  
+1.  読み取り/書き込みコピーを作成、<xref:System.Globalization.DateTimeFormatInfo>オブジェクトを書式指定規則を変更します。 (を参照してください、 [DateTimeFormatInfo オブジェクトをインスタンス化する](#instantiating)セクションです)。  
+  
+2.  プロパティまたは目的の結果の文字列を生成するために使用されるプロパティを変更します。 (詳細については、どのように書式設定メソッドの使用に関する<xref:System.Globalization.DateTimeFormatInfo>結果文字列を定義するプロパティは、前のセクションを参照してください[文字列と DateTimeFormatInfo のプロパティを書式設定](#properties)。)。  
+  
+3.  ユーザー設定を使用して<xref:System.Globalization.DateTimeFormatInfo>オブジェクトとして作成した、<xref:System.IFormatProvider>書式指定メソッドの呼び出しで引数。  
+  
+ 結果の文字列の形式を変更するその他の 2 つの方法があります。  
+  
+-   使用することができます、 <xref:System.Globalization.CultureAndRegionInfoBuilder> (一意の名前を持つし、既存を補足するものをカルチャのカルチャ) カスタム カルチャまたは置換カルチャ (1 つの特定のカルチャの代わりに使用される) のいずれかを定義するクラス。 保存していずれかと同様に、このカルチャをプログラムでアクセス<xref:System.Globalization.CultureInfo>.NET Framework でサポートされているオブジェクト。  
+  
+-   結果の文字列はカルチャに依存しません、定義済みの形式に準拠していない場合は、カスタムの日時書式指定文字列を使用できます。 たとえば、YYYYMMDDHHmmss 形式の日付と時刻のデータをシリアル化する場合できますを生成する結果の文字列をカスタム書式指定文字列を渡すことによって、<xref:System.DateTime.ToString%28System.String%29?displayProperty=nameWithType>メソッド、およびするが、結果の文字列に変換できるに戻す、<xref:System.DateTime>を呼び出して値、<xref:System.DateTime.ParseExact%2A?displayProperty=nameWithType>メソッドです。  
+  
+### <a name="changing-the-short-date-pattern"></a>短い形式の日付パターンを変更します。  
+ 次の例では、"d"(短い形式の日付) 標準書式指定文字列によって生成される結果文字列の形式を変更します。 関連付けられた変更<xref:System.Globalization.DateTimeFormatInfo.ShortDatePattern%2A>EN-US または既定の"m/d/yyyy"をから英語 (米国) カルチャのプロパティ"yyyy'-"MM"-"dd"と"d"標準書式指定文字列の前に、と後の日付を表示する使用、<xref:System.Globalization.DateTimeFormatInfo.ShortDatePattern%2A>プロパティを変更します。  
+  
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.Class#10](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/cs/example1.cs#10)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.Class#10](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/vb/example1.vb#10)]  
+  
+### <a name="changing-the-date-separator-character"></a>日付の区切り記号を変更します。  
+ 次の例は、日付区切り文字を変更、 <xref:System.Globalization.DateTimeFormatInfo> FR-FR カルチャの書式指定規則を表すオブジェクト。 例では前に、と後の日付を表示する"g"標準書式指定文字列を使用して、<xref:System.Globalization.DateTimeFormatInfo.DateSeparator%2A>プロパティを変更します。  
+  
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.Class#12](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/cs/example3.cs#12)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.Class#12](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/vb/example3.vb#12)]  
+  
+### <a name="changing-day-name-abbreviations-and-the-long-date-pattern"></a>曜日の省略名と、長い日付パターンを変更します。  
+ 場合によっては、通常、1 日と曜日、月、年の数と共に、月の名前が表示されますの長い日付パターンが長すぎますあります。 次の例では、日数字が続く 1 つの文字または 2 桁の曜日名の省略形、月名の省略形、および年を返します、EN-US カルチャの長い日付パターンが短くなります。 これに短い曜日名の省略形を割り当てることで、<xref:System.Globalization.DateTimeFormatInfo.AbbreviatedDayNames%2A>配列やに割り当てられているカスタム書式指定文字列を変更して、<xref:System.Globalization.DateTimeFormatInfo.LongDatePattern%2A>プロパティです。 これは、"D"から返される結果の文字列と"f"標準書式指定文字列に影響します。  
+  
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.Class#13](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/cs/example2.cs#13)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.Class#13](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/vb/example2.vb#13)]  
+  
+ 通常、変更を<xref:System.Globalization.DateTimeFormatInfo.LongDatePattern%2A>プロパティにも影響、<xref:System.Globalization.DateTimeFormatInfo.FullDateTimePattern%2A>プロパティで、"F"標準書式指定文字列によって返される結果の文字列を定義します。 例では、元の完全な日付と時刻のパターンを保持するために割り当てられている元のカスタム書式指定文字列を再割り当て、<xref:System.Globalization.DateTimeFormatInfo.FullDateTimePattern%2A>後プロパティ、<xref:System.Globalization.DateTimeFormatInfo.LongDatePattern%2A>プロパティを変更します。  
+  
+### <a name="changing-from-a-12-hour-clock-to-a-24-hour-clock"></a>12 時間制から 24 時間制への変更  
+ .NET framework カルチャの数、12 時間形式と、AM/PM 指定子を使用して、時間が表されます。 次の例では定義、`ReplaceWith24HourClock`を 24 時間制を使用する形式を 12 時間制を使用している時刻の形式に置換するメソッド。  
+  
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.Class#14](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/cs/example5.cs#14)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.Class#14](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/vb/example5.vb#14)]  
+  
+ 例では、正規表現を使用して、書式指定文字列を変更します。 正規表現パターン`@"^(?<openAMPM>\s*t+\s*)? (?(openAMPM) h+(?<nonHours>[^ht]+)$ | \s*h+(?<nonHours>[^ht]+)\s*t+)`は次のように定義されています。  
+  
+|パターン|説明|  
+|-------------|-----------------|  
+|`^`|文字列の先頭から照合を開始します。|  
+|`(?<openAMPM>\s*t+\s*)?`|0 個以上の空白文字の 0 または 1 個の一致が発生は文字に続く文字のいずれかの"t"、または詳細繰り返しが続く 0 個以上の空白文字。 このキャプチャ グループの名前は`openAMPM`します。|  
+|`(?(openAMPM) h+(?<nonHours>[^ht]+)$`|場合、`openAMPM`グループと一致するには、文字と一致"h"1 回以上、"h"でも"t"は、1 つまたは複数の英文字で構成します。 文字列の末尾で照合を終了します。 "H"は名前付きキャプチャ グループに含めた後にキャプチャされたすべての文字`nonHours`です。|  
+|`&#124; \s*h+(?<nonHours>[^ht]+)\s*t+)`|場合、`openAMPM`グループに一致するものがない、"h""h"でも"t"は、1 つまたは複数の文字が続き、1 つ以上の時間が続く 0 個以上の空白文字の文字と一致します。 最後に、文字"t"の 1 つ以上の出現に一致します。 "H"の後と、空白文字と"t"が名前付きキャプチャ グループに含まれる前にキャプチャされたすべての文字`nonHours`です。|  
+  
+ `nonHours`キャプチャ グループが含まれていますが 1 分間と、場合によっては、カスタムの日付と時刻形式の文字列の 2 番目のコンポーネントと共に、時刻区切り記号には。 置換パターン`HH${nonHours}`前にこれらの要素に"HH"の部分文字列を付加します。  
+  
+### <a name="displaying-and-changing-the-era-in-a-date"></a>表示と日付の時代 (年号) の変更  
+ 次の例では、"g"カスタム書式指定子を<xref:System.Globalization.DateTimeFormatInfo.LongDatePattern%2A>EN-US カルチャの書式指定規則を表すオブジェクトのプロパティです。 この追加は、次の 3 つの標準書式指定文字列に影響します。  
+  
+-   直接マップ、"D"(長い形式の日付) 標準書式指定文字列、<xref:System.Globalization.DateTimeFormatInfo.LongDatePattern%2A>プロパティです。  
+  
+-   "F"(完全な日付/時間の短い) 標準書式指定文字列は、によって生成された部分文字列を連結した結果の文字列を生成する、<xref:System.Globalization.DateTimeFormatInfo.LongDatePattern%2A>と<xref:System.Globalization.DateTimeFormatInfo.ShortTimePattern%2A>プロパティです。  
+  
+-   "F"(完全な日付/長い形式の時刻) 標準書式指定文字列は、マップに直接、<xref:System.Globalization.DateTimeFormatInfo.FullDateTimePattern%2A>プロパティです。 連結することによって動的に生成されるため、このプロパティ値を明示的に設定して、<xref:System.Globalization.DateTimeFormatInfo.LongDatePattern%2A>と<xref:System.Globalization.DateTimeFormatInfo.LongTimePattern%2A>プロパティです。  
+  
+ この例では、カレンダーが 1 つの時代 (年号) のカルチャの時代 (年号) の名前を変更する方法も示します。 ここでは、EN-US カルチャがグレゴリオ暦で表されるを使用して、<xref:System.Globalization.GregorianCalendar>オブジェクト。 <xref:System.Globalization.GregorianCalendar>クラスがあり、西暦を名前となる単一時代をサポートしています (西暦)。 例では、西暦に時代 (年号) の名前を変更します。 (一般的な時代 (年号)) に割り当てられている書式指定文字列で"g"カスタム書式指定子を置き換えることで、<xref:System.Globalization.DateTimeFormatInfo.FullDateTimePattern%2A>リテラル文字列を持つプロパティです。 リテラル文字列の使用が必要です。 時代 (年号) の名前がによって通常返されたため、<xref:System.Globalization.DateTimeFormatInfo.GetEraName%2A>からプライベート テーブルのデータを、カルチャ、.NET Framework または Windows オペレーティング システムによって提供されるメソッド。  
+  
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.Class#11](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/cs/example4.cs#11)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.Class#11](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/vb/example4.vb#11)]  
+  
+## <a name="parsing-date-and-time-strings"></a>日付と時刻文字列の解析  
+ 日付と時刻を文字列形式に変換する解析では、<xref:System.DateTime>または<xref:System.DateTimeOffset>値。 これらの型の両方が含まれて、 `Parse`、 `TryParse`、 `ParseExact`、および`TryParseExact`解析操作をサポートするメソッド。 `Parse`と`TryParse`メソッドは、一方にさまざまな形式を持つことができる文字列を変換`ParseExact`と`TryParseExact`要求する場合は、文字列の形式や、定義された形式です。 解析操作が失敗した場合、`Parse`と`ParseExact`一方、例外はスロー`TryParse`と`TryParseExact`返す`false`です。  
+  
+ 暗黙的または明示的に使用して、解析メソッド、 <xref:System.Globalization.DateTimeStyles> (先頭、末尾、または内部の空白文字) などのスタイル要素を確認する列挙値に解析された文字列または欠けている要素を解釈する方法と、解析する文字列になくてもかまいません。 指定しない場合、<xref:System.Globalization.DateTimeStyles>を呼び出すときの値、`Parse`または`TryParse`メソッド、既定値は<xref:System.Globalization.DateTimeStyles?displayProperty=nameWithType>、複合を含むスタイルは、 <xref:System.Globalization.DateTimeStyles?displayProperty=nameWithType>、 <xref:System.Globalization.DateTimeStyles?displayProperty=nameWithType>、および<xref:System.Globalization.DateTimeStyles?displayProperty=nameWithType>フラグ。 `ParseExact`と`TryParseExact`メソッド、既定値は<xref:System.Globalization.DateTimeStyles?displayProperty=nameWithType>; 入力文字列が特定のカスタム日時書式指定文字列を正確に対応する必要があります。  
+  
+ 解析メソッドも暗黙的または明示的に使用して、<xref:System.Globalization.DateTimeFormatInfo>に解析する文字列でオブジェクトを特定のシンボルが定義されるパターンが発生します。 指定しない場合、<xref:System.Globalization.DateTimeFormatInfo>オブジェクト、<xref:System.Globalization.DateTimeFormatInfo>オブジェクトの既定では、現在のスレッドのカルチャが使用されます。 日付と時刻の文字列の解析の詳細についてなど、個々 の解析メソッドを参照してください<xref:System.DateTime.Parse%2A?displayProperty=nameWithType>、 <xref:System.DateTime.TryParse%2A?displayProperty=nameWithType>、 <xref:System.DateTimeOffset.ParseExact%2A?displayProperty=nameWithType>、および<xref:System.DateTimeOffset.TryParseExact%2A?displayProperty=nameWithType>です。  
+  
+ 次の例では、解析の日付と時刻文字列のカルチャの性質を示します。 EN-US、EN-GB、FR-FR、および fi FI カルチャの規則を使用して 2 つの日付文字列を解析しようとします。 8/18/2014 では EN-US として解釈される日付のカルチャがスローされます、 <xref:System.FormatException> 18 が月の番号として解釈されるため、他の 3 つの例外がカルチャします。 2015 年 1 月 2 日は、EN-US カルチャの最初の月 2 日目として、残りのカルチャの 2 番目の月の最初の日として解釈されます。  
+  
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.Class#15](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/cs/parsing1.cs#15)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.Class#15](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/vb/parsing1.vb#15)]  
+  
+ 日付と時刻の文字列は、通常 2 つの理由解析されます。  
+  
+-   日付と時刻の値にユーザー入力を変換します。  
+  
+-   日付と時刻の値をラウンドト リップさせるつまり、以前を文字列としてシリアル化された日付と時刻の値をシリアル化を解除します。  
+  
+ 次のセクションより詳細でこれら 2 つの操作について説明します。  
+  
+### <a name="parsing-user-strings"></a>ユーザー文字列の解析  
+ 常にインスタンス化する必要がある、ユーザーによって入力日付と時刻の文字列を解析する場合、<xref:System.Globalization.DateTimeFormatInfo>ユーザーが行ったすべてのカスタマイズも含め、ユーザーのカルチャ設定を反映するオブジェクト。 それ以外の場合、日付と時刻のオブジェクトには、正しくない値があります。 インスタンスを作成する方法については、<xref:System.Globalization.DateTimeFormatInfo>ユーザーのカルチャによるのカスタマイズを反映するオブジェクトを参照してください、 [DateTimeFormatInfo と動的データ](#dynamic)セクションです。  
+  
+ 次の例は、ユーザーのカルチャ設定を反映する解析操作としない 1 つの違いを示しています。 この場合、システムの既定のカルチャが EN-US では、ユーザーがコントロール パネルを使用している**地域と言語**"yy dd MM"に"m/d/yyyy"の既定値から短い日付のパターンを変更します。 ときにユーザーが、ユーザー設定を反映する文字列を入力し、によって文字列が解析、<xref:System.Globalization.DateTimeFormatInfo>もユーザー設定 (オーバーライド) を反映するオブジェクト、解析操作には、正しい結果が返されます。 ただし、文字列の解析時で、<xref:System.Globalization.DateTimeFormatInfo>標準的な EN-US カルチャ設定、解析メソッドでのスローを表すオブジェクト、<xref:System.FormatException>例外が解釈されるため 14、月の数と最後の 2 桁の年のされません。  
+  
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.Class#16](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/cs/parse2.cs#16)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.Class#16](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/vb/parse2.vb#16)]  
+  
+### <a name="serializing-and-deserializing-date-and-time-data"></a>シリアル化して、日付と時刻のデータを逆シリアル化  
+ シリアル化; ラウンドト リップする日付と時刻のデータが必要つまり、すべてシリアル化し、逆シリアル化された値を同一にする必要があります。 日付と時刻の値は、特定の時点を表す、逆シリアル化された値は、カルチャまたは復元されたシステムのタイム ゾーンに関係なく同じ時点を表す必要があります。 ラウンドト リップする日付と時刻のデータを正常に行う必要があります、によって返されるインバリアント カルチャの規則、<xref:System.Globalization.DateTimeFormatInfo.InvariantInfo%2A>の値を生成し、データを解析します。 書式設定および解析操作では、既定のカルチャの規則が反映されないようにする必要があります。 既定のカルチャ設定を使用する場合、データの移植性は厳密に制限されます。カルチャに固有の設定は、のスレッドのシリアル化したものと同じスレッドでのみ正常に逆シリアル化されたことができます。 場合によっては、つまりにことデータことはできませんでも正常にシリアル化および逆シリアル化に同じシステム上。  
+  
+ 日付と時刻の値の時刻部分が重要な場合は、そのも UTC に変換してする"o"または"r"を使用してシリアル化[標準書式指定文字列](~/docs/standard/base-types/standard-date-and-time-format-strings.md)です。 メソッドを解析およびインバリアント カルチャとしてに沿って適切な書式指定文字列を渡すを呼び出すことによって時間データを復元できます、`provider`引数。  
+  
+ 次の例では、日付と時刻の値のラウンド トリップのプロセスを示します。 日付と時刻を米国を順守するシステムでシリアル化します。太平洋標準時と現在のカルチャが EN-US でします。  
+  
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.Class#17](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/cs/serialize1.cs#17)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.Class#17](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/vb/serialize1.vb#17)]  
+  
+ ブリュッセル、コペンハーゲン、マドリード、パリ タイム ゾーンでのシステム上のデータが逆シリアル化し、現在のカルチャが fr-fr などです。 復元された日付は、9 つの時間を UTC より 1 時間 (utc) の背後にある 8 時間からタイム ゾーンの調整を反映する元の日付よりも後です。 元の日付と復元の日付の両方の同じ時点を表します。  
+  
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.Class#18](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/cs/serialize2.cs#18)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.Class#18](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/vb/serialize2.vb#18)]  
+  
+   
+  
+## Examples  
+ 次の例では、リフレクションを使用して、プロパティを取得、<xref:System.Globalization.DateTimeFormatInfo>英語 (米国) カルチャのオブジェクト。 カスタム書式指定文字列を含むプロパティの値を表示し、書式設定された日付を表示するそれらの文字列を使用します。  
+  
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.Class#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/cs/format1.cs#5)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.Class#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.class/vb/format1.vb#5)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DateTimeFormatInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.DateTimeFormatInfo.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>カルチャに依存しない (インバリアントな) <see cref="T:System.Globalization.DateTimeFormatInfo" /> クラスの新しい書き込み可能インスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを作成、<xref:System.Globalization.DateTimeFormatInfo>インバリアント カルチャの日付と時刻の情報を表すオブジェクト。 作成する、<xref:System.Globalization.DateTimeFormatInfo>特定のカルチャ オブジェクトを作成、<xref:System.Globalization.CultureInfo>そのカルチャのオブジェクトを取得、<xref:System.Globalization.DateTimeFormatInfo>によって返されるオブジェクトの<xref:System.Globalization.CultureInfo.DateTimeFormat%2A?displayProperty=nameWithType>プロパティです。  
+  
+ プロパティ、<xref:System.Globalization.DateTimeFormatInfo>このコンス トラクターによって作成されたオブジェクトを変更できます。 ただし、変更することはできません、<xref:System.Globalization.DateTimeFormatInfo.Calendar%2A>プロパティ、インバリアント カルチャは、構成のグレゴリオ暦カレンダーのローカライズされたバージョンのみをサポートしているためです。 作成する、<xref:System.Globalization.DateTimeFormatInfo>を特定のカレンダーを使用するオブジェクト インスタンスを作成する必要があります、<xref:System.Globalization.CultureInfo>カレンダーを割り当てる予定表をサポートするオブジェクト、<xref:System.Globalization.DateTimeFormatInfo.Calendar%2A>のプロパティ、<xref:System.Globalization.DateTimeFormatInfo>によって返されるオブジェクト、<xref:System.Globalization.CultureInfo.DateTimeFormat%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AbbreviatedDayNames">
+      <MemberSignature Language="C#" Value="public string[] AbbreviatedDayNames { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] AbbreviatedDayNames" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.DateTimeFormatInfo.AbbreviatedDayNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の種類の 1 次元配列<see cref="T:System.String" />週の曜日のカルチャに固有の省略名を格納します。</summary>
+        <value>型の 1 次元配列<see cref="T:System.String" />週の曜日のカルチャに固有の省略名を格納します。 配列の<see cref="P:System.Globalization.DateTimeFormatInfo.InvariantInfo" />し「土曜日」、「金曜日」、"Sun"、「月曜日」、「火曜日」、「水曜日」、「木曜日」が含まれています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定する場合、配列は 1 次元である必要があり、正確に 7 つの要素があります。 最初の要素 (インデックス 0 の位置の要素) によって定義されているカレンダーにおける週の最初の日を表す、<xref:System.Globalization.DateTimeFormatInfo.Calendar%2A>プロパティです。  
+  
+ カスタム書式指定文字列には、"ddd"書式指定子が含まれている場合、<xref:System.DateTime.ToString%2A?displayProperty=nameWithType>または<xref:System.DateTimeOffset.ToString%2A>メソッドには適切なメンバーが含まれています、<xref:System.Globalization.DateTimeFormatInfo.AbbreviatedDayNames%2A>配列は結果文字列に"ddd"の代わりにします。  
+  
+ 場合、このプロパティは影響を受けるの値、<xref:System.Globalization.DateTimeFormatInfo.Calendar%2A>プロパティが変更されました。 場合、選択した<xref:System.Globalization.DateTimeFormatInfo.Calendar%2A>省略サポート日名ではなく、配列には、曜日の完全名が含まれています。  
+  
+   
+  
+## Examples  
+ 次の例では、読み取り/書き込み<xref:System.Globalization.CultureInfo>が英語 (米国) カルチャを表すオブジェクトの曜日名を省略形、<xref:System.Globalization.DateTimeFormatInfo.AbbreviatedDayNames%2A>プロパティです。 次に、"ddd"書式指定子を使用して、1 週間の 2014 年 5 月 28 日の開始の日付の文字列表現を表示します。  
+  
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.AbbreviatedDayNames#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.abbreviateddaynames/cs/abbreviateddaynames1.cs#1)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.AbbreviatedDayNames#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.abbreviateddaynames/vb/abbreviateddaynames1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティに設定されている<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentException">プロパティは、多次元配列または長が正確には 7 ではない配列に設定されています。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.DateTimeFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AbbreviatedMonthGenitiveNames">
+      <MemberSignature Language="C#" Value="public string[] AbbreviatedMonthGenitiveNames { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] AbbreviatedMonthGenitiveNames" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.DateTimeFormatInfo.AbbreviatedMonthGenitiveNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に現在関連付けられている月の省略名の文字列配列<see cref="T:System.Globalization.DateTimeFormatInfo" />オブジェクト。</summary>
+        <value>月の省略名の文字列配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一部の言語で属の場合も、日付の一部である月の名前が表示されます。 たとえば、RU-RU またはロシア語 (ロシア) カルチャの日付は、日付番号と 1 Января (1 年 1 月) など、属月の名前で構成されます。 これらのカルチャでは、カスタム書式指定文字列には、"MMM"書式指定子が含まれている場合、<xref:System.DateTime.ToString%2A?displayProperty=nameWithType>または<xref:System.DateTimeOffset.ToString%2A>メソッドには適切なメンバーが含まれています、<xref:System.Globalization.DateTimeFormatInfo.AbbreviatedMonthGenitiveNames%2A>配列は結果文字列に"MMM"の代わりにします。  
+  
+ 設定操作では、配列を正確に 13 要素は、1 次元の配列にする必要がありますので<xref:System.Globalization.Calendar>オブジェクト 13 の月がある暦に対応します。 12 の月がある暦の場合は、13 番目の要素がする必要があります<xref:System.String.Empty?displayProperty=nameWithType>です。 最初の要素 (インデックス 0 の位置の要素) によって定義された年の最初の月を表す、<xref:System.Globalization.DateTimeFormatInfo.Calendar%2A>プロパティです。  
+  
+ 設定した場合、<xref:System.Globalization.DateTimeFormatInfo.AbbreviatedMonthGenitiveNames%2A>プロパティを設定する必要も、<xref:System.Globalization.DateTimeFormatInfo.AbbreviatedMonthNames%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、読み取り/書き込み<xref:System.Globalization.CultureInfo>を英語 (米国) カルチャを表す割り当てますオブジェクト月の省略属名をその<xref:System.Globalization.DateTimeFormatInfo.AbbreviatedMonthNames%2A>と<xref:System.Globalization.DateTimeFormatInfo.AbbreviatedMonthGenitiveNames%2A>プロパティです。 カルチャのサポートされている暦で各月の月の省略名を含む日付の文字列表現が表示されます。  
+  
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.AbbreviatedMonthGenitiveNames#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.abbreviatedmonthgenitivenames/cs/abbreviatedmonthnames1.cs#1)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.AbbreviatedMonthGenitiveNames#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.abbreviatedmonthgenitivenames/vb/abbreviatedmonthnames1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">設定操作では、配列が多次元か、長さが 13 正確ではないです。</exception>
+        <exception cref="T:System.ArgumentNullException">設定操作では、配列または配列の要素の 1 つは<see langword="null" />します。</exception>
+        <exception cref="T:System.InvalidOperationException">現在の設定操作で<see cref="T:System.Globalization.DateTimeFormatInfo" />オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AbbreviatedMonthNames">
+      <MemberSignature Language="C#" Value="public string[] AbbreviatedMonthNames { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] AbbreviatedMonthNames" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.DateTimeFormatInfo.AbbreviatedMonthNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>月を表すカルチャ固有の省略名を格納している 1 次元配列を取得または設定します。</summary>
+        <value>月を表すカルチャ固有の省略名を格納している、13 個の要素を持つ 1 次元配列。 12 か月の暦では、配列の 13 番目の要素は空の文字列になります。 配列の<see cref="P:System.Globalization.DateTimeFormatInfo.InvariantInfo" />「年 10 月」、「年 11 月」、「年 12 月」、「年 1 月」、「月」、「月」、「月」、「月」、"Jun"、「年 7 月」、「年 8 月」、「年 9 月」が含まれていますと""です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定する場合、配列は 1 次元で正確に 13 個の要素でなければなりません。 <xref:System.Globalization.Calendar>オブジェクトでは、予定表と 13 か月間に対応します。 最初の要素 (インデックス 0 の位置の要素) によって定義された年の最初の月を表す、<xref:System.Globalization.DateTimeFormatInfo.Calendar%2A>プロパティです。  
+  
+ 設定した場合、<xref:System.Globalization.DateTimeFormatInfo.AbbreviatedMonthNames%2A>プロパティを設定する必要も、<xref:System.Globalization.DateTimeFormatInfo.AbbreviatedMonthGenitiveNames%2A>プロパティです。 <xref:System.Globalization.DateTimeFormatInfo.AbbreviatedMonthNames%2A>と<xref:System.Globalization.DateTimeFormatInfo.AbbreviatedMonthGenitiveNames%2A>プロパティを使用して、次の書式指定文字列を使用して日付の書式を設定します。  
+  
+-   標準日時書式指定文字列のエイリアスで、カスタム書式を設定する"MMM"を含む文字列を書式指定子。  
+  
+-   カスタム日時書式指定文字列を"MMM"を含む書式指定子  
+  
+ 場合、このプロパティは影響を受けるの値、<xref:System.Globalization.DateTimeFormatInfo.Calendar%2A>プロパティが変更されました。 場合、選択した<xref:System.Globalization.DateTimeFormatInfo.Calendar%2A>サポートの省略形の月名ではなく、配列には、月の正式名が含まれています。  
+  
+   
+  
+## Examples  
+ 次の例では、読み取り/書き込み<xref:System.Globalization.CultureInfo>を英語 (米国) カルチャを表す割り当てますオブジェクト月の省略属名をその<xref:System.Globalization.DateTimeFormatInfo.AbbreviatedMonthNames%2A>と<xref:System.Globalization.DateTimeFormatInfo.AbbreviatedMonthGenitiveNames%2A>プロパティです。 カルチャのサポートされているカレンダーにおける月の省略名を含む日付の文字列表現が表示されます。  
+  
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.AbbreviatedMonthGenitiveNames#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.abbreviatedmonthgenitivenames/cs/abbreviatedmonthnames1.cs#1)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.AbbreviatedMonthGenitiveNames#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.abbreviatedmonthgenitivenames/vb/abbreviatedmonthnames1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティに設定されている<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentException">プロパティは、多次元配列または長が厳密に 13 ではない配列に設定されています。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.DateTimeFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AMDesignator">
+      <MemberSignature Language="C#" Value="public string AMDesignator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AMDesignator" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.DateTimeFormatInfo.AMDesignator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>"ante meridiem" (午前) の時間の文字列指定子を取得または設定します。</summary>
+        <value>"ante meridiem" の時間の文字列指定子。 既定の<see cref="P:System.Globalization.DateTimeFormatInfo.InvariantInfo" />"am"です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.DateTimeFormatInfo.AMDesignator%2A>プロパティが使用されるすべての時間 0:00:00 (深夜) 11:59:59.999 からです。  
+  
+ カスタム書式指定文字列には、"tt"書式指定子が含まれているし、正午より前、<xref:System.DateTime.ToString%2A?displayProperty=nameWithType>または<xref:System.DateTimeOffset.ToString%2A>メソッドには値が含まれています、<xref:System.Globalization.DateTimeFormatInfo.AMDesignator%2A>プロパティは結果文字列に"tt"の代わりにします。 カスタム書式指定文字列には、"t"カスタム書式指定子の最初の文字のみが含まれている場合、<xref:System.Globalization.DateTimeFormatInfo.AMDesignator%2A>プロパティの値が含まれます。 午前の区別を維持するために必要とする言語の場合"tt"を使用する必要があります。 午後 例としては、これで、日本語、午前 午後 指定子は、最初の文字ではなく、2 番目の文字が異なります。  
+  
+ カルチャを使用しない、a. m. 指定子は、このプロパティは、空の文字列を返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティに設定されている<see langword="null" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.DateTimeFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Calendar">
+      <MemberSignature Language="C#" Value="public System.Globalization.Calendar Calendar { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.Calendar Calendar" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.DateTimeFormatInfo.Calendar" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.Calendar</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のカルチャで使用する暦を取得または設定します。</summary>
+        <value>現在のカルチャで使用する暦。 既定の<see cref="P:System.Globalization.DateTimeFormatInfo.InvariantInfo" />は、<see cref="T:System.Globalization.GregorianCalendar" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.DateTimeFormatInfo.Calendar%2A>プロパティに関連付けられているカルチャとして有効なカレンダーだけでは、<xref:System.Globalization.DateTimeFormatInfo>オブジェクト。 <xref:System.Globalization.CultureInfo.OptionalCalendars%2A?displayProperty=nameWithType>プロパティは、特定のカルチャで使用できる暦を指定し、<xref:System.Globalization.CultureInfo.Calendar%2A?displayProperty=nameWithType>プロパティは、カルチャの既定のカレンダーを指定します。  
+  
+ 次のプロパティもこのプロパティの値を変更に影響を与える: <xref:System.Globalization.DateTimeFormatInfo.MonthNames%2A>、 <xref:System.Globalization.DateTimeFormatInfo.AbbreviatedMonthNames%2A>、 <xref:System.Globalization.DateTimeFormatInfo.DayNames%2A>、 <xref:System.Globalization.DateTimeFormatInfo.AbbreviatedDayNames%2A>、 <xref:System.Globalization.DateTimeFormatInfo.CalendarWeekRule%2A>、 <xref:System.Globalization.DateTimeFormatInfo.FirstDayOfWeek%2A>、 <xref:System.Globalization.DateTimeFormatInfo.FullDateTimePattern%2A>、 <xref:System.Globalization.DateTimeFormatInfo.LongDatePattern%2A>、 <xref:System.Globalization.DateTimeFormatInfo.ShortDatePattern%2A>、 <xref:System.Globalization.DateTimeFormatInfo.YearMonthPattern%2A>、および<xref:System.Globalization.DateTimeFormatInfo.MonthDayPattern%2A>です。  
+  
+ たとえば、現在のスレッドのカルチャが日本語の場合は、このプロパティでは<xref:System.Globalization.JapaneseCalendar>、 <xref:System.Globalization.GregorianCalendarTypes.Localized> <xref:System.Globalization.GregorianCalendar>、または<xref:System.Globalization.GregorianCalendarTypes.USEnglish><xref:System.Globalization.GregorianCalendar>です。 ときに、<xref:System.Globalization.JapaneseCalendar>を使用する既定の長い日付指定子は、"gg y '\x5e74 AM' \x6708 が '\x65e5'"です。 ときに、 <xref:System.Globalization.GregorianCalendarTypes.Localized><xref:System.Globalization.GregorianCalendar>を使用する既定の長い日付指定子は"yyyy '\x5e74 AM' \x6708 が '\x65e5'"です。  
+  
+   
+  
+## Examples  
+ 次の例では定義、`ChangeCalendar`カルチャでサポートされていない場合か、現在の暦では既にしない限り、指定した暦をカルチャの現在の暦を変更する方法をします。 メソッドを呼び出すコードをインスタンス化、<xref:System.Globalization.CultureInfo>日本語の予定表に、予定表を変更しようとするは最初をアラビア語 (エジプト) のカルチャを表すオブジェクト。 日本語のカレンダーがサポートされていないため、方法のカルチャの暦は変わりませんなります。 ただし、ため、ウムアルクラ暦のメンバーである um、<xref:System.Globalization.CultureInfo.OptionalCalendars%2A?displayProperty=nameWithType>コレクション、メソッドが成功現在の暦になります、AR-EG カルチャします。  
+  
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.Calendar#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.Globalization.DateTimeFormatInfo.Calendar/cs/CalendarTest1.cs#1)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.Calendar#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Globalization.DateTimeFormatInfo.Calendar/vb/CalendarTest1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティに設定されている<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">プロパティに設定されて、<see cref="T:System.Globalization.Calendar" />オブジェクトは、現在のカルチャに対して無効です。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.DateTimeFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CalendarWeekRule">
+      <MemberSignature Language="C#" Value="public System.Globalization.CalendarWeekRule CalendarWeekRule { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Globalization.CalendarWeekRule CalendarWeekRule" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.DateTimeFormatInfo.CalendarWeekRule" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CalendarWeekRule</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>年の最初の週を判断するために使用する規則を指定する値を取得または設定します。</summary>
+        <value>年の最初の週を決定する値。 既定の<see cref="P:System.Globalization.DateTimeFormatInfo.InvariantInfo" />は<see cref="F:System.Globalization.CalendarWeekRule.FirstDay" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、このプロパティは影響を受けるの値、<xref:System.Globalization.DateTimeFormatInfo.Calendar%2A>プロパティが変更されました。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が無効ですが、プロパティが設定されて<see cref="T:System.Globalization.CalendarWeekRule" />値。</exception>
+        <exception cref="T:System.InvalidOperationException">現在の設定操作で<see cref="T:System.Globalization.DateTimeFormatInfo" />オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.DateTimeFormatInfo.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Globalization.DateTimeFormatInfo" /> の簡易コピーを作成します。</summary>
+        <returns>新しい<see cref="T:System.Globalization.DateTimeFormatInfo" />元からコピーされたオブジェクト<see cref="T:System.Globalization.DateTimeFormatInfo" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クローンが書き込み可能な場合でも、元の<xref:System.Globalization.DateTimeFormatInfo>オブジェクトは読み取り専用です。 そのため、ユーザー定義のパターンを使用、複製のプロパティを変更できます。  
+  
+ オブジェクトのシャロー コピーのみのオブジェクトのコピーであります。 オブジェクトに他のオブジェクトへの参照が含まれている場合でも、シャロー コピーでは、参照されるオブジェクトのコピーは作成されません。 元のオブジェクトを代わりに参照します。 これに対し、オブジェクトのディープ コピーは、オブジェクトのコピーとそのオブジェクトが直接または間接的に参照するすべてのコピーを作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentInfo">
+      <MemberSignature Language="C#" Value="public static System.Globalization.DateTimeFormatInfo CurrentInfo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Globalization.DateTimeFormatInfo CurrentInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.DateTimeFormatInfo.CurrentInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.DateTimeFormatInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のカルチャに基づいて値を形式指定する読み取り専用 <see cref="T:System.Globalization.DateTimeFormatInfo" /> オブジェクトを取得します。</summary>
+        <value>現在のスレッドに対する <see cref="T:System.Globalization.CultureInfo" /> オブジェクトに基づく読み取り専用の <see cref="T:System.Globalization.DateTimeFormatInfo" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.DateTimeFormatInfo>によって返されるオブジェクト、<xref:System.Globalization.DateTimeFormatInfo.CurrentInfo%2A>プロパティには、ユーザーのオーバーライドが反映されます。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Globalization.DateTimeFormatInfo.CurrentInfo%2A>取得するプロパティを<xref:System.Globalization.DateTimeFormatInfo>EN-US カルチャをここでは、現在のカルチャの書式指定規則を表すオブジェクト。 書式設定文字列と書式設定プロパティが 6 つの結果の文字列が表示されます。  
+  
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.CurrentInfo#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.Globalization.DateTimeFormatInfo.CurrentInfo/cs/CurrentInfo1.cs#1)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.CurrentInfo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Globalization.DateTimeFormatInfo.CurrentInfo/vb/CurrentInfo1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DateSeparator">
+      <MemberSignature Language="C#" Value="public string DateSeparator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DateSeparator" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.DateTimeFormatInfo.DateSeparator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>日付の構成要素、つまり年、月、および日を区切る文字列を取得または設定します。</summary>
+        <value>日付の構成要素、つまり年、月、および日を区切る文字列。 既定の<see cref="P:System.Globalization.DateTimeFormatInfo.InvariantInfo" />は「/」です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタム書式指定文字列には、「/」書式指定子が含まれている場合、<xref:System.DateTime.ToString%2A?displayProperty=nameWithType>メソッドの値を表示する<xref:System.Globalization.DateTimeFormatInfo.DateSeparator%2A>「/」で、結果の文字列の代わりにします。  
+  
+ <xref:System.Globalization.DateTimeFormatInfo.DateSeparator%2A>プロパティ定義が日付区切り文字を置換する文字列 (「/」カスタム日付/時刻書式指定子)、書式設定操作の結果の文字列にします。 また、解析操作では日付の区切り記号文字列を定義します。  
+  
+   
+  
+## Examples  
+ 次の例のインスタンスを作成、<xref:System.Globalization.CultureInfo>オブジェクト EN-US カルチャの変更をその日付の区切り記号"-"、"d"、"G"、"g"標準書式指定文字列を使用して日付を表示します。  
+  
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.DateSeparator#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.dateseparator/cs/dateseparatorex.cs#1)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.DateSeparator#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.dateseparator/vb/dateseparatorex.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティに設定されている<see langword="null" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.DateTimeFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DayNames">
+      <MemberSignature Language="C#" Value="public string[] DayNames { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] DayNames" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.DateTimeFormatInfo.DayNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>曜日を表すカルチャ固有の完全名を格納する 1 次元の文字列配列を取得または設定します。</summary>
+        <value>曜日を表すカルチャ固有の完全名を格納している 1 次元の文字列配列。 配列の<see cref="P:System.Globalization.DateTimeFormatInfo.InvariantInfo" />"Sunday"、「月曜日」、「火曜日」、「水曜日」、「木曜日」、「金曜日」、および「土曜日」が含まれています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定する場合、配列は 1 次元である必要があり、正確に 7 つの要素があります。 最初の要素 (インデックス 0 の位置の要素) によって定義されているカレンダーにおける週の最初の日を表す、<xref:System.Globalization.DateTimeFormatInfo.Calendar%2A>プロパティです。  
+  
+ カスタム書式指定文字列には、"dddd"書式指定子が含まれている場合、<xref:System.DateTime.ToString%2A?displayProperty=nameWithType>メソッドには、適切な値が含まれています<xref:System.Globalization.DateTimeFormatInfo.DayNames%2A>メンバー結果の文字列に"dddd"の代わりにします。  
+  
+ 場合、このプロパティは影響を受けるの値、<xref:System.Globalization.DateTimeFormatInfo.Calendar%2A>プロパティが変更されました。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティに設定されている<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentException">プロパティは、多次元配列または長が正確には 7 ではない配列に設定されています。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.DateTimeFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FirstDayOfWeek">
+      <MemberSignature Language="C#" Value="public DayOfWeek FirstDayOfWeek { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DayOfWeek FirstDayOfWeek" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.DateTimeFormatInfo.FirstDayOfWeek" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DayOfWeek</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>週の最初の曜日を取得または設定します。</summary>
+        <value>週の最初の日を表す列挙値。 既定の<see cref="P:System.Globalization.DateTimeFormatInfo.InvariantInfo" />は<see cref="F:System.DayOfWeek.Sunday" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、このプロパティは影響を受けるの値、<xref:System.Globalization.DateTimeFormatInfo.Calendar%2A>プロパティが変更されました。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が無効ですが、プロパティが設定されて<see cref="T:System.DayOfWeek" />値。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.DateTimeFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FullDateTimePattern">
+      <MemberSignature Language="C#" Value="public string FullDateTimePattern { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FullDateTimePattern" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.DateTimeFormatInfo.FullDateTimePattern" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>長い日付値と長い時刻値のカスタム書式指定文字列を取得または設定します。</summary>
+        <value>長い日付値と長い時刻値のカスタム書式指定文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ "F"標準書式指定文字列は、別名を<xref:System.Globalization.DateTimeFormatInfo.FullDateTimePattern%2A>プロパティです。 つまり、このプロパティに割り当てられているカスタム書式指定文字列は、"F"標準書式指定文字列の結果文字列の形式を定義します。 詳細については、次を参照してください。[標準の日付と時刻の書式指定文字列](~/docs/standard/base-types/standard-date-and-time-format-strings.md)です。  
+  
+ 値、<xref:System.Globalization.DateTimeFormatInfo.FullDateTimePattern%2A>プロパティは、連結することによって動的に生成される、<xref:System.Globalization.DateTimeFormatInfo.LongDatePattern%2A>と<xref:System.Globalization.DateTimeFormatInfo.LongTimePattern%2A>プロパティはスペースで区切られます。 この動的な割り当ては、次の条件が発生します。  
+  
+-   プロパティの値が前に取得された場合は、明示的に設定されました。  
+  
+-   ときの値、<xref:System.Globalization.DateTimeFormatInfo.LongDatePattern%2A>プロパティが変更されました。  
+  
+-   ときの値、<xref:System.Globalization.DateTimeFormatInfo.LongTimePattern%2A>プロパティが変更されました。  
+  
+ 場合、このプロパティは影響を受けるの値、<xref:System.Globalization.DateTimeFormatInfo.Calendar%2A>プロパティが変更されました。  
+  
+   
+  
+## Examples  
+ 次の例の値を表示する<xref:System.Globalization.DateTimeFormatInfo.FullDateTimePattern%2A>いくつかのカルチャ。  
+  
+ [!code-cpp[System.Globalization.DateTimeFormatInfo.FullDateTimePattern#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.DateTimeFormatInfo.FullDateTimePattern/CPP/dtfi_fulldatetimepattern.cpp#1)]
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.FullDateTimePattern#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.DateTimeFormatInfo.FullDateTimePattern/CS/dtfi_fulldatetimepattern.cs#1)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.FullDateTimePattern#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.DateTimeFormatInfo.FullDateTimePattern/VB/dtfi_fulldatetimepattern.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティに設定されている<see langword="null" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.DateTimeFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAbbreviatedDayName">
+      <MemberSignature Language="C#" Value="public string GetAbbreviatedDayName (DayOfWeek dayofweek);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetAbbreviatedDayName(valuetype System.DayOfWeek dayofweek) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.DateTimeFormatInfo.GetAbbreviatedDayName(System.DayOfWeek)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dayofweek" Type="System.DayOfWeek" />
+      </Parameters>
+      <Docs>
+        <param name="dayofweek"><see cref="T:System.DayOfWeek" /> 値。</param>
+        <summary>指定した曜日に現在関連付けられているカルチャに基づいてカルチャに固有の省略名を返します<see cref="T:System.Globalization.DateTimeFormatInfo" />オブジェクト。</summary>
+        <returns>によって表される週の曜日のカルチャに固有の省略名<paramref name="dayofweek" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のインバリアント<xref:System.Globalization.DateTimeFormatInfo>オブジェクト、このメソッドから文字列を返します、 <xref:System.Globalization.GregorianCalendar>:  
+  
+|`dayofweek`|戻り値|  
+|-----------------|------------------|  
+|日曜日|"Sun"|  
+|月曜日|「月曜日」|  
+|火曜日|「(火)」|  
+|水曜日|"Wed"|  
+|木曜日|「日 (木)」|  
+|金曜日|「金曜日」|  
+|土曜日|「土曜日」|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="dayofweek" /> は有効な <see cref="T:System.DayOfWeek" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAbbreviatedEraName">
+      <MemberSignature Language="C#" Value="public string GetAbbreviatedEraName (int era);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetAbbreviatedEraName(int32 era) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.DateTimeFormatInfo.GetAbbreviatedEraName(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="era" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="era">時代 (年号) を表す整数。</param>
+        <summary>省略形が存在する場合は、指定した時代 (年号) の省略名を格納している文字列を返します。</summary>
+        <returns>省略形が存在する場合は、指定した時代 (年号) の省略名を格納している文字列。  
+  
+ または  
+  
+ 省略形が存在しない場合は、時代 (年号) の完全名を格納している文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 時代 (年号) の名前は、予定表を使用して、固定小数点またはイベントから計算された期間に参照名です。 たとえば、「a. d.」 または「西暦」 構成のグレゴリオ暦カレンダーにおける現在の時代 (年号) がします。  
+  
+ 有効値、`era`に一覧表示されます、 <xref:System.Globalization.Calendar.Eras%2A> 、適切なクラスのプロパティから派生した<xref:System.Globalization.Calendar>です。 例:<xref:System.Globalization.JapaneseCalendar.Eras%2A?displayProperty=nameWithType>この実装でサポートされる時代 (年号) の一覧を表示します。  
+  
+ <xref:System.Globalization.JapaneseCalendar>クラス、名前が完全に時代 (年号) の名前の最初の文字省略時代 (年号)。 この文字はラテン語アルファベットの大文字と小文字 1 文字の省略形または単一文字漢字の省略形です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="era" />指定されたカレンダーの有効な時代 (年号) を表していません、<see cref="P:System.Globalization.DateTimeFormatInfo.Calendar" />プロパティです。</exception>
+        <block subset="none" type="usage">
+          <para>場合<see cref="P:System.Globalization.DateTimeFormatInfo.Calendar" />は、<see cref="T:System.Globalization.TaiwanCalendar" />ですが、<see cref="P:System.Threading.Thread.CurrentCulture" />はありません"ZH-TW" <see cref="P:System.Globalization.DateTimeFormatInfo.NativeCalendarName" />、 <see cref="M:System.Globalization.DateTimeFormatInfo.GetEraName(System.Int32)" />、および<see cref="M:System.Globalization.DateTimeFormatInfo.GetAbbreviatedEraName(System.Int32)" />空の文字列を返します ("") です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAbbreviatedMonthName">
+      <MemberSignature Language="C#" Value="public string GetAbbreviatedMonthName (int month);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetAbbreviatedMonthName(int32 month) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.DateTimeFormatInfo.GetAbbreviatedMonthName(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="month" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="month">取得する 1 ~ 13 の月の名前を表す整数。</param>
+        <summary>現在関連付けられているカルチャに基づき、指定された月のカルチャに固有の省略名を返します<see cref="T:System.Globalization.DateTimeFormatInfo" />オブジェクト。</summary>
+        <returns>表される月のカルチャに固有の省略名<paramref name="month" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のインバリアント<xref:System.Globalization.DateTimeFormatInfo>オブジェクト、このメソッドから文字列を返します、<xref:System.Globalization.GregorianCalendar>オブジェクト。  
+  
+|`month`|戻り値|  
+|-------------|------------------|  
+|1|「Jan」|  
+|2|「月」|  
+|3|「月」|  
+|4|"Apr"|  
+|5|「月」|  
+|6|"Jun"|  
+|7|「年 7 月」|  
+|9|"Aug"|  
+|9|「9 月」|  
+|10|"Oct"|  
+|11|"Nov"|  
+|12|"Dec"|  
+|13|""|  
+  
+ <xref:System.Globalization.Calendar>オブジェクトは、予定表と 13 か月間に対応できます。 12 か月カレンダーの 13 番目の月の名前として空の文字列が常に返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="month" />1 より小さいか、13 をよりも大きい値です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllDateTimePatterns">
+      <MemberSignature Language="C#" Value="public string[] GetAllDateTimePatterns ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string[] GetAllDateTimePatterns() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.DateTimeFormatInfo.GetAllDateTimePatterns" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>日付と時刻の値を形式指定できるすべての標準パターンを返します。</summary>
+        <returns>日付と時刻の値を形式指定できる標準パターンを格納する配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、標準書式指定文字列に対応するすべてのカスタム書式指定文字列を格納する配列を返します。 参照してください[標準の日付と時刻の書式指定文字列](~/docs/standard/base-types/standard-date-and-time-format-strings.md)標準書式指定文字列の一覧についてはします。  
+  
+ によって返される配列で、カスタム書式指定文字列を使用することができます、<xref:System.Globalization.DateTimeFormatInfo.GetAllDateTimePatterns%2A>書式設定操作のメソッドです。 ただし、作成する場合は、日付と時刻の値の文字列形式を返される点で、書式設定操作常に解析できませんで正常に、`Parse`と`TryParse`メソッドです。 カスタム書式指定文字列がによって返されることを想定できないため、<xref:System.Globalization.DateTimeFormatInfo.GetAllDateTimePatterns%2A>メソッドは、ラウンドト リップする日付と時刻の値を使用することができます。 この問題を説明する例を次に示します。 取得、<xref:System.Globalization.DateTimeFormatInfo>イタリア (イタリア語) のカルチャの書式情報を格納するオブジェクト。 によって返される配列の各カスタム書式指定文字列を渡す、<xref:System.Globalization.DateTimeFormatInfo.GetAllDateTimePatterns>メソッドを<xref:System.DateTime.ToString%28System.String%29?displayProperty=nameWithType>メソッドを日付と時刻の文字列形式を作成します。 この例では呼び出すことによってこの値を解析を試みます、<xref:System.DateTime.TryParse%28System.String%2CSystem.DateTime%40%29?displayProperty=nameWithType>メソッドです。 例からの出力では、カスタム書式指定文字列の一部の日付を生成しないされ時刻値のラウンドト リップでを正常にします。  
+  
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.GetAllDateTimePatterns#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.getalldatetimepatterns/cs/getalldatetimepatternsex1.cs#1)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.GetAllDateTimePatterns#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.getalldatetimepatterns/vb/getalldatetimepatternsex1.vb#1)]  
+  
+ をいくつかの定義済みのカスタム形式で表現できる日時の文字列形式を解析するには、次の方法のいずれかを呼び出します。  
+  
+-   <xref:System.DateTime.ParseExact%28System.String%2CSystem.String%5B%5D%2CSystem.IFormatProvider%2CSystem.Globalization.DateTimeStyles%29?displayProperty=nameWithType>  
+  
+-   <xref:System.DateTimeOffset.ParseExact%28System.String%2CSystem.String%5B%5D%2CSystem.IFormatProvider%2CSystem.Globalization.DateTimeStyles%29?displayProperty=nameWithType>  
+  
+-   <xref:System.DateTime.TryParseExact%28System.String%2CSystem.String%5B%5D%2CSystem.IFormatProvider%2CSystem.Globalization.DateTimeStyles%2CSystem.DateTime%40%29?displayProperty=nameWithType>  
+  
+-   <xref:System.DateTimeOffset.TryParseExact%28System.String%2CSystem.String%5B%5D%2CSystem.IFormatProvider%2CSystem.Globalization.DateTimeStyles%2CSystem.DateTimeOffset%40%29?displayProperty=nameWithType>  
+  
+ によって返される配列内のカスタム書式指定文字列、<xref:System.Globalization.DateTimeFormatInfo.GetAllDateTimePatterns%2A>メソッドが対象のカルチャの現在の暦に依存、<xref:System.Globalization.DateTimeFormatInfo>書式情報を提供するオブジェクト。 予定表が変更された場合、このメソッドによって返される配列も変更されます。  
+  
+   
+  
+## Examples  
+ 次の例では、日付、インバリアント カルチャの書式指定文字列と書式指定文字列を使用する特定の日付の書式を設定することにすると生成される結果の文字列が表示されます。  
+  
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.GetAllDateTimePatterns#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.getalldatetimepatterns/cs/getalldatetimepatternsinv.cs#3)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.GetAllDateTimePatterns#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.getalldatetimepatterns/vb/getalldatetimepatternsinv.vb#3)]  
+  
+ この例のインスタンスを作成、<xref:System.Globalization.DateTimeFormatInfo>を呼び出すことによって、インバリアント カルチャを表すオブジェクト、<xref:System.Globalization.DateTimeFormatInfo.%23ctor%2A>コンス トラクターです。 取得も必要でしたが、<xref:System.Globalization.DateTimeFormatInfo>からインバリアント カルチャを表す、<xref:System.Globalization.DateTimeFormatInfo.InvariantInfo%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllDateTimePatterns">
+      <MemberSignature Language="C#" Value="public string[] GetAllDateTimePatterns (char format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string[] GetAllDateTimePatterns(char format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.DateTimeFormatInfo.GetAllDateTimePatterns(System.Char)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="format">標準書式指定文字列。</param>
+        <summary>指定された標準書式指定文字列を使用して日付と時刻の値を形式指定できるすべてのパターンを返します。</summary>
+        <returns>指定された書式指定文字列を使用して日付と時刻の値を形式指定できる標準パターンを格納している配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、特定の標準書式指定文字列に対応するカスタム書式指定文字列を格納する配列を返します。 参照してください[標準の日付と時刻の書式指定文字列](~/docs/standard/base-types/standard-date-and-time-format-strings.md)標準書式指定文字列の一覧についてはします。  
+  
+ によって返される配列で、カスタム書式指定文字列を使用することができます、<xref:System.Globalization.DateTimeFormatInfo.GetAllDateTimePatterns%2A>書式設定操作のメソッドです。 ただし、作成する場合は、日付と時刻の値の文字列形式を返される点で、書式設定操作常に解析できませんで正常に、`Parse`と`TryParse`メソッドです。 カスタム書式指定文字列がによって返されることを想定できないため、<xref:System.Globalization.DateTimeFormatInfo.GetAllDateTimePatterns%2A>メソッドは、ラウンドト リップする日付と時刻の値を使用することができます。 この問題を説明する例を次に示します。 取得、<xref:System.Globalization.DateTimeFormatInfo>ロシア (ロシア語) のカルチャの書式情報を格納するオブジェクト。 呼び出す、<xref:System.Globalization.DateTimeFormatInfo.GetAllDateTimePatterns%28System.Char%29>の各標準書式指定文字列、および、パスの書式設定文字列に返される配列内の各カスタム メソッド、<xref:System.DateTime.ToString%28System.String%29?displayProperty=nameWithType>メソッドを日付と時刻の文字列形式を作成します。 この例では呼び出すことによってこの値を解析を試みます、<xref:System.DateTime.TryParse%28System.String%2CSystem.DateTime%40%29?displayProperty=nameWithType>メソッドです。 例からの出力では、カスタム書式指定文字列の一部の日付を生成しないされ時刻値のラウンドト リップでを正常にします。  
+  
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.GetAllDateTimePatterns#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.getalldatetimepatterns/cs/getalldatetimepatternsex2.cs#2)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.GetAllDateTimePatterns#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.getalldatetimepatterns/vb/getalldatetimepatternsex2.vb#2)]  
+  
+ をいくつかの定義済みのカスタム形式で表現できる日時の文字列形式を解析するには、次の方法のいずれかを呼び出します。  
+  
+-   <xref:System.DateTime.ParseExact%28System.String%2CSystem.String%5B%5D%2CSystem.IFormatProvider%2CSystem.Globalization.DateTimeStyles%29?displayProperty=nameWithType>  
+  
+-   <xref:System.DateTimeOffset.ParseExact%28System.String%2CSystem.String%5B%5D%2CSystem.IFormatProvider%2CSystem.Globalization.DateTimeStyles%29?displayProperty=nameWithType>  
+  
+-   <xref:System.DateTime.TryParseExact%28System.String%2CSystem.String%5B%5D%2CSystem.IFormatProvider%2CSystem.Globalization.DateTimeStyles%2CSystem.DateTime%40%29?displayProperty=nameWithType>  
+  
+-   <xref:System.DateTimeOffset.TryParseExact%28System.String%2CSystem.String%5B%5D%2CSystem.IFormatProvider%2CSystem.Globalization.DateTimeStyles%2CSystem.DateTimeOffset%40%29?displayProperty=nameWithType>  
+  
+ によって返される配列内のカスタム書式指定文字列、<xref:System.Globalization.DateTimeFormatInfo.GetAllDateTimePatterns%2A>メソッドが対象のカルチャの現在の暦に依存、<xref:System.Globalization.DateTimeFormatInfo>書式情報を提供するオブジェクト。 予定表が変更された場合、このメソッドによって返される配列も変更されます。  
+  
+   
+  
+## Examples  
+ 次の例では、現在の暦の日付と時刻のパターンを表示します。  
+  
+ [!code-cpp[Classic DateTimeFormatInfo.GetAllDateTimePatterns Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic DateTimeFormatInfo.GetAllDateTimePatterns Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DateTimeFormatInfo.GetAllDateTimePatterns Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic DateTimeFormatInfo.GetAllDateTimePatterns Example/CS/source.cs#1)]
+ [!code-vb[Classic DateTimeFormatInfo.GetAllDateTimePatterns Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic DateTimeFormatInfo.GetAllDateTimePatterns Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="format" />有効な標準形式文字列ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDayName">
+      <MemberSignature Language="C#" Value="public string GetDayName (DayOfWeek dayofweek);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetDayName(valuetype System.DayOfWeek dayofweek) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.DateTimeFormatInfo.GetDayName(System.DayOfWeek)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dayofweek" Type="System.DayOfWeek" />
+      </Parameters>
+      <Docs>
+        <param name="dayofweek"><see cref="T:System.DayOfWeek" /> 値。</param>
+        <summary>現在関連付けられているカルチャに基づいて、週の指定された日付のカルチャに固有の完全名を返します<see cref="T:System.Globalization.DateTimeFormatInfo" />オブジェクト。</summary>
+        <returns>によって表される週の曜日のカルチャに固有の完全名<paramref name="dayofweek" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のインバリアント<xref:System.Globalization.DateTimeFormatInfo>オブジェクト、このメソッドから文字列を返します、<xref:System.Globalization.GregorianCalendar>オブジェクト。  
+  
+|`dayofweek`|戻り値|  
+|-----------------|------------------|  
+|日曜日|"Sunday"|  
+|月曜日|"Monday"|  
+|火曜日|"Tuesday"|  
+|水曜日|「水曜日」|  
+|木曜日|「木曜日」|  
+|金曜日|「金曜日」|  
+|土曜日|「土曜日」|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="dayofweek" /> は有効な <see cref="T:System.DayOfWeek" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEra">
+      <MemberSignature Language="C#" Value="public int GetEra (string eraName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetEra(string eraName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.DateTimeFormatInfo.GetEra(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eraName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="eraName">時代 (年号) の名前を含む文字列。</param>
+        <summary>指定した時代 (年号) を表す整数を返します。</summary>
+        <returns>場合、時代 (年号) を表す整数を<paramref name="eraName" />が有効である場合は-1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 時代 (年号) の名前は、予定表を使用して、固定小数点またはイベントから計算された期間に参照名です。 たとえば、「a. d.」 または「西暦」 構成のグレゴリオ暦カレンダーにおける現在の時代 (年号) がします。  
+  
+ 比較した結果`eraName`は区別されず、たとえば、「a. d.」 「a. d.」と同じです。  
+  
+ <xref:System.Globalization.DateTimeFormatInfo.GetEra%2A>場合にのみ、省略形の時代 (年号) 名に区切り記号は無視されます、<xref:System.Globalization.GregorianCalendar>で選択した<xref:System.Globalization.DateTimeFormatInfo.Calendar%2A?displayProperty=nameWithType>と、カルチャ「a. d.」 時代 (年号) の名前は、「a. d.」として "AD"に相当します。  
+  
+ <xref:System.Globalization.DateTimeFormatInfo.GetEra%2A>比較`eraName`によって返される完全時代 (年号) の名前を持つ<xref:System.Globalization.DateTimeFormatInfo.GetEraName%2A>によって返される省略時代 (年号) の名前を使用して<xref:System.Globalization.DateTimeFormatInfo.GetAbbreviatedEraName%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例に示しますを<xref:System.Globalization.DateTimeFormatInfo>暦はグレゴリオ暦とカルチャ「西暦」時代 (年号) の名前を使用する場合にのみ、時代 (年号) 名には句読点を無視します。  
+  
+ [!code-cpp[System.Globalization.GregorianCalendar.GetEra#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar.GetEra/CPP/gregorian_getera.cpp#1)]
+ [!code-csharp[System.Globalization.GregorianCalendar.GetEra#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar.GetEra/CS/gregorian_getera.cs#1)]
+ [!code-vb[System.Globalization.GregorianCalendar.GetEra#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar.GetEra/VB/gregorian_getera.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="eraName" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEraName">
+      <MemberSignature Language="C#" Value="public string GetEraName (int era);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetEraName(int32 era) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.DateTimeFormatInfo.GetEraName(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="era" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="era">時代 (年号) を表す整数。</param>
+        <summary>指定した時代 (年号) の名前を格納している文字列を返します。</summary>
+        <returns>時代 (年号) の名前を格納している文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 時代 (年号) の名前は、予定表を使用して、固定小数点またはイベントから計算された期間に参照名です。 たとえば、「a. d.」 または「西暦」 構成のグレゴリオ暦カレンダーにおける現在の時代 (年号) がします。  
+  
+ 有効値、`era`に一覧表示されます、 <xref:System.Globalization.Calendar.Eras%2A> 、適切なクラスのプロパティから派生した<xref:System.Globalization.Calendar>です。 例:<xref:System.Globalization.JapaneseCalendar.Eras%2A?displayProperty=nameWithType>この実装でサポートされる時代 (年号) の一覧を表示します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="era" />指定されたカレンダーの有効な時代 (年号) を表していません、<see cref="P:System.Globalization.DateTimeFormatInfo.Calendar" />プロパティです。</exception>
+        <block subset="none" type="usage">
+          <para>場合は、予定表として表されます<see cref="T:System.Globalization.TaiwanCalendar" />ですが、<see cref="P:System.Threading.Thread.CurrentCulture" />はありません"ZH-TW" <see cref="P:System.Globalization.DateTimeFormatInfo.NativeCalendarName" />、 <see cref="M:System.Globalization.DateTimeFormatInfo.GetEraName(System.Int32)" />、および<see cref="M:System.Globalization.DateTimeFormatInfo.GetAbbreviatedEraName(System.Int32)" />空の文字列を返します ("") です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFormat">
+      <MemberSignature Language="C#" Value="public object GetFormat (Type formatType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetFormat(class System.Type formatType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.DateTimeFormatInfo.GetFormat(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formatType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="formatType">必要な形式指定サービスの型。</param>
+        <summary>日付と時刻の書式指定サービスを提供する指定した型のオブジェクトを返します。</summary>
+        <returns>現在のオブジェクトを場合、<paramref name="formatType" />は、現在の型と同じ<see cref="T:System.Globalization.DateTimeFormatInfo" />、それ以外の<see langword="null" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Format(String, IFormatProvider)`基本データ型によってサポートされているメソッドは、このメソッドを呼び出すときに、現在<xref:System.Globalization.DateTimeFormatInfo>オブジェクトとして渡されます、<xref:System.IFormatProvider>パラメーター。 このメソッドは、<xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> を実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInstance">
+      <MemberSignature Language="C#" Value="public static System.Globalization.DateTimeFormatInfo GetInstance (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Globalization.DateTimeFormatInfo GetInstance(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.DateTimeFormatInfo.GetInstance(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.DateTimeFormatInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider"><see cref="T:System.IFormatProvider" />を取得する、<see cref="T:System.Globalization.DateTimeFormatInfo" />オブジェクト。  
+  
+ または  
+  
+ <see cref="P:System.Globalization.DateTimeFormatInfo.CurrentInfo" /> を取得する <see langword="null" />。</param>
+        <summary>返します、<see cref="T:System.Globalization.DateTimeFormatInfo" />オブジェクトが、指定された関連付け<see cref="T:System.IFormatProvider" />です。</summary>
+        <returns>A<see cref="T:System.Globalization.DateTimeFormatInfo" />オブジェクトに関連付けられている<see cref="T:System.IFormatProvider" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、<xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType>メソッドの`formatProvider`を使用して、<xref:System.Globalization.DateTimeFormatInfo>オブジェクトとして、`Type`パラメーター。 場合`formatProvider`は`null`場合<xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType>返します`null`、このメソッドが戻る<xref:System.Globalization.DateTimeFormatInfo.CurrentInfo%2A>です。  
+  
+ アプリケーションを取得できます、<xref:System.Globalization.DateTimeFormatInfo>を使用して次のいずれかの特定のカルチャ オブジェクト。  
+  
+-   <xref:System.Globalization.CultureInfo.DateTimeFormat%2A?displayProperty=nameWithType> プロパティ。  
+  
+-   <xref:System.Globalization.DateTimeFormatInfo.GetInstance%2A>メソッド、場所`provider`は、<xref:System.Globalization.CultureInfo>オブジェクト。  
+  
+ A<xref:System.Globalization.DateTimeFormatInfo>を特定のカルチャまたはニュートラル カルチャではなく、インバリアント カルチャにのみ、オブジェクトを作成することができます。  
+  
+ インバリアント カルチャ、特定のカルチャ ニュートラル カルチャに関する詳細については、次を参照してください。、<xref:System.Globalization.CultureInfo>クラスの説明。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMonthName">
+      <MemberSignature Language="C#" Value="public string GetMonthName (int month);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetMonthName(int32 month) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.DateTimeFormatInfo.GetMonthName(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="month" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="month">取得する 1 ~ 13 の月の名前を表す整数。</param>
+        <summary>現在関連付けられているカルチャに基づき、指定された月のカルチャに固有の完全名を返します<see cref="T:System.Globalization.DateTimeFormatInfo" />オブジェクト。</summary>
+        <returns>カルチャに固有の完全名で表される月の<paramref name="month" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のインバリアント<xref:System.Globalization.DateTimeFormatInfo>オブジェクト、このメソッドから文字列を返します、<xref:System.Globalization.GregorianCalendar>オブジェクト。  
+  
+|`month`|戻り値|  
+|-------------|------------------|  
+|1|「月」|  
+|2|"February"|  
+|3|「月」|  
+|4|「月」|  
+|5|「月」|  
+|6|"June"|  
+|7|"July"|  
+|9|"August"|  
+|9|「9 月」|  
+|10|「月」|  
+|11|「November」|  
+|12|「年 12 月」|  
+|13|""|  
+  
+ <xref:System.Globalization.Calendar>オブジェクトは、予定表と 13 か月間に対応できます。 12 か月カレンダーの 13 番目の月の名前として空の文字列が常に返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="month" />1 より小さいか、13 をよりも大きい値です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetShortestDayName">
+      <MemberSignature Language="C#" Value="public string GetShortestDayName (DayOfWeek dayOfWeek);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetShortestDayName(valuetype System.DayOfWeek dayOfWeek) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.DateTimeFormatInfo.GetShortestDayName(System.DayOfWeek)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dayOfWeek" Type="System.DayOfWeek" />
+      </Parameters>
+      <Docs>
+        <param name="dayOfWeek"><see cref="T:System.DayOfWeek" /> 値のいずれか。</param>
+        <summary>現在関連付けられている週の指定した曜日の最短の省略形の曜日名を取得<see cref="T:System.Globalization.DateTimeFormatInfo" />オブジェクト。</summary>
+        <returns>対応する曜日の省略名、<paramref name="dayOfWeek" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、いくつかのメソッドおよび日付と時刻の書式パターン、ネイティブのカレンダーの名前と完全および省略形の月と曜日名を指定するプロパティを示します。  
+  
+ [!code-csharp[sys.glob.DTFI1#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.DTFI1/cs/dtfi1.cs#1)]
+ [!code-vb[sys.glob.DTFI1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.DTFI1/vb/dtfi1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="dayOfWeek" />値ではありません、<see cref="T:System.DayOfWeek" />列挙します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InvariantInfo">
+      <MemberSignature Language="C#" Value="public static System.Globalization.DateTimeFormatInfo InvariantInfo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Globalization.DateTimeFormatInfo InvariantInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.DateTimeFormatInfo.InvariantInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.DateTimeFormatInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>読み取り専用で、既定値を取得<see cref="T:System.Globalization.DateTimeFormatInfo" />オブジェクトのカルチャに依存しない (インバリアントな)。</summary>
+        <value>カルチャに依存しない (インバリアントな) 読み取り専用オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のカルチャに関係なく、このプロパティは変更されません。 このため、インバリアント カルチャの<xref:System.Globalization.DateTimeFormatInfo>オブジェクトを解析および複数カルチャは、データの操作を書式設定に一貫性があり、カルチャに依存しない結果を生成するために使用できます。 たとえば、複数のカルチャの日付と時刻のデータを文字列形式に保存される場合は、それを形式指定できるを使用して、<xref:System.Globalization.DateTimeFormatInfo>オブジェクト インバリアント カルチャの保存されているとします。 インバリアント カルチャを使用して解析できる<xref:System.Globalization.DateTimeFormatInfo>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.DateTimeFormatInfo.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Globalization.DateTimeFormatInfo" />オブジェクトは読み取り専用です。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Globalization.DateTimeFormatInfo" />オブジェクトは読み取り専用です。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LongDatePattern">
+      <MemberSignature Language="C#" Value="public string LongDatePattern { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LongDatePattern" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.DateTimeFormatInfo.LongDatePattern" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>長い日付値のカスタム書式指定文字列を取得または設定します。</summary>
+        <value>長い日付値のカスタム書式指定文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.DateTimeFormatInfo.LongDatePattern%2A>プロパティへの呼び出しによって返される日付文字列のカルチャに固有の書式を定義する、<xref:System.DateTime.ToString%2A?displayProperty=nameWithType>と<xref:System.DateTimeOffset.ToString%2A?displayProperty=nameWithType>メソッドと複合書式指定では、文字列が"D"標準書式指定文字列を提供します。 次の例は、次の間の関係を示しています:"D"標準書式指定文字列、カスタム形式で返される文字列、<xref:System.Globalization.DateTimeFormatInfo.LongDatePattern%2A>プロパティ、および日付のカルチャに固有の表現。  
+  
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.LongDatePattern#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.DateTimeFormatInfo.LongDatePattern/CS/longdatepattern1.cs#2)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.LongDatePattern#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.DateTimeFormatInfo.LongDatePattern/VB/longdatepattern1.vb#2)]  
+  
+ 参照してください[カスタムの日付と時刻の書式指定文字列](~/docs/standard/base-types/custom-date-and-time-format-strings.md)など"dddd, dd MMMM yyyy"カスタム書式指定文字列を構築するために結合できる個別のカスタム書式指定子にします。  
+  
+ 正確な文字列、日付区切り文字のプレース ホルダーを使用する代わりに、長い日付パターン日付の区切り記号を設定する必要があります。 たとえば、MM DD yyyy パターンを取得するには、「年-月-日」の長い日付パターンを設定します。  
+  
+ カルチャの変更によって、カレンダーが使用されている場合、このプロパティの値を変更できます。 たとえば、次の例を示しています、<xref:System.Globalization.DateTimeFormatInfo.LongDatePattern%2A>のプロパティ、<xref:System.Globalization.CultureInfo>アラビア語 (シリア) のカルチャを表すオブジェクトが変更されるときに、<xref:System.Globalization.Calendar>カルチャが変更によって使用されるオブジェクト。  
+  
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.LongDatePattern#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.DateTimeFormatInfo.LongDatePattern/CS/longdatepattern2.cs#3)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.LongDatePattern#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.DateTimeFormatInfo.LongDatePattern/VB/longdatepattern2.vb#3)]  
+  
+   
+  
+## Examples  
+ 次の例の値を表示する、<xref:System.Globalization.DateTimeFormatInfo.LongDatePattern%2A>いくつかのカルチャ プロパティです。  
+  
+ [!code-cpp[System.Globalization.DateTimeFormatInfo.LongDatePattern#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.DateTimeFormatInfo.LongDatePattern/CPP/dtfi_longdatepattern.cpp#1)]
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.LongDatePattern#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.DateTimeFormatInfo.LongDatePattern/CS/dtfi_longdatepattern.cs#1)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.LongDatePattern#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.DateTimeFormatInfo.LongDatePattern/VB/dtfi_longdatepattern.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティに設定されている<see langword="null" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.DateTimeFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LongTimePattern">
+      <MemberSignature Language="C#" Value="public string LongTimePattern { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LongTimePattern" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.DateTimeFormatInfo.LongTimePattern" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>長い時刻値のカスタム書式指定文字列を取得または設定します。</summary>
+        <value>長い形式の時刻値の書式パターン。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.DateTimeFormatInfo.LongTimePattern%2A>プロパティへの呼び出しによって返される日付文字列のカルチャに固有の書式を定義する、<xref:System.DateTime.ToString%2A?displayProperty=nameWithType>と<xref:System.DateTimeOffset.ToString%2A?displayProperty=nameWithType>メソッドと複合書式指定では、文字列が"T"標準書式指定文字列を提供します。  
+  
+ 時刻区切り文字のプレース ホルダーを使用する代わりに正確な文字列を長い形式の時刻パターンの時刻の区切り記号を設定することをお勧めします。 たとえば、パターン h mm ss を取得するには、"h mm ss"に長い日付パターンを設定します。  
+  
+   
+  
+## Examples  
+ 次の例の値を表示する<xref:System.Globalization.DateTimeFormatInfo.LongTimePattern%2A>いくつかのカルチャ。  
+  
+ [!code-cpp[System.Globalization.DateTimeFormatInfo.LongTimePattern#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.DateTimeFormatInfo.LongTimePattern/CPP/dtfi_longtimepattern.cpp#1)]
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.LongTimePattern#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.DateTimeFormatInfo.LongTimePattern/CS/dtfi_longtimepattern.cs#1)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.LongTimePattern#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.DateTimeFormatInfo.LongTimePattern/VB/dtfi_longtimepattern.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティに設定されている<see langword="null" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.DateTimeFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MonthDayPattern">
+      <MemberSignature Language="C#" Value="public string MonthDayPattern { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MonthDayPattern" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.DateTimeFormatInfo.MonthDayPattern" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>月と日の値のカスタム書式指定文字列を取得または設定します。</summary>
+        <value>月と日の値のカスタム書式指定文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.DateTimeFormatInfo.MonthDayPattern%2A>プロパティへの呼び出しによって返される日付文字列のカルチャに固有の書式を定義する、<xref:System.DateTime.ToString%2A?displayProperty=nameWithType>と<xref:System.DateTimeOffset.ToString%2A?displayProperty=nameWithType>メソッド文字列を使用する複合書式指定では、"m"、"M"標準書式指定文字列の操作を指定したとします。  
+  
+ 場合、このプロパティは影響を受けるの値、<xref:System.Globalization.DateTimeFormatInfo.Calendar%2A>プロパティが変更されました。  
+  
+ 月と日のパターンは、日付区切り文字のプレース ホルダーを使用する代わりに正確な文字列が日付区切り文字を設定することをお勧めします。 たとえば、MM DD のパターンを取得するには、"MM DD"する月と日のパターンを設定します。  
+  
+   
+  
+## Examples  
+ 次の例の値を表示する<xref:System.Globalization.DateTimeFormatInfo.MonthDayPattern%2A>いくつかのカルチャ。  
+  
+ [!code-cpp[System.Globalization.DateTimeFormatInfo.MonthDayPattern#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.DateTimeFormatInfo.MonthDayPattern/CPP/dtfi_monthdaypattern.cpp#1)]
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.MonthDayPattern#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.DateTimeFormatInfo.MonthDayPattern/CS/dtfi_monthdaypattern.cs#1)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.MonthDayPattern#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.DateTimeFormatInfo.MonthDayPattern/VB/dtfi_monthdaypattern.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティに設定されている<see langword="null" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.DateTimeFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MonthGenitiveNames">
+      <MemberSignature Language="C#" Value="public string[] MonthGenitiveNames { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] MonthGenitiveNames" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.DateTimeFormatInfo.MonthGenitiveNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に現在関連付けられている月の名前の文字列配列<see cref="T:System.Globalization.DateTimeFormatInfo" />オブジェクト。</summary>
+        <value>月名の文字列配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一部の言語で属の場合も、日付の一部である月の名前が表示されます。 たとえば、ロシア語 (ロシア) または"RU-RU"で日付の場合、カルチャ構成 1 Января など、属月の名前と day 数のです。  
+  
+ このプロパティを設定すると、配列は 1 次元である必要があり、正確に 13 個の要素があります。 <xref:System.Globalization.Calendar>オブジェクトでは、予定表と 13 か月間に対応します。 最初の要素 (インデックス 0 の位置の要素) によって定義された年の最初の月を表す、<xref:System.Globalization.DateTimeFormatInfo.Calendar%2A>プロパティです。設定した場合、<xref:System.Globalization.DateTimeFormatInfo.MonthGenitiveNames%2A>プロパティを設定する必要も、<xref:System.Globalization.DateTimeFormatInfo.MonthNames%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、いくつかのメソッドおよび日付と時刻の書式パターン、ネイティブのカレンダーの名前と完全および省略形の月と曜日名を指定するプロパティを示します。  
+  
+ [!code-csharp[sys.glob.DTFI1#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.DTFI1/cs/dtfi1.cs#1)]
+ [!code-vb[sys.glob.DTFI1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.DTFI1/vb/dtfi1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">設定操作では、配列が多次元か、長さが 13 正確ではないです。</exception>
+        <exception cref="T:System.ArgumentNullException">設定操作では、配列またはその要素の 1 つは<see langword="null" />します。</exception>
+        <exception cref="T:System.InvalidOperationException">現在の設定操作で<see cref="T:System.Globalization.DateTimeFormatInfo" />オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MonthNames">
+      <MemberSignature Language="C#" Value="public string[] MonthNames { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] MonthNames" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.DateTimeFormatInfo.MonthNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の種類の 1 次元配列<see cref="T:System.String" />の月のカルチャに固有の完全名を含むです。</summary>
+        <value>型の 1 次元配列<see cref="T:System.String" />の月のカルチャに固有の完全名を含むです。 12 か月の暦では、配列の 13 番目の要素は空の文字列になります。 配列<see cref="P:System.Globalization.DateTimeFormatInfo.InvariantInfo" />「月」、"February"、「月」、「月」、「月」、「月」、「年 7 月」、"August"、「年 9 月」、「月」、「November」、「年 12 月」を含む、""です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定すると、配列は 1 次元である必要があり、正確に 13 個の要素があります。 <xref:System.Globalization.Calendar>オブジェクトでは、予定表と 13 か月間に対応します。 最初の要素 (インデックス 0 の位置の要素) によって定義された年の最初の月を表す、<xref:System.Globalization.DateTimeFormatInfo.Calendar%2A>プロパティです。  
+  
+ 設定した場合、<xref:System.Globalization.DateTimeFormatInfo.MonthNames%2A>プロパティを設定する必要も、<xref:System.Globalization.DateTimeFormatInfo.MonthGenitiveNames%2A>プロパティです。  
+  
+ カスタムのパターンには、"MMMM"書式パターンが含まれている場合<xref:System.DateTime.ToString%2A?displayProperty=nameWithType>の値を表示<xref:System.Globalization.DateTimeFormatInfo.MonthNames%2A>形式パターンに"MMMM"の代わりにします。  
+  
+ 場合、このプロパティは影響を受けるの値、<xref:System.Globalization.DateTimeFormatInfo.Calendar%2A>プロパティが変更されました。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティに設定されている<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentException">プロパティは、多次元配列または長が厳密に 13 ではない配列に設定されています。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.DateTimeFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NativeCalendarName">
+      <MemberSignature Language="C#" Value="public string NativeCalendarName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NativeCalendarName" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.DateTimeFormatInfo.NativeCalendarName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在関連付けられているカレンダーのネイティブな名前を取得<see cref="T:System.Globalization.DateTimeFormatInfo" />オブジェクト。</summary>
+        <value>現在関連付けられているカルチャで使用されるカレンダーの名前をネイティブ<see cref="T:System.Globalization.DateTimeFormatInfo" />その名前は、使用可能な場合は、オブジェクトまたは空の文字列 ("")、ネイティブのカレンダーの名前が使用できない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、いくつかのメソッドおよび日付と時刻の書式パターン、ネイティブのカレンダーの名前と完全および省略形の月と曜日名を指定するプロパティを示します。  
+  
+ [!code-csharp[sys.glob.DTFI1#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.DTFI1/cs/dtfi1.cs#1)]
+ [!code-vb[sys.glob.DTFI1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.DTFI1/vb/dtfi1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="usage">
+          <para>場合<see cref="P:System.Globalization.DateTimeFormatInfo.Calendar" />は、<see cref="T:System.Globalization.TaiwanCalendar" />ですが、<see cref="P:System.Threading.Thread.CurrentCulture" />はありません"ZH-TW" <see cref="P:System.Globalization.DateTimeFormatInfo.NativeCalendarName" />、 <see cref="M:System.Globalization.DateTimeFormatInfo.GetEraName(System.Int32)" />、および<see cref="M:System.Globalization.DateTimeFormatInfo.GetAbbreviatedEraName(System.Int32)" />空の文字列を返します ("") です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="PMDesignator">
+      <MemberSignature Language="C#" Value="public string PMDesignator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PMDesignator" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.DateTimeFormatInfo.PMDesignator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>"post meridiem" (午後) の時間の文字列指定子を取得または設定します。</summary>
+        <value>"post meridiem" (午後) の時間の文字列指定子。 既定の<see cref="P:System.Globalization.DateTimeFormatInfo.InvariantInfo" />"PM"がします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.DateTimeFormatInfo.PMDesignator%2A>プロパティの 12時 00分: 00 (正午) から 23:59:59.999 使用します。  
+  
+ 場合は、カスタム パターンには、書式設定パターン"tt"が含まれています、時間が午後の時刻、<xref:System.DateTime.ToString%2A?displayProperty=nameWithType>の値を表示<xref:System.Globalization.DateTimeFormatInfo.PMDesignator%2A>形式パターンに"tt"の代わりにします。 書式パターン"t"の最初の文字のみが、カスタム パターンに含まれている場合<xref:System.Globalization.DateTimeFormatInfo.PMDesignator%2A>が表示されます。 アプリケーションでは、AM と PM の区別を維持するために必要とする言語の場合、"tt"を使用する必要があります。 たとえば、日本語の場合、AM/PM 指定子の 2 番目の文字は異なりますが、先頭文字は同じです。  
+  
+ PM 指定子を使用してカルチャでは、このプロパティは、空の文字列を返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティに設定されている<see langword="null" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.DateTimeFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadOnly">
+      <MemberSignature Language="C#" Value="public static System.Globalization.DateTimeFormatInfo ReadOnly (System.Globalization.DateTimeFormatInfo dtfi);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Globalization.DateTimeFormatInfo ReadOnly(class System.Globalization.DateTimeFormatInfo dtfi) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.DateTimeFormatInfo.ReadOnly(System.Globalization.DateTimeFormatInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.DateTimeFormatInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dtfi" Type="System.Globalization.DateTimeFormatInfo" />
+      </Parameters>
+      <Docs>
+        <param name="dtfi">ラップする <see cref="T:System.Globalization.DateTimeFormatInfo" /> オブジェクト。</param>
+        <summary>読み取り専用 <see cref="T:System.Globalization.DateTimeFormatInfo" /> ラッパーを返します。</summary>
+        <returns>読み取り専用<see cref="T:System.Globalization.DateTimeFormatInfo" />ラッパーです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このラッパーに`dtfi`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dtfi" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RFC1123Pattern">
+      <MemberSignature Language="C#" Value="public string RFC1123Pattern { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RFC1123Pattern" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.DateTimeFormatInfo.RFC1123Pattern" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インターネット技術標準化委員会の (IETF) の Request for Comments (RFC) 1123 仕様に基づく時刻値のカスタム書式指定文字列を取得します。</summary>
+        <value>IETF RFC 1123 仕様に準拠した時刻値のカスタム書式指定文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.DateTimeFormatInfo.RFC1123Pattern%2A>プロパティへの呼び出しによって返される日付文字列のカルチャに固有の書式を定義する、<xref:System.DateTime.ToString%2A?displayProperty=nameWithType>と<xref:System.DateTimeOffset.ToString%2A?displayProperty=nameWithType>メソッド文字列を使用する複合書式指定では、"r"、"R"標準書式指定文字列の操作を指定したとします。  
+  
+ RFC1123 パターンは定義済みの標準を反映し、プロパティは読み取り専用です。 そのため、これは常に、カルチャに関係なく、同じです。 カスタム書式指定文字列は、"ddd, dd MMM yyyy HH':'mm':'ss 'GMT'" です。  
+  
+   
+  
+## Examples  
+ 次の例では、いくつかのカルチャの RFC1123Pattern の値を表示します。  
+  
+ [!code-cpp[System.Globalization.DateTimeFormatInfo.RFC1123Pattern#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.DateTimeFormatInfo.RFC1123Pattern/CPP/dtfi_rfc1123pattern.cpp#1)]
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.RFC1123Pattern#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.DateTimeFormatInfo.RFC1123Pattern/CS/dtfi_rfc1123pattern.cs#1)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.RFC1123Pattern#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.DateTimeFormatInfo.RFC1123Pattern/VB/dtfi_rfc1123pattern.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAllDateTimePatterns">
+      <MemberSignature Language="C#" Value="public void SetAllDateTimePatterns (string[] patterns, char format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetAllDateTimePatterns(string[] patterns, char format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.DateTimeFormatInfo.SetAllDateTimePatterns(System.String[],System.Char)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="patterns" Type="System.String[]" />
+        <Parameter Name="format" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="patterns">カスタム書式指定文字列の配列。</param>
+        <param name="format">指定したカスタム書式指定文字列に関連付けられている標準書式指定文字列、<c>パターン</c>パラメーター。</param>
+        <summary>指定された標準書式指定文字列に対応する、カスタムの日付と時刻の書式指定文字列を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.DateTimeFormatInfo.SetAllDateTimePatterns%2A>メソッドは、特定の標準日時書式指定文字列に対応するカスタム書式指定文字列を定義します。 標準日時書式指定文字列で指定された日付と時刻の書式指定メソッドが含まれていますへの呼び出し`format`、メソッドの最初の要素を使用して、`patterns`結果の文字列の形式を定義する配列。  
+  
+> [!WARNING]
+>  `Parse`と`TryParse`メソッドはのすべての文字列が完全に繰り返されない`patterns`日付と時刻の文字列形式を解析するときにします。 解析操作で設定されている特定の書式を日付と時刻の文字列を必要とする場合に有効な形式の配列を渡す必要があります、 <xref:System.DateTime.ParseExact%28System.String%2CSystem.String%5B%5D%2CSystem.IFormatProvider%2CSystem.Globalization.DateTimeStyles%29?displayProperty=nameWithType>、 <xref:System.DateTimeOffset.ParseExact%28System.String%2CSystem.String%5B%5D%2CSystem.IFormatProvider%2CSystem.Globalization.DateTimeStyles%29?displayProperty=nameWithType>、 <xref:System.DateTime.TryParseExact%28System.String%2CSystem.String%5B%5D%2CSystem.IFormatProvider%2CSystem.Globalization.DateTimeStyles%2CSystem.DateTime%40%29?displayProperty=nameWithType>、または<xref:System.DateTimeOffset.TryParseExact%28System.String%2CSystem.String%5B%5D%2CSystem.IFormatProvider%2CSystem.Globalization.DateTimeStyles%2CSystem.DateTimeOffset%40%29?displayProperty=nameWithType>メソッドです。  
+  
+ "D"、"D"、"t"、"T"と"y"または"Y"標準の日付に対応するカスタム書式指定文字列と書式指定文字列を定義することができます。 場合の値`format`は、その他の標準書式指定文字列、<xref:System.Globalization.DateTimeFormatInfo.SetAllDateTimePatterns%2A>メソッドがスローされます、<xref:System.ArgumentException>です。  
+  
+ カスタム日付/時刻書式指定文字列には、日付の区切り記号が含まれている場合は、特定の日付の区切り記号「/」カスタム書式指定子に置き換える解析または書式設定メソッドではなく、日付の区切り記号を明示的に指定する必要があります。 たとえば、MM DD yyyy パターンを取得するには、「年-月-日」のパターンを使用します。  
+  
+   
+  
+## Examples  
+ 次の例のインスタンスを作成、<xref:System.Globalization.CultureInfo>オブジェクトを表す"EN-US"(英語 - 米国) はカルチャし、"Y"標準書式指定文字列を使用して日付と時刻の文字列の配列の解析を使用します。 次を使用して、<xref:System.Globalization.DateTimeFormatInfo.SetAllDateTimePatterns%2A>メソッドとを関連付ける新しいカスタム書式指定文字列"Y"標準書式指定文字列、および、日付と時刻の文字列の配列の解析を試みます。 出力の例では、新しいカスタム書式指定文字列が文字列の解析と書式設定操作の両方で使用されることを示します。  
+  
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.SetAllDateTimePatterns#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.setalldatetimepatterns/cs/setalldatetimepatterns.cs#1)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.SetAllDateTimePatterns#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.setalldatetimepatterns/vb/setalldatetimepatterns.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="patterns" /><see langword="null" />または長さ 0 の配列。  
+  
+ または  
+  
+ <paramref name="format" />有効な標準形式文字列ではないかは、標準書式指定文字列がパターンを設定することはできません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="patterns" />値が配列の要素を持つ<see langword="null" />します。</exception>
+        <exception cref="T:System.InvalidOperationException">これは、<see cref="T:System.Globalization.DateTimeFormatInfo" />オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ShortDatePattern">
+      <MemberSignature Language="C#" Value="public string ShortDatePattern { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ShortDatePattern" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.DateTimeFormatInfo.ShortDatePattern" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>短い日付値のカスタム書式指定文字列を取得または設定します。</summary>
+        <value>短い形式の日付値のカスタム書式指定文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.DateTimeFormatInfo.ShortDatePattern%2A>プロパティへの呼び出しによって返される日付文字列のカルチャに固有の書式を定義する、<xref:System.DateTime.ToString%2A?displayProperty=nameWithType>と<xref:System.DateTimeOffset.ToString%2A?displayProperty=nameWithType>メソッドと複合書式指定では、文字列が"d"標準書式指定文字列を提供します。  
+  
+ 場合、このプロパティは影響を受けるの値、<xref:System.Globalization.DateTimeFormatInfo.Calendar%2A>プロパティが変更されました。  
+  
+   
+  
+## Examples  
+ 次の例の値を表示する、<xref:System.Globalization.DateTimeFormatInfo.ShortDatePattern%2A>プロパティと日付の値の形式を使用して、<xref:System.Globalization.DateTimeFormatInfo.ShortDatePattern%2A>いくつかのカルチャ プロパティです。  
+  
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.ShortDatePattern#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.DateTimeFormatInfo.ShortDatePattern/CS/dtfi_shortdatepattern.cs#1)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.ShortDatePattern#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.DateTimeFormatInfo.ShortDatePattern/VB/dtfi_shortdatepattern.vb#1)]  
+  
+ 次の例を変更、<xref:System.Globalization.DateTimeFormatInfo.ShortDatePattern%2A>のプロパティ、<xref:System.Globalization.DateTimeFormatInfo>英語 (米国) カルチャの書式指定規則を表すオブジェクト。 表示されます、日付の値を 2 回、まず元を反映するように<xref:System.Globalization.DateTimeFormatInfo.ShortDatePattern%2A>プロパティとその新しいプロパティ値を反映するためにします。  
+  
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.ShortDatePattern#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.DateTimeFormatInfo.ShortDatePattern/CS/shortdatepattern1.cs#2)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.ShortDatePattern#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.DateTimeFormatInfo.ShortDatePattern/VB/shortdatepattern1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティに設定されている<see langword="null" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.DateTimeFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ShortestDayNames">
+      <MemberSignature Language="C#" Value="public string[] ShortestDayNames { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] ShortestDayNames" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.DateTimeFormatInfo.ShortestDayNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に現在関連付けられている最短の一意の省略形の曜日名の文字列配列<see cref="T:System.Globalization.DateTimeFormatInfo" />オブジェクト。</summary>
+        <value>曜日名の文字列配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、いくつかのメソッドおよび日付と時刻の書式パターン、ネイティブのカレンダーの名前と完全および省略形の月と曜日名を指定するプロパティを示します。  
+  
+ [!code-csharp[sys.glob.DTFI1#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.DTFI1/cs/dtfi1.cs#1)]
+ [!code-vb[sys.glob.DTFI1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.DTFI1/vb/dtfi1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">設定操作で、配列に正確に 7 つの要素はありません。</exception>
+        <exception cref="T:System.ArgumentNullException">値の配列または値の配列の要素の 1 つは、設定操作で<see langword="null" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">現在の設定操作で<see cref="T:System.Globalization.DateTimeFormatInfo" />オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ShortTimePattern">
+      <MemberSignature Language="C#" Value="public string ShortTimePattern { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ShortTimePattern" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.DateTimeFormatInfo.ShortTimePattern" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>短い時刻値のカスタム書式指定文字列を取得または設定します。</summary>
+        <value>短い形式の時刻値のカスタム書式指定文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.DateTimeFormatInfo.ShortTimePattern%2A>プロパティへの呼び出しによって返される日付文字列のカルチャに固有の書式を定義する、<xref:System.DateTime.ToString%2A?displayProperty=nameWithType>と<xref:System.DateTimeOffset.ToString%2A?displayProperty=nameWithType>メソッドと複合書式指定では、文字列が"t"標準書式指定文字列を提供します。  
+  
+ 時刻区切り文字のプレース ホルダーを使用する代わりに正確な文字列を短い形式の時刻パターンの時刻の区切り記号を設定することをお勧めします。 たとえばをパターン h mm ss を取得するには、"h mm ss"を短い形式の時刻パターンを設定します。  
+  
+   
+  
+## Examples  
+ 次の例の値を表示する<xref:System.Globalization.DateTimeFormatInfo.ShortTimePattern%2A>いくつかのカルチャ。  
+  
+ [!code-cpp[System.Globalization.DateTimeFormatInfo.ShortTimePattern#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.DateTimeFormatInfo.ShortTimePattern/CPP/dtfi_shorttimepattern.cpp#1)]
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.ShortTimePattern#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.DateTimeFormatInfo.ShortTimePattern/CS/dtfi_shorttimepattern.cs#1)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.ShortTimePattern#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.DateTimeFormatInfo.ShortTimePattern/VB/dtfi_shorttimepattern.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティに設定されている<see langword="null" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.DateTimeFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SortableDateTimePattern">
+      <MemberSignature Language="C#" Value="public string SortableDateTimePattern { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SortableDateTimePattern" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.DateTimeFormatInfo.SortableDateTimePattern" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>並べ替え可能な日付と時刻の値のカスタム書式指定文字列を取得します。</summary>
+        <value>並べ替え可能な日付と時刻の値のカスタム書式指定文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.DateTimeFormatInfo.SortableDateTimePattern%2A>プロパティへの呼び出しによって返される日付文字列のカルチャに固有の書式を定義する、<xref:System.DateTime.ToString%2A?displayProperty=nameWithType>と<xref:System.DateTimeOffset.ToString%2A?displayProperty=nameWithType>メソッドと複合書式指定では、文字列が"s"標準書式指定文字列を提供します。  
+  
+ によって返される形式の文字列、<xref:System.Globalization.DateTimeFormatInfo.SortableDateTimePattern%2A>プロパティが定義済みの標準 (ISO 8601) を反映し、プロパティは読み取り専用です。 そのため、これは常に、カルチャに関係なく、同じです。 カスタム書式指定文字列は、"yyyy'-'MM'-'dd'T'HH':'mm':'ss" です。  
+  
+   
+  
+## Examples  
+ 次の例の値を表示する<xref:System.Globalization.DateTimeFormatInfo.SortableDateTimePattern%2A>いくつかのカルチャ。  
+  
+ [!code-cpp[System.Globalization.DateTimeFormatInfo.SortableDateTimePattern#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.DateTimeFormatInfo.SortableDateTimePattern/CPP/dtfi_sortabledatetimepattern.cpp#1)]
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.SortableDateTimePattern#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.DateTimeFormatInfo.SortableDateTimePattern/CS/dtfi_sortabledatetimepattern.cs#1)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.SortableDateTimePattern#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.DateTimeFormatInfo.SortableDateTimePattern/VB/dtfi_sortabledatetimepattern.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TimeSeparator">
+      <MemberSignature Language="C#" Value="public string TimeSeparator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TimeSeparator" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.DateTimeFormatInfo.TimeSeparator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>時刻の構成要素、つまり時間、分、および秒を区切る文字列を取得または設定します。</summary>
+        <value>時刻の構成要素を区切る文字列。 既定の<see cref="P:System.Globalization.DateTimeFormatInfo.InvariantInfo" />は":"です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタム パターンには、書式パターンが含まれている場合":"、<xref:System.DateTime.ToString%2A?displayProperty=nameWithType>の値を表示<xref:System.Globalization.DateTimeFormatInfo.TimeSeparator%2A>の代わりに、":"の形式パターン。  
+  
+ 派生した時刻の区切り記号は、<xref:System.Globalization.DateTimeFormatInfo.ShortTimePattern%2A>プロパティです。 時刻の区切り記号を簡単に設定するか、長い時刻、時刻区切り文字のプレース ホルダーを使用する代わりに正確な文字列をパターンことをお勧めします。 たとえば、パターン h mm ss を取得するには、"h mm ss"するパターンを設定します。 この実習ではパターンを設定することもできます"h'h ' mm 'ss' am"(3 h 36 m 12 s) の区切り記号の複数の種類が含まれています。 <xref:System.Globalization.DateTimeFormatInfo.TimeSeparator%2A>プロパティ定義が時刻区切り文字を置換する文字列 (":"カスタム日付/時刻書式指定子)、書式設定操作の結果の文字列にします。 解析操作では、時刻区切り文字の文字列も定義します。  
+  
+   
+  
+## Examples  
+ 次の例のインスタンスを作成、<xref:System.Globalization.CultureInfo>オブジェクト EN-US カルチャの変更をその日付の区切り記号"です。"、"t"、"T"、"F"、"f"、"G"、"g"標準書式指定文字列を使用して日付を表示しします。  
+  
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.TimeSeparator#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.timeseparator/cs/timeseparatorex.cs#1)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.TimeSeparator#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.datetimeformatinfo.timeseparator/vb/timeseparatorex.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティに設定されている<see langword="null" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.DateTimeFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UniversalSortableDateTimePattern">
+      <MemberSignature Language="C#" Value="public string UniversalSortableDateTimePattern { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UniversalSortableDateTimePattern" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.DateTimeFormatInfo.UniversalSortableDateTimePattern" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユニバーサルで並べ替え可能な日付と時刻の文字列のカスタム書式指定文字列を取得します。</summary>
+        <value>ユニバーサルで並べ替え可能な日付と時刻の文字列のカスタム書式指定文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.DateTimeFormatInfo.UniversalSortableDateTimePattern%2A>プロパティへの呼び出しによって返される日付文字列の形式を定義する、<xref:System.DateTime.ToString%2A?displayProperty=nameWithType>と<xref:System.DateTimeOffset.ToString%2A?displayProperty=nameWithType>メソッドと複合書式指定では、文字列が"u"標準書式指定文字列を提供します。 最後に世界協定時刻指定子"Z"並べ替えの順序で日付と時刻を表示するために使用します。 年、月、日、時、分、および秒に先行ゼロを使用しているために、形式が基準として並べ替えられます。 カスタム書式指定文字列 ("yyyy '-'MM'-' dd HH': 'mm': 'ss' z'") のカルチャまたは書式プロバイダーに関係なく同じです。  
+  
+ によって返される形式の文字列、<xref:System.Globalization.DateTimeFormatInfo.UniversalSortableDateTimePattern%2A>プロパティが定義済みの標準を反映し、プロパティは読み取り専用です。 そのため、これは常に、カルチャに関係なく、同じです。 カスタム書式指定文字列は、"yyyy'-'MM'-'dd HH':'mm':'ss'Z'" です。  
+  
+   
+  
+## Examples  
+ 次の例の値を表示する<xref:System.Globalization.DateTimeFormatInfo.UniversalSortableDateTimePattern%2A>いくつかのカルチャ。  
+  
+ [!code-cpp[System.Globalization.DateTimeFormatInfo.UniversalSortableDateTimePattern#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.DateTimeFormatInfo.UniversalSortableDateTimePattern/CPP/dtfi_universalsortabledatetimepattern.cpp#1)]
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.UniversalSortableDateTimePattern#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.DateTimeFormatInfo.UniversalSortableDateTimePattern/CS/dtfi_universalsortabledatetimepattern.cs#1)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.UniversalSortableDateTimePattern#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.DateTimeFormatInfo.UniversalSortableDateTimePattern/VB/dtfi_universalsortabledatetimepattern.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="YearMonthPattern">
+      <MemberSignature Language="C#" Value="public string YearMonthPattern { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string YearMonthPattern" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.DateTimeFormatInfo.YearMonthPattern" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>年と月の値のカスタム書式指定文字列を取得または設定します。</summary>
+        <value>年と月の値のカスタム書式指定文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.DateTimeFormatInfo.YearMonthPattern%2A>プロパティへの呼び出しによって返される日付文字列のカルチャに固有の書式を定義する、<xref:System.DateTime.ToString%2A?displayProperty=nameWithType>と<xref:System.DateTimeOffset.ToString%2A?displayProperty=nameWithType>メソッド文字列を使用する複合書式指定では、"y"と"Y"標準書式指定文字列の操作を指定したとします。  
+  
+ 場合、このプロパティは影響を受けるの値、<xref:System.Globalization.DateTimeFormatInfo.Calendar%2A>プロパティが変更されました。  
+  
+ 日付区切り文字のプレース ホルダーを使用する代わりに正確な文字列を 1 年の月のパターンには、日付の区切り記号を設定することをお勧めします。 たとえば、yyyy MM パターンを取得するには、"yyyy MM"する年の月のパターンを設定します。  
+  
+   
+  
+## Examples  
+ 次の例の値を表示する<xref:System.Globalization.DateTimeFormatInfo.YearMonthPattern%2A>いくつかのカルチャ。  
+  
+ [!code-cpp[System.Globalization.DateTimeFormatInfo.YearMonthPattern#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.DateTimeFormatInfo.YearMonthPattern/CPP/dtfi_yearmonthpattern.cpp#1)]
+ [!code-csharp[System.Globalization.DateTimeFormatInfo.YearMonthPattern#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.DateTimeFormatInfo.YearMonthPattern/CS/dtfi_yearmonthpattern.cs#1)]
+ [!code-vb[System.Globalization.DateTimeFormatInfo.YearMonthPattern#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.DateTimeFormatInfo.YearMonthPattern/VB/dtfi_yearmonthpattern.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティに設定されている<see langword="null" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.DateTimeFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

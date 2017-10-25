@@ -1,0 +1,628 @@
+<Type Name="DataPagerField" FullName="System.Web.UI.WebControls.DataPagerField">
+  <TypeSignature Language="C#" Value="public abstract class DataPagerField : System.Web.UI.IStateManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DataPagerField extends System.Object implements class System.Web.UI.IStateManager" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.DataPagerField" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.IStateManager</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary><see cref="T:System.Web.UI.WebControls.DataPager" /> コントロールのナビゲーション コントロールを表すデータ ページャー フィールド型の基底クラスとして機能します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataPagerField>クラスはすべてのデータ ページャー フィールド型の基底クラスとして機能します。 によって使用されるデータ ページャー フィールド、<xref:System.Web.UI.WebControls.DataPager>ナビゲーション コントロールを表すためのコントロールです。  
+  
+ 派生したクラスを使用して<xref:System.Web.UI.WebControls.DataPagerField>で表示するページャーの種類の選択、<xref:System.Web.UI.WebControls.DataPager>コントロール。 次の表は、使用可能なデータ ページャー フィールドの種類を一覧表示します。  
+  
+|ページャー フィールドの種類|説明|  
+|----------------------|-----------------|  
+|<xref:System.Web.UI.WebControls.NextPreviousPagerField>|ユーザーは、時、または最初と最後のページに移動するデータ ページを 1 ページ内を移動できます。|  
+|<xref:System.Web.UI.WebControls.NumericPagerField>|ユーザーがページでページ番号を選択できます。|  
+|<xref:System.Web.UI.WebControls.TemplatePagerField>|ページの開発者がカスタム ページング UI を作成することができます。|  
+  
+ 派生させることができます、<xref:System.Web.UI.WebControls.DataPagerField>追加ページャーのフィールドの種類を作成するクラス。  
+  
+   
+  
+## Examples  
+ 次の例は、使用する方法を示しています。 <xref:System.Web.UI.WebControls.NextPreviousPagerField>、 <xref:System.Web.UI.WebControls.NumericPagerField>、および<xref:System.Web.UI.WebControls.TemplatePagerField>内のページ ナビゲーション コントロールを表示するオブジェクト、<xref:System.Web.UI.WebControls.DataPager>コントロール。 派生したオブジェクトは、<xref:System.Web.UI.WebControls.DataPagerField>クラスです。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.DataPagerField#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.DataPagerField/CS/DataPagerFieldCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.DataPagerField#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.DataPagerField/VB/DataPagerFieldVB.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>継承する場合、<see cref="T:System.Web.UI.WebControls.DataPagerField" />クラスでは、次のメンバーをオーバーライドする必要があります。  
+  
+-   <see cref="M:System.Web.UI.WebControls.DataPagerField.CreateDataPagers(System.Web.UI.WebControls.DataPagerFieldItem,System.Int32,System.Int32,System.Int32,System.Int32)" />  
+  
+-   <see cref="M:System.Web.UI.WebControls.DataPagerField.CreateField" />  
+  
+-   <see cref="M:System.Web.UI.WebControls.DataPagerField.HandleEvent(System.Web.UI.WebControls.CommandEventArgs)" />。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DataPagerField ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPagerField.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.DataPagerField" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataPagerField>クラスは抽象クラスを作成することはできません、<xref:System.Web.UI.WebControls.DataPagerField>オブジェクトに直接できます。 このコンス トラクターは、通常の派生クラスで定義されているプロパティを初期化するコンス トラクターによって呼び出されます。、<xref:System.Web.UI.WebControls.DataPagerField>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneField">
+      <MemberSignature Language="C#" Value="protected System.Web.UI.WebControls.DataPagerField CloneField ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance class System.Web.UI.WebControls.DataPagerField CloneField() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPagerField.CloneField" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataPagerField</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生した現在のオブジェクトのコピーを作成<see cref="T:System.Web.UI.WebControls.DataPagerField" />です。</summary>
+        <returns>現在の <see cref="T:System.Web.UI.WebControls.DataControlField" /> オブジェクトのコピー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataPagerField.CloneField%2A>メソッドで使用されるヘルパー メソッド、<xref:System.Web.UI.WebControls.DataPagerFieldCollection.CloneFields%2A>から派生した現在のオブジェクトのコピーを作成するメソッド<xref:System.Web.UI.WebControls.DataPagerField>です。 現在のオブジェクトのコピーを作成する、<xref:System.Web.UI.WebControls.DataPagerField.CloneField%2A>メソッドは、最初の新しいインスタンスを作成、<xref:System.Web.UI.WebControls.DataPagerField>オブジェクトを使用して、<xref:System.Web.UI.WebControls.DataPagerField.CreateField%2A>メソッドです。 これは呼び出して、<xref:System.Web.UI.WebControls.DataPagerField.CopyProperties%2A>に現在のオブジェクトのプロパティの値をコピーする方法です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyProperties">
+      <MemberSignature Language="C#" Value="protected virtual void CopyProperties (System.Web.UI.WebControls.DataPagerField newField);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void CopyProperties(class System.Web.UI.WebControls.DataPagerField newField) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPagerField.CopyProperties(System.Web.UI.WebControls.DataPagerField)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newField" Type="System.Web.UI.WebControls.DataPagerField" />
+      </Parameters>
+      <Docs>
+        <param name="newField">現在のプロパティをコピーするオブジェクト<see cref="T:System.Web.UI.WebControls.DataControlField" />です。 オブジェクト。</param>
+        <summary>派生した現在のオブジェクトのプロパティをコピー<see cref="T:System.Web.UI.WebControls.DataPagerField" />を指定した<see cref="T:System.Web.UI.WebControls.DataPagerField" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataPagerField.CopyProperties%2A>メソッドで使用されるヘルパー メソッド、<xref:System.Web.UI.WebControls.DataPagerField.CloneField%2A>から現在のオブジェクトのプロパティをコピーするメソッドが派生<xref:System.Web.UI.WebControls.DataPagerField>を<xref:System.Web.UI.WebControls.DataPagerField>メソッドによって作成されたオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDataPagers">
+      <MemberSignature Language="C#" Value="public abstract void CreateDataPagers (System.Web.UI.WebControls.DataPagerFieldItem container, int startRowIndex, int maximumRows, int totalRowCount, int fieldIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CreateDataPagers(class System.Web.UI.WebControls.DataPagerFieldItem container, int32 startRowIndex, int32 maximumRows, int32 totalRowCount, int32 fieldIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPagerField.CreateDataPagers(System.Web.UI.WebControls.DataPagerFieldItem,System.Int32,System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="container" Type="System.Web.UI.WebControls.DataPagerFieldItem" />
+        <Parameter Name="startRowIndex" Type="System.Int32" />
+        <Parameter Name="maximumRows" Type="System.Int32" />
+        <Parameter Name="totalRowCount" Type="System.Int32" />
+        <Parameter Name="fieldIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="container">コントロールを格納するために使用されるコンテナー。</param>
+        <param name="startRowIndex">ページの最初のレコードのインデックス。</param>
+        <param name="maximumRows">1 つのページ上の項目の最大数。</param>
+        <param name="totalRowCount">項目の合計数。</param>
+        <param name="fieldIndex">データ ページャー フィールド内のインデックス、<see cref="P:System.Web.UI.WebControls.DataPager.Fields" />コレクション。</param>
+        <summary>派生クラスでオーバーライドされると、ユーザー データ ページャー フィールド オブジェクトのインターフェイス (UI) コントロールを作成し、指定したコンテナーに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataPagerField.CreateDataPagers%2A>メソッドで使用されるヘルパー メソッド、<xref:System.Web.UI.WebControls.DataPager.CreatePagerFields%2A?displayProperty=nameWithType>データ ページャー フィールドの UI を作成する方法を制御します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateField">
+      <MemberSignature Language="C#" Value="protected abstract System.Web.UI.WebControls.DataPagerField CreateField ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Web.UI.WebControls.DataPagerField CreateField() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPagerField.CreateField" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataPagerField</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、派生した空のオブジェクトを作成<see cref="T:System.Web.UI.WebControls.DataPagerField" />です。</summary>
+        <returns>空のオブジェクトから派生した<see cref="T:System.Web.UI.WebControls.DataPagerField" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataPagerField.CreateField%2A>メソッドで使用されるヘルパー メソッド、<xref:System.Web.UI.WebControls.DataPagerField.CloneField%2A>から派生した空のオブジェクトを作成するメソッド<xref:System.Web.UI.WebControls.DataPagerField>です。 現在<xref:System.Web.UI.WebControls.DataPagerField>オブジェクトが空のオブジェクトにコピーします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataPager">
+      <MemberSignature Language="C#" Value="protected System.Web.UI.WebControls.DataPager DataPager { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.DataPager DataPager" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataPagerField.DataPager" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataPager</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ページャーへの参照を取得、<see cref="T:System.Web.UI.WebControls.DataPagerField" />オブジェクトに関連付けられています。</summary>
+        <value>データ ページャー フィールドを格納するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataPagerField.DataPager%2A>ときに内部的に参照で設定されて、<xref:System.Web.UI.WebControls.DataPagerFieldCollection.OnInsertComplete%2A>メソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetQueryStringNavigateUrl">
+      <MemberSignature Language="C#" Value="protected string GetQueryStringNavigateUrl (int pageNumber);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance string GetQueryStringNavigateUrl(int32 pageNumber) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPagerField.GetQueryStringNavigateUrl(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pageNumber" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="pageNumber">ターゲット ページ番号です。</param>
+        <summary>指定したページ番号を持つクエリ文字列フィールドを含む URL を作成します。</summary>
+        <returns>ターゲット URL です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataPagerField.GetQueryStringNavigateUrl%2A>メソッドを使って、<xref:System.Web.UI.WebControls.NumericPagerField>と<xref:System.Web.UI.WebControls.NextPreviousPagerField>ページャー フィールドの各ボタンのターゲット URL を作成するページャー フィールドです。 ターゲット URL には、名前/値ペアを格納するクエリ文字列フィールドが含まれています。 名前がの値、<xref:System.Web.UI.WebControls.DataPager.QueryStringField%2A?displayProperty=nameWithType>プロパティ、および値の値を表す`pageNumber`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HandleEvent">
+      <MemberSignature Language="C#" Value="public abstract void HandleEvent (System.Web.UI.WebControls.CommandEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void HandleEvent(class System.Web.UI.WebControls.CommandEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPagerField.HandleEvent(System.Web.UI.WebControls.CommandEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Web.UI.WebControls.CommandEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary>派生クラスでオーバーライドされると、データ ページャー フィールド オブジェクトで発生するイベントを処理します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataPagerField.HandleEvent%2A>メソッドで使用されるヘルパー メソッド、<xref:System.Web.UI.WebControls.DataPager.OnBubbleEvent%2A?displayProperty=nameWithType>ページャー フィールド オブジェクトで発生するイベントを処理するメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTrackingViewState">
+      <MemberSignature Language="C#" Value="protected bool IsTrackingViewState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsTrackingViewState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataPagerField.IsTrackingViewState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.WebControls.DataPagerField" />オブジェクトがビュー ステートの変更を追跡します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Web.UI.WebControls.DataPagerField" />ビュー ステートの変更を追跡しているオブジェクト。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadViewState">
+      <MemberSignature Language="C#" Value="protected virtual void LoadViewState (object savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void LoadViewState(object savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPagerField.LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="savedState">コントロールの保存されたビュー ステートの値。</param>
+        <summary>以前に保存されたビュー ステート情報を復元します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataPagerField.LoadViewState%2A>メソッドのビュー ステート情報の復元、<xref:System.Web.UI.WebControls.DataPagerField>によって保存されたオブジェクト、<xref:System.Web.UI.WebControls.DataPagerField.SaveViewState%2A>前のページ要求中にメソッドです。  
+  
+ このメソッドは、主に使用、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]インフラストラクチャ コードから直接使用するものではありません。 ただし、コントロールの開発者は、カスタム サーバー コントロールがそのビューステートを復元する方法を指定するには、このメソッドをオーバーライドすることができます。 詳細については、次を参照してください。 [ASP.NET 状態管理の概要](http://msdn.microsoft.com/library/0218d965-5d30-445b-b6a6-8870e70e63ce)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnFieldChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnFieldChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnFieldChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPagerField.OnFieldChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see langword="FieldChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataPagerField.OnFieldChanged%2A>メソッドの状態のことを示すイベントを発生させる、<xref:System.Web.UI.WebControls.DataPagerField>オブジェクトが変更されました。 変更、<xref:System.Web.UI.WebControls.DataControlField.Visible%2A>プロパティを発生させるには、このイベントが発生します。 派生型のプロパティへの変更は、状態が変化したときにこのイベントにも発生します。  
+  
+ <xref:System.Web.UI.WebControls.DataPagerField.OnFieldChanged%2A>メソッドにより、派生クラスでデリゲートを結び付けずに、イベントを処理します。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Web.UI.WebControls.DataPagerField.OnFieldChanged" />呼び出し、基本クラスの派生クラスで<see cref="M:System.Web.UI.WebControls.DataPagerField.OnFieldChanged" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="QueryStringHandled">
+      <MemberSignature Language="C#" Value="protected bool QueryStringHandled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool QueryStringHandled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataPagerField.QueryStringHandled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはクエリ文字列フィールドが評価されているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />クエリ文字列フィールドが評価された場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.NumericPagerField>と<xref:System.Web.UI.WebControls.NextPreviousPagerField>ページャー フィールドを使用して、<xref:System.Web.UI.WebControls.DataPagerField.QueryStringHandled%2A>クエリ文字列フィールドが評価されているかどうかを決定するプロパティです。 場合<xref:System.Web.UI.WebControls.DataPagerField.QueryStringHandled%2A>は`false`、ページャー フィールド クラスは、クエリ文字列フィールドに含まれているページ数を処理します。 ページのプロパティも更新され、<xref:System.Web.UI.WebControls.DataPager>コントロール。 ページャー フィールド クラスは、このプロパティが使用される場合にのみ、<xref:System.Web.UI.WebControls.DataPagerField.QueryStringValue%2A>プロパティが空の文字列または`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QueryStringValue">
+      <MemberSignature Language="C#" Value="protected string QueryStringValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string QueryStringValue" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataPagerField.QueryStringValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求の URL からのクエリ文字列フィールドの値を取得します。</summary>
+        <value>クエリ文字列フィールドの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.DataPager.QueryStringField%2A?displayProperty=nameWithType>プロパティが空の文字列または`null`、<xref:System.Web.UI.WebControls.DataPager>コントロールでは、HTTP GET コマンドを使用して、ページ間の移動をします。 名前/値ペアで構成されるクエリ文字列フィールドが、ページの URL に追加されます。 <xref:System.Web.UI.WebControls.DataPagerField.QueryStringValue%2A>プロパティが要求の URL からのクエリ文字列フィールドの値を取得します。 <xref:System.Web.UI.WebControls.DataPagerField.QueryStringValue%2A>プロパティには、要求されたページ数が含まれています。  
+  
+ このプロパティは使用、<xref:System.Web.UI.WebControls.NumericPagerField>と<xref:System.Web.UI.WebControls.NextPreviousPagerField>ページャー フィールドを要求されたデータのページの最初のレコードのインデックスを評価します。 ページのプロパティ、<xref:System.Web.UI.WebControls.DataPager>コントロールを更新しています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveViewState">
+      <MemberSignature Language="C#" Value="protected virtual object SaveViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object SaveViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPagerField.SaveViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>加えられた変更を保存、<see cref="T:System.Web.UI.WebControls.DataPagerField" />オブジェクトのビュー ステート。</summary>
+        <returns>コントロールのビュー ステートの変更。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトに関連付けられているビュー ステートがない場合、<xref:System.Web.UI.WebControls.DataPagerField.SaveViewState%2A>メソッドを返します。`null`です。  
+  
+ <xref:System.Web.UI.WebControls.DataPagerField.SaveViewState%2A>メソッドは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.IsTrackingViewState">
+      <MemberSignature Language="C#" Value="bool System.Web.UI.IStateManager.IsTrackingViewState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Web.UI.IStateManager.IsTrackingViewState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataPagerField.System#Web#UI#IStateManager#IsTrackingViewState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.WebControls.DataPagerField" />オブジェクトがビュー ステートの変更を追跡します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Web.UI.WebControls.DataPagerField" />ビュー ステートの変更を追跡しているオブジェクト。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataPagerField.System%23Web%23UI%23IStateManager%23IsTrackingViewState%2A>インターフェイス プロパティの値を使用して、<xref:System.Web.UI.WebControls.DataPagerField.IsTrackingViewState%2A>プロパティです。 これは、は、実際の実装を含んでおり、コントロールの開発者によって拡張できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.LoadViewState">
+      <MemberSignature Language="C#" Value="void IStateManager.LoadViewState (object state);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IStateManager.LoadViewState(object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPagerField.System#Web#UI#IStateManager#LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="state">コントロールの保存されたビュー ステートの値。</param>
+        <summary>以前に保存されたビュー ステート情報を復元します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataPagerField.System%23Web%23UI%23IStateManager%23LoadViewState%2A>インターフェイス メソッドを呼び出して、<xref:System.Web.UI.WebControls.DataPagerField.LoadViewState%2A>メソッドです。 これは、は、実際の実装を含んでおり、コントロールの開発者によって拡張できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.SaveViewState">
+      <MemberSignature Language="C#" Value="object IStateManager.SaveViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.Web.UI.IStateManager.SaveViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPagerField.System#Web#UI#IStateManager#SaveViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>加えられた変更を保存、<see cref="T:System.Web.UI.WebControls.DataPagerField" />オブジェクトのビュー ステート。</summary>
+        <returns>コントロールのビュー ステートの変更。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataPagerField.System%23Web%23UI%23IStateManager%23SaveViewState%2A>インターフェイス メソッドを呼び出して、<xref:System.Web.UI.WebControls.DataPagerField.SaveViewState%2A>メソッドです。 これは、は、実際の実装を含んでおり、コントロールの開発者によって拡張できます。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.UI.WebControls.DataPagerField.SaveViewState%2A>  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.TrackViewState">
+      <MemberSignature Language="C#" Value="void IStateManager.TrackViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IStateManager.TrackViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPagerField.System#Web#UI#IStateManager#TrackViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>により、 <see cref="T:System.Web.UI.WebControls.DataPagerField" /> 、コントロールの保存できるように、ビュー ステートへの変更を追跡するオブジェクト<see cref="P:System.Web.UI.WebControls.DataPagerField.ViewState" />プロパティと同じページの間で永続化された要求。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataPagerField.System%23Web%23UI%23IStateManager%23TrackViewState%2A>インターフェイス メソッドを呼び出して、<xref:System.Web.UI.WebControls.DataPagerField.TrackViewState%2A>メソッドです。 これは、は、実際の実装を含んでおり、コントロールの開発者によって拡張できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrackViewState">
+      <MemberSignature Language="C#" Value="protected virtual void TrackViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void TrackViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPagerField.TrackViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>により、 <see cref="T:System.Web.UI.WebControls.DataPagerField" /> 、コントロールの保存できるように、ビュー ステートへの変更を追跡するオブジェクト<see cref="P:System.Web.UI.WebControls.DataPagerField.ViewState" />プロパティと同じページの間で永続化された要求。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataPagerField.TrackViewState%2A>メソッドは内部的には設定、<xref:System.Web.UI.WebControls.DataPagerField.IsTrackingViewState%2A>プロパティを`true`を呼び出すと、<xref:System.Web.UI.IStateManager.TrackViewState%2A>のメソッド、<xref:System.Web.UI.WebControls.DataPagerField.ViewState%2A>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewState">
+      <MemberSignature Language="C#" Value="protected System.Web.UI.StateBag ViewState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.StateBag ViewState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataPagerField.ViewState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.StateBag</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>状態情報を保存およびのビューステートを復元することができますのディクショナリを取得、<see cref="T:System.Web.UI.WebControls.DataPagerField" />同じページに対する複数の要求オブジェクト。</summary>
+        <value>格納するオブジェクト、<see cref="T:System.Web.UI.WebControls.DataPagerField" />ビュー ステート情報。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ ページャー フィールドの表示状態では、すべてのプロパティ値の累積です。 値を保持し、同じページに対する HTTP 要求にわたって、ASP.NET サーバー コントロールはこのプロパティを使用して、プロパティ値を格納します。 値は、ページの HTML 非表示入力要素に格納されます。 詳細については、次を参照してください。 [ASP.NET ビュー状態の概要](http://msdn.microsoft.com/library/19d2a6ed-9a77-4c7c-a7f5-74dd4b6c3818)です。  
+  
+ 既定では、すべてのサーバー コントロールのビュー ステートが有効になっているが、状況に応じて無効にすることができます。 詳細については、次を参照してください。 [ASP.NET パフォーマンス概要](http://msdn.microsoft.com/library/f882bf1b-a009-4312-ac06-74370ffabc0b)です。  
+  
+ ディクショナリ、およびその使用方法の詳細については、次を参照してください。[コレクションとデータ構造体](http://msdn.microsoft.com/library/60cc581f-1db5-445b-ba04-a173396bf872)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Visible">
+      <MemberSignature Language="C#" Value="public bool Visible { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Visible" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataPagerField.Visible" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ ページャー フィールドを表示するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Web.UI.WebControls.DataPagerField" />がレンダリングされた、それ以外の<see langword="false" />します。 既定値は <see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

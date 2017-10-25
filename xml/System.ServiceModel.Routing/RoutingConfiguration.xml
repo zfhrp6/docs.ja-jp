@@ -1,0 +1,145 @@
+<Type Name="RoutingConfiguration" FullName="System.ServiceModel.Routing.RoutingConfiguration">
+  <TypeSignature Language="C#" Value="public sealed class RoutingConfiguration" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit RoutingConfiguration extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Routing.RoutingConfiguration" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.ServiceModel.Routing.RoutingExtension" /> で使用される構成情報を定義します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RoutingConfiguration ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Routing.RoutingConfiguration.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Routing.RoutingConfiguration" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RoutingConfiguration (System.ServiceModel.Dispatcher.MessageFilterTable&lt;System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.ServiceEndpoint&gt;&gt; filterTable, bool routeOnHeadersOnly);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Dispatcher.MessageFilterTable`1&lt;class System.Collections.Generic.IEnumerable`1&lt;class System.ServiceModel.Description.ServiceEndpoint&gt;&gt; filterTable, bool routeOnHeadersOnly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Routing.RoutingConfiguration.#ctor(System.ServiceModel.Dispatcher.MessageFilterTable{System.Collections.Generic.IEnumerable{System.ServiceModel.Description.ServiceEndpoint}},System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="filterTable" Type="System.ServiceModel.Dispatcher.MessageFilterTable&lt;System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.ServiceEndpoint&gt;&gt;" />
+        <Parameter Name="routeOnHeadersOnly" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="filterTable">この構成で使用するメッセージ フィルター テーブル。</param>
+        <param name="routeOnHeadersOnly">
+          <see langword="true" />場合、<see cref="T:System.ServiceModel.Dispatcher.MessageFilterTable`1" />メッセージ ヘッダーをのみを調べることができます。 それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</param>
+        <summary>指定された <see cref="T:System.ServiceModel.Routing.RoutingConfiguration" /> と routeOnHeadersOnly パラメーターを使用して、<see cref="T:System.ServiceModel.Dispatcher.MessageFilterTable`1" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnsureOrderedDispatch">
+      <MemberSignature Language="C#" Value="public bool EnsureOrderedDispatch { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnsureOrderedDispatch" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Routing.RoutingConfiguration.EnsureOrderedDispatch" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージが送信された順序でディスパッチするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />メッセージが送信された順序でディスパッチする場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterTable">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Dispatcher.MessageFilterTable&lt;System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.ServiceEndpoint&gt;&gt; FilterTable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Dispatcher.MessageFilterTable`1&lt;class System.Collections.Generic.IEnumerable`1&lt;class System.ServiceModel.Description.ServiceEndpoint&gt;&gt; FilterTable" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Routing.RoutingConfiguration.FilterTable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Dispatcher.MessageFilterTable&lt;System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.ServiceEndpoint&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この構成により使用される <see cref="T:System.ServiceModel.Dispatcher.MessageFilterTable`1" /> を取得または設定します。</summary>
+        <value>メッセージ フィルター テーブル。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RouteOnHeadersOnly">
+      <MemberSignature Language="C#" Value="public bool RouteOnHeadersOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RouteOnHeadersOnly" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Routing.RoutingConfiguration.RouteOnHeadersOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィルターがメッセージ本文を検証できるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />場合は、フィルターがメッセージ ヘッダーを調べることができますのみそれ以外の場合、<see langword="false" />です。 既定値は**true**です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SoapProcessingEnabled">
+      <MemberSignature Language="C#" Value="public bool SoapProcessingEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SoapProcessingEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Routing.RoutingConfiguration.SoapProcessingEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP <see cref="T:System.ServiceModel.Channels.MessageVersion" /> 間のメッセージを処理するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />場合はメッセージを処理する必要があります。それ以外の場合、<see langword="false" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SOAP 処理は、SOAP <xref:System.ServiceModel.Channels.MessageVersion> 間でメッセージが変換されるプロセスです。  
+  
+ この値を設定`false`ことを示します、<xref:System.ServiceModel.Routing.RoutingBehavior>をインストールしないでください、<xref:System.ServiceModel.Routing.SoapProcessingBehavior>クライアント エンドポイントにします。 場合設定`false`、送信される前に、メッセージの一部の機能を処理するには、独自のメッセージ インスペクターまたは他のコードを追加する必要があります。 各エンドポイントで SOAP 処理を無効にすることもできます。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)]、<xref:System.ServiceModel.Routing.SoapProcessingBehavior> クラスを参照してください。  
+  
+ 既定では、<xref:System.ServiceModel.Routing.RoutingBehavior>を作成し、新しい接続<xref:System.ServiceModel.Routing.SoapProcessingBehavior>で<xref:System.ServiceModel.Routing.SoapProcessingBehavior.ProcessMessages%2A>'éý'`true`クライアント エンドポイントごとにします。 使用したくない場合、<xref:System.ServiceModel.Routing.SoapProcessingBehavior>特定のエンドポイントでは、新規作成<xref:System.ServiceModel.Routing.SoapProcessingBehavior>この値を設定して`false`をしないようにする処理を実行するエンドポイントに接続します。 <xref:System.ServiceModel.Routing.RoutingBehavior> は、クライアントに既に <xref:System.ServiceModel.Routing.SoapProcessingBehavior> があることを確認した場合は、別の処理動作をアタッチしようとはしません。  
+  
+ アプリケーションを無効にする<xref:System.ServiceModel.Routing.SoapProcessingBehavior>任意のエンドポイントで SOAP 処理を無効にして、<xref:System.ServiceModel.Routing.RoutingBehavior>と<xref:System.ServiceModel.Routing.RoutingConfiguration>です。  
+  
+ 場合<xref:System.ServiceModel.Routing.RoutingConfiguration.SoapProcessingEnabled%2A>は`true`、<xref:System.ServiceModel.Routing.SoapProcessingBehavior>がクライアント エンドポイントに追加<xref:System.ServiceModel.Description.ServiceEndpoint.Behaviors%2A>コレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

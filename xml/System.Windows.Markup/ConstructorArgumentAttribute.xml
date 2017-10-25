@@ -1,0 +1,81 @@
+<Type Name="ConstructorArgumentAttribute" FullName="System.Windows.Markup.ConstructorArgumentAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ConstructorArgumentAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ConstructorArgumentAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.ConstructorArgumentAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property, AllowMultiple=false, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>既定以外のコンストラクター構文を使用してオブジェクトを初期化することが可能で、かつ、指定した名前のプロパティが構造情報を提供することを指定します。  この情報は主に XAML シリアル化用です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性は、関連付けられたプロパティがコンス トラクターのパラメーターを初期化でき、インスタンスを作成するコンス トラクターを使用する場合、XAML シリアル化を無視するかを指定します。 これは、既定のコンス トラクターのインスタンス化と、特定の属性ではなく、パラメーター化されたコンス トラクター構文をより適切にラウンド トリップ表現を提供します。  
+  
+ 維持マークアップ拡張機能の使用および保持して再構築ではなくに依存するフレームワークをサポートできます可能性のある`ProvideValue`シリアル化のためのオブジェクト ツリーで出力します。 ここで、<xref:System.Windows.Markup.ConstructorArgumentAttribute>情報は、一般的なマークアップ拡張機能の使用の正確な表現を生成するためのシリアル化中に役立ちます。 マークアップ拡張機能の詳細については、次を参照してください。 [XAML の概要のマークアップ拡張機能](~/docs/framework/xaml-services/markup-extensions-for-xaml-overview.md)します。  
+  
+ 有効にするために、<xref:System.Windows.Markup.ConstructorArgumentAttribute>属性、型はパブリックの既定以外のコンス トラクターは、1 つのパラメーターをサポートする必要があります。 パラメーターの名前は、読み取り/書き込みプロパティに対応する必要があります。 プロパティをシリアル化可能なそれ以外の場合でなければなりません。 コンス トラクターのパラメーターの名前およびプロパティ間の対応付けを作成するのにには、この属性を使用します。 具体的には、この属性は、接続の読み取り/書き込みプロパティのプロパティ レベルの定義に適用されます。  
+  
+ コンシューマー<xref:System.Windows.Markup.ConstructorArgumentAttribute>場合にスローする可能性が場所<xref:System.Windows.Markup.ConstructorArgumentAttribute.ArgumentName%2A>バッキングの場合の型に解決されないアリティと適切な構築引数を持たない型に適用される場合またはします。  
+  
+ .NET Framework の以前のバージョンでは、このクラスは WindowsBase WPF 固有のアセンブリに存在しています。 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、<xref:System.Windows.Markup.ConstructorArgumentAttribute>は System.Xaml アセンブリにします。 詳細については、次を参照してください。 [WPF から System.Xaml に移行した型](~/docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)です。  
+  
+## <a name="wpf-usage-notes"></a>WPF の使用上の注意  
+ マークアップ拡張機能と WPF の詳細については、次を参照してください。[マークアップ拡張機能と WPF XAML](~/docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConstructorArgumentAttribute (string argumentName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string argumentName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.ConstructorArgumentAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="argumentName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="argumentName">関連付けられたプロパティを初期化するコンストラクターの名前。</param>
+        <summary><see cref="T:System.Windows.Markup.ConstructorArgumentAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ArgumentName">
+      <MemberSignature Language="C#" Value="public string ArgumentName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ArgumentName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.ConstructorArgumentAttribute.ArgumentName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連するプロパティを初期化するコンストラクターの 名前パラメーターを取得します。</summary>
+        <value>コンストラクターの名前。 CLR バッキングを前提とすると、これに対応して、<see cref="P:System.Reflection.ParameterInfo.Name" />の関連するコンス トラクターのパラメーターです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

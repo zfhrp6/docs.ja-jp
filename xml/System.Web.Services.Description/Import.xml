@@ -1,0 +1,175 @@
+<Type Name="Import" FullName="System.Web.Services.Description.Import">
+  <TypeSignature Language="C#" Value="public sealed class Import : System.Web.Services.Description.DocumentableItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Import extends System.Web.Services.Description.DocumentableItem" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Description.Import" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Services.Description.DocumentableItem</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.Services.Configuration.XmlFormatExtensionPoint("Extensions")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>XML 名前空間をドキュメントの場所に関連付けます。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web サービス記述言語 (WSDL)`import`要素で囲まれている、`definitions`要素を使用し、ファイルをインポートできます必要に応じて別のドキュメントに XML Web サービスのさまざまな部分を分離します。 各ドキュメントの URL は、そのドキュメントの要素の XML 名前空間を表す一意の XML タグ プレフィックスに関連付けられます。 WSDL の詳細については、http://www.w3.org/TR/wsdl/ の仕様を参照してください。 XML 名前空間の詳細については、次を参照してください。、<xref:System.Web.Services.WebServiceAttribute.Namespace%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、新しいインスタンスを作成するユーザー定義のメソッド、<xref:System.Web.Services.Description.Import>クラスです。  
+  
+ [!code-cpp[Importsample#7](~/samples/snippets/cpp/VS_Snippets_Remoting/Importsample/CPP/importsample.cpp#7)]
+ [!code-csharp[Importsample#7](~/samples/snippets/csharp/VS_Snippets_Remoting/Importsample/CS/importsample.cs#7)]
+ [!code-vb[Importsample#7](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Importsample/VB/importsample.vb#7)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Import ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.Import.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Description.Import" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Extensions">
+      <MemberSignature Language="C#" Value="public override System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection Extensions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection Extensions" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.Import.Extensions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlIgnore</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection" />これに関連付けられている<see cref="T:System.Web.Services.Description.Import" />クラスです。</summary>
+        <value><see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection" />これに関連付けられている<see cref="T:System.Web.Services.Description.Import" />クラスです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Location">
+      <MemberSignature Language="C#" Value="public string Location { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Location" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.Import.Location" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("location")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML の値の設定を取得または<see langword="location" />の属性、<see langword="import" />要素。</summary>
+        <value>XML の値<see langword="location" />の属性、<see langword="import" />要素。 この値は、インポートしたドキュメントの URL も指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[ImportSample#4](~/samples/snippets/cpp/VS_Snippets_Remoting/Importsample/CPP/importsample.cpp#4)]
+ [!code-csharp[ImportSample#4](~/samples/snippets/csharp/VS_Snippets_Remoting/Importsample/CS/importsample.cs#4)]
+ [!code-vb[ImportSample#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Importsample/VB/importsample.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public string Namespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Namespace" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.Import.Namespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("namespace")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML の値の設定を取得または<see langword="namespace" />の属性、<see langword="import" />要素。</summary>
+        <value>XML の値<see langword="namespace" />の属性、<see langword="import" />要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[ImportSample#5](~/samples/snippets/cpp/VS_Snippets_Remoting/Importsample/CPP/importsample.cpp#5)]
+ [!code-csharp[ImportSample#5](~/samples/snippets/csharp/VS_Snippets_Remoting/Importsample/CS/importsample.cs#5)]
+ [!code-vb[ImportSample#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Importsample/VB/importsample.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceDescription">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.ServiceDescription ServiceDescription { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.ServiceDescription ServiceDescription" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.Import.ServiceDescription" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.ServiceDescription</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照を取得、<see cref="T:System.Web.Services.Description.ServiceDescription" />うち、<see cref="T:System.Web.Services.Description.Import" />メンバーであります。</summary>
+        <value><see cref="T:System.Web.Services.Description.ServiceDescription" />うち、<see cref="T:System.Web.Services.Description.Import" />メンバーであります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例での使用、<xref:System.Web.Services.Description.Import.ServiceDescription%2A>プロパティです。  
+  
+ Importsample #6  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

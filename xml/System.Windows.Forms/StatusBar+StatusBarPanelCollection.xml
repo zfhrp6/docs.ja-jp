@@ -1,0 +1,820 @@
+<Type Name="StatusBar+StatusBarPanelCollection" FullName="System.Windows.Forms.StatusBar+StatusBarPanelCollection">
+  <TypeSignature Language="C#" Value="public class StatusBar.StatusBarPanelCollection : System.Collections.IList" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi beforefieldinit StatusBar/StatusBarPanelCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Collections.IList" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.StatusBar.StatusBarPanelCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IList</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ListBindable(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>内のパネルのコレクションを表す、<see cref="T:System.Windows.Forms.StatusBar" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>クラスは、パネルに表示される、格納、<xref:System.Windows.Forms.StatusBar>です。 コレクションの各オブジェクトのインスタンスでは、<xref:System.Windows.Forms.StatusBarPanel>表示特性とに表示されるパネルの動作を定義するクラス、<xref:System.Windows.Forms.StatusBar>です。  
+  
+ パネルをコレクションに追加する方法の数があります。 <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Add%2A>メソッドがコレクションに 1 つのパネルを追加する機能を提供します。 パネルの数をコレクションに追加するには、配列を作成<xref:System.Windows.Forms.StatusBarPanel>オブジェクトし、それを割り当てる、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.AddRange%2A>メソッドです。 コレクション内で特定の場所に表示するパネルを挿入する場合は、使用、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Insert%2A>メソッドです。 パネルを削除する、いずれかを使用できる、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Remove%2A>メソッドまたは<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.RemoveAt%2A>メソッド、パネルがコレクション内にあることがわかっている場合。 <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Clear%2A>メソッドでは、すべてのパネルを使用する代わりにコレクションから削除することができます、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Remove%2A>一度に 1 つのパネルを削除する方法です。  
+  
+ メソッドとプロパティを追加して、パネルを削除するのに加え、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>も、コレクション内のパネルを検索するメソッドを提供します。 <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Contains%2A>メソッドでは、パネルが、コレクションのメンバーであるかどうかを確認することができます。 使用することができます、パネルがコレクション内にあることがわかったら、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.IndexOf%2A>パネルがコレクション内にあるを調べます。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Windows.Forms.StatusBar>フォームの control 権限と、2 つ追加<xref:System.Windows.Forms.StatusBarPanel>オブジェクト。 1 つ、 <xref:System.Windows.Forms.StatusBarPanel>、名前付き`panel1`アプリケーションの状態を示すテキストが表示されます。 2 番目<xref:System.Windows.Forms.StatusBarPanel>、名前付き`panel2`、現在の日付を表示し、使用して、<xref:System.Windows.Forms.StatusBarPanel.ToolTipText%2A>のプロパティ、<xref:System.Windows.Forms.StatusBarPanel>現在の時刻を表示するクラス。 この例では、<xref:System.Windows.Forms.StatusBar.ShowPanels%2A>プロパティ パネルが標準のパネルの代わりに表示を使用していることを確認して、<xref:System.Windows.Forms.StatusBar.Panels%2A>プロパティへのアクセスを<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Add%2A>のメソッド、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>パネルを追加する、<xref:System.Windows.Forms.StatusBar>です。 また、例では、 <xref:System.Windows.Forms.StatusBarPanel.AutoSize%2A>、 <xref:System.Windows.Forms.StatusBarPanel.BorderStyle%2A>、 <xref:System.Windows.Forms.StatusBarPanel.ToolTipText%2A>、および<xref:System.Windows.Forms.StatusBarPanel.Text%2A>プロパティを初期化するために、<xref:System.Windows.Forms.StatusBarPanel>オブジェクト。 この例には、この例で定義されたメソッドが定義されのコンス トラクターから呼び出すことが前提としています、<xref:System.Windows.Forms.Form>です。  
+  
+ [!code-cpp[StatusBar and StatusBarPanel Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/StatusBar and StatusBarPanel Example/CPP/form1.cpp#1)]
+ [!code-csharp[StatusBar and StatusBarPanel Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/StatusBar and StatusBarPanel Example/CS/form1.cs#1)]
+ [!code-vb[StatusBar and StatusBarPanel Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/StatusBar and StatusBarPanel Example/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StatusBarPanelCollection (System.Windows.Forms.StatusBar owner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.StatusBar owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.StatusBar.StatusBarPanelCollection.#ctor(System.Windows.Forms.StatusBar)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Forms.StatusBar" />
+      </Parameters>
+      <Docs>
+        <param name="owner"><see cref="T:System.Windows.Forms.StatusBar" />コントロールをこのコレクションが含まれています。</param>
+        <summary><see cref="T:System.Windows.Forms.StatusBar.StatusBarPanelCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定せずにこのクラスのインスタンスを作成することはできません、<xref:System.Windows.Forms.StatusBar>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.StatusBarPanel Add (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Forms.StatusBarPanel Add(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Add(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.StatusBarPanel</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">テキスト、<see cref="T:System.Windows.Forms.StatusBarPanel" />を追加します。</param>
+        <summary>追加、<see cref="T:System.Windows.Forms.StatusBarPanel" />をコレクションに指定されたテキストでします。</summary>
+        <returns>A<see cref="T:System.Windows.Forms.StatusBarPanel" />をコレクションに追加されたパネルを表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パネルを追加することができます、<xref:System.Windows.Forms.StatusBar>情報の 2 つ以上の種類を表示するコントロール。 このバージョンの<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Add%2A>メソッドが新たに作成<xref:System.Windows.Forms.StatusBarPanel>で指定されたテキストを含む、`text`パラメーター コレクションに追加します。 パネルが内にある、順序、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>内のパネルに表示される順序を表し、<xref:System.Windows.Forms.StatusBar>コントロール。 パネルは、左から右から始まるコレクション内の最初のパネルに表示されます。 <xref:System.Windows.Forms.Control.RightToLeft%2A>のプロパティ、<xref:System.Windows.Forms.StatusBar>コントロールにパネルが表示される順序は変更されません、<xref:System.Windows.Forms.StatusBar>です。 コレクション内の特定位置にあるパネルを挿入するには、使用、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Insert%2A>メソッドです。 パネルのセットを 1 回の操作でコレクションに追加するには、使用、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.AddRange%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public virtual int Add (System.Windows.Forms.StatusBarPanel value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 Add(class System.Windows.Forms.StatusBarPanel value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Add(System.Windows.Forms.StatusBarPanel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Windows.Forms.StatusBarPanel" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.Windows.Forms.StatusBarPanel" />をコレクションに追加するパネルを表すです。</param>
+        <summary><see cref="T:System.Windows.Forms.StatusBarPanel" /> をコレクションに追加します。</summary>
+        <returns>コレクション内の項目の 0 から始まるインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パネルを追加することができます、<xref:System.Windows.Forms.StatusBar>情報の 2 つ以上の種類を表示するコントロール。 このバージョンの<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Add%2A>メソッドを追加、<xref:System.Windows.Forms.StatusBarPanel>で指定されている、`value`コレクションへのパラメーターです。 パネルが内にある、順序、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>内のパネルに表示される順序を表し、<xref:System.Windows.Forms.StatusBar>コントロール。 パネルは、左から右から始まるコレクション内の最初のパネルに表示されます。 <xref:System.Windows.Forms.Control.RightToLeft%2A>のプロパティ、<xref:System.Windows.Forms.StatusBar>コントロールにパネルが表示される順序は変更されません、<xref:System.Windows.Forms.StatusBar>です。 コレクション内の特定位置にあるパネルを挿入するには、使用、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Insert%2A>メソッドです。 パネルのセットを 1 回の操作でコレクションに追加するには、使用、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.AddRange%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Windows.Forms.StatusBar>フォームの control 権限と、2 つ追加<xref:System.Windows.Forms.StatusBarPanel>オブジェクト。 1 つ、<xref:System.Windows.Forms.StatusBarPanel>という名前のオブジェクト`panel1`アプリケーションの状態を示すテキストが表示されます。 2 番目<xref:System.Windows.Forms.StatusBarPanel>、名前付き`panel2`、現在の日付を表示し、使用して、<xref:System.Windows.Forms.StatusBarPanel.ToolTipText%2A>のプロパティ、<xref:System.Windows.Forms.StatusBarPanel>現在の時刻を表示するクラス。 この例では、<xref:System.Windows.Forms.StatusBar.ShowPanels%2A>プロパティ パネルが標準のパネルの代わりに表示を使用していることを確認して、<xref:System.Windows.Forms.StatusBar.Panels%2A>プロパティへのアクセスを<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Add%2A>のメソッド、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>パネルを追加する、<xref:System.Windows.Forms.StatusBar>です。 また、例では、 <xref:System.Windows.Forms.StatusBarPanel.AutoSize%2A>、 <xref:System.Windows.Forms.StatusBarPanel.BorderStyle%2A>、 <xref:System.Windows.Forms.StatusBarPanel.ToolTipText%2A>、および<xref:System.Windows.Forms.StatusBarPanel.Text%2A>プロパティを初期化するために、<xref:System.Windows.Forms.StatusBarPanel>オブジェクト。 この例には、この例で定義されたメソッドが定義されのコンス トラクターから呼び出すことが前提としています、<xref:System.Windows.Forms.Form>です。  
+  
+ [!code-cpp[StatusBar and StatusBarPanel Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/StatusBar and StatusBarPanel Example/CPP/form1.cpp#1)]
+ [!code-csharp[StatusBar and StatusBarPanel Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/StatusBar and StatusBarPanel Example/CS/form1.cs#1)]
+ [!code-vb[StatusBar and StatusBarPanel Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/StatusBar and StatusBarPanel Example/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Windows.Forms.StatusBarPanel" />がコレクションに追加されている<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentException">親、<see cref="T:System.Windows.Forms.StatusBarPanel" />で指定されている、<paramref name="value" />パラメーターではありません<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public virtual void AddRange (System.Windows.Forms.StatusBarPanel[] panels);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddRange(class System.Windows.Forms.StatusBarPanel[] panels) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.StatusBar.StatusBarPanelCollection.AddRange(System.Windows.Forms.StatusBarPanel[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="panels" Type="System.Windows.Forms.StatusBarPanel[]" />
+      </Parameters>
+      <Docs>
+        <param name="panels">配列<see cref="T:System.Windows.Forms.StatusBarPanel" />を追加するオブジェクト。</param>
+        <summary>配列を追加<see cref="T:System.Windows.Forms.StatusBarPanel" />をコレクションにオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パネルを追加することができます、<xref:System.Windows.Forms.StatusBar>情報の 2 つ以上の種類を表示するコントロール。 <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.AddRange%2A>メソッドの配列を追加する<xref:System.Windows.Forms.StatusBarPanel>で指定されたオブジェクト、`panels`コレクションへのパラメーターです。 コレクション内のすべての既存のパネルは、新しいパネルを挿入する前に、コレクションから削除されます。 パネルが内にある、順序、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>内のパネルに表示される順序を表し、<xref:System.Windows.Forms.StatusBar>コントロール。 パネルは、左から右から始まるコレクション内の最初のパネルに表示されます。 <xref:System.Windows.Forms.Control.RightToLeft%2A>のプロパティ、<xref:System.Windows.Forms.StatusBar>コントロールにパネルが表示される順序は変更されません、<xref:System.Windows.Forms.StatusBar>です。 1 つを追加する<xref:System.Windows.Forms.StatusBarPanel>、コレクションを使用して、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Add%2A>メソッドです。 特定位置にあるパネルを挿入する、<xref:System.Windows.Forms.StatusBar>コントロール (およびこのコレクション内で) を使用して、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Insert%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">配列<see cref="T:System.Windows.Forms.StatusBarPanel" />、コレクションに追加されるオブジェクトが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public virtual void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションからすべての項目を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パネルをコレクションから削除すると、削除されたパネルに関するすべての情報が失われます。 1 つのパネルを削除する、<xref:System.Windows.Forms.StatusBar>を使用して、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Remove%2A>または<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.RemoveAt%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Windows.Forms.StatusBarPanel panel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Windows.Forms.StatusBarPanel panel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Contains(System.Windows.Forms.StatusBarPanel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="panel" Type="System.Windows.Forms.StatusBarPanel" />
+      </Parameters>
+      <Docs>
+        <param name="panel">コレクション内で検索する <see cref="T:System.Windows.Forms.StatusBarPanel" />。</param>
+        <summary>指定されたパネルがコレクション内にあるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />パネルがコレクション内にある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Contains%2A>メソッドでは、パネルが、コレクションのメンバーであるかどうかを確認することができます。 使用することができます、項目がコレクション内にあることがわかったら、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.IndexOf%2A>パネルがコレクション内にあるを調べます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsKey">
+      <MemberSignature Language="C#" Value="public virtual bool ContainsKey (string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ContainsKey(string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.StatusBar.StatusBarPanelCollection.ContainsKey(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">コレクション内で検索する項目の名前。</param>
+        <summary>コレクションが含まれるかどうかを判断、<see cref="T:System.Windows.Forms.StatusBarPanel" />指定されたキーにします。</summary>
+        <returns>
+          <see langword="true" />コレクションに含まれています、 <see cref="T:System.Windows.Forms.StatusBarPanel" /> 、指定されたキー、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.StatusBarPanel.Name%2A>プロパティのキーに対応する<xref:System.Windows.Forms.StatusBarPanel>で、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>です。  
+  
+ キーの比較は区別されません。 場合、`key`パラメーターは`null`または空の文字列、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.ContainsKey%2A>を返します`false.`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション内の項目の数を取得します。</summary>
+        <value>数<see cref="T:System.Windows.Forms.StatusBarPanel" />コレクション内のオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、内のパネルの数を決定することができます、<xref:System.Windows.Forms.StatusBar>です。 この値は、コレクションの値をループすると、ループの反復回数を指定する必要があります。 場合に使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.StatusBar.StatusBarPanelCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>使用して項目のコレクションを反復処理する列挙子を返します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />を表す項目のコレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Windows.Forms.StatusBarPanel panel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Windows.Forms.StatusBarPanel panel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.StatusBar.StatusBarPanelCollection.IndexOf(System.Windows.Forms.StatusBarPanel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="panel" Type="System.Windows.Forms.StatusBarPanel" />
+      </Parameters>
+      <Docs>
+        <param name="panel">コレクション内で検索する <see cref="T:System.Windows.Forms.StatusBarPanel" />。</param>
+        <summary>指定されたパネルのコレクション内のインデックスを返します。</summary>
+        <returns>パネルがコレクション内にある、0 から始まるインデックスそれ以外の場合、負の 1 (-1)。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.IndexOf%2A>メソッドでは、パネルがコレクション内にあるかを判断することができます。 項目がこのメソッドを呼び出す前に、コレクション内にあるかどうかを判断するのには、使用、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Contains%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOfKey">
+      <MemberSignature Language="C#" Value="public virtual int IndexOfKey (string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 IndexOfKey(string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.StatusBar.StatusBarPanelCollection.IndexOfKey(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">名前、<see cref="T:System.Windows.Forms.StatusBarPanel" />のコレクションを検索します。</param>
+        <summary>最初に見つかった位置のインデックスを返します、<see cref="T:System.Windows.Forms.StatusBarPanel" />指定されたキーにします。</summary>
+        <returns>最初に見つかった位置の 0 から始まるインデックス、 <see cref="T:System.Windows.Forms.StatusBarPanel" /> 、それ以外の場合、指定したキーに-1 です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.IndexOfKey%2A>と呼ばれる順次、最後のインデックスを最初に、キーの一致のチェックは、検索は、コレクションの先頭から開始一致が存在しない場合に返されます。  
+  
+ <xref:System.Windows.Forms.StatusBarPanel.Name%2A>プロパティのキーに対応する<xref:System.Windows.Forms.StatusBarPanel>で、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>です。 キーの比較は区別されません。  
+  
+ 場合、`key`パラメーターは`null`または空の文字列、 <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.IndexOfKey%2A> -1 を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public virtual void Insert (int index, System.Windows.Forms.StatusBarPanel value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Insert(int32 index, class System.Windows.Forms.StatusBarPanel value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Insert(System.Int32,System.Windows.Forms.StatusBarPanel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Windows.Forms.StatusBarPanel" />
+      </Parameters>
+      <Docs>
+        <param name="index">パネルが挿入される 0 から始まるインデックス位置。</param>
+        <param name="value">A<see cref="T:System.Windows.Forms.StatusBarPanel" />を挿入するパネルを表すです。</param>
+        <summary>指定した挿入<see cref="T:System.Windows.Forms.StatusBarPanel" />コレクション内の指定したインデックス位置。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パネルを追加することができます、<xref:System.Windows.Forms.StatusBar>情報の 2 つ以上の種類を表示するコントロール。 <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Insert%2A>メソッドでは、新しいを作成することができます<xref:System.Windows.Forms.StatusBarPanel>し、コレクション内で特定の場所に挿入します。 パネルが内にある、順序、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>内のパネルに表示される順序を表し、<xref:System.Windows.Forms.StatusBar>コントロール。 パネルは、左から右から始まるコレクション内の最初のパネルに表示されます。 <xref:System.Windows.Forms.Control.RightToLeft%2A>のプロパティ、<xref:System.Windows.Forms.StatusBar>コントロールにパネルが表示される順序は変更されません、<xref:System.Windows.Forms.StatusBar>です。 コレクションの末尾に表示するパネルを追加するには、使用、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Add%2A>メソッドです。 パネルのセットを 1 回の操作でコレクションに追加するには、使用、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.AddRange%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="value" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="value" />パラメーターの親ではありません<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />パラメーターが 0 の値より大きいか小さい、<see cref="P:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Count" />のプロパティ、<see cref="T:System.Windows.Forms.StatusBar.StatusBarPanelCollection" />クラスです。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"><see cref="P:System.Windows.Forms.StatusBarPanel.AutoSize" />のプロパティ、<paramref name="value" />パラメーターのパネルが有効ではありません<see cref="T:System.Windows.Forms.StatusBarPanelAutoSize" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.StatusBar.StatusBarPanelCollection.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコレクションが読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />このコレクションが読み取り専用の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは常に`false`このコレクションにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.StatusBarPanel this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.StatusBarPanel Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.StatusBarPanel</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得または設定するコレクション内のパネルのインデックス。</param>
+        <summary>指定したインデックス位置にある <see cref="T:System.Windows.Forms.StatusBarPanel" /> を取得または設定します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.StatusBarPanel" />コレクション内で指定したインデックス位置にあるパネルを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用させることができます、<xref:System.Windows.Forms.StatusBarPanel>コレクション内の特定の場所に格納されています。 コレクション内の特定のパネルのインデックスを確認するには<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.IndexOf%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />パラメーターは、ゼロ未満かより大きいかの値と等しい、<see cref="P:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Count" />のプロパティ、<see cref="T:System.Windows.Forms.StatusBar.StatusBarPanelCollection" />クラスです。</exception>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Windows.Forms.StatusBarPanel" />コレクションに割り当てられているが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.StatusBarPanel this[string key] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.StatusBarPanel Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.StatusBarPanel</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">コレクションから取得する項目の名前。</param>
+        <summary>指定したキーを持つ項目をコレクションから取得します。</summary>
+        <value>指定したキーを持つ <see cref="T:System.Windows.Forms.StatusBarPanel" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.StatusBarPanel.Name%2A>プロパティのキーに対応する<xref:System.Windows.Forms.StatusBarPanel>で、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>です。  
+  
+ キーの比較は区別されません。 場合、`key`パラメーターは`null`または空の文字列、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Item%2A>を返します`null.`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public virtual void Remove (System.Windows.Forms.StatusBarPanel value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Remove(class System.Windows.Forms.StatusBarPanel value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Remove(System.Windows.Forms.StatusBarPanel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Windows.Forms.StatusBarPanel" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Windows.Forms.StatusBarPanel" />コレクションから削除するのには、パネルを表すです。</param>
+        <summary>指定された <see cref="T:System.Windows.Forms.StatusBarPanel" /> をコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パネルを一覧から削除するときに、コレクション内の後続の項目のインデックスを変更します。 削除されるパネルに関するすべての情報が削除されます。 特定のパネルを削除するこのメソッドを使用することができます、<xref:System.Windows.Forms.StatusBar>実際を指定して<xref:System.Windows.Forms.StatusBarPanel>をコレクションから削除します。 パネルそのものではなく削除するのには、パネルのインデックスを指定するには、使用、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.RemoveAt%2A>メソッドです。 コレクションからすべてのパネルを削除するには、使用、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Clear%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Windows.Forms.StatusBarPanel" />に割り当てられている、<paramref name="value" />パラメーターは<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public virtual void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.StatusBar.StatusBarPanelCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除する項目の 0 から始まるインデックス。</param>
+        <summary>削除、<see cref="T:System.Windows.Forms.StatusBarPanel" />コレクション内で指定したインデックス位置にあります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パネルをコレクションから削除するときに、コレクション内の後続のパネルのインデックスを変更します。 削除されるパネルに関するすべての情報が削除されます。 このメソッドを使用して、コレクションから削除するのには、パネルのインデックスを指定することで、一覧から特定のコントロール パネルを削除することができます。 パネルにインデックスではなく削除するのには、パネルを指定するには、使用、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Remove%2A>メソッドです。 すべてのパネルを削除する、<xref:System.Windows.Forms.StatusBar>コントロールを使用して、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Clear%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />パラメーターは、ゼロ未満かより大きいかの値と等しい、<see cref="P:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Count" />のプロパティ、<see cref="T:System.Windows.Forms.StatusBar.StatusBarPanelCollection" />クラスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveByKey">
+      <MemberSignature Language="C#" Value="public virtual void RemoveByKey (string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveByKey(string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.StatusBar.StatusBarPanelCollection.RemoveByKey(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">名前、<see cref="T:System.Windows.Forms.StatusBarPanel" />をコレクションから削除します。</param>
+        <summary>削除、<see cref="T:System.Windows.Forms.StatusBarPanel" />コレクションから指定されたキーにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.StatusBarPanel.Name%2A>プロパティのキーに対応する<xref:System.Windows.Forms.StatusBarPanel>で、<xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>です。  
+  
+ キーの比較は区別されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.CopyTo">
+      <MemberSignature Language="C#" Value="void ICollection.CopyTo (Array dest, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.ICollection.CopyTo(class System.Array dest, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.StatusBar.StatusBarPanelCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dest" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="dest">コレクションから要素がコピーされる 1 次元配列。 配列には、0 から始まるインデックスが設定されている必要があります。</param>
+        <param name="index">配列内のコピーを開始する位置を示す、0 から始まるインデックスです。</param>
+        <summary>コピー、<see cref="T:System.Windows.Forms.StatusBar.StatusBarPanelCollection" />互換性のある 1 次元配列に、対象となる配列の指定したインデックスから始まります。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="array" /> が多次元です。  
+  
+ または  
+  
+ 内の要素の数、<see cref="T:System.Windows.Forms.StatusBar.StatusBarPanelCollection" />がの末尾にインデックスから使用可能な領域よりも大きい<paramref name="array" />です。</exception>
+        <exception cref="T:System.InvalidCastException">コレクション内の型は、の型に自動的にキャストすることはできません<paramref name="array" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.IsSynchronized">
+      <MemberSignature Language="C#" Value="bool System.Collections.ICollection.IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.ICollection.IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.StatusBar.StatusBarPanelCollection.System#Collections#ICollection#IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションへのアクセスが同期されている (スレッド セーフである) かどうかを示す値を取得します。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.SyncRoot">
+      <MemberSignature Language="C#" Value="object System.Collections.ICollection.SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.ICollection.SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.StatusBar.StatusBarPanelCollection.System#Collections#ICollection#SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションへのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value>コレクションへのアクセスを同期するために使用するオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Add">
+      <MemberSignature Language="C#" Value="int IList.Add (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IList.Add(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.StatusBar.StatusBarPanelCollection.System#Collections#IList#Add(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.Windows.Forms.StatusBarPanel" />をコレクションに追加するパネルを表すです。</param>
+        <summary><see cref="T:System.Windows.Forms.StatusBarPanel" /> をコレクションに追加します。</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="value" /> が <see cref="T:System.Windows.Forms.StatusBarPanel" /> ではありません。  
+  
+ または  
+  
+ 値の親が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Contains">
+      <MemberSignature Language="C#" Value="bool IList.Contains (object panel);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Collections.IList.Contains(object panel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.StatusBar.StatusBarPanelCollection.System#Collections#IList#Contains(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="panel" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="panel">コレクション内で検索する <see cref="T:System.Windows.Forms.StatusBarPanel" />。</param>
+        <summary>指定されたパネルがコレクション内にあるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />パネルがある場合、<see cref="T:System.Windows.Forms.StatusBarPanel" />コレクション内にある、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IndexOf">
+      <MemberSignature Language="C#" Value="int IList.IndexOf (object panel);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IList.IndexOf(object panel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.StatusBar.StatusBarPanelCollection.System#Collections#IList#IndexOf(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="panel" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="panel">コレクション内で検索する <see cref="T:System.Windows.Forms.StatusBarPanel" />。</param>
+        <summary>コレクション内で指定されたパネルのインデックスを返します。</summary>
+        <returns>パネルの 0 から始まるインデックス場合; コレクション全体で検出します。それ以外の場合、-1 を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Insert">
+      <MemberSignature Language="C#" Value="void IList.Insert (int index, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Insert(int32 index, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.StatusBar.StatusBarPanelCollection.System#Collections#IList#Insert(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">パネルが挿入される 0 から始まるインデックス位置。</param>
+        <param name="value">A<see cref="T:System.Windows.Forms.StatusBarPanel" />を挿入するパネルを表すです。</param>
+        <summary>指定した挿入<see cref="T:System.Windows.Forms.StatusBarPanel" />コレクション内の指定したインデックス位置。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">インデックス パラメーターが 0 の値より大きいか小さい、<see langword="Count" />プロパティです。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="value" /> が <see cref="T:System.Windows.Forms.StatusBarPanel" /> ではありません。  
+  
+ または  
+  
+ 値の親が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IsFixedSize">
+      <MemberSignature Language="C#" Value="bool System.Collections.IList.IsFixedSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.IList.IsFixedSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.StatusBar.StatusBarPanelCollection.System#Collections#IList#IsFixedSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションが固定サイズかどうかを示す値を取得します。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Item">
+      <MemberSignature Language="C#" Value="object System.Collections.IList.Item[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.IList.Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.StatusBar.StatusBarPanelCollection.System#Collections#IList#Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得または設定する要素の、0 から始まるインデックス番号。</param>
+        <summary>指定したインデックスにある要素を取得または設定します。</summary>
+        <value>指定したインデックス位置にある要素。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="value" /> が <see cref="T:System.Windows.Forms.StatusBarPanel" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Remove">
+      <MemberSignature Language="C#" Value="void IList.Remove (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Remove(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.StatusBar.StatusBarPanelCollection.System#Collections#IList#Remove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Windows.Forms.StatusBarPanel" />コレクションから削除するのには、パネルを表すです。</param>
+        <summary>指定された <see cref="T:System.Windows.Forms.StatusBarPanel" /> をコレクションから削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

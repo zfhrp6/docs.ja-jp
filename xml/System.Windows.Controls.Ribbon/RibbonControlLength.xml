@@ -1,0 +1,323 @@
+<Type Name="RibbonControlLength" FullName="System.Windows.Controls.Ribbon.RibbonControlLength">
+  <TypeSignature Language="C#" Value="public struct RibbonControlLength : IEquatable&lt;System.Windows.Controls.Ribbon.RibbonControlLength&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit RibbonControlLength extends System.ValueType implements class System.IEquatable`1&lt;valuetype System.Windows.Controls.Ribbon.RibbonControlLength&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.Ribbon.RibbonControlLength" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IEquatable&lt;System.Windows.Controls.Ribbon.RibbonControlLength&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Controls.Ribbon.RibbonControlLengthConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>幅を表す、<see cref="T:System.Windows.Controls.Ribbon.RibbonControlSizeDefinition" />です。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RibbonControlLength (double pixels);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 pixels) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.RibbonControlLength.#ctor(System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="pixels" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="pixels">初期化する長さを絶対ピクセル値です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Controls.Ribbon.RibbonControlLength" />絶対値 (ピクセル単位) を含む構造体。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="pixels" /> は <see cref="F:System.Double.NaN" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RibbonControlLength (double value, System.Windows.Controls.Ribbon.RibbonControlLengthUnitType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 value, valuetype System.Windows.Controls.Ribbon.RibbonControlLengthUnitType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.RibbonControlLength.#ctor(System.Double,System.Windows.Controls.Ribbon.RibbonControlLengthUnitType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+        <Parameter Name="type" Type="System.Windows.Controls.Ribbon.RibbonControlLengthUnitType" />
+      </Parameters>
+      <Docs>
+        <param name="value">要素の要求されたサイズ。</param>
+        <param name="type">要素のサイズを計算する方法を決定するために使用する型。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Controls.Ribbon.RibbonControlLength" />指定した値と長さの単位を含む構造体。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="value" /> は <see cref="F:System.Double.NaN" /> です。  
+  
+ または  
+  
+ <paramref name="type" />is <see cref="F:System.Windows.Controls.Ribbon.RibbonControlLengthUnitType.Star" /> and <paramref name="value" /> is <see cref="F:System.Double.NegativeInfinity" /> or <see cref="F:System.Double.PositiveInfinity" />.  
+  
+ または  
+  
+ <paramref name="type" />is not <see cref="F:System.Windows.Controls.Ribbon.RibbonControlLengthUnitType.Auto" />, <see cref="F:System.Windows.Controls.Ribbon.RibbonControlLengthUnitType.Pixel" />, <see cref="F:System.Windows.Controls.Ribbon.RibbonControlLengthUnitType.Star" />, or <see cref="F:System.Windows.Controls.Ribbon.RibbonControlLengthUnitType.Item" />.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Auto">
+      <MemberSignature Language="C#" Value="public static System.Windows.Controls.Ribbon.RibbonControlLength Auto { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.Controls.Ribbon.RibbonControlLength Auto" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.RibbonControlLength.Auto" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Ribbon.RibbonControlLength</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Controls.Ribbon.RibbonControlLength" />標準の自動サイズ変更モードを表す構造です。</summary>
+        <value>A<see cref="T:System.Windows.Controls.Ribbon.RibbonControlLength" />標準の自動サイズ変更モードを表す構造です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.RibbonControlLength.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在のインスタンスと比較する対象のオブジェクト。</param>
+        <summary>指定したオブジェクトが、現在の <see cref="T:System.Windows.Controls.Ribbon.RibbonControlLength" /> と等しいかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />指定したオブジェクトがある場合、<see cref="T:System.Windows.Controls.Ribbon.RibbonControlLength" />として現在のサイズ変更モードと同じ値で<see cref="T:System.Windows.Controls.Ribbon.RibbonControlLength" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Windows.Controls.Ribbon.RibbonControlLength other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(valuetype System.Windows.Controls.Ribbon.RibbonControlLength other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.RibbonControlLength.Equals(System.Windows.Controls.Ribbon.RibbonControlLength)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Windows.Controls.Ribbon.RibbonControlLength" />
+      </Parameters>
+      <Docs>
+        <param name="other"><see cref="T:System.Windows.Controls.Ribbon.RibbonControlLength" />を現在のインスタンスを比較します。</param>
+        <summary>指定した <see cref="T:System.Windows.Controls.Ribbon.RibbonControlLength" /> が現在の <see cref="T:System.Windows.Controls.Ribbon.RibbonControlLength" /> と等しいかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />指定したオブジェクトがある場合、<see cref="T:System.Windows.Controls.Ribbon.RibbonControlLength" />として現在のサイズ変更モードと同じ値で<see cref="T:System.Windows.Controls.Ribbon.RibbonControlLength" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.RibbonControlLength.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ハッシュ コードを取得、<see cref="T:System.Windows.Controls.Ribbon.RibbonControlLength" />です。</summary>
+        <returns>現在の <see cref="T:System.Windows.Controls.Ribbon.RibbonControlLength" /> のハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAbsolute">
+      <MemberSignature Language="C#" Value="public bool IsAbsolute { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAbsolute" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.RibbonControlLength.IsAbsolute" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素のインスタンス サイズを固定ピクセルに基づいているかどうかを示す値または論理値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Windows.Controls.Ribbon.RibbonControlLength.RibbonControlLengthUnitType" />プロパティに設定されている<see cref="F:System.Windows.Controls.Ribbon.RibbonControlLengthUnitType.Pixel" />または<see cref="F:System.Windows.Controls.Ribbon.RibbonControlLengthUnitType.Item" />、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAuto">
+      <MemberSignature Language="C#" Value="public bool IsAuto { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAuto" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.RibbonControlLength.IsAuto" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスが、要素のサイズを自動的にするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Windows.Controls.Ribbon.RibbonControlLength.RibbonControlLengthUnitType" />プロパティに設定されている<see cref="F:System.Windows.Controls.Ribbon.RibbonControlLengthUnitType.Auto" />、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsStar">
+      <MemberSignature Language="C#" Value="public bool IsStar { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsStar" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.RibbonControlLength.IsStar" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスが、使用可能な領域の加重比率に基づいて要素のサイズを自動的にするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Windows.Controls.Ribbon.RibbonControlLength.RibbonControlLengthUnitType" />プロパティに設定されている<see cref="F:System.Windows.Controls.Ribbon.RibbonControlLengthUnitType.Star" />、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Windows.Controls.Ribbon.RibbonControlLength length1, System.Windows.Controls.Ribbon.RibbonControlLength length2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Windows.Controls.Ribbon.RibbonControlLength length1, valuetype System.Windows.Controls.Ribbon.RibbonControlLength length2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.RibbonControlLength.op_Equality(System.Windows.Controls.Ribbon.RibbonControlLength,System.Windows.Controls.Ribbon.RibbonControlLength)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="length1" Type="System.Windows.Controls.Ribbon.RibbonControlLength" />
+        <Parameter Name="length2" Type="System.Windows.Controls.Ribbon.RibbonControlLength" />
+      </Parameters>
+      <Docs>
+        <param name="length1">最初の<see cref="T:System.Windows.Controls.Ribbon.RibbonControlLength" />インスタンスを比較します。</param>
+        <param name="length2">2 番目<see cref="T:System.Windows.Controls.Ribbon.RibbonControlLength" />インスタンスを比較します。</param>
+        <summary>比較する 2 つ<see cref="T:System.Windows.Controls.Ribbon.RibbonControlLength" />構造が等しいかどうか。</summary>
+        <returns>
+          <see langword="true" />場合、2 つ<see cref="T:System.Windows.Controls.Ribbon.RibbonControlLength" />インスタンスがある、同じ値とサイズ変更モードです。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Windows.Controls.Ribbon.RibbonControlLength length1, System.Windows.Controls.Ribbon.RibbonControlLength length2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Windows.Controls.Ribbon.RibbonControlLength length1, valuetype System.Windows.Controls.Ribbon.RibbonControlLength length2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.RibbonControlLength.op_Inequality(System.Windows.Controls.Ribbon.RibbonControlLength,System.Windows.Controls.Ribbon.RibbonControlLength)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="length1" Type="System.Windows.Controls.Ribbon.RibbonControlLength" />
+        <Parameter Name="length2" Type="System.Windows.Controls.Ribbon.RibbonControlLength" />
+      </Parameters>
+      <Docs>
+        <param name="length1">最初の<see cref="T:System.Windows.Controls.Ribbon.RibbonControlLength" />インスタンスを比較します。</param>
+        <param name="length2">2 番目<see cref="T:System.Windows.Controls.Ribbon.RibbonControlLength" />インスタンスを比較します。</param>
+        <summary>比較する 2 つ<see cref="T:System.Windows.Controls.Ribbon.RibbonControlLength" />両者が等しくないかどうかを決定する構造体。</summary>
+        <returns>
+          <see langword="true" />場合、2 つ<see cref="T:System.Windows.Controls.Ribbon.RibbonControlLength" />インスタンスが同じ値またはサイズ変更モードがない場合は、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RibbonControlLengthUnitType">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.Ribbon.RibbonControlLengthUnitType RibbonControlLengthUnitType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.Ribbon.RibbonControlLengthUnitType RibbonControlLengthUnitType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.RibbonControlLength.RibbonControlLengthUnitType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Ribbon.RibbonControlLengthUnitType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素のサイズを計算する方法を決定するために使用する型を取得します。</summary>
+        <value>要素のサイズを計算する方法を指定する列挙値の 1 つ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.RibbonControlLength.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のオブジェクトを表す文字列を返します。</summary>
+        <returns>現在のオブジェクトを表す文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public double Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Value" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.RibbonControlLength.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>絶対値の取得、<see cref="T:System.Windows.Controls.Ribbon.RibbonControlLength" />ピクセル単位または論理ユニットでします。</summary>
+        <value>絶対値、<see cref="T:System.Windows.Controls.Ribbon.RibbonControlLength" />ピクセル単位または論理ユニット、または 1.0 の場合で、<see cref="P:System.Windows.Controls.Ribbon.RibbonControlLength.RibbonControlLengthUnitType" />プロパティに設定されている<see cref="F:System.Windows.Controls.Ribbon.RibbonControlLengthUnitType.Auto" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

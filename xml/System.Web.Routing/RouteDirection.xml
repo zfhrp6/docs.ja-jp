@@ -1,0 +1,62 @@
+<Type Name="RouteDirection" FullName="System.Web.Routing.RouteDirection">
+  <TypeSignature Language="C#" Value="public enum RouteDirection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed RouteDirection extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Routing.RouteDirection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("System.Web.Routing, Version=3.5.0.0, Culture=Neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ASP.NET ルーティングがクライアントから提供された URL を処理するか、それとも URL を生成するかを示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET、ASP.NET アプリケーションの route 定義を照合して、URL を処理するか、route 定義に基づく Url を生成するルーティングを使用することができます。 <xref:System.Web.Routing.RouteDirection>列挙体は、これらのシナリオを区別するのに役立つ値を提供します。 これは、機能は、シナリオによっては、ルート制約が異なる方法で処理されるため便利です。 実装することによってカスタム ルート制約を作成する場合、<xref:System.Web.Routing.IRouteConstraint>インターフェイスの値を確認する必要があります、`routeDirection`内のパラメーター、<xref:System.Web.Routing.IRouteConstraint.Match%2A>シナリオを区別するためのメソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="IncomingRequest">
+      <MemberSignature Language="C#" Value="IncomingRequest" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Routing.RouteDirection IncomingRequest = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Routing.RouteDirection.IncomingRequest" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Routing.RouteDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントから提供された URL が処理されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UrlGeneration">
+      <MemberSignature Language="C#" Value="UrlGeneration" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Routing.RouteDirection UrlGeneration = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Routing.RouteDirection.UrlGeneration" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Routing.RouteDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>URL はルート定義に基づいて作成されます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

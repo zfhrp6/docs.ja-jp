@@ -1,0 +1,280 @@
+<Type Name="MemberRelationshipService" FullName="System.ComponentModel.Design.Serialization.MemberRelationshipService">
+  <TypeSignature Language="C#" Value="public abstract class MemberRelationshipService" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit MemberRelationshipService extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.Serialization.MemberRelationshipService" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>1 つのメンバーに関連する別の基本クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナーをシリアル化自体してコードをオブジェクトの値はライブのプロパティを検索し、コードとしてそれらの値を生成するエンジンを使用します。 したがって、たとえば、ボタンのテキストは次の形式で生成されます。  
+  
+```csharp  
+this.okButton.Text = "OK";  
+```  
+  
+ このスキームの制限事項の 1 つが、別の場所からプロパティを取得するが困難であります。 たとえば、次の形式でコードを出力する非常に困難なコード ジェネレーターの唯一の機能に依存することができますので、プロパティの値は、されます。  
+  
+```csharp  
+this.titleLabel.Text = this.Text;  
+```  
+  
+   
+  
+## Examples  
+ <xref:System.ComponentModel.Design.Serialization.MemberRelationshipService>別の場所からプロパティ値の取得を簡略化します。 デザイナーは、1 つのメンバーには、別の値が割り当てられてをディクテーションするには、このサービスにアクセスできます。 コードを生成するときにこのようなリレーションシップのコード ジェネレーターを検索し、コード ジェネレーターが見つかると、2 つのメンバー間のリレーションシップ場合、リレーションシップのコードではなく、プロパティ値の検索時します。 以前のテキストの割り当てを使用して、例として、次のコード例を示しますデザイン時のコードが関係を確立するために使用します。  
+  
+```csharp  
+object titleLabel, form;  
+PropertyDescriptor titleLabelText = TypeDescriptor.GetProperties(titleLabel)["Text"];  
+PropertyDescriptor formText = TypeDescriptor.GetProperties(form)["Text"];  
+MemberRelationshipService ms = GetService(typeof(MemberRelationshipService);  
+ms[titleLabel, titleLabelText] = new MemberRelationship(form, formText);  
+```  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para><see cref="T:System.ComponentModel.Design.Serialization.MemberRelationshipService" />クラスは<see langword="abstract" />します。 具体的なバージョンを実装することはサポートされているメンバーの種類によって異なります。 たとえば、別に 1 つのイベントを関連するには、別の 1 つのプロパティを関連付けるのとは別の実装が必要です。 サービスを実装するには、次の手順が必要です。  
+  
+-   実装<see cref="M:System.ComponentModel.Design.Serialization.MemberRelationshipService.SupportsRelationship(System.ComponentModel.Design.Serialization.MemberRelationship,System.ComponentModel.Design.Serialization.MemberRelationship)" />を返す<see langword="true" />をサポートするリレーションシップ。  
+  
+-   ターゲットの関係をソース リレーションシップと割り当て値の変更に対する変更を追跡します。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected MemberRelationshipService ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.MemberRelationshipService.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.Design.Serialization.MemberRelationshipService" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRelationship">
+      <MemberSignature Language="C#" Value="protected virtual System.ComponentModel.Design.Serialization.MemberRelationship GetRelationship (System.ComponentModel.Design.Serialization.MemberRelationship source);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance valuetype System.ComponentModel.Design.Serialization.MemberRelationship GetRelationship(valuetype System.ComponentModel.Design.Serialization.MemberRelationship source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.MemberRelationshipService.GetRelationship(System.ComponentModel.Design.Serialization.MemberRelationship)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.Serialization.MemberRelationship</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.ComponentModel.Design.Serialization.MemberRelationship" />
+      </Parameters>
+      <Docs>
+        <param name="source">ソース リレーションシップです。</param>
+        <summary>指定されたソース リレーションシップへのリレーションシップを取得します。</summary>
+        <returns>リレーションシップを<paramref name="source" />、または<see cref="F:System.ComponentModel.Design.Serialization.MemberRelationship.Empty" />リレーションシップが存在しない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装では、弱い参照を使用して、リレーションシップ テーブルは保持されませんオブジェクト アライブようにディクショナリ内のリレーションシップを格納します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Design.Serialization.MemberRelationship this[System.ComponentModel.Design.Serialization.MemberRelationship source] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ComponentModel.Design.Serialization.MemberRelationship Item(valuetype System.ComponentModel.Design.Serialization.MemberRelationship)" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.Serialization.MemberRelationshipService.Item(System.ComponentModel.Design.Serialization.MemberRelationship)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.Serialization.MemberRelationship</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.ComponentModel.Design.Serialization.MemberRelationship" />
+      </Parameters>
+      <Docs>
+        <param name="source">ソース リレーションシップです。 これは、リレーションシップの割り当ての左側にあります。</param>
+        <summary>ソースとターゲット オブジェクト間のリレーションシップを確立します。</summary>
+        <value>現在のリレーションシップに関連付けられている<paramref name="source" />、または<see cref="F:System.ComponentModel.Design.Serialization.MemberRelationship.Empty" />リレーションシップが存在しない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.ComponentModel.Design.Serialization.MemberRelationship.Empty>が割り当てられているソースに、既存のリレーションシップを削除します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="source" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="source" />空、またはリレーションシップは、サービスによってサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Design.Serialization.MemberRelationship this[object sourceOwner, System.ComponentModel.MemberDescriptor sourceMember] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ComponentModel.Design.Serialization.MemberRelationship Item(object, class System.ComponentModel.MemberDescriptor)" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.Serialization.MemberRelationshipService.Item(System.Object,System.ComponentModel.MemberDescriptor)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.Serialization.MemberRelationship</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceOwner" Type="System.Object" />
+        <Parameter Name="sourceMember" Type="System.ComponentModel.MemberDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="sourceOwner">ソースのリレーションシップの所有者です。</param>
+        <param name="sourceMember">ソースのリレーションシップのメンバーです。</param>
+        <summary>ソースとターゲット オブジェクト間のリレーションシップを確立します。</summary>
+        <value>A<see cref="T:System.ComponentModel.Design.Serialization.MemberRelationship" />ソースとターゲットのオブジェクト間のリレーションシップをカプセル化した構造または<see langword="null" />リレーションシップが存在しない場合。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="sourceOwner" /> または <paramref name="sourceMember" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="sourceOwner" />または<paramref name="sourceMember" />は空では、サービスでは、リレーションシップはサポートされていないか。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetRelationship">
+      <MemberSignature Language="C#" Value="protected virtual void SetRelationship (System.ComponentModel.Design.Serialization.MemberRelationship source, System.ComponentModel.Design.Serialization.MemberRelationship relationship);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void SetRelationship(valuetype System.ComponentModel.Design.Serialization.MemberRelationship source, valuetype System.ComponentModel.Design.Serialization.MemberRelationship relationship) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.MemberRelationshipService.SetRelationship(System.ComponentModel.Design.Serialization.MemberRelationship,System.ComponentModel.Design.Serialization.MemberRelationship)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.ComponentModel.Design.Serialization.MemberRelationship" />
+        <Parameter Name="relationship" Type="System.ComponentModel.Design.Serialization.MemberRelationship" />
+      </Parameters>
+      <Docs>
+        <param name="source">ソース リレーションシップです。</param>
+        <param name="relationship">ソースに設定するリレーションシップです。</param>
+        <summary>ソース オブジェクトとターゲットのリレーションシップ間のリレーションシップを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.MemberRelationshipService.SetRelationship%2A>リレーションシップ パラメーターがある場合、メソッドは、既存のリレーションシップをクリア<xref:System.ComponentModel.Design.Serialization.MemberRelationship.Empty>です。 既定の実装では、弱い参照を使用して、リレーションシップ テーブルは保持されませんオブジェクト アライブようにディクショナリ内のリレーションシップを格納します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">サービスでは、リレーションシップはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsRelationship">
+      <MemberSignature Language="C#" Value="public abstract bool SupportsRelationship (System.ComponentModel.Design.Serialization.MemberRelationship source, System.ComponentModel.Design.Serialization.MemberRelationship relationship);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SupportsRelationship(valuetype System.ComponentModel.Design.Serialization.MemberRelationship source, valuetype System.ComponentModel.Design.Serialization.MemberRelationship relationship) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.MemberRelationshipService.SupportsRelationship(System.ComponentModel.Design.Serialization.MemberRelationship,System.ComponentModel.Design.Serialization.MemberRelationship)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.ComponentModel.Design.Serialization.MemberRelationship" />
+        <Parameter Name="relationship" Type="System.ComponentModel.Design.Serialization.MemberRelationship" />
+      </Parameters>
+      <Docs>
+        <param name="source">ソース リレーションシップです。</param>
+        <param name="relationship">ソースに設定するリレーションシップです。</param>
+        <summary>指定したリレーションシップがサポートされているかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />場合は、2 つのオブジェクト間のリレーションシップがサポートされています。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

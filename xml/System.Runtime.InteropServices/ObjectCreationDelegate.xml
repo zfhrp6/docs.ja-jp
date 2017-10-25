@@ -1,0 +1,39 @@
+<Type Name="ObjectCreationDelegate" FullName="System.Runtime.InteropServices.ObjectCreationDelegate">
+  <TypeSignature Language="C#" Value="public delegate IntPtr ObjectCreationDelegate(IntPtr aggregator);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ObjectCreationDelegate extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.ObjectCreationDelegate" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Parameters>
+    <Parameter Name="aggregator" Type="System.IntPtr" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.IntPtr</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="aggregator">マネージ オブジェクトへのポインター<see langword="IUnknown" />インターフェイスです。</param>
+    <summary>COM オブジェクトを作成します。</summary>
+    <returns><see cref="T:System.IntPtr" />を表すオブジェクト、 <see langword="IUnknown" /> COM オブジェクトのインターフェイスです。</returns>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このデリゲートがの代わりに、COM オブジェクトを作成するために呼び出される`CoCreateInstance`マネージ オブジェクトがそのアンマネージ部分の新しいインスタンスを作成する必要がある場合。 `IUnknown`マネージ オブジェクトのインターフェイスが、パラメーターとして渡され、デリゲートの戻り値は、`IUnknown`アンマネージ オブジェクトのインターフェイスです。 両方のインターフェイスは型として渡される<xref:System.IntPtr>マーシャ リングを回避します。  
+  
+ すべての派生クラスの<xref:System.Delegate>と<xref:System.MulticastDelegate>コンス トラクターを持つと`Invoke`メソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

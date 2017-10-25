@@ -1,0 +1,59 @@
+<Type Name="DependencyPropertyHelper" FullName="System.Windows.DependencyPropertyHelper">
+  <TypeSignature Language="C#" Value="public static class DependencyPropertyHelper" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit DependencyPropertyHelper extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.DependencyPropertyHelper" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>依存関係プロパティの有効値のプロパティ システムのソースを報告する単一のヘルパー メソッド (<see cref="M:System.Windows.DependencyPropertyHelper.GetValueSource(System.Windows.DependencyObject,System.Windows.DependencyProperty)" />) を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]プロパティ システムは非常に複雑であり可能性のあるさまざまな確立されている値の決定優先順位に基づいて、入力に由来する値を合理化することに依存しています。 これらのソースは、コンパイル済みのマークアップから、実行時のコードから取得される可能性がか、実行時のユーザー設定からでも、役に立ちますどの依存関係プロパティの値のシステムに関係するオブジェクトが呼び出し時に取得する値を確立する正確に把握ため<xref:System.Windows.DependencyObject.GetValue%2A>そのプロパティの実行時にします。 値は、意図していたものよりも、別のソースから送信された場合、は、アプリケーションの一部の側面を調整する必要があります。 値のソースには、スタイル、テーマ、ローカルの値、アニメーション、バインディング、またはテーマやシステム リソースを使用したシステム設定など、実行時のベース値があります。 詳細については、「[依存関係プロパティ値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)」を参照してください。  
+  
+ 一般に、プロパティに、オブジェクトのプロパティの特定のインスタンスではなくレポートする別のメカニズムは、プロパティ メタデータです。 呼び出してプロパティのメタデータがやすく<xref:System.Windows.DependencyProperty.GetMetadata%2A>、返されたを調べること<xref:System.Windows.PropertyMetadata>(または返されるプロパティのメタデータにキャストできるいくつかの可能な派生クラスのいずれか)。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetValueSource">
+      <MemberSignature Language="C#" Value="public static System.Windows.ValueSource GetValueSource (System.Windows.DependencyObject dependencyObject, System.Windows.DependencyProperty dependencyProperty);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.ValueSource GetValueSource(class System.Windows.DependencyObject dependencyObject, class System.Windows.DependencyProperty dependencyProperty) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DependencyPropertyHelper.GetValueSource(System.Windows.DependencyObject,System.Windows.DependencyProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.ValueSource</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dependencyObject" Type="System.Windows.DependencyObject" />
+        <Parameter Name="dependencyProperty" Type="System.Windows.DependencyProperty" />
+      </Parameters>
+      <Docs>
+        <param name="dependencyObject">要素を含む、 <c>dependencyProperty</c>情報を報告します。</param>
+        <param name="dependencyProperty">情報を報告する依存関係プロパティの識別子。</param>
+        <summary>特定の指定した依存関係プロパティのさまざまなメタデータとプロパティ システム特性を報告する構造体を返す<see cref="T:System.Windows.DependencyObject" />です。</summary>
+        <returns>A<see cref="T:System.Windows.ValueSource" />固有の情報を報告する構造体。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティ値の決定の遅延の参加者がプロパティを操作することになるようなコンテキストでこのメソッドを呼び出す必要があります。 たとえば、バインドできない可能性がありますプロパティ上でアクティブな要素ツリー内のすべての参加要素が読み込まれると、非同期バインド伝達され、バインド ソース オブジェクトが接続されている場合を除き、します。 同様に、すべての必要なテーマの辞書を含むリソースは、使用できるようにする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

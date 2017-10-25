@@ -1,0 +1,95 @@
+<Type Name="NameValueFileSectionHandler" FullName="System.Configuration.NameValueFileSectionHandler">
+  <TypeSignature Language="C#" Value="public class NameValueFileSectionHandler : System.Configuration.IConfigurationSectionHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NameValueFileSectionHandler extends System.Object implements class System.Configuration.IConfigurationSectionHandler" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.NameValueFileSectionHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Configuration.IConfigurationSectionHandler</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>構成ファイルへのアクセスを提供します。 この型では、構成の .NET Framework インフラストラクチャをサポートしているし、コードから直接使用するものではありません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `file`の属性、`<appSettings>`セクションでは、カスタムのアプリケーション構成設定を含む外部ファイルへの相対パスを指定します。 ファイルで詳細情報が果たす、`<appSettings>`構成ファイル内のセクションです。 ファイルにアクセスを使用して、<xref:System.Configuration.NameValueFileSectionHandler>クラスです。 ファイルのルート要素は、セクションを参照することと一致する必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NameValueFileSectionHandler ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.NameValueFileSectionHandler.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Configuration.NameValueFileSectionHandler" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public object Create (object parent, object configContext, System.Xml.XmlNode section);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Create(object parent, object configContext, class System.Xml.XmlNode section) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.NameValueFileSectionHandler.Create(System.Object,System.Object,System.Xml.XmlNode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parent" Type="System.Object" />
+        <Parameter Name="configContext" Type="System.Object" />
+        <Parameter Name="section" Type="System.Xml.XmlNode" />
+      </Parameters>
+      <Docs>
+        <param name="parent">親オブジェクト。</param>
+        <param name="configContext">構成のコンテキスト オブジェクト。</param>
+        <param name="section">セクションの XML ノードです。</param>
+        <summary>新しい構成ハンドラーを作成し、指定したパラメーターに基づくセクション ハンドラー コレクションに追加します。</summary>
+        <returns>構成オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `parent`オブジェクト パラメーターは、対応する親構成セクションの構成設定として機能します。 `configContext`オブジェクト パラメーターは構成セクション ハンドラーが構成値を計算する対象の仮想パス。 通常このパラメーターは予約されており`null`です。 `section`パラメーターは、<xref:System.Xml.XmlNode>を処理するための構成情報を格納します。 `section`パラメーターは、構成セクションの XML コンテンツに直接アクセスを提供します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">指定されたファイル、<see langword="file" />の属性<paramref name="section" />存在しますが、読み込まれたにすることはできません。  
+  
+ \- または  
+  
+ <see langword="name" />の属性<paramref name="section" />で指定されたファイルのルート要素と一致しません、<see langword="file" />属性。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

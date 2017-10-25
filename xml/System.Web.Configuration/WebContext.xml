@@ -1,0 +1,216 @@
+<Type Name="WebContext" FullName="System.Web.Configuration.WebContext">
+  <TypeSignature Language="C#" Value="public sealed class WebContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WebContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.WebContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>現在の Web アプリケーションのパスのコンテキストを管理します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Web.Configuration.WebContext> クラスを使用する方法を示す例を次に示します。  
+  
+ [!code-csharp[System.Web.Configuration.WebContext#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.WebContext/CS/WebContext.cs#1)]
+ [!code-vb[System.Web.Configuration.WebContext#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.WebContext/VB/WebContext.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebContext (System.Web.Configuration.WebApplicationLevel pathLevel, string site, string applicationPath, string path, string locationSubPath, string appConfigPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Web.Configuration.WebApplicationLevel pathLevel, string site, string applicationPath, string path, string locationSubPath, string appConfigPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebContext.#ctor(System.Web.Configuration.WebApplicationLevel,System.String,System.String,System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="pathLevel" Type="System.Web.Configuration.WebApplicationLevel" />
+        <Parameter Name="site" Type="System.String" />
+        <Parameter Name="applicationPath" Type="System.String" />
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="locationSubPath" Type="System.String" />
+        <Parameter Name="appConfigPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="pathLevel"><see cref="T:System.Web.Configuration.WebApplicationLevel" /> オブジェクト。</param>
+        <param name="site">Web サイトの名前。</param>
+        <param name="applicationPath">現在の Web アプリケーションのルート レベルの仮想パス。</param>
+        <param name="path">現在の構成オブジェクトを表す、Web.config ファイルの仮想パス。</param>
+        <param name="locationSubPath">パス値、<see langword="location" />現在編集されている要素です。</param>
+        <param name="appConfigPath">現在の Web アプリケーションの構成パス。</param>
+        <summary><see cref="T:System.Web.Configuration.WebContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、このコンストラクターを使用する方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.WebContext>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.WebContext#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.WebContext/CS/WebContext.cs#2)]
+ [!code-vb[System.Web.Configuration.WebContext#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.WebContext/VB/WebContext.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationLevel">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.WebApplicationLevel ApplicationLevel { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Configuration.WebApplicationLevel ApplicationLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.WebContext.ApplicationLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.WebApplicationLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.Configuration.WebApplicationLevel" />を現在の Web アプリケーションのパスのレベルを表すオブジェクト。</summary>
+        <value><see cref="T:System.Web.Configuration.WebApplicationLevel" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Web.Configuration.WebContext.ApplicationLevel%2A> プロパティを使用する方法を次の例に示します。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.WebContext>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.WebContext#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.WebContext/CS/WebContext.cs#3)]
+ [!code-vb[System.Web.Configuration.WebContext#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.WebContext/VB/WebContext.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationPath">
+      <MemberSignature Language="C#" Value="public string ApplicationPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ApplicationPath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.WebContext.ApplicationPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の Web アプリケーションのアプリケーションのパスを取得します。</summary>
+        <value>現在の Web アプリケーションのアプリケーションのパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Web.Configuration.WebContext.ApplicationPath%2A> プロパティを使用する方法を次の例に示します。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.WebContext>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.WebContext#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.WebContext/CS/WebContext.cs#4)]
+ [!code-vb[System.Web.Configuration.WebContext#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.WebContext/VB/WebContext.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocationSubPath">
+      <MemberSignature Language="C#" Value="public string LocationSubPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocationSubPath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.WebContext.LocationSubPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web アプリケーションの場所のサブパスを取得します。</summary>
+        <value>現在の Web アプリケーションの場所のサブパスです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public string Path { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Path" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.WebContext.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web アプリケーションの現在の仮想パスを取得します。</summary>
+        <value>Web アプリケーションの現在の仮想パス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Web.Configuration.WebContext.Path%2A> プロパティを使用する方法を次の例に示します。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.WebContext>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.WebContext#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.WebContext/CS/WebContext.cs#6)]
+ [!code-vb[System.Web.Configuration.WebContext#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.WebContext/VB/WebContext.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Site">
+      <MemberSignature Language="C#" Value="public string Site { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Site" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.WebContext.Site" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の Web アプリケーションの名前を取得します。</summary>
+        <value>現在の Web アプリケーションの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Web.Configuration.WebContext.Site%2A> プロパティを使用する方法を次の例に示します。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.WebContext>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.WebContext#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.WebContext/CS/WebContext.cs#7)]
+ [!code-vb[System.Web.Configuration.WebContext#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.WebContext/VB/WebContext.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebContext.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アプリケーションの構成パスを表す文字列を返します。</summary>
+        <returns>アプリケーションの構成パス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,139 @@
+<Type Name="CheckBox+CheckBoxAccessibleObject" FullName="System.Windows.Forms.CheckBox+CheckBoxAccessibleObject">
+  <TypeSignature Language="C#" Value="public class CheckBox.CheckBoxAccessibleObject : System.Windows.Forms.ButtonBase.ButtonBaseAccessibleObject" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi beforefieldinit CheckBox/CheckBoxAccessibleObject extends System.Windows.Forms.ButtonBase/ButtonBaseAccessibleObject" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.CheckBox.CheckBoxAccessibleObject" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.ButtonBase+ButtonBaseAccessibleObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ユーザー補助クライアント アプリケーションに <see cref="T:System.Windows.Forms.CheckBox" /> コントロールの情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Windows フォームでは、ユーザー補助機能が組み込まれているし、ユーザー補助クライアント アプリケーションで使用できるように、アプリケーションに関する情報を提供します。 ユーザー補助クライアント アプリケーションの例は、ツールとレビュー担当者のユーティリティを画面には、音声入力ユーティリティ、オンスクリーン キーボード、代替入力デバイス、およびキーボード拡張ユーティリティ。 <xref:System.Windows.Forms.CheckBox.CheckBoxAccessibleObject>クラスから継承、<xref:System.Windows.Forms.ButtonBase.ButtonBaseAccessibleObject>に関する情報を提供するクラス、<xref:System.Windows.Forms.CheckBox>ユーザー補助クライアント アプリケーションに制御します。  
+  
+ インスタンスがあるコントロールの名前や説明、ユーザー補助クライアント アプリケーションなどのカスタム情報を提供する場合。 この情報を提供する 2 つの方法はあります。 既存のコントロールの限られたユーザー補助情報を提供するには、設定コントロールの<xref:System.Windows.Forms.Control.AccessibleName%2A>、 <xref:System.Windows.Forms.Control.AccessibleDescription%2A>、 <xref:System.Windows.Forms.Control.AccessibleDefaultActionDescription%2A>、および<xref:System.Windows.Forms.Control.AccessibleRole%2A>プロパティの値は、ユーザー補助クライアント アプリケーションに報告されます。  
+  
+ ユーザー補助機能については、コントロールに含まれているを必要とする場合から派生した独自のクラスを記述することができます、<xref:System.Windows.Forms.AccessibleObject>または<xref:System.Windows.Forms.Control.ControlAccessibleObject>クラスです。 たとえば、共通のコントロールから派生していない、独自のコントロールを作成している場合、またはコントロール内でヒット テストなどの操作が必要な作成する必要があります、<xref:System.Windows.Forms.Control.ControlAccessibleObject>呼び出すことによって、コントロールの<xref:System.Windows.Forms.Control.CreateAccessibilityInstance%2A>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CheckBoxAccessibleObject (System.Windows.Forms.Control owner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.Control owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CheckBox.CheckBoxAccessibleObject.#ctor(System.Windows.Forms.Control)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Forms.Control" />
+      </Parameters>
+      <Docs>
+        <param name="owner"><see cref="T:System.Windows.Forms.CheckBox.CheckBoxAccessibleObject" /> を所有している <see cref="T:System.Windows.Forms.CheckBox" />。</param>
+        <summary><see cref="T:System.Windows.Forms.CheckBox.CheckBoxAccessibleObject" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultAction">
+      <MemberSignature Language="C#" Value="public override string DefaultAction { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultAction" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.CheckBox.CheckBoxAccessibleObject.DefaultAction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定のアクションを説明する文字列を取得、<see cref="T:System.Windows.Forms.CheckBox" />コントロール。</summary>
+        <value>既定のアクションの説明、<see cref="T:System.Windows.Forms.CheckBox" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チェック ボックスがオンが「をオフにします」の既定のアクションと「オン」の値 チェック ボックスをオフに「確認」の既定のアクションと「オフ」の値  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="DoDefaultAction">
+      <MemberSignature Language="C#" Value="public override void DoDefaultAction ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void DoDefaultAction() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CheckBox.CheckBoxAccessibleObject.DoDefaultAction" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ユーザー補助オブジェクトに関連付けられている既定のアクションを実行します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す即時呼び出し元がします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Role">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.AccessibleRole Role { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.AccessibleRole Role" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.CheckBox.CheckBoxAccessibleObject.Role" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー補助オブジェクトのロールを取得します。</summary>
+        <value><see cref="F:System.Windows.Forms.AccessibleRole.CheckButton" /> 値。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="State">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.AccessibleStates State { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.AccessibleStates State" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.CheckBox.CheckBoxAccessibleObject.State" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>状態を取得、<see cref="T:System.Windows.Forms.CheckBox" />コントロール。</summary>
+        <value><see cref="T:System.Windows.Forms.AccessibleStates" /> 値のいずれか。 場合、<see cref="P:System.Windows.Forms.CheckBox.CheckState" />プロパティに設定されている<see cref="F:System.Windows.Forms.CheckState.Checked" />、このプロパティを返します<see cref="F:System.Windows.Forms.AccessibleStates.Checked" />です。 場合<see cref="P:System.Windows.Forms.CheckBox.CheckState" />に設定されている<see cref="F:System.Windows.Forms.CheckState.Indeterminate" />、このプロパティを返します<see cref="F:System.Windows.Forms.AccessibleStates.Indeterminate" />です。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

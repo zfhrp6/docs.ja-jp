@@ -1,0 +1,100 @@
+<Type Name="InstanceContextMode" FullName="System.ServiceModel.InstanceContextMode">
+  <TypeSignature Language="C#" Value="public enum InstanceContextMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed InstanceContextMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.InstanceContextMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>入力メッセージに含まれている呼び出しを処理するために使用できるサービス インスタンスの数を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.InstanceContext?displayProperty=nameWithType> は、チャネルとユーザー定義サービス オブジェクトとの関連付けを管理します。 <xref:System.ServiceModel.InstanceContextMode> プロパティを持つ <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> 列挙型を使用して、<xref:System.ServiceModel.InstanceContext> オブジェクトの有効期間を指定します。 [!INCLUDE[indigo1](~/includes/indigo1-md.md)] では、呼び出しやセッションごとに新しい <xref:System.ServiceModel.InstanceContext> オブジェクトを作成できます。または、<xref:System.ServiceModel.InstanceContext> オブジェクトを単一のサービス オブジェクトにバインドすることを指定できます。 実際の例では、次を参照してください。、[インスタンス化](~/docs/framework/wcf/samples/instancing.md)です。  
+  
+ 1 つの値を指定する 1 つ<xref:System.ServiceModel.InstanceContextMode.Single>オブジェクトは、サービスの有効期間にわたって使用する必要があります。  
+  
+> [!NOTE]
+>  場合、<xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A>結果サービスことができますのみ処理することが 1 つのメッセージ、時に設定することもしない限り、1 つに値が設定されている、<xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A>値を<xref:System.ServiceModel.ConcurrencyMode>です。  
+  
+   
+  
+## Examples  
+ サービス クラスに対して <xref:System.ServiceModel.InstanceContextMode> を設定する方法を次のコード例に示します。  
+  
+ [!code-csharp[S_ReliableSession#1](~/samples/snippets/csharp/VS_Snippets_CFX/s_reliablesession/cs/service.cs#1)]
+ [!code-vb[S_ReliableSession#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_reliablesession/vb/service.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="PerCall">
+      <MemberSignature Language="C#" Value="PerCall" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.InstanceContextMode PerCall = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.InstanceContextMode.PerCall" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.InstanceContextMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>それぞれの呼び出しの前に新しい <see cref="T:System.ServiceModel.InstanceContext" /> オブジェクトを作成し、その後、そのオブジェクトをリサイクルします。 チャネルがセッションを作成しない場合、この値は、<see cref="F:System.ServiceModel.InstanceContextMode.PerCall" /> であるかのように動作します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PerSession">
+      <MemberSignature Language="C#" Value="PerSession" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.InstanceContextMode PerSession = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.InstanceContextMode.PerSession" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.InstanceContextMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セッションごとに新しい <see cref="T:System.ServiceModel.InstanceContext" /> オブジェクトを作成します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Single">
+      <MemberSignature Language="C#" Value="Single" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.InstanceContextMode Single = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.InstanceContextMode.Single" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.InstanceContextMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべての着信呼び出しに対して 1 つの <see cref="T:System.ServiceModel.InstanceContext" /> オブジェクトだけを使用し、その後、そのオブジェクトをリサイクルしません。 サービス オブジェクトが存在しない場合は、1 つ作成されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  シングルトン有効期間動作 (ホスト アプリケーションを呼び出す場合など、<xref:System.ServiceModel.ServiceHost.%23ctor%2A>コンス トラクター サービスとして使用するオブジェクトを渡す)、サービス クラスを設定する必要があります<xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A>を単一のサービス ホストが開かれたときに例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,56 @@
+<Type Name="ServiceCreatorCallback" FullName="System.ComponentModel.Design.ServiceCreatorCallback">
+  <TypeSignature Language="C#" Value="public delegate object ServiceCreatorCallback(IServiceContainer container, Type serviceType);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ServiceCreatorCallback extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.ServiceCreatorCallback" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Parameters>
+    <Parameter Name="container" Type="System.ComponentModel.Design.IServiceContainer" />
+    <Parameter Name="serviceType" Type="System.Type" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Object</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="container">サービスの作成を要求したサービス コンテナーです。</param>
+    <param name="serviceType">作成するサービスの型。</param>
+    <summary>要求時に、サービスのインスタンスを作成できるコールバック機構を提供します。</summary>
+    <returns>指定されたサービス<paramref name="serviceType" />、または<see langword="null" />場合は、サービスを作成できませんでした。</returns>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.ServiceCreatorCallback>デザイナーを読み込むときにすぐに作成されているサービスではなく、必要なときに作成したことが要求するサービスを公開するためのメカニズムを提供します。 場合は、サービスが必須ではありませんしは使用できません、コールバック関数を使用することができます。 使用して、サービスが発行される、<xref:System.ComponentModel.Design.ServiceCreatorCallback>に要求および作成されない場合は、その他の多くのリソースを使用しません。 サービスを発行するには、コールバック関数を使用するには、渡す、<xref:System.ComponentModel.Design.ServiceCreatorCallback>を<xref:System.ComponentModel.Design.IServiceContainer.AddService%2A>のメソッド、<xref:System.ComponentModel.Design.IServiceContainer>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、コールバック関数を使用してサービスを発行する方法を示します。  
+  
+ [!code-cpp[Classic ServiceCreatorCallback Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ServiceCreatorCallback Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ServiceCreatorCallback Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ServiceCreatorCallback Example/CS/source.cs#1)]
+ [!code-vb[Classic ServiceCreatorCallback Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ServiceCreatorCallback Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

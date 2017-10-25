@@ -1,0 +1,1003 @@
+<Type Name="KeyedCollection&lt;TKey,TItem&gt;" FullName="System.Collections.ObjectModel.KeyedCollection&lt;TKey,TItem&gt;">
+  <TypeSignature Language="C#" Value="public abstract class KeyedCollection&lt;TKey,TItem&gt; : System.Collections.ObjectModel.Collection&lt;TItem&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit KeyedCollection`2&lt;TKey, TItem&gt; extends System.Collections.ObjectModel.Collection`1&lt;!TItem&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.ObjectModel.KeyedCollection`2" />
+  <AssemblyInfo>
+    <AssemblyName>System.ObjectModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TKey" />
+    <TypeParameter Name="TItem" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Collections.ObjectModel.Collection&lt;TItem&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="T">TItem</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("Count = {Count}")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerTypeProxy(typeof(System.Collections.Generic.Mscorlib_KeyedCollectionDebugView`2))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <typeparam name="TKey">コレクション内のキーの型。</typeparam>
+    <typeparam name="TItem">コレクション内の項目の型。</typeparam>
+    <summary>キーが値に埋め込まれているコレクションの抽象基本クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.ObjectModel.KeyedCollection%602>両方 o (1) が検索インデックスが作成され、o (1) に匹敵する検索キー指定されたクラスが用意されています。 型が抽象型、または抽象基本クラスは、それぞれの構築ジェネリック型のための抽象型は、の無限がより正確に設定します。 使用する<xref:System.Collections.ObjectModel.KeyedCollection%602>、適切な構築された型から、そのコレクション型を派生します。  
+  
+ <xref:System.Collections.ObjectModel.KeyedCollection%602>クラスは、基にしたコレクションの間でのハイブリッド、<xref:System.Collections.Generic.IList%601>ジェネリック インターフェイス型とコレクションに基づいて、<xref:System.Collections.Generic.IDictionary%602>ジェネリック インターフェイス。 基づくコレクションと同様に、<xref:System.Collections.Generic.IList%601>ジェネリック インターフェイスは、<xref:System.Collections.ObjectModel.KeyedCollection%602>項目のインデックス付きのリストです。 基づくコレクションと同様に、<xref:System.Collections.Generic.IDictionary%602>ジェネリック インターフェイスは、<xref:System.Collections.ObjectModel.KeyedCollection%602>の各要素に関連付けられているキーが含まれています。  
+  
+ ディクショナリの要素とは異なり<xref:System.Collections.ObjectModel.KeyedCollection%602>キー/値ペアではありません; 代わりに、要素全体は値であり、キーが値に埋め込まれました。  派生したコレクションの要素など、 `KeyedCollection\<String,String>` (`KeyedCollection(Of String, String)` Visual Basic で)"John doe さん Jr"があります。 この値は"John doe さん Jr" キーが"Doe"です。整数キーを含む従業員レコードのコレクションはから派生するでした`KeyedCollection\<int,Employee>`です。 抽象<xref:System.Collections.ObjectModel.KeyedCollection%602.GetKeyForItem%2A>メソッドは、要素からキーを抽出します。  
+  
+ 既定では、<xref:System.Collections.ObjectModel.KeyedCollection%602>で入手できる検索ディクショナリが含まれています、<xref:System.Collections.ObjectModel.KeyedCollection%602.Dictionary%2A>プロパティです。  アイテムを追加するときに、<xref:System.Collections.ObjectModel.KeyedCollection%602>項目のキーが 1 回に抽出され、高速な検索ルックアップ辞書に保存します。 作成するときに、ディクショナリの作成のしきい値を指定することによってこの動作がオーバーライドされる、<xref:System.Collections.ObjectModel.KeyedCollection%602>です。 検索ディクショナリの要素の数は、そのしきい値を超えています。 最初に作成されます。  しきい値として – 1 を指定する場合、検索ディクショナリが作成されません。  
+  
+> [!NOTE]
+>  場合、コレクション内のすべてのアイテムへの参照がある内部検索ディクショナリを使用すると`TItem`、参照型では、場合、コレクション内のすべての項目のコピーまたは`TItem`は値型です。 したがって、検索ディクショナリを使用できない可能性があります適切な場合`TItem`は値型です。  
+  
+ 使用してインデックスまたはキーによって項目にアクセスすることができます、<xref:System.Collections.ObjectModel.KeyedCollection%602.Item%2A>プロパティです。 、キーのない項目を追加することができますが、これらの項目は、インデックスによってのみアクセスされることができます。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初の例から派生するために必要最小限のコード<xref:System.Collections.ObjectModel.KeyedCollection%602>、継承されたメソッドの多くを示しています。 2 番目の例は、の保護されたメソッドをオーバーライドする方法を示しています。<xref:System.Collections.ObjectModel.KeyedCollection%602>カスタム動作を提供します。  
+  
+ **例 1**  
+  
+ このコード例はからコレクション クラスを派生させるために必要な最小限のコードは<xref:System.Collections.ObjectModel.KeyedCollection%602>: オーバーライドする、<xref:System.Collections.ObjectModel.KeyedCollection%602.GetKeyForItem%2A>基底クラスのコンス トラクターにデリゲートされるメソッドおよびパブリック コンス トラクターを提供します。 コード例も示して多くのプロパティおよびメソッドから継承<xref:System.Collections.ObjectModel.KeyedCollection%602>と<xref:System.Collections.ObjectModel.Collection%601>クラスです。  
+  
+ `SimpleOrder`クラスは、非常に単純な要求 ボックスの一覧を含む`OrderItem`注文の行アイテムを表すオブジェクト。 キー`OrderItem`は変更できないから派生するクラスの重要な考慮事項<xref:System.Collections.ObjectModel.KeyedCollection%602>です。 変更可能なキーを使用するコード例は、次を参照してください。<xref:System.Collections.ObjectModel.KeyedCollection%602.ChangeItemKey%2A>です。  
+  
+ [!code-cpp[KeyedCollection#1](~/samples/snippets/cpp/VS_Snippets_CLR/KeyedCollection/cpp/source.cpp#1)]
+ [!code-csharp[KeyedCollection#1](~/samples/snippets/csharp/VS_Snippets_CLR/KeyedCollection/cs/source.cs#1)]
+ [!code-vb[KeyedCollection#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/KeyedCollection/VB/source.vb#1)]  
+  
+ **例 2**  
+  
+ 次のコード例は、保護されたをオーバーライドする方法を示しています<xref:System.Collections.ObjectModel.KeyedCollection%602.InsertItem%2A>、 <xref:System.Collections.ObjectModel.KeyedCollection%602.RemoveItem%2A>、 <xref:System.Collections.ObjectModel.KeyedCollection%602.ClearItems%2A>、および<xref:System.Collections.ObjectModel.KeyedCollection%602.SetItem%2A>のカスタム動作を提供する、メソッド、 <xref:System.Collections.ObjectModel.Collection%601.Add%2A>、 <xref:System.Collections.ObjectModel.KeyedCollection%602.Remove%2A>、および<xref:System.Collections.ObjectModel.Collection%601.Clear%2A>メソッド、および既定の設定<xref:System.Collections.ObjectModel.Collection%601.Item%2A>プロパティ (c# のインデクサー)。 この例で提供されるカスタムの動作は、という名前の通知イベント`Changed`、これらのオーバーライドされたメソッドの最後にこれが発生します。  
+  
+ コード例を作成、`SimpleOrder`から派生するクラス<xref:System.Collections.ObjectModel.KeyedCollection%602>単純な注文形式を表します。 注文フォームを含む`OrderItem`注文のアイテムを表すオブジェクトします。 コード例でも作成、`SimpleOrderChangedEventArgs`イベントの情報、および変更の種類を識別する列挙体を格納するクラス。  
+  
+ コード例では、カスタム動作を示してのプロパティと、派生クラスのメソッドを呼び出すことによって、`Main`のメソッド、`Demo`クラスです。  
+  
+ このコード例では、変更できないキーを持つオブジェクトを使用します。 変更可能なキーを使用するコード例は、次を参照してください。<xref:System.Collections.ObjectModel.KeyedCollection%602.ChangeItemKey%2A>です。  
+  
+ [!code-cpp[KeyedCollection2#1](~/samples/snippets/cpp/VS_Snippets_CLR/KeyedCollection2/cpp/source.cpp#1)]
+ [!code-csharp[KeyedCollection2#1](~/samples/snippets/csharp/VS_Snippets_CLR/KeyedCollection2/cs/source.cs#1)]
+ [!code-vb[KeyedCollection2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/KeyedCollection2/vb/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected KeyedCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.ObjectModel.KeyedCollection`2.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.ObjectModel.KeyedCollection`2" />を既定の等値比較子を使用するクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Collections.ObjectModel.KeyedCollection%602>これで作成されたコンス トラクターから取得した、キーの種類の既定のジェネリック等値比較子を使用して<xref:System.Collections.Generic.EqualityComparer%601.Default%2A?displayProperty=nameWithType>です。 異なるジェネリック等値比較子を指定するには、使用、<xref:System.Collections.ObjectModel.KeyedCollection%602.%23ctor%28System.Collections.Generic.IEqualityComparer%7B%600%7D%29>コンス トラクターまたは<xref:System.Collections.ObjectModel.KeyedCollection%602.%23ctor%28System.Collections.Generic.IEqualityComparer%7B%600%7D%2CSystem.Int32%29>コンス トラクターです。  
+  
+ 既定では、<xref:System.Collections.ObjectModel.KeyedCollection%602>最初の項目が追加されたときに作成される検索ディクショナリが含まれています。 アイテムを追加するときに、<xref:System.Collections.ObjectModel.KeyedCollection%602>項目のキーが 1 回に抽出され、高速な検索ルックアップ辞書に保存します。 使用してこの動作をオーバーライドすることができます、<xref:System.Collections.ObjectModel.KeyedCollection%602.%23ctor%28System.Collections.Generic.IEqualityComparer%7B%600%7D%2CSystem.Int32%29>コンス トラクターとディクショナリの作成のしきい値を指定します。  
+  
+> [!NOTE]
+>  <xref:System.Collections.ObjectModel.KeyedCollection%602>クラスは抽象クラスです (`MustInherit` Visual Basic で)、それを使用するために、そこから派生する必要があります。 派生型のコンス トラクターで呼び出して、適切な<xref:System.Collections.ObjectModel.KeyedCollection%602>コンス トラクターです。 等値比較演算子またはコンス トラクター内のディクショナリ作成のしきい値などの機能を公開する必要はありません。  
+  
+ このコンス トラクターは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ このコード例はからコレクション クラスを派生させるために必要な最小限のコードは<xref:System.Collections.ObjectModel.KeyedCollection%602>: オーバーライドする、<xref:System.Collections.ObjectModel.KeyedCollection%602.GetKeyForItem%2A>基底クラスのコンス トラクターにデリゲートされるメソッドおよびパブリック コンス トラクターを提供します。 コード例も示して多くのプロパティおよびメソッドから継承<xref:System.Collections.ObjectModel.KeyedCollection%602>と<xref:System.Collections.ObjectModel.Collection%601>クラスです。  
+  
+ `SimpleOrder`クラスは、非常に単純な要求 ボックスの一覧を含む`OrderItem`注文の行アイテムを表すオブジェクト。 キー`OrderItem`は変更できないから派生するクラスの重要な考慮事項<xref:System.Collections.ObjectModel.KeyedCollection%602>です。 変更可能なキーを使用するコード例は、次を参照してください。<xref:System.Collections.ObjectModel.KeyedCollection%602.ChangeItemKey%2A>です。  
+  
+ [!code-cpp[KeyedCollection#1](~/samples/snippets/cpp/VS_Snippets_CLR/KeyedCollection/cpp/source.cpp#1)]
+ [!code-csharp[KeyedCollection#1](~/samples/snippets/csharp/VS_Snippets_CLR/KeyedCollection/cs/source.cs#1)]
+ [!code-vb[KeyedCollection#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/KeyedCollection/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected KeyedCollection (System.Collections.Generic.IEqualityComparer&lt;TKey&gt; comparer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEqualityComparer`1&lt;!TKey&gt; comparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.ObjectModel.KeyedCollection`2.#ctor(System.Collections.Generic.IEqualityComparer{`0})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="comparer" Type="System.Collections.Generic.IEqualityComparer&lt;TKey&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="comparer">実装、<see cref="T:System.Collections.Generic.IEqualityComparer`1" />キーの比較時に使用するジェネリック インターフェイスまたは<see langword="null" />から取得した、キーの種類の既定の等値比較子を使用する<see cref="P:System.Collections.Generic.EqualityComparer`1.Default" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.ObjectModel.KeyedCollection`2" />指定された等値比較子を使用するクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.Collections.ObjectModel.KeyedCollection%602>最初の項目が追加されたときに作成される検索ディクショナリが含まれています。 アイテムを追加するときに、<xref:System.Collections.ObjectModel.KeyedCollection%602>項目のキーが 1 回に抽出され、高速な検索ルックアップ辞書に保存します。 使用してこの動作をオーバーライドすることができます、<xref:System.Collections.ObjectModel.KeyedCollection%602.%23ctor%28System.Collections.Generic.IEqualityComparer%7B%600%7D%2CSystem.Int32%29>コンス トラクターとディクショナリの作成のしきい値を指定します。  
+  
+> [!NOTE]
+>  <xref:System.Collections.ObjectModel.KeyedCollection%602>クラスは抽象クラスです (`MustInherit` Visual Basic で)、それを使用するために、そこから派生する必要があります。 派生型のコンス トラクターで呼び出して、適切な<xref:System.Collections.ObjectModel.KeyedCollection%602>コンス トラクターです。 等値比較演算子またはコンス トラクター内のディクショナリ作成のしきい値などの機能を公開する必要はありません。  
+  
+ このコンス トラクターは、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected KeyedCollection (System.Collections.Generic.IEqualityComparer&lt;TKey&gt; comparer, int dictionaryCreationThreshold);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEqualityComparer`1&lt;!TKey&gt; comparer, int32 dictionaryCreationThreshold) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.ObjectModel.KeyedCollection`2.#ctor(System.Collections.Generic.IEqualityComparer{`0},System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="comparer" Type="System.Collections.Generic.IEqualityComparer&lt;TKey&gt;" />
+        <Parameter Name="dictionaryCreationThreshold" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="comparer">実装、<see cref="T:System.Collections.Generic.IEqualityComparer`1" />キーの比較時に使用するジェネリック インターフェイスまたは<see langword="null" />から取得した、キーの種類の既定の等値比較子を使用する<see cref="P:System.Collections.Generic.EqualityComparer`1.Default" />です。</param>
+        <param name="dictionaryCreationThreshold">検索ディクショナリを作成せずにコレクションが保有できる要素数 (0 を指定すると最初の項目の追加時に検索ディクショナリが作成される)。検索ディクショナリを作成しない場合は -1。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.ObjectModel.KeyedCollection`2" />クラスを指定された等値比較子を使用し、指定されたしきい値を超えたときに検索ディクショナリを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.Collections.ObjectModel.KeyedCollection%602>最初の項目が追加されたときに作成される検索ディクショナリが含まれています。 アイテムを追加するときに、<xref:System.Collections.ObjectModel.KeyedCollection%602>項目のキーが 1 回に抽出され、高速な検索ルックアップ辞書に保存します。 このコンス トラクターでは、その動作をオーバーライドすることができます。 最初の要素が追加されたときに、ディクショナリを作成する場合は 0、2 番目の要素が追加されると、ディクショナリを作成する場合は 1 を指定します。 しきい値として – 1 を指定する場合、検索ディクショナリが作成されません。  
+  
+ 非常に小規模なコレクション検索ディクショナリによって指定された検索の速度の向上がありますすべきディクショナリで必要な追加のメモリ。 しきい値を設定するには、トレードオフするタイミングを決定することができます。  
+  
+> [!NOTE]
+>  <xref:System.Collections.ObjectModel.KeyedCollection%602>クラスは抽象クラスです (`MustInherit` Visual Basic で)、それを使用するために、そこから派生する必要があります。 派生型のコンス トラクターで呼び出して、適切な<xref:System.Collections.ObjectModel.KeyedCollection%602>コンス トラクターです。 等値比較演算子またはコンス トラクター内のディクショナリ作成のしきい値などの機能を公開する必要はありません。  
+  
+ このコンス トラクターは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、保護されたをオーバーライドする方法を示しています<xref:System.Collections.ObjectModel.KeyedCollection%602.InsertItem%2A>、 <xref:System.Collections.ObjectModel.KeyedCollection%602.RemoveItem%2A>、 <xref:System.Collections.ObjectModel.KeyedCollection%602.ClearItems%2A>、および<xref:System.Collections.ObjectModel.KeyedCollection%602.SetItem%2A>のカスタム動作を提供する、メソッド、 <xref:System.Collections.ObjectModel.Collection%601.Add%2A>、 <xref:System.Collections.ObjectModel.KeyedCollection%602.Remove%2A>、および<xref:System.Collections.ObjectModel.Collection%601.Clear%2A>メソッド、および既定の設定<xref:System.Collections.ObjectModel.Collection%601.Item%2A>プロパティ (c# のインデクサー)。 この例で提供されるカスタムの動作は、という名前の通知イベント`Changed`、これらのオーバーライドされたメソッドの最後にこれが発生します。  
+  
+ コード例では、 <xref:System.Collections.ObjectModel.KeyedCollection%602.%23ctor%28System.Collections.Generic.IEqualityComparer%7B%600%7D%2CSystem.Int32%29> 0 の場合のしきい値を持つコンス トラクターは内部辞書で最初に、オブジェクトが作成されるように、コレクションに追加されます。  
+  
+ コード例を作成、`SimpleOrder`から派生するクラス<xref:System.Collections.ObjectModel.KeyedCollection%602>単純な注文形式を表します。 注文フォームを含む`OrderItem`注文のアイテムを表すオブジェクトします。 コード例でも作成、`SimpleOrderChangedEventArgs`イベントの情報、および変更の種類を識別する列挙体を格納するクラス。  
+  
+ コード例では、カスタム動作を示してのプロパティと、派生クラスのメソッドを呼び出すことによって、`Main`のメソッド、`Demo`クラスです。  
+  
+ このコード例では、変更できないキーを持つオブジェクトを使用します。 変更可能なキーを使用するコード例は、次を参照してください。<xref:System.Collections.ObjectModel.KeyedCollection%602.ChangeItemKey%2A>です。  
+  
+ [!code-cpp[KeyedCollection2#1](~/samples/snippets/cpp/VS_Snippets_CLR/KeyedCollection2/cpp/source.cpp#1)]
+ [!code-csharp[KeyedCollection2#1](~/samples/snippets/csharp/VS_Snippets_CLR/KeyedCollection2/cs/source.cs#1)]
+ [!code-vb[KeyedCollection2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/KeyedCollection2/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="dictionaryCreationThreshold" />– 1 より小さい。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangeItemKey">
+      <MemberSignature Language="C#" Value="protected void ChangeItemKey (TItem item, TKey newKey);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void ChangeItemKey(!TItem item, !TKey newKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.ObjectModel.KeyedCollection`2.ChangeItemKey(`1,`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="TItem" />
+        <Parameter Name="newKey" Type="TKey" />
+      </Parameters>
+      <Docs>
+        <param name="item">変更するキーの要素。</param>
+        <param name="newKey">新しいキー<c>項目</c>です。</param>
+        <summary>検索ディクショナリの指定した要素に関連付けられたキーを変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドに埋め込まれたキーを変更していない`item`; 検索ディクショナリに保存されているキーを置き換えるだけです。  したがって場合、`newKey`に埋め込まれているキーとは異なる`item`、アクセスすることはできません`item`によって返されたキーを使用して<xref:System.Collections.ObjectModel.KeyedCollection%602.GetKeyForItem%2A>です。  
+  
+ このメソッドは、何も行わない場合、<xref:System.Collections.ObjectModel.KeyedCollection%602>検索ディクショナリではありません。  
+  
+ 内のすべてのキー、<xref:System.Collections.ObjectModel.KeyedCollection%602>一意である必要があります。 キーには`null`します。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+## <a name="notes-for-implementers"></a>実装についてのメモ  
+ アイテムに埋め込まれているキーを変更する前に検索ディクショナリのキーを更新するには、このメソッドを呼び出す必要があります。 ディクショナリの作成のしきい値が-1 の場合は、このメソッドを呼び出す必要はありません。  
+  
+ 公開しない、<xref:System.Collections.ObjectModel.KeyedCollection%602.ChangeItemKey%2A>メソッドを派生クラスのパブリック メソッドとして。 このメソッドの不正使用では、項目のキーを持つ同期検索ディクショナリを格納します。 たとえば、キーを設定`null`検索ディクショナリをアイテムに対して複数のキーを追加し、別の値に設定するとします。 変更可能な項目のキーを許可するには、内部的には、このメソッドを公開します。 検索ディクショナリのキーを変更するこのメソッドを使用する項目のキーが変更されたときにします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、保護されたをオーバーライドする方法を示しています<xref:System.Collections.ObjectModel.KeyedCollection%602.ChangeItemKey%2A>変更可能なキー、および保護されたをオーバーライドする方法をサポートするためにメソッド<xref:System.Collections.ObjectModel.KeyedCollection%602.InsertItem%2A>、 <xref:System.Collections.ObjectModel.KeyedCollection%602.RemoveItem%2A>、 <xref:System.Collections.ObjectModel.KeyedCollection%602.ClearItems%2A>、および<xref:System.Collections.ObjectModel.KeyedCollection%602.SetItem%2A>キーの整合性を維持するためにメソッドおよびコレクションです。  
+  
+ コード例を作成、`MutableKeys`から派生するコレクション<xref:System.Collections.ObjectModel.KeyedCollection%602>、および`MutableKey`クラスです。 `MutableKey`クラスには、設定可能な`Key`プロパティです。 新しいキーがプロパティに割り当てられている場合、プロパティ set アクセス操作子、 `internal` (`Friend` Visual Basic で)`ChangeKey`を既存のキーを持つ新しいキーが競合するかどうかをテストする、コレクションのメソッドです。 場合は、例外がスローされ、プロパティの値は変更されません。  
+  
+ 間の接続を維持するために、`MutableKey`オブジェクトおよび`MutableKeys`コレクションとオブジェクトが 2 つのコレクションに挿入されることを防ぐため、`MutableKey`クラスには、 `internal` (`Friend` Visual Basic で) `Collection`フィールドです。 このフィールドが追加およびなど、コレクションから項目を削除するカスタム動作を提供する保護された方法によって維持される、<xref:System.Collections.ObjectModel.KeyedCollection%602.InsertItem%2A>メソッドです。 フィールドは、項目がコレクションに追加され、項目が削除されたときにクリアに設定されています。  
+  
+ [!code-csharp[KeyedCollectionMutable#1](~/samples/snippets/csharp/VS_Snippets_CLR/KeyedCollectionMutable/cs/source.cs#1)]
+ [!code-vb[KeyedCollectionMutable#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/KeyedCollectionMutable/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="item" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="key" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="item" /> が見つかりません。  
+  
+ または  
+  
+ <paramref name="key" />既に存在する、<see cref="T:System.Collections.ObjectModel.KeyedCollection`2" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearItems">
+      <MemberSignature Language="C#" Value="protected override void ClearItems ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ClearItems() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.ObjectModel.KeyedCollection`2.ClearItems" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Collections.ObjectModel.KeyedCollection`2" /> からすべての要素を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 検索ディクショナリがある場合、このメソッドはそれをクリアが削除されません。  
+  
+ かどうかの要素の数がしきい値を超えました、ディクショナリの作成と<xref:System.Collections.ObjectModel.KeyedCollection%602>は検索ディクショナリを使用して、引き続き場合でも、要素の数がしきい値より下にもう一度検索ディクショナリを使用します。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.ObjectModel.Collection%601.Count%2A>します。  
+  
+## <a name="notes-for-implementers"></a>実装についてのメモ  
+ 動作をカスタマイズするには、このメソッドをオーバーライドして、<xref:System.Collections.ObjectModel.Collection%601.Clear%2A>から継承されたメソッド、<xref:System.Collections.ObjectModel.Collection%601>ジェネリック クラスです。  
+  
+ このメソッドを基になるコレクションをクリアし、検索ディクショナリをオフにするの基本クラス実装を呼び出します。  
+  
+   
+  
+## Examples  
+ このセクションにはオーバーライドを示す 2 つのコード例が含まれています、<xref:System.Collections.ObjectModel.KeyedCollection%602.ClearItems%2A>コレクションからすべてのオブジェクトをクリアするためのカスタム動作を提供するメソッド。 最初の例は、カスタムの通知イベントを追加し、2 つ目は、変更可能なキーを持つオブジェクトのコレクションのサポートを提供します。  
+  
+ 例 1  
+  
+ 次のコード例は、保護されたをオーバーライドする方法を示しています<xref:System.Collections.ObjectModel.KeyedCollection%602.InsertItem%2A>、 <xref:System.Collections.ObjectModel.KeyedCollection%602.RemoveItem%2A>、 <xref:System.Collections.ObjectModel.KeyedCollection%602.ClearItems%2A>、および<xref:System.Collections.ObjectModel.KeyedCollection%602.SetItem%2A>のカスタム動作を提供する、メソッド、 <xref:System.Collections.ObjectModel.Collection%601.Add%2A>、 <xref:System.Collections.ObjectModel.KeyedCollection%602.Remove%2A>、および<xref:System.Collections.ObjectModel.Collection%601.Clear%2A>メソッド、および既定の設定<xref:System.Collections.ObjectModel.Collection%601.Item%2A>プロパティ (c# のインデクサー)。 この例で提供されるカスタムの動作は、という名前の通知イベント`Changed`、これらのオーバーライドされたメソッドの最後にこれが発生します。  
+  
+ コード例を作成、`SimpleOrder`から派生するクラス<xref:System.Collections.ObjectModel.KeyedCollection%602>単純な注文形式を表します。 注文フォームを含む`OrderItem`注文のアイテムを表すオブジェクトします。 コード例でも作成、`SimpleOrderChangedEventArgs`イベントの情報、および変更の種類を識別する列挙体を格納するクラス。  
+  
+ コード例では、カスタム動作を示してのプロパティと、派生クラスのメソッドを呼び出すことによって、`Main`のメソッド、`Demo`クラスです。  
+  
+ このコード例では、変更できないキーを持つオブジェクトを使用します。 変更可能なキーを使用するコード例は、次を参照してください。<xref:System.Collections.ObjectModel.KeyedCollection%602.ChangeItemKey%2A>です。  
+  
+ [!code-cpp[KeyedCollection2#1](~/samples/snippets/cpp/VS_Snippets_CLR/KeyedCollection2/cpp/source.cpp#1)]
+ [!code-csharp[KeyedCollection2#1](~/samples/snippets/csharp/VS_Snippets_CLR/KeyedCollection2/cs/source.cs#1)]
+ [!code-vb[KeyedCollection2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/KeyedCollection2/vb/source.vb#1)]  
+  
+ 例 2  
+  
+ 次のコード例は、保護されたをオーバーライドする方法を示しています<xref:System.Collections.ObjectModel.KeyedCollection%602.ChangeItemKey%2A>変更可能なキー、および保護されたをオーバーライドする方法をサポートするためにメソッド<xref:System.Collections.ObjectModel.KeyedCollection%602.InsertItem%2A>、 <xref:System.Collections.ObjectModel.KeyedCollection%602.RemoveItem%2A>、 <xref:System.Collections.ObjectModel.KeyedCollection%602.ClearItems%2A>、および<xref:System.Collections.ObjectModel.KeyedCollection%602.SetItem%2A>キーの整合性を維持するためにメソッドおよびコレクションです。  
+  
+ コード例を作成、`MutableKeys`から派生するコレクション<xref:System.Collections.ObjectModel.KeyedCollection%602>、および`MutableKey`クラスです。 `MutableKey`クラスには、設定可能な`Key`プロパティです。 新しいキーがプロパティに割り当てられている場合、プロパティ set アクセス操作子、 `internal` (`Friend` Visual Basic で)`ChangeKey`を既存のキーを持つ新しいキーが競合するかどうかをテストする、コレクションのメソッドです。 場合は、例外がスローされ、プロパティの値は変更されません。  
+  
+ 間の接続を維持するために、`MutableKey`オブジェクトおよび`MutableKeys`コレクションとオブジェクトが 2 つのコレクションに挿入されることを防ぐため、`MutableKey`クラスには、 `internal` (`Friend` Visual Basic で) `Collection`フィールドです。 このフィールドが追加およびなど、コレクションから項目を削除するカスタム動作を提供する保護された方法によって維持される、<xref:System.Collections.ObjectModel.KeyedCollection%602.InsertItem%2A>メソッドです。 フィールドは、項目がコレクションに追加され、項目が削除されたときにクリアに設定されています。  
+  
+ [!code-csharp[KeyedCollectionMutable#1](~/samples/snippets/csharp/VS_Snippets_CLR/KeyedCollectionMutable/cs/source.cs#1)]
+ [!code-vb[KeyedCollectionMutable#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/KeyedCollectionMutable/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Comparer">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEqualityComparer&lt;TKey&gt; Comparer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEqualityComparer`1&lt;!TKey&gt; Comparer" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.ObjectModel.KeyedCollection`2.Comparer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEqualityComparer&lt;TKey&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションの複数のキーの値が等しいかどうかを確認するために使用される、ジェネリック等値比較子を取得します。</summary>
+        <value>実装、<see cref="T:System.Collections.Generic.IEqualityComparer`1" />ジェネリック インターフェイスのコレクション内のキーの等価性を判断するために使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (TKey key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(!TKey key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.ObjectModel.KeyedCollection`2.Contains(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="TKey" />
+      </Parameters>
+      <Docs>
+        <param name="key">
+          <see cref="T:System.Collections.ObjectModel.KeyedCollection`2" /> 内で検索されるキー。</param>
+        <summary>指定したキーの要素がコレクションに含まれているかどうかを確認します。</summary>
+        <returns>
+          指定したキーを持つ要素が <see langword="true" /> に格納されている場合は <see cref="T:System.Collections.ObjectModel.KeyedCollection`2" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Collections.ObjectModel.KeyedCollection%602>検索ディクショナリを持つ`key`ディクショナリを検索するために使用します。 使用して、各要素のキーを抽出検索ディクショナリがない場合、<xref:System.Collections.ObjectModel.KeyedCollection%602.GetKeyForItem%2A>メソッド、指定したキーと比較します。  
+  
+ 場合、このメソッドは、o (1) 操作に、 <xref:System.Collections.ObjectModel.KeyedCollection%602> ; 検索ディクショナリがそれ以外の場合これは、O (`n`) 操作、場所`n`は<xref:System.Collections.ObjectModel.Collection%601.Count%2A>します。  
+  
+   
+  
+## Examples  
+ このコード例はからコレクション クラスを派生させるために必要な最小限のコードは<xref:System.Collections.ObjectModel.KeyedCollection%602>: オーバーライドする、<xref:System.Collections.ObjectModel.KeyedCollection%602.GetKeyForItem%2A>基底クラスのコンス トラクターにデリゲートされるメソッドおよびパブリック コンス トラクターを提供します。 コード例も示して多くのプロパティおよびメソッドから継承<xref:System.Collections.ObjectModel.KeyedCollection%602>と<xref:System.Collections.ObjectModel.Collection%601>クラスです。  
+  
+ `SimpleOrder`クラスは、非常に単純な要求 ボックスの一覧を含む`OrderItem`注文の行アイテムを表すオブジェクト。 キー`OrderItem`は変更できないから派生するクラスの重要な考慮事項<xref:System.Collections.ObjectModel.KeyedCollection%602>です。 変更可能なキーを使用するコード例は、次を参照してください。<xref:System.Collections.ObjectModel.KeyedCollection%602.ChangeItemKey%2A>です。  
+  
+ [!code-cpp[KeyedCollection#1](~/samples/snippets/cpp/VS_Snippets_CLR/KeyedCollection/cpp/source.cpp#1)]
+ [!code-csharp[KeyedCollection#1](~/samples/snippets/csharp/VS_Snippets_CLR/KeyedCollection/cs/source.cs#1)]
+ [!code-vb[KeyedCollection#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/KeyedCollection/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dictionary">
+      <MemberSignature Language="C#" Value="protected System.Collections.Generic.IDictionary&lt;TKey,TItem&gt; Dictionary { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;!TKey, !TItem&gt; Dictionary" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.ObjectModel.KeyedCollection`2.Dictionary" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;TKey,TItem&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検索ディクショナリを取得、<see cref="T:System.Collections.ObjectModel.KeyedCollection`2" />です。</summary>
+        <value>検索ディクショナリ、 <see cref="T:System.Collections.ObjectModel.KeyedCollection`2" />; 存在する場合、それ以外の場合、<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.Collections.ObjectModel.KeyedCollection%602>最初の項目が追加されたときに作成される検索ディクショナリが含まれています。 アイテムを追加するときに、<xref:System.Collections.ObjectModel.KeyedCollection%602>項目のキーが 1 回に抽出され、高速な検索ルックアップ辞書に保存します。 使用してこの動作をオーバーライドすることができます、<xref:System.Collections.ObjectModel.KeyedCollection%602.%23ctor%28System.Collections.Generic.IEqualityComparer%7B%600%7D%2CSystem.Int32%29>コンス トラクターとディクショナリの作成のしきい値を指定します。  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、保護されたをオーバーライドする方法を示しています<xref:System.Collections.ObjectModel.KeyedCollection%602.ChangeItemKey%2A>変更可能なキー、および保護されたをオーバーライドする方法をサポートするためにメソッド<xref:System.Collections.ObjectModel.KeyedCollection%602.InsertItem%2A>、 <xref:System.Collections.ObjectModel.KeyedCollection%602.RemoveItem%2A>、 <xref:System.Collections.ObjectModel.KeyedCollection%602.ClearItems%2A>、および<xref:System.Collections.ObjectModel.KeyedCollection%602.SetItem%2A>キーの整合性を維持するためにメソッドおよびコレクションです。  
+  
+ コード例を作成、`MutableKeys`から派生するコレクション<xref:System.Collections.ObjectModel.KeyedCollection%602>、および`MutableKey`クラスです。 `MutableKey`クラスには、設定可能な`Key`プロパティです。 新しいキーがプロパティに割り当てられている場合、プロパティ set アクセス操作子、 `internal` (`Friend` Visual Basic で)`ChangeKey`を既存のキーを持つ新しいキーが競合するかどうかをテストする、コレクションのメソッドです。 場合は、例外がスローされ、プロパティの値は変更されません。  
+  
+ 間の接続を維持するために、`MutableKey`オブジェクトおよび`MutableKeys`コレクションとオブジェクトが 2 つのコレクションに挿入されることを防ぐため、`MutableKey`クラスには、 `internal` (`Friend` Visual Basic で) `Collection`フィールドです。 このフィールドが追加およびなど、コレクションから項目を削除するカスタム動作を提供する保護された方法によって維持される、<xref:System.Collections.ObjectModel.KeyedCollection%602.InsertItem%2A>メソッドです。 フィールドは、項目がコレクションに追加され、項目が削除されたときにクリアに設定されています。  
+  
+ [!code-csharp[KeyedCollectionMutable#1](~/samples/snippets/csharp/VS_Snippets_CLR/KeyedCollectionMutable/cs/source.cs#1)]
+ [!code-vb[KeyedCollectionMutable#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/KeyedCollectionMutable/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetKeyForItem">
+      <MemberSignature Language="C#" Value="protected abstract TKey GetKeyForItem (TItem item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance !TKey GetKeyForItem(!TItem item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.ObjectModel.KeyedCollection`2.GetKeyForItem(`1)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TKey</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="TItem" />
+      </Parameters>
+      <Docs>
+        <param name="item">キーの抽出元要素。</param>
+        <summary>派生クラスで実装された場合、指定した要素からキーを抽出します。</summary>
+        <returns>指定した要素のキー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 検索ディクショナリのキーに埋め込まれているキーと異なる場合`item`、アクセスすることはできません`item`によって返されたキーを使用して<xref:System.Collections.ObjectModel.KeyedCollection%602.GetKeyForItem%2A>です。  
+  
+ 返すには、このメソッドを実装することができます`null`キーを持たない項目を格納するコレクションは、この場合、項目にアクセスできる、インデックスでのみです。 このメソッドは、o (1) 操作です。  
+  
+## <a name="notes-for-implementers"></a>実装についてのメモ  
+ ディクショナリ内の項目からキーを抽出する方法にディクショナリを提供するには、このメソッドをオーバーライドする必要があります。  
+  
+ このメソッドは、内部的に呼び出されます。 パブリックにする必要はありません。  
+  
+   
+  
+## Examples  
+ このコード例はからコレクション クラスを派生させるために必要な最小限のコードは<xref:System.Collections.ObjectModel.KeyedCollection%602>: オーバーライドする、<xref:System.Collections.ObjectModel.KeyedCollection%602.GetKeyForItem%2A>基底クラスのコンス トラクターにデリゲートされるメソッドおよびパブリック コンス トラクターを提供します。 コード例も示して多くのプロパティおよびメソッドから継承<xref:System.Collections.ObjectModel.KeyedCollection%602>と<xref:System.Collections.ObjectModel.Collection%601>クラスです。  
+  
+ `SimpleOrder`クラスは、非常に単純な要求 ボックスの一覧を含む`OrderItem`注文の行アイテムを表すオブジェクト。 キー`OrderItem`は変更できないから派生するクラスの重要な考慮事項<xref:System.Collections.ObjectModel.KeyedCollection%602>です。 変更可能なキーを使用するコード例は、次を参照してください。<xref:System.Collections.ObjectModel.KeyedCollection%602.ChangeItemKey%2A>です。  
+  
+ [!code-cpp[KeyedCollection#1](~/samples/snippets/cpp/VS_Snippets_CLR/KeyedCollection/cpp/source.cpp#1)]
+ [!code-csharp[KeyedCollection#1](~/samples/snippets/csharp/VS_Snippets_CLR/KeyedCollection/cs/source.cs#1)]
+ [!code-vb[KeyedCollection#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/KeyedCollection/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertItem">
+      <MemberSignature Language="C#" Value="protected override void InsertItem (int index, TItem item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InsertItem(int32 index, !TItem item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.ObjectModel.KeyedCollection`2.InsertItem(System.Int32,`1)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="item" Type="TItem" />
+      </Parameters>
+      <Docs>
+        <param name="index">位置の 0 から始まるインデックス<c>項目</c>挿入する必要があります。</param>
+        <param name="item">挿入するオブジェクト。</param>
+        <summary><see cref="T:System.Collections.ObjectModel.KeyedCollection`2" /> 内の指定したインデックスの位置に要素を挿入します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`index`と等しい<xref:System.Collections.ObjectModel.Collection%601.Count%2A>、`item`の末尾に追加された、<xref:System.Collections.ObjectModel.KeyedCollection%602>です。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.ObjectModel.Collection%601.Count%2A>します。  
+  
+ <xref:System.Collections.ObjectModel.KeyedCollection%602.InsertItem%2A>によって呼び出される、<xref:System.Collections.ObjectModel.Collection%601.Add%2A>と<xref:System.Collections.ObjectModel.Collection%601.Insert%2A>メソッドです。  
+  
+## <a name="notes-for-implementers"></a>実装についてのメモ  
+ 動作をカスタマイズするには、このメソッドをオーバーライドして、<xref:System.Collections.ObjectModel.Collection%601.Add%2A>と<xref:System.Collections.ObjectModel.Collection%601.Insert%2A>から継承されたメソッド、<xref:System.Collections.ObjectModel.Collection%601>ジェネリック クラスです。  
+  
+ 基になるコレクションに項目を挿入し、検索ディクショナリを更新するこのメソッドの基本クラス実装を呼び出します。  
+  
+   
+  
+## Examples  
+ このセクションにはオーバーライドを示す 2 つのコード例が含まれています、<xref:System.Collections.ObjectModel.KeyedCollection%602.InsertItem%2A>メソッドを追加またはコレクションにオブジェクトを挿入するためのカスタム動作を提供します。 最初の例は、カスタムの通知イベントを追加し、2 つ目は、変更可能なキーを持つオブジェクトのコレクションのサポートを提供します。  
+  
+ 例 1  
+  
+ 次のコード例は、保護されたをオーバーライドする方法を示しています<xref:System.Collections.ObjectModel.KeyedCollection%602.InsertItem%2A>、 <xref:System.Collections.ObjectModel.KeyedCollection%602.RemoveItem%2A>、 <xref:System.Collections.ObjectModel.KeyedCollection%602.ClearItems%2A>、および<xref:System.Collections.ObjectModel.KeyedCollection%602.SetItem%2A>のカスタム動作を提供する、メソッド、 <xref:System.Collections.ObjectModel.Collection%601.Add%2A>、 <xref:System.Collections.ObjectModel.KeyedCollection%602.Remove%2A>、および<xref:System.Collections.ObjectModel.Collection%601.Clear%2A>メソッド、および既定の設定<xref:System.Collections.ObjectModel.Collection%601.Item%2A>プロパティ (c# のインデクサー)。 この例で提供されるカスタムの動作は、という名前の通知イベント`Changed`、これらのオーバーライドされたメソッドの最後にこれが発生します。  
+  
+ コード例を作成、`SimpleOrder`から派生するクラス<xref:System.Collections.ObjectModel.KeyedCollection%602>単純な注文形式を表します。 注文フォームを含む`OrderItem`注文のアイテムを表すオブジェクトします。 コード例でも作成、`SimpleOrderChangedEventArgs`イベントの情報、および変更の種類を識別する列挙体を格納するクラス。  
+  
+ コード例では、カスタム動作を示してのプロパティと、派生クラスのメソッドを呼び出すことによって、`Main`のメソッド、`Demo`クラスです。  
+  
+ このコード例では、変更できないキーを持つオブジェクトを使用します。 変更可能なキーを使用するコード例は、次を参照してください。<xref:System.Collections.ObjectModel.KeyedCollection%602.ChangeItemKey%2A>です。  
+  
+ [!code-cpp[KeyedCollection2#1](~/samples/snippets/cpp/VS_Snippets_CLR/KeyedCollection2/cpp/source.cpp#1)]
+ [!code-csharp[KeyedCollection2#1](~/samples/snippets/csharp/VS_Snippets_CLR/KeyedCollection2/cs/source.cs#1)]
+ [!code-vb[KeyedCollection2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/KeyedCollection2/vb/source.vb#1)]  
+  
+ 例 2  
+  
+ 次のコード例は、保護されたをオーバーライドする方法を示しています<xref:System.Collections.ObjectModel.KeyedCollection%602.ChangeItemKey%2A>変更可能なキー、および保護されたをオーバーライドする方法をサポートするためにメソッド<xref:System.Collections.ObjectModel.KeyedCollection%602.InsertItem%2A>、 <xref:System.Collections.ObjectModel.KeyedCollection%602.RemoveItem%2A>、 <xref:System.Collections.ObjectModel.KeyedCollection%602.ClearItems%2A>、および<xref:System.Collections.ObjectModel.KeyedCollection%602.SetItem%2A>キーの整合性を維持するためにメソッドおよびコレクションです。  
+  
+ コード例を作成、`MutableKeys`から派生するコレクション<xref:System.Collections.ObjectModel.KeyedCollection%602>、および`MutableKey`クラスです。 `MutableKey`クラスには、設定可能な`Key`プロパティです。 新しいキーがプロパティに割り当てられている場合、プロパティ set アクセス操作子、 `internal` (`Friend` Visual Basic で)`ChangeKey`を既存のキーを持つ新しいキーが競合するかどうかをテストする、コレクションのメソッドです。 場合は、例外がスローされ、プロパティの値は変更されません。  
+  
+ 間の接続を維持するために、`MutableKey`オブジェクトおよび`MutableKeys`コレクションとオブジェクトが 2 つのコレクションに挿入されることを防ぐため、`MutableKey`クラスには、 `internal` (`Friend` Visual Basic で) `Collection`フィールドです。 このフィールドが追加およびなど、コレクションから項目を削除するカスタム動作を提供する保護された方法によって維持される、<xref:System.Collections.ObjectModel.KeyedCollection%602.InsertItem%2A>メソッドです。 フィールドは、項目がコレクションに追加され、項目が削除されたときにクリアに設定されています。  
+  
+ [!code-csharp[KeyedCollectionMutable#1](~/samples/snippets/csharp/VS_Snippets_CLR/KeyedCollectionMutable/cs/source.cs#1)]
+ [!code-vb[KeyedCollectionMutable#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/KeyedCollectionMutable/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="index" /> が <see cref="P:System.Collections.ObjectModel.Collection`1.Count" /> より大きくなっています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public TItem this[TKey key] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance !TItem Item(!TKey)" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.ObjectModel.KeyedCollection`2.Item(`0)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="TKey" />
+      </Parameters>
+      <Docs>
+        <param name="key">取得する要素のキー。</param>
+        <summary>指定したキーを持つ要素を取得します。</summary>
+        <value>指定したキーを持つ要素。 指定したキーを持つ要素が見つからない場合は、例外がスローされます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、次の構文を使用して、コレクション内の特定の要素にアクセスする機能を提供します。 `myCollection[key]` (`myCollection(key)` Visual Basic で)。  
+  
+> [!NOTE]
+>  このプロパティは、継承された異なる<xref:System.Collections.ObjectModel.Collection%601.Item%2A?displayProperty=nameWithType>プロパティを取得し、数値インデックスで要素を設定します。 ただし場合、`TKey`の種類は<xref:System.Int32>、このプロパティは、継承されたプロパティをマスクします。 その場合は、キャストによって継承されたプロパティにアクセスすることができます、<xref:System.Collections.ObjectModel.KeyedCollection%602>その基本型にします。 たとえば、 `KeyedCollection<int, MyType>` (`KeyedCollection(Of Integer, MyType)` Visual basic で`KeyedCollection<int, MyType^>`C++ で) にキャストできます`Collection<MyType>`(`Collection(Of MyType)` Visual basic で`Collection<MyType^>`C++ で)。  
+  
+ 場合、<xref:System.Collections.ObjectModel.KeyedCollection%602>検索ディクショナリを持つ`key`ディクショナリから要素を取得するために使用します。  使用して、各要素のキーを抽出検索ディクショナリがない場合、<xref:System.Collections.ObjectModel.KeyedCollection%602.GetKeyForItem%2A>メソッド、指定したキーと比較します。  
+  
+ C# 言語キーワードを使用して実装する代わりに、インデクサーの定義、<xref:System.Collections.ObjectModel.KeyedCollection%602.Item%2A>プロパティです。 Visual Basic は、<xref:System.Collections.ObjectModel.KeyedCollection%602.Item%2A> を既定のプロパティとして実装しており、同様のインデックス機能を提供します。  
+  
+ 場合は、o (1) 操作には、このプロパティの値を取得、<xref:System.Collections.ObjectModel.KeyedCollection%602>が検索ディクショナリです。 それ以外の場合これは、O (`n`) 操作、場所`n`は<xref:System.Collections.ObjectModel.Collection%601.Count%2A>します。  
+  
+   
+  
+## Examples  
+ このコード例はからコレクション クラスを派生させるために必要な最小限のコードは<xref:System.Collections.ObjectModel.KeyedCollection%602>: オーバーライドする、<xref:System.Collections.ObjectModel.KeyedCollection%602.GetKeyForItem%2A>基底クラスのコンス トラクターにデリゲートされるメソッドおよびパブリック コンス トラクターを提供します。 コード例も示して多くのプロパティおよびメソッドから継承<xref:System.Collections.ObjectModel.KeyedCollection%602>と<xref:System.Collections.ObjectModel.Collection%601>クラスです。  
+  
+ このコード例では、両方を呼び出します、<xref:System.Collections.ObjectModel.KeyedCollection%602.Item%2A?displayProperty=nameWithType>プロパティは読み取り専用としてキーを取得、および<xref:System.Collections.ObjectModel.Collection%601.Item%2A?displayProperty=nameWithType>プロパティが設定可能なのインデックスを取得します。 派生コレクション内のオブジェクトの整数キー、インデックス検索に使用される整数と区別することがある場合、後者のプロパティにアクセスする方法を示します。  
+  
+ `SimpleOrder`クラスは、非常に単純な要求 ボックスの一覧を含む`OrderItem`注文の行アイテムを表すオブジェクト。 キー`OrderItem`は変更できないから派生するクラスの重要な考慮事項<xref:System.Collections.ObjectModel.KeyedCollection%602>です。 変更可能なキーを使用するコード例は、次を参照してください。<xref:System.Collections.ObjectModel.KeyedCollection%602.ChangeItemKey%2A>です。  
+  
+ [!code-cpp[KeyedCollection#1](~/samples/snippets/cpp/VS_Snippets_CLR/KeyedCollection/cpp/source.cpp#1)]
+ [!code-csharp[KeyedCollection#1](~/samples/snippets/csharp/VS_Snippets_CLR/KeyedCollection/cs/source.cs#1)]
+ [!code-vb[KeyedCollection#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/KeyedCollection/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Collections.Generic.KeyNotFoundException">コレクション内で指定したキーを持つ要素がありませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public bool Remove (TKey key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Remove(!TKey key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.ObjectModel.KeyedCollection`2.Remove(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="TKey" />
+      </Parameters>
+      <Docs>
+        <param name="key">削除する要素のキー。</param>
+        <summary>指定したキーを持つ要素を <see cref="T:System.Collections.ObjectModel.KeyedCollection`2" /> から削除します。</summary>
+        <returns>
+          要素が正常に削除された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。  このメソッドは、<see langword="false" /> が <paramref name="key" /> に見つからない場合にも <see cref="T:System.Collections.ObjectModel.KeyedCollection`2" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素のキーは、検索ディクショナリからも削除されます。  
+  
+ かどうかの要素の数がしきい値を超えました、ディクショナリの作成と<xref:System.Collections.ObjectModel.KeyedCollection%602>は検索ディクショナリを使用して、引き続き場合でも、要素の数がしきい値より下にもう一度検索ディクショナリを使用します。  
+  
+> [!NOTE]
+>  このメソッドの動作をカスタマイズするには、上書き、<xref:System.Collections.ObjectModel.KeyedCollection%602.RemoveItem%2A>メソッドです。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.ObjectModel.Collection%601.Count%2A>します。  
+  
+   
+  
+## Examples  
+ このコード例はからコレクション クラスを派生させるために必要な最小限のコードは<xref:System.Collections.ObjectModel.KeyedCollection%602>: オーバーライドする、<xref:System.Collections.ObjectModel.KeyedCollection%602.GetKeyForItem%2A>基底クラスのコンス トラクターにデリゲートされるメソッドおよびパブリック コンス トラクターを提供します。 コード例も示して多くのプロパティおよびメソッドから継承<xref:System.Collections.ObjectModel.KeyedCollection%602>と<xref:System.Collections.ObjectModel.Collection%601>クラスです。  
+  
+ 例を示します<xref:System.Collections.ObjectModel.KeyedCollection%602.Remove%2A>から継承されたメソッド<xref:System.Collections.ObjectModel.KeyedCollection%602>、指定したキーを持つ項目を削除しても、<xref:System.Collections.ObjectModel.Collection%601.Remove%2A>と<xref:System.Collections.ObjectModel.Collection%601.RemoveAt%2A>から継承されたメソッド<xref:System.Collections.ObjectModel.Collection%601>インデックスとオブジェクトによってをそれぞれ削除します。  
+  
+ `SimpleOrder`クラスは、非常に単純な要求 ボックスの一覧を含む`OrderItem`注文の行アイテムを表すオブジェクト。 キー`OrderItem`は変更できないから派生するクラスの重要な考慮事項<xref:System.Collections.ObjectModel.KeyedCollection%602>です。 変更可能なキーを使用するコード例は、次を参照してください。<xref:System.Collections.ObjectModel.KeyedCollection%602.ChangeItemKey%2A>です。  
+  
+ [!code-cpp[KeyedCollection#1](~/samples/snippets/cpp/VS_Snippets_CLR/KeyedCollection/cpp/source.cpp#1)]
+ [!code-csharp[KeyedCollection#1](~/samples/snippets/csharp/VS_Snippets_CLR/KeyedCollection/cs/source.cs#1)]
+ [!code-vb[KeyedCollection#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/KeyedCollection/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveItem">
+      <MemberSignature Language="C#" Value="protected override void RemoveItem (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void RemoveItem(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.ObjectModel.KeyedCollection`2.RemoveItem(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除する要素のインデックス。</param>
+        <summary><see cref="T:System.Collections.ObjectModel.KeyedCollection`2" /> の指定したインデックスにある要素を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素のキーは、検索ディクショナリからも削除されます。  
+  
+ かどうかの要素の数がしきい値を超えました、ディクショナリの作成と<xref:System.Collections.ObjectModel.KeyedCollection%602>は検索ディクショナリを使用して、引き続き場合でも、要素の数がしきい値より下にもう一度検索ディクショナリを使用します。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.ObjectModel.Collection%601.Count%2A>します。  
+  
+## <a name="notes-for-implementers"></a>実装についてのメモ  
+ 動作をカスタマイズするには、このメソッドをオーバーライドして、<xref:System.Collections.ObjectModel.Collection%601.Remove%28%600%29>と<xref:System.Collections.ObjectModel.Collection%601.RemoveAt%28System.Int32%29>から継承されたメソッド、<xref:System.Collections.ObjectModel.Collection%601>ジェネリック クラスは、および<xref:System.Collections.ObjectModel.KeyedCollection%602.Remove%28%600%29>メソッドです。  
+  
+ 基になるコレクションから項目を削除し、検索ディクショナリを更新するこのメソッドの基本クラス実装を呼び出します。  
+  
+   
+  
+## Examples  
+ このセクションにはオーバーライドを示す 2 つのコード例が含まれています、<xref:System.Collections.ObjectModel.KeyedCollection%602.RemoveItem%2A>をコレクションからオブジェクトを削除するカスタム動作を提供するメソッド。 最初の例は、カスタムの通知イベントを追加し、2 つ目は、変更可能なキーを持つオブジェクトのコレクションのサポートを提供します。  
+  
+ 例 1  
+  
+ 次のコード例は、保護されたをオーバーライドする方法を示しています<xref:System.Collections.ObjectModel.KeyedCollection%602.InsertItem%2A>、 <xref:System.Collections.ObjectModel.KeyedCollection%602.RemoveItem%2A>、 <xref:System.Collections.ObjectModel.KeyedCollection%602.ClearItems%2A>、および<xref:System.Collections.ObjectModel.KeyedCollection%602.SetItem%2A>のカスタム動作を提供する、メソッド、 <xref:System.Collections.ObjectModel.Collection%601.Add%2A>、 <xref:System.Collections.ObjectModel.KeyedCollection%602.Remove%2A>、および<xref:System.Collections.ObjectModel.Collection%601.Clear%2A>メソッド、および既定の設定<xref:System.Collections.ObjectModel.Collection%601.Item%2A>プロパティ (c# のインデクサー)。 この例で提供されるカスタムの動作は、という名前の通知イベント`Changed`、これらのオーバーライドされたメソッドの最後にこれが発生します。  
+  
+ コード例を作成、`SimpleOrder`から派生するクラス<xref:System.Collections.ObjectModel.KeyedCollection%602>単純な注文形式を表します。 注文フォームを含む`OrderItem`注文のアイテムを表すオブジェクトします。 コード例でも作成、`SimpleOrderChangedEventArgs`イベントの情報、および変更の種類を識別する列挙体を格納するクラス。  
+  
+ コード例では、カスタム動作を示してのプロパティと、派生クラスのメソッドを呼び出すことによって、`Main`のメソッド、`Demo`クラスです。  
+  
+ このコード例では、変更できないキーを持つオブジェクトを使用します。 変更可能なキーを使用するコード例は、次を参照してください。<xref:System.Collections.ObjectModel.KeyedCollection%602.ChangeItemKey%2A>です。  
+  
+ [!code-cpp[KeyedCollection2#1](~/samples/snippets/cpp/VS_Snippets_CLR/KeyedCollection2/cpp/source.cpp#1)]
+ [!code-csharp[KeyedCollection2#1](~/samples/snippets/csharp/VS_Snippets_CLR/KeyedCollection2/cs/source.cs#1)]
+ [!code-vb[KeyedCollection2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/KeyedCollection2/vb/source.vb#1)]  
+  
+ 例 2  
+  
+ 次のコード例は、保護されたをオーバーライドする方法を示しています<xref:System.Collections.ObjectModel.KeyedCollection%602.ChangeItemKey%2A>変更可能なキー、および保護されたをオーバーライドする方法をサポートするためにメソッド<xref:System.Collections.ObjectModel.KeyedCollection%602.InsertItem%2A>、 <xref:System.Collections.ObjectModel.KeyedCollection%602.RemoveItem%2A>、 <xref:System.Collections.ObjectModel.KeyedCollection%602.ClearItems%2A>、および<xref:System.Collections.ObjectModel.KeyedCollection%602.SetItem%2A>キーの整合性を維持するためにメソッドおよびコレクションです。  
+  
+ コード例を作成、`MutableKeys`から派生するコレクション<xref:System.Collections.ObjectModel.KeyedCollection%602>、および`MutableKey`クラスです。 `MutableKey`クラスには、設定可能な`Key`プロパティです。 新しいキーがプロパティに割り当てられている場合、プロパティ set アクセス操作子、 `internal` (`Friend` Visual Basic で)`ChangeKey`を既存のキーを持つ新しいキーが競合するかどうかをテストする、コレクションのメソッドです。 場合は、例外がスローされ、プロパティの値は変更されません。  
+  
+ 間の接続を維持するために、`MutableKey`オブジェクトおよび`MutableKeys`コレクションとオブジェクトが 2 つのコレクションに挿入されることを防ぐため、`MutableKey`クラスには、 `internal` (`Friend` Visual Basic で) `Collection`フィールドです。 このフィールドが追加およびなど、コレクションから項目を削除するカスタム動作を提供する保護された方法によって維持される、<xref:System.Collections.ObjectModel.KeyedCollection%602.InsertItem%2A>メソッドです。 フィールドは、項目がコレクションに追加され、項目が削除されたときにクリアに設定されています。  
+  
+ [!code-csharp[KeyedCollectionMutable#1](~/samples/snippets/csharp/VS_Snippets_CLR/KeyedCollectionMutable/cs/source.cs#1)]
+ [!code-vb[KeyedCollectionMutable#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/KeyedCollectionMutable/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetItem">
+      <MemberSignature Language="C#" Value="protected override void SetItem (int index, TItem item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetItem(int32 index, !TItem item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.ObjectModel.KeyedCollection`2.SetItem(System.Int32,`1)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="item" Type="TItem" />
+      </Parameters>
+      <Docs>
+        <param name="index">置き換えられる項目の 0 から始まるインデックス。</param>
+        <param name="item">新しい項目。</param>
+        <summary>指定したインデックス位置の項目を、指定した項目で置き換えます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 検索ディクショナリは、それに従って更新されます。 つまり、置き換えられる項目のキーは検索ディクショナリから削除され、新しい項目のキーが追加されます。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+## <a name="notes-for-implementers"></a>実装についてのメモ  
+ 設定の動作をカスタマイズするには、このメソッドをオーバーライドして、<xref:System.Collections.ObjectModel.Collection%601.Item%2A>プロパティから継承、<xref:System.Collections.ObjectModel.Collection%601>ジェネリック クラスです。  
+  
+> [!NOTE]
+>  このメソッドではの動作には影響しません、<xref:System.Collections.ObjectModel.KeyedCollection%602.Item%2A?displayProperty=nameWithType>プロパティは読み取り専用です。  
+  
+ 基になるコレクションの項目を設定し、検索ディクショナリを更新するこのメソッドの基本クラス実装を呼び出します。  
+  
+   
+  
+## Examples  
+ このセクションにはオーバーライドを示す 2 つのコード例が含まれています、<xref:System.Collections.ObjectModel.KeyedCollection%602.SetItem%2A>設定のカスタム動作を提供するメソッドを<xref:System.Collections.ObjectModel.Collection%601.Item%2A?displayProperty=nameWithType>プロパティです。 最初の例は、カスタムの通知イベントを追加し、2 つ目は、変更可能なキーを持つオブジェクトのコレクションのサポートを提供します。  
+  
+ 例 1  
+  
+ 次のコード例は、保護されたをオーバーライドする方法を示しています<xref:System.Collections.ObjectModel.KeyedCollection%602.InsertItem%2A>、 <xref:System.Collections.ObjectModel.KeyedCollection%602.RemoveItem%2A>、 <xref:System.Collections.ObjectModel.KeyedCollection%602.ClearItems%2A>、および<xref:System.Collections.ObjectModel.KeyedCollection%602.SetItem%2A>のカスタム動作を提供する、メソッド、 <xref:System.Collections.ObjectModel.Collection%601.Add%2A>、 <xref:System.Collections.ObjectModel.KeyedCollection%602.Remove%2A>、および<xref:System.Collections.ObjectModel.Collection%601.Clear%2A>メソッド、および既定の設定<xref:System.Collections.ObjectModel.Collection%601.Item%2A>プロパティ (c# のインデクサー)。 この例で提供されるカスタムの動作は、という名前の通知イベント`Changed`、これらのオーバーライドされたメソッドの最後にこれが発生します。  
+  
+ コード例を作成、`SimpleOrder`から派生するクラス<xref:System.Collections.ObjectModel.KeyedCollection%602>単純な注文形式を表します。 注文フォームを含む`OrderItem`注文のアイテムを表すオブジェクトします。 コード例でも作成、`SimpleOrderChangedEventArgs`イベントの情報、および変更の種類を識別する列挙体を格納するクラス。  
+  
+ コード例では、カスタム動作を示してのプロパティと、派生クラスのメソッドを呼び出すことによって、`Main`のメソッド、`Demo`クラスです。  
+  
+ このコード例では、変更できないキーを持つオブジェクトを使用します。 変更可能なキーを使用するコード例は、次を参照してください。<xref:System.Collections.ObjectModel.KeyedCollection%602.ChangeItemKey%2A>です。  
+  
+ [!code-cpp[KeyedCollection2#1](~/samples/snippets/cpp/VS_Snippets_CLR/KeyedCollection2/cpp/source.cpp#1)]
+ [!code-csharp[KeyedCollection2#1](~/samples/snippets/csharp/VS_Snippets_CLR/KeyedCollection2/cs/source.cs#1)]
+ [!code-vb[KeyedCollection2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/KeyedCollection2/vb/source.vb#1)]  
+  
+ 例 2  
+  
+ 次のコード例は、保護されたをオーバーライドする方法を示しています<xref:System.Collections.ObjectModel.KeyedCollection%602.ChangeItemKey%2A>変更可能なキー、および保護されたをオーバーライドする方法をサポートするためにメソッド<xref:System.Collections.ObjectModel.KeyedCollection%602.InsertItem%2A>、 <xref:System.Collections.ObjectModel.KeyedCollection%602.RemoveItem%2A>、 <xref:System.Collections.ObjectModel.KeyedCollection%602.ClearItems%2A>、および<xref:System.Collections.ObjectModel.KeyedCollection%602.SetItem%2A>キーの整合性を維持するためにメソッドおよびコレクションです。  
+  
+ コード例を作成、`MutableKeys`から派生するコレクション<xref:System.Collections.ObjectModel.KeyedCollection%602>、および`MutableKey`クラスです。 `MutableKey`クラスには、設定可能な`Key`プロパティです。 新しいキーがプロパティに割り当てられている場合、プロパティ set アクセス操作子、 `internal` (`Friend` Visual Basic で)`ChangeKey`を既存のキーを持つ新しいキーが競合するかどうかをテストする、コレクションのメソッドです。 場合は、例外がスローされ、プロパティの値は変更されません。  
+  
+ 間の接続を維持するために、`MutableKey`オブジェクトおよび`MutableKeys`コレクションとオブジェクトが 2 つのコレクションに挿入されることを防ぐため、`MutableKey`クラスには、 `internal` (`Friend` Visual Basic で) `Collection`フィールドです。 このフィールドが追加およびなど、コレクションから項目を削除するカスタム動作を提供する保護された方法によって維持される、<xref:System.Collections.ObjectModel.KeyedCollection%602.InsertItem%2A>メソッドです。 フィールドは、項目がコレクションに追加され、項目が削除されたときにクリアに設定されています。  
+  
+ [!code-csharp[KeyedCollectionMutable#1](~/samples/snippets/csharp/VS_Snippets_CLR/KeyedCollectionMutable/cs/source.cs#1)]
+ [!code-vb[KeyedCollectionMutable#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/KeyedCollectionMutable/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetValue">
+      <MemberSignature Language="C#" Value="public bool TryGetValue (TKey key, out TItem item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryGetValue(!TKey key, [out] !TItem&amp; item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.ObjectModel.KeyedCollection`2.TryGetValue(`0,`1@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="TKey" />
+        <Parameter Name="item" Type="TItem&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="key">To be added.</param>
+        <param name="item">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

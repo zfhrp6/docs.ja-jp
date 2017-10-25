@@ -1,0 +1,147 @@
+<Type Name="Service" FullName="System.Web.Services.Description.Service">
+  <TypeSignature Language="C#" Value="public sealed class Service : System.Web.Services.Description.NamedItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Service extends System.Web.Services.Description.NamedItem" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Description.Service" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Services.Description.NamedItem</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.Services.Configuration.XmlFormatExtensionPoint("Extensions")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>関連するインスタンスのセットをグループ化、 <see cref="T:System.Web.Services.Description.Port" /> XML Web サービスに関連付けられているクラスです。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Service`クラスが Web サービス記述言語 (WSDL) に対応しています`<service>`要素で囲ま、`<definitions>`ルート要素です。 WSDL の詳細については、http://www.w3.org/TR/wsdl/ の仕様を参照してください。  
+  
+   
+  
+## Examples  
+ [!code-cpp[ServiceClass#1](~/samples/snippets/cpp/VS_Snippets_Remoting/ServiceClass/CPP/serviceclass.cpp#1)]
+ [!code-csharp[ServiceClass#1](~/samples/snippets/csharp/VS_Snippets_Remoting/ServiceClass/CS/serviceclass.cs#1)]
+ [!code-vb[ServiceClass#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ServiceClass/VB/serviceclass.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Service ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.Service.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Description.Service" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Extensions">
+      <MemberSignature Language="C#" Value="public override System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection Extensions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection Extensions" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.Service.Extensions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlIgnore</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられている機能拡張要素のコレクションを取得、<see cref="T:System.Web.Services.Description.Service" />です。</summary>
+        <value>関連付けられている機能拡張要素のコレクション、<see cref="T:System.Web.Services.Description.Service" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[Service_Class4#2](~/samples/snippets/cpp/VS_Snippets_Remoting/Service_Class4/CPP/service_class.cpp#2)]
+ [!code-csharp[Service_Class4#2](~/samples/snippets/csharp/VS_Snippets_Remoting/Service_Class4/CS/service_class.cs#2)]
+ [!code-vb[Service_Class4#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Service_Class4/VB/service_class.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Ports">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.PortCollection Ports { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.PortCollection Ports" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.Service.Ports" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlElement("port")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.PortCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Web.Services.Description.Port" />内に含まれるインスタンス、<see cref="T:System.Web.Services.Description.Service" />です。</summary>
+        <value>含まれているポートのインスタンスのコレクション、<see cref="T:System.Web.Services.Description.Service" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[Service_Class4#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Service_Class4/CPP/service_class.cpp#1)]
+ [!code-csharp[Service_Class4#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Service_Class4/CS/service_class.cs#1)]
+ [!code-vb[Service_Class4#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Service_Class4/VB/service_class.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceDescription">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.ServiceDescription ServiceDescription { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.ServiceDescription ServiceDescription" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.Service.ServiceDescription" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.ServiceDescription</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.Services.Description.ServiceDescription" />うち、<see cref="T:System.Web.Services.Description.Service" />メンバーであります。</summary>
+        <value>A<see cref="T:System.Web.Services.Description.ServiceDescription" />うち、<see cref="T:System.Web.Services.Description.Service" />メンバーであります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ Service_ServiceDescription #1  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

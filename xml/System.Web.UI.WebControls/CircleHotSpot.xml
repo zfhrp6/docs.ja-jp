@@ -1,0 +1,235 @@
+<Type Name="CircleHotSpot" FullName="System.Web.UI.WebControls.CircleHotSpot">
+  <TypeSignature Language="C#" Value="public sealed class CircleHotSpot : System.Web.UI.WebControls.HotSpot" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit CircleHotSpot extends System.Web.UI.WebControls.HotSpot" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.CircleHotSpot" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.HotSpot</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>内の円形のホット スポット領域を定義、<see cref="T:System.Web.UI.WebControls.ImageMap" />コントロール。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスの円形のホット スポット領域を定義する、<xref:System.Web.UI.WebControls.ImageMap>コントロール。 領域を定義する、<xref:System.Web.UI.WebControls.CircleHotSpot>オブジェクト、設定、<xref:System.Web.UI.WebControls.CircleHotSpot.X%2A>円形領域の中心の x 座標を表す値をプロパティです。 設定、<xref:System.Web.UI.WebControls.CircleHotSpot.Y%2A>円形領域の中心の y 座標を表す値をプロパティです。 設定、<xref:System.Web.UI.WebControls.CircleHotSpot.Radius%2A>端に円の中心からの距離のプロパティです。  
+  
+ ときに、<xref:System.Web.UI.WebControls.CircleHotSpot>コントロールがクリックされると、ページ URL に移動、生成、サーバーへのポストバックまたは何も行われません。 <xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A>プロパティは、この動作を指定します。 URL に移動するには、設定、<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A>プロパティを`HotSpotMode.Navigate`、使用して、<xref:System.Web.UI.WebControls.HotSpot.NavigateUrl%2A>に移動する URL を指定するプロパティ。 サーバーに投稿するには、設定、<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A>プロパティを`HotSpotMode.PostBack`を使用して、<xref:System.Web.UI.WebControls.HotSpot.PostBackValue%2A>プロパティの名前を指定する、<xref:System.Web.UI.WebControls.CircleHotSpot>オブジェクト。 この名前は、<xref:System.Web.UI.WebControls.ImageMapEventArgs>イベント データときに、<xref:System.Web.UI.WebControls.CircleHotSpot>をクリックします。 場合は、<xref:System.Web.UI.WebControls.CircleHotSpot>なしは、設定するオブジェクト、<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A>プロパティを`HotSpotMode.Inactive`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、宣言によって作成する方法を示します、<xref:System.Web.UI.WebControls.ImageMap>を含む 2 つのコントロール<xref:System.Web.UI.WebControls.CircleHotSpot>オブジェクト。 <xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A>プロパティに設定されている`HotSpotMode.Navigate`、それが原因で、ページ URL に移動して、指定したたびにユーザーをホット スポット領域のいずれかをクリックします。 この例を正しく実行するには、独自のイメージを指定する必要があります、<xref:System.Web.UI.WebControls.Image.ImageUrl%2A>プロパティと、アプリケーションが特定できるようににイメージへのパスを適切に更新します。  
+  
+ [!code-aspx-csharp[ImageMapClass1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ImageMapClass1/CS/imagemapclass1cs.aspx#1)]
+ [!code-aspx-vb[ImageMapClass1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ImageMapClass1/VB/imagemapclass1vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CircleHotSpot ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.CircleHotSpot.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.CircleHotSpot" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.CircleHotSpot>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、2 つのプログラムで作成する方法を示します<xref:System.Web.UI.WebControls.CircleHotSpot>オブジェクト、プロパティの設定に追加して、<xref:System.Web.UI.WebControls.ImageMap>コントロールの<xref:System.Web.UI.WebControls.HotSpotCollection>します。 この例を正しく実行するには、独自のイメージを指定する必要があります、<xref:System.Web.UI.WebControls.Image.ImageUrl%2A>プロパティと、アプリケーションが特定できるようににイメージへのパスを適切に更新します。  
+  
+ [!code-aspx-csharp[CircleHotSpot.Cstr#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CircleHotSpot.Cstr/CS/circlehotspot.cstrcs.aspx#1)]
+ [!code-aspx-vb[CircleHotSpot.Cstr#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CircleHotSpot.Cstr/VB/circlehotspot.cstrvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCoordinates">
+      <MemberSignature Language="C#" Value="public override string GetCoordinates ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetCoordinates() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.CircleHotSpot.GetCoordinates" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>X 座標と y 座標を表す文字列を返します、<see cref="T:System.Web.UI.WebControls.CircleHotSpot" />オブジェクトの中心とその radius の長さ。</summary>
+        <returns>X 座標と y 座標を表す文字列、<see cref="T:System.Web.UI.WebControls.CircleHotSpot" />オブジェクトの中心とその radius の長さ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドに割り当てられている値を使用して、<xref:System.Web.UI.WebControls.CircleHotSpot.X%2A>と<xref:System.Web.UI.WebControls.CircleHotSpot.Y%2A>center 座標およびに割り当てられた値を返すプロパティを<xref:System.Web.UI.WebControls.CircleHotSpot.Radius%2A>半径を取得するプロパティです。  
+  
+ <xref:System.Web.UI.WebControls.CircleHotSpot.GetCoordinates%2A>メソッドは内部的に ASP.NET で使用されるの座標を使用するテキストを取得する、<xref:System.Web.UI.WebControls.CircleHotSpot>を表示します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、宣言によって作成する方法を示します、<xref:System.Web.UI.WebControls.ImageMap>を含む 2 つのコントロール<xref:System.Web.UI.WebControls.CircleHotSpot>オブジェクト。 ユーザーがクリックしたときの 1 つ、 <xref:System.Web.UI.WebControls.CircleHotSpot> 、オブジェクト、<xref:System.Web.UI.WebControls.CircleHotSpot.GetCoordinates%2A>メソッドは、座標を返し、ユーザーに表示します。 この例を正しく実行するには、独自のイメージを指定する必要があります、<xref:System.Web.UI.WebControls.Image.ImageUrl%2A>プロパティと、アプリケーションが特定できるようににイメージへのパスを適切に更新します。  
+  
+ [!code-aspx-csharp[CircleHotSpot.GetCoordinates#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CircleHotSpot.GetCoordinates/CS/circlehotspot.getcoordinatescs.aspx#1)]
+ [!code-aspx-vb[CircleHotSpot.GetCoordinates#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CircleHotSpot.GetCoordinates/VB/circlehotspot.getcoordinatesvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MarkupName">
+      <MemberSignature Language="C#" Value="protected override string MarkupName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MarkupName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CircleHotSpot.MarkupName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Radius">
+      <MemberSignature Language="C#" Value="public int Radius { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Radius" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CircleHotSpot.Radius" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これによって定義される円形領域の端にセンターからの距離を設定を取得または<see cref="T:System.Web.UI.WebControls.CircleHotSpot" />オブジェクト。</summary>
+        <value>これによって定義される円形領域の端にセンターからの距離 (ピクセル単位) を表す整数<see cref="T:System.Web.UI.WebControls.CircleHotSpot" />オブジェクト。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CircleHotSpot.Radius%2A>プロパティでは、取得またはセンターからこれによって定義される円形領域の端までの距離 (ピクセル単位) を表す値を設定することができます<xref:System.Web.UI.WebControls.CircleHotSpot>オブジェクト。 完全に定義する、<xref:System.Web.UI.WebControls.CircleHotSpot>オブジェクトの値を指定する必要があります、<xref:System.Web.UI.WebControls.CircleHotSpot.Radius%2A>プロパティだけでなく<xref:System.Web.UI.WebControls.CircleHotSpot.X%2A>と<xref:System.Web.UI.WebControls.CircleHotSpot.Y%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Web.UI.WebControls.ImageMap>を含む 2 つのコントロール<xref:System.Web.UI.WebControls.CircleHotSpot>オブジェクト。 いずれかを宣言によって; 作成します。その<xref:System.Web.UI.WebControls.CircleHotSpot.X%2A>、 <xref:System.Web.UI.WebControls.CircleHotSpot.Y%2A>、および<xref:System.Web.UI.WebControls.CircleHotSpot.Radius%2A>プロパティは宣言によって同様に設定します。 プログラムによって、他の作成とその<xref:System.Web.UI.WebControls.CircleHotSpot.X%2A>、 <xref:System.Web.UI.WebControls.CircleHotSpot.Y%2A>、および<xref:System.Web.UI.WebControls.CircleHotSpot.Radius%2A>プロパティをプログラムによって設定されます。 この例を正しく実行するには、独自のイメージを指定する必要があります、<xref:System.Web.UI.WebControls.Image.ImageUrl%2A>プロパティと、アプリケーションが特定できるようににイメージへのパスを適切に更新します。  
+  
+ [!code-aspx-csharp[CircleHotSpot.Radius#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CircleHotSpot.Radius/CS/circlehotspot.radiuscs.aspx#1)]
+ [!code-aspx-vb[CircleHotSpot.Radius#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CircleHotSpot.Radius/VB/circlehotspot.radiusvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定した値が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="X">
+      <MemberSignature Language="C#" Value="public int X { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 X" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CircleHotSpot.X" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これによって定義される円形領域の中心の x 座標を取得または<see cref="T:System.Web.UI.WebControls.CircleHotSpot" />オブジェクト。</summary>
+        <value>これによって定義される円形領域の中心の x 座標<see cref="T:System.Web.UI.WebControls.CircleHotSpot" />オブジェクト。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CircleHotSpot.X%2A>プロパティを取得または設定をこのによって定義される円形領域の中心の x 座標を表す値を使用する<xref:System.Web.UI.WebControls.CircleHotSpot>オブジェクト。 完全に定義する、<xref:System.Web.UI.WebControls.CircleHotSpot>オブジェクトの値を指定する必要があります、<xref:System.Web.UI.WebControls.CircleHotSpot.X%2A>プロパティだけでなく<xref:System.Web.UI.WebControls.CircleHotSpot.Y%2A>と<xref:System.Web.UI.WebControls.CircleHotSpot.Radius%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Web.UI.WebControls.ImageMap>を含む 2 つのコントロール<xref:System.Web.UI.WebControls.CircleHotSpot>オブジェクト。 いずれかを宣言によって; 作成します。その<xref:System.Web.UI.WebControls.CircleHotSpot.X%2A>、 <xref:System.Web.UI.WebControls.CircleHotSpot.Y%2A>、および<xref:System.Web.UI.WebControls.CircleHotSpot.Radius%2A>プロパティは宣言によって同様に設定します。 プログラムによって、他の作成とその<xref:System.Web.UI.WebControls.CircleHotSpot.X%2A>、 <xref:System.Web.UI.WebControls.CircleHotSpot.Y%2A>、および<xref:System.Web.UI.WebControls.CircleHotSpot.Radius%2A>プロパティをプログラムによって設定されます。 この例を正しく実行するには、独自のイメージを指定する必要があります、<xref:System.Web.UI.WebControls.Image.ImageUrl%2A>プロパティと、アプリケーションが特定できるようににイメージへのパスを適切に更新します。  
+  
+ [!code-aspx-csharp[CircleHotSpot.Radius#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CircleHotSpot.Radius/CS/circlehotspot.radiuscs.aspx#1)]
+ [!code-aspx-vb[CircleHotSpot.Radius#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CircleHotSpot.Radius/VB/circlehotspot.radiusvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Y">
+      <MemberSignature Language="C#" Value="public int Y { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Y" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CircleHotSpot.Y" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これによって定義される円形領域の中心の y 座標の設定を取得または<see cref="T:System.Web.UI.WebControls.CircleHotSpot" />オブジェクト。</summary>
+        <value>これによって定義される円形領域の中心の y 座標<see cref="T:System.Web.UI.WebControls.CircleHotSpot" />オブジェクト。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CircleHotSpot.Y%2A>プロパティを取得または設定をこのによって定義される円形領域の中心の y 座標を表す値を使用する<xref:System.Web.UI.WebControls.CircleHotSpot>オブジェクト。 完全に定義する、<xref:System.Web.UI.WebControls.CircleHotSpot>オブジェクトの値を指定する必要があります、<xref:System.Web.UI.WebControls.CircleHotSpot.Y%2A>プロパティだけでなく<xref:System.Web.UI.WebControls.CircleHotSpot.X%2A>と<xref:System.Web.UI.WebControls.CircleHotSpot.Radius%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Web.UI.WebControls.ImageMap>を含む 2 つのコントロール<xref:System.Web.UI.WebControls.CircleHotSpot>オブジェクト。 いずれかを宣言によって; 作成します。その<xref:System.Web.UI.WebControls.CircleHotSpot.X%2A>、 <xref:System.Web.UI.WebControls.CircleHotSpot.Y%2A>、および<xref:System.Web.UI.WebControls.CircleHotSpot.Radius%2A>プロパティは宣言によって同様に設定します。 プログラムによって、他の作成とその<xref:System.Web.UI.WebControls.CircleHotSpot.X%2A>、 <xref:System.Web.UI.WebControls.CircleHotSpot.Y%2A>、および<xref:System.Web.UI.WebControls.CircleHotSpot.Radius%2A>プロパティをプログラムによって設定されます。 この例を正しく実行するには、独自のイメージを指定する必要があります、<xref:System.Web.UI.WebControls.Image.ImageUrl%2A>プロパティと、アプリケーションが特定できるようににイメージへのパスを適切に更新します。  
+  
+ [!code-aspx-csharp[CircleHotSpot.Radius#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CircleHotSpot.Radius/CS/circlehotspot.radiuscs.aspx#1)]
+ [!code-aspx-vb[CircleHotSpot.Radius#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CircleHotSpot.Radius/VB/circlehotspot.radiusvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,403 @@
+<Type Name="AnnotationDocumentPaginator" FullName="System.Windows.Annotations.AnnotationDocumentPaginator">
+  <TypeSignature Language="C#" Value="public sealed class AnnotationDocumentPaginator : System.Windows.Documents.DocumentPaginator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit AnnotationDocumentPaginator extends System.Windows.Documents.DocumentPaginator" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Annotations.AnnotationDocumentPaginator" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Documents.DocumentPaginator</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>提供、<see cref="T:System.Windows.Documents.DocumentPaginator" />関連付けられている注釈と共にドキュメントを印刷します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Annotations.AnnotationDocumentPaginator>ラップ、<xref:System.Windows.Documents.DocumentPaginator>に指定された、<xref:System.Windows.Annotations.AnnotationDocumentPaginator.%23ctor%2A>印刷用のページにユーザーの注釈を追加するコンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次の例では、使用、<xref:System.Windows.Annotations.AnnotationDocumentPaginator>クラスです。  
+  
+ [!code-csharp[DocViewerAnnotationsXps#DocViewAnnXpsPrint](~/samples/snippets/csharp/VS_Snippets_Wpf/DocViewerAnnotationsXps/CSharp/Window1.xaml.cs#docviewannxpsprint)]
+ [!code-vb[DocViewerAnnotationsXps#DocViewAnnXpsPrint](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DocViewerAnnotationsXps/visualbasic/window1.xaml.vb#docviewannxpsprint)]  
+  
+ [!code-csharp[DocViewerAnnotationsXps#DocViewAnnXpsDocPaginator](~/samples/snippets/csharp/VS_Snippets_Wpf/DocViewerAnnotationsXps/CSharp/AnnotationsHelperXps.cs#docviewannxpsdocpaginator)]
+ [!code-vb[DocViewerAnnotationsXps#DocViewAnnXpsDocPaginator](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DocViewerAnnotationsXps/visualbasic/annotationshelperxps.vb#docviewannxpsdocpaginator)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Windows.Annotations.AnnotationDocumentPaginator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Annotations.AnnotationDocumentPaginator>ラップ、<xref:System.Windows.Documents.DocumentPaginator>に指定された、<xref:System.Windows.Annotations.AnnotationDocumentPaginator.%23ctor%2A>印刷用のページにユーザーの注釈を追加するコンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AnnotationDocumentPaginator (System.Windows.Documents.DocumentPaginator originalPaginator, System.IO.Stream annotationStore);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Documents.DocumentPaginator originalPaginator, class System.IO.Stream annotationStore) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.AnnotationDocumentPaginator.#ctor(System.Windows.Documents.DocumentPaginator,System.IO.Stream)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="originalPaginator" Type="System.Windows.Documents.DocumentPaginator" />
+        <Parameter Name="annotationStore" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="originalPaginator">印刷された注釈を追加するドキュメントです。</param>
+        <param name="annotationStore">注釈を取得する注釈の記憶域ストリーム。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Annotations.AnnotationDocumentPaginator" />クラスに基づいて、指定された<see cref="T:System.Windows.Documents.DocumentPaginator" />と注釈の記憶域<see cref="T:System.IO.Stream" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定でこのコンス トラクターが設定テキスト フローの方向<xref:System.Windows.FlowDirection.LeftToRight>です。  かどうかに必要ないずれかを使用、代替の<xref:System.Windows.Annotations.AnnotationDocumentPaginator.%23ctor%2A>テキストを設定するコンス トラクターのオーバー ロード<xref:System.Windows.FlowDirection>を別の設定。  
+  
+ <xref:System.Windows.Annotations.AnnotationDocumentPaginator>ラップ、<xref:System.Windows.Documents.DocumentPaginator>に指定された、<xref:System.Windows.Annotations.AnnotationDocumentPaginator.%23ctor%2A>印刷用のページにユーザーの注釈を追加するコンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AnnotationDocumentPaginator (System.Windows.Documents.DocumentPaginator originalPaginator, System.Windows.Annotations.Storage.AnnotationStore annotationStore);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Documents.DocumentPaginator originalPaginator, class System.Windows.Annotations.Storage.AnnotationStore annotationStore) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.AnnotationDocumentPaginator.#ctor(System.Windows.Documents.DocumentPaginator,System.Windows.Annotations.Storage.AnnotationStore)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="originalPaginator" Type="System.Windows.Documents.DocumentPaginator" />
+        <Parameter Name="annotationStore" Type="System.Windows.Annotations.Storage.AnnotationStore" />
+      </Parameters>
+      <Docs>
+        <param name="originalPaginator">印刷された注釈を追加するドキュメントです。</param>
+        <param name="annotationStore">注釈を取得するストア。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Annotations.AnnotationDocumentPaginator" />クラスに基づいて、指定された<see cref="T:System.Windows.Documents.DocumentPaginator" />と<see cref="T:System.Windows.Annotations.Storage.AnnotationStore" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定でこのコンス トラクターが設定テキスト フローの方向<xref:System.Windows.FlowDirection.LeftToRight>です。  かどうかに必要ないずれかを使用、代替の<xref:System.Windows.Annotations.AnnotationDocumentPaginator.%23ctor%2A>テキストを設定するコンス トラクターのオーバー ロード<xref:System.Windows.FlowDirection>を別の設定。  
+  
+ <xref:System.Windows.Annotations.AnnotationDocumentPaginator>ラップ、<xref:System.Windows.Documents.DocumentPaginator>に指定された、<xref:System.Windows.Annotations.AnnotationDocumentPaginator.%23ctor%2A>印刷用のページにユーザーの注釈を追加するコンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次の例では、使用、<xref:System.Windows.Annotations.AnnotationDocumentPaginator.%23ctor%2A>コンス トラクターです。  
+  
+ [!code-csharp[DocViewerAnnotationsXps#DocViewAnnXpsPrint](~/samples/snippets/csharp/VS_Snippets_Wpf/DocViewerAnnotationsXps/CSharp/Window1.xaml.cs#docviewannxpsprint)]
+ [!code-vb[DocViewerAnnotationsXps#DocViewAnnXpsPrint](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DocViewerAnnotationsXps/visualbasic/window1.xaml.vb#docviewannxpsprint)]  
+  
+ [!code-csharp[DocViewerAnnotationsXps#DocViewAnnXpsDocPaginator](~/samples/snippets/csharp/VS_Snippets_Wpf/DocViewerAnnotationsXps/CSharp/AnnotationsHelperXps.cs#docviewannxpsdocpaginator)]
+ [!code-vb[DocViewerAnnotationsXps#DocViewAnnXpsDocPaginator](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DocViewerAnnotationsXps/visualbasic/annotationshelperxps.vb#docviewannxpsdocpaginator)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AnnotationDocumentPaginator (System.Windows.Documents.DocumentPaginator originalPaginator, System.IO.Stream annotationStore, System.Windows.FlowDirection flowDirection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Documents.DocumentPaginator originalPaginator, class System.IO.Stream annotationStore, valuetype System.Windows.FlowDirection flowDirection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.AnnotationDocumentPaginator.#ctor(System.Windows.Documents.DocumentPaginator,System.IO.Stream,System.Windows.FlowDirection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="originalPaginator" Type="System.Windows.Documents.DocumentPaginator" />
+        <Parameter Name="annotationStore" Type="System.IO.Stream" />
+        <Parameter Name="flowDirection" Type="System.Windows.FlowDirection" />
+      </Parameters>
+      <Docs>
+        <param name="originalPaginator">印刷された注釈を追加するドキュメントです。</param>
+        <param name="annotationStore">注釈を取得する注釈の記憶域ストリーム。</param>
+        <param name="flowDirection">テキスト フローの方向<see cref="F:System.Windows.FlowDirection.LeftToRight" />または<see cref="F:System.Windows.FlowDirection.RightToLeft" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Annotations.AnnotationDocumentPaginator" />クラスに基づいて、指定された<see cref="T:System.Windows.Documents.DocumentPaginator" />、注釈の記憶域<see cref="T:System.IO.Stream" />、およびテキスト<see cref="T:System.Windows.FlowDirection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Annotations.AnnotationDocumentPaginator>ラップ、<xref:System.Windows.Documents.DocumentPaginator>に指定された、<xref:System.Windows.Annotations.AnnotationDocumentPaginator.%23ctor%2A>印刷用のページにユーザーの注釈を追加するコンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AnnotationDocumentPaginator (System.Windows.Documents.DocumentPaginator originalPaginator, System.Windows.Annotations.Storage.AnnotationStore annotationStore, System.Windows.FlowDirection flowDirection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Documents.DocumentPaginator originalPaginator, class System.Windows.Annotations.Storage.AnnotationStore annotationStore, valuetype System.Windows.FlowDirection flowDirection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.AnnotationDocumentPaginator.#ctor(System.Windows.Documents.DocumentPaginator,System.Windows.Annotations.Storage.AnnotationStore,System.Windows.FlowDirection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="originalPaginator" Type="System.Windows.Documents.DocumentPaginator" />
+        <Parameter Name="annotationStore" Type="System.Windows.Annotations.Storage.AnnotationStore" />
+        <Parameter Name="flowDirection" Type="System.Windows.FlowDirection" />
+      </Parameters>
+      <Docs>
+        <param name="originalPaginator">印刷された注釈を追加するドキュメントです。</param>
+        <param name="annotationStore">注釈を取得するストア。</param>
+        <param name="flowDirection">テキスト フローの方向<see cref="F:System.Windows.FlowDirection.LeftToRight" />または<see cref="F:System.Windows.FlowDirection.RightToLeft" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Annotations.AnnotationDocumentPaginator" />クラスに基づいて、指定された<see cref="T:System.Windows.Documents.DocumentPaginator" />、 <see cref="T:System.Windows.Annotations.Storage.AnnotationStore" />、およびテキスト<see cref="T:System.Windows.FlowDirection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Annotations.AnnotationDocumentPaginator>ラップ、<xref:System.Windows.Documents.DocumentPaginator>に指定された、<xref:System.Windows.Annotations.AnnotationDocumentPaginator.%23ctor%2A>印刷用のページにユーザーの注釈を追加するコンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelAsync">
+      <MemberSignature Language="C#" Value="public override void CancelAsync (object userState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void CancelAsync(object userState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.AnnotationDocumentPaginator.CancelAsync(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="userState">非同期操作を開始するための呼び出しで渡される一意のアプリケーション定義の識別子。</param>
+        <summary>使用して開始する非同期操作をキャンセル、指定された<paramref name="userState" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComputePageCount">
+      <MemberSignature Language="C#" Value="public override void ComputePageCount ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ComputePageCount() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.AnnotationDocumentPaginator.ComputePageCount" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>強制的に更新プログラム、コンテンツの改ページ調整<see cref="P:System.Windows.Annotations.AnnotationDocumentPaginator.PageCount" />新しい合計とセット<see cref="P:System.Windows.Annotations.AnnotationDocumentPaginator.IsPageCountValid" />に<see langword="true" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 直後に<xref:System.Windows.Annotations.AnnotationDocumentPaginator.ComputePageCount%2A>を返します、<xref:System.Windows.Annotations.AnnotationDocumentPaginator.IsPageCountValid%2A>なります`true`と<xref:System.Windows.Annotations.AnnotationDocumentPaginator.PageCount%2A>プロパティ ページの合計数に反映されます。  
+  
+ 注釈のコンテンツが変更された場合のページ数を変更することがありますまたは<xref:System.Windows.Annotations.AnnotationDocumentPaginator.PageSize%2A>を変更します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComputePageCountAsync">
+      <MemberSignature Language="C#" Value="public override void ComputePageCountAsync (object userState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ComputePageCountAsync(object userState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.AnnotationDocumentPaginator.ComputePageCountAsync(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="userState">非同期操作を識別するための、アプリケーション定義のオブジェクト。</param>
+        <summary>コンテンツの非同期的な改ページ位置の自動修正を開始し、新しい合計を使用して <see cref="P:System.Windows.Annotations.AnnotationDocumentPaginator.PageCount" /> を更新し、完了したときに <see cref="P:System.Windows.Annotations.AnnotationDocumentPaginator.IsPageCountValid" /> を <see langword="true" /> に設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `userState`パラメーターで使用される<xref:System.Windows.Annotations.AnnotationDocumentPaginator.CancelAsync%2A>メソッドの場合は、アプリケーションの完了前に非同期操作を取り消すことを希望します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPage">
+      <MemberSignature Language="C#" Value="public override System.Windows.Documents.DocumentPage GetPage (int pageNumber);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Windows.Documents.DocumentPage GetPage(int32 pageNumber) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.AnnotationDocumentPaginator.GetPage(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.DocumentPage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pageNumber" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="pageNumber">0 から始まるページ番号、<see cref="T:System.Windows.Documents.DocumentPage" />を返します。</param>
+        <summary>返します、<see cref="T:System.Windows.Documents.DocumentPage" />と共に指定したページ番号に関連付けられているユーザーの注釈。</summary>
+        <returns><see cref="T:System.Windows.Documents.DocumentPage" /> 、指定された<paramref name="pageNumber" />; または<see cref="F:System.Windows.Documents.DocumentPage.Missing" />場合は、指定した<paramref name="pageNumber" />存在しません。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPageAsync">
+      <MemberSignature Language="C#" Value="public override void GetPageAsync (int pageNumber, object userState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetPageAsync(int32 pageNumber, object userState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.AnnotationDocumentPaginator.GetPageAsync(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pageNumber" Type="System.Int32" />
+        <Parameter Name="userState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="pageNumber">取得する <see cref="T:System.Windows.Documents.DocumentPage" /> の 0 から始まるページ番号。</param>
+        <param name="userState">非同期操作を識別するために使用される、アプリケーション定義のオブジェクト。</param>
+        <summary>指定したページ番号に関連付けられているユーザーの注釈とともに非同期に <see cref="T:System.Windows.Documents.DocumentPage" /> を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `userState`パラメーターで使用される<xref:System.Windows.Annotations.AnnotationDocumentPaginator.CancelAsync%2A>メソッドの場合は、アプリケーションの完了前に非同期操作を取り消すことを希望します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPageCountValid">
+      <MemberSignature Language="C#" Value="public override bool IsPageCountValid { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPageCountValid" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Annotations.AnnotationDocumentPaginator.IsPageCountValid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか<see cref="P:System.Windows.Annotations.AnnotationDocumentPaginator.PageCount" />ページの合計数です。</summary>
+        <value>
+          <see langword="true" />改ページが完了した場合と<see cref="P:System.Windows.Annotations.AnnotationDocumentPaginator.PageCount" />合計を表すページ番号、それ以外の<see langword="false" />改ページがプロセスの場合と<see cref="P:System.Windows.Annotations.AnnotationDocumentPaginator.PageCount" />フォーマットされた現在のページの数を表します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Annotations.AnnotationDocumentPaginator.IsPageCountValid%2A>切り替えることがあります`true`に`false`と<xref:System.Windows.Annotations.AnnotationDocumentPaginator.PageCount%2A>場合、コンテンツへの変更を再計算または<xref:System.Windows.Annotations.AnnotationDocumentPaginator.PageSize%2A>改ページをトリガーします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageCount">
+      <MemberSignature Language="C#" Value="public override int PageCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PageCount" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Annotations.AnnotationDocumentPaginator.PageCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の形式をページの数を示す値を取得します。</summary>
+        <value>場合<see cref="P:System.Windows.Annotations.AnnotationDocumentPaginator.IsPageCountValid" />は<see langword="true" />、注釈のページの合計数です。 それ以外では<see cref="P:System.Windows.Annotations.AnnotationDocumentPaginator.IsPageCountValid" />は<see langword="false" />、ページの数が現在 (プロセスでの改ページ) を書式設定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Annotations.AnnotationDocumentPaginator.IsPageCountValid%2A>変更することがあります`true`に`false`と<xref:System.Windows.Annotations.AnnotationDocumentPaginator.PageCount%2A>場合、コンテンツへの変更を再計算または<xref:System.Windows.Annotations.AnnotationDocumentPaginator.PageSize%2A>改ページをトリガーします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageSize">
+      <MemberSignature Language="C#" Value="public override System.Windows.Size PageSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Size PageSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Annotations.AnnotationDocumentPaginator.PageSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または提案された幅と各ページの高さを設定します。</summary>
+        <value>推奨の幅と高さのページの書式設定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Annotations.AnnotationDocumentPaginator.PageSize%2A>取得または設定、*推奨*サイズのページを書式設定します。  使用して、<xref:System.Windows.Documents.DocumentPage.Size%2A>ページの実際のサイズを取得するプロパティ (実際のサイズがトリミングされる必要がある場合、候補から<xref:System.Windows.Annotations.AnnotationDocumentPaginator.PageSize%2A>)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Source">
+      <MemberSignature Language="C#" Value="public override System.Windows.Documents.IDocumentPaginatorSource Source { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.IDocumentPaginatorSource Source" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Annotations.AnnotationDocumentPaginator.Source" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.IDocumentPaginatorSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>改ページ調整されているソース ドキュメントを取得します。</summary>
+        <value>改ページ調整されているソース ドキュメント。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

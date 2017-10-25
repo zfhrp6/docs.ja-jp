@@ -1,0 +1,131 @@
+<Type Name="InvokePattern" FullName="System.Windows.Automation.InvokePattern">
+  <TypeSignature Language="C#" Value="public class InvokePattern : System.Windows.Automation.BasePattern" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit InvokePattern extends System.Windows.Automation.BasePattern" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.InvokePattern" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Automation.BasePattern</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>単一の明確な処理を開始または実行し、アクティブになったときに状態を保持しないコントロールを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールがサポートする<xref:System.Windows.Automation.InvokePattern>別のコントロール パターンを通じて同じ動作が公開されていない場合。 たとえば場合、<xref:System.Windows.Automation.InvokePattern.Invoke%2A>コントロールのメソッドとして同じアクションを実行、<xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A>または<xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A>メソッド、コントロールがサポートされません<xref:System.Windows.Automation.InvokePattern>です。  
+  
+ [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]オプション ボタンは、状態を維持するには、チェック ボックスなどのコントロールを表す要素が代わりにサポート<xref:System.Windows.Automation.TogglePattern>または<xref:System.Windows.Automation.SelectionItemPattern>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Invoke">
+      <MemberSignature Language="C#" Value="public void Invoke ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Invoke() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.InvokePattern.Invoke" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>要求を送信してコントロールをアクティブ化し、その 1 つの明確なアクションを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す<xref:System.Windows.Automation.InvokePattern.Invoke%2A>ブロックせずにすぐに返す必要があります。 ただし、この動作は完全に依存、[!INCLUDE[TLA#tla_uiautomation](~/includes/tlasharptla-uiautomation-md.md)]プロバイダーの実装です。 シナリオで呼び出して、<xref:System.Windows.Automation.InvokePattern.Invoke%2A>別 (モーダル ダイアログ ボックス) などのブロッキングの問題が発生ヘルパー スレッドは、メソッドを呼び出す必要があります。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.InvokePattern>コントロールからコントロール パターンを取得し、<xref:System.Windows.Automation.InvokePattern.Invoke%2A>メソッドが呼び出されます。  
+  
+ [!code-csharp[UIAInvokePattern_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAInvokePattern_snip/CSharp/UIAInvokePattern_snippets.cs#101)]
+ [!code-vb[UIAInvokePattern_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAInvokePattern_snip/VisualBasic/UIAInvokePattern_snippets.vb#101)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">要素はサポートしていません、<see cref="T:System.Windows.Automation.InvokePattern" />コントロール パターンが非表示またはブロックします。</exception>
+        <exception cref="T:System.Windows.Automation.ElementNotEnabledException">この要素は有効ではありません。 UI オートメーション プロバイダーが独自の処理を実装した場合に発生することができます、<see cref="P:System.Windows.Automation.AutomationElement.AutomationElementInformation.IsEnabled" />プロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokedEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationEvent InvokedEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationEvent InvokedEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.InvokePattern.InvokedEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールが呼び出されるか、アクティブ化されるときに発生するイベントを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.InvokePatternIdentifiers>です。  
+  
+ <xref:System.Windows.Automation.InvokePattern.InvokedEvent>識別子はパラメーターとして渡されます<xref:System.Windows.Automation.Automation.AddAutomationEventHandler%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例では、イベント ハンドラー イベントを識別に Invoked イベントと比較することによって、<xref:System.Windows.Automation.AutomationEventArgs.EventId%2A>にイベント引数と、<xref:System.Windows.Automation.InvokePattern.InvokedEvent>識別子フィールドです。  
+  
+ [!code-csharp[UIAClient_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#101)]
+ [!code-vb[UIAClient_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#101)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pattern">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationPattern Pattern;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationPattern Pattern" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.InvokePattern.Pattern" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationPattern</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Automation.InvokePattern" /> コントロール パターンを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.InvokePatternIdentifiers>です。  
+  
+ パターン識別子がなどのメソッドに渡された<xref:System.Windows.Automation.AutomationElement.GetCurrentPattern%2A>から、指定した目的のコントロール パターンを取得する<xref:System.Windows.Automation.AutomationElement>です。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.InvokePattern>コントロールからコントロール パターンを取得し、<xref:System.Windows.Automation.InvokePattern.Invoke%2A>メソッドが呼び出されます。  
+  
+ [!code-csharp[UIAInvokePattern_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAInvokePattern_snip/CSharp/UIAInvokePattern_snippets.cs#101)]
+ [!code-vb[UIAInvokePattern_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAInvokePattern_snip/VisualBasic/UIAInvokePattern_snippets.vb#101)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

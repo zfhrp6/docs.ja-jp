@@ -1,0 +1,358 @@
+<Type Name="StateMachineWorkflowActivity" FullName="System.Workflow.Activities.StateMachineWorkflowActivity">
+  <TypeSignature Language="C#" Value="public class StateMachineWorkflowActivity : System.Workflow.Activities.StateActivity" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StateMachineWorkflowActivity extends System.Workflow.Activities.StateActivity" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Activities.StateMachineWorkflowActivity" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.Activities.StateActivity</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer(typeof(System.Workflow.Activities.StateMachineWorkflowDesigner), typeof(System.ComponentModel.Design.IRootDesigner))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer(typeof(System.Workflow.Activities.StateMachineWorkflowDesigner), typeof(System.ComponentModel.Design.IDesigner))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Drawing.ToolboxBitmap(typeof(System.Workflow.Activities.StateMachineWorkflowActivity), "Resources.StateMachineWorkflowActivity.png")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Workflow.ComponentModel.Compiler.ActivityValidator(typeof(System.Workflow.Activities.StateActivityValidator))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ステート マシンのワークフローのルート コンテナーとして機能します。 イベント ドリブン アクティビティとイベント ドリブン状態を格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.Activities.StateMachineWorkflowActivity> は、ステート マシン モデルに従うワークフローの作成に使用するアクティビティ コンテナーです。  
+  
+ <xref:System.Workflow.Activities.StateMachineWorkflowActivity> は <xref:System.Workflow.ComponentModel.CompositeActivity> です。つまり、<xref:System.Workflow.Activities.StateMachineWorkflowActivity> には他のアクティビティを含めることができます。 <xref:System.Workflow.Activities.StateMachineWorkflowActivity> の許可されている子アクティビティは、<xref:System.Workflow.Activities.EventDrivenActivity> アクティビティと <xref:System.Workflow.Activities.StateMachineWorkflowActivity> アクティビティだけです。 <xref:System.Workflow.Activities.EventDrivenActivity> アクティビティは、ルート アクティビティ自体が状態と同様に動作するので許可されます。 したがって、<xref:System.Workflow.Activities.EventDrivenActivity> のすべての State アクティビティによって使用される <xref:System.Workflow.Activities.StateMachineWorkflowActivity> アクティビティをルート レベルに配置できます。 <xref:System.Workflow.Activities.EventDrivenActivity> アクティビティは、ワークフロー イベントを処理するためのグローバル機構を提供し、状態遷移を自動化します。 <xref:System.Workflow.Activities.StateActivity> アクティビティは、モデルの複数の段階を定義できる機構を提供します。  
+  
+ <xref:System.Workflow.Activities.StateMachineWorkflowActivity> には、ステート マシン ワークフローの実行に必要なプロパティがあります。 特に、<xref:System.Workflow.Activities.StateMachineWorkflowActivity> には、<xref:System.Workflow.Activities.StateMachineWorkflowActivity.InitialStateNameProperty> と <xref:System.Workflow.Activities.StateMachineWorkflowActivity.CompletedStateNameProperty> という 2 つの重要なプロパティがあります。  
+  
+ ステート マシンの <xref:System.Workflow.Activities.StateMachineWorkflowActivity.InitialStateNameProperty> は、ステート マシンのインスタンスが作成された時点でのステート マシンの状態です。 <xref:System.Workflow.Activities.StateMachineWorkflowActivity.InitialStateNameProperty> プロパティは必須であるため、<xref:System.Workflow.Activities.StateMachineWorkflowActivity> の作成時に指定する必要があります。 ステート マシンの <xref:System.Workflow.Activities.StateMachineWorkflowActivity.InitialStateNameProperty> は、そのステート マシンに含まれるその他のステート アクティビティと同じです。 ステート アクティビティは、<xref:System.Workflow.Activities.StateMachineWorkflowActivity> ルート アクティビティの直接の子になることができ、<xref:System.Workflow.Activities.StateMachineWorkflowActivity> は <xref:System.Workflow.Activities.StateMachineWorkflowActivity.InitialStateNameProperty> を 1 つだけ持つことができます。  
+  
+ <xref:System.Workflow.Activities.StateMachineWorkflowActivity.CompletedStateNameProperty> の <xref:System.Workflow.Activities.StateMachineWorkflowActivity> は、<xref:System.Workflow.Activities.StateActivity> の最終状態として指定されている <xref:System.Workflow.Activities.StateMachineWorkflowActivity> アクティビティです。 <xref:System.Workflow.Activities.StateMachineWorkflowActivity.CompletedStateNameProperty> に状態が変わると、ワークフローの実行が終了します。 <xref:System.Workflow.Activities.StateMachineWorkflowActivity.CompletedStateNameProperty> は必須ではありません。 つまり、完了していない <xref:System.Workflow.Activities.StateMachineWorkflowActivity> も許されます。 これは、ステート マシン ワークフローがメモリ内で常にアクティブであるという意味ではありません。 <xref:System.Workflow.Activities.StateMachineWorkflowActivity> は、イベント待ちの間、アンロードされることがあります。  
+  
+ 決して完了しない <xref:System.Workflow.Activities.StateMachineWorkflowActivity> アクティビティは、サプライヤーが発注書を受け取った場合など、長時間実行されるビジネス トランザクションを処理するときに特に役立ちます。 発注書の処理が完了したことによって、発注プロセスが完了するわけではありません。 発注書に含まれる商品が返品されたり、発注書の処理が完了した後に発注書が変更されたり、明細が追加されたりする可能性があります。 法的またはその他の目的で、発注書のレコードを長期間保管する必要がある場合もあります。 ワークフローが終了していないということは、ワークフローはアンロード状態のままであるということです。 ワークフローを中止する場合もあります。つまり、設定期間後に、ワークフロー インスタンスが強制的に停止される場合があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Workflow.Activities.StateMachineWorkflowActivity> クラスの新しいインスタンスを作成し、3 つの状態間を遷移する基本的なステート マシンを実装する方法を示します。 このコード例は、StateMachineWorkflow.cs ファイルから抜粋した SimpleStateMachineWorkflow SDK サンプルの一部です。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][簡単なステート マシン](http://msdn.microsoft.com/en-us/1974edbd-253d-4e01-9095-38ff9c3e749e)です。  
+  
+ [!code-csharp[wf_samples#181](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets11.cs#181)]
+ [!code-vb[wf_samples#181](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets11.vb#181)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StateMachineWorkflowActivity ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.StateMachineWorkflowActivity.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Activities.StateMachineWorkflowActivity" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StateMachineWorkflowActivity (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.StateMachineWorkflowActivity.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">アクティビティのユーザー定義名。</param>
+        <summary>アクティビティ名を使用して、<see cref="T:System.Workflow.Activities.StateMachineWorkflowActivity" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompletedStateName">
+      <MemberSignature Language="C#" Value="public string CompletedStateName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CompletedStateName" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.StateMachineWorkflowActivity.CompletedStateName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor(typeof(System.Workflow.Activities.StateDropDownEditor), typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフローの最後の <see cref="T:System.Workflow.Activities.StateActivity" /> を取得または設定します。</summary>
+        <value>ワークフローの最後の <see cref="T:System.Workflow.Activities.StateActivity" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Activities.StateMachineWorkflowActivity.CompletedStateName%2A> に状態が変わると、ワークフローの実行が終了します。 <xref:System.Workflow.Activities.StateMachineWorkflowActivity.CompletedStateName%2A> は必須ではありません。 つまり、完了していない <xref:System.Workflow.Activities.StateMachineWorkflowActivity> も許されます。 これは、ステート マシン ワークフローがメモリ内で常にアクティブであるという意味ではありません。 <xref:System.Workflow.Activities.StateMachineWorkflowActivity> は、イベント待ちの間、アンロードされることがあります。  
+  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]<xref:System.Workflow.Activities.StateMachineWorkflowActivity.InitialStateName%2A> and <xref:System.Workflow.Activities.StateMachineWorkflowActivity.CompletedStateName%2A>, see <xref:System.Workflow.Activities.StateMachineWorkflowActivity>.  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.Activities.StateMachineWorkflowActivity.CompletedStateName%2A> プロパティの値を設定する方法を次のコード例に示します。 このコード例は、StateMachineWorkflow.cs ファイルから抜粋した SimpleStateMachineWorkflow SDK サンプルの一部です。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][簡単なステート マシン](http://msdn.microsoft.com/en-us/1974edbd-253d-4e01-9095-38ff9c3e749e)です。  
+  
+ [!code-csharp[wf_samples#184](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets19.cs#184)]
+ [!code-vb[wf_samples#184](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets19.vb#184)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompletedStateNameProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Workflow.ComponentModel.DependencyProperty CompletedStateNameProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Workflow.ComponentModel.DependencyProperty CompletedStateNameProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.Activities.StateMachineWorkflowActivity.CompletedStateNameProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="T:System.Workflow.ComponentModel.DependencyObject" /> プロパティをターゲットとする <see cref="P:System.Workflow.Activities.StateMachineWorkflowActivity.CompletedStateName" /> を表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[DependencyPropertyRemark](~/includes/dependencypropertyremark-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentStateName">
+      <MemberSignature Language="C#" Value="public string CurrentStateName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CurrentStateName" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.StateMachineWorkflowActivity.CurrentStateName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在実行中の <see cref="T:System.Workflow.Activities.StateActivity" /> の名前を取得します。</summary>
+        <value>現在の <see cref="T:System.Workflow.Activities.StateActivity" /> の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Activities.StateMachineWorkflowActivity.CurrentStateName%2A> プロパティは、ワークフローの内部からアクセスしたときに (たとえば、<xref:System.Workflow.Activities.CodeActivity> アクティビティのコード ハンドラーからアクセスしたとき)、現在の状態の名前だけを返します。 ホストはワークフロー定義のコピーにしかアクセスできず、実際のインスタンス ツリーにはアクセスできないため、このプロパティはホスト コードからは機能しません。  
+  
+ ホストから現在の状態を確認する方法[!INCLUDE[crabout](~/includes/crabout-md.md)]、<xref:System.Workflow.Activities.StateMachineWorkflowInstance.CurrentStateName%2A> クラスの <xref:System.Workflow.Activities.StateMachineWorkflowInstance> プロパティを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DynamicUpdateCondition">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.ActivityCondition DynamicUpdateCondition { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.ComponentModel.ActivityCondition DynamicUpdateCondition" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.StateMachineWorkflowActivity.DynamicUpdateCondition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.ActivityCondition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされるとき、ワークフローで動的更新が実行できるかどうかを決定する <see cref="T:System.Workflow.ComponentModel.ActivityCondition" /> を取得または設定します。</summary>
+        <value>動的更新を実行できるタイミングを識別する <see cref="T:System.Workflow.ComponentModel.ActivityCondition" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ `DynamicUpdateCondition` プロパティを設定する方法を次の例に示します。 この例は、注文処理ステート マシンの SDK サンプルです。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][ステート マシンのサンプルを順序付け](http://msdn.microsoft.com/en-us/59272cf4-bc98-439c-bcfa-b66999ebce5c)です。  
+  
+ [!code-csharp[wf_samples#127](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#127)]
+ [!code-vb[wf_samples#127](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#127)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitialStateName">
+      <MemberSignature Language="C#" Value="public string InitialStateName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string InitialStateName" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.StateMachineWorkflowActivity.InitialStateName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor(typeof(System.Workflow.Activities.StateDropDownEditor), typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Workflow.ComponentModel.Compiler.ValidationOption(System.Workflow.ComponentModel.Compiler.ValidationOption.Optional)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ステート マシンのインスタンスが作成された時点での <see cref="T:System.Workflow.Activities.StateActivity" /> の <see cref="T:System.Workflow.Activities.StateMachineWorkflowActivity" /> を取得または設定します。</summary>
+        <value>ステート マシンのインスタンスが作成された時点での <see cref="T:System.Workflow.Activities.StateActivity" /> の <see cref="T:System.Workflow.Activities.StateMachineWorkflowActivity" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Activities.StateMachineWorkflowActivity.InitialStateName%2A> プロパティは必須であるため、<xref:System.Workflow.Activities.StateMachineWorkflowActivity> の作成時に指定する必要があります。 ステート マシンの <xref:System.Workflow.Activities.StateMachineWorkflowActivity.InitialStateName%2A> は、そのステート マシンに含まれるその他のステート アクティビティと同じです。 ステート アクティビティは、<xref:System.Workflow.Activities.StateMachineWorkflowActivity> ルート アクティビティの直接の子になることができ、<xref:System.Workflow.Activities.StateMachineWorkflowActivity> は <xref:System.Workflow.Activities.StateMachineWorkflowActivity.InitialStateName%2A> を 1 つだけ持つことができます。  
+  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]<xref:System.Workflow.Activities.StateMachineWorkflowActivity.InitialStateName%2A> and <xref:System.Workflow.Activities.StateMachineWorkflowActivity.CompletedStateName%2A>, see <xref:System.Workflow.Activities.StateMachineWorkflowActivity>.  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.Activities.StateMachineWorkflowActivity.InitialStateName%2A> プロパティの値を設定する方法を次のコード例に示します。 このコード例は、StateMachineWorkflow.cs ファイルから抜粋した SimpleStateMachineWorkflow SDK サンプルの一部です。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][簡単なステート マシン](http://msdn.microsoft.com/en-us/1974edbd-253d-4e01-9095-38ff9c3e749e)です。  
+  
+ [!code-csharp[wf_samples#184](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets19.cs#184)]
+ [!code-vb[wf_samples#184](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets19.vb#184)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitialStateNameProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Workflow.ComponentModel.DependencyProperty InitialStateNameProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Workflow.ComponentModel.DependencyProperty InitialStateNameProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.Activities.StateMachineWorkflowActivity.InitialStateNameProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="T:System.Workflow.ComponentModel.DependencyObject" /> プロパティをターゲットとする <see cref="P:System.Workflow.Activities.StateMachineWorkflowActivity.InitialStateName" /> を表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[DependencyPropertyRemark](~/includes/dependencypropertyremark-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviousStateName">
+      <MemberSignature Language="C#" Value="public string PreviousStateName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PreviousStateName" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.StateMachineWorkflowActivity.PreviousStateName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>以前に実行された <see cref="T:System.Workflow.Activities.StateActivity" /> の名前を取得します。</summary>
+        <value>以前の <see cref="T:System.Workflow.Activities.StateActivity" /> の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Activities.StateMachineWorkflowActivity.PreviousStateName%2A> プロパティは、ワークフローの内部からアクセスしたときに (たとえば、<xref:System.Workflow.Activities.CodeActivity> のコード ハンドラーからアクセスしたとき)、以前の状態の名前だけを返します。 ホストはワークフロー定義のコピーにしかアクセスできず、実際のインスタンス ツリーにはアクセスできないため、このプロパティはホスト コードからは機能しません。  
+  
+ ホストから以前の状態を確認する方法[!INCLUDE[crabout](~/includes/crabout-md.md)]、<xref:System.Workflow.Activities.StateMachineWorkflowInstance.StateHistory%2A> クラスの <xref:System.Workflow.Activities.StateMachineWorkflowInstance> プロパティを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetStateQueueName">
+      <MemberSignature Language="C#" Value="public const string SetStateQueueName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string SetStateQueueName" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.Activities.StateMachineWorkflowActivity.SetStateQueueName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.WorkflowQueue" /> の状態を変更するために使用される <see cref="T:System.Workflow.Activities.StateMachineWorkflowActivity" /> の名前です。 このフィールドは定数です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

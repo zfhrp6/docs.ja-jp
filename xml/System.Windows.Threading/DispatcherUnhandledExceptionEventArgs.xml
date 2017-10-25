@@ -1,0 +1,65 @@
+<Type Name="DispatcherUnhandledExceptionEventArgs" FullName="System.Windows.Threading.DispatcherUnhandledExceptionEventArgs">
+  <TypeSignature Language="C#" Value="public sealed class DispatcherUnhandledExceptionEventArgs : System.Windows.Threading.DispatcherEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DispatcherUnhandledExceptionEventArgs extends System.Windows.Threading.DispatcherEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Threading.DispatcherUnhandledExceptionEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Threading.DispatcherEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、 <see cref="T:System.Windows.Threading.Dispatcher" /> <see cref="E:System.Windows.Threading.Dispatcher.UnhandledException" />イベント。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Threading.Dispatcher.UnhandledException>イベントが発生したときにコードをによって実行する、<xref:System.Windows.Threading.Dispatcher>処理されない例外がスローされます。  
+  
+ <xref:System.Windows.Threading.Dispatcher.UnhandledExceptionFilter>イベントを発生させませんする手段を提供する、<xref:System.Windows.Threading.Dispatcher.UnhandledException>イベント。  <xref:System.Windows.Threading.Dispatcher.UnhandledExceptionFilter>イベントは、最初に、場合<xref:System.Windows.Threading.DispatcherUnhandledExceptionFilterEventArgs.RequestCatch%2A>上、<xref:System.Windows.Threading.DispatcherUnhandledExceptionFilterEventArgs>に設定されている`false`、<xref:System.Windows.Threading.Dispatcher.UnhandledException>イベントは発生しません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Exception">
+      <MemberSignature Language="C#" Value="public Exception Exception { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Exception Exception" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Threading.DispatcherUnhandledExceptionEventArgs.Exception" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディスパッチャーを使用してコードを実行するときに発生した例外を取得します。</summary>
+        <value>例外。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Handled">
+      <MemberSignature Language="C#" Value="public bool Handled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Handled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Threading.DispatcherUnhandledExceptionEventArgs.Handled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または例外イベントが処理されたかどうかを設定します。</summary>
+        <value>
+          <see langword="true" />例外が処理された場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

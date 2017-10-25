@@ -1,0 +1,803 @@
+<Type Name="ZipFile" FullName="System.IO.Compression.ZipFile">
+  <TypeSignature Language="C#" Value="public static class ZipFile" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ZipFile extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IO.Compression.ZipFile" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.Compression.ZipFile</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.0.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.IO.Compression.FileSystem</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>zip アーカイブの作成、抽出、および解凍の静的メソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  使用する、<xref:System.IO.Compression.ZipFile>クラスへの参照を追加する必要があります、 `System.IO.Compression.FileSystem` ; プロジェクト内のアセンブリをコンパイルしようとするときに、次のエラー メッセージが表示されますそれ以外の場合: **'ZipFile' が現在のコンテキストに存在しない名前**です。 Visual Studio でプロジェクトへの参照を追加する方法の詳細については、次を参照してください。[する方法: 参照マネージャーを使用して参照を削除するを追加または](http://msdn.microsoft.com/library/1aabb520-99b0-46c6-9368-21b4d84793eb)です。  
+  
+ Zip アーカイブとそのファイルを操作するための方法は 3 つのクラス間で分散: <xref:System.IO.Compression.ZipFile>、<xref:System.IO.Compression.ZipArchive>と<xref:System.IO.Compression.ZipArchiveEntry>です。  
+  
+|宛先。。。|使用するケース|  
+|---------|----------|  
+|ディレクトリからの zip のアーカイブを作成します。|<xref:System.IO.Compression.ZipFile.CreateFromDirectory%2A?displayProperty=nameWithType>|  
+|ディレクトリの zip アーカイブのコンテンツを抽出します。|<xref:System.IO.Compression.ZipFile.ExtractToDirectory%2A?displayProperty=nameWithType>|  
+|既存の zip アーカイブを新しいファイルを追加します。|<xref:System.IO.Compression.ZipArchive.CreateEntry%2A?displayProperty=nameWithType>|  
+|Zip アーカイブ内でファイルを取得します。|<xref:System.IO.Compression.ZipArchive.GetEntry%2A?displayProperty=nameWithType>|  
+|Zip アーカイブ内のファイルをすべて取得します。|<xref:System.IO.Compression.ZipArchive.Entries%2A?displayProperty=nameWithType>|  
+|Zip アーカイブに含まれる個々 のファイル ストリームを開く|<xref:System.IO.Compression.ZipArchiveEntry.Open%2A?displayProperty=nameWithType>|  
+|Zip アーカイブからファイルを削除します。|<xref:System.IO.Compression.ZipArchiveEntry.Delete%2A?displayProperty=nameWithType>|  
+  
+ 使用することはできません、<xref:System.IO.Compression.ZipFile>または<xref:System.IO.Compression.ZipFileExtensions>クラス[!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)]アプリ。 [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)]アプリでは、圧縮されたファイルを使用する、次のクラスを使用する必要があります。  
+  
+-   <xref:System.IO.Compression.ZipArchive>  
+  
+-   <xref:System.IO.Compression.ZipArchiveEntry>  
+  
+-   <xref:System.IO.Compression.DeflateStream>  
+  
+-   <xref:System.IO.Compression.GZipStream>  
+  
+   
+  
+## Examples  
+ この例は、作成しを使用して、zip アーカイブを抽出する方法を示しています、<xref:System.IO.Compression.ZipFile>クラスです。 Zip アーカイブに、フォルダーの内容を圧縮し、新しいフォルダーにそのコンテンツを抽出します。  
+  
+> [!TIP]
+>  使用する、<xref:System.IO.Compression.ZipFile>クラスを参照する必要がある、`System.IO.Compression.FileSystem`プロジェクト内のアセンブリ。  
+  
+ [!code-csharp[System.IO.Compression.ZipFile#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.compression.zipfile/cs/program1.cs#1)]
+ [!code-vb[System.IO.Compression.ZipFile#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.compression.zipfile/vb/program1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateFromDirectory">
+      <MemberSignature Language="C#" Value="public static void CreateFromDirectory (string sourceDirectoryName, string destinationArchiveFileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void CreateFromDirectory(string sourceDirectoryName, string destinationArchiveFileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Compression.ZipFile.CreateFromDirectory(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression.ZipFile</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression.FileSystem</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceDirectoryName" Type="System.String" />
+        <Parameter Name="destinationArchiveFileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceDirectoryName">アーカイブするディレクトリのパス。相対パスまたは絶対パスとして指定します。 相対パスは、現在の作業ディレクトリに対して相対的に解釈されます。</param>
+        <param name="destinationArchiveFileName">作成するアーカイブのパス。相対パスまたは絶対パスとして指定します。 相対パスは、現在の作業ディレクトリに対して相対的に解釈されます。</param>
+        <summary>指定したディレクトリのファイルおよびディレクトリを含む zip アーカイブを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイル システムから、ディレクトリ構造は、アーカイブに保持されます。 ディレクトリが空の場合は、空のアーカイブが作成されます。 このメソッドのオーバー ロードは、アーカイブに、ベース ディレクトリを含まないし、圧縮レベルを指定することはできません。 ベースのディレクトリを含めたり、圧縮レベルでの呼び出しを指定する場合、<xref:System.IO.Compression.ZipFile.CreateFromDirectory%28System.String%2CSystem.String%2CSystem.IO.Compression.CompressionLevel%2CSystem.Boolean%29>メソッドのオーバー ロードします。  
+  
+ アーカイブが既に存在する場合、<xref:System.IO.IOException>例外がスローされます。 アーカイブに指定した名前のエントリが既に存在する場合と同じ名前の 2 番目のエントリが作成されます。  
+  
+ ディレクトリ内のファイルは、アーカイブに追加することはできません、アーカイブを完了していないと、無効な場合、メソッドをスロー、<xref:System.IO.IOException>例外。  
+  
+   
+  
+## Examples  
+ この例は、作成しを使用して、zip アーカイブを抽出する方法を示しています、<xref:System.IO.Compression.ZipFile>クラスです。 Zip アーカイブに、フォルダーの内容を圧縮し、新しいフォルダーにそのコンテンツを抽出します。 使用する、<xref:System.IO.Compression.ZipFile>クラスを参照する必要がある、`System.IO.Compression.FileSystem`プロジェクト内のアセンブリ。  
+  
+ [!code-csharp[System.IO.Compression.ZipFile#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.compression.zipfile/cs/program1.cs#1)]
+ [!code-vb[System.IO.Compression.ZipFile#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.compression.zipfile/vb/program1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="sourceDirectoryName" />または<paramref name="destinationArchiveFileName" />は<see cref="F:System.String.Empty" />空白しか含んでいない、または少なくとも 1 つの無効な文字が含まれています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="sourceDirectoryName" /> または <paramref name="destinationArchiveFileName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException"><paramref name="sourceDirectoryName" />または<paramref name="destinationArchiveFileName" />、指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字以下、ファイル名は 260 文字以下にする必要があります。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">
+          <paramref name="sourceDirectoryName" />無効か存在しません (たとえば、上にある、マップされていないドライブ)。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="destinationArchiveFileName" />既に存在します。  
+  
+ または  
+  
+ 指定したディレクトリ内のファイルを開けませんでした。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">
+          <paramref name="destinationArchiveFileName" /> がディレクトリを指定しています。  
+  
+ または  
+  
+ 指定されたディレクトリへのアクセスに必要なアクセス許可が呼び出し元にない<paramref name="sourceDirectoryName" />またはで指定されたファイル<paramref name="destinationArchiveFileName" />です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="sourceDirectoryName" />または<paramref name="destinationArchiveFileName" />無効な形式が含まれています。  
+  
+ または  
+  
+ Zip アーカイブは、書き込みをサポートしません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromDirectory">
+      <MemberSignature Language="C#" Value="public static void CreateFromDirectory (string sourceDirectoryName, string destinationArchiveFileName, System.IO.Compression.CompressionLevel compressionLevel, bool includeBaseDirectory);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void CreateFromDirectory(string sourceDirectoryName, string destinationArchiveFileName, valuetype System.IO.Compression.CompressionLevel compressionLevel, bool includeBaseDirectory) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Compression.ZipFile.CreateFromDirectory(System.String,System.String,System.IO.Compression.CompressionLevel,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression.ZipFile</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression.FileSystem</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceDirectoryName" Type="System.String" />
+        <Parameter Name="destinationArchiveFileName" Type="System.String" />
+        <Parameter Name="compressionLevel" Type="System.IO.Compression.CompressionLevel" />
+        <Parameter Name="includeBaseDirectory" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="sourceDirectoryName">アーカイブするディレクトリのパス。相対パスまたは絶対パスとして指定します。 相対パスは、現在の作業ディレクトリに対して相対的に解釈されます。</param>
+        <param name="destinationArchiveFileName">作成するアーカイブのパス。相対パスまたは絶対パスとして指定します。 相対パスは、現在の作業ディレクトリに対して相対的に解釈されます。</param>
+        <param name="compressionLevel">エントリの作成時に速度または圧縮の有効性を強調するかどうかを示す列挙値の 1 つ。</param>
+        <param name="includeBaseDirectory">
+          <see langword="true" />ディレクトリ名に含める<c>sourceDirectoryName</c> ; アーカイブのルートにあります。<see langword="false" />ディレクトリの内容のみを含める。</param>
+        <summary>指定したディレクトリのファイルおよびディレクトリを含む zip アーカイブを作成し、指定した圧縮レベルを使用し、オプションでベース ディレクトリを含みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイル システムから、ディレクトリ構造は、アーカイブに保持されます。 ディレクトリが空の場合は、空のアーカイブが作成されます。 このメソッドのオーバー ロードを使用すると、圧縮レベルと、ベース ディレクトリをアーカイブに含めるかどうかを指定できます。  
+  
+ アーカイブが既に存在する場合、<xref:System.IO.IOException>例外がスローされます。 アーカイブに指定した名前のエントリが既に存在する場合と同じ名前の 2 番目のエントリが作成されます。  
+  
+ ディレクトリ内のファイルは、アーカイブに追加することはできません、アーカイブを完了していないと、無効な場合、メソッドをスロー、<xref:System.IO.IOException>例外。  
+  
+   
+  
+## Examples  
+ この例は、作成しを使用して、zip アーカイブを抽出する方法を示しています、<xref:System.IO.Compression.ZipFile>クラスです。 Zip アーカイブに、フォルダーの内容を圧縮し、新しいフォルダーにそのコンテンツを抽出します。 アーカイブの圧縮、ときに、ベース ディレクトリが含まれると圧縮レベルが高効率より操作の速度を重視に設定します。 使用する、<xref:System.IO.Compression.ZipFile>クラスを参照する必要がある、`System.IO.Compression.FileSystem`プロジェクト内のアセンブリ。  
+  
+ [!code-csharp[System.IO.Compression.ZipFile#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.compression.zipfile/cs/program2.cs#2)]
+ [!code-vb[System.IO.Compression.ZipFile#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.compression.zipfile/vb/program2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="sourceDirectoryName" />または<paramref name="destinationArchiveFileName" />は<see cref="F:System.String.Empty" />空白しか含んでいない、または少なくとも 1 つの無効な文字が含まれています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="sourceDirectoryName" /> または <paramref name="destinationArchiveFileName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException"><paramref name="sourceDirectoryName" />または<paramref name="destinationArchiveFileName" />、指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字以下、ファイル名は 260 文字以下にする必要があります。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">
+          <paramref name="sourceDirectoryName" />無効か存在しません (たとえば、上にある、マップされていないドライブ)。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="destinationArchiveFileName" />既に存在します。  
+  
+ または  
+  
+ 指定したディレクトリ内のファイルを開けませんでした。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">
+          <paramref name="destinationArchiveFileName" /> がディレクトリを指定しています。  
+  
+ または  
+  
+ 指定されたディレクトリへのアクセスに必要なアクセス許可が呼び出し元にない<paramref name="sourceDirectoryName" />またはで指定されたファイル<paramref name="destinationArchiveFileName" />です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="sourceDirectoryName" />または<paramref name="destinationArchiveFileName" />無効な形式が含まれています。  
+  
+ または  
+  
+ Zip アーカイブは、書き込みをサポートしません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromDirectory">
+      <MemberSignature Language="C#" Value="public static void CreateFromDirectory (string sourceDirectoryName, string destinationArchiveFileName, System.IO.Compression.CompressionLevel compressionLevel, bool includeBaseDirectory, System.Text.Encoding entryNameEncoding);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void CreateFromDirectory(string sourceDirectoryName, string destinationArchiveFileName, valuetype System.IO.Compression.CompressionLevel compressionLevel, bool includeBaseDirectory, class System.Text.Encoding entryNameEncoding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Compression.ZipFile.CreateFromDirectory(System.String,System.String,System.IO.Compression.CompressionLevel,System.Boolean,System.Text.Encoding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression.ZipFile</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression.FileSystem</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceDirectoryName" Type="System.String" />
+        <Parameter Name="destinationArchiveFileName" Type="System.String" />
+        <Parameter Name="compressionLevel" Type="System.IO.Compression.CompressionLevel" />
+        <Parameter Name="includeBaseDirectory" Type="System.Boolean" />
+        <Parameter Name="entryNameEncoding" Type="System.Text.Encoding" />
+      </Parameters>
+      <Docs>
+        <param name="sourceDirectoryName">アーカイブするディレクトリのパス。相対パスまたは絶対パスとして指定します。 相対パスは、現在の作業ディレクトリに対して相対的に解釈されます。</param>
+        <param name="destinationArchiveFileName">作成するアーカイブのパス。相対パスまたは絶対パスとして指定します。 相対パスは、現在の作業ディレクトリに対して相対的に解釈されます。</param>
+        <param name="compressionLevel">エントリの作成時に速度または圧縮の有効性を強調するかどうかを示す列挙値の 1 つ。</param>
+        <param name="includeBaseDirectory">
+          <see langword="true" />ディレクトリ名に含める<c>sourceDirectoryName</c> ; アーカイブのルートにあります。<see langword="false" />ディレクトリの内容のみを含める。</param>
+        <param name="entryNameEncoding">このアーカイブのエントリ名の読み取りまたは書き込み時に使用するエンコード。 エントリ名の UTF-8 エンコードをサポートしない zip アーカイブ ツールとライブラリとの相互運用性のためにエンコードが必要な場合にのみ、このパラメーターの値を指定してください。</param>
+        <summary>指定したディレクトリのファイルおよびディレクトリを含む zip アーカイブを作成し、指定した圧縮レベルとエントリ名の文字エンコーディングを使用し、オプションでベース ディレクトリを含みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイル システムから、ディレクトリ構造は、アーカイブに保持されます。 ディレクトリが空の場合は、空のアーカイブが作成されます。 このメソッドのオーバー ロードを使用すると、圧縮レベルと文字エンコーディング、およびアーカイブで、ベース ディレクトリを含めるかどうかを指定できます。  
+  
+ アーカイブが既に存在する場合、<xref:System.IO.IOException>例外がスローされます。 アーカイブに指定した名前のエントリが既に存在する場合と同じ名前の 2 番目のエントリが作成されます。  
+  
+ ディレクトリ内のファイルは、アーカイブに追加することはできません、アーカイブを完了していないと、無効な場合、メソッドをスロー、<xref:System.IO.IOException>例外。  
+  
+ 場合`entryNameEncoding`以外の値に設定が`null`エントリ名が指定されたエンコーディングを使用してエンコードされます。 各エントリのエンコードでローカル ファイル ヘッダーの汎用のビット フラグ) フラグが設定されて、指定したエンコーディングが utf-8 の場合は、  
+  
+ 場合`entryNameEncoding`に設定されている`null`エントリ名は、次のルールに従ってエンコードします。  
+  
+-   ASCII の範囲外の文字を含むエントリ名、言語エンコード フラグが設定されてとエントリ名をエンコードする utf-8 を使用します。  
+  
+-   ASCII 文字のみを含むエントリ名、言語エンコード フラグが設定されてとエントリ名のエンコードに現在のシステム既定のコード ページを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="sourceDirectoryName" />または<paramref name="destinationArchiveFileName" />は<see cref="F:System.String.Empty" />空白しか含んでいない、または少なくとも 1 つの無効な文字が含まれています。  
+  
+ または  
+  
+ <paramref name="entryNameEncoding" />utf-8 以外の場合をエンコーディングを Unicode に設定します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="sourceDirectoryName" /> または <paramref name="destinationArchiveFileName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException"><paramref name="sourceDirectoryName" />または<paramref name="destinationArchiveFileName" />、指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字以下、ファイル名は 260 文字以下にする必要があります。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">
+          <paramref name="sourceDirectoryName" />無効か存在しません (たとえば、上にある、マップされていないドライブ)。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="destinationArchiveFileName" />既に存在します。  
+  
+ または  
+  
+ 指定したディレクトリ内のファイルを開けませんでした。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">
+          <paramref name="destinationArchiveFileName" /> がディレクトリを指定しています。  
+  
+ または  
+  
+ 指定されたディレクトリへのアクセスに必要なアクセス許可が呼び出し元にない<paramref name="sourceDirectoryName" />またはで指定されたファイル<paramref name="destinationArchiveFileName" />です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="sourceDirectoryName" />または<paramref name="destinationArchiveFileName" />無効な形式が含まれています。  
+  
+ または  
+  
+ Zip アーカイブは、書き込みをサポートしません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtractToDirectory">
+      <MemberSignature Language="C#" Value="public static void ExtractToDirectory (string sourceArchiveFileName, string destinationDirectoryName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ExtractToDirectory(string sourceArchiveFileName, string destinationDirectoryName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Compression.ZipFile.ExtractToDirectory(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression.ZipFile</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression.FileSystem</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceArchiveFileName" Type="System.String" />
+        <Parameter Name="destinationDirectoryName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceArchiveFileName">抽出するアーカイブのパス。</param>
+        <param name="destinationDirectoryName">抽出ファイルを置くディレクトリのパス。相対パスまたは絶対パスとして指定します。 相対パスは、現在の作業ディレクトリに対して相対的に解釈されます。</param>
+        <summary>指定した zip アーカイブのすべてのファイルをファイル システムのディレクトリに抽出します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定されたディレクトリとすべてのサブディレクトリを作成します。 変換先ディレクトリは既に存在できません。 内のパスの検証に関連する例外、`destinationDirectoryName`または`sourceArchiveFileName`抽出の前にパラメーターがスローされます。 それ以外の場合、抽出中にエラーが発生する場合は、アーカイブ部分的に展開されたままです。 抽出された各ファイルが同じ相対パスで指定されたディレクトリに`destinationDirectoryName`のソースとしてエントリが、アーカイブのルートです。  
+  
+   
+  
+## Examples  
+ この例は、作成しを使用して、zip アーカイブを抽出する方法を示しています、<xref:System.IO.Compression.ZipFile>クラスです。 Zip アーカイブに圧縮フォルダーの内容を圧縮し、そのコンテンツを新しいフォルダーに抽出します。 使用する、<xref:System.IO.Compression.ZipFile>クラスを参照する必要がある、`System.IO.Compression.FileSystem`プロジェクト内のアセンブリ。  
+  
+ [!code-csharp[System.IO.Compression.ZipFile#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.compression.zipfile/cs/program1.cs#1)]
+ [!code-vb[System.IO.Compression.ZipFile#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.compression.zipfile/vb/program1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="destinationDirectoryName" />または<paramref name="sourceArchiveFileName" />は<see cref="F:System.String.Empty" />空白しか含んでいない、または少なくとも 1 つの無効な文字が含まれています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="destinationDirectoryName" /> または <paramref name="sourceArchiveFileName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定されたパス<paramref name="destinationDirectoryName" />または<paramref name="sourceArchiveFileName" />システム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字以下、ファイル名は 260 文字以下にする必要があります。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定されたパスが正しくありません (たとえば、マップされていないドライブにあるなど)。</exception>
+        <exception cref="T:System.IO.IOException"><paramref name="destinationDirectoryName" /> で指定したディレクトリが既に存在します。  
+  
+ または  
+  
+ アーカイブ内のエントリの名前が <see cref="F:System.String.Empty" /> か、空白のみが含まれているか、無効な文字が少なくとも 1 つ含まれています。  
+  
+ または  
+  
+ 指定されたディレクトリ外にあるファイルを作成するアーカイブのエントリの抽出<paramref name="destinationDirectoryName" />です。 (たとえば、これはエントリ名に親ディレクトリのアクセサーが含まれている場合に発生する可能性があります。)  
+  
+ または  
+  
+ 抽出するアーカイブのエントリは、既に同じアーカイブから抽出されたエントリと同じ名前を持ちます。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元には、アーカイブまたはコピー先ディレクトリへのアクセスに必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="destinationDirectoryName" />または<paramref name="sourceArchiveFileName" />無効な形式が含まれています。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+          <paramref name="sourceArchiveFileName" /> が見つかりませんでした。</exception>
+        <exception cref="T:System.IO.InvalidDataException">指定したアーカイブ<paramref name="sourceArchiveFileName" />は有効な zip アーカイブではありません。  
+  
+ または  
+  
+ アーカイブ エントリが見つからなかったか、破損しています。  
+  
+ または  
+  
+ アーカイブ エントリがサポートされていない圧縮方式を使用して圧縮されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtractToDirectory">
+      <MemberSignature Language="C#" Value="public static void ExtractToDirectory (string sourceArchiveFileName, string destinationDirectoryName, bool overwriteFiles);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ExtractToDirectory(string sourceArchiveFileName, string destinationDirectoryName, bool overwriteFiles) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Compression.ZipFile.ExtractToDirectory(System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression.ZipFile</AssemblyName>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceArchiveFileName" Type="System.String" />
+        <Parameter Name="destinationDirectoryName" Type="System.String" />
+        <Parameter Name="overwriteFiles" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="sourceArchiveFileName">To be added.</param>
+        <param name="destinationDirectoryName">To be added.</param>
+        <param name="overwriteFiles">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtractToDirectory">
+      <MemberSignature Language="C#" Value="public static void ExtractToDirectory (string sourceArchiveFileName, string destinationDirectoryName, System.Text.Encoding entryNameEncoding);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ExtractToDirectory(string sourceArchiveFileName, string destinationDirectoryName, class System.Text.Encoding entryNameEncoding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Compression.ZipFile.ExtractToDirectory(System.String,System.String,System.Text.Encoding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression.ZipFile</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression.FileSystem</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceArchiveFileName" Type="System.String" />
+        <Parameter Name="destinationDirectoryName" Type="System.String" />
+        <Parameter Name="entryNameEncoding" Type="System.Text.Encoding" />
+      </Parameters>
+      <Docs>
+        <param name="sourceArchiveFileName">抽出するアーカイブのパス。</param>
+        <param name="destinationDirectoryName">抽出ファイルを置くディレクトリのパス。相対パスまたは絶対パスとして指定します。 相対パスは、現在の作業ディレクトリに対して相対的に解釈されます。</param>
+        <param name="entryNameEncoding">このアーカイブのエントリ名の読み取りまたは書き込み時に使用するエンコード。 エントリ名の UTF-8 エンコードをサポートしない zip アーカイブ ツールとライブラリとの相互運用性のためにエンコードが必要な場合にのみ、このパラメーターの値を指定してください。</param>
+        <summary>指定した zip アーカイブのすべてのファイルをファイル システムのディレクトリに抽出し、エントリ名に指定した文字エンコーディングを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定されたディレクトリとすべてのサブディレクトリを作成します。 変換先ディレクトリは既に存在できません。 内のパスの検証に関連する例外、`destinationDirectoryName`または`sourceArchiveFileName`抽出の前にパラメーターがスローされます。 それ以外の場合、抽出中にエラーが発生する場合は、アーカイブ部分的に展開されたままです。 抽出された各ファイルが同じ相対パスで指定されたディレクトリに`destinationDirectoryName`のソースとしてエントリが、アーカイブのルートです。  
+  
+ 場合`entryNameEncoding`以外の値に設定が`null`エントリ名は、次の規則に従ってデコードされます。  
+  
+-   エンコード (ローカル ファイル ヘッダーの汎用のビット フラグの内容) フラグが設定されていないエントリ名、エントリ名は、指定されたエンコーディングを使用してデコードされます。  
+  
+-   エントリに、言語エンコード フラグが設定されている、エントリ名は、utf-8 を使用してデコードされます。  
+  
+ 場合`entryNameEncoding`に設定されている`null`エントリ名は、次の規則に従ってデコードされます。  
+  
+-   エントリに、エンコード (ローカル ファイル ヘッダーの汎用のビット フラグの内容) フラグが設定されていない、エントリ名は、現在のシステム既定のコード ページを使用してデコードされます。  
+  
+-   エントリに、言語エンコード フラグが設定されている、エントリ名は、utf-8 を使用してデコードされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="destinationDirectoryName" />または<paramref name="sourceArchiveFileName" />は<see cref="F:System.String.Empty" />空白しか含んでいない、または少なくとも 1 つの無効な文字が含まれています。  
+  
+ または  
+  
+ <paramref name="entryNameEncoding" />utf-8 以外の場合をエンコーディングを Unicode に設定します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="destinationDirectoryName" /> または <paramref name="sourceArchiveFileName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定されたパス<paramref name="destinationDirectoryName" />または<paramref name="sourceArchiveFileName" />システム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字以下、ファイル名は 260 文字以下にする必要があります。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定されたパスが正しくありません (たとえば、マップされていないドライブにあるなど)。</exception>
+        <exception cref="T:System.IO.IOException"><paramref name="destinationDirectoryName" /> で指定したディレクトリが既に存在します。  
+  
+ または  
+  
+ アーカイブ内のエントリの名前が <see cref="F:System.String.Empty" /> か、空白のみが含まれているか、無効な文字が少なくとも 1 つ含まれています。  
+  
+ または  
+  
+ 指定されたディレクトリ外にあるファイルを作成するアーカイブのエントリの抽出<paramref name="destinationDirectoryName" />です。 (たとえば、これはエントリ名に親ディレクトリのアクセサーが含まれている場合に発生する可能性があります。)  
+  
+ または  
+  
+ 抽出するアーカイブのエントリは、既に同じアーカイブから抽出されたエントリと同じ名前を持ちます。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元には、アーカイブまたはコピー先ディレクトリへのアクセスに必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="destinationDirectoryName" />または<paramref name="sourceArchiveFileName" />無効な形式が含まれています。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+          <paramref name="sourceArchiveFileName" /> が見つかりませんでした。</exception>
+        <exception cref="T:System.IO.InvalidDataException">指定したアーカイブ<paramref name="sourceArchiveFileName" />は有効な zip アーカイブではありません。  
+  
+ または  
+  
+ アーカイブ エントリが見つからなかったか、破損しています。  
+  
+ または  
+  
+ アーカイブ エントリがサポートされていない圧縮方式を使用して圧縮されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtractToDirectory">
+      <MemberSignature Language="C#" Value="public static void ExtractToDirectory (string sourceArchiveFileName, string destinationDirectoryName, System.Text.Encoding entryNameEncoding, bool overwriteFiles);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ExtractToDirectory(string sourceArchiveFileName, string destinationDirectoryName, class System.Text.Encoding entryNameEncoding, bool overwriteFiles) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Compression.ZipFile.ExtractToDirectory(System.String,System.String,System.Text.Encoding,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression.ZipFile</AssemblyName>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceArchiveFileName" Type="System.String" />
+        <Parameter Name="destinationDirectoryName" Type="System.String" />
+        <Parameter Name="entryNameEncoding" Type="System.Text.Encoding" />
+        <Parameter Name="overwriteFiles" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="sourceArchiveFileName">To be added.</param>
+        <param name="destinationDirectoryName">To be added.</param>
+        <param name="entryNameEncoding">To be added.</param>
+        <param name="overwriteFiles">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Open">
+      <MemberSignature Language="C#" Value="public static System.IO.Compression.ZipArchive Open (string archiveFileName, System.IO.Compression.ZipArchiveMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.Compression.ZipArchive Open(string archiveFileName, valuetype System.IO.Compression.ZipArchiveMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Compression.ZipFile.Open(System.String,System.IO.Compression.ZipArchiveMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression.ZipFile</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression.FileSystem</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Compression.ZipArchive</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="archiveFileName" Type="System.String" />
+        <Parameter Name="mode" Type="System.IO.Compression.ZipArchiveMode" />
+      </Parameters>
+      <Docs>
+        <param name="archiveFileName">開くアーカイブのパス。相対パスまたは絶対パスとして指定します。 相対パスは、現在の作業ディレクトリに対して相対的に解釈されます。</param>
+        <param name="mode">開いているアーカイブのエントリで許可されている操作を指定する列挙値の 1 つ。</param>
+        <summary>指定したパスとモードで zip アーカイブを開きます。</summary>
+        <returns>開いている zip アーカイブ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定すると、`mode`パラメーターを<xref:System.IO.Compression.ZipArchiveMode.Read>で、アーカイブが開きます。<xref:System.IO.FileMode.Open>から、<xref:System.IO.FileMode>ファイル モードの値としての列挙型。 アーカイブが存在しない場合、<xref:System.IO.FileNotFoundException>例外がスローされます。 設定、`mode`パラメーターを<xref:System.IO.Compression.ZipArchiveMode.Read>は呼び出すことと同じ、<xref:System.IO.Compression.ZipFile.OpenRead%2A>メソッドです。  
+  
+ 設定すると、`mode`パラメーターを<xref:System.IO.Compression.ZipArchiveMode.Create>で、アーカイブが開きます。<xref:System.IO.FileMode?displayProperty=nameWithType>ファイル モードの値として。 アーカイブが既に存在する場合、<xref:System.IO.IOException>がスローされます。  
+  
+ 設定すると、`mode`パラメーターを<xref:System.IO.Compression.ZipArchiveMode.Update>で、アーカイブが開きます。<xref:System.IO.FileMode?displayProperty=nameWithType>ファイル モードの値として。 アーカイブが存在する場合は開きます。 既存のエントリを変更することができ、新しいエントリを作成することができます。 アーカイブが存在しない場合、新しいアーカイブが作成されます。ただしで zip アーカイブを作成する<xref:System.IO.Compression.ZipArchiveMode.Update>モードが効率的で作成する場合とではない<xref:System.IO.Compression.ZipArchiveMode.Create>モード。  
+  
+   
+  
+## Examples  
+ 次の例では、更新モードで zip アーカイブを開き、アーカイブのエントリを追加する方法を示します。  
+  
+ [!code-csharp[System.IO.Compression.ZipArchive#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.compression.ziparchive/cs/program3.cs#3)]
+ [!code-vb[System.IO.Compression.ZipArchive#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.compression.ziparchive/vb/program3.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="archiveFileName" /> が <see cref="F:System.String.Empty" /> か、空白のみが含まれているか、無効な文字が少なくとも 1 つ含まれています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="archiveFileName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException"><paramref name="archiveFileName" />、指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字以下、ファイル名は 260 文字以下にする必要があります。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">
+          <paramref name="archiveFileName" />無効か存在しません (たとえば、上にある、マップされていないドライブ)。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="archiveFileName" />開かれていませんでした。  
+  
+ または  
+  
+ <paramref name="mode" />設定されている<see cref="F:System.IO.Compression.ZipArchiveMode.Create" />で指定されたファイルが、<paramref name="archiveFileName" />既に存在します。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">
+          <paramref name="archiveFileName" /> がディレクトリを指定しています。  
+  
+ または  
+  
+ 指定されたファイルへのアクセスに必要なアクセス許可が呼び出し元にない<paramref name="archiveFileName" />です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="mode" />無効な値を指定します。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+          <paramref name="mode" />設定されている<see cref="F:System.IO.Compression.ZipArchiveMode.Read" />で指定されたファイルが、<paramref name="archiveFileName" />が見つかりません。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="archiveFileName" /> に無効な書式指定が格納されています。</exception>
+        <exception cref="T:System.IO.InvalidDataException">
+          <paramref name="archiveFileName" />zip アーカイブとして解釈できませんでした。  
+  
+ または  
+  
+ <paramref name="mode" /><see cref="F:System.IO.Compression.ZipArchiveMode.Update" />が、エントリが見つからないか壊れている、読み取ることができません。  
+  
+ または  
+  
+ <paramref name="mode" /><see cref="F:System.IO.Compression.ZipArchiveMode.Update" />エントリが大きすぎてメモリに収まらないが、します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Open">
+      <MemberSignature Language="C#" Value="public static System.IO.Compression.ZipArchive Open (string archiveFileName, System.IO.Compression.ZipArchiveMode mode, System.Text.Encoding entryNameEncoding);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.Compression.ZipArchive Open(string archiveFileName, valuetype System.IO.Compression.ZipArchiveMode mode, class System.Text.Encoding entryNameEncoding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Compression.ZipFile.Open(System.String,System.IO.Compression.ZipArchiveMode,System.Text.Encoding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression.ZipFile</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression.FileSystem</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Compression.ZipArchive</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="archiveFileName" Type="System.String" />
+        <Parameter Name="mode" Type="System.IO.Compression.ZipArchiveMode" />
+        <Parameter Name="entryNameEncoding" Type="System.Text.Encoding" />
+      </Parameters>
+      <Docs>
+        <param name="archiveFileName">開くアーカイブのパス。相対パスまたは絶対パスとして指定します。 相対パスは、現在の作業ディレクトリに対して相対的に解釈されます。</param>
+        <param name="mode">開いているアーカイブのエントリで許可されている操作を指定する列挙値の 1 つ。</param>
+        <param name="entryNameEncoding">このアーカイブのエントリ名の読み取りまたは書き込み時に使用するエンコード。 エントリ名の UTF-8 エンコードをサポートしない zip アーカイブ ツールとライブラリとの相互運用性のためにエンコードが必要な場合にのみ、このパラメーターの値を指定してください。</param>
+        <summary>指定されたモードで、エントリ名に指定された文字エンコーディングを使用して指定されたパスの zip のアーカイブを開きます。</summary>
+        <returns>開いている zip アーカイブ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定すると、`mode`パラメーターを<xref:System.IO.Compression.ZipArchiveMode.Read>で、アーカイブが開きます。<xref:System.IO.FileMode?displayProperty=nameWithType>ファイル モードの値として。 アーカイブが存在しない場合、<xref:System.IO.FileNotFoundException>例外がスローされます。 設定、`mode`パラメーターを<xref:System.IO.Compression.ZipArchiveMode.Read>は呼び出すことと同じ、<xref:System.IO.Compression.ZipFile.OpenRead%2A>メソッドです。  
+  
+ 設定すると、`mode`パラメーターを<xref:System.IO.Compression.ZipArchiveMode.Create>で、アーカイブが開きます。<xref:System.IO.FileMode?displayProperty=nameWithType>ファイル モードの値として。 アーカイブが既に存在する場合、<xref:System.IO.IOException>がスローされます。  
+  
+ 設定すると、`mode`パラメーターを<xref:System.IO.Compression.ZipArchiveMode.Update>で、アーカイブが開きます。<xref:System.IO.FileMode?displayProperty=nameWithType>ファイル モードの値として。 アーカイブが存在する場合は開きます。 既存のエントリを変更することができ、新しいエントリを作成することができます。 アーカイブが存在しない場合、新しいアーカイブが作成されます。ただしで zip アーカイブを作成する<xref:System.IO.Compression.ZipArchiveMode.Update>モードが効率的で作成する場合とではない<xref:System.IO.Compression.ZipArchiveMode.Create>モード。  
+  
+ 読み取り用の zip アーカイブ ファイルを開くと`entryNameEncoding`に設定されている`null`エントリ名は、次の規則に従ってデコードします。  
+  
+-   エンコード (ローカル ファイル ヘッダーの汎用のビット フラグの内容) フラグが設定されていないときに現在のシステム既定のコード ページは、エントリ名のデコードに使用されます。  
+  
+-   言語エンコード フラグを設定すると、utf-8 が、エントリ名のデコードに使用されます。  
+  
+ 読み取り用の zip アーカイブ ファイルを開くと`entryNameEncoding`以外の値に設定されて`null`エントリ名は、次の規則に従ってデコードします。  
+  
+-   ときにエンコード フラグが設定されていない、指定した`entryNameEncoding`エントリ名のデコードに使用します。  
+  
+-   言語エンコード フラグを設定すると、utf-8 が、エントリ名のデコードに使用されます。  
+  
+ アーカイブ ファイルを記述する場合と`entryNameEncoding`に設定されている`null`エントリ名は、次のルールに従ってエンコードします。  
+  
+-   ASCII の範囲外の文字を含むエントリ名、言語エンコード フラグを設定すると、し、エントリ名は、utf-8 を使用してエンコードされました。  
+  
+-   ASCII 文字のみを含むエントリ名、言語エンコード フラグが設定されていない、エントリ名は、現在のシステム既定のコード ページを使用してエンコードされました。  
+  
+ アーカイブ ファイルを記述する場合と`entryNameEncoding`以外の値に設定されて`null`、指定した`entryNameEncoding`エントリの名前をバイトにエンコードするために使用します。 フラグ (ローカル ファイル ヘッダーの汎用のビット フラグ) でのエンコード方法は、指定したエンコーディングが utf-8 エンコードの場合にのみ設定されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="archiveFileName" /> が <see cref="F:System.String.Empty" /> か、空白のみが含まれているか、無効な文字が少なくとも 1 つ含まれています。  
+  
+ または  
+  
+ <paramref name="entryNameEncoding" />utf-8 以外の場合をエンコーディングを Unicode に設定します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="archiveFileName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException"><paramref name="archiveFileName" />、指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字以下、ファイル名は 260 文字以下にする必要があります。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">
+          <paramref name="archiveFileName" />無効か存在しません (たとえば、上にある、マップされていないドライブ)。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="archiveFileName" />開かれていませんでした。  
+  
+ または  
+  
+ <paramref name="mode" />設定されている<see cref="F:System.IO.Compression.ZipArchiveMode.Create" />で指定されたファイルが、<paramref name="archiveFileName" />既に存在します。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">
+          <paramref name="archiveFileName" /> がディレクトリを指定しています。  
+  
+ または  
+  
+ 指定されたファイルへのアクセスに必要なアクセス許可が呼び出し元にない<paramref name="archiveFileName" />です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="mode" />無効な値を指定します。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+          <paramref name="mode" />設定されている<see cref="F:System.IO.Compression.ZipArchiveMode.Read" />で指定されたファイルが、<paramref name="archiveFileName" />が見つかりません。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="archiveFileName" /> に無効な書式指定が格納されています。</exception>
+        <exception cref="T:System.IO.InvalidDataException">
+          <paramref name="archiveFileName" />zip アーカイブとして解釈できませんでした。  
+  
+ または  
+  
+ <paramref name="mode" /><see cref="F:System.IO.Compression.ZipArchiveMode.Update" />が、エントリが見つからないか壊れている、読み取ることができません。  
+  
+ または  
+  
+ <paramref name="mode" /><see cref="F:System.IO.Compression.ZipArchiveMode.Update" />エントリが大きすぎてメモリに収まらないが、します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenRead">
+      <MemberSignature Language="C#" Value="public static System.IO.Compression.ZipArchive OpenRead (string archiveFileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.Compression.ZipArchive OpenRead(string archiveFileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Compression.ZipFile.OpenRead(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression.ZipFile</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression.FileSystem</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Compression.ZipArchive</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="archiveFileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="archiveFileName">開くアーカイブのパス。相対パスまたは絶対パスとして指定します。 相対パスは、現在の作業ディレクトリに対して相対的に解釈されます。</param>
+        <summary>指定されたパスで読み取りのための zip のアーカイブを開きます。</summary>
+        <returns>開いている zip アーカイブ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出すことは、<xref:System.IO.Compression.ZipFile.Open%2A>メソッドと設定、`mode`パラメーターを<xref:System.IO.Compression.ZipArchiveMode.Read>です。 アーカイブが開きます。<xref:System.IO.FileMode?displayProperty=nameWithType>ファイル モードの値として。 アーカイブが存在しない場合、<xref:System.IO.FileNotFoundException>例外がスローされます。  
+  
+   
+  
+## Examples  
+ 次の例では、読み取り用の zip のアーカイブを開く方法を示します。  
+  
+ [!code-csharp[System.IO.Compression.ZipArchive#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.compression.ziparchive/cs/program1.cs#1)]
+ [!code-vb[System.IO.Compression.ZipArchive#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.compression.ziparchive/vb/program1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="archiveFileName" /> が <see cref="F:System.String.Empty" /> か、空白のみが含まれているか、無効な文字が少なくとも 1 つ含まれています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="archiveFileName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException"><paramref name="archiveFileName" />、指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字以下、ファイル名は 260 文字以下にする必要があります。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">
+          <paramref name="archiveFileName" />無効か存在しません (たとえば、上にある、マップされていないドライブ)。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="archiveFileName" />開かれていませんでした。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">
+          <paramref name="archiveFileName" /> がディレクトリを指定しています。  
+  
+ または  
+  
+ 指定されたファイルへのアクセスに必要なアクセス許可が呼び出し元にない<paramref name="archiveFileName" />です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">指定されたファイル<paramref name="archiveFileName" />が見つかりません。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="archiveFileName" /> に無効な書式指定が格納されています。</exception>
+        <exception cref="T:System.IO.InvalidDataException">
+          <paramref name="archiveFileName" />zip アーカイブとして解釈できませんでした。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

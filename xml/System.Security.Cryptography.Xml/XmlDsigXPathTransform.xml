@@ -1,0 +1,376 @@
+<Type Name="XmlDsigXPathTransform" FullName="System.Security.Cryptography.Xml.XmlDsigXPathTransform">
+  <TypeSignature Language="C#" Value="public class XmlDsigXPathTransform : System.Security.Cryptography.Xml.Transform" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlDsigXPathTransform extends System.Security.Cryptography.Xml.Transform" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.Xml.XmlDsigXPathTransform" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Cryptography.Xml.Transform</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>W3C で定義されているデジタル署名の XPath 変換を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform>クラスでは、XPath 言語を使用して XML ドキュメントに対応することができます。  このクラスでは、XPath 式を使用して、署名またはその他のすべての暗号操作から削除中に暗号化する XML ノードを選択します。  
+  
+ 使用して、<xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform>署名または XPath 式を使用して XML ドキュメントの特定の部分を暗号化するクラス。  初期化については、 <xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform> XPath 変換文字列の値にクラスを参照してください、<xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform.LoadInnerXml%2A>メソッドです。  
+  
+ Uniform Resource Identifier () を示す、<xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform>によってクラスが定義されている、<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigXPathTransformUrl>フィールドです。  
+  
+ XPath 変換の詳細については www.w3.org/TR/xmldsig-core/ で W3C XMLDSIG の仕様の 6.6.3」セクションを参照してください。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例は、サインインして使用して XML ドキュメントを検証する方法を示しています、<xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform>エンベロープ署名を持つクラス。  この例では、XML ドキュメントに署名し、新しい XML ドキュメントに署名を保存します。  2 つ目のコード例のメンバーを呼び出す方法を示します、<xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform>クラスです。  
+  
+ **例 1**  
+  
+ [!code-cpp[Cryptography.Xml.XmlDsigXPathTransform#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XmlDsigXPathTransform/CPP/sample.cpp#1)]
+ [!code-csharp[Cryptography.Xml.XmlDsigXPathTransform#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XmlDsigXPathTransform/CS/sample.cs#1)]
+ [!code-vb[Cryptography.Xml.XmlDsigXPathTransform#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XmlDsigXPathTransform/VB/sample.vb#1)]  
+  
+ **例 2**  
+  
+ [!code-csharp[System.Security.Cryptography.Xml.XmlDsigXPathTransform#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.XmlDsigXPathTransform/CS/members.cs#2)]
+ [!code-vb[System.Security.Cryptography.Xml.XmlDsigXPathTransform#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.XmlDsigXPathTransform/VB/members.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlDsigXPathTransform ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.XmlDsigXPathTransform.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.Xml.XmlDsigXPathTransform" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、サインインして使用して XML ドキュメントを検証する方法を示しています、<xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform>クラスです。  この例では、エンベロープ署名を作成します。  
+  
+ [!code-cpp[Cryptography.Xml.XmlDsigXPathTransform#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XmlDsigXPathTransform/CPP/sample.cpp#1)]
+ [!code-csharp[Cryptography.Xml.XmlDsigXPathTransform#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XmlDsigXPathTransform/CS/sample.cs#1)]
+ [!code-vb[Cryptography.Xml.XmlDsigXPathTransform#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XmlDsigXPathTransform/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInnerXml">
+      <MemberSignature Language="C#" Value="protected override System.Xml.XmlNodeList GetInnerXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Xml.XmlNodeList GetInnerXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.XmlDsigXPathTransform.GetInnerXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNodeList</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>パラメーターの XML 表現を返します、<see cref="T:System.Security.Cryptography.Xml.XmlDsigXPathTransform" />オブジェクトは、XMLDSIG のサブ要素として含まれるに適した<see langword="&lt;Transform&gt;" />要素。</summary>
+        <returns>現在の記述に必要な変換に固有のコンテンツを表す XML ノードの一覧<see cref="T:System.Security.Cryptography.Xml.XmlDsigXPathTransform" />、XMLDSIG 内のオブジェクト<see langword="&lt;Transform&gt;" />要素。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetOutput">
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>現在の出力を返します。<see cref="T:System.Security.Cryptography.Xml.XmlDsigXPathTransform" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform.GetOutput%2A>を取得する方法、 <xref:System.Xml.XmlNodeList> XPath 変換の XML 表現を含むオブジェクトです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetOutput">
+      <MemberSignature Language="C#" Value="public override object GetOutput ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object GetOutput() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.XmlDsigXPathTransform.GetOutput" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の出力を返します。<see cref="T:System.Security.Cryptography.Xml.XmlDsigXPathTransform" />オブジェクト。</summary>
+        <returns>現在の出力<see cref="T:System.Security.Cryptography.Xml.XmlDsigXPathTransform" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されたオブジェクトの型でなければなりません<xref:System.Xml.XmlNodeList>です。  
+  
+ 使用して、<xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform.GetOutput%2A>を取得する方法、 <xref:System.Xml.XmlNodeList> XPath 変換の XML 表現を含むオブジェクトです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform.GetOutput%2A> 、現在の出力を取得する方法を<xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform>オブジェクト。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform>クラスです。  
+  
+ [!code-csharp[System.Security.Cryptography.Xml.XmlDsigXPathTransform#8](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.XmlDsigXPathTransform/CS/members.cs#8)]
+ [!code-vb[System.Security.Cryptography.Xml.XmlDsigXPathTransform#8](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.XmlDsigXPathTransform/VB/members.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOutput">
+      <MemberSignature Language="C#" Value="public override object GetOutput (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object GetOutput(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.XmlDsigXPathTransform.GetOutput(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">返される出力の型。 <see cref="T:System.Xml.XmlNodeList" />このパラメーターの唯一の有効な型です。</param>
+        <summary>現在の出力を返します。<see cref="T:System.Security.Cryptography.Xml.XmlDsigXPathTransform" />型のオブジェクト<see cref="T:System.Xml.XmlNodeList" />です。</summary>
+        <returns>現在の出力<see cref="T:System.Security.Cryptography.Xml.XmlDsigXPathTransform" />型のオブジェクト<see cref="T:System.Xml.XmlNodeList" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されたオブジェクトの型でなければなりません<xref:System.Xml.XmlNodeList>です。  
+  
+ 使用して、<xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform.GetOutput%2A>を取得する方法、 <xref:System.Xml.XmlNodeList> XPath 変換の XML 表現を含むオブジェクトです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform.GetOutput%2A> 、現在の出力を取得する方法を<xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform>オブジェクト。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform>クラスです。  
+  
+ [!code-csharp[System.Security.Cryptography.Xml.XmlDsigXPathTransform#7](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.XmlDsigXPathTransform/CS/members.cs#7)]
+ [!code-vb[System.Security.Cryptography.Xml.XmlDsigXPathTransform#7](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.XmlDsigXPathTransform/VB/members.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="type" />パラメーターではありません、<see cref="T:System.Xml.XmlNodeList" />オブジェクト。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InputTypes">
+      <MemberSignature Language="C#" Value="public override Type[] InputTypes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type[] InputTypes" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.XmlDsigXPathTransform.InputTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>有効な入力値をされている型の配列を取得、 <see cref="M:System.Security.Cryptography.Xml.XmlDsigXPathTransform.LoadInput(System.Object)" /> 、現在のメソッド<see cref="T:System.Security.Cryptography.Xml.XmlDsigXPathTransform" />オブジェクト。</summary>
+        <value>現在の有効な入力の型の配列<see cref="T:System.Security.Cryptography.Xml.XmlDsigXPathTransform" />オブジェクトです。 これらの種類のいずれかのオブジェクトのみを渡すことができます、 <see cref="M:System.Security.Cryptography.Xml.XmlDsigXPathTransform.LoadInput(System.Object)" /> 、現在のメソッド<see cref="T:System.Security.Cryptography.Xml.XmlDsigXPathTransform" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 有効な入力の型を<xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform>は<xref:System.IO.Stream>、 <xref:System.Xml.XmlDocument>、および<xref:System.Xml.XmlNodeList>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を呼び出す方法を示しています、<xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform.InputTypes%2A>現在の変換の有効な入力の型を取得するプロパティです。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform>クラスです。  
+  
+ [!code-csharp[System.Security.Cryptography.Xml.XmlDsigXPathTransform#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.XmlDsigXPathTransform/CS/members.cs#4)]
+ [!code-vb[System.Security.Cryptography.Xml.XmlDsigXPathTransform#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.XmlDsigXPathTransform/VB/members.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadInnerXml">
+      <MemberSignature Language="C#" Value="public override void LoadInnerXml (System.Xml.XmlNodeList nodeList);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void LoadInnerXml(class System.Xml.XmlNodeList nodeList) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.XmlDsigXPathTransform.LoadInnerXml(System.Xml.XmlNodeList)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nodeList" Type="System.Xml.XmlNodeList" />
+      </Parameters>
+      <Docs>
+        <param name="nodeList"><see cref="T:System.Xml.XmlNodeList" />オブジェクトに現在読み込む<see cref="T:System.Security.Cryptography.Xml.XmlDsigXPathTransform" />オブジェクト。</param>
+        <summary>解析して、指定した<see cref="T:System.Xml.XmlNodeList" />オブジェクトの変換に固有のコンテンツとして、<see langword="&lt;Transform&gt;" />要素が現在の内部状態を構成および<see cref="T:System.Security.Cryptography.Xml.XmlDsigXPathTransform" />と一致するオブジェクト、<see langword="&lt;Transform&gt;" />要素。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform.LoadInnerXml%2A>初期化するメソッドを<xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform>XPath 変換を持つクラス。  
+  
+ 初期化するために、 <xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform> XPath 変換して、次の手順を完了します。  
+  
+1.  新規作成<xref:System.Xml.XmlElement>クラスし、設定、<xref:System.Xml.XmlElement.InnerText%2A>プロパティを XPath 変換の文字列の値にします。  
+  
+2.  呼び出す、<xref:System.Xml.XmlNode.SelectNodes%2A>メソッドを作成、<xref:System.Xml.XmlNodeList>トランス フォームを表すオブジェクト。  
+  
+3.  新しいインスタンスを作成、<xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform>クラスし、以前に作成した渡す<xref:System.Xml.XmlNodeList>オブジェクトを<xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform.LoadInnerXml%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、サインインして使用して XML ドキュメントを検証する方法を示しています、<xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform>クラスです。  このサンプルでは、エンベロープ署名を作成します。  
+  
+ [!code-cpp[Cryptography.Xml.XmlDsigXPathTransform#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XmlDsigXPathTransform/CPP/sample.cpp#1)]
+ [!code-csharp[Cryptography.Xml.XmlDsigXPathTransform#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XmlDsigXPathTransform/CS/sample.cs#1)]
+ [!code-vb[Cryptography.Xml.XmlDsigXPathTransform#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XmlDsigXPathTransform/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="nodeList" /> パラメーターが <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="nodeList" />パラメーターが含まれていない、<see cref="T:System.Security.Cryptography.Xml.XmlDsigXPathTransform" />要素。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadInput">
+      <MemberSignature Language="C#" Value="public override void LoadInput (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void LoadInput(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.XmlDsigXPathTransform.LoadInput(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在読み込む入力<see cref="T:System.Security.Cryptography.Xml.XmlDsigXPathTransform" />オブジェクト。</param>
+        <summary>現在、指定された入力に読み込みます<see cref="T:System.Security.Cryptography.Xml.XmlDsigXPathTransform" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform.LoadInput%2A>初期化するメソッドを<xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform>オブジェクトを変換を使用して XPath の値に、 <xref:System.IO.Stream>、 <xref:System.Xml.XmlDocument>、または<xref:System.Xml.XmlNodeList>オブジェクト。  初期化については、 <xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform> XPath 変換文字列を使用してオブジェクトを参照してください、<xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform.LoadInnerXml%2A>メソッドです。  
+  
+ 入力オブジェクトの種類は内の型のいずれかを指定する必要があります、<xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform.InputTypes%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を呼び出す方法を示しています、<xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform.LoadInput%2A>メソッドを指定して<xref:System.Xml.XmlDocument>オブジェクトを入力として。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform>クラスです。  
+  
+ [!code-csharp[System.Security.Cryptography.Xml.XmlDsigXPathTransform#11](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.XmlDsigXPathTransform/CS/members.cs#11)]
+ [!code-vb[System.Security.Cryptography.Xml.XmlDsigXPathTransform#11](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.XmlDsigXPathTransform/VB/members.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputTypes">
+      <MemberSignature Language="C#" Value="public override Type[] OutputTypes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type[] OutputTypes" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.XmlDsigXPathTransform.OutputTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>可能な出力をされている型の配列を取得、 <see cref="M:System.Security.Cryptography.Xml.XmlDsigXPathTransform.GetOutput" /> 、現在のメソッド<see cref="T:System.Security.Cryptography.Xml.XmlDsigXPathTransform" />オブジェクト。</summary>
+        <value>現在の有効な出力型の配列<see cref="T:System.Security.Cryptography.Xml.XmlDsigXPathTransform" />オブジェクト、 <see cref="M:System.Security.Cryptography.Xml.XmlDsigXPathTransform.GetOutput" /> 、現在のメソッド<see cref="T:System.Security.Cryptography.Xml.XmlDsigXPathTransform" />これらの型の 1 つのオブジェクトのみを戻り値のオブジェクトします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.XmlNodeList>唯一の有効な出力の種類は、<xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を呼び出す方法を示しています、<xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform.OutputTypes%2A>プロパティを現在の変換に有効な出力の種類を取得します。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform>クラスです。  
+  
+ [!code-csharp[System.Security.Cryptography.Xml.XmlDsigXPathTransform#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.XmlDsigXPathTransform/CS/members.cs#5)]
+ [!code-vb[System.Security.Cryptography.Xml.XmlDsigXPathTransform#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.XmlDsigXPathTransform/VB/members.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

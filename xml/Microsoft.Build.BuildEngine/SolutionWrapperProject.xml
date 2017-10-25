@@ -1,0 +1,45 @@
+<Type Name="SolutionWrapperProject" FullName="Microsoft.Build.BuildEngine.SolutionWrapperProject">
+  <TypeSignature Language="C#" Value="public static class SolutionWrapperProject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit SolutionWrapperProject extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.BuildEngine.SolutionWrapperProject" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>このクラスを使用して、ソリューション ファイルを MSBuild ラッパー プロジェクトまたはスタンドアロン VC プロジェクトを生成します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Generate">
+      <MemberSignature Language="C#" Value="public static string Generate (string solutionPath, string toolsVersionOverride, Microsoft.Build.Framework.BuildEventContext projectBuildEventContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string Generate(string solutionPath, string toolsVersionOverride, class Microsoft.Build.Framework.BuildEventContext projectBuildEventContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.SolutionWrapperProject.Generate(System.String,System.String,Microsoft.Build.Framework.BuildEventContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="solutionPath" Type="System.String" />
+        <Parameter Name="toolsVersionOverride" Type="System.String" />
+        <Parameter Name="projectBuildEventContext" Type="Microsoft.Build.Framework.BuildEventContext" />
+      </Parameters>
+      <Docs>
+        <param name="solutionPath">ラップするソリューションへの完全パス</param>
+        <param name="toolsVersionOverride">null も指定できます。 Null 以外の場合、コマンドラインで渡された ToolsVersion が含まれています。</param>
+        <param name="projectBuildEventContext">ログ記録のためのイベント コンテキスト。</param>
+        <summary>特定のソリューションへの完全パス、そのソリューションの v3.5 MSBuild 形式ラッパー プロジェクトを含む文字列を返します。</summary>
+        <returns>ソリューションへのパスを含む文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

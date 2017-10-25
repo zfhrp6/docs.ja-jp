@@ -1,0 +1,1609 @@
+<Type Name="EventDescriptorCollection" FullName="System.ComponentModel.EventDescriptorCollection">
+  <TypeSignature Language="C#" Value="public class EventDescriptorCollection : System.Collections.IList" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EventDescriptorCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Collections.IList" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.EventDescriptorCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IList</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.ComponentModel.EventDescriptor" /> オブジェクトのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.EventDescriptorCollection>読み取り専用です。メソッドを追加または削除するイベントを実装していません。 これらのメソッドを実装するには、このクラスから継承する必要があります。  
+  
+ 使用可能なプロパティを使用して、<xref:System.ComponentModel.EventDescriptorCollection>クラス、その内容のコレクションを照会することができます。 コレクション内の要素の数を確認するには、<xref:System.ComponentModel.EventDescriptorCollection.Count%2A> プロパティを使用します。 使用して、<xref:System.ComponentModel.EventDescriptorCollection.Item%2A>インデックス番号または名前では、特定のプロパティを取得するプロパティです。  
+  
+ 使用することも、<xref:System.ComponentModel.EventDescriptorCollection.Find%2A>コレクションから指定した名前のイベントの説明を取得します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、テキスト ボックス内のボタンですべてのイベントを出力します。 いる必要があります`button1`と`textBox1`フォームでインスタンス化されています。  
+  
+ [!code-cpp[Classic EventDescriptorCollection Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic EventDescriptorCollection Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic EventDescriptorCollection Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic EventDescriptorCollection Example/CS/source.cs#1)]
+ [!code-vb[Classic EventDescriptorCollection Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic EventDescriptorCollection Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventDescriptorCollection (System.ComponentModel.EventDescriptor[] events);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ComponentModel.EventDescriptor[] events) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.EventDescriptorCollection.#ctor(System.ComponentModel.EventDescriptor[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="events" Type="System.ComponentModel.EventDescriptor[]" />
+      </Parameters>
+      <Docs>
+        <param name="events">型の配列<see cref="T:System.ComponentModel.EventDescriptor" />このコレクションのイベントを提供します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.EventDescriptorCollection" />の特定の配列を持つクラス<see cref="T:System.ComponentModel.EventDescriptor" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`events`パラメーターが空で、このコンス トラクターは、空を作成<xref:System.ComponentModel.EventDescriptorCollection>クラスです。  
+  
+ <xref:System.Security.Permissions.HostProtectionAttribute>このメンバーに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値:<xref:System.Security.Permissions.HostProtectionResource.Synchronization>です。 <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例が新たに作成<xref:System.ComponentModel.EventDescriptorCollection>クラスでイベントを使用して`button1`です。 いる必要があります`button1`フォームでインスタンス化されています。  
+  
+ [!code-cpp[Classic EventDescriptorCollection.EventDescriptorCollection Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic EventDescriptorCollection.EventDescriptorCollection Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic EventDescriptorCollection.EventDescriptorCollection Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic EventDescriptorCollection.EventDescriptorCollection Example/CS/source.cs#1)]
+ [!code-vb[Classic EventDescriptorCollection.EventDescriptorCollection Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic EventDescriptorCollection.EventDescriptorCollection Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventDescriptorCollection (System.ComponentModel.EventDescriptor[] events, bool readOnly);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ComponentModel.EventDescriptor[] events, bool readOnly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.EventDescriptorCollection.#ctor(System.ComponentModel.EventDescriptor[],System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="events" Type="System.ComponentModel.EventDescriptor[]" />
+        <Parameter Name="readOnly" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="events">型の配列<see cref="T:System.ComponentModel.EventDescriptor" />このコレクションのイベントを提供します。</param>
+        <param name="readOnly">
+          <see langword="true" />読み取り専用のコレクションを指定するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.EventDescriptorCollection" />の特定の配列を持つクラス<see cref="T:System.ComponentModel.EventDescriptor" />オブジェクト。 コレクションは、必要に応じて読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`events`パラメーターが空で、このコンス トラクターは、空を作成<xref:System.ComponentModel.EventDescriptorCollection>クラスです。  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このクラスに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値:<xref:System.Security.Permissions.HostProtectionResource.Synchronization>です。 <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例が新たに作成<xref:System.ComponentModel.EventDescriptorCollection>クラスでイベントを使用して`button1`です。 いる必要があります`button1`フォームでインスタンス化されています。  
+  
+ [!code-cpp[Classic EventDescriptorCollection.EventDescriptorCollection Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic EventDescriptorCollection.EventDescriptorCollection Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic EventDescriptorCollection.EventDescriptorCollection Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic EventDescriptorCollection.EventDescriptorCollection Example/CS/source.cs#1)]
+ [!code-vb[Classic EventDescriptorCollection.EventDescriptorCollection Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic EventDescriptorCollection.EventDescriptorCollection Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (System.ComponentModel.EventDescriptor value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Add(class System.ComponentModel.EventDescriptor value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.EventDescriptorCollection.Add(System.ComponentModel.EventDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.ComponentModel.EventDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.ComponentModel.EventDescriptor" />をコレクションに追加します。</param>
+        <summary>追加、<see cref="T:System.ComponentModel.EventDescriptor" />コレクションの末尾にします。</summary>
+        <returns>位置、<see cref="T:System.ComponentModel.EventDescriptor" />コレクション内で。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このクラスに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値:<xref:System.Security.Permissions.HostProtectionResource.Synchronization>です。 <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.EventDescriptorCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションからすべてのオブジェクトを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このクラスに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値:<xref:System.Security.Permissions.HostProtectionResource.Synchronization>です。 <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.ComponentModel.EventDescriptor value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.ComponentModel.EventDescriptor value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.EventDescriptorCollection.Contains(System.ComponentModel.EventDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.ComponentModel.EventDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.ComponentModel.EventDescriptor" />コレクション内で検索します。</param>
+        <summary>コレクションに含まれているかどうかを返します、指定された<see cref="T:System.ComponentModel.EventDescriptor" />です。</summary>
+        <returns>
+          <see langword="true" />コレクションが含まれている場合、<paramref name="value" />パラメーターを指定します。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このクラスに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値:<xref:System.Security.Permissions.HostProtectionResource.Synchronization>です。 <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.EventDescriptorCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション内のイベント記述子の数を取得します。</summary>
+        <value>コレクション内のイベント記述子の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.EventDescriptorCollection.Count%2A>プロパティは、オブジェクトのコレクションを反復処理するループの制限を設定するために使用できます。 コレクションの 0 から始まる場合、必ず使用して`Count - 1`ループの上限の境界として。  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このクラスに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値:<xref:System.Security.Permissions.HostProtectionResource.Synchronization>です。 <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.ComponentModel.EventDescriptorCollection.Count%2A>イベントの数を印刷するプロパティのアタッチ先`button1`です。 いる必要があります`button1`と`textBox1`フォームでインスタンス化されています。  
+  
+ [!code-cpp[Classic EventDescriptorCollection.Count Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic EventDescriptorCollection.Count Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic EventDescriptorCollection.Count Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic EventDescriptorCollection.Count Example/CS/source.cs#1)]
+ [!code-vb[Classic EventDescriptorCollection.Count Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic EventDescriptorCollection.Count Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Empty">
+      <MemberSignature Language="C#" Value="public static readonly System.ComponentModel.EventDescriptorCollection Empty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.ComponentModel.EventDescriptorCollection Empty" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.EventDescriptorCollection.Empty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.EventDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しい項目が作成するのではなく、使用、する空のコレクションを指定します。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Find">
+      <MemberSignature Language="C#" Value="public virtual System.ComponentModel.EventDescriptor Find (string name, bool ignoreCase);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.EventDescriptor Find(string name, bool ignoreCase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.EventDescriptorCollection.Find(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.EventDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name">コレクションから取得するイベントの名前。</param>
+        <param name="ignoreCase">
+          <see langword="true" />イベントの大文字と小文字を無視する場合それ以外の場合、<see langword="false" />です。</param>
+        <summary>コレクション内の指定した名前を持つイベントの説明を取得します。</summary>
+        <returns><see cref="T:System.ComponentModel.EventDescriptor" />指定された名前、または<see langword="null" />イベントが存在しない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このクラスに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値:<xref:System.Security.Permissions.HostProtectionResource.Synchronization>です。 <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を検索、特定<xref:System.ComponentModel.EventDescriptor>です。 このコンポーネントの種類が出力<xref:System.ComponentModel.EventDescriptor>テキスト ボックスにします。 いる必要があります`button1`と`textBox1`フォームでインスタンス化されています。  
+  
+ [!code-cpp[Classic EventDescriptorCollection.Find Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic EventDescriptorCollection.Find Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic EventDescriptorCollection.Find Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic EventDescriptorCollection.Find Example/CS/source.cs#1)]
+ [!code-vb[Classic EventDescriptorCollection.Find Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic EventDescriptorCollection.Find Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.EventDescriptorCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この列挙子を取得<see cref="T:System.ComponentModel.EventDescriptorCollection" />です。</summary>
+        <returns>実装する列挙子<see cref="T:System.Collections.IEnumerator" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このクラスに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値:<xref:System.Security.Permissions.HostProtectionResource.Synchronization>です。 <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、イベントの列挙子を取得`button1`です。 列挙子を使用して、コレクション内のイベントの名前を出力します。 いる必要があります`button1`と`textBox1`フォームでインスタンス化されています。  
+  
+ [!code-cpp[Classic EventDescriptorCollection.GetEnumerator Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic EventDescriptorCollection.GetEnumerator Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic EventDescriptorCollection.GetEnumerator Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic EventDescriptorCollection.GetEnumerator Example/CS/source.cs#1)]
+ [!code-vb[Classic EventDescriptorCollection.GetEnumerator Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic EventDescriptorCollection.GetEnumerator Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.ComponentModel.EventDescriptor value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.ComponentModel.EventDescriptor value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.EventDescriptorCollection.IndexOf(System.ComponentModel.EventDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.ComponentModel.EventDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.ComponentModel.EventDescriptor" />コレクション内で検索します。</param>
+        <summary>インデックスを返します、指定された<see cref="T:System.ComponentModel.EventDescriptor" />です。</summary>
+        <returns>インデックス、指定された<see cref="T:System.ComponentModel.EventDescriptor" />コレクション内で。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このクラスに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値:<xref:System.Security.Permissions.HostProtectionResource.Synchronization>です。 <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.ComponentModel.EventDescriptor value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.ComponentModel.EventDescriptor value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.EventDescriptorCollection.Insert(System.Int32,System.ComponentModel.EventDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.ComponentModel.EventDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="index">挿入するコレクション内のインデックス、<c>値</c>パラメーター。</param>
+        <param name="value"><see cref="T:System.ComponentModel.EventDescriptor" />コレクションに挿入します。</param>
+        <summary>挿入、<see cref="T:System.ComponentModel.EventDescriptor" />コレクション内の指定したインデックス位置にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このクラスに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値:<xref:System.Security.Permissions.HostProtectionResource.Synchronization>です。 <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InternalSort">
+      <MemberSignature Language="C#" Value="protected void InternalSort (System.Collections.IComparer sorter);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void InternalSort(class System.Collections.IComparer sorter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.EventDescriptorCollection.InternalSort(System.Collections.IComparer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sorter" Type="System.Collections.IComparer" />
+      </Parameters>
+      <Docs>
+        <param name="sorter">並べ替えに使用する比較演算子、<see cref="T:System.ComponentModel.EventDescriptor" />このコレクション内のオブジェクト。</param>
+        <summary>このメンバーを並べ替えます<see cref="T:System.ComponentModel.EventDescriptorCollection" />を指定して<see cref="T:System.Collections.IComparer" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`sorter`パラメーターは`null`既定の並べ替え順序を使用します。  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このクラスに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値:<xref:System.Security.Permissions.HostProtectionResource.Synchronization>です。 <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InternalSort">
+      <MemberSignature Language="C#" Value="protected void InternalSort (string[] names);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void InternalSort(string[] names) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.EventDescriptorCollection.InternalSort(System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="names" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="names">並べ替えに使用する順序を記述する文字列の配列、<see cref="T:System.ComponentModel.EventDescriptor" />このコレクション内のオブジェクト。</param>
+        <summary>このメンバーを並べ替えます<see cref="T:System.ComponentModel.EventDescriptorCollection" />です。 指定した順序が適用されるは、既定の並べ替え順序は、このコレクションの後に最初に、します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このクラスに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値:<xref:System.Security.Permissions.HostProtectionResource.Synchronization>です。 <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例の並べ替え順序を定義する、<xref:System.ComponentModel.EventDescriptorCollection.InternalSort%2A>メソッドです。 場合、 <xref:System.ComponentModel.EventDescriptorCollection> 4 つ<xref:System.ComponentModel.EventDescriptor>名前を持つオブジェクト`A`、 `B`、 `C`、および`D`、このプロパティ<xref:System.ComponentModel.EventDescriptorCollection>順番に並べ替えられます`D`、 `B`、`A`、および`C`です。  
+  
+ [!code-cpp[Classic EventDescriptorCollection.InternalSort Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic EventDescriptorCollection.InternalSort Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic EventDescriptorCollection.InternalSort Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic EventDescriptorCollection.InternalSort Example/CS/source.cs#1)]
+ [!code-vb[Classic EventDescriptorCollection.InternalSort Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic EventDescriptorCollection.InternalSort Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public virtual System.ComponentModel.EventDescriptor this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.EventDescriptor Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.EventDescriptorCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.EventDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">0 から始まるインデックス番号、<see cref="T:System.ComponentModel.EventDescriptor" />を取得または設定します。</param>
+        <summary>取得または指定したインデックス番号を持つイベントを設定します。</summary>
+        <value><see cref="T:System.ComponentModel.EventDescriptor" />指定したインデックス番号します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インデックス番号は 0 です。 したがって、特定の位置を表す数値から 1 を減算する必要があります<xref:System.ComponentModel.EventDescriptor>へのアクセスを<xref:System.ComponentModel.EventDescriptor>です。 たとえば、3 つ目を取得する<xref:System.ComponentModel.EventDescriptor>を指定する必要があります`myColl[2]`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.ComponentModel.EventDescriptorCollection.Item%2A>プロパティの名前を印刷する、<xref:System.ComponentModel.EventDescriptor>テキスト ボックス内のインデックス番号を指定します。 この例で、2 つ目の名前を表示するインデックス番号は 0 から始まるため<xref:System.ComponentModel.EventDescriptor>です。 いる必要があります`button1`と`textBox1`フォームでインスタンス化されています。  
+  
+ [!code-cpp[Classic EventDescriptorCollection.this Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic EventDescriptorCollection.this Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic EventDescriptorCollection.this Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic EventDescriptorCollection.this Example/CS/source.cs#1)]
+ [!code-vb[Classic EventDescriptorCollection.this Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic EventDescriptorCollection.this Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException">
+          <paramref name="index" />有効なインデックスではありません<see cref="P:System.ComponentModel.EventDescriptorCollection.Item(System.Int32)" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public virtual System.ComponentModel.EventDescriptor this[string name] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.EventDescriptor Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.EventDescriptorCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.EventDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.ComponentModel.EventDescriptor" />を取得または設定します。</param>
+        <summary>取得または指定した名前を持つイベントを設定します。</summary>
+        <value><see cref="T:System.ComponentModel.EventDescriptor" />指定された名前、または<see langword="null" />イベントが存在しない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.EventDescriptorCollection.Item%2A>プロパティは、名前を検索するとき、大文字小文字を区別します。 つまり、"Ename"と"ename"の名前は 2 つの異なるイベントと見なされます。  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このクラスに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値:<xref:System.Security.Permissions.HostProtectionResource.Synchronization>です。 <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.ComponentModel.EventDescriptorCollection.Item%2A>プロパティを印刷するためのコンポーネントの種類、<xref:System.ComponentModel.EventDescriptor>インデックスによって指定します。 いる必要があります`button1`と`textBox1`フォームでインスタンス化されています。  
+  
+ [!code-cpp[Classic EventDescriptorCollection.this1 Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic EventDescriptorCollection.this1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic EventDescriptorCollection.this1 Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic EventDescriptorCollection.this1 Example/CS/source.cs#1)]
+ [!code-vb[Classic EventDescriptorCollection.this1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic EventDescriptorCollection.this1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.ComponentModel.EventDescriptor value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.ComponentModel.EventDescriptor value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.EventDescriptorCollection.Remove(System.ComponentModel.EventDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.ComponentModel.EventDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクションから削除する <see cref="T:System.ComponentModel.EventDescriptor" />。</param>
+        <summary>指定された <see cref="T:System.ComponentModel.EventDescriptor" /> をコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このクラスに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値:<xref:System.Security.Permissions.HostProtectionResource.Synchronization>です。 <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.EventDescriptorCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス、<see cref="T:System.ComponentModel.EventDescriptor" />を削除します。</param>
+        <summary>削除、<see cref="T:System.ComponentModel.EventDescriptor" />コレクションから指定したインデックス位置。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このクラスに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値:<xref:System.Security.Permissions.HostProtectionResource.Synchronization>です。 <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Sort">
+      <MemberSignature Language="C#" Value="public virtual System.ComponentModel.EventDescriptorCollection Sort ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.EventDescriptorCollection Sort() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.EventDescriptorCollection.Sort" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.EventDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーを並べ替えます<see cref="T:System.ComponentModel.EventDescriptorCollection" />、このコレクションの既定の並べ替えを使用して、これは通常アルファベット順です。</summary>
+        <returns>新しい <see cref="T:System.ComponentModel.EventDescriptorCollection" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このクラスに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値:<xref:System.Security.Permissions.HostProtectionResource.Synchronization>です。 <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例の並べ替え順序を定義する、<xref:System.ComponentModel.EventDescriptorCollection.Sort%2A>メソッドです。 場合、 <xref:System.ComponentModel.EventDescriptorCollection> 4 つ<xref:System.ComponentModel.EventDescriptor>名前を持つオブジェクト`A`、 `B`、 `C`、および`D`、プロパティの`myNewColl`順番に並べ替えられます`D`、 `B`、`A`、および`C`です。  
+  
+ [!code-cpp[classic eventdescriptorcollection.sort example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic EventDescriptorCollection.Sort Example/CPP/source.cpp#1)]
+ [!code-csharp[classic eventdescriptorcollection.sort example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic EventDescriptorCollection.Sort Example/CS/source.cs#1)]
+ [!code-vb[classic eventdescriptorcollection.sort example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic EventDescriptorCollection.Sort Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Sort">
+      <MemberSignature Language="C#" Value="public virtual System.ComponentModel.EventDescriptorCollection Sort (System.Collections.IComparer comparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.EventDescriptorCollection Sort(class System.Collections.IComparer comparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.EventDescriptorCollection.Sort(System.Collections.IComparer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.EventDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="comparer" Type="System.Collections.IComparer" />
+      </Parameters>
+      <Docs>
+        <param name="comparer"><see cref="T:System.Collections.IComparer" />並べ替えに使用する、<see cref="T:System.ComponentModel.EventDescriptor" />このコレクション内のオブジェクト。</param>
+        <summary>このメンバーを並べ替えます<see cref="T:System.ComponentModel.EventDescriptorCollection" />を指定して<see cref="T:System.Collections.IComparer" />です。</summary>
+        <returns>新しい <see cref="T:System.ComponentModel.EventDescriptorCollection" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した<xref:System.Collections.IComparer>が最初に適用される、その後アルファベット通常は、このコレクションの既定の並べ替えでします。  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このクラスに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値:<xref:System.Security.Permissions.HostProtectionResource.Synchronization>です。 <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例の並べ替え順序を定義する、<xref:System.ComponentModel.EventDescriptorCollection.Sort%2A>メソッドです。 場合、 <xref:System.ComponentModel.EventDescriptorCollection> 4 つ<xref:System.ComponentModel.EventDescriptor>名前を持つオブジェクト`A`、 `B`、 `C`、および`D`、プロパティの`myNewColl`順番に並べ替えられます`D`、 `B`、`A`、および`C`です。  
+  
+ [!code-cpp[classic eventdescriptorcollection.sort example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic EventDescriptorCollection.Sort Example/CPP/source.cpp#1)]
+ [!code-csharp[classic eventdescriptorcollection.sort example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic EventDescriptorCollection.Sort Example/CS/source.cs#1)]
+ [!code-vb[classic eventdescriptorcollection.sort example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic EventDescriptorCollection.Sort Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Sort">
+      <MemberSignature Language="C#" Value="public virtual System.ComponentModel.EventDescriptorCollection Sort (string[] names);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.EventDescriptorCollection Sort(string[] names) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.EventDescriptorCollection.Sort(System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.EventDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="names" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="names">並べ替えに使用する順序を記述する文字列の配列、<see cref="T:System.ComponentModel.EventDescriptor" />コレクション内のオブジェクト。</param>
+        <summary>このメンバーを並べ替えます<see cref="T:System.ComponentModel.EventDescriptorCollection" />、指定した並べ替え順序を指定します。</summary>
+        <returns>新しい <see cref="T:System.ComponentModel.EventDescriptorCollection" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した順序が適用されるは、既定の並べ替え順序は、このコレクションの後に最初に、します。  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このクラスに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値:<xref:System.Security.Permissions.HostProtectionResource.Synchronization>です。 <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例の並べ替え順序を定義する、<xref:System.ComponentModel.EventDescriptorCollection.Sort%2A>メソッドです。 場合、 <xref:System.ComponentModel.EventDescriptorCollection> 4 つ<xref:System.ComponentModel.EventDescriptor>名前を持つオブジェクト`A`、 `B`、 `C`、および`D`、プロパティの`myNewColl`順番に並べ替えられます`D`、 `B`、`A`、および`C`です。  
+  
+ [!code-cpp[classic eventdescriptorcollection.sort example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic EventDescriptorCollection.Sort Example/CPP/source.cpp#1)]
+ [!code-csharp[classic eventdescriptorcollection.sort example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic EventDescriptorCollection.Sort Example/CS/source.cs#1)]
+ [!code-vb[classic eventdescriptorcollection.sort example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic EventDescriptorCollection.Sort Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Sort">
+      <MemberSignature Language="C#" Value="public virtual System.ComponentModel.EventDescriptorCollection Sort (string[] names, System.Collections.IComparer comparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.EventDescriptorCollection Sort(string[] names, class System.Collections.IComparer comparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.EventDescriptorCollection.Sort(System.String[],System.Collections.IComparer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.EventDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="names" Type="System.String[]" />
+        <Parameter Name="comparer" Type="System.Collections.IComparer" />
+      </Parameters>
+      <Docs>
+        <param name="names">並べ替えに使用する順序を記述する文字列の配列、<see cref="T:System.ComponentModel.EventDescriptor" />コレクション内のオブジェクト。</param>
+        <param name="comparer"><see cref="T:System.Collections.IComparer" />並べ替えに使用する、<see cref="T:System.ComponentModel.EventDescriptor" />このコレクション内のオブジェクト。</param>
+        <summary>このメンバーを並べ替えます<see cref="T:System.ComponentModel.EventDescriptorCollection" />、指定した並べ替え順序を指定し、<see cref="T:System.Collections.IComparer" />です。</summary>
+        <returns>新しい <see cref="T:System.ComponentModel.EventDescriptorCollection" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した並べ替え順序は、最初に適用後に指定して、並べ替え<xref:System.Collections.IComparer>です。  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このクラスに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値:<xref:System.Security.Permissions.HostProtectionResource.Synchronization>です。 <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例の並べ替え順序を定義する、<xref:System.ComponentModel.EventDescriptorCollection.Sort%2A>メソッドです。 場合、 <xref:System.ComponentModel.EventDescriptorCollection> 4 つ<xref:System.ComponentModel.EventDescriptor>名前を持つオブジェクト`A`、 `B`、 `C`、および`D`、プロパティの`myNewColl`順番に並べ替えられます`D`、 `B`、`A`、および`C`です。  
+  
+ [!code-cpp[classic eventdescriptorcollection.sort example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic EventDescriptorCollection.Sort Example/CPP/source.cpp#1)]
+ [!code-csharp[classic eventdescriptorcollection.sort example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic EventDescriptorCollection.Sort Example/CS/source.cs#1)]
+ [!code-vb[classic eventdescriptorcollection.sort example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic EventDescriptorCollection.Sort Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.CopyTo">
+      <MemberSignature Language="C#" Value="void ICollection.CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.ICollection.CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.EventDescriptorCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">1 次元<see cref="T:System.Array" />要素がコレクションからコピー先であること。 <see cref="T:System.Array" /> には、0 から始まるインデックス番号が必要です。</param>
+        <param name="index">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary>コレクションの要素を <see cref="T:System.Array" /> にコピーします。<see cref="T:System.Array" /> の特定のインデックスからコピーが開始されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このクラスに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値:<xref:System.Security.Permissions.HostProtectionResource.Synchronization>です。 <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.Count">
+      <MemberSignature Language="C#" Value="int System.Collections.ICollection.Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 System.Collections.ICollection.Count" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.EventDescriptorCollection.System#Collections#ICollection#Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションに格納されている要素の数を取得します。</summary>
+        <value>コレクションに格納されている要素の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このクラスに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値:<xref:System.Security.Permissions.HostProtectionResource.Synchronization>です。 <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.IsSynchronized">
+      <MemberSignature Language="C#" Value="bool System.Collections.ICollection.IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.ICollection.IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.EventDescriptorCollection.System#Collections#ICollection#IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションへのアクセスが同期されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />コレクションへのアクセスが同期されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このクラスに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値:<xref:System.Security.Permissions.HostProtectionResource.Synchronization>です。 <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.SyncRoot">
+      <MemberSignature Language="C#" Value="object System.Collections.ICollection.SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.ICollection.SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.EventDescriptorCollection.System#Collections#ICollection#SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションへのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value>コレクションへのアクセスを同期するために使用できるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このクラスに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値:<xref:System.Security.Permissions.HostProtectionResource.Synchronization>です。 <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.EventDescriptorCollection.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションを反復処理する列挙子を返します。</summary>
+        <returns>コレクションを反復処理するために使用できる <see cref="T:System.Collections.IEnumerator" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このクラスに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値:<xref:System.Security.Permissions.HostProtectionResource.Synchronization>です。 <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Add">
+      <MemberSignature Language="C#" Value="int IList.Add (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IList.Add(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.EventDescriptorCollection.System#Collections#IList#Add(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクションに追加する <see cref="T:System.Object" />。</param>
+        <summary>項目をコレクションに追加します。</summary>
+        <returns>新しい要素が挿入された位置。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このクラスに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値:<xref:System.Security.Permissions.HostProtectionResource.Synchronization>です。 <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Clear">
+      <MemberSignature Language="C#" Value="void IList.Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.EventDescriptorCollection.System#Collections#IList#Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションからすべての項目を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このクラスに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値:<xref:System.Security.Permissions.HostProtectionResource.Synchronization>です。 <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Contains">
+      <MemberSignature Language="C#" Value="bool IList.Contains (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Collections.IList.Contains(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.EventDescriptorCollection.System#Collections#IList#Contains(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクション内で検索する <see cref="T:System.Object" />。</param>
+        <summary>コレクションに特定の値が格納されているかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Object" />がコレクション内にあるそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このクラスに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値:<xref:System.Security.Permissions.HostProtectionResource.Synchronization>です。 <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IndexOf">
+      <MemberSignature Language="C#" Value="int IList.IndexOf (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IList.IndexOf(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.EventDescriptorCollection.System#Collections#IList#IndexOf(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクション内で検索する <see cref="T:System.Object" />。</param>
+        <summary>コレクション内の特定の項目のインデックスを決定します。</summary>
+        <returns>リストに存在する場合は <paramref name="value" /> のインデックス。それ以外の場合は -1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このクラスに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値:<xref:System.Security.Permissions.HostProtectionResource.Synchronization>です。 <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Insert">
+      <MemberSignature Language="C#" Value="void IList.Insert (int index, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Insert(int32 index, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.EventDescriptorCollection.System#Collections#IList#Insert(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">位置の 0 から始まるインデックス<c>値</c>挿入する必要があります。</param>
+        <param name="value"><see cref="T:System.Object" />コレクションに挿入します。</param>
+        <summary>指定したインデックス位置をコレクションに項目を挿入します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このクラスに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値:<xref:System.Security.Permissions.HostProtectionResource.Synchronization>です。 <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IsFixedSize">
+      <MemberSignature Language="C#" Value="bool System.Collections.IList.IsFixedSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.IList.IsFixedSize" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.EventDescriptorCollection.System#Collections#IList#IsFixedSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションが固定サイズかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、コレクションがある固定サイズです。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このクラスに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値:<xref:System.Security.Permissions.HostProtectionResource.Synchronization>です。 <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IsReadOnly">
+      <MemberSignature Language="C#" Value="bool System.Collections.IList.IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.IList.IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.EventDescriptorCollection.System#Collections#IList#IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションが読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          コレクションが読み取り専用の場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このクラスに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値:<xref:System.Security.Permissions.HostProtectionResource.Synchronization>です。 <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Item">
+      <MemberSignature Language="C#" Value="object System.Collections.IList.Item[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.IList.Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.EventDescriptorCollection.System#Collections#IList#Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得または設定する要素の、0 から始まるインデックス番号。</param>
+        <summary>指定したインデックスにある要素を取得または設定します。</summary>
+        <value>指定したインデックス位置にある要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このクラスに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値:<xref:System.Security.Permissions.HostProtectionResource.Synchronization>です。 <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">コレクションは読み取り専用です。</exception>
+        <exception cref="T:System.IndexOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="index" /> が <see cref="P:System.ComponentModel.EventDescriptorCollection.Count" /> 以上になっています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Remove">
+      <MemberSignature Language="C#" Value="void IList.Remove (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Remove(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.EventDescriptorCollection.System#Collections#IList#Remove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクションから削除する <see cref="T:System.Object" />。</param>
+        <summary>特定のオブジェクトの最初に出現したものをコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このクラスに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値:<xref:System.Security.Permissions.HostProtectionResource.Synchronization>です。 <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.RemoveAt">
+      <MemberSignature Language="C#" Value="void IList.RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.EventDescriptorCollection.System#Collections#IList#RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除する項目の 0 から始まるインデックス。</param>
+        <summary>指定したインデックスにある項目を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このクラスに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値:<xref:System.Security.Permissions.HostProtectionResource.Synchronization>です。 <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

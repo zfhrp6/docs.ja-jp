@@ -1,0 +1,332 @@
+<Type Name="SuppressMessageAttribute" FullName="System.Diagnostics.CodeAnalysis.SuppressMessageAttribute">
+  <TypeSignature Language="C#" Value="public sealed class SuppressMessageAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SuppressMessageAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.CodeAnalysis.SuppressMessageAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Diagnostics.Tools</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.All, AllowMultiple=true, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Diagnostics.Conditional("CODE_ANALYSIS")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>特定のスタティック分析ツールのルール違反の報告を抑制して、1 つのコードの成果物に複数の抑制ができるようにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性は、任意のアプリケーション要素に適用できます。 抑制することができます、違反の一覧については、次を参照してください。[マネージ コードの警告のコード分析](http://msdn.microsoft.com/library/3c2741ff-0d3a-42e6-acd5-d42310bd03c4)です。  
+  
+> [!NOTE]
+>  <xref:System.Diagnostics.ConditionalAttribute>はプリプロセッサ シンボル"CODE_ANALYSIS"を指定する属性の呼び出しを含めるか省略するかどうかを決定する条件付きのシンボルとして、このクラスに適用します。 シンボルを定義すると、属性の呼び出しが含まれます。それ以外の場合、呼び出しは省略されます。  
+>   
+>  Visual Studio でコード分析の警告を右クリックすると**エラー一覧**をクリックし、**メッセージの抑制**、 **SuppressMessage**属性は、コード内、またはプロジェクトのグローバル レベルの抑制ファイルが追加します。 詳細については、 **SuppressMessage**属性および Visual Studio での使用を参照してください[Source Suppression の概要で](http://msdn.microsoft.com/library/f1a2dc6a-a9eb-408c-9078-2571e57d207d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Diagnostics.CodeAnalysis.SuppressMessageAttribute>パフォーマンス警告のメッセージを抑制する属性。  
+  
+ [!code-csharp[System.Diagnostics.CodeAnalysis.SuppressMessageAttribute#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.CodeAnalysis.SuppressMessageAttribute/CS/program.cs#1)]
+ [!code-vb[System.Diagnostics.CodeAnalysis.SuppressMessageAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.CodeAnalysis.SuppressMessageAttribute/VB/program.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SuppressMessageAttribute (string category, string checkId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string category, string checkId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CodeAnalysis.SuppressMessageAttribute.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Tools</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="category" Type="System.String" />
+        <Parameter Name="checkId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="category">属性のカテゴリ。</param>
+        <param name="checkId">分析ツールのルール、属性の識別子に適用されます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.CodeAnalysis.SuppressMessageAttribute" />クラス、カテゴリのスタティック分析ツールおよび分析のルールの識別子を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `category`パラメーターの値は、分析ツールに固有でありによって識別されたルールをカテゴリに分類、`checkId`パラメーター。 2 つのパラメーターは、フォーム、規則の一意の識別子を連結します。  
+  
+> [!NOTE]
+>  有効にするには、この属性の"CODE_ANALYSIS"のプリプロセッサのシンボルを定義する必要があります。 プリプロセッサのシンボルがない場合は、適用されていない属性になります。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Diagnostics.CodeAnalysis.SuppressMessageAttribute>の警告を抑制する属性、`Microsoft.Performance`カテゴリおよび`CA1801`と`CA1804`識別子を確認します。 このコード例に示されている例の一部である、<xref:System.Diagnostics.CodeAnalysis.SuppressMessageAttribute>クラスです。  
+  
+ [!code-csharp[System.Diagnostics.CodeAnalysis.SuppressMessageAttribute#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.CodeAnalysis.SuppressMessageAttribute/CS/program.cs#2)]
+ [!code-vb[System.Diagnostics.CodeAnalysis.SuppressMessageAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.CodeAnalysis.SuppressMessageAttribute/VB/program.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Category">
+      <MemberSignature Language="C#" Value="public string Category { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Category" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.CodeAnalysis.SuppressMessageAttribute.Category" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Tools</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>属性の分類を識別するカテゴリを取得します。</summary>
+        <value>属性を識別するカテゴリ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.CodeAnalysis.SuppressMessageAttribute.Category%2A>プロパティは、ツールまたはメッセージ抑制の属性を適用するツールの分析のカテゴリについて説明します。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Diagnostics.CodeAnalysis.SuppressMessageAttribute>の警告を抑制する属性、`Microsoft.Performance`カテゴリおよび`CA1801`と`CA1804`識別子を確認します。 このコード例に示されている例の一部である、<xref:System.Diagnostics.CodeAnalysis.SuppressMessageAttribute>クラスです。  
+  
+ [!code-csharp[System.Diagnostics.CodeAnalysis.SuppressMessageAttribute#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.CodeAnalysis.SuppressMessageAttribute/CS/program.cs#2)]
+ [!code-vb[System.Diagnostics.CodeAnalysis.SuppressMessageAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.CodeAnalysis.SuppressMessageAttribute/VB/program.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckId">
+      <MemberSignature Language="C#" Value="public string CheckId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CheckId" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.CodeAnalysis.SuppressMessageAttribute.CheckId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Tools</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>抑制するスタティック分析ツールのルールの識別子を取得します。</summary>
+        <value>抑制するスタティック分析ツールのルールの識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 、連結、<xref:System.Diagnostics.CodeAnalysis.SuppressMessageAttribute.Category%2A>と<xref:System.Diagnostics.CodeAnalysis.SuppressMessageAttribute.CheckId%2A>プロパティがチェックの一意の識別子を形成します。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Diagnostics.CodeAnalysis.SuppressMessageAttribute>の警告を抑制する属性、`Microsoft.Performance`カテゴリおよび`CA1801`と`CA1804`識別子を確認します。 このコード例に示されている例の一部である、<xref:System.Diagnostics.CodeAnalysis.SuppressMessageAttribute>クラスです。  
+  
+ [!code-csharp[System.Diagnostics.CodeAnalysis.SuppressMessageAttribute#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.CodeAnalysis.SuppressMessageAttribute/CS/program.cs#2)]
+ [!code-vb[System.Diagnostics.CodeAnalysis.SuppressMessageAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.CodeAnalysis.SuppressMessageAttribute/VB/program.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Justification">
+      <MemberSignature Language="C#" Value="public string Justification { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Justification" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.CodeAnalysis.SuppressMessageAttribute.Justification" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Tools</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、コード分析メッセージの抑制の理由を設定します。</summary>
+        <value>メッセージの抑制の位置揃え。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MessageId">
+      <MemberSignature Language="C#" Value="public string MessageId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MessageId" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.CodeAnalysis.SuppressMessageAttribute.MessageId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Tools</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または除外条件を拡張するオプションの引数を設定します。</summary>
+        <value>拡張された除外条件を含む文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.CodeAnalysis.SuppressMessageAttribute.MessageId%2A>プロパティでは、追加の除外を指定する省略可能な引数リテラル メタデータ ターゲットが十分に正確ではありません。 たとえば、<xref:System.Diagnostics.CodeAnalysis.SuppressMessageAttribute>メソッド内で適用することはできませんし、規則違反を提供するメソッド内のステートメントに対しては、メソッドのすべてのステートメントに対してではなく違反を抑制することが望ましい場合があります。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Diagnostics.CodeAnalysis.SuppressMessageAttribute>メソッドの宣言で特定のパラメーターとメソッドの特定のフィールドの警告を抑制する属性。 このコード例に示されている例の一部である、<xref:System.Diagnostics.CodeAnalysis.SuppressMessageAttribute>クラスです。  
+  
+ [!code-csharp[System.Diagnostics.CodeAnalysis.SuppressMessageAttribute#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.CodeAnalysis.SuppressMessageAttribute/CS/program.cs#2)]
+ [!code-vb[System.Diagnostics.CodeAnalysis.SuppressMessageAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.CodeAnalysis.SuppressMessageAttribute/VB/program.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scope">
+      <MemberSignature Language="C#" Value="public string Scope { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Scope" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.CodeAnalysis.SuppressMessageAttribute.Scope" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Tools</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または属性の関連のあるコードのスコープを設定します。</summary>
+        <value>属性の関連のあるコードのスコープです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.CodeAnalysis.SuppressMessageAttribute.Scope%2A>プロパティは、属性が関連するメタデータのスコープを指定する省略可能な引数。 管理されたメタデータに指定できる値には、"member"、"resource"、「モジュール」、"type"、"method"または「名前空間」が含まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Target">
+      <MemberSignature Language="C#" Value="public string Target { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Target" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.CodeAnalysis.SuppressMessageAttribute.Target" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Tools</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または属性のターゲットを表す完全修飾パスを設定します。</summary>
+        <value>属性のターゲットを表す完全修飾パス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.CodeAnalysis.SuppressMessageAttribute.Target%2A>プロパティは、属性の分析ターゲットを識別する省略可能な引数です。 値の例は、"System.IO.Stream.ctor ():System.Void"です。 完全修飾されているために、特にパラメーターなどのターゲットの場合、長いができます。 分析ツールのユーザー インターフェイスは、パラメーターを自動的に書式設定できる必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

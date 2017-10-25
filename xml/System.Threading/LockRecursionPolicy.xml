@@ -1,0 +1,106 @@
+<Type Name="LockRecursionPolicy" FullName="System.Threading.LockRecursionPolicy">
+  <TypeSignature Language="C#" Value="public enum LockRecursionPolicy" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed LockRecursionPolicy extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.LockRecursionPolicy" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>同じスレッドが複数回ロックに入ることができるかどうかを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の再帰ポリシーは、ロックの種類によって異なります。 既定のポリシーと、指定されたロックの種類のロックの再帰の正確な動作は、型のドキュメントを参照してください。 たとえば、<xref:System.Threading.ReaderWriterLockSlim>クラスには、スレッドが既に入力した場合、ロック、ロックのポリシー設定に関係なく、読み取りモードでデッドロックの可能性を低減するために書き込みモードでロックに入ることはできません。  
+  
+ 現在、だけが 1 つのロックは、この列挙体を使用します。  
+  
+-   <xref:System.Threading.ReaderWriterLockSlim>。 詳細については、<xref:System.Threading.ReaderWriterLockSlim.RecursionPolicy%2A> プロパティを参照してください。  
+  
+   
+  
+## Examples  
+ 次の例は、いずれかに依存している 2 つの例外シナリオ、<xref:System.Threading.LockRecursionPolicy>設定としない種類です。  
+  
+ 最初のシナリオでは、スレッドは、読み取りモードでロックに入ったで、読み取りモードの再帰的を入力しようとします。 場合、<xref:System.Threading.ReaderWriterLockSlim>が作成される再帰ポリシーを設定すると、NoRecursion に、既定のコンス トラクターを使用して、例外がスローされます。 SupportsRecursion を使用して作成する場合、<xref:System.Threading.ReaderWriterLockSlim>例外はスローされません。  
+  
+ 2 番目のシナリオでは、スレッドは、読み取りモードでロックに入ったで、書き込みモードでロックに入るしようとします。 <xref:System.Threading.LockRecursionException>ロック再帰ポリシーに関係なくがスローされます。  
+  
+ [!code-csharp[System.Threading.LockRecursionPolicy#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.LockRecursionPolicy/cs/example1.cs#1)]
+ [!code-vb[System.Threading.LockRecursionPolicy#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.LockRecursionPolicy/vb/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="NoRecursion">
+      <MemberSignature Language="C#" Value="NoRecursion" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.LockRecursionPolicy NoRecursion = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.LockRecursionPolicy.NoRecursion" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.LockRecursionPolicy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スレッドが再帰的にロックを入力しようとすると、例外がスローされます。 この設定が有効な場合は、いくつかのクラスが特定再帰を許可する可能性があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsRecursion">
+      <MemberSignature Language="C#" Value="SupportsRecursion" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.LockRecursionPolicy SupportsRecursion = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.LockRecursionPolicy.SupportsRecursion" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.LockRecursionPolicy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スレッドは再帰的にロックを入力できます。 一部のクラスは、この機能を制限する場合があります。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

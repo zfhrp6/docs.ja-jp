@@ -1,0 +1,224 @@
+<Type Name="StreamUpgradeProvider" FullName="System.ServiceModel.Channels.StreamUpgradeProvider">
+  <TypeSignature Language="C#" Value="public abstract class StreamUpgradeProvider : System.ServiceModel.Channels.CommunicationObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit StreamUpgradeProvider extends System.ServiceModel.Channels.CommunicationObject" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.StreamUpgradeProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Channels.CommunicationObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>カスタム アップグレード プロバイダーを実装するには、この <see langword="abstract" /> 基本クラスから継承します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ストリーム アップグレードの例は、圧縮ストリームを直接、トランスポート ストリームの上に作成することです。 セキュリティ アップグレードを追加するには、さらに、<xref:System.ServiceModel.Channels.StreamSecurityUpgradeProvider> から派生するクラスを実装します。 前記のものをそれぞれラップする、複数のアップグレードを実装できます。  
+  
+ アップグレード プロセスは、次の手順で行います。  
+  
+1.  <xref:System.ServiceModel.Channels.StreamUpgradeProvider> から派生するクラスを実装します。  
+  
+2.  それを登録します。 このためには、そのバインド要素を作成して、プロバイダーをカスタム バインドに登録します。  
+  
+3.  実装する派生クラスは、<xref:System.ServiceModel.Channels.StreamUpgradeInitiator> のインスタンスを作成します。これは、実行時に接続先に対して、チャネル トランスポート層をアップグレードする要求を開始します。  
+  
+4.  実装する派生クラスは、<xref:System.ServiceModel.Channels.StreamUpgradeAcceptor> のインスタンスを作成します。これは、実行時に、前の手順のアップグレード要求を受信し、可能な場合はアップグレードを受け入れ、アップグレード済みストリームをその接続先に返します。  
+  
+5.  アップグレード要求がさらにある場合は、前の 2 つの手順の説明に従って、順番に処理されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Channels.StreamUpgradeProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タイムアウト プロパティに明示的な値を設定するには、<xref:System.ServiceModel.Channels.StreamUpgradeProvider.%23ctor%2A> を使用します。 それ以外の場合は、<xref:System.ServiceModel.Channels.StreamUpgradeProvider.%23ctor%2A> を使用し、タイムアウト プロパティを `null` に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected StreamUpgradeProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.StreamUpgradeProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Channels.StreamUpgradeProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タイムアウト プロパティを `null` に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected StreamUpgradeProvider (System.ServiceModel.IDefaultCommunicationTimeouts timeouts);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.IDefaultCommunicationTimeouts timeouts) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.StreamUpgradeProvider.#ctor(System.ServiceModel.IDefaultCommunicationTimeouts)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="timeouts" Type="System.ServiceModel.IDefaultCommunicationTimeouts" />
+      </Parameters>
+      <Docs>
+        <param name="timeouts">既定の通信タイムアウト。</param>
+        <summary><see cref="T:System.ServiceModel.Channels.StreamUpgradeProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定するタイムアウトは、このアップグレード プロバイダーを使用するトランスポートに対するオープンとクローズの既定のタイムアウトを制御します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateUpgradeAcceptor">
+      <MemberSignature Language="C#" Value="public abstract System.ServiceModel.Channels.StreamUpgradeAcceptor CreateUpgradeAcceptor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.StreamUpgradeAcceptor CreateUpgradeAcceptor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.StreamUpgradeProvider.CreateUpgradeAcceptor" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.StreamUpgradeAcceptor</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.ServiceModel.Channels.StreamUpgradeAcceptor" /> のインスタンスを作成します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.StreamUpgradeAcceptor" /> のインスタンスを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、対応する UpgradeInitiator からのアップグレード要求を受け入れることのできる、このアップグレード プロバイダーに関連付けられた UpgradeAcceptor を作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateUpgradeInitiator">
+      <MemberSignature Language="C#" Value="public abstract System.ServiceModel.Channels.StreamUpgradeInitiator CreateUpgradeInitiator (System.ServiceModel.EndpointAddress remoteAddress, Uri via);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.StreamUpgradeInitiator CreateUpgradeInitiator(class System.ServiceModel.EndpointAddress remoteAddress, class System.Uri via) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.StreamUpgradeProvider.CreateUpgradeInitiator(System.ServiceModel.EndpointAddress,System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.StreamUpgradeInitiator</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="remoteAddress" Type="System.ServiceModel.EndpointAddress" />
+        <Parameter Name="via" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="remoteAddress">チャネルのエンドポイント アドレス。</param>
+        <param name="via">経由 URI (通信がルーティングされる中継送信先の URI) のアドレス。</param>
+        <summary>
+          <see cref="T:System.ServiceModel.Channels.StreamUpgradeInitiator" /> のインスタンスを作成します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.StreamUpgradeInitiator" /> のインスタンスを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定したエンドポイントの対応する <xref:System.ServiceModel.Channels.StreamUpgradeInitiator> に対するアップグレード要求を作成する、このアップグレード プロバイダーに関連付けられた <xref:System.ServiceModel.Channels.StreamUpgradeAcceptor> を作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultCloseTimeout">
+      <MemberSignature Language="C#" Value="protected override TimeSpan DefaultCloseTimeout { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan DefaultCloseTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.StreamUpgradeProvider.DefaultCloseTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>DefaultCloseTimeout を取得します。</summary>
+        <value>DefaultCloseTimeout に対する <see cref="T:System.TimeSpan" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultOpenTimeout">
+      <MemberSignature Language="C#" Value="protected override TimeSpan DefaultOpenTimeout { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan DefaultOpenTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.StreamUpgradeProvider.DefaultOpenTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>DefaultOpenTimeout を取得します。</summary>
+        <value>DefaultOpenTimeout に対する <see cref="T:System.TimeSpan" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperty&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public virtual T GetProperty&lt;T&gt; () where T : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance !!T GetProperty&lt;class T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.StreamUpgradeProvider.GetProperty``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">現在のストリームの種類。</typeparam>
+        <summary>派生クラスで実装された場合は、ストリーム アップグレードのイニシエーターを表す現在のストリームのプロパティを取得します。</summary>
+        <returns>ストリーム アップグレードのイニシエーター。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

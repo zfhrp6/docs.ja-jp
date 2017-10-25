@@ -1,0 +1,28 @@
+<Type Name="VerifyServerCertificateCallback" FullName="System.DirectoryServices.Protocols.VerifyServerCertificateCallback">
+  <TypeSignature Language="C#" Value="public delegate bool VerifyServerCertificateCallback(LdapConnection connection, X509Certificate certificate);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed VerifyServerCertificateCallback extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.Protocols.VerifyServerCertificateCallback" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="connection" Type="System.DirectoryServices.Protocols.LdapConnection" />
+    <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Boolean</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="connection">A<see cref="T:System.DirectoryServices.Protocols.LdapConnection" />オブジェクトの接続を指定します。</param>
+    <param name="certificate">A<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate" />サーバー証明書を指定するオブジェクト。</param>
+    <summary><see cref="T:System.DirectoryServices.Protocols.VerifyServerCertificateCallback" />デリゲートを取得または SSL 接続を確立するときにサーバー証明書の検証に使用する既定のコールバック関数を設定します。</summary>
+    <returns>
+      <see langword="true" />クライアントはサーバー証明書を承認した場合それ以外の場合<see langword="false" />です。</returns>
+    <remarks>To be added.</remarks>
+  </Docs>
+</Type>

@@ -1,0 +1,96 @@
+<Type Name="AccessDataSourceView" FullName="System.Web.UI.WebControls.AccessDataSourceView">
+  <TypeSignature Language="C#" Value="public class AccessDataSourceView : System.Web.UI.WebControls.SqlDataSourceView" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AccessDataSourceView extends System.Web.UI.WebControls.SqlDataSourceView" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.AccessDataSourceView" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.SqlDataSourceView</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>では、<see cref="T:System.Web.UI.WebControls.AccessDataSource" />を制御し、Microsoft Access データベースに対して構造化照会言語 (SQL) を使用するデータの取得を実行するデータ バインド コントロールのインターフェイスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.AccessDataSourceView>クラスは、主にデータ バインド コントロール、およびページ コードでプログラミング可能なオブジェクトとしてではなく使用されます。  
+  
+ <xref:System.Web.UI.WebControls.AccessDataSourceView>クラスには、Microsoft Access は、ファイル ベースのデータベース システムであり、設定とは別にその他の SQL ベースのリレーショナル データベース製品をいくつかの固有の特性を持つために、提供、<xref:System.Web.UI.WebControls.SqlDataSource>コントロールと<xref:System.Web.UI.WebControls.SqlDataSourceView>クラスを使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AccessDataSourceView (System.Web.UI.WebControls.AccessDataSource owner, string name, System.Web.HttpContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.AccessDataSource owner, string name, class System.Web.HttpContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.AccessDataSourceView.#ctor(System.Web.UI.WebControls.AccessDataSource,System.String,System.Web.HttpContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Web.UI.WebControls.AccessDataSource" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+      </Parameters>
+      <Docs>
+        <param name="owner">使用するデータ ソース コントロール、<see cref="T:System.Web.UI.WebControls.AccessDataSourceView" />が関連付けられています。</param>
+        <param name="name">データ ソース ビューの所有するデータ ソース コントロールのスコープ内の一意の名前。</param>
+        <param name="context">現在の <see cref="T:System.Web.HttpContext" /> です。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Web.UI.WebControls.AccessDataSourceView" /> 、指定された設定クラス<see cref="T:System.Web.UI.WebControls.AccessDataSource" />コントロールを現在のビューの所有者として。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpContext>でオブジェクトを使用して、<xref:System.Web.UI.WebControls.AccessDataSource>コントロールでは、パラメーターへのアクセスを<xref:System.Web.UI.WebControls.SqlDataSourceView.FilterParameters%2A>と<xref:System.Web.UI.WebControls.SqlDataSourceView.SelectParameters%2A>コレクション データを取得するときにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteSelect">
+      <MemberSignature Language="C#" Value="protected override System.Collections.IEnumerable ExecuteSelect (System.Web.UI.DataSourceSelectArguments arguments);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance class System.Collections.IEnumerable ExecuteSelect(class System.Web.UI.DataSourceSelectArguments arguments) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.AccessDataSourceView.ExecuteSelect(System.Web.UI.DataSourceSelectArguments)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="arguments" Type="System.Web.UI.DataSourceSelectArguments" />
+      </Parameters>
+      <Docs>
+        <param name="arguments">A<see cref="T:System.Web.UI.DataSourceSelectArguments" />基本的なデータの取得を超えたデータの操作を要求に使用されます。</param>
+        <summary>SQL 文字列を使用して基になるデータ ストレージからデータを取得、<see cref="P:System.Web.UI.WebControls.SqlDataSourceView.SelectCommand" />プロパティと任意のパラメーターで、<see cref="P:System.Web.UI.WebControls.SqlDataSourceView.SelectParameters" />コレクション。</summary>
+        <returns><see cref="T:System.Collections.IEnumerable" />データ行のです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.AccessDataSourceView>オブジェクトの上書き、<xref:System.Web.UI.WebControls.SqlDataSourceView.ExecuteSelect%2A>いることを確認する方法、<xref:System.Web.UI.WebControls.AccessDataSource.DataFile%2A>のそれに関連するプロパティ<xref:System.Web.UI.WebControls.AccessDataSource>コントロールがデータを取得する前に設定します。  
+  
+ 前に、<xref:System.Web.UI.WebControls.AccessDataSourceView.ExecuteSelect%2A>メソッドが実行される、<xref:System.Web.UI.WebControls.SqlDataSourceView.OnSelecting%2A>させるメソッドが呼び出された、<xref:System.Web.UI.WebControls.SqlDataSourceView.Selecting>イベント。 処理することができます、<xref:System.Web.UI.WebControls.SqlDataSourceView.Selecting>イベント パラメーターの値を確認して、データの取得操作の前に処理を実行します。  
+  
+ データの取得を実行する、<xref:System.Web.UI.WebControls.AccessDataSourceView>オブジェクトのビルド、<xref:System.Data.IDbCommand>オブジェクトを使用して、<xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand%2A>テキストおよび関連<xref:System.Web.UI.WebControls.SqlDataSource.SelectParameters%2A>プロパティです。 次に、<xref:System.Web.UI.WebControls.AccessDataSourceView>オブジェクトが実行される、<xref:System.Data.IDbCommand>基になるデータ ストレージに対するオブジェクト。 操作の完了後、<xref:System.Web.UI.WebControls.SqlDataSourceView.OnSelected%2A>させるメソッドが呼び出された、<xref:System.Web.UI.WebControls.SqlDataSource.Selected>イベント。 処理することができます、<xref:System.Web.UI.WebControls.SqlDataSource.Selected>イベント、戻り値とエラー コードを調べ、後処理を実行します。  
+  
+ 場合、<xref:System.Web.UI.WebControls.SqlDataSource.DataSourceMode%2A>プロパティに設定されている、<xref:System.Web.UI.WebControls.SqlDataSourceMode.DataSet>値とキャッシュが有効になっている、<xref:System.Web.UI.WebControls.AccessDataSourceView>からデータを取得し、データの取得操作中にキャッシュにデータを保存します。 キャッシュは、作成、破棄、または更新がの組み合わせで指定されているキャッシュの動作に基づいて、<xref:System.Web.UI.WebControls.SqlDataSource.CacheDuration%2A>と<xref:System.Web.UI.WebControls.SqlDataSource.CacheExpirationPolicy%2A>プロパティです。  
+  
+ 場合、<xref:System.Web.UI.WebControls.SqlDataSource.DataSourceMode%2A>プロパティに設定されている、<xref:System.Web.UI.WebControls.SqlDataSourceMode.DataSet>値と<xref:System.Web.UI.WebControls.SqlDataSourceView.FilterExpression%2A>プロパティが指定されている、<xref:System.Web.UI.WebControls.SqlDataSource.DataSourceMode%2A>プロパティが指定されたいずれかと共に評価<xref:System.Web.UI.WebControls.SqlDataSourceView.FilterParameters%2A>プロパティとその結果のフィルターの適用中にデータの一覧に、<xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>操作します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Web.UI.WebControls.AccessDataSource.DataFile" />プロパティは<see langword="null" />または空の文字列 ("") です。</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="arguments" />に渡される、<see cref="M:System.Web.UI.WebControls.AccessDataSourceView.ExecuteSelect(System.Web.UI.DataSourceSelectArguments)" />方法を指定すること、データ ソースはページングまたは取得したデータの並び替えを有効にするデータの取得中にいくつか追加の作業を実行する必要がありますが、データ ソース コントロールを要求されたサポートしません機能です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

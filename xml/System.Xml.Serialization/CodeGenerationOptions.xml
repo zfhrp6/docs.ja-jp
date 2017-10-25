@@ -1,0 +1,241 @@
+<Type Name="CodeGenerationOptions" FullName="System.Xml.Serialization.CodeGenerationOptions">
+  <TypeSignature Language="C#" Value="public enum CodeGenerationOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed CodeGenerationOptions extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.CodeGenerationOptions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>XML Web サービスで使用する .NET Framework 型を生成するときに使用する各種のオプションを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web サービス記述言語 (WSDL) ファイルは、通常と XML スキーマ言語でクラスを記述、`xsd:complex`のさまざまなプリミティブ型で構成される`xsd:complex`と`xsd:simple`型です。 表す、.NET Framework クラスを生成するときに、指定された`xsd:complex`型が含まれているさまざまなプリミティブ型を表す方法を選択する必要があります。  
+  
+ 既定では、各プリミティブは、フィールドとして実装されます。 GenerateProperties オプションを指定する場合は、各プリミティブ型は代わりに、プロパティとして実装されます。  
+  
+### <a name="ordering-of-serialization-code"></a>シリアル化コードの順序  
+ GenerateOrder メンバーによって決定される特定の順序で、シリアル化コードを作成するコード ジェネレーターの指示、`Order`次の属性のプロパティ。  
+  
+-   [XmlAnyElementAttribute](http://msdn.microsoft.com/library/system.xml.serialization.xmlanyelementattribute\(v=vs.110\).aspx)  
+  
+-   [XmlArrayAttribute](http://msdn.microsoft.com/library/system.xml.serialization.xmlarrayattribute\(v=vs.110\).aspx)  
+  
+-   [XmlElementAttribute](http://msdn.microsoft.com/library/system.xml.serialization.xmlelementattribute\(v=vs.110\).aspx)  
+  
+> [!NOTE]
+>  1 回、`Order`プロパティが 1 つのパブリック プロパティまたは型のフィールドに設定されている、すべてのパブリック プロパティおよびその型および継承されたすべての型のフィールドに適用する必要があります。  
+  
+   
+  
+## Examples  
+ 次の例では、使用、<xref:System.Xml.Serialization.CodeGenerationOptions.GenerateProperties>の動作を指定する列挙体、<xref:System.Web.Services.Description.ServiceDescriptionImporter>オブジェクト。  
+  
+ [!code-cpp[WebServices_Description_Importer#4](~/samples/snippets/cpp/VS_Snippets_Remoting/WebServices_Description_Importer/CPP/import.cpp#4)]
+ [!code-csharp[WebServices_Description_Importer#4](~/samples/snippets/csharp/VS_Snippets_Remoting/WebServices_Description_Importer/CS/import.cs#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="EnableDataBinding">
+      <MemberSignature Language="C#" Value="EnableDataBinding" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Xml.Serialization.CodeGenerationOptions EnableDataBinding = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Xml.Serialization.CodeGenerationOptions.EnableDataBinding" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlEnum("enableDataBinding")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.CodeGenerationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ バインディングを有効にします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateNewAsync">
+      <MemberSignature Language="C#" Value="GenerateNewAsync" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Xml.Serialization.CodeGenerationOptions GenerateNewAsync = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Xml.Serialization.CodeGenerationOptions.GenerateNewAsync" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlEnum("newAsync")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.CodeGenerationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web メソッドを非同期呼び出しするイベントを作成します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateOldAsync">
+      <MemberSignature Language="C#" Value="GenerateOldAsync" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Xml.Serialization.CodeGenerationOptions GenerateOldAsync = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Xml.Serialization.CodeGenerationOptions.GenerateOldAsync" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlEnum("oldAsync")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.CodeGenerationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web メソッドの非同期呼び出し用の Begin メソッドおよび End メソッドを作成します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateOrder">
+      <MemberSignature Language="C#" Value="GenerateOrder" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Xml.Serialization.CodeGenerationOptions GenerateOrder = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Xml.Serialization.CodeGenerationOptions.GenerateOrder" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlEnum("order")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.CodeGenerationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" />、<see cref="T:System.Xml.Serialization.XmlArrayAttribute" />、および <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> 属性の <see langword="Order" /> プロパティで明示的に指定されている順序に従いシリアル化コードを生成します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateProperties">
+      <MemberSignature Language="C#" Value="GenerateProperties" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Xml.Serialization.CodeGenerationOptions GenerateProperties = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Xml.Serialization.CodeGenerationOptions.GenerateProperties" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlEnum("properties")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.CodeGenerationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティでプリミティブ型を表します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Xml.Serialization.CodeGenerationOptions None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Xml.Serialization.CodeGenerationOptions.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlIgnore</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.CodeGenerationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィールドおよび <see cref="N:System" /> 名前空間型でプリミティブ型を表します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

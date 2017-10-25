@@ -1,0 +1,197 @@
+<Type Name="LegendItemsCollection" FullName="System.Web.UI.DataVisualization.Charting.LegendItemsCollection">
+  <TypeSignature Language="C#" Value="public class LegendItemsCollection : System.Web.UI.DataVisualization.Charting.ChartElementCollection&lt;System.Web.UI.DataVisualization.Charting.LegendItem&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LegendItemsCollection extends System.Web.UI.DataVisualization.Charting.ChartElementCollection`1&lt;class System.Web.UI.DataVisualization.Charting.LegendItem&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.DataVisualization.Charting.LegendItemsCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DataVisualization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.DataVisualization.Charting.ChartElementCollection&lt;System.Web.UI.DataVisualization.Charting.LegendItem&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="T">System.Web.UI.DataVisualization.Charting.LegendItem</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Web.UI.DataVisualization.Charting.LegendItem" /> オブジェクトのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataVisualization.Charting.LegendItemsCollection>クラスのコレクションを表します<xref:System.Web.UI.DataVisualization.Charting.LegendItem>、さらに、凡例内の項目を表すオブジェクト。  
+  
+ このコレクション クラスは、2 つの方法で公開されています。  
+  
+-   として、<xref:System.Web.UI.DataVisualization.Charting.Legend.CustomItems%2A>オブジェクトのプロパティ、<xref:System.Web.UI.DataVisualization.Charting.Legend>追加、削除、またはカスタムの凡例項目を変更するために使用できるオブジェクト。 "Custom"という用語は、凡例項目を持つユーザー定義のテキストや記号の色などを指します。 比較では、「既定」の凡例項目は、項目が凡例に自動的に挿入し、データ系列またはデータ ポイントを表すです。 円グラフおよびドーナツ グラフの既定の凡例項目のエントリは、他のすべてのグラフの種類の項目を表す、系列が描画されるデータ ポイントを表します。 <xref:System.Web.UI.DataVisualization.Charting.Legend.CustomItems%2A>プロパティはデザイン時と実行時の両方で使用できます。  
+  
+-   <xref:System.Web.UI.DataVisualization.Charting.Chart.CustomizeLegend>イベントとして、<xref:System.Web.UI.DataVisualization.Charting.CustomizeLegendEventArgs.LegendItems%2A>のプロパティ、<xref:System.Web.UI.DataVisualization.Charting.CustomizeLegendEventArgs>パラメーター。 <xref:System.Web.UI.DataVisualization.Charting.CustomizeLegendEventArgs.LegendItems%2A>プロパティは、既定の凡例項目とに追加されているカスタムの凡例項目の両方を格納、<xref:System.Web.UI.DataVisualization.Charting.Chart>コントロールをデザイン時です。 凡例項目を変更または削除されました。さらに、その順序を変更できます。  
+  
+ 凡例項目をコレクションに追加するにオーバー ロードされたいずれかの操作を使用して`Add`と`Insert`このクラスのメソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (System.Drawing.Color color, string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Add(valuetype System.Drawing.Color color, string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.LegendItemsCollection.Add(System.Drawing.Color,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="color" Type="System.Drawing.Color" />
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="color">凡例項目の記号の色。</param>
+        <param name="text">凡例項目のテキスト。</param>
+        <summary>追加のカスタム<see cref="T:System.Web.UI.DataVisualization.Charting.LegendItem" />コレクションの末尾に指定したテキストと記号の色を持つオブジェクト。</summary>
+        <returns><see langword="integer" />項目がコレクションに挿入する位置の 0 から始まるインデックス位置を表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したテキストと記号の色でカスタムの凡例項目をコレクションの末尾に追加します。  
+  
+ そのシンボルにイメージを使用するカスタムの凡例項目を追加するには、呼び出し、<xref:System.Web.UI.DataVisualization.Charting.LegendItemsCollection.Add%2A>メソッドです。  
+  
+ カスタムを挿入する<xref:System.Web.UI.DataVisualization.Charting.LegendItem>オブジェクトのコレクションのいずれかを使用して、`Insert`このクラスのメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (string image, string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Add(string image, string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.LegendItemsCollection.Add(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="image" Type="System.String" />
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="image">絶対パスまたは相対 URL、イメージ ファイルの凡例項目のシンボルとして使用します。</param>
+        <param name="text">凡例項目のテキスト。</param>
+        <summary>追加のカスタム<see cref="T:System.Web.UI.DataVisualization.Charting.LegendItem" />コレクションの末尾に指定したイメージを持つオブジェクト。</summary>
+        <returns><see langword="integer" />項目がコレクションに挿入する位置の 0 から始まるインデックス位置を表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したテキストと、凡例項目の記号として使用される画像を使用して、コレクションにカスタムの凡例項目を追加します。  
+  
+ 記号の色を使用するカスタムの凡例項目を追加するには、呼び出し、<xref:System.Web.UI.DataVisualization.Charting.LegendItemsCollection.Add%2A>メソッドです。  
+  
+ 挿入する、<xref:System.Web.UI.DataVisualization.Charting.LegendItem>に、コレクションを使用して 1 つのオブジェクト、`Insert`このクラスのメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.Drawing.Color color, string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, valuetype System.Drawing.Color color, string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.LegendItemsCollection.Insert(System.Int32,System.Drawing.Color,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="color" Type="System.Drawing.Color" />
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="index"><see cref="T:System.Web.UI.DataVisualization.Charting.LegendItem" /> オブジェクトの挿入位置を示す、0 から始まるインデックスの場所。</param>
+        <param name="color">凡例項目の記号の色。</param>
+        <param name="text">凡例項目のテキスト。</param>
+        <summary>指定した場所でコレクション内に指定したテキストと記号の色を持つ <see cref="T:System.Web.UI.DataVisualization.Charting.LegendItem" /> オブジェクトを挿入します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクション内の指定したテキストと記号の色を使用して、指定した場所にカスタムの凡例項目を挿入します。  
+  
+ 記号のイメージを使用する凡例項目を挿入するには、使用、<xref:System.Web.UI.DataVisualization.Charting.LegendItemsCollection.Insert%2A>メソッドです。  
+  
+ 使用して、<xref:System.Web.UI.DataVisualization.Charting.LegendItemsCollection.Add%2A>を追加する方法、<xref:System.Web.UI.DataVisualization.Charting.LegendItem>場合、末尾には、その記号の色を使用するオブジェクト コレクションです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, string image, string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, string image, string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.LegendItemsCollection.Insert(System.Int32,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="image" Type="System.String" />
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="index"><see cref="T:System.Web.UI.DataVisualization.Charting.LegendItem" /> オブジェクトの挿入位置を示す、0 から始まるインデックスの場所。</param>
+        <param name="image">絶対パスまたは相対 URL、イメージ ファイルの凡例項目のシンボルとして使用します。</param>
+        <param name="text">凡例項目のテキスト。</param>
+        <summary>指定したテキストと記号の画像を持つ <see cref="T:System.Web.UI.DataVisualization.Charting.LegendItem" /> オブジェクトを、指定した場所でコレクション内に挿入します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクション内のシンボルの指定されたテキストおよびイメージを使用して、指定された場所にカスタムの凡例項目を挿入します。  
+  
+ 記号の色を使用する凡例項目を挿入するには、使用、<xref:System.Web.UI.DataVisualization.Charting.LegendItemsCollection.Insert%2A>メソッドです。  
+  
+ 使用して、<xref:System.Web.UI.DataVisualization.Charting.LegendItemsCollection.Add%2A>を追加する方法、<xref:System.Web.UI.DataVisualization.Charting.LegendItem>末尾を記号の画像でオブジェクトの場合、コレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reverse">
+      <MemberSignature Language="C#" Value="public void Reverse ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Reverse() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.LegendItemsCollection.Reverse" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクション内の項目の順序を反転させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

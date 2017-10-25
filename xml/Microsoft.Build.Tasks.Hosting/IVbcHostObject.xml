@@ -1,0 +1,1093 @@
+<Type Name="IVbcHostObject" FullName="Microsoft.Build.Tasks.Hosting.IVbcHostObject">
+  <TypeSignature Language="C#" Value="public interface IVbcHostObject : Microsoft.Build.Framework.ITaskHost" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IVbcHostObject implements class Microsoft.Build.Framework.ITaskHost" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Tasks.Hosting.IVbcHostObject" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>Microsoft.Build.Framework.ITaskHost</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("7D7AC3BE-253A-40e8-A3FF-357D0DA7C47A")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>定義できるようにするインターフェイス、 [Vbc](http://msdn.microsoft.com/library/595278b1-2782-4577-b1ba-b4b5ab5625a3)タスク ホストの統合開発環境 (IDE) と通信するためにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスにより、`Vbc`コマンド ライン コンパイラを使用するのではなく、IDE、プロジェクトのコンパイルを委任するタスク。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BeginInitialization">
+      <MemberSignature Language="C#" Value="public void BeginInitialization ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void BeginInitialization() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.BeginInitialization" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>初期化を開始、<see cref="T:Microsoft.Build.Tasks.Hosting.IVbcHostObject" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Compile">
+      <MemberSignature Language="C#" Value="public bool Compile ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Compile() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.Compile" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プロジェクトをコンパイルします。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndInitialization">
+      <MemberSignature Language="C#" Value="public void EndInitialization ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndInitialization() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.EndInitialization" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.Build.Tasks.Hosting.IVbcHostObject" /> の初期化を終了します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDesignTime">
+      <MemberSignature Language="C#" Value="public bool IsDesignTime ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsDesignTime() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.IsDesignTime" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>統合開発環境 (IDE) が現在デザイン時モードであるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />IDE が現在デザイン時モードである場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUpToDate">
+      <MemberSignature Language="C#" Value="public bool IsUpToDate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsUpToDate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.IsUpToDate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンパイル済みのプロジェクトが最新かどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />コンパイル済みのプロジェクトが最新に保つ場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAdditionalLibPaths">
+      <MemberSignature Language="C#" Value="public bool SetAdditionalLibPaths (string[] additionalLibPaths);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetAdditionalLibPaths(string[] additionalLibPaths) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetAdditionalLibPaths(System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="additionalLibPaths" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="additionalLibPaths">参照を検索するディレクトリの配列。</param>
+        <summary>参照を検索する追加のディレクトリを指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAddModules">
+      <MemberSignature Language="C#" Value="public bool SetAddModules (string[] addModules);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetAddModules(string[] addModules) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetAddModules(System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="addModules" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="addModules">アセンブリの一部となるモジュールの配列。</param>
+        <summary>アセンブリを構成する 1 つ以上のモジュールを指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetBaseAddress">
+      <MemberSignature Language="C#" Value="public bool SetBaseAddress (string targetType, string baseAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetBaseAddress(string targetType, string baseAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetBaseAddress(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetType" Type="System.String" />
+        <Parameter Name="baseAddress" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetType">出力ファイルのファイル形式。 この値は、 <see langword="library" />、 <see langword="exe" />、 <see langword="module" />、または<see langword="winexe" />です。</param>
+        <param name="baseAddress">DLL を読み込む位置に推奨されるベース アドレス。</param>
+        <summary>DLL を読み込む位置に推奨されるベース アドレスを指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCodePage">
+      <MemberSignature Language="C#" Value="public bool SetCodePage (int codePage);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetCodePage(int32 codePage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetCodePage(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="codePage" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="codePage">コンパイルですべてのソース コード ファイルに使用するコード ページ。</param>
+        <summary>コンパイルですべてのソース コード ファイルに使用するコード ページを指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDebugType">
+      <MemberSignature Language="C#" Value="public bool SetDebugType (bool emitDebugInformation, string debugType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetDebugType(bool emitDebugInformation, string debugType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetDebugType(System.Boolean,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="emitDebugInformation" Type="System.Boolean" />
+        <Parameter Name="debugType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="emitDebugInformation">
+          <see langword="true" />デバッグ情報を生成し、プログラム データベース (.pdb) ファイル内に配置するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="debugType">デバッグの種類を指定できます<see langword="full" />または<see langword="pdbonly" />です。</param>
+        <summary>デバッグの種類を指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDefineConstants">
+      <MemberSignature Language="C#" Value="public bool SetDefineConstants (string defineConstants);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetDefineConstants(string defineConstants) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetDefineConstants(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="defineConstants" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="defineConstants">定義するプリプロセッサ シンボル。</param>
+        <summary>定義するプリプロセッサ シンボルを指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDelaySign">
+      <MemberSignature Language="C#" Value="public bool SetDelaySign (bool delaySign);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetDelaySign(bool delaySign) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetDelaySign(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="delaySign" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="delaySign">
+          <see langword="true" />完全署名されたアセンブリでは; を作成する場合<see langword="false" />アセンブリに公開キーを配置する場合。</param>
+        <summary>完全署名されたアセンブリを作成するかどうかを示す値を指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDisabledWarnings">
+      <MemberSignature Language="C#" Value="public bool SetDisabledWarnings (string disabledWarnings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetDisabledWarnings(string disabledWarnings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetDisabledWarnings(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disabledWarnings" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="disabledWarnings">無効にする警告の一覧。 複数の警告を指定するときはコンマで区切ります。</param>
+        <summary>無効にする警告の一覧を指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDocumentationFile">
+      <MemberSignature Language="C#" Value="public bool SetDocumentationFile (string documentationFile);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetDocumentationFile(string documentationFile) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetDocumentationFile(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="documentationFile" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="documentationFile">処理されたドキュメントのコメントを保存するファイルの名前を格納する文字列。</param>
+        <summary>処理されたドキュメントのコメントを保存する XML ファイルを指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetErrorReport">
+      <MemberSignature Language="C#" Value="public bool SetErrorReport (string errorReport);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetErrorReport(string errorReport) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetErrorReport(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="errorReport" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="errorReport">内部コンパイラ エラーをどのように Microsoft に報告するかを指定する値。 この値は、 <see langword="prompt" />、 <see langword="send" />、または<see langword="none" />です。</param>
+        <summary>内部コンパイラ エラーをどのように Microsoft に報告するかを示す値を指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFileAlignment">
+      <MemberSignature Language="C#" Value="public bool SetFileAlignment (int fileAlignment);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetFileAlignment(int32 fileAlignment) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetFileAlignment(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileAlignment" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="fileAlignment">出力ファイル内のセクションのサイズ。</param>
+        <summary>出力ファイル内のセクションのサイズを指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetGenerateDocumentation">
+      <MemberSignature Language="C#" Value="public bool SetGenerateDocumentation (bool generateDocumentation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetGenerateDocumentation(bool generateDocumentation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetGenerateDocumentation(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="generateDocumentation" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="generateDocumentation">
+          <see langword="true" />ドキュメント ファイルを生成するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>ドキュメントを生成し、コンパイラによって作成される実行可能ファイルまたはライブラリと同じ名前の XML ファイルに格納するかどうかを示す値を指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetImports">
+      <MemberSignature Language="C#" Value="public bool SetImports (Microsoft.Build.Framework.ITaskItem[] importsList);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetImports(class Microsoft.Build.Framework.ITaskItem[] importsList) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetImports(Microsoft.Build.Framework.ITaskItem[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="importsList" Type="Microsoft.Build.Framework.ITaskItem[]" />
+      </Parameters>
+      <Docs>
+        <param name="importsList">インポートする名前空間。</param>
+        <summary>インポートする名前空間を指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetKeyContainer">
+      <MemberSignature Language="C#" Value="public bool SetKeyContainer (string keyContainer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetKeyContainer(string keyContainer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetKeyContainer(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyContainer" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="keyContainer">暗号化キー コンテナーの名前。</param>
+        <summary>暗号化キー コンテナーの名前を指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetKeyFile">
+      <MemberSignature Language="C#" Value="public bool SetKeyFile (string keyFile);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetKeyFile(string keyFile) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetKeyFile(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyFile" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="keyFile">暗号化キーを格納するファイルの名前。</param>
+        <summary>暗号化キーを格納するファイル名を指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetLinkResources">
+      <MemberSignature Language="C#" Value="public bool SetLinkResources (Microsoft.Build.Framework.ITaskItem[] linkResources);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetLinkResources(class Microsoft.Build.Framework.ITaskItem[] linkResources) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetLinkResources(Microsoft.Build.Framework.ITaskItem[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="linkResources" Type="Microsoft.Build.Framework.ITaskItem[]" />
+      </Parameters>
+      <Docs>
+        <param name="linkResources">[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]出力ファイルにリンクするリソース。</param>
+        <summary>指定したリンクが作成されます[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]出力ファイル内のリソース以外のファイルが、出力ファイルに配置されていないリソースです。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetMainEntryPoint">
+      <MemberSignature Language="C#" Value="public bool SetMainEntryPoint (string mainEntryPoint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetMainEntryPoint(string mainEntryPoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetMainEntryPoint(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mainEntryPoint" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="mainEntryPoint">クラスまたはモジュールの場所を含む、<see langword="Sub Main" />プロシージャです。</param>
+        <summary>クラスまたはモジュールの場所を指定、 <c>Sub Main</c>プロシージャです。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetNoConfig">
+      <MemberSignature Language="C#" Value="public bool SetNoConfig (bool noConfig);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetNoConfig(bool noConfig) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetNoConfig(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="noConfig" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="noConfig">
+          <see langword="true" />コンパイラが vbc.rsp ファイルを使用してコンパイルすることを防ぐためにそれ以外の場合、<see langword="false" />です。</param>
+        <summary>コンパイラが vbc.rsp ファイルを指定してコンパイルできないようにするかどうかを示す値を指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetNoStandardLib">
+      <MemberSignature Language="C#" Value="public bool SetNoStandardLib (bool noStandardLib);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetNoStandardLib(bool noStandardLib) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetNoStandardLib(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="noStandardLib" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="noStandardLib">
+          <see langword="true" />mscorlib.dll; をインポートしないようにするにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>mscorlib.dll をインポートしないようにするかどうかを示す値を指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetNoWarnings">
+      <MemberSignature Language="C#" Value="public bool SetNoWarnings (bool noWarnings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetNoWarnings(bool noWarnings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetNoWarnings(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="noWarnings" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="noWarnings">
+          <see langword="true" />すべての警告を抑制するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>コンパイラがすべての警告を抑制するかどうかを示す値を指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetOptimize">
+      <MemberSignature Language="C#" Value="public bool SetOptimize (bool optimize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetOptimize(bool optimize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetOptimize(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="optimize" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="optimize">
+          <see langword="true" />最適化を有効にするにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>最適化を有効にするかどうかを示す値を指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetOptionCompare">
+      <MemberSignature Language="C#" Value="public bool SetOptionCompare (string optionCompare);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetOptionCompare(string optionCompare) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetOptionCompare(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="optionCompare" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="optionCompare">コンパイラで文字列比較を行う方法を示す値。 値はいずれかである必要があります<see langword="binary" />または<see langword="text" />です。</param>
+        <summary>コンパイラで文字列比較を行う方法を示す値を指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetOptionExplicit">
+      <MemberSignature Language="C#" Value="public bool SetOptionExplicit (bool optionExplicit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetOptionExplicit(bool optionExplicit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetOptionExplicit(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="optionExplicit" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="optionExplicit">
+          <see langword="true" />変数の明示的な宣言を要求するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>変数の明示的な宣言が必要かどうかを示す値を指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetOptionStrict">
+      <MemberSignature Language="C#" Value="public bool SetOptionStrict (bool optionStrict);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetOptionStrict(bool optionStrict) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetOptionStrict(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="optionStrict" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="optionStrict">
+          <see langword="true" />暗黙の型変換を制限するための厳密な型のセマンティクスを適用するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>コンパイラで厳密な型のセマンティクスを強制的に適用して暗黙的な型変換を制限するかどうかを示す値を指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetOptionStrictType">
+      <MemberSignature Language="C#" Value="public bool SetOptionStrictType (string optionStrictType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetOptionStrictType(string optionStrictType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetOptionStrictType(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="optionStrictType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="optionStrictType">渡された文字列、<see langword="OptionStrictType" />パラメーター。</param>
+        <summary>厳密な言語セマンティクスが守られていないときにコンパイラが警告を出力することを指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetOutputAssembly">
+      <MemberSignature Language="C#" Value="public bool SetOutputAssembly (string outputAssembly);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetOutputAssembly(string outputAssembly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetOutputAssembly(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="outputAssembly" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="outputAssembly">出力ファイルの名前。</param>
+        <summary>出力ファイルの名前を指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetPlatform">
+      <MemberSignature Language="C#" Value="public bool SetPlatform (string platform);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetPlatform(string platform) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetPlatform(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="platform" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="platform">出力ファイルのターゲットとするプロセッサ プラットフォーム。 この値は、 <see langword="x86" />、 <see langword="x64" />、 <see langword="Itanium" />、または<see langword="anycpu" />です。</param>
+        <summary>出力ファイルのターゲットとするプロセッサ プラットフォームを指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetReferences">
+      <MemberSignature Language="C#" Value="public bool SetReferences (Microsoft.Build.Framework.ITaskItem[] references);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetReferences(class Microsoft.Build.Framework.ITaskItem[] references) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetReferences(Microsoft.Build.Framework.ITaskItem[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="references" Type="Microsoft.Build.Framework.ITaskItem[]" />
+      </Parameters>
+      <Docs>
+        <param name="references">現在のプロジェクトへのパブリック型の情報のインポート元アイテム。</param>
+        <summary>現在のプロジェクトにパブリック型の情報をインポートする際のインポート元アイテムを指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetRemoveIntegerChecks">
+      <MemberSignature Language="C#" Value="public bool SetRemoveIntegerChecks (bool removeIntegerChecks);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetRemoveIntegerChecks(bool removeIntegerChecks) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetRemoveIntegerChecks(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="removeIntegerChecks" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="removeIntegerChecks">
+          <see langword="true" />チェックを整数オーバーフロー エラーを削除します。それ以外の場合、<see langword="false" />です。</param>
+        <summary>整数オーバーフロー エラー チェックを無効にするかどうかを示す値を指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetResources">
+      <MemberSignature Language="C#" Value="public bool SetResources (Microsoft.Build.Framework.ITaskItem[] resources);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetResources(class Microsoft.Build.Framework.ITaskItem[] resources) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetResources(Microsoft.Build.Framework.ITaskItem[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resources" Type="Microsoft.Build.Framework.ITaskItem[]" />
+      </Parameters>
+      <Docs>
+        <param name="resources">[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]出力ファイルに埋め込むリソース。</param>
+        <summary>指定します、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]出力ファイルに埋め込むリソース。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetResponseFiles">
+      <MemberSignature Language="C#" Value="public bool SetResponseFiles (Microsoft.Build.Framework.ITaskItem[] responseFiles);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetResponseFiles(class Microsoft.Build.Framework.ITaskItem[] responseFiles) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetResponseFiles(Microsoft.Build.Framework.ITaskItem[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="responseFiles" Type="Microsoft.Build.Framework.ITaskItem[]" />
+      </Parameters>
+      <Docs>
+        <param name="responseFiles">コンパイラに対するコマンドの入った応答ファイル。</param>
+        <summary>コンパイラに対するコマンドの入った応答ファイルを指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetRootNamespace">
+      <MemberSignature Language="C#" Value="public bool SetRootNamespace (string rootNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetRootNamespace(string rootNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetRootNamespace(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rootNamespace" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="rootNamespace">すべての型宣言に対するルート名前空間。</param>
+        <summary>すべての型宣言に対してルート名前空間を指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetSdkPath">
+      <MemberSignature Language="C#" Value="public bool SetSdkPath (string sdkPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetSdkPath(string sdkPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetSdkPath(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sdkPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sdkPath">mscorlib.dll および microsoft.visualbasic.dll の位置。</param>
+        <summary>mscorlib.dll および microsoft.visualbasic.dll の位置を指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetSources">
+      <MemberSignature Language="C#" Value="public bool SetSources (Microsoft.Build.Framework.ITaskItem[] sources);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetSources(class Microsoft.Build.Framework.ITaskItem[] sources) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetSources(Microsoft.Build.Framework.ITaskItem[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sources" Type="Microsoft.Build.Framework.ITaskItem[]" />
+      </Parameters>
+      <Docs>
+        <param name="sources">1 つまたは複数[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]ソース ファイルです。</param>
+        <summary>1 つまたは複数の [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] ソース ファイルを指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetTargetCompactFramework">
+      <MemberSignature Language="C#" Value="public bool SetTargetCompactFramework (bool targetCompactFramework);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetTargetCompactFramework(bool targetCompactFramework) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetTargetCompactFramework(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetCompactFramework" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="targetCompactFramework">
+          <see langword="true" />ターゲットに、 [!INCLUDE[Compact](~/includes/compact-md.md)]、それ以外の<see langword="false" />します。</param>
+        <summary>対象とするかどうかを示す値を指定、[!INCLUDE[Compact](~/includes/compact-md.md)]です。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetTargetType">
+      <MemberSignature Language="C#" Value="public bool SetTargetType (string targetType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetTargetType(string targetType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetTargetType(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetType">出力ファイルのファイル形式。 この値は、 <see langword="library" />、 <see langword="exe" />、 <see langword="module" />、または<see langword="winexe" />です。</param>
+        <summary>出力ファイルのファイル形式を指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetTreatWarningsAsErrors">
+      <MemberSignature Language="C#" Value="public bool SetTreatWarningsAsErrors (bool treatWarningsAsErrors);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetTreatWarningsAsErrors(bool treatWarningsAsErrors) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetTreatWarningsAsErrors(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="treatWarningsAsErrors" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="treatWarningsAsErrors">
+          <see langword="true" />すべての警告をエラーとして扱うそれ以外の場合、<see langword="false" />です。</param>
+        <summary>すべての警告をエラーとして扱うかどうかを示す値を指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetWarningsAsErrors">
+      <MemberSignature Language="C#" Value="public bool SetWarningsAsErrors (string warningsAsErrors);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetWarningsAsErrors(string warningsAsErrors) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetWarningsAsErrors(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="warningsAsErrors" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="warningsAsErrors">エラーとして扱う警告の一覧。</param>
+        <summary>エラーとして扱う警告の一覧を指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetWarningsNotAsErrors">
+      <MemberSignature Language="C#" Value="public bool SetWarningsNotAsErrors (string warningsNotAsErrors);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetWarningsNotAsErrors(string warningsNotAsErrors) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetWarningsNotAsErrors(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="warningsNotAsErrors" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="warningsNotAsErrors">エラーとして扱わない警告の一覧。</param>
+        <summary>エラーとして扱わない警告の一覧を指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetWin32Icon">
+      <MemberSignature Language="C#" Value="public bool SetWin32Icon (string win32Icon);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetWin32Icon(string win32Icon) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetWin32Icon(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="win32Icon" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="win32Icon">アセンブリに挿入する .ico ファイル。</param>
+        <summary>アセンブリに挿入する .ico ファイルを指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetWin32Resource">
+      <MemberSignature Language="C#" Value="public bool SetWin32Resource (string win32Resource);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetWin32Resource(string win32Resource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Hosting.IVbcHostObject.SetWin32Resource(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="win32Resource" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="win32Resource">出力ファイルに挿入する Win32 リソース (.res) ファイル。</param>
+        <summary>出力ファイルに挿入する Win32 リソース (.res) ファイルを指定します。</summary>
+        <returns>
+          メソッドが正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

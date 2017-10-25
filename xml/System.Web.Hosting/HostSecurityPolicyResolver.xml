@@ -1,0 +1,94 @@
+<Type Name="HostSecurityPolicyResolver" FullName="System.Web.Hosting.HostSecurityPolicyResolver">
+  <TypeSignature Language="C#" Value="public class HostSecurityPolicyResolver" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HostSecurityPolicyResolver extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Hosting.HostSecurityPolicyResolver" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET コード アクセス セキュリティ ポリシーをオーバーライドする実行時に ASP.NET の動作をカスタマイズする方法を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複雑な Web ホスティング環境を SharePoint と Web ファームなど、ASP.NET コード アクセス セキュリティ ポリシーを拡張する必要があります。 拡張することによって、<xref:System.Web.Hosting.HostSecurityPolicyResolver>型、ASP.NET コード アクセス セキュリティ ポリシーをオーバーライドするカスタム セキュリティ ポリシーの動作を実装することができます。  
+  
+## <a name="configuring-a-hostsecuritypolicyresolver-class"></a>HostSecurityPolicyResolver クラスを構成します。  
+ 構成ファイルでは、カスタムを構成することができます<xref:System.Web.Hosting.HostSecurityPolicyResolver>インスタンスを追加することで、<xref:System.Web.Configuration.TrustSection.HostSecurityPolicyResolverType%2A>属性を要素。 <xref:System.Web.Configuration.TrustSection.HostSecurityPolicyResolverType%2A>属性は、カスタムの名前に設定することができます<xref:System.Web.Hosting.HostSecurityPolicyResolver>ASP.NET によって読み込まれる型です。 属性の値には、派生型の完全修飾名が含まれています。 既定では、[!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]この属性を設定しません。  
+  
+ 次の構文は、属性を構成する方法を示します。  
+  
+```  
+<trust   
+  Level = "[Full|High|Medium|Low|Minimal]"  
+  permissionSetName = "name of the permission set"  
+  hostSecurityPolicyResolverType = "security policy resolution type"  
+/>  
+```  
+  
+ <xref:System.Web.Configuration.TrustSection.PermissionSetName%2A>属性、`trust`要素は、部分信頼の構成ファイルで設定する名前付きのアクセス許可を使用するかを示す文字列値に設定することができます。 既定では、ASP.NET 4 は、"ASP.Net"には、この属性を設定します。  
+  
+ <xref:System.Web.Configuration.TrustSection.HostSecurityPolicyResolverType%2A>属性、`trust`要素は、ユーザー設定を示す<xref:System.Web.Hosting.HostSecurityPolicyResolver>ASP.NET によって読み込まれるオブジェクト。 属性が空の文字列に設定されている場合、アプリケーションは、アセンブリのアクセス許可を決定するため、ASP.NET の既定のロジックを使用します。 <xref:System.Web.Hosting.HostSecurityPolicyResolver>型属性は、null 値に設定できません。  
+  
+> [!IMPORTANT]
+>  アセンブリを含む派生<xref:System.Web.Hosting.HostSecurityPolicyResolver>カスタム型には ASP.NET を使用してアセンブリを完全信頼に昇格する情報が提供されているために、種類が完全な信頼で実行する必要があります。 一般に、完全信頼でそれが実行される、グローバル アセンブリ キャッシュにカスタム ポリシーの競合回避モジュールの種類を展開する必要があります。  
+  
+ このクラスを実装するときに上書きする必要あります、<xref:System.Web.Hosting.HostSecurityPolicyResolver.ResolvePolicy%2A>メソッドです。 によって、<xref:System.Security.Policy.Evidence>はインスタンス メソッドをパラメーターとして渡される、アセンブリに適用するセキュリティ ポリシーを示す列挙値を返します。 使用可能なセキュリティ ポリシーのセットはによって決定されます、<xref:System.Web.Hosting.HostSecurityPolicyResults>列挙します。  
+  
+ ]]></format>
+    </remarks>
+    <exception cref="T:System.Configuration.ConfigurationErrorsException"><see cref="P:System.Web.Configuration.TrustSection.HostSecurityPolicyResolverType" />属性が無効な値を持つか、または見つかりません。</exception>
+    <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承する型の完全な信頼。 部分信頼コードでこのクラスは継承できません。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HostSecurityPolicyResolver ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.HostSecurityPolicyResolver.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Hosting.HostSecurityPolicyResolver" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolvePolicy">
+      <MemberSignature Language="C#" Value="public virtual System.Web.Hosting.HostSecurityPolicyResults ResolvePolicy (System.Security.Policy.Evidence evidence);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Web.Hosting.HostSecurityPolicyResults ResolvePolicy(class System.Security.Policy.Evidence evidence) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.HostSecurityPolicyResolver.ResolvePolicy(System.Security.Policy.Evidence)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Hosting.HostSecurityPolicyResults</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="evidence" Type="System.Security.Policy.Evidence" />
+      </Parameters>
+      <Docs>
+        <param name="evidence">アセンブリと、セキュリティ ポリシーへの入力として使用されるホストについての証拠のコレクション。</param>
+        <summary>アセンブリに適用されるセキュリティ ポリシーを示す値を取得します。</summary>
+        <returns>セキュリティのアクセス許可の種類を示す値をアセンブリに適用する必要があります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 継承する場合、<xref:System.Web.Hosting.HostSecurityPolicyResolver>クラスを実装する必要がある、<xref:System.Web.Hosting.HostSecurityPolicyResolver.ResolvePolicy%2A>メソッドです。 提供されている情報に基づいて、 `evidence` 、パラメーター、メソッドが返すで定義されているセキュリティ ポリシーの 1 つ、<xref:System.Web.Hosting.HostSecurityPolicyResults>列挙します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

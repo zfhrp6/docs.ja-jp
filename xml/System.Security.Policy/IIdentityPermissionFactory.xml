@@ -1,0 +1,60 @@
+<Type Name="IIdentityPermissionFactory" FullName="System.Security.Policy.IIdentityPermissionFactory">
+  <TypeSignature Language="C#" Value="public interface IIdentityPermissionFactory" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IIdentityPermissionFactory" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Policy.IIdentityPermissionFactory" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>新しい id アクセス許可を作成するメソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 証拠の種類によっては、その証拠を使用してアセンブリに与えられる対応する id アクセス許可があります。 これにより、特定の証拠を持つコードだけを渡せるように、id 要求を作成するには、他のコード。 たとえば、呼び出し元が特定の厳密な名前をあることを要求できます。その厳密な名前を持つ呼び出し元だけでは、要求を渡します。 実装することによって<xref:System.Security.Policy.IIdentityPermissionFactory>の実装を提供した証拠オブジェクトは、 <xref:System.Security.Policy.IIdentityPermissionFactory.CreateIdentityPermission%2A> .NET Framework セキュリティ システムは、証拠の部分を表す id アクセス許可の取得を呼び出すことができます。 ポリシーの解決時に、セキュリティ システムは、実装するすべての証拠オブジェクトに対してメソッドを呼び出すは<xref:System.Security.Policy.IIdentityPermissionFactory>し、適切なアセンブリに結果として得られる id アクセス許可を付与します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateIdentityPermission">
+      <MemberSignature Language="C#" Value="public System.Security.IPermission CreateIdentityPermission (System.Security.Policy.Evidence evidence);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.IPermission CreateIdentityPermission(class System.Security.Policy.Evidence evidence) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.IIdentityPermissionFactory.CreateIdentityPermission(System.Security.Policy.Evidence)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="evidence" Type="System.Security.Policy.Evidence" />
+      </Parameters>
+      <Docs>
+        <param name="evidence">新しい id アクセス許可の作成元の証拠。</param>
+        <summary>指定された証拠を新しい id のアクセス許可を作成します。</summary>
+        <returns>新しい id のアクセス許可。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

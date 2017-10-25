@@ -1,0 +1,156 @@
+<Type Name="MsmqException" FullName="System.ServiceModel.MsmqException">
+  <TypeSignature Language="C#" Value="public class MsmqException : System.Runtime.InteropServices.ExternalException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit MsmqException extends System.Runtime.InteropServices.ExternalException" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.MsmqException" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Runtime.InteropServices.ExternalException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>メッセージ キュー (MSMQ) によって返されたエラーをカプセル化します。 この例外は、メッセージ キュー トランスポートまたはメッセージ キュー統合チャネルによってスローされます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この例外は、キューを開く、キューで情報を照会する、メッセージを送信する、メッセージを受信するなど、メッセージ キュー チャネルがメッセージ キューと対話するときにスローされる場合があります。  
+  
+ この例外には、メッセージ キュー エラー コードが含まれます。 通常、この例外は、フレームワークがエラーから自動的に回復できないときに、なんらかの人間の介入が必要な場合にスローされます。 たとえば、この例外は、メッセージ キューがインストールされていないときに、メッセージ キュー トランスポート リスナーを開こうとした場合にスローされます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MsmqException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MsmqException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.MsmqException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この例外は、キューを開く、キューで情報を照会する、メッセージを送信する、メッセージを受信するなど、メッセージ キュー チャネル (MSMQ) がメッセージ キューと対話するときにスローされる場合があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MsmqException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MsmqException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">新しいインスタンスを初期化するために使用するメッセージ。</param>
+        <summary>用意したメッセージを使用して、<see cref="T:System.ServiceModel.MsmqException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この例外は、キューを開く、キューで情報を照会する、メッセージを送信する、メッセージを受信するなど、メッセージ キュー チャネル (MSMQ) がメッセージ キューと対話するときにスローされる場合があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected MsmqException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MsmqException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info"><see cref="T:System.Runtime.Serialization.SerializationInfo" /> と関連付けるシリアル化データを保持する <see cref="T:System.ServiceModel.MsmqException" />。</param>
+        <param name="context"><see cref="T:System.Runtime.Serialization.StreamingContext" /> に関連付けるシリアル化ストリームの転送元および転送先を格納する <see cref="T:System.ServiceModel.MsmqException" />。</param>
+        <summary>例外に関する追加シリアル化情報を使用して、<see cref="T:System.ServiceModel.MsmqException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この例外は、キューを開く、キューで情報を照会する、メッセージを送信する、メッセージを受信するなど、メッセージ キュー チャネル (MSMQ) がメッセージ キューと対話するときにスローされる場合があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MsmqException (string message, Exception inner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception inner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MsmqException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="inner" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message"><see cref="T:System.ServiceModel.MsmqException" /> クラスの新しいインスタンスを初期化するために使用するメッセージ。</param>
+        <param name="inner"><see cref="T:System.ServiceModel.MsmqException" /> クラスの新しいインスタンスによりカプセル化される内部例外。</param>
+        <summary>提供したメッセージと内部例外を使用して、<see cref="T:System.ServiceModel.MsmqException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この例外は、キューを開く、キューで情報を照会する、メッセージを送信する、メッセージを受信するなど、メッセージ キュー チャネル (MSMQ) がメッセージ キューと対話するときにスローされる場合があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MsmqException (string message, int error);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, int32 error) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MsmqException.#ctor(System.String,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="error" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="message"><see cref="T:System.ServiceModel.MsmqException" /> クラスの新しいインスタンスを初期化するために使用するメッセージ。</param>
+        <param name="error"><see cref="T:System.ServiceModel.MsmqException" /> クラスの新しいインスタンスを初期化するために使用され、メッセージ キュー (MSMQ) インフラストラクチャによって返されるエラー コード。</param>
+        <summary>用意したメッセージおよびエラー コードを使用して、<see cref="T:System.ServiceModel.MsmqException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この例外は、キューを開く、キューで情報を照会する、メッセージを送信する、メッセージを受信するなど、メッセージ キュー チャネルがメッセージ キューと対話するときにスローされる場合があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,573 @@
+<Type Name="SyndicationPerson" FullName="System.ServiceModel.Syndication.SyndicationPerson">
+  <TypeSignature Language="C#" Value="public class SyndicationPerson" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SyndicationPerson extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Syndication.SyndicationPerson" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>配信コンテンツの作成者または投稿者を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Syndication.SyndicationPerson> オブジェクトは、<xref:System.ServiceModel.Syndication.SyndicationFeed> および <xref:System.ServiceModel.Syndication.SyndicationItem> オブジェクトの作成者および投稿者のコレクションに追加できます。  
+  
+ Atom 1.0 にシリアル化する場合、<xref:System.ServiceModel.Syndication.SyndicationPerson> は `<author>` 要素または `<contributor>` 要素として書き込まれます。  
+  
+ RSS 2.0 にシリアル化する場合、<xref:System.ServiceModel.Syndication.SyndicationPerson> インスタンスは `<managingEditor>` 要素、`<a10:author>` 要素、または `<a10:contributor>` 要素として書き込まれます。 <xref:System.ServiceModel.Syndication.SyndicationPerson> をシリアル化する方法は、<xref:System.ServiceModel.Syndication.SyndicationPerson> または <xref:System.ServiceModel.Syndication.SyndicationFeed> に追加される <xref:System.ServiceModel.Syndication.SyndicationItem> オブジェクトの数、<xref:System.ServiceModel.Syndication.SyndicationPerson> インスタンスの追加先のコレクション、および `SerializeExtensionAsAtom` コンストラクターの <xref:System.ServiceModel.Syndication.Rss20ItemFormatter.%23ctor%28System.ServiceModel.Syndication.SyndicationItem%2CSystem.Boolean%29> パラメーターの値によって異なります。 1 つの <xref:System.ServiceModel.Syndication.SyndicationPerson> のみが <xref:System.ServiceModel.Syndication.SyndicationFeed.Authors%2A> (または <xref:System.ServiceModel.Syndication.SyndicationItem.Authors%2A>) コレクションに追加された場合、<xref:System.ServiceModel.Syndication.SyndicationPerson> は `<managingEditor>` 要素にシリアル化されます。 複数の <xref:System.ServiceModel.Syndication.SyndicationPerson> を <xref:System.ServiceModel.Syndication.SyndicationFeed.Authors%2A> (または <xref:System.ServiceModel.Syndication.SyndicationItem.Authors%2A>) コレクションに追加し、`SerializeExtensionsAsAtom` を `true` に設定した場合、すべての <xref:System.ServiceModel.Syndication.SyndicationPerson> オブジェクトが `<a10:author>` 要素にシリアル化されます。 `SerializeExtensionsAsAtom` を `false` に設定した場合、<xref:System.ServiceModel.Syndication.SyndicationPerson> インスタンスはシリアル化されません。 <xref:System.ServiceModel.Syndication.SyndicationPerson> (または <xref:System.ServiceModel.Syndication.SyndicationFeed.Contributors%2A>) コレクションに追加された任意の <xref:System.ServiceModel.Syndication.SyndicationItem.Contributors%2A> インスタンスは、`SerializeExtensionsAsAtom` を `true` に設定した場合にのみシリアル化されます。この場合、`<a10:contributor>` 要素にシリアル化されます。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Syndication.SyndicationPerson> を <xref:System.ServiceModel.Syndication.SyndicationFeed> インスタンスの作成者コレクションに追加する方法を次のコードに示します。  
+  
+ [!code-csharp[SyndicationPerson#8](~/samples/snippets/csharp/VS_Snippets_CFX/syndicationperson/cs/program.cs#8)]
+ [!code-vb[SyndicationPerson#8](~/samples/snippets/visualbasic/VS_Snippets_CFX/syndicationperson/vb/snippets.vb#8)]  
+  
+ <xref:System.ServiceModel.Syndication.SyndicationPerson> を Atom 1.0 にシリアル化する方法を次の XML に示します。  
+  
+ [!code-xml[SyndicationPerson#0](~/samples/snippets/common/VS_Snippets_CFX/syndicationperson/common/atom.xml#0)]  
+  
+ <xref:System.ServiceModel.Syndication.SyndicationPerson> を RSS 2.0 にシリアル化する方法を次の XML に示します。  
+  
+ [!code-xml[SyndicationPerson#1](~/samples/snippets/common/VS_Snippets_CFX/syndicationperson/common/rss.xml#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SyndicationPerson ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.SyndicationPerson.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しい <see cref="T:System.ServiceModel.Syndication.SyndicationPerson" /> インスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected SyndicationPerson (System.ServiceModel.Syndication.SyndicationPerson source);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Syndication.SyndicationPerson source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.SyndicationPerson.#ctor(System.ServiceModel.Syndication.SyndicationPerson)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="source" Type="System.ServiceModel.Syndication.SyndicationPerson" />
+      </Parameters>
+      <Docs>
+        <param name="source">新しいインスタンスを初期化する <see cref="T:System.ServiceModel.Syndication.SyndicationPerson" /> インスタンス。</param>
+        <summary>指定したインスタンスを使用して、<see cref="T:System.ServiceModel.Syndication.SyndicationPerson" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SyndicationPerson (string email);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string email) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.SyndicationPerson.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="email" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="email">ユーザーの電子メール アドレス。</param>
+        <summary>指定した電子メール アドレスを使用して、新しい <see cref="T:System.ServiceModel.Syndication.SyndicationPerson" /> インスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、このコンストラクターを呼び出す方法を示しています。  
+  
+ [!code-csharp[SyndicationPerson#2](~/samples/snippets/csharp/VS_Snippets_CFX/syndicationperson/cs/program.cs#2)]
+ [!code-vb[SyndicationPerson#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/syndicationperson/vb/snippets.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SyndicationPerson (string email, string name, string uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string email, string name, string uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.SyndicationPerson.#ctor(System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="email" Type="System.String" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="uri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="email">ユーザーの電子メール アドレス。</param>
+        <param name="name">ユーザーの名前。</param>
+        <param name="uri">ユーザーの Web ページの URI。</param>
+        <summary>指定した電子メール アドレス、名前、および URI (Uniform Resource Identifier) を使用して、新しい <see cref="T:System.ServiceModel.Syndication.SyndicationPerson" /> インスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、このコンストラクターを呼び出す方法を示しています。  
+  
+ [!code-csharp[SyndicationPerson#3](~/samples/snippets/csharp/VS_Snippets_CFX/syndicationperson/cs/program.cs#3)]
+ [!code-vb[SyndicationPerson#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/syndicationperson/vb/snippets.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AttributeExtensions">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.Dictionary&lt;System.Xml.XmlQualifiedName,string&gt; AttributeExtensions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.Dictionary`2&lt;class System.Xml.XmlQualifiedName, string&gt; AttributeExtensions" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Syndication.SyndicationPerson.AttributeExtensions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.Dictionary&lt;System.Xml.XmlQualifiedName,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Syndication.SyndicationPerson" /> の属性の拡張を取得します。</summary>
+        <value>属性の拡張のコレクションを含むディクショナリ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配信オブジェクト モデルを使用して、カスタム属性を <xref:System.ServiceModel.Syndication.SyndicationPerson> インスタンスに追加できます。 任意の有効な XML 属性と値を追加できます。  
+  
+ Atom 1.0 にシリアル化する場合、すべてのカスタム属性と値は `<author>` 要素または `<contributor>` 要素の属性として書き込まれます。 RSS 2.0 にシリアル化する場合、すべてのカスタム属性と値は `<managingEditor>` 要素、`<a10:contributor>` 要素、または `<a10:author>` 要素の属性として書き込まれます。  
+  
+   
+  
+## Examples  
+ 属性拡張を <xref:System.ServiceModel.Syndication.SyndicationPerson> インスタンスに追加する方法を次のコードに示します。  
+  
+ [!code-csharp[SyndicationPerson#9](~/samples/snippets/csharp/VS_Snippets_CFX/syndicationperson/cs/program.cs#9)]
+ [!code-vb[SyndicationPerson#9](~/samples/snippets/visualbasic/VS_Snippets_CFX/syndicationperson/vb/snippets.vb#9)]  
+  
+ <xref:System.ServiceModel.Syndication.SyndicationPerson.AttributeExtensions%2A> コレクションを Atom 1.0 にシリアル化する方法を次の XML に示します。  
+  
+ [!code-xml[SyndicationPerson#4](~/samples/snippets/common/VS_Snippets_CFX/syndicationperson/common/atom.xml#4)]  
+  
+ <xref:System.ServiceModel.Syndication.SyndicationPerson.AttributeExtensions%2A> コレクションを RSS 2.0 にシリアル化する方法を次の XML に示します。  
+  
+ [!code-xml[SyndicationPerson#5](~/samples/snippets/common/VS_Snippets_CFX/syndicationperson/common/rss.xml#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public virtual System.ServiceModel.Syndication.SyndicationPerson Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Syndication.SyndicationPerson Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.SyndicationPerson.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Syndication.SyndicationPerson</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>既存の <see cref="T:System.ServiceModel.Syndication.SyndicationPerson" /> インスタンスのコピーを作成します。</summary>
+        <returns>新しい <see cref="T:System.ServiceModel.Syndication.SyndicationPerson" /> インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードは、<xref:System.ServiceModel.Syndication.SyndicationPerson> インスタンスをコピーする方法を示しています。  
+  
+ [!code-csharp[SyndicationPerson#14](~/samples/snippets/csharp/VS_Snippets_CFX/syndicationperson/cs/program.cs#14)]
+ [!code-vb[SyndicationPerson#14](~/samples/snippets/visualbasic/VS_Snippets_CFX/syndicationperson/vb/snippets.vb#14)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ElementExtensions">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Syndication.SyndicationElementExtensionCollection ElementExtensions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Syndication.SyndicationElementExtensionCollection ElementExtensions" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Syndication.SyndicationPerson.ElementExtensions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Syndication.SyndicationElementExtensionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Syndication.SyndicationPerson" /> の要素拡張を取得します。</summary>
+        <value>要素拡張が含まれる <see cref="T:System.ServiceModel.Syndication.SyndicationElementExtensionCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配信オブジェクト モデルを使用して、カスタム XML 要素を <xref:System.ServiceModel.Syndication.SyndicationPerson> インスタンスに追加できます。 有効な XML 要素の名前空間がそこに含まれる名前空間と異なる限り、その XML 要素を追加できます。  
+  
+ Atom 1.0 にシリアル化する場合は、すべてのカスタム要素が `<author>` 要素または `<contributor>` 要素内の XML 要素として書き込まれます。  
+  
+ RSS 2.0 にシリアル化する場合は、すべてのカスタム要素が `<managingEditor>` 要素、`<a10:contributor>` 要素、または `<a10:author>` 要素内の XML 要素として書き込まれます。  
+  
+   
+  
+## Examples  
+ 要素拡張を <xref:System.ServiceModel.Syndication.SyndicationPerson> インスタンスに追加する方法を次のコードに示します。  
+  
+ [!code-csharp[SyndicationPerson#10](~/samples/snippets/csharp/VS_Snippets_CFX/syndicationperson/cs/program.cs#10)]
+ [!code-vb[SyndicationPerson#10](~/samples/snippets/visualbasic/VS_Snippets_CFX/syndicationperson/vb/snippets.vb#10)]  
+  
+ <xref:System.ServiceModel.Syndication.SyndicationPerson.ElementExtensions%2A> コレクションを Atom 1.0 にシリアル化する方法を次の XML に示します。  
+  
+ [!code-xml[SyndicationPerson#6](~/samples/snippets/common/VS_Snippets_CFX/syndicationperson/common/atom.xml#6)]  
+  
+ <xref:System.ServiceModel.Syndication.SyndicationPerson.ElementExtensions%2A> コレクションを RSS 2.0 にシリアル化する方法を次の XML に示します。  
+  
+ [!code-xml[SyndicationPerson#7](~/samples/snippets/common/VS_Snippets_CFX/syndicationperson/common/rss.xml#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Email">
+      <MemberSignature Language="C#" Value="public string Email { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Email" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Syndication.SyndicationPerson.Email" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Syndication.SyndicationPerson" /> の電子メール アドレスを取得または設定します。</summary>
+        <value>ユーザーの電子メール アドレス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Atom 1.0 にシリアル化する場合、<xref:System.ServiceModel.Syndication.SyndicationPerson> プロパティは `<email>` 要素として書き込まれます。 `<email>` 要素は、`<author>` 要素または `<contributor>` 要素内に記述できます。これは、<xref:System.ServiceModel.Syndication.SyndicationPerson> が追加されるコレクション (作成者または投稿者) によって異なります。  
+  
+ RSS 2.0 にシリアル化する場合、この値は `<a10:email>` 要素として書き込まれます。 `<a10:email>` 要素は、`<managingEditor>` 要素、`<a10:author>` 要素、または `<a10:contributor>` 要素内に記述できます。 1 つの <xref:System.ServiceModel.Syndication.SyndicationPerson> のみを作成者コレクションに追加する場合、`<email>` 要素は `<managingEditor>` 要素内に書き込まれます。 複数の <xref:System.ServiceModel.Syndication.SyndicationPerson> を作成者コレクションに追加する場合は、`<email>` 要素が `<a10:author>` 要素内に書き込まれます。 <xref:System.ServiceModel.Syndication.SyndicationPerson> を投稿者コレクションに追加する場合は、`<email>` 要素が `<a10:contributor>` 要素内に書き込まれます。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Syndication.SyndicationPerson> インスタンスの電子メール アドレスを設定する方法を次のコードに示します。  
+  
+ [!code-csharp[SyndicationPerson#11](~/samples/snippets/csharp/VS_Snippets_CFX/syndicationperson/cs/program.cs#11)]
+ [!code-vb[SyndicationPerson#11](~/samples/snippets/visualbasic/VS_Snippets_CFX/syndicationperson/vb/snippets.vb#11)]  
+  
+ <xref:System.ServiceModel.Syndication.SyndicationPerson.Email%2A> を Atom 1.0 にシリアル化する方法を次の XML に示します。  
+  
+ [!code-xml[SyndicationPerson#0](~/samples/snippets/common/VS_Snippets_CFX/syndicationperson/common/atom.xml#0)]  
+  
+ <xref:System.ServiceModel.Syndication.SyndicationPerson.Email%2A> を RSS 2.0 にシリアル化する方法を次の XML に示します。  
+  
+ [!code-xml[SyndicationPerson#1](~/samples/snippets/common/VS_Snippets_CFX/syndicationperson/common/rss.xml#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Syndication.SyndicationPerson.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Syndication.SyndicationPerson" /> の名前を取得または設定します。</summary>
+        <value>ユーザーの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Atom 1.0 にシリアル化する場合、<xref:System.ServiceModel.Syndication.SyndicationPerson.Name%2A> プロパティは `<name>` 要素として書き込まれます。 `<name>` 要素は、`<author>` 要素または `<contributor>` 要素内に記述できます。これは、<xref:System.ServiceModel.Syndication.SyndicationPerson> が追加されるコレクション (作成者または投稿者) によって異なります。  
+  
+ RSS 2.0 にシリアル化する場合、<xref:System.ServiceModel.Syndication.SyndicationPerson.Name%2A> プロパティは `<a10:name>` 要素として書き込まれます。 `<a10:name>` 要素は、`<managingEditor>` 要素、`<a10:author>` 要素、または `<a10:contributor>` 要素内に記述できます。 1 つの <xref:System.ServiceModel.Syndication.SyndicationPerson> のみを作成者コレクションに追加する場合、`<a10:name>` 要素は `<managingEditor>` 要素内に書き込まれます。 複数の <xref:System.ServiceModel.Syndication.SyndicationPerson> を作成者コレクションに追加する場合は、`<a10:name>` 要素が `<a10:author>` 要素内に書き込まれます。 <xref:System.ServiceModel.Syndication.SyndicationPerson> を投稿者コレクションに追加する場合は、`<a10:name>` 要素が `<a10:contributor>` 要素内に書き込まれます。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Syndication.SyndicationPerson> の名前を設定する方法を次のコードに示します。  
+  
+ [!code-csharp[SyndicationPerson#12](~/samples/snippets/csharp/VS_Snippets_CFX/syndicationperson/cs/program.cs#12)]
+ [!code-vb[SyndicationPerson#12](~/samples/snippets/visualbasic/VS_Snippets_CFX/syndicationperson/vb/snippets.vb#12)]  
+  
+ <xref:System.ServiceModel.Syndication.SyndicationPerson.Name%2A> を Atom 1.0 にシリアル化する方法を次の XML に示します。  
+  
+ [!code-xml[SyndicationPerson#0](~/samples/snippets/common/VS_Snippets_CFX/syndicationperson/common/atom.xml#0)]  
+  
+ <xref:System.ServiceModel.Syndication.SyndicationPerson.Name%2A> を RSS 2.0 にシリアル化する方法を次の XML に示します。  
+  
+ [!code-xml[SyndicationPerson#1](~/samples/snippets/common/VS_Snippets_CFX/syndicationperson/common/rss.xml#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryParseAttribute">
+      <MemberSignature Language="C#" Value="protected virtual bool TryParseAttribute (string name, string ns, string value, string version);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance bool TryParseAttribute(string name, string ns, string value, string version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.SyndicationPerson.TryParseAttribute(System.String,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="version" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">要素の名前。</param>
+        <param name="ns">要素の名前空間。</param>
+        <param name="value">解析する属性。</param>
+        <param name="version">解析の際に使用する配信バージョン。</param>
+        <summary>属性の拡張の解析を試みます。</summary>
+        <returns>属性の拡張が正常に解析されたかどうかを指定する値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 属性の拡張は、Atom 1.0 または RSS 2.0 の仕様で定義されていないカスタム属性です。 それらは、Atom 1.0 については、`<author>` または `<contributor>` 要素の属性として、RSS 2.0 については `<managingEditor>` 要素、`<a10:author>` 要素、または `<a10:contributor>` 要素としてシリアル化されます。 このメソッドは、カスタム属性の拡張の逆シリアル化を処理できる拡張ポイントです。 これを行うには、<xref:System.ServiceModel.Syndication.SyndicationPerson> からクラスを派生させ、このメソッドをオーバーライドする必要があります。 このメソッドは、すべての認識されない属性の拡張で呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.XmlException">読み取り中に無効な XML が検出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryParseElement">
+      <MemberSignature Language="C#" Value="protected virtual bool TryParseElement (System.Xml.XmlReader reader, string version);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance bool TryParseElement(class System.Xml.XmlReader reader, string version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.SyndicationPerson.TryParseElement(System.Xml.XmlReader,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+        <Parameter Name="version" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="reader">読み取り元の <see cref="T:System.Xml.XmlReader" />。</param>
+        <param name="version">解析の際に使用する配信バージョン。</param>
+        <summary>要素拡張の解析を試みます。</summary>
+        <returns>要素拡張が正常に解析されたかどうかを指定する値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素拡張は、Atom 1.0 または RSS 2.0 のどちらの仕様でも定義されていない XML 要素です。 有効な XML 要素の名前空間が、外側の名前空間と異なる場合は、その XML 要素を拡張として追加できます。 このメソッドは、カスタム要素拡張の逆シリアル化を処理できる拡張ポイントです。 これを行うには、<xref:System.ServiceModel.Syndication.SyndicationPerson> からクラスを派生させ、このメソッドをオーバーライドする必要があります。 このメソッドは、認識されないすべての要素拡張で呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.XmlException">読み取り中に無効な XML が検出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Uri">
+      <MemberSignature Language="C#" Value="public string Uri { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Uri" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Syndication.SyndicationPerson.Uri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Syndication.SyndicationPerson" /> の URI を取得または設定します。</summary>
+        <value>ユーザーの Web サイトの URI。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Atom 1.0 にシリアル化する場合、<xref:System.ServiceModel.Syndication.SyndicationPerson.Uri%2A> プロパティは `<uri>` 要素として書き込まれます。 `<uri>` 要素は、`<author>` 要素または `<contributor>` 要素内に記述できます。これは、<xref:System.ServiceModel.Syndication.SyndicationPerson> が追加されるコレクション (作成者または投稿者) によって異なります。  
+  
+ RSS 2.0 にシリアル化する場合、<xref:System.ServiceModel.Syndication.SyndicationPerson.Uri%2A> プロパティは `<a10:uri>` 要素として書き込まれます。 `<a10:uri>` 要素は、`<managingEditor>` 要素、`<a10:author>` 要素、または `<a10:contributor>` 要素内に記述できます。 1 つの <xref:System.ServiceModel.Syndication.SyndicationPerson> のみを作成者コレクションに追加する場合、`<a10:uri>` 要素は `<managingEditor>` 要素内に書き込まれます。 複数の <xref:System.ServiceModel.Syndication.SyndicationPerson> を作成者コレクションに追加する場合は、`<a10:uri>` 要素が `<a10:author>` 要素内に書き込まれます。 <xref:System.ServiceModel.Syndication.SyndicationPerson> を投稿者コレクションに追加する場合は、`<a10:uri>` 要素が `<a10:contributor>` 要素内に書き込まれます。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Syndication.SyndicationPerson> インスタンスの URI を設定する方法を次のコードに示します。  
+  
+ [!code-csharp[SyndicationPerson#13](~/samples/snippets/csharp/VS_Snippets_CFX/syndicationperson/cs/program.cs#13)]
+ [!code-vb[SyndicationPerson#13](~/samples/snippets/visualbasic/VS_Snippets_CFX/syndicationperson/vb/snippets.vb#13)]  
+  
+ <xref:System.ServiceModel.Syndication.SyndicationPerson.Name%2A> を Atom 1.0 にシリアル化する方法を次の XML に示します。  
+  
+ [!code-xml[SyndicationPerson#0](~/samples/snippets/common/VS_Snippets_CFX/syndicationperson/common/atom.xml#0)]  
+  
+ <xref:System.ServiceModel.Syndication.SyndicationPerson.Name%2A> を RSS 2.0 にシリアル化する方法を次の XML に示します。  
+  
+ [!code-xml[SyndicationPerson#1](~/samples/snippets/common/VS_Snippets_CFX/syndicationperson/common/rss.xml#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAttributeExtensions">
+      <MemberSignature Language="C#" Value="protected virtual void WriteAttributeExtensions (System.Xml.XmlWriter writer, string version);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void WriteAttributeExtensions(class System.Xml.XmlWriter writer, string version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.SyndicationPerson.WriteAttributeExtensions(System.Xml.XmlWriter,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="version" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="writer">書き込み先の <see cref="T:System.Xml.XmlReader" />。</param>
+        <param name="version">書き込みの際に使用する配信バージョン。</param>
+        <summary>属性の拡張を、指定された配信バージョンを使用して、指定された <see cref="T:System.Xml.XmlWriter" /> に書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 属性の拡張は、Atom 1.0 または RSS 2.0 の仕様で定義されていないカスタム属性です。 それらは、Atom 1.0 については、`<author>` または `<contributor>` 要素の属性として、RSS 2.0 については `<managingEditor>` 要素、`<a10:author>` 要素、または `<a10:contributor>` 要素としてシリアル化されます。 このメソッドは、カスタム属性の拡張のシリアル化を処理できる拡張ポイントです。 これを行うには、<xref:System.ServiceModel.Syndication.SyndicationLink> からクラスを派生させ、このメソッドをオーバーライドする必要があります。 このメソッドは、すべての認識されない属性の拡張で呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteElementExtensions">
+      <MemberSignature Language="C#" Value="protected virtual void WriteElementExtensions (System.Xml.XmlWriter writer, string version);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void WriteElementExtensions(class System.Xml.XmlWriter writer, string version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.SyndicationPerson.WriteElementExtensions(System.Xml.XmlWriter,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="version" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="writer">書き込み先の <see cref="T:System.Xml.XmlReader" />。</param>
+        <param name="version">書き込みの際に使用する配信バージョン。</param>
+        <summary>要素拡張を、指定した配信バージョンを使用して、指定した <see cref="T:System.Xml.XmlWriter" /> に書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素拡張は、Atom 1.0 または RSS 2.0 のどちらの仕様でも定義されていない XML 要素です。 有効な XML 要素の名前空間が、外側の名前空間と異なる場合は、その XML 要素を拡張として追加できます。 このメソッドは、カスタム要素拡張のシリアル化を処理できる拡張ポイントです。 これを行うには、<xref:System.ServiceModel.Syndication.SyndicationPerson> からクラスを派生させ、このメソッドをオーバーライドする必要があります。 このメソッドは、認識されないすべての要素拡張で呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

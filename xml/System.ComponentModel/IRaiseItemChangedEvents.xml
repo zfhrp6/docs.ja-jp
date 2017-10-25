@@ -1,0 +1,62 @@
+<Type Name="IRaiseItemChangedEvents" FullName="System.ComponentModel.IRaiseItemChangedEvents">
+  <TypeSignature Language="C#" Value="public interface IRaiseItemChangedEvents" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IRaiseItemChangedEvents" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.IRaiseItemChangedEvents" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>クラスがプロパティ変更イベントを変換するかどうかを示す<see cref="E:System.ComponentModel.IBindingList.ListChanged" />イベント。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.IRaiseItemChangedEvents>インターフェイスは、通常、と共に実装、<xref:System.ComponentModel.IBindingList>インターフェイスし、リストにプロパティ変更イベントに変換することを示します<xref:System.ComponentModel.IBindingList.ListChanged>イベント。  
+  
+ ほとんどの場合、実装する必要は<xref:System.ComponentModel.IRaiseItemChangedEvents>インターフェイスです。 ただし、パフォーマンス向上のためのデータ ソース実装する必要<xref:System.ComponentModel.IRaiseItemChangedEvents>前に説明した機能を提供し、データ ソースを扱う場合、<xref:System.Windows.Forms.BindingSource>コンポーネントは、この機能が組み込まれているため、<xref:System.Windows.Forms.BindingSource>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="RaisesItemChangedEvents">
+      <MemberSignature Language="C#" Value="public bool RaisesItemChangedEvents { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RaisesItemChangedEvents" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.IRaiseItemChangedEvents.RaisesItemChangedEvents" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.ComponentModel.IRaiseItemChangedEvents" />オブジェクト<see cref="E:System.ComponentModel.IBindingList.ListChanged" />イベント。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.ComponentModel.IRaiseItemChangedEvents" />オブジェクト<see cref="E:System.ComponentModel.IBindingList.ListChanged" />イベントのプロパティのいずれかの値の変更とそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

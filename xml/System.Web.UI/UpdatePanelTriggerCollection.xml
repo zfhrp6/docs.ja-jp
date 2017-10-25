@@ -1,0 +1,176 @@
+<Type Name="UpdatePanelTriggerCollection" FullName="System.Web.UI.UpdatePanelTriggerCollection">
+  <TypeSignature Language="C#" Value="public class UpdatePanelTriggerCollection : System.Collections.ObjectModel.Collection&lt;System.Web.UI.UpdatePanelTrigger&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UpdatePanelTriggerCollection extends System.Collections.ObjectModel.Collection`1&lt;class System.Web.UI.UpdatePanelTrigger&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.UpdatePanelTriggerCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.ObjectModel.Collection&lt;System.Web.UI.UpdatePanelTrigger&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="!0">System.Web.UI.UpdatePanelTrigger</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コレクションを表します<see cref="T:System.Web.UI.UpdatePanelTrigger" />オブジェクトに対する、<see cref="T:System.Web.UI.UpdatePanel" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トリガー、<xref:System.Web.UI.UpdatePanelTrigger>を使用してコレクションを指定、 **UpdatePanelTrigger コレクション エディター**またはに追加することによって、デザイナーで宣言として`<Triggers>`内の要素、<xref:System.Web.UI.UpdatePanel>コントロール。 2 つの種類のトリガーを追加することができます。  
+  
+-   <xref:System.Web.UI.AsyncPostBackTrigger>コントロールが非同期ポストバックが発生して、更新パネルの内容を更新するように指定するために使用できるオブジェクト。 <xref:System.Web.UI.AsyncPostBackTrigger>オブジェクトを使用して更新パネルの外部のコントロールまたはの直接の子コントロールではないコントロールに対して、<xref:System.Web.UI.UpdatePanel>コントロール。  
+  
+-   A<xref:System.Web.UI.PostBackTrigger>内のポストバックを制御することを指定するために使用できるオブジェクト、<xref:System.Web.UI.UpdatePanel>コントロールには、同期ポストバックとページ全体の更新可能性があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UpdatePanelTriggerCollection (System.Web.UI.UpdatePanel owner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.UpdatePanel owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.UpdatePanelTriggerCollection.#ctor(System.Web.UI.UpdatePanel)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Web.UI.UpdatePanel" />
+      </Parameters>
+      <Docs>
+        <param name="owner"><see cref="T:System.Web.UI.UpdatePanel" />コントロールによって、<see cref="T:System.Web.UI.UpdatePanelTriggerCollection" />に属しています。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.UpdatePanelTrigger" />コレクション クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常はトリガーを追加、<xref:System.Web.UI.UpdatePanel>コントロールを使用して、 **UpdatePanelTrigger コレクション エディター**デザイナーで、またはに追加することによってとして宣言して`<Triggers>`内の要素、<xref:System.Web.UI.UpdatePanel>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearItems">
+      <MemberSignature Language="C#" Value="protected override void ClearItems ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ClearItems() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.UpdatePanelTriggerCollection.ClearItems" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Web.UI.UpdatePanelTriggerCollection" /> からすべての要素を削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertItem">
+      <MemberSignature Language="C#" Value="protected override void InsertItem (int index, System.Web.UI.UpdatePanelTrigger item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InsertItem(int32 index, class System.Web.UI.UpdatePanelTrigger item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.UpdatePanelTriggerCollection.InsertItem(System.Int32,System.Web.UI.UpdatePanelTrigger)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="item" Type="System.Web.UI.UpdatePanelTrigger" />
+      </Parameters>
+      <Docs>
+        <param name="index">トリガーを挿入する位置の 0 から始まるインデックス。</param>
+        <param name="item">挿入するトリガー。 参照型の場合は <see langword="null" /> の値を使用できます。</param>
+        <summary>挿入、<see cref="T:System.Web.UI.UpdatePanelTrigger" />オブジェクトに、<see cref="T:System.Web.UI.UpdatePanelTriggerCollection" />指定したインデックスにあるオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加することができます<xref:System.Web.UI.AsyncPostBackTrigger>オブジェクト、<xref:System.Web.UI.PostBackTrigger>オブジェクト、またはトリガーから派生するカスタム<xref:System.Web.UI.UpdatePanelTrigger>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Owner">
+      <MemberSignature Language="C#" Value="public System.Web.UI.UpdatePanel Owner { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.UpdatePanel Owner" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.UpdatePanelTriggerCollection.Owner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.UpdatePanel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照を取得、<see cref="T:System.Web.UI.UpdatePanel" />コントロールによって、<see cref="T:System.Web.UI.UpdatePanelTriggerCollection" />に属しています。</summary>
+        <value><see cref="T:System.Web.UI.UpdatePanel" /> コントロール。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveItem">
+      <MemberSignature Language="C#" Value="protected override void RemoveItem (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void RemoveItem(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.UpdatePanelTriggerCollection.RemoveItem(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除する要素の 0 から始まるインデックス。</param>
+        <summary><see cref="T:System.Web.UI.UpdatePanelTriggerCollection" /> の指定したインデックスにある要素を削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetItem">
+      <MemberSignature Language="C#" Value="protected override void SetItem (int index, System.Web.UI.UpdatePanelTrigger item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetItem(int32 index, class System.Web.UI.UpdatePanelTrigger item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.UpdatePanelTriggerCollection.SetItem(System.Int32,System.Web.UI.UpdatePanelTrigger)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="item" Type="System.Web.UI.UpdatePanelTrigger" />
+      </Parameters>
+      <Docs>
+        <param name="index">置換するトリガーの 0 から始まるインデックス。</param>
+        <param name="item">トリガーが指定したインデックス位置に新しい値。 参照型の場合は <see langword="null" /> の値を使用できます。</param>
+        <summary>トリガーで指定したインデックス位置を置き換える、<see cref="T:System.Web.UI.UpdatePanelTriggerCollection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内の要素を置き換えることができます、<xref:System.Web.UI.UpdatePanelTriggerCollection>オブジェクトを<xref:System.Web.UI.AsyncPostBackTrigger>オブジェクト、<xref:System.Web.UI.PostBackTrigger>オブジェクト、またはトリガーから派生するカスタム<xref:System.Web.UI.UpdatePanelTrigger>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

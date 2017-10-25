@@ -1,0 +1,114 @@
+<Type Name="CurrentChangingEventArgs" FullName="System.ComponentModel.CurrentChangingEventArgs">
+  <TypeSignature Language="C#" Value="public class CurrentChangingEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CurrentChangingEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.CurrentChangingEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.ComponentModel.ICollectionView.CurrentChanging" /> イベントに関する情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サポートするコレクション<xref:System.ComponentModel.ICollectionView>このイベントを発生させますときに、<xref:System.ComponentModel.ICollectionView.CurrentItem%2A>が変更されたコレクションの内容がリセットされた場合またはします。  
+  
+ 既定では、イベントがキャンセル可能な原因が現在の移動操作の場合 (など、<xref:System.ComponentModel.ICollectionView.MoveCurrentTo%2A>と同様のメソッド) と原因が、コレクションでの変更を元に戻せない操作 uncancelable です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CurrentChangingEventArgs ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.CurrentChangingEventArgs.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.CurrentChangingEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値、<xref:System.ComponentModel.CurrentChangingEventArgs.IsCancelable%2A>プロパティは`true`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CurrentChangingEventArgs (bool isCancelable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool isCancelable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.CurrentChangingEventArgs.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="isCancelable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="isCancelable">イベントがキャンセル可能かどうかを示す値。</param>
+        <summary>指定した <paramref name="isCancelable" /> 値を使用して、<see cref="T:System.ComponentModel.CurrentChangingEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cancel">
+      <MemberSignature Language="C#" Value="public bool Cancel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Cancel" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.CurrentChangingEventArgs.Cancel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントを取り消すかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />イベントがキャンセルする場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">場合の値<see cref="P:System.ComponentModel.CurrentChangingEventArgs.IsCancelable" />は<see langword="false" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCancelable">
+      <MemberSignature Language="C#" Value="public bool IsCancelable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCancelable" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.CurrentChangingEventArgs.IsCancelable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントがキャンセル可能かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />イベントがそれ以外の場合、キャンセル可能な場合は<see langword="false" />します。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、イベントがキャンセル可能な原因が現在の移動操作の場合 (など、<xref:System.ComponentModel.ICollectionView.MoveCurrentTo%2A>と同様のメソッド) と原因が、コレクションでの変更を元に戻せない操作 uncancelable です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

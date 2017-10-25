@@ -1,0 +1,203 @@
+<Type Name="TableLayoutRowStyleCollection" FullName="System.Windows.Forms.TableLayoutRowStyleCollection">
+  <TypeSignature Language="C#" Value="public class TableLayoutRowStyleCollection : System.Windows.Forms.TableLayoutStyleCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TableLayoutRowStyleCollection extends System.Windows.Forms.TableLayoutStyleCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.TableLayoutRowStyleCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.TableLayoutStyleCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>格納するコレクション<see cref="T:System.Windows.Forms.RowStyle" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TableLayoutRowStyleCollection>クラスが関連付けられている行の記述に使用されるすべてのスタイルのコレクションを表す<xref:System.Windows.Forms.TableLayoutPanel>です。  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します<xref:System.Windows.Forms.RowStyle>の<xref:System.Windows.Forms.TableLayoutRowStyleCollection>です。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.TableLayoutPanel>コントロール。  
+  
+ [!code-csharp[System.Windows.Forms.TableLayoutPanel#9](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TableLayoutPanel/CS/form1.cs#9)]
+ [!code-vb[System.Windows.Forms.TableLayoutPanel#9](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TableLayoutPanel/VB/form1.vb#9)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (System.Windows.Forms.RowStyle rowStyle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Add(class System.Windows.Forms.RowStyle rowStyle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TableLayoutRowStyleCollection.Add(System.Windows.Forms.RowStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rowStyle" Type="System.Windows.Forms.RowStyle" />
+      </Parameters>
+      <Docs>
+        <param name="rowStyle"><see cref="T:System.Windows.Forms.RowStyle" /> に追加する <see cref="T:System.Windows.Forms.TableLayoutRowStyleCollection" />。</param>
+        <summary>新しく追加<see cref="T:System.Windows.Forms.RowStyle" />を<see cref="T:System.Windows.Forms.TableLayoutRowStyleCollection" />です。</summary>
+        <returns>新しい要素が挿入された位置。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TableLayoutRowStyleCollection.Add%2A>メソッドは、現在のすべてのコントロールにテーブルのレイアウトを再適用<xref:System.Windows.Forms.TableLayoutPanel>コンテナーです。  
+  
+ コレクションに格納されているスタイルの数は、使用可能なメモリによってのみ制限されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Windows.Forms.RowStyle rowStyle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Windows.Forms.RowStyle rowStyle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TableLayoutRowStyleCollection.Contains(System.Windows.Forms.RowStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rowStyle" Type="System.Windows.Forms.RowStyle" />
+      </Parameters>
+      <Docs>
+        <param name="rowStyle"><see cref="T:System.Windows.Forms.TableLayoutRowStyleCollection" /> 内で検索される <see cref="T:System.Windows.Forms.RowStyle" />。</param>
+        <summary>指定するかどうか、<see cref="T:System.Windows.Forms.TableLayoutRowStyleCollection" />特定のスタイルが含まれています。</summary>
+        <returns>
+          <see cref="T:System.Windows.Forms.RowStyle" /> が <see cref="T:System.Windows.Forms.TableLayoutRowStyleCollection" /> に存在する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Windows.Forms.RowStyle rowStyle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Windows.Forms.RowStyle rowStyle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TableLayoutRowStyleCollection.IndexOf(System.Windows.Forms.RowStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rowStyle" Type="System.Windows.Forms.RowStyle" />
+      </Parameters>
+      <Docs>
+        <param name="rowStyle"><see cref="T:System.Windows.Forms.TableLayoutRowStyleCollection" /> 内で検索される <see cref="T:System.Windows.Forms.RowStyle" />。</param>
+        <summary><see cref="T:System.Windows.Forms.TableLayoutRowStyleCollection" /> 内の特定の項目のインデックスを確認します。</summary>
+        <returns>インデックス<paramref name="rowStyle" />場合に、<see cref="T:System.Windows.Forms.TableLayoutRowStyleCollection" />以外の場合、-1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TableLayoutRowStyleCollection.IndexOf%2A>メソッドは、最初の要素の検索を開始、<xref:System.Windows.Forms.TableLayoutRowStyleCollection>終わり、ときに一致が見つかったか、最後の要素に到達します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.Windows.Forms.RowStyle rowStyle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.Windows.Forms.RowStyle rowStyle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TableLayoutRowStyleCollection.Insert(System.Int32,System.Windows.Forms.RowStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="rowStyle" Type="System.Windows.Forms.RowStyle" />
+      </Parameters>
+      <Docs>
+        <param name="index">位置の 0 から始まるインデックス、<see cref="T:System.Windows.Forms.RowStyle" />挿入する必要があります。</param>
+        <param name="rowStyle"><see cref="T:System.Windows.Forms.RowStyle" />に挿入する、<see cref="T:System.Windows.Forms.TableLayoutRowStyleCollection" />です。 値として <see langword="null" /> を指定できます。</param>
+        <summary>挿入、<see cref="T:System.Windows.Forms.RowStyle" />に、<see cref="T:System.Windows.Forms.TableLayoutRowStyleCollection" />指定位置にあります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TableLayoutRowStyleCollection.Insert%2A>メソッドは、現在のすべてのコントロールにテーブルのレイアウトを再適用<xref:System.Windows.Forms.TableLayoutPanel>コンテナーです。  
+  
+ コレクションに格納されているスタイルの数は、使用可能なメモリによってのみ制限されます。  
+  
+ 連続する要素のコレクションでなど、<xref:System.Windows.Forms.TableLayoutRowStyleCollection>クラス、挿入ポイントの後にある要素下に挿入される要素を合わせてへ移動します。 移動した要素のインデックスも更新します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.RowStyle this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.RowStyle Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TableLayoutRowStyleCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.RowStyle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得または設定する <see cref="T:System.Windows.Forms.RowStyle" /> の、0 から始まるインデックス番号。</param>
+        <summary>指定したインデックス位置にある <see cref="T:System.Windows.Forms.RowStyle" /> を取得または設定します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.RowStyle" />指定したインデックス位置。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Windows.Forms.RowStyle rowStyle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Windows.Forms.RowStyle rowStyle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TableLayoutRowStyleCollection.Remove(System.Windows.Forms.RowStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rowStyle" Type="System.Windows.Forms.RowStyle" />
+      </Parameters>
+      <Docs>
+        <param name="rowStyle"><see cref="T:System.Windows.Forms.RowStyle" /> から削除する <see cref="T:System.Windows.Forms.TableLayoutRowStyleCollection" />。 値として <see langword="null" /> を指定できます。</param>
+        <summary>特定のオブジェクトが <see cref="T:System.Windows.Forms.TableLayoutRowStyleCollection" /> 内にあるときに、最初に出現したものを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TableLayoutRowStyleCollection.Remove%2A>メソッドは、現在のすべてのコントロールにテーブルのレイアウトを再適用<xref:System.Windows.Forms.TableLayoutPanel>コンテナーです。  
+  
+ 連続する要素のコレクションでなど、<xref:System.Windows.Forms.TableLayoutRowStyleCollection>クラス、位置の後にある要素上に移動して、繰り上げです。 移動した要素のインデックスも更新します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

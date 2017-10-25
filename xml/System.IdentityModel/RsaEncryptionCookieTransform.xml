@@ -1,0 +1,204 @@
+<Type Name="RsaEncryptionCookieTransform" FullName="System.IdentityModel.RsaEncryptionCookieTransform">
+  <TypeSignature Language="C#" Value="public class RsaEncryptionCookieTransform : System.IdentityModel.CookieTransform" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RsaEncryptionCookieTransform extends System.IdentityModel.CookieTransform" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.RsaEncryptionCookieTransform" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.CookieTransform</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>使用して cookie 暗号化<see cref="T:System.Security.Cryptography.RSA" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この変換で暗号化された cookie 可能性があります (通常は X.509 証明書に関連付けられている) 同じ RSA 秘密キーを共有する任意のコンピューターに暗号化を解除します。  
+  
+ ランダムな AES256 キーを使用して、指定されたデータが暗号化されます。 このキーは、RSA を使用して暗号化されますされときに使用する RSA キーを知っているクラスをデコードできるように、RSA 公開キーがプレーン テキストで送信されます。  
+  
+> [!IMPORTANT]
+>  使用する場合、<xref:System.IdentityModel.RsaEncryptionCookieTransform>のサービス証明書の変更によって提供されるキーの場合、サービス直す必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RsaEncryptionCookieTransform (System.Security.Cryptography.RSA key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Cryptography.RSA key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.RsaEncryptionCookieTransform.#ctor(System.Security.Cryptography.RSA)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="key" Type="System.Security.Cryptography.RSA" />
+      </Parameters>
+      <Docs>
+        <param name="key">既定の暗号化と復号化キーとして使用するキー。 初期化、<see cref="P:System.IdentityModel.RsaEncryptionCookieTransform.DecryptionKeys" />と<see cref="P:System.IdentityModel.RsaEncryptionCookieTransform.EncryptionKey" />プロパティです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.RsaEncryptionCookieTransform" />暗号化と復号化の指定したキーを使用するクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RsaEncryptionCookieTransform (System.Security.Cryptography.X509Certificates.X509Certificate2 certificate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Cryptography.X509Certificates.X509Certificate2 certificate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.RsaEncryptionCookieTransform.#ctor(System.Security.Cryptography.X509Certificates.X509Certificate2)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate2" />
+      </Parameters>
+      <Docs>
+        <param name="certificate">秘密キーを持つが暗号化し、復号化に使用される証明書。  
+  
+ 証明書が秘密キーを持つは、既定の暗号化と復号化キーとして使用されます。 初期化、<see cref="P:System.IdentityModel.RsaEncryptionCookieTransform.DecryptionKeys" />と<see cref="P:System.IdentityModel.RsaEncryptionCookieTransform.EncryptionKey" />プロパティです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.RsaEncryptionCookieTransform" />暗号化と復号化の指定された X.509 証明書の秘密キーを使用するクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="certificate" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="certificate" />秘密キーがありません。  
+  
+ または  
+  
+ 秘密キーは、RSA ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Decode">
+      <MemberSignature Language="C#" Value="public override byte[] Decode (byte[] encoded);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance unsigned int8[] Decode(unsigned int8[] encoded) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.RsaEncryptionCookieTransform.Decode(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="encoded" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="encoded">エンコードされたデータ</param>
+        <summary>AES キーは、cookie を復号化を復号化に指定された RSA キーを使用して、指定されたデータを復号化します。</summary>
+        <returns>デコードされたデータ</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="encoded" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="encoded" />0 バイトが含まれています。</exception>
+        <exception cref="T:System.NotSupportedException">プラットフォームは、要求されたアルゴリズムをサポートしていません。</exception>
+        <exception cref="T:System.InvalidOperationException">復号化キーがないか、キーと一致しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DecryptionKeys">
+      <MemberSignature Language="C#" Value="protected virtual System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Security.Cryptography.RSA&gt; DecryptionKeys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Security.Cryptography.RSA&gt; DecryptionKeys" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.RsaEncryptionCookieTransform.DecryptionKeys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Security.Cryptography.RSA&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定では、復号化に使用するキーを取得します。 このプロパティは、暗号化キーだけを含むリストを返します。</summary>
+        <value>復号化に使用するキー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Encode">
+      <MemberSignature Language="C#" Value="public override byte[] Encode (byte[] value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance unsigned int8[] Encode(unsigned int8[] value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.RsaEncryptionCookieTransform.Encode(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="value">エンコードするデータ</param>
+        <summary>指定されたデータをエンコードします。 既定の暗号化アルゴリズム (aes-256) を使用してデータを暗号化し、RSA を使用して、AES キーが暗号化された RSA 公開キーが追加されます。</summary>
+        <returns>エンコードされたデータ</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="value" />0 バイトが含まれています。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.IdentityModel.RsaEncryptionCookieTransform.EncryptionKey" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EncryptionKey">
+      <MemberSignature Language="C#" Value="public virtual System.Security.Cryptography.RSA EncryptionKey { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.RSA EncryptionKey" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.RsaEncryptionCookieTransform.EncryptionKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.RSA</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または暗号化に使用する RSA キーの設定</summary>
+        <value>暗号化に使用する RSA キーです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ またセットでこのプロパティを設定、<xref:System.IdentityModel.RsaEncryptionCookieTransform.DecryptionKeys%2A>唯一の要素と同じキーを含むコレクションにプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HashName">
+      <MemberSignature Language="C#" Value="public string HashName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HashName" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.RsaEncryptionCookieTransform.HashName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または使用するハッシュ アルゴリズムの名前を設定します。</summary>
+        <value>使用するハッシュ アルゴリズムの名前。 既定値は、"SHA2566"です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SHA256 は、既定のアルゴリズムです。 プラットフォームの最小の Windows Server 2003 および .NET 3.5 SP1 が必要です。  
+  
+ SHA256 がサポートされていない場合は、設定、 <xref:System.IdentityModel.RsaEncryptionCookieTransform.HashName%2A> "SHA1"をプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

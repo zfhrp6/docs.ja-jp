@@ -1,0 +1,89 @@
+<Type Name="SessionStateBehavior" FullName="System.Web.SessionState.SessionStateBehavior">
+  <TypeSignature Language="C#" Value="public enum SessionStateBehavior" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SessionStateBehavior extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.SessionState.SessionStateBehavior" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>セッションのサポート要求を処理するために必要な型を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SessionState.SessionStateBehavior>と列挙が使用される、<xref:System.Web.HttpContext.SetSessionStateBehavior%2A>メソッドです。 要求の処理を渡すセッション状態のサポートが必要なことを示すためにこのメソッドを呼び出すことができます、<xref:System.Web.SessionState.SessionStateBehavior>要求に適用されるセッション状態の動作の種類を指定する列挙値。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="Default" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.SessionState.SessionStateBehavior Default = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.SessionState.SessionStateBehavior.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.SessionState.SessionStateBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定の ASP.NET のロジックを使用して、要求のセッション状態の動作を決定します。 既定のロジックはでマーカー セッション状態のインターフェイスの存在を検索、<see cref="T:System.Web.IHttpHandler" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Disabled">
+      <MemberSignature Language="C#" Value="Disabled" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.SessionState.SessionStateBehavior Disabled = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.SessionState.SessionStateBehavior.Disabled" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.SessionState.SessionStateBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セッション状態は、要求の処理は無効です。 この設定は、要求のハンドラーを調べることによって確認されているセッションの動作をオーバーライドします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadOnly">
+      <MemberSignature Language="C#" Value="ReadOnly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.SessionState.SessionStateBehavior ReadOnly = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.SessionState.SessionStateBehavior.ReadOnly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.SessionState.SessionStateBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>読み取り専用のセッション状態は、要求に対して有効です。 つまり、セッション状態を更新することはできません。 この設定は、要求のハンドラーを調べることによって確認されているセッション状態の動作をオーバーライドします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Required">
+      <MemberSignature Language="C#" Value="Required" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.SessionState.SessionStateBehavior Required = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.SessionState.SessionStateBehavior.Required" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.SessionState.SessionStateBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求の完全な読み取り/書き込みのセッション状態の動作になっています。 この設定は、要求のハンドラーを調べることによって確認されているセッションの動作をオーバーライドします。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

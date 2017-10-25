@@ -1,0 +1,51 @@
+<Type Name="InvokeCompletedEventArgs" FullName="System.Activities.InvokeCompletedEventArgs">
+  <TypeSignature Language="C#" Value="public class InvokeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit InvokeCompletedEventArgs extends System.ComponentModel.AsyncCompletedEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.InvokeCompletedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.AsyncCompletedEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Activities.WorkflowInvoker.InvokeCompleted" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Activities.WorkflowInvoker.InvokeAsync%2A> で <xref:System.Activities.WorkflowInvoker> オーバーロードのいずれかを使用してワークフローを非同期的に呼び出す際に、ワークフロー ホスト作成者は <xref:System.Activities.WorkflowInvoker.InvokeCompleted> を処理して、完了済みワークフローからデータを取得できます。ワークフローが完了しなかった場合には、例外データを取得します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Outputs">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,object&gt; Outputs { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, object&gt; Outputs" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.InvokeCompletedEventArgs.Outputs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>完了済みワークフローからルート アクティビティの出力引数値の <see cref="T:System.Collections.Generic.IDictionary`2" /> を取得します。</summary>
+        <value>完了済みワークフローからルート アクティビティの出力引数値のディクショナリを取得します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ディクショナリにおける出力引数値は、引数名に従ってキー指定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

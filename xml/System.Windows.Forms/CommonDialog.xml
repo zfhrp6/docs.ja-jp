@@ -1,0 +1,369 @@
+<Type Name="CommonDialog" FullName="System.Windows.Forms.CommonDialog">
+  <TypeSignature Language="C#" Value="public abstract class CommonDialog : System.ComponentModel.Component" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit CommonDialog extends System.ComponentModel.Component" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.CommonDialog" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Component</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItemFilter("System.Windows.Forms")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>画面上にダイアログ ボックスを表示するために使用する基本クラスを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 継承するクラスが実装に必要な<xref:System.Windows.Forms.CommonDialog.RunDialog%2A>を呼び出すことによって<xref:System.Windows.Forms.CommonDialog.ShowDialog%2A>を特定のコモン ダイアログ ボックスを作成します。 継承するクラスが必要に応じてオーバーライドできます<xref:System.Windows.Forms.CommonDialog.HookProc%2A>特定のダイアログ ボックスのフック機能を実装します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.ColorDialog>の実装<xref:System.Windows.Forms.CommonDialog>示されているを作成して、ダイアログ ボックスを表示します。 この例を持つ既存のフォーム内から、メソッドが呼び出されることが必要です、<xref:System.Windows.Forms.TextBox>と<xref:System.Windows.Forms.Button>に配置されます。  
+  
+ [!code-cpp[Classic ColorDialog Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ColorDialog Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ColorDialog Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ColorDialog Example/CS/source.cs#1)]
+ [!code-vb[Classic ColorDialog Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ColorDialog Example/VB/Form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CommonDialog ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CommonDialog.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.CommonDialog" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HelpRequest">
+      <MemberSignature Language="C#" Value="public event EventHandler HelpRequest;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler HelpRequest" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.CommonDialog.HelpRequest" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがコモン ダイアログ ボックスの [?] ボタンをクリックすると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントの処理方法の詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、初期化を示しています、<xref:System.Windows.Forms.ColorDialog>オブジェクトの設定、 <xref:System.Windows.Forms.ColorDialog.AnyColor%2A>、<xref:System.Windows.Forms.ColorDialog.AllowFullOpen%2A>プロパティです。 <xref:System.Windows.Forms.ColorDialog>オブジェクトでは、ユーザーをカスタムの色を設定することはできませんが、表示される基本の色の完全なセットを許可します。 設定して、<xref:System.Windows.Forms.ColorDialog.SolidColorOnly%2A>プロパティを false には、256 個以下の色のシステムでは、他の色の組み合わせである色の表示できます。 この例では、設定も示しています、<xref:System.Windows.Forms.ColorDialog.ShowHelp%2A>プロパティと処理、<xref:System.Windows.Forms.CommonDialog.HelpRequest>イベント ダイアログ ボックスをします。 例を実行するには、フォームと呼び出しで、次のコードを貼り付けます、`InitializeColorDialog`フォームのコンス トラクターのメソッドまたは`Load`メソッドです。 この例では、する必要があります、`Click`ボタンのイベントがこの例で定義されているイベント ハンドラーに関連付けられています。  
+  
+ [!code-cpp[System.Windows.Forms.ColorDialogHelp#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ColorDialogHelp/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ColorDialogHelp#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ColorDialogHelp/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ColorDialogHelp#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ColorDialogHelp/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HookProc">
+      <MemberSignature Language="C#" Value="protected virtual IntPtr HookProc (IntPtr hWnd, int msg, IntPtr wparam, IntPtr lparam);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance native int HookProc(native int hWnd, int32 msg, native int wparam, native int lparam) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CommonDialog.HookProc(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hWnd" Type="System.IntPtr" />
+        <Parameter Name="msg" Type="System.Int32" />
+        <Parameter Name="wparam" Type="System.IntPtr" />
+        <Parameter Name="lparam" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="hWnd">ダイアログ ボックス ウィンドウへのハンドル。</param>
+        <param name="msg">受信されるメッセージです。</param>
+        <param name="wparam">メッセージに関する追加情報。</param>
+        <param name="lparam">メッセージに関する追加情報。</param>
+        <summary>コモン ダイアログ ボックスに特定の機能を追加するためにオーバーライドされる、コモン ダイアログ ボックスのフック プロシージャを定義します。</summary>
+        <returns>既定のダイアログ ボックス プロシージャでメッセージを処理する場合は値 0。既定のダイアログ ボックス プロシージャではメッセージを無視する場合は 0 以外の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 用のフック プロシージャは、関数がアプリケーションに到達する前に、イベントをインターセプトするメカニズムです。 オーバーライドする場合、<xref:System.Windows.Forms.CommonDialog.HookProc%2A>のメソッド、<xref:System.Windows.Forms.CommonDialog>クラス、オペレーティング システムが、ウィンドウにオペレーティング システムのメッセージを投稿する関数のオーバーライドを呼び出します。  
+  
+ 既定では、画面 WM_INITDIALOG メッセージへの応答で、ダイアログ ボックスの中央にフック プロシージャ。  
+  
+> [!NOTE]
+>  このメソッドを使用して<xref:System.Security.Permissions.SecurityAction?displayProperty=nameWithType>されないようにする、信頼されていないコードから呼び出す以外の直前の呼び出し元のみする必要がある<xref:System.Security.Permissions.SecurityPermissionAttribute.UnmanagedCode%2A?displayProperty=nameWithType>権限です。 場合は、コードは、部分的に信頼されたコードから呼び出すことができますはユーザーの入力を渡さない<xref:System.Runtime.InteropServices.Marshal>クラスの検証を伴わないメソッドです。 使用してに関する重要な制限事項、 `LinkDemand` 、メンバーを参照してください[Demand とします。LinkDemand](http://msdn.microsoft.com/en-us/1ab877f2-70f4-4e0d-8116-943999dfe8f5)です。  
+  
+ このプロパティを使用しても、<xref:System.Security.Permissions.SecurityAction?displayProperty=nameWithType>セキュリティ属性がある、このメンバーをオーバーライドする派生クラスである必要があります、`CustomPermission`権限です。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Windows.Forms.CommonDialog.HookProc%2A>メソッドです。 例では、継承するクラスから成る、<xref:System.Windows.Forms.CommonDialog>クラスです。 クラスの<xref:System.Windows.Forms.CommonDialog.HookProc%2A>override、例では、評価、メソッドの`msg`パラメーターの特定の Windows メッセージの定数値です。 場合、`msg`例では、パラメーターには、指定した定数と等しいに渡された Windows メッセージを識別するトレース出力を書き込みます、<xref:System.Windows.Forms.CommonDialog.HookProc%2A>メソッドです。 この例では、クラス、<xref:System.Windows.Forms.CommonDialog.HookProc%2A>メソッドは継承を宣言、<xref:System.Windows.Forms.CommonDialog>クラスです。  
+  
+ [!code-cpp[HookProc Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/HookProc Example/CPP/fontdialogoverride.cpp#1)]
+ [!code-csharp[HookProc Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/HookProc Example/CS/fontdialogoverride.cs#1)]
+ [!code-vb[HookProc Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/HookProc Example/VB/fontdialogoverride.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す即時呼び出し元がします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <block subset="none" type="overrides">
+          <para>クラスを継承すると、コモン ダイアログ ボックスに特定の機能を追加するには、このメソッドをオーバーライドできます。 オーバーライドする場合<see cref="M:System.Windows.Forms.CommonDialog.HookProc(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.CommonDialog.HookProc(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnHelpRequest">
+      <MemberSignature Language="C#" Value="protected virtual void OnHelpRequest (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnHelpRequest(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CommonDialog.OnHelpRequest(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e"><see cref="T:System.Windows.Forms.HelpEventArgs" />イベント データを提供します。</param>
+        <summary><see cref="E:System.Windows.Forms.CommonDialog.HelpRequest" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [ヘルプ] ボタンがクリックされたときに、このメソッドが呼び出されます。 クラスを継承すると、イベントを処理するには、このメソッドがオーバーライドすることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OwnerWndProc">
+      <MemberSignature Language="C#" Value="protected virtual IntPtr OwnerWndProc (IntPtr hWnd, int msg, IntPtr wparam, IntPtr lparam);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance native int OwnerWndProc(native int hWnd, int32 msg, native int wparam, native int lparam) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CommonDialog.OwnerWndProc(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hWnd" Type="System.IntPtr" />
+        <Parameter Name="msg" Type="System.Int32" />
+        <Parameter Name="wparam" Type="System.IntPtr" />
+        <Parameter Name="lparam" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="hWnd">送信するメッセージのウィンドウ ハンドル。</param>
+        <param name="msg">送信する Win32 メッセージ。</param>
+        <param name="wparam"><c>Wparam</c>メッセージと共に送信します。</param>
+        <param name="lparam"><c>Lparam</c>メッセージと共に送信します。</param>
+        <summary>コモン ダイアログ ボックスに特定の機能を追加するためにオーバーライドされる、オーナー ウィンドウ プロシージャを定義します。</summary>
+        <returns>送信されたメッセージの処理結果 (メッセージによって異なる)。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コモン ダイアログ ボックスのオーナー ウィンドウに送信されたメッセージは、コントロールをここに転送されます。 クラスを継承すると、コモン ダイアログ ボックスに特定の機能を追加するには、このメソッドをオーバーライドできます。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す即時呼び出し元がします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public abstract void Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CommonDialog.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされるときに、コモン ダイアログ ボックスのプロパティを既定値にリセットします。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">このメソッドを呼び出すアンマネージ コードです。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <block subset="none" type="overrides">
+          <para>クラスを継承すると、そのプロパティをリセットするには、このメソッドをオーバーライドできます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RunDialog">
+      <MemberSignature Language="C#" Value="protected abstract bool RunDialog (IntPtr hwndOwner);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool RunDialog(native int hwndOwner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CommonDialog.RunDialog(System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hwndOwner" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="hwndOwner">コモン ダイアログ ボックスのオーナー ウィンドウのウィンドウ ハンドルを表す値。</param>
+        <summary>派生クラスでオーバーライドされるときに、コモン ダイアログ ボックスを指定します。</summary>
+        <returns>
+          ダイアログ ボックスが正常に動作した場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コモン ダイアログ ボックスのユーザーが呼び出すときに、このメソッドが呼び出される<xref:System.Windows.Forms.CommonDialog.ShowDialog%2A>の継承クラスによってオーバーライドする必要がありますと<xref:System.Windows.Forms.CommonDialog>特定コモン ダイアログ ボックスを実装します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">このメソッドを呼び出すアンマネージ コードです。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowDialog">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DialogResult ShowDialog ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Forms.DialogResult ShowDialog() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CommonDialog.ShowDialog" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DialogResult</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>既定のオーナーを使用してコモン ダイアログ ボックスを実行します。</summary>
+        <returns>
+          <see cref="F:System.Windows.Forms.DialogResult.OK" />ユーザーがダイアログ ボックスで [ok] をクリックした場合それ以外の場合、<see cref="F:System.Windows.Forms.DialogResult.Cancel" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Windows.Forms.CommonDialog.RunDialog%2A> を実装します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.ColorDialog>の実装<xref:System.Windows.Forms.CommonDialog>示されているを作成して、ダイアログ ボックスを表示します。 この例を持つ既存のフォーム内から、メソッドが呼び出されることが必要です、<xref:System.Windows.Forms.TextBox>と<xref:System.Windows.Forms.Button>に配置されます。  
+  
+ [!code-cpp[Classic ColorDialog Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ColorDialog Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ColorDialog Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ColorDialog Example/CS/source.cs#1)]
+ [!code-vb[Classic ColorDialog Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ColorDialog Example/VB/Form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Drawing.Printing.PrintingPermission">印刷する、<see cref="T:System.Windows.Forms.PrintDialog" />です。 関連する列挙。<see cref="F:System.Drawing.Printing.PrintingPermissionLevel.SafePrinting" /></permission>
+        <permission cref="T:System.Security.Permissions.UIPermission">このメソッドを呼び出すセーフ サブウィンドウです。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowDialog">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DialogResult ShowDialog (System.Windows.Forms.IWin32Window owner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Forms.DialogResult ShowDialog(class System.Windows.Forms.IWin32Window owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CommonDialog.ShowDialog(System.Windows.Forms.IWin32Window)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DialogResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Forms.IWin32Window" />
+      </Parameters>
+      <Docs>
+        <param name="owner">モーダル ダイアログ ボックスを所有するトップレベル ウィンドウを表す <see cref="T:System.Windows.Forms.IWin32Window" /> を実装しているオブジェクト。</param>
+        <summary>指定したオーナーを使用してコモン ダイアログ ボックスを実行します。</summary>
+        <returns>
+          <see cref="F:System.Windows.Forms.DialogResult.OK" />ユーザーがクリックした場合**ok**  ダイアログ ボックスです。 それ以外の場合、<see cref="F:System.Windows.Forms.DialogResult.Cancel" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバージョンの<xref:System.Windows.Forms.CommonDialog.ShowDialog%2A>メソッドでは、特定のフォームまたはコントロールに表示されるダイアログ ボックスを所有するを指定することができます。 このパラメーターを持たないメソッドのバージョンを使用する場合、ダイアログ ボックスが表示されているは所有自動的に、アプリケーションの現在アクティブなウィンドウです。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Drawing.Printing.PrintingPermission">印刷する、<see cref="T:System.Windows.Forms.PrintDialog" />です。 関連する列挙。<see cref="F:System.Drawing.Printing.PrintingPermissionLevel.SafePrinting" /></permission>
+        <permission cref="T:System.Security.Permissions.UIPermission">このメソッドを呼び出すセーフ サブウィンドウです。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Tag">
+      <MemberSignature Language="C#" Value="public object Tag { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Tag" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.CommonDialog.Tag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.StringConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールに関するデータを格納しているオブジェクトを設定します。</summary>
+        <value>に関するデータを格納するオブジェクト、<see cref="T:System.Windows.Forms.CommonDialog" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、コントロールの任意の情報を格納します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

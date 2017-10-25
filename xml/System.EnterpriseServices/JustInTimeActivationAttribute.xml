@@ -1,0 +1,144 @@
+<Type Name="JustInTimeActivationAttribute" FullName="System.EnterpriseServices.JustInTimeActivationAttribute">
+  <TypeSignature Language="C#" Value="public sealed class JustInTimeActivationAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit JustInTimeActivationAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.JustInTimeActivationAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class, Inherited=true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ジャスト イン タイム (JIT) のアクティベーションを有効または無効にします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ JIT のアクティブ化が指定されている場合には無効にしないで、COM + カタログ、およびその逆です。 COM + カタログで有効な場合は、コンポーネントで指定しなければなりません。  
+  
+ COM + で構成されますが、自動トランザクションが要求される場合は自動的に有効にするコンポーネントを無効になっての JIT ライセンス認証の既定値です。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、この属性の使用を示します。  
+  
+ [!code-cpp[EnterpriseServices_Pooling#0](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServices_Pooling/CPP/inspector.cpp#0)]
+ [!code-csharp[EnterpriseServices_Pooling#0](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices_Pooling/CS/inspector.cs#0)]
+ [!code-vb[EnterpriseServices_Pooling#0](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServices_Pooling/VB/inspector.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.EnterpriseServices.JustInTimeActivationAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public JustInTimeActivationAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.JustInTimeActivationAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.EnterpriseServices.JustInTimeActivationAttribute" /> クラスの新しいインスタンスを初期化します。 既定のコンス トラクターは、ジャスト イン タイム (JIT) のアクティベーションを使用できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例が新たに作成<xref:System.EnterpriseServices.JustInTimeActivationAttribute>です。  
+  
+ [!code-csharp[EnterpriseServicesJustInTimeActivationAttribute#1](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServicesJustInTimeActivationAttribute/CS/class1.cs#1)]
+ [!code-vb[EnterpriseServicesJustInTimeActivationAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServicesJustInTimeActivationAttribute/VB/class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public JustInTimeActivationAttribute (bool val);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool val) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.JustInTimeActivationAttribute.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="val" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="val">
+          <see langword="true" />JIT のアクティブ化を有効にするにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.EnterpriseServices.JustInTimeActivationAttribute" />クラス、オプションで渡すことによって・ イン タイム (JIT) のライセンス認証の無効化を許可する<see langword="false" />パラメーターとして。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ JIT のライセンス認証が必要と`val`に設定することはできません`false`場合、<xref:System.EnterpriseServices.TransactionOption>値、トランザクションは`Supported`、 `Required`、または`RequiresNew`です。  
+  
+   
+  
+## Examples  
+ 次のコード例が新たに作成<xref:System.EnterpriseServices.JustInTimeActivationAttribute>です。  
+  
+ [!code-csharp[EnterpriseServicesJustInTimeActivationAttribute#2](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServicesJustInTimeActivationAttribute/CS/class1.cs#2)]
+ [!code-vb[EnterpriseServicesJustInTimeActivationAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServicesJustInTimeActivationAttribute/VB/class1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public bool Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Value" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.JustInTimeActivationAttribute.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>値を取得、<see cref="T:System.EnterpriseServices.JustInTimeActivationAttribute" />設定します。</summary>
+        <value>
+          <see langword="true" />JIT のアクティブ化が有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の値を取得する、`JustInTimeActivation`属性の<xref:System.EnterpriseServices.JustInTimeActivationAttribute.Value%2A>プロパティです。  
+  
+ [!code-csharp[EnterpriseServicesJustInTimeActivationAttribute#3](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServicesJustInTimeActivationAttribute/CS/class1.cs#3)]
+ [!code-vb[EnterpriseServicesJustInTimeActivationAttribute#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServicesJustInTimeActivationAttribute/VB/class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

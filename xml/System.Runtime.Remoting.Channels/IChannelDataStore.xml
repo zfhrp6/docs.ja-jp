@@ -1,0 +1,82 @@
+<Type Name="IChannelDataStore" FullName="System.Runtime.Remoting.Channels.IChannelDataStore">
+  <TypeSignature Language="C#" Value="public interface IChannelDataStore" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IChannelDataStore" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Channels.IChannelDataStore" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>チャネルのリモート処理チャネルのためのデータを格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チャネル シンク アーキテクチャを使用するチャネルは、のこのインターフェイスを実装する必要があります、`ChannelData`オブジェクト。  
+  
+   
+  
+## Examples  
+ [!code-cpp[IChannelDataStore_Item#1](~/samples/snippets/cpp/VS_Snippets_Remoting/IChannelDataStore_Item/CPP/ichanneldatastore.cpp#1)]
+ [!code-csharp[IChannelDataStore_Item#1](~/samples/snippets/csharp/VS_Snippets_Remoting/IChannelDataStore_Item/CS/ichanneldatastore.cs#1)]
+ [!code-vb[IChannelDataStore_Item#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/IChannelDataStore_Item/VB/ichanneldatastore.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ChannelUris">
+      <MemberSignature Language="C#" Value="public string[] ChannelUris { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] ChannelUris" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.IChannelDataStore.ChannelUris" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得 Uri が現在のチャネルをマップする、チャネルの配列。</summary>
+        <value>現在のチャネルをマップする Uri、チャネルの配列。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[object key] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(object)" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.IChannelDataStore.Item(System.Object)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">キー データ オブジェクトが関連付けられています。</param>
+        <summary>取得または実装するチャネルの指定したキーに関連付けられているデータ オブジェクトを設定します。</summary>
+        <value>実装するチャネルの指定されたデータ オブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,305 @@
+<Type Name="WebPartZoneCollection" FullName="System.Web.UI.WebControls.WebParts.WebPartZoneCollection">
+  <TypeSignature Language="C#" Value="public sealed class WebPartZoneCollection : System.Collections.ReadOnlyCollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WebPartZoneCollection extends System.Collections.ReadOnlyCollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.WebPartZoneCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.ReadOnlyCollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>読み取り専用コレクションを格納<see cref="T:System.Web.UI.WebControls.WebParts.WebPartZone" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection>クラスのコレクションを格納する<xref:System.Web.UI.WebControls.WebParts.WebPartZone>Web パーツ ページに存在するコントロール。 主にで使用、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールを追跡し、すべてのゾーンを管理します。 <xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールは、その読み取り専用で、ページ上のゾーンのコレクションに参照を保持<xref:System.Web.UI.WebControls.WebParts.WebPartManager.Zones%2A>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection>クラスは、特定のゾーンを検索し、確認またはの内容を変更する必要がある場合や、同時に複数のゾーンまたはその内容の操作を実行する場合に便利です。 ゾーン自体のコレクションが読み取り専用と、コレクション オブジェクト自体のサイズを変更することはできません、コレクション内の個別のゾーンへの参照を取得したり、個々 のゾーンのオブジェクトへの参照がある場合は、そのプロパティ値を変更できます。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection>クラスに次の 2 つのコンス トラクターです。 最初の 1 つ<xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection.%23ctor>、単に新しい空のインスタンスを初期化<xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection>です。 2 つ目、 <xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection.%23ctor%28System.Collections.ICollection%29>、既存のゾーンのコレクションを渡すことによって、コレクションを初期化します。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection>クラスに含まれる、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection.Item%2A>プロパティです。 このプロパティでは、検索することができます、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>文字列識別子を渡すことによって、コレクション内のコントロールです。 値の文字列識別子を照合することで、ゾーンにある、<xref:System.Web.UI.Control.ID%2A>プロパティを<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>ゾーンです。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection>クラスを調べることや、その内容にアクセスするのに便利ないくつかのメソッドもあります。 <xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection.Contains%2A>メソッドでは、特定のゾーンがコレクション内に存在するかどうかを判断します。 <xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection.CopyTo%2A>メソッドの配列にコレクションをコピーする<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>オブジェクト。 最後に、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection.IndexOf%2A>メソッドがコレクション内の特定のゾーンのインデックスを返します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection>クラスです。 コード例には、3 つの部分が含まれています: と例を実行する方法の説明については、コードの 2 つのセクションです。  
+  
+ このコード例の最初の部分は 3 種類を含む Web ページ<xref:System.Web.UI.WebControls.WebParts.WebPartZone>コントロール、それぞれが 1 台のサーバー コントロールが含まれています。 これらのサーバー コントロールには、すべての標準の ASP.NET コントロールが、として機能する<xref:System.Web.UI.WebControls.WebParts.WebPart>内に配置するために、実行時に制御を<xref:System.Web.UI.WebControls.WebParts.WebPartZone>ゾーンです。  
+  
+ [!code-aspx-csharp[WebParts_WebPartZoneCollection_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartZoneCollection_Overview/CS/webpartzonecollection_overview_cs.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPartZoneCollection_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartZoneCollection_Overview/VB/webpartzonecollection_overview_vb.aspx#1)]  
+  
+ コード例の 2 番目の部分は、部分クラスの使用方法を示すコードを含む、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection>クラスです。 このコードは、Web ページのイベントを処理します。  
+  
+ [!code-csharp[WebParts_WebPartZoneCollection_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartZoneCollection_Overview/CS/webpartzonecollection_overview.cs#2)]
+ [!code-vb[WebParts_WebPartZoneCollection_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartZoneCollection_Overview/VB/webpartzonecollection_overview.vb#2)]  
+  
+ ブラウザーでページを読み込みます。 3 つ<xref:System.Web.UI.WebControls.WebParts.WebPartZone>ゾーンは、含まれるサーバー コントロールを表示します。 ページの下部には、ボタンがいくつかの操作の一部の側面を示しますそれぞれが、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection>オブジェクト。 ゾーンとそのコンテンツに対するその効果を表示するのには、各ボタンをクリックします。 一部の側面を示す各ボタンに関連付けられているコードを表示する、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection>オブジェクト、部分クラス ファイルで、このコード例の 2 番目の部分として上記のコードを表示します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.WebParts.WebPartZoneCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection.%23ctor%2A>コンス トラクターを使用して、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロール、Web パーツ コントロール セットの他のコントロールまたはの読み取り専用コレクションを作成する、カスタムの開発者のコードで、 <xref:System.Web.UI.WebControls.WebParts.WebPartZone> Web パーツ ページに存在するコントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebPartZoneCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartZoneCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.WebParts.WebPartZoneCollection" /> クラスの空のインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールの新しいインスタンスを初期化するために、独自のコンス トラクター内でこのコンス トラクターを使用して、 <xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection> Web パーツ ページのクラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebPartZoneCollection (System.Collections.ICollection webPartZones);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.ICollection webPartZones) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartZoneCollection.#ctor(System.Collections.ICollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="webPartZones" Type="System.Collections.ICollection" />
+      </Parameters>
+      <Docs>
+        <param name="webPartZones"><see cref="T:System.Web.UI.WebControls.WebParts.WebPartZone" /> オブジェクトの <see cref="T:System.Collections.ICollection" />。</param>
+        <summary>インスタンスを初期化、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartZoneCollection" />クラスのコレクションを渡すことによって<see cref="T:System.Web.UI.WebControls.WebParts.WebPartZone" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection.%23ctor%2A>コンス トラクターのカスタム コレクションを作成するときに<xref:System.Web.UI.WebControls.WebParts.WebPartZone>にプログラムで操作を実行するオブジェクト。 たとえば、アクセスする可能性があります、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.Zones%2A>プロパティのサブセットを作成および<xref:System.Web.UI.WebControls.WebParts.WebPartZone>に割り当てて、Web パーツ ページ上のオブジェクト、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection>オブジェクト、および子コントロールまたはそのゾーンのサブセットのみのさまざまなプロパティに対して操作を実行します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection.%23ctor%2A>コンス トラクターです。 この例の完全なコードがのセクションの例で見つかった、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection>クラスの概要です。  
+  
+ コードの次のセクションに割り当てることに注意してください、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection>オブジェクトの値を取得することで変数を<xref:System.Web.UI.WebControls.WebParts.WebPartManager.Zones%2A>プロパティです。 場合からのすべてのゾーンの割り当てではなく、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.Zones%2A>プロパティの配列を作成することが<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase> ページで、すべてのゾーンのサブセットを含むオブジェクトし、新しい配列を割り当てる<xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection>オブジェクト。  
+  
+ [!code-csharp[WebParts_WebPartZoneCollection_Overview#6](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartZoneCollection_Overview/CS/webpartzonecollection_overview.cs#6)]
+ [!code-vb[WebParts_WebPartZoneCollection_Overview#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartZoneCollection_Overview/VB/webpartzonecollection_overview.vb#6)]  
+  
+ コレクションの作成後、簡単にコレクションを反復処理して含まれているすべてのゾーンまたはその内容に対して操作を実行できます。 コード例を実行する、ブラウザーでページを読み込むし をクリックして、**動詞レンダリング モードを切り替える**各ゾーンのボタンをクリックします。 これは、代わりに、ゾーンに含まれている各サーバー コントロールのタイトル バーの動詞を表示する方法です。 動詞は、ドロップダウン メニューまたはタイトル バーに直接リンクとして表示できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">ゾーンのコレクションが<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentException">コレクション内のオブジェクトの 1 つは<see langword="null" />型ではありませんか<see cref="T:System.Web.UI.WebControls.WebParts.WebPartZone" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Web.UI.WebControls.WebParts.WebPartZoneBase value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Web.UI.WebControls.WebParts.WebPartZoneBase value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartZoneCollection.Contains(System.Web.UI.WebControls.WebParts.WebPartZoneBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Web.UI.WebControls.WebParts.WebPartZoneBase" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.Web.UI.WebControls.WebParts.WebPartZone" />は、チェックをコレクション内にあるかどうかを判断します。</param>
+        <summary>特定のゾーンがコレクション内に存在するかどうかを示す値を返します。</summary>
+        <returns>特定のゾーンがコレクション内にあるかどうかを示すブール値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection.Contains%2A>メソッドでは、特定を確認することができます<xref:System.Web.UI.WebControls.WebParts.WebPartZone>オブジェクトし、であるかどうかを決定する<xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection>コレクション。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection.Contains%2A>メソッドです。 使用例」の例については、ユーザー コントロール、ゾーン、および、コードを含む部分クラス ファイルを含むページを含む完全なコードが検出された、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection>クラスの概要です。  
+  
+ コードの次のセクションは、の使用法を示しています、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection.Contains%2A>メソッドです。 コードを実行するには、ブラウザーでページを読み込んで をクリックして、 **Coll.WebPartZone2 を含む**ボタンをクリックします。  
+  
+ [!code-csharp[WebParts_WebPartZoneCollection_Overview#3](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartZoneCollection_Overview/CS/webpartzonecollection_overview.cs#3)]
+ [!code-vb[WebParts_WebPartZoneCollection_Overview#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartZoneCollection_Overview/VB/webpartzonecollection_overview.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Web.UI.WebControls.WebParts.WebPartZoneBase[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Web.UI.WebControls.WebParts.WebPartZoneBase[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartZoneCollection.CopyTo(System.Web.UI.WebControls.WebParts.WebPartZoneBase[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Web.UI.WebControls.WebParts.WebPartZoneBase[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">A<see cref="T:System.Web.UI.WebControls.WebParts.WebPartZoneBase" />コピーされたコレクションを格納する配列。</param>
+        <param name="index">コレクションの内容を格納する配列内の開始点です。</param>
+        <summary>コレクションの配列にコピーします<see cref="T:System.Web.UI.WebControls.WebParts.WebPartZoneBase" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection.CopyTo%2A>メソッドでゾーンを含めることができるカスタムの配列を作成する場合に便利です、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection>コレクション、それらのゾーンのサブセットまたはそれらのゾーンのスーパー セットです。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection.CopyTo%2A>メソッドです。 使用例」の例については、ユーザー コントロール、ゾーン、および、コードを含む部分クラス ファイルを含むページを含む完全なコードが検出された、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection>クラスの概要です。  
+  
+ コードの次のセクションは、の使用法を示しています、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection.CopyTo%2A>メソッドです。 コードを実行するには、ブラウザーでページを読み込んで をクリックして、**ゾーン名の配列から**ボタンをクリックします。 ゾーンのコレクションが、配列に読み込まれ、すべてのゾーン Id がラベルにコピーされます。  
+  
+ [!code-csharp[WebParts_WebPartZoneCollection_Overview#4](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartZoneCollection_Overview/CS/webpartzonecollection_overview.cs#4)]
+ [!code-vb[WebParts_WebPartZoneCollection_Overview#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartZoneCollection_Overview/VB/webpartzonecollection_overview.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Web.UI.WebControls.WebParts.WebPartZoneBase value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Web.UI.WebControls.WebParts.WebPartZoneBase value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartZoneCollection.IndexOf(System.Web.UI.WebControls.WebParts.WebPartZoneBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Web.UI.WebControls.WebParts.WebPartZoneBase" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.Web.UI.WebControls.WebParts.WebPartZoneBase" />コレクションのメンバーであります。</param>
+        <summary>コレクションの特定のメンバーの位置を返します。</summary>
+        <returns>コレクション内の特定のオブジェクトの位置を示す整数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection.IndexOf%2A>メソッドが複数ある場合に役立ちます。<xref:System.Web.UI.WebControls.WebParts.WebPartZone>と Web パーツ ページでは、上のゾーンを他のゾーンの 1 つのゾーンの序数の位置を知る必要があります。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection.IndexOf%2A>メソッドです。 使用例」の例については、ユーザー コントロール、ゾーン、および、コードを含む部分クラス ファイルを含むページを含む完全なコードが検出された、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection>クラスの概要です。  
+  
+ コードの次のセクションは、の使用法を示しています、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection.IndexOf%2A>メソッドです。 コードを実行するには、ブラウザーでページを読み込んで をクリックして、 **WebPartZone1 インデックス**ボタンをクリックします。  
+  
+ [!code-csharp[WebParts_WebPartZoneCollection_Overview#5](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartZoneCollection_Overview/CS/webpartzonecollection_overview.cs#5)]
+ [!code-vb[WebParts_WebPartZoneCollection_Overview#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartZoneCollection_Overview/VB/webpartzonecollection_overview.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.WebPartZoneBase this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPartZoneBase Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartZoneCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartZoneBase</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">特定のインデックス番号<see cref="T:System.Web.UI.WebControls.WebParts.WebPartZone" />コレクション内で。</param>
+        <summary>整数値を渡すことによって、コレクションの特定のメンバーを返します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.WebParts.WebPartZone" />コレクション内の指定したインデックス位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection.Item%2A>プロパティでは、アクセスすることができます、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>オブジェクト内の<xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection>をコレクション内の序数位置を表すインデックス番号を使用してコレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.WebPartZoneBase this[string id] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPartZoneBase Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartZoneCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartZoneBase</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="id">特定の一意識別子<see cref="T:System.Web.UI.WebControls.WebParts.WebPartZone" />コレクション内で。</param>
+        <summary>一意の識別子を渡すことによって、コレクションの特定のメンバーを返します。</summary>
+        <value>最初の<see cref="T:System.Web.UI.WebControls.WebParts.WebPartZone" />ID を持つコレクション内の値に等しい<paramref name="id" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection.Item%2A>プロパティでは、アクセスすることができます、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>オブジェクト内の<xref:System.Web.UI.WebControls.WebParts.WebPartZoneCollection>特定のゾーンの文字列識別子を使用してコレクション。 すべての照合文字列識別子を小文字が区別されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,1368 @@
+<Type Name="SiteMapPath" FullName="System.Web.UI.WebControls.SiteMapPath">
+  <TypeSignature Language="C#" Value="public class SiteMapPath : System.Web.UI.WebControls.CompositeControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SiteMapPath extends System.Web.UI.WebControls.CompositeControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.SiteMapPath" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.CompositeControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.SiteMapPathDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>最小限のページ領域で、より簡単に Web サイト内を移動できるようにする、一連のテキストやイメージのハイパーリンクを表示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このトピックの内容  
+  
+-   [はじめに](#introduction)  
+  
+-   [ノード](#nodes)  
+  
+-   [ノードの外観](#node_appearance)  
+  
+-   [イベント](#events)  
+  
+-   [サイト マップ パス コントロールのカスタマイズ](#customizing_the_sitemappath_control)  
+  
+-   [ユーザー補助](#accessibility)  
+  
+-   [宣言型の構文](#declarative_syntax)  
+  
+<a name="introduction"></a>   
+## <a name="introduction"></a>はじめに  
+ <xref:System.Web.UI.WebControls.SiteMapPath>コントロールは、サイトのナビゲーション コントロールによって提供されるデータを反映する、<xref:System.Web.SiteMap>オブジェクト。 サイトを簡単に移動する領域を節約して方法を提供し、現在表示されているページのサイト内の参照のポイントとして機能します。 この種類のコントロールはページの階層を現在の場所からエスケープを提供するハイパーリンクが設定されたページ名の階層パスが表示されるため、階層リンク、または階層リンク、よく呼び出されます。 <xref:System.Web.UI.WebControls.SiteMapDataSource>。 <xref:System.Web.UI.WebControls.SiteMapPath>も深い階層のページ構造体を含むサイト用に便利ですが、<xref:System.Web.UI.WebControls.TreeView>または<xref:System.Web.UI.WebControls.Menu>ページ上の領域が多すぎる可能性がありますが必要です。  
+  
+ <xref:System.Web.UI.WebControls.SiteMapPath>コントロールは、Web サイトのサイト マップ データを直接操作します。 使用する場合は表現できないページで、サイト マップに、これは表示されません。 サイト マップの詳細については、次を参照してください。 [ASP.NET サイト ナビゲーション](http://msdn.microsoft.com/library/23de8a05-cac3-4693-b508-39f1d4b7053d)です。  
+  
+<a name="nodes"></a>   
+## <a name="nodes"></a>ノード  
+ <xref:System.Web.UI.WebControls.SiteMapPath>ノードで構成します。 パス内の各要素し、呼ばれ、ノードによって表される、<xref:System.Web.UI.WebControls.SiteMapNodeItem>オブジェクト。 アンカー ポイントが階層ツリーの基本クラスを表しますしたノードには、ルート ノードは呼び出されます。 現在表示されているページを表すノードは、現在のノードです。 現在のノードとルート ノードの間の他の任意のノードは、親ノードです。 次の表では、次の 3 つの異なるノード型について説明します。  
+  
+|ノード型|説明|  
+|---------------|-----------------|  
+|ルート|階層ノードのセットを保持しているノードです。|  
+|親|このノードは 1 つまたは複数の子ノードがあるが、現在のノードではないです。|  
+|現在の|現在表示されているページを表すノードです。|  
+  
+<a name="node_appearance"></a>   
+## <a name="node-appearance"></a>ノードの外観  
+ 各ノードで表示される、<xref:System.Web.UI.WebControls.SiteMapPath>は、<xref:System.Web.UI.WebControls.HyperLink>または<xref:System.Web.UI.WebControls.Literal>コントロール テンプレートを適用またはにスタイルを設定できます。 テンプレートとスタイルは、優先順位の 2 つの規則に従って、ノードに適用されます。  
+  
+-   テンプレートがノードに対して定義されている場合、ノードに対して定義されているスタイルをオーバーライドします。  
+  
+-   テンプレートおよびノードの種類に固有のスタイルは、一般的なテンプレートとすべてのノードで定義されているスタイルをオーバーライドします。  
+  
+ <xref:System.Web.UI.WebControls.SiteMapPath.NodeStyle%2A>と<xref:System.Web.UI.WebControls.SiteMapPath.NodeTemplate%2A>プロパティは、ノードの種類に関係なく、すべてのノードに適用されます。 これらのプロパティが定義されている場合、<xref:System.Web.UI.WebControls.SiteMapPath.NodeTemplate%2A>が優先されます。  
+  
+ <xref:System.Web.UI.WebControls.SiteMapPath.CurrentNodeTemplate%2A>と<xref:System.Web.UI.WebControls.SiteMapPath.CurrentNodeStyle%2A>プロパティを現在表示されているページを表すノードに適用されます。 場合、<xref:System.Web.UI.WebControls.SiteMapPath.NodeTemplate%2A>は定義に加え、<xref:System.Web.UI.WebControls.SiteMapPath.CurrentNodeTemplate%2A>は無視されます。 場合、<xref:System.Web.UI.WebControls.SiteMapPath.NodeStyle%2A>は定義に加え、<xref:System.Web.UI.WebControls.SiteMapPath.CurrentNodeStyle%2A>とマージされて、<xref:System.Web.UI.WebControls.SiteMapPath.CurrentNodeStyle%2A>マージされたスタイルを作成します。 この結合されたスタイルのすべての要素を使用して、 <xref:System.Web.UI.WebControls.SiteMapPath.CurrentNodeStyle%2A>、さらに他の要素の<xref:System.Web.UI.WebControls.SiteMapPath.NodeStyle%2A>と競合しない、<xref:System.Web.UI.WebControls.SiteMapPath.CurrentNodeStyle%2A>です。  
+  
+ <xref:System.Web.UI.WebControls.SiteMapPath.RootNodeTemplate%2A>と<xref:System.Web.UI.WebControls.SiteMapPath.RootNodeStyle%2A>プロパティを表すサイト ナビゲーション階層のルート ノードに適用されます。 場合、<xref:System.Web.UI.WebControls.SiteMapPath.NodeTemplate%2A>は定義に加え、<xref:System.Web.UI.WebControls.SiteMapPath.RootNodeTemplate%2A>は無視されます。 場合、<xref:System.Web.UI.WebControls.SiteMapPath.NodeStyle%2A>は定義に加え、<xref:System.Web.UI.WebControls.SiteMapPath.RootNodeStyle%2A>とマージされて、<xref:System.Web.UI.WebControls.SiteMapPath.RootNodeStyle%2A>マージされたスタイルを作成します。 この結合されたスタイルのすべての要素を使用して、 <xref:System.Web.UI.WebControls.SiteMapPath.RootNodeStyle%2A>、さらに他の要素の<xref:System.Web.UI.WebControls.SiteMapPath.NodeStyle%2A>をしなかったと競合していない、<xref:System.Web.UI.WebControls.SiteMapPath.CurrentNodeStyle%2A>です。 最後に、現在表示されているページは、ルート ページ、サイトの場合は、<xref:System.Web.UI.WebControls.SiteMapPath.RootNodeTemplate%2A>と<xref:System.Web.UI.WebControls.SiteMapPath.RootNodeStyle%2A>の代わりに、<xref:System.Web.UI.WebControls.SiteMapPath.CurrentNodeTemplate%2A>または<xref:System.Web.UI.WebControls.SiteMapPath.CurrentNodeStyle%2A>です。  
+  
+ <xref:System.Web.UI.WebControls.SiteMapPath>コントロール プロバイダーを使用して、サイト マップによって識別される、<xref:System.Web.UI.WebControls.SiteMapPath.SiteMapProvider%2A>ナビゲーションのサイト情報には、そのデータ ソースとしてのプロパティです。 識別されたサイトの既定のプロバイダーを使用して、プロバイダーが指定されていない場合、<xref:System.Web.SiteMap.Provider%2A?displayProperty=nameWithType>プロパティです。 通常、これは、ASP.NET 用の既定のサイト マップ プロバイダーのインスタンス、<xref:System.Web.XmlSiteMapProvider>です。 場合、<xref:System.Web.UI.WebControls.SiteMapPath>サイト内でコントロールを使用して、サイト マップ プロバイダーが構成されていませんが、コントロールをスロー、<xref:System.Web.HttpException>例外。  
+  
+<a name="events"></a>   
+## <a name="events"></a>イベント  
+ <xref:System.Web.UI.WebControls.SiteMapPath>コントロールには、イベントに対してプログラミングを行うことができますをも用意されています。 これにより、イベントが発生するたびに、カスタムのルーチンを実行することができます。 次の表に、によってサポートされるイベント、<xref:System.Web.UI.WebControls.SiteMapPath>コントロール。  
+  
+|イベント|説明|  
+|-----------|-----------------|  
+|<xref:System.Web.UI.WebControls.SiteMapPath.ItemCreated>|発生したときに、<xref:System.Web.UI.WebControls.SiteMapPath>コントロールを作成、<xref:System.Web.UI.WebControls.SiteMapNodeItem>に関連付けますと、<xref:System.Web.SiteMapNode>です。|  
+|<xref:System.Web.UI.WebControls.SiteMapPath.ItemDataBound>|発生したときに、<xref:System.Web.UI.WebControls.SiteMapNodeItem>に含まれるサイト マップ データにバインドされて、<xref:System.Web.SiteMapNode>です。|  
+  
+<a name="customizing_the_sitemappath_control"></a>   
+## <a name="customizing-the-sitemappath-control"></a>サイト マップ パス コントロールのカスタマイズ  
+ 派生したクラス<xref:System.Web.UI.WebControls.SiteMapPath>オーバーライド、<xref:System.Web.UI.WebControls.SiteMapPath.InitializeItem%2A>をカスタマイズする方法、<xref:System.Web.UI.WebControls.SiteMapNodeItem>ナビゲーション コントロールに含まれるコントロール。 完全に制御する方法の<xref:System.Web.UI.WebControls.SiteMapNodeItem>オブジェクトが作成され、追加、 <xref:System.Web.UI.WebControls.SiteMapPath>、派生クラスのオーバーライド、<xref:System.Web.UI.WebControls.SiteMapPath.CreateControlHierarchy%2A>メソッドです。  
+  
+<a name="accessibility"></a>   
+## <a name="accessibility"></a>ユーザー補助  
+ ユーザー補助の標準に準拠するマークアップを生成するように、このコントロールを構成する方法については、次を参照してください。 [Visual Studio と ASP.NET のユーザー補助機能](http://msdn.microsoft.com/library/7e3ce9c4-6b7d-4fb1-94b5-72cf2a44fe13)と[ASP.NET コントロールやアクセシビリティ](http://msdn.microsoft.com/library/847a37e3-ce20-41da-b0d3-7dfb0fdae9a0)です。  
+  
+<a name="declarative_syntax"></a>   
+## <a name="declarative-syntax"></a>宣言型の構文  
+  
+```  
+<asp:SiteMapPath  
+    AccessKey="string"  
+    BackColor="color name|#dddddd"  
+    BorderColor="color name|#dddddd"  
+    BorderStyle="NotSet|None|Dotted|Dashed|Solid|Double|Groove|Ridge|  
+        Inset|Outset"  
+    BorderWidth="size"  
+    CssClass="string"  
+    Enabled="True|False"  
+    EnableTheming="True|False"  
+    EnableViewState="True|False"  
+    Font-Bold="True|False"  
+    Font-Italic="True|False"  
+    Font-Names="string"  
+    Font-Overline="True|False"  
+    Font-Size="string|Smaller|Larger|XX-Small|X-Small|Small|Medium|  
+        Large|X-Large|XX-Large"  
+    Font-Strikeout="True|False"  
+    Font-Underline="True|False"  
+    ForeColor="color name|#dddddd"  
+    Height="size"  
+    ID="string"  
+    OnDataBinding="DataBinding event handler"  
+    OnDisposed="Disposed event handler"  
+    OnInit="Init event handler"  
+    OnItemCreated="ItemCreated event handler"  
+    OnItemDataBound="ItemDataBound event handler"  
+    OnLoad="Load event handler"  
+    OnPreRender="PreRender event handler"  
+    OnUnload="Unload event handler"  
+    ParentLevelsDisplayed="integer"  
+    PathDirection="RootToCurrent|CurrentToRoot"  
+    PathSeparator="string"  
+    RenderCurrentNodeAsLink="True|False"  
+    runat="server"  
+    ShowToolTips="True|False"  
+    SiteMapProvider="string"  
+    SkinID="string"  
+    SkipLinkText="string"  
+    Style="string"  
+    TabIndex="integer"  
+    ToolTip="string"  
+    Visible="True|False"  
+    Width="size"  
+>  
+        <CurrentNodeStyle />  
+        <CurrentNodeTemplate>  
+            <!-- child controls -->  
+        </CurrentNodeTemplate>  
+        <NodeStyle />  
+        <NodeTemplate>  
+            <!-- child controls -->  
+        </NodeTemplate>  
+        <PathSeparatorStyle />  
+        <PathSeparatorTemplate>  
+            <!-- child controls -->  
+        </PathSeparatorTemplate>  
+        <RootNodeStyle />  
+        <RootNodeTemplate>  
+            <!-- child controls -->  
+        </RootNodeTemplate>  
+</asp:SiteMapPath>  
+```  
+  
+   
+  
+## Examples  
+ 次のコード例では、 <xref:System.Web.UI.WebControls.SiteMapPath> Web フォーム ページで宣言によって制御されます。 この例では、使用するテンプレートとスタイルに適用される順序を制御する優先順位のルールの一部を示しています<xref:System.Web.UI.WebControls.SiteMapPath>ノード。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.NavigationPath_decl_5#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.NavigationPath_decl_5/CS/webform2navpathcs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.NavigationPath_decl_5#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.NavigationPath_decl_5/VB/webform2navpathvb.aspx#1)]  
+  
+ 前の例では、次の構造の既定のサイト マップ プロバイダーと Web.sitemap ファイルを使用します。  
+  
+```  
+<siteMap>  
+  <siteMapNode title="WebForm1" description="WebForm1" url="WebForm1.aspx" >  
+    <siteMapNode title="WebForm2" description="WebForm2" url="WebForm2.aspx"/>  
+  </siteMapNode>  
+</siteMap>  
+```  
+  
+ 次のコード例では、拡張を示しています、<xref:System.Web.UI.WebControls.SiteMapPath>を制御し、オーバーライドすることで新しい機能を追加、<xref:System.Web.UI.WebControls.SiteMapPath.InitializeItem%2A>メソッドです。 `DropDownSiteMapPath`コントロールを追加、<xref:System.Web.UI.WebControls.DropDownList>を現在のページの子ノードであるページを簡単に操作を有効にする、現在のノードの後にします。 使用する方法を示します<xref:System.Web.UI.WebControls.SiteMapNodeItem>チェックなどのオブジェクトをその<xref:System.Web.UI.WebControls.SiteMapNodeItemType>を呼び出すと、<xref:System.Web.UI.WebControls.SiteMapPath.OnItemCreated%2A>項目が作成された後にします。  
+  
+ [!code-csharp[Urtue.Samples.Alexkr.DropDownNavigationPath_1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Urtue.Samples.Alexkr.DropDownNavigationPath_1/CS/dropdownnavigationpath.cs#1)]
+ [!code-vb[Urtue.Samples.Alexkr.DropDownNavigationPath_1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Urtue.Samples.Alexkr.DropDownNavigationPath_1/VB/dropdownnavigationpath.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SiteMapPath ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SiteMapPath.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.SiteMapPath" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.SiteMapPath>クラスです。 動的に追加する、<xref:System.Web.UI.WebControls.SiteMapPath>ページにコントロールを新規作成<xref:System.Web.UI.WebControls.SiteMapPath>オブジェクト、そのプロパティを設定し、追加するには<xref:System.Web.UI.Control.Controls%2A?displayProperty=nameWithType>などのコンテナー コントロールのコレクション<xref:System.Web.UI.WebControls.PlaceHolder>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.SiteMapPath.%23ctor%2A>コンス トラクターを追加する、<xref:System.Web.UI.WebControls.SiteMapPath>ページを制御します。 例が動作するには、ルート ディレクトリにイメージを追加し、イメージ ファイルの名前には、"myimage.jpg"からのコード例のイメージの名前を変更する必要があります。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.NavigationPath_decl_3#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.NavigationPath_decl_3/CS/aboutus2cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.NavigationPath_decl_3#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.NavigationPath_decl_3/VB/aboutus2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateChildControls">
+      <MemberSignature Language="C#" Value="protected override void CreateChildControls ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void CreateChildControls() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SiteMapPath.CreateChildControls" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の子コントロールのコレクションをクリアして、呼び出すことによって再構築、<see cref="M:System.Web.UI.WebControls.SiteMapPath.CreateControlHierarchy" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ASP.NET インフラストラクチャから派生したコントロールを含む、合成ベースの実装を使用するコントロールに通知する<xref:System.Web.UI.WebControls.CompositeDataBoundControl>と<xref:System.Web.UI.WebControls.CompositeControl>ポストバックまたはレンダリングの準備として任意の子が含まれているコントロールを作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateControlHierarchy">
+      <MemberSignature Language="C#" Value="protected virtual void CreateControlHierarchy ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void CreateControlHierarchy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SiteMapPath.CreateControlHierarchy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>によって提供されるサイト マップ構造体を調べ、<see cref="P:System.Web.UI.WebControls.SiteMapPath.SiteMapProvider" />スタイルに基づいてコントロールのコレクションと機能のノードに対して定義されているテンプレートに子を構築します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SiteMapPath.CreateControlHierarchy%2A>メソッド作成<xref:System.Web.UI.WebControls.SiteMapNodeItem>コントロールで、対応する関連付け<xref:System.Web.SiteMapNode>、現在のサイト マップ プロバイダーからのオブジェクトし、設定するノードを追加、<xref:System.Web.UI.Control.Controls%2A>コレクション。  
+  
+ メソッドで、まず検索、 <xref:System.Web.SiteMap.CurrentNode%2A?displayProperty=nameWithType>、作成し、次の階層ツリーを<xref:System.Web.SiteMapNode>オブジェクトを作成する、<xref:System.Web.UI.WebControls.SiteMapNodeItem>それぞれまでの<xref:System.Web.SiteMap.RootNode%2A>に到達します。 たびに<xref:System.Web.UI.WebControls.SiteMapNodeItem>作成されると、対応するバインドされる前に、 <xref:System.Web.SiteMapNode>、<xref:System.Web.UI.WebControls.SiteMapPath.InitializeItem%2A>メソッドが呼び出されます。 <xref:System.Web.UI.WebControls.SiteMapPath.InitializeItem%2A>メソッドは、任意のテンプレートまたは特定のノード型に対して定義されたスタイルを適用しを作成し、いずれかを初期化する子コントロール、<xref:System.Web.UI.WebControls.SiteMapNodeItem>が含まれています。 最後に、<xref:System.Web.UI.WebControls.SiteMapPath.InitializeItem%2A>メソッドの子コントロールを追加、<xref:System.Web.UI.WebControls.SiteMapNodeItem>を<xref:System.Web.UI.Control.Controls%2A>コレクション。  
+  
+ 各後<xref:System.Web.UI.WebControls.SiteMapNodeItem>が初期化されている、<xref:System.Web.UI.WebControls.SiteMapPath.OnItemCreated%2A>メソッドが呼び出されます。 次に、<xref:System.Web.UI.WebControls.SiteMapNodeItem>を対応するバインド<xref:System.Web.SiteMapNode>、および<xref:System.Web.UI.WebControls.BaseDataBoundControl.OnDataBound%2A>と呼びます。  
+  
+ <xref:System.Web.UI.WebControls.SiteMapPath.CreateControlHierarchy%2A>からメソッドを呼び出した、<xref:System.Web.UI.WebControls.SiteMapPath.CreateChildControls%2A>メソッドです。  
+  
+ 拡張するクラス、<xref:System.Web.UI.WebControls.SiteMapPath>オーバーライドを制御、<xref:System.Web.UI.WebControls.SiteMapPath.CreateControlHierarchy%2A>メソッドを変更する方法、<xref:System.Web.UI.WebControls.SiteMapNodeItem>コントロールの作成またはに追加される、<xref:System.Web.UI.WebControls.SiteMapPath>コントロール。 個々 のノード項目の操作が実行される、<xref:System.Web.UI.WebControls.SiteMapPath.InitializeItem%2A>メソッド、およびほとんどのクラスを拡張する<xref:System.Web.UI.WebControls.SiteMapPath>のみ、そのメソッドをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">いいえ<see cref="P:System.Web.UI.WebControls.SiteMapPath.SiteMapProvider" />が使用できる、<see cref="T:System.Web.UI.WebControls.SiteMapPath" />コントロール。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentNodeStyle">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.Style CurrentNodeStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.Style CurrentNodeStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SiteMapPath.CurrentNodeStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Style</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のノードの表示テキストに使用するスタイルを取得します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.Style" />の現在のノードの表示テキストのスタイルの設定を格納している、<see cref="T:System.Web.UI.WebControls.SiteMapPath" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.SiteMapPath.CurrentNodeStyle%2A>プロパティは、現在表示されているページを表すナビゲーション パスのノードの表示テキストの外観を制御します。 既定では、表示テキストで指定されている、<xref:System.Web.SiteMapNode.Title%2A>のプロパティ、<xref:System.Web.SiteMapNode>ページを表すです。 共通のスタイル設定には、カスタムの背景色、前景の色、フォントのプロパティ、およびノードのスペースが含まれます。  
+  
+ <xref:System.Web.UI.WebControls.SiteMapPath>ノード、スタイル プロパティは、次の順序で、1 つのスタイルにマージされます。  
+  
+1.  <xref:System.Web.UI.WebControls.SiteMapPath.NodeStyle%2A>  
+  
+2.  <xref:System.Web.UI.WebControls.SiteMapPath.CurrentNodeStyle%2A>または、現在表示されているページは、ルート ノード<xref:System.Web.UI.WebControls.SiteMapPath.RootNodeStyle%2A>です。  
+  
+> [!NOTE]
+>  明示的に設定されている場合を除き、取り消し線または上線のスタイルをノードのフォント スタイルを設定した場合、ノードの既定の下線のスタイルは表示されません`true`です。  
+  
+ 場合、<xref:System.Web.UI.WebControls.SiteMapPath.CurrentNodeTemplate%2A>プロパティが定義されている、<xref:System.Web.UI.WebControls.SiteMapPath.CurrentNodeStyle%2A>プロパティは無視されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、宣言によって設定する方法を示します、<xref:System.Web.UI.WebControls.SiteMapPath.CurrentNodeStyle%2A>の<xref:System.Web.UI.WebControls.SiteMapPath>Web フォーム ページ内のコントロールです。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.NavigationPath_decl_1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.NavigationPath_decl_1/CS/customerservicecs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.NavigationPath_decl_1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.NavigationPath_decl_1/VB/customerservicevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentNodeTemplate">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.ITemplate CurrentNodeTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ITemplate CurrentNodeTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SiteMapPath.CurrentNodeTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.TemplateContainer(typeof(System.Web.UI.WebControls.SiteMapNodeItem))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在表示されているページを表すサイト ナビゲーション パスのノードに使用するコントロール テンプレートを設定します。</summary>
+        <value><see cref="T:System.Web.UI.ITemplate" />を実装するオブジェクト、<see cref="M:System.Web.UI.ITemplate.InstantiateIn(System.Web.UI.Control)" />メソッド、現在表示されているページを表すナビゲーション パス ノード用のカスタム コンテンツを表示するためにします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Web.UI.WebControls.SiteMapPath.CurrentNodeTemplate%2A>を<xref:System.Web.UI.ITemplate>を使用するオブジェクト、<xref:System.Web.UI.WebControls.Image>コントロールまたはその他の制御など、<xref:System.Web.UI.WebControls.Label>文字列ではなく現在のノードのユーザー インターフェイス要素として。  
+  
+ 場合、<xref:System.Web.UI.WebControls.SiteMapPath.CurrentNodeTemplate%2A>プロパティが設定されており、テンプレートが表示されるナビゲーション ノードの現在のテキストと任意の両方をオーバーライド<xref:System.Web.UI.WebControls.SiteMapPath.CurrentNodeStyle%2A>を適用します。 現在表示されているページがただし、ルート ノードに対応している場合、<xref:System.Web.UI.WebControls.SiteMapPath.RootNodeTemplate%2A>または<xref:System.Web.UI.WebControls.SiteMapPath.RootNodeStyle%2A>を使用します。  
+  
+ 宣言を設定することができます、<xref:System.Web.UI.WebControls.SiteMapPath.CurrentNodeTemplate%2A>プロパティを任意の Web サーバー コントロールと ASP.NET のインフラストラクチャとして Web サーバー コントロールをラップするために必要な手順を実行する、<xref:System.Web.UI.ITemplate>オブジェクト。 ただし、Web サーバー コントロールは実装しないでください、<xref:System.Web.UI.ITemplate>インターフェイスであるため、操作する際に、<xref:System.Web.UI.ITemplate>プロパティ プログラムでは、記述する必要あります、<xref:System.Web.UI.ITemplate>テンプレート コード用のラッパー。 次に、<xref:System.Web.UI.WebControls.SiteMapPath.CurrentNodeTemplate%2A>プロパティのインスタンスに設定されて、<xref:System.Web.UI.ITemplate>ラッパーです。  
+  
+   
+  
+## Examples  
+ 次のコード例を宣言して定義、<xref:System.Web.UI.WebControls.SiteMapPath.CurrentNodeTemplate%2A>と、定義されている上書き<xref:System.Web.UI.WebControls.SiteMapPath.CurrentNodeStyle%2A>です。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.NavigationPath_decl_5#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.NavigationPath_decl_5/CS/webform2navpathcs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.NavigationPath_decl_5#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.NavigationPath_decl_5/VB/webform2navpathvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataBind">
+      <MemberSignature Language="C#" Value="public override void DataBind ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void DataBind() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SiteMapPath.DataBind" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ ソースのバインド、<see cref="T:System.Web.UI.WebControls.SiteMapPath" />コントロールとその子コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SiteMapPath>コントロールを使用して、サイト マップ プロバイダーから直接そのデータを取得するものでは、<xref:System.Web.UI.WebControls.SiteMapPath.Provider%2A>プロパティです。 使用しないで、 <xref:System.Web.UI.WebControls.SiteMapPath> ASP.NET データ ソース コントロールにバインドするコントロールし、呼び出すことはありません、<xref:System.Web.UI.WebControls.SiteMapPath.DataBind%2A>メソッドに明示的にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeItem">
+      <MemberSignature Language="C#" Value="protected virtual void InitializeItem (System.Web.UI.WebControls.SiteMapNodeItem item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void InitializeItem(class System.Web.UI.WebControls.SiteMapNodeItem item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SiteMapPath.InitializeItem(System.Web.UI.WebControls.SiteMapNodeItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Web.UI.WebControls.SiteMapNodeItem" />
+      </Parameters>
+      <Docs>
+        <param name="item">初期化する <see cref="T:System.Web.UI.WebControls.SiteMapNodeItem" />。</param>
+        <summary>追加、 <see cref="T:System.Web.UI.WebControls.SiteMapNodeItem" />、これは、Web サーバー コントロールを表す、<see cref="T:System.Web.SiteMapNode" />一連のノードの関数と、指定されたテンプレートおよびノードのスタイルに基づく子コントロールにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SiteMapPath.InitializeItem%2A>メソッドをチェックして、項目を表すノードの機能の種類を決定する、 <xref:System.Web.UI.WebControls.SiteMapNodeItemType>、し、任意のテンプレートまたはそのノードの種類に対して定義されているスタイルを適用します。  
+  
+ 場合、<xref:System.Web.UI.WebControls.SiteMapNodeItem>が、<xref:System.Web.UI.WebControls.SiteMapNodeItemType.Root>項目の種類を<xref:System.Web.UI.WebControls.HyperLink>子コントロールを作成すると、および<xref:System.Web.UI.WebControls.SiteMapPath.RootNodeTemplate%2A>と<xref:System.Web.UI.WebControls.SiteMapPath.RootNodeStyle%2A>適用可能性があります。 場合、<xref:System.Web.UI.WebControls.SiteMapPath.RootNodeTemplate%2A>設定すると、その<xref:System.Web.UI.ITemplate>は、ノードに適用します。 代わりに、<xref:System.Web.UI.WebControls.SiteMapPath.RootNodeStyle%2A>が設定されている、いずれかの定義とマージされて<xref:System.Web.UI.WebControls.SiteMapPath.NodeStyle%2A>適用します。 最後に、テンプレートまたはスタイルは定義されていない場合、基本的な<xref:System.Web.UI.WebControls.HyperLink>コントロールが作成され、ノードの値で初期化します。  
+  
+ 場合、<xref:System.Web.UI.WebControls.SiteMapNodeItem>が、<xref:System.Web.UI.WebControls.SiteMapNodeItemType.Current>か、項目の種類を<xref:System.Web.UI.WebControls.Literal>または<xref:System.Web.UI.WebControls.HyperLink>の戻り値によって、子コントロールが作成された<xref:System.Web.UI.WebControls.SiteMapPath.RenderCurrentNodeAsLink%2A>です。 そのいずれか、<xref:System.Web.UI.WebControls.SiteMapPath.CurrentNodeTemplate%2A>または<xref:System.Web.UI.WebControls.SiteMapPath.CurrentNodeStyle%2A>適用可能性があります。 場合、<xref:System.Web.UI.WebControls.SiteMapPath.CurrentNodeTemplate%2A>設定すると、その<xref:System.Web.UI.ITemplate>は、ノードに適用します。 場合、代わりに、<xref:System.Web.UI.WebControls.SiteMapPath.CurrentNodeStyle%2A>が設定されている、いずれかの定義とマージされて<xref:System.Web.UI.WebControls.SiteMapPath.NodeStyle%2A>適用します。  
+  
+ 場合、<xref:System.Web.UI.WebControls.SiteMapNodeItem>が、<xref:System.Web.UI.WebControls.SiteMapNodeItemType.Parent>項目の種類、<xref:System.Web.UI.WebControls.HyperLink>子コントロールが作成され、<xref:System.Web.UI.WebControls.SiteMapPath.NodeTemplate%2A>と<xref:System.Web.UI.WebControls.SiteMapPath.NodeStyle%2A>適用可能性があります。 場合、<xref:System.Web.UI.WebControls.SiteMapPath.NodeTemplate%2A>設定すると、その<xref:System.Web.UI.ITemplate>は、ノードに適用します。 場合、代わりに、<xref:System.Web.UI.WebControls.SiteMapPath.NodeStyle%2A>が設定されている、適用されます。  
+  
+ 最後に場合、<xref:System.Web.UI.WebControls.SiteMapNodeItem>が、<xref:System.Web.UI.WebControls.SiteMapNodeItemType.PathSeparator>項目の種類、<xref:System.Web.UI.WebControls.Literal>子コントロールが作成され、<xref:System.Web.UI.WebControls.SiteMapPath.PathSeparatorTemplate%2A>と<xref:System.Web.UI.WebControls.SiteMapPath.PathSeparatorStyle%2A>に対して定義されている、同じ一般的な規則に従って適用されます、<xref:System.Web.UI.WebControls.SiteMapNodeItemType.Parent>ノードの種類。  
+  
+ 上書き、<xref:System.Web.UI.WebControls.SiteMapPath.InitializeItem%2A>個々 を操作するメソッド<xref:System.Web.UI.WebControls.SiteMapNodeItem>オブジェクト。 クラスのデザインがより広範囲に制御する方法を必要なかどうかは<xref:System.Web.UI.WebControls.SiteMapNodeItem>オブジェクトが作成され、追加、<xref:System.Web.UI.WebControls.SiteMapPath>コントロールをオーバーライド、<xref:System.Web.UI.WebControls.SiteMapPath.CreateControlHierarchy%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.WebControls.SiteMapPath.InitializeItem%2A>から派生するコントロール機能を追加するメソッドを<xref:System.Web.UI.WebControls.SiteMapPath>です。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.SiteMapPath>クラスです。  
+  
+ [!code-csharp[Urtue.Samples.Alexkr.DropDownNavigationPath_1#2](~/samples/snippets/csharp/VS_Snippets_WebNet/Urtue.Samples.Alexkr.DropDownNavigationPath_1/CS/dropdownnavigationpath.cs#2)]
+ [!code-vb[Urtue.Samples.Alexkr.DropDownNavigationPath_1#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Urtue.Samples.Alexkr.DropDownNavigationPath_1/VB/dropdownnavigationpath.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemCreated">
+      <MemberSignature Language="C#" Value="public event System.Web.UI.WebControls.SiteMapNodeItemEventHandler ItemCreated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.UI.WebControls.SiteMapNodeItemEventHandler ItemCreated" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.SiteMapPath.ItemCreated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.SiteMapNodeItemEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="T:System.Web.UI.WebControls.SiteMapNodeItem" />によって作成された、<see cref="T:System.Web.UI.WebControls.SiteMapPath" />とそれに対応する関連付けられる<see cref="T:System.Web.SiteMapNode" />です。 このイベントは、<see cref="M:System.Web.UI.WebControls.SiteMapPath.OnItemCreated(System.Web.UI.WebControls.SiteMapNodeItemEventArgs)" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemDataBound">
+      <MemberSignature Language="C#" Value="public event System.Web.UI.WebControls.SiteMapNodeItemEventHandler ItemDataBound;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.UI.WebControls.SiteMapNodeItemEventHandler ItemDataBound" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.SiteMapPath.ItemDataBound" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.SiteMapNodeItemEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>後に発生、<see cref="T:System.Web.UI.WebControls.SiteMapNodeItem" />がその基になるバインドされた<see cref="T:System.Web.SiteMapNode" />によってデータ、<see cref="T:System.Web.UI.WebControls.SiteMapPath" />です。 このイベントは、<see cref="M:System.Web.UI.WebControls.SiteMapPath.OnItemDataBound(System.Web.UI.WebControls.SiteMapNodeItemEventArgs)" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadViewState">
+      <MemberSignature Language="C#" Value="protected override void LoadViewState (object savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void LoadViewState(object savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SiteMapPath.LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="savedState">復元するコントロールの状態を表す <see cref="T:System.Object" />。</param>
+        <summary><see cref="M:System.Web.UI.WebControls.SiteMapPath.SaveViewState" /> メソッドによって保存された前回の要求からビューステート情報を復元します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、主に、.NET Framework インフラストラクチャによって使用され、コードから直接使用するものではありません。 ただし、コントロールの開発者は、カスタム サーバー コントロールがそのビューステートを復元する方法を指定するには、このメソッドをオーバーライドすることができます。 詳細については、次を参照してください。 [ASP.NET 状態管理の概要](http://msdn.microsoft.com/library/0218d965-5d30-445b-b6a6-8870e70e63ce)です。  
+  
+ <xref:System.Web.UI.WebControls.Login.LoadViewState%2A>メソッドが前の要求時に保存されたビュー ステート情報を復元します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NodeStyle">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.Style NodeStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.Style NodeStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SiteMapPath.NodeStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Style</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サイト ナビゲーション パス内のすべてのノードの表示テキストに使用するスタイルを取得します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.Style" />内の表示テキストのスタイルの設定を格納している、<see cref="T:System.Web.UI.WebControls.SiteMapPath" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.SiteMapPath.NodeStyle%2A>プロパティ、コントロールによって表示されるすべてのナビゲーション パスのノードの表示テキストの外観を制御します。 既定では、表示テキストで指定されている、<xref:System.Web.SiteMapNode.Title%2A>のプロパティ、<xref:System.Web.SiteMapNode>ページを表すです。 共通のスタイル設定には、カスタムの背景色、前景の色、フォントのプロパティ、およびノードのスペースが含まれます。  
+  
+ <xref:System.Web.UI.WebControls.SiteMapPath>ノード、スタイル プロパティは、次の順序で、1 つのスタイルにマージされます。  
+  
+1.  <xref:System.Web.UI.WebControls.SiteMapPath.NodeStyle%2A>  
+  
+2.  <xref:System.Web.UI.WebControls.SiteMapPath.CurrentNodeStyle%2A>または<xref:System.Web.UI.WebControls.SiteMapPath.RootNodeStyle%2A>ノードの種類によって異なります。  
+  
+> [!NOTE]
+>  明示的に設定されている場合を除き、取り消し線または上線のスタイルをノードのフォント スタイルを設定した場合、ノードの既定の下線のスタイルは表示されません`true`です。  
+  
+ 場合、<xref:System.Web.UI.WebControls.SiteMapPath.NodeStyle%2A>が定義されていることが最初に各ノードに適用します。 このスタイルで指定した一般的なスタイルよりも優先されますルート ノードまたは現在のノードなど、ノードの特定の種類に関する追加のスタイルが定義されている場合、<xref:System.Web.UI.WebControls.SiteMapPath.NodeStyle%2A>プロパティです。 テンプレートがノードの特定の型に対して定義されている場合、そのノードのすべての定義済みのスタイルはよりも優先されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、定義する方法を示します、<xref:System.Web.UI.WebControls.SiteMapPath.NodeStyle%2A>をマージして、<xref:System.Web.UI.WebControls.SiteMapPath.RootNodeStyle%2A>のスタイルの優先順位の順序を示すために、<xref:System.Web.UI.WebControls.SiteMapPath>ノード。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.NavigationPath_decl_5#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.NavigationPath_decl_5/CS/webform2navpathcs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.NavigationPath_decl_5#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.NavigationPath_decl_5/VB/webform2navpathvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NodeTemplate">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.ITemplate NodeTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ITemplate NodeTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SiteMapPath.NodeTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.TemplateContainer(typeof(System.Web.UI.WebControls.SiteMapNodeItem))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサイトのナビゲーション パスのすべての機能のノードに使用するコントロール テンプレートを設定します。</summary>
+        <value><see cref="T:System.Web.UI.ITemplate" />を実装するオブジェクト、<see cref="M:System.Web.UI.ITemplate.InstantiateIn(System.Web.UI.Control)" />ナビゲーション パスの各ノード用のカスタム コンテンツを表示するために、メソッドです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Web.UI.WebControls.SiteMapPath.NodeTemplate%2A>を<xref:System.Web.UI.ITemplate>を使用するオブジェクト、<xref:System.Web.UI.WebControls.Image>またはその他の制御など、 <xref:System.Web.UI.WebControls.Label>、ナビゲーション パス ノードのすべてのユーザー インターフェイス要素として。  
+  
+ 場合、<xref:System.Web.UI.WebControls.SiteMapPath.NodeTemplate%2A>プロパティが設定されており、テンプレートが表示されるナビゲーション ノードのテキストと任意の両方をオーバーライド<xref:System.Web.UI.WebControls.SiteMapPath.NodeStyle%2A>を適用します。 現在の場合のルート ノード、および、<xref:System.Web.UI.WebControls.SiteMapPath.CurrentNodeTemplate%2A>または<xref:System.Web.UI.WebControls.SiteMapPath.RootNodeTemplate%2A>が設定されている、これらのテンプレートを上書き、<xref:System.Web.UI.WebControls.SiteMapPath.NodeTemplate%2A>です。  
+  
+ 宣言を設定することができます、<xref:System.Web.UI.WebControls.SiteMapPath.NodeTemplate%2A>プロパティを任意の Web サーバー コントロールと ASP.NET のインフラストラクチャとして Web サーバー コントロールをラップするために必要な手順を実行する、<xref:System.Web.UI.ITemplate>オブジェクト。 ただし、Web サーバー コントロールは実装しないでください、<xref:System.Web.UI.ITemplate>インターフェイスであるため、操作する際に、<xref:System.Web.UI.ITemplate>プロパティ プログラムでは、記述する必要あります、<xref:System.Web.UI.ITemplate>テンプレート コード用のラッパー。 次に、<xref:System.Web.UI.WebControls.SiteMapPath.RootNodeTemplate%2A>プロパティのインスタンスに設定されて、<xref:System.Web.UI.ITemplate>ラッパーです。  
+  
+   
+  
+## Examples  
+ 次のコード例を示す方法、<xref:System.Web.UI.WebControls.SiteMapPath.NodeTemplate%2A>いずれかを指定すると、ルート ノードと現在のノードの特殊なスタイルを含む、すべてのノードに対して定義されたスタイルをオーバーライドします。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.NavigationPath_decl_6#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.NavigationPath_decl_6/CS/webform1navpathcs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.NavigationPath_decl_6#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.NavigationPath_decl_6/VB/webform1navpathvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDataBinding">
+      <MemberSignature Language="C#" Value="protected override void OnDataBinding (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnDataBinding(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SiteMapPath.OnDataBinding(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>上書き、<see cref="M:System.Web.UI.Control.OnDataBinding(System.EventArgs)" />のメソッド、<see cref="T:System.Web.UI.WebControls.CompositeControl" />クラスとが発生し、<see cref="E:System.Web.UI.Control.DataBinding" />イベント。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnItemCreated">
+      <MemberSignature Language="C#" Value="protected virtual void OnItemCreated (System.Web.UI.WebControls.SiteMapNodeItemEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnItemCreated(class System.Web.UI.WebControls.SiteMapNodeItemEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SiteMapPath.OnItemCreated(System.Web.UI.WebControls.SiteMapNodeItemEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Web.UI.WebControls.SiteMapNodeItemEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Web.UI.WebControls.SiteMapNodeItemEventArgs" />イベント データを格納します。</param>
+        <summary>発生させる、<see cref="E:System.Web.UI.WebControls.SiteMapPath.ItemCreated" />のイベント、<see cref="T:System.Web.UI.WebControls.SiteMapPath" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SiteMapPath.ItemCreated>後にイベントを生成、<xref:System.Web.UI.WebControls.SiteMapPath>コントロールを作成、 <xref:System.Web.UI.WebControls.SiteMapNodeItem>、これは、Web サーバー コントロールを表す、<xref:System.Web.SiteMapNode>に関連付けます、<xref:System.Web.SiteMapNode>です。 <xref:System.Web.UI.WebControls.SiteMapPath.OnItemCreated%2A>作成されたノードの項目がそのデータにバインドする前に、メソッドが呼び出されます。 これにより、カスタム ルーチンを実行するイベント処理メソッドを提供するたびに、<xref:System.Web.UI.WebControls.SiteMapNodeItem>を作成します。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Web.UI.WebControls.SiteMapPath.OnItemCreated%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+   
+  
+## Examples  
+ 次のコード例を呼び出す方法を示しています、<xref:System.Web.UI.WebControls.SiteMapPath.OnItemCreated%2A>メソッドを作成した後に、<xref:System.Web.UI.WebControls.SiteMapNodeItem>内で、<xref:System.Web.UI.WebControls.SiteMapPath.InitializeItem%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.SiteMapPath>クラスです。  
+  
+ [!code-csharp[Urtue.Samples.Alexkr.DropDownNavigationPath_1#3](~/samples/snippets/csharp/VS_Snippets_WebNet/Urtue.Samples.Alexkr.DropDownNavigationPath_1/CS/dropdownnavigationpath.cs#3)]
+ [!code-vb[Urtue.Samples.Alexkr.DropDownNavigationPath_1#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Urtue.Samples.Alexkr.DropDownNavigationPath_1/VB/dropdownnavigationpath.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Web.UI.WebControls.SiteMapPath.OnItemCreated(System.Web.UI.WebControls.SiteMapNodeItemEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Web.UI.WebControls.SiteMapPath.OnItemCreated(System.Web.UI.WebControls.SiteMapNodeItemEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnItemDataBound">
+      <MemberSignature Language="C#" Value="protected virtual void OnItemDataBound (System.Web.UI.WebControls.SiteMapNodeItemEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnItemDataBound(class System.Web.UI.WebControls.SiteMapNodeItemEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SiteMapPath.OnItemDataBound(System.Web.UI.WebControls.SiteMapNodeItemEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Web.UI.WebControls.SiteMapNodeItemEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Web.UI.WebControls.SiteMapNodeItemEventArgs" />イベント データを格納します。</param>
+        <summary>発生させる、<see cref="E:System.Web.UI.WebControls.SiteMapPath.ItemDataBound" />のイベント、<see cref="T:System.Web.UI.WebControls.SiteMapPath" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SiteMapPath.ItemDataBound>イベントが発生したときに、<xref:System.Web.UI.WebControls.SiteMapPath>コントロールによって提供されるデータにバインドその<xref:System.Web.UI.WebControls.SiteMapPath.SiteMapProvider%2A>です。 これにより、このイベントが発生するたびに、データベースまたは、表示されているコンテンツの更新など、カスタムのルーチンを実行するイベント処理メソッドを提供できます。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Web.UI.WebControls.SiteMapPath.OnItemDataBound%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合、<see cref="M:System.Web.UI.WebControls.SiteMapPath.OnItemDataBound(System.Web.UI.WebControls.SiteMapNodeItemEventArgs)" />を呼び出して派生クラスでメソッドが必ず、<see cref="M:System.Web.UI.WebControls.SiteMapPath.OnItemDataBound(System.Web.UI.WebControls.SiteMapNodeItemEventArgs)" />デリゲートを登録するための基本クラスのメソッドは、イベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ParentLevelsDisplayed">
+      <MemberSignature Language="C#" Value="public virtual int ParentLevelsDisplayed { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ParentLevelsDisplayed" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SiteMapPath.ParentLevelsDisplayed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(-1)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールが表示されたら、現在表示されているノードに対して相対的な親ノードのレベルの数を設定します。</summary>
+        <value>表示される、現在のコンテキスト ノードに対して相対的な親ノードのレベル数を指定する整数。 既定値は-1 をコントロールが表示される親レベルの数に制限がないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SiteMapPath.ParentLevelsDisplayed%2A>プロパティは親ノードのレベル数が表示されます、制御、<xref:System.Web.UI.WebControls.SiteMapPath>現在のコンテキスト ノード上のコントロールです。 既定では、現在のコンテキスト ノード上のすべての親および祖先ノードが表示されます。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値は、 <see cref="P:System.Web.UI.WebControls.SiteMapPath.ParentLevelsDisplayed" /> -1 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PathDirection">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.PathDirection PathDirection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.PathDirection PathDirection" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SiteMapPath.PathDirection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.PathDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはナビゲーション パス ノードで、表示がされる順序を設定します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.PathDirection" />で表示されるナビゲーション ノードの階層の順序を示すです。 既定値は<see cref="F:System.Web.UI.WebControls.PathDirection.RootToCurrent" />、左右からに向かってからノードが現在のノードに、最上位のノードからの階層の順序で表示されることを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定<xref:System.Web.UI.WebControls.SiteMapPath.PathDirection%2A>に<xref:System.Web.UI.WebControls.PathDirection.RootToCurrent>を左から右へのナビゲーション パスを表示する場合、ナビゲーション パスとして表示されます、これまで左からサイト マップ ノードの右側にします。 つまり、ルート ノードが左端の位置には、後続の各ノードが右側で、次の位置であり、右端の位置では、現在のノードです。  
+  
+ 設定<xref:System.Web.UI.WebControls.SiteMapPath.PathDirection%2A>に<xref:System.Web.UI.WebControls.PathDirection.CurrentToRoot>右から左へのナビゲーション パスを表示する場合。 つまり、ノードの順序を逆にした右端の位置にあるルート ノードが表示され、左端の位置に、現在のノードを表示できるようにします。 中としてではなく一般的なこの順序を使用できる Web フォーム ページのローカライズと<xref:System.Web.UI.WebControls.SiteMapPath>右から左に読む言語のコントロールです。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、宣言によって設定する方法を示します、<xref:System.Web.UI.WebControls.SiteMapPath.PathDirection%2A>のプロパティ、 <xref:System.Web.UI.WebControls.SiteMapPath> Web フォーム ページにします。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.NavigationPath_decl_4#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.NavigationPath_decl_4/CS/catalog3cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.NavigationPath_decl_4#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.NavigationPath_decl_4/VB/catalog3vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値は、<see cref="P:System.Web.UI.WebControls.SiteMapPath.PathDirection" />ベースのいずれかではない<see cref="T:System.Web.UI.WebControls.PathDirection" />列挙体です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PathSeparator">
+      <MemberSignature Language="C#" Value="public virtual string PathSeparator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PathSeparator" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SiteMapPath.PathSeparator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(" &gt; ")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を区切る文字列<see cref="T:System.Web.UI.WebControls.SiteMapPath" />レンダリングされたナビゲーション パス内のノードです。</summary>
+        <value>ナビゲーション パス内のノードの区切り記号を表す文字列。 既定値は" &gt; "、これは左から右、指す文字であり、既定値に対応する<see cref="T:System.Web.UI.WebControls.PathDirection" />に設定される<see cref="F:System.Web.UI.WebControls.PathDirection.RootToCurrent" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.UI.WebControls.SiteMapPath.PathSeparatorStyle%2A>が定義されているにも適用されます、<xref:System.Web.UI.WebControls.SiteMapPath.PathSeparator%2A>プロパティです。 ただし場合、<xref:System.Web.UI.WebControls.SiteMapPath.PathSeparatorTemplate%2A>プロパティが定義されている両方を<xref:System.Web.UI.WebControls.SiteMapPath.PathSeparator%2A>と<xref:System.Web.UI.WebControls.SiteMapPath.PathSeparatorStyle%2A>プロパティは無視されます。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Web.UI.WebControls.SiteMapPath.PathSeparator%2A>のプロパティ、<xref:System.Web.UI.WebControls.SiteMapPath>既定値以外の文字列にします。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.NavigationPath_decl_3#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.NavigationPath_decl_3/CS/aboutus2cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.NavigationPath_decl_3#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.NavigationPath_decl_3/VB/aboutus2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PathSeparatorStyle">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.Style PathSeparatorStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.Style PathSeparatorStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SiteMapPath.PathSeparatorStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Style</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用されるスタイルを取得、<see cref="P:System.Web.UI.WebControls.SiteMapPath.PathSeparator" />文字列。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.Style" />のスタイル設定を格納している、<see cref="T:System.Web.UI.WebControls.SiteMapPath" />コントロールの<see cref="P:System.Web.UI.WebControls.SiteMapPath.PathSeparator" />テキスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.SiteMapPath.PathSeparatorStyle%2A>ナビゲーション パスのノード間に表示されるパスの区切り線の外観を制御するプロパティです。 フォントのプロパティと、前景色で使用されるフォントのスタイルの共通設定が含まれます、<xref:System.Web.UI.WebControls.SiteMapPath.PathSeparator%2A>プロパティです。  
+  
+ 場合、<xref:System.Web.UI.WebControls.SiteMapPath.PathSeparatorTemplate%2A>プロパティが定義されている両方を<xref:System.Web.UI.WebControls.SiteMapPath.PathSeparator%2A>と<xref:System.Web.UI.WebControls.SiteMapPath.PathSeparatorStyle%2A>プロパティは無視されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PathSeparatorTemplate">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.ITemplate PathSeparatorTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ITemplate PathSeparatorTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SiteMapPath.PathSeparatorTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.TemplateContainer(typeof(System.Web.UI.WebControls.SiteMapNodeItem))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサイトのナビゲーション パスのパス区切り記号を使用するコントロール テンプレートを設定します。</summary>
+        <value><see cref="T:System.Web.UI.ITemplate" />を実装するオブジェクト、<see cref="M:System.Web.UI.ITemplate.InstantiateIn(System.Web.UI.Control)" />ナビゲーション パスのパス区切り記号のカスタム コンテンツを表示するために、メソッドです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Web.UI.WebControls.SiteMapPath.PathSeparatorTemplate%2A>を<xref:System.Web.UI.ITemplate>を使用するオブジェクト、<xref:System.Web.UI.WebControls.Image>またはその他の制御など、<xref:System.Web.UI.WebControls.Label>の代わりにナビゲーション ノード間のパス区切り文字として、<xref:System.Web.UI.WebControls.SiteMapPath.PathSeparator%2A>文字列。  
+  
+ 場合、<xref:System.Web.UI.WebControls.SiteMapPath.PathSeparatorTemplate%2A>プロパティを設定すると、テンプレートを上書き両方、<xref:System.Web.UI.WebControls.SiteMapPath.PathSeparator%2A>表示されるテキストとその<xref:System.Web.UI.WebControls.SiteMapPath.PathSeparatorStyle%2A>を適用します。  
+  
+ 宣言を設定することができます、<xref:System.Web.UI.WebControls.SiteMapPath.PathSeparatorTemplate%2A>プロパティを任意の Web サーバー コントロールと ASP.NET のインフラストラクチャとして Web サーバー コントロールをラップするために必要な手順を実行する、<xref:System.Web.UI.ITemplate>です。 ただし、Web サーバー コントロールは実装しないでください、<xref:System.Web.UI.ITemplate>インターフェイスであるため、操作する際に、<xref:System.Web.UI.ITemplate>プロパティ プログラムでは、記述する必要あります、<xref:System.Web.UI.ITemplate>テンプレート コード用のラッパー。 次に、<xref:System.Web.UI.WebControls.SiteMapPath.PathSeparatorTemplate%2A>プロパティのインスタンスに設定されて、<xref:System.Web.UI.ITemplate>ラッパーです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、定義する方法を示します、<xref:System.Web.UI.WebControls.Image>として、 <xref:System.Web.UI.WebControls.SiteMapPath.PathSeparatorTemplate%2A> Web フォームで宣言します。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.NavigationPath_decl_2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.NavigationPath_decl_2/CS/aboutuscs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.NavigationPath_decl_2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.NavigationPath_decl_2/VB/aboutusvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Provider">
+      <MemberSignature Language="C#" Value="public System.Web.SiteMapProvider Provider { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.SiteMapProvider Provider" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SiteMapPath.Provider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.SiteMapProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、 <see cref="T:System.Web.SiteMapProvider" /> Web サーバー コントロールに関連付けられています。</summary>
+        <value>A<see cref="T:System.Web.SiteMapProvider" />コントロールに関連付けられているインスタンス。 プロバイダーが明示的に設定しない場合は、既定のサイト マップ プロバイダーが使用されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SiteMapPath.Provider%2A>プロパティは、コントロールで使用するサイト マップ プロバイダーのインスタンスを指定します。 このプロバイダーは、プロバイダーによって識別される異なる場合があります、<xref:System.Web.UI.WebControls.SiteMapPath.SiteMapProvider%2A>プロパティの場合に設定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">によって指定されたプロバイダー、<see cref="P:System.Web.UI.WebControls.SiteMapDataSource.SiteMapProvider" />プロパティは使用できません。  
+  
+ \- または  
+  
+ サイト用に構成された既定のプロバイダーはありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="protected override void Render (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Render(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SiteMapPath.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />表示される出力を受け取る。</param>
+        <summary>書き込みます、<see cref="T:System.Web.UI.WebControls.CompositeControl" />を指定したコンテンツ<see cref="T:System.Web.UI.HtmlTextWriter" />クライアントに表示するためのオブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderContents">
+      <MemberSignature Language="C#" Value="protected override void RenderContents (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void RenderContents(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SiteMapPath.RenderContents(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">Web ページにコンテンツを書き込むために使用する出力ストリームを表す <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary>内のノードを表示、<see cref="T:System.Web.UI.WebControls.SiteMapPath" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SiteMapPath>オーバーライドを制御、<xref:System.Web.UI.WebControls.SiteMapPath.RenderContents%2A>場合、そのユーザー補助のレンダリングを実行するメソッドを<xref:System.Web.UI.WebControls.SiteMapPath.SkipLinkText%2A>プロパティに設定されていない<xref:System.String.Empty?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderCurrentNodeAsLink">
+      <MemberSignature Language="C#" Value="public virtual bool RenderCurrentNodeAsLink { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RenderCurrentNodeAsLink" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SiteMapPath.RenderCurrentNodeAsLink" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在表示されているページを表すサイト ナビゲーション ノードをハイパーリンクとして表示するかどうかを示します。</summary>
+        <value>
+          <see langword="true" />現在のページを表すノードがハイパーリンクとしてレンダリングされる場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在表示されているページを表すノードは、<xref:System.Web.SiteMap.CurrentNode%2A?displayProperty=nameWithType>です。 その<xref:System.Web.SiteMapNode.Title%2A>プロパティは、現在のノードに表示するテキストを指定し、その<xref:System.Web.SiteMapNode.Url%2A>ハイパーリンクを作成するプロパティを使用します。 既定では、エラーがあるフォーム ポストを防ぐために現在のページのハイパーリンクはレンダリングされません。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、<xref:System.Web.UI.WebControls.SiteMapPath.RenderCurrentNodeAsLink%2A>プロパティを`true`ハイパーリンクを現在のノードにするときに、<xref:System.Web.UI.WebControls.SiteMapPath>コントロールがそのコンテンツをレンダリングします。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.NavigationPath_decl_4#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.NavigationPath_decl_4/CS/catalog3cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.NavigationPath_decl_4#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.NavigationPath_decl_4/VB/catalog3vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RootNodeStyle">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.Style RootNodeStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.Style RootNodeStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SiteMapPath.RootNodeStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Style</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルート ノードの表示テキストのスタイルを取得します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.Style" />のスタイルの設定を格納している、<see cref="T:System.Web.UI.WebControls.SiteMapPath" />ルート ノードの表示テキストを制御します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.SiteMapPath.RootNodeStyle%2A>ナビゲーション パスのルート ノードの表示テキストの外観を制御するプロパティです。 既定では、表示テキストで指定されている、<xref:System.Web.SiteMapNode.Title%2A>のプロパティ、<xref:System.Web.SiteMapNode>ページを表すです。 共通のスタイル設定には、カスタムの背景色、前景の色、フォントのプロパティ、およびノードのスペースが含まれます。  
+  
+ <xref:System.Web.UI.WebControls.SiteMapPath>ノード、スタイル プロパティは、次の順序で、1 つのスタイルにマージされます。  
+  
+1.  <xref:System.Web.UI.WebControls.SiteMapPath.NodeStyle%2A>  
+  
+2.  <xref:System.Web.UI.WebControls.SiteMapPath.CurrentNodeStyle%2A>または<xref:System.Web.UI.WebControls.SiteMapPath.RootNodeStyle%2A>ノードの種類によって異なります。  
+  
+> [!NOTE]
+>  明示的に設定されている場合を除き、取り消し線または上線のスタイルをノードのフォント スタイルを設定した場合、ノードの既定の下線のスタイルは表示されません`true`です。  
+  
+ 場合、<xref:System.Web.UI.WebControls.SiteMapPath.RootNodeTemplate%2A>プロパティが定義されている、<xref:System.Web.UI.WebControls.SiteMapPath.RootNodeStyle%2A>プロパティは無視されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、宣言によって設定する方法を示します、<xref:System.Web.UI.WebControls.SiteMapPath.RootNodeStyle%2A>属性を<xref:System.Web.UI.WebControls.SiteMapPath>コントロール。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.NavigationPath_decl_1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.NavigationPath_decl_1/CS/customerservicecs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.NavigationPath_decl_1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.NavigationPath_decl_1/VB/customerservicevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RootNodeTemplate">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.ITemplate RootNodeTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ITemplate RootNodeTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SiteMapPath.RootNodeTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.TemplateContainer(typeof(System.Web.UI.WebControls.SiteMapNodeItem))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサイトのナビゲーション パスのルート ノードに使用するコントロール テンプレートを設定します。</summary>
+        <value><see cref="T:System.Web.UI.ITemplate" />を実装するオブジェクト、<see cref="M:System.Web.UI.ITemplate.InstantiateIn(System.Web.UI.Control)" />ナビゲーション パスのルート ノード用のカスタム コンテンツを表示するために、メソッドです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Web.UI.WebControls.SiteMapPath.RootNodeTemplate%2A>を<xref:System.Web.UI.ITemplate>を使用するオブジェクト、<xref:System.Web.UI.WebControls.Image>コントロールまたはその他の制御など、<xref:System.Web.UI.WebControls.Label>文字列ではなく、ルート ノードのユーザー インターフェイス要素として。  
+  
+ 場合、<xref:System.Web.UI.WebControls.SiteMapPath.RootNodeTemplate%2A>プロパティが設定されており、テンプレートが表示されるルート ナビゲーション ノードのテキストと任意の両方をオーバーライド<xref:System.Web.UI.WebControls.SiteMapPath.RootNodeStyle%2A>を適用します。 テンプレートが上書きも、<xref:System.Web.UI.WebControls.SiteMapPath.CurrentNodeTemplate%2A>と<xref:System.Web.UI.WebControls.SiteMapPath.CurrentNodeStyle%2A>ルート ページが現在表示されているページのプロパティです。  
+  
+ 宣言を設定することができます、<xref:System.Web.UI.WebControls.SiteMapPath.RootNodeTemplate%2A>プロパティを任意の Web サーバー コントロールと ASP.NET のインフラストラクチャとして Web サーバー コントロールをラップするために必要な手順を実行する、<xref:System.Web.UI.ITemplate>です。 ただし、Web サーバー コントロールは実装しないでください、<xref:System.Web.UI.ITemplate>インターフェイスであるため、操作する際に、<xref:System.Web.UI.ITemplate>プロパティ プログラムでは、記述する必要あります、<xref:System.Web.UI.ITemplate>テンプレート コード用のラッパー。 次に、<xref:System.Web.UI.WebControls.SiteMapPath.RootNodeTemplate%2A>プロパティのインスタンスに設定されて、<xref:System.Web.UI.ITemplate>ラッパーです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、プログラムで実装するクラスを定義する方法を示します、<xref:System.Web.UI.ITemplate>インターフェイスをラップする、<xref:System.Web.UI.WebControls.Image>コントロール。 次に、<xref:System.Web.UI.WebControls.SiteMapPath.RootNodeTemplate%2A>プロパティが、クラスのインスタンスに設定します。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.NavigationPath_decl_3#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.NavigationPath_decl_3/CS/aboutus2cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.NavigationPath_decl_3#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.NavigationPath_decl_3/VB/aboutus2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveViewState">
+      <MemberSignature Language="C#" Value="protected override object SaveViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object SaveViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SiteMapPath.SaveViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>状態を表示する変更を保存、<see cref="T:System.Web.UI.WebControls.SiteMapPath" />コントロール。</summary>
+        <returns>サーバー コントロールの現在のビューステートを返します。 コントロールに関連付けられているビューステートがない場合、メソッドは <see langword="null" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビュー ステートが、サーバー コントロールのプロパティの値の累積します。 これらの値は自動的に、サーバー コントロールの配置<xref:System.Web.UI.Control.ViewState%2A>インスタンスであるプロパティの<xref:System.Web.UI.StateBag>クラスです。 保存状態の段階のサーバー コントロールのライフ サイクルの後に、このプロパティの値が文字列オブジェクトを永続化します。  
+  
+ 格納されている変数として、この文字列オブジェクトが、クライアントに返されるビュー ステートを保存すると、 `Hidden` HTML 要素です。 カスタム サーバー コントロールを作成するときに、このメソッドをオーバーライドし、変更、サーバー コントロールの効率を向上できます<xref:System.Web.UI.Control.ViewState%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowToolTips">
+      <MemberSignature Language="C#" Value="public virtual bool ShowToolTips { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowToolTips" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SiteMapPath.ShowToolTips" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを示す値を設定するかどうか、<see cref="T:System.Web.UI.WebControls.SiteMapPath" />コントロールは、ハイパーリンクのナビゲーション ノードのハイパーリンクの追加属性を書き込みます。 クライアントのサポートによって、マウス ポインターを設定すると、追加の属性を持つハイパーリンクを置くとツールヒントが表示されます。</summary>
+        <value>
+          <see langword="true" />ハイパーリンクのナビゲーション ノード; 代替テキストを書き込む場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最も一般的なシナリオは、ときに、 `Title` HTML に HTML 属性が存在する`A Href`ハイパーリンクです。 たとえば、Microsoft Internet Explorer 4.0 以降および Netscape 6.0 および以降の実装、 `Title` Opera 3.0 と以降の実装の中に、自動選択のツールヒントとして属性、`Title`ツールヒントと元の Opera のツールバーの領域のキャプションの両方の属性です。 すべてのクライアントは、ハイパーリンクの追加属性のツールヒントを表示します。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、宣言によって設定する方法を示します、<xref:System.Web.UI.WebControls.SiteMapPath.ShowToolTips%2A>プロパティを`false`Web フォーム ページにします。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.NavigationPath_decl_4#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.NavigationPath_decl_4/CS/catalog3cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.NavigationPath_decl_4#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.NavigationPath_decl_4/VB/catalog3vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SiteMapProvider">
+      <MemberSignature Language="C#" Value="public virtual string SiteMapProvider { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SiteMapProvider" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SiteMapPath.SiteMapProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の名前、<see cref="T:System.Web.SiteMapProvider" />サイト ナビゲーション コントロールをレンダリングするために使用します。</summary>
+        <value>名前、<see cref="T:System.Web.SiteMapProvider" />のナビゲーション構造を定義する、<see cref="T:System.Web.UI.WebControls.SiteMapPath" />を表示します。 使用可能なすべてのプロバイダーが含まれている、<see cref="P:System.Web.SiteMap.Providers" />コレクションと列挙および名前を使用して取得できます、<see cref="P:System.Web.SiteMapProviderCollection.Item(System.String)" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SiteMapPath>コントロール、<xref:System.Web.SiteMapProvider>レンダリング サイト マップ データのソースとして使用します。 場合、<xref:System.Web.UI.WebControls.SiteMapPath.SiteMapProvider%2A>プロパティが設定されていない、<xref:System.Web.UI.WebControls.SiteMapPath>コントロールによって識別される、プロバイダーを使用して、<xref:System.Web.SiteMap.Provider%2A?displayProperty=nameWithType>プロパティで、既定値は、<xref:System.Web.SiteMapProvider>通常、構成階層内のサイトに対して定義されている、<xref:System.Web.XmlSiteMapProvider>です。 設定、<xref:System.Web.UI.WebControls.SiteMapPath.SiteMapProvider%2A>プロパティに指示、<xref:System.Web.UI.WebControls.SiteMapPath>プロバイダーが定義されるサイト マップ データの表示を制御します。  
+  
+ <xref:System.Web.UI.WebControls.SiteMapPath>コントロールの動作を直接、<xref:System.Web.SiteMapProvider>とその<xref:System.Web.SiteMapNode>サイト マップ情報を表示するオブジェクト。 などの他のコントロール<xref:System.Web.UI.WebControls.Menu>と<xref:System.Web.UI.WebControls.TreeView>、によって提供されるデータ抽象化が必要、<xref:System.Web.UI.WebControls.SiteMapDataSource>クラスは、同じサイト ナビゲーションの情報を表示します。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SkipLinkText">
+      <MemberSignature Language="C#" Value="public virtual string SkipLinkText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SkipLinkText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SiteMapPath.SkipLinkText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールのコンテンツをスキップする画面リーダー用の代替テキストを表示するために使用される値を設定します。</summary>
+        <value>ある文字列、<see cref="T:System.Web.UI.WebControls.SiteMapPath" />スクリーン リーダーにヒントとして、コントロールが非表示のイメージの代替テキストとして表示します。 既定値は、「スキップ ナビゲーション リンク」です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SiteMapPath.SkipLinkText%2A>Web ページを増減したり、スクリーン リーダーのユーザーにアクセスできるようにする設定できるプロパティです。 サイト マップ データを表示するコントロールなど、複数のページに繰り返し表示されるコンテンツが含まれる web サイトには、読み上げ読み取られないように、繰り返し出現するコンテンツをスキップするスクリーン リーダーのユーザーをできる機構を提供できます。  
+  
+ <xref:System.Web.UI.WebControls.SiteMapPath>コントロールには、<xref:System.Web.UI.WebControls.SiteMapPath.SkipLinkText%2A>スクリーン リーダーでスキップするのには、全体の制御方法としてのプロパティです。  場合、<xref:System.Web.UI.WebControls.SiteMapPath.SkipLinkText%2A>プロパティが設定されて、代替テキストを持つ非表示の画像をレンダリングすると、コンテンツの末尾に移動するオプションをユーザーに提供します。 スクリーン リーダーの代替テキストを読み上げるですが、イメージがページの視覚的な流れを妨害しません。 プロパティが既定では、これにより、コントロールをスキップ スクリーン リーダー「スキップ ナビゲーション リンク」に設定します。 この動作を無効にする場合、プロパティを設定<xref:System.String.Empty?displayProperty=nameWithType>です。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrackViewState">
+      <MemberSignature Language="C#" Value="protected override void TrackViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void TrackViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SiteMapPath.TrackViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>に対する変更を追跡、<see cref="T:System.Web.UI.WebControls.SiteMapPath" />コントロールのビュー ステート。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

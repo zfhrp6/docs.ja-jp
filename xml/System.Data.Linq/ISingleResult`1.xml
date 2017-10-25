@@ -1,0 +1,55 @@
+<Type Name="ISingleResult&lt;T&gt;" FullName="System.Data.Linq.ISingleResult&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public interface ISingleResult&lt;T&gt; : IDisposable, System.Collections.Generic.IEnumerable&lt;T&gt;, System.Data.Linq.IFunctionResult" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ISingleResult`1&lt;T&gt; implements class System.Collections.Generic.IEnumerable`1&lt;!T&gt;, class System.Collections.IEnumerable, class System.Data.Linq.IFunctionResult, class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Linq.ISingleResult`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Linq</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T" />
+  </TypeParameters>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;T&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Data.Linq.IFunctionResult</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <typeparam name="T">戻り値のシーケンス内の要素の型。</typeparam>
+    <summary>1 つの戻り値のシーケンスをマップされた関数の結果を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の例は、顧客の行を返し、入力パラメーターを使用して、顧客が在住する市が "London" である行のみを返すストアド プロシージャを示しています。 例では、列挙可能な `CustomersByCityResult` クラスを想定しています。  
+  
+```  
+CREATE PROCEDURE [dbo].[Customers By City]  
+    (@param1 NVARCHAR(20))  
+AS  
+BEGIN  
+    -- SET NOCOUNT ON added to prevent extra result sets from  
+    -- interfering with SELECT statements.  
+    SET NOCOUNT ON;  
+    SELECT CustomerID, ContactName, CompanyName, City from Customers  
+        as c where c.City=@param1  
+END  
+```  
+  
+   
+  
+## Examples  
+ [!code-csharp[DLinqSprox#1](~/samples/snippets/csharp/VS_Snippets_Data/DLinqSprox/cs/northwind-sprox.cs#1)]
+ [!code-vb[DLinqSprox#1](~/samples/snippets/visualbasic/VS_Snippets_Data/DLinqSprox/vb/northwind-sprox.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members />
+</Type>

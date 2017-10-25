@@ -1,0 +1,177 @@
+<Type Name="InterfaceQueuingAttribute" FullName="System.EnterpriseServices.InterfaceQueuingAttribute">
+  <TypeSignature Language="C#" Value="public sealed class InterfaceQueuingAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit InterfaceQueuingAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.InterfaceQueuingAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Interface, AllowMultiple=true, Inherited=true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>キュー、マークされたインターフェイスのサポートを有効にします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスの呼び出しは、メッセージ キューを使用してに置かれます。  
+  
+ キューに置かれたインターフェイスをマークして、この属性を次の構文を使用してインターフェイスに適用:`[InterfaceQueuing]`です。  
+  
+ キューに置かれたインターフェイスのメンバーのメソッドは、no を持つなど、キューに置かれたメソッドの呼び出しの要件を満たす必要があります`out`または`ref`パラメーター。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、`InterfaceQueuingAttribute`属性。  
+  
+ [!code-cpp[System.EnterpriseServices.QueuedComponents#2](~/samples/snippets/cpp/VS_Snippets_Remoting/System.EnterpriseServices.QueuedComponents/CPP/queuedcomponent.cpp#2)]
+ [!code-csharp[System.EnterpriseServices.QueuedComponents#2](~/samples/snippets/csharp/VS_Snippets_Remoting/System.EnterpriseServices.QueuedComponents/CS/queuedcomponent.cs#2)]  
+  
+ 次のコード例を使用して、コンパイル時にキューに置かれたとしては、COM + アプリケーションをマークする方法を示しています、`ApplicationQueuing`属性があり、COM + リスナーを有効に設定して、 `QueueListenerEnabled` true  
+  
+ [!code-cpp[System.EnterpriseServices.QueuedComponents#1](~/samples/snippets/cpp/VS_Snippets_Remoting/System.EnterpriseServices.QueuedComponents/CPP/queuedcomponent.cpp#1)]
+ [!code-csharp[System.EnterpriseServices.QueuedComponents#1](~/samples/snippets/csharp/VS_Snippets_Remoting/System.EnterpriseServices.QueuedComponents/CS/queuedcomponent.cs#1)]  
+  
+ 次のコード例は、使用する方法を示しています。 `BindToMoniker` 、レコーダーのインスタンスを取得する、キューに置かれたモニカーを実行する、記録を強制的に、リリースのレコーダー オブジェクト、キューにメッセージを送信するメソッドを呼び出します。  
+  
+ [!code-cpp[System.EnterpriseServices.QueuedComponents#0](~/samples/snippets/cpp/VS_Snippets_Remoting/System.EnterpriseServices.QueuedComponents/CPP/queuedcomponentclientclass.cpp#0)]
+ [!code-csharp[System.EnterpriseServices.QueuedComponents#0](~/samples/snippets/csharp/VS_Snippets_Remoting/System.EnterpriseServices.QueuedComponents/CS/queuedcomponentclientclass.cs#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.EnterpriseServices.InterfaceQueuingAttribute" />クラス、キューのサポートを有効にします。</summary>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InterfaceQueuingAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.InterfaceQueuingAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.EnterpriseServices.InterfaceQueuingAttribute" />クラス設定、<see cref="P:System.EnterpriseServices.InterfaceQueuingAttribute.Enabled" />と<see cref="P:System.EnterpriseServices.InterfaceQueuingAttribute.Interface" />プロパティを既定値です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.EnterpriseServices.InterfaceQueuingAttribute>です。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|有効|`true`|  
+|インターフェイス|`null`|  
+  
+   
+  
+## Examples  
+ 次のコード例が新たに作成<xref:System.EnterpriseServices.InterfaceQueuingAttribute>です。  
+  
+ [!code-cpp[EnterpriseServicesInterfaceQueuingAttribute#1](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServicesInterfaceQueuingAttribute/CPP/class1.cpp#1)]
+ [!code-csharp[EnterpriseServicesInterfaceQueuingAttribute#1](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServicesInterfaceQueuingAttribute/CS/class1.cs#1)]
+ [!code-vb[EnterpriseServicesInterfaceQueuingAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServicesInterfaceQueuingAttribute/VB/class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InterfaceQueuingAttribute (bool enabled);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool enabled) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.InterfaceQueuingAttribute.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="enabled" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="enabled">
+          <see langword="true" />キューのサポートを有効にするにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.EnterpriseServices.InterfaceQueuingAttribute" />クラス、オプションでキューのサポートを無効にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例が新たに作成<xref:System.EnterpriseServices.InterfaceQueuingAttribute>です。  
+  
+ [!code-cpp[EnterpriseServicesInterfaceQueuingAttribute#2](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServicesInterfaceQueuingAttribute/CPP/class1.cpp#2)]
+ [!code-csharp[EnterpriseServicesInterfaceQueuingAttribute#2](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServicesInterfaceQueuingAttribute/CS/class1.cs#2)]
+ [!code-vb[EnterpriseServicesInterfaceQueuingAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServicesInterfaceQueuingAttribute/VB/class1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.InterfaceQueuingAttribute.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キュー サポートが有効かどうかを示す値を取得または設定します。</summary>
+        <value>
+          キュー サポートが有効な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに対応、 `Queuing-Enabled` COM + でのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Interface">
+      <MemberSignature Language="C#" Value="public string Interface { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Interface" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.InterfaceQueuingAttribute.Interface" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキューが有効になっているインターフェイスの名前を設定します。</summary>
+        <value>キューを有効にするインターフェイスの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

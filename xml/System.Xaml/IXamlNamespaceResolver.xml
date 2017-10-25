@@ -1,0 +1,67 @@
+<Type Name="IXamlNamespaceResolver" FullName="System.Xaml.IXamlNamespaceResolver">
+  <TypeSignature Language="C#" Value="public interface IXamlNamespaceResolver" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IXamlNamespaceResolver" />
+  <TypeSignature Language="DocId" Value="T:System.Xaml.IXamlNamespaceResolver" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>XAML マークアップでマップされている、そのプレフィックスに基づいている XAML 名前空間を返すことができるサービスについて説明します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型コンバーターおよびマークアップ拡張機能を照会できます<xref:System.Xaml.IXamlNamespaceResolver>XAML オブジェクト ライターは、値変換の動作を呼び出すときは、XAML オブジェクト ライターによって提供されるサービスのコンテキストでサービスとして。 詳細については、次を参照してください。[型コンバーターと XAML のマークアップ拡張機能](~/docs/framework/xaml-services/type-converters-and-markup-extensions-for-xaml.md)と[サービスで使用できるコンテキスト型コンバーターおよびマークアップ拡張機能](~/docs/framework/xaml-services/service-contexts-available-to-type-converters-and-markup-extensions.md)します。  
+  
+## <a name="wpf-usage-notes"></a>WPF の使用上の注意  
+ このインターフェイスは WPF XAML 実装の一部として実装も、<xref:System.Windows.Markup.XmlnsDictionary>クラスです。 <xref:System.Windows.Markup.XmlnsDictionary>XAML 名前空間情報を格納し、同じを介してサービス コンテキストにその情報を転送する XAML プロセッサが対話<xref:System.Windows.Markup.IXamlTypeResolver>インターフェイスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetNamespace">
+      <MemberSignature Language="C#" Value="public string GetNamespace (string prefix);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetNamespace(string prefix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.IXamlNamespaceResolver.GetNamespace(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prefix" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="prefix">XAML 名前空間情報を取得する対象のプレフィックス。</param>
+        <summary>指定したプレフィックス文字列の XAML 名前空間識別子を取得します。</summary>
+        <returns>要求された XAML 名前空間識別子、文字列として。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNamespacePrefixes">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.Xaml.NamespaceDeclaration&gt; GetNamespacePrefixes ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.Xaml.NamespaceDeclaration&gt; GetNamespacePrefixes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.IXamlNamespaceResolver.GetNamespacePrefixes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Xaml.NamespaceDeclaration&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべての可能なプレフィックスの XAML 名前空間マッピングを返します (<see cref="T:System.Xaml.NamespaceDeclaration" />値) は、アクティブな XAML スキーマ コンテキストで使用します。</summary>
+        <returns>列挙可能なセット<see cref="T:System.Xaml.NamespaceDeclaration" />値。 すべてのプレフィックス文字列を取得する、<see cref="P:System.Xaml.NamespaceDeclaration.Prefix" />返されるセット内の各値からの値。 に特定の XAML 名前空間のプレフィックスを取得する処理が必要な戻り値<see cref="P:System.Xaml.NamespaceDeclaration.Namespace" />値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

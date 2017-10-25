@@ -1,0 +1,95 @@
+<Type Name="EntityHandling" FullName="System.Xml.EntityHandling">
+  <TypeSignature Language="C#" Value="public enum EntityHandling" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed EntityHandling extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.EntityHandling" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>指定方法、<see cref="T:System.Xml.XmlTextReader" />または<see cref="T:System.Xml.XmlValidatingReader" />エンティティを処理します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ExpandCharEntities">
+      <MemberSignature Language="C#" Value="ExpandCharEntities" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Xml.EntityHandling ExpandCharEntities = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Xml.EntityHandling.ExpandCharEntities" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.EntityHandling</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文字エンティティを展開し、一般的なエンティティとして返します<see cref="F:System.Xml.XmlNodeType.EntityReference" />ノード。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す必要があります<xref:System.Xml.XmlReader.ResolveEntity%2A>を展開する一般的なエンティティを参照してください。 これにより、エンティティのエンティティに初めて使われるときだけを展開して処理を最適化することができます。  
+  
+ ExpandCharEntities に設定すると、リーダーの呼び出し、 <xref:System.Xml.XmlReader.GetAttribute%2A> (全般および文字の両方のエンティティ) のすべてのエンティティが展開されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpandEntities">
+      <MemberSignature Language="C#" Value="ExpandEntities" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Xml.EntityHandling ExpandEntities = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Xml.EntityHandling.ExpandEntities" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.EntityHandling</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのエンティティを展開し、展開されたノードを返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.XmlNodeType.EntityReference>ノードは返されません。 エンティティのテキストは、エンティティ参照の代わりに拡張されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

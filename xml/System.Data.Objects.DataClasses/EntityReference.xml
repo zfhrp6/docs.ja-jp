@@ -1,0 +1,63 @@
+<Type Name="EntityReference" FullName="System.Data.Objects.DataClasses.EntityReference">
+  <TypeSignature Language="C#" Value="public abstract class EntityReference : System.Data.Objects.DataClasses.RelatedEnd" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit EntityReference extends System.Data.Objects.DataClasses.RelatedEnd" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Objects.DataClasses.EntityReference" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Objects.DataClasses.RelatedEnd</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.Serialization.DataContract</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Data.Objects.DataClasses.EntityReference`1" /> の汎用以外の機能を実装する基本クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.DataClasses.EntityReference> クラスは、関連オブジェクトの <xref:System.Data.EntityKey> を公開する、<xref:System.Data.Objects.DataClasses.EntityReference%601> の基本クラスです。 <xref:System.Data.Objects.DataClasses.EntityReference%601> オブジェクトは、関連 End の複数要素の接続性が 0 または 1 の場合にナビゲーション プロパティによって返されます。 詳細については、次を参照してください。 [NavigationProperty 要素 (CSDL)](http://msdn.microsoft.com/en-us/5829a238-a50e-4c81-901d-7b54fc00f27e)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="EntityKey">
+      <MemberSignature Language="C#" Value="public System.Data.EntityKey EntityKey { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.EntityKey EntityKey" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.DataClasses.EntityReference.EntityKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.Serialization.DataMember</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.EntityKey</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連オブジェクトのキーを返します。</summary>
+        <value>関連オブジェクトのキーを表す <see cref="T:System.Data.EntityKey" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 関連オブジェクトのエンティティ キーを <xref:System.Data.Objects.DataClasses.EntityReference> オブジェクトで使用できるようにすると、関連オブジェクトに関する情報をデータ ソースから読み込まずに簡単に返せるようになります。  
+  
+ また、関連オブジェクトの <xref:System.Data.EntityKey> を <xref:System.Data.Objects.DataClasses.EntityReference> オブジェクトに対して公開すると、Object Service で、アタッチされた 2 つのオブジェクト間のアソシエーションの作成やオブジェクトの削除を、関連 End を読み込まずに動的に実行できます。 詳細については、次を参照してください。[の作成、追加、変更、およびオブジェクトの削除](http://msdn.microsoft.com/en-us/f76f1fad-c553-4b59-820b-89b3dec2fad1)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

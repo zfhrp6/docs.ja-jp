@@ -1,0 +1,471 @@
+<Type Name="IUIService" FullName="System.Windows.Forms.Design.IUIService">
+  <TypeSignature Language="C#" Value="public interface IUIService" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IUIService" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Design.IUIService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("06A9C74B-5E32-4561-BE73-381B37869F4F")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>デザイナーをホストしている開発環境オブジェクトのユーザー インターフェイスとの対話を有効にします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Design.IUIService>エラー メッセージを表示、ダイアログ ボックスを表示およびのダイアログ ボックスとカラー スキームの場合、フォントなどを通じて、ホストのアンビエント プロパティを取得できます、<xref:System.Windows.Forms.Design.IUIService.Styles%2A>辞書プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例のメソッドを呼び出すデザイナー動詞メニューのコマンドを提供するデザイナーの作成、<xref:System.Windows.Forms.Design.IUIService>です。 例を使用して、サンプル コードをアセンブリにコンパイルし、Windows フォーム アプリケーションでアセンブリへの参照を追加します。 使用している場合[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]、`IUIServiceExampleControl`に自動的に追加されて、**ツールボックス**です。 インスタンスを追加、`IUIServiceExampleControl`を<xref:System.Windows.Forms.Form>です。 呼び出すデザイナー動詞コマンドにアクセスする<xref:System.Windows.Forms.Design.IUIService>か、コントロールのサーフェイスを右クリックしてまたはコントロールのスマート タグ グリフをクリックし、スマート タグ パネルから項目を選択します。  
+  
+ [!code-cpp[IUIServiceExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/IUIServiceExample/CPP/class1.cpp#1)]
+ [!code-csharp[IUIServiceExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/IUIServiceExample/CS/class1.cs#1)]
+ [!code-vb[IUIServiceExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IUIServiceExample/VB/class1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CanShowComponentEditor">
+      <MemberSignature Language="C#" Value="public bool CanShowComponentEditor (object component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanShowComponentEditor(object component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.IUIService.CanShowComponentEditor(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="component">表示するためのサポートを確認するコンポーネント、<see cref="T:System.Windows.Forms.Design.ComponentEditorForm" />です。</param>
+        <summary>コンポーネントが表示できるかどうかを示す、<see cref="T:System.Windows.Forms.Design.ComponentEditorForm" />です。</summary>
+        <returns>
+          <see langword="true" />指定されたコンポーネントは、コンポーネント エディター フォームを表示できる場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンポーネント エディターでは、次のようなプロパティ ページからコンポーネント オブジェクト モデル (COM) コンポーネント エディター フォームを表示できます。  
+  
+ このメソッドは、指定されたコンポーネントがあるかどうかを確認するチェック、<xref:System.ComponentModel.ComponentEditor>表示できる、<xref:System.Windows.Forms.Design.ComponentEditorForm>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDialogOwnerWindow">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.IWin32Window GetDialogOwnerWindow ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Forms.IWin32Window GetDialogOwnerWindow() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.IUIService.GetDialogOwnerWindow" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.IWin32Window</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ダイアログ ボックスを表示するときに、所有者として使用する必要があります、ウィンドウを取得します。</summary>
+        <returns><see cref="T:System.Windows.Forms.IWin32Window" />を示すすべての子のダイアログ ボックスを所有するウィンドウです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一部のダイアログ ボックスでは、所有者のアプリケーションに親があるときし、タスク一覧に表示されません。 このメソッドが戻る、<xref:System.Windows.Forms.IWin32Window>統合開発環境から生成されるものが、この種のダイアログ ボックスの所有者であるウィンドウを示すです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetUIDirty">
+      <MemberSignature Language="C#" Value="public void SetUIDirty ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetUIDirty() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.IUIService.SetUIDirty" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>UI が変更されたかを示すフラグを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、UI が変更されており、更新する必要がありますを示します。 ツールバーまたはメニュー項目の状態が変更されるたびに、更新の必要性を示すために重要です。 ほとんどの開発環境では、速度、これらの要素の状態をキャッシュし、更新する必要がある場合を知る必要があります。 このメソッドが呼び出される、たとえば、オブジェクトは、切り取りを有効にし、メニュー項目をコピーするデザイナー ビュー内で選択されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowComponentEditor">
+      <MemberSignature Language="C#" Value="public bool ShowComponentEditor (object component, System.Windows.Forms.IWin32Window parent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ShowComponentEditor(object component, class System.Windows.Forms.IWin32Window parent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.IUIService.ShowComponentEditor(System.Object,System.Windows.Forms.IWin32Window)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+        <Parameter Name="parent" Type="System.Windows.Forms.IWin32Window" />
+      </Parameters>
+      <Docs>
+        <param name="component">表示する対象のコンポーネント、<see cref="T:System.Windows.Forms.Design.ComponentEditorForm" />です。</param>
+        <param name="parent"><see cref="T:System.Windows.Forms.IWin32Window" />をするダイアログ ボックスの親です。</param>
+        <summary>表示しようとしています、<see cref="T:System.Windows.Forms.Design.ComponentEditorForm" />コンポーネント用です。</summary>
+        <returns>
+          <see langword="true" />試行が成功した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Forms.Design.ComponentEditorForm>に似ていますが、プロパティ ページからコンポーネント オブジェクト モデル (COM)。  
+  
+ コンポーネントがコンポーネント エディターをサポートしていない場合、<xref:System.ArgumentException>がスローされます。 これを回避するには、必ず呼び出しに<xref:System.Windows.Forms.Design.IUIService.CanShowComponentEditor%2A>最初。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">コンポーネントは、コンポーネント エディターをサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowDialog">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DialogResult ShowDialog (System.Windows.Forms.Form form);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Windows.Forms.DialogResult ShowDialog(class System.Windows.Forms.Form form) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.IUIService.ShowDialog(System.Windows.Forms.Form)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DialogResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="form" Type="System.Windows.Forms.Form" />
+      </Parameters>
+      <Docs>
+        <param name="form"><see cref="T:System.Windows.Forms.Form" />を表示します。</param>
+        <summary>ダイアログ ボックスで指定されたフォームを表示しようとしています。</summary>
+        <returns>1 つ、 <see cref="T:System.Windows.Forms.DialogResult" />  ダイアログ ボックスによって返される結果コードを示す値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ インスタンスを取得しようとしている次のコード例、<xref:System.Windows.Forms.Design.IUIService>クラスし、サービスを呼び出す<xref:System.Windows.Forms.Design.IUIService.ShowDialog%2A>メソッドです。  
+  
+ [!code-cpp[IUIServiceExample#4](~/samples/snippets/cpp/VS_Snippets_Winforms/IUIServiceExample/CPP/class1.cpp#4)]
+ [!code-csharp[IUIServiceExample#4](~/samples/snippets/csharp/VS_Snippets_Winforms/IUIServiceExample/CS/class1.cs#4)]
+ [!code-vb[IUIServiceExample#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IUIServiceExample/VB/class1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowError">
+      <MemberSignature Language="C#" Value="public void ShowError (Exception ex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ShowError(class System.Exception ex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.IUIService.ShowError(System.Exception)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ex" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="ex"><see cref="T:System.Exception" />を表示します。</param>
+        <summary>メッセージ ボックスに、指定された例外と例外に関する情報を表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、メッセージ ボックスの表示に適切に開発環境と統合できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowError">
+      <MemberSignature Language="C#" Value="public void ShowError (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ShowError(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.IUIService.ShowError(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">表示するエラー メッセージ。</param>
+        <summary>メッセージ ボックスに指定されたエラー メッセージを表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、メッセージ ボックスの表示に適切に開発環境と統合できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowError">
+      <MemberSignature Language="C#" Value="public void ShowError (Exception ex, string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ShowError(class System.Exception ex, string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.IUIService.ShowError(System.Exception,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ex" Type="System.Exception" />
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="ex"><see cref="T:System.Exception" />を表示します。</param>
+        <param name="message">例外に関する情報を提供するメッセージを表示します。</param>
+        <summary>メッセージ ボックスに、指定された例外と例外に関する情報を表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、メッセージ ボックスの表示に適切に開発環境と統合できます。  
+  
+   
+  
+## Examples  
+ インスタンスを取得しようとしている次のコード例、 <xref:System.Windows.Forms.Design.IUIService> 、サービスを呼び出すと<xref:System.Windows.Forms.Design.IUIService.ShowError%2A>メソッドです。  
+  
+ [!code-cpp[IUIServiceExample#3](~/samples/snippets/cpp/VS_Snippets_Winforms/IUIServiceExample/CPP/class1.cpp#3)]
+ [!code-csharp[IUIServiceExample#3](~/samples/snippets/csharp/VS_Snippets_Winforms/IUIServiceExample/CS/class1.cs#3)]
+ [!code-vb[IUIServiceExample#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IUIServiceExample/VB/class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowMessage">
+      <MemberSignature Language="C#" Value="public void ShowMessage (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ShowMessage(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.IUIService.ShowMessage(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">表示するメッセージ</param>
+        <summary>メッセージ ボックスに、指定したメッセージを表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、開発環境と、メッセージ ボックスの表示が正しく統合されているを確認します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.Design.IUIService.ShowMessage%2A>メッセージ ボックスを表示するメソッド。  
+  
+ [!code-cpp[IUIServiceExample#2](~/samples/snippets/cpp/VS_Snippets_Winforms/IUIServiceExample/CPP/class1.cpp#2)]
+ [!code-csharp[IUIServiceExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/IUIServiceExample/CS/class1.cs#2)]
+ [!code-vb[IUIServiceExample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IUIServiceExample/VB/class1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowMessage">
+      <MemberSignature Language="C#" Value="public void ShowMessage (string message, string caption);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ShowMessage(string message, string caption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.IUIService.ShowMessage(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="caption" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">表示するメッセージ。</param>
+        <param name="caption">メッセージ ボックスのキャプションです。</param>
+        <summary>指定されたキャプションを含むメッセージ ボックスで、指定したメッセージを表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、開発環境と、メッセージ ボックスの表示が正しく統合されているを確認します。  
+  
+   
+  
+## Examples  
+ インスタンスを取得しようとしている次のコード例、 <xref:System.Windows.Forms.Design.IUIService> 、サービスを呼び出すと<xref:System.Windows.Forms.Design.IUIService.ShowMessage%2A>メソッドです。  
+  
+ [!code-cpp[IUIServiceExample#2](~/samples/snippets/cpp/VS_Snippets_Winforms/IUIServiceExample/CPP/class1.cpp#2)]
+ [!code-csharp[IUIServiceExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/IUIServiceExample/CS/class1.cs#2)]
+ [!code-vb[IUIServiceExample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IUIServiceExample/VB/class1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowMessage">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DialogResult ShowMessage (string message, string caption, System.Windows.Forms.MessageBoxButtons buttons);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Windows.Forms.DialogResult ShowMessage(string message, string caption, valuetype System.Windows.Forms.MessageBoxButtons buttons) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.IUIService.ShowMessage(System.String,System.String,System.Windows.Forms.MessageBoxButtons)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DialogResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="caption" Type="System.String" />
+        <Parameter Name="buttons" Type="System.Windows.Forms.MessageBoxButtons" />
+      </Parameters>
+      <Docs>
+        <param name="message">表示するメッセージ。</param>
+        <param name="caption">ダイアログ ボックスのキャプションです。</param>
+        <param name="buttons">1 つ、<see cref="T:System.Windows.Forms.MessageBoxButtons" />値: <see cref="F:System.Windows.Forms.MessageBoxButtons.OK" />、 <see cref="F:System.Windows.Forms.MessageBoxButtons.OKCancel" />、 <see cref="F:System.Windows.Forms.MessageBoxButtons.YesNo" />、または<see cref="F:System.Windows.Forms.MessageBoxButtons.YesNoCancel" />です。</param>
+        <summary>指定されたキャプションと、ダイアログ ボックスに配置するボタンを含むメッセージ ボックスで、指定したメッセージを表示します。</summary>
+        <returns>1 つ、 <see cref="T:System.Windows.Forms.DialogResult" />  ダイアログ ボックスによって返される結果コードを示す値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、開発環境と、メッセージ ボックスの表示が正しく統合されているを確認します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.Design.IUIService.ShowMessage%2A>メッセージ ボックスを表示するメソッド。  
+  
+ [!code-cpp[IUIServiceExample#2](~/samples/snippets/cpp/VS_Snippets_Winforms/IUIServiceExample/CPP/class1.cpp#2)]
+ [!code-csharp[IUIServiceExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/IUIServiceExample/CS/class1.cs#2)]
+ [!code-vb[IUIServiceExample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IUIServiceExample/VB/class1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowToolWindow">
+      <MemberSignature Language="C#" Value="public bool ShowToolWindow (Guid toolWindow);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ShowToolWindow(valuetype System.Guid toolWindow) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.IUIService.ShowToolWindow(System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="toolWindow" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="toolWindow">A<see cref="T:System.Guid" />ツール ウィンドウの識別子。 これは、カスタム<see cref="T:System.Guid" />から定義済みの値のいずれかまたは<see cref="T:System.ComponentModel.Design.StandardToolWindows" />です。</param>
+        <summary>指定したツール ウィンドウを表示します。</summary>
+        <returns>
+          <see langword="true" />ツール ウィンドウが正常に表示された場合<see langword="false" />場合が表示されるかが見つかりません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ インスタンスを取得しようとしている次のコード例、 <xref:System.Windows.Forms.Design.IUIService> 、サービスを呼び出すと<xref:System.Windows.Forms.Design.IUIService.ShowToolWindow%2A>メソッドです。  
+  
+ [!code-cpp[IUIServiceExample#5](~/samples/snippets/cpp/VS_Snippets_Winforms/IUIServiceExample/CPP/class1.cpp#5)]
+ [!code-csharp[IUIServiceExample#5](~/samples/snippets/csharp/VS_Snippets_Winforms/IUIServiceExample/CS/class1.cs#5)]
+ [!code-vb[IUIServiceExample#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IUIServiceExample/VB/class1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Styles">
+      <MemberSignature Language="C#" Value="public System.Collections.IDictionary Styles { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IDictionary Styles" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Design.IUIService.Styles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホストの環境に固有のスタイルのコレクションを取得します。</summary>
+        <value><see cref="T:System.Collections.IDictionary" />スタイル設定を含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ディクショナリには、ホスト環境から情報を提供できます。 少なくともこの強調表示に使用する標準の UI テキスト、および色を使用するフォントので構成されています。 これらの必須のスタイルが"DialogFont"と"HighlightColor"。  
+  
+ これらのスタイルの値は、インデクサーとしてキーを使用して、ディクショナリへのアクセス、ディクショナリのキーとして、スタイルを使用して取得可能性があります。 例: (実装するオブジェクト<xref:System.Windows.Forms.Design.IUIService>)。[(スタイル名文字列引用符で囲まれた)] のスタイルです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ホスト環境からダイアログ ボックスのフォントを取得します。  
+  
+ [!code-cpp[Classic IUIService.Styles Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic IUIService.Styles Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic IUIService.Styles Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic IUIService.Styles Example/CS/source.cs#1)]
+ [!code-vb[Classic IUIService.Styles Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic IUIService.Styles Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

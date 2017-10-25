@@ -1,0 +1,387 @@
+<Type Name="DefaultTraceListener" FullName="System.Diagnostics.DefaultTraceListener">
+  <TypeSignature Language="C#" Value="public class DefaultTraceListener : System.Diagnostics.TraceListener" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi DefaultTraceListener extends System.Diagnostics.TraceListener" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.DefaultTraceListener" />
+  <AssemblyInfo>
+    <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Diagnostics.TraceListener</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>トレースの動作と既定の出力メソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスのインスタンスが自動的に追加する、<xref:System.Diagnostics.Debug.Listeners%2A?displayProperty=nameWithType>と<xref:System.Diagnostics.Trace.Listeners%2A?displayProperty=nameWithType>コレクション。 秒を明示的に追加する<xref:System.Diagnostics.DefaultTraceListener>重複するデバッガーの出力ウィンドウにメッセージの原因と重複するメッセージ ボックスをアサートします。  
+  
+ 既定では、<xref:System.Diagnostics.DefaultTraceListener.Write%2A>と<xref:System.Diagnostics.DefaultTraceListener.WriteLine%2A>メソッドは、Win32 にメッセージを出力`OutputDebugString`関数および、<xref:System.Diagnostics.Debugger.Log%2A?displayProperty=nameWithType>メソッドです。 については、`OutputDebugString`機能、プラットフォーム SDK または MSDN を参照してください。  
+  
+ <xref:System.Diagnostics.DefaultTraceListener.Fail%2A>メソッド、既定では、メッセージ ボックスを表示、アプリケーションのユーザー インターフェイス モードで実行中です。 メッセージを使用して、出力<xref:System.Diagnostics.DefaultTraceListener.WriteLine%2A>です。  
+  
+> [!NOTE]
+>  メッセージ ボックスの表示<xref:System.Diagnostics.Debug.Assert%2A>と<xref:System.Diagnostics.Debug.Fail%2A>メソッドの呼び出しは、の有無によって異なります、<xref:System.Diagnostics.DefaultTraceListener>です。 場合、<xref:System.Diagnostics.DefaultTraceListener>に含まれていない、<xref:System.Diagnostics.Trace.Listeners%2A>コレクション、メッセージ ボックスは表示されません。 <xref:System.Diagnostics.DefaultTraceListener>で削除することができます、 [\<オフ > 要素](~/docs/framework/configure-apps/file-schema/trace-debug/clear-element-for-listeners-for-trace.md)により、 [\<削除 > 要素](~/docs/framework/configure-apps/file-schema/trace-debug/remove-element-for-listeners-for-trace.md)、または呼び出すことによって、<xref:System.Diagnostics.TraceListenerCollection.Clear%2A>メソッドを<xref:System.Diagnostics.Trace.Listeners%2A>プロパティ (`System.Diagnostics.Trace.Listeners.Clear()`)。  
+  
+ トレースまたはトレース リスナーを使用してデバッグを有効にする必要があります。 次の構文は、コンパイラに固有です。 以外は、c# または Visual Basic コンパイラを使用する場合は、コンパイラのドキュメントを参照してください。  
+  
+-   C# でのデバッグを有効にするには追加、`/d:DEBUG`フラグを追加したり、コードをコンパイルすると、コンパイラのコマンドライン`#define DEBUG`ファイルの先頭にします。 Visual basic では、追加、`/d:DEBUG=True`フラグをコンパイラ コマンドライン。  
+  
+-   C# でのトレースを有効にするには追加、`/d:TRACE`フラグを追加したり、コードをコンパイルすると、コンパイラのコマンドライン`#define TRACE`ファイルの先頭にします。 Visual basic では、追加、`/d:TRACE=True`フラグをコンパイラ コマンドライン。  
+  
+ トレース リスナーを追加するには、アプリケーションの名前に対応する構成ファイルを編集します。 このファイル内でことができます、リスナーを追加、その型およびパラメーターの設定、リスナーの削除またはオフにするアプリケーションで設定したすべてのリスナーです。 構成ファイルに次の例のようにフォーマットする必要があります。  
+  
+```  
+<configuration>  
+<system.diagnostics>  
+  <trace autoflush="false" indentsize="4">  
+    <listeners>  
+      <remove name="Default" />  
+      <add name="myListener"  type="System.Diagnostics.TextWriterTraceListener"    initializeData="c:\myListener.log" />  
+    </listeners>  
+  </trace>  
+</system.diagnostics>  
+</configuration>  
+```  
+  
+   
+  
+## Examples  
+ 次のコード例では、確率と統計情報で使用される値を実行するための二項の係数を計算します。 この例では、<xref:System.Diagnostics.DefaultTraceListener>結果をトレースしたり、エラー ログに記録します。 新たに作成、<xref:System.Diagnostics.DefaultTraceListener>に追加、<xref:System.Diagnostics.Trace.Listeners%2A?displayProperty=nameWithType>コレクション、およびセット、<xref:System.Diagnostics.DefaultTraceListener.LogFileName%2A>プロパティをコマンドライン引数で指定されたログ ファイルにします。  
+  
+ 入力パラメーターの処理中にエラーが検出された場合、または、`CalcBinomial`関数は、例外をスロー、<xref:System.Diagnostics.DefaultTraceListener.Fail%2A>メソッドをログに記録し、エラー メッセージが表示されます。 場合、<xref:System.Diagnostics.DefaultTraceListener.AssertUiEnabled%2A>プロパティは`false`、エラー メッセージは、コンソールに書き込まれます。 結果が正常に、計算されると、<xref:System.Diagnostics.DefaultTraceListener.Write%28System.String%29>と<xref:System.Diagnostics.DefaultTraceListener.WriteLine%28System.String%29>メソッドは、ログ ファイルに結果を書き込みます。  
+  
+ <xref:System.Diagnostics.DefaultTraceListener.Fail%2A>、 <xref:System.Diagnostics.DefaultTraceListener.Write%2A>、および<xref:System.Diagnostics.DefaultTraceListener.WriteLine%2A>メソッドにのみ書き込まれるトレース情報が発生する、<xref:System.Diagnostics.DefaultTraceListener>です。 すべてのリスナーにトレース情報を書き込む、<xref:System.Diagnostics.Trace.Listeners%2A?displayProperty=nameWithType>収集、使用、 <xref:System.Diagnostics.Trace.Fail%2A>、 <xref:System.Diagnostics.Trace.Write%2A>、および<xref:System.Diagnostics.Trace.WriteLine%2A>のメソッド、<xref:System.Diagnostics.Trace>クラスです。  
+  
+ [!code-csharp[System.Diagnostics.DefaultTraceListener#11](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.DefaultTraceListener/CS/binomial.cs#11)]
+ [!code-vb[System.Diagnostics.DefaultTraceListener#11](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.DefaultTraceListener/VB/binomial.vb#11)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>このクラスは、スレッド セーフです。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DefaultTraceListener ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.DefaultTraceListener.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.DefaultTraceListener" />として"Default"でクラスの<see cref="P:System.Diagnostics.TraceListener.Name" />プロパティの値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を削除、<xref:System.Diagnostics.DefaultTraceListener>からアプリケーションによって提供される、<xref:System.Diagnostics.Trace.Listeners%2A?displayProperty=nameWithType>コレクションし、新たに作成および<xref:System.Diagnostics.DefaultTraceListener>に追加し、<xref:System.Diagnostics.Trace.Listeners%2A?displayProperty=nameWithType>コレクション。  
+  
+ [!code-csharp[System.Diagnostics.DefaultTraceListener#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.DefaultTraceListener/CS/binomial.cs#3)]
+ [!code-vb[System.Diagnostics.DefaultTraceListener#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.DefaultTraceListener/VB/binomial.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AssertUiEnabled">
+      <MemberSignature Language="C#" Value="public bool AssertUiEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AssertUiEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.DefaultTraceListener.AssertUiEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("AssertUiEnabled defaults to False; should follow Environment.UserInteractive.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアプリケーションがユーザー インターフェイス モードで実行されているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ユーザー インターフェイス モードが有効である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を呼び出す関数を呼び出す、<xref:System.Diagnostics.DefaultTraceListener.Fail%28System.String%2CSystem.String%29>関数が例外をスローした場合、エラー メッセージを記録するメソッド。 場合、<xref:System.Diagnostics.DefaultTraceListener.AssertUiEnabled%2A>プロパティは`false`メソッドがコンソールにも、エラー メッセージを書き込みます。  
+  
+ [!code-csharp[System.Diagnostics.DefaultTraceListener#8](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.DefaultTraceListener/CS/binomial.cs#8)]
+ [!code-vb[System.Diagnostics.DefaultTraceListener#8](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.DefaultTraceListener/VB/binomial.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Fail">
+      <MemberSignature Language="C#" Value="public override void Fail (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Fail(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.DefaultTraceListener.Fail(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">出力または表示するメッセージ。</param>
+        <summary>出力またはメッセージと常に失敗したアサーションのスタック トレースを表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは既定では、送信、`message`パラメーターおよび (アプリケーションは、ユーザー インターフェイス モードで実行されます) 場合は、メッセージ ボックスにされ、スタック トレース、<xref:System.Diagnostics.DefaultTraceListener>インスタンス。  
+  
+   
+  
+## Examples  
+ 次のコード例は、エラー メッセージを書き込みます、<xref:System.Diagnostics.DefaultTraceListener>を使用して、<xref:System.Diagnostics.DefaultTraceListener.Fail%28System.String%29>メソッドです。 メソッドは、ユーザー インターフェイスが使用できない場合もメッセージと、コンソールに書き込みます。  
+  
+ [!code-csharp[System.Diagnostics.DefaultTraceListener#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.DefaultTraceListener/CS/binomial.cs#6)]
+ [!code-vb[System.Diagnostics.DefaultTraceListener#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.DefaultTraceListener/VB/binomial.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Fail">
+      <MemberSignature Language="C#" Value="public override void Fail (string message, string detailMessage);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Fail(string message, string detailMessage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.DefaultTraceListener.Fail(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="detailMessage" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">出力または表示するメッセージ。</param>
+        <param name="detailMessage">出力または表示する詳細メッセージ。</param>
+        <summary>出力または詳細なメッセージと常に失敗したアサーションのスタック トレースを表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは既定では、送信、`message`パラメーター、`detailMessage`パラメーター、および (アプリケーションは、ユーザー インターフェイス モードで実行されます) 場合は、メッセージ ボックスにされ、スタック トレース、<xref:System.Diagnostics.DefaultTraceListener>インスタンス。  
+  
+   
+  
+## Examples  
+ 次のコード例を呼び出す関数を呼び出して、<xref:System.Diagnostics.DefaultTraceListener.Fail%28System.String%2CSystem.String%29>関数が例外をスローした場合は、詳細なエラー メッセージを記録するメソッド。 メソッドは、ユーザー インターフェイスが使用できない場合に、コンソールにメッセージを書き込みます。  
+  
+ [!code-csharp[System.Diagnostics.DefaultTraceListener#8](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.DefaultTraceListener/CS/binomial.cs#8)]
+ [!code-vb[System.Diagnostics.DefaultTraceListener#8](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.DefaultTraceListener/VB/binomial.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogFileName">
+      <MemberSignature Language="C#" Value="public string LogFileName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LogFileName" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.DefaultTraceListener.LogFileName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはトレースを書き込み、またはデバッグ メッセージをログ ファイルの名前を設定します。</summary>
+        <value>トレースを書き込み、またはデバッグ メッセージをログ ファイルの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例が新たに作成<xref:System.Diagnostics.DefaultTraceListener>に追加、<xref:System.Diagnostics.Trace.Listeners%2A?displayProperty=nameWithType>コレクション、およびセット、<xref:System.Diagnostics.DefaultTraceListener.LogFileName%2A>プロパティをコマンドライン引数で指定されたログ ファイルにします。  
+  
+ [!code-csharp[System.Diagnostics.DefaultTraceListener#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.DefaultTraceListener/CS/binomial.cs#4)]
+ [!code-vb[System.Diagnostics.DefaultTraceListener#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.DefaultTraceListener/VB/binomial.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public override void Write (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.DefaultTraceListener.Write(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">書き込むメッセージ<see langword="OutputDebugString" />と<see cref="M:System.Diagnostics.Debugger.Log(System.Int32,System.String,System.String)" />です。</param>
+        <summary>出力を書き込みます、<see langword="OutputDebugString" />関数および、<see cref="M:System.Diagnostics.Debugger.Log(System.Int32,System.String,System.String)" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ については、Win32`OutputDebugString`関数をデバッグ プラットフォーム SDK または MSDN で"OutputDebugString"を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、関数の結果を書式化してを使用して、<xref:System.Diagnostics.DefaultTraceListener.Write%28System.String%29>メソッドへのメッセージの最初の部分を書き込む、<xref:System.Diagnostics.DefaultTraceListener>です。  
+  
+ [!code-csharp[System.Diagnostics.DefaultTraceListener.WriteLine#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.DefaultTraceListener.WriteLine/CS/defaulttracelistener.cs#4)]
+ [!code-vb[System.Diagnostics.DefaultTraceListener.WriteLine#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.DefaultTraceListener.WriteLine/VB/defaulttracelistener.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLine">
+      <MemberSignature Language="C#" Value="public override void WriteLine (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteLine(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.DefaultTraceListener.WriteLine(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">書き込むメッセージ<see langword="OutputDebugString" />と<see cref="M:System.Diagnostics.Debugger.Log(System.Int32,System.String,System.String)" />です。</param>
+        <summary>出力を書き込みます、<see langword="OutputDebugString" />関数および、<see cref="M:System.Diagnostics.Debugger.Log(System.Int32,System.String,System.String)" />メソッド、後にキャリッジ リターンとライン フィード (\r\n) です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の行終端記号は、キャリッジ リターンとライン フィード (\r\n) です。  
+  
+ については、Win32`OutputDebugString`関数をデバッグ プラットフォーム SDK または MSDN を参照してください。  
+  
+ このメソッドを設定、<xref:System.Diagnostics.TraceListener.NeedIndent%2A>プロパティを`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、関数の結果を書式化してを使用して、<xref:System.Diagnostics.DefaultTraceListener.WriteLine%28System.String%29>メソッドへのメッセージの最後の部分を書き込む、<xref:System.Diagnostics.DefaultTraceListener>です。  
+  
+ [!code-csharp[System.Diagnostics.DefaultTraceListener.WriteLine#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.DefaultTraceListener.WriteLine/CS/defaulttracelistener.cs#4)]
+ [!code-vb[System.Diagnostics.DefaultTraceListener.WriteLine#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.DefaultTraceListener.WriteLine/VB/defaulttracelistener.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

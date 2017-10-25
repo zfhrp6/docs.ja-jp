@@ -1,0 +1,77 @@
+<Type Name="DesignerActionTextItem" FullName="System.ComponentModel.Design.DesignerActionTextItem">
+  <TypeSignature Language="C#" Value="public class DesignerActionTextItem : System.ComponentModel.Design.DesignerActionItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DesignerActionTextItem extends System.ComponentModel.Design.DesignerActionItem" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.DesignerActionTextItem" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Design.DesignerActionItem</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>スマート タグ パネルで静的なテキスト アイテムを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignerActionTextItem>クラス スマート タグ パネルで静的なテキストの個々 の項目を表します。 呼び出しからグループを返すことで、パネルを形成する関連付けられている個々 の項目、<xref:System.ComponentModel.Design.DesignerActionList.GetSortedActionItems%2A>メソッドです。  
+  
+ ほとんどの場合、静的なテキスト項目を使用して、パネルにわかりやすいラベルを作成できます。 静的なテキスト項目をクリックしても、処理は行われません。 派生型<xref:System.ComponentModel.Design.DesignerActionHeaderItem>は通常のカテゴリを区切るためのラベルを作成に使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のコレクションを作成する方法を示します<xref:System.ComponentModel.Design.DesignerActionItem>オブジェクト。  
+  
+ スマート タグを実装する完全な例を参照してください。[する方法: Windows フォームのコンポーネントにスマート タグを添付](http://msdn.microsoft.com/library/42cc4a0c-9ab3-47e1-93b8-03b6a6ccf233)です。  
+  
+ [!code-csharp[System.ComponentModel.Design.DesignerAction.AddSmartTagsToWFComponent#7](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.Design.DesignerAction.AddSmartTagsToWFComponent/CS/smarttags.cs#7)]
+ [!code-vb[System.ComponentModel.Design.DesignerAction.AddSmartTagsToWFComponent#7](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.Design.DesignerAction.AddSmartTagsToWFComponent/VB/smarttags.vb#7)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DesignerActionTextItem (string displayName, string category);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string displayName, string category) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerActionTextItem.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="displayName" Type="System.String" />
+        <Parameter Name="category" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="displayName">この項目のパネルのテキストです。</param>
+        <param name="category">パネルに類似した項目をグループ化するためのカテゴリ。</param>
+        <summary><see cref="T:System.ComponentModel.Design.DesignerActionTextItem" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignerActionTextItem.%23ctor%2A>コンス トラクターのセット、<xref:System.ComponentModel.Design.DesignerActionItem.Description%2A>プロパティを`null`です。  
+  
+ 方法の詳細については`category`をパネルに項目をグループ化を参照してパラメーターを使用、<xref:System.ComponentModel.Design.DesignerActionList.GetSortedActionItems%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のコレクションを作成する方法を示します<xref:System.ComponentModel.Design.DesignerActionItem>オブジェクト。  
+  
+ スマート タグを実装する完全な例を参照してください。[する方法: Windows フォームのコンポーネントにスマート タグを添付](http://msdn.microsoft.com/library/42cc4a0c-9ab3-47e1-93b8-03b6a6ccf233)です。  
+  
+ [!code-csharp[System.ComponentModel.Design.DesignerAction.AddSmartTagsToWFComponent#7](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.Design.DesignerAction.AddSmartTagsToWFComponent/CS/smarttags.cs#7)]
+ [!code-vb[System.ComponentModel.Design.DesignerAction.AddSmartTagsToWFComponent#7](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.Design.DesignerAction.AddSmartTagsToWFComponent/VB/smarttags.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,82 @@
+<Type Name="ComboBoxStyle" FullName="System.Windows.Forms.ComboBoxStyle">
+  <TypeSignature Language="C#" Value="public enum ComboBoxStyle" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ComboBoxStyle extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ComboBoxStyle" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>指定します、<see cref="T:System.Windows.Forms.ComboBox" />スタイル。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ComboBox.DropDownStyle%2A>プロパティ一覧が常に表示されるかどうか、またはドロップダウン リストで、一覧を表示するかどうかを指定します。 <xref:System.Windows.Forms.ComboBox.DropDownStyle%2A>もプロパティでは、テキストの部分を編集できるかどうかを指定します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、初期化、<xref:System.Windows.Forms.ComboBox>コントロールを設定して、<xref:System.Windows.Forms.ComboBox.DropDownStyle%2A?displayProperty=nameWithType>プロパティを<xref:System.Windows.Forms.ComboBoxStyle>値。  
+  
+ [!code-cpp[System.Windows.Forms.ComboBoxFindString#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxFindString/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ComboBoxFindString#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxFindString/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ComboBoxFindString#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxFindString/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DropDown">
+      <MemberSignature Language="C#" Value="DropDown" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.ComboBoxStyle DropDown = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ComboBoxStyle.DropDown" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ComboBoxStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>下向きの矢印をクリックして、一覧が表示されること、およびテキスト部分が編集可能なを指定します。 つまり、ユーザーが新しい値を入力することができ、一覧で、既存の値を選択すると制限はありません。 この設定を使用する場合、<see cref="F:System.Windows.Forms.AutoCompleteMode.Append" />の値<see cref="P:System.Windows.Forms.ComboBox.AutoCompleteMode" />と同じ働き、<see cref="F:System.Windows.Forms.AutoCompleteMode.SuggestAppend" />値。 これは、既定のスタイルです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DropDownList">
+      <MemberSignature Language="C#" Value="DropDownList" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.ComboBoxStyle DropDownList = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ComboBoxStyle.DropDownList" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ComboBoxStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>下向きの矢印をクリックして、一覧が表示されていると、テキストの部分が編集可能でないことを指定します。 これは、ユーザーが新しい値を入力できないことを意味します。 リスト内の既存の値のみを選択することができます。 場合にのみ一覧に表示されます<see cref="P:System.Windows.Forms.ComboBox.AutoCompleteMode" />は<see cref="F:System.Windows.Forms.AutoCompleteMode.Suggest" />または<see cref="F:System.Windows.Forms.AutoCompleteMode.SuggestAppend" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Simple">
+      <MemberSignature Language="C#" Value="Simple" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.ComboBoxStyle Simple = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ComboBoxStyle.Simple" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ComboBoxStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一覧は常に表示するテキストの部分が編集可能なことを指定します。 つまり、ユーザーが新しい値を入力することができ、一覧で、既存の値を選択すると制限はありません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

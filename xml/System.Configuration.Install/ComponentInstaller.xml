@@ -1,0 +1,113 @@
+<Type Name="ComponentInstaller" FullName="System.Configuration.Install.ComponentInstaller">
+  <TypeSignature Language="C#" Value="public abstract class ComponentInstaller : System.Configuration.Install.Installer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ComponentInstaller extends System.Configuration.Install.Installer" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.Install.ComponentInstaller" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.Install</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.Install.Installer</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>インストール時に使用するコンポーネントからプロパティをコピーするインストーラーを指定します。</summary>
+    <remarks>To be added.</remarks>
+    <block subset="none" type="overrides">
+      <para>継承する場合<see cref="T:System.Configuration.Install.ComponentInstaller" />、オーバーライドする必要があります、<see cref="M:System.Configuration.Install.ComponentInstaller.CopyFromComponent(System.ComponentModel.IComponent)" />メソッド、通常、オーバーライドして、<see cref="M:System.Configuration.Install.Installer.Install(System.Collections.IDictionary)" />と<see cref="M:System.Configuration.Install.Installer.Uninstall(System.Collections.IDictionary)" />メソッドです。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ComponentInstaller ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Install.ComponentInstaller.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Configuration.Install.ComponentInstaller" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyFromComponent">
+      <MemberSignature Language="C#" Value="public abstract void CopyFromComponent (System.ComponentModel.IComponent component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyFromComponent(class System.ComponentModel.IComponent component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Install.ComponentInstaller.CopyFromComponent(System.ComponentModel.IComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="component">コピー元コンポーネントです。</param>
+        <summary>派生クラスでオーバーライドされると、コピーに必要なすべてのプロパティは、指定されたコンポーネントから時間をインストールします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インストーラーは、ライブのコンポーネントから入手できるすべての情報を取得し、インストール時に使用できるように保存する必要があります。  
+  
+   
+  
+## Examples  
+ 次の例は、クラスを定義`MyInstallClass`、これは、イベント ログを作成およびコピー ログ イベントのプロパティをコンポーネントを<xref:System.Diagnostics.EventLogInstaller>です。 また、確認するかどうか、<xref:System.ServiceProcess.ServiceInstaller>は同じ種類とインストールの実行、<xref:System.Diagnostics.EventLogInstaller>です。  
+  
+ [!code-cpp[ComponentInstaller_CopyFromComponent#1](~/samples/snippets/cpp/VS_Snippets_CLR/ComponentInstaller_CopyFromComponent/CPP/componentinstaller_copyfromcomponent.cpp#1)]
+ [!code-csharp[ComponentInstaller_CopyFromComponent#1](~/samples/snippets/csharp/VS_Snippets_CLR/ComponentInstaller_CopyFromComponent/CS/componentinstaller_copyfromcomponent.cs#1)]
+ [!code-vb[ComponentInstaller_CopyFromComponent#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ComponentInstaller_CopyFromComponent/VB/componentinstaller_copyfromcomponent.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEquivalentInstaller">
+      <MemberSignature Language="C#" Value="public virtual bool IsEquivalentInstaller (System.Configuration.Install.ComponentInstaller otherInstaller);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsEquivalentInstaller(class System.Configuration.Install.ComponentInstaller otherInstaller) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Install.ComponentInstaller.IsEquivalentInstaller(System.Configuration.Install.ComponentInstaller)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="otherInstaller" Type="System.Configuration.Install.ComponentInstaller" />
+      </Parameters>
+      <Docs>
+        <param name="otherInstaller">比較対象のインストーラーです。</param>
+        <summary>指定したインストーラーがインストーラーと同じオブジェクトをインストールするかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />このインストーラーとで指定された場合、<paramref name="otherInstaller" />パラメーターが同じオブジェクトをインストール、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、<xref:System.Configuration.Install.ComponentInstaller.IsEquivalentInstaller%2A>返します`true`このインストーラーとで指定された場合にのみ、`otherInstaller`パラメーターが同じオブジェクトをインストールします。 このような場合は、呼び出し、<xref:System.Configuration.Install.Installer.Install%2A>または<xref:System.Configuration.Install.Installer.Uninstall%2A>メソッドを同じシステムの状態のいずれかのインストーラー結果。  
+  
+   
+  
+## Examples  
+ 次の例は、クラスを定義`MyInstallClass`、これは、イベント ログを作成およびコピー ログ イベントのプロパティをコンポーネントを<xref:System.Diagnostics.EventLogInstaller>オブジェクト。 また、確認するかどうか<xref:System.ServiceProcess.ServiceInstaller>オブジェクトが同じ種類のとしてのインストールを処理できる<xref:System.Diagnostics.EventLogInstaller>です。  
+  
+ [!code-cpp[ComponentInstaller_CopyFromComponent#2](~/samples/snippets/cpp/VS_Snippets_CLR/ComponentInstaller_CopyFromComponent/CPP/componentinstaller_copyfromcomponent.cpp#2)]
+ [!code-csharp[ComponentInstaller_CopyFromComponent#2](~/samples/snippets/csharp/VS_Snippets_CLR/ComponentInstaller_CopyFromComponent/CS/componentinstaller_copyfromcomponent.cs#2)]
+ [!code-vb[ComponentInstaller_CopyFromComponent#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/ComponentInstaller_CopyFromComponent/VB/componentinstaller_copyfromcomponent.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

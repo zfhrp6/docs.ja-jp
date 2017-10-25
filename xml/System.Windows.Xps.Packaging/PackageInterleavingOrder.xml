@@ -1,0 +1,89 @@
+<Type Name="PackageInterleavingOrder" FullName="System.Windows.Xps.Packaging.PackageInterleavingOrder">
+  <TypeSignature Language="C#" Value="public enum PackageInterleavingOrder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed PackageInterleavingOrder extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Xps.Packaging.PackageInterleavingOrder" />
+  <AssemblyInfo>
+    <AssemblyName>ReachFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>パッケージの主要な部分がストリームされる順序を指定する値を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ResourceFirst を指定すると、各依存オブジェクトが依存しているオブジェクトの前にシリアル化されます。 ResourceLast を指定する場合、リソースの使用方法については、リソースの前にストリーミングされます。 テキストを表示する最初のイメージを開くときに、ユーザーが読み取れるように、ImagesLast メンバーを指定します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ImagesLast">
+      <MemberSignature Language="C#" Value="ImagesLast" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Xps.Packaging.PackageInterleavingOrder ImagesLast = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Xps.Packaging.PackageInterleavingOrder.ImagesLast" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.PackageInterleavingOrder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ストリーミングの順序は、: (イメージ) 以外のリソース、ページ、ドキュメント、ドキュメント シーケンス、および画像。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Xps.Packaging.PackageInterleavingOrder None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Xps.Packaging.PackageInterleavingOrder.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.PackageInterleavingOrder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ストリーミングの順序は、パッケージ化システムによって指定されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ResourceFirst">
+      <MemberSignature Language="C#" Value="ResourceFirst" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Xps.Packaging.PackageInterleavingOrder ResourceFirst = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Xps.Packaging.PackageInterleavingOrder.ResourceFirst" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.PackageInterleavingOrder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ストリーミングの順序: リソース、ページ、ドキュメント、およびドキュメント シーケンス。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ResourceLast">
+      <MemberSignature Language="C#" Value="ResourceLast" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Xps.Packaging.PackageInterleavingOrder ResourceLast = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Xps.Packaging.PackageInterleavingOrder.ResourceLast" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.PackageInterleavingOrder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ストリーミングの順序: シーケンス、ドキュメント、ページ、およびリソースを文書化します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

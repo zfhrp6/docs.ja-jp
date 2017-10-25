@@ -1,0 +1,87 @@
+<Type Name="StoryBreak" FullName="System.Windows.Documents.DocumentStructures.StoryBreak">
+  <TypeSignature Language="C#" Value="public class StoryBreak : System.Windows.Documents.DocumentStructures.BlockElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StoryBreak extends System.Windows.Documents.DocumentStructures.BlockElement" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Documents.DocumentStructures.StoryBreak" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Documents.DocumentStructures.BlockElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>開始または 1 つ以上の構成済みのストーリーの終了を識別<see cref="T:System.Windows.Documents.DocumentStructures.StoryFragment" />要素。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Documents.DocumentStructures.StoryBreak>の子要素は、必ず、<xref:System.Windows.Documents.DocumentStructures.StoryFragment>です。  さらに、<xref:System.Windows.Documents.DocumentStructures.StoryBreak>だけは、最初の子、最後の子、またはの最初と最後の子要素、<xref:System.Windows.Documents.DocumentStructures.StoryFragment>です。  場所、<xref:System.Windows.Documents.DocumentStructures.StoryBreak>内の要素、<xref:System.Windows.Documents.DocumentStructures.StoryFragment>ストーリーが追加のフラグメントに含まれている場合、追加フラグメントまたはいずれかの前に次の現在のフラグメントを示します。  
+  
+ A<xref:System.Windows.Documents.DocumentStructures.StoryBreak>の最初の要素として、<xref:System.Windows.Documents.DocumentStructures.StoryFragment>ストーリーの開始を示します。  
+  
+```  
+<!-- Fragment 1 -->  
+<StoryFragment>  
+  <StoryBreak />   <!-- Identifies the start of a story when          -->  
+                   <!-- immediately after an opening <StoryFragment>. -->  
+  <ParagraphStructure>  
+    <NamedElement NameReference="a" />  
+    <NamedElement NameReference="b" />  
+  </ParagraphStructure>  
+</StoryFragment>   <!-- Story continues in the next <StoryFragment>.  -->  
+```  
+  
+ A<xref:System.Windows.Documents.DocumentStructures.StoryBreak>の最後の要素として、<xref:System.Windows.Documents.DocumentStructures.StoryFragment>ストーリーの終了を示します。  
+  
+```  
+<!-- Fragment 2 -->  
+<StoryFragment>    <!-- Story continued from prior <StoryFragment>.    -->  
+  <ParagraphStructure>    
+    <NamedElement NameReference="c" />  
+  </ParagraphStructure>  
+  <StoryBreak />   <!-- Identifies the end of a story when             -->  
+                   <!-- immediately before a closing </StoryFragment>. -->  
+</StoryFragment>  
+```  
+  
+ 1 つに含まれているストーリー <xref:System.Windows.Documents.DocumentStructures.StoryFragment> 2 つが<xref:System.Windows.Documents.DocumentStructures.StoryBreak>フラグメントの最初と最後の子要素としての要素。  
+  
+```  
+<!-- Fragments 1 and 2 Merged -->  
+<ParagraphStructure>  
+  <NamedElement NameReference="a" />  
+  <NamedElement NameReference="b" />  
+  <NamedElement NameReference="c" />  
+</ParagraphStructure>  
+```  
+  
+ <xref:System.Windows.Documents.DocumentStructures.StoryFragment>1 つのページに含まれているすべての要素は先頭し、末尾に<xref:System.Windows.Documents.DocumentStructures.StoryBreak>要素、コンテンツが 1 つのフラグメントに完全に含まれているためです。  
+  
+ 位置<xref:System.Windows.Documents.DocumentStructures.StoryBreak>内の要素、<xref:System.Windows.Documents.DocumentStructures.StoryFragment>は、ドキュメント内の前方または逆引きのいずれかの方向にコンテンツにアクセスする場合に役立ちます。 たとえば場合の結合フラグメント順方向順序は、<xref:System.Windows.Documents.DocumentStructures.StoryFragment>で終わること、<xref:System.Windows.Documents.DocumentStructures.StoryBreak>ストーリーおよびがあるの終了がマージすることを示します。  同様にいつマージ ストーリー フラグメントを逆の順序で、<xref:System.Windows.Documents.DocumentStructures.StoryFragment>で始まる、<xref:System.Windows.Documents.DocumentStructures.StoryBreak>があるストーリーの先頭にマージする前のフラグメントがないことを示します。  
+  
+ 順方向または逆方向にストーリー フラグメントを処理する機能は、多くのアプリケーションで重要です。  改ページにまたがる段落を複数のストーリー フラグメントに分割するなど、ページごとに 1 つのフラグメント。  選択し、段落全体をクリップボードにコピーを 3 回クリック機能を提供するユーザー インターフェイスは、段落複数ページにまたがる場合は、複数のストーリー フラグメントをマージできる必要があります。  さらにユーザー 3 回クリックした場合、最初のページで開始する段落の一部で、アプリケーションする必要がありますを識別する、<xref:System.Windows.Documents.DocumentStructures.StoryFragment>で始まる、<xref:System.Windows.Documents.DocumentStructures.StoryBreak>が付いていませんが、<xref:System.Windows.Documents.DocumentStructures.StoryBreak>です。  これはことを示すため、<xref:System.Windows.Documents.DocumentStructures.StoryFragment>含まれている次のページ、現在フラグメントの末尾に追加します。  同様に、ユーザー 3 回クリックした場合、最後のページにある段落の一部で、アプリケーションする必要があることを識別、<xref:System.Windows.Documents.DocumentStructures.StoryFragment>で終わる、<xref:System.Windows.Documents.DocumentStructures.StoryBreak>で始まっていませんが、<xref:System.Windows.Documents.DocumentStructures.StoryBreak>です。  これはことを示すため、<xref:System.Windows.Documents.DocumentStructures.StoryFragment>に含まれている前ページが読み込まれ、現在のフラグメントの開始に追加する必要があります。  アプリケーションが 3 つまたは複数のページにまたがる大きな段落の大文字と小文字の前方および後方の方向の処理もあり、内部のページでは、ユーザーの選択がポイントです。  
+  
+ 以降、<xref:System.Windows.Documents.DocumentStructures.StoryFragment>が単一のページの使用に制限されます<xref:System.Windows.Documents.DocumentStructures.StoryBreak>要素を使用する各<xref:System.Windows.Documents.DocumentStructures.StoryFragment>整形式 XML を含んでいるが、ドキュメント全体、まだ階層構造にします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StoryBreak ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.DocumentStructures.StoryBreak.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Documents.DocumentStructures.StoryBreak" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

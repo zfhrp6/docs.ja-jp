@@ -1,0 +1,543 @@
+<Type Name="DataGridViewRowPostPaintEventArgs" FullName="System.Windows.Forms.DataGridViewRowPostPaintEventArgs">
+  <TypeSignature Language="C#" Value="public class DataGridViewRowPostPaintEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridViewRowPostPaintEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewRowPostPaintEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Forms.DataGridView.RowPostPaint" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridView.RowPostPaint>に行が描画された後にイベントが発生した、<xref:System.Windows.Forms.DataGridView>コントロール。 <xref:System.Windows.Forms.DataGridView.RowPostPaint>行内のセルが描画された後に、行の外観を手動で調整できます。 これは、行をカスタマイズする場合に便利です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、処理する方法を示します、<xref:System.Windows.Forms.DataGridView.RowPostPaint>行全体にわたるセルのコンテンツを作成するイベントです。 このコード例に示されている例の一部である[する方法: Windows フォーム DataGridView コントロールで行の外観をカスタマイズ](~/docs/framework/winforms/controls/customize-the-appearance-of-rows-in-the-datagrid.md)です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewRowPainting#30](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewRowPainting/CS/datagridviewrowpainting.cs#30)]
+ [!code-vb[System.Windows.Forms.DataGridViewRowPainting#30](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewRowPainting/VB/datagridviewrowpainting.vb#30)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridViewRowPostPaintEventArgs (System.Windows.Forms.DataGridView dataGridView, System.Drawing.Graphics graphics, System.Drawing.Rectangle clipBounds, System.Drawing.Rectangle rowBounds, int rowIndex, System.Windows.Forms.DataGridViewElementStates rowState, string errorText, System.Windows.Forms.DataGridViewCellStyle inheritedRowStyle, bool isFirstDisplayedRow, bool isLastVisibleRow);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.DataGridView dataGridView, class System.Drawing.Graphics graphics, valuetype System.Drawing.Rectangle clipBounds, valuetype System.Drawing.Rectangle rowBounds, int32 rowIndex, valuetype System.Windows.Forms.DataGridViewElementStates rowState, string errorText, class System.Windows.Forms.DataGridViewCellStyle inheritedRowStyle, bool isFirstDisplayedRow, bool isLastVisibleRow) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.#ctor(System.Windows.Forms.DataGridView,System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Rectangle,System.Int32,System.Windows.Forms.DataGridViewElementStates,System.String,System.Windows.Forms.DataGridViewCellStyle,System.Boolean,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="dataGridView" Type="System.Windows.Forms.DataGridView" />
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="clipBounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="rowBounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+        <Parameter Name="rowState" Type="System.Windows.Forms.DataGridViewElementStates" />
+        <Parameter Name="errorText" Type="System.String" />
+        <Parameter Name="inheritedRowStyle" Type="System.Windows.Forms.DataGridViewCellStyle" />
+        <Parameter Name="isFirstDisplayedRow" Type="System.Boolean" />
+        <Parameter Name="isLastVisibleRow" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="dataGridView"><see cref="T:System.Windows.Forms.DataGridView" />描画される行を所有しています。</param>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />描画に使用される、<see cref="T:System.Windows.Forms.DataGridViewRow" />です。</param>
+        <param name="clipBounds">描画が必要な <see cref="T:System.Windows.Forms.DataGridView" /> の領域を表す <see cref="T:System.Drawing.Rectangle" />。</param>
+        <param name="rowBounds">A<see cref="T:System.Drawing.Rectangle" />の境界を格納している、<see cref="T:System.Windows.Forms.DataGridViewRow" />描画されます。</param>
+        <param name="rowIndex">描画されるセルの行インデックス。</param>
+        <param name="rowState">ビットごとの組み合わせ<see cref="T:System.Windows.Forms.DataGridViewElementStates" />行の状態を指定する値。</param>
+        <param name="errorText">行に関連付けられているエラー メッセージ。</param>
+        <param name="inheritedRowStyle">A<see cref="T:System.Windows.Forms.DataGridViewCellStyle" />行に関する書式とスタイル情報を格納します。</param>
+        <param name="isFirstDisplayedRow">
+          <see langword="true" />現在の行は、最初の行に表示されているかどうかを示すために、 <see cref="T:System.Windows.Forms.DataGridView" />、それ以外の<see langword="false" />します。</param>
+        <param name="isLastVisibleRow">
+          <see langword="true" />現在の行の最後の行かどうかを示すために、<see cref="T:System.Windows.Forms.DataGridView" />を持つ、<see cref="P:System.Windows.Forms.DataGridViewRow.Visible" />プロパティに設定<see langword="true" />、それ以外の<see langword="false" />します。</param>
+        <summary><see cref="T:System.Windows.Forms.DataGridViewRowPostPaintEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dataGridView" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="graphics" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="inheritedRowStyle" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ClipBounds">
+      <MemberSignature Language="C#" Value="public System.Drawing.Rectangle ClipBounds { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Rectangle ClipBounds" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.ClipBounds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の領域では、<see cref="T:System.Windows.Forms.DataGridView" />再描画する必要があります。</summary>
+        <value>A<see cref="T:System.Drawing.Rectangle" />の領域を表す、<see cref="T:System.Windows.Forms.DataGridView" />再描画する必要があります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.ClipBounds%2A>プロパティの領域を表す、<xref:System.Windows.Forms.DataGridView>再描画する必要があります。 たとえば、ユーザーは、全体をカバー<xref:System.Windows.Forms.DataGridView>別のウィンドウで、し、発見および<xref:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.ClipBounds%2A>全体を表す<xref:System.Windows.Forms.DataGridView>です。 ユーザーの小さな領域をカバーする場合、 <xref:System.Windows.Forms.DataGridView> 、し、発見および<xref:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.ClipBounds%2A>カバーされた小さな領域を表します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.DataGridView.RowPostPaint?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.DataGridView>という`DataGridView1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.DataGridView.RowPostPaint?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#355](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#355)]
+ [!code-vb[System.Windows.Forms.EventExamples#355](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#355)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawFocus">
+      <MemberSignature Language="C#" Value="public void DrawFocus (System.Drawing.Rectangle bounds, bool cellsPaintSelectionBackground);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawFocus(valuetype System.Drawing.Rectangle bounds, bool cellsPaintSelectionBackground) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.DrawFocus(System.Drawing.Rectangle,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="cellsPaintSelectionBackground" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="bounds">A<see cref="T:System.Drawing.Rectangle" />対象領域を指定します。</param>
+        <param name="cellsPaintSelectionBackground">
+          <see langword="true" />使用する、<see cref="P:System.Windows.Forms.DataGridViewCellStyle.SelectionBackColor" />のプロパティ、<see cref="P:System.Windows.Forms.DataGridViewRow.InheritedStyle" />フォーカス四角形の色を決定するプロパティ<see langword="false" />を使用する、<see cref="P:System.Windows.Forms.DataGridViewCellStyle.BackColor" />のプロパティ、<see cref="P:System.Windows.Forms.DataGridViewRow.InheritedStyle" />プロパティです。</param>
+        <summary>指定された境界の周囲フォーカス四角形を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.DrawFocus%2A>メソッドを描画するとき、<xref:System.Windows.Forms.DataGridViewRow>し、そのセルの内容を自分でします。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.DrawFocus%2A>可視の行のセルの周り、フォーカスを描画するメソッド。 この例で使用できる例の一部である[する方法: Windows フォーム DataGridView コントロールで行の外観をカスタマイズ](~/docs/framework/winforms/controls/customize-the-appearance-of-rows-in-the-datagrid.md)です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewRowPainting#30](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewRowPainting/CS/datagridviewrowpainting.cs#30)]
+ [!code-vb[System.Windows.Forms.DataGridViewRowPainting#30](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewRowPainting/VB/datagridviewrowpainting.vb#30)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.RowIndex" />0 の行の数より大きいか小さい、<see cref="T:System.Windows.Forms.DataGridView" />から 1 を引いたコントロール。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ErrorText">
+      <MemberSignature Language="C#" Value="public string ErrorText { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ErrorText" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.ErrorText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のエラー メッセージを表す文字列を取得<see cref="T:System.Windows.Forms.DataGridViewRow" />です。</summary>
+        <value>現在のエラー メッセージを表す文字列<see cref="T:System.Windows.Forms.DataGridViewRow" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.ErrorText%2A>プロパティは、現在の行として同じ<xref:System.Windows.Forms.DataGridViewRow.ErrorText%2A?displayProperty=nameWithType>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.DataGridView.RowPostPaint?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.DataGridView>という`DataGridView1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.DataGridView.RowPostPaint?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#355](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#355)]
+ [!code-vb[System.Windows.Forms.EventExamples#355](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#355)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Graphics">
+      <MemberSignature Language="C#" Value="public System.Drawing.Graphics Graphics { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Graphics Graphics" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.Graphics" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Graphics</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="T:System.Drawing.Graphics" /> 、現在の描画に使用される<see cref="T:System.Windows.Forms.DataGridViewRow" />です。</summary>
+        <value><see cref="T:System.Drawing.Graphics" /> 、現在の描画に使用される<see cref="T:System.Windows.Forms.DataGridViewRow" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Graphics>クラスには、プロパティとカスタムの描画に便利なメソッドが用意されています。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.Graphics%2A>プロパティをカスタムの背景を描画します。 コードを実際に使用しますが、<xref:System.Windows.Forms.DataGridViewRowPrePaintEventArgs.Graphics%2A?displayProperty=nameWithType>プロパティは、このプロパティとほぼ同じです、<xref:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.Graphics%2A>プロパティ<xref:System.Windows.Forms.DataGridViewRowPostPaintEventArgs>です。 変数、`e`の型は<xref:System.Windows.Forms.DataGridViewRowPrePaintEventArgs>します。 このコード例に示されている例の一部である[する方法: Windows フォーム DataGridView コントロールで行の外観をカスタマイズ](~/docs/framework/winforms/controls/customize-the-appearance-of-rows-in-the-datagrid.md)です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewRowPainting#25](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewRowPainting/CS/datagridviewrowpainting.cs#25)]
+ [!code-vb[System.Windows.Forms.DataGridViewRowPainting#25](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewRowPainting/VB/datagridviewrowpainting.vb#25)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InheritedRowStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataGridViewCellStyle InheritedRowStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataGridViewCellStyle InheritedRowStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.InheritedRowStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewCellStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在に適用されるセルのスタイルを取得<see cref="T:System.Windows.Forms.DataGridViewRow" />です。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataGridViewCellStyle" />現在に適用されるセルのスタイルを格納している<see cref="T:System.Windows.Forms.DataGridViewRow" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.InheritedRowStyle%2A>プロパティには、現在の行と同じ値が含まれています。<xref:System.Windows.Forms.DataGridViewRow.InheritedStyle%2A>プロパティです。 直接アクセスする、<xref:System.Windows.Forms.DataGridViewRow>で、<xref:System.Windows.Forms.DataGridView>パフォーマンスに影響を与えることができます。 使用して<xref:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.InheritedRowStyle%2A>で、<xref:System.Windows.Forms.DataGridView.RowPostPaint>イベント行の共有を解除を回避し、最適なパフォーマンスを維持します。  
+  
+ <xref:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.InheritedRowStyle%2A>プロパティは読み取り専用です。 プロパティを設定できますが、<xref:System.Windows.Forms.DataGridViewCellStyle>を介して取得、<xref:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.InheritedRowStyle%2A>プロパティ、新しい設定には影響はありません。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.InheritedRowStyle%2A>コンテンツの描画に使用する色を決定します。 変数、`e`の型は<xref:System.Windows.Forms.DataGridViewRowPostPaintEventArgs>します。 このコード例に示されている例の一部である[する方法: Windows フォーム DataGridView コントロールで行の外観をカスタマイズ](~/docs/framework/winforms/controls/customize-the-appearance-of-rows-in-the-datagrid.md)です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewRowPainting#34](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewRowPainting/CS/datagridviewrowpainting.cs#34)]
+ [!code-vb[System.Windows.Forms.DataGridViewRowPainting#34](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewRowPainting/VB/datagridviewrowpainting.vb#34)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFirstDisplayedRow">
+      <MemberSignature Language="C#" Value="public bool IsFirstDisplayedRow { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFirstDisplayedRow" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.IsFirstDisplayedRow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の行が最初の行に表示されるかどうかを示す値を取得、<see cref="T:System.Windows.Forms.DataGridView" />です。</summary>
+        <value>
+          <see langword="true" />塗りつぶされている行は、現在最初の行に表示されるかどうか、 <see cref="T:System.Windows.Forms.DataGridView" />、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.DataGridView.RowPostPaint?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.DataGridView>という`DataGridView1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.DataGridView.RowPostPaint?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#355](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#355)]
+ [!code-vb[System.Windows.Forms.EventExamples#355](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#355)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLastVisibleRow">
+      <MemberSignature Language="C#" Value="public bool IsLastVisibleRow { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsLastVisibleRow" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.IsLastVisibleRow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の行が、最後に表示される行に表示されるかどうかを示す値を取得、<see cref="T:System.Windows.Forms.DataGridView" />です。</summary>
+        <value>
+          <see langword="true" />現在の行が最後の行の場合、<see cref="T:System.Windows.Forms.DataGridView" />を持つ、<see cref="P:System.Windows.Forms.DataGridViewRow.Visible" />プロパティに設定<see langword="true" />、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.DataGridView.RowPostPaint?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.DataGridView>という`DataGridView1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.DataGridView.RowPostPaint?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#355](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#355)]
+ [!code-vb[System.Windows.Forms.EventExamples#355](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#355)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PaintCells">
+      <MemberSignature Language="C#" Value="public void PaintCells (System.Drawing.Rectangle clipBounds, System.Windows.Forms.DataGridViewPaintParts paintParts);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void PaintCells(valuetype System.Drawing.Rectangle clipBounds, valuetype System.Windows.Forms.DataGridViewPaintParts paintParts) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.PaintCells(System.Drawing.Rectangle,System.Windows.Forms.DataGridViewPaintParts)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clipBounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="paintParts" Type="System.Windows.Forms.DataGridViewPaintParts" />
+      </Parameters>
+      <Docs>
+        <param name="clipBounds">A<see cref="T:System.Drawing.Rectangle" />の領域を指定する、<see cref="T:System.Windows.Forms.DataGridView" />描画します。</param>
+        <param name="paintParts">ビットごとの組み合わせ<see cref="T:System.Windows.Forms.DataGridViewPaintParts" />を描画する部分を指定する値。</param>
+        <summary>指定した範囲内の領域の指定されたセルの部分を描画します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.RowIndex" />0 の行の数より大きいか小さい、<see cref="T:System.Windows.Forms.DataGridView" />から 1 を引いたコントロール。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PaintCellsBackground">
+      <MemberSignature Language="C#" Value="public void PaintCellsBackground (System.Drawing.Rectangle clipBounds, bool cellsPaintSelectionBackground);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void PaintCellsBackground(valuetype System.Drawing.Rectangle clipBounds, bool cellsPaintSelectionBackground) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.PaintCellsBackground(System.Drawing.Rectangle,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clipBounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="cellsPaintSelectionBackground" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="clipBounds">A<see cref="T:System.Drawing.Rectangle" />の領域を指定する、<see cref="T:System.Windows.Forms.DataGridView" />描画します。</param>
+        <param name="cellsPaintSelectionBackground">
+          <see langword="true" />色で、指定した範囲の背景を描画する、<see cref="P:System.Windows.Forms.DataGridViewCellStyle.SelectionBackColor" />のプロパティ、<see cref="P:System.Windows.Forms.DataGridViewRow.InheritedStyle" />です。<see langword="false" />の色で、指定した範囲の背景を描画する、<see cref="P:System.Windows.Forms.DataGridViewCellStyle.BackColor" />のプロパティ、<see cref="P:System.Windows.Forms.DataGridViewRow.InheritedStyle" />です。</param>
+        <summary>指定した範囲内の領域のセルの背景を描画します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.RowIndex" />0 の行の数より大きいか小さい、<see cref="T:System.Windows.Forms.DataGridView" />から 1 を引いたコントロール。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PaintCellsContent">
+      <MemberSignature Language="C#" Value="public void PaintCellsContent (System.Drawing.Rectangle clipBounds);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void PaintCellsContent(valuetype System.Drawing.Rectangle clipBounds) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.PaintCellsContent(System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clipBounds" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="clipBounds">A<see cref="T:System.Drawing.Rectangle" />の領域を指定する、<see cref="T:System.Windows.Forms.DataGridView" />描画します。</param>
+        <summary>指定した範囲内の領域のセルの内容を描画します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.RowIndex" />0 の行の数より大きいか小さい、<see cref="T:System.Windows.Forms.DataGridView" />から 1 を引いたコントロール。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PaintHeader">
+      <MemberSignature Language="C#" Value="public void PaintHeader (bool paintSelectionBackground);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void PaintHeader(bool paintSelectionBackground) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.PaintHeader(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="paintSelectionBackground" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="paintSelectionBackground">
+          <see langword="true" />行ヘッダーの色を描画する、<see cref="P:System.Windows.Forms.DataGridViewCellStyle.SelectionBackColor" />のプロパティ、<see cref="P:System.Windows.Forms.DataGridViewRow.InheritedStyle" />です。<see langword="false" />行ヘッダーを描画する、<see cref="P:System.Windows.Forms.DataGridViewCellStyle.BackColor" />の<see cref="P:System.Windows.Forms.DataGridView.RowHeadersDefaultCellStyle" />プロパティです。</param>
+        <summary>現在の行全体のヘッダーを描画<see cref="T:System.Windows.Forms.DataGridViewRow" />です。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.RowIndex" />0 の行の数より大きいか小さい、<see cref="T:System.Windows.Forms.DataGridView" />から 1 を引いたコントロール。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PaintHeader">
+      <MemberSignature Language="C#" Value="public void PaintHeader (System.Windows.Forms.DataGridViewPaintParts paintParts);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void PaintHeader(valuetype System.Windows.Forms.DataGridViewPaintParts paintParts) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.PaintHeader(System.Windows.Forms.DataGridViewPaintParts)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="paintParts" Type="System.Windows.Forms.DataGridViewPaintParts" />
+      </Parameters>
+      <Docs>
+        <param name="paintParts">ビットごとの組み合わせ<see cref="T:System.Windows.Forms.DataGridViewPaintParts" />を描画する部分を指定する値。</param>
+        <summary>現在の行の行ヘッダーの指定した部分を描画します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.RowIndex" />0 の行の数より大きいか小さい、<see cref="T:System.Windows.Forms.DataGridView" />から 1 を引いたコントロール。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RowBounds">
+      <MemberSignature Language="C#" Value="public System.Drawing.Rectangle RowBounds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Rectangle RowBounds" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.RowBounds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の境界を取得<see cref="T:System.Windows.Forms.DataGridViewRow" />です。</summary>
+        <value>A <see cref="T:System.Drawing.Rectangle" /> 、現在の境界を表す<see cref="T:System.Windows.Forms.DataGridViewRow" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 幅、<xref:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.RowBounds%2A>の幅と同じプロパティが、<xref:System.Windows.Forms.DataGridView>です。 内の列の幅を取得、<xref:System.Windows.Forms.DataGridView>を使用して、<xref:System.Windows.Forms.DataGridViewColumnCollection.GetColumnsWidth%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.RowBounds%2A>行に表示されるセルの境界を決定するプロパティです。 このコード例に示されている例の一部である[する方法: Windows フォーム DataGridView コントロールで行の外観をカスタマイズ](~/docs/framework/winforms/controls/customize-the-appearance-of-rows-in-the-datagrid.md)です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewRowPainting#30](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewRowPainting/CS/datagridviewrowpainting.cs#30)]
+ [!code-vb[System.Windows.Forms.DataGridViewRowPainting#30](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewRowPainting/VB/datagridviewrowpainting.vb#30)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowIndex">
+      <MemberSignature Language="C#" Value="public int RowIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RowIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.RowIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のインデックスを取得<see cref="T:System.Windows.Forms.DataGridViewRow" />です。</summary>
+        <value>現在のインデックス<see cref="T:System.Windows.Forms.DataGridViewRow" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 行インデックスは、の現在の行へのアクセスを使用することができます、<xref:System.Windows.Forms.DataGridViewRowCollection>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.RowIndex%2A>現在の行にアクセスするプロパティです。 コードでは、選択した行と 3 番目の列の交差部分にあるセルの値を取得し、行全体にこの値を描画します。 変数、`e`の型は<xref:System.Windows.Forms.DataGridViewRowPostPaintEventArgs>します。 このコード例に示されている例の一部である[する方法: Windows フォーム DataGridView コントロールで行の外観をカスタマイズ](~/docs/framework/winforms/controls/customize-the-appearance-of-rows-in-the-datagrid.md)です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewRowPainting#35](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewRowPainting/CS/datagridviewrowpainting.cs#35)]
+ [!code-vb[System.Windows.Forms.DataGridViewRowPainting#35](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewRowPainting/VB/datagridviewrowpainting.vb#35)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="State">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataGridViewElementStates State { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataGridViewElementStates State" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.State" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewElementStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の状態を取得<see cref="T:System.Windows.Forms.DataGridViewRow" />です。</summary>
+        <value>ビットごとの組み合わせ<see cref="T:System.Windows.Forms.DataGridViewElementStates" />行の状態を指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、行が固定されていること、読み取り専用、または他の状態の間で、選択したかどうかを決定する使用できます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DataGridViewRowPostPaintEventArgs.State%2A>プロパティを現在の行が選択されているかどうかを確認します。 変数、`e`の型は<xref:System.Windows.Forms.DataGridViewRowPostPaintEventArgs>します。 このコード例に示されている例の一部である[する方法: Windows フォーム DataGridView コントロールで行の外観をカスタマイズ](~/docs/framework/winforms/controls/customize-the-appearance-of-rows-in-the-datagrid.md)です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewRowPainting#34](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewRowPainting/CS/datagridviewrowpainting.cs#34)]
+ [!code-vb[System.Windows.Forms.DataGridViewRowPainting#34](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewRowPainting/VB/datagridviewrowpainting.vb#34)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

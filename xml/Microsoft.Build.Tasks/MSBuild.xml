@@ -1,0 +1,419 @@
+<Type Name="MSBuild" FullName="Microsoft.Build.Tasks.MSBuild">
+  <TypeSignature Language="C#" Value="public class MSBuild : Microsoft.Build.Tasks.TaskExtension" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MSBuild extends Microsoft.Build.Tasks.TaskExtension" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Tasks.MSBuild" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Build.Tasks.TaskExtension</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>Microsoft.Build.Framework.RunInMTA</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>実装して、 <c>MSBuild</c>タスク。 使用して、 <c>MSBuild</c>作成してこのタスクを実行するのには、プロジェクト ファイル内の要素。 使用法とパラメーターについては、次を参照してください。 [MSBuild タスク](http://msdn.microsoft.com/library/76577f6c-7669-44ad-a840-363e37a04d34)です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、子プロジェクト ファイルを構築する MSBuild エンジンに渡します"MSBuild"タスクを実装します。  
+  
+ MSBuild タスクをそれらさせた RequestBuilder のではないスレッド上で実行する必要がありますの理由がないために、RunInMTA をマークします。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MSBuild ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.MSBuild.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.Build.Tasks.MSBuild" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="BuildInParallel">
+      <MemberSignature Language="C#" Value="public bool BuildInParallel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool BuildInParallel" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.MSBuild.BuildInParallel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定で、プロジェクトが指定したかどうかを示すブール値、<see cref="P:Microsoft.Build.Tasks.MSBuild.Projects" />プロパティは、可能であれば、並列にビルドします。</summary>
+        <value>
+          <see langword="true" />プロジェクトが指定されている場合、<see cref="P:Microsoft.Build.Tasks.MSBuild.Projects" />可能であれば、それ以外のプロパティが並列でビルドされた<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は `true` です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="public override bool Execute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Execute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.MSBuild.Execute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>MSBuild エンジンに対して、<see cref="P:Microsoft.Build.Tasks.MSBuild.Projects" /> プロパティで指定された場所に 1 つまたは複数のプロジェクト ファイルをビルドするよう指示します。</summary>
+        <returns>
+          すべてのプロジェクトが正常にビルドされた場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Projects">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] Projects { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] Projects" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.MSBuild.Projects" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.Build.Framework.Required</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビルドするプロジェクト ファイルを取得または設定します。</summary>
+        <value>ビルドするプロジェクト ファイル。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="public string[] Properties { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] Properties" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.MSBuild.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>子プロジェクトに対してグローバル プロパティとして適用するプロパティの名前/値ペアのセミコロンで区切られたリストを取得または設定します。</summary>
+        <value>子プロジェクトに対してグローバル プロパティとして適用するプロパティの名前/値ペアのセミコロンで区切られたリスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 持つプロパティの設定に相当する機能はこのパラメーターを指定するときに、 **/property**でビルドするときに切り替えます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="RebaseOutputs">
+      <MemberSignature Language="C#" Value="public bool RebaseOutputs { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RebaseOutputs" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.MSBuild.RebaseOutputs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビルドするプロジェクトからのターゲットの出力項目の相対パスを、呼び出し元プロジェクトからの相対パスに合わせるかどうかを指定するブール値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />出力先の相対パスをビルドするプロジェクトから項目がそのパスに合わせる場合呼び出し元のプロジェクトを基準とします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は `false` です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveProperties">
+      <MemberSignature Language="C#" Value="public string RemoveProperties { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RemoveProperties" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.MSBuild.RemoveProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または削除するグローバル プロパティのセットを設定します。</summary>
+        <value>削除するグローバル プロパティのセットを返します。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="RunEachTargetSeparately">
+      <MemberSignature Language="C#" Value="public bool RunEachTargetSeparately { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RunEachTargetSeparately" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.MSBuild.RunEachTargetSeparately" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を指定するブール値かどうか、[!INCLUDE[vstecmsbuild](~/includes/vstecmsbuild-md.md)]タスクに渡される一覧内の各ターゲットを呼び出します[!INCLUDE[vstecmsbuild](~/includes/vstecmsbuild-md.md)]、一度に 1 つずつの代わりに、同時にします。</summary>
+        <value>
+          <see langword="true" />場合、[!INCLUDE[vstecmsbuild](~/includes/vstecmsbuild-md.md)]タスクに渡される一覧内の各ターゲットを呼び出します[!INCLUDE[vstecmsbuild](~/includes/vstecmsbuild-md.md)]1 つずつです。<see langword="false" />場合、[!INCLUDE[vstecmsbuild](~/includes/vstecmsbuild-md.md)]タスクが同時に、リスト内のすべてのターゲットを呼び出します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定`true`に起動したターゲットが失敗した場合でも、以降のターゲットが呼び出されることを保証します。 それ以外の場合は、ビルド エラーが発生すると、以降のすべてのターゲットの呼び出しは停止されます。 既定値は `false` です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SkipNonexistentProjects">
+      <MemberSignature Language="C#" Value="public string SkipNonexistentProjects { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SkipNonexistentProjects" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.MSBuild.SkipNonexistentProjects" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはディスク上に存在しないプロジェクト ファイルをスキップするかどうかを指定するブール値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、ディスク上に存在しないプロジェクト ファイルはスキップされます。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合は、ディスク上に存在しないプロジェクト ファイルはスキップされません、ビルド エラーが発生するされます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="StopOnFirstFailure">
+      <MemberSignature Language="C#" Value="public bool StopOnFirstFailure { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool StopOnFirstFailure" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.MSBuild.StopOnFirstFailure" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>いずれかのプロジェクトのビルドが失敗した場合に、残りのプロジェクトのビルドをすぐに中断する必要があるかどうかを指定するブール値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />場合は、タスクがいずれかのファイルが機能しない; とすぐに、残りのプロジェクトのビルドを停止する必要があります。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="TargetAndPropertyListSeparators">
+      <MemberSignature Language="C#" Value="public string[] TargetAndPropertyListSeparators { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] TargetAndPropertyListSeparators" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.MSBuild.TargetAndPropertyListSeparators" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を使用するエスケープ文字を指定、エスケープされないで<see cref="P:Microsoft.Build.Tasks.MSBuild.Properties" />と<see cref="P:Microsoft.Build.Tasks.MSBuild.Targets" />です。</summary>
+        <value>使用するエスケープ文字を指定、エスケープされないで<see cref="P:Microsoft.Build.Tasks.MSBuild.Properties" />と<see cref="P:Microsoft.Build.Tasks.MSBuild.Targets" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、以外の値に設定するには`null`の`MSBuild`プロパティとターゲットをエスケープ解除するタスク。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="TargetOutputs">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] TargetOutputs { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] TargetOutputs" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.MSBuild.TargetOutputs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.Build.Framework.Output</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのプロジェクト ファイルからビルドされたターゲットの出力を返します。 指定したターゲットの出力だけが返されます。それらのターゲットが依存しているターゲットに存在する可能性があるすべての出力が返されるわけではありません。</summary>
+        <value>すべてのプロジェクト ファイルからビルドされたターゲットの出力。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Targets">
+      <MemberSignature Language="C#" Value="public string[] Targets { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] Targets" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.MSBuild.Targets" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロジェクト ファイル内でビルドする 1 つまたは複数のターゲットを取得または設定します。 セミコロンを使用して、ターゲットの名前の一覧を区切ります。</summary>
+        <value>プロジェクト ファイル内でビルドする 1 つまたは複数のターゲット。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `MSBuild` タスクにターゲットを指定しない場合は、プロジェクト ファイルで指定されている既定のターゲットがビルドされます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ToolsVersion">
+      <MemberSignature Language="C#" Value="public string ToolsVersion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ToolsVersion" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.MSBuild.ToolsVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ターゲットの設定を取得または[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]これにより、プロジェクトをビルドするバージョン、[!INCLUDE[vstecmsbuild](~/includes/vstecmsbuild-md.md)]の別のバージョンを対象とするプロジェクトをビルドするタスク、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]プロジェクトで指定したものです。 有効な値は <paramref name="2.0" />、<paramref name="3.0" />、<paramref name="3.5" /> です。</summary>
+        <value>ターゲット[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]バージョンを使用してプロジェクトをビルドします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は `3.5.`  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="UnloadProjectsOnCompletion">
+      <MemberSignature Language="C#" Value="public bool UnloadProjectsOnCompletion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UnloadProjectsOnCompletion" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.MSBuild.UnloadProjectsOnCompletion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するかどうか、プロジェクトはアンロードされます、操作が完了した後を指定するブール値。</summary>
+        <value>
+          <see langword="true" />できない場合は、プロジェクトが読み込まれた操作を完了するとします。それ以外の場合、<see langword="false" />です。 このプロパティは、バージョン 4.0 では使用されなく</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="UseResultsCache">
+      <MemberSignature Language="C#" Value="public bool UseResultsCache { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseResultsCache" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.MSBuild.UseResultsCache" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を MSBuild エンジンがキャッシュからビルドされたターゲットを返すかどうかを示すブール値。</summary>
+        <value>
+          <see langword="true" />MSBuild エンジンがキャッシュからビルドされたターゲットを返す場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現金でビルドされたターゲットの範囲が (ProjectFileName、GlobalProperties) [TargetNames]、ビルド項目のリストとして。  
+  
+ バージョン 4.0 では、このプロパティは使用が不要になった。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

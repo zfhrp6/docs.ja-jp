@@ -1,0 +1,839 @@
+<Type Name="CommandLineBuilder" FullName="Microsoft.Build.Utilities.CommandLineBuilder">
+  <TypeSignature Language="C#" Value="public class CommandLineBuilder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CommandLineBuilder extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Utilities.CommandLineBuilder" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コマンド ラインを構築するためのユーティリティ メソッドを構成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:Microsoft.Build.Utilities.ToolTask>実行している[Ilasm.exe (IL アセンブラー)](~/docs/framework/tools/ilasm-exe-il-assembler.md)です。 <xref:Microsoft.Build.Utilities.CommandLineBuilder>、 <xref:Microsoft.Build.Utilities.ToolLocationHelper>、および<xref:Microsoft.Build.Utilities.TaskLoggingHelper>タスクを実行するために必要な情報を生成するクラスが使用されます。  
+  
+ [!code-csharp[msbuild_ToolTask#1](~/samples/snippets/csharp/VS_Snippets_Misc/msbuild_ToolTask/CS/ILAsm.cs#1)]
+ [!code-vb[msbuild_ToolTask#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/msbuild_ToolTask/VB/ILAsm.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CommandLineBuilder ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CommandLineBuilder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.Build.Utilities.CommandLineBuilder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:Microsoft.Build.Utilities.ToolTask>実行している[Ilasm.exe (IL アセンブラー)](~/docs/framework/tools/ilasm-exe-il-assembler.md)です。 <xref:Microsoft.Build.Utilities.CommandLineBuilder>、 <xref:Microsoft.Build.Utilities.ToolLocationHelper>、および<xref:Microsoft.Build.Utilities.TaskLoggingHelper>タスクを実行するために必要な情報を生成するクラスが使用されます。  
+  
+ [!code-csharp[msbuild_ToolTask#1](~/samples/snippets/csharp/VS_Snippets_Misc/msbuild_ToolTask/CS/ILAsm.cs#1)]
+ [!code-vb[msbuild_ToolTask#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/msbuild_ToolTask/VB/ILAsm.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CommandLineBuilder (bool quoteHyphensOnCommandLine);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool quoteHyphensOnCommandLine) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CommandLineBuilder.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="quoteHyphensOnCommandLine" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="quoteHyphensOnCommandLine">true の場合は、ハイフンを引用符で囲む必要があります。</param>
+        <summary>既定のコンストラクター</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="AppendFileNameIfNotNull">
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>パラメーターで表されるファイル名をコマンド ラインに追加します。必要な場合は引用符が挿入されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:Microsoft.Build.Utilities.ToolTask>実行している[Ilasm.exe (IL アセンブラー)](~/docs/framework/tools/ilasm-exe-il-assembler.md)です。 <xref:Microsoft.Build.Utilities.CommandLineBuilder>、 <xref:Microsoft.Build.Utilities.ToolLocationHelper>、および<xref:Microsoft.Build.Utilities.TaskLoggingHelper>タスクを実行するために必要な情報を生成するクラスが使用されます。  
+  
+ [!code-csharp[msbuild_ToolTask#1](~/samples/snippets/csharp/VS_Snippets_Misc/msbuild_ToolTask/CS/ILAsm.cs#1)]
+ [!code-vb[msbuild_ToolTask#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/msbuild_ToolTask/VB/ILAsm.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="AppendFileNameIfNotNull">
+      <MemberSignature Language="C#" Value="public void AppendFileNameIfNotNull (Microsoft.Build.Framework.ITaskItem fileItem);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendFileNameIfNotNull(class Microsoft.Build.Framework.ITaskItem fileItem) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CommandLineBuilder.AppendFileNameIfNotNull(Microsoft.Build.Framework.ITaskItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileItem" Type="Microsoft.Build.Framework.ITaskItem" />
+      </Parameters>
+      <Docs>
+        <param name="fileItem">コマンド ラインに追加するタスク項目の指定。 場合は<see langword="null" />、このメソッドの効果はありません。</param>
+        <summary>コマンドラインに指定したファイル名を持つ追加<see cref="T:Microsoft.Build.Framework.ITaskItem" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、作業項目の指定をコマンドラインに追加し、タスク項目の指定を必要に応じて、引用符で囲まれます。  
+  
+ コマンドラインが空でない場合、このメソッドは、コマンドライン、作業項目の指定の前に、スペースにも追加します。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:Microsoft.Build.Utilities.ToolTask>実行している[Ilasm.exe (IL アセンブラー)](~/docs/framework/tools/ilasm-exe-il-assembler.md)です。 <xref:Microsoft.Build.Utilities.CommandLineBuilder>、 <xref:Microsoft.Build.Utilities.ToolLocationHelper>、および<xref:Microsoft.Build.Utilities.TaskLoggingHelper>タスクを実行するために必要な情報を生成するクラスが使用されます。  
+  
+ [!code-csharp[msbuild_ToolTask#1](~/samples/snippets/csharp/VS_Snippets_Misc/msbuild_ToolTask/CS/ILAsm.cs#1)]
+ [!code-vb[msbuild_ToolTask#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/msbuild_ToolTask/VB/ILAsm.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendFileNameIfNotNull">
+      <MemberSignature Language="C#" Value="public void AppendFileNameIfNotNull (string fileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendFileNameIfNotNull(string fileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CommandLineBuilder.AppendFileNameIfNotNull(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">追加するファイル名。 場合は<see langword="null" />、このメソッドの効果はありません。</param>
+        <summary>パラメーターで表されるファイル名をコマンド ラインに追加します。必要な場合は引用符が挿入されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ファイル名を持つコマンドラインに追加し、ファイル名を必要に応じて、引用符で囲まれます。  
+  
+ ファイル名の最初の文字が、ダッシュ、`.\`スイッチから区別するためにファイル名の先頭に追加されます。  
+  
+ コマンドラインが空でない場合、このメソッドは、コマンドライン、ファイル名の前に、スペースにも追加します。  
+  
+   
+  
+## Examples  
+ `AppendFileNameIfNotNull("-StrangeFileName.cs")`生成`.\-StrangeFileName.cs`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendFileNamesIfNotNull">
+      <MemberSignature Language="C#" Value="public void AppendFileNamesIfNotNull (Microsoft.Build.Framework.ITaskItem[] fileItems, string delimiter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendFileNamesIfNotNull(class Microsoft.Build.Framework.ITaskItem[] fileItems, string delimiter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CommandLineBuilder.AppendFileNamesIfNotNull(Microsoft.Build.Framework.ITaskItem[],System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileItems" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="delimiter" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileItems">追加するタスク項目の指定。 配列が <see langword="null" /> の場合、このメソッドの効果はありません。</param>
+        <param name="delimiter">コマンド ラインに含める複数のタスク項目の指定を区切る区切り記号。</param>
+        <summary>コマンドラインに指定したファイル名のリストと追加<see cref="T:Microsoft.Build.Framework.ITaskItem" />指定された区切り記号で区切られた配列。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ファイル名をコマンドラインに追加し、ファイル名を必要に応じて、引用符で囲まれます。 ファイル名は、指定された区切り記号で区切られます。  
+  
+ コマンドラインが空でない場合、このメソッドは、コマンドラインのファイル名の前に、スペースにも追加します。  
+  
+   
+  
+## Examples  
+ 例を参照して<xref:Microsoft.Build.Utilities.CommandLineBuilder.AppendFileNamesIfNotNull%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendFileNamesIfNotNull">
+      <MemberSignature Language="C#" Value="public void AppendFileNamesIfNotNull (string[] fileNames, string delimiter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendFileNamesIfNotNull(string[] fileNames, string delimiter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CommandLineBuilder.AppendFileNamesIfNotNull(System.String[],System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileNames" Type="System.String[]" />
+        <Parameter Name="delimiter" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileNames">追加するファイル名。 配列が <see langword="null" /> の場合、このメソッドの効果はありません。</param>
+        <param name="delimiter">コマンド ライン内のファイル名の間に置かれる区切り記号。</param>
+        <summary>コマンドラインに指定したファイル名のリストと追加<see langword="string" />指定された区切り記号で区切られた配列。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ファイル名をコマンドラインに追加し、ファイル名を必要に応じて、引用符で囲まれます。 ファイル名は、指定された区切り記号で区切られます。  
+  
+ コマンドラインが空でない場合、このメソッドは、コマンドラインのファイル名の前に、スペースにも追加します。  
+  
+   
+  
+## Examples  
+ `AppendFileNamesIfNotNull(new string[] {"Alpha.cs", "Beta.cs"}, ",")`生成`Alpha.cs,Beta.cs`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendFileNameWithQuoting">
+      <MemberSignature Language="C#" Value="protected void AppendFileNameWithQuoting (string fileName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void AppendFileNameWithQuoting(string fileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CommandLineBuilder.AppendFileNameWithQuoting(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">追加するファイル名。</param>
+        <summary>ファイル名をコマンド ラインに追加し、必要に応じてファイル名を引用符で囲みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイル名の最初の文字が、ダッシュ、`.\`スイッチから区別するためにファイル名の先頭に追加されます。  
+  
+ このメソッドは、実行する前にスペースを使用してコマンドラインを追加しません。  
+  
+   
+  
+## Examples  
+ `AppendFileNameWithQuoting("-StrangeFileName.cs")`生成`.\-StrangeFileName.cs`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendQuotedTextToBuffer">
+      <MemberSignature Language="C#" Value="protected void AppendQuotedTextToBuffer (System.Text.StringBuilder buffer, string unquotedTextToAppend);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void AppendQuotedTextToBuffer(class System.Text.StringBuilder buffer, string unquotedTextToAppend) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CommandLineBuilder.AppendQuotedTextToBuffer(System.Text.StringBuilder,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Text.StringBuilder" />
+        <Parameter Name="unquotedTextToAppend" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">追加先のバッファー。</param>
+        <param name="unquotedTextToAppend">引用符で囲むテキスト。</param>
+        <summary>必要に応じて特定のテキストをまず引用符で囲んでから、そのテキストをバッファーに追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendSpaceIfNotEmpty">
+      <MemberSignature Language="C#" Value="protected void AppendSpaceIfNotEmpty ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void AppendSpaceIfNotEmpty() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CommandLineBuilder.AppendSpaceIfNotEmpty" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>指定した文字列にスペースを追加します (文字列が空でない場合)。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを継承するクラスを使用できるだけです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendSwitch">
+      <MemberSignature Language="C#" Value="public void AppendSwitch (string switchName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendSwitch(string switchName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CommandLineBuilder.AppendSwitch(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="switchName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="switchName">コマンド ラインに追加するスイッチの名前。 この値を <see langword="null" /> にすることはできません。</param>
+        <summary>指定されたスイッチをコマンド ラインに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コマンドラインが空でない場合、このメソッドは、コマンド ライン スイッチの前に、スペースでも追加します。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:Microsoft.Build.Utilities.ToolTask>実行している[Ilasm.exe (IL アセンブラー)](~/docs/framework/tools/ilasm-exe-il-assembler.md)です。 <xref:Microsoft.Build.Utilities.CommandLineBuilder>、 <xref:Microsoft.Build.Utilities.ToolLocationHelper>、および<xref:Microsoft.Build.Utilities.TaskLoggingHelper>タスクを実行するために必要な情報を生成するクラスが使用されます。  
+  
+ [!code-csharp[msbuild_ToolTask#1](~/samples/snippets/csharp/VS_Snippets_Misc/msbuild_ToolTask/CS/ILAsm.cs#1)]
+ [!code-vb[msbuild_ToolTask#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/msbuild_ToolTask/VB/ILAsm.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendSwitchIfNotNull">
+      <MemberSignature Language="C#" Value="public void AppendSwitchIfNotNull (string switchName, Microsoft.Build.Framework.ITaskItem parameter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendSwitchIfNotNull(string switchName, class Microsoft.Build.Framework.ITaskItem parameter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CommandLineBuilder.AppendSwitchIfNotNull(System.String,Microsoft.Build.Framework.ITaskItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="switchName" Type="System.String" />
+        <Parameter Name="parameter" Type="Microsoft.Build.Framework.ITaskItem" />
+      </Parameters>
+      <Docs>
+        <param name="switchName">コマンド ラインに追加するスイッチの名前。 この値を <see langword="null" /> にすることはできません。</param>
+        <param name="parameter">コマンド ラインに追加するスイッチ パラメーター。 必要に応じて引用符が追加されます。 この値が <see langword="null" /> の場合、このメソッドは無効です。</param>
+        <summary>タスク項目の指定を単独の文字列パラメーターとして受け取るスイッチをコマンド ラインに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドでは、個々 のファイル名を必要に応じて、引用符でカプセル化します。  
+  
+ コマンドラインが空でない場合、このメソッドは、コマンド ライン スイッチの前に、スペースでも追加します。  
+  
+   
+  
+## Examples  
+ 例を参照して<xref:Microsoft.Build.Utilities.CommandLineBuilder.AppendSwitchIfNotNull%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendSwitchIfNotNull">
+      <MemberSignature Language="C#" Value="public void AppendSwitchIfNotNull (string switchName, string parameter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendSwitchIfNotNull(string switchName, string parameter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CommandLineBuilder.AppendSwitchIfNotNull(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="switchName" Type="System.String" />
+        <Parameter Name="parameter" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="switchName">コマンド ラインに追加するスイッチの名前。 この値を <see langword="null" /> にすることはできません。</param>
+        <param name="parameter">コマンド ラインに追加するスイッチ パラメーター。 必要に応じて引用符が追加されます。 この値が <see langword="null" /> の場合、このメソッドは無効です。</param>
+        <summary>1 つの文字列パラメーターを受け取るスイッチをコマンド ラインに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドでは、個々 のファイル名を必要に応じて、引用符でカプセル化します。  
+  
+ コマンドラインが空でない場合、このメソッドは、コマンド ライン スイッチの前に、スペースでも追加します。  
+  
+   
+  
+## Examples  
+ `AppendSwitchIfNotNull("/source:", "File Name.cs")`生成`/source:\"File Name.cs\"`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendSwitchIfNotNull">
+      <MemberSignature Language="C#" Value="public void AppendSwitchIfNotNull (string switchName, Microsoft.Build.Framework.ITaskItem[] parameters, string delimiter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendSwitchIfNotNull(string switchName, class Microsoft.Build.Framework.ITaskItem[] parameters, string delimiter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CommandLineBuilder.AppendSwitchIfNotNull(System.String,Microsoft.Build.Framework.ITaskItem[],System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="switchName" Type="System.String" />
+        <Parameter Name="parameters" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="delimiter" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="switchName">コマンド ラインに追加するスイッチの名前。 この値を <see langword="null" /> にすることはできません。</param>
+        <param name="parameters">コマンド ラインに追加するスイッチ パラメーターの配列。 必要に応じて引用符が追加されます。 配列が <see langword="null" /> の場合、このメソッドは無効です。</param>
+        <param name="delimiter">個々のパラメーターを区切る区切り記号。 この値を空にすることはできますが、<see langword="null" /> にはできません。</param>
+        <summary>文字列パラメーターとして機能するタスク項目指定の配列を受け取るスイッチをコマンド ラインに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドでは、個々 のファイル名を必要に応じて、引用符でカプセル化します。  
+  
+ コマンドラインが空でない場合、このメソッドは、コマンド ライン スイッチの前に、スペースでも追加します。  
+  
+   
+  
+## Examples  
+ 例を参照して<xref:Microsoft.Build.Utilities.CommandLineBuilder.AppendSwitchIfNotNull%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendSwitchIfNotNull">
+      <MemberSignature Language="C#" Value="public void AppendSwitchIfNotNull (string switchName, string[] parameters, string delimiter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendSwitchIfNotNull(string switchName, string[] parameters, string delimiter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CommandLineBuilder.AppendSwitchIfNotNull(System.String,System.String[],System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="switchName" Type="System.String" />
+        <Parameter Name="parameters" Type="System.String[]" />
+        <Parameter Name="delimiter" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="switchName">コマンド ラインに追加するスイッチの名前。 この値を <see langword="null" /> にすることはできません。</param>
+        <param name="parameters">コマンド ラインに追加するスイッチ パラメーターの配列。 必要に応じて引用符が追加されます。 配列が <see langword="null" /> の場合、このメソッドは無効です。</param>
+        <param name="delimiter">個々のパラメーターを区切る区切り記号。 この値を空にすることはできますが、<see langword="null" /> にはできません。</param>
+        <summary>文字列パラメーターの配列を受け取るスイッチをコマンド ラインに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドでは、個々 のファイル名を必要に応じて、引用符でカプセル化します。  
+  
+ コマンドラインが空でない場合、このメソッドは、コマンド ライン スイッチの前に、スペースでも追加します。  
+  
+   
+  
+## Examples  
+ `AppendSwitchIfNotNull("/sources:", new string[] {"Alpha.cs", "Be ta.cs"}, ";")`生成`/sources:Alpha.cs;\"Be ta.cs\"`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendSwitchUnquotedIfNotNull">
+      <MemberSignature Language="C#" Value="public void AppendSwitchUnquotedIfNotNull (string switchName, Microsoft.Build.Framework.ITaskItem parameter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendSwitchUnquotedIfNotNull(string switchName, class Microsoft.Build.Framework.ITaskItem parameter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CommandLineBuilder.AppendSwitchUnquotedIfNotNull(System.String,Microsoft.Build.Framework.ITaskItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="switchName" Type="System.String" />
+        <Parameter Name="parameter" Type="Microsoft.Build.Framework.ITaskItem" />
+      </Parameters>
+      <Docs>
+        <param name="switchName">コマンド ラインに追加するスイッチの名前。 この値を <see langword="null" /> にすることはできません。</param>
+        <param name="parameter">コマンド ラインに追加するスイッチ パラメーター。 引用符は追加されません。 この値が <see langword="null" /> の場合、このメソッドは無効です。</param>
+        <summary>引用符でスイッチ パラメーターを囲まずに、タスク項目の指定を単独の文字列パラメーターとして受け取るスイッチをコマンド ラインに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コマンドラインが空でない場合、このメソッドは、コマンド ライン スイッチの前に、スペースでも追加します。  
+  
+   
+  
+## Examples  
+ 例を参照して<xref:Microsoft.Build.Utilities.CommandLineBuilder.AppendSwitchUnquotedIfNotNull%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendSwitchUnquotedIfNotNull">
+      <MemberSignature Language="C#" Value="public void AppendSwitchUnquotedIfNotNull (string switchName, string parameter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendSwitchUnquotedIfNotNull(string switchName, string parameter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CommandLineBuilder.AppendSwitchUnquotedIfNotNull(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="switchName" Type="System.String" />
+        <Parameter Name="parameter" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="switchName">コマンド ラインに追加するスイッチの名前。 この値を <see langword="null" /> にすることはできません。</param>
+        <param name="parameter">コマンド ラインに追加するスイッチ パラメーター。 引用符は追加されません。 この値が <see langword="null" /> の場合、このメソッドは無効です。</param>
+        <summary>1 つの文字列パラメーターを取るスイッチをコマンド ラインに追加します。その際、スイッチ パラメーターを引用符でカプセル化することはありません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コマンドラインが空でない場合、このメソッドは、コマンド ライン スイッチの前に、スペースでも追加します。  
+  
+   
+  
+## Examples  
+ `AppendSwitchUnquotedIfNotNull("/source:", "File Name.cs")`生成`/source:File Name.cs`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendSwitchUnquotedIfNotNull">
+      <MemberSignature Language="C#" Value="public void AppendSwitchUnquotedIfNotNull (string switchName, Microsoft.Build.Framework.ITaskItem[] parameters, string delimiter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendSwitchUnquotedIfNotNull(string switchName, class Microsoft.Build.Framework.ITaskItem[] parameters, string delimiter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CommandLineBuilder.AppendSwitchUnquotedIfNotNull(System.String,Microsoft.Build.Framework.ITaskItem[],System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="switchName" Type="System.String" />
+        <Parameter Name="parameters" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="delimiter" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="switchName">コマンド ラインに追加するスイッチの名前。 この値を <see langword="null" /> にすることはできません。</param>
+        <param name="parameters">コマンド ラインに追加するスイッチ パラメーターの配列。 引用符は追加されません。 配列が <see langword="null" /> の場合、このメソッドの効果はありません。</param>
+        <param name="delimiter">個々のパラメーターを区切る区切り記号。 この値を空にすることはできますが、<see langword="null" /> にはできません。</param>
+        <summary>引用符でスイッチ パラメーターを囲まずに、タスク項目の指定の配列を文字列パラメーターとして受け取るスイッチをコマンド ラインに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コマンドラインが空でない場合、このメソッドは、コマンド ライン スイッチの前に、スペースでも追加します。  
+  
+   
+  
+## Examples  
+ 例を参照して<xref:Microsoft.Build.Utilities.CommandLineBuilder.AppendSwitchUnquotedIfNotNull%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendSwitchUnquotedIfNotNull">
+      <MemberSignature Language="C#" Value="public void AppendSwitchUnquotedIfNotNull (string switchName, string[] parameters, string delimiter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendSwitchUnquotedIfNotNull(string switchName, string[] parameters, string delimiter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CommandLineBuilder.AppendSwitchUnquotedIfNotNull(System.String,System.String[],System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="switchName" Type="System.String" />
+        <Parameter Name="parameters" Type="System.String[]" />
+        <Parameter Name="delimiter" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="switchName">コマンド ラインに追加するスイッチの名前。 この値を <see langword="null" /> にすることはできません。</param>
+        <param name="parameters">コマンド ラインに追加するスイッチ パラメーターの配列。 引用符は追加されません。 配列が <see langword="null" /> の場合、このメソッドの効果はありません。</param>
+        <param name="delimiter">個々のパラメーターを区切る区切り記号。 この値を空にすることはできますが、<see langword="null" /> にはできません。</param>
+        <summary>スイッチ パラメーターを引用符でカプセル化せずに、文字列パラメーターの配列を取るスイッチをコマンド ラインに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コマンドラインが空でない場合、このメソッドは、コマンド ライン スイッチの前に、スペースでも追加します。  
+  
+   
+  
+## Examples  
+ `AppendSwitchUnquotedIfNotNull("/sources:", new string[] {"Alpha.cs", "Be ta.cs"}, ";")`生成`/sources:Alpha.cs;Be ta.cs`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendTextUnquoted">
+      <MemberSignature Language="C#" Value="public void AppendTextUnquoted (string textToAppend);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendTextUnquoted(string textToAppend) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CommandLineBuilder.AppendTextUnquoted(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textToAppend" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="textToAppend">コマンド ラインに追加する文字列。</param>
+        <summary>文字列を引用符で囲まずに、文字列を使用してコマンド ラインに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、実行する前にスペースを使用してコマンドラインを追加しません。  
+  
+   
+  
+## Examples  
+ `AppendTextUnquoted(@"Folder name\filename.cs")`生成`Folder name\\filename.cs`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendTextWithQuoting">
+      <MemberSignature Language="C#" Value="protected void AppendTextWithQuoting (string textToAppend);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void AppendTextWithQuoting(string textToAppend) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CommandLineBuilder.AppendTextWithQuoting(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textToAppend" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="textToAppend">コマンド ラインに追加する文字列。</param>
+        <summary>文字列をコマンド ラインに追加し、必要に応じて文字列を引用符で囲みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、実行する前にスペースを使用してコマンドラインを追加しません。  
+  
+   
+  
+## Examples  
+ `AppendTextWithQuoting(@"Folder name\filename.cs")`生成`\"Folder name\\filename.cs\"`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandLine">
+      <MemberSignature Language="C#" Value="protected System.Text.StringBuilder CommandLine { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Text.StringBuilder CommandLine" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Utilities.CommandLineBuilder.CommandLine" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.StringBuilder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>継承クラスのコマンド ラインを表す <see cref="T:System.Text.StringBuilder" /> インスタンスを取得します。</summary>
+        <value>継承クラスの <see cref="T:System.Text.StringBuilder" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsQuotingRequired">
+      <MemberSignature Language="C#" Value="protected virtual bool IsQuotingRequired (string parameter);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool IsQuotingRequired(string parameter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CommandLineBuilder.IsQuotingRequired(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameter" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="parameter">引用符を必要とする文字があるかどうかを確認する文字列。</param>
+        <summary>空白文字が含まれているために、指定した文字列パラメーターを引用符で囲む必要があるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />、スイッチ パラメーターを引用符で囲む必要がある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Length">
+      <MemberSignature Language="C#" Value="public int Length { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Length" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Utilities.CommandLineBuilder.Length" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンドラインの長さを表します。</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CommandLineBuilder.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コマンド ラインを文字列として返します。</summary>
+        <returns>A<see cref="T:System.String" />コマンドラインを表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:Microsoft.Build.Utilities.ToolTask>実行している[Ilasm.exe (IL アセンブラー)](~/docs/framework/tools/ilasm-exe-il-assembler.md)です。 <xref:Microsoft.Build.Utilities.CommandLineBuilder>、 <xref:Microsoft.Build.Utilities.ToolLocationHelper>、および<xref:Microsoft.Build.Utilities.TaskLoggingHelper>タスクを実行するために必要な情報を生成するクラスが使用されます。  
+  
+ msbuild_ToolTask 1  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerifyThrowNoEmbeddedDoubleQuotes">
+      <MemberSignature Language="C#" Value="protected virtual void VerifyThrowNoEmbeddedDoubleQuotes (string switchName, string parameter);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void VerifyThrowNoEmbeddedDoubleQuotes(string switchName, string parameter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CommandLineBuilder.VerifyThrowNoEmbeddedDoubleQuotes(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="switchName" Type="System.String" />
+        <Parameter Name="parameter" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="switchName">エラー メッセージのスイッチ名を表す文字列。</param>
+        <param name="parameter">二重引用符をスキャンするスイッチ パラメーターを表す文字列。</param>
+        <summary>コマンド ライン パラメーターに二重引用符 (") 文字が含まれている場合は、エラーを返します。 二重引用符はコマンド ライン パラメーターでは使用できないため、この方法はパラメーター インジェクション攻撃の防止に役立ちます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.Build.Utilities.CommandLineBuilder.VerifyThrowNoEmbeddedDoubleQuotes%2A>二重引用符のファイル名にエスケープを許可する場合に、アプリケーションがこのメソッドをオーバーライドできるようにする、仮想メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

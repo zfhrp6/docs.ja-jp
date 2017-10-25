@@ -1,0 +1,90 @@
+<Type Name="GeometryHitTestParameters" FullName="System.Windows.Media.GeometryHitTestParameters">
+  <TypeSignature Language="C#" Value="public class GeometryHitTestParameters : System.Windows.Media.HitTestParameters" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GeometryHitTestParameters extends System.Windows.Media.HitTestParameters" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.GeometryHitTestParameters" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.HitTestParameters</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>指定します、<see cref="T:System.Windows.Media.Geometry" />ビジュアル ツリーのヒット テストに使用するパラメーターとして。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.GeometryHitTestParameters>クラスを使用することができます、<xref:System.Windows.Media.Geometry>と任意のビジュアル オブジェクトが交差するかどうかを決定するヒット テストでは、値、<xref:System.Windows.Media.Geometry>値。  
+  
+ ヒット テストの使用、<xref:System.Windows.Point>値を作成して、<xref:System.Windows.Media.PointHitTestParameters>オブジェクト。  
+  
+> [!NOTE]
+>  [!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]ヒット テストのみを考慮するジオメトリの塗りつぶし領域ヒット テスト中にします。 ポイントを作成する場合<xref:System.Windows.Media.Geometry>、ヒット テストが交差しない何かの点に領域があるないためです。  
+  
+   
+  
+## Examples  
+ 次の例を使用して、ヒット テストを設定する方法を示しています。<xref:System.Windows.Media.GeometryHitTestParameters>の、<xref:System.Windows.Media.VisualTreeHelper.HitTest%2A>メソッドです。 <xref:System.Windows.Point>に渡される値、`OnMouseDown`メソッドの使用を作成、<xref:System.Windows.Media.Geometry>ヒット テストの範囲を拡張するためにオブジェクト。  
+  
+ [!code-csharp[HitTestingOverview#HitTestingOverviewSnippet10](~/samples/snippets/csharp/VS_Snippets_Wpf/HitTestingOverview/CSharp/GeometryHitTest.cs#hittestingoverviewsnippet10)]
+ [!code-vb[HitTestingOverview#HitTestingOverviewSnippet10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HitTestingOverview/visualbasic/geometryhittest.vb#hittestingoverviewsnippet10)]  
+  
+ <xref:System.Windows.Media.GeometryHitTestResult.IntersectionDetail%2A>プロパティ<xref:System.Windows.Media.GeometryHitTestResult>を使用するヒット テストの結果に関する情報を提供、<xref:System.Windows.Media.Geometry>ヒットとしてパラメーターをテストします。 次の図は、ヒット テスト ジオメトリ (青の円) と、ターゲット オブジェクト (赤い四角形) 間のリレーションシップを示します。  
+  
+ ![ヒット テストで使用される IntersectionDetail のダイアグラム](~/add/media/intersectiondetail01.png "ダイアグラムので使用される IntersectionDetail のヒット テスト")  
+ヒット テスト ジオメトリと対象のオブジェクトの交差部分  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GeometryHitTestParameters (System.Windows.Media.Geometry geometry);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Media.Geometry geometry) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.GeometryHitTestParameters.#ctor(System.Windows.Media.Geometry)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="geometry" Type="System.Windows.Media.Geometry" />
+      </Parameters>
+      <Docs>
+        <param name="geometry"><see cref="T:System.Windows.Media.Geometry" />ヒット テストのジオメトリに使用する値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.GeometryHitTestParameters" />クラスを指定して<see cref="T:System.Windows.Media.Geometry" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用して、ヒット テストを設定する方法を示しています。<xref:System.Windows.Media.GeometryHitTestParameters>の、<xref:System.Windows.Media.VisualTreeHelper.HitTest%2A>メソッドです。 A<xref:System.Windows.Point>値を使用して、作成、<xref:System.Windows.Media.Geometry>広い表示領域にヒット テストの範囲を拡張するオブジェクト。  
+  
+ [!code-csharp[HitTestingOverview#HitTestingOverviewSnippet12](~/samples/snippets/csharp/VS_Snippets_Wpf/HitTestingOverview/CSharp/GeometryHitTest.cs#hittestingoverviewsnippet12)]
+ [!code-vb[HitTestingOverview#HitTestingOverviewSnippet12](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HitTestingOverview/visualbasic/geometryhittest.vb#hittestingoverviewsnippet12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HitGeometry">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Geometry HitGeometry { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Geometry HitGeometry" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GeometryHitTestParameters.HitGeometry" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Geometry</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.GeometryHitTestParameters" /> インスタンスのヒット テスト ジオメトリを定義する <see cref="T:System.Windows.Media.Geometry" /> を取得します。</summary>
+        <value>ヒット テスト領域を定義する <see cref="T:System.Windows.Media.Geometry" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,198 @@
+<Type Name="CallingConvention" FullName="System.Runtime.InteropServices.CallingConvention">
+  <TypeSignature Language="C#" Value="public enum CallingConvention" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed CallingConvention extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.CallingConvention" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アンマネージ コードで実装されているメソッドの呼び出しに必要な呼び出し規則を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 常に使用する、<xref:System.Runtime.InteropServices.CallingConvention>列挙型ではなく、<xref:System.Runtime.InteropServices.CALLCONV>マネージ コードの呼び出し規約を指定する列挙です。 後者の COM の定義のためにのみ存在します。 <xref:System.Runtime.InteropServices.CallingConvention>列挙型を使用して<xref:System.Runtime.InteropServices.DllImportAttribute>といくつかのクラス<xref:System.Reflection.Emit>プラットフォーム呼び出しシグネチャを動的に生成します。  
+  
+   
+  
+## Examples  
+ 次の例では、適用する方法、`Cdecl`呼び出し規約は、呼び出し元によって、スタックをクリーンアップするために使用する必要があります。  
+  
+ [!code-cpp[Interop CallingConvention#1](~/samples/snippets/cpp/VS_Snippets_CLR/Interop CallingConvention/CPP/callingconv.cpp#1)]
+ [!code-csharp[Interop CallingConvention#1](~/samples/snippets/csharp/VS_Snippets_CLR/Interop CallingConvention/CS/callingconv.cs#1)]
+ [!code-vb[Interop CallingConvention#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Interop CallingConvention/VB/callingconv.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Cdecl">
+      <MemberSignature Language="C#" Value="Cdecl" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.InteropServices.CallingConvention Cdecl = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.CallingConvention.Cdecl" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.CallingConvention</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>呼び出し元は、スタックをクリーンアップします。 これにより、関数を呼び出す<see langword="varargs" />、されるためなどの変数の数のパラメーターを受け取るメソッドの使用に適した<see langword="Printf" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="FastCall">
+      <MemberSignature Language="C#" Value="FastCall" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.InteropServices.CallingConvention FastCall = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.CallingConvention.FastCall" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.CallingConvention</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この呼び出し規約はサポートされていません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="StdCall">
+      <MemberSignature Language="C#" Value="StdCall" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.InteropServices.CallingConvention StdCall = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.CallingConvention.StdCall" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.CallingConvention</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>呼び出し先がスタックを消去します。 これは、アンマネージ関数を呼び出すプラットフォーム呼び出しの既定の規則です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ThisCall">
+      <MemberSignature Language="C#" Value="ThisCall" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.InteropServices.CallingConvention ThisCall = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.CallingConvention.ThisCall" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.CallingConvention</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最初のパラメーターは、<see langword="this" />ポインター レジスタ ECX に保存されます。 その他のパラメーターをスタックにプッシュされます。 この呼び出し規約を使用して、アンマネージ DLL からエクスポートされたクラスのメソッドを呼び出します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Winapi">
+      <MemberSignature Language="C#" Value="Winapi" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.InteropServices.CallingConvention Winapi = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.CallingConvention.Winapi" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.CallingConvention</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーは、呼び出し規約では実際ではありませんが、代わりに、既定のプラットフォーム呼び出し規約を使用します。 たとえば、Windows では、既定値は<see cref="F:System.Runtime.InteropServices.CallingConvention.StdCall" />では Windows CE.NET<see cref="F:System.Runtime.InteropServices.CallingConvention.Cdecl" />です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

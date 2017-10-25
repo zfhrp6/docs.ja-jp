@@ -1,0 +1,410 @@
+<Type Name="DrawListViewItemEventArgs" FullName="System.Windows.Forms.DrawListViewItemEventArgs">
+  <TypeSignature Language="C#" Value="public class DrawListViewItemEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DrawListViewItemEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DrawListViewItemEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Forms.ListView.DrawItem" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ListView.DrawItem?displayProperty=nameWithType>イベントでは、外観をカスタマイズすることができます、<xref:System.Windows.Forms.ListView>オーナー描画を使用して制御します。  
+  
+ <xref:System.Windows.Forms.ListView.DrawItem?displayProperty=nameWithType>によってイベントが発生した、<xref:System.Windows.Forms.ListView>タイミングを制御、<xref:System.Windows.Forms.ListView.OwnerDraw%2A?displayProperty=nameWithType>プロパティに設定されている`true`です。 <xref:System.Windows.Forms.DrawListViewItemEventArgs>渡されたイベントにハンドラー情報を含む、<xref:System.Windows.Forms.ListViewItem>を描画するアイテムを描画するためのメソッドも提供します。  
+  
+ 使用して、<xref:System.Windows.Forms.DrawListViewItemEventArgs.State%2A>または<xref:System.Windows.Forms.DrawListViewItemEventArgs.Item%2A>を描画する項目に関する情報を取得するプロパティです。 使用して、<xref:System.Windows.Forms.DrawListViewItemEventArgs.ItemIndex%2A?displayProperty=nameWithType>項目のインデックスを取得するプロパティです。  
+  
+ 使用して、<xref:System.Windows.Forms.DrawListViewItemEventArgs.Graphics%2A>プロパティで指定された領域内の実際の描画を行う、<xref:System.Windows.Forms.DrawListViewItemEventArgs.Bounds%2A>プロパティです。 標準の描画に<xref:System.Windows.Forms.ListView>カスタマイズ、不要な要素を使用して、 <xref:System.Windows.Forms.DrawListViewItemEventArgs.DrawBackground%2A>、 <xref:System.Windows.Forms.DrawListViewItemEventArgs.DrawText%2A>、および<xref:System.Windows.Forms.DrawListViewItemEventArgs.DrawFocusRectangle%2A>メソッドです。  
+  
+> [!NOTE]
+>  グラフィックスのちらつきオーナー描画をオーバーライドするときに問題を回避する、<xref:System.Windows.Forms.ListView>を制御し、設定、<xref:System.Windows.Forms.ListView.DoubleBuffered%2A>プロパティを`true`です。 この機能は、アプリケーションが呼び出すときに、Windows XP および Windows Server 2003 ファミリでのみ使用可能な<xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のカスタム描画を提供する方法を示します、<xref:System.Windows.Forms.ListView>コントロール。 <xref:System.Windows.Forms.ListView>コントロールの例ではグラデーションの背景。 負の値のサブ項目は、赤い前景と黒の背景があります。  
+  
+ ハンドラーを<xref:System.Windows.Forms.ListView.DrawItem?displayProperty=nameWithType>イベントは、全体の項目の背景を描画します。 ハンドラーを<xref:System.Windows.Forms.ListView.DrawSubItem?displayProperty=nameWithType>イベントは、テキスト値とテキストと負の値を持つサブ項目の背景を描画します。 ハンドラーを<xref:System.Windows.Forms.ListView.DrawColumnHeader>イベントは、各列ヘッダーを描画します。  
+  
+ A<xref:System.Windows.Forms.ContextMenu>コンポーネントは、詳細ビューとリスト ビューを切り替える方法を提供します。 リスト ビューのみで、<xref:System.Windows.Forms.ListView.DrawItem?displayProperty=nameWithType>イベントが発生します。 この場合、テキストとバック グラウンド両方に描画される、<xref:System.Windows.Forms.ListView.DrawItem?displayProperty=nameWithType>イベント ハンドラー。  
+  
+ [!code-csharp[ListViewOwnerDraw#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ListViewOwnerDraw/CS/listviewownerdraw.cs#1)]
+ [!code-vb[ListViewOwnerDraw#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ListViewOwnerDraw/VB/listviewownerdraw.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DrawListViewItemEventArgs (System.Drawing.Graphics graphics, System.Windows.Forms.ListViewItem item, System.Drawing.Rectangle bounds, int itemIndex, System.Windows.Forms.ListViewItemStates state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Graphics graphics, class System.Windows.Forms.ListViewItem item, valuetype System.Drawing.Rectangle bounds, int32 itemIndex, valuetype System.Windows.Forms.ListViewItemStates state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DrawListViewItemEventArgs.#ctor(System.Drawing.Graphics,System.Windows.Forms.ListViewItem,System.Drawing.Rectangle,System.Int32,System.Windows.Forms.ListViewItemStates)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="item" Type="System.Windows.Forms.ListViewItem" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="itemIndex" Type="System.Int32" />
+        <Parameter Name="state" Type="System.Windows.Forms.ListViewItemStates" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />を描画する画面です。</param>
+        <param name="item">描画する <see cref="T:System.Windows.Forms.ListViewItem" />。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />を描画するためにします。</param>
+        <param name="itemIndex">インデックス、<see cref="T:System.Windows.Forms.ListViewItem" />内で、<see cref="P:System.Windows.Forms.ListView.Items" />コレクション。</param>
+        <param name="state">ビットごとの組み合わせ<see cref="T:System.Windows.Forms.ListViewItemStates" />の現在の状態を示す値、<see cref="T:System.Windows.Forms.ListViewItem" />を描画します。</param>
+        <summary><see cref="T:System.Windows.Forms.DrawListViewItemEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bounds">
+      <MemberSignature Language="C#" Value="public System.Drawing.Rectangle Bounds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Rectangle Bounds" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DrawListViewItemEventArgs.Bounds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>位置とサイズを取得、<see cref="T:System.Windows.Forms.ListViewItem" />を描画します。</summary>
+        <value>A<see cref="T:System.Drawing.Rectangle" />の境界を表す、<see cref="T:System.Windows.Forms.ListViewItem" />を描画します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティで指定された場所に対して、左上隅の相対的な<xref:System.Windows.Forms.ListView>コントロール。  
+  
+ 特定部分の境界を取得する、<xref:System.Windows.Forms.ListViewItem>を使用して、<xref:System.Windows.Forms.ListViewItem.GetBounds%2A?displayProperty=nameWithType>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DrawListViewItemEventArgs.Bounds%2A>プロパティのカスタム描画を提供するアプリケーションで、<xref:System.Windows.Forms.ListView>コントロール。 例では、ハンドラーを<xref:System.Windows.Forms.ListView.DrawItem?displayProperty=nameWithType>イベントは、全体の項目の背景を描画します。 詳細ビューを除くすべてのビューで、このハンドラーは、前景テキストを描画します。 詳細ビューで前景テキストを描画、<xref:System.Windows.Forms.ListView.DrawSubItem?displayProperty=nameWithType>イベント。  
+  
+ 完了の例では、次を参照してください。、<xref:System.Windows.Forms.DrawListViewItemEventArgs>概要リファレンス トピックです。  
+  
+ [!code-csharp[ListViewOwnerDraw#3](~/samples/snippets/csharp/VS_Snippets_Winforms/ListViewOwnerDraw/CS/listviewownerdraw.cs#3)]
+ [!code-vb[ListViewOwnerDraw#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ListViewOwnerDraw/VB/listviewownerdraw.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawBackground">
+      <MemberSignature Language="C#" Value="public void DrawBackground ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawBackground() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DrawListViewItemEventArgs.DrawBackground" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>背景を描画、<see cref="T:System.Windows.Forms.ListViewItem" />その現在の背景色を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在の値を使用する標準的な背景を描画するには、このメソッドを使用して、<xref:System.Windows.Forms.ListViewItem.BackColor%2A?displayProperty=nameWithType>プロパティです。 指定された領域に合わせて、背景が描画される、<xref:System.Windows.Forms.DrawListViewItemEventArgs.Bounds%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawDefault">
+      <MemberSignature Language="C#" Value="public bool DrawDefault { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DrawDefault" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DrawListViewItemEventArgs.DrawDefault" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはことを示すプロパティを設定するかどうか、<see cref="T:System.Windows.Forms.ListView" />コントロールが描画を既定値を使用して、<see cref="T:System.Windows.Forms.ListViewItem" />です。</summary>
+        <value>
+          <see langword="true" />システム アイテムを描画する場合<see langword="false" />場合は、イベント ハンドラーが、項目を描画します。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定`true`ときに、アイテムにはカスタム描画は不要です。 これは、選択した項目など、コントロール内の特定の項目のみをカスタマイズする必要がある場合に便利です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ListView.DrawItem?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ListView>という`ListView1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ListView.DrawItem?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#471](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#471)]
+ [!code-vb[System.Windows.Forms.EventExamples#471](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#471)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawFocusRectangle">
+      <MemberSignature Language="C#" Value="public void DrawFocusRectangle ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawFocusRectangle() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DrawListViewItemEventArgs.DrawFocusRectangle" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>フォーカスされた四角形を描画、<see cref="T:System.Windows.Forms.ListViewItem" />フォーカスがある場合。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、アイテムの周囲の標準のフォーカス四角形を描画します。 フォーカス四角形がで指定された領域内に描画は通常、<xref:System.Windows.Forms.DrawListViewItemEventArgs.Bounds%2A>プロパティです。 コントロールの詳細ビューである場合、<xref:System.Windows.Forms.ListView.FullRowSelect%2A?displayProperty=nameWithType>プロパティの値が`false`項目の最初の列の既定のテキスト領域の周りフォーカス四角形が描画されるただし、します。  
+  
+ 項目にフォーカスをこのメソッドを呼び出す前に、項目のフォーカス状態を確認する必要はありませんので場合にのみ、フォーカス四角形が描画されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DrawListViewItemEventArgs.DrawFocusRectangle%2A>メソッドのカスタム描画を提供するアプリケーションで、<xref:System.Windows.Forms.ListView>コントロール。 例では、ハンドラーを<xref:System.Windows.Forms.ListView.DrawItem?displayProperty=nameWithType>イベントは、全体の項目の背景を描画します。 詳細ビューを除くすべてのビューで、このハンドラーは、前景テキストを描画します。 詳細ビューで前景テキストを描画、<xref:System.Windows.Forms.ListView.DrawSubItem?displayProperty=nameWithType>イベント。  
+  
+ 完了の例では、次を参照してください。、<xref:System.Windows.Forms.DrawListViewItemEventArgs>概要リファレンス トピックです。  
+  
+ [!code-csharp[ListViewOwnerDraw#3](~/samples/snippets/csharp/VS_Snippets_Winforms/ListViewOwnerDraw/CS/listviewownerdraw.cs#3)]
+ [!code-vb[ListViewOwnerDraw#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ListViewOwnerDraw/VB/listviewownerdraw.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawText">
+      <MemberSignature Language="C#" Value="public void DrawText ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawText() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DrawListViewItemEventArgs.DrawText" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テキストの描画、<see cref="T:System.Windows.Forms.ListViewItem" />その現在の前景の色を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在の値を使用して項目のテキストを描画するには、このメソッドを使用して、<xref:System.Windows.Forms.ListViewItem.ForeColor%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.ListViewItem.Font%2A?displayProperty=nameWithType>プロパティです。 指定された領域内にテキストが描画、<xref:System.Windows.Forms.DrawListViewItemEventArgs.Bounds%2A>プロパティです。 手動でを使用してテキストを描画することも、<xref:System.Drawing.Graphics>を介して取得、<xref:System.Windows.Forms.DrawListViewItemEventArgs.Graphics%2A>プロパティです。  
+  
+ <xref:System.Windows.Forms.DrawListViewItemEventArgs.DrawText%2A>メソッドは、最も役に立つ場合に、<xref:System.Windows.Forms.ListView.View%2A?displayProperty=nameWithType>プロパティが以外の値に設定<xref:System.Windows.Forms.View?displayProperty=nameWithType>です。 このメソッドは、詳細ビューでのテキストを描画、 <xref:System.Windows.Forms.ListViewItem>、サブ項目のテキストを描画できませんが、します。 そのため、詳細ビューで通常方が便利ですをすべての描画、<xref:System.Windows.Forms.ListView>のハンドラーでテキスト、<xref:System.Windows.Forms.ListView.DrawSubItem?displayProperty=nameWithType>イベント。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DrawListViewItemEventArgs.DrawText%2A>メソッドのカスタム描画を提供するアプリケーションで、<xref:System.Windows.Forms.ListView>コントロール。 例では、ハンドラーを<xref:System.Windows.Forms.ListView.DrawItem?displayProperty=nameWithType>イベントは、全体の項目の背景を描画します。 詳細ビューを除くすべてのビューで、このハンドラーは、前景テキストを描画します。 詳細ビューで前景テキストを描画、<xref:System.Windows.Forms.ListView.DrawSubItem?displayProperty=nameWithType>イベント。  
+  
+ 完了の例では、次を参照してください。、<xref:System.Windows.Forms.DrawListViewItemEventArgs>概要リファレンス トピックです。  
+  
+ [!code-csharp[ListViewOwnerDraw#3](~/samples/snippets/csharp/VS_Snippets_Winforms/ListViewOwnerDraw/CS/listviewownerdraw.cs#3)]
+ [!code-vb[ListViewOwnerDraw#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ListViewOwnerDraw/VB/listviewownerdraw.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawText">
+      <MemberSignature Language="C#" Value="public void DrawText (System.Windows.Forms.TextFormatFlags flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawText(valuetype System.Windows.Forms.TextFormatFlags flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DrawListViewItemEventArgs.DrawText(System.Windows.Forms.TextFormatFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="flags" Type="System.Windows.Forms.TextFormatFlags" />
+      </Parameters>
+      <Docs>
+        <param name="flags">ビットごとの組み合わせ<see cref="T:System.Windows.Forms.TextFormatFlags" />値。</param>
+        <summary>テキストの描画、<see cref="T:System.Windows.Forms.ListViewItem" />その現在の前景の色を使用して、指定した書式<see cref="T:System.Windows.Forms.TextFormatFlags" />値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在の値を使用して項目のテキストを描画するには、このメソッドを使用して、<xref:System.Windows.Forms.ListViewItem.ForeColor%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.ListViewItem.Font%2A?displayProperty=nameWithType>プロパティです。 <xref:System.Windows.Forms.TextFormatFlags>で指定された値、`flags`パラメーターを使用して、テキストの配置など、ノードのラベルの書式設定プロパティを提供できます。 指定された領域内にテキストが描画、<xref:System.Windows.Forms.DrawListViewItemEventArgs.Bounds%2A>プロパティです。 手動でを使用してテキストを描画することも、<xref:System.Drawing.Graphics>を介して取得、<xref:System.Windows.Forms.DrawListViewItemEventArgs.Graphics%2A>プロパティです。  
+  
+ <xref:System.Windows.Forms.DrawListViewItemEventArgs.DrawText%2A>メソッドは、最も役に立つ場合に、<xref:System.Windows.Forms.ListView.View%2A?displayProperty=nameWithType>プロパティが以外の値に設定<xref:System.Windows.Forms.View?displayProperty=nameWithType>です。 このメソッドは、詳細ビューでのテキストを描画、 <xref:System.Windows.Forms.ListViewItem>、サブ項目のテキストを描画できませんが、します。 そのため、詳細ビューで通常方が便利ですをすべての描画、<xref:System.Windows.Forms.ListView>のハンドラーでテキスト、<xref:System.Windows.Forms.ListView.DrawSubItem?displayProperty=nameWithType>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Graphics">
+      <MemberSignature Language="C#" Value="public System.Drawing.Graphics Graphics { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Graphics Graphics" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DrawListViewItemEventArgs.Graphics" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Graphics</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Drawing.Graphics" />描画に使用する、<see cref="T:System.Windows.Forms.ListViewItem" />です。</summary>
+        <value>A<see cref="T:System.Drawing.Graphics" />描画に使用する、<see cref="T:System.Windows.Forms.ListViewItem" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Graphics>クラスには、プロパティと、ディスプレイ デバイスに描画するために役立つメソッドが用意されています。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DrawListViewItemEventArgs.Graphics%2A>プロパティのカスタム描画を提供するアプリケーションで、<xref:System.Windows.Forms.ListView>コントロール。 例では、ハンドラーを<xref:System.Windows.Forms.ListView.DrawItem?displayProperty=nameWithType>イベントは、全体の項目の背景を描画します。 詳細ビューを除くすべてのビューで、このハンドラーは、前景テキストを描画します。 詳細ビューで前景テキストを描画、<xref:System.Windows.Forms.ListView.DrawSubItem?displayProperty=nameWithType>イベント。  
+  
+ 完了の例では、次を参照してください。、<xref:System.Windows.Forms.DrawListViewItemEventArgs>概要リファレンス トピックです。  
+  
+ [!code-csharp[ListViewOwnerDraw#3](~/samples/snippets/csharp/VS_Snippets_Winforms/ListViewOwnerDraw/CS/listviewownerdraw.cs#3)]
+ [!code-vb[ListViewOwnerDraw#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ListViewOwnerDraw/VB/listviewownerdraw.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ListViewItem Item { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ListViewItem Item" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DrawListViewItemEventArgs.Item" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ListViewItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.ListViewItem" />を描画します。</summary>
+        <value>描画する <see cref="T:System.Windows.Forms.ListViewItem" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティにアクセスを使用して、<xref:System.Windows.Forms.ListViewItem>を描画します。 これによりときに、<xref:System.Windows.Forms.DrawListViewItemEventArgs.State%2A>プロパティは、ニーズに合わせて十分な情報を提供していません。 <xref:System.Windows.Forms.DrawListViewItemEventArgs.State%2A>プロパティが使用できる、たとえば、品目が選択されているか、チェックすると、または、フォーカスされたかどうかを決定する基本的な状態情報のみを提供します。 <xref:System.Windows.Forms.DrawListViewItemEventArgs.Item%2A>プロパティ、その一方は、すべてのメンバーにアクセスする、<xref:System.Windows.Forms.ListViewItem>です。 必要がありますアイテムにアクセスする、直接、たとえば、描画する、<xref:System.Windows.Forms.ListViewItem.Text%2A?displayProperty=nameWithType>値の自分ではなくを使用して、<xref:System.Windows.Forms.DrawListViewItemEventArgs.DrawText%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DrawListViewItemEventArgs.Item%2A>プロパティのカスタム描画を提供するアプリケーションで、<xref:System.Windows.Forms.ListView>コントロール。 例では、ハンドラーを<xref:System.Windows.Forms.ListView.DrawItem?displayProperty=nameWithType>イベントは、全体の項目の背景を描画します。 詳細ビューを除くすべてのビューで、このハンドラーは、前景テキストを描画します。 詳細ビューで前景テキストを描画、<xref:System.Windows.Forms.ListView.DrawSubItem?displayProperty=nameWithType>イベント。  
+  
+ 完了の例では、次を参照してください。、<xref:System.Windows.Forms.DrawListViewItemEventArgs>概要リファレンス トピックです。  
+  
+ [!code-csharp[ListViewOwnerDraw#3](~/samples/snippets/csharp/VS_Snippets_Winforms/ListViewOwnerDraw/CS/listviewownerdraw.cs#3)]
+ [!code-vb[ListViewOwnerDraw#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ListViewOwnerDraw/VB/listviewownerdraw.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemIndex">
+      <MemberSignature Language="C#" Value="public int ItemIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ItemIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DrawListViewItemEventArgs.ItemIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インデックスを取得、<see cref="T:System.Windows.Forms.ListViewItem" />内で、<see cref="P:System.Windows.Forms.ListView.Items" />コレクションを含むの<see cref="T:System.Windows.Forms.ListView" />します。</summary>
+        <value>インデックス、<see cref="T:System.Windows.Forms.ListViewItem" />内で、<see cref="P:System.Windows.Forms.ListView.Items" />コレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ListView.DrawItem?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ListView>という`ListView1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ListView.DrawItem?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#471](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#471)]
+ [!code-vb[System.Windows.Forms.EventExamples#471](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#471)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="State">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ListViewItemStates State { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.ListViewItemStates State" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DrawListViewItemEventArgs.State" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ListViewItemStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の状態を取得、<see cref="T:System.Windows.Forms.ListViewItem" />を描画します。</summary>
+        <value>ビットごとの組み合わせ<see cref="T:System.Windows.Forms.ListViewItemStates" />の現在の状態を示す値、<see cref="T:System.Windows.Forms.ListViewItem" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して確認するかどうか、<xref:System.Windows.Forms.ListViewItem>の描画には、特定の状態にします。 このプロパティは、アイテムの基本的な状態情報のみを提供します。 たとえば、このプロパティを使用すると、項目が選択されているになっていること、チェック、またはフォーカスされたかどうかを判断します。 より理解する必要がある場合を使用して、アイテムを取得、<xref:System.Windows.Forms.DrawListViewItemEventArgs.Item%2A>プロパティを直接そのプロパティを確認します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DrawListViewItemEventArgs.State%2A>プロパティのカスタム描画を提供するアプリケーションで、<xref:System.Windows.Forms.ListView>コントロール。 例では、ハンドラーを<xref:System.Windows.Forms.ListView.DrawItem?displayProperty=nameWithType>イベントは、全体の項目の背景を描画します。 詳細ビューを除くすべてのビューで、このハンドラーは、前景テキストを描画します。 詳細ビューで前景テキストを描画、<xref:System.Windows.Forms.ListView.DrawSubItem?displayProperty=nameWithType>イベント。  
+  
+ 完了の例では、次を参照してください。、<xref:System.Windows.Forms.DrawListViewItemEventArgs>概要リファレンス トピックです。  
+  
+ [!code-csharp[ListViewOwnerDraw#3](~/samples/snippets/csharp/VS_Snippets_Winforms/ListViewOwnerDraw/CS/listviewownerdraw.cs#3)]
+ [!code-vb[ListViewOwnerDraw#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ListViewOwnerDraw/VB/listviewownerdraw.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,247 @@
+<Type Name="ComClassAttribute" FullName="Microsoft.VisualBasic.ComClassAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ComClassAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ComClassAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.ComClassAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class, AllowMultiple=false, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see langword="ComClassAttribute" />属性クラスが COM オブジェクトとして公開できるようにするメタデータの追加をコンパイラに指示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して`ComClassAttribute`Visual Basic から COM コンポーネントの公開のプロセスが簡略化します。 COM オブジェクトが .NET Framework アセンブリから非常に異なるなし、`ComClassAttribute`いくつかの Visual Basic から COM オブジェクトを生成する手順に従う必要があります。 マークされたクラスの`ComClassAttribute`コンパイラは、次の手順の多くを自動的に実行します。  
+  
+> [!NOTE]
+>  この属性は、COM オブジェクトの作成を簡略化します。 COM オブジェクトとしてクラスを公開するために使用してプロジェクトをコンパイルする必要があります、 **COM 相互運用機能の登録**で選択したオプション、**ビルド**のセクションで、**構成プロパティ** ダイアログ ボックス。  
+  
+> [!NOTE]
+>  使用するアンマネージ コードの COM オブジェクトとして、Visual Basic を使用して作成したクラスを公開することが true の COM オブジェクトではありません。 詳細については、「 [.NET Framework アプリケーションにおける COM 相互運用性](~/docs/visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md)です。  
+  
+   
+  
+## Examples  
+ この例を実行するには、新規作成**クラス ライブラリ**アプリケーションと、次のコードをクラス モジュールに追加します。  
+  
+ [!code-vb[VbCnAttributes#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbCnAttributes/VB/Class2.vb#21)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ComClassAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ComClassAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see langword="ComClassAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンス トラクターを使用して、`ComClassAttribute`を設定するクラス、 `ClassID`、 `InterfaceID`、または`EventID`プロパティを適用するとき、`ComClassAttribute`クラスにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ComClassAttribute (string _ClassID);" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor(string _ClassID) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ComClassAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="_ClassID" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="_ClassID">値を初期化、<see langword="ClassID" />プロパティ クラスを一意に識別するために使用します。</param>
+        <summary><see langword="ComClassAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンス トラクターを使用して、`ComClassAttribute`を設定するクラス、 `ClassID`、 `InterfaceID`、または`EventID`プロパティを適用するとき、`ComClassAttribute`クラスにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ComClassAttribute (string _ClassID, string _InterfaceID);" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor(string _ClassID, string _InterfaceID) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ComClassAttribute.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="_ClassID" Type="System.String" />
+        <Parameter Name="_InterfaceID" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="_ClassID">値を初期化、<see langword="ClassID" />プロパティ クラスを一意に識別するために使用します。</param>
+        <param name="_InterfaceID">値を初期化、<see langword="InterfaceID" />インターフェイスを一意に識別するために使用するプロパティです。</param>
+        <summary><see langword="ComClassAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンス トラクターを使用して、`ComClassAttribute`を設定するクラス、 `ClassID`、 `InterfaceID`、または`EventID`プロパティを適用するとき、`ComClassAttribute`クラスにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ComClassAttribute (string _ClassID, string _InterfaceID, string _EventId);" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor(string _ClassID, string _InterfaceID, string _EventId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ComClassAttribute.#ctor(System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="_ClassID" Type="System.String" />
+        <Parameter Name="_InterfaceID" Type="System.String" />
+        <Parameter Name="_EventId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="_ClassID">値を初期化、<see langword="ClassID" />プロパティ クラスを一意に識別するために使用します。</param>
+        <param name="_InterfaceID">値を初期化、<see langword="InterfaceID" />インターフェイスを一意に識別するために使用するプロパティです。</param>
+        <param name="_EventId">値を初期化、<see langword="EventID" />プロパティ、イベントを一意に識別するために使用します。</param>
+        <summary><see langword="ComClassAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンス トラクターを使用して、`ComClassAttribute`を設定するクラス、 `ClassID`、 `InterfaceID`、または`EventID`プロパティを適用するとき、`ComClassAttribute`クラスにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClassID">
+      <MemberSignature Language="C#" Value="public string ClassID { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ClassID" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ComClassAttribute.ClassID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クラスを一意に識別する ID が使用されるクラスを取得します。</summary>
+        <value>読み取り専用です。 コンパイラによって、COM オブジェクトが作成されるときに、クラスを一意に識別するために使用する文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンス トラクターは、このプロパティを設定するときに、`ComClassAttribute`クラスに適用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventID">
+      <MemberSignature Language="C#" Value="public string EventID { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EventID" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ComClassAttribute.EventID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントを一意に識別する ID が使用されるイベントを取得します。</summary>
+        <value>読み取り専用です。 コンパイラによって、COM オブジェクトが作成されるときに、クラスのイベントを一意に識別するために使用する文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンス トラクターは、このプロパティを設定するときに、`ComClassAttribute`クラスに適用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InterfaceID">
+      <MemberSignature Language="C#" Value="public string InterfaceID { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string InterfaceID" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ComClassAttribute.InterfaceID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インターフェイスを一意に識別する ID が使用されるインターフェイスを取得します。</summary>
+        <value>読み取り専用です。 コンパイラによって、COM オブジェクトが作成されるときに、クラスのインターフェイスを一意に識別するために使用する文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンス トラクターは、このプロパティを設定するときに、`ComClassAttribute`クラスに適用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InterfaceShadows">
+      <MemberSignature Language="C#" Value="public bool InterfaceShadows { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool InterfaceShadows" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ComClassAttribute.InterfaceShadows" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>COM インターフェイスの名前が、クラスまたは基底クラスの別のメンバーをシャドウすることを示します。</summary>
+        <value>A <see langword="Boolean" /> COM インターフェイスの名前がクラスまたは基底クラスの別のメンバーをシャドウすることを示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メンバーが別のメンバーとして、同じ名前を使用する場合は、シャドウします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

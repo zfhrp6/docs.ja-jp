@@ -1,0 +1,27 @@
+<Namespace Name="System.Transactions.Configuration">
+  <Docs>
+    <summary><see cref="N:System.Transactions.Configuration" />名前空間で使用される構成オプションを記述するクラスが含まれています。<see cref="N:System.Transactions" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ トランザクション アプリケーションで使用される構成ファイルの例を次のように、指定できます。  
+  
+ `<configuration>`  
+  
+ `<system.transactions>`  
+  
+ `<defaultSettings distributedTransactionManagerName="F04M25" timeout="02:00:00"/>`  
+  
+ `<machineSettings maxTimeout="02:00:00"/>`  
+  
+ `</system.transactions>`  
+  
+ `</configuration>`  
+  
+ この例では、トランザクションの既定値を指定します。 具体的には、設定は、分散トランザクション コーディネーター (MSDTC) を行うため、ローカルで開始されたすべての分散トランザクションを調整し、トランザクションがタイムアウトするまで既定の時間のコンピューター名。さらに、トランザクションがタイムアウトするまで、最長時間であるコンピューター レベルでのみ変更可能な設定が許可されることを指定します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Namespace>

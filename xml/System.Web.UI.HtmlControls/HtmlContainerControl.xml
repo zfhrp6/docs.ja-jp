@@ -1,0 +1,354 @@
+<Type Name="HtmlContainerControl" FullName="System.Web.UI.HtmlControls.HtmlContainerControl">
+  <TypeSignature Language="C#" Value="public abstract class HtmlContainerControl : System.Web.UI.HtmlControls.HtmlControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit HtmlContainerControl extends System.Web.UI.HtmlControls.HtmlControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.HtmlControls.HtmlContainerControl" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.HtmlControls.HtmlControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>開始タグと終了タグを必要とする HTML 要素に割り当てられる HTML サーバー コントロールの抽象基底クラスとして機能します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 終了タグで最も一般的なコントロールは、 `<form>`、 `<table>`、 `<tr>`、 `<td>`、 `<a>`、および`<span>`要素。  
+  
+ <xref:System.Web.UI.HtmlControls.HtmlContainerControl.InnerText%2A>と<xref:System.Web.UI.HtmlControls.HtmlContainerControl.InnerHtml%2A>プロパティでは、開始タグと終了タグの間のコンテンツを操作できます。 <xref:System.Web.UI.HtmlControls.HtmlContainerControl>-コントロールを派生します。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.Web.UI.HtmlControls.HtmlContainerControl>を参照してください、<xref:System.Web.UI.HtmlControls.HtmlContainerControl.%23ctor%2A>コンス トラクターです。  
+  
+ このクラスの新しいインスタンスは直接作成されません。  
+  
+> [!CAUTION]
+>  使用する場合、<xref:System.Web.UI.HtmlControls.HtmlContainerControl.InnerHtml%2A>開始タグと終了タグの HTML サーバー コントロールは、テキストの間のテキストを指定するプロパティは HTML エンコードではありません。 これにより、テキストに HTML タグ内のスクリプトを埋め込むことが可能です。 使用する場合、<xref:System.Web.UI.HtmlControls.HtmlContainerControl.InnerHtml%2A>プロパティ、セキュリティの脆弱性を軽減する値を必ず検証してください。 それ以外の場合、使用を検討して、<xref:System.Web.UI.HtmlControls.HtmlContainerControl.InnerText%2A>プロパティ代わりにします。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Web.UI.HtmlControls.HtmlContainerControl.InnerHtml%2A> Web ページ上のメッセージを動的に生成するには、このクラスのプロパティです。  
+  
+ [!code-aspx-csharp[Classic HtmlContainerControl Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HtmlContainerControl Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic HtmlContainerControl Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HtmlContainerControl Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected HtmlContainerControl ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlContainerControl.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>既定値を使用して <see cref="T:System.Web.UI.HtmlControls.HtmlContainerControl" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.HtmlControls.HtmlContainerControl>クラスの既定値を使用します。  
+  
+> [!NOTE]
+>  このクラスのインスタンスは直接作成されません。 このコンス トラクターは、このクラスで定義されたプロパティを初期化するために他の HTML コントロールのクラスのコンス トラクターから呼び出されます。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.HtmlControls.HtmlContainerControl>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.HtmlControls.HtmlControl.TagName%2A>|"Span"リテラル文字列です。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HtmlContainerControl (string tag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string tag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlContainerControl.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="tag" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="tag">コントロールのタグ名を指定する文字列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.HtmlControls.HtmlContainerControl" />クラスの指定されたタグ名を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.HtmlControls.HtmlContainerControl>クラスの指定したタグを使用します。  
+  
+> [!NOTE]
+>  このクラスのインスタンスは直接作成されません。 このコンス トラクターは、このクラスで定義されたプロパティを初期化するために他の HTML コントロールのクラスのコンス トラクターから呼び出されます。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.HtmlControls.HtmlContainerControl>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.HtmlControls.HtmlControl.TagName%2A>|指定された値、`tag`パラメーター。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateControlCollection">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.ControlCollection CreateControlCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.ControlCollection CreateControlCollection() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlContainerControl.CreateControlCollection" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ControlCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>サーバー コントロールの子コントロール (リテラルとサーバーの両方) を保持する新しい <see cref="T:System.Web.UI.ControlCollection" /> オブジェクトを作成します。</summary>
+        <returns><see cref="T:System.Web.UI.HtmlControls.HtmlControl" /> 子サーバー コントロールを格納している <see cref="T:System.Web.UI.ControlCollection" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InnerHtml">
+      <MemberSignature Language="C#" Value="public virtual string InnerHtml { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string InnerHtml" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlContainerControl.InnerHtml" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または開始タグと終了タグの指定された HTML サーバー コントロールの間にある内容を設定します。</summary>
+        <value>タグと終了タグ、HTML サーバー コントロールの間での HTML コンテンツ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.HtmlControls.HtmlContainerControl.InnerHtml%2A>プロパティをプログラムによって、開始タグと終了タグの HTML サーバー コントロールの間の内容を変更します。  
+  
+ <xref:System.Web.UI.HtmlControls.HtmlContainerControl.InnerHtml%2A>プロパティは自動的には HTML エンティティとの間の特殊文字をエンコードしません。 などの特殊文字を表示することは HTML エンティティ、`<`文字、ブラウザーでは通常、特別な意味を持つものとして解釈ことです。 `<`文字、タグの先頭として解釈され、ページには表示されません。 表示する、`<`エンティティを使用する必要は文字、`&lt;`です。  
+  
+ たとえば場合、<xref:System.Web.UI.HtmlControls.HtmlContainerControl.InnerHtml%2A>プロパティに設定されている`"<b> Hello </b>"`、`<`と`>`に文字は変換されません`&lt;`と`&gt;`、それぞれします。 表示される出力にそのままできます: \<b > こんにちは\</b >。 ブラウザーを検出、`<b>`タグし、でテキストを表示、こんにちは、太字のフォント。  
+  
+> [!CAUTION]
+>  テキストは HTML エンコードではないため、テキストに HTML 内のスクリプトを埋め込むことが可能タグを付けます。 このプロパティは、ユーザー入力を使用して動的に設定されている場合は、セキュリティの脆弱性を削減する値を検証することを確認します。 詳細については、次を参照してください。[セキュリティとユーザー入力](~/docs/standard/security/security-and-user-input.md)です。  
+  
+ 自動 HTML エンコードおよびデコードを提供するには、使用、<xref:System.Web.UI.HtmlControls.HtmlContainerControl.InnerText%2A>プロパティです。  
+  
+> [!NOTE]
+>  子コントロールが存在しない場合、<xref:System.Web.UI.HtmlControls.HtmlContainerControl.InnerHtml%2A>プロパティ値を格納<xref:System.String.Empty?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlContainerControl.InnerHtml%2A>テキスト メッセージを動的に設定するプロパティです。  
+  
+ [!code-aspx-csharp[Classic HtmlContainerControl Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HtmlContainerControl Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic HtmlContainerControl Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HtmlContainerControl Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">複数の HTML サーバー コントロールがあります。  
+  
+ \- または  
+  
+ HTML サーバー コントロールではありません、<see cref="T:System.Web.UI.LiteralControl" />または<see cref="T:System.Web.UI.DataBoundLiteralControl" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InnerText">
+      <MemberSignature Language="C#" Value="public virtual string InnerText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string InnerText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlContainerControl.InnerText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または開始タグと終了タグの指定された HTML サーバー コントロールの間のテキストを設定します。</summary>
+        <value>開始タグと終了タグの HTML サーバー コントロールの間のテキスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.HtmlControls.HtmlContainerControl.InnerText%2A>プロパティをプログラムによって、開始タグと終了タグの HTML サーバー コントロールの間のテキストを変更します。  
+  
+ 異なり、 <xref:System.Web.UI.HtmlControls.HtmlContainerControl.InnerHtml%2A> 、プロパティ、<xref:System.Web.UI.HtmlControls.HtmlContainerControl.InnerText%2A>プロパティは、HTML エンティティとの間の特殊文字を自動的にエンコードします。 などの特殊文字を表示することは HTML エンティティ、`<`文字、ブラウザーでは通常、特別な意味を持つものとして解釈ことです。 `<`文字、タグの先頭として解釈され、ページには表示されません。 表示する、`<`エンティティを使用する必要は文字、`&lt;`です。  
+  
+ たとえば場合、<xref:System.Web.UI.HtmlControls.HtmlContainerControl.InnerText%2A>プロパティに設定されている`"<b> Hello </b>"`、`<`と`>`シンボルに変換されます`&lt;`と`&gt;`、それぞれします。 表示される出力になります: &lt; b&gt;こんにちは&lt;/b&gt;です。 `&lt;`と`&gt;`エンティティを示す次の文字がページに表示するのには、ブラウザーにします。 ブラウザーが検出されません、`<b>`タグし、太字のフォントでテキストを表示します。 ページに表示されるテキストは、: \<b > こんにちは\</b >。  
+  
+ 自動 HTML エンコードおよびデコードすることを防ぐため、使用、<xref:System.Web.UI.HtmlControls.HtmlContainerControl.InnerHtml%2A>プロパティです。  
+  
+> [!NOTE]
+>  子コントロールが存在しない場合、<xref:System.Web.UI.HtmlControls.HtmlContainerControl.InnerHtml%2A>プロパティ値を格納<xref:System.String.Empty?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次のコード例に示します HTML エンコーディング サービスで使用できる、<xref:System.Web.UI.HtmlControls.HtmlContainerControl.InnerText%2A>プロパティです。  
+  
+ [!code-aspx-csharp[Classic HtmlContainerControl.InnerText Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HtmlContainerControl.InnerText Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic HtmlContainerControl.InnerText Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HtmlContainerControl.InnerText Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">複数の HTML サーバー コントロールがあります。  
+  
+ \- または  
+  
+ HTML サーバー コントロールではありません、<see cref="T:System.Web.UI.LiteralControl" />または<see cref="T:System.Web.UI.DataBoundLiteralControl" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadViewState">
+      <MemberSignature Language="C#" Value="protected override void LoadViewState (object savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void LoadViewState(object savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlContainerControl.LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="savedState">復元するコントロールの状態を表す <see cref="T:System.Object" />。</param>
+        <summary>復元、<see cref="T:System.Web.UI.HtmlControls.HtmlContainerControl" />によって前のページからの状態を要求するコントロールのビューが保存された、<see cref="M:System.Web.UI.Control.SaveViewState" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、主に、.NET Framework インフラストラクチャによって使用され、コードから直接使用するものではありません。 ただし、コントロールの開発者は、カスタム サーバー コントロールがそのビューステートを復元する方法を指定するには、このメソッドをオーバーライドすることができます。 詳細については、次を参照してください。 [ASP.NET 状態管理の概要](http://msdn.microsoft.com/library/0218d965-5d30-445b-b6a6-8870e70e63ce)です。  
+  
+ <xref:System.Web.UI.HtmlControls.HtmlContainerControl.LoadViewState%2A>メソッドは、基本クラスの<xref:System.Web.UI.Control.LoadViewState%2A>メソッドです。 さらに、<xref:System.Web.UI.HtmlControls.HtmlContainerControl.LoadViewState%2A>メソッドのセット、<xref:System.Web.UI.HtmlControls.HtmlContainerControl.InnerHtml%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="protected override void Render (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Render(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlContainerControl.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />を受け取る、<see cref="T:System.Web.UI.HtmlControls.HtmlContainerControl" />コンテンツ。</param>
+        <summary>表示、<see cref="T:System.Web.UI.HtmlControls.HtmlContainerControl" />を指定したコントロール<see cref="T:System.Web.UI.HtmlTextWriter" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlContainerControl.Render%2A>メソッドのオーバーライド、<xref:System.Web.UI.HtmlControls.HtmlControl.Render%2A?displayProperty=nameWithType>開始タグ、子コントロール、および終了タグの表示する方法、<xref:System.Web.UI.HtmlControls.HtmlContainerControl>コントロール。  
+  
+ <xref:System.Web.UI.HtmlControls.HtmlContainerControl.Render%2A>メソッドが、主の機能を拡張するコントロールの開発者によって使用される、<xref:System.Web.UI.HtmlControls.HtmlContainerControl>コントロール。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合、<see cref="M:System.Web.UI.HtmlControls.HtmlContainerControl.Render(System.Web.UI.HtmlTextWriter)" />を呼び出して、基底クラスの派生クラスでメソッドが必ず<see cref="M:System.Web.UI.HtmlControls.HtmlControl.Render(System.Web.UI.HtmlTextWriter)" />メソッドできるように、<see cref="T:System.Web.UI.HtmlControls.HtmlContainerControl" />コントロールが正しくレンダリングされます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderAttributes">
+      <MemberSignature Language="C#" Value="protected override void RenderAttributes (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void RenderAttributes(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlContainerControl.RenderAttributes(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />描画された内容を受信するインスタンス。</param>
+        <summary><see cref="T:System.Web.UI.HtmlControls.HtmlContainerControl" /> コントロールの属性を指定した <see cref="T:System.Web.UI.HtmlTextWriter" /> オブジェクトにレンダリングします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderEndTag">
+      <MemberSignature Language="C#" Value="protected virtual void RenderEndTag (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void RenderEndTag(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlContainerControl.RenderEndTag(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">表示されたコンテンツを受け取る <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary>終了タグの表示、<see cref="T:System.Web.UI.HtmlControls.HtmlContainerControl" />を指定したコントロール<see cref="T:System.Web.UI.HtmlTextWriter" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlContainerControl.RenderEndTag%2A>メソッドによって呼び出されます、<xref:System.Web.UI.HtmlControls.HtmlContainerControl.Render%2A>メソッドの終了タグを表示するために、<xref:System.Web.UI.HtmlControls.HtmlContainerControl>コントロール。  
+  
+ <xref:System.Web.UI.HtmlControls.HtmlContainerControl.RenderEndTag%2A>メソッドが、主の機能を拡張するコントロールの開発者によって使用される、<xref:System.Web.UI.HtmlControls.HtmlContainerControl>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

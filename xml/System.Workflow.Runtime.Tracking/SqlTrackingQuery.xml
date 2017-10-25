@@ -1,0 +1,178 @@
+<Type Name="SqlTrackingQuery" FullName="System.Workflow.Runtime.Tracking.SqlTrackingQuery">
+  <TypeSignature Language="C#" Value="public sealed class SqlTrackingQuery" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SqlTrackingQuery extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.Tracking.SqlTrackingQuery" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Workflow.Runtime.Tracking.SqlTrackingService" /> によって使用される SQL データベースに格納された追跡データを対象とするクエリを管理するために使用されるメソッドとプロパティが含まれます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingQuery> が提供するメソッドとプロパティを使用することにより、<xref:System.Workflow.Runtime.Tracking.SqlTrackingService> によって SQL データベースに格納された特定の種類の追跡データにアクセスできます。 このデータにアクセスするには、<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> オブジェクトを使用します。 <xref:System.Workflow.Runtime.Tracking.SqlTrackingQuery.TryGetWorkflow%2A> を呼び出すことにより、特定のワークフロー インスタンスの <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> の取得を試みることができます。 <xref:System.Workflow.Runtime.Tracking.SqlTrackingQuery.GetWorkflows%2A> を呼び出すことにより、特定のワークフロー インスタンスに対応する <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> オブジェクトのコレクションを取得できます。特定のワークフロー インスタンスとは、その追跡データが、パラメーターとしてメソッドに渡された <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions> に含まれるクエリ パラメーターのセットに一致したものです。 使用可能な追跡データの種類については、<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> クラスを参照してください。実行可能なクエリの種類については、 <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions> クラスを参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlTrackingQuery ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.SqlTrackingQuery.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.Tracking.SqlTrackingQuery" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のコンストラクターは、<xref:System.Workflow.Runtime.Tracking.SqlTrackingQuery.ConnectionString%2A> を null 参照 (Visual Basic では `Nothing`) に初期化します。 <xref:System.Workflow.Runtime.Tracking.SqlTrackingQuery.ConnectionString%2A> または <xref:System.Workflow.Runtime.Tracking.SqlTrackingQuery.GetWorkflows%2A> を呼び出す前に、<xref:System.Workflow.Runtime.Tracking.SqlTrackingQuery.TryGetWorkflow%2A> を設定する必要があります。設定されていない場合は <xref:System.InvalidOperationException> がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlTrackingQuery (string connectionString);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string connectionString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.SqlTrackingQuery.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connectionString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connectionString">照会先の SQL データベースの接続文字列。</param>
+        <summary><see cref="T:System.Workflow.Runtime.Tracking.SqlTrackingQuery" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingQuery.ConnectionString%2A> プロパティは `connectionString` に初期化されます。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingQuery.%23ctor%2A> を使用して <xref:System.Workflow.Runtime.Tracking.SqlTrackingQuery> クラスのインスタンスを作成する方法を、次のコード例に示します。  
+  
+ 次のコード例は、DatabaseService.cs ファイルに含まれているワークフロー モニターの SDK サンプルの一部です。 詳細については、次を参照してください。[ワークフロー モニター](http://msdn.microsoft.com/en-us/4f70c1c5-f82d-4d5f-8b7d-943b9f99f8e2)です。  
+  
+ [!code-csharp[WF_Samples#129](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#129)]
+ [!code-vb[WF_Samples#129](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#129)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="connectionString" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionString">
+      <MemberSignature Language="C#" Value="public string ConnectionString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConnectionString" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.SqlTrackingQuery.ConnectionString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>照会先の SQL 追跡データベースの接続文字列。</summary>
+        <value>SQL データベース接続文字列。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="P:System.Workflow.Runtime.Tracking.SqlTrackingQuery.ConnectionString" /> を null 参照 (Visual Basic の場合は <see langword="Nothing" />) に設定しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetWorkflows">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance&gt; GetWorkflows (System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IList`1&lt;class System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance&gt; GetWorkflows(class System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.SqlTrackingQuery.GetWorkflows(System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions" />
+      </Parameters>
+      <Docs>
+        <param name="options">クエリ パラメーターを指定する <see cref="T:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions" />。</param>
+        <summary><see cref="T:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions" /> で指定したクエリ パラメーターのセットに対応するワークフロー インスタンスのセットの追跡データを返します。</summary>
+        <returns><see cref="T:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance" /> で指定したクエリ パラメーターに一致する追跡データを持つワークフロー インスタンスのセットの追跡データへのアクセスを提供する <paramref name="options" /> オブジェクトのリスト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="options" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.Workflow.Runtime.Tracking.SqlTrackingQuery.ConnectionString" /> が null 参照 (<see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetWorkflow">
+      <MemberSignature Language="C#" Value="public bool TryGetWorkflow (Guid workflowInstanceId, out System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance workflowInstance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryGetWorkflow(valuetype System.Guid workflowInstanceId, [out] class System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance&amp; workflowInstance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.SqlTrackingQuery.TryGetWorkflow(System.Guid,System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="workflowInstanceId" Type="System.Guid" />
+        <Parameter Name="workflowInstance" Type="System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="workflowInstanceId">追跡データを要求する対象のワークフロー インスタンスの <see cref="T:System.Guid" />。</param>
+        <param name="workflowInstance">このメソッドが <see langword="true" /> を返した場合、ワークフロー インスタンスに関連付けられた追跡データへのアクセスを提供する <see cref="T:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance" /> が格納されます。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>指定したワークフロー インスタンスのクエリ データの取得を試みます。</summary>
+        <returns>
+          要求したワークフロー インスタンスの追跡データが存在する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingQuery.TryGetWorkflow%2A> メソッドを使用して <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> を取得する方法を、次のコード例に示します。  
+  
+ 次のコード例は、DatabaseService.cs ファイルに含まれているワークフロー モニターの SDK サンプルの一部です。 詳細については、次を参照してください。[ワークフロー モニター](http://msdn.microsoft.com/en-us/4f70c1c5-f82d-4d5f-8b7d-943b9f99f8e2)です。  
+  
+ [!code-csharp[WF_Samples#129](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#129)]
+ [!code-vb[WF_Samples#129](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#129)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.Workflow.Runtime.Tracking.SqlTrackingQuery.ConnectionString" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

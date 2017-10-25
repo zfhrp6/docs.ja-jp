@@ -1,0 +1,313 @@
+<Type Name="MimePartCollection" FullName="System.Web.Services.Description.MimePartCollection">
+  <TypeSignature Language="C#" Value="public sealed class MimePartCollection : System.Collections.CollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MimePartCollection extends System.Collections.CollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Description.MimePartCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.CollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>インスタンスのコレクションを表す、<see cref="T:System.Web.Services.Description.MimePart" />クラスです。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各<xref:System.Web.Services.Description.MimePart>コレクション内に追加された機能拡張要素を表す、<xref:System.Web.Services.Description.MimeMultipartRelatedBinding>の対応する MIME の種類を指定して<xref:System.Web.Services.Description.MessagePart>です。  
+  
+ XML Web サービス用のプロトコルを指定する方法の詳細については、次を参照してください[&#91;\< 。topic://cpconbuildingaspnetwebservices > & #93 です。](http://msdn.microsoft.com/en-us/01dfc27c-c68e-4910-a0aa-5e4c2a766b0c). Web サービス記述言語 (WSDL) に関する詳細については、http://www.w3.org/TR/wsdl/ の仕様を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例では、プロパティとによって公開されるメソッドの使用、`MimePartCollection`クラスです。  
+  
+ [!code-cpp[MimePartCollection_1#1](~/samples/snippets/cpp/VS_Snippets_Remoting/MimePartCollection_1/CPP/mimepartcollection_1.cpp#1)]
+ [!code-csharp[MimePartCollection_1#1](~/samples/snippets/csharp/VS_Snippets_Remoting/MimePartCollection_1/CS/mimepartcollection_1.cs#1)]
+ [!code-vb[MimePartCollection_1#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MimePartCollection_1/VB/mimepartcollection_1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MimePartCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.MimePartCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Description.MimePartCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (System.Web.Services.Description.MimePart mimePart);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Add(class System.Web.Services.Description.MimePart mimePart) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.MimePartCollection.Add(System.Web.Services.Description.MimePart)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mimePart" Type="System.Web.Services.Description.MimePart" />
+      </Parameters>
+      <Docs>
+        <param name="mimePart">コレクションに追加する <see cref="T:System.Web.Services.Description.MimePart" />。</param>
+        <summary>指定した追加<see cref="T:System.Web.Services.Description.MimePart" />の末尾に、<see cref="T:System.Web.Services.Description.MimePartCollection" />です。</summary>
+        <returns>0 から始まるインデックス位置、<paramref name="mimePart" />パラメーターが追加されました。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例での一般的な使用、`Add`メソッドです。  
+  
+ [!code-cpp[MimePartCollection_8#5](~/samples/snippets/cpp/VS_Snippets_Remoting/MimePartCollection_8/CPP/mimepartcollection_8.cpp#5)]
+ [!code-csharp[MimePartCollection_8#5](~/samples/snippets/csharp/VS_Snippets_Remoting/MimePartCollection_8/CS/mimepartcollection_8.cs#5)]
+ [!code-vb[MimePartCollection_8#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MimePartCollection_8/VB/mimepartcollection_8.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Web.Services.Description.MimePart mimePart);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Web.Services.Description.MimePart mimePart) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.MimePartCollection.Contains(System.Web.Services.Description.MimePart)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mimePart" Type="System.Web.Services.Description.MimePart" />
+      </Parameters>
+      <Docs>
+        <param name="mimePart"><see cref="T:System.Web.Services.Description.MimePart" />コレクション メンバシップを確認します。</param>
+        <summary>示す値を返すかどうか、指定した<see cref="T:System.Web.Services.Description.MimePart" />のメンバーである、<see cref="T:System.Web.Services.Description.MimePartCollection" />です。</summary>
+        <returns>
+          <see langword="true" />場合、<paramref name="mimePart" />パラメーターのメンバーである、 <see langword="MimePartCollection" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例での一般的な使用、`Contains`メソッドです。  
+  
+ [!code-cpp[MimePartCollection_8#6](~/samples/snippets/cpp/VS_Snippets_Remoting/MimePartCollection_8/CPP/mimepartcollection_8.cpp#6)]
+ [!code-csharp[MimePartCollection_8#6](~/samples/snippets/csharp/VS_Snippets_Remoting/MimePartCollection_8/CS/mimepartcollection_8.cs#6)]
+ [!code-vb[MimePartCollection_8#6](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MimePartCollection_8/VB/mimepartcollection_8.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Web.Services.Description.MimePart[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Web.Services.Description.MimePart[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.MimePartCollection.CopyTo(System.Web.Services.Description.MimePart[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Web.Services.Description.MimePart[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">型の配列<see cref="T:System.Web.Services.Description.MimePart" />コピー操作の出力先として機能します。</param>
+        <param name="index">コピーされたコレクションの配置を開始する位置を示す 0 から始まるインデックス。</param>
+        <summary>全体をコピー<see cref="T:System.Web.Services.Description.MimePartCollection" />型の場合は、互換性のある 1 次元配列に<see cref="T:System.Web.Services.Description.MimePart" />対象となる配列の指定した 0 から始まるインデックスで開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例での一般的な使用、`CopyTo`メソッドです。  
+  
+ [!code-cpp[MimePartCollection_8#7](~/samples/snippets/cpp/VS_Snippets_Remoting/MimePartCollection_8/CPP/mimepartcollection_8.cpp#7)]
+ [!code-csharp[MimePartCollection_8#7](~/samples/snippets/csharp/VS_Snippets_Remoting/MimePartCollection_8/CS/mimepartcollection_8.cs#7)]
+ [!code-vb[MimePartCollection_8#7](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MimePartCollection_8/VB/mimepartcollection_8.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Web.Services.Description.MimePart mimePart);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Web.Services.Description.MimePart mimePart) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.MimePartCollection.IndexOf(System.Web.Services.Description.MimePart)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mimePart" Type="System.Web.Services.Description.MimePart" />
+      </Parameters>
+      <Docs>
+        <param name="mimePart"><see cref="T:System.Web.Services.Description.MimePart" />検索対象の<see cref="T:System.Web.Services.Description.MimePartCollection" />です。</param>
+        <summary>指定された検索<see cref="T:System.Web.Services.Description.MimePart" />し、コレクション内で最初に見つかった位置の 0 から始まるインデックスを返します。</summary>
+        <returns>32 ビット符号付き整数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例での一般的な使用、`IndexOf`メソッドです。  
+  
+ [!code-cpp[MimePartCollection_8#4](~/samples/snippets/cpp/VS_Snippets_Remoting/MimePartCollection_8/CPP/mimepartcollection_8.cpp#4)]
+ [!code-csharp[MimePartCollection_8#4](~/samples/snippets/csharp/VS_Snippets_Remoting/MimePartCollection_8/CS/mimepartcollection_8.cs#4)]
+ [!code-vb[MimePartCollection_8#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MimePartCollection_8/VB/mimepartcollection_8.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.Web.Services.Description.MimePart mimePart);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.Web.Services.Description.MimePart mimePart) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.MimePartCollection.Insert(System.Int32,System.Web.Services.Description.MimePart)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="mimePart" Type="System.Web.Services.Description.MimePart" />
+      </Parameters>
+      <Docs>
+        <param name="index">挿入する位置の 0 から始まるインデックス、 <c>mimePart</c>パラメーター。</param>
+        <param name="mimePart">コレクションに追加する <see cref="T:System.Web.Services.Description.MimePart" />。</param>
+        <summary>指定した追加<see cref="T:System.Web.Services.Description.MimePart" />を<see cref="T:System.Web.Services.Description.MimePartCollection" />指定したインデックス位置。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既にコレクション内の項目の数が等しい場合、コレクションの容量は、新しい要素が挿入される前に、内部の配列を自動的に再割り当てすることによって、容量が倍になります。  
+  
+ 場合、`index`パラメーターと等しい<xref:System.Collections.CollectionBase.Count%2A>、`mimePart`パラメーターがの末尾に追加された、<xref:System.Web.Services.Description.MimePartCollection>です。  
+  
+ 挿入位置より後に要素が新しい要素のために下に移動します。  
+  
+   
+  
+## Examples  
+ 次の例での一般的な使用、`Insert`メソッドです。  
+  
+ [!code-cpp[MimePartCollection_8#3](~/samples/snippets/cpp/VS_Snippets_Remoting/MimePartCollection_8/CPP/mimepartcollection_8.cpp#3)]
+ [!code-csharp[MimePartCollection_8#3](~/samples/snippets/csharp/VS_Snippets_Remoting/MimePartCollection_8/CS/mimepartcollection_8.cs#3)]
+ [!code-vb[MimePartCollection_8#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MimePartCollection_8/VB/mimepartcollection_8.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException"><paramref name="index" />パラメーターが 0 未満です。  
+  
+ \- または  
+  
+ <paramref name="index" />パラメーターがより大きい<see cref="P:System.Collections.CollectionBase.Count" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.MimePart this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.MimePart Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.MimePartCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.MimePart</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">0 から始まるインデックス、<see cref="T:System.Web.Services.Description.MimePart" />値が変更または返されます。</param>
+        <summary>取得または設定の値、<see cref="T:System.Web.Services.Description.MimePart" />指定した 0 から始まるインデックス位置。</summary>
+        <value><see langword="MimePart" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例でのメンバーを取得する 0 から始まるインデックスを使用、`MimePartCollection`です。  
+  
+ [!code-cpp[MimePartCollection_8#2](~/samples/snippets/cpp/VS_Snippets_Remoting/MimePartCollection_8/CPP/mimepartcollection_8.cpp#2)]
+ [!code-csharp[MimePartCollection_8#2](~/samples/snippets/csharp/VS_Snippets_Remoting/MimePartCollection_8/CS/mimepartcollection_8.cs#2)]
+ [!code-vb[MimePartCollection_8#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MimePartCollection_8/VB/mimepartcollection_8.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Web.Services.Description.MimePart mimePart);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Web.Services.Description.MimePart mimePart) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.MimePartCollection.Remove(System.Web.Services.Description.MimePart)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mimePart" Type="System.Web.Services.Description.MimePart" />
+      </Parameters>
+      <Docs>
+        <param name="mimePart">コレクションから削除する <see cref="T:System.Web.Services.Description.MimePart" />。</param>
+        <summary>最初に出現する指定した削除<see cref="T:System.Web.Services.Description.MimePart" />から、<see cref="T:System.Web.Services.Description.MimePartCollection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、一方向の検索を実行します。したがって、平均実行時間に比例して<xref:System.Collections.CollectionBase.Count%2A>です。  
+  
+ 削除された後にある要素`MimePart`繰りを上へ移動します。  
+  
+   
+  
+## Examples  
+ 次の例での一般的な使用、`Remove`メソッドです。  
+  
+ MimePartCollection_&#8;8  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

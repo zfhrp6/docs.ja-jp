@@ -1,0 +1,118 @@
+<Type Name="RouteValueExpressionEditorSheet" FullName="System.Web.UI.Design.RouteValueExpressionEditorSheet">
+  <TypeSignature Language="C#" Value="public class RouteValueExpressionEditorSheet : System.Web.UI.Design.ExpressionEditorSheet" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RouteValueExpressionEditorSheet extends System.Web.UI.Design.ExpressionEditorSheet" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.RouteValueExpressionEditorSheet" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.ExpressionEditorSheet</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>デザイン時のデザイナー ホストの UI に <see langword="RouteValue" /> 式のプロパティのデザイン時のエディター シートを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビジュアル デザイナーを使用して、<xref:System.Web.UI.Design.RouteValueExpressionEditor>と共にクラス、<xref:System.Web.UI.Design.RouteValueExpressionEditorSheet>の個々 のプロパティを選択するクラス、`RouteValue`式を選択した式のプロパティ値を結合して、`RouteValue`式。  
+  
+ <xref:System.Web.UI.Design.RouteValueExpressionEditor.GetExpressionEditorSheet%2A?displayProperty=nameWithType> メソッドは <xref:System.Web.UI.Design.RouteValueExpressionEditorSheet> オブジェクトを返します。 式 ダイアログ ボックスで、コントロールのプロパティを選択してにバインドすると、`RouteValue`式、ビジュアル デザイナーの呼び出し、<xref:System.Web.UI.Design.RouteValueExpressionEditor.GetExpressionEditorSheet%2A>メソッドです。 ビジュアル デザイナーを使用して、返された<xref:System.Web.UI.Design.RouteValueExpressionEditorSheet>を要求するオブジェクト、<xref:System.Web.UI.Design.RouteValueExpressionEditorSheet.RouteValue%2A>プロパティです。 プロパティを選択すると、ビジュアル デザイナーを呼び出す、<xref:System.Web.UI.Design.RouteValueExpressionEditorSheet.GetExpression%2A>メソッドを作成、`RouteValue`式の文字列。  
+  
+ <xref:System.Web.UI.Design.RouteValueExpressionEditorSheet.RouteValue%2A>プロパティを作成するために指定する必要があります、`RouteValue`式の文字列。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RouteValueExpressionEditorSheet (string expression, IServiceProvider serviceProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string expression, class System.IServiceProvider serviceProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.RouteValueExpressionEditorSheet.#ctor(System.String,System.IServiceProvider)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="expression" Type="System.String" />
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="expression">A<see langword="RouteValue" />式、式エディターのシートを初期化するために使用します。</param>
+        <param name="serviceProvider">追加のデザイン時サービスを取得するために使用、デザイナー ホストによって提供されるサービス プロバイダーの実装</param>
+        <summary><see cref="T:System.Web.UI.Design.RouteValueExpressionEditorSheet" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 初期<xref:System.Web.UI.Design.RouteValueExpressionEditorSheet.RouteValue%2A>プロパティ値が、入力を使用して設定`expression`文字列。 <xref:System.Web.UI.Design.ExpressionEditorSheet.ServiceProvider%2A>プロパティが設定されて、その入力`serviceProvider`実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExpression">
+      <MemberSignature Language="C#" Value="public override string GetExpression ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetExpression() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.RouteValueExpressionEditorSheet.GetExpression" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see langword="RouteValue" />式エディターのシートのプロパティ値によって形成される式。</summary>
+        <returns><see langword="RouteValue" />シートの現在の設定を表す文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsValid">
+      <MemberSignature Language="C#" Value="public override bool IsValid { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsValid" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.RouteValueExpressionEditorSheet.IsValid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see langword="RouteValue" />式の文字列が無効です。</summary>
+        <value>
+          <see langword="true" />場合、<see langword="RouteValue" />式の文字列は、それ以外の有効な<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RouteValue">
+      <MemberSignature Language="C#" Value="public string RouteValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RouteValue" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.RouteValueExpressionEditorSheet.RouteValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定によって評価される URL パラメーターの名前、<see langword="RouteValue" />式。</summary>
+        <value>評価する URL パラメーターの名前、<see langword="RouteValue" />式。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

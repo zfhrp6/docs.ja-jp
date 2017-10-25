@@ -1,0 +1,195 @@
+<Type Name="IProcessHostSupportFunctions" FullName="System.Web.Hosting.IProcessHostSupportFunctions">
+  <TypeSignature Language="C#" Value="public interface IProcessHostSupportFunctions" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IProcessHostSupportFunctions" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Hosting.IProcessHostSupportFunctions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("35f9c4c1-3800-4d17-99bc-018a62243687")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Security.SuppressUnmanagedCodeSecurity</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プロセス ホストのヘルパー関数を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.IProcessHostSupportFunctions>導入された、[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]です。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="GetAppHostConfigFilename">
+      <MemberSignature Language="C#" Value="public string GetAppHostConfigFilename ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetAppHostConfigFilename() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.IProcessHostSupportFunctions.GetAppHostConfigFilename" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アプリケーション ホストの構成 (.config) ファイルのパスを取得します。</summary>
+        <returns>アプリケーション ホスト構成ファイル (ファイル名を含む) 物理パス。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetApplicationProperties">
+      <MemberSignature Language="C#" Value="public void GetApplicationProperties (string appId, out string virtualPath, out string physicalPath, out string siteName, out string siteId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetApplicationProperties([in]string appId, [out] string&amp; virtualPath, [out] string&amp; physicalPath, [out] string&amp; siteName, [out] string&amp; siteId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.IProcessHostSupportFunctions.GetApplicationProperties(System.String,System.String@,System.String@,System.String@,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="appId" Type="System.String" />
+        <Parameter Name="virtualPath" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="physicalPath" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="siteName" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="siteId" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="appId">アプリケーションの ID。</param>
+        <param name="virtualPath">アプリケーションのルート仮想パス。</param>
+        <param name="physicalPath">アプリケーションのルートへの物理パス。</param>
+        <param name="siteName">アプリケーションの表示名。</param>
+        <param name="siteId">サイトの id。</param>
+        <summary>アプリケーションのメタベースからプロパティを取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.IProcessHostSupportFunctions.GetApplicationProperties%2A>導入された、[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]です。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetConfigToken">
+      <MemberSignature Language="C#" Value="public IntPtr GetConfigToken (string appId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance native int GetConfigToken([in]string appId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.IProcessHostSupportFunctions.GetConfigToken(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="appId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="appId">アプリケーションの一意の識別子。</param>
+        <summary>指定したアプリケーションのルート ディレクトリの Windows セキュリティ トークンを取得します。</summary>
+        <returns>指定したアプリケーションのルート ディレクトリの Windows セキュリティ トークンを含む Windows ハンドル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.IProcessHostSupportFunctions.GetConfigToken%2A>導入された、[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]です。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetNativeConfigurationSystem">
+      <MemberSignature Language="C#" Value="public IntPtr GetNativeConfigurationSystem ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance native int GetNativeConfigurationSystem() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.IProcessHostSupportFunctions.GetNativeConfigurationSystem" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、 <c>INativeConfigurationSystem</c>インターフェイスです。</summary>
+        <returns>ポインター、 <c>INativeConfigurationSystem</c>インターフェイスです。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetRootWebConfigFilename">
+      <MemberSignature Language="C#" Value="public string GetRootWebConfigFilename ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetRootWebConfigFilename() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.IProcessHostSupportFunctions.GetRootWebConfigFilename" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ApplicationHost.config ファイルの物理パスを取得します。</summary>
+        <returns>ApplicationHost.config ファイルの物理パス。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="MapPath">
+      <MemberSignature Language="C#" Value="public void MapPath (string appId, string virtualPath, out string physicalPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void MapPath([in]string appId, [in]string virtualPath, [out] string&amp; physicalPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.IProcessHostSupportFunctions.MapPath(System.String,System.String,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="appId" Type="System.String" />
+        <Parameter Name="virtualPath" Type="System.String" />
+        <Parameter Name="physicalPath" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="appId">アプリケーション ID。</param>
+        <param name="virtualPath">マップへの相対 URL です。</param>
+        <param name="physicalPath">相対 URL の物理パス。</param>
+        <summary>相対 URL の物理パスを取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.IProcessHostSupportFunctions.MapPath%2A>導入された、[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]です。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

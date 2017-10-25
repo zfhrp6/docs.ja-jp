@@ -1,0 +1,906 @@
+<Type Name="ToolBar" FullName="System.Windows.Controls.ToolBar">
+  <TypeSignature Language="C#" Value="public class ToolBar : System.Windows.Controls.HeaderedItemsControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi ToolBar extends System.Windows.Controls.HeaderedItemsControl" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.ToolBar" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.HeaderedItemsControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_ToolBarPanel", Type=typeof(System.Windows.Controls.Primitives.ToolBarPanel))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_ToolBarOverflowPanel", Type=typeof(System.Windows.Controls.Primitives.ToolBarOverflowPanel))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コマンドまたはコントロールのグループのコンテナーを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.ToolBar>コントロールに表示されない項目を配置するオーバーフロー メカニズムを提供する、<xref:System.Windows.Controls.ToolBar>オーバーフロー領域にします。 親ツールバー要素のみ<xref:System.Windows.Controls.ToolBarTray>移動またはユーザーがサイズ変更できます。  
+  
+ <xref:System.Windows.Controls.ToolBar><xref:System.Windows.Controls.HeaderedItemsControl>、つまり、ヘッダーとオブジェクトのコレクション任意の型 (文字列、イメージ、パネルなど) を指定できます。 詳細については、<xref:System.Windows.Controls.HeaderedItemsControl> クラスを参照してください。  
+  
+## <a name="customizing-the-toolbar-control"></a>ツール バー コントロールのカスタマイズ  
+ 設定を適用する、同じプロパティを複数<xref:System.Windows.Controls.ToolBar>、コントロールを使用して、<xref:System.Windows.FrameworkElement.Style%2A>プロパティです。 既定値を変更することができます<xref:System.Windows.Controls.ControlTemplate>コントロールの外観を一意にします。 作成の詳細については、<xref:System.Windows.Controls.ControlTemplate>を参照してください[、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  部分とに固有の状態を表示する、<xref:System.Windows.Controls.ToolBar>を参照してください[ツール バー スタイルとテンプレート](~/docs/framework/wpf/controls/toolbar-styles-and-templates.md)です。  
+  
+ コントロールの既定のスタイルでは、このコントロールの依存関係プロパティを設定する場合があります。  プロパティが既定のスタイルが設定されている場合は、アプリケーションでコントロールが表示されたら既定値から、プロパティが変更可能性があります。 既定のスタイルは、いるデスクトップ テーマによっては、アプリケーションが実行されている場合は使用が決定されます。  詳細については、次を参照してください。 [WPF テーマの既定の](http://go.microsoft.com/fwlink/?LinkID=158252)します。  
+  
+> [!NOTE]
+>  Visual プロパティの設定はのみに効果が場合、このプロパティは、両方に存在<xref:System.Windows.Controls.ToolBar>コントロールの既定のテンプレートとを使用して設定をします。 「を変更する、Visual 構造の制御」 セクションで visual のプロパティの一覧を検索できる[、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Controls.ToolBar>内、<xref:System.Windows.Controls.ToolBarTray>です。  
+  
+ [!code-xaml[ToolBarExample#1](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolBarExample/CS/Pane1.xaml#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ToolBar ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolBar.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.ToolBar" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Band">
+      <MemberSignature Language="C#" Value="public int Band { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Band" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ToolBar.Band" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または内のツールバーの位置を示す値を設定、<see cref="T:System.Windows.Controls.ToolBarTray" />です。</summary>
+        <value>帯域外、<see cref="T:System.Windows.Controls.ToolBarTray" />でツールバーが配置されています。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 位置、<xref:System.Windows.Controls.ToolBar>で、<xref:System.Windows.Controls.ToolBarTray>の値に依存、 <xref:System.Windows.Controls.ToolBarTray.Orientation%2A?displayProperty=nameWithType>、 <xref:System.Windows.Controls.ToolBar.Band%2A>、および<xref:System.Windows.Controls.ToolBar.BandIndex%2A>プロパティです。 ときに<xref:System.Windows.Controls.ToolBarTray.Orientation%2A>に設定されている<xref:System.Windows.Controls.Orientation.Horizontal>、バンド内の行を表す、<xref:System.Windows.Controls.ToolBarTray>です。 ときに<xref:System.Windows.Controls.ToolBarTray.Orientation%2A>は<xref:System.Windows.Controls.Orientation.Vertical>、バンドの列を表す、<xref:System.Windows.Controls.ToolBarTray>です。 次の表の間のリレーションシップ<xref:System.Windows.Controls.ToolBarTray.Orientation%2A>、 <xref:System.Windows.Controls.ToolBar.Band%2A>、および<xref:System.Windows.Controls.ToolBar.BandIndex%2A>です。  
+  
+|[方向]|帯域外|BandIndex|  
+|-----------------|----------|---------------|  
+|[水平方向]|行を示す、<xref:System.Windows.Controls.ToolBar>が配置されています。 ツールバーを持つ<xref:System.Windows.Controls.ToolBar.Band%2A>より小さい値に設定するより大きい値を持つを超えています。|位置を示す、<xref:System.Windows.Controls.ToolBar>上、<xref:System.Windows.Controls.ToolBar.Band%2A>です。 ツールバーを持つ<xref:System.Windows.Controls.ToolBar.BandIndex%2A>より大きい値を持つユーザーの左側には値を小さくします。|  
+|Vertical|列を示す、<xref:System.Windows.Controls.ToolBar>が配置されています。 ツールバーを持つ<xref:System.Windows.Controls.ToolBar.Band%2A>より大きい値を持つユーザーの左側には値を小さくします。|位置を示す、<xref:System.Windows.Controls.ToolBar>上、<xref:System.Windows.Controls.ToolBar.Band%2A>です。 ツールバーを持つ<xref:System.Windows.Controls.ToolBar.BandIndex%2A>より小さい値に設定するより大きい値を持つを超えています。|  
+  
+<a name="dependencyPropertyInfo_Band"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ToolBar.BandProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsParentMeasure%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、配置するこのプロパティを使用する方法<xref:System.Windows.Controls.ToolBar>内の制御、<xref:System.Windows.Controls.ToolBarTray>です。  
+  
+ [!code-xaml[ToolBarExample#2](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolBarExample/CS/Pane1.xaml#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BandIndex">
+      <MemberSignature Language="C#" Value="public int BandIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 BandIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ToolBar.BandIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはツールバーのバンドの位置を示す帯域外インデックス番号を設定します。</summary>
+        <value>帯域外上のツールバーの位置、<see cref="T:System.Windows.Controls.ToolBarTray" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを明示的に設定しない場合の値は順序によって決まります、<xref:System.Windows.Controls.ToolBar>設定されている、<xref:System.Windows.Controls.ToolBarTray>です。 2 つのツールバーを配置する場合など、<xref:System.Windows.Controls.ToolBarTray>設定を指定せず、<xref:System.Windows.Controls.ToolBar.Band%2A>と<xref:System.Windows.Controls.ToolBar.BandIndex%2A>プロパティ、値の<xref:System.Windows.Controls.ToolBar.Band%2A>は両方のツールバーを 0 になります。 値<xref:System.Windows.Controls.ToolBar.BandIndex%2A>最初のツールバーの場合は 0 と 2 番目のツールバーの 1 になります。  
+  
+ 位置、<xref:System.Windows.Controls.ToolBar>で、<xref:System.Windows.Controls.ToolBarTray>の値に依存、 <xref:System.Windows.Controls.ToolBarTray.Orientation%2A?displayProperty=nameWithType>、 <xref:System.Windows.Controls.ToolBar.Band%2A>、および<xref:System.Windows.Controls.ToolBar.BandIndex%2A>プロパティです。 ときに<xref:System.Windows.Controls.ToolBarTray.Orientation%2A>に設定されている<xref:System.Windows.Controls.Orientation.Horizontal>、バンド内の行を表す、<xref:System.Windows.Controls.ToolBarTray>です。 ときに<xref:System.Windows.Controls.ToolBarTray.Orientation%2A>は<xref:System.Windows.Controls.Orientation.Vertical>、バンドの列を表す、<xref:System.Windows.Controls.ToolBarTray>です。 次の表の間のリレーションシップ<xref:System.Windows.Controls.ToolBarTray.Orientation%2A>、 <xref:System.Windows.Controls.ToolBar.Band%2A>、および<xref:System.Windows.Controls.ToolBar.BandIndex%2A>です。  
+  
+|[方向]|帯域外|BandIndex|  
+|-----------------|----------|---------------|  
+|[水平方向]|行を示す、<xref:System.Windows.Controls.ToolBar>が配置されています。 ツールバーを持つ<xref:System.Windows.Controls.ToolBar.Band%2A>より小さい値に設定するより大きい値を持つを超えています。|位置を示す、<xref:System.Windows.Controls.ToolBar>上、<xref:System.Windows.Controls.ToolBar.Band%2A>です。 ツールバーを持つ<xref:System.Windows.Controls.ToolBar.BandIndex%2A>より大きい値を持つユーザーの左側には値を小さくします。|  
+|Vertical|列を示す、<xref:System.Windows.Controls.ToolBar>が配置されています。 ツールバーを持つ<xref:System.Windows.Controls.ToolBar.Band%2A>より大きい値を持つユーザーの左側には値を小さくします。|位置を示す、<xref:System.Windows.Controls.ToolBar>上、<xref:System.Windows.Controls.ToolBar.Band%2A>です。 ツールバーを持つ<xref:System.Windows.Controls.ToolBar.BandIndex%2A>より小さい値に設定するより大きい値を持つを超えています。|  
+  
+<a name="dependencyPropertyInfo_BandIndex"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ToolBar.BandIndexProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsParentMeasure%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、配置するこのプロパティを使用する方法<xref:System.Windows.Controls.ToolBar>内の制御、<xref:System.Windows.Controls.ToolBarTray>です。  
+  
+ [!code-xaml[ToolBarExample#2](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolBarExample/CS/Pane1.xaml#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BandIndexProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty BandIndexProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty BandIndexProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ToolBar.BandIndexProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ToolBar.BandIndex" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BandProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty BandProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty BandProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ToolBar.BandProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ToolBar.Band" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ButtonStyleKey">
+      <MemberSignature Language="C#" Value="public static System.Windows.ResourceKey ButtonStyleKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.ResourceKey ButtonStyleKey" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ToolBar.ButtonStyleKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.ResourceKey</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Style" />ツールバーのボタンに適用します。</summary>
+        <value>ツールバーのボタンの既定のスタイルを表すリソース キー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定のスタイルを使用する<xref:System.Windows.Controls.Button>コントロールに対して、<xref:System.Windows.Controls.ToolBar>です。  
+  
+<a name="xamlAttributeUsage_ButtonStyleKey"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+ <*オブジェクト**プロパティ*="`{` **ToolBar.ButtonStyleKey**`}"/>`  
+  
+   
+  
+## Examples  
+ 次の例は、このプロパティを使用して適用する方法を示しています、<xref:System.Windows.Style>に<xref:System.Windows.Controls.Button>コントロールに対して、<xref:System.Windows.Controls.ToolBar>です。  
+  
+ [!code-xaml[ToolBar_snip#ToolBarButtonStyleKey](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolBar_snip/CS/pane1.xaml#toolbarbuttonstylekey)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckBoxStyleKey">
+      <MemberSignature Language="C#" Value="public static System.Windows.ResourceKey CheckBoxStyleKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.ResourceKey CheckBoxStyleKey" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ToolBar.CheckBoxStyleKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.ResourceKey</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Style" />のチェック ボックスをオンに適用される、<see cref="T:System.Windows.Controls.ToolBar" />です。</summary>
+        <value>リソース キーをでチェック ボックスの既定のスタイルを表す、<see cref="T:System.Windows.Controls.ToolBar" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定のスタイルを使用する<xref:System.Windows.Controls.CheckBox>コントロールに対して、<xref:System.Windows.Controls.ToolBar>です。  
+  
+<a name="xamlAttributeUsage_CheckBoxStyleKey"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+ <*オブジェクト**プロパティ*="`{` **ToolBar.CheckBoxStyleKey**`}"/>`  
+  
+   
+  
+## Examples  
+ 次の例では、このプロパティを使用して、適用、<xref:System.Windows.Style>に<xref:System.Windows.Controls.CheckBox>コントロールに対して、<xref:System.Windows.Controls.ToolBar>です。  
+  
+ [!code-xaml[ToolBar_snip#ToolBarCheckBoxStyleKey](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolBar_snip/CS/pane1.xaml#toolbarcheckboxstylekey)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComboBoxStyleKey">
+      <MemberSignature Language="C#" Value="public static System.Windows.ResourceKey ComboBoxStyleKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.ResourceKey ComboBoxStyleKey" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ToolBar.ComboBoxStyleKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.ResourceKey</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Style" />上のコンボ ボックスに適用する、<see cref="T:System.Windows.Controls.ToolBar" />です。</summary>
+        <value>ツールバーのコンボ ボックスの既定のスタイルを表すリソース キー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定のスタイルを使用する<xref:System.Windows.Controls.ComboBox>コントロールに対して、<xref:System.Windows.Controls.ToolBar>です。  
+  
+<a name="xamlAttributeUsage_ComboBoxStyleKey"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+ <*オブジェクト**プロパティ*="`{` **ToolBar.ComboBoxStyleKey**`}"/>`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIsOverflowItem">
+      <MemberSignature Language="C#" Value="public static bool GetIsOverflowItem (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool GetIsOverflowItem(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolBar.GetIsOverflowItem(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティの読み込み元の要素。</param>
+        <summary>値を読み取って、<see cref="P:System.Windows.Controls.ToolBar.IsOverflowItem" />指定した要素からのプロパティです。</summary>
+        <returns>プロパティの値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOverflowMode">
+      <MemberSignature Language="C#" Value="public static System.Windows.Controls.OverflowMode GetOverflowMode (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Controls.OverflowMode GetOverflowMode(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolBar.GetOverflowMode(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForChildren(IncludeDescendants=true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.OverflowMode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティの読み込み元の要素。</param>
+        <summary>値を読み取って、<see cref="P:System.Windows.Controls.ToolBar.OverflowMode" />指定した要素からのプロパティです。</summary>
+        <returns>プロパティの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 可能なモード値では、次を参照してください。<xref:System.Windows.Controls.OverflowMode>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasOverflowItems">
+      <MemberSignature Language="C#" Value="public bool HasOverflowItems { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasOverflowItems" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ToolBar.HasOverflowItems" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ツールバーに表示されていない項目があるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ツールバーの表示; されていない項目がある場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Controls.ToolBar>を表示する領域がある他のアイテムには、オーバーフロー領域にその他のアイテムを配置します。 ユーザーをクリックすると、矢印、<xref:System.Windows.Controls.ToolBar>オーバーフロー項目にアクセスします。  
+  
+<a name="dependencyPropertyInfo_HasOverflowItems"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ToolBar.HasOverflowItemsProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasOverflowItemsProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HasOverflowItemsProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HasOverflowItemsProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ToolBar.HasOverflowItemsProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ToolBar.HasOverflowItems" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOverflowItemProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsOverflowItemProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsOverflowItemProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ToolBar.IsOverflowItemProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ToolBar.IsOverflowItem" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOverflowOpen">
+      <MemberSignature Language="C#" Value="public bool IsOverflowOpen { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsOverflowOpen" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ToolBar.IsOverflowOpen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="T:System.Windows.Controls.ToolBar" />オーバーフロー領域が現在表示されています。</summary>
+        <value>
+          <see langword="true" />オーバーフロー領域を表示する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_IsOverflowOpen"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ToolBar.IsOverflowOpenProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.BindsTwoWayByDefault%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOverflowOpenProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsOverflowOpenProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsOverflowOpenProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ToolBar.IsOverflowOpenProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ToolBar.IsOverflowOpen" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MeasureOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Size MeasureOverride (System.Windows.Size constraint);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size MeasureOverride(valuetype System.Windows.Size constraint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolBar.MeasureOverride(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="constraint" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="constraint">測定値の制約。 A<see cref="T:System.Windows.Controls.ToolBar" />制約よりも大きいサイズを返すことはできません。</param>
+        <summary>Remeasures、<see cref="T:System.Windows.Controls.ToolBar" />です。</summary>
+        <returns><see cref="T:System.Windows.Controls.ToolBar" /> のサイズ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MenuStyleKey">
+      <MemberSignature Language="C#" Value="public static System.Windows.ResourceKey MenuStyleKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.ResourceKey MenuStyleKey" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ToolBar.MenuStyleKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.ResourceKey</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Style" />上のメニューに適用する、<see cref="T:System.Windows.Controls.ToolBar" />です。</summary>
+        <value>ツールバーのメニューの既定のスタイルを表すリソース キー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定のスタイルを使用する<xref:System.Windows.Controls.Menu>コントロールに対して、<xref:System.Windows.Controls.ToolBar>です。  
+  
+<a name="xamlAttributeUsage_MenuStyleKey"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+ <*オブジェクト**プロパティ*="`{` **ToolBar.MenuStyleKey**`}"/>`  
+  
+   
+  
+## Examples  
+ 次の例では、このプロパティを使用して、適用、<xref:System.Windows.Style>に<xref:System.Windows.Controls.Menu>コントロールに対して、<xref:System.Windows.Controls.ToolBar>です。  
+  
+ [!code-xaml[ToolBar_snip#ToolBarMenuStyleKey](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolBar_snip/CS/pane1.xaml#toolbarmenustylekey)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreateAutomationPeer">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolBar.OnCreateAutomationPeer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationPeer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>適切な提供<see cref="T:System.Windows.Automation.Peers.ToolBarAutomationPeer" />の一部として、このコントロールの実装、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]インフラストラクチャです。</summary>
+        <returns>型固有の <see cref="T:System.Windows.Automation.Peers.AutomationPeer" /> 実装。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnItemsChanged">
+      <MemberSignature Language="C#" Value="protected override void OnItemsChanged (System.Collections.Specialized.NotifyCollectionChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnItemsChanged(class System.Collections.Specialized.NotifyCollectionChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolBar.OnItemsChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Collections.Specialized.NotifyCollectionChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">引数、<see cref="E:System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged" />イベント。</param>
+        <summary>ときに呼び出されます、<see cref="P:System.Windows.Controls.ItemsControl.Items" />プロパティが変更されました。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnKeyDown">
+      <MemberSignature Language="C#" Value="protected override void OnKeyDown (System.Windows.Input.KeyEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnKeyDown(class System.Windows.Input.KeyEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolBar.OnKeyDown(System.Windows.Input.KeyEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.KeyEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">引数、<see cref="E:System.Windows.UIElement.KeyDown" />イベント。</param>
+        <summary>クラスの処理を提供、<see cref="E:System.Windows.UIElement.KeyDown" />内のアイテムのキーが押されたときに発生するルーティング イベント、<see cref="T:System.Windows.Controls.ToolBar" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 押されたとき、最初の項目、<xref:System.Windows.Controls.ToolBar>がキーボード フォーカスを取得します。 ユーザーが最後の最後の項目を押したとき、<xref:System.Windows.Controls.ToolBar>がキーボード フォーカスを取得します。 この場合、この実装を示します、<xref:System.Windows.UIElement.KeyDown>イベントを処理するには、<xref:System.Windows.RoutedEventArgs.Handled%2A>にイベント データのプロパティ`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合は<see cref="M:System.Windows.Controls.ToolBar.OnKeyDown(System.Windows.Input.KeyEventArgs)" />、常の基本実装を呼び出す、<see cref="M:System.Windows.Controls.ToolBar.OnKeyDown(System.Windows.Input.KeyEventArgs)" />実装します。 基底の実装の呼び出しに失敗すると、基本クラスが、最終的なクラスの実行時の動作を変更する可能性があります、クラスのハンドラーでイベントを処理できなくなります。 要件に応じて、特別な処理の前後の基本実装を呼び出すことができます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLostMouseCapture">
+      <MemberSignature Language="C#" Value="protected override void OnLostMouseCapture (System.Windows.Input.MouseEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnLostMouseCapture(class System.Windows.Input.MouseEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolBar.OnLostMouseCapture(System.Windows.Input.MouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.MouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">引数、<see cref="E:System.Windows.UIElement.LostMouseCapture" />イベント。</param>
+        <summary>クラス処理を提供、<see cref="E:System.Windows.UIElement.LostMouseCapture" />ルーティング イベントが発生するときに、<see cref="T:System.Windows.Controls.ToolBar" />がマウス キャプチャを失った。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装では、処理済みの状態は変更されません (、<xref:System.Windows.RoutedEventArgs.Handled%2A>プロパティ) の<xref:System.Windows.UIElement.LostMouseCapture>イベント データ。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合は<see cref="M:System.Windows.Controls.ToolBar.OnLostMouseCapture(System.Windows.Input.MouseEventArgs)" />、常の基本実装を呼び出す、<see cref="M:System.Windows.Controls.ToolBar.OnLostMouseCapture(System.Windows.Input.MouseEventArgs)" />実装します。 基底の実装の呼び出しに失敗すると、基本クラスが、最終的なクラスの実行時の動作を変更する可能性があります、クラスのハンドラーでイベントを処理できなくなります。 要件に応じて、特別な処理の前後の基本実装を呼び出すことができます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Orientation">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.Orientation Orientation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.Orientation Orientation" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ToolBar.Orientation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Orientation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.ToolBar" /> の向きを取得します。</summary>
+        <value>ツールバーの向きです。 既定値は、<see cref="F:System.Windows.Controls.Orientation.Horizontal" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、親からその値を取得<xref:System.Windows.Controls.ToolBarTray>です。  
+  
+<a name="dependencyPropertyInfo_Orientation"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ToolBar.OrientationProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例を決める方法を説明するかどうか、<xref:System.Windows.Controls.ToolBar>は縦方向です。  
+  
+ [!code-csharp[ToolBarOrient_snip#ToolBarOrientation](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolBarOrient_snip/CSharp/Pane1.xaml.cs#toolbarorientation)]
+ [!code-vb[ToolBarOrient_snip#ToolBarOrientation](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolBarOrient_snip/visualbasic/pane1.xaml.vb#toolbarorientation)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OrientationProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty OrientationProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty OrientationProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ToolBar.OrientationProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Orientation" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OverflowModeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty OverflowModeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty OverflowModeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ToolBar.OverflowModeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ToolBar.OverflowMode" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrepareContainerForItemOverride">
+      <MemberSignature Language="C#" Value="protected override void PrepareContainerForItemOverride (System.Windows.DependencyObject element, object item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void PrepareContainerForItemOverride(class System.Windows.DependencyObject element, object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolBar.PrepareContainerForItemOverride(System.Windows.DependencyObject,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="element">この要素は、アイテムが表示されます。</param>
+        <param name="item">表示する項目。</param>
+        <summary>指定した要素に指定した項目が表示されるように準備します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RadioButtonStyleKey">
+      <MemberSignature Language="C#" Value="public static System.Windows.ResourceKey RadioButtonStyleKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.ResourceKey RadioButtonStyleKey" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ToolBar.RadioButtonStyleKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.ResourceKey</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Style" />ツールバーにあるオプション ボタンに適用します。</summary>
+        <value>ツールバーでオプション ボタンの既定のスタイルを表すリソース キー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定のスタイルを使用する<xref:System.Windows.Controls.RadioButton>コントロールに対して、<xref:System.Windows.Controls.ToolBar>です。  
+  
+<a name="xamlAttributeUsage_RadioButtonStyleKey"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+ <*オブジェクト**プロパティ*="`{` **ToolBar.RadioButtonStyleKey**`}"/>`  
+  
+   
+  
+## Examples  
+ 次の例では、このプロパティを使用して、適用、<xref:System.Windows.Style>に<xref:System.Windows.Controls.RadioButton>コントロールに対して、<xref:System.Windows.Controls.ToolBar>です。  
+  
+ [!code-xaml[ToolBar_snip#ToolBarRadioButtonStyleKey](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolBar_snip/CS/pane1.xaml#toolbarradiobuttonstylekey)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SeparatorStyleKey">
+      <MemberSignature Language="C#" Value="public static System.Windows.ResourceKey SeparatorStyleKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.ResourceKey SeparatorStyleKey" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ToolBar.SeparatorStyleKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.ResourceKey</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Style" />に区切り記号に適用される、<see cref="T:System.Windows.Controls.ToolBar" />です。</summary>
+        <value>ツールバーの区分線の既定のスタイルを表すリソース キー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定のスタイルを使用する<xref:System.Windows.Controls.Separator>コントロールに対して、<xref:System.Windows.Controls.ToolBar>です。  
+  
+<a name="xamlAttributeUsage_SeparatorStyleKey"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+ <*オブジェクト**プロパティ*="`{` **ToolBar.SeparatorStyleKey**`}"/>`  
+  
+   
+  
+## Examples  
+ 次の例では、このプロパティを使用して、適用、<xref:System.Windows.Style>に<xref:System.Windows.Controls.Separator>コントロールに対して、<xref:System.Windows.Controls.ToolBar>です。  
+  
+ [!code-xaml[ToolBar_snip#ToolBarSeparatorStyleKey](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolBar_snip/CS/pane1.xaml#toolbarseparatorstylekey)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetOverflowMode">
+      <MemberSignature Language="C#" Value="public static void SetOverflowMode (System.Windows.DependencyObject element, System.Windows.Controls.OverflowMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetOverflowMode(class System.Windows.DependencyObject element, valuetype System.Windows.Controls.OverflowMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolBar.SetOverflowMode(System.Windows.DependencyObject,System.Windows.Controls.OverflowMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="mode" Type="System.Windows.Controls.OverflowMode" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティの書き込み先の要素。</param>
+        <param name="mode">設定するプロパティ値。</param>
+        <summary>値を書き込みます、<see cref="P:System.Windows.Controls.ToolBar.OverflowMode" />プロパティを指定した要素にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 可能なモード値では、次を参照してください。<xref:System.Windows.Controls.OverflowMode>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextBoxStyleKey">
+      <MemberSignature Language="C#" Value="public static System.Windows.ResourceKey TextBoxStyleKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.ResourceKey TextBoxStyleKey" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ToolBar.TextBoxStyleKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.ResourceKey</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Style" />上のテキスト ボックスに適用する、<see cref="T:System.Windows.Controls.ToolBar" />です。</summary>
+        <value>ツールバーのテキスト ボックスの既定のスタイルを表すリソース キー</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定のスタイルを使用する<xref:System.Windows.Controls.TextBox>コントロールに対して、<xref:System.Windows.Controls.ToolBar>です。  
+  
+<a name="xamlAttributeUsage_TextBoxStyleKey"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+ <*オブジェクト**プロパティ*="`{` **ToolBar.TextBoxStyleKey**`}"/>`  
+  
+   
+  
+## Examples  
+ 次の例では、このプロパティを使用すると、<xref:System.Windows.Style>の<xref:System.Windows.Controls.TextBox>コントロールに対して、<xref:System.Windows.Controls.ToolBar>です。  
+  
+ [!code-xaml[ToolBar_snip#ToolBarTextBoxStyleKey](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolBar_snip/CS/pane1.xaml#toolbartextboxstylekey)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToggleButtonStyleKey">
+      <MemberSignature Language="C#" Value="public static System.Windows.ResourceKey ToggleButtonStyleKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.ResourceKey ToggleButtonStyleKey" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ToolBar.ToggleButtonStyleKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.ResourceKey</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.ToolBar" /> 上の <see cref="T:System.Windows.Controls.Primitives.ToggleButton" /> コントロールに適用される <see cref="T:System.Windows.Style" /> を取得します。</summary>
+        <value>ツールバーのトグル ボタンの既定のスタイルを表すリソース キー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定のスタイルを使用する<xref:System.Windows.Controls.Primitives.ToggleButton>コントロールに対して、<xref:System.Windows.Controls.ToolBar>です。  
+  
+<a name="xamlAttributeUsage_ToggleButtonStyleKey"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+ <*オブジェクト**プロパティ*="`{` **ToolBar.ToggleButtonStyleKey**`}"/>`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

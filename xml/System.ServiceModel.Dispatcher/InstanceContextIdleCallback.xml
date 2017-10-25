@@ -1,0 +1,32 @@
+<Type Name="InstanceContextIdleCallback" FullName="System.ServiceModel.Dispatcher.InstanceContextIdleCallback">
+  <TypeSignature Language="C#" Value="public delegate void InstanceContextIdleCallback(InstanceContext instanceContext);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed InstanceContextIdleCallback extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.InstanceContextIdleCallback" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="instanceContext" Type="System.ServiceModel.InstanceContext" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="instanceContext">処理を完了したインスタンス コンテキスト。</param>
+    <summary><see cref="T:System.ServiceModel.InstanceContext" /> オブジェクトが処理を完了したときに呼び出されるメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.InstanceContextIdleCallback> オブジェクトが処理を完了したことを [!INCLUDE[indigo1](~/includes/indigo1-md.md)] ランタイムに通知するには、<xref:System.ServiceModel.Dispatcher.InstanceContextIdleCallback> を使用します。 <xref:System.ServiceModel.Dispatcher.InstanceContextIdleCallback> が作業を完了したことを、<xref:System.ServiceModel.Dispatcher.InstanceContextIdleCallback> オブジェクトがランタイムに通知すると、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] は再度、<xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle%2A?displayProperty=nameWithType> を呼び出します。 このサイクルは、<xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle%2A?displayProperty=nameWithType> が `true` を返すまで継続されます。コンテキストはサイクルごとに閉じられ、再利用されます。  
+  
+ 詳細については、「<xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.NotifyIdle%2A>」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

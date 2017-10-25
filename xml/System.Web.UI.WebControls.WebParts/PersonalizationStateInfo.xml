@@ -1,0 +1,104 @@
+<Type Name="PersonalizationStateInfo" FullName="System.Web.UI.WebControls.WebParts.PersonalizationStateInfo">
+  <TypeSignature Language="C#" Value="public abstract class PersonalizationStateInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit PersonalizationStateInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>派生クラスでオーバーライドされると、ページの Web パーツのデータのセットに関する情報の形式を実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したクラス<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo>いずれかまたは一連のページの共有状態のデータ ページと、ユーザーのユーザーごとのパーソナル化状態データのセットに関する情報を表します。 このクラスは使用するものクエリと管理の方法でシリアル化された Web パーツのデータが必要ではありません。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>継承する場合<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo" />、オーバーライドする必要があります抽象メンバーがありません。 クラスは抽象ですが、クラス メンバーのいずれも抽象クラスです。 このクラスは、.NET Framework で内部的に使用が現在と、このクラスのコンス トラクターは内部で、初期化するためにこのクラスの派生バージョンのことがないため、 <paramref name="path" />、<paramref name="lastUpdatedDate" />と<paramref name="size" />コンス トラクターに必要なパラメーター.</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="LastUpdatedDate">
+      <MemberSignature Language="C#" Value="public DateTime LastUpdatedDate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime LastUpdatedDate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo.LastUpdatedDate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パーソナル化状態が最後に更新された日時を取得します。</summary>
+        <value>A<see cref="T:System.DateTime" />パーソナル化状態が前回ときを示すを更新します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、共有、またはユーザーごとの個人用設定の状態情報が最後に更新された日時を提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public string Path { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Path" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パーソナル化状態情報に関連付けられているページへのパスを取得します。</summary>
+        <value>パーソナル化状態情報に関連付けられているページのパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パスは、アプリケーションの相対パスではなど ~/application/page/page.aspx です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Size">
+      <MemberSignature Language="C#" Value="public int Size { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Size" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo.Size" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基になるデータ ストアに格納されたパーソナル化状態情報のサイズを取得します。</summary>
+        <value>パーソナル化状態情報のバイト単位のサイズ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共有状態については、サイズは、データ ストア内の共有状態のサイズを表します。 ユーザーごとの詳細について、サイズが特定のユーザーとページの組み合わせのユーザーごとの状態のサイズを表す (によって決定されます、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo.Path%2A>プロパティ)、データ ストアに格納されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

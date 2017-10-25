@@ -1,0 +1,154 @@
+<Type Name="NetMsmqSecurity" FullName="System.ServiceModel.NetMsmqSecurity">
+  <TypeSignature Language="C#" Value="public sealed class NetMsmqSecurity" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit NetMsmqSecurity extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.NetMsmqSecurity" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.ServiceModel.NetMsmqSecurity" /> クラスは、<see cref="T:System.ServiceModel.NetMsmqBinding" /> バインドを使用するときに利用できる MSMQ セキュリティ機能をカプセル化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この型のオブジェクトは、<xref:System.ServiceModel.NetMsmqBinding> バインドのインスタンスを作成することによって作成されます。 次に、このオブジェクトを使用して、<xref:System.ServiceModel.NetMsmqBinding> バインディングに関連するさまざまなセキュリティ設定をすべて参照できます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UENetMsmqSecurity#1](~/samples/snippets/csharp/VS_Snippets_CFX/uenetmsmqsecurity/cs/program.cs#1)]
+ [!code-vb[UENetMsmqSecurity#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/uenetmsmqsecurity/vb/program.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NetMsmqSecurity ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.NetMsmqSecurity.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.NetMsmqSecurity" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.MessageSecurityOverMsmq Message { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.MessageSecurityOverMsmq Message" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.NetMsmqSecurity.Message" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.MessageSecurityOverMsmq</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.MessageSecurityOverMsmq" /> バインドに関連付けられる <see cref="T:System.ServiceModel.NetMsmqBinding" /> を取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.MessageSecurityOverMsmq" /> にバインディングに関連付けられる <see cref="T:System.ServiceModel.NetMsmqBinding" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.MessageSecurityOverMsmq> は、SOAP メッセージ セキュリティ設定をカプセル化します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UENetMsmqSecurity#2](~/samples/snippets/csharp/VS_Snippets_CFX/uenetmsmqsecurity/cs/program.cs#2)]
+ [!code-vb[UENetMsmqSecurity#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/uenetmsmqsecurity/vb/program.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Mode">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.NetMsmqSecurityMode Mode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.NetMsmqSecurityMode Mode" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.NetMsmqSecurity.Mode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.NetMsmqSecurityMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.NetMsmqSecurityMode" /> バインドに関連付けられる <see cref="T:System.ServiceModel.NetMsmqBinding" /> を取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.NetMsmqSecurityMode" /> にバインディングに関連付けられる <see cref="T:System.ServiceModel.NetMsmqBinding" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、関連付けられた NetMsmqBinding で使用されるセキュリティの種類を決定します。 次の一覧で、許可される値を説明します。  
+  
+-   **None** -セキュリティは使用されません。  
+  
+-   **トランスポート**-トランスポート セキュリティを使用します。  
+  
+-   **メッセージ**-メッセージ ベース セキュリティを使用します。  
+  
+-   **両方**-両方のメッセージ ベース セキュリティとトランスポート セキュリティを使用します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UENetMsmqSecurity#3](~/samples/snippets/csharp/VS_Snippets_CFX/uenetmsmqsecurity/cs/program.cs#3)]
+ [!code-vb[UENetMsmqSecurity#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/uenetmsmqsecurity/vb/program.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が <see cref="T:System.ServiceModel.NetMsmqSecurityMode" /> 値のいずれでもありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Transport">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.MsmqTransportSecurity Transport { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.MsmqTransportSecurity Transport" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.NetMsmqSecurity.Transport" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.MsmqTransportSecurity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.MsmqTransportSecurity" /> バインドに関連付けられる <see cref="T:System.ServiceModel.NetMsmqBinding" /> を取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.MsmqTransportSecurity" /> にバインディングに関連付けられる <see cref="T:System.ServiceModel.NetMsmqBinding" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、MSMQ トランスポート セキュリティ設定へのアクセスが許可されます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UENetMsmqSecurity#4](~/samples/snippets/csharp/VS_Snippets_CFX/uenetmsmqsecurity/cs/program.cs#4)]
+ [!code-vb[UENetMsmqSecurity#4](~/samples/snippets/visualbasic/VS_Snippets_CFX/uenetmsmqsecurity/vb/program.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

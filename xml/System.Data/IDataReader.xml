@@ -1,0 +1,335 @@
+<Type Name="IDataReader" FullName="System.Data.IDataReader">
+  <TypeSignature Language="C#" Value="public interface IDataReader : IDisposable, System.Data.IDataRecord" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDataReader implements class System.Data.IDataRecord, class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Data.IDataReader" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Data.IDataRecord</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>データ ソースでのコマンド実行により取得された結果セットの 1 つ以上の順方向専用ストリームを読み取る手段を提供し、リレーショナル データベースにアクセスする .NET Framework データ プロバイダーによって実装されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.IDataReader>と<xref:System.Data.IDataRecord>インターフェイスを実装する継承するクラスを許可する、`DataReader`クラスで、結果セットの 1 つまたは複数順方向専用ストリームを読み取る手段を提供します。 詳細については`DataReader`クラスを参照してください[を取得するデータを使用して、DataReader](~/docs/framework/data/adonet/retrieving-data-using-a-datareader.md)です。  
+  
+ アプリケーションがのインスタンスを作成していない、<xref:System.Data.IDataReader>インターフェイスを直接が継承するクラスのインスタンスを作成、<xref:System.Data.IDataReader>です。  
+  
+ 継承するクラス<xref:System.Data.IDataReader>継承されたメンバーを実装し、通常プロバイダー固有の機能を追加するその他のメンバーを定義する必要があります。  
+  
+ 別によって結果セットに加えられた変更を処理またはスレッドのデータの読み込み中を実装するクラスのユーザーに表示される場合があります、`IDataReader`です。 ただし、正確な動作は、プロバイダーとタイミングに依存するは。  
+  
+   
+  
+## Examples  
+ 次の例は、派生クラスのインスタンスを作成<xref:System.Data.SqlClient.SqlConnection>、 <xref:System.Data.SqlClient.SqlCommand>、および<xref:System.Data.SqlClient.SqlDataReader>です。 例は、コンソールに書き出し、データを読み取ります。 最後に、例、 <xref:System.Data.SqlClient.SqlDataReader>、続いて、<xref:System.Data.SqlClient.SqlConnection>です。  
+  
+ [!code-csharp[Classic WebData SqlDataReader.Read Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlDataReader.Read Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlDataReader.Read Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlDataReader.Read Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>.NET Framework データ プロバイダー間の整合性を高める形式で継承するクラスの名前を<paramref name="Prv" />コマンドの where<paramref name="Prv" />は、特定の .NET Framework データ プロバイダー名前空間のすべてのクラスに指定された uniform プレフィックス。 たとえば、<paramref name="Sql" />のプレフィックス、<see cref="T:System.Data.SqlClient.SqlDataAdapter" />クラス内で、<see langword="System.Data.SqlClient" />名前空間。  
+  
+ ユーザーがのインスタンスを作成しない、<see langword="DataReader" />クラスに直接できます。 代わりに、取得、<see langword="DataReader" />を通じてインスタンス、<see langword="ExecuteReader" />のメソッド、<see langword="Command" />オブジェクト。 そのため、マークする必要があります<see langword="DataReader" />内部としてコンス トラクターです。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.IDataReader.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.IDataReader" /> オブジェクトを閉じます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 明示的に呼び出す必要があります、<xref:System.Data.IDataReader.Close%2A>メソッドを使用しているときに、<xref:System.Data.IDataReader>を使用して、関連付けられている<xref:System.Data.IDbConnection>他の目的。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Depth">
+      <MemberSignature Language="C#" Value="public int Depth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Depth" />
+      <MemberSignature Language="DocId" Value="P:System.Data.IDataReader.Depth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の行の入れ子の深さを示す値を取得します。</summary>
+        <value>入れ子のレベル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最も外側のテーブルは深さ 0 です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSchemaTable">
+      <MemberSignature Language="C#" Value="public System.Data.DataTable GetSchemaTable ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Data.DataTable GetSchemaTable() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.IDataReader.GetSchemaTable" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataTable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.DataTable" /> の列メタデータを記述する <see cref="T:System.Data.IDataReader" /> を返します。</summary>
+        <returns>列メタデータを記述する <see cref="T:System.Data.DataTable" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装<xref:System.Data.IDataReader.GetSchemaTable%2A>.NET Framework Data Provider for OLE DB のメソッドは、OLE DB プロバイダー レイヤーを使用しないで他の .NET Framework データ プロバイダーの実装中に、OLE DB icolumnsrowset::getcolumnsrowset メソッドにマップします。 順序<xref:System.Data.IDataReader.GetSchemaTable%2A>によってどのデータ プロバイダーを使用する、テーブル内の各列と、返された DataReader 列に関するメタデータを返しますがによって異なります。 次の表は、データ プロバイダーとメンバーを実装する<xref:System.Data.IDataReader.GetSchemaTable%2A>です。  
+  
+|データ プロバイダー|メンバー|  
+|-------------------|------------|  
+|.NET data Provider for ODBC|<xref:System.Data.Odbc.OdbcDataReader.GetSchemaTable%2A?displayProperty=nameWithType>。|  
+|.NET data Provider for OLE DB|<xref:System.Data.OleDb.OleDbDataReader.GetSchemaTable%2A?displayProperty=nameWithType>。|  
+|.NET data Provider for Oracle|<xref:System.Data.OracleClient.OracleDataReader.GetSchemaTable%2A?displayProperty=nameWithType>。|  
+|.NET data Provider for SQL Server|<xref:System.Data.SqlClient.SqlDataReader.GetSchemaTable%2A?displayProperty=nameWithType>。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Data.IDataReader" /> が閉じています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsClosed">
+      <MemberSignature Language="C#" Value="public bool IsClosed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsClosed" />
+      <MemberSignature Language="DocId" Value="P:System.Data.IDataReader.IsClosed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ リーダーが閉じているかどうかを示す値を取得します。</summary>
+        <value>
+          データ リーダーが閉じている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.IDataReader.IsClosed%2A>および<xref:System.Data.IDataReader.RecordsAffected%2A>後に呼び出すことができる唯一のプロパティは、<xref:System.Data.IDataReader>が閉じられます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NextResult">
+      <MemberSignature Language="C#" Value="public bool NextResult ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool NextResult() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.IDataReader.NextResult" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>バッチ SQL ステートメントの結果を読み取っているときに、次の結果にデータ リーダーを進めます。</summary>
+        <returns>
+          次の行が存在する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バッチの SQL ステートメントを実行することによって取得できますが、複数の結果を処理するために使用します。  
+  
+ 既定では、データ リーダーは、最初の結果に位置付けられます。  
+  
+ [!code-csharp[IDataReader_NextResult#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/idatareader_nextresult/cs/source.cs#1)]
+ [!code-vb[IDataReader_NextResult#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/idatareader_nextresult/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public bool Read ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Read() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.IDataReader.Read" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.IDataReader" /> を次のレコードに進めます。</summary>
+        <returns>
+          次の行が存在する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の位置、<xref:System.Data.IDataReader>が最初のレコードより前です。 そのために呼び出す必要がある<xref:System.Data.IDataReader.Read%2A>データへのアクセスを開始します。  
+  
+ データ リーダーを使用して、関連付けられている接続がビジー状態であるサービス、<xref:System.Data.IDataReader>です。 これは、まで続きます<xref:System.Data.IDataReader.Close%2A>と呼びます。  
+  
+   
+  
+## Examples  
+ 次の例は、次の 3 つの派生クラスのインスタンスを作成<xref:System.Data.OleDb.OleDbConnection>、 <xref:System.Data.OleDb.OleDbCommand>、および<xref:System.Data.OleDb.OleDbDataReader>です。 例は、コンソールに書き出し、データを読み取ります。 最後に、例、 <xref:System.Data.OleDb.OleDbDataReader>、続いて、<xref:System.Data.OleDb.OleDbConnection>です。  
+  
+ [!code-csharp[Classic WebData IDataReader.Read Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData IDataReader.Read Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData IDataReader.Read Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData IDataReader.Read Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RecordsAffected">
+      <MemberSignature Language="C#" Value="public int RecordsAffected { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RecordsAffected" />
+      <MemberSignature Language="DocId" Value="P:System.Data.IDataReader.RecordsAffected" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SQL ステートメントの実行によって変更、挿入、または削除された行の数を取得します。</summary>
+        <value>変更、挿入、または削除された行の数。影響を受けた行がない、またはステートメントが失敗した場合は 0。SELECT ステートメントの場合は -1。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.IDataReader.RecordsAffected%2A>プロパティが設定されていないすべての行が読み取られ、<xref:System.Data.IDataReader>です。  
+  
+ <xref:System.Data.IDataReader.IsClosed%2A>および<xref:System.Data.IDataReader.RecordsAffected%2A>後に呼び出すことができる唯一のプロパティは、<xref:System.Data.IDataReader>が閉じられます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

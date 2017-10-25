@@ -1,0 +1,82 @@
+<Type Name="BaseEvent" FullName="System.Management.Instrumentation.BaseEvent">
+  <TypeSignature Language="C#" Value="public abstract class BaseEvent : System.Management.Instrumentation.IEvent" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit BaseEvent extends System.Object implements class System.Management.Instrumentation.IEvent" />
+  <TypeSignature Language="DocId" Value="T:System.Management.Instrumentation.BaseEvent" />
+  <AssemblyInfo>
+    <AssemblyName>System.Management</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Management.Instrumentation.IEvent</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Management.Instrumentation.InstrumentationClass(System.Management.Instrumentation.InstrumentationType.Event)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>管理イベント クラスとして知られる <see cref="T:System.Management.Instrumentation.BaseEvent" /> から派生したクラスを表します。 これらの派生クラスは、イベントの <see cref="M:System.Management.Instrumentation.BaseEvent.Fire" /> メソッドを通じた発生を可能にする <see cref="T:System.Management.Instrumentation.IEvent" /> の実装を継承します。  
+  
+ 注: WMI .NET ライブラリは最終的な状態と見なされます。これらのライブラリに影響を与えるセキュリティ以外に関連する問題については、さらなる開発、機能拡張、または更新は利用できません。 [MI Api](https://msdn.microsoft.com/en-us/library/jj152383%28v=vs.80%29.aspx)すべての新しい開発で使用する必要があります。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected BaseEvent ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.Instrumentation.BaseEvent.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Management.Instrumentation.BaseEvent" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、この型の状態を初期化するために、派生クラスのコンス トラクターによって呼び出されます。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Fire">
+      <MemberSignature Language="C#" Value="public void Fire ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Fire() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.Instrumentation.BaseEvent.Fire" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>管理イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

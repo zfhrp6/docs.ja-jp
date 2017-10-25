@@ -1,0 +1,141 @@
+<Type Name="SynchronizationAttribute" FullName="System.EnterpriseServices.SynchronizationAttribute">
+  <TypeSignature Language="C#" Value="public sealed class SynchronizationAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SynchronizationAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.SynchronizationAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class, Inherited=true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コンポーネントの同期の値を設定します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トランザクションとジャスト イン タイム (JIT) のアクティベーションの両方に自動的に同期を有効にします。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+ 適用する<xref:System.EnterpriseServices.SynchronizationAttribute>待機の作成時にコンテキスト バインド オブジェクトの結果をハンドルと自動リセット イベントではない確定的にガベージ コレクションします。 マークされたコンテキスト バインド オブジェクトの数が多いを作成するため、しないでください、`SynchronizationAttribute`期間の短い形式の時刻。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.EnterpriseServices.SynchronizationAttribute>型です。  
+  
+ [!code-csharp[EnterpriseServicesSynchronizationAttribute#0](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServicesSynchronizationAttribute/CS/class1.cs#0)]
+ [!code-vb[EnterpriseServicesSynchronizationAttribute#0](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServicesSynchronizationAttribute/VB/class1.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.EnterpriseServices.SynchronizationAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SynchronizationAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.SynchronizationAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.EnterpriseServices.SynchronizationAttribute" />既定値を持つクラス<see cref="T:System.EnterpriseServices.SynchronizationOption" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.SynchronizationAttribute.Value%2A>プロパティが既定値に設定<xref:System.EnterpriseServices.SynchronizationOption.Required>です。  
+  
+   
+  
+## Examples  
+ 次のコード例が新たに作成<xref:System.EnterpriseServices.SynchronizationAttribute>です。  
+  
+ [!code-csharp[EnterpriseServicesSynchronizationAttribute#1](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServicesSynchronizationAttribute/CS/class1.cs#1)]
+ [!code-vb[EnterpriseServicesSynchronizationAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServicesSynchronizationAttribute/VB/class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SynchronizationAttribute (System.EnterpriseServices.SynchronizationOption val);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.EnterpriseServices.SynchronizationOption val) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.SynchronizationAttribute.#ctor(System.EnterpriseServices.SynchronizationOption)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="val" Type="System.EnterpriseServices.SynchronizationOption" />
+      </Parameters>
+      <Docs>
+        <param name="val"><see cref="T:System.EnterpriseServices.SynchronizationOption" /> 値のいずれか。</param>
+        <summary>指定した <see cref="T:System.EnterpriseServices.SynchronizationAttribute" /> を使用して、<see cref="T:System.EnterpriseServices.SynchronizationOption" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例が新たに作成<xref:System.EnterpriseServices.SynchronizationAttribute>です。  
+  
+ [!code-csharp[EnterpriseServicesSynchronizationAttribute#2](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServicesSynchronizationAttribute/CS/class1.cs#2)]
+ [!code-vb[EnterpriseServicesSynchronizationAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServicesSynchronizationAttribute/VB/class1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public System.EnterpriseServices.SynchronizationOption Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.EnterpriseServices.SynchronizationOption Value" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.SynchronizationAttribute.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.SynchronizationOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の設定を取得、<see cref="P:System.EnterpriseServices.SynchronizationAttribute.Value" />プロパティです。</summary>
+        <value><see cref="T:System.EnterpriseServices.SynchronizationOption" /> 値のいずれか。 既定値は、<see langword="Required" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の値を取得する、`Synchronization`属性の<xref:System.EnterpriseServices.SynchronizationAttribute.Value%2A>プロパティです。  
+  
+ [!code-csharp[EnterpriseServicesSynchronizationAttribute#3](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServicesSynchronizationAttribute/CS/class1.cs#3)]
+ [!code-vb[EnterpriseServicesSynchronizationAttribute#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServicesSynchronizationAttribute/VB/class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

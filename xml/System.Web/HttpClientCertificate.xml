@@ -1,0 +1,400 @@
+<Type Name="HttpClientCertificate" FullName="System.Web.HttpClientCertificate">
+  <TypeSignature Language="C#" Value="public class HttpClientCertificate : System.Collections.Specialized.NameValueCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HttpClientCertificate extends System.Collections.Specialized.NameValueCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.HttpClientCertificate" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.Specialized.NameValueCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>クライアントの ID を求めるサーバーの要求に応えて、クライアントが発行したクライアント証明書のフィールドを提示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web ブラウザーは、サーバーとサーバーに接続する (URL は http:// ではなく https:// で始まる) SSL3.0/PCT1 プロトコルを使用している場合に、クライアント証明書、証明書のデジタル証明書に含まれるフィールドのクライアント ブラウザーの送信が必要です。  
+  
+ デジタル証明書の詳細については、X.509 のドキュメントを参照してください。 証明書、http://www.itu.int の国際電気通信共用体 (ITU) サイトで利用可能なフレームワークの公開キーと属性。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BinaryIssuer">
+      <MemberSignature Language="C#" Value="public byte[] BinaryIssuer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] BinaryIssuer" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpClientCertificate.BinaryIssuer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはバイナリ形式で証明書の発行者を設定します。</summary>
+        <value>証明書の発行者、バイナリ形式で表現されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CertEncoding">
+      <MemberSignature Language="C#" Value="public int CertEncoding { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CertEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpClientCertificate.CertEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>証明書のエンコードを取得します。</summary>
+        <value>CERT_CONTEXT.dwCertEncodingType 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ CERT_CONTEXT 構造に関する詳細については、http://msdn.microsoft.com し CERT_CONTEXT 検索を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Certificate">
+      <MemberSignature Language="C#" Value="public byte[] Certificate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] Certificate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpClientCertificate.Certificate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASN.1 形式で、証明書全体のコンテンツのバイナリ ストリームを含む文字列を取得します。</summary>
+        <value>クライアント証明書。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cookie">
+      <MemberSignature Language="C#" Value="public string Cookie { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Cookie" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpClientCertificate.Cookie" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定した場合は、クライアント証明書の一意の ID を取得します。</summary>
+        <value>クライアント証明書の id。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpClientCertificate.Cookie%2A>全体のクライアント証明書の署名として使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Flags">
+      <MemberSignature Language="C#" Value="public int Flags { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Flags" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpClientCertificate.Flags" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>その他のクライアント証明書の情報を提供するフラグのセット。</summary>
+        <value>一連のブール フラグです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアント証明書が存在する場合、ビット 0 が 1 に設定されます。 クライアント証明書の証明機関 (CA) がサーバーで認識されている Ca の一覧にない場合は、Bit1 を 1 に設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Get">
+      <MemberSignature Language="C#" Value="public override string Get (string field);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string Get(string field) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpClientCertificate.Get(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="field" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="field">取得するコレクション内の項目。</param>
+        <summary>名前で、個々 のクライアント証明書のフィールドを返します。</summary>
+        <returns>指定した項目の値<paramref name="field" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPresent">
+      <MemberSignature Language="C#" Value="public bool IsPresent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPresent" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpClientCertificate.IsPresent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアント証明書が存在するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />クライアント証明書が存在する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Issuer">
+      <MemberSignature Language="C#" Value="public string Issuer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Issuer" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpClientCertificate.Issuer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>証明書の発行者に関する情報を含むサブフィールド値の一覧を含む文字列です。</summary>
+        <value>証明書の発行者の情報です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsValid">
+      <MemberSignature Language="C#" Value="public bool IsValid { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsValid" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpClientCertificate.IsValid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアント証明書が有効かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、クライアント証明書が無効です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアント証明書が証明機関 (CA) がサーバーで認識されている Ca の一覧にない場合は、無効です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeySize">
+      <MemberSignature Language="C#" Value="public int KeySize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 KeySize" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpClientCertificate.KeySize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デジタル証明書のキー サイズをビットの数を取得します。 たとえばは 128 です。</summary>
+        <value>キー サイズをビットの数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PublicKey">
+      <MemberSignature Language="C#" Value="public byte[] PublicKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] PublicKey" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpClientCertificate.PublicKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>証明書から公開キーのバイナリ値を取得します。</summary>
+        <value>公開キーの値を格納するバイト配列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecretKeySize">
+      <MemberSignature Language="C#" Value="public int SecretKeySize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SecretKeySize" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpClientCertificate.SecretKeySize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバー証明書の秘密キーのビット数を取得します。 たとえば、1024 です。</summary>
+        <value>サーバー証明書の秘密キーのビット数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SerialNumber">
+      <MemberSignature Language="C#" Value="public string SerialNumber { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SerialNumber" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpClientCertificate.SerialNumber" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ハイフンで区切られたバイト数を 16 進数の ASCII 形式として、証明書のシリアル番号を提供します。 たとえば、04 67 F3 02 です。</summary>
+        <value>証明書のシリアル番号。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServerIssuer">
+      <MemberSignature Language="C#" Value="public string ServerIssuer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ServerIssuer" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpClientCertificate.ServerIssuer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバー証明書の発行者 フィールドを取得します。</summary>
+        <value>サーバー証明書の発行者フィールドです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServerSubject">
+      <MemberSignature Language="C#" Value="public string ServerSubject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ServerSubject" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpClientCertificate.ServerSubject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバー証明書の subject フィールドを取得します。</summary>
+        <value>サーバー証明書の subject フィールドです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Subject">
+      <MemberSignature Language="C#" Value="public string Subject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Subject" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpClientCertificate.Subject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアント証明書の subject フィールドを取得します。</summary>
+        <value>クライアント証明書の subject フィールドです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`String`、サブフィールドなしで指定された、<xref:System.Web.HttpClientCertificate>コレクションは、サブフィールドのコンマ区切りの一覧を返します。 たとえば、C = US, O = Msft です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidFrom">
+      <MemberSignature Language="C#" Value="public DateTime ValidFrom { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime ValidFrom" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpClientCertificate.ValidFrom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>証明書が有効になる日付を取得します。 日付は、国際対応の設定によって異なります。</summary>
+        <value>証明書が有効になる日付。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidUntil">
+      <MemberSignature Language="C#" Value="public DateTime ValidUntil { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime ValidUntil" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpClientCertificate.ValidUntil" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>証明書の有効期限を取得します。</summary>
+        <value>証明書の有効期限の日付。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 年の値は、4 桁の数値として表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

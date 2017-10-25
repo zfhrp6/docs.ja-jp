@@ -1,0 +1,344 @@
+<Type Name="LinkLabel+Link" FullName="System.Windows.Forms.LinkLabel+Link">
+  <TypeSignature Language="C#" Value="public class LinkLabel.Link" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi beforefieldinit LinkLabel/Link extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.LinkLabel.Link" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.LinkConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>内のリンクを表す、<see cref="T:System.Windows.Forms.LinkLabel" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.LinkLabel.Link>クラス内のリンクのプロパティを定義、<xref:System.Windows.Forms.LinkLabel>コントロール。 これらのプロパティを使用してデータを提供することができます、<xref:System.Windows.Forms.LinkLabel.LinkClicked>のイベント、<xref:System.Windows.Forms.LinkLabel>コントロール、コントロール内のリンクがクリックされたときにタスクを実行します。 <xref:System.Windows.Forms.LinkLabel.Link.LinkData%2A>プロパティを使用する情報を定義する、<xref:System.Windows.Forms.LinkLabel.LinkClicked>イベントは、Microsoft Internet Explorer 内の URL を表示するか、ファイルを開くを使用できます。  
+  
+ リンクのプロパティに関連する情報に加え、<xref:System.Windows.Forms.LinkLabel.Link>のテキストを定義するクラスにも役立つ、<xref:System.Windows.Forms.LinkLabel.Link>とその表示状態。 <xref:System.Windows.Forms.LinkLabel.Link.Start%2A>と<xref:System.Windows.Forms.LinkLabel.Link.Length%2A>プロパティ定義のテキストからのテキストの長さと場所、<xref:System.Windows.Forms.LinkLabel>リンクとして表示するコントロール。 <xref:System.Windows.Forms.LinkLabel.Link.Enabled%2A>プロパティでは、無効なリンクとして、リンクを表示することができます、<xref:System.Windows.Forms.LinkLabel.Link.Visited%2A>プロパティをユーザーに警告の現在のインスタンスで指定されたリンクを既に閲覧したこと、<xref:System.Windows.Forms.LinkLabel>です。  
+  
+ 複数のリンクを表示するには 1 つの<xref:System.Windows.Forms.LinkLabel>コントロール。 各<xref:System.Windows.Forms.LinkLabel.Link>に追加される、<xref:System.Windows.Forms.LinkLabel.LinkCollection>に関連付けられている、<xref:System.Windows.Forms.LinkLabel>コントロール。 定義されているリンクのコレクションを取得する、<xref:System.Windows.Forms.LinkLabel>コントロールを使用して、<xref:System.Windows.Forms.LinkLabel.Links%2A?displayProperty=nameWithType>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、使用方法を示します、<xref:System.Windows.Forms.LinkLabel>を複数のクラス<xref:System.Windows.Forms.LinkArea>フォームにラベルを表示する、定義されたセクションです。 設定の例を示します、 <xref:System.Windows.Forms.Label.AutoSize%2A>、 <xref:System.Windows.Forms.LinkLabel.LinkBehavior%2A>、 <xref:System.Windows.Forms.LinkLabel.DisabledLinkColor%2A>、 <xref:System.Windows.Forms.LinkLabel.LinkColor%2A>、および<xref:System.Windows.Forms.LinkLabel.VisitedLinkColor%2A>の外観をカスタマイズするプロパティ、<xref:System.Windows.Forms.LinkLabel>です。 最初の<xref:System.Windows.Forms.LinkArea>を使用して指定は、<xref:System.Windows.Forms.LinkLabel.LinkArea%2A?displayProperty=nameWithType>プロパティです。 追加のリンクに追加、<xref:System.Windows.Forms.LinkLabel>を使用して、<xref:System.Windows.Forms.LinkLabel.LinkCollection.Add%2A?displayProperty=nameWithType>メソッドです。 例のハンドル、 <xref:System.Windows.Forms.LinkLabel.LinkClicked> 、ハイパーリンク、Web ブラウザーを開始し、表示するイベント、<xref:System.Windows.Forms.MessageBox>の他のリンク。  
+  
+ [!code-cpp[System.Windows.Forms.LinkLabel#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.LinkLabel/CPP/linklabel.cpp#1)]
+ [!code-csharp[System.Windows.Forms.LinkLabel#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.LinkLabel/CS/linklabel.cs#1)]
+ [!code-vb[System.Windows.Forms.LinkLabel#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.LinkLabel/VB/linklabel.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Link ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.LinkLabel.Link.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.LinkLabel.Link" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Link (int start, int length);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 start, int32 length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.LinkLabel.Link.#ctor(System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="start" Type="System.Int32" />
+        <Parameter Name="length" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="start">リンク領域のテキスト内の 0 から始まる開始位置、<see cref="T:System.Windows.Forms.LinkLabel" />です。</param>
+        <param name="length">リンク領域に含める開始文字の後の文字数。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.LinkLabel.Link" />内の開始位置の後に文字の数と指定された開始位置を持つクラス、<see cref="T:System.Windows.Forms.LinkLabel" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Link (int start, int length, object linkData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 start, int32 length, object linkData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.LinkLabel.Link.#ctor(System.Int32,System.Int32,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="start" Type="System.Int32" />
+        <Parameter Name="length" Type="System.Int32" />
+        <Parameter Name="linkData" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="start">リンク領域のテキスト内の 0 から始まる開始位置、<see cref="T:System.Windows.Forms.LinkLabel" />です。</param>
+        <param name="length">リンク領域に含める開始文字の後の文字数。</param>
+        <param name="linkData">リンクに関連付けられているデータ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.LinkLabel.Link" />指定した開始位置、内の開始位置の後に文字の数を持つクラス、 <see cref="T:System.Windows.Forms.LinkLabel" />、およびリンクに関連付けられているデータ。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public string Description { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.LinkLabel.Link.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリンクのテキストの説明を設定します。</summary>
+        <value>A<see cref="T:System.String" />リンクのテキスト説明を表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.LinkLabel.Link.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリンクが有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />リンクが有効である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内の無効な状態のリンクを表示するこのプロパティを使用することができます、<xref:System.Windows.Forms.LinkLabel>コントロール。 リンクが無効にすると、次のリンクをクリックすると発生しません、<xref:System.Windows.Forms.LinkLabel>させるコントロール、<xref:System.Windows.Forms.LinkLabel.LinkClicked>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Length">
+      <MemberSignature Language="C#" Value="public int Length { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Length" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.LinkLabel.Link.Length" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのリンク テキストの文字数を設定します。</summary>
+        <value>このリンク テキストの空白を含む文字の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テキストを指定する、<xref:System.Windows.Forms.LinkLabel>リンクとして表示するには、設定、<xref:System.Windows.Forms.LinkLabel.Link.Start%2A>プロパティ リンクを作成するときに、テキスト内の場所をします。 後に、<xref:System.Windows.Forms.LinkLabel.Link.Start%2A>プロパティの設定の値を設定、<xref:System.Windows.Forms.LinkLabel.Link.Length%2A>プロパティで指定された文字位置を含む、文字の数を<xref:System.Windows.Forms.LinkLabel.Link.Start%2A>リンク テキストを使用するプロパティです。 たとえば、文字列"The quick brown fox"の最初の単語のリンクを作成する場合は、設定する、<xref:System.Windows.Forms.LinkLabel.Link.Start%2A>プロパティにゼロ (0) および<xref:System.Windows.Forms.LinkLabel.Link.Length%2A>プロパティを 3 つ (3)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LinkData">
+      <MemberSignature Language="C#" Value="public object LinkData { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object LinkData" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.LinkLabel.Link.LinkData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリンクに関連付けられているデータを設定します。</summary>
+        <value><see cref="T:System.Object" />リンクに関連付けられているデータを表します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、リンクに関連する情報を指定することができます。 このプロパティによって提供される情報は内で使用できます、<xref:System.Windows.Forms.LinkLabel.LinkClicked>のイベント、<xref:System.Windows.Forms.LinkLabel>クリックしてされているリンクの処理に使用できるリンクに関する情報を提供します。 たとえばの値として、リンクがクリックされたときに、Internet Explorer で表示する URL を指定できます、<xref:System.Windows.Forms.LinkLabel.Link.LinkData%2A>プロパティです。 使用することも、<xref:System.Windows.Forms.LinkLabel.Link.LinkData%2A>ユーザーがリンクをクリックするときに表示されるダイアログ ボックスを識別するプロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、使用方法を示します、<xref:System.Windows.Forms.LinkLabel>を複数のクラス<xref:System.Windows.Forms.LinkArea>フォームにラベルを表示する、定義されたセクションです。 設定の例を示します、 <xref:System.Windows.Forms.Label.AutoSize%2A>、 <xref:System.Windows.Forms.LinkLabel.LinkBehavior%2A>、 <xref:System.Windows.Forms.LinkLabel.DisabledLinkColor%2A>、 <xref:System.Windows.Forms.LinkLabel.LinkColor%2A>、および<xref:System.Windows.Forms.LinkLabel.VisitedLinkColor%2A>の外観をカスタマイズするプロパティ、<xref:System.Windows.Forms.LinkLabel>です。 最初の<xref:System.Windows.Forms.LinkArea>を使用して指定は、<xref:System.Windows.Forms.LinkLabel.LinkArea%2A?displayProperty=nameWithType>プロパティです。 追加のリンクに追加、<xref:System.Windows.Forms.LinkLabel>を使用して、<xref:System.Windows.Forms.LinkLabel.LinkCollection.Add%2A?displayProperty=nameWithType>メソッドです。 例のハンドル、 <xref:System.Windows.Forms.LinkLabel.LinkClicked> 、ハイパーリンク、Web ブラウザーを開始し、表示するイベント、<xref:System.Windows.Forms.MessageBox>の他のリンク。  
+  
+ [!code-cpp[System.Windows.Forms.LinkLabel#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.LinkLabel/CPP/linklabel.cpp#1)]
+ [!code-csharp[System.Windows.Forms.LinkLabel#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.LinkLabel/CS/linklabel.cs#1)]
+ [!code-vb[System.Windows.Forms.LinkLabel#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.LinkLabel/VB/linklabel.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.LinkLabel.Link.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.LinkLabel.Link" /> の名前を取得または設定します。</summary>
+        <value>A<see cref="T:System.String" />の名前を表す、<see cref="T:System.Windows.Forms.LinkLabel.Link" />です。 既定値は空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.LinkLabel.Link.Name%2A>プロパティがキーでインデックス作成のために役立ちます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Start">
+      <MemberSignature Language="C#" Value="public int Start { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Start" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.LinkLabel.Link.Start" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のテキスト内のリンクの開始位置、<see cref="T:System.Windows.Forms.LinkLabel" />です。</summary>
+        <value>テキスト内の場所、<see cref="T:System.Windows.Forms.LinkLabel" />コントロール、リンクの開始位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テキストを指定する、<xref:System.Windows.Forms.LinkLabel>リンクとして表示するには、設定、<xref:System.Windows.Forms.LinkLabel.Link.Start%2A>プロパティ リンクを作成するときに、テキスト内の場所をします。 後に、<xref:System.Windows.Forms.LinkLabel.Link.Start%2A>プロパティの設定の値を設定、<xref:System.Windows.Forms.LinkLabel.Link.Length%2A>プロパティで指定された文字位置を含む、文字の数を<xref:System.Windows.Forms.LinkLabel.Link.Start%2A>リンク テキストを使用するプロパティです。 たとえば、文字列"The quick brown fox"の最初の単語のリンクを作成する場合は、設定する、<xref:System.Windows.Forms.LinkLabel.Link.Start%2A>プロパティにゼロ (0) および<xref:System.Windows.Forms.LinkLabel.Link.Length%2A>プロパティを 3 つ (3)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Tag">
+      <MemberSignature Language="C#" Value="public object Tag { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Tag" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.LinkLabel.Link.Tag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.StringConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.LinkLabel.Link" /> に関するデータを格納するオブジェクトを取得または設定します。</summary>
+        <value>コントロールに関するデータを格納している <see cref="T:System.Object" />。 既定値は、<see langword="null" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Visited">
+      <MemberSignature Language="C#" Value="public bool Visited { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Visited" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.LinkLabel.Link.Visited" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリンクをユーザーがアクセスしたかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />リンクが参照された場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Forms.LinkLabel>コントロールは自動的に表していません、リンクは、表示済みリンクです。 表示済みリンクとしてリンクを表示するには、このプロパティの値を設定することができます`true`のイベント ハンドラーで、<xref:System.Windows.Forms.LinkLabel.LinkClicked>のイベント、<xref:System.Windows.Forms.LinkLabel>です。 指定された色を使用してアクセスしたリンクが表示されます、<xref:System.Windows.Forms.LinkLabel.VisitedLinkColor%2A>のプロパティ、<xref:System.Windows.Forms.LinkLabel>コントロール。 1 回、フォームを含む、<xref:System.Windows.Forms.LinkLabel>コントロールを閉じると、すべてのリンクに関連付けられている表示状態を削除します。 リンクの表示状態を保持するために、アプリケーションに関連付けられているレジストリ設定のリンクの表示状態を格納する必要があります。  
+  
+> [!NOTE]
+>  指定された 1 つだけのリンクがある場合、<xref:System.Windows.Forms.LinkLabel>制御を行うこともできます、<xref:System.Windows.Forms.LinkLabel.LinkVisited%2A>のプロパティ、<xref:System.Windows.Forms.LinkLabel>訪問済みとして、リンクを指定します。 使用することも、<xref:System.Windows.Forms.LinkLabel.LinkVisited%2A>プロパティが定義されている場合、複数のリンクがある場合、設定は、コントロールで定義されている最初のリンクにのみ適用されます。  
+  
+   
+  
+## Examples  
+ 次の例では、使用方法を示します、<xref:System.Windows.Forms.LinkLabel>を複数のクラス<xref:System.Windows.Forms.LinkArea>フォームにラベルを表示する、定義されたセクションです。 設定の例を示します、 <xref:System.Windows.Forms.Label.AutoSize%2A>、 <xref:System.Windows.Forms.LinkLabel.LinkBehavior%2A>、 <xref:System.Windows.Forms.LinkLabel.DisabledLinkColor%2A>、 <xref:System.Windows.Forms.LinkLabel.LinkColor%2A>、および<xref:System.Windows.Forms.LinkLabel.VisitedLinkColor%2A>の外観をカスタマイズするプロパティ、<xref:System.Windows.Forms.LinkLabel>です。 最初の<xref:System.Windows.Forms.LinkArea>を使用して指定は、<xref:System.Windows.Forms.LinkLabel.LinkArea%2A?displayProperty=nameWithType>プロパティです。 追加のリンクに追加、<xref:System.Windows.Forms.LinkLabel>を使用して、<xref:System.Windows.Forms.LinkLabel.LinkCollection.Add%2A?displayProperty=nameWithType>メソッドです。 例のハンドル、 <xref:System.Windows.Forms.LinkLabel.LinkClicked> 、ハイパーリンク、Web ブラウザーを開始し、表示するイベント、<xref:System.Windows.Forms.MessageBox>の他のリンク。  
+  
+ [!code-cpp[System.Windows.Forms.LinkLabel#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.LinkLabel/CPP/linklabel.cpp#1)]
+ [!code-csharp[System.Windows.Forms.LinkLabel#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.LinkLabel/CS/linklabel.cs#1)]
+ [!code-vb[System.Windows.Forms.LinkLabel#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.LinkLabel/VB/linklabel.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

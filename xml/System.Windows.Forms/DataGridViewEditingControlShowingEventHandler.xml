@@ -1,0 +1,44 @@
+<Type Name="DataGridViewEditingControlShowingEventHandler" FullName="System.Windows.Forms.DataGridViewEditingControlShowingEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void DataGridViewEditingControlShowingEventHandler(object sender, DataGridViewEditingControlShowingEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DataGridViewEditingControlShowingEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewEditingControlShowingEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.Forms.DataGridViewEditingControlShowingEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.DataGridViewEditingControlShowingEventArgs" />。</param>
+    <summary><see cref="E:System.Windows.Forms.DataGridView.EditingControlShowing" /> の <see cref="T:System.Windows.Forms.DataGridView" /> イベントを処理するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理、<xref:System.Windows.Forms.DataGridView.EditingControlShowing>セルが編集モードに入るときに、編集コントロールのカスタムの初期化を実行するイベントです。 コントロールの表示特性をカスタマイズするには、によって返されるオブジェクトのプロパティを設定、<xref:System.Windows.Forms.DataGridViewEditingControlShowingEventArgs.CellStyle%2A?displayProperty=nameWithType>によって返されるコントロールのプロパティを設定するのではなく、プロパティ、<xref:System.Windows.Forms.DataGridViewEditingControlShowingEventArgs.Control%2A?displayProperty=nameWithType>プロパティです。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ <xref:System.Windows.Forms.DataGridViewEditingControlShowingEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を変更するには、このイベントを処理する方法を示しています、<xref:System.Windows.Forms.DataGridViewCellStyle.BackColor%2A>現在のセルのプロパティです。 この例を実行するコードを貼り付けます、フォームが含まれていますが、<xref:System.Windows.Forms.DataGridView>という`dataGridView1`ことを確認して、<xref:System.Windows.Forms.DataGridView.EditingControlShowing>イベントがイベント ハンドラーに関連付けられています。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewMisc#210](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#210)]
+ [!code-vb[System.Windows.Forms.DataGridViewMisc#210](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#210)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

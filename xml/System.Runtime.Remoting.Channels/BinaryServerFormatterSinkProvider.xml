@@ -1,0 +1,172 @@
+<Type Name="BinaryServerFormatterSinkProvider" FullName="System.Runtime.Remoting.Channels.BinaryServerFormatterSinkProvider">
+  <TypeSignature Language="C#" Value="public class BinaryServerFormatterSinkProvider : System.Runtime.Remoting.Channels.IServerFormatterSinkProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BinaryServerFormatterSinkProvider extends System.Object implements class System.Runtime.Remoting.Channels.IServerChannelSinkProvider, class System.Runtime.Remoting.Channels.IServerFormatterSinkProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Channels.BinaryServerFormatterSinkProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Remoting</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.Remoting.Channels.IServerFormatterSinkProvider</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>使用するチャネル シンク プロバイダー サーバー フォーマッタの実装を提供、<see cref="T:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装を通じてサーバー チャネルにチャネル シンクが接続されている、<xref:System.Runtime.Remoting.Channels.IServerChannelSinkProvider>インターフェイスです。 すべてのリモート処理サーバー チャネルを受け取るコンス トラクターを提供する、<xref:System.Runtime.Remoting.Channels.IServerChannelSinkProvider>をパラメーターとして。  
+  
+ チャネル シンク プロバイダーは、チェーンに格納され、ユーザーが、外側の 1 つチャネル コンス トラクターを渡す前にすべてのチャネル シンク プロバイダーの連結を担当します。 <xref:System.Runtime.Remoting.Channels.IServerChannelSinkProvider>という名前のプロパティを提供<xref:System.Runtime.Remoting.Channels.IServerChannelSinkProvider.Next%2A>この目的のためです。  
+  
+ 複数のチャネル シンク プロバイダーが、構成ファイルで提供されている場合、リモート処理インフラストラクチャそれらをチェイン構成ファイルに出現する順序で。 チャネル シンク プロバイダーは作成中に、チャネルの作成、<xref:System.Runtime.Remoting.RemotingConfiguration.Configure%2A?displayProperty=nameWithType>呼び出します。  
+  
+ フォーマッタ シンクをシンク構成プロパティを使用実行時にチャネルを構成します。 構成ファイル、またはプログラムでは、内部のシンクのプロパティを指定することができます、<xref:System.Collections.IDictionary>です。 構成ファイル内のすべての値が表されるでは、文字列がプロパティを作成するときに<xref:System.Collections.IDictionary>プログラムでは、値の型を指定できますがネイティブ値または文字列を使用します。  
+  
+ 次の表は、シンクに現在のシンク プロバイダーに指定できる構成プロパティを示します。  
+  
+|プロパティ|説明|  
+|--------------|-----------------|  
+|`includeVersions`|フォーマッタがバージョン管理情報を含めるかどうかを指定します。 値は`true`または`false`です。|  
+  
+> [!IMPORTANT]
+>  セキュリティ上のリスクは、信頼されていないデータまたは安全でないチャネル経由でこのオブジェクトのインスタンスを使用しています。 信頼されたデータだけとセキュリティで保護されたチャネル経由では、このオブジェクトを使用します。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](http://go.microsoft.com/fwlink/?LinkId=330378)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BinaryServerFormatterSinkProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.BinaryServerFormatterSinkProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Runtime.Remoting.Channels.BinaryServerFormatterSinkProvider" /> クラスの新しいインスタンスを既定値で初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BinaryServerFormatterSinkProvider (System.Collections.IDictionary properties, System.Collections.ICollection providerData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.IDictionary properties, class System.Collections.ICollection providerData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.BinaryServerFormatterSinkProvider.#ctor(System.Collections.IDictionary,System.Collections.ICollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="properties" Type="System.Collections.IDictionary" />
+        <Parameter Name="providerData" Type="System.Collections.ICollection" />
+      </Parameters>
+      <Docs>
+        <param name="properties">A<see cref="T:System.Collections.IDictionary" />の新しいインスタンスを使用する構成プロパティの<see cref="T:System.Runtime.Remoting.Channels.BinaryServerFormatterSinkProvider" />します。</param>
+        <param name="providerData">A<see cref="T:System.Collections.ICollection" />の<see cref="T:System.Runtime.Remoting.Channels.SinkProviderData" />の新しいインスタンスを使用する<see cref="T:System.Runtime.Remoting.Channels.BinaryServerFormatterSinkProvider" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.Remoting.Channels.BinaryServerFormatterSinkProvider" />指定されたプロパティとプロバイダーのデータを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSink">
+      <MemberSignature Language="C#" Value="public System.Runtime.Remoting.Channels.IServerChannelSink CreateSink (System.Runtime.Remoting.Channels.IChannelReceiver channel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Runtime.Remoting.Channels.IServerChannelSink CreateSink(class System.Runtime.Remoting.Channels.IChannelReceiver channel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.BinaryServerFormatterSinkProvider.CreateSink(System.Runtime.Remoting.Channels.IChannelReceiver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Channels.IServerChannelSink</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="channel" Type="System.Runtime.Remoting.Channels.IChannelReceiver" />
+      </Parameters>
+      <Docs>
+        <param name="channel">チャネル シンク チェーンを作成するチャネル。</param>
+        <summary>シンク チェーンを作成します。</summary>
+        <returns>新しく作成されたチャネル シンク チェーンの最初のシンク。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChannelData">
+      <MemberSignature Language="C#" Value="public void GetChannelData (System.Runtime.Remoting.Channels.IChannelDataStore channelData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetChannelData(class System.Runtime.Remoting.Channels.IChannelDataStore channelData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.BinaryServerFormatterSinkProvider.GetChannelData(System.Runtime.Remoting.Channels.IChannelDataStore)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="channelData" Type="System.Runtime.Remoting.Channels.IChannelDataStore" />
+      </Parameters>
+      <Docs>
+        <param name="channelData">A<see cref="T:System.Runtime.Remoting.Channels.IChannelDataStore" />チャネル データが返されるオブジェクト。</param>
+        <summary>現在のシンクが関連付けられているチャネルのチャネルのデータを返します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Next">
+      <MemberSignature Language="C#" Value="public System.Runtime.Remoting.Channels.IServerChannelSinkProvider Next { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Remoting.Channels.IServerChannelSinkProvider Next" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.BinaryServerFormatterSinkProvider.Next" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Channels.IServerChannelSinkProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>次の設定を取得または<see cref="T:System.Runtime.Remoting.Channels.IServerChannelSinkProvider" />シンク プロバイダー チェーンにします。</summary>
+        <value>次<see cref="T:System.Runtime.Remoting.Channels.IServerChannelSinkProvider" />シンク プロバイダー チェーンにします。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeFilterLevel">
+      <MemberSignature Language="C#" Value="public System.Runtime.Serialization.Formatters.TypeFilterLevel TypeFilterLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.Serialization.Formatters.TypeFilterLevel TypeFilterLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.BinaryServerFormatterSinkProvider.TypeFilterLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.Formatters.TypeFilterLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see langword="TypeFilterLevel" />自動逆シリアル化の値、<see langword="BinaryServerFormatterSink" />を実行します。</summary>
+        <value><see langword="TypeFilterLevel" />を表す現在のレベルで自動逆シリアル化します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サポートされる値は`Low`(既定) と`Full`です。 逆シリアル化のレベルについては、次を参照してください。 [.NET リモート処理での自動逆シリアル化](http://msdn.microsoft.com/en-us/313a0e88-5b2b-4a17-8391-0ddf9f7a787b)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

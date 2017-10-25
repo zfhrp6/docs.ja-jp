@@ -1,0 +1,574 @@
+<Type Name="SqlPersistenceProviderFactory" FullName="System.ServiceModel.Persistence.SqlPersistenceProviderFactory">
+  <TypeSignature Language="C#" Value="public class SqlPersistenceProviderFactory : System.ServiceModel.Persistence.PersistenceProviderFactory" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SqlPersistenceProviderFactory extends System.ServiceModel.Persistence.PersistenceProviderFactory" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Persistence.SqlPersistenceProviderFactory" />
+  <AssemblyInfo>
+    <AssemblyName>System.WorkflowServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Persistence.PersistenceProviderFactory</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The WF3 types are deprecated.  Instead, please use the new WF4 types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.ServiceModel.Persistence.PersistenceProviderFactory" /> インスタンスを作成するために使用される <see cref="T:System.ServiceModel.Persistence.LockingPersistenceProvider" /> のシステム提供の実装です。インスタンスでは、永続化されているサービス状態データを格納するために SQL データベースが使用されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Persistence.SqlPersistenceProviderFactory> クラスは、完全に機能する永続性サービスの永続化プロバイダーのファクトリ クラスを表します。 このシステムによって提供されるプロバイダーを使用して、永続的 [!INCLUDE[indigo2](~/includes/indigo2-md.md)] サービスについての状態情報を永続化および取得できます。  
+  
+ 永続性に加えて、<xref:System.ServiceModel.Persistence.SqlPersistenceProviderFactory> クラスで作成されたプロバイダーは、抽象 <xref:System.ServiceModel.Persistence.LockingPersistenceProvider> クラスを継承してサービス状態データ レコードのロックを実装します。  永続化されたデータをやり取りする方法 (など<xref:System.ServiceModel.Persistence.LockingPersistenceProvider.Create%2A>または<xref:System.ServiceModel.Persistence.LockingPersistenceProvider.Update%2A>) は省略可能なパラメーターを持つ (`lockInstance`) は、対象のデータのロックをリリースするまたは維持するかどうかを定義します。  
+  
+> [!NOTE]
+>  <xref:System.ServiceModel.Persistence.PersistenceException> でスローされた <xref:System.ServiceModel.Persistence.SqlPersistenceProviderFactory> 例外では、既定で例外の詳細を非表示にしません。 セキュリティの脆弱性を防ぐためにこれらの詳細を非表示にするを設定して<xref:System.Workflow.Activities.WorkflowServiceAttributes.IncludeExceptionDetailInFaults%2A>に`false`です。  
+  
+> [!NOTE]
+>  SQL Persistence Provider は、SQL Server データベースからデータを格納および取得します。 ホストは、セキュリティで保護された SQL Server 環境を作成して、データベース内、またはアプリケーションとデータベース間のネットワーク上のいずれかを使用してインスタンス状態への読み込みおよび書き込みアクセスを得ようとする攻撃者に対して保護する必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Persistence.SqlPersistenceProviderFactory" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Persistence.SqlPersistenceProviderFactory> クラスのコンストラクターのオーバーロードには、次を設定するためのパラメーターが用意されています。  
+  
+-   SQL データベースのアクセスに使用される接続文字列。  
+  
+-   ロック所有権期間の定義に使用されるロック タイムアウト。  
+  
+-   永続性データが、XML としてシリアル化されるか、それともバイナリ データとしてシリアル化されるかどうか。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlPersistenceProviderFactory (System.Collections.Specialized.NameValueCollection parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Specialized.NameValueCollection parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.SqlPersistenceProviderFactory.#ctor(System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="parameters" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="parameters">新しい永続性プロバイダー ファクトリによって使用されるパラメーターのコレクション。 有効なパラメーターには、<see langword="lockTimeout" />, <see langword="connectionStringName" /> および <see langword="serializeAsText" /> が含まれています。</param>
+        <summary>指定したパラメーター コレクションを使用して構成される、<see cref="T:System.ServiceModel.Persistence.SqlPersistenceProviderFactory" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターを使用して、`lockTimeout`、`connectionString`、および `serializeAsText` を、他のコンストラクターによって必要とされるような他のパラメーター (たとえば、`connectionString` パラメーターを指定しないで `lockTimeout` および `serializeAsText` パラメーターを指定する) を指定しないで任意に指定できます。  
+  
+   
+  
+## Examples  
+ パラメーター コレクションを使用して <xref:System.ServiceModel.Persistence.SqlPersistenceProviderFactory> クラスの新しいインスタンスを作成する方法を、次のコード例に示します。  
+  
+ [!code-csharp[SqlPersistenceProviderFactory#3](~/samples/snippets/csharp/VS_Snippets_CFX/sqlpersistenceproviderfactory/cs/sqlpersistenceproviderfactory.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlPersistenceProviderFactory (string connectionString);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string connectionString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.SqlPersistenceProviderFactory.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connectionString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connectionString">新しい永続化プロバイダー インスタンスの接続パラメーター。</param>
+        <summary>指定した接続文字列で構成される、<see cref="T:System.ServiceModel.Persistence.SqlPersistenceProviderFactory" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 接続文字列を使用して <xref:System.ServiceModel.Persistence.SqlPersistenceProviderFactory> クラスの新規インスタンスを作成する方法を、次のコード例に示します。  
+  
+ [!code-csharp[SqlPersistenceProviderFactory#2](~/samples/snippets/csharp/VS_Snippets_CFX/sqlpersistenceproviderfactory/cs/sqlpersistenceproviderfactory.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlPersistenceProviderFactory (string connectionString, bool serializeAsText);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string connectionString, bool serializeAsText) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.SqlPersistenceProviderFactory.#ctor(System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connectionString" Type="System.String" />
+        <Parameter Name="serializeAsText" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="connectionString">新しい永続化プロバイダー インスタンスの接続パラメーター。</param>
+        <param name="serializeAsText">データをバイナリではなくテキストとしてシリアル化するかどうかを指定します。</param>
+        <summary>指定した接続文字列および <see cref="T:System.ServiceModel.Persistence.SqlPersistenceProviderFactory" /><see langword="serializeAsText" />パラメーターで構成される、 クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値`serializeAsText`は`false`、バイナリ データとしてシリアル化は、その永続的な情報を示します。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Persistence.SqlPersistenceProviderFactory> クラスの新規インスタンスを作成する方法を、次のコード例に示します。  
+  
+ [!code-csharp[SqlPersistenceProviderFactory#1](~/samples/snippets/csharp/VS_Snippets_CFX/sqlpersistenceproviderfactory/cs/sqlpersistenceproviderfactory.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlPersistenceProviderFactory (string connectionString, bool serializeAsText, TimeSpan lockTimeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string connectionString, bool serializeAsText, valuetype System.TimeSpan lockTimeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.SqlPersistenceProviderFactory.#ctor(System.String,System.Boolean,System.TimeSpan)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connectionString" Type="System.String" />
+        <Parameter Name="serializeAsText" Type="System.Boolean" />
+        <Parameter Name="lockTimeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="connectionString">新しい永続化プロバイダー ファクトリ インスタンスの接続パラメーター。</param>
+        <param name="serializeAsText">データをバイナリではなくテキストとしてシリアル化するかどうかを指定します。</param>
+        <param name="lockTimeout">ロック所有権のタイムアウト。 このタイムアウト期間後、ロックされたインスタンスが自動的に解除されます。 タイムアウト<see langword="TimeSpan.Zero" />ロックが使用されていないことを指定します。</param>
+        <summary>指定した接続文字列の <see cref="T:System.ServiceModel.Persistence.SqlPersistenceProviderFactory" /><see langword="serializeAsText" />および <see langword="lockTimeout" /> パラメーターで構成される、 クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値`serializeAsText`は`false`、バイナリ データとしてシリアル化は、その永続的な情報を示します。  
+  
+ 既定値`lockTimeout`は`TimeSpan.Zero`、そのロックを示すは使用されません。 場合`TimeSpan.MaxValue`のロックが無期限に保持しを使用します。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Persistence.SqlPersistenceProviderFactory> クラスの新規インスタンスを作成する方法を、次のコード例に示します。  
+  
+ [!code-csharp[SqlPersistenceProviderFactory#0](~/samples/snippets/csharp/VS_Snippets_CFX/sqlpersistenceproviderfactory/cs/sqlpersistenceproviderfactory.cs#0)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionString">
+      <MemberSignature Language="C#" Value="public string ConnectionString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConnectionString" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Persistence.SqlPersistenceProviderFactory.ConnectionString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このファクトリで作成された永続化プロバイダー インスタンスの接続パラメーターを取得します。</summary>
+        <value>このファクトリで作成された永続化プロバイダー インスタンスの接続パラメーター。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ `ConnectionString` プロパティを設定およびアクセスする方法を、次のコード例に示します。  
+  
+ [!code-csharp[SqlPersistenceProviderFactory#4](~/samples/snippets/csharp/VS_Snippets_CFX/sqlpersistenceproviderfactory/cs/sqlpersistenceproviderfactory.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateProvider">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Persistence.PersistenceProvider CreateProvider (Guid id);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Persistence.PersistenceProvider CreateProvider(valuetype System.Guid id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.SqlPersistenceProviderFactory.CreateProvider(System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Persistence.PersistenceProvider</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="id">作成されている永続化プロバイダーの一意の識別子。</param>
+        <summary>永続的ストアとして SQL データベースを使用する新しい <see cref="T:System.ServiceModel.Persistence.LockingPersistenceProvider" /> インスタンスを初期化します。</summary>
+        <returns>新しく作成した <see cref="T:System.ServiceModel.Persistence.PersistenceProvider" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 永続化プロバイダーが作成された後、ファクトリのパラメーターが変更された場合でも、初期化済みの永続化プロバイダーでは、永続化プロバイダーを作成したファクトリの現在のパラメーターが使用されます (<xref:System.ServiceModel.Persistence.SqlPersistenceProviderFactory.ConnectionString%2A>、<xref:System.ServiceModel.Persistence.SqlPersistenceProviderFactory.LockTimeout%2A>、および <xref:System.ServiceModel.Persistence.SqlPersistenceProviderFactory.SerializeAsText%2A>)。  
+  
+   
+  
+## Examples  
+ `CreateProvider` メソッドを実行する方法を次のコード例に示します。 結果プロバイダーは <xref:System.ServiceModel.Persistence.LockingPersistenceProvider> インスタンスとしてアクセスされることに注意してください。  
+  
+ [!code-csharp[SqlPersistenceProviderFactory#7](~/samples/snippets/csharp/VS_Snippets_CFX/sqlpersistenceproviderfactory/cs/sqlpersistenceproviderfactory.cs#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultCloseTimeout">
+      <MemberSignature Language="C#" Value="protected override TimeSpan DefaultCloseTimeout { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan DefaultCloseTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Persistence.SqlPersistenceProviderFactory.DefaultCloseTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このファクトリで作成された永続化プロバイダーを閉じるときに使用される既定のタイムアウト値を取得します。</summary>
+        <value>既定のタイムアウト値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クローズ タイムアウトの既定値は 15 秒です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultOpenTimeout">
+      <MemberSignature Language="C#" Value="protected override TimeSpan DefaultOpenTimeout { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan DefaultOpenTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Persistence.SqlPersistenceProviderFactory.DefaultOpenTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>永続化プロバイダーを開くときに使用される既定のタイムアウト値を取得します。</summary>
+        <value>既定のタイムアウト値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オープン タイムアウトの既定値は 15 秒です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LockTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan LockTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan LockTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Persistence.SqlPersistenceProviderFactory.LockTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスで作成された永続化プロバイダー インスタンスで使用されるロック所有権のタイムアウト。 このタイムアウト期間後、ロックされたインスタンスが自動的に解除されます。</summary>
+        <value>ロック所有権のタイムアウト値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タイムアウト`TimeSpan.Zero`ロックが使用されていないことを指定します。  
+  
+   
+  
+## Examples  
+ `LockTimeout` プロパティへのアクセス方法を次のコード例に示します。  
+  
+ [!code-csharp[SqlPersistenceProviderFactory#5](~/samples/snippets/csharp/VS_Snippets_CFX/sqlpersistenceproviderfactory/cs/sqlpersistenceproviderfactory.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnAbort">
+      <MemberSignature Language="C#" Value="protected override void OnAbort ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnAbort() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.SqlPersistenceProviderFactory.OnAbort" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>中止フェーズを表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `OnAbort`サービス ホストが突然シャット ダウンしたときに発生し、現在処理されているアクティブなコマンドは閉じられます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBeginClose">
+      <MemberSignature Language="C#" Value="protected override IAsyncResult OnBeginClose (TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.IAsyncResult OnBeginClose(valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.SqlPersistenceProviderFactory.OnBeginClose(System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">永続化プロバイダーがこの試行を中止してからの期間。</param>
+        <param name="callback">操作が完了した時点で呼び出すメソッド。</param>
+        <param name="state">この特定の非同期操作を他の操作と区別するために使用するユーザー指定のオブジェクト。</param>
+        <summary>クローズ フェーズの開始を表します。</summary>
+        <returns><see cref="M:System.ServiceModel.Persistence.SqlPersistenceProviderFactory.OnBeginClose(System.TimeSpan,System.AsyncCallback,System.Object)" /> 非同期メソッド呼び出しの状態。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クローズ フェーズは、サービスを閉じるときに発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBeginOpen">
+      <MemberSignature Language="C#" Value="protected override IAsyncResult OnBeginOpen (TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.IAsyncResult OnBeginOpen(valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.SqlPersistenceProviderFactory.OnBeginOpen(System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">永続化プロバイダーがこの試行を中止してからの期間。</param>
+        <param name="callback">操作が完了した時点で呼び出すメソッド。</param>
+        <param name="state">この特定の非同期操作を他の操作と区別するために使用するユーザー指定のオブジェクト。</param>
+        <summary>オープン フェーズの開始を表します。</summary>
+        <returns><see cref="M:System.ServiceModel.Persistence.SqlPersistenceProviderFactory.OnBeginOpen(System.TimeSpan,System.AsyncCallback,System.Object)" /> 非同期メソッド呼び出しの状態。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オープン フェーズは、サービスを開くときに発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClose">
+      <MemberSignature Language="C#" Value="protected override void OnClose (TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnClose(valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.SqlPersistenceProviderFactory.OnClose(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">永続化プロバイダーがこの試行を中止してからの期間。</param>
+        <summary>クローズ フェーズを表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クローズ フェーズは、サービスを閉じるときに発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnEndClose">
+      <MemberSignature Language="C#" Value="protected override void OnEndClose (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnEndClose(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.SqlPersistenceProviderFactory.OnEndClose(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">操作の結果への参照。</param>
+        <summary>クローズ フェーズの終了を表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クローズ フェーズは、サービスを閉じるときに発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnEndOpen">
+      <MemberSignature Language="C#" Value="protected override void OnEndOpen (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnEndOpen(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.SqlPersistenceProviderFactory.OnEndOpen(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">操作の結果への参照。</param>
+        <summary>オープン フェーズの終了を表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オープン フェーズは、サービスを開くときに発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnOpen">
+      <MemberSignature Language="C#" Value="protected override void OnOpen (TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnOpen(valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.SqlPersistenceProviderFactory.OnOpen(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">永続化プロバイダーがこの試行を中止してからの期間。</param>
+        <summary>オープン フェーズを表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オープン フェーズは、サービスを開くときに発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SerializeAsText">
+      <MemberSignature Language="C#" Value="public bool SerializeAsText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SerializeAsText" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Persistence.SqlPersistenceProviderFactory.SerializeAsText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このファクトリで作成された永続化プロバイダーで、データをバイナリではなくテキストとしてシリアル化するかどうかを指定します。</summary>
+        <value>
+          <see langword="true" />サービスの情報がテキストとしてシリアル化される場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値`serializeAsText`は`false`、バイナリ データとしてシリアル化は、その永続的な情報を示します。  
+  
+   
+  
+## Examples  
+ `SerializeAsText` プロパティへのアクセス方法を次のコード例に示します。  
+  
+ [!code-csharp[SqlPersistenceProviderFactory#6](~/samples/snippets/csharp/VS_Snippets_CFX/sqlpersistenceproviderfactory/cs/sqlpersistenceproviderfactory.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

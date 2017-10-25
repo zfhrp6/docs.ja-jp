@@ -1,0 +1,706 @@
+<Type Name="BindingFlags" FullName="System.Reflection.BindingFlags">
+  <TypeSignature Language="C#" Value="public enum BindingFlags" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed BindingFlags extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Reflection.BindingFlags" />
+  <AssemblyInfo>
+    <AssemblyName>System.Reflection</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>バインドおよびリフレクションによるメンバーと型の検索方法を制御するフラグを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これら`BindingFlags`クラスの多くの優れたのバインドを制御、 `System`、 `System.Reflection`、および`System.Runtime`名前空間を呼び出し、作成、取得、設定、およびメンバーと型を検索します。  
+  
+ `BindingFlags`次に使用<xref:System.Type>メソッドとその他の場所など、 <xref:System.Reflection.MethodBase.Invoke%2A?displayProperty=nameWithType> :  
+  
+-   <xref:System.Reflection.MethodBase.Invoke%2A?displayProperty=nameWithType>  
+  
+-   <xref:System.Type.GetMembers%2A>  
+  
+-   <xref:System.Type.GetEvents%2A>  
+  
+-   <xref:System.Type.InvokeMember%2A>  
+  
+-   <xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType>  
+  
+-   <xref:System.Type.GetConstructor%2A>  
+  
+-   <xref:System.Type.GetConstructors%2A>  
+  
+-   <xref:System.Type.GetMethod%2A>  
+  
+-   <xref:System.Type.GetMethods%2A>  
+  
+-   <xref:System.Type.GetField%2A>  
+  
+-   <xref:System.Type.GetFields%2A>  
+  
+-   <xref:System.Type.GetEvent%2A>  
+  
+-   <xref:System.Type.GetProperty%2A>  
+  
+-   <xref:System.Type.GetProperties%2A>  
+  
+-   <xref:System.Type.GetMember%2A>  
+  
+-   <xref:System.Type.FindMembers%2A>  
+  
+ `InvokeMember`および`GetMethod`は、特に重要です。  
+  
+ バインディング フラグは、次の表に記載されている型のメンバーの識別方法で分類できます。  
+  
+|ユーザー補助機能によって識別されます。|引数をバインドすることによって識別されます。|操作によって識別されます。|  
+|---------------------------------|------------------------------------|-----------------------------|  
+|DeclaredOnly<br /><br /> flattenHierarchy<br /><br /> IgnoreCase<br /><br /> IgnoreReturn<br /><br /> [インスタンス]<br /><br /> 非公開<br /><br /> パブリック<br /><br /> スタティック|ExactBinding<br /><br /> OptionalParamBinding|CreateInstance<br /><br /> GetField<br /><br /> SetField<br /><br /> getProperty<br /><br /> SetProperty<br /><br /> InvokeMethod<br /><br /> PutDispProperty<br /><br /> PutRefDispProperty|  
+  
+> [!NOTE]
+>  指定する必要があります`Instance`または`Static`と共に`Public`または`NonPublic`またはメンバーは返されません。  
+  
+ 次の表に、既定では、実行の強制型変換<xref:System.Reflection.Binder.ChangeType%2A?displayProperty=nameWithType>です。 このテーブルが特にに適用されます、`ExactBinding`バインディング フラグ。  
+  
+|ソースの種類|ターゲットの種類|  
+|-----------------|-----------------|  
+|任意の型|その基本型です。|  
+|任意の型|実装するインターフェイスです。|  
+|`Char`|`UInt16`, `UInt32`, `Int32`, `UInt64`, `Int64`, `Single`, `Double`|  
+|`Byte`|`Char`, `UInt16`, `Int16`, `UInt32`, `Int32`, `UInt64`, `Int64`, `Single`, `Double`|  
+|`SByte`|`Int16`, `Int32`, `Int64`, `Single`, `Double`|  
+|`UInt16`|`UInt32`, `Int32`, `UInt64`, `Int64`, `Single`, `Double`|  
+|`Int16`|`Int32`, `Int64`, `Single`, `Double`|  
+|`UInt32`|`UInt64`, `Int64`, `Single`, `Double`|  
+|`Int32`|`Int64`、`Single`、`Double`|  
+|`UInt64`|`Single`, `Double`|  
+|`Int64`|`Single`, `Double`|  
+|`Single`|`Double`|  
+|非参照|参照渡しされます。|  
+  
+   
+  
+## Examples  
+ 次の例では、さまざまなバインディング フラグを示します。  
+  
+ [!code-cpp[BindingFlags#1](~/samples/snippets/cpp/VS_Snippets_CLR/BindingFlags/CPP/bindingflagssample.cpp#1)]
+ [!code-csharp[BindingFlags#1](~/samples/snippets/csharp/VS_Snippets_CLR/BindingFlags/CS/bindingflagssample.cs#1)]
+ [!code-vb[BindingFlags#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/BindingFlags/VB/bindingflagssample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateInstance">
+      <MemberSignature Language="C#" Value="CreateInstance" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Reflection.BindingFlags CreateInstance = int32(512)" />
+      <MemberSignature Language="DocId" Value="F:System.Reflection.BindingFlags.CreateInstance" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.BindingFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定した型のインスタンスをリフレクションで作成することを指定します。 指定した引数と一致するコンストラクターを呼び出します。 指定したメンバー名は無視されます。 検索の種類を指定しなかった場合は、(Instance | Public) が適用されます。 タイプ初期化子を呼び出すことはできません。  
+  
+ このフラグは、コンストラクターを呼び出す <see langword="InvokeMember" /> メソッドに渡されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DeclaredOnly">
+      <MemberSignature Language="C#" Value="DeclaredOnly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Reflection.BindingFlags DeclaredOnly = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Reflection.BindingFlags.DeclaredOnly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.BindingFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定した型の階層のレベルで宣言されたメンバーのみを対象にすることを指定します。 継承されたメンバーは対象になりません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="Default" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Reflection.BindingFlags Default = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Reflection.BindingFlags.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.BindingFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインディング フラグを定義していないことを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ExactBinding">
+      <MemberSignature Language="C#" Value="ExactBinding" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Reflection.BindingFlags ExactBinding = int32(65536)" />
+      <MemberSignature Language="DocId" Value="F:System.Reflection.BindingFlags.ExactBinding" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.BindingFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定した引数の型が、対応する仮パラメーター (仮引数) の型と完全に一致する必要があることを指定します。 呼び出し元が null 以外の <see langword="Binder" /> オブジェクトを指定した場合、これは適切なメソッドを選択する <see langword="BindToXXX" /> 実装を呼び出し元が提供することを意味するため、リフレクションは例外をスローします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リフレクションには、共通型システムのアクセシビリティ規則がモデル化します。 たとえば、呼び出し元が、同じアセンブリ内にある場合は、呼び出し元は、必要はありません特殊なアクセス許可内部メンバーの。 それ以外の場合、呼び出し元が必要な<xref:System.Security.Permissions.ReflectionPermission>します。 これは、保護されているメンバーの参照と一貫性のある、プライベート、およびなどです。  
+  
+ 一般的な方針は<xref:System.Reflection.Binder.ChangeType%2A>拡大変換で、データが失われることのみを実行する必要があります。 拡大型の強制の例には、64 ビット符号付き整数である値を 32 ビット符号付き整数の値が強制変換します。 これは、データが失われる可能性があります縮小強制変換と区別されます。 縮小強制変換の例の強制型変換は 32 ビット符号付き整数に 64 ビット符号付き整数。  
+  
+ 既定のバインダーは、カスタム バインダーは、このフラグのセマンティクスを実装できます中に、このフラグを無視します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FlattenHierarchy">
+      <MemberSignature Language="C#" Value="FlattenHierarchy" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Reflection.BindingFlags FlattenHierarchy = int32(64)" />
+      <MemberSignature Language="DocId" Value="F:System.Reflection.BindingFlags.FlattenHierarchy" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.BindingFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>階層上位のパブリックおよびプロテクトの静的メンバーを返すことを指定します。 継承クラスのプライベートな静的メンバーは返されません。 静的メンバーには、フィールド、メソッド、イベント、プロパティが含まれます。 入れ子にされた型は返されません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="GetField">
+      <MemberSignature Language="C#" Value="GetField" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Reflection.BindingFlags GetField = int32(1024)" />
+      <MemberSignature Language="DocId" Value="F:System.Reflection.BindingFlags.GetField" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.BindingFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定したフィールドの値を返すことを指定します。  
+  
+ このフラグは、フィールド値を取得する <see langword="InvokeMember" /> メソッドに渡されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperty">
+      <MemberSignature Language="C#" Value="GetProperty" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Reflection.BindingFlags GetProperty = int32(4096)" />
+      <MemberSignature Language="DocId" Value="F:System.Reflection.BindingFlags.GetProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.BindingFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定したプロパティの値を返すことを指定します。  
+  
+ このフラグは、プロパティ get アクセス操作子を呼び出す <see langword="InvokeMember" /> メソッドに渡されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreCase">
+      <MemberSignature Language="C#" Value="IgnoreCase" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Reflection.BindingFlags IgnoreCase = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Reflection.BindingFlags.IgnoreCase" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.BindingFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインディング時にメンバー名の大文字小文字を区別しないことを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreReturn">
+      <MemberSignature Language="C#" Value="IgnoreReturn" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Reflection.BindingFlags IgnoreReturn = int32(16777216)" />
+      <MemberSignature Language="DocId" Value="F:System.Reflection.BindingFlags.IgnoreReturn" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.BindingFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メンバーの戻り値を無視できることを指定するために、COM 相互運用で使用します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Instance">
+      <MemberSignature Language="C#" Value="Instance" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Reflection.BindingFlags Instance = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Reflection.BindingFlags.Instance" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.BindingFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンス メンバーを検索に含めることを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeMethod">
+      <MemberSignature Language="C#" Value="InvokeMethod" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Reflection.BindingFlags InvokeMethod = int32(256)" />
+      <MemberSignature Language="DocId" Value="F:System.Reflection.BindingFlags.InvokeMethod" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.BindingFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドを呼び出すことを指定します。 コンストラクターと型の初期化子は指定できません。  
+  
+ このフラグは、メソッドを呼び出す <see langword="InvokeMember" /> メソッドに渡されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NonPublic">
+      <MemberSignature Language="C#" Value="NonPublic" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Reflection.BindingFlags NonPublic = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:System.Reflection.BindingFlags.NonPublic" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.BindingFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パブリック メンバー以外のメンバーを検索に含めることを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OptionalParamBinding">
+      <MemberSignature Language="C#" Value="OptionalParamBinding" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Reflection.BindingFlags OptionalParamBinding = int32(262144)" />
+      <MemberSignature Language="DocId" Value="F:System.Reflection.BindingFlags.OptionalParamBinding" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.BindingFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パラメーター数が指定された引数の数と一致するメンバーのセットを返します。 このバインディング フラグは、既定値を持つパラメーターを取るメソッドと、可変個の引数 (vararg) を取るメソッドで使用します。 このフラグは、<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" /> と共に使用する場合にだけ使用してください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パラメーターに既定値は、後続の引数を省略すると呼び出しでのみ使用されます。 最後の引数がある必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Public">
+      <MemberSignature Language="C#" Value="Public" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Reflection.BindingFlags Public = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Reflection.BindingFlags.Public" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.BindingFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パブリック メンバーを検索に含めることを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PutDispProperty">
+      <MemberSignature Language="C#" Value="PutDispProperty" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Reflection.BindingFlags PutDispProperty = int32(16384)" />
+      <MemberSignature Language="DocId" Value="F:System.Reflection.BindingFlags.PutDispProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.BindingFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>COM オブジェクトの <see langword="PROPPUT" /> メンバーを呼び出すことを指定します。 <see langword="PROPPUT" /> は、値を使用するプロパティ設定関数を指定します。 プロパティに <see langword="PROPPUT" /> と <see langword="PROPPUTREF" /> の両方があり、どちらを呼び出すかを区別する必要がある場合は、<see langword="PutDispProperty" /> を使用します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PutRefDispProperty">
+      <MemberSignature Language="C#" Value="PutRefDispProperty" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Reflection.BindingFlags PutRefDispProperty = int32(32768)" />
+      <MemberSignature Language="DocId" Value="F:System.Reflection.BindingFlags.PutRefDispProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.BindingFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>COM オブジェクトの <see langword="PROPPUTREF" /> メンバーを呼び出すことを指定します。 <see langword="PROPPUTREF" /> は、値ではなく参照を使用するプロパティ設定関数を指定します。 プロパティに <see langword="PROPPUT" /> と <see langword="PROPPUTREF" /> の両方があり、どちらを呼び出すかを区別する必要がある場合は、<see langword="PutRefDispProperty" /> を使用します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SetField">
+      <MemberSignature Language="C#" Value="SetField" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Reflection.BindingFlags SetField = int32(2048)" />
+      <MemberSignature Language="DocId" Value="F:System.Reflection.BindingFlags.SetField" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.BindingFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定したフィールドの値を設定することを指定します。  
+  
+ このフラグは、フィールド値を設定する <see langword="InvokeMember" /> メソッドに渡されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SetProperty">
+      <MemberSignature Language="C#" Value="SetProperty" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Reflection.BindingFlags SetProperty = int32(8192)" />
+      <MemberSignature Language="DocId" Value="F:System.Reflection.BindingFlags.SetProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.BindingFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定したプロパティの値を設定することを指定します。 COM プロパティの場合、このバインディング フラグを指定することは、<see langword="PutDispProperty" /> と <see langword="PutRefDispProperty" /> を指定することと同じです。  
+  
+ このフラグは、プロパティ set アクセス操作子を呼び出す <see langword="InvokeMember" /> メソッドに渡されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Static">
+      <MemberSignature Language="C#" Value="Static" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Reflection.BindingFlags Static = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Reflection.BindingFlags.Static" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.BindingFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>静的メンバーを検索に含めることを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SuppressChangeType">
+      <MemberSignature Language="C#" Value="SuppressChangeType" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Reflection.BindingFlags SuppressChangeType = int32(131072)" />
+      <MemberSignature Language="DocId" Value="F:System.Reflection.BindingFlags.SuppressChangeType" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.BindingFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実装されていません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

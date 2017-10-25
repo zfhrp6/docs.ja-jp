@@ -1,0 +1,94 @@
+<Type Name="FontSubsetterCommitPolicies" FullName="System.Windows.Xps.Serialization.FontSubsetterCommitPolicies">
+  <TypeSignature Language="C#" Value="public enum FontSubsetterCommitPolicies" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed FontSubsetterCommitPolicies extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Xps.Serialization.FontSubsetterCommitPolicies" />
+  <AssemblyInfo>
+    <AssemblyName>ReachFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>XPS ドキュメントにフォント グリフのサブセットを保存する粒度を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合内のテキストのフォント グリフ、[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]ドキュメント パッケージに保存するドキュメント、ドキュメントのテキストは、任意のコンピューターまたはプリンターには同じですが表示されます。  ドキュメント内のグリフは保存されません、ローカル コンピューターまたはプリンターに必要なフォントがインストールされていない場合は、レンダリング デバイスが別のフォントからのグリフを置き換える必要があります。  グリフの置換と、別のフォントを使用する場合に、テキストの外観を変更できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CommitEntireSequence">
+      <MemberSignature Language="C#" Value="CommitEntireSequence" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Xps.Serialization.FontSubsetterCommitPolicies CommitEntireSequence = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Xps.Serialization.FontSubsetterCommitPolicies.CommitEntireSequence" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Serialization.FontSubsetterCommitPolicies</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>各ドキュメント シーケンスによって、テキストに使用されるすべてのグリフを格納します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CommitPerDocument">
+      <MemberSignature Language="C#" Value="CommitPerDocument" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Xps.Serialization.FontSubsetterCommitPolicies CommitPerDocument = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Xps.Serialization.FontSubsetterCommitPolicies.CommitPerDocument" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Serialization.FontSubsetterCommitPolicies</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>各ドキュメントによって、テキストに使用されるすべてのグリフを格納します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CommitPerPage">
+      <MemberSignature Language="C#" Value="CommitPerPage" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Xps.Serialization.FontSubsetterCommitPolicies CommitPerPage = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Xps.Serialization.FontSubsetterCommitPolicies.CommitPerPage" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Serialization.FontSubsetterCommitPolicies</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>各ページで、テキストに使用されるすべてのグリフを格納します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Xps.Serialization.FontSubsetterCommitPolicies None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Xps.Serialization.FontSubsetterCommitPolicies.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Serialization.FontSubsetterCommitPolicies</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>なしのサブセット化します。  ドキュメントで使用されるすべてのフォントのすべてのグリフを格納します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

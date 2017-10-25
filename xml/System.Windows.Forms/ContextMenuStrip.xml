@@ -1,0 +1,208 @@
+<Type Name="ContextMenuStrip" FullName="System.Windows.Forms.ContextMenuStrip">
+  <TypeSignature Language="C#" Value="public class ContextMenuStrip : System.Windows.Forms.ToolStripDropDownMenu" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ContextMenuStrip extends System.Windows.Forms.ToolStripDropDownMenu" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ContextMenuStrip" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.ToolStripDropDownMenu</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("Opening")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ショートカット メニューを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ContextMenuStrip>置換<xref:System.Windows.Forms.ContextMenu>です。 関連付けることができます、<xref:System.Windows.Forms.ContextMenuStrip>任意のコントロールとマウスの右クリックして自動的にショートカット メニューを表示します。 表示することができます、<xref:System.Windows.Forms.ContextMenuStrip>を使用してプログラムで、<xref:System.Windows.Forms.ToolStripDropDown.Show%2A>メソッドです。 <xref:System.Windows.Forms.ContextMenuStrip>キャンセル可能なサポート<xref:System.Windows.Forms.ToolStripDropDown.Opening>と<xref:System.Windows.Forms.ToolStripDropDown.Closing>動的母集団と複数クリック シナリオを処理するイベントです。 <xref:System.Windows.Forms.ContextMenuStrip>イメージ、メニュー項目の状態の確認、テキスト、アクセス キー、ショートカット、およびカスケード メニューをサポートしています。  
+  
+ 次の項目を両方とシームレスに動作する目的<xref:System.Windows.Forms.ToolStripSystemRenderer>と<xref:System.Windows.Forms.ToolStripProfessionalRenderer>すべての向きにします。 デザイン時に、既定では、<xref:System.Windows.Forms.ContextMenuStrip>コントロール。  
+  
+-   <xref:System.Windows.Forms.ToolStripMenuItem>  
+  
+-   <xref:System.Windows.Forms.ToolStripSeparator>  
+  
+-   <xref:System.Windows.Forms.ToolStripTextBox>  
+  
+-   <xref:System.Windows.Forms.ToolStripComboBox>  
+  
+ ショートカット メニューは通常から別のメニュー項目を組み合わせて使用、<xref:System.Windows.Forms.MenuStrip>のアプリケーションのコンテキストを指定されたユーザーに便利な形式です。 たとえばに割り当てられているショートカット メニューを使用することができます、<xref:System.Windows.Forms.TextBox>コントロール、またはコピーしてテキストを貼り付けることのクリップボード機能内のテキストを検索するテキストのフォントを変更するためのメニュー項目を提供するコントロール。 公開することも新しい<xref:System.Windows.Forms.ToolStripMenuItem>ショートカット メニューではないオブジェクトを内にある、<xref:System.Windows.Forms.MenuStrip>適さないような状況に固有のコマンドを提供する、<xref:System.Windows.Forms.MenuStrip>を表示します。  
+  
+ 通常、ユーザーがマウスの右ボタンをクリックするコントロールまたはフォーム自体の上にショートカット メニューが表示されます。 多くの表示されているコントロールだけでなく<xref:System.Windows.Forms.Form>自体が、<xref:System.Windows.Forms.Control.ContextMenuStrip%2A?displayProperty=nameWithType>をバインドするプロパティ、<xref:System.Windows.Forms.ContextMenuStrip>ショートカット メニューを表示するコントロールをクラス。 複数のコントロールを使用できる、<xref:System.Windows.Forms.ContextMenuStrip>です。  
+  
+ 設定、<xref:System.Windows.Forms.ToolStripDropDownMenu.ShowCheckMargin%2A?displayProperty=nameWithType>プロパティを`true`の左側の領域を追加する、<xref:System.Windows.Forms.ToolStripMenuItem>チェック マークが、メニューを表示する項目が有効かを選択します。 <xref:System.Windows.Forms.ToolStripDropDownMenu.ShowImageMargin%2A?displayProperty=nameWithType>プロパティに設定されている`true`既定です。 この領域の左側に使用して、<xref:System.Windows.Forms.ToolStripMenuItem>そのメニュー項目のイメージを表示します。  
+  
+ <xref:System.Windows.Forms.ContextMenuStrip>置換し、する機能を追加、<xref:System.Windows.Forms.ContextMenu>以前のバージョンでのコントロール<xref:System.Windows.Forms.ContextMenu>必要な場合に、旧バージョンとの互換性と将来の使用の両方の保持されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.Windows.Forms.ContextMenuStrip>動的項目の追加、動的に<xref:System.Windows.Forms.ContextMenuStrip.SourceControl%2A>で再利用、および処理の決定、<xref:System.Windows.Forms.ToolStripDropDown.Opening>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.ToolStrip.Misc#40](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.Misc/CS/Program.cs#40)]
+ [!code-vb[System.Windows.Forms.ToolStrip.Misc#40](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.Misc/VB/Program.vb#40)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContextMenuStrip ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ContextMenuStrip.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.ContextMenuStrip" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContextMenuStrip (System.ComponentModel.IContainer container);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ComponentModel.IContainer container) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ContextMenuStrip.#ctor(System.ComponentModel.IContainer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="container" Type="System.ComponentModel.IContainer" />
+      </Parameters>
+      <Docs>
+        <param name="container">実装するコンポーネント<see cref="T:System.ComponentModel.IContainer" />のコンテナーは、<see cref="T:System.Windows.Forms.ContextMenuStrip" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ContextMenuStrip" />クラスし、指定されたコンテナーに関連付けます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用していることを確認する、<xref:System.Windows.Forms.ContextMenuStrip>が適切に処分、フォームの子ではないためです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ContextMenuStrip.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Windows.Forms.ContextMenuStrip" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック`Dispose`メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 `Dispose`プロテクト呼び出します`Dispose(Boolean)`メソッドを`disposing`パラメーターに設定`true`です。 <xref:System.Object.Finalize%2A>呼び出す`Dispose`で`disposing`'éý'`false`です。  
+  
+ ときに、`disposing`パラメーターが true の場合、このメソッドは、すべてのマネージ オブジェクトによって保持されているすべてのリソースを解放します。 この<xref:System.Windows.Forms.ContextMenuStrip>参照します。 このメソッドは、参照される各オブジェクトの `Dispose` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 オーバーライドする場合<see langword="Dispose(Boolean)" />既に破棄されているを以前の呼び出しでオブジェクトを参照しないように注意する<see langword="Dispose" />です。 実装する方法の詳細についての<see langword="Dispose(Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see langword="Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)、および[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="SetVisibleCore">
+      <MemberSignature Language="C#" Value="protected override void SetVisibleCore (bool visible);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetVisibleCore(bool visible) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ContextMenuStrip.SetVisibleCore(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="visible" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="visible">
+          コントロールを表示する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>コントロールを指定した表示状態に設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceControl">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Control SourceControl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.Control SourceControl" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ContextMenuStrip.SourceControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Control</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これを発生させた最後のコントロールを取得<see cref="T:System.Windows.Forms.ContextMenuStrip" />を表示します。</summary>
+        <value>これを発生させたコントロール<see cref="T:System.Windows.Forms.ContextMenuStrip" />を表示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一般的な用途、<xref:System.Windows.Forms.ContextMenuStrip.SourceControl%2A>プロパティには、次が含まれます。  
+  
+-   追加、削除、有効化、または中にメニュー項目を無効にすると、<xref:System.Windows.Forms.ToolStripDropDown.Opening>イベント。  
+  
+-   最後に表示するコントロールに基づく、選択したコマンドの変更を決定する、<xref:System.Windows.Forms.ContextMenuStrip>です。  
+  
+   
+  
+## Examples  
+ 次のコード例で動的<xref:System.Windows.Forms.ContextMenuStrip.SourceControl%2A>で再利用、および処理の決定、<xref:System.Windows.Forms.ToolStripDropDown.Opening>イベント。 この例に示されている例の一部である、<xref:System.Windows.Forms.ContextMenuStrip>クラスです。  
+  
+ [!code-csharp[System.Windows.Forms.ToolStrip.Misc#42](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.Misc/CS/Program.cs#42)]
+ [!code-vb[System.Windows.Forms.ToolStrip.Misc#42](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.Misc/VB/Program.vb#42)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このプロパティの値を設定するすべてのウィンドウ。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

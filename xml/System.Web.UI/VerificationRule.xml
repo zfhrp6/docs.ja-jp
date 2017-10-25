@@ -1,0 +1,75 @@
+<Type Name="VerificationRule" FullName="System.Web.UI.VerificationRule">
+  <TypeSignature Language="C#" Value="public enum VerificationRule" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed VerificationRule extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.VerificationRule" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>によって定義された条件付きの式を指定します、<see cref="T:System.Web.UI.VerificationAttribute" />インスタンスが検証に使用されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クラス、メンバー、またはインデクサーに対しての拡張を使用する場合、<xref:System.Web.UI.VerificationAttribute>を定義することによって、条件式の定義、<xref:System.Web.UI.VerificationAttribute.ConditionalProperty%2A>と<xref:System.Web.UI.VerificationAttribute.ConditionalValue%2A>プロパティのいずれかを指定することによって使用される、<xref:System.Web.UI.VerificationRule>値。 作成の場合、<xref:System.Web.UI.VerificationAttribute>ありません<xref:System.Web.UI.VerificationRule>指定するの既定値は、必要なために使用します。  
+  
+ 検証規則の条件式の左側にあるは、<xref:System.Web.UI.VerificationAttribute.ConditionalProperty%2A>右側にあるは、<xref:System.Web.UI.VerificationAttribute.ConditionalValue%2A>です。 <xref:System.Web.UI.VerificationConditionalOperator>指定方法、<xref:System.Web.UI.VerificationAttribute.ConditionalProperty%2A>と比較するのには、<xref:System.Web.UI.VerificationAttribute.ConditionalValue%2A>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="NotEmptyString">
+      <MemberSignature Language="C#" Value="NotEmptyString" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.VerificationRule NotEmptyString = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.VerificationRule.NotEmptyString" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.VerificationRule</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定された条件式、<see cref="T:System.Web.UI.VerificationAttribute" />インスタンスには、空の文字列ではない、左側にある必要があります ("") です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Prohibited">
+      <MemberSignature Language="C#" Value="Prohibited" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.VerificationRule Prohibited = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.VerificationRule.Prohibited" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.VerificationRule</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定された条件式、<see cref="T:System.Web.UI.VerificationAttribute" />インスタンスは禁止されています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Required">
+      <MemberSignature Language="C#" Value="Required" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.VerificationRule Required = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.VerificationRule.Required" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.VerificationRule</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定された条件式、<see cref="T:System.Web.UI.VerificationAttribute" />インスタンスが必要です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

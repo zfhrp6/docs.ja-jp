@@ -1,0 +1,259 @@
+<Type Name="X509IssuerSerialKeyIdentifierClause" FullName="System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause">
+  <TypeSignature Language="C#" Value="public class X509IssuerSerialKeyIdentifierClause : System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit X509IssuerSerialKeyIdentifierClause extends System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Tokens.SecurityKeyIdentifierClause</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>証明書の発行者の識別名と X.509 証明書のシリアル番号を使用する <see cref="T:System.IdentityModel.Tokens.X509SecurityToken" /> セキュリティ トークンを識別するキー識別子句を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、カスタム セキュリティ トークン サービスが作成される場合を除いて、<xref:System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause> は使用されません。 セキュリティ トークン サービスがセキュリティ トークンを返した場合、発行されたセキュリティ トークンには、結び付けられているセキュリティ トークンまたは結び付けられていないセキュリティへの参照が含まれます。 結び付けられている参照は、SOAP メッセージのセキュリティ ヘッダーに含まれるセキュリティ トークンを参照し、結び付けられていない参照は、SOAP メッセージのセキュリティ ヘッダーに含まれていないセキュリティ トークンを参照します。 これらの参照は、通常、発行されたセキュリティ トークンの信頼性を確認します。 <xref:System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause> クラスを使用して、証明書の発行者の識別名と X.509 証明書のシリアル番号を使用する <xref:System.IdentityModel.Tokens.X509SecurityToken> セキュリティ トークンを参照します。 <xref:System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause.IssuerName%2A> プロパティと <xref:System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause.IssuerSerialNumber%2A> プロパティは、それぞれ、証明書の発行者の識別名と X.509 証明書のシリアル番号を表します。  
+  
+ [!INCLUDE[vsindigo](~/includes/vsindigo-md.md)] は、<xref:System.IdentityModel.Tokens.X509SecurityToken> セキュリティ トークンの次の種類のセキュリティ トークンの参照をサポートします。  
+  
+-   <xref:System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause>  
+  
+-   <xref:System.IdentityModel.Tokens.X509RawDataKeyIdentifierClause>  
+  
+-   <xref:System.IdentityModel.Tokens.X509SubjectKeyIdentifierClause>  
+  
+ <xref:System.IdentityModel.Tokens.X509ThumbprintKeyIdentifierClause>  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509IssuerSerialKeyIdentifierClause (System.Security.Cryptography.X509Certificates.X509Certificate2 certificate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Cryptography.X509Certificates.X509Certificate2 certificate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause.#ctor(System.Security.Cryptography.X509Certificates.X509Certificate2)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate2" />
+      </Parameters>
+      <Docs>
+        <param name="certificate">X.509 証明書を含む <see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />。</param>
+        <summary>指定した X.509 証明書を使用して、<see cref="T:System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、<xref:System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause.IssuerName%2A> と <xref:System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause.IssuerSerialNumber%2A> に、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2.IssuerName%2A> プロパティの値と、<xref:System.Security.Cryptography.X509Certificates.X509Certificate.GetSerialNumber%2A> メソッドから返された発行者シリアル番号をそれぞれ設定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="certificate" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509IssuerSerialKeyIdentifierClause (string issuerName, string issuerSerialNumber);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string issuerName, string issuerSerialNumber) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="issuerName" Type="System.String" />
+        <Parameter Name="issuerSerialNumber" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="issuerName">X.509 証明書を発行した証明機関の識別名。 <see cref="P:System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause.IssuerName" /> プロパティの値を設定します。</param>
+        <param name="issuerSerialNumber">X.509 証明書のシリアル番号。 <see cref="P:System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause.IssuerSerialNumber" /> プロパティの値を設定します。</param>
+        <summary>指定した X.509 証明書の発行者の識別名とシリアル番号を使用して、<see cref="T:System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `issuerSerialNumber` パラメーターは、符号付きの大きい整数形式で指定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="issuerName" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="issuerSerialNumber" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IssuerName">
+      <MemberSignature Language="C#" Value="public string IssuerName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string IssuerName" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause.IssuerName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>X.509 証明書を発行した証明機関の識別名を取得します。</summary>
+        <value>X.509 証明書を発行した証明機関の識別名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause.IssuerName%2A> プロパティには、証明書を発行した証明機関 (CA) の名前が格納されます。  
+  
+ 証明書の識別名は、証明書のサブジェクトまたは発行者のテキスト表現です。 この表現は、"CN=MyName, OU=MyOrgUnit, C=US" のように X.500 名の属性で構成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IssuerSerialNumber">
+      <MemberSignature Language="C#" Value="public string IssuerSerialNumber { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string IssuerSerialNumber" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause.IssuerSerialNumber" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>X.509 証明書のシリアル番号を取得します。</summary>
+        <value>X.509 証明書のシリアル番号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 発行者シリアル番号は、符号付きの大きい整数形式です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matches">
+      <MemberSignature Language="C#" Value="public override bool Matches (System.IdentityModel.Tokens.SecurityKeyIdentifierClause clause);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Matches(class System.IdentityModel.Tokens.SecurityKeyIdentifierClause clause) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause.Matches(System.IdentityModel.Tokens.SecurityKeyIdentifierClause)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyIdentifierClause" Type="System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />
+      </Parameters>
+      <Docs>
+        <param name="clause">To be added.</param>
+        <summary>このインスタンスのキー識別子が、指定したキー識別子と一致するどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="clause" /> 型でありキー識別句と一致する場合は <see cref="T:System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause> クラスでは、一致するかどうかを確認するために比較されるキー識別句の値は、<xref:System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause.IssuerName%2A> プロパティと <xref:System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause.IssuerSerialNumber%2A> プロパティの値です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matches">
+      <MemberSignature Language="C#" Value="public bool Matches (System.Security.Cryptography.X509Certificates.X509Certificate2 certificate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Matches(class System.Security.Cryptography.X509Certificates.X509Certificate2 certificate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause.Matches(System.Security.Cryptography.X509Certificates.X509Certificate2)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate2" />
+      </Parameters>
+      <Docs>
+        <param name="certificate">比較する X.509 証明書を含む <see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />。</param>
+        <summary>このインスタンスのキー識別子が、指定した X.509 識別子と一致するかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> が現在のインスタンスと同じ発行者名と発行者シリアル番号を保持している場合は <paramref name="certificate" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 発行者名と発行者シリアル番号は、`certificate` パラメーターから <xref:System.Security.Cryptography.X509Certificates.X509Certificate2.IssuerName%2A> プロパティの値を取得し、<xref:System.Security.Cryptography.X509Certificates.X509Certificate.GetSerialNumber%2A> メソッドを呼び出すことで取得されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matches">
+      <MemberSignature Language="C#" Value="public bool Matches (string issuerName, string issuerSerialNumber);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Matches(string issuerName, string issuerSerialNumber) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause.Matches(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="issuerName" Type="System.String" />
+        <Parameter Name="issuerSerialNumber" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="issuerName">X.509 証明書を発行した証明機関の識別名。</param>
+        <param name="issuerSerialNumber">X.509 証明書のシリアル番号。</param>
+        <summary>このインスタンスのキー識別子が、指定した発行者名と発行者シリアル番号に等しいかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合、<paramref name="issuerName" />と<paramref name="issuerSerialNumber" />と一致するパラメーター、<see cref="P:System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause.IssuerName" />と<see cref="P:System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause.IssuerSerialNumber" />プロパティ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のオブジェクトを返します。</summary>
+        <returns>現在のオブジェクトを表す <see cref="T:System.String" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause.Matches%2A> メソッドは、<xref:System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause.IssuerName%2A> プロパティと <xref:System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause.IssuerSerialNumber%2A> プロパティの値を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

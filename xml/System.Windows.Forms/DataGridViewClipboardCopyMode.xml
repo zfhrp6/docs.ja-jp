@@ -1,0 +1,97 @@
+<Type Name="DataGridViewClipboardCopyMode" FullName="System.Windows.Forms.DataGridViewClipboardCopyMode">
+  <TypeSignature Language="C#" Value="public enum DataGridViewClipboardCopyMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DataGridViewClipboardCopyMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewClipboardCopyMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>コンテンツをコピーするかどうかを指定する定数を定義、<see cref="T:System.Windows.Forms.DataGridView" />をクリップボードに制御します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体を使って、<xref:System.Windows.Forms.DataGridView.ClipboardCopyMode%2A>をクリップボードに、ユーザーが選択されているセルのテキスト値をコピーするかどうかと、行と列のヘッダー テキストが含まれるかどうかを示すプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例でのコピーを有効にする方法を示します、<xref:System.Windows.Forms.DataGridView>コントロール。 完了の例では、次を参照してください。[する方法: Windows フォーム DataGridView コントロールからクリップボードにコピーの複数セルを有効にするユーザー](~/docs/framework/winforms/controls/enable-users-to-copy-multiple-cells-to-the-clipboard-datagridview.md)です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewClipboardDemo#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewClipboardDemo/CS/datagridviewclipboarddemo.cs#10)]
+ [!code-vb[System.Windows.Forms.DataGridViewClipboardDemo#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewClipboardDemo/VB/datagridviewclipboarddemo.vb#10)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Disable">
+      <MemberSignature Language="C#" Value="Disable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGridViewClipboardCopyMode Disable = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGridViewClipboardCopyMode.Disable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewClipboardCopyMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クリップボードにコピーする機能は無効です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableAlwaysIncludeHeaderText">
+      <MemberSignature Language="C#" Value="EnableAlwaysIncludeHeaderText" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGridViewClipboardCopyMode EnableAlwaysIncludeHeaderText = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewClipboardCopyMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>選択したセルのテキスト値をクリップボードにコピーできます。 ヘッダーのテキストは選択したセルが含まれている行と列に含まれます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableWithAutoHeaderText">
+      <MemberSignature Language="C#" Value="EnableWithAutoHeaderText" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGridViewClipboardCopyMode EnableWithAutoHeaderText = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithAutoHeaderText" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewClipboardCopyMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>選択したセルのテキスト値をクリップボードにコピーできます。 行または列のヘッダー テキストが選択されているセルが含まれている行または列に含まれる場合にのみ、<see cref="P:System.Windows.Forms.DataGridView.SelectionMode" />プロパティに設定されている<see cref="F:System.Windows.Forms.DataGridViewSelectionMode.RowHeaderSelect" />または<see cref="F:System.Windows.Forms.DataGridViewSelectionMode.ColumnHeaderSelect" />には、少なくとも 1 つのヘッダーが選択されているとします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableWithoutHeaderText">
+      <MemberSignature Language="C#" Value="EnableWithoutHeaderText" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGridViewClipboardCopyMode EnableWithoutHeaderText = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewClipboardCopyMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>選択したセルのテキスト値をクリップボードにコピーできます。 ヘッダーのテキストは含まれません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

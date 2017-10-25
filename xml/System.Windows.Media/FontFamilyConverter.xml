@@ -1,0 +1,172 @@
+<Type Name="FontFamilyConverter" FullName="System.Windows.Media.FontFamilyConverter">
+  <TypeSignature Language="C#" Value="public class FontFamilyConverter : System.ComponentModel.TypeConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FontFamilyConverter extends System.ComponentModel.TypeConverter" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.FontFamilyConverter" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.TypeConverter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>インスタンス、<see cref="T:System.String" />との間に入力<see cref="T:System.Windows.Media.FontFamily" />インスタンス。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FontFamilyConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FontFamilyConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.FontFamilyConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertFrom">
+      <MemberSignature Language="C#" Value="public override bool CanConvertFrom (System.ComponentModel.ITypeDescriptorContext td, Type t);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanConvertFrom(class System.ComponentModel.ITypeDescriptorContext td, class System.Type t) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FontFamilyConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="td" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="t" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="td">型のコンテキスト情報を記述します。</param>
+        <param name="t">変換の評価中は、ソースの型。</param>
+        <summary>クラスを指定された型のインスタンスに変換できるかどうかを判断<see cref="T:System.Windows.Media.FontFamily" />です。</summary>
+        <returns>
+          <see langword="true" />かどうか、コンバーターが、指定した型からのインスタンスに<see cref="T:System.Windows.Media.FontFamily" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.FontFamilyConverter>間の変換をサポートしている、<xref:System.String>型です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertTo">
+      <MemberSignature Language="C#" Value="public override bool CanConvertTo (System.ComponentModel.ITypeDescriptorContext context, Type destinationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanConvertTo(class System.ComponentModel.ITypeDescriptorContext context, class System.Type destinationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FontFamilyConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="destinationType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context">型のコンテキスト情報を記述します。</param>
+        <param name="destinationType">必要な入力のこのインスタンス<see cref="T:System.Windows.Media.FontFamily" />は変換の評価中です。</param>
+        <summary>インスタンスかどうかを決定<see cref="T:System.Windows.Media.FontFamily" />別の種類に変換することができます。</summary>
+        <returns>
+          <see langword="true" />コンバーターがのこのインスタンスに変換できる場合<see cref="T:System.Windows.Media.FontFamily" />指定された型にそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換が可能な場合にのみ、`context`は、<xref:System.Windows.Media.FontFamily>型、および`destinationType`は、<xref:System.String>型です。 さらに、<xref:System.Windows.Media.FontFamily.Source%2A>プロパティ`context`null 以上にすることはできません<xref:System.String.Empty>、識別`context`匿名として<xref:System.Windows.Media.FontFamily>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertFrom">
+      <MemberSignature Language="C#" Value="public override object ConvertFrom (System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo cultureInfo, object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertFrom(class System.ComponentModel.ITypeDescriptorContext context, class System.Globalization.CultureInfo cultureInfo, object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FontFamilyConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="cultureInfo" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context">型のコンテキスト情報を記述します。</param>
+        <param name="cultureInfo">変換中に留意する必要がありますのあるカルチャ固有情報。</param>
+        <param name="o">変換されるオブジェクト。</param>
+        <summary>指定したオブジェクトのインスタンスへの変換を試みます<see cref="T:System.Windows.Media.FontFamily" />です。</summary>
+        <returns>インスタンス<see cref="T:System.Windows.Media.FontFamily" />は変換されたから作成された<paramref name="o" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.FontFamilyConverter>間の変換をサポートしている、<xref:System.String>型です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="o" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="o" /><see langword="null" />に変換できる有効な型ではないと、<see cref="T:System.Windows.Media.FontFamily" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertTo">
+      <MemberSignature Language="C#" Value="public override object ConvertTo (System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, Type destinationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertTo(class System.ComponentModel.ITypeDescriptorContext context, class System.Globalization.CultureInfo culture, object value, class System.Type destinationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FontFamilyConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="destinationType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context">型のコンテキスト情報を記述します。</param>
+        <param name="culture">変換中に留意する必要がありますのあるカルチャ固有情報。</param>
+        <param name="value">変換されるオブジェクト。</param>
+        <param name="destinationType">このインスタンスの型の<see cref="T:System.Windows.Media.FontFamily" />に変換されます。</param>
+        <summary>指定したオブジェクトのインスタンスへの変換を試みます<see cref="T:System.Windows.Media.FontFamily" />です。</summary>
+        <returns>変換後のインスタンスから作成されるオブジェクト<see cref="T:System.Windows.Media.FontFamily" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.FontFamilyConverter>間の変換をサポートしている、<xref:System.String>型です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">場合に発生<paramref name="value" />または<paramref name="destinationType" />有効な型変換ではありません。</exception>
+        <exception cref="T:System.ArgumentNullException">場合に発生<paramref name="value" />または<paramref name="destinationType" />は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

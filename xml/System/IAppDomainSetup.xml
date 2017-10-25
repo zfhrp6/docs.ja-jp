@@ -1,0 +1,286 @@
+<Type Name="IAppDomainSetup" FullName="System.IAppDomainSetup">
+  <TypeSignature Language="C#" Value="public interface IAppDomainSetup" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IAppDomainSetup" />
+  <TypeSignature Language="DocId" Value="T:System.IAppDomainSetup" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("27FFF232-A7A8-40dd-8D4A-734AD59FCD41")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>インスタンスに追加できるアセンブリ バインディング情報を表す<see cref="T:System.AppDomain" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスのメンバーを使用、<xref:System.AppDomain.GetData%2A?displayProperty=nameWithType>と<xref:System.AppDomain.SetData%2A?displayProperty=nameWithType>を識別する方法、<xref:System.AppDomain>を使用するデータ。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ApplicationBase">
+      <MemberSignature Language="C#" Value="public string ApplicationBase { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ApplicationBase" />
+      <MemberSignature Language="DocId" Value="P:System.IAppDomainSetup.ApplicationBase" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションが格納されているディレクトリの名前を取得または設定します。</summary>
+        <value>A<see cref="T:System.String" />を含む、アプリケーション ベース ディレクトリの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得またはアセンブリ キャッシュ マネージャーの APPBASE 変数を設定するときに使用されます。 これは、アセンブリ マネージャーがアセンブリのプローブを開始する必要があります。 このプロパティは、後に変更することはできません、<xref:System.AppDomain>がその最初のバインドを完了します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationName">
+      <MemberSignature Language="C#" Value="public string ApplicationName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ApplicationName" />
+      <MemberSignature Language="DocId" Value="P:System.IAppDomainSetup.ApplicationName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションの名前を取得または設定します。</summary>
+        <value>A<see cref="T:System.String" />のアプリケーションの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CachePath">
+      <MemberSignature Language="C#" Value="public string CachePath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CachePath" />
+      <MemberSignature Language="DocId" Value="P:System.IAppDomainSetup.CachePath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得および設定領域の名前特定アプリケーションにファイルのシャドウ コピーします。</summary>
+        <value>A<see cref="T:System.String" />ファイルのシャドウ コピー ディレクトリのパスとファイル名の完全修飾の名前です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConfigurationFile">
+      <MemberSignature Language="C#" Value="public string ConfigurationFile { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConfigurationFile" />
+      <MemberSignature Language="DocId" Value="P:System.IAppDomainSetup.ConfigurationFile" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得し、アプリケーション ドメインの構成ファイルの名前を設定します。</summary>
+        <value>A<see cref="T:System.String" />構成ファイルの名前を指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構成ファイルは、アプリケーション ドメインの構成データと検索の規則について説明します。 アプリケーション ドメインを作成するホストは、意味のある値が状況によって異なるために、このデータを提供します。  
+  
+ たとえば、各アプリケーション、ユーザー、およびコンピューターで実行可能ファイルの構成データが格納されている各アプリケーション、サイト、およびコンピューターの ASP.NET アプリケーションの構成データが格納されます。 ホストだけでは、構成データの特定の状況の詳細を認識します。  
+  
+ このプロパティは、後に変更することはできません、<xref:System.AppDomain>がその最初のバインドを完了します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DynamicBase">
+      <MemberSignature Language="C#" Value="public string DynamicBase { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DynamicBase" />
+      <MemberSignature Language="DocId" Value="P:System.IAppDomainSetup.DynamicBase" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはディレクトリを動的に生成されたファイルが格納され、アクセスを設定します。</summary>
+        <value>A<see cref="T:System.String" />動的アセンブリを含むディレクトリを指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.AppDomain>が作成されると、動的ディレクトリと呼ばれるディレクトリを指定できます動的アセンブリを格納します。 このディレクトリが下にある論理的に、<xref:System.AppDomainSetup.ApplicationBase%2A>ディレクトリの別の部分に常駐できますが、します。  
+  
+ このプロパティは、後に変更することはできません、<xref:System.AppDomain>がその最初のバインドを完了します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LicenseFile">
+      <MemberSignature Language="C#" Value="public string LicenseFile { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LicenseFile" />
+      <MemberSignature Language="DocId" Value="P:System.IAppDomainSetup.LicenseFile" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このドメインに関連付けられたライセンス ファイルの場所を取得または設定します。</summary>
+        <value>A<see cref="T:System.String" />ライセンス ファイルの名前を指定します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrivateBinPath">
+      <MemberSignature Language="C#" Value="public string PrivateBinPath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PrivateBinPath" />
+      <MemberSignature Language="DocId" Value="P:System.IAppDomainSetup.PrivateBinPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定と組み合わせて使用するディレクトリのリスト、<see cref="P:System.AppDomainSetup.ApplicationBase" />プライベート アセンブリをプローブするディレクトリ。</summary>
+        <value>A<see cref="T:System.String" />それぞれの名前がセミコロンで区切られているディレクトリ名の一覧を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プライベート アセンブリは、アプリケーションと同じディレクトリ構造で展開されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrivateBinPathProbe">
+      <MemberSignature Language="C#" Value="public string PrivateBinPathProbe { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PrivateBinPathProbe" />
+      <MemberSignature Language="DocId" Value="P:System.IAppDomainSetup.PrivateBinPathProbe" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアプリケーションを検索するために使用するプライベート バイナリ ディレクトリ パスを設定します。</summary>
+        <value>A<see cref="T:System.String" />それぞれの名前がセミコロンで区切られているディレクトリ名の一覧を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションのディレクトリ パスをアプリケーションの検索から除外するには、このプロパティを設定します。 検索は、プライベートとグローバルのバイナリ ディレクトリのパス、およびグローバル アセンブリ キャッシュに制限されます。  
+  
+ このプロパティは、後に変更することはできません、<xref:System.AppDomain>がその最初のバインドを完了します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShadowCopyDirectories">
+      <MemberSignature Language="C#" Value="public string ShadowCopyDirectories { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ShadowCopyDirectories" />
+      <MemberSignature Language="DocId" Value="P:System.IAppDomainSetup.ShadowCopyDirectories" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シャドウ コピー対象のアセンブリが格納されているディレクトリの名前を取得または設定します。</summary>
+        <value>A<see cref="T:System.String" />それぞれの名前がセミコロンで区切られているディレクトリ名の一覧を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定されたすべてのディレクトリ<xref:System.AppDomainSetup.PrivateBinPath%2A>で指定されたディレクトリを含む<xref:System.AppDomainSetup.ApplicationBase%2A>、シャドウこのプロパティが設定されていない場合、既定でコピーします。  
+  
+ 実行可能ファイルが使用中の場合は、実行可能ファイルへの更新は、シャドウ コピーのディレクトリに格納されます。 既存のユーザーは引き続きに終了するまで、元の実行可能ファイルを使用して、新しいユーザーを使用して、シャドウ コピーの実行可能ファイルです。  
+  
+ このプロパティは、後に変更することはできません、<xref:System.AppDomain>がその最初のバインドを完了します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShadowCopyFiles">
+      <MemberSignature Language="C#" Value="public string ShadowCopyFiles { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ShadowCopyFiles" />
+      <MemberSignature Language="DocId" Value="P:System.IAppDomainSetup.ShadowCopyFiles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シャドウ コピーが有効であるか無効であるかを示す文字列を取得または設定します。</summary>
+        <value>A<see cref="T:System.String" />シャドウ コピーすることを示すために"true"の値を含む電源がオンやシャドウ コピーすることを示すためには"false"が電源オフします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、後に変更することはできません、<xref:System.AppDomain>がその最初のバインドを完了します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

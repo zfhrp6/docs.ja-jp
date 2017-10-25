@@ -1,0 +1,140 @@
+<Type Name="Parity" FullName="System.IO.Ports.Parity">
+  <TypeSignature Language="C#" Value="public enum Parity" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed Parity extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.IO.Ports.Parity" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.IO.Ports</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary><see cref="T:System.IO.Ports.SerialPort" /> オブジェクトのパリティ ビットを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定するときに、この列挙を使用して、<xref:System.IO.Ports.SerialPort.Parity%2A>シリアル ポート接続のプロパティです。  
+  
+ パリティ エラー チェックの手順を 1 の数は常に同じとは、偶数か奇数 — エラーなしで送信されるビットの各グループにします。 モデムの通信でのパリティは多くの場合、必要がありますが合意するパーティの送信と受信パーティ伝送を行う前に配置されるパラメーターのいずれかです。  
+  
+   
+  
+## Examples  
+ 次のコード例で使用できる値の表示、<xref:System.IO.Ports.Parity>列挙型をコンソールには、ユーザーを 1 つを選択し、メッセージが表示されます。 このコード例に示されている例のコードの一部である、<xref:System.IO.Ports.SerialPort>クラスです。  
+  
+ [!code-cpp[System.IO.Ports.SerialPort#03](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.Ports.SerialPort/cpp/serialport.cpp#03)]
+ [!code-csharp[System.IO.Ports.SerialPort#03](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Ports.SerialPort/cs/SerialPort.cs#03)]
+ [!code-vb[System.IO.Ports.SerialPort#03](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.Ports.SerialPort/vb/SerialPort.vb#03)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Even">
+      <MemberSignature Language="C#" Value="Even" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.Ports.Parity Even = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.Ports.Parity.Even" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Ports</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Ports.Parity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビット セットの数が偶数になるように、パリティ ビットを設定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Mark">
+      <MemberSignature Language="C#" Value="Mark" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.Ports.Parity Mark = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.Ports.Parity.Mark" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Ports</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Ports.Parity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パリティ ビットを 1 に設定のままにします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.Ports.Parity None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.Ports.Parity.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Ports</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Ports.Parity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パリティ チェックは行われません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Odd">
+      <MemberSignature Language="C#" Value="Odd" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.Ports.Parity Odd = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.Ports.Parity.Odd" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Ports</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Ports.Parity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビット セットの数が奇数になるように、パリティ ビットを設定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Space">
+      <MemberSignature Language="C#" Value="Space" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.Ports.Parity Space = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.Ports.Parity.Space" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Ports</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Ports.Parity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パリティ ビットを 0 に設定のままにします。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

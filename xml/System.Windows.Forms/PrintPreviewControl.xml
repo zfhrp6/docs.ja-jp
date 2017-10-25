@@ -1,0 +1,617 @@
+<Type Name="PrintPreviewControl" FullName="System.Windows.Forms.PrintPreviewControl">
+  <TypeSignature Language="C#" Value="public class PrintPreviewControl : System.Windows.Forms.Control" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PrintPreviewControl extends System.Windows.Forms.Control" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.PrintPreviewControl" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.Control</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Document")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Windows フォーム アプリケーションからの印刷プレビューの生のプレビュー部分を表します。ダイアログ ボックスやボタンは表示されません。 ほとんど<see cref="T:System.Windows.Forms.PrintPreviewControl" />オブジェクト上で検出された<see cref="T:System.Windows.Forms.PrintPreviewDialog" />オブジェクトではなくする必要はありません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスを作成する場合、<xref:System.Windows.Forms.PrintPreviewControl>初期値に設定の読み取り/書き込みプロパティのいくつかのクラスです。 これらの値の一覧は、次を参照してください。、<xref:System.Windows.Forms.PrintPreviewControl.%23ctor%2A>コンス トラクターです。  
+  
+ Windows フォームで印刷の詳細については、次を参照してください。、<xref:System.Drawing.Printing>名前空間の概要です。 Windows Presentation Foundation アプリケーションから印刷する場合を参照してください、<xref:System.Printing>名前空間。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、 <xref:System.Windows.Forms.PrintPreviewControl.Document%2A>、 <xref:System.Windows.Forms.PrintPreviewControl.UseAntiAlias%2A>、および<xref:System.Windows.Forms.PrintPreviewControl.Zoom%2A>のプロパティ、<xref:System.Windows.Forms.PrintPreviewControl>です。 この例を実行するには、フォームと呼び出しで、次のコードを配置、`InitializePrintPreviewControl`フォームのコンス トラクターからのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント処理メソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.PrintPreviewControlExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.PrintPreviewControlExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.PrintPreviewControlExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.PrintPreviewControlExample/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.PrintPreviewControlExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.PrintPreviewControlExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrintPreviewControl ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.PrintPreviewControl.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.PrintPreviewControl" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスを作成する場合、<xref:System.Windows.Forms.PrintPreviewControl>クラスで、次読み取り/書き込みプロパティが初期化されます。  
+  
+|プロパティ|既定値|  
+|--------------|-------------------|  
+|<xref:System.Windows.Forms.PrintPreviewControl.AutoZoom%2A>|`true`|  
+|<xref:System.Windows.Forms.PrintPreviewControl.Document%2A>|`null`|  
+|<xref:System.Windows.Forms.PrintPreviewControl.Columns%2A>|1|  
+|<xref:System.Windows.Forms.PrintPreviewControl.Rows%2A>|0|  
+|<xref:System.Windows.Forms.PrintPreviewControl.StartPage%2A>|0|  
+  
+ プロパティに別個の呼び出しでこれらのプロパティのいずれかの値を変更することができます。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、 <xref:System.Windows.Forms.PrintPreviewControl.Document%2A>、 <xref:System.Windows.Forms.PrintPreviewControl.UseAntiAlias%2A>、および<xref:System.Windows.Forms.PrintPreviewControl.Zoom%2A>のプロパティ、<xref:System.Windows.Forms.PrintPreviewControl>です。 この例を実行するには、フォームと呼び出しで、次のコードを配置、`InitializePrintPreviewControl`フォームのコンス トラクターからのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント処理メソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.PrintPreviewControlExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.PrintPreviewControlExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.PrintPreviewControlExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.PrintPreviewControlExample/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.PrintPreviewControlExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.PrintPreviewControlExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoZoom">
+      <MemberSignature Language="C#" Value="public bool AutoZoom { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoZoom" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PrintPreviewControl.AutoZoom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールのサイズ変更、または自動的に表示されるページの数の変更を調整するかどうかを示す値を設定、<see cref="P:System.Windows.Forms.PrintPreviewControl.Zoom" />プロパティです。</summary>
+        <value>
+          <see langword="true" />コントロールのサイズまたはページの数の変更を調整する場合、<see cref="P:System.Windows.Forms.PrintPreviewControl.Zoom" />プロパティ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Columns">
+      <MemberSignature Language="C#" Value="public int Columns { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Columns" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PrintPreviewControl.Columns" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>画面全体で水平方向に表示するページ数を取得または設定します。</summary>
+        <value>画面全体で水平方向に表示するページ数。 既定値は 1 です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値の設定は、1 より小さいです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateParams">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Forms.CreateParams CreateParams { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.CreateParams CreateParams" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PrintPreviewControl.CreateParams" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.CreateParams</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロール ハンドルが作成されるときに必要な作成パラメーターを取得します。</summary>
+        <value>コントロールを識別するハンドルを作成するときに必要な作成パラメーターを格納している <see cref="T:System.Windows.Forms.CreateParams" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Document">
+      <MemberSignature Language="C#" Value="public System.Drawing.Printing.PrintDocument Document { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Printing.PrintDocument Document" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PrintPreviewControl.Document" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Printing.PrintDocument</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プレビューするドキュメントを示す値を取得または設定します。</summary>
+        <value><see cref="T:System.Drawing.Printing.PrintDocument" />をプレビューするドキュメントを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を示しています、 <xref:System.Windows.Forms.PrintPreviewControl.Document%2A>、 <xref:System.Windows.Forms.PrintPreviewControl.UseAntiAlias%2A>、および<xref:System.Windows.Forms.PrintPreviewControl.Zoom%2A>のプロパティ、<xref:System.Windows.Forms.PrintPreviewControl>です。 この例を実行するには、フォームと呼び出しで、次のコードを配置、`InitializePrintPreviewControl`フォームのコンス トラクターからのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント処理メソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.PrintPreviewControlExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.PrintPreviewControlExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.PrintPreviewControlExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.PrintPreviewControlExample/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.PrintPreviewControlExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.PrintPreviewControlExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvalidatePreview">
+      <MemberSignature Language="C#" Value="public void InvalidatePreview ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InvalidatePreview() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.PrintPreviewControl.InvalidatePreview" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ドキュメントのプレビュー画面を更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ドキュメントの外観が変更された場合は、このメソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPaint">
+      <MemberSignature Language="C#" Value="protected override void OnPaint (System.Windows.Forms.PaintEventArgs pevent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnPaint(class System.Windows.Forms.PaintEventArgs pevent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.PrintPreviewControl.OnPaint(System.Windows.Forms.PaintEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pevent" Type="System.Windows.Forms.PaintEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="pevent">イベント データを格納している <see cref="T:System.Windows.Forms.PaintEventArgs" />。</param>
+        <summary><see cref="M:System.Windows.Forms.Control.OnPaint(System.Windows.Forms.PaintEventArgs)" /> メソッドをオーバーライドします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnResize">
+      <MemberSignature Language="C#" Value="protected override void OnResize (EventArgs eventargs);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnResize(class System.EventArgs eventargs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.PrintPreviewControl.OnResize(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventargs" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="eventargs">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.Resize" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Forms.PrintPreviewControl.AutoZoom%2A>プロパティに設定されている`true`、<xref:System.Windows.Forms.PrintPreviewControl.OnResize%2A>メソッド サイズに比例ページを変更、<xref:System.Windows.Forms.PrintPreviewControl>コントロール。 場合<xref:System.Windows.Forms.PrintPreviewControl.AutoZoom%2A>は`false`、<xref:System.Windows.Forms.PrintPreviewControl>中心がコントロール上のページです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStartPageChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnStartPageChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnStartPageChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.PrintPreviewControl.OnStartPageChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.PrintPreviewControl.StartPageChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.PrintPreviewControl.OnStartPageChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.PrintPreviewControl.OnStartPageChanged(System.EventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.PrintPreviewControl.OnStartPageChanged(System.EventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetBackColor">
+      <MemberSignature Language="C#" Value="public override void ResetBackColor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ResetBackColor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.PrintPreviewControl.ResetBackColor" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リセット、<see cref="P:System.Windows.Forms.Control.BackColor" />プロパティを<see cref="P:System.Drawing.SystemColors.AppWorkspace" />、これは既定の色。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いずれかをデザイナーを作成する場合は通常このメソッドを使用する、<xref:System.Windows.Forms.PrintPreviewControl>やコントロールを組み込む独自の作成、<xref:System.Windows.Forms.PrintPreviewControl>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetForeColor">
+      <MemberSignature Language="C#" Value="public override void ResetForeColor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ResetForeColor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.PrintPreviewControl.ResetForeColor" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>前景色をリセット、<see cref="T:System.Windows.Forms.PrintPreviewControl" />に<see cref="P:System.Drawing.Color.White" />、これは既定の色。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いずれかをデザイナーを作成する場合は通常このメソッドを使用する、<xref:System.Windows.Forms.PrintPreviewControl>やコントロールを組み込む独自の作成、<xref:System.Windows.Forms.PrintPreviewControl>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RightToLeft">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.RightToLeft RightToLeft { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.RightToLeft RightToLeft" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PrintPreviewControl.RightToLeft" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.AmbientValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.RightToLeft</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの要素が、右から左へ表示されるフォントを使用するロケールをサポートするように配置されているかどうかを示す値を取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.RightToLeft" /> の値の 1 つ。 既定値は、<see cref="F:System.Windows.Forms.RightToLeft.Inherit" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rows">
+      <MemberSignature Language="C#" Value="public int Rows { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Rows" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PrintPreviewControl.Rows" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>画面に垂直方向に表示するページ数を取得または設定します。</summary>
+        <value>画面で垂直に表示されたページの数です。 既定値は 0 です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値の設定は、1 より小さいです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StartPage">
+      <MemberSignature Language="C#" Value="public int StartPage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 StartPage" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PrintPreviewControl.StartPage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページの左上に表示されるページ番号を取得または設定します。</summary>
+        <value>ページの左上に表示されるページ番号。 既定値は 0 です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定された値が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StartPageChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler StartPageChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler StartPageChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.PrintPreviewControl.StartPageChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>開始ページが変更された場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.PrintPreviewControl.StartPageChanged>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.PrintPreviewControl>という`PrintPreviewControl1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.PrintPreviewControl.StartPageChanged>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#654](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#654)]
+ [!code-vb[System.Windows.Forms.EventExamples#654](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#654)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public override string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PrintPreviewControl.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコントロールに関連付けられているテキストを取得または設定します。</summary>
+        <value>このコントロールに関連付けられたテキスト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler TextChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler TextChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.PrintPreviewControl.TextChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.PrintPreviewControl.Text" /> プロパティの値が変更された場合に発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseAntiAlias">
+      <MemberSignature Language="C#" Value="public bool UseAntiAlias { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseAntiAlias" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PrintPreviewControl.UseAntiAlias" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>印刷においてオペレーティング システムのアンチエイリアシング機能を使用するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />アンチ エイリアスを使用する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アンチ エイリアスを削除ギザギザ フォントがレンダリングされます。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、 <xref:System.Windows.Forms.PrintPreviewControl.Document%2A>、 <xref:System.Windows.Forms.PrintPreviewControl.UseAntiAlias%2A>、および<xref:System.Windows.Forms.PrintPreviewControl.Zoom%2A>のプロパティ、<xref:System.Windows.Forms.PrintPreviewControl>です。 この例を実行するには、フォームと呼び出しで、次のコードを配置、`InitializePrintPreviewControl`フォームのコンス トラクターからのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント処理メソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.PrintPreviewControlExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.PrintPreviewControlExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.PrintPreviewControlExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.PrintPreviewControlExample/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.PrintPreviewControlExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.PrintPreviewControlExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WndProc">
+      <MemberSignature Language="C#" Value="protected override void WndProc (ref System.Windows.Forms.Message m);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void WndProc(valuetype System.Windows.Forms.Message&amp; m) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.PrintPreviewControl.WndProc(System.Windows.Forms.Message@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="m" Type="System.Windows.Forms.Message&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="m">処理対象の Windows <see cref="T:System.Windows.Forms.Message" />。</param>
+        <summary><see cref="M:System.Windows.Forms.Control.WndProc(System.Windows.Forms.Message@)" /> メソッドをオーバーライドします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Zoom">
+      <MemberSignature Language="C#" Value="public double Zoom { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Zoom" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PrintPreviewControl.Zoom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0.3)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページの表示倍率を示す値を取得または設定します。</summary>
+        <value>ページの表示サイズを示す値。 値 1.0 は、フル サイズを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を示しています、 <xref:System.Windows.Forms.PrintPreviewControl.Document%2A>、 <xref:System.Windows.Forms.PrintPreviewControl.UseAntiAlias%2A>、および<xref:System.Windows.Forms.PrintPreviewControl.Zoom%2A>のプロパティ、<xref:System.Windows.Forms.PrintPreviewControl>です。 この例を実行するには、フォームと呼び出しで、次のコードを配置、`InitializePrintPreviewControl`フォームのコンス トラクターからのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント処理メソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.PrintPreviewControlExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.PrintPreviewControlExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.PrintPreviewControlExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.PrintPreviewControlExample/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.PrintPreviewControlExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.PrintPreviewControlExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">値を 0 に等しいまたはそれよりも小さいです。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

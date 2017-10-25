@@ -1,0 +1,811 @@
+<Type Name="DriveListBox" FullName="Microsoft.VisualBasic.Compatibility.VB6.DriveListBox">
+  <TypeSignature Language="C#" Value="public class DriveListBox : System.Windows.Forms.ComboBox" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi DriveListBox extends System.Windows.Forms.ComboBox" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.ComboBox</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer(typeof(Microsoft.VisualBasic.Compatibility.VB6.CompatibilityComboBoxDesigner))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>実行時にユーザーが有効なディスク ドライブを選択できるようにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーのシステム内のすべての有効なドライブの一覧を表示するのにには、このコントロールを使用します。 により、ユーザーは、使用可能なドライブでディスク上のファイルの一覧からファイルを開く ダイアログ ボックスを作成することができます。  
+  
+ 表示する場合、<xref:Microsoft.VisualBasic.Compatibility.VB6.DirListBox>と<xref:Microsoft.VisualBasic.Compatibility.VB6.FileListBox>、コントロールでそれらを同期するためにコードを記述することができます、`DriveListBox`コントロールと相互にします。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DriveListBox ();" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A`DriveListBox`コントロールにより、ユーザーが実行時に有効なディスク ドライブを選択します。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSource">
+      <MemberSignature Language="C#" Value="public object DataSource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DataSource" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox.DataSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のデータ ソース、<see cref="T:System.Windows.Forms.ComboBox" />です。</summary>
+        <value>実装するオブジェクト、<see cref="T:System.Collections.IList" />または<see cref="T:System.ComponentModel.IListSource" />ようなインターフェイス、<see cref="T:System.Data.DataSet" />または<see cref="T:System.Array" />です。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定しない必要があります、<xref:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox>制御; ためにのみ提供されて、<xref:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox>からコントロールを継承<xref:System.Windows.Forms.ComboBox>です。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayMember">
+      <MemberSignature Language="C#" Value="public string DisplayMember { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DisplayMember" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox.DisplayMember" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これを表示するプロパティの設定を取得または<see cref="T:System.Windows.Forms.ListControl" />です。</summary>
+        <value>A<see langword="String" />をオブジェクトのプロパティの名前を表しで指定されたコレクションに含まれる、<see cref="P:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox.DataSource" />プロパティです。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定しない必要があります、<xref:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox>制御; ためにのみ提供されて、<xref:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox>からコントロールを継承<xref:System.Windows.Forms.ComboBox>です。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary>によって使用されているアンマネージ リソースを解放する<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox" />を制御し、必要に応じてマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック`Dispose()`メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 `Dispose()`プロテクト呼び出します`Dispose(Boolean)`disposing パラメーター設定したメソッド`true`です。 <xref:System.Object.Finalize%2A>呼び出す`Dispose`disposing パラメーター設定した`false`です。  
+  
+ Disposing パラメーターがの場合`true`、このメソッドは、このコントロールを参照するすべてのマネージ オブジェクトによって保持されているすべてのリソースを解放します。 このメソッドは、参照される各オブジェクトの `Dispose()` メソッドを呼び出します。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 オーバーライドする場合<see langword="Dispose(Boolean)" />、破棄されたのでは、事前に呼び出したオブジェクトを参照しないことを確認<see langword="Dispose" />です。 実装する方法の詳細についての<see langword="Dispose(Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。 詳細については<see langword="Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawMode">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DrawMode DrawMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DrawMode DrawMode" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox.DrawMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DrawMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の描画モード、<see cref="T:System.Windows.Forms.ComboBox" />です。</summary>
+        <value>1 つ、<see cref="P:System.Windows.Forms.ComboBox.DrawMode" />コントロールの項目を描画するためのモードを表す値です。 既定値は、<see cref="F:System.Windows.Forms.DrawMode.Normal" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定しない必要があります、<xref:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox>制御; ためにのみ提供されて、<xref:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox>からコントロールを継承<xref:System.Windows.Forms.ComboBox>です。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Drive">
+      <MemberSignature Language="C#" Value="public string Drive { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Drive" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox.Drive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実行時に選択されたドライブを取得または設定します。</summary>
+        <value>A<see langword="String" />選択したドライブを指定する式。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 有効なドライブ、`Drive`プロパティにはコントロールを作成または実行時に更新されたときに存在するか、システムに接続されているすべてのドライブが含まれます。 既定の設定、`Drive`プロパティは、現在のドライブです。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DropDownStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ComboBoxStyle DropDownStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.ComboBoxStyle DropDownStyle" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox.DropDownStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ComboBoxStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のスタイルを指定する値、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox" />コンボ ボックス。</summary>
+        <value><see cref="T:System.Windows.Forms.ComboBoxStyle" /> 値のいずれか。 既定値は、<see cref="F:System.Windows.Forms.ComboBoxStyle.DropDown" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `DropDownStyle`プロパティは、ユーザーに提供されるインターフェイスを制御します。 ここで、一覧常が表示されたら、ドロップダウン リスト ボックス、テキストの部分は編集できません、ドロップダウン リストを表示するには矢印を選択する必要があります、または既定値のドロップダウン リスト ボックス、テキストの部分を編集可能な単純なドロップダウン リスト ボックスと、ユーザーは、一覧を表示する下矢印キーを押す必要がありますを提供する値を入力できます。 常に表示するには、ユーザーが編集できないリストを使用して、<xref:System.Windows.Forms.ListBox>コントロール。  
+  
+ 設定した場合、`DropDownStyle`プロパティを<xref:System.Windows.Forms.ComboBoxStyle.DropDownList>、有効な値のみを一覧から選択することができます。 設定した場合、`DropDownStyle`プロパティを<xref:System.Windows.Forms.ComboBoxStyle.DropDown>の編集可能な領域に任意の値を入力することができます、<xref:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox>です。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemHeight">
+      <MemberSignature Language="C#" Value="public int ItemHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ItemHeight" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox.ItemHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内のアイテムの高さを取得、<see cref="T:System.Windows.Forms.ComboBox" />です。</summary>
+        <value>コントロール内の項目の高さ (ピクセル単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは不要なため、<xref:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox>制御;、<xref:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox>可変の高さのアイテムはサポートされません。 提供のためにのみ、<xref:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox>からコントロールを継承<xref:System.Windows.Forms.ListBox>です。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Items">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ComboBox.ObjectCollection Items { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ComboBox/ObjectCollection Items" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox.Items" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ComboBox+ObjectCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>含まれている項目を取得、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox" />です。</summary>
+        <value>A<see cref="T:System.Windows.Forms.ListBox.ObjectCollection" />内の項目を表す、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.DirListBox" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在表示されているドライブの一覧を取得するこのプロパティを使用して、<xref:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox>です。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Items">
+      <MemberSignature Language="C#" Value="public string Items[int Index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Items(int32)" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox.Items(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="Index">リスト内の特定の項目の番号。</param>
+        <summary>指定したインデックスにアイテムを取得、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox" />です。</summary>
+        <value>A<see langword="String" />内の指定したドライブの名前を格納している<paramref name="Index" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内のドライブの名前を取得するこのプロパティを使用して、<xref:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox>です。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxLength">
+      <MemberSignature Language="C#" Value="public int MaxLength { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxLength" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox.MaxLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に表示されるテキストの最大長を指定する値、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox" />です。</summary>
+        <value><see langword="Integer" />の最大長を指定する、<see cref="P:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox.Drive" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、ユーザーに入力できるテキストの長さを制限する、<xref:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox>です。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBackColorChanged">
+      <MemberSignature Language="C#" Value="protected override void OnBackColorChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnBackColorChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox.OnBackColorChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.BackColorChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ `OnBackColorChanged`メソッドでは、派生クラスでデリゲートを結び付けずに、イベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see langword="OnBackColorChanged" />派生クラスでは、呼び出しに必ず、<see langword="OnBackColorChanged" />デリゲートを登録するための基本クラスのメソッドは、イベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDrawItem">
+      <MemberSignature Language="C#" Value="protected override void OnDrawItem (System.Windows.Forms.DrawItemEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnDrawItem(class System.Windows.Forms.DrawItemEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox.OnDrawItem(System.Windows.Forms.DrawItemEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.DrawItemEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>発生させる、<see cref="E:System.Windows.Forms.ListBox.DrawItem" />イベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ `OnDrawItem`メソッドでは、派生クラスでデリゲートを結び付けずに、イベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see langword="OnDrawItem" />派生クラスでを呼び出すことを確認、<see langword="OnDrawItem" />デリゲートを登録するための基本クラスのメソッドは、イベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnFontChanged">
+      <MemberSignature Language="C#" Value="protected override void OnFontChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnFontChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox.OnFontChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.FontChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ `OnFontChanged`メソッドでは、派生クラスでデリゲートを結び付けずに、イベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see langword="OnFontChanged" />派生クラスでを呼び出すことを確認、<see langword="OnFontChanged" />デリゲートを登録するための基本クラスのメソッドは、イベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnHandleCreated">
+      <MemberSignature Language="C#" Value="protected override void OnHandleCreated (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnHandleCreated(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox.OnHandleCreated(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.HandleCreated" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ `OnHandleCreated`メソッドでは、派生クラスでデリゲートを結び付けずに、イベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see langword="OnHandleCreated" />派生クラスでを呼び出すことを確認、<see langword="OnHandleCreated" />デリゲートを登録するための基本クラスのメソッドは、イベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSelectedIndexChanged">
+      <MemberSignature Language="C#" Value="protected override void OnSelectedIndexChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnSelectedIndexChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox.OnSelectedIndexChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ListBox.SelectedIndexChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ `OnSelectedIndexChanged`メソッドでは、派生クラスでデリゲートを結び付けずに、イベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see langword="OnSelectedIndexChanged" />派生クラスでを呼び出すことを確認、<see langword="OnSelectedIndexChanged" />デリゲートを登録するための基本クラスのメソッドは、イベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Refresh">
+      <MemberSignature Language="C#" Value="public override void Refresh ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Refresh() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox.Refresh" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>強制的に、コントロールがクライアント領域を無効化し、直後にそのコントロール自体を再描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see langword="Refresh" />派生クラスでを呼び出すことを確認、<see langword="Refresh" />メソッド コントロールとその子コントロールが無効化され、再描画されるようにします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Sorted">
+      <MemberSignature Language="C#" Value="public bool Sorted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Sorted" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox.Sorted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか内の項目、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox" />がアルファベット順に並べ替えられています。</summary>
+        <value>
+          <see langword="true" />コントロール内の項目が並べ替えられる場合です。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox>コントロール、`Sorted`は常に返します`false`です。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表示されるテキストを取得、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox" />です。</summary>
+        <value>A<see langword="String" />表示されるテキストを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`Text`の値、有効なドライブには、`Text`プロパティは、同じ e として、<xref:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox.Drive%2A>プロパティです。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValueMember">
+      <MemberSignature Language="C#" Value="public string ValueMember { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ValueMember" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox.ValueMember" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定内の項目の実際の値として使用するプロパティ、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox" />です。</summary>
+        <value>A<see langword="String" />をオブジェクトのプロパティの名前を表しで指定されたコレクションに含まれる、<see cref="P:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox.DataSource" />プロパティです。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定しない必要があります、<xref:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox>制御; ためにのみ提供されて、<xref:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox>からコントロールを継承<xref:System.Windows.Forms.ComboBox>です。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WndProc">
+      <MemberSignature Language="C#" Value="protected override void WndProc (ref System.Windows.Forms.Message m);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void WndProc(valuetype System.Windows.Forms.Message&amp; m) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox.WndProc(System.Windows.Forms.Message@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="m" Type="System.Windows.Forms.Message&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="m">処理する Windows メッセージ。</param>
+        <summary>Windows メッセージを処理します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのメッセージ、`WndProc`メソッドを通じてフィルター処理した後に、<xref:System.Windows.Forms.Control.PreProcessMessage%2A>メソッドです。  
+  
+ `WndProc` メソッドは、Windows `WindowProc` 関数に正確に対応しています。 Windows メッセージの処理の詳細については、次を参照してください。、`WindowProc`上にある関数のドキュメントを Windows プラットフォーム SDK の参照、 [MSDN ライブラリ](http://go.microsoft.com/fwlink/?LinkId=98124)Web サイトです。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>呼び出すコントロールを継承する必要があります、<see cref="M:System.Windows.Forms.Control.WndProc(System.Windows.Forms.Message@)" />を処理しないすべてのメッセージを処理する基本クラスのメソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

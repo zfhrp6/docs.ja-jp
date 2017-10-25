@@ -1,0 +1,285 @@
+<Type Name="CharacterBufferRange" FullName="System.Windows.Media.TextFormatting.CharacterBufferRange">
+  <TypeSignature Language="C#" Value="public struct CharacterBufferRange : IEquatable&lt;System.Windows.Media.TextFormatting.CharacterBufferRange&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit CharacterBufferRange extends System.ValueType implements class System.IEquatable`1&lt;valuetype System.Windows.Media.TextFormatting.CharacterBufferRange&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.TextFormatting.CharacterBufferRange" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IEquatable&lt;System.Windows.Media.TextFormatting.CharacterBufferRange&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>文字の文字列について説明します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CharacterBufferRange (char* unsafeCharacterString, int characterLength);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(char* unsafeCharacterString, int32 characterLength) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.CharacterBufferRange.#ctor(System.Char*,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="unsafeCharacterString" Type="System.Char*" />
+        <Parameter Name="characterLength" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="unsafeCharacterString">文字列へのアンマネージ ポインター参照。</param>
+        <param name="characterLength">文字数<c>使用</c>を使用します。</param>
+        <summary>アンマネージ文字列から<see cref="T:System.Windows.Media.TextFormatting.CharacterBufferRange" /> 構造体の新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出し元には、実行するためにアンマネージ コードのアクセス許可が必要があります、<xref:System.Windows.Media.TextFormatting.CharacterBufferRange.%23ctor%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CharacterBufferRange (char[] characterArray, int offsetToFirstChar, int characterLength);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(char[] characterArray, int32 offsetToFirstChar, int32 characterLength) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.CharacterBufferRange.#ctor(System.Char[],System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="characterArray" Type="System.Char[]" />
+        <Parameter Name="offsetToFirstChar" Type="System.Int32" />
+        <Parameter Name="characterLength" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="characterArray">文字配列。</param>
+        <param name="offsetToFirstChar">最初の文字を文字バッファーのオフセット。</param>
+        <param name="characterLength">文字数<c>使用</c>を使用します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.TextFormatting.CharacterBufferRange" />文字配列から構造体。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CharacterBufferRange (string characterString, int offsetToFirstChar, int characterLength);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string characterString, int32 offsetToFirstChar, int32 characterLength) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.CharacterBufferRange.#ctor(System.String,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="characterString" Type="System.String" />
+        <Parameter Name="offsetToFirstChar" Type="System.Int32" />
+        <Parameter Name="characterLength" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="characterString">文字列。</param>
+        <param name="offsetToFirstChar">最初の文字を文字バッファーのオフセット。</param>
+        <param name="characterLength">文字数<c>変数</c>を使用します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.TextFormatting.CharacterBufferRange" />文字列から構造体。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CharacterBufferReference">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.TextFormatting.CharacterBufferReference CharacterBufferReference { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.TextFormatting.CharacterBufferReference CharacterBufferReference" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.CharacterBufferRange.CharacterBufferReference" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.TextFormatting.CharacterBufferReference</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文字列の文字バッファーへの参照を取得します。</summary>
+        <value>A<see cref="T:System.Windows.Media.TextFormatting.CharacterBufferReference" />文字列の文字バッファーを表す値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Empty">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.TextFormatting.CharacterBufferRange Empty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.Media.TextFormatting.CharacterBufferRange Empty" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.CharacterBufferRange.Empty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.TextFormatting.CharacterBufferRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>空の文字列を取得します。</summary>
+        <value>A<see cref="T:System.Windows.Media.TextFormatting.CharacterBufferRange" />オブジェクト<see cref="P:System.Windows.Media.TextFormatting.CharacterBufferRange.Length" />が 0 です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.CharacterBufferRange.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj"><see cref="T:System.Object" />現在と比較する<see cref="T:System.Windows.Media.TextFormatting.CharacterBufferRange" />オブジェクト。</param>
+        <summary>指定したオブジェクトが、現在の <see cref="T:System.Windows.Media.TextFormatting.CharacterBufferRange" /> オブジェクトと等しいかどうかを判断します。</summary>
+        <returns>
+          <paramref name="o" /> が現在の <see cref="T:System.Windows.Media.TextFormatting.CharacterBufferRange" /> オブジェクトに等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 場合<paramref name="o" />されませんが、<see cref="T:System.Windows.Media.TextFormatting.CharacterBufferRange" />オブジェクト、<see langword="false" />が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ<xref:System.Windows.Media.TextFormatting.CharacterBufferRange>オブジェクトが等しい場合は、<xref:System.Windows.Media.TextFormatting.CharacterBufferRange.CharacterBufferReference%2A>のプロパティは等価です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Windows.Media.TextFormatting.CharacterBufferRange value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(valuetype System.Windows.Media.TextFormatting.CharacterBufferRange value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.CharacterBufferRange.Equals(System.Windows.Media.TextFormatting.CharacterBufferRange)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Windows.Media.TextFormatting.CharacterBufferRange" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Windows.Media.TextFormatting.CharacterBufferRange" />現在と比較する<see cref="T:System.Windows.Media.TextFormatting.CharacterBufferRange" />オブジェクト。</param>
+        <summary>指定するかどうか、<see cref="T:System.Windows.Media.TextFormatting.CharacterBufferRange" />オブジェクトが現在<see cref="T:System.Windows.Media.TextFormatting.CharacterBufferRange" />オブジェクト。</summary>
+        <returns>
+          <paramref name="value" /> が現在の <see cref="T:System.Windows.Media.TextFormatting.CharacterBufferRange" /> オブジェクトに等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 場合<paramref name="value" />されませんが、<see cref="T:System.Windows.Media.TextFormatting.CharacterBufferRange" />オブジェクト、<see langword="false" />が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ<xref:System.Windows.Media.TextFormatting.CharacterBufferRange>オブジェクトが等しい場合は、<xref:System.Windows.Media.TextFormatting.CharacterBufferRange.CharacterBufferReference%2A>のプロパティは等価です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.CharacterBufferRange.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ハッシュ関数として機能<see cref="T:System.Windows.Media.TextFormatting.CharacterBufferRange" />します。 ハッシュ アルゴリズムや、ハッシュ テーブルのようなデータ構造での使用に適しています。</summary>
+        <returns><see cref="T:System.Int32" />を現在のオブジェクトのハッシュ コードを表す値です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Length">
+      <MemberSignature Language="C#" Value="public int Length { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Length" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.CharacterBufferRange.Length" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト ソース文字ストア内の文字数を取得します。</summary>
+        <value><see cref="T:System.Int32" />合計文字数を表す値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Windows.Media.TextFormatting.CharacterBufferRange left, System.Windows.Media.TextFormatting.CharacterBufferRange right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Windows.Media.TextFormatting.CharacterBufferRange left, valuetype System.Windows.Media.TextFormatting.CharacterBufferRange right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.CharacterBufferRange.op_Equality(System.Windows.Media.TextFormatting.CharacterBufferRange,System.Windows.Media.TextFormatting.CharacterBufferRange)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Windows.Media.TextFormatting.CharacterBufferRange" />
+        <Parameter Name="right" Type="System.Windows.Media.TextFormatting.CharacterBufferRange" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較対象の <see cref="T:System.Windows.Media.TextFormatting.CharacterBufferRange" /> の第 1 インスタンス。</param>
+        <param name="right">比較対象の <see cref="T:System.Windows.Media.TextFormatting.CharacterBufferRange" /> の第 2 インスタンス。</param>
+        <summary>2 つの比較<see cref="T:System.Windows.Media.TextFormatting.CharacterBufferRange" />文字列の等価性。</summary>
+        <returns>
+          <see langword="true" />指定した表示<see cref="T:System.Windows.Media.TextFormatting.CharacterBufferRange" />オブジェクトが等しい。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Windows.Media.TextFormatting.CharacterBufferRange left, System.Windows.Media.TextFormatting.CharacterBufferRange right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Windows.Media.TextFormatting.CharacterBufferRange left, valuetype System.Windows.Media.TextFormatting.CharacterBufferRange right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.CharacterBufferRange.op_Inequality(System.Windows.Media.TextFormatting.CharacterBufferRange,System.Windows.Media.TextFormatting.CharacterBufferRange)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Windows.Media.TextFormatting.CharacterBufferRange" />
+        <Parameter Name="right" Type="System.Windows.Media.TextFormatting.CharacterBufferRange" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較対象の <see cref="T:System.Windows.Media.TextFormatting.CharacterBufferRange" /> の第 1 インスタンス。</param>
+        <param name="right">比較対象の <see cref="T:System.Windows.Media.TextFormatting.CharacterBufferRange" /> の第 2 インスタンス。</param>
+        <summary>2 つの比較<see cref="T:System.Windows.Media.TextFormatting.CharacterBufferRange" />非等値の文字列。</summary>
+        <returns>
+          <see langword="false" />表示する<paramref name="left" />と等しい<paramref name="right" />、それ以外の<see langword="true" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

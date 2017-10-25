@@ -1,0 +1,92 @@
+<Type Name="DataGridColumnReorderingEventArgs" FullName="System.Windows.Controls.DataGridColumnReorderingEventArgs">
+  <TypeSignature Language="C#" Value="public class DataGridColumnReorderingEventArgs : System.Windows.Controls.DataGridColumnEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridColumnReorderingEventArgs extends System.Windows.Controls.DataGridColumnEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.DataGridColumnReorderingEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.DataGridColumnEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Controls.DataGrid.ColumnReordering" /> イベントのデータを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridColumnReorderingEventArgs (System.Windows.Controls.DataGridColumn dataGridColumn);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Controls.DataGridColumn dataGridColumn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataGridColumnReorderingEventArgs.#ctor(System.Windows.Controls.DataGridColumn)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="dataGridColumn" Type="System.Windows.Controls.DataGridColumn" />
+      </Parameters>
+      <Docs>
+        <param name="dataGridColumn">移動されている列。</param>
+        <summary><see cref="T:System.Windows.Controls.DataGridColumnReorderingEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cancel">
+      <MemberSignature Language="C#" Value="public bool Cancel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Cancel" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridColumnReorderingEventArgs.Cancel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または並べ替え操作が完了する前に停止したかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />並べ替え操作が完了前に停止している場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DragIndicator">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.Control DragIndicator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.Control DragIndicator" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridColumnReorderingEventArgs.DragIndicator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Control</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはドラッグされている列のヘッダーの視覚インジケータを表示するために使用するコントロールを設定します。</summary>
+        <value>ドラッグ中の列ヘッダーを表示するために使用するコントロール。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DropLocationIndicator">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.Control DropLocationIndicator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.Control DropLocationIndicator" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridColumnReorderingEventArgs.DropLocationIndicator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Control</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列のドラッグ操作中に、現在の格納場所の視覚インジケータを表示するために使用するコントロールを設定します。</summary>
+        <value>列の中にドロップ位置のインジケーターを表示するために使用するコントロールは、操作をドラッグします。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

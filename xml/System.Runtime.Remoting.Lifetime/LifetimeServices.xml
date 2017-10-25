@@ -1,0 +1,195 @@
+<Type Name="LifetimeServices" FullName="System.Runtime.Remoting.Lifetime.LifetimeServices">
+  <TypeSignature Language="C#" Value="public sealed class LifetimeServices" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed LifetimeServices extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Lifetime.LifetimeServices" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>The.NET リモート処理の有効期間サービスを制御します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配布されたガベージ コレクションはサーバー アプリケーションの有効期間を制御して、有効期間の期限が切れている場合は、それらを削除します。 従来、分散のガベージ コレクションは、参照カウントとコントロールの ping を使用します。 オブジェクトあたりのいくつかのクライアントがある場合にこの動作は何千もの各オブジェクトごとのクライアントがある場合にも機能しません。 クライアントの数が増えたときにも、有効期間サービスは従来のガベージ コレクターを分散し、スケールの関数を想定できます。  
+  
+ 有効期間サービスは、リースをリモートでアクティブ化された各オブジェクトに関連付けます。 リースの期限が切れると、オブジェクトが削除されます。  
+  
+> [!NOTE]
+>  このクラスは、リンク確認要求を使用します。 SecurityException は直前の呼び出し元がインフラストラクチャのアクセス許可を持たない場合にスローされます。 参照してください[リンク確認要求](~/docs/framework/misc/link-demands.md)詳細についてはします。  
+  
+   
+  
+## Examples  
+ [!code-cpp[System.Runtime.Remoting.Lifetime#2](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.Lifetime/CPP/server.cpp#2)]
+ [!code-csharp[System.Runtime.Remoting.Lifetime#2](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Lifetime/CS/server.cs#2)]
+ [!code-vb[System.Runtime.Remoting.Lifetime#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Runtime.Remoting.Lifetime/VB/server.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LifetimeServices ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Lifetime.LifetimeServices.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Call the static methods directly on this type instead", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Runtime.Remoting.Lifetime.LifetimeServices" /> のインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LeaseManagerPollTime">
+      <MemberSignature Language="C#" Value="public static TimeSpan LeaseManagerPollTime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.TimeSpan LeaseManagerPollTime" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Lifetime.LifetimeServices.LeaseManagerPollTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または各ライセンス認証有効期限切れのリースをクリーンアップするリース マネージャーの間の時間間隔を設定します。</summary>
+        <value>時間の既定値リースの期限切れを確認した後に、リース マネージャーがスリープ状態です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のプロパティでは、リース マネージャーが期限切れのリースをクリーンアップするのにはアクティブになる頻度を定義します。 たとえば場合、<xref:System.Runtime.Remoting.Lifetime.LifetimeServices.LeaseManagerPollTime%2A>設定は 100 秒後に、リースのリストが検査クリーンアップおよび更新時の 100 秒ごとです。  
+  
+ 既定値、<xref:System.Runtime.Remoting.Lifetime.LifetimeServices.LeaseManagerPollTime%2A>プロパティは、10 秒です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">コール スタックの上位の呼び出し元の少なくとも 1 つに、リモート処理の型とチャネルを構成するアクセス許可がありません。 プロパティの値を設定するときにのみ、この例外がスローされます。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="LeaseTime">
+      <MemberSignature Language="C#" Value="public static TimeSpan LeaseTime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.TimeSpan LeaseTime" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Lifetime.LifetimeServices.LeaseTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の初期のリース期間、<see cref="T:System.AppDomain" />です。</summary>
+        <value>初期のリース<see cref="T:System.TimeSpan" />でリースを持つことができるオブジェクトに対して、<see cref="T:System.AppDomain" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のリース期間は、5 分です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">コール スタックの上位の呼び出し元の少なくとも 1 つに、リモート処理の型とチャネルを構成するアクセス許可がありません。 プロパティの値を設定するときにのみ、この例外がスローされます。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RenewOnCallTime">
+      <MemberSignature Language="C#" Value="public static TimeSpan RenewOnCallTime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.TimeSpan RenewOnCallTime" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Lifetime.LifetimeServices.RenewOnCallTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはでサーバー オブジェクトに対して呼び出しがあるたびに、リースを延長する時間を設定します。</summary>
+        <value><see cref="T:System.TimeSpan" />によって現在の有効期間のリースを<see cref="T:System.AppDomain" />各呼び出しの後に拡張されています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 有効期間リースを延長する既定の更新時間は、2 分です。  
+  
+   
+  
+## Examples  
+ [!code-cpp[ILease_ILease#3](~/samples/snippets/cpp/VS_Snippets_Remoting/ILease_ILease/CPP/ilease_client.cpp#3)]
+ [!code-csharp[ILease_ILease#3](~/samples/snippets/csharp/VS_Snippets_Remoting/ILease_ILease/CS/ilease_client.cs#3)]
+ [!code-vb[ILease_ILease#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ILease_ILease/VB/ilease_client.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">コール スタックの上位の呼び出し元の少なくとも 1 つに、リモート処理の型とチャネルを構成するアクセス許可がありません。 プロパティの値を設定するときにのみ、この例外がスローされます。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SponsorshipTimeout">
+      <MemberSignature Language="C#" Value="public static TimeSpan SponsorshipTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.TimeSpan SponsorshipTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Lifetime.LifetimeServices.SponsorshipTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリース更新時間を返すスポンサーのリース マネージャーが待機する時間を設定します。</summary>
+        <value>初期の承認のタイムアウト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スポンサーへの呼び出しがタイムアウトになるまでの既定の時間は、2 分です。  
+  
+   
+  
+## Examples  
+ [!code-cpp[ILease_ILease#3](~/samples/snippets/cpp/VS_Snippets_Remoting/ILease_ILease/CPP/ilease_client.cpp#3)]
+ [!code-csharp[ILease_ILease#3](~/samples/snippets/csharp/VS_Snippets_Remoting/ILease_ILease/CS/ilease_client.cs#3)]
+ [!code-vb[ILease_ILease#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ILease_ILease/VB/ilease_client.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">コール スタックの上位の呼び出し元の少なくとも 1 つに、リモート処理の型とチャネルを構成するアクセス許可がありません。 プロパティの値を設定するときにのみ、この例外がスローされます。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

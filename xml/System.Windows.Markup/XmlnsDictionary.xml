@@ -1,0 +1,820 @@
+<Type Name="XmlnsDictionary" FullName="System.Windows.Markup.XmlnsDictionary">
+  <TypeSignature Language="C#" Value="public class XmlnsDictionary : System.Collections.IDictionary, System.Xaml.IXamlNamespaceResolver" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlnsDictionary extends System.Object implements class System.Collections.ICollection, class System.Collections.IDictionary, class System.Collections.IEnumerable, class System.Xaml.IXamlNamespaceResolver" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.XmlnsDictionary" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IDictionary</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Xaml.IXamlNamespaceResolver</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>WPF の XAML 名前空間の xmlns マッピングを含むディクショナリを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Markup.XmlnsDictionary>XAML 名前空間プレフィックスを完全な XAML 名前空間 URI にマップします。 アプリケーションで XAML の使用方法および一般的な XAML 名前空間は、URI は多くの場合を含むスキーマ スタイル URI`http://`です。 CLR 名前空間とアセンブリへのユーザー定義のマッピングでは代わりにします。 アセンブリにバックアップが含まれていると、参照されている型します。 詳細については、「 [XAML 名前空間と WPF XAML のマッピングの Namespace](~/docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)です。  
+  
+ <xref:System.Windows.Markup.XmlnsDictionary> XAML 名前空間のスコープの概念を追加します。 既定の<xref:System.Collections.IDictionary>プレフィックス キーと XML 名前空間 URI 値が含まれます。 スコープの概念<xref:System.Windows.Markup.XmlnsDictionary>はプレフィックスを再定義する場合があります、XML の概念に対応しています。 そのため、再定義のみが適用される場合をそのレベル以下 (以前の定義は、DOM 内の上位レベルに適用されます)、XML の DOM のビューにします。 スコープの概念は、ほとんどの場合抽象化で、 <xref:System.Windows.Markup.XmlnsDictionary> API を呼び出すことができる Api などなど<xref:System.Windows.Markup.XmlnsDictionary.LookupNamespace%2A>スコープされていることが心配なく。 ただし、<xref:System.Windows.Markup.XmlnsDictionary>は公開<xref:System.Windows.Markup.XmlnsDictionary.PushScope%2A>と<xref:System.Windows.Markup.XmlnsDictionary.PopScope%2A>ようにカスタム<xref:System.Windows.Markup.ParserContext>のスコープと同期できるは、スコープの変更の実装、<xref:System.Windows.Markup.XmlnsDictionary>です。  
+  
+<a name="xamlTextUsage_XmlnsDictionary"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlnsDictionary ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XmlnsDictionary.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Markup.XmlnsDictionary" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlnsDictionary (System.Windows.Markup.XmlnsDictionary xmlnsDictionary);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Markup.XmlnsDictionary xmlnsDictionary) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XmlnsDictionary.#ctor(System.Windows.Markup.XmlnsDictionary)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="xmlnsDictionary" Type="System.Windows.Markup.XmlnsDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="xmlnsDictionary">新しい基になるディクショナリ<see cref="T:System.Windows.Markup.XmlnsDictionary" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Markup.XmlnsDictionary" />コピー元として指定されたディクショナリを使用して、クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ソースからのすべての値`xmlnsDictionary`以外のコピーは、インデックス エントリを含む<xref:System.Windows.Markup.XmlnsDictionary.Sealed%2A>に設定される`false`新しいインスタンス。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="xmlnsDictionary" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (object prefix, object xmlNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Add(object prefix, object xmlNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XmlnsDictionary.Add(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prefix" Type="System.Object" />
+        <Parameter Name="xmlNamespace" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="prefix">追加する、XAML 名前空間のプレフィックス。</param>
+        <param name="xmlNamespace">XAML 名前空間 URI プレフィックスにマップします。</param>
+        <summary>このプレフィックスの URI のペアを追加<see cref="T:System.Windows.Markup.XmlnsDictionary" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 初期型チェックした後、この実装がタイプ セーフな方法に転送<xref:System.Windows.Markup.XmlnsDictionary.Add%2A?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="prefix" />または<paramref name="xmlNamespace" />文字列ではありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="prefix" /> または <paramref name="xmlNamespace" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Windows.Markup.XmlnsDictionary" />は封印されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (string prefix, string xmlNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(string prefix, string xmlNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XmlnsDictionary.Add(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prefix" Type="System.String" />
+        <Parameter Name="xmlNamespace" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="prefix">この XML 名前空間のプレフィックス。</param>
+        <param name="xmlNamespace">XML 名前空間 URI プレフィックスにマップします。</param>
+        <summary>このプレフィックスの URI のペアを追加<see cref="T:System.Windows.Markup.XmlnsDictionary" />です。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="prefix" /> または <paramref name="xmlNamespace" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Windows.Markup.XmlnsDictionary" />は封印されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XmlnsDictionary.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>これからすべてのエントリを削除<see cref="T:System.Windows.Markup.XmlnsDictionary" />です。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Windows.Markup.XmlnsDictionary" />は封印されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (object key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(object key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XmlnsDictionary.Contains(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">検索するプレフィックス キー。</param>
+        <summary>指定したプレフィックスのキーがこのがかどうかを示す値を返します<see cref="T:System.Windows.Markup.XmlnsDictionary" />です。</summary>
+        <returns>
+          <see langword="true" />指定したプレフィックス キーがディクショナリ内にある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XmlnsDictionary.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">内にテーブル データをコピー先の配列。</param>
+        <param name="index">コピーを開始するコピー先の配列内の 0 から始まるインデックス。</param>
+        <summary>内のエントリをコピー、<see cref="T:System.Windows.Markup.XmlnsDictionary" />指定した配列にします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Collections.DictionaryEntry[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(valuetype System.Collections.DictionaryEntry[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XmlnsDictionary.CopyTo(System.Collections.DictionaryEntry[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Collections.DictionaryEntry[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">内にテーブル データをコピー先の配列。</param>
+        <param name="index">コピーを開始するコピー先の配列内の 0 から始まるインデックス。</param>
+        <summary>内のエントリをコピー、<see cref="T:System.Windows.Markup.XmlnsDictionary" />を指定した<see cref="T:System.Collections.DictionaryEntry" />配列。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.XmlnsDictionary.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内の項目の数を取得、<see cref="T:System.Windows.Markup.XmlnsDictionary" />です。</summary>
+        <value><see cref="T:System.Windows.Markup.XmlnsDictionary" /> 内の項目数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultNamespace">
+      <MemberSignature Language="C#" Value="public string DefaultNamespace ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string DefaultNamespace() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XmlnsDictionary.DefaultNamespace" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>既定の XAML 名前空間に対応する、XAML 名前空間を検索します。</summary>
+        <returns>既定の XML 名前空間場合は 1 つに対応する名前空間が存在します。それ以外の場合、<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マッピングの観点からは、既定の XML 名前空間は、空の文字列にマップされている XML 名前空間がします。 アプリケーションのために、WPF XAML が解析に機能している既定の名前空間識別子は[!INCLUDE[TLA#tla_wpfxmlnsv1](~/includes/tlasharptla-wpfxmlnsv1-md.md)]が、その値は、明示的にこの API では返されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDictionaryEnumerator">
+      <MemberSignature Language="C#" Value="protected System.Collections.IDictionaryEnumerator GetDictionaryEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Collections.IDictionaryEnumerator GetDictionaryEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XmlnsDictionary.GetDictionaryEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionaryEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>これを反復処理するディクショナリ列挙子を返します<see cref="T:System.Windows.Markup.XmlnsDictionary" />です。</summary>
+        <returns>この辞書のディクショナリ列挙子。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この API は、派生クラスは、列挙子を取得できる、ディクショナリ列挙子のディメンションとしての XML 名前空間のスコープの概念の報告場所ようにに存在します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="protected System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XmlnsDictionary.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>これを反復処理する列挙子を返します<see cref="T:System.Windows.Markup.XmlnsDictionary" />です。</summary>
+        <returns>この辞書の列挙子。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この API は、派生クラスは、列挙子を取得できるように、存在しています。 この列挙子を超える列挙体を提供する、<xref:System.Windows.Markup.XmlnsDictionary.Keys%2A>コレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNamespace">
+      <MemberSignature Language="C#" Value="public string GetNamespace (string prefix);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetNamespace(string prefix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XmlnsDictionary.GetNamespace(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prefix" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="prefix">XAML 名前空間を取得するプレフィックス。</param>
+        <summary>指定されたプレフィックス文字列の XAML 名前空間を取得します。</summary>
+        <returns>要求された XAML 名前空間 URI。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNamespacePrefixes">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.Xaml.NamespaceDeclaration&gt; GetNamespacePrefixes ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.Xaml.NamespaceDeclaration&gt; GetNamespacePrefixes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XmlnsDictionary.GetNamespacePrefixes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.CompilerServices.IteratorStateMachine(typeof(System.Windows.Markup.XmlnsDictionary/&lt;GetNamespacePrefixes&gt;d__15))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Xaml.NamespaceDeclaration&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべての可能なプレフィックス XAML 名前空間のマッピングを返します (<see cref="T:System.Xaml.NamespaceDeclaration" />値) は、アクティブなスキーマ コンテキストで使用します。</summary>
+        <returns>列挙可能なセット<see cref="T:System.Xaml.NamespaceDeclaration" />値。 具体的にはプレフィックス文字列を取得する、<see cref="P:System.Xaml.NamespaceDeclaration.Prefix" />返される各値からの値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFixedSize">
+      <MemberSignature Language="C#" Value="public bool IsFixedSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFixedSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.XmlnsDictionary.IsFixedSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかのサイズ、<see cref="T:System.Windows.Markup.XmlnsDictionary" />は固定されています。</summary>
+        <value>
+          <see langword="true" />場合は、サイズは固定です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装は常に返します`false`場合でも、<xref:System.Windows.Markup.XmlnsDictionary.IsReadOnly%2A>は`true`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.XmlnsDictionary.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Markup.XmlnsDictionary" /> が読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          ディクショナリが読み取り専用の場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Markup.XmlnsDictionary>は後読み取り専用<xref:System.Windows.Markup.XmlnsDictionary.Seal%2A>と呼びます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.XmlnsDictionary.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかをこのアクセス<see cref="T:System.Windows.Markup.XmlnsDictionary" />はスレッド セーフです。</summary>
+        <value>
+          <see langword="true" />このディクショナリへのアクセスがスレッド セーフである場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[object prefix] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(object)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.XmlnsDictionary.Item(System.Object)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prefix" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="prefix">取得または設定、関連付けられている XML 名前空間 URI プレフィックス。</param>
+        <summary>取得または指定したプレフィックスに関連付けられた URI の XAML 名前空間を設定します。</summary>
+        <value>対応する XAML 名前空間 URI。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlTextUsage_Object"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="prefix" />文字列ではありません。  
+  
+ または  
+  
+ 設定する値は、文字列ではありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="prefix" /> は <see langword="null" /> です  
+  
+ または  
+  
+ 設定する値は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public string this[string prefix] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.XmlnsDictionary.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prefix" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="prefix">取得または設定の関連付けられた名前空間プレフィックス。</param>
+        <summary>取得または指定したプレフィックスに関連付けられた URI の XAML 名前空間を設定します。</summary>
+        <value>対応する XML 名前空間 URI。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="prefix" /> は <see langword="null" /> です  
+  
+ または  
+  
+ 設定する値は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Keys">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection Keys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection Keys" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.XmlnsDictionary.Keys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内のすべてのキーのコレクションを取得、<see cref="T:System.Windows.Markup.XmlnsDictionary" />です。</summary>
+        <value>ディクショナリ内のすべてのキーのコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlTextUsage_Keys"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupNamespace">
+      <MemberSignature Language="C#" Value="public string LookupNamespace (string prefix);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string LookupNamespace(string prefix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XmlnsDictionary.LookupNamespace(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prefix" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="prefix">XAML 名前空間プレフィックスを検索します。</param>
+        <summary>指定された XML 名前空間プレフィックスに対応する URI の XAML 名前空間を返します。</summary>
+        <returns>XAML 名前空間に存在する場合、指定したプレフィックスに対応する URI <see cref="T:System.Windows.Markup.XmlnsDictionary" />、それ以外の<see langword="null" />します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="prefix" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupPrefix">
+      <MemberSignature Language="C#" Value="public string LookupPrefix (string xmlNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string LookupPrefix(string xmlNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XmlnsDictionary.LookupPrefix(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xmlNamespace" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="xmlNamespace">XAML 名前空間を検索する URI。</param>
+        <summary>指定の XAML 名前空間 URI に対応するプレフィックスを返します。</summary>
+        <returns>指定した名前空間に対応する XML プレフィックスそれ以外の場合、<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の名前空間のプレフィックスを要求する場合は、空の文字列が返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="xmlNamespace" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PopScope">
+      <MemberSignature Language="C#" Value="public void PopScope ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void PopScope() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XmlnsDictionary.PopScope" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>スコープをポップ、<see cref="T:System.Windows.Markup.XmlnsDictionary" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装する場合にのみ、このメソッドを使用して、<xref:System.Windows.Markup.ParserContext>も要素のスコープ レベルで動作をします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Windows.Markup.XmlnsDictionary" />は封印されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PushScope">
+      <MemberSignature Language="C#" Value="public void PushScope ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void PushScope() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XmlnsDictionary.PushScope" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>スコープをプッシュ、<see cref="T:System.Windows.Markup.XmlnsDictionary" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装する場合にのみ、このメソッドを使用して、<xref:System.Windows.Markup.ParserContext>も要素のスコープ レベルで動作をします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Windows.Markup.XmlnsDictionary" />は封印されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (object prefix);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Remove(object prefix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XmlnsDictionary.Remove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prefix" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="prefix">削除するプレフィックス キー。</param>
+        <summary>指定したプレフィックスのキーを持つ項目を削除、<see cref="T:System.Windows.Markup.XmlnsDictionary" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装はタイプ セーフな方法には転送<xref:System.Windows.Markup.XmlnsDictionary.Remove%28System.String%29?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Windows.Markup.XmlnsDictionary" />は封印されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (string prefix);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(string prefix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XmlnsDictionary.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prefix" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="prefix">削除するプレフィックス キー。</param>
+        <summary>指定したプレフィックスのキーを持つ項目を削除、<see cref="T:System.Windows.Markup.XmlnsDictionary" />です。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Windows.Markup.XmlnsDictionary" />は封印されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Seal">
+      <MemberSignature Language="C#" Value="public void Seal ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Seal() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XmlnsDictionary.Seal" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ディクショナリをロックして、変更できないようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、設定する前に行う必要があります、<xref:System.Windows.Markup.XmlnsDictionary>プロパティに (一般に、 <xref:System.Windows.Markup.ParserContext>)。 ディクショナリの後に変更しようとしています、<xref:System.Windows.Markup.XmlnsDictionary>スローが封印されている、<xref:System.InvalidOperationException>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Sealed">
+      <MemberSignature Language="C#" Value="public bool Sealed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Sealed" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.XmlnsDictionary.Sealed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.Markup.XmlnsDictionary" />は封印されています。</summary>
+        <value>
+          <see langword="true" />ディクショナリはシールされている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、別名を<xref:System.Windows.Markup.XmlnsDictionary.IsReadOnly%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.XmlnsDictionary.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Markup.XmlnsDictionary" /> へのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value><see cref="T:System.Windows.Markup.XmlnsDictionary" /> へのアクセスを同期するために使用できるオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IDictionary.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IDictionaryEnumerator IDictionary.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IDictionaryEnumerator System.Collections.IDictionary.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XmlnsDictionary.System#Collections#IDictionary#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionaryEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Collections.IDictionary.GetEnumerator" />」をご覧ください。</summary>
+        <returns>コレクションを反復処理するために使用できる <see cref="T:System.Collections.IDictionaryEnumerator" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XmlnsDictionary.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Collections.IEnumerable.GetEnumerator" />」をご覧ください。</summary>
+        <returns>コレクションを反復処理するために使用できる <see cref="T:System.Collections.IEnumerator" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Values">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection Values { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection Values" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.XmlnsDictionary.Values" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべての値のコレクションを取得、<see cref="T:System.Windows.Markup.XmlnsDictionary" />です。</summary>
+        <value>すべての値のコレクション、<see cref="T:System.Windows.Markup.XmlnsDictionary" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

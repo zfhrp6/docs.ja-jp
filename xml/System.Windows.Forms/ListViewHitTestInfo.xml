@@ -1,0 +1,138 @@
+<Type Name="ListViewHitTestInfo" FullName="System.Windows.Forms.ListViewHitTestInfo">
+  <TypeSignature Language="C#" Value="public class ListViewHitTestInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ListViewHitTestInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ListViewHitTestInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>領域に関する情報が含まれています、<see cref="T:System.Windows.Forms.ListView" />コントロールまたは<see cref="T:System.Windows.Forms.ListViewItem" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ListViewHitTestInfo>によって返される、<xref:System.Windows.Forms.ListView>場合にクラス、<xref:System.Windows.Forms.ListView.HitTest%2A>メソッドが呼び出されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Windows.Forms.ListViewHitTestInfo>クラスおよび<xref:System.Windows.Forms.ListView.HitTest%2A>の場所を特定する方法、<xref:System.Windows.Forms.Control.MouseDown>イベント。 実行するにはこのコードを含む Windows フォームに貼り付け、<xref:System.Windows.Forms.ListView>という`listView1`項目に設定されます。 関連付ける、<xref:System.Windows.Forms.Control.MouseDown>フォームのイベントと`listView1`で、`HandleMouseDown`この例ではメソッドです。  
+  
+ [!code-csharp[System.Windows.Forms.ListViewWhidbeyProperties#7](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListViewWhidbeyProperties/CS/form1.cs#7)]
+ [!code-vb[System.Windows.Forms.ListViewWhidbeyProperties#7](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListViewWhidbeyProperties/VB/form1.vb#7)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewHitTestInfo (System.Windows.Forms.ListViewItem hitItem, System.Windows.Forms.ListViewItem.ListViewSubItem hitSubItem, System.Windows.Forms.ListViewHitTestLocations hitLocation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.ListViewItem hitItem, class System.Windows.Forms.ListViewItem/ListViewSubItem hitSubItem, valuetype System.Windows.Forms.ListViewHitTestLocations hitLocation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewHitTestInfo.#ctor(System.Windows.Forms.ListViewItem,System.Windows.Forms.ListViewItem.ListViewSubItem,System.Windows.Forms.ListViewHitTestLocations)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="hitItem" Type="System.Windows.Forms.ListViewItem" />
+        <Parameter Name="hitSubItem" Type="System.Windows.Forms.ListViewItem+ListViewSubItem" />
+        <Parameter Name="hitLocation" Type="System.Windows.Forms.ListViewHitTestLocations" />
+      </Parameters>
+      <Docs>
+        <param name="hitItem"><see cref="T:System.Windows.Forms.ListViewItem" />ヒット テストで示される位置にあります。</param>
+        <param name="hitSubItem"><see cref="T:System.Windows.Forms.ListViewItem.ListViewSubItem" />ヒット テストで示される位置にあります。</param>
+        <param name="hitLocation"><see cref="T:System.Windows.Forms.ListViewHitTestLocations" /> 値のいずれか。</param>
+        <summary><see cref="T:System.Windows.Forms.ListViewHitTestInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `hitItem`と`hitSubItem`パラメーターを指定できます`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ListViewItem Item { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ListViewItem Item" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewHitTestInfo.Item" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ListViewItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.ListViewItem" />ヒットによって示された位置でのテスト、<see cref="T:System.Windows.Forms.ListView" />です。</summary>
+        <value><see cref="T:System.Windows.Forms.ListViewItem" />ヒットによって示された位置でのテスト、<see cref="T:System.Windows.Forms.ListView" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値はある`null`場合、<xref:System.Windows.Forms.ListView>項目が含まれていないかの項目で示される位置です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Location">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ListViewHitTestLocations Location { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.ListViewHitTestLocations Location" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewHitTestInfo.Location" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ListViewHitTestLocations</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ヒット テストの場所を取得、<see cref="T:System.Windows.Forms.ListView" />に関連する、コントロール、<see cref="T:System.Windows.Forms.ListView" />アイテムが含まれているとします。</summary>
+        <value><see cref="T:System.Windows.Forms.ListViewHitTestLocations" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを返します<xref:System.Windows.Forms.ListViewHitTestLocations.None>ヒット テストでのクライアント領域内の位置を示すかどうかは、<xref:System.Windows.Forms.ListView>は上にありませんが、<xref:System.Windows.Forms.ListViewItem>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SubItem">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ListViewItem.ListViewSubItem SubItem { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ListViewItem/ListViewSubItem SubItem" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewHitTestInfo.SubItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ListViewItem+ListViewSubItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.ListViewItem.ListViewSubItem" />ヒットによって示された位置でのテスト、<see cref="T:System.Windows.Forms.ListView" />です。</summary>
+        <value><see cref="T:System.Windows.Forms.ListViewItem.ListViewSubItem" />ヒットによって示された位置でのテスト、<see cref="T:System.Windows.Forms.ListView" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値はある`null`場合、<xref:System.Windows.Forms.ListView>サブ項目が含まれていないか、サブ項目で示される位置です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

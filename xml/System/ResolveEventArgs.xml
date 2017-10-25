@@ -1,0 +1,185 @@
+<Type Name="ResolveEventArgs" FullName="System.ResolveEventArgs">
+  <TypeSignature Language="C#" Value="public class ResolveEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ResolveEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.ResolveEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>イベントを提供データ ローダーの解像度、ように、 <see cref="E:System.AppDomain.TypeResolve" />、 <see cref="E:System.AppDomain.ResourceResolve" />、 <see cref="E:System.AppDomain.ReflectionOnlyAssemblyResolve" />、および<see cref="E:System.AppDomain.AssemblyResolve" />イベント。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、ローダーは、アセンブリ参照を解決することはできませんし、ハンドラーが、適切なローダーの解像度イベントのイベントは指定されて、<xref:System.ResolveEventArgs>を解決する項目に関する情報が含まれています。  
+  
+-   <xref:System.ResolveEventArgs.Name%2A>プロパティに解決するアイテムの名前が含まれています。  
+  
+-   以降で、 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、<xref:System.ResolveEventArgs.RequestingAssembly%2A>プロパティには、要求された名前付きの項目を提供できるアセンブリのアセンブリが含まれています。 詳細については、<xref:System.ResolveEventArgs.RequestingAssembly%2A> プロパティを参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ResolveEventArgs (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ResolveEventArgs.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">解決するのには項目の名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ResolveEventArgs" />クラス、解決するのには、項目の名前を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは通常、共通言語ランタイムによってのみ呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ResolveEventArgs (string name, System.Reflection.Assembly requestingAssembly);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, class System.Reflection.Assembly requestingAssembly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ResolveEventArgs.#ctor(System.String,System.Reflection.Assembly)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="requestingAssembly" Type="System.Reflection.Assembly" />
+      </Parameters>
+      <Docs>
+        <param name="name">解決するのには項目の名前。</param>
+        <param name="requestingAssembly">依存関係が解決されるアセンブリ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ResolveEventArgs" />クラス、解決するのには、アイテムと依存関係が解決されるアセンブリの名前を指定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.ResolveEventArgs.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>解決するのには、項目の名前を取得します。</summary>
+        <value>解決するのには、項目の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.AppDomain.AssemblyResolve>イベント、<xref:System.ResolveEventArgs.Name%2A>ポリシーが適用される前に、アセンブリ名は、します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestingAssembly">
+      <MemberSignature Language="C#" Value="public System.Reflection.Assembly RequestingAssembly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.Assembly RequestingAssembly" />
+      <MemberSignature Language="DocId" Value="P:System.ResolveEventArgs.RequestingAssembly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Assembly</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>依存関係が解決されるアセンブリを取得します。</summary>
+        <value>指定した項目を要求したアセンブリ、<see cref="P:System.ResolveEventArgs.Name" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティによって返されたアセンブリはアセンブリで指定した項目を解決できなかった、<xref:System.ResolveEventArgs.Name%2A>プロパティ、そのアセンブリ内の項目が存在しないため、読み込まれた依存関係や依存関係、ローダーが見つかりませんでしたプローブによるです。  
+  
+ たとえば、現在のアセンブリは、<xref:System.Reflection.Assembly.LoadFile%2A?displayProperty=nameWithType>クラス CA を使用するために、ディレクトリのプローブ パスの外側からアセンブリ A を読み込みます。 さらにそのクラスの CA は、クラス CB を使用するとアセンブリ B、およびアセンブリ A が B のアセンブリへのコンパイル時参照も外にありますプローブ パス。 現在のアセンブリでは、CA のインスタンスを作成しようとして、ローダーとしようと B. のアセンブリへの参照を解決するのにはただし、アセンブリ A を使用して読み込まれたため、<xref:System.Reflection.Assembly.LoadFile%2A?displayProperty=nameWithType>メソッド、ローダーは、依存関係を解決することはできません。 ハンドラーがある場合、<xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType>イベント、イベントが発生すると、および<xref:System.ResolveEventArgs.RequestingAssembly%2A>結果のプロパティ<xref:System.ResolveEventArgs>オブジェクトは、アセンブリ A を含む、アセンブリ A は、アセンブリでは、依存関係がありません。  
+  
+ セマンティクス、<xref:System.ResolveEventArgs.RequestingAssembly%2A>要求元のアセンブリが読み込まれた方法によって、プロパティが異なります。  
+  
+-   読み込みコンテキスト: プロパティの値があります`null`です。 読み込みコンテキストは、要求 id と読み込み順序に関係なく、アセンブリは必ずしも意味のあるではありません。 Null 以外の使用例が発生したときに、<xref:System.Type.GetType%2A?displayProperty=nameWithType>メソッドが呼び出され、要求元のアセンブリまたはその依存関係のいずれかを指定した型が不明です。  
+  
+-   読み込み元コンテキスト: プロパティは、プローブのヒントとして使用できますが、イベント ハンドラーが指定されたアセンブリ名の 1 つ以上の要求を取得できません。  
+  
+-   コンテキストがありません (を使用して要求元のアセンブリが読み込まれたは、<xref:System.Reflection.Assembly.LoadFile%2A?displayProperty=nameWithType>メソッド、バイト ストリーム、または混在モードで): ハンドラーが使用できる、<xref:System.ResolveEventArgs.RequestingAssembly%2A>要求元のアセンブリの id に基づいてプロパティを同じアセンブリの異なる実装を読み込むことです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

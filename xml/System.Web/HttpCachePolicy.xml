@@ -1,0 +1,1317 @@
+<Type Name="HttpCachePolicy" FullName="System.Web.HttpCachePolicy">
+  <TypeSignature Language="C#" Value="public sealed class HttpCachePolicy" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HttpCachePolicy extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.HttpCachePolicy" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>キャッシュ固有の HTTP ヘッダーを設定し、ASP.NET ページの出力キャッシュを制御するためのメソッドを含みます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ HTTP ヘッダーとキャッシュの制御に関する背景情報については、RFC 2616 を参照してください: Hypertext Transfer Protocol--http/1.1 で使用できる、 [World Wide Web コンソーシアム (W3C) の Web サイト](http://go.microsoft.com/fwlink/?linkid=37125)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddValidationCallback">
+      <MemberSignature Language="C#" Value="public void AddValidationCallback (System.Web.HttpCacheValidateHandler handler, object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddValidationCallback(class System.Web.HttpCacheValidateHandler handler, object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.AddValidationCallback(System.Web.HttpCacheValidateHandler,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="handler" Type="System.Web.HttpCacheValidateHandler" />
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="handler"><see cref="T:System.Web.HttpCacheValidateHandler" /> 値。</param>
+        <param name="data">渡される任意のユーザーが指定したデータを戻す、<see cref="M:System.Web.HttpCachePolicy.AddValidationCallback(System.Web.HttpCacheValidateHandler,System.Object)" />を委任します。</param>
+        <summary>現在の応答の検証コールバックを登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpCachePolicy.AddValidationCallback%2A>メソッドは、出力キャッシュによって応答がクライアントに返される前に、キャッシュにプログラムで応答を確認するためのメカニズムを提供します。  
+  
+ 応答は、Web サーバーのキャッシュから提供は、前にすべての登録済みハンドラーは、リソースの有効性を確実に照会されます。 いずれかのハンドラーは、キャッシュされた応答が無効であることを示すフラグを設定する場合、エントリはキャッシュから有効なされず、消去としてマークします。 この場合、として他のハンドラーは、この要求のキャッシュされた応答を無視するか、要求がであることを示します。 ときにし、キャッシュ ミスの場合と同様に処理します。  
+  
+ <xref:System.Web.HttpCachePolicy.AddValidationCallback%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例では、クエリ文字列の値に基づいて要求を検証するデリゲートを追加する方法を示します。  
+  
+ [!code-aspx-csharp[Cache Validation Callback#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Cache validation callback/CS/ValidationCallbackcs.aspx#1)]
+ [!code-aspx-vb[Cache Validation Callback#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Cache validation callback/VB/ValidationCallbackvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">指定された <paramref name="handler" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendCacheExtension">
+      <MemberSignature Language="C#" Value="public void AppendCacheExtension (string extension);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendCacheExtension(string extension) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.AppendCacheExtension(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="extension" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="extension">追加するテキスト、<see langword="Cache-Control" />ヘッダー。</param>
+        <summary>指定したテキストを <see langword="Cache-Control" /> HTTP ヘッダーに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キャッシュ制御ディレクティブまたは拡張機能は、ブラウザーで認識されない場合、ブラウザーは認識されない用語を無視する必要があります。 詳細については、RFC 2616 を参照してください: Hypertext Transfer Protocol--http/1.1 で使用できる、 [World Wide Web コンソーシアム (W3C) の Web サイト](http://go.microsoft.com/fwlink/?linkid=37125)です。  
+  
+ <xref:System.Web.HttpCachePolicy.AppendCacheExtension%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例では、Internet Explorer でサポートされているキャッシュ制御の拡張の使用を示します。 サーバーが 1 時間は、コンテンツを変更しないというブラウザーに送信することを示す (`pre-check=3600`)、ローカル キャッシュから直接コンテンツを取得するよう指示します。 15 分以内のユーザーによって変更された場合、コンテンツ サーバーと、ページを要求するただし、(`post-check= 900`) 1 時間の間にブラウザーのローカル キャッシュ内にある情報が表示されますもバック グラウンドでチェックし、省略可能なフェッチサーバーに新しいコンテンツ。  
+  
+ [!code-csharp[Classic HttpCachePolicy.AppendCacheExtension Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpCachePolicy.AppendCacheExtension Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpCachePolicy.AppendCacheExtension Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpCachePolicy.AppendCacheExtension Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="extension" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCacheability">
+      <MemberSignature Language="C#" Value="public System.Web.HttpCacheability GetCacheability ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Web.HttpCacheability GetCacheability() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.GetCacheability" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpCacheability</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>キャッシュ制御のディレクティブを取得します。</summary>
+        <returns>キャッシュ制御のディレクティブ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCacheExtensions">
+      <MemberSignature Language="C#" Value="public string GetCacheExtensions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetCacheExtensions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.GetCacheExtensions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>キャッシュ拡張を取得します。</summary>
+        <returns>キャッシュ拡張。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetETag">
+      <MemberSignature Language="C#" Value="public string GetETag ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetETag() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.GetETag" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ETag を取得します。</summary>
+        <returns>ETag。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetETagFromFileDependencies">
+      <MemberSignature Language="C#" Value="public bool GetETagFromFileDependencies ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GetETagFromFileDependencies() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.GetETagFromFileDependencies" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>状態を示すを取得するかどうか、<see langword="ETag" />ヘッダーに設定されたベース ハンドラーのファイルの依存関係のタイムスタンプ。</summary>
+        <returns>
+          <see langword="true" />場合、<see langword="ETag" />それ以外のハンドラーのファイルの依存関係のタイムスタンプに基づくヘッダーが設定されている<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExpires">
+      <MemberSignature Language="C#" Value="public DateTime GetExpires ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.DateTime GetExpires() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.GetExpires" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>期限切れのヘッダーを取得します。</summary>
+        <returns>期限切れのヘッダー。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIgnoreRangeRequests">
+      <MemberSignature Language="C#" Value="public bool GetIgnoreRangeRequests ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GetIgnoreRangeRequests() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.GetIgnoreRangeRequests" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>無視する範囲の要求のステータスを取得します。</summary>
+        <returns>
+          範囲の要求が無視されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLastModifiedFromFileDependencies">
+      <MemberSignature Language="C#" Value="public bool GetLastModifiedFromFileDependencies ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GetLastModifiedFromFileDependencies() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.GetLastModifiedFromFileDependencies" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ハンドラーのファイルの依存関係のタイムスタンプを基に最終更新 headerset の状態を取得します。</summary>
+        <returns>
+          <see langword="true" />イベントのハンドラーです。 ファイルの依存関係のタイムスタンプを基に Last-modified ヘッダーが設定されている場合それ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMaxAge">
+      <MemberSignature Language="C#" Value="public TimeSpan GetMaxAge ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.TimeSpan GetMaxAge() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.GetMaxAge" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>キャッシュ制御の最長期間を取得します。</summary>
+        <returns>キャッシュ制御の最長期間。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNoServerCaching">
+      <MemberSignature Language="C#" Value="public bool GetNoServerCaching ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GetNoServerCaching() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.GetNoServerCaching" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の応答に対して、サーバーのキャッシュの状態を取得します。</summary>
+        <returns>
+          現在の応答に対して、サーバーのキャッシュが停止している場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNoStore">
+      <MemberSignature Language="C#" Value="public bool GetNoStore ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GetNoStore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.GetNoStore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ストアの状態を取得します。</summary>
+        <returns>
+          ストアが設定されていない場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNoTransforms">
+      <MemberSignature Language="C#" Value="public bool GetNoTransforms ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GetNoTransforms() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.GetNoTransforms" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>HTTP 無変換ディレクティブの状態を取得します。</summary>
+        <returns>
+          <see langword="true" />HTTP いいえ変換ディレクティブが設定されている場合それ以外の場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キャッシュ制御の HTTP ヘッダーの送信を有効にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOmitVaryStar">
+      <MemberSignature Language="C#" Value="public int GetOmitVaryStar ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetOmitVaryStar() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.GetOmitVaryStar" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see langword="vary:*" /> ヘッダーのステータスを取得します。</summary>
+        <returns>
+          <see langword="vary:*" /> ヘッダーが省略されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProxyMaxAge">
+      <MemberSignature Language="C#" Value="public TimeSpan GetProxyMaxAge ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.TimeSpan GetProxyMaxAge() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.GetProxyMaxAge" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>HTTP Cache-Control: Proxy Max Age を取得します。</summary>
+        <returns>HTTP Cache-Control: Proxy Max Age。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRevalidation">
+      <MemberSignature Language="C#" Value="public System.Web.HttpCacheRevalidation GetRevalidation ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Web.HttpCacheRevalidation GetRevalidation() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.GetRevalidation" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpCacheRevalidation</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>キャッシュ制御を取得します。 必要があります revalidate または proxy-revalidate ディレクティブのいずれかを反映するようにヘッダー。</summary>
+        <returns>Must-revalidate またはプロキシ revalidate のいずれかのディレクティブを反映する Cache-control: ヘッダー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値では、このメソッドを使用して明示的に有効にしない限り、これらのディレクティブのいずれかが送信されないようにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUtcLastModified">
+      <MemberSignature Language="C#" Value="public DateTime GetUtcLastModified ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.DateTime GetUtcLastModified() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.GetUtcLastModified" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>世界協定時刻 (UTC) の <see langword="Last-Modified" /> HTTP ヘッダーの値を取得します。</summary>
+        <returns><see langword="Last-Modified" /> HTTP ヘッダーの値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetVaryByCustom">
+      <MemberSignature Language="C#" Value="public string GetVaryByCustom ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetVaryByCustom() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.GetVaryByCustom" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>HTTP キャッシュを変更するために使用するカスタム文字列を取得します。</summary>
+        <returns>HTTP キャッシュを変更するためのカスタム文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasSlidingExpiration">
+      <MemberSignature Language="C#" Value="public bool HasSlidingExpiration ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool HasSlidingExpiration() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.HasSlidingExpiration" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>キャッシュにスライディング有効期限ポリシーがあるかどうかを指定する値を取得します。</summary>
+        <returns>
+          キャッシュにスライディング有効期限ポリシーがある場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsModified">
+      <MemberSignature Language="C#" Value="public bool IsModified ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsModified() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.IsModified" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>HTTP キャッシュが変更されたかどうかを指定する値を取得します。</summary>
+        <returns>
+          キャッシュが変更された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsValidUntilExpires">
+      <MemberSignature Language="C#" Value="public bool IsValidUntilExpires ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsValidUntilExpires() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.IsValidUntilExpires" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クライアントから送信された、キャッシュを無効にする HTTP <see langword="Cache-Control" /> ヘッダーを ASP.NET キャッシュで無視するかどうかを指定する値を取得します。</summary>
+        <returns>
+          クライアントから送信された HTTP <see langword="Cache-Control" /> ヘッダーを ASP.NET キャッシュで無視する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAllowResponseInBrowserHistory">
+      <MemberSignature Language="C#" Value="public void SetAllowResponseInBrowserHistory (bool allow);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetAllowResponseInBrowserHistory(bool allow) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.SetAllowResponseInBrowserHistory(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="allow" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="allow">
+          <see langword="true" />応答を履歴フォルダーに格納するクライアントのブラウザーをダイレクトするにはそれ以外の場合<see langword="false" />です。 既定値は、<see langword="false" /> です。</param>
+        <summary>応答がクライアント ブラウザーに関係なく、履歴キャッシュで利用可能な<see cref="T:System.Web.HttpCacheability" />サーバーで、行った設定と、<paramref name="allow" />パラメーターが<see langword="true" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Web.HttpCacheability>に設定されている<xref:System.Web.HttpCacheability.NoCache>または<xref:System.Web.HttpCacheability.ServerAndNoCache>、 `Expires` HTTP ヘッダーが-1 に設定する既定でです。 このように、通知応答をキャッシュにないクライアントは履歴フォルダーに戻る/前方参照ボタンを使用して、クライアントは要求の応答の新しいバージョンごとにします。 この動作をオーバーライドするには、呼び出すことによって、<xref:System.Web.HttpCachePolicy.SetAllowResponseInBrowserHistory%2A>メソッドを`allow`パラメーターに設定`true`です。  
+  
+ 場合<xref:System.Web.HttpCacheability>以外の値に設定が<xref:System.Web.HttpCacheability.NoCache>または<xref:System.Web.HttpCacheability.ServerAndNoCache>を呼び出す、<xref:System.Web.HttpCachePolicy.SetAllowResponseInBrowserHistory%2A>メソッドのいずれかの値を`allow`も何も起こりません。  
+  
+ <xref:System.Web.HttpCachePolicy.SetAllowResponseInBrowserHistory%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.HttpCachePolicy.SetAllowResponseInBrowserHistory%2A>メソッドをカスタムの履歴に応答を格納するクライアントを直接<xref:System.Web.HttpCachePolicy>です。  
+  
+ [!code-aspx-csharp[HttpCachePolicySetAllowResponseInBrowserHistory#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCachePolicySetAllowResponseInBrowserHistory/CS/httpcachepolicy_setallowresponseinbrowserhistorycs.aspx#1)]
+ [!code-aspx-vb[HttpCachePolicySetAllowResponseInBrowserHistory#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCachePolicySetAllowResponseInBrowserHistory/VB/httpcachepolicy_setallowresponseinbrowserhistoryvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCacheability">
+      <MemberSignature Language="C#" Value="public void SetCacheability (System.Web.HttpCacheability cacheability);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetCacheability(valuetype System.Web.HttpCacheability cacheability) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.SetCacheability(System.Web.HttpCacheability)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cacheability" Type="System.Web.HttpCacheability" />
+      </Parameters>
+      <Docs>
+        <param name="cacheability"><see cref="T:System.Web.HttpCacheability" /> 列挙値。</param>
+        <summary>セット、<see langword="Cache-Control" />ヘッダーの値のいずれかを<see cref="T:System.Web.HttpCacheability" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpCachePolicy.SetCacheability%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、`Cache-Control`ヘッダーの列挙の値を`no-cache`です。  
+  
+ [!code-csharp[Classic HttpCachePolicy.SetCacheability Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpCachePolicy.SetCacheability Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpCachePolicy.SetCacheability Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpCachePolicy.SetCacheability Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="cacheability" />列挙値のいずれかがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCacheability">
+      <MemberSignature Language="C#" Value="public void SetCacheability (System.Web.HttpCacheability cacheability, string field);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetCacheability(valuetype System.Web.HttpCacheability cacheability, string field) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.SetCacheability(System.Web.HttpCacheability,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cacheability" Type="System.Web.HttpCacheability" />
+        <Parameter Name="field" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="cacheability"><see cref="T:System.Web.HttpCacheability" />にヘッダーを設定する列挙値。</param>
+        <param name="field">ヘッダーに追加するキャッシュ制御の拡張。</param>
+        <summary>セット、<see langword="Cache-Control" />ヘッダーの値のいずれかを<see cref="T:System.Web.HttpCacheability" />ディレクティブに拡張機能を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フィールド名の拡張子がで使用する場合にのみ有効では、`private`または`no-cache`ディレクティブです。 詳細については、RFC 2616 を参照してください: Hypertext Transfer Protocol--http/1.1 で使用できる、 [World Wide Web コンソーシアム (W3C) の Web サイト](http://go.microsoft.com/fwlink/?linkid=37125)です。  
+  
+ 互換性のないディレクティブと拡張機能が組み合わされる場合、このメソッドは無効な引数の例外をスローします。  
+  
+ <xref:System.Web.HttpCachePolicy.SetCacheability%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例を示す方法、`Cache-Control`ヘッダーが、この列挙値に設定されている`private`キャッシュ制御の拡張を追加します。 変更後のディレクティブは、こと、非共有キャッシュに加えて、"DEV"というコミュニティのメンバーでのみ共有キャッシュが応答をキャッシュを意味します。  
+  
+ [!code-csharp[Classic HttpCachePolicy.SetCacheability1 Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpCachePolicy.SetCacheability1 Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpCachePolicy.SetCacheability1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpCachePolicy.SetCacheability1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="field" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="cacheability" /> が、<see cref="F:System.Web.HttpCacheability.Private" /> でも <see cref="F:System.Web.HttpCacheability.NoCache" /> でもありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetETag">
+      <MemberSignature Language="C#" Value="public void SetETag (string etag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetETag(string etag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.SetETag(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="etag" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="etag">使用するテキスト、<see langword="ETag" />ヘッダー。</param>
+        <summary>セット、 <see langword="ETag" /> HTTP ヘッダーを指定した文字列にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `ETag`ヘッダーは、ドキュメントの特定のバージョンの一意の識別子。 もう一度要求しないようにするクライアントにキャッシュされたコンテンツを検証するクライアントによって使用されます。 1 回、`ETag`ヘッダーが設定すると、後続の試行失敗を設定して、例外がスローされます。  
+  
+ <xref:System.Web.HttpCachePolicy.SetETag%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、`ETag`ヘッダーをカスタム値。  
+  
+ [!code-csharp[Classic HttpCachePolicy.SetETag Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpCachePolicy.SetETag Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpCachePolicy.SetETag Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpCachePolicy.SetETag Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="etag" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException"><see langword="ETag" />ヘッダーは既に設定されています。  
+  
+ \- または  
+  
+ <see cref="M:System.Web.HttpCachePolicy.SetETagFromFileDependencies" />は既に呼び出されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetETagFromFileDependencies">
+      <MemberSignature Language="C#" Value="public void SetETagFromFileDependencies ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetETagFromFileDependencies() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.SetETagFromFileDependencies" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セット、<see langword="ETag" />ハンドラーのファイルの依存関係のタイムスタンプに基づいて HTTP ヘッダー。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpCachePolicy.SetETagFromFileDependencies%2A>メソッドのセット、`ETag`ハンドラーが依存しているすべてのファイルの最終更新時刻スタンプを取得する、1 つの文字列、すべてのファイル名とタイムスタンプを組み合わせることは、1 つのダイジェストをその文字列をハッシュしてヘッダーとして使用される、`ETag`です。  
+  
+ <xref:System.Web.HttpCachePolicy.SetETagFromFileDependencies%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、`ETag`ヘッダー。  
+  
+ [!code-csharp[Classic HttpCachePolicy.SetETagFromFileDependencies Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpCachePolicy.SetETagFromFileDependencies Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpCachePolicy.SetETagFromFileDependencies Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpCachePolicy.SetETagFromFileDependencies Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see langword="ETag" />ヘッダーは既に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetExpires">
+      <MemberSignature Language="C#" Value="public void SetExpires (DateTime date);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetExpires(valuetype System.DateTime date) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.SetExpires(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="date" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="date">絶対<see cref="T:System.DateTime" />を設定する値、<see langword="Expires" />ヘッダーにします。</param>
+        <summary>セット、 <see langword="Expires" /> HTTP ヘッダーを絶対日付と時刻。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、有効期限の日付が制限の原則に違反する場合は失敗します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、午後 6 時 00 分に、有効期限を設定する方法を示します 現在の有効期限日のローカル時刻です。  
+  
+ [!code-csharp[Classic HttpCachePolicy.SetExpires Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpCachePolicy.SetExpires Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpCachePolicy.SetExpires Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpCachePolicy.SetExpires Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetLastModified">
+      <MemberSignature Language="C#" Value="public void SetLastModified (DateTime date);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetLastModified(valuetype System.DateTime date) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.SetLastModified(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="date" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="date"><see langword="Last-Modified" /> ヘッダーの新しい <see cref="T:System.DateTime" /> 値です。</param>
+        <summary><see langword="Last-Modified" /> HTTP ヘッダーの値を、提供された <see cref="T:System.DateTime" /> の値に設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Last-Modified`ヘッダーのタイムスタンプを持つドキュメントを HTTP、`DateTime`ドキュメントが最後に変更された日時を示す値。  
+  
+ このメソッドは、キャッシュの制限の階層に違反する場合は失敗します。  
+  
+ <xref:System.Web.HttpCachePolicy.SetLastModified%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、`Last-Modified`新しい日付をヘッダー。  
+  
+ [!code-csharp[Classic HttpCachePolicy.SetLastModified Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpCachePolicy.SetLastModified Example/cs/source.cs#1)]
+ [!code-vb[Classic HttpCachePolicy.SetLastModified Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpCachePolicy.SetLastModified Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="date" /> は現在の <see langword="DateTime" /> よりも後です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetLastModifiedFromFileDependencies">
+      <MemberSignature Language="C#" Value="public void SetLastModifiedFromFileDependencies ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetLastModifiedFromFileDependencies() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.SetLastModifiedFromFileDependencies" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セット、<see langword="Last-Modified" />ハンドラーのファイルの依存関係のタイムスタンプに基づいて HTTP ヘッダー。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpCachePolicy.SetLastModifiedFromFileDependencies%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、`Last-Modified`ヘッダーを使用して、<xref:System.Web.HttpCachePolicy.SetLastModifiedFromFileDependencies%2A>メソッドです。  
+  
+ [!code-csharp[Classic HttpCachePolicy.SetLastModifiedFromFileDependencies Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpCachePolicy.SetLastModifiedFromFileDependencies Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpCachePolicy.SetLastModifiedFromFileDependencies Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpCachePolicy.SetLastModifiedFromFileDependencies Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetMaxAge">
+      <MemberSignature Language="C#" Value="public void SetMaxAge (TimeSpan delta);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetMaxAge(valuetype System.TimeSpan delta) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.SetMaxAge(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="delta" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="delta">設定に使用される時間間隔、 <see langword="Cache" />  -  <see langword="Control: max-age" />ヘッダー。</param>
+        <summary>セット、 <see langword="Cache-Control: max-age" /> HTTP ヘッダーが指定した期間に基づいています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Max-age`古いと見なされる前に存在するドキュメントが許可される最大絶対時間です。  
+  
+ <xref:System.Web.HttpCachePolicy.SetMaxAge%2A>メソッド スライド式有効期限が使用されないため、有効期限の日付が制限の原則に違反する場合は失敗します。  
+  
+ <xref:System.Web.HttpCachePolicy.SetMaxAge%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.HttpCachePolicy.SetMaxAge%2A>メソッドが 2 回目以降の呼び出しで、繰り返し呼び出されると、最大有効期間の値を小さくだけことができます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、`Cache-Control: max-age`ヘッダーを 0 時間 30 分 0 秒です。  
+  
+ [!code-csharp[Classic HttpCachePolicy.SetMaxAge Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpCachePolicy.SetMaxAge Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpCachePolicy.SetMaxAge Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpCachePolicy.SetMaxAge Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="delta" />0 より小さいか、1 年より大きい値です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetNoServerCaching">
+      <MemberSignature Language="C#" Value="public void SetNoServerCaching ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetNoServerCaching() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.SetNoServerCaching" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の応答に対して、送信元サーバーによるすべてのキャッシュを停止します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配信元サーバー上のドキュメントのキャッシュを明示的に拒否されます。 一度設定したら、ドキュメントに対するすべての要求完全に処理されます。 このメソッドが呼び出されると、キャッシュが現在の応答を再び有効にすることはできません。  
+  
+ <xref:System.Web.HttpCachePolicy.SetNoServerCaching%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例では、応答の残りの部分の出力キャッシュを無効にする方法を示します。  
+  
+ [!code-csharp[Classic HttpCachePolicy.SetNoServerCaching Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpCachePolicy.SetNoServerCaching Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpCachePolicy.SetNoServerCaching Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpCachePolicy.SetNoServerCaching Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetNoStore">
+      <MemberSignature Language="C#" Value="public void SetNoStore ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetNoStore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.SetNoStore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セット、 <see langword="Cache-Control: no-store" /> HTTP ヘッダー。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.HttpCachePolicy.SetNoStore%2A>のメソッド、<xref:System.Web.HttpCachePolicy>その履歴に、応答を格納していないクライアントを送信するためのクラスです。  
+  
+ [!code-aspx-csharp[HttpCachePolicySetNoStore#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCachePolicySetNoStore/CS/httpcachepolicy_setnostorecs.aspx#1)]
+ [!code-aspx-vb[HttpCachePolicySetNoStore#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCachePolicySetNoStore/VB/httpcachepolicy_setnostorevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetNoTransforms">
+      <MemberSignature Language="C#" Value="public void SetNoTransforms ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetNoTransforms() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.SetNoTransforms" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セット、 <see langword="Cache-Control: no-transform" /> HTTP ヘッダー。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Cache-Control: no-transform` HTTP ヘッダー ネットワークのドキュメントを変更することがなくアプリケーションをキャッシュするよう指示します。  
+  
+ `Cache-Control: no-transform` HTTP ヘッダーのダウン ストリームのプロキシ サーバーを変更できなく任意で指定されたヘッダーの値、 `Content-Encoding`、 `Content-Range`、または`Content-Type`ヘッダー (エンティティ本体を含む)。 たとえば、GIF イメージ PNG からへの変換のプロキシを阻止します。  
+  
+ 1 回のキャッシュに関する他の制限と同様に<xref:System.Web.HttpCachePolicy.SetNoTransforms%2A>が呼び出されたが、`Cache-Control: no-transform`を介して、HTTP ヘッダーを無効にすることはできません、<xref:System.Web.HttpCachePolicy>インターフェイスです。  
+  
+ <xref:System.Web.HttpCachePolicy.SetNoTransforms%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例では、送信、`Cache-Control: no-transform`ディレクティブを現在の応答とします。  
+  
+ [!code-csharp[Classic HttpCachePolicy.SetNoTransforms Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpCachePolicy.SetNoTransforms Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpCachePolicy.SetNoTransforms Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpCachePolicy.SetNoTransforms Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetOmitVaryStar">
+      <MemberSignature Language="C#" Value="public void SetOmitVaryStar (bool omit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetOmitVaryStar(bool omit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.SetOmitVaryStar(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="omit" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="omit">
+          <see langword="true" />送信するため、<see cref="T:System.Web.HttpCachePolicy" />を使用しないように、* 値をその<see cref="P:System.Web.HttpCachePolicy.VaryByHeaders" />プロパティ以外の場合、<see langword="false" />です。</param>
+        <summary>応答に含めるかどうかを指定します、<see langword="vary:*" />ヘッダー パラメーターが異なるときにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドでは、出力を防止できます。 追加される、`vary:*`パラメーターによって、キャッシュされた応答時に送信する応答ヘッダー。 これは、ため、ほとんどのクライアントに自動的にによって異なります。 クエリ文字列を必要とせずにクエリ文字列でキャッシングをさまざまなクライアントのに便利です、`vary:*`ヘッダー。  
+  
+> [!NOTE]
+>  使用、`vary:*`ヘッダーには、すべてのクライアント キャッシュが無効にすることができます。  
+  
+ これは、便利な方法に影響を与える、<xref:System.Web.HttpCachePolicy.VaryByHeaders%2A>プロパティです。 渡す`true`メソッドに次のように指示します。、<xref:System.Web.HttpCachePolicy>を無視する、* の値、<xref:System.Web.HttpCachePolicy.VaryByHeaders%2A>プロパティです。  
+  
+ <xref:System.Web.HttpCachePolicy.SetOmitVaryStar%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetProxyMaxAge">
+      <MemberSignature Language="C#" Value="public void SetProxyMaxAge (TimeSpan delta);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetProxyMaxAge(valuetype System.TimeSpan delta) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.SetProxyMaxAge(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="delta" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="delta">設定に使用される時間間隔、<see langword="Cache-Control: s-maxage" />ヘッダー。</param>
+        <summary>セット、 <see langword="Cache-Control: s-maxage" /> HTTP ヘッダーが指定した期間に基づいています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpCachePolicy.SetProxyMaxAge%2A>メソッド スライド式有効期限が使用されないため、有効期限の日付が制限の原則に違反する場合は失敗します。  
+  
+ <xref:System.Web.HttpCachePolicy.SetProxyMaxAge%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、`Cache-Control: s-maxage`ヘッダーを 0 時間 30 分 0 秒です。  
+  
+ [!code-csharp[Classic HttpCachePolicy.SetProxyMaxAge Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpCachePolicy.SetProxyMaxAge Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpCachePolicy.SetProxyMaxAge Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpCachePolicy.SetProxyMaxAge Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="delta" /> が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetRevalidation">
+      <MemberSignature Language="C#" Value="public void SetRevalidation (System.Web.HttpCacheRevalidation revalidation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetRevalidation(valuetype System.Web.HttpCacheRevalidation revalidation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.SetRevalidation(System.Web.HttpCacheRevalidation)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="revalidation" Type="System.Web.HttpCacheRevalidation" />
+      </Parameters>
+      <Docs>
+        <param name="revalidation"><see cref="T:System.Web.HttpCacheRevalidation" />列挙値を設定する、<see langword="Cache-Control" />ヘッダーにします。</param>
+        <summary>セット、<see langword="Cache-Control" />するか、HTTP ヘッダー、<see langword="must-revalidate" />または<see langword="proxy-revalidate" />ディレクティブが指定された列挙値に基づきます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 等価であると、既定<xref:System.Web.HttpCacheRevalidation.None>は、このメソッドによって明示的に指定されていない限り、ヘッダーのどちらのディレクティブを送信します。  
+  
+ <xref:System.Web.HttpCachePolicy.SetRevalidation%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、キャッシュの再検証に設定する方法を示します<xref:System.Web.HttpCacheRevalidation.AllCaches>です。  
+  
+ [!code-csharp[Classic HttpCachePolicy.SetRevalidation Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpCachePolicy.SetRevalidation Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpCachePolicy.SetRevalidation Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpCachePolicy.SetRevalidation Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="revalidation" />列挙値のいずれかがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetSlidingExpiration">
+      <MemberSignature Language="C#" Value="public void SetSlidingExpiration (bool slide);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetSlidingExpiration(bool slide) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.SetSlidingExpiration(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="slide" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="slide">
+          <see langword="true" /> または <see langword="false" />。</param>
+        <summary>キャッシュからスライディング絶対有効期限を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キャッシュの有効期限が、スライド式に設定されているときに、 `Cache-Control` HTTP ヘッダーはそれぞれの応答で更新します。 この有効期限モードは、すべての出力を現在の時刻の基準とした設定に有効期限ヘッダーを追加する IIS の構成オプションと同じです。  
+  
+ 明示的に設定するスライディング有効期限をオフにする場合 (`false`)、その設定は保存およびスライディング有効期限を有効にしようとしても失敗します。 このメソッドは、HTTP ヘッダーに直接マップしません。 後続のモジュールまたはワーカーが使用して送信元サーバーを設定する要求のキャッシュ ポリシー。  
+  
+ <xref:System.Web.HttpCachePolicy.SetSlidingExpiration%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、スライディング有効期限を設定する方法を示します`true`です。  
+  
+ [!code-csharp[Classic HttpCachePolicy.SetSlidingExpiration Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpCachePolicy.SetSlidingExpiration Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpCachePolicy.SetSlidingExpiration Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpCachePolicy.SetSlidingExpiration Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValidUntilExpires">
+      <MemberSignature Language="C#" Value="public void SetValidUntilExpires (bool validUntilExpires);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetValidUntilExpires(bool validUntilExpires) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.SetValidUntilExpires(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="validUntilExpires" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="validUntilExpires">
+          <see langword="true" />キャッシュを無視する場合<see langword="Cache-Control" />無効化ヘッダーです。 それ以外の場合、<see langword="false" />です。</param>
+        <summary>ASP.NET キャッシュで HTTP を無視するかどうかを示す<see langword="Cache-Control" />キャッシュを無効にするクライアントから送信されたヘッダー。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpCachePolicy.SetValidUntilExpires%2A>メソッドに設定されている`true`時に自動的に、高度な`<%@ OutputCache … %>`ページ ディレクティブを使用します。  
+  
+ このメソッドは、ページ ビューを更新するときに、一部のブラウザーが Web サーバーに HTTP キャッシュ無効化ヘッダーを送信し、キャッシュからページを消去するために提供します。 ときに、`validUntilExpires`パラメーターは`true`ASP.NET がキャッシュの無効化ヘッダーを無視し、ページは、有効期限が切れるまでキャッシュに保持します。  
+  
+ <xref:System.Web.HttpCachePolicy.SetValidUntilExpires%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.HttpCachePolicy.SetValidUntilExpires%2A>メソッドに、クライアントによって送信された、キャッシュの無効化ヘッダーを無視することを指示します。  
+  
+ [!code-aspx-csharp[HttpCachePolicy_SetValidUntilExpires#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCachePolicy_SetValidUntilExpires/CS/httpcachepolicy_setvaliduntilexpirescs.aspx#1)]
+ [!code-aspx-vb[HttpCachePolicy_SetValidUntilExpires#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCachePolicy_SetValidUntilExpires/VB/httpcachepolicy_setvaliduntilexpiresvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetVaryByCustom">
+      <MemberSignature Language="C#" Value="public void SetVaryByCustom (string custom);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetVaryByCustom(string custom) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCachePolicy.SetVaryByCustom(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="custom" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="custom">キャッシュされている出力の変更に使用するテキスト文字列。</param>
+        <summary>キャッシュされている出力応答の変更に使用するカスタム テキスト文字列を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpCachePolicy.SetVaryByCustom%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、"Accept-charset"、これにより、によっては、ブラウザーのキャッシュされた応答をいくつかのいずれかを選択する配信元サーバーのキャッシュにカスタム vary 文字列を設定する方法を示します`Accept-Charset`ヘッダー。  
+  
+ [!code-csharp[Classic HttpCachePolicy.SetVaryByCustom Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpCachePolicy.SetVaryByCustom Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpCachePolicy.SetVaryByCustom Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpCachePolicy.SetVaryByCustom Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="custom" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Web.HttpCachePolicy.SetVaryByCustom(System.String)" /> メソッドは既に呼び出されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UtcTimestampCreated">
+      <MemberSignature Language="C#" Value="public DateTime UtcTimestampCreated { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime UtcTimestampCreated" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpCachePolicy.UtcTimestampCreated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.HttpCachePolicy" /> の協定世界時 (UTC) のタイムスタンプを取得または設定します。</summary>
+        <value>
+          <see cref="T:System.DateTime" /> の <see cref="T:System.Web.HttpCachePolicy" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VaryByContentEncodings">
+      <MemberSignature Language="C#" Value="public System.Web.HttpCacheVaryByContentEncodings VaryByContentEncodings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpCacheVaryByContentEncodings VaryByContentEncodings" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpCachePolicy.VaryByContentEncodings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpCacheVaryByContentEncodings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一覧を取得<see langword="Content-Encoding" />出力キャッシュの変更に使用されるヘッダー。</summary>
+        <value>これを指定するオブジェクト<see langword="Content-Encoding" />ヘッダーは、キャッシュされた応答の選択に使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpCachePolicy.VaryByContentEncodings%2A>プロパティは、圧縮スキームで出力キャッシュの変更を表す Content-encoding ヘッダーの一覧を返します。 動的に圧縮された応答をキャッシュには、圧縮のコストは、1 回だけ、リソースの最初の要求中に発生することを意味します。  
+  
+ <xref:System.Web.HttpCachePolicy.VaryByContentEncodings%2A>プロパティで使用、`Accept-Encoding`を動的に圧縮されている別のコンテンツ エンコーディング用のキャッシュされた応答を処理する方法を決定する要求のヘッダー。 Accept-encoding ヘッダーでは、エンコード、クライアントを展開できますを一覧表示します。  
+  
+ これにより、応答内の値によって間接的に変更、コンテンツのエンコードによって異なるキャッシュを設定すると、`Accept-Encoding`ヘッダー。 要求が処理されるときに、`Accept-Encoding`ヘッダーがチェックされ、最初の許容可能なエンコーディング識別される、次の操作のいずれかを実行するために使用します。  
+  
+-   一致するエンコードが見つかった場合、<xref:System.Web.HttpCachePolicy.VaryByContentEncodings%2A>リストとキャッシュされた応答が存在すると、キャッシュされた応答が送信されます。  
+  
+-   一致するエンコードが見つかった場合、<xref:System.Web.HttpCachePolicy.VaryByContentEncodings%2A>のリストは、キャッシュされた応答が存在しないか、応答が生成され、キャッシュに挿入します。  
+  
+-   内で一致するエンコードが見つからない場合、 <xref:System.Web.HttpCachePolicy.VaryByContentEncodings%2A> id 応答とも呼びますエンコードされていない応答の一覧で、キャッシュを検索します。 エンコードされていない応答が見つかった場合は送信されます。 それ以外の場合、新しいエンコードされていない応答が生成される、送信されると、およびキャッシュに格納されています。  
+  
+ 詳細については、<xref:System.Web.HttpCachePolicy.VaryByContentEncodings%2A>プロパティを"RFC 2616:: ハイパー テキスト転送プロトコル--http/1.1、"で使用できるを参照してください、 [World Wide Web コンソーシアム (W3C) の Web サイト](http://go.microsoft.com/fwlink/?linkid=37125)です。 コンテンツ エンコーディングに関する情報は、14「Header Field Definitions」のセクションで、  
+  
+ 設定することができます、<xref:System.Web.HttpCachePolicy.VaryByContentEncodings%2A>プロパティを使用して、`VaryByContentEncodings`ディレクティブの属性です。 キャッシュ プロファイルは、Web.config ファイル内の要素を追加することもできます。  
+  
+ <xref:System.Web.HttpCachePolicy.VaryByContentEncodings%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例では、ページ出力キャッシュから提供されるを動的に圧縮された応答を有効にする方法を示します。 許容されるエンコード"gzip"を使用して設定されている、`VaryByContentEncodings`ディレクティブの属性です。 ページをホストしている Web サーバーが動的な圧縮を有効になっているを持たない場合、出力キャッシュには、指定されたコンテンツのエンコードに基づいているキャッシュされた応答はありません。  
+  
+ [!code-aspx-csharp[System.Web.HttpCachePolicy.VaryByContentEncodings#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpCachePolicy.VaryByContentEncodings/CS/default.aspx#1)]
+ [!code-aspx-vb[System.Web.HttpCachePolicy.VaryByContentEncodings#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpCachePolicy.VaryByContentEncodings/VB/default.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VaryByHeaders">
+      <MemberSignature Language="C#" Value="public System.Web.HttpCacheVaryByHeaders VaryByHeaders { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpCacheVaryByHeaders VaryByHeaders" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpCachePolicy.VaryByHeaders" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpCacheVaryByHeaders</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュ出力の変更に使用されるすべての HTTP ヘッダーの一覧を取得します。</summary>
+        <value><see cref="T:System.Web.HttpCacheVaryByHeaders" />キャッシュされた応答を選択するために使用する HTTP ヘッダーを指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キャッシュされたアイテムでは、異なるヘッダーが複数がある場合、要求されたドキュメントの異なるバージョンは使用可能な HTTP ヘッダーの種類ごとにキャッシュからです。  
+  
+ <xref:System.Web.HttpCachePolicy.VaryByHeaders%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VaryByParams">
+      <MemberSignature Language="C#" Value="public System.Web.HttpCacheVaryByParams VaryByParams { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpCacheVaryByParams VaryByParams" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpCachePolicy.VaryByParams" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpCacheVaryByParams</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Http 受信したパラメーターの一覧を取得<see langword="GET" />または HTTP<see langword="POST" />キャッシュに影響します。</summary>
+        <value><see cref="T:System.Web.HttpCacheVaryByParams" />キャッシュされた応答を選択するために使用するキャッシュ制御ヘッダーを指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各名前付きパラメーターにキャッシュから、要求されたドキュメントの異なるバージョンが利用可能な<xref:System.Web.HttpCachePolicy.VaryByParams%2A>コレクション。  
+  
+ <xref:System.Web.HttpCachePolicy.VaryByParams%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

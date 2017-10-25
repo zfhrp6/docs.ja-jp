@@ -1,0 +1,1872 @@
+<Type Name="PropertyInfo" FullName="System.Reflection.PropertyInfo">
+  <TypeSignature Language="C#" Value="public abstract class PropertyInfo : System.Reflection.MemberInfo, System.Runtime.InteropServices._PropertyInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit PropertyInfo extends System.Reflection.MemberInfo implements class System.Runtime.InteropServices._PropertyInfo" />
+  <TypeSignature Language="DocId" Value="T:System.Reflection.PropertyInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Reflection</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Reflection.MemberInfo</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.InteropServices._PropertyInfo</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.None)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComDefaultInterface(typeof(System.Runtime.InteropServices._PropertyInfo))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プロパティの属性を取得し、プロパティのメタデータにアクセスできるようにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティは、論理的にフィールドと同じです。 プロパティが値を持つは通常、オブジェクトの状態の名前付き部分`get`と`set`アクセサー。 プロパティがあります読み取り専用、後者セット ルーチンがサポートされていません。  
+  
+> [!NOTE]
+>  プロパティがあるかどうかを判断する`static`、取得する必要があります、<xref:System.Reflection.MethodInfo>の`get`または`set`アクセサーを呼び出すことによって、<xref:System.Reflection.PropertyInfo.GetGetMethod%2A>または<xref:System.Reflection.PropertyInfo.GetSetMethod%2A>メソッドを調べると、<xref:System.Reflection.MethodBase.IsStatic%2A>プロパティ。  
+  
+ このクラスのいくつかのメソッドがあると想定、`get`アクセサーおよび`set`プロパティのアクセサー メソッドに特定の形式があります。 署名、`get`と`set`メソッドは、次の規則に一致する必要があります。  
+  
+-   戻り値の型、`get`メソッドおよびの最後の引数、`set`メソッドは、同一である必要があります。 これは、プロパティの型です。  
+  
+-   `get`と`set`メソッドに同じ数、種類、およびインデックスの順序が必要です。  
+  
+ この形式に従わない場合の動作、`GetValue`と`SetValue`メソッドが定義されていません。  
+  
+ 呼び出す<xref:System.Reflection.ICustomAttributeProvider.GetCustomAttributes%2A?displayProperty=nameWithType>で`PropertyInfo`ときに、`inherit`のパラメーター`GetCustomAttributes`は`true`型階層を移動できません。 使用して<xref:System.Attribute?displayProperty=nameWithType>をカスタム属性を継承します。  
+  
+   
+  
+## Examples  
+ この例では、さまざまなリフレクション クラスを使用してアセンブリに含まれるメタデータを分析する方法を示します。  
+  
+> [!NOTE]
+>  この例には、コマンド プロンプトでは、テキスト ファイルに次のようにリダイレクトする、データの約 55,000 行が生成されます: **example.exe > が**  
+  
+ [!code-cpp[Reflection#1](~/samples/snippets/cpp/VS_Snippets_CLR/Reflection/CPP/reflection.cpp#1)]
+ [!code-csharp[Reflection#1](~/samples/snippets/csharp/VS_Snippets_CLR/Reflection/CS/Reflection.cs#1)]
+ [!code-vb[Reflection#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Reflection/VB/Reflection.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 部分信頼コードでこのクラスは継承できません。</permission>
+    <threadsafe>この型はスレッド セーフです。</threadsafe>
+    <block subset="none" type="overrides">
+      <para>継承する場合<see cref="T:System.Reflection.PropertyInfo" />、次のメンバーをオーバーライドする必要があります: <see cref="M:System.Reflection.PropertyInfo.GetValue(System.Object,System.Object[])" />、 <see cref="M:System.Reflection.PropertyInfo.SetValue(System.Object,System.Object,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Globalization.CultureInfo)" />、 <see cref="M:System.Reflection.PropertyInfo.GetAccessors(System.Boolean)" />、 <see cref="M:System.Reflection.PropertyInfo.GetGetMethod(System.Boolean)" />、 <see cref="M:System.Reflection.PropertyInfo.GetSetMethod(System.Boolean)" />、および<see cref="M:System.Reflection.PropertyInfo.GetIndexParameters" />です。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected PropertyInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.PropertyInfo.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Reflection.PropertyInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Attributes">
+      <MemberSignature Language="C#" Value="public abstract System.Reflection.PropertyAttributes Attributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Reflection.PropertyAttributes Attributes" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.PropertyInfo.Attributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.PropertyAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティの属性を取得します。</summary>
+        <value>このプロパティの属性。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.PropertyInfo.Attributes%2A>プロパティは、これによって表されるプロパティに関連付けられている属性を返します<xref:System.Reflection.PropertyInfo>オブジェクト。  属性は、主に修飾子が; プロパティを作成するときに、コンパイラによって適用これらは、プロパティが既定のプロパティであるかどうかを示して、`SpecialName`プロパティというようにします。 なお、ほぼすべてのプロパティの値、.NET Framework クラス ライブラリの種類で検出された、<xref:System.Reflection.PropertyInfo.Attributes%2A>プロパティは<xref:System.Reflection.PropertyAttributes?displayProperty=nameWithType>します。  
+  
+> [!TIP]
+>  ほとんどの場合、おそらくするプロパティに関連付けられているカスタム属性を取得します。 これを行うには、値の取得、<xref:System.Reflection.MemberInfo.CustomAttributes%2A>プロパティ、またはのいずれかのオーバー ロードの呼び出し、<xref:System.Reflection.MemberInfo.GetCustomAttributes%2A>メソッドです。  
+  
+ 取得する、<xref:System.Reflection.PropertyInfo.Attributes%2A>プロパティ。  
+  
+1.  取得、<xref:System.Type>プロパティが属する型を表すオブジェクト。  
+  
+2.  取得、<xref:System.Reflection.PropertyInfo>オブジェクトのオーバー ロードを呼び出すことによって、<xref:System.Type.GetProperty%2A?displayProperty=nameWithType>メソッドです。  
+  
+3.  プロパティの属性を取得、<xref:System.Reflection.PropertyInfo.Attributes%2A>プロパティです。  
+  
+ リフレクションを使用して動的に作成された型のプロパティの属性を定義することができますのオーバー ロードを呼び出すことによって生成、<xref:System.Reflection.Emit.TypeBuilder.DefineProperty%2A>メソッドの値を渡すと、`attributes`引数。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRead">
+      <MemberSignature Language="C#" Value="public abstract bool CanRead { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRead" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.PropertyInfo.CanRead" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティを読み取ることができるかどうかを示す値を取得します。</summary>
+        <value>
+          このプロパティを読み取ることができる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティがない場合、`get`アクセサーが読み取ることができません。  
+  
+ 取得する、`CanRead`プロパティ、クラスをまず取得`Type`です。 `Type`、取得、`PropertyInfo`です。 `PropertyInfo`、取得、`CanRead`値。  
+  
+   
+  
+## Examples  
+ 次の例では、2 つのプロパティを定義します。 最初のプロパティが読み取り可能な`CanRead`プロパティは`true`します。 2 番目のプロパティを読み取ることができません (get アクセサーがない、)、および`CanRead`プロパティは`false`します。  
+  
+ [!code-cpp[Classic PropertyInfo.CanRead Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic PropertyInfo.CanRead Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic PropertyInfo.CanRead Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic PropertyInfo.CanRead Example/CS/source.cs#1)]
+ [!code-vb[Classic PropertyInfo.CanRead Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic PropertyInfo.CanRead Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanWrite">
+      <MemberSignature Language="C#" Value="public abstract bool CanWrite { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanWrite" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.PropertyInfo.CanWrite" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティに書き込むことができるかどうかを示す値を取得します。</summary>
+        <value>
+          このプロパティに書き込むことができる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.PropertyInfo.CanWrite%2A>返します`true`プロパティがある場合、`set`アクセサーが場合でも、アクセサー `private`、 `internal` (または`Friend`Visual Basic で)、または`protected`です。   プロパティがない場合、 `set` 、アクセサー メソッドを返します`false`です。  
+  
+ 値を取得する、<xref:System.Reflection.PropertyInfo.CanWrite%2A>プロパティ。  
+  
+1.  取得、<xref:System.Type>プロパティを含む型のオブジェクト。  
+  
+2.  呼び出す、<xref:System.Type.GetProperty%2A?displayProperty=nameWithType>を取得する、<xref:System.Reflection.PropertyInfo>プロパティを表すオブジェクト。  
+  
+3.  値を取得、<xref:System.Reflection.PropertyInfo.CanWrite%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、2 つのプロパティを定義します。 最初のプロパティが書き込み可能な`CanWrite`プロパティは`true`します。 2 番目のプロパティが書き込み不可 (がありません`set`アクセサー)、および`CanWrite`プロパティは`false`します。  
+  
+ [!code-cpp[Classic PropertyInfo.CanWrite Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic PropertyInfo.CanWrite Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic PropertyInfo.CanWrite Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic PropertyInfo.CanWrite Example/CS/source.cs#1)]
+ [!code-vb[Classic PropertyInfo.CanWrite Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic PropertyInfo.CanWrite Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.PropertyInfo.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">対象のインスタンスと比較する対象のオブジェクト、または <see langword="null" />。</param>
+        <summary>このインスタンスが、指定されたオブジェクトと等価であるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> がこのインスタンスの型および値に等しい場合は <paramref name="obj" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAccessors">
+      <MemberSignature Language="C#" Value="public System.Reflection.MethodInfo[] GetAccessors ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.MethodInfo[] GetAccessors() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.PropertyInfo.GetAccessors" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のインスタンスがリフレクションしているプロパティの、パブリックな <see langword="get" /> アクセサー、および <see langword="set" /> アクセサーをリフレクションする要素で構成される配列を返します。</summary>
+        <returns>現在のインスタンスがリフレクションしているプロパティの、パブリックな <see langword="get" /> アクセサー、および <see langword="set" /> アクセサーをリフレクションする <see cref="T:System.Reflection.MethodInfo" /> オブジェクトの配列。見つからなかった場合、このメソッドは 0 要素の配列を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Reflection.PropertyInfo.GetAccessors%2A>メソッド。  
+  
+1.  取得、<xref:System.Type>クラスを表すオブジェクト。  
+  
+2.  <xref:System.Type>オブジェクトを取得、<xref:System.Reflection.PropertyInfo>オブジェクト。  
+  
+3.  <xref:System.Reflection.PropertyInfo>オブジェクトを呼び出し、<xref:System.Reflection.PropertyInfo.GetAccessors%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例は、パブリック アクセサーを取得、`ClassWithProperty.Caption`それらについての情報のプロパティを表示します。 呼び出しも、<xref:System.Reflection.MethodBase.Invoke%2A>メソッドとプロパティ値を取得する get アクセス操作子のプロパティ値を設定する set アクセス操作子のです。  
+  
+ [!code-csharp[System.Reflection.PropertyInfo.GetAccessors#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.reflection.propertyinfo.getaccessors/cs/source.cs#1)]
+ [!code-vb[System.Reflection.PropertyInfo.GetAccessors#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.reflection.propertyinfo.getaccessors/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAccessors">
+      <MemberSignature Language="C#" Value="public abstract System.Reflection.MethodInfo[] GetAccessors (bool nonPublic);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.MethodInfo[] GetAccessors(bool nonPublic) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.PropertyInfo.GetAccessors(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nonPublic" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="nonPublic">返された配列で非パブリック メソッドが返されるかどうかを示します。 非パブリック メソッドが含まれる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>現在のインスタンスがリフレクションしているプロパティのパブリックな (指定された場合は非パブリックも) <see langword="get" /> アクセサー、および <see langword="set" /> アクセサーをリフレクションする要素で構成される配列を返します。</summary>
+        <returns>現在のインスタンスがリフレクションしているプロパティの、<see langword="get" /> アクセサー、および <see langword="set" /> アクセサーをリフレクションする要素で構成される配列。 場合<paramref name="nonPublic" />は<see langword="true" />、この配列には、パブリックと非パブリック両方が含まれています。<see langword="get" />と<see langword="set" />アクセサー。 <paramref name="nonPublic" /> が <see langword="false" /> の場合、この配列はパブリックな <see langword="get" /> および <see langword="set" /> アクセサーだけを格納します。 指定した表示設定でアクセサーが見つからなかった場合、このメソッドは 0 要素の配列を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Reflection.PropertyInfo.GetAccessors%2A>メソッド。  
+  
+1.  取得、<xref:System.Type>クラスを表すオブジェクト。  
+  
+2.  <xref:System.Type>オブジェクトを取得、<xref:System.Reflection.PropertyInfo>オブジェクト。  
+  
+3.  <xref:System.Reflection.PropertyInfo>オブジェクトを呼び出し、<xref:System.Reflection.PropertyInfo.GetAccessors%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例のアクセサーを取得する、`ClassWithProperty.Caption`それらについての情報のプロパティを表示します。 呼び出しも、<xref:System.Reflection.MethodBase.Invoke%2A>メソッドとプロパティ値を取得する get アクセス操作子のプロパティ値を設定する set アクセス操作子のです。  
+  
+ [!code-csharp[Classic PropertyInfo.GetAccessors1 Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic PropertyInfo.GetAccessors1 Example/CS/source.cs#1)]
+ [!code-vb[Classic PropertyInfo.GetAccessors1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic PropertyInfo.GetAccessors1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetConstantValue">
+      <MemberSignature Language="C#" Value="public virtual object GetConstantValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetConstantValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.PropertyInfo.GetConstantValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンパイラによってプロパティに関連付けられているリテラル値を返します。</summary>
+        <returns>プロパティに関連付けられているリテラル値を格納している <see cref="T:System.Object" />。 リテラル値が、要素値がゼロに設定されているクラス型である場合、戻り値は <see langword="null" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、マネージ コンパイラ、およびコード アナライザーのデザイナーを提供します。  
+  
+> [!NOTE]
+>  実行されるコードが生じるため、リフレクションのみのコンテキストでこのメソッドは使用しないでください。 代わりに、<xref:System.Reflection.PropertyInfo.GetRawConstantValue%2A> メソッドを使用してください。  
+  
+ アンマネージ メタデータは、フィールド、パラメーター、およびプロパティの定数値を格納する定数のテーブルが使用されます。 定数の詳細については、実行時の動作を直接は影響しません。 コンパイラがコンパイル時に、この情報を検査メタデータをインポートするときにします。 使用する場合は、コンパイラは、Microsoft intermediate language (MSIL) ストリームに定数の値が埋め込まれます。 実行時に定数のテーブルへのアクセスに使用できる MSIL 命令はありません。  
+  
+> [!NOTE]
+>  定数値と定数のテーブルの詳細については、ECMA Partition II ドキュメントを参照してください。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">アンマネージ メタデータの定数のテーブルには、現在のプロパティの定数値は含まれていません。</exception>
+        <exception cref="T:System.FormatException">値の型は、共通言語仕様 (CLS) によって許可されているどの型でもありません。 ECMA Partition II 仕様書、「メタデータ」を参照してください。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetGetMethod">
+      <MemberSignature Language="C#" Value="public System.Reflection.MethodInfo GetGetMethod ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.MethodInfo GetGetMethod() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.PropertyInfo.GetGetMethod" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このプロパティのパブリックな <see langword="get" /> アクセサーを返します。</summary>
+        <returns>このプロパティのパブリックな <see langword="MethodInfo" /> アクセサーを表す <see langword="get" /> オブジェクト。<see langword="null" /> アクセサーが非パブリックまたは存在しない場合は <see langword="get" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは抽象の実装を提供する便利なメソッド`GetGetMethod`メソッドを`nonPublic`パラメーターに設定`false`です。  
+  
+ 使用する、`GetGetMethod`メソッド、クラスをまず取得`Type`です。 `Type`、取得、<xref:System.Reflection.PropertyInfo>です。 <xref:System.Reflection.PropertyInfo>を使用して、`GetGetMethod`メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetGetMethod">
+      <MemberSignature Language="C#" Value="public abstract System.Reflection.MethodInfo GetGetMethod (bool nonPublic);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.MethodInfo GetGetMethod(bool nonPublic) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.PropertyInfo.GetGetMethod(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nonPublic" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="nonPublic">パブリックでない <see langword="get" /> アクセサーが返されるかどうかを示します。 パブリックでないアクセサーが返される場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>派生クラス内でオーバーライドされた場合に、このプロパティのパブリックまたは非パブリックな <see langword="get" /> アクセサーを返します。</summary>
+        <returns><see langword="MethodInfo" /> が <see langword="get" /> の場合は、このプロパティの <paramref name="nonPublic" /> アクセサーを表す <see langword="true" /> オブジェクト。 <see langword="null" /> が <paramref name="nonPublic" /> で <see langword="false" /> アクセサーが非パブリックの場合、または <see langword="get" /> が <paramref name="nonPublic" /> でも <see langword="true" /> アクセサーが存在しない場合は、<see langword="get" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、 <xref:System.Reflection.MethodInfo> get アクセサーを表すです。  
+  
+ 使用する、`GetGetMethod`メソッド、クラスをまず取得`Type`です。 `Type`、取得、<xref:System.Reflection.PropertyInfo>です。 <xref:System.Reflection.PropertyInfo>を使用して、`GetGetMethod`メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例は、パブリックまたはパブリックでない`get`指定したプロパティ アクセサー。  
+  
+ [!code-cpp[Classic PropertyInfo.GetGetMethod1 Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic PropertyInfo.GetGetMethod1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic PropertyInfo.GetGetMethod1 Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic PropertyInfo.GetGetMethod1 Example/CS/source.cs#1)]
+ [!code-vb[Classic PropertyInfo.GetGetMethod1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic PropertyInfo.GetGetMethod1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">要求されたメソッドはパブリックではないメソッドのため、呼び出し元にはこのパブリックでないメソッドに反映する <see cref="T:System.Security.Permissions.ReflectionPermission" /> がありません。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.PropertyInfo.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIndexParameters">
+      <MemberSignature Language="C#" Value="public abstract System.Reflection.ParameterInfo[] GetIndexParameters ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.ParameterInfo[] GetIndexParameters() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.PropertyInfo.GetIndexParameters" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.ParameterInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスによってオーバーライドされた場合に、プロパティのすべてのインデックス パラメーターの配列を返します。</summary>
+        <returns>インデックスのパラメーターを格納している <see langword="ParameterInfo" /> 型の配列。 プロパティがインデックス付けされていない場合、配列の要素はゼロ (0) です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される配列からすべての必須のパラメーター情報を抽出します。  
+  
+ 使用する、`GetIndexParameters`メソッド、クラスをまず取得`Type`です。 `Type`、取得、`PropertyInfo`です。 `PropertyInfo`を使用して、`GetIndexParameters`メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、指定したプロパティのインデックス パラメーターを表示します。  
+  
+ [!code-cpp[Classic PropertyInfo.GetIndexParameters Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic PropertyInfo.GetIndexParameters Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic PropertyInfo.GetIndexParameters Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic PropertyInfo.GetIndexParameters Example/CS/source.cs#1)]
+ [!code-vb[Classic PropertyInfo.GetIndexParameters Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic PropertyInfo.GetIndexParameters Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMethod">
+      <MemberSignature Language="C#" Value="public virtual System.Reflection.MethodInfo GetMethod { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.MethodInfo GetMethod" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.PropertyInfo.GetMethod" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティの <see langword="get" /> アクセサーを取得します。</summary>
+        <value>このプロパティの <see langword="get" /> アクセサー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOptionalCustomModifiers">
+      <MemberSignature Language="C#" Value="public virtual Type[] GetOptionalCustomModifiers ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Type[] GetOptionalCustomModifiers() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.PropertyInfo.GetOptionalCustomModifiers" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プロパティのオプションのカスタム修飾子を表す型の配列を返します。</summary>
+        <returns><see cref="T:System.Type" /> や <see cref="T:System.Runtime.CompilerServices.IsConst" /> など、現在のプロパティのオプションのカスタム修飾子を識別する <see cref="T:System.Runtime.CompilerServices.IsImplicitlyDereferenced" /> オブジェクトの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.PropertyInfo.GetOptionalCustomModifiers%2A>と<xref:System.Reflection.PropertyInfo.GetRequiredCustomModifiers%2A>マネージ コンパイラのデザイナーのメソッドが用意されています。 カスタム修飾子の詳細については、次を参照してください。<xref:System.Runtime.CompilerServices.IsBoxed>および関連クラス、<xref:System.Runtime.CompilerServices>名前空間および ECMA Partition II ドキュメント内のメタデータ指定します。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRawConstantValue">
+      <MemberSignature Language="C#" Value="public virtual object GetRawConstantValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetRawConstantValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.PropertyInfo.GetRawConstantValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンパイラによってプロパティに関連付けられているリテラル値を返します。</summary>
+        <returns>プロパティに関連付けられているリテラル値を格納している <see cref="T:System.Object" />。 リテラル値が、要素値がゼロに設定されているクラス型である場合、戻り値は <see langword="null" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、マネージ コンパイラ、およびコード アナライザーのデザイナーを提供します。  
+  
+ このメソッドは、実行コンテキストおよび、リフレクションのみのコンテキストの両方で使用できます。  
+  
+ アンマネージ メタデータは、フィールド、パラメーター、およびプロパティの定数値を格納する定数のテーブルが使用されます。 定数の詳細については、実行時の動作を直接は影響しません。 コンパイラがコンパイル時に、この情報を検査メタデータをインポートするときにします。 使用する場合は、コンパイラは、Microsoft intermediate language (MSIL) ストリームに定数の値が埋め込まれます。 実行時に定数のテーブルへのアクセスに使用できる MSIL 命令はありません。  
+  
+> [!NOTE]
+>  定数値と定数のテーブルの詳細については、ECMA Partition II ドキュメントを参照してください。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">アンマネージ メタデータの定数のテーブルには、現在のプロパティの定数値は含まれていません。</exception>
+        <exception cref="T:System.FormatException">値の型は、共通言語仕様 (CLS) によって許可されているどの型でもありません。 ECMA Partition II 仕様「Metadata Logical Format: Other Structures」の「Element Types used in Signatures」を参照してください。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRequiredCustomModifiers">
+      <MemberSignature Language="C#" Value="public virtual Type[] GetRequiredCustomModifiers ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Type[] GetRequiredCustomModifiers() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.PropertyInfo.GetRequiredCustomModifiers" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プロパティの必須のカスタム修飾子を表す型の配列を返します。</summary>
+        <returns><see cref="T:System.Type" /> や <see cref="T:System.Runtime.CompilerServices.IsConst" /> など、現在のプロパティの必須のカスタム修飾子を識別する <see cref="T:System.Runtime.CompilerServices.IsImplicitlyDereferenced" /> オブジェクトの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.PropertyInfo.GetOptionalCustomModifiers%2A>と<xref:System.Reflection.PropertyInfo.GetRequiredCustomModifiers%2A>マネージ コンパイラのデザイナーのメソッドが用意されています。 カスタム修飾子の詳細については、次を参照してください。<xref:System.Runtime.CompilerServices.IsBoxed>および関連クラス、<xref:System.Runtime.CompilerServices>名前空間および ECMA Partition II ドキュメント内のメタデータ指定します。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSetMethod">
+      <MemberSignature Language="C#" Value="public System.Reflection.MethodInfo GetSetMethod ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.MethodInfo GetSetMethod() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.PropertyInfo.GetSetMethod" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このプロパティのパブリックな <see langword="set" /> アクセサーを返します。</summary>
+        <returns><see langword="MethodInfo" /> アクセサーがパブリックな場合は、このプロパティの <see langword="Set" /> メソッドを表す <see langword="set" /> オブジェクト。<see langword="null" /> アクセサーがパブリックではない場合は <see langword="set" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは抽象の実装を提供する便利なメソッド`GetSetMethod`メソッドを`nonPublic`パラメーターに設定`false`です。  
+  
+ 使用する、`GetSetMethod`メソッド、クラスをまず取得`Type`です。 `Type`、取得、<xref:System.Reflection.PropertyInfo>です。 `PropertyInfo`を使用して、`GetSetMethod`メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSetMethod">
+      <MemberSignature Language="C#" Value="public abstract System.Reflection.MethodInfo GetSetMethod (bool nonPublic);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.MethodInfo GetSetMethod(bool nonPublic) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.PropertyInfo.GetSetMethod(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nonPublic" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="nonPublic">パブリックでないアクセサーの場合に、アクセサーを返すかどうかを示します。 パブリックでないアクセサーが返される場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>派生クラス内でオーバーライドされた場合に、このプロパティの <see langword="set" /> アクセサーを返します。</summary>
+        <returns>このプロパティの<see langword="Set" />メソッド、または<see langword="null" />、次の表に示すようにします。  
+  
+ <list type="table"><listheader><term>値  
+  
+ </term><description>条件  
+  
+ </description></listheader><item><term><see langword="Set" />このプロパティのメソッドです。  
+  
+ </term><description><see langword="set" />アクセサーがパブリック。  
+  
+ または  
+  
+ <paramref name="nonPublic" /> が <see langword="true" /> で、<see langword="set" /> アクセサーが非パブリック。  
+  
+ </description></item><item><term><see langword="null" /></term><description><paramref name="nonPublic" /><see langword="true" />、そのプロパティが読み取り専用です。  
+  
+ または  
+  
+ <paramref name="nonPublic" /> が <see langword="false" /> で、<see langword="set" /> アクセサーが非パブリック。  
+  
+ または  
+  
+ <see langword="set" /> アクセサーがない。  
+  
+ </description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、`GetSetMethod`メソッド、クラスをまず取得`Type`です。 `Type`、取得、<xref:System.Reflection.PropertyInfo>です。 `PropertyInfo`を使用して、`GetSetMethod`メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を表示、`set`指定したプロパティ アクセサー。  
+  
+ [!code-cpp[Classic PropertyInfo.GetSetMethod1 Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic PropertyInfo.GetSetMethod1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic PropertyInfo.GetSetMethod1 Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic PropertyInfo.GetSetMethod1 Example/CS/source.cs#1)]
+ [!code-vb[Classic PropertyInfo.GetSetMethod1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic PropertyInfo.GetSetMethod1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">要求されたメソッドはパブリックではないメソッドのため、呼び出し元にはこのパブリックでないメソッドに反映する <see cref="T:System.Security.Permissions.ReflectionPermission" /> がありません。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="public object GetValue (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetValue(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.PropertyInfo.GetValue(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">プロパティ値が返されるオブジェクト。</param>
+        <summary>指定されたオブジェクトのプロパティの値を返します。</summary>
+        <returns>指定されたオブジェクトのプロパティの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Reflection.PropertyInfo.GetValue%28System.Object%29>インデックスのないプロパティの値を取得するオーバー ロード。 インデックス付きプロパティの値を取得しようとする場合、メソッドをスロー、<xref:System.Reflection.TargetParameterCountException>例外。 呼び出しではなくまたはプロパティのインデックスを作成するかどうかを指定できます、<xref:System.Reflection.PropertyInfo.GetIndexParameters%2A>メソッドです。 場合、返されるの長さ<xref:System.Reflection.ParameterInfo>配列が 0 のプロパティがインデックス付けされていません場合、。  
+  
+ これは抽象の実装を提供する便利なメソッド<xref:System.Reflection.PropertyInfo.GetValue%28System.Object%2CSystem.Reflection.BindingFlags%2CSystem.Reflection.Binder%2CSystem.Object%5B%5D%2CSystem.Globalization.CultureInfo%29>メソッドを<xref:System.Reflection.BindingFlags>パラメーターに設定<xref:System.Reflection.BindingFlags?displayProperty=nameWithType>、<xref:System.Reflection.Binder>に設定`null`、オブジェクト配列のインデックス値が設定`null`、および<xref:System.Globalization.CultureInfo>に設定`null`です。  
+  
+   
+  
+## Examples  
+ 次の例では定義、`Planet`を 2 つのプロパティを持つクラス: `Name`、地球; の名前と`Distance`、地球からの距離。 例では、インスタンス化、`Planet`惑星 Jupiter を表し、それを渡しますオブジェクト、`GetPropertyValues`を使用してプロパティに関する情報を表示するメソッド、<xref:System.Reflection.PropertyInfo.GetValue%2A>それぞれの値を取得するメソッド`Planet`プロパティです。  
+  
+ [!code-csharp[System.Reflection.PropertyInfo.GetValue#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.reflection.propertyinfo.getvalue/cs/getvalue1.cs#1)]
+ [!code-vb[System.Reflection.PropertyInfo.GetValue#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.reflection.propertyinfo.getvalue/vb/getvalue1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="public virtual object GetValue (object obj, object[] index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetValue(object obj, object[] index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.PropertyInfo.GetValue(System.Object,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="index" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="obj">プロパティ値が返されるオブジェクト。</param>
+        <param name="index">インデックス付きプロパティのインデックス値 (省略可能)。 インデックス付きプロパティのインデックスは 0 から始まります。 インデックス付きでないプロパティの場合は、この値を <see langword="null" /> にする必要があります。</param>
+        <summary>指定したオブジェクトのプロパティの値を返します。インデックス付きプロパティの場合は、オプションでインデックス値を設定できます。</summary>
+        <returns>指定されたオブジェクトのプロパティの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティは、インデックスを作成するかどうかを判断するのには、使用、<xref:System.Reflection.PropertyInfo.GetIndexParameters%2A>メソッドです。 場合、結果の配列は 0 (ゼロ) の要素では、プロパティのインデックス付けされていません。  
+  
+ これは抽象の実装を提供する便利なメソッド`GetValue`メソッドを`BindingFlags`のパラメーター `Default`、`Binder`に設定`null`、および`CultureInfo`に設定`null`です。  
+  
+ 静的プロパティは、個々 のオブジェクトの種類に属するためにを渡すことによって静的なプロパティを取得`null`オブジェクトの引数として。 たとえば、次のコードを使用して、静的なを取得する`CurrentCulture`プロパティ`CultureInfo`:  
+  
+```  
+PropertyInfo CurCultProp =   
+    (typeof(CultureInfo)).GetProperty("CurrentCulture");   
+Console.WriteLine("CurrCult: " +  
+    CurCultProp.GetValue(null,null));  
+```  
+  
+ 使用する、`GetValue`メソッド、クラスをまず取得`Type`です。 `Type`、取得、`PropertyInfo`です。 `PropertyInfo`を使用して、`GetValue`メソッドです。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメソッドは、呼び出し元が許可されている場合は、非パブリック メンバーをアクセスに使用できます<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグし、非パブリック メンバーの許可セットが、呼び出し元に制限されている場合は、セット、またはそのサブセットを付与します。 (を参照してください[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md))。  
+>   
+>  この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+   
+  
+## Examples  
+ 次の例では、インデックス付きプロパティの値を取得する方法を示します。 <xref:System.String.Chars%2A?displayProperty=nameWithType>プロパティは既定のプロパティ (c# のインデクサー)、<xref:System.String>クラスです。  
+  
+ [!code-csharp[System.Reflection.PropertyInfo.GetValue Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.reflection.PropertyInfo.GetValue Example/CS/source.cs#1)]
+ [!code-vb[System.Reflection.PropertyInfo.GetValue Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.reflection.PropertyInfo.GetValue Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">必要な引数の型が <paramref name="index" /> 配列に含まれていません。  
+  
+ -または-  
+  
+ プロパティの <see langword="get" /> アクセサーが見つかりません。</exception>
+        <exception cref="T:System.Reflection.TargetException">
+          <block subset="none" type="note">
+            <para>  
+ [Windows ストア アプリ用 .NET](http://go.microsoft.com/fwlink/?LinkID=247912)または[ポータブル クラス ライブラリ](~/docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md)、キャッチ<see cref="T:System.Exception" />代わりにします。  
+  
+</para>
+          </block>  
+  
+ オブジェクトがターゲット型と一致しません。あるいは、プロパティはインスタンス プロパティですが <paramref name="obj" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Reflection.TargetParameterCountException"><paramref name="index" /> 内のパラメーターの数が、インデックス付きプロパティが受け取るパラメーターの数と一致していません。</exception>
+        <exception cref="T:System.MethodAccessException">
+          <block subset="none" type="note">
+            <para>  
+ [Windows ストア アプリ用 .NET](http://go.microsoft.com/fwlink/?LinkID=247912)または[ポータブル クラス ライブラリ](~/docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md)、基本クラスの例外をキャッチ<see cref="T:System.MemberAccessException" />、代わりにします。  
+  
+</para>
+          </block>  
+  
+ クラス内のプライベート メソッドまたは保護されたメソッドへの正しくないアクセスが試行されました。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException">プロパティ値を取得しているときにエラーが発生しました。 たとえば、インデックス付きプロパティに対して指定されたインデックス値が範囲外です。 <see cref="P:System.Exception.InnerException" /> プロパティは、エラーの理由を示します。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="public abstract object GetValue (object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, object[] index, System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetValue(object obj, valuetype System.Reflection.BindingFlags invokeAttr, class System.Reflection.Binder binder, object[] index, class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.PropertyInfo.GetValue(System.Object,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="invokeAttr" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="binder" Type="System.Reflection.Binder" />
+        <Parameter Name="index" Type="System.Object[]" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="obj">プロパティ値が返されるオブジェクト。</param>
+        <param name="invokeAttr">呼び出し属性を指定する次の列挙型メンバーのビットごとの組み合わせ: <see langword="InvokeMethod" />、<see langword="CreateInstance" />、<see langword="Static" />、<see langword="GetField" />、<see langword="SetField" />、<see langword="GetProperty" /> と <see langword="SetProperty" />。 適切な呼び出し属性を指定する必要があります。 たとえば、静的メンバーを呼び出すには、<see langword="Static" /> フラグを設定します。</param>
+        <param name="binder">バインディング、引数型の強制変換、メンバーの呼び出し、およびリフレクションを使用した <see cref="T:System.Reflection.MemberInfo" /> オブジェクトの取得を有効にするオブジェクト。 場合<c>バインダー</c>は<see langword="null" />既定のバインダーが使用されます。</param>
+        <param name="index">インデックス付きプロパティのインデックス値 (省略可能)。 インデックス付きでないプロパティの場合は、この値を <see langword="null" /> にする必要があります。</param>
+        <param name="culture">リソースのローカライズ対象のカルチャ。 リソースがこのカルチャ用にローカライズされていない場合は、一致する対象を検索するために <see cref="P:System.Globalization.CultureInfo.Parent" /> プロパティが連続して呼び出されます。 この値が <see langword="null" /> の場合は、<see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> プロパティからカルチャ固有の情報が習得されます。</param>
+        <summary>派生クラスでオーバーライドされると、指定したバインディング、インデックス、およびカルチャ固有の情報を含む指定されたオブジェクトのプロパティ値を返します。</summary>
+        <returns>指定されたオブジェクトのプロパティの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティは、インデックスを作成するかどうかを判断するのには、使用、<xref:System.Reflection.PropertyInfo.GetIndexParameters%2A>メソッドです。 場合、結果の配列は 0 (ゼロ) の要素では、プロパティのインデックス付けされていません。  
+  
+ 静的プロパティは、個々 のオブジェクトの種類に属するためにを渡すことによって静的なプロパティを取得`null`オブジェクトの引数として。 たとえば、次のコードを使用して、静的なを取得する`CurrentCulture`プロパティ`CultureInfo`:  
+  
+```  
+PropertyInfo CurCultProp =   
+       (typeof(CultureInfo)).GetProperty("CurrentCulture");   
+Console.WriteLine("CurrCult: " +  
+       CurCultProp.GetValue(null,null));  
+```  
+  
+ 使用する、`GetValue`メソッド、クラスをまず取得`Type`です。 `Type`、取得、`PropertyInfo`です。 `PropertyInfo`を使用して、`GetValue`メソッドです。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメソッドは、呼び出し元が許可されている場合は、非パブリック メンバーをアクセスに使用できます<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグし、非パブリック メンバーの許可セットが、呼び出し元に制限されている場合は、セット、またはそのサブセットを付与します。 (を参照してください[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md))。  
+>   
+>  この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">必要な引数の型が <paramref name="index" /> 配列に含まれていません。  
+  
+ -または-  
+  
+ プロパティの <see langword="get" /> アクセサーが見つかりません。</exception>
+        <exception cref="T:System.Reflection.TargetException">オブジェクトがターゲット型と一致しません。あるいは、プロパティはインスタンス プロパティですが <paramref name="obj" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Reflection.TargetParameterCountException"><paramref name="index" /> 内のパラメーターの数が、インデックス付きプロパティが受け取るパラメーターの数と一致していません。</exception>
+        <exception cref="T:System.MethodAccessException">クラス内のプライベート メソッドまたは保護されたメソッドへの正しくないアクセスが試行されました。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException">プロパティ値を取得しているときにエラーが発生しました。 たとえば、インデックス付きプロパティに対して指定されたインデックス値が範囲外です。 <see cref="P:System.Exception.InnerException" /> プロパティは、エラーの理由を示します。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSpecialName">
+      <MemberSignature Language="C#" Value="public bool IsSpecialName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSpecialName" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.PropertyInfo.IsSpecialName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特別な名前のプロパティかどうかを示す値を取得します。</summary>
+        <value>
+          このプロパティに特別な名前が付けられている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `SpecialName`ビット フラグ (プロパティ アクセサー メソッドのオーバー ロードする演算子など) の一部のコンパイラで特別な方法で処理されるメンバーに設定します。  
+  
+ 取得する、`IsSpecialName`プロパティ、クラスをまず取得`Type`です。 `Type`、取得、`PropertyInfo`です。 `PropertyInfo`、取得、`IsSpecialName`値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MemberType">
+      <MemberSignature Language="C#" Value="public override System.Reflection.MemberTypes MemberType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Reflection.MemberTypes MemberType" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.PropertyInfo.MemberType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MemberTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーがプロパティであることを示す <see cref="T:System.Reflection.MemberTypes" /> 値を取得します。</summary>
+        <value>このメンバーがプロパティであることを示す <see cref="T:System.Reflection.MemberTypes" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティのオーバーライド<xref:System.Reflection.MemberInfo.MemberType%2A>です。 セットを確認すると、そのため、<xref:System.Reflection.MemberInfo>オブジェクト-によって返される配列など、 <xref:System.Type.GetMembers%2A> —、<xref:System.Reflection.MemberInfo.MemberType%2A>プロパティから返される<xref:System.Reflection.MemberTypes.Property>プロパティが場合にのみ特定のメンバーです。  
+  
+ `MemberType`派生クラスは、`MemberInfo`し、これは、メンバーの種類を指定します。 メンバーの種類は、コンス トラクター、プロパティ、フィールド、およびメソッドです。 これはなので、`PropertyInfo`プロパティ、返された型はプロパティです。  
+  
+ 取得する、`MemberType`プロパティ、クラスをまず取得`Type`です。 `Type`、取得、`PropertyInfo`です。 `PropertyInfo`、取得、`MemberType`値。  
+  
+   
+  
+## Examples  
+ 次の例では、指定されたメンバーの種類が表示されます。  
+  
+ [!code-cpp[Classic PropertyInfo.MemberType Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic PropertyInfo.MemberType Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic PropertyInfo.MemberType Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic PropertyInfo.MemberType Example/CS/source.cs#1)]
+ [!code-vb[Classic PropertyInfo.MemberType Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic PropertyInfo.MemberType Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Reflection.PropertyInfo left, System.Reflection.PropertyInfo right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(class System.Reflection.PropertyInfo left, class System.Reflection.PropertyInfo right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.PropertyInfo.op_Equality(System.Reflection.PropertyInfo,System.Reflection.PropertyInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Reflection.PropertyInfo" />
+        <Parameter Name="right" Type="System.Reflection.PropertyInfo" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較する最初のオブジェクト。</param>
+        <param name="right">比較する 2 番目のオブジェクト。</param>
+        <summary>2 つの <see cref="T:System.Reflection.PropertyInfo" /> オブジェクトが等しいかどうかを示します。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="left" /> に等しい場合は <paramref name="right" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Reflection.PropertyInfo left, System.Reflection.PropertyInfo right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(class System.Reflection.PropertyInfo left, class System.Reflection.PropertyInfo right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.PropertyInfo.op_Inequality(System.Reflection.PropertyInfo,System.Reflection.PropertyInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Reflection.PropertyInfo" />
+        <Parameter Name="right" Type="System.Reflection.PropertyInfo" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較する最初のオブジェクト。</param>
+        <param name="right">比較する 2 番目のオブジェクト。</param>
+        <summary>2 つの <see cref="T:System.Reflection.PropertyInfo" /> オブジェクトが等しくないかどうかを示します。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="left" /> と等しくない場合は <paramref name="right" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyType">
+      <MemberSignature Language="C#" Value="public abstract Type PropertyType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type PropertyType" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.PropertyInfo.PropertyType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティの型を取得します。</summary>
+        <value>このプロパティの型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 特定のプロパティの型を特定するのには、次の操作を行います。  
+  
+1.  取得、<xref:System.Type>プロパティを含む型 (クラスまたは構造体) を表すオブジェクト。 オブジェクト (型のインスタンス) を使用している場合は、呼び出すその<xref:System.Object.GetType%2A>メソッドです。 それ以外の場合 (C#) 演算子を使用するまたは、Visual Basic の演算子の例とを示しています。  
+  
+2.  取得、<xref:System.Reflection.PropertyInfo>に関心があるプロパティを表すオブジェクト。 すべてのプロパティの配列を取得することによってこれを行う、<xref:System.Type.GetProperties%2A?displayProperty=nameWithType>メソッドとするか、配列内の要素を反復処理し、取得できる、<xref:System.Reflection.PropertyInfo>を呼び出すことによって直接プロパティを表すオブジェクト、<xref:System.Type.GetProperty%2A?displayProperty=nameWithType>メソッドとプロパティ名を指定します。  
+  
+3.  値を取得、<xref:System.Reflection.PropertyInfo.PropertyType%2A>プロパティから、<xref:System.Reflection.PropertyInfo>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例では定義、 `Employee` 5 つのプロパティを持つクラスであります。 これは、用途の配列を取得し、<xref:System.Reflection.PropertyInfo>オブジェクトをこれらのプロパティを表し、それぞれの種類と名前が表示されます。  
+  
+ [!code-csharp[System.Reflection.PropertyInfo.PropertyType#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.reflection.propertyinfo.propertytype/cs/propertytype1.cs#1)]
+ [!code-vb[System.Reflection.PropertyInfo.PropertyType#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.reflection.propertyinfo.propertytype/vb/propertytype1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetMethod">
+      <MemberSignature Language="C#" Value="public virtual System.Reflection.MethodInfo SetMethod { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.MethodInfo SetMethod" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.PropertyInfo.SetMethod" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティの <see langword="set" /> アクセサーを取得します。</summary>
+        <value><see langword="set" />このプロパティのアクセサーまたは<see langword="null" />プロパティが読み取り専用の場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値を取得、<xref:System.Reflection.PropertyInfo.SetMethod%2A>プロパティは呼び出すことと同じ、<xref:System.Reflection.PropertyInfo.GetSetMethod%28System.Boolean%29>の値を持つメソッド`true`の`nonPublic`引数。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValue">
+      <MemberSignature Language="C#" Value="public void SetValue (object obj, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetValue(object obj, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.PropertyInfo.SetValue(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">プロパティ値が設定されるオブジェクト。</param>
+        <param name="value">変更後のプロパティ値。</param>
+        <summary>指定されたオブジェクトのプロパティの値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.PropertyInfo.SetValue%28System.Object%2CSystem.Object%29>オーバー ロードは、非インデックス付きプロパティの値を設定します。 プロパティは、インデックスを作成するかどうかを判断するのには、呼び出し、<xref:System.Reflection.PropertyInfo.GetIndexParameters%2A>メソッドです。 場合、結果の配列は 0 (ゼロ) の要素では、プロパティのインデックス付けされていません。 インデックス付きプロパティの値を設定するには、呼び出し、<xref:System.Reflection.PropertyInfo.SetValue%28System.Object%2CSystem.Object%2CSystem.Object%5B%5D%29>オーバー ロードします。  
+  
+ 場合は、プロパティをこの型<xref:System.Reflection.PropertyInfo>オブジェクトが値型と`value`は`null`プロパティは、その型の既定値に設定されます。  
+  
+ これは、抽象のランタイムの実装を呼び出すメソッドは<xref:System.Reflection.PropertyInfo.SetValue%28System.Object%2CSystem.Object%2CSystem.Reflection.BindingFlags%2CSystem.Reflection.Binder%2CSystem.Object%5B%5D%2CSystem.Globalization.CultureInfo%29>メソッドを指定する<xref:System.Reflection.BindingFlags?displayProperty=nameWithType>の`BindingFlags`パラメーター、`null`の`Binder`、`null`の`Object[]`、および`null`の`CultureInfo`します。  
+  
+ 使用する、<xref:System.Reflection.PropertyInfo.SetValue%2A>メソッドは、最初の get、<xref:System.Type>クラスを表すオブジェクト。 <xref:System.Type>、取得、<xref:System.Reflection.PropertyInfo>オブジェクト。 <xref:System.Reflection.PropertyInfo>オブジェクトを呼び出し、<xref:System.Reflection.PropertyInfo.SetValue%2A>メソッドです。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメソッドは、呼び出し元が許可されている場合は、非パブリック メンバーをアクセスに使用できます<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグし、非パブリック メンバーの許可セットが、呼び出し元に制限されている場合は、セット、またはそのサブセットを付与します。 (を参照してください[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md))。  
+>   
+>  この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+   
+  
+## Examples  
+ 次の例は、という名前のクラスを宣言`Example`いずれかで`static`(`Shared` Visual Basic で) と 1 つのインスタンスのプロパティです。 この例では、<xref:System.Reflection.PropertyInfo.SetValue%28System.Object%2CSystem.Object%29>を元のプロパティを変更するメソッドが値および元および最終的な値が表示されます。  
+  
+ [!code-cpp[PropertyInfo.SetValue#2](~/samples/snippets/cpp/VS_Snippets_CLR/PropertyInfo.SetValue/cpp/example2.cpp#2)]
+ [!code-csharp[PropertyInfo.SetValue#2](~/samples/snippets/csharp/VS_Snippets_CLR/PropertyInfo.SetValue/cs/example2.cs#2)]
+ [!code-vb[PropertyInfo.SetValue#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/PropertyInfo.SetValue/vb/example2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">プロパティの <see langword="set" /> アクセサーが見つかりません。  
+  
+ -または-  
+  
+ <paramref name="value" /> を <see cref="P:System.Reflection.PropertyInfo.PropertyType" /> の型に変換することはできません。</exception>
+        <exception cref="T:System.Reflection.TargetException">
+          <block subset="none" type="note">
+            <para>  
+ [Windows ストア アプリ用 .NET](http://go.microsoft.com/fwlink/?LinkID=247912)または[ポータブル クラス ライブラリ](~/docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md)、キャッチ<see cref="T:System.Exception" />代わりにします。  
+  
+</para>
+          </block>  
+  
+ <paramref name="obj" /> の型がターゲット型と一致しないか、またはプロパティがインスタンス プロパティですが、<paramref name="obj" /> は <see langword="null" />です。</exception>
+        <exception cref="T:System.MethodAccessException">
+          <block subset="none" type="note">
+            <para>  
+ [Windows ストア アプリ用 .NET](http://go.microsoft.com/fwlink/?LinkID=247912)または[ポータブル クラス ライブラリ](~/docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md)、基本クラスの例外をキャッチ<see cref="T:System.MemberAccessException" />、代わりにします。  
+  
+</para>
+          </block>  
+  
+ クラス内のプライベート メソッドまたは保護されたメソッドへの正しくないアクセスが試行されました。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException">プロパティ値を設定しているときにエラーが発生しました。 <see cref="P:System.Exception.InnerException" /> プロパティは、エラーの理由を示します。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValue">
+      <MemberSignature Language="C#" Value="public virtual void SetValue (object obj, object value, object[] index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetValue(object obj, object value, object[] index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.PropertyInfo.SetValue(System.Object,System.Object,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="index" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="obj">プロパティ値が設定されるオブジェクト。</param>
+        <param name="value">新しいプロパティ値。</param>
+        <param name="index">インデックス付きプロパティのインデックス値 (省略可能)。 インデックス付きでないプロパティの場合は、この値を <see langword="null" /> にする必要があります。</param>
+        <summary>指定したオブジェクトのプロパティの値を設定します。インデックス プロパティの場合は、オプションでインデックス値を設定できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この場合<xref:System.Reflection.PropertyInfo>オブジェクトが値型と`value`は`null`プロパティはその型の既定値に設定されます。  
+  
+ プロパティは、インデックスを作成するかどうかを判断するのには、使用、<xref:System.Reflection.PropertyInfo.GetIndexParameters%2A>メソッドです。 場合、結果の配列は 0 (ゼロ) の要素では、プロパティのインデックス付けされていません。  
+  
+ これは、抽象のランタイムの実装を呼び出すメソッドは<xref:System.Reflection.PropertyInfo.SetValue%28System.Object%2CSystem.Object%2CSystem.Reflection.BindingFlags%2CSystem.Reflection.Binder%2CSystem.Object%5B%5D%2CSystem.Globalization.CultureInfo%29>メソッドを指定する<xref:System.Reflection.BindingFlags?displayProperty=nameWithType>の`BindingFlags`パラメーター、`null`の`Binder`、および`null`の`CultureInfo`します。  
+  
+ 使用する、<xref:System.Reflection.PropertyInfo.SetValue%2A>メソッドは、最初の get、<xref:System.Type>クラスを表すオブジェクト。 <xref:System.Type>、取得、<xref:System.Reflection.PropertyInfo>です。 <xref:System.Reflection.PropertyInfo>を使用して、<xref:System.Reflection.PropertyInfo.SetValue%2A>メソッドです。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメソッドは、呼び出し元が許可されている場合は、非パブリック メンバーをアクセスに使用できます<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグし、非パブリック メンバーの許可セットが、呼び出し元に制限されている場合は、セット、またはそのサブセットを付与します。 (を参照してください[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md))。  
+>   
+>  この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+   
+  
+## Examples  
+ 次の例は、という名前のクラスを定義`TestClass`という名前の読み取り/書き込みプロパティを持つ`Caption`します。 既定値を表示、`Caption`プロパティを呼び出して、<xref:System.Reflection.PropertyInfo.SetValue%2A>メソッド、プロパティの値を変更し、結果を表示します。  
+  
+ [!code-cpp[Classic PropertyInfo.SetValue1 Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic PropertyInfo.SetValue1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic PropertyInfo.SetValue1 Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic PropertyInfo.SetValue1 Example/CS/source.cs#1)]
+ [!code-vb[Classic PropertyInfo.SetValue1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic PropertyInfo.SetValue1 Example/VB/source.vb#1)]  
+  
+ なお、ため、`Caption`プロパティは、パラメーター配列ではありません、`index`引数が`null`です。  
+  
+ 次の例は、という名前のクラスを宣言`Example`3 つのプロパティを持つ:`static`プロパティ (`Shared` Visual Basic で)、インスタンス プロパティ、およびインデックス付きのインスタンス プロパティです。 この例では、<xref:System.Reflection.PropertyInfo.SetValue%2A>元および最終的な値を表示、プロパティの既定値を変更するメソッド。  
+  
+ リフレクションを使用してインデックス付きのインスタンス プロパティの検索に使用される名前は、言語や、プロパティに適用される属性に基づいて異なります。  
+  
+-   Visual basic では、リフレクションを使用してプロパティを検索するプロパティ名が常に使用します。 使用することができます、`Default`インデックス付きプロパティのプロパティを既定値にするキーワード、場合にこの例のように、プロパティにアクセスするときに、名前を省略できます。 プロパティ名を使用することもできます。  
+  
+-   C# の場合は、インデックス付きのインスタンスのプロパティは、インデクサーを呼び出す既定プロパティと、コードでプロパティにアクセスするときに、名前は使用されません。 プロパティの名前は、既定では、 `Item`、および、リフレクションを使用してプロパティを検索するときは、名前を使用する必要があります。 使用することができます、<xref:System.Runtime.CompilerServices.IndexerNameAttribute>インデクサーに名前を付けるさまざまな属性です。 この例では、名前は `IndexedInstanceProperty` です。  
+  
+-   C++ では、`default`指定子は、インデックス付きプロパティを既定値を使用することができますのインデックス付きプロパティ (クラス インデクサー)。 既定ではプロパティの名前は、その場合は、 `Item`、し、この例のように、リフレクションを使用してプロパティを検索するときは、名前を使用する必要があります。 使用することができます、<xref:System.Runtime.CompilerServices.IndexerNameAttribute>クラス インデクサーに名前を付けるさまざまなリフレクションの場合、属性が、コードでプロパティにアクセスする名前を使用することはできません。 クラスのインデクサーではないインデックス付きプロパティへのアクセスには、コードとリフレクションの両方にその名前を使用します。  
+  
+ [!code-cpp[PropertyInfo.SetValue#1](~/samples/snippets/cpp/VS_Snippets_CLR/PropertyInfo.SetValue/cpp/Example.cpp#1)]
+ [!code-csharp[PropertyInfo.SetValue#1](~/samples/snippets/csharp/VS_Snippets_CLR/PropertyInfo.SetValue/cs/Example.cs#1)]
+ [!code-vb[PropertyInfo.SetValue#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/PropertyInfo.SetValue/vb/Example.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">必要な引数の型が <paramref name="index" /> 配列に含まれていません。  
+  
+ -または-  
+  
+ プロパティの <see langword="set" /> アクセサーが見つかりません。  
+  
+ -または-  
+  
+ <paramref name="value" /> を <see cref="P:System.Reflection.PropertyInfo.PropertyType" /> の型に変換することはできません。</exception>
+        <exception cref="T:System.Reflection.TargetException">
+          <block subset="none" type="note">
+            <para>  
+ [Windows ストア アプリ用 .NET](http://go.microsoft.com/fwlink/?LinkID=247912)または[ポータブル クラス ライブラリ](~/docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md)、キャッチ<see cref="T:System.Exception" />代わりにします。  
+  
+</para>
+          </block>  
+  
+ オブジェクトがターゲット型と一致しません。あるいは、プロパティはインスタンス プロパティですが <paramref name="obj" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Reflection.TargetParameterCountException"><paramref name="index" /> 内のパラメーターの数が、インデックス付きプロパティが受け取るパラメーターの数と一致していません。</exception>
+        <exception cref="T:System.MethodAccessException">
+          <block subset="none" type="note">
+            <para>  
+ [Windows ストア アプリ用 .NET](http://go.microsoft.com/fwlink/?LinkID=247912)または[ポータブル クラス ライブラリ](~/docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md)、基本クラスの例外をキャッチ<see cref="T:System.MemberAccessException" />、代わりにします。  
+  
+</para>
+          </block>  
+  
+ クラス内のプライベート メソッドまたは保護されたメソッドへの正しくないアクセスが試行されました。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException">プロパティ値を設定しているときにエラーが発生しました。 たとえば、インデックス付きプロパティに対して指定されたインデックス値が範囲外です。 <see cref="P:System.Exception.InnerException" /> プロパティは、エラーの理由を示します。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValue">
+      <MemberSignature Language="C#" Value="public abstract void SetValue (object obj, object value, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, object[] index, System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetValue(object obj, object value, valuetype System.Reflection.BindingFlags invokeAttr, class System.Reflection.Binder binder, object[] index, class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.PropertyInfo.SetValue(System.Object,System.Object,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="invokeAttr" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="binder" Type="System.Reflection.Binder" />
+        <Parameter Name="index" Type="System.Object[]" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="obj">プロパティ値が設定されるオブジェクト。</param>
+        <param name="value">変更後のプロパティ値。</param>
+        <param name="invokeAttr">呼び出し属性を指定する次の列挙型メンバーのビットごとの組み合わせ: <see langword="InvokeMethod" />、<see langword="CreateInstance" />、<see langword="Static" />、<see langword="GetField" />、<see langword="SetField" />、<see langword="GetProperty" /> または <see langword="SetProperty" />。 適切な呼び出し属性を指定する必要があります。 たとえば、静的メンバーを呼び出すには、<see langword="Static" /> フラグを設定します。</param>
+        <param name="binder">バインディング、引数型の強制変換、メンバーの呼び出し、およびリフレクションを使用した <see cref="T:System.Reflection.MemberInfo" /> オブジェクトの取得を有効にするオブジェクト。 場合<c>バインダー</c>は<see langword="null" />既定のバインダーが使用されます。</param>
+        <param name="index">インデックス付きプロパティのインデックス値 (省略可能)。 インデックス付きでないプロパティの場合は、この値を <see langword="null" /> にする必要があります。</param>
+        <param name="culture">リソースのローカライズ対象のカルチャ。 リソースがこのカルチャ用にローカライズされていない場合は、一致する対象を検索するために <see cref="P:System.Globalization.CultureInfo.Parent" /> プロパティが連続して呼び出されます。 この値が <see langword="null" /> の場合は、<see cref="P:System.Globalization.CultureInfo.CurrentUICulture" /> プロパティからカルチャ固有の情報が習得されます。</param>
+        <summary>派生クラスでオーバーライドされると、指定したバインディング、インデックス、およびカルチャ固有の情報を含む指定されたオブジェクトのプロパティ値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この場合<xref:System.Reflection.PropertyInfo>オブジェクトが値型と`value`は`null`プロパティはその型の既定値に設定されます。  
+  
+ プロパティは、インデックスを作成するかどうかを判断するのには、使用、<xref:System.Reflection.PropertyInfo.GetIndexParameters%2A>メソッドです。 場合、結果の配列は 0 (ゼロ) の要素では、プロパティのインデックス付けされていません。  
+  
+ アクセスの制限には、完全に信頼されたコードは無視されます。 Private のコンス トラクター、メソッド、フィールド、およびプロパティにアクセスして、コードは完全に信頼されるたびに、リフレクションを使用して呼び出されます。  
+  
+ 使用する、`SetValue`メソッド、クラスをまず取得`Type`です。 `Type`、取得、`PropertyInfo`です。 `PropertyInfo`を使用して、`SetValue`メソッドです。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメソッドは、呼び出し元が許可されている場合は、非パブリック メンバーをアクセスに使用できます<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグし、非パブリック メンバーの許可セットが、呼び出し元に制限されている場合は、セット、またはそのサブセットを付与します。 (を参照してください[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md))。  
+>   
+>  この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">必要な引数の型が <paramref name="index" /> 配列に含まれていません。  
+  
+ -または-  
+  
+ プロパティの <see langword="set" /> アクセサーが見つかりません。  
+  
+ -または-  
+  
+ <paramref name="value" /> を <see cref="P:System.Reflection.PropertyInfo.PropertyType" /> の型に変換することはできません。</exception>
+        <exception cref="T:System.Reflection.TargetException">オブジェクトがターゲット型と一致しないか、またはプロパティがインスタンス プロパティですが、<paramref name="obj" /> は <see langword="null" />です。</exception>
+        <exception cref="T:System.Reflection.TargetParameterCountException"><paramref name="index" /> 内のパラメーターの数が、インデックス付きプロパティが受け取るパラメーターの数と一致していません。</exception>
+        <exception cref="T:System.MethodAccessException">クラス内のプライベート メソッドまたは保護されたメソッドへの正しくないアクセスが試行されました。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException">プロパティ値を設定しているときにエラーが発生しました。 たとえば、インデックス付きプロパティに対して指定されたインデックス値が範囲外です。 <see cref="P:System.Exception.InnerException" /> プロパティは、エラーの理由を示します。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._PropertyInfo.GetIDsOfNames">
+      <MemberSignature Language="C#" Value="void _PropertyInfo.GetIDsOfNames (ref Guid riid, IntPtr rgszNames, uint cNames, uint lcid, IntPtr rgDispId);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._PropertyInfo.GetIDsOfNames([in]valuetype System.Guid&amp; riid, native int rgszNames, unsigned int32 cNames, unsigned int32 lcid, native int rgDispId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.PropertyInfo.System#Runtime#InteropServices#_PropertyInfo#GetIDsOfNames(System.Guid@,System.IntPtr,System.UInt32,System.UInt32,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="riid" Type="System.Guid&amp;" RefType="ref" />
+        <Parameter Name="rgszNames" Type="System.IntPtr" />
+        <Parameter Name="cNames" Type="System.UInt32" />
+        <Parameter Name="lcid" Type="System.UInt32" />
+        <Parameter Name="rgDispId" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="riid">将来使用するために予約されています。 IID_NULL にする必要があります。</param>
+        <param name="rgszNames">マッピング対象として渡される名前の配列。</param>
+        <param name="cNames">マッピングされる名前のカウント。</param>
+        <param name="lcid">名前を解釈するロケール コンテキスト。</param>
+        <param name="rgDispId">名前に対応する ID を受け取る、呼び出し元が割り当てた配列。</param>
+        <summary>一連の名前を対応する一連のディスパッチ識別子に割り当てます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。 詳細については`IDispatch::GetIDsOfNames`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">COM を使用して遅延バインディング アクセス<c>IDispatch</c>インターフェイスはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._PropertyInfo.GetType">
+      <MemberSignature Language="C#" Value="Type _PropertyInfo.GetType ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Type System.Runtime.InteropServices._PropertyInfo.GetType() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.PropertyInfo.System#Runtime#InteropServices#_PropertyInfo#GetType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Type" /> 型を表す <see cref="T:System.Reflection.PropertyInfo" /> オブジェクトを取得します。</summary>
+        <returns><see cref="T:System.Type" /> 型を表す <see cref="T:System.Reflection.PropertyInfo" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._PropertyInfo.GetTypeInfo">
+      <MemberSignature Language="C#" Value="void _PropertyInfo.GetTypeInfo (uint iTInfo, uint lcid, IntPtr ppTInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._PropertyInfo.GetTypeInfo(unsigned int32 iTInfo, unsigned int32 lcid, native int ppTInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.PropertyInfo.System#Runtime#InteropServices#_PropertyInfo#GetTypeInfo(System.UInt32,System.UInt32,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="iTInfo" Type="System.UInt32" />
+        <Parameter Name="lcid" Type="System.UInt32" />
+        <Parameter Name="ppTInfo" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="iTInfo">返される型情報。</param>
+        <param name="lcid">型情報のロケール ID。</param>
+        <param name="ppTInfo">要求された型情報オブジェクトへのポインターを取得します。</param>
+        <summary>オブジェクトの型情報を取得します。この型情報を使用して、インターフェイスの型情報を取得できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。 詳細については`IDispatch::GetTypeInfo`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">COM を使用して遅延バインディング アクセス<c>IDispatch</c>インターフェイスはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._PropertyInfo.GetTypeInfoCount">
+      <MemberSignature Language="C#" Value="void _PropertyInfo.GetTypeInfoCount (out uint pcTInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._PropertyInfo.GetTypeInfoCount([out] unsigned int32&amp; pcTInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.PropertyInfo.System#Runtime#InteropServices#_PropertyInfo#GetTypeInfoCount(System.UInt32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pcTInfo" Type="System.UInt32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="pcTInfo">オブジェクトにより提供される型タイプ情報インターフェイスの数を受け取る場所を指定します。</param>
+        <summary>オブジェクトが提供する型情報インターフェイスの数 (0 または 1) を取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。 詳細については`IDispatch::GetTypeInfoCount`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">COM を使用して遅延バインディング アクセス<c>IDispatch</c>インターフェイスはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._PropertyInfo.Invoke">
+      <MemberSignature Language="C#" Value="void _PropertyInfo.Invoke (uint dispIdMember, ref Guid riid, uint lcid, short wFlags, IntPtr pDispParams, IntPtr pVarResult, IntPtr pExcepInfo, IntPtr puArgErr);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._PropertyInfo.Invoke(unsigned int32 dispIdMember, [in]valuetype System.Guid&amp; riid, unsigned int32 lcid, int16 wFlags, native int pDispParams, native int pVarResult, native int pExcepInfo, native int puArgErr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.PropertyInfo.System#Runtime#InteropServices#_PropertyInfo#Invoke(System.UInt32,System.Guid@,System.UInt32,System.Int16,System.IntPtr,System.IntPtr,System.IntPtr,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dispIdMember" Type="System.UInt32" />
+        <Parameter Name="riid" Type="System.Guid&amp;" RefType="ref" />
+        <Parameter Name="lcid" Type="System.UInt32" />
+        <Parameter Name="wFlags" Type="System.Int16" />
+        <Parameter Name="pDispParams" Type="System.IntPtr" />
+        <Parameter Name="pVarResult" Type="System.IntPtr" />
+        <Parameter Name="pExcepInfo" Type="System.IntPtr" />
+        <Parameter Name="puArgErr" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="dispIdMember">メンバーを識別します。</param>
+        <param name="riid">将来使用するために予約されています。 IID_NULL にする必要があります。</param>
+        <param name="lcid">引数を解釈する対象のロケール コンテキスト。</param>
+        <param name="wFlags">呼び出しのコンテキストを記述するフラグ。</param>
+        <param name="pDispParams">引数の配列、名前付き引数の DISPID の配列、配列内の要素数のカウントを格納している構造体へのポインター。</param>
+        <param name="pVarResult">結果が格納される場所へのポインター。</param>
+        <param name="pExcepInfo">例外情報を格納する構造体へのポインター。</param>
+        <param name="puArgErr">エラーが存在する最初の引数のインデックス。</param>
+        <summary>オブジェクトによって公開されたプロパティおよびメソッドへのアクセスを提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。 詳細については`IDispatch::Invoke`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">COM を使用して遅延バインディング アクセス<c>IDispatch</c>インターフェイスはサポートされていません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

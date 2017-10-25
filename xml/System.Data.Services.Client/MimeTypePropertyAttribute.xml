@@ -1,0 +1,94 @@
+<Type Name="MimeTypePropertyAttribute" FullName="System.Data.Services.Client.MimeTypePropertyAttribute">
+  <TypeSignature Language="C#" Value="public sealed class MimeTypePropertyAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MimeTypePropertyAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Services.Client.MimeTypePropertyAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Services.Client</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class, AllowMultiple=false, Inherited=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Data.Services.Client.MediaEntryAttribute" /> で注釈が付けられているクラスのプロパティに注釈を付けます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `MimeTypePropertyAttribute`で指定されたプロパティに関連付ける mime 型を保持するプロパティの名前を受け取り、<xref:System.Data.Services.Client.MediaEntryAttribute>です。 指定されたプロパティは、メディア リンク エントリに関連付けられたメディア リソースが <xref:System.Data.Services.Client.DataServiceContext.LoadProperty%2A> メソッドで遅延読み込みされるときに、データの MIME の種類に自動的に設定されます。  
+  
+ システムもこのプロパティから MIME の種類を読み取り、それを使用して、メディア リンク エントリの POST 要求の `Content-Type` ヘッダーを設定します。 メディア リンク エントリは、バイナリ データとメタデータを処理するための AtomPub プロトコル コンストラクトです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MimeTypePropertyAttribute (string dataPropertyName, string mimeTypePropertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string dataPropertyName, string mimeTypePropertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.MimeTypePropertyAttribute.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="dataPropertyName" Type="System.String" />
+        <Parameter Name="mimeTypePropertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dataPropertyName">新しいプロパティ属性の名前を含む文字列。</param>
+        <param name="mimeTypePropertyName">新しいプロパティ属性の MIME の種類を含む文字列。</param>
+        <summary>
+          <see langword="MimeTypePropertyAttribute" /> の新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataPropertyName">
+      <MemberSignature Language="C#" Value="public string DataPropertyName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataPropertyName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.MimeTypePropertyAttribute.DataPropertyName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="MimeTypePropertyAttribute" /> の名前を取得します。</summary>
+        <value>プロパティ属性の名前を含む文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MimeTypePropertyName">
+      <MemberSignature Language="C#" Value="public string MimeTypePropertyName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MimeTypePropertyName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.MimeTypePropertyAttribute.MimeTypePropertyName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Mime の種類を取得します<see langword="MimeTypePropertyAttribute" /></summary>
+        <value>プロパティ属性の MIME の種類を含む文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

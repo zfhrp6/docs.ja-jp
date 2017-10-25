@@ -1,0 +1,269 @@
+<Type Name="XamlMemberInvoker" FullName="System.Xaml.Schema.XamlMemberInvoker">
+  <TypeSignature Language="C#" Value="public class XamlMemberInvoker" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XamlMemberInvoker extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xaml.Schema.XamlMemberInvoker" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>リフレクション以外の方法では XAML メンバーのメンバーの特性がアクセスできる拡張ポイントを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 目的は、<xref:System.Xaml.Schema.XamlMemberInvoker>拡張の XAML 型システム、スキーマ、および、動作中の CLR 属性を使用してリフレクション情報などの CLR 機能に完全に依存せずに実行を有効にするのには、<xref:System.Type>と<xref:System.Reflection.MemberInfo>のようにします。 サブクラス<xref:System.Xaml.Schema.XamlMemberInvoker>などの XAML スキーマのクラスの別のコンス トラクターの入力パラメーターとして使用されます<xref:System.Xaml.XamlMember>です。 サブクラス<xref:System.Xaml.XamlMember>を渡すと、<xref:System.Xaml.Schema.XamlMemberInvoker>を通じて、基底コンス トラクターにします。 定義すると共に、 <xref:System.Xaml.Schema.XamlMemberInvoker> 、コンス トラクターも指定してください用の上書きには、少なくともいくつかの`Lookup`のメソッド<xref:System.Xaml.XamlMember>です。  
+  
+ <xref:System.Xaml.Schema.XamlMemberInvoker>既定の実装があります。 既定の実装では、類似のモデルを XAML スキーマの種類の既定の実装に依存<xref:System.Xaml.XamlType>と<xref:System.Xaml.XamlMember>: インスタンス化、値、および CLR 属性の使用を含む、参照の CLR 型システムが使用される<xref:System.Type>と<xref:System.Reflection.MemberInfo>のようにします。  
+  
+ <xref:System.Xaml.Schema.XamlMemberInvoker>基本的な get および set 操作メソッドを提供 (<xref:System.Xaml.Schema.XamlMemberInvoker.GetValue%2A>です。<xref:System.Xaml.Schema.XamlMemberInvoker.SetValue%2A>). プロパティも用意されています。<xref:System.Xaml.Schema.XamlMemberInvoker.UnderlyingGetter%2A>と<xref:System.Xaml.Schema.XamlMemberInvoker.UnderlyingSetter%2A>、これらは仮想ではありませんが、します。  
+  
+> [!NOTE]
+>  取得することができます、 <xref:System.Xaml.Schema.XamlMemberInvoker> System.Xaml 実装では、プライベート クラスとして実装されている XAML ディレクティブを表す値です。 呼び出すしようとすると<xref:System.Xaml.Schema.XamlMemberInvoker.GetValue%2A>または<xref:System.Xaml.Schema.XamlMemberInvoker.SetValue%2A>この呼び出し元に、例外がスローされます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected XamlMemberInvoker ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.Schema.XamlMemberInvoker.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xaml.Schema.XamlMemberInvoker" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装は、空です。  
+  
+ 値を指定するこのコンス トラクターが内部的に呼び出される<xref:System.Xaml.Schema.XamlMemberInvoker.UnknownInvoker%2A>です。 <xref:System.Xaml.Schema.XamlMemberInvoker>サブクラスは、いずれかを使用することを想定して、<xref:System.Xaml.Schema.XamlMemberInvoker.%23ctor%28System.Xaml.XamlMember%29>を作成するための署名を呼び出すオーバーライドを提供または<xref:System.Xaml.Schema.XamlMemberInvoker.%23ctor%28System.Xaml.XamlMember%29>基本です。 提供する、<xref:System.Xaml.XamlMember>既定の実装パターン where<xref:System.Xaml.Schema.XamlMemberInvoker>は変更できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlMemberInvoker (System.Xaml.XamlMember member);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xaml.XamlMember member) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.Schema.XamlMemberInvoker.#ctor(System.Xaml.XamlMember)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="member" Type="System.Xaml.XamlMember" />
+      </Parameters>
+      <Docs>
+        <param name="member"><see cref="T:System.Xaml.XamlMember" />これに関連する特定の XAML メンバーに対する値<see cref="T:System.Xaml.Schema.XamlMemberInvoker" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xaml.Schema.XamlMemberInvoker" />に基づいて、指定されたクラス<see cref="T:System.Xaml.XamlMember" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは内部でに基づいてと呼ばれる、<xref:System.Xaml.XamlMember>場所、<xref:System.Xaml.Schema.XamlMemberInvoker>構築に使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="member" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="public virtual object GetValue (object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetValue(object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.Schema.XamlMemberInvoker.GetValue(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance">メンバーの所有者の型のインスタンス。</param>
+        <summary>インスタンスから関連するプロパティの値を取得します。</summary>
+        <returns>要求されたプロパティの値。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="instance" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">不明な <see cref="T:System.Xaml.XamlMember" /> に基づく <see cref="T:System.Xaml.Schema.XamlMemberInvoker" /> で、このメソッドを呼び出しました。  
+  
+ **- または -**  
+  
+ 書き込み専用のメンバーでは、このメソッドが呼び出されます。  
+  
+ **- または -**  
+  
+ <see cref="P:System.Xaml.Schema.XamlMemberInvoker.UnderlyingGetter" /> は <see langword="null" /> です。</exception>
+        <block subset="none" type="overrides">
+          <para>基底の実装には、内部ヘルパーの呼び出しが含まれています。 <c>ThrowIfUnknown</c>です。 このヘルパーは常に場合にスロー場所、<see cref="T:System.Xaml.Schema.XamlMemberInvoker" />は不明なに基づいて<see cref="T:System.Xaml.XamlMember" />であるケースが含まれている、<see cref="P:System.Xaml.XamlMember.UnderlyingMember" />の<see cref="T:System.Xaml.XamlMember" />は<see langword="null" />します。  
+  
+ 基底の実装が場合にスロー<see cref="P:System.Xaml.Schema.XamlMemberInvoker.UnderlyingGetter" />は<see langword="null" />します。  
+  
+ 静的プロパティの (<see cref="P:System.Reflection.MethodBase.IsStatic" />は<see langword="true" />ごと<see cref="P:System.Xaml.Schema.XamlMemberInvoker.UnderlyingGetter" />) 既定の実装<see cref="M:System.Reflection.MethodBase.Invoke(System.Object,System.Object[])" />で<see cref="P:System.Xaml.Schema.XamlMemberInvoker.UnderlyingGetter" />渡す<see langword="null" />最初のパラメーターとしてパッケージと<paramref name="instance" />の 1 秒間です。 非静的プロパティ呼び出し<see cref="M:System.Reflection.MethodBase.Invoke(System.Object,System.Object[])" />し、転送、<paramref name="instance" />最初のパラメーターと 2 番目のパラメーターとして空のパッケージにします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValue">
+      <MemberSignature Language="C#" Value="public virtual void SetValue (object instance, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetValue(object instance, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.Schema.XamlMemberInvoker.SetValue(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance">メンバーの所有者の型のインスタンス。</param>
+        <param name="value">設定するプロパティ値。</param>
+        <summary>インスタンスの関連するプロパティの値を設定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="instance" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">不明な <see cref="T:System.Xaml.XamlMember" /> に基づく <see cref="T:System.Xaml.Schema.XamlMemberInvoker" /> で、このメソッドを呼び出しました。  
+  
+ **- または -**  
+  
+ 読み取り専用のメンバーでは、このメソッドが呼び出されます。  
+  
+ **- または -**  
+  
+ <see cref="P:System.Xaml.Schema.XamlMemberInvoker.UnderlyingSetter" /> は <see langword="null" /> です。</exception>
+        <block subset="none" type="overrides">
+          <para>基底の実装には、内部ヘルパーの呼び出しが含まれています。 <c>ThrowIfUnknown</c>です。 このヘルパーは常に場合にスロー場所、<see cref="T:System.Xaml.Schema.XamlMemberInvoker" />は不明なに基づいて<see cref="T:System.Xaml.XamlMember" />であるケースが含まれている、<see cref="P:System.Xaml.XamlMember.UnderlyingMember" />の<see cref="T:System.Xaml.XamlMember" />は<see langword="null" />します。  
+  
+ 基底の実装が場合にスロー<see cref="P:System.Xaml.Schema.XamlMemberInvoker.UnderlyingSetter" />は<see langword="null" />します。  
+  
+ 静的プロパティ (<see cref="P:System.Reflection.MethodBase.IsStatic" />は<see langword="true" />あたり<see cref="P:System.Xaml.Schema.XamlMemberInvoker.UnderlyingSetter" />) 既定の実装<see cref="M:System.Reflection.MethodBase.Invoke(System.Object,System.Object[])" />で<see cref="P:System.Xaml.Schema.XamlMemberInvoker.UnderlyingSetter" />渡す<see langword="null" />最初のパラメーターとパッケージ化に<paramref name="instance" />と<paramref name="value" />として、2 番目のパラメーターです。 非静的プロパティでは、それを呼び出し、<see cref="M:System.Reflection.MethodBase.Invoke(System.Object,System.Object[])" />転送および<paramref name="instance" />最初のパラメーターとしてと<paramref name="value" />2 番目のパラメーターとして。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeValue">
+      <MemberSignature Language="C#" Value="public virtual System.Xaml.Schema.ShouldSerializeResult ShouldSerializeValue (object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Xaml.Schema.ShouldSerializeResult ShouldSerializeValue(object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.Schema.XamlMemberInvoker.ShouldSerializeValue(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.Schema.ShouldSerializeResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance">永続化のため調査するプロパティを持つインスタンス。</param>
+        <summary>値がシリアル化プロセスによって永続化する必要があるかどうかを示します。</summary>
+        <returns>列挙体の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装を返します<xref:System.Xaml.Schema.ShouldSerializeResult.Default>XAML メンバー自体が場合<xref:System.Xaml.XamlMember.IsUnknown%2A>、かない CLR リフレクション関連`ShouldSerialize`既定リフレクションを使用して基になるメンバー上のメソッドが存在します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnderlyingGetter">
+      <MemberSignature Language="C#" Value="public System.Reflection.MethodInfo UnderlyingGetter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.MethodInfo UnderlyingGetter" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.Schema.XamlMemberInvoker.UnderlyingGetter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="T:System.Reflection.MethodInfo" /> CLR プロパティの値を取得するメソッドはこれに関連する<see cref="T:System.Xaml.Schema.XamlMemberInvoker" />です。</summary>
+        <value><see cref="T:System.Reflection.MethodInfo" /> CLR プロパティの値を取得するメソッドはこれに関連する<see cref="T:System.Xaml.Schema.XamlMemberInvoker" />、または<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、呼び出し元に依存しています<xref:System.Xaml.XamlMember.LookupUnderlyingGetter%2A>、構築する<xref:System.Xaml.XamlMember>です。 不明の<xref:System.Xaml.XamlMember>、場合や、<xref:System.Xaml.XamlMember.LookupUnderlyingGetter%2A>返します`null`、このプロパティを返します`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnderlyingSetter">
+      <MemberSignature Language="C#" Value="public System.Reflection.MethodInfo UnderlyingSetter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.MethodInfo UnderlyingSetter" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.Schema.XamlMemberInvoker.UnderlyingSetter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="T:System.Reflection.MethodInfo" /> CLR プロパティの値を設定するメソッドはこれに関連する<see cref="T:System.Xaml.Schema.XamlMemberInvoker" />です。</summary>
+        <value><see cref="T:System.Reflection.MethodInfo" /> CLR プロパティの値を設定するメソッドはこれに関連する<see cref="T:System.Xaml.Schema.XamlMemberInvoker" />、または<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、呼び出し元に依存しています<xref:System.Xaml.XamlMember.LookupUnderlyingSetter%2A>、構築する<xref:System.Xaml.XamlMember>です。 不明の<xref:System.Xaml.XamlMember>、場合や、<xref:System.Xaml.XamlMember.LookupUnderlyingSetter%2A>返します`null`、このプロパティを返します`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnknownInvoker">
+      <MemberSignature Language="C#" Value="public static System.Xaml.Schema.XamlMemberInvoker UnknownInvoker { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xaml.Schema.XamlMemberInvoker UnknownInvoker" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.Schema.XamlMemberInvoker.UnknownInvoker" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.Schema.XamlMemberInvoker</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>完全に実装されている、不明なを表す静的な値を提供<see cref="T:System.Xaml.Schema.XamlMemberInvoker" />です。</summary>
+        <value>静的な値を完全に実装されている、不明なを表す<see cref="T:System.Xaml.Schema.XamlMemberInvoker" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値を指定する、 <xref:System.Xaml.Schema.XamlMemberInvoker> System.Xaml のパラメーターには、API が定義されている例外をスローすると呼ばれるコードを通常発生することです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,198 @@
+<Type Name="PeerNode" FullName="System.ServiceModel.PeerNode">
+  <TypeSignature Language="C#" Value="public sealed class PeerNode : System.ServiceModel.IOnlineStatus" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PeerNode extends System.Object implements class System.ServiceModel.IOnlineStatus" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.PeerNode" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.IOnlineStatus</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>特定のピア メッシュに参加するアプリケーションによって使用されるピア ノードのインスタンスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ピア ノードは、各チャネルのバインドに提供される <xref:System.ServiceModel.EndpointAddress> で、共通の URI およびホスト名をチャネルが共有している限り、メッシュ内に複数のピア チャネルをホストできます。  
+  
+ 1 つのピア ノードに対して定義した複数のピア チャネルを別々のバインドを使用して作成する場合、<xref:System.ServiceModel.NetPeerTcpBinding.Port%2A>、<xref:System.ServiceModel.NetPeerTcpBinding.ListenIPAddress%2A>、および <xref:System.ServiceModel.NetPeerTcpBinding.Resolver%2A> プロパティは、すべてのバインドで同じである必要があります。  
+  
+ 同じピア ノード インスタンス用に最初のチャネル バインドが 1 つ作成された後に、さらにチャネル バインドが作成される場合は、これと後続のバインドの <xref:System.ServiceModel.NetPeerTcpBinding.MaxReceivedMessageSize%2A> プロパティが、最初のチャネル バインドに設定された <xref:System.ServiceModel.NetPeerTcpBinding.MaxReceivedMessageSize%2A> プロパティの値以下になる必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="IsOnline">
+      <MemberSignature Language="C#" Value="public bool IsOnline { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsOnline" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.PeerNode.IsOnline" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ピア ノードがオンラインであり、ピア メッシュ内の近隣ノードにメッセージを送信できる状態かどうかを示す値を取得します。</summary>
+        <value>
+          ピア ノードがオンラインの場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ "オンライン" は、ピア ノードに、使用可能な近隣ノードがあることを示します。 "オフライン" は、ピア ノードに、使用可能な近隣ノードがないことを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MessagePropagationFilter">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.PeerMessagePropagationFilter MessagePropagationFilter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.PeerMessagePropagationFilter MessagePropagationFilter" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.PeerNode.MessagePropagationFilter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.PeerMessagePropagationFilter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ピア チャネル経由で受信したメッセージに対するカスタム フィルターを取得または設定します。</summary>
+        <value>
+          カスタム メッセージ フィルターを格納する <see cref="T:System.ServiceModel.PeerMessagePropagationFilter" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ フィルターは、派生型である必要があります。また、それに定義されている任意のカスタム機能を使用するために、その型に再キャストする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">リッスン用のチャネルが開かれていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Offline">
+      <MemberSignature Language="C#" Value="public event EventHandler Offline;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Offline" />
+      <MemberSignature Language="DocId" Value="E:System.ServiceModel.PeerNode.Offline" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ピア ノードがピア メッシュからオフラインになると通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オフライン ピア ノードには、接続可能なピア メッシュ内に近隣ノードがありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Online">
+      <MemberSignature Language="C#" Value="public event EventHandler Online;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Online" />
+      <MemberSignature Language="DocId" Value="E:System.ServiceModel.PeerNode.Online" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ピア ノードがピア メッシュ内でオンラインになると通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オンライン ピア ノードには、接続されるピアメッシュ内に少なくとも 1 つの近隣ノードがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Port">
+      <MemberSignature Language="C#" Value="public int Port { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Port" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.PeerNode.Port" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ピア ノードがリッスンしているネットワーク ポートを取得します。</summary>
+        <value>
+          ピア ノードがリッスンしているネットワーク ポートを指定する <see cref="T:System.Int32" /> を取得します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">リッスン用のチャネルが開かれていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RefreshConnection">
+      <MemberSignature Language="C#" Value="public void RefreshConnection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RefreshConnection() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.PeerNode.RefreshConnection" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ピア メッシュとの接続を更新します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">リッスン用のチャネルが開かれていません。</exception>
+        <exception cref="T:System.TimeoutException">更新操作がタイムアウトしました。</exception>
+        <exception cref="T:System.ServiceModel.CommunicationException">更新試行中に、ネットワーク エラーが発生しました。</exception>
+        <exception cref="T:System.ServiceModel.CommunicationObjectAbortedException">更新試行中に、接続が中断しました。</exception>
+        <exception cref="T:System.ServiceModel.CommunicationObjectFaultedException">更新試行中に、接続エラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.PeerNode.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ピア ノードの文字列表現を提供します。</summary>
+        <returns>
+          ピア ノードのメッシュ ID が設定されている場合はメッシュ ID を含む <see cref="T:System.String" /> 値。それ以外の場合はピア ノードの型を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

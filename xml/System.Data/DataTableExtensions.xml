@@ -1,0 +1,354 @@
+<Type Name="DataTableExtensions" FullName="System.Data.DataTableExtensions">
+  <TypeSignature Language="C#" Value="public static class DataTableExtensions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit DataTableExtensions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.DataTableExtensions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.DataSetExtensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>拡張メソッドを定義、<see cref="T:System.Data.DataTable" />クラスです。 <see cref="T:System.Data.DataTableExtensions" /> は静的クラスです。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AsDataView">
+      <MemberSignature Language="C#" Value="public static System.Data.DataView AsDataView (this System.Data.DataTable table);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.DataView AsDataView(class System.Data.DataTable table) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableExtensions.AsDataView(System.Data.DataTable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.DataSetExtensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataView</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="table" Type="System.Data.DataTable" RefType="this" />
+      </Parameters>
+      <Docs>
+        <param name="table">ソース<see cref="T:System.Data.DataTable" />元となる LINQ 対応<see cref="T:System.Data.DataView" />を作成します。</param>
+        <summary>作成して返します LINQ 対応<see cref="T:System.Data.DataView" />オブジェクト。</summary>
+        <returns>LINQ 対応<see cref="T:System.Data.DataView" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataView>データ バインディング シナリオを実現できます[!INCLUDE[linq_dataset](~/includes/linq-dataset-md.md)]から作成できると型付きまたは型指定されていない、 <xref:System.Data.DataTable>、そのテーブルの既定のビューを提供します。 <xref:System.Data.DataView> から <xref:System.Data.DataTable> を作成した後、フィルターおよび並べ替えを設定できます。 <xref:System.Data.DataView>など UI コントロールにバインドし、<xref:System.Windows.Forms.DataGrid>または<xref:System.Windows.Forms.DataGridView>、単純データ バインディング モデルを提供します。  
+  
+ 詳細と例については、次を参照してください。 [DataView オブジェクトを作成する](~/docs/framework/data/adonet/creating-a-dataview-object-linq-to-dataset.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、 <xref:System.Data.DataView> SalesOrderDetail テーブルのデータ ソースとして設定、<xref:System.Windows.Forms.BindingSource>をプロキシとして機能するオブジェクト、<xref:System.Windows.Forms.DataGridView>コントロール。  
+  
+ [!code-csharp[DP DataView Samples#CreateLDVFromTable](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DP DataView Samples/CS/Form1.cs#createldvfromtable)]
+ [!code-vb[DP DataView Samples#CreateLDVFromTable](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP DataView Samples/VB/Form1.vb#createldvfromtable)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AsDataView&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Data.DataView AsDataView&lt;T&gt; (this System.Data.EnumerableRowCollection&lt;T&gt; source) where T : System.Data.DataRow;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.DataView AsDataView&lt;(class System.Data.DataRow) T&gt;(class System.Data.EnumerableRowCollection`1&lt;!!T&gt; source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableExtensions.AsDataView``1(System.Data.EnumerableRowCollection{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.DataSetExtensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataView</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <BaseTypeName>System.Data.DataRow</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="source" Type="System.Data.EnumerableRowCollection&lt;T&gt;" RefType="this" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">ソース シーケンスのオブジェクトの型 (通常は <see cref="T:System.Data.DataRow" />)。</typeparam>
+        <param name="source">ソース[!INCLUDE[linq_dataset](~/includes/linq-dataset-md.md)]元となるクエリ LINQ 対応<see cref="T:System.Data.DataView" />を作成します。</param>
+        <summary>作成して返します LINQ 対応<see cref="T:System.Data.DataView" />オブジェクトを表す、[!INCLUDE[linq_dataset](~/includes/linq-dataset-md.md)]クエリ。</summary>
+        <returns>LINQ 対応<see cref="T:System.Data.DataView" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataView>データ バインディング シナリオを実現できます[!INCLUDE[linq_dataset](~/includes/linq-dataset-md.md)]から作成することと、[!INCLUDE[linq_dataset](~/includes/linq-dataset-md.md)]クエリ。 <xref:System.Data.DataView>クエリ自体を表し、クエリに基づくビューではありません。 新しく作成された<xref:System.Data.DataView>フィルターおよび並べ替えから作成されたクエリの情報を推測します。 <xref:System.Data.DataView>など UI コントロールにバインドし、<xref:System.Windows.Forms.DataGrid>または<xref:System.Windows.Forms.DataGridView>、単純データ バインディング モデルを提供します。  
+  
+ パラメーター`T`入力パラメーターの`source`の種類はできるだけ<xref:System.Data.DataRow>から派生した型または<xref:System.Data.DataRow>です。  
+  
+ 次のクエリ演算子のみは、クエリ サポートを作成するために使用<xref:System.Data.DataView>:  
+  
+-   <xref:System.Data.EnumerableRowCollectionExtensions.Cast%2A>  
+  
+-   <xref:System.Data.EnumerableRowCollectionExtensions.OrderBy%2A>  
+  
+-   <xref:System.Data.EnumerableRowCollectionExtensions.OrderByDescending%2A>  
+  
+-   <xref:System.Data.EnumerableRowCollectionExtensions.Select%2A>  
+  
+-   <xref:System.Data.EnumerableRowCollectionExtensions.ThenBy%2A>  
+  
+-   <xref:System.Data.EnumerableRowCollectionExtensions.ThenByDescending%2A>  
+  
+-   <xref:System.Data.EnumerableRowCollectionExtensions.Where%2A>  
+  
+ 詳細と例については、次を参照してください。 [DataView オブジェクトを作成する](~/docs/framework/data/adonet/creating-a-dataview-object-linq-to-dataset.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.DataView>合計支払額順のオンライン注文の。  
+  
+ [!code-csharp[DP DataView Samples#CreateLDVFromQuery1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DP DataView Samples/CS/Form1.cs#createldvfromquery1)]
+ [!code-vb[DP DataView Samples#CreateLDVFromQuery1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP DataView Samples/VB/Form1.vb#createldvfromquery1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AsEnumerable">
+      <MemberSignature Language="C#" Value="public static System.Data.EnumerableRowCollection&lt;System.Data.DataRow&gt; AsEnumerable (this System.Data.DataTable source);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.EnumerableRowCollection`1&lt;class System.Data.DataRow&gt; AsEnumerable(class System.Data.DataTable source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableExtensions.AsEnumerable(System.Data.DataTable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.DataSetExtensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.EnumerableRowCollection&lt;System.Data.DataRow&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Data.DataTable" RefType="this" />
+      </Parameters>
+      <Docs>
+        <param name="source">ソース<see cref="T:System.Data.DataTable" />列挙可能にします。</param>
+        <summary>返します、<see cref="T:System.Collections.Generic.IEnumerable`1" />オブジェクト、ここで、ジェネリック パラメーター<paramref name="T" />は<see cref="T:System.Data.DataRow" />します。 このオブジェクトで使用できます、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]式またはメソッドのクエリ。</summary>
+        <returns><see cref="T:System.Collections.Generic.IEnumerable`1" />オブジェクト、ここで、ジェネリック パラメーター<paramref name="T" />は<see cref="T:System.Data.DataRow" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]実装するデータ ソースに対するクエリは、処理、<xref:System.Collections.Generic.IEnumerable%601>インターフェイスまたは<xref:System.Linq.IQueryable>インターフェイスです。  <xref:System.Data.DataTable>クラスがいずれのインターフェイスを実装していないので、呼び出す必要があります、<xref:System.Data.DataTableExtensions.AsEnumerable%2A>メソッドを使用して、<xref:System.Data.DataTable>のソースとして、`From`の句、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]クエリ。 など、カスタムのドメイン固有の演算子を取得することもできます。 <xref:System.Data.DataTableExtensions.CopyToDataTable%2A>、返すことによって、<xref:System.Collections.Generic.IEnumerable%601>オブジェクト。  
+  
+ によって返される列挙可能なオブジェクト、<xref:System.Data.DataTableExtensions.AsEnumerable%2A>メソッドを完全にバインドされている、<xref:System.Data.DataTable>生成します。 複数回呼び出す、<xref:System.Data.DataTableExtensions.AsEnumerable%2A>独立したオブジェクトをクエリ可能な戻り値の倍数はすべて、ソースにバインドするメソッドは<xref:System.Data.DataTable>します。  
+  
+   
+  
+## Examples  
+ 次の例で、`DisplayProducts`メソッドの受信をという名前の DataColumn を含む DataTable `ProductName`、抽出、`ProductName`値であり、値を出力します。  
+  
+ [!code-csharp[system.data.DataTableExtensions.AsEnumerable#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.data.datatableextensions.asenumerable/cs/source.cs#1)]
+ [!code-vb[system.data.DataTableExtensions.AsEnumerable#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.data.datatableextensions.asenumerable/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">ソース<see cref="T:System.Data.DataTable" />は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyToDataTable&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Data.DataTable CopyToDataTable&lt;T&gt; (this System.Collections.Generic.IEnumerable&lt;T&gt; source) where T : System.Data.DataRow;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.DataTable CopyToDataTable&lt;(class System.Data.DataRow) T&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!T&gt; source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableExtensions.CopyToDataTable``1(System.Collections.Generic.IEnumerable{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.DataSetExtensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataTable</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <BaseTypeName>System.Data.DataRow</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="source" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" RefType="this" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">ソース シーケンスのオブジェクトの型 (通常は <see cref="T:System.Data.DataRow" />)。</typeparam>
+        <param name="source">ソース<see cref="T:System.Collections.Generic.IEnumerable`1" />シーケンス。</param>
+        <summary>返します、<see cref="T:System.Data.DataTable" />のコピーを格納している、<see cref="T:System.Data.DataRow" />の入力を指定して、オブジェクト<see cref="T:System.Collections.Generic.IEnumerable`1" />オブジェクト、ジェネリック パラメーター<paramref name="T" />は<see cref="T:System.Data.DataRow" />します。</summary>
+        <returns>A<see cref="T:System.Data.DataTable" />の型として入力シーケンスを格納している<see cref="T:System.Data.DataRow" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パラメーター`T`入力パラメーターの`source`の種類はできるだけ<xref:System.Data.DataRow>から派生した型または<xref:System.Data.DataRow>です。  
+  
+ 入力シーケンスには、いずれかを指定できる<xref:System.Collections.Generic.IEnumerable%601>ソース、だけでなく、クエリまたはクエリを<xref:System.Data.DataTable>です。 ソース シーケンスがクエリの場合は、この演算子を呼び出して強制的に即時実行に注意してください。 ソース シーケンスを列挙すると、例外をスローすることもあります。  
+  
+ レプリケーション先テーブルのスキーマが最初のスキーマに基づく<xref:System.Data.DataRow>ソース シーケンス内の行。 テーブルのメタデータがから抽出された、<xref:System.Data.DataRow>メタデータと、テーブルの列の値から値を<xref:System.Data.DataRow>です。 型指定されたの<xref:System.Data.DataTable>型は保持されません。 データとスキーマが転送されるが、出力テーブルの結果得られた行は、型指定されたのできません<xref:System.Data.DataRow>型です。 <xref:System.Data.DataRow.RowState%2A>と<xref:System.Data.DataRow.RowError%2A>プロパティは、ソースからのコピー中に保持されない<xref:System.Data.DataRow>に返された<xref:System.Data.DataTable>です。  
+  
+ ときに、 **null**参照または null 許容型の値を持つ**null**が、ソースで見つかった<xref:System.Data.DataRow>、このメソッドは、移行先の値を置き換えます<xref:System.Data.DataTable>の値を持つ<xref:System.DBNull.Value>です。  
+  
+ メソッドによって返される生成されたテーブルには、既定のテーブル名があります。 名前を付ける場合、 <xref:System.Data.DataTable>、添付、 <xref:System.Data.DataSet>、またはその他の実行<xref:System.Data.DataTable>特定の操作を行う必要があります、テーブルが作成され、返された後にします。  
+  
+ 詳細については、次を参照してください。 [、クエリからデータ テーブルを作成する](~/docs/framework/data/adonet/creating-a-datatable-from-a-query-linq-to-dataset.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、2001 年 8 月 8 日後に注文の SalesOrderHeader テーブルを照会しを使用して、<xref:System.Data.DataTableExtensions.CopyToDataTable%2A>メソッドを作成、<xref:System.Data.DataTable>そのクエリからです。 次に、<xref:System.Data.DataTable> が <xref:System.Windows.Forms.BindingSource> にバインドされます。これは <xref:System.Windows.Forms.DataGridView> のプロキシとして機能します。  
+  
+ [!code-csharp[DP LINQ to DataSet Examples#CopyToDataTable1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#copytodatatable1)]
+ [!code-vb[DP LINQ to DataSet Examples#CopyToDataTable1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#copytodatatable1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">ソース<see cref="T:System.Collections.Generic.IEnumerable`1" />シーケンスが<see langword="null" />と新しいテーブルを作成することはできません。</exception>
+        <exception cref="T:System.InvalidOperationException">A<see cref="T:System.Data.DataRow" />シーケンスは、ソースでの状態を持つ<see cref="F:System.Data.DataRowState.Deleted" />します。  
+  
+ ソース シーケンスを含まない任意<see cref="T:System.Data.DataRow" />オブジェクト。  
+  
+ A<see cref="T:System.Data.DataRow" />シーケンスは、ソースで<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyToDataTable&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static void CopyToDataTable&lt;T&gt; (this System.Collections.Generic.IEnumerable&lt;T&gt; source, System.Data.DataTable table, System.Data.LoadOption options) where T : System.Data.DataRow;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void CopyToDataTable&lt;(class System.Data.DataRow) T&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!T&gt; source, class System.Data.DataTable table, valuetype System.Data.LoadOption options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableExtensions.CopyToDataTable``1(System.Collections.Generic.IEnumerable{``0},System.Data.DataTable,System.Data.LoadOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.DataSetExtensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <BaseTypeName>System.Data.DataRow</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="source" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" RefType="this" />
+        <Parameter Name="table" Type="System.Data.DataTable" />
+        <Parameter Name="options" Type="System.Data.LoadOption" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">ソース シーケンスのオブジェクトの型 (通常は <see cref="T:System.Data.DataRow" />)。</typeparam>
+        <param name="source">ソース<see cref="T:System.Collections.Generic.IEnumerable`1" />シーケンス。</param>
+        <param name="table">コピー先 <see cref="T:System.Data.DataTable" />。</param>
+        <param name="options">A<see cref="T:System.Data.LoadOption" />を指定する列挙、<see cref="T:System.Data.DataTable" />オプションをロードします。</param>
+        <summary>コピー<see cref="T:System.Data.DataRow" />を指定したオブジェクト<see cref="T:System.Data.DataTable" />、入力として、<see cref="T:System.Collections.Generic.IEnumerable`1" />オブジェクト、ジェネリック パラメーター<paramref name="T" />は<see cref="T:System.Data.DataRow" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パラメーター`T`入力パラメーターの`source`の種類はできるだけ<xref:System.Data.DataRow>から派生した型または<xref:System.Data.DataRow>です。  
+  
+ 入力シーケンスには、いずれかを指定できる<xref:System.Collections.Generic.IEnumerable%601>ソース、クエリだけでなく経由で、<xref:System.Data.DataTable>です。 ソース シーケンスがクエリの場合は、この演算子を呼び出して強制的に即時実行に注意してください。 ソース シーケンスを列挙すると、例外をスローすることもあります。  
+  
+ レプリケーション先テーブルのスキーマが最初のスキーマに基づく<xref:System.Data.DataRow>ソース シーケンス内の行。 テーブルのメタデータがから抽出された、<xref:System.Data.DataRow>メタデータと、テーブルの列の値から値を<xref:System.Data.DataRow>です。 型指定されたの<xref:System.Data.DataTable>型は保持されません。 データとスキーマが転送されるが、出力テーブルの結果得られた行は、型指定されたのできません<xref:System.Data.DataRow>型です。 <xref:System.Data.DataRow.RowState%2A>と<xref:System.Data.DataRow.RowError%2A>プロパティは、ソースからのコピー中に保持されない<xref:System.Data.DataRow>に返された<xref:System.Data.DataTable>です。  
+  
+ ときに、 **null**参照または null 許容型の値を持つ**null**が、ソースで見つかった<xref:System.Data.DataRow>、このメソッドは、移行先の値を置き換えます<xref:System.Data.DataTable>の値を持つ<xref:System.DBNull.Value>です。  
+  
+ メソッドによって返される生成されたテーブルには、既定のテーブル名があります。 名前を付ける場合、 <xref:System.Data.DataTable>、添付、 <xref:System.Data.DataSet>、またはその他の実行<xref:System.Data.DataTable>特定の操作を行う必要があります、テーブルが作成され、返された後にします。  
+  
+ 詳細については、次を参照してください。 [、クエリからデータ テーブルを作成する](~/docs/framework/data/adonet/creating-a-datatable-from-a-query-linq-to-dataset.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">コピーされる<see cref="T:System.Data.DataRow" />オブジェクトには、変換先のスキーマが収まらない<see cref="T:System.Data.DataTable" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">ソース<see cref="T:System.Collections.Generic.IEnumerable`1" />シーケンスが<see langword="null" />または接続先<see cref="T:System.Data.DataTable" />は<see langword="null" />します。</exception>
+        <exception cref="T:System.InvalidOperationException">A<see cref="T:System.Data.DataRow" />シーケンスは、ソースでの状態を持つ<see cref="F:System.Data.DataRowState.Deleted" />します。  
+  
+ ソース シーケンスを含まない任意<see cref="T:System.Data.DataRow" />オブジェクト。  
+  
+ A<see cref="T:System.Data.DataRow" />シーケンスは、ソースで<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyToDataTable&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static void CopyToDataTable&lt;T&gt; (this System.Collections.Generic.IEnumerable&lt;T&gt; source, System.Data.DataTable table, System.Data.LoadOption options, System.Data.FillErrorEventHandler errorHandler) where T : System.Data.DataRow;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void CopyToDataTable&lt;(class System.Data.DataRow) T&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!T&gt; source, class System.Data.DataTable table, valuetype System.Data.LoadOption options, class System.Data.FillErrorEventHandler errorHandler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableExtensions.CopyToDataTable``1(System.Collections.Generic.IEnumerable{``0},System.Data.DataTable,System.Data.LoadOption,System.Data.FillErrorEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.DataSetExtensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <BaseTypeName>System.Data.DataRow</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="source" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" RefType="this" />
+        <Parameter Name="table" Type="System.Data.DataTable" />
+        <Parameter Name="options" Type="System.Data.LoadOption" />
+        <Parameter Name="errorHandler" Type="System.Data.FillErrorEventHandler" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">ソース シーケンスのオブジェクトの型 (通常は <see cref="T:System.Data.DataRow" />)。</typeparam>
+        <param name="source">ソース<see cref="T:System.Collections.Generic.IEnumerable`1" />シーケンス。</param>
+        <param name="table">コピー先 <see cref="T:System.Data.DataTable" />。</param>
+        <param name="options">A<see cref="T:System.Data.LoadOption" />を指定する列挙、<see cref="T:System.Data.DataTable" />オプションをロードします。</param>
+        <param name="errorHandler">A<see cref="T:System.Data.FillErrorEventHandler" />エラーを処理するメソッドを表すデリゲート。</param>
+        <summary>コピー<see cref="T:System.Data.DataRow" />を指定したオブジェクト<see cref="T:System.Data.DataTable" />、入力として、<see cref="T:System.Collections.Generic.IEnumerable`1" />オブジェクト、ジェネリック パラメーター<paramref name="T" />は<see cref="T:System.Data.DataRow" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パラメーター`T`入力パラメーターの`source`の種類はできるだけ<xref:System.Data.DataRow>から派生した型または<xref:System.Data.DataRow>です。  
+  
+ 入力シーケンスには、いずれかを指定できる<xref:System.Collections.Generic.IEnumerable%601>ソース、クエリだけでなく経由で、<xref:System.Data.DataTable>です。 ソース シーケンスがクエリの場合は、この演算子を呼び出して強制的に即時実行に注意してください。 ソース シーケンスを列挙すると、例外をスローすることもあります。  
+  
+ レプリケーション先テーブルのスキーマが最初のスキーマに基づく<xref:System.Data.DataRow>ソース シーケンス内の行。 テーブルのメタデータがから抽出された、<xref:System.Data.DataRow>メタデータと、テーブルの列の値から値を<xref:System.Data.DataRow>です。 型指定されたの<xref:System.Data.DataTable>型は保持されません。 データとスキーマが転送されるが、出力テーブルの結果得られた行は、型指定されたのできません<xref:System.Data.DataRow>型です。 <xref:System.Data.DataRow.RowState%2A>と<xref:System.Data.DataRow.RowError%2A>プロパティは、ソースからのコピー中に保持されない<xref:System.Data.DataRow>に返された<xref:System.Data.DataTable>です。  
+  
+ ときに、 **null**参照または null 許容型の値を持つ**null**が、ソースで見つかった<xref:System.Data.DataRow>、このメソッドは、移行先の値を置き換えます<xref:System.Data.DataTable>の値を持つ<xref:System.DBNull.Value>です。  
+  
+ メソッドによって返される生成されたテーブルには、既定のテーブル名があります。 名前を付ける場合、 <xref:System.Data.DataTable>、添付、 <xref:System.Data.DataSet>、またはその他の実行<xref:System.Data.DataTable>特定の操作を行う必要があります、テーブルが作成され、返された後にします。  
+  
+ 制約の例外など、対象のテーブルにデータ行のコピー中に例外がスローされた場合、`errorHandler`デリゲートが呼び出されます。 A<xref:System.Data.FillErrorEventArgs>に渡される、`errorHandler`次の値を持つデリゲートします。  
+  
+-   <xref:System.Data.FillErrorEventArgs.Values%2A>プロパティは、ソース データのコピーに設定します。  
+  
+-   <xref:System.Data.FillErrorEventArgs.DataTable%2A>プロパティがターゲットに設定されている<xref:System.Data.DataTable>です。  
+  
+-   <xref:System.Data.FillErrorEventArgs.Errors%2A>プロパティがキャッチされた例外に設定します。  
+  
+ <xref:System.Data.FillErrorEventArgs.Continue%2A>デリゲートの呼び出しが返された後に、プロパティは読み取りです。 場合、<xref:System.Data.FillErrorEventArgs.Continue%2A>プロパティは`true`に列挙され、データ テーブルに読み込まれる、ソース シーケンスを続行します。 場合、<xref:System.Data.FillErrorEventArgs.Continue%2A>プロパティは`false`、元の例外がスローされた、<xref:System.Data.DataTableExtensions.CopyToDataTable%2A>メソッドです。  
+  
+ 詳細については、次を参照してください。 [、クエリからデータ テーブルを作成する](~/docs/framework/data/adonet/creating-a-datatable-from-a-query-linq-to-dataset.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">コピーされる<see cref="T:System.Data.DataRow" />オブジェクトには、変換先のスキーマが収まらない<see cref="T:System.Data.DataTable" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">ソース<see cref="T:System.Collections.Generic.IEnumerable`1" />シーケンスが<see langword="null" />または接続先<see cref="T:System.Data.DataTable" />は<see langword="null" />します。</exception>
+        <exception cref="T:System.InvalidOperationException">A<see cref="T:System.Data.DataRow" />シーケンスは、ソースでの状態を持つ<see cref="F:System.Data.DataRowState.Deleted" />します。  
+  
+ または  
+  
+ ソース シーケンスを含まない任意<see cref="T:System.Data.DataRow" />オブジェクト。  
+  
+ または  
+  
+ A<see cref="T:System.Data.DataRow" />シーケンスは、ソースで<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

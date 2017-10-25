@@ -1,0 +1,44 @@
+<Type Name="XmlSerializationWriteCallback" FullName="System.Xml.Serialization.XmlSerializationWriteCallback">
+  <TypeSignature Language="C#" Value="public delegate void XmlSerializationWriteCallback(object o);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed XmlSerializationWriteCallback extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.XmlSerializationWriteCallback" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="o" Type="System.Object" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="o">シリアル化されるオブジェクト。</param>
+    <summary>によって使用されるデリゲート、 <see cref="T:System.Xml.Serialization.XmlSerializer" /> SOAP でエンコードされた、ルート以外の XML データからの型のシリアル化のためのクラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 初期化中に、.NET Framework XML のシリアル化インフラストラクチャに動的に生成およびコンパイル一時クラスから派生したシリアル化の<xref:System.Xml.Serialization.XmlSerializationWriter>クラスです。 このプロセス中に、.NET Framework には書き込みメソッドを実装するが生成されます、<xref:System.Xml.Serialization.XmlSerializationWriteCallback>クラス デリゲート。 .NET Framework の型と、SOAP でエンコードされた XML をシリアル化、ルート要素ではない XML データ型間のマッピングでは特定のためです。 次に、必要に応じて、書き込みメソッドは、シリアル化中に呼び出されます。  
+  
+ 直接インスタンス化する必要がありますいない<xref:System.Xml.Serialization.XmlSerializationWriteCallback>です。  
+  
+ SOAP エンコーディングは SOAP 1.1 仕様のセクション 5 で説明します。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+</Type>

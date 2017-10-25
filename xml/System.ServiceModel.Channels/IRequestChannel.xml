@@ -1,0 +1,369 @@
+<Type Name="IRequestChannel" FullName="System.ServiceModel.Channels.IRequestChannel">
+  <TypeSignature Language="C#" Value="public interface IRequestChannel : System.ServiceModel.Channels.IChannel" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IRequestChannel implements class System.ServiceModel.Channels.IChannel, class System.ServiceModel.ICommunicationObject" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.IRequestChannel" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Channels.IChannel</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>チャネルがメッセージング エンドポイント間の要求/応答通信の要求側になるために実装する必要があるコントラクトを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.IRequestChannel> は、応答メッセージを返す <xref:System.ServiceModel.ClientBase%601.ChannelBase%601.System%23ServiceModel%23Channels%23IRequestChannel%23Request%2A> メソッドの同期および非同期のバリエーションを定義します。 また、要求メッセージの送信先のエンドポイント アドレスと URI を取得するための <xref:System.ServiceModel.Channels.IRequestChannel.RemoteAddress%2A> プロパティと <xref:System.ServiceModel.Channels.IRequestChannel.Via%2A> プロパティも提供されています。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BeginRequest">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginRequest (System.ServiceModel.Channels.Message message, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginRequest(class System.ServiceModel.Channels.Message message, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.IRequestChannel.BeginRequest(System.ServiceModel.Channels.Message,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="message">転送される要求 <see cref="T:System.ServiceModel.Channels.Message" />。</param>
+        <param name="callback">要求メッセージを転送する非同期操作の完了の通知を受信する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="state">要求メッセージを転送する非同期操作に関連付けられている状態情報を格納するオブジェクト。アプリケーションで指定します。</param>
+        <summary>要求/応答メッセージ交換の応答側に要求メッセージを送信する非同期操作を開始します。</summary>
+        <returns>非同期メッセージ転送を参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求メッセージが、使用されるバインドで許可されている最大メッセージ サイズを超える場合は、<xref:System.ServiceModel.QuotaExceededException> がスローされます。 最大メッセージ サイズは、<xref:System.ServiceModel.Channels.TransportBindingElement.MaxReceivedMessageSize%2A> プロパティで設定されます。 既定値は 65536 バイトです。  
+  
+   
+  
+## Examples  
+ 次のコードは、このメソッドを実装する方法を示しています。  
+  
+ [!code-csharp[S_UE_HttpCookieSession#2](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_httpcookiesession/cs/httpcookierequestsessionchannel.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginRequest">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginRequest (System.ServiceModel.Channels.Message message, TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginRequest(class System.ServiceModel.Channels.Message message, valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.IRequestChannel.BeginRequest(System.ServiceModel.Channels.Message,System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="message">転送される要求 <see cref="T:System.ServiceModel.Channels.Message" />。</param>
+        <param name="timeout">応答受信の制限時間を指定する <see cref="T:System.TimeSpan" />。</param>
+        <param name="callback">要求メッセージを転送する非同期操作の完了の通知を受信する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="state">要求メッセージを転送する非同期操作に関連付けられている状態情報を格納するオブジェクト。アプリケーションで指定します。</param>
+        <summary>指定した時間内で要求/応答メッセージ交換の応答側に要求メッセージを送信する非同期操作を開始します。</summary>
+        <returns>非同期メッセージ転送を参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求メッセージが、使用されるバインドで許可されている最大メッセージ サイズを超える場合は、<xref:System.ServiceModel.QuotaExceededException> がスローされます。 最大メッセージ サイズは、<xref:System.ServiceModel.Channels.TransportBindingElement.MaxReceivedMessageSize%2A> プロパティで設定されます。 既定値は 65536 バイトです。  
+  
+ 関数の呼び出し時に `timeout` が渡された場合は、その値が使用されます。 バインドで <xref:System.ServiceModel.Channels.Binding.SendTimeout%2A> が設定されている場合は、関数の呼び出し時に `timeout` が指定されないと、バインドでの値が使用されます。  
+  
+ バインドでも、関数の呼び出し時にも、タイムアウトが指定されていない場合は、<xref:System.ServiceModel.Channels.ChannelBase.DefaultSendTimeout%2A> が使用されます。 既定値は 1 分です。  
+  
+   
+  
+## Examples  
+ 次のコードは、このメソッドを実装する方法を示しています。  
+  
+ [!code-csharp[S_UE_HttpCookieSession#3](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_httpcookiesession/cs/httpcookierequestsessionchannel.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>操作を完了する前に指定した <see cref="T:System.TimeoutException" /> が経過した場合、操作は <paramref name="timeout" /> をスローする必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="EndRequest">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.Message EndRequest (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.Message EndRequest(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.IRequestChannel.EndRequest(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.Message</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result"><see cref="T:System.IAsyncResult" /> メソッドの呼び出しで返された <see cref="Overload:System.ServiceModel.Channels.IInputChannel.BeginReceive" />。</param>
+        <summary>送信された要求に対してメッセージ ベースの応答を返す非同期操作を完了します。</summary>
+        <returns>要求に対する応答として受信した <see cref="T:System.ServiceModel.Channels.Message" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求メッセージが、使用されるバインドで許可されている最大メッセージ サイズを超える場合は、<xref:System.ServiceModel.QuotaExceededException> がスローされます。 最大メッセージ サイズは、<xref:System.ServiceModel.Channels.TransportBindingElement.MaxReceivedMessageSize%2A> プロパティで設定されます。 既定値は 65536 バイトです。  
+  
+   
+  
+## Examples  
+ 次のコードは、このメソッドを実装する方法を示しています。  
+  
+ [!code-csharp[S_UE_HttpCookieSession#4](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_httpcookiesession/cs/httpcookierequestsessionchannel.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoteAddress">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.EndpointAddress RemoteAddress { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.EndpointAddress RemoteAddress" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.IRequestChannel.RemoteAddress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.EndpointAddress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求チャネルがメッセージを送信する先のリモート アドレスを取得します。</summary>
+        <value>要求チャネルがメッセージを送信する先の <see cref="T:System.ServiceModel.EndpointAddress" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.EndpointAddress> が指定されていない場合は、<xref:System.ServiceModel.Channels.IRequestChannel.Via%2A> が、最終的な送信先と物理アドレスの両方として機能します。 <xref:System.ServiceModel.Channels.IRequestChannel.Via%2A> が指定されている場合は、メッセージが送信される実際の物理アドレス、およびメッセージがその送信先に到達するまでに経由する必要がある物理アドレスとなります。  
+  
+   
+  
+## Examples  
+ 次のコードは、このプロパティを実装する方法を示しています。  
+  
+ [!code-csharp[S_UE_HttpCookieSession#0](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_httpcookiesession/cs/httpcookierequestsessionchannel.cs#0)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Request">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.Message Request (System.ServiceModel.Channels.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.Message Request(class System.ServiceModel.Channels.Message message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.IRequestChannel.Request(System.ServiceModel.Channels.Message)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.Message</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+      </Parameters>
+      <Docs>
+        <param name="message">転送される要求 <see cref="T:System.ServiceModel.Channels.Message" />。</param>
+        <summary>メッセージ ベースの要求を送信し、対応するメッセージ ベースの応答を返します。</summary>
+        <returns>要求に対する応答として受信した <see cref="T:System.ServiceModel.Channels.Message" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.IRequestChannel> の実装により、応答メッセージが要求メッセージと確実に関連付けられます。  
+  
+ 一般に、<xref:System.ServiceModel.Channels.IRequestChannel> の実装では、保留中の要求に関連付けられていないメッセージを受信すると、そのメッセージは削除されます。  
+  
+ <xref:System.ServiceModel.Channels.IRequestChannel.Request%2A> メソッドは、複数のスレッドで同時に呼び出すことができます。  
+  
+ メッセージを要求チャネルに渡すと、メッセージにアクセスされます。 <xref:System.ServiceModel.Channels.IRequestChannel.Request%2A> を呼び出した後は、メッセージの検査、そのメッセージでの <xref:System.ServiceModel.Channels.Message.Close%2A> の呼び出しはできなくなります。  
+  
+ 要求メッセージが、使用されるバインドで許可されている最大メッセージ サイズを超える場合は、<xref:System.ServiceModel.QuotaExceededException> がスローされます。 最大メッセージ サイズは、<xref:System.ServiceModel.Channels.TransportBindingElement.MaxReceivedMessageSize%2A> プロパティで設定されます。 既定値は 65536 バイトです。  
+  
+   
+  
+## Examples  
+ 次のコードは、このメソッドを実装する方法を示しています。  
+  
+ [!code-csharp[S_UE_HttpCookieSession#5](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_httpcookiesession/cs/httpcookierequestsessionchannel.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Request">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.Message Request (System.ServiceModel.Channels.Message message, TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.Message Request(class System.ServiceModel.Channels.Message message, valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.IRequestChannel.Request(System.ServiceModel.Channels.Message,System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.Message</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="message">転送される要求 <see cref="T:System.ServiceModel.Channels.Message" />。</param>
+        <param name="timeout">応答受信の制限時間を指定する <see cref="T:System.TimeSpan" />。</param>
+        <summary>指定した時間内に、メッセージ ベースの要求を送信し、対応するメッセージ ベースの応答を返します。</summary>
+        <returns>要求に対する応答として受信した <see cref="T:System.ServiceModel.Channels.Message" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.IRequestChannel> の実装により、応答メッセージが要求メッセージと確実に関連付けられます。  
+  
+ 一般に、<xref:System.ServiceModel.Channels.IRequestChannel> の実装では、保留中の要求に関連付けられていないメッセージを受信すると、そのメッセージは削除されます。  
+  
+ <xref:System.ServiceModel.Channels.IRequestChannel.Request%2A> メソッドは、複数のスレッドで同時に呼び出すことができます。  
+  
+ メッセージを要求チャネルに渡すと、メッセージにアクセスされます。 <xref:System.ServiceModel.Channels.IRequestChannel.Request%2A> を呼び出した後は、メッセージの検査、そのメッセージでの <xref:System.ServiceModel.Channels.Message.Close%2A> の呼び出しはできなくなります。  
+  
+ 要求メッセージが、使用されるバインドで許可されている最大メッセージ サイズを超える場合は、<xref:System.ServiceModel.QuotaExceededException> がスローされます。 最大メッセージ サイズは、<xref:System.ServiceModel.Channels.TransportBindingElement.MaxReceivedMessageSize%2A> プロパティで設定されます。 既定値は 65536 バイトです。  
+  
+ 関数の呼び出し時に `timeout` が渡された場合は、その値が使用されます。 バインドで <xref:System.ServiceModel.Channels.Binding.SendTimeout%2A> が設定されている場合は、関数の呼び出し時に `timeout` が指定されないと、バインドでの値が使用されます。  
+  
+ バインドでも、関数の呼び出し時にも、タイムアウトが指定されていない場合は、<xref:System.ServiceModel.Channels.ChannelBase.DefaultSendTimeout%2A> が使用されます。 既定値は 1 分です。  
+  
+   
+  
+## Examples  
+ 次のコードは、このメソッドを実装する方法を示しています。  
+  
+ [!code-csharp[S_UE_HttpCookieSession#6](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_httpcookiesession/cs/httpcookierequestsessionchannel.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>操作を完了する前に指定した <see cref="T:System.TimeoutException" /> が経過した場合、操作は <paramref name="timeout" /> をスローする必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Via">
+      <MemberSignature Language="C#" Value="public Uri Via { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Via" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.IRequestChannel.Via" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求の送信先のトランスポート アドレスを取得します。</summary>
+        <value>メッセージの送信先のトランスポート アドレスを格納している <see cref="T:System.Uri" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.EndpointAddress> が指定されていない場合は、<xref:System.ServiceModel.Channels.IRequestChannel.Via%2A> が、最終的な送信先と物理アドレスの両方として機能します。 <xref:System.ServiceModel.Channels.IRequestChannel.Via%2A> が指定されている場合は、メッセージが送信される実際の物理アドレス、およびメッセージがその送信先に到達するまでに経由する必要がある物理アドレスとなります。  
+  
+   
+  
+## Examples  
+ 次のコードは、このプロパティを実装する方法を示しています。  
+  
+ [!code-csharp[S_UE_HttpCookieSession#1](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_httpcookiesession/cs/httpcookierequestsessionchannel.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

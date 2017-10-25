@@ -1,0 +1,1524 @@
+<Type Name="XpsDocumentWriter" FullName="System.Windows.Xps.XpsDocumentWriter">
+  <TypeSignature Language="C#" Value="public class XpsDocumentWriter : System.Windows.Documents.Serialization.SerializerWriter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XpsDocumentWriter extends System.Windows.Documents.Serialization.SerializerWriter" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Xps.XpsDocumentWriter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Printing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Documents.Serialization.SerializerWriter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XPS ドキュメントまたは印刷キューに書き込む方法を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.XpsDocumentWriter>コンス トラクターがありません。 作成する、 <xref:System.Windows.Xps.XpsDocumentWriter>、静的なを使用して<xref:System.Windows.Xps.Packaging.XpsDocument.CreateXpsDocumentWriter%2A>のメソッド、<xref:System.Windows.Xps.Packaging.XpsDocument>クラスまたは静的のいずれかを使用して<xref:System.Printing.PrintQueue.CreateXpsDocumentWriter%2A>のメソッド、<xref:System.Printing.PrintQueue>クラスです。 ドキュメントまたはキューを作成する、<xref:System.Windows.Xps.XpsDocumentWriter>書き込みを対象となります。  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Xps.XpsDocumentWriter> クラスのインスタンスを作成する方法の例を次に示します。  
+  
+ [!code-csharp[XpsSave#CreateXpsDocumentWriter](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsSave/CSharp/XpsSaveHelper.cs#createxpsdocumentwriter)]
+ [!code-vb[XpsSave#CreateXpsDocumentWriter](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsSave/visualbasic/xpssavehelper.vb#createxpsdocumentwriter)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CancelAsync">
+      <MemberSignature Language="C#" Value="public override void CancelAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void CancelAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.CancelAsync" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のキャンセル<see cref="Overload:System.Windows.Xps.XpsDocumentWriter.WriteAsync" />操作します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Windows.Xps.XpsWriterException">同期書き込み操作は実行されていません。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="CreateVisualsCollator">
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>返します、<see cref="T:System.Windows.Xps.VisualsToXpsDocument" />を書き込める<see cref="T:System.Windows.Media.Visual" />ドキュメントまたは印刷キューにオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.VisualsToXpsDocument>同じターゲットに書き込みます<xref:System.Windows.Xps.Packaging.XpsDocument>または<xref:System.Printing.PrintQueue>として、<xref:System.Windows.Xps.XpsDocumentWriter>を作成する、<xref:System.Windows.Xps.VisualsToXpsDocument>です。  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Xps.XpsDocumentWriter.CreateVisualsCollator%2A> メソッドを使用する方法の例を次に示します。  
+  
+ [!code-csharp[XpsSave#CreateAndWriteToVisualsCollator](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsSave/CSharp/XpsSaveHelper.cs#createandwritetovisualscollator)]
+ [!code-vb[XpsSave#CreateAndWriteToVisualsCollator](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsSave/visualbasic/xpssavehelper.vb#createandwritetovisualscollator)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="CreateVisualsCollator">
+      <MemberSignature Language="C#" Value="public override System.Windows.Documents.Serialization.SerializerWriterCollator CreateVisualsCollator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Windows.Documents.Serialization.SerializerWriterCollator CreateVisualsCollator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.CreateVisualsCollator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.Serialization.SerializerWriterCollator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Windows.Xps.VisualsToXpsDocument" />を書き込める<see cref="T:System.Windows.Media.Visual" />ドキュメントまたは印刷キューにオブジェクト。</summary>
+        <returns>新しい <see cref="T:System.Windows.Xps.VisualsToXpsDocument" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.VisualsToXpsDocument>同じターゲットに書き込みます<xref:System.Windows.Xps.Packaging.XpsDocument>または<xref:System.Printing.PrintQueue>として、<xref:System.Windows.Xps.XpsDocumentWriter>を作成する、<xref:System.Windows.Xps.VisualsToXpsDocument>です。  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Xps.XpsDocumentWriter.CreateVisualsCollator%2A> メソッドを使用する方法の例を次に示します。  
+  
+ [!code-csharp[XpsSave#CreateAndWriteToVisualsCollator](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsSave/CSharp/XpsSaveHelper.cs#createandwritetovisualscollator)]
+ [!code-vb[XpsSave#CreateAndWriteToVisualsCollator](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsSave/visualbasic/xpssavehelper.vb#createandwritetovisualscollator)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateVisualsCollator">
+      <MemberSignature Language="C#" Value="public override System.Windows.Documents.Serialization.SerializerWriterCollator CreateVisualsCollator (System.Printing.PrintTicket documentSequencePrintTicket, System.Printing.PrintTicket documentPrintTicket);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Windows.Documents.Serialization.SerializerWriterCollator CreateVisualsCollator(class System.Printing.PrintTicket documentSequencePrintTicket, class System.Printing.PrintTicket documentPrintTicket) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.CreateVisualsCollator(System.Printing.PrintTicket,System.Printing.PrintTicket)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.Serialization.SerializerWriterCollator</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="documentSequencePrintTicket" Type="System.Printing.PrintTicket" />
+        <Parameter Name="documentPrintTicket" Type="System.Printing.PrintTicket" />
+      </Parameters>
+      <Docs>
+        <param name="documentSequencePrintTicket">A<see cref="T:System.Printing.PrintTicket" />ドキュメント シーケンスの既定の印刷設定を指定します。</param>
+        <param name="documentPrintTicket">A<see cref="T:System.Printing.PrintTicket" />各ドキュメントの既定の印刷設定を表すです。</param>
+        <summary>返します、<see cref="T:System.Windows.Xps.VisualsToXpsDocument" />を書き込める<see cref="T:System.Windows.Media.Visual" />オブジェクトと<see cref="T:System.Printing.PrintTicket" />XPS ドキュメントまたは印刷キューを設定します。</summary>
+        <returns>新しい<see cref="T:System.Windows.Xps.VisualsToXpsDocument" />を書き込む<see cref="T:System.Windows.Media.Visual" />を持つ要素<see cref="T:System.Printing.PrintTicket" />設定を<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.VisualsToXpsDocument>同じターゲットに書き込みます<xref:System.Windows.Xps.Packaging.XpsDocument>または<xref:System.Printing.PrintQueue>として、<xref:System.Windows.Xps.XpsDocumentWriter>を作成する、<xref:System.Windows.Xps.VisualsToXpsDocument>です。  
+  
+ このメソッドが検証または指定した変更していない`documentPrintTicket`、特定の<xref:System.Printing.PrintQueue>します。 必要に応じて、使用して、<xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A>メソッドを作成、<xref:System.Printing.PrintTicket>に固有である、<xref:System.Printing.PrintQueue>と指定されたプリンターに対して無効です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public void Write (string documentPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Write(string documentPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.Write(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="documentPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="documentPath">ソース ドキュメントのパス。</param>
+        <summary>指定した同期的に書き込みます[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]ドキュメントをターゲット<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />または<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.Packaging.XpsDocument>クラスが単数形の名前、<xref:System.Windows.Xps.Packaging.XpsDocument>いずれかになります<xref:System.Windows.Documents.FixedDocument>または複数のドキュメントのセット。 このメソッドは、追加、<xref:System.Windows.Documents.FixedDocument>のセットをソース内の要素<xref:System.Windows.Documents.FixedDocument>ターゲット内の要素<xref:System.Windows.Xps.Packaging.XpsDocument>または<xref:System.Printing.PrintQueue>です。  
+  
+ これは、<xref:System.Windows.Xps.XpsDocumentWriter.Write%2A>メソッドは、指定されたを再度シリアル化[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]ドキュメントからすべてのコンテンツを削除する、<xref:System.IO.Packaging.Package>そのによって保持される必要はありません、 [XML Paper Specification](http://go.microsoft.com/fwlink/?LinkID=65761)です。  シリアルがからすべての拡張機能を削除しても、 <xref:System.Windows.Documents.FixedPage> 、拡張を含むマークアップ[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]コンテンツ。  
+  
+ このデザインを<xref:System.Windows.Xps.XpsDocumentWriter.Write%2A>メソッドは呼び出しません、<xref:System.Windows.Xps.XpsDocumentWriter.WritingPrintTicketRequired>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public override void Write (System.Windows.Documents.DocumentPaginator documentPaginator);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(class System.Windows.Documents.DocumentPaginator documentPaginator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.Write(System.Windows.Documents.DocumentPaginator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="documentPaginator" Type="System.Windows.Documents.DocumentPaginator" />
+      </Parameters>
+      <Docs>
+        <param name="documentPaginator">改ページ調整されていないソース マテリアルへのポインターが含まれており、マテリアルを改ページ調整するためのメソッドも含まれているオブジェクト。</param>
+        <summary>指定した同期的に改ページ調整されたコンテンツを書き込みます<see cref="T:System.Windows.Documents.DocumentPaginator" />ターゲットに<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />または<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Xps.XpsDocumentWriter.Write%2A>メソッドへの書き込みを[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]ドキュメント。  
+  
+ [!code-csharp[XpsSave#WriteToXpsWithDocumentPaginator](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsSave/CSharp/XpsSaveHelper.cs#writetoxpswithdocumentpaginator)]
+ [!code-vb[XpsSave#WriteToXpsWithDocumentPaginator](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsSave/visualbasic/xpssavehelper.vb#writetoxpswithdocumentpaginator)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public override void Write (System.Windows.Documents.FixedDocument fixedDocument);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(class System.Windows.Documents.FixedDocument fixedDocument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.Write(System.Windows.Documents.FixedDocument)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fixedDocument" Type="System.Windows.Documents.FixedDocument" />
+      </Parameters>
+      <Docs>
+        <param name="fixedDocument">書き込まれるドキュメント、<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />です。</param>
+        <summary>指定した同期的に書き込みます<see cref="T:System.Windows.Documents.FixedDocument" />ターゲットに<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />または<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.Packaging.XpsDocument>クラスが単数形の名前、<xref:System.Windows.Xps.Packaging.XpsDocument>いずれかになります<xref:System.Windows.Documents.FixedDocument>または複数のドキュメントのセット。 このメソッドは、追加、<xref:System.Windows.Documents.FixedDocument>セットにします。  
+  
+   
+  
+## Examples  
+ 次の例では、このメソッドへの書き込みに使用する方法、[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]ドキュメント。  
+  
+ [!code-csharp[XpsSave#WriteToXpsWithFixedDocument](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsSave/CSharp/XpsSaveHelper.cs#writetoxpswithfixeddocument)]
+ [!code-vb[XpsSave#WriteToXpsWithFixedDocument](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsSave/visualbasic/xpssavehelper.vb#writetoxpswithfixeddocument)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public override void Write (System.Windows.Documents.FixedDocumentSequence fixedDocumentSequence);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(class System.Windows.Documents.FixedDocumentSequence fixedDocumentSequence) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.Write(System.Windows.Documents.FixedDocumentSequence)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fixedDocumentSequence" Type="System.Windows.Documents.FixedDocumentSequence" />
+      </Parameters>
+      <Docs>
+        <param name="fixedDocumentSequence">書き込まれるドキュメントのセット、<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />です。</param>
+        <summary>指定した同期的に書き込みます<see cref="T:System.Windows.Documents.FixedDocumentSequence" />ターゲットに<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />または<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.Packaging.XpsDocument>クラスが単数形の名前、<xref:System.Windows.Xps.Packaging.XpsDocument>いずれかになります<xref:System.Windows.Documents.FixedDocument>または複数のドキュメントのセット。 このメソッドは、追加、<xref:System.Windows.Documents.FixedDocument>または一連の<xref:System.Windows.Documents.FixedDocument>要素を既存のセット。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Xps.XpsDocumentWriter.Write%2A>のシーケンスを書き込みます[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]ドキュメント。  
+  
+ [!code-csharp[XpsSave#WriteToXpsWithFixedDocumentSequence](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsSave/CSharp/XpsSaveHelper.cs#writetoxpswithfixeddocumentsequence)]
+ [!code-vb[XpsSave#WriteToXpsWithFixedDocumentSequence](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsSave/visualbasic/xpssavehelper.vb#writetoxpswithfixeddocumentsequence)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public override void Write (System.Windows.Documents.FixedPage fixedPage);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(class System.Windows.Documents.FixedPage fixedPage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.Write(System.Windows.Documents.FixedPage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fixedPage" Type="System.Windows.Documents.FixedPage" />
+      </Parameters>
+      <Docs>
+        <param name="fixedPage">書き込まれるページ、<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />です。</param>
+        <summary>指定した同期的に書き込みます<see cref="T:System.Windows.Documents.FixedPage" />ターゲットに<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />または<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public override void Write (System.Windows.Media.Visual visual);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(class System.Windows.Media.Visual visual) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.Write(System.Windows.Media.Visual)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="visual" Type="System.Windows.Media.Visual" />
+      </Parameters>
+      <Docs>
+        <param name="visual">書き込まれる <see cref="T:System.Windows.Media.Visual" />。</param>
+        <summary>指定した同期的に書き込みます<see cref="T:System.Windows.Media.Visual" />ターゲットに<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />または<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バッチ書き込みに、<xref:System.Windows.Media.Visual>を使用して<xref:System.Windows.Xps.VisualsToXpsDocument>です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Xps.XpsDocumentWriter.Write%2A>を書き込みます、<xref:System.Windows.Media.Visual>を[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]ドキュメント。  
+  
+ [!code-csharp[XpsSave#WriteToXpsWithVisual](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsSave/CSharp/XpsSaveHelper.cs#writetoxpswithvisual)]
+ [!code-vb[XpsSave#WriteToXpsWithVisual](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsSave/visualbasic/xpssavehelper.vb#writetoxpswithvisual)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public void Write (string documentPath, System.Windows.Xps.XpsDocumentNotificationLevel notificationLevel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Write(string documentPath, valuetype System.Windows.Xps.XpsDocumentNotificationLevel notificationLevel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.Write(System.String,System.Windows.Xps.XpsDocumentNotificationLevel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="documentPath" Type="System.String" />
+        <Parameter Name="notificationLevel" Type="System.Windows.Xps.XpsDocumentNotificationLevel" />
+      </Parameters>
+      <Docs>
+        <param name="documentPath">ソース ドキュメントのパス。</param>
+        <param name="notificationLevel">通知が有効になっているかどうかを示す値。</param>
+        <summary>指定した同期的に書き込みます[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]ドキュメントをターゲット<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />または<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに`notificationLevel`を無効にした、 <xref:System.Windows.Xps.XpsDocumentWriter> 、シリアル化されたコピー[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]ドキュメントをターゲット<xref:System.Windows.Xps.Packaging.XpsDocument>または<xref:System.Printing.PrintQueue>を作成した、<xref:System.Windows.Xps.XpsDocumentWriter>です。 ときに`notificationLevel`が有効になって、<xref:System.Windows.Xps.XpsDocumentWriter>最初、ドキュメントを逆シリアル化、なって、に書き込みますターゲット進行状況の通知を各ページは出力として。  
+  
+ <xref:System.Windows.Xps.Packaging.XpsDocument>クラスが単数形の名前、<xref:System.Windows.Xps.Packaging.XpsDocument>いずれかになります<xref:System.Windows.Documents.FixedDocument>または複数のドキュメントのセット。 このメソッドは、追加、<xref:System.Windows.Documents.FixedDocument>を一連のソース内の要素<xref:System.Windows.Documents.FixedDocument>ターゲット内の要素<xref:System.Windows.Xps.Packaging.XpsDocument>または<xref:System.Printing.PrintQueue>です。  
+  
+ 場合`notificationLevel`として指定された<xref:System.Windows.Xps.XpsDocumentNotificationLevel.ReceiveNotificationEnabled>ドキュメントがシリアル化、印刷されない場合にのみ通知が生成されます。  通知を受信するドキュメントが再シリアル化する必要があります。  ドキュメントを再シリアル化からすべてのコンテンツ、<xref:System.IO.Packaging.Package>そのによって保持される必要はありません、 [XPS XML Paper Specification ()](http://go.microsoft.com/fwlink/?LinkID=65761)を削除します。  シリアルがからすべての拡張機能を削除しても、 <xref:System.Windows.Documents.FixedPage> 、拡張を含むマークアップ[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]コンテンツ。  
+  
+ 場合`notificationLevel`として指定された<xref:System.Windows.Xps.XpsDocumentNotificationLevel.ReceiveNotificationDisabled>ドキュメントはシリアルいないと、印刷されたときにも、拡張コンテンツは保持されます。  
+  
+ このデザインを<xref:System.Windows.Xps.XpsDocumentWriter.Write%2A>メソッドは呼び出しません、<xref:System.Windows.Xps.XpsDocumentWriter.WritingPrintTicketRequired>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public override void Write (System.Windows.Documents.DocumentPaginator documentPaginator, System.Printing.PrintTicket printTicket);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(class System.Windows.Documents.DocumentPaginator documentPaginator, class System.Printing.PrintTicket printTicket) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.Write(System.Windows.Documents.DocumentPaginator,System.Printing.PrintTicket)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="documentPaginator" Type="System.Windows.Documents.DocumentPaginator" />
+        <Parameter Name="printTicket" Type="System.Printing.PrintTicket" />
+      </Parameters>
+      <Docs>
+        <param name="documentPaginator">改ページ調整されていないソース マテリアルへのポインターが含まれており、マテリアルを改ページ調整するためのメソッドも含まれているオブジェクト。</param>
+        <param name="printTicket">A<see cref="T:System.Printing.PrintTicket" />マテリアルの既定の印刷設定を表すです。</param>
+        <summary>指定した同期的に改ページ調整されたコンテンツを書き込みます<see cref="T:System.Windows.Documents.DocumentPaginator" />と共に、<see cref="T:System.Printing.PrintTicket" />ターゲットに<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />または<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが検証または指定した変更していない`printTicket`、特定の<xref:System.Printing.PrintQueue>します。 必要に応じて、使用して、<xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A>メソッドを作成、<xref:System.Printing.PrintTicket>に固有である、<xref:System.Printing.PrintQueue>である指定されたプリンターをします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public override void Write (System.Windows.Documents.FixedDocument fixedDocument, System.Printing.PrintTicket printTicket);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(class System.Windows.Documents.FixedDocument fixedDocument, class System.Printing.PrintTicket printTicket) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.Write(System.Windows.Documents.FixedDocument,System.Printing.PrintTicket)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fixedDocument" Type="System.Windows.Documents.FixedDocument" />
+        <Parameter Name="printTicket" Type="System.Printing.PrintTicket" />
+      </Parameters>
+      <Docs>
+        <param name="fixedDocument">書き込まれるドキュメント。</param>
+        <param name="printTicket">ドキュメントの既定の印刷設定を表す <see cref="T:System.Printing.PrintTicket" />。</param>
+        <summary>同期で書き込みます、<see cref="T:System.Windows.Documents.FixedDocument" />と共に、<see cref="T:System.Printing.PrintTicket" />ターゲットに<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />または<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.Packaging.XpsDocument>クラスが単数形の名前、<xref:System.Windows.Xps.Packaging.XpsDocument>いずれかになります<xref:System.Windows.Documents.FixedDocument>または複数のドキュメントのセット。 このメソッドは、追加、<xref:System.Windows.Documents.FixedDocument>セットにします。  
+  
+ このメソッドが検証または指定した変更していない`printTicket`、特定の<xref:System.Printing.PrintQueue>します。 必要に応じて、使用して、<xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A>メソッドを作成、<xref:System.Printing.PrintTicket>に固有である、<xref:System.Printing.PrintQueue>である指定されたプリンターをします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public override void Write (System.Windows.Documents.FixedDocumentSequence fixedDocumentSequence, System.Printing.PrintTicket printTicket);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(class System.Windows.Documents.FixedDocumentSequence fixedDocumentSequence, class System.Printing.PrintTicket printTicket) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.Write(System.Windows.Documents.FixedDocumentSequence,System.Printing.PrintTicket)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fixedDocumentSequence" Type="System.Windows.Documents.FixedDocumentSequence" />
+        <Parameter Name="printTicket" Type="System.Printing.PrintTicket" />
+      </Parameters>
+      <Docs>
+        <param name="fixedDocumentSequence">書き込まれるドキュメントのセット。</param>
+        <param name="printTicket">A<see cref="T:System.Printing.PrintTicket" />を表す、一連のドキュメントの既定の印刷設定。</param>
+        <summary>指定した同期的に書き込みます<see cref="T:System.Windows.Documents.FixedDocumentSequence" />と共に、<see cref="T:System.Printing.PrintTicket" />ターゲットに<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />または<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.Packaging.XpsDocument>クラスが単数形の名前、<xref:System.Windows.Xps.Packaging.XpsDocument>いずれかになります<xref:System.Windows.Documents.FixedDocument>または複数のドキュメントのセット。 このメソッドは、追加、<xref:System.Windows.Documents.FixedDocument>または一連の<xref:System.Windows.Documents.FixedDocument>要素を既存のセット。  
+  
+ このメソッドが検証または指定した変更していない`printTicket`、特定の<xref:System.Printing.PrintQueue>します。 必要に応じて、使用して、<xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A>メソッドを作成、<xref:System.Printing.PrintTicket>に固有である、<xref:System.Printing.PrintQueue>である指定されたプリンターをします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public override void Write (System.Windows.Documents.FixedPage fixedPage, System.Printing.PrintTicket printTicket);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(class System.Windows.Documents.FixedPage fixedPage, class System.Printing.PrintTicket printTicket) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.Write(System.Windows.Documents.FixedPage,System.Printing.PrintTicket)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fixedPage" Type="System.Windows.Documents.FixedPage" />
+        <Parameter Name="printTicket" Type="System.Printing.PrintTicket" />
+      </Parameters>
+      <Docs>
+        <param name="fixedPage">書き込まれるページ。</param>
+        <param name="printTicket">A<see cref="T:System.Printing.PrintTicket" />ページの既定の印刷設定を表すです。</param>
+        <summary>指定した同期的に書き込みます<see cref="T:System.Windows.Documents.FixedPage" />と共に、<see cref="T:System.Printing.PrintTicket" />ターゲットに<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />または<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが検証または指定した変更していない`printTicket`、特定の<xref:System.Printing.PrintQueue>します。 必要に応じて、使用して、<xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A>メソッドを作成、<xref:System.Printing.PrintTicket>に固有である、<xref:System.Printing.PrintQueue>である指定されたプリンターをします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public override void Write (System.Windows.Media.Visual visual, System.Printing.PrintTicket printTicket);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(class System.Windows.Media.Visual visual, class System.Printing.PrintTicket printTicket) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.Write(System.Windows.Media.Visual,System.Printing.PrintTicket)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="visual" Type="System.Windows.Media.Visual" />
+        <Parameter Name="printTicket" Type="System.Printing.PrintTicket" />
+      </Parameters>
+      <Docs>
+        <param name="visual">書き込まれる <see cref="T:System.Windows.Media.Visual" />。</param>
+        <param name="printTicket">ドキュメントの既定の印刷設定を表す <see cref="T:System.Printing.PrintTicket" />。</param>
+        <summary>指定した同期的に書き込みます<see cref="T:System.Windows.Media.Visual" />と共に、<see cref="T:System.Printing.PrintTicket" />ターゲットに<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />または<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バッチ書き込みに、<xref:System.Windows.Media.Visual>を使用して<xref:System.Windows.Xps.VisualsToXpsDocument>です。  
+  
+ このメソッドが検証または指定した変更していない`printTicket`、特定の<xref:System.Printing.PrintQueue>します。 必要に応じて、使用して、<xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A>メソッドを作成、<xref:System.Printing.PrintTicket>に固有である、<xref:System.Printing.PrintQueue>である指定されたプリンターをします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public void WriteAsync (string documentPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteAsync(string documentPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="documentPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="documentPath">ソース ドキュメントのパス。</param>
+        <summary>指定した非同期的に書き込みます[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]ドキュメントをターゲット<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />または<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.Packaging.XpsDocument>クラスが単数形の名前、<xref:System.Windows.Xps.Packaging.XpsDocument>いずれかになります<xref:System.Windows.Documents.FixedDocument>または複数のドキュメントのセット。 このメソッドは、追加、<xref:System.Windows.Documents.FixedDocument>のセットをソース内の要素<xref:System.Windows.Documents.FixedDocument>ターゲット内の要素<xref:System.Windows.Xps.Packaging.XpsDocument>または<xref:System.Printing.PrintQueue>です。  
+  
+ これは、<xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A>メソッドは、指定されたを再度シリアル化[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]ドキュメントからすべてのコンテンツを削除する、<xref:System.IO.Packaging.Package>そのによって保持される必要はありません、 [XML Paper Specification](http://go.microsoft.com/fwlink/?LinkID=65761)です。  シリアルがからすべての拡張機能を削除しても、 <xref:System.Windows.Documents.FixedPage> 、拡張を含むマークアップ[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]コンテンツ。  
+  
+ このデザインを<xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A>メソッドは呼び出しません、<xref:System.Windows.Xps.XpsDocumentWriter.WritingPrintTicketRequired>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public override void WriteAsync (System.Windows.Documents.DocumentPaginator documentPaginator);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteAsync(class System.Windows.Documents.DocumentPaginator documentPaginator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Documents.DocumentPaginator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="documentPaginator" Type="System.Windows.Documents.DocumentPaginator" />
+      </Parameters>
+      <Docs>
+        <param name="documentPaginator">改ページ調整されていないソース マテリアルへのポインターが含まれており、マテリアルを改ページ調整するためのメソッドも含まれているオブジェクト。</param>
+        <summary>指定したから非同期的に改ページ調整されたコンテンツを書き込みます<see cref="T:System.Windows.Documents.DocumentPaginator" />ターゲットに<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />または<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、このメソッドへの書き込みに使用する方法、[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]ドキュメント。  
+  
+ [!code-csharp[XpsSave#WriteAsyncToXpsWithDocumentPaginator](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsSave/CSharp/XpsSaveHelper.cs#writeasynctoxpswithdocumentpaginator)]
+ [!code-vb[XpsSave#WriteAsyncToXpsWithDocumentPaginator](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsSave/visualbasic/xpssavehelper.vb#writeasynctoxpswithdocumentpaginator)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public override void WriteAsync (System.Windows.Documents.FixedDocument fixedDocument);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteAsync(class System.Windows.Documents.FixedDocument fixedDocument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Documents.FixedDocument)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fixedDocument" Type="System.Windows.Documents.FixedDocument" />
+      </Parameters>
+      <Docs>
+        <param name="fixedDocument">書き込まれるドキュメント。</param>
+        <summary>指定した非同期的に書き込みます<see cref="T:System.Windows.Documents.FixedDocument" />ターゲットに<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />または<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.Packaging.XpsDocument>クラスが単数形の名前、<xref:System.Windows.Xps.Packaging.XpsDocument>いずれかになります<xref:System.Windows.Documents.FixedDocument>または複数のドキュメントのセット。 このメソッドは、追加、<xref:System.Windows.Documents.FixedDocument>セットにします。  
+  
+   
+  
+## Examples  
+ 次の例では、このメソッドへの書き込みに使用する方法、[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]ドキュメント。  
+  
+ [!code-csharp[XpsSave#WriteAsyncToXpsWithFixedDocument](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsSave/CSharp/XpsSaveHelper.cs#writeasynctoxpswithfixeddocument)]
+ [!code-vb[XpsSave#WriteAsyncToXpsWithFixedDocument](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsSave/visualbasic/xpssavehelper.vb#writeasynctoxpswithfixeddocument)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public override void WriteAsync (System.Windows.Documents.FixedDocumentSequence fixedDocumentSequence);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteAsync(class System.Windows.Documents.FixedDocumentSequence fixedDocumentSequence) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Documents.FixedDocumentSequence)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fixedDocumentSequence" Type="System.Windows.Documents.FixedDocumentSequence" />
+      </Parameters>
+      <Docs>
+        <param name="fixedDocumentSequence">書き込まれるドキュメントのセット。</param>
+        <summary>指定した非同期的に書き込みます<see cref="T:System.Windows.Documents.FixedDocumentSequence" />ターゲットに<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />または<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.Packaging.XpsDocument>クラスが単数形の名前、<xref:System.Windows.Xps.Packaging.XpsDocument>いずれかになります<xref:System.Windows.Documents.FixedDocument>または複数のドキュメントのセット。 このメソッドは、追加、<xref:System.Windows.Documents.FixedDocument>または一連の<xref:System.Windows.Documents.FixedDocument>要素を既存のセット。  
+  
+   
+  
+## Examples  
+ 次の例では、このメソッドへの書き込みに使用する方法、[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]ドキュメント。  
+  
+ [!code-csharp[XpsSave#WriteAsyncToXpsWithFixedDocumentSequence](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsSave/CSharp/XpsSaveHelper.cs#writeasynctoxpswithfixeddocumentsequence)]
+ [!code-vb[XpsSave#WriteAsyncToXpsWithFixedDocumentSequence](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsSave/visualbasic/xpssavehelper.vb#writeasynctoxpswithfixeddocumentsequence)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public override void WriteAsync (System.Windows.Documents.FixedPage fixedPage);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteAsync(class System.Windows.Documents.FixedPage fixedPage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Documents.FixedPage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fixedPage" Type="System.Windows.Documents.FixedPage" />
+      </Parameters>
+      <Docs>
+        <param name="fixedPage">書き込まれるページ。</param>
+        <summary>指定した非同期的に書き込みます<see cref="T:System.Windows.Documents.FixedPage" />ターゲットに<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />または<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public override void WriteAsync (System.Windows.Media.Visual visual);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteAsync(class System.Windows.Media.Visual visual) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Media.Visual)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="visual" Type="System.Windows.Media.Visual" />
+      </Parameters>
+      <Docs>
+        <param name="visual">書き込まれる <see cref="T:System.Windows.Media.Visual" />。</param>
+        <summary>指定した非同期的に書き込みます<see cref="T:System.Windows.Media.Visual" />ターゲットに<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />または<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バッチ書き込みに、<xref:System.Windows.Media.Visual>を使用して<xref:System.Windows.Xps.VisualsToXpsDocument>です。  
+  
+   
+  
+## Examples  
+ 次の例は、このメソッドを使用して記述する方法を示しています、<xref:System.Windows.Media.Visual>を[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]ドキュメント。  
+  
+ [!code-csharp[XpsSave#WriteAsyncToXpsWithVisual](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsSave/CSharp/XpsSaveHelper.cs#writeasynctoxpswithvisual)]
+ [!code-vb[XpsSave#WriteAsyncToXpsWithVisual](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsSave/visualbasic/xpssavehelper.vb#writeasynctoxpswithvisual)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public void WriteAsync (string documentPath, System.Windows.Xps.XpsDocumentNotificationLevel notificationLevel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteAsync(string documentPath, valuetype System.Windows.Xps.XpsDocumentNotificationLevel notificationLevel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.String,System.Windows.Xps.XpsDocumentNotificationLevel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="documentPath" Type="System.String" />
+        <Parameter Name="notificationLevel" Type="System.Windows.Xps.XpsDocumentNotificationLevel" />
+      </Parameters>
+      <Docs>
+        <param name="documentPath">ソース ドキュメントのパス。</param>
+        <param name="notificationLevel">通知が有効になっているかどうかを示す値。</param>
+        <summary>指定した非同期的に書き込みます[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]ターゲットへの通知オプションを使用してドキュメント<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />または<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに`notificationLevel`を無効にした、 <xref:System.Windows.Xps.XpsDocumentWriter> 、シリアル化されたコピー[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]ドキュメントをターゲット<xref:System.Windows.Xps.Packaging.XpsDocument>または<xref:System.Printing.PrintQueue>を作成した、<xref:System.Windows.Xps.XpsDocumentWriter>です。 ときに`notificationLevel`が有効になって、<xref:System.Windows.Xps.XpsDocumentWriter>最初、ドキュメントを逆シリアル化、なって、に書き込みますターゲット進行状況の通知を各ページは出力として。  
+  
+ <xref:System.Windows.Xps.Packaging.XpsDocument>クラスが単数形の名前、<xref:System.Windows.Xps.Packaging.XpsDocument>いずれかになります<xref:System.Windows.Documents.FixedDocument>または複数のドキュメントのセット。 このメソッドは、追加、<xref:System.Windows.Documents.FixedDocument>を一連のソース内の要素<xref:System.Windows.Documents.FixedDocument>ターゲット内の要素<xref:System.Windows.Xps.Packaging.XpsDocument>または<xref:System.Printing.PrintQueue>です。  
+  
+ 場合`notificationLevel`として指定された<xref:System.Windows.Xps.XpsDocumentNotificationLevel.ReceiveNotificationEnabled>ドキュメントがシリアル化、印刷されない場合にのみ通知が生成されます。  通知を受信するドキュメントが再シリアル化する必要があります。  ドキュメントを再シリアル化からすべてのコンテンツ、<xref:System.IO.Packaging.Package>そのによって保持される必要はありません、 [XML Paper Specification](http://go.microsoft.com/fwlink/?LinkID=65761)を削除します。  シリアルがからすべての拡張機能を削除しても、 <xref:System.Windows.Documents.FixedPage> 、拡張を含むマークアップ[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]コンテンツ。  
+  
+ 場合`notificationLevel`として指定された<xref:System.Windows.Xps.XpsDocumentNotificationLevel.ReceiveNotificationDisabled>ドキュメントはシリアルいないと、印刷されたときにも、拡張コンテンツは保持されます。  
+  
+ このデザインを<xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A>メソッドは呼び出しません、<xref:System.Windows.Xps.XpsDocumentWriter.WritingPrintTicketRequired>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public override void WriteAsync (System.Windows.Documents.DocumentPaginator documentPaginator, object userSuppliedState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteAsync(class System.Windows.Documents.DocumentPaginator documentPaginator, object userSuppliedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Documents.DocumentPaginator,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="documentPaginator" Type="System.Windows.Documents.DocumentPaginator" />
+        <Parameter Name="userSuppliedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="documentPaginator">改ページ調整されていないソース マテリアルへのポインターが含まれているオブジェクト。マテリアルを改ページ調整するためのメソッドも含まれている。</param>
+        <param name="userSuppliedState">非同期操作を識別し、それに関連付けるユーザー指定のオブジェクト。</param>
+        <summary>指定したから非同期的に改ページ調整されたコンテンツを書き込みます<see cref="T:System.Windows.Documents.DocumentPaginator" />ターゲットに<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />または<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public override void WriteAsync (System.Windows.Documents.DocumentPaginator documentPaginator, System.Printing.PrintTicket printTicket);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteAsync(class System.Windows.Documents.DocumentPaginator documentPaginator, class System.Printing.PrintTicket printTicket) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Documents.DocumentPaginator,System.Printing.PrintTicket)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="documentPaginator" Type="System.Windows.Documents.DocumentPaginator" />
+        <Parameter Name="printTicket" Type="System.Printing.PrintTicket" />
+      </Parameters>
+      <Docs>
+        <param name="documentPaginator">改ページ調整されていないソース マテリアルへのポインターが含まれており、マテリアルを改ページ調整するためのメソッドも含まれているオブジェクト。</param>
+        <param name="printTicket">A<see cref="T:System.Printing.PrintTicket" />マテリアルの既定の印刷設定を表すです。</param>
+        <summary>指定したから非同期的に改ページ調整されたコンテンツを書き込みます<see cref="T:System.Windows.Documents.DocumentPaginator" />と共に、<see cref="T:System.Printing.PrintTicket" />ターゲットに<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />または<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが検証または指定した変更していない`printTicket`、特定の<xref:System.Printing.PrintQueue>します。 必要に応じて、使用して、<xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A>メソッドを作成、<xref:System.Printing.PrintTicket>に固有である、<xref:System.Printing.PrintQueue>である指定されたプリンターをします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public override void WriteAsync (System.Windows.Documents.FixedDocument fixedDocument, object userSuppliedState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteAsync(class System.Windows.Documents.FixedDocument fixedDocument, object userSuppliedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Documents.FixedDocument,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fixedDocument" Type="System.Windows.Documents.FixedDocument" />
+        <Parameter Name="userSuppliedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="fixedDocument">書き込まれるドキュメント。</param>
+        <param name="userSuppliedState">非同期操作を識別し、それに関連付けるユーザー指定のオブジェクト。</param>
+        <summary>指定した非同期的に書き込みます<see cref="T:System.Windows.Documents.FixedDocument" />ターゲットに<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />または<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.Packaging.XpsDocument>クラスが単数形の名前、<xref:System.Windows.Xps.Packaging.XpsDocument>いずれかになります<xref:System.Windows.Documents.FixedDocument>または複数のドキュメントのセット。 このメソッドは、追加、<xref:System.Windows.Documents.FixedDocument>セットにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public override void WriteAsync (System.Windows.Documents.FixedDocument fixedDocument, System.Printing.PrintTicket printTicket);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteAsync(class System.Windows.Documents.FixedDocument fixedDocument, class System.Printing.PrintTicket printTicket) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Documents.FixedDocument,System.Printing.PrintTicket)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fixedDocument" Type="System.Windows.Documents.FixedDocument" />
+        <Parameter Name="printTicket" Type="System.Printing.PrintTicket" />
+      </Parameters>
+      <Docs>
+        <param name="fixedDocument">書き込まれるドキュメント。</param>
+        <param name="printTicket">ドキュメントの既定の印刷設定を表す <see cref="T:System.Printing.PrintTicket" />。</param>
+        <summary>指定した非同期的に書き込みます<see cref="T:System.Windows.Documents.FixedDocument" />と共に、<see cref="T:System.Printing.PrintTicket" />ターゲットに<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />または<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.Packaging.XpsDocument>クラスが単数形の名前、<xref:System.Windows.Xps.Packaging.XpsDocument>いずれかになります<xref:System.Windows.Documents.FixedDocument>または複数のドキュメントのセット。 このメソッドは、追加、<xref:System.Windows.Documents.FixedDocument>セットにします。  
+  
+ このメソッドが検証または指定した変更していない`printTicket`、特定の<xref:System.Printing.PrintQueue>します。 必要に応じて、使用して、<xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A>メソッドを作成、<xref:System.Printing.PrintTicket>に固有である、<xref:System.Printing.PrintQueue>である指定されたプリンターをします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public override void WriteAsync (System.Windows.Documents.FixedDocumentSequence fixedDocumentSequence, object userSuppliedState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteAsync(class System.Windows.Documents.FixedDocumentSequence fixedDocumentSequence, object userSuppliedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Documents.FixedDocumentSequence,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fixedDocumentSequence" Type="System.Windows.Documents.FixedDocumentSequence" />
+        <Parameter Name="userSuppliedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="fixedDocumentSequence">書き込まれるドキュメントのセット。</param>
+        <param name="userSuppliedState">非同期操作を識別し、それに関連付けるユーザー指定のオブジェクト。</param>
+        <summary>指定した非同期的に書き込みます<see cref="T:System.Windows.Documents.FixedDocumentSequence" />ターゲットに<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />または<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.Packaging.XpsDocument>クラスが単数形の名前、<xref:System.Windows.Xps.Packaging.XpsDocument>いずれかになります<xref:System.Windows.Documents.FixedDocument>または複数のドキュメントのセット。 このメソッドは、追加、<xref:System.Windows.Documents.FixedDocument>または一連の<xref:System.Windows.Documents.FixedDocument>要素を既存のセット。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public override void WriteAsync (System.Windows.Documents.FixedDocumentSequence fixedDocumentSequence, System.Printing.PrintTicket printTicket);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteAsync(class System.Windows.Documents.FixedDocumentSequence fixedDocumentSequence, class System.Printing.PrintTicket printTicket) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Documents.FixedDocumentSequence,System.Printing.PrintTicket)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fixedDocumentSequence" Type="System.Windows.Documents.FixedDocumentSequence" />
+        <Parameter Name="printTicket" Type="System.Printing.PrintTicket" />
+      </Parameters>
+      <Docs>
+        <param name="fixedDocumentSequence">書き込まれるドキュメントのセット。</param>
+        <param name="printTicket">A<see cref="T:System.Printing.PrintTicket" />を表す、一連のドキュメントの既定の印刷設定。</param>
+        <summary>指定した非同期的に書き込みます<see cref="T:System.Windows.Documents.FixedDocumentSequence" />と共に、<see cref="T:System.Printing.PrintTicket" />ターゲットに<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />または<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.Packaging.XpsDocument>クラスが単数形の名前、<xref:System.Windows.Xps.Packaging.XpsDocument>いずれかになります<xref:System.Windows.Documents.FixedDocument>または複数のドキュメントのセット。 このメソッドは、追加、<xref:System.Windows.Documents.FixedDocument>または一連の<xref:System.Windows.Documents.FixedDocument>要素を既存のセット。  
+  
+ このメソッドが検証または指定した変更していない`printTicket`、特定の<xref:System.Printing.PrintQueue>します。 必要に応じて、使用して、<xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A>メソッドを作成、<xref:System.Printing.PrintTicket>に固有である、<xref:System.Printing.PrintQueue>である指定されたプリンターをします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public override void WriteAsync (System.Windows.Documents.FixedPage fixedPage, object userSuppliedState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteAsync(class System.Windows.Documents.FixedPage fixedPage, object userSuppliedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Documents.FixedPage,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fixedPage" Type="System.Windows.Documents.FixedPage" />
+        <Parameter Name="userSuppliedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="fixedPage">書き込まれるページ。</param>
+        <param name="userSuppliedState">非同期操作を識別し、それに関連付けるユーザー指定のオブジェクト。</param>
+        <summary>指定した非同期的に書き込みます<see cref="T:System.Windows.Documents.FixedPage" />ターゲットに<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />または<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public override void WriteAsync (System.Windows.Documents.FixedPage fixedPage, System.Printing.PrintTicket printTicket);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteAsync(class System.Windows.Documents.FixedPage fixedPage, class System.Printing.PrintTicket printTicket) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Documents.FixedPage,System.Printing.PrintTicket)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fixedPage" Type="System.Windows.Documents.FixedPage" />
+        <Parameter Name="printTicket" Type="System.Printing.PrintTicket" />
+      </Parameters>
+      <Docs>
+        <param name="fixedPage">書き込まれるページ。</param>
+        <param name="printTicket">A<see cref="T:System.Printing.PrintTicket" />ページの既定の印刷設定を表すです。</param>
+        <summary>指定した非同期的に書き込みます<see cref="T:System.Windows.Documents.FixedPage" />と共に、<see cref="T:System.Printing.PrintTicket" />ターゲットに<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />または<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが検証または指定した変更していない`printTicket`、特定の<xref:System.Printing.PrintQueue>します。 必要に応じて、使用して、<xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A>メソッドを作成、<xref:System.Printing.PrintTicket>に固有である、<xref:System.Printing.PrintQueue>である指定されたプリンターをします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public override void WriteAsync (System.Windows.Media.Visual visual, object userSuppliedState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteAsync(class System.Windows.Media.Visual visual, object userSuppliedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Media.Visual,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="visual" Type="System.Windows.Media.Visual" />
+        <Parameter Name="userSuppliedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="visual">書き込まれる <see cref="T:System.Windows.Media.Visual" />。</param>
+        <param name="userSuppliedState">非同期操作を識別し、それに関連付けるユーザー指定のオブジェクト。</param>
+        <summary>指定した非同期的に書き込みます<see cref="T:System.Windows.Media.Visual" />ターゲットに<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />または<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バッチ書き込みに、<xref:System.Windows.Media.Visual>を使用して<xref:System.Windows.Xps.VisualsToXpsDocument>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public override void WriteAsync (System.Windows.Media.Visual visual, System.Printing.PrintTicket printTicket);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteAsync(class System.Windows.Media.Visual visual, class System.Printing.PrintTicket printTicket) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Media.Visual,System.Printing.PrintTicket)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="visual" Type="System.Windows.Media.Visual" />
+        <Parameter Name="printTicket" Type="System.Printing.PrintTicket" />
+      </Parameters>
+      <Docs>
+        <param name="visual">書き込まれる <see cref="T:System.Windows.Media.Visual" />。</param>
+        <param name="printTicket">ドキュメントの既定の印刷設定を表す <see cref="T:System.Printing.PrintTicket" />。</param>
+        <summary>指定した非同期的に書き込みます<see cref="T:System.Windows.Media.Visual" />と共に、<see cref="T:System.Printing.PrintTicket" />ターゲットに<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />または<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バッチ書き込みに、<xref:System.Windows.Media.Visual>を使用して<xref:System.Windows.Xps.VisualsToXpsDocument>です。  
+  
+ このメソッドが検証または指定した変更していない`printTicket`、特定の<xref:System.Printing.PrintQueue>します。 必要に応じて、使用して、<xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A>メソッドを作成、<xref:System.Printing.PrintTicket>に固有である、<xref:System.Printing.PrintQueue>である指定されたプリンターをします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public override void WriteAsync (System.Windows.Documents.DocumentPaginator documentPaginator, System.Printing.PrintTicket printTicket, object userSuppliedState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteAsync(class System.Windows.Documents.DocumentPaginator documentPaginator, class System.Printing.PrintTicket printTicket, object userSuppliedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Documents.DocumentPaginator,System.Printing.PrintTicket,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="documentPaginator" Type="System.Windows.Documents.DocumentPaginator" />
+        <Parameter Name="printTicket" Type="System.Printing.PrintTicket" />
+        <Parameter Name="userSuppliedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="documentPaginator">改ページ調整されていないソース マテリアルへのポインターが含まれているオブジェクト。マテリアルを改ページ調整するためのメソッドも含まれている。</param>
+        <param name="printTicket">A<see cref="T:System.Printing.PrintTicket" />マテリアルの既定の印刷設定を表すです。</param>
+        <param name="userSuppliedState">非同期操作を識別し、それに関連付けるユーザー指定のオブジェクト。</param>
+        <summary>指定したから非同期的に改ページ調整されたコンテンツを書き込みます<see cref="T:System.Windows.Documents.DocumentPaginator" />と共に、<see cref="T:System.Printing.PrintTicket" />ターゲットに<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />または<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが検証または指定した変更していない`printTicket`、特定の<xref:System.Printing.PrintQueue>します。 必要に応じて、使用して、<xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A>メソッドを作成、<xref:System.Printing.PrintTicket>に固有である、<xref:System.Printing.PrintQueue>である指定されたプリンターをします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public override void WriteAsync (System.Windows.Documents.FixedDocument fixedDocument, System.Printing.PrintTicket printTicket, object userSuppliedState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteAsync(class System.Windows.Documents.FixedDocument fixedDocument, class System.Printing.PrintTicket printTicket, object userSuppliedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Documents.FixedDocument,System.Printing.PrintTicket,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fixedDocument" Type="System.Windows.Documents.FixedDocument" />
+        <Parameter Name="printTicket" Type="System.Printing.PrintTicket" />
+        <Parameter Name="userSuppliedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="fixedDocument">書き込まれるドキュメント。</param>
+        <param name="printTicket">ドキュメントの既定の印刷設定を表す <see cref="T:System.Printing.PrintTicket" />。</param>
+        <param name="userSuppliedState">非同期操作を識別し、それに関連付けるユーザー指定のオブジェクト。</param>
+        <summary>指定した非同期的に書き込みます<see cref="T:System.Windows.Documents.FixedDocument" />と共に、<see cref="T:System.Printing.PrintTicket" />ターゲットに<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />または<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.Packaging.XpsDocument>クラスが単数形の名前、<xref:System.Windows.Xps.Packaging.XpsDocument>いずれかになります<xref:System.Windows.Documents.FixedDocument>または複数のドキュメントのセット。 このメソッドは、追加、<xref:System.Windows.Documents.FixedDocument>セットにします。  
+  
+ このメソッドが検証または指定した変更していない`printTicket`、特定の<xref:System.Printing.PrintQueue>します。 必要に応じて、使用して、<xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A>メソッドを作成、<xref:System.Printing.PrintTicket>に固有である、<xref:System.Printing.PrintQueue>である指定されたプリンターをします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public override void WriteAsync (System.Windows.Documents.FixedDocumentSequence fixedDocumentSequence, System.Printing.PrintTicket printTicket, object userSuppliedState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteAsync(class System.Windows.Documents.FixedDocumentSequence fixedDocumentSequence, class System.Printing.PrintTicket printTicket, object userSuppliedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Documents.FixedDocumentSequence,System.Printing.PrintTicket,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fixedDocumentSequence" Type="System.Windows.Documents.FixedDocumentSequence" />
+        <Parameter Name="printTicket" Type="System.Printing.PrintTicket" />
+        <Parameter Name="userSuppliedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="fixedDocumentSequence">書き込まれるドキュメント セット。</param>
+        <param name="printTicket">A<see cref="T:System.Printing.PrintTicket" />を表す、一連のドキュメントの既定の印刷設定。</param>
+        <param name="userSuppliedState">非同期操作を識別し、それに関連付けるユーザー指定のオブジェクト。</param>
+        <summary>指定した非同期的に書き込みます<see cref="T:System.Windows.Documents.FixedDocumentSequence" />と共に、<see cref="T:System.Printing.PrintTicket" />ターゲットに<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />または<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A>ドキュメントのセットを非同期的に書き込みます、<xref:System.Windows.Xps.Packaging.XpsDocument>または<xref:System.Printing.PrintQueue>を作成した、<xref:System.Windows.Xps.XpsDocumentWriter>です。 書き込まれるデータが含まれています、<xref:System.Printing.PrintTicket>と呼び出し元がイベント ハンドラーに渡す追加の情報です。  
+  
+ <xref:System.Windows.Xps.Packaging.XpsDocument>クラスが単数形の名前、<xref:System.Windows.Xps.Packaging.XpsDocument>いずれかになります<xref:System.Windows.Documents.FixedDocument>または複数のドキュメントのセット。 このメソッドは、追加、<xref:System.Windows.Documents.FixedDocument>または一連の<xref:System.Windows.Documents.FixedDocument>要素を既存のシーケンス。  
+  
+ このメソッドが検証または指定した変更していない`printTicket`、特定の<xref:System.Printing.PrintQueue>します。 必要に応じて、使用して、<xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A>メソッドを作成、<xref:System.Printing.PrintTicket>に固有である、<xref:System.Printing.PrintQueue>である指定されたプリンターをします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public override void WriteAsync (System.Windows.Documents.FixedPage fixedPage, System.Printing.PrintTicket printTicket, object userSuppliedState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteAsync(class System.Windows.Documents.FixedPage fixedPage, class System.Printing.PrintTicket printTicket, object userSuppliedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Documents.FixedPage,System.Printing.PrintTicket,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fixedPage" Type="System.Windows.Documents.FixedPage" />
+        <Parameter Name="printTicket" Type="System.Printing.PrintTicket" />
+        <Parameter Name="userSuppliedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="fixedPage">書き込まれるページ。</param>
+        <param name="printTicket">A<see cref="T:System.Printing.PrintTicket" />ページの既定の印刷設定を表すです。</param>
+        <param name="userSuppliedState">非同期操作を識別し、それに関連付けるユーザー指定のオブジェクト。</param>
+        <summary>指定した非同期的に書き込みます<see cref="T:System.Windows.Documents.FixedPage" />と共に、<see cref="T:System.Printing.PrintTicket" />ターゲットに<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />または<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが検証または指定した変更していない`printTicket`、特定の<xref:System.Printing.PrintQueue>します。 必要に応じて、使用して、<xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A>メソッドを作成、<xref:System.Printing.PrintTicket>に固有である、<xref:System.Printing.PrintQueue>である指定されたプリンターをします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public override void WriteAsync (System.Windows.Media.Visual visual, System.Printing.PrintTicket printTicket, object userSuppliedState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteAsync(class System.Windows.Media.Visual visual, class System.Printing.PrintTicket printTicket, object userSuppliedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.XpsDocumentWriter.WriteAsync(System.Windows.Media.Visual,System.Printing.PrintTicket,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="visual" Type="System.Windows.Media.Visual" />
+        <Parameter Name="printTicket" Type="System.Printing.PrintTicket" />
+        <Parameter Name="userSuppliedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="visual">書き込まれる <see cref="T:System.Windows.Media.Visual" />。</param>
+        <param name="printTicket">ドキュメントの既定の印刷設定を表す <see cref="T:System.Printing.PrintTicket" />。</param>
+        <param name="userSuppliedState">非同期操作を識別し、それに関連付けるユーザー指定のオブジェクト。</param>
+        <summary>指定した非同期的に書き込みます<see cref="T:System.Windows.Media.Visual" />と共に、<see cref="T:System.Printing.PrintTicket" />ターゲットに<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />または<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数の書き込みの<xref:System.Windows.Media.Visual>要素を使用して<xref:System.Windows.Xps.VisualsToXpsDocument>です。  
+  
+ このメソッドが検証または指定した変更していない`printTicket`、特定の<xref:System.Printing.PrintQueue>します。 必要に応じて、使用して、<xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A>メソッドを作成、<xref:System.Printing.PrintTicket>に固有である、<xref:System.Printing.PrintQueue>である指定されたプリンターをします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WritingCancelled">
+      <MemberSignature Language="C#" Value="public override event System.Windows.Documents.Serialization.WritingCancelledEventHandler WritingCancelled;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Documents.Serialization.WritingCancelledEventHandler WritingCancelled" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Xps.XpsDocumentWriter.WritingCancelled" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.Serialization.WritingCancelledEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="Overload:System.Windows.Xps.XpsDocumentWriter.Write" />または<see cref="Overload:System.Windows.Xps.XpsDocumentWriter.WriteAsync" />操作が取り消されました。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WritingCompleted">
+      <MemberSignature Language="C#" Value="public override event System.Windows.Documents.Serialization.WritingCompletedEventHandler WritingCompleted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Documents.Serialization.WritingCompletedEventHandler WritingCompleted" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Xps.XpsDocumentWriter.WritingCompleted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.Serialization.WritingCompletedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>書き込み操作が完了すると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Windows.Xps.XpsDocumentWriter.WritingCompleted> イベントを使用する方法を次の例に示します。  
+  
+ [!code-csharp[XpsSave#WritingEvents](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsSave/CSharp/XpsSaveHelper.cs#writingevents)]
+ [!code-vb[XpsSave#WritingEvents](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsSave/visualbasic/xpssavehelper.vb#writingevents)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WritingPrintTicketRequired">
+      <MemberSignature Language="C#" Value="public override event System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventHandler WritingPrintTicketRequired;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventHandler WritingPrintTicketRequired" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Xps.XpsDocumentWriter.WritingPrintTicketRequired" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>直前に発生する、<see cref="Overload:System.Windows.Xps.XpsDocumentWriter.Write" />または<see cref="Overload:System.Windows.Xps.XpsDocumentWriter.WriteAsync" />メソッドを追加、<see cref="T:System.Printing.PrintTicket" />ドキュメントまたは印刷キューにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.XpsDocumentWriter.WritingPrintTicketRequired>新しいの代わりに、イベント ハンドラーを有効に<xref:System.Printing.PrintTicket>の書き込み操作に渡される 1 つです。  
+  
+ 次の 4 つ<xref:System.Windows.Xps.XpsDocumentWriter.Write%2A>と<xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A>メソッドを呼び出す必要はありません、<xref:System.Windows.Xps.XpsDocumentWriter.WritingPrintTicketRequired>イベント。  
+  
+-   <xref:System.Windows.Xps.XpsDocumentWriter.Write%2A>(String)  
+  
+-   <xref:System.Windows.Xps.XpsDocumentWriter.Write%2A>(String, XpsDocumentNotificationLevel)  
+  
+-   <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A>(String)  
+  
+-   <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A>(String, XpsDocumentNotificationLevel)  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Xps.XpsDocumentWriter.WritingPrintTicketRequired> イベントを使用する方法を次の例に示します。  
+  
+ [!code-csharp[XpsPrint#PrintMultipleFixedContentDocuments](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsPrint/CSharp/XpsPrintHelper.cs#printmultiplefixedcontentdocuments)]
+ [!code-vb[XpsPrint#PrintMultipleFixedContentDocuments](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsPrint/visualbasic/xpsprinthelper.vb#printmultiplefixedcontentdocuments)]  
+  
+ イベント ハンドラーは、次の例で作成されます。  
+  
+ [!code-csharp[XpsPrint#MultipleFixedContentDocuments_WritingPrintTicketRequired](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsPrint/CSharp/XpsPrintHelper.cs#multiplefixedcontentdocuments_writingprintticketrequired)]
+ [!code-vb[XpsPrint#MultipleFixedContentDocuments_WritingPrintTicketRequired](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsPrint/visualbasic/xpsprinthelper.vb#multiplefixedcontentdocuments_writingprintticketrequired)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WritingProgressChanged">
+      <MemberSignature Language="C#" Value="public override event System.Windows.Documents.Serialization.WritingProgressChangedEventHandler WritingProgressChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Documents.Serialization.WritingProgressChangedEventHandler WritingProgressChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Xps.XpsDocumentWriter.WritingProgressChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.Serialization.WritingProgressChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="T:System.Windows.Xps.XpsDocumentWriter" />その進行状況を更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成および使用する方法を示しています、<xref:System.Windows.Xps.XpsDocumentWriter.WritingProgressChanged>イベント ハンドラー。  
+  
+ [!code-csharp[XpsSave#WritingEvents](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsSave/CSharp/XpsSaveHelper.cs#writingevents)]
+ [!code-vb[XpsSave#WritingEvents](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsSave/visualbasic/xpssavehelper.vb#writingevents)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,17 @@
+<Namespace Name="System.Configuration.Install">
+  <Docs>
+    <summary><see cref="N:System.Configuration.Install" /> 名前空間は、独自のコンポーネント用のカスタム インストーラーを作成するために使用できるクラスを提供します。 <see cref="T:System.Configuration.Install.Installer" /> クラスは、.NET Framework におけるすべてのカスタム インストーラーの基本クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ を介して、<xref:System.Configuration.Install.Installer.Installers%2A>プロパティ インストーラーにはには、子として他のインストーラーのコレクションが含まれています。 インストーラーが実行されるため、これが繰り返しその子ノードと呼び出し<xref:System.Configuration.Install.Installer.Install%2A>、 <xref:System.Configuration.Install.Installer.Commit%2A>、 <xref:System.Configuration.Install.Installer.Rollback%2A>、または<xref:System.Configuration.Install.Installer.Uninstall%2A>です。 内のオブジェクトの例については、 <xref:System.Configuration.Install.Installer.Installers%2A> 、コレクションを参照してください<xref:System.Diagnostics.EventLogInstaller>です。  
+  
+ <xref:System.Configuration.Install.Installer.Context%2A>プロパティには、インストールに関する情報が含まれています。 インストールに必要な情報を保存するファイルの場所、ログ ファイルの場所に関する情報など、<xref:System.Configuration.Install.Installer.Uninstall%2A>メソッド、および実行可能ファイルのインストールが実行されたときに入力したコマンドライン。 実行可能ファイルのインストールの例は、次を参照してください。 [Installutil.exe (インストーラー ツール)](~/docs/framework/tools/installutil-exe-installer-tool.md)です。  
+  
+ <xref:System.Configuration.Install.Installer.Install%2A>、 <xref:System.Configuration.Install.Installer.Commit%2A>、 <xref:System.Configuration.Install.Installer.Rollback%2A>、および<xref:System.Configuration.Install.Installer.Uninstall%2A>メソッドが常の同じインスタンスで呼び出されない<xref:System.Configuration.Install.Installer>です。 たとえば、使用する場合があります、<xref:System.Configuration.Install.Installer>への参照を解放しをインストールし、アプリケーションをコミットする<xref:System.Configuration.Install.Installer>です。 その後への参照を新しいアプリケーションのアンインストールを作成、 <xref:System.Configuration.Install.Installer>、つまり、<xref:System.Configuration.Install.Installer.Uninstall%2A>の別のインスタンスでメソッドが呼び出さ<xref:System.Configuration.Install.Installer>です。 このため、状態を保存しない、コンピューターのインストーラーにします。 代わりに、使用、<xref:System.Collections.IDictionary>は呼び出し間で保持されに渡されること、 <xref:System.Configuration.Install.Installer.Install%2A>、 <xref:System.Configuration.Install.Installer.Commit%2A>、 <xref:System.Configuration.Install.Installer.Rollback%2A>、および<xref:System.Configuration.Install.Installer.Uninstall%2A>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Namespace>

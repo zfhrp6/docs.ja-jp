@@ -1,0 +1,77 @@
+<Type Name="FaultPropagationQuery" FullName="System.Activities.Tracking.FaultPropagationQuery">
+  <TypeSignature Language="C#" Value="public sealed class FaultPropagationQuery : System.Activities.Tracking.TrackingQuery" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit FaultPropagationQuery extends System.Activities.Tracking.TrackingQuery" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Tracking.FaultPropagationQuery" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Activities.Tracking.TrackingQuery</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="P:System.Activities.Tracking.TrackingProfile.Queries" /> コレクションに追加されると、追跡レコードについて追跡プロファイルが照会されたときに、エラー伝達レコードを定期受信します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FaultPropagationQuery ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Tracking.FaultPropagationQuery.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Activities.Tracking.FaultPropagationQuery" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FaultHandlerActivityName">
+      <MemberSignature Language="C#" Value="public string FaultHandlerActivityName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FaultHandlerActivityName" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Tracking.FaultPropagationQuery.FaultHandlerActivityName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラーを伝達したエラー ハンドラー アクティビティの名前を取得します。</summary>
+        <value>アクティビティ名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は`*`、すべてのアクティビティについてエラー伝達レコードが返されることを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FaultSourceActivityName">
+      <MemberSignature Language="C#" Value="public string FaultSourceActivityName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FaultSourceActivityName" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Tracking.FaultPropagationQuery.FaultSourceActivityName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラーの原因となったアクティビティの名前を取得します。</summary>
+        <value>アクティビティ名。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

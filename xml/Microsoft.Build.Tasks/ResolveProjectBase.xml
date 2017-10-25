@@ -1,0 +1,128 @@
+<Type Name="ResolveProjectBase" FullName="Microsoft.Build.Tasks.ResolveProjectBase">
+  <TypeSignature Language="C#" Value="public abstract class ResolveProjectBase : Microsoft.Build.Tasks.TaskExtension" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ResolveProjectBase extends Microsoft.Build.Tasks.TaskExtension" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Tasks.ResolveProjectBase" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Build.Tasks.TaskExtension</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>基本クラスを表します<see cref="T:Microsoft.Build.Tasks.ResolveNonMSBuildProjectOutput" />と<see cref="T:Microsoft.Build.Tasks.AssignProjectConfiguration" />です。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ResolveProjectBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.ResolveProjectBase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.Build.Tasks.ResolveProjectBase" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="AddSyntheticProjectReferences">
+      <MemberSignature Language="C#" Value="protected void AddSyntheticProjectReferences (string currentProjectAbsolutePath);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void AddSyntheticProjectReferences(string currentProjectAbsolutePath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.ResolveProjectBase.AddSyntheticProjectReferences(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="currentProjectAbsolutePath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="currentProjectAbsolutePath">現在のプロジェクトの絶対パス。</param>
+        <summary>余分なソリューションの blob に渡される「プロジェクト参照」を取得するためのヘルパー メソッドです。 これらは、ソリューション ファイルそのもので表される依存関係から取得されます。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetProjectElement">
+      <MemberSignature Language="C#" Value="protected System.Xml.XmlElement GetProjectElement (Microsoft.Build.Framework.ITaskItem projectRef);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Xml.XmlElement GetProjectElement(class Microsoft.Build.Framework.ITaskItem projectRef) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.ResolveProjectBase.GetProjectElement(Microsoft.Build.Framework.ITaskItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="projectRef" Type="Microsoft.Build.Framework.ITaskItem" />
+      </Parameters>
+      <Docs>
+        <param name="projectRef">プロジェクト参照項目。</param>
+        <summary>指定したプロジェクトを表す XML 要素を取得します。</summary>
+        <returns>プロジェクトの要素を返します。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetProjectItem">
+      <MemberSignature Language="C#" Value="protected string GetProjectItem (Microsoft.Build.Framework.ITaskItem projectRef);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance string GetProjectItem(class Microsoft.Build.Framework.ITaskItem projectRef) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.ResolveProjectBase.GetProjectItem(Microsoft.Build.Framework.ITaskItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="projectRef" Type="Microsoft.Build.Framework.ITaskItem" />
+      </Parameters>
+      <Docs>
+        <param name="projectRef">プロジェクト GUID 属性を含むプロジェクト参照。</param>
+        <summary>指定したプロジェクトのプロジェクト要素の XML コンテンツを取得します。</summary>
+        <returns>指定したプロジェクトのプロジェクト要素の XML コンテンツ。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ProjectReferences">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] ProjectReferences { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] ProjectReferences" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveProjectBase.ProjectReferences" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.Build.Framework.Required</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロジェクト参照を取得または設定します。</summary>
+        <value>プロジェクト参照。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

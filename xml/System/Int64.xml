@@ -1,0 +1,1985 @@
+<Type Name="Int64" FullName="System.Int64">
+  <TypeSignature Language="C#" Value="public struct Int64 : IComparable, IComparable&lt;long&gt;, IConvertible, IEquatable&lt;long&gt;, IFormattable" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit int64 extends System.ValueType implements class System.IComparable, class System.IComparable`1&lt;int64&gt;, class System.IConvertible, class System.IEquatable`1&lt;int64&gt;, class System.IFormattable" />
+  <TypeSignature Language="DocId" Value="T:System.Int64" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IComparable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IComparable&lt;System.Int64&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IConvertible</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IEquatable&lt;System.Int64&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IFormattable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>64 ビット符号付き整数を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  この型の .NET Framework ソース コードを表示するを参照してください。、[参照ソース](http://referencesource.microsoft.com/#mscorlib/system/int64.cs)です。 ソース コードをオンラインで参照、オフラインで表示、リファレンスをダウンロードおよび; デバッグ中にソース (パッチや更新を含む) をステップ参照してください[指示](http://referencesource.microsoft.com/)です。  
+  
+ <xref:System.Int64>変更できない値の型を表す符号付き整数 9,223,372,036,854,775,808 負の値の範囲に値 (で表される、<xref:System.Int64.MinValue?displayProperty=nameWithType>定数) 正 9,223,372,036,854,775,807 を通じて (で表される、<xref:System.Int64.MaxValue?displayProperty=nameWithType>定数。 .NET Framework には、64 ビット符号なし整数値の型も含まれています<xref:System.UInt64>0 ~ 18,446,744,073,709,551,615 範囲内の値を表します。  
+  
+## <a name="instantiating-an-int64-value"></a>Int64 値をインスタンス化します。  
+ インスタンス化することができます、<xref:System.Int64>方法はいくつかの値。  
+  
+-   宣言することができます、<xref:System.Int64>変数の範囲内にあるリテラルの整数値を割り当てると、<xref:System.Int64>データ型。 次の例では、2 つ宣言<xref:System.Int64>変数し、それらにこの方法で値を割り当てます。  
+  
+     [!code-csharp[System.Int64.Instantiation#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.int64.instantiation/cs/instantiate1.cs#1)]
+     [!code-vb[System.Int64.Instantiation#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.int64.instantiation/vb/instantiate1.vb#1)]  
+  
+-   範囲がサブセットである整数型の値を割り当てることができますの<xref:System.Int64>型です。 これは、拡大変換でキャスト演算子 (C#) または Visual Basic での変換メソッドを必要としません。  
+  
+     [!code-csharp[System.Int64.Instantiation#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.int64.instantiation/cs/instantiate1.cs#4)]
+     [!code-vb[System.Int64.Instantiation#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.int64.instantiation/vb/instantiate1.vb#4)]  
+  
+-   範囲を超えています、数値型の値を割り当てることができますの<xref:System.Int64>型です。 これは、縮小変換は c# のキャスト演算子が、Visual Basic での変換メソッド場合`Option Strict`にします。 数値の値がある場合、 <xref:System.Single>、 <xref:System.Double>、または<xref:System.Decimal>を小数部が、その小数部の処理を含む値は、変換を実行して、コンパイラによって異なります。 次の例をいくつかの数値を割り当てるの縮小変換を実行する<xref:System.Int64>変数。  
+  
+     [!code-csharp[System.Int64.Instantiation#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.int64.instantiation/cs/instantiate1.cs#2)]
+     [!code-vb[System.Int64.Instantiation#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.int64.instantiation/vb/instantiate1.vb#2)]  
+  
+-   メソッドを呼び出すことができます、<xref:System.Convert>すべて変換クラスにする型がサポートされている、<xref:System.Int64>値。 これは、考えられるため<xref:System.Int64>をサポートしている、<xref:System.IConvertible>インターフェイスです。 次の例は、配列の変換を示しています。<xref:System.Decimal>値<xref:System.Int64>値。  
+  
+     [!code-csharp[System.Convert.ToInt64#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.convert.toint64/cs/toint64_1.cs#4)]
+     [!code-vb[System.Convert.ToInt64#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.convert.toint64/vb/toint64_1.vb#4)]  
+  
+-   呼び出すことができます、<xref:System.Int64.Parse%2A>または<xref:System.Int64.TryParse%2A>の文字列形式に変換するメソッド、<xref:System.Int64>値を<xref:System.Int64>です。 文字列は、10 進または 16 進数の数字を含めることができます。 次の例では、10 進数と 16 進数文字列の両方を使用して、解析操作を示しています。  
+  
+     [!code-csharp[System.Int64.Instantiation#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.int64.instantiation/cs/instantiate1.cs#3)]
+     [!code-vb[System.Int64.Instantiation#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.int64.instantiation/vb/instantiate1.vb#3)]  
+  
+## <a name="performing-operations-on-int64-values"></a>Int64 の値に対して操作を実行します。  
+ <xref:System.Int64>型は、加算、減算、除算、乗算、否定、単項否定演算子などの標準的な数学的演算をサポートしています。 などの他の整数型、<xref:System.Int64>型もサポートしている、ビットごと`AND`、 `OR`、 `XOR`、shift キー、および右シフト演算子のままです。  
+  
+ 標準の数値演算子を使用するには 2 つを比較する<xref:System.Int64>値、またはを呼び出すことができます、<xref:System.Int64.CompareTo%2A>または<xref:System.Int64.Equals%2A>メソッドです。  
+  
+ メンバーを呼び出すこともできます、<xref:System.Math>をさまざまな数値の絶対値の取得、商と整数除算の剰余を計算する、2 つの長整数の最大値または最小値を決定する、数値の符号を取得および数値の丸め処理を行うなど、数値の操作を実行するクラス。  
+  
+## <a name="representing-an-int64-as-a-string"></a>Int64 を文字列として表す  
+ <xref:System.Int64>標準およびカスタム数値書式指定文字列の型が完全にサポートを提供します。 (詳細については、次を参照してください[型の書式設定](~/docs/standard/base-types/formatting-types.md)、[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)、および[カスタム数値書式指定文字列](~/docs/standard/base-types/custom-numeric-format-strings.md)。)。  
+  
+ 書式設定、<xref:System.Int64>値先行ゼロなしで整数を文字列として呼び出すことができます、パラメーターなし<xref:System.Int64.ToString>メソッドです。 "D"書式指定子を使用すると、指定された数の文字列形式には先行ゼロを含めることもできます。 "N"書式指定子を使用すると、桁区切り記号を含めるし、数値の文字列形式に表示される 10 進数字の数を指定できます。 "X"書式指定子を使用して表すことができます、 <xref:System.Int64> 16 進数文字列値です。 次の例の配列内の要素を書式設定<xref:System.Int64>これら 4 つの方法の値。  
+  
+ [!code-csharp[System.Int64.Formatting#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.int64.formatting/cs/formatting1.cs#1)]
+ [!code-vb[System.Int64.Formatting#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.int64.formatting/vb/formatting1.vb#1)]  
+  
+ フォーマットすることも、<xref:System.Int64>バイナリ、8 進数、呼び出すことによって、10 進数または 16 進数の文字列値、<xref:System.Convert.ToString%28System.Int64%2CSystem.Int32%29>メソッドおよびメソッドの 2 番目のパラメーターとして情報を指定します。 次の例では、このメソッドをバイナリ、8 進数を表示して整数値の配列の 16 進数表記を呼び出します。  
+  
+ [!code-csharp[System.Int64.Formatting#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.int64.formatting/cs/formatting1.cs#2)]
+ [!code-vb[System.Int64.Formatting#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.int64.formatting/vb/formatting1.vb#2)]  
+  
+## <a name="working-with-non-decimal-32-bit-integer-values"></a>10 進数以外の 32 ビット整数値の操作  
+ 10 進数値として個々 の長整数を使用するに加えてには、長整数値のビットごとの演算を実施するか、長整数値のバイナリまたは 16 進形式を使用したいと可能性があります。 <xref:System.Int64>値は、4 分の 60 ビットを符号ビットとして使用される、63 ビット単位で表されます。 正の値は、符号および絶対値による表現を使用して表現されます。 負の値は、2 つのビットごとの補数表記でです。 これでビットごとの演算を実行するときに注意する重要<xref:System.Int64>値または個々 のビットを操作する際にします。 数値型、ブール値、または 2 つの非 10 進値の比較演算を実行するために両方の値は同じ形式を使用する必要があります。  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>この種類のすべてのメンバーでは、スレッド セーフです。 インスタンスの状態を変更する表示されるメンバーは、新しい値で初期化された新しいインスタンスを実際に返します。 として、他の種類と読み取りと書き込みをこの型のインスタンスを含む共有変数を保護する必要があるスレッド セーフを確保するロックによってです。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName="CompareTo">
+      <MemberSignature Language="C#" Value="public int CompareTo (long value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 CompareTo(int64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Int64.CompareTo(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="value">比較対象の整数。</param>
+        <summary>指定した 64 ビット符号付き整数とこのインスタンスを比較し、これらの相対値を示す値を返します。</summary>
+        <returns>このインスタンスと <paramref name="value" /> の相対値を示す符号付き数値。  
+  
+ <list type="table"><listheader><term>戻り値  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term>0 より小さい値  
+  
+ </term><description>このインスタンスより小さい<paramref name="value" />です。  
+  
+ </description></item><item><term>0  
+  
+ </term><description>このインスタンスと等しい<paramref name="value" />です。  
+  
+ </description></item><item><term>0 より大きい値  
+  
+ </term><description>このインスタンスがより大きい<paramref name="value" />です。  
+  
+ </description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを実装する、<xref:System.IComparable%601?displayProperty=nameWithType>インターフェイスし、実行よりもわずかに向上、<xref:System.Int64.CompareTo%2A?displayProperty=nameWithType>メソッドに変換があるないため、`value`オブジェクトへのパラメーターです。  
+  
+ プログラミング言語に応じてコードに考えられる場合があります、<xref:System.Int64.CompareTo%2A>メソッドのパラメーターの型のビット数が少ないがここではインスタンスの型よりもします。 これには一部のプログラミング言語は、ビット数のインスタンスと型としてパラメーターを表す暗黙の拡大変換を実行するため。  
+  
+ たとえば、インスタンスの型が<xref:System.Int32>パラメーターの型と<xref:System.Byte>です。 Microsoft c# コンパイラは、パラメーターの値を表す命令を生成、<xref:System.Int32>オブジェクトを生成、<xref:System.Int32.CompareTo%2A?displayProperty=nameWithType>の値を比較するメソッド、<xref:System.Int32>インスタンスおよび<xref:System.Int32>パラメーター形式です。  
+  
+ コンパイラが数値型に暗黙の拡大変換を実行するかどうかを決定する、プログラミング言語のドキュメントを参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますジェネリックと非ジェネリック バージョンの<xref:System.Int64.CompareTo%2A>いくつかの値と参照型のメソッドです。  
+  
+ [!code-cpp[T.CompareTo#1](~/samples/snippets/cpp/VS_Snippets_CLR/T.CompareTo/CPP/cat.cpp#1)]
+ [!code-csharp[T.CompareTo#1](~/samples/snippets/csharp/VS_Snippets_CLR/T.CompareTo/CS/cat.cs#1)]
+ [!code-vb[T.CompareTo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/T.CompareTo/VB/cat.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompareTo">
+      <MemberSignature Language="C#" Value="public int CompareTo (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 CompareTo(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Int64.CompareTo(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">比較対象のオブジェクト、または <see langword="null" />。</param>
+        <summary>指定したオブジェクトとこのインスタンスを比較し、これらの相対値を示す値を返します。</summary>
+        <returns>このインスタンスと <paramref name="value" /> の相対値を示す符号付き数値。  
+  
+ <list type="table"><listheader><term>戻り値  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term>0 より小さい値  
+  
+ </term><description>このインスタンスより小さい<paramref name="value" />です。  
+  
+ </description></item><item><term>0  
+  
+ </term><description>このインスタンスと等しい<paramref name="value" />です。  
+  
+ </description></item><item><term>0 より大きい値  
+  
+ </term><description>このインスタンスがより大きい<paramref name="value" />です。  
+  
+ または  
+  
+ <paramref name="value" /> は <see langword="null" /> です。  
+  
+ </description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Int64>、その値に関係なくと見なされます、null 参照を超えています。  
+  
+ `value`パラメーターでなければなりません`null`またはのインスタンス<xref:System.Int64>です。 それ以外の場合、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="value" /> が <see cref="T:System.Int64" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (long obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(int64 obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Int64.Equals(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="obj">このインスタンスと比較する <see cref="T:System.Int64" /> 値。</param>
+        <summary>対象のインスタンスが、指定した <see cref="T:System.Int64" /> 値に等しいかどうかを示す値を返します。</summary>
+        <returns>
+          <paramref name="obj" /> がこのインスタンスと同じ値を保持している場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを実装する、<xref:System.IEquatable%601?displayProperty=nameWithType>インターフェイス、および実行よりもわずかに向上<xref:System.Int64.Equals%2A>変換があるないため、`obj`オブジェクトへのパラメーターです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="usage">
+          <para>コンパイラのオーバー ロードの解決は、2 つの動作の見かけ上の相違点についてアカウント可能性があります<see cref="M:System.Int64.Equals(System.Int64)" />メソッドのオーバー ロードします。 場合の間の暗黙的な変換、<paramref name="obj" />引数および<see cref="T:System.Int64" />が定義されている引数として型指定されていないと、 <see cref="T:System.Object" />、コンパイラが暗黙的な変換と呼び出しを実行、<see cref="M:System.Int64.Equals(System.Int64)" />メソッドです。 それ以外の場合を呼び出すことが、<see cref="M:System.Int64.Equals(System.Object)" />メソッドで、常に返します<see langword="false" />場合その<paramref name="obj" />引数ではありません、<see cref="T:System.Int64" />値。 次の例は、次の 2 つのメソッド オーバー ロード間の動作の違いを示しています。 場合、 <see cref="T:System.Byte" />、 <see cref="T:System.SByte" />、 <see cref="T:System.Int16" />、 <see cref="T:System.UInt16" />、 <see cref="T:System.Int32" />、および<see cref="T:System.UInt32" />値は、最初の比較を返します<see langword="true" />拡大変換と呼び出し、コンパイラが自動的に実行するため<see cref="M:System.Int64.Equals(System.Int64)" />メソッド、2 つ目の比較を返しますが<see langword="false" />コンパイラを呼び出すため、<see cref="M:System.Int64.Equals(System.Object)" />メソッドです。  
+  
+ [!code-csharp[System.Int64.Equals#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.int64.equals/cs/equalsoverl.cs#1)]
+ [!code-vb[System.Int64.Equals#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.int64.equals/vb/equalsoverl.vb#1)]</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Int64.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">このインスタンスと比較するオブジェクト。</param>
+        <summary>このインスタンスが指定されたオブジェクトに等しいかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="obj" /> のインスタンスで、このインスタンスの値に等しい場合は <see cref="T:System.Int64" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、の使用を示しています。`Equals`のコンテキストで`Int64`、2 つの長い値を比較すると、返す`true`を表している場合、同じ番号または`false`が存在しない場合。  
+  
+ [!code-cpp[Int64_Equals#1](~/samples/snippets/cpp/VS_Snippets_CLR/Int64_Equals/CPP/int64_equals.cpp#1)]
+ [!code-csharp[Int64_Equals#1](~/samples/snippets/csharp/VS_Snippets_CLR/Int64_Equals/CS/int64_equals.cs#1)]
+ [!code-vb[Int64_Equals#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Int64_Equals/VB/int64_equals.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="usage">
+          <para>コンパイラのオーバー ロードの解決は、2 つの動作の見かけ上の相違点についてアカウント可能性があります<see cref="M:System.Int64.Equals(System.Int64)" />メソッドのオーバー ロードします。 場合の間の暗黙的な変換、<paramref name="obj" />引数および<see cref="T:System.Int64" />が定義されている引数として型指定されていないと、 <see cref="T:System.Object" />、コンパイラが暗黙的な変換と呼び出しを実行、<see cref="M:System.Int64.Equals(System.Int64)" />メソッドです。 それ以外の場合を呼び出すことが、<see cref="M:System.Int64.Equals(System.Object)" />メソッドで、常に返します<see langword="false" />場合その<paramref name="obj" />引数ではありません、<see cref="T:System.Int64" />値。 次の例は、次の 2 つのメソッド オーバー ロード間の動作の違いを示しています。 場合、 <see cref="T:System.Byte" />、 <see cref="T:System.SByte" />、 <see cref="T:System.Int16" />、 <see cref="T:System.UInt16" />、 <see cref="T:System.Int32" />、および<see cref="T:System.UInt32" />値は、最初の比較を返します<see langword="true" />拡大変換と呼び出し、コンパイラが自動的に実行するため<see cref="M:System.Int64.Equals(System.Int64)" />メソッド、2 つ目の比較を返しますが<see langword="false" />コンパイラを呼び出すため、<see cref="M:System.Int64.Equals(System.Object)" />メソッドです。  
+  
+ [!code-csharp[System.Int64.Equals#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.int64.equals/cs/equalsoverl.cs#1)]
+ [!code-vb[System.Int64.Equals#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.int64.equals/vb/equalsoverl.vb#1)]</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Int64.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTypeCode">
+      <MemberSignature Language="C#" Value="public TypeCode GetTypeCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.TypeCode GetTypeCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Int64.GetTypeCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TypeCode</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.TypeCode" /> 値型の <see cref="T:System.Int64" /> を返します。</summary>
+        <returns>列挙型定数 <see cref="F:System.TypeCode.Int64" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxValue">
+      <MemberSignature Language="C#" Value="public const long MaxValue = 9223372036854775807;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int64 MaxValue = int64(9223372036854775807)" />
+      <MemberSignature Language="DocId" Value="F:System.Int64.MaxValue" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <MemberValue>9223372036854775807</MemberValue>
+      <Docs>
+        <summary><see langword="Int64" /> の最大有効値を表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この定数の値が 9,223,372,036,854,775,807 です。つまり、16 進 0x7FFFFFFFFFFFFFFF です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinValue">
+      <MemberSignature Language="C#" Value="public const long MinValue = -9223372036854775808;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int64 MinValue = int64(-9223372036854775808)" />
+      <MemberSignature Language="DocId" Value="F:System.Int64.MinValue" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <MemberValue>-9223372036854775808</MemberValue>
+      <Docs>
+        <summary><see langword="Int64" /> の最小有効値を表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この定数の値が負の値の 9,223,372,036,854,775,808 です。つまり、16 進数は 0x8000000000000000 します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public static long Parse (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int64 Parse(string s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Int64.Parse(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s">変換する数値を格納する文字列。</param>
+        <summary>数値の文字列形式を、それと等価な 64 ビット符号付き整数に変換します。</summary>
+        <returns><paramref name="s" /> に格納されている数値と等しい 64 ビット符号付き整数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `s`パラメーターには、フォームの番号が含まれています。  
+  
+ [ws][サインイン] 桁 [ws]  
+  
+ 角かっこ ([ および ]) 内の要素は省略可能です。 次の表では、各要素について説明します。  
+  
+|要素|説明|  
+|-------------|-----------------|  
+|ws|省略可能なホワイト スペースです。|  
+|sign|省略可能な符号の場合。|  
+|数字|0 から 9 までの数字のシーケンス。|  
+  
+ `s`パラメーターを使用して解釈されますが、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>スタイル。 10 進数字以外には、先頭と末尾のスペースが先頭の符号と共にのみを使用できます。 使用できるスタイル要素を明示的に定義する`s`、いずれかを使用して、<xref:System.Int64.Parse%28System.String%2CSystem.Globalization.NumberStyles%29?displayProperty=nameWithType>または<xref:System.Int64.Parse%28System.String%2CSystem.Globalization.NumberStyles%2CSystem.IFormatProvider%29?displayProperty=nameWithType>メソッドです。  
+  
+ `s`で書式設定情報を使用してパラメーターを解析、<xref:System.Globalization.NumberFormatInfo>現在のシステムのカルチャに初期化されるオブジェクト。 いくつか他のカルチャの書式情報を使用して文字列を解析するを使用して、<xref:System.Int64.Parse%28System.String%2CSystem.Globalization.NumberStyles%2CSystem.IFormatProvider%29?displayProperty=nameWithType>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、文字列値を使用して 64 ビット符号付き整数値に変換する方法、<xref:System.Int64.Parse%28System.String%29?displayProperty=nameWithType>メソッドです。 結果の長整数値が表示されます。  
+  
+ [!code-csharp[System.Int64.Parse#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.int64.parse/cs/Parse1.cs#1)]
+ [!code-vb[System.Int64.Parse#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.int64.parse/vb/Parse1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="s" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.FormatException">
+          <paramref name="s" />正しい形式ではありません。</exception>
+        <exception cref="T:System.OverflowException">
+          <paramref name="s" />数値を表すより小さい<see cref="F:System.Int64.MinValue" />以上<see cref="F:System.Int64.MaxValue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public static long Parse (string s, System.Globalization.NumberStyles style);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int64 Parse(string s, valuetype System.Globalization.NumberStyles style) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Int64.Parse(System.String,System.Globalization.NumberStyles)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="style" Type="System.Globalization.NumberStyles" />
+      </Parameters>
+      <Docs>
+        <param name="s">変換する数値を格納する文字列。</param>
+        <param name="style">ビットごとの組み合わせ<see cref="T:System.Globalization.NumberStyles" />の使用可能な書式を示す値<c>s</c>です。 通常指定する値は、<see cref="F:System.Globalization.NumberStyles.Integer" /> です。</param>
+        <summary>指定したスタイルの数値の文字列形式を、それと等価の 64 ビット符号付き整数に変換します。</summary>
+        <returns><paramref name="s" /> で指定した数値と等しい 64 ビット符号付き整数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `style`パラメーター スタイル要素定義 (空白、正または負の符号シンボル数千など区切り記号) で許容される、`s`解析操作が成功するためのパラメーターです。 ビット フラグの組み合わせを可能にする必要があります、<xref:System.Globalization.NumberStyles>列挙します。 値に応じて`style`、`s`パラメーターは、次の要素を含めることがあります。  
+  
+ [ws][$][記号][数字] 桁 [.fractional_digits] [e [サインイン] exponential_digits] [ws]  
+  
+ または、`style`が含まれています<xref:System.Globalization.NumberStyles.AllowHexSpecifier>:  
+  
+ [ws] hexdigits [ws]  
+  
+ 角かっこ ([ および ]) 内の要素は省略可能です。 次の表では、各要素について説明します。  
+  
+|要素|説明|  
+|-------------|-----------------|  
+|*ws*|省略可能なホワイト スペースです。 先頭に空白文字は使用できません`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>の最後に表示されることができますフラグ、およびその`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*$*|カルチャ固有の通貨記号。 文字列内での位置がによって定義された、<xref:System.Globalization.NumberFormatInfo.CurrencyNegativePattern%2A?displayProperty=nameWithType>と<xref:System.Globalization.NumberFormatInfo.CurrencyPositivePattern%2A?displayProperty=nameWithType>現在のカルチャのプロパティです。 現在のカルチャの通貨記号に表示される`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*サインイン*|省略可能な符号の場合。 先頭に表示できる符号`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ、およびそのがの末尾に置くことができます`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。 かっこを使用できる`s`負の値を指定する場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*digits*<br /><br /> *fractional_digits*<br /><br /> *exponential_digits*|0 ~ 9 桁の数字のシーケンス。 *Fractional_digits*数字の 0 が有効ではのみです。|  
+|*、*|カルチャ固有の桁区切り記号。 現在のカルチャの数千に区切り記号が表示できる`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*.*|カルチャに固有の小数点記号です。 現在のカルチャの小数点記号に表示される`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。 数字の 0 は、解析操作を成功させるため桁の小数部として表示できます。場合*fractional_digits*他の任意の数字が含まれています、<xref:System.OverflowException>がスローされます。|  
+|*e*|'E' または 'E' 文字は、値を指数表記で表されていることを示します。 `s`場合、パラメーターは指数表記の数値を表すことができる`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*hexdigits*|一連の 0 f からまたは f 0 から 16 進数の数字|  
+  
+ 数字のみを含む文字列 (に対応する、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>スタイル) の範囲内にある場合は、常に正常に解析、<xref:System.Int64>型です。 ほとんど残りの<xref:System.Globalization.NumberStyles>メンバーを制御する可能性がありますが、入力文字列内に存在する必要はありません要素。 次の表に示す個別<xref:System.Globalization.NumberStyles>メンバー内に存在可能な要素に影響を与える`s`です。  
+  
+|NumberStyles 値|数字だけでなく s で許可されている要素|  
+|------------------------|---------------------------------------------------|  
+|<xref:System.Globalization.NumberStyles.None>|*桁*要素のみです。|  
+|<xref:System.Globalization.NumberStyles.AllowDecimalPoint>|小数点 (*です。* ) および*小数部の桁*要素。|  
+|<xref:System.Globalization.NumberStyles.AllowExponent>|`s`パラメーターは、指数表記も使用できます。 場合`s`指数表記、結果として得られる数値を表しますが、0 以外の小数部の桁を含めることはできません。|  
+|<xref:System.Globalization.NumberStyles.AllowLeadingWhite>|*Ws*の先頭にある要素`s`です。|  
+|<xref:System.Globalization.NumberStyles.AllowTrailingWhite>|*Ws*の末尾に要素`s`です。|  
+|<xref:System.Globalization.NumberStyles.AllowLeadingSign>|*記号*の先頭にある要素`s`です。|  
+|<xref:System.Globalization.NumberStyles.AllowTrailingSign>|*記号*の末尾に要素`s`です。|  
+|<xref:System.Globalization.NumberStyles.AllowParentheses>|*記号*数値の値を囲むかっこの形式での要素。|  
+|<xref:System.Globalization.NumberStyles.AllowThousands>|桁区切り記号 ( *、* ) 要素です。|  
+|<xref:System.Globalization.NumberStyles.AllowCurrencySymbol>|* $ *要素。|  
+|<xref:System.Globalization.NumberStyles.Currency>|すべて。 `s`パラメーターには、16 進数または指数表記の数値を表すことはできません。|  
+|<xref:System.Globalization.NumberStyles.Float>|*Ws*先頭または末尾の位置にある要素`s`、*記号*の先頭に`s`、および小数点 (*です。* ) シンボル。 `s`パラメーターは、指数表記も使用できます。|  
+|<xref:System.Globalization.NumberStyles.Number>|*Ws*、*記号*、何千もの区切り記号 ( *、* )、および小数点 (*です。* ) 要素です。|  
+|<xref:System.Globalization.NumberStyles.Any>|すべてのスタイルを除く`s`16 進数を表すことはできません。|  
+  
+ 場合、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグを使用すると、`s`プレフィックスのない 16 進値でなければなりません。 たとえば、"C9AF3"を正常に解析していて、"0xC9AF3"にはないです。 のみ他のフラグと組み合わせることができます、`s`パラメーターは<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>と<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>です。 (、<xref:System.Globalization.NumberStyles>列挙には、複合数値スタイルが含まれています<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>、両方の空白文字のフラグが含まれている。)。  
+  
+ `s`で書式設定情報を使用してパラメーターを解析、<xref:System.Globalization.NumberFormatInfo>現在のシステムのカルチャに初期化されるオブジェクト。 書式情報を含むが、解析操作で使用されるカルチャを指定するには、呼び出し、<xref:System.Int64.Parse%28System.String%2CSystem.Globalization.NumberStyles%2CSystem.IFormatProvider%29?displayProperty=nameWithType>オーバー ロードします。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Int64.Parse%28System.String%2CSystem.Globalization.NumberStyles%29?displayProperty=nameWithType>をいくつかの文字列表現を解析<xref:System.Int64>値。 たとえば、現在のカルチャは、EN-US です。  
+  
+ [!code-csharp[System.Int64.Parse#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.int64.parse/cs/Parse2.cs#2)]
+ [!code-vb[System.Int64.Parse#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.int64.parse/vb/Parse2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="s" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="style" /> が <see cref="T:System.Globalization.NumberStyles" /> 値ではありません。  
+  
+ -または-  
+  
+ <paramref name="style" />組み合わせではありません<see cref="F:System.Globalization.NumberStyles.AllowHexSpecifier" />と<see cref="F:System.Globalization.NumberStyles.HexNumber" />値。</exception>
+        <exception cref="T:System.FormatException">
+          <paramref name="s" />準拠した形式に含まれない<paramref name="style" />です。</exception>
+        <exception cref="T:System.OverflowException">
+          <paramref name="s" />数値を表すより小さい<see cref="F:System.Int64.MinValue" />以上<see cref="F:System.Int64.MaxValue" />です。  
+  
+ または  
+  
+ <paramref name="style" />小数部の桁をサポートしていますが、 <paramref name="s" /> 0 以外の小数部の桁が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public static long Parse (string s, IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int64 Parse(string s, class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Int64.Parse(System.String,System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="s">変換する数値を格納する文字列。</param>
+        <param name="provider">に関するカルチャ固有の書式情報を提供するオブジェクト<c>s</c>です。</param>
+        <summary>指定したカルチャに固有の書式による数値の文字列形式を、それと等価な 64 ビット符号付き整数に変換します。</summary>
+        <returns><paramref name="s" /> で指定した数値と等しい 64 ビット符号付き整数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロード、<xref:System.Int64.Parse%28System.String%2CSystem.IFormatProvider%29>メソッドでは、さまざまな方法でフォーマットできるテキストに変換するために使用は、通常、<xref:System.Int64>値。 たとえば、数値の値を HTML テキスト ボックスに、ユーザーが入力したテキストに変換する、使用できます。  
+  
+ `s`パラメーターには、フォームの番号が含まれています。  
+  
+ [ws][サインイン] 桁 [ws]  
+  
+ 角かっこ ([および]) は省略可能、内のアイテムおよびその他の項目は次のとおりです。  
+  
+ ws  
+ 省略可能な空白です。  
+  
+ sign  
+ 省略可能な符号の場合。  
+  
+ 数字  
+ 0 から 9 までの数字のシーケンス。  
+  
+ `s`パラメーターを使用して解釈されますが、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>スタイル。 10 進数字以外には、先頭と末尾のスペースが先頭の符号と共にのみを使用できます。 使用できるスタイル要素を明示的に定義する`s`を使用して、<xref:System.Int64.Parse%28System.String%2CSystem.Globalization.NumberStyles%2CSystem.IFormatProvider%29?displayProperty=nameWithType>メソッドです。  
+  
+ `provider`パラメーターは、<xref:System.IFormatProvider>実装など、<xref:System.Globalization.NumberFormatInfo>または<xref:System.Globalization.CultureInfo>オブジェクト。 `provider`パラメーターの書式に関するカルチャ固有の情報を提供`s`です。 場合`provider`は`null`、<xref:System.Globalization.NumberFormatInfo>現在のカルチャが使用されます。  
+  
+   
+  
+## Examples  
+ 次の例は、ボタンは、Web フォームのイベント ハンドラーをクリックします。 によって返される配列を使用して、<xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType>プロパティをユーザーのロケールを決定します。 インスタンス化し、<xref:System.Globalization.CultureInfo>そのロケールに対応するオブジェクト。 <xref:System.Globalization.NumberFormatInfo>に属しているオブジェクト<xref:System.Globalization.CultureInfo>にオブジェクトが渡され、<xref:System.Int64.Parse%28System.String%2CSystem.IFormatProvider%29>をユーザーに変換するメソッドの入力、<xref:System.Int64>値。  
+  
+ [!code-csharp[ParseMethod#5](~/samples/snippets/csharp/VS_Snippets_CLR/ParseMethod/cs/Default.aspx.cs#5)]
+ [!code-vb[ParseMethod#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/ParseMethod/vb/Default.aspx.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="s" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.FormatException">
+          <paramref name="s" />正しい形式ではありません。</exception>
+        <exception cref="T:System.OverflowException">
+          <paramref name="s" />数値を表すより小さい<see cref="F:System.Int64.MinValue" />以上<see cref="F:System.Int64.MaxValue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public static long Parse (string s, System.Globalization.NumberStyles style, IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int64 Parse(string s, valuetype System.Globalization.NumberStyles style, class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Int64.Parse(System.String,System.Globalization.NumberStyles,System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="style" Type="System.Globalization.NumberStyles" />
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="s">変換する数値を格納する文字列。</param>
+        <param name="style">使用可能なスタイル要素を示す列挙値のビットごとの組み合わせ<c>s</c>です。 通常指定する値は、<see cref="F:System.Globalization.NumberStyles.Integer" /> です。</param>
+        <param name="provider"><see cref="T:System.IFormatProvider" />に関するカルチャ固有の書式情報を提供する<c>s</c>です。</param>
+        <summary>指定したスタイルおよびカルチャに固有の書式による数値の文字列形式を、それと等価の 64 ビット符号付き整数に変換します。</summary>
+        <returns><paramref name="s" /> で指定した数値と等しい 64 ビット符号付き整数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `style`パラメーター スタイル要素を定義します (空白や正符号) では許可されて、`s`解析操作が成功するためのパラメーターです。 ビット フラグの組み合わせを可能にする必要があります、<xref:System.Globalization.NumberStyles>列挙します。 値に応じて`style`、`s`パラメーターは、次の要素を含めることがあります。  
+  
+ [ws][$][記号][数字] 桁 [.fractional_digits] [e [サインイン] exponential_digits] [ws]  
+  
+ または、`style`が含まれています<xref:System.Globalization.NumberStyles.AllowHexSpecifier>:  
+  
+ [ws] hexdigits [ws]  
+  
+ 角かっこ ([ および ]) 内の要素は省略可能です。 次の表では、各要素について説明します。  
+  
+|要素|説明|  
+|-------------|-----------------|  
+|*ws*|省略可能なホワイト スペースです。 先頭に空白文字は使用できません`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>の最後に表示されることができますフラグ、およびその`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*$*|カルチャ固有の通貨記号。 文字列内での位置がによって定義された、<xref:System.Globalization.NumberFormatInfo.CurrencyPositivePattern%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Globalization.NumberFormatInfo>によって返されるオブジェクト、<xref:System.IFormatProvider.GetFormat%2A>のメソッド、`provider`パラメーター。 通貨記号に表示される`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*サインイン*|省略可能な符号の場合。 先頭に表示できる符号`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグまたはの末尾`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。 かっこを使用できる`s`負の値を指定する場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*digits*<br /><br /> *fractional_digits*<br /><br /> *exponential_digits*|0 ~ 9 桁の数字のシーケンス。|  
+|*、*|カルチャ固有の桁区切り記号。 数千で指定されたカルチャの区切り記号`provider`に表示できる`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*.*|カルチャに固有の小数点記号です。 指定されたカルチャの小数点記号`provider`に表示できる`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。<br /><br /> 数字の 0 は、解析操作を成功させるため桁の小数部として表示できます。場合*fractional_digits*他の任意の数字が含まれています、<xref:System.OverflowException>がスローされます。|  
+|*e*|'E' または 'E' 文字は、値を指数表記で表されていることを示します。 `s`場合、パラメーターは指数表記の数値を表すことができる`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*hexdigits*|一連の 0 f からまたは f 0 から 16 進数の数字|  
+  
+ 10 進数字のみを含む文字列 (に対応する、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>スタイル) の範囲内にある場合は、常に正常に解析、<xref:System.Int64>型です。 ほとんど残りの<xref:System.Globalization.NumberStyles>メンバーを制御する可能性がありますが、この入力文字列内に存在する必要はない要素です。 次の表に示す個別<xref:System.Globalization.NumberStyles>メンバー内に存在可能な要素に影響を与える`s`です。  
+  
+|非複合 NumberStyles 値|数字だけでなく s で許可されている要素|  
+|----------------------------------------|---------------------------------------------------|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|10 進数字のみです。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|小数点 (*です。* ) および*小数部の桁*要素。 ただし、*小数部の桁*のみ 1 つ以上の数字が 0 ので構成されている必要がありますまたは<xref:System.OverflowException>がスローされます。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|`s`パラメーターは、指数表記も使用できます。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|*Ws*の先頭にある要素`s`です。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|*Ws*の末尾に要素`s`です。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|前に、記号を表示できる*桁*です。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|後に記号が表示される可能性が*桁*です。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|*記号*数値の値を囲むかっこの形式での要素。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|桁区切り記号 ( *、* ) 要素です。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|* $ *要素。|  
+  
+ 場合、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグを使用すると、`s`プレフィックスのない 16 進値でなければなりません。 たとえば、"C9AF3"を正常に解析していて、"0xC9AF3"にはないです。 その他のフラグのみで使用可能な`style`は<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>と<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>です。 (、<xref:System.Globalization.NumberStyles>列挙体には、複合数値スタイル<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>、両方の空白文字のフラグが含まれている)。  
+  
+ `provider`パラメーターは、<xref:System.IFormatProvider>実装など、<xref:System.Globalization.NumberFormatInfo>または<xref:System.Globalization.CultureInfo>オブジェクト。 `provider`パラメーターの解析中に使用されるカルチャに固有の情報を提供します。 場合`provider`は`null`、<xref:System.Globalization.NumberFormatInfo>現在のカルチャが使用されます。  
+  
+   
+  
+## Examples  
+ 次の例は、さまざまな`style`と`provider`パラメーターの文字列形式を解析する<xref:System.Int64>値。 また、解析操作用の書式情報を使用するカルチャに応じて、同じ文字列を解釈できるさまざまな方法のいくつか示しています。  
+  
+ [!code-csharp[System.Int64.Parse#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.int64.parse/cs/Parse3.cs#3)]
+ [!code-vb[System.Int64.Parse#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.int64.parse/vb/Parse3.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="s" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="style" /> が <see cref="T:System.Globalization.NumberStyles" /> 値ではありません。  
+  
+ -または-  
+  
+ <paramref name="style" />組み合わせではありません<see cref="F:System.Globalization.NumberStyles.AllowHexSpecifier" />と<see cref="F:System.Globalization.NumberStyles.HexNumber" />値。</exception>
+        <exception cref="T:System.FormatException">
+          <paramref name="s" />準拠した形式に含まれない<paramref name="style" />です。</exception>
+        <exception cref="T:System.OverflowException">
+          <paramref name="s" />数値を表すより小さい<see cref="F:System.Int64.MinValue" />以上<see cref="F:System.Int64.MaxValue" />です。  
+  
+ または  
+  
+ <paramref name="style" />小数部の桁をサポートしていますが、 <paramref name="s" /> 0 以外の小数部の桁が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IComparable.CompareTo">
+      <MemberSignature Language="C#" Value="int IComparable.CompareTo (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.IComparable.CompareTo(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Int64.System#IComparable#CompareTo(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.GetTypeCode">
+      <MemberSignature Language="C#" Value="TypeCode IConvertible.GetTypeCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance valuetype System.TypeCode System.IConvertible.GetTypeCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Int64.System#IConvertible#GetTypeCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TypeCode</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToBoolean">
+      <MemberSignature Language="C#" Value="bool IConvertible.ToBoolean (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.IConvertible.ToBoolean(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Int64.System#IConvertible#ToBoolean(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToBoolean(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns>
+          現在のインスタンスの値が 0 でない場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Int64> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、<xref:System.Convert.ToBoolean%28System.Int64%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToByte">
+      <MemberSignature Language="C#" Value="byte IConvertible.ToByte (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance unsigned int8 System.IConvertible.ToByte(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Int64.System#IConvertible#ToByte(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToByte(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns><see cref="T:System.Byte" /> に変換後の、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Int64> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、<xref:System.Convert.ToByte%28System.Int64%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToChar">
+      <MemberSignature Language="C#" Value="char IConvertible.ToChar (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance char System.IConvertible.ToChar(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Int64.System#IConvertible#ToChar(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Char</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToChar(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns><see cref="T:System.Char" /> に変換後の、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Int64> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、<xref:System.Convert.ToChar%28System.Int64%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToDateTime">
+      <MemberSignature Language="C#" Value="DateTime IConvertible.ToDateTime (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance valuetype System.DateTime System.IConvertible.ToDateTime(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Int64.System#IConvertible#ToDateTime(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>この変換はサポートされていません。 このメソッドを使用しようとすると、<see cref="T:System.InvalidCastException" /> がスローされます。</summary>
+        <returns>この変換はサポートされていません。 値は返されません。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidCastException">すべての場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToDecimal">
+      <MemberSignature Language="C#" Value="decimal IConvertible.ToDecimal (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance valuetype System.Decimal System.IConvertible.ToDecimal(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Int64.System#IConvertible#ToDecimal(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Decimal</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToDecimal(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns><see cref="T:System.Decimal" /> に変換後の、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Int64> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、<xref:System.Convert.ToDecimal%28System.Int64%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToDouble">
+      <MemberSignature Language="C#" Value="double IConvertible.ToDouble (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance float64 System.IConvertible.ToDouble(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Int64.System#IConvertible#ToDouble(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToDouble(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns><see cref="T:System.Double" /> に変換後の、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Int64> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、<xref:System.Convert.ToDouble%28System.Int64%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToInt16">
+      <MemberSignature Language="C#" Value="short IConvertible.ToInt16 (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int16 System.IConvertible.ToInt16(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Int64.System#IConvertible#ToInt16(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int16</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToInt16(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns><see cref="T:System.Int16" /> に変換後の、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Int64> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、<xref:System.Convert.ToInt16%28System.Int64%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToInt32">
+      <MemberSignature Language="C#" Value="int IConvertible.ToInt32 (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.IConvertible.ToInt32(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Int64.System#IConvertible#ToInt32(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToInt32(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns><see cref="T:System.Int32" /> に変換後の、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Int64> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、<xref:System.Convert.ToInt32%28System.Int64%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToInt64">
+      <MemberSignature Language="C#" Value="long IConvertible.ToInt64 (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int64 System.IConvertible.ToInt64(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Int64.System#IConvertible#ToInt64(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToInt64(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns>変更されていない、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Int64> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToSByte">
+      <MemberSignature Language="C#" Value="sbyte IConvertible.ToSByte (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int8 System.IConvertible.ToSByte(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Int64.System#IConvertible#ToSByte(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.SByte</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToSByte(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns><see cref="T:System.SByte" /> に変換後の、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Int64> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、<xref:System.Convert.ToSByte%28System.Int64%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToSingle">
+      <MemberSignature Language="C#" Value="float IConvertible.ToSingle (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance float32 System.IConvertible.ToSingle(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Int64.System#IConvertible#ToSingle(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToSingle(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns><see cref="T:System.Single" /> に変換後の、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Int64> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、<xref:System.Convert.ToSingle%28System.Int64%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToType">
+      <MemberSignature Language="C#" Value="object IConvertible.ToType (Type type, IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.IConvertible.ToType(class System.Type type, class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Int64.System#IConvertible#ToType(System.Type,System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="type">この <see cref="T:System.Int64" /> 値の変換後の型。</param>
+        <param name="provider">戻り値の書式に関する情報を提供する <see cref="T:System.IFormatProvider" /> の実装。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToType(System.Type,System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns><paramref name="type" /> に変換後の、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Int64> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、 `static` (`Shared` Visual Basic で)<xref:System.Convert.ChangeType%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToUInt16">
+      <MemberSignature Language="C#" Value="ushort IConvertible.ToUInt16 (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance unsigned int16 System.IConvertible.ToUInt16(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Int64.System#IConvertible#ToUInt16(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.UInt16</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToUInt16(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns><see cref="T:System.UInt16" /> に変換後の、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Int64> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、<xref:System.Convert.ToUInt16%28System.Int64%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToUInt32">
+      <MemberSignature Language="C#" Value="uint IConvertible.ToUInt32 (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance unsigned int32 System.IConvertible.ToUInt32(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Int64.System#IConvertible#ToUInt32(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.UInt32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToUInt32(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns><see cref="T:System.UInt32" /> に変換後の、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Int64> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、<xref:System.Convert.ToUInt32%28System.Int64%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToUInt64">
+      <MemberSignature Language="C#" Value="ulong IConvertible.ToUInt64 (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance unsigned int64 System.IConvertible.ToUInt64(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Int64.System#IConvertible#ToUInt64(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.UInt64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToUInt64(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns><see cref="T:System.UInt64" /> に変換後の、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Int64> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、<xref:System.Convert.ToUInt64%28System.Int64%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Int64.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスの数値を、それと等価な文字列形式に変換します。</summary>
+        <returns>値が負の場合はマイナス記号を伴い、先行ゼロを含まない 0 から 9 までの一連の数字から構成される、このインスタンスの値の文字列形式。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Int64.ToString>メソッドの形式、 <xref:System.Int64> ("G"、または [全般]) の既定の値の形式を使用して、<xref:System.Globalization.NumberFormatInfo>現在のカルチャ オブジェクト。 別の形式またはカルチャを指定する場合は、他のオーバー ロードを使用して、<xref:System.Int64.ToString%2A>メソッドは、次のようにします。  
+  
+|形式を使用するには|カルチャの|オーバー ロードを使用します。|  
+|-------------------|-----------------|----------------------|  
+|既定値 ("G") 書式|特定のカルチャ|<xref:System.Int64.ToString%28System.IFormatProvider%29>|  
+|特定の形式|(現在) の既定のカルチャ|<xref:System.Int64.ToString%28System.String%29>|  
+|特定の形式|特定のカルチャ|<xref:System.Int64.ToString%28System.String%2CSystem.IFormatProvider%29>|  
+  
+ .NET Framework では、次の書式設定のトピックで詳しく説明されている、広範な書式設定サポートを提供します。  
+  
+-   数値書式指定子の詳細については、次を参照してください。[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)と[カスタム数値書式指定文字列](~/docs/standard/base-types/custom-numeric-format-strings.md)です。  
+  
+-   書式設定に関する詳細については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を表示、<xref:System.Int64>値の既定値を使用して<xref:System.Int64.ToString>メソッドです。 文字列形式も表示されます、<xref:System.Int64>からさまざまな標準書式指定子を使用して結果の値。 例は、EN-US カルチャの書式指定規則を使用して表示されます。  
+  
+ [!code-csharp[System.Int64.ToString#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Int64.ToString/cs/ToString.cs#1)]
+ [!code-vb[System.Int64.ToString#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Int64.ToString/vb/ToString.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string ToString(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Int64.ToString(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">カルチャ固有の書式情報を提供する <see cref="T:System.IFormatProvider" />。</param>
+        <summary>このインスタンスの数値を、指定したカルチャ固有の書式情報を使用して、それと等価な文字列形式に変換します。</summary>
+        <returns><paramref name="provider" /> で指定された、このインスタンスの値の文字列形式。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Int64.ToString%28System.IFormatProvider%29>メソッドの形式、 <xref:System.Int64> ("G"、または [全般]) の既定の値の形式を使用して、<xref:System.Globalization.NumberFormatInfo>特定のカルチャ オブジェクト。 別の形式または現在のカルチャを指定する場合は、他のオーバー ロードを使用して、<xref:System.Int64.ToString%2A>メソッドは、次のようにします。  
+  
+|形式を使用するには|カルチャの|オーバー ロードを使用します。|  
+|-------------------|-----------------|----------------------|  
+|既定値 ("G") 書式|(現在) の既定のカルチャ|<xref:System.Int64.ToString>|  
+|特定の形式|(現在) の既定のカルチャ|<xref:System.Int64.ToString%28System.String%29>|  
+|特定の形式|特定のカルチャ|<xref:System.Int64.ToString%28System.String%2CSystem.IFormatProvider%29>|  
+  
+ `provider`パラメーターを実装するオブジェクト、<xref:System.IFormatProvider>インターフェイスです。 その<xref:System.IFormatProvider.GetFormat%2A>メソッドを返します、<xref:System.Globalization.NumberFormatInfo>このメソッドによって返される文字列の書式に関するカルチャ固有の情報を提供するオブジェクト。 実装するオブジェクト<xref:System.IFormatProvider>次のいずれかを指定できます。  
+  
+-   A<xref:System.Globalization.CultureInfo>が書式指定規則が使用されるカルチャを表すオブジェクト。  
+  
+-   A<xref:System.Globalization.NumberFormatInfo>この値の特定の数値書式設定情報を含むオブジェクトです。  
+  
+-   実装するカスタム オブジェクト<xref:System.IFormatProvider>と持つ<xref:System.IFormatProvider.GetFormat%2A>メソッドを返します、<xref:System.Globalization.NumberFormatInfo>の書式情報を提供するオブジェクト。  
+  
+ 場合`provider`は`null`または<xref:System.Globalization.NumberFormatInfo>からオブジェクトを取得できません`provider`、戻り値の書式で、<xref:System.Globalization.NumberFormatInfo>現在のカルチャ オブジェクト。  
+  
+ .NET Framework では、次の書式設定のトピックで詳しく説明されている、広範な書式設定サポートを提供します。  
+  
+-   数値書式指定子の詳細については、次を参照してください。[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)と[カスタム数値書式指定文字列](~/docs/standard/base-types/custom-numeric-format-strings.md)です。  
+  
+-   書式設定に関する詳細については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。  
+  
+   
+  
+## Examples  
+ 次の例の文字列形式を表示する、<xref:System.Int64>値を使用して<xref:System.Globalization.CultureInfo>を複数の異なるカルチャを表すオブジェクト。  
+  
+ [!code-csharp[System.Int64.ToString#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Int64.ToString/cs/ToString.cs#2)]
+ [!code-vb[System.Int64.ToString#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Int64.ToString/vb/ToString.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString (string format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ToString(string format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Int64.ToString(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="format">数値書式指定文字列。</param>
+        <summary>指定した書式を使用して、このインスタンスの数値を、それと等価な文字列形式に変換します。</summary>
+        <returns><paramref name="format" /> で指定された、このインスタンスの値の文字列形式。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Int64.ToString%28System.String%29>メソッドの形式、<xref:System.Int64>値を使用して指定された形式で、<xref:System.Globalization.NumberFormatInfo>を現在のカルチャの規則を表すオブジェクト。 既定値 ("G"、または [全般]) を使用する場合は、書式を設定または別のカルチャを指定して、他のオーバー ロードを使用して、<xref:System.Int64.ToString%2A>メソッドは、次のように。  
+  
+|形式を使用するには|カルチャの|オーバー ロードを使用します。|  
+|-------------------|-----------------|----------------------|  
+|既定値 ("G") 書式|(現在) の既定のカルチャ|<xref:System.Int64.ToString>|  
+|既定値 ("G") 書式|特定のカルチャ|<xref:System.Int64.ToString%28System.IFormatProvider%29>|  
+|特定の形式|特定のカルチャ|<xref:System.Int64.ToString%28System.String%2CSystem.IFormatProvider%29>|  
+  
+ `format`パラメーターには、"R"を除く任意の有効な標準の数値書式指定子およびカスタム数値書式指定子の任意の組み合わせを指定できます。 場合`format`は`null`または空の文字列 ("")、このインスタンスの戻り値が、一般的な数値書式指定子 ("G") でフォーマットされています。  
+  
+ .NET Framework では、次の書式設定のトピックで詳しく説明されている、広範な書式設定サポートを提供します。  
+  
+-   数値書式指定子の詳細については[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)と[カスタム数値書式指定文字列](~/docs/standard/base-types/custom-numeric-format-strings.md)です。  
+  
+-   書式設定に関する詳細については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。  
+  
+ このインスタンスの戻り値でフォーマットされた、<xref:System.Globalization.NumberFormatInfo>現在のカルチャ。  
+  
+   
+  
+## Examples  
+ 次の例を表示、<xref:System.Int64>値の 2 つのカスタム数値書式指定文字列とサポートされている標準の数値書式指定子の各を使用します。 数値の値を文字列に変換するのには、EN-US カルチャの書式指定規則を使用します。  
+  
+ [!code-csharp[System.Int64.ToString#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Int64.ToString/cs/ToString.cs#3)]
+ [!code-vb[System.Int64.ToString#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Int64.ToString/vb/ToString.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.FormatException">
+          <paramref name="format" />無効かサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString (string format, IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string ToString(string format, class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Int64.ToString(System.String,System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="format">数値書式指定文字列。</param>
+        <param name="provider">このインスタンスに関するカルチャ固有の書式情報を提供するオブジェクト。</param>
+        <summary>このインスタンスの数値を、指定した書式およびカルチャ固有の書式情報を使用して、それと等価な文字列形式に変換します。</summary>
+        <returns><paramref name="format" /> と <paramref name="provider" /> で指定された、このインスタンスの値の文字列形式。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Int64.ToString%28System.String%2CSystem.IFormatProvider%29>メソッドの形式、<xref:System.Int64>値を使用して指定された形式で、<xref:System.Globalization.NumberFormatInfo>特定のカルチャ オブジェクト。 既定の形式またはカルチャの設定を使用する場合は、他のオーバー ロードを使用して、<xref:System.Int64.ToString%2A>メソッドは、次のようにします。  
+  
+|形式を使用するには|カルチャの|オーバー ロードを使用します。|  
+|-------------------|-----------------|----------------------|  
+|既定値 ("G") 書式|(現在) の既定のカルチャ|<xref:System.Int64.ToString>|  
+|既定値 ("G") 書式|特定のカルチャ|<xref:System.Int64.ToString%28System.IFormatProvider%29>|  
+|特定の形式|(現在) の既定のカルチャ|<xref:System.Int64.ToString%28System.String%29>|  
+  
+ `format`パラメーターには、標準またはカスタム数値書式指定文字列のいずれかを指定できます。 すべてのカスタム数値書式指定文字として、"R"(または"r") 以外のすべての標準数値書式指定文字列はサポートされます。 場合`format`は`null`または空の文字列 ("")、このインスタンスの戻り値が、一般的な数値書式指定子 ("G") でフォーマットされています。  
+  
+ `provider`パラメーターを実装するオブジェクト、<xref:System.IFormatProvider>インターフェイスです。 その<xref:System.IFormatProvider.GetFormat%2A>メソッドを返します、<xref:System.Globalization.NumberFormatInfo>このメソッドによって返される文字列の書式に関するカルチャ固有の情報を提供するオブジェクト。 実装するオブジェクト<xref:System.IFormatProvider>次のいずれかを指定できます。  
+  
+-   A<xref:System.Globalization.CultureInfo>が書式指定規則が使用されるカルチャを表すオブジェクト。  
+  
+-   A<xref:System.Globalization.NumberFormatInfo>この値の特定の数値書式設定情報を含むオブジェクトです。  
+  
+-   実装するカスタム オブジェクト<xref:System.IFormatProvider>と持つ<xref:System.IFormatProvider.GetFormat%2A>メソッドを返します、<xref:System.Globalization.NumberFormatInfo>の書式情報を提供するオブジェクト。  
+  
+ 場合`provider`は`null`または<xref:System.Globalization.NumberFormatInfo>からオブジェクトを取得できません`provider`、このインスタンスの戻り値でフォーマットされた、<xref:System.Globalization.NumberFormatInfo>現在のカルチャ。  
+  
+ .NET Framework では、次の書式設定のトピックで詳しく説明されている、広範な書式設定サポートを提供します。  
+  
+-   数値書式指定子の詳細については、次を参照してください。[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)と[カスタム数値書式指定文字列](~/docs/standard/base-types/custom-numeric-format-strings.md)です。  
+  
+-   書式設定に関する詳細については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、正と負の値が 3 つの異なるカルチャを使用して、サポートされている標準数値書式指定子の各が表示されます。  
+  
+ [!code-csharp[System.Int64.ToString#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Int64.ToString/cs/ToString.cs#4)]
+ [!code-vb[System.Int64.ToString#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Int64.ToString/vb/ToString.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.FormatException">
+          <paramref name="format" />無効かサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryParse">
+      <MemberSignature Language="C#" Value="public static bool TryParse (string s, out long result);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryParse(string s, [out] int64&amp; result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Int64.TryParse(System.String,System.Int64@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="result" Type="System.Int64&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="s">変換する数値を格納する文字列。</param>
+        <param name="result">このメソッドが戻るときに、64 ビット符号付き整数と等価値に格納された数値にはが含まれています<c>s</c>変換が成功した場合は 0、変換に失敗した場合は、します。 場合、変換は失敗、 <c>s</c>パラメーターは<see langword="null" />または<see cref="F:System.String.Empty" />、正しい形式は、または数値を表してより小さい<see cref="F:System.Int64.MinValue" />以上<see cref="F:System.Int64.MaxValue" />です。 このパラメーターは初期化されていません。最初に指定された任意の値<c>結果</c>が上書きされます。</param>
+        <summary>数値の文字列形式を、それと等価な 64 ビット符号付き整数に変換します。 戻り値は、変換が成功したか失敗したかを示します。</summary>
+        <returns>
+          <see langword="true" /> が正常に変換された場合は <paramref name="s" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Int64.TryParse%2A>などのメソッドは、<xref:System.Int64.Parse%2A>メソッドを除く、<xref:System.Int64.TryParse%2A>変換が失敗した場合、メソッドが例外をスローしません。 テストするため、例外処理を使用する必要がある、<xref:System.FormatException>イベントで`s`無効なため、正常に解析することはできません。  
+  
+ `s`パラメーターには、フォームの番号が含まれています。  
+  
+ [ws][サインイン] 桁 [ws]  
+  
+ 角かっこ ([ および ]) 内の要素は省略可能です。 次の表では、各要素について説明します。  
+  
+|要素|説明|  
+|-------------|-----------------|  
+|*ws*|省略可能な空白です。|  
+|*サインイン*|省略可能な符号の場合。|  
+|*digits*|0 から 9 までの数字のシーケンス。|  
+  
+ `s`パラメーターを使用して解釈されますが、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>スタイル。 10 進数字以外には、先頭と末尾のスペースが先頭の符号と共にのみを使用できます。 使用できるカルチャに固有の書式情報とスタイル要素を明示的に定義する`s`を使用して、<xref:System.Int64.TryParse%28System.String%2CSystem.Globalization.NumberStyles%2CSystem.IFormatProvider%2CSystem.Int64%40%29>メソッドです。  
+  
+ `s`で書式設定情報を使用してパラメーターを解析、<xref:System.Globalization.NumberFormatInfo>オブジェクトの現在のシステムのカルチャ用に初期化します。 詳細については、「<xref:System.Globalization.NumberFormatInfo.CurrentInfo%2A>」を参照してください。  
+  
+ このオーバー ロード、<xref:System.Int64.TryParse%2A>メソッド内のすべての桁を解釈し、`s`として小数点以下桁数のパラメーターです。 16 進数の文字列表現を解析するには、呼び出し、<xref:System.Int64.TryParse%28System.String%2CSystem.Globalization.NumberStyles%2CSystem.IFormatProvider%2CSystem.Int64%40%29>オーバー ロードします。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Int64.TryParse%28System.String%2CSystem.Int64%40%29?displayProperty=nameWithType>別の文字列値の数を持つメソッドです。  
+  
+ [!code-csharp[System.Int64.TryParse#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Int64.TryParse/cs/TryParse1.cs#1)]
+ [!code-vb[System.Int64.TryParse#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Int64.TryParse/vb/TryParse1.vb#1)]  
+  
+ 文字列の一部を<xref:System.Int64.TryParse%28System.String%2CSystem.Int64%40%29>メソッドはこの例では変換することはありませんが。  
+  
+-   "9432.0". 小数点の記号を含めることはできませんので、変換に失敗します。整数部の桁のみでなければなりません。  
+  
+-   "16,667". 文字列は、グループの区切り記号を含めることはできませんので、変換に失敗します。整数部の桁のみでなければなりません。  
+  
+-   "(100)". 文字列は、現在のカルチャによって定義されたもの以外の負の符号を含めることはできませんので、変換が失敗した<xref:System.Globalization.NumberFormatInfo.NegativeSign%2A?displayProperty=nameWithType>と<xref:System.Globalization.NumberFormatInfo.NumberNegativePattern%2A?displayProperty=nameWithType>プロパティです。  
+  
+-   "01FA"です。 文字列は 16 進数の数字を含めることはできませんので、変換に失敗します。10 進数字のみでなければなりません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryParse">
+      <MemberSignature Language="C#" Value="public static bool TryParse (string s, System.Globalization.NumberStyles style, IFormatProvider provider, out long result);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryParse(string s, valuetype System.Globalization.NumberStyles style, class System.IFormatProvider provider, [out] int64&amp; result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Int64.TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Int64@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="style" Type="System.Globalization.NumberStyles" />
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="result" Type="System.Int64&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="s">変換する数値を格納する文字列。 指定されたスタイルを使用して、文字列が解釈されます<c>スタイル</c>です。</param>
+        <param name="style">使用可能なスタイル要素を示す列挙値のビットごとの組み合わせ<c>s</c>です。 通常指定する値は、<see cref="F:System.Globalization.NumberStyles.Integer" /> です。</param>
+        <param name="provider">に関するカルチャ固有の書式情報を提供するオブジェクト<c>s</c>です。</param>
+        <param name="result">このメソッドが戻るときに、64 ビット符号付き整数と等価値に格納された数値にはが含まれています<c>s</c>変換が成功した場合は 0、変換に失敗した場合は、します。 場合、変換は失敗、 <c>s</c>パラメーターが<see langword="null" />または<see cref="F:System.String.Empty" />に準拠した形式では<c>スタイル</c>、または数値を表すより小さい<see cref="F:System.Int64.MinValue" />より大きいまたは<see cref="F:System.Int64.MaxValue" />. このパラメーターは初期化されていません。最初に指定された任意の値<c>結果</c>が上書きされます。</param>
+        <summary>指定したスタイルおよびカルチャに固有の書式による数値の文字列形式を、それと等価の 64 ビット符号付き整数に変換します。 戻り値は、変換が成功したか失敗したかを示します。</summary>
+        <returns>
+          <see langword="true" /> が正常に変換された場合は <paramref name="s" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Int64.TryParse%2A>などのメソッドは、<xref:System.Int64.Parse%2A>メソッドを除く、<xref:System.Int64.TryParse%2A>変換が失敗した場合、メソッドが例外をスローしません。 テストするため、例外処理を使用する必要がある、<xref:System.FormatException>イベントで`s`無効なため、正常に解析されたことはできません。  
+  
+ `style`パラメーター スタイル要素を定義します (空白や正または負符号) では許可されて、`s`解析操作が成功するためのパラメーターです。 ビット フラグの組み合わせを可能にする必要があります、<xref:System.Globalization.NumberStyles>列挙します。 値に応じて`style`、`s`パラメーターは、次の要素を含めることがあります。  
+  
+ [ws][$][記号][数字] 桁 [.fractional_digits] [e [サインイン] exponential_digits] [ws]  
+  
+ またはの場合、`style`パラメーターが含まれています<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>:  
+  
+ [ws] hexdigits [ws]  
+  
+ 角かっこ ([ および ]) 内の要素は省略可能です。 次の表では、各要素について説明します。  
+  
+|要素|説明|  
+|-------------|-----------------|  
+|*ws*|省略可能なホワイト スペースです。 先頭に空白文字は使用できません`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ、またはの末尾`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*$*|カルチャ固有の通貨記号。 文字列内での位置がによって定義された、<xref:System.Globalization.NumberFormatInfo.CurrencyPositivePattern%2A>のプロパティ、<xref:System.Globalization.NumberFormatInfo>によって返されるオブジェクト、<xref:System.IFormatProvider.GetFormat%2A>のメソッド、`provider`パラメーター。 通貨記号に表示される`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*サインイン*|省略可能な符号の場合。 記号に表示される`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>または<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*digits*<br /><br /> *fractional_digits*<br /><br /> *exponential_digits*|0 ~ 9 桁の数字のシーケンス。 *Fractional_digits*数字の 0 が有効ではのみです。|  
+|*、*|カルチャ固有の桁区切り記号。 数千で指定されたカルチャの区切り記号`provider`に表示できる`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*.*|カルチャに固有の小数点記号です。 指定されたカルチャの小数点記号`provider`に表示できる`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*e*|'E' または 'E' 文字は、値を指数表記で表されていることを示します。 `s`場合、パラメーターは指数表記の数値を表すことができる`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*hexdigits*|一連の 0 f からまたは f 0 から 16 進数の数字|  
+  
+ 10 進数字のみを含む文字列 (に対応する、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ) が正常に解析します。 ほとんど残りの<xref:System.Globalization.NumberStyles>メンバーを制御する可能性がありますが、この入力文字列内に存在する必要はない要素です。 次の表に示す個別<xref:System.Globalization.NumberStyles>メンバー内に存在可能な要素に影響を与える`s`です。  
+  
+|非複合 NumberStyles 値|数字だけでなく s で許可されている要素|  
+|----------------------------------------|---------------------------------------------------|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|10 進数字のみです。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|小数点 (*です。* ) および*fractional_digits*要素。 ただし、 *fractional_digits*のみ 1 つ以上の数字が 0 のメソッドを返しますで構成されている必要があります`false`です。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|`s`パラメーターは、指数表記も使用できます。 `s`パラメーターの範囲内の整数を表す必要があります、 <xref:System.Int64> 0 以外の小数部がないデータ型。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|*Ws*の先頭にある要素`s`です。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|*Ws*の末尾に要素`s`です。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|前に、記号を表示できる*桁*です。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|後に記号が表示される可能性が*桁*です。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|*記号*数値の値を囲むかっこの形式での要素。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|桁区切り記号 ( *、* ) 要素です。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|* $ *要素。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|すべての要素。 `s`パラメーターには、16 進数または指数表記の数値を表すことはできません。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|*Ws*先頭または末尾の位置にある要素`s`、*記号*の先頭に`s`、および小数点 (*です。* ) シンボル。 `s`パラメーターは、指数表記も使用できます。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|*Ws*、*記号*、何千もの区切り記号 (*、*)、および小数点 (*.*) 要素です。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|すべてのスタイルを除く`s`16 進数を表すことはできません。|  
+  
+ 場合、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグを使用すると、`s`プレフィックスのない 16 進値でなければなりません。 たとえば、"C9AF3"を正常に解析していて、"0xC9AF3"にはないです。 その他のフラグのみで使用可能な`style`は<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>と<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>です。 (、<xref:System.Globalization.NumberStyles>列挙体には、複合スタイル<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>、両方の空白文字のフラグが含まれている)。  
+  
+ `provider`パラメーターは、<xref:System.IFormatProvider>実装など、<xref:System.Globalization.CultureInfo>オブジェクトまたは<xref:System.Globalization.NumberFormatInfo>オブジェクト、<xref:System.IFormatProvider.GetFormat%2A>メソッドを返します、<xref:System.Globalization.NumberFormatInfo>オブジェクト。 <xref:System.Globalization.NumberFormatInfo>オブジェクトの書式に関するカルチャ固有の情報を提供`s`です。 場合`provider`は`null`、<xref:System.Globalization.NumberFormatInfo>オブジェクトの現在のカルチャが使用されます。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Int64.TryParse%28System.String%2CSystem.Globalization.NumberStyles%2CSystem.IFormatProvider%2CSystem.Int64%40%29>別の文字列の数を持つメソッドと<xref:System.Globalization.NumberStyles>値。  
+  
+ [!code-csharp[System.Int64.TryParse#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Int64.TryParse/cs/TryParse2.cs#2)]
+ [!code-vb[System.Int64.TryParse#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Int64.TryParse/vb/TryParse2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="style" /> が <see cref="T:System.Globalization.NumberStyles" /> 値ではありません。  
+  
+ -または-  
+  
+ <paramref name="style" />組み合わせではありません<see cref="F:System.Globalization.NumberStyles.AllowHexSpecifier" />と<see cref="F:System.Globalization.NumberStyles.HexNumber" />値。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

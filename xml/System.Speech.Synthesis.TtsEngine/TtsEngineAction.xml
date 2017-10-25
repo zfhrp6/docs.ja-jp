@@ -1,0 +1,298 @@
+<Type Name="TtsEngineAction" FullName="System.Speech.Synthesis.TtsEngine.TtsEngineAction">
+  <TypeSignature Language="C#" Value="public enum TtsEngineAction" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed TtsEngineAction extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Synthesis.TtsEngine.TtsEngineAction" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>表示で実行される音声合成マークアップ言語 (SSML) アクションを指定します、指定された<see langword="TextFragment" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Synthesis.TtsEngine.TtsEngineAction>サービス対象の要求を表す、<xref:System.Speech.Synthesis.TtsEngine.TextFragment>です。 アクションが SSML の仕様内の要素に密接に対応し、によって返されるテキスト上に実装されて、<xref:System.Speech.Synthesis.TtsEngine.TextFragment.TextToSpeak%2A>プロパティを<xref:System.Speech.Synthesis.TtsEngine.TextFragment>です。  
+  
+ <xref:System.Speech.Synthesis.TtsEngine.TtsEngineAction>に関連付けられた値、<xref:System.Speech.Synthesis.TtsEngine.TextFragment>によって返される、<xref:System.Speech.Synthesis.TtsEngine.TextFragment.State%2A>プロパティです。  
+  
+ 処理、<xref:System.Speech.Synthesis.TtsEngine.TtsEngineAction>によって返される値、<xref:System.Speech.Synthesis.TtsEngine.TextFragment.State%2A>によってプロパティが処理される、音声合成の実装、<xref:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.Speak%2A>から派生したクラスのメソッド<xref:System.Speech.Synthesis.TtsEngine.TtsEngineSsml>です。  
+  
+   
+  
+## Examples  
+ 次の例から継承するカスタム音声合成の実装の一部である<xref:System.Speech.Synthesis.TtsEngine.TtsEngineSsml>の使用を使用して<xref:System.Speech.Synthesis.TtsEngine.TextFragment>、 <xref:System.Speech.Synthesis.TtsEngine.FragmentState>、および<xref:System.Speech.Synthesis.TtsEngine.TtsEventId>  
+  
+ 実装<xref:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.Speak%2A>  
+  
+1.  配列を受け取る<xref:System.Speech.Synthesis.TtsEngine.TextFragment>インスタンスし、新しい配列を作成<xref:System.Speech.Synthesis.TtsEngine.TextFragment>に渡されるインスタンス、`Speak`基になる合成エンジンでのメソッドです。  
+  
+2.  場合、<xref:System.Speech.Synthesis.TtsEngine.TtsEngineAction>から列挙値がによって検出された、<xref:System.Speech.Synthesis.TtsEngine.FragmentState.Action%2A>プロパティを<xref:System.Speech.Synthesis.TtsEngine.FragmentState>によって返される、<xref:System.Speech.Synthesis.TtsEngine.TextFragment.State%2A>の各プロパティ<xref:System.Speech.Synthesis.TtsEngine.TextFragment>インスタンスは、読み上げ、実装では、  
+  
+    -   読み上げるテキストで Britishisms に Americanism を変換します。  
+  
+    -   場合、<xref:System.Speech.Synthesis.TtsEngine.ITtsEngineSite.EventInterest%2A>プロパティを<xref:System.Speech.Synthesis.TtsEngine.ITtsEngineSite.EventInterest%2A>実装サポートを提供するインターフェイス、<xref:System.Speech.Synthesis.TtsEngine.TtsEventId>イベントの種類、シンセサイザーの進行状況インジケーターをドライブにイベントを作成します。  
+  
+3.  音声認識のレンダリング エンジンが呼び出されます、変更されたと<xref:System.Speech.Synthesis.TtsEngine.TextFragment>配列。  
+  
+```  
+private const int WordBoundaryFlag = 1 << (int)TtsEventId.WordBoundary;  
+private readonly char[] spaces = new char[] { ' ', '\t', '\r', '\n' };  
+internal struct UsVsUk  
+{  
+  internal string UK;  
+  internal string US;  
+}  
+  
+override public void Speak (TextFragment [] frags, IntPtr wfx, ITtsEngineSite site)  
+{  
+  TextFragment [] newFrags=new TextFragment[frags.Length];  
+  
+  for (int i=0;i<frags.Length;i++){  
+    newFrags[i].State=frags[i].State;  
+    //truncate  
+    newFrags[i].TextToSpeak = frags[i].TextToSpeak.Substring(frags[i].TextOffset,  
+                               frags[i].TextLength);  
+    newFrags[i].TextLength = newFrags[i].TextToSpeak.Length;  
+    newFrags[i].TextOffset = 0;  
+    if (newFrags[i].State.Action == TtsEngineAction.Speak) {  
+      //Us to UK conversion  
+      foreach (UsVsUk term in TransList) {  
+      newFrags[i].TextToSpeak.Replace(term.US, term.UK);  
+      }  
+      //Generate progress meter events if supported  
+      if ((site.EventInterest & WordBoundaryFlag) != 0) {  
+      string[] subs = newFrags[i].TextToSpeak.Split(spaces);  
+  
+      foreach (string s in subs) {  
+        int offset = newFrags[i].TextOffset;  
+        SpeechEventInfo spEvent = new SpeechEventInfo((Int16)TtsEventId.WordBoundary,   
+                (Int16)EventParameterType.Undefined,   
+                 s.Length, new IntPtr(offset));  
+        offset += s.Length;  
+        if (s.Trim().Length > 0) {  
+          SpeechEventInfo[] events = new SpeechEventInfo[1];  
+          events[0] = spEvent;  
+          site.AddEvents(events, 1);  
+        }  
+      }  
+      }  
+    }  
+  }  
+  
+  _baseSynthesize.Speak(newFrags, wfx, site);  
+  
+}  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Bookmark">
+      <MemberSignature Language="C#" Value="Bookmark" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Synthesis.TtsEngine.TtsEngineAction Bookmark = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Synthesis.TtsEngine.TtsEngineAction.Bookmark" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.TtsEngineAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示します<see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" />ブックマークの内容として使われます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SSML の仕様の `<mark>` XML タグに対応します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseUnknownTag">
+      <MemberSignature Language="C#" Value="ParseUnknownTag" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Synthesis.TtsEngine.TtsEngineAction ParseUnknownTag = int32(7)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Synthesis.TtsEngine.TtsEngineAction.ParseUnknownTag" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.TtsEngineAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SSML 入力からアクションが特定されていないことを示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 関連付けられた<xref:System.Speech.Synthesis.TtsEngine.TextFragment>が不明な XML タグ SSML 標準の一部ではないです。  
+  
+ これは入力を解釈またはの裁量により、合成エンジンによって無視可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pronounce">
+      <MemberSignature Language="C#" Value="Pronounce" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Synthesis.TtsEngine.TtsEngineAction Pronounce = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Synthesis.TtsEngine.TtsEngineAction.Pronounce" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.TtsEngineAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>入力要求<see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" />テキストが音素として解釈されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 正確な発音がで指定された、<xref:System.Speech.Synthesis.TtsEngine.FragmentState.Phoneme%2A>のメンバー、<xref:System.Speech.Synthesis.TtsEngine.FragmentState>によって返されるオブジェクト、<xref:System.Speech.Synthesis.TtsEngine.TextFragment.State%2A>プロパティ<xref:System.Speech.Synthesis.TtsEngine.TextFragment>インスタンス。  
+  
+ SSML の仕様の `<Phoneme>` XML タグに対応します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Silence">
+      <MemberSignature Language="C#" Value="Silence" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Synthesis.TtsEngine.TtsEngineAction Silence = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Synthesis.TtsEngine.TtsEngineAction.Silence" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.TtsEngineAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示します、<see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" />音声として表示するテキストが含まれていません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サイレント状態の期間が指定された、<xref:System.Speech.Synthesis.TtsEngine.FragmentState.Duration%2A>のすべてのメンバー<xref:System.Speech.Synthesis.TtsEngine.FragmentState>によって返されるオブジェクト、<xref:System.Speech.Synthesis.TtsEngine.TextFragment.State%2A>プロパティ<xref:System.Speech.Synthesis.TtsEngine.TextFragment>インスタンス。  
+  
+ SSML の仕様の `<Silence>` XML タグに対応します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Speak">
+      <MemberSignature Language="C#" Value="Speak" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Synthesis.TtsEngine.TtsEngineAction Speak = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Synthesis.TtsEngine.TtsEngineAction.Speak" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.TtsEngineAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求、関連付けられている<see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" />処理し、読み上げる必要があります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は、この<xref:System.Speech.Synthesis.TtsEngine.TtsEngineAction>の<xref:System.Speech.Synthesis.TtsEngine.TextFragment>、  
+  
+ SSML の仕様の `<speak>` XML タグに対応します  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SpellOut">
+      <MemberSignature Language="C#" Value="SpellOut" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Synthesis.TtsEngine.TtsEngineAction SpellOut = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Synthesis.TtsEngine.TtsEngineAction.SpellOut" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.TtsEngineAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト値がによって提供されたことを示す、<see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" />を通じてその<see cref="P:System.Speech.Synthesis.TtsEngine.TextFragment.TextToSpeak" />プロパティが個々 の文字として合成するのには。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この表示には、空白文字だけでなく英数字以外の区切り記号が含まれています。  
+  
+ たとえば 3 つにテキスト フラグメント"word!"関連付けられています。 synthsized をする必要があります"w o r d の感嘆符"です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartParagraph">
+      <MemberSignature Language="C#" Value="StartParagraph" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Synthesis.TtsEngine.TtsEngineAction StartParagraph = int32(6)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Synthesis.TtsEngine.TtsEngineAction.StartParagraph" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.TtsEngineAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>段落の状態を示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SSML の仕様の `<p>` XML タグに対応します  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartSentence">
+      <MemberSignature Language="C#" Value="StartSentence" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Synthesis.TtsEngine.TtsEngineAction StartSentence = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Synthesis.TtsEngine.TtsEngineAction.StartSentence" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.TtsEngineAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文の先頭を示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SSML の仕様の `<s>` XML タグに対応します  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

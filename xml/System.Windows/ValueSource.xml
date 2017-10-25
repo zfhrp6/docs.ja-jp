@@ -1,0 +1,276 @@
+<Type Name="ValueSource" FullName="System.Windows.ValueSource">
+  <TypeSignature Language="C#" Value="public struct ValueSource" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit ValueSource extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.ValueSource" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>返される情報を報告<see cref="M:System.Windows.DependencyPropertyHelper.GetValueSource(System.Windows.DependencyObject,System.Windows.DependencyProperty)" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 情報のほとんどを<xref:System.Windows.ValueSource>転送に含まれる、<xref:System.Windows.ValueSource.BaseValueSource%2A>プロパティです。 このプロパティには、全体の正確に 1 つの側面を指定する列挙値が含まれています。[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]は依存関係プロパティの有効な値をプロパティ システムです。  
+  
+ ベースの値だけでなく依存関係プロパティの値に関する興味深い可能性のあるその他の情報は、値はアニメーション化するかどうかと、値に (など、バインディング、または動的リソース参照) 式が含まれるかどうかです。 この情報は、によって報告される<xref:System.Windows.ValueSource.IsAnimated%2A>と<xref:System.Windows.ValueSource.IsExpression%2A>それぞれします。 強制型変換がプロパティ値で動作している場合プロパティは、目的の値を保持します。 また、プロパティの値は、特定の型変換の制約が変更されたか、リフト場合その目的の値に到達しようとしています。 その目的の値ではない資格情報を持つプロパティをレポートで<xref:System.Windows.ValueSource.IsCoerced%2A>は`true`します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BaseValueSource">
+      <MemberSignature Language="C#" Value="public System.Windows.BaseValueSource BaseValueSource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.BaseValueSource BaseValueSource" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.ValueSource.BaseValueSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.BaseValueSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>値を取得、<see cref="T:System.Windows.BaseValueSource" />列挙体は、値を持つ依存関係プロパティ システムを提供するソースをレポートします。</summary>
+        <value>列挙体の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ベース値は、強制またはアニメーションがプロパティに動作している場合、有効な値ではありません。 確認<xref:System.Windows.ValueSource.IsAnimated%2A>と<xref:System.Windows.ValueSource.IsCoerced%2A>底の値が有効な値であるかどうかを判別する場合。  
+  
+ 確認することも<xref:System.Windows.ValueSource.IsExpression%2A>に式の外に底の値が評価されたかどうかを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.ValueSource.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">これと比較するオブジェクト<see cref="T:System.Windows.ValueSource" />です。</param>
+        <summary>示す値を返すかどうかこの<see cref="T:System.Windows.ValueSource" />が指定したオブジェクトと等しい。</summary>
+        <returns>
+          <see langword="true" />指定されたオブジェクトが現在に等しい場合<see cref="T:System.Windows.ValueSource" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装は、それぞれのそれぞれのプロパティ値に基づいて、値の等価性をサポートしています<xref:System.Windows.ValueSource>構造体。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.ValueSource.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.ValueSource" /> のハッシュ コードを返します。</summary>
+        <returns>32 ビット符号なし整数ハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このハッシュ コードがに基づいて、<xref:System.Windows.ValueSource.BaseValueSource%2A>値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAnimated">
+      <MemberSignature Language="C#" Value="public bool IsAnimated { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAnimated" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.ValueSource.IsAnimated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティをアニメーション化するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />プロパティをアニメーション化します場合。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって現在アニメーション実行中は、任意のプロパティのソースが報告された<xref:System.Windows.ValueSource.BaseValueSource%2A>に底の値より高いの依存関係プロパティの優先順位でアニメーションが動作するためにすぐに重要ではありません。 優先順位およびアニメーションの詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCoerced">
+      <MemberSignature Language="C#" Value="public bool IsCoerced { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCoerced" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.ValueSource.IsCoerced" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この値に起因するかどうかを示す値を取得、<see cref="T:System.Windows.CoerceValueCallback" />実装の依存関係プロパティに適用します。</summary>
+        <value>
+          <see langword="true" />値が結果の場合、 <see cref="T:System.Windows.CoerceValueCallback" /> ; 依存関係プロパティに適用される実装それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 強制型変換がプロパティ値で動作している場合プロパティは、目的の値を保持し、プロパティの値は、特定の型変換の制約が変更されたか、リフト場合その目的の値に到達しようとしています。 その目的の値ではない資格情報を持つプロパティをレポートで<xref:System.Windows.ValueSource.IsCoerced%2A>は`true`します。  
+  
+ 強制型変換では、ベースの値より高い優先順位では機能し、厳密には基本の値を設定する方法に関係するオブジェクトではありません。 値ではなく、このプロパティでに強制的に変換中の状態を報告するため、<xref:System.Windows.BaseValueSource>列挙します。 強制変換、ベース値、および優先順位の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCurrent">
+      <MemberSignature Language="C#" Value="public bool IsCurrent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCurrent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.ValueSource.IsCurrent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によって、値が設定されたかどうかを取得、<see cref="M:System.Windows.DependencyObject.SetCurrentValue(System.Windows.DependencyProperty,System.Object)" />メソッドです。</summary>
+        <value>
+          <see langword="true" />によって、値が設定された場合、<see cref="M:System.Windows.DependencyObject.SetCurrentValue(System.Windows.DependencyProperty,System.Object)" />メソッド以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsExpression">
+      <MemberSignature Language="C#" Value="public bool IsExpression { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsExpression" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.ValueSource.IsExpression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この値が評価された式から発生したかどうかを示す値を取得します。 可能性があります、<see cref="T:System.Windows.Data.BindingExpression" />バインディング、またはサポートするよう内部式をサポートする、 [DynamicResource マークアップ拡張機能](~/docs/framework/wpf/advanced/dynamicresource-markup-extension.md)します。</summary>
+        <value>
+          <see langword="true" />評価された式から値が付属している場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 評価された式は条件を設定するには、場所、式が適用される、内の値として特定の基本値も報告<xref:System.Windows.ValueSource.BaseValueSource%2A>です。 <xref:System.Windows.ValueSource.BaseValueSource%2A>はまだ非常に任意のプロパティを<xref:System.Windows.ValueSource.IsExpression%2A>は`true`します。 値が式によって生成されたものかどうかを知ることは、値が設定されていない場合、直接など、テンプレート、または継承されたプロパティ値に特に役立ちます。  
+  
+ 式の評価が失敗する場合 (バインドが失敗しました。 その名前のリソースが見つかりません)、値が取得されますシステムでは、プロパティ、最も可能性の高いいくつかの他の参加者から既定値です。 ソースがそのに報告<xref:System.Windows.ValueSource.BaseValueSource%2A>です。 失敗した式の評価が返されます`false`の<xref:System.Windows.ValueSource.IsExpression%2A>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Windows.ValueSource vs1, System.Windows.ValueSource vs2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Windows.ValueSource vs1, valuetype System.Windows.ValueSource vs2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.ValueSource.op_Equality(System.Windows.ValueSource,System.Windows.ValueSource)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="vs1" Type="System.Windows.ValueSource" />
+        <Parameter Name="vs2" Type="System.Windows.ValueSource" />
+      </Parameters>
+      <Docs>
+        <param name="vs1">比較対象となる最初の <see cref="T:System.Windows.ValueSource" />。</param>
+        <param name="vs2">比較対象となる 2 番目の <see cref="T:System.Windows.ValueSource" />。</param>
+        <summary>2 つの <see cref="T:System.Windows.ValueSource" /> インスタンスの値が同一かどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合、2 つ<see cref="T:System.Windows.ValueSource" />インスタンスと等価である、それ以外の場合は、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装を呼び出す<xref:System.Windows.ValueSource.Equals%2A>、サポートのすべてのプロパティを基に等しいかどうかの値と<xref:System.Windows.ValueSource>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Windows.ValueSource vs1, System.Windows.ValueSource vs2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Windows.ValueSource vs1, valuetype System.Windows.ValueSource vs2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.ValueSource.op_Inequality(System.Windows.ValueSource,System.Windows.ValueSource)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="vs1" Type="System.Windows.ValueSource" />
+        <Parameter Name="vs2" Type="System.Windows.ValueSource" />
+      </Parameters>
+      <Docs>
+        <param name="vs1">比較対象となる最初の <see cref="T:System.Windows.ValueSource" />。</param>
+        <param name="vs2">比較対象となる 2 番目の <see cref="T:System.Windows.ValueSource" />。</param>
+        <summary>2 つの <see cref="T:System.Windows.ValueSource" /> インスタンスの値が同一でないかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合、2 つ<see cref="T:System.Windows.ValueSource" />と等価である、それ以外の場合、インスタンスがない<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装を呼び出す<xref:System.Windows.ValueSource.Equals%2A>、その否定、およびサポート値の等価性のすべてのプロパティに基づいて取得<xref:System.Windows.ValueSource>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

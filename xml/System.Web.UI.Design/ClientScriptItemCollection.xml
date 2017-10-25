@@ -1,0 +1,60 @@
+<Type Name="ClientScriptItemCollection" FullName="System.Web.UI.Design.ClientScriptItemCollection">
+  <TypeSignature Language="C#" Value="public sealed class ClientScriptItemCollection : System.Collections.ReadOnlyCollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ClientScriptItemCollection extends System.Collections.ReadOnlyCollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.ClientScriptItemCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.ReadOnlyCollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>デザイン時に Web フォームまたはユーザー コントロールに格納されるクライアント スクリプト ブロックの読み取り専用コレクションを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各<xref:System.Web.UI.Design.ClientScriptItem>内のオブジェクト、<xref:System.Web.UI.Design.ClientScriptItemCollection>クラスを表します、`script`デザイン時に (Web フォーム、Web サーバー コントロール、コンテンツ ページまたはマスター ページ) のドキュメントに含まれるブロック。  
+  
+ 使用して、<xref:System.Web.UI.Design.WebFormsRootDesigner>クラスを設定またはデザイン サーフェイス上の Web フォーム ドキュメントに含まれているクライアント スクリプト要素を確認します。 使用して、Web ドキュメント内に含まれるクライアント スクリプト要素のコレクションを取得、<xref:System.Web.UI.Design.WebFormsRootDesigner.GetClientScriptsInDocument%2A>メソッドです。 使用して Web ドキュメントへのクライアント スクリプト要素を追加、<xref:System.Web.UI.Design.WebFormsRootDesigner.AddClientScriptToDocument%2A>メソッドです。  
+  
+ 実行時に、クライアント スクリプト要素を追加するには、使用、<xref:System.Web.UI.ClientScriptManager>クラスです。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.ClientScriptItemCollection>クラスは、クライアント上で実行するデザイン時にスクリプト要素を表します。 `script`要素に対して生成される<xref:System.Web.UI.Design.ClientScriptItemCollection>オブジェクトは、サーバーでは実行は、要素を含まない、`runat="server"`属性。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ClientScriptItemCollection (System.Web.UI.Design.ClientScriptItem[] clientScriptItems);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.Design.ClientScriptItem[] clientScriptItems) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ClientScriptItemCollection.#ctor(System.Web.UI.Design.ClientScriptItem[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="clientScriptItems" Type="System.Web.UI.Design.ClientScriptItem[]" />
+      </Parameters>
+      <Docs>
+        <param name="clientScriptItems">配列<see cref="T:System.Web.UI.Design.ClientScriptItem" />要素のコレクションを初期化するために使用します。</param>
+        <summary><see cref="T:System.Web.UI.Design.ClientScriptItemCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`clientScriptItems`は`null`(`Nothing` Visual basic) または空のコンス トラクターの初期化、要素が含まれていない<xref:System.Web.UI.Design.ClientScriptItemCollection>オブジェクト。 それ以外の場合、内の項目、`clientScriptItems`配列を使用する設定項目を<xref:System.Web.UI.Design.ClientScriptItemCollection>です。  
+  
+ <xref:System.Web.UI.Design.ClientScriptItemCollection.%23ctor%2A>コンス トラクターがから派生したクラスで通常使用される、<xref:System.Web.UI.Design.WebFormsRootDesigner>クラスです。 ビジュアル デザイナーを実装する、<xref:System.Web.UI.Design.WebFormsRootDesigner.GetClientScriptsInDocument%2A>を返すメソッドを<xref:System.Web.UI.Design.ClientScriptItemCollection>デザイン時に、Web ドキュメント内のクライアント スクリプト要素オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

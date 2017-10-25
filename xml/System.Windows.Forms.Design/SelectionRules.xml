@@ -1,0 +1,174 @@
+<Type Name="SelectionRules" FullName="System.Windows.Forms.Design.SelectionRules">
+  <TypeSignature Language="C#" Value="public enum SelectionRules" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SelectionRules extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Design.SelectionRules" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コンポーネントの選択ルールを示すために使用される識別子を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これらの識別子は、コンポーネントのいくつかの形式で表示されるユーザー インターフェイスであるかどうかと、ユーザーが移動またはコンポーネントのサイズを変更するアクションを実行できるかどうかを示します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AllSizeable">
+      <MemberSignature Language="C#" Value="AllSizeable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.Design.SelectionRules AllSizeable = int32(15)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.Design.SelectionRules.AllSizeable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Design.SelectionRules</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンポーネントは、すべての方向にサイズ変更をサポートしていることを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="BottomSizeable">
+      <MemberSignature Language="C#" Value="BottomSizeable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.Design.SelectionRules BottomSizeable = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.Design.SelectionRules.BottomSizeable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Design.SelectionRules</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>下からサイズを変更する、コンポーネントがサポートすることを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="LeftSizeable">
+      <MemberSignature Language="C#" Value="LeftSizeable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.Design.SelectionRules LeftSizeable = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.Design.SelectionRules.LeftSizeable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Design.SelectionRules</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>左からサイズを変更する、コンポーネントがサポートすることを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Locked">
+      <MemberSignature Language="C#" Value="Locked" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.Design.SelectionRules Locked = int32(-2147483648)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.Design.SelectionRules.Locked" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Design.SelectionRules</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテナーに、コンポーネントがロックされていることを示します。 上書き、 <see cref="F:System.Windows.Forms.Design.SelectionRules.Moveable" />、 <see cref="F:System.Windows.Forms.Design.SelectionRules.AllSizeable" />、 <see cref="F:System.Windows.Forms.Design.SelectionRules.BottomSizeable" />、 <see cref="F:System.Windows.Forms.Design.SelectionRules.LeftSizeable" />、 <see cref="F:System.Windows.Forms.Design.SelectionRules.RightSizeable" />、および<see cref="F:System.Windows.Forms.Design.SelectionRules.TopSizeable" />ビットこの列挙型のフラグ。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Moveable">
+      <MemberSignature Language="C#" Value="Moveable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.Design.SelectionRules Moveable = int32(268435456)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.Design.SelectionRules.Moveable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Design.SelectionRules</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンポーネントは、画面に移動することを許可する場所プロパティをサポートすることを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.Design.SelectionRules None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.Design.SelectionRules.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Design.SelectionRules</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特別な選択属性がないことを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RightSizeable">
+      <MemberSignature Language="C#" Value="RightSizeable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.Design.SelectionRules RightSizeable = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.Design.SelectionRules.RightSizeable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Design.SelectionRules</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>右からサイズを変更する、コンポーネントがサポートすることを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TopSizeable">
+      <MemberSignature Language="C#" Value="TopSizeable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.Design.SelectionRules TopSizeable = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.Design.SelectionRules.TopSizeable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Design.SelectionRules</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最上位からサイズを変更する、コンポーネントがサポートすることを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Visible">
+      <MemberSignature Language="C#" Value="Visible" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.Design.SelectionRules Visible = int32(1073741824)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.Design.SelectionRules.Visible" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Design.SelectionRules</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンポーネントがいくつかの形式で表示されるユーザー インターフェイスと選択サービスがこのユーザー インターフェイスの周りに選択境界線を描画を示します。 選択したコンポーネントに、この規則セットがある場合は、コンポーネントによって実装されていると仮定できます<see cref="T:System.ComponentModel.IComponent" />対応するデザイナー インスタンスに関連付けであるとします。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

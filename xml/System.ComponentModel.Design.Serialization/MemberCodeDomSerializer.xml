@@ -1,0 +1,111 @@
+<Type Name="MemberCodeDomSerializer" FullName="System.ComponentModel.Design.Serialization.MemberCodeDomSerializer">
+  <TypeSignature Language="C#" Value="public abstract class MemberCodeDomSerializer : System.ComponentModel.Design.Serialization.CodeDomSerializerBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit MemberCodeDomSerializer extends System.ComponentModel.Design.Serialization.CodeDomSerializerBase" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.Serialization.MemberCodeDomSerializer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Design.Serialization.CodeDomSerializerBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>オブジェクト グラフ内のリフレクション プリミティブをシリアル化するためには、基本クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.MemberCodeDomSerializer>クラスは、「メタ」シリアライザーは、オブジェクト グラフの一部がシリアル化されませんが、代わりに、オブジェクト グラフ内のリフレクション プリミティブをシリアル化するシリアライザー。 たとえば、<xref:System.ComponentModel.Design.Serialization.MemberCodeDomSerializer>関連付けできるよう、<xref:System.ComponentModel.PropertyDescriptor>プロパティをシリアル化するためにします。 <xref:System.ComponentModel.Design.Serialization.MemberCodeDomSerializer>コードの物理的なバックアップがそれらを必要とするのではなく、オブジェクトのプロパティやイベント、論理的にするなど、有効にするコンス トラクターです。  
+  
+ 異なり<xref:System.ComponentModel.Design.Serialization.CodeDomSerializer>クラス、<xref:System.ComponentModel.Design.Serialization.MemberCodeDomSerializer>オブジェクトは、逆シリアル化できる必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected MemberCodeDomSerializer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.MemberCodeDomSerializer.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.Design.Serialization.MemberCodeDomSerializer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Serialize">
+      <MemberSignature Language="C#" Value="public abstract void Serialize (System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager, object value, System.ComponentModel.MemberDescriptor descriptor, System.CodeDom.CodeStatementCollection statements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Serialize(class System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager, object value, class System.ComponentModel.MemberDescriptor descriptor, class System.CodeDom.CodeStatementCollection statements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.MemberCodeDomSerializer.Serialize(System.ComponentModel.Design.Serialization.IDesignerSerializationManager,System.Object,System.ComponentModel.MemberDescriptor,System.CodeDom.CodeStatementCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="manager" Type="System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="descriptor" Type="System.ComponentModel.MemberDescriptor" />
+        <Parameter Name="statements" Type="System.CodeDom.CodeStatementCollection" />
+      </Parameters>
+      <Docs>
+        <param name="manager">シリアル化に使用するシリアル化マネージャー。</param>
+        <param name="value">メンバーがバインドされているオブジェクト。</param>
+        <param name="descriptor">シリアル化するメンバーの記述子。</param>
+        <param name="statements"><see cref="T:System.CodeDom.CodeStatementCollection" />先<c>記述子</c>はシリアル化します。</param>
+        <summary>ステートメントのコレクションには、特定の値を指定したメンバー記述子をシリアル化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、実際にシリアル化を実行します。 メンバーがシリアル化されるときに必要なステートメントがステートメントのコレクションに追加されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerialize">
+      <MemberSignature Language="C#" Value="public abstract bool ShouldSerialize (System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager, object value, System.ComponentModel.MemberDescriptor descriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ShouldSerialize(class System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager, object value, class System.ComponentModel.MemberDescriptor descriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.MemberCodeDomSerializer.ShouldSerialize(System.ComponentModel.Design.Serialization.IDesignerSerializationManager,System.Object,System.ComponentModel.MemberDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="manager" Type="System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="descriptor" Type="System.ComponentModel.MemberDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="manager">シリアル化に使用するシリアル化マネージャー。</param>
+        <param name="value">メンバーがバインドされているオブジェクト。</param>
+        <param name="descriptor">シリアル化するメンバーの記述子。</param>
+        <summary>指定したメンバーをシリアル化するかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />、によって、メンバーが記述されている場合<paramref name="descriptor" />シリアル化された、それ以外にする必要があります<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが戻る`true`場合は、指定されたメンバー記述子をシリアル化するか、または`false`場合は、メンバーをシリアル化する必要はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

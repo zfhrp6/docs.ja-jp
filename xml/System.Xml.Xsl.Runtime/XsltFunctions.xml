@@ -1,0 +1,639 @@
+<Type Name="XsltFunctions" FullName="System.Xml.Xsl.Runtime.XsltFunctions">
+  <TypeSignature Language="C#" Value="public static class XsltFunctions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit XsltFunctions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Xsl.Runtime.XsltFunctions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.SqlXml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>XSLT や XPath 関数。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="BaseUri">
+      <MemberSignature Language="C#" Value="public static string BaseUri (System.Xml.XPath.XPathNavigator navigator);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string BaseUri(class System.Xml.XPath.XPathNavigator navigator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XsltFunctions.BaseUri(System.Xml.XPath.XPathNavigator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
+      </Parameters>
+      <Docs>
+        <param name="navigator"><see cref="T:System.Xml.XPath.XPathNavigator" /> URI によって識別されるノードが含まれているインスタンス。</param>
+        <summary>渡される入力ノードのノードのベース URI の値を返します、<paramref name="navigator" />パラメーター。 実装して<see langword="baseUri" />によると、XPath 関数は、 [W3C 仕様](http://go.microsoft.com/fwlink/?LinkID=4873)です。</summary>
+        <returns>基本 URI として<see cref="T:System.String" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public static bool Contains (string s1, string s2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Contains(string s1, string s2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XsltFunctions.Contains(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s1" Type="System.String" />
+        <Parameter Name="s2" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s1">検索する文字列<c>s2</c>です。</param>
+        <param name="s2">S1 内で検索する文字列。</param>
+        <summary>実装して<see langword="contains" />によると、XPath 関数は、 [W3C 仕様](http://go.microsoft.com/fwlink/?LinkID=4873)です。</summary>
+        <returns>
+          <see langword="true" />最初の引数の文字列には、2 番目の引数の文字列が含まれている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="EXslObjectType">
+      <MemberSignature Language="C#" Value="public static string EXslObjectType (System.Collections.Generic.IList&lt;System.Xml.XPath.XPathItem&gt; value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string EXslObjectType(class System.Collections.Generic.IList`1&lt;class System.Xml.XPath.XPathItem&gt; value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XsltFunctions.EXslObjectType(System.Collections.Generic.IList{System.Xml.XPath.XPathItem})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Collections.Generic.IList&lt;System.Xml.XPath.XPathItem&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Xml.XPath.XPathItem" />型を決定します。</param>
+        <summary>実装して[exsl:object-型](http://go.microsoft.com/fwlink/?LinkId=143941)です。</summary>
+        <returns>オブジェクトの種類として<see cref="T:System.String" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Lang">
+      <MemberSignature Language="C#" Value="public static bool Lang (string value, System.Xml.XPath.XPathNavigator context);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Lang(string value, class System.Xml.XPath.XPathNavigator context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XsltFunctions.Lang(System.String,System.Xml.XPath.XPathNavigator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="context" Type="System.Xml.XPath.XPathNavigator" />
+      </Parameters>
+      <Docs>
+        <param name="value">指定された文字列。</param>
+        <param name="context">
+          <see cref="T:System.Xml.XPath.XPathNavigator" />コンテキストを含むオブジェクトです。</param>
+        <summary>実装して、<see langword="lang" />関数によると、 [W3C XPath 仕様](http://go.microsoft.com/fwlink/?LinkId=143942)です。</summary>
+        <returns>
+          <see cref="T:System.Boolean" />。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="MSFormatDateTime">
+      <MemberSignature Language="C#" Value="public static string MSFormatDateTime (string dateTime, string format, string lang, bool isDate);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string MSFormatDateTime(string dateTime, string format, string lang, bool isDate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XsltFunctions.MSFormatDateTime(System.String,System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dateTime" Type="System.String" />
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="lang" Type="System.String" />
+        <Parameter Name="isDate" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="dateTime">日付/時刻データを含む文字列です。</param>
+        <param name="format">形式を表す文字列。</param>
+        <param name="lang">言語を含む文字列です。</param>
+        <param name="isDate">日付/時刻に日付が含まれているかどうか示すブール値。</param>
+        <summary>実装して、<see langword="ms:format-date" />と<see langword="ms-format-time" /> [Microsoft XPath 拡張関数](http://go.microsoft.com/fwlink/?LinkId=143943)です。</summary>
+        <returns>書式設定された日付と時刻を表す文字列。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="MSLocalName">
+      <MemberSignature Language="C#" Value="public static string MSLocalName (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string MSLocalName(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XsltFunctions.MSLocalName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前。</param>
+        <summary>実装して、 <see langword="ms:local-name" /> [Microsoft XPath 拡張関数](http://go.microsoft.com/fwlink/?LinkId=143943)です。</summary>
+        <returns>名前として指定<see cref="T:System.String" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="MSNamespaceUri">
+      <MemberSignature Language="C#" Value="public static string MSNamespaceUri (string name, System.Xml.XPath.XPathNavigator currentNode);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string MSNamespaceUri(string name, class System.Xml.XPath.XPathNavigator currentNode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XsltFunctions.MSNamespaceUri(System.String,System.Xml.XPath.XPathNavigator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="currentNode" Type="System.Xml.XPath.XPathNavigator" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前。</param>
+        <param name="currentNode"><see cref="T:System.Xml.XPath.XPathNavigator" /> インスタンス。</param>
+        <summary>実装して、 <see langword="ms:namespace-uri" /> [Microsoft XPath 拡張関数](http://go.microsoft.com/fwlink/?LinkId=143943)です。</summary>
+        <returns>Namespace URI として<see cref="T:System.String" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="MSNumber">
+      <MemberSignature Language="C#" Value="public static double MSNumber (System.Collections.Generic.IList&lt;System.Xml.XPath.XPathItem&gt; value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 MSNumber(class System.Collections.Generic.IList`1&lt;class System.Xml.XPath.XPathItem&gt; value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XsltFunctions.MSNumber(System.Collections.Generic.IList{System.Xml.XPath.XPathItem})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Collections.Generic.IList&lt;System.Xml.XPath.XPathItem&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="value">
+          <see cref="T:System.Collections.Generic.List`1" /> の <see cref="T:System.Xml.XPath.XPathItem" />。</param>
+        <summary>実装して<see langword="ms:number" /> [Microsoft XPath 拡張関数](http://go.microsoft.com/fwlink/?LinkId=143943)です。</summary>
+        <returns>
+          <see cref="T:System.Double" />。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="MSStringCompare">
+      <MemberSignature Language="C#" Value="public static double MSStringCompare (string s1, string s2, string lang, string options);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 MSStringCompare(string s1, string s2, string lang, string options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XsltFunctions.MSStringCompare(System.String,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s1" Type="System.String" />
+        <Parameter Name="s2" Type="System.String" />
+        <Parameter Name="lang" Type="System.String" />
+        <Parameter Name="options" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s1">比較する最初の文字列。</param>
+        <param name="s2">比較する 2 番目の文字列。</param>
+        <param name="lang">言語。 Optional</param>
+        <param name="options">比較では、大文字小文字を区別するかどうかを指定します。</param>
+        <summary>実装して<see langword="ms:string-compare" /> [Microsoft XPath 拡張関数](http://go.microsoft.com/fwlink/?LinkId=143943)です。</summary>
+        <returns>場合<paramref name="s1" /> &lt; <paramref name="s2" />メソッドは-1 を返します。 場合<paramref name="s1" />  ==  <paramref name="s2" /> 0 が返されます。 場合<paramref name="s1" /> &gt; <paramref name="s2" />メソッドは 1 を返します。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="MSUtc">
+      <MemberSignature Language="C#" Value="public static string MSUtc (string dateTime);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string MSUtc(string dateTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XsltFunctions.MSUtc(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dateTime" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dateTime">日付/時刻データを含む文字列です。</param>
+        <summary>実装して、 <see langword="ms:utc" /> [Microsoft XPath 拡張関数](http://go.microsoft.com/fwlink/?LinkId=143943)です。</summary>
+        <returns>日付/時刻の情報を含む文字列。 文字列が有効な XSD 日付/時刻関連形式として解釈できない場合は、空の文字列が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 世界協定時刻と並べ替えおよび辞書式比較が可能な固定 (正規化) 表現には、日付/時刻関連値を変換します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="NormalizeSpace">
+      <MemberSignature Language="C#" Value="public static string NormalizeSpace (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string NormalizeSpace(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XsltFunctions.NormalizeSpace(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">指定された文字列。</param>
+        <summary>先頭および末尾のスペースを指定した文字列から削除し、結果を返します。 実装して<see langword="normalize-space" />から機能、 [W3C XPath 標準](http://go.microsoft.com/fwlink/?LinkID=4873)です。</summary>
+        <returns>正規化文字列。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="OuterXml">
+      <MemberSignature Language="C#" Value="public static string OuterXml (System.Xml.XPath.XPathNavigator navigator);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string OuterXml(class System.Xml.XPath.XPathNavigator navigator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XsltFunctions.OuterXml(System.Xml.XPath.XPathNavigator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
+      </Parameters>
+      <Docs>
+        <param name="navigator">
+          <see cref="T:System.Xml.XPath.XPathNavigator" />ノードを識別します。</param>
+        <summary>開始タグと終了タグのノードとによって識別されるノードのすべての子ノードを表すマークアップを取得、<see cref="T:System.Xml.XPath.XPathNavigator" />引数。</summary>
+        <returns>開始タグと終了タグのノードとによって識別されるノードのすべての子ノードを含む文字列、<paramref name="navigator" />パラメーター。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Round">
+      <MemberSignature Language="C#" Value="public static double Round (double value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 Round(float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XsltFunctions.Round(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="value">
+          <see cref="T:System.Double" />丸める数値。</param>
+        <summary>XPath の丸めの規則を使用してラウンド値です。 正の無限大方向に丸められます。 -0.0 (負の値のゼロ) には、-0.5 と-0.0 間の値が丸められます。</summary>
+        <returns>丸められた数値として<see cref="T:System.Double" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="StartsWith">
+      <MemberSignature Language="C#" Value="public static bool StartsWith (string s1, string s2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool StartsWith(string s1, string s2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XsltFunctions.StartsWith(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s1" Type="System.String" />
+        <Parameter Name="s2" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s1">これの先頭と比較され、文字列<c>s2</c>です。</param>
+        <param name="s2">先頭と比較する文字列<c>s1</c>です。</param>
+        <summary>実装して<see langword="starts-with" />によると、XPath 関数は、 [W3C 仕様](http://go.microsoft.com/fwlink/?LinkID=4873)です。</summary>
+        <returns>
+          <see langword="true" />最初の引数の文字列が 2 番目の引数の文字列で始まる場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Substring">
+      <MemberSignature Language="C#" Value="public static string Substring (string value, double startIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string Substring(string value, float64 startIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XsltFunctions.Substring(System.String,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="startIndex" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="value">部分文字列を取得する対象の文字列です。</param>
+        <param name="startIndex">部分文字列の開始文字位置<c>s</c>です。</param>
+        <summary>実装して<see langword="substring" />によると、XPath 関数は、 [W3C 仕様](http://go.microsoft.com/fwlink/?LinkID=4873)です。</summary>
+        <returns>2 番目の引数で指定された位置から最初の引数の部分文字列</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Substring">
+      <MemberSignature Language="C#" Value="public static string Substring (string value, double startIndex, double length);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string Substring(string value, float64 startIndex, float64 length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XsltFunctions.Substring(System.String,System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="startIndex" Type="System.Double" />
+        <Parameter Name="length" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="value">部分文字列を取得する対象の文字列です。</param>
+        <param name="startIndex">部分文字列の開始文字位置<c>s</c>です。</param>
+        <param name="length">部分文字列の文字数。</param>
+        <summary>実装して<see langword="substring" />によると、XPath 関数は、 [W3C 仕様](http://go.microsoft.com/fwlink/?LinkID=4873)です。</summary>
+        <returns>3 番目の引数で指定された長さの 2 番目の引数で指定された位置から、最初の引数の部分文字列です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SubstringAfter">
+      <MemberSignature Language="C#" Value="public static string SubstringAfter (string s1, string s2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string SubstringAfter(string s1, string s2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XsltFunctions.SubstringAfter(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s1" Type="System.String" />
+        <Parameter Name="s2" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s1">S2 を検索する文字列。</param>
+        <param name="s2">内で検索する文字列<c>s1</c>です。</param>
+        <summary>実装して<see langword="substring-after" />によると、XPath 関数は、 [W3C 仕様](http://go.microsoft.com/fwlink/?LinkID=4873)です。</summary>
+        <returns>S1 に s2 が含まれていない場合、s2、または空の文字列の後に発生する s1 内の文字です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列 (s1) 内の部分文字列 (s2) を検索し、s2 後に発生する s1 内の文字を返します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SubstringBefore">
+      <MemberSignature Language="C#" Value="public static string SubstringBefore (string s1, string s2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string SubstringBefore(string s1, string s2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XsltFunctions.SubstringBefore(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s1" Type="System.String" />
+        <Parameter Name="s2" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s1">S2 を検索する文字列。</param>
+        <param name="s2">内で検索する文字列<c>s1</c>です。</param>
+        <summary>実装して<see langword="substring-before" />によると、XPath 関数は、 [W3C 仕様](http://go.microsoft.com/fwlink/?LinkID=4873)です。</summary>
+        <returns>S1 に s2 が含まれていない場合、s2、または空の文字列の前に発生する s1 内の文字です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列 (s1) 内の部分文字列 (s2) を検索し、s2 前に発生する s1 内の文字を返します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SystemProperty">
+      <MemberSignature Language="C#" Value="public static System.Xml.XPath.XPathItem SystemProperty (System.Xml.XmlQualifiedName name);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.XPath.XPathItem SystemProperty(class System.Xml.XmlQualifiedName name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XsltFunctions.SystemProperty(System.Xml.XmlQualifiedName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XPath.XPathItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="name">システム プロパティの名前。</param>
+        <summary>実装して<see langword="system-property" />XSLT 関数によると、 [W3C 仕様](http://go.microsoft.com/fwlink/?LinkID=49919)です。</summary>
+        <returns>指定されるシステム プロパティの値、<paramref name="name" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Translate">
+      <MemberSignature Language="C#" Value="public static string Translate (string arg, string mapString, string transString);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string Translate(string arg, string mapString, string transString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XsltFunctions.Translate(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="arg" Type="System.String" />
+        <Parameter Name="mapString" Type="System.String" />
+        <Parameter Name="transString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="arg">元の文字列。</param>
+        <param name="mapString">内の部分文字列<c>arg</c>で置き換える必要がありますを<c>transString</c>です。</param>
+        <param name="transString">置換する文字列<c>mapString</c>とします。</param>
+        <summary>実装して<see langword="translate" />によると、XPath 関数は、 [W3C 仕様](http://go.microsoft.com/fwlink/?LinkID=4873)です。</summary>
+        <returns>変換された値<see cref="T:System.String" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列に変換します (`arg`) の部分文字列の文字を置き換えることで (`mapString`) 別の文字列内の文字で (`tranString`)。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

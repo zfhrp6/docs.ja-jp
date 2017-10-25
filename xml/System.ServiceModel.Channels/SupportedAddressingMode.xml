@@ -1,0 +1,87 @@
+<Type Name="SupportedAddressingMode" FullName="System.ServiceModel.Channels.SupportedAddressingMode">
+  <TypeSignature Language="C#" Value="public enum SupportedAddressingMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SupportedAddressingMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.SupportedAddressingMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>サービスがサポートする応答の送信先を、匿名アドレスのみ、非匿名アドレスのみ、または両方にするかを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体は、サーバーの機能を指定します。言い換えれば、そのクライアントでの要件を設定します。  
+  
+ [!INCLUDE[indigo1](~/includes/indigo1-md.md)] には、メッセージの送信先を指定するためのさまざまなアドレス指定コントロールがあります。 たとえば、メッセージの送信先の論理 <xref:System.ServiceModel.Channels.MessageHeaders.To%2A> アドレス、トランスポートで使用される物理 ("Via") アドレス (ここでサービスがリッスンする)、およびクライアント エンドポイントのアドレスを示すエンドポイントの <xref:System.ServiceModel.Channels.MessageHeaders.ReplyTo%2A> アドレスがあります。  
+  
+ 二者間のみでメッセージを交換する最も基本的な場合では、これらのアドレスを個別に指定する必要はありません。 ただし、メッセージの交換にはその他のメッセージの送信先が含まれることがあるため、アドレスを明示的に示す必要がある場合に指定できる必要があります。 二者間のみの場合でも、サーバーが独自の HTTP 要求を作成する必要がある双方向 HTTP のように、この機能が必要になる場合があります。 以下の種類の関係は、これらのメッセージング パターンをキャプチャするために、<xref:System.ServiceModel.Channels.SupportedAddressingMode> 列挙体によって定義されます。  
+  
+-   匿名のアドレスは、アドレス指定の最も基本的な形式です。 応答の既定のパスがある場合は、匿名アドレス指定が使用されます。 TCP は双方向通信用のトランスポートであり、TCP メッセージに対する応答は、元のメッセージを送信したソケットのもう一方の側に送り返すことができます。 同様に、HTTP の要求/応答モデルは、HTTP 応答チャネルを介して応答を送信します。 これらの応答では、応答メッセージの送信先を指定する必要はありません。 サーバーでは、クライアントからの匿名応答が必要な場合は、列挙体の匿名の値を使用します。 [!INCLUDE[indigo2](~/includes/indigo2-md.md)]システムによって提供される<xref:System.ServiceModel.NetTcpBinding>、<xref:System.ServiceModel.BasicHttpBinding>と<xref:System.ServiceModel.WSHttpBinding>バインディングは、常に、匿名アドレスを使用します。  
+  
+-   非匿名アドレスは、応答を送信する場合は、通信用の新しいチャネルを作成する必要がある場合に使用されます。 [!INCLUDE[indigo2](~/includes/indigo2-md.md)]システムによって提供される<xref:System.ServiceModel.WSDualHttpBinding>バインドで非匿名アドレスを使用します。 双方向 HTTP では、クライアントが HTTP 要求を作成して、メッセージを送信すると、サーバーは、応答を送信するために独自の HTTP 要求を作成する必要があります。 サーバーは送信を開始しているため、接続を確立するための特定のエンドポイントが必要になります。 サーバーに、応答のためのエンドポイントのアドレスを示す必要があります。 同様に、サービスは、受信した一方向のメッセージに応答する必要がある場合、必要もあります通信に使用できるバック チャネルがないために、NonAnonymous に対処します。 サーバーがメッセージを送り返す場合は、最初のメッセージの送信に使用されたものとはまったく別の操作が必要です。  
+  
+-   3 番目の形式の組み合わせる匿名および NonAnonymous のアドレスが送信されるメッセージによってアドレス指定には混合です。 混合モードのアドレス指定の典型的な例は、エラー メッセージまたは受信確認メッセージの処理のための専用のコンピューターを使用する方法です。 応答の場合、標準の交換シーケンスが HTTP または TCP の場合は、応答は、匿名アドレス指定を使用が、エラーが非匿名アドレス指定を使用します。 中に[!INCLUDE[indigo2](~/includes/indigo2-md.md)]混合の管轄外で、標準のバインドのいずれかの機能をアドレス指定することはチャネル (応答アドレスが NonAnonymous の場合)、または個別のチャネルでバック チャネル (応答アドレスが匿名の場合) で直接応答を送信するサービスを記述します。 このような場合は、チャネルのバインド要素は、設定に使用される<xref:System.ServiceModel.Channels.SupportedAddressingMode>Mixed にします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Anonymous">
+      <MemberSignature Language="C#" Value="Anonymous" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Channels.SupportedAddressingMode Anonymous = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Channels.SupportedAddressingMode.Anonymous" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.SupportedAddressingMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーは、匿名アドレスのみをサポートするため、クライアントは匿名応答アドレスを示す必要があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Mixed">
+      <MemberSignature Language="C#" Value="Mixed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Channels.SupportedAddressingMode Mixed = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Channels.SupportedAddressingMode.Mixed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.SupportedAddressingMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーは、匿名アドレスと非匿名アドレスの両方をサポートするため、クライアントはいずれかまたは両方を選択できます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NonAnonymous">
+      <MemberSignature Language="C#" Value="NonAnonymous" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Channels.SupportedAddressingMode NonAnonymous = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Channels.SupportedAddressingMode.NonAnonymous" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.SupportedAddressingMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーは、非匿名アドレスのみをサポートするため、クライアントは非匿名応答アドレスを示す必要があります。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

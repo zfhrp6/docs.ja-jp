@@ -1,0 +1,170 @@
+<Type Name="UrlPropertyAttribute" FullName="System.Web.UI.UrlPropertyAttribute">
+  <TypeSignature Language="C#" Value="public sealed class UrlPropertyAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit UrlPropertyAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.UrlPropertyAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>使用を制御する属性を定義する URL の値を含む文字列プロパティを識別します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.UrlPropertyAttribute>属性は、URL を表すコントロールのプロパティに適用される属性です。 文字列プロパティを表す URL としてマークすることに加えて、<xref:System.Web.UI.UrlPropertyAttribute>属性を定義、<xref:System.Web.UI.UrlPropertyAttribute.Filter%2A>プロパティに対してフィルター処理に使用できる特定のファイルの種類を識別するプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、URL に固有のプロパティを実装するクラスを示します。 このコード例では、<xref:System.Web.UI.UrlPropertyAttribute>属性に適用する、`TargetUrl`のプロパティ、`CustomHyperLinkControl`クラスです。 属性では、ASP.NET files の特定のファイル フィルターを設定します。  
+  
+ [!code-csharp[System.Web.UI.UrlPropertyAttribute#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.UrlPropertyAttribute/CS/CustomHyperLinkControl.cs#2)]
+ [!code-vb[System.Web.UI.UrlPropertyAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.UrlPropertyAttribute/VB/CustomHyperLinkControl.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UrlPropertyAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.UrlPropertyAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Web.UI.UrlPropertyAttribute" /> クラスの新しい既定のインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のインスタンス、<xref:System.Web.UI.UrlPropertyAttribute>でクラスを初期化、<xref:System.Web.UI.UrlPropertyAttribute.Filter%2A>プロパティ値に設定する"*.\*"です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、URL に固有のプロパティを実装するクラスを示します。 このコード例で、既定値<xref:System.Web.UI.UrlPropertyAttribute>属性に適用する、`TargetUrl`のプロパティ、`CustomHyperLinkControl`クラスです。 すべての URL を指定して、既定のファイルのフィルター セットを属性がサポートを示す"* です。\*".  
+  
+ [!code-csharp[System.Web.UI.UrlPropertyAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.UrlPropertyAttribute/CS/CustomHyperLinkControl.cs#1)]
+ [!code-vb[System.Web.UI.UrlPropertyAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.UrlPropertyAttribute/VB/CustomHyperLinkControl.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UrlPropertyAttribute (string filter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string filter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.UrlPropertyAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="filter" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="filter">URL に固有のプロパティに関連付けられているファイル フィルターです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.UrlPropertyAttribute" />クラス、設定、<see cref="P:System.Web.UI.UrlPropertyAttribute.Filter" />プロパティを指定した文字列にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンス、<xref:System.Web.UI.UrlPropertyAttribute>でこのコンス トラクターで作成したクラスを初期化、<xref:System.Web.UI.UrlPropertyAttribute.Filter%2A>プロパティに設定`filter`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、URL に固有のプロパティを実装するクラスを示します。 このコード例では、<xref:System.Web.UI.UrlPropertyAttribute>属性に適用する、`TargetUrl`のプロパティ、`CustomHyperLinkControl`クラスです。 属性では、ASP.NET files の特定のファイル フィルターを設定します。  
+  
+ [!code-csharp[System.Web.UI.UrlPropertyAttribute#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.UrlPropertyAttribute/CS/CustomHyperLinkControl.cs#2)]
+ [!code-vb[System.Web.UI.UrlPropertyAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.UrlPropertyAttribute/VB/CustomHyperLinkControl.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.UrlPropertyAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">このインスタンスまたは null 参照と比較する <see cref="T:System.Object" /> (Visual Basic では <see langword="Nothing" />)。</param>
+        <summary>このインスタンスが、指定されたオブジェクトと等価であるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> がこのインスタンスの型および値に等しい場合は <paramref name="obj" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filter">
+      <MemberSignature Language="C#" Value="public string Filter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Filter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.UrlPropertyAttribute.Filter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>URL に固有のプロパティに関連付けられているファイルのフィルターを取得します。</summary>
+        <value>URL に固有のプロパティに関連付けられているファイル フィルターです。 既定値は"* です。\*".</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナーに基づくファイル セレクター内のフィルターを提供する、<xref:System.Web.UI.UrlPropertyAttribute>属性。 既定では、初期化は"* です。\*", ファイル拡張子を持つすべてのファイルを指定します。 具体的なファイルの種類のフィルターを設定することができます。たとえば、フィルター"\*.aspx"ASP.NET ファイルのみが URL に固有のプロパティで表されることを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.UrlPropertyAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

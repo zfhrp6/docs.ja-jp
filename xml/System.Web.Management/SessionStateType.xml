@@ -1,0 +1,76 @@
+<Type Name="SessionStateType" FullName="System.Web.Management.SessionStateType">
+  <TypeSignature Language="C#" Value="public enum SessionStateType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SessionStateType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Management.SessionStateType" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>セッション状態のデータベース プロバイダーをインストールするときに使用されるセッション状態の種類について説明します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Management.SessionStateType>列挙が、<xref:System.Web.Management.SqlServices.InstallSessionState%2A>のメソッド、<xref:System.Web.Management.SqlServices>型です。  
+  
+ [!code-csharp[System.Web.Management.SqlServices#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.SqlServices/CS/usingsqlservices.cs#8)]
+ [!code-vb[System.Web.Management.SqlServices#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.SqlServices/VB/usingsqlservices.vb#8)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Custom">
+      <MemberSignature Language="C#" Value="Custom" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Management.SessionStateType Custom = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.SessionStateType.Custom" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Management.SessionStateType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セッション状態データおよびストアド プロシージャは、カスタム データ ストアに配置します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Persisted">
+      <MemberSignature Language="C#" Value="Persisted" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Management.SessionStateType Persisted = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.SessionStateType.Persisted" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Management.SessionStateType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セッション状態データおよびストアド プロシージャは、"ASPState"データベースに配置します。 セッション状態データは、データベース サーバーの再起動後も保持されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Temporary">
+      <MemberSignature Language="C#" Value="Temporary" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Management.SessionStateType Temporary = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.SessionStateType.Temporary" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Management.SessionStateType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セッション状態データは、tempdb に格納され、ストアド プロシージャは、"ASPState"データベースに配置されます。 セッション状態データには、SQL Server の再起動は失われます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

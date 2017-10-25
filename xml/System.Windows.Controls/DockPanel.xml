@@ -1,0 +1,225 @@
+<Type Name="DockPanel" FullName="System.Windows.Controls.DockPanel">
+  <TypeSignature Language="C#" Value="public class DockPanel : System.Windows.Controls.Panel" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi DockPanel extends System.Windows.Controls.Panel" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.DockPanel" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.Panel</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>子要素を互いに水平方向または垂直方向に整列する領域を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Controls.DockPanel>のコレクションを格納<xref:System.Windows.UIElement>では、オブジェクト、<xref:System.Windows.Controls.Panel.Children%2A>プロパティです。  
+  
+ <xref:System.Windows.Controls.DockPanel.SetDock%2A>メソッドは、同じコンテナー内の他の要素を基準として要素の位置を変更します。 配置プロパティなど<xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>、その親要素を基準として要素の位置を変更します。  
+  
+ 設定した場合、<xref:System.Windows.Controls.DockPanel.LastChildFill%2A>プロパティを`true`は、既定の設定の最後の子要素、<xref:System.Windows.Controls.DockPanel>常に最後の子要素に設定したその他のドッキング値に関係なく、残りの領域を塗りつぶします。 設定する必要があります、子要素を別の方向をドッキングするのには、<xref:System.Windows.Controls.DockPanel.LastChildFill%2A>プロパティを`false`し、明示的な最後の子要素の双方向のドッキングも指定する必要があります。  
+  
+ パネルの要素では、フォーカスは既定では表示されません。 フォーカスを受け取るパネルの要素を強制するには、設定、<xref:System.Windows.UIElement.Focusable%2A>プロパティを`true`です。  
+  
+ **注:**の子要素の位置、<xref:System.Windows.Controls.DockPanel>画面にはによって決定されます、<xref:System.Windows.Controls.DockPanel.Dock%2A>のそれぞれの子要素のプロパティ*と*下にある場合は、その子要素の相対順序、<xref:System.Windows.Controls.DockPanel>です。 そのためなどこれらの子の順序によって、画面を使用して、ドッキング ステーションと同じプロパティ値を持つ子要素のセットを異なる方法で配置する、<xref:System.Windows.Controls.DockPanel>です。 子のための配置の効果を順序付け、<xref:System.Windows.Controls.DockPanel>順番によっては、残りの領域の各要素の位置を設定するには、その子要素を反復処理します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DockPanel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DockPanel.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.DockPanel" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ArrangeOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Size ArrangeOverride (System.Windows.Size arrangeSize);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size ArrangeOverride(valuetype System.Windows.Size arrangeSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DockPanel.ArrangeOverride(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="arrangeSize" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="arrangeSize"><see cref="T:System.Windows.Size" />この要素を使用してその子要素を整列します。</param>
+        <summary>コンテンツ (子要素) を配置、<see cref="T:System.Windows.Controls.DockPanel" />要素。</summary>
+        <returns><see cref="T:System.Windows.Size" />の配置のサイズを表す<see cref="T:System.Windows.Controls.DockPanel" />要素。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DockProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty DockProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty DockProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.DockPanel.DockProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.DockPanel.Dock" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDock">
+      <MemberSignature Language="C#" Value="public static System.Windows.Controls.Dock GetDock (System.Windows.UIElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Controls.Dock GetDock(class System.Windows.UIElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DockPanel.GetDock(System.Windows.UIElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForChildren</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Dock</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.UIElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値の読み取り元となる要素。</param>
+        <summary>値を取得、<see cref="P:System.Windows.Controls.DockPanel.Dock" />添付プロパティを指定した<see cref="T:System.Windows.UIElement" />です。</summary>
+        <returns><see cref="P:System.Windows.Controls.DockPanel.Dock" />要素のプロパティの値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastChildFill">
+      <MemberSignature Language="C#" Value="public bool LastChildFill { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool LastChildFill" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DockPanel.LastChildFill" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか内で最後の子要素、<see cref="T:System.Windows.Controls.DockPanel" />残りの使用可能な領域を拡大します。</summary>
+        <value>
+          <see langword="true" />最後の子要素が、残りの領域を埋めるように拡大する場合それ以外の場合<see langword="false" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定した場合、<xref:System.Windows.Controls.DockPanel.LastChildFill%2A>プロパティを`true`は、既定の設定の最後の子要素、<xref:System.Windows.Controls.DockPanel>常に最後の子要素に設定したその他のドッキング値に関係なく、残りの領域を塗りつぶします。 設定する必要があります、子要素を別の方向をドッキングするのには、<xref:System.Windows.Controls.DockPanel.LastChildFill%2A>プロパティを`false`ドッキング、最後の子要素にも指定する必要があります。  
+  
+<a name="dependencyPropertyInfo_LastChildFill"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.DockPanel.LastChildFillProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsArrange%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastChildFillProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty LastChildFillProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty LastChildFillProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.DockPanel.LastChildFillProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.DockPanel.LastChildFill" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MeasureOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Size MeasureOverride (System.Windows.Size constraint);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size MeasureOverride(valuetype System.Windows.Size constraint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DockPanel.MeasureOverride(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="constraint" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="constraint">最大<see cref="T:System.Windows.Size" />を超えないようにします。</param>
+        <summary>子要素の測定、<see cref="T:System.Windows.Controls.DockPanel" />中に配置する前に、<see cref="M:System.Windows.Controls.DockPanel.ArrangeOverride(System.Windows.Size)" />渡します。</summary>
+        <returns>A<see cref="T:System.Windows.Size" />を表す要素のサイズを変更します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Controls.DockPanel>サイズ変更プロパティを分析してそのサイズを決定し、<xref:System.Windows.Controls.DockPanel.Dock%2A>その子要素のプロパティの値。 子要素には、すべての領域にあるがドッキングされているを占有する可能性がします。 ドッキングされている子要素、`Left`または`Right`幅全体のすべての垂直スペースが付与されます。 ドッキングされている子要素、`Top`または`Bottom`高さ全体のすべての水平スペースが付与されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDock">
+      <MemberSignature Language="C#" Value="public static void SetDock (System.Windows.UIElement element, System.Windows.Controls.Dock dock);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetDock(class System.Windows.UIElement element, valuetype System.Windows.Controls.Dock dock) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DockPanel.SetDock(System.Windows.UIElement,System.Windows.Controls.Dock)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.UIElement" />
+        <Parameter Name="dock" Type="System.Windows.Controls.Dock" />
+      </Parameters>
+      <Docs>
+        <param name="element">添付プロパティの書き込み先となる要素。</param>
+        <param name="dock">必要な<see cref="T:System.Windows.Controls.Dock" />値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.DockPanel.Dock" />プロパティを指定した要素にアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.DockPanel.SetDock%2A>メソッドは、同じコンテナー内の他の子要素を基準としての子要素の位置を変更します。 配置プロパティなど<xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>、その親要素に相対的な子要素の位置を変更します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

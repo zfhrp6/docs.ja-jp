@@ -1,0 +1,212 @@
+<Type Name="Glyph" FullName="System.Windows.Forms.Design.Behavior.Glyph">
+  <TypeSignature Language="C#" Value="public abstract class Glyph" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit Glyph extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Design.Behavior.Glyph" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>によって管理されている 1 人のユーザー インターフェイス (UI) エンティティを表す、<see cref="T:System.Windows.Forms.Design.Behavior.Adorner" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 唯一の目的、<xref:System.Windows.Forms.Design.Behavior.Glyph>ペイントおよびヒット テストをします。 A<xref:System.Windows.Forms.Design.Behavior.Glyph>の装飾の window コントロール上にレンダリングされたウィンドウのハンドル (HWND) を持たない、<xref:System.Windows.Forms.Design.Behavior.BehaviorService>です。 各<xref:System.Windows.Forms.Design.Behavior.Glyph>持つことができます、<xref:System.Windows.Forms.Design.Behavior.Behavior>関連付けられています。 正常にヒット テスト<xref:System.Windows.Forms.Design.Behavior.Glyph>、新規または異なるをプッシュする機会が<xref:System.Windows.Forms.Design.Behavior.Behavior>の動作のスタック、<xref:System.Windows.Forms.Design.Behavior.BehaviorService>です。  
+  
+ 詳細については、次を参照してください。[動作サービスの概要](http://msdn.microsoft.com/library/7c60cc41-4324-46b5-b444-b39eda7cb33f)です。  
+  
+   
+  
+## Examples  
+ 次の例は、独自に作成する方法を示します<xref:System.Windows.Forms.Design.Behavior.Glyph>を持つクラスに基づく<xref:System.Windows.Forms.Design.Behavior.Behavior>関連付けられています。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.Design.Behavior.BehaviorService>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.Design.Behavior.BehaviorService#5](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.Design.Behavior.BehaviorService/cpp/Form1.cpp#5)]
+ [!code-csharp[System.Windows.Forms.Design.Behavior.BehaviorService#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.Behavior.BehaviorService/CS/Form1.cs#5)]
+ [!code-vb[System.Windows.Forms.Design.Behavior.BehaviorService#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.Behavior.BehaviorService/VB/Form1.vb#5)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Glyph (System.Windows.Forms.Design.Behavior.Behavior behavior);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.Design.Behavior.Behavior behavior) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.Behavior.Glyph.#ctor(System.Windows.Forms.Design.Behavior.Behavior)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="behavior" Type="System.Windows.Forms.Design.Behavior.Behavior" />
+      </Parameters>
+      <Docs>
+        <param name="behavior"><see cref="T:System.Windows.Forms.Design.Behavior.Behavior" /> に関連付けられている <see cref="T:System.Windows.Forms.Design.Behavior.Glyph" />。 指定できます<see langword="null" />です。</param>
+        <summary><see cref="T:System.Windows.Forms.Design.Behavior.Glyph" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例での新しいインスタンスを初期化する方法、<xref:System.Windows.Forms.Design.Behavior.Glyph>クラスです。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.Design.Behavior.BehaviorService>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.Design.Behavior.BehaviorService#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.Design.Behavior.BehaviorService/cpp/Form1.cpp#4)]
+ [!code-csharp[System.Windows.Forms.Design.Behavior.BehaviorService#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.Behavior.BehaviorService/CS/Form1.cs#4)]
+ [!code-vb[System.Windows.Forms.Design.Behavior.BehaviorService#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.Behavior.BehaviorService/VB/Form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Behavior">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.Design.Behavior.Behavior Behavior { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.Design.Behavior.Behavior Behavior" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Design.Behavior.Glyph.Behavior" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Design.Behavior.Behavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.Design.Behavior.Behavior" /> に関連付けられている <see cref="T:System.Windows.Forms.Design.Behavior.Glyph" /> を取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.Design.Behavior.Behavior" />に関連付けられている、 <see cref="T:System.Windows.Forms.Design.Behavior.Glyph" />、または<see langword="null" />動作が存在しない場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bounds">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Rectangle Bounds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Rectangle Bounds" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Design.Behavior.Glyph.Bounds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>境界を取得、<see cref="T:System.Windows.Forms.Design.Behavior.Glyph" />です。</summary>
+        <value>A<see cref="T:System.Drawing.Rectangle" />の境界を表す、<see cref="T:System.Windows.Forms.Design.Behavior.Glyph" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、オーバーライドする方法、<xref:System.Windows.Forms.Design.Behavior.Glyph.Bounds%2A>特定のサイズと位置でのグリフを作成します。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.Design.Behavior.BehaviorService>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.Design.Behavior.BehaviorService#8](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.Design.Behavior.BehaviorService/cpp/Form1.cpp#8)]
+ [!code-csharp[System.Windows.Forms.Design.Behavior.BehaviorService#8](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.Behavior.BehaviorService/CS/Form1.cs#8)]
+ [!code-vb[System.Windows.Forms.Design.Behavior.BehaviorService#8](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.Behavior.BehaviorService/VB/Form1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHitTest">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.Forms.Cursor GetHitTest (System.Drawing.Point p);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Forms.Cursor GetHitTest(valuetype System.Drawing.Point p) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.Behavior.Glyph.GetHitTest(System.Drawing.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Cursor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="p" Type="System.Drawing.Point" />
+      </Parameters>
+      <Docs>
+        <param name="p">ヒット テストをポイントします。</param>
+        <summary>ヒット テストのロジックを提供します。</summary>
+        <returns>A<see cref="T:System.Windows.Forms.Cursor" />場合、<see cref="T:System.Windows.Forms.Design.Behavior.Glyph" />に関連付けられている<paramref name="p" />、それ以外の<see langword="null" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Design.Behavior.Glyph.GetHitTest%2A>メソッドは、`abstract`強制的メソッド<xref:System.Windows.Forms.Design.Behavior.Glyph>指定ヒット テストのロジックを実装します。 任意の時点を指定した場合、<xref:System.Windows.Forms.Design.Behavior.Glyph>の協力を得ている場所、その必要がありますを返す有効なすることにしました<xref:System.Windows.Forms.Cursor>です。 それ以外の場合を返す`null`により、<xref:System.Windows.Forms.Design.Behavior.BehaviorService>位置を無視します。  
+  
+   
+  
+## Examples  
+ 次の例では、オーバーライドする方法、<xref:System.Windows.Forms.Design.Behavior.Glyph.GetHitTest%2A>点がこのグリフ内かどうかをします。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.Design.Behavior.BehaviorService>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.Design.Behavior.BehaviorService#9](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.Design.Behavior.BehaviorService/cpp/Form1.cpp#9)]
+ [!code-csharp[System.Windows.Forms.Design.Behavior.BehaviorService#9](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.Behavior.BehaviorService/CS/Form1.cs#9)]
+ [!code-vb[System.Windows.Forms.Design.Behavior.BehaviorService#9](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.Behavior.BehaviorService/VB/Form1.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Paint">
+      <MemberSignature Language="C#" Value="public abstract void Paint (System.Windows.Forms.PaintEventArgs pe);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Paint(class System.Windows.Forms.PaintEventArgs pe) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.Behavior.Glyph.Paint(System.Windows.Forms.PaintEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pe" Type="System.Windows.Forms.PaintEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="pe">イベント データを格納している <see cref="T:System.Windows.Forms.PaintEventArgs" />。</param>
+        <summary>描画ロジックを提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Design.Behavior.Glyph.Paint%2A>メソッドは、`abstract`強制的メソッド<xref:System.Windows.Forms.Design.Behavior.Glyph>指定描画ロジックを実装します。 `pe`パラメーターが含まれる、<xref:System.Drawing.Graphics>の装飾ウィンドウに関連する、<xref:System.Windows.Forms.Design.Behavior.BehaviorService>です。  
+  
+   
+  
+## Examples  
+ 次の例では、オーバーライドする方法、<xref:System.Windows.Forms.Design.Behavior.Glyph.Paint%2A>グリフを描画します。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.Design.Behavior.BehaviorService>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.Design.Behavior.BehaviorService#10](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.Design.Behavior.BehaviorService/cpp/Form1.cpp#10)]
+ [!code-csharp[System.Windows.Forms.Design.Behavior.BehaviorService#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.Behavior.BehaviorService/CS/Form1.cs#10)]
+ [!code-vb[System.Windows.Forms.Design.Behavior.BehaviorService#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.Behavior.BehaviorService/VB/Form1.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetBehavior">
+      <MemberSignature Language="C#" Value="protected void SetBehavior (System.Windows.Forms.Design.Behavior.Behavior behavior);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void SetBehavior(class System.Windows.Forms.Design.Behavior.Behavior behavior) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.Behavior.Glyph.SetBehavior(System.Windows.Forms.Design.Behavior.Behavior)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="behavior" Type="System.Windows.Forms.Design.Behavior.Behavior" />
+      </Parameters>
+      <Docs>
+        <param name="behavior">A<see cref="T:System.Windows.Forms.Design.Behavior.Behavior" />に関連付ける、<see cref="T:System.Windows.Forms.Design.Behavior.Glyph" />です。</param>
+        <summary>変更、<see cref="T:System.Windows.Forms.Design.Behavior.Behavior" />に関連付けられている、<see cref="T:System.Windows.Forms.Design.Behavior.Glyph" />です。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para><see cref="M:System.Windows.Forms.Design.Behavior.Glyph.SetBehavior(System.Windows.Forms.Design.Behavior.Behavior)" />継承を変更するクラス、メソッドを呼び出して、<see cref="T:System.Windows.Forms.Design.Behavior.Behavior" />に関連付けられている、<see cref="T:System.Windows.Forms.Design.Behavior.Glyph" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

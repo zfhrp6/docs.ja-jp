@@ -1,0 +1,83 @@
+<Type Name="DictionaryKeyPropertyAttribute" FullName="System.Windows.Markup.DictionaryKeyPropertyAttribute">
+  <TypeSignature Language="C#" Value="public sealed class DictionaryKeyPropertyAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DictionaryKeyPropertyAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.DictionaryKeyPropertyAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class, AllowMultiple=false, Inherited=true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>暗黙のキー値を提供する関連付けられているクラスのプロパティを指定します。 <see cref="T:System.Collections.IDictionary" /> コレクションの項目では、XAML で定義される明示的な<see langword="x:Key" /> 属性ではなく、暗黙のキーが使用されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 項目を<xref:System.Collections.IDictionary>ディクショナリ (など、 [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.ResourceDictionary>) キーが必要です。 XAML では、通常、キーがで指定されて`x:Key`項目ごとに、XAML マークアップの属性、<xref:System.Collections.IDictionary>です。 <xref:System.Windows.Markup.DictionaryKeyPropertyAttribute>暗黙のキーを使用するクラスに適用される場所に使用するキー<xref:System.Collections.IDictionary>包含は、クラス内の異なるプロパティ値から取得します。 適用するクラスのインスタンス、<xref:System.Windows.Markup.DictionaryKeyPropertyAttribute>に含めることが、<xref:System.Collections.IDictionary>によって参照されるプロパティを限り明示的なキーがない<xref:System.Collections.IDictionary>そのディクショナリの実装内のキーとして有効では値が含まれています。  
+  
+ .NET Framework の以前のバージョンでは、このクラスは WindowsBase WPF 固有のアセンブリに存在しています。 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、<xref:System.Windows.Markup.DictionaryKeyPropertyAttribute>は System.Xaml アセンブリにします。 詳細については、次を参照してください。 [WPF から System.Xaml に移行した型](~/docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)です。  
+  
+## <a name="wpf-usage-notes"></a>WPF の使用上の注意  
+ 次の一覧は、この属性が適用される WPF Api の例を参照します。  
+  
+-   <xref:System.Windows.Controls.ControlTemplate.TargetType%2A?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.DataTemplate.DataTemplateKey%2A?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.Style.TargetType%2A?displayProperty=nameWithType>  
+  
+ 詳細については、WPF リソース ディクショナリへの影響の<xref:System.Windows.Markup.DictionaryKeyPropertyAttribute>を参照してください[XAML リソース](~/docs/framework/wpf/advanced/xaml-resources.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DictionaryKeyPropertyAttribute (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.DictionaryKeyPropertyAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">暗黙のキー値を提示するプロパティの名前。</param>
+        <summary><see cref="T:System.Windows.Markup.DictionaryKeyPropertyAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.DictionaryKeyPropertyAttribute.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>暗黙のキー値を提示するプロパティの名前を取得します。</summary>
+        <value>暗黙のキー値を提示するプロパティの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

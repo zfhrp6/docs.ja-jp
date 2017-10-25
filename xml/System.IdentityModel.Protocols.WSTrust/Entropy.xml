@@ -1,0 +1,100 @@
+<Type Name="Entropy" FullName="System.IdentityModel.Protocols.WSTrust.Entropy">
+  <TypeSignature Language="C#" Value="public class Entropy : System.IdentityModel.Protocols.WSTrust.ProtectedKey" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Entropy extends System.IdentityModel.Protocols.WSTrust.ProtectedKey" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Protocols.WSTrust.Entropy" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Protocols.WSTrust.ProtectedKey</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>トークンの要求メッセージとトークンの応答メッセージの両方で使用されるエントロピを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Ws-trust で定義された wst:Entropy 要素の内容を表します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Entropy (byte[] secret);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] secret) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Protocols.WSTrust.Entropy.#ctor(System.Byte[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="secret" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="secret">キー マテリアルを含むバイト配列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Protocols.WSTrust.Entropy" />エントロピをバイナリ シークレット形式で送信するためのクラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Entropy (System.IdentityModel.Protocols.WSTrust.ProtectedKey protectedKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Protocols.WSTrust.ProtectedKey protectedKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Protocols.WSTrust.Entropy.#ctor(System.IdentityModel.Protocols.WSTrust.ProtectedKey)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="protectedKey" Type="System.IdentityModel.Protocols.WSTrust.ProtectedKey" />
+      </Parameters>
+      <Docs>
+        <param name="protectedKey">A<see cref="T:System.IdentityModel.Protocols.WSTrust.ProtectedKey" />バイナリ シークレットを指定できますが、保護されたキーまたは暗号化されたキーを表すです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Protocols.WSTrust.Entropy" />指定したクラスは、キーを保護します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Entropy (int entropySizeInBits);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 entropySizeInBits) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Protocols.WSTrust.Entropy.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="entropySizeInBits" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="entropySizeInBits">エントロピ内のキー マテリアルの entropySizeInBits します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Protocols.WSTrust.Entropy" />ランダムに生成されるバイト数を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Entropy (byte[] secret, System.IdentityModel.Tokens.EncryptingCredentials wrappingCredentials);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] secret, class System.IdentityModel.Tokens.EncryptingCredentials wrappingCredentials) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Protocols.WSTrust.Entropy.#ctor(System.Byte[],System.IdentityModel.Tokens.EncryptingCredentials)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="secret" Type="System.Byte[]" />
+        <Parameter Name="wrappingCredentials" Type="System.IdentityModel.Tokens.EncryptingCredentials" />
+      </Parameters>
+      <Docs>
+        <param name="secret">キー マテリアルを含むバイト配列。</param>
+        <param name="wrappingCredentials"><see cref="T:System.IdentityModel.Tokens.EncryptingCredentials" />キー マテリアルの暗号化に使用する資格情報を表すです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Protocols.WSTrust.Entropy" />エントロピを暗号化されたキーの形式で送信するためのクラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

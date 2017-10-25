@@ -1,0 +1,99 @@
+<Type Name="WebPartExportMode" FullName="System.Web.UI.WebControls.WebParts.WebPartExportMode">
+  <TypeSignature Language="C#" Value="public enum WebPartExportMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed WebPartExportMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.WebPartExportMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>指定するかどうかすべてでは、一部またはすべての<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロールのプロパティをエクスポートすることができます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Web.UI.WebControls.WebParts.WebPartExportMode>に列挙子を適用できる、 <xref:System.Web.UI.WebControls.WebParts.WebPart.ExportMode%2A> Web パーツ コントロールからプロパティをエクスポートすることを指定するプロパティです。 既定では、プロパティ、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールをエクスポートすることはできませんし、コントロールの<xref:System.Web.UI.WebControls.WebParts.WebPart.ExportMode%2A>プロパティが None に設定します。 コントロールのすべてのプロパティをエクスポートするのには、設定、<xref:System.Web.UI.WebControls.WebParts.WebPart.ExportMode%2A>のすべての値。 機密データが含まれるプロパティのエクスポートを防止しながら、特定のプロパティのみをエクスポートするには、NonSensitiveData にプロパティの値を設定します。  
+  
+ プロパティはを介して「機微」とマークすることができます、<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute>属性。  
+  
+> [!NOTE]
+>  アプリケーションの Web.config ファイルで、Web パーツ コントロールを含む Web アプリケーションのエクスポート機能を有効にするに属性を追加する必要があります、`<webParts>`内の要素、`<system.web>`セクションで、次のマークアップと同様にします。  
+>   
+>  `<webParts enableExport="true">`  
+>   
+>  `</webParts>`  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.WebPart.ExportMode%2A>プロパティです。 エクスポートのコード例が機能するには、する必要がありますも更新することは、Web.config ファイルの「解説」セクションに示すように注意してください。  
+  
+ この例の最初の部分には、という名前のコントロールのコードが含まれています。`TextDisplayWebPart`です。 このコントロールは、カスタム コントロールの例」のセクションにあると同じ、<xref:System.Web.UI.WebControls.WebParts.WebPartExportMode.NonSensitiveData>クラスの概要については、追加する点を除いて、`Personalizable`属性を`TextDisplayWebPart.ContentText`プロパティ、プロパティをエクスポートできるようにします。 属性の宣言がの値が含まれることに注意してください`true`の`isSensitive`パラメーターであり、プロパティが機微なデータをエクスポート目的でマークされています。 コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 このコード例には、ソース コードをアセンブリにコンパイルし、Web アプリケーションの Bin サブフォルダーに配置することでアセンブリを参照することが前提としています、`Register`ディレクティブで、Web ページ。 両方のコンパイル方法を示すチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-csharp[WebParts_WebPart_ExportMode#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPart_ExportMode/CS/textdisplaywebpart.cs#2)]
+ [!code-vb[WebParts_WebPart_ExportMode#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPart_ExportMode/VB/textdisplaywebpart.vb#2)]  
+  
+ 例の 2 番目の部分を参照する方法を示しています、 `TextDisplayWebPart` ASP.NET Web ページにコントロールできます。 宣言型マークアップで、なお、<xref:System.Web.UI.WebControls.WebParts.WebPart.ExportMode%2A>プロパティの値に設定されている、機微な値であってもプロパティをエクスポートすることを意味します。  
+  
+ [!code-aspx-csharp[WebParts_WebPart_ExportMode#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPart_ExportMode/CS/exportmodecs.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPart_ExportMode#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPart_ExportMode/VB/exportmodevb.aspx#1)]  
+  
+ ブラウザーとの動詞メニューを開き、Web ページを読み込む、<xref:System.Web.UI.WebControls.WebParts.WebPart.ExportMode%2A>制御、export 動詞をクリックし、コントロールの状態とプロパティのデータを含む説明ファイルをエクスポートする指示に従います。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="All">
+      <MemberSignature Language="C#" Value="All" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.WebParts.WebPartExportMode All = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.WebParts.WebPartExportMode.All" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartExportMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべての Web パーツ コントロールのプロパティをエクスポートすることができます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.WebParts.WebPartExportMode None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.WebParts.WebPartExportMode.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartExportMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web パーツ コントロールのプロパティのいずれもエクスポートできます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NonSensitiveData">
+      <MemberSignature Language="C#" Value="NonSensitiveData" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.WebParts.WebPartExportMode NonSensitiveData = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.WebParts.WebPartExportMode.NonSensitiveData" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartExportMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web パーツ コントロールの非機密として定義されているプロパティのみをエクスポートできます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

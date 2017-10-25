@@ -1,0 +1,230 @@
+<Type Name="DependencyObjectType" FullName="System.Windows.DependencyObjectType">
+  <TypeSignature Language="C#" Value="public class DependencyObjectType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DependencyObjectType extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.DependencyObjectType" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>すべての基になるタイプ キャッシュを実装する<see cref="T:System.Windows.DependencyObject" />派生型です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DependencyObjectType>特定の基になるシステムを表します ([!INCLUDE[TLA2#tla_clr](~/includes/tla2sharptla-clr-md.md)])<xref:System.Type>の<xref:System.Windows.DependencyObject>です。 <xref:System.Windows.DependencyObjectType>ラッパーでは基本的には、([!INCLUDE[TLA2#tla_clr](~/includes/tla2sharptla-clr-md.md)])<xref:System.Type>できるように、一部の機能を拡張することができます。  
+  
+ このクラスには、パブリック コンス トラクターがありません。 このクラスのインスタンスは、その他のオブジェクトのプロパティでのみ取得できます (など<xref:System.Windows.DependencyObject.DependencyObjectType%2A?displayProperty=nameWithType>)、または静的メソッドを通じて<xref:System.Windows.DependencyObjectType.FromSystemType%2A>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BaseType">
+      <MemberSignature Language="C#" Value="public System.Windows.DependencyObjectType BaseType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.DependencyObjectType BaseType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.DependencyObjectType.BaseType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyObjectType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="T:System.Windows.DependencyObjectType" /> 、現在の直接の基本クラスの<see cref="T:System.Windows.DependencyObjectType" />します。</summary>
+        <value>基本クラスの型。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromSystemType">
+      <MemberSignature Language="C#" Value="public static System.Windows.DependencyObjectType FromSystemType (Type systemType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.DependencyObjectType FromSystemType(class System.Type systemType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DependencyObjectType.FromSystemType(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyObjectType</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="systemType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="systemType">システム ([!INCLUDE[TLA2#tla_clr](~/includes/tla2sharptla-clr-md.md)]) に変換する型。</param>
+        <summary>返します、<see cref="T:System.Windows.DependencyObjectType" />システムを表す ([!INCLUDE[TLA2#tla_clr](~/includes/tla2sharptla-clr-md.md)]) 型です。</summary>
+        <returns>A<see cref="T:System.Windows.DependencyObjectType" />システムを表す ([!INCLUDE[TLA2#tla_clr](~/includes/tla2sharptla-clr-md.md)]) 型です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各<xref:System.Windows.DependencyObject>保持、<xref:System.Windows.DependencyObject.DependencyObjectType%2A>プロパティを返す、 <xref:System.Windows.DependencyObjectType>、特定のことが必要ですが、<xref:System.Windows.DependencyObject>インスタンス。 インストールされていない場合は、この静的ユーティリティ メソッドを使用することができます、<xref:System.Windows.DependencyObject>インスタンス化し、必要な<xref:System.Windows.DependencyObjectType>です。  
+  
+   
+  
+## Examples  
+ 次の例では<xref:System.Windows.DependencyObjectType.FromSystemType%2A>、作成、<xref:System.Windows.DependencyObjectType>の種類に基づいて、<xref:System.Windows.Window>クラスです。  
+  
+ [!code-csharp[PropertiesOvwSupport#DOTFromSystemType](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page3.xaml.cs#dotfromsystemtype)]
+ [!code-vb[PropertiesOvwSupport#DOTFromSystemType](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertiesOvwSupport/visualbasic/page3.xaml.vb#dotfromsystemtype)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DependencyObjectType.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.DependencyObjectType" /> のハッシュ コードを返します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装は、の値にリンクされている、<xref:System.Windows.DependencyObjectType.Id%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public int Id { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Id" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.DependencyObjectType.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照操作の一定時間の配列の 0 から始まる一意の識別子を取得します。</summary>
+        <value>内部識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一般的なハッシュ関数は使用しないでください。 この値を保証はありません。 これは、アプリケーションの実行によって異なります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInstanceOfType">
+      <MemberSignature Language="C#" Value="public bool IsInstanceOfType (System.Windows.DependencyObject dependencyObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsInstanceOfType(class System.Windows.DependencyObject dependencyObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DependencyObjectType.IsInstanceOfType(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dependencyObject" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="dependencyObject">現在の <see cref="T:System.Windows.DependencyObjectType" /> と比較するオブジェクト。</param>
+        <summary>指定したオブジェクトが現在の <see cref="T:System.Windows.DependencyObjectType" /> のインスタンスかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />現在のクラスが表されている場合<see cref="T:System.Windows.DependencyObjectType" />の継承階層では、<see cref="T:System.Windows.DependencyObject" />として渡される<paramref name="d" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ まったく同じ型のオブジェクトを返す`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSubclassOf">
+      <MemberSignature Language="C#" Value="public bool IsSubclassOf (System.Windows.DependencyObjectType dependencyObjectType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsSubclassOf(class System.Windows.DependencyObjectType dependencyObjectType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DependencyObjectType.IsSubclassOf(System.Windows.DependencyObjectType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dependencyObjectType" Type="System.Windows.DependencyObjectType" />
+      </Parameters>
+      <Docs>
+        <param name="dependencyObjectType">比較対象の <see cref="T:System.Windows.DependencyObjectType" />。</param>
+        <summary>現在の <see cref="T:System.Windows.DependencyObjectType" /> が、指定した <see cref="T:System.Windows.DependencyObjectType" /> から派生しているかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合、<paramref name="dependencyObjectType" />パラメーターと現在<see cref="T:System.Windows.DependencyObjectType" />クラス、および現在によって表されるクラスの型を表す<see cref="T:System.Windows.DependencyObjectType" />によって表されるクラスから派生した<paramref name="dependencyObjectType" />です。 それ以外の場合は <see langword="false" />。 このメソッドも返します<see langword="false" />場合<paramref name="dependencyObjectType" />と現在<see cref="T:System.Windows.DependencyObjectType" />同じクラスを表します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.DependencyObjectType.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>名前を取得します表さ[!INCLUDE[TLA#tla_clr](~/includes/tlasharptla-clr-md.md)]システムの種類。</summary>
+        <value>表さ名前[!INCLUDE[TLA2#tla_clr](~/includes/tla2sharptla-clr-md.md)]システムの種類。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値<xref:System.Windows.DependencyObjectType.Name%2A>の型名の名前と同じ文字列には、<xref:System.Type>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemType">
+      <MemberSignature Language="C#" Value="public Type SystemType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type SystemType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.DependencyObjectType.SystemType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、[!INCLUDE[TLA#tla_clr](~/includes/tlasharptla-clr-md.md)]これによって表されるシステム型<see cref="T:System.Windows.DependencyObjectType" />です。</summary>
+        <value>[!INCLUDE[TLA2#tla_clr](~/includes/tla2sharptla-clr-md.md)]これによって表されるシステム型<see cref="T:System.Windows.DependencyObjectType" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

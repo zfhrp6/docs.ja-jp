@@ -1,0 +1,94 @@
+<Type Name="ScriptingSectionGroup" FullName="System.Web.Configuration.ScriptingSectionGroup">
+  <TypeSignature Language="C#" Value="public sealed class ScriptingSectionGroup : System.Configuration.ConfigurationSectionGroup" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ScriptingSectionGroup extends System.Configuration.ConfigurationSectionGroup" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.ScriptingSectionGroup" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSectionGroup</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>スクリプトの設定の構成セクションを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.Configuration.ScriptingSectionGroup>プログラムで設定しての値を取得するクラス、`scripting`構成ファイルのセクションです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ScriptingSectionGroup ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ScriptingSectionGroup.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.ScriptingSectionGroup" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScriptResourceHandler">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.ScriptingScriptResourceHandlerSection ScriptResourceHandler { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.ScriptingScriptResourceHandlerSection ScriptResourceHandler" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ScriptingSectionGroup.ScriptResourceHandler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("scriptResourceHandler")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.ScriptingScriptResourceHandlerSection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.Configuration.ScriptingScriptResourceHandlerSection" />は現在のシステム構成から派生するオブジェクト。</summary>
+        <value><see cref="T:System.Web.Configuration.ScriptingScriptResourceHandlerSection" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、`ScriptingScriptResourceHandler`スクリプト ファイルかどうかを設定する構成セクションは、リソースが圧縮されるとキャッシュに埋め込まれています。 有効にするにまたは圧縮しを使用してキャッシュを無効にすることができます、<xref:System.Web.Configuration.ScriptingScriptResourceHandlerSection.EnableCompression%2A>と<xref:System.Web.Configuration.ScriptingScriptResourceHandlerSection.EnableCaching%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebServices">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.ScriptingWebServicesSectionGroup WebServices { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.ScriptingWebServicesSectionGroup WebServices" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ScriptingSectionGroup.WebServices" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("webServices")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.ScriptingWebServicesSectionGroup</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.Configuration.ScriptingWebServicesSectionGroup" />は現在のシステム構成から派生するオブジェクト。</summary>
+        <value><see cref="T:System.Web.Configuration.ScriptingWebServicesSectionGroup" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,1237 @@
+<Type Name="Forest" FullName="System.DirectoryServices.ActiveDirectory.Forest">
+  <TypeSignature Language="C#" Value="public class Forest : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Forest extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.ActiveDirectory.Forest" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> クラスは、Active Directory Domain Services フォレストを表します。</summary>
+    <remarks>To be added.</remarks>
+    <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" /></permission>
+  </Docs>
+  <Members>
+    <Member MemberName="ApplicationPartitions">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.ApplicationPartitionCollection ApplicationPartitions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectory.ApplicationPartitionCollection ApplicationPartitions" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.Forest.ApplicationPartitions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.ApplicationPartitionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォレスト内のすべてアプリケーション パーティションのコレクションを取得します。</summary>
+        <value><see cref="T:System.DirectoryServices.ActiveDirectory.ApplicationPartitionCollection" />このフォレスト内のアプリケーション パーティションのすべてを含むオブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーが、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateLocalSideOfTrustRelationship">
+      <MemberSignature Language="C#" Value="public void CreateLocalSideOfTrustRelationship (string targetForestName, System.DirectoryServices.ActiveDirectory.TrustDirection direction, string trustPassword);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CreateLocalSideOfTrustRelationship(string targetForestName, valuetype System.DirectoryServices.ActiveDirectory.TrustDirection direction, string trustPassword) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Forest.CreateLocalSideOfTrustRelationship(System.String,System.DirectoryServices.ActiveDirectory.TrustDirection,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetForestName" Type="System.String" />
+        <Parameter Name="direction" Type="System.DirectoryServices.ActiveDirectory.TrustDirection" />
+        <Parameter Name="trustPassword" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetForestName">信頼が作成されるフォレストの DNS 名。</param>
+        <param name="direction">1 つ、<see cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" />メンバーをこのフォレストを基準とした、信頼の方向を決定します。</param>
+        <param name="trustPassword">信頼のパスワード。</param>
+        <summary>指定されたフォレストとの信頼関係のローカル側を作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、信頼関係の 1 つの側を作成します。 信頼の両方の側が作成されるまで、信頼は確立されません。  
+  
+ `trustPassword`パラメーターが作成された信頼のパスワードを関連付けます。 信頼の相手側が作成されるが同じパスワードを指定し、2 つのローカルの信頼は互いにバインドしています。  
+  
+ プログラムで 1 つのメソッドの呼び出しで信頼関係の両方の側を作成するには、使用、<xref:System.DirectoryServices.ActiveDirectory.Forest.CreateTrustRelationship%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectExistsException">信頼関係が既に存在します。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスへの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーは、ビジー状態か使用できません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="targetForest" />名前または<paramref name="trustPassword" />文字列が空です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetForest" /> または <paramref name="trustPassword" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="direction" /> は有効な <see cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" /> 値ではありません。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたアカウントには、この操作を実行するためのアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateTrustRelationship">
+      <MemberSignature Language="C#" Value="public void CreateTrustRelationship (System.DirectoryServices.ActiveDirectory.Forest targetForest, System.DirectoryServices.ActiveDirectory.TrustDirection direction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CreateTrustRelationship(class System.DirectoryServices.ActiveDirectory.Forest targetForest, valuetype System.DirectoryServices.ActiveDirectory.TrustDirection direction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Forest.CreateTrustRelationship(System.DirectoryServices.ActiveDirectory.Forest,System.DirectoryServices.ActiveDirectory.TrustDirection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetForest" Type="System.DirectoryServices.ActiveDirectory.Forest" />
+        <Parameter Name="direction" Type="System.DirectoryServices.ActiveDirectory.TrustDirection" />
+      </Parameters>
+      <Docs>
+        <param name="targetForest">信頼が作成されるフォレストを表す <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> オブジェクト。</param>
+        <param name="direction">1 つ、<see cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" />メンバーをこのフォレストを基準とした、信頼の方向を決定します。</param>
+        <summary>指定したフォレストとの信頼関係の両側を作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、1 つのメソッドの呼び出しで信頼関係の両側を作成します。 <xref:System.DirectoryServices.ActiveDirectory.Forest.CreateLocalSideOfTrustRelationship%2A?displayProperty=nameWithType>信頼関係の 1 つだけの側を作成するメソッドを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectExistsException">信頼関係が既に存在します。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスへの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーは、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetForest" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="direction" /> は有効な <see cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" /> 値ではありません。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたアカウントには、この操作を実行するためのアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteLocalSideOfTrustRelationship">
+      <MemberSignature Language="C#" Value="public void DeleteLocalSideOfTrustRelationship (string targetForestName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DeleteLocalSideOfTrustRelationship(string targetForestName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Forest.DeleteLocalSideOfTrustRelationship(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetForestName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetForestName">信頼が存在するフォレストの DNS 名。</param>
+        <summary>ローカル側の信頼関係を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 信頼関係の 1 つの側が削除されると、信頼は確立できなくします。  
+  
+ 削除する 1 つのメソッド呼び出しと信頼関係の両方の側を使用して、<xref:System.DirectoryServices.ActiveDirectory.Forest.DeleteTrustRelationship%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException"><paramref name="targetForestName" /> パラメーターで指定された <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> との信頼関係が存在しません。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーは、ビジー状態か使用できません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="targetForestName" /> が空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetForestName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたアカウントには、この操作を実行するためのアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteTrustRelationship">
+      <MemberSignature Language="C#" Value="public void DeleteTrustRelationship (System.DirectoryServices.ActiveDirectory.Forest targetForest);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DeleteTrustRelationship(class System.DirectoryServices.ActiveDirectory.Forest targetForest) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Forest.DeleteTrustRelationship(System.DirectoryServices.ActiveDirectory.Forest)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetForest" Type="System.DirectoryServices.ActiveDirectory.Forest" />
+      </Parameters>
+      <Docs>
+        <param name="targetForest">信頼があるフォレストを表す <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> オブジェクト。</param>
+        <summary>信頼関係の両方の側を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 信頼関係の 1 つだけの辺を削除するを使用して、<xref:System.DirectoryServices.ActiveDirectory.Forest.DeleteLocalSideOfTrustRelationship%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">指定された <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> とは信頼関係がありません。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーは、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetForest" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたアカウントには、この操作を実行するためのアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Forest.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトによって保持されているマネージ リソースおよびアンマネージ リソースのすべてを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Forest.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">マネージ リソースを解放する必要があるかどうかを決定する <see cref="T:System.Boolean" /> 値。 マネージ リソースを解放する必要がある場合は <see langword="true" />、アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary>オブジェクトによって使用されているマネージ リソースを解放します。オプションでアンマネージ リソースも解放できます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Domains">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.DomainCollection Domains { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectory.DomainCollection Domains" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.Forest.Domains" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.DomainCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォレストのすべてのドメインのコレクションを取得します。</summary>
+        <value>現在の <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> 内の <see cref="T:System.DirectoryServices.ActiveDirectory.Domain" /> ドメインを格納している <see cref="T:System.DirectoryServices.ActiveDirectory.DomainCollection" /> コレクション。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーが、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindAllDiscoverableGlobalCatalogs">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection FindAllDiscoverableGlobalCatalogs ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection FindAllDiscoverableGlobalCatalogs() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Forest.FindAllDiscoverableGlobalCatalogs" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このフォレスト内のすべての発見可能なグローバル カタログを検索します。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection" />発見されたグローバル カタログのコレクションを格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ DNS SRV レコードを照会することで、探索可能なドメイン コント ローラーを検索できます。  このメソッドでは、ジェネリック、サイト固有ではない、GC SRV レコードを登録するグローバル カタログのみが返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーが、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindAllDiscoverableGlobalCatalogs">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection FindAllDiscoverableGlobalCatalogs (string siteName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection FindAllDiscoverableGlobalCatalogs(string siteName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Forest.FindAllDiscoverableGlobalCatalogs(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="siteName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="siteName">検索するサイトの名前。</param>
+        <summary>指定されたサイトで、このフォレスト内のすべての発見可能なグローバル カタログを検索します。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection" />発見されたグローバル カタログのコレクションを格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ DNS SRV レコードを照会することで、探索可能なグローバル カタログを検索できます。  グローバル カタログが指定されたサイトの GC SRV レコードを登録していない場合それが返されません、このメソッドにより、グローバル カタログが物理的に、そのサイト内にある場合でも。  
+  
+ そのサイト内の物理的な配置ができない場合でも、このメソッドで指定されたサイトの GC SRV レコードを登録しているすべてのグローバル カタログが返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーが、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="siteName" /> が空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="siteName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindAllGlobalCatalogs">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection FindAllGlobalCatalogs ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection FindAllGlobalCatalogs() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Forest.FindAllGlobalCatalogs" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このフォレスト内のグローバル カタログをすべて検索します。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection" />発見されたグローバル カタログのコレクションを格納します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーがビジーであるか、使用できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindAllGlobalCatalogs">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection FindAllGlobalCatalogs (string siteName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection FindAllGlobalCatalogs(string siteName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Forest.FindAllGlobalCatalogs(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="siteName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="siteName">検索するサイトの名前。</param>
+        <summary>特定のサイトを探してこのフォレスト内のグローバル カタログをすべて検索します。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection" />発見されたグローバル カタログのコレクションを格納するオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーは、ビジー状態か使用できません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="siteName" /> が空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="siteName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindGlobalCatalog">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.GlobalCatalog FindGlobalCatalog ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.GlobalCatalog FindGlobalCatalog() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Forest.FindGlobalCatalog" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.GlobalCatalog</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このフォレスト内のグローバル カタログを検索します。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalog" />この<see cref="T:System.DirectoryServices.ActiveDirectory.Forest" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">グローバル カタログが見つかりません。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindGlobalCatalog">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.GlobalCatalog FindGlobalCatalog (System.DirectoryServices.ActiveDirectory.LocatorOptions flag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.GlobalCatalog FindGlobalCatalog(valuetype System.DirectoryServices.ActiveDirectory.LocatorOptions flag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Forest.FindGlobalCatalog(System.DirectoryServices.ActiveDirectory.LocatorOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.GlobalCatalog</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="flag" Type="System.DirectoryServices.ActiveDirectory.LocatorOptions" />
+      </Parameters>
+      <Docs>
+        <param name="flag">A<see cref="T:System.DirectoryServices.ActiveDirectory.LocatorOptions" />ロケーション条件を指定する値。</param>
+        <summary>このフォレスト内のグローバル カタログから、指定されたロケーション条件を検索します。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalog" />の指定したロケーション条件オブジェクトです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">グローバル カタログが見つかりません。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindGlobalCatalog">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.GlobalCatalog FindGlobalCatalog (string siteName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.GlobalCatalog FindGlobalCatalog(string siteName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Forest.FindGlobalCatalog(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.GlobalCatalog</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="siteName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="siteName">検索するサイトの名前。</param>
+        <summary>このフォレスト内の指定されたサイトのグローバル カタログを検索します。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalog" />指定されたサイトのオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">グローバル カタログが見つかりません。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="siteName" /> が空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="siteName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindGlobalCatalog">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.GlobalCatalog FindGlobalCatalog (string siteName, System.DirectoryServices.ActiveDirectory.LocatorOptions flag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.GlobalCatalog FindGlobalCatalog(string siteName, valuetype System.DirectoryServices.ActiveDirectory.LocatorOptions flag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Forest.FindGlobalCatalog(System.String,System.DirectoryServices.ActiveDirectory.LocatorOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.GlobalCatalog</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="siteName" Type="System.String" />
+        <Parameter Name="flag" Type="System.DirectoryServices.ActiveDirectory.LocatorOptions" />
+      </Parameters>
+      <Docs>
+        <param name="siteName">検索するサイトの名前。</param>
+        <param name="flag">A<see cref="T:System.DirectoryServices.ActiveDirectory.LocatorOptions" />ロケーション条件を指定する値。</param>
+        <summary>このフォレスト内のグローバル カタログから指定されたサイトおよびロケーション条件を検索します。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalog" />指定したサイトおよびロケーション条件のオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">グローバル カタログが見つかりません。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="siteName" /> が空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="siteName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ForestMode">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.ForestMode ForestMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DirectoryServices.ActiveDirectory.ForestMode ForestMode" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.Forest.ForestMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.ForestMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォレストの操作モードを取得します。</summary>
+        <value>A<see cref="T:System.DirectoryServices.ActiveDirectory.ForestMode" />これの現在のフォレスト モードを表す値<see cref="T:System.DirectoryServices.ActiveDirectory.Forest" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーが、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ForestModeLevel">
+      <MemberSignature Language="C#" Value="public int ForestModeLevel { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ForestModeLevel" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.Forest.ForestModeLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォレストの動作モードのレベルを取得します。</summary>
+        <value>フォレストの動作モードのレベル。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllTrustRelationships">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.TrustRelationshipInformationCollection GetAllTrustRelationships ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.TrustRelationshipInformationCollection GetAllTrustRelationships() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Forest.GetAllTrustRelationships" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.TrustRelationshipInformationCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のフォレストの信頼関係のコレクションを取得します。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.ActiveDirectory.TrustRelationshipInformationCollection" />を含むコレクション<see cref="T:System.DirectoryServices.ActiveDirectory.TrustRelationshipInformation" />信頼、現在の関係を表すオブジェクト<see cref="T:System.DirectoryServices.ActiveDirectory.Forest" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーが、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたアカウントには、この操作を実行するためのアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentForest">
+      <MemberSignature Language="C#" Value="public static System.DirectoryServices.ActiveDirectory.Forest GetCurrentForest ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.DirectoryServices.ActiveDirectory.Forest GetCurrentForest() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Forest.GetCurrentForest" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.Forest</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="T:System.DirectoryServices.ActiveDirectory.Forest" />現在のユーザー コンテキストのオブジェクト。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.ActiveDirectory.Forest" />を現在のフォレストを表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetForest">
+      <MemberSignature Language="C#" Value="public static System.DirectoryServices.ActiveDirectory.Forest GetForest (System.DirectoryServices.ActiveDirectory.DirectoryContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.DirectoryServices.ActiveDirectory.Forest GetForest(class System.DirectoryServices.ActiveDirectory.DirectoryContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Forest.GetForest(System.DirectoryServices.ActiveDirectory.DirectoryContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.Forest</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.ActiveDirectory.DirectoryContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">A<see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" />ターゲットとオブジェクトの取得に使用する資格情報を含むオブジェクト。</param>
+        <summary>取得、<see cref="T:System.DirectoryServices.ActiveDirectory.Forest" />指定したコンテキストのオブジェクト。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.ActiveDirectory.Forest" />をこのメソッドによって取得されたフォレストを表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">指定されているターゲットへの接続<paramref name="context" />を確立できませんでした。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="context" /> が無効です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSelectiveAuthenticationStatus">
+      <MemberSignature Language="C#" Value="public bool GetSelectiveAuthenticationStatus (string targetForestName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GetSelectiveAuthenticationStatus(string targetForestName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Forest.GetSelectiveAuthenticationStatus(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetForestName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetForestName">DNS 名、<see cref="T:System.DirectoryServices.ActiveDirectory.Forest" />インバウンド信頼関係が存在します。</param>
+        <summary>指定されたフォレストとのインバウンド信頼関係において選択的認証が有効かどうかを示すブール値を取得します。  <see langword="true" />選択的認証が有効である場合それ以外の場合、<see langword="false" />です。</summary>
+        <returns>
+          <see langword="true" />選択的認証が有効である場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フォレストの信頼で、認証の選択を行う場合のアクセス許可する必要があります手動で有効にする各ドメインおよびその他のフォレスト内のユーザーがアクセスするローカル フォレスト内のリソース。  
+  
+ オプションを選択するための信頼間でユーザーを認証する場合は、認証が有効になっている、その他の組織のセキュリティ ID (SID) が、ユーザーの承認データに追加します。 この SID の存在によって、ユーザーが特定のサービスに対して認証されるように、リソースドメインでのチェックが要求されます。 ユーザーが認証されると、ユーザーを認証するサーバーは、その他の組織の SID が存在しない場合、この組織 SID を追加します。 認証されたユーザーのコンテキストには、これらの特別な SID は 1 つのみ存在できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">信頼関係はありません、<see cref="T:System.DirectoryServices.ActiveDirectory.Forest" />で指定された<paramref name="targetForestName" />です。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">LsaQueryTrustedDomainInfoByName への呼び出しが失敗しました。 詳細については、トピックを参照してください。 [LsaQueryTrustedDomainInfoByName](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/secmgmt/security/lsaquerytrusteddomaininfobyname.asp) MSDN ライブラリで[http://msdn.microsoft.com/library](http://msdn.microsoft.com/library)です。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーが、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="targetForestName" /> が空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetForestName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">現在のオブジェクトは破棄されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたアカウントには、この操作を実行するためのアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSidFilteringStatus">
+      <MemberSignature Language="C#" Value="public bool GetSidFilteringStatus (string targetForestName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GetSidFilteringStatus(string targetForestName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Forest.GetSidFilteringStatus(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetForestName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetForestName">DNS 名、<see cref="T:System.DirectoryServices.ActiveDirectory.Forest" />信頼関係が存在するオブジェクトします。</param>
+        <summary>信頼関係の SID フィルター処理の状態を取得します。</summary>
+        <returns>
+          <see langword="true" />SID のフィルター処理が有効である場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">信頼関係はありません、<see cref="T:System.DirectoryServices.ActiveDirectory.Forest" />で指定されたオブジェクト<paramref name="targetForestName" />です。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーは、ビジー状態か使用できません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="targetForestName" /> が空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetForestName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">現在のオブジェクトは破棄されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたアカウントには、この操作を実行するためのアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTrustRelationship">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipInformation GetTrustRelationship (string targetForestName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipInformation GetTrustRelationship(string targetForestName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Forest.GetTrustRelationship(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipInformation</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetForestName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetForestName">名前、<see cref="T:System.DirectoryServices.ActiveDirectory.Forest" />信頼関係の情報を取得するオブジェクト。</param>
+        <summary>このフォレストと指定されたフォレストの間の信頼関係を取得します。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipInformation" />をこのフォレストと指定したフォレスト間の信頼関係を表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">信頼関係はありません、<see cref="T:System.DirectoryServices.ActiveDirectory.Forest" />で指定された<paramref name="targetForestName" />です。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスへの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーは、ビジー状態か使用できません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="targetForestName" /> が空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetForestName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">現在のオブジェクトは破棄されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたアカウントには、この操作を実行するためのアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GlobalCatalogs">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection GlobalCatalogs { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection GlobalCatalogs" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.Forest.GlobalCatalogs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォレストのすべてのグローバル カタログのコレクションを取得します。</summary>
+        <value>A<see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection" />を含むコレクション、<see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalog" />現在内のグローバル カタログ<see cref="T:System.DirectoryServices.ActiveDirectory.Forest" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーは、ビジー状態か使用できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.Forest.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォレストの名前を取得します。</summary>
+        <value>この <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> の名前。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NamingRoleOwner">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.DomainController NamingRoleOwner { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectory.DomainController NamingRoleOwner" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.Forest.NamingRoleOwner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.DomainController</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォレストの FSMO 名前付けマスター役割を保持するドメイン コントローラーを取得します。</summary>
+        <value>A<see cref="T:System.DirectoryServices.ActiveDirectory.DomainController" />これの FSMO 名前付けマスタであるドメイン コント ローラーを表すオブジェクト<see cref="T:System.DirectoryServices.ActiveDirectory.Forest" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスへの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーが、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RaiseForestFunctionality">
+      <MemberSignature Language="C#" Value="public void RaiseForestFunctionality (System.DirectoryServices.ActiveDirectory.ForestMode forestMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RaiseForestFunctionality(valuetype System.DirectoryServices.ActiveDirectory.ForestMode forestMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Forest.RaiseForestFunctionality(System.DirectoryServices.ActiveDirectory.ForestMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="forestMode" Type="System.DirectoryServices.ActiveDirectory.ForestMode" />
+      </Parameters>
+      <Docs>
+        <param name="forestMode">A<see cref="T:System.DirectoryServices.ActiveDirectory.ForestMode" />フォレストの新しい操作レベルを指定する列挙値。</param>
+        <summary>フォレストの操作モードを生成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.DirectoryServices.ActiveDirectory.ForestMode>値を発生することができますが、低くありません。 つまり、元に戻すことは、フォレストの機能レベルを上げることと、これを行う意思決定を慎重に行う必要があります。  
+  
+ フォレストの操作モードの詳細については、次を参照してください。[ドメインとフォレストの機能](http://www.microsoft.com/resources/documentation/WindowsServ/2003/standard/proddocs/en-us/sag_levels.asp)します。  
+  
+ 次の表に有効な値を定義する`forestMode`フォレストの現在の操作モードに基づきます。  
+  
+|現在のモード|モードを発生させることができます。|  
+|------------------|---------------------------|  
+|<xref:System.DirectoryServices.ActiveDirectory.ForestMode.Windows2000Forest>|<xref:System.DirectoryServices.ActiveDirectory.ForestMode.Windows2003InterimForest><br /><br /> <xref:System.DirectoryServices.ActiveDirectory.ForestMode.Windows2003Forest>|  
+|<xref:System.DirectoryServices.ActiveDirectory.ForestMode.Windows2003InterimForest>|<xref:System.DirectoryServices.ActiveDirectory.ForestMode.Windows2003Forest>|  
+|<xref:System.DirectoryServices.ActiveDirectory.ForestMode.Windows2003Forest>|なし|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーは、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ArgumentException">フォレストの現在の操作モードに基づき、指定した値<paramref name="forestMode" />が無効です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="forestMode" /> が有効な <see cref="T:System.DirectoryServices.ActiveDirectory.ForestMode" /> 列挙値ではありません。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたアカウントには、この操作を実行するためのアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RaiseForestFunctionalityLevel">
+      <MemberSignature Language="C#" Value="public void RaiseForestFunctionalityLevel (int forestMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RaiseForestFunctionalityLevel(int32 forestMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Forest.RaiseForestFunctionalityLevel(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="forestMode" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="forestMode">このレベルまで上げます。</param>
+        <summary>フォレスト機能のレベルを指定した設定まで上げます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RepairTrustRelationship">
+      <MemberSignature Language="C#" Value="public void RepairTrustRelationship (System.DirectoryServices.ActiveDirectory.Forest targetForest);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RepairTrustRelationship(class System.DirectoryServices.ActiveDirectory.Forest targetForest) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Forest.RepairTrustRelationship(System.DirectoryServices.ActiveDirectory.Forest)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetForest" Type="System.DirectoryServices.ActiveDirectory.Forest" />
+      </Parameters>
+      <Docs>
+        <param name="targetForest">A<see cref="T:System.DirectoryServices.ActiveDirectory.Forest" />信頼が存在するフォレスト オブジェクトを表すオブジェクト。</param>
+        <summary>信頼関係を修復します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">信頼関係はありません、<see cref="T:System.DirectoryServices.ActiveDirectory.Forest" />で指定されたオブジェクト<paramref name="targetForest" />です。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーは、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetForest" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたアカウントには、この操作を実行するためのアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RootDomain">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.Domain RootDomain { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectory.Domain RootDomain" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.Forest.RootDomain" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.Domain</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォレスト内に作成された最初のドメインを取得します。</summary>
+        <value>A<see cref="T:System.DirectoryServices.ActiveDirectory.Domain" />これで作成された最初のドメインを表すオブジェクト<see cref="T:System.DirectoryServices.ActiveDirectory.Forest" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Schema">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.ActiveDirectorySchema Schema { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectory.ActiveDirectorySchema Schema" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.Forest.Schema" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.ActiveDirectorySchema</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォレストのスキーマを取得します。</summary>
+        <value><see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySchema" />を現在のスキーマを表すオブジェクト<see cref="T:System.DirectoryServices.ActiveDirectory.Forest" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーが、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SchemaRoleOwner">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.DomainController SchemaRoleOwner { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectory.DomainController SchemaRoleOwner" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.Forest.SchemaRoleOwner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.DomainController</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォレストの FSMO スキーマ マスター役割を保持するドメイン コントローラーを取得します。</summary>
+        <value>A<see cref="T:System.DirectoryServices.ActiveDirectory.DomainController" />これの FSMO スキーマ マスター ドメイン コント ローラーを表すオブジェクト<see cref="T:System.DirectoryServices.ActiveDirectory.Forest" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーが、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetSelectiveAuthenticationStatus">
+      <MemberSignature Language="C#" Value="public void SetSelectiveAuthenticationStatus (string targetForestName, bool enable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetSelectiveAuthenticationStatus(string targetForestName, bool enable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Forest.SetSelectiveAuthenticationStatus(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetForestName" Type="System.String" />
+        <Parameter Name="enable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="targetForestName">DNS 名、<see cref="T:System.DirectoryServices.ActiveDirectory.Forest" />インバウンド信頼関係が存在するオブジェクトします。</param>
+        <param name="enable">
+          <see langword="true" />選択的認証が有効にする場合それ以外の場合、<see langword="false" />です。</param>
+        <summary>入力方向の信頼について認証の選択を有効または無効にします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">指定されたフォレストと信頼関係がない<paramref name="targetForestName" />です。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーは、ビジー状態か使用できません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="targetForestName" /> が空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetForestName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">現在のオブジェクトは破棄されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたアカウントには、この操作を実行するためのアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetSidFilteringStatus">
+      <MemberSignature Language="C#" Value="public void SetSidFilteringStatus (string targetForestName, bool enable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetSidFilteringStatus(string targetForestName, bool enable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Forest.SetSidFilteringStatus(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetForestName" Type="System.String" />
+        <Parameter Name="enable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="targetForestName">DNS 名、<see cref="T:System.DirectoryServices.ActiveDirectory.Forest" />信頼関係が存在するオブジェクトします。</param>
+        <param name="enable">
+          <see langword="true" />SID のフィルター処理が有効にする場合それ以外の場合、<see langword="false" />です。</param>
+        <summary>指定されたフォレストでの SID のフィルター処理の状態を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、新しい外部およびフォレストの信頼関係[!INCLUDE[winxpsvr](~/includes/winxpsvr-md.md)]Active Directory ドメイン サービス SID のフィルター処理を適用します。  SID のフィルター処理は、別のユーザー アカウントに管理者特権を付与する操作を試す悪意のあるユーザーからの攻撃を防ぐために使用されます。  フォレストの信頼に対する SID フィルター処理を適用しは防止しません移行同じフォレスト内のドメインに SID 履歴を使用して、、ユニバーサル グループのアクセス制御方針には影響しません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">指定されたフォレストと信頼関係がない<paramref name="targetForestName" />です。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーは、ビジー状態か使用できません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="targetForestName" /> が空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetForestName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">現在のオブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Sites">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.ReadOnlySiteCollection Sites { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectory.ReadOnlySiteCollection Sites" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.Forest.Sites" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.ReadOnlySiteCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォレストに含まれているサイトのコレクションを取得します。</summary>
+        <value>A<see cref="T:System.DirectoryServices.ActiveDirectory.ReadOnlySiteCollection" />を格納している、 <see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySite" /> 、現在のサイト<see cref="T:System.DirectoryServices.ActiveDirectory.Forest" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーが、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Forest.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のフォレストの文字列形式を返します。</summary>
+        <returns>A<see cref="T:System.String" />の DNS 名を表す、<see cref="T:System.DirectoryServices.ActiveDirectory.Forest" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateLocalSideOfTrustRelationship">
+      <MemberSignature Language="C#" Value="public void UpdateLocalSideOfTrustRelationship (string targetForestName, string newTrustPassword);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UpdateLocalSideOfTrustRelationship(string targetForestName, string newTrustPassword) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Forest.UpdateLocalSideOfTrustRelationship(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetForestName" Type="System.String" />
+        <Parameter Name="newTrustPassword" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetForestName">名前、<see cref="T:System.DirectoryServices.ActiveDirectory.Forest" />ローカルの信頼のパスワードを変更するオブジェクト。</param>
+        <param name="newTrustPassword">信頼関係の新しいパスワード。</param>
+        <summary>信頼関係のローカル側のパスワードを更新します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">指定されたフォレストと信頼関係がない<paramref name="targetForestName" />です。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーがビジーであるか、使用できません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="targetForestName" />または<paramref name="newTrustPassword" />空の文字列します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetForestName" /> または <paramref name="newTrustPassword" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたアカウントには、この操作を実行するためのアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateLocalSideOfTrustRelationship">
+      <MemberSignature Language="C#" Value="public void UpdateLocalSideOfTrustRelationship (string targetForestName, System.DirectoryServices.ActiveDirectory.TrustDirection newTrustDirection, string newTrustPassword);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UpdateLocalSideOfTrustRelationship(string targetForestName, valuetype System.DirectoryServices.ActiveDirectory.TrustDirection newTrustDirection, string newTrustPassword) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Forest.UpdateLocalSideOfTrustRelationship(System.String,System.DirectoryServices.ActiveDirectory.TrustDirection,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetForestName" Type="System.String" />
+        <Parameter Name="newTrustDirection" Type="System.DirectoryServices.ActiveDirectory.TrustDirection" />
+        <Parameter Name="newTrustPassword" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetForestName">名前、<see cref="T:System.DirectoryServices.ActiveDirectory.Forest" />ローカルの信頼の方向とパスワードを変更する必要があるオブジェクト。</param>
+        <param name="newTrustDirection">A<see cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" />新しい信頼の方向の信頼関係の値。</param>
+        <param name="newTrustPassword">信頼関係の新しいパスワード。</param>
+        <summary>信頼関係のローカル側のパスワードと信頼の方向を更新します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">信頼関係はありません、<see cref="T:System.DirectoryServices.ActiveDirectory.Forest" />で指定されたオブジェクト<paramref name="targetForestName" />です。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーがビジーであるか、使用できません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="targetForestName" />または<paramref name="newTrustPassword" />空の文字列します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetForestName" /> または <paramref name="newTrustPassword" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"><paramref name="newTrustDirection" />パラメーターが有効ではありません<see cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" />値。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたアカウントには、この操作を実行するためのアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateTrustRelationship">
+      <MemberSignature Language="C#" Value="public void UpdateTrustRelationship (System.DirectoryServices.ActiveDirectory.Forest targetForest, System.DirectoryServices.ActiveDirectory.TrustDirection newTrustDirection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UpdateTrustRelationship(class System.DirectoryServices.ActiveDirectory.Forest targetForest, valuetype System.DirectoryServices.ActiveDirectory.TrustDirection newTrustDirection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Forest.UpdateTrustRelationship(System.DirectoryServices.ActiveDirectory.Forest,System.DirectoryServices.ActiveDirectory.TrustDirection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetForest" Type="System.DirectoryServices.ActiveDirectory.Forest" />
+        <Parameter Name="newTrustDirection" Type="System.DirectoryServices.ActiveDirectory.TrustDirection" />
+      </Parameters>
+      <Docs>
+        <param name="targetForest">A<see cref="T:System.DirectoryServices.ActiveDirectory.Forest" />オブジェクトを信頼の方向を変更する必要があります。</param>
+        <param name="newTrustDirection">A<see cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" />信頼関係の新しい信頼の方向を指定する値。</param>
+        <summary>信頼関係の信頼の方向を更新します。 信頼の両方の側で、信頼の方向が更新されます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">指定されたフォレストと信頼関係がない<paramref name="targetForest" />です。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーは、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetForest" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="newTrustDirection" /> は有効な <see cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" /> 値ではありません。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたアカウントには、この操作を実行するためのアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="VerifyOutboundTrustRelationship">
+      <MemberSignature Language="C#" Value="public void VerifyOutboundTrustRelationship (string targetForestName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void VerifyOutboundTrustRelationship(string targetForestName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Forest.VerifyOutboundTrustRelationship(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetForestName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetForestName">信頼が存在する相手のドメインの DNS 名。</param>
+        <summary>指定されたフォレストで以前に確立された出力方向の信頼が有効であることを確認します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">によって指定されたフォレストと出力方向の信頼関係がありません<paramref name="targetForestName" />です。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーは、ビジー状態か使用できません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="targetForestName" /> が空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetForestName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたアカウントには、この操作を実行するためのアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="VerifyTrustRelationship">
+      <MemberSignature Language="C#" Value="public void VerifyTrustRelationship (System.DirectoryServices.ActiveDirectory.Forest targetForest, System.DirectoryServices.ActiveDirectory.TrustDirection direction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void VerifyTrustRelationship(class System.DirectoryServices.ActiveDirectory.Forest targetForest, valuetype System.DirectoryServices.ActiveDirectory.TrustDirection direction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Forest.VerifyTrustRelationship(System.DirectoryServices.ActiveDirectory.Forest,System.DirectoryServices.ActiveDirectory.TrustDirection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetForest" Type="System.DirectoryServices.ActiveDirectory.Forest" />
+        <Parameter Name="direction" Type="System.DirectoryServices.ActiveDirectory.TrustDirection" />
+      </Parameters>
+      <Docs>
+        <param name="targetForest">A<see cref="T:System.DirectoryServices.ActiveDirectory.Forest" />信頼関係を検証する対象のオブジェクト。</param>
+        <param name="direction">A<see cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" />このフォレストを基準とした、信頼の方向を指定する値。</param>
+        <summary>指定されたフォレストで以前に確立された信頼が有効であることを確認します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、信頼関係が完全に確立されたことを確認します。 信頼の両方の側が作成されるまで、信頼は確立されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">指定されたフォレストと信頼関係がない<paramref name="targetForest" />、または対象フォレストがで指定されている信頼の方向を持たない<paramref name="direction" />です。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスへの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーは、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetForest" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"><paramref name="direction" />パラメーターが有効ではありません<see cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" />値。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたアカウントには、この操作を実行するためのアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

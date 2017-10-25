@@ -1,0 +1,120 @@
+<Type Name="DatePickerDateValidationErrorEventArgs" FullName="System.Windows.Controls.DatePickerDateValidationErrorEventArgs">
+  <TypeSignature Language="C#" Value="public class DatePickerDateValidationErrorEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DatePickerDateValidationErrorEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.DatePickerDateValidationErrorEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Controls.DatePicker.DateValidationError" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.DatePicker.DateValidationError?displayProperty=nameWithType>イベントが発生したときに<xref:System.Windows.Controls.DatePicker.Text%2A?displayProperty=nameWithType>を日付として解釈できないまたは日付を選択できない場合の値に設定します。 このイベントをサブスクライブし、設定して、例外が発生するかどうかを指定することができます、<xref:System.Windows.Controls.DatePickerDateValidationErrorEventArgs.ThrowException%2A>プロパティです。 場合<xref:System.Windows.Controls.DatePickerDateValidationErrorEventArgs.ThrowException%2A?displayProperty=nameWithType>は`true`、次の例外のいずれかが発生します。  
+  
+|例外の種類|状態|  
+|--------------------|---------------|  
+|<xref:System.FormatException>|有効な日付を入力したテキストを解析できませんし、例外が抑制されていません。|  
+|<xref:System.ArgumentOutOfRangeException>|入力したテキストを選択できない日付を解析します。|  
+  
+ 場合<xref:System.Windows.Controls.DatePickerDateValidationErrorEventArgs.ThrowException%2A?displayProperty=nameWithType>は`false`アプリケーションが通常どおり実行を継続します。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Controls.DatePicker>を 2009 年 8 月に日付を表示し、各土曜日と日曜日が選択可能ではないことを指定します。 <xref:System.Windows.Controls.DatePicker>ハンドル、<xref:System.Windows.Controls.DatePicker.DateValidationError>イベント。 場合は、選択できない日付を入力すると、メッセージを表示します。 有効な日付ではないテキストを入力すると、例外がスローされます。  
+  
+ [!code-csharp[DatePickerSnippets#2](~/samples/snippets/csharp/VS_Snippets_Wpf/datepickersnippets/csharp/window1.xaml.cs#2)]
+ [!code-vb[DatePickerSnippets#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/datepickersnippets/visualbasic/window1.xaml.vb#2)]
+ [!code-xaml[DatePickerSnippets#2](~/samples/snippets/xaml/VS_Snippets_Wpf/datepickersnippets/xaml/window1.xaml#2)]  
+  
+ [!code-csharp[DatePickerSnippets#3](~/samples/snippets/csharp/VS_Snippets_Wpf/datepickersnippets/csharp/window1.xaml.cs#3)]
+ [!code-vb[DatePickerSnippets#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/datepickersnippets/visualbasic/window1.xaml.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DatePickerDateValidationErrorEventArgs (Exception exception, string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Exception exception, string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DatePickerDateValidationErrorEventArgs.#ctor(System.Exception,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="exception" Type="System.Exception" />
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="exception">最初の例外、<see cref="E:System.Windows.Controls.DatePicker.DateValidationError" />イベント。</param>
+        <param name="text">発生したテキスト、<see cref="E:System.Windows.Controls.DatePicker.DateValidationError" />イベント。</param>
+        <summary><see cref="T:System.Windows.Controls.DatePickerDateValidationErrorEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Exception">
+      <MemberSignature Language="C#" Value="public Exception Exception { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Exception Exception" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DatePickerDateValidationErrorEventArgs.Exception" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられている最初の例外を取得、<see cref="E:System.Windows.Controls.DatePicker.DateValidationError" />イベント。</summary>
+        <value>検証エラーに関連付けられている例外。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DatePickerDateValidationErrorEventArgs.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定が発生したテキスト、<see cref="E:System.Windows.Controls.DatePicker.DateValidationError" />イベント。</summary>
+        <value>検証エラーの原因となったテキストです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThrowException">
+      <MemberSignature Language="C#" Value="public bool ThrowException { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ThrowException" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DatePickerDateValidationErrorEventArgs.ThrowException" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを示す値を設定するかどうか<see cref="P:System.Windows.Controls.DatePickerDateValidationErrorEventArgs.Exception" />スローする必要があります。</summary>
+        <value>
+          <see langword="true" />例外をスローする場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

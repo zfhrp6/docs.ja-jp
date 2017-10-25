@@ -1,0 +1,1003 @@
+<Type Name="OracleParameter" FullName="System.Data.OracleClient.OracleParameter">
+  <TypeSignature Language="C#" Value="public sealed class OracleParameter : System.Data.Common.DbParameter, ICloneable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OracleParameter extends System.Data.Common.DbParameter implements class System.Data.IDataParameter, class System.Data.IDbDataParameter, class System.ICloneable" />
+  <TypeSignature Language="DocId" Value="T:System.Data.OracleClient.OracleParameter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.OracleClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Common.DbParameter</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Data.OracleClient.OracleParameter/OracleParameterConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>パラメーターを表します、<see cref="T:System.Data.OracleClient.OracleCommand" />および必要に応じてそのへのマッピング、<see cref="T:System.Data.DataColumn" />です。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パラメーター名では、大文字小文字が区別されません。  
+  
+ Oracle (MSDAORA) と ODBC.NET Framework データ プロバイダーの Microsoft OLE DB プロバイダーを使用して Oracle データベースのクエリを実行するときに使用して、`LIKE`句クエリの固定長フィールドの値には、必要なすべての一致を返さない可能性があります。 Oracle の固定長フィールドの値と一致するとその理由は、`LIKE`句、末尾の空白の埋め込みも含めて、文字列の全体の長さに一致することです。 などのテーブルの場合、Oracle データベースが含まれています"Field1"として定義されているという名前のフィールドには`char(3)`値を入力して、次のコードは、そのテーブルの行に"a"が返されません行です。  
+  
+```vb  
+Dim queryString As String = "SELECT * FROM Table1 WHERE Field1 LIKE ?"  
+Dim command As OleDbCommand = New OleDbCommand(queryString, connection)  
+command.Parameters.Add("@p1", OleDbType.Char, 3).Value = "a"  
+Dim reader As OleDbDataReader = command.ExecuteReader()  
+```  
+  
+```csharp  
+string queryString = "SELECT * FROM Table1 WHERE Field1 LIKE ?";  
+OleDbCommand command = new OleDbCommand(queryString, connection);  
+command.Parameters.Add("@p1", OleDbType.Char, 3).Value = "a";  
+OleDbDataReader reader = command.ExecuteReader();  
+```  
+  
+ これは、Oracle は、"a"と列の値を格納するため (padding"a"、末尾のスペース、3 の固定フィールド長を)、Oracle はの場合、"a"のパラメーター値の一致するものとして処理しませんが、`LIKE`固定長フィールドを比較します。  
+  
+ この問題を解決するには、パラメーターの値をパーセント記号 (「%」) のワイルドカード文字を追加します。 (`"a%"`)、SQL を使用してまたは`=`比較代わりにします。  
+  
+   
+  
+## Examples  
+ 次の例の複数のインスタンスを作成する<xref:System.Data.OracleClient.OracleParameter>を通じて、<xref:System.Data.OracleClient.OracleParameterCollection>内で、<xref:System.Data.OracleClient.OracleDataAdapter>です。 これらのパラメーターは、データベースからデータを選択し、内のデータを配置に使用、<xref:System.Data.DataSet>です。 この例では、<xref:System.Data.DataSet>と<xref:System.Data.OracleClient.OracleDataAdapter>適切なスキーマ、コマンド、および接続を使用して既に作成されています。  
+  
+ [!code-csharp[Classic WebData OracleParameter#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OracleParameter/CS/source.cs#1)]
+ [!code-vb[Classic WebData OracleParameter#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OracleParameter/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OracleParameter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.OracleClient.OracleParameter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OracleParameter (string name, System.Data.OracleClient.OracleType oracleType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, valuetype System.Data.OracleClient.OracleType oracleType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameter.#ctor(System.String,System.Data.OracleClient.OracleType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="oracleType" Type="System.Data.OracleClient.OracleType" />
+      </Parameters>
+      <Docs>
+        <param name="name">パラメーターの名前。</param>
+        <param name="oracleType"><see cref="T:System.Data.OracleClient.OracleType" /> 値のいずれか。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.OracleClient.OracleParameter" />パラメーター名とデータ型を使用するクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OracleClient.OracleParameter>し、一部のプロパティを設定します。  
+  
+ [!code-csharp[Classic WebData OracleParameter.OracleParameter1#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OracleParameter.OracleParameter1/CS/source.cs#1)]
+ [!code-vb[Classic WebData OracleParameter.OracleParameter1#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OracleParameter.OracleParameter1/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="oracleType" /> パラメーターの指定された値が、正しくないバックエンド データ型です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OracleParameter (string name, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameter.#ctor(System.String,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="name">パラメーターの名前。</param>
+        <param name="value"><see cref="T:System.Data.OracleClient.OracleParameter" /> オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.OracleClient.OracleParameter" />パラメーターの名前を使用するクラスと<see cref="T:System.Data.OracleClient.OracleParameter" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定すると、<xref:System.Object>で、 `value` 、パラメーター、<xref:System.Data.DbType>の Microsoft .NET Framework の型から推論される、<xref:System.Object>です。  
+  
+ このオーバー ロードを使用しているときに警告を使用して、<xref:System.Data.OracleClient.OracleParameter>コンス トラクターです。 このオーバー ロードはため、`value`型の<xref:System.Object>は整数値を変換する必要があります、<xref:System.Object>入力値が 0、ときに Microsoft Visual c# の例を次に示します。  
+  
+```  
+Parameter = new OracleParameter("pname", Convert.ToInt32(0));  
+```  
+  
+ この変換を実行しない場合、コンパイラが前提としていますを呼び出すしようとしていること、 `OracleParameter`(`string`、 `OracleType`) コンス トラクター オーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OracleParameter (string name, System.Data.OracleClient.OracleType oracleType, int size);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, valuetype System.Data.OracleClient.OracleType oracleType, int32 size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameter.#ctor(System.String,System.Data.OracleClient.OracleType,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="oracleType" Type="System.Data.OracleClient.OracleType" />
+        <Parameter Name="size" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="name">パラメーターの名前。</param>
+        <param name="oracleType"><see cref="T:System.Data.OracleClient.OracleType" /> 値のいずれか。</param>
+        <param name="size">パラメーターの長さ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.OracleClient.OracleParameter" />パラメーター名、データ型および長さを使用するクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OracleClient.OracleParameter>し、一部のプロパティを設定します。  
+  
+ [!code-csharp[Classic WebData OracleParameter.OracleParameter2#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OracleParameter.OracleParameter2/CS/source.cs#1)]
+ [!code-vb[Classic WebData OracleParameter.OracleParameter2#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OracleParameter.OracleParameter2/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="oracleType" /> パラメーターの指定された値が、正しくないバックエンド データ型です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OracleParameter (string name, System.Data.OracleClient.OracleType oracleType, int size, string srcColumn);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, valuetype System.Data.OracleClient.OracleType oracleType, int32 size, string srcColumn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameter.#ctor(System.String,System.Data.OracleClient.OracleType,System.Int32,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="oracleType" Type="System.Data.OracleClient.OracleType" />
+        <Parameter Name="size" Type="System.Int32" />
+        <Parameter Name="srcColumn" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">パラメーターの名前。</param>
+        <param name="oracleType"><see cref="T:System.Data.OracleClient.OracleType" /> 値のいずれか。</param>
+        <param name="size">パラメーターの長さ。</param>
+        <param name="srcColumn">ソース列の名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.OracleClient.OracleParameter" />パラメーター名、データ型、長さ、およびソース列名を使用するクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OracleClient.OracleParameter>し、一部のプロパティを設定します。  
+  
+ [!code-csharp[Classic WebData OracleParameter.OracleParameter3#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OracleParameter.OracleParameter3/CS/source.cs#1)]
+ [!code-vb[Classic WebData OracleParameter.OracleParameter3#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OracleParameter.OracleParameter3/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="oracleType" /> パラメーターの指定された値が、正しくないバックエンド データ型です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OracleParameter (string name, System.Data.OracleClient.OracleType oracleType, int size, System.Data.ParameterDirection direction, string sourceColumn, System.Data.DataRowVersion sourceVersion, bool sourceColumnNullMapping, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, valuetype System.Data.OracleClient.OracleType oracleType, int32 size, valuetype System.Data.ParameterDirection direction, string sourceColumn, valuetype System.Data.DataRowVersion sourceVersion, bool sourceColumnNullMapping, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameter.#ctor(System.String,System.Data.OracleClient.OracleType,System.Int32,System.Data.ParameterDirection,System.String,System.Data.DataRowVersion,System.Boolean,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="oracleType" Type="System.Data.OracleClient.OracleType" />
+        <Parameter Name="size" Type="System.Int32" />
+        <Parameter Name="direction" Type="System.Data.ParameterDirection" />
+        <Parameter Name="sourceColumn" Type="System.String" />
+        <Parameter Name="sourceVersion" Type="System.Data.DataRowVersion" />
+        <Parameter Name="sourceColumnNullMapping" Type="System.Boolean" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="name">マップするパラメーターの名前。</param>
+        <param name="oracleType"><see cref="T:System.Data.OracleClient.OracleType" /> の値の 1 つ。</param>
+        <param name="size">パラメーターの長さ。</param>
+        <param name="direction"><see cref="T:System.Data.ParameterDirection" /> 値のいずれか。</param>
+        <param name="sourceColumn">ソース列の名前。</param>
+        <param name="sourceVersion"><see cref="T:System.Data.DataRowVersion" /> 値のいずれか。</param>
+        <param name="sourceColumnNullMapping">
+          <see langword="true" />基になる列が null を許容すると、それ以外の場合<see langword="false" />です。</param>
+        <param name="value"><see cref="T:System.Data.OracleClient.OracleParameter" /> の値である <see cref="T:System.Object" />。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.OracleClient.OracleParameter" />パラメーター名、データ型、サイズ、方向、基になる列、ソースのバージョン、およびその他のプロパティを使用するクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="oracleType" /> パラメーターの指定された値が、正しくないバックエンド データ型です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OracleParameter (string name, System.Data.OracleClient.OracleType oracleType, int size, System.Data.ParameterDirection direction, bool isNullable, byte precision, byte scale, string srcColumn, System.Data.DataRowVersion srcVersion, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, valuetype System.Data.OracleClient.OracleType oracleType, int32 size, valuetype System.Data.ParameterDirection direction, bool isNullable, unsigned int8 precision, unsigned int8 scale, string srcColumn, valuetype System.Data.DataRowVersion srcVersion, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameter.#ctor(System.String,System.Data.OracleClient.OracleType,System.Int32,System.Data.ParameterDirection,System.Boolean,System.Byte,System.Byte,System.String,System.Data.DataRowVersion,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="oracleType" Type="System.Data.OracleClient.OracleType" />
+        <Parameter Name="size" Type="System.Int32" />
+        <Parameter Name="direction" Type="System.Data.ParameterDirection" />
+        <Parameter Name="isNullable" Type="System.Boolean" />
+        <Parameter Name="precision" Type="System.Byte" />
+        <Parameter Name="scale" Type="System.Byte" />
+        <Parameter Name="srcColumn" Type="System.String" />
+        <Parameter Name="srcVersion" Type="System.Data.DataRowVersion" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="name">パラメーターの名前。</param>
+        <param name="oracleType"><see cref="T:System.Data.OracleClient.OracleType" /> 値のいずれか。</param>
+        <param name="size">パラメーターの長さ。</param>
+        <param name="direction"><see cref="T:System.Data.ParameterDirection" /> 値のいずれか。</param>
+        <param name="isNullable">
+          <see langword="true" />フィールドの値を許可する場合は null それ以外の場合、<see langword="false" />です。</param>
+        <param name="precision"><see cref="P:System.Data.OracleClient.OracleParameter.Value" /> を解決する際の、小数点の左側および右側の桁数の合計。</param>
+        <param name="scale"><see cref="P:System.Data.OracleClient.OracleParameter.Value" /> を解決する際の、小数点以下の合計桁数。</param>
+        <param name="srcColumn">ソース列の名前。</param>
+        <param name="srcVersion"><see cref="T:System.Data.DataRowVersion" /> 値のいずれか。</param>
+        <param name="value"><see cref="T:System.Data.OracleClient.OracleParameter" /> の値である <see cref="T:System.Object" />。</param>
+        <summary>パラメーター名、データ型、長さ、ソース列名、パラメーターの方向、数値の有効桁数、およびその他のプロパティを使用する <see cref="T:System.Data.OracleClient.OracleParameter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OracleClient.OracleParameter>し、表示、<xref:System.Data.OracleClient.OracleParameter.ParameterName%2A>です。  
+  
+ [!code-csharp[Classic WebData OracleParameter.OracleParameter4#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OracleParameter.OracleParameter4/CS/source.cs#1)]
+ [!code-vb[Classic WebData OracleParameter.OracleParameter4#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OracleParameter.OracleParameter4/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="oracleType" /> パラメーターの指定された値が、正しくないバックエンド データ型です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DbType">
+      <MemberSignature Language="C#" Value="public override System.Data.DbType DbType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.DbType DbType" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleParameter.DbType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DbType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パラメーターの <see cref="T:System.Data.DbType" /> を取得または設定します。</summary>
+        <value><see cref="T:System.Data.DbType" /> 値のいずれか。 既定値は、<see cref="F:System.Data.DbType.AnsiString" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OracleClient.OracleParameter.OracleType%2A>と<xref:System.Data.OracleClient.OracleParameter.DbType%2A>がリンクされています。 そのため、設定、<xref:System.Data.OracleClient.OracleParameter.DbType%2A>変更、<xref:System.Data.OracleClient.OracleParameter.OracleType%2A>に、サポートする<xref:System.Data.OracleClient.OracleParameter.OracleType%2A>です。  
+  
+ <xref:System.Data.OracleClient.OracleParameter.DbType%2A>、 <xref:System.Data.OracleClient.OracleParameter.OracleType%2A>、および<xref:System.Data.OracleClient.OracleParameter.Size%2A>設定で、パラメーターのプロパティを推測できなければ<xref:System.Data.OracleClient.OracleParameter.Value%2A>です。 そのため、それらを指定する必要はありません。 ただし、これらはで<xref:System.Data.OracleClient.OracleParameter>プロパティの設定。 たとえば、パラメーターのサイズが推論されました<xref:System.Data.OracleClient.OracleParameter.Size%2A>ステートメントの実行後に推定値が含まれていません。 `String`データ型の既定値は<xref:System.Data.DbType.AnsiString>します。  
+  
+ サポートされるデータ型の一覧を参照してください、適切な<xref:System.Data.OracleClient.OracleParameter.OracleType%2A>メンバー。 詳細については、次を参照してください。 [DataAdapter パラメーター](~/docs/framework/data/adonet/dataadapter-parameters.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OracleClient.OracleParameter>し、一部のプロパティを設定します。  
+  
+ [!code-csharp[Classic WebData OracleParameter.DbType#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OracleParameter.DbType/CS/source.cs#1)]
+ [!code-vb[Classic WebData OracleParameter.DbType#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OracleParameter.DbType/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">プロパティが有効な <see cref="T:System.Data.DbType" /> に設定されませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Direction">
+      <MemberSignature Language="C#" Value="public override System.Data.ParameterDirection Direction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.ParameterDirection Direction" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleParameter.Direction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.ParameterDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パラメーターが入力専用、出力専用、双方向、またはストアド プロシージャの戻り値パラメーターのいずれであるかを示す値を取得または設定します。</summary>
+        <value><see cref="T:System.Data.ParameterDirection" /> 値のいずれか。 既定値は、<see langword="Input" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Data.ParameterDirection>は、出力、および関連付けられている実行<xref:System.Data.OracleClient.OracleCommand>、値を返さない、 <xref:System.Data.OracleClient.OracleParameter> null 値が含まれています。  
+  
+ `Output`、 `InputOut`、および`ReturnValue`呼び出しで返されるパラメーター<xref:System.Data.OracleClient.OracleCommand.ExecuteReader%2A>を呼び出すまでアクセスできません<xref:System.Data.OracleClient.OracleDataReader.Close%2A>上、<xref:System.Data.OracleClient.OracleDataReader>です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OracleClient.OracleParameter>し、一部のプロパティを設定します。  
+  
+```vb  
+Public Sub CreateOracleDbParameter()  
+   Dim parameter As New OracleParameter()  
+   parameter.ParameterName = "pDName"  
+   parameter.DbType = DbType.String  
+   parameter.Value = "ENGINEERING"  
+   parameter.SourceColumn = "DName"  
+End Sub  
+```  
+  
+```csharp  
+public void CreateOracleDbParameter()   
+{  
+   OracleParameter parameter = new OracleParameter();  
+   parameter.ParameterName = "pDName";  
+   parameter.DbType = DbType.String;  
+   parameter.Value = "ENGINEERING";  
+   parameter.SourceColumn = "DName";  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">プロパティが、有効な <see cref="T:System.Data.ParameterDirection" /> 値のいずれかに設定されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNullable">
+      <MemberSignature Language="C#" Value="public override bool IsNullable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNullable" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleParameter.IsNullable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パラメーターが null 値を受け取るかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />null 値が受け入れられたら、それ以外の場合場合<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Null 値の処理を使用して、<xref:System.DBNull>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OracleClient.OracleParameter>し、一部のプロパティを設定します。  
+  
+```vb  
+Public Sub CreateOracleParameter()  
+   Dim parameter As New OracleParameter("DName", OracleType.VarChar, 14)  
+   parameter.IsNullable = True  
+   parameter.Direction = ParameterDirection.Output  
+End Sub  
+```  
+  
+```csharp  
+public void CreateOracleParameter()   
+{  
+   OracleParameter parameter = new OracleParameter("DName", OracleType.VarChar, 14);  
+   parameter.IsNullable = true;  
+   parameter.Direction = ParameterDirection.Output;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Offset">
+      <MemberSignature Language="C#" Value="public int Offset { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Offset" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleParameter.Offset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Data.OracleClient.OracleParameter.Value" /> プロパティへのオフセットを取得または設定します。</summary>
+        <value><see cref="P:System.Data.OracleClient.OracleParameter.Value" /> へのオフセット。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Offset`バイナリおよび文字列のデータのクライアント側のチャンキングのプロパティを使用します。 たとえば、サーバー上の列に 10 MB のテキストを挿入するために、ユーザー実行可能性があります 1 MB のチャンクの 10 個のパラメーター化された挿入の値をシフト`Offset`反復処理ごとに 1 mb です。  
+  
+ `Offset`バイナリ型のバイト数と文字列の文字数を指定します。 文字列の数では、終端の文字は含まれません。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OracleClient.OracleParameter>し、一部のプロパティを設定します。  
+  
+```vb  
+Public Sub CreateOracleParameter()  
+   Dim parameter As New OracleParameter("pDName", OracleType.VarChar)  
+   parameter.IsNullable = True  
+   parameter.Offset = 3  
+End Sub  
+```  
+  
+```csharp  
+public void CreateOracleParameter()   
+{  
+   OracleParameter parameter = new OracleParameter("pDName", OracleType.VarChar);  
+   parameter.IsNullable = true;  
+   parameter.Offset = 3;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OracleType">
+      <MemberSignature Language="C#" Value="public System.Data.OracleClient.OracleType OracleType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.OracleClient.OracleType OracleType" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleParameter.OracleType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Data.Common.DbProviderSpecificTypeProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パラメーターの <see cref="T:System.Data.OracleClient.OracleType" /> を取得または設定します。</summary>
+        <value><see cref="T:System.Data.OracleClient.OracleType" />値が、<see cref="T:System.Data.OracleClient.OracleType" />のパラメーターです。 既定値は、<see cref="F:System.Data.OracleClient.OracleType.VarChar" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OracleClient.OracleParameter.OracleType%2A>と<xref:System.Data.OracleClient.OracleParameter.DbType%2A>がリンクされています。 そのため、設定、<xref:System.Data.OracleClient.OracleParameter.DbType%2A>変更、<xref:System.Data.OracleClient.OracleParameter.OracleType%2A>に、サポートする<xref:System.Data.OracleClient.OracleType>です。  
+  
+ <xref:System.Data.OracleClient.OracleParameter.DbType%2A>、 <xref:System.Data.OracleClient.OracleParameter.OracleType%2A>、および<xref:System.Data.OracleClient.OracleParameter.Size%2A>設定で、パラメーターのプロパティを推測できなければ<xref:System.Data.OracleClient.OracleParameter.Value%2A>です。 そのため、それらを指定する必要はありません。 ただし、これらはで<xref:System.Data.OracleClient.OracleParameter>プロパティの設定。 たとえば、パラメーターのサイズが推論されました<xref:System.Data.OracleClient.OracleParameter.Size%2A>ステートメントの実行後に推定値が含まれていません。 `String`データ型の既定値は<xref:System.Data.OracleClient.OracleType.VarChar>します。  
+  
+ サポートされるデータ型の一覧を参照してください、適切な<xref:System.Data.OracleClient.OracleType>メンバー。 詳細については、次を参照してください。 [DataAdapter パラメーター](~/docs/framework/data/adonet/dataadapter-parameters.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParameterName">
+      <MemberSignature Language="C#" Value="public override string ParameterName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ParameterName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleParameter.ParameterName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.OracleClient.OracleParameter" /> の名前を取得または設定します。</summary>
+        <value><see cref="T:System.Data.OracleClient.OracleParameter" /> の名前。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework Data Provider for Oracle は疑問符 (?) でマークされている位置指定パラメーターをサポートしていません。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OracleClient.OracleParameter>し、一部のプロパティを設定します。  
+  
+```vb  
+Public Sub CreateOracleDbParameter()  
+   Dim parameter As New OracleParameter()  
+   parameter.ParameterName = "pDName"  
+   parameter.DbType = DbType.String  
+   parameter.Value = "ENGINEERING"  
+   parameter.SourceColumn = "DName"  
+End Sub  
+```  
+  
+```csharp  
+public void CreateOracleDbParameter()   
+{  
+   OracleParameter parameter = new OracleParameter();  
+   parameter.ParameterName = "pDName";  
+   parameter.DbType = DbType.String;  
+   parameter.Value = "ENGINEERING";  
+   parameter.SourceColumn = "DName";  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Precision">
+      <MemberSignature Language="C#" Value="public byte Precision { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8 Precision" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleParameter.Precision" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("Precision has been deprecated.  Use the Math classes to explicitly set the precision of a decimal.  http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Data.OracleClient.OracleParameter.Value" /> プロパティを表すために使用する最大桁数を取得または設定します。</summary>
+        <value><see cref="P:System.Data.OracleClient.OracleParameter.Value" /> プロパティを表すために使用する最大桁数。 既定値は 0 で、データ プロバイダーでの有効桁数を設定することを示します<see cref="P:System.Data.OracleClient.OracleParameter.Value" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Data.OracleClient.OracleParameter.Precision%2A>または<xref:System.Data.OracleClient.OracleParameter.Scale%2A>プロパティは影響を与えません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetDbType">
+      <MemberSignature Language="C#" Value="public override void ResetDbType ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ResetDbType() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameter.ResetDbType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Data.OracleClient.OracleParameter" /> に関連付けられている型をリセットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コマンドを実行するときに、パラメーター値を含むまたはパラメーターの型は、コードで明示的に設定することができます値からその型を推論することができます。 このメソッドを呼び出すことでは、その型パラメーターに渡される値からもう一度推測できるようににパラメーターをリセットします。 このメソッドを呼び出すと、両方の影響を与える、<xref:System.Data.Odbc.OdbcParameter.DbType%2A>と<xref:System.Data.OracleClient.OracleParameter.OracleType%2A>のプロパティ、<xref:System.Data.OracleClient.OracleParameter>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetOracleType">
+      <MemberSignature Language="C#" Value="public void ResetOracleType ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResetOracleType() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameter.ResetOracleType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Data.OracleClient.OracleParameter" /> に関連付けられている型をリセットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コマンドを実行するときに、パラメーター値を含むまたはパラメーターの型は、コードで明示的に設定することができます値からその型を推論することができます。 このメソッドを呼び出すことでは、その型パラメーターに渡される値からもう一度推測できるようににパラメーターをリセットします。 このメソッドを呼び出すと、両方の影響を与える、<xref:System.Data.Odbc.OdbcParameter.DbType%2A>と<xref:System.Data.OracleClient.OracleParameter.OracleType%2A>のプロパティ、<xref:System.Data.OracleClient.OracleParameter>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scale">
+      <MemberSignature Language="C#" Value="public byte Scale { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8 Scale" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleParameter.Scale" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("Scale has been deprecated.  Use the Math classes to explicitly set the scale of a decimal.  http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Data.OracleClient.OracleParameter.Value" /> が解決される、小数点以下の桁数を取得または設定します。</summary>
+        <value><see cref="P:System.Data.OracleClient.OracleParameter.Value" /> が解決される、小数点以下の桁数。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Data.OracleClient.OracleParameter.Precision%2A>または<xref:System.Data.OracleClient.OracleParameter.Scale%2A>プロパティは影響を与えません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Size">
+      <MemberSignature Language="C#" Value="public override int Size { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Size" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleParameter.Size" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列内のデータの最大サイズをバイト単位で取得または設定します。</summary>
+        <value>列内のデータの最大サイズ (バイト単位)。 既定値は、0 (ときに使用される値の最大サイズを指定しない) です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定<xref:System.Data.OracleClient.OracleParameter.Size%2A>パラメーターの入力の値のみに影響します。 このプロパティによっては、戻り値と出力パラメーターが影響をされません。  
+  
+ <xref:System.Data.OracleClient.OracleParameter.Size%2A> Binary と文字列型のプロパティを使用します。  
+  
+ 文字列以外のデータ型と ANSI の文字列データは、の<xref:System.Data.OracleClient.OracleParameter.Size%2A>プロパティのバイト数を示します。 Unicode 文字列データの<xref:System.Data.OracleClient.OracleParameter.Size%2A>文字の数を示します。 文字列の数では、終端の文字は含まれません。  
+  
+ 可変長データ型で<xref:System.Data.OracleClient.OracleParameter.Size%2A>サーバーに送信するデータの最大量を示します。 たとえば、Unicode 文字列値、 <xref:System.Data.OracleClient.OracleParameter.Size%2A> 100 を最初の文字に、サーバーに送信されるデータの量が制限される可能性があります。  
+  
+ 双方向と出力のパラメーターと戻り値は、サイズの値を設定する必要があります。 これは、入力パラメーターに必要なかどうかを明示的に設定の値は、推論指定されたパラメーターの実際のサイズからパラメーター化されたステートメントを実行するとします。  
+  
+ <xref:System.Data.OracleClient.OracleParameter.DbType%2A>、 <xref:System.Data.OracleClient.OracleParameter.OracleType%2A>、および<xref:System.Data.OracleClient.OracleParameter.Size%2A>設定で、パラメーターのプロパティを推測できなければ<xref:System.Data.OracleClient.OracleParameter.Value%2A>です。 そのため、それらを指定する必要はありません。 ただし、これらはで<xref:System.Data.OracleClient.OracleParameter>プロパティの設定。 たとえば、パラメーターのサイズが推論されました<xref:System.Data.OracleClient.OracleParameter.Size%2A>ステートメントの実行後に推定値が含まれていません。  
+  
+ 固定長データ型の値<xref:System.Data.OracleClient.OracleParameter.Size%2A>は無視されます。 サーバーへのパラメーターの値を送信するときに、プロバイダーを使用して、情報として利用できます。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OracleClient.OracleParameter>し、一部のプロパティを設定します。  
+  
+```vb  
+Public Sub CreateOracleParameter()  
+   Dim parameter As New OracleParameter("pDescription", OracleType.VarChar)  
+   parameter.IsNullable = True  
+   parameter.Direction = ParameterDirection.Output  
+   parameter.Size = 88  
+End Sub  
+```  
+  
+```csharp  
+public void CreateOracleParameter()   
+{  
+   OracleParameter parameter = new OracleParameter("pDescription", OracleType.VarChar);  
+   parameter.IsNullable = true;  
+   parameter.Direction = ParameterDirection.Output;  
+   parameter.Size = 88;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceColumn">
+      <MemberSignature Language="C#" Value="public override string SourceColumn { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SourceColumn" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleParameter.SourceColumn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.DataSet" /> にマップされ、<see cref="P:System.Data.OracleClient.OracleParameter.Value" /> を読み込んだり返したりするために使用されるソース列の名前を取得または設定します。</summary>
+        <value><see cref="T:System.Data.DataSet" /> にマップされるソース列の名前。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値の間のリンク、<xref:System.Data.OracleClient.OracleParameter>と<xref:System.Data.DataTable>の値に応じて双方向である可能性があります、<xref:System.Data.OracleClient.OracleParameter.Direction%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OracleClient.OracleParameter>し、一部のプロパティを設定します。  
+  
+```vb  
+Public Sub CreateOracleDbParameter()  
+   Dim parameter As New OracleParameter()  
+   parameter.ParameterName = "pDName"  
+   parameter.DbType = DbType.String  
+   parameter.Value = "ENGINEERING"  
+   parameter.SourceColumn = "DName"  
+End Sub  
+```  
+  
+```csharp  
+public void CreateOracleDbParameter()   
+{  
+   OracleParameter parameter = new OracleParameter();  
+   parameter.ParameterName = "pDName";  
+   parameter.DbType = DbType.String;  
+   parameter.Value = "ENGINEERING";  
+   parameter.SourceColumn = "DName";  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceColumnNullMapping">
+      <MemberSignature Language="C#" Value="public override bool SourceColumnNullMapping { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SourceColumnNullMapping" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleParameter.SourceColumnNullMapping" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ソース列が null 許容かどうかを示す値を設定または取得します。 これにより、<see cref="T:System.Data.OracleClient.OracleCommandBuilder" /> で null 許容列の Update ステートメントを正しく生成できます。</summary>
+        <value>
+          <see langword="True" />基になる列が null を許容すると、それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OracleClient.OracleParameter.SourceColumnNullMapping%2A>によって使用される、 <xref:System.Data.OracleClient.OracleCommandBuilder> null 許容の列を処理するときに、更新コマンドを正しく生成します。 一般に、使用の<xref:System.Data.OracleClient.OracleParameter.SourceColumnNullMapping%2A>から継承する開発者に制限されて<xref:System.Data.OracleClient.OracleCommandBuilder>です。  
+  
+ <xref:System.Data.Common.DbCommandBuilder>このプロパティを使用して、基になる列が、null 値し、このプロパティを設定するかどうかを判断する`true`、null 許容である場合と`false`されていない場合。 ときに<xref:System.Data.OracleClient.OracleCommandBuilder>が調べ、Update ステートメントを生成する、<xref:System.Data.OracleClient.OracleParameter.SourceColumnNullMapping%2A>パラメーターごとにします。 プロパティが場合`true`、<xref:System.Data.OracleClient.OracleCommandBuilder>次のように WHERE 句が生成されます (このクエリ式内で"FieldName"を表すフィールドの名前)。  
+  
+```  
+((@IsNull_FieldName = 1 AND FieldName IS NULL) OR   
+  (FieldName = @Original_FieldName))  
+```  
+  
+ 場合<xref:System.Data.OracleClient.OracleParameter.SourceColumnNullMapping%2A>フィールドが false の場合、<xref:System.Data.OracleClient.OracleCommandBuilder>次の WHERE 句が生成されます。  
+  
+```  
+FieldName = @OriginalFieldName  
+```  
+  
+ さらに、@IsNull_FieldNameそうでない場合、null と 0 をソース フィールドが存在する場合、1 が含まれています。 このメカニズムは、Oracle サーバーでパフォーマンスの最適化し、の間に複数のプロバイダーで使用できる一般的なコードを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceVersion">
+      <MemberSignature Language="C#" Value="public override System.Data.DataRowVersion SourceVersion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.DataRowVersion SourceVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleParameter.SourceVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataRowVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Data.DataRowVersion" />を読み込むときに使用する<see cref="P:System.Data.OracleClient.OracleParameter.Value" />です。</summary>
+        <value><see cref="T:System.Data.DataRowVersion" /> 値のいずれか。 既定値は、<see langword="Current" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは使用、<xref:System.Data.OracleClient.OracleDataAdapter.UpdateCommand%2A>中に、<xref:System.Data.Common.DbDataAdapter.Update%2A?displayProperty=nameWithType>パラメーターの値に、元のまたは現在の値を使用するかどうかを決定します。 これにより、プライマリ キーを更新できます。 このプロパティのバージョンに、<xref:System.Data.DataRow>によって使用される、<xref:System.Data.DataRow.Item%2A?displayProperty=nameWithType>プロパティ (<xref:System.Data.DataRow>インデクサー)、または<xref:System.Data.DataRow.GetChildRows%2A?displayProperty=nameWithType>のメソッド、<xref:System.Data.DataRow>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OracleClient.OracleParameter>し、一部のプロパティを設定します。  
+  
+```vb  
+Public Sub CreateOracleParameter()  
+   Dim parameter As New OracleParameter("pDName", OracleType.VarChar)  
+   parameter.IsNullable = True  
+   parameter.SourceColumn = "Description"  
+   parameter.SourceVersion = DataRowVersion.Current  
+   parameter.Direction = ParameterDirection.Output  
+End Sub  
+```  
+  
+```csharp  
+public void CreateOracleParameter()   
+{  
+   OracleParameter parameter = new OracleParameter("pDName", OracleType.VarChar);  
+   parameter.IsNullable = true;  
+   parameter.SourceColumn = "Description";  
+   parameter.SourceVersion = DataRowVersion.Current;  
+   parameter.Direction = ParameterDirection.Output;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ICloneable.Clone">
+      <MemberSignature Language="C#" Value="object ICloneable.Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.ICloneable.Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameter.System#ICloneable#Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="M:System.ICloneable.Clone" />」をご覧ください。</summary>
+        <returns>このインスタンスのコピーである新しいオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.OracleClient.OracleParameter> のインスタンスが <xref:System.ICloneable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameter.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.Data.OracleClient.OracleParameter.ParameterName" /> を表す文字列を取得します。</summary>
+        <returns><see cref="P:System.Data.OracleClient.OracleParameter.ParameterName" /> を表す文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public override object Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Value" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleParameter.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.StringConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パラメーターの値を取得または設定します。</summary>
+        <value>パラメーターの値であるオブジェクトです。 既定値は NULL です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 入力パラメーターの値がバインドされている、<xref:System.Data.OracleClient.OracleCommand>ですが、サーバーに送信します。 完了時に出力パラメーターと戻り値パラメーターの値を設定、<xref:System.Data.OracleClient.OracleCommand>後、<xref:System.Data.OracleClient.OracleDataReader>が閉じられます。  
+  
+ 入力パラメーター、 <xref:System.Data.OracleClient.OracleParameter.Value%2A> Microsoft .NET Framework データ型または Oracle データ型のいずれかのオブジェクトに設定することができます (たとえば、<xref:System.Data.OracleClient.OracleNumber>または<xref:System.Data.OracleClient.OracleString>)。  
+  
+ Null パラメーター値をサーバーに送信するときは、DBNull、null でないを指定する必要があります。 システムの null 値は、値がない空オブジェクトです。 DBNull を使用してを null 値を表します。  
+  
+ アプリケーションでは、データベースの種類を指定する場合、プロバイダーがサーバーにデータを送信するとき、バインドされた値がその型に変換されます。 プロバイダーがサポートしている場合は、任意の型の値を変換しようとした場合、<xref:System.IConvertible>インターフェイスです。 指定した型の値と互換性がない場合、変換エラーがあります。  
+  
+ <xref:System.Data.OracleClient.OracleParameter.DbType%2A>、 <xref:System.Data.OracleClient.OracleParameter.OracleType%2A>、および<xref:System.Data.OracleClient.OracleParameter.Size%2A>値を設定して、パラメーターのプロパティを推論することができます。 そのため、それらを指定する必要はありません。 ただし、これらはで<xref:System.Data.OracleClient.OracleParameter>プロパティの設定。 たとえば、パラメーターのサイズが推論されましたサイズ含まない推論値ステートメントの実行後。  
+  
+ `InputOutput`、 `Output`、および`ReturnValue`<xref:System.Data.ParameterDirection>入力値は、Oracle データ型が場合を除いて、Value プロパティによって使用される値は Microsoft .NET Framework データ型になります (たとえば、<xref:System.Data.OracleClient.OracleNumber>または<xref:System.Data.OracleClient.OracleString>)。 これは、REF CURSOR、BFILE に適用したり、しない LOB データ型。  
+  
+ <xref:System.Data.OracleClient.OracleParameter.Value%2A>でプロパティを上書き、**更新**メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

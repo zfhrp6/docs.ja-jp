@@ -1,0 +1,1136 @@
+<Type Name="Series" FullName="System.Web.UI.DataVisualization.Charting.Series">
+  <TypeSignature Language="C#" Value="public class Series : System.Web.UI.DataVisualization.Charting.DataPointCustomProperties" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Series extends System.Web.UI.DataVisualization.Charting.DataPointCustomProperties" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.DataVisualization.Charting.Series" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DataVisualization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.DataVisualization.Charting.DataPointCustomProperties</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Points")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>データ ポイントおよび系列の属性を格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.UI.DataVisualization.Charting.Series>オブジェクトは、データ系列を表しに格納されて、<xref:System.Web.UI.DataVisualization.Charting.SeriesCollection>クラスです。  
+  
+ A<xref:System.Web.UI.DataVisualization.Charting.Series>格納<xref:System.Web.UI.DataVisualization.Charting.DataPoint>オブジェクトを使用して、<xref:System.Web.UI.DataVisualization.Charting.DataPointCollection>クラスです。 また、データ系列の属性を格納します。 たとえば、データ系列には色の属性、背景イメージの属性、背景グラデーションの属性およびなどです。  
+  
+ <xref:System.Web.UI.DataVisualization.Charting.DataPoint>系列に属しているオブジェクトにも、独自の属性があります。 通常、同一の属性が設定されて、データ ポイントおよびそれが属する系列の場合、データ ポイント属性には、優先順位があります。  
+  
+ 系列は必ずしも; グラフのプロットされず別の系列を作成およびプロット元となる計算を実行に使用されるデータ ポイント値を格納できます。 たとえば、系列をプロット、A は、どちらの系列をプロットは、シリーズ B と C での系列のデータ ポイントを加算した結果をできますがします。 描画するために、<xref:System.Web.UI.DataVisualization.Charting.Series>オブジェクト、<xref:System.Web.UI.DataVisualization.Charting.Series.ChartArea%2A>の名前にプロパティを設定する必要があります、<xref:System.Web.UI.DataVisualization.Charting.ChartArea>系列のプロットに使用されるオブジェクト。  
+  
+ 系列が作成されるときに自動的に割り当てられる、 <xref:System.Web.UI.DataVisualization.Charting.ChartArea> "Default"という名前のオブジェクトまたは"Default"オブジェクトが存在しない場合は、グラフ領域のコレクションで最初の利用可能なグラフ領域にします。  
+  
+ 系列の表示を無効にする次のように設定します。 その<xref:System.Web.UI.DataVisualization.Charting.Series.ChartArea%2A>長さ 0 の文字列をプロパティです。  
+  
+ <xref:System.Web.UI.DataVisualization.Charting.Series.ChartType%2A>プロパティが描画された場合、このシリーズのプロットに使用されるグラフの種類が決まります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Series ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Series.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.DataVisualization.Charting.Series" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Series (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Series.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />作成されるオブジェクト。 一意の名前でなければなりません、それ以外の場合、例外がスローされます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />指定した系列の名前を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、の新しいインスタンスを作成するために使用できます、<xref:System.Web.UI.DataVisualization.Charting.Series>クラスです。  
+  
+> [!NOTE]
+>  このシリーズが格納できるだけ<xref:System.Web.UI.DataVisualization.Charting.DataPoint>を 1 つの Y 値を持つオブジェクト。 この系列に複数の Y 値を持つデータ ポイントを追加する場合、例外がスローされます。  
+  
+ 実行時に系列を作成するには、使用、<xref:System.Web.UI.DataVisualization.Charting.SeriesCollection.Add%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Series (string name, int yValues);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, int32 yValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Series.#ctor(System.String,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="yValues" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />作成されるオブジェクト。</param>
+        <param name="yValues">Y 値の最大数が許可されている、<see cref="T:System.Web.UI.DataVisualization.Charting.DataPoint" />このシリーズに所属するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Web.UI.DataVisualization.Charting.Series" /> Y 値の最大数と指定した名前を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.DataVisualization.Charting.Series>クラスです。  
+  
+> [!IMPORTANT]
+>  この系列がのみを格納できる<xref:System.Web.UI.DataVisualization.Charting.DataPoint>を設定した最大値よりも多くの Y 値を持たないオブジェクト、`yValues`パラメーター。 最大のセットよりも多くの Y 値を持つデータ ポイントを追加する場合、例外がスローされます。  
+  
+ 作成する、<xref:System.Web.UI.DataVisualization.Charting.Series>実行時に、オブジェクト、`Add`と`Insert`系列のコレクション プロパティのメソッドも使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AxisLabel">
+      <MemberSignature Language="C#" Value="public override string AxisLabel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AxisLabel" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Series.AxisLabel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または系列の軸ラベルのテキストを設定します。</summary>
+        <value><see langword="string" /> 値。 既定値は、長さ 0 の文字列です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChartArea">
+      <MemberSignature Language="C#" Value="public string ChartArea { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ChartArea" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Series.ChartArea" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.DataVisualization.Charting.SeriesAreaNameConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の名前、<see cref="T:System.Web.UI.DataVisualization.Charting.ChartArea" />オブジェクトが存在する場合、データ系列をプロットするために使用します。</summary>
+        <value>A<see langword="string" />を表す値、<see cref="T:System.Web.UI.DataVisualization.Charting.ChartArea" />系列のプロットに使用するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイン時と実行時の両方で、系列を追加するときに自動的に割り当てられる"Default"<xref:System.Web.UI.DataVisualization.Charting.ChartArea>オブジェクト、または最初の利用可能なグラフ領域、 <xref:System.Web.UI.DataVisualization.Charting.ChartAreaCollection> "Default"が存在しない場合。  
+  
+ 系列をプロットしたくない場合は、長さ 0 の文字列にこのプロパティを設定します。  
+  
+   
+  
+## Examples  
+  
+```vb  
+' Create a new legend and associate three series with the legend.  
+Public Sub CreateSecondLegend()  
+    ' Attach the first series to a chart area.  
+    Chart1.Series["Series1"].ChartArea = "Chart Area 1";  
+  
+    ' Attach the second series to a chart area.  
+    Chart1.Series["Series2"].ChartArea = "Chart Area 2";  
+  
+End Sub 'CreateSecondLegend  
+```  
+  
+```csharp  
+// Create a new legend and associate three series with the legend.  
+public void CreateSecondLegend()  
+{  
+     // Attach the first series to a chart area.  
+     Chart1.Series["Series1"].ChartArea = "Chart Area 1";  
+  
+     // Attach the second series to a chart area.  
+     Chart1.Series["Series2"].ChartArea = "Chart Area 2";  
+  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChartType">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.SeriesChartType ChartType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.SeriesChartType ChartType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Series.ChartType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.ChartTypeEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.SeriesChartType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または一連のグラフの種類を設定します。</summary>
+        <value>A<see cref="T:System.Web.UI.DataVisualization.Charting.SeriesChartType" />系列を表すために使用されるグラフの種類を示す列挙値。 既定値は <see cref="F:System.Web.UI.DataVisualization.Charting.SeriesChartType.Column" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティのグラフの種類を決定する、<xref:System.Web.UI.DataVisualization.Charting.Series>オブジェクトです。 値は大文字小文字を区別します。 参照してください、<xref:System.Web.UI.DataVisualization.Charting.SeriesChartType>系列のすべての可能なグラフの種類の一覧を列挙します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChartTypeName">
+      <MemberSignature Language="C#" Value="public string ChartTypeName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ChartTypeName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Series.ChartTypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("Column")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.ChartTypeEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.DataVisualization.Charting.ChartTypeConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または系列の描画に使用されるグラフの種類の名前を設定します。</summary>
+        <value>A<see langword="string" />グラフの種類の名前を表す値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Series.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Web.UI.DataVisualization.Charting.Series" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EmptyPointStyle">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.DataPointCustomProperties EmptyPointStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.DataVisualization.Charting.DataPointCustomProperties EmptyPointStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Series.EmptyPointStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.DataPointCustomProperties</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または空としてマークされるポイントの描画スタイルを設定します。</summary>
+        <value><see cref="T:System.Web.UI.DataVisualization.Charting.DataPointCustomProperties" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataVisualization.Charting.Series.EmptyPointStyle%2A>プロパティが空で、たとえば、境界線の色では、マーカーの画像、背景色またはイメージ、およびなどとしてマークされているポイントの描画スタイルを決定します。  
+  
+ 特定のプロパティでは、特定のグラフの種類に適用できるのみです。 たとえば、<xref:System.Web.UI.DataVisualization.Charting.Chart.BackImage%2A>プロパティは、折れ線グラフには適用されませんが、面グラフには適用します。  
+  
+ 表示するには空のポイントを示すイメージを使用して、<xref:System.Web.UI.DataVisualization.Charting.DataPointCustomProperties.MarkerImage%2A>と<xref:System.Web.UI.DataVisualization.Charting.DataPointCustomProperties.MarkerStyle%2A>プロパティ、および not、<xref:System.Web.UI.DataVisualization.Charting.DataPointCustomProperties.BackImage%2A>プロパティです。  
+  
+ <xref:System.Web.UI.DataVisualization.Charting.Series.AxisLabel%2A>プロパティが空のポイントの軸ラベルを決定します。 積み上げグラフの種類の軸ラベルはに基づいて判断することに注意してください、<xref:System.Web.UI.DataVisualization.Charting.Series.AxisLabel%2A>をこのプロパティ設定を持つ最初の系列のプロパティです。  
+  
+ データ ポイント手動でとして設定できる、空を設定して、<xref:System.Web.UI.DataVisualization.Charting.DataPoint.IsEmpty%2A>プロパティを`true`です。 代わりに、1 つ、`InsertEmptyPoints`内のメソッド、<xref:System.Web.UI.DataVisualization.Charting.DataManipulator>欠落したデータを確認して、データ ポイントが見つからない場合は、空のポイントを挿入するクラスを使用できます。  
+  
+> [!NOTE]
+>  行型のグラフの場合は、行の空のポイントに接続する線の色はによって決定されます、<xref:System.Web.UI.DataVisualization.Charting.DataPointCustomProperties.Color%2A>プロパティの設定。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Series.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.ParenthesizePropertyName(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または表示されたグラフに系列を表示するにはどうかを示すフラグを設定します。</summary>
+        <value>
+          <see langword="true" />系列が表示されたグラフに表示する場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 系列を表示に表示するかどうかを決定する値の設定を取得または<xref:System.Web.UI.DataVisualization.Charting.ChartArea>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsXValueIndexed">
+      <MemberSignature Language="C#" Value="public bool IsXValueIndexed { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsXValueIndexed" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Series.IsXValueIndexed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ ポイントのインデックスを X 値を使用するかどうかを示すフラグを設定します。</summary>
+        <value>
+          <see langword="true" />系列に属しているデータ ポイントのインデックス使用する場合は X 値です。<see langword="false" />になる場合はありません。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 系列内のすべてのデータ ポイントは、連続したインデックスを使用していて、このプロパティは`true`し、データ ポイントは、関連付けられている X 値に関係なく、順番にプロットされます。 これは意味があるない「不明」のデータ ポイント。  
+  
+ たとえば、1、2 および 4 の X 値を持つ系列の 3 つのデータ ポイントがあると仮定します。 このプロパティがあった場合`false`、「3」というラベルの付いた x 軸の位置に存在しないデータ ポイントがあります。 ただし、このプロパティを設定する場合`true`3 つのデータ ポイントをプロットするポイント 1、2、および第 4 で、順番に、不足しているデータ ポイントが存在できません。 「3」というラベルの付いた x 軸の位置は、グラフに表示されません。  
+  
+ これは、週末など、データはありませんがわかっている間隔のデータ ポイントが欠けているたくない場合に便利です。  
+  
+> [!IMPORTANT]
+>  複数の系列を表示するには、少なくとも 1 つの系列がインデックス付きの X 値を使用しとすべての系列は整列する必要があります: つまり、同じ数のデータ ポイントがある- し、対応するポイントは X 値が同じである必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Legend">
+      <MemberSignature Language="C#" Value="public string Legend { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Legend" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Series.Legend" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.DataVisualization.Charting.SeriesLegendNameConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に関連付けられた系列の名前、<see cref="T:System.Web.UI.DataVisualization.Charting.Legend" />オブジェクト。</summary>
+        <value>A<see langword="string" />の名前を表す値、<see cref="T:System.Web.UI.DataVisualization.Charting.Legend" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイン時と実行時の両方で、系列を追加するときに自動的に割り当てられる既定値<xref:System.Web.UI.DataVisualization.Charting.Legend>オブジェクト。  
+  
+ 長さ 0 の文字列にこのプロパティを設定または設定の系列を凡例に表示したくない場合、<xref:System.Web.UI.DataVisualization.Charting.DataPointCustomProperties.IsVisibleInLegend%2A>プロパティを`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MarkerStep">
+      <MemberSignature Language="C#" Value="public int MarkerStep { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MarkerStep" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Series.MarkerStep" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ ポイント マーカーを表示する頻度を決定する値を設定します。</summary>
+        <value><see langword="integer" />データ ポイント マーカーを表示する頻度を決定する値。 既定値は 1 です) です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataVisualization.Charting.Series.MarkerStep%2A>プロパティ マーカーを表示する頻度を指定します。 たとえば、このプロパティを設定する場合の 2 つ (2) その他のすべてのデータ ポイント マーカーを使用します。  
+  
+ 使用してマーカーが有効な場合にのみ、このプロパティが使用、<xref:System.Web.UI.DataVisualization.Charting.DataPointCustomProperties.MarkerStyle%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public override string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Series.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の一意の名前、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />オブジェクト。</summary>
+        <value>A<see langword="string" />データ系列の一意の名前を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ系列の名前は一意である必要があります。それ以外の場合は、例外がスローされます。  
+  
+ このプロパティは、取得するときに、インデクサーとして使用できます、<xref:System.Web.UI.DataVisualization.Charting.Series>オブジェクトから、<xref:System.Web.UI.DataVisualization.Charting.SeriesCollection>オブジェクト。  
+  
+ このプロパティが長さ 0 の文字列に設定されている場合、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Palette">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.ChartColorPalette Palette { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.ChartColorPalette Palette" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Series.Palette" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.ColorPaletteEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.ChartColorPalette</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のカラー パレット、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />オブジェクト。</summary>
+        <value><see cref="T:System.Web.UI.DataVisualization.Charting.ChartColorPalette" />データ系列のパレットを決定する列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 自体のデータ ポイントが割り当てられている色を持っていない場合、データ要素に色を自動的に割り当てるパレットが使用されるデータ<xref:System.Web.UI.DataVisualization.Charting.Series>データ ポイントが属するオブジェクトも割り当てられている色ではありません。  
+  
+ 系列またはデータ ポイントする場合は、明示的に指定された色を使用する色に依存しているグラフの種類と、グラフ コントロール パレットまたは系列パレットいずれかを指定します。 詳細については、次の表を参照してください。  
+  
+|グラフの種類|系列パレットの使用|データ ポイントに表示される色|  
+|----------------|--------------------------|-------------------------------------|  
+|図形グラフ (円グラフおよびドーナツ グラフなど)|いいえ|使用されている最初の使用可能な色<xref:System.Web.UI.DataVisualization.Charting.Chart>コントロール パレット。 データ ポイントごとに 1 色。|  
+|図形グラフを除くすべてのグラフ|いいえ|最初の使用可能な色<xref:System.Web.UI.DataVisualization.Charting.Chart>コントロール パレット。 データ系列ごとに 1 色。|  
+|図形グラフ (円グラフおよびドーナツ グラフなど)|はい|使用されている最初の使用可能な色<xref:System.Web.UI.DataVisualization.Charting.Series>パレット。 データ ポイントごとに 1 色。|  
+|図形グラフを除くすべてのグラフ|はい|使用されている最初の使用可能な色<xref:System.Web.UI.DataVisualization.Charting.Series>パレット。 データ系列ごとに 1 色。|  
+  
+ これは、<xref:System.Web.UI.DataVisualization.Charting.Series.Palette%2A>プロパティに優先、<xref:System.Web.UI.DataVisualization.Charting.Chart.Palette%2A>ルートのプロパティ<xref:System.Web.UI.DataVisualization.Charting.Chart>データの表示に関してのオブジェクト。  
+  
+ メモ: 場合、`Palette`両方のプロパティ、<xref:System.Web.UI.DataVisualization.Charting.Chart>と<xref:System.Web.UI.DataVisualization.Charting.Series>オブジェクトは、None に設定され、関連するデータ系列とデータ ポイント、"BrightPastel"既定のパレットに色が割り当てられていないまたは<xref:System.Web.UI.DataVisualization.Charting.Chart.PaletteCustomColors%2A>を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Points">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.DataPointCollection Points { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.DataVisualization.Charting.DataPointCollection Points" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Series.Points" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.DataPointCollectionEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.DataPointCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.DataVisualization.Charting.DataPointCollection" /> オブジェクトを取得します。</summary>
+        <value>A<see cref="T:System.Web.UI.DataVisualization.Charting.DataPointCollection" />オブジェクトのコレクションを表す<see cref="T:System.Web.UI.DataVisualization.Charting.DataPoint" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataVisualization.Charting.Series.Points%2A>コレクション プロパティを追加し、系列にデータ ポイントを削除することができます。 このプロパティは、メソッドとデータ バインディング、およびなどを実行するデータ ポイントの検索など、このコレクションの操作に使用できるプロパティも提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShadowColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color ShadowColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color ShadowColor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Series.ShadowColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Color), "128,0,0,0")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または一連の影の色を設定します。</summary>
+        <value><see cref="T:System.Drawing.Color" /> 値。 既定の色は <see cref="P:System.Drawing.Color.Black" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得または ARGB (アルファ、赤、緑、青) の有効な値にできる一連の影の色を設定します。  
+  
+ アルファ値は、現実的なシャドウ効果を実現するために使用できます。影の色の値の「128,0,0,0」を使用してください。  
+  
+ 影を実装するのには、設定、<xref:System.Web.UI.DataVisualization.Charting.Series.ShadowOffset%2A>プロパティを 0 (ゼロ) 以外の値にします。  
+  
+   
+  
+## Examples  
+  
+```  
+' Set series shadow color and offset  
+Public Sub SetSeriesShadow()  
+     Chart1.Series("Default"}.ShadowColor = Color.Blue  
+     Chart1.Series("Default"}.ShadowOffset = 2  
+End Sub 'SetSeriesShadow  
+```  
+  
+```csharp  
+// Set series shadow color and offset   
+public void SetSeriesShadow()  
+{      
+    Chart1.Series("Default"}.ShadowColor = Color.Blue;  
+    Chart1.Series["Default"].ShadowOffset = 2;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShadowOffset">
+      <MemberSignature Language="C#" Value="public int ShadowOffset { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ShadowOffset" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Series.ShadowOffset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または一連のピクセル単位で影のオフセットを設定します。</summary>
+        <value><see langword="integer" />をピクセル単位で、系列の影のオフセットを表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シャドウを実装するのには、0 (ゼロ) 以外の値を使用します。 正の値は、下と右にシフトするシャドウになります。 負の値は、上と左にシフトするシャドウになります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、一連の視覚属性を設定します。  
+  
+```vb  
+' Set series shadow offset  
+Public Sub SetSeriesShadowOffset()  
+    Chart1.Series("Default"}.ShadowOffset = 2  
+End Sub 'SetSeriesVisualAttributes  
+```  
+  
+```csharp  
+// Set series shadow offset   
+public void SetSeriesShadowOffset ()  
+{      
+    Chart1.Series["Default"].ShadowOffset = 2;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SmartLabelStyle">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.SmartLabelStyle SmartLabelStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.DataVisualization.Charting.SmartLabelStyle SmartLabelStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Series.SmartLabelStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.SmartLabelStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはスマート ラベルのスタイルを設定します。</summary>
+        <value><see cref="T:System.Web.UI.DataVisualization.Charting.SmartLabelStyle" /> 列挙値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Sort">
+      <MemberSignature Language="C#" Value="public void Sort (System.Collections.Generic.IComparer&lt;System.Web.UI.DataVisualization.Charting.DataPoint&gt; comparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Sort(class System.Collections.Generic.IComparer`1&lt;class System.Web.UI.DataVisualization.Charting.DataPoint&gt; comparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Series.Sort(System.Collections.Generic.IComparer{System.Web.UI.DataVisualization.Charting.DataPoint})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="comparer" Type="System.Collections.Generic.IComparer&lt;System.Web.UI.DataVisualization.Charting.DataPoint&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="comparer"><see cref="T:System.Collections.IComparer" /> インターフェイス。</param>
+        <summary>使用して系列のポイントを並べ替えます<see cref="T:System.Collections.IComparer" />インターフェイスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Sort">
+      <MemberSignature Language="C#" Value="public void Sort (System.Web.UI.DataVisualization.Charting.PointSortOrder pointSortOrder);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Sort(valuetype System.Web.UI.DataVisualization.Charting.PointSortOrder pointSortOrder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Series.Sort(System.Web.UI.DataVisualization.Charting.PointSortOrder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pointSortOrder" Type="System.Web.UI.DataVisualization.Charting.PointSortOrder" />
+      </Parameters>
+      <Docs>
+        <param name="pointSortOrder">並べ替え順序。</param>
+        <summary>指定した並べ替え順序を指定してシリーズでは、データ ポイントを並べ替えます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Sort">
+      <MemberSignature Language="C#" Value="public void Sort (System.Web.UI.DataVisualization.Charting.PointSortOrder pointSortOrder, string sortBy);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Sort(valuetype System.Web.UI.DataVisualization.Charting.PointSortOrder pointSortOrder, string sortBy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Series.Sort(System.Web.UI.DataVisualization.Charting.PointSortOrder,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pointSortOrder" Type="System.Web.UI.DataVisualization.Charting.PointSortOrder" />
+        <Parameter Name="sortBy" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="pointSortOrder">並べ替え順序。</param>
+        <param name="sortBy">(X, Y,... Y2) の並べ替えに使用される値です。</param>
+        <summary>指定した並べ替え順序と並べ替えに使用する値を指定された、系列のポイントを並べ替えます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XAxisType">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.AxisType XAxisType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.AxisType XAxisType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Series.XAxisType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.AxisType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または系列の x 軸の種類を設定します。</summary>
+        <value>A<see cref="P:System.Web.UI.DataVisualization.Charting.Series.XAxisType" />系列が、プライマリまたはセカンダリの x 軸を使用するかどうかを決定する列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのグラフ以外の水平方向のグラフは、バーし、積み上げグラフ、および円グラフ、ドーナツ グラフ、じょうごグラフ、ピラミッド グラフなどの図形グラフ棒、主軸の x 軸は常に下の軸とセカンダリ軸は、上の軸です。 バーと主軸の x 軸が左の軸では、積み上げ横棒グラフ、およびセカンダリの x 軸は右軸です。  
+  
+ データをプロットするには、第 2 x 軸を使用して、ときに行う必要があります、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.AxisX2%2A>軸のプロパティを設定するプロパティおよび not、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.AxisX%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XValueMember">
+      <MemberSignature Language="C#" Value="public string XValueMember { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string XValueMember" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Series.XValueMember" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Web.UI.Design.DataVisualization.Charting.SeriesDataFieldXConvertor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または系列の X 値へのデータ バインドするために使用するグラフのデータ ソースのメンバーの列を設定します。</summary>
+        <value><see langword="string" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、メンバーの列の名前またはメンバーの列の序数値のいずれかを指定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XValueType">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.ChartValueType XValueType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.ChartValueType XValueType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Series.XValueType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.ChartValueType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または x 軸に沿ってプロットされる値の型を設定します。</summary>
+        <value>A<see cref="T:System.Web.UI.DataVisualization.Charting.ChartValueType" />系列で格納されている X 値のデータの種類を決定する列挙値。 既定値は <see cref="F:System.Web.UI.DataVisualization.Charting.ChartValueType.Auto" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataVisualization.Charting.Series.XValueType%2A>プロパティは、系列で格納されているデータの種類を決定します。  
+  
+ このプロパティを設定<xref:System.Web.UI.DataVisualization.Charting.ChartValueType.DateTime>として入力する X 値を許可する、<xref:System.DateTime>値ではなく、<xref:System.Double>です。 日付と時刻の値として .NET Framework によって内部的に格納されている<xref:System.Double>値。 場合も同様、<xref:System.Web.UI.DataVisualization.Charting.CustomLabel.ToPosition%2A>と<xref:System.Web.UI.DataVisualization.Charting.CustomLabel.FromPosition%2A>プロパティの<xref:System.Web.UI.DataVisualization.Charting.CustomLabel>オブジェクト。  
+  
+ `IntervalType`軸ラベル、目盛り、およびグリッド クラスで検出されたプロパティは、間隔の種類を決定します。  
+  
+> [!NOTE]
+>  正常に適用する、<xref:System.DateTime>形式からデータ ポイントの X 値を使用して生成される軸ラベルを<xref:System.Web.UI.DataVisualization.Charting.LabelStyle.Format%2A>プロパティ、このプロパティに設定する必要があります<xref:System.Web.UI.DataVisualization.Charting.ChartValueType.DateTime>です。  
+  
+ このプロパティは、X 値がバインドされているデータ型を決定するも使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="YAxisType">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.AxisType YAxisType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.AxisType YAxisType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Series.YAxisType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.AxisType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または系列の y 軸の種類を設定します。</summary>
+        <value><see cref="T:System.Web.UI.DataVisualization.Charting.AxisType" />系列が、プライマリまたはセカンダリの y 軸を使用するかどうかを決定する列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataVisualization.Charting.Series.YAxisType%2A>プロパティは、プライマリまたはセカンダリの y 軸を使用して系列をプロットするかどうかを決定します。  
+  
+ 円グラフ、ドーナツ グラフ、範囲横棒以外の種類のグラフすべてバーおよび積み上げ横棒グラフ、主軸の y 軸が左側の縦軸とセカンダリ軸は、右の垂直の軸です。 バーと、プライマリ軸は下の水平軸とセカンダリの y 軸上の水平軸は、積み上げ横棒グラフ、します。  
+  
+ データをプロットするには、第 2 y 軸を使用して、ときに行う必要があります、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.AxisY2%2A>軸のプロパティを設定するプロパティおよび not、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.AxisY%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="YValueMembers">
+      <MemberSignature Language="C#" Value="public string YValueMembers { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string YValueMembers" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Series.YValueMembers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.SeriesDataFieldValueAxisUITypeEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Web.UI.Design.DataVisualization.Charting.SeriesDataFieldYConvertor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または系列の Y 値にデータをバインドするために使用するグラフのデータ ソースのメンバーの列を設定します。</summary>
+        <value><see langword="string" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、名前または列の序数値を含むコンマ区切り文字列を指定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="YValuesPerPoint">
+      <MemberSignature Language="C#" Value="public int YValuesPerPoint { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 YValuesPerPoint" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Series.YValuesPerPoint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(1)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Y 値の最大数の設定を取得または<see cref="T:System.Web.UI.DataVisualization.Charting.DataPoint" />内のオブジェクト、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />を持つことができます。</summary>
+        <value><see langword="integer" />系列のデータ ポイントが許可されている Y 値の最大数を表す値です。 1 つ (1) に既定値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加する場合、<xref:System.Web.UI.DataVisualization.Charting.DataPoint>を複数の Y 値を持つオブジェクトよりも、このプロパティを指定します、Y の余分な値は無視されます。  
+  
+ Y の値を正しくグラフを表示するために必要な数は、選択したグラフの種類によって異なります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="YValueType">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.ChartValueType YValueType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.ChartValueType YValueType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Series.YValueType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.DataVisualization.Charting.SeriesYValueTypeConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.ChartValueType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または連続で格納されているデータ ポイントの Y 値のデータの種類を設定します。</summary>
+        <value>A<see cref="T:System.Web.UI.DataVisualization.Charting.ChartValueType" />系列で格納されている Y 値のデータの種類を決定する列挙値。 既定値は <see cref="F:System.Web.UI.DataVisualization.Charting.ChartValueType.Auto" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataVisualization.Charting.Series.YValueType%2A>プロパティは、系列で格納されているデータの種類を決定します。 このプロパティの値が通常設定いずれかに<xref:System.Web.UI.DataVisualization.Charting.ChartValueType.Auto>または<xref:System.Web.UI.DataVisualization.Charting.ChartValueType.DateTime>です。  
+  
+ `IntervalType`軸ラベル、目盛り、およびグリッド クラスで検出されたプロパティは、間隔の種類を決定します。  
+  
+ このプロパティは、Y の値がバインドされているデータ型を決定するも使用できます。  
+  
+ 可能であればデータ ポイントの値として日付式をプロットするが、これはほとんどありません。 このプロパティを設定する場合<xref:System.Web.UI.DataVisualization.Charting.ChartValueType.DateTime>、として入力し、Y 値は、<xref:System.DateTime>値ではなく、<xref:System.Double>です。 日付と時刻の値として .NET Framework によって内部的に格納されている<xref:System.Double>値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

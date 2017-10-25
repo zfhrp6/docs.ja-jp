@@ -1,0 +1,133 @@
+<Type Name="MaskInputRejectedEventArgs" FullName="System.Windows.Forms.MaskInputRejectedEventArgs">
+  <TypeSignature Language="C#" Value="public class MaskInputRejectedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MaskInputRejectedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.MaskInputRejectedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Forms.MaskedTextBox.MaskInputRejected" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskInputRejectedEventArgs>クラスは、無効な入力文字、つまり、書式設定された文字列と文字が拒否された理由に関する一般的な説明の中で 0 から始まる位置に関する情報を提供します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、この型の使用を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.MaskedTextBox>という`MaskedTextBox1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#486](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#486)]
+ [!code-vb[System.Windows.Forms.EventExamples#486](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#486)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MaskInputRejectedEventArgs (int position, System.ComponentModel.MaskedTextResultHint rejectionHint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 position, valuetype System.ComponentModel.MaskedTextResultHint rejectionHint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MaskInputRejectedEventArgs.#ctor(System.Int32,System.ComponentModel.MaskedTextResultHint)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int32" />
+        <Parameter Name="rejectionHint" Type="System.ComponentModel.MaskedTextResultHint" />
+      </Parameters>
+      <Docs>
+        <param name="position"><see cref="T:System.Int32" />マスクに失敗した文字の 0 から始まる位置を表す値です。 位置には、リテラル文字が含まれています。</param>
+        <param name="rejectionHint">A<see cref="T:System.ComponentModel.MaskedTextResultHint" />文字が拒否された理由を大まかに説明します。</param>
+        <summary><see cref="T:System.Windows.Forms.MaskInputRejectedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskInputRejectedEventArgs.%23ctor%2A>コンス トラクターの値の設定、<xref:System.Windows.Forms.MaskInputRejectedEventArgs.Position%2A>と<xref:System.Windows.Forms.MaskInputRejectedEventArgs.RejectionHint%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Position">
+      <MemberSignature Language="C#" Value="public int Position { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Position" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MaskInputRejectedEventArgs.Position" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>無効な入力文字に対応するマスク内の位置を取得します。</summary>
+        <value><see cref="T:System.Int32" />マスクに失敗した文字の 0 から始まる位置を表す値です。 位置には、リテラル文字が含まれています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskInputRejectedEventArgs.Position%2A>にプロパティを設定、<xref:System.Windows.Forms.MaskInputRejectedEventArgs.%23ctor%2A>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.MaskedTextBox>という`MaskedTextBox1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#486](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#486)]
+ [!code-vb[System.Windows.Forms.EventExamples#486](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#486)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RejectionHint">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.MaskedTextResultHint RejectionHint { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ComponentModel.MaskedTextResultHint RejectionHint" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MaskInputRejectedEventArgs.RejectionHint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.MaskedTextResultHint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>入力文字が拒否された理由を説明する列挙値を取得します。</summary>
+        <value>A<see cref="T:System.ComponentModel.MaskedTextResultHint" />文字が拒否された理由を大まかに説明します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskInputRejectedEventArgs>にプロパティを設定、<xref:System.Windows.Forms.MaskInputRejectedEventArgs.%23ctor%2A>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.MaskedTextBox>という`MaskedTextBox1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#486](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#486)]
+ [!code-vb[System.Windows.Forms.EventExamples#486](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#486)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

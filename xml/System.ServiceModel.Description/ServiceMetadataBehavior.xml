@@ -1,0 +1,429 @@
+<Type Name="ServiceMetadataBehavior" FullName="System.ServiceModel.Description.ServiceMetadataBehavior">
+  <TypeSignature Language="C#" Value="public class ServiceMetadataBehavior : System.ServiceModel.Description.IServiceBehavior" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ServiceMetadataBehavior extends System.Object implements class System.ServiceModel.Description.IServiceBehavior" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Description.ServiceMetadataBehavior" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Description.IServiceBehavior</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>サービス メタデータと関連情報の公開を制御します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加、<xref:System.ServiceModel.Description.ServiceMetadataBehavior>オブジェクトを<xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A?displayProperty=nameWithType>コレクション (または[ &lt;serviceMetadata&gt; ](~/docs/framework/configure-apps/file-schema/wcf/servicemetadata.md)アプリケーション構成ファイル内の要素) を有効にするにまたはサービスのメタデータの公開を無効にします。 ただし、サービスに動作を追加するだけではメタデータの公開を有効にできません。  
+  
+-   WS-Transfer GET によるメタデータの取得を有効にするには、さらに、コントラクトが `IMetadataExchange` であるエンドポイントをサービスに追加する必要があります。 例については、次を参照してください。[する方法: サービスを使用してコードのメタデータを公開](~/docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-code.md)です。 `IMetadataExchange` エンドポイントは他のエンドポイントと同様に構成できます。  
+  
+-   HTTP GET によるメタデータの取得を有効にするには、<xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A> プロパティを `true` に設定します。 HTTP GET メタデータのアドレス[!INCLUDE[crabout](~/includes/crabout-md.md)]、「<xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A>」を参照してください。  
+  
+ アドレス、`IMetadataExchange`エンドポイントのベース アドレスとエンドポイント アドレスの組み合わせに関する通常の規則に従います。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][メタデータの公開](~/docs/framework/wcf/feature-details/publishing-metadata.md)です。  
+  
+ 構成ファイルを使用してメタデータの公開を有効にするには追加、 [ &lt;serviceMetadata&gt; ](~/docs/framework/configure-apps/file-schema/wcf/servicemetadata.md)要素を[ &lt;serviceBehaviors&gt; ](~/docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md)要素を持つ要素を関連付けると、 [&lt;サービス&gt;](~/docs/framework/configure-apps/file-schema/wcf/service.md)メタデータを公開する要素。 例については、次を参照してください。[する方法: 構成ファイルを使用して、サービスのメタデータを公開](~/docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file.md)です。 このクラスには、次のメンバーがあります。  
+  
+-   <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A> プロパティ。HTTP/GET 要求に対してメタデータが返されるかどうかを指定します。  
+  
+-   <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetUrl%2A> プロパティ。ベース アドレスと組み合わせて使用され、HTTP/GET アドレスを指定します。  
+  
+-   <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A> プロパティ。HTTPS/GET 要求に対してメタデータが返されるかどうかを指定します。  
+  
+-   <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A> プロパティ。ベース アドレスと組み合わせて使用され、HTTPS/GET アドレスを指定します。  
+  
+-   <xref:System.ServiceModel.Description.ServiceMetadataBehavior.MetadataExporter%2A> プロパティ。基になるエクスポーターを返します。  
+  
+ 通常、<xref:System.ServiceModel.Description.ServiceMetadataBehavior> はアプリケーション設定ファイルから使用されます。 コード例については、「使用例」のセクションを参照してください。  
+  
+   
+  
+## Examples  
+ 構成ファイルで <xref:System.ServiceModel.Description.ServiceMetadataBehavior> を使用して HTTP/GET および WS-Transfer/GET 要求のメタデータ サポートを有効にする方法を次のコード例に示します。  
+  
+ [!code-csharp[ServiceMetadataBehavior#1](~/samples/snippets/csharp/VS_Snippets_CFX/servicemetadatabehavior/cs/hostapplication.cs#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceMetadataBehavior ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.ServiceMetadataBehavior.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Description.ServiceMetadataBehavior" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の値で <xref:System.ServiceModel.Description.ServiceMetadataBehavior> を作成します。  
+  
+-   <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A> プロパティが `false` です。  
+  
+-   <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A> プロパティが `false` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExternalMetadataLocation">
+      <MemberSignature Language="C#" Value="public Uri ExternalMetadataLocation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri ExternalMetadataLocation" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceMetadataBehavior.ExternalMetadataLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.UriTypeConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス メタデータの位置である値を取得または設定します。</summary>
+        <value>サービスのメタデータの位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアントに外部メタデータの位置の参照を返します。 <xref:System.ServiceModel.Description.ServiceMetadataBehavior.ExternalMetadataLocation%2A> プロパティは、相対値または絶対値に設定できます。 相対値に設定した場合、アドレスは、クライアントがメタデータを取得した方法に応じて <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetUrl%2A> または <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A> との相対関係でクライアントによって解決されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">この値は絶対値であり、スキーマは http でも https でもありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HttpGetBinding">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.Binding HttpGetBinding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Channels.Binding HttpGetBinding" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetBinding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.Binding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランスポートが HTTP の場合に、メタデータの取得を構成するために使用するバインディングを取得または設定します。</summary>
+        <value>HTTP プロトコルを使用してメタデータを取得するために使用できる <see cref="T:System.ServiceModel.Channels.Binding" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 以前のバージョンの WCF では、Web ブラウザーからサービス ヘルプ ページにアクセスするために、HTTP GET を使用してメタデータを取得していました。 <xref:System.ServiceModel.Channels.HttpTransportBindingElement> だけがサポートされていました。  HTTPS GET を使用してメタデータを取得する場合は、<xref:System.ServiceModel.Channels.HttpsTransportBindingElement> だけがサポートされていました。   HttpGetBinding プロパティと HttpsGetBinding プロパティを使用すると、HTTP GET (または HTTPS GET) を使用してメタデータを取得するバインディングと、プログラムまたは構成ファイルを使用して構成できるサービス Web ページへのアクセスに使用するバインディングを有効にできます。  
+  
+ ヘルプ ページの取得の詳細については、使用、<xref:System.ServiceModel.Description.ServiceDebugBehavior.HttpHelpPageBinding%2A>と<xref:System.ServiceModel.Description.ServiceDebugBehavior.HttpsHelpPageBinding%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HttpGetEnabled">
+      <MemberSignature Language="C#" Value="public bool HttpGetEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HttpGetEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTTP/GET 要求を使用した取得用にサービス メタデータを公開するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          WSDL を公開する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetUrl%2A> の値が相対値の場合、メタデータが公開されるアドレスは、ベース アドレスとサービス アドレスに `?wsdl` クエリ文字列を加えたものになります。  
+  
+ <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetUrl%2A> の値が絶対値の場合、メタデータが公開されるアドレスは、<xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetUrl%2A> 値に `?wsdl` クエリ文字列を加えたものになります。  
+  
+ たとえば、サービス アドレスが `http://localhost:8080/CalculatorService` で、<xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetUrl%2A> が空の文字列の場合、HTTP/GET メタデータ アドレスは `http://localhost:8080/CalculatorService?wsdl` です。  
+  
+ このプロパティを有効にせず、<xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetUrl%2A> を変更しないかまたは相対アドレスに設定した場合、HTTP のベース アドレスを指定せずにサービス ホストを開くとランタイムで例外がスローされます。  
+  
+   
+  
+## Examples  
+ 構成ファイルで <xref:System.ServiceModel.Description.ServiceMetadataBehavior> を使用して HTTP/GET および WS-Transfer/GET 要求のメタデータ サポートを有効にする方法を次のコード例に示します。  
+  
+ [!code-csharp[ServiceMetadataBehavior#1](~/samples/snippets/csharp/VS_Snippets_CFX/servicemetadatabehavior/cs/hostapplication.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HttpGetUrl">
+      <MemberSignature Language="C#" Value="public Uri HttpGetUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri HttpGetUrl" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.UriTypeConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTTP/GET 要求に対するメタデータ公開の場所を取得または設定します。</summary>
+        <value>メタデータの絶対位置または相対位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetUrl%2A> の値が相対値の場合、メタデータが公開されるアドレスは、ベース アドレスとサービス アドレスに `?wsdl` クエリ文字列を加えたものになります。  
+  
+ <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetUrl%2A> の値が絶対値の場合、メタデータが公開されるアドレスは、この値に `?wsdl` クエリ文字列を加えたものになります。  
+  
+ たとえば、サービス アドレスが `http://localhost:8080/CalculatorService` で、<xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetUrl%2A> が空の文字列の場合、HTTP/GET メタデータ アドレスは `http://localhost:8080/CalculatorService?wsdl` です。  
+  
+   
+  
+## Examples  
+ 構成ファイルで <xref:System.ServiceModel.Description.ServiceMetadataBehavior> を使用して HTTP/GET および WS-Transfer/GET 要求のメタデータ サポートを有効にする方法を次のコード例に示します。  
+  
+ [!code-csharp[ServiceMetadataBehavior#1](~/samples/snippets/csharp/VS_Snippets_CFX/servicemetadatabehavior/cs/hostapplication.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HttpsGetBinding">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.Binding HttpsGetBinding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Channels.Binding HttpsGetBinding" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetBinding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.Binding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランスポートが HTTPS の場合に、メタデータの取得を構成するために使用するバインディングを取得または設定します。</summary>
+        <value>HTTPS プロトコルを使用してメタデータを取得するために使用できる <see cref="T:System.ServiceModel.Channels.Binding" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 以前のバージョンの WCF では、Web ブラウザーからサービス ヘルプ ページにアクセスするために、HTTP GET を使用してメタデータを取得していました。 <xref:System.ServiceModel.Channels.HttpTransportBindingElement> だけがサポートされていました。  HTTPS GET を使用してメタデータを取得する場合は、<xref:System.ServiceModel.Channels.HttpsTransportBindingElement> だけがサポートされていました。   HttpGetBinding プロパティと HttpsGetBinding プロパティを使用すると、HTTP GET (または HTTPS GET) を使用してメタデータを取得するバインディングと、プログラムまたは構成ファイルを使用して構成できるサービス Web ページへのアクセスに使用するバインディングを有効にできます。  
+  
+ ヘルプ ページの取得の詳細については、使用、<xref:System.ServiceModel.Description.ServiceDebugBehavior.HttpHelpPageBinding%2A>と<xref:System.ServiceModel.Description.ServiceDebugBehavior.HttpsHelpPageBinding%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HttpsGetEnabled">
+      <MemberSignature Language="C#" Value="public bool HttpsGetEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HttpsGetEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTTPS/GET 要求を使用した取得用にサービス メタデータを公開するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          WSDL を公開する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A> の値が相対値の場合、メタデータが公開されるアドレスは、ベース アドレスとサービス アドレスに `?wsdl` クエリ文字列を加えたものになります。  
+  
+ <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A> の値が絶対値の場合、メタデータが公開されるアドレスは、<xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A> 値に `?wsdl` クエリ文字列を加えたものになります。  
+  
+ たとえば、サービス アドレスが `https://localhost:8080/CalculatorService` で、<xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A> が空の文字列の場合、HTTPS/GET メタデータ アドレスは `https://localhost:8080/CalculatorService?wsdl` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HttpsGetUrl">
+      <MemberSignature Language="C#" Value="public Uri HttpsGetUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri HttpsGetUrl" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.UriTypeConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTTPS/GET 要求に対するメタデータ公開の場所を取得または設定します。</summary>
+        <value>HTTPS メタデータのアドレス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A> の値が相対値の場合、メタデータが公開されるアドレスは、ベース アドレスとサービス アドレスに `?wsdl` クエリ文字列を加えたものになります。  
+  
+ <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A> の値が絶対値の場合、メタデータが公開されるアドレスは、<xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A> 値に `?wsdl` クエリ文字列を加えたものになります。  
+  
+ たとえば、サービス アドレスが `https://localhost:8080/CalculatorService` で、<xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A> が空の文字列の場合、HTTPS/GET メタデータ アドレスは `https://localhost:8080/CalculatorService?wsdl` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MetadataExporter">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.MetadataExporter MetadataExporter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Description.MetadataExporter MetadataExporter" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceMetadataBehavior.MetadataExporter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.MetadataExporter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス メタデータを公開するために使用する内部 <see cref="T:System.ServiceModel.Description.MetadataExporter" /> オブジェクトを取得または設定します。</summary>
+        <value>内部 <see cref="T:System.ServiceModel.Description.MetadataExporter" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.MetadataExporter> オブジェクトを使用して、サービスのメタデータの公開を変更します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MexContractName">
+      <MemberSignature Language="C#" Value="public const string MexContractName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string MexContractName" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Description.ServiceMetadataBehavior.MexContractName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文字列を返します<c>IMetadataContract</c>です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IServiceBehavior.AddBindingParameters">
+      <MemberSignature Language="C#" Value="void IServiceBehavior.AddBindingParameters (System.ServiceModel.Description.ServiceDescription description, System.ServiceModel.ServiceHostBase serviceHostBase, System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Description.ServiceEndpoint&gt; endpoints, System.ServiceModel.Channels.BindingParameterCollection parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IServiceBehavior.AddBindingParameters(class System.ServiceModel.Description.ServiceDescription description, class System.ServiceModel.ServiceHostBase serviceHostBase, class System.Collections.ObjectModel.Collection`1&lt;class System.ServiceModel.Description.ServiceEndpoint&gt; endpoints, class System.ServiceModel.Channels.BindingParameterCollection parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.ServiceMetadataBehavior.System#ServiceModel#Description#IServiceBehavior#AddBindingParameters(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase,System.Collections.ObjectModel.Collection{System.ServiceModel.Description.ServiceEndpoint},System.ServiceModel.Channels.BindingParameterCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="description" Type="System.ServiceModel.Description.ServiceDescription" />
+        <Parameter Name="serviceHostBase" Type="System.ServiceModel.ServiceHostBase" />
+        <Parameter Name="endpoints" Type="System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Description.ServiceEndpoint&gt;" />
+        <Parameter Name="parameters" Type="System.ServiceModel.Channels.BindingParameterCollection" />
+      </Parameters>
+      <Docs>
+        <param name="description">構成されるサービスの説明。</param>
+        <param name="serviceHostBase">サービスのホスト。</param>
+        <param name="endpoints">構成されるエンドポイント。</param>
+        <param name="parameters">構成されるバインディング パラメーター。</param>
+        <summary>基になるバインディングを、動作をサポートするように構成する <see cref="T:System.ServiceModel.Description.IServiceBehavior" /> の実装です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior">
+      <MemberSignature Language="C#" Value="void IServiceBehavior.ApplyDispatchBehavior (System.ServiceModel.Description.ServiceDescription description, System.ServiceModel.ServiceHostBase serviceHostBase);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior(class System.ServiceModel.Description.ServiceDescription description, class System.ServiceModel.ServiceHostBase serviceHostBase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.ServiceMetadataBehavior.System#ServiceModel#Description#IServiceBehavior#ApplyDispatchBehavior(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="description" Type="System.ServiceModel.Description.ServiceDescription" />
+        <Parameter Name="serviceHostBase" Type="System.ServiceModel.ServiceHostBase" />
+      </Parameters>
+      <Docs>
+        <param name="description">変更されるサービスの説明。</param>
+        <param name="serviceHostBase">サービスのホスト。</param>
+        <summary>基になるバインディングを、サービスの動作をサポートするように構成する <see cref="T:System.ServiceModel.Description.IServiceBehavior" /> の実装です。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="description" /> または <paramref name="serviceHostBase" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="serviceHostBase" /> の送信先アドレスが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IServiceBehavior.Validate">
+      <MemberSignature Language="C#" Value="void IServiceBehavior.Validate (System.ServiceModel.Description.ServiceDescription description, System.ServiceModel.ServiceHostBase serviceHostBase);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IServiceBehavior.Validate(class System.ServiceModel.Description.ServiceDescription description, class System.ServiceModel.ServiceHostBase serviceHostBase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.ServiceMetadataBehavior.System#ServiceModel#Description#IServiceBehavior#Validate(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="description" Type="System.ServiceModel.Description.ServiceDescription" />
+        <Parameter Name="serviceHostBase" Type="System.ServiceModel.ServiceHostBase" />
+      </Parameters>
+      <Docs>
+        <param name="description">検証されるサービスの説明。</param>
+        <param name="serviceHostBase">サービスのホスト。</param>
+        <summary>サービスの説明が動作をサポートできることを検証する <see cref="T:System.ServiceModel.Description.IServiceBehavior" /> の実装です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

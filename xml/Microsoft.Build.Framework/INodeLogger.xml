@@ -1,0 +1,55 @@
+<Type Name="INodeLogger" FullName="Microsoft.Build.Framework.INodeLogger">
+  <TypeSignature Language="C#" Value="public interface INodeLogger : Microsoft.Build.Framework.ILogger" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract INodeLogger implements class Microsoft.Build.Framework.ILogger" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Framework.INodeLogger" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>Microsoft.Build.Framework.ILogger</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ビルド システム内には、"並列対応の logger"を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 並列対応の logger は、CPU の数を受け入れます。 1 より大きい CPU 数では、イベントが記録されるにつれて、各 CPU のロガーからイベントが受信したビルドを意味します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public void Initialize (Microsoft.Build.Framework.IEventSource eventSource, int nodeCount);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Initialize(class Microsoft.Build.Framework.IEventSource eventSource, int32 nodeCount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Framework.INodeLogger.Initialize(Microsoft.Build.Framework.IEventSource,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventSource" Type="Microsoft.Build.Framework.IEventSource" />
+        <Parameter Name="nodeCount" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="eventSource"><see cref="T:Microsoft.Build.Framework.IEventSource" />ビルド イベント ソースを表すオブジェクト。</param>
+        <param name="nodeCount">Cpu の数。</param>
+        <summary>ロガーを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

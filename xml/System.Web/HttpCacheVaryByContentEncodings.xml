@@ -1,0 +1,127 @@
+<Type Name="HttpCacheVaryByContentEncodings" FullName="System.Web.HttpCacheVaryByContentEncodings">
+  <TypeSignature Language="C#" Value="public sealed class HttpCacheVaryByContentEncodings" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HttpCacheVaryByContentEncodings extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.HttpCacheVaryByContentEncodings" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Web.HttpCachePolicy" /> クラスの <see cref="P:System.Web.HttpCachePolicy.VaryByContentEncodings" /> プロパティを設定するタイプ セーフな方法を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpCachePolicy.VaryByContentEncodings%2A>プロパティを使用して、動的に圧縮された応答がキャッシュされるかどうかを指定します。 動的に圧縮された応答をキャッシュすると、圧縮のコストがリソースの (またはアプリケーションの再起動後) は、最初の要求およびキャッシュ項目の有効期限が切れる中に 1 回だけに発生することを意味します。  
+  
+ <xref:System.Web.HttpCachePolicy.VaryByContentEncodings%2A>のプロパティ、<xref:System.Web.HttpCachePolicy>クラスは ASP.NET を使用して、リソースの複数のキャッシュされた応答がある場合、応答のバリエーションを一意に識別する要求ヘッダーのパラメーターを識別します。 これは、機能は、応答ヘッダー、パラメーター、またはコンテンツのエンコード方式などのクライアントの入力のセットに依存しているときに便利です。  
+  
+ <xref:System.Web.HttpCacheVaryByContentEncodings> HTTP キャッシュ制御ヘッダーにクラスが直接関係しません。 ただし、クライアントまたはプロキシへの応答が指定されたコンテンツのエンコードによって変化することを確認するのに役立ちます。 コンテンツのエンコードによって異なるキャッシュの設定が有効化による応答を変更するための ASP.NET、`Accept-Encoding`ヘッダー。 要求が処理されるときに、`Accept-Encoding`ヘッダーがチェックされ、最初の許容可能なエンコーディング識別される、次の操作のいずれかを実行するために使用します。  
+  
+-   一致するエンコードが見つかった場合、<xref:System.Web.HttpCachePolicy.VaryByContentEncodings%2A>リストとキャッシュされた応答が存在すると、キャッシュされた応答が送信されます。  
+  
+-   一致するエンコードが見つかった場合、<xref:System.Web.HttpCachePolicy.VaryByContentEncodings%2A>のリストは、キャッシュされた応答が存在しないか、応答が生成され、キャッシュに挿入します。  
+  
+-   内で一致するエンコードが見つからない場合、 <xref:System.Web.HttpCachePolicy.VaryByContentEncodings%2A> id 応答とも呼びますエンコードされていない応答の一覧で、キャッシュを検索します。 見つかった場合は、id 応答が送信されます。 それ以外の場合、新しいエンコードされていない応答が生成され、キャッシュに格納します。  
+  
+ 詳細については、<xref:System.Web.HttpCachePolicy.VaryByContentEncodings%2A>プロパティ、RFC 2616 を参照してください: Hypertext Transfer Protocol--http/1.1 で使用できる、 [World Wide Web コンソーシアム (W3C) の Web サイト](http://go.microsoft.com/fwlink/?linkid=37125)です。 詳細については「14、「Header Field Definitions」を参照してください。  
+  
+ 設定することができます、<xref:System.Web.HttpCachePolicy.VaryByContentEncodings%2A>プロパティまたは Web.config ファイル内の要素をプロファイルを追加することにより、ディレクティブを使用しています。  
+  
+   
+  
+## Examples  
+ 次の例では、出力キャッシュから提供されることができますを動的に圧縮された応答を有効にする方法を示します。 許容されるエンコード"gzip"を使用して設定されている、`VaryByContentEncodings`ディレクティブの属性です。 ページをホストする Web サーバーが動的な圧縮を有効になっているを持たない場合、出力キャッシュには、指定されたコンテンツをエンコードするためのキャッシュされた応答はありません。  
+  
+ [!code-aspx-csharp[System.Web.HttpCachePolicy.VaryByContentEncodings#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpCachePolicy.VaryByContentEncodings/CS/default.aspx#1)]
+ [!code-aspx-vb[System.Web.HttpCachePolicy.VaryByContentEncodings#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpCachePolicy.VaryByContentEncodings/VB/default.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpCacheVaryByContentEncodings ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCacheVaryByContentEncodings.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.HttpCacheVaryByContentEncodings" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetContentEncodings">
+      <MemberSignature Language="C#" Value="public string[] GetContentEncodings ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string[] GetContentEncodings() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCacheVaryByContentEncodings.GetContentEncodings" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>キャッシュを変更するために使用するコンテンツ エンコーディングを指定する値の配列を取得します。</summary>
+        <returns>キャッシュを変更するためのコンテンツ エンコーディングを含む値の配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public bool this[string contentEncoding] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpCacheVaryByContentEncodings.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contentEncoding" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="contentEncoding">コンテンツ エンコーディングの名前。</param>
+        <summary>取得または指定されたコンテンツのエンコードでキャッシュを識別するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />エンコードすることによって、指定されたコンテンツはキャッシュを識別する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">コンテンツ エンコーディングが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetContentEncodings">
+      <MemberSignature Language="C#" Value="public void SetContentEncodings (string[] contentEncodings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetContentEncodings(string[] contentEncodings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCacheVaryByContentEncodings.SetContentEncodings(System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contentEncodings" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="contentEncodings">キャッシュを変更するためのコンテンツ エンコーディングを含む値の配列。</param>
+        <summary>キャッシュを変更するために使用するコンテンツ エンコーディングを指定する値の配列を設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

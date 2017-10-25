@@ -1,0 +1,742 @@
+<Type Name="BindingContext" FullName="System.Windows.Forms.BindingContext">
+  <TypeSignature Language="C#" Value="public class BindingContext : System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BindingContext extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.BindingContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("CollectionChanged")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コレクションを管理<see cref="T:System.Windows.Forms.BindingManagerBase" />から継承する任意のオブジェクトのオブジェクト、<see cref="T:System.Windows.Forms.Control" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各 Windows フォームには少なくとも 1 つ<xref:System.Windows.Forms.BindingContext>を管理するオブジェクト、<xref:System.Windows.Forms.BindingManagerBase>フォームのオブジェクト。 <xref:System.Windows.Forms.BindingManagerBase>クラスは抽象である戻り値の型、<xref:System.Windows.Forms.BindingContext.Item%2A>プロパティが、<xref:System.Windows.Forms.CurrencyManager>または<xref:System.Windows.Forms.PropertyManager>です。 オブジェクトではなく、オブジェクトの一覧)、1 つのプロパティのみを返すことができるかどうか、データ ソースには、<xref:System.Type>は、<xref:System.Windows.Forms.PropertyManager>です。 たとえば、指定した場合、<xref:System.Windows.Forms.TextBox>データ ソースとして、<xref:System.Windows.Forms.PropertyManager>が返されます。 その一方で、データ ソースが実装するオブジェクトである場合<xref:System.Collections.IList>または<xref:System.ComponentModel.IBindingList>、<xref:System.Windows.Forms.CurrencyManager>が返されます。  
+  
+ Windows フォームでのデータ ソースごとに 1 つが<xref:System.Windows.Forms.CurrencyManager>または<xref:System.Windows.Forms.PropertyManager>です。 Windows フォームに関連付けられている複数のデータ ソースがある可能性がありますので、<xref:System.Windows.Forms.BindingContext>特定を取得することができます<xref:System.Windows.Forms.CurrencyManager>データ ソースに関連付けられています。  
+  
+> [!NOTE]
+>  使用する場合、 <xref:System.Windows.Forms.BindingContext.Item%2A> 、プロパティ、<xref:System.Windows.Forms.BindingContext>新たに作成<xref:System.Windows.Forms.BindingManagerBase>が既に存在しない場合。 これには、する一覧 (または、一覧)、返されたオブジェクトは管理されません可能性があります、混乱を招くことができます。 無効なを返すことを防ぐために<xref:System.Windows.Forms.BindingManagerBase>を使用して、<xref:System.Windows.Forms.BindingContext.Contains%2A>メソッドかどうかを目的の<xref:System.Windows.Forms.BindingManagerBase>既に存在します。  
+  
+ などのコンテナー コントロールを使用する場合、 <xref:System.Windows.Forms.GroupBox>、 <xref:System.Windows.Forms.Panel>、または<xref:System.Windows.Forms.TabControl>データ バインド コントロールを追加するには、作成することができます、<xref:System.Windows.Forms.BindingContext>だけコンテナーを制御して、そのコントロールのです。 独自で、フォームの各部分を管理することができますし、<xref:System.Windows.Forms.BindingManagerBase>です。 参照してください、<xref:System.Windows.Forms.BindingContext.%23ctor%2A>詳細については、複数のコンス トラクター<xref:System.Windows.Forms.BindingManagerBase>同じデータ ソースのオブジェクト。  
+  
+ 追加する場合、<xref:System.Windows.Forms.TextBox>フォームとが通信データセット、コントロール内のテーブルの列にバインドするコントロール、<xref:System.Windows.Forms.BindingContext>そのフォームのです。 <xref:System.Windows.Forms.BindingContext>、さらに、固有の仕様に伝える<xref:System.Windows.Forms.CurrencyManager>そのデータの関連付けをします。 クエリを実行する場合、`Position`のプロパティ、 <xref:System.Windows.Forms.CurrencyManager>、バインディングされるは、現在のレコードを報告するよう<xref:System.Windows.Forms.TextBox>コントロール。 次のコード例では、<xref:System.Windows.Forms.TextBox>コントロールにバインドする、`FirstName`の列、`Customers`テーブルに対して、`dataSet1`を介してデータセット、<xref:System.Windows.Forms.BindingContext>上にあるフォームのです。  
+  
+```vb  
+TextBox1.DataBindings.Add("Text", dataSet1, "Customers.FirstName")  
+  
+```  
+  
+```csharp  
+textBox1.DataBindings.Add("Text", dataSet1, "Customers.FirstName");  
+  
+```  
+  
+```cpp  
+textBox1->DataBindings->Add("Text", dataSet1, "Customers.FirstName");  
+```  
+  
+ 2 番目を追加することができます<xref:System.Windows.Forms.TextBox>コントロール (`TextBox2`) をフォームにバインドし、`LastName`の列、`Customers`同じデータセット内のテーブルです。 <xref:System.Windows.Forms.BindingContext>は、最初のバインドの認識 (`TextBox1`に`Customers.FirstName`) で使用する同じため、<xref:System.Windows.Forms.CurrencyManager>両方のテキスト ボックスが、同じデータセットにバインドされているように、(`DataSet1`)。  
+  
+```vb  
+TextBox2.DataBindings.Add("Text", dataSet1, "Customers.LastName")  
+  
+```  
+  
+```csharp  
+textBox2.DataBindings.Add("Text", dataSet1, "Customers.LastName");  
+  
+```  
+  
+```cpp  
+textBox2->DataBindings->Add("Text", dataSet1, "Customers.LastName");  
+```  
+  
+ バインドする場合`TextBox2`別のデータセットに、<xref:System.Windows.Forms.BindingContext>を作成し、2 つ目の管理<xref:System.Windows.Forms.CurrencyManager>です。  
+  
+ 設定する方法を統一することが重要、<xref:System.Windows.Forms.ListControl.DataSource%2A>と<xref:System.Windows.Forms.ListControl.DisplayMember%2A>プロパティです。 それ以外の場合、<xref:System.Windows.Forms.BindingContext>管理者にエラーが発生、同じデータセットの複数の通貨を作成します。 次のコード例は、プロパティとそれに関連付けられた設定をいくつかの方法を示しています。<xref:System.Windows.Forms.BindingContext>オブジェクト。 よう、コード全体で一貫性があれば、次のいずれかを使用して、プロパティを設定できます。  
+  
+```vb  
+ComboBox1.DataSource = DataSet1  
+ComboBox1.DisplayMember = "Customers.FirstName"  
+Me.BindingContext(dataSet1, "Customers").Position = 1  
+  
+```  
+  
+```csharp  
+comboBox1.DataSource = DataSet1;  
+comboBox1.DisplayMember = "Customers.FirstName";  
+this.BindingContext[dataSet1, "Customers"].Position = 1;  
+  
+```  
+  
+```cpp  
+comboBox1->DataSource = dataSet1;  
+comboBox1->DisplayMember = "Customers.FirstName";  
+this->BindingContext->get_Item(dataSet1, "Customers")->Position = 1;  
+  
+```  
+  
+```vb  
+ComboBox1.DataSource = DataSet1.Customers  
+ComboBox1.DisplayMember = "FirstName"  
+Me.BindingContext(dataSet1.Customers).Position = 1  
+  
+```  
+  
+```csharp  
+comboBox1.DataSource = DataSet1.Customers;  
+comboBox1.DisplayMember = "FirstName";  
+this.BindingContext[dataSet1.Customers].Position = 1;  
+  
+```  
+  
+```cpp  
+comboBox1->DataSource = dataSet1->Customers;  
+comboBox1->DisplayMember = "FirstName";  
+this->BindingContext->get_Item(dataSet1->Customers)->Position = 1;  
+  
+```  
+  
+> [!NOTE]
+>  ほとんどの Windows フォーム アプリケーションのバインドを<xref:System.Windows.Forms.BindingSource>です。 <xref:System.Windows.Forms.BindingSource>コンポーネントをカプセル化、<xref:System.Windows.Forms.CurrencyManager>を公開し、<xref:System.Windows.Forms.CurrencyManager>プログラミング インターフェイスです。 使用する場合、<xref:System.Windows.Forms.BindingSource>バインディングの場合は、によって公開されるメンバーを使用する必要があります、 <xref:System.Windows.Forms.BindingSource> "currency"を操作する (つまり、 `Position`) 経由ではなく、<xref:System.Windows.Forms.BindingContext>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、4 つ作成<xref:System.Windows.Forms.Binding>5 つのコントロールをバインドするオブジェクト:、<xref:System.Windows.Forms.DateTimePicker>と 4 つ<xref:System.Windows.Forms.TextBox>コントロール-いくつかのデータ ソースにします。 <xref:System.Windows.Forms.BindingContext>を使用して取得、<xref:System.Windows.Forms.BindingManagerBase>データ ソースごとにします。  
+  
+ [!code-cpp[Classic BindingContext Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic BindingContext Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BindingContext Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic BindingContext Example/CS/source.cs#1)]
+ [!code-vb[Classic BindingContext Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic BindingContext Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BindingContext ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingContext.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.BindingContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数を設定する場合は、 <xref:System.Windows.Forms.BindingManagerBase> 、同じデータ ソースのインスタンスを作成、新しい<xref:System.Windows.Forms.BindingContext>に設定し、<xref:System.Windows.Forms.Control.BindingContext%2A>から継承されるオブジェクトのプロパティ、<xref:System.Windows.Forms.Control>クラスです。 たとえば、2 つある<xref:System.Windows.Forms.BindingManagerBase>オブジェクト (から 2 つの異なる<xref:System.Windows.Forms.BindingContext>オブジェクト)、設定することができます、<xref:System.Windows.Forms.BindingManagerBase.Position%2A>の各プロパティ<xref:System.Windows.Forms.BindingManagerBase>ごとに異なる値。 これにより、同じデータ ソースから別の値を表示するデータ バインド コントロールの各セットです。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する 2 つの新しい<xref:System.Windows.Forms.BindingContext>オブジェクトし、各オブジェクトに割り当てます、<xref:System.Windows.Forms.BindingContext>のプロパティ、<xref:System.Windows.Forms.GroupBox>コントロール。 `GroupBox1`含まれています`TextBox1`、および`GroupBox2`が含まれています`TextBox2`(使用して行われますが、<xref:System.Windows.Forms.Control.ControlCollection.AddRange%2A>のメソッド、<xref:System.Windows.Forms.Control.ControlCollection>クラス)。 この例で追加し、<xref:System.Windows.Forms.Binding>を 2 つのオブジェクト<xref:System.Windows.Forms.TextBox>コントロールが、それぞれを同じデータ ソースおよびデータ メンバーにバインドします。 使用する 2 つのイベント ハンドラーも示します、<xref:System.Windows.Forms.BindingContext>から、<xref:System.Windows.Forms.GroupBox>を設定するコントロール、<xref:System.Windows.Forms.BindingManagerBase.Position%2A>プロパティに異なる<xref:System.Windows.Forms.BindingManagerBase>オブジェクト。  
+  
+ [!code-cpp[Classic BindingContext.BindingContext Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic BindingContext.BindingContext Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BindingContext.BindingContext Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic BindingContext.BindingContext Example/CS/source.cs#1)]
+ [!code-vb[Classic BindingContext.BindingContext Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic BindingContext.BindingContext Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="protected void Add (object dataSource, System.Windows.Forms.BindingManagerBase listManager);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void Add(object dataSource, class System.Windows.Forms.BindingManagerBase listManager) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingContext.Add(System.Object,System.Windows.Forms.BindingManagerBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Object" />
+        <Parameter Name="listManager" Type="System.Windows.Forms.BindingManagerBase" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource"><see cref="T:System.Object" /> に関連付けられている <see cref="T:System.Windows.Forms.BindingManagerBase" />。</param>
+        <param name="listManager">追加する <see cref="T:System.Windows.Forms.BindingManagerBase" />。</param>
+        <summary>追加、<see cref="T:System.Windows.Forms.BindingManagerBase" />をコレクションに特定のデータ ソースに関連付けられています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddCore">
+      <MemberSignature Language="C#" Value="protected virtual void AddCore (object dataSource, System.Windows.Forms.BindingManagerBase listManager);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void AddCore(object dataSource, class System.Windows.Forms.BindingManagerBase listManager) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingContext.AddCore(System.Object,System.Windows.Forms.BindingManagerBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Object" />
+        <Parameter Name="listManager" Type="System.Windows.Forms.BindingManagerBase" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource">関連付けられているオブジェクト、<see cref="T:System.Windows.Forms.BindingManagerBase" />です。</param>
+        <param name="listManager">追加する <see cref="T:System.Windows.Forms.BindingManagerBase" />。</param>
+        <summary>追加、<see cref="T:System.Windows.Forms.BindingManagerBase" />をコレクションに特定のデータ ソースに関連付けられています。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dataSource" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="listManager" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="protected void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingContext.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>いずれかのコレクションをクリア<see cref="T:System.Windows.Forms.BindingManagerBase" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearCore">
+      <MemberSignature Language="C#" Value="protected virtual void ClearCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ClearCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingContext.ClearCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションを空にします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CollectionChanged">
+      <MemberSignature Language="C#" Value="public event System.ComponentModel.CollectionChangeEventHandler CollectionChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.CollectionChangeEventHandler CollectionChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.BindingContext.CollectionChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.CollectionChangeEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>常に発生させる、<see cref="T:System.NotImplementedException" />を処理するとき。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.BindingContext.CollectionChanged>イベントは廃止されておりを生成常に、<xref:System.NotImplementedException>を処理するとき。 イベント処理の詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">すべてのケースで発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (object dataSource);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(object dataSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingContext.Contains(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource">データ ソースを表す <see cref="T:System.Object" />。</param>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.Forms.BindingContext" />が含まれています、<see cref="T:System.Windows.Forms.BindingManagerBase" />指定されたデータ ソースに関連付けられています。</summary>
+        <returns>
+          <see langword="true" />場合、 <see cref="T:System.Windows.Forms.BindingContext" /> 、指定されたを含む<see cref="T:System.Windows.Forms.BindingManagerBase" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください、<xref:System.Windows.Forms.Binding>利用できるデータ ソースとコントロールとデータ ソース間のバインディングの作成に関する情報の一覧のクラスです。  
+  
+ 参照してください、<xref:System.Windows.Forms.BindingContext.Item%2A>を取得する方法については、プロパティ、<xref:System.Windows.Forms.BindingManagerBase>データ ソースのみを使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.BindingContext.Contains%2A>メソッドを呼び出せば確認するかどうか、<xref:System.Windows.Forms.BindingManagerBase>フォーム上の各コントロールが存在します。 この例では、それぞれを渡して<xref:System.Data.DataTable>で、<xref:System.Data.DataSet>メソッドにします。  
+  
+ [!code-cpp[Classic BindingContext.Contains Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic BindingContext.Contains Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BindingContext.Contains Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic BindingContext.Contains Example/CS/source.cs#1)]
+ [!code-vb[Classic BindingContext.Contains Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic BindingContext.Contains Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (object dataSource, string dataMember);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(object dataSource, string dataMember) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingContext.Contains(System.Object,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Object" />
+        <Parameter Name="dataMember" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource">データ ソースを表す <see cref="T:System.Object" />。</param>
+        <param name="dataMember">特定の解決に必要な情報<see cref="T:System.Windows.Forms.BindingManagerBase" />です。</param>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.Forms.BindingContext" />が含まれています、<see cref="T:System.Windows.Forms.BindingManagerBase" />指定したデータ ソースとデータ メンバーに関連付けられています。</summary>
+        <returns>
+          <see langword="true" />場合、 <see cref="T:System.Windows.Forms.BindingContext" /> 、指定されたを含む<see cref="T:System.Windows.Forms.BindingManagerBase" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください、<xref:System.Windows.Forms.Binding>できるデータ ソースの一覧、およびコントロールとデータ ソース間のバインディングを作成する方法についてのクラスです。  
+  
+ 参照してください、<xref:System.Windows.Forms.BindingContext.Item%2A>を取得する方法については、プロパティ、<xref:System.Windows.Forms.BindingManagerBase>データ ソースおよびデータ メンバーを使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.BindingContext.Contains%2A>メソッドを特定するかどうかをテストする<xref:System.Windows.Forms.BindingManagerBase>取得する前に存在する、<xref:System.Windows.Forms.BindingContext.Item%2A>プロパティです。  
+  
+ [!code-cpp[Classic BindingContext.Contains1 Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic BindingContext.Contains1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BindingContext.Contains1 Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic BindingContext.Contains1 Example/CS/source.cs#1)]
+ [!code-vb[Classic BindingContext.Contains1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic BindingContext.Contains1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.BindingContext.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションが読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          コレクションが読み取り専用の場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティはから派生<xref:System.Collections.ICollection>、常にオーバーライドと`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.BindingManagerBase this[object dataSource] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.BindingManagerBase Item(object)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.BindingContext.Item(System.Object)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.BindingManagerBase</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource">特定の関連付けられているデータ ソース<see cref="T:System.Windows.Forms.BindingManagerBase" />です。</param>
+        <summary>取得、<see cref="T:System.Windows.Forms.BindingManagerBase" />指定されたデータ ソースに関連付けられています。</summary>
+        <value>A<see cref="T:System.Windows.Forms.BindingManagerBase" />の指定したデータ ソース。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、このオーバー ロードを使用して、<xref:System.Windows.Forms.BindingManagerBase>するナビゲーション パスは不要です。 たとえば場合、<xref:System.Windows.Forms.BindingManagerBase>のセットを管理<xref:System.Windows.Forms.Binding>使用するオブジェクト、<xref:System.Collections.ArrayList>または<xref:System.Data.DataTable>として、 <xref:System.Windows.Forms.Binding.DataSource%2A>、ナビゲーション パスは必要ありません。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.BindingContext.Item%2A>プロパティは常に返します、 <xref:System.Windows.Forms.BindingManagerBase>、返すことはありませんし`null`です。  
+  
+ 参照してください、<xref:System.Windows.Forms.Binding>できるデータ ソースの一覧、およびコントロールとデータ ソース間のバインディングを作成する方法についてのクラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、3 つを返します<xref:System.Windows.Forms.BindingManagerBase>オブジェクト: のいずれか、 <xref:System.Data.DataView>,、1 つの<xref:System.Collections.ArrayList>のいずれかと、<xref:System.Windows.Forms.Binding.DataSource%2A>の<xref:System.Windows.Forms.Binding>に属している、<xref:System.Windows.Forms.TextBox>コントロール。  
+  
+ [!code-cpp[Classic BindingContext.this Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic BindingContext.this Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BindingContext.this Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic BindingContext.this Example/CS/source.cs#1)]
+ [!code-vb[Classic BindingContext.this Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic BindingContext.this Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.BindingManagerBase this[object dataSource, string dataMember] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.BindingManagerBase Item(object, string)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.BindingContext.Item(System.Object,System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.BindingManagerBase</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Object" />
+        <Parameter Name="dataMember" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource">特定の関連付けられているデータ ソース<see cref="T:System.Windows.Forms.BindingManagerBase" />です。</param>
+        <param name="dataMember">特定の解決の情報を含むナビゲーション パス<see cref="T:System.Windows.Forms.BindingManagerBase" />です。</param>
+        <summary>取得、<see cref="T:System.Windows.Forms.BindingManagerBase" />指定したデータ ソースとデータ メンバーに関連付けられています。</summary>
+        <value><see cref="T:System.Windows.Forms.BindingManagerBase" />指定したデータ ソースとデータ メンバーにします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードするときに使用する、<xref:System.Windows.Forms.BindingManagerBase>のセットを管理<xref:System.Windows.Forms.Binding>オブジェクト データ ソースが複数のオブジェクトが含まれます。 たとえば、<xref:System.Data.DataSet>いくつかを含めることができます<xref:System.Data.DataTable>によってリンクされているオブジェクト<xref:System.Data.DataRelation>オブジェクト。 このような場合は、ナビゲーション パスが有効にする必要な<xref:System.Windows.Forms.BindingContext>を返す、正しい<xref:System.Windows.Forms.BindingManagerBase>です。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.BindingContext.Item%2A>プロパティは常に返します、 <xref:System.Windows.Forms.BindingManagerBase>、ときに、`dataMember`パラメーターが無効です。 返されません`null`です。  
+  
+ 参照してください、<xref:System.Windows.Forms.Binding>できるデータ ソースの一覧、およびコントロールとデータ ソース間のバインディングを作成する方法についてのクラスです。  
+  
+ 場合、必要な<xref:System.Windows.Forms.BindingManagerBase>管理の一覧は、ナビゲーション パスは一覧で終わってもする必要があります。 たとえば、次の c# コードがバインドされて、<xref:System.Windows.Forms.TextBox>の orders テーブルで、注文日を制御します。 ナビゲーション パスが含まれる、 <xref:System.Data.DataTable.TableName%2A>、 <xref:System.Data.DataRelation.RelationName%2A>、および<xref:System.Data.DataColumn.ColumnName%2A>です。 ただし、<xref:System.Windows.Forms.BindingManagerBase>のみを使用して取得する必要があります、<xref:System.Data.DataTable.TableName%2A>と<xref:System.Data.DataRelation.RelationName%2A>(これは一覧に解決されます)。  
+  
+```  
+// The navigation path for a Binding ends with a property.  
+textBox1.DataBindings.Add  
+("Text", dataSet1, "Customers.custToOrders.OrderDate");  
+// The navigation path for the BindingManagerBase ends with a list.  
+BindingManagerBase bmOrders = this.BindingContext  
+[dataSet1, "Customers.custToOrders"];  
+```  
+  
+ 返すときに、<xref:System.Windows.Forms.BindingManagerBase>と同じデータ ソースを使用する必要があります、<xref:System.Windows.Forms.Binding>およびナビゲーション パスのみを変更します。  
+  
+ 使用して、<xref:System.Windows.Forms.BindingContext.Contains%2A>メソッドかどうかを必要な<xref:System.Windows.Forms.BindingManagerBase>既に存在します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.BindingContext.Item%2A>を取得する、<xref:System.Windows.Forms.BindingManagerBase>の特定のバインディングです。 処理する方法も示しています、<xref:System.Windows.Forms.BindingManagerBase.BindingComplete>イベントを<xref:System.Windows.Forms.BindingManagerBase>同期を保つ複数のコントロールを同じデータ ソースにバインドされたコントロールの値のいずれかが変更されたとき。 この例を実行するには、Windows フォームと呼び出しにコードを貼り付けます、`InitializeControlsAndData`フォームのコンス トラクターからのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント処理メソッドです。  
+  
+ [!code-csharp[System.Windows.Forms.BindingSourceMultipleControls#11](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.BindingSourceMultipleControls/CS/Form1.cs#11)]
+ [!code-vb[System.Windows.Forms.BindingSourceMultipleControls#11](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.BindingSourceMultipleControls/VB/Form1.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception">指定した<paramref name="dataMember" />データ ソース内に存在しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCollectionChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnCollectionChanged (System.ComponentModel.CollectionChangeEventArgs ccevent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnCollectionChanged(class System.ComponentModel.CollectionChangeEventArgs ccevent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingContext.OnCollectionChanged(System.ComponentModel.CollectionChangeEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ccevent" Type="System.ComponentModel.CollectionChangeEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="ccevent">イベント データを格納している <see cref="T:System.ComponentModel.CollectionChangeEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.BindingContext.CollectionChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ <xref:System.Windows.Forms.BindingContext.OnCollectionChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.BindingContext.OnCollectionChanged(System.ComponentModel.CollectionChangeEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.BindingContext.OnCollectionChanged(System.ComponentModel.CollectionChangeEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="protected void Remove (object dataSource);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void Remove(object dataSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingContext.Remove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource">データ ソースに関連付けられている、<see cref="T:System.Windows.Forms.BindingManagerBase" />を削除します。</param>
+        <summary>削除、<see cref="T:System.Windows.Forms.BindingManagerBase" />指定されたデータ ソースに関連付けられています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveCore">
+      <MemberSignature Language="C#" Value="protected virtual void RemoveCore (object dataSource);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void RemoveCore(object dataSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingContext.RemoveCore(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource">データ ソースに関連付けられている、<see cref="T:System.Windows.Forms.BindingManagerBase" />を削除します。</param>
+        <summary>削除、<see cref="T:System.Windows.Forms.BindingManagerBase" />指定されたデータ ソースに関連付けられています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.CopyTo">
+      <MemberSignature Language="C#" Value="void ICollection.CopyTo (Array ar, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.ICollection.CopyTo(class System.Array ar, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingContext.System#Collections#ICollection#CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ar" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ar"><see cref="T:System.Array" />にコピーします。</param>
+        <param name="index">コレクションのインデックスからコピーを開始します。</param>
+        <summary>コレクションのインデックスを開始位置として、指定した配列にコレクション要素をコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[Classic BindingContext.ICollection.CopyTo Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic BindingContext.ICollection.CopyTo Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BindingContext.ICollection.CopyTo Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic BindingContext.ICollection.CopyTo Example/CS/source.cs#1)]
+ [!code-vb[Classic BindingContext.ICollection.CopyTo Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic BindingContext.ICollection.CopyTo Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.Count">
+      <MemberSignature Language="C#" Value="int System.Collections.ICollection.Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 System.Collections.ICollection.Count" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.BindingContext.System#Collections#ICollection#Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>合計数を取得<see cref="T:System.Windows.Forms.CurrencyManager" />によって管理されるオブジェクト、<see cref="T:System.Windows.Forms.BindingContext" />です。</summary>
+        <value>によって管理されるデータ ソースの数、<see cref="T:System.Windows.Forms.BindingContext" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の数を返します<xref:System.Windows.Forms.CurrencyManager>によって管理されるオブジェクト、<xref:System.Windows.Forms.BindingContext>です。  
+  
+ [!code-cpp[Classic BindingContext.ICollection.Count Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic BindingContext.ICollection.Count Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BindingContext.ICollection.Count Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic BindingContext.ICollection.Count Example/CS/source.cs#1)]
+ [!code-vb[Classic BindingContext.ICollection.Count Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic BindingContext.ICollection.Count Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.IsSynchronized">
+      <MemberSignature Language="C#" Value="bool System.Collections.ICollection.IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.ICollection.IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.BindingContext.System#Collections#ICollection#IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションの同期がとられているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />コレクションがスレッド セーフである場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティはから派生<xref:System.Collections.ICollection>、常にオーバーライドと`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.SyncRoot">
+      <MemberSignature Language="C#" Value="object System.Collections.ICollection.SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.ICollection.SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.BindingContext.System#Collections#ICollection#SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>同期 (スレッド セーフティ) に使用するオブジェクトを取得します。</summary>
+        <value>このプロパティはから派生<see cref="T:System.Collections.ICollection" />、常にオーバーライドと<see langword="null" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingContext.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションの列挙子を取得します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />のコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.IEnumerator>によって返される、<xref:System.Windows.Forms.BindingContext.System%23Collections%23IEnumerable%23GetEnumerator%2A>メソッドが管理するコレクションを反復処理することができます、<xref:System.Windows.Forms.BindingContext>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.BindingContext.System%23Collections%23IEnumerable%23GetEnumerator%2A>を返すメソッドを<xref:System.Collections.IEnumerator>の<xref:System.Windows.Forms.BindingContext>です。  
+  
+ [!code-cpp[Classic BindingContext.IEnumerable.GetEnumerator Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic BindingContext.IEnumerable.GetEnumerator Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BindingContext.IEnumerable.GetEnumerator Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic BindingContext.IEnumerable.GetEnumerator Example/CS/source.cs#1)]
+ [!code-vb[Classic BindingContext.IEnumerable.GetEnumerator Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic BindingContext.IEnumerable.GetEnumerator Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateBinding">
+      <MemberSignature Language="C#" Value="public static void UpdateBinding (System.Windows.Forms.BindingContext newBindingContext, System.Windows.Forms.Binding binding);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void UpdateBinding(class System.Windows.Forms.BindingContext newBindingContext, class System.Windows.Forms.Binding binding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingContext.UpdateBinding(System.Windows.Forms.BindingContext,System.Windows.Forms.Binding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newBindingContext" Type="System.Windows.Forms.BindingContext" />
+        <Parameter Name="binding" Type="System.Windows.Forms.Binding" />
+      </Parameters>
+      <Docs>
+        <param name="newBindingContext">新しい<see cref="T:System.Windows.Forms.BindingContext" />に関連付ける、<see cref="T:System.Windows.Forms.Binding" />です。</param>
+        <param name="binding"><see cref="T:System.Windows.Forms.Binding" />に関連付ける新しい<see cref="T:System.Windows.Forms.BindingContext" />です。</param>
+        <summary>関連付けます、<see cref="T:System.Windows.Forms.Binding" />を新しい<see cref="T:System.Windows.Forms.BindingContext" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを実装するコンポーネントのバインドを更新、<xref:System.Windows.Forms.IBindableComponent>ときに、その<xref:System.Windows.Forms.BindingContext>変更します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

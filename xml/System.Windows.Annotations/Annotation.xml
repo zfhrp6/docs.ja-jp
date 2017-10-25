@@ -1,0 +1,433 @@
+<Type Name="Annotation" FullName="System.Windows.Annotations.Annotation">
+  <TypeSignature Language="C#" Value="public sealed class Annotation : System.Xml.Serialization.IXmlSerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Annotation extends System.Object implements class System.Xml.Serialization.IXmlSerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Annotations.Annotation" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Xml.Serialization.IXmlSerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Xml.Serialization.XmlRoot(ElementName="Annotation", Namespace="http://schemas.microsoft.com/windows/annotations/2003/11/core")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>注釈の Microsoft フレームワークでユーザーの注釈を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Annotations.Annotation>関連付けられているすべてのアンカーとコンテンツ データの単一の注釈を表します。  注釈は、次の主な要素で構成されます。  
+  
+-   0、1 つ、以上<xref:System.Windows.Annotations.Annotation.Anchors%2A>どのような注釈が付けられたを指定します。  
+  
+-   0、1 つ、以上<xref:System.Windows.Annotations.Annotation.Cargos%2A>注釈のユーザー データが含まれています。  
+  
+-   0、1 つ、以上<xref:System.Windows.Annotations.Annotation.Authors%2A>注釈を作成したユーザーを定義します。  
+  
+-   A<xref:System.Windows.Annotations.Annotation.CreationTime%2A>注釈が作成された日時を指定します。  
+  
+-   A<xref:System.Windows.Annotations.Annotation.LastModificationTime%2A>注釈が最後に更新された日時を指定します。  
+  
+-   一意の注釈<xref:System.Windows.Annotations.Annotation.Id%2A>(、 [!INCLUDE[TLA#tla_guid](~/includes/tlasharptla-guid-md.md)])。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Annotation ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.Annotation.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>このコンストラクターは、[!INCLUDE[TLA#tla_wpf](~/includes/tlasharptla-wpf-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  アプリケーションは、パラメーターの既定のコンス トラクターが、インスタンスを完全に初期化できませんせず、既定のコンス トラクターを使用しないでください。 新しい<xref:System.Windows.Annotations.Annotation>アプリケーションは、パラメーターに基づくコンス トラクターのいずれかを使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Annotation (System.Xml.XmlQualifiedName annotationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlQualifiedName annotationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.Annotation.#ctor(System.Xml.XmlQualifiedName)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="annotationType" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="annotationType">注釈の型名。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Annotations.Annotation" />を指定された型名と名前空間を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Annotation (System.Xml.XmlQualifiedName annotationType, Guid id, DateTime creationTime, DateTime lastModificationTime);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlQualifiedName annotationType, valuetype System.Guid id, valuetype System.DateTime creationTime, valuetype System.DateTime lastModificationTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.Annotation.#ctor(System.Xml.XmlQualifiedName,System.Guid,System.DateTime,System.DateTime)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="annotationType" Type="System.Xml.XmlQualifiedName" />
+        <Parameter Name="id" Type="System.Guid" />
+        <Parameter Name="creationTime" Type="System.DateTime" />
+        <Parameter Name="lastModificationTime" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="annotationType">注釈の型名。</param>
+        <param name="id">[!INCLUDE[TLA#tla_guid](~/includes/tlasharptla-guid-md.md)]の注釈。</param>
+        <param name="creationTime">日付と、注釈が最初に作成された時刻。</param>
+        <param name="lastModificationTime">日付と、注釈の最終変更時刻。</param>
+        <summary>このコンストラクターは、[!INCLUDE[TLA#tla_wpf](~/includes/tlasharptla-wpf-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  このコンス トラクターを使って、[!INCLUDE[TLA#tla_wpf](~/includes/tlasharptla-wpf-md.md)]シリアル化インフラストラクチャ通常の状況で直接は使用できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AnchorChanged">
+      <MemberSignature Language="C#" Value="public event System.Windows.Annotations.AnnotationResourceChangedEventHandler AnchorChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Annotations.AnnotationResourceChangedEventHandler AnchorChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Annotations.Annotation.AnchorChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Annotations.AnnotationResourceChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アンカーを追加、削除、または注釈の一覧で、変更されたときに発生<see cref="P:System.Windows.Annotations.Annotation.Anchors" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アンカーを追加または削除するときだけでなく<xref:System.Windows.Annotations.Annotation.AnchorChanged>への変更など、アンカー サブパートに変更を加えるで発生した、<xref:System.Windows.Annotations.ContentLocatorPart>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Anchors">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.Windows.Annotations.AnnotationResource&gt; Anchors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.Windows.Annotations.AnnotationResource&gt; Anchors" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Annotations.Annotation.Anchors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.Windows.Annotations.AnnotationResource&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>0 個以上のコレクションを取得<see cref="T:System.Windows.Annotations.AnnotationResource" />注釈が付けられたデータ関係のある選択肢を定義する要素を固定します。</summary>
+        <value>0 個以上のコレクション<see cref="T:System.Windows.Annotations.AnnotationResource" />要素を固定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各<xref:System.Windows.Annotations.AnnotationResource>で、<xref:System.Windows.Annotations.Annotation.Anchors%2A>コレクションを識別、注釈がバインドされているデータを選択する (つまり、「データの選択注釈が設定されている」) です。  ほとんどの注釈が 1 つのデータを選択するを参照し、1 つのアンカーを含む、 <xref:System.Windows.Annotations.AnnotationResource>、複数のアンカーは、単一の注釈が選択した複数のデータを指す場合に発生することができます。  
+  
+ 返された<xref:System.Windows.Annotations.Annotation.Anchors%2A>コレクションが null ではありません。 ただし、コレクションがゼロ要素を含めることがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AnnotationType">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlQualifiedName AnnotationType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlQualifiedName AnnotationType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Annotations.Annotation.AnnotationType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlQualifiedName</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xml.XmlQualifiedName" />の注釈の種類。</summary>
+        <value>この種類の注釈の XML 修飾名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される注釈の種類は、<xref:System.Xml.XmlQualifiedName>へのパラメーターとして渡された名前、<xref:System.Windows.Annotations.Annotation.%23ctor%2A>コンス トラクターです。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Annotations.Annotation.AnnotationType%2A>返します`null`パラメーターを指定せず、既定のコンス トラクターを使用して注釈が正しく構築された場合。  (パラメーターなしの既定のコンス トラクター、インスタンスを完全に初期化することはできず、のみ内部的に使用される XML シリアル化と組み合わせて)。新しい注釈を作成するアプリケーションを使用する必要があります、<xref:System.Windows.Annotations.Annotation.%23ctor%2A>を受け取るコンス トラクター、<xref:System.Xml.XmlQualifiedName>をパラメーターとして。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthorChanged">
+      <MemberSignature Language="C#" Value="public event System.Windows.Annotations.AnnotationAuthorChangedEventHandler AuthorChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Annotations.AnnotationAuthorChangedEventHandler AuthorChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Annotations.Annotation.AuthorChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Annotations.AnnotationAuthorChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>作成者が追加、削除、または注釈の一覧で、変更されたときに発生<see cref="P:System.Windows.Annotations.Annotation.Authors" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Authors">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;string&gt; Authors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;string&gt; Authors" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Annotations.Annotation.Authors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文字列の 0 個以上の作成者のコレクションを取得の作成者を識別する、<see cref="T:System.Windows.Annotations.Annotation" />です。</summary>
+        <value>0 個以上の作成者文字列のコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返された<xref:System.Windows.Annotations.Annotation.Authors%2A>コレクションは決して`null`。 ただし、作成者が指定されていない場合、コレクションは 0 個の要素を含めることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CargoChanged">
+      <MemberSignature Language="C#" Value="public event System.Windows.Annotations.AnnotationResourceChangedEventHandler CargoChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Annotations.AnnotationResourceChangedEventHandler CargoChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Annotations.Annotation.CargoChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Annotations.AnnotationResourceChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カーゴが追加、削除、または注釈の一覧で、変更されたときに発生<see cref="P:System.Windows.Annotations.Annotation.Cargos" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カーゴが追加または削除されたときだけでなく<xref:System.Windows.Annotations.Annotation.CargoChanged>への変更などの積み荷サブパートに変更を加えるで発生した、<xref:System.Xml.XmlElement>で、<xref:System.Windows.Annotations.AnnotationResource.Contents%2A>カーゴのコレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cargos">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.Windows.Annotations.AnnotationResource&gt; Cargos { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.Windows.Annotations.AnnotationResource&gt; Cargos" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Annotations.Annotation.Cargos" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.Windows.Annotations.AnnotationResource&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>0 個以上のコレクションを取得<see cref="T:System.Windows.Annotations.AnnotationResource" />データ注釈を含むカーゴ要素。</summary>
+        <value>0 個以上のコレクション<see cref="T:System.Windows.Annotations.AnnotationResource" />カーゴ要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各<xref:System.Windows.Annotations.AnnotationResource>で、<xref:System.Windows.Annotations.Annotation.Cargos%2A>コレクションには、注釈のユーザー定義のデータが含まれています。  
+  
+ 返された<xref:System.Windows.Annotations.Annotation.Cargos%2A>コレクションが null ではありません; ただし、コレクションには要素が含まれます 0 個の注釈のユーザー データがない場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreationTime">
+      <MemberSignature Language="C#" Value="public DateTime CreationTime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime CreationTime" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Annotations.Annotation.CreationTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>日付と、注釈が作成された時刻を取得します。</summary>
+        <value>日付と注釈が作成された時刻。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Windows.Annotations.Annotation.CreationTime%2A>返します<xref:System.DateTime?displayProperty=nameWithType>注釈既定値を使用して正常に作成されたかどうか<xref:System.Windows.Annotations.Annotation>パラメーターなしのコンス トラクターです。  <xref:System.Windows.Annotations.Annotation>パラメーターを持つコンス トラクターは、新しい注釈を正しくインスタンス化するために使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSchema">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchema GetSchema ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Xml.Schema.XmlSchema GetSchema() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.Annotation.GetSchema" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchema</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>常に <see langword="null" /> を返します。  参照してください[注釈スキーマ](~/docs/framework/wpf/advanced/annotations-schema.md)のスキーマの詳細。</summary>
+        <returns>常に <see langword="null" />。  参照してください[注釈スキーマ](~/docs/framework/wpf/advanced/annotations-schema.md)のスキーマの詳細。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public Guid Id { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid Id" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Annotations.Annotation.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[!INCLUDE[TLA#tla_guid](~/includes/tlasharptla-guid-md.md)] の <see cref="T:System.Windows.Annotations.Annotation" /> を取得します。</summary>
+        <value>[!INCLUDE[TLA2#tla_guid](~/includes/tla2sharptla-guid-md.md)]注釈のです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Windows.Annotations.Annotation.Id%2A>返します<xref:System.Guid.Empty>注釈が既定値を使用してインスタンス化される場合<xref:System.Windows.Annotations.Annotation>パラメーターなしのコンス トラクターです。  <xref:System.Windows.Annotations.Annotation>パラメーターを持つコンス トラクターは、有効な新しい注釈を正しくインスタンス化するために使用する必要があります[!INCLUDE[TLA2#tla_guid](~/includes/tla2sharptla-guid-md.md)]です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastModificationTime">
+      <MemberSignature Language="C#" Value="public DateTime LastModificationTime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime LastModificationTime" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Annotations.Annotation.LastModificationTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>日付と、注釈が最後に変更された時刻を取得します。</summary>
+        <value>注釈が最後に変更された日付と時刻。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadXml">
+      <MemberSignature Language="C#" Value="public void ReadXml (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ReadXml(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.Annotation.ReadXml(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">注釈の逆シリアル化のために使用する XML リーダー。</param>
+        <summary>指定した <see cref="T:System.Xml.XmlReader" /> から <see cref="T:System.Windows.Annotations.Annotation" /> を逆シリアル化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Xml.XmlException"><see cref="T:System.Windows.Annotations.Annotation" /> についてシリアル化した XML が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteXml">
+      <MemberSignature Language="C#" Value="public void WriteXml (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteXml(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.Annotation.WriteXml(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">注釈のシリアル化を行うために使用する XML ライター。</param>
+        <summary>指定した <see cref="T:System.Xml.XmlWriter" /> に注釈をシリアル化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Annotations.Annotation.AnnotationType" /> が有効ではありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

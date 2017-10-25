@@ -1,0 +1,285 @@
+<Type Name="StackFrame" FullName="Microsoft.JScript.StackFrame">
+  <TypeSignature Language="C#" Value="public sealed class StackFrame : Microsoft.JScript.ScriptObject, Microsoft.JScript.IActivationObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit StackFrame extends Microsoft.JScript.ScriptObject implements class Microsoft.JScript.IActivationObject" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.JScript.StackFrame" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.JScript</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.JScript.ScriptObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>Microsoft.JScript.IActivationObject</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>コードを実行するためのスタック フレームを表します。 このクラスには、スコープを解決するためのメソッドが含まれています。 これは、コンパイルおよび実行時の状態のカテゴリに属しています。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="closureInstance">
+      <MemberSignature Language="C#" Value="public object closureInstance;" />
+      <MemberSignature Language="ILAsm" Value=".field public object closureInstance" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.JScript.StackFrame.closureInstance" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のスタック フレームの呼び出し元への参照を格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオブジェクトの種類には、 <xref:Microsoft.JScript.StackFrame>、 <xref:Microsoft.JScript.JSObject>、 <xref:Microsoft.JScript.ScriptFunction>、および<xref:System.RuntimeTypeHandle>です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetDefaultThisObject">
+      <MemberSignature Language="C#" Value="public object GetDefaultThisObject ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetDefaultThisObject() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StackFrame.GetDefaultThisObject" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の既定のスコープは、どちらかになります、コンテナー内のオブジェクトを取得、<see langword="with" />ステートメントのスコープまたはグローバル スコープ。</summary>
+        <returns>現在の既定のスコープです。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetField">
+      <MemberSignature Language="C#" Value="public System.Reflection.FieldInfo GetField (string name, int lexLevel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.FieldInfo GetField(string name, int32 lexLevel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StackFrame.GetField(System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.FieldInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="lexLevel" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="name">検索するフィールドの名前。</param>
+        <param name="lexLevel">検索する構文レベル。</param>
+        <summary>スコープの階層を検索することで、指定した名前を持つフィールドを取得します。 このメソッドは、構文のレベルで指定されているスコープのみを検索します。</summary>
+        <returns>すべての場合は null です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetGlobalScope">
+      <MemberSignature Language="C#" Value="public Microsoft.JScript.GlobalScope GetGlobalScope ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Microsoft.JScript.GlobalScope GetGlobalScope() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StackFrame.GetGlobalScope" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.JScript.GlobalScope</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>静的変数、たとえば、モジュール スコープを含むスコープが見つかるまで、スコープの階層を検索することにより、グローバル スコープを取得します。</summary>
+        <returns>グローバル スコープです。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetMember">
+      <MemberSignature Language="C#" Value="public override System.Reflection.MemberInfo[] GetMember (string name, System.Reflection.BindingFlags bindingAttr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Reflection.MemberInfo[] GetMember(string name, valuetype System.Reflection.BindingFlags bindingAttr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StackFrame.GetMember(System.String,System.Reflection.BindingFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MemberInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+      </Parameters>
+      <Docs>
+        <param name="name">検索するメンバーの名前。</param>
+        <param name="bindingAttr">リフレクションによるメンバーの検索を実行する方法を指定する列挙値のビットごとの組み合わせ。</param>
+        <summary>配列を取得<see cref="T:System.Reflection.MemberInfo" />指定した名前に一致するすべてのメンバーに対応するオブジェクト。</summary>
+        <returns>一致するオブジェクトの配列、<paramref name="name" />引数。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetMembers">
+      <MemberSignature Language="C#" Value="public override System.Reflection.MemberInfo[] GetMembers (System.Reflection.BindingFlags bindingAttr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Reflection.MemberInfo[] GetMembers(valuetype System.Reflection.BindingFlags bindingAttr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StackFrame.GetMembers(System.Reflection.BindingFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MemberInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+      </Parameters>
+      <Docs>
+        <param name="bindingAttr">リフレクションによるメンバーの検索を実行する方法を指定する列挙値のビットごとの組み合わせ。</param>
+        <summary>配列を取得<see cref="T:System.Reflection.MemberInfo" />現在のオブジェクトのすべてのメンバーに対応するオブジェクト。</summary>
+        <returns>現在のオブジェクトのすべてのメンバーを含むオブジェクトの配列。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetMemberValue">
+      <MemberSignature Language="C#" Value="public object GetMemberValue (string name, int lexlevel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetMemberValue(string name, int32 lexlevel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StackFrame.GetMemberValue(System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="lexlevel" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="name">検索するメンバーの名前。</param>
+        <param name="lexlevel">検索する構文レベル。</param>
+        <summary>スコープの階層を検索することで、指定されたメンバーの値を取得します。 このメソッドは、構文のレベルで指定されているスコープのみを検索します。</summary>
+        <returns>メンバーの値<paramref name="name" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="localVars">
+      <MemberSignature Language="C#" Value="public object[] localVars;" />
+      <MemberSignature Language="ILAsm" Value=".field public object[] localVars" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.JScript.StackFrame.localVars" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このスタック フレームのローカル変数を格納します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Microsoft.JScript.IActivationObject.GetLocalField">
+      <MemberSignature Language="C#" Value="System.Reflection.FieldInfo IActivationObject.GetLocalField (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Reflection.FieldInfo Microsoft.JScript.IActivationObject.GetLocalField(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StackFrame.Microsoft#JScript#IActivationObject#GetLocalField(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.FieldInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">フィールドの名前。</param>
+        <summary>指定した名前を持つフィールドのローカル宣言を取得します。 このメソッドは、コンパイル時エラー チェックのために使用されます。</summary>
+        <returns>フィールドのローカル宣言します。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="PushStackFrameForMethod">
+      <MemberSignature Language="C#" Value="public static void PushStackFrameForMethod (object thisob, Microsoft.JScript.JSLocalField[] fields, Microsoft.JScript.Vsa.VsaEngine engine);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void PushStackFrameForMethod(object thisob, class Microsoft.JScript.JSLocalField[] fields, class Microsoft.JScript.Vsa.VsaEngine engine) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StackFrame.PushStackFrameForMethod(System.Object,Microsoft.JScript.JSLocalField[],Microsoft.JScript.Vsa.VsaEngine)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+        <Parameter Name="fields" Type="Microsoft.JScript.JSLocalField[]" />
+        <Parameter Name="engine" Type="Microsoft.JScript.Vsa.VsaEngine" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">メソッドを格納するオブジェクト。</param>
+        <param name="fields">スタック フレームのローカル変数です。</param>
+        <param name="engine">スクリプト エンジンへの参照。</param>
+        <summary>新たに作成<see cref="T:Microsoft.JScript.StackFrame" />オブジェクト メソッドのグローバル スコープのスタックにプッシュします。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="PushStackFrameForStaticMethod">
+      <MemberSignature Language="C#" Value="public static void PushStackFrameForStaticMethod (RuntimeTypeHandle thisclass, Microsoft.JScript.JSLocalField[] fields, Microsoft.JScript.Vsa.VsaEngine engine);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void PushStackFrameForStaticMethod(valuetype System.RuntimeTypeHandle thisclass, class Microsoft.JScript.JSLocalField[] fields, class Microsoft.JScript.Vsa.VsaEngine engine) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StackFrame.PushStackFrameForStaticMethod(System.RuntimeTypeHandle,Microsoft.JScript.JSLocalField[],Microsoft.JScript.Vsa.VsaEngine)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisclass" Type="System.RuntimeTypeHandle" />
+        <Parameter Name="fields" Type="Microsoft.JScript.JSLocalField[]" />
+        <Parameter Name="engine" Type="Microsoft.JScript.Vsa.VsaEngine" />
+      </Parameters>
+      <Docs>
+        <param name="thisclass">静的メソッドを含むクラスです。</param>
+        <param name="fields">スタック フレームのローカル変数です。</param>
+        <param name="engine">スクリプト エンジンへの参照。</param>
+        <summary>新たに作成<see cref="T:Microsoft.JScript.StackFrame" />オブジェクトの静的メソッドをグローバル スコープのスタックにプッシュします。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

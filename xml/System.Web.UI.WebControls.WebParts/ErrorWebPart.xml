@@ -1,0 +1,293 @@
+<Type Name="ErrorWebPart" FullName="System.Web.UI.WebControls.WebParts.ErrorWebPart">
+  <TypeSignature Language="C#" Value="public class ErrorWebPart : System.Web.UI.WebControls.WebParts.ProxyWebPart, System.Web.UI.WebControls.WebParts.ITrackingPersonalizable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ErrorWebPart extends System.Web.UI.WebControls.WebParts.ProxyWebPart implements class System.Web.UI.WebControls.WebParts.ITrackingPersonalizable" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.ErrorWebPart" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.WebParts.ProxyWebPart</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.WebControls.WebParts.ITrackingPersonalizable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>動的な <see cref="T:System.Web.UI.WebControls.WebParts.WebPart" /> コントロールの新しいインスタンスの読み込みまたは作成に失敗したときに、プレースホルダとして Web ページに挿入されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ErrorWebPart>クラスは、Web パーツ コントロールのプレース ホルダーとしてセットで使用する<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールをページに追加できませんでした。 場合、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>読み込みまたは動的の新しいインスタンスを作成しようとコントロール<xref:System.Web.UI.WebControls.WebParts.WebPart>ゾーン、および、何らかの理由が失敗でコントロール、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>を呼び出して、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.CreateErrorWebPart%2A>メソッド、および挿入、<xref:System.Web.UI.WebControls.WebParts.ErrorWebPart>コントロールに失敗したコントロールの代わりにします。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.ErrorWebPart>情報を保持する以前から存在パーソナル化状態が存在する可能性がありますをユーザー コントロールにコントロールを挿入します。 たとえば、ある、<xref:System.Web.UI.WebControls.WebParts.WebPart>プロパティがある、パーソナル化できるようにユーザーが独自の ZIP コードを保存し、コントロールに自動的に情報を表示する天気その郵便のたびに、ユーザー コントロールがページにアクセスします。 ある時点で問題が生じた場合気象コントロールを特定の要求時に読み込むことができませんし、まだ、ページの残りの部分は正常に読み込む、カスタムのパーソナル化データのユーザーが保存されているように、コントロールが失われる、次回、ページのパーソナル化データを保存します。 挿入することで、<xref:System.Web.UI.WebControls.WebParts.ErrorWebPart>コントロール失敗したコントロールの代わりに、問題が発生すると、ユーザーに通知して、問題を修正するまでに失敗したコントロールにユーザーのパーソナル化データを保持するために設定する Web パーツ コントロールの機構も用意されています。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.ErrorWebPart>クラスから派生、<xref:System.Web.UI.WebControls.WebParts.ProxyWebPart>クラスのいくつかの型を他の種類の一時的なプレース ホルダーを使用するように設計のいずれか。 クラスのインスタンスを作成する、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールに使用してそのパブリック<xref:System.Web.UI.WebControls.WebParts.ErrorWebPart.%23ctor%2A>コンス トラクターです。 コンス トラクターに渡すなど、ID、コントロールの元の型に障害が発生したコントロールのいくつかの詳細が必要です (失敗したコントロールは、サーバーか、ユーザー コントロールにラップ、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>オブジェクト)、(失敗したコントロールがユーザー コントロールの場合)、コントロールのソース ファイルを元のパスとの ID、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>オブジェクトが存在する場合。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.ErrorWebPart>クラスには、単一のパブリック プロパティと呼ばれる<xref:System.Web.UI.WebControls.WebParts.ErrorWebPart.ErrorMessage%2A>です。 開発者は、このコントロールが挿入されると、Web ページに表示されるプロパティに値を割り当てることができます。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.ErrorWebPart>クラスには 3 つの保護されたメソッドです。 <xref:System.Web.UI.WebControls.WebParts.ErrorWebPart.AddAttributesToRender%2A>メソッドからのスタイル特性には、<xref:System.Web.UI.WebControls.WebParts.WebZone.ErrorStyle%2A>オブジェクトに対して、<xref:System.Web.UI.WebControls.WebParts.WebZone>を読み込めませんでした。 コントロールを格納するゾーンです。 スタイル設定は、このオブジェクトに存在する場合、メソッドを適用する、<xref:System.Web.UI.WebControls.WebParts.ErrorWebPart>コントロール。 <xref:System.Web.UI.WebControls.WebParts.ErrorWebPart.EndLoadPersonalization%2A>メソッドのいくつかの重要な継承されたプロパティの設定、<xref:System.Web.UI.WebControls.WebParts.ErrorWebPart>をユーザーが非表示にする、最小限に抑え、編集、またはエクスポートすること、または変更によって、コントロールをカスタマイズすることを防ぐために、コントロール、<xref:System.Web.UI.WebControls.WebParts.Part.ChromeState%2A>値。 最後に、<xref:System.Web.UI.WebControls.WebParts.ErrorWebPart.RenderContents%2A>メソッド内の文字列の値のエンコード、<xref:System.Web.UI.WebControls.WebParts.ErrorWebPart.ErrorMessage%2A>レンダリングの問題またはスクリプティング攻撃を防ぐために、プロパティです。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>これで、条件、<see cref="T:System.Web.UI.WebControls.WebParts.ErrorWebPart" />コントロールが実際に挿入は比較的まれであるページを見つけてクラスから継承および拡張できるがいくつかの開発者はこれがきわめて重要なことです。 このクラスを拡張する理由の 1 つは、動作と外観をカスタマイズする場合、<see cref="T:System.Web.UI.WebControls.WebParts.ErrorWebPart" />コントロール。 たとえば、オーバーライドする可能性があります、<see cref="M:System.Web.UI.WebControls.WebParts.ErrorWebPart.EndLoadPersonalization" />メソッド、およびその他のスタイルを設定または他のプロパティで、<see cref="T:System.Web.UI.WebControls.WebParts.ErrorWebPart" />既に設定されているもの以外のコントロールです。  
+  
+ 必要とする、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />カスタムを使用するコントロールを<see cref="T:System.Web.UI.WebControls.WebParts.ErrorWebPart" />コントロール、する必要がありますを継承しても、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />クラスおよびオーバーライドその<see cref="M:System.Web.UI.WebControls.WebParts.WebPartManager.CreateErrorWebPart(System.String,System.String,System.String,System.String,System.String)" />メソッドです。 このメソッドでのメソッドの値を割り当てる必要があります<paramref name="errorMessage" />パラメーターを<see cref="P:System.Web.UI.WebControls.WebParts.ErrorWebPart.ErrorMessage" />プロパティ、カスタムの<see cref="T:System.Web.UI.WebControls.WebParts.ErrorWebPart" />を制御するため、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />コントロールが他のいくつかの場所からこのメソッドを呼び出すし、多くの場合を渡します、別のエラー メッセージの値です。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ErrorWebPart (string originalID, string originalTypeName, string originalPath, string genericWebPartID);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string originalID, string originalTypeName, string originalPath, string genericWebPartID) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ErrorWebPart.#ctor(System.String,System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="originalID" Type="System.String" />
+        <Parameter Name="originalTypeName" Type="System.String" />
+        <Parameter Name="originalPath" Type="System.String" />
+        <Parameter Name="genericWebPartID" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="originalID">障害が発生したコントロールのコントロール ID (一意の ID ではない) を示す文字列。 場合、<see cref="T:System.Web.UI.WebControls.WebParts.GenericWebPart" />コントロールは、エラーに関係する、ID がその子サーバー コントロールの ID。</param>
+        <param name="originalTypeName">示す文字列の名前、<see cref="T:System.Type" />失敗したコントロール。 場合、<see cref="T:System.Web.UI.WebControls.WebParts.GenericWebPart" />コントロールは、エラーに関係する、型の名前がその子サーバー コントロールの種類。</param>
+        <param name="originalPath">場合に、ユーザー コントロールへのパスを格納する文字列、<see cref="T:System.Web.UI.WebControls.WebParts.GenericWebPart" />失敗に関係する子ユーザー コントロールを含むコントロールです。</param>
+        <param name="genericWebPartID">ID を表す文字列、<see cref="T:System.Web.UI.WebControls.WebParts.GenericWebPart" />その種類のコントロールが読み込みまたはコントロールの作成の失敗に関係している場合を制御します。 コントロールから継承していないに必要です、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />基本クラスです。</param>
+        <summary>コントロールの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールの新しいインスタンスを作成する、<xref:System.Web.UI.WebControls.WebParts.ErrorWebPart>で読み込みまたは動的なのインスタンスを作成するために失敗したときの制御<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 動的コントロールは、プログラムでは、ページに追加されるユーザー コントロールのカタログからコントロールを追加しますが、スタティック コントロールではなくはで宣言されたや Web ページのマークアップ。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.ErrorWebPart.%23ctor%2A>メソッドは単に失敗したコントロールに関する情報を含む 4 つのパラメーターを渡す、基本クラスのインスタンスを作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAttributesToRender">
+      <MemberSignature Language="C#" Value="protected override void AddAttributesToRender (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AddAttributesToRender(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ErrorWebPart.AddAttributesToRender(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />を含む HTML 出力を表示します。</param>
+        <summary>特殊なエラーのスタイル属性を適用する<see cref="T:System.Web.UI.WebControls.WebParts.ErrorWebPart" />別のコントロールの代わりに、ページに挿入するオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ErrorWebPart.AddAttributesToRender%2A>メソッドは、スタイルの特性 (存在する場合) で定義されている、<xref:System.Web.UI.WebControls.WebParts.WebZone.ErrorStyle%2A>オブジェクトに対して、<xref:System.Web.UI.WebControls.WebParts.WebZone>を含むゾーン、<xref:System.Web.UI.WebControls.WebParts.ErrorWebPart>コントロール。 適用されて、スタイル、<xref:System.Web.UI.WebControls.WebParts.ErrorWebPart>レンダリングの前に制御します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>このメソッドをオーバーライドする派生で<see cref="T:System.Web.UI.WebControls.WebParts.ErrorWebPart" />クラス、開発者に適用されるスタイルの特性をカスタマイズする場合、<see cref="T:System.Web.UI.WebControls.WebParts.ErrorWebPart" />コントロール。  
+  
+ 必要とする、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />カスタムを使用するコントロールを<see cref="T:System.Web.UI.WebControls.WebParts.ErrorWebPart" />コントロール、する必要がありますを継承しても、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />クラスおよびオーバーライドその<see cref="M:System.Web.UI.WebControls.WebParts.WebPartManager.CreateErrorWebPart(System.String,System.String,System.String,System.String,System.String)" />メソッドです。 このメソッドでのメソッドの値を割り当てる必要があります<paramref name="errorMessage" />パラメーターを<see cref="P:System.Web.UI.WebControls.WebParts.ErrorWebPart.ErrorMessage" />プロパティ、カスタムの<see cref="T:System.Web.UI.WebControls.WebParts.ErrorWebPart" />を制御するため、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />コントロールを選択し、その他のいくつかの場所からこのメソッドを呼び出し通常を渡します、特定のエラー メッセージ。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="EndLoadPersonalization">
+      <MemberSignature Language="C#" Value="protected virtual void EndLoadPersonalization ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void EndLoadPersonalization() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ErrorWebPart.EndLoadPersonalization" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>いくつかの重要なプロパティの設定、<see cref="T:System.Web.UI.WebControls.WebParts.ErrorWebPart" />レンダリングでは、ユーザーが、コントロールのカスタマイズできないことを防止する前に制御します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ErrorWebPart.EndLoadPersonalization%2A>メソッドのプロパティの設定、<xref:System.Web.UI.WebControls.WebParts.ErrorWebPart>が表示される前に制御します。 これらのプロパティには、ユーザーが非表示にするを最小限に抑え、編集、またはコントロールをエクスポートまたは変更ができないようにその<xref:System.Web.UI.WebControls.WebParts.Part.ChromeState%2A>値。 ただし、ユーザーが終了または削除、<xref:System.Web.UI.WebControls.WebParts.ErrorWebPart>コントロールのインスタンス。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>このメソッドをオーバーライドすることで、継承された<see cref="T:System.Web.UI.WebControls.WebParts.ErrorWebPart" />コントロール。 開発者は、コントロールで、既定値など、追加のプロパティを設定するメソッドをオーバーライドする<see cref="P:System.Web.UI.WebControls.WebParts.ErrorWebPart.ErrorMessage" />プロパティの値。  
+  
+ 必要とする、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />カスタムを使用するコントロールを<see cref="T:System.Web.UI.WebControls.WebParts.ErrorWebPart" />コントロール、する必要がありますを継承しても、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />クラスおよびオーバーライドその<see cref="M:System.Web.UI.WebControls.WebParts.WebPartManager.CreateErrorWebPart(System.String,System.String,System.String,System.String,System.String)" />メソッドです。 このメソッドでのメソッドの値を割り当てる必要があります<paramref name="errorMessage" />パラメーターを<see cref="P:System.Web.UI.WebControls.WebParts.ErrorWebPart.ErrorMessage" />プロパティ、カスタムの<see cref="T:System.Web.UI.WebControls.WebParts.ErrorWebPart" />を制御するため、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />コントロールを選択し、その他のいくつかの場所からこのメソッドを呼び出し通常を渡します、特定のエラー メッセージ。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ErrorMessage">
+      <MemberSignature Language="C#" Value="public string ErrorMessage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ErrorMessage" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ErrorWebPart.ErrorMessage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または追加できませんでしたが正常にページに、コントロールの代わりに、Web ページに表示されるエラー メッセージを設定します。</summary>
+        <value>エラー メッセージのテキストを含む文字列。 既定値は、カルチャに固有のエラー メッセージです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ErrorWebPart.ErrorMessage%2A>プロパティできます値を代入する開発者によって時点で、カスタム エラー メッセージが表示されないようにここで、<xref:System.Web.UI.WebControls.WebParts.ErrorWebPart>ページにコントロールを挿入します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>開発者は、既定値を割り当てることができます、<see cref="P:System.Web.UI.WebControls.WebParts.ErrorWebPart.ErrorMessage" />拡張することによってプロパティ、<see cref="T:System.Web.UI.WebControls.WebParts.ErrorWebPart" />クラスと、<see cref="M:System.Web.UI.WebControls.WebParts.ErrorWebPart.#ctor(System.String,System.String,System.String,System.String)" />コンス トラクターまたはオーバーライドされた<see cref="M:System.Web.UI.WebControls.WebParts.ErrorWebPart.EndLoadPersonalization" />メソッド、プロパティの既定値を代入します。  
+  
+ 必要とする、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />カスタムを使用するコントロールを<see cref="T:System.Web.UI.WebControls.WebParts.ErrorWebPart" />コントロール、する必要がありますを継承しても、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />クラスおよびオーバーライドその<see cref="M:System.Web.UI.WebControls.WebParts.WebPartManager.CreateErrorWebPart(System.String,System.String,System.String,System.String,System.String)" />メソッドです。 このメソッドでのメソッドの値を割り当てる必要があります<paramref name="errorMessage" />パラメーターを<see cref="P:System.Web.UI.WebControls.WebParts.ErrorWebPart.ErrorMessage" />プロパティ、カスタムの<see cref="T:System.Web.UI.WebControls.WebParts.ErrorWebPart" />を制御するため、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />コントロールを選択し、その他のいくつかの場所からこのメソッドを呼び出し通常を渡します、特定のエラー メッセージ。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderContents">
+      <MemberSignature Language="C#" Value="protected override void RenderContents (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void RenderContents(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ErrorWebPart.RenderContents(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />エラー メッセージをエンコードします。</param>
+        <summary>文字列値をエンコード、<see cref="P:System.Web.UI.WebControls.WebParts.ErrorWebPart.ErrorMessage" />プロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ErrorWebPart.RenderContents%2A>メソッドは、文字列に割り当てられている、<xref:System.Web.UI.WebControls.WebParts.ErrorWebPart.ErrorMessage%2A>プロパティが正しくが表示されることを確認し、スクリプト インジェクション攻撃を防止します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.WebControls.WebParts.ITrackingPersonalizable.BeginLoad">
+      <MemberSignature Language="C#" Value="void ITrackingPersonalizable.BeginLoad ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.WebControls.WebParts.ITrackingPersonalizable.BeginLoad() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ErrorWebPart.System#Web#UI#WebControls#WebParts#ITrackingPersonalizable#BeginLoad" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメソッドが実装にのみ追加、<see cref="T:System.Web.UI.WebControls.WebParts.ITrackingPersonalizable" />インターフェイスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.WebControls.WebParts.ITrackingPersonalizable.BeginSave">
+      <MemberSignature Language="C#" Value="void ITrackingPersonalizable.BeginSave ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.WebControls.WebParts.ITrackingPersonalizable.BeginSave() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ErrorWebPart.System#Web#UI#WebControls#WebParts#ITrackingPersonalizable#BeginSave" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメソッドが実装にのみ追加、<see cref="T:System.Web.UI.WebControls.WebParts.ITrackingPersonalizable" />インターフェイスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.WebControls.WebParts.ITrackingPersonalizable.EndLoad">
+      <MemberSignature Language="C#" Value="void ITrackingPersonalizable.EndLoad ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.WebControls.WebParts.ITrackingPersonalizable.EndLoad() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ErrorWebPart.System#Web#UI#WebControls#WebParts#ITrackingPersonalizable#EndLoad" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>実装して、<see cref="T:System.Web.UI.WebControls.WebParts.ITrackingPersonalizable" />インターフェイスとの呼び出し、<see cref="M:System.Web.UI.WebControls.WebParts.ErrorWebPart.EndLoadPersonalization" />メソッドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.WebControls.WebParts.ITrackingPersonalizable.EndSave">
+      <MemberSignature Language="C#" Value="void ITrackingPersonalizable.EndSave ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.WebControls.WebParts.ITrackingPersonalizable.EndSave() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ErrorWebPart.System#Web#UI#WebControls#WebParts#ITrackingPersonalizable#EndSave" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメソッドが実装にのみ追加、<see cref="T:System.Web.UI.WebControls.WebParts.ITrackingPersonalizable" />インターフェイスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.WebControls.WebParts.ITrackingPersonalizable.TracksChanges">
+      <MemberSignature Language="C#" Value="bool System.Web.UI.WebControls.WebParts.ITrackingPersonalizable.TracksChanges { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Web.UI.WebControls.WebParts.ITrackingPersonalizable.TracksChanges" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ErrorWebPart.System#Web#UI#WebControls#WebParts#ITrackingPersonalizable#TracksChanges" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールがその変更の状態を追跡するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />Web パーツ コントロールが変更されています。 コントロールと見なされるタイミングを判断する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

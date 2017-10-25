@@ -1,0 +1,164 @@
+<Type Name="QualifiedAce" FullName="System.Security.AccessControl.QualifiedAce">
+  <TypeSignature Language="C#" Value="public abstract class QualifiedAce : System.Security.AccessControl.KnownAce" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit QualifiedAce extends System.Security.AccessControl.KnownAce" />
+  <TypeSignature Language="DocId" Value="T:System.Security.AccessControl.QualifiedAce" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security.AccessControl</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.AccessControl.KnownAce</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>修飾子を含むアクセス制御エントリ (ACE) を表します。 によって表される、修飾子、<see cref="T:System.Security.AccessControl.AceQualifier" />オブジェクト、かどうかは ACE へのアクセス許可、アクセスを拒否、システム監査の実行、またはシステム アラームの発生を指定します。 <see cref="T:System.Security.AccessControl.QualifiedAce" />クラスの抽象基本クラスは、<see cref="T:System.Security.AccessControl.CommonAce" />と<see cref="T:System.Security.AccessControl.ObjectAce" />クラスです。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AceQualifier">
+      <MemberSignature Language="C#" Value="public System.Security.AccessControl.AceQualifier AceQualifier { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.AccessControl.AceQualifier AceQualifier" />
+      <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.QualifiedAce.AceQualifier" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.AceQualifier</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>かどうかは ACE へのアクセス許可、アクセスを拒否、システム監査の実行、またはシステム アラームの発生を示す値を取得します。</summary>
+        <value>ACE にアクセスできるかどうかを指定する値がアクセスを拒否するには、システム監査の実行、またはシステム アラームの発生します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOpaque">
+      <MemberSignature Language="C#" Value="public byte[] GetOpaque ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int8[] GetOpaque() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.QualifiedAce.GetOpaque" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>これに関連付けられている不透明なコールバック データを返す<see cref="T:System.Security.AccessControl.QualifiedAce" />オブジェクト。</summary>
+        <returns>これに関連付けられている不透明なコールバック データを表すバイト値配列<see cref="T:System.Security.AccessControl.QualifiedAce" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 不透明なコールバック データは、コールバック アクセス制御エントリ (Ace) にのみ存在します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCallback">
+      <MemberSignature Language="C#" Value="public bool IsCallback { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCallback" />
+      <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.QualifiedAce.IsCallback" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定するかどうかこの<see cref="T:System.Security.AccessControl.QualifiedAce" />オブジェクトには、コールバックのデータが含まれています。</summary>
+        <value>
+          <see langword="true" />この場合<see cref="T:System.Security.AccessControl.QualifiedAce" />オブジェクトには、コールバックのデータが含まれています。 それ以外の場合は false。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OpaqueLength">
+      <MemberSignature Language="C#" Value="public int OpaqueLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 OpaqueLength" />
+      <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.QualifiedAce.OpaqueLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これに関連付けられている不透明なコールバックのデータの長さを取得<see cref="T:System.Security.AccessControl.QualifiedAce" />オブジェクト。 このプロパティはコールバック アクセス制御エントリ (Ace) でのみ有効です。</summary>
+        <value>不透明なコールバックのデータの長さ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetOpaque">
+      <MemberSignature Language="C#" Value="public void SetOpaque (byte[] opaque);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetOpaque(unsigned int8[] opaque) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.QualifiedAce.SetOpaque(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="opaque" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="opaque">これを不透明なコールバック データを表すバイト値配列<see cref="T:System.Security.AccessControl.QualifiedAce" />オブジェクト。</param>
+        <summary>これに関連付けられているデータの非透過のコールバックを設定<see cref="T:System.Security.AccessControl.QualifiedAce" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 不透明なコールバック データは、コールバック アクセス制御エントリ (Ace) にのみ存在します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

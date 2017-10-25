@@ -1,0 +1,52 @@
+<Type Name="TogglePattern+TogglePatternInformation" FullName="System.Windows.Automation.TogglePattern+TogglePatternInformation">
+  <TypeSignature Language="C#" Value="public struct TogglePattern.TogglePatternInformation" />
+  <TypeSignature Language="ILAsm" Value=".class nested public sequential ansi sealed beforefieldinit TogglePattern/TogglePatternInformation extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.TogglePattern.TogglePatternInformation" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プロパティの値にアクセスできるように、<see cref="T:System.Windows.Automation.TogglePattern" />オブジェクトを使用してその<see cref="P:System.Windows.Automation.TogglePattern.Current" />または<see cref="P:System.Windows.Automation.TogglePattern.Cached" />アクセサー。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ToggleState">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.ToggleState ToggleState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Automation.ToggleState ToggleState" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.TogglePattern.TogglePatternInformation.ToggleState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ToggleState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トグル状態の取得、<see cref="T:System.Windows.Automation.AutomationElement" />です。</summary>
+        <value><see cref="T:System.Windows.Automation.AutomationElement" /> の <see cref="T:System.Windows.Automation.ToggleState" />。 既定値は <see cref="F:System.Windows.Automation.ToggleState.Indeterminate" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Automation.AutomationElement>を順番に表示する必要があります、<xref:System.Windows.Automation.ToggleState>この順序で: <xref:System.Windows.Automation.ToggleState.On>、<xref:System.Windows.Automation.ToggleState.Off>と、サポートされている、<xref:System.Windows.Automation.ToggleState.Indeterminate>です。  
+  
+   
+  
+## Examples  
+ 次の例では、ルート要素は、ルートの子孫であり、一連のプロパティの条件を満たすオートメーション要素のコレクションを返す関数に渡されます。  
+  
+ [!code-csharp[UIATogglePattern_snip#100](~/samples/snippets/csharp/VS_Snippets_Wpf/UIATogglePattern_snip/CSharp/UIATogglePattern_snippets.cs#100)]
+ [!code-vb[UIATogglePattern_snip#100](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIATogglePattern_snip/VisualBasic/UIATogglePattern_snippets.vb#100)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

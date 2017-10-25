@@ -1,0 +1,166 @@
+<Type Name="IJSVsaItems" FullName="Microsoft.JScript.Vsa.IJSVsaItems">
+  <TypeSignature Language="C#" Value="public interface IJSVsaItems : System.Collections.IEnumerable" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IJSVsaItems implements class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.JScript.Vsa.IJSVsaItems" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.JScript</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IEnumerable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("Use of this type is not recommended because it is being deprecated in Visual Studio 2005; there will be no replacement for this feature. Please see the ICodeCompiler documentation for additional help.")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("172341E0-9B0D-43E6-9EFF-75E030A46461")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>名前またはインデックスでアドレス指定できる <see cref="T:Microsoft.JScript.Vsa.IJSVsaItem" /> オブジェクトのコレクション用インターフェイスを定義します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.JScript.Vsa.IJSVsaItems.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定したコレクション内の項目数を取得します。</summary>
+        <value>コレクション内の項目数を表す整数値を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateItem">
+      <MemberSignature Language="C#" Value="public Microsoft.JScript.Vsa.IJSVsaItem CreateItem (string name, Microsoft.JScript.Vsa.JSVsaItemType itemType, Microsoft.JScript.Vsa.JSVsaItemFlag itemFlag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Microsoft.JScript.Vsa.IJSVsaItem CreateItem(string name, valuetype Microsoft.JScript.Vsa.JSVsaItemType itemType, valuetype Microsoft.JScript.Vsa.JSVsaItemFlag itemFlag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.Vsa.IJSVsaItems.CreateItem(System.String,Microsoft.JScript.Vsa.JSVsaItemType,Microsoft.JScript.Vsa.JSVsaItemFlag)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.JScript.Vsa.IJSVsaItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="itemType" Type="Microsoft.JScript.Vsa.JSVsaItemType" />
+        <Parameter Name="itemFlag" Type="Microsoft.JScript.Vsa.JSVsaItemFlag" />
+      </Parameters>
+      <Docs>
+        <param name="name">新しい項目に関連付ける名前。  
+  
+ 項目が参照項目型の場合、name パラメーターは、<see cref="P:Microsoft.JScript.Vsa.IJSVsaReferenceItem.AssemblyName" /> プロパティで設定された参照先アセンブリと完全に同じ名前である必要があります。 ただし、JScript では、AssemblyName を指定しない場合、ItemName がアセンブリ名として使用されます。</param>
+        <param name="itemType">作成された項目の型。<see cref="T:Microsoft.JScript.Vsa.JSVsaItemType" /> 列挙体で定義。</param>
+        <param name="itemFlag">Code 項目の初期内容を指定する省略可能なフラグ。</param>
+        <summary><see cref="T:Microsoft.JScript.Vsa.IJSVsaItem" /> 列挙体で定義されている <see cref="T:Microsoft.JScript.Vsa.JSVsaItemType" /> 型のいずれかの新しいインスタンスを作成します。</summary>
+        <returns>作成された <see cref="T:Microsoft.JScript.Vsa.IJSVsaItem" /> オブジェクトへの参照を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public Microsoft.JScript.Vsa.IJSVsaItem this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.JScript.Vsa.IJSVsaItem Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.JScript.Vsa.IJSVsaItems.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.JScript.Vsa.IJSVsaItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得できる項目の 0 から始まるインデックス番号。</param>
+        <summary>インデックス値でコレクションから項目を取得します。</summary>
+        <value>指定したインデックスにある項目を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public Microsoft.JScript.Vsa.IJSVsaItem this[string name] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.JScript.Vsa.IJSVsaItem Item(string)" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.JScript.Vsa.IJSVsaItems.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.JScript.Vsa.IJSVsaItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">コレクションから取得する項目の名前。</param>
+        <summary>名前でコレクションから項目を取得します。</summary>
+        <value>名前で指定された項目を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Remove(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.Vsa.IJSVsaItems.Remove(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除する項目のインデックス値。</param>
+        <summary>インデックス値を指定して、コレクションから項目を削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Remove(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.Vsa.IJSVsaItems.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">コレクションから削除する項目の名前。</param>
+        <summary>名前を指定して、コレクションから項目を削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

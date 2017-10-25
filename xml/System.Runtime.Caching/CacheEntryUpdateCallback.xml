@@ -1,0 +1,30 @@
+<Type Name="CacheEntryUpdateCallback" FullName="System.Runtime.Caching.CacheEntryUpdateCallback">
+  <TypeSignature Language="C#" Value="public delegate void CacheEntryUpdateCallback(CacheEntryUpdateArguments arguments);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed CacheEntryUpdateCallback extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Caching.CacheEntryUpdateCallback" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Caching</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="arguments" Type="System.Runtime.Caching.CacheEntryUpdateArguments" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="arguments">キャッシュから削除される直前にあるエントリに関する情報。</param>
+    <summary>キャッシュ エントリをキャッシュから削除するときに呼び出されるメソッドへの参照を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 削除するキャッシュ エントリに関する情報に含まれている、<xref:System.Runtime.Caching.CacheEntryUpdateArguments>オブジェクト。 A<xref:System.Runtime.Caching.CacheEntryUpdateArguments>にオブジェクトが渡される、<xref:System.Runtime.Caching.CacheEntryUpdateCallback>を委任します。 実装するメソッド、<xref:System.Runtime.Caching.CacheEntryUpdateCallback>デリゲートは、キャッシュの実装に更新されたキャッシュ エントリの値を渡すことができます。 更新されたキャッシュ エントリを削除するキャッシュ項目が置き換えられます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

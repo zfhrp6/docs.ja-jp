@@ -1,0 +1,181 @@
+<Type Name="ControlIDConverter" FullName="System.Web.UI.WebControls.ControlIDConverter">
+  <TypeSignature Language="C#" Value="public class ControlIDConverter : System.ComponentModel.StringConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ControlIDConverter extends System.ComponentModel.StringConverter" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ControlIDConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.StringConverter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コントロールに現在のコンテナーの Id の一覧を取得する型コンバーターを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ControlIDConverter>クラスから派生します<xref:System.ComponentModel.StringConverter>クラスし、デザイン時環境でのプロパティ グリッド コントロールでの表示のコントロール Id の一覧を提供します。 <xref:System.Web.UI.WebControls.ControlIDConverter>クラスは、の基本クラスとしても機能、<xref:System.Web.UI.WebControls.AssociatedControlConverter>と<xref:System.Web.UI.WebControls.ValidatedControlConverter>Web コントロールとそれぞれの検証プロパティの属性をサポートするコントロールの型コンバーターのクラスです。  
+  
+ 型コンバーターの詳細については、次を参照してください。[する方法: 実行する型コンバーターを実装する](http://msdn.microsoft.com/library/90373a3f-d8c8-492d-841c-945d62393c56)または[一般的な型変換](http://msdn.microsoft.com/library/49253ae6-7657-4810-82ab-1176a6feeada)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ControlIDConverter>を必要とするクラスで、<xref:System.ComponentModel.TypeConverter>コントロールの ID を表示するためにします。 `DebugInfoControl`は、現在の Web フォームに含まれるコントロールの一部の情報を印刷する単純なコントロールです。 その`ControlID`プロパティは、<xref:System.ComponentModel.TypeConverterAttribute>を指定する、<xref:System.Web.UI.WebControls.ControlIDConverter>として、<xref:System.ComponentModel.TypeConverter>そのプロパティに使用します。 `DebugInfoControl`よりも優先、`Render`でターゲット コントロールに関する情報を印刷する方法、<xref:System.Web.UI.WebControls.Label>コントロール。  
+  
+ [!code-csharp[System.Web.UI.ControlIdConverter_1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ControlIdConverter_1/CS/debuginfocontrol.cs#1)]
+ [!code-vb[System.Web.UI.ControlIdConverter_1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ControlIdConverter_1/VB/debuginfocontrol.vb#1)]  
+  
+ 次のコード例を示す方法、`DebugInfoControl`と共に Web フォームで使用できる、<xref:System.Web.UI.WebControls.AccessDataSource>コントロールに関する情報を表示、<xref:System.Web.UI.WebControls.AccessDataSource>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.ControlIdConverter_1#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ControlIdConverter_1/CS/debuginfocs.aspx#2)]
+ [!code-aspx-vb[System.Web.UI.ControlIdConverter_1#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ControlIdConverter_1/VB/debuginfovb.aspx#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ControlIDConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ControlIDConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.ControlIDConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  実行する型コンバーターに直接アクセスする必要がありますしません。 代わりに、適切なコンバーターを使用して、<xref:System.ComponentModel.TypeDescriptor>オブジェクト。 詳細については、例を参照してください。<xref:System.ComponentModel.TypeConverter>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterControl">
+      <MemberSignature Language="C#" Value="protected virtual bool FilterControl (System.Web.UI.Control control);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool FilterControl(class System.Web.UI.Control control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ControlIDConverter.FilterControl(System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="control">コントロールのインスタンスに含めることをテストする、<see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection" />です。</param>
+        <summary>指定されたコントロールのコントロール ID を追加するかどうかを示す値を返します、<see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection" />によって返される、<see cref="M:System.Web.UI.WebControls.ControlIDConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)" />メソッドです。</summary>
+        <returns>
+          常に <see langword="true" />。</returns>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>実装、<see cref="M:System.Web.UI.WebControls.ControlIDConverter.FilterControl(System.Web.UI.Control)" />メソッドを返します。<see langword="true" />常にします。 派生したクラス、<see cref="T:System.Web.UI.WebControls.ControlIDConverter" />独自のフィルター処理メカニズムを提供するには、このメソッドをオーバーライドします。 たとえば、<see cref="T:System.Web.UI.WebControls.AssociatedControlConverter" />クラスのオーバーライド、<see cref="M:System.Web.UI.WebControls.ControlIDConverter.FilterControl(System.Web.UI.Control)" />メソッドを返します<see langword="true" />コントロールが、Web サーバー コントロールである場合にのみです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValues">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.TypeConverter.StandardValuesCollection GetStandardValues (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ComponentModel.TypeConverter/StandardValuesCollection GetStandardValues(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ControlIDConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.TypeConverter+StandardValuesCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />コンバーターが呼び出される環境に関する追加情報を抽出するために使用する書式指定コンテキストを提供します。 このパラメーターまたはこのパラメーターのプロパティを指定できます<see langword="null" />です。</param>
+        <summary>コレクションが返されますコントロール内のコンテナーからの Id、<see cref="T:System.ComponentModel.Design.IDesignerHost" />フォーマット コンテキストが提供されている場合。</summary>
+        <returns>A<see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection" />現在のコンテナー内のコントロールのコントロール Id を表す文字列のセットを保持します。 コントロールが現在格納されていない、空のコレクションが返されます。 コンテキストが場合<see langword="null" />または現在のコンテナーがしない<see langword="null" />が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ControlIDConverter.FilterControl%2A>でコンテナーの各コントロールにメソッドが呼び出されます。 ID にのみ追加コントロール、<xref:System.ComponentModel.TypeConverter.StandardValuesCollection>メソッドを返す場合`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValuesExclusive">
+      <MemberSignature Language="C#" Value="public override bool GetStandardValuesExclusive (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool GetStandardValuesExclusive(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ControlIDConverter.GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />形式コンテキストを提供します。</param>
+        <summary>標準値のコレクションがによって返されるかどうかを示す値を返します、<see cref="M:System.Web.UI.WebControls.ControlIDConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)" />メソッドは、指定したコンテキストを使用して、指定できる値の排他的なリスト。</summary>
+        <returns>
+          常に <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは常に返します、このクラスに実装された`false`です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>変換する型は、標準の値をサポートしている場合は、このメソッドをオーバーライドします。  
+  
+ コンバーターが呼び出される環境に関する追加情報を抽出するには、<paramref name="context" /> パラメーターを使用します。 このパラメーターを指定できます<see langword="null" />、コンテキスト オブジェクトのプロパティを返すと<see langword="null" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValuesSupported">
+      <MemberSignature Language="C#" Value="public override bool GetStandardValuesSupported (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool GetStandardValuesSupported(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ControlIDConverter.GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />形式コンテキストを提供します。</param>
+        <summary>このオブジェクトが指定したコンテキストを使用して、一覧から選択できるコントロール ID の値の標準セットをサポートするかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合<see cref="M:System.Web.UI.WebControls.ControlIDConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)" />共通コントロールのセットのオブジェクトがサポートする ID 値を検索すると呼ばれる、それ以外にする必要があります<see langword="false" />です。 この実装を返します<see langword="true" />コンテキストがない場合<see langword="null" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>変換する型は、標準の値をサポートしている場合は、このメソッドをオーバーライドします。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

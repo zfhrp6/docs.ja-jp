@@ -1,0 +1,133 @@
+<Type Name="HiddenFieldPageStatePersister" FullName="System.Web.UI.HiddenFieldPageStatePersister">
+  <TypeSignature Language="C#" Value="public class HiddenFieldPageStatePersister : System.Web.UI.PageStatePersister" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HiddenFieldPageStatePersister extends System.Web.UI.PageStatePersister" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.HiddenFieldPageStatePersister" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.PageStatePersister</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Web クライアント上の非表示の HTML 要素には、ASP.NET ページのビュー ステートを格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET ページを格納できます<xref:System.Web.UI.Page>間本質的にステートレスの HTTP 要求および応答を処理して、任意の Web ページを使用するために必要な状態です。 この状態は、「状態の表示」と呼ばれます。 1 つまたは複数のページとそのコントロールのビュー ステートを格納するために使用する既定のメカニズムは`<hidden>`Web サーバーからクライアントに提供されているページに含まれる HTML フィールドです。 <xref:System.Web.UI.Page>クラスを使用することができます、<xref:System.Web.UI.HiddenFieldPageStatePersister>この作業を実行するクラス。 <xref:System.Web.UI.HiddenFieldPageStatePersister>実装する、<xref:System.Web.UI.HiddenFieldPageStatePersister.Save%2A>と<xref:System.Web.UI.HiddenFieldPageStatePersister.Load%2A>のメソッド、<xref:System.Web.UI.PageStatePersister>クラスできるように、<xref:System.Web.UI.Page>で状態を保存することができます、 `<hidden>` Web クライアントに"_ _viewstate"をという名前の HTML 要素です。 クライアントが Web サーバー (ポストバック) から、同じページを要求するとき、`<hidden>`要素が解析され、ASP.NET によって状態情報に変換します。  
+  
+ 場合、<xref:System.Web.UI.Page>が要求されるインスタンスに関連付けられています<xref:System.Web.UI.Adapters.PageAdapter>を取得、クラス、<xref:System.Web.UI.PageStatePersister>オブジェクトをこのアダプターを使用してから、<xref:System.Web.UI.Adapters.PageAdapter.GetStatePersister%2A>メソッドです。 アダプターがオーバーライドできる、<xref:System.Web.UI.Adapters.PageAdapter.GetStatePersister%2A>を返すメソッドを<xref:System.Web.UI.PageStatePersister>特定のクライアントをサポートするいくつかの方法でページとコントロールの状態を格納するオブジェクト。 たとえば、<xref:System.Web.UI.SessionPageStatePersister>クラス情報を送信し、メモリと帯域幅が制限された可能性があるクライアントに格納されている必要がありますの量を減らして、クライアントではなく、Web サーバーでページおよびコントロールの状態を格納します。  
+  
+ "_VIEWSTATE"の最大サイズ`<hidden>`を介して HTML 要素を設定することができます、<xref:System.Web.UI.Page.MaxPageStateFieldLength%2A>プロパティにより、または、<xref:System.Web.Configuration.PagesSection.MaxPageStateFieldLength%2A>構成設定。 この値を設定して、"_VIEWSTATE"要素の長さが最大長を超えると、コンテンツは複数の"_VIEWSTATE"要素に分割されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、バインド、<xref:System.Web.UI.WebControls.ListBox>コントロールとデータベース内のデータを<xref:System.Web.UI.WebControls.SqlDataSource>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_1sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_1sql/CS/sql1cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_1sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_1sql/VB/sql1vb.aspx#1)]  
+  
+ 任意のビュー ステートが格納されているページの例を表示するとき、<xref:System.Web.UI.HiddenFieldPageStatePersister>クラス内で、 `<hidden>` "_viewstate"をという名前の HTML 要素です。  
+  
+```  
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">  
+<HTML>  
+  <BODY>  
+    <form name="_ctl0" method="post" action="sample.aspx" id="_ctl0">  
+  
+      <input type="hidden" name="__VIEWSTATE" value="MgAwADkANgAwADkAOQA3ADgAMQD/AQ8QBQoxMTU2NDc1NjE0EGRkFgICAQ9kFgICAw8PZBAVDQVhc2RhcwhCdWNoYW5hbghDYWxsYWhhbgdEYXZvbGlvCURvZHN3b3J0aAZGdWxsZXIES2luZwhLcmF3YXJpawlMZXZlcmxpbmcETWFyeQdQZWFjb2NrBlN1eWFtYQx0ZXN0IHJlZnJlc2gVDQVhc2RhcwhCdWNoYW5hbghDYWxsYWhhbgdEYXZvbGlvCURvZHN3b3J0aAZGdWxsZXIES2luZwhLcmF3YXJpawlMZXZlcmxpbmcETWFyeQdQZWFjb2NrBlN1eWFtYQx0ZXN0IHJlZnJlc2gUKgMNZ2dnZ2dnZ2dnZ2dnZ2RkZPdhi6U7jBPqVZbj0W8AYFSJ6oiq" />  
+  
+      <select size="4" name="ListBox1" id="ListBox1">      
+        <option value="Buchanan">Buchanan</option>  
+        <option value="Callahan">Callahan</option>  
+        <option value="Davolio">Davolio</option>  
+        <option value="Dodsworth">Dodsworth</option>  
+        <option value="Fuller">Fuller</option>  
+        <option value="King">King</option>  
+        <option value="Leverling">Leverling</option>  
+        <option value="Suyama">Suyama</option>  
+      </select>  
+  
+    </form>  
+  </BODY>  
+</HTML>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HiddenFieldPageStatePersister (System.Web.UI.Page page);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.Page page) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HiddenFieldPageStatePersister.#ctor(System.Web.UI.Page)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="page" Type="System.Web.UI.Page" />
+      </Parameters>
+      <Docs>
+        <param name="page"><see cref="T:System.Web.UI.Page" />のビュー状態の永続化メカニズムを作成します。</param>
+        <summary><see cref="T:System.Web.UI.HiddenFieldPageStatePersister" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public override void Load ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Load() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HiddenFieldPageStatePersister.Load" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>逆シリアル化しから永続化された状態情報を読み込みます、<see cref="T:System.Web.HttpRequest" />オブジェクトと、<see cref="T:System.Web.UI.Page" />オブジェクトがそのコントロールの階層構造を初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HiddenFieldPageStatePersister>クラスが実装する、 <xref:System.Web.UI.HiddenFieldPageStatePersister.Load%2A> Web サーバーに、受信要求からページおよびコントロールの状態情報を読み込みます。 <xref:System.Web.UI.ObjectStateFormatter>によってアクセスされるオブジェクト、<xref:System.Web.UI.PageStatePersister.StateFormatter%2A>プロパティは、データを逆シリアル化に使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException"><see cref="M:System.Web.UI.HiddenFieldPageStatePersister.Load" />メソッドが正常にシリアル化解除できません、Web サーバーへの要求に含まれている状態情報。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public override void Save ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Save() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HiddenFieldPageStatePersister.Save" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>含まれている任意のオブジェクトの状態をシリアル化、<see cref="P:System.Web.UI.PageStatePersister.ViewState" />または<see cref="P:System.Web.UI.PageStatePersister.ControlState" />プロパティ、状態を応答ストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HiddenFieldPageStatePersister>を実装する、<xref:System.Web.UI.HiddenFieldPageStatePersister.Save%2A>に記述して、クライアントにページとコントロールの状態を永続化するメソッド、`<hidden>`クライアントへの送信応答に HTML 要素です。 <xref:System.Web.UI.ObjectStateFormatter>によってアクセスされるオブジェクト、<xref:System.Web.UI.PageStatePersister.StateFormatter%2A>プロパティは、データを逆シリアル化に使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,161 @@
+<Type Name="ListViewDeleteEventArgs" FullName="System.Web.UI.WebControls.ListViewDeleteEventArgs">
+  <TypeSignature Language="C#" Value="public class ListViewDeleteEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ListViewDeleteEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ListViewDeleteEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.UI.WebControls.ListView.ItemDeleting" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ListView>昇給を制御、<xref:System.Web.UI.WebControls.ListView.ItemDeleting>イベントの削除 ボタンがクリックされたときに、または<xref:System.Web.UI.WebControls.ListView.DeleteItem%2A>メソッドを呼び出す前に、<xref:System.Web.UI.WebControls.ListView>コントロールが項目を削除します。 ([削除] ボタンは 1 つ持つ`CommandName`プロパティが"Delete"に設定します)。これにより、削除操作の取り消しなど、このイベントが発生するたびに、カスタム ルーチンを実行するイベント処理メソッドを提供できます。  
+  
+ A<xref:System.Web.UI.WebControls.ListViewDeleteEventArgs>オブジェクトが削除される項目のインデックスを確認することにより、イベント処理メソッドに渡されます。 また、削除操作を取り消すことができます。 これを行うには、設定、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>のプロパティ、<xref:System.Web.UI.WebControls.ListViewDeleteEventArgs>オブジェクトを`true`です。 かどうか、必要に応じても扱える、<xref:System.Web.UI.WebControls.ListViewDeleteEventArgs.Keys%2A>と<xref:System.Web.UI.WebControls.ListViewDeleteEventArgs.Values%2A>コレクション値は、データ ソースに渡される前にします。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.Web.UI.WebControls.ListViewDeleteEventArgs>を参照してください、<xref:System.Web.UI.WebControls.ListViewDeleteEventArgs.%23ctor%2A>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ListViewDeleteEventArgs>場合は、ユーザーからの最後の項目を削除しようとしました。 削除操作をキャンセルするオブジェクト、<xref:System.Web.UI.WebControls.ListView>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.ListViewItemDeleting#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ListViewItemDeleting/CS/ListViewItemItemDeletingCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.ListViewItemDeleting#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ListViewItemDeleting/VB/ListViewItemItemDeletingVB.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewDeleteEventArgs (int itemIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 itemIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListViewDeleteEventArgs.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="itemIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="itemIndex">イベントを発生させた削除 ボタンを含む項目のインデックス。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.ListViewDeleteEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.ListViewDeleteEventArgs>クラスです。  
+  
+> [!NOTE]
+>  このコンス トラクターはイベントを発生させるときにコントロールの開発者によって、主に使用します。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.WebControls.ListViewDeleteEventArgs>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.ListViewDeleteEventArgs.ItemIndex%2A>|`itemIndex` パラメーターの値。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemIndex">
+      <MemberSignature Language="C#" Value="public int ItemIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ItemIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewDeleteEventArgs.ItemIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>削除する項目のインデックスを取得します。</summary>
+        <value>削除する項目の 0 から始まるインデックス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ListViewDeleteEventArgs.ItemIndex%2A>プロパティを削除する項目のインデックスを確認します。 指定した項目を取得する項目のインデックスが使用される通常の<xref:System.Web.UI.WebControls.ListView.Items%2A>のコレクション、<xref:System.Web.UI.WebControls.ListView>コントロールで、アイテムのプロパティにアクセスすることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Keys">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.IOrderedDictionary Keys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.IOrderedDictionary Keys" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewDeleteEventArgs.Keys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.IOrderedDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>主キーまたは削除する項目のキーを表すフィールドの名前と値のペアのディクショナリを取得します。</summary>
+        <value>主キー、または削除する項目のキーを表す名前/値ペアを格納するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.ListView.DataKeyNames%2A>のプロパティ、<xref:System.Web.UI.WebControls.ListView>コントロールの設定を使用して、<xref:System.Web.UI.WebControls.ListViewDeleteEventArgs.Keys%2A>主キーまたは削除する項目のキーの値にアクセスするプロパティです。  
+  
+> [!NOTE]
+>  このプロパティには、キー フィールドのみが含まれています。 非キー フィールドの値にアクセスするには、使用、<xref:System.Web.UI.WebControls.ListViewDeleteEventArgs.Values%2A>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.ListViewDeleteEventArgs.Keys%2A>ディクショナリは、複数のフィールドで指定されているの名前/値ペアが設定されます、<xref:System.Web.UI.WebControls.ListView.DataKeyNames%2A>プロパティです。 別個のエントリが追加された主キーに複数のフィールドが含まれている場合、<xref:System.Web.UI.WebControls.ListViewDeleteEventArgs.Keys%2A>キー フィールドごとのディクショナリ。  
+  
+ キー フィールドの名前を確認するには<xref:System.Collections.DictionaryEntry.Key%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Collections.DictionaryEntry>に含まれているオブジェクト、<xref:System.Web.UI.WebControls.ListViewDeleteEventArgs.Keys%2A>ディクショナリ。 キー フィールドの値を確認するには<xref:System.Collections.DictionaryEntry.Value%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Values">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.IOrderedDictionary Values { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.IOrderedDictionary Values" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewDeleteEventArgs.Values" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.IOrderedDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>削除する項目でキー以外のフィールドの名前/値ペアのディクショナリを取得します。</summary>
+        <value>削除する項目の非キー フィールドの名前/値ペアを格納するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 辞書を使用して、<xref:System.Web.UI.WebControls.ListViewDeleteEventArgs.Values%2A>プロパティを削除する項目でキー以外のフィールドの値にアクセスします。  
+  
+> [!NOTE]
+>  このプロパティは、主キー フィールドまたはフィールドには格納されません。 主キーまたはキーの値にアクセスするには、使用、<xref:System.Web.UI.WebControls.ListViewDeleteEventArgs.Keys%2A>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.ListViewDeleteEventArgs.Values%2A>プロパティは、項目の非キー フィールドの名前/値ペアが設定されます。 別個のエントリを追加、<xref:System.Web.UI.WebControls.ListViewDeleteEventArgs.Keys%2A>内の各キー フィールド、アイテムのプロパティです。  
+  
+ エントリのフィールド名を確認するには<xref:System.Collections.DictionaryEntry.Key%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Collections.DictionaryEntry>に含まれているオブジェクト、<xref:System.Web.UI.WebControls.ListViewDeleteEventArgs.Values%2A>ディクショナリ。 エントリの値を確認するには<xref:System.Collections.DictionaryEntry.Value%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

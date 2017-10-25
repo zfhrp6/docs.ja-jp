@@ -1,0 +1,36 @@
+<Type Name="RequestBringIntoViewEventHandler" FullName="System.Windows.RequestBringIntoViewEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void RequestBringIntoViewEventHandler(object sender, RequestBringIntoViewEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed RequestBringIntoViewEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.RequestBringIntoViewEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.RequestBringIntoViewEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベント ハンドラーがアタッチされるオブジェクト。</param>
+    <param name="e">イベントのデータ。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Windows.FrameworkElement.RequestBringIntoView" />ルーティングされたイベント。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントを処理して、スクロール可能な領域をサポートしたり、それ以外の場合意図的にサイズの設定、表示、子要素のコンテンツの合計の目的のサイズより小さい要素内でのみ実行は、通常、意図的に一度が上方向要素ツリーでルーティングし、スクロール領域のサポートを提供する最初の親に達してイベントを処理することによってのみ実行されます。 通常、ユーザー コントロールの適切な方法でスクロール領域を処理する既存の実装は<xref:System.Windows.Controls.ScrollViewer>します。 派生した場合<xref:System.Windows.Controls.ScrollViewer>、クラス ハンドラーを登録できます<xref:System.Windows.FrameworkElement.RequestBringIntoView?displayProperty=nameWithType>イベントの基本クラス処理を補足するものとします。 または、クラス処理、クラス定義を使用しても考慮する必要があります<xref:System.Windows.Controls.ScrollViewer.ScrollChanged>の代わりにイベント<xref:System.Windows.FrameworkElement.RequestBringIntoView?displayProperty=nameWithType>です。 代わりに、完全なカスタム クラスから派生していないことを作成するかどうかは<xref:System.Windows.Controls.ScrollViewer>、クラス処理を呼び出すことによって追加できます<xref:System.Windows.EventManager.RegisterClassHandler%2A?displayProperty=nameWithType>クラスのインスタンス化でします。  クラスの処理の詳細については、「 [Handled、クラス処理とルーティング イベントをマーク](~/docs/framework/wpf/advanced/marking-routed-events-as-handled-and-class-handling.md)です。  
+  
+ コンテンツの要素には、イベントがそのコンテンツ ホストにより発生する可能性があります (呼び出しを介して<xref:System.Windows.FrameworkContentElement.BringIntoView%2A>と発生<xref:System.Windows.FrameworkElement.RequestBringIntoView?displayProperty=nameWithType>コンテンツ ホストから)。 同様に、要求内に収めるビュー、ヘルパー メソッドを使用する論理ツリー要素<xref:System.Windows.LogicalTreeHelper.BringIntoView%2A?displayProperty=nameWithType>です。  
+  
+ A<xref:System.Windows.Controls.ListBox>関連ですが異なるメソッドを実装する<xref:System.Windows.Controls.ListBox.ScrollIntoView%2A>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

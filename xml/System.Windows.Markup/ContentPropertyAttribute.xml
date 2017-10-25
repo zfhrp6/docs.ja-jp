@@ -1,0 +1,118 @@
+<Type Name="ContentPropertyAttribute" FullName="System.Windows.Markup.ContentPropertyAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ContentPropertyAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ContentPropertyAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.ContentPropertyAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class, AllowMultiple=false, Inherited=true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>型のどのプロパティが XAML コンテンツ プロパティであるかを示します。 この情報を使用して、XAML プロセッサは属性付き型の XAML 表現の XAML 子要素を処理します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合の関連付けられているプロパティ、<xref:System.Windows.Markup.ContentPropertyAttribute>型ではありません`string`または`object`、XAML プロセッサは、値変換の手法を特定しようとしています。 最初のチェックはネイティブ型の変換、またはその特定の XAML ライターの実装で有効になっている特定のネイティブ変換の XAML 言語プリミティブのいずれかです。 次の手順では、型コンバーターを探します。 基づく実装では、.NET、型コンバーターが識別される<xref:System.ComponentModel.TypeConverterAttribute>か、メンバー レベルまたは型レベル定義に適用されます。 値の変換を識別できない場合は、XAML オブジェクト ライターは通常、例外をスローします。  
+  
+ 受け入れるために、コンテンツとして 1 つのオブジェクトの要素よりも多く XAML コンテンツ プロパティの型があります、コレクション型としてサポート可能です。  
+  
+ ため、`Inherited=true`属性の値の宣言、<xref:System.Windows.Markup.ContentPropertyAttribute>通常コンテンツ プロパティの指定をすべての派生クラスに適用します。 空の適用<xref:System.Windows.Markup.ContentPropertyAttribute>派生クラスを基底クラスによって、コンテンツ プロパティ属性の宣言を削除する (そしてクラスにコンテンツ プロパティがないことに注意してください) を有効にします。 別の名前を適用する<xref:System.Windows.Markup.ContentPropertyAttribute>、継承された置換<xref:System.Windows.Markup.ContentPropertyAttribute>を新しいものです。  
+  
+ .NET Framework の以前のバージョンでこのクラスは WindowsBase、WPF 固有のアセンブリが存在しもに並列実装があります[!INCLUDE[vsindigo](~/includes/vsindigo-md.md)]です。 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、<xref:System.Windows.Markup.ContentPropertyAttribute>は System.Xaml アセンブリにします。 詳細については、次を参照してください。 [WPF から System.Xaml に移行した型](~/docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)です。  
+  
+## <a name="wpf-usage-notes"></a>WPF の使用上の注意  
+ クラスの使用例[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]を使用して、<xref:System.Windows.Markup.ContentPropertyAttribute>は<xref:System.Windows.Controls.ContentControl>、どの、<xref:System.Windows.Controls.Button>クラスから継承します。  プロパティ<xref:System.Windows.Controls.ContentControl.Content%2A>上、<xref:System.Windows.Controls.ContentControl>コンテンツ プロパティが設定、<xref:System.Windows.Markup.ContentPropertyAttribute>です。  場合、 <xref:System.Windows.Controls.Button> XAML でインスタンス化<xref:System.Windows.Controls.ContentControl.Content%2A>の<xref:System.Windows.Controls.Button>開始タグと終了ボタンの間にある要素に設定されます。  
+  
+<a name="xamlTextUsage_ContentPropertyAttribute"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+   
+  
+## Examples  
+ 次の例は、という名前のクラスを作成`Film`を持つ、<xref:System.Windows.Markup.ContentPropertyAttribute>適用します。  という名前のプロパティ`Title`コンテンツ プロパティとして示されます。  
+  
+ [!code-csharp[MarkupSnippets#MarkupContentPropertyAttribute](~/samples/snippets/csharp/VS_Snippets_Wpf/MarkupSnippets/CSharp/Window1.xaml.cs#markupcontentpropertyattribute)]
+ [!code-vb[MarkupSnippets#MarkupContentPropertyAttribute](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MarkupSnippets/visualbasic/window1.xaml.vb#markupcontentpropertyattribute)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContentPropertyAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.ContentPropertyAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Markup.ContentPropertyAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ため、`Inherited=true`属性の値の宣言、<xref:System.Windows.Markup.ContentPropertyAttribute>通常コンテンツ プロパティの指定をすべての派生クラスに適用します。 この署名を使用して、または、空の適用<xref:System.Windows.Markup.ContentPropertyAttribute>、派生クラスを削除してコンテンツのプロパティの属性の宣言で基本クラス (クラスにコンテンツ プロパティがないことに注意してください) を有効にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContentPropertyAttribute (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.ContentPropertyAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">コンテンツ プロパティであるプロパティのプロパティ名。</param>
+        <summary>指定された名前を使用して、<see cref="T:System.Windows.Markup.ContentPropertyAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ CLR バッキングの前提とすると、指定された`name`合致していなければならない、 <xref:System.Reflection.MemberInfo.Name%2A?displayProperty=nameWithType> CLR に関連するプロパティのシステムと入力します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.ContentPropertyAttribute.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテンツ プロパティであるプロパティの名前を取得します。</summary>
+        <value>コンテンツ プロパティであるプロパティの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

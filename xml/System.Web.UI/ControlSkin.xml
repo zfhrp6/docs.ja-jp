@@ -1,0 +1,109 @@
+<Type Name="ControlSkin" FullName="System.Web.UI.ControlSkin">
+  <TypeSignature Language="C#" Value="public class ControlSkin" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ControlSkin extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.ControlSkin" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ASP.NET Web サーバー コントロールに適用されるスタイルのプロパティを定義するための手段であるコントロールのスキンを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ページおよびコントロールの開発者は使用しないで、 <xref:System.Web.UI.ControlSkinDelegate>、 <xref:System.Web.UI.ControlSkin>、または<xref:System.Web.UI.PageTheme>直接クラスです。 これらのクラスが、サーバー側のプロパティと ASP.NET のテーマと特定の種類のコントロールにコントロール スキン ファイルで定義されているカスケード スタイル シートの定義を適用する ASP.NET ページ フレームワークによって内部的に使用されます。  
+  
+ <xref:System.Web.UI.ControlSkin>オブジェクトの名前付きのスキンまたは既定のスキンを表す、<xref:System.Web.UI.Control>実行時およびデザイン時に制御します。 ASP.NET ビルド<xref:System.Web.UI.PageTheme>、<xref:System.Web.UI.ControlSkin>と<xref:System.Web.UI.ControlSkinDelegate>テーマと ASP.NET Web ページおよびコントロールにコントロール スキン ファイルで定義されたスタイル要素を適用するオブジェクト。  
+  
+ テーマとコントロール スキンの詳細については、次を参照してください。 [ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、宣言の ASP.NET ページでのコントロールのコントロール スキンを指定する方法を示します。 この例では、同じページに、1 つを別のスキンを使用および同じ名前付きのスキンを使用する 2 つで見つかった次の 3 つの ASP.NET サーバー コントロールを示します。  
+  
+ [!code-aspx-csharp[ControlSkin#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ControlSkin/CS/controlskincs.aspx#1)]
+ [!code-aspx-vb[ControlSkin#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ControlSkin/VB/controlskinvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ControlSkin (Type controlType, System.Web.UI.ControlSkinDelegate themeDelegate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type controlType, class System.Web.UI.ControlSkinDelegate themeDelegate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ControlSkin.#ctor(System.Type,System.Web.UI.ControlSkinDelegate)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="controlType" Type="System.Type" />
+        <Parameter Name="themeDelegate" Type="System.Web.UI.ControlSkinDelegate" />
+      </Parameters>
+      <Docs>
+        <param name="controlType"><see cref="T:System.Type" />の<see cref="T:System.Web.UI.Control" />スキンが適用される、名前付きのスキンの種類の一貫性を使用します。</param>
+        <param name="themeDelegate"><see cref="T:System.Web.UI.ControlSkinDelegate" />で識別される型にコントロール スキン ファイルで定義されたスタイル要素を適用する、 <c>controlType</c>パラメーター。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Web.UI.ControlSkin" />クラス、渡された使用<see cref="T:System.Web.UI.Control" />を入力し、委任します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplySkin">
+      <MemberSignature Language="C#" Value="public void ApplySkin (System.Web.UI.Control control);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ApplySkin(class System.Web.UI.Control control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ControlSkin.ApplySkin(System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="control">スキンを適用するコントロール。</param>
+        <summary>スキンが適用されます、<see cref="T:System.Web.UI.Control" />コントロールに含まれる、<see cref="T:System.Web.UI.ControlSkin" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パス、<xref:System.Web.UI.Control>オブジェクトに関連付けられている、<xref:System.Web.UI.ControlSkin>クラスを<xref:System.Web.UI.ControlSkinDelegate>、スキンが適用されます、<xref:System.Web.UI.Control>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ControlType">
+      <MemberSignature Language="C#" Value="public Type ControlType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ControlType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ControlSkin.ControlType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Type" />のコントロールを<see cref="T:System.Web.UI.ControlSkin" />オブジェクトに関連付けられています。</summary>
+        <value><see cref="T:System.Type" />の<see cref="T:System.Web.UI.Control" />がこのインスタンスで使用します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

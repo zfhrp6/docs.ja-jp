@@ -1,0 +1,109 @@
+<Type Name="SingleSignOnDescriptor" FullName="System.IdentityModel.Metadata.SingleSignOnDescriptor">
+  <TypeSignature Language="C#" Value="public class SingleSignOnDescriptor : System.IdentityModel.Metadata.RoleDescriptor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SingleSignOnDescriptor extends System.IdentityModel.Metadata.RoleDescriptor" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Metadata.SingleSignOnDescriptor" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Metadata.RoleDescriptor</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>SSO 記述子を定義します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SingleSignOnDescriptor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.SingleSignOnDescriptor.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Metadata.SingleSignOnDescriptor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ArtifactResolutionServices">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Metadata.IndexedProtocolEndpointDictionary ArtifactResolutionServices { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Metadata.IndexedProtocolEndpointDictionary ArtifactResolutionServices" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Metadata.SingleSignOnDescriptor.ArtifactResolutionServices" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Metadata.IndexedProtocolEndpointDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.IdentityModel.Metadata.IndexedProtocolEndpointDictionary" />アーティファクト解決サービスのインデックス付きのエンドポイントを含むオブジェクトです。</summary>
+        <value><see cref="T:System.IdentityModel.Metadata.IndexedProtocolEndpointDictionary" />アーティファクト解決サービスのインデックス付きのエンドポイントを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ディクショナリには、0 が含まれています。 または以上のエントリを記述するインデックス [SAMLProf] で定義されているアーティファクト解決プロファイルをサポートするエンドポイントを作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NameIdentifierFormats">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;Uri&gt; NameIdentifierFormats { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;class System.Uri&gt; NameIdentifierFormats" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Metadata.SingleSignOnDescriptor.NameIdentifierFormats" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.Uri&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サポートされている名前識別子の書式を表す Uri のコレクションを取得します。</summary>
+        <value>サポートされている名前の識別子を表す Uri のコレクションが書式設定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションには、サービス プロバイダーでサポートされる名前識別子の形式を列挙する 0 個以上の要素が含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SingleLogoutServices">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.IdentityModel.Metadata.ProtocolEndpoint&gt; SingleLogoutServices { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.IdentityModel.Metadata.ProtocolEndpoint&gt; SingleLogoutServices" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Metadata.SingleSignOnDescriptor.SingleLogoutServices" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.IdentityModel.Metadata.ProtocolEndpoint&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスのエンドポイント回のログアウトのコレクションを取得します。</summary>
+        <value>回のログアウト サービス エンドポイントのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションには、[SAMLProf] で定義されている 1 つのログアウト プロファイルをサポートするエンドポイントを記述した 0 個以上の要素が含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

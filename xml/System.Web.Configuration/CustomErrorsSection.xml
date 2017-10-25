@@ -1,0 +1,306 @@
+<Type Name="CustomErrorsSection" FullName="System.Web.Configuration.CustomErrorsSection">
+  <TypeSignature Language="C#" Value="public sealed class CustomErrorsSection : System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed CustomErrorsSection extends System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.CustomErrorsSection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET カスタム エラーを構成します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.CustomErrorsSection>クラスをプログラムでアクセスおよび変更する方法を提供する、`customErrors`構成ファイルのセクションです。 この型が所属するグループの一部、 <xref:System.Web.Configuration.CustomErrorCollection>、 <xref:System.Web.Configuration.CustomErrorsMode>、および<xref:System.Web.Configuration.CustomError>型です。  
+  
+> [!NOTE]
+>  <xref:System.Web.Configuration.CustomErrorsSection>読み書きできる情報セクション プロパティに従って、構成ファイルの関連するセクションと<xref:System.Configuration.SectionInformation.AllowDefinition%2A>値がある<xref:System.Configuration.ConfigurationAllowDefinition.Everywhere>です。  
+  
+   
+  
+## Examples  
+ この例は、宣言のメンバーとしてアクセスすることも、セクションの複数の属性の値を指定する方法を示します、<xref:System.Web.Configuration.CustomErrorsSection>クラスです。  
+  
+ 次の構成ファイルの例は、宣言によっての値を指定する方法を示しています、`customErrors`セクションです。  
+  
+```  
+<customErrors mode="RemoteOnly"  
+  defaultRedirect="customerror.htm">  
+    <error statusCode="404" redirect="customerror404.htm"/>  
+</customErrors>  
+```  
+  
+ <xref:System.Web.Configuration.CustomErrorsSection> クラスを使用する方法を示す例を次に示します。  
+  
+ [!code-csharp[System.Web.Configuration.CustomErrorsSection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.CustomErrorsSection/CS/customerrorssection.cs#1)]
+ [!code-vb[System.Web.Configuration.CustomErrorsSection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.CustomErrorsSection/VB/customerrorssection.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CustomErrorsSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.CustomErrorsSection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>既定の設定を使用して <see cref="T:System.Web.Configuration.CustomErrorsSection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.CustomErrorsSection.%23ctor%2A>コンス トラクターは、コードから直接使用するものではありません。 ASP.NET 構成システムによって呼び出されます。 インスタンスを取得する、<xref:System.Web.Configuration.CustomErrorsSection>クラスを使用して、<xref:System.Configuration.Configuration.GetSection%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowNestedErrors">
+      <MemberSignature Language="C#" Value="public bool AllowNestedErrors { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowNestedErrors" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CustomErrorsSection.AllowNestedErrors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("allowNestedErrors", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはカスタム エラー ページを表示できない場合に、ASP.NET が一般的なエラー メッセージを表示するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />カスタム エラー ページを表示できない場合します。 一般エラー メッセージを表示する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultRedirect">
+      <MemberSignature Language="C#" Value="public string DefaultRedirect { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultRedirect" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CustomErrorsSection.DefaultRedirect" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("defaultRedirect")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリダイレクトの既定の URL を設定します。</summary>
+        <value>エラーが発生したときに、アプリケーションがリダイレクトされる既定の URL。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.Configuration.CustomErrorsSection.DefaultRedirect%2A>が指定されていない、標準のエラーが表示されます。 <xref:System.Web.Configuration.CustomErrorsSection.DefaultRedirect%2A>カスタムのエラー ページが存在しない場合にアクティブ化する汎用的なエラー ページを指定します。  
+  
+> [!NOTE]
+>  URL には、絶対または相対値があります。 指定した Web.config ファイルに対する相対パス、相対 URL です、<xref:System.Web.Configuration.CustomErrorsSection.DefaultRedirect%2A>ではなく、エラーが発生した Web ページ。 相対パス、アプリケーションのルート パス、相対ティルダ (~) で始まる URL パスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.CustomErrorsSection.DefaultRedirect%2A> プロパティの使用方法を示しています。  
+  
+ コード例を参照してください、<xref:System.Web.Configuration.CustomErrorsSection>クラスに関するトピックのセクションを取得する方法を学習します。  
+  
+ [!code-csharp[System.Web.Configuration.CustomErrorsSection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.CustomErrorsSection/CS/customerrorssection.cs#3)]
+ [!code-vb[System.Web.Configuration.CustomErrorsSection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.CustomErrorsSection/VB/customerrorssection.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NullReferenceException"><see cref="P:System.Web.Configuration.CustomErrorsSection.DefaultRedirect" /> プロパティが <see langword="null" /> です。 既定値です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeserializeSection">
+      <MemberSignature Language="C#" Value="protected override void DeserializeSection (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void DeserializeSection(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.CustomErrorsSection.DeserializeSection(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Errors">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.CustomErrorCollection Errors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.CustomErrorCollection Errors" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CustomErrorsSection.Errors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("", IsDefaultCollection=true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.CustomErrorCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得、<see cref="T:System.Web.Configuration.CustomError" />オブジェクト。</summary>
+        <value>A<see cref="T:System.Web.Configuration.CustomErrorCollection" />カスタム エラーが含まれています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各エラーは、カスタム エラー条件に関連付けられているし、カスタム エラー ページを指定します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.CustomErrorsSection.Errors%2A>コレクション。  
+  
+ [!code-csharp[System.Web.Configuration.CustomErrorsSection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.CustomErrorsSection/CS/customerrorssection.cs#1)]
+ [!code-vb[System.Web.Configuration.CustomErrorsSection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.CustomErrorsSection/VB/customerrorssection.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Mode">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.CustomErrorsMode Mode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Configuration.CustomErrorsMode Mode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CustomErrorsSection.Mode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("mode", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.CustomErrorsMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはエラーの表示モードを設定します。</summary>
+        <value><see cref="T:System.Web.Configuration.CustomErrorsMode" /> 値のいずれか。 既定値は、<see cref="F:System.Web.Configuration.CustomErrorsMode.RemoteOnly" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタム エラーが有効になっている、無効になっている、かリモート クライアントにのみ表示を指定します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.CustomErrorsSection.Mode%2A> プロパティの使用方法を示しています。  
+  
+ コード例を参照してください、<xref:System.Web.Configuration.CustomErrorsSection>クラスに関するトピックのセクションを取得する方法を学習します。  
+  
+ [!code-csharp[System.Web.Configuration.CustomErrorsSection#9](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.CustomErrorsSection/CS/customerrorssection.cs#9)]
+ [!code-vb[System.Web.Configuration.CustomErrorsSection#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.CustomErrorsSection/VB/customerrorssection.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CustomErrorsSection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RedirectMode">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.CustomErrorsRedirectMode RedirectMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Configuration.CustomErrorsRedirectMode RedirectMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CustomErrorsSection.RedirectMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("redirectMode", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.CustomErrorsRedirectMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはユーザーがカスタム エラー ページにリダイレクトされたときに、要求の URL を変更するかどうかを示す値を設定します。</summary>
+        <value>カスタム エラー ページに、ユーザーがリダイレクトされたときに、URL が変更されたかどうかを示す値。 既定値は <see cref="F:System.Web.Configuration.CustomErrorsRedirectMode.ResponseRedirect" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.Configuration.CustomErrorsSection.RedirectMode%2A>プロパティに設定されている<xref:System.Web.Configuration.CustomErrorsRedirectMode.ResponseRedirect>、ユーザーは、[エラー] ページにリダイレクトし、元の URL がエラー ページの URL に変更されます。 場合、<xref:System.Web.Configuration.CustomErrorsSection.RedirectMode%2A>プロパティに設定されている<xref:System.Web.Configuration.CustomErrorsRedirectMode.ResponseRewrite>ユーザーにエラー ページに送信され、ブラウザーで元の URL は変更されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="protected override void Reset (System.Configuration.ConfigurationElement parentElement);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Reset(class System.Configuration.ConfigurationElement parentElement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.CustomErrorsSection.Reset(System.Configuration.ConfigurationElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parentElement" Type="System.Configuration.ConfigurationElement" />
+      </Parameters>
+      <Docs>
+        <param name="parentElement">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

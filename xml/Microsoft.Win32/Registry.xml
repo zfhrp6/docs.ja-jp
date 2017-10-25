@@ -1,0 +1,654 @@
+<Type Name="Registry" FullName="Microsoft.Win32.Registry">
+  <TypeSignature Language="C#" Value="public static class Registry" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Registry extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Win32.Registry" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>提供<see cref="T:Microsoft.Win32.RegistryKey" />Windows レジストリ内のルート キーを表すオブジェクトと<see langword="static" />キー/値ペアにアクセスするメソッド。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Windows を実行しているコンピューターでのレジストリで見つかった標準のルート キーのセットを提供します。 レジストリは、アプリケーション、ユーザー、および既定のシステム設定に関する情報を格納する機能です。 たとえば、アプリケーションは、レジストリを使用して、アプリケーションが閉じられた後も保持する必要がある情報を格納して、アプリケーションが再読み込みされるときにその同じ情報にアクセスします。 たとえば、色の設定、画面の位置、またはウィンドウのサイズを格納できます。 レジストリ内の別の場所に情報を格納することにより、ユーザーごとにこのデータを制御できます。  
+  
+ ベース、またはルート<xref:Microsoft.Win32.RegistryKey>によって公開されているインスタンス、`Registry`クラスは、レジストリのサブキーと値の基本的なストレージ機構を記述します。 すべてのキーは、レジストリがの存在に依存しているために、読み取り専用です。 によって公開されているキー`Registry`は。  
+  
+ <xref:Microsoft.Win32.Registry.CurrentUser>  
+ ユーザー設定に関する情報を格納します。  
+  
+ <xref:Microsoft.Win32.Registry.LocalMachine>  
+ ローカル コンピューターの構成情報を格納します。  
+  
+ <xref:Microsoft.Win32.Registry.ClassesRoot>  
+ 型 (およびクラス) に関する情報とそのプロパティを格納します。  
+  
+ <xref:Microsoft.Win32.Registry.Users>  
+ 既定のユーザー構成に関する情報を格納します。  
+  
+ <xref:Microsoft.Win32.Registry.PerformanceData>  
+ ソフトウェア コンポーネントに関するパフォーマンス情報を格納します。  
+  
+ <xref:Microsoft.Win32.Registry.CurrentConfig>  
+ ユーザー固有のハードウェア情報を格納します。  
+  
+ <xref:Microsoft.Win32.Registry.DynData>  
+ 動的なデータを格納します。  
+  
+ 使用することができます、レジストリからの情報を格納および取得に使用するルート キーを識別した後、<xref:Microsoft.Win32.RegistryKey>クラスの追加またはサブキーを削除して、指定されたキーの値を操作します。  
+  
+ ハードウェア デバイスでは、プラグ アンド プレイ インターフェイスを使用して自動的にレジストリに情報を配置できます。 デバイス ドライバーをインストールするソフトウェアは、標準的な Api を記述して、レジストリに情報を配置できます。  
+  
+## <a name="static-methods-for-getting-and-setting-values"></a>取得して、値を設定するための静的メソッド  
+ .NET framework version 2.0 では、<xref:Microsoft.Win32.Registry>クラスも含まれています。 `static` <xref:Microsoft.Win32.Registry.GetValue%2A>と<xref:Microsoft.Win32.Registry.SetValue%2A>設定およびレジストリ キーから値を取得するためのメソッドです。 これらのメソッドを開き、閉じるレジストリ キーの各実行しないように、使用時間だけでなく同期型のメソッドで、<xref:Microsoft.Win32.RegistryKey>クラス、多数の値にアクセスするとします。  
+  
+ <xref:Microsoft.Win32.RegistryKey>クラスには、レジストリ キー、キーを削除して、取得する前に、値のデータ型をテストするための Windows アクセス制御セキュリティを設定するためのメソッドも用意されています。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初の例では、ルート キー、および 2 番目の例を示しています、 `static` <xref:Microsoft.Win32.Registry.GetValue%2A>と<xref:Microsoft.Win32.Registry.SetValue%2A>メソッドです。  
+  
+ 例 1  
+  
+ 次のコード例では、HKEY_USERS キーのサブキーを取得し、画面にその名前を印刷する方法を示します。 使用して、<xref:Microsoft.Win32.RegistryKey.OpenSubKey%2A>関心のある特定のサブキーのインスタンスを作成します。 その他の操作を行うこともできますし、`RegistryKey`をそのキーを操作します。  
+  
+ [!code-cpp[Classic Registry.Users Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Registry.Users Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Registry.Users Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Registry.Users Example/CS/source.cs#1)]
+ [!code-vb[Classic Registry.Users Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Registry.Users Example/VB/source.vb#1)]  
+  
+ 例 2  
+  
+ 次のコード例では、例キーとを取得し、表示値とキーを作成するいくつかのデータ型の値を格納します。 例の格納と取得の既定値 (無名) の名前と値のペアと、使用して`defaultValue`名前/値ペアが存在しない場合。  
+  
+ [!code-cpp[Microsoft.Win32.Registry.GetSet#1](~/samples/snippets/cpp/VS_Snippets_CLR/Microsoft.Win32.Registry.GetSet/CPP/source.cpp#1)]
+ [!code-csharp[Microsoft.Win32.Registry.GetSet#1](~/samples/snippets/csharp/VS_Snippets_CLR/Microsoft.Win32.Registry.GetSet/CS/source.cs#1)]
+ [!code-vb[Microsoft.Win32.Registry.GetSet#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Microsoft.Win32.Registry.GetSet/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ClassesRoot">
+      <MemberSignature Language="C#" Value="public static readonly Microsoft.Win32.RegistryKey ClassesRoot;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class Microsoft.Win32.RegistryKey ClassesRoot" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Win32.Registry.ClassesRoot" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.RegistryKey</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドキュメントおよびそれらの型に関連付けられているプロパティの型 (またはクラス) を定義します。 このフィールドは、Windows レジストリ基本キー HKEY_CLASSES_ROOT を読み取ります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 従来のアプリケーションと OLE アプリケーションは、このキーの下に格納されているデータを使用します。 このキーは、DDE と OLE のサポートの情報を格納することによっても Windows 3.1 登録データベースとの下位互換性を提供します。 ファイルのあるユーザーとユーザー インターフェイスの拡張機能は、このキーに、OLE クラス識別子を格納し、処理サーバーは、このキーに登録されています。  
+  
+   
+  
+## Examples  
+ 次の例では、このキーのサブキーを取得する方法について説明し、画面に名前を出力します。 使用して、<xref:Microsoft.Win32.RegistryKey.OpenSubKey%2A>関心のある特定のサブキーのインスタンスを作成します。 その他の操作を行うこともできますし、<xref:Microsoft.Win32.RegistryKey>をそのキーを操作します。  
+  
+ [!code-cpp[Classic Registry.ClassesRoot Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Registry.ClassesRoot Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Registry.ClassesRoot Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Registry.ClassesRoot Example/CS/source.cs#1)]
+ [!code-vb[Classic Registry.ClassesRoot Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Registry.ClassesRoot Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentConfig">
+      <MemberSignature Language="C#" Value="public static readonly Microsoft.Win32.RegistryKey CurrentConfig;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class Microsoft.Win32.RegistryKey CurrentConfig" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Win32.Registry.CurrentConfig" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.RegistryKey</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーに固有ではないハードウェアに関連する構成情報が含まれています。 このフィールドは、Windows レジストリ基本キー HKEY_CURRENT_CONFIG を読み取ります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、サブキー内にマップされて<xref:Microsoft.Win32.Registry.LocalMachine>です。  
+  
+ このメンバーの使用例は、システムがネットワークに接続されているかどうかに応じて、データの別のサーバー名を格納するアプリケーションです。  
+  
+   
+  
+## Examples  
+ 次の例では、このキーのサブキーを取得する方法について説明し、画面に名前を出力します。 使用して、<xref:Microsoft.Win32.RegistryKey.OpenSubKey%2A>関心のある特定のサブキーのインスタンスを作成します。 その他の操作を行うこともできますし、<xref:Microsoft.Win32.RegistryKey>をそのキーを操作します。  
+  
+ [!code-cpp[Classic Registry.CurrentConfig Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Registry.CurrentConfig Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Registry.CurrentConfig Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Registry.CurrentConfig Example/CS/source.cs#1)]
+ [!code-vb[Classic Registry.CurrentConfig Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Registry.CurrentConfig Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentUser">
+      <MemberSignature Language="C#" Value="public static readonly Microsoft.Win32.RegistryKey CurrentUser;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class Microsoft.Win32.RegistryKey CurrentUser" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Win32.Registry.CurrentUser" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.RegistryKey</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のユーザー設定に関する情報が含まれています。 このフィールド Windows レジストリ キーを読み取って基本 HKEY_CURRENT_USER</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このキーに格納された情報には、プログラム グループ、色、プリンター、ネットワーク接続、およびアプリケーションの設定に関するデータと環境変数の設定が含まれています。 このキーでは、現在のユーザーの設定を確立するためにやすくなります。 このキーでは、ソフトウェア ベンダーは、アプリケーション内で使用する現在のユーザーに固有の設定を格納します。 Microsoft には、Microsoft のキーの下の独自のサブキーを作成する各アプリケーションで、使用するには、そのアプリケーションに対して、hkey_current_user \software\microsoft キーなどを作成します。  
+  
+   
+  
+## Examples  
+ 次の例では、このキーのサブキーを取得する方法について説明し、画面に名前を出力します。 使用して、<xref:Microsoft.Win32.RegistryKey.OpenSubKey%2A>関心のある特定のサブキーのインスタンスを作成します。 その他の操作を行うこともできますし、<xref:Microsoft.Win32.RegistryKey>をそのキーを操作します。  
+  
+ [!code-cpp[Classic Registry.CurrentUser Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Registry.CurrentUser Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Registry.CurrentUser Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Registry.CurrentUser Example/CS/source.cs#1)]
+ [!code-vb[Classic Registry.CurrentUser Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Registry.CurrentUser Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DynData">
+      <MemberSignature Language="C#" Value="public static readonly Microsoft.Win32.RegistryKey DynData;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class Microsoft.Win32.RegistryKey DynData" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Win32.Registry.DynData" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use PerformanceData instead")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.RegistryKey</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>動的レジストリ データが含まれています。 このフィールドは、Windows レジストリ基本キーとを読み取ります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Windows 98/Windows Me のレジストリでは、静的 (レジストリ内のディスクに保存されます) データと動的 (パフォーマンスの統計情報など、頻繁に変更) データの両方をサポートします。 この動的なデータ領域は、Win32 アプリケーションでは、ローカルでもリモートで実行できる仮想デバイス ドライバー (Vxd) をリアルタイムのデータを提供できるようにするメカニズムです。 システム モニターはリモートの Windows 98/Windows Me システムでパフォーマンスの統計情報を提供することもできます。  
+  
+ Vxd はパフォーマンス データに限定されません。 リング 0 からせずに渡すリング 3 効率的に CPU を占有する任意のデータを提示できます。 レジストリ値 (または複数の値) を返す関数へのポインターを格納することによって動的なデータをサポートします。 ときに呼び出しクエリのレジストリ値に関連付けられている動的なキーでは、目的の値または値を返す関数を呼び出すことです。  
+  
+> [!NOTE]
+>  動的なキーには、動的レジストリ データを処理する Microsoft Windows 95 では導入されました。 Windows 98/Windows me でのみサポートされています。  
+  
+   
+  
+## Examples  
+ 次の例では、このキーのサブキーを取得する方法について説明し、画面に名前を出力します。 使用して、<xref:Microsoft.Win32.RegistryKey.OpenSubKey%2A>関心のある特定のサブキーのインスタンスを作成します。 その他の操作を行うこともできますし、<xref:Microsoft.Win32.RegistryKey>をそのキーを操作します。 この例結果が返されない、存在できない可能性があります動的データ、またはが実行されていない Windows 98 以降に注意してください/。 このキーを使用すると、他のシステムでエラーが発生する可能性があります。  
+  
+ [!code-cpp[Classic Registry.DynData Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Registry.DynData Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Registry.DynData Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Registry.DynData Example/CS/source.cs#1)]
+ [!code-vb[Classic Registry.DynData Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Registry.DynData Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">オペレーティング システムが動的なデータをサポートしていませんこれは Windows 98、Windows 98 Second Edition、または Windows Millennium Edition (Windows Me) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="public static object GetValue (string keyName, string valueName, object defaultValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetValue(string keyName, string valueName, object defaultValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Win32.Registry.GetValue(System.String,System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyName" Type="System.String" />
+        <Parameter Name="valueName" Type="System.String" />
+        <Parameter Name="defaultValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="keyName">"HKEY_CURRENT_USER"などの有効なレジストリ ルートから始まる、キーのレジストリの完全パス。</param>
+        <param name="valueName">名前/値ペアの名前。</param>
+        <param name="defaultValue">場合に返す値<c>valueName</c>存在しません。</param>
+        <summary>指定されたレジストリ キーで、指定した名前に関連付けられている値を取得します。 指定したキーの名前が見つからない場合は、指定した既定値を返しますまたは<see langword="null" />指定したキーが存在しない場合。</summary>
+        <returns>
+          <see langword="null" />によって、サブキーが指定されている場合<paramref name="keyName" />が存在しない場合、値に関連付けられている場合は、 <paramref name="valueName" />、または<paramref name="defaultValue" />場合<paramref name="valueName" />が見つかりません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列`valueName`小文字は区別されません。  
+  
+> [!NOTE]
+>  レジストリ キーには、任意の名前に関連付けられていない 1 つの値を含めることができます。 レジストリ エディターでこの無名の値が表示されたら、名の代わりに、文字列「(既定値)」が表示されます。 この無名の値を取得するには、どちらかを指定`null`または空の文字列 ("") の`valuName`します。  
+  
+ 有効なルート名とは、HKEY_CURRENT_USER、HKEY_LOCAL_MACHINE、HKEY_CLASSES_ROOT、HKEY_USERS、HKEY_PERFORMANCE_DATA、HKEY_CURRENT_CONFIG、およびとです。 たとえば、Visual Basic では、文字列"HKEY_CURRENT_USER\MyTestKey"では、HKEY_CURRENT_USER のルートに"MyTestKey"サブキーのキー/値ペアにアクセスします。  
+  
+ ときに、<xref:Microsoft.Win32.RegistryKey.GetValue%2A>メソッドを展開可能な文字列値を取得します (<xref:Microsoft.Win32.RegistryValueKind?displayProperty=nameWithType>)、ローカルの環境からのデータを使用して環境文字列に展開されます。 環境変数を展開可能な参照を含む値を文字列として格納されている場合 (<xref:Microsoft.Win32.RegistryValueKind?displayProperty=nameWithType>)、展開可能な文字列としてではなく (<xref:Microsoft.Win32.RegistryValueKind?displayProperty=nameWithType>)、<xref:Microsoft.Win32.RegistryKey.GetValue%2A>展開しません。 このような文字列を展開するには、呼び出すことによって取得された後、<xref:System.Environment.ExpandEnvironmentVariables%2A?displayProperty=nameWithType>メソッドです。  
+  
+> [!NOTE]
+>  HKEY_PERFORMANCE_DATA からデータを取得することをお勧めを使用して、<xref:System.Diagnostics.PerformanceCounter>クラスではなく、<xref:Microsoft.Win32.RegistryKey.GetValue%2A?displayProperty=nameWithType>メソッドです。  
+  
+ <xref:Microsoft.Win32.Registry.GetValue%2A>と<xref:Microsoft.Win32.Registry.SetValue%2A>メソッドを開き、閉じるレジストリ キーのメソッドと同様に実行しないように、使用するたびに、<xref:Microsoft.Win32.RegistryKey>クラスの多数の値にアクセスする場合。  
+  
+ <xref:Microsoft.Win32.RegistryKey>取得する前に、値のデータ型をテストし、キーを削除するレジストリ キーへのアクセス制御リスト (ACL) を追加できるメソッドを提供します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、例キーとを取得し、表示値とキーを作成するいくつかのデータ型の値を格納します。 例の格納と取得の既定値 (無名) の名前と値のペアと、使用して`defaultValue`名前/値ペアが存在しない場合。  
+  
+ [!code-cpp[Microsoft.Win32.Registry.GetSet#1](~/samples/snippets/cpp/VS_Snippets_CLR/Microsoft.Win32.Registry.GetSet/CPP/source.cpp#1)]
+ [!code-csharp[Microsoft.Win32.Registry.GetSet#1](~/samples/snippets/csharp/VS_Snippets_CLR/Microsoft.Win32.Registry.GetSet/CS/source.cs#1)]
+ [!code-vb[Microsoft.Win32.Registry.GetSet#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Microsoft.Win32.Registry.GetSet/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、レジストリ キーからの読み取りに必要な権限がありません。</exception>
+        <exception cref="T:System.IO.IOException"><see cref="T:Microsoft.Win32.RegistryKey" />を含む、指定された値が削除対象としてマークされています。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="keyName" />有効なレジストリ ルートで始まらないです。</exception>
+        <permission cref="T:System.Security.Permissions.RegistryPermission">レジストリから読み取れません。 関連する列挙。<see cref="F:System.Security.Permissions.RegistryPermissionAccess.Read" /></permission>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">REG_EXPAND_SZ の種類のレジストリ キーを読み取れません。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalMachine">
+      <MemberSignature Language="C#" Value="public static readonly Microsoft.Win32.RegistryKey LocalMachine;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class Microsoft.Win32.RegistryKey LocalMachine" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Win32.Registry.LocalMachine" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.RegistryKey</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ローカル コンピューターの構成データが含まれています。 このフィールドは、Windows レジストリ基本キー HKEY_LOCAL_MACHINE を読み取ります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `LocalMachine`5 つのキーが含まれています。  
+  
+ ハードウェア  
+ コンピューターで、物理ハードウェア デバイス ドライバーは、そのハードウェア、およびマッピングおよびユーザー モードのコードとカーネル モード ドライバーをリンクする関連データを使用する方法について説明します。 このキーのすべてのデータは、システムを起動するたびに再作成されます。 説明のサブキーには、実際のコンピューターのハードウェアについて説明します。 DeviceMap サブキーには、ドライバーの特定のクラスに固有の形式での他のデータが含まれています。 ResourceMap サブキーは、どのデバイス ドライバがどのハードウェア リソースを要求について説明します。 Windows NT 診断プログラム (Winmsdp.exe) は、その内容を読みやすい形式で報告できます。  
+  
+ SAM  
+ ユーザーおよびグループ アカウント、および Windows 2000 server ドメインのセキュリティ情報のディレクトリ サービス データベース (SAM は、セキュリティ アカウント マネージャーは、ディレクトリ サービス データベースと呼ばれます)。  
+  
+ セキュリティ  
+ 特定のユーザー権限など、ローカル セキュリティ ポリシーが含まれています。 このキーは、Windows 2000 セキュリティ サブシステムによってのみ使用されます。  
+  
+ ソフトウェア  
+ コンピューターごとのソフトウェアのデータベースです。 このキーには、その他の構成データのさまざまな項目と共に、ローカル コンピューターにインストールされているソフトウェアに関するデータが含まれています。  
+  
+ システム  
+ システムの起動時、デバイス ドライバーの読み込み、Windows 2000 サービス、およびオペレーティング システムの動作を制御します。  
+  
+ 規則では、下のようなデータが存在する場合は<xref:Microsoft.Win32.Registry.CurrentUser> <xref:Microsoft.Win32.Registry.LocalMachine>、内のデータ<xref:Microsoft.Win32.Registry.CurrentUser>が優先されます。 ただし、このキーの値ことができますも拡張 (なく置換) Registry.LocalMachine 内のデータ。 また、一部の項目 (デバイス ドライバーがエントリの読み込み) などは Registry.LocalMachine の外部で発生した場合です。  
+  
+   
+  
+## Examples  
+ 次の例では、このキーのサブキーを取得する方法について説明し、画面に名前を出力します。 使用して、<xref:Microsoft.Win32.RegistryKey.OpenSubKey%2A>関心のある特定のサブキーのインスタンスを作成します。 その他の操作を行うこともできますし、<xref:Microsoft.Win32.RegistryKey>をそのキーを操作します。  
+  
+ [!code-cpp[Classic Registry.LocalMachine Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Registry.LocalMachine Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Registry.LocalMachine Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Registry.LocalMachine Example/CS/source.cs#1)]
+ [!code-vb[Classic Registry.LocalMachine Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Registry.LocalMachine Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PerformanceData">
+      <MemberSignature Language="C#" Value="public static readonly Microsoft.Win32.RegistryKey PerformanceData;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class Microsoft.Win32.RegistryKey PerformanceData" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Win32.Registry.PerformanceData" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.RegistryKey</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ソフトウェア コンポーネントのパフォーマンス情報が含まれます。 このフィールドは、Windows レジストリ基本キー HKEY_PERFORMANCE_DATA を読み取ります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各ソフトウェア コンポーネントでは、カウンターがインストールされているが実行中に、カウンター データを書き込むときに、そのオブジェクトのキーを作成します。 使用して、その他のレジストリ データをアクセスは、このデータにアクセスすることができます、<xref:Microsoft.Win32.RegistryKey>関数。  
+  
+ パフォーマンス データを収集するレジストリを使用すると、データはレジストリ データベースには格納されません。 代わりに、このキーを使用して、レジストリへのアクセスは、適切なシステム オブジェクト マネージャーからデータを収集するシステムです。  
+  
+ ローカル システムからパフォーマンス データを取得する、 <xref:Microsoft.Win32.RegistryKey.GetValue%2A> Registry.PerformanceData キーを持つメソッドです。 最初の呼び出しでは、(最初のキーを明示的に開く必要はありません) キーを開きます。 ただし、使用するようにして、<xref:Microsoft.Win32.RegistryKey.Close%2A>パフォーマンス データの取得が完了したら、キーを識別するハンドルを閉じます。 ユーザーは、インストールまたは、パフォーマンス データを使用している間は、ソフトウェア コンポーネントを削除できません。  
+  
+ 使用する必要があります、リモート システムからパフォーマンス データを取得する、<xref:Microsoft.Win32.RegistryKey.OpenRemoteBaseKey%2A>をリモート システムと Registry.PerformanceData キーのコンピューター名のメソッドです。 この呼び出しは、リモート システムのパフォーマンス データを表すキーを取得します。 データを取得する<xref:Microsoft.Win32.RegistryKey.GetValue%2A>Registry.PerformanceData キーではなく、このキーを使用します。  
+  
+> [!NOTE]
+>  Windows Server 2003 でユーザー属する必要がありますには、少なくとも、Performance Monitor Users グループにこの基本キーのサブキーにアクセスするためにします。  
+  
+   
+  
+## Examples  
+ 次の例では、このキーのサブキーを取得する方法について説明し、画面に名前を出力します。 使用して、<xref:Microsoft.Win32.RegistryKey.OpenSubKey%2A>関心のある特定のサブキーのインスタンスを作成します。 その他の操作を行うこともできますし、<xref:Microsoft.Win32.RegistryKey>をそのキーを操作します。 この例多くの場合、結果が返されない、パフォーマンス データされる可能性がありますいないを確認します。  
+  
+ [!code-cpp[Classic Registry.PerformanceData Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Registry.PerformanceData Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Registry.PerformanceData Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Registry.PerformanceData Example/CS/source.cs#1)]
+ [!code-vb[Classic Registry.PerformanceData Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Registry.PerformanceData Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="SetValue">
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>レジストリ キーの名前/値ペアの値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、例キーとを取得し、表示値とキーを作成するいくつかのデータ型の値を格納します。 例の格納と取得の既定値 (無名) の名前と値のペアと、使用して`defaultValue`名前/値ペアが存在しない場合。  
+  
+ [!code-cpp[Microsoft.Win32.Registry.GetSet#1](~/samples/snippets/cpp/VS_Snippets_CLR/Microsoft.Win32.Registry.GetSet/CPP/source.cpp#1)]
+ [!code-csharp[Microsoft.Win32.Registry.GetSet#1](~/samples/snippets/csharp/VS_Snippets_CLR/Microsoft.Win32.Registry.GetSet/CS/source.cs#1)]
+ [!code-vb[Microsoft.Win32.Registry.GetSet#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Microsoft.Win32.Registry.GetSet/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="SetValue">
+      <MemberSignature Language="C#" Value="public static void SetValue (string keyName, string valueName, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetValue(string keyName, string valueName, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Win32.Registry.SetValue(System.String,System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyName" Type="System.String" />
+        <Parameter Name="valueName" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="keyName">"HKEY_CURRENT_USER"などの有効なレジストリ ルートから始まる、キーのレジストリの完全パス。</param>
+        <param name="valueName">名前/値ペアの名前。</param>
+        <param name="value">格納する値。</param>
+        <summary>指定されたレジストリ キーの指定した名前と値のペアを設定します。 指定したキーが存在しない場合は作成されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 以降で、 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、`valueName`パラメーターは、最大 255 文字に制限されなくただし、`keyName`パラメーターは引き続き、255 文字に制限します。  
+  
+ 各レジストリ キーに、多くの値を格納できるため、使用、`valueName`パラメーターを設定する特定の値を指定します。  
+  
+> [!NOTE]
+>  レジストリ キーには、任意の名前に関連付けられていない 1 つの値を含めることができます。 レジストリ エディターでこの無名の値が表示されたら、名の代わりに、文字列「(既定値)」が表示されます。 この無名の値を設定するには、いずれかを指定`null`または空の文字列 ("") の`valueName`します。  
+  
+ 場合`valueName`存在しないキーが作成され、関連付けられている値に設定されて`value`です。  
+  
+ 場合`keyName`サブキーが存在しないことを指定して、指定されたルートのサブキーを作成します。 たとえば、Visual Basic では、文字列"HKEY_CURRENT_USER\MyTestKey"HKEY_CURRENT_USER のルートに"MyTestKey"サブキーが作成されます。 文字列"HKEY_CURRENT_USER\MyTestKey\Key2\Key3"では、入れ子になったサブキー"MyTestKey"、"MyTestKey\Key2"および"MyTestKey\Key2\Key3"を作成します。  
+  
+ 有効なルート名には、HKEY_CURRENT_USER、HKEY_LOCAL_MACHINE、HKEY_CLASSES_ROOT、HKEY_USERS、HKEY_PERFORMANCE_DATA、HKEY_CURRENT_CONFIG、およびとが含まれます。  
+  
+> [!NOTE]
+>  <xref:Microsoft.Win32.Registry.SetValue%2A>メソッドは、レジストリ キーを開き、値を設定しが呼び出されるたびに、キーを閉じます。 多数の値を変更する必要がある場合、<xref:Microsoft.Win32.RegistryKey.SetValue%2A?displayProperty=nameWithType>メソッドはパフォーマンスが向上する可能性があります。 <xref:Microsoft.Win32.RegistryKey>クラスには、取得する前に、値のデータ型をテストし、キーを削除するレジストリ キーへのアクセス制御リスト (ACL) を追加できるメソッドも用意されています。  
+  
+ このオーバー ロード<xref:Microsoft.Win32.Registry.SetValue%2A>64 ビット整数値を文字列として格納 (<xref:Microsoft.Win32.RegistryValueKind?displayProperty=nameWithType>)。 として 64 ビットの数値を格納する<xref:Microsoft.Win32.RegistryValueKind?displayProperty=nameWithType>、値を使用して、<xref:Microsoft.Win32.Registry.SetValue%28System.String%2CSystem.String%2CSystem.Object%2CMicrosoft.Win32.RegistryValueKind%29>メソッドのオーバー ロードします。  
+  
+ このオーバー ロード<xref:Microsoft.Win32.Registry.SetValue%2A>としてすべての文字列値を格納<xref:Microsoft.Win32.RegistryValueKind?displayProperty=nameWithType>環境変数を展開可能な参照が含まれている場合でも、オブジェクトです。 文字列値に展開可能な文字列を保存する (<xref:Microsoft.Win32.RegistryValueKind?displayProperty=nameWithType>)、使用して、<xref:Microsoft.Win32.Registry.SetValue%28System.String%2CSystem.String%2CSystem.Object%2CMicrosoft.Win32.RegistryValueKind%29>メソッドのオーバー ロードします。  
+  
+ このオーバー ロードを呼び出すことは、<xref:Microsoft.Win32.Registry.SetValue%28System.String%2CSystem.String%2CSystem.Object%2CMicrosoft.Win32.RegistryValueKind%29>とメソッドのオーバー ロード<xref:Microsoft.Win32.RegistryValueKind?displayProperty=nameWithType>です。  
+  
+> [!NOTE]
+>  Windows 98 および Windows Millennium Edition (Windows Me) では、レジストリは、Unicode ではなく、すべての Unicode 文字は、すべてのコード ページに対して無効です。 現在のコード ページに対して無効な Unicode 文字は、使用可能な最適の一致に置き換えられます。 例外をスローすることはありません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、例キーとを取得し、表示値とキーを作成するいくつかのデータ型の値を格納します。 例の格納と取得の既定値 (無名) の名前と値のペアと、使用して`defaultValue`名前/値ペアが存在しない場合。  
+  
+ [!code-cpp[Microsoft.Win32.Registry.GetSet#1](~/samples/snippets/cpp/VS_Snippets_CLR/Microsoft.Win32.Registry.GetSet/CPP/source.cpp#1)]
+ [!code-csharp[Microsoft.Win32.Registry.GetSet#1](~/samples/snippets/csharp/VS_Snippets_CLR/Microsoft.Win32.Registry.GetSet/CS/source.cs#1)]
+ [!code-vb[Microsoft.Win32.Registry.GetSet#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Microsoft.Win32.Registry.GetSet/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="keyName" />有効なレジストリ ルートで始まらないです。  
+  
+ または  
+  
+ <paramref name="keyName" />最大長を超えては許可されて (255 文字)。</exception>
+        <exception cref="T:System.UnauthorizedAccessException"><see cref="T:Microsoft.Win32.RegistryKey" />は読み取り専用、および、したがってできません書き込みができません。 たとえば、ルート レベル ノード。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、作成またはレジストリ キーを変更するために必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.RegistryPermission">、存在する場合は、指定されたレジストリ キーを変更するのにまたはが既に存在しない場合に、レジストリ キーを作成します。 関連する列挙: <see cref="F:System.Security.Permissions.RegistryPermissionAccess.Write" />、<see cref="F:System.Security.Permissions.RegistryPermissionAccess.Create" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValue">
+      <MemberSignature Language="C#" Value="public static void SetValue (string keyName, string valueName, object value, Microsoft.Win32.RegistryValueKind valueKind);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetValue(string keyName, string valueName, object value, valuetype Microsoft.Win32.RegistryValueKind valueKind) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Win32.Registry.SetValue(System.String,System.String,System.Object,Microsoft.Win32.RegistryValueKind)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyName" Type="System.String" />
+        <Parameter Name="valueName" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="valueKind" Type="Microsoft.Win32.RegistryValueKind" />
+      </Parameters>
+      <Docs>
+        <param name="keyName">"HKEY_CURRENT_USER"などの有効なレジストリ ルートから始まる、キーのレジストリの完全パス。</param>
+        <param name="valueName">名前/値ペアの名前。</param>
+        <param name="value">格納する値。</param>
+        <param name="valueKind">データを格納する際に使用するレジストリ データ型。</param>
+        <summary>指定したレジストリ データ型を使用して、指定されたレジストリ キーの名前/値ペアを設定します。 指定したキーが存在しない場合は作成されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 以降で、 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、`valueName`パラメーターは、最大 255 文字に制限されなくただし、`keyName`パラメーターは、255 文字に制限があるが続行されます。  
+  
+ 各レジストリ キーに、多くの値を格納できるため、使用、`valueName`パラメーターを設定する特定の値を指定します。  
+  
+> [!NOTE]
+>  レジストリ キーには、任意の名前に関連付けられていない 1 つの値を含めることができます。 レジストリ エディターでこの無名の値が表示されたら、名の代わりに、文字列「(既定値)」が表示されます。 この無名の値を設定するには、いずれかを指定`null`または空の文字列 ("") の`valueName`します。  
+  
+ 場合`valueName`存在しないキーが作成され、関連付けられている値に設定されて`value`です。  
+  
+ 場合`keyName`サブキーが存在しないことを指定して、指定されたルートのサブキーを作成します。 たとえば、Visual Basic では、文字列"HKEY_CURRENT_USER\MyTestKey"HKEY_CURRENT_USER のルートに"MyTestKey"サブキーが作成されます。 文字列"HKEY_CURRENT_USER\MyTestKey\Key2\Key3"では、入れ子になったサブキー"MyTestKey"、"MyTestKey\Key2"および"MyTestKey\Key2\Key3"を作成します。  
+  
+ 有効なルート名には、HKEY_CURRENT_USER、HKEY_LOCAL_MACHINE、HKEY_CLASSES_ROOT、HKEY_USERS、HKEY_PERFORMANCE_DATA、HKEY_CURRENT_CONFIG、およびとが含まれます。  
+  
+> [!NOTE]
+>  <xref:Microsoft.Win32.Registry.SetValue%2A>メソッドは、レジストリ キーを開き、値を設定しが呼び出されるたびに、キーを閉じます。 多数の値を変更する必要がある場合、<xref:Microsoft.Win32.RegistryKey.SetValue%2A?displayProperty=nameWithType>メソッドはパフォーマンスが向上する可能性があります。 <xref:Microsoft.Win32.RegistryKey>クラスには、取得する前に、値のデータ型をテストし、キーを削除するレジストリ キーへのアクセス制御リスト (ACL) を追加できるメソッドも用意されています。  
+  
+ 場合の指定した種類`value`、指定したとが一致しません`valueKind`、データにすることはできません、変換<xref:System.ArgumentException>がスローされます。 たとえば、保管、<xref:System.Int64?displayProperty=nameWithType>として、 <xref:Microsoft.Win32.RegistryValueKind?displayProperty=nameWithType>、その値がの最大値より小さい場合にのみが、<xref:System.Int32?displayProperty=nameWithType>です。 として 1 つの文字列値を格納することはできません、<xref:Microsoft.Win32.RegistryValueKind?displayProperty=nameWithType>です。  
+  
+> [!NOTE]
+>  ボックス化された値が渡された場合<xref:Microsoft.Win32.RegistryValueKind?displayProperty=nameWithType>または<xref:Microsoft.Win32.RegistryValueKind?displayProperty=nameWithType>、変換が行われるインバリアント カルチャを使用します。  
+  
+> [!NOTE]
+>  Windows 98 および Windows Millennium Edition (Windows Me) では、レジストリは、Unicode ではなく、すべての Unicode 文字は、すべてのコード ページに対して無効です。 現在のコード ページに対して無効な Unicode 文字は、使用可能な最適の一致に置き換えられます。 例外をスローすることはありません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、例キーとを取得し、表示値とキーを作成するいくつかのデータ型の値を格納します。 例の格納と取得の既定値 (無名) の名前と値のペアと、使用して`defaultValue`名前/値ペアが存在しない場合。  
+  
+ [!code-cpp[Microsoft.Win32.Registry.GetSet#1](~/samples/snippets/cpp/VS_Snippets_CLR/Microsoft.Win32.Registry.GetSet/CPP/source.cpp#1)]
+ [!code-csharp[Microsoft.Win32.Registry.GetSet#1](~/samples/snippets/csharp/VS_Snippets_CLR/Microsoft.Win32.Registry.GetSet/CS/source.cs#1)]
+ [!code-vb[Microsoft.Win32.Registry.GetSet#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Microsoft.Win32.Registry.GetSet/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="keyName" />有効なレジストリ ルートで始まらないです。  
+  
+ または  
+  
+ <paramref name="keyName" />最大長を超えては許可されて (255 文字)。  
+  
+ または  
+  
+ 型<paramref name="value" />で指定されたレジストリ データ型と一致しませんでした<paramref name="valueKind" />、したがって、データが正しく変換されません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException"><see cref="T:Microsoft.Win32.RegistryKey" />は読み取り専用、および、したがってできません書き込みができません。 たとえば、ルート レベル ノード、またはキーが書き込みアクセスで開かれていません。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、作成またはレジストリ キーを変更するために必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.RegistryPermission">、存在する場合は、指定されたレジストリ キーを変更するのにまたはが既に存在しない場合に、レジストリ キーを作成します。 関連する列挙: <see cref="F:System.Security.Permissions.RegistryPermissionAccess.Write" />、<see cref="F:System.Security.Permissions.RegistryPermissionAccess.Create" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Users">
+      <MemberSignature Language="C#" Value="public static readonly Microsoft.Win32.RegistryKey Users;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class Microsoft.Win32.RegistryKey Users" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Win32.Registry.Users" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.RegistryKey</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定のユーザー構成についてを説明します。 このフィールドは、Windows レジストリ基本キー HKEY_USERS を読み取ります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このキーには、コンピューターのユーザーごとに分岐が含まれています。 既定の構成は、ユーザーが設定を変更していない場合、ローカル コンピューター上の新しいユーザーは、既定の現在のユーザーに対して提供されます。 Windows 98/ME も Registry.Users をサポートしている、アプリケーションでも、ユーザーに固有の情報を Windows 2000 上で同じ方法アクセスできます。 各ユーザーの情報は、ローカルまたはネットワーク サーバー上に格納できる個別のファイルに格納されます。 Windows 98/ME このファイルをコピー、ユーザーの現在のシステムにできるように、ユーザーと別の設定を 1 台のコンピューターから移動できます。  
+  
+   
+  
+## Examples  
+ 次の例では、このキーのサブキーを取得する方法について説明し、画面に名前を出力します。 使用して、<xref:Microsoft.Win32.RegistryKey.OpenSubKey%2A>関心のある特定のサブキーのインスタンスを作成します。 その他の操作を行うこともできますし、<xref:Microsoft.Win32.RegistryKey>をそのキーを操作します。  
+  
+ [!code-cpp[Classic Registry.Users Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Registry.Users Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Registry.Users Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Registry.Users Example/CS/source.cs#1)]
+ [!code-vb[Classic Registry.Users Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Registry.Users Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

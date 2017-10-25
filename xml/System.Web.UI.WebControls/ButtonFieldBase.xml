@@ -1,0 +1,273 @@
+<Type Name="ButtonFieldBase" FullName="System.Web.UI.WebControls.ButtonFieldBase">
+  <TypeSignature Language="C#" Value="public abstract class ButtonFieldBase : System.Web.UI.WebControls.DataControlField" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ButtonFieldBase extends System.Web.UI.WebControls.DataControlField" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ButtonFieldBase" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.DataControlField</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Abstract としての基本クラス、ボタン フィールドなど、<see cref="T:System.Web.UI.WebControls.ButtonField" />または<see cref="T:System.Web.UI.WebControls.CommandField" />クラスです。 <see cref="T:System.Web.UI.WebControls.ButtonFieldBase" />クラスには、メソッドとすべてのボタン フィールドに共通するプロパティが用意されています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ButtonFieldBase>クラスは抽象基本クラス。 ボタンのフィールドとメソッドとすべてのボタン フィールドに共通するプロパティが含まれています。 このクラスは抽象であるため、そのインスタンスを直接作成することはできません。 代わりに、継承された非抽象クラスのインスタンスを作成する必要があります、<xref:System.Web.UI.WebControls.ButtonFieldBase>クラスなど、<xref:System.Web.UI.WebControls.ButtonField>または<xref:System.Web.UI.WebControls.CommandField>クラスです。  
+  
+ 派生したオブジェクト、<xref:System.Web.UI.WebControls.ButtonFieldBase>データ バインドされたコントロールによって使用される (など、<xref:System.Web.UI.WebControls.GridView>と<xref:System.Web.UI.WebControls.DetailsView>コントロール) に表示されるレコードごとに 1 つまたは複数のボタンを表示します。 ボタン フィールドが使用されているデータ バインド コントロールに応じて異なる方法で表示されます。 たとえば、<xref:System.Web.UI.WebControls.GridView>コントロールが表示されますが、ボタン フィールドを列として、<xref:System.Web.UI.WebControls.DetailsView>コントロールは行として表示します。  
+  
+ ボタン フィールドのボタンをクリックするには、親データ バインド コントロールのコマンド イベントを発生させます。 Command イベントのイベント ハンドラーを提供することで、ボタンがクリックされたときに実行するカスタム ルーチンを提供できます。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.GridView>制御が発生し、<xref:System.Web.UI.WebControls.GridView.RowCommand>イベント、一方、<xref:System.Web.UI.WebControls.DetailsView>昇給を制御、<xref:System.Web.UI.WebControls.DetailsView.ItemCommand>イベント。  
+  
+ 表示するボタンの種類を指定するには、使用、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>プロパティです。 ヘッダー セクションを非表示、<xref:System.Web.UI.WebControls.ButtonFieldBase>オブジェクト、設定、<xref:System.Web.UI.WebControls.ButtonFieldBase.ShowHeader%2A>プロパティです。  
+  
+> [!NOTE]
+>  一部のデータ バインド コントロール (など、<xref:System.Web.UI.WebControls.GridView>コントロール) を表示またはコントロールのすべてのヘッダー セクションだけを非表示にできます。 これらのデータ バインド コントロールをサポートしていない、<xref:System.Web.UI.WebControls.ButtonFieldBase.ShowHeader%2A>個々 のボタン フィールドのプロパティです。 表示または (使用可能な場合) は、ヘッダー セクション全体のデータ バインド コントロールを非表示を使用して、`ShowHeader`コントロールのプロパティです。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>継承する場合、<see cref="T:System.Web.UI.WebControls.ButtonFieldBase" />クラスでは、次のメンバーをオーバーライドする必要があります:<see cref="M:System.Web.UI.WebControls.ButtonFieldBase.CopyProperties(System.Web.UI.WebControls.DataControlField)" />です。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ButtonFieldBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ButtonFieldBase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.ButtonFieldBase" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ButtonFieldBase>クラスは抽象クラスを作成することはできません、<xref:System.Web.UI.WebControls.ButtonFieldBase>オブジェクトに直接できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ButtonType">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.ButtonType ButtonType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.ButtonType ButtonType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ButtonFieldBase.ButtonType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ButtonType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはボタン フィールドに表示するボタンの種類を設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.ButtonType" /> 値のいずれか。 既定値は、<see langword="ButtonType.Link" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>ボタン フィールドの表示は、ボタンの種類を指定するプロパティです。 次の表は、使用可能なボタンの種類を一覧表示します。  
+  
+|ボタンの種類の値|として表示されます。|  
+|-----------------------|-----------------|  
+|<xref:System.Web.UI.WebControls.ButtonType.Button>|ボタン コントロールです。|  
+|<xref:System.Web.UI.WebControls.ButtonType.Image>|イメージとボタンをクリックします。|  
+|<xref:System.Web.UI.WebControls.ButtonType.Link>|リンクです。|  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>にボタンが表示されることを指定するプロパティ、<xref:System.Web.UI.WebControls.ButtonField>のオブジェクト、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[ButtonFieldBaseButtonType#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ButtonFieldBaseButtonType/CS/buttonfieldbasebuttontypecs.aspx#1)]
+ [!code-aspx-vb[ButtonFieldBaseButtonType#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ButtonFieldBaseButtonType/VB/buttonfieldbasebuttontypevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値、<see cref="P:System.Web.UI.WebControls.ButtonFieldBase.ButtonType" />プロパティは、のいずれかではない、<see cref="T:System.Web.UI.WebControls.ButtonType" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CausesValidation">
+      <MemberSignature Language="C#" Value="public virtual bool CausesValidation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CausesValidation" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ButtonFieldBase.CausesValidation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定時のボタンに検証を実行するかどうかを示す値、<see cref="T:System.Web.UI.WebControls.ButtonFieldBase" />オブジェクトをクリックします。</summary>
+        <value>
+          <see langword="true" />ボタンをクリックするときに検証を実行する、<see cref="T:System.Web.UI.WebControls.ButtonFieldBase" />がクリックされた場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 検証グループを使用すると、ページ上の検証コントロールを特定のカテゴリに割り当てることができます。 各グループの検証は、ページ上の他の検証グループとは無関係に検証できます。 使用して、<xref:System.Web.UI.WebControls.ButtonFieldBase.ValidationGroup%2A>プロパティを対象の検証グループの名前を指定する、<xref:System.Web.UI.WebControls.ButtonFieldBase>オブジェクトは、サーバーへのポストバック時に検証を実行します。  
+  
+ <xref:System.Web.UI.WebControls.ButtonFieldBase.ValidationGroup%2A>プロパティは、有効される場合にのみの値、<xref:System.Web.UI.WebControls.ButtonFieldBase.CausesValidation%2A>プロパティに設定されている`true`です。 値を指定すると、<xref:System.Web.UI.WebControls.ButtonFieldBase.ValidationGroup%2A>プロパティ、指定されたグループの一部である検証コントロールだけは、検証、<xref:System.Web.UI.WebControls.ButtonFieldBase>投稿がサーバーにバックアップします。 値を指定しない場合、<xref:System.Web.UI.WebControls.ButtonFieldBase.ValidationGroup%2A>プロパティおよび<xref:System.Web.UI.WebControls.ButtonFieldBase.CausesValidation%2A>プロパティに設定されている`true`、検証グループに割り当てられていないページ上のすべての検証コントロールが検証されるときに、<xref:System.Web.UI.WebControls.ButtonFieldBase>投稿がサーバーにバックアップします。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ButtonFieldBase.CausesValidation%2A>プロパティで、ボタンがクリックされたときに検証を実行する、<xref:System.Web.UI.WebControls.ButtonField>のオブジェクト、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[ButtonFieldBaseCausesValidation#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ButtonFieldBaseCausesValidation/CS/buttonfieldbasecausesvalidationcs.aspx#1)]
+ [!code-aspx-vb[ButtonFieldBaseCausesValidation#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ButtonFieldBaseCausesValidation/VB/buttonfieldbasecausesvalidationvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyProperties">
+      <MemberSignature Language="C#" Value="protected override void CopyProperties (System.Web.UI.WebControls.DataControlField newField);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CopyProperties(class System.Web.UI.WebControls.DataControlField newField) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ButtonFieldBase.CopyProperties(System.Web.UI.WebControls.DataControlField)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newField" Type="System.Web.UI.WebControls.DataControlField" />
+      </Parameters>
+      <Docs>
+        <param name="newField"><see cref="T:System.Web.UI.WebControls.DataControlField" />を現在のプロパティをコピーする<see cref="T:System.Web.UI.WebControls.ButtonFieldBase" />です。</param>
+        <summary>派生した、現在のプロパティ オブジェクトをコピー、<see cref="T:System.Web.UI.WebControls.ButtonFieldBase" />を指定したクラス<see cref="T:System.Web.UI.WebControls.DataControlField" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ButtonFieldBase.CopyProperties%2A>メソッドで使用されるヘルパー メソッド、<xref:System.Web.UI.WebControls.DataControlField.CloneField%2A?displayProperty=nameWithType>から派生した現在のオブジェクトのプロパティをコピーする方法、<xref:System.Web.UI.WebControls.ButtonFieldBase>クラスを<xref:System.Web.UI.WebControls.DataControlField>で渡されるオブジェクト、`newField`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>コントロールの開発者がオーバーライドする必要があります、<see cref="M:System.Web.UI.WebControls.ButtonFieldBase.CopyProperties(System.Web.UI.WebControls.DataControlField)" />にカスタム コントロールに追加される任意のプロパティをコピーする方法です。 オーバーライドする場合、<see cref="M:System.Web.UI.WebControls.ButtonFieldBase.CopyProperties(System.Web.UI.WebControls.DataControlField)" />を呼び出して派生クラスでメソッドが必ず、<see cref="M:System.Web.UI.WebControls.ButtonFieldBase.CopyProperties(System.Web.UI.WebControls.DataControlField)" />メソッド ベースのクラスの基本クラスのプロパティをコピーできるようにします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowHeader">
+      <MemberSignature Language="C#" Value="public override bool ShowHeader { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowHeader" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ButtonFieldBase.ShowHeader" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはのヘッダー セクションが表示されるかどうかを示す値を設定、<see cref="T:System.Web.UI.WebControls.ButtonFieldBase" />オブジェクト。</summary>
+        <value>
+          <see langword="true" />ヘッダー セクションを表示するにはそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ButtonFieldBase.ShowHeader%2A>プロパティを表示または非表示のヘッダー セクション、<xref:System.Web.UI.WebControls.ButtonFieldBase>オブジェクト。 ヘッダー セクションを表示するには、設定、<xref:System.Web.UI.WebControls.ButtonFieldBase.ShowHeader%2A>プロパティを`true`です。  
+  
+> [!NOTE]
+>  一部のデータ バインド コントロール (など、<xref:System.Web.UI.WebControls.GridView>コントロール) を表示またはコントロールのすべてのヘッダー セクションだけを非表示にできます。 これらのデータ バインド コントロールをサポートしていない、<xref:System.Web.UI.WebControls.ButtonFieldBase.ShowHeader%2A>個々 のボタン フィールドのプロパティです。 表示または (使用可能な場合) は、ヘッダー セクション全体のデータ バインド コントロールを非表示を使用して、`ShowHeader`コントロールのプロパティです。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ButtonFieldBase.ShowHeader%2A>のヘッダー セクションを表示するプロパティを<xref:System.Web.UI.WebControls.ButtonField>内のオブジェクト、<xref:System.Web.UI.WebControls.DetailsView>コントロール。  
+  
+ [!code-aspx-csharp[ButtonFieldBaseShowHeader#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ButtonFieldBaseShowHeader/CS/buttonfieldbaseshowheadercs.aspx#1)]
+ [!code-aspx-vb[ButtonFieldBaseShowHeader#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ButtonFieldBaseShowHeader/VB/buttonfieldbaseshowheadervb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidationGroup">
+      <MemberSignature Language="C#" Value="public virtual string ValidationGroup { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ValidationGroup" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ButtonFieldBase.ValidationGroup" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定時のボタンを検証する検証コントロールのグループの名前、<see cref="T:System.Web.UI.WebControls.ButtonFieldBase" />オブジェクトをクリックします。</summary>
+        <value>場合内のボタンを検証する検証グループの名前、<see cref="T:System.Web.UI.WebControls.ButtonFieldBase" />をクリックします。 既定値は空の文字列 ("")、ことを示します、<see cref="P:System.Web.UI.WebControls.ButtonFieldBase.ValidationGroup" />プロパティが設定されていません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ButtonFieldBase.ValidationGroup%2A>時のボタンを検証する検証のグループを指定するプロパティ、<xref:System.Web.UI.WebControls.ButtonFieldBase>オブジェクトをクリックします。 指定された検証グループの検証コントロールのみが検証されます。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.ButtonFieldBase.CausesValidation%2A>プロパティに設定する必要があります`true`の<xref:System.Web.UI.WebControls.ButtonFieldBase.ValidationGroup%2A>プロパティが影響します。  
+  
+ 検証グループの詳細については、次を参照してください。<xref:System.Web.UI.WebControls.BaseValidator.ValidationGroup%2A?displayProperty=nameWithType>です。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ButtonFieldBase.ValidationGroup%2A>検証コントロールの特定のグループのみを検証することで、ボタンがクリックされたときに指定するプロパティ、<xref:System.Web.UI.WebControls.ButtonField>のオブジェクト、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[ButtonFieldBaseCausesValidation#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ButtonFieldBaseCausesValidation/CS/buttonfieldbasecausesvalidationcs.aspx#1)]
+ [!code-aspx-vb[ButtonFieldBaseCausesValidation#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ButtonFieldBaseCausesValidation/VB/buttonfieldbasecausesvalidationvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

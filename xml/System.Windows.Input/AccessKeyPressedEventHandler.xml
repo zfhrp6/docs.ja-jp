@@ -1,0 +1,32 @@
+<Type Name="AccessKeyPressedEventHandler" FullName="System.Windows.Input.AccessKeyPressedEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void AccessKeyPressedEventHandler(object sender, AccessKeyPressedEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed AccessKeyPressedEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.AccessKeyPressedEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.Input.AccessKeyPressedEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベント ハンドラーがアタッチされるオブジェクト。</param>
+    <param name="e">イベントのデータ。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Windows.Input.AccessKeyManager.AccessKeyPressed" />イベントをアタッチします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクセス キー[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]多少アクセス キーのサービスと同様に動作しへのアクセス キーの入力を転送するマネージャー クラスによって処理される、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]入力システムです。 ハンドラーをアタッチすることによって明示的にイベントを押されたアクセス キーを処理するのではなく、<xref:System.Windows.Input.AccessKeyManager.AccessKeyPressed>添付イベントの特定のオブジェクトで一般的には特定のコマンドとコマンドのバインドからアクセス キーを関連付けるし、対応するルーティング イベントによってルーティングされるコマンドを処理することをお勧めします。 この手法は、ユーザーの入力を開始した、入力をどのような入力モードに関係なく、統合イベント システムを提供します。 詳細については、次を参照してください。[入力概要](~/docs/framework/wpf/advanced/input-overview.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

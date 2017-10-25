@@ -1,0 +1,866 @@
+<Type Name="HostingEnvironment" FullName="System.Web.Hosting.HostingEnvironment">
+  <TypeSignature Language="C#" Value="public sealed class HostingEnvironment : MarshalByRefObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HostingEnvironment extends System.MarshalByRefObject" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Hosting.HostingEnvironment" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.MarshalByRefObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アプリケーション ドメイン内でマネージ アプリケーションにアプリケーション管理機能およびアプリケーション サービスを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各管理対象のアプリケーション ドメインには静的インスタンスが含まれています、<xref:System.Web.Hosting.HostingEnvironment>アプリケーション管理機能およびアプリケーション サービスへのアクセスを提供するクラス。  
+  
+   
+  
+## Examples  
+ 次のコード例は、web ページから利用可能なアプリケーションの情報を表示する、<xref:System.Web.Hosting.HostingEnvironment>オブジェクト。  
+  
+ [!code-aspx-csharp[System.Web.Hosting.HostingEnvironment#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Hosting.HostingEnvironment/CS/hostingEnvironmentcs.aspx#1)]
+ [!code-aspx-vb[System.Web.Hosting.HostingEnvironment#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Hosting.HostingEnvironment/VB/hostingEnvironmentvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HostingEnvironment ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.HostingEnvironment.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Hosting.HostingEnvironment" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.HostingEnvironment.%23ctor%2A>コンス トラクターの初期化、<xref:System.Web.Hosting.HostingEnvironment>オブジェクト。 <xref:System.Web.Hosting.HostingEnvironment.%23ctor%2A>コンス トラクターをアプリケーションの 1 回だけ呼び出す<xref:System.Web.Hosting.ApplicationManager>オブジェクト。 呼び出す、<xref:System.Web.Hosting.HostingEnvironment.%23ctor%2A>コンス トラクターとが 1 回以上、<xref:System.InvalidOperationException>例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Web.Hosting.HostingEnvironment.#ctor" />コンス トラクターが複数回呼び出されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationHost">
+      <MemberSignature Language="C#" Value="public static System.Web.Hosting.IApplicationHost ApplicationHost { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Web.Hosting.IApplicationHost ApplicationHost" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Hosting.HostingEnvironment.ApplicationHost" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Hosting.IApplicationHost</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティは、[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。</summary>
+        <value>アプリケーション ホストについての情報を格納するオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationID">
+      <MemberSignature Language="C#" Value="public static string ApplicationID { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string ApplicationID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Hosting.HostingEnvironment.ApplicationID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションの一意の識別子を取得します。</summary>
+        <value>アプリケーションの一意の識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションを実行する必要があります<xref:System.Web.AspNetHostingPermissionLevel>高い信頼に設定すると、アクセス、<xref:System.Web.Hosting.HostingEnvironment.ApplicationID%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationMonitors">
+      <MemberSignature Language="C#" Value="public static System.Web.Hosting.ApplicationMonitors ApplicationMonitors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Web.Hosting.ApplicationMonitors ApplicationMonitors" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Hosting.HostingEnvironment.ApplicationMonitors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Hosting.ApplicationMonitors</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションを正常な状態に保つために ASP.NET サブシステムによって使用されている置き換え可能なモニター オブジェクトのグループを取得します。</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationPhysicalPath">
+      <MemberSignature Language="C#" Value="public static string ApplicationPhysicalPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string ApplicationPhysicalPath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Hosting.HostingEnvironment.ApplicationPhysicalPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションのディレクトリへのディスク上の物理パスを取得します。</summary>
+        <value>アプリケーションのディレクトリへのディスク上の物理パス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.Hosting.HostingEnvironment.ApplicationPhysicalPath%2A>プロパティをアプリケーションの App_Data ディレクトリ内のデータ ファイルへのパスを構築します。 例を実行するために必要な完全なコードのセクションの例を参照してください、<xref:System.Web.Hosting.VirtualPathProvider>クラスの概要に関するトピック。  
+  
+ [!code-csharp[System.Web.Hosting.VirtualPathProvider#27](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.hosting.virtualpathprovider/CS/SamplePathProvider.cs#27)]
+ [!code-vb[System.Web.Hosting.VirtualPathProvider#27](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.hosting.virtualpathprovider/VB/SamplePathProvider.vb#27)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationVirtualPath">
+      <MemberSignature Language="C#" Value="public static string ApplicationVirtualPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string ApplicationVirtualPath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Hosting.HostingEnvironment.ApplicationVirtualPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションのルートへの仮想パスを取得します。</summary>
+        <value>末尾のスラッシュ (/) を除いた、アプリケーションのルートへの仮想パス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.HostingEnvironment.ApplicationVirtualPath%2A>プロパティは常に返します"`/"`戻り値の最初の文字として。 アプリケーションが、web サイトのルートに配置されている場合、戻り値は"`/"`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cache">
+      <MemberSignature Language="C#" Value="public static System.Web.Caching.Cache Cache { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Web.Caching.Cache Cache" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Hosting.HostingEnvironment.Cache" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Caching.Cache</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.Caching.Cache" />現在のアプリケーションのインスタンス。</summary>
+        <value>現在の <see cref="T:System.Web.Caching.Cache" /> インスタンス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DecrementBusyCount">
+      <MemberSignature Language="C#" Value="public static void DecrementBusyCount ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DecrementBusyCount() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.HostingEnvironment.DecrementBusyCount" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ホスト環境のビジー オブジェクトの数を 1 つ減らします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビジー状態である登録済みのオブジェクトには、その作業が完了すると、呼び出し、<xref:System.Web.Hosting.HostingEnvironment.DecrementBusyCount%2A>を通知するメソッド、<xref:System.Web.Hosting.HostingEnvironment>オブジェクトの処理が完了したこととして、いずれかのビジー オブジェクトの数を削減します。  
+  
+ ビジー状態の数が 0 より大きい場合は、ホスト アプリケーションとは保留中の要求がない場合でもタイムアウトしません。  
+  
+ 呼び出す必要があります、<xref:System.Web.Hosting.HostingEnvironment.DecrementBusyCount%2A>メソッド呼び出しごとに、<xref:System.Web.Hosting.HostingEnvironment.IncrementBusyCount%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Impersonate">
+      <MemberSignature Language="C#" Value="public static IDisposable Impersonate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IDisposable Impersonate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.HostingEnvironment.Impersonate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IDisposable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アプリケーション ID によって表されるユーザーを偽装します。</summary>
+        <returns><see cref="T:System.IDisposable" />偽装前の Windows ユーザーを表すオブジェクト; このオブジェクトを使用して元のユーザーのコンテキストに戻します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Web.HttpException">プロセスを偽装できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Impersonate">
+      <MemberSignature Language="C#" Value="public static IDisposable Impersonate (IntPtr token);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IDisposable Impersonate(native int token) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.HostingEnvironment.Impersonate(System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IDisposable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="token" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="token">Windows アカウント トークンのハンドル。</param>
+        <summary>指定したユーザー トークンによって表されるユーザーを偽装します。</summary>
+        <returns><see cref="T:System.IDisposable" />偽装前の Windows ユーザーを表すオブジェクト; このオブジェクトを使用して元のユーザーのコンテキストに戻します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Web.HttpException">プロセスを偽装できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Impersonate">
+      <MemberSignature Language="C#" Value="public static IDisposable Impersonate (IntPtr userToken, string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IDisposable Impersonate(native int userToken, string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.HostingEnvironment.Impersonate(System.IntPtr,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IDisposable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userToken" Type="System.IntPtr" />
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="userToken">Windows アカウント トークンのハンドル。</param>
+        <param name="virtualPath">要求されたリソースへのパス。</param>
+        <summary>指定した仮想パスまたは指定したユーザー トークンについて構成設定で指定されたユーザーを偽装します。</summary>
+        <returns><see cref="T:System.IDisposable" />偽装前の Windows ユーザーを表すオブジェクト; このオブジェクトを使用して元のユーザーのコンテキストに戻します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.HostingEnvironment.Impersonate%2A>メソッドすべての要素で指定された仮想パスに影響する構成設定の適用後、その結果、ユーザーの権限を借用します。 場合、`identity`された仮想パスの要素が指定されていない、<xref:System.Web.Hosting.HostingEnvironment.Impersonate%2A>メソッドは、指定された Windows アカウントを偽装します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">プロセスを偽装できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InClientBuildManager">
+      <MemberSignature Language="C#" Value="public static bool InClientBuildManager { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool InClientBuildManager" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Hosting.HostingEnvironment.InClientBuildManager" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホスティング環境が ASP.NET ビルド システムにアクセスできるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />かどうか、アプリケーション ドメインは、ASP.NET ホストされているアプリケーション ドメインで使用される<see langword="ClientBuildManager" />シナリオ、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncrementBusyCount">
+      <MemberSignature Language="C#" Value="public static void IncrementBusyCount ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void IncrementBusyCount() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.HostingEnvironment.IncrementBusyCount" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ホスト環境のビジー オブジェクトの数を 1 つ増やします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 登録されているオブジェクトのシグナル、<xref:System.Web.Hosting.HostingEnvironment>実行されているオブジェクトと 1 つのビジー オブジェクトの数を増やすにします。  
+  
+ ビジー状態の数が 0 より大きい場合は、ホスト アプリケーションとは保留中の要求がない場合でもタイムアウトしません。  
+  
+ 呼び出す必要があります、<xref:System.Web.Hosting.HostingEnvironment.DecrementBusyCount%2A>メソッド呼び出しごとに、<xref:System.Web.Hosting.HostingEnvironment.IncrementBusyCount%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializationException">
+      <MemberSignature Language="C#" Value="public static Exception InitializationException { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Exception InitializationException" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Hosting.HostingEnvironment.InitializationException" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>初期化中にスローされる例外を取得、<see cref="T:System.Web.Hosting.HostingEnvironment" />オブジェクト。</summary>
+        <value>初期化中にスローされた例外、<see cref="T:System.Web.Hosting.HostingEnvironment" />オブジェクト。 例外がスローされなかった場合を返します<see langword="null" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeLifetimeService">
+      <MemberSignature Language="C#" Value="public override object InitializeLifetimeService ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object InitializeLifetimeService() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.HostingEnvironment.InitializeLifetimeService" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>により、<see cref="T:System.Web.Hosting.HostingEnvironment" />リースが作成されるようにすることによって、無期限の有効期間のオブジェクトします。</summary>
+        <returns>常に <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.MarshalByRefObject.InitializeLifetimeService%2A>基本クラス メソッド。 常に返します`null`作成されないリースで、制限されることになり、<xref:System.Web.Hosting.HostingEnvironment>オブジェクトの有効期間。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitiateShutdown">
+      <MemberSignature Language="C#" Value="public static void InitiateShutdown ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void InitiateShutdown() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.HostingEnvironment.InitiateShutdown" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このホストに関連付けられている web アプリケーションのシャットダウンを開始し、登録済みのオブジェクトをシステムから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.Hosting.HostingEnvironment.InitiateShutdown%2A>に登録されている web アプリケーションのドメインを停止し、すべてのオブジェクトを削除する方法、<xref:System.Web.Hosting.HostingEnvironment.RegisterObject%2A>メソッドです。 このメソッドは、シャット ダウンが完了する前に、すぐに返します。  
+  
+ <xref:System.Web.Hosting.IRegisteredObject.Stop%2A> 、渡されたパラメーターのセットを登録済みの各オブジェクトのメソッドが呼び出された`false`各登録済みのオブジェクトを非同期的にシャット ダウンを許可します。 指定された時間待機した後、`shutdownTimeout`構成要素の属性、<xref:System.Web.Hosting.IRegisteredObject.Stop%2A>渡されたパラメーター設定したメソッドが再度呼び出さ`true`残り登録されているオブジェクトごとにします。  
+  
+ 登録済みのすべてのオブジェクトでは、シャット ダウンが完了したら後、<xref:System.Web.Hosting.HostingEnvironment>オブジェクトが、アプリケーション ドメインを終了します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDevelopmentEnvironment">
+      <MemberSignature Language="C#" Value="public static bool IsDevelopmentEnvironment { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsDevelopmentEnvironment" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Hosting.HostingEnvironment.IsDevelopmentEnvironment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のアプリケーションが開発環境で実行されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />アプリケーションが開発環境以外の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsHosted">
+      <MemberSignature Language="C#" Value="public static bool IsHosted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsHosted" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Hosting.HostingEnvironment.IsHosted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のアプリケーション ドメインがによってホストされているかどうかを示す値を取得、<see cref="T:System.Web.Hosting.ApplicationManager" />オブジェクト。</summary>
+        <value>
+          <see langword="true" />アプリケーション ドメインがによってホストされている場合、<see cref="T:System.Web.Hosting.ApplicationManager" />オブジェクト。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MapPath">
+      <MemberSignature Language="C#" Value="public static string MapPath (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string MapPath(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.HostingEnvironment.MapPath(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">(絶対または相対) 仮想パス。</param>
+        <summary>サーバー上の物理パスに仮想パスを割り当てます。</summary>
+        <returns><paramref name="virtualPath" /> で指定されたサーバー上の物理パス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxConcurrentRequestsPerCPU">
+      <MemberSignature Language="C#" Value="public static int MaxConcurrentRequestsPerCPU { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 MaxConcurrentRequestsPerCPU" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Hosting.HostingEnvironment.MaxConcurrentRequestsPerCPU" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>CPU あたりの同時実行される要求の最大数を取得または設定します。</summary>
+        <value>CPU あたりの同時実行される要求の最大数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxConcurrentThreadsPerCPU">
+      <MemberSignature Language="C#" Value="public static int MaxConcurrentThreadsPerCPU { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 MaxConcurrentThreadsPerCPU" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Hosting.HostingEnvironment.MaxConcurrentThreadsPerCPU" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>CPU あたりの同時実行されるスレッドの最大数を取得または設定します。</summary>
+        <value>CPU あたりの同時実行されるスレッドの最大数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MessageReceived">
+      <MemberSignature Language="C#" Value="public static void MessageReceived ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void MessageReceived() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.HostingEnvironment.MessageReceived" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメソッドは、[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QueueBackgroundWorkItem">
+      <MemberSignature Language="C#" Value="public static void QueueBackgroundWorkItem (Action&lt;System.Threading.CancellationToken&gt; workItem);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void QueueBackgroundWorkItem(class System.Action`1&lt;valuetype System.Threading.CancellationToken&gt; workItem) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.HostingEnvironment.QueueBackgroundWorkItem(System.Action{System.Threading.CancellationToken})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="workItem" Type="System.Action&lt;System.Threading.CancellationToken&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="workItem">実行の単位。</param>
+        <summary>[.NET Framework 4.5.2 以降のバージョンでのみでサポート]  
+  
+ どの要求とも独立した形で、バック グラウンドで実行するタスクをスケジュールします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 異なり、通常のスレッド プールの作業項目 ASP.NET を追跡できます作業この API を通して登録されている項目が現在実行されている、され、ASP.NET ランタイムが遅延 AppDomain のシャット ダウンされるまで、これらの作業項目の実行が完了に試行します。 この API は、ASP.NET で管理された AppDomain の外部で呼び出すことはできません。 アプリケーションのシャット ダウンするときは、指定の CancellationToken が通知されます。  
+  
+ <xref:System.Web.Hosting.HostingEnvironment.QueueBackgroundWorkItem%2A>タスクを返すコールバックを受け取るコールバックが戻るときに完了したら、作業項目を考慮します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QueueBackgroundWorkItem">
+      <MemberSignature Language="C#" Value="public static void QueueBackgroundWorkItem (Func&lt;System.Threading.CancellationToken,System.Threading.Tasks.Task&gt; workItem);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void QueueBackgroundWorkItem(class System.Func`2&lt;valuetype System.Threading.CancellationToken, class System.Threading.Tasks.Task&gt; workItem) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.HostingEnvironment.QueueBackgroundWorkItem(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="workItem" Type="System.Func&lt;System.Threading.CancellationToken,System.Threading.Tasks.Task&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="workItem">実行の単位。</param>
+        <summary>[.NET Framework 4.5.2 以降のバージョンでのみでサポート]  
+  
+ どの要求とも独立した形で、バック グラウンドで実行するタスクをスケジュールします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 異なり、通常のスレッド プールの作業項目 ASP.NET を追跡できます作業この API を通して登録されている項目が現在実行されている、され、ASP.NET ランタイムが遅延 AppDomain のシャット ダウンされるまで、これらの作業項目の実行が完了に試行します。 この API は、ASP.NET で管理された AppDomain の外部で呼び出すことはできません。 アプリケーションのシャット ダウンするときは、指定の CancellationToken が通知されます。  
+  
+ <xref:System.Web.Hosting.HostingEnvironment.QueueBackgroundWorkItem%2A>タスクを返すコールバックを受け取る作業項目と完了、返されるタスクが終了状態に遷移すると見なされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterObject">
+      <MemberSignature Language="C#" Value="public static void RegisterObject (System.Web.Hosting.IRegisteredObject obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterObject(class System.Web.Hosting.IRegisteredObject obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.HostingEnvironment.RegisterObject(System.Web.Hosting.IRegisteredObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Web.Hosting.IRegisteredObject" />
+      </Parameters>
+      <Docs>
+        <param name="obj">登録するオブジェクト。</param>
+        <summary>アプリケーションの登録済みオブジェクトのリストにオブジェクトを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.ApplicationManager>クラスを作成、管理、および現在のアプリケーション ドメイン内のオブジェクトを破棄するのには、現在のアプリケーション ドメイン外のメソッドを有効にします。 <xref:System.Web.Hosting.HostingEnvironment.RegisterObject%2A>ホスティング環境を以前に作成したオブジェクトを登録するメソッドを使用します。 登録されているオブジェクト、<xref:System.Web.Hosting.HostingEnvironment.RegisterObject%2A>メソッドを実装する必要があります、<xref:System.Web.Hosting.IRegisteredObject>インターフェイスです。  
+  
+ 登録済みのオブジェクトを使用するのには、次の手順を実行します。  
+  
+1.  呼び出すことによって、登録済みのオブジェクトの新しいインスタンスを作成、<xref:System.Web.Hosting.ApplicationManager.CreateObject%2A?displayProperty=nameWithType>メソッドです。  
+  
+2.  新しいオブジェクトを初期化するために、型固有メソッドを呼び出します。 初期化メソッドを呼び出して、<xref:System.Web.Hosting.HostingEnvironment.RegisterObject%2A>登録されているオブジェクトの一覧に、オブジェクトを追加します。  
+  
+3.  呼び出す、<xref:System.Web.Hosting.ApplicationManager.GetObject%2A?displayProperty=nameWithType>必要な場合に、登録されているオブジェクトを返すメソッド。  
+  
+4.  オブジェクトを停止するときに呼び出す、<xref:System.Web.Hosting.ApplicationManager.StopObject%2A?displayProperty=nameWithType>メソッドです。 <xref:System.Web.Hosting.ApplicationManager.StopObject%2A?displayProperty=nameWithType>メソッドを呼び出して、<xref:System.Web.Hosting.IRegisteredObject.Stop%2A?displayProperty=nameWithType>メソッドです。  
+  
+5.  <xref:System.Web.Hosting.IRegisteredObject.Stop%2A?displayProperty=nameWithType>メソッド、オブジェクトの呼び出しがある、<xref:System.Web.Hosting.HostingEnvironment.UnregisterObject%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装の`Start`登録済みのオブジェクトのメソッドです。 例を実行するために必要な完全なコードのセクションの例を参照してください、<xref:System.Web.Hosting.IRegisteredObject>インターフェイスの概要に関するトピック。  
+  
+ [!code-csharp[System.Web.Hosting.ApplicationManager#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Hosting.ApplicationManager/CS/appManagercs.aspx.cs#2)]
+ [!code-vb[System.Web.Hosting.ApplicationManager#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Hosting.ApplicationManager/VB/appManagervb.aspx.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterVirtualPathProvider">
+      <MemberSignature Language="C#" Value="public static void RegisterVirtualPathProvider (System.Web.Hosting.VirtualPathProvider virtualPathProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterVirtualPathProvider(class System.Web.Hosting.VirtualPathProvider virtualPathProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.HostingEnvironment.RegisterVirtualPathProvider(System.Web.Hosting.VirtualPathProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPathProvider" Type="System.Web.Hosting.VirtualPathProvider" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPathProvider">新しい<see cref="T:System.Web.Hosting.VirtualPathProvider" />コンパイル システムに追加するインスタンス。</param>
+        <summary>新しい登録<see cref="T:System.Web.Hosting.VirtualPathProvider" />ASP.NET コンパイル システムを持つインスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.HostingEnvironment.RegisterVirtualPathProvider%2A>メソッドは、指定した追加<xref:System.Web.Hosting.VirtualPathProvider>アプリケーションの一覧に仮想パス プロバイダーのインスタンス。  
+  
+ 詳細については、次を参照してください。、<xref:System.Web.Hosting.VirtualPathProvider>クラスの概要です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、カスタムを登録するアプリケーションのスタートアップ メソッドの一部<xref:System.Web.Hosting.VirtualPathProvider>コンパイル システム インスタンス。 例を実行するために必要な完全なコードのセクションの例を参照してください、<xref:System.Web.Hosting.VirtualPathProvider>クラスの概要に関するトピック。  
+  
+ [!code-csharp[System.Web.Hosting.VirtualPathProvider#11](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.hosting.virtualpathprovider/CS/AppStart.cs#11)]
+ [!code-vb[System.Web.Hosting.VirtualPathProvider#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.hosting.virtualpathprovider/VB/AppStart.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCultures">
+      <MemberSignature Language="C#" Value="public static IDisposable SetCultures ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IDisposable SetCultures() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.HostingEnvironment.SetCultures" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IDisposable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のスレッドを、アプリケーションの構成ファイルで指定されたカルチャに設定します。</summary>
+        <returns><see cref="T:System.IDisposable" />を変更する前に、カルチャを表すオブジェクト; このオブジェクトを使用して元のカルチャに戻します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.HostingEnvironment.SetCultures%2A>メソッドで指定されたカルチャの現在のスレッドの設定、[グローバリゼーション要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/e2dffc8e-ebd2-439b-a2fd-e3ac5e620da7)アプリケーションの構成ファイル内の要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCultures">
+      <MemberSignature Language="C#" Value="public static IDisposable SetCultures (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IDisposable SetCultures(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.HostingEnvironment.SetCultures(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IDisposable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">カルチャ情報を格納するパス。</param>
+        <summary>現在のカルチャを、指定した仮想パスのカルチャに設定します。</summary>
+        <returns><see cref="T:System.IDisposable" />を変更する前に、カルチャを表すオブジェクト; このオブジェクトを使用して元のカルチャに戻します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.HostingEnvironment.SetCultures%2A>メソッドは、現在のスレッドを指定した仮想パスに影響する構成ファイル内のすべての要素を適用した後に結果をカルチャに設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShutdownReason">
+      <MemberSignature Language="C#" Value="public static System.Web.ApplicationShutdownReason ShutdownReason { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Web.ApplicationShutdownReason ShutdownReason" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Hosting.HostingEnvironment.ShutdownReason" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ApplicationShutdownReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションの終了理由を示す列挙値を返します。</summary>
+        <value><see cref="T:System.Web.ApplicationShutdownReason" /> 値のいずれか。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SiteName">
+      <MemberSignature Language="C#" Value="public static string SiteName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string SiteName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Hosting.HostingEnvironment.SiteName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サイトの名前を取得します。</summary>
+        <value>サイトの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StopListening">
+      <MemberSignature Language="C#" Value="public static event EventHandler StopListening;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler StopListening" />
+      <MemberSignature Language="DocId" Value="E:System.Web.Hosting.HostingEnvironment.StopListening" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[.NET Framework 4.5.1 のみでサポート]  
+  
+ 発生した時、ワーカーの処理か、このホストに関連付けられているアプリケーション プールが新しい要求のリッスンを停止して、最終的にシャット ダウンされるときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション プールと関連付けられているワーカー プロセスは、IIS によって停止されることは、たとえばアプリケーション プールが、定期的なリサイクル間隔、IIS に達したときに通知 ASP.NET ランタイム、アプリケーションがシャット ダウンしていることと、アプリケーション プールのワーカー プロセスは、新しい要求のリッスンを停止します。 たとえば、実行時間の長い要求を使用するアプリケーション[SignalR](http://go.microsoft.com/fwlink/?LinkID=285432) 、アプリケーションがリッスンできる、<xref:System.Web.Hosting.HostingEnvironment.StopListening>イベントにシャット ダウン、長時間実行処理 IIS がアプリケーション プールと関連付けられているワーカー プロセスのシャット ダウンを開始したときに、します。  
+  
+> [!WARNING]
+>  開発者を実装する場合を考慮する必要がありますのあるいくつかの設計の考慮事項があります、<xref:System.Web.Hosting.HostingEnvironment.StopListening>イベント。  
+>   
+>  1.  <xref:System.Web.Hosting.HostingEnvironment.StopListening>イベントは、IIS 統合パイプラインを使用するように構成されているアプリケーションの使用のみ。  
+> 2.  開発者からのエラーをスローする必要があります、<xref:System.Web.Hosting.HostingEnvironment.StopListening>の実装です。 予期しない結果がエラーをスローします。  
+> 3.  ASP.NET 内の操作の同時実行の性質により、ASP.NET が発信するという保証はありません、<xref:System.Web.Hosting.HostingEnvironment.StopListening>イベントと、開発者が実装されています。  
+> 4.  <xref:System.Web.Hosting.HostingEnvironment.StopListening>イベントは、他のと同時に実行できる<xref:System.Web.Hosting.IRegisteredObject>通知します。  
+> 5.  開発者は、ASP.NET がシャット ダウン中にアプリケーション ドメインことに注意する必要があります、<xref:System.Web.Hosting.HostingEnvironment.StopListening>イベントを実行して、その可能性を処理する実装を設計します。  
+> 6.  <xref:System.Web.Hosting.HostingEnvironment.StopListening>イベント ハンドラーをブロックする必要があります。実装をブロックして、デッドロックが発生して、ラピッド フェール保護間隔に達したときに、IIS のワーカー プロセスが終了します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnregisterObject">
+      <MemberSignature Language="C#" Value="public static void UnregisterObject (System.Web.Hosting.IRegisteredObject obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void UnregisterObject(class System.Web.Hosting.IRegisteredObject obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.HostingEnvironment.UnregisterObject(System.Web.Hosting.IRegisteredObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Web.Hosting.IRegisteredObject" />
+      </Parameters>
+      <Docs>
+        <param name="obj">削除するオブジェクト。</param>
+        <summary>アプリケーションの登録済みのオブジェクトのリストからオブジェクトを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.ApplicationManager>クラスを作成、管理、および現在のアプリケーション ドメイン内のオブジェクトを破棄するのには、現在のアプリケーション ドメイン外のメソッドを有効にします。 <xref:System.Web.Hosting.HostingEnvironment.UnregisterObject%2A>メソッドを使用して、ホスティング環境から以前に登録されているオブジェクトを削除します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Hosting.IRegisteredObject.Stop%2A>登録済みのオブジェクトのメソッドです。 例を実行するために必要な完全なコードのセクションの例を参照してください、<xref:System.Web.Hosting.IRegisteredObject>インターフェイスの概要に関するトピック。  
+  
+ [!code-csharp[System.Web.Hosting.ApplicationManager#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Hosting.ApplicationManager/CS/appManagercs.aspx.cs#3)]
+ [!code-vb[System.Web.Hosting.ApplicationManager#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Hosting.ApplicationManager/VB/appManagervb.aspx.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VirtualPathProvider">
+      <MemberSignature Language="C#" Value="public static System.Web.Hosting.VirtualPathProvider VirtualPathProvider { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Web.Hosting.VirtualPathProvider VirtualPathProvider" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Hosting.HostingEnvironment.VirtualPathProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Hosting.VirtualPathProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアプリケーションの仮想パス プロバイダーを取得します。</summary>
+        <value><see cref="T:System.Web.Hosting.VirtualPathProvider" />このアプリケーションのインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに 1 つ以上<xref:System.Web.Hosting.VirtualPathProvider>インスタンスが登録されると、<xref:System.Web.Hosting.HostingEnvironment>オブジェクトは、呼び出しチェーンを管理します。 仮想パス プロバイダーが呼び出される順序を制御できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

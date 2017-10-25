@@ -1,0 +1,606 @@
+<Type Name="ChartSerializer" FullName="System.Web.UI.DataVisualization.Charting.ChartSerializer">
+  <TypeSignature Language="C#" Value="public class ChartSerializer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ChartSerializer extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.DataVisualization.Charting.ChartSerializer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DataVisualization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Format")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>シリアル化できるように、<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスとして公開される、<xref:System.Web.UI.DataVisualization.Charting.Chart.Serializer%2A>ルートのプロパティ<xref:System.Web.UI.DataVisualization.Charting.Chart>クラスです。  
+  
+ シリアル化では、グラフの状態を保存しもグラフにシリアル化されたデータを読み込むオプションを提供します。 グラフのデータを含む、すべてのグラフ プロパティを保持できます。 さらに、シリアル化にマークされたすべてのグラフ プロパティをリセットすることができます。  
+  
+ ユーザー定義のビュー ステートを管理する場合に、このクラスを使用必要に応じてことができます。 いずれかの`Load`メソッドがビュー状態、およびのいずれかの読み込みに使用できます、`Save`ビュー ステートを設定するときに、メソッドを使用できます。  
+  
+ シリアル化するストアのデータには、XML またはバイナリ形式を使用できます。 既定では、XML を使用しの形式を変更することが、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Format%2A>プロパティです。  
+  
+ グラフのプロパティが保存されを使用して読み込む、`Save`と`Load`メソッド、それぞれします。 既定以外の値を持つプロパティのみが保存されることに注意してください。 データを保存する、ストリーム、ファイルを使用して読み込まれた<xref:System.IO.TextWriter>、 <xref:System.IO.TextReader>、<xref:System.Xml.XmlWriter>と<xref:System.Xml.XmlReader>オブジェクト。 保存やオブジェクトを使用してデータの読み込みの派生、 <xref:System.IO.TextReader>、 <xref:System.IO.TextWriter>、<xref:System.Xml.XmlReader>または<xref:System.Xml.XmlWriter>クラス、データの形式が XML にする必要があります。  
+  
+ 次の一覧には、シリアル化可能なデータを定義するために使用する高度な基本的なものから、次の 3 つの方法を使用する場合がについて説明します。 あるもシリアル化不可能なデータを定義することに注意してください。 この手法は、次の段落で説明されています。  
+  
+-   シリアル化、<xref:System.Web.UI.DataVisualization.Charting.Chart>を使用して、`Save`と`Load`メソッド、任意のシリアル化可能なプロパティを指定せずします。 既定以外の値は、グラフのデータが含まれていると、すべてのグラフ プロパティをシリアル化されます。  
+  
+-   指定したグラフのプロパティをシリアル化、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Content%2A>プロパティです。 <xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Content%2A>プロパティなど、データ、外観、およびなどのカテゴリにシリアル化するグラフのプロパティをグループ化します。 なおの名前<xref:System.Web.UI.DataVisualization.Charting.ChartArea>と<xref:System.Web.UI.DataVisualization.Charting.Series>オブジェクトが自動的にシリアル化以外の場合は、シリアル化データは既存のグラフ領域と読み込まれたときに、系列に適用されます。  
+  
+> [!IMPORTANT]
+>  <xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Content%2A>プロパティがによって内部的に実装されている、<xref:System.Web.UI.DataVisualization.Charting.Chart>として制御、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.SerializableContent%2A>プロパティ  
+  
+-   指定したグラフのプロパティのシリアル化、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.SerializableContent%2A>プロパティです。 これは、シリアル化可能であるすべてのグラフ プロパティのコンマ区切りの一覧です。 このプロパティは、明示的な値に設定されてを保存するすべてのプロパティを指定する開発者の責任であります。 つまりとは異なり、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Content%2A>プロパティ、グラフ領域と一連の名前は自動的に保存されません。 <xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Content%2A>と<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.SerializableContent%2A>プロパティは、組み合わせても使用できます。 ただし、ことを確認<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.SerializableContent%2A>は、設定されると、それ以外の場合、グラフのプロパティで指定された自体と連結され、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Content%2A>プロパティは上書きされます。  
+  
+ 特定のプロパティがシリアル化されることを禁止するには、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.NonSerializableContent%2A>プロパティです。 1 つのプロパティ設定されている場合、シリアル化可能なとシリアル化不可能なワイルドカードを使用している場合によく用いられる、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.SerializableContent%2A>プロパティが優先されます。 ただし、優先順位は、プロパティが指定されている場合に使用されたワイルドカードの数によっても異なります。  
+  
+ 既定では、シリアル化可能なプロパティは、読み込まれる前にその既定値にリセットされます。 使用してこの動作を変更することができます、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.IsResetWhenLoading%2A>プロパティです。 <xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Reset%2A>メソッドは、明示的にグラフのプロパティを既定値にリセットにも使用できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Content">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.SerializationContents Content { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.SerializationContents Content" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartSerializer.Content" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Web.UI.DataVisualization.Charting.SerializationContents), "Default")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.SerializationContents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはシリアル化するグラフのコンテンツの種類を設定します。</summary>
+        <value>A<see cref="T:System.Web.UI.DataVisualization.Charting.SerializationContents" />読み込み中にシリアル化するグラフ コンテンツを表す列挙値の保存や操作をリセットします。 既定では、データを含む、すべての既定以外のグラフ プロパティが永続化されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いずれかの既定では、すべてのグラフ プロパティがシリアル化、`Save`と`Load`メソッドが呼び出されます。 他の新機能では、シリアル化制御を提供する、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Content%2A>プロパティです。 なお、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.SerializableContent%2A>と<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.NonSerializableContent%2A>プロパティは、と共にも使用できます、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Content%2A>プロパティです。  
+  
+ **重要な**、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Content%2A>プロパティをシリアル化する「表示」などのグラフの特性の種類を決定として内部的に実装が実際には、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.SerializableContent%2A>プロパティです。 つまり、その設定、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Content%2A>プロパティを設定して、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.SerializableContent%2A>プロパティになります、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Content%2A>プロパティ値のオーバーライドされない限り、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.SerializableContent%2A>を連結します。 この手順の例については、次のサンプル コードを参照してください。  
+  
+ 設定した場合、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Content%2A>プロパティ、すべて<xref:System.Web.UI.DataVisualization.Charting.ChartArea>と<xref:System.Web.UI.DataVisualization.Charting.Series>オブジェクト名が自動的にシリアル化されます。 つまり、グラフ領域と系列に関連するシリアル化されたデータが読み込まれるときに既存のオブジェクトに適用されることです。  
+  
+ ロードのすべてのプロパティに影響を設定するには、保存し、操作をリセットします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Format">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.SerializationFormat Format { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.SerializationFormat Format" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartSerializer.Format" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Web.UI.DataVisualization.Charting.SerializationFormat), "Xml")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.SerializationFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはグラフをシリアル化する際に使用される形式を設定します。</summary>
+        <value>A<see cref="T:System.Web.UI.DataVisualization.Charting.SerializationFormat" />をシリアル化されたデータの形式を表す列挙値。 既定値は XML です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データは、XML またはバイナリ形式のいずれかでシリアル化することができます。 バイナリ形式は、コンパクトで XML よりも低い記憶域を受け取ります。 ただし、XML は人間が判読できるテキスト形式です。  
+  
+ 保存するか、シリアル化されたデータを読み込むと、ときに、形式は XML にする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetContentString">
+      <MemberSignature Language="C#" Value="protected string GetContentString (System.Web.UI.DataVisualization.Charting.SerializationContents content, bool serializable);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance string GetContentString(valuetype System.Web.UI.DataVisualization.Charting.SerializationContents content, bool serializable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.ChartSerializer.GetContentString(System.Web.UI.DataVisualization.Charting.SerializationContents,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="content" Type="System.Web.UI.DataVisualization.Charting.SerializationContents" />
+        <Parameter Name="serializable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="content">シリアル化可能な内容です。</param>
+        <param name="serializable">
+          <see langword="True" />シリアル化可能な文字列を取得するには<see langword="false" />シリアル化できない文字列を取得します。</param>
+        <summary>シリアル化または非シリアル化可能なクラスや、特定のフラグの値に応じて、プロパティ名を返します。</summary>
+        <returns>A<see langword="string" />シリアル化または非シリアル化可能なクラスやプロパティの名前を表す値です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsResetWhenLoading">
+      <MemberSignature Language="C#" Value="public bool IsResetWhenLoading { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsResetWhenLoading" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartSerializer.IsResetWhenLoading" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはオブジェクト プロパティを読み込む前に既定値にリセットするかどうかを示すフラグを設定します。</summary>
+        <value>
+          <see langword="True" />オブジェクト プロパティを読み込む前に既定値にリセットする場合それ以外の場合、<see langword="False" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTemplateMode">
+      <MemberSignature Language="C#" Value="public bool IsTemplateMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsTemplateMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartSerializer.IsTemplateMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはグラフのシリアライザーがテンプレート作成モードで動作しているかどうかを示すフラグを設定します。</summary>
+        <value>
+          <see langword="True" />グラフのシリアライザーがテンプレート作成モードで動作している場合それ以外の場合、<see langword="False" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUnknownAttributeIgnored">
+      <MemberSignature Language="C#" Value="public bool IsUnknownAttributeIgnored { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsUnknownAttributeIgnored" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartSerializer.IsUnknownAttributeIgnored" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または不明な XML のプロパティおよび要素が、例外をスローせず無視するかどうか示すフラグを設定します。</summary>
+        <value>
+          <see langword="True" />不明な XML のプロパティおよび要素は、例外をスローせず無視する場合それ以外の場合、<see langword="False" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public void Load (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Load(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.ChartSerializer.Load(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream">派生したオブジェクト、<see cref="T:System.IO.Stream" />クラスなど、<see cref="T:System.IO.MemoryStream" />オブジェクト。</param>
+        <summary>負荷から派生したオブジェクトからコントロールにデータをシリアル化、<see cref="T:System.IO.Stream" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シリアル化されたデータを読み込むには、このメソッドを呼び出して、<xref:System.Web.UI.DataVisualization.Charting.Chart>コントロール。  
+  
+ ロード操作が行われる、シリアル化可能なプロパティは、既定では、最初にリセットが既定値に、永続化された値に設定されている保存されている場合。 この動作を変更するには、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.IsResetWhenLoading%2A>プロパティです。  
+  
+ 既定では、すべてのグラフのシリアル化されたプロパティが読み込まれます。 特定のシリアル化されたプロパティを読み込むには、次のように設定します。、 <xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Content%2A> 、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.SerializableContent%2A>または<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.NonSerializableContent%2A>プロパティ データを読み込む前にします。  
+  
+ 使用してデータを保存するときに注意してください、`Save`メソッド、既定以外の値を持つプロパティのみが実際にシリアル化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public void Load (System.IO.TextReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Load(class System.IO.TextReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.ChartSerializer.Load(System.IO.TextReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.IO.TextReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">リーダーなど<see cref="T:System.IO.StringReader" />、つまり、抽象型から派生した<see cref="T:System.IO.TextReader" />クラスです。</param>
+        <summary>負荷から派生したリーダー オブジェクトからコントロールにデータをシリアル化、<see cref="T:System.IO.TextReader" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シリアル化されたデータを読み込むには、このメソッドを呼び出して、<xref:System.Web.UI.DataVisualization.Charting.Chart>コントロール。  
+  
+ ロード操作が行われる、既定では、シリアル化可能なプロパティ最初にリセットされますが既定値、永続化された値に設定されている前に保存されている場合。 この動作を変更するには、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.IsResetWhenLoading%2A>プロパティです。  
+  
+ 既定では、すべてのグラフのシリアル化されたプロパティが読み込まれます。 設定して、 <xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Content%2A>、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.SerializableContent%2A>または<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.NonSerializableContent%2A>プロパティ、特定のプロパティ セットを読み込むことができます。  
+  
+ この定義を使用する場合は注意してくださいの形式で設定されている、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Format%2A>プロパティが XML にする必要があります。  
+  
+ 場合、<xref:System.Web.UI.DataVisualization.Charting.Chart.ViewStateData%2A>のプロパティ、<xref:System.Web.UI.DataVisualization.Charting.Chart>コントロールを使用して、状態を維持、このメソッドを使用すると、シリアル化されたを読み込むことができます、クライアントによって送信されたデータに戻して、<xref:System.Web.UI.DataVisualization.Charting.Chart>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public void Load (string fileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Load(string fileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.ChartSerializer.Load(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">シリアル化されたデータの格納に使用するファイルの相対パスまたは絶対パス。 相対パスが指定されている場合、パスは現在のディレクトリに対して相対的なります。</param>
+        <summary>シリアル化にディスクに保存されたデータを読み込み、<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シリアル化されたデータを読み込むには、このメソッドを呼び出して、<xref:System.Web.UI.DataVisualization.Charting.Chart>コントロール。  
+  
+ ロード操作が行われる、シリアル化可能なプロパティは、既定では、最初にリセットが既定値に、永続化された値に設定されている保存されている場合。 この動作を変更するには、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.IsResetWhenLoading%2A>プロパティです。  
+  
+ 既定では、すべてのグラフのシリアル化されたプロパティが読み込まれます。 特定のシリアル化されたプロパティを読み込むには、次のように設定します。、 <xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Content%2A> 、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.SerializableContent%2A>または<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.NonSerializableContent%2A>プロパティ データを読み込む前にします。  
+  
+ 使用してデータを保存するときに注意してください、`Save`メソッド、既定以外の値を持つプロパティのみが実際にシリアル化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public void Load (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Load(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.ChartSerializer.Load(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">永続化されたデータを読み取り元のオブジェクト。 派生したオブジェクトは、<see cref="T:System.Xml.XmlReader" />クラス、および .NET Framework オブジェクトまたはユーザー定義のオブジェクトを指定できます。</param>
+        <summary>負荷から派生したオブジェクトからコントロールにデータをシリアル化、<see cref="T:System.Xml.XmlReader" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シリアル化されたデータを読み込むには、このメソッドを呼び出して、<xref:System.Web.UI.DataVisualization.Charting.Chart>コントロール。  
+  
+ 読み込み操作の実行時に既定でシリアル化可能なプロパティ最初にリセットされますが既定値、永続化された値に設定されている前に保存されている場合。 この動作を変更するには、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.IsResetWhenLoading%2A>プロパティです。  
+  
+ 既定では、すべてのグラフのシリアル化されたプロパティが読み込まれます。 設定した場合、 <xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Content%2A>、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.SerializableContent%2A>または<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.NonSerializableContent%2A>プロパティ、特定のプロパティ セットを読み込むことができます。  
+  
+ この定義を使用する場合、形式が XML; をする必要があります。変更することができます、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Format%2A>プロパティです。  
+  
+ わかりやすくするために使用するため、XML 形式のテキスト ファイルを操作する際に、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Load%2A>メソッド代わりにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NonSerializableContent">
+      <MemberSignature Language="C#" Value="public string NonSerializableContent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NonSerializableContent" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartSerializer.NonSerializableContent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはシリアル化されませんグラフのプロパティを設定します。</summary>
+        <value>コンマ区切り<see langword="string" />いないシリアル化するグラフのプロパティを表す式です。 構文は、"Class.Property[,Class.Property]"です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、すべてのグラフ プロパティのなりますシリアル化するときに、`Save`と`Load`メソッドが呼び出されます。 使用することができます、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.NonSerializableContent%2A>はシリアル化に使用するグラフの特性を制限するプロパティ、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.SerializableContent%2A>と<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Content%2A>プロパティです。  
+  
+ このプロパティは、グラフの特性はシリアル化されませんを指定します。 同じ方法で、文字列式にワイルドカードを使用することができます、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.SerializableContent%2A>プロパティです。 たとえば、除外するすべてのグラフ`BackColor`からシリアル化、プロパティでは、このプロパティを設定"* です。BackColor"です。  
+  
+ 場合によっては、プロパティ設定できます両方シリアル化およびシリアル化しないワイルドカードを使用する場合によく用いられます。 <xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.NonSerializableContent%2A>式に優先順位が低いと比較すると、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.SerializableContent%2A>式。 ただし、ワイルドカードを使用する文字列式に小さい重みが与えられています。 たとえば場合、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.SerializableContent%2A>プロパティが"* です。BackColor"および<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.NonSerializableContent%2A>プロパティに設定されている<xref:System.Web.UI.DataVisualization.Charting.ChartArea.BackColor%2A>、すべて B`ackColor`以外のプロパティ<xref:System.Web.UI.DataVisualization.Charting.ChartArea>オブジェクトをシリアル化されます。  
+  
+ 場合、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Content%2A>プロパティが設定されている、優先順位がでどのくらいワイルドカードが使用されている依存、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.NonSerializableContent%2A>式。 たとえば、設定、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Content%2A>プロパティを<xref:System.Web.UI.DataVisualization.Charting.SerializationContents.Appearance>になります、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.SerializableContent%2A>プロパティを含む、"* です。戻る\*"式です。 場合、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.NonSerializableContent%2A>プロパティに設定されている"\*です。戻る\*"、すべて`Back*`グラフなどのプロパティ `BackColor`、`BackGradient`などのように、シリアル化されます。 これは、ため、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.SerializableContent%2A>プロパティ値と比較して優先順位が高いは、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.NonSerializableContent%2A>プロパティです。  
+  
+ すべてを保存、このプロパティに影響を読み込んで操作をリセットします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public void Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.ChartSerializer.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>シリアル化にマークされたすべてのグラフ プロパティをリセットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定は、このメソッドは、すべてのグラフ プロパティを既定値にリセットします。  
+  
+ 既定値にリセットされるグラフのプロパティを制限するを使用して、 <xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Content%2A>、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.SerializableContent%2A>と<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.NonSerializableContent%2A>プロパティです。  
+  
+ このメソッドも自動的に呼び出されます場合に注意してください、`Load`メソッドを使用し、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.IsResetWhenLoading%2A>プロパティに設定されている`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public void Save (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.ChartSerializer.Save(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream">派生したオブジェクト、<see cref="T:System.IO.Stream" />クラスなど<see cref="T:System.IO.MemoryStream" />はグラフのプロパティを保存するために使用します。</param>
+        <summary>グラフのデータと、既定以外の値から派生したオブジェクトを持つプロパティの保存、<see cref="T:System.IO.Stream" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、このメソッドが呼び出されたときに、既定以外の値は、データ ポイントが含まれていると、すべてのグラフ プロパティをシリアル化されます。 シリアル化するグラフの特性を制御するには、使用、 <xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Content%2A>、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.SerializableContent%2A>と<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.NonSerializableContent%2A>プロパティです。  
+  
+ このメソッドが外観のプロパティをテンプレートとして保存に使用されている場合、以下のことを確認、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.IsTemplateMode%2A>のプロパティ、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer>オブジェクトが最初に設定されている`true`このメソッドを呼び出す前にします。  
+  
+ テンプレートとしてグラフのシリアル化が異なるテンプレート以外のシリアル化から発生します。外観のプロパティに重点を置いてテンプレートのシリアル化します。  
+  
+ テンプレートがシリアル化されるとき、<xref:System.Web.UI.DataVisualization.Charting.Chart.LoadTemplate%2A>グラフの外観のプロパティを提供する、テンプレートを読み込むメソッドを使用できます。  
+  
+ テンプレートは、カスタム パレットをシミュレートするために使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public void Save (System.IO.TextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(class System.IO.TextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.ChartSerializer.Save(System.IO.TextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">派生したオブジェクト<see cref="T:System.IO.TextWriter" />クラス、たとえば、<see cref="T:System.IO.StringWriter" />はグラフのプロパティを保存するために使用します。</param>
+        <summary>グラフのデータと、既定以外の値から派生する特定のオブジェクトを持つプロパティの保存、<see cref="T:System.IO.TextWriter" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、このメソッドが呼び出されたときに、既定以外の値は、データ ポイントが含まれていると、すべてのグラフ プロパティをシリアル化されます。 コントロールは、グラフの特性がシリアル化を使用する、 <xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Content%2A>、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.SerializableContent%2A>と<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.NonSerializableContent%2A>プロパティです。  
+  
+ この定義を使用する場合、形式が XML; をする必要があります。書式を設定できる、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Format%2A>プロパティです。  
+  
+ 場合、<xref:System.Web.UI.DataVisualization.Charting.Chart.ViewStateData%2A>のプロパティ、<xref:System.Web.UI.DataVisualization.Charting.Chart>コントロールを使用して、状態を維持、このメソッドを使用するから派生したオブジェクトをシリアル化されたデータを保存することができます、 <xref:System.IO.TextWriter>、データを書き込むこれを使用して、<xref:System.Web.UI.DataVisualization.Charting.Chart.ViewStateData%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public void Save (string fileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(string fileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.ChartSerializer.Save(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">シリアル化されたデータの格納に使用するファイルの相対パスまたは絶対パス。 相対パスが指定されている場合は、パスは現在のディレクトリに対して相対的なりますに注意してください。</param>
+        <summary>既定以外の値を指定されたファイルを持つグラフ データとプロパティを保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、このメソッドが呼び出されたときに既定以外の値は、データ ポイントが含まれていると、すべてのグラフ プロパティをシリアル化されます。 使用をシリアル化するグラフの特性を制御する、 <xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Content%2A>、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.SerializableContent%2A>と<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.NonSerializableContent%2A>プロパティです。  
+  
+ 既定では、データが XML 形式で保存されます。 バイナリ形式でデータを保存するには、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Format%2A>プロパティです。  
+  
+ ファイルが格納されているディレクトリに対する書き込みアクセス許可を有効にする必要があることに注意してください。 既定では、アプリケーションの Bin フォルダーです。  
+  
+ 外観のプロパティをテンプレートとして保存するこの方法が使用されている場合、以下のことを確認、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.IsTemplateMode%2A>プロパティが最初に設定されている`true`このメソッドを呼び出す前にします。  
+  
+ テンプレートとしてグラフのシリアル化が異なりますテンプレート以外のシリアル化と外観のプロパティに重点を置いてテンプレートのシリアル化するために、主にします。  
+  
+ テンプレートがシリアル化されるとき、<xref:System.Web.UI.DataVisualization.Charting.Chart.LoadTemplate%2A>グラフの外観のプロパティを提供する、テンプレートを読み込むメソッドを使用できます。  
+  
+ テンプレートは、カスタム パレットをシミュレートするために使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public void Save (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.ChartSerializer.Save(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">派生したオブジェクト<see cref="T:System.Xml.XmlWriter" />を保存するために使用<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" />プロパティです。</param>
+        <summary>グラフのデータと、既定以外の値から派生する特定のオブジェクトを持つプロパティの保存、<see cref="T:System.Xml.XmlWriter" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、このメソッドが呼び出されたときに、既定以外の値は、データ ポイントが含まれていると、すべてのグラフ プロパティをシリアル化されます。 コントロールは、グラフの特性がシリアル化を使用する、 <xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Content%2A>、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.SerializableContent%2A>と<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.NonSerializableContent%2A>プロパティです。  
+  
+ この定義を使用する場合、形式が XML; をする必要があります。形式を変更することができます、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Format%2A>プロパティです。  
+  
+ わかりやすくするために使用するため、XML 形式のテキスト ファイルを操作する際に、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Save%2A>メソッド代わりにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SerializableContent">
+      <MemberSignature Language="C#" Value="public string SerializableContent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SerializableContent" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartSerializer.SerializableContent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはシリアル化可能なグラフのプロパティを設定します。</summary>
+        <value>コンマ区切り<see langword="string" />シリアル化するグラフのプロパティを表す式です。 構文は、"Class.Property[,Class.Property]"です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、すべてのグラフ プロパティのなりますシリアル化するときに、`Save`と`Load`メソッドが呼び出されます。 使用することができます、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.NonSerializableContent%2A>はシリアル化に使用するグラフの特性を制限するプロパティ、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.SerializableContent%2A>と<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Content%2A>プロパティです。  
+  
+ <xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.SerializableContent%2A>プロパティは、シリアル化するグラフの特性を決定します。 同じ方法で、文字列式にワイルドカードを使用することができます、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.NonSerializableContent%2A>プロパティです。 たとえば、シリアル化するすべてのグラフ`BackColor`プロパティでは、このプロパティを設定"* です。BackColor"です。  
+  
+ 場合<xref:System.Web.UI.DataVisualization.Charting.ChartArea>や<xref:System.Web.UI.DataVisualization.Charting.Series>子のプロパティを指定し、すべての名前<xref:System.Web.UI.DataVisualization.Charting.ChartArea>と<xref:System.Web.UI.DataVisualization.Charting.Series>既存に適用される永続化されたデータを有効にするものオブジェクトを指定する必要があります<xref:System.Web.UI.DataVisualization.Charting.ChartArea>と<xref:System.Web.UI.DataVisualization.Charting.Series>オブジェクトです。 つまり、"Series.Name"と"ChartArea.Name"の式を指定する必要があります。 この手順の例については、次のサンプル コードを参照してください。 同様に、複数のグラフ領域を使用している場合、<xref:System.Web.UI.DataVisualization.Charting.Series.ChartArea%2A>プロットされたすべてのプロパティ<xref:System.Web.UI.DataVisualization.Charting.Series>にも、保存する必要があります。  
+  
+ 場合によっては、プロパティ設定できます両方シリアル化およびシリアル化しないワイルドカードを使用する場合によく用いられます。 <xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.NonSerializableContent%2A>式に優先順位が低いと比較すると、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.SerializableContent%2A>式。 ただし、ワイルドカードを使用する文字列式に小さい重みが与えられています。 たとえば場合、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.SerializableContent%2A>プロパティが"* です。BackColor"および<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.NonSerializableContent%2A>プロパティに設定されている<xref:System.Web.UI.DataVisualization.Charting.ChartArea.BackColor%2A>、すべて B`ackColor`以外のプロパティ<xref:System.Web.UI.DataVisualization.Charting.ChartArea>オブジェクトをシリアル化されます。  
+  
+ 設定した場合、 <xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Content%2A> 、プロパティ、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.SerializableContent%2A>プロパティが内部で設定されます。 場合、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Content%2A>プロパティは既に設定されているが、別のプロパティをシリアル化、連結することを確認する必要があります、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.SerializableContent%2A>プロパティその他のプロパティを指定する場合。 この手順の例については、次のサンプル コードを参照してください。  
+  
+ すべてを保存、このプロパティに影響を読み込んで操作をリセットします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

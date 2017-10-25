@@ -1,0 +1,115 @@
+<Type Name="IStreamProvider" FullName="System.Xml.IStreamProvider">
+  <TypeSignature Language="C#" Value="public interface IStreamProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IStreamProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.IStreamProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+    <AssemblyVersion>4.1.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>ストリームを提供するクラスで実装できるインターフェイスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ストリーミングされた本文を含む送信メッセージを XML ライターに書き込むときに、<xref:System.ServiceModel.Channels.Message> は <xref:System.ServiceModel.Channels.Message.OnWriteBodyContents%28System.Xml.XmlDictionaryWriter%29> 実装で次のような一連の呼び出しを使用します。  
+  
+-   ストリームの前に必要な情報 (XML 開始タグなど) を書き込みます。  
+  
+-   ストリームを書き込みます。  
+  
+-   ストリームの後に情報 (XML 終了タグなど) を書き込みます。  
+  
+ これは、テキスト XML エンコーディングに類似するエンコードで有効に機能します。 ただし、要素内に含まれるデータと共に、XML Infoset 情報 (XML 要素を開始および終了するためのタグなど) を配置しないエンコードもあります。 たとえば、MTOM エンコーディングでは、メッセージは複数の部分に分割されます。 ある部分に XML Infoset が含まれ、要素の実際のコンテンツについては他の部分への参照が含まれている場合があります。 通常、XML Infoset は、ストリーミングされたコンテンツと比べるとサイズが小さいため、Infoset をバッファーに格納し、これを書き込んでから、ストリーミング方式でコンテンツを書き込むことには意味があります。 これは、終了要素タグが書き込まれるまでは、ストリームを書き込むことができないことを意味します。  
+  
+ このために、<xref:System.Xml.IStreamProvider> インターフェイスが使用されます。 このインターフェイスには、書き込むストリームを返す <xref:System.Xml.IStreamProvider.GetStream> メソッドがあります。 <xref:System.ServiceModel.Channels.Message.OnWriteBodyContents%28System.Xml.XmlDictionaryWriter%29> でストリーミングされたメッセージ本文を書き込む適切な方法は次のとおりです。  
+  
+-   ストリームの前に必要な情報 (XML 開始タグなど) を書き込みます。  
+  
+-   書き込むストリームを返す `WriteValue` 実装で、<xref:System.Xml.XmlDictionaryWriter> を受け取る <xref:System.Xml.IStreamProvider> に対して `IStreamProvider` オーバーロードを呼び出します。  
+  
+-   ストリームの後に情報 (XML 終了タグなど) を書き込みます。  
+  
+ この方法を使用すると、XML ライターは <xref:System.Xml.IStreamProvider.GetStream> を呼び出し、ストリーミングされたデータを書き込む時期を選択できます。 たとえば、テキスト XML ライターやバイナリ XML ライターは、このメソッドをすぐに呼び出し、開始タグと終了タグの間にストリーミングされたコンテンツを書き込むことができます。 MTOM ライターは、メッセージの適切な部分を書き込む準備ができたときに、後で <xref:System.Xml.IStreamProvider.GetStream> を呼び出すことができます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetStream">
+      <MemberSignature Language="C#" Value="public System.IO.Stream GetStream ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IO.Stream GetStream() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.IStreamProvider.GetStream" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ストリームを取得します。</summary>
+        <returns><see cref="T:System.IO.Stream" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、書き込まれるストリームを返すために使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReleaseStream">
+      <MemberSignature Language="C#" Value="public void ReleaseStream (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ReleaseStream(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.IStreamProvider.ReleaseStream(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream">解放するストリーム。</param>
+        <summary>出力するストリームを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,76 @@
+<Type Name="RuleReadWriteAttribute" FullName="System.Workflow.Activities.Rules.RuleReadWriteAttribute">
+  <TypeSignature Language="C#" Value="public abstract class RuleReadWriteAttribute : System.Workflow.Activities.Rules.RuleAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit RuleReadWriteAttribute extends System.Workflow.Activities.Rules.RuleAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Activities.Rules.RuleReadWriteAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.Activities.Rules.RuleAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Workflow.Activities.Rules.RuleReadAttribute" /> および <see cref="T:System.Workflow.Activities.Rules.RuleWriteAttribute" /> の基本クラスです。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected RuleReadWriteAttribute (string path, System.Workflow.Activities.Rules.RuleAttributeTarget target);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.Workflow.Activities.Rules.RuleAttributeTarget target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.RuleReadWriteAttribute.#ctor(System.String,System.Workflow.Activities.Rules.RuleAttributeTarget)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="target" Type="System.Workflow.Activities.Rules.RuleAttributeTarget" />
+      </Parameters>
+      <Docs>
+        <param name="path">属性のターゲット パス。</param>
+        <param name="target">
+          パスを使用してターゲットを検索する方法を決定する <see cref="T:System.Workflow.Activities.Rules.RuleAttributeTarget" /> 列挙値。</param>
+        <summary>派生クラスとして実装された場合、<see cref="T:System.Workflow.Activities.Rules.RuleReadWriteAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public string Path { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Path" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.Rules.RuleReadWriteAttribute.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>属性のターゲット パスを取得します。</summary>
+        <value>パスを格納する <see cref="T:System.String" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Target">
+      <MemberSignature Language="C#" Value="public System.Workflow.Activities.Rules.RuleAttributeTarget Target { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Workflow.Activities.Rules.RuleAttributeTarget Target" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.Rules.RuleReadWriteAttribute.Target" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Activities.Rules.RuleAttributeTarget</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パスを使用してターゲットを検索する方法を決定する <see cref="T:System.Workflow.Activities.Rules.RuleAttributeTarget" /> 列挙値を取得します。</summary>
+        <value>指定されたパスを使用してターゲットを検索する方法を決定する <see cref="T:System.Workflow.Activities.Rules.RuleAttributeTarget" /> 列挙値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

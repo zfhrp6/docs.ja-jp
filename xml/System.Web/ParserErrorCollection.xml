@@ -1,0 +1,440 @@
+<Type Name="ParserErrorCollection" FullName="System.Web.ParserErrorCollection">
+  <TypeSignature Language="C#" Value="public sealed class ParserErrorCollection : System.Collections.CollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit ParserErrorCollection extends System.Collections.CollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.Web.ParserErrorCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.CollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>解析中に検出された一連のパーサー エラーを管理します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.ParserErrorCollection>クラス メソッドとプロパティのコレクションの管理に使用できる提供<xref:System.Web.ParserError>オブジェクト。 たとえば、カスタムの使用中に解析時にコレクションに一連のパーサー エラーを追加できます<xref:System.Web.Compilation.BuildProvider>解析中にキャッチされた例外を解析すべて報告するオブジェクト。  
+  
+ 削除、またはコレクション内の位置がパーサー エラーを追加するには次の手順に従います。  
+  
+-   <xref:System.Web.ParserErrorCollection.Add%2A> 、1 つを追加するメソッドを<xref:System.Web.ParserError>オブジェクトをコレクション。  
+  
+-   <xref:System.Web.ParserErrorCollection.AddRange%2A>複数を追加するメソッドを<xref:System.Web.ParserError>をコレクションにオブジェクト。  
+  
+-   両方の<xref:System.Web.ParserErrorCollection.Insert%2A>メソッドおよび<xref:System.Web.ParserErrorCollection.Item%2A>プロパティである、 <xref:System.Web.ParserErrorCollection> 、1 つを追加するためのインデクサー<xref:System.Web.ParserError>オブジェクトをコレクション内の指定したインデックス位置にします。  
+  
+ また、使用することができます、<xref:System.Web.ParserErrorCollection>クラスを次を行うには。  
+  
+-   削除<xref:System.Web.ParserError>オブジェクトと、<xref:System.Web.ParserErrorCollection.Remove%2A>メソッドです。  
+  
+-   特定のかどうかを確認して<xref:System.Web.ParserError>がコレクション内を使用して、<xref:System.Web.ParserErrorCollection.Contains%2A>メソッドです。  
+  
+-   場所を見つける、<xref:System.Web.ParserError>を使用してオブジェクトがコレクション内にある、<xref:System.Web.ParserErrorCollection.IndexOf%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.ParserErrorCollection>メソッドです。  
+  
+ [!code-csharp[System.Web.ParserErrorCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.ParserErrorCollection/CS/ParserErrorCollection_CS.aspx#1)]
+ [!code-vb[System.Web.ParserErrorCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.ParserErrorCollection/VB/ParserErrorCollection_VB.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ParserErrorCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ParserErrorCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.ParserErrorCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ インスタンスを初期化するために次のコード例には、<xref:System.Web.ParserErrorCollection>クラスです。  
+  
+ [!code-csharp[System.Web.ParserErrorCollection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.ParserErrorCollection/CS/ParserErrorCollection_CS.aspx#2)]
+ [!code-vb[System.Web.ParserErrorCollection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.ParserErrorCollection/VB/ParserErrorCollection_VB.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ParserErrorCollection (System.Web.ParserError[] value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.ParserError[] value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ParserErrorCollection.#ctor(System.Web.ParserError[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Web.ParserError[]" />
+      </Parameters>
+      <Docs>
+        <param name="value">型の配列<see cref="T:System.Web.ParserError" />をコレクションに追加するエラーを指定します。</param>
+        <summary><see cref="T:System.Web.ParserErrorCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.ParserErrorCollection.%23ctor%2A?displayProperty=nameWithType>コンス トラクターの配列を追加する<xref:System.Web.ParserError>をコレクションにオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (System.Web.ParserError value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Add(class System.Web.ParserError value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ParserErrorCollection.Add(System.Web.ParserError)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Web.ParserError" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Web.ParserError" />コレクションに追加する値。</param>
+        <summary>コレクションに値を追加します。</summary>
+        <returns>コレクション内の値のインデックス値が既にコレクション内にある場合、それ以外の場合は-1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.ParserErrorCollection.Add%2A>既存を追加するメソッドを<xref:System.Web.ParserError>オブジェクトをコレクション。 同じを追加することはできません<xref:System.Web.ParserError>コレクションにオブジェクトを複数回です。 呼び出すと、<xref:System.Web.ParserErrorCollection.Add%2A>メソッドを使用して、<xref:System.Web.ParserError>オブジェクトに既にある、コレクション、追加した場合、失敗および-1 が返されます。  
+  
+ 複数のオブジェクトをコレクションに追加するには、使用、<xref:System.Web.ParserErrorCollection.AddRange%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、追加する方法を示します、<xref:System.Web.ParserError>オブジェクトを<xref:System.Web.ParserErrorCollection>オブジェクト。  
+  
+ [!code-csharp[System.Web.ParserErrorCollection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.ParserErrorCollection/CS/ParserErrorCollection_CS.aspx#3)]
+ [!code-vb[System.Web.ParserErrorCollection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.ParserErrorCollection/VB/ParserErrorCollection_VB.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (System.Web.ParserError[] value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(class System.Web.ParserError[] value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ParserErrorCollection.AddRange(System.Web.ParserError[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Web.ParserError[]" />
+      </Parameters>
+      <Docs>
+        <param name="value">型の配列<see cref="T:System.Web.ParserError" />コレクションに追加する値を指定します。</param>
+        <summary>配列を追加<see cref="T:System.Web.ParserError" />をコレクションにオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.ParserErrorCollection.AddRange%2A>の配列を追加するメソッドを<xref:System.Web.ParserError>をコレクションにオブジェクト。 <xref:System.Web.ParserErrorCollection.AddRange%2A>メソッドは、複数作成するときに役立ちます<xref:System.Web.ParserError>オブジェクトし、1 つのメソッドの呼び出しを使用して、コレクションに追加します。 個別に追加する<xref:System.Web.ParserError>をコレクションにオブジェクトを使用して、<xref:System.Web.ParserErrorCollection.Add%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の範囲を追加する方法を示します<xref:System.Web.ParserError>オブジェクトを<xref:System.Web.ParserErrorCollection>オブジェクト。  
+  
+ [!code-csharp[System.Web.ParserErrorCollection#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.ParserErrorCollection/CS/ParserErrorCollection_CS.aspx#4)]
+ [!code-vb[System.Web.ParserErrorCollection#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.ParserErrorCollection/VB/ParserErrorCollection_VB.aspx#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (System.Web.ParserErrorCollection value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(class System.Web.ParserErrorCollection value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ParserErrorCollection.AddRange(System.Web.ParserErrorCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Web.ParserErrorCollection" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.Web.ParserErrorCollection" />を含む、<see cref="T:System.Web.ParserError" />コレクションに追加するオブジェクト。</param>
+        <summary>既存のオブジェクトが追加<see cref="T:System.Web.ParserErrorCollection" />をコレクションにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 異なり、 <xref:System.Web.ParserErrorCollection.Add%2A> 、メソッド、<xref:System.Web.ParserErrorCollection.AddRange%2A>メソッドが戻り値を決定するために使用するかどうか、<xref:System.Web.ParserError>追加されるオブジェクトがコレクション内に既にです。 この情報を必要がある場合、<xref:System.Web.ParserErrorCollection.Contains%2A>メソッドを使用する前に<xref:System.Web.ParserErrorCollection.AddRange%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の範囲を追加する方法を示します<xref:System.Web.ParserError>オブジェクトを<xref:System.Web.ParserErrorCollection>オブジェクト。  
+  
+ [!code-csharp[System.Web.ParserErrorCollection#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.ParserErrorCollection/CS/ParserErrorCollection_CS.aspx#4)]
+ [!code-vb[System.Web.ParserErrorCollection#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.ParserErrorCollection/VB/ParserErrorCollection_VB.aspx#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Web.ParserError" /> 値は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Web.ParserError value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Web.ParserError value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ParserErrorCollection.Contains(System.Web.ParserError)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Web.ParserError" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクション内で検索する <see cref="T:System.Web.ParserError" />。</param>
+        <summary>決定するかどうか、<see cref="T:System.Web.ParserError" />コレクションでオブジェクトを検索します。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Web.ParserError" />コレクションには、それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 同じを追加することはできません<xref:System.Web.ParserError>コレクションにオブジェクトを複数回です。 ただし、追加しようとすると、<xref:System.Web.ParserError>オブジェクトの 2 回以上、例外はスローされません。 代わりに、追加は失敗します。 ここで、<xref:System.Web.ParserErrorCollection.Add%2A>メソッドは値-1 を返します。 ただし、<xref:System.Web.ParserErrorCollection.AddRange%2A>と<xref:System.Web.ParserErrorCollection.Insert%2A>メソッドには、戻り値はありません。 追加するときに<xref:System.Web.ParserError>これらのメソッドのいずれかを使用してオブジェクトを使用して、<xref:System.Web.ParserErrorCollection.Contains%2A>メソッドを特定するかどうかを判断<xref:System.Web.ParserError>オブジェクトは既にコレクションにします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、指定したインスタンスを検索する方法を示します<xref:System.Web.ParserError>内のオブジェクト、<xref:System.Web.ParserErrorCollection>オブジェクト。  
+  
+ [!code-csharp[System.Web.ParserErrorCollection#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.ParserErrorCollection/CS/ParserErrorCollection_CS.aspx#5)]
+ [!code-vb[System.Web.ParserErrorCollection#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.ParserErrorCollection/VB/ParserErrorCollection_VB.aspx#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Web.ParserError[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Web.ParserError[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ParserErrorCollection.CopyTo(System.Web.ParserError[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Web.ParserError[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">型の配列<see cref="T:System.Web.ParserError" />コレクション内のパーサー エラーがコピーされます。</param>
+        <param name="index">先の配列内の最初のインデックス、<see cref="T:System.Web.ParserError" />をコピーします。</param>
+        <summary>コピー、<see cref="T:System.Web.ParserError" />互換性のある 1 次元配列に、対象となる配列の指定したインデックスから始まるコレクション内のオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.ParserErrorCollection.CopyTo%2A>にコピーする方法、<xref:System.Web.ParserError>互換性のある配列を指定したインデックスから始まります (含まれている項目の参照を含む) のコレクション内のオブジェクトします。 これは、並べ替えを行う場合に便利です、<xref:System.Web.ParserError>を使用してコレクション内のオブジェクト、<xref:System.Array.Sort%2A>メソッドです。 この操作を行うには、次の手順を実行します。  
+  
+1.  コピー、<xref:System.Web.ParserError>互換性のある配列オブジェクト。  
+  
+2.  配列を並べ替えます。  
+  
+3.  使用して、<xref:System.Web.ParserErrorCollection.Remove%2A>すべてを削除する方法、<xref:System.Web.ParserError>コレクションからオブジェクト。  
+  
+4.  使用して、<xref:System.Web.ParserErrorCollection.AddRange%2A>並べ替えられた配列をコレクションに追加するメソッド。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の内容をコピーする方法を示します、<xref:System.Web.ParserErrorCollection>を指定したオブジェクト<xref:System.Web.ParserError>配列。  
+  
+ [!code-csharp[System.Web.ParserErrorCollection#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.ParserErrorCollection/CS/ParserErrorCollection_CS.aspx#6)]
+ [!code-vb[System.Web.ParserErrorCollection#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.ParserErrorCollection/VB/ParserErrorCollection_VB.aspx#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Web.ParserError value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Web.ParserError value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ParserErrorCollection.IndexOf(System.Web.ParserError)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Web.ParserError" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクション内で検索する <see cref="T:System.Web.ParserError" />。</param>
+        <summary>指定したインデックスを取得<see cref="T:System.Web.ParserError" />コレクション内のオブジェクト。</summary>
+        <returns>0 から始まるインデックス、<see cref="T:System.Web.ParserError" />コレクション内のオブジェクト、それ以外の場合場合は、1、<see cref="T:System.Web.ParserError" />がコレクション内にありません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.ParserErrorCollection.IndexOf%2A>のインデックスを確認するメソッド、<xref:System.Web.ParserError>コレクション内のオブジェクト。 これは、それぞれのインデックスを確認すると便利<xref:System.Web.ParserError>を使用してコレクションを反復を処理すると、<xref:System.Collections.IEnumerator>によって返されるオブジェクト、<xref:System.Collections.CollectionBase.GetEnumerator%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のインデックスを検索する方法を示します、<xref:System.Web.ParserError>で指定したインデックス位置にオブジェクト、<xref:System.Web.ParserErrorCollection>コレクション。  
+  
+ [!code-csharp[System.Web.ParserErrorCollection#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.ParserErrorCollection/CS/ParserErrorCollection_CS.aspx#5)]
+ [!code-vb[System.Web.ParserErrorCollection#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.ParserErrorCollection/VB/ParserErrorCollection_VB.aspx#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.Web.ParserError value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.Web.ParserError value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ParserErrorCollection.Insert(System.Int32,System.Web.ParserError)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Web.ParserError" />
+      </Parameters>
+      <Docs>
+        <param name="index">挿入するコレクション内のインデックス、<see cref="T:System.Web.ParserError" />です。</param>
+        <param name="value"><see cref="T:System.Web.ParserError" />コレクションに挿入するオブジェクト。</param>
+        <summary>指定した挿入<see cref="T:System.Web.ParserError" />オブジェクトをコレクション内の指定したインデックス位置にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.ParserErrorCollection.Insert%2A>既存に挿入するメソッド<xref:System.Web.ParserError>コレクション内の特定のインデックスにあるオブジェクト。  
+  
+ 同じを追加することはできません<xref:System.Web.ParserError>コレクションにオブジェクトを複数回です。 呼び出すと、<xref:System.Web.ParserErrorCollection.Insert%2A>メソッドを使用して、<xref:System.Web.ParserError>がコレクション内に既に、挿入は失敗します。 使用して、<xref:System.Web.ParserErrorCollection.Contains%2A>挿入先を特定するかどうかを判断する前にメソッド<xref:System.Web.ParserError>がコレクション内に既にです。 位置を変更する、 <xref:System.Web.ParserError> 、コレクション内で削除する必要ありますまずを使用して、<xref:System.Web.ParserErrorCollection.Remove%2A>メソッドを使用して目的のインデックスに挿入<xref:System.Web.ParserErrorCollection.Insert%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、挿入する方法を示します、<xref:System.Web.ParserError>で指定したインデックス位置にオブジェクト、<xref:System.Web.ParserErrorCollection>コレクション。  
+  
+ [!code-csharp[System.Web.ParserErrorCollection#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.ParserErrorCollection/CS/ParserErrorCollection_CS.aspx#8)]
+ [!code-vb[System.Web.ParserErrorCollection#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.ParserErrorCollection/VB/ParserErrorCollection_VB.aspx#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.ParserError this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.ParserError Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ParserErrorCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ParserError</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクション内のインデックス、<see cref="T:System.Web.ParserError" />オブジェクトを取得または設定します。</param>
+        <summary>取得または設定、<see cref="T:System.Web.ParserError" />オブジェクト、コレクション内で指定したインデックス位置。</summary>
+        <value><see cref="T:System.Web.ParserError" />コレクション内の指定したインデックス位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.ParserErrorCollection.Item%2A>取得するプロパティを<xref:System.Web.ParserError>オブジェクト、コレクション内で指定したインデックス位置。 参照がある場合、<xref:System.Web.ParserError>オブジェクトと必要なインデックスを使用して、<xref:System.Web.ParserErrorCollection.IndexOf%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Web.ParserError value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Web.ParserError value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ParserErrorCollection.Remove(System.Web.ParserError)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Web.ParserError" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクションから削除する <see cref="T:System.Web.ParserError" />。</param>
+        <summary>指定した <see cref="T:System.Web.ParserError" /> オブジェクトをコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.ParserErrorCollection.Remove%2A>を削除する方法、<xref:System.Web.ParserError>オブジェクトへの参照がある場合に、コレクションから、<xref:System.Web.ParserError>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、削除する方法を示します、<xref:System.Web.ParserError>で指定したインデックスから、<xref:System.Web.ParserErrorCollection>オブジェクト。  
+  
+ [!code-csharp[System.Web.ParserErrorCollection#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.ParserErrorCollection/CS/ParserErrorCollection_CS.aspx#8)]
+ [!code-vb[System.Web.ParserErrorCollection#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.ParserErrorCollection/VB/ParserErrorCollection_VB.aspx#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

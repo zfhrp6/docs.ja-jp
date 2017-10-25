@@ -1,0 +1,374 @@
+<Type Name="ObjectParameterCollection" FullName="System.Data.Objects.ObjectParameterCollection">
+  <TypeSignature Language="C#" Value="public sealed class ObjectParameterCollection : System.Collections.Generic.ICollection&lt;System.Data.Objects.ObjectParameter&gt;, System.Collections.Generic.IEnumerable&lt;System.Data.Objects.ObjectParameter&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ObjectParameterCollection extends System.Object implements class System.Collections.Generic.ICollection`1&lt;class System.Data.Objects.ObjectParameter&gt;, class System.Collections.Generic.IEnumerable`1&lt;class System.Data.Objects.ObjectParameter&gt;, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Objects.ObjectParameterCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.ICollection&lt;System.Data.Objects.ObjectParameter&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;System.Data.Objects.ObjectParameter&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>クエリ パラメーターを、<see cref="T:System.Data.Objects.ObjectParameter" /> で定義される <see cref="T:System.Data.Objects.ObjectQuery`1" /> オブジェクトとして表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クエリ パラメーターを、<xref:System.Data.Objects.ObjectParameter> で定義される <xref:System.Data.Objects.ObjectQuery%601> オブジェクトとして表します。  
+  
+ このクラスは継承できません。  
+  
+ クエリ ビルダー メソッドに渡されるパラメーターは、シーケンス内の <xref:System.Data.Objects.ObjectQuery%601> の後続のインスタンスによって集計されます。 これらにアクセスするには、<xref:System.Data.Objects.ObjectQuery.Parameters%2A> を返す <xref:System.Data.Objects.ObjectParameterCollection> プロパティを使用します。 クエリがコンパイルまたは実行されていない限り、パラメーターを追加した後で、コレクションからパラメーターを削除することも、コレクションをクリアすることもできます。 パラメーター名は変更できませんが、値はいつでも変更できます。  
+  
+ パラメーターは、<xref:System.Data.Objects.ObjectParameterCollection> 内で一意である必要があります。 コレクション内に同じ名前のパラメーターが 2 つ存在することはできません。  
+  
+ <xref:System.Data.Objects.ObjectQuery%601.Union%2A>、<xref:System.Data.Objects.ObjectQuery%601.UnionAll%2A>、<xref:System.Data.Objects.ObjectQuery%601.Intersect%2A>、<xref:System.Data.Objects.ObjectQuery%601.Except%2A> などの結合メソッドを使用すると、パラメーターが結合されます。 パラメーターのセットに互換性がない場合やパラメーターのセットが不完全である場合は、例外がスローされます。 詳細については、次を参照してください。[クエリ ビルダー メソッド](http://msdn.microsoft.com/en-us/05685434-05e6-41c2-8d5e-8933b88a40b0)です。  
+  
+   
+  
+## Examples  
+ このトピックの例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 この例では、新しいパラメーターをコレクションに追加し、コレクション内のパラメーターの数を取得します。 次に、<xref:System.Data.Objects.ObjectParameterCollection> を反復処理し、コレクション内の各パラメーターの名前、型、および値を表示します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#ObjectParameterCollection_Count_Add_Indexer](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#objectparametercollection_count_add_indexer)]
+ [!code-vb[DP ObjectServices Concepts#ObjectParameterCollection_Count_Add_Indexer](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#objectparametercollection_count_add_indexer)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Data.Objects.ObjectParameter parameter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Add(class System.Data.Objects.ObjectParameter parameter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectParameterCollection.Add(System.Data.Objects.ObjectParameter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameter" Type="System.Data.Objects.ObjectParameter" />
+      </Parameters>
+      <Docs>
+        <param name="parameter">コレクションに追加するパラメーター。</param>
+        <summary>指定された <see cref="T:System.Data.Objects.ObjectParameter" /> をコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クエリがコンパイルまたは実行されていない限り、パラメーターを追加した後で、コレクションからパラメーターを削除することも、コレクションをクリアすることもできます。 パラメーター名は変更できませんが、値はいつでも変更できます。  
+  
+ パラメーターは、<xref:System.Data.Objects.ObjectParameterCollection> 内で一意である必要があります。 コレクション内に同じ名前のパラメーターが 2 つ存在することはできません。 詳細については、次を参照してください。[クエリ ビルダー メソッド](http://msdn.microsoft.com/en-us/05685434-05e6-41c2-8d5e-8933b88a40b0)です。  
+  
+   
+  
+## Examples  
+ このトピックの例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 この例では、新しいパラメーターをコレクションに追加します。 <xref:System.Data.Objects.ObjectParameterCollection> を反復処理し、コレクション内の各パラメーターの名前、型、および値を表示します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#ObjectParameterCollection_Count_Add_Indexer](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#objectparametercollection_count_add_indexer)]
+ [!code-vb[DP ObjectServices Concepts#ObjectParameterCollection_Count_Add_Indexer](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#objectparametercollection_count_add_indexer)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="parameter" /> 引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="parameter" />引数は、コレクションに既に存在します。 この動作は、エントリの重複を許可するほとんどのコレクションの動作とは異なります。  
+  
+ または  
+  
+ 同じ名前の別のパラメーター、<paramref name="parameter" />引数は、コレクションに既に存在します。 参照では大文字と小文字が区別されないことに注意してください。 この動作は、ほとんどのコレクションの動作とは異なり、むしろ <see cref="T:System.Collections.Generic.Dictionary" /> の動作に似ています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">型、<paramref name="parameter" />が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectParameterCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションからすべての <see cref="T:System.Data.Objects.ObjectParameter" /> インスタンスを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Data.Objects.ObjectParameter parameter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(class System.Data.Objects.ObjectParameter parameter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectParameterCollection.Contains(System.Data.Objects.ObjectParameter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameter" Type="System.Data.Objects.ObjectParameter" />
+      </Parameters>
+      <Docs>
+        <param name="parameter">コレクション内で検索する <see cref="T:System.Data.Objects.ObjectParameter" />。</param>
+        <summary>指定した <see cref="T:System.Data.Objects.ObjectParameter" /> がコレクション内に存在するかどうかを参照によって確認します。</summary>
+        <returns>返します<see langword="true" />パラメーター オブジェクトがコレクション内で見つかった、それ以外の場合は<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは参照に基づく確認です。 つまり場合、<xref:System.Data.Objects.ObjectParameter>が指定されているこのメソッドは返すのみ、コレクション内のパラメーター オブジェクトと同じ名前を含む`true`同じオブジェクトである場合。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="parameter" /> 引数が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectParameterCollection.Contains(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">コレクション内で検索するパラメーターの名前。 この名前には、[!INCLUDE[esql](~/includes/esql-md.md)] ステートメントで使用される "@" パラメーター マーカーは含めないでください。実際の名前だけにする必要があります。</param>
+        <summary>指定した名前の <see cref="T:System.Data.Objects.ObjectParameter" /> がコレクション内に存在するかどうかを調べます。</summary>
+        <returns>返します<see langword="true" />指定した名前のパラメーターがコレクション内で見つかった、それ以外の場合は<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ このトピックの例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 この例では、<xref:System.Data.Objects.ObjectParameterCollection.Contains%2A> メソッドを使用して、指定したパラメーターがコレクション内に存在するかどうかを調べます。  
+  
+ [!code-csharp[DP ObjectServices Concepts#ObjectParameterCollection_StringArg](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#objectparametercollection_stringarg)]
+ [!code-vb[DP ObjectServices Concepts#ObjectParameterCollection_StringArg](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#objectparametercollection_stringarg)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Data.Objects.ObjectParameter[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Data.Objects.ObjectParameter[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectParameterCollection.CopyTo(System.Data.Objects.ObjectParameter[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Data.Objects.ObjectParameter[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">パラメーターのコピー先の配列。</param>
+        <param name="index">パラメーターのコピーを開始する位置を示す配列内のインデックス。</param>
+        <summary>指定された配列にコレクション内のパラメーターをコピーできます。その際、指定されたインデックス位置のオブジェクトからコピーを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ このトピックの例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 この例では、指定された配列にパラメーターをコピーします。  
+  
+ [!code-csharp[DP ObjectServices Concepts#ObjectParameterCollection_CopyTo](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#objectparametercollection_copyto)]
+ [!code-vb[DP ObjectServices Concepts#ObjectParameterCollection_CopyTo](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#objectparametercollection_copyto)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.ObjectParameterCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション内に現在存在するパラメーターの数を取得します。</summary>
+        <value>コレクション内に現在存在する <see cref="T:System.Data.Objects.ObjectParameter" /> オブジェクトの数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ このトピックの例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 この例では、新しいパラメーターをコレクションに追加し、コレクション内のパラメーターの数を取得します。 次に、<xref:System.Data.Objects.ObjectParameterCollection> を反復処理し、コレクション内の各パラメーターの名前、型、および値を表示します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#ObjectParameterCollection_Count_Add_Indexer](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#objectparametercollection_count_add_indexer)]
+ [!code-vb[DP ObjectServices Concepts#ObjectParameterCollection_Count_Add_Indexer](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#objectparametercollection_count_add_indexer)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectParameter this[string name] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Objects.ObjectParameter Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.ObjectParameterCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.ObjectParameter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">検索するパラメーターの名前。 この名前には、[!INCLUDE[esql](~/includes/esql-md.md)] ステートメントで使用される "@" パラメーター マーカーは含めないでください。実際の名前だけにする必要があります。</param>
+        <summary>呼び出し元がパラメーターを名前によって取得できるようにするインデクサーを提供します。</summary>
+        <value><see cref="T:System.Data.Objects.ObjectParameter" /> インスタンス。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定された名前のパラメーターがコレクション内に見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public bool Remove (System.Data.Objects.ObjectParameter parameter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Remove(class System.Data.Objects.ObjectParameter parameter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectParameterCollection.Remove(System.Data.Objects.ObjectParameter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameter" Type="System.Data.Objects.ObjectParameter" />
+      </Parameters>
+      <Docs>
+        <param name="parameter">コレクションから削除するオブジェクト。</param>
+        <summary>参照によって、<see cref="T:System.Data.Objects.ObjectParameter" /> のインスタンスをコレクションから削除します (コレクション内に存在する場合)。</summary>
+        <returns>返します<see langword="true" />パラメーター オブジェクトが存在し、コレクションから削除された、それ以外の場合は<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは参照に基づく比較です。 つまり、コレクション内のパラメーター オブジェクトと同じ名前を含むクエリ パラメーター オブジェクトが指定された場合に、同じオブジェクトであるときだけ、コレクション内のパラメーターが削除されます。 オブジェクトを名前によって削除するには、まずインデクサーを使用してパラメーター インスタンスを取得し、次にこのメソッドを使用して削除します。  
+  
+   
+  
+## Examples  
+ このトピックの例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 この例では、2 つのパラメーターをコレクションに追加し、それらのパラメーターを削除します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#ObjectParameterCollection_Remove](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#objectparametercollection_remove)]
+ [!code-vb[DP ObjectServices Concepts#ObjectParameterCollection_Remove](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#objectparametercollection_remove)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="parameter" /> 引数が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.Generic.ICollection&lt;System.Data.Objects.ObjectParameter&gt;.IsReadOnly">
+      <MemberSignature Language="C#" Value="bool System.Collections.Generic.ICollection&lt;System.Data.Objects.ObjectParameter&gt;.IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.Generic.ICollection&lt;System.Data.Objects.ObjectParameter&gt;.IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.ObjectParameterCollection.System#Collections#Generic#ICollection&lt;System#Data#Objects#ObjectParameter&gt;#IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションが読み取り専用か変更可能かを示す値を取得します。</summary>
+        <value>ブール値である<see langword="true" />コレクションが読み取り専用の場合と<see langword="false" />のコレクションを変更することができます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコレクションは常に読み取り/書き込み可能であり、パラメーターを追加、削除、および変更できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.Generic.IEnumerable&lt;System.Data.Objects.ObjectParameter&gt;.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.Generic.IEnumerator&lt;System.Data.Objects.ObjectParameter&gt; IEnumerable&lt;ObjectParameter&gt;.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.Generic.IEnumerator`1&lt;class System.Data.Objects.ObjectParameter&gt; System.Collections.Generic.IEnumerable&lt;System.Data.Objects.ObjectParameter&gt;.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectParameterCollection.System#Collections#Generic#IEnumerable&lt;System#Data#Objects#ObjectParameter&gt;#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;System.Data.Objects.ObjectParameter&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションに対する型指定された列挙子を返します。</summary>
+        <returns><see cref="T:System.Collections.Generic.IEnumerator`1" /> 型の <see cref="T:System.Data.Objects.ObjectParameter" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Generic.IEnumerator%601> インスタンスを返します。 これにより、コレクションを反復処理および走査できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectParameterCollection.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションに対する型指定されていない列挙子を返します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" /> インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションに対する型指定されていない列挙子を返します。 これにより、コレクションを反復処理および走査できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

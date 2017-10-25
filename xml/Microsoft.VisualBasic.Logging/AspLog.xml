@@ -1,0 +1,128 @@
+<Type Name="AspLog" FullName="Microsoft.VisualBasic.Logging.AspLog">
+  <TypeSignature Language="C#" Value="public class AspLog : Microsoft.VisualBasic.Logging.Log" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi AspLog extends Microsoft.VisualBasic.Logging.Log" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Logging.AspLog" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.VisualBasic.Logging.Log</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プロパティとイベントと例外の情報をアプリケーションのログ リスナーに書き込むためのメソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Application.Log`オブジェクトにアクセスするための簡単なエントリ ポイントを提供する、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]services のログ記録します。 `WriteEntry`と`WriteException`メソッドは、アプリケーションのログ リスナーにメッセージを書き込みます。 リスナーは、アプリケーションの構成ファイルで構成できます。 詳細については、次を参照してください。[チュートリアル: 変更場所 My.Application.Log 書き込みます情報](~/docs/visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)と[アプリケーション ログの使用](~/docs/visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)です。  
+  
+ `My.Application.Log`オブジェクトはクライアント アプリケーションでのみ使用できます。 Web アプリケーションを使用して`My.Log`です。 詳細については、「<xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>」を参照してください。  
+  
+ 次の表に、関連するタスクの例については、`My.Application.Log`オブジェクト。  
+  
+|目的|参照トピック|  
+|--------|---------|  
+|イベント情報をアプリケーションのログ リスナーに書き込む|[方法: ログ メッセージを書き込む](~/docs/visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)|  
+|例外情報をアプリケーションのログ リスナーに書き込む|[方法 : 例外をログに記録する](~/docs/visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)|  
+|場所を特定する`My.Application.Log`情報を書き込みます|[チュートリアル : My.Application.Log による情報の書き込み先の確認](~/docs/visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)|  
+  
+   
+  
+## Examples  
+ この例では、 `My.Application.Log.WriteEntry` メソッドを使用してトレース情報をログに記録する方法を示します。 詳細については、次を参照してください。[する方法: ログ メッセージの書き込み](~/docs/visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)です。  
+  
+ [!code-vb[VbVbalrMyApplicationLog#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#11)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AspLog ();" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Logging.AspLog.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.VisualBasic.Logging.AspLog" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Log`オブジェクトにアクセスするための簡単なエントリ ポイントを提供する、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]services のログ記録します。 `WriteEntry`と`WriteException`メソッドは、アプリケーションのログ リスナーにメッセージを書き込みます。 リスナーは、アプリケーションの構成ファイルで構成できます。 詳細については、次を参照してください。[チュートリアル: 変更場所 My.Application.Log 書き込みます情報](~/docs/visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)と[アプリケーション ログの使用](~/docs/visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AspLog (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Logging.AspLog.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">
+          <see cref="T:System.String" />。 指定する名前、<see cref="P:Microsoft.VisualBasic.Logging.Log.TraceSource" />プロパティ オブジェクト。</param>
+        <summary><see cref="T:Microsoft.VisualBasic.Logging.AspLog" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Log`オブジェクトにアクセスするための簡単なエントリ ポイントを提供する、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]services のログ記録します。 `WriteEntry`と`WriteException`メソッドは、アプリケーションのログ リスナーにメッセージを書き込みます。 リスナーは、アプリケーションの構成ファイルで構成できます。 詳細については、次を参照してください。[チュートリアル: 変更場所 My.Application.Log 書き込みます情報](~/docs/visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)と[アプリケーション ログの使用](~/docs/visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeWithDefaultsSinceNoConfigExists">
+      <MemberSignature Language="C#" Value="protected override void InitializeWithDefaultsSinceNoConfigExists ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void InitializeWithDefaultsSinceNoConfigExists() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Logging.AspLog.InitializeWithDefaultsSinceNoConfigExists" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新たに作成<see cref="T:Microsoft.VisualBasic.Logging.FileLogTraceListener" />に追加し、<see cref="P:System.Diagnostics.TraceSource.Listeners" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが新たに作成<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener>、その名前に設定`FileLog`、重大度レベルとメッセージをログに記録するように構成および<xref:System.Diagnostics.SourceLevels.Information>およびそれ以降。 新しい<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener>にオブジェクトが追加し、<xref:System.Diagnostics.TraceSource.Listeners%2A>コレクション。  
+  
+ <xref:Microsoft.VisualBasic.Logging.Log.%23ctor%2A>場合、メソッドを呼び出して、<xref:Microsoft.VisualBasic.Logging.Log.TraceSource%2A>プロパティが構成されていません。 トレース ソースは、アプリケーションの構成ファイルで構成できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

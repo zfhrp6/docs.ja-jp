@@ -1,0 +1,465 @@
+<Type Name="HtmlTableRowCollection" FullName="System.Web.UI.HtmlControls.HtmlTableRowCollection">
+  <TypeSignature Language="C#" Value="public sealed class HtmlTableRowCollection : System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HtmlTableRowCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.HtmlControls.HtmlTableRowCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>コレクション<see cref="T:System.Web.UI.HtmlControls.HtmlTableRow" />の行を表すオブジェクト、<see cref="T:System.Web.UI.HtmlControls.HtmlTable" />コントロール。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection>をプログラムでのコレクションを管理するクラス<xref:System.Web.UI.HtmlControls.HtmlTableRow>内の行を表すオブジェクト、<xref:System.Web.UI.HtmlControls.HtmlTable>コントロール。 このクラスは追加、削除、または内の行の内容を変更する、<xref:System.Web.UI.HtmlControls.HtmlTable>コントロール。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.HtmlControls.HtmlTable>コントロールに含まれる、<xref:System.Web.UI.HtmlControls.HtmlTable.Rows%2A>プロパティのコレクションを表す<xref:System.Web.UI.HtmlControls.HtmlTableRow>オブジェクト。 各<xref:System.Web.UI.HtmlControls.HtmlTableRow>テーブル内の個々 の行を表します。 <xref:System.Web.UI.HtmlControls.HtmlTableRow>が含まれています、<xref:System.Web.UI.HtmlControls.HtmlTableRow.Cells%2A>プロパティのコレクションを表す<xref:System.Web.UI.HtmlControls.HtmlTableCell>オブジェクト。 これらのオブジェクトは、さらに、テーブルの個々 のセルを表します。 個々 のセルを取得するには、まず、<xref:System.Web.UI.HtmlControls.HtmlTableRow>から、セルを含む行を表すオブジェクト、<xref:System.Web.UI.HtmlControls.HtmlTable.Rows%2A>のコレクション、<xref:System.Web.UI.HtmlControls.HtmlTable>コントロール。 表示する、<xref:System.Web.UI.HtmlControls.HtmlTableCell>から、行のセルを表す、オブジェクト、<xref:System.Web.UI.HtmlControls.HtmlTableRow.Cells%2A>のコレクション、<xref:System.Web.UI.HtmlControls.HtmlTableRow>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の内容を動的に生成する方法を示します、<xref:System.Web.UI.HtmlControls.HtmlTable>コントロールに行を追加することによって、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection>コレクション。 注意して、<xref:System.Web.UI.HtmlControls.HtmlTable.Rows%2A>テーブルのプロパティは、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection>オブジェクト。  
+  
+ [!code-aspx-csharp[HtmlTableRowCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlTableRowCollection/CS/htmltablerowcollectioncs.aspx#1)]
+ [!code-aspx-vb[HtmlTableRowCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlTableRowCollection/VB/htmltablerowcollectionvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Web.UI.HtmlControls.HtmlTableRow row);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Web.UI.HtmlControls.HtmlTableRow row) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlTableRowCollection.Add(System.Web.UI.HtmlControls.HtmlTableRow)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="row" Type="System.Web.UI.HtmlControls.HtmlTableRow" />
+      </Parameters>
+      <Docs>
+        <param name="row">コレクションに追加する <see cref="T:System.Web.UI.HtmlControls.HtmlTableRow" />。</param>
+        <summary>指定した追加<see cref="T:System.Web.UI.HtmlControls.HtmlTableRow" />の末尾にオブジェクト、<see cref="T:System.Web.UI.HtmlControls.HtmlTableRowCollection" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、指定した追加<xref:System.Web.UI.HtmlControls.HtmlTableRow>の末尾にオブジェクト、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection>コレクション。 挿入する、 <xref:System.Web.UI.HtmlControls.HtmlTableRow> 、コレクションの途中で使用して、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection.Insert%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection.Add%2A>によって表される、テーブルの行を追加する方法、<xref:System.Web.UI.HtmlControls.HtmlTableRow>の末尾に、オブジェクト、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection>コレクション。 注意して、<xref:System.Web.UI.HtmlControls.HtmlTable.Rows%2A>テーブルのプロパティは、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection>オブジェクト。  
+  
+ [!code-aspx-csharp[HtmlTableRowCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlTableRowCollection/CS/htmltablerowcollectioncs.aspx#1)]
+ [!code-aspx-vb[HtmlTableRowCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlTableRowCollection/VB/htmltablerowcollectionvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlTableRowCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべて削除<see cref="T:System.Web.UI.HtmlControls.HtmlTableRow" />オブジェクトから、<see cref="T:System.Web.UI.HtmlControls.HtmlTableRowCollection" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、すべて削除<xref:System.Web.UI.HtmlControls.HtmlTableRow>オブジェクトから、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection>コレクションとリセット、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection.Count%2A>プロパティを`0`です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection.Clear%2A>からすべての項目を削除する方法、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection>コレクション。 新しいエントリは、コレクションに追加しに表示される、<xref:System.Web.UI.HtmlControls.HtmlTable>コントロール。  
+  
+ [!code-aspx-csharp[HtmlTableRowCollectionClear#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlTableRowCollectionClear/CS/htmltablerowcollectionclearcs.aspx#1)]
+ [!code-aspx-vb[HtmlTableRowCollectionClear#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlTableRowCollectionClear/VB/htmltablerowcollectionclearvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlTableRowCollection.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Web.UI.HtmlControls.HtmlTableRowCollection" /> からコピーされた項目を受け取る、0 から始まる <see cref="T:System.Array" />。</param>
+        <param name="index">項目を受信する指定した配列内の最初のインデックス。</param>
+        <summary>項目をコピー、<see cref="T:System.Web.UI.HtmlControls.HtmlTableRowCollection" />を指定したコレクション<see cref="T:System.Array" />オブジェクト、配列の指定したインデックスから始まります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内容をコピーするには、このメソッドを使用して、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection>に指定されたコレクション<xref:System.Array?displayProperty=nameWithType>オブジェクト、配列の指定したインデックスから始まります。  
+  
+> [!NOTE]
+>  `array`パラメーターは、0 から始まるである必要があります<xref:System.Array?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection.CopyTo%2A>と同じ内容を格納する配列を作成する方法、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection>コレクション。 配列が反復をコレクションの内容を表示します。  
+  
+ [!code-aspx-csharp[HtmlTableRowCollectionCopyTo#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlTableRowCollectionCopyTo/CS/htmltablerowcollectioncopytocs.aspx#1)]
+ [!code-aspx-vb[HtmlTableRowCollectionCopyTo#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlTableRowCollectionCopyTo/VB/htmltablerowcollectioncopytovb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlTableRowCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数を取得<see cref="T:System.Web.UI.HtmlControls.HtmlTableRow" />内のオブジェクト、<see cref="T:System.Web.UI.HtmlControls.HtmlTableRowCollection" />コレクション。</summary>
+        <value>数<see cref="T:System.Web.UI.HtmlControls.HtmlTableRow" />内のオブジェクト、<see cref="T:System.Web.UI.HtmlControls.HtmlTableRowCollection" />です。 既定値は <see langword="0" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection.Count%2A>に含まれる行の数を決定するプロパティ、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection>コレクション。 <xref:System.Web.UI.HtmlControls.HtmlTableRowCollection.Count%2A>プロパティは、バインドされている上限を決定するコレクションを反復処理する場合によく使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection.Count%2A>内の行の数を決定するプロパティ、<xref:System.Web.UI.HtmlControls.HtmlTable>コントロール。 この値は、テーブルの行を反復処理するループの上限の境界として使用されます。  
+  
+ [!code-aspx-csharp[HtmlTableRowCollectionCount#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlTableRowCollectionCount/CS/htmltablerowcollectioncountcs.aspx#1)]
+ [!code-aspx-vb[HtmlTableRowCollectionCount#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlTableRowCollectionCount/VB/htmltablerowcollectioncountvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlTableRowCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、 <see cref="T:System.Collections.IEnumerator" />-すべてを含むオブジェクトを実装する<see cref="T:System.Web.UI.HtmlControls.HtmlTableRow" />内のオブジェクト、<see cref="T:System.Web.UI.HtmlControls.HtmlTableRowCollection" />コレクション。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />-すべてを含むオブジェクトを実装する<see cref="T:System.Web.UI.HtmlControls.HtmlTableRow" />内のオブジェクト、<see cref="T:System.Web.UI.HtmlControls.HtmlTableRowCollection" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、作成、 <xref:System.Collections.IEnumerator?displayProperty=nameWithType>-内の各項目の取得を反復できるオブジェクトを実装する、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection>コレクション。  
+  
+ 使用して、<xref:System.Collections.IEnumerator.Current%2A?displayProperty=nameWithType>コレクション内の現在の要素を取得するプロパティです。  
+  
+ 使用して、<xref:System.Collections.IEnumerator.MoveNext%2A?displayProperty=nameWithType>コレクション内の次の項目に移動します。  
+  
+ 使用して、<xref:System.Collections.IEnumerator.Reset%2A?displayProperty=nameWithType>列挙子を初期位置に移動するメソッド。  
+  
+> [!NOTE]
+>  呼び出す必要があります、<xref:System.Collections.IEnumerator.MoveNext%2A?displayProperty=nameWithType>メソッドを作成した後に、 <xref:System.Collections.IEnumerator?displayProperty=nameWithType>-オブジェクトを実装またはを使用した後、<xref:System.Collections.IEnumerator.Reset%2A?displayProperty=nameWithType>列挙子をコレクションの最初の項目に移動します。 によって表される項目のそれ以外の場合、<xref:System.Collections.IEnumerator.Current%2A?displayProperty=nameWithType>プロパティが定義されていません。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection.GetEnumerator%2A>メソッドを作成、<xref:System.Collections.IEnumerator?displayProperty=nameWithType>オブジェクト。 <xref:System.Collections.IEnumerator?displayProperty=nameWithType>オブジェクトは反復の内容を表示する、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection>コレクション。  
+  
+ [!code-aspx-csharp[HtmlTableRowCollectionGetEnumerator#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlTableRowCollectionGetEnumerator/CS/htmltablerowcollectionienumeratorcs.aspx#1)]
+ [!code-aspx-vb[HtmlTableRowCollectionGetEnumerator#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlTableRowCollectionGetEnumerator/VB/htmltablerowcollectionienumeratorvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.Web.UI.HtmlControls.HtmlTableRow row);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.Web.UI.HtmlControls.HtmlTableRow row) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlTableRowCollection.Insert(System.Int32,System.Web.UI.HtmlControls.HtmlTableRow)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="row" Type="System.Web.UI.HtmlControls.HtmlTableRow" />
+      </Parameters>
+      <Docs>
+        <param name="index">内の場所、<see cref="T:System.Web.UI.HtmlControls.HtmlTableRowCollection" />を追加する位置を示す、<see cref="T:System.Web.UI.HtmlControls.HtmlTableRow" />です。</param>
+        <param name="row"><see cref="T:System.Web.UI.HtmlControls.HtmlTableRow" /> に追加する <see cref="T:System.Web.UI.HtmlControls.HtmlTableRowCollection" />。</param>
+        <summary>追加、<see cref="T:System.Web.UI.HtmlControls.HtmlTableRow" />オブジェクトをコレクション内の指定位置にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection.Insert%2A>メソッドに指定した<xref:System.Web.UI.HtmlControls.HtmlTableRow>オブジェクトを<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection>コレクション内の指定したインデックス位置。 追加するだけの場合、<xref:System.Web.UI.HtmlControls.HtmlTableRow>にコレクションの末尾を使用して、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection.Add%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection.Insert%2A>によって表される、テーブルの行を挿入するメソッドを<xref:System.Web.UI.HtmlControls.HtmlTableRow>オブジェクトに、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection>コレクション。  
+  
+ [!code-aspx-csharp[HtmlTableRowCollectionInsert#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlTableRowCollectionInsert/CS/htmltablerowcollectioninsertcs.aspx#1)]
+ [!code-aspx-vb[HtmlTableRowCollectionInsert#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlTableRowCollectionInsert/VB/htmltablerowcollectioninsertvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlTableRowCollection.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.HtmlControls.HtmlTableRowCollection" /> コレクションが読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは常に返します`false`ことを示す、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection>コレクションは常に書き込むことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlTableRowCollection.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセスをするかどうかを示す値を取得、<see cref="T:System.Web.UI.HtmlControls.HtmlTableRowCollection" />コレクションが同期されている (スレッド セーフである)。</summary>
+        <value>
+          <see langword="false" />すべてのケースで示しますへのアクセスが、 <see cref="T:System.Web.UI.HtmlControls.HtmlTableRowCollection" /> (いないスレッド セーフである) は同期されません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティはから派生<xref:System.Collections.ICollection?displayProperty=nameWithType>常にオーバーライドと`false`へのアクセスを示すために、 <xref:System.Web.UI.HtmlControls.HtmlTableRowCollection> (いないスレッド セーフな) コレクションが同期されていません。  
+  
+ 詳細については、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection.IsSynchronized%2A>プロパティを参照してください、<xref:System.Collections.ICollection.IsSynchronized%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Collections.ICollection?displayProperty=nameWithType>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.HtmlControls.HtmlTableRow this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.HtmlControls.HtmlTableRow Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlTableRowCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.HtmlControls.HtmlTableRow</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">指定する序数インデックス値、<see cref="T:System.Web.UI.HtmlControls.HtmlTableRow" />を返します。</param>
+        <summary>取得、<see cref="T:System.Web.UI.HtmlControls.HtmlTableRow" />から指定したインデックス位置にオブジェクト、<see cref="T:System.Web.UI.HtmlControls.HtmlTableRowCollection" />コレクション。</summary>
+        <value><see cref="T:System.Web.UI.HtmlControls.HtmlTableRow" />に含まれている行を表す、<see cref="T:System.Web.UI.HtmlControls.HtmlTableRowCollection" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインデクサーを使用して、個人を取得する<xref:System.Web.UI.HtmlControls.HtmlTableRow>オブジェクトから、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection>コレクション内の単純な配列表記を使用して、指定したインデックス位置。  
+  
+> [!NOTE]
+>  コレクションは、0 から始まります。したがって、コレクションの最初の要素には、インデックスの値が含まれます。`0`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、によって表されるテーブルの行を取得するインデクサーを使用して、<xref:System.Web.UI.HtmlControls.HtmlTableRow>オブジェクトから、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection>コレクション。 行内のセルはその後、新しいコンテンツで更新します。 注意して、<xref:System.Web.UI.HtmlControls.HtmlTable.Rows%2A>テーブルのプロパティは、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection>オブジェクト。  
+  
+ [!code-aspx-csharp[HtmlTableRowCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlTableRowCollection/CS/htmltablerowcollectioncs.aspx#1)]
+ [!code-aspx-vb[HtmlTableRowCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlTableRowCollection/VB/htmltablerowcollectionvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Web.UI.HtmlControls.HtmlTableRow row);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Web.UI.HtmlControls.HtmlTableRow row) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlTableRowCollection.Remove(System.Web.UI.HtmlControls.HtmlTableRow)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="row" Type="System.Web.UI.HtmlControls.HtmlTableRow" />
+      </Parameters>
+      <Docs>
+        <param name="row"><see cref="T:System.Web.UI.HtmlControls.HtmlTableRow" /> から削除する <see cref="T:System.Web.UI.HtmlControls.HtmlTableRowCollection" />。</param>
+        <summary>指定された削除<see cref="T:System.Web.UI.HtmlControls.HtmlTableRow" />オブジェクトから、<see cref="T:System.Web.UI.HtmlControls.HtmlTableRowCollection" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、指定された削除<xref:System.Web.UI.HtmlControls.HtmlTableRow>オブジェクトから、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection>コレクション。  
+  
+> [!NOTE]
+>  指定した場合、<xref:System.Web.UI.HtmlControls.HtmlTableRow>に存在しない、 <xref:System.Web.UI.HtmlControls.HtmlTableRowCollection>、コレクションから項目が削除されません。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection.Remove%2A>によって表される、指定したテーブルの行を削除する方法、<xref:System.Web.UI.HtmlControls.HtmlTableRow>オブジェクトから、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection>コレクション。 この例の最初の行からのセルの削除、<xref:System.Web.UI.HtmlControls.HtmlTable>コントロール。  
+  
+ [!code-aspx-csharp[HtmlTableRowCollectionRemove#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlTableRowCollectionRemove/CS/htmltablerowcollectionremovecs.aspx#1)]
+ [!code-aspx-vb[HtmlTableRowCollectionRemove#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlTableRowCollectionRemove/VB/htmltablerowcollectionremovevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlTableRowCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス、<see cref="T:System.Web.UI.HtmlControls.HtmlTableRow" />から削除する、<see cref="T:System.Web.UI.HtmlControls.HtmlTableRowCollection" />です。</param>
+        <summary>削除、<see cref="T:System.Web.UI.HtmlControls.HtmlTableRow" />から指定したインデックス位置にオブジェクト、<see cref="T:System.Web.UI.HtmlControls.HtmlTableRowCollection" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、削除、<xref:System.Web.UI.HtmlControls.HtmlTableRow>から指定したインデックス位置にオブジェクト、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection>コレクション。 インデックス番号は 0 です。 したがって、コレクションの最初の項目には、インデックス値`0`です。  
+  
+> [!NOTE]
+>  インデックス値の範囲外であるインデックスを指定すると、例外が発生します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection.RemoveAt%2A>から指定されたインデックス位置にある項目を削除する方法、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection>コレクション。 この例の最初の行の削除、<xref:System.Web.UI.HtmlControls.HtmlTable>コントロール。  
+  
+ [!code-aspx-csharp[HtmlTableRowCollectionRemoveAt#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlTableRowCollectionRemoveAt/CS/htmltablerowcollectionremoveatcs.aspx#1)]
+ [!code-aspx-vb[HtmlTableRowCollectionRemoveAt#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlTableRowCollectionRemoveAt/VB/htmltablerowcollectionremoveatvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定されたインデックスは、コレクション内のインデックス値の範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlTableRowCollection.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセスを同期するために使用できるオブジェクトを取得、<see cref="T:System.Web.UI.HtmlControls.HtmlTableRowCollection" />コレクション。</summary>
+        <value>コレクションへのアクセスを同期するために使用できるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装で返されるオブジェクトの現在のインスタンスは、<xref:System.Web.UI.HtmlControls.HtmlTableRowCollection>クラスです。  
+  
+ 詳細については、<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection.SyncRoot%2A>プロパティを参照してください、<xref:System.Collections.ICollection.SyncRoot%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Collections.ICollection?displayProperty=nameWithType>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,2644 @@
+<Type Name="TextBlock" FullName="System.Windows.Controls.TextBlock">
+  <TypeSignature Language="C#" Value="public class TextBlock : System.Windows.FrameworkElement, IServiceProvider, System.Windows.IContentHost" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi TextBlock extends System.Windows.FrameworkElement implements class System.IServiceProvider, class System.Windows.IContentHost, class System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.TextBlock" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.FrameworkElement</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IServiceProvider</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Windows.IContentHost</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.Text)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Inlines")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>少量のフロー コンテンツを表示するライトウェイト コントロールを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Controls.TextBlock>で文字列を含めることができます、<xref:System.Windows.Controls.TextBlock.Text%2A>プロパティまたは<xref:System.Windows.Documents.Inline>フロー コンテンツ要素をなど<xref:System.Windows.Documents.Bold>、 <xref:System.Windows.Documents.Hyperlink>、および<xref:System.Windows.Documents.InlineUIContainer>で、その<xref:System.Windows.Controls.TextBlock.Inlines%2A>プロパティです。  
+  
+ <xref:System.Windows.Controls.TextBlock>軽量のように設計されておりへのフロー コンテンツの一部を統合する場合に特に適していますが、[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]です。  <xref:System.Windows.Controls.TextBlock>単一行の表示に最適なし、最大でいくつかの行のコンテンツを表示するための適切なパフォーマンスを提供します。  
+  
+ <xref:System.Windows.Controls.TextBlock>コンテンツの複数の線を表示する必要があるシナリオについては最適化されません。そのようなシナリオ、<xref:System.Windows.Documents.FlowDocument>よりも適した選択肢には、適切な表示コントロールと組み合わせると<xref:System.Windows.Controls.TextBlock>パフォーマンスの観点からです。  後に<xref:System.Windows.Controls.TextBlock>、<xref:System.Windows.Controls.FlowDocumentScrollViewer>フロー コンテンツを表示するための次の最も低い加重値コントロールは、最小限に抑えてスクロール コンテンツ領域を提供するだけ[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]です。  <xref:System.Windows.Controls.FlowDocumentPageViewer>フロー コンテンツの「ページで、-タイム」の表示モードの周囲に最適化されています。  最後に、<xref:System.Windows.Controls.FlowDocumentReader>フロー コンテンツを表示するための機能豊富なセットをサポートしていますが、それに応じて重みで高い負荷に対応します。  
+  
+ 内のテキストを水平方向に整列、<xref:System.Windows.Controls.TextBlock>処理が終わったら、<xref:System.Windows.Controls.TextBlock.TextAlignment%2A>プロパティです。 整列、<xref:System.Windows.Controls.TextBlock>のページ レイアウト内で行われます、<xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>と<xref:System.Windows.FrameworkElement.VerticalAlignment%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Controls.TextBlock> 要素を使用する方法を次の例に示します。  
+  
+ [!code-xaml[FlowDocumentSnippets#_TextBlockSimpleXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_textblocksimplexaml)]  
+  
+ この例の表示結果を次の図に示します。  
+  
+ ![スクリーン ショット: Textblock とボタン](~/add/media/textblock-simple.png "スクリーン ショット: Textblock とボタン")  
+  
+ 次の例では、方法を表示させるためのような結果方法プログラムでを示します。  
+  
+ [!code-csharp[FlowDocumentSnippets#_TextBlockSimple](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_textblocksimple)]
+ [!code-vb[FlowDocumentSnippets#_TextBlockSimple](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_textblocksimple)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TextBlock ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.TextBlock" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TextBlock (System.Windows.Documents.Inline inline);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Documents.Inline inline) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.#ctor(System.Windows.Documents.Inline)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="inline" Type="System.Windows.Documents.Inline" />
+      </Parameters>
+      <Docs>
+        <param name="inline">抽象から派生するオブジェクト<see cref="T:System.Windows.Documents.Inline" />クラスに初期コンテンツとして追加します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Controls.TextBlock" />クラス、指定した追加<see cref="T:System.Windows.Documents.Inline" />初期表示内容として要素。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 有効な入力の種類の`inline`含める<xref:System.Windows.Documents.AnchoredBlock>、 <xref:System.Windows.Documents.InlineUIContainer>、 <xref:System.Windows.Documents.LineBreak>、 <xref:System.Windows.Documents.Run>、および<xref:System.Windows.Documents.Span>です。  
+  
+   
+  
+## Examples  
+ 次の例では、このコンス トラクターの使用を示します。  ここで、 <xref:System.Windows.Controls.TextBlock> 、テキストを含む<xref:System.Windows.Documents.Run>です。  
+  
+ [!code-csharp[FlowDocumentSnippets#_TextBlockConstructorSimple](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_textblockconstructorsimple)]
+ [!code-vb[FlowDocumentSnippets#_TextBlockConstructorSimple](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_textblockconstructorsimple)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="inline" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ArrangeOverride">
+      <MemberSignature Language="C#" Value="protected override sealed System.Windows.Size ArrangeOverride (System.Windows.Size arrangeSize);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size ArrangeOverride(valuetype System.Windows.Size arrangeSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.ArrangeOverride(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="arrangeSize" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="arrangeSize">A<see cref="T:System.Windows.Size" />ホストの親要素の中を<see cref="T:System.Windows.Controls.TextBlock" />自体とその子要素を配置に使用する必要があります。 サイズ制約と、この要求のサイズが変わる可能性があります。</param>
+        <summary>子要素を配置しのサイズを決定、<see cref="T:System.Windows.Controls.TextBlock" />です。</summary>
+        <returns>実際、<see cref="T:System.Windows.Size" />要素の配置に使用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Windows.FrameworkElement.ArrangeOverride%2A?displayProperty=nameWithType>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Background">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Brush Background { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Brush Background" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBlock.Background" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.Brush" />コンテンツ エリアの背景の塗りつぶしに使用します。</summary>
+        <value>コンテンツ エリアの背景の塗りつぶしに使用するブラシまたは<see langword="null" />背景ブラシを使用しないようにします。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ どの<xref:System.Windows.Controls.TextBlock.Background%2A>子要素がこの最上位レベルの設定を上書きします。  
+  
+ 使用可能な定義済みのブラシの色の表は、次を参照してください。<xref:System.Windows.Media.Brushes>です。  
+  
+<a name="dependencyPropertyInfo_Background"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.TextBlock.BackgroundProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.TextBlock.Background%2A>の属性、<xref:System.Windows.Controls.TextBlock>要素。  
+  
+ [!code-xaml[FlowDocumentSnippets#_TextBlockPropsXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_textblockpropsxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.TextBlock.Background%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_TextBlockProps](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_textblockprops)]
+ [!code-vb[FlowDocumentSnippets#_TextBlockProps](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_textblockprops)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty BackgroundProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty BackgroundProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.TextBlock.BackgroundProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.TextBlock.Background" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaselineOffset">
+      <MemberSignature Language="C#" Value="public double BaselineOffset { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 BaselineOffset" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBlock.BaselineOffset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキストの各行がベースラインからオフセットされる量を取得または設定します。</summary>
+        <value>テキストの各行がベースラインからオフセットされる量 (デバイスに依存しないピクセル単位)。 <see cref="F:System.Double.NaN" />最適なベースラインのオフセットが現在のフォント特性から自動的に計算されることを示します。 既定値は、<see cref="F:System.Double.NaN" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ベースラインは、行のテキスト内の各文字の基数が揃えられる虚数部の水平方向です。  
+  
+ この依存関係プロパティには、添付プロパティの使用方法もあります。 [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]、使い方が`<`*オブジェクト* <xref:System.Windows.Controls.TextBlock.BaselineOffset%2A?displayProperty=nameWithType> `="`*二重*`".../>`ここで、*オブジェクト*内に含まれるオブジェクト要素 (通常はフロー要素)、<xref:System.Windows.Controls.TextBlock>です。 コードでは、添付プロパティの使用がサポートされている<xref:System.Windows.Controls.TextBlock.GetBaselineOffset%2A>と<xref:System.Windows.Controls.TextBlock.SetBaselineOffset%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaselineOffsetProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty BaselineOffsetProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty BaselineOffsetProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.TextBlock.BaselineOffsetProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.TextBlock.BaselineOffset" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BreakAfter">
+      <MemberSignature Language="C#" Value="public System.Windows.LineBreakCondition BreakAfter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.LineBreakCondition BreakAfter" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBlock.BreakAfter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.LineBreakCondition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.LineBreakCondition" />の現在の要素の後にコンテンツを中断する方法を示すです。</summary>
+        <value>現在の要素の後に重大なコンテンツの条件。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは常に <xref:System.Windows.LineBreakCondition.BreakDesired> を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BreakBefore">
+      <MemberSignature Language="C#" Value="public System.Windows.LineBreakCondition BreakBefore { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.LineBreakCondition BreakBefore" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBlock.BreakBefore" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.LineBreakCondition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.LineBreakCondition" />コンテンツが現在の要素の前に中断する方法を示すです。</summary>
+        <value>現在の要素の後に重大なコンテンツの条件。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは常に <xref:System.Windows.LineBreakCondition.BreakDesired> を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentEnd">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.TextPointer ContentEnd { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.TextPointer ContentEnd" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBlock.ContentEnd" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.TextPointer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Documents.TextPointer" />内のコンテンツの最後に、<see cref="T:System.Windows.Controls.TextBlock" />です。</summary>
+        <value>A<see cref="T:System.Windows.Documents.TextPointer" />内のコンテンツの最後に、<see cref="T:System.Windows.Controls.TextBlock" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテンツの最後が採用される次の最後の文字の直接挿入位置、<xref:System.Windows.Controls.TextBlock>です。  
+  
+ <xref:System.Windows.Documents.TextPointer>このプロパティによって返されるが常にその<xref:System.Windows.Documents.LogicalDirection>'éý'<xref:System.Windows.Documents.LogicalDirection.Forward>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentStart">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.TextPointer ContentStart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.TextPointer ContentStart" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBlock.ContentStart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.TextPointer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Documents.TextPointer" />内のコンテンツの先頭に、<see cref="T:System.Windows.Controls.TextBlock" />です。</summary>
+        <value>A<see cref="T:System.Windows.Documents.TextPointer" />内のコンテンツの先頭に、<see cref="T:System.Windows.Controls.TextBlock" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテンツの先頭があると見なされますの最初の文字の直前の挿入位置、<xref:System.Windows.Controls.TextBlock>です。  
+  
+ <xref:System.Windows.Documents.TextPointer>このプロパティによって返されるが常にその<xref:System.Windows.Documents.LogicalDirection>'éý'<xref:System.Windows.Documents.LogicalDirection.Backward>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontFamily">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.FontFamily FontFamily { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.FontFamily FontFamily" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBlock.FontFamily" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.Font)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.FontFamily</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の優先される最上位レベルのフォント ファミリ、<see cref="T:System.Windows.Controls.TextBlock" />です。</summary>
+        <value>A<see cref="T:System.Windows.Media.FontFamily" />優先フォント ファミリ、または優先されるプライマリ フォント ファミリと 1 つ以上の代替フォント ファミリを指定するオブジェクト。 既定値はによって決まるフォント、<see cref="P:System.Windows.SystemFonts.MessageFontFamily" />値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ どの<xref:System.Windows.Controls.TextBlock.FontFamily%2A>子要素がこの最上位レベルの設定を上書きします。  
+  
+ 複数のファミリを指定すると、2 回目以降のフォント ファミリは、プライマリ フォント ファミリを使用または適用できない場合に使用されるフォールバック ファミリとして機能します。  
+  
+ このプロパティは、優先度だけを指定します。  指定したフォント ファミリが使用できない場合、<xref:System.Windows.Controls.TextBlock>サイレントによって決まるフォントにフォールバック、<xref:System.Windows.SystemFonts.MessageFontFamily%2A>値。  
+  
+ この依存関係プロパティには、添付プロパティの使用方法もあります。 [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]、使い方が`<`*オブジェクト* <xref:System.Windows.Controls.TextBlock.FontFamily%2A?displayProperty=nameWithType> `="`*値*`".../>`ここで、*オブジェクト*内に含まれる、オブジェクト要素 (通常はフロー要素) は、 <xref:System.Windows.Controls.TextBlock>、および*値*XAML 値で説明したようには文字列形式の値のいずれか。 コードでは、添付プロパティの使用がサポートされている<xref:System.Windows.Controls.TextBlock.GetFontFamily%2A>と<xref:System.Windows.Controls.TextBlock.SetFontFamily%2A>です。 添付プロパティの使用ではありません一般的では、ほとんどの要素をことができますに含まれている、<xref:System.Windows.Controls.TextBlock>非添付と似ています、サポート`FontFamily`プロパティを<xref:System.Windows.Controls.TextBlock>レンダリングに使用します。  
+  
+<a name="xamlAttributeUsage_FontFamily"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object FontFamily="fontFamilyName"/>  
+- or -  
+<object FontFamily="fontFamilyNamesList"/>  
+- or -  
+<object FontFamily="fontFamilyFolderReference"/>  
+- or -  
+<object FontFamily="fontFamilyUriReference"/>  
+```  
+  
+<a name="xamlValues_FontFamily"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *fontFamilyName*  
+ フォント ファミリ名を指定する文字列。  たとえば、`"Arial"` または `"Century Gothic"` のようにします。  
+  
+ *fontFamilyNamesList*  
+ (コンマの後の空白は無視されます)、コンマで区切って複数のフォント ファミリ名を指定する文字列、します。  指定した最初のフォント ファミリを果たすプライマリ フォント ファミリ。以降のフォント ファミリは、プライマリ フォント ファミリが使用または適用できない場合に使用するフォールバック ファミリとして機能します。  たとえば、`"Arial, Century Gothic"`世紀ゴートとして代替フォント ファミリと、プライマリ フォント ファミリと Arial を指定します。  
+  
+ *fontFamilyFolderReference*  
+ フォント ファミリ名と共に、フォントを含むフォルダーを指定する文字列。  フォント ファミリ名とフォルダーは、# 文字で区切られます。  フォルダーの参照は、絶対または相対パスにあります。  たとえば、`"Custom Fonts\#My Custom Font"` のようにします。  
+  
+ *fontFamilyUriReference*  
+ 指定する文字列、[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]のフォント、フォント ファミリ名とします。  [!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]し、フォント ファミリ名は、# 文字で区切られます。  たとえば、`"http://MyFontServer/Fonts/#My Custom Font"` のようにします。  
+  
+<a name="dependencyPropertyInfo_FontFamily"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.TextBlock.FontFamilyProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.TextBlock.FontFamily%2A>の属性、<xref:System.Windows.Controls.TextBlock>要素。  
+  
+ [!code-xaml[FlowDocumentSnippets#_TextBlockPropsXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_textblockpropsxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.TextBlock.FontFamily%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_TextBlockProps](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_textblockprops)]
+ [!code-vb[FlowDocumentSnippets#_TextBlockProps](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_textblockprops)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontFamilyProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FontFamilyProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FontFamilyProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.TextBlock.FontFamilyProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.TextBlock.FontFamily" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontSize">
+      <MemberSignature Language="C#" Value="public double FontSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 FontSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBlock.FontSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.FontSizeConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の最上位レベルのフォント サイズ、<see cref="T:System.Windows.Controls.TextBlock" />です。</summary>
+        <value>使用する目的のフォント サイズ (デバイス非依存のピクセル単位)。 既定値はによって決定されます、<see cref="P:System.Windows.SystemFonts.MessageFontSize" />値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ どの<xref:System.Windows.Controls.TextBlock.FontSize%2A>子要素がこの最上位レベルの設定を上書きします。  
+  
+ この依存関係プロパティには、添付プロパティの使用方法もあります。 [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]、使い方が`<`*オブジェクト* <xref:System.Windows.Controls.TextBlock.FontSize%2A?displayProperty=nameWithType> `="`*値*`".../>`ここで、*オブジェクト*内に含まれる、オブジェクト要素 (通常はフロー要素) は、 <xref:System.Windows.Controls.TextBlock>、および*値*XAML 値で説明したようには文字列形式の値のいずれか。 コードでは、添付プロパティの使用がサポートされている<xref:System.Windows.Controls.TextBlock.GetFontSize%2A>と<xref:System.Windows.Controls.TextBlock.SetFontSize%2A>です。 添付プロパティの使用ではありません一般的では、ほとんどの要素をことができますに含まれている、<xref:System.Windows.Controls.TextBlock>非添付と似ています、サポート`FontSize`プロパティを<xref:System.Windows.Controls.TextBlock>レンダリングに使用します。  
+  
+<a name="xamlAttributeUsage_FontSize"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object FontSize="double"/>  
+- or -  
+<object FontSize="qualifiedDouble"/>  
+```  
+  
+<a name="xamlValues_FontSize"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *double*  
+ <xref:System.Double>  
+  
+ 文字列表現を<xref:System.Double>値より小さくなります 0.0 以上<xref:System.Double.PositiveInfinity>です。 修飾されていない値は、デバイス非依存ピクセル単位で計測されます。 明示的に、文字列では、小数点を含める必要がありますされません。  
+  
+ *qualifiedDouble*  
+ A*二重*値、上記と続けて次の単位指定子のいずれかの: `px`、 `in`、 `cm`、`pt`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ `cm`センチメートル; は、します。1cm==(96/2.54) px  
+  
+ `pt`ポイントです。1pt==(96/72) px  
+  
+<a name="dependencyPropertyInfo_FontSize"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.TextBlock.FontSizeProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.TextBlock.FontSize%2A>の属性、<xref:System.Windows.Controls.TextBlock>要素。  
+  
+ [!code-xaml[FlowDocumentSnippets#_TextBlockPropsXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_textblockpropsxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.TextBlock.FontSize%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_TextBlockProps](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_textblockprops)]
+ [!code-vb[FlowDocumentSnippets#_TextBlockProps](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_textblockprops)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontSizeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FontSizeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FontSizeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.TextBlock.FontSizeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.TextBlock.FontSize" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontStretch">
+      <MemberSignature Language="C#" Value="public System.Windows.FontStretch FontStretch { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FontStretch FontStretch" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBlock.FontStretch" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontStretch</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の最上位レベルのフォント伸縮特性、<see cref="T:System.Windows.Controls.TextBlock" />です。</summary>
+        <value>メンバー、<see cref="T:System.Windows.FontStretch" />クラスを使用する目的のフォント伸縮特性を指定します。 既定値は、<see cref="P:System.Windows.FontStretches.Normal" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ どの<xref:System.Windows.Controls.TextBlock.FontStretch%2A>子要素がこの最上位レベルの設定を上書きします。  
+  
+ この依存関係プロパティには、添付プロパティの使用方法もあります。 [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]、使い方が`<`*オブジェクト* <xref:System.Windows.Controls.TextBlock.FontStretch%2A?displayProperty=nameWithType> `="`*値*`".../>`ここで、*オブジェクト*内に含まれる、オブジェクト要素 (通常はフロー要素) は、 <xref:System.Windows.Controls.TextBlock>、および*値*のプロパティ名の文字列形式のいずれかが、<xref:System.Windows.FontStretch>クラスです。 コードでは、添付プロパティの使用がサポートされている<xref:System.Windows.Controls.TextBlock.GetFontStretch%2A>と<xref:System.Windows.Controls.TextBlock.SetFontStretch%2A>です。 添付プロパティの使用ではありません一般的では、ほとんどの要素をことができますに含まれている、<xref:System.Windows.Controls.TextBlock>非添付と似ています、サポート`FontStretch`プロパティを<xref:System.Windows.Controls.TextBlock>レンダリングに使用します。  
+  
+<a name="dependencyPropertyInfo_FontStretch"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.TextBlock.FontStretchProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.TextBlock.FontStretch%2A>の属性、<xref:System.Windows.Controls.TextBlock>要素。  
+  
+ [!code-xaml[FlowDocumentSnippets#_TextBlockPropsXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_textblockpropsxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.TextBlock.FontStretch%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_TextBlockProps](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_textblockprops)]
+ [!code-vb[FlowDocumentSnippets#_TextBlockProps](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_textblockprops)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontStretchProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FontStretchProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FontStretchProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.TextBlock.FontStretchProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.TextBlock.FontStretch" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.FontStyle FontStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FontStyle FontStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBlock.FontStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の最上位レベルのフォント スタイル、<see cref="T:System.Windows.Controls.TextBlock" />です。</summary>
+        <value>メンバー、<see cref="T:System.Windows.FontStyles" />目的のフォント スタイルを指定するクラス。 既定値はによって決定されます、<see cref="P:System.Windows.SystemFonts.MessageFontStyle" />値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ どの<xref:System.Windows.Controls.TextBlock.FontStyle%2A>子要素がこの最上位レベルの設定を上書きします。  
+  
+ この依存関係プロパティには、添付プロパティの使用方法もあります。 [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]、使い方が`<`*オブジェクト* <xref:System.Windows.Controls.TextBlock.FontStyle%2A?displayProperty=nameWithType> `="`*値*`".../>`ここで、*オブジェクト*内に含まれる、オブジェクト要素 (通常はフロー要素) は、 <xref:System.Windows.Controls.TextBlock>、および*値*は文字列形式の 1 つのプロパティ名、<xref:System.Windows.FontStyles>クラスです。 コードでは、添付プロパティの使用がサポートされている<xref:System.Windows.Controls.TextBlock.GetFontStyle%2A>と<xref:System.Windows.Controls.TextBlock.SetFontStyle%2A>です。 添付プロパティの使用ではありません一般的では、ほとんどの要素をことができますに含まれている、<xref:System.Windows.Controls.TextBlock>非添付と似ています、サポート`FontStyle`プロパティを<xref:System.Windows.Controls.TextBlock>レンダリングに使用します。  
+  
+<a name="dependencyPropertyInfo_FontStyle"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.TextBlock.FontStyleProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.TextBlock.FontStyle%2A>の属性、<xref:System.Windows.Controls.TextBlock>要素。  
+  
+ [!code-xaml[FlowDocumentSnippets#_TextBlockPropsXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_textblockpropsxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.TextBlock.FontStyle%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_TextBlockProps](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_textblockprops)]
+ [!code-vb[FlowDocumentSnippets#_TextBlockProps](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_textblockprops)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontStyleProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FontStyleProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FontStyleProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.TextBlock.FontStyleProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.TextBlock.FontStyle" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontWeight">
+      <MemberSignature Language="C#" Value="public System.Windows.FontWeight FontWeight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FontWeight FontWeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBlock.FontWeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontWeight</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の最上位レベルのフォントの太さ、<see cref="T:System.Windows.Controls.TextBlock" />です。</summary>
+        <value>メンバー、<see cref="T:System.Windows.FontWeights" />フォントの太さを指定します。 既定値はによって決定されます、<see cref="P:System.Windows.SystemFonts.MessageFontWeight" />値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ どの<xref:System.Windows.Controls.TextBlock.FontWeight%2A>子要素がこの最上位レベルの設定を上書きします。  
+  
+ フォントの太さの有効な値の一覧は、次を参照してください。、<xref:System.Windows.FontWeights>クラスです。  
+  
+ この依存関係プロパティには、添付プロパティの使用方法もあります。 [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]、使い方が`<`*オブジェクト* <xref:System.Windows.Controls.TextBlock.FontWeight%2A?displayProperty=nameWithType> `="`*値*`".../>`ここで、*オブジェクト*内に含まれる、オブジェクト要素 (通常はフロー要素) は、 <xref:System.Windows.Controls.TextBlock>、および*値*はのプロパティの文字列形式の値の 1 つ、<xref:System.Windows.FontWeights>クラスです。 コードでは、添付プロパティの使用がサポートされている<xref:System.Windows.Controls.TextBlock.GetFontWeight%2A>と<xref:System.Windows.Controls.TextBlock.SetFontWeight%2A>です。 添付プロパティの使用ではありません一般的では、ほとんどの要素をことができますに含まれている、<xref:System.Windows.Controls.TextBlock>非添付と似ています、サポート`FontWeight`プロパティを<xref:System.Windows.Controls.TextBlock>レンダリングに使用します。  
+  
+<a name="dependencyPropertyInfo_FontWeight"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.TextBlock.FontWeightProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.TextBlock.FontWeight%2A>の属性、<xref:System.Windows.Controls.TextBlock>要素。  
+  
+ [!code-xaml[FlowDocumentSnippets#_TextBlockPropsXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_textblockpropsxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.TextBlock.FontWeight%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_TextBlockProps](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_textblockprops)]
+ [!code-vb[FlowDocumentSnippets#_TextBlockProps](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_textblockprops)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontWeightProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FontWeightProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FontWeightProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.TextBlock.FontWeightProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.TextBlock.FontWeight" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Foreground">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Brush Foreground { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Brush Foreground" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBlock.Foreground" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.Brush" />のテキストの内容に適用する、<see cref="T:System.Windows.Controls.TextBlock" />です。</summary>
+        <value>テキスト コンテンツに適用するために使用するブラシ。 既定値は、<see cref="P:System.Windows.Media.Brushes.Black" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用可能な事前定義されたブラシの色の表は、次を参照してください。<xref:System.Windows.Media.Brushes>です。  
+  
+ どの<xref:System.Windows.Controls.TextBlock.Foreground%2A>子要素がこの最上位レベルの設定を上書きします。  
+  
+ この依存関係プロパティには、添付プロパティの使用方法もあります。 [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]、使い方が`<`*オブジェクト* <xref:System.Windows.Controls.TextBlock.Foreground%2A?displayProperty=nameWithType> `="`*値*`".../>`ここで、*オブジェクト*内に含まれる、オブジェクト要素 (通常はフロー要素) は、 <xref:System.Windows.Controls.TextBlock>、および*値*に解決される文字列は、<xref:System.Windows.Media.Brush>実装値。 コードでは、添付プロパティの使用がサポートされている<xref:System.Windows.Controls.TextBlock.GetForeground%2A>と<xref:System.Windows.Controls.TextBlock.SetForeground%2A>です。 添付プロパティの使用ではありません一般的では、ほとんどの要素をことができますに含まれている、<xref:System.Windows.Controls.TextBlock>非添付と似ています、サポート`Foreground`プロパティを<xref:System.Windows.Controls.TextBlock>レンダリングに使用します。  
+  
+<a name="dependencyPropertyInfo_Foreground"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.TextBlock.ForegroundProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.SubPropertiesDoNotAffectRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.TextBlock.Foreground%2A>の属性、<xref:System.Windows.Controls.TextBlock>要素。  
+  
+ [!code-xaml[FlowDocumentSnippets#_TextBlockPropsXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_textblockpropsxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.TextBlock.Foreground%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_TextBlockProps](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_textblockprops)]
+ [!code-vb[FlowDocumentSnippets#_TextBlockProps](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_textblockprops)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForegroundProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ForegroundProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ForegroundProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.TextBlock.ForegroundProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.TextBlock.Foreground" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBaselineOffset">
+      <MemberSignature Language="C#" Value="public static double GetBaselineOffset (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 GetBaselineOffset(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.GetBaselineOffset(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">値を取得する対象の依存関係オブジェクト、<see cref="P:System.Windows.Controls.TextBlock.BaselineOffset" />添付プロパティ。</param>
+        <summary>指定した依存関係オブジェクトの <see cref="P:System.Windows.Controls.TextBlock.BaselineOffset" /> 添付プロパティの値を返します。</summary>
+        <returns>現在の値、<see cref="P:System.Windows.Controls.TextBlock.BaselineOffset" />指定した依存関係オブジェクトのプロパティを添付します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFontFamily">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.FontFamily GetFontFamily (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.FontFamily GetFontFamily(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.GetFontFamily(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.FontFamily</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">値を取得する対象の依存関係オブジェクト、<see cref="P:System.Windows.Controls.TextBlock.FontFamily" />添付プロパティ。</param>
+        <summary>指定した依存関係オブジェクトの <see cref="F:System.Windows.Controls.TextBlock.FontFamilyProperty" /> 添付プロパティの値を返します。</summary>
+        <returns>現在の値、<see cref="P:System.Windows.Controls.TextBlock.FontFamily" />指定した依存関係オブジェクトのプロパティを添付します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFontSize">
+      <MemberSignature Language="C#" Value="public static double GetFontSize (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 GetFontSize(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.GetFontSize(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.FontSizeConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">値を取得する対象の依存関係オブジェクト、<see cref="P:System.Windows.Controls.TextBlock.FontSize" />添付プロパティ。</param>
+        <summary>指定した依存関係オブジェクトの <see cref="P:System.Windows.Controls.TextBlock.FontSize" /> 添付プロパティの値を返します。</summary>
+        <returns>現在の値、<see cref="P:System.Windows.Controls.TextBlock.FontSize" />指定した依存関係オブジェクトのプロパティを添付します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFontStretch">
+      <MemberSignature Language="C#" Value="public static System.Windows.FontStretch GetFontStretch (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.FontStretch GetFontStretch(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.GetFontStretch(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontStretch</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">値を取得する対象の依存関係オブジェクト、<see cref="P:System.Windows.Controls.TextBlock.FontStretch" />添付プロパティ。</param>
+        <summary>指定した依存関係オブジェクトの <see cref="P:System.Windows.Controls.TextBlock.FontStretch" /> 添付プロパティの値を返します。</summary>
+        <returns>現在の値、<see cref="P:System.Windows.Controls.TextBlock.FontStretch" />指定した依存関係オブジェクトのプロパティを添付します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFontStyle">
+      <MemberSignature Language="C#" Value="public static System.Windows.FontStyle GetFontStyle (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.FontStyle GetFontStyle(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.GetFontStyle(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontStyle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">値を取得する対象の依存関係オブジェクト、<see cref="P:System.Windows.Controls.TextBlock.FontStyle" />添付プロパティ。</param>
+        <summary>指定した依存関係オブジェクトの <see cref="P:System.Windows.Controls.TextBlock.FontStyle" /> 添付プロパティの値を返します。</summary>
+        <returns>現在の値、<see cref="P:System.Windows.Controls.TextBlock.FontStyle" />指定した依存関係オブジェクトのプロパティを添付します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFontWeight">
+      <MemberSignature Language="C#" Value="public static System.Windows.FontWeight GetFontWeight (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.FontWeight GetFontWeight(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.GetFontWeight(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontWeight</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">値を取得する対象の依存関係オブジェクト、<see cref="P:System.Windows.Controls.TextBlock.FontWeight" />添付プロパティ。</param>
+        <summary>指定した依存関係オブジェクトの <see cref="P:System.Windows.Controls.TextBlock.FontWeight" /> 添付プロパティの値を返します。</summary>
+        <returns>現在の値、<see cref="P:System.Windows.Controls.TextBlock.FontWeight" />指定した依存関係オブジェクトのプロパティを添付します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetForeground">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Brush GetForeground (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.Brush GetForeground(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.GetForeground(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Brush</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">値を取得する対象の依存関係オブジェクト、<see cref="P:System.Windows.Controls.TextBlock.Foreground" />添付プロパティ。</param>
+        <summary>指定した依存関係オブジェクトの <see cref="P:System.Windows.Controls.TextBlock.Foreground" /> 添付プロパティの値を返します。</summary>
+        <returns>現在の値、<see cref="P:System.Windows.Controls.TextBlock.Foreground" />指定した依存関係オブジェクトのプロパティを添付します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLineHeight">
+      <MemberSignature Language="C#" Value="public static double GetLineHeight (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 GetLineHeight(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.GetLineHeight(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.LengthConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">値を取得する対象の依存関係オブジェクト、<see cref="P:System.Windows.Controls.TextBlock.LineHeight" />添付プロパティ。</param>
+        <summary>指定した依存関係オブジェクトの <see cref="P:System.Windows.Controls.TextBlock.LineHeight" /> 添付プロパティの値を返します。</summary>
+        <returns>現在の値、<see cref="P:System.Windows.Controls.TextBlock.LineHeight" />指定した依存関係オブジェクトのプロパティを添付します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLineStackingStrategy">
+      <MemberSignature Language="C#" Value="public static System.Windows.LineStackingStrategy GetLineStackingStrategy (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.LineStackingStrategy GetLineStackingStrategy(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.GetLineStackingStrategy(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.LineStackingStrategy</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">値を取得する対象の依存関係オブジェクト、<see cref="P:System.Windows.Controls.TextBlock.LineStackingStrategy" />添付プロパティ。</param>
+        <summary>指定した依存関係オブジェクトの <see cref="P:System.Windows.Controls.TextBlock.LineStackingStrategy" /> 添付プロパティの値を返します。</summary>
+        <returns>現在の値、<see cref="P:System.Windows.Controls.TextBlock.LineStackingStrategy" />指定した依存関係オブジェクトのプロパティを添付します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPositionFromPoint">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.TextPointer GetPositionFromPoint (System.Windows.Point point, bool snapToText);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Documents.TextPointer GetPositionFromPoint(valuetype System.Windows.Point point, bool snapToText) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.GetPositionFromPoint(System.Windows.Point,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.TextPointer</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Windows.Point" />
+        <Parameter Name="snapToText" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="point">A<see cref="T:System.Windows.Point" />の座標空間に、<see cref="T:System.Windows.Controls.TextBlock" />を返す、<see cref="T:System.Windows.Documents.TextPointer" />です。</param>
+        <param name="snapToText">
+          <see langword="true" />返す、<see cref="T:System.Windows.Documents.TextPointer" />カーソルに最も近い位置に<c>ポイント</c>かどうか、<c>ポイント</c>は文字の内部境界ボックスです。<see langword="false" />を返す<see langword="null" />場合<c>ポイント</c>いない文字の内部境界ボックスには。</param>
+        <summary>返します、<see cref="T:System.Windows.Documents.TextPointer" />を指定された最も近い位置に<see cref="T:System.Windows.Point" />です。</summary>
+        <returns>A<see cref="T:System.Windows.Documents.TextPointer" />を指定したポイントまたは<see langword="null" />場合<paramref name="snapToText" />は<see langword="false" />し、指定された点は文字境界内に収まるいないボックスに、<see cref="T:System.Windows.Controls.TextBlock" />コンテンツ領域です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは常に有効な返します<xref:System.Windows.Documents.TextPointer>とき`snapToText`は`true`します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">コントロールの現在の有効なレイアウト情報は使用できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRectanglesCore">
+      <MemberSignature Language="C#" Value="protected virtual System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Rect&gt; GetRectanglesCore (System.Windows.ContentElement child);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;valuetype System.Windows.Rect&gt; GetRectanglesCore(class System.Windows.ContentElement child) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.GetRectanglesCore(System.Windows.ContentElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Rect&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="child" Type="System.Windows.ContentElement" />
+      </Parameters>
+      <Docs>
+        <param name="child">A<see cref="T:System.Windows.ContentElement" />を生成し、外接する四角形のコレクションを返します。</param>
+        <summary>外接する、指定した四角形の読み取り専用コレクションを返します<see cref="T:System.Windows.ContentElement" />です。</summary>
+        <returns>外接する、指定された四角形の読み取り専用コレクション<see cref="T:System.Windows.ContentElement" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内のコンテンツの行に対応するコレクション内で各外接する四角形、<xref:System.Windows.ContentElement>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="child" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTextAlignment">
+      <MemberSignature Language="C#" Value="public static System.Windows.TextAlignment GetTextAlignment (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.TextAlignment GetTextAlignment(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.GetTextAlignment(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.TextAlignment</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">値を取得する対象の依存関係オブジェクト、<see cref="P:System.Windows.Controls.TextBlock.TextAlignment" />添付プロパティ。</param>
+        <summary>指定した依存関係オブジェクトの <see cref="P:System.Windows.Controls.TextBlock.TextAlignment" /> 添付プロパティの値を返します。</summary>
+        <returns>現在の値、<see cref="P:System.Windows.Controls.TextBlock.TextAlignment" />指定した依存関係オブジェクトのプロパティを添付します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetVisualChild">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Media.Visual GetVisualChild (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Media.Visual GetVisualChild(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.GetVisualChild(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Visual</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">指定する 0 から始まるインデックス、<see cref="T:System.Windows.Media.Visual" />子を返します。  この値は 0 で指定する必要がありますと (<see cref="P:System.Windows.Controls.TextBlock.VisualChildrenCount" /> -1)</param>
+        <summary>返します、<see cref="T:System.Windows.Media.Visual" />指定したインデックス位置の子です。</summary>
+        <returns><see cref="T:System.Windows.Media.Visual" />指定したインデックス位置の子です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Windows.FrameworkElement.GetVisualChild%2A?displayProperty=nameWithType>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" />0 の間ではないと (<see cref="P:System.Windows.Controls.TextBlock.VisualChildrenCount" /> -1)</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HitTestCore">
+      <MemberSignature Language="C#" Value="protected override sealed System.Windows.Media.HitTestResult HitTestCore (System.Windows.Media.PointHitTestParameters hitTestParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Media.HitTestResult HitTestCore(class System.Windows.Media.PointHitTestParameters hitTestParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.HitTestCore(System.Windows.Media.PointHitTestParameters)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.HitTestResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hitTestParameters" Type="System.Windows.Media.PointHitTestParameters" />
+      </Parameters>
+      <Docs>
+        <param name="hitTestParameters">A<see cref="T:System.Windows.Media.PointHitTestParameters" />に対してヒット テストのパラメーターを指定するオブジェクト。</param>
+        <summary>返します、<see cref="T:System.Windows.Media.PointHitTestResult" />指定<see cref="T:System.Windows.Media.PointHitTestParameters" />です。</summary>
+        <returns>A<see cref="T:System.Windows.Media.PointHitTestResult" />の指定したヒット テスト パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、表示される内容の正確なヒット テストを有効にします。  
+  
+ このメソッドは<xref:System.Windows.UIElement.HitTestCore%2A?displayProperty=nameWithType>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="hitTestParameters" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HostedElementsCore">
+      <MemberSignature Language="C#" Value="protected virtual System.Collections.Generic.IEnumerator&lt;System.Windows.IInputElement&gt; HostedElementsCore { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerator`1&lt;class System.Windows.IInputElement&gt; HostedElementsCore" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBlock.HostedElementsCore" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;System.Windows.IInputElement&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用できる列挙子を取得は、これによってホストされている要素を反復処理する<see cref="T:System.Windows.Controls.TextBlock" />です。</summary>
+        <value>これによってホストされている要素を反復処理できる列挙子<see cref="T:System.Windows.Controls.TextBlock" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Inlines">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.InlineCollection Inlines { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.InlineCollection Inlines" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBlock.Inlines" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.InlineCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Documents.InlineCollection" />最上位レベルを含む<see cref="T:System.Windows.Documents.Inline" />要素の内容を構成する、<see cref="T:System.Windows.Controls.TextBlock" />です。</summary>
+        <value><see cref="T:System.Windows.Documents.InlineCollection" />を含む、<see cref="T:System.Windows.Documents.Inline" />要素の内容を構成する、<see cref="T:System.Windows.Controls.TextBlock" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Documents.InlineCollection>列挙またはの内容を操作するには、このプロパティによって返される、<xref:System.Windows.Controls.TextBlock>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InputHitTestCore">
+      <MemberSignature Language="C#" Value="protected virtual System.Windows.IInputElement InputHitTestCore (System.Windows.Point point);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Windows.IInputElement InputHitTestCore(valuetype System.Windows.Point point) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.InputHitTestCore(System.Windows.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.IInputElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Windows.Point" />
+      </Parameters>
+      <Docs>
+        <param name="point">A<see cref="T:System.Windows.Point" />の座標空間に、<see cref="T:System.Windows.Controls.TextBlock" />を返すの対応する<see cref="T:System.Windows.IInputElement" />です。</param>
+        <summary>返します、<see cref="T:System.Windows.IInputElement" />内、指定した<see cref="T:System.Windows.Point" />内で、<see cref="T:System.Windows.Controls.TextBlock" />です。</summary>
+        <returns><see cref="T:System.Windows.IInputElement" />指定した位置に見つかったまたは<see langword="null" />しない場合<see cref="T:System.Windows.IInputElement" />にあります。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsHyphenationEnabled">
+      <MemberSignature Language="C#" Value="public bool IsHyphenationEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsHyphenationEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBlock.IsHyphenationEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または単語の自動ハイフネーションが有効か無効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />その自動を示すために改行と単語のハイフネーションが有効です。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 自動単語ハイフネーション機能により、<xref:System.Windows.Controls.TextBlock>を自動的に中断し、現在のレイアウトの条件に基づいて、単語を単語を区切るです。  これにより、長い単語を 1 行で開始し、その次のまま続行して、揃えのテキスト内の空白のより均等に配分を実現する傾向があります。  単語が分割され、標準の文法規則に従って設定されます。  
+  
+<a name="dependencyPropertyInfo_IsHyphenationEnabled"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.TextBlock.IsHyphenationEnabledProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsHyphenationEnabledProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsHyphenationEnabledProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsHyphenationEnabledProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.TextBlock.IsHyphenationEnabledProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.TextBlock.IsHyphenationEnabled" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineHeight">
+      <MemberSignature Language="C#" Value="public double LineHeight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 LineHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBlock.LineHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.LengthConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテンツの各行の高さを取得または設定します。</summary>
+        <value>行の高さ (単位はデバイスに依存しないピクセル数)。範囲は 0.0034 ～ 160000 です。 値<see cref="F:System.Double.NaN" />(属性値に相当"<c>自動</c>")、行の高さを現在のフォント特性から自動的に決定することを示します。 既定値は、<see cref="F:System.Double.NaN" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値を変更しても、関連付けられているテキストの高さは変更されません。代わりに、テキストを含む行の高さを変更します。 テキストのサイズを変更するには、使用、<xref:System.Windows.Controls.TextBlock.FontSize%2A>プロパティです。  
+  
+ このプロパティでは、内の行のレイアウトだけでなく、<xref:System.Windows.Controls.TextBlock>の影響を受けるその<xref:System.Windows.Controls.TextBlock.LineStackingStrategy%2A>プロパティです。  
+  
+ この依存関係プロパティには、添付プロパティの使用方法もあります。 [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]、使い方が`<`*オブジェクト* <xref:System.Windows.Controls.TextBlock.LineHeight%2A?displayProperty=nameWithType> `="`*値*`".../>`ここで、*オブジェクト*内に含まれる、オブジェクト要素 (通常はフロー要素) は、<xref:System.Windows.Controls.TextBlock>と*値*XAML 値で説明したようです。 コードでは、添付プロパティの使用がサポートされている<xref:System.Windows.Controls.TextBlock.GetLineHeight%2A>と<xref:System.Windows.Controls.TextBlock.SetLineHeight%2A>です。 添付プロパティの使用が一般的ではありません。  
+  
+<a name="xamlAttributeUsage_LineHeight"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object LineHeight="double"/>  
+- or -  
+<object LineHeight="qualifiedDouble"/>  
+- or -  
+<object LineHeight="Auto"/>  
+```  
+  
+<a name="xamlValues_LineHeight"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *double*  
+ <xref:System.Double>  
+  
+ 文字列表現を<xref:System.Double>値以上になると`0.0034`と以下、`160000`です。 修飾されていない値は、デバイス非依存ピクセル単位で計測されます。 明示的に、文字列では、小数点を含める必要がありますされません。  
+  
+ *qualifiedDouble*  
+ A*二重*、上記で説明したように値 (ドキュメントを除く`Auto`) 後に、次の単位指定子の 1 つ: `px`、 `in`、 `cm`、`pt`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ `cm`センチメートル; は、します。1cm==(96/2.54) px  
+  
+ `pt`ポイントです。1pt==(96/72) px  
+  
+ 自動  
+ 現在のフォント特性から自動的に決定される行の高さが発生します。  プロパティの値に相当<xref:System.Double.NaN?displayProperty=nameWithType>です。  
+  
+<a name="dependencyPropertyInfo_LineHeight"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.TextBlock.LineHeightProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.TextBlock.LineHeight%2A>の属性、<xref:System.Windows.Controls.TextBlock>要素。  
+  
+ [!code-xaml[FlowDocumentSnippets#_TextBlockPropsXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_textblockpropsxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.TextBlock.LineHeight%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_TextBlockProps](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_textblockprops)]
+ [!code-vb[FlowDocumentSnippets#_TextBlockProps](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_textblockprops)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <see cref="P:System.Windows.Controls.TextBlock.LineHeight" />負の値に設定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LineHeightProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty LineHeightProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty LineHeightProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.TextBlock.LineHeightProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.TextBlock.LineHeight" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineStackingStrategy">
+      <MemberSignature Language="C#" Value="public System.Windows.LineStackingStrategy LineStackingStrategy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.LineStackingStrategy LineStackingStrategy" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBlock.LineStackingStrategy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.LineStackingStrategy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定内のテキストの行ごとに行ボックスを決定するメカニズム、<see cref="T:System.Windows.Controls.TextBlock" />です。</summary>
+        <value>内のテキストの行ごとに行ボックスを決定するメカニズム、<see cref="T:System.Windows.Controls.TextBlock" />です。 既定値は、<see cref="F:System.Windows.LineStackingStrategy.MaxHeight" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この依存関係プロパティには、添付プロパティの使用方法もあります。 [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]、使い方が`<`*オブジェクト* <xref:System.Windows.Controls.TextBlock.LineStackingStrategy%2A?displayProperty=nameWithType> `="`*値*`".../>`ここで、*オブジェクト*内に含まれる、オブジェクト要素 (通常はフロー要素) は、 <xref:System.Windows.Controls.TextBlock>、および*値*の文字列値です、<xref:System.Windows.LineStackingStrategy>列挙します。 コードでは、添付プロパティの使用がサポートされている<xref:System.Windows.Controls.TextBlock.GetLineStackingStrategy%2A>と<xref:System.Windows.Controls.TextBlock.SetLineStackingStrategy%2A>です。 添付プロパティの使用が一般的ではありません。  
+  
+<a name="dependencyPropertyInfo_LineStackingStrategy"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.TextBlock.LineStackingStrategyProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>, <xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Controls.TextBlock.LineStackingStrategy%2A>のテキスト行に行ボックスを作成する方法を決定するプロパティ、<xref:System.Windows.Controls.TextBlock>です。 最初の<xref:System.Windows.Controls.TextBlock>が、<xref:System.Windows.Controls.TextBlock.LineStackingStrategy%2A>値<xref:System.Windows.LineStackingStrategy.MaxHeight>、2 番目<xref:System.Windows.Controls.TextBlock>の値を持つ<xref:System.Windows.LineStackingStrategy.BlockLineHeight>します。  
+  
+ [!code-xaml[FlowMiscSnippets_snip#LineStackingStrategyExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowMiscSnippets_snip/cs/linestackingstrategyexample.xaml#linestackingstrategyexamplewholepage)]  
+  
+ 次の図は、上記のコードの結果を示します。  
+  
+ ![スクリーン ショット: LineStackingStrategy 値の比較](~/add/media/flow-linestackingstrategy.gif "スクリーン ショット: LineStackingStrategy の比較値")  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineStackingStrategyProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty LineStackingStrategyProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty LineStackingStrategyProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.TextBlock.LineStackingStrategyProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.TextBlock.LineStackingStrategy" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogicalChildren">
+      <MemberSignature Language="C#" Value="protected override System.Collections.IEnumerator LogicalChildren { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerator LogicalChildren" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBlock.LogicalChildren" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>論理子を反復処理できる列挙子を取得、<see cref="T:System.Windows.Controls.TextBlock" />です。</summary>
+        <value>論理上の子の列挙子。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MeasureOverride">
+      <MemberSignature Language="C#" Value="protected override sealed System.Windows.Size MeasureOverride (System.Windows.Size constraint);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size MeasureOverride(valuetype System.Windows.Size constraint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.MeasureOverride(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="constraint" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="constraint">A<see cref="T:System.Windows.Size" />のサイズに対する制約を指定する構造体、<see cref="T:System.Windows.Controls.TextBlock" />です。</param>
+        <summary>再測定と呼ばれる、<see cref="T:System.Windows.Controls.TextBlock" />です。</summary>
+        <returns>A<see cref="T:System.Windows.Size" />構造体の新しいサイズを示す、<see cref="T:System.Windows.Controls.TextBlock" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタムのサイズ変更動作を実装するには、このメソッドをオーバーライドします。  
+  
+ このメソッドは<xref:System.Windows.FrameworkElement.MeasureOverride%2A?displayProperty=nameWithType>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnChildDesiredSizeChangedCore">
+      <MemberSignature Language="C#" Value="protected virtual void OnChildDesiredSizeChangedCore (System.Windows.UIElement child);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnChildDesiredSizeChangedCore(class System.Windows.UIElement child) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.OnChildDesiredSizeChangedCore(System.Windows.UIElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="child" Type="System.Windows.UIElement" />
+      </Parameters>
+      <Docs>
+        <param name="child">子<see cref="T:System.Windows.UIElement" />要素が<see cref="P:System.Windows.UIElement.DesiredSize" />が変更されました。</param>
+        <summary>子要素から派生するときに呼び出されます<see cref="T:System.Windows.UIElement" />変更その<see cref="P:System.Windows.UIElement.DesiredSize" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreateAutomationPeer">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.OnCreateAutomationPeer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationPeer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成して返します、<see cref="T:System.Windows.Automation.Peers.AutomationPeer" />オブジェクトの<see cref="T:System.Windows.Controls.TextBlock" />します。</summary>
+        <returns><see cref="T:System.Windows.Automation.Peers.AutomationPeer" />オブジェクトの<see cref="T:System.Windows.Controls.TextBlock" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Windows.ContentElement.OnCreateAutomationPeer%2A?displayProperty=nameWithType>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPropertyChanged">
+      <MemberSignature Language="C#" Value="protected override sealed void OnPropertyChanged (System.Windows.DependencyPropertyChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnPropertyChanged(valuetype System.Windows.DependencyPropertyChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.OnPropertyChanged(System.Windows.DependencyPropertyChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.DependencyPropertyChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">関連付けられているイベントの引数。</param>
+        <summary>1 つ以上のホストされた依存関係プロパティの値が変更されたときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Windows.FrameworkElement.OnPropertyChanged%2A?displayProperty=nameWithType>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRender">
+      <MemberSignature Language="C#" Value="protected override sealed void OnRender (System.Windows.Media.DrawingContext ctx);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnRender(class System.Windows.Media.DrawingContext ctx) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.OnRender(System.Windows.Media.DrawingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ctx" Type="System.Windows.Media.DrawingContext" />
+      </Parameters>
+      <Docs>
+        <param name="ctx"><see cref="T:System.Windows.Media.DrawingContext" />でコントロールの表示にします。</param>
+        <summary>内容を表示、<see cref="T:System.Windows.Controls.TextBlock" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、システムによって呼び出される、レイアウトの内容を表示するために、<xref:System.Windows.Controls.TextBlock>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="ctx" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Padding">
+      <MemberSignature Language="C#" Value="public System.Windows.Thickness Padding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Thickness Padding" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBlock.Padding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Thickness</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定をコンテンツ領域の境界とによって表示される内容の間にスペースを埋め込むの幅を示す値、<see cref="T:System.Windows.Controls.TextBlock" />です。</summary>
+        <value>A<see cref="T:System.Windows.Thickness" />デバイス非依存ピクセルで、適用するパディングの量を指定する構造体。 既定値は、<see cref="F:System.Double.NaN" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.TextBlock.Padding%2A>すべての方向に一様として記述できます (`Padding="10"`)、4 つの値を表す左、として top、right、上下のパディングを個別にまたは (`Padding="5,0,10,20"`)。  
+  
+ 指定されたパディングの厚みが対応するコンテンツ領域のサイズを超える場合 (たとえば、左と右余白の幅の合計がコンテンツ領域の幅を超える場合)、パディングの厚みが比率に応じて関連コンテンツ領域のサイズ以下である縮小します。  
+  
+<a name="xamlAttributeUsage_Padding"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object Padding="uniformThickness"/>  
+- or -  
+<object Padding="independentThickness"/>  
+- or -  
+<object Padding="qualifiedUniformThickness"/>  
+- or -  
+<object Padding="qualifiedIndependentThickness"/>  
+```  
+  
+<a name="xamlValues_Padding"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *uniformThickness*  
+ 1 つの文字列表現<xref:System.Double>4 つすべての厚みを一様に適用する値。  たとえば、値の`"10"`はの値に相当`"10,10,10,10"`です。  修飾されていない値は、デバイス非依存ピクセル単位で計測されます。 明示的に、文字列では、小数点を含める必要がありますされません。  
+  
+ *independentThickness*  
+ 順序付けに 4 つの文字列表現<xref:System.Double>左、上の太さの独立したディメンションに対応する値が右、および下には、この順序で。  4 つの値をコンマで区切る必要があります。スペースは使用できません。  たとえば、「5,10,15,20」結果パディングの 5 ピクセル コンテンツ、コンテンツの上の余白の 10 のピクセル、右の余白の 15 ピクセルおよびコンテンツの下の余白の 20 ピクセルの左側にします。  
+  
+ *qualifiedUniformThickness*  
+ 記述された値*uniformThickness*後に、次の単位指定子の 1 つ: `px`、`in`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ たとえば、`"1in"`すべての方向に 1 インチの統一されたパディングを提供します。  
+  
+ *qualifiedIndependentThickness*  
+ 記述された値*independentThickness*、後に、次の単位指定子の 1 つの独立した各値を持つ: `px`、`in`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ たとえば、`"1.5in,0.8in,1.5in,0.8in"` のようにします。  単位指定子は、混合または 1 つまたは複数の値からを省略すると場合があります。  
+  
+<a name="dependencyPropertyInfo_Padding"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.TextBlock.PaddingProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.TextBlock.Padding%2A>の属性、<xref:System.Windows.Controls.TextBlock>要素。  
+  
+ [!code-xaml[FlowDocumentSnippets#_TextBlockPropsXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_textblockpropsxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.TextBlock.Padding%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_TextBlockProps](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_textblockprops)]
+ [!code-vb[FlowDocumentSnippets#_TextBlockProps](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_textblockprops)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PaddingProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PaddingProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PaddingProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.TextBlock.PaddingProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.TextBlock.Padding" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetBaselineOffset">
+      <MemberSignature Language="C#" Value="public static void SetBaselineOffset (System.Windows.DependencyObject element, double value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetBaselineOffset(class System.Windows.DependencyObject element, float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.SetBaselineOffset(System.Windows.DependencyObject,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="element">依存関係オブジェクトの値を設定する、<see cref="P:System.Windows.Controls.TextBlock.BaselineOffset" />プロパティです。</param>
+        <param name="value">プロパティを設定する新しい値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.TextBlock.BaselineOffset" />添付プロパティを指定した依存関係オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFontFamily">
+      <MemberSignature Language="C#" Value="public static void SetFontFamily (System.Windows.DependencyObject element, System.Windows.Media.FontFamily value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetFontFamily(class System.Windows.DependencyObject element, class System.Windows.Media.FontFamily value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.SetFontFamily(System.Windows.DependencyObject,System.Windows.Media.FontFamily)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Windows.Media.FontFamily" />
+      </Parameters>
+      <Docs>
+        <param name="element">依存関係オブジェクトの値を設定する、<see cref="P:System.Windows.Controls.TextBlock.FontFamily" />プロパティです。</param>
+        <param name="value">プロパティを設定する新しい値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.TextBlock.FontFamily" />添付プロパティを指定した依存関係オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFontSize">
+      <MemberSignature Language="C#" Value="public static void SetFontSize (System.Windows.DependencyObject element, double value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetFontSize(class System.Windows.DependencyObject element, float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.SetFontSize(System.Windows.DependencyObject,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="element">依存関係オブジェクトの値を設定する、<see cref="P:System.Windows.Controls.TextBlock.FontSize" />プロパティです。</param>
+        <param name="value">プロパティを設定する新しい値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.TextBlock.FontSize" />添付プロパティを指定した依存関係オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFontStretch">
+      <MemberSignature Language="C#" Value="public static void SetFontStretch (System.Windows.DependencyObject element, System.Windows.FontStretch value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetFontStretch(class System.Windows.DependencyObject element, valuetype System.Windows.FontStretch value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.SetFontStretch(System.Windows.DependencyObject,System.Windows.FontStretch)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Windows.FontStretch" />
+      </Parameters>
+      <Docs>
+        <param name="element">依存関係オブジェクトの値を設定する、<see cref="P:System.Windows.Controls.TextBlock.FontStretch" />プロパティです。</param>
+        <param name="value">プロパティを設定する新しい値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.TextBlock.FontStretch" />添付プロパティを指定した依存関係オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFontStyle">
+      <MemberSignature Language="C#" Value="public static void SetFontStyle (System.Windows.DependencyObject element, System.Windows.FontStyle value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetFontStyle(class System.Windows.DependencyObject element, valuetype System.Windows.FontStyle value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.SetFontStyle(System.Windows.DependencyObject,System.Windows.FontStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Windows.FontStyle" />
+      </Parameters>
+      <Docs>
+        <param name="element">依存関係オブジェクトの値を設定する、<see cref="P:System.Windows.Controls.TextBlock.FontStyle" />プロパティです。</param>
+        <param name="value">プロパティを設定する新しい値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.TextBlock.FontStyle" />添付プロパティを指定した依存関係オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFontWeight">
+      <MemberSignature Language="C#" Value="public static void SetFontWeight (System.Windows.DependencyObject element, System.Windows.FontWeight value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetFontWeight(class System.Windows.DependencyObject element, valuetype System.Windows.FontWeight value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.SetFontWeight(System.Windows.DependencyObject,System.Windows.FontWeight)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Windows.FontWeight" />
+      </Parameters>
+      <Docs>
+        <param name="element">依存関係オブジェクトの値を設定する、<see cref="P:System.Windows.Controls.TextBlock.FontWeight" />プロパティです。</param>
+        <param name="value">プロパティを設定する新しい値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.TextBlock.FontWeight" />添付プロパティを指定した依存関係オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetForeground">
+      <MemberSignature Language="C#" Value="public static void SetForeground (System.Windows.DependencyObject element, System.Windows.Media.Brush value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetForeground(class System.Windows.DependencyObject element, class System.Windows.Media.Brush value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.SetForeground(System.Windows.DependencyObject,System.Windows.Media.Brush)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Windows.Media.Brush" />
+      </Parameters>
+      <Docs>
+        <param name="element">依存関係オブジェクトの値を設定する、<see cref="P:System.Windows.Controls.TextBlock.Foreground" />プロパティです。</param>
+        <param name="value">プロパティを設定する新しい値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.TextBlock.Foreground" />添付プロパティを指定した依存関係オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetLineHeight">
+      <MemberSignature Language="C#" Value="public static void SetLineHeight (System.Windows.DependencyObject element, double value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetLineHeight(class System.Windows.DependencyObject element, float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.SetLineHeight(System.Windows.DependencyObject,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="element">依存関係オブジェクトの値を設定する、<see cref="P:System.Windows.Controls.TextBlock.LineHeight" />プロパティです。</param>
+        <param name="value">プロパティを設定する新しい値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.TextBlock.LineHeight" />添付プロパティを指定した依存関係オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <see cref="P:System.Windows.Controls.TextBlock.LineHeight" />負の値に設定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetLineStackingStrategy">
+      <MemberSignature Language="C#" Value="public static void SetLineStackingStrategy (System.Windows.DependencyObject element, System.Windows.LineStackingStrategy value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetLineStackingStrategy(class System.Windows.DependencyObject element, valuetype System.Windows.LineStackingStrategy value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.SetLineStackingStrategy(System.Windows.DependencyObject,System.Windows.LineStackingStrategy)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Windows.LineStackingStrategy" />
+      </Parameters>
+      <Docs>
+        <param name="element">依存関係オブジェクトの値を設定する、<see cref="P:System.Windows.Controls.TextBlock.LineStackingStrategy" />プロパティです。</param>
+        <param name="value">プロパティを設定する新しい値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.TextBlock.LineStackingStrategy" />添付プロパティを指定した依存関係オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetTextAlignment">
+      <MemberSignature Language="C#" Value="public static void SetTextAlignment (System.Windows.DependencyObject element, System.Windows.TextAlignment value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetTextAlignment(class System.Windows.DependencyObject element, valuetype System.Windows.TextAlignment value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.SetTextAlignment(System.Windows.DependencyObject,System.Windows.TextAlignment)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Windows.TextAlignment" />
+      </Parameters>
+      <Docs>
+        <param name="element">依存関係オブジェクトの値を設定する、<see cref="P:System.Windows.Controls.TextBlock.TextAlignment" />プロパティです。</param>
+        <param name="value">プロパティを設定する新しい値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.TextBlock.TextAlignment" />添付プロパティを指定した依存関係オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeBaselineOffset">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeBaselineOffset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeBaselineOffset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.ShouldSerializeBaselineOffset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を返すかどうかの有効値、<see cref="P:System.Windows.Controls.TextBlock.BaselineOffset" />のシリアル化中にプロパティをシリアル化する、<see cref="T:System.Windows.Controls.TextBlock" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="P:System.Windows.Controls.TextBlock.BaselineOffset" />プロパティは、それ以外のシリアル化する必要があります<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeInlines">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeInlines (System.Windows.Markup.XamlDesignerSerializationManager manager);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeInlines(class System.Windows.Markup.XamlDesignerSerializationManager manager) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.ShouldSerializeInlines(System.Windows.Markup.XamlDesignerSerializationManager)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="manager" Type="System.Windows.Markup.XamlDesignerSerializationManager" />
+      </Parameters>
+      <Docs>
+        <param name="manager">このオブジェクトのシリアル化サービス マネージャー オブジェクトです。</param>
+        <summary>示す値を返すかどうかの有効値、<see cref="P:System.Windows.Controls.TextBlock.Inlines" />のシリアル化中にプロパティをシリアル化する、<see cref="T:System.Windows.Controls.TextBlock" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="P:System.Windows.Controls.TextBlock.Inlines" />プロパティは、それ以外のシリアル化する必要があります<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="manager" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeText">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeText ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeText() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.ShouldSerializeText" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を返すかどうかの有効値、<see cref="P:System.Windows.Controls.TextBlock.Text" />のシリアル化中にプロパティをシリアル化する、<see cref="T:System.Windows.Controls.TextBlock" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="P:System.Windows.Controls.TextBlock.Text" />プロパティは、それ以外のシリアル化する必要があります<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IServiceProvider.GetService">
+      <MemberSignature Language="C#" Value="object IServiceProvider.GetService (Type serviceType);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.IServiceProvider.GetService(class System.Type serviceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.System#IServiceProvider#GetService(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="serviceType">取得対象となるサービスの型を指定するオブジェクト。</param>
+        <summary>このメソッドは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。</summary>
+        <returns>型のサービス オブジェクト<paramref name="serviceType" />、または<see langword="null" />型のサービス オブジェクトが存在しない場合<paramref name="serviceType" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.IContentHost.GetRectangles">
+      <MemberSignature Language="C#" Value="System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Rect&gt; IContentHost.GetRectangles (System.Windows.ContentElement child);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;valuetype System.Windows.Rect&gt; System.Windows.IContentHost.GetRectangles(class System.Windows.ContentElement child) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.System#Windows#IContentHost#GetRectangles(System.Windows.ContentElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Rect&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="child" Type="System.Windows.ContentElement" />
+      </Parameters>
+      <Docs>
+        <param name="child">A<see cref="T:System.Windows.ContentElement" />を生成し、外接する四角形のコレクションを返します。</param>
+        <summary>このメソッドは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。  代わりに、タイプ セーフ <see cref="M:System.Windows.Controls.TextBlock.GetRectanglesCore(System.Windows.ContentElement)" /> メソッドを使用します。</summary>
+        <returns>外接する、指定された四角形の読み取り専用コレクション<see cref="T:System.Windows.ContentElement" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.IContentHost.HostedElements">
+      <MemberSignature Language="C#" Value="System.Collections.Generic.IEnumerator&lt;System.Windows.IInputElement&gt; System.Windows.IContentHost.HostedElements { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerator`1&lt;class System.Windows.IInputElement&gt; System.Windows.IContentHost.HostedElements" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBlock.System#Windows#IContentHost#HostedElements" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;System.Windows.IInputElement&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この型またはメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートします。コードから直接使用するためのものではありません。  タイプ セーフを使用して<see cref="P:System.Windows.Controls.TextBlock.HostedElementsCore" />プロパティ代わりにします。</summary>
+        <value>コンテンツ ホストによってホストされている要素です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.IContentHost.InputHitTest">
+      <MemberSignature Language="C#" Value="System.Windows.IInputElement IContentHost.InputHitTest (System.Windows.Point point);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Windows.IInputElement System.Windows.IContentHost.InputHitTest(valuetype System.Windows.Point point) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.System#Windows#IContentHost#InputHitTest(System.Windows.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.IInputElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Windows.Point" />
+      </Parameters>
+      <Docs>
+        <param name="point">コンテンツ ホストに対する相対マウス座標です。</param>
+        <summary>このメソッドは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。  代わりに、タイプ セーフ <see cref="M:System.Windows.Controls.TextBlock.InputHitTestCore(System.Windows.Point)" /> メソッドを使用します。</summary>
+        <returns>ヒットした要素です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.IContentHost.OnChildDesiredSizeChanged">
+      <MemberSignature Language="C#" Value="void IContentHost.OnChildDesiredSizeChanged (System.Windows.UIElement child);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.IContentHost.OnChildDesiredSizeChanged(class System.Windows.UIElement child) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.System#Windows#IContentHost#OnChildDesiredSizeChanged(System.Windows.UIElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="child" Type="System.Windows.UIElement" />
+      </Parameters>
+      <Docs>
+        <param name="child">子<see cref="T:System.Windows.UIElement" />要素が<see cref="P:System.Windows.UIElement.DesiredSize" />が変更されました。</param>
+        <summary>このメソッドは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。  代わりに、タイプ セーフ <see cref="M:System.Windows.Controls.TextBlock.OnChildDesiredSizeChangedCore(System.Windows.UIElement)" /> メソッドを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddChild">
+      <MemberSignature Language="C#" Value="void IAddChild.AddChild (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddChild(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.System#Windows#Markup#IAddChild#AddChild(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">子として追加するオブジェクト。</param>
+        <summary>このメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddText">
+      <MemberSignature Language="C#" Value="void IAddChild.AddText (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddText(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBlock.System#Windows#Markup#IAddChild#AddText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">オブジェクトに追加する文字列。</param>
+        <summary>このメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBlock.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.Text)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のテキストの内容、<see cref="T:System.Windows.Controls.TextBlock" />です。</summary>
+        <value>このテキストの内容<see cref="T:System.Windows.Controls.TextBlock" />です。 テキスト以外のすべてのコンテンツは削除されて、out のプレーン テキスト形式で結果として得られるに注意してください、<see cref="T:System.Windows.Controls.TextBlock" />内容。 既定値は、<see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プレーン テキストで表示するときに、このプロパティを使用して、<xref:System.Windows.Controls.TextBlock>です。  テキストの書式設定する必要がある場合は、追加<xref:System.Windows.Documents.Inline>オブジェクトを<xref:System.Windows.Controls.TextBlock.Inlines%2A>プロパティです。  
+  
+<a name="dependencyPropertyInfo_Text"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.TextBlock.TextProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>, <xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.TextBlock.Text%2A>の属性、<xref:System.Windows.Controls.TextBlock>要素。  
+  
+ [!code-xaml[SpanSnippets#_TextBlock_Text1XAML](~/samples/snippets/csharp/VS_Snippets_Wpf/SpanSnippets/CSharp/Window1.xaml#_textblock_text1xaml)]  
+  
+ 代わりに、実行テキストの内容がだけに含まれる<xref:System.Windows.Controls.TextBlock>要素タグ。  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.TextBlock.Text%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[SpanSnippets#_TextBlock_Text](~/samples/snippets/csharp/VS_Snippets_Wpf/SpanSnippets/CSharp/Window1.xaml.cs#_textblock_text)]
+ [!code-vb[SpanSnippets#_TextBlock_Text](~/samples/snippets/visualbasic/VS_Snippets_Wpf/SpanSnippets/visualbasic/window1.xaml.vb#_textblock_text)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextAlignment">
+      <MemberSignature Language="C#" Value="public System.Windows.TextAlignment TextAlignment { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.TextAlignment TextAlignment" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBlock.TextAlignment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.TextAlignment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト コンテンツの水平方向の配置を示す値を取得または設定します。</summary>
+        <value>1 つ、<see cref="T:System.Windows.TextAlignment" />目的の配置を指定する値。 既定値は、<see cref="F:System.Windows.TextAlignment.Left" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この依存関係プロパティには、添付プロパティの使用方法もあります。 [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]、使い方が`<`*オブジェクト* <xref:System.Windows.Controls.TextBlock.TextAlignment%2A?displayProperty=nameWithType> `="`*値*`".../>`ここで、*オブジェクト*内に含まれる、オブジェクト要素 (通常はフロー要素) は、 <xref:System.Windows.Controls.TextBlock>、および*値*の文字列値です、<xref:System.Windows.TextAlignment>列挙します。 コードでは、添付プロパティの使用がサポートされている<xref:System.Windows.Controls.TextBlock.GetTextAlignment%2A>と<xref:System.Windows.Controls.TextBlock.SetTextAlignment%2A>です。 添付プロパティの使用が一般的ではありません。  
+  
+<a name="dependencyPropertyInfo_TextAlignment"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.TextBlock.TextAlignmentProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.TextBlock.TextAlignment%2A>の属性、<xref:System.Windows.Controls.TextBlock>要素。  
+  
+ [!code-xaml[FlowDocumentSnippets#_TextBlockPropsXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_textblockpropsxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.TextBlock.TextAlignment%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_TextBlockProps](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_textblockprops)]
+ [!code-vb[FlowDocumentSnippets#_TextBlockProps](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_textblockprops)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextAlignmentProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TextAlignmentProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TextAlignmentProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.TextBlock.TextAlignmentProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.TextBlock.TextAlignment" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextDecorations">
+      <MemberSignature Language="C#" Value="public System.Windows.TextDecorationCollection TextDecorations { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.TextDecorationCollection TextDecorations" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBlock.TextDecorations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.TextDecorationCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.TextDecorationCollection" />のテキストに適用する効果を格納している、<see cref="T:System.Windows.Controls.TextBlock" />です。</summary>
+        <value>A<see cref="T:System.Windows.TextDecorationCollection" />をこの要素に適用するテキスト装飾を含むコレクション。 既定値は<see langword="null" />(テキスト装飾は適用されません)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.TextDecoration>オブジェクトがテキストに追加できるビジュアルの装飾します。 文字の装飾の 4 つの種類があります: 下線、基準、取り消し線、および上線。  テキスト装飾の詳細については、次を参照してください。[する方法: テキスト装飾を作成する](~/docs/framework/wpf/advanced/how-to-create-a-text-decoration.md)です。  
+  
+ 既定では、このプロパティに設定`null`持たない<xref:System.Windows.TextDecorationCollection>関連付けられています。  文字列の効果を追加する前に、新しい作成<xref:System.Windows.TextDecorationCollection>し、このプロパティに割り当てます。  
+  
+<a name="dependencyPropertyInfo_TextDecorations"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.TextBlock.TextDecorationsProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.TextBlock.TextDecorations%2A>属性。  
+  
+ [!code-xaml[InlineSnippets#_TextBlock_TextDecXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/InlineSnippets/CSharp/Window1.xaml#_textblock_textdecxaml)]  
+  
+ この例の表示結果を次の図に示します。  
+  
+ ![スクリーン ショット: 既定の取り消し線が適用されたテキスト](~/add/media/inline-textdec-strike.png "スクリーン ショット: 既定取り消し線が適用されたテキスト")  
+  
+ 次の図が、どのように<xref:System.Windows.TextDecorations.OverLine%2A>、 <xref:System.Windows.TextDecorations.Baseline%2A>、および<xref:System.Windows.TextDecorations.Underline%2A>、それぞれします。  
+  
+ ![スクリーン ショット: TextDecorator を上線](~/add/media/inline-textdec-over.png "スクリーン ショット: TextDecorator の上線")  
+  
+ ![スクリーン ショット: 既定のテキストのベースライン効果](~/add/media/inline-textdec-base.png "スクリーン ショット: 既定のテキストのベースライン効果")  
+  
+ ![スクリーン ショット: 既定の下線が適用されたテキスト](~/add/media/inline-textdec-under.png "スクリーン ショット: 既定の下線が適用されたテキスト")  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.TextBlock.TextDecorations%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[InlineSnippets#_TextBlock_TextDec](~/samples/snippets/csharp/VS_Snippets_Wpf/InlineSnippets/CSharp/Window1.xaml.cs#_textblock_textdec)]
+ [!code-vb[InlineSnippets#_TextBlock_TextDec](~/samples/snippets/visualbasic/VS_Snippets_Wpf/InlineSnippets/visualbasic/window1.xaml.vb#_textblock_textdec)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextDecorationsProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TextDecorationsProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TextDecorationsProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.TextBlock.TextDecorationsProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.TextBlock.TextDecorations" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextEffects">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.TextEffectCollection TextEffects { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.TextEffectCollection TextEffects" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBlock.TextEffects" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.TextEffectCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこの要素内のテキスト コンテンツに適用する効果を設定します。</summary>
+        <value>A <see cref="T:System.Windows.Media.TextEffectCollection" /> 1 つ以上含む<see cref="T:System.Windows.Media.TextEffect" />のテキストに適用する効果を定義するオブジェクト、<see cref="T:System.Windows.Controls.TextBlock" />です。 既定値は<see langword="null" />(効果は適用されません)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、このプロパティに設定`null`持たない<xref:System.Windows.Media.TextEffectCollection>関連付けられています。  文字列の効果を追加する前に、新しい作成<xref:System.Windows.Media.TextEffectCollection>し、このプロパティに割り当てます。  
+  
+<a name="dependencyPropertyInfo_TextEffects"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.TextBlock.TextEffectsProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、単純なテキスト効果を作成しのテキストに適用する方法を示しています、<xref:System.Windows.Controls.TextBlock>です。  
+  
+ [!code-csharp[TextElementSnippets#_TextBlock_TextEffects](~/samples/snippets/csharp/VS_Snippets_Wpf/TextElementSnippets/CSharp/Window1.xaml.cs#_textblock_texteffects)]
+ [!code-vb[TextElementSnippets#_TextBlock_TextEffects](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextElementSnippets/visualbasic/window1.xaml.vb#_textblock_texteffects)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextEffectsProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TextEffectsProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TextEffectsProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.TextBlock.TextEffectsProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.TextBlock.TextEffects" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TextProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TextProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.TextBlock.TextProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.TextBlock.Text" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextTrimming">
+      <MemberSignature Language="C#" Value="public System.Windows.TextTrimming TextTrimming { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.TextTrimming TextTrimming" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBlock.TextTrimming" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.TextTrimming</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテンツ領域いっぱいになったときに使用するテキストのトリミング動作を取得または設定します。</summary>
+        <value>1 つ、<see cref="T:System.Windows.TextTrimming" />使用するテキストのトリミング動作を指定する値。 既定値は、<see cref="F:System.Windows.TextTrimming.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_TextTrimming"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.TextBlock.TextTrimmingProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>, <xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextTrimmingProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TextTrimmingProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TextTrimmingProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.TextBlock.TextTrimmingProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.TextBlock.TextTrimming" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextWrapping">
+      <MemberSignature Language="C#" Value="public System.Windows.TextWrapping TextWrapping { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.TextWrapping TextWrapping" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBlock.TextWrapping" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.TextWrapping</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定する方法、<see cref="T:System.Windows.Controls.TextBlock" />テキストをラップする必要があります。</summary>
+        <value><see cref="T:System.Windows.TextWrapping" /> 値のいずれか。 既定値は、<see cref="F:System.Windows.TextWrapping.NoWrap" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_TextWrapping"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.TextBlock.TextWrappingProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>, <xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.TextBlock.TextWrapping%2A>の属性、<xref:System.Windows.Controls.TextBlock>要素。  
+  
+ [!code-xaml[FlowDocumentSnippets#_TextBlockPropsXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_textblockpropsxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.TextBlock.TextWrapping%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_TextBlockProps](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_textblockprops)]
+ [!code-vb[FlowDocumentSnippets#_TextBlockProps](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_textblockprops)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextWrappingProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TextWrappingProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TextWrappingProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.TextBlock.TextWrappingProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.TextBlock.TextWrapping" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Typography">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.Typography Typography { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.Typography Typography" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBlock.Typography" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.Typography</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素の内容を現在有効な文字体裁のバリエーションを取得します。</summary>
+        <value>A<see cref="T:System.Windows.Documents.Typography" />現在有効な文字体裁のバリエーションを指定するオブジェクト。 既定の文字体裁の値の一覧は、次を参照してください。<see cref="T:System.Windows.Documents.Typography" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.TextBlock.Typography%2A>プロパティにのみ適用されます[!INCLUDE[TLA#tla_opentype](~/includes/tlasharptla-opentype-md.md)]フォントです。 文字体裁のバリエーションには影響しません、バリアント型をサポートしないフォントです。  このトピックの詳細については、次を参照してください。 [WPF のタイポグラフィ](~/docs/framework/wpf/advanced/typography-in-wpf.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.TextBlock.Typography%2A>の属性、<xref:System.Windows.Controls.TextBlock>要素。  
+  
+ [!code-xaml[FlowDocumentSnippets#_TextBlockPropsXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_textblockpropsxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.TextBlock.Typography%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FlowDocumentSnippets#_TextBlockProps](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_textblockprops)]
+ [!code-vb[FlowDocumentSnippets#_TextBlockProps](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_textblockprops)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VisualChildrenCount">
+      <MemberSignature Language="C#" Value="protected override int VisualChildrenCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 VisualChildrenCount" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBlock.VisualChildrenCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数を取得<see cref="T:System.Windows.Media.Visual" />によってホストされている子、<see cref="T:System.Windows.Controls.TextBlock" />です。</summary>
+        <value>によってホストされている visual の子の数、<see cref="T:System.Windows.Controls.TextBlock" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

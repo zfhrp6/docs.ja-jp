@@ -1,0 +1,70 @@
+<Type Name="IMessage" FullName="System.Runtime.Remoting.Messaging.IMessage">
+  <TypeSignature Language="C#" Value="public interface IMessage" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IMessage" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Messaging.IMessage" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>相互に協調するメッセージの間で送信されるデータ シンクの通信が含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージのシンクを使用する<xref:System.Runtime.Remoting.Messaging.IMessage>クライアントのシンク チェーンまたは server シンク チェーン内に配置できます。 メッセージ オブジェクトは、チェーン全体メッセージ シンクからメッセージ シンクに渡され、一連のアクション識別子、envoy 情報、およびパラメーターなどの名前付きのプロパティを実行します。  
+  
+ 実装するオブジェクト、<xref:System.Runtime.Remoting.Messaging.IMessage>インターフェイスが、メッセージ オブジェクトと見なされる最小要件を満たします。 次のシンクで渡されるメッセージ シンクによって受信された正確なオブジェクトがありませんが、これは、該当します。  
+  
+ プロパティ バッグ内のオブジェクトは、シリアル化する必要はありません、メッセージ シンクの実装側では、アプリケーション ドメイン外のフローのプロパティをシリアル化可能にする必要がありますので、この点を考慮する必要があります。  
+  
+   
+  
+## Examples  
+ [!code-cpp[ChannelServices_SyncDispatchMessage#1](~/samples/snippets/cpp/VS_Snippets_Remoting/ChannelServices_SyncDispatchMessage/CPP/channelservices_syncdispatchmessage_client.cpp#1)]
+ [!code-csharp[ChannelServices_SyncDispatchMessage#1](~/samples/snippets/csharp/VS_Snippets_Remoting/ChannelServices_SyncDispatchMessage/CS/channelservices_syncdispatchmessage_client.cs#1)]
+ [!code-vb[ChannelServices_SyncDispatchMessage#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ChannelServices_SyncDispatchMessage/VB/channelservices_syncdispatchmessage_client.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="public System.Collections.IDictionary Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IDictionary Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Messaging.IMessage.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Collections.IDictionary" />を表すメッセージのプロパティのコレクション。</summary>
+        <value>メッセージのプロパティのコレクションを表すディクショナリ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[IMessageSink_Client#2](~/samples/snippets/cpp/VS_Snippets_Remoting/IMessageSink_Client/CPP/imessagesink_client.cpp#2)]
+ [!code-csharp[IMessageSink_Client#2](~/samples/snippets/csharp/VS_Snippets_Remoting/IMessageSink_Client/CS/imessagesink_client.cs#2)]
+ [!code-vb[IMessageSink_Client#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/IMessageSink_Client/VB/imessagesink_client.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元は、インターフェイスへの参照を使用して呼び出しを行うし、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

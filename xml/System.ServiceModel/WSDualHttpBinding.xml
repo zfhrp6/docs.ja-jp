@@ -1,0 +1,833 @@
+<Type Name="WSDualHttpBinding" FullName="System.ServiceModel.WSDualHttpBinding">
+  <TypeSignature Language="C#" Value="public class WSDualHttpBinding : System.ServiceModel.Channels.Binding, System.ServiceModel.Channels.IBindingRuntimePreferences" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WSDualHttpBinding extends System.ServiceModel.Channels.Binding implements class System.ServiceModel.Channels.IBindingRuntimePreferences" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.WSDualHttpBinding" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Channels.Binding</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Channels.IBindingRuntimePreferences</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>サービスとクライアントの両方がメッセージを送受信できる双方向サービス コントラクトで使用するように設計された、安全で相互運用可能なバインドです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.WSDualHttpBinding> は、<xref:System.ServiceModel.WSHttpBinding> と同じ Web サービス プロトコルをサポートしますが、双方向コントラクトでの使用を想定しています。 <xref:System.ServiceModel.WSDualHttpBinding> は SOAP セキュリティのみをサポートし、信頼できるメッセージングを要求します。 このバインディングでは、クライアントが、サービスのコールバック エンドポイントを提供するパブリック URI を保持していることが必要です。 これは、<xref:System.ServiceModel.Channels.CompositeDuplexBindingElement.ClientBaseAddress%2A> によって提供されます。 二重バインディングでは、クライアントの IP アドレスをサービスに公開します。 クライアントは、セキュリティを使用して信頼するサービスに対して接続のみを可能にする必要があります。  
+  
+ 既定では、<xref:System.ServiceModel.WSDualHttpBinding> は、次のバインド要素スタックを生成します。  
+  
+-   <xref:System.ServiceModel.Channels.TransactionFlowBindingElement>  
+  
+-   <xref:System.ServiceModel.Channels.ReliableSessionBindingElement>  
+  
+-   <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>  
+  
+-   <xref:System.ServiceModel.Channels.CompositeDuplexBindingElement>  
+  
+-   <xref:System.ServiceModel.Channels.OneWayBindingElement>  
+  
+-   <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>  
+  
+-   <xref:System.ServiceModel.Channels.HttpTransportBindingElement>  
+  
+   
+  
+## Examples  
+ 構成ファイルで `wsDualHttpBinding` バインディングを指定する方法を次の例に示します。  
+  
+ [!code-csharp[S_dualhttp#134](~/samples/snippets/csharp/VS_Snippets_CFX/s_dualhttp/cs/program.cs#134)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WSDualHttpBinding ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WSDualHttpBinding.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.WSDualHttpBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ wsDualHttpBinding の既定のコンストラクターを使用する例を次に示します。  
+  
+ [!code-csharp[S_dualhttp#1](~/samples/snippets/csharp/VS_Snippets_CFX/s_dualhttp/cs/program.cs#1)]
+ [!code-vb[S_dualhttp#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_dualhttp/vb/module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WSDualHttpBinding (System.ServiceModel.WSDualHttpSecurityMode securityMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.ServiceModel.WSDualHttpSecurityMode securityMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WSDualHttpBinding.#ctor(System.ServiceModel.WSDualHttpSecurityMode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="securityMode" Type="System.ServiceModel.WSDualHttpSecurityMode" />
+      </Parameters>
+      <Docs>
+        <param name="securityMode">SOAP メッセージと共に、およびクライアントに対して使用されるセキュリティの種類を指定する <see cref="T:System.ServiceModel.WSDualHttpSecurityMode" /> の値。</param>
+        <summary>バインドで使用されるセキュリティの種類を指定して、<see cref="T:System.ServiceModel.WSDualHttpBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.WSDualHttpBinding> では信頼できるメッセージングが必要であるため、<xref:System.ServiceModel.WSHttpBinding.%23ctor%28System.ServiceModel.SecurityMode%29> の <xref:System.ServiceModel.WSHttpBinding> コンストラクターのような、これをオフにするスイッチを提供するコンストラクターはありません。  
+  
+   
+  
+## Examples  
+ 指定したセキュリティ モードで `wsDualHttpBinding` コンストラクターを使用する方法を次の例に示します。  
+  
+ [!code-csharp[S_dualhttp#3](~/samples/snippets/csharp/VS_Snippets_CFX/s_dualhttp/cs/program.cs#3)]
+ [!code-vb[S_dualhttp#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_dualhttp/vb/module1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WSDualHttpBinding (string configName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string configName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WSDualHttpBinding.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="configName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="configName"><see cref="T:System.ServiceModel.Configuration.WSHttpBindingElement" /> のバインディング構成の名前。</param>
+        <summary>構成名で指定されたバインディングを使用して、<see cref="T:System.ServiceModel.WSDualHttpBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">名前 <paramref name="configurationName" /> を持つバインディング要素が見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BypassProxyOnLocal">
+      <MemberSignature Language="C#" Value="public bool BypassProxyOnLocal { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool BypassProxyOnLocal" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSDualHttpBinding.BypassProxyOnLocal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ローカル アドレスでプロキシ サーバーをバイパスするかどうかを示す値を取得または設定します。</summary>
+        <value>
+          ローカル アドレスのプロキシ サーバーをバイパスする場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インターネット リソースは、ローカル アドレスを持つ場合ローカルです。 ローカル アドレスは、同じコンピューター、ローカル LAN、またはイントラネット上にあり、"http://webserver/" や "http://localhost/" などのピリオド (.) を含まない URI により構文的に識別されるアドレスです。  
+  
+ <xref:System.ServiceModel.WSDualHttpBinding.BypassProxyOnLocal%2A> プロパティを設定して、<xref:System.ServiceModel.WSDualHttpBinding> で構成されたエンドポイントがローカル リソースへのアクセス時にプロキシ サーバーを使用するかどうかを決定します。  
+  
+ <xref:System.ServiceModel.WSDualHttpBinding.BypassProxyOnLocal%2A> が `true` の場合、ローカル インターネット リソースへの要求はプロキシ サーバーを使用しません。 このプロパティを `localhost` に設定した場合で、同じコンピューター上のサービスと対話するクライアントがプロキシを経由するときは、(`true` ではなく) ホスト名を使用します。  
+  
+ <xref:System.ServiceModel.WSDualHttpBinding.BypassProxyOnLocal%2A> が `false` の場合、すべてのインターネット要求はプロキシ サーバー経由で行われます。  
+  
+   
+  
+## Examples  
+ 構成ファイルで wsDualHttpBinding バインディングを指定する方法を次の例に示します。  
+  
+  
+  
+ 次の例では、ローカル リソースでプロキシをバイパスするようにこのプロパティを設定しています。  
+  
+ [!code-csharp[S_dualhttp#6](~/samples/snippets/csharp/VS_Snippets_CFX/s_dualhttp/cs/program.cs#6)]
+ [!code-vb[S_dualhttp#6](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_dualhttp/vb/module1.vb#6)]  
+  
+ このプロパティの値は、構成ファイルでも設定できます。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientBaseAddress">
+      <MemberSignature Language="C#" Value="public Uri ClientBaseAddress { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri ClientBaseAddress" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSDualHttpBinding.ClientBaseAddress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントのベース アドレスを取得または設定します。</summary>
+        <value>クライアントのベース アドレスである <see cref="T:System.Uri" />。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクライアントのパブリック URI は、コントラクトが双方向の場合に、サービスがクライアントに接触するために必要なコールバック エンドポイントを提供します。  
+  
+   
+  
+## Examples  
+ 構成ファイルで wsDualHttpBinding バインディングを指定する方法を次の例に示します。  
+  
+ [!code-csharp[S_dualhttp#8](~/samples/snippets/csharp/VS_Snippets_CFX/s_dualhttp/cs/program.cs#8)]
+ [!code-vb[S_dualhttp#8](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_dualhttp/vb/module1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateBindingElements">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Channels.BindingElementCollection CreateBindingElements ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Channels.BindingElementCollection CreateBindingElements() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WSDualHttpBinding.CreateBindingElements" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.BindingElementCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のバインディングに含まれるバインディング要素の順序付けられたコレクションを返します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.BindingElementCollection" /> を含む <see cref="T:System.ServiceModel.Channels.TransactionFlowBindingElement" />。<see cref="T:System.ServiceModel.WSDualHttpBinding" /> では信頼できるセッションが必要であるため、<see cref="T:System.ServiceModel.Channels.ReliableSessionBindingElement" /> も含まれます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 現在のバインドに含まれる、順序付けられたバインド要素のコレクションを取得する方法を、次の例に示します。  
+  
+ [!code-csharp[S_dualhttp#20](~/samples/snippets/csharp/VS_Snippets_CFX/s_dualhttp/cs/program.cs#20)]
+ [!code-vb[S_dualhttp#20](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_dualhttp/vb/module1.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnvelopeVersion">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.EnvelopeVersion EnvelopeVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.EnvelopeVersion EnvelopeVersion" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSDualHttpBinding.EnvelopeVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.EnvelopeVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインドによって処理されるメッセージに使用される SOAP のバージョンを取得します。</summary>
+        <value>このバインディングと共に使用される <see cref="T:System.ServiceModel.EnvelopeVersion" /> の値。 値は常に SOAP 1.2 でなければなりません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ このバインドで処理されるメッセージで使用される SOAP のバージョンを取得する方法を、次の例に示します。  
+  
+ [!code-csharp[S_dualhttp#21](~/samples/snippets/csharp/VS_Snippets_CFX/s_dualhttp/cs/program.cs#21)]
+ [!code-vb[S_dualhttp#21](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_dualhttp/vb/module1.vb#21)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HostNameComparisonMode">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.HostNameComparisonMode HostNameComparisonMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.HostNameComparisonMode HostNameComparisonMode" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSDualHttpBinding.HostNameComparisonMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.HostNameComparisonMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>URI が一致した場合にサービスに到達するためにホスト名を使用するかどうかを示す値を取得または設定します。</summary>
+        <value>URI で一致する場合にサービスに到達するためにホスト名を使用するかどうかを示す <see cref="P:System.ServiceModel.Configuration.WSDualHttpBindingElement.HostNameComparisonMode" /> 値。 既定値は <see cref="F:System.ServiceModel.HostNameComparisonMode.StrongWildcard" /> で、一致しているホスト名を無視します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 構成ファイルで wsDualHttpBinding バインディングを指定する方法を次の例に示します。  
+  
+ [!code-csharp[S_dualhttp#9](~/samples/snippets/csharp/VS_Snippets_CFX/s_dualhttp/cs/program.cs#9)]
+ [!code-vb[S_dualhttp#9](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_dualhttp/vb/module1.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxBufferPoolSize">
+      <MemberSignature Language="C#" Value="public long MaxBufferPoolSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 MaxBufferPoolSize" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSDualHttpBinding.MaxBufferPoolSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(524288)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または (バイト単位) をこのバインディングで構成されたエンドポイントでメッセージを受信するメッセージ バッファーのマネージャーに割り当てることができる最大メモリ量を設定します。</summary>
+        <value>このバインディングで構成されるエンドポイントによって使用されるバッファーのプールの最大サイズ (バイト単位)。 既定値は 524, 288 バイトです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.BufferManager> は、バッファー プールを使用することで、バッファーの使用コストを最小化します。 バッファーは、チャネルから出てくるメッセージをサービスが処理するときに必要です。 メッセージの読み込み処理に十分なメモリがバッファー プールにない場合、<xref:System.ServiceModel.Channels.BufferManager> は、CLR ヒープから追加のメモリを割り当てる必要があります。これにより、ガベージ コレクションのオーバーヘッドが増加します。 CLR ガベージ ヒープから多大な割り当てが行われることは、バッファー プール サイズが小さすぎること、および <xref:System.ServiceModel.WSDualHttpBinding.MaxBufferPoolSize%2A> の制限を緩めて割り当てを増やすとパフォーマンスが向上する可能性があることを示します。  
+  
+ ここで設定されるバッファー サイズに対する制限は、メッセージ交換のパフォーマンスを最適化するためのものです。 メッセージがバッファーに設定された最大値を超える場合に、メッセージが失われることはありません。 この場合は、CLR ヒープからのメモリがより多く要求され、これによりバッファーの使用時よりも多くのガベージ コレクションのオーバーヘッドが生じます。  
+  
+   
+  
+## Examples  
+ `MaxBufferPoolSize` を設定する方法を次の例に示します。  
+  
+ [!code-csharp[S_dualhttp#10](~/samples/snippets/csharp/VS_Snippets_CFX/s_dualhttp/cs/program.cs#10)]
+ [!code-vb[S_dualhttp#10](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_dualhttp/vb/module1.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxReceivedMessageSize">
+      <MemberSignature Language="C#" Value="public long MaxReceivedMessageSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 MaxReceivedMessageSize" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSDualHttpBinding.MaxReceivedMessageSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(65536)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのバインディングで構成されるチャネルで受信可能なメッセージのバイト単位で最大のサイズを設定します。</summary>
+        <value>バインドで処理されるメッセージの最大サイズ (バイト単位)。 既定値は 65,536 バイトです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.WSDualHttpBinding> を使用するサービスがワイヤ上で受信できるメッセージのサイズは、各メッセージに割り当てられたメモリの大きさに制限されます。 このメッセージ サイズの制限は、DoS スタイルの攻撃への露出を制限するためのものです。  
+  
+ <xref:System.ServiceModel.WSDualHttpBinding.MaxBufferPoolSize%2A> および <xref:System.ServiceModel.WSDualHttpBinding.MaxReceivedMessageSize%2A> の設定は、ローカルの動作設定であることに注意してください。 これは、それらがメタデータの他のエンドポイントに転送されないことを意味します。 メタデータから、最大メッセージ サイズ 2 GB でサービスへのプロキシを生成する場合、プロキシは既定値の 64K のままです。 これによって、メッセージおよびメッセージ バッファー サイズの適切な制限を、引き続きローカル管理者が制御できます。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.WSDualHttpBinding.MaxReceivedMessageSize%2A> プロパティを取得する方法を次の例に示します。  
+  
+ [!code-csharp[S_dualhttp#22](~/samples/snippets/csharp/VS_Snippets_CFX/s_dualhttp/cs/program.cs#22)]
+ [!code-vb[S_dualhttp#22](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_dualhttp/vb/module1.vb#22)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MessageEncoding">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.WSMessageEncoding MessageEncoding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.WSMessageEncoding MessageEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSDualHttpBinding.MessageEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.WSMessageEncoding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP メッセージのエンコードに MTOM または Text/XML が使用されるかどうかを取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.WSMessageEncoding" /> の値は、SOAP メッセージのエンコードで MTOM または Text/XML が使用されることを示します。 既定値は <see cref="F:System.ServiceModel.WSMessageEncoding.Text" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ `WSMessageEncoding` プロパティを MTOM に設定する方法を次の例に示します。  
+  
+ [!code-csharp[S_dualhttp#11](~/samples/snippets/csharp/VS_Snippets_CFX/s_dualhttp/cs/program.cs#11)]
+ [!code-vb[S_dualhttp#11](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_dualhttp/vb/module1.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProxyAddress">
+      <MemberSignature Language="C#" Value="public Uri ProxyAddress { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri ProxyAddress" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSDualHttpBinding.ProxyAddress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTTP プロキシの URI アドレスを取得または設定します。</summary>
+        <value>HTTP プロキシのアドレスとして使用できる <see cref="T:System.Uri" />。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.WSDualHttpBinding.UseDefaultWebProxy%2A> を `true` に設定した場合、<xref:System.ServiceModel.WSDualHttpBinding.ProxyAddress%2A> の値は無視されます。  
+  
+   
+  
+## Examples  
+ HTTP プロキシのアドレスを指定する方法を次の例に示します。  
+  
+ [!code-csharp[S_dualhttp#12](~/samples/snippets/csharp/VS_Snippets_CFX/s_dualhttp/cs/program.cs#12)]
+ [!code-vb[S_dualhttp#12](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_dualhttp/vb/module1.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReaderQuotas">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlDictionaryReaderQuotas ReaderQuotas { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlDictionaryReaderQuotas ReaderQuotas" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSDualHttpBinding.ReaderQuotas" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlDictionaryReaderQuotas</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインディングを使用して設定されるエンドポイントにより処理可能な、SOAP メッセージの複雑さに対する制約を取得または設定します。</summary>
+        <value>複雑さの制約を指定する <see cref="T:System.Xml.XmlDictionaryReaderQuotas" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複雑さの制約には、要素の最大深度やメッセージ内の文字列コンテンツの最大長などの項目が含まれます。 制約は、メッセージの複雑さを使用してエンドポイント処理リソースを停滞させるサービス拒否 (DOS) 型の攻撃から保護します。  
+  
+   
+  
+## Examples  
+ `ReaderQuotas` プロパティを取得する方法を次の例に示します。  
+  
+ [!code-csharp[S_dualhttp#13](~/samples/snippets/csharp/VS_Snippets_CFX/s_dualhttp/cs/program.cs#13)]
+ [!code-vb[S_dualhttp#13](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_dualhttp/vb/module1.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReliableSession">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.ReliableSession ReliableSession { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.ReliableSession ReliableSession" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSDualHttpBinding.ReliableSession" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ReliableSession</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システム指定のバインディングのいずれかを使用したときに使用できる、信頼できるセッションのバインド要素のプロパティにアクセスする便利な方法を提供するオブジェクトを取得します。</summary>
+        <value>システム指定のバインドのいずれかを使用したときに使用できる、信頼できるセッションのバインド要素のプロパティにアクセスする便利な方法を提供する <see cref="T:System.ServiceModel.ReliableSession" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.WSDualHttpBinding> で構成されたサービスでは、信頼できるセッションが必要です。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.WSDualHttpBinding.ReliableSession%2A> プロパティを取得する方法を次の例に示します。  
+  
+ [!code-csharp[S_dualhttp#14](~/samples/snippets/csharp/VS_Snippets_CFX/s_dualhttp/cs/program.cs#14)]
+ [!code-vb[S_dualhttp#14](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_dualhttp/vb/module1.vb#14)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scheme">
+      <MemberSignature Language="C#" Value="public override string Scheme { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Scheme" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSDualHttpBinding.Scheme" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインディングで構成されたチャネルとリスナーのための URI トランスポート スキームを取得します。</summary>
+        <value>トランスポート スキーム : "http"。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 構成ファイルで wsDualHttpBinding バインディングを指定する方法を次の例に示します。  
+  
+ [!code-csharp[S_dualhttp#15](~/samples/snippets/csharp/VS_Snippets_CFX/s_dualhttp/cs/program.cs#15)]
+ [!code-vb[S_dualhttp#15](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_dualhttp/vb/module1.vb#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Security">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.WSDualHttpSecurity Security { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.WSDualHttpSecurity Security" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSDualHttpBinding.Security" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.WSDualHttpSecurity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインドで使用されるセキュリティの設定を指定するオブジェクトを取得します。</summary>
+        <value>このバインドで使用されるセキュリティの設定を指定する <see cref="T:System.ServiceModel.WSDualHttpSecurity" />。 <see cref="T:System.ServiceModel.WSDualHttpSecurityMode" /> の既定値は <see cref="F:System.ServiceModel.WSDualHttpSecurityMode.Message" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 二重バインディングでは、クライアントの IP アドレスをサービスに公開します。 クライアントは、セキュリティを使用して信頼するサービスに対して接続のみを可能にする必要があります。  
+  
+   
+  
+## Examples  
+ バインドのセキュリティの種類を取得する方法を次の例に示します。  
+  
+ [!code-csharp[S_dualhttp#16](~/samples/snippets/csharp/VS_Snippets_CFX/s_dualhttp/cs/program.cs#16)]
+ [!code-vb[S_dualhttp#16](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_dualhttp/vb/module1.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeReaderQuotas">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeReaderQuotas ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeReaderQuotas() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WSDualHttpBinding.ShouldSerializeReaderQuotas" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.ServiceModel.WSDualHttpBinding.ReaderQuotas" /> プロパティが既定値から変更されたためにシリアル化する必要があるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> プロパティ値をシリアル化する必要がある場合は <see cref="P:System.ServiceModel.WSDualHttpBinding.ReaderQuotas" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeReliableSession">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeReliableSession ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeReliableSession() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WSDualHttpBinding.ShouldSerializeReliableSession" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.ServiceModel.WSDualHttpBinding.ReliableSession" /> プロパティが既定値から変更されたためにシリアル化する必要があるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> プロパティ値をシリアル化する必要がある場合は <see cref="P:System.ServiceModel.WSDualHttpBinding.ReliableSession" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeSecurity">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeSecurity ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeSecurity() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WSDualHttpBinding.ShouldSerializeSecurity" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.ServiceModel.WSDualHttpBinding.Security" /> プロパティが既定値から変更されたためにシリアル化する必要があるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> プロパティ値をシリアル化する必要がある場合は <see cref="P:System.ServiceModel.WSDualHttpBinding.Security" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeTextEncoding">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeTextEncoding ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeTextEncoding() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WSDualHttpBinding.ShouldSerializeTextEncoding" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.ServiceModel.WSDualHttpBinding.TextEncoding" /> プロパティが既定値から変更されたためにシリアル化する必要があるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> プロパティ値をシリアル化する必要がある場合は <see cref="P:System.ServiceModel.WSDualHttpBinding.TextEncoding" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Channels.IBindingRuntimePreferences.ReceiveSynchronously">
+      <MemberSignature Language="C#" Value="bool System.ServiceModel.Channels.IBindingRuntimePreferences.ReceiveSynchronously { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.ServiceModel.Channels.IBindingRuntimePreferences.ReceiveSynchronously" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSDualHttpBinding.System#ServiceModel#Channels#IBindingRuntimePreferences#ReceiveSynchronously" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>受信要求を同期処理するか、または非同期処理するかを示す値を取得します。</summary>
+        <value>
+          要求が同期的に処理される場合は <see langword="true" />。非同期的に処理される場合は <see langword="false" />。 返される値は常に <see langword="false" /> であり、要求は非同期で処理されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は、サービス モデル動作を使用して変更できます。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.ServiceModel.WSDualHttpBinding.System%23ServiceModel%23Channels%23IBindingRuntimePreferences%23ReceiveSynchronously%2A> の値を取得する方法を示します。  
+  
+ [!code-csharp[S_dualhttp#23](~/samples/snippets/csharp/VS_Snippets_CFX/s_dualhttp/cs/program.cs#23)]
+ [!code-vb[S_dualhttp#23](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_dualhttp/vb/module1.vb#23)]  
+  
+ [!code-csharp[S_dualhttp#24](~/samples/snippets/csharp/VS_Snippets_CFX/s_dualhttp/cs/program.cs#24)]
+ [!code-vb[S_dualhttp#24](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_dualhttp/vb/module1.vb#24)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextEncoding">
+      <MemberSignature Language="C#" Value="public System.Text.Encoding TextEncoding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Text.Encoding TextEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSDualHttpBinding.TextEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ServiceModel.Configuration.EncodingConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Text.Encoding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキストに使用される文字エンコーディングを取得または設定します。</summary>
+        <value>使用されている文字エンコードを示す <see cref="T:System.Text.Encoding" />。 既定値は、<see cref="T:System.Text.UTF8Encoding" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ メッセージ テキストに使用される文字エンコーディングを取得する方法を次の例に示します。  
+  
+ [!code-csharp[S_dualhttp#17](~/samples/snippets/csharp/VS_Snippets_CFX/s_dualhttp/cs/program.cs#17)]
+ [!code-vb[S_dualhttp#17](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_dualhttp/vb/module1.vb#17)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransactionFlow">
+      <MemberSignature Language="C#" Value="public bool TransactionFlow { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool TransactionFlow" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSDualHttpBinding.TransactionFlow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインディングが WS-Transactions のフローをサポートするかどうかを示す値を取得または設定します。</summary>
+        <value>
+          トランザクション フローがサポートされる場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は、クライアントがトランザクションをフローせず、サービスが、フローされたトランザクション メッセージ ヘッダーを持つメッセージを拒否するよう指定します。  
+  
+   
+  
+## Examples  
+ トランザクションのフローをサポートする `TransactionFlow` プロパティを設定する方法を次の例に示します。  
+  
+ [!code-csharp[S_dualhttp#18](~/samples/snippets/csharp/VS_Snippets_CFX/s_dualhttp/cs/program.cs#18)]
+ [!code-vb[S_dualhttp#18](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_dualhttp/vb/module1.vb#18)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseDefaultWebProxy">
+      <MemberSignature Language="C#" Value="public bool UseDefaultWebProxy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseDefaultWebProxy" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSDualHttpBinding.UseDefaultWebProxy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用できる場合にシステムの自動構成される HTTP プロキシを使用するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          システムの自動構成される HTTP プロキシを使用する必要がある場合 (利用可能な場合) は、<see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ システムの自動構成される HTTP プロキシを使用する `UseDefaultWebProxy` プロパティを設定する方法を次の例に示します。  
+  
+ [!code-csharp[S_dualhttp#19](~/samples/snippets/csharp/VS_Snippets_CFX/s_dualhttp/cs/program.cs#19)]
+ [!code-vb[S_dualhttp#19](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_dualhttp/vb/module1.vb#19)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,199 @@
+<Type Name="LogicalTreeHelper" FullName="System.Windows.LogicalTreeHelper">
+  <TypeSignature Language="C#" Value="public static class LogicalTreeHelper" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit LogicalTreeHelper extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.LogicalTreeHelper" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>論理ツリー内のオブジェクトのクエリを実行するために静的ヘルパー メソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.LogicalTreeHelper>クラスを使用することができますをオブジェクトの子コレクションを返すまたは論理ツリーのサブノード内からのオブジェクトは特定のメソッドを提供します。 ただし、通常実行するオブジェクト ツリーの操作のほとんどもによって公開される同様のメソッドまたはプロパティで<xref:System.Windows.FrameworkElement>または<xref:System.Windows.FrameworkContentElement>です。 たとえば、次の点を再試行してください。  
+  
+-   静的なを呼び出す代わりに<xref:System.Windows.LogicalTreeHelper.GetChildren%2A>列挙子の論理子オブジェクトを返すメソッドは、そのオブジェクトのコンテンツ モデルで公開されている専用のコレクションを使用します。 コンテンツ モデルをサポートするほとんどすべてのオブジェクトは、子オブジェクトのコレクションを格納し、そのコレクションに対するコレクション インターフェイスのサポートに直接を提供するいくつかのプロパティを公開します。  
+  
+-   静的なを呼び出す代わりに<xref:System.Windows.LogicalTreeHelper.FindLogicalNode%2A>を呼び出し、その名前を指定することによって、子オブジェクトを取得するメソッド、<xref:System.Windows.FrameworkElement.FindName%2A?displayProperty=nameWithType>または<xref:System.Windows.FrameworkContentElement.FindName%2A?displayProperty=nameWithType>固有のオブジェクトのメソッドです。  
+  
+ <xref:System.Windows.LogicalTreeHelper>論理ツリーを再帰的に、複数のレベルの上下に移動してさまざまな親または子オブジェクトを確認するための一貫した方法を使用する分析シナリオに最も役立ちます。 ここでは、コンテンツ モデルの組み合わせにアクセスする可能性があり、複数のコンテンツ モデルを使用して特定の Api が複雑すぎます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BringIntoView">
+      <MemberSignature Language="C#" Value="public static void BringIntoView (System.Windows.DependencyObject current);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void BringIntoView(class System.Windows.DependencyObject current) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.LogicalTreeHelper.BringIntoView(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="current" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="current">表示する UI 要素。</param>
+        <summary>要求された UI 要素の表示しようとして発生させる、<see cref="E:System.Windows.FrameworkElement.RequestBringIntoView" />イベント結果を報告するために、ターゲットにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、インスタンス メソッドを呼び出すした方が便利です<xref:System.Windows.FrameworkElement.BringIntoView%2A?displayProperty=nameWithType>または<xref:System.Windows.FrameworkContentElement.BringIntoView%2A?displayProperty=nameWithType>このユーティリティの静的メソッドではなくです。 インスタンス メソッドの動作は、静的メソッドの動作と同じです。  
+  
+ 場合でも、`current`提供される UI 要素が、 <xref:System.Windows.FrameworkContentElement>、結果として得られるイベントが変更されていないか<xref:System.Windows.FrameworkElement.RequestBringIntoView?displayProperty=nameWithType>は発信元でのイベント<xref:System.Windows.FrameworkContentElement>イベントのイベント データをチェックして識別します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindLogicalNode">
+      <MemberSignature Language="C#" Value="public static System.Windows.DependencyObject FindLogicalNode (System.Windows.DependencyObject logicalTreeNode, string elementName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.DependencyObject FindLogicalNode(class System.Windows.DependencyObject logicalTreeNode, string elementName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.LogicalTreeHelper.FindLogicalNode(System.Windows.DependencyObject,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyObject</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="logicalTreeNode" Type="System.Windows.DependencyObject" />
+        <Parameter Name="elementName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="logicalTreeNode">検索を開始するオブジェクト。 このオブジェクトはいずれかである必要があります、<see cref="T:System.Windows.FrameworkElement" />または<see cref="T:System.Windows.FrameworkContentElement" />です。</param>
+        <param name="elementName">検索するオブジェクトの名前。</param>
+        <summary>検索し、指定した名前を持つオブジェクトを取得しようとします。 検索は、指定したオブジェクトから開始され、論理ツリーのサブノードに続きます。</summary>
+        <returns>1 つが見つかった場合は、一致する名前を持つオブジェクト返します<see langword="null" />論理ツリー内に一致する名前が見つからなかった場合です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッド<xref:System.Windows.FrameworkContentElement.FindName%2A?displayProperty=nameWithType>と<xref:System.Windows.FrameworkElement.FindName%2A?displayProperty=nameWithType>一見のような<xref:System.Windows.LogicalTreeHelper.FindLogicalNode%2A>、別のロジックでは、動作は。  
+  
+-   検索の方向<xref:System.Windows.LogicalTreeHelper.FindLogicalNode%2A>(ツリー); の下の子オブジェクトの方向の検索の方向、`FindName`メソッドが (ツリー) 上の親オブジェクトです。  
+  
+-   `FindName`メソッドは、XAML 名前スコープの概念によって制御されます。 使用して`FindName`が 1 つだけを保証する XAML 名前スコープは、一意性を適用するため、その名前のオブジェクトが存在します。 これに対し、<xref:System.Windows.LogicalTreeHelper.FindLogicalNode%2A>検索中に XAML 名前スコープおよび XAML 名前スコープの境界を越えた場合がありますは無視されます。 そのための一意性の保証はありません、`elementName`境界を越えると名前を付けます。 XAML 名前スコープの詳細については、次を参照してください。 [WPF XAML 名前スコープ](~/docs/framework/wpf/advanced/wpf-xaml-namescopes.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChildren">
+      <MemberSignature Language="C#" Value="public static System.Collections.IEnumerable GetChildren (System.Windows.DependencyObject current);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.IEnumerable GetChildren(class System.Windows.DependencyObject current) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.LogicalTreeHelper.GetChildren(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="current" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="current">論理ツリーの処理の起点になるオブジェクト。 次のいずれかこれは、<see cref="T:System.Windows.FrameworkElement" />または<see cref="T:System.Windows.FrameworkContentElement" />です。</param>
+        <summary>論理ツリーを処理して、指定したオブジェクトの直接の子オブジェクトのコレクションを返します。</summary>
+        <returns>指定したオブジェクトの論理ツリーに属する直接の子オブジェクトの列挙可能なコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 確信できないときに、主に、この署名とヘルパー メソッドを使用しているかどうか`current`は、<xref:System.Windows.FrameworkElement>または<xref:System.Windows.FrameworkContentElement>わからないもそのオブジェクトのクラスが独自のコンテンツ モデルのコレクションをサポートしているかどうかとします。 クエリを実行するオブジェクトの種類と判断した場合がわかっている特定のコンテンツ プロパティは、その型に存在することを確認します。 たとえば、あるオブジェクト クエリを実行することがわかっている場合は、 <xref:System.Windows.Controls.ItemsControl>、確認、<xref:System.Windows.Controls.ItemsControl.Items%2A>コレクション インターフェイスのサポートを持ち、列挙子が含まれている厳密に型指定されたコレクションを取得するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChildren">
+      <MemberSignature Language="C#" Value="public static System.Collections.IEnumerable GetChildren (System.Windows.FrameworkContentElement current);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.IEnumerable GetChildren(class System.Windows.FrameworkContentElement current) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.LogicalTreeHelper.GetChildren(System.Windows.FrameworkContentElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="current" Type="System.Windows.FrameworkContentElement" />
+      </Parameters>
+      <Docs>
+        <param name="current">論理ツリーの処理の起点になるオブジェクト。</param>
+        <summary>指定したの直接の子オブジェクトのコレクションを返します<see cref="T:System.Windows.FrameworkContentElement" />論理ツリーを処理しています。</summary>
+        <returns>直接の子オブジェクトの列挙可能なコレクション<paramref name="current" />論理ツリー内です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChildren">
+      <MemberSignature Language="C#" Value="public static System.Collections.IEnumerable GetChildren (System.Windows.FrameworkElement current);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.IEnumerable GetChildren(class System.Windows.FrameworkElement current) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.LogicalTreeHelper.GetChildren(System.Windows.FrameworkElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="current" Type="System.Windows.FrameworkElement" />
+      </Parameters>
+      <Docs>
+        <param name="current">論理ツリーの処理の起点になるオブジェクト。</param>
+        <summary>指定したの直接の子オブジェクトのコレクションを返します<see cref="T:System.Windows.FrameworkElement" />論理ツリーを処理しています。</summary>
+        <returns>直接の子オブジェクトの列挙可能なコレクション<paramref name="current" />論理ツリー内です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParent">
+      <MemberSignature Language="C#" Value="public static System.Windows.DependencyObject GetParent (System.Windows.DependencyObject current);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.DependencyObject GetParent(class System.Windows.DependencyObject current) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.LogicalTreeHelper.GetParent(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyObject</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="current" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="current">親オブジェクトを検索するオブジェクト。 次のいずれかこれは、<see cref="T:System.Windows.FrameworkElement" />または<see cref="T:System.Windows.FrameworkContentElement" />です。</param>
+        <summary>論理ツリーを処理することで、指定したオブジェクトの親オブジェクトを返します。</summary>
+        <returns>要求された親オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 適切な種類のバージョンを取得するラッパーだけで、このメソッドは (<xref:System.Windows.FrameworkElement>または<xref:System.Windows.FrameworkContentElement>) の<xref:System.Windows.FrameworkElement.Parent%2A?displayProperty=nameWithType>または<xref:System.Windows.FrameworkContentElement.Parent%2A?displayProperty=nameWithType>プロパティです。 これを判断できない場合を除き、`current`型、可能性がありますする代わりに、それぞれのインスタンスのプロパティをチェックします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,202 @@
+<Type Name="ObjectChangeConflict" FullName="System.Data.Linq.ObjectChangeConflict">
+  <TypeSignature Language="C#" Value="public sealed class ObjectChangeConflict" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ObjectChangeConflict extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Linq.ObjectChangeConflict" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Linq</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>1 つまたは複数のオプティミスティック同時実行の競合している更新の試行を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このシナリオでは、データベース内の値は、クライアントによる最後の読み取り以降に更新されているために失敗した更新の試行です。  
+  
+ 次の例では、競合しているオブジェクトに関する情報を取得する方法を示します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Data.Linq.ObjectChangeConflict#1](~/samples/snippets/csharp/VS_Snippets_Data/system.data.linq.objectchangeconflict/cs/program.cs#1)]
+ [!code-vb[System.Data.Linq.ObjectChangeConflict#1](~/samples/snippets/visualbasic/VS_Snippets_Data/system.data.linq.objectchangeconflict/vb/module1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="IsDeleted">
+      <MemberSignature Language="C#" Value="public bool IsDeleted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDeleted" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.ObjectChangeConflict.IsDeleted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>競合しているオブジェクトがデータベースから削除されたかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="True" />場合は、オブジェクトが削除されました。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsResolved">
+      <MemberSignature Language="C#" Value="public bool IsResolved { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsResolved" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.ObjectChangeConflict.IsResolved" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このオブジェクトの競合が既に解決されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="True" />場合は、競合が解決されました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは読み取り専用と、競合が解決済みとして自動的に更新します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MemberConflicts">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Linq.MemberChangeConflict&gt; MemberConflicts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Data.Linq.MemberChangeConflict&gt; MemberConflicts" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.ObjectChangeConflict.MemberConflicts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Linq.MemberChangeConflict&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>更新は失敗の原因となったすべてのメンバーの競合のコレクションを取得します。</summary>
+        <value>メンバーの競合のコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Object">
+      <MemberSignature Language="C#" Value="public object Object { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Object" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.ObjectChangeConflict.Object" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>競合しているオブジェクトを取得します。</summary>
+        <value>競合しているオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Resolve">
+      <MemberSignature Language="C#" Value="public void Resolve ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Resolve() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.ObjectChangeConflict.Resolve" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の値を保持しより新しいデータベース値に一致する基準の元の値をリセットすることによって、メンバーの競合を解決します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Resolve">
+      <MemberSignature Language="C#" Value="public void Resolve (System.Data.Linq.RefreshMode refreshMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Resolve(valuetype System.Data.Linq.RefreshMode refreshMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.ObjectChangeConflict.Resolve(System.Data.Linq.RefreshMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="refreshMode" Type="System.Data.Linq.RefreshMode" />
+      </Parameters>
+      <Docs>
+        <param name="refreshMode">該当するオプション<see cref="T:System.Data.Linq.RefreshMode" />です。</param>
+        <summary>指定されたを使用してメンバーの競合を解決<see cref="T:System.Data.Linq.RefreshMode" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の例のさまざまな値を使用してどのような結果が作成される<xref:System.Data.Linq.RefreshMode>です。  
+  
+   
+  
+## Examples  
+ 次の例では、データベースから値を持つ現在の値が上書きされます。  
+  
+ [!code-csharp[System.Data.Linq.RefreshMode#1](~/samples/snippets/csharp/VS_Snippets_Data/system.data.linq.refreshmode/cs/program.cs#1)]
+ [!code-vb[System.Data.Linq.RefreshMode#1](~/samples/snippets/visualbasic/VS_Snippets_Data/system.data.linq.refreshmode/vb/module1.vb#1)]  
+  
+ 次の例では、データベースから取得した値を元の値を交換する方法を示します。 現在の値は変更されません。  
+  
+ [!code-csharp[System.Data.Linq.RefreshMode#2](~/samples/snippets/csharp/VS_Snippets_Data/system.data.linq.refreshmode/cs/program.cs#2)]
+ [!code-vb[System.Data.Linq.RefreshMode#2](~/samples/snippets/visualbasic/VS_Snippets_Data/system.data.linq.refreshmode/vb/module1.vb#2)]  
+  
+ 次の例では、現在の値が変更されましたが、その他の値をデータベース内の値の更新は保持します。  
+  
+ [!code-csharp[System.Data.Linq.RefreshMode#3](~/samples/snippets/csharp/VS_Snippets_Data/system.data.linq.refreshmode/cs/program.cs#3)]
+ [!code-vb[System.Data.Linq.RefreshMode#3](~/samples/snippets/visualbasic/VS_Snippets_Data/system.data.linq.refreshmode/vb/module1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Resolve">
+      <MemberSignature Language="C#" Value="public void Resolve (System.Data.Linq.RefreshMode refreshMode, bool autoResolveDeletes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Resolve(valuetype System.Data.Linq.RefreshMode refreshMode, bool autoResolveDeletes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.ObjectChangeConflict.Resolve(System.Data.Linq.RefreshMode,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="refreshMode" Type="System.Data.Linq.RefreshMode" />
+        <Parameter Name="autoResolveDeletes" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="refreshMode">該当するオプション<see cref="T:System.Data.Linq.RefreshMode" />です。</param>
+        <param name="autoResolveDeletes">ときに<see langword="true" />、自動的に解決される発生する競合変更されたデータベースではなくなったオブジェクトです。</param>
+        <summary>現在の値を保持し、ベースラインの元の値をリセットするメンバーの競合を解決するには。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,189 @@
+<Type Name="FontFamilyMap" FullName="System.Windows.Media.FontFamilyMap">
+  <TypeSignature Language="C#" Value="public class FontFamilyMap" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FontFamilyMap extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.FontFamilyMap" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>定義する<see cref="T:System.Windows.Media.FontFamily" />に指定された一連の Unicode コード ポイントとカルチャ固有の言語を使用します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.FontFamilyMap>も指定して、ターゲットを許可する、スケール ファクター<xref:System.Windows.Media.FontFamily>コンポジット フォント ファミリで使用されるその他のフォントのサイズをより適切に一致するように調整するサイズ。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FontFamilyMap ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FontFamilyMap.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.FontFamilyMap" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[FontSnippets#FontMapSnippet1](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontMapSnippets.xaml.cs#fontmapsnippet1)]
+ [!code-vb[FontSnippets#FontMapSnippet1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontmapsnippets.xaml.vb#fontmapsnippet1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Language">
+      <MemberSignature Language="C#" Value="public System.Windows.Markup.XmlLanguage Language { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Markup.XmlLanguage Language" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.FontFamilyMap.Language" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Markup.XmlLanguage</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のカルチャに固有の言語、<see cref="T:System.Windows.Media.FontFamilyMap" />です。</summary>
+        <value>A<see cref="T:System.Windows.Markup.XmlLanguage" />カルチャに固有の言語を表す値です。 既定値は、<see langword="null" />文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.FontFamilyMap.Language%2A>プロパティは、次のいずれかを参照できます。  
+  
+-   特定の言語場合、<xref:System.Windows.Media.FontFamilyMap>言語だけに適用されます。  
+  
+-   関連する言語のグループに適用する場合は、ニュートラル言語です。  
+  
+-   任意の言語に適用する場合は、空の文字列をします。  
+  
+ 既定値は、空の文字列です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[FontSnippets#FontMapSnippet5](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontMapSnippets.xaml.cs#fontmapsnippet5)]
+ [!code-vb[FontSnippets#FontMapSnippet5](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontmapsnippets.xaml.vb#fontmapsnippet5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scale">
+      <MemberSignature Language="C#" Value="public double Scale { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Scale" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.FontFamilyMap.Scale" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のターゲットのフォントのスケール ファクター<see cref="T:System.Windows.Media.FontFamily" />です。</summary>
+        <value>A<see cref="T:System.Double" />スケール ファクターを表す値です。 既定値は<c>1.0</c>です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.FontFamilyMap.Scale%2A>ターゲット<xref:System.Windows.Media.FontFamily>コンポジット フォント ファミリで使用されるその他のフォントのサイズをより適切に一致するように調整するサイズ。 スケール ファクター"em"のユニット相対パスです。  
+  
+   
+  
+## Examples  
+ [!code-csharp[FontSnippets#FontMapSnippet2](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontMapSnippets.xaml.cs#fontmapsnippet2)]
+ [!code-vb[FontSnippets#FontMapSnippet2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontmapsnippets.xaml.vb#fontmapsnippet2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Target">
+      <MemberSignature Language="C#" Value="public string Target { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Target" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.FontFamilyMap.Target" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.Markup.DesignerSerializationOptions(System.Windows.Markup.DesignerSerializationOptions.SerializeAsAttribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Unicode の範囲に適用する対象のフォント ファミリ名を設定します。</summary>
+        <value>A<see cref="T:System.String" />フォント ファミリ名を表す値です。 既定値は、<see langword="null" />文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[FontSnippets#FontMapSnippet3](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontMapSnippets.xaml.cs#fontmapsnippet3)]
+ [!code-vb[FontSnippets#FontMapSnippet3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontmapsnippets.xaml.vb#fontmapsnippet3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Unicode">
+      <MemberSignature Language="C#" Value="public string Unicode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Unicode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.FontFamilyMap.Unicode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.Markup.DesignerSerializationOptions(System.Windows.Markup.DesignerSerializationOptions.SerializeAsAttribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または 1 つ以上の Unicode コード ポイント範囲を表す文字列値を設定します。</summary>
+        <value>A<see cref="T:System.String" />範囲の Unicode コード ポイントを表す値です。 既定値は、"0000-10 ffff"です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ たとえば、各 Unicode コード ポイント範囲が、範囲の最初と最後のコード ポイントで表される`"0000-00ff"`です。 たとえば、範囲の Unicode コード ポイントの文字列をコンマで区切られて`"0000-00ff, 00e0-00ef"`です。  
+  
+ コード ページは、特定の順序で選択した文字コード (文字コード ポイントとして表される) の一覧を示します。 コード ページは、通常、特定の言語または共通の書記体系を共有する言語のグループをサポートするために定義されます。 Windows コード ページは、256 のコード ポイントを含めるしは 0 から始まる。 ほとんどのコード ページでは、コード ポイント 0 ~ 127 は、同じ文字を表します。 これにより、継続性と古いコード。 コード ポイント 128 ~ 255 は、コード ページ間で大幅に異なります。 詳細については、次を参照してください。[のコード ページ エンコーディングのサポート](http://msdn.microsoft.com/en-us/5db4c290-41d5-41f5-a7e6-3ab0f4bfafae)です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[FontSnippets#FontMapSnippet4](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontMapSnippets.xaml.cs#fontmapsnippet4)]
+ [!code-vb[FontSnippets#FontMapSnippet4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontmapsnippets.xaml.vb#fontmapsnippet4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.FormatException">Unicode 範囲が有効ではありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

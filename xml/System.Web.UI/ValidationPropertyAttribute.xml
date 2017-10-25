@@ -1,0 +1,97 @@
+<Type Name="ValidationPropertyAttribute" FullName="System.Web.UI.ValidationPropertyAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ValidationPropertyAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ValidationPropertyAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.ValidationPropertyAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>メタデータ属性を定義するには、その ASP.NET サーバー コントロールを使用して、検証プロパティを識別します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性は通常、フォーム ベースの入力コントロールを使用します。  
+  
+ 属性の詳細については、「[属性](~/docs/standard/attributes/index.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Web.UI.ValidationPropertyAttribute>クラスのカスタム コントロールを作成するときにします。  
+  
+ [!code-csharp[ValidationPropertyAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ValidationPropertyAttribute/CS/validationpropertyattribute1.cs#1)]
+ [!code-vb[ValidationPropertyAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ValidationPropertyAttribute/VB/validationpropertyattribute1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ValidationPropertyAttribute (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ValidationPropertyAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">検証プロパティの名前。</param>
+        <summary><see cref="T:System.Web.UI.ValidationPropertyAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Web.UI.ValidationPropertyAttribute>クラスのカスタム コントロールを作成するときにします。  
+  
+ [!code-csharp[ValidationPropertyAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ValidationPropertyAttribute/CS/validationpropertyattribute1.cs#1)]
+ [!code-vb[ValidationPropertyAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ValidationPropertyAttribute/VB/validationpropertyattribute1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ValidationPropertyAttribute.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET サーバー コントロールの検証プロパティの名前を取得します。</summary>
+        <value>検証プロパティの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Web.UI.ValidationPropertyAttribute>クラスのカスタム コントロールを作成するときにします。  
+  
+ [!code-csharp[ValidationPropertyAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ValidationPropertyAttribute/CS/validationpropertyattribute1.cs#1)]
+ [!code-vb[ValidationPropertyAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ValidationPropertyAttribute/VB/validationpropertyattribute1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

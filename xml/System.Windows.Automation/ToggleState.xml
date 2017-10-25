@@ -1,0 +1,91 @@
+<Type Name="ToggleState" FullName="System.Windows.Automation.ToggleState">
+  <TypeSignature Language="C#" Value="public enum ToggleState" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ToggleState extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.ToggleState" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationTypes</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("ad7db4af-7166-4478-a402-ad5b77eab2fa")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>UI オートメーション要素の <see cref="T:System.Windows.Automation.ToggleState" /> を指定する値を格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールに繰り返す必要があります、<xref:System.Windows.Automation.ToggleState>この順序で: On、Off 不定サポートされている場合。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Indeterminate">
+      <MemberSignature Language="C#" Value="Indeterminate" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Automation.ToggleState Indeterminate = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ToggleState.Indeterminate" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ToggleState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>UI オートメーション要素は中間状態です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 不確定なプロパティは、ユーザー コントロールが処理するかどうかを示すために使用できます。 たとえば、チェック ボックスでは、checked と淡色表示されている、不確定な状態を示すを表示できます。  
+  
+ 中間状態の作成は、コントロールを無効にすると異なります。 その結果、中間状態のチェック ボックスは、フォーカスを受け取ることができますも。 ユーザーが不確定なコントロールをクリックしたとき、<xref:System.Windows.Automation.ToggleState.Indeterminate>サイクル、次の値にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Off">
+      <MemberSignature Language="C#" Value="Off" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Automation.ToggleState Off = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ToggleState.Off" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ToggleState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>UI オートメーション要素は、選択、チェック、マーク、またはアクティブ化されていません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="On">
+      <MemberSignature Language="C#" Value="On" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Automation.ToggleState On = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ToggleState.On" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ToggleState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>UI オートメーション要素は、選択、チェック、マーク、またはアクティブ化されています。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

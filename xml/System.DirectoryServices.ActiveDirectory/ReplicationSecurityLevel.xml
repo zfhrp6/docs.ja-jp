@@ -1,0 +1,70 @@
+<Type Name="ReplicationSecurityLevel" FullName="System.DirectoryServices.ActiveDirectory.ReplicationSecurityLevel">
+  <TypeSignature Language="C#" Value="public enum ReplicationSecurityLevel" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ReplicationSecurityLevel extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.ActiveDirectory.ReplicationSecurityLevel" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>Active Directory ライトウェイト ディレクトリ (AD LDS) サービスのレプリケーション認証モードを指定します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="MutualAuthentication">
+      <MemberSignature Language="C#" Value="MutualAuthentication" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.ActiveDirectory.ReplicationSecurityLevel MutualAuthentication = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.ActiveDirectory.ReplicationSecurityLevel.MutualAuthentication" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.ReplicationSecurityLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Kerberos 認証、サービス プリンシパル名 (Spn) のために必要なを使用します。 Kerberos 認証が失敗する場合、AD LDS インスタンスはレプリケートされません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Negotiate">
+      <MemberSignature Language="C#" Value="Negotiate" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.ActiveDirectory.ReplicationSecurityLevel Negotiate = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.ActiveDirectory.ReplicationSecurityLevel.Negotiate" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.ReplicationSecurityLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>まず (Spn を使用した) Kerberos 認証が試行されます。 Kerberos が失敗した場合、NTLM 認証が試行されます。 NTLM が失敗した場合、AD LDS インスタンスはレプリケートされません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NegotiatePassThrough">
+      <MemberSignature Language="C#" Value="NegotiatePassThrough" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.ActiveDirectory.ReplicationSecurityLevel NegotiatePassThrough = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.ActiveDirectory.ReplicationSecurityLevel.NegotiatePassThrough" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.ReplicationSecurityLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>構成セット内のすべての AD LDS インスタンスは、AD LDS サービス アカウントとして、同じアカウント名とパスワードを使用します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

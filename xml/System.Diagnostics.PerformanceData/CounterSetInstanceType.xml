@@ -1,0 +1,122 @@
+<Type Name="CounterSetInstanceType" FullName="System.Diagnostics.PerformanceData.CounterSetInstanceType">
+  <TypeSignature Language="C#" Value="public enum CounterSetInstanceType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed CounterSetInstanceType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.PerformanceData.CounterSetInstanceType" />
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>カウンター セットがプロセスや、物理ディスクなどの複数のインスタンスまたはメモリなどの単一のインスタンスにできるかどうかを指定します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GlobalAggregate">
+      <MemberSignature Language="C#" Value="GlobalAggregate" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.PerformanceData.CounterSetInstanceType GlobalAggregate = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.PerformanceData.CounterSetInstanceType.GlobalAggregate" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceData.CounterSetInstanceType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カウンター セットには、集計値が 1 つまたは複数のソースから取得した単一インスタンスのカウンターが含まれています。 たとえば、この種類のカウンター セット内のカウンターは取得読み取りの数から、コンピューターと合計で 3 つのハード ディスクの各それらの値。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="GlobalAggregateWithHistory">
+      <MemberSignature Language="C#" Value="GlobalAggregateWithHistory" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.PerformanceData.CounterSetInstanceType GlobalAggregateWithHistory = int32(11)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.PerformanceData.CounterSetInstanceType.GlobalAggregateWithHistory" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceData.CounterSetInstanceType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この型はのような<see cref="F:System.Diagnostics.PerformanceData.CounterSetInstanceType.GlobalAggregate" />このカウンターは、型を設定する点を除いては、(このカウンターの値は、カウンターの有効期間を超えるキャッシュ済み)、コンシューマー アプリケーションの有効期間のすべてのカウンター値を格納します。 たとえば、使用できなくなり、グローバルな集計の例で、ハード ディスクのいずれかの場合は、そのディスクによって読み取られた合計バイト数もよい使用可能で、集計値を計算するために使用します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceAggregate">
+      <MemberSignature Language="C#" Value="InstanceAggregate" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.PerformanceData.CounterSetInstanceType InstanceAggregate = int32(22)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.PerformanceData.CounterSetInstanceType.InstanceAggregate" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceData.CounterSetInstanceType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この型はのような<see cref="F:System.Diagnostics.PerformanceData.CounterSetInstanceType.MultipleAggregate" />集計 (_Total) の 1 つのインスタンスにすべてのインスタンス データを集計するには、代わりに、同じ名前のインスタンスからカウンター データを集計には点が異なります。 たとえば、複数のプロバイダー、IExplore という名前の包含のインスタンスを処理する場合<see cref="F:System.Diagnostics.PerformanceData.CounterSetInstanceType.Multiple" />と<see cref="F:System.Diagnostics.PerformanceData.CounterSetInstanceType.MultipleAggregate" />CounterSet 複数の IExplore インスタンス (IExplore、IExplore 1、IExplore 2、およびなど) が表示されます。 ただし、、 <see cref="F:System.Diagnostics.PerformanceData.CounterSetInstanceType.InstanceAggregate" /> IExplore という名前のすべてのインスタンスの集計のカウンター データを 1 つだけの IExplore インスタンスをインスタンスの種類が発行されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Windows Vista では、この型はサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Multiple">
+      <MemberSignature Language="C#" Value="Multiple" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.PerformanceData.CounterSetInstanceType Multiple = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.PerformanceData.CounterSetInstanceType.Multiple" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceData.CounterSetInstanceType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カウンター セットには、プロセスの平均ディスク I/O を測定するカウンターなどの複数のインスタンスのカウンターが含まれています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MultipleAggregate">
+      <MemberSignature Language="C#" Value="MultipleAggregate" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.PerformanceData.CounterSetInstanceType MultipleAggregate = int32(6)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.PerformanceData.CounterSetInstanceType.MultipleAggregate" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceData.CounterSetInstanceType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カウンター セットには、集計値を持つが、カウンターのすべてのインスタンスから取得した複数のインスタンスのカウンターが含まれています。 たとえば、この種類のカウンター セット内のカウンターは取得、マルチ スレッド アプリケーションと合計のすべてのスレッドのスレッドの合計実行時間それらの値。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Single">
+      <MemberSignature Language="C#" Value="Single" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.PerformanceData.CounterSetInstanceType Single = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.PerformanceData.CounterSetInstanceType.Single" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceData.CounterSetInstanceType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カウンター セットには、物理メモリを測定するカウンターなどの単一インスタンスのカウンターが含まれています。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,1967 @@
+<Type Name="TreeNode" FullName="System.Web.UI.WebControls.TreeNode">
+  <TypeSignature Language="C#" Value="public class TreeNode : ICloneable, System.Web.UI.IStateManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TreeNode extends System.Object implements class System.ICloneable, class System.Web.UI.IStateManager" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.TreeNode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.UI.IStateManager</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.UI.ParseChildren(true, "ChildNodes")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>内のノードを表す、<see cref="T:System.Web.UI.WebControls.TreeView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.TreeView>コントロールで構成されたノード。 ツリー内の各エントリし、呼ばれ、ノードによって表される、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。 その他のノードを含むノードと呼びます、*親ノード*です。 呼ばれる別のノードが含まれているノード、*子ノード*です。 子ノードを持たないノードと呼ばれる、*リーフ ノード*です。 他のノードに含まれていないが、その他のすべてのノードの先祖ノードが、*ルート ノード*です。 ノードが親と子要素が、ルートの親の両方を指定でき、リーフ ノードは相互に排他的です。 ノードの表示と動作のプロパティは、ノードがかどうかによって決まります、*ルート*、*親*、または*リーフ*ノード。  
+  
+ 一般的なツリーが 1 つだけのルート ノードがありますが、<xref:System.Web.UI.WebControls.TreeView>コントロールでは、ツリー構造に複数のルート ノードを追加することができます。 これは、製品カテゴリの一覧と同様に、1 つの主要なルート ノードを表示せずに項目の一覧を表示するときに便利です。  
+  
+ ノードは、2 つのプロパティにデータを格納する、主に、<xref:System.Web.UI.WebControls.TreeNode.Text%2A>プロパティおよび<xref:System.Web.UI.WebControls.TreeNode.Value%2A>プロパティです。 値、<xref:System.Web.UI.WebControls.TreeNode.Text%2A>でプロパティを表示、<xref:System.Web.UI.WebControls.TreeView>コントロール、および<xref:System.Web.UI.WebControls.TreeNode.Value%2A>ポストバック イベントを処理するために使用されるデータなど、ノードに関するその他のデータを格納するプロパティを使用します。 ノードも、ノードからの場合は、そのルート ノードへのパスを格納、<xref:System.Web.UI.WebControls.TreeNode.ValuePath%2A>プロパティです。 <xref:System.Web.UI.WebControls.TreeNode.ValuePath%2A>プロパティは、ルート ノードに対する相対的なノードの位置を示します。  
+  
+> [!NOTE]
+>  同じレベルのノードそれぞれ、一意の値が必要、<xref:System.Web.UI.WebControls.TreeNode.Value%2A>プロパティ以外の場合は、<xref:System.Web.UI.WebControls.TreeView>コントロールが同じ値を持つ同じレベルの異なるノード間で区別できません。 このシナリオでは、ユーザーが、重複する値を持つノードをクリックすると、ノードをで最初に表示、<xref:System.Web.UI.WebControls.TreeView>コントロールを選択します。  
+  
+ A<xref:System.Web.UI.WebControls.TreeNode>オブジェクトで構成される、次の 4 つのユーザー インターフェイス (UI) 要素をカスタマイズまたは非表示にできます。  
+  
+-   ノードが展開された、折りたたまれた、または非展開するかどうかを示すために使用する拡張ノードのインジケーター アイコン。  
+  
+-   ノードに関連付けられているオプションのチェック ボックスです。  
+  
+-   省略可能なノード イメージです。  
+  
+-   ノードのテキスト。  
+  
+ 設定して、展開可能な折りたたみ可能なおよび非展開可能なノード指標のカスタム イメージを指定できます、 <xref:System.Web.UI.WebControls.TreeView.ExpandImageUrl%2A>、 <xref:System.Web.UI.WebControls.TreeView.CollapseImageUrl%2A>、および<xref:System.Web.UI.WebControls.TreeView.NoExpandImageUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeView>クラスです。 拡張ノードのインジケーター アイコンも非表示にできる設定することで、<xref:System.Web.UI.WebControls.TreeView.ShowExpandCollapse%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeView>クラスを`false`です。  
+  
+ ノードの横にあるチェック ボックスを表示するには、設定、<xref:System.Web.UI.WebControls.TreeView.ShowCheckBoxes%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeView>クラスです。 ときに、<xref:System.Web.UI.WebControls.TreeView.ShowCheckBoxes%2A>プロパティが以外の値に設定`TreeNodeType.Node`、指定したノードの種類の横にあるチェック ボックスが表示されます。 そのノードの個々 のノードのチェック ボックスを選択的にオーバーライドできます<xref:System.Web.UI.WebControls.TreeNode.ShowCheckBox%2A>プロパティです。 チェック ボックスが表示されたらを使用して、<xref:System.Web.UI.WebControls.TreeNode.Checked%2A>チェック ボックスをオンになっているかどうかを決定するプロパティです。  
+  
+ 設定して、ノードのイメージを表示することができます、<xref:System.Web.UI.WebControls.TreeNode.ImageUrl%2A>プロパティです。 このイメージは、ノードのテキストの横に表示されます。  
+  
+ 内のノードのテキスト、<xref:System.Web.UI.WebControls.TreeView>コントロールで 2 つのモードのいずれかであることができます。 選択モードまたはナビゲーション モード。 既定では、ノードは選択モードです。 ノードをナビゲーション モードにする設定、そのノードの<xref:System.Web.UI.WebControls.TreeNode.NavigateUrl%2A>プロパティを空の文字列以外の値 ("") です。 ノードを選択モードにする設定、そのノードの<xref:System.Web.UI.WebControls.TreeNode.NavigateUrl%2A>プロパティを空の文字列にします。  
+  
+> [!NOTE]
+>  一部のインターネット ブラウザーのパフォーマンスに影響を与える制限がある、<xref:System.Web.UI.WebControls.TreeView>コントロール。 たとえば、Microsoft Internet Explorer 6.0 には、ポストバック 2067 文字の URL の文字数制限があります。 ノードの URL の文字数が数よりも大きい場合は、そのノードの展開は失敗し、例外はスローされません。  
+  
+ 既定では、選択モードになっているノードをクリックすると、ページ ポスト バックするサーバーとが発生し、<xref:System.Web.UI.WebControls.TreeView.SelectedNodeChanged>イベント。 必要に応じて別のノードの設定によって発生させるイベントを指定することができます`SelectAction`プロパティです。 詳細については、「<xref:System.Web.UI.WebControls.TreeNode.SelectAction%2A>」を参照してください。 選択モードでクリックしてされたノードを特定するのには、使用、<xref:System.Web.UI.WebControls.TreeView.SelectedNode%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeView>コントロール。  
+  
+ ノードは、ナビゲーション モードでは、選択範囲のすべてのイベントがそのノードに対して無効になります。 指定した URL にユーザーをダイレクトするナビゲーション モードで、ノードをクリックします。 必要に応じて設定することができます、<xref:System.Web.UI.WebControls.TreeNode.Target%2A>プロパティ ウィンドウまたはリンクされたコンテンツを表示するフレームを指定します。  
+  
+ <xref:System.Web.UI.WebControls.TreeNode>クラスには、ノードの状態の格納に使用されるいくつかのプロパティが含まれています。 使用して、<xref:System.Web.UI.WebControls.TreeNode.Selected%2A>ノードが選択されているかどうかを決定するプロパティです。 ノードが展開されているかどうかを判断するのには、使用、<xref:System.Web.UI.WebControls.TreeNode.Expanded%2A>プロパティです。 <xref:System.Web.UI.WebControls.TreeNode.DataBound%2A>ノードがデータにバインドされているかどうかを決定するプロパティを使用します。 使用して基になるデータ項目にアクセスすることができます、ノードがデータにバインドされている場合、<xref:System.Web.UI.WebControls.TreeNode.DataItem%2A>プロパティです。  
+  
+ クラスは、ツリー内の他のノードを基準に、ノードの位置を決定するのに役立ついくつかのプロパティを提供します。 使用して、<xref:System.Web.UI.WebControls.TreeNode.Depth%2A>プロパティをノードの深さを判断します。 ルート ノードを使用して、現在のノードからノードの区切られた一覧を取得できます、<xref:System.Web.UI.WebControls.TreeNode.ValuePath%2A>プロパティです。 ノードの親ノードを確認するには<xref:System.Web.UI.WebControls.TreeNode.Parent%2A>プロパティです。 子ノードがアクセスを使用して、<xref:System.Web.UI.WebControls.TreeNode.ChildNodes%2A>コレクション。  
+  
+ 場合によっては、データのサイズまたはユーザーの入力に依存するカスタム コンテンツのためのツリー構造を静的に事前に定義することは実用的ではありません。 このため、<xref:System.Web.UI.WebControls.TreeView>コントロールは、動的なノードをサポートしています。 ノードは、実行時に展開されているときに設定できます。 非同期に作成されたノードを保存する場合は、予期しない動作を取得できることに注意してください。 たとえば、バック グラウンド ワーカー スレッドを使用してノードを非同期に作成する場合、ノード ツリー可能性があります設定されませんすぐにコントロールがページの有効期間の残りの部分が続行されます。 ポストバックでコントロールのビュー ステートが読み込まれましたが、ノード ツリーが完全に作成されていないときに、ノードの遅延作成によって問題が発生することができます。  動的なノードの詳細については、次を参照してください。、<xref:System.Web.UI.WebControls.TreeNode.PopulateOnDemand%2A>プロパティです。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.Web.UI.WebControls.TreeNode>を参照してください、<xref:System.Web.UI.WebControls.TreeNode.%23ctor%2A>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、次のコード例のフレームを設定する方法を示します。  
+  
+ [!code-aspx-csharp[TreeViewFrameSet#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeViewFrameSet/CS/framecs.aspx#1)]
+ [!code-aspx-vb[TreeViewFrameSet#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeViewFrameSet/VB/framevb.aspx#1)]  
+  
+ 次のコード例は、宣言構文を使用して作成する方法を示します<xref:System.Web.UI.WebControls.TreeNode>内のオブジェクト、<xref:System.Web.UI.WebControls.TreeView>コントロール。 この例を使用して、前の例のフレーム セット内の目次を表示します。  
+  
+ [!code-aspx-csharp[TreeViewFrameExample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeViewFrameExample/CS/treeviewframecs.aspx#1)]
+ [!code-aspx-vb[TreeViewFrameExample#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeViewFrameExample/VB/treeviewframevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TreeNode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNode.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.TreeNode" />クラス テキストまたは値がない場合。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.TreeNode>クラスの既定値を使用します。  
+  
+> [!NOTE]
+>  このコンス トラクターを使用する場合、すべてのプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクトは、既定値に設定します。 オブジェクトを作成した後、必要に応じて、プロパティを設定することを確認します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、このコンス トラクターを使用して動的にノードを追加する方法を示します、<xref:System.Web.UI.WebControls.TreeView>コントロール。  
+  
+ [!code-aspx-csharp[TreeNodeCtor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeCtor/CS/treenodectorcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeCtor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeCtor/VB/treenodectorvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TreeNode (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNode.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">表示されるテキスト、<see cref="T:System.Web.UI.WebControls.TreeView" />ノードのコントロールです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.TreeNode" />クラス、指定したテキストを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.TreeNode>クラスで指定されたテキストを使用して、`text`パラメーター。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.WebControls.TreeNode>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.TreeNode.Text%2A>|`text` パラメーターの値。|  
+  
+   
+  
+## Examples  
+ 次のコード例は、このコンス トラクターを使用して動的にノードを追加する方法を示します、<xref:System.Web.UI.WebControls.TreeView>コントロール。  
+  
+ [!code-aspx-csharp[TreeNodeCtor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeCtor/CS/treenodectorcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeCtor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeCtor/VB/treenodectorvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TreeNode (string text, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNode.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">表示されるテキスト、<see cref="T:System.Web.UI.WebControls.TreeView" />ノードのコントロールです。</param>
+        <param name="value">ポストバック イベントを処理するために使用されるデータなど、ノードに関連付けられている補足データ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.TreeNode" />クラスの指定したテキストと値を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.TreeNode>クラスのテキストとで指定された値を使用して、`text`と`value`パラメーター、それぞれします。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.WebControls.TreeNode>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.TreeNode.Text%2A>|`text` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.TreeNode.Value%2A>|`value` パラメーターの値。|  
+  
+   
+  
+## Examples  
+ 次のコード例は、このコンス トラクターを使用して動的にノードを追加する方法を示します、<xref:System.Web.UI.WebControls.TreeView>コントロール。  
+  
+ [!code-aspx-csharp[TreeNodeCtor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeCtor/CS/treenodectorcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeCtor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeCtor/VB/treenodectorvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TreeNode (System.Web.UI.WebControls.TreeView owner, bool isRoot);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.TreeView owner, bool isRoot) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNode.#ctor(System.Web.UI.WebControls.TreeView,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Web.UI.WebControls.TreeView" />
+        <Parameter Name="isRoot" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="owner"><see cref="T:System.Web.UI.WebControls.TreeView" />を含む新しい<see cref="T:System.Web.UI.WebControls.TreeNode" />です。</param>
+        <param name="isRoot">
+          <see langword="true" />場合、<see cref="T:System.Web.UI.WebControls.TreeNode" />ルート ノード以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.TreeNode" />クラスの指定したオーナーを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TreeNode (string text, string value, string imageUrl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text, string value, string imageUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNode.#ctor(System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="imageUrl" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">表示されるテキスト、<see cref="T:System.Web.UI.WebControls.TreeView" />ノードのコントロールです。</param>
+        <param name="value">ポストバック イベントを処理するために使用されるデータなど、ノードに関連付けられている補足データ。</param>
+        <param name="imageUrl">ノードの横に表示されるイメージの URL です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.TreeNode" />クラスの値を指定したテキストを使用して、画像の URL。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.TreeNode>クラス、値、テキストを使用して、画像の URL で指定された、 `text`、 `value`、および`imageUrl`パラメーター、それぞれします。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.WebControls.TreeNode>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.TreeNode.Text%2A>|`text` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.TreeNode.Value%2A>|`value` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.TreeNode.ImageUrl%2A>|`imageUrl` パラメーターの値。|  
+  
+   
+  
+## Examples  
+ 次のコード例は、このコンス トラクターを使用して動的にノードを追加する方法を示します、<xref:System.Web.UI.WebControls.TreeView>コントロール。  
+  
+ [!code-aspx-csharp[TreeNodeCtor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeCtor/CS/treenodectorcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeCtor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeCtor/VB/treenodectorvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TreeNode (string text, string value, string imageUrl, string navigateUrl, string target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text, string value, string imageUrl, string navigateUrl, string target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNode.#ctor(System.String,System.String,System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="imageUrl" Type="System.String" />
+        <Parameter Name="navigateUrl" Type="System.String" />
+        <Parameter Name="target" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">表示されるテキスト、<see cref="T:System.Web.UI.WebControls.TreeView" />ノードのコントロールです。</param>
+        <param name="value">ポストバック イベントを処理するために使用されるデータなど、ノードに関連付けられている補足データ。</param>
+        <param name="imageUrl">ノードの横に表示されるイメージの URL です。</param>
+        <param name="navigateUrl">ノードがクリックされたときにリンクする URL です。</param>
+        <param name="target">ターゲット ウィンドウまたはフレームを Web ページの内容を表示するときに、リンク、ノードをクリックします。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.TreeNode" />クラス、指定したテキスト、値、イメージの URL、ナビゲーション URL、およびターゲットを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.TreeNode>クラスのテキスト、値、イメージおよびナビゲーションの Url を使用しで指定したターゲットを表示、 `text`、 `value`、 `imageUrl`、 `navigateUrl`、および`target`パラメーター、それぞれします。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.WebControls.TreeNode>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.TreeNode.Text%2A>|`text` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.TreeNode.Value%2A>|`value` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.TreeNode.ImageUrl%2A>|`imageUrl` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.TreeNode.NavigateUrl%2A>|`navigateUrl` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.TreeNode.Target%2A>|`target` パラメーターの値。|  
+  
+   
+  
+## Examples  
+ 次のコード例は、このコンス トラクターを使用して動的にノードを追加する方法を示します、<xref:System.Web.UI.WebControls.TreeView>コントロール。  
+  
+ [!code-aspx-csharp[TreeNodeCtor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeCtor/CS/treenodectorcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeCtor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeCtor/VB/treenodectorvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Checked">
+      <MemberSignature Language="C#" Value="public bool Checked { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Checked" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNode.Checked" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはノードのチェック ボックスをオンになっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ノードのチェック ボックスがオンの場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ノードが、チェック ボックスが表示されたら、<xref:System.Web.UI.WebControls.TreeNode.Checked%2A>チェック ボックスをオンになっているかどうかを指定するプロパティは通常使用されます。 ノードが自動的に追加するノードに関連付けられているチェック ボックスがオンの場合、<xref:System.Web.UI.WebControls.TreeView.CheckedNodes%2A>のコレクション、<xref:System.Web.UI.WebControls.TreeView>コントロール。 <xref:System.Web.UI.WebControls.TreeNode.Checked%2A>プロパティは、チェック ボックスをオンになっているかどうかを決定するも使用できます。  
+  
+> [!NOTE]
+>  内の各ノードを決定する方が一般的である、<xref:System.Web.UI.WebControls.TreeView>コントロールを反復処理して選択するチェック ボックスがある、<xref:System.Web.UI.WebControls.TreeView.CheckedNodes%2A>コレクション。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNode.Checked%2A>プロパティ ノードのチェック ボックスをオンになっているかどうかを指定します。 ノードのチェック ボックスをオンの状態に 1 つの深さを初期化します。 この例を正しく動作する Newsgroup.xml をという名前のファイルに以下のサンプル XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[TreeNodeChecked#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeChecked/CS/treenodecheckedcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeChecked#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeChecked/VB/treenodecheckedvb.aspx#1)]  
+  
+ 次のコードは、前の例のサンプル XML データです。  
+  
+```  
+<category name="news.microsoft.com">  
+    <group name="microsoft.public.dotnet.framework.aspnet"/>  
+    <group name="microsoft.public.dotnet.framework.aspnet.mobile"/>  
+    <group name="microsoft.public.dotnet.framework.aspnet.webservices"/>  
+</category>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChildNodes">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.TreeNodeCollection ChildNodes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.TreeNodeCollection ChildNodes" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNode.ChildNodes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerDefaultProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TreeNodeCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.TreeNodeCollection" />を現在のノードの直下の子ノードを含むコレクション。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.TreeNodeCollection" />現在のノードの直下の子ノードを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNode.ChildNodes%2A>を取得するプロパティ、<xref:System.Web.UI.WebControls.TreeNodeCollection>を現在のノードの直下の子ノードを含むコレクション。 このコレクションは、すべての最初のレベルの子ノードを反復処理するか、現在のノードの特定の最初のレベルの子ノードにアクセスするによく使用されます。  
+  
+ <xref:System.Web.UI.WebControls.TreeNode.ChildNodes%2A>プロパティは、最初のレベルの子ノード内の現在のノードをプログラムで管理するも使用できます。 追加、挿入、削除、および取得<xref:System.Web.UI.WebControls.TreeNode>コレクションからオブジェクト。 コレクションへの更新が自動的に反映されます、 <xref:System.Web.UI.WebControls.TreeView> [次へ] のページが更新された日時を制御します。  
+  
+ ツリーの下層さらに、子ノードにアクセスするには、使用、<xref:System.Web.UI.WebControls.TreeNode.ChildNodes%2A>ノードのプロパティに次のレベルの子ノードのレベルを下へ移動します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNode.ChildNodes%2A>プロパティをツリーを走査します。  
+  
+ [!code-aspx-csharp[TreeNodeCollectionCount#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeCollectionCount/CS/treenodecollectioncountcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeCollectionCount#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeCollectionCount/VB/treenodecollectioncountvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="protected virtual object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNode.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを作成、 <see cref="T:System.Web.UI.WebControls.TreeNode" /> 、現在のプロパティを持つクラス<see cref="T:System.Web.UI.WebControls.TreeNode" />インスタンス。</summary>
+        <returns>新しいインスタンスを<see cref="T:System.Web.UI.WebControls.TreeNode" />、現在のプロパティを持つ<see cref="T:System.Web.UI.WebControls.TreeNode" />インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これはヘルパー メソッドをサポートする、<xref:System.ICloneable>インターフェイスによって実装<xref:System.Web.UI.WebControls.TreeNode>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Collapse">
+      <MemberSignature Language="C#" Value="public void Collapse ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Collapse() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNode.Collapse" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のツリー ノードを折りたたみます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNode.Collapse%2A>を簡単に、現在のノードを折りたたむメソッドです。  
+  
+> [!NOTE]
+>  代わりに、設定することも、<xref:System.Web.UI.WebControls.TreeNode.Expanded%2A>プロパティを`false`です。  
+  
+ 現在のノードとそのすべての子ノードを折りたたむには、使用を検討して、<xref:System.Web.UI.WebControls.TreeNode.CollapseAll%2A>メソッドです。  
+  
+ <xref:System.Web.UI.WebControls.TreeView.CollapseAll%2A>ツリー全体のすべてのノードを折りたたみます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNode.Collapse%2A>をプログラム内のノードを折りたたむメソッド、<xref:System.Web.UI.WebControls.TreeView>コントロール。 この例を正しく動作する Book.xml をという名前のファイルに以下のサンプル XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[TreeNodeExpand#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeExpand/CS/treenodeexpandcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeExpand#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeExpand/VB/treenodeexpandvb.aspx#1)]  
+  
+ 次のコードは、前の例のサンプル XML データです。  
+  
+```  
+<Book Title="Book Title">  
+    <Chapter Heading="Chapter 1">  
+        <Section Heading="Section 1">  
+        </Section>  
+        <Section Heading="Section 2">  
+        </Section>  
+    </Chapter>  
+    <Chapter Heading="Chapter 2">  
+        <Section Heading="Section 1">  
+        </Section>  
+    </Chapter>  
+</Book>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CollapseAll">
+      <MemberSignature Language="C#" Value="public void CollapseAll ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CollapseAll() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNode.CollapseAll" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のノードとそのすべての子ノードを折りたたみます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNode.CollapseAll%2A>を簡単に、現在のノードとそのすべての子ノードを折りたたむメソッドです。  
+  
+> [!NOTE]
+>  代わりに、設定することも、<xref:System.Web.UI.WebControls.TreeNode.Expanded%2A>プロパティの現在のノードとする場合は、その子ノードの各`false`です。  
+  
+ 現在のノードのみを折りたたむには、するには、使用を検討して、<xref:System.Web.UI.WebControls.TreeNode.Collapse%2A>メソッドです。  
+  
+ <xref:System.Web.UI.WebControls.TreeView.CollapseAll%2A>ツリー全体のすべてのノードを折りたたみます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNode.CollapseAll%2A>メソッドをプログラムでノードと内のすべての子ノードを折りたたむ、<xref:System.Web.UI.WebControls.TreeView>コントロール。 この例を正しく動作する Book.xml をという名前のファイルに以下のサンプル XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[TreeNodeExpandAll#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeExpandAll/CS/treenodeexpandallcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeExpandAll#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeExpandAll/VB/treenodeexpandallvb.aspx#1)]  
+  
+ 次のコードは、前の例のサンプル XML データです。  
+  
+```  
+<Book Title="Book Title">  
+    <Chapter Heading="Chapter 1">  
+        <Section Heading="Section 1">  
+        </Section>  
+        <Section Heading="Section 2">  
+        </Section>  
+    </Chapter>  
+    <Chapter Heading="Chapter 2">  
+        <Section Heading="Section 1">  
+        </Section>  
+    </Chapter>  
+</Book>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataBound">
+      <MemberSignature Language="C#" Value="public bool DataBound { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DataBound" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNode.DataBound" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ バインディングによって、ノードが作成されたかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />データ バインディングによって、ノードが作成された場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.TreeNode.DataBound%2A>プロパティを使用して、プログラムによって、ノードがデータ バインドによって作成されたかどうかを確認します。 設定するときに、同じノードには、動的および静的なコンテンツを混在させることはできません、ためこのプロパティは通常使用、<xref:System.Web.UI.WebControls.TreeView>ノードが静的なコンテンツを含むかどうかを決定するには、動的に制御します。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataItem">
+      <MemberSignature Language="C#" Value="public object DataItem { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DataItem" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNode.DataItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールにバインドされているデータ項目を取得します。</summary>
+        <value>A<see cref="T:System.Object" />コントロールにバインドされているデータ項目を表すです。 既定値は<see langword="null" />ノードがどのデータ項目にバインドされていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.TreeView>コントロールがなどのデータ ソースにバインドが、<xref:System.Web.UI.WebControls.XmlDataSource>オブジェクト、このプロパティがこの特定のノードにバインドされているデータ アイテムに設定します。 このプロパティはデータ項目の値にアクセスする一般的な使用します。  
+  
+> [!NOTE]
+>  このプロパティは、データ バインディングが発生した後にのみ使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataPath">
+      <MemberSignature Language="C#" Value="public string DataPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataPath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNode.DataPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ノードにバインドされたデータへのパスを取得します。</summary>
+        <value>データへのパスは、ノードにバインドされます。 この値が、階層的なデータ ソース コントロールには、<see cref="T:System.Web.UI.WebControls.TreeView" />コントロールがバインドされています。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.TreeNode.DataPath%2A>を呼び出すときに、プロパティの値が使用される一般的、<xref:System.Web.UI.IHierarchicalDataSource.GetHierarchicalView%2A?displayProperty=nameWithType>データへのパスを指定するメソッドが、現在のノードにバインドします。 このメソッドを返します、<xref:System.Web.UI.HierarchicalDataSourceView?displayProperty=nameWithType>指定したパスにデータを含むオブジェクト。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Depth">
+      <MemberSignature Language="C#" Value="public int Depth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Depth" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNode.Depth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ノードの深さを取得します。</summary>
+        <value>ノードの深さです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNode.Depth%2A>プロパティをノードの深さを判断します。 深さは、ノードとルート ノード間の階層のレベル数を表します。 たとえば、ルート ノードが深さ 0 です。 ルート ノードの子は、1 つ、およびなの深さを持っています。  
+  
+   
+  
+## Examples  
+ 次のコード例で使用方法、<xref:System.Web.UI.WebControls.TreeNode.Depth%2A>プロパティをノードの深さを判断します。 すべてのノードを選択した状態に 1 つの深さを初期化します。 この例を正しく動作する Newsgroup.xml をという名前のファイルに以下のサンプル XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[TreeNodeChecked#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeChecked/CS/treenodecheckedcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeChecked#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeChecked/VB/treenodecheckedvb.aspx#1)]  
+  
+ 次のコードは、前の例のサンプル XML データです。  
+  
+```  
+<category name="news.microsoft.com">  
+    <group name="microsoft.public.dotnet.framework.aspnet"/>  
+    <group name="microsoft.public.dotnet.framework.aspnet.mobile"/>  
+    <group name="microsoft.public.dotnet.framework.aspnet.webservices"/>  
+</category>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Expand">
+      <MemberSignature Language="C#" Value="public void Expand ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Expand() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNode.Expand" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のツリー ノードを展開します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNode.Expand%2A>メソッドを簡単に、現在のノードを展開します。  
+  
+> [!NOTE]
+>  代わりに、設定することも、<xref:System.Web.UI.WebControls.TreeNode.Expanded%2A>プロパティを`true`です。  
+  
+ 現在のノードとそのすべての子ノードを展開するには、使用を検討して、<xref:System.Web.UI.WebControls.TreeNode.ExpandAll%2A>メソッドです。  
+  
+ <xref:System.Web.UI.WebControls.TreeView.ExpandAll%2A>ツリー全体のすべてのノードを展開します。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNode.Expand%2A>プログラム内のノードを展開する方法、<xref:System.Web.UI.WebControls.TreeView>コントロール。 この例を正しく動作する Book.xml をという名前のファイルに以下のサンプル XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[TreeNodeExpand#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeExpand/CS/treenodeexpandcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeExpand#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeExpand/VB/treenodeexpandvb.aspx#1)]  
+  
+ 次のコードは、前の例のサンプル XML データです。  
+  
+```  
+<Book Title="Book Title">  
+    <Chapter Heading="Chapter 1">  
+        <Section Heading="Section 1">  
+        </Section>  
+        <Section Heading="Section 2">  
+        </Section>  
+    </Chapter>  
+    <Chapter Heading="Chapter 2">  
+        <Section Heading="Section 1">  
+        </Section>  
+    </Chapter>  
+</Book>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpandAll">
+      <MemberSignature Language="C#" Value="public void ExpandAll ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ExpandAll() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNode.ExpandAll" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のノードとそのすべての子ノードを展開します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNode.ExpandAll%2A>メソッドを簡単に、現在のノードとそのすべての子ノードを展開します。  
+  
+> [!NOTE]
+>  代わりに、設定することも、<xref:System.Web.UI.WebControls.TreeNode.Expanded%2A>プロパティの現在のノードとする場合は、その子ノードの各`true`です。  
+  
+ 現在のノードだけを展開するには、使用を検討して、<xref:System.Web.UI.WebControls.TreeNode.Expand%2A>メソッドです。  
+  
+ <xref:System.Web.UI.WebControls.TreeView.ExpandAll%2A>ツリー全体のすべてのノードを展開します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNode.ExpandAll%2A>プログラムでノードと内のすべての子ノードを展開する方法、<xref:System.Web.UI.WebControls.TreeView>コントロール。 この例を正しく動作する Book.xml をという名前のファイルに以下のサンプル XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[TreeNodeExpandAll#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeExpandAll/CS/treenodeexpandallcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeExpandAll#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeExpandAll/VB/treenodeexpandallvb.aspx#1)]  
+  
+ 次のコードは、前の例のサンプル XML データです。  
+  
+```  
+<Book Title="Book Title">  
+    <Chapter Heading="Chapter 1">  
+        <Section Heading="Section 1">  
+        </Section>  
+        <Section Heading="Section 2">  
+        </Section>  
+    </Chapter>  
+    <Chapter Heading="Chapter 2">  
+        <Section Heading="Section 1">  
+        </Section>  
+    </Chapter>  
+</Book>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Expanded">
+      <MemberSignature Language="C#" Value="public Nullable&lt;bool&gt; Expanded { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; Expanded" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNode.Expanded" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Nullable`1&lt;System.Boolean&gt;), "")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはノードが展開されているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、ノードを展開すると、<see langword="false" />ノードが展開されていない場合または<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNode.Expanded%2A>プロパティを指定するか、ノードが展開されているかどうかを判断します。  
+  
+ 展開し、呼び出すことによって、ノードを折りたたむことができます、<xref:System.Web.UI.WebControls.TreeNode.Expand%2A>と<xref:System.Web.UI.WebControls.TreeNode.Collapse%2A>メソッド、それぞれします。 展開し、呼び出すことによって、ノードとそのすべての子ノードを折りたたむことができます、<xref:System.Web.UI.WebControls.TreeNode.ExpandAll%2A>と<xref:System.Web.UI.WebControls.TreeNode.CollapseAll%2A>メソッド、それぞれします。  
+  
+ 以降、<xref:System.Web.UI.WebControls.TreeNode.Expanded%2A>プロパティは、3 つの状態プロパティを次の c# のコード スニペットに、コンパイル エラーが発生します。  
+  
+```  
+protected void TreeView1_SelectedNodeChanged(object sender, EventArgs e)  
+{  
+if (TreeView1.Nodes[0].Expanded)  
+{  
+// some work here   
+}  
+}  
+```  
+  
+ VB.Net が暗黙的にキャスト中に、`Boolean`値を`NullableBoolean`C# ではありません。 そのため、明示的にプロパティの状態をチェックするベスト プラクティスを勧めします。 たとえば、Visual Basic および C# の場合は、次のコード例で明示的の値がテスト、<xref:System.Web.UI.WebControls.TreeNode.Expanded%2A>プロパティです。  
+  
+ Visual Basic のコード例を次の値を明示的にテストする、<xref:System.Web.UI.WebControls.TreeNode.Expanded%2A>プロパティです。 この例、<xref:System.Web.UI.WebControls.TreeNode.Expanded%2A>プロパティに設定されている`True`です。 そのため`Nothing`と`False`フォール スルー、`If`ステートメントです。  
+  
+```  
+If TreeView1.Nodes(0).Expanded = True Then 'some work hereEnd IF  
+```  
+  
+ この c# コード例は、の値を明示的にテスト、<xref:System.Web.UI.WebControls.TreeNode.Expanded%2A>プロパティです。 この例、<xref:System.Web.UI.WebControls.TreeNode.Expanded%2A>プロパティに設定されている`True`です。 そのため`Null`と`False`フォール スルー、`If`ステートメントです。  
+  
+```  
+if( TreeView1.Nodes[0].Expanded == true ) { //some work here}  
+```  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNode.Expanded%2A>プロパティをプログラムでノードを展開します。 すべてのノードを展開した状態に 1 つの深さを初期化します。 ルート ノードを展開するとその子ノードが既に展開されていることを確認します。 この例を正しく動作する Book.xml をという名前のファイルに以下のサンプル XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[TreeNodeExpanded#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeExpanded/CS/treenodeexpandedcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeExpanded#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeExpanded/VB/treenodeexpandedvb.aspx#1)]  
+  
+ 次のコードは、前の例のサンプル XML データです。  
+  
+```  
+<Book Title="Book Title">  
+    <Chapter Heading="Chapter 1">  
+        <Section Heading="Section 1">  
+        </Section>  
+        <Section Heading="Section 2">  
+        </Section>  
+    </Chapter>  
+    <Chapter Heading="Chapter 2">  
+        <Section Heading="Section 1">  
+        </Section>  
+    </Chapter>  
+</Book>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageToolTip">
+      <MemberSignature Language="C#" Value="public string ImageToolTip { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ImageToolTip" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNode.ImageToolTip" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはノードの横に表示されるイメージのツールヒントのテキストを設定します。</summary>
+        <value>ノードの横に表示されるイメージのツールヒント テキスト。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ノードの横にあるイメージが表示される場合 (ときに、<xref:System.Web.UI.WebControls.TreeNode.ImageUrl%2A>プロパティが設定)、使用して、<xref:System.Web.UI.WebControls.TreeNode.ImageToolTip%2A>プロパティをユーザーが画像の上にマウス ポインターを置いたときに、表示されるツールヒントを指定します。 指定したテキストは、支援テクノロジ デバイスでコントロールを使いやすくするために使用できるイメージの説明を提供します。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNode.ImageToolTip%2A>プロパティ ノードの横に表示されるイメージのツールヒントのテキストを指定します。 正常に動作するこの例では、独自のイメージを指定する必要があります。  
+  
+ [!code-aspx-csharp[TreeNodeImageToolTip#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeImageToolTip/CS/treenodeimagetooltipcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeImageToolTip#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeImageToolTip/VB/treenodeimagetooltipvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageUrl">
+      <MemberSignature Language="C#" Value="public string ImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNode.ImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.ImageUrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはノードの横に表示されるイメージの URL を設定します。</summary>
+        <value>ノードの横に表示されるカスタム イメージの URL です。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNode.ImageUrl%2A>で現在のノードにカスタム イメージを指定するプロパティ、<xref:System.Web.UI.WebControls.TreeView>コントロール。 このイメージは、ノードの横に表示されますが、クライアントのブラウザーでサポートされている限り、任意のファイル形式 (.jpg、.gif、.bmp など) することができます。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNode.ImageUrl%2A>ノードにカスタム イメージを提供するプロパティです。 この例を正しく動作する Book.xml をという名前のファイルに以下のサンプル XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[TreeViewTreeNodeDataBound#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeViewTreeNodeDataBound/CS/treeviewtreenodedataboundcs.aspx#1)]
+ [!code-aspx-vb[TreeViewTreeNodeDataBound#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeViewTreeNodeDataBound/VB/treeviewtreenodedataboundvb.aspx#1)]  
+  
+ 次のコードは、前の例のサンプル XML データです。  
+  
+```  
+<Book Title="Book Title">  
+    <Chapter Heading="Chapter 1">  
+        <Section Heading="Section 1">  
+        </Section>  
+        <Section Heading="Section 2">  
+        </Section>  
+    </Chapter>  
+    <Chapter Heading="Chapter 2">  
+        <Section Heading="Section 1">  
+        </Section>  
+    </Chapter>  
+</Book>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTrackingViewState">
+      <MemberSignature Language="C#" Value="protected bool IsTrackingViewState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsTrackingViewState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNode.IsTrackingViewState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ノードがそのビュー ステートの変更を保存しているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />コントロールがその状態を保存するマークされている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadViewState">
+      <MemberSignature Language="C#" Value="protected virtual void LoadViewState (object state);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void LoadViewState(object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNode.LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="state"><see cref="T:System.Object" />を表すノードの状態。</param>
+        <summary>ノードの以前に保存したビューステートを読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.TreeNode.LoadViewState%2A>ノードの以前に保存したビューステートの読み込みに使用されるヘルパー メソッド  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NavigateUrl">
+      <MemberSignature Language="C#" Value="public string NavigateUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NavigateUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNode.NavigateUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.UrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはノードをクリックすると移動先の URL を設定します。</summary>
+        <value>ノードがクリックされたときに移動する URL です。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ノードのテキストを 2 つのモードのいずれかで指定できます。 選択モードまたはナビゲーション モード。 既定では、ノードは選択モードです。 ノードをナビゲーション モードにする設定、そのノードの<xref:System.Web.UI.WebControls.TreeNode.NavigateUrl%2A>プロパティを空の文字列以外の値にします。  
+  
+ ノードは、ナビゲーション モードでは、選択範囲のすべてのイベントがそのノードに対して無効になります。 ナビゲーション モードでノードをクリックすると、ユーザーが指定された URL にリンクします。 必要に応じて設定することができます、<xref:System.Web.UI.WebControls.TreeNode.Target%2A>プロパティ ウィンドウまたはリンクされたコンテンツを表示するフレームを指定します。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、次のコード例のフレームを設定する方法を示します。  
+  
+ [!code-aspx-csharp[TreeViewFrameSet#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeViewFrameSet/CS/framecs.aspx#1)]
+ [!code-aspx-vb[TreeViewFrameSet#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeViewFrameSet/VB/framevb.aspx#1)]  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNode.NavigateUrl%2A>プロパティ ノードがクリックされたときにリンクする URL を指定します。 この例を使用して、前の例のフレーム セット内の目次を表示します。  
+  
+ [!code-aspx-csharp[TreeViewFrameExample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeViewFrameExample/CS/treeviewframecs.aspx#1)]
+ [!code-aspx-vb[TreeViewFrameExample#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeViewFrameExample/VB/treeviewframevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parent">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.TreeNode Parent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.TreeNode Parent" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNode.Parent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TreeNode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のノードの親ノードを取得します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.TreeNode" />を表す、現在のノードの親ノードです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.TreeNode.Parent%2A>プロパティから返される、<xref:System.Web.UI.WebControls.TreeNode>を現在のノードの親ノードを表すオブジェクト。 親ノードの確認や、親ノードのプロパティにアクセスするよく使用されます。  
+  
+> [!NOTE]
+>  ルート ノードには、親ノードがありません。  
+  
+ 現在のノードの子ノードにアクセスするには、使用、<xref:System.Web.UI.WebControls.TreeNode.ChildNodes%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNode.Parent%2A>プロパティへのアクセスを<xref:System.Web.UI.WebControls.TreeNode.Text%2A>の現在のノードの親ノードのプロパティです。  
+  
+ [!code-aspx-csharp[TreeNodeParent#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeParent/CS/treenodeparentcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeParent#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeParent/VB/treenodeparentvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PopulateOnDemand">
+      <MemberSignature Language="C#" Value="public bool PopulateOnDemand { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PopulateOnDemand" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNode.PopulateOnDemand" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはノードが動的に読み込まれるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ノードを動的に設定するにはそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合によっては、データのサイズまたはユーザーの入力に依存するカスタム コンテンツのためのツリー構造を静的に事前に定義することは実用的ではありません。 このため、<xref:System.Web.UI.WebControls.TreeView>コントロールは、動的なノードをサポートしています。 ノードの<xref:System.Web.UI.WebControls.TreeNode.PopulateOnDemand%2A>プロパティに設定されている`true`、そのノードは、ノードが展開されている場合、ポストバック イベントを介して実行時に設定されます。 ノードを動的に設定するノードのメンバーを追加するイベント ハンドラー メソッドを定義する必要があります、<xref:System.Web.UI.WebControls.TreeView.TreeNodePopulate>イベント。  
+  
+ サポートされているブラウザーでは、クライアント側のも利用できます。 これにより、有効にすると、<xref:System.Web.UI.WebControls.TreeView>が原因で、サーバーに投稿する必要が動的にそのノードを展開すると、クライアント上のノードを挿入するコントロール。 クライアント側のノードのカタログ作成の詳細については、次を参照してください。<xref:System.Web.UI.WebControls.TreeView.PopulateNodesFromClient%2A>です。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNode.PopulateOnDemand%2A>ノードが動的に読み込まれることを示すプロパティです。  
+  
+ [!code-aspx-csharp[TreeViewPopulateNodesFromClient#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeViewPopulateNodesFromClient/CS/treeviewpopulatenodesfromclientcs.aspx#1)]
+ [!code-aspx-vb[TreeViewPopulateNodesFromClient#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeViewPopulateNodesFromClient/VB/treeviewpopulatenodesfromclientvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderPostText">
+      <MemberSignature Language="C#" Value="protected virtual void RenderPostText (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void RenderPostText(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNode.RenderPostText(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">Web ページにコンテンツを書き込むために使用する出力ストリームを表す <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary>ノードに追加の表示を追加するコントロールを使用できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ノードが表示された後に、追加の表示を追加するコントロールの開発者によってオーバーライドできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderPreText">
+      <MemberSignature Language="C#" Value="protected virtual void RenderPreText (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void RenderPreText(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNode.RenderPreText(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">Web ページにコンテンツを書き込むために使用する出力ストリームを表す <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary>ノードに追加の表示を追加するコントロールを使用できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ノードが表示される前に追加の表示を追加するコントロールの開発者によってオーバーライドできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveViewState">
+      <MemberSignature Language="C#" Value="protected virtual object SaveViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object SaveViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNode.SaveViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ノードの現在のビューステートを保存します。</summary>
+        <returns><see cref="T:System.Object" />ノードの保存された状態を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.TreeNode.SaveViewState%2A>メソッドは、その状態を保存するノードと呼ばれるヘルパー メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Select">
+      <MemberSignature Language="C#" Value="public void Select ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Select() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNode.Select" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のノードを選択、<see cref="T:System.Web.UI.WebControls.TreeView" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNode.Select%2A>で現在のノードを選択する方法、<xref:System.Web.UI.WebControls.TreeView>コントロール。  
+  
+ **注**代わりに、選択することも、現在のノードを設定して、<xref:System.Web.UI.WebControls.TreeNode.Selected%2A>プロパティを`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNode.Select%2A>でノードを選択する方法、<xref:System.Web.UI.WebControls.TreeView>コントロール。  
+  
+ [!code-aspx-csharp[TreeNodeSelected2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeSelected2/CS/treenodeselected2cs.aspx#1)]
+ [!code-aspx-vb[TreeNodeSelected2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeSelected2/VB/treenodeselected2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectAction">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.TreeNodeSelectAction SelectAction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.TreeNodeSelectAction SelectAction" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNode.SelectAction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TreeNodeSelectAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはノードが選択されているときに発生するイベントを設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.TreeNodeSelectAction" /> 値のいずれか。 既定値は、<see langword="TreeNodeSelectAction.Select" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内のノードのテキスト、<xref:System.Web.UI.WebControls.TreeView>コントロールで 2 つのモードのいずれかであることができます。 選択モードまたはナビゲーション モード。 既定では、ノードは選択モードです。 ノードをナビゲーション モードにする設定、そのノードの<xref:System.Web.UI.WebControls.TreeNode.NavigateUrl%2A>プロパティを空の文字列以外の値 ("") です。 ノードを選択モードにする設定、そのノードの<xref:System.Web.UI.WebControls.TreeNode.NavigateUrl%2A>プロパティを空の文字列にします。  
+  
+> [!NOTE]
+>  ノードは、ナビゲーション モードでは、選択項目のイベントがそのノードの無効になります。 ノードをクリックすると、指定した URL ではなくサーバーにページ送信とイベントを発生させるのにユーザーに指示されます。  
+  
+ ノードで選択モードを使用して、<xref:System.Web.UI.WebControls.TreeNode.SelectAction%2A>プロパティ ノードが選択されているときに発生するイベントまたはイベントを指定します。 利用可能なオプションの一覧を次の表に示します。  
+  
+|選択範囲の操作|説明|  
+|----------------------|-----------------|  
+|`TreeNodeSelectAction.Expand`|ノードの展開と折りたたみを切り替えます。 発生させる、<xref:System.Web.UI.WebControls.TreeView.TreeNodeExpanded>イベントまたは<xref:System.Web.UI.WebControls.TreeView.TreeNodeCollapsed>として適切なイベントです。|  
+|`TreeNodeSelectAction.None`|ノードが選択されているときにイベントを発生させません。|  
+|`TreeNodeSelectAction.Select`|発生させる、<xref:System.Web.UI.WebControls.TreeView.SelectedNodeChanged>イベント ノードを選択するとします。|  
+|`TreeNodeSelectAction.SelectExpand`|両方を生成、<xref:System.Web.UI.WebControls.TreeView.SelectedNodeChanged>と<xref:System.Web.UI.WebControls.TreeView.TreeNodeExpanded>イベント ノードを選択するとします。 ノードのみを展開、折りたたむことはできません。|  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.TreeView.HoverNodeStyle%2A>ノードのプロパティはレンダリングされません、<xref:System.Web.UI.WebControls.TreeNode.SelectAction%2A>プロパティに設定`TreeNodeSelectAction.None`です。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNode.SelectAction%2A>プロパティ ノードがクリックされたときに発生するイベントを指定します。  
+  
+ [!code-aspx-csharp[TreeViewPopulateNodesFromClient#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeViewPopulateNodesFromClient/CS/treeviewpopulatenodesfromclientcs.aspx#1)]
+ [!code-aspx-vb[TreeViewPopulateNodesFromClient#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeViewPopulateNodesFromClient/VB/treeviewpopulatenodesfromclientvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Selected">
+      <MemberSignature Language="C#" Value="public bool Selected { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Selected" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNode.Selected" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはノードが選択されているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、ノードを選択します。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNode.Selected%2A>プロパティを指定するか、ノードが選択されているかどうかを判断します。  
+  
+> [!NOTE]
+>  使用する方が一般的では、ノードが選択されているかどうかを決定するプロパティを使用できますが、<xref:System.Web.UI.WebControls.TreeView.SelectedNode%2A>プロパティです。  
+  
+ 一度に 1 つのノードを選択することができます、<xref:System.Web.UI.WebControls.TreeView>このプロパティを使用する場合を制御します。  
+  
+> [!NOTE]
+>  代わりに、選択することも、ノードを使用して、<xref:System.Web.UI.WebControls.TreeNode.Select%2A>メソッドです。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNode.Selected%2A>内のノードを選択するプロパティを<xref:System.Web.UI.WebControls.TreeView>コントロール。  
+  
+ [!code-aspx-csharp[TreeNodeSelected2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeSelected2/CS/treenodeselected2cs.aspx#1)]
+ [!code-aspx-vb[TreeNodeSelected2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeSelected2/VB/treenodeselected2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowCheckBox">
+      <MemberSignature Language="C#" Value="public Nullable&lt;bool&gt; ShowCheckBox { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; ShowCheckBox" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNode.ShowCheckBox" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Nullable`1&lt;System.Boolean&gt;), "")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはノードの横にあるチェック ボックスを表示するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />チェック ボックスを表示するにはそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.TreeView>コントロールでは、ノードのイメージの横にあるチェック ボックスを表示することができます。 使用して、<xref:System.Web.UI.WebControls.TreeNode.ShowCheckBox%2A>プロパティを表示または現在のノードのチェック ボックスを非表示にします。  
+  
+ ただし、 <xref:System.Web.UI.WebControls.TreeNode.ShowCheckBox%2A>  チェック ボックスを表示するプロパティを使用することができます、使用する方が一般的、<xref:System.Web.UI.WebControls.TreeView.ShowCheckBoxes%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Web.UI.WebControls.TreeView>コントロール。 <xref:System.Web.UI.WebControls.TreeView.ShowCheckBoxes%2A?displayProperty=nameWithType>プロパティ、ただし、プロパティで指定されたすべてのノード型そのため、<xref:System.Web.UI.WebControls.TreeNode.ShowCheckBox%2A?displayProperty=nameWithType>プロパティは、個々 のノードの設定をオーバーライドによく使用します。  
+  
+ 以降、<xref:System.Web.UI.WebControls.TreeView.ShowCheckBoxes%2A?displayProperty=nameWithType>プロパティは、3 つの状態プロパティを次の c# のコード スニペットに、コンパイル エラーが発生します。  
+  
+```  
+protected void TreeView1_SelectedNodeChanged(object sender, EventArgs e)  
+{  
+if (TreeView1.Nodes[0].Expanded)  
+{  
+// some work here   
+}  
+}  
+```  
+  
+ VB.Net が暗黙的にキャスト中に、`Boolean`値を`NullableBoolean`C# ではありません。 そのため、明示的にプロパティの状態をチェックするベスト プラクティスを勧めします。 たとえば、Visual Basic および C# の場合は、次のコード例で明示的の値がテスト、<xref:System.Web.UI.WebControls.TreeNode.Expanded%2A>プロパティです。  
+  
+ Visual Basic のコード例を次の値を明示的にテストする、<xref:System.Web.UI.WebControls.TreeNode.Expanded%2A>プロパティです。 この例、<xref:System.Web.UI.WebControls.TreeNode.Expanded%2A>プロパティに設定されている`True`です。 そのため`Nothing`と`False`フォール スルー、`If`ステートメントです。  
+  
+```  
+If TreeView1.Nodes(0).Expanded = True Then 'some work hereEnd IF  
+```  
+  
+ この c# コード例は、の値を明示的にテスト、<xref:System.Web.UI.WebControls.TreeNode.Expanded%2A>プロパティです。 この例、<xref:System.Web.UI.WebControls.TreeNode.Expanded%2A>プロパティに設定されている`True`です。 そのため`Null`と`False`フォール スルー、`If`ステートメントです。  
+  
+```  
+if( TreeView1.Nodes[0].Expanded == true ) { //some work here}  
+```  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNode.ShowCheckBox%2A>プロパティをプログラムによって表示/非表示でノードのチェック ボックス、<xref:System.Web.UI.WebControls.TreeView>コントロール。 この例を正しく動作する Book.xml をという名前のファイルに以下のサンプル XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[TreeNodeShowCheckBox#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeShowCheckBox/CS/treenodeshowcheckboxcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeShowCheckBox#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeShowCheckBox/VB/treenodeshowcheckboxvb.aspx#1)]  
+  
+ 次のコードは、前の例のサンプル XML データです。  
+  
+```  
+<Book Title="Book Title">  
+    <Chapter Heading="Chapter 1">  
+        <Section Heading="Section 1">  
+        </Section>  
+        <Section Heading="Section 2">  
+        </Section>  
+    </Chapter>  
+    <Chapter Heading="Chapter 2">  
+        <Section Heading="Section 1">  
+        </Section>  
+    </Chapter>  
+</Book>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ICloneable.Clone">
+      <MemberSignature Language="C#" Value="object ICloneable.Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.ICloneable.Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNode.System#ICloneable#Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.TreeNode" /> オブジェクトのコピーを作成します。</summary>
+        <returns><see cref="T:System.Web.UI.WebControls.TreeNode" /> オブジェクトのコピーを表す <see cref="T:System.Object" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.TreeNode.System%23ICloneable%23Clone%2A>メソッドを使って、<xref:System.Web.UI.WebControls.TreeNode>自体のコピーを作成するクラス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.IsTrackingViewState">
+      <MemberSignature Language="C#" Value="bool System.Web.UI.IStateManager.IsTrackingViewState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Web.UI.IStateManager.IsTrackingViewState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNode.System#Web#UI#IStateManager#IsTrackingViewState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Web.UI.IStateManager.IsTrackingViewState" />」をご覧ください。</summary>
+        <value>ノードがそのビュー ステートの変更を保存しているかどうかを示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 使用する場合にのみ、<xref:System.Web.UI.WebControls.TreeNode>にインスタンスをキャスト、<xref:System.Web.UI.IStateManager>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.LoadViewState">
+      <MemberSignature Language="C#" Value="void IStateManager.LoadViewState (object state);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IStateManager.LoadViewState(object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNode.System#Web#UI#IStateManager#LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="state">A<see cref="T:System.Object" />保存されているビュー ステートの値を格納しています。</param>
+        <summary>ノードの以前保存したビューステートを読み込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.SaveViewState">
+      <MemberSignature Language="C#" Value="object IStateManager.SaveViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.Web.UI.IStateManager.SaveViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNode.System#Web#UI#IStateManager#SaveViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ビュー状態の変更を保存、<see cref="T:System.Object" />です。</summary>
+        <returns>ビュー ステートの変化を格納している <see cref="T:System.Object" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.TrackViewState">
+      <MemberSignature Language="C#" Value="void IStateManager.TrackViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IStateManager.TrackViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNode.System#Web#UI#IStateManager#TrackViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ビュー ステートへの変更を追跡するように <see cref="T:System.Web.UI.WebControls.TreeNode" /> オブジェクトに指示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サーバー コントロールでは、このメソッドが呼び出された後、<xref:System.Web.UI.Control.IsTrackingViewState%2A>プロパティから返される`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Target">
+      <MemberSignature Language="C#" Value="public string Target { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Target" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNode.Target" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、ターゲットのウィンドウまたはフレームをノードに関連付けられている Web ページの内容を表示します。</summary>
+        <value>リンクされた Web ページの内容を表示する対象のウィンドウまたはフレーム。 値は、範囲の A ~ Z (大文字)、次の表に示すように、アンダー スコアで始まる特殊な値以外の文字で始まる必要があります。  
+  
+ <list type="table"><listheader><term>対象の値  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term><see langword="_blank" /></term><description>新しいウィンドウ フレームを使用せずにコンテンツをレンダリングします。  
+  
+ </description></item><item><term><see langword="_parent" /></term><description>直前のフレーム セットの親に内容を表示します。  
+  
+ </description></item><item><term><see langword="_search" /></term><description>[検索] ウィンドウの内容を表示します。  
+  
+ </description></item><item><term><see langword="_self" /></term><description>フォーカスのあるフレームのコンテンツをレンダリングします。  
+  
+ </description></item><item><term><see langword="_top" /></term><description>フル ウィンドウ フレームを使用せずにコンテンツをレンダリングします。  
+  
+ </description></item></list><block subset="none" type="note"><para>  
+ 決定する、ブラウザーのマニュアルを確認するかどうか、<see langword="_search" />値はサポートされています。 たとえば、Microsoft Internet Explorer 5.0、以降のサポート、<see langword="_search" />ターゲット値。  
+  
+</para></block>  
+  
+ 既定値は空の文字列 ("") です。フォーカスのあるウィンドウまたはフレームが更新されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNode.Target%2A>ウィンドウまたは Web コンテンツを表示するフレームを指定するプロパティは、そのノードがクリックされたときにノードをリンクします。  
+  
+> [!NOTE]
+>  このプロパティの設定、<xref:System.Web.UI.WebControls.TreeView.Target%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeView>コントロール。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.TreeNode.Target%2A>としてプロパティを表示、`target`属性。 `target`属性`anchor`要素は、XHTML 1.1 ドキュメント型定義で許可されていません。 設定しないでください、<xref:System.Web.UI.WebControls.TreeNode.Target%2A>プロパティ場合に表示される出力、<xref:System.Web.UI.WebControls.TreeNode>オブジェクトは、XHTML 1.1 に準拠したをする必要があります。 詳細については、次を参照してください。 [Visual Studio および ASP.NET で XHTML 標準](http://msdn.microsoft.com/library/1b78d416-66bb-43a5-ac77-c703aab55b97)です。  
+>   
+>  ユーザー補助対応の Web ページを作成するときに使用しないことを強くお勧め、<xref:System.Web.UI.WebControls.TreeNode.Target%2A>を別のウィンドウを対象とするプロパティです。 詳細については、次を参照してください。 [NIB: ASP.NET のユーザー補助](http://msdn.microsoft.com/en-us/9b5f3e05-e88d-4248-a5f4-9e64850fa0ae)です。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、次の例のフレームを設定する方法を示します。  
+  
+ [!code-aspx-csharp[TreeViewFrameSet#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeViewFrameSet/CS/framecs.aspx#1)]
+ [!code-aspx-vb[TreeViewFrameSet#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeViewFrameSet/VB/framevb.aspx#1)]  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNode.Target%2A>プロパティ リンクされたコンテンツを表示するフレームを指定します。 この例を使用して、前の例のフレーム セット内の目次を表示します。  
+  
+ [!code-aspx-csharp[TreeViewFrameExample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeViewFrameExample/CS/treeviewframecs.aspx#1)]
+ [!code-aspx-vb[TreeViewFrameExample#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeViewFrameExample/VB/treeviewframevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNode.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定内のノードに表示されるテキスト、<see cref="T:System.Web.UI.WebControls.TreeView" />コントロール。</summary>
+        <value>内のノードに表示されるテキスト、<see cref="T:System.Web.UI.WebControls.TreeView" />コントロール。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNode.Text%2A>プロパティを指定するか、ノードに表示されるテキストを<xref:System.Web.UI.WebControls.TreeView>コントロール。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.UI.WebControls.TreeNode.Text%2A>プロパティが含まれます`null`、`get`アクセサーの値を返します、<xref:System.Web.UI.WebControls.TreeNode.Value%2A>プロパティです。 場合、<xref:System.Web.UI.WebControls.TreeNode.Value%2A>プロパティが含まれています、 `null`、<xref:System.String.Empty>が返されます。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNode.Text%2A>プロパティ ノードのテキストを指定します。  
+  
+ [!code-aspx-csharp[TreeViewFrameExample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeViewFrameExample/CS/treeviewframecs.aspx#1)]
+ [!code-aspx-vb[TreeViewFrameExample#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeViewFrameExample/VB/treeviewframevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToggleExpandState">
+      <MemberSignature Language="C#" Value="public void ToggleExpandState ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ToggleExpandState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNode.ToggleExpandState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ノードの展開と折りたたみの状態を切り替えます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNode.ToggleExpandState%2A>ノードを展開し、折りたたまれた状態の間で代替するメソッド。 ノードが折りたたまれている場合の呼び出しなど、<xref:System.Web.UI.WebControls.TreeNode.ToggleExpandState%2A>メソッドは、ノードを展開し、その逆です。  
+  
+> [!NOTE]
+>  代わりに、として設定することができます、<xref:System.Web.UI.WebControls.TreeNode.Expanded%2A>プロパティを直接です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNode.ToggleExpandState%2A>のルート ノードを展開し、折りたたまれた状態の間で代替するメソッド、<xref:System.Web.UI.WebControls.TreeView>コントロール。  
+  
+ [!code-aspx-csharp[TreeNodeToggleExpandState#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeToggleExpandState/CS/treenodetoggleexpandstatecs.aspx#1)]
+ [!code-aspx-vb[TreeNodeToggleExpandState#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeToggleExpandState/VB/treenodetoggleexpandstatevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolTip">
+      <MemberSignature Language="C#" Value="public string ToolTip { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ToolTip" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNode.ToolTip" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはノードのツールヒントのテキストを設定します。</summary>
+        <value>ノードのツールヒント テキスト。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNode.ToolTip%2A>プロパティ ノードのツールヒントのテキストを指定します。 ノード上にマウス ポインターを置くと、ツールヒントのテキストが表示されます。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNode.ToolTip%2A>内のノードのツールヒントを指定するプロパティ、<xref:System.Web.UI.WebControls.TreeView>コントロール。  
+  
+ [!code-aspx-csharp[TreeNodeToolTip#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeToolTip/CS/treenodetooltipcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeToolTip#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeToolTip/VB/treenodetooltipvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrackViewState">
+      <MemberSignature Language="C#" Value="protected void TrackViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void TrackViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNode.TrackViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>開始位置を示す追跡ビューステートの保存へと変更、ノードの開始点をマークします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public string Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Value" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNode.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはポストバック イベントを処理するために使用されるデータなど、ノードに関するその他のデータの格納に使用される非表示の値を設定します。</summary>
+        <value>表示されていないノードについての補足データ。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.TreeNode.Value%2A>を補足するプロパティが使用される、<xref:System.Web.UI.WebControls.TreeNode.Text%2A>ノードに関連付けられている追加のデータを格納することによりプロパティです。 この値は、コントロールでは表示されず、一般的にポストバック イベントを処理するためのデータを格納するために使用します。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.UI.WebControls.TreeNode.Value%2A>プロパティが含まれます`null`、`get`アクセサーの値を返します、<xref:System.Web.UI.WebControls.TreeNode.Text%2A>プロパティです。 場合、<xref:System.Web.UI.WebControls.TreeNode.Text%2A>プロパティが含まれています、 `null`、<xref:System.String.Empty>が返されます。  
+  
+> [!NOTE]
+>  同じレベルのノードそれぞれ、一意の値が必要、<xref:System.Web.UI.WebControls.TreeNode.Value%2A>プロパティ以外の場合は、<xref:System.Web.UI.WebControls.TreeView>コントロールが同じ値を持つ同じレベルの異なるノード間で区別できません。 このシナリオでは、ユーザーが、重複する値を持つノードをクリックすると、ノードをで最初に表示、<xref:System.Web.UI.WebControls.TreeView>コントロールを選択します。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNode.Value%2A>キー フィールドを格納するプロパティです。  
+  
+ [!code-aspx-csharp[TreeViewPopulateNodesFromClient#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeViewPopulateNodesFromClient/CS/treeviewpopulatenodesfromclientcs.aspx#1)]
+ [!code-aspx-vb[TreeViewPopulateNodesFromClient#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeViewPopulateNodesFromClient/VB/treeviewpopulatenodesfromclientvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValuePath">
+      <MemberSignature Language="C#" Value="public string ValuePath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ValuePath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNode.ValuePath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルート ノードから現在のノードへのパスを取得します。</summary>
+        <value>ルート ノードから現在のノードへのパスを形成するノードの値のコンマ区切りの一覧。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.TreeNode.ValuePath%2A>プロパティには、ルート ノードから現在のノードへのパスを形成するノードの値のコンマ区切りの一覧が含まれています。 使用して、<xref:System.Web.UI.WebControls.TreeView.PathSeparator%2A>プロパティ ノードの値を区切るために使用する区切り文字を指定します。 引数として渡すまたは個々 の値のリストを解析するときに通常この値は使用、<xref:System.Web.UI.WebControls.TreeView.FindNode%2A>のメソッド、<xref:System.Web.UI.WebControls.TreeView>クラスです。  
+  
+ 表示される値に応じて、<xref:System.Web.UI.WebControls.TreeView>コントロール、区切り文字は、すべての競合を防ぐために変更する必要があります。 たとえば、コンマを区切り文字を設定した場合に表示される値含めることはできませんコンマそれ以外の場合と正確に解析できません、<xref:System.Web.UI.WebControls.TreeNode.ValuePath%2A>プロパティです。  
+  
+> [!NOTE]
+>  同じレベルのノードそれぞれ、一意の値が必要、<xref:System.Web.UI.WebControls.TreeNode.Value%2A>プロパティ以外の場合は、<xref:System.Web.UI.WebControls.TreeView>コントロールが同じ値を持つ同じレベルの異なるノード間で区別できません。 このシナリオでは、ユーザーが、重複する値を持つノードをクリックすると、ノードをで最初に表示、<xref:System.Web.UI.WebControls.TreeView>コントロールを選択します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、解析、<xref:System.Web.UI.WebControls.TreeNode.ValuePath%2A>プロパティです。  
+  
+ [!code-aspx-csharp[TreeViewPathSeparator2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeViewPathSeparator2/CS/treeviewpathseparatorcs.aspx#1)]
+ [!code-aspx-vb[TreeViewPathSeparator2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeViewPathSeparator2/VB/treeviewpathseparatorvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

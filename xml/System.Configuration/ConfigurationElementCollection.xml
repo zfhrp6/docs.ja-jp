@@ -1,0 +1,1468 @@
+<Type Name="ConfigurationElementCollection" FullName="System.Configuration.ConfigurationElementCollection">
+  <TypeSignature Language="C#" Value="public abstract class ConfigurationElementCollection : System.Configuration.ConfigurationElement, System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ConfigurationElementCollection extends System.Configuration.ConfigurationElement implements class System.Collections.ICollection, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.ConfigurationElementCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("Count = {Count}")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>子要素のコレクションを格納する構成要素を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationElementCollection>構成ファイル内の要素のコレクションを表します。  
+  
+> [!NOTE]
+>  構成ファイル内の要素は、基本的な XML 要素またはセクションを参照します。 単純な要素は、存在する場合に、関連の属性を持つ XML タグがします。 単純な要素は、セクションを構成します。 複雑なセクションには、1 つまたは複数の単純な要素、要素のコレクションおよびその他のセクションを含めることができます。  
+  
+ 使用する、<xref:System.Configuration.ConfigurationElementCollection>のコレクションを操作する<xref:System.Configuration.ConfigurationElement>オブジェクト。 カスタムのコレクションを追加するには、このクラスを実装する<xref:System.Configuration.ConfigurationElement>要素を<xref:System.Configuration.ConfigurationSection>です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Configuration.ConfigurationElementCollection>です。  
+  
+ 最初の例は、3 つのクラスで構成されています: `UrlsSection`、`UrlsCollection`と`UrlConfigElement`です。`UrlsSection`クラスの使用、<xref:System.Configuration.ConfigurationCollectionAttribute>をカスタム構成セクションを定義します。 このセクションには、URL のコレクションが含まれています (によって定義された、`UrlsCollection`クラス) URL 要素の (によって定義された、`UrlConfigElement`クラス)。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElementCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/system.configuration.configurationelementcollection/cs/customcollectionsection.cs#1)]
+ [!code-vb[System.Configuration.ConfigurationElementCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.configuration.configurationelementcollection/vb/customcollectionsection.vb#1)]  
+  
+ この 2 つ目のコード例では、前に指定されたクラスを使用します。 これら 2 つの例で、コンソール アプリケーション プロジェクトを結合するとします。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElementCollection#31](~/samples/snippets/csharp/VS_Snippets_WebNet/system.configuration.configurationelementcollection/cs/usingconfigurationcollectionelement.cs#31)]
+ [!code-vb[System.Configuration.ConfigurationElementCollection#31](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.configuration.configurationelementcollection/vb/usingconfigurationcollectionelement.vb#31)]  
+  
+ コンソール アプリケーションのインスタンスを実行すると、`UrlsSection`クラスが作成され、アプリケーション構成ファイルで次の構成要素が生成されます。  
+  
+```  
+<configuration>  
+    <configSections>  
+        <section name="MyUrls" type="UrlsSection,   
+          ConfigurationElementCollection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />  
+    </configSections>  
+    <MyUrls>  
+        <urls>  
+           <add name="Contoso" url="http://www.contoso.com" port="4040 />  
+        </urls>  
+    </MyUrls>  
+</configuration  
+```  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>カスタム構成要素を作成するのに、プログラムまたは宣言 (属性付き) のコーディング モデルを使用することができます。  
+  
+ プログラムのモデルは、各要素の属性を取得し、その値を設定するプロパティを作成して、基になる内部プロパティ バッグに追加することが必要です。<see cref="T:System.Configuration.ConfigurationElement" />基本クラスです。  
+  
+ 宣言型のモデルとも呼びます属性付きのモデルでは、プロパティを使用して属性を持つ構成要素の属性を定義することができます。 これらの属性は、プロパティの型とその既定値は、ASP.NET 構成システムを指示します。 ASP.NET は、リフレクションを使用して、この情報を取得し、要素のプロパティ オブジェクトを作成し、必要な初期化を実行することができます。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ConfigurationElementCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElementCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Configuration.ConfigurationElementCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを作成する、 <xref:System.Configuration.ConfigurationElementCollection> 、アプリケーションがカスタムを作成する必要がある場合<xref:System.Configuration.ConfigurationElementCollection>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ConfigurationElementCollection (System.Collections.IComparer comparer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Collections.IComparer comparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElementCollection.#ctor(System.Collections.IComparer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="comparer" Type="System.Collections.IComparer" />
+      </Parameters>
+      <Docs>
+        <param name="comparer"><see cref="T:System.Collections.IComparer" />使用する比較子。</param>
+        <summary><see cref="T:System.Configuration.ConfigurationElementCollection" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.IComparer>を使用する比較子を設定するために使用します。 たとえば、キーを大文字小文字を区別するのに、大文字と小文字の比較子を使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="comparer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddElementName">
+      <MemberSignature Language="C#" Value="protected string AddElementName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AddElementName" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationElementCollection.AddElementName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の名前、<see cref="T:System.Configuration.ConfigurationElement" />で追加の操作に関連付ける、<see cref="T:System.Configuration.ConfigurationElementCollection" />派生クラスでオーバーライドされるとします。</summary>
+        <value>要素の名前。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">選択した値は、予約済みのプレフィックス"config"または「ロック」を開始します。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="BaseAdd">
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>追加、<see cref="T:System.Configuration.ConfigurationElement" />を<see cref="T:System.Configuration.ConfigurationElementCollection" />派生クラスでオーバーライドされた場合をインスタンス化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Configuration.ConfigurationElementCollection.BaseAdd%2A>メソッドを追加、新しい<xref:System.Configuration.ConfigurationElement>をコレクションにします。 要素が追加されたときに、カスタム動作が必要な場合は、派生クラスでオーバーライドします。  
+  
+ 追加するときに、キーが同じで値が異なる場合のみ、要素は重複と見なされます。 同じキーと値を持つ要素の場合、要素は競合しないので、エラーなしで受け入れられます。 ただし、同じキーを持っていて値が異なる場合は、競合する値のどれを受け入れるかを決定するためのロジックがないので追加できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="BaseAdd">
+      <MemberSignature Language="C#" Value="protected virtual void BaseAdd (System.Configuration.ConfigurationElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void BaseAdd(class System.Configuration.ConfigurationElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElementCollection.BaseAdd(System.Configuration.ConfigurationElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Configuration.ConfigurationElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">追加する <see cref="T:System.Configuration.ConfigurationElement" />。</param>
+        <summary><see cref="T:System.Configuration.ConfigurationElementCollection" /> に構成要素を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Configuration.ConfigurationElementCollection.BaseAdd%2A>メソッドを追加、新しい<xref:System.Configuration.ConfigurationElement>をコレクションにします。 要素が追加されたときに、カスタム動作が必要な場合は、派生クラスでオーバーライドします。  
+  
+ 追加するときに、キーが同じで値が異なる場合のみ、要素は重複と見なされます。 同じキーと値を持つ要素の場合、要素は競合しないので、エラーなしで受け入れられます。 ただし、同じキーを持っていて値が異なる場合は、競合する値のどれを受け入れるかを決定するためのロジックがないので追加できません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Configuration.ConfigurationElementCollection.BaseAdd%2A>メソッドおよびから呼び出す方法、`Add`メソッドです。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElementCollection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/system.configuration.configurationelementcollection/cs/customcollectionsection.cs#2)]
+ [!code-vb[System.Configuration.ConfigurationElementCollection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.configuration.configurationelementcollection/vb/customcollectionsection.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseAdd">
+      <MemberSignature Language="C#" Value="protected void BaseAdd (System.Configuration.ConfigurationElement element, bool throwIfExists);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void BaseAdd(class System.Configuration.ConfigurationElement element, bool throwIfExists) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElementCollection.BaseAdd(System.Configuration.ConfigurationElement,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Configuration.ConfigurationElement" />
+        <Parameter Name="throwIfExists" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="element">追加する <see cref="T:System.Configuration.ConfigurationElement" />。</param>
+        <param name="throwIfExists">
+          <see langword="true" />場合に例外をスローする、<see cref="T:System.Configuration.ConfigurationElement" />指定に既に含まれて、 <see cref="T:System.Configuration.ConfigurationElementCollection" />、それ以外の<see langword="false" />します。</param>
+        <summary>構成要素のコレクションにする構成要素を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 省略可能なパラメーターを使用して`throwIfExists`をスローする、<xref:System.Exception>例外場合、指定した<xref:System.Configuration.ConfigurationElement>オブジェクトは既に、<xref:System.Configuration.ConfigurationElementCollection>コレクション。  
+  
+ 要素は、キーが同じで値が異なる場合にのみ、重複するいると見なされます。 同じキーと値を持つ要素の場合、要素は競合しないので、エラーなしで受け入れられます。 ただし、同じキーを持っていて値が異なる場合は、競合する値のどれを受け入れるかを決定するためのロジックがないので追加できません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception"><see cref="T:System.Configuration.ConfigurationElement" />に存在する追加済み、<see cref="T:System.Configuration.ConfigurationElementCollection" />と<paramref name="throwIfExists" />パラメーターは<see langword="true" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseAdd">
+      <MemberSignature Language="C#" Value="protected virtual void BaseAdd (int index, System.Configuration.ConfigurationElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void BaseAdd(int32 index, class System.Configuration.ConfigurationElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElementCollection.BaseAdd(System.Int32,System.Configuration.ConfigurationElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="element" Type="System.Configuration.ConfigurationElement" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス位置に指定した<see cref="T:System.Configuration.ConfigurationElement" />です。</param>
+        <param name="element">追加する <see cref="T:System.Configuration.ConfigurationElement" />。</param>
+        <summary>構成要素のコレクションにする構成要素を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、`index`パラメーターを追加する、<xref:System.Configuration.ConfigurationElement>オブジェクトを<xref:System.Configuration.ConfigurationElementCollection>特定のインデックス位置にあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseClear">
+      <MemberSignature Language="C#" Value="protected void BaseClear ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void BaseClear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElementCollection.BaseClear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべての構成要素オブジェクトをコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Configuration.ConfigurationElementCollection.BaseClear%2A>メソッドが呼び出されると、すべて削除<xref:System.Configuration.ConfigurationElement>コレクションからオブジェクト。 また、`clear`構成ファイルにディレクティブです。  
+  
+   
+  
+## Examples  
+ 次のコード例を呼び出す方法を示します、<xref:System.Configuration.ConfigurationElementCollection.BaseClear%2A>メソッドです。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElementCollection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/system.configuration.configurationelementcollection/cs/customcollectionsection.cs#3)]
+ [!code-vb[System.Configuration.ConfigurationElementCollection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.configuration.configurationelementcollection/vb/customcollectionsection.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成は読み取り専用です。  
+  
+ \- または  
+  
+ コレクション アイテムは、レベルの構成でロックされています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseGet">
+      <MemberSignature Language="C#" Value="protected System.Configuration.ConfigurationElement BaseGet (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance class System.Configuration.ConfigurationElement BaseGet(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElementCollection.BaseGet(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス位置、<see cref="T:System.Configuration.ConfigurationElement" />を返します。</param>
+        <summary>指定したインデックス位置にある構成要素を取得します。</summary>
+        <returns>指定されたインデックス位置にある <see cref="T:System.Configuration.ConfigurationElement" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を呼び出す方法を示します、<xref:System.Configuration.ConfigurationElementCollection.BaseGet%2A>メソッドです。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElementCollection#8](~/samples/snippets/csharp/VS_Snippets_WebNet/system.configuration.configurationelementcollection/cs/customcollectionsection.cs#8)]
+ [!code-vb[System.Configuration.ConfigurationElementCollection#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.configuration.configurationelementcollection/vb/customcollectionsection.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">
+          <paramref name="index" /> は <see langword="0" /> より小さい値です。  
+  
+ \- または  
+  
+ ない<see cref="T:System.Configuration.ConfigurationElement" />内の指定した<paramref name="index" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseGet">
+      <MemberSignature Language="C#" Value="protected System.Configuration.ConfigurationElement BaseGet (object key);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance class System.Configuration.ConfigurationElement BaseGet(object key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElementCollection.BaseGet(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">返される要素のキー。</param>
+        <summary>指定したキーを持つ構成要素を返します。</summary>
+        <returns><see cref="T:System.Configuration.ConfigurationElement" /> 、指定されたキー、それ以外の<see langword="null" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationElementCollection.BaseGet%2A>メソッドを返します。`null`がある場合ありません<xref:System.Configuration.ConfigurationElement>コレクション内で指定したキーを持つオブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例を呼び出す方法を示します、<xref:System.Configuration.ConfigurationElementCollection.BaseGet%2A>メソッドです。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElementCollection#9](~/samples/snippets/csharp/VS_Snippets_WebNet/system.configuration.configurationelementcollection/cs/customcollectionsection.cs#9)]
+ [!code-vb[System.Configuration.ConfigurationElementCollection#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.configuration.configurationelementcollection/vb/customcollectionsection.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseGetAllKeys">
+      <MemberSignature Language="C#" Value="protected object[] BaseGetAllKeys ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance object[] BaseGetAllKeys() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElementCollection.BaseGetAllKeys" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>含まれる構成要素のすべてのキーの配列を返します、<see cref="T:System.Configuration.ConfigurationElementCollection" />です。</summary>
+        <returns>すべてのキーを含む配列、<see cref="T:System.Configuration.ConfigurationElement" />に含まれるオブジェクト、<see cref="T:System.Configuration.ConfigurationElementCollection" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseGetKey">
+      <MemberSignature Language="C#" Value="protected object BaseGetKey (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance object BaseGetKey(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElementCollection.BaseGetKey(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックスの場所、<see cref="T:System.Configuration.ConfigurationElement" />です。</param>
+        <summary>キーを取得、<see cref="T:System.Configuration.ConfigurationElement" />指定したインデックス位置にあります。</summary>
+        <returns>指定されたキー<see cref="T:System.Configuration.ConfigurationElement" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">
+          <paramref name="index" /> は <see langword="0" /> より小さい値です。  
+  
+ \- または  
+  
+ ない<see cref="T:System.Configuration.ConfigurationElement" />内の指定した<paramref name="index" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseIndexOf">
+      <MemberSignature Language="C#" Value="protected int BaseIndexOf (System.Configuration.ConfigurationElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance int32 BaseIndexOf(class System.Configuration.ConfigurationElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElementCollection.BaseIndexOf(System.Configuration.ConfigurationElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Configuration.ConfigurationElement" />
+      </Parameters>
+      <Docs>
+        <param name="element"><see cref="T:System.Configuration.ConfigurationElement" />の指定したインデックス位置。</param>
+        <summary>指定したインデックスを示す<see cref="T:System.Configuration.ConfigurationElement" />です。</summary>
+        <returns>指定したインデックス<see cref="T:System.Configuration.ConfigurationElement" />以外の場合、-1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を呼び出す方法を示します、<xref:System.Configuration.ConfigurationElementCollection.BaseIndexOf%2A>メソッドです。  
+  
+ [!code-vb[System.Configuration.ConfigurationElementCollection#10](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.configuration.configurationelementcollection/vb/customcollectionsection.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseIsRemoved">
+      <MemberSignature Language="C#" Value="protected bool BaseIsRemoved (object key);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance bool BaseIsRemoved(object key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElementCollection.BaseIsRemoved(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">確認対象の要素のキー。</param>
+        <summary>示すかどうか、<see cref="T:System.Configuration.ConfigurationElement" />指定されたキーにはから削除されました、<see cref="T:System.Configuration.ConfigurationElementCollection" />です。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Configuration.ConfigurationElement" />指定されたキーには、削除された、それ以外がされて<see langword="false" />です。 既定値は、<see langword="false" /> です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseRemove">
+      <MemberSignature Language="C#" Value="protected void BaseRemove (object key);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void BaseRemove(object key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElementCollection.BaseRemove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">キー、<see cref="T:System.Configuration.ConfigurationElement" />を削除します。</param>
+        <summary>削除、<see cref="T:System.Configuration.ConfigurationElement" />コレクションからです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationElementCollection.BaseRemove%2A>メソッドの挿入、`<remove>`の構成ファイルにディレクティブ、<xref:System.Configuration.ConfigurationElement>指定されたキーにします。  
+  
+   
+  
+## Examples  
+ 次のコード例を呼び出す方法を示します、<xref:System.Configuration.ConfigurationElementCollection.BaseRemove%2A>メソッドです。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElementCollection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/system.configuration.configurationelementcollection/cs/customcollectionsection.cs#3)]
+ [!code-vb[System.Configuration.ConfigurationElementCollection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.configuration.configurationelementcollection/vb/customcollectionsection.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception">いいえ<see cref="T:System.Configuration.ConfigurationElement" />、指定されたキー コレクションに存在する、要素は既に削除されて、または要素を削除できませんの値、<see cref="P:System.Configuration.ConfigurationProperty.Type" />は<see cref="F:System.Configuration.ConfigurationElementCollectionType.AddRemoveClearMap" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseRemoveAt">
+      <MemberSignature Language="C#" Value="protected void BaseRemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void BaseRemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElementCollection.BaseRemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス位置、<see cref="T:System.Configuration.ConfigurationElement" />を削除します。</param>
+        <summary>削除、<see cref="T:System.Configuration.ConfigurationElement" />指定したインデックス位置にあります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationElementCollection.BaseRemoveAt%2A>メソッドの挿入、`<remove>`ディレクティブを指定したインデックス位置にある要素の構成ファイルにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成は読み取り専用です。  
+  
+ \- または  
+  
+ <paramref name="index" />より小さい<see langword="0" />の数より大きいまたは<see cref="T:System.Configuration.ConfigurationElement" />コレクション内のオブジェクト。  
+  
+ \- または  
+  
+ <see cref="T:System.Configuration.ConfigurationElement" />オブジェクトが既に削除されています。  
+  
+ \- または  
+  
+ 値、<see cref="T:System.Configuration.ConfigurationElement" />オブジェクトはより高いレベルでロックされています。  
+  
+ \- または  
+  
+ <see cref="T:System.Configuration.ConfigurationElement" />オブジェクトが継承されています。  
+  
+ \- または  
+  
+ 値、<see cref="T:System.Configuration.ConfigurationElement" />オブジェクトの<see cref="P:System.Configuration.ConfigurationProperty.Type" />は<see cref="F:System.Configuration.ConfigurationElementCollectionType.AddRemoveClearMap" />または<see cref="F:System.Configuration.ConfigurationElementCollectionType.AddRemoveClearMapAlternate" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearElementName">
+      <MemberSignature Language="C#" Value="protected string ClearElementName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ClearElementName" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationElementCollection.ClearElementName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の名前、<see cref="T:System.Configuration.ConfigurationElement" />のクリア操作に関連付ける、<see cref="T:System.Configuration.ConfigurationElementCollection" />派生クラスでオーバーライドされるとします。</summary>
+        <value>要素の名前。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">選択した値は、予約済みのプレフィックス"config"または「ロック」を開始します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CollectionType">
+      <MemberSignature Language="C#" Value="public virtual System.Configuration.ConfigurationElementCollectionType CollectionType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Configuration.ConfigurationElementCollectionType CollectionType" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationElementCollection.CollectionType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationElementCollectionType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Configuration.ConfigurationElementCollection" /> の型を取得します。</summary>
+        <value><see cref="T:System.Configuration.ConfigurationElementCollectionType" />このコレクションのです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型には、どちらかになります、<xref:System.Configuration.ConfigurationElementCollectionType.BasicMap>または<xref:System.Configuration.ConfigurationElementCollectionType.AddRemoveClearMap>フィールドです。 詳細については、「<xref:System.Configuration.ConfigurationElementCollectionType>」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Configuration.ConfigurationElementCollection.CollectionType%2A>プロパティです。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElementCollection#5](~/samples/snippets/csharp/VS_Snippets_WebNet/system.configuration.configurationelementcollection/cs/customcollectionsection.cs#5)]
+ [!code-vb[System.Configuration.ConfigurationElementCollection#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.configuration.configurationelementcollection/vb/customcollectionsection.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Configuration.ConfigurationElement[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Configuration.ConfigurationElement[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElementCollection.CopyTo(System.Configuration.ConfigurationElement[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Configuration.ConfigurationElement[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">内容をコピーする先の配列、<see cref="T:System.Configuration.ConfigurationElementCollection" />です。</param>
+        <param name="index">コピーを開始する位置のインデックスを作成します。</param>
+        <summary>内容をコピー、<see cref="T:System.Configuration.ConfigurationElementCollection" />を配列にします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationElementCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション内の要素の数を取得します。</summary>
+        <value>コレクション内の要素の数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="CreateNewElement">
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、新しい <see cref="T:System.Configuration.ConfigurationElement" /> を作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 上書き、<xref:System.Configuration.ConfigurationElementCollection.CreateNewElement%2A>メソッドをカスタム作成<xref:System.Configuration.ConfigurationElement>特定の種類のオブジェクト。 コレクションが、構成ファイルから読み込まれるときに<xref:System.Configuration.ConfigurationElementCollection.CreateNewElement%2A>が呼び出され、個々 の要素を作成します。 <xref:System.Configuration.ConfigurationElementCollection.CreateNewElement%2A>派生したクラスでオーバーライドされる必要があります、<xref:System.Configuration.ConfigurationElementCollection>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="CreateNewElement">
+      <MemberSignature Language="C#" Value="protected abstract System.Configuration.ConfigurationElement CreateNewElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Configuration.ConfigurationElement CreateNewElement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElementCollection.CreateNewElement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、新しい <see cref="T:System.Configuration.ConfigurationElement" /> を作成します。</summary>
+        <returns>新しく作成した <see cref="T:System.Configuration.ConfigurationElement" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 上書き、<xref:System.Configuration.ConfigurationElementCollection.CreateNewElement%2A>メソッドをカスタム作成<xref:System.Configuration.ConfigurationElement>特定の種類のオブジェクト。 コレクションが、構成ファイルから読み込まれるときに<xref:System.Configuration.ConfigurationElementCollection.CreateNewElement%2A>が呼び出され、個々 の要素を作成します。 <xref:System.Configuration.ConfigurationElementCollection.CreateNewElement%2A>派生したクラスでオーバーライドされる必要があります、<xref:System.Configuration.ConfigurationElementCollection>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Configuration.ConfigurationElementCollection.CreateNewElement%2A>メソッドです。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElementCollection#6](~/samples/snippets/csharp/VS_Snippets_WebNet/system.configuration.configurationelementcollection/cs/customcollectionsection.cs#6)]
+ [!code-vb[System.Configuration.ConfigurationElementCollection#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.configuration.configurationelementcollection/vb/customcollectionsection.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateNewElement">
+      <MemberSignature Language="C#" Value="protected virtual System.Configuration.ConfigurationElement CreateNewElement (string elementName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Configuration.ConfigurationElement CreateNewElement(string elementName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElementCollection.CreateNewElement(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="elementName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="elementName">名前、<see cref="T:System.Configuration.ConfigurationElement" />を作成します。</param>
+        <summary>新たに作成<see cref="T:System.Configuration.ConfigurationElement" />派生クラスでオーバーライドされるとします。</summary>
+        <returns>新しい<see cref="T:System.Configuration.ConfigurationElement" />指定した名前です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 上書き、<xref:System.Configuration.ConfigurationElementCollection.CreateNewElement%2A>メソッドをカスタム作成<xref:System.Configuration.ConfigurationElement>特定の種類のオブジェクト。 コレクションが、構成ファイルから読み込まれるときに<xref:System.Configuration.ConfigurationElementCollection.CreateNewElement%2A>が呼び出され、個々 の要素を作成します。 <xref:System.Configuration.ConfigurationElementCollection.CreateNewElement%2A>派生したクラスでオーバーライドされる必要があります、<xref:System.Configuration.ConfigurationElementCollection>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>カスタムを作成する場合<see cref="T:System.Configuration.ConfigurationElementCollection" />異機種混在環境を含むコレクション<see cref="T:System.Configuration.ConfigurationElement" />の種類、これらの手順を実行する必要があります。  
+  
+-   <see cref="M:System.Configuration.ConfigurationElementCollection.GetElementKey(System.Configuration.ConfigurationElement)" /> メソッドをオーバーライドします。  
+  
+-   確認して、<see cref="M:System.Configuration.ConfigurationElementCollection.GetElementKey(System.Configuration.ConfigurationElement)" />メソッドを呼び出すことによって作成された要素の型を識別する文字列を返します、<see cref="M:System.Configuration.ConfigurationElementCollection.CreateNewElement(System.String)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ElementName">
+      <MemberSignature Language="C#" Value="protected virtual string ElementName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ElementName" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationElementCollection.ElementName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、構成ファイル内の要素のこのコレクションを識別するための名前を取得します。</summary>
+        <value>コレクションの名前それ以外の場合、空の文字列。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 上書き、 <xref:System.Configuration.ConfigurationElementCollection.ElementName%2A> 、カスタムの名前を付けるプロパティ<xref:System.Configuration.ConfigurationElementCollection>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EmitClear">
+      <MemberSignature Language="C#" Value="public bool EmitClear { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EmitClear" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationElementCollection.EmitClear" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコレクションが消去されているかどうかを指定する値を設定します。</summary>
+        <value>
+          <see langword="true" />コレクションが消去された場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Configuration.ConfigurationElementCollection.EmitClear%2A>プロパティを`true`により、`<clear>`ディレクティブにコレクションをシリアル化、構成ファイルに書き込まれます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成は読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object compareTo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object compareTo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElementCollection.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="compareTo" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="compareTo">比較対象のオブジェクト。</param>
+        <summary>比較、<see cref="T:System.Configuration.ConfigurationElementCollection" />指定したオブジェクト。</summary>
+        <returns>
+          <see langword="true" />比較するオブジェクトが現在と等しいかどうか<see cref="T:System.Configuration.ConfigurationElementCollection" />インスタンス。 それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetElementKey">
+      <MemberSignature Language="C#" Value="protected abstract object GetElementKey (System.Configuration.ConfigurationElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object GetElementKey(class System.Configuration.ConfigurationElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElementCollection.GetElementKey(System.Configuration.ConfigurationElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Configuration.ConfigurationElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">キーを返す <see cref="T:System.Configuration.ConfigurationElement" />。</param>
+        <summary>派生クラスでオーバーライドされた場合は、指定した構成要素の要素のキーを取得します。</summary>
+        <returns><see cref="T:System.Object" /> 、指定されたキーとして機能する<see cref="T:System.Configuration.ConfigurationElement" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します<xref:System.Configuration.ConfigurationElementCollection.GetElementKey%2A>メソッドです。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElementCollection#7](~/samples/snippets/csharp/VS_Snippets_WebNet/system.configuration.configurationelementcollection/cs/customcollectionsection.cs#7)]
+ [!code-vb[System.Configuration.ConfigurationElementCollection#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.configuration.configurationelementcollection/vb/customcollectionsection.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElementCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="T:System.Collections.IEnumerator" />を反復処理に使用される、<see cref="T:System.Configuration.ConfigurationElementCollection" />です。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />を反復処理に使用される、<see cref="T:System.Configuration.ConfigurationElementCollection" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElementCollection.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>表す一意の値を取得、<see cref="T:System.Configuration.ConfigurationElementCollection" />インスタンス。</summary>
+        <returns>表す一意の値、<see cref="T:System.Configuration.ConfigurationElementCollection" />現在のインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsElementName">
+      <MemberSignature Language="C#" Value="protected virtual bool IsElementName (string elementName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool IsElementName(string elementName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElementCollection.IsElementName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="elementName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="elementName">検査する要素の名前。</param>
+        <summary>示すかどうか、指定した<see cref="T:System.Configuration.ConfigurationElement" />内に存在する、<see cref="T:System.Configuration.ConfigurationElementCollection" />です。</summary>
+        <returns>
+          <see langword="true" />コレクションに要素が存在する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 上書き、<xref:System.Configuration.ConfigurationElementCollection.IsElementName%2A>カスタム動作を提供するメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsElementRemovable">
+      <MemberSignature Language="C#" Value="protected virtual bool IsElementRemovable (System.Configuration.ConfigurationElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool IsElementRemovable(class System.Configuration.ConfigurationElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElementCollection.IsElementRemovable(System.Configuration.ConfigurationElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Configuration.ConfigurationElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">確認対象の要素。</param>
+        <summary>示すかどうか、指定した<see cref="T:System.Configuration.ConfigurationElement" />から削除することができます、<see cref="T:System.Configuration.ConfigurationElementCollection" />です。</summary>
+        <returns>
+          <see langword="true" />場合、指定した<see cref="T:System.Configuration.ConfigurationElement" />これから削除できる<see cref="T:System.Configuration.ConfigurationElementCollection" />、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クエリ<xref:System.Configuration.ConfigurationElementCollection.IsElementRemovable%2A>コレクション要素を削除する前にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsModified">
+      <MemberSignature Language="C#" Value="protected override bool IsModified ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance bool IsModified() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElementCollection.IsModified" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示すかどうかこの<see cref="T:System.Configuration.ConfigurationElementCollection" />が最後に保存、または派生クラスでオーバーライドされるときに読み込まれてから変更されています。</summary>
+        <returns>
+          <see langword="true" />格納されている要素が変更されました。それ以外の場合<see langword="false" /></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Configuration.ConfigurationElement.IsModified%2A>いずれかのメソッド<xref:System.Configuration.ConfigurationElement>内に含まれる、<xref:System.Configuration.ConfigurationElementCollection>返します`true`、<xref:System.Configuration.ConfigurationElementCollection.IsModified%2A>コレクション全体のメソッドを返します`true`もします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public override bool IsReadOnly ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsReadOnly() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElementCollection.IsReadOnly" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示すかどうか、<see cref="T:System.Configuration.ConfigurationElementCollection" />オブジェクトは読み取り専用です。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Configuration.ConfigurationElementCollection" />のみです。 それ以外の場合、オブジェクトは読み取り<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ システムでは、変更できない構成要素を定義します。 要素を変更できるかどうかを決定するには、このメソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationElementCollection.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションへのアクセスが同期されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合へのアクセス、 <see cref="T:System.Configuration.ConfigurationElementCollection" /> 、それ以外の同期された<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDeserializeUnrecognizedElement">
+      <MemberSignature Language="C#" Value="protected override bool OnDeserializeUnrecognizedElement (string elementName, System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool OnDeserializeUnrecognizedElement(string elementName, class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElementCollection.OnDeserializeUnrecognizedElement(System.String,System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="elementName" Type="System.String" />
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="elementName">認識されない要素の名前。</param>
+        <param name="reader">構成ファイルから XML を読み取る入力ストリーム。</param>
+        <summary>により、構成システムは例外をスローします。</summary>
+        <returns>
+          <see langword="true" />認識されない要素が正常に逆シリアル化する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationElementCollection.OnDeserializeUnrecognizedElement%2A>認識できない構成要素が、構成ファイルから読み取られるときに呼び出されます。  
+  
+ 構成ファイルから認識できない構成要素のカスタム処理を指定するには、このメソッドをオーバーライドします。 既定の戻り値、 `false`、構成システムが例外をスローします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">指定された要素<paramref name="elementName" />は、<see langword="&lt;clear&gt;" />要素。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="elementName" />予約済みのプレフィックス"config"または「ロック」を開始します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveElementName">
+      <MemberSignature Language="C#" Value="protected string RemoveElementName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RemoveElementName" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationElementCollection.RemoveElementName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の名前、<see cref="T:System.Configuration.ConfigurationElement" />で、削除操作に関連付ける、<see cref="T:System.Configuration.ConfigurationElementCollection" />派生クラスでオーバーライドされるとします。</summary>
+        <value>要素の名前。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">選択した値は、予約済みのプレフィックス"config"または「ロック」を開始します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="protected override void Reset (System.Configuration.ConfigurationElement parentElement);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Reset(class System.Configuration.ConfigurationElement parentElement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElementCollection.Reset(System.Configuration.ConfigurationElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parentElement" Type="System.Configuration.ConfigurationElement" />
+      </Parameters>
+      <Docs>
+        <param name="parentElement"><see cref="T:System.Configuration.ConfigurationElement" />以外の場合は、コレクションの親要素を表す場合は、<see langword="null" />です。</param>
+        <summary>リセット、<see cref="T:System.Configuration.ConfigurationElementCollection" />を派生クラスでオーバーライドされるときに変更されていない状態にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の動作、<xref:System.Configuration.ConfigurationElementCollection.Reset%2A>メソッドが変更された要素を消去するには、<xref:System.Configuration.ConfigurationElementCollection>オブジェクトが含まれ、その親の構成ファイルで指定された値に変更された要素を設定します。 場合内の要素で、<xref:System.Configuration.ConfigurationElementCollection>が子要素、<xref:System.Configuration.ConfigurationElementCollection.Reset%2A>それらの子要素が呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetModified">
+      <MemberSignature Language="C#" Value="protected override void ResetModified ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void ResetModified() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElementCollection.ResetModified" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、<see cref="M:System.Configuration.ConfigurationElementCollection.IsModified" /> プロパティの値を <see langword="false" /> にリセットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationElementCollection.ResetModified%2A>メソッドを決定するかどうかと、構成が更新されたときに、構成ファイルをこのコレクションの要素を記述します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SerializeElement">
+      <MemberSignature Language="C#" Value="protected override bool SerializeElement (System.Xml.XmlWriter writer, bool serializeCollectionKey);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance bool SerializeElement(class System.Xml.XmlWriter writer, bool serializeCollectionKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElementCollection.SerializeElement(System.Xml.XmlWriter,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="serializeCollectionKey" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="writer">XML 構成ファイルを書き込む出力ストリーム。</param>
+        <param name="serializeCollectionKey">
+          <see langword="true" />コレクションのキーです。 シリアル化するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>派生クラスでオーバーライドされると、構成ファイル内の XML 要素を構成データを書き込みます。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Configuration.ConfigurationElementCollection" />が正常に構成ファイルに書き込まれますが。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationElementCollection.SerializeElement%2A>メソッドは、構成ファイルをコレクションに含まれる構成要素と、含まれる任意の入れ子になった要素の内容も書き込みます。 オーバーライド<xref:System.Configuration.ConfigurationElementCollection.SerializeElement%2A>カスタムが、コレクションの内容と入れ子になった要素からプロシージャを記述を提供します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">コレクション内の要素のいずれかの追加または交換された予約済みのプレフィックス"config"または"lock"で始まるとします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetReadOnly">
+      <MemberSignature Language="C#" Value="protected override void SetReadOnly ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void SetReadOnly() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElementCollection.SetReadOnly" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セット、<see cref="M:System.Configuration.ConfigurationElementCollection.IsReadOnly" />プロパティを<see cref="T:System.Configuration.ConfigurationElementCollection" />オブジェクトとすべてのサブ要素です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、変更できないシステム構成要素を確保する内部使用されます。 要素は変更を確認するのには、呼び出し、<xref:System.Configuration.ConfigurationElementCollection.IsReadOnly%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationElementCollection.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセスを同期するために使用されるオブジェクトを取得、<see cref="T:System.Configuration.ConfigurationElementCollection" />です。</summary>
+        <value><see cref="T:System.Configuration.ConfigurationElementCollection" /> へのアクセスを同期するために使用するオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.CopyTo">
+      <MemberSignature Language="C#" Value="void ICollection.CopyTo (Array arr, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.ICollection.CopyTo(class System.Array arr, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElementCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="arr" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="arr">これをコピー先配列<see cref="T:System.Configuration.ConfigurationElementCollection" />です。</param>
+        <param name="index">コピーを開始する位置のインデックスを作成します。</param>
+        <summary>コピー、<see cref="T:System.Configuration.ConfigurationElementCollection" />を配列にします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThrowOnDuplicate">
+      <MemberSignature Language="C#" Value="protected virtual bool ThrowOnDuplicate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ThrowOnDuplicate" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationElementCollection.ThrowOnDuplicate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>重複する <see cref="T:System.Configuration.ConfigurationElement" /> を <see cref="T:System.Configuration.ConfigurationElementCollection" /> に追加しようとしたときに、例外をスローするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、重複を追加する試み<see cref="T:System.Configuration.ConfigurationElement" />をこの<see cref="T:System.Configuration.ConfigurationElementCollection" />と、例外がスローされます。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 重複する要素を追加すると、例外がスローされます、<xref:System.Configuration.ConfigurationElementCollection.CollectionType%2A>要素の値は、いずれかの<xref:System.Configuration.ConfigurationElementCollectionType.AddRemoveClearMap>または<xref:System.Configuration.ConfigurationElementCollectionType.AddRemoveClearMapAlternate>です。  
+  
+ 同一のキーと値を持つ要素が、重複は考慮されませんし、エラーなしで受け入れは注意してください。 別の値が同一のキーを持つ要素だけでは、重複と見なされます。 詳細については、「解説」セクションを参照して、<xref:System.Configuration.ConfigurationElementCollection.BaseAdd%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Unmerge">
+      <MemberSignature Language="C#" Value="protected override void Unmerge (System.Configuration.ConfigurationElement sourceElement, System.Configuration.ConfigurationElement parentElement, System.Configuration.ConfigurationSaveMode updateMode);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Unmerge(class System.Configuration.ConfigurationElement sourceElement, class System.Configuration.ConfigurationElement parentElement, valuetype System.Configuration.ConfigurationSaveMode updateMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationElementCollection.Unmerge(System.Configuration.ConfigurationElement,System.Configuration.ConfigurationElement,System.Configuration.ConfigurationSaveMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceElement" Type="System.Configuration.ConfigurationElement" />
+        <Parameter Name="parentElement" Type="System.Configuration.ConfigurationElement" />
+        <Parameter Name="saveMode" Type="System.Configuration.ConfigurationSaveMode" />
+      </Parameters>
+      <Docs>
+        <param name="sourceElement">A<see cref="T:System.Configuration.ConfigurationElement" />プロパティのマージされたビューを格納する、現在のレベルのオブジェクト。</param>
+        <param name="parentElement">現在の要素の親 <see cref="T:System.Configuration.ConfigurationElement" /> オブジェクト。この要素がトップレベルの場合は <see langword="null" />。</param>
+        <param name="updateMode">To be added.</param>
+        <summary>構成階層の異なるレベルの構成情報をマージした効果を反転させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationElementCollection.Unmerge%2A>メソッドが、構成階層の異なるレベルの構成情報をマージした効果を反転させます。 これにより、シリアル化の前に、現在の階層レベルで設定された構成を親レベルで設定された構成と区別できます。  
+  
+ <xref:System.Configuration.ConfigurationElementCollection.Unmerge%2A>親オブジェクトとソース オブジェクトを比較する場合は、新しい一時要素で、システムによって呼び出されます。 に基づいて、<xref:System.Configuration.ConfigurationSaveMode>値を設定します、一時オブジェクトをシリアル化する必要があるデータを格納します。 詳細については保存モード、次を参照してください。<xref:System.Configuration.ConfigurationSaveMode.Minimal>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

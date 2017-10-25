@@ -1,0 +1,159 @@
+<Type Name="TrackingParticipant" FullName="System.Activities.Tracking.TrackingParticipant">
+  <TypeSignature Language="C#" Value="public abstract class TrackingParticipant" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit TrackingParticipant extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Tracking.TrackingParticipant" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ワークフロー追跡インフラストラクチャおよびアクセス追跡レコードと対話するワークフロー拡張機能の基本クラス。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追跡参加要素は、追跡レコードを受け取るために登録されています。 現在、追跡参加要素を実装するクラスをワークフロー インスタンスに登録して、追跡レコードを受け取ることができます。 追跡参加要素がサード パーティ コードの場合、このコードが悪意のあるコードではないことを確認してください。 追跡参加要素は、ワークフロー インスタンスと同じプロセスで実行されます。悪意のある追跡参加要素の場合、このコードによってワークフローの実行全体が影響を受ける場合があります。 追跡レコードは、ワークフローの実行時に登録済みの追跡参加要素に配信されます。このため開発者は、追跡メソッド内での意図しない操作によって、追跡参加要素が実行中のワークフローに影響を与えないようにする必要があります。 この例では、時間がかかるワークフロー変数または操作を変更できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TrackingParticipant ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Tracking.TrackingParticipant.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスで実装された場合、派生クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginTrack">
+      <MemberSignature Language="C#" Value="protected virtual IAsyncResult BeginTrack (System.Activities.Tracking.TrackingRecord record, TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance class System.IAsyncResult BeginTrack(class System.Activities.Tracking.TrackingRecord record, valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Tracking.TrackingParticipant.BeginTrack(System.Activities.Tracking.TrackingRecord,System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="record" Type="System.Activities.Tracking.TrackingRecord" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="record">生成された追跡レコード。</param>
+        <param name="timeout">プロバイダーが試行を中止してからの期間。</param>
+        <param name="callback">操作が完了した時点で呼び出すメソッド。</param>
+        <param name="state">この非同期操作を一意に識別するために使用するユーザー定義オブジェクト。</param>
+        <summary>派生クラスとして実装された場合、追跡レコードの非同期処理を開始します。</summary>
+        <returns>操作の結果。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参加要素は、レコードを処理するジョブを開始し、ワークフロー ランタイムによって使用される <xref:System.IAsyncResult> を返して、ジョブの完了を待ちます。 既定の実装では、<xref:System.Activities.Tracking.TrackingParticipant.Track%2A> を呼び出し、完了ステータスを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndTrack">
+      <MemberSignature Language="C#" Value="protected virtual void EndTrack (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void EndTrack(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Tracking.TrackingParticipant.EndTrack(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">操作の状態。</param>
+        <summary>派生クラスとして実装された場合、非同期追跡操作の終了を表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、追跡操作が完了するまでブロックします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Track">
+      <MemberSignature Language="C#" Value="protected abstract void Track (System.Activities.Tracking.TrackingRecord record, TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void Track(class System.Activities.Tracking.TrackingRecord record, valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Tracking.TrackingParticipant.Track(System.Activities.Tracking.TrackingRecord,System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="record" Type="System.Activities.Tracking.TrackingRecord" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="record">生成された追跡レコード。</param>
+        <param name="timeout">プロバイダーが試行を中止してからの期間。</param>
+        <summary>派生クラスとして実装された場合、追跡レコードの同期処理に使用されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー インスタンスによって追跡レコードが出力されると、追跡メソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrackingProfile">
+      <MemberSignature Language="C#" Value="public virtual System.Activities.Tracking.TrackingProfile TrackingProfile { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Tracking.TrackingProfile TrackingProfile" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Tracking.TrackingParticipant.TrackingProfile" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Tracking.TrackingProfile</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>追跡参加要素によって使用される追跡プロファイル オブジェクト。 追跡プロファイルは、追跡参加要素をワークフロー拡張機能に追加する前に、参加要素で設定されます。</summary>
+        <value>追跡プロファイル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追跡プロファイルは、この追跡参加要素に送信される追跡イベントを定義します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

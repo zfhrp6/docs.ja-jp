@@ -1,0 +1,83 @@
+<Type Name="VisualDiagnostics" FullName="System.Windows.Diagnostics.VisualDiagnostics">
+  <TypeSignature Language="C#" Value="public static class VisualDiagnostics" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit VisualDiagnostics extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Diagnostics.VisualDiagnostics" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XAML のビジュアル ツリーを分析するためのツールを有効にします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[internalonly_netframework_type](~/includes/internalonly-netframework-type-md.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetXamlSourceInfo">
+      <MemberSignature Language="C#" Value="public static System.Windows.Diagnostics.XamlSourceInfo GetXamlSourceInfo (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Diagnostics.XamlSourceInfo GetXamlSourceInfo(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Diagnostics.VisualDiagnostics.GetXamlSourceInfo(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Diagnostics.XamlSourceInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">XAML ソースを検索するオブジェクトです。</param>
+        <summary>指定されたオブジェクトの XAML ソース ドキュメントに関する情報を格納する <see cref="T:System.Windows.Diagnostics.XamlSourceInfo" /> のインスタンスを返します。</summary>
+        <returns>使用できる場合は、XAML ソース ドキュメントに関する情報。それ以外の場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ソースの情報は、デバッグ アセンブリにのみ使用でき、ENABLE_XAML_DIAGNOSTICS_SOURCE_INFO 環境変数が 0 以外の値に設定されている場合にのみまたは`false`です。  
+  
+ [!INCLUDE[internalonly_netframework_member](~/includes/internalonly-netframework-member-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VisualTreeChanged">
+      <MemberSignature Language="C#" Value="public static event EventHandler&lt;System.Windows.Diagnostics.VisualTreeChangeEventArgs&gt; VisualTreeChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Windows.Diagnostics.VisualTreeChangeEventArgs&gt; VisualTreeChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Diagnostics.VisualDiagnostics.VisualTreeChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Windows.Diagnostics.VisualTreeChangeEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マネージ デバッガーがアタッチされ、任意の要素が別の要素のビジュアル ツリーから追加または削除される際、その要素が他の特定の要素の子孫であるかどうかに関係なく発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントは、マネージ デバッガーがアタッチされている場合にのみ発生します。  
+  
+ [!INCLUDE[internalonly_netframework_member](~/includes/internalonly-netframework-member-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

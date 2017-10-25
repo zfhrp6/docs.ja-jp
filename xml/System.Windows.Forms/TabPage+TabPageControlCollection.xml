@@ -1,0 +1,82 @@
+<Type Name="TabPage+TabPageControlCollection" FullName="System.Windows.Forms.TabPage+TabPageControlCollection">
+  <TypeSignature Language="C#" Value="public class TabPage.TabPageControlCollection : System.Windows.Forms.Control.ControlCollection" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi beforefieldinit TabPage/TabPageControlCollection extends System.Windows.Forms.Control/ControlCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.TabPage.TabPageControlCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.Control+ControlCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コントロールのコレクションを格納する、<see cref="T:System.Windows.Forms.TabPage" />を使用します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TabPageControlCollection (System.Windows.Forms.TabPage owner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.TabPage owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TabPage.TabPageControlCollection.#ctor(System.Windows.Forms.TabPage)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Forms.TabPage" />
+      </Parameters>
+      <Docs>
+        <param name="owner"><see cref="T:System.Windows.Forms.TabPage" />このコントロールのコレクションを格納しています。</param>
+        <summary><see cref="T:System.Windows.Forms.TabPage.TabPageControlCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public override void Add (System.Windows.Forms.Control value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Add(class System.Windows.Forms.Control value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TabPage.TabPageControlCollection.Add(System.Windows.Forms.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Windows.Forms.Control" />
+      </Parameters>
+      <Docs>
+        <param name="value">追加するコントロール。</param>
+        <summary>コレクションにコントロールを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定されたコントロールは、コレクションの末尾に追加されます。 コントロールが別のコントロールの子で既に場合は、その他のコントロールから削除されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Windows.Forms.TabControl>いずれかで<xref:System.Windows.Forms.TabPage>です。 この例では、 <xref:System.Windows.Forms.TabPage.TabPageControlCollection.Add%2A> 1 つのコントロールを追加するメソッドを`button1`を`tabPage1`です。 <xref:System.Windows.Forms.Control.Controls%2A>プロパティを使用して、取得、`tabPage1`をコレクションにコントロールを追加するコレクションを制御します。  
+  
+ 使用して、<xref:System.Drawing>と<xref:System.Windows.Forms>この例の名前空間。  
+  
+ [!code-cpp[TabPageControlCollection.Add#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TabPageControlCollection.Add/CPP/add.cpp#1)]
+ [!code-csharp[TabPageControlCollection.Add#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TabPageControlCollection.Add/CS/add.cs#1)]
+ [!code-vb[TabPageControlCollection.Add#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TabPageControlCollection.Add/VB/add.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定したコントロールが、<see cref="T:System.Windows.Forms.TabPage" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,236 @@
+<Type Name="FrameworkPropertyMetadataOptions" FullName="System.Windows.FrameworkPropertyMetadataOptions">
+  <TypeSignature Language="C#" Value="public enum FrameworkPropertyMetadataOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed FrameworkPropertyMetadataOptions extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.FrameworkPropertyMetadataOptions" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Windows Presentation Foundation (WPF) プロパティ システムに特定の依存関係プロパティに関連するフレームワーク レベルのプロパティの動作の種類を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構築するときに、この列挙を使用して、<xref:System.Windows.FrameworkPropertyMetadata>インスタンスを 1 つまたは複数のフレームワーク レベルのメタデータのオプションの設定を指定します。  
+  
+ コンス トラクターの呼び出し後にこの列挙体を使用できません。 チェックによって、クエリ オプションを特定のメタデータを登録中に設定された代わりに、`true`または`false`、既存の特定のプロパティの値<xref:System.Windows.FrameworkPropertyMetadata>です。 これらのプロパティ名の一致、<xref:System.Windows.FrameworkPropertyMetadataOptions>列挙値である NotDataBindable を除く<xref:System.Windows.FrameworkPropertyMetadata.IsNotDataBindable%2A>、終了した<xref:System.Windows.FrameworkPropertyMetadata.IsNotDataBindable%2A>です。  
+  
+ Journal オプションには、履歴を設定することのみを指定します。 実際の履歴がまたはに存在するものなど、履歴サービスでは対応できない可能性があります、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]ビューアーのアプリケーションです。 コードによって、要素ツリーを構築した場合、ジャーナリングがいくつかの既知の制限を持つは具体的には、なく[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。 詳細については、「[ナビゲーション概要](~/docs/framework/wpf/app-development/navigation-overview.md)です。  
+  
+> [!NOTE]
+>  非添付依存関係プロパティを使用する、プロパティ値の継承が表示されますが、実行時のツリー内の特定要素境界を使用して非添付プロパティの継承の動作は定義されません。 常に使用する<xref:System.Windows.DependencyProperty.RegisterAttached%2A>を指定するプロパティを登録する<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>メタデータにします。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Windows.FrameworkPropertyMetadata>コンス トラクター、およびいくつかのオプションを使用して値を設定、<xref:System.Windows.FrameworkPropertyMetadataOptions>列挙します。  
+  
+ [!code-csharp[PropertyMetadataAPIs#FPMCtor_DV_FPMO_PCC_CVC](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMetadataAPIs/CSharp/Class1.cs#fpmctor_dv_fpmo_pcc_cvc)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AffectsArrange">
+      <MemberSignature Language="C#" Value="AffectsArrange" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.FrameworkPropertyMetadataOptions AffectsArrange = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FrameworkPropertyMetadataOptions.AffectsArrange" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FrameworkPropertyMetadataOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>レイアウト構成の配置パスは、この依存関係プロパティに対する値の変更の影響を受けます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AffectsMeasure">
+      <MemberSignature Language="C#" Value="AffectsMeasure" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.FrameworkPropertyMetadataOptions AffectsMeasure = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FrameworkPropertyMetadataOptions.AffectsMeasure" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FrameworkPropertyMetadataOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>レイアウト構成の測定パスは、この依存関係プロパティに対する値の変更の影響を受けます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AffectsParentArrange">
+      <MemberSignature Language="C#" Value="AffectsParentArrange" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.FrameworkPropertyMetadataOptions AffectsParentArrange = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FrameworkPropertyMetadataOptions.AffectsParentArrange" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FrameworkPropertyMetadataOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>親要素の配置パスは、この依存関係プロパティに対する値の変更の影響を受けます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AffectsParentMeasure">
+      <MemberSignature Language="C#" Value="AffectsParentMeasure" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.FrameworkPropertyMetadataOptions AffectsParentMeasure = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FrameworkPropertyMetadataOptions.AffectsParentMeasure" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FrameworkPropertyMetadataOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>親要素の測定パスは、この依存関係プロパティに対する値の変更の影響を受けます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AffectsRender">
+      <MemberSignature Language="C#" Value="AffectsRender" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.FrameworkPropertyMetadataOptions AffectsRender = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FrameworkPropertyMetadataOptions.AffectsRender" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FrameworkPropertyMetadataOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>レンダリングまたはレイアウト構成 (測定と配置を除く) の一部の側面が、この依存関係プロパティに対する値の変更の影響を受けます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="BindsTwoWayByDefault">
+      <MemberSignature Language="C#" Value="BindsTwoWayByDefault" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.FrameworkPropertyMetadataOptions BindsTwoWayByDefault = int32(256)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FrameworkPropertyMetadataOptions.BindsTwoWayByDefault" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FrameworkPropertyMetadataOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Data.BindingMode" />この依存関係におけるデータ バインディングのプロパティの既定値<see cref="F:System.Windows.Data.BindingMode.TwoWay" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Inherits">
+      <MemberSignature Language="C#" Value="Inherits" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.FrameworkPropertyMetadataOptions Inherits = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FrameworkPropertyMetadataOptions.Inherits" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FrameworkPropertyMetadataOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この依存関係プロパティの値は、子要素によって継承されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Journal">
+      <MemberSignature Language="C#" Value="Journal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.FrameworkPropertyMetadataOptions Journal = int32(1024)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FrameworkPropertyMetadataOptions.Journal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FrameworkPropertyMetadataOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この依存関係プロパティの値を保存したりして移動するときに、ジャーナリング プロセスによって、またはを復元する必要があります[!INCLUDE[TLA#tla_uri#initcap#plural](~/includes/tlasharptla-urisharpinitcapsharpplural-md.md)]です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.FrameworkPropertyMetadataOptions None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FrameworkPropertyMetadataOptions.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FrameworkPropertyMetadataOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オプションが指定されていません。依存関係プロパティの既定の動作を使用して、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]プロパティ システムです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NotDataBindable">
+      <MemberSignature Language="C#" Value="NotDataBindable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.FrameworkPropertyMetadataOptions NotDataBindable = int32(128)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FrameworkPropertyMetadataOptions.NotDataBindable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FrameworkPropertyMetadataOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この依存関係プロパティへのデータ バインディングは許可されません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OverridesInheritanceBehavior">
+      <MemberSignature Language="C#" Value="OverridesInheritanceBehavior" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.FrameworkPropertyMetadataOptions OverridesInheritanceBehavior = int32(64)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FrameworkPropertyMetadataOptions.OverridesInheritanceBehavior" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FrameworkPropertyMetadataOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この依存関係プロパティの値は、プロパティ値の継承を目的として分けられたツリー全体に適用されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SubPropertiesDoNotAffectRender">
+      <MemberSignature Language="C#" Value="SubPropertiesDoNotAffectRender" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.FrameworkPropertyMetadataOptions SubPropertiesDoNotAffectRender = int32(2048)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FrameworkPropertyMetadataOptions.SubPropertiesDoNotAffectRender" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FrameworkPropertyMetadataOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この依存関係プロパティの値のサブプロパティは、レンダリングのどの側面にも影響しません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

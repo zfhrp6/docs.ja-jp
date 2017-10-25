@@ -1,0 +1,172 @@
+<Type Name="TextChangedEventArgs" FullName="System.Windows.Controls.TextChangedEventArgs">
+  <TypeSignature Language="C#" Value="public class TextChangedEventArgs : System.Windows.RoutedEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TextChangedEventArgs extends System.Windows.RoutedEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.TextChangedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.RoutedEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Controls.Primitives.TextBoxBase.TextChanged" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例に、回数内のテキストが表示されます、<xref:System.Windows.Controls.TextBox>変更します。 次の例の XAML コードに示します。  
+  
+ [!code-xaml[TextBoxMiscSnippets_snip#DetectChangedTextExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/TextBoxMiscSnippets_snip/csharp/detectchangedtextexample.xaml#detectchangedtextexamplewholepage)]  
+  
+ この例のコードを次に示します。  
+  
+ [!code-csharp[TextBoxMiscSnippets_snip#DetectChangedTextCodeExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/TextBoxMiscSnippets_snip/csharp/detectchangedtextexample.xaml.cs#detectchangedtextcodeexamplewholepage)]
+ [!code-vb[TextBoxMiscSnippets_snip#DetectChangedTextCodeExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextBoxMiscSnippets_snip/visualbasic/detectchangedtextexample.xaml.vb#detectchangedtextcodeexamplewholepage)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TextChangedEventArgs (System.Windows.RoutedEvent id, System.Windows.Controls.UndoAction action);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.RoutedEvent id, valuetype System.Windows.Controls.UndoAction action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextChangedEventArgs.#ctor(System.Windows.RoutedEvent,System.Windows.Controls.UndoAction)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="id" Type="System.Windows.RoutedEvent" />
+        <Parameter Name="action" Type="System.Windows.Controls.UndoAction" />
+      </Parameters>
+      <Docs>
+        <param name="id">イベント[!INCLUDE[TLA#tla_id](~/includes/tlasharptla-id-md.md)]です。</param>
+        <param name="action"><see cref="P:System.Windows.Controls.TextChangedEventArgs.UndoAction" />テキストの変更に起因します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Controls.TextChangedEventArgs" />クラス、指定されたイベント ID を使用し、操作を元に戻します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TextChangedEventArgs (System.Windows.RoutedEvent id, System.Windows.Controls.UndoAction action, System.Collections.Generic.ICollection&lt;System.Windows.Controls.TextChange&gt; changes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.RoutedEvent id, valuetype System.Windows.Controls.UndoAction action, class System.Collections.Generic.ICollection`1&lt;class System.Windows.Controls.TextChange&gt; changes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextChangedEventArgs.#ctor(System.Windows.RoutedEvent,System.Windows.Controls.UndoAction,System.Collections.Generic.ICollection{System.Windows.Controls.TextChange})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="id" Type="System.Windows.RoutedEvent" />
+        <Parameter Name="action" Type="System.Windows.Controls.UndoAction" />
+        <Parameter Name="changes" Type="System.Collections.Generic.ICollection&lt;System.Windows.Controls.TextChange&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="id">イベント[!INCLUDE[TLA#tla_id](~/includes/tlasharptla-id-md.md)]です。</param>
+        <param name="action"><see cref="P:System.Windows.Controls.TextChangedEventArgs.UndoAction" />テキストの変更に起因します。</param>
+        <param name="changes">このイベント中に発生した変更します。 詳細については、「<see cref="P:System.Windows.Controls.TextChangedEventArgs.Changes" />」を参照してください。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Controls.TextChangedEventArgs" />クラス、指定されたイベント ID、元に戻す操作、およびテキストの変更を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.TextChangedEventArgs.%23ctor%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Changes">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;System.Windows.Controls.TextChange&gt; Changes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;class System.Windows.Controls.TextChange&gt; Changes" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextChangedEventArgs.Changes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.Windows.Controls.TextChange&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生した変更に関する情報を格納するオブジェクトのコレクションを取得します。</summary>
+        <value>発生した変更に関する情報を含むオブジェクトのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つを使用する必要がある<xref:System.Windows.Controls.TextChange>コントロールに連続する各変更のオブジェクト。 1 つ以上の連続する変更が 1 つの中に発生することができます、<xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged>基になるドキュメントの構造を変更するだけで、変更したときにイベント。  
+  
+ たとえばを<xref:System.Windows.Controls.RichTextBox>文字列を含む`"This is some text."`の構造、<xref:System.Windows.Controls.RichTextBox.Document%2A?displayProperty=nameWithType>は`<Paragraph><Run>This is some text.</Run></Paragraph>`します。 場合、ユーザーを太字に単語`"is some"`の基になる構造<xref:System.Windows.Documents.FlowDocument>に変更`<Paragraph><Run>This </Run><Run  FontWeight="Bold">is some</Run><Run> text.</Run></Paragraph>`です。 実際には 4 つの変更がユーザーの操作の結果として行われたことがあります。  
+  
+1.  `<Run>`シンボルが削除され、単語の前に再追加`This`です。  
+  
+2.  シンボル`</Run><Run>`、単語の後に追加された`This`です。  
+  
+3.  シンボル`</Run><Run>`、単語の後に追加された`some`です。  
+  
+4.  `</Run>`シンボルが削除され、単語の後に再び追加`Text`です。  
+  
+ 一般に、次常に true になります。  
+  
+-   有効な状態にされているドキュメントで発生する変更です。  
+  
+-   コレクションは、コントロール内に発生した変更に関連する、連続して並んでいます。  たとえば、<xref:System.Windows.Controls.TextChange>位置 2 に変更を表すオブジェクトが前に、<xref:System.Windows.Controls.TextChange>位置 10 からの変更を表すオブジェクト。  
+  
+-   2 つ<xref:System.Windows.Controls.TextChange>オブジェクトは、重なり合う領域を表していません。  値<xref:System.Windows.Controls.TextChange.Offset%2A>の値プラス<xref:System.Windows.Controls.TextChange.AddedLength%2A>いずれかの<xref:System.Windows.Controls.TextChange>オブジェクトは、以下の値では常に<xref:System.Windows.Controls.TextChange.Offset%2A>次の<xref:System.Windows.Controls.TextChange>コレクション内のオブジェクト。 値では同様に、<xref:System.Windows.Controls.TextChange.Offset%2A>の値プラス<xref:System.Windows.Controls.TextChange.RemovedLength%2A>いずれかの<xref:System.Windows.Controls.TextChange>オブジェクトは、以下の値では常に<xref:System.Windows.Controls.TextChange.Offset%2A>次の<xref:System.Windows.Controls.TextChange>コレクション内のオブジェクト。  
+  
+-   コレクションは、差分変更がないように見えるがある場合でも自由に変更が発生しました、反映されます。 前の例でも最初の 4 番目または変更したために差分変更の場合は、各単に削除され、再追加するため、`<Run>`と`</Run>`記号、それぞれします。 シンボルが実際に削除、追加、コレクションに含まれているためです。  
+  
+ 場合、<xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged>プロパティの変更の結果として発生するイベント<xref:System.Windows.Controls.TextChangedEventArgs.Changes%2A>空のコレクションします。  上記の例では場合、ユーザーを太字に文字列全体、<xref:System.Windows.Documents.TextElement.FontWeight%2A>のプロパティ、<xref:System.Windows.Documents.Run>に設定されている<xref:System.Windows.FontWeights.Bold%2A>が、何も追加か、そのため、ドキュメントから削除<xref:System.Windows.Controls.TextChangedEventArgs.Changes%2A>が空です。  
+  
+ <xref:System.Windows.Controls.TextChangedEventArgs.Changes%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeEventHandler">
+      <MemberSignature Language="C#" Value="protected override void InvokeEventHandler (Delegate genericHandler, object genericTarget);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InvokeEventHandler(class System.Delegate genericHandler, object genericTarget) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextChangedEventArgs.InvokeEventHandler(System.Delegate,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="genericHandler" Type="System.Delegate" />
+        <Parameter Name="genericTarget" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="genericHandler">呼び出すハンドラー。</param>
+        <param name="genericTarget">イベントの経路上の現在のオブジェクト。</param>
+        <summary>適切な型キャスト、タイプ セーフを実行<see cref="T:System.Windows.Controls.TextChangedEventHandler" />の委任、<see cref="E:System.Windows.Controls.Primitives.TextBoxBase.TextChanged" />イベント。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UndoAction">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.UndoAction UndoAction { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.UndoAction UndoAction" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextChangedEventArgs.UndoAction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.UndoAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得元に戻すスタックが発生したかによって、このテキスト変更の影響を受ける方法</summary>
+        <value><see cref="T:System.Windows.Controls.UndoAction" />このテキスト変更が適切です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

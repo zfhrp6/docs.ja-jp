@@ -1,0 +1,72 @@
+<Type Name="IConfigurationSectionHandler" FullName="System.Configuration.IConfigurationSectionHandler">
+  <TypeSignature Language="C#" Value="public interface IConfigurationSectionHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IConfigurationSectionHandler" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.IConfigurationSectionHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>特定の構成セクションへのアクセスを処理します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ **重要な** <xref:System.Configuration.IConfigurationSectionHandler> .NET Framework 2.0 以降は推奨されなくなりました。 ただしは維持して内部的に使用されているためです。 例を示します[する方法: 作成するカスタム構成セクションを使用して IConfigurationSectionHandler の追加](http://msdn.microsoft.com/library/07f68a3f-2920-4665-a824-47bda744e662)です。 前の例を使用する場合は、.NET Framework version 1.0 または 1.1 でビルドしてください。  
+  
+ .NET Framework version 2.0 では、上から派生しなければならない代わりに、<xref:System.Configuration.ConfigurationSection>に関連する構成セクション ハンドラーを実装するクラス。 例を示します[する方法: 作成するカスタム構成セクションを使用して ConfigurationSection の追加](http://msdn.microsoft.com/library/febaca98-c727-4017-95ed-82e2fb6cf234)です。  
+  
+ インスタンス、<xref:System.Configuration.IConfigurationSectionHandler>クラスはスレッド セーフであり、ステートレスである必要があります。 <xref:System.Configuration.IConfigurationSectionHandler.Create%2A>でなければなりません。 複数のスレッドから呼び出すことに同時にします。  
+  
+ 構成オブジェクトがさらに、によって生成された、<xref:System.Configuration.IConfigurationSectionHandler.Create%2A>メソッドはスレッド セーフであり、変更不可である必要があります。 親の引数を変更しないことが、構成オブジェクトは、構成システムでキャッシュされるため、<xref:System.Configuration.IConfigurationSectionHandler.Create%2A>メソッドです。 たとえば場合の戻り値<xref:System.Configuration.IConfigurationSectionHandler.Create%2A>小規模な変更のみが、親のオリジナルではなく、親の複製の実際の変更を行う必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public object Create (object parent, object configContext, System.Xml.XmlNode section);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Create(object parent, object configContext, class System.Xml.XmlNode section) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.IConfigurationSectionHandler.Create(System.Object,System.Object,System.Xml.XmlNode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parent" Type="System.Object" />
+        <Parameter Name="configContext" Type="System.Object" />
+        <Parameter Name="section" Type="System.Xml.XmlNode" />
+      </Parameters>
+      <Docs>
+        <param name="parent">親オブジェクト。</param>
+        <param name="configContext">構成のコンテキスト オブジェクト。</param>
+        <param name="section">セクションの XML ノードです。</param>
+        <summary>構成セクション ハンドラーを作成します。</summary>
+        <returns>作成されたセクション ハンドラー オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンス、<xref:System.Configuration.IConfigurationSectionHandler>クラスはスレッド セーフであり、ステートレスである必要があります。 <xref:System.Configuration.IConfigurationSectionHandler.Create%2A>でなければなりません。 複数のスレッドから呼び出すことに同時にします。  
+  
+ 構成オブジェクトがさらに、によって生成された、<xref:System.Configuration.IConfigurationSectionHandler.Create%2A>メソッドはスレッド セーフであり、変更不可である必要があります。 親の引数を変更しないことが、構成オブジェクトは、構成システムでキャッシュされるため<xref:System.Configuration.IConfigurationSectionHandler.Create%2A>です。 たとえば場合の戻り値<xref:System.Configuration.IConfigurationSectionHandler.Create%2A>小規模な変更のみが、親のオリジナルではなく、親の複製の実際の変更を行う必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

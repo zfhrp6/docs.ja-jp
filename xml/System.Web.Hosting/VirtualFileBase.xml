@@ -1,0 +1,149 @@
+<Type Name="VirtualFileBase" FullName="System.Web.Hosting.VirtualFileBase">
+  <TypeSignature Language="C#" Value="public abstract class VirtualFileBase : MarshalByRefObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit VirtualFileBase extends System.MarshalByRefObject" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Hosting.VirtualFileBase" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.MarshalByRefObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>実装の中核、<see cref="T:System.Web.Hosting.VirtualFile" />と<see cref="T:System.Web.Hosting.VirtualDirectory" />オブジェクト。 抽象クラスをインスタンス化することはできません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.VirtualFileBase>一般的なメソッドを提供する抽象クラスとの間で共有プロパティ、<xref:System.Web.Hosting.VirtualFile>と<xref:System.Web.Hosting.VirtualDirectory>オブジェクト。 これらのクラスの実装では、ファイルとコンパイルに使用されるパスにアクセスできる ASP.NET ランタイムを提供します。 仮想ファイルとパスを使用する方法については、次を参照してください。、<xref:System.Web.Hosting.VirtualPathProvider>クラスです。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>継承する場合、<see cref="T:System.Web.Hosting.VirtualFileBase" />オーバーライドする必要があります、クラス、<see cref="P:System.Web.Hosting.VirtualFileBase.IsDirectory" />派生オブジェクトが、仮想ディレクトリまたは仮想ファイルかどうかを示すプロパティです。 いずれかから派生した場合、<see cref="T:System.Web.Hosting.VirtualFile" />または<see cref="T:System.Web.Hosting.VirtualDirectory" />クラス、<see cref="P:System.Web.Hosting.VirtualFileBase.IsDirectory" />プロパティは既に設定されています。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected VirtualFileBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.VirtualFileBase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>継承クラス インスタンスによって使用されるクラスを初期化します。 このコンス トラクターは、継承クラスによってのみ呼び出すことができます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスを直接構築することはできませんが、<xref:System.Web.Hosting.VirtualFileBase>クラスから継承したクラスのコンス トラクターは、このコンス トラクターを呼び出すことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeLifetimeService">
+      <MemberSignature Language="C#" Value="public override object InitializeLifetimeService ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object InitializeLifetimeService() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.VirtualFileBase.InitializeLifetimeService" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>により、<see cref="T:System.Web.Hosting.VirtualFileBase" />リースが作成されるようにすることによって、無期限の有効期間をインスタンス化します。</summary>
+        <returns>常に <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.MarshalByRefObject.InitializeLifetimeService%2A>その基本クラスのメソッドです。 常に返します`null`およびこれにより、仮想ファイルまたはディレクトリの有効期間を制限する作成されないリースを防止します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDirectory">
+      <MemberSignature Language="C#" Value="public abstract bool IsDirectory { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDirectory" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Hosting.VirtualFileBase.IsDirectory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされるを示す値を取得するかどうか、<see cref="T:System.Web.Hosting.VirtualFileBase" />インスタンスが仮想ファイル、または仮想ディレクトリを表します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Web.Hosting.VirtualFileBase" />インスタンスは、仮想ディレクトリ、それ以外の<see langword="false" />場合、<see cref="T:System.Web.Hosting.VirtualFileBase" />インスタンスが仮想ファイル。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public virtual string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Hosting.VirtualFileBase.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>仮想リソースの表示名を取得します。</summary>
+        <value>仮想ファイルの表示名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.VirtualFileBase.Name%2A>プロパティは、通常、ファイル名と、リソースに関連付けられている拡張機能の仮想リソースは、任意の名前を使用してもします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para><see cref="P:System.Web.Hosting.VirtualFileBase.Name" />プロパティが仮想パス プロバイダーの仮想リソースの正しい大文字小文字の区別を返す必要があります。 正しい大文字小文字の区別は、元のパスの大文字と小文字を異なる可能性があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="VirtualPath">
+      <MemberSignature Language="C#" Value="public string VirtualPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string VirtualPath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Hosting.VirtualFileBase.VirtualPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>仮想ファイルのパスを取得します。</summary>
+        <value>仮想ファイルへのパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.VirtualFileBase.VirtualPath%2A>プロパティは、ファイルまたはこのオブジェクトによって表されるディレクトリへのパスを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

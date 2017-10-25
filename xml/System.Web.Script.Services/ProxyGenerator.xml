@@ -1,0 +1,100 @@
+<Type Name="ProxyGenerator" FullName="System.Web.Script.Services.ProxyGenerator">
+  <TypeSignature Language="C#" Value="public static class ProxyGenerator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ProxyGenerator extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Script.Services.ProxyGenerator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プロキシ コード ジェネレーターを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.Script.Services.ProxyGenerator.GetClientProxyScript%2A>用 Web サービスのプロキシ クラスを生成するために使用するように ECMAScript (JavaScript) コードを取得する方法を[!INCLUDE[vsindigo](~/includes/vsindigo-md.md)]サービス、または静的ページ メソッドを持つ、<xref:System.Web.Services.WebMethodAttribute>属性を適用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetClientProxyScript">
+      <MemberSignature Language="C#" Value="public static string GetClientProxyScript (Type type, string path, bool debug);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetClientProxyScript(class System.Type type, string path, bool debug) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Script.Services.ProxyGenerator.GetClientProxyScript(System.Type,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="debug" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="type">スクリプトを取得するオブジェクトの型。</param>
+        <param name="path">エンドポイントの場所です。</param>
+        <param name="debug">
+          <see langword="true" />コメントを XML コードを追加します。それ以外の場合、<see langword="false" />です。</param>
+        <summary>指定した型のプロキシの生成コードを取得します。</summary>
+        <returns>プロキシの生成コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Script.Services.ProxyGenerator.GetClientProxyScript%2A>メソッドに対して、Web サービスのプロキシ生成 ECMAScript (JavaScript) を返します、[!INCLUDE[vsindigo](~/includes/vsindigo-md.md)]サービス、または静的ページ メソッドを持つ、<xref:System.Web.Services.WebMethodAttribute>属性を適用します。 `type`パラメーターには、Web サービス クラス、WCF サービス クラス、または ASP.NET ページ クラスの型が含まれています。 型は、WCF サービス クラスまたはインターフェイス、クラスまたはインターフェイスが必要場合、<xref:System.ServiceModel.ServiceContractAttribute>属性を適用します。 場合、`debug`パラメーターは`true`、結果のコードには、XML が含まれています。 で IntelliSense を使用できるコードのコメントをサポート[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]または他の開発環境です。 その結果、生成されるスクリプトのサイズが大きいです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="type" /> パラメーターまたは <paramref name="path" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">プロキシの生成には、指定された型はサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetClientProxyScript">
+      <MemberSignature Language="C#" Value="public static string GetClientProxyScript (Type type, string path, bool debug, System.ServiceModel.Description.ServiceEndpoint serviceEndpoint);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetClientProxyScript(class System.Type type, string path, bool debug, class System.ServiceModel.Description.ServiceEndpoint serviceEndpoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Script.Services.ProxyGenerator.GetClientProxyScript(System.Type,System.String,System.Boolean,System.ServiceModel.Description.ServiceEndpoint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="debug" Type="System.Boolean" />
+        <Parameter Name="serviceEndpoint" Type="System.ServiceModel.Description.ServiceEndpoint" />
+      </Parameters>
+      <Docs>
+        <param name="type">スクリプトを取得するオブジェクトの型。</param>
+        <param name="path">エンドポイントの場所です。</param>
+        <param name="debug">
+          <see langword="true" />コメントを XML コードを追加します。それ以外の場合、<see langword="false" />です。</param>
+        <param name="serviceEndpoint">サービス エンドポイント。</param>
+        <summary>パスとサービス エンドポイントを使用して、指定した型のプロキシの生成コードを取得します。</summary>
+        <returns>プロキシの生成コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Script.Services.ProxyGenerator.GetClientProxyScript%2A>メソッドに対して、Web サービスのプロキシ生成 ECMAScript (JavaScript) を返します、[!INCLUDE[vsindigo](~/includes/vsindigo-md.md)]サービス、または静的ページ メソッドを持つ、<xref:System.Web.Services.WebMethodAttribute>属性を適用します。 `type`パラメーターには、Web サービス クラス、WCF サービス クラス、または ASP.NET ページ クラスの型が含まれています。 型は、WCF サービス クラスまたはインターフェイス、クラスまたはインターフェイスが必要場合、<xref:System.ServiceModel.ServiceContractAttribute>属性を適用します。 場合、`debug`パラメーターは`true`、結果のコードには、XML が含まれています。 で IntelliSense を使用できるコードのコメントをサポート[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]または他の開発環境です。 その結果、生成されるスクリプトのサイズが大きいです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="type" /> パラメーターまたは <paramref name="path" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">プロキシの生成には、指定された型はサポートされていません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

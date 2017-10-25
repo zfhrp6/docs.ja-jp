@@ -1,0 +1,142 @@
+<Type Name="SoundPlayerAction" FullName="System.Windows.Controls.SoundPlayerAction">
+  <TypeSignature Language="C#" Value="public class SoundPlayerAction : System.Windows.TriggerAction, IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SoundPlayerAction extends System.Windows.TriggerAction implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.SoundPlayerAction" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.TriggerAction</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>軽量のオーディオの再生を表す<see cref="T:System.Windows.TriggerAction" />.wav ファイルを再生するために使用します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、 <xref:System.Windows.Controls.SoundPlayerAction> .wav ファイルを使用して、オーディオの再生をトリガーする、<xref:System.Windows.EventTrigger>上、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>と<xref:System.Windows.UIElement.MouseEnter>イベント。  
+  
+ [!code-xaml[MediaGallery_snip#SoundPlayerActionFullPage](~/samples/snippets/csharp/VS_Snippets_Wpf/MediaGallery_snip/CSharp/SoundPlayerActionTriggers.xaml#soundplayeractionfullpage)]
+ [!code-xaml[MediaGallery_snip#SoundPlayerActionFullPage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MediaGallery_snip/VB/SoundPlayerActionTriggers.xaml#soundplayeractionfullpage)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoundPlayerAction ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.SoundPlayerAction.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.SoundPlayerAction" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.SoundPlayerAction.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.SoundPlayerAction" /> クラスによって使用されているリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 後<xref:System.Windows.Controls.SoundPlayerAction.Dispose%2A>が呼び出されたが、<xref:System.Windows.Controls.SoundPlayerAction>オブジェクトが有効ではありません。  
+  
+ <xref:System.Windows.Controls.SoundPlayerAction.Dispose%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Source">
+      <MemberSignature Language="C#" Value="public Uri Source { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Source" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.SoundPlayerAction.Source" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはオーディオ ソースの場所を設定します。</summary>
+        <value>オーディオのソースの場所。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 相対パスと絶対の両方のパック[!INCLUDE[TLA#tla_uri#plural](~/includes/tlasharptla-urisharpplural-md.md)]は、次の種類のオーディオ ファイルの識別に使用できます。  
+  
+-   **リソース ファイル**: ファイルのビルド アクションで`Resource`です。  
+  
+-   **コンテンツ ファイル**: ファイルのビルド アクションで`Content`です。  
+  
+-   **配信元のファイルのサイト**: ファイルのビルド アクションで`None`です。  
+  
+ パックの詳細については[!INCLUDE[TLA2#tla_uri#plural](~/includes/tla2sharptla-urisharpplural-md.md)]を参照してください[WPF のパック Uri](~/docs/framework/wpf/app-development/pack-uris-in-wpf.md)です。 リソース、コンテンツ、およびファイルの元のサイトの詳細については、次を参照してください。 [WPF アプリケーションのリソース、コンテンツ、およびデータ ファイル](~/docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md)です。  
+  
+ <xref:System.Windows.Controls.SoundPlayerAction.Source%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+<a name="dependencyPropertyInfo_SoundPlayerActionSource"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.SoundPlayerAction.Source%2A>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty SourceProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty SourceProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.SoundPlayerAction.SourceProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.SoundPlayerAction.Source" /> 依存関係プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.SoundPlayerAction.SourceProperty>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

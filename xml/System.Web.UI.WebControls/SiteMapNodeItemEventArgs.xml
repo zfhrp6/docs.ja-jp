@@ -1,0 +1,74 @@
+<Type Name="SiteMapNodeItemEventArgs" FullName="System.Web.UI.WebControls.SiteMapNodeItemEventArgs">
+  <TypeSignature Language="C#" Value="public class SiteMapNodeItemEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SiteMapNodeItemEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.SiteMapNodeItemEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.UI.WebControls.SiteMapPath.ItemCreated" /> イベントおよび <see cref="E:System.Web.UI.WebControls.SiteMapPath.ItemDataBound" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SiteMapPath.ItemCreated?displayProperty=nameWithType>イベントが発生したときに、<xref:System.Web.UI.WebControls.SiteMapNodeItem>によって作成された、<xref:System.Web.UI.WebControls.SiteMapPath>コントロール。 <xref:System.Web.UI.WebControls.SiteMapPath.ItemDataBound?displayProperty=nameWithType>イベントが発生したときに`DataBind`の呼び出し中に、項目が呼び出された<xref:System.Web.UI.WebControls.SiteMapPath.CreateControlHierarchy%2A?displayProperty=nameWithType>です。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SiteMapNodeItemEventArgs (System.Web.UI.WebControls.SiteMapNodeItem item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.SiteMapNodeItem item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SiteMapNodeItemEventArgs.#ctor(System.Web.UI.WebControls.SiteMapNodeItem)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="item" Type="System.Web.UI.WebControls.SiteMapNodeItem" />
+      </Parameters>
+      <Docs>
+        <param name="item">A<see cref="T:System.Web.UI.WebControls.SiteMapNodeItem" />イベントのソースであります。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.SiteMapNodeItemEventArgs" />クラス、指定した設定<see cref="T:System.Web.UI.WebControls.SiteMapNodeItem" />オブジェクト イベントのソースとして。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Web.UI.WebControls.SiteMapNodeItemEventArgs>を使用して、<xref:System.Web.UI.WebControls.SiteMapNodeItem>を表す、<xref:System.Web.UI.WebControls.SiteMapNodeItemType.PathSeparator>とにイベント引数を渡す方法、<xref:System.Web.UI.WebControls.SiteMapPath.OnItemCreated%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.SiteMapPath>クラスです。  
+  
+ [!code-csharp[Urtue.Samples.Alexkr.DropDownNavigationPath_1#3](~/samples/snippets/csharp/VS_Snippets_WebNet/Urtue.Samples.Alexkr.DropDownNavigationPath_1/CS/dropdownnavigationpath.cs#3)]
+ [!code-vb[Urtue.Samples.Alexkr.DropDownNavigationPath_1#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Urtue.Samples.Alexkr.DropDownNavigationPath_1/VB/dropdownnavigationpath.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.SiteMapNodeItem Item { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.SiteMapNodeItem Item" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SiteMapNodeItemEventArgs.Item" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.SiteMapNodeItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントのソースであるノードのアイテムを取得します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.SiteMapNodeItem" />イベントのソースであります。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

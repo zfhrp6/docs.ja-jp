@@ -1,0 +1,323 @@
+<Type Name="Comparer" FullName="System.Collections.Comparer">
+  <TypeSignature Language="C#" Value="public sealed class Comparer : System.Collections.IComparer, System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit Comparer extends System.Object implements class System.Collections.IComparer, class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.Comparer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IComparer</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>2 つのオブジェクトの文字列比較は区別等価性を比較します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、既定の実装、<xref:System.Collections.IComparer>インターフェイスです。 <xref:System.Collections.CaseInsensitiveComparer>クラスは、の実装、<xref:System.Collections.IComparer>大文字と小文字の文字列比較を実行するインターフェイスです。  
+  
+ 比較のプロシージャを使用して、<xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType>現在のスレッドのそれ以外の場合に指定しない限り、します。 文字列比較を行うには、カルチャによって異なる結果があります。 カルチャ固有の比較の詳細については、次を参照してください。、<xref:System.Globalization>名前空間と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/9a59696b-d89b-45bd-946d-c75da4732d02)です。  
+  
+   
+  
+## Examples  
+ 次のコード例に示す方法<xref:System.Collections.Comparer.Compare%2A>に関連付けられているカルチャに応じて異なる値を返します、<xref:System.Collections.Comparer>です。  
+  
+ [!code-cpp[System.Collections.Comparer#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Comparer/CPP/comparercultures.cpp#1)]
+ [!code-csharp[System.Collections.Comparer#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Comparer/CS/comparercultures.cs#1)]
+ [!code-vb[System.Collections.Comparer#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Comparer/VB/comparercultures.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Comparer (System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Comparer.#ctor(System.Globalization.CultureInfo)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="culture"><see cref="T:System.Globalization.CultureInfo" />に新しい使用<see cref="T:System.Collections.Comparer" />です。</param>
+        <summary><see cref="T:System.Collections.Comparer" /> を指定して <see cref="T:System.Globalization.CultureInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 比較のプロシージャを使用して、指定した<xref:System.Globalization.CultureInfo?displayProperty=nameWithType>並べ替え順序および大文字小文字の規則を指定します。 文字列比較を行うには、カルチャによって異なる結果があります。 カルチャ固有の比較の詳細については、次を参照してください。、<xref:System.Globalization>名前空間と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/9a59696b-d89b-45bd-946d-c75da4732d02)です。  
+  
+   
+  
+## Examples  
+ 次のコード例に示す方法<xref:System.Collections.Comparer.Compare%2A>に関連付けられているカルチャに応じて異なる値を返します、<xref:System.Collections.Comparer>です。  
+  
+ [!code-cpp[System.Collections.Comparer#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Comparer/CPP/comparercultures.cpp#1)]
+ [!code-csharp[System.Collections.Comparer#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Comparer/CS/comparercultures.cs#1)]
+ [!code-vb[System.Collections.Comparer#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Comparer/VB/comparercultures.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="culture" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Compare">
+      <MemberSignature Language="C#" Value="public int Compare (object a, object b);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 Compare(object a, object b) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Comparer.Compare(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="a" Type="System.Object" />
+        <Parameter Name="b" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="a">比較する最初のオブジェクト。</param>
+        <param name="b">比較する 2 番目のオブジェクト。</param>
+        <summary>同じ型の 2 つのオブジェクトの大文字小文字を区別比較を実行し、1 つが同じか、または他のより大きいよりも小さいかどうかを示す値を返します。</summary>
+        <returns>
+            <paramref name="a" /> と <paramref name="b" /> の相対値を示す符号付き整数。次の表を参照してください。  
+ 
+  <list type="table"><listheader><term>値  
+ 
+  </term><description>意味  
+ 
+  </description></listheader><item><term>0 より小さい値  
+ 
+  </term><description><paramref name="a" /> は <paramref name="b" /> より小さい値です。  
+ 
+  </description></item><item><term>0  
+ 
+  </term><description><paramref name="a" /> と <paramref name="b" /> は等しい。  
+ 
+  </description></item><item><term>0 より大きい値  
+ 
+  </term><description><paramref name="a" /> が <paramref name="b" /> より大きくなっています。  
+ 
+</description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`a`実装<xref:System.IComparable>、し`a`です。 `CompareTo`(`b`) が返されます。 それ以外の場合`b`実装<xref:System.IComparable>、の負数化された結果、`b`です。 `CompareTo`(`a`) が返されます。  
+  
+ 比較する`null`任意の型は許可し、使用する場合は、例外を生成しません、<xref:System.IComparable>です。 ソート時`null`未満であるその他のオブジェクトと見なされます。  
+  
+ 文字列比較を行うには、カルチャによって異なる結果があります。 カルチャ固有の比較の詳細については、次を参照してください。、<xref:System.Globalization>名前空間と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/9a59696b-d89b-45bd-946d-c75da4732d02)です。  
+  
+   
+  
+## Examples  
+ 次のコード例に示す方法<xref:System.Collections.Comparer.Compare%2A>に関連付けられているカルチャに応じて異なる値を返します、<xref:System.Collections.Comparer>です。  
+  
+ [!code-cpp[System.Collections.Comparer#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Comparer/CPP/comparercultures.cpp#1)]
+ [!code-csharp[System.Collections.Comparer#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Comparer/CS/comparercultures.cs#1)]
+ [!code-vb[System.Collections.Comparer#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Comparer/VB/comparercultures.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">どちらも<paramref name="a" />も<paramref name="b" />を実装する、<see cref="T:System.IComparable" />インターフェイスです。  
+  
+ または  
+  
+ <paramref name="a" />および<paramref name="b" />さまざまな種類は、いずれかのどちらが、他の比較を処理できます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static readonly System.Collections.Comparer Default;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Collections.Comparer Default" />
+      <MemberSignature Language="DocId" Value="F:System.Collections.Comparer.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Comparer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスを表す<see cref="T:System.Collections.Comparer" />と関連付けられている、<see cref="P:System.Threading.Thread.CurrentCulture" />現在のスレッド。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 比較のプロシージャを使用して、<xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType>現在のスレッドの並べ替え順序と大文字小文字の規則を特定します。 文字列比較を行うには、カルチャによって異なる結果があります。 カルチャ固有の比較の詳細については、次を参照してください。、<xref:System.Globalization>名前空間と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/9a59696b-d89b-45bd-946d-c75da4732d02)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultInvariant">
+      <MemberSignature Language="C#" Value="public static readonly System.Collections.Comparer DefaultInvariant;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Collections.Comparer DefaultInvariant" />
+      <MemberSignature Language="DocId" Value="F:System.Collections.Comparer.DefaultInvariant" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Comparer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスを表す<see cref="T:System.Collections.Comparer" />と関連付けられている<see cref="P:System.Globalization.CultureInfo.InvariantCulture" />です。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 比較のプロシージャを使用して、<xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>並べ替え順序および大文字小文字の規則を指定します。 文字列比較を行うには、カルチャによって異なる結果があります。 カルチャ固有の比較の詳細については、次を参照してください。、<xref:System.Globalization>名前空間と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/9a59696b-d89b-45bd-946d-c75da4732d02)です。  
+  
+   
+  
+## Examples  
+ 次のコード例に示す方法<xref:System.Collections.Comparer.Compare%2A>に関連付けられているカルチャに応じて異なる値を返します、<xref:System.Collections.Comparer>です。  
+  
+ [!code-cpp[System.Collections.Comparer#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Comparer/CPP/comparercultures.cpp#1)]
+ [!code-csharp[System.Collections.Comparer#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Comparer/CS/comparercultures.cs#1)]
+ [!code-vb[System.Collections.Comparer#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Comparer/VB/comparercultures.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Comparer.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">データを読み込む先のオブジェクト。</param>
+        <param name="context">ソースまたはシリアル化の転送先に関するコンテキスト情報。</param>
+        <summary>追加、<see cref="T:System.Runtime.Serialization.SerializationInfo" />シリアル化に必要なデータを持つオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 中に、<xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A>メソッドは既定では、COM クライアントに表示されていない継承、<xref:System.Collections.Comparer>クラスが公開することし、COM クライアントの望ましくない動作が発生することができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="info" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">シリアル化サービスを提供する機能。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" />セキュリティ アクション。<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" /></permission>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

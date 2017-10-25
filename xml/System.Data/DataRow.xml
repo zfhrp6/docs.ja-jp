@@ -1,0 +1,2341 @@
+<Type Name="DataRow" FullName="System.Data.DataRow">
+  <TypeSignature Language="C#" Value="public class DataRow" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataRow extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.DataRow" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>内のデータの行を表し、<see cref="T:System.Data.DataTable" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataRow>と<xref:System.Data.DataColumn>オブジェクトの主なコンポーネントである、<xref:System.Data.DataTable>です。 使用して、<xref:System.Data.DataRow>オブジェクトのプロパティおよびメソッドを取得および評価; と挿入、削除、および内の値を更新、<xref:System.Data.DataTable>です。 <xref:System.Data.DataRowCollection>表す実際<xref:System.Data.DataRow>内のオブジェクト、 <xref:System.Data.DataTable>、および<xref:System.Data.DataColumnCollection>が含まれています、<xref:System.Data.DataColumn>のスキーマを記述するオブジェクト、<xref:System.Data.DataTable>です。 オーバー ロードされたを使用して<xref:System.Data.DataRow.Item%2A>プロパティを取得または設定の値を<xref:System.Data.DataColumn>です。  
+  
+ 使用して、<xref:System.Data.DataRow.HasVersion%2A>と<xref:System.Data.DataRow.IsNull%2A>プロパティを確認して、特定の行値の状態と<xref:System.Data.DataRow.RowState*>プロパティをその親の行の状態を確認する<xref:System.Data.DataTable>です。  
+  
+ 新しい<xref:System.Data.DataRow>を使用して、<xref:System.Data.DataTable.NewRow%2A>のメソッド、<xref:System.Data.DataTable>オブジェクト。 新しく作成した後<xref:System.Data.DataRow>を使用して、<xref:System.Data.DataRowCollection.Add%2A>メソッドを追加、新しい<xref:System.Data.DataRow>を<xref:System.Data.DataRowCollection>です。 最後を呼び出して、<xref:System.Data.DataRow.AcceptChanges%2A>のメソッド、<xref:System.Data.DataTable>追加を確認するオブジェクト。 データの追加の詳細については、<xref:System.Data.DataTable>を参照してください[DataTable にデータを追加する](~/docs/framework/data/adonet/dataset-datatable-dataview/adding-data-to-a-datatable.md)です。  
+  
+ 削除することができます、<xref:System.Data.DataRow>から、<xref:System.Data.DataRowCollection>を呼び出して、<xref:System.Data.DataRowCollection.Remove%2A>のメソッド、 <xref:System.Data.DataRowCollection>、または呼び出すことによって、<xref:System.Data.DataRow.Delete%2A>のメソッド、<xref:System.Data.DataRow>オブジェクト。 <xref:System.Data.DataRowCollection.Remove%2A>メソッドによってコレクションから行を削除します。 これに対し、<xref:System.Data.DataRow.Delete%2A>マーク、<xref:System.Data.DataRow>削除します。 呼び出すときに実際の削除が行われます<xref:System.Data.DataRow.AcceptChanges%2A>メソッドです。 呼び出して<xref:System.Data.DataRow.Delete%2A>、どの行が実際に削除する前に削除用にマークをプログラムで確認できます。 詳細については、次を参照してください。 [DataRow の削除](~/docs/framework/data/adonet/dataset-datatable-dataview/datarow-deletion.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、新しい作成<xref:System.Data.DataRow>を呼び出して、<xref:System.Data.DataTable.NewRow%2A>のメソッド、<xref:System.Data.DataTable>オブジェクト。  
+  
+ [!code-csharp[Classic WebData DataRow Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRow Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRow Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>この型は、マルチ スレッドの読み取り操作に対して安全です。 すべての書き込み操作を同期する必要があります。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DataRow (System.Data.DataRowBuilder builder);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor(class System.Data.DataRowBuilder builder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.#ctor(System.Data.DataRowBuilder)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="builder" Type="System.Data.DataRowBuilder" />
+      </Parameters>
+      <Docs>
+        <param name="builder">ビルダー</param>
+        <summary>DataRow の新しいインスタンスを初期化します。 ビルダーから行を構築します。 内部でのみ使用されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AcceptChanges">
+      <MemberSignature Language="C#" Value="public void AcceptChanges ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AcceptChanges() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.AcceptChanges" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>前回この行に加えたすべての変更をコミット<see cref="M:System.Data.DataRow.AcceptChanges" />が呼び出されました。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すときに<xref:System.Data.DataRow.AcceptChanges%2A>、<xref:System.Data.DataRow.EndEdit%2A>暗黙的にメソッドは、編集を終了します。 場合、< xref:System.Data.DataRow.RowState*>、行が追加または変更、< xref:System.Data.DataRow.RowState*> が変更なし。 場合、<xref:System.Data.DataRow.RowState*>が削除されると、その行は削除します。  
+  
+ 詳細については、<xref:System.Data.DataRow.BeginEdit%2A> メソッドを参照してください。  
+  
+ <xref:System.Data.DataTable>クラスもあります、<xref:System.Data.DataTable.AcceptChanges%2A>メソッド テーブル全体に加えられた変更に影響します。 そのまま使用し、個々 のデータ行への変更を拒否する方法を示すコード例および詳細については、次を参照してください。 [Acceptchange と Rejectchange](~/docs/framework/data/adonet/dataset-datatable-dataview/acceptchanges-and-rejectchanges.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は最初に、新しい作成<xref:System.Data.DataTable>1 つの列を持つ 1 つを作成および<xref:System.Data.DataRow>です。 として、<xref:System.Data.DataRow>作成、追加、変更、および削除するはその<xref:System.Data.DataRow.RowState*>が出力されます。  
+  
+ [!code-csharp[Classic WebData DataRow.AcceptChanges Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRow.AcceptChanges Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRow.AcceptChanges Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.AcceptChanges Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Data.RowNotInTableException">行は、テーブルには属していません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginEdit">
+      <MemberSignature Language="C#" Value="public void BeginEdit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void BeginEdit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.BeginEdit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>編集操作を開始、<see cref="T:System.Data.DataRow" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Data.DataRow.BeginEdit%2A>を配置する方法、<xref:System.Data.DataRow>編集モードにします。 このモードでイベントが一時的に中断ため、ユーザーは、検証規則をトリガーに複数の行を変更します。 たとえば、合計金額の列の値が借方の値に等しいかどうかを確認し、クレジットの行を列にする必要がある場合、は、編集モード、ユーザーが値をコミットするまで、行の値の検証を中断するために各行を配置することができます。  
+  
+ <xref:System.Data.DataRow.BeginEdit%2A>メソッドは、ユーザーには、データ バインド コントロールの値が変更されたときに暗黙的に呼び出されます、<xref:System.Data.DataRow.EndEdit%2A>を呼び出すときは、メソッドが暗黙的に呼び出されます、<xref:System.Data.DataTable.AcceptChanges%2A>のメソッド、<xref:System.Data.DataTable>オブジェクト。 この編集モードで、<xref:System.Data.DataRow>提案された値の元と新しい表現を格納します。 したがって、限り、<xref:System.Data.DataRow.EndEdit%2A>メソッドが呼び出されておらず、元のまたは提案されたバージョンのいずれかを取得するにはいずれかを渡すことによって`DataRowVersion.Original`または`DataRowVersion.Proposed`の`version`のパラメーター、<xref:System.Data.DataRow.Item%2A>プロパティです。 呼び出すことによって、この時点でのすべての編集をキャンセルすることも、<xref:System.Data.DataRow.CancelEdit%2A>メソッドです。  
+  
+ 表示する行に、元のまたは提案された値が含まれるかどうか、呼び出し、<xref:System.Data.DataRow.HasVersion%2A>メソッドです。  
+  
+> [!NOTE]
+>  <xref:System.Data.DataRow.BeginEdit%2A>メソッドを一時的に中断<xref:System.Data.DataTable.RowChanging>イベントが、`delete`操作ではありません。  
+  
+   
+  
+## Examples  
+ 例では、作成、単純な<xref:System.Data.DataTable>いずれかで<xref:System.Data.DataColumn>および 5<xref:System.Data.DataRow>オブジェクト、および<xref:System.Data.UniqueConstraint>です。 A<xref:System.Data.DataTable.RowChanged>行の値を変更するときに監視するイベント ハンドラーが追加されたもします。 呼び出し後に<xref:System.Data.DataRow.BeginEdit%2A>、既存の行で、制約とイベントを一時的に無効にし、元と提案された値を出力します。 <xref:System.Data.DataRow.BeginEdit%2A>が同じ値に 2 つの行を設定するもう一度呼び出されます。 ときに<xref:System.Data.DataRow.EndEdit%2A>が呼び出されたが、<xref:System.Data.UniqueConstraint>は同一の値に適用されます。  
+  
+ [!code-csharp[Classic WebData DataRow.BeginEdit Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRow.BeginEdit Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRow.BeginEdit Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.BeginEdit Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Data.InRowChangingEventException">内部メソッドが呼び出された、<see cref="E:System.Data.DataTable.RowChanging" />イベント。</exception>
+        <exception cref="T:System.Data.DeletedRowInaccessibleException">メソッドは、削除された行によって呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelEdit">
+      <MemberSignature Language="C#" Value="public void CancelEdit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CancelEdit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.CancelEdit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>行の現在の編集をキャンセルします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、<xref:System.Data.DataRow.BeginEdit%2A> メソッドを参照してください。  
+  
+   
+  
+## Examples  
+ 次の例の最後の行に 1 つの列の値を編集する、<xref:System.Windows.Forms.DataGrid>コントロール。 この例では、 <xref:System.Data.DataRow.BeginEdit%2A>、<xref:System.Data.DataRow.EndEdit%2A>列の値を編集し、行に、変更をコミットする方法です。  
+  
+ [!code-csharp[Classic WebData DataRow.CancelEdit Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRow.CancelEdit Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRow.CancelEdit Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.CancelEdit Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Data.InRowChangingEventException">内部メソッドが呼び出された、<see cref="E:System.Data.DataTable.RowChanging" />イベント。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearErrors">
+      <MemberSignature Language="C#" Value="public void ClearErrors ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ClearErrors() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.ClearErrors" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>行のエラーをクリアします。 これが含まれています、<see cref="P:System.Data.DataRow.RowError" />に<see cref="M:System.Data.DataRow.SetColumnError(System.Int32,System.String)" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Data.DataRow.SetColumnError%2A>と<xref:System.Data.DataRow.GetColumnError%2A>を設定し、個々 の列に対するエラーを返します。  
+  
+ 設定、<xref:System.Data.DataRow.RowError%2A>行全体に適用されるエラーを設定するプロパティです。  
+  
+ Columns コレクションにエラーがあるかどうかを確認するには<xref:System.Data.DataRow.HasErrors%2A>メソッドです。 したがって、使用することができます、<xref:System.Data.DataRow.GetColumnsInError%2A>エラーのあるすべての列を取得します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.DataRow.HasErrors%2A>のエラーを確認します。 行が、エラー、<xref:System.Data.DataRow.GetColumnsInError%2A>メソッド解決できるエラーを含む列の配列を返します。 <xref:System.Data.DataRow.ClearErrors%2A>をすべてのエラーをクリアするメソッドが呼び出されます。  
+  
+ [!code-csharp[Classic WebData DataRow.ClearErrors Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRow.ClearErrors Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRow.ClearErrors Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.ClearErrors Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Delete">
+      <MemberSignature Language="C#" Value="public void Delete ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Delete() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.Delete" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>削除、<see cref="T:System.Data.DataRow" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、< xref:System.Data.DataRow.RowState*> の行が追加されると、< xref:System.Data.DataRow.RowState*> になります`Detached`を呼び出すと、行がテーブルから削除されると<xref:System.Data.DataRow.AcceptChanges%2A>です。  
+  
+ <xref:System.Data.DataRow.RowState*>なります`Deleted`を使用した後、 <xref:System.Data.DataRow.Delete%2A> 、既存のメソッド<xref:System.Data.DataRow>です。 これは、まま`Deleted`が呼び出されるまで<xref:System.Data.DataRow.AcceptChanges%2A>です。 この時点で、<xref:System.Data.DataRow>は、テーブルから削除します。  
+  
+ <xref:System.Data.DataRow.Delete%2A>呼び出すことはできません、foreach ループで反復処理中に、<xref:System.Data.DataRowCollection>オブジェクト。 <xref:System.Data.DataRow.Delete%2A>コレクションの状態を変更します。  
+  
+ 呼び出すことによって削除された行を戻すできます<xref:System.Data.DataRow.RejectChanges%2A>です。  
+  
+> [!NOTE]
+>  <xref:System.Data.DataRow.BeginEdit%2A>メソッドを一時的に中断<xref:System.Data.DataTable.RowChanging>イベントが削除操作はありません。  
+  
+   
+  
+## Examples  
+ 次の例では、単純な<xref:System.Data.DataTable>2 つの列と 10 行を使用します。 いくつかの削除後<xref:System.Data.DataRow>を持つアイテムを<xref:System.Data.DataRow.Delete%2A>行のいずれかのメソッドを呼び出すことによって戻した<xref:System.Data.DataRow.RejectChanges%2A>です。  
+  
+ [!code-csharp[Classic WebData DataRow.Delete Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRow.Delete Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRow.Delete Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.Delete Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Data.DeletedRowInaccessibleException"><see cref="T:System.Data.DataRow" />は既に削除されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EndEdit">
+      <MemberSignature Language="C#" Value="public void EndEdit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EndEdit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.EndEdit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>行で実行中の編集を終了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 例外が発生した場合、例外が生成されるプロパティを設定するときに、<xref:System.Data.DataTable.RowChanging>イベント。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.DataRow.EndEdit%2A>メソッドの編集を終了する、<xref:System.Data.DataRow>値の場合は、検証関数は true を返します。  
+  
+ [!code-csharp[Classic WebData DataRow.CancelEdit Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRow.CancelEdit Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRow.CancelEdit Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.CancelEdit Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Data.InRowChangingEventException">内部メソッドが呼び出された、<see cref="E:System.Data.DataTable.RowChanging" />イベント。</exception>
+        <exception cref="T:System.Data.ConstraintException">編集が制約に違反します。</exception>
+        <exception cref="T:System.Data.ReadOnlyException">テーブルに行が属している、編集が読み取り専用の列の値を変更しようとしました。</exception>
+        <exception cref="T:System.Data.NoNullAllowedException">編集が、列に null 値を格納しようとしています。 ここで<see cref="P:System.Data.DataColumn.AllowDBNull" />は false。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChildRows">
+      <MemberSignature Language="C#" Value="public System.Data.DataRow[] GetChildRows (System.Data.DataRelation relation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataRow[] GetChildRows(class System.Data.DataRelation relation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.GetChildRows(System.Data.DataRelation)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataRow[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="relation" Type="System.Data.DataRelation" />
+      </Parameters>
+      <Docs>
+        <param name="relation">使用する <see cref="T:System.Data.DataRelation" />。</param>
+        <summary>この行の子を取得<see cref="T:System.Data.DataRow" />指定して<see cref="T:System.Data.DataRelation" />です。</summary>
+        <returns>配列<see cref="T:System.Data.DataRow" />オブジェクトまたは長さ 0 の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataTable>ものコレクションを含む<xref:System.Data.DataRelation>によって返されるオブジェクト、<xref:System.Data.DataTable.ChildRelations%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.DataRow.GetChildRows%2A>を返す子<xref:System.Data.DataRow>のすべての子オブジェクト<xref:System.Data.DataRelation>で、<xref:System.Data.DataTable>です。 行の各列の値が出力されます。  
+  
+ [!code-csharp[Classic WebData DataRow.GetChildRows2 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRow.GetChildRows2 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRow.GetChildRows2 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.GetChildRows2 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">リレーションシップと行は、同じテーブルに属していません。</exception>
+        <exception cref="T:System.ArgumentNullException">リレーションシップは<see langword="null" />します。</exception>
+        <exception cref="T:System.Data.RowNotInTableException">行は、テーブルには属していません。</exception>
+        <exception cref="T:System.Data.VersionNotFoundException">行には、このバージョンのデータはありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChildRows">
+      <MemberSignature Language="C#" Value="public System.Data.DataRow[] GetChildRows (string relationName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataRow[] GetChildRows(string relationName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.GetChildRows(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataRow[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="relationName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="relationName"><see cref="P:System.Data.DataRelation.RelationName" />の<see cref="T:System.Data.DataRelation" />を使用します。</param>
+        <summary>子の行を取得、<see cref="T:System.Data.DataRow" />指定して<see cref="P:System.Data.DataRelation.RelationName" />の<see cref="T:System.Data.DataRelation" />です。</summary>
+        <returns>配列<see cref="T:System.Data.DataRow" />オブジェクトまたは長さ 0 の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataTable>ものコレクションを含む<xref:System.Data.DataRelation>によって返されるオブジェクト、<xref:System.Data.DataTable.ChildRelations%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">リレーションシップと行は、同じテーブルに属していません。</exception>
+        <exception cref="T:System.Data.RowNotInTableException">行は、テーブルには属していません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChildRows">
+      <MemberSignature Language="C#" Value="public System.Data.DataRow[] GetChildRows (System.Data.DataRelation relation, System.Data.DataRowVersion version);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataRow[] GetChildRows(class System.Data.DataRelation relation, valuetype System.Data.DataRowVersion version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.GetChildRows(System.Data.DataRelation,System.Data.DataRowVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataRow[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="relation" Type="System.Data.DataRelation" />
+        <Parameter Name="version" Type="System.Data.DataRowVersion" />
+      </Parameters>
+      <Docs>
+        <param name="relation">使用する <see cref="T:System.Data.DataRelation" />。</param>
+        <param name="version">1 つ、<see cref="T:System.Data.DataRowVersion" />取得するデータのバージョンを指定する値。 指定できる値は、<see langword="Default" />、<see langword="Original" />、<see langword="Current" />、および <see langword="Proposed" /> です。</param>
+        <summary>子の行を取得、<see cref="T:System.Data.DataRow" />指定して<see cref="T:System.Data.DataRelation" />、および<see cref="T:System.Data.DataRowVersion" />です。</summary>
+        <returns><see cref="T:System.Data.DataRow" /> オブジェクトの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataTable>ものコレクションを含む<xref:System.Data.DataRelation>によって返されるオブジェクト、<xref:System.Data.DataTable.ChildRelations%2A>プロパティです。  
+  
+ 使用して、<xref:System.Data.DataRow.HasVersion%2A>プロパティを決定するかどうか、<xref:System.Data.DataRowVersion>が存在します。  
+  
+ 場合<xref:System.Data.DataRowVersion.Default>が指定されているために使用されるバージョンに依存して、<xref:System.Data.DataRow.RowState*>なる行の`GetChildRows`が呼び出されます。 場合なる行`GetChildRows`が呼び出されますが、`RowState`の`Modified`、 `New`、または`Unchanged`、<xref:System.Data.DataRowVersion.Current>現在のバージョンに一致する値を持つ関連する子の行をフェッチするため、行のバージョンを使用します。 場合、行を`GetChildRows`が呼び出されますが、`RowState`の`Deleted`、<xref:System.Data.DataRowVersion.Original>を元のバージョンに一致する値を持つ関連する子の行をフェッチするため、行のバージョンを使用します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.DataRow.GetChildRows%2A>を返す子<xref:System.Data.DataRow>のすべての子オブジェクト<xref:System.Data.DataRelation>で、<xref:System.Data.DataTable>です。 指定されたバージョンの行に各列の値が出力されます。  
+  
+ [!code-csharp[Classic WebData DataRow.GetChildRows3 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRow.GetChildRows3 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRow.GetChildRows3 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.GetChildRows3 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">リレーションシップと行は、同じテーブルに属していません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="relation" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Data.RowNotInTableException">行は、テーブルには属していません。</exception>
+        <exception cref="T:System.Data.VersionNotFoundException">行は、要求されたが<see cref="T:System.Data.DataRowVersion" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChildRows">
+      <MemberSignature Language="C#" Value="public System.Data.DataRow[] GetChildRows (string relationName, System.Data.DataRowVersion version);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataRow[] GetChildRows(string relationName, valuetype System.Data.DataRowVersion version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.GetChildRows(System.String,System.Data.DataRowVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataRow[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="relationName" Type="System.String" />
+        <Parameter Name="version" Type="System.Data.DataRowVersion" />
+      </Parameters>
+      <Docs>
+        <param name="relationName"><see cref="P:System.Data.DataRelation.RelationName" />の<see cref="T:System.Data.DataRelation" />を使用します。</param>
+        <param name="version">1 つ、<see cref="T:System.Data.DataRowVersion" />取得するデータのバージョンを指定する値。 指定できる値は、<see langword="Default" />、<see langword="Original" />、<see langword="Current" />、および <see langword="Proposed" /> です。</param>
+        <summary>子の行を取得、<see cref="T:System.Data.DataRow" />指定して<see cref="P:System.Data.DataRelation.RelationName" />の<see cref="T:System.Data.DataRelation" />、および<see cref="T:System.Data.DataRowVersion" />です。</summary>
+        <returns>配列<see cref="T:System.Data.DataRow" />オブジェクトまたは長さ 0 の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataTable>ものコレクションを含む<xref:System.Data.DataRelation>によって返されるオブジェクト、<xref:System.Data.DataTable.ChildRelations%2A>プロパティです。  
+  
+ 使用して、<xref:System.Data.DataRow.HasVersion%2A>プロパティを決定するかどうか、<xref:System.Data.DataRowVersion>が存在します。  
+  
+ 場合<xref:System.Data.DataRowVersion.Default>が指定されているために使用されるバージョンに依存して、<xref:System.Data.DataRow.RowState*>なる行の`GetChildRows`が呼び出されます。 場合なる行`GetChildRows`が呼び出されますが、`RowState`の`Modified`、 `New`、または`Unchanged`、<xref:System.Data.DataRowVersion.Current>現在のバージョンに一致する値を持つ関連する子の行をフェッチするため、行のバージョンを使用します。 場合、行を`GetChildRows`が呼び出されますが、`RowState`の`Deleted`、<xref:System.Data.DataRowVersion.Original>を元のバージョンに一致する値を持つ関連する子の行をフェッチするため、行のバージョンを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">リレーションシップと行は、同じテーブルに属していません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="relation" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Data.RowNotInTableException">行は、テーブルには属していません。</exception>
+        <exception cref="T:System.Data.VersionNotFoundException">行は、要求されたが<see cref="T:System.Data.DataRowVersion" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetColumnError">
+      <MemberSignature Language="C#" Value="public string GetColumnError (System.Data.DataColumn column);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetColumnError(class System.Data.DataColumn column) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.GetColumnError(System.Data.DataColumn)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="column" Type="System.Data.DataColumn" />
+      </Parameters>
+      <Docs>
+        <param name="column"><see cref="T:System.Data.DataColumn" />。</param>
+        <summary>指定したエラーの説明を取得<see cref="T:System.Data.DataColumn" />です。</summary>
+        <returns>エラーの説明のテキストです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Data.DataRow.SetColumnError%2A>列エラーを設定します。  
+  
+ Columns コレクションにエラーがあるかどうかを確認するには<xref:System.Data.DataRow.HasErrors%2A>メソッドです。 したがって、使用することができます、<xref:System.Data.DataRow.GetColumnsInError%2A>エラーのあるすべての列を取得します。 または、<xref:System.Data.DataTable.GetErrors%2A>のメソッド、<xref:System.Data.DataTable>エラーのあるすべての行を返します。  
+  
+ 列コレクションのすべてのエラーをクリアする、<xref:System.Data.DataRow.ClearErrors%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例は、指定したエラーの説明を設定<xref:System.Data.DataRow>です。  
+  
+ [!code-csharp[Classic WebData DataRow.SetColumnError Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRow.SetColumnError Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRow.SetColumnError Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.SetColumnError Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetColumnError">
+      <MemberSignature Language="C#" Value="public string GetColumnError (int columnIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetColumnError(int32 columnIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.GetColumnError(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="columnIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="columnIndex">列の 0 から始まるインデックス。</param>
+        <summary>インデックスによって指定された列のエラーの説明を取得します。</summary>
+        <returns>エラーの説明のテキストです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Data.DataRow.SetColumnError%2A>列エラーを設定します。  
+  
+ Columns コレクションにエラーがあるかどうかを確認するには<xref:System.Data.DataRow.HasErrors%2A>メソッドです。 したがって、使用することができます、<xref:System.Data.DataRow.GetColumnsInError%2A>エラーのあるすべての列を取得します。  
+  
+ 列コレクションのすべてのエラーをクリアする、<xref:System.Data.DataRow.ClearErrors%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例は、指定したエラーの説明を設定<xref:System.Data.DataRow>です。  
+  
+ [!code-csharp[Classic WebData DataRow.SetColumnError Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRow.SetColumnError Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRow.SetColumnError Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.SetColumnError Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException"><paramref name="columnIndex" />引数が範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetColumnError">
+      <MemberSignature Language="C#" Value="public string GetColumnError (string columnName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetColumnError(string columnName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.GetColumnError(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="columnName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="columnName">列の名前。</param>
+        <summary>名前で指定された列のエラーの説明を取得します。</summary>
+        <returns>エラーの説明のテキストです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Data.DataRow.SetColumnError%2A>列エラーを設定します。  
+  
+ Columns コレクションにエラーがあるかどうかを確認するには<xref:System.Data.DataRow.HasErrors%2A>メソッドです。 したがって、使用することができます、<xref:System.Data.DataRow.GetColumnsInError%2A>エラーのあるすべての列を取得します。  
+  
+ 列コレクションのすべてのエラーをクリアする、<xref:System.Data.DataRow.ClearErrors%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例は、指定したエラーの説明を設定<xref:System.Data.DataRow>です。  
+  
+ [!code-csharp[Classic WebData DataRow.SetColumnError Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRow.SetColumnError Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRow.SetColumnError Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.SetColumnError Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetColumnsInError">
+      <MemberSignature Language="C#" Value="public System.Data.DataColumn[] GetColumnsInError ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataColumn[] GetColumnsInError() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.GetColumnsInError" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataColumn[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>エラーが発生した列の配列を取得します。</summary>
+        <returns>配列<see cref="T:System.Data.DataColumn" />エラーが含まれているオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataRow.GetColumnsInError%2A>の数を減らすことができます<xref:System.Data.DataColumn>オブジェクトをエラーである列のみを返すことによってエラーを処理する必要があります。 エラーを使用して個々 の列に設定する、<xref:System.Data.DataRow.SetColumnError%2A>メソッドです。 処理の数をさらに削減するには、確認、<xref:System.Data.DataRow.HasErrors%2A>のプロパティ、<xref:System.Data.DataRow>クラスを決定するかどうか、<xref:System.Data.DataRow>を呼び出す前にエラーが発生<xref:System.Data.DataRow.GetColumnsInError%2A>です。  
+  
+ 使用して、<xref:System.Data.DataRow.ClearErrors%2A>行のすべてのエラーをクリアします。 これには <xref:System.Data.DataRow.RowError%2A> が含まれます。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.DataRow.HasErrors%2A>のエラーを確認します。 行が、エラー、<xref:System.Data.DataRow.GetColumnsInError%2A>メソッド解決できるエラーを含む列の配列を返します。 <xref:System.Data.DataRow.ClearErrors%2A>をすべてのエラーをクリアするメソッドが呼び出されます。  
+  
+ [!code-csharp[Classic WebData DataRow.ClearErrors Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRow.ClearErrors Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRow.ClearErrors Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.ClearErrors Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParentRow">
+      <MemberSignature Language="C#" Value="public System.Data.DataRow GetParentRow (System.Data.DataRelation relation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataRow GetParentRow(class System.Data.DataRelation relation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.GetParentRow(System.Data.DataRelation)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataRow</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="relation" Type="System.Data.DataRelation" />
+      </Parameters>
+      <Docs>
+        <param name="relation">使用する <see cref="T:System.Data.DataRelation" />。</param>
+        <summary>親行の取得、<see cref="T:System.Data.DataRow" />指定して<see cref="T:System.Data.DataRelation" />です。</summary>
+        <returns>親<see cref="T:System.Data.DataRow" />の現在の行。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataSet>、すべての親のコレクション<xref:System.Data.DataRelation>によってデータ セットが返されるオブジェクト、<xref:System.Data.DataRow.GetParentRows%2A>メソッドです。  
+  
+ <xref:System.Data.DataTable>ものコレクションを含む<xref:System.Data.DataRelation>によって返されるオブジェクト、<xref:System.Data.DataTable.ParentRelations%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.DataRow.GetParentRow%2A>を返す子<xref:System.Data.DataRow>のすべての子オブジェクト<xref:System.Data.DataRelation>で、<xref:System.Data.DataTable>です。 行の各列の値が出力されます。  
+  
+ [!code-csharp[Classic WebData DataRow.GetParentRow2 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRow.GetParentRow2 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRow.GetParentRow2 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.GetParentRow2 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="relation" />に属さない、<see cref="T:System.Data.DataTable" />です。  
+  
+ 行が<see langword="null" />です。</exception>
+        <exception cref="T:System.Data.DataException">子の行に複数の親が含まれます。</exception>
+        <exception cref="T:System.Data.InvalidConstraintException">この行の子テーブルに属していません、<see cref="T:System.Data.DataRelation" />オブジェクト。</exception>
+        <exception cref="T:System.Data.RowNotInTableException">行は、テーブルには属していません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParentRow">
+      <MemberSignature Language="C#" Value="public System.Data.DataRow GetParentRow (string relationName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataRow GetParentRow(string relationName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.GetParentRow(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataRow</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="relationName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="relationName"><see cref="P:System.Data.DataRelation.RelationName" />の<see cref="T:System.Data.DataRelation" />です。</param>
+        <summary>親行の取得、<see cref="T:System.Data.DataRow" />指定して<see cref="P:System.Data.DataRelation.RelationName" />の<see cref="T:System.Data.DataRelation" />です。</summary>
+        <returns>親<see cref="T:System.Data.DataRow" />の現在の行。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataSet>、すべての親のコレクション<xref:System.Data.DataRelation>によってデータ セットが返されるオブジェクト、<xref:System.Data.DataRow.GetParentRows%2A>メソッドです。  
+  
+ <xref:System.Data.DataTable>ものコレクションを含む<xref:System.Data.DataRelation>によって返されるオブジェクト、<xref:System.Data.DataTable.ParentRelations%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.DataRow.GetParentRow%2A>それぞれの各親の行から値を印刷する<xref:System.Data.DataRow>で、<xref:System.Data.DataTable>です。  
+  
+ [!code-csharp[Classic WebData DataRow.GetParentRow Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRow.GetParentRow Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRow.GetParentRow Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.GetParentRow Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">リレーションシップと行は、同じテーブルに属していません。</exception>
+        <exception cref="T:System.Data.DataException">子の行に複数の親が含まれます。</exception>
+        <exception cref="T:System.Data.RowNotInTableException">行は、テーブルには属していません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParentRow">
+      <MemberSignature Language="C#" Value="public System.Data.DataRow GetParentRow (System.Data.DataRelation relation, System.Data.DataRowVersion version);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataRow GetParentRow(class System.Data.DataRelation relation, valuetype System.Data.DataRowVersion version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.GetParentRow(System.Data.DataRelation,System.Data.DataRowVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataRow</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="relation" Type="System.Data.DataRelation" />
+        <Parameter Name="version" Type="System.Data.DataRowVersion" />
+      </Parameters>
+      <Docs>
+        <param name="relation">使用する <see cref="T:System.Data.DataRelation" />。</param>
+        <param name="version">1 つ、<see cref="T:System.Data.DataRowVersion" />取得するデータのバージョンを指定する値。</param>
+        <summary>親行の取得、<see cref="T:System.Data.DataRow" />指定して<see cref="T:System.Data.DataRelation" />、および<see cref="T:System.Data.DataRowVersion" />です。</summary>
+        <returns>親<see cref="T:System.Data.DataRow" />の現在の行。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataSet>、すべての親のコレクション<xref:System.Data.DataRelation>によってデータ セットが返されるオブジェクト、<xref:System.Data.DataRow.GetParentRows%2A>メソッドです。  
+  
+ <xref:System.Data.DataTable>ものコレクションを含む<xref:System.Data.DataRelation>によって返されるオブジェクト、<xref:System.Data.DataTable.ParentRelations%2A>プロパティです。  
+  
+ 使用して、<xref:System.Data.DataRow.HasVersion%2A>プロパティを決定するかどうか、<xref:System.Data.DataRowVersion>が存在します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.DataRow.GetParentRow%2A>を返す子<xref:System.Data.DataRow>のすべての子オブジェクト<xref:System.Data.DataRelation>で、<xref:System.Data.DataTable>です。 行の各列の値が出力されます。  
+  
+ [!code-csharp[Classic WebData DataRow.GetParentRow3 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRow.GetParentRow3 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRow.GetParentRow3 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.GetParentRow3 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">行が<see langword="null" />です。  
+  
+ <paramref name="relation" />はこのテーブルの親リレーションに属していません。</exception>
+        <exception cref="T:System.Data.DataException">子の行に複数の親が含まれます。</exception>
+        <exception cref="T:System.Data.InvalidConstraintException">リレーションシップの子テーブルは、行が属するテーブルではありません。</exception>
+        <exception cref="T:System.Data.RowNotInTableException">行は、テーブルには属していません。</exception>
+        <exception cref="T:System.Data.VersionNotFoundException">行には、このバージョンのデータはありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParentRow">
+      <MemberSignature Language="C#" Value="public System.Data.DataRow GetParentRow (string relationName, System.Data.DataRowVersion version);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataRow GetParentRow(string relationName, valuetype System.Data.DataRowVersion version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.GetParentRow(System.String,System.Data.DataRowVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataRow</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="relationName" Type="System.String" />
+        <Parameter Name="version" Type="System.Data.DataRowVersion" />
+      </Parameters>
+      <Docs>
+        <param name="relationName"><see cref="P:System.Data.DataRelation.RelationName" />の<see cref="T:System.Data.DataRelation" />です。</param>
+        <param name="version"><see cref="T:System.Data.DataRowVersion" /> 値のいずれか。</param>
+        <summary>親行の取得、<see cref="T:System.Data.DataRow" />指定して<see cref="P:System.Data.DataRelation.RelationName" />の<see cref="T:System.Data.DataRelation" />、および<see cref="T:System.Data.DataRowVersion" />です。</summary>
+        <returns>親<see cref="T:System.Data.DataRow" />の現在の行。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataSet>、すべての親のコレクション<xref:System.Data.DataRelation>によってデータ セットが返されるオブジェクト、<xref:System.Data.DataRow.GetParentRows%2A>メソッドです。  
+  
+ <xref:System.Data.DataTable>ものコレクションを含む<xref:System.Data.DataRelation>によって返されるオブジェクト、<xref:System.Data.DataTable.ParentRelations%2A>プロパティです。  
+  
+ 使用して、<xref:System.Data.DataRow.HasVersion%2A>プロパティを決定するかどうか、<xref:System.Data.DataRowVersion>が存在します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.DataRow.GetParentRow%2A>それぞれの各親の行から値を印刷する<xref:System.Data.DataRow>で、<xref:System.Data.DataTable>です。  
+  
+ [!code-csharp[Classic WebData DataRow.GetParentRow1 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRow.GetParentRow1 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRow.GetParentRow1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.GetParentRow1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">リレーションシップと行は、同じテーブルに属していません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="relation" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Data.DataException">子の行に複数の親が含まれます。</exception>
+        <exception cref="T:System.Data.RowNotInTableException">行は、テーブルには属していません。</exception>
+        <exception cref="T:System.Data.VersionNotFoundException">行は、要求されたが<see cref="T:System.Data.DataRowVersion" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParentRows">
+      <MemberSignature Language="C#" Value="public System.Data.DataRow[] GetParentRows (System.Data.DataRelation relation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataRow[] GetParentRows(class System.Data.DataRelation relation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.GetParentRows(System.Data.DataRelation)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataRow[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="relation" Type="System.Data.DataRelation" />
+      </Parameters>
+      <Docs>
+        <param name="relation">使用する <see cref="T:System.Data.DataRelation" />。</param>
+        <summary>親の行を取得、<see cref="T:System.Data.DataRow" />指定して<see cref="T:System.Data.DataRelation" />です。</summary>
+        <returns>配列<see cref="T:System.Data.DataRow" />オブジェクトまたは長さ 0 の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataSet>、すべての親のコレクション<xref:System.Data.DataRelation>によってデータ セットが返されるオブジェクト、<xref:System.Data.DataRow.GetParentRows%2A>メソッドです。  
+  
+ <xref:System.Data.DataTable>ものコレクションを含む<xref:System.Data.DataRelation>によって返されるオブジェクト、<xref:System.Data.DataTable.ParentRelations%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.DataRow.GetParentRows%2A>を返す子<xref:System.Data.DataRow>のすべての子オブジェクト<xref:System.Data.DataRelation>で、<xref:System.Data.DataTable>です。 行の各列の値が出力されます。  
+  
+ [!code-vb[Classic WebData DataRow.GetParentRows2 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.GetParentRows2 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.Data.DataRelation" />この行に属さない<see cref="T:System.Data.DataSet" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">行が<see langword="null" />です。</exception>
+        <exception cref="T:System.Data.InvalidConstraintException">リレーションシップの子テーブルは、行が属するテーブルではありません。</exception>
+        <exception cref="T:System.Data.RowNotInTableException">行に属さない、<see cref="T:System.Data.DataTable" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParentRows">
+      <MemberSignature Language="C#" Value="public System.Data.DataRow[] GetParentRows (string relationName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataRow[] GetParentRows(string relationName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.GetParentRows(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataRow[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="relationName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="relationName"><see cref="P:System.Data.DataRelation.RelationName" />の<see cref="T:System.Data.DataRelation" />です。</param>
+        <summary>親の行を取得、<see cref="T:System.Data.DataRow" />指定して<see cref="P:System.Data.DataRelation.RelationName" />の<see cref="T:System.Data.DataRelation" />です。</summary>
+        <returns>配列<see cref="T:System.Data.DataRow" />オブジェクトまたは長さ 0 の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataSet>、すべての親のコレクション<xref:System.Data.DataRelation>によってデータ セットが返されるオブジェクト、<xref:System.Data.DataRow.GetParentRows%2A>メソッドです。  
+  
+ <xref:System.Data.DataTable>ものコレクションを含む<xref:System.Data.DataRelation>によって返されるオブジェクト、<xref:System.Data.DataTable.ParentRelations%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">リレーションシップと行は、同じテーブルに属していません。</exception>
+        <exception cref="T:System.Data.RowNotInTableException">行は、テーブルには属していません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParentRows">
+      <MemberSignature Language="C#" Value="public System.Data.DataRow[] GetParentRows (System.Data.DataRelation relation, System.Data.DataRowVersion version);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataRow[] GetParentRows(class System.Data.DataRelation relation, valuetype System.Data.DataRowVersion version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.GetParentRows(System.Data.DataRelation,System.Data.DataRowVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataRow[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="relation" Type="System.Data.DataRelation" />
+        <Parameter Name="version" Type="System.Data.DataRowVersion" />
+      </Parameters>
+      <Docs>
+        <param name="relation">使用する <see cref="T:System.Data.DataRelation" />。</param>
+        <param name="version">1 つ、<see cref="T:System.Data.DataRowVersion" />取得するデータのバージョンを指定する値。</param>
+        <summary>親の行を取得、<see cref="T:System.Data.DataRow" />指定して<see cref="T:System.Data.DataRelation" />、および<see cref="T:System.Data.DataRowVersion" />です。</summary>
+        <returns>配列<see cref="T:System.Data.DataRow" />オブジェクトまたは長さ 0 の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataSet>、すべての親のコレクション<xref:System.Data.DataRelation>によってデータ セットが返されるオブジェクト、<xref:System.Data.DataRow.GetParentRows%2A>メソッドです。  
+  
+ <xref:System.Data.DataTable>ものコレクションを含む<xref:System.Data.DataRelation>によって返されるオブジェクト、<xref:System.Data.DataTable.ParentRelations%2A>プロパティです。  
+  
+ 使用して、<xref:System.Data.DataRow.HasVersion%2A>プロパティを決定するかどうか、<xref:System.Data.DataRowVersion>が存在します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.DataRow.GetParentRows%2A>を返す子<xref:System.Data.DataRow>のすべての子オブジェクト<xref:System.Data.DataRelation>で、<xref:System.Data.DataTable>です。 行の各列の値が出力されます。  
+  
+ [!code-vb[Classic WebData DataRow.GetParentRows3 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.GetParentRows3 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.Data.DataRelation" />この行に属さない<see cref="T:System.Data.DataSet" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">行が<see langword="null" />です。</exception>
+        <exception cref="T:System.Data.InvalidConstraintException">リレーションシップの子テーブルは、行が属するテーブルではありません。</exception>
+        <exception cref="T:System.Data.RowNotInTableException">行に属さない、<see cref="T:System.Data.DataTable" />です。</exception>
+        <exception cref="T:System.Data.VersionNotFoundException">行は、要求されたが<see cref="T:System.Data.DataRowVersion" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParentRows">
+      <MemberSignature Language="C#" Value="public System.Data.DataRow[] GetParentRows (string relationName, System.Data.DataRowVersion version);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataRow[] GetParentRows(string relationName, valuetype System.Data.DataRowVersion version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.GetParentRows(System.String,System.Data.DataRowVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataRow[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="relationName" Type="System.String" />
+        <Parameter Name="version" Type="System.Data.DataRowVersion" />
+      </Parameters>
+      <Docs>
+        <param name="relationName"><see cref="P:System.Data.DataRelation.RelationName" />の<see cref="T:System.Data.DataRelation" />です。</param>
+        <param name="version">1 つ、<see cref="T:System.Data.DataRowVersion" />取得するデータのバージョンを指定する値。 指定できる値は、<see langword="Default" />、<see langword="Original" />、<see langword="Current" />、および <see langword="Proposed" /> です。</param>
+        <summary>親の行を取得、<see cref="T:System.Data.DataRow" />指定して<see cref="P:System.Data.DataRelation.RelationName" />の<see cref="T:System.Data.DataRelation" />、および<see cref="T:System.Data.DataRowVersion" />です。</summary>
+        <returns>配列<see cref="T:System.Data.DataRow" />オブジェクトまたは長さ 0 の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataSet>、すべての親のコレクション<xref:System.Data.DataRelation>によってデータ セットが返されるオブジェクト、<xref:System.Data.DataRow.GetParentRows%2A>メソッドです。  
+  
+ <xref:System.Data.DataTable>ものコレクションを含む<xref:System.Data.DataRelation>によって返されるオブジェクト、<xref:System.Data.DataTable.ParentRelations%2A>プロパティです。  
+  
+ 使用して、<xref:System.Data.DataRow.HasVersion%2A>プロパティを決定するかどうか、<xref:System.Data.DataRowVersion>が存在します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">リレーションシップと行は、同じテーブルに属していません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="relation" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Data.RowNotInTableException">行は、テーブルには属していません。</exception>
+        <exception cref="T:System.Data.VersionNotFoundException">行は、要求されたが<see cref="T:System.Data.DataRowVersion" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HasErrors">
+      <MemberSignature Language="C#" Value="public bool HasErrors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasErrors" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataRow.HasErrors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行にエラーがあるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />行にエラーが含まれている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `HasErrors`返します`true`存在する場合<xref:System.Data.DataColumn>行内のオブジェクトには、エラーが含まれています。 または、<xref:System.Data.DataRow.RowError%2A>のプロパティ、<xref:System.Data.DataRow>は空の文字列ではありません。  
+  
+ データを検証する場合は、行の列に対するエラーを設定できます。 このような列に表示される場合、<xref:System.Windows.Forms.DataGrid?displayProperty=nameWithType>コントロールを列がエラーであることをユーザーに通知を赤色の感嘆符が付いています。  
+  
+ 使用して<xref:System.Data.DataRow.SetColumnError%2A>を任意の列でエラーを設定します。  
+  
+ 使用して、<xref:System.Data.DataRow.GetColumnError%2A>と`GetColumnsInError`エラーのある列を返すメソッド。  
+  
+ <xref:System.Data.DataRow.ClearErrors%2A>メソッドは、行のすべてのエラーをクリアします。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.DataRow.HasErrors%2A>のエラーを確認します。 行が、エラー、<xref:System.Data.DataRow.GetColumnsInError%2A>メソッド解決できるエラーを含む列の配列を返します。 <xref:System.Data.DataRow.ClearErrors%2A>をすべてのエラーをクリアするメソッドが呼び出されます。  
+  
+ [!code-csharp[Classic WebData DataRow.HasErrors Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRow.HasErrors Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRow.HasErrors Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.HasErrors Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasVersion">
+      <MemberSignature Language="C#" Value="public bool HasVersion (System.Data.DataRowVersion version);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool HasVersion(valuetype System.Data.DataRowVersion version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.HasVersion(System.Data.DataRowVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="version" Type="System.Data.DataRowVersion" />
+      </Parameters>
+      <Docs>
+        <param name="version">1 つ、<see cref="T:System.Data.DataRowVersion" />行のバージョンを指定する値。</param>
+        <summary>指定したバージョンが存在するかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />バージョンが存在する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、<xref:System.Data.DataRow.BeginEdit%2A> メソッドを参照してください。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.DataRow.HasVersion%2A>列の現在の値と指定された値が同じであるかどうかを調べます。 場合は、編集をキャンセルします。 それ以外の場合、<xref:System.Data.DataRow.AcceptChanges%2A>メソッドが呼び出されて、編集を終了します。  
+  
+ [!code-vb[Classic WebData DataRow.HasVersion Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.HasVersion Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNull">
+      <MemberSignature Language="C#" Value="public bool IsNull (System.Data.DataColumn column);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsNull(class System.Data.DataColumn column) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.IsNull(System.Data.DataColumn)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="column" Type="System.Data.DataColumn" />
+      </Parameters>
+      <Docs>
+        <param name="column"><see cref="T:System.Data.DataColumn" />。</param>
+        <summary>示す値を取得するかどうか、指定した<see cref="T:System.Data.DataColumn" />null 値が含まれています。</summary>
+        <returns>
+          <see langword="true" />列に null 値が含まれている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の各テーブルの行ごとの各列の出力、<xref:System.Data.DataSet>です。 行が、null 値に設定されている場合、値は出力されません。  
+  
+ [!code-vb[Classic WebData DataRow.IsNull2 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.IsNull2 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNull">
+      <MemberSignature Language="C#" Value="public bool IsNull (int columnIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsNull(int32 columnIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.IsNull(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="columnIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="columnIndex">列の 0 から始まるインデックス。</param>
+        <summary>指定したインデックス位置にある列が null 値を含むかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />列に null 値が含まれている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、null 値に列の値を変更しを使用して、<xref:System.Data.DataRow.IsNull%2A>値が null かどうかを調べます。  
+  
+ [!code-vb[Classic WebData DataRow.IsNull Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.IsNull Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNull">
+      <MemberSignature Language="C#" Value="public bool IsNull (string columnName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsNull(string columnName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.IsNull(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="columnName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="columnName">列の名前。</param>
+        <summary>名前付きの列に null 値が含まれるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />列に null 値が含まれている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、null 値に列の値を変更しを使用して、<xref:System.Data.DataRow.IsNull%2A>値が null かどうかを調べます。  
+  
+ [!code-vb[Classic WebData DataRow.IsNull1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.IsNull1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNull">
+      <MemberSignature Language="C#" Value="public bool IsNull (System.Data.DataColumn column, System.Data.DataRowVersion version);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsNull(class System.Data.DataColumn column, valuetype System.Data.DataRowVersion version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.IsNull(System.Data.DataColumn,System.Data.DataRowVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="column" Type="System.Data.DataColumn" />
+        <Parameter Name="version" Type="System.Data.DataRowVersion" />
+      </Parameters>
+      <Docs>
+        <param name="column"><see cref="T:System.Data.DataColumn" />。</param>
+        <param name="version">1 つ、<see cref="T:System.Data.DataRowVersion" />行のバージョンを指定する値。 指定できる値は、<see langword="Default" />、<see langword="Original" />、<see langword="Current" />、および <see langword="Proposed" /> です。</param>
+        <summary>示す値を取得するかどうか、指定した<see cref="T:System.Data.DataColumn" />と<see cref="T:System.Data.DataRowVersion" />null 値が含まれています。</summary>
+        <returns>
+          <see langword="true" />列に null 値が含まれている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[System.Data.DataColumn column] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(class System.Data.DataColumn)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataRow.Item(System.Data.DataColumn)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="column" Type="System.Data.DataColumn" />
+      </Parameters>
+      <Docs>
+        <param name="column">A<see cref="T:System.Data.DataColumn" />データが含まれています。</param>
+        <summary>指定した格納されたデータを取得または<see cref="T:System.Data.DataColumn" />です。</summary>
+        <value>データを格納している <see cref="T:System.Object" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 例外が発生した場合、例外が生成されるプロパティを設定するときに、<xref:System.Data.DataTable.ColumnChanging>イベント。  
+  
+ 直前の編集の場合を参照してください。 <xref:System.Data.DataRow.EndEdit%2A> 、生成される例外。  
+  
+   
+  
+## Examples  
+ 次の例では、使用、<xref:System.Data.DataRow.Item%2A>プロパティを取得し、特定の列インデックスの値を設定します。 最初の例では、最初の列の値を取得、ユーザーがクリックした任意の行で、<xref:System.Windows.Forms.DataGrid>コントロール。 2 つ目は、メソッドに引数として渡された値を設定します。  
+  
+ [!code-vb[Classic WebData DataRow.this2 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.this2 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">列は、このテーブルには属していません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="column" />が null です。</exception>
+        <exception cref="T:System.Data.DeletedRowInaccessibleException">削除された行に値を設定しようとしました。</exception>
+        <exception cref="T:System.InvalidCastException">値と列のデータ型が一致しませんしないでください。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[int columnIndex] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataRow.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="columnIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="columnIndex">列の 0 から始まるインデックス。</param>
+        <summary>取得またはインデックスによって指定された列に格納されたデータを設定します。</summary>
+        <value>データを格納している <see cref="T:System.Object" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 例外が発生した場合、例外が生成されるプロパティを設定するときに、<xref:System.Data.DataTable.ColumnChanging>イベント。  
+  
+ 編集する場合を参照してください。 <xref:System.Data.DataRow.EndEdit%2A> 、生成される例外。  
+  
+   
+  
+## Examples  
+ 次の例では、使用、<xref:System.Data.DataRow.Item%2A>プロパティを取得し、特定の列インデックスの値を設定します。 最初の例では、最初の列の値を取得、ユーザーがクリックした任意の行で、<xref:System.Windows.Forms.DataGrid>コントロール。  
+  
+ [!code-csharp[Classic WebData DataRow.this Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRow.this Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRow.this Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.this Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Data.DeletedRowInaccessibleException">削除された行に値を設定しようとしたときに発生します。</exception>
+        <exception cref="T:System.IndexOutOfRangeException"><paramref name="columnIndex" />引数が範囲外です。</exception>
+        <exception cref="T:System.InvalidCastException">値と、新しい値を設定するときに発生<see cref="T:System.Type" />と一致しません<see cref="P:System.Data.DataColumn.DataType" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[string columnName] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataRow.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="columnName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="columnName">列の名前。</param>
+        <summary>取得または名前で指定された列に格納されたデータを設定します。</summary>
+        <value>データを格納している <see cref="T:System.Object" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 例外が発生した場合、例外が生成されるプロパティを設定するときに、<xref:System.Data.DataTable.ColumnChanging>イベント。  
+  
+ 直前の編集の場合を参照してください。 <xref:System.Data.DataRow.EndEdit%2A> 、生成される例外。  
+  
+   
+  
+## Examples  
+ 次の例では、使用、<xref:System.Data.DataRow.Item%2A>プロパティを取得し、特定の列インデックスの値を設定します。 最初の例では、最初の列の値を取得、ユーザーがクリックした任意の行で、<xref:System.Windows.Forms.DataGrid>コントロール。 2 つ目は、メソッドに引数として渡された値を設定します。  
+  
+ [!code-csharp[Classic WebData DataRow.this1 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRow.this1 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRow.this1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.this1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定された列<paramref name="columnName" />が見つかりません。</exception>
+        <exception cref="T:System.Data.DeletedRowInaccessibleException">削除された行に値を設定しようとしたときに発生します。</exception>
+        <exception cref="T:System.InvalidCastException">値を設定するときに発生し、その<see cref="T:System.Type" />と一致しません<see cref="P:System.Data.DataColumn.DataType" />です。</exception>
+        <exception cref="T:System.Data.NoNullAllowedException">列に null 値を挿入しようとしたときに発生場所<see cref="P:System.Data.DataColumn.AllowDBNull" />に設定されている<see langword="false" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[System.Data.DataColumn column, System.Data.DataRowVersion version] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(class System.Data.DataColumn, valuetype System.Data.DataRowVersion)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataRow.Item(System.Data.DataColumn,System.Data.DataRowVersion)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="column" Type="System.Data.DataColumn" />
+        <Parameter Name="version" Type="System.Data.DataRowVersion" />
+      </Parameters>
+      <Docs>
+        <param name="column">列に関する情報を格納する <see cref="T:System.Data.DataColumn" />。</param>
+        <param name="version">1 つ、<see cref="T:System.Data.DataRowVersion" />する行のバージョンを指定する値。 指定できる値は、<see langword="Default" />、<see langword="Original" />、<see langword="Current" />、および <see langword="Proposed" /> です。</param>
+        <summary>指定した格納されているデータの指定したバージョンを取得<see cref="T:System.Data.DataColumn" />です。</summary>
+        <value>データを格納している <see cref="T:System.Object" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `version`と混同しないで、<xref:System.Data.DataRow.RowState*>プロパティです。 `version`引数が列の元の値の基準とした列に格納されているデータの状態を説明します。  
+  
+ 例外が発生した場合、例外が生成されるプロパティを設定するときに、<xref:System.Data.DataTable.ColumnChanging>イベント。  
+  
+ 直前の編集の場合を参照してください。 <xref:System.Data.DataRow.EndEdit%2A> 、生成される例外。  
+  
+   
+  
+## Examples  
+ 次の例でクリックされたセルの現在の値を取得する、<xref:System.Windows.Forms.DataGrid>コントロール。  
+  
+ [!code-csharp[Classic WebData DataRow.this5 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRow.this5 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRow.this5 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.this5 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">列は、テーブルには属していません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="column" />引数に null が含まれています。</exception>
+        <exception cref="T:System.Data.VersionNotFoundException">行には、このバージョンのデータはありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[int columnIndex, System.Data.DataRowVersion version] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(int32, valuetype System.Data.DataRowVersion)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataRow.Item(System.Int32,System.Data.DataRowVersion)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="columnIndex" Type="System.Int32" />
+        <Parameter Name="version" Type="System.Data.DataRowVersion" />
+      </Parameters>
+      <Docs>
+        <param name="columnIndex">列の 0 から始まるインデックス。</param>
+        <param name="version">1 つ、<see cref="T:System.Data.DataRowVersion" />する行のバージョンを指定する値。 指定できる値は、<see langword="Default" />、<see langword="Original" />、<see langword="Current" />、および <see langword="Proposed" /> です。</param>
+        <summary>インデックスおよび取得するデータのバージョンを指定して、列に格納されたデータを取得します。</summary>
+        <value>データを格納している <see cref="T:System.Object" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ のみを作成したりを呼び出した後に行を更新、<xref:System.Data.DataRow.BeginEdit%2A>メソッド以外の場合は、同様に、<xref:System.Data.DataRow.EndEdit%2A>編集をコミットするメソッドを呼び出す必要があります。 呼び出した後、<xref:System.Data.DataRow.EndEdit%2A>メソッドを呼び出す前に、<xref:System.Data.DataRow.AcceptChanges%2A>値が格納されているメソッド、および新しい、元の内部表現提案します。 そのため、呼び出すまで、 <xref:System.Data.DataRow.AcceptChanges%2A>、使用することができます、`version`列の値のバージョンを必要があるかを指定する引数、`DataRowVersion.Original`または`DataRowVersion.Proposed`です。 ただし、すぐを呼び出すと、<xref:System.Data.DataRow.AcceptChanges%2A>メソッドに、列のバージョンを元に戻します`DataRowVersion.Original`です。 行が新しい場合は、渡すこともできます`DataRowVersion.Default`パラメーターには、列の既定値を取得します。 渡すとき`DataRowVersion.Current`プロパティは、現在を返します。 値の任意のバージョンもあります。  
+  
+> [!NOTE]
+>  <xref:System.Data.DataRow.BeginEdit%2A>メソッドは、データ バインド コントロールの値を変更するとき、または暗黙的に呼び出されます、<xref:System.Data.DataRow>にオブジェクトが追加、<xref:System.Data.DataRowCollection>以外の場合は、<xref:System.Data.DataRow.EndEdit%2A>メソッドは、次のメソッドを呼び出すときに暗黙的に呼び出されます。<xref:System.Data.DataRow.AcceptChanges%2A>のメソッド、<xref:System.Data.DataRow>オブジェクト、<xref:System.Data.DataTable.AcceptChanges%2A>のメソッド、<xref:System.Data.DataTable>オブジェクト、または<xref:System.Data.DataRow.CancelEdit%2A>メソッドです。  
+  
+ これに対し、<xref:System.Data.DataRowVersion>列挙`Current`後のデータのバージョンを返します、<xref:System.Data.DataRow.EndEdit%2A>メソッドが呼び出されました。  
+  
+ `version`引数混同しないようにで、< xref:System.Data.DataRow.RowState*> プロパティです。`version`引数が列の元の値の基準とした列に格納されているデータの状態を説明します。< Xref:System.Data.DataRow.RowState*> プロパティがその親の基準とした行全体の状態を説明<xref:System.Data.DataTable>です。  
+  
+ 例外が発生した場合、例外が生成されるプロパティを設定するときに、<xref:System.Data.DataTable.ColumnChanging>イベント。  
+  
+ 直前の編集の場合を参照してください。 <xref:System.Data.DataRow.EndEdit%2A> 、生成される例外。  
+  
+   
+  
+## Examples  
+ 次の例を使用して列の現在の値を取得、<xref:System.Data.DataRow.Item%2A>のプロパティ、<xref:System.Data.DataRow>オブジェクト。  
+  
+ [!code-vb[Classic WebData DataRow.this3 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.this3 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException"><paramref name="columnIndex" />引数が範囲外です。</exception>
+        <exception cref="T:System.InvalidCastException">値と列のデータ型が一致しませんしないでください。</exception>
+        <exception cref="T:System.Data.VersionNotFoundException">行には、このバージョンのデータはありません。</exception>
+        <exception cref="T:System.Data.DeletedRowInaccessibleException">削除された行に値を設定しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[string columnName, System.Data.DataRowVersion version] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(string, valuetype System.Data.DataRowVersion)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataRow.Item(System.String,System.Data.DataRowVersion)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="columnName" Type="System.String" />
+        <Parameter Name="version" Type="System.Data.DataRowVersion" />
+      </Parameters>
+      <Docs>
+        <param name="columnName">列の名前。</param>
+        <param name="version">1 つ、<see cref="T:System.Data.DataRowVersion" />する行のバージョンを指定する値。 指定できる値は、<see langword="Default" />、<see langword="Original" />、<see langword="Current" />、および <see langword="Proposed" /> です。</param>
+        <summary>指定されたバージョンの名前付きの列に格納されたデータを取得します。</summary>
+        <value>データを格納している <see cref="T:System.Object" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バージョン混同しないようにで、< xref:System.Data.DataRow.RowState*> プロパティです。`version`引数が列の元の値の基準とした列に格納されているデータの状態を説明します。< Xref:System.Data.DataRow.RowState*> プロパティがその親の基準とした行全体の状態を説明<xref:System.Data.DataTable>です。  
+  
+ 例外が発生した場合、例外が生成されるプロパティを設定するときに、<xref:System.Data.DataTable.ColumnChanging>イベント。  
+  
+ 直前の編集の場合を参照してください。 <xref:System.Data.DataRow.EndEdit%2A> 、生成される例外。  
+  
+   
+  
+## Examples  
+ 次の例では、データの現在のバージョンを取得のクリックされたセルで、<xref:System.Windows.Forms.DataGrid>コントロール。  
+  
+ [!code-csharp[Classic WebData DataRow.this4 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRow.this4 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRow.this4 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.this4 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定された列<paramref name="columnName" />が見つかりません。</exception>
+        <exception cref="T:System.InvalidCastException">値と列のデータ型が一致しませんしないでください。</exception>
+        <exception cref="T:System.Data.VersionNotFoundException">行には、このバージョンのデータはありません。</exception>
+        <exception cref="T:System.Data.DeletedRowInaccessibleException">行が削除されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemArray">
+      <MemberSignature Language="C#" Value="public object[] ItemArray { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object[] ItemArray" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataRow.ItemArray" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または配列を使用してこの行のすべての値を設定します。</summary>
+        <value><see cref="T:System.Object" /> 型の配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、配列を使用してこの行の値を取得または設定することができます。 このプロパティを使用して値を設定する場合、配列は同じサイズと、列のコレクションと順序が必要です。 渡す`null`で、<xref:System.Data.DataRow.ItemArray%2A>値が指定されていないことを示します。  
+  
+ ユーザーにで例外が生成されることができます、<xref:System.Data.DataTable.ColumnChanging>イベントまたは<xref:System.Data.DataTable.RowChanging>イベント。  
+  
+   
+  
+## Examples  
+ 次の例は、取得しを使用して値を設定する方法を示して、<xref:System.Data.DataRow.ItemArray%2A>プロパティです。  
+  
+ [!code-csharp[Classic WebData DataRow.ItemArray Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRow.ItemArray Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRow.ItemArray Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.ItemArray Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">配列は、テーブル内の列の数を超えています。</exception>
+        <exception cref="T:System.InvalidCastException">配列内の値と一致しません、<see cref="P:System.Data.DataColumn.DataType" />でそれぞれの<see cref="T:System.Data.DataColumn" />します。</exception>
+        <exception cref="T:System.Data.ConstraintException">編集が制約に違反します。</exception>
+        <exception cref="T:System.Data.ReadOnlyException">編集が読み取り専用の列の値を変更しようとするとします。</exception>
+        <exception cref="T:System.Data.NoNullAllowedException">編集が、列に null 値を格納しようとしています。 ここで<see cref="P:System.Data.DataColumn.AllowDBNull" />の、<see cref="T:System.Data.DataColumn" />オブジェクトが<see langword="false" />です。</exception>
+        <exception cref="T:System.Data.DeletedRowInaccessibleException">行が削除されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RejectChanges">
+      <MemberSignature Language="C#" Value="public void RejectChanges ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RejectChanges() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.RejectChanges" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>以降の行に加えられたすべての変更を拒否した<see cref="M:System.Data.DataRow.AcceptChanges" />最後に呼び出されています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すと、 <xref:System.Data.DataRow.RejectChanges%2A> 、メソッド、<xref:System.Data.DataRow.CancelEdit%2A>メソッドを呼び出して、編集をキャンセルを暗黙的にします。 場合 < xref:System.Data.DataRow.RowState*> を削除または変更するには、行は、以前の値に戻りますと < xref:System.Data.DataRow.RowState*> 変更されずになります。 場合、<xref:System.Data.DataRow.RowState*>が追加すると、行を削除します。  
+  
+   
+  
+## Examples  
+ 次の例では、単純な<xref:System.Data.DataTable>2 つの列と 10 行を使用します。 いくつかの後に<xref:System.Data.DataRow>項目が削除されます、<xref:System.Data.DataRow.Delete%2A>行のいずれかのメソッドを呼び出すことによって戻した<xref:System.Data.DataRow.RejectChanges%2A>です。  
+  
+ [!code-csharp[Classic WebData DataRow.Delete Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRow.Delete Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRow.Delete Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.Delete Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Data.RowNotInTableException">行は、テーブルには属していません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RowError">
+      <MemberSignature Language="C#" Value="public string RowError { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RowError" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataRow.RowError" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または行のカスタム エラーの説明を設定します。</summary>
+        <value>エラーを説明するテキストです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Data.DataRow.HasErrors%2A>最初を決定するプロパティかどうか、<xref:System.Data.DataRow>エラーが含まれています。  
+  
+   
+  
+## Examples  
+ 次の例は、10 個の行に表示されているテーブルのエラー テキストを設定、<xref:System.Windows.Forms.DataGrid>コントロール。  
+  
+ [!code-csharp[Classic WebData DataRow.RowError Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRow.RowError Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRow.RowError Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.RowError Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowState">
+      <MemberSignature Language="C#" Value="public System.Data.DataRowState RowState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.DataRowState RowState" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataRow.RowState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataRowState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関係に関して、行の現在の状態を取得、<see cref="T:System.Data.DataRowCollection" />です。</summary>
+        <value><see cref="T:System.Data.DataRowState" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、 <xref:System.Data.DataRow.RowState*> 2 つの要因によって異なります: 操作の種類が、行に対して実行されたかどうかおよび<xref:System.Data.DataRow.AcceptChanges%2A>でが呼び出されて、<xref:System.Data.DataRow>です。  
+  
+   
+  
+## Examples  
+ 次の例は最初に、新しい作成<xref:System.Data.DataTable>1 つの列を持つ 1 つを作成および<xref:System.Data.DataRow>です。 として、<xref:System.Data.DataRow>作成、追加、変更、および削除するはその<xref:System.Data.DataRow.RowState*>が出力されます。  
+  
+ [!code-csharp[Classic WebData DataRow.RowState Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRow.RowState Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRow.RowState Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.RowState Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAdded">
+      <MemberSignature Language="C#" Value="public void SetAdded ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetAdded() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.SetAdded" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>変更、<see cref="P:System.Data.DataRow.Rowstate" />の<see cref="T:System.Data.DataRow" />に<see langword="Added" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更、<xref:System.Data.DataRow.RowState*>の<xref:System.Data.DataRow>に`Added`です。 いずれかで、現在の行がない場合、`Unchanged`または`Added`状態がスローされます、<xref:System.InvalidOperationException>メッセージを`SetAdded`でのみ呼び出すことができます、 `DataRow` where をインスタンス化、`RowState`は`Unchanged`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetColumnError">
+      <MemberSignature Language="C#" Value="public void SetColumnError (System.Data.DataColumn column, string error);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetColumnError(class System.Data.DataColumn column, string error) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.SetColumnError(System.Data.DataColumn,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="column" Type="System.Data.DataColumn" />
+        <Parameter Name="error" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="column"><see cref="T:System.Data.DataColumn" />のエラーの説明を設定します。</param>
+        <param name="error">エラーの説明。</param>
+        <summary>指定された列のエラーの説明を設定、<see cref="T:System.Data.DataColumn" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エラーの説明を確認するを使用して、<xref:System.Data.DataRow.GetColumnError%2A>メソッドです。  
+  
+ Columns コレクションにエラーがあるかどうかを確認するには<xref:System.Data.DataRow.HasErrors%2A>プロパティです。 したがって、使用することができます、<xref:System.Data.DataRow.GetColumnsInError%2A>エラーのあるすべての列を取得します。  
+  
+ 場合`null`、空の文字列として渡されるか、`error`パラメーターを<xref:System.Data.DataRow>エラーが設定されていないような動作と<xref:System.Data.DataRow.HasErrors%2A>プロパティは false を返します。  
+  
+ 行全体で、カスタム エラーの説明を設定するには、使用、<xref:System.Data.DataRow.RowError%2A>プロパティです。  
+  
+ Columns コレクションにエラーがあるかどうかを確認するには<xref:System.Data.DataRow.HasErrors%2A>メソッドです。  
+  
+ 列コレクションのすべてのエラーをクリアする、<xref:System.Data.DataRow.ClearErrors%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例は、指定したエラーの説明を設定<xref:System.Data.DataRow>です。  
+  
+ [!code-csharp[Classic WebData DataRow.SetColumnError Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRow.SetColumnError Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRow.SetColumnError Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.SetColumnError Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetColumnError">
+      <MemberSignature Language="C#" Value="public void SetColumnError (int columnIndex, string error);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetColumnError(int32 columnIndex, string error) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.SetColumnError(System.Int32,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="columnIndex" Type="System.Int32" />
+        <Parameter Name="error" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="columnIndex">列の 0 から始まるインデックス。</param>
+        <param name="error">エラーの説明。</param>
+        <summary>インデックスで指定された列のエラーの説明を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドは、指定された列のカスタム エラーの説明を設定するが使用されます。 使用することができます、<xref:System.Windows.Forms.ErrorProvider>エラーのテキストを表示するコントロール。  
+  
+ エラーの説明を確認するを使用して、<xref:System.Data.DataRow.GetColumnError%2A>メソッドです。  
+  
+ Columns コレクションにエラーがあるかどうかを確認するには<xref:System.Data.DataRow.HasErrors%2A>プロパティです。 したがって、使用することができます、<xref:System.Data.DataRow.GetColumnsInError%2A>エラーのあるすべての列を取得します。  
+  
+ 場合`null`、空の文字列として渡されるか、`error`パラメーターを<xref:System.Data.DataRow>エラーが設定されていないような動作と<xref:System.Data.DataRow.HasErrors%2A>プロパティは false を返します。  
+  
+ 行全体で、カスタム エラーの説明を設定するには、使用、<xref:System.Data.DataRow.RowError%2A>プロパティです。  
+  
+ 列コレクションのすべてのエラーをクリアする、<xref:System.Data.DataRow.ClearErrors%2A>メソッドです。  
+  
+ 行全体に適用されるエラー テキストを設定するには、設定、<xref:System.Data.DataRow.RowError%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例は、指定したエラーの説明を設定<xref:System.Data.DataRow>です。  
+  
+ [!code-csharp[Classic WebData DataRow.SetColumnError Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRow.SetColumnError Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRow.SetColumnError Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.SetColumnError Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException"><paramref name="columnIndex" />引数が範囲外です</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetColumnError">
+      <MemberSignature Language="C#" Value="public void SetColumnError (string columnName, string error);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetColumnError(string columnName, string error) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.SetColumnError(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="columnName" Type="System.String" />
+        <Parameter Name="error" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="columnName">列の名前。</param>
+        <param name="error">エラーの説明。</param>
+        <summary>名前で指定された列のエラーの説明を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列の名前に設定されて、<xref:System.Data.DataColumn.ColumnName%2A>のプロパティ、<xref:System.Data.DataColumn>クラスです。  
+  
+ エラーの説明を確認するを使用して、<xref:System.Data.DataRow.GetColumnError%2A>メソッドです。  
+  
+ Columns コレクションにエラーがあるかどうかを確認するには<xref:System.Data.DataRow.HasErrors%2A>プロパティです。 したがって、使用することができます、<xref:System.Data.DataRow.GetColumnsInError%2A>エラーのあるすべての列を取得します。  
+  
+ 場合`null`、空の文字列として渡されるか、`error`パラメーターを<xref:System.Data.DataRow>エラーが設定されていないような動作と<xref:System.Data.DataRow.HasErrors%2A>プロパティは false を返します。  
+  
+ 行全体で、カスタム エラーの説明を設定するには、使用、<xref:System.Data.DataRow.RowError%2A>プロパティです。  
+  
+ Columns コレクションにエラーがあるかどうかを確認するには<xref:System.Data.DataRow.HasErrors%2A>メソッドです。  
+  
+ 列コレクションのすべてのエラーをクリアする、<xref:System.Data.DataRow.ClearErrors%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例は、指定したエラーの説明を設定<xref:System.Data.DataRow>です。  
+  
+ [!code-csharp[Classic WebData DataRow.SetColumnError Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRow.SetColumnError Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRow.SetColumnError Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.SetColumnError Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetModified">
+      <MemberSignature Language="C#" Value="public void SetModified ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetModified() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.SetModified" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>変更、<see cref="P:System.Data.DataRow.Rowstate" />の<see cref="T:System.Data.DataRow" />に<see langword="Modified" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更、<xref:System.Data.DataRow.RowState*>の<xref:System.Data.DataRow>に`Modified`です。 いずれかで、現在の行がない場合、`Unchanged`または`Added`状態がスローされます、<xref:System.InvalidOperationException>メッセージを`SetModified`でのみ呼び出すことができます、 `DataRow` where をインスタンス化、`RowState`は`Unchanged`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetNull">
+      <MemberSignature Language="C#" Value="protected void SetNull (System.Data.DataColumn column);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void SetNull(class System.Data.DataColumn column) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.SetNull(System.Data.DataColumn)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="column" Type="System.Data.DataColumn" />
+      </Parameters>
+      <Docs>
+        <param name="column"><see cref="T:System.Data.DataColumn" />。</param>
+        <summary>指定した値を設定<see cref="T:System.Data.DataColumn" />を null 値にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Data.DataRow.IsNull%2A>列に null 値が含まれるかどうかを調べます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetParentRow">
+      <MemberSignature Language="C#" Value="public void SetParentRow (System.Data.DataRow parentRow);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetParentRow(class System.Data.DataRow parentRow) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.SetParentRow(System.Data.DataRow)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parentRow" Type="System.Data.DataRow" />
+      </Parameters>
+      <Docs>
+        <param name="parentRow">新しい親<see cref="T:System.Data.DataRow" />です。</param>
+        <summary>親行の設定、<see cref="T:System.Data.DataRow" />で指定された新しい親<see cref="T:System.Data.DataRow" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetParentRow">
+      <MemberSignature Language="C#" Value="public void SetParentRow (System.Data.DataRow parentRow, System.Data.DataRelation relation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetParentRow(class System.Data.DataRow parentRow, class System.Data.DataRelation relation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRow.SetParentRow(System.Data.DataRow,System.Data.DataRelation)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parentRow" Type="System.Data.DataRow" />
+        <Parameter Name="relation" Type="System.Data.DataRelation" />
+      </Parameters>
+      <Docs>
+        <param name="parentRow">新しい親<see cref="T:System.Data.DataRow" />です。</param>
+        <param name="relation">リレーション<see cref="T:System.Data.DataRelation" />を使用します。</param>
+        <summary>親行の設定、<see cref="T:System.Data.DataRow" />で指定された新しい親<see cref="T:System.Data.DataRow" />と<see cref="T:System.Data.DataRelation" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、特定の子行の親の行を設定します。  
+  
+ [!code-vb[Classic WebData DataRow.SetParentRow1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.SetParentRow1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Data.RowNotInTableException">行の 1 つは、テーブルに属していません</exception>
+        <exception cref="T:System.ArgumentNullException">行の 1 つは<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentException">リレーションに属さない、<see cref="T:System.Data.DataRelationCollection" />の<see cref="T:System.Data.DataSet" />オブジェクト。</exception>
+        <exception cref="T:System.Data.InvalidConstraintException">リレーションシップの子<see cref="T:System.Data.DataTable" />この行が属するテーブルではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Table">
+      <MemberSignature Language="C#" Value="public System.Data.DataTable Table { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.DataTable Table" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataRow.Table" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataTable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Data.DataTable" />この行にスキーマがあります。</summary>
+        <value><see cref="T:System.Data.DataTable" />この行が属しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Data.DataRow>必ずしも行の任意のテーブルのコレクションに属していません。 この現象が発生したときに、<xref:System.Data.DataRow>作成されましたに追加されていない、<xref:System.Data.DataRowCollection>です。 場合、<xref:System.Data.DataRow.RowState*>プロパティから返される`DataRowState.Detached`行が任意のコレクションに含まれない。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.DataRow.Table%2A>の columns コレクションへの参照を取得するプロパティ、<xref:System.Data.DataTable>です。  
+  
+ [!code-csharp[Classic WebData DataRow.Table Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRow.Table Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRow.Table Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.Table Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

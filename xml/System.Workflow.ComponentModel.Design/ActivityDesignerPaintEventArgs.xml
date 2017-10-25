@@ -1,0 +1,159 @@
+<Type Name="ActivityDesignerPaintEventArgs" FullName="System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs">
+  <TypeSignature Language="C#" Value="public class ActivityDesignerPaintEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ActivityDesignerPaintEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="M:System.Workflow.ComponentModel.Design.ActivityDesigner.OnPaint(System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs)" />、<see cref="M:System.Workflow.ComponentModel.Design.ConnectionPoint.OnPaint(System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs,System.Boolean)" />, <see cref="M:System.Workflow.ComponentModel.Design.Connector.OnPaint(System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs)" />、および <see cref="M:System.Workflow.ComponentModel.Design.DesignerGlyph.OnPaint(System.Drawing.Graphics,System.Boolean,System.Workflow.ComponentModel.Design.AmbientTheme,System.Workflow.ComponentModel.Design.ActivityDesigner)" /> メソッド、およびこれらから派生したクラスのオーバーライド バージョンの <see langword="OnPaint" /> のデータを提供します。このデータが、ワークフロー デザイン サーフェイスに描画されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ `OnPaint`メソッドの呼び出しは、ワークフロー デザイン サーフェイスにアクティビティ デザイナー、グリフ、またはコネクタが再描画されるときに発生します。 <xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs> は、オブジェクトの描画に使用するグラフィックスおよびそのオブジェクトの描画先のクリッピング四角形を指定します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivityDesignerPaintEventArgs (System.Drawing.Graphics graphics, System.Drawing.Rectangle clipRectangle, System.Drawing.Rectangle viewPort, System.Workflow.ComponentModel.Design.ActivityDesignerTheme designerTheme);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Graphics graphics, valuetype System.Drawing.Rectangle clipRectangle, valuetype System.Drawing.Rectangle viewPort, class System.Workflow.ComponentModel.Design.ActivityDesignerTheme designerTheme) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs.#ctor(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Rectangle,System.Workflow.ComponentModel.Design.ActivityDesignerTheme)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="clipRectangle" Type="System.Drawing.Rectangle" />
+        <Parameter Name="viewPort" Type="System.Drawing.Rectangle" />
+        <Parameter Name="designerTheme" Type="System.Workflow.ComponentModel.Design.ActivityDesignerTheme" />
+      </Parameters>
+      <Docs>
+        <param name="graphics">項目の描画に使用する <see cref="T:System.Drawing.Graphics" />。</param>
+        <param name="clipRectangle">描画先の四角形を表す <see cref="T:System.Drawing.Rectangle" />。</param>
+        <param name="viewPort">描画先のビュー ポート。</param>
+        <param name="designerTheme">描画するオブジェクトに関連付けられる <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerTheme" />。</param>
+        <summary>指定したグラフィック、クリッピング四角形、ビューポート、およびデザイナー テーマを使用して、<see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AmbientTheme">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.Design.AmbientTheme AmbientTheme { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.ComponentModel.Design.AmbientTheme AmbientTheme" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs.AmbientTheme" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.AmbientTheme</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスに関連付けられた <see cref="T:System.Workflow.ComponentModel.Design.AmbientTheme" /> を取得します。</summary>
+        <value>ワークフローのテーマ情報を格納する <see cref="T:System.Workflow.ComponentModel.Design.AmbientTheme" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.AmbientTheme> は、色、スタイル、背景など、ワークフローの外観プロパティを示すのに使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClipRectangle">
+      <MemberSignature Language="C#" Value="public System.Drawing.Rectangle ClipRectangle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Rectangle ClipRectangle" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs.ClipRectangle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>描画先の <see cref="T:System.Drawing.Rectangle" /> を取得します。</summary>
+        <value>描画する領域を示す <see cref="T:System.Drawing.Rectangle" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クリッピング四角形が示す領域は、<xref:System.Drawing.Graphics> によって指定される <xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs> を使用して再描画される画面上の領域です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesignerTheme">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.Design.ActivityDesignerTheme DesignerTheme { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.ComponentModel.Design.ActivityDesignerTheme DesignerTheme" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs.DesignerTheme" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.ActivityDesignerTheme</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーに関連付けられた <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerTheme" /> を取得します。</summary>
+        <value>デザイナーの外観を示す <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerTheme" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナーに <xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme> が関連付けられている場合は、デザイナーは <xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme> で示される外観プロパティを描画に使用します。 デザイナーに <xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme> が関連付けられていない場合は、<xref:System.Workflow.ComponentModel.Design.AmbientTheme> を使用して外観プロパティを再描画します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Graphics">
+      <MemberSignature Language="C#" Value="public System.Drawing.Graphics Graphics { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Graphics Graphics" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs.Graphics" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Graphics</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスに項目を描画するのに使用される <see cref="T:System.Drawing.Graphics" /> を取得します。</summary>
+        <value>ワークフロー デザイン サーフェイスに項目を描画するのに使用される <see cref="T:System.Drawing.Graphics" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Graphics> は、ワークフロー デザイン サーフェイスにオブジェクトを描画するためのメソッドを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,51 @@
+<Type Name="RoutedPropertyChangedEventHandler&lt;T&gt;" FullName="System.Windows.RoutedPropertyChangedEventHandler&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public delegate void RoutedPropertyChangedEventHandler&lt;T&gt;(object sender, RoutedPropertyChangedEventArgs&lt;T&gt; e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed RoutedPropertyChangedEventHandler`1&lt;T&gt; extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.RoutedPropertyChangedEventHandler`1" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.RoutedPropertyChangedEventArgs&lt;T&gt;" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <typeparam name="T">値の変更が報告されたプロパティ値の型。</typeparam>
+    <param name="sender">イベント ハンドラーがアタッチされるオブジェクト。</param>
+    <param name="e">イベントのデータ。 特定のイベント定義を制約<see cref="T:System.Windows.RoutedPropertyChangedEventArgs`1" />型に、制約の型パラメーターに一致するデリゲート実装の型パラメーターの制約。</param>
+    <summary>プロパティ値の変更を追跡するさまざまなルーティングされたイベントを処理するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型の制約付き委任を使用するイベントの例に基づいて<xref:System.Windows.RoutedPropertyChangedEventHandler%601>含める<xref:System.Windows.Controls.TreeView.SelectedItemChanged?displayProperty=nameWithType>と<xref:System.Windows.Controls.Primitives.RangeBase.ValueChanged?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次の例を定義し、ハンドラー メソッドを<xref:System.Windows.Controls.Primitives.RangeBase.ValueChanged>イベント。  
+  
+ ハンドラーがに基づいて<xref:System.Windows.RoutedPropertyChangedEventHandler%601>に制約されているジェネリック型パラメーターを使用して、2 番目のコード例は、のセグメントの定義と<xref:System.Double>です。  
+  
+ [!code-csharp[AutoGrid#2](~/samples/snippets/csharp/VS_Snippets_Wpf/AutoGrid/CSharp/Window1.xaml.cs#2)]
+ [!code-vb[AutoGrid#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/AutoGrid/visualbasic/window1.xaml.vb#2)]  
+  
+ [!code-csharp[AutoGrid#RoutedPropertyChangedEvent](~/samples/snippets/csharp/VS_Snippets_Wpf/AutoGrid/CSharp/Window1.xaml.cs#routedpropertychangedevent)]
+ [!code-vb[AutoGrid#RoutedPropertyChangedEvent](~/samples/snippets/visualbasic/VS_Snippets_Wpf/AutoGrid/visualbasic/window1.xaml.vb#routedpropertychangedevent)]  
+  
+ この例は、イベントのルーティング イベントの特徴を使用しません。発生するのと同じ要素に対してイベントを処理します。 これは常に大文字と小文字ではありません。 ルーティング イベントのイベントのソースが、ハンドラーが添付されるオブジェクトよりも、別のオブジェクトにある可能性があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

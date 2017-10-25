@@ -1,0 +1,101 @@
+<Type Name="Equality" FullName="Microsoft.JScript.Equality">
+  <TypeSignature Language="C#" Value="public class Equality : Microsoft.JScript.BinaryOp" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Equality extends Microsoft.JScript.BinaryOp" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.JScript.Equality" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.JScript</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.JScript.BinaryOp</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>比較演算を実行します。 このクラスは、抽象構文ツリーのカテゴリに属しています。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Equality (int operatorTok);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 operatorTok) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.Equality.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="operatorTok" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="operatorTok"><see cref="T:Microsoft.JScript.JSToken" /> 列挙値のいずれか。 実行する比較を指定します。</param>
+        <summary><see cref="T:Microsoft.JScript.Equality" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="EvaluateEquality">
+      <MemberSignature Language="C#" Value="public bool EvaluateEquality (object v1, object v2);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool EvaluateEquality(object v1, object v2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.Equality.EvaluateEquality(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="v1" Type="System.Object" />
+        <Parameter Name="v2" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="v1">最初のオペランド。</param>
+        <param name="v2">2 番目のオペランド。</param>
+        <summary>比較演算を実行します。</summary>
+        <returns>操作の結果。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、等値演算子および非等値比較演算の両方を実行します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="JScriptEquals">
+      <MemberSignature Language="C#" Value="public static bool JScriptEquals (object v1, object v2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool JScriptEquals(object v1, object v2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.Equality.JScriptEquals(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="v1" Type="System.Object" />
+        <Parameter Name="v2" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="v1">最初のオペランド。</param>
+        <param name="v2">2 番目のオペランド。</param>
+        <summary>比較演算を実行します。</summary>
+        <returns>操作の結果。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

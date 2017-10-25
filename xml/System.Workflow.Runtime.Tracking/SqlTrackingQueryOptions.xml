@@ -1,0 +1,293 @@
+<Type Name="SqlTrackingQueryOptions" FullName="System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions">
+  <TypeSignature Language="C#" Value="public class SqlTrackingQueryOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SqlTrackingQueryOptions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance" /> の呼び出しで返される <see cref="M:System.Workflow.Runtime.Tracking.SqlTrackingQuery.GetWorkflows(System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions)" /> オブジェクトのセットを制限するために使用されるプロパティを格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions> は、<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> メソッドから返される <xref:System.Workflow.Runtime.Tracking.SqlTrackingQuery.GetWorkflows%2A?displayProperty=nameWithType> オブジェクトのセットを制限するために使用されるプロパティを格納します。このメソッドは、<xref:System.Workflow.Runtime.Tracking.SqlTrackingService> によって使用されるデータベース内の追跡データに対して返されるメソッドです。 <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> の呼び出しで返される <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> オブジェクトのコレクション内の各 <xref:System.Workflow.Runtime.Tracking.SqlTrackingQuery.GetWorkflows%2A?displayProperty=nameWithType> は、<xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions> のプロパティで指定された条件を満たすデータベース内の追跡データが関連付けられたワークフロー インスタンスに該当します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlTrackingQueryOptions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions> クラスのインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.StatusMaxDateTime%2A>|<xref:System.DateTime.MaxValue>。|  
+|<xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.StatusMinDateTime%2A>|<xref:System.DateTime.MinValue>。|  
+|<xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.TrackingDataItems%2A>|空の <xref:System.Collections.Generic.List%601>。|  
+|<xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.WorkflowStatus%2A>|null 参照 (Visual Basic の場合は `Nothing`)。|  
+|<xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.WorkflowType%2A>|null 参照 (Visual Basic の場合は `Nothing`)。|  
+  
+ これらの値を指定すると、<xref:System.Workflow.Runtime.Tracking.SqlTrackingQuery.GetWorkflows%2A?displayProperty=nameWithType> の呼び出しによって、データベースに追跡データを持つワークフロー インスタンスごとに <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> オブジェクトが返されます。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions> クラスのインスタンスを作成する例を次に示します。  この例は、ワークフロー モニター SDK サンプルです。  詳細については、次を参照してください。[ワークフロー モニターのサンプル](http://msdn.microsoft.com/en-us/4f70c1c5-f82d-4d5f-8b7d-943b9f99f8e2)です。  
+  
+ [!code-csharp[WF_Samples#128](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#128)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions" /> の各プロパティをそれぞれの既定値にリセットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions> クラスのインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.StatusMaxDateTime%2A>|<xref:System.DateTime.MaxValue>。|  
+|<xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.StatusMinDateTime%2A>|<xref:System.DateTime.MinValue>。|  
+|<xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.TrackingDataItems%2A>|空の <xref:System.Collections.Generic.List%601>。|  
+|<xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.WorkflowStatus%2A>|null 参照 (Visual Basic の場合は `Nothing`)。|  
+|<xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.WorkflowType%2A>|null 参照 (Visual Basic の場合は `Nothing`)。|  
+  
+ これらの値を指定すると、<xref:System.Workflow.Runtime.Tracking.SqlTrackingQuery.GetWorkflows%2A?displayProperty=nameWithType> の呼び出しによって、データベースに追跡データを持つワークフロー インスタンスごとに <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> オブジェクトが返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StatusMaxDateTime">
+      <MemberSignature Language="C#" Value="public DateTime StatusMaxDateTime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime StatusMaxDateTime" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.StatusMaxDateTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.DateTime" /> の呼び出しで返される <see cref="P:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.WorkflowStatus" /> オブジェクトのセットを制限するために <see cref="T:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance" /> と共に使用される期間の上限を指定する <see cref="M:System.Workflow.Runtime.Tracking.SqlTrackingQuery.GetWorkflows(System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions)" /> を取得または設定します。</summary>
+        <value><see cref="T:System.DateTime" /> で指定されたステータスを持つワークフロー インスタンスの照合に使用される期間の上限を指定する <see cref="P:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.WorkflowStatus" />。 既定値は、<see cref="F:System.DateTime.MinValue" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions> には、<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> の呼び出しによって次のワークフロー インスタンスに返された <xref:System.Workflow.Runtime.Tracking.SqlTrackingQuery.GetWorkflows%2A?displayProperty=nameWithType> オブジェクトのセットが含まれます。それらのワークフロー インスタンスは、<xref:System.Type> で指定された <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.WorkflowType%2A> を持つワークフロー インスタンス、<xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.WorkflowStatus%2A> と <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.StatusMinDateTime%2A> で指定された期間に <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.StatusMaxDateTime%2A> で指定されたステータスを持つワークフロー インスタンス、および <xref:System.Workflow.Runtime.Tracking.TrackingDataItemValue> で指定された <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.TrackingDataItems%2A> オブジェクトの少なくとも 1 つに一致するデータを抽出したワークフロー インスタンスです。  
+  
+ <xref:System.DateTime> で指定された <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.StatusMaxDateTime%2A> はその値を含みます。 ワークフロー インスタンスのステータスの照合方法については、<xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.WorkflowStatus%2A> プロパティを参照してください。  
+  
+> [!NOTE]
+>  `WorkflowStatus` を null に設定すると、`StatusMaxDateTime` および `StatusMinDateTime` は無視されます。 すべてのワークフロー インスタンスは、`GetWorkflows` が呼び出されたときに返されます。  
+  
+   
+  
+## Examples  
+ StatusMaxDateTime プロパティを設定する例を次に示します。  この例は、ワークフロー モニター SDK サンプルです。  詳細については、次を参照してください。[ワークフロー モニターのサンプル](http://msdn.microsoft.com/en-us/4f70c1c5-f82d-4d5f-8b7d-943b9f99f8e2)です。  
+  
+ [!code-csharp[WF_Samples#128](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#128)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StatusMinDateTime">
+      <MemberSignature Language="C#" Value="public DateTime StatusMinDateTime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime StatusMinDateTime" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.StatusMinDateTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.DateTime" /> の呼び出しで返される <see cref="P:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.WorkflowStatus" /> オブジェクトのセットを制限するために <see cref="T:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance" /> と共に使用される <see cref="M:System.Workflow.Runtime.Tracking.SqlTrackingQuery.GetWorkflows(System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions)" /> を取得または設定します。</summary>
+        <value><see cref="T:System.DateTime" /> で指定されたステータスを持つワークフロー インスタンスの照合に使用される期間の下限を指定する <see cref="P:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.WorkflowStatus" />。 既定値は、<see cref="F:System.DateTime.MinValue" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions> には、<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> の呼び出しによって次のワークフロー インスタンスに返された <xref:System.Workflow.Runtime.Tracking.SqlTrackingQuery.GetWorkflows%2A?displayProperty=nameWithType> オブジェクトのセットが含まれます。それらのワークフロー インスタンスは、<xref:System.Type> で指定された <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.WorkflowType%2A> を持つワークフロー インスタンス、<xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.WorkflowStatus%2A> と <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.StatusMinDateTime%2A> で指定された期間に <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.StatusMaxDateTime%2A> で指定されたステータスを持つワークフロー インスタンス、および <xref:System.Workflow.Runtime.Tracking.TrackingDataItemValue> で指定された <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.TrackingDataItems%2A> オブジェクトの少なくとも 1 つに一致するデータを抽出したワークフロー インスタンスです。  
+  
+ <xref:System.DateTime> で指定された <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.StatusMinDateTime%2A> はその値を含みます。 ワークフロー インスタンスのステータスの照合方法については、<xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.WorkflowStatus%2A> プロパティを参照してください。  
+  
+> [!NOTE]
+>  `WorkflowStatus` を null に設定すると、`StatusMaxDateTime` および `StatusMinDateTime` は無視されます。 すべてのワークフロー インスタンスは、`GetWorkflows` が呼び出されたときに返されます。  
+  
+   
+  
+## Examples  
+ StatusMinDateTime プロパティを設定する例を次に示します。  この例は、ワークフロー モニター SDK サンプルです。  詳細については、次を参照してください。[ワークフロー モニターのサンプル](http://msdn.microsoft.com/en-us/4f70c1c5-f82d-4d5f-8b7d-943b9f99f8e2)です。  
+  
+ [!code-csharp[WF_Samples#128](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#128)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrackingDataItems">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Workflow.Runtime.Tracking.TrackingDataItemValue&gt; TrackingDataItems { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;class System.Workflow.Runtime.Tracking.TrackingDataItemValue&gt; TrackingDataItems" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.TrackingDataItems" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Workflow.Runtime.Tracking.TrackingDataItemValue&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance" /> の呼び出しで返される <see cref="M:System.Workflow.Runtime.Tracking.SqlTrackingQuery.GetWorkflows(System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions)" /> オブジェクトのセットを制限するために使用されるデータ抽出値のリストを取得または設定します。</summary>
+        <value>ワークフロー インスタンスから抽出されたデータと照合される指定値を格納した <see cref="T:System.Collections.Generic.List`1" /> オブジェクトの <see cref="T:System.Workflow.Runtime.Tracking.TrackingDataItemValue" />、または null 参照 (Visual Basic の場合は <see langword="Nothing" />)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions> には、<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> の呼び出しによって次のワークフロー インスタンスに返された <xref:System.Workflow.Runtime.Tracking.SqlTrackingQuery.GetWorkflows%2A?displayProperty=nameWithType> オブジェクトのセットが含まれます。それらのワークフロー インスタンスは、<xref:System.Type> で指定された <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.WorkflowType%2A> を持つワークフロー インスタンス、<xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.WorkflowStatus%2A> と <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.StatusMinDateTime%2A> で指定された期間に <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.StatusMaxDateTime%2A> で指定されたステータスを持つワークフロー インスタンス、および <xref:System.Workflow.Runtime.Tracking.TrackingDataItemValue> で指定された <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.TrackingDataItems%2A> オブジェクトの少なくとも 1 つに一致するデータを抽出したワークフロー インスタンスです。  
+  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackingRecord.Body%2A?displayProperty=nameWithType> または <xref:System.Workflow.Runtime.Tracking.UserTrackingRecord.Body%2A?displayProperty=nameWithType> は、ワークフローから抽出されたデータを格納した <xref:System.Workflow.Runtime.Tracking.TrackingDataItem> レコードを含むことができます。 <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.TrackingDataItems%2A> プロパティは、この抽出データの特定の値を指定する <xref:System.Workflow.Runtime.Tracking.TrackingDataItemValue> オブジェクトを格納します。 ワークフロー インスタンスが <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions> によって指定された他の基準に合致し、<xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.TrackingDataItems%2A> が null 参照 (`Nothing`) ではない場合、ワークフロー インスタンスを表す <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.TrackingDataItems%2A> オブジェクトが返されるには、データベースに格納されたワークフロー インスタンスの抽出データが、<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> プロパティによって指定された抽出データ値のうちの 1 つ以上と一致する必要があります。  
+  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.TrackingDataItems%2A> が null 参照 (`Nothing`) の場合、返される <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> オブジェクトのセットは、データベース内のどのワークフロー インスタンスの抽出データの値による制限も受けません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkflowStatus">
+      <MemberSignature Language="C#" Value="public Nullable&lt;System.Workflow.Runtime.WorkflowStatus&gt; WorkflowStatus { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.Workflow.Runtime.WorkflowStatus&gt; WorkflowStatus" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.WorkflowStatus" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Workflow.Runtime.WorkflowStatus&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.WorkflowStatus" /> の呼び出しで返される <see cref="T:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance" /> オブジェクトのセットを制限するために使用される <see cref="M:System.Workflow.Runtime.Tracking.SqlTrackingQuery.GetWorkflows(System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions)" /> 値を取得または設定します。</summary>
+        <value><see cref="T:System.Workflow.Runtime.WorkflowStatus" /> の値の 1 つ、または null (Visual Basic の場合は <see langword="Nothing" />)。 既定値は null (<see langword="Nothing" />) です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions> には、<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> の呼び出しによって次のワークフロー インスタンスに返された <xref:System.Workflow.Runtime.Tracking.SqlTrackingQuery.GetWorkflows%2A?displayProperty=nameWithType> オブジェクトのセットが含まれます。それらのワークフロー インスタンスは、<xref:System.Type> で指定された <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.WorkflowType%2A> を持つワークフロー インスタンス、<xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.WorkflowStatus%2A> と <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.StatusMinDateTime%2A> で指定された期間に <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.StatusMaxDateTime%2A> で指定されたステータスを持つワークフロー インスタンス、および <xref:System.Workflow.Runtime.Tracking.TrackingDataItemValue> で指定された <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.TrackingDataItems%2A> オブジェクトの少なくとも 1 つに一致するデータを抽出したワークフロー インスタンスです。  
+  
+ 指定した期間より前または指定した期間中に最後に受け取ったワークフロー インスタンスの <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.WorkflowStatus%2A> の <xref:System.Workflow.Runtime.Tracking.WorkflowTrackingRecord> プロパティが、<xref:System.Workflow.Runtime.Tracking.WorkflowTrackingRecord.TrackingWorkflowEvent%2A?displayProperty=nameWithType> で指定された <xref:System.Workflow.Runtime.Tracking.TrackingWorkflowEvent> 値にマップされる <xref:System.Workflow.Runtime.WorkflowStatus?displayProperty=nameWithType> 値に設定されている場合に、そのワークフロー インスタンスは <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.WorkflowStatus%2A> と一致するステータスを持つと見なされます。 したがって、ワークフロー インスタンスの <xref:System.Workflow.Runtime.Tracking.TrackingProfile> には、該当する <xref:System.Workflow.Runtime.Tracking.WorkflowTrackPoint> 値のための <xref:System.Workflow.Runtime.Tracking.TrackingWorkflowEvent?displayProperty=nameWithType> が構成されている必要があります。 照合可能なのは、ワークフロー追跡レコードで送られた <xref:System.Workflow.Runtime.Tracking.TrackingWorkflowEvent> の値のみです。 ワークフロー インスタンスのワークフロー追跡レコードが送られていない場合、ワークフロー インスタンスのステータスは <xref:System.Workflow.Runtime.WorkflowStatus?displayProperty=nameWithType> と見なされます。  
+  
+ <xref:System.Workflow.Runtime.Tracking.TrackingWorkflowEvent> 値と <xref:System.Workflow.Runtime.WorkflowStatus> 値のマッピングを次の表に示します。  
+  
+|TrackingWorkflowEvent 値|WorkflowStatus 値|  
+|---------------------------------|--------------------------|  
+|<xref:System.Workflow.Runtime.Tracking.TrackingWorkflowEvent.Aborted>|<xref:System.Workflow.Runtime.WorkflowStatus.Running>|  
+|<xref:System.Workflow.Runtime.Tracking.TrackingWorkflowEvent.Changed>|<xref:System.Workflow.Runtime.WorkflowStatus.Running>|  
+|<xref:System.Workflow.Runtime.Tracking.TrackingWorkflowEvent.Completed>|<xref:System.Workflow.Runtime.WorkflowStatus.Completed>|  
+|<xref:System.Workflow.Runtime.Tracking.TrackingWorkflowEvent.Created>|<xref:System.Workflow.Runtime.WorkflowStatus.Created>|  
+|<xref:System.Workflow.Runtime.Tracking.TrackingWorkflowEvent.Exception>|<xref:System.Workflow.Runtime.WorkflowStatus.Running>|  
+|<xref:System.Workflow.Runtime.Tracking.TrackingWorkflowEvent.Idle>|<xref:System.Workflow.Runtime.WorkflowStatus.Running>|  
+|<xref:System.Workflow.Runtime.Tracking.TrackingWorkflowEvent.Loaded>|<xref:System.Workflow.Runtime.WorkflowStatus.Running>|  
+|<xref:System.Workflow.Runtime.Tracking.TrackingWorkflowEvent.Persisted>|<xref:System.Workflow.Runtime.WorkflowStatus.Running>|  
+|<xref:System.Workflow.Runtime.Tracking.TrackingWorkflowEvent.Resumed>|<xref:System.Workflow.Runtime.WorkflowStatus.Running>|  
+|<xref:System.Workflow.Runtime.Tracking.TrackingWorkflowEvent.Started>|<xref:System.Workflow.Runtime.WorkflowStatus.Running>|  
+|<xref:System.Workflow.Runtime.Tracking.TrackingWorkflowEvent.Suspended>|<xref:System.Workflow.Runtime.WorkflowStatus.Suspended>|  
+|<xref:System.Workflow.Runtime.Tracking.TrackingWorkflowEvent.Terminated>|<xref:System.Workflow.Runtime.WorkflowStatus.Terminated>|  
+|<xref:System.Workflow.Runtime.Tracking.TrackingWorkflowEvent.Unloaded>|<xref:System.Workflow.Runtime.WorkflowStatus.Running>|  
+  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.WorkflowStatus%2A> が null (`Nothing`) の場合、返される <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> オブジェクトのセットは、ステータスによる制限を受けません。つまり、<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> の他のプロパティによって指定されたパラメーターと一致するワークフロー インスタンスの <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions> オブジェクトが返されます。  
+  
+   
+  
+## Examples  
+ WorkflowStatus プロパティの設定を次の例に示します。  この例は、ワークフロー モニター SDK サンプルです。  詳細については、次を参照してください。[ワークフロー モニターのサンプル](http://msdn.microsoft.com/en-us/4f70c1c5-f82d-4d5f-8b7d-943b9f99f8e2)です。  
+  
+ [!code-csharp[WF_Samples#128](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#128)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkflowType">
+      <MemberSignature Language="C#" Value="public Type WorkflowType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type WorkflowType" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.WorkflowType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Type" /> の呼び出しで返される <see cref="T:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance" /> オブジェクトのセットを制限するために使用されるワークフロー インスタンス <see cref="M:System.Workflow.Runtime.Tracking.SqlTrackingQuery.GetWorkflows(System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions)" /> を取得または設定します。</summary>
+        <value><see cref="T:System.Type" /> 既定値は null 参照 (Visual Basic では <see langword="Nothing" />) です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions> には、<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> の呼び出しによって次のワークフロー インスタンスに返された <xref:System.Workflow.Runtime.Tracking.SqlTrackingQuery.GetWorkflows%2A?displayProperty=nameWithType> オブジェクトのセットが含まれます。それらのワークフロー インスタンスは、<xref:System.Type> で指定された <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.WorkflowType%2A> を持つワークフロー インスタンス、<xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.WorkflowStatus%2A> と <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.StatusMinDateTime%2A> で指定された期間に <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.StatusMaxDateTime%2A> で指定されたステータスを持つワークフロー インスタンス、および <xref:System.Workflow.Runtime.Tracking.TrackingDataItemValue> で指定された <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.TrackingDataItems%2A> オブジェクトの少なくとも 1 つに一致するデータを抽出したワークフロー インスタンスです。  
+  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions.WorkflowType%2A> が null 参照 (`Nothing`) の場合、返される <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> オブジェクトのセットは、ワークフローの <xref:System.Type> による制限を受けません。つまり、<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> の他のプロパティによって指定されたパラメーターと一致するワークフロー インスタンスの <xref:System.Workflow.Runtime.Tracking.SqlTrackingQueryOptions> オブジェクトが返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,193 @@
+<Type Name="KeyPressEventArgs" FullName="System.Windows.Forms.KeyPressEventArgs">
+  <TypeSignature Language="C#" Value="public class KeyPressEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit KeyPressEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.KeyPressEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="E:System.Windows.Forms.Control.KeyPress" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Forms.KeyPressEventArgs>キーを押すとで構成される文字を指定します。 たとえば、押されたとき shift キーを押しながら K、<xref:System.Windows.Forms.KeyPressEventArgs.KeyChar%2A>プロパティは、大文字の K を返します。  
+  
+ A<xref:System.Windows.Forms.Control.KeyPress>イベント キーを押したときに発生します。 密接に関連する 2 つのイベント、<xref:System.Windows.Forms.Control.KeyPress>イベント<xref:System.Windows.Forms.Control.KeyUp>と<xref:System.Windows.Forms.Control.KeyDown>です。 <xref:System.Windows.Forms.Control.KeyDown>イベントの前に各<xref:System.Windows.Forms.Control.KeyPress>、キーを押したときにイベントおよび<xref:System.Windows.Forms.Control.KeyUp>イベント キーを離したときに発生します。 ユーザーは、キーを保持しているときに重複する<xref:System.Windows.Forms.Control.KeyDown>と<xref:System.Windows.Forms.Control.KeyPress>イベントが、文字が繰り返されるたびに発生します。 1 つ<xref:System.Windows.Forms.Control.KeyUp>リリース時にイベントを生成します。  
+  
+ 各<xref:System.Windows.Forms.Control.KeyPress>イベント、<xref:System.Windows.Forms.KeyPressEventArgs>が渡されます。 A<xref:System.Windows.Forms.KeyEventArgs>各に渡される<xref:System.Windows.Forms.Control.KeyDown>と<xref:System.Windows.Forms.Control.KeyUp>イベント。 A<xref:System.Windows.Forms.KeyEventArgs>別のキーと共にどの修飾子キー (CTRL、shift キーを押し、または alt キー) が押されたかどうかを指定します。 (この修飾子の詳細については、を介して取得することもできます、<xref:System.Windows.Forms.Control.ModifierKeys%2A>のプロパティ、<xref:System.Windows.Forms.Control>クラスです。)。  
+  
+ 設定<xref:System.Windows.Forms.KeyPressEventArgs.Handled%2A>に`true`を取り消す、`KeyPress`イベント。 これにより、コントロールがキーを押すを処理します。  
+  
+> [!NOTE]
+>  一部のコントロールは特定のキー ストロークの処理を<xref:System.Windows.Forms.Control.KeyDown>です。 たとえば、<xref:System.Windows.Forms.RichTextBox>する前に Enter キーを処理<xref:System.Windows.Forms.Control.KeyPress>と呼びます。 このような場合はキャンセルできません、<xref:System.Windows.Forms.Control.KeyPress>イベントからキー ストロークを取り消す必要があると<xref:System.Windows.Forms.Control.KeyDown>代わりにします。  
+  
+ イベント モデルについては、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次の例を使用して、<xref:System.Windows.Forms.KeyPressEventArgs>キーを押してとしてキーをカウントし、各キーを押した後、結果を表示します。 <xref:System.Windows.Forms.KeyPressEventArgs.Handled%2A>これ以上からのオペレーティング システムを維持する場合は true に設定キーを処理します。 この例では、フォーム、<xref:System.Windows.Forms.TextBox>に課せられました。  
+  
+ [!code-cpp[Classic KeyPressEventArgs Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic KeyPressEventArgs Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic KeyPressEventArgs Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic KeyPressEventArgs Example/CS/source.cs#1)]
+ [!code-vb[Classic KeyPressEventArgs Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic KeyPressEventArgs Example/VB/source.vb#1)]  
+  
+ このクラスの新しいインスタンスを作成する必要があります。 また、イベント ハンドラーを設定する必要があります。 この設定は、クラスのコンス トラクターで行うことができます。  
+  
+ [!code-cpp[Classic KeyPressEventArgs Example#2](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic KeyPressEventArgs Example/CPP/source2.cpp#2)]
+ [!code-csharp[Classic KeyPressEventArgs Example#2](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic KeyPressEventArgs Example/CS/source2.cs#2)]
+ [!code-vb[Classic KeyPressEventArgs Example#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic KeyPressEventArgs Example/VB/source2.vb#2)]  
+  
+ 指定したイベントが発生すると、コントロールでは、接続されているメソッドが呼び出され、アプリケーションは、イベントに応答コードを実行することができます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public KeyPressEventArgs (char keyChar);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(char keyChar) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.KeyPressEventArgs.#ctor(System.Char)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="keyChar" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="keyChar">ユーザーが押されたキーに対応する ASCII 文字。</param>
+        <summary><see cref="T:System.Windows.Forms.KeyPressEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.Control.ModifierKeys%2A?displayProperty=nameWithType>修飾子キーの現在の状態を取得するプロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、SHIFT キーの現在の状態を示すメッセージ ボックスが表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Handled">
+      <MemberSignature Language="C#" Value="public bool Handled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Handled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.KeyPressEventArgs.Handled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを示す値を設定するかどうか、<see cref="E:System.Windows.Forms.Control.KeyPress" />イベントが処理されました。</summary>
+        <value>
+          <see langword="true" />イベントが処理された場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントが処理されない場合は、既定の処理用のオペレーティング システムに送信されます。 設定<xref:System.Windows.Forms.KeyPressEventArgs.Handled%2A>に`true`を取り消す、`KeyPress`イベント。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Forms.TextBox>コントロール。 `keypressed`メソッドを使用、 <xref:System.Windows.Forms.KeyPressEventArgs.KeyChar%2A> ENTER キーを押したかどうかを確認するプロパティです。 ENTER キーが押された場合、<xref:System.Windows.Forms.KeyPressEventArgs.Handled%2A>プロパティに設定されている`true`、処理は、イベントを示します。  
+  
+ [!code-cpp[KeyPressEventArgs#1](~/samples/snippets/cpp/VS_Snippets_Winforms/KeyPressEventArgs/CPP/form1.cpp#1)]
+ [!code-csharp[KeyPressEventArgs#1](~/samples/snippets/csharp/VS_Snippets_Winforms/KeyPressEventArgs/CS/form1.cs#1)]
+ [!code-vb[KeyPressEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/KeyPressEventArgs/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyChar">
+      <MemberSignature Language="C#" Value="public char KeyChar { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance char KeyChar" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.KeyPressEventArgs.KeyChar" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Char</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>押されたキーに対応する文字を取得または設定します。</summary>
+        <value>作成される ASCII 文字。 たとえば、ユーザーが Shift キーを押しながら K キーを押した場合、このプロパティは大文字の K を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.KeyPressEventArgs.KeyChar%2A>サンプル キーストロークを実行時と実行時の特殊な状況でキーを変更するプロパティです。 たとえば、使用することができます<xref:System.Windows.Forms.KeyPressEventArgs.KeyChar%2A>ユーザーが郵便番号が入ったときに数値以外のキープレスを無効にするには、データの入力フィールドに大文字をすべてのアルファベット キープレスを変更またはキーボードまたは特定のキーの組み合わせの他のキー入力デバイスを監視します。  
+  
+ 取得または、次のキーを設定することができます。  
+  
+-   a ~ z、A ~ Z。  
+  
+-   CTRL キー。  
+  
+-   区切り記号。  
+  
+-   キー、およびキーボードのテンキーの一番上に両方の番号します。  
+  
+-   入力します。  
+  
+ 取得または、次のキーを設定することはできません。  
+  
+-   Tab キー。  
+  
+-   挿入および削除します。  
+  
+-   ホームです。  
+  
+-   終わり。  
+  
+-   PAGEUP、PAGEDOWN です。  
+  
+-   F1、F2 キー。  
+  
+-   ALT キー。  
+  
+-   方向キー  
+  
+> [!NOTE]
+>  上記以外の文字のキーのいずれかを検出する方法については、次を参照してください。、<xref:System.Windows.Forms.KeyEventArgs>クラスです。  
+  
+-  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Forms.TextBox>コントロール。 `keypressed`メソッドを使用、 <xref:System.Windows.Forms.KeyPressEventArgs.KeyChar%2A> ENTER キーが押されたかどうかを確認するプロパティです。 ENTER キーが押された場合、<xref:System.Windows.Forms.KeyPressEventArgs.Handled%2A>プロパティに設定されている`true`、処理は、イベントを示します。  
+  
+ [!code-cpp[KeyPressEventArgs#1](~/samples/snippets/cpp/VS_Snippets_Winforms/KeyPressEventArgs/CPP/form1.cpp#1)]
+ [!code-csharp[KeyPressEventArgs#1](~/samples/snippets/csharp/VS_Snippets_Winforms/KeyPressEventArgs/CS/form1.cs#1)]
+ [!code-vb[KeyPressEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/KeyPressEventArgs/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

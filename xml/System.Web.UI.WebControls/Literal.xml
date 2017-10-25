@@ -1,0 +1,346 @@
+<Type Name="Literal" FullName="System.Web.UI.WebControls.Literal">
+  <TypeSignature Language="C#" Value="public class Literal : System.Web.UI.Control, System.Web.UI.ITextControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Literal extends System.Web.UI.Control implements class System.Web.UI.ITextControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.Literal" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Control</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.ITextControl</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Text")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.LiteralDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ControlBuilder(typeof(System.Web.UI.WebControls.LiteralControlBuilder))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.DataBindingHandler("System.Web.UI.Design.TextDataBindingHandler, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>スタティック テキストを表示する Web ページ上の場所を予約します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このトピックの内容  
+  
+-   [はじめに](#introduction)  
+  
+-   [宣言型の構文](#declarative_syntax)  
+  
+<a name="introduction"></a>   
+## <a name="introduction"></a>はじめに  
+ 使用して、<xref:System.Web.UI.WebControls.Literal?displayProperty=nameWithType>にテキストを表示する Web ページ上の場所を予約するコントロール。 <xref:System.Web.UI.WebControls.Literal>コントロールに似ていますが、<xref:System.Web.UI.WebControls.Label>コントロールを除く、<xref:System.Web.UI.WebControls.Literal>コントロール、表示されたテキストにスタイルを適用はできません。 設定して、コントロールに表示されるテキストをプログラムから制御することができます、<xref:System.Web.UI.WebControls.Literal.Text%2A>プロパティです。  
+  
+> [!CAUTION]
+>  このコントロールは、悪意のあるクライアント スクリプトが含まれる可能性があります、ユーザー入力を表示する使用できます。 スクリプトの実行可能ファイル、SQL ステートメント、またはその他のコードをアプリケーションに表示する前に、クライアントから送信される情報を確認します。 ASP.NET は、入力要求の検証機能があり、ユーザー入力の中のスクリプトのブロックと HTML を提供します。 検証サーバー コントロールは、ユーザー入力を評価するも提供されます。  
+  
+ セキュリティの詳細については、次を参照してください。[標準コントロールのセキュリティで保護する](http://msdn.microsoft.com/library/f3e7718f-63d0-44a3-bd5f-48cc2059c2a8)、[する方法: 保護に対してスクリプトによる攻略の文字列を HTML エンコードを適用することによって、Web アプリケーションで](http://msdn.microsoft.com/library/6f67973f-dda0-45a1-ba9d-e88532d7dc5b)、および[ASP.NET Web Pages でのユーザー入力の検証](http://msdn.microsoft.com/library/4ad3dacb-89e0-4cee-89ac-40a3f2a85461)です。  
+  
+<a name="declarative_syntax"></a>   
+## <a name="declarative-syntax"></a>宣言型の構文  
+  
+```  
+<asp:Literal  
+    EnableTheming="True|False"  
+    EnableViewState="True|False"  
+    ID="string"  
+    Mode="Transform|PassThrough|Encode"  
+    OnDataBinding="DataBinding event handler"  
+    OnDisposed="Disposed event handler"  
+    OnInit="Init event handler"  
+    OnLoad="Load event handler"  
+    OnPreRender="PreRender event handler"  
+    OnUnload="Unload event handler"  
+    runat="server"  
+    SkinID="string"  
+    Text="string"  
+    Visible="True|False"  
+/>  
+```  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.Literal>コントロールに静的なテキストを表示します。  
+  
+> [!NOTE]
+>  次の例では、単一ファイルのコード モデルを使用しが正しく動作しない場合は、分離コード ファイルに直接コピーします。 このコード例は、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[Literal#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Literal/CS/literalcs.aspx#1)]
+ [!code-aspx-vb[Literal#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Literal/VB/literalvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Literal ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Literal.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.Literal" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddParsedSubObject">
+      <MemberSignature Language="C#" Value="protected override void AddParsedSubObject (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AddParsedSubObject(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Literal.AddParsedSubObject(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">解析された要素を表す <see cref="T:System.Object" />。</param>
+        <summary>XML または HTML 要素が解析されたことを <see cref="T:System.Web.UI.WebControls.Literal" /> コントロールに通知し、その要素をコントロールの <see cref="T:System.Web.UI.ControlCollection" /> オブジェクトに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.WebControls.Literal.AddParsedSubObject%2A>常に設定するようにカスタム サーバー内のメソッドが制御、<xref:System.Web.UI.WebControls.Literal.Text%2A>解析済みのオブジェクトのプロパティ`Text`解析済みのオブジェクトが場合は、プロパティ、<xref:System.Web.UI.WebControls.Literal>と、空に`string`それ以外の場合。  
+  
+ [!code-aspx-csharp[CustomLiteralAddParsedSubObject#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomLiteralAddParsedSubObject/CS/custom_literal_addparsedsubobjectcs.aspx#1)]
+ [!code-aspx-vb[CustomLiteralAddParsedSubObject#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomLiteralAddParsedSubObject/VB/custom_literal_addparsedsubobjectvb.aspx#1)]  
+  
+ [!code-csharp[CustomLiteralAddParsedSubObject#2](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomLiteralAddParsedSubObject/CS/custom_literal_addparsedsubobject.cs#2)]
+ [!code-vb[CustomLiteralAddParsedSubObject#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomLiteralAddParsedSubObject/VB/custom_literal_addparsedsubobject.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">
+          <paramref name="obj" /> が <see cref="T:System.Web.UI.LiteralControl" /> 型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateControlCollection">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.ControlCollection CreateControlCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.ControlCollection CreateControlCollection() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Literal.CreateControlCollection" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ControlCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.Literal" /> コントロールの現在のインスタンスの <see cref="T:System.Web.UI.EmptyControlCollection" /> オブジェクトを作成します。</summary>
+        <returns>現在のサーバー コントロールの子サーバー コントロールを格納する <see cref="T:System.Web.UI.ControlCollection" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Web.UI.WebControls.Literal.CreateControlCollection%2A>メソッドでカスタム サーバー コントロールのインスタンスを常に返すように、<xref:System.Web.UI.EmptyControlCollection>のクラス、<xref:System.Web.UI.WebControls.Literal>オブジェクト。  
+  
+ [!code-aspx-csharp[CustomLiteralCreateControlCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomLiteralCreateControlCollection/CS/custom_literal_createcontrolcollectioncs.aspx#1)]
+ [!code-aspx-vb[CustomLiteralCreateControlCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomLiteralCreateControlCollection/VB/custom_literal_createcontrolcollectionvb.aspx#1)]  
+  
+ [!code-csharp[CustomLiteralCreateControlCollection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomLiteralCreateControlCollection/CS/custom_literal_createcontrolcollection.cs#2)]
+ [!code-vb[CustomLiteralCreateControlCollection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomLiteralCreateControlCollection/VB/custom_literal_createcontrolcollection.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Focus">
+      <MemberSignature Language="C#" Value="public override void Focus ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Focus() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Literal.Focus" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールに入力フォーカスを設定します。<see cref="M:System.Web.UI.WebControls.Literal.Focus" />では、基本コントロールのメソッドはサポートされていません、<see cref="T:System.Web.UI.WebControls.Literal" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Literal>オーバーライドを制御、<xref:System.Web.UI.Control.Focus%2A>基底クラスのメソッドです。 <xref:System.Web.UI.WebControls.Literal.Focus%2A>のメソッド、<xref:System.Web.UI.WebControls.Literal>コントロールが常にあることを示す例外をスロー、<xref:System.Web.UI.WebControls.Literal.Focus%2A>でメソッドがサポートされていません、<xref:System.Web.UI.WebControls.Literal>コントロール。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><see cref="M:System.Web.UI.WebControls.Literal.Focus" />で呼び出されましたが、<see cref="T:System.Web.UI.WebControls.Literal" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Mode">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.LiteralMode Mode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.LiteralMode Mode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Literal.Mode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.LiteralMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を指定する列挙値方法でコンテンツ、<see cref="T:System.Web.UI.WebControls.Literal" />コントロールを表示します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.LiteralMode" /> 列挙値のいずれか。 既定値は、<see langword="Transform" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.Literal.Mode%2A>プロパティを指定する方法の内容、<xref:System.Web.UI.WebControls.Literal>コントロールを表示する必要があります。 このプロパティのいずれかを使用して、<xref:System.Web.UI.WebControls.LiteralMode>列挙値。 次の表は、使用可能な値を一覧表示します。  
+  
+|値|説明|  
+|-----------|-----------------|  
+|`PassThrough`|コントロールの内容は変更されません。|  
+|`Encode`|コントロールの内容は、HTML でエンコードされた文字列に変換されます。|  
+|`Transform`|サポートされていないマークアップ言語要素は、コントロールの内容から削除されます。 場合、<xref:System.Web.UI.WebControls.Literal>コントロールが HTML または XHTML をサポートするブラウザーにレンダリングされる、コントロールの内容は変更されません。|  
+  
+ 指定した場合`PassThrough`の内容全体、<xref:System.Web.UI.WebControls.Literal.Text%2A>プロパティが変更を加えずに、デバイスまたはブラウザーに渡されます。 たとえば場合、<xref:System.Web.UI.WebControls.Literal.Text%2A>のプロパティ、<xref:System.Web.UI.WebControls.Literal>コントロールに含まれる、`<hr>`タグに送信されるすべてのデバイスおよびブラウザーがサポートされるかどうか。  
+  
+ 指定した場合`Encode`の内容、<xref:System.Web.UI.WebControls.Literal.Text%2A>プロパティをレンダリングする前に、HTML でエンコードされた文字列に変換されます。 たとえば場合、<xref:System.Web.UI.WebControls.Literal.Text%2A>のプロパティ、<xref:System.Web.UI.WebControls.Literal>コントロールが含まれています、`<hr>`タグに変換されます`&lt;Hr&gt;`され、デバイスまたはブラウザーに送信します。  
+  
+ 指定した場合`Transform`のレンダリング動作、<xref:System.Web.UI.WebControls.Literal.Text%2A>プロパティは、レンダリングされるマークアップの種類によって異なります。 ときに、<xref:System.Web.UI.WebControls.Literal>のデバイスまたは HTML または XHTML をサポートするブラウザー コントロールを表示するを指定する<xref:System.Web.UI.WebControls.LiteralMode.Transform>指定すると同じ動作が生成される<xref:System.Web.UI.WebControls.LiteralMode.PassThrough>です。 すべてのマークアップ タグと要素について、<xref:System.Web.UI.WebControls.Literal.Text%2A>要求側のブラウザーのプロパティが表示されます。  
+  
+ ときに、 <xref:System.Web.UI.WebControls.Literal> HTML または WML または cHTML など、XHTML 以外のマークアップ言語にコントロールを表示、使用することができます、<xref:System.Web.UI.WebControls.LiteralMode.Transform>サポートされていないマークアップ要素を削除する値。 この場合のすべてのマークアップ言語要素で、<xref:System.Web.UI.WebControls.Literal.Text%2A>コントロールの対象となるマークアップ言語でサポートされていないプロパティはレンダリングされません。 たとえば場合、<xref:System.Web.UI.WebControls.Literal.Text%2A>のプロパティ、<xref:System.Web.UI.WebControls.Literal>コントロールが含まれています、 `<hr>` WML デバイスにコンテンツを送信する前に、タグ、タグを削除します。 サポートされていないタグには、コンテンツが含まれています、タグのみが削除され、デバイスまたはブラウザーへのコンテンツを送信します。 たとえば場合、<xref:System.Web.UI.WebControls.Literal.Text%2A>プロパティには、コンテンツが含まれています。 `<XYZ>Test</XYZ>`、`<XYZ>`と`</XYZ>`タグは削除され、"Test"がデバイスまたはブラウザーに送信されるテキストです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、<xref:System.Web.UI.WebControls.Literal>コントロールの<xref:System.Web.UI.WebControls.Literal.Mode%2A>プロパティです。 <xref:System.Web.UI.WebControls.Literal.Mode%2A>プロパティに初期設定`Encode`コントロールの宣言の構文で使用します。 設定するボタン、ページが読み込まれると、ユーザーがクリックする、<xref:System.Web.UI.WebControls.Literal.Mode%2A>プロパティを`PassThrough`です。 これが原因の内容、<xref:System.Web.UI.WebControls.Literal.Text%2A>プロパティを異なる方法で表示します。  
+  
+> [!NOTE]
+>  次の例では、単一ファイルのコード モデルを使用しが正しく動作しない場合は、分離コード ファイルに直接コピーします。 このコード例は、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-vb[Literal.Mode#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Literal.Mode/VB/literal.modevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定された型は、のいずれかではない、<see cref="T:System.Web.UI.WebControls.LiteralMode" />列挙値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="protected override void Render (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Render(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Literal.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">サーバー コントロールの内容を受け取る <see cref="T:System.Web.UI.HtmlTextWriter" /> オブジェクト。</param>
+        <summary>提供されたクライアントに表示される内容を書き込む <see cref="T:System.Web.UI.HtmlTextWriter" /> オブジェクトに、サーバー コントロールの内容を送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.WebControls.Literal.Render%2A>カスタム サーバー内のメソッドを制御する前に特定のテキストが常に表示されるよう、<xref:System.Web.UI.WebControls.Literal>です。  
+  
+ [!code-aspx-csharp[CustomLiteralRender#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomLiteralRender/CS/custom_literal_rendercs.aspx#1)]
+ [!code-aspx-vb[CustomLiteralRender#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomLiteralRender/VB/custom_literal_rendervb.aspx#1)]  
+[!code-csharp[CustomLiteralRender#2](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomLiteralRender/CS/custom_literal_render.cs#2)]
+[!code-vb[CustomLiteralRender#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomLiteralRender/VB/custom_literal_render.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Literal.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に表示されるキャプション、<see cref="T:System.Web.UI.WebControls.Literal" />コントロール。</summary>
+        <value>表示されるキャプション、<see cref="T:System.Web.UI.WebControls.Literal" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.Literal.Text%2A>プロパティに表示されるキャプションを指定、<xref:System.Web.UI.WebControls.Literal>コントロール。 これにより、実行時にキャプションをプログラムで変更できます。  
+  
+ キャプションは、このプロパティに値を割り当てる方法によって HTML デコードします。 属性から値を代入する場合、<xref:System.Web.UI.WebControls.Literal>制御値は、HTML が表示される前にデコードします。 たとえば、`<asp:Literal id="DisplayLiteral" Text="A&nbsp;B"/>`はブラウザーの"A B"として表示されます。 ただし、プログラムまたは開始タグと終了タグのコントロールの間のテキストを配置することによって、このプロパティを設定する場合に、キャプションできません HTML デコードです。 たとえば、`<asp:Literal id="DisplayLiteral"> A&nbsp;B </asp:Literal>`としてレンダリングされます"A&nbsp;B"です。  
+  
+> [!CAUTION]
+>  このコントロールは、悪意のあるクライアント スクリプトが含まれる可能性があります、ユーザー入力を表示する使用できます。 スクリプトの実行可能ファイル、SQL ステートメント、またはその他のコードをアプリケーションに表示する前に、クライアントから送信される情報を確認します。 ASP.NET は、入力要求の検証機能があり、ユーザー入力の中のスクリプトのブロックと HTML を提供します。 検証サーバー コントロールは、ユーザー入力を評価するも提供されます。 詳細については、次を参照してください。[検証サーバー コントロール構文](http://msdn.microsoft.com/en-us/96d2c59e-693c-4079-9b53-b3ff0d9e9133)です。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.Literal.Text%2A>プロパティに表示されるキャプションをプログラムで変更を<xref:System.Web.UI.WebControls.Literal>コントロール。  
+  
+> [!NOTE]
+>  次の例では、単一ファイルのコード モデルを使用しが正しく動作しない場合は、分離コード ファイルに直接コピーします。 このコード例は、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[Literal#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Literal/CS/literalcs.aspx#1)]
+ [!code-aspx-vb[Literal#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Literal/VB/literalvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

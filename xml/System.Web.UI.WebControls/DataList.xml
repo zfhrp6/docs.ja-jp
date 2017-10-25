@@ -1,0 +1,2959 @@
+<Type Name="DataList" FullName="System.Web.UI.WebControls.DataList">
+  <TypeSignature Language="C#" Value="public class DataList : System.Web.UI.WebControls.BaseDataList, System.Web.UI.INamingContainer, System.Web.UI.WebControls.IRepeatInfoUser" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataList extends System.Web.UI.WebControls.BaseDataList implements class System.Web.UI.INamingContainer, class System.Web.UI.WebControls.IRepeatInfoUser" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.DataList" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.BaseDataList</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.INamingContainer</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.UI.WebControls.IRepeatInfoUser</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.DataListDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.WebControls.DataListComponentEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.ComponentModel.ComponentEditor))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ControlValueProperty("SelectedValue")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>テンプレートを使用して項目を表示するデータ連結リスト コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このトピックの内容  
+  
+-   [はじめに](#introduction)  
+  
+-   [テンプレート](#templates)  
+  
+-   [DataList コントロールの外観のカスタマイズ](#customizing_the_appearance_of_the_datalist_control)  
+  
+-   [表示方向とレイアウト](#display_direction_and_layout)  
+  
+-   [セキュリティ](#security)  
+  
+-   [宣言型の構文](#declarative_syntax)  
+  
+<a name="introduction"></a>   
+## <a name="introduction"></a>はじめに  
+ 使用して、<xref:System.Web.UI.WebControls.DataList>テンプレートで定義されたデータを表示するコントロールにリストがバインドされています。 <xref:System.Web.UI.WebControls.DataList>選択し、編集コントロールをサポートしています。  
+  
+<a name="templates"></a>   
+## <a name="templates"></a>テンプレート  
+ 内容、<xref:System.Web.UI.WebControls.DataList>テンプレートを使用してコントロールを操作することができます。 次の表は、サポートされているテンプレートを一覧表示します。  
+  
+|テンプレート名|説明|  
+|-------------------|-----------------|  
+|<xref:System.Web.UI.WebControls.DataList.AlternatingItemTemplate%2A>|定義されている場合の代替項目に、コンテンツとレイアウトを提供、<xref:System.Web.UI.WebControls.DataList>です。 定義されていない場合`ItemTemplate`を使用します。|  
+|<xref:System.Web.UI.WebControls.DataList.EditItemTemplate%2A>|定義されている場合は、内容とレイアウトで現在編集中の項目、<xref:System.Web.UI.WebControls.DataList>です。 定義されていない場合`ItemTemplate`を使用します。|  
+|<xref:System.Web.UI.WebControls.DataList.FooterTemplate%2A>|定義されている場合は、内容とレイアウトのフッター セクション、<xref:System.Web.UI.WebControls.DataList>です。 定義されていない場合にフッター セクションは表示されません。|  
+|<xref:System.Web.UI.WebControls.DataList.HeaderTemplate%2A>|定義されている場合は、内容とレイアウトのヘッダー セクション、<xref:System.Web.UI.WebControls.DataList>です。 定義されていない場合、ヘッダー セクションは表示されません。|  
+|<xref:System.Web.UI.WebControls.DataList.ItemTemplate%2A>|必要なテンプレート内の項目の内容とレイアウトを提供する、<xref:System.Web.UI.WebControls.DataList>です。|  
+|<xref:System.Web.UI.WebControls.DataList.SelectedItemTemplate%2A>|定義されている場合は、内容とレイアウトで現在選択されている項目、<xref:System.Web.UI.WebControls.DataList>です。 定義されていない場合<xref:System.Web.UI.WebControls.DataList.ItemTemplate%2A>を使用します。|  
+|<xref:System.Web.UI.WebControls.DataList.SeparatorTemplate%2A>|定義されている場合は、内容とレイアウト内の項目間の区切り記号、<xref:System.Web.UI.WebControls.DataList>です。 定義されていない場合、区切り記号は表示されません。|  
+  
+ 少なくとも、<xref:System.Web.UI.WebControls.DataList.ItemTemplate%2A>内の項目を表示するために定義する必要があります、<xref:System.Web.UI.WebControls.DataList>コントロール。 独自の外観を提供するその他のテンプレートを使用できます、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+<a name="customizing_the_appearance_of_the_datalist_control"></a>   
+## <a name="customizing-the-appearance-of-the-datalist-control"></a>DataList コントロールの外観のカスタマイズ  
+ 外観、<xref:System.Web.UI.WebControls.DataList>コントロールのさまざまな部分のスタイル プロパティを設定してコントロールをカスタマイズすることがあります。 次の表は、異なるスタイル プロパティを一覧表示します。  
+  
+|スタイル プロパティ|説明|  
+|--------------------|-----------------|  
+|<xref:System.Web.UI.WebControls.DataList.AlternatingItemStyle%2A>|代替項目にスタイルを指定します、<xref:System.Web.UI.WebControls.DataList>コントロール。|  
+|<xref:System.Web.UI.WebControls.DataList.EditItemStyle%2A>|編集されているアイテムのスタイルを指定、<xref:System.Web.UI.WebControls.DataList>コントロール。|  
+|<xref:System.Web.UI.WebControls.DataList.FooterStyle%2A>|内のフッターのスタイルを指定、<xref:System.Web.UI.WebControls.DataList>コントロール。|  
+|<xref:System.Web.UI.WebControls.DataList.HeaderStyle%2A>|ヘッダーのスタイルを指定します、<xref:System.Web.UI.WebControls.DataList>コントロール。|  
+|<xref:System.Web.UI.WebControls.DataList.ItemStyle%2A>|内の項目のスタイルを指定、<xref:System.Web.UI.WebControls.DataList>コントロール。|  
+|<xref:System.Web.UI.WebControls.DataList.SelectedItemStyle%2A>|選択した項目のスタイルを指定、<xref:System.Web.UI.WebControls.DataList>コントロール。|  
+|<xref:System.Web.UI.WebControls.DataList.SeparatorStyle%2A>|内の項目間の区切り記号のスタイルを指定、<xref:System.Web.UI.WebControls.DataList>コントロール。|  
+  
+ コントロールのさまざまな部分を非表示を切り替えることができますも。 次の表は、どの部分を表示または非表示を制御するプロパティを一覧表示します。  
+  
+|プロパティ|説明|  
+|--------------|-----------------|  
+|<xref:System.Web.UI.WebControls.DataList.ShowFooter%2A>|フッター セクションの表示と非表示を切り替えます、<xref:System.Web.UI.WebControls.DataList>コントロール。|  
+|<xref:System.Web.UI.WebControls.DataList.ShowHeader%2A>|表示またはのヘッダー セクションを非表示、<xref:System.Web.UI.WebControls.DataList>コントロール。|  
+  
+<a name="display_direction_and_layout"></a>   
+## <a name="display-direction-and-layout"></a>表示方向とレイアウト  
+ 表示方向、<xref:System.Web.UI.WebControls.DataList>コントロールは垂直または水平方向であることができます。 設定、<xref:System.Web.UI.WebControls.DataList.RepeatDirection%2A>プロパティの表示方向を指定します。  
+  
+ レイアウト、<xref:System.Web.UI.WebControls.DataList>でコントロールが制御されます、<xref:System.Web.UI.WebControls.DataList.RepeatLayout%2A>プロパティです。 このプロパティを設定`RepeatLayout.Table`が表示されます、<xref:System.Web.UI.WebControls.DataList>表形式の中に`RepeatLayout.Flow`が表示されます、<xref:System.Web.UI.WebControls.DataList>テーブルの構造なし。  
+  
+<a name="security"></a>   
+## <a name="security"></a>セキュリティ  
+ `DataList`コントロールは、ユーザー情報を入力できるようにするコントロールを含めることができます。  
+  
+> [!CAUTION]
+>  このコントロールは、悪意のあるクライアント スクリプトが含まれる可能性があります、ユーザー入力を表示する使用できます。 スクリプトの実行可能ファイル、SQL ステートメント、またはその他のコードをアプリケーションに表示する前に、クライアントから送信される情報を確認します。 検証コントロールを使用すると、コントロールに入力されたテキストを表示する前にユーザー入力を検証します。 ASP.NET は、入力要求の検証機能があり、ユーザー入力の中のスクリプトのブロックと HTML を提供します。  
+  
+ セキュリティの詳細については、次を参照してください。[標準コントロールのセキュリティで保護する](http://msdn.microsoft.com/library/f3e7718f-63d0-44a3-bd5f-48cc2059c2a8)、[する方法: 保護に対してスクリプトによる攻略の文字列を HTML エンコードを適用することによって、Web アプリケーションで](http://msdn.microsoft.com/library/6f67973f-dda0-45a1-ba9d-e88532d7dc5b)、および[ASP.NET Web Pages でのユーザー入力の検証](http://msdn.microsoft.com/library/4ad3dacb-89e0-4cee-89ac-40a3f2a85461)です。  
+  
+<a name="declarative_syntax"></a>   
+## <a name="declarative-syntax"></a>宣言型の構文  
+  
+```  
+<asp:DataList  
+    AccessKey="string"  
+    BackColor="color name|#dddddd"  
+    BorderColor="color name|#dddddd"  
+    BorderStyle="NotSet|None|Dotted|Dashed|Solid|Double|Groove|Ridge|  
+        Inset|Outset"  
+    BorderWidth="size"  
+    Caption="string"  
+    CaptionAlign="NotSet|Top|Bottom|Left|Right"  
+    CellPadding="integer"  
+    CellSpacing="integer"  
+    CssClass="string"  
+    DataKeyField="string"  
+    DataMember="string"  
+    DataSource="string"  
+    DataSourceID="string"  
+    EditItemIndex="integer"  
+    Enabled="True|False"  
+    EnableTheming="True|False"  
+    EnableViewState="True|False"  
+    ExtractTemplateRows="True|False"  
+    Font-Bold="True|False"  
+    Font-Italic="True|False"  
+    Font-Names="string"  
+    Font-Overline="True|False"  
+    Font-Size="string|Smaller|Larger|XX-Small|X-Small|Small|Medium|  
+        Large|X-Large|XX-Large"  
+    Font-Strikeout="True|False"  
+    Font-Underline="True|False"  
+    ForeColor="color name|#dddddd"  
+    GridLines="None|Horizontal|Vertical|Both"  
+    Height="size"  
+    HorizontalAlign="NotSet|Left|Center|Right|Justify"  
+    ID="string"  
+    OnCancelCommand="CancelCommand event handler"  
+    OnDataBinding="DataBinding event handler"  
+    OnDeleteCommand="DeleteCommand event handler"  
+    OnDisposed="Disposed event handler"  
+    OnEditCommand="EditCommand event handler"  
+    OnInit="Init event handler"  
+    OnItemCommand="ItemCommand event handler"  
+    OnItemCreated="ItemCreated event handler"  
+    OnItemDataBound="ItemDataBound event handler"  
+    OnLoad="Load event handler"  
+    OnPreRender="PreRender event handler"  
+    OnSelectedIndexChanged="SelectedIndexChanged event handler"  
+    OnUnload="Unload event handler"  
+    OnUpdateCommand="UpdateCommand event handler"  
+    RepeatColumns="integer"  
+    RepeatDirection="Horizontal|Vertical"  
+    RepeatLayout="Table|Flow"  
+    runat="server"  
+    SelectedIndex="integer"  
+    ShowFooter="True|False"  
+    ShowHeader="True|False"  
+    SkinID="string"  
+    Style="string"  
+    TabIndex="integer"  
+    ToolTip="string"  
+    UseAccessibleHeader="True|False"  
+    Visible="True|False"  
+    Width="size"  
+>  
+        <AlternatingItemStyle />  
+        <AlternatingItemTemplate>  
+            <!-- child controls -->  
+        </AlternatingItemTemplate>  
+        <EditItemStyle />  
+        <EditItemTemplate>  
+            <!-- child controls -->  
+        </EditItemTemplate>  
+        <FooterStyle />  
+        <FooterTemplate>  
+            <!-- child controls -->  
+        </FooterTemplate>  
+        <HeaderStyle />  
+        <HeaderTemplate>  
+            <!-- child controls -->  
+        </HeaderTemplate>  
+        <ItemStyle />  
+        <ItemTemplate>  
+            <!-- child controls -->  
+        </ItemTemplate>  
+        <SelectedItemStyle />  
+        <SelectedItemTemplate>  
+            <!-- child controls -->  
+        </SelectedItemTemplate>  
+        <SeparatorStyle />  
+        <SeparatorTemplate>  
+            <!-- child controls -->  
+        </SeparatorTemplate>  
+</asp:DataList>  
+```  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataList>コントロールにデータ ソースからの項目の一覧を表示します。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataList#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataList/CS/datalistcs.aspx#1)]
+ [!code-aspx-vb[DataList#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataList/VB/datalistvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataList ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataList.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.DataList" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.DataList>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成しの新しいインスタンスを初期化する方法を示しています、<xref:System.Web.UI.WebControls.DataList>クラスです。  
+  
+ [!code-csharp[Classic DataList.DataList Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataList.DataList Example/CS/source.cs#1)]
+ [!code-vb[Classic DataList.DataList Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataList.DataList Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlternatingItemStyle">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.TableItemStyle AlternatingItemStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.TableItemStyle AlternatingItemStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataList.AlternatingItemStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TableItemStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>代替のアイテムのスタイル プロパティを取得、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.TableItemStyle" />交互のスタイル プロパティを表すオブジェクトの項目を<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。 既定値は、空<see cref="T:System.Web.UI.WebControls.TableItemStyle" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataList.AlternatingItemStyle%2A>の項目を代替のカスタム スタイルを指定するプロパティ、<xref:System.Web.UI.WebControls.DataList>コントロール。 前景の色、背景色、フォント、およびセル内のコンテンツの配置を調整できる共通のスタイル属性が含まれます。 外観を向上とは異なるスタイルを提供する、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+ アイテムのスタイル プロパティで、<xref:System.Web.UI.WebControls.DataList>コントロールは、階層構造を使用する 1 つの項目のスタイル プロパティから継承されます。 アイテムのスタイル プロパティが、階層内を低く設定は、階層内の上位の項目のスタイル プロパティによって継承されます。 赤いフォントを指定する場合など、<xref:System.Web.UI.WebControls.DataList.ItemStyle%2A>プロパティ、その他の項目のスタイルのすべてのプロパティ、<xref:System.Web.UI.WebControls.DataList>コントロールには、赤いフォントがあります。 これにより、1 つのアイテムのスタイル プロパティを設定してコントロールの共通の外観を提供することができます。 スタイル プロパティを設定して、階層の上位にあるアイテムのスタイル プロパティの継承されたスタイルの設定をオーバーライドすることができます。 たとえば、青のフォントを指定することができます、<xref:System.Web.UI.WebControls.DataList.AlternatingItemStyle%2A>赤いフォントで指定されたをオーバーライドするプロパティ、<xref:System.Web.UI.WebControls.DataList.ItemStyle%2A>プロパティです。 次の表は、最上位から最下位に階層の順序を一覧表示します。  
+  
+|優先順位|スタイル プロパティ|  
+|----------------|--------------------|  
+|1|<xref:System.Web.UI.WebControls.DataList.EditItemStyle%2A>|  
+|2|<xref:System.Web.UI.WebControls.DataList.SelectedItemStyle%2A>|  
+|3|<xref:System.Web.UI.WebControls.DataList.AlternatingItemStyle%2A>|  
+|4|<xref:System.Web.UI.WebControls.DataList.ItemStyle%2A>|  
+|5|<xref:System.Web.UI.WebControls.WebControl.ControlStyle%2A>|  
+  
+ 交互の項目にカスタム スタイルを指定するには、配置、`<AlternatingItemStyle>`タグ、開始タグと終了タグの間、<xref:System.Web.UI.WebControls.DataList>コントロール。 スタイル属性の一覧を表示することができますし、`<AlternatingItemStyle>`タグ。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataList.AlternatingItemStyle%2A>の代替項目に別の背景色を指定するプロパティ、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataListItemStyle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListItemStyle/CS/datalistitemstylecs.aspx#1)]
+ [!code-aspx-vb[DataListItemStyle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListItemStyle/VB/datalistitemstylevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlternatingItemTemplate">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.ITemplate AlternatingItemTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ITemplate AlternatingItemTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataList.AlternatingItemTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.TemplateContainer(typeof(System.Web.UI.WebControls.DataListItem))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の代替項目に、テンプレート、<see cref="T:System.Web.UI.WebControls.DataList" />です。</summary>
+        <value>A<see cref="T:System.Web.UI.ITemplate" />交互のテンプレートが含まれるオブジェクトの項目を<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataList.AlternatingItemTemplate%2A>プロパティ内の項目の代替のコンテンツを制御する、<xref:System.Web.UI.WebControls.DataList>コントロール。 代替アイテムの外観はによって制御されます、<xref:System.Web.UI.WebControls.DataList.AlternatingItemStyle%2A>プロパティです。  
+  
+ 交互の項目のテンプレートを指定するには、配置、`<AlternatingItemTemplate>`タグ、開始タグと終了タグの間、<xref:System.Web.UI.WebControls.DataList>コントロール。 開始タグと終了の間でテンプレートの内容の一覧を表示することができますし、`<AlternatingItemTemplate>`タグ。  
+  
+> [!CAUTION]
+>  このコントロールは、悪意のあるクライアント スクリプトが含まれる可能性があります、ユーザー入力を表示する使用できます。 スクリプトの実行可能ファイル、SQL ステートメント、またはその他のコードをアプリケーションに表示する前に、クライアントから送信される情報を確認します。 検証コントロールを使用すると、コントロールに入力されたテキストを表示する前にユーザー入力を検証します。 ASP.NET は、入力要求の検証機能があり、ユーザー入力の中のスクリプトのブロックと HTML を提供します。 詳細については、次を参照してください。[標準コントロールのセキュリティで保護する](http://msdn.microsoft.com/library/f3e7718f-63d0-44a3-bd5f-48cc2059c2a8)、[する方法: 保護に対してスクリプトによる攻略の文字列を HTML エンコードを適用することによって、Web アプリケーションで](http://msdn.microsoft.com/library/6f67973f-dda0-45a1-ba9d-e88532d7dc5b)、および[ASP.NET Web Pages でのユーザー入力の検証](http://msdn.microsoft.com/library/4ad3dacb-89e0-4cee-89ac-40a3f2a85461)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataList.AlternatingItemTemplate%2A>プロパティ内の項目の代替のコンテンツを制御する、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataListAlternatingItemTemplate#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListAlternatingItemTemplate/CS/datalistaltitemtemplatecs.aspx#1)]
+ [!code-aspx-vb[DataListAlternatingItemTemplate#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListAlternatingItemTemplate/VB/datalistaltitemtemplatevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelCommand">
+      <MemberSignature Language="C#" Value="public event System.Web.UI.WebControls.DataListCommandEventHandler CancelCommand;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.UI.WebControls.DataListCommandEventHandler CancelCommand" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.DataList.CancelCommand" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataListCommandEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see langword="Cancel" />のアイテムのボタンがクリックされた、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataList.CancelCommand>イベントが発生したときに、`Cancel`のアイテムのボタンがクリックされた、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+ 一般的なハンドラーを<xref:System.Web.UI.WebControls.DataList.CancelCommand>イベントのセット、<xref:System.Web.UI.WebControls.DataList.EditItemIndex%2A>プロパティを`-1`(項目の選択を解除) するデータを再バインドと、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+> [!CAUTION]
+>  テキストは HTML エンコードで表示されるまで、<xref:System.Web.UI.WebControls.DataList>コントロール。 これにより、テキストに HTML タグ内のスクリプトを埋め込むことが可能です。 ユーザー入力から、コントロールの値には、必ずをセキュリティの脆弱性を減らすために値を検証します。  
+  
+ イベント処理の詳細については、次を参照してください。[する方法: Web フォーム アプリケーションでのイベントの消費](~/docs/standard/events/how-to-consume-events-in-a-web-forms-application.md)です。  
+  
+> [!CAUTION]
+>  このコントロールは、悪意のあるクライアント スクリプトが含まれる可能性があります、ユーザー入力を表示する使用できます。 スクリプトの実行可能ファイル、SQL ステートメント、またはその他のコードをアプリケーションに表示する前に、クライアントから送信される情報を確認します。 検証コントロールを使用すると、コントロールに入力されたテキストを表示する前にユーザー入力を検証します。 ASP.NET は、入力要求の検証機能があり、ユーザー入力の中のスクリプトのブロックと HTML を提供します。 詳細については、次を参照してください。[標準コントロールのセキュリティで保護する](http://msdn.microsoft.com/library/f3e7718f-63d0-44a3-bd5f-48cc2059c2a8)、[する方法: 保護に対してスクリプトによる攻略の文字列を HTML エンコードを適用することによって、Web アプリケーションで](http://msdn.microsoft.com/library/6f67973f-dda0-45a1-ba9d-e88532d7dc5b)、および[ASP.NET Web Pages でのユーザー入力の検証](http://msdn.microsoft.com/library/4ad3dacb-89e0-4cee-89ac-40a3f2a85461)です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.DataList.CancelCommand>イベント。 内の項目に加えられたすべての編集をキャンセル、<xref:System.Web.UI.WebControls.DataList>タイミングを制御、`Cancel`ボタンをクリックします。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataListEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListEdit/CS/datalisteditcs.aspx#1)]
+ [!code-aspx-vb[DataListEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListEdit/VB/datalisteditvb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataListEdit2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListEdit2/CS/datalistedit2cs.aspx#1)]
+ [!code-aspx-vb[DataListEdit2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListEdit2/VB/datalistedit2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelCommandName">
+      <MemberSignature Language="C#" Value="public const string CancelCommandName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string CancelCommandName" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.DataList.CancelCommandName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す、<see langword="Cancel" />コマンド名です。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataList.CancelCommandName>を表すフィールド、`Cancel`コマンド名です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateControlHierarchy">
+      <MemberSignature Language="C#" Value="protected override void CreateControlHierarchy (bool useDataSource);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CreateControlHierarchy(bool useDataSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataList.CreateControlHierarchy(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="useDataSource" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="useDataSource">
+          <see langword="true" />コントロールのデータ ソースを使用するには<see langword="false" />を示し、コントロールがビュー状態から再作成されるデータ バインドをすることはできません。</param>
+        <summary>指定したデータ ソースの有無データ一覧コントロールを表示するために使用されるコントロールの階層構造を作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataList.CreateControlHierarchy%2A>からカスタムの実装を派生している場合、メソッドは、主にコントロールの開発者によって使用、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+ <xref:System.Web.UI.WebControls.DataList.CreateControlHierarchy%2A>メソッドを使用、<xref:System.Web.UI.WebControls.DataList.CreateItem%2A>と<xref:System.Web.UI.WebControls.DataList.InitializeItem%2A>を作成するメソッド<xref:System.Web.UI.WebControls.DataListItem>ヘッダー、フッター、区切り記号、およびデータの一覧に含まれるデータ バインド項目を表すコントロール。 一覧については、データをデータ バインド項目にアクセスすることができます、<xref:System.Web.UI.WebControls.DataList.Items%2A>コレクション。 を通じてヘッダー、フッター、および区切り記号の項目を含む、すべての項目の種類にアクセスすることができます、<xref:System.Web.UI.WebControls.BaseDataList.Controls%2A>コレクション。  
+  
+ オーバーライド、<xref:System.Web.UI.WebControls.DataList.CreateControlHierarchy%2A>メソッドをカスタマイズする方法<xref:System.Web.UI.WebControls.DataListItem>コントロールの作成またはに追加される、<xref:System.Web.UI.WebControls.DataList>コントロール。 上書き、<xref:System.Web.UI.WebControls.DataList.InitializeItem%2A>のテンプレートをカスタマイズする方法、<xref:System.Web.UI.WebControls.DataListItem>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateControlStyle">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.WebControls.Style CreateControlStyle ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.WebControls.Style CreateControlStyle() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataList.CreateControlStyle" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Style</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>によって内部的に使用される既定のスタイル オブジェクトを作成、<see cref="T:System.Web.UI.WebControls.DataList" />すべてのスタイルを実装するコントロールに関連するプロパティです。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.TableStyle" />コントロールの既定のスタイル プロパティを格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataList.CreateControlStyle%2A>メソッド内からのカスタム実装を派生するコントロールの開発者によって、主に使用、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.WebControls.DataList.CreateControlStyle%2A>でないセルの間隔で水平グリッド線を常に表示するようにカスタム サーバー内のメソッドが制御、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+ [!code-aspx-csharp[CustomDataListCreateControlStyle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomDataListCreateControlStyle/CS/custom_datalist_createcontrolstylecs.aspx#1)]
+ [!code-aspx-vb[CustomDataListCreateControlStyle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomDataListCreateControlStyle/VB/custom_datalist_createcontrolstylevb.aspx#1)]  
+[!code-csharp[CustomDataListCreateControlStyle#2](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomDataListCreateControlStyle/CS/custom_datalist_createcontrolstyle.cs#2)]
+[!code-vb[CustomDataListCreateControlStyle#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomDataListCreateControlStyle/VB/custom_datalist_createcontrolstyle.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateItem">
+      <MemberSignature Language="C#" Value="protected virtual System.Web.UI.WebControls.DataListItem CreateItem (int itemIndex, System.Web.UI.WebControls.ListItemType itemType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Web.UI.WebControls.DataListItem CreateItem(int32 itemIndex, valuetype System.Web.UI.WebControls.ListItemType itemType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataList.CreateItem(System.Int32,System.Web.UI.WebControls.ListItemType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataListItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="itemIndex" Type="System.Int32" />
+        <Parameter Name="itemType" Type="System.Web.UI.WebControls.ListItemType" />
+      </Parameters>
+      <Docs>
+        <param name="itemIndex">内で指定した場所、<see cref="T:System.Web.UI.WebControls.DataList" />作成されたアイテムを配置します。</param>
+        <param name="itemType">A<see cref="T:System.Web.UI.WebControls.ListItemType" />を作成する項目の指定された型を表すです。</param>
+        <summary>
+          <see cref="T:System.Web.UI.WebControls.DataListItem" /> オブジェクトを作成します。</summary>
+        <returns>新しい<see cref="T:System.Web.UI.WebControls.DataListItem" />と指定されたリスト項目の種類を作成します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataList.CreateItem%2A>メソッドのカスタム実装を作成するコントロールの開発者によって、主に使用、<xref:System.Web.UI.WebControls.DataList>コントロール。 <xref:System.Web.UI.WebControls.DataList.CreateItem%2A>メソッドは機能的には、通話、<xref:System.Web.UI.WebControls.DataListItem.%23ctor%2A>のコンス トラクター、<xref:System.Web.UI.WebControls.DataListItem>です。 <xref:System.Web.UI.WebControls.DataListItem.ItemIndex%2A>と<xref:System.Web.UI.WebControls.DataListItem.ItemType%2A>プロパティは、新しい初期化<xref:System.Web.UI.WebControls.DataListItem>を使用する指定された値が、項目が挿入されない、<xref:System.Web.UI.WebControls.DataList>です。  
+  
+ <xref:System.Web.UI.WebControls.DataList.CreateControlHierarchy%2A>メソッドを使用、<xref:System.Web.UI.WebControls.DataList.CreateItem%2A>と<xref:System.Web.UI.WebControls.DataList.InitializeItem%2A>を作成するメソッド<xref:System.Web.UI.WebControls.DataListItem>ヘッダー、フッター、区切り記号、およびデータの一覧に含まれるデータ バインド項目を表すコントロール。 一覧については、データをデータ バインド項目にアクセスすることができます、<xref:System.Web.UI.WebControls.DataList.Items%2A>コレクション。 を通じてヘッダー、フッター、および区切り記号の項目を含む、すべての項目の種類にアクセスすることができます、<xref:System.Web.UI.WebControls.BaseDataList.Controls%2A>コレクション。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>独自の派生を作成するには、このメソッドをオーバーライド<see cref="T:System.Web.UI.WebControls.DataListItem" />型、またはその他のメンバー プロパティを設定するときに、<see cref="T:System.Web.UI.WebControls.DataListItem" />を作成します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteCommand">
+      <MemberSignature Language="C#" Value="public event System.Web.UI.WebControls.DataListCommandEventHandler DeleteCommand;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.UI.WebControls.DataListCommandEventHandler DeleteCommand" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.DataList.DeleteCommand" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataListCommandEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see langword="Delete" />のアイテムのボタンがクリックされた、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataList.DeleteCommand>イベントが発生したときに、`Delete`のアイテムのボタンがクリックされた、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+ 一般的なハンドラーを<xref:System.Web.UI.WebControls.DataList.DeleteCommand>イベントのデータ ソースから選択した項目を削除および再バインドするデータを<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+ イベント処理の詳細については、次を参照してください。[する方法: Web フォーム アプリケーションでのイベントの消費](~/docs/standard/events/how-to-consume-events-in-a-web-forms-application.md)です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.DataList.DeleteCommand>イベント。 選択した項目を削除、<xref:System.Web.UI.WebControls.DataList>タイミングを制御、`Delete`ボタンをクリックします。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataListEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListEdit/CS/datalisteditcs.aspx#1)]
+ [!code-aspx-vb[DataListEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListEdit/VB/datalisteditvb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataListEdit2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListEdit2/CS/datalistedit2cs.aspx#1)]
+ [!code-aspx-vb[DataListEdit2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListEdit2/VB/datalistedit2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteCommandName">
+      <MemberSignature Language="C#" Value="public const string DeleteCommandName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string DeleteCommandName" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.DataList.DeleteCommandName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す、<see langword="Delete" />コマンド名です。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataList.DeleteCommandName>を表すフィールド、`Delete`コマンド名です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditCommand">
+      <MemberSignature Language="C#" Value="public event System.Web.UI.WebControls.DataListCommandEventHandler EditCommand;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.UI.WebControls.DataListCommandEventHandler EditCommand" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.DataList.EditCommand" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataListCommandEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see langword="Edit" />のアイテムのボタンがクリックされた、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataList.EditCommand>イベントが発生したときに、`Edit`のアイテムのボタンがクリックされた、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+ 一般的なハンドラーを<xref:System.Web.UI.WebControls.DataList.EditCommand>イベントのセット、<xref:System.Web.UI.WebControls.DataList.EditItemIndex%2A>プロパティを選択した行にデータを再バインドと、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+> [!CAUTION]
+>  テキストは HTML エンコードで表示されるまで、<xref:System.Web.UI.WebControls.DataList>コントロール。 これにより、テキストに HTML タグ内のスクリプトを埋め込むことが可能です。 ユーザー入力から、コントロールの値には、必ずをセキュリティの脆弱性を減らすために値を検証します。  
+  
+ イベント処理の詳細については、次を参照してください。[する方法: Web フォーム アプリケーションでのイベントの消費](~/docs/standard/events/how-to-consume-events-in-a-web-forms-application.md)です。  
+  
+> [!CAUTION]
+>  このコントロールは、悪意のあるクライアント スクリプトが含まれる可能性があります、ユーザー入力を表示する使用できます。 スクリプトの実行可能ファイル、SQL ステートメント、またはその他のコードをアプリケーションに表示する前に、クライアントから送信される情報を確認します。 検証コントロールを使用すると、コントロールに入力されたテキストを表示する前にユーザー入力を検証します。 ASP.NET は、入力要求の検証機能があり、ユーザー入力の中のスクリプトのブロックと HTML を提供します。 詳細については、次を参照してください。[標準コントロールのセキュリティで保護する](http://msdn.microsoft.com/library/f3e7718f-63d0-44a3-bd5f-48cc2059c2a8)、[する方法: 保護に対してスクリプトによる攻略の文字列を HTML エンコードを適用することによって、Web アプリケーションで](http://msdn.microsoft.com/library/6f67973f-dda0-45a1-ba9d-e88532d7dc5b)、および[ASP.NET Web Pages でのユーザー入力の検証](http://msdn.microsoft.com/library/4ad3dacb-89e0-4cee-89ac-40a3f2a85461)です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.DataList.EditCommand>イベント。 選択した項目を編集することができます、<xref:System.Web.UI.WebControls.DataList>タイミングを制御、`Edit`ボタンをクリックします。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataListEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListEdit/CS/datalisteditcs.aspx#1)]
+ [!code-aspx-vb[DataListEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListEdit/VB/datalisteditvb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataListEdit2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListEdit2/CS/datalistedit2cs.aspx#1)]
+ [!code-aspx-vb[DataListEdit2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListEdit2/VB/datalistedit2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditCommandName">
+      <MemberSignature Language="C#" Value="public const string EditCommandName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string EditCommandName" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.DataList.EditCommandName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す、<see langword="Edit" />コマンド名です。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataList.EditCommandName>を表すフィールド、`Edit`コマンド名です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditItemIndex">
+      <MemberSignature Language="C#" Value="public virtual int EditItemIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 EditItemIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataList.EditItemIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(-1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定で選択した項目のインデックス番号、<see cref="T:System.Web.UI.WebControls.DataList" />を編集するコントロール。</summary>
+        <value>選択した項目のインデックス番号、<see cref="T:System.Web.UI.WebControls.DataList" />を編集するコントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataList.EditItemIndex%2A>プロパティを編集する項目をプログラムで指定します。 このプロパティを使用して、編集するために選択した項目のインデックスを確認することができますも。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.DataList.EditItemIndex%2A>プロパティは、0 から始まります。  
+  
+ 項目の選択を解除するには設定、<xref:System.Web.UI.WebControls.DataList.EditItemIndex%2A>プロパティを`-1`です。  
+  
+> [!CAUTION]
+>  このコントロールは、悪意のあるクライアント スクリプトが含まれる可能性があります、ユーザー入力を表示する使用できます。 スクリプトの実行可能ファイル、SQL ステートメント、またはその他のコードをアプリケーションに表示する前に、クライアントから送信される情報を確認します。 検証コントロールを使用すると、コントロールに入力されたテキストを表示する前にユーザー入力を検証します。 ASP.NET は、入力要求の検証機能があり、ユーザー入力の中のスクリプトのブロックと HTML を提供します。 詳細については、次を参照してください。[標準コントロールのセキュリティで保護する](http://msdn.microsoft.com/library/f3e7718f-63d0-44a3-bd5f-48cc2059c2a8)、[する方法: 保護に対してスクリプトによる攻略の文字列を HTML エンコードを適用することによって、Web アプリケーションで](http://msdn.microsoft.com/library/6f67973f-dda0-45a1-ba9d-e88532d7dc5b)、および[ASP.NET Web Pages でのユーザー入力の検証](http://msdn.microsoft.com/library/4ad3dacb-89e0-4cee-89ac-40a3f2a85461)です。  
+  
+ <xref:System.Web.UI.WebControls.DataList.EditItemIndex%2A>プロパティがコントロールの状態に格納されています。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataList.EditItemIndex%2A>プロパティを編集するため、ユーザーが選択した項目を指定します。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataListEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListEdit/CS/datalisteditcs.aspx#1)]
+ [!code-aspx-vb[DataListEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListEdit/VB/datalisteditvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">選択した値より小さい<see langword="0" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EditItemStyle">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.TableItemStyle EditItemStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.TableItemStyle EditItemStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataList.EditItemStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TableItemStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>編集するために選択した項目のスタイル プロパティを取得、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.TableItemStyle" />で編集するために選択した項目のスタイル プロパティを格納しているオブジェクト、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。 既定値は、空<see cref="T:System.Web.UI.WebControls.TableItemStyle" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataList.EditItemStyle%2A>で編集するために選択した項目のカスタム スタイルを指定するプロパティ、<xref:System.Web.UI.WebControls.DataList>コントロール。 前景の色、背景色、フォント、およびセル内のコンテンツの配置を調整できる共通のスタイル属性が含まれます。 外観を向上とは異なるスタイルを提供する、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+ アイテムのスタイル プロパティで、<xref:System.Web.UI.WebControls.DataList>コントロールは、階層構造を使用する 1 つの項目のスタイル プロパティから継承されます。 アイテムのスタイル プロパティが、階層内を低く設定は、階層内の上位の項目のスタイル プロパティによって継承されます。 赤いフォントを指定する場合など、<xref:System.Web.UI.WebControls.DataList.ItemStyle%2A>プロパティ、その他の項目のスタイルのすべてのプロパティ、<xref:System.Web.UI.WebControls.DataList>コントロールには、赤いフォントがあります。 これにより、1 つのアイテムのスタイル プロパティを設定してコントロールの共通の外観を提供することができます。 スタイル プロパティを設定して、階層の上位にあるアイテムのスタイル プロパティの継承されたスタイルの設定をオーバーライドすることができます。 たとえば、青のフォントを指定することができます、<xref:System.Web.UI.WebControls.DataList.AlternatingItemStyle%2A>赤いフォントで指定されたをオーバーライドするプロパティ、<xref:System.Web.UI.WebControls.DataList.ItemStyle%2A>プロパティです。 次の表は、最上位から最下位に階層の順序を一覧表示します。  
+  
+|優先順位|スタイル プロパティ|  
+|----------------|--------------------|  
+|1|<xref:System.Web.UI.WebControls.DataList.EditItemStyle%2A>|  
+|2|<xref:System.Web.UI.WebControls.DataList.SelectedItemStyle%2A>|  
+|3|<xref:System.Web.UI.WebControls.DataList.AlternatingItemStyle%2A>|  
+|4|<xref:System.Web.UI.WebControls.DataList.ItemStyle%2A>|  
+|5|<xref:System.Web.UI.WebControls.WebControl.ControlStyle%2A>|  
+  
+ 編集用に選択した項目のカスタム スタイルを指定するには、配置、`<EditItemStyle>`タグ、開始タグと終了タグの間、<xref:System.Web.UI.WebControls.DataList>コントロール。 スタイル属性の一覧を表示することができますし、`<EditItemStyle>`タグ。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataList.EditItemStyle%2A>プロパティを編集するため、ユーザーが選択した項目に対してさまざまな外観を指定します。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataListEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListEdit/CS/datalisteditcs.aspx#1)]
+ [!code-aspx-vb[DataListEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListEdit/VB/datalisteditvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditItemTemplate">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.ITemplate EditItemTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ITemplate EditItemTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataList.EditItemTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.TemplateContainer(typeof(System.Web.UI.WebControls.DataListItem))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定で編集するために選択した項目テンプレート、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.ITemplate" />で編集するために選択した項目テンプレートを格納しているオブジェクト、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataList.EditItemTemplate%2A>で編集するために選択した項目の内容を制御するプロパティ、<xref:System.Web.UI.WebControls.DataList>コントロール。 によって制御される編集用に選択した項目の外観、<xref:System.Web.UI.WebControls.DataList.EditItemStyle%2A>プロパティです。  
+  
+ 編集するために選択した項目テンプレートを指定するには、配置、`<EditItemTemplate>`タグ、開始タグと終了タグの間、<xref:System.Web.UI.WebControls.DataList>コントロール。 開始タグと終了の間でテンプレートの内容の一覧を表示することができますし、`<EditItemTemplate>`タグ。  
+  
+> [!CAUTION]
+>  このコントロールは、悪意のあるクライアント スクリプトが含まれる可能性があります、ユーザー入力を表示する使用できます。 スクリプトの実行可能ファイル、SQL ステートメント、またはその他のコードをアプリケーションに表示する前に、クライアントから送信される情報を確認します。 検証コントロールを使用すると、コントロールに入力されたテキストを表示する前にユーザー入力を検証します。 ASP.NET は、入力要求の検証機能があり、ユーザー入力の中のスクリプトのブロックと HTML を提供します。 詳細については、次を参照してください。[標準コントロールのセキュリティで保護する](http://msdn.microsoft.com/library/f3e7718f-63d0-44a3-bd5f-48cc2059c2a8)、[する方法: 保護に対してスクリプトによる攻略の文字列を HTML エンコードを適用することによって、Web アプリケーションで](http://msdn.microsoft.com/library/6f67973f-dda0-45a1-ba9d-e88532d7dc5b)、および[ASP.NET Web Pages でのユーザー入力の検証](http://msdn.microsoft.com/library/4ad3dacb-89e0-4cee-89ac-40a3f2a85461)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataList.EditItemTemplate%2A>プロパティを編集するため、ユーザーが選択した項目の内容を制御します。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataListEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListEdit/CS/datalisteditcs.aspx#1)]
+ [!code-aspx-vb[DataListEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListEdit/VB/datalisteditvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtractTemplateRows">
+      <MemberSignature Language="C#" Value="public virtual bool ExtractTemplateRows { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ExtractTemplateRows" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataList.ExtractTemplateRows" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうかの行、<see cref="T:System.Web.UI.WebControls.Table" />の各テンプレートで定義されているコントロール、<see cref="T:System.Web.UI.WebControls.DataList" />制御が抽出され、表示されます。</summary>
+        <value>
+          <see langword="true" />場合の行、<see cref="T:System.Web.UI.WebControls.Table" />の各テンプレートで定義されているコントロール、<see cref="T:System.Web.UI.WebControls.DataList" />コントロールを抽出し、表示されている以外の場合は、それ以外の場合は、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内容、<xref:System.Web.UI.WebControls.DataList>テンプレートを使用してコントロールを指定します。 通常、テンプレートに表示するコントロールが一覧表示します。 配置することも、<xref:System.Web.UI.WebControls.Table>テンプレートで制御し、テーブルの行を表示します。  
+  
+ 使用して、<xref:System.Web.UI.WebControls.DataList.ExtractTemplateRows%2A>プロパティを指定するかどうかの行、<xref:System.Web.UI.WebControls.Table>の各テンプレートで定義されているコントロール、<xref:System.Web.UI.WebControls.DataList>コントロールが抽出され、表示されます。 テンプレートから抽出されたすべての行、<xref:System.Web.UI.WebControls.DataList>コントロールが 1 つのテーブルに表示されます。 これにより、他のより小さなテーブルから 1 つのテーブルを作成しの機能を保持する、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+> [!NOTE]
+>  このプロパティを設定すると`true`、整形式を入力する必要があります<xref:System.Web.UI.WebControls.Table>コントロールに追加するテンプレートごとに、<xref:System.Web.UI.WebControls.DataList>コントロール。 テーブルの行のみが表示されます。 テンプレート内の他のすべてのコンテンツは無視されます。 使用する必要があります、<xref:System.Web.UI.WebControls.Table>適切に機能するには、この機能を制御します。 <xref:System.Web.UI.HtmlControls.HtmlTable?displayProperty=nameWithType>コントロールは、このプロパティと互換性がありません。  
+  
+ セルを作成する場合、<xref:System.Web.UI.WebControls.Table>コントロールでは、テンプレートを使用できます、<xref:System.Web.UI.WebControls.TableCell.ColumnSpan%2A>のプロパティ、<xref:System.Web.UI.WebControls.TableCell>セルがまたがる列の数を制御するオブジェクト。 使用することも、<xref:System.Web.UI.WebControls.TableCell.RowSpan%2A>セルがまたがる行の数を制御するプロパティです。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.DataList.RepeatColumns%2A>、 <xref:System.Web.UI.WebControls.DataList.RepeatDirection%2A>、および<xref:System.Web.UI.WebControls.DataList.RepeatLayout%2A>プロパティの外観には影響しません、<xref:System.Web.UI.WebControls.DataList>にこのプロパティを設定すると制御`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、使用する方法をデモンストレーション、<xref:System.Web.UI.WebControls.DataList.ExtractTemplateRows%2A>プロパティを抽出し、行の表示を<xref:System.Web.UI.WebControls.Table>のテンプレートで定義されているコントロール、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[Classic DataList.ExtractTemplateRows Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataList.ExtractTemplateRows Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic DataList.ExtractTemplateRows Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataList.ExtractTemplateRows Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FooterStyle">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.TableItemStyle FooterStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.TableItemStyle FooterStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataList.FooterStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TableItemStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フッター セクションのスタイル プロパティを取得、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.TableItemStyle" />のフッター セクションのスタイル プロパティを格納しているオブジェクト、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。 既定値は、空<see cref="T:System.Web.UI.WebControls.TableItemStyle" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティのフッター セクションにカスタム スタイルを使用して、<xref:System.Web.UI.WebControls.DataList>コントロール。 前景の色、背景色、フォント、およびセル内のコンテンツの配置を調整できる共通のスタイル属性が含まれます。 外観を向上とは異なるスタイルを提供する、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+ <xref:System.Web.UI.WebControls.DataList.FooterStyle%2A>のプロパティ、<xref:System.Web.UI.WebControls.DataList>コントロールのスタイル設定を継承する、<xref:System.Web.UI.WebControls.WebControl.ControlStyle%2A>プロパティです。 赤いフォントを指定する場合など、 <xref:System.Web.UI.WebControls.WebControl.ControlStyle%2A> 、プロパティ、<xref:System.Web.UI.WebControls.DataList.FooterStyle%2A>プロパティには、赤いフォントがあります。 これにより、1 つのスタイル プロパティを設定して、コントロールの共通の外観を提供することができます。 設定して、継承したスタイルの設定をオーバーライドすることができます、<xref:System.Web.UI.WebControls.DataList.FooterStyle%2A>プロパティです。 たとえば、青のフォントを指定することができます、<xref:System.Web.UI.WebControls.DataList.FooterStyle%2A>赤いフォントで指定されたをオーバーライドするプロパティ、<xref:System.Web.UI.WebControls.WebControl.ControlStyle%2A>プロパティです。  
+  
+ フッター セクションのカスタム スタイルを指定するには、配置、`<FooterStyle>`タグ、開始タグと終了タグの間、<xref:System.Web.UI.WebControls.DataList>コントロール。 スタイル属性の一覧を表示することができますし、`<FooterStyle>`タグ。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.DataList.ShowFooter%2A>プロパティに設定する必要があります`true`を表示するには、このプロパティにします。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataList.FooterStyle%2A>のフッター セクションにカスタムの背景色を指定するプロパティ、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataListHeaderStyle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListHeaderStyle/CS/datalistheaderstylecs.aspx#1)]
+ [!code-aspx-vb[DataListHeaderStyle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListHeaderStyle/VB/datalistheaderstylevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FooterTemplate">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.ITemplate FooterTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ITemplate FooterTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataList.FooterTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.TemplateContainer(typeof(System.Web.UI.WebControls.DataListItem))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のフッター セクションのテンプレート、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.ITemplate" />のフッター セクションのテンプレートを格納しているオブジェクト、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataList.FooterTemplate%2A>フッター セクションの内容を制御するプロパティです。 フッター セクションは外観によって、<xref:System.Web.UI.WebControls.DataList.FooterStyle%2A>プロパティです。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.DataList.ShowFooter%2A>プロパティに設定する必要があります`true`を表示するには、このプロパティにします。  
+  
+ <xref:System.Web.UI.WebControls.DataList.HeaderStyle%2A>のプロパティ、<xref:System.Web.UI.WebControls.DataList>コントロールのスタイル設定を継承する、<xref:System.Web.UI.WebControls.WebControl.ControlStyle%2A>プロパティです。 赤いフォントを指定する場合など、 <xref:System.Web.UI.WebControls.WebControl.ControlStyle%2A> 、プロパティ、<xref:System.Web.UI.WebControls.DataList.HeaderStyle%2A>プロパティには、赤いフォントがあります。 これにより、1 つのスタイル プロパティを設定して、コントロールの共通の外観を提供することができます。 設定して、継承したスタイルの設定をオーバーライドすることができます、<xref:System.Web.UI.WebControls.DataList.HeaderStyle%2A>プロパティです。 たとえば、青のフォントを指定することができます、<xref:System.Web.UI.WebControls.DataList.HeaderStyle%2A>赤いフォントで指定されたをオーバーライドするプロパティ、<xref:System.Web.UI.WebControls.WebControl.ControlStyle%2A>プロパティです。  
+  
+ フッター セクションのテンプレートを指定するには、配置、`<FooterTemplate>`タグ、開始タグと終了タグの間、<xref:System.Web.UI.WebControls.DataList>コントロール。 開始タグと終了の間でテンプレートの内容の一覧を表示することができますし、`<FooterTemplate>`タグ。  
+  
+> [!CAUTION]
+>  このコントロールは、悪意のあるクライアント スクリプトが含まれる可能性があります、ユーザー入力を表示する使用できます。 スクリプトの実行可能ファイル、SQL ステートメント、またはその他のコードをアプリケーションに表示する前に、クライアントから送信される情報を確認します。 検証コントロールを使用すると、コントロールに入力されたテキストを表示する前にユーザー入力を検証します。 ASP.NET は、入力要求の検証機能があり、ユーザー入力の中のスクリプトのブロックと HTML を提供します。 詳細については、次を参照してください。[標準コントロールのセキュリティで保護する](http://msdn.microsoft.com/library/f3e7718f-63d0-44a3-bd5f-48cc2059c2a8)、[する方法: 保護に対してスクリプトによる攻略の文字列を HTML エンコードを適用することによって、Web アプリケーションで](http://msdn.microsoft.com/library/6f67973f-dda0-45a1-ba9d-e88532d7dc5b)、および[ASP.NET Web Pages でのユーザー入力の検証](http://msdn.microsoft.com/library/4ad3dacb-89e0-4cee-89ac-40a3f2a85461)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataList.FooterTemplate%2A>のフッター セクションの内容を制御するプロパティ、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataListHeaderStyle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListHeaderStyle/CS/datalistheaderstylecs.aspx#1)]
+ [!code-aspx-vb[DataListHeaderStyle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListHeaderStyle/VB/datalistheaderstylevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GridLines">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.GridLines GridLines { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.GridLines GridLines" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataList.GridLines" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.GridLines</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のグリッド線のスタイル、<see cref="T:System.Web.UI.WebControls.DataList" />タイミングを制御、<see cref="P:System.Web.UI.WebControls.DataList.RepeatLayout" />プロパティに設定されている<see langword="RepeatLayout.Table" />です。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.GridLines" /> 列挙値のいずれか。 既定値は <see langword="None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataList.GridLines%2A>のグリッド線のスタイルを指定するプロパティ、<xref:System.Web.UI.WebControls.DataList>コントロール。 次の表は、有効なスタイルを示します。  
+  
+|スタイル|説明|  
+|-----------|-----------------|  
+|<xref:System.Web.UI.WebControls.GridLines.None>|グリッドの行はありません。|  
+|<xref:System.Web.UI.WebControls.GridLines.Horizontal>|水平グリッド線を表示します。|  
+|<xref:System.Web.UI.WebControls.GridLines.Vertical>|垂直グリッド線を表示します。|  
+|<xref:System.Web.UI.WebControls.GridLines.Both>|両方の水平方向および垂直のグリッド線を表示します。|  
+  
+> [!NOTE]
+>  このプロパティは、場合にのみ適用されます、<xref:System.Web.UI.WebControls.DataList.RepeatLayout%2A>プロパティに設定されている`RepeatLayout.Table`です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataList.GridLines%2A>の垂直および水平方向のグリッド線を表示するプロパティを<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataListLayout#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListLayout/CS/datalistlayoutcs.aspx#1)]
+ [!code-aspx-vb[DataListLayout#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListLayout/VB/datalistlayoutvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderStyle">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.TableItemStyle HeaderStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.TableItemStyle HeaderStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataList.HeaderStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TableItemStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ヘッダー セクションのスタイル プロパティを取得、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.TableItemStyle" />のヘッダー セクションのスタイル プロパティを格納しているオブジェクト、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。 既定値は、空<see cref="T:System.Web.UI.WebControls.TableItemStyle" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの見出しのカスタム スタイルを使用して、<xref:System.Web.UI.WebControls.DataList>コントロール。 前景の色、背景色、フォント、およびセル内のコンテンツの配置を調整できる共通のスタイル属性が含まれます。 外観を向上とは異なるスタイルを提供する、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+ ヘッダー セクションのカスタム スタイルを指定するには、配置、`<HeaderStyle>`タグ、開始タグと終了タグの間、<xref:System.Web.UI.WebControls.DataList>コントロール。 スタイル属性の一覧を表示することができますし、`<HeaderStyle>`タグ。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.DataList.ShowHeader%2A>プロパティに設定する必要があります`true`を表示するには、このプロパティにします。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataList.HeaderStyle%2A>のヘッダー セクションに対してカスタムの背景色を指定するプロパティ、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataListHeaderStyle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListHeaderStyle/CS/datalistheaderstylecs.aspx#1)]
+ [!code-aspx-vb[DataListHeaderStyle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListHeaderStyle/VB/datalistheaderstylevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderTemplate">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.ITemplate HeaderTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ITemplate HeaderTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataList.HeaderTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.TemplateContainer(typeof(System.Web.UI.WebControls.DataListItem))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のヘッダー セクションのテンプレート、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.ITemplate" />のヘッダー セクションのテンプレートを含む、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataList.HeaderTemplate%2A>ヘッダー セクションの内容を制御するプロパティです。 ヘッダー セクションの表示によって制御されます、<xref:System.Web.UI.WebControls.DataList.HeaderStyle%2A>プロパティです。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.DataList.ShowHeader%2A>プロパティに設定する必要があります`true`を表示するには、このプロパティにします。  
+  
+ ヘッダー セクションのテンプレートを指定するには、配置、`<HeaderTemplate>`タグ、開始タグと終了タグの間、<xref:System.Web.UI.WebControls.DataList>コントロール。 開始タグと終了の間でテンプレートの内容の一覧を表示することができますし、`<HeaderTemplate>`タグ。  
+  
+> [!CAUTION]
+>  このコントロールは、悪意のあるクライアント スクリプトが含まれる可能性があります、ユーザー入力を表示する使用できます。 スクリプトの実行可能ファイル、SQL ステートメント、またはその他のコードをアプリケーションに表示する前に、クライアントから送信される情報を確認します。 検証コントロールを使用すると、コントロールに入力されたテキストを表示する前にユーザー入力を検証します。 ASP.NET は、入力要求の検証機能があり、ユーザー入力の中のスクリプトのブロックと HTML を提供します。 詳細については、次を参照してください。[標準コントロールのセキュリティで保護する](http://msdn.microsoft.com/library/f3e7718f-63d0-44a3-bd5f-48cc2059c2a8)、[する方法: 保護に対してスクリプトによる攻略の文字列を HTML エンコードを適用することによって、Web アプリケーションで](http://msdn.microsoft.com/library/6f67973f-dda0-45a1-ba9d-e88532d7dc5b)、および[ASP.NET Web Pages でのユーザー入力の検証](http://msdn.microsoft.com/library/4ad3dacb-89e0-4cee-89ac-40a3f2a85461)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataList.HeaderTemplate%2A>プロパティのヘッダー セクションの内容を制御する、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataListLayout#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListLayout/CS/datalistlayoutcs.aspx#1)]
+ [!code-aspx-vb[DataListLayout#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListLayout/VB/datalistlayoutvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeItem">
+      <MemberSignature Language="C#" Value="protected virtual void InitializeItem (System.Web.UI.WebControls.DataListItem item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void InitializeItem(class System.Web.UI.WebControls.DataListItem item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataList.InitializeItem(System.Web.UI.WebControls.DataListItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Web.UI.WebControls.DataListItem" />
+      </Parameters>
+      <Docs>
+        <param name="item">初期化する <see cref="T:System.Web.UI.WebControls.DataListItem" />。</param>
+        <summary>初期化します、<see cref="T:System.Web.UI.WebControls.DataListItem" />オブジェクトが指定されたテンプレートとスタイルのリスト項目の種類に基づいています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataList.InitializeItem%2A>を拡張するメソッドが、主にコントロールの開発者によって使用される、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+ <xref:System.Web.UI.WebControls.DataList.CreateControlHierarchy%2A>メソッドを使用、<xref:System.Web.UI.WebControls.DataList.CreateItem%2A>と<xref:System.Web.UI.WebControls.DataList.InitializeItem%2A>を作成するメソッド<xref:System.Web.UI.WebControls.DataListItem>ヘッダー、フッター、区切り記号、およびデータの一覧に含まれるデータ バインド項目を表すコントロール。 一覧については、データをデータ バインド項目にアクセスすることができます、<xref:System.Web.UI.WebControls.DataList.Items%2A>コレクション。 を通じてヘッダー、フッター、および区切り記号の項目を含む、すべての項目の種類にアクセスすることができます、<xref:System.Web.UI.WebControls.BaseDataList.Controls%2A>コレクション。  
+  
+ オーバーライド、<xref:System.Web.UI.WebControls.DataList.CreateControlHierarchy%2A>メソッドをカスタマイズする方法<xref:System.Web.UI.WebControls.DataListItem>コントロールの作成またはに追加される、<xref:System.Web.UI.WebControls.DataList>コントロール。 上書き、<xref:System.Web.UI.WebControls.DataList.InitializeItem%2A>のテンプレートをカスタマイズする方法、<xref:System.Web.UI.WebControls.DataListItem>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemCommand">
+      <MemberSignature Language="C#" Value="public event System.Web.UI.WebControls.DataListCommandEventHandler ItemCommand;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.UI.WebControls.DataListCommandEventHandler ItemCommand" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.DataList.ItemCommand" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataListCommandEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>いずれかのボタンがクリックされたときに発生、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataList.ItemCommand>でいずれかのボタンがクリックされたときにイベントが発生した、<xref:System.Web.UI.WebControls.DataList>を制御し、通常、カスタム ボタン コントロールがある場合に使用`CommandName`値。  
+  
+ イベント処理の詳細については、次を参照してください。[する方法: Web フォーム アプリケーションでのイベントの消費](~/docs/standard/events/how-to-consume-events-in-a-web-forms-application.md)です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.DataList.ItemCommand>から項目を選択するイベント、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataListItemCommand#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListItemCommand/CS/datalistitemcommandcs.aspx#1)]
+ [!code-aspx-vb[DataListItemCommand#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListItemCommand/VB/datalistitemcommandvb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataListItemCommand2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListItemCommand2/CS/datalistitemcommand2cs.aspx#1)]
+ [!code-aspx-vb[DataListItemCommand2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListItemCommand2/VB/datalistitemcommand2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemCreated">
+      <MemberSignature Language="C#" Value="public event System.Web.UI.WebControls.DataListItemEventHandler ItemCreated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.UI.WebControls.DataListItemEventHandler ItemCreated" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.DataList.ItemCreated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataListItemEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバー内の項目で発生した、<see cref="T:System.Web.UI.WebControls.DataList" />コントロールを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataList.ItemCreated>イベントは内の項目、<xref:System.Web.UI.WebControls.DataList>コントロールが作成されると、ラウンド トリップ時と時にデータがコントロールにバインドします。  
+  
+ <xref:System.Web.UI.WebControls.DataList.ItemCreated>内の行の外観と内容を制御するイベントは通常使用、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+ イベント処理の詳細については、次を参照してください。[する方法: Web フォーム アプリケーションでのイベントの消費](~/docs/standard/events/how-to-consume-events-in-a-web-forms-application.md)です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.DataList.ItemCreated>のどの項目の順序を表示するイベント、<xref:System.Web.UI.WebControls.DataList>コントロールを作成します。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataListItemCreated#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListItemCreated/CS/datalistitemcreatedcs.aspx#1)]
+ [!code-aspx-vb[DataListItemCreated#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListItemCreated/VB/datalistitemcreatedvb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataListItemCreated2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListItemCreated2/CS/datalistitemcreated2cs.aspx#1)]
+ [!code-aspx-vb[DataListItemCreated2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListItemCreated2/VB/datalistitemcreated2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemDataBound">
+      <MemberSignature Language="C#" Value="public event System.Web.UI.WebControls.DataListItemEventHandler ItemDataBound;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.UI.WebControls.DataListItemEventHandler ItemDataBound" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.DataList.ItemDataBound" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataListItemEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目がデータにバインドされているときに発生、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataList.ItemDataBound>イベントは、項目がデータにバインドした後、<xref:System.Web.UI.WebControls.DataList>コントロール。 このイベントは、クライアントに表示される前に、データ項目にアクセスする最後の機会を提供します。 このイベントが発生した後、データ項目は使用できなくします。  
+  
+ イベント処理の詳細については、次を参照してください。[する方法: Web フォーム アプリケーションでのイベントの消費](~/docs/standard/events/how-to-consume-events-in-a-web-forms-application.md)です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.DataList.ItemDataBound>のどの項目の順序を表示するイベント、<xref:System.Web.UI.WebControls.DataList>コントロールがコントロールにバインドされています。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataListItemDataBound#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListItemDataBound/CS/datalistitemdataboundcs.aspx#1)]
+ [!code-aspx-vb[DataListItemDataBound#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListItemDataBound/VB/datalistitemdataboundvb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataListItemDataBound2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListItemDataBound2/CS/datalistitemdatabound2cs.aspx#1)]
+ [!code-aspx-vb[DataListItemDataBound2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListItemDataBound2/VB/datalistitemdatabound2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Items">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.DataListItemCollection Items { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.DataListItemCollection Items" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataList.Items" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataListItemCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Web.UI.WebControls.DataListItem" />コントロール内の個々 のアイテムを表すオブジェクト。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.DataListItemCollection" />のコレクションを含む<see cref="T:System.Web.UI.WebControls.DataListItem" />内で個々 のアイテムを表すオブジェクト、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataList.Items%2A>コレクション内の項目をプログラムで制御する、<xref:System.Web.UI.WebControls.DataList>コントロール。 <xref:System.Web.UI.WebControls.DataList.Items%2A>コレクションがコレクションにアイテムを追加または削除メソッドを提供していません。 ただしのハンドラーを提供することで、項目の内容を制御することができます、<xref:System.Web.UI.WebControls.DataList.ItemCreated>イベント。  
+  
+> [!NOTE]
+>  データ ソースにバインドされている項目のみが含まれている、<xref:System.Web.UI.WebControls.DataList.Items%2A>コレクション。 コレクション内では、ヘッダー、フッター、および区切り記号が含まれていません。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataList.Items%2A>内の項目を表示するコレクション、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[Classic DataList.Items Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataList.Items Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic DataList.Items Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataList.Items Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemStyle">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.TableItemStyle ItemStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.TableItemStyle ItemStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataList.ItemStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TableItemStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内の項目のスタイル プロパティを取得、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.TableItemStyle" />内の項目のスタイル プロパティを格納しているオブジェクト、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。 既定値は、空<see cref="T:System.Web.UI.WebControls.TableItemStyle" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティのアイテムのカスタム スタイルを指定を使用して、<xref:System.Web.UI.WebControls.DataList>コントロール。 前景の色、背景色、フォント、およびセル内のコンテンツの配置を調整できる共通のスタイル属性が含まれます。 外観を向上とは異なるスタイルを提供する、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+ アイテムのスタイル プロパティで、<xref:System.Web.UI.WebControls.DataList>コントロールは、階層構造を使用する 1 つの項目のスタイル プロパティから継承されます。 アイテムのスタイル プロパティが、階層内を低く設定は、階層内の上位の項目のスタイル プロパティによって継承されます。 赤いフォントを指定する場合など、<xref:System.Web.UI.WebControls.DataList.ItemStyle%2A>プロパティ、その他の項目のスタイルのすべてのプロパティ、<xref:System.Web.UI.WebControls.DataList>コントロールには、赤いフォントがあります。 これにより、1 つのアイテムのスタイル プロパティを設定してコントロールの共通の外観を提供することができます。 スタイル プロパティを設定して、階層の上位にあるアイテムのスタイル プロパティの継承されたスタイルの設定をオーバーライドすることができます。 たとえば、青のフォントを指定することができます、<xref:System.Web.UI.WebControls.DataList.AlternatingItemStyle%2A>赤いフォントで指定されたをオーバーライドするプロパティ、<xref:System.Web.UI.WebControls.DataList.ItemStyle%2A>プロパティです。 次の表は、最上位から最下位に階層の順序を一覧表示します。  
+  
+|優先順位|スタイル プロパティ|  
+|----------------|--------------------|  
+|1|<xref:System.Web.UI.WebControls.DataList.EditItemStyle%2A>|  
+|2|<xref:System.Web.UI.WebControls.DataList.SelectedItemStyle%2A>|  
+|3|<xref:System.Web.UI.WebControls.DataList.AlternatingItemStyle%2A>|  
+|4|<xref:System.Web.UI.WebControls.DataList.ItemStyle%2A>|  
+|5|<xref:System.Web.UI.WebControls.WebControl.ControlStyle%2A>|  
+  
+ 項目にカスタム スタイルを指定する、<xref:System.Web.UI.WebControls.DataList>コントロールを配置、`<ItemStyle>`タグ、開始タグと終了タグの間、<xref:System.Web.UI.WebControls.DataList>コントロール。 スタイル属性の一覧を表示することができますし、`<ItemStyle>`タグ。  
+  
+ 使用することも、<xref:System.Web.UI.WebControls.DataList.AlternatingItemStyle%2A>の項目を交互に別の外観を指定するプロパティ、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataList.ItemStyle%2A>内の項目に対して異なる背景色を指定するプロパティ、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataListItemStyle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListItemStyle/CS/datalistitemstylecs.aspx#1)]
+ [!code-aspx-vb[DataListItemStyle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListItemStyle/VB/datalistitemstylevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemTemplate">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.ITemplate ItemTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ITemplate ItemTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataList.ItemTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.TemplateContainer(typeof(System.Web.UI.WebControls.DataListItem))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の項目に対して、テンプレート、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.ITemplate" />テンプレート内の項目を格納している、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataList.ItemTemplate%2A>プロパティ内の項目の内容を制御する、<xref:System.Web.UI.WebControls.DataList>コントロール。 内の項目の外観、<xref:System.Web.UI.WebControls.DataList>によってコントロールが制御されます、<xref:System.Web.UI.WebControls.DataList.ItemStyle%2A>プロパティです。  
+  
+ 項目テンプレートを指定する、<xref:System.Web.UI.WebControls.DataList>コントロールを配置、`<ItemTemplate>`タグ、開始タグと終了タグの間、<xref:System.Web.UI.WebControls.DataList>コントロール。 開始タグと終了の間でテンプレートの内容の一覧を表示することができますし、`<ItemTemplate>`タグ。  
+  
+ 必要に応じて使用することができます、<xref:System.Web.UI.WebControls.DataList.AlternatingItemTemplate%2A>の項目を交互に別の外観を指定するプロパティ、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+> [!CAUTION]
+>  このコントロールは、悪意のあるクライアント スクリプトが含まれる可能性があります、ユーザー入力を表示する使用できます。 スクリプトの実行可能ファイル、SQL ステートメント、またはその他のコードをアプリケーションに表示する前に、クライアントから送信される情報を確認します。 検証コントロールを使用すると、コントロールに入力されたテキストを表示する前にユーザー入力を検証します。 ASP.NET は、入力要求の検証機能があり、ユーザー入力の中のスクリプトのブロックと HTML を提供します。 詳細については、次を参照してください。[標準コントロールのセキュリティで保護する](http://msdn.microsoft.com/library/f3e7718f-63d0-44a3-bd5f-48cc2059c2a8)、[する方法: 保護に対してスクリプトによる攻略の文字列を HTML エンコードを適用することによって、Web アプリケーションで](http://msdn.microsoft.com/library/6f67973f-dda0-45a1-ba9d-e88532d7dc5b)、および[ASP.NET Web Pages でのユーザー入力の検証](http://msdn.microsoft.com/library/4ad3dacb-89e0-4cee-89ac-40a3f2a85461)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataList.ItemTemplate%2A>プロパティ内の項目の内容を制御する、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataListLayout#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListLayout/CS/datalistlayoutcs.aspx#1)]
+ [!code-aspx-vb[DataListLayout#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListLayout/VB/datalistlayoutvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadViewState">
+      <MemberSignature Language="C#" Value="protected override void LoadViewState (object savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void LoadViewState(object savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataList.LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="savedState">状態を表すオブジェクト、<see cref="T:System.Web.UI.WebControls.DataList" />です。</param>
+        <summary>以前に保存した <see cref="T:System.Web.UI.WebControls.DataList" /> コントロールのビュー ステートを読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、主に、.NET Framework インフラストラクチャによって使用され、コードから直接使用するものではありません。  ただし、コントロールの開発者は、カスタム サーバー コントロールがそのビューステートを復元する方法を指定するには、このメソッドをオーバーライドすることができます。 詳細については、次を参照してください。 [ASP.NET 状態管理の概要](http://msdn.microsoft.com/library/0218d965-5d30-445b-b6a6-8870e70e63ce)です。  
+  
+ <xref:System.Web.UI.WebControls.DataList.LoadViewState%2A>メソッドのビュー ステート情報の復元、<xref:System.Web.UI.WebControls.DataList>によって保存された前回のページ要求からのコントロール、<xref:System.Web.UI.WebControls.DataList.SaveViewState%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBubbleEvent">
+      <MemberSignature Language="C#" Value="protected override bool OnBubbleEvent (object source, EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool OnBubbleEvent(object source, class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataList.OnBubbleEvent(System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="source">イベントのソース。</param>
+        <param name="e">イベントのデータ。</param>
+        <summary>サーバー コントロールのイベントをページの UI サーバー コントロールの階層構造に渡すかどうかを決定します。</summary>
+        <returns>
+          イベントがキャンセルされた場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCancelCommand">
+      <MemberSignature Language="C#" Value="protected virtual void OnCancelCommand (System.Web.UI.WebControls.DataListCommandEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnCancelCommand(class System.Web.UI.WebControls.DataListCommandEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataList.OnCancelCommand(System.Web.UI.WebControls.DataListCommandEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Web.UI.WebControls.DataListCommandEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Web.UI.WebControls.DataListCommandEventArgs" />イベント データを格納します。</param>
+        <summary><see cref="E:System.Web.UI.WebControls.DataList.CancelCommand" /> イベントを発生させます。 これにより、イベントのカスタム ハンドラーを作成できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataList.OnCancelCommand%2A>のカスタム ハンドラーを提供するメソッドを<xref:System.Web.UI.WebControls.DataList.CancelCommand>イベント。  
+  
+ <xref:System.Web.UI.WebControls.DataList.CancelCommand>イベントが発生したときに、`Cancel`のアイテムのボタンがクリックされた、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+ 一般的なハンドラーを<xref:System.Web.UI.WebControls.DataList.CancelCommand>イベントのセット、<xref:System.Web.UI.WebControls.DataList.EditItemIndex%2A>プロパティを`-1`(項目の選択を解除) するデータを再バインドと、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+> [!CAUTION]
+>  このコントロールは、悪意のあるクライアント スクリプトが含まれる可能性があります、ユーザー入力を表示する使用できます。 スクリプトの実行可能ファイル、SQL ステートメント、またはその他のコードをアプリケーションに表示する前に、クライアントから送信される情報を確認します。 検証コントロールを使用すると、コントロールに入力されたテキストを表示する前にユーザー入力を検証します。 ASP.NET は、入力要求の検証機能があり、ユーザー入力の中のスクリプトのブロックと HTML を提供します。 詳細については、次を参照してください。[標準コントロールのセキュリティで保護する](http://msdn.microsoft.com/library/f3e7718f-63d0-44a3-bd5f-48cc2059c2a8)、[する方法: 保護に対してスクリプトによる攻略の文字列を HTML エンコードを適用することによって、Web アプリケーションで](http://msdn.microsoft.com/library/6f67973f-dda0-45a1-ba9d-e88532d7dc5b)、および[ASP.NET Web Pages でのユーザー入力の検証](http://msdn.microsoft.com/library/4ad3dacb-89e0-4cee-89ac-40a3f2a85461)です。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[する方法: Web フォーム アプリケーションでのイベントの消費](~/docs/standard/events/how-to-consume-events-in-a-web-forms-application.md)です。  
+  
+ <xref:System.Web.UI.WebControls.DataList.OnCancelCommand%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.DataList.CancelCommand>イベント。 内の項目に加えられたすべての編集をキャンセル、<xref:System.Web.UI.WebControls.DataList>タイミングを制御、`Cancel`ボタンをクリックします。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataListEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListEdit/CS/datalisteditcs.aspx#1)]
+ [!code-aspx-vb[DataListEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListEdit/VB/datalisteditvb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataListEdit2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListEdit2/CS/datalistedit2cs.aspx#1)]
+ [!code-aspx-vb[DataListEdit2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListEdit2/VB/datalistedit2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Web.UI.WebControls.DataList.OnCancelCommand(System.Web.UI.WebControls.DataListCommandEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Web.UI.WebControls.DataList.OnCancelCommand(System.Web.UI.WebControls.DataListCommandEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDeleteCommand">
+      <MemberSignature Language="C#" Value="protected virtual void OnDeleteCommand (System.Web.UI.WebControls.DataListCommandEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDeleteCommand(class System.Web.UI.WebControls.DataListCommandEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataList.OnDeleteCommand(System.Web.UI.WebControls.DataListCommandEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Web.UI.WebControls.DataListCommandEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Web.UI.WebControls.DataListCommandEventArgs" />イベント データを格納します。</param>
+        <summary><see cref="E:System.Web.UI.WebControls.DataList.DeleteCommand" /> イベントを発生させます。 これにより、イベントのカスタム ハンドラーを作成できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataList.OnDeleteCommand%2A>のカスタム ハンドラーを提供するメソッドを<xref:System.Web.UI.WebControls.DataList.DeleteCommand>イベント。  
+  
+ <xref:System.Web.UI.WebControls.DataList.DeleteCommand>イベントが発生したときに、`Delete`のアイテムのボタンがクリックされた、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+ 一般的なハンドラーを<xref:System.Web.UI.WebControls.DataList.DeleteCommand>イベントのデータ ソースから選択した項目を削除および再バインドするデータを<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[する方法: Web フォーム アプリケーションでのイベントの消費](~/docs/standard/events/how-to-consume-events-in-a-web-forms-application.md)です。  
+  
+ <xref:System.Web.UI.WebControls.DataList.OnDeleteCommand%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.DataList.DeleteCommand>イベント。 選択した項目を削除、<xref:System.Web.UI.WebControls.DataList>タイミングを制御、`Delete`ボタンをクリックします。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataListEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListEdit/CS/datalisteditcs.aspx#1)]
+ [!code-aspx-vb[DataListEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListEdit/VB/datalisteditvb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataListEdit2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListEdit2/CS/datalistedit2cs.aspx#1)]
+ [!code-aspx-vb[DataListEdit2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListEdit2/VB/datalistedit2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Web.UI.WebControls.DataList.OnDeleteCommand(System.Web.UI.WebControls.DataListCommandEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Web.UI.WebControls.DataList.OnDeleteCommand(System.Web.UI.WebControls.DataListCommandEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnEditCommand">
+      <MemberSignature Language="C#" Value="protected virtual void OnEditCommand (System.Web.UI.WebControls.DataListCommandEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnEditCommand(class System.Web.UI.WebControls.DataListCommandEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataList.OnEditCommand(System.Web.UI.WebControls.DataListCommandEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Web.UI.WebControls.DataListCommandEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Web.UI.WebControls.DataListCommandEventArgs" />イベント データを格納します。</param>
+        <summary><see cref="E:System.Web.UI.WebControls.DataList.EditCommand" /> イベントを発生させます。 これにより、イベントのカスタム ハンドラーを作成できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataList.OnEditCommand%2A>のカスタム ハンドラーを提供するメソッドを<xref:System.Web.UI.WebControls.DataList.EditCommand>イベント。  
+  
+ <xref:System.Web.UI.WebControls.DataList.EditCommand>イベントが発生したときに、`Edit`のアイテムのボタンがクリックされた、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+ 一般的なハンドラーを<xref:System.Web.UI.WebControls.DataList.EditCommand>イベントのセット、<xref:System.Web.UI.WebControls.DataList.EditItemIndex%2A>プロパティを選択した行にデータを再バインドと、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+> [!CAUTION]
+>  このコントロールは、悪意のあるクライアント スクリプトが含まれる可能性があります、ユーザー入力を表示する使用できます。 スクリプトの実行可能ファイル、SQL ステートメント、またはその他のコードをアプリケーションに表示する前に、クライアントから送信される情報を確認します。 検証コントロールを使用すると、コントロールに入力されたテキストを表示する前にユーザー入力を検証します。 ASP.NET は、入力要求の検証機能があり、ユーザー入力の中のスクリプトのブロックと HTML を提供します。 詳細については、次を参照してください。[標準コントロールのセキュリティで保護する](http://msdn.microsoft.com/library/f3e7718f-63d0-44a3-bd5f-48cc2059c2a8)、[する方法: 保護に対してスクリプトによる攻略の文字列を HTML エンコードを適用することによって、Web アプリケーションで](http://msdn.microsoft.com/library/6f67973f-dda0-45a1-ba9d-e88532d7dc5b)、および[ASP.NET Web Pages でのユーザー入力の検証](http://msdn.microsoft.com/library/4ad3dacb-89e0-4cee-89ac-40a3f2a85461)です。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[する方法: Web フォーム アプリケーションでのイベントの消費](~/docs/standard/events/how-to-consume-events-in-a-web-forms-application.md)です。  
+  
+ <xref:System.Web.UI.WebControls.DataList.OnEditCommand%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.DataList.EditCommand>イベント。 選択した項目を編集することができます、<xref:System.Web.UI.WebControls.DataList>タイミングを制御、`Edit`ボタンをクリックします。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataListEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListEdit/CS/datalisteditcs.aspx#1)]
+ [!code-aspx-vb[DataListEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListEdit/VB/datalisteditvb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataListEdit2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListEdit2/CS/datalistedit2cs.aspx#1)]
+ [!code-aspx-vb[DataListEdit2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListEdit2/VB/datalistedit2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Web.UI.WebControls.DataList.OnEditCommand(System.Web.UI.WebControls.DataListCommandEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Web.UI.WebControls.DataList.OnEditCommand(System.Web.UI.WebControls.DataListCommandEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInit">
+      <MemberSignature Language="C#" Value="protected override void OnInit (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnInit(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataList.OnInit(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.DataList" /> コントロールの <see cref="E:System.Web.UI.Control.Init" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataList.OnInit%2A>メソッドは、通知、<xref:System.Web.UI.WebControls.DataList>コントロールを作成し、インスタンスを設定するために必要な初期化の手順を実行します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnItemCommand">
+      <MemberSignature Language="C#" Value="protected virtual void OnItemCommand (System.Web.UI.WebControls.DataListCommandEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnItemCommand(class System.Web.UI.WebControls.DataListCommandEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataList.OnItemCommand(System.Web.UI.WebControls.DataListCommandEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Web.UI.WebControls.DataListCommandEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Web.UI.WebControls.DataListCommandEventArgs" />イベント データを格納します。</param>
+        <summary><see cref="E:System.Web.UI.WebControls.DataList.ItemCommand" /> イベントを発生させます。 これにより、イベントのカスタム ハンドラーを作成できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataList.OnItemCommand%2A>のカスタム ハンドラーを提供するメソッドを<xref:System.Web.UI.WebControls.DataList.ItemCommand>イベント。  
+  
+ <xref:System.Web.UI.WebControls.DataList.ItemCommand>でいずれかのボタンがクリックされたときにイベントが発生した、<xref:System.Web.UI.WebControls.DataList>を制御し、通常、カスタム ボタン コントロールがある場合に使用`CommandName`などの値`Add`で、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[する方法: Web フォーム アプリケーションでのイベントの消費](~/docs/standard/events/how-to-consume-events-in-a-web-forms-application.md)です。  
+  
+ <xref:System.Web.UI.WebControls.DataList.OnItemCommand%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.DataList.ItemCommand>から項目を選択するイベント、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataListItemCommand#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListItemCommand/CS/datalistitemcommandcs.aspx#1)]
+ [!code-aspx-vb[DataListItemCommand#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListItemCommand/VB/datalistitemcommandvb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataListItemCommand2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListItemCommand2/CS/datalistitemcommand2cs.aspx#1)]
+ [!code-aspx-vb[DataListItemCommand2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListItemCommand2/VB/datalistitemcommand2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Web.UI.WebControls.DataList.OnItemCommand(System.Web.UI.WebControls.DataListCommandEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Web.UI.WebControls.DataList.OnItemCommand(System.Web.UI.WebControls.DataListCommandEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnItemCreated">
+      <MemberSignature Language="C#" Value="protected virtual void OnItemCreated (System.Web.UI.WebControls.DataListItemEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnItemCreated(class System.Web.UI.WebControls.DataListItemEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataList.OnItemCreated(System.Web.UI.WebControls.DataListItemEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Web.UI.WebControls.DataListItemEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Web.UI.WebControls.DataListItemEventArgs" />イベント データを格納します。</param>
+        <summary><see cref="E:System.Web.UI.WebControls.DataList.ItemCreated" /> イベントを発生させます。 これにより、イベントのカスタム ハンドラーを作成できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataList.OnItemCreated%2A>のカスタム ハンドラーを提供するメソッドを<xref:System.Web.UI.WebControls.DataList.ItemCreated>イベント。  
+  
+ <xref:System.Web.UI.WebControls.DataList.ItemCreated>イベントは内の項目、<xref:System.Web.UI.WebControls.DataList>コントロールが作成されると、ラウンド トリップ時と時にデータがコントロールにバインドします。  
+  
+ <xref:System.Web.UI.WebControls.DataList.ItemCreated>内の行の外観と内容を制御するイベントは通常使用、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[する方法: Web フォーム アプリケーションでのイベントの消費](~/docs/standard/events/how-to-consume-events-in-a-web-forms-application.md)です。  
+  
+ <xref:System.Web.UI.WebControls.DataList.OnItemCreated%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.DataList.ItemCreated>のどの項目の順序を表示するイベント、<xref:System.Web.UI.WebControls.DataList>コントロールを作成します。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataListItemCreated#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListItemCreated/CS/datalistitemcreatedcs.aspx#1)]
+ [!code-aspx-vb[DataListItemCreated#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListItemCreated/VB/datalistitemcreatedvb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataListItemCreated2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListItemCreated2/CS/datalistitemcreated2cs.aspx#1)]
+ [!code-aspx-vb[DataListItemCreated2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListItemCreated2/VB/datalistitemcreated2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Web.UI.WebControls.DataList.OnItemCreated(System.Web.UI.WebControls.DataListItemEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Web.UI.WebControls.DataList.OnItemCreated(System.Web.UI.WebControls.DataListItemEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnItemDataBound">
+      <MemberSignature Language="C#" Value="protected virtual void OnItemDataBound (System.Web.UI.WebControls.DataListItemEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnItemDataBound(class System.Web.UI.WebControls.DataListItemEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataList.OnItemDataBound(System.Web.UI.WebControls.DataListItemEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Web.UI.WebControls.DataListItemEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Web.UI.WebControls.DataListItemEventArgs" />イベント データを格納します。</param>
+        <summary><see cref="E:System.Web.UI.WebControls.DataList.ItemDataBound" /> イベントを発生させます。 これにより、イベントのカスタム ハンドラーを作成できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataList.OnItemDataBound%2A>のカスタム ハンドラーを提供するメソッドを<xref:System.Web.UI.WebControls.DataList.ItemDataBound>イベント。  
+  
+ <xref:System.Web.UI.WebControls.DataList.ItemDataBound>イベントは、項目がデータにバインドした後、<xref:System.Web.UI.WebControls.DataList>コントロール。 このイベントは、クライアントに表示される前に、データ項目にアクセスする最後の機会を提供します。 このイベントが発生した後、データ項目は使用できなくします。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[する方法: Web フォーム アプリケーションでのイベントの消費](~/docs/standard/events/how-to-consume-events-in-a-web-forms-application.md)です。  
+  
+ <xref:System.Web.UI.WebControls.DataList.OnItemDataBound%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.DataList.ItemDataBound>のどの項目の順序を表示するイベント、<xref:System.Web.UI.WebControls.DataList>コントロールがコントロールにバインドされています。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataListItemDataBound#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListItemDataBound/CS/datalistitemdataboundcs.aspx#1)]
+ [!code-aspx-vb[DataListItemDataBound#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListItemDataBound/VB/datalistitemdataboundvb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataListItemDataBound2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListItemDataBound2/CS/datalistitemdatabound2cs.aspx#1)]
+ [!code-aspx-vb[DataListItemDataBound2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListItemDataBound2/VB/datalistitemdatabound2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Web.UI.WebControls.DataList.OnItemDataBound(System.Web.UI.WebControls.DataListItemEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Web.UI.WebControls.DataList.OnItemDataBound(System.Web.UI.WebControls.DataListItemEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnUpdateCommand">
+      <MemberSignature Language="C#" Value="protected virtual void OnUpdateCommand (System.Web.UI.WebControls.DataListCommandEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnUpdateCommand(class System.Web.UI.WebControls.DataListCommandEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataList.OnUpdateCommand(System.Web.UI.WebControls.DataListCommandEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Web.UI.WebControls.DataListCommandEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Web.UI.WebControls.DataListItemEventArgs" />イベント データを格納します。</param>
+        <summary><see cref="E:System.Web.UI.WebControls.DataList.UpdateCommand" /> イベントを発生させます。 これにより、イベントのカスタム ハンドラーを作成できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataList.OnUpdateCommand%2A>のカスタム ハンドラーを提供するメソッドを<xref:System.Web.UI.WebControls.DataList.UpdateCommand>イベント。  
+  
+ <xref:System.Web.UI.WebControls.DataList.UpdateCommand>イベントが発生したときに、`Update`アイテムがクリックされたボタンをクリックします。  
+  
+ 一般的なハンドラーを<xref:System.Web.UI.WebControls.DataList.UpdateCommand>イベント データ、設定を更新する、<xref:System.Web.UI.WebControls.DataList.EditItemIndex%2A>プロパティを`-1`(項目の選択を解除) する、データを再バインドと、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+> [!CAUTION]
+>  このコントロールは、悪意のあるクライアント スクリプトが含まれる可能性があります、ユーザー入力を表示する使用できます。 スクリプトの実行可能ファイル、SQL ステートメント、またはその他のコードをアプリケーションに表示する前に、クライアントから送信される情報を確認します。 検証コントロールを使用すると、コントロールに入力されたテキストを表示する前にユーザー入力を検証します。 ASP.NET は、入力要求の検証機能があり、ユーザー入力の中のスクリプトのブロックと HTML を提供します。 詳細については、次を参照してください。[標準コントロールのセキュリティで保護する](http://msdn.microsoft.com/library/f3e7718f-63d0-44a3-bd5f-48cc2059c2a8)、[する方法: 保護に対してスクリプトによる攻略の文字列を HTML エンコードを適用することによって、Web アプリケーションで](http://msdn.microsoft.com/library/6f67973f-dda0-45a1-ba9d-e88532d7dc5b)、および[ASP.NET Web Pages でのユーザー入力の検証](http://msdn.microsoft.com/library/4ad3dacb-89e0-4cee-89ac-40a3f2a85461)です。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[する方法: Web フォーム アプリケーションでのイベントの消費](~/docs/standard/events/how-to-consume-events-in-a-web-forms-application.md)です。  
+  
+ <xref:System.Web.UI.WebControls.DataList.OnUpdateCommand%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.DataList.UpdateCommand>イベント。 選択した項目を更新することができます、<xref:System.Web.UI.WebControls.DataList>コントロールに、ユーザーが入力した新しい値と、`Update`ボタンをクリックします。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataListEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListEdit/CS/datalisteditcs.aspx#1)]
+ [!code-aspx-vb[DataListEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListEdit/VB/datalisteditvb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataListEdit2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListEdit2/CS/datalistedit2cs.aspx#1)]
+ [!code-aspx-vb[DataListEdit2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListEdit2/VB/datalistedit2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Web.UI.WebControls.DataList.OnUpdateCommand(System.Web.UI.WebControls.DataListCommandEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Web.UI.WebControls.DataList.OnUpdateCommand(System.Web.UI.WebControls.DataListCommandEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="PrepareControlHierarchy">
+      <MemberSignature Language="C#" Value="protected override void PrepareControlHierarchy ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void PrepareControlHierarchy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataList.PrepareControlHierarchy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールの階層構造で表示するために準備、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataList.PrepareControlHierarchy%2A>からカスタム コントロールを派生している場合、メソッドは、主にコントロールの開発者によって使用、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+ <xref:System.Web.UI.WebControls.DataList.PrepareControlHierarchy%2A>コントロールの階層構造を準備し、格納されているスタイルを設定<xref:System.Web.UI.WebControls.DataListItem>子コントロールが表示される前に制御します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>上書き、<see cref="M:System.Web.UI.WebControls.DataList.PrepareControlHierarchy" />に含まれるコントロールのスタイルをカスタマイズする方法、<see cref="T:System.Web.UI.WebControls.DataList" />レンダリングされる前にします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderContents">
+      <MemberSignature Language="C#" Value="protected override void RenderContents (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void RenderContents(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataList.RenderContents(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">HTML コンテンツをクライアントに表示する出力ストリームを表す <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary>リスト項目を表示、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataList.RenderContents%2A>からカスタム コントロールを派生している場合、メソッドは、主にコントロールの開発者によって使用、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+ <xref:System.Web.UI.WebControls.DataList.RenderContents%2A>メソッドはコンテンツの内部を表示、<xref:System.Web.UI.WebControls.DataList>格納されているを含むコントロール<xref:System.Web.UI.WebControls.DataListItem>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.WebControls.DataList.RenderContents%2A>カスタム サーバー内のメソッドを制御できるように、いくつかのテキストの前に、<xref:System.Web.UI.WebControls.DataList>オブジェクト。  
+  
+ [!code-aspx-csharp[CustomDataListRenderContents#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomDataListRenderContents/CS/custom_datalist_rendercontentscs.aspx#1)]
+ [!code-aspx-vb[CustomDataListRenderContents#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomDataListRenderContents/VB/custom_datalist_rendercontentsvb.aspx#1)]  
+[!code-csharp[CustomDataListRenderContents#2](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomDataListRenderContents/CS/custom_datalist_rendercontents.cs#2)]
+[!code-vb[CustomDataListRenderContents#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomDataListRenderContents/VB/custom_datalist_rendercontents.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RepeatColumns">
+      <MemberSignature Language="C#" Value="public virtual int RepeatColumns { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RepeatColumns" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataList.RepeatColumns" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.DataList" /> コントロールに表示する列数を取得または設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.DataList" /> コントロールに表示する列数。 既定値は<see langword="0" />、ことを示します内の項目、<see cref="T:System.Web.UI.WebControls.DataList" />コントロールは、1 行または 1 の値に基づいて、列に表示される、<see cref="P:System.Web.UI.WebControls.DataList.RepeatDirection" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内の項目を表示する列の数を指定するこのプロパティを使用して、<xref:System.Web.UI.WebControls.DataList>コントロール。 たとえば、このプロパティを設定する`5`、<xref:System.Web.UI.WebControls.DataList>コントロールでは、5 つの列でそのアイテムが表示されます。  
+  
+> [!NOTE]
+>  このプロパティ設定されている場合`0`、<xref:System.Web.UI.WebControls.DataList>コントロールでは、1 行または 1 の値に基づく列でそのアイテムが表示されます、<xref:System.Web.UI.WebControls.DataList.RepeatDirection%2A>プロパティです。 場合、<xref:System.Web.UI.WebControls.DataList.RepeatDirection%2A>プロパティに設定されている`RepeatDirection.Horizontal`アイテムが 1 つの行に表示されます。 場合、<xref:System.Web.UI.WebControls.DataList.RepeatDirection%2A>プロパティに設定されている`RepeatDirection.Vertical`アイテムが 1 つの列に表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataList.RepeatColumns%2A>プロパティを表示する列の数を指定する、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataListLayout#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListLayout/CS/datalistlayoutcs.aspx#1)]
+ [!code-aspx-vb[DataListLayout#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListLayout/VB/datalistlayoutvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定された列数は、負の値です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RepeatDirection">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.RepeatDirection RepeatDirection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.RepeatDirection RepeatDirection" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataList.RepeatDirection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.RepeatDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するかどうか、<see cref="T:System.Web.UI.WebControls.DataList" />垂直または水平方向にコントロールが表示されます。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.RepeatDirection" /> 値のいずれか。 既定値は、<see langword="Vertical" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataList.RepeatDirection%2A>プロパティの表示方向を指定する、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+> [!NOTE]
+>  によって表示される列の数が決まります常に、<xref:System.Web.UI.WebControls.DataList.RepeatColumns%2A>プロパティです。  
+  
+ このプロパティ設定されている場合`RepeatDirection.Vertical`リスト内の項目は上から下に読み込まれた列に表示し、すべてのアイテムがレンダリングされるまでは、左から右、します。 たとえば場合、<xref:System.Web.UI.WebControls.DataList.RepeatColumns%2A>プロパティに設定されている`3`、内の項目、<xref:System.Web.UI.WebControls.DataList>コントロールは、次の表のように、3 つの列に表示されます。  
+  
+||||  
+|-|-|-|  
+|1|4|7|  
+|2|5|9|  
+|3|6|9|  
+  
+ このプロパティ設定されている場合`RepeatDirection.Horizontal`上から下、すべてのアイテムがレンダリングされるまで、リスト内のアイテムが左から右に読み込まれた行に表示されます。 たとえば場合、<xref:System.Web.UI.WebControls.DataList.RepeatColumns%2A>プロパティに設定されている`3`、の項目、<xref:System.Web.UI.WebControls.DataList>コントロールは、次の表に、3 つの項目が、それぞれの行に表示されます。  
+  
+||||  
+|-|-|-|  
+|1|2|3|  
+|4|5|6|  
+|7|9|9|  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataList.RepeatDirection%2A>する方向を指定するプロパティ、<xref:System.Web.UI.WebControls.DataList>コントロールが表示されます。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataListLayout#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListLayout/CS/datalistlayoutcs.aspx#1)]
+ [!code-aspx-vb[DataListLayout#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListLayout/VB/datalistlayoutvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定した値が、<see cref="T:System.Web.UI.WebControls.RepeatDirection" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RepeatLayout">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.RepeatLayout RepeatLayout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.RepeatLayout RepeatLayout" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataList.RepeatLayout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.RepeatLayout</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、テーブルまたはフロー レイアウトで、コントロールが表示されるかどうかを設定します。</summary>
+        <value>フロー レイアウトまたはテーブルに、コントロールが表示されるかどうかを指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataList.RepeatLayout%2A>プロパティを指定するかどうかの項目、<xref:System.Web.UI.WebControls.DataList>コントロールがテーブルに表示されます。 唯一<xref:System.Web.UI.WebControls.RepeatLayout>でサポートされている値、<xref:System.Web.UI.WebControls.DataList>コントロールは<xref:System.Web.UI.WebControls.RepeatLayout.Table>と<xref:System.Web.UI.WebControls.RepeatLayout.Flow>です。  
+  
+ このプロパティ設定されている場合`RepeatLayout.Table`リスト内のアイテムがテーブルに表示されます。 このプロパティ設定されている場合`RepeatLayout.Flow`テーブルの構造なし、リスト内の項目が表示されます。  
+  
+ ときに、<xref:System.Web.UI.WebControls.DataList>コントロールは、テーブルで表示される、使用することができます、<xref:System.Web.UI.WebControls.DataList.GridLines%2A>プロパティ グリッド線のスタイルを指定します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataList.RepeatLayout%2A>のレイアウト スタイルを指定するプロパティ、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataListLayout#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListLayout/CS/datalistlayoutcs.aspx#1)]
+ [!code-aspx-vb[DataListLayout#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListLayout/VB/datalistlayoutvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定した値がサポートされているのいずれかの<see cref="T:System.Web.UI.WebControls.RepeatLayout" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveViewState">
+      <MemberSignature Language="C#" Value="protected override object SaveViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object SaveViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataList.SaveViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>保存コントロールへの変更は、ページがサーバーにポストされた時間以降の状態を表示します。</summary>
+        <returns>変更を格納しているオブジェクト、<see cref="T:System.Web.UI.WebControls.DataList" />状態を表示します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataList.SaveViewState%2A>メソッドは、主にコントロールの開発者によって使用されます。  
+  
+ ビュー ステートが、サーバー コントロールのプロパティの値の累積します。 これらの値は自動的に、サーバー コントロールの配置<xref:System.Web.UI.Control.ViewState%2A>インスタンスであるプロパティの<xref:System.Web.UI.StateBag>クラスです。 <xref:System.Web.UI.Control.ViewState%2A>プロパティの値が文字列オブジェクトに、サーバー コントロールのライフ サイクルの保存状態の段階の後に、永続化します。 詳細については、次を参照してください。 [ASP.NET ページ ライフ サイクルの概要](http://msdn.microsoft.com/library/7949d756-1a79-464e-891f-904b1cfc7991)です。  
+  
+ ビューステートを保存すると、この文字列オブジェクトが非表示の HTML input 要素に格納されている変数としてクライアントに返されます。 カスタム サーバー コントロールを作成するときに、オーバーライドすることで効率を向上できます、<xref:System.Web.UI.WebControls.DataList.SaveViewState%2A>メソッドと変更、<xref:System.Web.UI.Control.ViewState%2A>サーバー コントロールのプロパティです。 詳細については、次を参照してください。[カスタム ASP.NET サーバー コントロールの開発](http://msdn.microsoft.com/library/fbe26c16-cff4-4089-b3dd-877411f0c0ef)と[ASP.NET 状態管理の概要](http://msdn.microsoft.com/library/0218d965-5d30-445b-b6a6-8870e70e63ce)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectCommandName">
+      <MemberSignature Language="C#" Value="public const string SelectCommandName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string SelectCommandName" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.DataList.SelectCommandName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す、<see langword="Select" />コマンド名です。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataList.SelectCommandName>を表すフィールド、`Select`コマンド名です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedIndex">
+      <MemberSignature Language="C#" Value="public virtual int SelectedIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SelectedIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataList.SelectedIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(-1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.DataList" /> コントロール内の選択された項目のインデックスを取得または設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.DataList" /> コントロール内の選択された項目のインデックス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataList.SelectedIndex%2A>で選択した項目をプログラムで指定するプロパティ、<xref:System.Web.UI.WebControls.DataList>コントロール。 このプロパティを使用して、選択した項目のインデックスを確認することができますも。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.DataList.SelectedIndex%2A>プロパティは、0 から始まります。  
+  
+ 項目の選択を解除するには、設定、<xref:System.Web.UI.WebControls.DataList.SelectedIndex%2A>プロパティを`-1`です。  
+  
+ <xref:System.Web.UI.WebControls.DataList.SelectedIndex%2A>プロパティがコントロールの状態に格納されています。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataList.SelectedIndex%2A>で選択した項目を指定するプロパティ、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataListItemCommand#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListItemCommand/CS/datalistitemcommandcs.aspx#1)]
+ [!code-aspx-vb[DataListItemCommand#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListItemCommand/VB/datalistitemcommandvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定された値より小さい<see langword="-1" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedItem">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.DataListItem SelectedItem { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.DataListItem SelectedItem" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataList.SelectedItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataListItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>選択した項目を取得、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.DataListItem" />で選択した項目を表す、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataList.SelectedItem%2A>を取得するプロパティ、<xref:System.Web.UI.WebControls.DataListItem>で選択した項目を表すオブジェクト、<xref:System.Web.UI.WebControls.DataList>コントロール。 このオブジェクトは、選択した項目のプロパティにアクセスし、使用できます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataList.SelectedItem%2A>で選択した項目の内容を表示するプロパティを<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[Classic DataList.SelectedItem Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataList.SelectedItem Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic DataList.SelectedItem Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataList.SelectedItem Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedItemStyle">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.TableItemStyle SelectedItemStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.TableItemStyle SelectedItemStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataList.SelectedItemStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TableItemStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>選択した項目のスタイル プロパティを取得、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.TableItemStyle" />で選択した項目のスタイル プロパティを格納しているオブジェクト、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。 既定値は、空<see cref="T:System.Web.UI.WebControls.TableItemStyle" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティで選択した項目のカスタム スタイルを指定を使用して、<xref:System.Web.UI.WebControls.DataList>コントロール。 前景の色、背景色、フォント、およびセル内のコンテンツの配置を調整できる共通のスタイル属性が含まれます。 外観を向上とは異なるスタイルを提供する、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+ アイテムのスタイル プロパティで、<xref:System.Web.UI.WebControls.DataList>コントロールは、階層構造を使用する 1 つの項目のスタイル プロパティから継承されます。 アイテムのスタイル プロパティが、階層内を低く設定は、階層内の上位の項目のスタイル プロパティによって継承されます。 赤いフォントを指定する場合など、<xref:System.Web.UI.WebControls.DataList.ItemStyle%2A>プロパティ、その他の項目のスタイルのすべてのプロパティ、<xref:System.Web.UI.WebControls.DataList>コントロールには、赤いフォントがあります。 これにより、1 つのアイテムのスタイル プロパティを設定してコントロールの共通の外観を提供することができます。 スタイル プロパティを設定して、階層の上位にあるアイテムのスタイル プロパティの継承されたスタイルの設定をオーバーライドすることができます。 たとえば、青のフォントを指定することができます、<xref:System.Web.UI.WebControls.DataList.AlternatingItemStyle%2A>赤いフォントで指定されたをオーバーライドするプロパティ、<xref:System.Web.UI.WebControls.DataList.ItemStyle%2A>プロパティです。 次の表は、最上位から最下位に階層の順序を一覧表示します。  
+  
+|優先順位|スタイル プロパティ|  
+|----------------|--------------------|  
+|1|<xref:System.Web.UI.WebControls.DataList.EditItemStyle%2A>|  
+|2|<xref:System.Web.UI.WebControls.DataList.SelectedItemStyle%2A>|  
+|3|<xref:System.Web.UI.WebControls.DataList.AlternatingItemStyle%2A>|  
+|4|<xref:System.Web.UI.WebControls.DataList.ItemStyle%2A>|  
+|5|<xref:System.Web.UI.WebControls.WebControl.ControlStyle%2A>|  
+  
+ 選択したアイテムのカスタム スタイルを指定するには、配置、`<SelectedItemStyle>`タグ、開始タグと終了タグの間、<xref:System.Web.UI.WebControls.DataList>コントロール。 スタイル属性の一覧を表示することができますし、`<SelectedItemStyle>`タグ。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataList.SelectedItemStyle%2A>で選択したアイテムのカスタムの背景色を指定するプロパティ、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataListItemCommand#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListItemCommand/CS/datalistitemcommandcs.aspx#1)]
+ [!code-aspx-vb[DataListItemCommand#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListItemCommand/VB/datalistitemcommandvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedItemTemplate">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.ITemplate SelectedItemTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ITemplate SelectedItemTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataList.SelectedItemTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.TemplateContainer(typeof(System.Web.UI.WebControls.DataListItem))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定で選択した項目のテンプレート、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.ITemplate" />で選択した項目のテンプレートを含む、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataList.SelectedItemTemplate%2A>プロパティは、選択した項目の内容を制御します。 によって、選択したアイテムの外観を制御、<xref:System.Web.UI.WebControls.DataList.SelectedItemStyle%2A>プロパティです。  
+  
+ 選択した項目のテンプレートを指定する、`<SelectedItemTemplate>`タグ、開始タグと終了タグの間、<xref:System.Web.UI.WebControls.DataList>コントロール。 開始タグと終了の間でテンプレートの内容の一覧を表示することができますし、`<SelectedItemTemplate>`タグ。  
+  
+> [!CAUTION]
+>  このコントロールは、悪意のあるクライアント スクリプトが含まれる可能性があります、ユーザー入力を表示する使用できます。 スクリプトの実行可能ファイル、SQL ステートメント、またはその他のコードをアプリケーションに表示する前に、クライアントから送信される情報を確認します。 検証コントロールを使用すると、コントロールに入力されたテキストを表示する前にユーザー入力を検証します。 ASP.NET は、入力要求の検証機能があり、ユーザー入力の中のスクリプトのブロックと HTML を提供します。 詳細については、次を参照してください。[標準コントロールのセキュリティで保護する](http://msdn.microsoft.com/library/f3e7718f-63d0-44a3-bd5f-48cc2059c2a8)、[する方法: 保護に対してスクリプトによる攻略の文字列を HTML エンコードを適用することによって、Web アプリケーションで](http://msdn.microsoft.com/library/6f67973f-dda0-45a1-ba9d-e88532d7dc5b)、および[ASP.NET Web Pages でのユーザー入力の検証](http://msdn.microsoft.com/library/4ad3dacb-89e0-4cee-89ac-40a3f2a85461)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataList.SelectedItemTemplate%2A>プロパティで選択した項目の内容を制御する、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataListItemCommand#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListItemCommand/CS/datalistitemcommandcs.aspx#1)]
+ [!code-aspx-vb[DataListItemCommand#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListItemCommand/VB/datalistitemcommandvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedValue">
+      <MemberSignature Language="C#" Value="public object SelectedValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SelectedValue" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataList.SelectedValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>選択したデータ リスト項目のキー フィールドの値を取得します。</summary>
+        <value>選択したデータ リスト項目のキー フィールドの値。 既定値は<see langword="null" />データの一覧の項目が現在選択されていないことを示します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Web.UI.WebControls.BaseDataList.DataKeyField" />プロパティが設定されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SeparatorStyle">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.TableItemStyle SeparatorStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.TableItemStyle SeparatorStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataList.SeparatorStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TableItemStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内の各項目間の区切り記号のスタイル プロパティを取得、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.TableItemStyle" />内の各項目間の区切り記号のスタイル プロパティを格納しているオブジェクト、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。 既定値は、空<see cref="T:System.Web.UI.WebControls.TableItemStyle" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataList.SeparatorStyle%2A>内の各項目間の区切り記号のカスタム スタイルを指定するプロパティ、<xref:System.Web.UI.WebControls.DataList>コントロール。 区切り記号では、内の各項目の間でのカスタム コンテンツを持つ要素を配置することができます、<xref:System.Web.UI.WebControls.DataList>コントロール。 前景の色、背景色、フォント、およびセル内のコンテンツの配置を調整できる共通のスタイル属性が含まれます。 外観を向上とは異なるスタイルを提供する、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+ 区切り記号のカスタム スタイルを指定するには、配置、`<SeparatorStyle>`タグ、開始タグと終了タグの間、<xref:System.Web.UI.WebControls.DataList>コントロール。 スタイル属性の一覧を表示することができますし、`<SeparatorStyle>`タグ。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataList.SeparatorStyle%2A>内の各項目間の区切り記号のカスタムの背景色を指定するプロパティ、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataListSeparatorStyle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListSeparatorStyle/CS/datalistseparatorstylecs.aspx#1)]
+ [!code-aspx-vb[DataListSeparatorStyle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListSeparatorStyle/VB/datalistseparatorstylevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SeparatorTemplate">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.ITemplate SeparatorTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ITemplate SeparatorTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataList.SeparatorTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.TemplateContainer(typeof(System.Web.UI.WebControls.DataListItem))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定テンプレートのアイテム間の区切り記号、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.ITemplate" />内の項目間の区切り記号のテンプレートを含む、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataList.SeparatorTemplate%2A>の項目間の区切り記号の内容を制御するプロパティ、<xref:System.Web.UI.WebControls.DataList>コントロール。 区切り記号では、内の各項目の間でのカスタム コンテンツを持つ要素を配置することができます、<xref:System.Web.UI.WebControls.DataList>コントロール。 項目間の区切り記号の外観、<xref:System.Web.UI.WebControls.DataList>によってコントロールが制御されます、<xref:System.Web.UI.WebControls.DataList.SeparatorStyle%2A>プロパティです。  
+  
+ 区切り記号のテンプレートを指定するには、配置、`<SeparatorTemplate>`タグ、開始タグと終了タグの間、<xref:System.Web.UI.WebControls.DataList>コントロール。 開始タグと終了の間でテンプレートの内容の一覧を表示することができますし、`<SeparatorTemplate>`タグ。  
+  
+> [!CAUTION]
+>  このコントロールは、悪意のあるクライアント スクリプトが含まれる可能性があります、ユーザー入力を表示する使用できます。 スクリプトの実行可能ファイル、SQL ステートメント、またはその他のコードをアプリケーションに表示する前に、クライアントから送信される情報を確認します。 検証コントロールを使用すると、コントロールに入力されたテキストを表示する前にユーザー入力を検証します。 ASP.NET は、入力要求の検証機能があり、ユーザー入力の中のスクリプトのブロックと HTML を提供します。 詳細については、次を参照してください。[標準コントロールのセキュリティで保護する](http://msdn.microsoft.com/library/f3e7718f-63d0-44a3-bd5f-48cc2059c2a8)、[する方法: 保護に対してスクリプトによる攻略の文字列を HTML エンコードを適用することによって、Web アプリケーションで](http://msdn.microsoft.com/library/6f67973f-dda0-45a1-ba9d-e88532d7dc5b)、および[ASP.NET Web Pages でのユーザー入力の検証](http://msdn.microsoft.com/library/4ad3dacb-89e0-4cee-89ac-40a3f2a85461)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataList.SeparatorTemplate%2A>プロパティ内の各項目間の区切り記号の内容を制御する、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataListSeparatorStyle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListSeparatorStyle/CS/datalistseparatorstylecs.aspx#1)]
+ [!code-aspx-vb[DataListSeparatorStyle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListSeparatorStyle/VB/datalistseparatorstylevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowFooter">
+      <MemberSignature Language="C#" Value="public virtual bool ShowFooter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowFooter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataList.ShowFooter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定にフッター セクションが表示されるかどうかを示す値、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。</summary>
+        <value>
+          <see langword="true" />場合は、フッター セクションが表示されます。それ以外の場合、<see langword="false" />です。 既定値は<see langword="true" />が、このプロパティは、調べるときに、<see cref="P:System.Web.UI.WebControls.DataList.FooterTemplate" />プロパティは使用されません<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataList.ShowFooter%2A>にフッター セクションが表示されるかどうかを指定するプロパティ、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+ 設定して、フッター セクションの外観を制御することができます、<xref:System.Web.UI.WebControls.DataList.FooterStyle%2A>プロパティです。 フッター セクションの内容によって、<xref:System.Web.UI.WebControls.DataList.FooterTemplate%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataList.ShowFooter%2A>にフッター セクションを表示するプロパティを<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataListShowHeader#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListShowHeader/CS/datalistshowheadercs.aspx#1)]
+ [!code-aspx-vb[DataListShowHeader#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListShowHeader/VB/datalistshowheadervb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowHeader">
+      <MemberSignature Language="C#" Value="public virtual bool ShowHeader { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowHeader" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataList.ShowHeader" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはのヘッダー セクションが表示されるかどうかを示す値を設定、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。</summary>
+        <value>
+          <see langword="true" />ヘッダーを表示する場合それ以外の場合、<see langword="false" />です。 既定値は<see langword="true" />が、このプロパティは、調べるときに、<see cref="P:System.Web.UI.WebControls.DataList.HeaderTemplate" />プロパティは使用されません<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataList.ShowHeader%2A>のヘッダー セクションが表示されるかどうかを指定するプロパティ、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+ 設定して、ヘッダー セクションの外観を制御することができます、<xref:System.Web.UI.WebControls.DataList.HeaderStyle%2A>プロパティです。 ヘッダー セクションの内容によって、<xref:System.Web.UI.WebControls.DataList.HeaderTemplate%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataList.ShowHeader%2A>のヘッダー セクションを表示するプロパティを<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataListShowHeader#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListShowHeader/CS/datalistshowheadercs.aspx#1)]
+ [!code-aspx-vb[DataListShowHeader#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListShowHeader/VB/datalistshowheadervb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.WebControls.IRepeatInfoUser.GetItemStyle">
+      <MemberSignature Language="C#" Value="System.Web.UI.WebControls.Style IRepeatInfoUser.GetItemStyle (System.Web.UI.WebControls.ListItemType itemType, int repeatIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Web.UI.WebControls.Style System.Web.UI.WebControls.IRepeatInfoUser.GetItemStyle(valuetype System.Web.UI.WebControls.ListItemType itemType, int32 repeatIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataList.System#Web#UI#WebControls#IRepeatInfoUser#GetItemStyle(System.Web.UI.WebControls.ListItemType,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Style</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="itemType" Type="System.Web.UI.WebControls.ListItemType" />
+        <Parameter Name="repeatIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="itemType"><see cref="T:System.Web.UI.WebControls.ListItemType" /> 列挙値のいずれか。</param>
+        <param name="repeatIndex">リスト コントロール内の項目のインデックス。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Web.UI.WebControls.IRepeatInfoUser.GetItemStyle(System.Web.UI.WebControls.ListItemType,System.Int32)" />」をご覧ください。</summary>
+        <returns>リスト コントロール内の指定したインデックス位置にある指定した項目の型のスタイルを表す <see cref="T:System.Web.UI.WebControls.Style" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.WebControls.DataList> のインスタンスが <xref:System.Web.UI.WebControls.IRepeatInfoUser> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.WebControls.IRepeatInfoUser.HasFooter">
+      <MemberSignature Language="C#" Value="bool System.Web.UI.WebControls.IRepeatInfoUser.HasFooter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Web.UI.WebControls.IRepeatInfoUser.HasFooter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataList.System#Web#UI#WebControls#IRepeatInfoUser#HasFooter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Web.UI.WebControls.IRepeatInfoUser.HasFooter" />」を参照してください。</summary>
+        <value>To be added.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.WebControls.DataList> のインスタンスが <xref:System.Web.UI.WebControls.IRepeatInfoUser> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.WebControls.IRepeatInfoUser.HasHeader">
+      <MemberSignature Language="C#" Value="bool System.Web.UI.WebControls.IRepeatInfoUser.HasHeader { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Web.UI.WebControls.IRepeatInfoUser.HasHeader" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataList.System#Web#UI#WebControls#IRepeatInfoUser#HasHeader" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Web.UI.WebControls.IRepeatInfoUser.HasHeader" />」を参照してください。</summary>
+        <value>To be added.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 使用する場合にのみ、<xref:System.Web.UI.WebControls.DataList>インスタンスのキャスト、<xref:System.Web.UI.WebControls.IRepeatInfoUser>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.WebControls.IRepeatInfoUser.HasSeparators">
+      <MemberSignature Language="C#" Value="bool System.Web.UI.WebControls.IRepeatInfoUser.HasSeparators { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Web.UI.WebControls.IRepeatInfoUser.HasSeparators" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataList.System#Web#UI#WebControls#IRepeatInfoUser#HasSeparators" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Web.UI.WebControls.IRepeatInfoUser.HasSeparators" />」をご覧ください。</summary>
+        <value>To be added.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.WebControls.DataList> のインスタンスが <xref:System.Web.UI.WebControls.IRepeatInfoUser> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.WebControls.IRepeatInfoUser.RenderItem">
+      <MemberSignature Language="C#" Value="void IRepeatInfoUser.RenderItem (System.Web.UI.WebControls.ListItemType itemType, int repeatIndex, System.Web.UI.WebControls.RepeatInfo repeatInfo, System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.WebControls.IRepeatInfoUser.RenderItem(valuetype System.Web.UI.WebControls.ListItemType itemType, int32 repeatIndex, class System.Web.UI.WebControls.RepeatInfo repeatInfo, class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataList.System#Web#UI#WebControls#IRepeatInfoUser#RenderItem(System.Web.UI.WebControls.ListItemType,System.Int32,System.Web.UI.WebControls.RepeatInfo,System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="itemType" Type="System.Web.UI.WebControls.ListItemType" />
+        <Parameter Name="repeatIndex" Type="System.Int32" />
+        <Parameter Name="repeatInfo" Type="System.Web.UI.WebControls.RepeatInfo" />
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="itemType">項目の種類。</param>
+        <param name="repeatIndex">項目のインデックス。</param>
+        <param name="repeatInfo">アイテムを表示するために使用される情報です。</param>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />アイテムを表示するために使用するオブジェクト。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Web.UI.WebControls.IRepeatInfoUser.RenderItem(System.Web.UI.WebControls.ListItemType,System.Int32,System.Web.UI.WebControls.RepeatInfo,System.Web.UI.HtmlTextWriter)" />」をご覧ください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.WebControls.DataList> のインスタンスが <xref:System.Web.UI.WebControls.IRepeatInfoUser> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.WebControls.IRepeatInfoUser.RepeatedItemCount">
+      <MemberSignature Language="C#" Value="int System.Web.UI.WebControls.IRepeatInfoUser.RepeatedItemCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 System.Web.UI.WebControls.IRepeatInfoUser.RepeatedItemCount" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataList.System#Web#UI#WebControls#IRepeatInfoUser#RepeatedItemCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Web.UI.WebControls.IRepeatInfoUser.RepeatedItemCount" />」を参照してください。</summary>
+        <value>To be added.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.WebControls.DataList> のインスタンスが <xref:System.Web.UI.WebControls.IRepeatInfoUser> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TagKey">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.HtmlTextWriterTag TagKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.HtmlTextWriterTag TagKey" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataList.TagKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.HtmlTextWriterTag</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表示するために使用される HTML タグを取得、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。</summary>
+        <value>返します、<see cref="F:System.Web.UI.HtmlTextWriterTag.Table" />タグ、<see cref="P:System.Web.UI.WebControls.DataList.RepeatLayout" />に設定されている<see cref="F:System.Web.UI.WebControls.RepeatLayout.Table" />、それ以外を返します、<see cref="F:System.Web.UI.HtmlTextWriterTag.Span" />タグ。 既定値は、<see cref="F:System.Web.UI.WebControls.RepeatLayout.Table" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataList.TagKey%2A>を決定するプロパティ、<xref:System.Web.UI.HtmlTextWriterTag>に関連付けられている値、<xref:System.Web.UI.WebControls.DataList>コントロール。 <xref:System.Web.UI.WebControls.DataList.TagKey%2A>プロパティは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrackViewState">
+      <MemberSignature Language="C#" Value="protected override void TrackViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void TrackViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataList.TrackViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ビュー ステートの変更を追跡、 <see cref="T:System.Web.UI.WebControls.DataList" /> 、コントロールの保存できるように<see cref="P:System.Web.UI.Control.ViewState" />プロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataList.TrackViewState%2A>開始位置を追跡したり保存コントロールに変更をコントロールのビュー状態の一部として、開始位置をマークするメソッドをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateCommand">
+      <MemberSignature Language="C#" Value="public event System.Web.UI.WebControls.DataListCommandEventHandler UpdateCommand;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.UI.WebControls.DataListCommandEventHandler UpdateCommand" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.DataList.UpdateCommand" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataListCommandEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see langword="Update" />のアイテムのボタンがクリックされた、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataList.UpdateCommand>イベントが発生したときに、`Update`アイテムがクリックされたボタンをクリックします。  
+  
+ 一般的なハンドラーを<xref:System.Web.UI.WebControls.DataList.UpdateCommand>イベント データ、設定を更新する、<xref:System.Web.UI.WebControls.DataList.EditItemIndex%2A>プロパティを`-1`(項目の選択を解除) する、データを再バインドと、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+> [!CAUTION]
+>  このコントロールは、悪意のあるクライアント スクリプトが含まれる可能性があります、ユーザー入力を表示する使用できます。 スクリプトの実行可能ファイル、SQL ステートメント、またはその他のコードをアプリケーションに表示する前に、クライアントから送信される情報を確認します。 検証コントロールを使用すると、コントロールに入力されたテキストを表示する前にユーザー入力を検証します。 ASP.NET は、入力要求の検証機能があり、ユーザー入力の中のスクリプトのブロックと HTML を提供します。 詳細については、次を参照してください。[標準コントロールのセキュリティで保護する](http://msdn.microsoft.com/library/f3e7718f-63d0-44a3-bd5f-48cc2059c2a8)、[する方法: 保護に対してスクリプトによる攻略の文字列を HTML エンコードを適用することによって、Web アプリケーションで](http://msdn.microsoft.com/library/6f67973f-dda0-45a1-ba9d-e88532d7dc5b)、および[ASP.NET Web Pages でのユーザー入力の検証](http://msdn.microsoft.com/library/4ad3dacb-89e0-4cee-89ac-40a3f2a85461)です。  
+  
+ イベント処理の詳細については、次を参照してください。[する方法: Web フォーム アプリケーションでのイベントの消費](~/docs/standard/events/how-to-consume-events-in-a-web-forms-application.md)です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.DataList.UpdateCommand>イベント。 選択した項目を更新することができます、<xref:System.Web.UI.WebControls.DataList>コントロールに、ユーザーが入力した新しい値と、`Update`ボタンをクリックします。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[DataListEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListEdit/CS/datalisteditcs.aspx#1)]
+ [!code-aspx-vb[DataListEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListEdit/VB/datalisteditvb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataListEdit2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListEdit2/CS/datalistedit2cs.aspx#1)]
+ [!code-aspx-vb[DataListEdit2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListEdit2/VB/datalistedit2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateCommandName">
+      <MemberSignature Language="C#" Value="public const string UpdateCommandName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string UpdateCommandName" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.DataList.UpdateCommandName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す、<see langword="Update" />コマンド名です。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataList.UpdateCommandName>を表すフィールド、`Update`コマンド名です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

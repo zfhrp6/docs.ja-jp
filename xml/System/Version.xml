@@ -1,0 +1,1481 @@
+<Type Name="Version" FullName="System.Version">
+  <TypeSignature Language="C#" Value="public sealed class Version : ICloneable, IComparable, IComparable&lt;Version&gt;, IEquatable&lt;Version&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit Version extends System.Object implements class System.ICloneable, class System.IComparable, class System.IComparable`1&lt;class System.Version&gt;, class System.IEquatable`1&lt;class System.Version&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Version" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IComparable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IComparable&lt;System.Version&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IEquatable&lt;System.Version&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アセンブリ、オペレーティング システム、または共通言語ランタイムのバージョン番号を表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バージョン番号は、2 ~ 4 つのコンポーネントで構成されています: メジャー、マイナー、ビルド、およびリビジョン。 メジャーおよびマイナー コンポーネントが必要です。ビルドおよびリビジョンの構成要素はオプションですが、リビジョン番号が定義されている場合は、ビルドのコンポーネントが必要です。 定義済みのすべてのコンポーネントは、0 以上の整数である必要があります。 バージョン番号の形式のとおりです (省略可能なコンポーネントは、角かっこ ([および]): 表示します。  
+  
+ *major*.*minor*[.*build*[.*リビジョン*]  
+  
+ コンポーネントは、次のように規則によって使用されます。  
+  
+-   *主要な*: 名前が同じで別のメジャー バージョンを持つアセンブリに置き換えることはできません。 高いバージョン番号は、旧バージョンとの互換性を想定できない製品の主要な書き直しを可能性があります。  
+  
+-   *マイナー*: 2 つのアセンブリでのメジャー バージョン番号と名前が同じでも、マイナー バージョン番号が異なる、旧バージョンと互換性の目的で大幅な改良を示します。 この上位のマイナー バージョン番号は、製品のポイント リリースや製品の完全に旧バージョンと互換性のある新しいバージョンである可能性があります。  
+  
+-   *ビルド*: ビルド番号の違いは、同じソースの再コンパイルを表します。 プロセッサ、プラットフォーム、またはコンパイラが変更されたときに、別のビルド番号を使用する場合があります。  
+  
+-   *リビジョン*: 完全互換を別のリビジョンが同じ名前、メジャー、およびマイナー バージョン番号を持つアセンブリが目的としています。 上位のバージョン番号は、以前にリリースされたアセンブリのセキュリティ ホールが修正されたビルドで使用可能性があります。  
+  
+ 以降のバージョンのアセンブリだけが異なるビルドまたはリビジョン番号は、前のバージョンの修正プログラムの更新と見なされます。  
+  
+> [!IMPORTANT]
+>  値<xref:System.Version>割り当てられていない明示的に値のプロパティが定義されていない (-1)。  
+  
+ .NET Framework 2.0 以降で、<xref:System.Version.MajorRevision%2A>と<xref:System.Version.MinorRevision%2A>プロパティを使用すると、たとえば、永続的なソリューションを解放するまでは、問題を修正するアプリケーションの一時的なバージョンを識別します。  さらに、Windows NT オペレーティング システムを使用して、<xref:System.Version.MajorRevision%2A>サービス パック番号をエンコードするプロパティです。  
+  
+## <a name="assigning-version-information-to-assemblies"></a>アセンブリにバージョン情報を割り当てる  
+ 通常、<xref:System.Version>クラスは、アセンブリにバージョン番号を割り当てるには使用されません。 代わりに、<xref:System.Reflection.AssemblyVersionAttribute>このトピックの例に示すように、アセンブリのバージョンを定義するクラスを使用します。  
+  
+## <a name="retrieving-version-information"></a>バージョン情報の取得  
+ <xref:System.Version>オブジェクトは、いくつかシステムまたはアプリケーション コンポーネント (オペレーティング システム) など、共通言語ランタイム、現在のアプリケーションの実行可能ファイル、または特定のアセンブリのバージョン情報を格納する最も頻繁に使用されます。 次の例では、最も一般的なシナリオの一部を示しています。  
+  
+-   オペレーティング システムのバージョンを取得しています。 次の例では、<xref:System.OperatingSystem.Version%2A?displayProperty=nameWithType>オペレーティング システムのバージョン番号を取得するプロパティです。  
+  
+     [!code-csharp[System.Version.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Version.Class/cs/GettingVersions1.cs#1)]
+     [!code-vb[System.Version.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Version.Class/vb/GettingVersions1.vb#1)]  
+  
+-   共通言語ランタイムのバージョンを取得しています。 次の例では、<xref:System.Environment.Version%2A?displayProperty=nameWithType>共通言語ランタイムのバージョン情報を取得するプロパティです。  
+  
+     [!code-csharp[System.Version.Class#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Version.Class/cs/GettingVersions1.cs#2)]
+     [!code-vb[System.Version.Class#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Version.Class/vb/GettingVersions1.vb#2)]  
+  
+-   現在のアプリケーションのアセンブリのバージョンを取得しています。 次の例では、<xref:System.Reflection.Assembly.GetEntryAssembly%2A?displayProperty=nameWithType>メソッドへの参照を取得する、<xref:System.Reflection.Assembly>アプリケーション実行可能ファイルを表し、そのアセンブリ バージョン番号を取得するオブジェクト。  
+  
+     [!code-csharp[System.Version.Class#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Version.Class/cs/currentapp.cs#5)]
+     [!code-vb[System.Version.Class#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Version.Class/vb/currentapp.vb#5)]  
+  
+-   現在のアセンブリのアセンブリのバージョンを取得しています。 次の例では、<xref:System.Type.Assembly%2A?displayProperty=nameWithType>への参照を取得するプロパティ、<xref:System.Reflection.Assembly>アプリケーションのエントリ ポイントが含まれており、そのバージョン情報を取得するアセンブリを表すオブジェクト。  
+  
+     [!code-csharp[System.Version.Class#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Version.Class/cs/currentassem.cs#4)]
+     [!code-vb[System.Version.Class#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Version.Class/vb/currentassem.vb#4)]  
+  
+-   特定のアセンブリのバージョンを取得しています。 次の例では、<xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom%2A?displayProperty=nameWithType>メソッドへの参照を取得する、<xref:System.Reflection.Assembly>オブジェクトを特定のファイル名を持ち、そのバージョン情報を取得します。 存在していることの他のいくつかのメソッドもインスタンスを作成する、<xref:System.Reflection.Assembly>オブジェクト ファイル名または厳密な名前でします。  
+  
+     [!code-csharp[System.Version.Class#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Version.Class/cs/specificassem.cs#3)]
+     [!code-vb[System.Version.Class#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Version.Class/vb/specificassem.vb#3)]  
+  
+-   ClickOnce アプリケーションの発行バージョンを取得しています。 次の例では、<xref:System.Deployment.Application.ApplicationDeployment.CurrentVersion%2A?displayProperty=nameWithType>プロパティをアプリケーションの発行バージョンを表示します。 例のアプリケーション id を設定するが、正常に実行にする必要がある注意してください。 これは、Visual Studio 発行ウィザードによって自動的に処理されます。  
+  
+     [!code-csharp[System.Version.Class#7](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Version.Class/cs/clickonce.cs#7)]
+     [!code-vb[System.Version.Class#7](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Version.Class/vb/clickonce.vb#7)]  
+  
+    > [!IMPORTANT]
+    >  ClickOnce 配置用のアプリケーションの発行バージョンは、そのアセンブリのバージョンの完全に依存しません。  
+  
+## <a name="comparing-version-objects"></a>バージョン オブジェクトを比較します。  
+ 使用することができます、<xref:System.Version.CompareTo%2A>メソッドを 1 つかどうかを判断<xref:System.Version>オブジェクトよりも前、同じか、または 2 つ目より後<xref:System.Version>オブジェクト。 次の例は、バージョン 2.1 がバージョン 2.0 以降であることを示します。  
+  
+ [!code-csharp[System.Version.Class.Comparing#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.version.class.comparing/cs/comparisons1.cs#1)]
+ [!code-vb[System.Version.Class.Comparing#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.version.class.comparing/vb/comparisons1.vb#1)]  
+  
+ 2 つのバージョンが等しく、メジャー、マイナー、ビルド、およびリビジョン番号を 1 つ目の<xref:System.Version>オブジェクトは、2 番目のものと同じである必要があります<xref:System.Version>オブジェクト。 場合のビルドまたはリビジョン番号、<xref:System.Version>オブジェクトが定義されている<xref:System.Version>オブジェクトはより前であると見なされます、<xref:System.Version>オブジェクトをビルドまたはリビジョン番号は 0 に等しい。 次の例を 3 つを比較して示します<xref:System.Version>バージョン コンポーネントが未定義のオブジェクト。  
+  
+ [!code-csharp[System.Version.Class.Comparing#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.version.class.comparing/cs/comparisons2.cs#2)]
+ [!code-vb[System.Version.Class.Comparing#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.version.class.comparing/vb/comparisons2.vb#2)]  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Reflection.AssemblyVersionAttribute>属性をアセンブリにバージョン番号を割り当てます。 コンパイル時に、このバージョンの詳細については、アセンブリのメタデータと一緒に格納されます。 値を取得する例では、実行時に、<xref:System.Type.Assembly%2A?displayProperty=nameWithType>型のプロパティには、実行中のアセンブリへの参照を取得するアセンブリ内で見つかったし、アセンブリのバージョン情報を取得、<xref:System.Reflection.AssemblyName.Version%2A>のプロパティ、 <xref:System.Reflection.AssemblyName>によって返されるオブジェクト、<xref:System.Reflection.Assembly.GetName%2A?displayProperty=nameWithType>メソッドです。  
+  
+ [!code-csharp[System.Version.Class#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Version.Class/cs/example1.cs#6)]
+ [!code-vb[System.Version.Class#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Version.Class/vb/example1.vb#6)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Version ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Version.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Version" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを作成、<xref:System.Version>次のプロパティ値を持つオブジェクト。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Version.Major%2A>|0|  
+|<xref:System.Version.Minor%2A>|0|  
+|<xref:System.Version.Build%2A>|未定義 (-1)|  
+|<xref:System.Version.Revision%2A>|未定義 (-1)|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Version (string version);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Version.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="version" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="version">文字列を含むメジャー、マイナー、ビルド、およびリビジョン番号をそれぞれの数字がピリオドで区切られます ('. ')。</param>
+        <summary>指定した文字列を使用して、<see cref="T:System.Version" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `version`パラメーターにのみ、コンポーネント メジャー、マイナー、ビルドを含めることができ、その順番に、ピリオドで区切られたすべてのリビジョン。 少なくとも 2 つのコンポーネント、および最大で 4 つの必要があります。 最初の 2 つのコンポーネントはメジャーおよびマイナーと見なされます。 指定されていないコンポーネントの値は定義されません。  
+  
+ バージョン番号の形式は次のとおりです。 省略可能なコンポーネントは、角かっこで囲んで表示されます ('[' と ']')。  
+  
+ major.minor[.build[.revision]]  
+  
+ 定義済みのすべてのコンポーネントは、0 以上の整数である必要があります。 たとえば、メジャーの数が 6 の場合は、マイナー番号が 2、ビルド番号は 1 でリビジョン番号は 3、し`version`「6.2.1.3」にする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="version" />2 つ未満または 5 つ以上のコンポーネントがあります。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="version" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">メジャー、マイナー、ビルド、または、リビジョン番号が 0 未満です。</exception>
+        <exception cref="T:System.FormatException">少なくとも 1 つのコンポーネントの<paramref name="version" />整数に解析されません。</exception>
+        <exception cref="T:System.OverflowException">少なくとも 1 つのコンポーネントの<paramref name="version" />より大きい数値を表す<see cref="F:System.Int32.MaxValue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Version (int major, int minor);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 major, int32 minor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Version.#ctor(System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="major" Type="System.Int32" />
+        <Parameter Name="minor" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="major">メジャー バージョン番号。</param>
+        <param name="minor">マイナー バージョン番号。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Version" />クラスの指定のメジャーおよびマイナーの値を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを作成、<xref:System.Version>次のプロパティ値を持つオブジェクト。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Version.Major%2A>|`major`|  
+|<xref:System.Version.Minor%2A>|`minor`|  
+|<xref:System.Version.Build%2A>|未定義 (-1)|  
+|<xref:System.Version.Revision%2A>|未定義 (-1)|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="major" /> または <paramref name="minor" /> が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Version (int major, int minor, int build);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 major, int32 minor, int32 build) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Version.#ctor(System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="major" Type="System.Int32" />
+        <Parameter Name="minor" Type="System.Int32" />
+        <Parameter Name="build" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="major">メジャー バージョン番号。</param>
+        <param name="minor">マイナー バージョン番号。</param>
+        <param name="build">ビルド番号。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Version" />クラスの指定されたメジャー、マイナーを使用して、値を作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを作成、<xref:System.Version>次のプロパティ値を持つオブジェクト。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Version.Major%2A>|`major`|  
+|<xref:System.Version.Minor%2A>|`minor`|  
+|<xref:System.Version.Build%2A>|`build`|  
+|<xref:System.Version.Revision%2A>|未定義 (-1)|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="major" />、 <paramref name="minor" />、または<paramref name="build" />が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Version (int major, int minor, int build, int revision);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 major, int32 minor, int32 build, int32 revision) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Version.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="major" Type="System.Int32" />
+        <Parameter Name="minor" Type="System.Int32" />
+        <Parameter Name="build" Type="System.Int32" />
+        <Parameter Name="revision" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="major">メジャー バージョン番号。</param>
+        <param name="minor">マイナー バージョン番号。</param>
+        <param name="build">ビルド番号。</param>
+        <param name="revision">リビジョン番号。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Version" />クラスで指定されたメジャー、マイナー、ビルド、およびリビジョン番号。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを作成、<xref:System.Version>次のプロパティ値を持つオブジェクト。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Version.Major%2A>|`major`|  
+|<xref:System.Version.Minor%2A>|`minor`|  
+|<xref:System.Version.Build%2A>|`build`|  
+|<xref:System.Version.Revision%2A>|`revision`|  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.Version.%23ctor%2A>コンス トラクター、および<xref:System.Version.Major%2A>、 <xref:System.Version.Minor%2A>、 <xref:System.Version.Build%2A>、 <xref:System.Version.Revision%2A>、 <xref:System.Version.MajorRevision%2A>、および<xref:System.Version.MinorRevision%2A>プロパティです。  
+  
+ [!code-cpp[system.version.revision#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.version.revision/cpp/rev.cpp#1)]
+ [!code-csharp[system.version.revision#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.version.revision/cs/rev.cs#1)]
+ [!code-vb[system.version.revision#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.version.revision/vb/rev.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="major" />、<paramref name="minor" />、<paramref name="build" />、または <paramref name="revision" /> が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Build">
+      <MemberSignature Language="C#" Value="public int Build { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Build" />
+      <MemberSignature Language="DocId" Value="P:System.Version.Build" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のバージョン番号のビルドのコンポーネントの値を取得<see cref="T:System.Version" />オブジェクト。</summary>
+        <value>ビルド番号。ビルド番号が未定義の場合は -1。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ たとえば、バージョン番号が 6.2.1.3 の場合は、ビルド番号は 1 です。 バージョン番号が 6.2 である場合は、ビルド番号は定義されません。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.Version.%23ctor%2A>コンス トラクター、および<xref:System.Version.Major%2A>、 <xref:System.Version.Minor%2A>、 <xref:System.Version.Build%2A>、 <xref:System.Version.Revision%2A>、 <xref:System.Version.MajorRevision%2A>、および<xref:System.Version.MinorRevision%2A>プロパティです。  
+  
+ [!code-cpp[system.version.revision#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.version.revision/cpp/rev.cpp#1)]
+ [!code-csharp[system.version.revision#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.version.revision/cs/rev.cs#1)]
+ [!code-vb[system.version.revision#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.version.revision/vb/rev.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Version.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しいを返します<see cref="T:System.Version" />オブジェクトは、現在と同じ値を持つ<see cref="T:System.Version" />オブジェクト。</summary>
+        <returns>新しい<see cref="T:System.Object" />値を持つ、現在のコピーである<see cref="T:System.Version" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値の型が重要な場合は、キャスト、<xref:System.Object>にこのメソッドによって返されるインスタンス、<xref:System.Version>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompareTo">
+      <MemberSignature Language="C#" Value="public int CompareTo (object version);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 CompareTo(object version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Version.CompareTo(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="version" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="version">比較対象のオブジェクト、または <see langword="null" />。</param>
+        <summary>現在の比較<see cref="T:System.Version" />オブジェクトを指定したオブジェクトにこれらの相対値を示す値を返します。</summary>
+        <returns>2 つのオブジェクトの相対的な値を示す符号付き整数 (次の表を参照)。  
+  
+ <list type="table"><listheader><term>戻り値  
+  
+ </term><description>意味  
+  
+ </description></listheader><item><term>0 より小さい値  
+  
+ </term><description>現在<see cref="T:System.Version" />オブジェクトは前に、バージョン<paramref name="version" />します。  
+  
+ </description></item><item><term>0  
+  
+ </term><description>現在<see cref="T:System.Version" />オブジェクトと同じバージョンの<paramref name="version" />です。  
+  
+ </description></item><item><term>0 より大きい値  
+  
+ </term><description>現在<see cref="T:System.Version" />オブジェクトは、バージョン以降に<paramref name="version" />です。  
+  
+ または  
+  
+ <paramref name="version" /> は <see langword="null" /> です。  
+  
+ </description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンポーネント`Version`重要度の高い順には: メジャー、マイナー、ビルド、およびリビジョン。 不明なコンポーネントは、既知の構成要素よりも古いものと見なされます。  
+  
+ 例:  
+  
+-   Version 1.1.0 より前のバージョン 1.1  
+  
+-   バージョン 1.1、1.1.1 より前のバージョン  
+  
+-   バージョン 1.1.2.3 より前のバージョン 1.1  
+  
+-   1.1.2 のバージョンが 1.1.2.4 より前のバージョン  
+  
+-   バージョン 1.2.5"1.2.3.4"のバージョンよりも新しいバージョンです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="version" /> が <see cref="T:System.Version" /> 型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CompareTo">
+      <MemberSignature Language="C#" Value="public int CompareTo (Version value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 CompareTo(class System.Version value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Version.CompareTo(System.Version)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Version" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.Version" />現在と比較するオブジェクト<see cref="T:System.Version" />オブジェクト、または<see langword="null" />です。</param>
+        <summary>現在の比較<see cref="T:System.Version" />を指定したオブジェクト<see cref="T:System.Version" />オブジェクトし、これらの相対値を示す値を返します。</summary>
+        <returns>2 つのオブジェクトの相対的な値を示す符号付き整数 (次の表を参照)。  
+  
+ <list type="table"><listheader><term>戻り値  
+  
+ </term><description>意味  
+  
+ </description></listheader><item><term>0 より小さい値  
+  
+ </term><description>現在<see cref="T:System.Version" />オブジェクトは前に、バージョン<paramref name="value" />します。  
+  
+ </description></item><item><term>0  
+  
+ </term><description>現在<see cref="T:System.Version" />オブジェクトと同じバージョンの<paramref name="value" />です。  
+  
+ </description></item><item><term>0 より大きい値  
+  
+ </term><description>現在<see cref="T:System.Version" />オブジェクトは、バージョン以降に<paramref name="value" />です。  
+  
+ または  
+  
+ <paramref name="value" /> は <see langword="null" /> です。  
+  
+ </description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを実装する、<xref:System.IComparable%601?displayProperty=nameWithType>インターフェイス、および実行よりもわずかに向上、<xref:System.Version.CompareTo%2A>メソッドをボックス化解除があるないため、`value`パラメーター。  
+  
+ コンポーネント`Version`重要度の高い順には: メジャー、マイナー、ビルド、およびリビジョン。 不明なコンポーネントは、既知の構成要素よりも古いものと見なされます。 例:  
+  
+-   バージョン 1.1 は、バージョン 1.1.0 よりも古いします。  
+  
+-   バージョン 1.1、1.1.1 より前のバージョン。  
+  
+-   Version 1.1 は 1.1.2.3 より前のバージョンです。  
+  
+-   1.1.2 のバージョンは 1.1.2.4 より前のバージョンです。  
+  
+-   バージョン 1.2.5"1.2.3.4"のバージョンよりも新しいバージョンです。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますジェネリックと非ジェネリック バージョンの`CompareTo`いくつかの値と参照型のメソッドです。  
+  
+ [!code-cpp[T.CompareTo#1](~/samples/snippets/cpp/VS_Snippets_CLR/T.CompareTo/CPP/cat.cpp#1)]
+ [!code-csharp[T.CompareTo#1](~/samples/snippets/csharp/VS_Snippets_CLR/T.CompareTo/CS/cat.cs#1)]
+ [!code-vb[T.CompareTo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/T.CompareTo/VB/cat.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Version.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在の比較対象のオブジェクト<see cref="T:System.Version" />オブジェクト、または<see langword="null" />です。</param>
+        <summary>示す値を返すかどうか、現在<see cref="T:System.Version" />オブジェクトが、指定されたオブジェクトと等しい。</summary>
+        <returns>
+          <see langword="true" />場合、現在<see cref="T:System.Version" />オブジェクトおよび<paramref name="obj" />が両方とも<see cref="T:System.Version" />オブジェクト、および現在のすべてのコンポーネント<see cref="T:System.Version" />オブジェクトの対応する要素が一致する<paramref name="obj" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (Version obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(class System.Version obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Version.Equals(System.Version)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Version" />
+      </Parameters>
+      <Docs>
+        <param name="obj">A<see cref="T:System.Version" />現在と比較するオブジェクト<see cref="T:System.Version" />オブジェクト、または<see langword="null" />です。</param>
+        <summary>示す値を返すかどうか、現在<see cref="T:System.Version" />オブジェクトと、指定した<see cref="T:System.Version" />オブジェクトが同じ値を表すです。</summary>
+        <returns>
+          <see langword="true" />場合、現在のすべてのコンポーネント<see cref="T:System.Version" />オブジェクトの対応する要素が一致する、<paramref name="obj" />パラメーターです。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを実装する、<xref:System.IEquatable%601>インターフェイス、および実行よりもわずかに向上、<xref:System.Version.Equals%2A>メソッドをボックス化解除があるないため、`obj`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Version.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のハッシュ コードを返します<see cref="T:System.Version" />オブジェクト。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.Version.%23ctor%2A>コンス トラクター、および<xref:System.Version.Major%2A>、 <xref:System.Version.Minor%2A>、 <xref:System.Version.Build%2A>、 <xref:System.Version.Revision%2A>、 <xref:System.Version.MajorRevision%2A>、および<xref:System.Version.MinorRevision%2A>プロパティです。  
+  
+ [!code-cpp[system.version.revision#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.version.revision/cpp/rev.cpp#1)]
+ [!code-csharp[system.version.revision#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.version.revision/cs/rev.cs#1)]
+ [!code-vb[system.version.revision#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.version.revision/vb/rev.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Major">
+      <MemberSignature Language="C#" Value="public int Major { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Major" />
+      <MemberSignature Language="DocId" Value="P:System.Version.Major" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のバージョン番号の主要なコンポーネントの値を取得<see cref="T:System.Version" />オブジェクト。</summary>
+        <value>メジャー バージョン番号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ たとえば、バージョン番号が 6.2 である場合は、メジャー バージョンは 6 です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MajorRevision">
+      <MemberSignature Language="C#" Value="public short MajorRevision { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int16 MajorRevision" />
+      <MemberSignature Language="DocId" Value="P:System.Version.MajorRevision" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int16</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リビジョン番号の上位 16 ビットを取得します。</summary>
+        <value>16 ビット符号付き整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 中間バージョンを一時的に永続的なソリューションを解放するまで、問題を解決するのにアプリケーションをリリースすると仮定します。 一時的なバージョンに新しいリビジョン番号、保証されませんが、別のバージョンを識別する必要があります。 この例では、32 ビットのリビジョン番号の 16 ビットの高値と安値の部分に、この識別情報をエンコードします。 使用して、<xref:System.Version.Revision%2A>全体のリビジョン番号を使用して取得するプロパティ、<xref:System.Version.MajorRevision%2A>プロパティを上位の 16 ビットを取得し、<xref:System.Version.MinorRevision%2A>下位 16 ビットを取得するプロパティです。  
+  
+ .NET Framework バージョン 2.0 では、オペレーティング システムとは、Windows NT 以降で、<xref:System.Version.MajorRevision%2A>サービス パック番号をエンコードするプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.Version.%23ctor%2A>コンス トラクター、および<xref:System.Version.Major%2A>、 <xref:System.Version.Minor%2A>、 <xref:System.Version.Build%2A>、 <xref:System.Version.Revision%2A>、 <xref:System.Version.MajorRevision%2A>、および<xref:System.Version.MinorRevision%2A>プロパティです。  
+  
+ [!code-cpp[system.version.revision#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.version.revision/cpp/rev.cpp#1)]
+ [!code-csharp[system.version.revision#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.version.revision/cs/rev.cs#1)]
+ [!code-vb[system.version.revision#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.version.revision/vb/rev.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Minor">
+      <MemberSignature Language="C#" Value="public int Minor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Minor" />
+      <MemberSignature Language="DocId" Value="P:System.Version.Minor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のバージョン番号のマイナー部分の値を取得<see cref="T:System.Version" />オブジェクト。</summary>
+        <value>マイナー バージョン番号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ たとえば、バージョン番号が 6.2 である場合は、マイナー バージョンは 2 です。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.Version.%23ctor%2A>コンス トラクター、および<xref:System.Version.Major%2A>、 <xref:System.Version.Minor%2A>、 <xref:System.Version.Build%2A>、 <xref:System.Version.Revision%2A>、 <xref:System.Version.MajorRevision%2A>、および<xref:System.Version.MinorRevision%2A>プロパティです。  
+  
+ [!code-cpp[system.version.revision#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.version.revision/cpp/rev.cpp#1)]
+ [!code-csharp[system.version.revision#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.version.revision/cs/rev.cs#1)]
+ [!code-vb[system.version.revision#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.version.revision/vb/rev.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinorRevision">
+      <MemberSignature Language="C#" Value="public short MinorRevision { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int16 MinorRevision" />
+      <MemberSignature Language="DocId" Value="P:System.Version.MinorRevision" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int16</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リビジョン番号の下位 16 ビットを取得します。</summary>
+        <value>16 ビット符号付き整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 中間バージョンを一時的に永続的なソリューションを解放するまで、問題を解決するのにアプリケーションをリリースすると仮定します。 一時的なバージョンに新しいリビジョン番号、保証されませんが、別のバージョンを識別する必要があります。 この例では、32 ビットのリビジョン番号の 16 ビットの高値と安値の部分に、この識別情報をエンコードします。 使用して、<xref:System.Version.Revision%2A>全体のリビジョン番号を使用して取得するプロパティ、<xref:System.Version.MajorRevision%2A>プロパティを上位の 16 ビットを取得し、<xref:System.Version.MinorRevision%2A>下位 16 ビットを取得するプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.Version.%23ctor%2A>コンス トラクター、および<xref:System.Version.Major%2A>、 <xref:System.Version.Minor%2A>、 <xref:System.Version.Build%2A>、 <xref:System.Version.Revision%2A>、 <xref:System.Version.MajorRevision%2A>、および<xref:System.Version.MinorRevision%2A>プロパティです。  
+  
+ [!code-cpp[system.version.revision#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.version.revision/cpp/rev.cpp#1)]
+ [!code-csharp[system.version.revision#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.version.revision/cs/rev.cs#1)]
+ [!code-vb[system.version.revision#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.version.revision/vb/rev.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (Version v1, Version v2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(class System.Version v1, class System.Version v2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Version.op_Equality(System.Version,System.Version)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="v1" Type="System.Version" />
+        <Parameter Name="v2" Type="System.Version" />
+      </Parameters>
+      <Docs>
+        <param name="v1">最初の <see cref="T:System.Version" /> オブジェクト。</param>
+        <param name="v2">2 番目の <see cref="T:System.Version" /> オブジェクト。</param>
+        <summary>指定した 2 つの <see cref="T:System.Version" /> オブジェクトが等しいかどうかを判断します。</summary>
+        <returns>
+          <paramref name="v1" /> が <paramref name="v2" /> に等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Version.Equals%28System.Object%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_GreaterThan">
+      <MemberSignature Language="C#" Value="public static bool operator &gt; (Version v1, Version v2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_GreaterThan(class System.Version v1, class System.Version v2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Version.op_GreaterThan(System.Version,System.Version)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="v1" Type="System.Version" />
+        <Parameter Name="v2" Type="System.Version" />
+      </Parameters>
+      <Docs>
+        <param name="v1">最初の <see cref="T:System.Version" /> オブジェクト。</param>
+        <param name="v2">2 番目の <see cref="T:System.Version" /> オブジェクト。</param>
+        <summary>最初に指定したかどうかを判断<see cref="T:System.Version" />オブジェクトが 2 番目より大きい指定<see cref="T:System.Version" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="v1" /> より大きい場合は <paramref name="v2" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Version.CompareTo%28System.Object%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_GreaterThanOrEqual">
+      <MemberSignature Language="C#" Value="public static bool operator &gt;= (Version v1, Version v2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_GreaterThanOrEqual(class System.Version v1, class System.Version v2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Version.op_GreaterThanOrEqual(System.Version,System.Version)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="v1" Type="System.Version" />
+        <Parameter Name="v2" Type="System.Version" />
+      </Parameters>
+      <Docs>
+        <param name="v1">最初の <see cref="T:System.Version" /> オブジェクト。</param>
+        <param name="v2">2 番目の <see cref="T:System.Version" /> オブジェクト。</param>
+        <summary>最初に指定したかどうかを判断<see cref="T:System.Version" />オブジェクトがもう 1 つ以上指定<see cref="T:System.Version" />オブジェクト。</summary>
+        <returns>
+          <paramref name="v1" /> が <paramref name="v2" /> 以上の場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Version.CompareTo%28System.Object%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (Version v1, Version v2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(class System.Version v1, class System.Version v2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Version.op_Inequality(System.Version,System.Version)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="v1" Type="System.Version" />
+        <Parameter Name="v2" Type="System.Version" />
+      </Parameters>
+      <Docs>
+        <param name="v1">最初の <see cref="T:System.Version" /> オブジェクト。</param>
+        <param name="v2">2 番目の <see cref="T:System.Version" /> オブジェクト。</param>
+        <summary>指定した 2 つの <see cref="T:System.Version" /> オブジェクトが等しくないかどうかを判断します。</summary>
+        <returns>
+          <paramref name="v1" /> が <paramref name="v2" /> と等しくない場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Version.Equals%28System.Object%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_LessThan">
+      <MemberSignature Language="C#" Value="public static bool operator &lt; (Version v1, Version v2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_LessThan(class System.Version v1, class System.Version v2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Version.op_LessThan(System.Version,System.Version)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="v1" Type="System.Version" />
+        <Parameter Name="v2" Type="System.Version" />
+      </Parameters>
+      <Docs>
+        <param name="v1">最初の <see cref="T:System.Version" /> オブジェクト。</param>
+        <param name="v2">2 番目の <see cref="T:System.Version" /> オブジェクト。</param>
+        <summary>最初に指定したかどうかを判断<see cref="T:System.Version" />オブジェクトは小さい値指定、2 番目より<see cref="T:System.Version" />オブジェクト。</summary>
+        <returns>
+          <paramref name="v1" /> が <paramref name="v2" /> より小さい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Version.CompareTo%28System.Object%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="v1" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="op_LessThanOrEqual">
+      <MemberSignature Language="C#" Value="public static bool operator &lt;= (Version v1, Version v2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_LessThanOrEqual(class System.Version v1, class System.Version v2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Version.op_LessThanOrEqual(System.Version,System.Version)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="v1" Type="System.Version" />
+        <Parameter Name="v2" Type="System.Version" />
+      </Parameters>
+      <Docs>
+        <param name="v1">最初の <see cref="T:System.Version" /> オブジェクト。</param>
+        <param name="v2">2 番目の <see cref="T:System.Version" /> オブジェクト。</param>
+        <summary>最初に指定したかどうかを判断<see cref="T:System.Version" />オブジェクトが 2 番目に小さい<see cref="T:System.Version" />オブジェクト。</summary>
+        <returns>
+          <paramref name="v1" /> が <paramref name="v2" /> 以下の場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Version.CompareTo%28System.Object%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="v1" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public static Version Parse (string input);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Version Parse(string input) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Version.Parse(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="input" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="input">変換するバージョン番号を含んだ文字列。</param>
+        <summary>等価のバージョン番号の文字列形式を変換します<see cref="T:System.Version" />オブジェクト。</summary>
+        <returns>指定されたバージョン番号と等価のオブジェクト、<paramref name="input" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `input`パラメーターは、次の形式でなければなりません。  
+  
+```  
+  
+major.minor[.build[.revision]]  
+```  
+  
+ ここで*メジャー*、*マイナー*、*ビルド*、および*リビジョン*の文字列形式のバージョンの番号の 4 つのコンポーネントは、: メジャー バージョン番号、マイナー バージョン番号、ビルド番号、およびリビジョン番号。 省略可能なコンポーネントは、角かっこで囲んで表示されます ([および])。 コンポーネントは、指定した順序で表示され、ピリオドで区切られた必要があります。  
+  
+> [!IMPORTANT]
+>  バージョン番号の文字列形式が認識されているパターンに従う必要があります、ためアプリケーションは常を使用例外処理を呼び出すときに、<xref:System.Version.Parse%2A>ユーザー入力を解析します。 代わりに、呼び出すことができます、<xref:System.Version.TryParse%2A>をバージョン番号の文字列表現を解析し、解析操作が成功したかどうかを示す値を返すメソッド。  
+  
+ <xref:System.Version.Parse%2A>以外のメソッドは、便利なメソッドを呼び出すことと等価である、<xref:System.Version.%23ctor%28System.String%29>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Version.Parse%2A>バージョン情報を格納した文字列の数を解析します。  
+  
+ [!code-csharp[System.Version.Parse#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.version.parse/cs/parse1.cs#1)]
+ [!code-vb[System.Version.Parse#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.version.parse/vb/parse1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="input" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="input" />2 つより少ない、または複数の 4 つのバージョンのコンポーネントがあります。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">少なくとも 1 つのコンポーネントで<paramref name="input" />が 0 未満です。</exception>
+        <exception cref="T:System.FormatException">少なくとも 1 つのコンポーネントで<paramref name="input" />整数ではありません。</exception>
+        <exception cref="T:System.OverflowException">少なくとも 1 つのコンポーネントで<paramref name="input" />の数値を表すよりも大きいです<see cref="F:System.Int32.MaxValue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Revision">
+      <MemberSignature Language="C#" Value="public int Revision { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Revision" />
+      <MemberSignature Language="DocId" Value="P:System.Version.Revision" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のバージョン番号のリビジョン部分の値を取得<see cref="T:System.Version" />オブジェクト。</summary>
+        <value>リビジョン番号。リビジョン番号が未定義の場合は -1。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ たとえば、バージョン番号が 6.2.1.3 の場合は、リビジョン番号は 3 です。 バージョン番号が 6.2 である場合は、リビジョン番号は定義されません。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.Version.%23ctor%2A>コンス トラクター、および<xref:System.Version.Major%2A>、 <xref:System.Version.Minor%2A>、 <xref:System.Version.Build%2A>、 <xref:System.Version.Revision%2A>、 <xref:System.Version.MajorRevision%2A>、および<xref:System.Version.MinorRevision%2A>プロパティです。  
+  
+ [!code-cpp[system.version.revision#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.version.revision/cpp/rev.cpp#1)]
+ [!code-csharp[system.version.revision#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.version.revision/cs/rev.cs#1)]
+ [!code-vb[system.version.revision#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.version.revision/vb/rev.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IComparable.CompareTo">
+      <MemberSignature Language="C#" Value="int IComparable.CompareTo (object version);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.IComparable.CompareTo(object version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Version.System#IComparable#CompareTo(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="version" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="version">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Version.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の値を変換<see cref="T:System.Version" />を等価のオブジェクト<see cref="T:System.String" />表現します。</summary>
+        <returns><see cref="T:System.String" />値メジャー、マイナー、ビルド、および現在のリビジョン コンポーネントの表現<see cref="T:System.Version" />オブジェクトを次の形式で示されています。 各構成要素はピリオド文字 (.) で区切ります。 角かっこ ("[" および "]") は、定義されていない場合は戻り値に現れない構成要素を示します。  
+  
+ major.minor[.build[.revision]]  
+  
+ たとえば、作成する場合、<see cref="T:System.Version" />オブジェクト コンス トラクターを使用して<c>Version(1,1)</c>、返される文字列は「1.1」です。 作成する場合、<see cref="T:System.Version" />オブジェクト コンス トラクターを使用して<c>Version(1,3,4,2)</c>、返される文字列は「1.3.4.2」です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString (int fieldCount);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ToString(int32 fieldCount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Version.ToString(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fieldCount" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="fieldCount">返される構成要素の数。 <c>FieldCount</c>範囲は 0 ~ 4 です。</param>
+        <summary>現在の値を変換<see cref="T:System.Version" />を等価のオブジェクト<see cref="T:System.String" />表現します。 指定された数は、返される構成要素の数を示します。</summary>
+        <returns><see cref="T:System.String" />値メジャー、マイナー、ビルド、および現在のリビジョン コンポーネントの表現<see cref="T:System.Version" />オブジェクト、ピリオドで区切って ('. ')。 <paramref name="fieldCount" />パラメーターは、コンポーネントの数が返されるかを決定します。  
+  
+ <list type="table"><listheader><term>fieldCount  
+  
+ </term><description>戻り値  
+  
+ </description></listheader><item><term> 0  
+  
+ </term><description>空の文字列 ("") です。  
+  
+ </description></item><item><term> 1  
+  
+ </term><description>主要です  
+  
+ </description></item><item><term> 2  
+  
+ </term><description>major.minor  
+  
+ </description></item><item><term> 3  
+  
+ </term><description>major.minor.build  
+  
+ </description></item><item><term> 4  
+  
+ </term><description>major.minor.build.revision  
+  
+ </description></item></list>  
+  
+ たとえば、作成する場合<see cref="T:System.Version" />オブジェクト コンス トラクターを使用して<c>Version(1,3,5)</c>、 <c>ToString(2)</c> 「1.3」を返しますと<c>ToString(4)</c>例外をスローします。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="fieldCount" />0 未満または 4 よりも詳細です。  
+  
+ または  
+  
+ <paramref name="fieldCount" />現在定義されているコンポーネントの数を超えています<see cref="T:System.Version" />オブジェクト。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryParse">
+      <MemberSignature Language="C#" Value="public static bool TryParse (string input, out Version result);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryParse(string input, [out] class System.Version&amp; result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Version.TryParse(System.String,System.Version@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="input" Type="System.String" />
+        <Parameter Name="result" Type="System.Version&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="input">変換するバージョン番号を含んだ文字列。</param>
+        <param name="result">このメソッドが戻るとき、<see cref="T:System.Version" />数に含まれているのと同じ<c>入力</c>、変換が成功したか、<see cref="T:System.Version" />のオブジェクトのメジャーおよびマイナー バージョン番号は、変換に失敗した場合に 0 がします。 場合<c>入力</c>は<see langword="null" />または<see cref="F:System.String.Empty" />、<c>結果</c>は<see langword="null" />メソッドが返されます。</param>
+        <summary>該当するショートカットは、バージョン番号の文字列形式に変換しようとしています。<see cref="T:System.Version" />オブジェクト、および変換が成功したかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> パラメーターが正常に変換された場合は <paramref name="input" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Version.TryParse%2A>メソッドがに似ていますが、<xref:System.Version.Parse%2A>メソッド、点を除いて、変換が失敗した場合に、it が例外をスローしません。 代わりに、返します`false`場合`input`が null で、2 つより少ない、または複数を持つ 4 つのコンポーネントよりに整数ではない 1 つ以上のコンポーネントがありますが、0 より小さいを少なくとも 1 つのコンポーネントであるかよりも大きい値である、少なくとも 1 つのコンポーネントを<xref:System.Int32.MaxValue?displayProperty=nameWithType>です。  
+  
+ 解析操作が成功するため、`input`パラメーターは、次の形式である必要があります。  
+  
+```  
+  
+major.minor[.build[.revision]]  
+```  
+  
+ ここで*メジャー*、*マイナー*、*ビルド*、および*リビジョン*の文字列形式のバージョンの番号の 4 つのコンポーネントは、: メジャー バージョン番号、マイナー バージョン番号、ビルド番号、およびリビジョン番号。 省略可能なコンポーネントは、角かっこで囲んで表示されます ([および])。 コンポーネントの順序で表示する必要があり、ピリオドで区切られた必要があります。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Version.TryParse%2A>バージョン情報を格納した文字列の数を解析します。  
+  
+ [!code-csharp[System.Version.TryParse#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.version.tryparse/cs/tryparse1.cs#1)]
+ [!code-vb[System.Version.TryParse#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.version.tryparse/vb/tryparse1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,389 @@
+<Type Name="Expander" FullName="System.Windows.Controls.Expander">
+  <TypeSignature Language="C#" Value="public class Expander : System.Windows.Controls.HeaderedContentControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi Expander extends System.Windows.Controls.HeaderedContentControl" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.Expander" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.HeaderedContentControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None, Readability=System.Windows.Readability.Unreadable)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コンテンツを表示する折りたたみ可能なウィンドウのヘッダーを表示するコントロールを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Expander><xref:System.Windows.Controls.HeaderedContentControl>、つまりその<xref:System.Windows.Controls.ContentControl.Content%2A>と<xref:System.Windows.Controls.HeaderedContentControl.Header%2A>(文字列、画像、またはパネル) などの任意の型のプロパティを指定できます。  詳細については、<xref:System.Windows.Controls.HeaderedContentControl> クラスを参照してください。  
+  
+ 次の図は、<xref:System.Windows.Controls.Expander>コントロール。  
+  
+ ![Expander の例](~/add/media/expanderexample.JPG "Expander の例")  
+  
+ 内容をラップすることができる場合、展開されたウィンドウの内容が大きすぎるため、ウィンドウ、<xref:System.Windows.Controls.Expander>で、<xref:System.Windows.Controls.ScrollViewer>スクロール可能なコンテンツを提供するコントロール。 スクロール機能が自動的に指定されていませんが、<xref:System.Windows.Controls.Expander>コントロール。  
+  
+ <xref:System.Windows.Controls.Expander>に正常に機能を指定しないで、<xref:System.Windows.FrameworkElement.Height%2A>上、<xref:System.Windows.Controls.Expander>タイミングを制御、<xref:System.Windows.Controls.Expander.ExpandDirection%2A>プロパティに設定されている<xref:System.Windows.Controls.ExpandDirection.Down>または<xref:System.Windows.Controls.ExpandDirection.Up>です。 同様に、指定しない、<xref:System.Windows.FrameworkElement.Width%2A>上、<xref:System.Windows.Controls.Expander>タイミングを制御、<xref:System.Windows.Controls.Expander.ExpandDirection%2A>プロパティに設定されている<xref:System.Windows.Controls.ExpandDirection.Left>または<xref:System.Windows.Controls.ExpandDirection.Right>です。 サイズを設定すると、<xref:System.Windows.Controls.Expander>ことは、展開されたコンテンツが表示されたら、枠線がサイズ パラメーターで定義されている領域が表示され、方向を制御します。 この領域は、ウィンドウが折りたたまれている場合でも表示されます。 展開されたウィンドウのサイズを設定するには、コンテンツのサイズを設定、<xref:System.Windows.Controls.Expander>コントロールまたは<xref:System.Windows.Controls.ScrollViewer>コンテンツを囲みます。  
+  
+ ときに、<xref:System.Windows.Controls.Expander>コントロールは、最後の要素、 <xref:System.Windows.Controls.DockPanel>、<xref:System.Windows.Controls.Expander>の残りの領域に合わせてサイズが、<xref:System.Windows.Controls.DockPanel>です。 これを防ぐためには、次のように設定します。、<xref:System.Windows.Controls.DockPanel.LastChildFill%2A>プロパティを、<xref:System.Windows.Controls.DockPanel>に`false`、ことを確認または、<xref:System.Windows.Controls.Expander>で最後の要素ではなく、<xref:System.Windows.Controls.DockPanel>です。  
+  
+ 配置<xref:System.Windows.Controls.Expander>を設定してコンテンツを定義することができます、<xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A>と<xref:System.Windows.Controls.Control.VerticalContentAlignment%2A>コントロールのプロパティです。 これらのプロパティは、ヘッダーおよび展開されたウィンドウの内容に適用されます。  
+  
+## <a name="customizing-the-expander-control"></a>Expander コントロールのカスタマイズ  
+ 設定を適用する、同じプロパティを複数<xref:System.Windows.Controls.Expander>、コントロールを使用して、<xref:System.Windows.FrameworkElement.Style%2A>プロパティです。 既定値を変更することができます<xref:System.Windows.Controls.ControlTemplate>コントロールの外観を一意にします。 作成の詳細については、<xref:System.Windows.Controls.ControlTemplate>を参照してください[、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  部分とに固有の状態を表示する、<xref:System.Windows.Controls.Expander>を参照してください[Expander スタイルとテンプレート](~/docs/framework/wpf/controls/expander-styles-and-templates.md)です。  
+  
+ コントロールの既定のスタイルでは、このコントロールの依存関係プロパティを設定する場合があります。  プロパティが既定のスタイルが設定されている場合は、アプリケーションでコントロールが表示されたら既定値から、プロパティが変更可能性があります。 既定のスタイルは、いるデスクトップ テーマによっては、アプリケーションが実行されている場合は使用が決定されます。  詳細については、次を参照してください。 [WPF テーマの既定の](http://go.microsoft.com/fwlink/?LinkID=158252)します。  
+  
+> [!NOTE]
+>  Visual プロパティの設定はのみに効果が場合、このプロパティは、両方に存在<xref:System.Windows.Controls.Expander>コントロールの既定のテンプレートとを使用して設定をします。 「を変更する、Visual 構造の制御」 セクションで visual のプロパティの一覧を検索できる[、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、単純なを作成する方法を示します<xref:System.Windows.Controls.Expander>コントロール。  
+  
+ [!code-xaml[ExpanderExample#2](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpanderExample/CSharp/Page1.xaml#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Expander ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Expander.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Expander" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Collapsed">
+      <MemberSignature Language="C#" Value="public event System.Windows.RoutedEventHandler Collapsed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.RoutedEventHandler Collapsed" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Controls.Expander.Collapsed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときのコンテンツ ウィンドウ、<see cref="T:System.Windows.Controls.Expander" />閉じますを制御およびのみ、<see cref="P:System.Windows.Controls.HeaderedContentControl.Header" />が表示されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Expander.Collapsed>イベントが発生したときに、<xref:System.Windows.Controls.Expander.IsExpanded%2A>からプロパティが変更された`true`に`false`です。  
+  
+<a name="routedEventInfo_Collapsed"></a>   
+## <a name="routed-event-information"></a>ルーティングされたイベント情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Expander.CollapsedEvent>|  
+|ルーティング方法|バブル|  
+|Delegate|<xref:System.Windows.RoutedEventHandler>|  
+  
+   
+  
+## Examples  
+ 次の例は、対応するイベント ハンドラーを指定する方法を示します、<xref:System.Windows.Controls.Expander.Collapsed>イベント。  
+  
+ [!code-csharp[ExpanderSnips#Collapsed](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpanderSnips/CSharp/Window1.xaml.cs#collapsed)]
+ [!code-vb[ExpanderSnips#Collapsed](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ExpanderSnips/visualbasic/window1.xaml.vb#collapsed)]
+ [!code-xaml[ExpanderSnips#Collapsed](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpanderSnips/CSharp/Window1.xaml#collapsed)]  
+  
+ 次の例では、イベント ハンドラーを定義する方法を示します。  
+  
+ [!code-csharp[ExpanderSnips#CollapsedHandler](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpanderSnips/CSharp/Window1.xaml.cs#collapsedhandler)]
+ [!code-vb[ExpanderSnips#CollapsedHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ExpanderSnips/visualbasic/window1.xaml.vb#collapsedhandler)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CollapsedEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent CollapsedEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent CollapsedEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Expander.CollapsedEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Controls.Expander.Collapsed" /> ルーティング イベントを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpandDirection">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.ExpandDirection ExpandDirection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.ExpandDirection ExpandDirection" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Expander.ExpandDirection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.ExpandDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを方向を設定、<see cref="T:System.Windows.Controls.Expander" />コンテンツ ウィンドウが開きます。</summary>
+        <value>1 つ、<see cref="T:System.Windows.Controls.ExpandDirection" />どちらの方向を定義する値、[コンテンツ] ウィンドウが開きます。 既定値は、<see cref="F:System.Windows.Controls.ExpandDirection.Down" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_ExpandDirection"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Expander.ExpandDirectionProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.BindsTwoWayByDefault%2A>|  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Controls.Expander.ExpandDirection%2A> プロパティを設定する方法を次の例に示します。  
+  
+ [!code-csharp[ExpanderSnips#ExpandDirection](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpanderSnips/CSharp/Window1.xaml.cs#expanddirection)]
+ [!code-vb[ExpanderSnips#ExpandDirection](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ExpanderSnips/visualbasic/window1.xaml.vb#expanddirection)]
+ [!code-xaml[ExpanderSnips#ExpandDirection](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpanderSnips/CSharp/Window1.xaml#expanddirection)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpandDirectionProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ExpandDirectionProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ExpandDirectionProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Expander.ExpandDirectionProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Expander.ExpandDirection" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Expanded">
+      <MemberSignature Language="C#" Value="public event System.Windows.RoutedEventHandler Expanded;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.RoutedEventHandler Expanded" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Controls.Expander.Expanded" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときのコンテンツ ウィンドウ、<see cref="T:System.Windows.Controls.Expander" />が開き、ヘッダーとコンテンツの表示を制御します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Expander.Expanded>イベントが発生したときに、<xref:System.Windows.Controls.Expander.IsExpanded%2A>からプロパティが変更された`false`に`true`です。  
+  
+<a name="routedEventInfo_Expanded"></a>   
+## <a name="routed-event-information"></a>ルーティングされたイベント情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Expander.ExpandedEvent>|  
+|ルーティング方法|バブル|  
+|Delegate|<xref:System.Windows.RoutedEventHandler>|  
+  
+   
+  
+## Examples  
+ 次の例は、対応するイベント ハンドラーを指定する方法を示します、<xref:System.Windows.Controls.Expander.Expanded>イベント。  
+  
+ [!code-csharp[ExpanderSnips#Expanded](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpanderSnips/CSharp/Window1.xaml.cs#expanded)]
+ [!code-vb[ExpanderSnips#Expanded](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ExpanderSnips/visualbasic/window1.xaml.vb#expanded)]
+ [!code-xaml[ExpanderSnips#Expanded](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpanderSnips/CSharp/Window1.xaml#expanded)]  
+  
+ 次の例では、イベント ハンドラーを定義する方法を示します。  
+  
+ [!code-csharp[ExpanderSnips#ExpandedHandler](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpanderSnips/CSharp/Window1.xaml.cs#expandedhandler)]
+ [!code-vb[ExpanderSnips#ExpandedHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ExpanderSnips/visualbasic/window1.xaml.vb#expandedhandler)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpandedEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent ExpandedEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent ExpandedEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Expander.ExpandedEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Controls.Expander.Expanded" /> ルーティング イベントを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsExpanded">
+      <MemberSignature Language="C#" Value="public bool IsExpanded { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsExpanded" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Expander.IsExpanded" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するかどうか、<see cref="T:System.Windows.Controls.Expander" />コンテンツ ウィンドウが表示されます。</summary>
+        <value>
+          <see langword="true" />コンテンツ ウィンドウが展開されている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_IsExpanded"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Expander.IsExpandedProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.BindsTwoWayByDefault%2A>, <xref:System.Windows.FrameworkPropertyMetadata.Journal%2A>|  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Controls.Expander.IsExpanded%2A> プロパティを設定する方法を次の例に示します。  
+  
+ [!code-csharp[ExpanderSnips#IsExpanded](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpanderSnips/CSharp/Window1.xaml.cs#isexpanded)]
+ [!code-vb[ExpanderSnips#IsExpanded](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ExpanderSnips/visualbasic/window1.xaml.vb#isexpanded)]
+ [!code-xaml[ExpanderSnips#IsExpanded](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpanderSnips/CSharp/Window1.xaml#isexpanded)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsExpandedProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsExpandedProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsExpandedProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Expander.IsExpandedProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Expander.IsExpanded" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCollapsed">
+      <MemberSignature Language="C#" Value="protected virtual void OnCollapsed ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnCollapsed() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Expander.OnCollapsed" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>発生させます、<see cref="E:System.Windows.Controls.Expander.Collapsed" />イベント時に、<see cref="P:System.Windows.Controls.Expander.IsExpanded" />からプロパティが変更された<see langword="true" />に<see langword="false" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreateAutomationPeer">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Expander.OnCreateAutomationPeer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationPeer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>実装を作成<see cref="T:System.Windows.Automation.Peers.AutomationPeer" />の<see cref="T:System.Windows.Controls.Expander" />コントロール。</summary>
+        <returns>新しい<see cref="T:System.Windows.Automation.Peers.ExpanderAutomationPeer" />この<see cref="T:System.Windows.Controls.Expander" />コントロール。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnExpanded">
+      <MemberSignature Language="C#" Value="protected virtual void OnExpanded ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnExpanded() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Expander.OnExpanded" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>発生させます、<see cref="E:System.Windows.Controls.Expander.Expanded" />イベント時に、<see cref="P:System.Windows.Controls.Expander.IsExpanded" />からプロパティが変更された<see langword="false" />に<see langword="true" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

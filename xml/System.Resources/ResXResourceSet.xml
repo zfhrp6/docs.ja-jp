@@ -1,0 +1,134 @@
+<Type Name="ResXResourceSet" FullName="System.Resources.ResXResourceSet">
+  <TypeSignature Language="C#" Value="public class ResXResourceSet : System.Resources.ResourceSet" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ResXResourceSet extends System.Resources.ResourceSet" />
+  <TypeSignature Language="DocId" Value="T:System.Resources.ResXResourceSet" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Resources.ResourceSet</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XML リソース (.resx) ファイル内のすべてのリソースを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Resources.ResXResourceSet>クラスを列挙、 <xref:System.Resources.IResourceReader>、すべての名前と値を読み込んで、ハッシュ テーブルに格納します。 内のリソースを列挙することができますし、<xref:System.Resources.ResXResourceSet>オブジェクト、または名前で、個々 のリソースを取得します。  
+  
+> [!NOTE]
+>  このクラスに含まれる、<xref:System.Security.Permissions.SecurityAction?displayProperty=nameWithType>と<xref:System.Security.Permissions.SecurityAction?displayProperty=nameWithType>クラス レベルのすべてのメンバーに適用します。 A<xref:System.Security.SecurityException>直前の呼び出し元または派生クラスに完全信頼アクセス許可があるない場合に例外がスローされます。  
+  
+ A<xref:System.Resources.ResXResourceSet>オブジェクトがメモリに .resx ファイル内のすべてのリソースを読み込む便利な手段を提供します。 使用することができます、<xref:System.Resources.ResourceSet.GetObject%2A>に .resx ファイルが読み込まれたときに、特定のリソースを取得するメソッド、<xref:System.Resources.ResXResourceSet>インスタンス。  
+  
+   
+  
+## Examples  
+ 次の例のインスタンスを作成、<xref:System.Resources.ResXResourceSet>オブジェクトし、そのリソースを列挙し、名前で、個々 のリソースを取得する方法を示しています。 これを列挙する各リソースの例を使用して、<xref:System.Collections.IDictionaryEnumerator.Key%2A?displayProperty=nameWithType>プロパティへの呼び出しで、`GetString`または`GetObject`リソースの値が文字列またはオブジェクトがあるかによって、メソッド。  
+  
+ [!code-csharp[System.Resources.ResXResourceSet.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.resources.resxresourceset.class/cs/example1.cs#1)]
+ [!code-vb[System.Resources.ResXResourceSet.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.resources.resxresourceset.class/vb/example1.vb#1)]  
+  
+ 呼び出しの例、`CreateResXFile`メソッドを必要な XML リソース ファイルを作成します。 例が実行されているディレクトリに Logo.bmp をという名前のビットマップ ファイルが必要です。  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このクラスは、部分的に信頼されたコードでは使用できません。</permission>
+    <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">直前の呼び出し元に対する完全な信頼。 部分信頼コードでこのクラスは継承できません。</permission>
+    <block subset="none" type="overrides">
+      <para>派生クラスの<see cref="T:System.Resources.ResXResourceSet" />独自リソース リーダーを使用して、ライターをオーバーライドする必要があります、<see cref="M:System.Resources.ResXResourceSet.GetDefaultReader" />と<see cref="M:System.Resources.ResXResourceSet.GetDefaultWriter" />を解釈するため、適切な機能を提供するメソッド、<see cref="T:System.Resources.ResXResourceSet" />インスタンス。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ResXResourceSet (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResXResourceSet.#ctor(System.IO.Stream)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream">読み取るリソースの <see cref="T:System.IO.Stream" />。 ストリームは、既存のリソース ファイルを参照している必要があります。</param>
+        <summary><see cref="T:System.Resources.ResXResourceSet" /> クラスの新しいインスタンスを、指定したストリームからリソースを読み取るシステムの既定の <see cref="T:System.Resources.ResXResourceReader" /> を使用して初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+        <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されたコードでは継承できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ResXResourceSet (string fileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResXResourceSet.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">リソースの読み取り元のファイルの名前。</param>
+        <summary><see cref="T:System.Resources.ResXResourceSet" /> クラスの新しいインスタンスを、指定したファイルを開いてリソースを読み取るシステムの既定の <see cref="T:System.Resources.ResXResourceReader" /> を使用して初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+        <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されたコードでは継承できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDefaultReader">
+      <MemberSignature Language="C#" Value="public override Type GetDefaultReader ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Type GetDefaultReader() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResXResourceSet.GetDefaultReader" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この種類の <see cref="T:System.Resources.ResXResourceSet" /> で優先的に使用するリソース リーダー クラスを返します。</summary>
+        <returns>この種類の <see cref="T:System.Resources.ResXResourceSet" /> で優先的に使用するリソース リーダーの <see cref="T:System.Type" />。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+        <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されたコードでは継承できません。</permission>
+        <block subset="none" type="overrides">
+          <para>派生クラスの<see cref="T:System.Resources.ResXResourceSet" />独自リソース リーダーを使用してオーバーライドする必要があります<see cref="M:System.Resources.ResXResourceSet.GetDefaultReader" />と<see cref="M:System.Resources.ResXResourceSet.GetDefaultWriter" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDefaultWriter">
+      <MemberSignature Language="C#" Value="public override Type GetDefaultWriter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Type GetDefaultWriter() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResXResourceSet.GetDefaultWriter" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この種類の <see cref="T:System.Resources.ResXResourceSet" /> で優先的に使用するリソース ライター クラスを返します。</summary>
+        <returns>この種類の <see cref="T:System.Type" /> で優先的に使用するリソース ライターの <see cref="T:System.Resources.ResXResourceSet" />。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+        <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されたコードでは継承できません。</permission>
+        <block subset="none" type="overrides">
+          <para>派生クラスの<see cref="T:System.Resources.ResXResourceSet" />独自リソース リーダーを使用してオーバーライドする必要があります<see cref="M:System.Resources.ResXResourceSet.GetDefaultReader" />と<see cref="M:System.Resources.ResXResourceSet.GetDefaultWriter" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

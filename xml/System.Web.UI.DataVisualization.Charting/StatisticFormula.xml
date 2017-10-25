@@ -1,0 +1,811 @@
+<Type Name="StatisticFormula" FullName="System.Web.UI.DataVisualization.Charting.StatisticFormula">
+  <TypeSignature Language="C#" Value="public class StatisticFormula" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StatisticFormula extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.DataVisualization.Charting.StatisticFormula" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DataVisualization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>統計数式を計算します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 数式は、次のカテゴリに疎分類できます逆のディストリビューションを含む、すべての分布。テストです。基本的な統計式。 各グループには、その入力値と戻り値に関する一般的な特性があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Anova">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.AnovaResult Anova (double probability, string inputSeriesNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.UI.DataVisualization.Charting.AnovaResult Anova(float64 probability, string inputSeriesNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.StatisticFormula.Anova(System.Double,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.AnovaResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="probability" Type="System.Double" />
+        <Parameter Name="inputSeriesNames" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="probability">アルファ値です。 許容される入力範囲は 0 ~ 1 の間です。</param>
+        <param name="inputSeriesNames">2 つ以上の入力系列の名前です。 各系列は、メソッドの呼び出し時に系列のコレクションに存在し、同じ数のデータ ポイントがある必要があります。</param>
+        <summary>Anova 式は、データの 2 つ以上のグループの平均値の統計的に有意な相違点の有無を判断します。</summary>
+        <returns><see cref="T:System.Web.UI.DataVisualization.Charting.AnovaResult" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードでは、この数式を使用する方法を示します。  
+  
+```vb  
+Dim result As AnovaResult = Chart1.DataManipulator.Statistics.Anova(.05, "Series1,Series2,Series3")  
+```  
+  
+```csharp  
+AnovaResult result = Chart1.DataManipulator.Statistics.Anova(.05, "Series1,Series2,Series3");  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BetaFunction">
+      <MemberSignature Language="C#" Value="public double BetaFunction (double m, double n);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 BetaFunction(float64 m, float64 n) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.StatisticFormula.BetaFunction(System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="m" Type="System.Double" />
+        <Parameter Name="n" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="m">ベータ関数の最初の値。</param>
+        <param name="n">ベータ関数の 2 番目の値。</param>
+        <summary>ベータ関数は、ベータ関数の値を計算します。</summary>
+        <returns>ベータ版の値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードでは、この数式を使用する方法を示します。  
+  
+```vb  
+Dim result As Double = Chart1.DataManipulator.Statistics.BetaFunction(2.3, 6.2)  
+```  
+  
+```csharp  
+double result = Chart1.DataManipulator.Statistics.BetaFunction(2.3, 6.2);  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Correlation">
+      <MemberSignature Language="C#" Value="public double Correlation (string firstInputSeriesName, string secondInputSeriesName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 Correlation(string firstInputSeriesName, string secondInputSeriesName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.StatisticFormula.Correlation(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="firstInputSeriesName" Type="System.String" />
+        <Parameter Name="secondInputSeriesName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="firstInputSeriesName">名前、<see cref="P:System.Web.UI.DataVisualization.Charting.Chart.Series" />最初のグループのデータを格納するオブジェクト。</param>
+        <param name="secondInputSeriesName">名前、 <see cref="P:System.Web.UI.DataVisualization.Charting.Chart.Series" /> 2 番目のグループのデータを格納するオブジェクト。</param>
+        <summary>相関の式は、次の 2 つの確率変数の間に存在する関係の強さを示します。</summary>
+        <returns>データの 2 つのグループ間の相関関係値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドは、入力系列に同じ数のデータ ポイントがない場合に例外をスローします。  
+  
+   
+  
+## Examples  
+ 次のコードでは、この数式を使用する方法を示します。  
+  
+```vb  
+Dim result As Double = Chart1.DataManipulator.Statistics.Correlation("Series1", "Series2")  
+```  
+  
+```csharp  
+double result = Chart1.DataManipulator.Statistics.Correlation("Series1", "Series2");  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Covariance">
+      <MemberSignature Language="C#" Value="public double Covariance (string firstInputSeriesName, string secondInputSeriesName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 Covariance(string firstInputSeriesName, string secondInputSeriesName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.StatisticFormula.Covariance(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="firstInputSeriesName" Type="System.String" />
+        <Parameter Name="secondInputSeriesName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="firstInputSeriesName">名前、<see cref="P:System.Web.UI.DataVisualization.Charting.Chart.Series" />最初のグループのデータを格納するオブジェクト。</param>
+        <param name="secondInputSeriesName">名前、 <see cref="P:System.Web.UI.DataVisualization.Charting.Chart.Series" /> 2 番目のグループのデータを格納するオブジェクト。</param>
+        <summary>共変性数式では、2 つの確率変数の間存在する依存関係の度合いを測定します。</summary>
+        <returns>データの 2 つのグループ間の共変性値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドは、入力系列に同じ数のデータ ポイントがない場合に例外をスローします。  
+  
+   
+  
+## Examples  
+ 次のコードでは、この数式を使用する方法を示します。  
+  
+```vb  
+Dim result As double = Chart1.DataManipulator.Statistics.Covariance("Series1", "Series2")  
+```  
+  
+```csharp  
+double result = Chart1.DataManipulator.Statistics.Covariance("Series1", "Series2");  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FDistribution">
+      <MemberSignature Language="C#" Value="public double FDistribution (double value, int firstDegreeOfFreedom, int secondDegreeOfFreedom);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 FDistribution(float64 value, int32 firstDegreeOfFreedom, int32 secondDegreeOfFreedom) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.StatisticFormula.FDistribution(System.Double,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+        <Parameter Name="firstDegreeOfFreedom" Type="System.Int32" />
+        <Parameter Name="secondDegreeOfFreedom" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="value">分布の対象となる F 値。</param>
+        <param name="firstDegreeOfFreedom">最初の自由度。</param>
+        <param name="secondDegreeOfFreedom">2 番目の自由度。</param>
+        <summary>F 分布の式は、フィッシャー分布の確率を計算します。</summary>
+        <returns>F 分布の確率です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードでは、この数式を使用する方法を示します。  
+  
+```vb  
+Dim result As double = Chart1.DataManipulator.Statistics.FDistribution(6.31, 15, 7)  
+```  
+  
+```csharp  
+double result = Chart1.DataManipulator.Statistics.FDistribution(6.31, 15, 7);  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FTest">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.FTestResult FTest (double probability, string firstInputSeriesName, string secondInputSeriesName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.UI.DataVisualization.Charting.FTestResult FTest(float64 probability, string firstInputSeriesName, string secondInputSeriesName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.StatisticFormula.FTest(System.Double,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.FTestResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="probability" Type="System.Double" />
+        <Parameter Name="firstInputSeriesName" Type="System.String" />
+        <Parameter Name="secondInputSeriesName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="probability">アルファ値。 許容範囲は 0 ~ 1 の間です。</param>
+        <param name="firstInputSeriesName">名前、<see cref="P:System.Web.UI.DataVisualization.Charting.Chart.Series" />最初のグループのデータを格納するオブジェクト。</param>
+        <param name="secondInputSeriesName">名前、 <see cref="P:System.Web.UI.DataVisualization.Charting.Chart.Series" /> 2 番目のグループのデータを格納するオブジェクト。</param>
+        <summary>F テスト数式には、2-サンプル F テストが実行されるフィッシャー分布を使用して、サンプルに差異があるかどうかに表示するために使用します。</summary>
+        <returns><see cref="T:System.Web.UI.DataVisualization.Charting.FTestResult" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドは、入力系列に同じ数のデータ ポイントがない場合に例外をスローします。  
+  
+   
+  
+## Examples  
+ 次のコードでは、この数式を使用する方法を示します。  
+  
+```vb  
+Dim result As FTestResult = Chart1.DataManipulator.Statistics.FTest(0.05, "Series1", "Series2")  
+```  
+  
+```csharp  
+FTestResult result = Chart1.DataManipulator.Statistics.FTest(0.05, "Series1", "Series2");  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GammaFunction">
+      <MemberSignature Language="C#" Value="public double GammaFunction (double value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 GammaFunction(float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.StatisticFormula.GammaFunction(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="value">値のガンマ値が必要です。</param>
+        <summary>ガンマ関数では、ガンマ値を計算します。</summary>
+        <returns>ガンマ値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードでは、この数式を使用する方法を示します。  
+  
+```vb  
+Dim result As Double = Chart1.DataManipulator.Statistics.GammaFunction(6.2)  
+```  
+  
+```csharp  
+double result = Chart1.DataManipulator.Statistics.GammaFunction(6.2);  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InverseFDistribution">
+      <MemberSignature Language="C#" Value="public double InverseFDistribution (double probability, int firstDegreeOfFreedom, int secondDegreeOfFreedom);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 InverseFDistribution(float64 probability, int32 firstDegreeOfFreedom, int32 secondDegreeOfFreedom) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.StatisticFormula.InverseFDistribution(System.Double,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="probability" Type="System.Double" />
+        <Parameter Name="firstDegreeOfFreedom" Type="System.Int32" />
+        <Parameter Name="secondDegreeOfFreedom" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="probability">F 分布の確率です。 許容範囲は 0 ~ 1 の間です。</param>
+        <param name="firstDegreeOfFreedom">最初の自由度。</param>
+        <param name="secondDegreeOfFreedom">2 番目の自由度。</param>
+        <summary>逆 F 分布式は、F 累積分布の逆数を計算します。</summary>
+        <returns>F F 分布の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードでは、この数式を使用する方法を示します。  
+  
+```vb  
+Dim result As Double = Chart1.DataManipulator.Statistics.InverseFDistribution(.05, 15, 30)  
+```  
+  
+```csharp  
+double result = Chart1.DataManipulator.Statistics.InverseFDistribution(.05, 15, 30);  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InverseNormalDistribution">
+      <MemberSignature Language="C#" Value="public double InverseNormalDistribution (double probability);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 InverseNormalDistribution(float64 probability) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.StatisticFormula.InverseNormalDistribution(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="probability" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="probability">アルファ値です。 許容される入力範囲は 0 ~ 1 の間です。</param>
+        <summary>逆正規分布の式は、標準の正規の累積分布の逆数を計算します。 この分布は、平均が 0 と 1 つの標準偏差です。</summary>
+        <returns>正規分布関数の逆です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードでは、この数式を使用する方法を示します。  
+  
+```vb  
+Dim result As double = Chart1.DataManipulator.Statistics.InverseNormalDistribution(.05)  
+```  
+  
+```csharp  
+double result = Chart1.DataManipulator.Statistics.InverseNormalDistribution(.05);  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InverseTDistribution">
+      <MemberSignature Language="C#" Value="public double InverseTDistribution (double probability, int degreeOfFreedom);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 InverseTDistribution(float64 probability, int32 degreeOfFreedom) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.StatisticFormula.InverseTDistribution(System.Double,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="probability" Type="System.Double" />
+        <Parameter Name="degreeOfFreedom" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="probability">F 分布の確率です。 許容範囲は 0 ~ 1 の間です。</param>
+        <param name="degreeOfFreedom">自由度。</param>
+        <summary>逆*t*-配布式を計算、 *t*-値のスチューデントの*t*-確率と自由度の関数として配布します。</summary>
+        <returns>関数の逆、 *t*-配布します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードでは、この数式を使用する方法を示します。  
+  
+```vb  
+double result = Chart1.DataManipulator.Statistics.InverseTDistribution(.05, 15)  
+```  
+  
+```csharp  
+double result = Chart1.DataManipulator.Statistics.InverseTDistribution(.05, 15);  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Mean">
+      <MemberSignature Language="C#" Value="public double Mean (string inputSeriesName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 Mean(string inputSeriesName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.StatisticFormula.Mean(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputSeriesName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="inputSeriesName">名前、<see cref="P:System.Web.UI.DataVisualization.Charting.Chart.Series" />平均値が必要なデータを格納するオブジェクト。</param>
+        <summary>平均の式は、平均値、またはデータ系列に格納されたデータの平均を計算します。</summary>
+        <returns>指定された系列内のすべてのデータ ポイントの平均値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 入力系列をという名前が存在しない場合に、<xref:System.Web.UI.DataVisualization.Charting.SeriesCollection>メソッドの呼び出し時、例外がスローされます。  
+  
+   
+  
+## Examples  
+ 次のコードでは、この数式を使用する方法を示します。  
+  
+```vb  
+Dim result As Double = Chart1.DataManipulator.Statistics.Mean("Series1")  
+```  
+  
+```csharp  
+double result = Chart1.DataManipulator.Statistics.Mean("Series1");  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Median">
+      <MemberSignature Language="C#" Value="public double Median (string inputSeriesName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 Median(string inputSeriesName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.StatisticFormula.Median(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputSeriesName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="inputSeriesName">名前、<see cref="P:System.Web.UI.DataVisualization.Charting.Chart.Series" />中央値が必要なデータを格納するオブジェクト。</param>
+        <summary>中央値の式は、データ系列に格納されたデータの中央値を計算します。</summary>
+        <returns>指定された系列内のすべてのデータ ポイントの中央値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された入力系列が存在しない場合、<xref:System.Web.UI.DataVisualization.Charting.SeriesCollection>メソッドの呼び出し時、例外がスローされます。  
+  
+   
+  
+## Examples  
+ 次のコードでは、この数式を使用する方法を示します。  
+  
+```vb  
+Dim result As Double = Chart1.DataManipulator.Statistics.Median("Series1")  
+```  
+  
+```csharp  
+double result = Chart1.DataManipulator.Statistics.Median("Series1");  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NormalDistribution">
+      <MemberSignature Language="C#" Value="public double NormalDistribution (double zValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 NormalDistribution(float64 zValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.StatisticFormula.NormalDistribution(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="zValue" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="zValue">値が正規分布が必要です。</param>
+        <summary>正規分布の式では、標準の正規の累積分布の値を計算します。 この分布は、平均が 0 と 1 の標準偏差です。</summary>
+        <returns>標準の正規の累積分布の値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードでは、この数式を使用する方法を示します。  
+  
+```vb  
+Dim result As Double = Chart1.DataManipulator.Statistics.NormalDistribution(1.96)  
+```  
+  
+```csharp  
+double result = Chart1.DataManipulator.Statistics.NormalDistribution(1.96);  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TDistribution">
+      <MemberSignature Language="C#" Value="public double TDistribution (double value, int degreeOfFreedom, bool oneTail);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 TDistribution(float64 value, int32 degreeOfFreedom, bool oneTail) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.StatisticFormula.TDistribution(System.Double,System.Int32,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+        <Parameter Name="degreeOfFreedom" Type="System.Int32" />
+        <Parameter Name="oneTail" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="value">
+          <c>t</c>-分布の対象となる値。</param>
+        <param name="degreeOfFreedom">自由度</param>
+        <param name="oneTail">場合設定<see langword="true" />、片側分布を使用します。 それ以外の場合、両側分布が使用されます。</param>
+        <summary>*T*-分布式は、スチューデントの確率を計算*t*-配布します。</summary>
+        <returns>*t*-分布関数の確率。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードでは、この数式を使用する方法を示します。  
+  
+```vb  
+Dim result As Double = Chart1.DataManipulator.Statistics.TDistribution(1.96, 30, true)  
+```  
+  
+```csharp  
+double result = Chart1.DataManipulator.Statistics.TDistribution(1.96, 30, true);  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TTestEqualVariances">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.TTestResult TTestEqualVariances (double hypothesizedMeanDifference, double probability, string firstInputSeriesName, string secondInputSeriesName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.UI.DataVisualization.Charting.TTestResult TTestEqualVariances(float64 hypothesizedMeanDifference, float64 probability, string firstInputSeriesName, string secondInputSeriesName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.StatisticFormula.TTestEqualVariances(System.Double,System.Double,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.TTestResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hypothesizedMeanDifference" Type="System.Double" />
+        <Parameter Name="probability" Type="System.Double" />
+        <Parameter Name="firstInputSeriesName" Type="System.String" />
+        <Parameter Name="secondInputSeriesName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="hypothesizedMeanDifference">データ グループの平均の仮説の差です。</param>
+        <param name="probability">アルファ値です。 許容範囲は 0 ~ 1 の間です。</param>
+        <param name="firstInputSeriesName">名前、<see cref="P:System.Web.UI.DataVisualization.Charting.Chart.Series" />最初のグループのデータを格納するオブジェクト。</param>
+        <param name="secondInputSeriesName">名前、 <see cref="P:System.Web.UI.DataVisualization.Charting.Chart.Series" /> 2 番目のグループのデータを格納するオブジェクト。</param>
+        <summary>*T*-検定式を持つテストを実行、 *t*-スチューデントを使用してテスト*t*-検定と一緒に配布します。</summary>
+        <returns><see cref="T:System.Web.UI.DataVisualization.Charting.TTestResult" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードでは、この数式を使用する方法を示します。  
+  
+```vb  
+Dim result As TTestResult = Chart1.DataManipulator.Statistics.TTestPaired(0.2, 0.05, "Series1", "Series2")  
+```  
+  
+```csharp  
+TTestResult result = Chart1.DataManipulator.Statistics.TTestPaired(0.2, 0.05, "Series1", "Series2");  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TTestPaired">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.TTestResult TTestPaired (double hypothesizedMeanDifference, double probability, string firstInputSeriesName, string secondInputSeriesName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.UI.DataVisualization.Charting.TTestResult TTestPaired(float64 hypothesizedMeanDifference, float64 probability, string firstInputSeriesName, string secondInputSeriesName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.StatisticFormula.TTestPaired(System.Double,System.Double,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.TTestResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hypothesizedMeanDifference" Type="System.Double" />
+        <Parameter Name="probability" Type="System.Double" />
+        <Parameter Name="firstInputSeriesName" Type="System.String" />
+        <Parameter Name="secondInputSeriesName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="hypothesizedMeanDifference">データ グループの平均の仮説の差です。</param>
+        <param name="probability">アルファ値です。 許容範囲は 0 ~ 1 の間です。</param>
+        <param name="firstInputSeriesName">名前、<see cref="P:System.Web.UI.DataVisualization.Charting.Chart.Series" />最初のグループのデータを格納するオブジェクト。</param>
+        <param name="secondInputSeriesName">名前、 <see cref="P:System.Web.UI.DataVisualization.Charting.Chart.Series" /> 2 番目のグループのデータを格納するオブジェクト。</param>
+        <summary>*T*-対になった式のテストを実行、 *t*-スチューデントを使用してテスト*t*-ペアのサンプルを使って配布します。 これは、機能は、自然な対 (たとえば、サンプルのグループを 2 回テストする場合) のサンプルがある場合に便利です。</summary>
+        <returns><see cref="T:System.Web.UI.DataVisualization.Charting.TTestResult" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードでは、この数式を使用する方法を示します。  
+  
+```vb  
+Dim result As TTestResult = Chart1.DataManipulator.Statistics.TTestPaired(0.2, 0.05, "Series1", "Series2")  
+```  
+  
+```csharp  
+TTestResult result = Chart1.DataManipulator.Statistics.TTestPaired(0.2, 0.05, "Series1", "Series2");  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TTestUnequalVariances">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.TTestResult TTestUnequalVariances (double hypothesizedMeanDifference, double probability, string firstInputSeriesName, string secondInputSeriesName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.UI.DataVisualization.Charting.TTestResult TTestUnequalVariances(float64 hypothesizedMeanDifference, float64 probability, string firstInputSeriesName, string secondInputSeriesName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.StatisticFormula.TTestUnequalVariances(System.Double,System.Double,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.TTestResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hypothesizedMeanDifference" Type="System.Double" />
+        <Parameter Name="probability" Type="System.Double" />
+        <Parameter Name="firstInputSeriesName" Type="System.String" />
+        <Parameter Name="secondInputSeriesName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="hypothesizedMeanDifference">データ グループの平均の仮説の差です。</param>
+        <param name="probability">アルファ値です。 許容範囲は 0 ~ 1 の間です。</param>
+        <param name="firstInputSeriesName">名前、<see cref="P:System.Web.UI.DataVisualization.Charting.Chart.Series" />最初のグループのデータを格納するオブジェクト。</param>
+        <param name="secondInputSeriesName">名前、 <see cref="P:System.Web.UI.DataVisualization.Charting.Chart.Series" /> 2 番目のグループのデータを格納するオブジェクト。</param>
+        <summary>*T*-検定式を持つテストを実行、 *t*-スチューデントを使用してテスト*t*-検定配布します。</summary>
+        <returns><see cref="T:System.Web.UI.DataVisualization.Charting.TTestResult" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードでは、この数式を使用する方法を示します。  
+  
+```vb  
+Dim result As TTestResult = Chart1.DataManipulator.Statistics.TTestUnEqualVariances(0.2, 0.05, "Series1", "Series2")  
+```  
+  
+```csharp  
+TTestResult result = Chart1.DataManipulator.Statistics.TTestUnEqualVariances(0.2, 0.05, "Series1", "Series2");  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Variance">
+      <MemberSignature Language="C#" Value="public double Variance (string inputSeriesName, bool sampleVariance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 Variance(string inputSeriesName, bool sampleVariance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.StatisticFormula.Variance(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputSeriesName" Type="System.String" />
+        <Parameter Name="sampleVariance" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="inputSeriesName">名前、<see cref="P:System.Web.UI.DataVisualization.Charting.Chart.Series" />平均値が必要なデータを格納するオブジェクト。</param>
+        <param name="sampleVariance">指定<see langword="true" />場合は、データは、母集団のサンプルと<see langword="false" />データが母集団全体である場合。</param>
+        <summary>分散式は、データのグループ内の分散を計算します。</summary>
+        <returns>データのグループ内の分散します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードでは、この数式を使用する方法を示します。  
+  
+```vb  
+Dim result As Double = Chart1.DataManipulator.Statistics.Variance("Series1", false)  
+```  
+  
+```csharp  
+TTestResult result = double result = Chart1.DataManipulator.Statistics.Variance("Series1", false);  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ZTest">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.ZTestResult ZTest (double hypothesizedMeanDifference, double varianceFirstGroup, double varianceSecondGroup, double probability, string firstInputSeriesName, string secondInputSeriesName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.UI.DataVisualization.Charting.ZTestResult ZTest(float64 hypothesizedMeanDifference, float64 varianceFirstGroup, float64 varianceSecondGroup, float64 probability, string firstInputSeriesName, string secondInputSeriesName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.StatisticFormula.ZTest(System.Double,System.Double,System.Double,System.Double,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.ZTestResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hypothesizedMeanDifference" Type="System.Double" />
+        <Parameter Name="varianceFirstGroup" Type="System.Double" />
+        <Parameter Name="varianceSecondGroup" Type="System.Double" />
+        <Parameter Name="probability" Type="System.Double" />
+        <Parameter Name="firstInputSeriesName" Type="System.String" />
+        <Parameter Name="secondInputSeriesName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="hypothesizedMeanDifference">データ グループの平均の仮説の差です。</param>
+        <param name="varianceFirstGroup">データの最初のグループ内の分散。</param>
+        <param name="varianceSecondGroup">データの 2 番目のグループ内の分散。</param>
+        <param name="probability">アルファ値です。 許容範囲は 0 ~ 1 の間です。</param>
+        <param name="firstInputSeriesName">名前、<see cref="P:System.Web.UI.DataVisualization.Charting.Chart.Series" />最初のグループのデータを格納するオブジェクト。</param>
+        <param name="secondInputSeriesName">名前、 <see cref="P:System.Web.UI.DataVisualization.Charting.Chart.Series" /> 2 番目のグループのデータを格納するオブジェクト。</param>
+        <summary>Z テスト式では、通常の配布を使用して、Z テストを実行します。</summary>
+        <returns><see cref="T:System.Web.UI.DataVisualization.Charting.ZTestResult" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードでは、この数式を使用する方法を示します。  
+  
+```vb  
+Dim result As ZTestResult = Chart1.DataManipulator.Statistics.ZTest(0.2, 2.5, 4.5, 0.05, "Series1", "Series2")  
+```  
+  
+```csharp  
+ZTestResult result = Chart1.DataManipulator.Statistics.ZTest(0.2, 2.5, 4.5, 0.05, "Series1", "Series2");  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

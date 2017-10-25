@@ -1,0 +1,75 @@
+<Type Name="BufferedGraphicsManager" FullName="System.Drawing.BufferedGraphicsManager">
+  <TypeSignature Language="C#" Value="public sealed class BufferedGraphicsManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed BufferedGraphicsManager extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.BufferedGraphicsManager" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アプリケーション ドメインのメインのバッファリングされたグラフィックス コンテキスト オブジェクトへのアクセスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.BufferedGraphicsManager>クラスでは、グラフィックスのカスタムのダブル バッファリングを実装することができます。 ダブル バッファリングを使用するグラフィックスを軽減または、画面の表面を再描画が原因で発生するちらつきを除去します。  
+  
+ このクラスには 1 つの静的プロパティ<xref:System.Drawing.BufferedGraphicsManager.Current%2A>、メインが返されます<xref:System.Drawing.BufferedGraphicsContext>の現在のアプリケーション ドメイン。 <xref:System.Drawing.BufferedGraphicsContext>クラス作成<xref:System.Drawing.BufferedGraphics>バッファリングされたグラフィックスを描画するために使用するインスタンス。  
+  
+ <xref:System.Drawing.BufferedGraphics>クラスのパブリック コンス トラクターを持たないし、によって作成する必要があります、<xref:System.Drawing.BufferedGraphicsContext>オブジェクトをアプリケーション ドメインを使用して、その<xref:System.Drawing.BufferedGraphicsContext.Allocate%2A>メソッドです。 取得することができます、<xref:System.Drawing.BufferedGraphicsContext>静的から現在のアプリケーション ドメインのオブジェクト<xref:System.Drawing.BufferedGraphicsManager.Current%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ダブル バッファリングの詳細については、次を参照してください。[ダブル バッファリングされたグラフィックス](~/docs/framework/winforms/advanced/double-buffered-graphics.md)、 <xref:System.Drawing.BufferedGraphics>、および<xref:System.Drawing.BufferedGraphicsContext>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、取得を示しています、<xref:System.Drawing.BufferedGraphicsContext>の現在のアプリケーション ドメイン。  
+  
+ [!code-cpp[BufferingExamples#1](~/samples/snippets/cpp/VS_Snippets_Winforms/BufferingExamples/CPP/bufferingexamples.cpp#1)]
+ [!code-csharp[BufferingExamples#1](~/samples/snippets/csharp/VS_Snippets_Winforms/BufferingExamples/CS/bufferingexamples.cs#1)]
+ [!code-vb[BufferingExamples#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/BufferingExamples/VB/bufferingexamples.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="public static System.Drawing.BufferedGraphicsContext Current { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.BufferedGraphicsContext Current" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.BufferedGraphicsManager.Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.BufferedGraphicsContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Drawing.BufferedGraphicsContext" />の現在のアプリケーション ドメイン。</summary>
+        <value>現在のアプリケーション ドメインに対する <see cref="T:System.Drawing.BufferedGraphicsContext" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション内で、<xref:System.Drawing.BufferedGraphicsManager.Current%2A>プロパティが常に同じを返します<xref:System.Drawing.BufferedGraphicsContext>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例では、取得を示しています、<xref:System.Drawing.BufferedGraphicsContext>の現在のアプリケーション ドメイン。  
+  
+ [!code-cpp[BufferingExamples#1](~/samples/snippets/cpp/VS_Snippets_Winforms/BufferingExamples/CPP/bufferingexamples.cpp#1)]
+ [!code-csharp[BufferingExamples#1](~/samples/snippets/csharp/VS_Snippets_Winforms/BufferingExamples/CS/bufferingexamples.cs#1)]
+ [!code-vb[BufferingExamples#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/BufferingExamples/VB/bufferingexamples.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

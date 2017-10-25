@@ -1,0 +1,841 @@
+<Type Name="MultiView" FullName="System.Web.UI.WebControls.MultiView">
+  <TypeSignature Language="C#" Value="public class MultiView : System.Web.UI.Control" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MultiView extends System.Web.UI.Control" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.MultiView" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Control</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("ActiveViewChanged")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.MultiViewDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ControlBuilder(typeof(System.Web.UI.WebControls.MultiViewControlBuilder))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ParseChildren(typeof(System.Web.UI.WebControls.View))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ToolboxData("&lt;{0}:MultiView runat="server"&gt;&lt;/{0}:MultiView&gt;")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>グループのコンテナーとして機能するコントロールを表す<see cref="T:System.Web.UI.WebControls.View" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このトピックの内容  
+  
+-   [はじめに](#introduction)  
+  
+-   [宣言型の構文](#declarative_syntax)  
+  
+<a name="introduction"></a>   
+## <a name="introduction"></a>はじめに  
+ <xref:System.Web.UI.WebControls.MultiView>コントロールは、グループのコンテナー<xref:System.Web.UI.WebControls.View>コントロール。 グループを定義することができます<xref:System.Web.UI.WebControls.View>コントロール、ここで各<xref:System.Web.UI.WebControls.View>コントロールに子コントロールが含まれています。 アプリケーションは、特定、レンダリング<xref:System.Web.UI.WebControls.View>クエリ文字列パラメーターに渡されるユーザー id、ユーザー設定、および情報などの条件に基づいて、クライアントに制御します。 使用することも、<xref:System.Web.UI.WebControls.MultiView>ウィザードを作成するコントロール。 このシナリオでは各<xref:System.Web.UI.WebControls.View>に含まれるコントロール、<xref:System.Web.UI.WebControls.MultiView>コントロールは、異なるステップまたはウィザードのページを表します。 また、モバイル デバイスの画面表示の複数のアプリケーションを開発するのにこのコントロールを使用する必要があります。 このコントロールは ASP.NET モバイルと同じ機能を提供<xref:System.Web.UI.MobileControls.Form>.NET Framework version 1.1 で制御します。  
+  
+ 1 つだけ<xref:System.Web.UI.WebControls.View>内でアクティブなビューとして定義できるコントロールを時、<xref:System.Web.UI.WebControls.MultiView>コントロール。 ときに、<xref:System.Web.UI.WebControls.View>コントロールがアクティブなビューとして定義されている、それに含まれる子コントロールは、クライアントに表示されます。 使用するか、<xref:System.Web.UI.WebControls.MultiView.ActiveViewIndex%2A>プロパティまたは<xref:System.Web.UI.WebControls.MultiView.SetActiveView%2A>アクティブなビューを定義するメソッド。 場合、<xref:System.Web.UI.WebControls.MultiView.ActiveViewIndex%2A>プロパティは空では、<xref:System.Web.UI.WebControls.MultiView>コントロールがクライアントにコンテンツを表示できません。 アクティブなビューに設定されている場合、<xref:System.Web.UI.WebControls.View>内に存在しない、<xref:System.Web.UI.WebControls.MultiView>コントロール、<xref:System.ArgumentOutOfRangeException>は実行時に発生します。  
+  
+ 宣言またはプログラムによっては、アクティブなビューを定義できます。 設定、<xref:System.Web.UI.WebControls.MultiView.ActiveViewIndex%2A>プロパティ宣言によって定義するときに、<xref:System.Web.UI.WebControls.MultiView>原因の制御、 <xref:System.Web.UI.WebControls.View> 、クライアント、最初の時間を表示するために、アクティブなビューとして設定されているコントロール、<xref:System.Web.UI.WebControls.MultiView>コントロールが呼び出されます。 次のコード例は、設定する方法を示します、<xref:System.Web.UI.WebControls.MultiView.ActiveViewIndex%2A>プロパティ宣言します。  
+  
+```  
+<asp:MultiView id="MultiView1" ActiveViewIndex=0 runat="Server">   
+```  
+  
+ 設定、<xref:System.Web.UI.WebControls.MultiView.ActiveViewIndex%2A>プロパティ プログラムを呼び出すか、<xref:System.Web.UI.WebControls.MultiView.SetActiveView%2A>メソッドにより、アプリケーションはどちらかを決定<xref:System.Web.UI.WebControls.View>ユーザーの個人情報や設定などの条件に基づいて実行時に、クライアントにレンダリングするコントロール。  
+  
+ 間を移動できるようにする<xref:System.Web.UI.WebControls.View>内で制御、<xref:System.Web.UI.WebControls.MultiView>コントロールを追加できます、<xref:System.Web.UI.WebControls.LinkButton>または<xref:System.Web.UI.WebControls.Button>に制御を各<xref:System.Web.UI.WebControls.View>コントロール。 活用するために、<xref:System.Web.UI.WebControls.MultiView>コントロールの自動更新は現在アクティブな<xref:System.Web.UI.WebControls.View>、設定、`CommandName`ボタンまたはリンク ボタン、目的のナビゲーション動作に対応する次のコマンド名フィールドのいずれかの値のプロパティ: <xref:System.Web.UI.WebControls.MultiView.PreviousViewCommandName>、 <xref:System.Web.UI.WebControls.MultiView.NextViewCommandName>、 <xref:System.Web.UI.WebControls.MultiView.SwitchViewByIDCommandName>、または<xref:System.Web.UI.WebControls.MultiView.SwitchViewByIndexCommandName>です。  
+  
+<a name="declarative_syntax"></a>   
+## <a name="declarative-syntax"></a>宣言型の構文  
+  
+```  
+<asp:MultiView  
+    ActiveViewIndex="integer"  
+    EnableTheming="True|False"  
+    EnableViewState="True|False"  
+    ID="string"  
+    OnActiveViewChanged="ActiveViewChanged event handler"  
+    OnDataBinding="DataBinding event handler"  
+    OnDisposed="Disposed event handler"  
+    OnInit="Init event handler"  
+    OnLoad="Load event handler"  
+    OnPreRender="PreRender event handler"  
+    OnUnload="Unload event handler"  
+    runat="server"  
+    SkinID="string"  
+    Visible="True|False"  
+>  
+            <asp:TemplatedWizardStep  
+                AllowReturn="True|False"  
+                ContentTemplateContainer="string"  
+                EnableTheming="True|False"  
+                EnableViewState="True|False"  
+                ID="string"  
+                OnActivate="Activate event handler"  
+                OnDataBinding="DataBinding event handler"  
+                OnDeactivate="Deactivate event handler"  
+                OnDisposed="Disposed event handler"  
+                OnInit="Init event handler"  
+                OnLoad="Load event handler"  
+                OnPreRender="PreRender event handler"  
+                OnUnload="Unload event handler"  
+                runat="server"  
+                SkinID="string"  
+                StepType="Auto|Complete|Finish|Start|Step"  
+                Title="string"  
+                Visible="True|False"  
+>  
+                        <ContentTemplate>  
+                            <!-- child controls -->  
+                        </ContentTemplate>  
+                        <CustomNavigationTemplate>  
+                            <!-- child controls -->  
+                        </CustomNavigationTemplate>  
+            </asp:TemplatedWizardStep>  
+            <asp:View  
+                EnableTheming="True|False"  
+                EnableViewState="True|False"  
+                ID="string"  
+                OnActivate="Activate event handler"  
+                OnDataBinding="DataBinding event handler"  
+                OnDeactivate="Deactivate event handler"  
+                OnDisposed="Disposed event handler"  
+                OnInit="Init event handler"  
+                OnLoad="Load event handler"  
+                OnPreRender="PreRender event handler"  
+                OnUnload="Unload event handler"  
+                runat="server"  
+                SkinID="string"  
+                Visible="True|False"  
+            />  
+            <asp:WizardStep  
+                AllowReturn="True|False"  
+                EnableTheming="True|False"  
+                EnableViewState="True|False"  
+                ID="string"  
+                OnActivate="Activate event handler"  
+                OnDataBinding="DataBinding event handler"  
+                OnDeactivate="Deactivate event handler"  
+                OnDisposed="Disposed event handler"  
+                OnInit="Init event handler"  
+                OnLoad="Load event handler"  
+                OnPreRender="PreRender event handler"  
+                OnUnload="Unload event handler"  
+                runat="server"  
+                SkinID="string"  
+                StepType="Auto|Complete|Finish|Start|Step"  
+                Title="string"  
+                Visible="True|False"  
+            />  
+</asp:MultiView>  
+```  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.MultiView>基本的なアンケートを作成するコントロール。 各<xref:System.Web.UI.WebControls.View>コントロールが別の調査の質問。 ユーザーがクリックしたとき、**前**任意のページでは、ボタン、<xref:System.Web.UI.WebControls.MultiView.ActiveViewIndex%2A>プロパティは、前に移動するデクリメント<xref:System.Web.UI.WebControls.View>コントロール。 ユーザーがクリックしたとき、 **[次へ]**任意のページでは、ボタン、<xref:System.Web.UI.WebControls.MultiView.ActiveViewIndex%2A>次に移動するプロパティがインクリメントされます<xref:System.Web.UI.WebControls.View>コントロール。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[MultiView.ActiveViewIndex Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MultiView.ActiveViewIndex Example/cs/multiviewactiveviewindexcs.aspx#1)]
+ [!code-aspx-vb[MultiView.ActiveViewIndex Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MultiView.ActiveViewIndex Example/VB/multiviewactiveviewindexvb.aspx#1)]  
+  
+ 次のコード例は、基本的なを作成する方法を示します<xref:System.Web.UI.WebControls.MultiView>3 種類を含むコントロール<xref:System.Web.UI.WebControls.View>コントロール。 ユーザーがリスト ボックスから選択したビューがアクティブなビューに設定され、ユーザーに表示されます。 より詳細な例については、<xref:System.Web.UI.WebControls.MultiView>を制御し、このトピックで提供される他のコード例を参照してください。  
+  
+ [!code-aspx-vb[MultiView Class Example 2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MultiView Class Example 2/VB/multiviewclass2vb.aspx#1)]  
+  
+ 次のコード例を作成する方法を示しています、 <xref:System.Web.UI.WebControls.MultiView> 3 種類を含むコントロール<xref:System.Web.UI.WebControls.View>コントロール。 A<xref:System.Web.UI.WebControls.View>コントロールにスタイル プロパティがありません。 したがって、各<xref:System.Web.UI.WebControls.View>コントロールに含まれる、<xref:System.Web.UI.WebControls.Panel>コントロールに設定するスタイルをできるように、<xref:System.Web.UI.WebControls.View>コントロール。 ページが読み込まれて初めて、`DefaultView`アクティブなビューを使用して、として設定されている、<xref:System.Web.UI.WebControls.MultiView.SetActiveView%2A>メソッドです。 各<xref:System.Web.UI.WebControls.View>リンク ボタン使用するさまざまなビューに移動するユーザーにはがコントロールに含まれています。  
+  
+ [!code-aspx-vb[MultiView Class Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MultiView Class Example/VB/multiviewclass1vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MultiView ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MultiView.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.MultiView" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.MultiView>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActiveViewChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler ActiveViewChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler ActiveViewChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.MultiView.ActiveViewChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、アクティブな<see cref="T:System.Web.UI.WebControls.View" />の制御、<see cref="T:System.Web.UI.WebControls.MultiView" />サーバーへのポスト間の変更を制御します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.MultiView.ActiveViewChanged>イベントが発生したときに、アクティブな<xref:System.Web.UI.WebControls.View>内の制御、<xref:System.Web.UI.WebControls.MultiView>サーバーへのポスト間の変更を制御します。  
+  
+ イベント処理の詳細については、次を参照してください。[する方法: Web フォーム アプリケーションでのイベントの消費](~/docs/standard/events/how-to-consume-events-in-a-web-forms-application.md)です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのイベント ハンドラーを次の例には、<xref:System.Web.UI.WebControls.MultiView.ActiveViewChanged>のイベント、<xref:System.Web.UI.WebControls.MultiView>コントロール。 アクティブなビューの変更、メッセージが表示される場合に、<xref:System.Web.UI.WebControls.Label>ページ上のコントロールです。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[MultiView.ActiveViewChanged Event Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MultiView.ActiveViewChanged Event Example/cs/multiviewactiveviewchangedeventcs.aspx#1)]
+ [!code-aspx-vb[MultiView.ActiveViewChanged Event Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MultiView.ActiveViewChanged Event Example/VB/multiviewactiveviewchangedeventvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActiveViewIndex">
+      <MemberSignature Language="C#" Value="public virtual int ActiveViewIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ActiveViewIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MultiView.ActiveViewIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(-1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のアクティブなインデックス<see cref="T:System.Web.UI.WebControls.View" />内の制御、<see cref="T:System.Web.UI.WebControls.MultiView" />コントロール。</summary>
+        <value>作業中の 0 から始まるインデックス<see cref="T:System.Web.UI.WebControls.View" />内の制御、<see cref="T:System.Web.UI.WebControls.MultiView" />コントロール。 既定値は-1 で、あるビューが設定されていないアクティブとしてを示すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.MultiView.ActiveViewIndex%2A>プロパティを設定、<xref:System.Web.UI.WebControls.View>内の制御、<xref:System.Web.UI.WebControls.MultiView>アクティブなビューと同様に制御します。 インデックスを返す、このプロパティを使用することも、<xref:System.Web.UI.WebControls.View>アクティブ ビューとして設定されているコントロール。 インデックス、<xref:System.Web.UI.WebControls.View>コントロールはその内で宣言された順序によって決まり、<xref:System.Web.UI.WebControls.MultiView>コントロール。 たとえば、1 つ目<xref:System.Web.UI.WebControls.View>内で宣言されているコントロール、<xref:System.Web.UI.WebControls.MultiView>コントロールが 0 のインデックス。  
+  
+ 1 つだけ<xref:System.Web.UI.WebControls.View>一度にコントロールは内でアクティブな状態で、<xref:System.Web.UI.WebControls.MultiView>コントロール。 <xref:System.Web.UI.WebControls.View>に設定されているコントロール、<xref:System.Web.UI.WebControls.MultiView.ActiveViewIndex%2A>プロパティは、クライアントにレンダリングされます。 場合、<xref:System.Web.UI.WebControls.MultiView.ActiveViewIndex%2A>プロパティに設定されている、<xref:System.Web.UI.WebControls.View>内に存在しない、<xref:System.Web.UI.WebControls.MultiView>コントロール、<xref:System.ArgumentOutOfRangeException>は実行時に発生します。 プロパティが空の場合、<xref:System.Web.UI.WebControls.MultiView>コントロールがクライアントにコンテンツを表示できません。  
+  
+ 設定することができます、<xref:System.Web.UI.WebControls.MultiView.ActiveViewIndex%2A>開発時に宣言によって、または実行時にプログラムでのプロパティです。 設定、<xref:System.Web.UI.WebControls.MultiView.ActiveViewIndex%2A>プロパティ宣言によって定義するときに、<xref:System.Web.UI.WebControls.MultiView>原因の制御、 <xref:System.Web.UI.WebControls.View> 、クライアント、最初の時間を表示するために、アクティブなビューとして設定されているコントロール、<xref:System.Web.UI.WebControls.MultiView>コントロールが呼び出されます。 設定、<xref:System.Web.UI.WebControls.MultiView.ActiveViewIndex%2A>プロパティは、プログラムで判断するためにアプリケーションを許可<xref:System.Web.UI.WebControls.View>ユーザーの id、優先順位などの条件に基づいて実行時に、クライアントにレンダリングするコントロール。  
+  
+ また、使用することができます、<xref:System.Web.UI.WebControls.MultiView.SetActiveView%2A>と<xref:System.Web.UI.WebControls.MultiView.GetActiveView%2A>内でアクティブなビューを取得または設定する方法、<xref:System.Web.UI.WebControls.MultiView>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.MultiView>基本的なアンケートを作成するコントロール。 各<xref:System.Web.UI.WebControls.View>コントロールが別の調査の質問。 ユーザーがクリックしたとき、**前**任意のページでは、ボタン、<xref:System.Web.UI.WebControls.MultiView.ActiveViewIndex%2A>プロパティは、前に移動するデクリメント<xref:System.Web.UI.WebControls.View>コントロール。 ユーザーがクリックしたとき、 **[次へ]**任意のページでは、ボタン、<xref:System.Web.UI.WebControls.MultiView.ActiveViewIndex%2A>次に移動するプロパティがインクリメントされます<xref:System.Web.UI.WebControls.View>コントロール。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[MultiView.ActiveViewIndex Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MultiView.ActiveViewIndex Example/cs/multiviewactiveviewindexcs.aspx#1)]
+ [!code-aspx-vb[MultiView.ActiveViewIndex Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MultiView.ActiveViewIndex Example/VB/multiviewactiveviewindexvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定したインデックスでは、-1 より小さくするかより大きいか等しい項目の数を一覧に設定されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddParsedSubObject">
+      <MemberSignature Language="C#" Value="protected override void AddParsedSubObject (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AddParsedSubObject(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MultiView.AddParsedSubObject(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">解析された要素を表す <see cref="T:System.Object" />。</param>
+        <summary>通知、 <see cref="T:System.Web.UI.WebControls.MultiView" /> XML または HTML 要素が解析され、要素を追加するコントロール、<see cref="T:System.Web.UI.WebControls.ViewCollection" />のコレクション、<see cref="T:System.Web.UI.WebControls.MultiView" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは基本クラスの実装のみを許可する<xref:System.Web.UI.WebControls.View>コントロールに追加する、<xref:System.Web.UI.WebControls.ViewCollection>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">指定した<see cref="T:System.Object" />されませんが、<see cref="T:System.Web.UI.WebControls.View" />コントロール。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateControlCollection">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.ControlCollection CreateControlCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.ControlCollection CreateControlCollection() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MultiView.CreateControlCollection" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ControlCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成、<see cref="T:System.Web.UI.ControlCollection" />のコントロールの子を保持する、<see cref="T:System.Web.UI.WebControls.MultiView" />コントロール。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.ViewCollection" />を含む、 <see cref="T:System.Web.UI.WebControls.View" /> 、現在のコントロール<see cref="T:System.Web.UI.WebControls.MultiView" />コントロール。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは基本実装を常にオーバーライド、<xref:System.Web.UI.WebControls.ViewCollection>を含む、 <xref:System.Web.UI.WebControls.View> 、現在のコントロール<xref:System.Web.UI.WebControls.MultiView>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableTheming">
+      <MemberSignature Language="C#" Value="public override bool EnableTheming { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableTheming" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MultiView.EnableTheming" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定にテーマを適用するかどうかを示す値、<see cref="T:System.Web.UI.WebControls.MultiView" />コントロール。</summary>
+        <value>
+          <see langword="true" />テーマが使用する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.MultiView.EnableTheming%2A>プロパティは、テーマが有効になっているかどうかを示す、<xref:System.Web.UI.WebControls.MultiView>コントロール。 <xref:System.Web.UI.WebControls.MultiView.EnableTheming%2A>プロパティに含まれるコントロールのテーマが有効になっているかどうかにも影響その<xref:System.Web.UI.Control.Controls%2A>コレクション。 ときに、<xref:System.Web.UI.WebControls.MultiView.EnableTheming%2A>プロパティは`true`、コントロール スキンを適用するテーマのアプリケーションのディレクトリが検索されます。 テーマのディレクトリ内の特定のコントロール スキンが存在しない場合、スキンは適用されません。 ときに、<xref:System.Web.UI.WebControls.MultiView.EnableTheming%2A>プロパティは`false`、テーマのディレクトリは検索されませんの内容と、<xref:System.Web.UI.Control.SkinID%2A>プロパティは使用されません。  
+  
+ オーバーライドする、<xref:System.Web.UI.WebControls.MultiView.EnableTheming%2A>値の設定、親コントロールにも格納するページ。 たとえば場合、<xref:System.Web.UI.WebControls.MultiView>コントロールに<xref:System.Web.UI.WebControls.MultiView.EnableTheming%2A>に設定`false`、個人にテーマを選択的に適用できます<xref:System.Web.UI.WebControls.View>に含まれるコントロール、<xref:System.Web.UI.WebControls.MultiView>コントロールを設定して、<xref:System.Web.UI.Control.EnableTheming%2A>プロパティを`true`個々 の子コントロールでします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetActiveView">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.View GetActiveView ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.UI.WebControls.View GetActiveView() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MultiView.GetActiveView" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.View</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在アクティブなを返します<see cref="T:System.Web.UI.WebControls.View" />内の制御、<see cref="T:System.Web.UI.WebControls.MultiView" />コントロール。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.View" />コントロール内でアクティブなビューを表す、<see cref="T:System.Web.UI.WebControls.MultiView" />コントロール。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、<xref:System.Web.UI.WebControls.View>内の制御、<xref:System.Web.UI.WebControls.MultiView>アクティブ ビューとして設定されているコントロール。 このメソッドが戻る、<xref:System.Web.UI.WebControls.View>を制御し、アクティブなビューのプロパティにアクセスするために使用できます。 たとえば、`MultiView1.GetActiveView.ID`の値を返します、 <xref:System.Web.UI.Control.ID%2A> MultiView1 で現在アクティブなビューのプロパティです。  
+  
+ また、使用することができます、<xref:System.Web.UI.WebControls.MultiView.ActiveViewIndex%2A>プロパティを取得または設定で現在アクティブなビューの 0 から始まるインデックス、<xref:System.Web.UI.WebControls.MultiView>コントロール。 このプロパティは、宣言またはプログラムによってアクセスできます。  
+  
+   
+  
+## Examples  
+ 次の例で作成する方法、 <xref:System.Web.UI.WebControls.MultiView> 3 種類を含むコントロール<xref:System.Web.UI.WebControls.View>コントロール。 ときに、<xref:System.Web.UI.WebControls.MultiView.ActiveViewChanged>イベントが発生する、<xref:System.Web.UI.WebControls.MultiView.GetActiveView%2A>メソッドが現在アクティブなビューを取得して表示で使用される、<xref:System.Web.UI.WebControls.Label>ページ上のコントロールです。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[MultiView.ActiveViewChanged Event Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MultiView.ActiveViewChanged Event Example/cs/multiviewactiveviewchangedeventcs.aspx#1)]
+ [!code-aspx-vb[MultiView.ActiveViewChanged Event Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MultiView.ActiveViewChanged Event Example/VB/multiviewactiveviewchangedeventvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception"><see cref="P:System.Web.UI.WebControls.MultiView.ActiveViewIndex" />プロパティが有効に設定されていない<see cref="T:System.Web.UI.WebControls.View" />内の制御、<see cref="T:System.Web.UI.WebControls.MultiView" />コントロール。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadControlState">
+      <MemberSignature Language="C#" Value="protected override void LoadControlState (object state);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void LoadControlState(object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MultiView.LoadControlState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="state"><see cref="T:System.Object" />の状態を表す、<see cref="T:System.Web.UI.WebControls.MultiView" />コントロール。</param>
+        <summary>現在の状態を読み込み、<see cref="T:System.Web.UI.WebControls.MultiView" />コントロール。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NextViewCommandName">
+      <MemberSignature Language="C#" Value="public static readonly string NextViewCommandName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string NextViewCommandName" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.MultiView.NextViewCommandName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>次に関連付けられているコマンド名を表す<see cref="T:System.Web.UI.WebControls.View" />で表示するコントロールを<see cref="T:System.Web.UI.WebControls.MultiView" />コントロール。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、 <xref:System.Web.UI.WebControls.MultiView.NextViewCommandName> "NextView"コマンド名を表すフィールドです。  
+  
+ このフィールドの値を活用するために使用することができます、<xref:System.Web.UI.WebControls.MultiView>コントロールの自動更新、アクティブな<xref:System.Web.UI.WebControls.View>コントロール。 たとえば場合、<xref:System.Web.UI.WebControls.View>コントロールが含まれています、 <xref:System.Web.UI.WebControls.Button> 、前に移動するコントロール<xref:System.Web.UI.WebControls.View>、設定することができます、<xref:System.Web.UI.WebControls.Button.CommandName%2A>プロパティの値を<xref:System.Web.UI.WebControls.MultiView.NextViewCommandName>"NextView"であるフィールドです。 これにより、<xref:System.Web.UI.WebControls.MultiView>の値を自動的にデクリメントするためのコントロール、<xref:System.Web.UI.WebControls.MultiView.ActiveViewIndex%2A>プロパティ ボタンがクリックされたときにします。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.MultiView>基本的なアンケートを作成するコントロール。 各<xref:System.Web.UI.WebControls.View>コントロールが別の調査の質問。 <xref:System.Web.UI.WebControls.MultiView.PreviousViewCommandName>と<xref:System.Web.UI.WebControls.MultiView.NextViewCommandName>前と [次へ] の間で自動のナビゲーションを提供に使用されるフィールド<xref:System.Web.UI.WebControls.View>アンケートのコントロールです。  
+  
+ [!code-aspx-csharp[MultiView.NextViewCommandName#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MultiView.NextViewCommandName/CS/multiview.nextviewcommandnamecs.aspx#1)]
+ [!code-aspx-vb[MultiView.NextViewCommandName#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MultiView.NextViewCommandName/VB/multiview.nextviewcommandnamevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnActiveViewChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnActiveViewChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnActiveViewChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MultiView.OnActiveViewChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>発生させる、<see cref="E:System.Web.UI.WebControls.MultiView.ActiveViewChanged" />のイベント、<see cref="T:System.Web.UI.WebControls.MultiView" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.MultiView.ActiveViewChanged>イベントが発生したときに、アクティブな<xref:System.Web.UI.WebControls.View>内の制御、<xref:System.Web.UI.WebControls.MultiView>コントロールは、サーバーへのポスト間を変更し、このイベントのカスタム ハンドラーを提供することができます。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[する方法: Web フォーム アプリケーションでのイベントの消費](~/docs/standard/events/how-to-consume-events-in-a-web-forms-application.md)です。  
+  
+ <xref:System.Web.UI.WebControls.MultiView.OnActiveViewChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+   
+  
+## Examples  
+ 指定し、コードのイベント ハンドラーを次の例には、<xref:System.Web.UI.WebControls.MultiView.ActiveViewChanged>のイベント、<xref:System.Web.UI.WebControls.MultiView>コントロール。 アクティブなビューの変更、メッセージが表示される場合に、<xref:System.Web.UI.WebControls.Label>ページ上のコントロールです。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[MultiView.ActiveViewChanged Event Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MultiView.ActiveViewChanged Event Example/cs/multiviewactiveviewchangedeventcs.aspx#1)]
+ [!code-aspx-vb[MultiView.ActiveViewChanged Event Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MultiView.ActiveViewChanged Event Example/VB/multiviewactiveviewchangedeventvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Web.UI.WebControls.MultiView.OnActiveViewChanged(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Web.UI.WebControls.MultiView.OnActiveViewChanged(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBubbleEvent">
+      <MemberSignature Language="C#" Value="protected override bool OnBubbleEvent (object source, EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool OnBubbleEvent(object source, class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MultiView.OnBubbleEvent(System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="source">イベントのソース。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" /> オブジェクト。</param>
+        <summary>決定するかどうかのイベントを<see cref="T:System.Web.UI.WebControls.MultiView" />ページの UI サーバー コントロールの階層に制御が渡されます。</summary>
+        <returns>
+          イベントがキャンセルされた場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.UI.WebControls.MultiView>コントロールに含まれる<xref:System.Web.UI.WebControls.View>イベントを発生させたコントロールです。 このメソッドの間のナビゲーションを処理する基本実装をオーバーライドする<xref:System.Web.UI.WebControls.View>コントロール。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException"><see cref="T:System.Web.UI.WebControls.MultiView" />コントロールを見つけることはできません、<see cref="T:System.Web.UI.WebControls.View" />で指定されている、<see cref="P:System.Web.UI.WebControls.CommandEventArgs.CommandArgument" />プロパティの<paramref name="e" />します。</exception>
+        <exception cref="T:System.FormatException"><see cref="P:System.Web.UI.WebControls.CommandEventArgs.CommandArgument" />プロパティ<paramref name="e" />を整数として解析できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInit">
+      <MemberSignature Language="C#" Value="protected override void OnInit (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnInit(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MultiView.OnInit(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" /> オブジェクト。</param>
+        <summary><see cref="E:System.Web.UI.Control.Init" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによって通知されると、<xref:System.Web.UI.WebControls.MultiView>コントロールは、インスタンスを作成および設定するために必要な初期化の手順を実行する必要があります。 サーバー コントロールのライフ サイクルのこの段階で、コントロールのビュー状態を設定する必要があります。 このコントロールの親または子である場合でも、このメソッドが呼び出されると、別のサーバー コントロールをアクセスすることはできません。 その他のサーバー コントロールの作成、アクセスの準備が整ってするではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviousViewCommandName">
+      <MemberSignature Language="C#" Value="public static readonly string PreviousViewCommandName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string PreviousViewCommandName" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.MultiView.PreviousViewCommandName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>以前に関連付けられているコマンド名を表す<see cref="T:System.Web.UI.WebControls.View" />で表示するコントロールを<see cref="T:System.Web.UI.WebControls.MultiView" />コントロール。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、 <xref:System.Web.UI.WebControls.MultiView.PreviousViewCommandName> "PrevView"コマンド名を表すフィールドです。  
+  
+ このフィールドの値を活用するために使用することができます、<xref:System.Web.UI.WebControls.MultiView>コントロールの自動更新、アクティブな<xref:System.Web.UI.WebControls.View>コントロール。 たとえば場合、<xref:System.Web.UI.WebControls.View>コントロールが含まれています、<xref:System.Web.UI.WebControls.Button>次に移動するコントロール<xref:System.Web.UI.WebControls.View>、設定することができます、<xref:System.Web.UI.WebControls.Button.CommandName%2A>プロパティの値を<xref:System.Web.UI.WebControls.MultiView.PreviousViewCommandName>"PrevView"であるフィールドです。 これにより、<xref:System.Web.UI.WebControls.MultiView>の値を自動的にインクリメントする制御、<xref:System.Web.UI.WebControls.MultiView.ActiveViewIndex%2A>プロパティ ボタンがクリックされたときにします。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.MultiView>基本的なアンケートを作成するコントロール。 各<xref:System.Web.UI.WebControls.View>コントロールが別の調査の質問。 <xref:System.Web.UI.WebControls.MultiView.PreviousViewCommandName>と<xref:System.Web.UI.WebControls.MultiView.NextViewCommandName>前と [次へ] の間で自動のナビゲーションを提供に使用されるフィールド<xref:System.Web.UI.WebControls.View>アンケートのコントロールです。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[MultiView.NextViewCommandName#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MultiView.NextViewCommandName/CS/multiview.nextviewcommandnamecs.aspx#1)]
+ [!code-aspx-vb[MultiView.NextViewCommandName#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MultiView.NextViewCommandName/VB/multiview.nextviewcommandnamevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemovedControl">
+      <MemberSignature Language="C#" Value="protected override void RemovedControl (System.Web.UI.Control ctl);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void RemovedControl(class System.Web.UI.Control ctl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MultiView.RemovedControl(System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ctl" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="ctl"><see cref="T:System.Web.UI.WebControls.View" />削除されているコントロール。</param>
+        <summary>後に呼び出される、<see cref="T:System.Web.UI.WebControls.View" />からコントロールが削除された、<see cref="P:System.Web.UI.Control.Controls" />のコレクション、<see cref="T:System.Web.UI.WebControls.MultiView" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Control.RemovedControl%2A>直後後にメソッドが呼び出される、<xref:System.Web.UI.WebControls.View>からコントロールが削除された、<xref:System.Web.UI.Control.Controls%2A>のコレクション、<xref:System.Web.UI.WebControls.MultiView>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="protected override void Render (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Render(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MultiView.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">クライアントに HTML コンテンツを表示する出力ストリームを表す <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary>書き込みます、<see cref="T:System.Web.UI.WebControls.MultiView" />コントロールの内容を指定した<see cref="T:System.Web.UI.HtmlTextWriter" />クライアントに表示するためのオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.MultiView.Render%2A>からカスタム クラスを派生している場合、メソッドは、主にコントロールの開発者によって使用、<xref:System.Web.UI.WebControls.MultiView>コントロール。  
+  
+ <xref:System.Web.UI.WebControls.MultiView.Render%2A>メソッドは、指定されたを使用してクライアントにアクティブなビューの表示内容を書き込みます<xref:System.Web.UI.HtmlTextWriter>です。 アクティブなビューを設定することができます、<xref:System.Web.UI.WebControls.MultiView>制御を使用して、<xref:System.Web.UI.WebControls.MultiView.SetActiveView%2A>メソッドまたは<xref:System.Web.UI.WebControls.MultiView.ActiveViewIndex%2A>プロパティです。 うち、どれを指定できます、<xref:System.Web.UI.WebControls.View>コントロールで、<xref:System.Web.UI.WebControls.MultiView.Views%2A>コレクションには、アクティブなビューがある場合、いずれかを使用して、<xref:System.Web.UI.WebControls.MultiView.GetActiveView%2A>メソッドまたは<xref:System.Web.UI.WebControls.MultiView.ActiveViewIndex%2A>プロパティです。  
+  
+ アクティブなビューが設定されている場合、<xref:System.Web.UI.WebControls.MultiView>を制御する、アクティブな<xref:System.Web.UI.WebControls.View>コントロールがそのビューとその子コントロールのコンテンツを表示するために使用します。 アクティブなビューが設定されていない場合、<xref:System.Web.UI.WebControls.MultiView>コントロール、コンテンツが表示されるなしに、<xref:System.Web.UI.HtmlTextWriter>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveControlState">
+      <MemberSignature Language="C#" Value="protected override object SaveControlState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance object SaveControlState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MultiView.SaveControlState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の状態を保存、<see cref="T:System.Web.UI.WebControls.MultiView" />コントロール。</summary>
+        <returns><see cref="T:System.Object" />の状態を表す、<see cref="T:System.Web.UI.WebControls.MultiView" />コントロール。 関連付けられている状態がないかどうか、<see cref="T:System.Web.UI.WebControls.MultiView" />制御、このメソッドが戻る<see langword="null" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetActiveView">
+      <MemberSignature Language="C#" Value="public void SetActiveView (System.Web.UI.WebControls.View view);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetActiveView(class System.Web.UI.WebControls.View view) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MultiView.SetActiveView(System.Web.UI.WebControls.View)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="view" Type="System.Web.UI.WebControls.View" />
+      </Parameters>
+      <Docs>
+        <param name="view">A<see cref="T:System.Web.UI.WebControls.View" />コントロール内でアクティブなビューとして設定する、<see cref="T:System.Web.UI.WebControls.MultiView" />コントロール。</param>
+        <summary>指定した設定<see cref="T:System.Web.UI.WebControls.View" />内でアクティブなビューへのコントロール、<see cref="T:System.Web.UI.WebControls.MultiView" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して設定を<xref:System.Web.UI.WebControls.View>内の制御、<xref:System.Web.UI.WebControls.MultiView>アクティブなビューと同様に制御します。 1 つだけ<xref:System.Web.UI.WebControls.View>一度にコントロールは内でアクティブな状態で、<xref:System.Web.UI.WebControls.MultiView>コントロール。 <xref:System.Web.UI.WebControls.View>クライアントにアクティブなビューが表示されるように設定されているコントロール。 場合、<xref:System.Web.UI.WebControls.View>内に存在しないコントロール、<xref:System.Web.UI.WebControls.MultiView>コントロールがアクティブとして設定されて、実行時に例外がスローされます。 ない場合は<xref:System.Web.UI.WebControls.View>コントロールは、アクティブなビューとして設定されて、<xref:System.Web.UI.WebControls.MultiView>コントロールがクライアントにコンテンツを表示できません。  
+  
+ 使用して、<xref:System.Web.UI.WebControls.MultiView.SetActiveView%2A>プログラムでアクティブなビューを設定する方法により、アプリケーションの特定を<xref:System.Web.UI.WebControls.View>ユーザーの id と環境設定などの条件に基づいて実行時に、クライアントにレンダリングするコントロール。  
+  
+ また、使用することができます、<xref:System.Web.UI.WebControls.MultiView.ActiveViewIndex%2A>プロパティを取得または設定で現在アクティブなビューの 0 から始まるインデックス、<xref:System.Web.UI.WebControls.MultiView>コントロール。 このプロパティは、宣言またはプログラムによってアクセスできます。  
+  
+   
+  
+## Examples  
+ 次の例で作成する方法、 <xref:System.Web.UI.WebControls.MultiView> 3 種類を含むコントロール<xref:System.Web.UI.WebControls.View>コントロール。 ページが読み込まれて初めて、`DefaultView`アクティブなビューを使用して、として設定されている、<xref:System.Web.UI.WebControls.MultiView.SetActiveView%2A>メソッドです。 各<xref:System.Web.UI.WebControls.View>リンク ボタン使用するさまざまなビューに移動するユーザーにはがコントロールに含まれています。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-vb[MultiView Class Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MultiView Class Example/VB/multiviewclass1vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">指定した<paramref name="view" />にパラメーターの値が含まれていない、<see cref="T:System.Web.UI.WebControls.MultiView" />コントロール。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SwitchViewByIDCommandName">
+      <MemberSignature Language="C#" Value="public static readonly string SwitchViewByIDCommandName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string SwitchViewByIDCommandName" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.MultiView.SwitchViewByIDCommandName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>作業中の変更に関連付けられているコマンド名を表す<see cref="T:System.Web.UI.WebControls.View" />内の制御、<see cref="T:System.Web.UI.WebControls.MultiView" />に基づいて、指定されたコントロール<see cref="T:System.Web.UI.WebControls.View" />id。このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、 <xref:System.Web.UI.WebControls.MultiView.SwitchViewByIDCommandName> "SwitchViewByID"コマンド名を表すフィールドです。  
+  
+ このフィールドの値を活用するために使用することができます、<xref:System.Web.UI.WebControls.MultiView>コントロールの自動更新、アクティブな<xref:System.Web.UI.WebControls.View>コントロール。 たとえば場合、<xref:System.Web.UI.WebControls.View>コントロールが含まれています、<xref:System.Web.UI.WebControls.Button>が最初に移動するコントロール<xref:System.Web.UI.WebControls.View>がクリックされたときに設定できます、<xref:System.Web.UI.WebControls.Button.CommandName%2A>プロパティの値を<xref:System.Web.UI.WebControls.MultiView.SwitchViewByIDCommandName>"SwitchViewByID"であるフィールドです。 設定、<xref:System.Web.UI.WebControls.Button.CommandArgument%2A>プロパティ、最初の ID を<xref:System.Web.UI.WebControls.View>で、 <xref:System.Web.UI.WebControls.MultiView> "Page1"などのコントロールです。 これにより、<xref:System.Web.UI.WebControls.MultiView>を自動的にアクティブなとして"Page1"を設定する制御<xref:System.Web.UI.WebControls.View>ボタンがクリックされたときにします。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.MultiView>基本的なアンケートを作成するコントロール。 各<xref:System.Web.UI.WebControls.View>コントロールが別の調査の質問。 <xref:System.Web.UI.WebControls.MultiView.PreviousViewCommandName>と<xref:System.Web.UI.WebControls.MultiView.NextViewCommandName>前と [次へ] の間で自動のナビゲーションを提供に使用されるフィールド<xref:System.Web.UI.WebControls.View>アンケートのコントロールです。 ユーザーがクリックした場合、**再度調査**、最後のボタン<xref:System.Web.UI.WebControls.View>、アンケートの<xref:System.Web.UI.WebControls.MultiView.SwitchViewByIDCommandName>"Page1"のコマンド引数と共に、最初にユーザーをリダイレクトするフィールドを使用する<xref:System.Web.UI.WebControls.View>アンケートのです。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[MultiView.NextViewCommandName#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MultiView.NextViewCommandName/CS/multiview.nextviewcommandnamecs.aspx#1)]
+ [!code-aspx-vb[MultiView.NextViewCommandName#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MultiView.NextViewCommandName/VB/multiview.nextviewcommandnamevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SwitchViewByIndexCommandName">
+      <MemberSignature Language="C#" Value="public static readonly string SwitchViewByIndexCommandName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string SwitchViewByIndexCommandName" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.MultiView.SwitchViewByIndexCommandName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>作業中の変更に関連付けられているコマンド名を表す<see cref="T:System.Web.UI.WebControls.View" />内の制御、<see cref="T:System.Web.UI.WebControls.MultiView" />コントロールに基づいて、指定された<see cref="T:System.Web.UI.WebControls.View" />インデックス。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、 <xref:System.Web.UI.WebControls.MultiView.SwitchViewByIndexCommandName> "SwitchViewByIndex"コマンド名を表すフィールドです。  
+  
+ このフィールドの値を活用するために使用することができます、<xref:System.Web.UI.WebControls.MultiView>コントロールの自動更新、アクティブな<xref:System.Web.UI.WebControls.View>コントロール。 たとえば場合、<xref:System.Web.UI.WebControls.View>コントロールが含まれています、<xref:System.Web.UI.WebControls.Button>が最初に移動するコントロール<xref:System.Web.UI.WebControls.View>がクリックされたときに設定できます、<xref:System.Web.UI.WebControls.Button.CommandName%2A>プロパティの値を<xref:System.Web.UI.WebControls.MultiView.SwitchViewByIndexCommandName>"SwitchViewByIndex"であるフィールドです。 設定、<xref:System.Web.UI.WebControls.Button.CommandArgument%2A>プロパティの先頭のインデックスを<xref:System.Web.UI.WebControls.View>で、 <xref:System.Web.UI.WebControls.MultiView> 0 にあるコントロールです。 これにより、<xref:System.Web.UI.WebControls.MultiView>を自動的に設定するコントロール、<xref:System.Web.UI.WebControls.MultiView.ActiveViewIndex%2A>プロパティを 0、ボタンがクリックされたときにします。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.MultiView>基本的なアンケートを作成するコントロール。 各<xref:System.Web.UI.WebControls.View>コントロールが別の調査の質問。 <xref:System.Web.UI.WebControls.MultiView.PreviousViewCommandName>と<xref:System.Web.UI.WebControls.MultiView.NextViewCommandName>前と [次へ] の間で自動のナビゲーションを提供に使用されるフィールド<xref:System.Web.UI.WebControls.View>アンケートのコントロールです。 ユーザーがクリックした場合、**再度調査**、最後のボタン<xref:System.Web.UI.WebControls.View>、アンケートの<xref:System.Web.UI.WebControls.MultiView.SwitchViewByIndexCommandName>フィールドは、最初にユーザーをリダイレクトに 0 の場合は、コマンド引数と共に使用<xref:System.Web.UI.WebControls.View>アンケートのです。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[MultiView.SwitchViewByIndexCommandName#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MultiView.SwitchViewByIndexCommandName/CS/multiview.switchviewbyindexcommandnamecs.aspx#1)]
+ [!code-aspx-vb[MultiView.SwitchViewByIndexCommandName#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MultiView.SwitchViewByIndexCommandName/VB/multiview.switchviewbyindexcommandnamevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Views">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.ViewCollection Views { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.ViewCollection Views" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MultiView.Views" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerDefaultProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ViewCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Web.UI.WebControls.View" />コントロールで、<see cref="T:System.Web.UI.WebControls.MultiView" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.ViewCollection" />のコレクションを表す<see cref="T:System.Web.UI.WebControls.View" />内で制御、<see cref="T:System.Web.UI.WebControls.MultiView" />コントロール。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティをプログラムで管理を使用して、<xref:System.Web.UI.WebControls.View>コントロールで、<xref:System.Web.UI.WebControls.MultiView>コントロール。  
+  
+   
+  
+## Examples  
+ 次の例は、プログラムで追加する方法を示します<xref:System.Web.UI.WebControls.View>コントロールを<xref:System.Web.UI.WebControls.MultiView>コントロール。 各後<xref:System.Web.UI.WebControls.View>コントロールを作成すると、`MultiView.Views.Add()`構文を使用して、追加、<xref:System.Web.UI.WebControls.View>コントロールを<xref:System.Web.UI.WebControls.ViewCollection>のコレクション、<xref:System.Web.UI.WebControls.MultiView>コントロール。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-vb[MultiView.Views Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MultiView.Views Example/VB/multiviewviewsvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

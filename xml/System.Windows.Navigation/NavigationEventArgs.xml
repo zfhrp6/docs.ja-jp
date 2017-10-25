@@ -1,0 +1,142 @@
+<Type Name="NavigationEventArgs" FullName="System.Windows.Navigation.NavigationEventArgs">
+  <TypeSignature Language="C#" Value="public class NavigationEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NavigationEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Navigation.NavigationEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>含むキャンセルできないナビゲーション イベントのデータを提供<see cref="E:System.Windows.Navigation.NavigationWindow.LoadCompleted" />、 <see cref="E:System.Windows.Navigation.NavigationWindow.Navigated" />、および<see cref="E:System.Windows.Navigation.NavigationWindow.NavigationStopped" />です。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Content">
+      <MemberSignature Language="C#" Value="public object Content { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Content" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationEventArgs.Content" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ターゲット ページのコンテンツのルート ノードを取得します。</summary>
+        <value>ターゲット ページのコンテンツのルート要素。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtraData">
+      <MemberSignature Language="C#" Value="public object ExtraData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object ExtraData" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationEventArgs.ExtraData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>省略可能なユーザー定義のデータ オブジェクトを取得します。</summary>
+        <value>データ オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すと<xref:System.Windows.Navigation.NavigationWindow.Navigate%2A>を新しいページに移動するユーザー定義のデータ オブジェクトをメソッドに渡すオプションがあります。 処理する場合、データに簡単にアクセスがあるように、そのオブジェクトはこのプロパティに代入しています、<xref:System.Windows.Navigation.NavigationWindow.Navigate%2A>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNavigationInitiator">
+      <MemberSignature Language="C#" Value="public bool IsNavigationInitiator { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNavigationInitiator" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationEventArgs.IsNavigationInitiator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のナビゲーターがナビゲーションを開始したかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />現在のフレーム内のナビゲーションが開始された場合<see langword="false" />親ナビゲーターも移動する場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、現在のナビゲーターがナビゲーションを開始したかどうか、または親ナビゲーターを移動するかどうかを示します。 たとえば、現在のナビゲーターには、親ナビゲーターを移動先ページ内のフレームがあります。 地球が回転するかどうかを決定する、このプロパティを使用することができます、`Navigating`イベントで、地球が回転して停止するか、`LoadCompleted`イベント。 このプロパティが場合`false`ナビゲーターの親のナビゲーターは移動も、および、地球が回転して既にです。 このプロパティが場合`true`、現在のフレーム内のナビゲーションが開始されたおよび、地球が回転する必要があります (または停止イベントの処理に応じて、地球が回転している)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Navigator">
+      <MemberSignature Language="C#" Value="public object Navigator { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Navigator" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationEventArgs.Navigator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントを発生させたナビゲーターを取得します</summary>
+        <value>イベントを発生させたナビゲーター。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Uri">
+      <MemberSignature Language="C#" Value="public Uri Uri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Uri" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationEventArgs.Uri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]ターゲット ページのです。</summary>
+        <value>[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]ターゲット ページのです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebResponse">
+      <MemberSignature Language="C#" Value="public System.Net.WebResponse WebResponse { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.WebResponse WebResponse" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationEventArgs.WebResponse" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.WebResponse</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTTP ヘッダーやその他のプロパティにアクセスできるように Web 応答を取得します。</summary>
+        <value>Web 応答です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

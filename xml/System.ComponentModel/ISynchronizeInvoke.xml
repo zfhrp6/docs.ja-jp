@@ -1,0 +1,200 @@
+<Type Name="ISynchronizeInvoke" FullName="System.ComponentModel.ISynchronizeInvoke">
+  <TypeSignature Language="C#" Value="public interface ISynchronizeInvoke" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ISynchronizeInvoke" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.ISynchronizeInvoke" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>同期的または非同期的にデリゲートを実行する方法を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.ISynchronizeInvoke>インターフェイスは、イベントの発生についてのオブジェクト間の同期および非同期通信を提供します。 このインターフェイスを実装するオブジェクトは、イベントが発生し、イベントに関するクエリに対応することを示す通知を受信できます。 これにより、クライアントは、最初の完了に依存して後続の要求を送信する前に、その 1 つの要求が処理されたようにできます。  
+  
+ <xref:System.ComponentModel.ISynchronizeInvoke>クラスには、プロセスを開始する 2 つの方法が用意されています。  
+  
+1.  使用して、非同期的に、<xref:System.ComponentModel.ISynchronizeInvoke.BeginInvoke%2A>メソッドです。 <xref:System.ComponentModel.ISynchronizeInvoke.BeginInvoke%2A>プロセスを開始し、即座に返します。 使用して<xref:System.ComponentModel.ISynchronizeInvoke.EndInvoke%2A>によって開始されたプロセスまで<xref:System.ComponentModel.ISynchronizeInvoke.BeginInvoke%2A>が完了します。  
+  
+2.  使用して同期をとって、<xref:System.ComponentModel.ISynchronizeInvoke.Invoke%2A>メソッドです。 <xref:System.ComponentModel.ISynchronizeInvoke.Invoke%2A>プロセス、それが完了するまで待機してから返しますを開始します。 使用して<xref:System.ComponentModel.ISynchronizeInvoke.Invoke%2A>時点で、コントロールのメイン スレッドは適切なスレッドへの呼び出しをマーシャ リングする呼び出し元のスレッドと異なる。  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このクラスに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値: <xref:System.Security.Permissions.HostProtectionResource.Synchronization> & #124 です。<xref:System.Security.Permissions.HostProtectionResource.ExternalThreading>. <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BeginInvoke">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginInvoke (Delegate method, object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginInvoke(class System.Delegate method, object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.ISynchronizeInvoke.BeginInvoke(System.Delegate,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="method" Type="System.Delegate" />
+        <Parameter Name="args" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="method">A<see cref="T:System.Delegate" />と同じ数に含まれている型のパラメーターを受け取るメソッドへ<c>args</c>です。</param>
+        <param name="args">型の配列<see cref="T:System.Object" />特定のメソッドに引数として渡す。 引数が必要ない場合は、<see langword="null" /> を指定できます。</param>
+        <summary>このオブジェクトを作成したスレッドでデリゲートを非同期に実行します。</summary>
+        <returns><see cref="T:System.IAsyncResult" />このメソッドを呼び出すことにより非同期操作を表すインターフェイスが開始します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `method`デリゲートが行われるスレッドではなく、オブジェクトを作成したスレッドで実行<xref:System.ComponentModel.ISynchronizeInvoke.BeginInvoke%2A>が呼び出されました。  
+  
+ デリゲートは、非同期的に呼び出され、このメソッドをすぐに返します。 このメソッドは、任意のスレッドから呼び出すことができます。 このメソッドを使用して開始されたプロセスからの戻り値が必要な場合<xref:System.ComponentModel.ISynchronizeInvoke.EndInvoke%2A>値を取得します。  
+  
+ 同期的に、デリゲートを呼び出す必要がある場合、<xref:System.ComponentModel.ISynchronizeInvoke.Invoke%2A>メソッド代わりにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndInvoke">
+      <MemberSignature Language="C#" Value="public object EndInvoke (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object EndInvoke(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.ISynchronizeInvoke.EndInvoke(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result"><see cref="T:System.IAsyncResult" />非同期操作を表すインターフェイスを呼び出すことによって開始<see cref="M:System.ComponentModel.ISynchronizeInvoke.BeginInvoke(System.Delegate,System.Object[])" />です。</param>
+        <summary>呼び出すことにより、処理までの待機が開始<see cref="M:System.ComponentModel.ISynchronizeInvoke.BeginInvoke(System.Delegate,System.Object[])" />が完了し、プロセスによって生成された値が返されます。</summary>
+        <returns><see cref="T:System.Object" />を表す非同期の操作によって生成された戻り値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによって表される非同期操作の戻り値の取得、<xref:System.IAsyncResult>このインターフェイスによって渡されます。 非同期操作が完了していない場合、このメソッドは、結果が利用可能になるまで待機します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke">
+      <MemberSignature Language="C#" Value="public object Invoke (Delegate method, object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Invoke(class System.Delegate method, object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.ISynchronizeInvoke.Invoke(System.Delegate,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="method" Type="System.Delegate" />
+        <Parameter Name="args" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="method">A<see cref="T:System.Delegate" />呼び出すには、コントロールのスレッドのコンテキストでメソッドを格納しています。</param>
+        <param name="args">型の配列<see cref="T:System.Object" />を表す特定のメソッドに渡す引数。 引数が必要ない場合は、<see langword="null" /> を指定できます。</param>
+        <summary>同期的にこのオブジェクトを作成し、スレッドの作成の呼び出しをマーシャ リングするスレッドでデリゲートを実行します。</summary>
+        <returns><see cref="T:System.Object" />呼び出されるデリゲートからの戻り値を表すまたは<see langword="null" />デリゲートに戻り値があるない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 異なり<xref:System.ComponentModel.ISynchronizeInvoke.BeginInvoke%2A>待機は、戻る前に、プロセスが完了するまで、このメソッドは同期的に動作します。 呼び出し中に発生した例外は、呼び出し元に反映されます。  
+  
+ このメソッドを使用して別のスレッドからメソッドを呼び出すときに適切なスレッドへの呼び出しをマーシャ リングします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeRequired">
+      <MemberSignature Language="C#" Value="public bool InvokeRequired { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool InvokeRequired" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.ISynchronizeInvoke.InvokeRequired" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>呼び出し元が呼び出す必要があるかどうかを示す値を取得<see cref="M:System.ComponentModel.ISynchronizeInvoke.Invoke(System.Delegate,System.Object[])" />このインターフェイスを実装するオブジェクトを呼び出すとき。</summary>
+        <value>
+          <see langword="true" />場合は、呼び出し元が呼び出す必要があります<see cref="M:System.ComponentModel.ISynchronizeInvoke.Invoke(System.Delegate,System.Object[])" />、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、呼び出し元が呼び出す必要があるかどうかを決定<xref:System.ComponentModel.ISynchronizeInvoke.Invoke%2A>ときに、このインターフェイスを実装するメソッドを呼び出すオブジェクトです。 このようなオブジェクトは、特定のスレッドにバインドされ、スレッド セーフではありません。 使用する必要があります、別のスレッドからメソッドを呼び出す場合、<xref:System.ComponentModel.ISynchronizeInvoke.Invoke%2A>適切なスレッドへの呼び出しをマーシャ リングするメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

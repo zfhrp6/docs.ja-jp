@@ -1,0 +1,81 @@
+<Type Name="IPartitionResolver" FullName="System.Web.IPartitionResolver">
+  <TypeSignature Language="C#" Value="public interface IPartitionResolver" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IPartitionResolver" />
+  <TypeSignature Language="DocId" Value="T:System.Web.IPartitionResolver" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>カスタム セッション状態のパーティションの解像度を実装する必要があるメソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装、<xref:System.Web.IPartitionResolver>インターフェイスおよび<xref:System.Web.IPartitionResolver.Initialize%2A>と<xref:System.Web.IPartitionResolver.ResolvePartition%2A>メソッド、複数のバックエンド ノードに SQL または状態サーバー モードのときにセッション状態データのカスタムのパーティションの解像度を指定する場合。  
+  
+ セッション状態管理情報を構成することができます、 [sessionState 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/bda6fb8c-0076-43e3-9ce2-8cf1f8bdaa7d) 、構成ファイルの`partitionResolverType`属性。 値が指定されている場合、 `partitionResolverType` 、属性、`sqlConnectionString`と`stateConnectionString`属性は無視されます。  
+  
+ 使用してプログラムでパーティションの解決の構成を設定することも、<xref:System.Web.Configuration.SessionStateSection.PartitionResolverType%2A>プロパティです。 場合、<xref:System.Web.Configuration.SessionStateSection.PartitionResolverType%2A>プロパティが指定されて、<xref:System.Web.Configuration.SessionStateSection.SqlConnectionString%2A>と<xref:System.Web.Configuration.SessionStateSection.StateConnectionString%2A>プロパティは無視されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public void Initialize ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Initialize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.IPartitionResolver.Initialize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>パーティションのカスタム競合回避モジュールを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.IPartitionResolver.Initialize%2A>解像度は、カスタムのパーティションに必要なすべての初期化コードを提供するメソッド。 <xref:System.Web.SessionState.SessionStateModule>実装する型を作成、<xref:System.Web.IPartitionResolver>インターフェイスを呼び出し、 <xref:System.Web.IPartitionResolver.Initialize%2A> (インスタンス) を 1 に 1 回初期化するメソッドを示し、しを ASP.NET 状態サービスまたは SQL Server プロバイダーをパーティション分割が使用されているとリゾルバー インスタンスをプロバイダーに渡します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolvePartition">
+      <MemberSignature Language="C#" Value="public string ResolvePartition (object key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string ResolvePartition(object key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.IPartitionResolver.ResolvePartition(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">現在のセッション状態を使用するパーティションを決定するための識別子です。</param>
+        <summary>キーのパラメーターに基づくパーティションを解決します。</summary>
+        <returns>接続情報を表す文字列です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `key`のパラメーター、<xref:System.Web.IPartitionResolver.ResolvePartition%2A>メソッドは、<xref:System.Web.SessionState.HttpSessionState.SessionID%2A>プロパティです。 <xref:System.Web.SessionState.HttpSessionState.SessionID%2A>プロパティでは、サーバー上のセッション データと、ブラウザーを一意に識別します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

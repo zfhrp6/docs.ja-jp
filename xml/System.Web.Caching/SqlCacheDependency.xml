@@ -1,0 +1,277 @@
+<Type Name="SqlCacheDependency" FullName="System.Web.Caching.SqlCacheDependency">
+  <TypeSignature Language="C#" Value="public sealed class SqlCacheDependency : System.Web.Caching.CacheDependency" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SqlCacheDependency extends System.Web.Caching.CacheDependency" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Caching.SqlCacheDependency" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Caching.CacheDependency</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET アプリケーションに格納されている項目の間にリレーションシップを確立<see cref="T:System.Web.Caching.Cache" />オブジェクトと、いずれかの特定の SQL Server のデータベースのテーブルまたは SQL Server 2005 のクエリの結果。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サポートされている SQL Server (Microsoft SQL Server 7.0、Microsoft SQL Server 2000 および SQL Server 2005) のバージョンすべてで、<xref:System.Web.Caching.SqlCacheDependency>クラスは、特定の SQL Server データベース テーブルを監視します。 ときにテーブルの変更テーブルに関連付けられた項目から削除されます、 <xref:System.Web.Caching.Cache>、項目の新しいバージョンに追加し、<xref:System.Web.Caching.Cache>です。  
+  
+ <xref:System.Web.Caching.SqlCacheDependency>クラスとの統合もサポートしています、<xref:System.Data.SqlClient.SqlDependency?displayProperty=nameWithType>クラスを使用する場合、[!INCLUDE[sqprsqlong](~/includes/sqprsqlong-md.md)]データベース。 クエリ通知メカニズム[!INCLUDE[sqprsqlong](~/includes/sqprsqlong-md.md)]SQL クエリと削除のいずれかのキャッシュからの SQL クエリに関連付けられた項目の結果が無効になるデータに対する変更を検出、<xref:System.Web.Caching.Cache?displayProperty=nameWithType>です。  
+  
+ 使用することができます、<xref:System.Web.Caching.SqlCacheDependency>クラスに、アプリケーションのアイテムを追加する<xref:System.Web.Caching.Cache>を使用すると、SQL Server データベースのテーブルまたは SQL クエリ依存は[!INCLUDE[sqprsqlong](~/includes/sqprsqlong-md.md)]します。 このクラスは、出力キャッシュのページやユーザー コントロールを SQL Server データベース テーブルに依存するようにするのにディレクティブでも使用できます。 最後に、使用することができます、<xref:System.Web.Caching.SqlCacheDependency>クラスを使用する場合、出力キャッシュ ページを SQL クエリの結果に依存するように、ページ ディレクティブと共に[!INCLUDE[sqprsqlong](~/includes/sqprsqlong-md.md)]です。 使用してクエリ通知[!INCLUDE[sqprsqlong](~/includes/sqprsqlong-md.md)]ユーザー コントロールのディレクティブではサポートされていません。  
+  
+> [!NOTE]
+>  正常に動作するには、このクラス テーブル ベースの通知を使用する場合、データベースとの依存関係を作成する任意のテーブルが必要有効になっている通知です。 メソッドを呼び出すことによって通知を有効にすることができます、<xref:System.Web.Caching.SqlCacheDependencyAdmin>クラスか、コマンド ライン ツールを使用しています。 さらに、アプリケーションの Web.config ファイルで、適切な構成設定を含める必要があります。  
+>   
+>  使用して、<xref:System.Web.Caching.SqlCacheDependency>オブジェクト[!INCLUDE[sqprsqlong](~/includes/sqprsqlong-md.md)]クエリ通知では、任意の明示的な構成は必要ありません。 参照してください、[!INCLUDE[sqprsqlong](~/includes/sqprsqlong-md.md)]制限については、クエリ通知を使用する場合に許可されている TRANSACT-SQL クエリの種類のオンライン ブック。  
+  
+ 次の例では、SQL Server データベース テーブルの依存関係のテーブルに基づくをできるようにする ASP.NET Web.config ファイルを示します。  
+  
+```  
+<configuration>  
+  <connectionStrings>  
+    <add name="Northwind" connectionString="Data Source=(local); Initial Catalog=northwind; Integrated Security=true"; providerName="System.Data.SqlClient" />  
+  </connectionStrings>  
+  <system.web>  
+    <caching>  
+      <sqlCacheDependency enabled = "true" pollTime = "60000" >  
+        <databases>  
+          <add name="northwind"   
+            connectionStringName="Northwind"  
+            pollTime="9000000"  
+            />  
+        </databases>  
+      </sqlCacheDependency>  
+    </caching>  
+  </system.web>  
+</configuration>  
+```  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.UI.WebControls.SqlDataSource>と<xref:System.Web.UI.WebControls.GridView>データベース テーブルを表示するコントロール。 ページが作成しようとしたページが読み込まれるときに、<xref:System.Web.Caching.SqlCacheDependency>オブジェクト。 後に、<xref:System.Web.Caching.SqlCacheDependency>オブジェクトが作成されると、ページに項目を追加する、`Cache`に依存して、<xref:System.Web.Caching.SqlCacheDependency>オブジェクト。 例外は、ここに示すような処理を使用する必要があります。  
+  
+ [!code-aspx-csharp[CachingSamples_SqlCacheDependency#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CachingSamples_SqlCacheDependency/CS/sqlcachedepsamplecs.aspx#1)]
+ [!code-aspx-vb[CachingSamples_SqlCacheDependency#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CachingSamples_SqlCacheDependency/VB/sqlcachedepsamplevb.aspx#1)]
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlCacheDependency (System.Data.SqlClient.SqlCommand sqlCmd);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.SqlClient.SqlCommand sqlCmd) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.SqlCacheDependency.#ctor(System.Data.SqlClient.SqlCommand)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="sqlCmd" Type="System.Data.SqlClient.SqlCommand" />
+      </Parameters>
+      <Docs>
+        <param name="sqlCmd">A<see cref="T:System.Data.SqlClient.SqlCommand" />作成に使用される、<see cref="T:System.Web.Caching.SqlCacheDependency" />オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Caching.SqlCacheDependency" />クラスを使用して、指定された<see cref="T:System.Data.SqlClient.SqlCommand" />キャッシュ キーの依存関係を作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成する<xref:System.Web.Caching.SqlCacheDependency>のクエリ通知機能を使用しているオブジェクト[!INCLUDE[sqprsqlong](~/includes/sqprsqlong-md.md)]製品です。  
+  
+ SQL ステートメントに関連付けられている、`sqlCmd`パラメーターは、次を含める必要があります。  
+  
+-   テーブルの所有者の名前を含め、完全修飾テーブル名。 たとえば、名前付き Customersthat がデータベース所有者が所有するテーブルを参照する SQL ステートメント必要がありますを参照してください`dbo.customers`です。  
+  
+-   Select ステートメントで明示的な列名。 アスタリスク (*) ワイルドカード文字を使用して、テーブルからすべての列を選択することはできません。 たとえばの代わりに`select * from dbo.customers`、使用する必要があります`select name, address, city, state from dbo.customers`です。  
+  
+ 関連付けるにはこのコンス トラクターを使用することはできません、<xref:System.Data.SqlClient.SqlCommand>インスタンス、<xref:System.Web.Caching.SqlCacheDependency>を使用してページ上のインスタンス[!INCLUDE[sqprsqlong](~/includes/sqprsqlong-md.md)]ページ レベル出力キャッシュを使用して通知クエリを実行します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="sqlCmd" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Web.HttpException"><see cref="T:System.Data.SqlClient.SqlCommand" />インスタンスがその<see cref="P:System.Data.SqlClient.SqlCommand.NotificationAutoEnlist" />プロパティに設定<see langword="true" />ページ上に、ディレクティブがあると、<see langword="SqlDependency" />属性に設定<c>CommandNotification</c>です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlCacheDependency (string databaseEntryName, string tableName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string databaseEntryName, string tableName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.SqlCacheDependency.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="databaseEntryName" Type="System.String" />
+        <Parameter Name="tableName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="databaseEntryName">アプリケーションの Web.config ファイルのデータベース要素で定義されているデータベースの名前。</param>
+        <param name="tableName">データベースの名前テーブルを<see cref="T:System.Web.Caching.SqlCacheDependency" />に関連付けられています。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Caching.SqlCacheDependency" />クラス、キャッシュ キーの依存関係を作成する、指定されたパラメーターを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成する<xref:System.Web.Caching.SqlCacheDependency>SQL Server 7.0 および SQL Server 2000 製品用のオブジェクト。  
+  
+ 渡されるデータベース名、`database`パラメーターは、アプリケーションの Web.config ファイルで定義する必要があります。 たとえば、次の Web.config ファイルに定義の pubs をという名前のデータベース<xref:System.Web.Caching.SqlCacheDependency>通知を変更します。  
+  
+```  
+<configuration>  
+  <connectionStrings>  
+    <add name="Pubs" connectionString="Data Source=(local); Initial Catalog=pubs; Integrated Security=true"; providerName="System.Data.SqlClient" />  
+  </connectionStrings>  
+  <system.web>  
+    <caching>  
+      <sqlCacheDependency enabled = "true" pollTime = "60000" >  
+        <databases>  
+          <add name="pubs"   
+            connectionStringName="pubs"  
+            pollTime="9000000"  
+            />  
+        </databases>  
+      </sqlCacheDependency>  
+    </caching>  
+  </system.web>  
+</configuration>  
+```  
+  
+ このコンス トラクターを使用すると、2 つの例外がスローよく:<xref:System.Web.Caching.DatabaseNotEnabledForNotificationException>と<xref:System.Web.Caching.TableNotEnabledForNotificationException>です。 場合、<xref:System.Web.Caching.DatabaseNotEnabledForNotificationException>がスローされた場合、呼び出すことができます、<xref:System.Web.Caching.SqlCacheDependencyAdmin.EnableNotifications%2A?displayProperty=nameWithType>メソッドで例外処理コード、または通知のデータベースを設定するコマンド ライン ツールを使用します。 場合、<xref:System.Web.Caching.TableNotEnabledForNotificationException>がスローされた場合、呼び出すことができます、<xref:System.Web.Caching.SqlCacheDependencyAdmin.EnableTableForNotifications%2A?displayProperty=nameWithType>メソッドまたは通知のテーブルを設定するには使用できます。  
+  
+   
+  
+## Examples  
+ 次のコード例のインスタンスを作成するこのコンス トラクターを使用して、 <xref:System.Web.Caching.SqlCacheDependency> SQL Server データベース内のカテゴリをという名前のデータベース テーブルに関連付けられているクラスには、Northwind がという名前です。  
+  
+ [!code-csharp[CachingSamples_SqlCacheDependency#2](~/samples/snippets/csharp/VS_Snippets_WebNet/CachingSamples_SqlCacheDependency/CS/sqlcachedepsamplecs.aspx#2)]
+ [!code-vb[CachingSamples_SqlCacheDependency#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CachingSamples_SqlCacheDependency/VB/sqlcachedepsamplevb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">内部のチェックを<see cref="T:System.Data.SqlClient.SqlClientPermission" />できませんでした。  
+  
+ \- または  
+  
+ <paramref name="databaseEntryName" />テーブル ベースの通知用に構成されたデータベースの一覧にありませんでした。  
+  
+ \- または  
+  
+ <see cref="T:System.Web.Caching.SqlCacheDependency" />の初期化中に、オブジェクトは、データベースに接続できませんでした。  
+  
+ \- または  
+  
+ <see cref="T:System.Web.Caching.SqlCacheDependency" />オブジェクトには、データベースまたはデータベースのストアド プロシージャをサポートするには、アクセス拒否エラーが発生しました、<see cref="T:System.Web.Caching.SqlCacheDependency" />オブジェクト。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="tableName" /> パラメーターが <see cref="F:System.String.Empty" /> です。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">ポーリングが有効ではありません、<see cref="T:System.Web.Caching.SqlCacheDependency" />です。  
+  
+ \- または  
+  
+ ポーリング間隔が正しく構成されていません。  
+  
+ \- または  
+  
+ アプリケーションの構成ファイルで接続文字列が指定されていません。  
+  
+ \- または  
+  
+ アプリケーションの構成ファイルで指定した接続文字列が見つかりませんでした。  
+  
+ \- または  
+  
+ アプリケーションの構成ファイルで指定した接続文字列は、空の文字列です。</exception>
+        <exception cref="T:System.Web.Caching.DatabaseNotEnabledForNotificationException">指定されたデータベース、<paramref name="databaseEntryName" />パラメーターが変更通知を無効になっています。</exception>
+        <exception cref="T:System.Web.Caching.TableNotEnabledForNotificationException">指定したデータベース テーブル、<paramref name="tableName" />パラメーターが変更通知を無効になっています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="databaseEntryName" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="tableName" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateOutputCacheDependency">
+      <MemberSignature Language="C#" Value="public static System.Web.Caching.CacheDependency CreateOutputCacheDependency (string dependency);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Caching.CacheDependency CreateOutputCacheDependency(string dependency) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.SqlCacheDependency.CreateOutputCacheDependency(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Caching.CacheDependency</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dependency" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dependency">出力キャッシュの依存関係のディレクティブ。</param>
+        <summary>ASP.NET アプリケーションに格納されている項目の間の依存関係を作成<see cref="T:System.Web.Caching.OutputCache" />オブジェクトと SQL Server データベース テーブルです。</summary>
+        <returns>新しい依存関係オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次のマークアップでは、出力キャッシュ依存関係の一般的なディレクティブを示します。  
+  
+```  
+<%@ OutputCache Duration="3600" SqlDependency="Northwind:Employees" VaryByParam="none" %>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DependencyDispose">
+      <MemberSignature Language="C#" Value="protected override void DependencyDispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void DependencyDispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.SqlCacheDependency.DependencyDispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUniqueID">
+      <MemberSignature Language="C#" Value="public override string GetUniqueID ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetUniqueID() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.SqlCacheDependency.GetUniqueID" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>一意の識別子を取得、<see cref="T:System.Web.Caching.SqlCacheDependency" />オブジェクト。</summary>
+        <returns>一意の識別子、<see cref="T:System.Web.Caching.SqlCacheDependency" />オブジェクト、または識別子を生成できない場合は null です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Caching.SqlCacheDependency>を一意に追跡するための識別子を返します<xref:System.Web.Caching.SqlCacheDependency>アイテムやアプリケーションに関連付けられているオブジェクト。 テーブル ベースの通知を使用するときに生成される一意の識別子は、データベースによって生成される変更識別子に部分的に依存します。  
+  
+ 一意の識別子は、SQL Server 2005 ベースのクエリ通知を使用して、`null`ため[!INCLUDE[sqprsqlong](~/includes/sqprsqlong-md.md)]は個々 のクエリ通知の一意識別子を返すことをサポートしていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

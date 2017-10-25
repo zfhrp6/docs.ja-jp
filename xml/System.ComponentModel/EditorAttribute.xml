@@ -1,0 +1,358 @@
+<Type Name="EditorAttribute" FullName="System.ComponentModel.EditorAttribute">
+  <TypeSignature Language="C#" Value="public sealed class EditorAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EditorAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.EditorAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.All, AllowMultiple=true, Inherited=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プロパティの変更に使用するエディターを指定します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティを編集するときに、ビジュアル デザイナーは ダイアログ ボックスまたはドロップダウン ウィンドウで、指定されたエディターの新しいインスタンスを作成する必要があります。  
+  
+ 使用して、<xref:System.ComponentModel.EditorAttribute.EditorBaseTypeName%2A>エディターの基本型を検索するプロパティです。 のみ使用可能な基本データ型は<xref:System.Drawing.Design.UITypeEditor>します。  
+  
+ 使用して、<xref:System.ComponentModel.EditorAttribute.EditorTypeName%2A>この属性に関連付けられているエディターの種類の名前を取得するプロパティです。  
+  
+ 属性の使用に関する一般情報はします。 参照してください[属性](~/docs/standard/attributes/index.md)です。 デザイン時属性の詳細については、次を参照してください。[属性およびデザイン時サポート](http://msdn.microsoft.com/library/7aed9eb4-124b-4a15-a0a3-458f37ac9ef7)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、`MyImage`クラスです。 クラスが付いて、<xref:System.ComponentModel.EditorAttribute>を指定する、<xref:System.Drawing.Design.ImageEditor>エディターとして。  
+  
+ [!code-cpp[Classic EditorAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic EditorAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic EditorAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic EditorAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic EditorAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic EditorAttribute Example/VB/source.vb#1)]  
+  
+ 次のコード例は、のインスタンスを作成、`MyImage`クラス、クラスの属性を取得しで使用するエディターの名前を出力`myNewImage`です。  
+  
+ [!code-cpp[Classic EditorAttribute Example#2](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic EditorAttribute Example/CPP/source.cpp#2)]
+ [!code-csharp[Classic EditorAttribute Example#2](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic EditorAttribute Example/CS/source.cs#2)]
+ [!code-vb[Classic EditorAttribute Example#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic EditorAttribute Example/VB/source.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EditorAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.EditorAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.EditorAttribute" />エディターがされていない既定のエディターを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EditorAttribute (string typeName, string baseTypeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string typeName, string baseTypeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.EditorAttribute.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="baseTypeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="typeName">エディターの完全修飾型名。</param>
+        <param name="baseTypeName">基底クラスまたはエディターのルックアップ キーとして使用するインターフェイスの完全修飾型名。 このクラスがされるかから派生する必要があります<see cref="T:System.Drawing.Design.UITypeEditor" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.EditorAttribute" />エディターの基本型の名前と型の名前を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `typeName`パラメーターでなければなりません、<xref:System.Type.AssemblyQualifiedName%2A?displayProperty=nameWithType>形式です。  
+  
+ <xref:System.Type>によって表される、`typeName`パラメーターから派生させるか、基本クラスを実装する必要があります。  
+  
+ <xref:System.Type>によって表される、`baseTypeName`パラメーターは使用をキーとして特定のエディターを検索するため、データ型が関連付けられている 1 つ以上のエディターを持つことができます。 これは任意のクラスを指定できますが、通常は<xref:System.Drawing.Design.UITypeEditor>または<xref:System.ComponentModel.ComponentEditor>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EditorAttribute (string typeName, Type baseType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string typeName, class System.Type baseType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.EditorAttribute.#ctor(System.String,System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="baseType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="typeName">エディターの完全修飾型名。</param>
+        <param name="baseType"><see cref="T:System.Type" />の基底クラスまたはエディターのルックアップ キーとして使用するインターフェイスです。 このクラスがされるかから派生する必要があります<see cref="T:System.Drawing.Design.UITypeEditor" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.EditorAttribute" />型名と、基本データ型を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `typeName`パラメーターでなければなりません、<xref:System.Type.AssemblyQualifiedName%2A?displayProperty=nameWithType>形式です。  
+  
+ <xref:System.Type>によって表される、`typeName`から派生または基本クラスを実装する必要があります。  
+  
+ `baseType`パラメーターは使用をキーとして特定のエディターを検索するため、データ型が関連付けられている 1 つ以上のエディターを持つことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EditorAttribute (Type type, Type baseType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type, class System.Type baseType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.EditorAttribute.#ctor(System.Type,System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="baseType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">A<see cref="T:System.Type" />エディターの型を表すです。</param>
+        <param name="baseType"><see cref="T:System.Type" />の基底クラスまたはエディターのルックアップ キーとして使用するインターフェイスです。 このクラスがされるかから派生する必要があります<see cref="T:System.Drawing.Design.UITypeEditor" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.EditorAttribute" />型および基本型を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Type>によって表される、`type`パラメーターから派生させるか、基本クラスを実装する必要があります。  
+  
+ `baseType`パラメーターは使用をキーとして特定のエディターを検索するため、データ型が関連付けられている 1 つ以上のエディターを持つことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditorBaseTypeName">
+      <MemberSignature Language="C#" Value="public string EditorBaseTypeName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EditorBaseTypeName" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.EditorAttribute.EditorBaseTypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基底クラスまたはこのエディターのルックアップ キーとして機能しているインターフェイスの名前を取得します。</summary>
+        <value>基底クラスまたはこのエディターのルックアップ キーとして機能しているインターフェイスの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.EditorAttribute.EditorBaseTypeName%2A>プロパティは、アセンブリ修飾型名。 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]両方<xref:System.Drawing.Design.UITypeEditor>と<xref:System.ComponentModel.ComponentEditor>ように、有効な基底クラスですが任意の値が有効ではここでします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditorTypeName">
+      <MemberSignature Language="C#" Value="public string EditorTypeName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EditorTypeName" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.EditorAttribute.EditorTypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エディター内のクラス名を取得、<see cref="P:System.Type.AssemblyQualifiedName" />形式です。</summary>
+        <value>エディター内のクラス名、<see cref="P:System.Type.AssemblyQualifiedName" />形式です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.EditorAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">値の等価性をテストするオブジェクト。</param>
+        <summary>指定したオブジェクトの値が、現在と等しいかどうかを返します<see cref="T:System.ComponentModel.EditorAttribute" />です。</summary>
+        <returns>
+          <see langword="true" />指定したオブジェクトの値は、現在のオブジェクトと等しい場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.EditorAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeId">
+      <MemberSignature Language="C#" Value="public override object TypeId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object TypeId" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.EditorAttribute.TypeId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この属性の型の一意の ID を取得します。</summary>
+        <value>この属性の型の一意の ID。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.EditorAttribute.TypeId%2A>プロパティは、同じ型である 2 つの属性を識別するアルゴリズムをフィルター処理で使用します。 ほとんどの属性だけが返されます、<xref:System.Type>属性のインスタンス。 <xref:System.ComponentModel.EditorAttribute>このエディターの基本型の型を含めるメソッドをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

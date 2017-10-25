@@ -1,0 +1,333 @@
+<Type Name="DESCryptoServiceProvider" FullName="System.Security.Cryptography.DESCryptoServiceProvider">
+  <TypeSignature Language="C#" Value="public sealed class DESCryptoServiceProvider : System.Security.Cryptography.DES" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DESCryptoServiceProvider extends System.Security.Cryptography.DES" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.DESCryptoServiceProvider" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Csp</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Cryptography.DES</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>データ暗号化標準の暗号化サービス プロバイダー (CSP) のバージョンにアクセスするラッパー オブジェクトの定義 (<see cref="T:System.Security.Cryptography.DES" />) アルゴリズム。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このアルゴリズムには、64 ビットのキー長がサポートされています。  
+  
+   
+  
+## Examples  
+ 次のコード例では<xref:System.Security.Cryptography.DESCryptoServiceProvider>(の実装<xref:System.Security.Cryptography.DES>) 指定されたキーに (<xref:System.Security.Cryptography.SymmetricAlgorithm.Key%2A>) および初期化ベクター (<xref:System.Security.Cryptography.SymmetricAlgorithm.IV%2A>) で指定されたファイルの暗号化に`inName`です。 暗号化された結果で指定されたファイルを出力`outName`です。  
+  
+ [!code-cpp[Classic DES Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic DES Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DES Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic DES Example/CS/source.cs#1)]
+ [!code-vb[Classic DES Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic DES Example/VB/source.vb#1)]  
+  
+ 復号化は、同じ方法で処理できます。使用して<xref:System.Security.Cryptography.DESCryptoServiceProvider.CreateDecryptor%2A>の代わりに<xref:System.Security.Cryptography.DESCryptoServiceProvider.CreateEncryptor%2A>です。 同じキー (<xref:System.Security.Cryptography.SymmetricAlgorithm.Key%2A>) および初期化ベクター (<xref:System.Security.Cryptography.SymmetricAlgorithm.IV%2A>) 暗号化に使用されるファイルを使用して、暗号化を解除する必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DESCryptoServiceProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.DESCryptoServiceProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Csp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.DESCryptoServiceProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では<xref:System.Security.Cryptography.DESCryptoServiceProvider>(の実装<xref:System.Security.Cryptography.DES>) 指定されたキーに (<xref:System.Security.Cryptography.SymmetricAlgorithm.Key%2A>) および初期化ベクター (<xref:System.Security.Cryptography.SymmetricAlgorithm.IV%2A>) で指定されたファイルの暗号化に`inName`です。 暗号化された結果で指定されたファイルを出力`outName`です。  
+  
+ [!code-cpp[Classic DES Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic DES Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DES Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic DES Example/CS/source.cs#1)]
+ [!code-vb[Classic DES Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic DES Example/VB/source.vb#1)]  
+  
+ 復号化は、同じ方法で処理できます。使用して<xref:System.Security.Cryptography.DESCryptoServiceProvider.CreateDecryptor%2A>の代わりに<xref:System.Security.Cryptography.DESCryptoServiceProvider.CreateEncryptor%2A>です。 同じキー (<xref:System.Security.Cryptography.SymmetricAlgorithm.Key%2A>) および初期化ベクター (<xref:System.Security.Cryptography.SymmetricAlgorithm.IV%2A>) 暗号化に使用されるファイルを使用して、暗号化を解除する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">データ暗号化標準 (<see cref="T:System.Security.Cryptography.DES" />) 暗号化サービス プロバイダーは使用できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDecryptor">
+      <MemberSignature Language="C#" Value="public override System.Security.Cryptography.ICryptoTransform CreateDecryptor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.Cryptography.ICryptoTransform CreateDecryptor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.DESCryptoServiceProvider.CreateDecryptor" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Csp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.ICryptoTransform</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDecryptor">
+      <MemberSignature Language="C#" Value="public override System.Security.Cryptography.ICryptoTransform CreateDecryptor (byte[] rgbKey, byte[] rgbIV);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.Cryptography.ICryptoTransform CreateDecryptor(unsigned int8[] rgbKey, unsigned int8[] rgbIV) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.DESCryptoServiceProvider.CreateDecryptor(System.Byte[],System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Csp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.ICryptoTransform</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rgbKey" Type="System.Byte[]" />
+        <Parameter Name="rgbIV" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="rgbKey">対称アルゴリズムに使用する共有キー。</param>
+        <param name="rgbIV">対称アルゴリズムに使用する初期化ベクター。</param>
+        <summary>作成、対称データ暗号化標準 (<see cref="T:System.Security.Cryptography.DES" />) 指定したキーを復号化オブジェクト (<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.Key" />) および初期化ベクター (<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.IV" />)。</summary>
+        <returns>対称<see cref="T:System.Security.Cryptography.DES" />復号化オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して作成された暗号化されたメッセージを復号化、<xref:System.Security.Cryptography.DESCryptoServiceProvider.CreateEncryptor%2A>同じパラメーターを持つオーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Security.Cryptography.SymmetricAlgorithm.Mode" /> プロパティの値が <see cref="F:System.Security.Cryptography.CipherMode.OFB" /> です。  
+  
+ または  
+  
+ 値、<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.Mode" />プロパティは<see cref="F:System.Security.Cryptography.CipherMode.CFB" />の値、<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.FeedbackSize" />プロパティは 8 ではありません。  
+  
+ または  
+  
+ 無効なキー サイズが使用されました。  
+  
+ または  
+  
+ アルゴリズムのキーのサイズは使用できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateEncryptor">
+      <MemberSignature Language="C#" Value="public override System.Security.Cryptography.ICryptoTransform CreateEncryptor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.Cryptography.ICryptoTransform CreateEncryptor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.DESCryptoServiceProvider.CreateEncryptor" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Csp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.ICryptoTransform</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateEncryptor">
+      <MemberSignature Language="C#" Value="public override System.Security.Cryptography.ICryptoTransform CreateEncryptor (byte[] rgbKey, byte[] rgbIV);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.Cryptography.ICryptoTransform CreateEncryptor(unsigned int8[] rgbKey, unsigned int8[] rgbIV) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.DESCryptoServiceProvider.CreateEncryptor(System.Byte[],System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Csp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.ICryptoTransform</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rgbKey" Type="System.Byte[]" />
+        <Parameter Name="rgbIV" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="rgbKey">対称アルゴリズムに使用する共有キー。</param>
+        <param name="rgbIV">対称アルゴリズムに使用する初期化ベクター。</param>
+        <summary>作成、対称データ暗号化標準 (<see cref="T:System.Security.Cryptography.DES" />) 指定されたキーに暗号化オブジェクト (<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.Key" />) と初期化ベクトル (<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.IV" />)。</summary>
+        <returns>対称<see cref="T:System.Security.Cryptography.DES" />暗号化オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Security.Cryptography.DESCryptoServiceProvider.CreateDecryptor%2A>このメソッドの結果を復号化に同じパラメーターを持つオーバー ロードします。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成および使用する方法を示しています、<xref:System.Security.Cryptography.DESCryptoServiceProvider>を暗号化して、ファイル内のデータを復号化オブジェクト。  
+  
+ [!code-cpp[Cryptography.DESCSP.CreateEncryptor.File#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.DESCSP.CreateEncryptor.File/CPP/fileexample.cpp#1)]
+ [!code-csharp[Cryptography.DESCSP.CreateEncryptor.File#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.DESCSP.CreateEncryptor.File/CS/fileexample.cs#1)]
+ [!code-vb[Cryptography.DESCSP.CreateEncryptor.File#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.DESCSP.CreateEncryptor.File/VB/fileexample.vb#1)]  
+  
+ 次のコード例を作成および使用する方法を示しています、<xref:System.Security.Cryptography.DESCryptoServiceProvider>を暗号化して、メモリ内のデータを復号化オブジェクト。  
+  
+ [!code-cpp[Cryptography.DESCSP.CreateEncryptor.Memory#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.DESCSP.CreateEncryptor.Memory/CPP/memoryexample.cpp#1)]
+ [!code-csharp[Cryptography.DESCSP.CreateEncryptor.Memory#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.DESCSP.CreateEncryptor.Memory/CS/memoryexample.cs#1)]
+ [!code-vb[Cryptography.DESCSP.CreateEncryptor.Memory#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.DESCSP.CreateEncryptor.Memory/VB/memoryexample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Security.Cryptography.SymmetricAlgorithm.Mode" /> プロパティの値が <see cref="F:System.Security.Cryptography.CipherMode.OFB" /> です。  
+  
+ または  
+  
+ 値、<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.Mode" />プロパティは<see cref="F:System.Security.Cryptography.CipherMode.CFB" />の値、<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.FeedbackSize" />プロパティは 8 ではありません。  
+  
+ または  
+  
+ 無効なキー サイズが使用されました。  
+  
+ または  
+  
+ アルゴリズムのキーのサイズは使用できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateIV">
+      <MemberSignature Language="C#" Value="public override void GenerateIV ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GenerateIV() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.DESCryptoServiceProvider.GenerateIV" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Csp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ランダムな初期化ベクトルが生成されます (<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.IV" />) アルゴリズムを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、ランダムな生成<xref:System.Security.Cryptography.SymmetricAlgorithm.IV%2A>none が指定されている場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateKey">
+      <MemberSignature Language="C#" Value="public override void GenerateKey ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GenerateKey() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.DESCryptoServiceProvider.GenerateKey" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Csp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ランダムなキーが生成されます (<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.Key" />) アルゴリズムを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、指定されていないときに、ランダムなキーを生成できます。 このメソッドは、弱いキーなのでを返すことはありません (を参照してください<xref:System.Security.Cryptography.DES.IsWeakKey%2A>) または部分的に弱いキー (を参照してください<xref:System.Security.Cryptography.DES.IsSemiWeakKey%2A>)。  
+  
+ このアルゴリズムには、64 ビットのキー長がサポートされています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

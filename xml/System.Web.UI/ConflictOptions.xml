@@ -1,0 +1,61 @@
+<Type Name="ConflictOptions" FullName="System.Web.UI.ConflictOptions">
+  <TypeSignature Language="C#" Value="public enum ConflictOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ConflictOptions extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.ConflictOptions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>ASP.NET のデータ ソースがハンドル データの競合を更新する場合、またはデータの削除を制御する方法を決定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 同時実行制御は、データを読み取るし、複数のクライアントがアクセスして、同じデータを操作するときに、ストアで変更する方法を制御するデータ ストアを使用する手法です。 たとえば、1 つのクライアントは、データを読み取り、別のクライアントが、同じデータを読み取り、別のユーザーに提示中に、ユーザーに提示します。 両方のユーザーは、データ更新、データ ストレージに送信すると、予期しない結果が発生する、クライアントは、同じデータの異なる値を更新するためです。 これは、競合と見なされます。  
+  
+ `ConflictDetection` ASP.NET データ ソース コントロールに定義されているプロパティを使用して、基になるデータ ストレージを使用してオプティミスティック同時実行制御と delete または update 操作が実行される際に、コントロールが基になるデータ ストレージでデータの競合を処理する方法を決定します。  
+  
+ 既定では、 `ConflictDetection` OverwriteChanges で、データ ソース コントロールは、行が更新される時間と、データ ソース コントロールが最初の行からデータを読み取る時間の間のデータ行に加えられた変更を上書きすることを意味するプロパティを設定します。 主キーが更新または削除されるデータ行を検索に使用されるが、その他のデータの比較は行われません。 データ ソース コントロールが CompareAllValues オプションを使用して構成されている場合、制御が渡される内の元のデータ、`oldValues`のコレクション、`Update`と`Delete`メソッドを更新またはこれらの値には、データ記憶域の現在の値が一致する場合だけにデータを削除するためのロジックを作成できるようにします。 一致する値は、データが読み取られて以来変更されていないことを示します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CompareAllValues">
+      <MemberSignature Language="C#" Value="CompareAllValues" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.ConflictOptions CompareAllValues = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.ConflictOptions.CompareAllValues" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ConflictOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ソース コントロールを使用して、<paramref name="oldValues" />のコレクション、<see langword="Update" />と<see langword="Delete" />別のプロセスによってデータが変更されたかどうかを判別する方法です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OverwriteChanges">
+      <MemberSignature Language="C#" Value="OverwriteChanges" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.ConflictOptions OverwriteChanges = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.ConflictOptions.OverwriteChanges" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ConflictOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ソース コントロールには、行の値で、データ行のすべての値が上書きされます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

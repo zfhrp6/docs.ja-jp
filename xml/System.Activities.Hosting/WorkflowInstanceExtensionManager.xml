@@ -1,0 +1,127 @@
+<Type Name="WorkflowInstanceExtensionManager" FullName="System.Activities.Hosting.WorkflowInstanceExtensionManager">
+  <TypeSignature Language="C#" Value="public class WorkflowInstanceExtensionManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WorkflowInstanceExtensionManager extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Hosting.WorkflowInstanceExtensionManager" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Activities.Hosting.WorkflowInstance" /> の拡張機能のコレクションを管理します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkflowInstanceExtensionManager ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Hosting.WorkflowInstanceExtensionManager.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Activities.Hosting.WorkflowInstanceExtensionManager" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public virtual void Add (object singletonExtension);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Add(object singletonExtension) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Hosting.WorkflowInstanceExtensionManager.Add(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="singletonExtension" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="singletonExtension">追加する拡張子。</param>
+        <summary>指定した拡張子を拡張機能のコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードを使用すると、この拡張機能の種類を要求する各ワークフロー インスタンスはこのメソッドに提供される拡張機能のインスタンスを取得します。 各ワークフロー インスタンスは、独自の拡張機能のインスタンスである必要がありますを使用して、他の<xref:System.Activities.Hosting.WorkflowInstanceExtensionManager.Add%2A>オーバー ロードします。  
+  
+ いずれかの <xref:System.Activities.Hosting.WorkflowInstanceExtensionManager.Add%2A> オーバーロードが <xref:System.Activities.Hosting.WorkflowInstanceExtensionManager.MakeReadOnly%2A> の後に呼び出された場合は、<xref:System.InvalidOperationException> がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public virtual void Add&lt;T&gt; (Func&lt;T&gt; extensionCreationFunction) where T : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Add&lt;class T&gt;(class System.Func`1&lt;!!T&gt; extensionCreationFunction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Hosting.WorkflowInstanceExtensionManager.Add``1(System.Func{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="extensionCreationFunction" Type="System.Func&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">追加する拡張子の型。</typeparam>
+        <param name="extensionCreationFunction">拡張子を作成するメソッド。</param>
+        <summary>登録、<see cref="T:System.Func`1" />ワークフロー インスタンスによって要求されたときに、拡張機能のインスタンスを提供するために使用されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードを使用すると、この拡張機能の種類を要求する各ワークフロー インスタンスは、拡張機能の新しいインスタンスを取得します。 単一の拡張機能を使用する場合を使用して、他の<xref:System.Activities.Hosting.WorkflowInstanceExtensionManager.Add%2A>オーバー ロードします。  
+  
+ いずれかの <xref:System.Activities.Hosting.WorkflowInstanceExtensionManager.Add%2A> オーバーロードが <xref:System.Activities.Hosting.WorkflowInstanceExtensionManager.MakeReadOnly%2A> の後に呼び出された場合は、<xref:System.InvalidOperationException> がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MakeReadOnly">
+      <MemberSignature Language="C#" Value="public void MakeReadOnly ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MakeReadOnly() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Hosting.WorkflowInstanceExtensionManager.MakeReadOnly" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>拡張機能のコレクションを読み取り専用としてマークします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ワークフローのホストで実行の準備が完了したときに呼び出されます。 いずれかの <xref:System.Activities.Hosting.WorkflowInstanceExtensionManager.Add%2A> オーバーロードが <xref:System.Activities.Hosting.WorkflowInstanceExtensionManager.MakeReadOnly%2A> の後に呼び出された場合は、<xref:System.InvalidOperationException> がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

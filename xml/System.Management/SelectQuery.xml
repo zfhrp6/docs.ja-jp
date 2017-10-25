@@ -1,0 +1,454 @@
+<Type Name="SelectQuery" FullName="System.Management.SelectQuery">
+  <TypeSignature Language="C#" Value="public class SelectQuery : System.Management.WqlObjectQuery" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SelectQuery extends System.Management.WqlObjectQuery" />
+  <TypeSignature Language="DocId" Value="T:System.Management.SelectQuery" />
+  <AssemblyInfo>
+    <AssemblyName>System.Management</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Management.WqlObjectQuery</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>WQL SELECT データ クエリを表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SelectQuery ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.SelectQuery.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Management.SelectQuery" /> クラスの新しいインスタンスを初期化します。 これは、既定のコンス トラクターです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SelectQuery (string queryOrClassName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string queryOrClassName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.SelectQuery.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="queryOrClassName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="queryOrClassName">全体のクエリまたはクエリで使用するクラス名。 このクラスで、パーサーは、有効な WQL SELECT クエリとして文字列の解析を試みます。 パーサーが成功しなかった場合、文字列は、クラス名と見なします。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.SelectQuery" />クラスの指定したクエリまたは特定のクラス名。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を初期化、<xref:System.Management.SelectQuery>でクエリを指定します。  
+  
+ [!code-csharp[wminet_SelectQuery-S#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_SelectQuery-S/cs/SelectQuery-S.cs#1)]
+ [!code-vb[wminet_SelectQuery-S#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_SelectQuery-S/vb/SelectQuery-S.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SelectQuery (bool isSchemaQuery, string condition);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool isSchemaQuery, string condition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.SelectQuery.#ctor(System.Boolean,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="isSchemaQuery" Type="System.Boolean" />
+        <Parameter Name="condition" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="isSchemaQuery">
+          <see langword="true" />スキーマのクエリでは; であることを示すそれ以外の場合、<see langword="false" />です。 A<see langword="false" />値は、このコンス トラクターでは無効です。</param>
+        <param name="condition">クラスの結果セットをフォームに適用する条件です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.SelectQuery" />条件を指定する必要に応じて、スキーマのクエリのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を初期化します、<xref:System.Management.SelectQuery>条件を指定します。  
+  
+ [!code-csharp[wminet_SelectQuery-B_S#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_SelectQuery-B_S/cs/SelectQuery-B_S.cs#1)]
+ [!code-vb[wminet_SelectQuery-B_S#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_SelectQuery-B_S/vb/SelectQuery-B_S.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SelectQuery (string className, string condition);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string className, string condition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.SelectQuery.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="className" Type="System.String" />
+        <Parameter Name="condition" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="className">クエリで選択するクラスの名前。</param>
+        <param name="condition">クエリに適用する条件。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.SelectQuery" />条件と指定したクラスの名前を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例、 <xref:System.Management.SelectQuery> WMI クラス名と条件を指定しています。  
+  
+ [!code-csharp[wminet_SelectQuery-S_S#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_SelectQuery-S_S/cs/SelectQuery-S_S.cs#1)]
+ [!code-vb[wminet_SelectQuery-S_S#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_SelectQuery-S_S/vb/SelectQuery-S_S.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SelectQuery (string className, string condition, string[] selectedProperties);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string className, string condition, string[] selectedProperties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.SelectQuery.#ctor(System.String,System.String,System.String[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="className" Type="System.String" />
+        <Parameter Name="condition" Type="System.String" />
+        <Parameter Name="selectedProperties" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="className">選択するクラスの名前。</param>
+        <param name="condition">選択したクラスのインスタンスに適用する条件です。</param>
+        <param name="selectedProperties">クエリの結果で返されるプロパティ名の配列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.SelectQuery" />特定のクラス名と、指定されたプロパティのみを選択すると、条件を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例の初期化、 <xref:System.Management.SelectQuery> WMI クラスの名前、条件、およびプロパティの配列を指定します。  
+  
+ [!code-csharp[wminet_SelectQuery-S_S_S#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_SelectQuery-S_S_S/cs/SelectQuery-S_S_S.cs#1)]
+ [!code-vb[wminet_SelectQuery-S_S_S#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_SelectQuery-S_S_S/vb/SelectQuery-S_S_S.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildQuery">
+      <MemberSignature Language="C#" Value="protected void BuildQuery ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void BuildQuery() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.SelectQuery.BuildQuery" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のプロパティ値に従って、クエリ文字列を構築します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClassName">
+      <MemberSignature Language="C#" Value="public string ClassName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ClassName" />
+      <MemberSignature Language="DocId" Value="P:System.Management.SelectQuery.ClassName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはでクエリから選択するクラス名を設定します。</summary>
+        <value>返します、<see cref="T:System.String" />クエリ内のクラスの名前を含む値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値を設定すると、オブジェクトに格納されている、以前の値が上書きされます。 クエリ文字列は、新しいクラスの名前を反映するように再構築されます。  
+  
+ 値、 **ClassName**プロパティが置換、 \<className > 形式の SELECT クエリの項目"選択 * FROM \<className > 場所\<条件 >"です。  
+  
+## <a name="property-value"></a>プロパティ値  
+ クエリ内のクラスの名前を表す文字列。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例の初期化、<xref:System.Management.SelectQuery>クエリとし、変更を指定して、<xref:System.Management.SelectQuery.ClassName%2A>プロパティです。  
+  
+ [!code-csharp[wminet_SelectQuery_ClassName#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_SelectQuery_ClassName/cs/SelectQuery_ClassName.cs#1)]
+ [!code-vb[wminet_SelectQuery_ClassName#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_SelectQuery_ClassName/vb/SelectQuery_ClassName.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public override object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.SelectQuery.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトのコピーを作成します。</summary>
+        <returns>コピーされるオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Condition">
+      <MemberSignature Language="C#" Value="public string Condition { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Condition" />
+      <MemberSignature Language="DocId" Value="P:System.Management.SelectQuery.Condition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または SELECT クエリに適用する条件を設定します。</summary>
+        <value>返します、 <see cref="T:System.String" /> SELECT クエリに適用する条件を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値を設定すると、オブジェクトに格納されている、以前の値が上書きされます。 クエリ文字列は、新しい条件を反映するように再構築されます。  
+  
+ 値、**条件**プロパティが置換、\<条件 > 形式の SELECT クエリの項目"選択 * FROM \<className > 場所\<条件 >"です。  
+  
+## <a name="property-value"></a>プロパティ値  
+ SELECT クエリで適用される条件を表す文字列。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSchemaQuery">
+      <MemberSignature Language="C#" Value="public bool IsSchemaQuery { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSchemaQuery" />
+      <MemberSignature Language="DocId" Value="P:System.Management.SelectQuery.IsSchemaQuery" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのクエリは、スキーマのクエリまたはインスタンス クエリかどうかを示す値を設定します。</summary>
+        <value>返します、<see cref="T:System.Boolean" />クエリがスキーマのクエリであるかどうかを示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値を設定すると、オブジェクトに格納されている、以前の値が上書きされます。 クエリ文字列は、新しいクエリの種類を反映するように再構築されます。  
+  
+## <a name="property-value"></a>プロパティ値  
+ `true`場合は、スキーマ上でこのクエリを評価する必要があります。`false`場合は、クエリは、インスタンス上で評価する必要があります。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseQuery">
+      <MemberSignature Language="C#" Value="protected override void ParseQuery (string query);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void ParseQuery(string query) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.SelectQuery.ParseQuery(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="query" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="query">解析するクエリ文字列。</param>
+        <summary>クエリ文字列を解析し、それに応じて、プロパティの値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QueryString">
+      <MemberSignature Language="C#" Value="public override string QueryString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string QueryString" />
+      <MemberSignature Language="DocId" Value="P:System.Management.SelectQuery.QueryString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、クエリ、<see cref="T:System.Management.SelectQuery" />の文字列形式のオブジェクト。</summary>
+        <value>返します、<see cref="T:System.String" />クエリを含む値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値を設定すると、オブジェクトに格納されている、以前の値が上書きされます。 文字列が再解析時に更新するオブジェクトの他のメンバーがさらに、このプロパティを設定するとします。  
+  
+## <a name="property-value"></a>プロパティ値  
+ クエリを表す文字列。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例の初期化、<xref:System.Management.SelectQuery>で、既定のコンス トラクターとし、変更、<xref:System.Management.SelectQuery.QueryString%2A>プロパティです。  
+  
+ [!code-csharp[wminet_SelectQuery_QueryString#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_SelectQuery_QueryString/cs/SelectQuery_QueryString.cs#1)]
+ [!code-vb[wminet_SelectQuery_QueryString#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_SelectQuery_QueryString/vb/SelectQuery_QueryString.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedProperties">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.StringCollection SelectedProperties { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.StringCollection SelectedProperties" />
+      <MemberSignature Language="DocId" Value="P:System.Management.SelectQuery.SelectedProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.StringCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティの配列の名前、クエリで選択を取得または設定します。</summary>
+        <value>返します、<see cref="T:System.Collections.Specialized.StringCollection" />クエリで選択するプロパティの名前を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値を設定すると、オブジェクトに格納されている、以前の値が上書きされます。 クエリ文字列は、新しいプロパティを反映するように再構築されます。  
+  
+ 値、 **SelectedProperties**プロパティが置換、\<プロパティ > 形式の SELECT クエリの項目"選択\<プロパティ > FROM \<className > 場所\<条件 >"です。  
+  
+## <a name="property-value"></a>プロパティ値  
+ A<xref:System.Collections.Specialized.StringCollection>クエリで選択するプロパティの名前を格納します。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

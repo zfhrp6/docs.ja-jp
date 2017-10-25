@@ -1,0 +1,115 @@
+<Type Name="IComponentInitializer" FullName="System.ComponentModel.Design.IComponentInitializer">
+  <TypeSignature Language="C#" Value="public interface IComponentInitializer" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IComponentInitializer" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.IComponentInitializer" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>コンポーネントの作成中には、推奨される既定値のセットを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.IComponentInitializer>もを実装するコンポーネントであるすべてのデザイナーでインターフェイスを実装することができます<xref:System.ComponentModel.Design.IDesigner>がデザイン コンポーネントの既定値の推奨設定を受信します。 <xref:System.ComponentModel.Design.IComponentInitializer>新しいコンポーネントの作成時に照会します。 コンポーネントのプロパティの推奨される既定値は、名前/値ペアのディクショナリとしてに渡されます。  
+  
+ この設計により、2 つのカスタマイズ ポイント: ツールボックス項目自体を交換したり、カスタム アクションの実行を変更またはコンポーネントのデザイナーは、カスタム動作を変更することができます。 実装するデザイナー<xref:System.ComponentModel.Design.IComponentInitializer>独自のメソッドのいずれかに依存しないように —<xref:System.ComponentModel.Design.IComponentInitializer.InitializeNewComponent%2A>または<xref:System.ComponentModel.Design.IComponentInitializer.InitializeExistingComponent%2A>: ツールボックス アイテムはこれらのメソッドを呼び出す義務がないため、呼び出されます。  
+  
+ デザイン コンポーネントの作成の概要については、次を参照してください。[デザイン時サポートを拡張する](http://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="InitializeExistingComponent">
+      <MemberSignature Language="C#" Value="public void InitializeExistingComponent (System.Collections.IDictionary defaultValues);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void InitializeExistingComponent(class System.Collections.IDictionary defaultValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IComponentInitializer.InitializeExistingComponent(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="defaultValues" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="defaultValues">コンポーネントの状態をリセットするときに使用する、名前/値ペアの既定のプロパティ値のディクショナリ。</param>
+        <summary>コンポーネントのインスタンスを既定の状態に復元します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.IComponentInitializer.InitializeExistingComponent%2A>メソッドは、デザイナーの既存のコンポーネントを再初期化するときに呼び出されます。 たとえば、<xref:System.ComponentModel.Design.IComponentInitializer.InitializeExistingComponent%2A>ドラッグ アンド ドロップ操作の後に一般と呼ばれます。 `defaultValues`パラメーターが関連付けられているコンポーネントのプロパティに適用される既定値の名前/値ペアを含むディクショナリ。 このディクショナリにすることがあります`null`既定値が指定されていない場合。  
+  
+> [!CAUTION]
+>  このメソッドを実装するときに一般的に変更しないで、コンポーネントのプロパティにある推奨を超えて`defaultValue`です。 既存のコンポーネントが既にお持ち設定、ユーザーまたは他のデザイン時のコードがそのプロパティ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeNewComponent">
+      <MemberSignature Language="C#" Value="public void InitializeNewComponent (System.Collections.IDictionary defaultValues);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void InitializeNewComponent(class System.Collections.IDictionary defaultValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IComponentInitializer.InitializeNewComponent(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="defaultValues" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="defaultValues">コンポーネントの状態の初期化に使用する、名前/値ペアの既定のプロパティ値のディクショナリ。</param>
+        <summary>推奨値のセットを使用して、新しいコンポーネントを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.IComponentInitializer.InitializeNewComponent%2A>新しいコンポーネントを作成した後にメソッドが呼び出されます。 通常は、ツールボックス項目自体によって呼び出され、コンポーネントの既定値を構成するために使用します。  
+  
+ このディクショナリにすることがあります`null`既定値が指定されていない場合。 ディクショナリがの場合`null`コンポーネントのプロパティは暗黙的な既定の状態のまま必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

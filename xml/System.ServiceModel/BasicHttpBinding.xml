@@ -1,0 +1,393 @@
+<Type Name="BasicHttpBinding" FullName="System.ServiceModel.BasicHttpBinding">
+  <TypeSignature Language="C#" Value="public class BasicHttpBinding : System.ServiceModel.HttpBindingBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BasicHttpBinding extends System.ServiceModel.HttpBindingBase implements class System.ServiceModel.Channels.IBindingRuntimePreferences" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.BasicHttpBinding" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Http</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.1.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.HttpBindingBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASMX ベースの Web サービスとクライアント、および、WS に準拠するその他のサービスと通信できるエンドポイントを構成および公開 Windows Communication Foundation (WCF) サービスが使用できるバインディングを表す、基本プロファイル 1.1 です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.BasicHttpBinding> では、SOAP 1.1 メッセージを送信するためのトランスポートとして HTTP を使用します。 サービスは、ASMX クライアントがアクセスするエンドポイントなど、WS-I BP 1.1 に準拠するエンドポイントを開示するためにこのバインドを使用できます。 同様に、クライアントは <xref:System.ServiceModel.BasicHttpBinding> を使用して、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] で構成された ASMX Web サービスや <xref:System.ServiceModel.BasicHttpBinding> サービスなどの、WS-I BP 1.1 に準拠するエンドポイントを公開するサービスと通信できます。  
+  
+ セキュリティは既定では無効になっていますが、<xref:System.ServiceModel.BasicHttpSecurityMode> コンストラクターで <xref:System.ServiceModel.BasicHttpSecurityMode.None> を <xref:System.ServiceModel.BasicHttpBinding.%23ctor%28System.ServiceModel.BasicHttpSecurityMode%29> 以外の値に設定することで追加できます。 サービスは、"Text" メッセージ エンコードおよび UTF-8 テキスト エンコードを既定で使用します。  
+  
+   
+  
+## Examples  
+ 次の例は、アプリケーション構成ファイル内に <xref:System.ServiceModel.BasicHttpBinding> を構成する方法を示しています。  
+  
+  
+  
+ 次の例は、<xref:System.ServiceModel.BasicHttpBinding> をプログラムによって構成する方法を示しています。  
+  
+ [!code-csharp[S_UEBasicHttpBinding#1](~/samples/snippets/csharp/VS_Snippets_CFX/s_uebasichttpbinding/cs/service.cs#1)]
+ [!code-vb[S_UEBasicHttpBinding#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uebasichttpbinding/vb/service.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BasicHttpBinding ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.BasicHttpBinding.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Http</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.BasicHttpBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用される <xref:System.ServiceModel.BasicHttpSecurityMode> の既定値は、SOAP メッセージが保護されず、クライアントが認証されないことを指定する <xref:System.ServiceModel.BasicHttpSecurityMode.None> です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UEBasicHttpBinding#2](~/samples/snippets/csharp/VS_Snippets_CFX/s_uebasichttpbinding/cs/service.cs#2)]
+ [!code-vb[S_UEBasicHttpBinding#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uebasichttpbinding/vb/service.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BasicHttpBinding (System.ServiceModel.BasicHttpSecurityMode securityMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.ServiceModel.BasicHttpSecurityMode securityMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.BasicHttpBinding.#ctor(System.ServiceModel.BasicHttpSecurityMode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Http</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="securityMode" Type="System.ServiceModel.BasicHttpSecurityMode" />
+      </Parameters>
+      <Docs>
+        <param name="securityMode">SOAP メッセージと共に、およびクライアントに対して使用されるセキュリティの種類を指定する <see cref="T:System.ServiceModel.BasicHttpSecurityMode" /> の値。</param>
+        <summary>バインドで使用されるセキュリティの種類を指定して、<see cref="T:System.ServiceModel.BasicHttpBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用される <xref:System.ServiceModel.BasicHttpSecurityMode> の既定値は、SOAP メッセージが保護されず、クライアントが認証されないことを指定する <xref:System.ServiceModel.BasicHttpSecurityMode.None> です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UEBasicHttpBinding#3](~/samples/snippets/csharp/VS_Snippets_CFX/s_uebasichttpbinding/cs/snippets.cs#3)]
+ [!code-vb[S_UEBasicHttpBinding#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uebasichttpbinding/vb/snippets.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BasicHttpBinding (string configurationName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string configurationName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.BasicHttpBinding.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="configurationName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="configurationName"><see cref="T:System.ServiceModel.Configuration.BasicHttpBindingElement" /> のバインディング構成の名前。</param>
+        <summary>構成名で指定されたバインディングを使用して、<see cref="T:System.ServiceModel.BasicHttpBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、構成名 "<xref:System.ServiceModel.BasicHttpBinding>" で指定されたバインドを使用して、`BasicBinding` クラスの新しいインスタンスを初期化します。 サービスの構成ファイルの中に、バインド セクションを作成する必要があります。  
+  
+ [!code-csharp[S_UEBasicHttpBinding#5](~/samples/snippets/csharp/VS_Snippets_CFX/s_uebasichttpbinding/cs/snippets.cs#5)]
+ [!code-vb[S_UEBasicHttpBinding#5](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uebasichttpbinding/vb/snippets.vb#5)]  
+  
+ 次に、<xref:System.ServiceModel.BasicHttpBinding> コンストラクターの呼び出しにこのバインド構成の名前を指定します。  
+  
+ [!code-csharp[S_UEBasicHttpBinding#4](~/samples/snippets/csharp/VS_Snippets_CFX/s_uebasichttpbinding/cs/snippets.cs#4)]
+ [!code-vb[S_UEBasicHttpBinding#4](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uebasichttpbinding/vb/snippets.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成名 <paramref name="configurationName" /> を持つバインディング要素が見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildChannelFactory&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Channels.IChannelFactory&lt;TChannel&gt; BuildChannelFactory&lt;TChannel&gt; (System.ServiceModel.Channels.BindingParameterCollection parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Channels.IChannelFactory`1&lt;!!TChannel&gt; BuildChannelFactory&lt;TChannel&gt;(class System.ServiceModel.Channels.BindingParameterCollection parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.BasicHttpBinding.BuildChannelFactory``1(System.ServiceModel.Channels.BindingParameterCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Http</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IChannelFactory&lt;TChannel&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="parameters" Type="System.ServiceModel.Channels.BindingParameterCollection" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">チャネル ファクトリが作成するチャネルの種類。</typeparam>
+        <param name="parameters">作成されるチャネル ファクトリの要件を指定します。</param>
+        <summary>指定した種類のチャネルを作成し、バインド パラメーターのコレクションで指定されている機能を満たすチャネル ファクトリ スタックを、クライアント上に構築します。</summary>
+        <returns>コレクションによって指定される機能を満たす <see cref="T:System.ServiceModel.Channels.IChannelFactory`1" /> 型の <paramref name="TChannel" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateBindingElements">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Channels.BindingElementCollection CreateBindingElements ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Channels.BindingElementCollection CreateBindingElements() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.BasicHttpBinding.CreateBindingElements" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Http</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.BindingElementCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成して、現在のバインディングに含まれるバインディング要素の順序付けられたコレクションを返します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.BindingElementCollection" /> により記述されたバインディング要素の順序付けられたスタックを含む <see cref="T:System.ServiceModel.BasicHttpBinding" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バインド要素の順序は重要です。 これは、プロトコルおよびトランスポート チャネルが構築され、スタックされる順序を反映します。 バインド要素のこのコレクションは新しいコレクションであり、変更できます。また、<xref:System.ServiceModel.Channels.CustomBinding> を作成するために使用できます。  
+  
+   
+  
+## Examples  
+ 次の例では、現在のバインドに含まれるバインド要素の順序付けられたコレクションを作成します。  
+  
+ [!code-csharp[S_UEBasicHttpBinding#26](~/samples/snippets/csharp/VS_Snippets_CFX/s_uebasichttpbinding/cs/client.cs#26)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableHttpCookieContainer">
+      <MemberSignature Language="C#" Value="public bool EnableHttpCookieContainer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableHttpCookieContainer" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.BasicHttpBinding.EnableHttpCookieContainer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("This property is obsolete. To enable Http CookieContainer, use the AllowCookies property instead.", false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または HTTP クッキーのコンテナーが有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />HTTP クッキーのコンテナーが有効である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MessageEncoding">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.WSMessageEncoding MessageEncoding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.WSMessageEncoding MessageEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.BasicHttpBinding.MessageEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.WSMessageEncoding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP メッセージのエンコードに MTOM または Text が使用されるかどうかを取得または設定します。</summary>
+        <value>SOAP メッセージのエンコードで MTOM または Text/XML が使用されるかどうかを示す <see cref="T:System.ServiceModel.WSMessageEncoding" /> の値。 既定値は <see cref="F:System.ServiceModel.WSMessageEncoding.Text" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、MessageEncoding を Text に設定します。  
+  
+ [!code-csharp[S_UEBasicHttpBinding#19](~/samples/snippets/csharp/VS_Snippets_CFX/s_uebasichttpbinding/cs/client.cs#19)]  
+  
+ このプロパティの値は、構成ファイルでも設定できます。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scheme">
+      <MemberSignature Language="C#" Value="public override string Scheme { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Scheme" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.BasicHttpBinding.Scheme" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Security">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.BasicHttpSecurity Security { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.BasicHttpSecurity Security" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.BasicHttpBinding.Security" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Http</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.BasicHttpSecurity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインディングで使用されるセキュリティの種類を取得します。</summary>
+        <value>このバインディングで使用される <see cref="T:System.ServiceModel.BasicHttpSecurity" />。 既定値は <see cref="F:System.ServiceModel.BasicHttpSecurityMode.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、SOAP メッセージはセキュリティで保護されず、クライアントは認証されません。 既定以外の種類のセキュリティを使用するには、<xref:System.ServiceModel.BasicHttpBinding.%23ctor%28System.ServiceModel.BasicHttpSecurityMode%29> コンストラクターを使用します。  
+  
+   
+  
+## Examples  
+ 次の例では、`Security` プロパティを取得します。  
+  
+ [!code-csharp[S_UEBasicHttpBinding#23](~/samples/snippets/csharp/VS_Snippets_CFX/s_uebasichttpbinding/cs/client.cs#23)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeEnableHttpCookieContainer">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeEnableHttpCookieContainer ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeEnableHttpCookieContainer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.BasicHttpBinding.ShouldSerializeEnableHttpCookieContainer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Http クッキーのコンテナーがシリアル化を有効にする必要があるかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />場合は http クッキーのコンテナーには、シリアル化が有効にする必要があります。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeSecurity">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeSecurity ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeSecurity() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.BasicHttpBinding.ShouldSerializeSecurity" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>メッセージ レベルまたはトランスポート レベルなどで、シリアル化が既に発生しているかどうかに基づき、セキュリティ設定をシリアル化する必要があるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />セキュリティをシリアル化する必要があります。 場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

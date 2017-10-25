@@ -1,0 +1,265 @@
+<Type Name="LinqDataSourceInsertEventArgs" FullName="System.Web.UI.WebControls.LinqDataSourceInsertEventArgs">
+  <TypeSignature Language="C#" Value="public class LinqDataSourceInsertEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LinqDataSourceInsertEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.LinqDataSourceInsertEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.UI.WebControls.LinqDataSource.Inserting" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.LinqDataSourceInsertEventArgs>オブジェクトは、のいずれかのイベント ハンドラーに渡される、<xref:System.Web.UI.WebControls.LinqDataSource.Inserting>イベント。 <xref:System.Web.UI.WebControls.LinqDataSourceInsertEventArgs.NewObject%2A>プロパティに挿入されるデータが含まれています。  
+  
+ 使用することができます、<xref:System.Web.UI.WebControls.LinqDataSourceInsertEventArgs>をデータ ソースの挿入操作が実行される前に、データを調べるオブジェクト。 データの検証、データ クラスからの検証エラーを調べて、または更新前に、の値を変更し、ことができます。 また、挿入操作を取り消すことができます。  
+  
+ データ ソースを表すオブジェクト、データを挿入する前に検証例外がスローした場合、<xref:System.Web.UI.WebControls.LinqDataSourceInsertEventArgs.Exception%2A>プロパティにはインスタンスが含まれています、<xref:System.Web.UI.WebControls.LinqDataSourceValidationException>クラスです。 すべての検証例外を取得することができます、<xref:System.Web.UI.WebControls.LinqDataSourceValidationException.InnerExceptions%2A>プロパティです。 検証例外がスローされない場合、<xref:System.Web.UI.WebControls.LinqDataSourceInsertEventArgs.Exception%2A>プロパティが含まれます`null`です。 検証の例外を処理して再スローされる例外を作成したくない場合は、設定、<xref:System.Web.UI.WebControls.LinqDataSourceInsertEventArgs.ExceptionHandled%2A>プロパティを`true`です。  
+  
+   
+  
+## Examples  
+ 次の例では、ハンドラーを<xref:System.Web.UI.WebControls.LinqDataSource.Inserting>イベント。 オブジェクトから、<xref:System.Web.UI.WebControls.LinqDataSourceInsertEventArgs.NewObject%2A>プロパティがという名前の型にキャスト`Product`です。 `DateModified`のプロパティ、`Product`オブジェクトが現在の日付と時刻に設定します。  
+  
+ [!code-csharp[System.Web.UI.WebControls.LinqDataSource.Inserting#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.LinqDataSource.Inserting/cs/Default.aspx.cs#1)]
+ [!code-vb[System.Web.UI.WebControls.LinqDataSource.Inserting#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.LinqDataSource.Inserting/vb/Default.aspx.vb#1)]  
+  
+ 次の例は、イベント ハンドラーを<xref:System.Web.UI.WebControls.LinqDataSource.Inserting>イベント。 使用して検証例外メッセージが表示されて、<xref:System.Web.UI.WebControls.Label>コントロール。  
+  
+```vb  
+Protected Sub LinqDataSource_Inserting(ByVal sender As Object, _  
+        ByVal e As LinqDataSourceInsertEventArgs)  
+    If (e.Exception IsNot Nothing) Then  
+        For Each innerException As KeyValuePair(Of String, Exception) _  
+               In e.Exception.InnerExceptions  
+            Label1.Text &= innerException.Key & ": " & _  
+                innerException.Value.Message + "<br />"  
+        Next  
+        e.ExceptionHandled = True  
+    End If  
+End Sub  
+```  
+  
+```csharp  
+protected void LinqDataSource_Inserting(object sender,   
+        LinqDataSourceInsertEventArgs e)  
+{  
+    if (e.Exception != null)  
+    {  
+        foreach (KeyValuePair<string, Exception> innerException in   
+             e.Exception.InnerExceptions)  
+        {  
+        Label1.Text += innerException.Key + ": " +   
+            innerException.Value.Message + "<br />";  
+        }  
+        e.ExceptionHandled = true;  
+    }  
+}  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinqDataSourceInsertEventArgs (object newObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object newObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.LinqDataSourceInsertEventArgs.#ctor(System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="newObject" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="newObject">挿入するデータを格納するオブジェクト。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.LinqDataSourceInsertEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinqDataSourceInsertEventArgs (System.Web.UI.WebControls.LinqDataSourceValidationException exception);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.LinqDataSourceValidationException exception) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.LinqDataSourceInsertEventArgs.#ctor(System.Web.UI.WebControls.LinqDataSourceValidationException)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="exception" Type="System.Web.UI.WebControls.LinqDataSourceValidationException" />
+      </Parameters>
+      <Docs>
+        <param name="exception">挿入するデータの検証中に発生した例外。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.LinqDataSourceInsertEventArgs" />クラスし、指定された例外を指定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Exception">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.LinqDataSourceValidationException Exception { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.LinqDataSourceValidationException Exception" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.LinqDataSourceInsertEventArgs.Exception" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.LinqDataSourceValidationException</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>挿入操作の前に、データの検証中にスローされた例外を取得します。</summary>
+        <value>エラーが発生しました; 場合は、例外それ以外の場合、<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 挿入操作が実行される前に検証例外がスローされた場合、例外は、<xref:System.Web.UI.WebControls.LinqDataSourceInsertEventArgs.Exception%2A>プロパティです。 ハンドラーで、<xref:System.Web.UI.WebControls.LinqDataSource.Inserting>イベントでの例外を取得することができます、<xref:System.Web.UI.WebControls.LinqDataSourceInsertEventArgs.Exception%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、ハンドラーを<xref:System.Web.UI.WebControls.LinqDataSource.Inserting>イベント。 使用して検証例外メッセージが表示されて、<xref:System.Web.UI.WebControls.Label>コントロール。  
+  
+```vb  
+Protected Sub LinqDataSource_Inserting(ByVal sender As Object, _  
+        ByVal e As LinqDataSourceInsertEventArgs)  
+    If (e.Exception IsNot Nothing) Then  
+        For Each innerException As KeyValuePair(Of String, Exception) _  
+               In e.Exception.InnerExceptions  
+            Label1.Text &= innerException.Key & ": " & _  
+                innerException.Value.Message + "<br />"  
+        Next  
+        e.ExceptionHandled = True  
+    End If  
+End Sub  
+```  
+  
+```csharp  
+protected void LinqDataSource_Inserting(object sender,   
+        LinqDataSourceInsertEventArgs e)  
+{  
+    if (e.Exception != null)  
+    {  
+        foreach (KeyValuePair<string, Exception> innerException in   
+             e.Exception.InnerExceptions)  
+        {  
+        Label1.Text += innerException.Key + ": " +   
+            innerException.Value.Message + "<br />";  
+        }  
+        e.ExceptionHandled = true;  
+    }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExceptionHandled">
+      <MemberSignature Language="C#" Value="public bool ExceptionHandled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ExceptionHandled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.LinqDataSourceInsertEventArgs.ExceptionHandled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはをことがスローされない再度、例外が処理されたかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />例外が処理された場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント ハンドラーを作成することができます、<xref:System.Web.UI.WebControls.LinqDataSource.Inserting>挿入操作の前に発生した検証の例外を検査するイベントです。 例外の処理を再度スローすることは望ましくない場合は、設定、<xref:System.Web.UI.WebControls.LinqDataSourceInsertEventArgs.ExceptionHandled%2A>プロパティを`true`です。 設定しない場合、<xref:System.Web.UI.WebControls.LinqDataSourceInsertEventArgs.ExceptionHandled%2A>プロパティを`true`例外は、呼び出し履歴内の次のイベント ハンドラーに反映されます。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーを<xref:System.Web.UI.WebControls.LinqDataSource.Inserting>イベント。 使用して検証例外メッセージが表示されて、<xref:System.Web.UI.WebControls.Label>コントロール。  
+  
+```vb  
+Protected Sub LinqDataSource_Inserting(ByVal sender As Object, _  
+        ByVal e As LinqDataSourceInsertEventArgs)  
+    If (e.Exception IsNot Nothing) Then  
+        For Each innerException As KeyValuePair(Of String, Exception) _  
+               In e.Exception.InnerExceptions  
+            Label1.Text &= innerException.Key & ": " & _  
+                innerException.Value.Message + "<br />"  
+        Next  
+        e.ExceptionHandled = True  
+    End If  
+End Sub  
+```  
+  
+```csharp  
+protected void LinqDataSource_Inserting(object sender,   
+        LinqDataSourceInsertEventArgs e)  
+{  
+    if (e.Exception != null)  
+    {  
+        foreach (KeyValuePair<string, Exception> innerException in   
+             e.Exception.InnerExceptions)  
+        {  
+        Label1.Text += innerException.Key + ": " +   
+            innerException.Value.Message + "<br />";  
+        }  
+        e.ExceptionHandled = true;  
+    }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewObject">
+      <MemberSignature Language="C#" Value="public object NewObject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object NewObject" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.LinqDataSourceInsertEventArgs.NewObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>挿入するデータを格納しているオブジェクトを取得します。</summary>
+        <value>挿入するデータを格納するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.LinqDataSourceInsertEventArgs.NewObject%2A>プロパティには、データ ソースに挿入されるデータが含まれています。 ハンドラーを作成、<xref:System.Web.UI.WebControls.LinqDataSource.Inserting>イベントを取得、<xref:System.Web.UI.WebControls.LinqDataSourceInsertEventArgs.NewObject%2A>プロパティ データの検証、データの変更、またはデータ操作が実行される前に、挿入操作をキャンセルするためにします。  
+  
+ <xref:System.Web.UI.WebControls.LinqDataSourceInsertEventArgs.NewObject%2A>プロパティ型のオブジェクトを返します<xref:System.Object>です。 このオブジェクトをデータを表すクラスの型をキャストすることができます。  
+  
+   
+  
+## Examples  
+ 次の例では、ハンドラーを<xref:System.Web.UI.WebControls.LinqDataSource.Inserting>イベント。 オブジェクトから、<xref:System.Web.UI.WebControls.LinqDataSourceInsertEventArgs.NewObject%2A>プロパティがという名前の型にキャスト`Product`です。 `DateModified`のプロパティ、`Product`オブジェクトが現在の日付と時刻に設定します。  
+  
+ [!code-csharp[System.Web.UI.WebControls.LinqDataSource.Inserting#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.LinqDataSource.Inserting/cs/Default.aspx.cs#1)]
+ [!code-vb[System.Web.UI.WebControls.LinqDataSource.Inserting#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.LinqDataSource.Inserting/vb/Default.aspx.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,125 @@
+<Type Name="IInputLanguageSource" FullName="System.Windows.Input.IInputLanguageSource">
+  <TypeSignature Language="C#" Value="public interface IInputLanguageSource" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IInputLanguageSource" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.IInputLanguageSource" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>入力言語のソースとして機能するオブジェクトに必要な機能を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 入力言語のソースとして機能するクラスのこのインターフェイスを実装します。  
+  
+ 使用して、<xref:System.Windows.Input.InputLanguageManager.RegisterInputLanguageSource%2A>入力言語ソースを登録する方法、<xref:System.Windows.Input.InputLanguageManager>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CurrentInputLanguage">
+      <MemberSignature Language="C#" Value="public System.Globalization.CultureInfo CurrentInputLanguage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.CultureInfo CurrentInputLanguage" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.IInputLanguageSource.CurrentInputLanguage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこの入力言語のソース オブジェクトの現在の入力言語を設定します。</summary>
+        <value>A<see cref="T:System.Globalization.CultureInfo" />入力された言語のソース オブジェクトの現在の入力言語を表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クラスによって実装された場合、このプロパティ、入力言語のソース オブジェクトに対する新しい現在の入力言語を設定し、入力言語のソース オブジェクトから現在アクティブな入力言語を取得するための機能が提供されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public void Initialize ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Initialize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.IInputLanguageSource.Initialize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>入力言語ソース オブジェクトを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クラスによって実装された場合、このメソッドは、アクティブな入力言語のソースとして動作するオブジェクトに必要な初期化アクションを実行する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InputLanguageList">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerable InputLanguageList { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerable InputLanguageList" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.IInputLanguageSource.InputLanguageList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この入力言語のソース オブジェクトでサポートされている入力言語の一覧を取得します。</summary>
+        <value>この入力言語のソース オブジェクトでサポートされている入力言語の一覧を表す列挙可能なオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クラスによって実装された場合、このプロパティを実装するオブジェクトを返す必要があります、<xref:System.Collections.IEnumerable>インターフェイスをサポートしていますのコレクションを列挙して<xref:System.Globalization.CultureInfo>それぞれがサポートされている入力言語を表すオブジェクトします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Uninitialize">
+      <MemberSignature Language="C#" Value="public void Uninitialize ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Uninitialize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.IInputLanguageSource.Uninitialize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>初期化を解除された入力言語のソース オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クラスによって実装された場合、このメソッドは、クラスをアクティブな入力言語のソースとして破棄する前に関連するクリーンアップ アクションを実行する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

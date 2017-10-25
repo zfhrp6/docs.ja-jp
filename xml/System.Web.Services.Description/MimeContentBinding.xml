@@ -1,0 +1,158 @@
+<Type Name="MimeContentBinding" FullName="System.Web.Services.Description.MimeContentBinding">
+  <TypeSignature Language="C#" Value="public sealed class MimeContentBinding : System.Web.Services.Description.ServiceDescriptionFormatExtension" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MimeContentBinding extends System.Web.Services.Description.ServiceDescriptionFormatExtension" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Description.MimeContentBinding" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Services.Description.ServiceDescriptionFormatExtension</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.Services.Configuration.XmlFormatExtension("content", "http://schemas.xmlsoap.org/wsdl/mime/", typeof(System.Web.Services.Description.InputBinding), typeof(System.Web.Services.Description.OutputBinding))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.Services.Configuration.XmlFormatExtensionPrefix("mime", "http://schemas.xmlsoap.org/wsdl/mime/")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>追加された機能拡張要素を表す、<see cref="T:System.Web.Services.Description.InputBinding" />または<see cref="T:System.Web.Services.Description.OutputBinding" />XML Web サービス内で HTTP 転送の本文の MIME 形式を指定します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML Web サービス用のプロトコルを指定する方法の詳細については、次を参照してください[&#91;\< 。topic://cpconbuildingaspnetwebservices > & #93 です。](http://msdn.microsoft.com/en-us/01dfc27c-c68e-4910-a0aa-5e4c2a766b0c). Web サービス記述言語 (WSDL) に関する詳細については、http://www.w3.org/TR/wsdl/ の仕様を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例では、プロパティとによって公開されるメソッドの使用、`MimeContentBinding`クラスです。  
+  
+ [!code-cpp[MimeContentBinding_Part_4#4](~/samples/snippets/cpp/VS_Snippets_Remoting/MimeContentBinding_Part_4/CPP/mimecontentbinding_part_4.cpp#4)]
+ [!code-csharp[MimeContentBinding_Part_4#4](~/samples/snippets/csharp/VS_Snippets_Remoting/MimeContentBinding_Part_4/CS/mimecontentbinding_part_4.cs#4)]
+ [!code-vb[MimeContentBinding_Part_4#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MimeContentBinding_Part_4/VB/mimecontentbinding_part_4.vb#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MimeContentBinding ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.MimeContentBinding.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Description.MimeContentBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public const string Namespace;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string Namespace" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Services.Description.MimeContentBinding.Namespace" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML 名前空間の URI を指定します、<see cref="T:System.Web.Services.Description.MimeContentBinding" />クラスです。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[MimeContentBinding_Part_4#3](~/samples/snippets/cpp/VS_Snippets_Remoting/MimeContentBinding_Part_4/CPP/mimecontentbinding_part_4.cpp#3)]
+ [!code-csharp[MimeContentBinding_Part_4#3](~/samples/snippets/csharp/VS_Snippets_Remoting/MimeContentBinding_Part_4/CS/mimecontentbinding_part_4.cs#3)]
+ [!code-vb[MimeContentBinding_Part_4#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MimeContentBinding_Part_4/VB/mimecontentbinding_part_4.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Part">
+      <MemberSignature Language="C#" Value="public string Part { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Part" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.MimeContentBinding.Part" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("part")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の名前、<see cref="T:System.Web.Services.Description.MessagePart" />先、<see cref="T:System.Web.Services.Description.MimeContentBinding" />適用されます。</summary>
+        <value>名前を表す文字列、<see cref="T:System.Web.Services.Description.MessagePart" />を現在<see cref="T:System.Web.Services.Description.MimeContentBinding" />が関連付けられています。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[MimeContentBinding_Part_4#2](~/samples/snippets/cpp/VS_Snippets_Remoting/MimeContentBinding_Part_4/CPP/mimecontentbinding_part_4.cpp#2)]
+ [!code-csharp[MimeContentBinding_Part_4#2](~/samples/snippets/csharp/VS_Snippets_Remoting/MimeContentBinding_Part_4/CS/mimecontentbinding_part_4.cs#2)]
+ [!code-vb[MimeContentBinding_Part_4#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MimeContentBinding_Part_4/VB/mimecontentbinding_part_4.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public string Type { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Type" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.MimeContentBinding.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("type")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または HTTP 転送の本文の形式を示す値を設定します。</summary>
+        <value>HTTP 転送の本文の形式を示す文字列。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web サービス記述言語 (WSDL) の仕様では、テキスト/xml、およびを含むマルチパート/関連アプリケーション/x-www-form-urlencoded、任意の MIME 型を使用できますが、いくつかの MIME の種類のバインドを定義します。 ワイルドカード文字 (*) こともできます。 たとえば、文字列"テキスト/\*"すべてのテキスト型を表します。 このプロパティの値が設定されていない場合、`MimeContentBinding`すべての MIME の種類を指定します。  
+  
+ WSDL の詳細については、http://www.w3.org/TR/wsdl/ の仕様を参照してください。  
+  
+   
+  
+## Examples  
+ MimeContentBinding_Part_&#4;1  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

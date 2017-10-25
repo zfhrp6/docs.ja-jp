@@ -1,0 +1,71 @@
+<Type Name="FolderLevelBuildProviderAppliesToAttribute" FullName="System.Web.Compilation.FolderLevelBuildProviderAppliesToAttribute">
+  <TypeSignature Language="C#" Value="public sealed class FolderLevelBuildProviderAppliesToAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit FolderLevelBuildProviderAppliesToAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Compilation.FolderLevelBuildProviderAppliesToAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class, AllowMultiple=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>スコープを指定する属性を定義する場所、<see cref="T:System.Web.Configuration.FolderLevelBuildProvider" />リソースが特定されると、オブジェクトを適用する必要があります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.FolderLevelBuildProvider>クラスを解析し、特定のファイルがあるリソースのコンパイル時にコードを生成します。 <xref:System.Web.Compilation.FolderLevelBuildProviderAppliesToAttribute>属性を定義する場所のスコープ、<xref:System.Web.Configuration.FolderLevelBuildProvider>オブジェクトが呼び出されます。  
+  
+ 設定して、<xref:System.Web.Compilation.FolderLevelBuildProviderAppliesToAttribute>制限することができます、属性、<xref:System.Web.Configuration.FolderLevelBuildProvider>オブジェクトを特定[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]App_Code などのディレクトリ。  
+  
+ 適用しない場合、<xref:System.Web.Compilation.FolderLevelBuildProviderAppliesToAttribute>属性を<xref:System.Web.Configuration.FolderLevelBuildProvider>クラスの既定では、属性のすべてのディレクトリを対象します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FolderLevelBuildProviderAppliesToAttribute (System.Web.Compilation.FolderLevelBuildProviderAppliesTo appliesTo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Web.Compilation.FolderLevelBuildProviderAppliesTo appliesTo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.FolderLevelBuildProviderAppliesToAttribute.#ctor(System.Web.Compilation.FolderLevelBuildProviderAppliesTo)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="appliesTo" Type="System.Web.Compilation.FolderLevelBuildProviderAppliesTo" />
+      </Parameters>
+      <Docs>
+        <param name="appliesTo">ターゲット ディレクトリを<see cref="T:System.Web.Configuration.FolderLevelBuildProvider" />オブジェクトに適用します。</param>
+        <summary><see cref="T:System.Web.Compilation.FolderLevelBuildProviderAppliesToAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppliesTo">
+      <MemberSignature Language="C#" Value="public System.Web.Compilation.FolderLevelBuildProviderAppliesTo AppliesTo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Compilation.FolderLevelBuildProviderAppliesTo AppliesTo" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.FolderLevelBuildProviderAppliesToAttribute.AppliesTo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Compilation.FolderLevelBuildProviderAppliesTo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定対象のディレクトリ、<see cref="T:System.Web.Configuration.FolderLevelBuildProvider" />オブジェクトに適用します。</summary>
+        <value>ディレクトリを<see cref="T:System.Web.Configuration.FolderLevelBuildProvider" />オブジェクトに適用します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

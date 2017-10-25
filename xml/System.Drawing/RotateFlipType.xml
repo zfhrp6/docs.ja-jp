@@ -1,0 +1,292 @@
+<Type Name="RotateFlipType" FullName="System.Drawing.RotateFlipType">
+  <TypeSignature Language="C#" Value="public enum RotateFlipType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed RotateFlipType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.RotateFlipType" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>どの程度イメージの回転とイメージを反転するために使用する軸を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イメージが時計回りに回転します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、<xref:System.Drawing.Image.RotateFlip%2A>のプロパティ、<xref:System.Drawing.Image>と<xref:System.Drawing.RotateFlipType>列挙します。  
+  
+ この例を含む Windows フォームで使用するように設計された、<xref:System.Windows.Forms.PictureBox>という名前`PictureBox1`という名前のボタンと`Button1`です。 フォームの呼び出しにコードを貼り付けます`InitializeBitmap`フォームのコンス トラクターからまたは<xref:System.Windows.Forms.Form.Load>イベント処理メソッドと関連付ける`Button1_Click`ボタンの<xref:System.Windows.Forms.Control.Click>イベント。 ビットマップへのファイル パスは、システム上で有効なことを確認します。  
+  
+ [!code-cpp[System.Drawing.BitmapMembers#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.BitmapMembers/CPP/form1.cpp#3)]
+ [!code-csharp[System.Drawing.BitmapMembers#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.BitmapMembers/CS/form1.cs#3)]
+ [!code-vb[System.Drawing.BitmapMembers#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.BitmapMembers/VB/form1.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Rotate180FlipNone">
+      <MemberSignature Language="C#" Value="Rotate180FlipNone" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.RotateFlipType Rotate180FlipNone = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.RotateFlipType.Rotate180FlipNone" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.RotateFlipType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>反転せず 180 度時計回りの回転を指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Rotate180FlipX">
+      <MemberSignature Language="C#" Value="Rotate180FlipX" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.RotateFlipType Rotate180FlipX = int32(6)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.RotateFlipType.Rotate180FlipX" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.RotateFlipType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>時計回りに 180 度回転水平方向に反転することを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Rotate180FlipXY">
+      <MemberSignature Language="C#" Value="Rotate180FlipXY" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.RotateFlipType Rotate180FlipXY = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.RotateFlipType.Rotate180FlipXY" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.RotateFlipType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>時計回りに 180 度回転水平方向および垂直方向の反転を指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Rotate180FlipY">
+      <MemberSignature Language="C#" Value="Rotate180FlipY" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.RotateFlipType Rotate180FlipY = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.RotateFlipType.Rotate180FlipY" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.RotateFlipType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>時計回りに 180 度回転垂直方向に反転することを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Rotate270FlipNone">
+      <MemberSignature Language="C#" Value="Rotate270FlipNone" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.RotateFlipType Rotate270FlipNone = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.RotateFlipType.Rotate270FlipNone" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.RotateFlipType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>反転せず 270 度時計回りの回転を指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Rotate270FlipX">
+      <MemberSignature Language="C#" Value="Rotate270FlipX" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.RotateFlipType Rotate270FlipX = int32(7)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.RotateFlipType.Rotate270FlipX" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.RotateFlipType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>時計回りに 270 度回転水平方向に反転することを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Rotate270FlipXY">
+      <MemberSignature Language="C#" Value="Rotate270FlipXY" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.RotateFlipType Rotate270FlipXY = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.RotateFlipType.Rotate270FlipXY" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.RotateFlipType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>時計回りに 270 度回転水平方向および垂直方向の反転を指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Rotate270FlipY">
+      <MemberSignature Language="C#" Value="Rotate270FlipY" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.RotateFlipType Rotate270FlipY = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.RotateFlipType.Rotate270FlipY" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.RotateFlipType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>時計回りに 270 度回転垂直方向に反転することを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Rotate90FlipNone">
+      <MemberSignature Language="C#" Value="Rotate90FlipNone" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.RotateFlipType Rotate90FlipNone = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.RotateFlipType.Rotate90FlipNone" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.RotateFlipType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>反転せず 90 度時計回りの回転を指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Rotate90FlipX">
+      <MemberSignature Language="C#" Value="Rotate90FlipX" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.RotateFlipType Rotate90FlipX = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.RotateFlipType.Rotate90FlipX" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.RotateFlipType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>時計回りに 90 度回転水平方向に反転することを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Rotate90FlipXY">
+      <MemberSignature Language="C#" Value="Rotate90FlipXY" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.RotateFlipType Rotate90FlipXY = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.RotateFlipType.Rotate90FlipXY" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.RotateFlipType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>時計回りに 90 度回転水平方向および垂直方向の反転を指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Rotate90FlipY">
+      <MemberSignature Language="C#" Value="Rotate90FlipY" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.RotateFlipType Rotate90FlipY = int32(7)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.RotateFlipType.Rotate90FlipY" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.RotateFlipType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>時計回りに 90 度回転垂直方向に反転することを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RotateNoneFlipNone">
+      <MemberSignature Language="C#" Value="RotateNoneFlipNone" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.RotateFlipType RotateNoneFlipNone = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.RotateFlipType.RotateNoneFlipNone" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.RotateFlipType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>時計回りの回転となしの回転を指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RotateNoneFlipX">
+      <MemberSignature Language="C#" Value="RotateNoneFlipX" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.RotateFlipType RotateNoneFlipX = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.RotateFlipType.RotateNoneFlipX" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.RotateFlipType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>水平方向に反転して時計回りに回転を指定しません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RotateNoneFlipXY">
+      <MemberSignature Language="C#" Value="RotateNoneFlipXY" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.RotateFlipType RotateNoneFlipXY = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.RotateFlipType.RotateNoneFlipXY" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.RotateFlipType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>時計回りの回転を水平方向と垂直方向に反転することを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RotateNoneFlipY">
+      <MemberSignature Language="C#" Value="RotateNoneFlipY" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.RotateFlipType RotateNoneFlipY = int32(6)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.RotateFlipType.RotateNoneFlipY" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.RotateFlipType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>垂直方向に反転して時計回りに回転を指定しません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,263 @@
+<Type Name="XsltContext" FullName="System.Xml.Xsl.XsltContext">
+  <TypeSignature Language="C#" Value="public abstract class XsltContext : System.Xml.XmlNamespaceManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit XsltContext extends System.Xml.XmlNamespaceManager" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Xsl.XsltContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Xml.XmlNamespaceManager</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Extensible Stylesheet Language Transformations (XSLT) のプロセッサの XML パス言語 (XPath) 関数、パラメーター、および XPath 式内の名前空間を解決するのにを許可するは、現在の実行コンテキストをカプセル化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する方法についての<xref:System.Xml.Xsl.XsltContext>、記事 Q324899、"方法に:: 実装と使用カスタム関数とする実行 XPath クエリで Visual Basic .NET"http://support.microsoft.com で Microsoft サポート技術情報で参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected XsltContext ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XsltContext.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.Xsl.XsltContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected XsltContext (System.Xml.NameTable table);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Xml.NameTable table) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XsltContext.#ctor(System.Xml.NameTable)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="table" Type="System.Xml.NameTable" />
+      </Parameters>
+      <Docs>
+        <param name="table">使用する <see cref="T:System.Xml.NameTable" />。</param>
+        <summary>指定した <see cref="T:System.Xml.Xsl.XsltContext" /> を使用して、<see cref="T:System.Xml.NameTable" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompareDocument">
+      <MemberSignature Language="C#" Value="public abstract int CompareDocument (string baseUri, string nextbaseUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 CompareDocument(string baseUri, string nextbaseUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XsltContext.CompareDocument(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseUri" Type="System.String" />
+        <Parameter Name="nextbaseUri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="baseUri">比較対象の最初のドキュメントのベース URI。</param>
+        <param name="nextbaseUri">比較対象の 2 番目のドキュメントのベース URI。</param>
+        <summary>派生クラスでオーバーライドされると、ドキュメントが XSLT プロセッサによって読み込まれた順序に基づいて 2 つのドキュメントの基底の Uniform Resource Identifier (Uri) を比較し (つまり、<see cref="T:System.Xml.Xsl.XslTransform" />クラス)。</summary>
+        <returns>2 つのベース Uri の相対順序を記述する整数値: 場合は-1<paramref name="baseUri" />の前に発生<paramref name="nextbaseUri" />; 2 つのベース Uri が同じです。 場合は 0 と 1 の場合<paramref name="baseUri" />の後に発生<paramref name="nextbaseUri" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、XSLT をサポートしている`document()`複数ドキュメント間で選択されているノードが同じ順序で常に返されることを指定する関数。  
+  
+> [!NOTE]
+>  順序は、実装に固有です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreserveWhitespace">
+      <MemberSignature Language="C#" Value="public abstract bool PreserveWhitespace (System.Xml.XPath.XPathNavigator node);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool PreserveWhitespace(class System.Xml.XPath.XPathNavigator node) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XsltContext.PreserveWhitespace(System.Xml.XPath.XPathNavigator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="node" Type="System.Xml.XPath.XPathNavigator" />
+      </Parameters>
+      <Docs>
+        <param name="node">現在のコンテキストで維持または除去される空白ノード。</param>
+        <summary>派生クラスでオーバーライドされると、空白のノードを保持または特定のコンテキストで除去するかどうかを評価します。</summary>
+        <returns>返します<see langword="true" />の空白文字を保持する場合または<see langword="false" />場合は、空白を削除するのには、します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveFunction">
+      <MemberSignature Language="C#" Value="public abstract System.Xml.Xsl.IXsltContextFunction ResolveFunction (string prefix, string name, System.Xml.XPath.XPathResultType[] ArgTypes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Xml.Xsl.IXsltContextFunction ResolveFunction(string prefix, string name, valuetype System.Xml.XPath.XPathResultType[] ArgTypes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XsltContext.ResolveFunction(System.String,System.String,System.Xml.XPath.XPathResultType[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Xsl.IXsltContextFunction</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prefix" Type="System.String" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ArgTypes" Type="System.Xml.XPath.XPathResultType[]" />
+      </Parameters>
+      <Docs>
+        <param name="prefix">XPath 式内に示されている、関数のプリフィックス。</param>
+        <param name="name">関数の名前。</param>
+        <param name="ArgTypes">解決対象の関数の引数型の配列。 この配列を使用すると、同じ名前の複数のメソッド (オーバーロードされたメソッドなど) の中から 1 つ選択できるようになります。</param>
+        <summary>派生クラスでオーバーライドされると、関数の参照を解決し、返します、<see cref="T:System.Xml.Xsl.IXsltContextFunction" />関数を表すです。 <see cref="T:System.Xml.Xsl.IXsltContextFunction" />実行時に、関数の戻り値を取得するために使用します。</summary>
+        <returns><see cref="T:System.Xml.Xsl.IXsltContextFunction" />関数を表すです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveVariable">
+      <MemberSignature Language="C#" Value="public abstract System.Xml.Xsl.IXsltContextVariable ResolveVariable (string prefix, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Xml.Xsl.IXsltContextVariable ResolveVariable(string prefix, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XsltContext.ResolveVariable(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Xsl.IXsltContextVariable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prefix" Type="System.String" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="prefix">XPath 式内に示されている、変数のプレフィックス。</param>
+        <param name="name">変数の名前。</param>
+        <summary>派生クラスでオーバーライドされると、変数の参照を解決し、返します、<see cref="T:System.Xml.Xsl.IXsltContextVariable" />変数を表すです。</summary>
+        <returns><see cref="T:System.Xml.Xsl.IXsltContextVariable" />実行時に変数を表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Xsl.IXsltContextVariable> を実行時に使用して、変数の値を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Whitespace">
+      <MemberSignature Language="C#" Value="public abstract bool Whitespace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Whitespace" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Xsl.XsltContext.Whitespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、出力に空白のノードを含めるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />出力に含めるようにソース ドキュメント内の空白ノードを確認するには<see langword="false" />を空白のノードを評価しません。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

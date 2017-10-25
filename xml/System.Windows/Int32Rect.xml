@@ -1,0 +1,495 @@
+<Type Name="Int32Rect" FullName="System.Windows.Int32Rect">
+  <TypeSignature Language="C#" Value="public struct Int32Rect : IFormattable" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit Int32Rect extends System.ValueType implements class System.IFormattable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Int32Rect" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IFormattable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Int32RectConverter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ValueSerializer(typeof(System.Windows.Converters.Int32RectValueSerializer))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>整数四角形の幅、高さ、場所を記述します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlAttributeUsage_Duration"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="X,Y,Width,Height"/>  
+- or   
+<object property="Empty"/>  
+```  
+  
+<a name="xamlValues_MinWidth"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *X*  
+ <xref:System.Int32?displayProperty=nameWithType>  
+  
+ 四角形の左上隅の X 座標。  
+  
+ *Y*  
+ <xref:System.Int32?displayProperty=nameWithType>  
+  
+ 四角形の左上隅の y 座標。  
+  
+ *幅*  
+ <xref:System.Int32?displayProperty=nameWithType>  
+  
+ 四角形の幅。  
+  
+ *高さ*  
+ <xref:System.Int32?displayProperty=nameWithType>  
+  
+ 四角形の高さ。  
+  
+<a name="xamlTextUsage_Int32Rect"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ また、値を区切るためには、コンマの代わりに空白を使用することができます。 空白は、コンマ区切り値のセットでも使用できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Int32Rect (int x, int y, int width, int height);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 x, int32 y, int32 width, int32 height) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Int32Rect.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="width" Type="System.Int32" />
+        <Parameter Name="height" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="P:System.Windows.Int32Rect.X" />新しい<see cref="T:System.Windows.Int32Rect" />四角形の左上隅の x 座標を指定します。</param>
+        <param name="y"><see cref="P:System.Windows.Int32Rect.Y" />新しい<see cref="T:System.Windows.Int32Rect" />四角形の左上隅の y 座標を指定します。</param>
+        <param name="width"><see cref="P:System.Windows.Int32Rect.Width" />新しい<see cref="T:System.Windows.Int32Rect" />四角形の幅を指定します。</param>
+        <param name="height"><see cref="P:System.Windows.Int32Rect.Height" />新しい<see cref="T:System.Windows.Int32Rect" />四角形の高さを指定します。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.Int32Rect" /> 、指定した<see cref="P:System.Windows.Int32Rect.X" />と<see cref="P:System.Windows.Int32Rect.Y" />座標と、指定した<see cref="P:System.Windows.Int32Rect.Width" />と<see cref="P:System.Windows.Int32Rect.Height" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Empty">
+      <MemberSignature Language="C#" Value="public static System.Windows.Int32Rect Empty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.Int32Rect Empty" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Int32Rect.Empty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Int32Rect</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>空の四角形の位置や領域の四角形を表す特殊な値を取得します。</summary>
+        <value>空の四角形の位置や領域を持たない。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、すべてのパラメーター値の 0 を使用してコンス トラクターを呼び出す場合と同じです。  
+  
+<a name="xamlAttributeUsage_Automatic"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="Empty" />  
+```  
+  
+<a name="xamlValues_Automatic"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *プロパティ*  
+ プロパティを受け付ける、<xref:System.Windows.Int32Rect>値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Int32Rect.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">現在の四角形と比較するオブジェクト。</param>
+        <summary>指定した四角形がこの四角形と等しいかどうかを判断します。</summary>
+        <returns>**true**場合*o*は、<see cref="T:System.Windows.Int32Rect" />と同じ<see cref="P:System.Windows.Int32Rect.X" />、 <see cref="P:System.Windows.Int32Rect.Y" />、 <see cref="P:System.Windows.Int32Rect.Width" />、および<see cref="P:System.Windows.Int32Rect.Height" />この四角形としてそれ以外の場合、 **false**です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作は、オブジェクトの等価性をテストします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Windows.Int32Rect value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Equals(valuetype System.Windows.Int32Rect value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Int32Rect.Equals(System.Windows.Int32Rect)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Windows.Int32Rect" />
+      </Parameters>
+      <Docs>
+        <param name="value">現在の四角形と比較する四角形。</param>
+        <summary>指定した四角形がこの四角形と等しいかどうかを判断します。</summary>
+        <returns>**true**両方の四角形が同じである場合<see cref="P:System.Windows.Int32Rect.X" />、 <see cref="P:System.Windows.Int32Rect.Y" />、<see cref="P:System.Windows.Int32Rect.Width" />と<see cref="P:System.Windows.Int32Rect.Height" />この四角形とそれ以外の場合、 **false**です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作は、オブジェクトの等価性をテストします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public static bool Equals (System.Windows.Int32Rect int32Rect1, System.Windows.Int32Rect int32Rect2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Equals(valuetype System.Windows.Int32Rect int32Rect1, valuetype System.Windows.Int32Rect int32Rect2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Int32Rect.Equals(System.Windows.Int32Rect,System.Windows.Int32Rect)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="int32Rect1" Type="System.Windows.Int32Rect" />
+        <Parameter Name="int32Rect2" Type="System.Windows.Int32Rect" />
+      </Parameters>
+      <Docs>
+        <param name="int32Rect1">比較する最初の四角形。</param>
+        <param name="int32Rect2">比較する 2 つ目の四角形。</param>
+        <summary>指定した四角形が等しいかどうかを判断します。</summary>
+        <returns>**true**場合*int32Rect1*と*int32Rect2*が同じである<see cref="P:System.Windows.Int32Rect.X" />、 <see cref="P:System.Windows.Int32Rect.Y" />、 <see cref="P:System.Windows.Int32Rect.Width" />、および<see cref="P:System.Windows.Int32Rect.Height" />、それ以外の**false**です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作は、オブジェクトの等価性をテストします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Int32Rect.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この四角形からハッシュ コードを作成<see cref="P:System.Windows.Int32Rect.X" />、 <see cref="P:System.Windows.Int32Rect.Y" />、 <see cref="P:System.Windows.Int32Rect.Width" />、および<see cref="P:System.Windows.Int32Rect.Height" />値。</summary>
+        <returns>この四角形のハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasArea">
+      <MemberSignature Language="C#" Value="public bool HasArea { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasArea" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Int32Rect.HasArea" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="P:System.Windows.Int32Rect.Width" />と<see cref="P:System.Windows.Int32Rect.Height" />のプロパティ、<see cref="T:System.Windows.Int32Rect" />が 0 より大きい。</summary>
+        <value>true の場合、<see cref="P:System.Windows.Int32Rect.Width" />と<see cref="P:System.Windows.Int32Rect.Height" />のプロパティ、<see cref="T:System.Windows.Int32Rect" />が 0 より大きい値。 それ以外の場合、<paramref name="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Height">
+      <MemberSignature Language="C#" Value="public int Height { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Height" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Int32Rect.Height" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>四角形の高さを取得または設定します。</summary>
+        <value>四角形の高さ。 既定値は<c>0</c>します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEmpty">
+      <MemberSignature Language="C#" Value="public bool IsEmpty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEmpty" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Int32Rect.IsEmpty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>四角形が空かどうかを示す値を取得します。</summary>
+        <value>**true**四角形は空、それ以外の場合**false**です。 既定値は**true**です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Windows.Int32Rect int32Rect1, System.Windows.Int32Rect int32Rect2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Windows.Int32Rect int32Rect1, valuetype System.Windows.Int32Rect int32Rect2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Int32Rect.op_Equality(System.Windows.Int32Rect,System.Windows.Int32Rect)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="int32Rect1" Type="System.Windows.Int32Rect" />
+        <Parameter Name="int32Rect2" Type="System.Windows.Int32Rect" />
+      </Parameters>
+      <Docs>
+        <param name="int32Rect1">比較する最初の四角形。</param>
+        <param name="int32Rect2">比較する 2 つ目の四角形。</param>
+        <summary>2 つの四角形の正確な等価性を比較します。</summary>
+        <returns>**true**場合*int32Rect1*と*int32Rect2*が同じである<see cref="P:System.Windows.Int32Rect.X" />、 <see cref="P:System.Windows.Int32Rect.Y" />、 <see cref="P:System.Windows.Int32Rect.Width" />、および<see cref="P:System.Windows.Int32Rect.Height" />、それ以外の**false**です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Windows.Int32Rect.Equals%28System.Windows.Int32Rect%2CSystem.Windows.Int32Rect%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Windows.Int32Rect int32Rect1, System.Windows.Int32Rect int32Rect2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Windows.Int32Rect int32Rect1, valuetype System.Windows.Int32Rect int32Rect2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Int32Rect.op_Inequality(System.Windows.Int32Rect,System.Windows.Int32Rect)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="int32Rect1" Type="System.Windows.Int32Rect" />
+        <Parameter Name="int32Rect2" Type="System.Windows.Int32Rect" />
+      </Parameters>
+      <Docs>
+        <param name="int32Rect1">比較する最初の四角形。</param>
+        <param name="int32Rect2">比較する 2 つ目の四角形。</param>
+        <summary>非等値を 2 つの四角形を比較します。</summary>
+        <returns>**false**場合*int32Rect1*と*int32Rect2*が同じである<see cref="P:System.Windows.Int32Rect.X" />、 <see cref="P:System.Windows.Int32Rect.Y" />、<see cref="P:System.Windows.Int32Rect.Width" />と<see cref="P:System.Windows.Int32Rect.Height" />、それ以外の場合のこれらの値はすべて同じ場合は、then **true**です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法の否定である<xref:System.Windows.Int32Rect.Equals%2A>です。]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public static System.Windows.Int32Rect Parse (string source);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Int32Rect Parse(string source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Int32Rect.Parse(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Int32Rect</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="source">文字列表現、<see cref="T:System.Windows.Int32Rect" />です。</param>
+        <summary>作成、<see cref="T:System.Windows.Int32Rect" />から、指定した構造<see cref="T:System.String" />表現します。</summary>
+        <returns>該当するショートカットは、<see cref="T:System.Windows.Int32Rect" />構造体。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IFormattable.ToString">
+      <MemberSignature Language="C#" Value="string IFormattable.ToString (string format, IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance string System.IFormattable.ToString(string format, class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Int32Rect.System#IFormattable#ToString(System.String,System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="format">使用する書式。</param>
+        <param name="provider">値の書式設定に使用するプロバイダー</param>
+        <summary>指定された書式を使用して現在のインスタンスの値を書式設定します。</summary>
+        <returns>指定された書式の現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Int32Rect> のインスタンスが <xref:System.IFormattable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Int32Rect.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この文字列表現を作成<see cref="T:System.Windows.Int32Rect" />です。</summary>
+        <returns>同じを含む文字列<see cref="P:System.Windows.Int32Rect.X" />、 <see cref="P:System.Windows.Int32Rect.Y" />、 <see cref="P:System.Windows.Int32Rect.Width" />、および<see cref="P:System.Windows.Int32Rect.Height" />この値<see cref="T:System.Windows.Int32Rect" />構造体。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ToString(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Int32Rect.ToString(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">使用する書式設定プロバイダー。 プロバイダーが場合<see langword="null" />、現在のカルチャを使用します。</param>
+        <summary>この文字列表現を作成<see cref="T:System.Windows.Int32Rect" />に基づいて、指定された<see cref="T:System.IFormatProvider" />です。</summary>
+        <returns>このインスタンスの文字列表現<see cref="T:System.Windows.Int32Rect" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Width">
+      <MemberSignature Language="C#" Value="public int Width { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Width" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Int32Rect.Width" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>四角形の幅を取得または設定します。</summary>
+        <value>四角形の幅。 既定値は<c>0</c>します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="X">
+      <MemberSignature Language="C#" Value="public int X { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 X" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Int32Rect.X" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>四角形の左上隅の X 座標を取得または設定します。</summary>
+        <value>四角形の左上隅の X 座標。 既定値は<c>0</c>します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Y">
+      <MemberSignature Language="C#" Value="public int Y { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Y" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Int32Rect.Y" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>四角形の左上隅の y 座標を取得または設定します。</summary>
+        <value>四角形の左上隅の y 座標。 既定値は<c>0</c>します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

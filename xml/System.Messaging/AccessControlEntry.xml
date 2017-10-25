@@ -1,0 +1,226 @@
+<Type Name="AccessControlEntry" FullName="System.Messaging.AccessControlEntry">
+  <TypeSignature Language="C#" Value="public class AccessControlEntry" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AccessControlEntry extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Messaging.AccessControlEntry" />
+  <AssemblyInfo>
+    <AssemblyName>System.Messaging</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>(ユーザー、グループ、またはコンピューター) の一般的なタスクのアプリケーション固有の実装を実行する、トラスティのアクセス権を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 多くのアプリケーションでは、同様の操作をする、トラスティできます権限が割り当てられます、たとえば、読み取り、書き込み、およびオブジェクトの削除があります。 これらの全般的な操作の権限を割り当てると、アプリケーションはそれらをそのアプリケーションに特定の方法で解釈されます。 たとえば、メッセージ キュー受信またはキューからメッセージをピークとして、読み取り操作が解釈されます。 <xref:System.Messaging.AccessControlEntry>クラスはこれらの一般的な権限へのアクセスを提供します。  
+  
+ アクセス制御エントリを使用する場合は、権利の割り当て先のトラスティを指定します。 設定する必要がありますの少なくとも 1 つ、 <xref:System.Messaging.AccessControlEntry.GenericAccessRights%2A>、 <xref:System.Messaging.AccessControlEntry.StandardAccessRights%2A>、または<xref:System.Messaging.AccessControlEntry.CustomAccessRights%2A>トラスティに割り当てる権限を示すプロパティです。 設定することができます、<xref:System.Messaging.AccessControlEntry.EntryType%2A>プロパティを指定する権限を許可または拒否するかどうかを指定します。 既定のエントリの種類は、権限を許可するのにです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AccessControlEntry ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.AccessControlEntry.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Messaging.AccessControlEntry" />トラスティも適用する権限のセットを指定するクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Messaging.AccessControlEntry.Trustee%2A>プロパティと少なくとも 1 つの<xref:System.Messaging.AccessControlEntry.GenericAccessRights%2A>、 <xref:System.Messaging.AccessControlEntry.StandardAccessRights%2A>、または<xref:System.Messaging.AccessControlEntry.CustomAccessRights%2A>これを使用する前にプロパティ<xref:System.Messaging.AccessControlEntry>トラスティのアクセス権を設定するインスタンス。  
+  
+ 必要に応じて設定することができます、<xref:System.Messaging.AccessControlEntry.EntryType%2A>プロパティの既定値は、`Allow`しないように選択した場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AccessControlEntry (System.Messaging.Trustee trustee);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Messaging.Trustee trustee) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.AccessControlEntry.#ctor(System.Messaging.Trustee)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="trustee" Type="System.Messaging.Trustee" />
+      </Parameters>
+      <Docs>
+        <param name="trustee">A<see cref="T:System.Messaging.Trustee" />ユーザー、グループ、コンピューター、ドメイン、または別名を指定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Messaging.AccessControlEntry" />権限の許可または拒否する、トラスティを指定するクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Messaging.AccessControlEntry.EntryType%2A>プロパティと少なくとも 1 つの<xref:System.Messaging.AccessControlEntry.GenericAccessRights%2A>、 <xref:System.Messaging.AccessControlEntry.StandardAccessRights%2A>、または<xref:System.Messaging.AccessControlEntry.CustomAccessRights%2A>これを使用する前にプロパティ<xref:System.Messaging.AccessControlEntry>トラスティのアクセス権を設定するインスタンス。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="trustee" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AccessControlEntry (System.Messaging.Trustee trustee, System.Messaging.GenericAccessRights genericAccessRights, System.Messaging.StandardAccessRights standardAccessRights, System.Messaging.AccessControlEntryType entryType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Messaging.Trustee trustee, valuetype System.Messaging.GenericAccessRights genericAccessRights, valuetype System.Messaging.StandardAccessRights standardAccessRights, valuetype System.Messaging.AccessControlEntryType entryType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.AccessControlEntry.#ctor(System.Messaging.Trustee,System.Messaging.GenericAccessRights,System.Messaging.StandardAccessRights,System.Messaging.AccessControlEntryType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="trustee" Type="System.Messaging.Trustee" />
+        <Parameter Name="genericAccessRights" Type="System.Messaging.GenericAccessRights" />
+        <Parameter Name="standardAccessRights" Type="System.Messaging.StandardAccessRights" />
+        <Parameter Name="entryType" Type="System.Messaging.AccessControlEntryType" />
+      </Parameters>
+      <Docs>
+        <param name="trustee">A<see cref="T:System.Messaging.Trustee" />ユーザー、グループ、コンピューター、ドメイン、または別名を指定します。</param>
+        <param name="genericAccessRights"><see cref="T:System.Messaging.GenericAccessRights" /> 値のビットごとの組み合わせ。</param>
+        <param name="standardAccessRights"><see cref="T:System.Messaging.StandardAccessRights" /> 値のビットごとの組み合わせ。</param>
+        <param name="entryType">1 つ、<see cref="T:System.Messaging.AccessControlEntryType" />拒否、設定、または指定された権限の取り消しを許可するかどうかを指定する値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Messaging.AccessControlEntry" />トラスティ、権利を割り当てる、およびこれらの権限を許可するかどうかを指定するクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロード コンス トラクターのセットの<xref:System.Messaging.AccessControlEntry.CustomAccessRights%2A>プロパティのビットごとの組み合わせを`genericAccessRights`と`standardAccessRights`パラメーターを指定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="trustee" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"><paramref name="genericAccessRights" />、 <paramref name="standardAccessRights" />、または<paramref name="entryType" />パラメーターが有効な列挙値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomAccessRights">
+      <MemberSignature Language="C#" Value="protected int CustomAccessRights { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CustomAccessRights" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.AccessControlEntry.CustomAccessRights" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはカスタムのアクセス権を設定します。</summary>
+        <value>アプリケーション固有のアクセス権、通常は、ビット フラグとして定義します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EntryType">
+      <MemberSignature Language="C#" Value="public System.Messaging.AccessControlEntryType EntryType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Messaging.AccessControlEntryType EntryType" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.AccessControlEntry.EntryType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.AccessControlEntryType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはトラスティにアクセス権を適用する方法を示す値を設定します。</summary>
+        <value>1 つ、<see cref="T:System.Messaging.AccessControlEntryType" />拒否、設定、または指定された権限の取り消しを許可するかどうかを指定する値。 既定値は、<see langword="Allow" /> です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">エントリの種類が有効ではありません<see cref="T:System.Messaging.AccessControlEntryType" />列挙値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GenericAccessRights">
+      <MemberSignature Language="C#" Value="public System.Messaging.GenericAccessRights GenericAccessRights { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Messaging.GenericAccessRights GenericAccessRights" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.AccessControlEntry.GenericAccessRights" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.GenericAccessRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または一連の読み取り、書き込み、および実行の両方の standard およびオブジェクト固有のアクセス権にマップされる、共通のアクセス権を設定します。</summary>
+        <value><see cref="T:System.Messaging.GenericAccessRights" /> 値のビットごとの組み合わせ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セキュリティ保護可能なオブジェクトでは、Windows 2000 および Windows NT アクセス マスクの形式の 4 つの上位ビットを使用して、汎用アクセス権を指定します。 各セキュリティ保護可能なオブジェクトの種類は、これらのビットを標準およびオブジェクト固有のアクセス権限のセットにマップします。 プライベートのセキュリティ保護可能なオブジェクトを定義するアプリケーションでは、汎用アクセス権も使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">設定値がの有効な組み合わせではない<see cref="T:System.Messaging.GenericAccessRights" />ビット フラグのメンバーです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StandardAccessRights">
+      <MemberSignature Language="C#" Value="public System.Messaging.StandardAccessRights StandardAccessRights { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Messaging.StandardAccessRights StandardAccessRights" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.AccessControlEntry.StandardAccessRights" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.StandardAccessRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはほとんどのセキュリティ保護可能なオブジェクトの種類に共通の操作に対応する標準的なアクセス権のセットを設定します。</summary>
+        <value><see cref="T:System.Messaging.StandardAccessRights" /> 値のビットごとの組み合わせ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Windows 2000 および Windows NT アクセス マスクの形式には、標準的なアクセス権のビット セットが含まれています。 セキュリティ保護可能なオブジェクトの種類ごとには、そのオブジェクトの種類に固有の操作に対応するアクセス権のセットがあります。 これらのオブジェクトに固有のアクセス権に加えて、ほとんどのセキュリティ保護可能なオブジェクトの種類に共通する操作に対応する標準的なアクセス権のセットがあります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">設定値がの有効な組み合わせではない<see cref="T:System.Messaging.StandardAccessRights" />ビット フラグのメンバーです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Trustee">
+      <MemberSignature Language="C#" Value="public System.Messaging.Trustee Trustee { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Messaging.Trustee Trustee" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.AccessControlEntry.Trustee" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.Trustee</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアクセス権を割り当てるユーザー、グループ、ドメイン、またはエイリアスを設定します。</summary>
+        <value>A<see cref="T:System.Messaging.Trustee" />ユーザー アカウント、グループ アカウント、またはにログオン セッションを指定する、<see cref="T:System.Messaging.AccessControlEntry" />適用されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーと、Win32 サービスなど、プログラムの両方は、ローカル コンピューターにログオンするユーザー アカウントを使用します。 グループ アカウント、コンピューターにログオンするために使用できないはに役立ちます<xref:System.Messaging.AccessControlEntry>許可または拒否する一連のインスタンスにアクセス権を 1 つまたは複数のユーザー アカウントです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="P:System.Messaging.AccessControlEntry.Trustee" /> プロパティが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

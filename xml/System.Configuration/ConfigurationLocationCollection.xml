@@ -1,0 +1,74 @@
+<Type Name="ConfigurationLocationCollection" FullName="System.Configuration.ConfigurationLocationCollection">
+  <TypeSignature Language="C#" Value="public class ConfigurationLocationCollection : System.Collections.ReadOnlyCollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ConfigurationLocationCollection extends System.Collections.ReadOnlyCollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.ConfigurationLocationCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.ReadOnlyCollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Configuration.ConfigurationLocationCollection" /> オブジェクトのコレクションを含んでいます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Configuration.ConfigurationLocationCollection>のコレクションを反復処理するクラス<xref:System.Configuration.ConfigurationLocation>場所に固有の構成設定が定義されているリソースを表すオブジェクト。 <xref:System.Configuration.ConfigurationLocationCollection>によって返される型は、<xref:System.Configuration.Configuration.Locations%2A>プロパティです。  
+  
+> [!NOTE]
+>  <xref:System.Configuration.ConfigurationLocationCollection>クラスがありますのコレクションを参照していません<xref:System.Configuration.ConfigurationLocation>構成ファイルで指定した順序でのオブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例は、Web アプリケーションの構成で`MySampleApp`が読み込まれて、反復処理に使用してこの構成で定義されている場所が表示されると、<xref:System.Configuration.ConfigurationLocationCollection>によって返されるオブジェクト、<xref:System.Configuration.Configuration.Locations%2A>プロパティです。  
+  
+ [!code-csharp[ConfigurationLocationCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ConfigurationLocationCollection/CS/sample.cs#1)]
+ [!code-vb[ConfigurationLocationCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ConfigurationLocationCollection/VB/sample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Configuration.ConfigurationLocation this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationLocation Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationLocationCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationLocation</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス位置、<see cref="T:System.Configuration.ConfigurationLocationCollection" />を返します。</param>
+        <summary>取得、<see cref="T:System.Configuration.ConfigurationLocationCollection" />指定したインデックスにあるオブジェクト。</summary>
+        <value>指定されたインデックス位置にある <see cref="T:System.Configuration.ConfigurationLocationCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Configuration.ConfigurationLocationCollection.Item%2A>アクセサーには、 <xref:System.Configuration.ConfigurationLocationCollection> 、固有の仕様を取得するクラス<xref:System.Configuration.ConfigurationLocation>コレクション内のインデックスを指定することによってコレクションからのオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

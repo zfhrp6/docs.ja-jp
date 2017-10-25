@@ -1,0 +1,119 @@
+<Type Name="Format" FullName="Microsoft.SqlServer.Server.Format">
+  <TypeSignature Language="C#" Value="public enum Format" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed Format extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.SqlServer.Server.Format" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>によって使用される<see cref="T:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute" />と<see cref="T:Microsoft.SqlServer.Server.SqlUserDefinedAggregateAttribute" />をユーザー定義型 (UDT)、または集計のシリアル化形式を示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって使用される<xref:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute>と<xref:Microsoft.SqlServer.Server.SqlUserDefinedAggregateAttribute>をユーザー定義型 (UDT)、または集計のシリアル化形式を示します。  
+  
+   
+  
+## Examples  
+ 次の例は、 `UserDefinedType` Point UDT の属性です。  UDT は、バイト順「ポイント」をという名前、"ValidatePoint"をという名前の検証メソッドを使用するネイティブ シリアル化の形式です。  
+  
+ [!code-csharp[DataWorks SqlUserDefinedTypeAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlUserDefinedTypeAttribute Example/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlUserDefinedTypeAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlUserDefinedTypeAttribute Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Native">
+      <MemberSignature Language="C#" Value="Native" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.SqlServer.Server.Format Native = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.SqlServer.Server.Format.Native" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.SqlServer.Server.Format</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="Native" />シリアル化形式をディスク上、UDT の効率的な表現を格納する SQL Server を有効にする非常に単純なアルゴリズムを使用しています。 用にマークされた型<see langword="Native" />シリアル化がメンバーとして値型 (構造体に Microsoft Visual C# の場合) および Microsoft Visual Basic .NET での構造を持つことができますのみです。 参照のメンバーの種類 (クラス Visual c# および Visual Basic で)、ユーザー定義されているか、またはフレームワークで既存のもの (など<see cref="T:System.String" />)、サポートされていません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この形式の要件は次のとおりです。  
+  
+-   `StructLayout.LayoutKindSequential`属性は、集計に適用する必要がありますまたは UDT クラスと構造体ではないで定義されている場合。 これにより、データ フィールドの物理的なレイアウトを制御し、出現する順序で順番にレイアウトされるメンバーを強制的に使用されます。 SQL Server では、この属性を使用して、複数のフィールドを持つ Udt のフィールド順序を決定します。  
+  
+-   種類は、少なくとも 1 つのメンバーを含める必要があります (シリアル化された値は 0 バイトの列にすることはできません)。  
+  
+-   集計のすべてのフィールドがある必要があります*blittable*、する必要がありますマネージとアンマネージ メモリの両方に共通の表現があるし、相互運用マーシャラーによる特別な処理を必要としないのは、します。  
+  
+-   UDT のすべてのフィールドがシリアル化可能な次の種類のいずれかにする必要があります: `bool`、 `byte`、 `sbyte`、 `short`、 `ushort`、 `int`、 `uint`、 `long`、 `ulong`、 `float`、 `double`、 <xref:System.Data.SqlTypes.SqlByte>、 <xref:System.Data.SqlTypes.SqlInt16>、 <xref:System.Data.SqlTypes.SqlInt32>、 <xref:System.Data.SqlTypes.SqlInt64>、 <xref:System.Data.SqlTypes.SqlDateTime>、 <xref:System.Data.SqlTypes.SqlSingle>、 <xref:System.Data.SqlTypes.SqlDouble>、 <xref:System.Data.SqlTypes.SqlMoney>、またはその他の値の型、ユーザーによって定義されたこれらの型のいずれかのフィールドを含むです。  
+  
+-   集計の値を指定する必要があります`MaxByteSize`です。  
+  
+-   集計は、[NonSerialized] フィールドにはできません。  
+  
+-   フィールドは、明示的なレイアウトとしてマークしないでください (<xref:System.Runtime.InteropServices.StructLayoutAttribute>)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Unknown">
+      <MemberSignature Language="C#" Value="Unknown" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.SqlServer.Server.Format Unknown = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.SqlServer.Server.Format.Unknown" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.SqlServer.Server.Format</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シリアル化の形式が不明です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UserDefined">
+      <MemberSignature Language="C#" Value="UserDefined" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.SqlServer.Server.Format UserDefined = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.SqlServer.Server.Format.UserDefined" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.SqlServer.Server.Format</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="UserDefined" />開発者を完全に制御をバイナリ形式のシリアル化形式により、 <see cref="T:Microsoft.SqlServer.Server.IBinarySerialize" /> <see langword=".Write" />と<see cref="T:Microsoft.SqlServer.Server.IBinarySerialize" /><see langword=".Read" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 集計の値を指定する必要があります`MaxByteSize`です。  
+  
+ 指定して、<xref:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute.IsByteOrdered%2A>属性プロパティ。 既定値は false です。  
+  
+ 任意のフィールドを省略した場合、<xref:Microsoft.SqlServer.Server.IBinarySerialize.Read%2A>または<xref:Microsoft.SqlServer.Server.IBinarySerialize.Write%2A>メソッド、フィールドの状態がシリアル化されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

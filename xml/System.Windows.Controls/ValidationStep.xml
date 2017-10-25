@@ -1,0 +1,98 @@
+<Type Name="ValidationStep" FullName="System.Windows.Controls.ValidationStep">
+  <TypeSignature Language="C#" Value="public enum ValidationStep" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ValidationStep extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.ValidationStep" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>タイミングを指定します、<see cref="T:System.Windows.Controls.ValidationRule" />を実行します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Windows.Controls.ValidationRule>という`ValidateDateAndPrice`です。 <xref:System.Windows.Controls.ValidationRule.ValidationStep%2A>のこの規則が ConvertedProposedValue に設定されているように、これを実行すると、<xref:System.Windows.Controls.ValidationRule.Validate%2A>メソッドには、ソース プロパティの型の値にアクセスします。  
+  
+ ときに、`PriceIsAPositiveNumber`と`FutureDateRule`ルールの実行、各内の値<xref:System.Windows.Controls.ValidationRule.Validate%2A>ために、メソッドは文字列の既定値<xref:System.Windows.Controls.ValidationRule.ValidationStep%2A>RawProposedValue がします。 そのため、値がそれぞれの型に変換される前に、ルールを実行します。  
+  
+ [!code-xaml[BindingGroupSnippets#WindowLayout](~/samples/snippets/csharp/VS_Snippets_Wpf/BindingGroupSnippets/CSharp/Window1.xaml#windowlayout)]  
+  
+ 次の例は、 `ValidateDateAndPrice`<xref:System.Windows.Controls.ValidationRule.ValidationStep%2A>です。 <xref:System.Windows.Controls.ValidationRule.Validate%2A> 、メソッド、`Price`プロパティの型は<xref:System.Double>と`OfferExpires`プロパティの型は<xref:System.DateTime>します。 文字列は、時間によってそれぞれの型に変換されましたが、<xref:System.Windows.Controls.ValidationRule>を実行します。  
+  
+ [!code-csharp[BindingGroupSnippets#ValidateObject](~/samples/snippets/csharp/VS_Snippets_Wpf/BindingGroupSnippets/CSharp/Data.cs#validateobject)]
+ [!code-vb[BindingGroupSnippets#ValidateObject](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BindingGroupSnippets/visualbasic/data.vb#validateobject)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CommittedValue">
+      <MemberSignature Language="C#" Value="CommittedValue" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Controls.ValidationStep CommittedValue = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ValidationStep.CommittedValue" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.ValidationStep</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実行、<see cref="T:System.Windows.Controls.ValidationRule" />値は、ソースにコミットされた後です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertedProposedValue">
+      <MemberSignature Language="C#" Value="ConvertedProposedValue" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Controls.ValidationStep ConvertedProposedValue = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ValidationStep.ConvertedProposedValue" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.ValidationStep</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実行、<see cref="T:System.Windows.Controls.ValidationRule" />値を変換後します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RawProposedValue">
+      <MemberSignature Language="C#" Value="RawProposedValue" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Controls.ValidationStep RawProposedValue = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ValidationStep.RawProposedValue" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.ValidationStep</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実行、<see cref="T:System.Windows.Controls.ValidationRule" />どの変換でも発生する前にします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdatedValue">
+      <MemberSignature Language="C#" Value="UpdatedValue" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Controls.ValidationStep UpdatedValue = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ValidationStep.UpdatedValue" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.ValidationStep</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実行、<see cref="T:System.Windows.Controls.ValidationRule" />ソースが更新された後です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,447 @@
+<Type Name="RequestContext" FullName="System.ServiceModel.Channels.RequestContext">
+  <TypeSignature Language="C#" Value="public abstract class RequestContext : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit RequestContext extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.RequestContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>受信要求に関連付けられた応答を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求コンテキストは <xref:System.ServiceModel.Channels.IReplyChannel> から取得します。 各 <xref:System.ServiceModel.Channels.RequestContext> は要求に応答するために必要な情報をカプセル化しているため、各要求メッセージが応答の受信を待つときに、チャネルをブロックする必要がありません。  
+  
+ 要求/応答モデルでは、<xref:System.ServiceModel.Channels.RequestContext> オブジェクトは受信した要求と送信する応答の間のリンクです。サーバーは、要求を受信すると、要求を表す <xref:System.ServiceModel.Channels.RequestContext> インスタンスをチャネルに提供します。 要求コンテキストには、他の役に立つプロパティと共に元の要求メッセージが格納されています。 要求コンテキストは、サービスが取得できるように <xref:System.ServiceModel.OperationContext> の内部に格納されます。 現在の操作の要求にアクセスするには、通常、<xref:System.ServiceModel.OperationContext.Current%2A> プロパティを使用します。  
+  
+ <xref:System.ServiceModel.Channels.RequestContext> の値は `null` の場合があります。 要求コンテキストの役割は、要求と応答をリンクすることであるため、応答がないときに要求コンテキストを保持していても意味がありません。したがって、このような場合はコンテキストが `null` に設定されます。 要求/応答モデルに基づく一方向操作では、サーバーが要求を受信しますが、クライアントには応答を送信しません。 したがって、<xref:System.ServiceModel.Channels.RequestContext> が予想とは異なって `null` の場合は、最初に操作コントラクトが IsOneWay かどうかを確認してください。  
+  
+ このクラスから派生するマネージ C++ ユーザーに対する特別な注意 :  
+  
+-   クリーンアップ コードは、デストラクターではなく (On)(Begin)Close (または OnAbort のどちらか一方または両方) に置いてください。  
+  
+-   デストラクターは使用しないでください。使用すると、コンパイラが <xref:System.IDisposable> を自動生成します。  
+  
+-   非参照メンバーを使用しないでください。使用すると、コンパイラが <xref:System.IDisposable> を自動生成します。  
+  
+-   ファイナライザーを使用しないでください。使用する場合は、ビルド警告を抑制し、<xref:System.GC.SuppressFinalize%28System.Object%29> を呼び出し、ファイナライザー自体を (On)(Begin)Close (または OnAbort のどちらか一方または両方) から呼び出して、自動生成される <xref:System.IDisposable> の動作をエミュレートする必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected RequestContext ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.RequestContext.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Channels.RequestContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Abort">
+      <MemberSignature Language="C#" Value="public abstract void Abort ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Abort() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.RequestContext.Abort" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合は、コンテキストに関連付けられている要求の処理を中止します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="BeginReply">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>現在のコンテキストに関連付けられている要求に応答する非同期操作を開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 非同期操作は、明示的なタイムアウトの指定の有無にかかわらず、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="BeginReply">
+      <MemberSignature Language="C#" Value="public abstract IAsyncResult BeginReply (System.ServiceModel.Channels.Message message, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginReply(class System.ServiceModel.Channels.Message message, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.RequestContext.BeginReply(System.ServiceModel.Channels.Message,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="message">要求を格納している受信 <see cref="T:System.ServiceModel.Channels.Message" />。</param>
+        <param name="callback">非同期応答操作の完了通知を受信する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="state">非同期応答操作に関連付けられている状態情報を保持するオブジェクト。アプリケーションで指定します。</param>
+        <summary>派生クラスでオーバーライドされると、現在のコンテキストに関連付けられている要求に応答する非同期操作を開始します。</summary>
+        <returns>非同期応答操作を参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 待機せずにアプリケーションの処理を継続する必要がある場合は、非同期の <xref:System.ServiceModel.Channels.RequestContext.BeginReply%2A> メソッドを使用します。 要求メッセージに応答している間、またはタイムアウト期間が経過するまで、現在のスレッドがブロックされてもかまわない場合は、いずれかの同期 <xref:System.ServiceModel.Channels.RequestContext.Reply%2A> メソッドを使用します。  
+  
+ このメソッドは、コールバックを通じて操作のイベント ハンドラー ID の通知を受信します。 応答が送信されるか、タイムアウトが発生するまで操作は完了しません。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>操作が完了する前に指定の <see cref="T:System.TimeoutException" /> を超えた場合に、<paramref name="timeout" /> をスローします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginReply">
+      <MemberSignature Language="C#" Value="public abstract IAsyncResult BeginReply (System.ServiceModel.Channels.Message message, TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginReply(class System.ServiceModel.Channels.Message message, valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.RequestContext.BeginReply(System.ServiceModel.Channels.Message,System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="message">要求を格納している受信 <see cref="T:System.ServiceModel.Channels.Message" />。</param>
+        <param name="timeout">利用可能な要求への応答を待機する時間を指定する <see cref="T:System.TimeSpan" />。</param>
+        <param name="callback">非同期応答操作の完了通知を受信する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="state">非同期応答操作に関連付けられている状態情報を保持するオブジェクト。アプリケーションで指定します。</param>
+        <summary>派生クラスでオーバーライドされると、指定した時間内で現在のコンテキストに関連付けられている要求に応答する非同期操作を開始します。</summary>
+        <returns>非同期応答操作を参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求の完了を待たずにアプリケーションの処理を継続できるようにする場合は、非同期の <xref:System.ServiceModel.Channels.RequestContext.BeginReply%2A> メソッドを使用します。  
+  
+ 要求メッセージに応答している間、またはタイムアウト期間が経過するまで、現在のスレッドがブロックされてもかまわない場合は、いずれかの同期 <xref:System.ServiceModel.Channels.RequestContext.Reply%2A> メソッドを使用します。 このメソッドは、コールバックを通じて操作のイベント ハンドラー ID の通知を受信します。 応答が送信されるか、タイムアウトが発生するまで操作は完了しません。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>操作が完了する前に指定の <see cref="T:System.TimeoutException" /> を超えた場合に、<paramref name="timeout" /> をスローします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public abstract void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.RequestContext.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、現在のコンテキストに関連付けられている要求コンテキストに応答している操作を閉じます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public abstract void Close (TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Close(valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.RequestContext.Close(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">現在のコンテキストに関連付けられている応答操作を閉じる制限時間を指定する <see cref="T:System.TimeSpan" />。</param>
+        <summary>派生クラスでオーバーライドされると、指定した時間内で現在のコンテキストに関連付けられている要求コンテキストに応答している操作を閉じます。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>完了する前に指定した <see cref="T:System.TimeoutException" /> が経過した場合、操作は <paramref name="timeout" /> をスローする必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.RequestContext.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary>コンテキストに関連付けられたリソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndReply">
+      <MemberSignature Language="C#" Value="public abstract void EndReply (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndReply(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.RequestContext.EndReply(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">いずれかの <see cref="T:System.IAsyncResult" /> メソッドへの呼び出しで返された <see cref="Overload:System.ServiceModel.Channels.RequestContext.BeginReply" />。</param>
+        <summary>派生クラスでオーバーライドされると、要求メッセージに応答する非同期操作を完了します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reply">
+      <MemberSignature Language="C#" Value="public abstract void Reply (System.ServiceModel.Channels.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Reply(class System.ServiceModel.Channels.Message message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.RequestContext.Reply(System.ServiceModel.Channels.Message)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+      </Parameters>
+      <Docs>
+        <param name="message">要求を格納している受信 <see cref="T:System.ServiceModel.Channels.Message" />。</param>
+        <summary>派生クラスでオーバーライドされた場合、要求メッセージに応答します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求メッセージへの応答時に現在のスレッドがブロックされてもかまわない場合に <xref:System.ServiceModel.Channels.RequestContext.Reply%2A> を使用します。 スレッドは、指定した `timeout` までブロックされます。  
+  
+ 応答の完了を待機せずにアプリケーションの処理を継続する必要がある場合は、非同期の <xref:System.ServiceModel.Channels.RequestContext.BeginReply%2A> メソッドを使用します。 このメソッドは、コールバックを通じて操作のイベント ハンドラー ID の通知を受信します。 この操作は、チャネルでメッセージを使用できるようになるか、タイムアウトが発生するまで完了しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reply">
+      <MemberSignature Language="C#" Value="public abstract void Reply (System.ServiceModel.Channels.Message message, TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Reply(class System.ServiceModel.Channels.Message message, valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.RequestContext.Reply(System.ServiceModel.Channels.Message,System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="message">要求を格納している受信 <see cref="T:System.ServiceModel.Channels.Message" />。</param>
+        <param name="timeout">要求への応答を待機する時間を指定する <see cref="T:System.TimeSpan" />。</param>
+        <summary>派生クラスでオーバーライドされると、指定した時間内に要求メッセージに応答します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求メッセージへの応答時に現在のスレッドがブロックされてもかまわない場合に <xref:System.ServiceModel.Channels.RequestContext.Reply%2A> を使用します。 スレッドは、指定した `timeout` までブロックされます。  
+  
+ 応答の完了を待機せずにアプリケーションの処理を継続する必要がある場合は、非同期の <xref:System.ServiceModel.Channels.RequestContext.BeginReply%2A> メソッドを使用します。 このメソッドは、コールバックを通じて操作のイベント ハンドラー ID の通知を受信します。 この操作は、チャネルでメッセージを使用できるようになるか、タイムアウトが発生するまで完了しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestMessage">
+      <MemberSignature Language="C#" Value="public abstract System.ServiceModel.Channels.Message RequestMessage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Channels.Message RequestMessage" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.RequestContext.RequestMessage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.Message</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、要求を格納しているメッセージを取得します。</summary>
+        <value>要求を格納している <see cref="T:System.ServiceModel.Channels.Message" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IDisposable.Dispose">
+      <MemberSignature Language="C#" Value="void IDisposable.Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.IDisposable.Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.RequestContext.System#IDisposable#Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンテキストに関連付けられているマネージ リソースとアンマネージ リソースの両方を解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

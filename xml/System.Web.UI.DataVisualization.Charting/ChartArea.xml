@@ -1,0 +1,1426 @@
+<Type Name="ChartArea" FullName="System.Web.UI.DataVisualization.Charting.ChartArea">
+  <TypeSignature Language="C#" Value="public class ChartArea : System.Web.UI.DataVisualization.Charting.ChartNamedElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ChartArea extends System.Web.UI.DataVisualization.Charting.ChartNamedElement" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.DataVisualization.Charting.ChartArea" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DataVisualization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.DataVisualization.Charting.ChartNamedElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Axes")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>グラフ イメージをグラフ領域を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 特定の任意のグラフ内で、*内部プロット位置*x 内の四角形の領域は、あり、データ ポイントの y 軸の線が描画されます。 *位置をプロット*内部プロット位置、目盛り、および軸ラベルを囲む四角形の領域です。 *グラフ エリア*プロット位置、目盛りは、軸ラベルおよびグラフの軸のタイトルを含む四角形領域です。  
+  
+ グラフ領域がで表される、<xref:System.Web.UI.DataVisualization.Charting.ChartArea>クラスです。<xref:System.Web.UI.DataVisualization.Charting.ChartArea>にオブジェクトが格納されている、<xref:System.Web.UI.DataVisualization.Charting.ChartAreaCollection>クラスです。  
+  
+ グラフ エリアに描画できるグラフの系列の数は制限されます。  
+  
+ A<xref:System.Web.UI.DataVisualization.Charting.ChartArea>オブジェクト。  
+  
+-   1 つの異なる内部プロット エリアを使用します。  
+  
+-   1 つまたは複数のグラフの系列のプロットに使用されます。  
+  
+-   プライマリとセカンダリの x と y 軸の場合は、円グラフおよびドーナツ グラフの種類を除くがあります。  
+  
+ 含む円グラフ、ドーナツ グラフ、じょうごグラフ、ピラミッド グラフ、極座標、図形グラフの種類、およびレーダー チャートを使用する場合、内部プロット位置は、図形グラフのサイズを定義します。 たとえばの値を大きく、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.InnerPlotPosition%2A>プロパティ円グラフに扇形の形状の半径が増えます。  
+  
+ その他のすべての種類のグラフでは、各グラフ領域は、X 軸および y 軸、プライマリとセカンダリの 2 つのセットを持っています。 これらの軸に関連するプロパティにアクセスするには、使用、 <xref:System.Web.UI.DataVisualization.Charting.ChartArea.AxisX%2A>、 <xref:System.Web.UI.DataVisualization.Charting.ChartArea.AxisX2%2A>、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.AxisY%2A>と<xref:System.Web.UI.DataVisualization.Charting.ChartArea.AxisY2%2A>プロパティです。 グラフ上のすべての軸に影響するプロパティを設定する必要がある場合、使用して、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.Axes%2A>プロパティです。  
+  
+ 1 つまたは複数の系列はグラフ領域に関連付けられます。 データ系列、<xref:System.Web.UI.DataVisualization.Charting.Series.ChartArea%2A>に属している各系列をグラフ領域を決定するプロパティです。 既定では、既定のグラフ領域に系列が接続されています。 系列の表示を無効にする設定、<xref:System.Web.UI.DataVisualization.Charting.Series.ChartArea%2A>長さ 0 の文字列には、その系列のプロパティです。  
+  
+ グラフには、別のグラフ領域を追加する場合は、新しいグラフ領域の任意の系列を関連付けることができます。 図形グラフの種類だけでなくバーおよび積み上げ横棒グラフの種類をすべてにするには、別のグラフ領域で各系列をプロットする必要があります。 他のすべての種類のグラフでは、複数の系列を同じグラフ領域内で結合できます。  
+  
+ グラフ領域のグラフで領域ごとに、3 D グラフが表示されます。 使用することができます、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.Area3DStyle%2A>プロパティを有効にし、3 d グラフをカスタマイズします。  
+  
+ グラフで軸のサイズは自動的に変更されていないため、新しいデータを追加する場合にない最小値と最大のグラフ領域は自動的に再計算します。  使用してこれらの値を再計算するグラフ領域が必要なことができます、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.RecalculateAxesScale%2A>メソッドです。  
+  
+ 複数のグラフ領域を垂直方向に整列するには設定、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.AlignmentOrientation%2A>プロパティです。 複数のグラフ領域を水平方向に合うようを使用してグラフ領域を配置する必要があります最初、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.Position%2A>プロパティ、および設定、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.AlignmentOrientation%2A>プロパティを水平方向にします。  
+  
+ 系列の表示を抑制するのには、設定、<xref:System.Windows.Forms.DataVisualization.Charting.Series>長さ 0 の文字列には、その系列のプロパティです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ChartArea ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.ChartArea.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.DataVisualization.Charting.ChartArea" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.DataVisualization.Charting.ChartArea>クラスです。  
+  
+> [!NOTE]
+>  いずれかを使用することを強くお勧め、`Add`または`Insert`のメソッド、<xref:System.Web.UI.DataVisualization.Charting.Chart.ChartAreas%2A>コレクション プロパティを実行時にグラフ領域を追加します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ChartArea (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.ChartArea.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">新しい名前<see cref="T:System.Web.UI.DataVisualization.Charting.ChartArea" />オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.DataVisualization.Charting.ChartArea" />指定したグラフ領域の名前を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlignmentOrientation">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.AreaAlignmentOrientations AlignmentOrientation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.AreaAlignmentOrientations AlignmentOrientation" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartArea.AlignmentOrientation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.FlagsEnumUITypeEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.AreaAlignmentOrientations</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはグラフ領域の配置方向を設定します。</summary>
+        <value><see cref="T:System.Web.UI.DataVisualization.Charting.AreaAlignmentOrientations" /> 列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用すると、 <xref:System.Web.UI.DataVisualization.Charting.ChartArea.AlignWithChartArea%2A>、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.AlignmentOrientation%2A>と<xref:System.Web.UI.DataVisualization.Charting.ChartArea.AlignmentStyle%2A>プロパティが配置または水平、垂直方向には、次の 2 つまたは複数のグラフ領域を同期するには、可能な限り、またはその両方です。  
+  
+ まず、設定、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.AlignWithChartArea%2A>プロパティの名前を<xref:System.Web.UI.DataVisualization.Charting.ChartArea>オブジェクト。 このグラフ領域は、配置、に基づいて、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.AlignmentStyle%2A>設定は、使用する配置を定義するには、および<xref:System.Web.UI.DataVisualization.Charting.ChartArea.AlignmentOrientation%2A>設定は、位置を設定するために使用する必要がありますグラフ領域の要素を定義します。  
+  
+ 場合、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.AlignWithChartArea%2A>プロパティが設定されていない、グラフ領域を固定に関係なく、作成できません、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.AlignmentStyle%2A>と<xref:System.Web.UI.DataVisualization.Charting.ChartArea.AlignmentOrientation%2A>設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlignmentStyle">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.AreaAlignmentStyles AlignmentStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.AreaAlignmentStyles AlignmentStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartArea.AlignmentStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.FlagsEnumUITypeEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.AreaAlignmentStyles</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の配置スタイル、<see cref="T:System.Web.UI.DataVisualization.Charting.ChartArea" />です。</summary>
+        <value><see cref="T:System.Web.UI.DataVisualization.Charting.AreaAlignmentStyles" />列挙値を 1 つの値または使用する配置を定義する複数の値のビット演算 OR のいずれかを表すことができます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、 <xref:System.Web.UI.DataVisualization.Charting.ChartArea.AlignmentStyle%2A> 2 つまたは複数のグラフ領域を水平、垂直方向に整列するプロパティまたはその両方です。 配置の種類は、次の値のいずれかまたは次の値のビットごとの OR 組み合わせです。  
+  
+|メンバー名|説明|  
+|-----------------|-----------------|  
+|すべて|グラフ領域のすべての値を使用して配置します。|  
+|AxesView|グラフ領域の指定されたビューを使用して配置<xref:System.Web.UI.DataVisualization.Charting.ChartArea>です。|  
+|なし|グラフ領域は自動的に整列されていません。|  
+|位置|グラフ領域の連携、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.Position%2A>指定したグラフ領域のです。|  
+|InnerPlotPosition|グラフ領域の連携、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.InnerPlotPosition%2A>指定したグラフ領域のです。|  
+  
+ 場合、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.AlignWithChartArea%2A>値が設定されていない、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.AlignmentStyle%2A>プロパティには影響はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlignWithChartArea">
+      <MemberSignature Language="C#" Value="public string AlignWithChartArea { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AlignWithChartArea" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartArea.AlignWithChartArea" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("NotSet")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.DataVisualization.Charting.LegendAreaNameConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の名前、<see cref="T:System.Web.UI.DataVisualization.Charting.ChartArea" />オブジェクトをこのグラフ領域を揃える必要があります。</summary>
+        <value>A<see langword="string" />の名前を表す値、<see cref="T:System.Web.UI.DataVisualization.Charting.ChartArea" />オブジェクトをこのグラフ領域を揃える必要があります。 既定値は、空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用すると、 <xref:System.Web.UI.DataVisualization.Charting.ChartArea.AlignWithChartArea%2A>、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.AlignmentOrientation%2A>と<xref:System.Web.UI.DataVisualization.Charting.ChartArea.AlignmentStyle%2A>プロパティが配置または水平、垂直方向には、次の 2 つまたは複数のグラフ領域を同期するには、可能な限り、またはその両方です。  
+  
+ まず、設定、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.AlignWithChartArea%2A>プロパティの名前を<xref:System.Web.UI.DataVisualization.Charting.ChartArea>オブジェクト。 このグラフ領域は、配置、に基づいて、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.AlignmentStyle%2A>設定は、使用する配置を定義するには、および<xref:System.Web.UI.DataVisualization.Charting.ChartArea.AlignmentOrientation%2A>設定は、位置を設定するために使用する必要がありますグラフ領域の要素を定義します。  
+  
+ 場合、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.AlignWithChartArea%2A>プロパティが設定されていない、グラフ領域を固定に関係なく、作成できません、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.AlignmentStyle%2A>と<xref:System.Web.UI.DataVisualization.Charting.ChartArea.AlignmentOrientation%2A>設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Area3DStyle">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.ChartArea3DStyle Area3DStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.DataVisualization.Charting.ChartArea3DStyle Area3DStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartArea.Area3DStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.DataVisualization.Charting.NoNameExpandableObjectConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.ChartArea3DStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Web.UI.DataVisualization.Charting.ChartArea3DStyle" />オブジェクトで、すべての系列、グラフ領域で 3D を実装するために使用します。</summary>
+        <value>A<see cref="T:System.Web.UI.DataVisualization.Charting.ChartArea3DStyle" />グラフ領域で 3D をすべての系列を実装するオブジェクトがプロットされます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 有効または無効に 3D グラフ領域で、設定、<xref:System.Web.UI.DataVisualization.Charting.ChartArea3DStyle.Enable3D%2A>プロパティです。  
+  
+ 3d グラフが描画されると、スケール区切りは軸ではサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Axes">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.Axis[] Axes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.DataVisualization.Charting.Axis[] Axes" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartArea.Axes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.AxesArrayEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.DataVisualization.Charting.AxesArrayConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.Axis[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のグラフ領域のすべての軸を表す配列。</summary>
+        <value>配列<see cref="T:System.Web.UI.DataVisualization.Charting.Axis" />をグラフ領域で使用されるすべての軸を表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの主な目的は、X、Y、X2、デザイン時に Y2 軸のプロパティへのアクセスを提供します。  
+  
+ 実行時に、グラフ領域の軸にアクセスするなどの個々 の軸のプロパティを使用して<xref:System.Web.UI.DataVisualization.Charting.ChartArea.AxisX%2A>、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.AxisX2%2A>などのようにします。  
+  
+ 実行時にこのプロパティを使用するかどうか: イベントにはたとえば、— を指定してこの配列内の項目にアクセスすることができます、<xref:System.Web.UI.DataVisualization.Charting.AxisName>列挙体メンバーの識別子として。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AxisX">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.Axis AxisX { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.DataVisualization.Charting.Axis AxisX" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartArea.AxisX" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.DataVisualization.Charting.NoNameExpandableObjectConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.Axis</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Web.UI.DataVisualization.Charting.Axis" />主軸の x 軸を表すオブジェクト。</summary>
+        <value><see cref="T:System.Web.UI.DataVisualization.Charting.Axis" />主軸の x 軸を表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用すると、グラフ領域の主軸の x 軸を操作できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AxisX2">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.Axis AxisX2 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.DataVisualization.Charting.Axis AxisX2" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartArea.AxisX2" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.DataVisualization.Charting.NoNameExpandableObjectConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.Axis</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Web.UI.DataVisualization.Charting.Axis" />第 2 x 軸を表すオブジェクト。</summary>
+        <value><see cref="T:System.Web.UI.DataVisualization.Charting.Axis" />第 2 x 軸を表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用すると、グラフ領域に第 2 x 軸を操作できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AxisY">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.Axis AxisY { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.DataVisualization.Charting.Axis AxisY" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartArea.AxisY" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.DataVisualization.Charting.NoNameExpandableObjectConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.Axis</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Web.UI.DataVisualization.Charting.Axis" />主軸の y 軸を表すオブジェクト。</summary>
+        <value><see cref="T:System.Web.UI.DataVisualization.Charting.Axis" />主軸の y 軸を表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用すると、グラフ領域の主軸の y 軸を操作できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AxisY2">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.Axis AxisY2 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.DataVisualization.Charting.Axis AxisY2" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartArea.AxisY2" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.DataVisualization.Charting.NoNameExpandableObjectConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.Axis</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Web.UI.DataVisualization.Charting.Axis" />第 2 y 軸を表すオブジェクト。</summary>
+        <value><see cref="T:System.Web.UI.DataVisualization.Charting.Axis" />第 2 y 軸を表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用すると、グラフ領域に第 2 y 軸を操作できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color BackColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color BackColor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartArea.BackColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Color), "")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.ChartColorEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.ColorConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の背景色、<see cref="T:System.Web.UI.DataVisualization.Charting.ChartArea" />オブジェクト。</summary>
+        <value><see cref="T:System.Drawing.Color" /> 値。 既定の色は <see cref="T:System.Drawing.Color.White" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 任意の有効な ARGB (アルファ、赤、緑、青) 値には、このプロパティを設定することができます。  
+  
+ <xref:System.Web.UI.DataVisualization.Charting.ChartArea.BackColor%2A>値は、背景のグラデーションの色を指定した場合に使用される最初の色になります。  
+  
+ アルファ値は、色の不透明度を制御します。 この色を「透過的な」に設定する場合: は、アルファ値は 0 を使用する場合-グラフ領域の背景色は割り当てられません。 結果として、背景が透明にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackGradientStyle">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.GradientStyle BackGradientStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.GradientStyle BackGradientStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartArea.BackGradientStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.GradientEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.GradientStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはグラフ領域の背景のグラデーションの向きを設定し、グラデーションが使用されるかどうかも決定します。</summary>
+        <value>A<see cref="T:System.Web.UI.DataVisualization.Charting.GradientStyle" />列挙します。 既定値は <see cref="F:System.Web.UI.DataVisualization.Charting.GradientStyle.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.BackGradientStyle%2A>グラデーションが表示されます、グラフ領域とが使用されて 1 つの場合は、グラデーションの向きを決定するかどうかを判断するプロパティです。  
+  
+ 使用可能なパターンの一覧についてを参照してください、<xref:System.Web.UI.DataVisualization.Charting.GradientStyle>列挙します。  
+  
+ グラデーションの色を使用します。  
+  
+-   グラフ領域の背景の色を設定、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.BackColor%2A>プロパティです。  
+  
+-   グラフ領域の背景の 2 番目の色を設定、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.BackSecondaryColor%2A>プロパティです。  
+  
+-   この設定<xref:System.Web.UI.DataVisualization.Charting.ChartArea.BackGradientStyle%2A>グラデーションのスタイルを希望するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackHatchStyle">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.ChartHatchStyle BackHatchStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.ChartHatchStyle BackHatchStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartArea.BackHatchStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.HatchStyleEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.ChartHatchStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の陰影のスタイル、<see cref="T:System.Web.UI.DataVisualization.Charting.ChartArea" />オブジェクト。</summary>
+        <value>A<see cref="T:System.Web.UI.DataVisualization.Charting.ChartHatchStyle" />列挙します。 既定値は <see cref="F:System.Web.UI.DataVisualization.Charting.ChartHatchStyle.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataVisualization.Charting.ChartHatchStyle>列挙型のブラシで使用される陰影パターンを指定する<xref:System.Drawing.Drawing2D.HatchBrush>です。 純色の背景色と線が描かれて、背景の陰影パターンで構成されます。  
+  
+ 使用可能な陰影のスタイルの一覧についてを参照してください、<xref:System.Web.UI.DataVisualization.Charting.ChartHatchStyle>列挙します。  
+  
+> [!NOTE]
+>  線の陰影の色はによって決定されます、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.BackSecondaryColor%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackImage">
+      <MemberSignature Language="C#" Value="public string BackImage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BackImage" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartArea.BackImage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.ImageValueEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の背景イメージ、<see cref="T:System.Web.UI.DataVisualization.Charting.ChartArea" />オブジェクト。</summary>
+        <value>A<see langword="string" />イメージ ファイルの URL を表す値です。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの背景画像にパスを定義する、 <xref:System.Web.UI.DataVisualization.Charting.ChartArea>、絶対または相対 URL を指定できます。  
+  
+ 画像の位置を使用して、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.BackImageAlignment%2A>と<xref:System.Web.UI.DataVisualization.Charting.ChartArea.BackImageWrapMode%2A>プロパティです。  
+  
+ 設定して、「透過的」とイメージによって表示される色のいずれかを指定することも、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.BackImageTransparentColor%2A>プロパティです。  
+  
+ イメージは、アイコンを含む、.NET Framework でサポートされている任意の有効なグラフィックス ファイルであります。  
+  
+ 背景画像は、グラデーションの色などの他のバック グラウンド プロパティよりも優先されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackImageAlignment">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.ChartImageAlignmentStyle BackImageAlignment { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.ChartImageAlignmentStyle BackImageAlignment" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartArea.BackImageAlignment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.ChartImageAlignmentStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の配置、<see cref="T:System.Web.UI.DataVisualization.Charting.ChartArea" />背景イメージ。</summary>
+        <value><see cref="T:System.Web.UI.DataVisualization.Charting.ChartImageAlignmentStyle" /> 列挙値。 既定値は <see cref="F:System.Web.UI.DataVisualization.Charting.ChartImageAlignmentStyle.TopLeft" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、グラフ領域の背景画像の配置を決定し、適用されている場合のみ、<xref:System.Web.UI.DataVisualization.Charting.ChartImageWrapMode>プロパティに設定されている<xref:System.Web.UI.DataVisualization.Charting.ChartImageWrapMode.Unscaled>です。  
+  
+ 使用可能なアラインメントの詳細については、次を参照してください。、<xref:System.Web.UI.DataVisualization.Charting.ChartImageAlignmentStyle>列挙トピックです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackImageTransparentColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color BackImageTransparentColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color BackImageTransparentColor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartArea.BackImageTransparentColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Color), "")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.ChartColorEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.ColorConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の色、<see cref="T:System.Web.UI.DataVisualization.Charting.ChartArea" />透明として描画するオブジェクトの背景イメージ。</summary>
+        <value><see cref="T:System.Drawing.Color" /> 値。 既定値は <see cref="F:System.Drawing.Color.Empty" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackImageWrapMode">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.ChartImageWrapMode BackImageWrapMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.ChartImageWrapMode BackImageWrapMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartArea.BackImageWrapMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.ChartImageWrapMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の背景画像の描画モード、<see cref="T:System.Web.UI.DataVisualization.Charting.ChartArea" />オブジェクト。</summary>
+        <value><see cref="T:System.Web.UI.DataVisualization.Charting.ChartImageWrapMode" /> 列挙値。 既定値は <see cref="F:System.Web.UI.DataVisualization.Charting.ChartImageWrapMode.Tile" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataVisualization.Charting.ChartArea.BackImageWrapMode%2A>プロパティは、画像を表示する方法を決定以外の場合は、拡大または縮小など、イメージを並べてことができます。  
+  
+ イメージをスケーリングすると、グラフ領域の境界内に収まる伸縮されます。 イメージを並べて表示するが繰り返し描画、グラフ領域の左上隅から開始します。  
+  
+ 使用可能な折り返しモードの詳細については、次を参照してください。、<xref:System.Web.UI.DataVisualization.Charting.ChartImageWrapMode>列挙トピックです。  
+  
+ 場合、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.BackImageWrapMode%2A>プロパティに設定されている<xref:System.Web.UI.DataVisualization.Charting.ChartImageWrapMode.Unscaled>、イメージの描画位置によって決まります、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.BackImageAlignment%2A>プロパティの設定。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackSecondaryColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color BackSecondaryColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color BackSecondaryColor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartArea.BackSecondaryColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Color), "")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.ChartColorEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.ColorConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の背景の 2 番目の色、<see cref="T:System.Web.UI.DataVisualization.Charting.ChartArea" />オブジェクト。</summary>
+        <value><see cref="T:System.Drawing.Color" /> 値。 既定値は <see cref="F:System.Drawing.Color.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.BackSecondaryColor%2A>の第 2 背景色を決定するいくつかの関連するプロパティのいずれかのプロパティは<xref:System.Web.UI.DataVisualization.Charting.Chart>オブジェクトし、グラデーションの色を適用しているときに使用します。  
+  
+ 設定することができます<xref:System.Web.UI.DataVisualization.Charting.ChartArea.BackSecondaryColor%2A>ARGB (アルファ、赤、緑、青) の有効な値にします。  
+  
+ 陰影を使用する場合、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.BackSecondaryColor%2A>プロパティをグラフ領域の陰影の線の色を決定します。  
+  
+ グラフ領域の背景のグラデーションの色を使用します。  
+  
+-   基本色を設定、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.BackColor%2A>プロパティです。  
+  
+-   2 番目の色を設定、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.BackSecondaryColor%2A>プロパティです。  
+  
+-   設定、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.BackGradientStyle%2A>グラデーションのスタイルを希望するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color BorderColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color BorderColor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartArea.BorderColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Color), "Black")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.ChartColorEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.ColorConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.DataVisualization.Charting.ChartArea" /> オブジェクトの境界線の色を取得または設定します。</summary>
+        <value><see cref="T:System.Drawing.Color" /> 値。 既定の色は <see cref="F:System.Drawing.Color.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定することができます、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.BorderColor%2A>プロパティを任意の有効な ARGB (アルファ、赤、緑、青) 値にします。  
+  
+> [!NOTE]
+>  円グラフおよびドーナツ グラフでは、このプロパティを決定の放射状および水平の線の色データ ラベルが円グラフまたはドーナツ グラフの外側に描画される場合、つまり場合、`LabelStyle`カスタム プロパティが「外部」に設定します。  
+  
+ このプロパティは 3D グラフのマーカーの線も決定場合、`ShowMarkerLines`カスタム プロパティに設定されて`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderDashStyle">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.ChartDashStyle BorderDashStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.ChartDashStyle BorderDashStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartArea.BorderDashStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.ChartDashStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の罫線のスタイル、<see cref="T:System.Web.UI.DataVisualization.Charting.ChartArea" />オブジェクト。</summary>
+        <value>A<see cref="T:System.Web.UI.DataVisualization.Charting.ChartDashStyle" />グラフ領域の罫線のスタイルを決定する列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataVisualization.Charting.ChartArea.BorderDashStyle%2A>プロパティに罫線を適用する線のスタイルを決定します。 行には、純色、ピリオドで区切られたなどを指定できます。  
+  
+ その他の境界線スタイルを参照してください、<xref:System.Web.UI.DataVisualization.Charting.ChartDashStyle>列挙トピックです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderWidth">
+      <MemberSignature Language="C#" Value="public int BorderWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 BorderWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartArea.BorderWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(1)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の罫線の幅、<see cref="T:System.Web.UI.DataVisualization.Charting.ChartArea" />オブジェクト。</summary>
+        <value><see langword="integer" /> (ピクセル単位)、グラフ領域の罫線の幅を決定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ なお、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.BorderWidth%2A>プロパティは、折れ線グラフ、線のスタイル などと表示されるカスタムの凡例アイテムの線の幅を設定もできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.ChartArea.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          <see langword="true" />アンマネージ コードとマネージの両方のリソースを解放するには<see langword="false" />アンマネージ リソースだけを解放します。</param>
+        <summary><see cref="T:System.Web.UI.DataVisualization.Charting.ChartArea" /> クラスによって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSeriesDepth">
+      <MemberSignature Language="C#" Value="public float GetSeriesDepth (System.Web.UI.DataVisualization.Charting.Series series);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float32 GetSeriesDepth(class System.Web.UI.DataVisualization.Charting.Series series) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.ChartArea.GetSeriesDepth(System.Web.UI.DataVisualization.Charting.Series)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="series" Type="System.Web.UI.DataVisualization.Charting.Series" />
+      </Parameters>
+      <Docs>
+        <param name="series"><see cref="T:System.Web.UI.DataVisualization.Charting.Series" />の深さを取得します。</param>
+        <summary>深さを返します、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />グラフ エリアにします。</summary>
+        <returns>A<see langword="float" />を指定の深さを表す値<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />、これは、グラフ領域の深さの割合として計測されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した系列の深さを取得するには、このメソッドを呼び出します。 同じ測定単位は、グラフ領域の深さの割合で使用されている、返される値が測定される、<xref:System.Web.UI.DataVisualization.Charting.Point3D.Z%2A>プロパティです。  
+  
+ すべての系列には、グラフの種類に関係なく、深度があります。 たとえば、でもポイントし、バブル シリーズの深度である場合でも、全体の深さは、ポイントまたはバブルを描画するのには使用されません。  
+  
+ カスタム描画ルーチンで使用されている点の Z 値を決定する一連の深さを使用できます。  
+  
+> [!NOTE]
+>  カスタムの 3D の描画に使用されるすべてのポイントが 3D の相対座標を使用して、相対的な 2 次元座標を変換する必要があります、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.TransformPoints%2A>メソッドです。  
+  
+ 軸から相対的な X および Y の値を取得する、<xref:System.Web.UI.DataVisualization.Charting.Axis.ValueToPosition%2A>の X と Y の両方の軸メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSeriesZPosition">
+      <MemberSignature Language="C#" Value="public float GetSeriesZPosition (System.Web.UI.DataVisualization.Charting.Series series);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float32 GetSeriesZPosition(class System.Web.UI.DataVisualization.Charting.Series series) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.ChartArea.GetSeriesZPosition(System.Web.UI.DataVisualization.Charting.Series)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="series" Type="System.Web.UI.DataVisualization.Charting.Series" />
+      </Parameters>
+      <Docs>
+        <param name="series"><see cref="T:System.Web.UI.DataVisualization.Charting.Series" /> Z 位置が取得されるためです。</param>
+        <summary>カスタム描画のために役立つ一連の Z 位置を返します。</summary>
+        <returns>A<see langword="float" />を指定した系列、グラフ領域の深さの比率として計測の Z 位置を表す値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一連の Z 位置を取得するには、このメソッドを呼び出します。 Z 位置はデータ系列の中心にグラフ領域のバックの壁は測定され、グラフ領域の奥行きの割合として表されます。 たとえば、z 軸に沿って途中で描画される系列は、50 Z 位置を持っています。  
+  
+ 一連の Z 位置は通常、カスタムの描画ルーチンに使用されます。  
+  
+> [!NOTE]
+>  カスタムの 3D の描画に使用されるすべてのポイントが 3D の相対座標を使用して、相対的な 2 次元座標を変換する必要があります、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.TransformPoints%2A>メソッドです。  
+  
+ 軸から相対的な X および Y の値を取得する、<xref:System.Web.UI.DataVisualization.Charting.Axis.ValueToPosition%2A>の X と Y の両方の軸メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InnerPlotPosition">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.ElementPosition InnerPlotPosition { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.DataVisualization.Charting.ElementPosition InnerPlotPosition" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartArea.InnerPlotPosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.DataVisualization.Charting.ElementPositionConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.ElementPosition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Web.UI.DataVisualization.Charting.ElementPosition" />オブジェクトで、グラフ領域オブジェクトの内部プロット位置を定義します。</summary>
+        <value><see cref="T:System.Web.UI.DataVisualization.Charting.ElementPosition" />の内部プロット位置を定義するオブジェクト、<see cref="T:System.Web.UI.DataVisualization.Charting.ChartArea" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataVisualization.Charting.ChartArea.InnerPlotPosition%2A>プロパティには、データのプロットに使用されるグラフ領域要素内の四角形を定義します。 目盛りは、軸ラベル、およびなどは含まれません。  
+  
+ このプロパティ (0, 0 100, 100) のために使用した座標に関連する、<xref:System.Web.UI.DataVisualization.Charting.ChartArea>オブジェクト、および全体にない<xref:System.Web.UI.DataVisualization.Charting.Chart>です。  
+  
+ <xref:System.Web.UI.DataVisualization.Charting.ChartArea.InnerPlotPosition%2A>プロパティは、複数のグラフ領域に合わせて使用できます。 ただし、1 つのグラフ領域に目盛りおよび軸ラベルとない場合は、軸の線を配置することはできません。  
+  
+> [!IMPORTANT]
+>  このプロパティは、生成されたグラフ イメージのサイズを変更することがなく円グラフまたはドーナツ グラフなどのグラフのサイズを変更するのにも使用できます。  
+  
+ 全体の位置を変更する<xref:System.Web.UI.DataVisualization.Charting.ChartArea>オブジェクトの使用、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.Position%2A>プロパティ代わりにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSameFontSizeForAllAxes">
+      <MemberSignature Language="C#" Value="public bool IsSameFontSizeForAllAxes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSameFontSizeForAllAxes" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartArea.IsSameFontSizeForAllAxes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または関連するグラフ領域の軸のラベルは、等しいサイズのかどうかを決定するフラグを設定します。</summary>
+        <value>
+          <see langword="true" />かどうかのすべての軸を持つ、<see cref="P:System.Web.UI.DataVisualization.Charting.Axis.IsLabelAutoFit" />プロパティに設定<see langword="true" />同じフォントを使用して、ラベルが表示されます、それ以外のサイズ<see langword="false." /></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フォント サイズはによって自動的に計算、<xref:System.Web.UI.DataVisualization.Charting.Chart>コントロール、最大サイズを使用しているに適合させます。  
+  
+ このプロパティを持つすべてのグラフ領域の軸に適用されます、<xref:System.Web.UI.DataVisualization.Charting.Axis.IsLabelAutoFit%2A>プロパティに設定`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public override string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartArea.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の一意の名前、<see cref="T:System.Web.UI.DataVisualization.Charting.ChartArea" />オブジェクト。</summary>
+        <value>A<see langword="string" />の名前を表す値、<see langword="ChartArea" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前、<xref:System.Web.UI.DataVisualization.Charting.ChartArea>オブジェクトを一意にする必要があります、それ以外の場合、例外がスローされます。  
+  
+ このプロパティは、取得するときに、インデクサーとして使用できます、<xref:System.Web.UI.DataVisualization.Charting.ChartArea>オブジェクトから、<xref:System.Web.UI.DataVisualization.Charting.ChartAreaCollection>オブジェクト。  
+  
+ 場合は長さ 0 の文字列には、このプロパティを設定します。 例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Position">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.ElementPosition Position { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.DataVisualization.Charting.ElementPosition Position" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartArea.Position" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.DataVisualization.Charting.ElementPositionConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.ElementPosition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Web.UI.DataVisualization.Charting.ElementPosition" />の位置を定義するオブジェクト、<see cref="T:System.Web.UI.DataVisualization.Charting.ChartArea" />オブジェクト内の<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" />します。</summary>
+        <value><see cref="T:System.Web.UI.DataVisualization.Charting.ElementPosition" />グラフ画像内のグラフ領域オブジェクトの位置を定義するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの位置を定義する、<xref:System.Web.UI.DataVisualization.Charting.ChartArea>オブジェクト内の<xref:System.Web.UI.DataVisualization.Charting.Chart>目盛りは、軸ラベルなどが含まれています。  
+  
+ このプロパティ (0, 0 100, 100) を使用する座標は、グラフ イメージ全体に関連付けられます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RecalculateAxesScale">
+      <MemberSignature Language="C#" Value="public void RecalculateAxesScale ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RecalculateAxesScale() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.ChartArea.RecalculateAxesScale" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>内のグラフに変更が加えられた後に、グラフ領域のプロパティを再計算されます、<see cref="E:System.Web.UI.DataVisualization.Charting.Chart.Customize" />イベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する場合、<xref:System.Web.UI.DataVisualization.Charting.Chart.Customize>変更を行うイベント、グラフが正しく表示されるように、グラフ領域のプロパティを更新する必要があります。 たとえば、軸の範囲が変更された場合、その軸のラベルは再計算する必要があります。  
+  
+ 使用した後、このメソッドを呼び出して、<xref:System.Web.UI.DataVisualization.Charting.Chart.Customize>いずれかを行うイベントがグラフ領域に変更します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShadowColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color ShadowColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color ShadowColor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartArea.ShadowColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Color), "128,0,0,0")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.ChartColorEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.ColorConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の影の色、<see cref="T:System.Web.UI.DataVisualization.Charting.ChartArea" />オブジェクト。</summary>
+        <value><see cref="T:System.Drawing.Color" /> 値。 既定の色は <see cref="P:System.Drawing.Color.Black" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、有効な ARGB (アルファ、赤、緑、青) 値を設定できます。  
+  
+ アルファ値は、「現実的な」シャドウ効果を実現するために使用できます。「128,0,0,0」シャドウの色の値を再試行してください。  
+  
+ 影を実装するのには、設定、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.ShadowOffset%2A>プロパティを 0 (ゼロ) 以外の値にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShadowOffset">
+      <MemberSignature Language="C#" Value="public int ShadowOffset { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ShadowOffset" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartArea.ShadowOffset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定 (ピクセル単位)、影のオフセット、<see cref="T:System.Web.UI.DataVisualization.Charting.ChartArea" />オブジェクト。</summary>
+        <value><see langword="integer" />グラフ領域のピクセル単位で、影のオフセットを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シャドウを実装するのには、0 (ゼロ) 以外の値を使用します。 正の値は、下と右にシフトするシャドウになります。 負の値は、上と左にシフトするシャドウになります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransformPoints">
+      <MemberSignature Language="C#" Value="public void TransformPoints (System.Web.UI.DataVisualization.Charting.Point3D[] points);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void TransformPoints(class System.Web.UI.DataVisualization.Charting.Point3D[] points) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.ChartArea.TransformPoints(System.Web.UI.DataVisualization.Charting.Point3D[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="points" Type="System.Web.UI.DataVisualization.Charting.Point3D[]" />
+      </Parameters>
+      <Docs>
+        <param name="points">3D の点の配列。</param>
+        <summary>GDI + の描画メソッドを呼び出すことができる前に行う必要がありますが、3 D の点の配列を 3D 変換を適用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Visible">
+      <MemberSignature Language="C#" Value="public virtual bool Visible { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Visible" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartArea.Visible" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.ParenthesizePropertyName(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはグラフ領域が表示されているかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />グラフ領域を表示する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフラグを設定すると`false`、グラフ領域に関連付けられているすべてのシリーズ、凡例、タイトル、注釈のオブジェクトも表示されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

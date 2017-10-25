@@ -1,0 +1,141 @@
+<Type Name="AuthenticationOption" FullName="System.EnterpriseServices.AuthenticationOption">
+  <TypeSignature Language="C#" Value="public enum AuthenticationOption" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed AuthenticationOption extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.AuthenticationOption" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>リモート プロシージャ コール (RPC) の認証メカニズムを指定します。 該当する場合にのみ、<see cref="T:System.EnterpriseServices.ActivationOption" />に設定されている<see langword="Server" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例に示しますと共にこの列挙体の使用、<xref:System.EnterpriseServices.ApplicationAccessControlAttribute>属性。  
+  
+ [!code-cpp[EnterpriseServices_Security#2](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServices_Security/CPP/employeeinformation.cpp#2)]
+ [!code-csharp[EnterpriseServices_Security#2](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices_Security/CS/employeeinformation.cs#2)]
+ [!code-vb[EnterpriseServices_Security#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServices_Security/VB/employeeinformation.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Call">
+      <MemberSignature Language="C#" Value="Call" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.EnterpriseServices.AuthenticationOption Call = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.EnterpriseServices.AuthenticationOption.Call" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.AuthenticationOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべての呼び出しの開始時の資格情報を認証します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Connect">
+      <MemberSignature Language="C#" Value="Connect" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.EnterpriseServices.AuthenticationOption Connect = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.EnterpriseServices.AuthenticationOption.Connect" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.AuthenticationOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>接続している場合にのみ、資格情報を認証します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="Default" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.EnterpriseServices.AuthenticationOption Default = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.EnterpriseServices.AuthenticationOption.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.AuthenticationOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定された認証サービスの既定の認証レベルを使用します。 COM + の場合、この設定が用意されて、<see langword="DefaultAuthenticationLevel" />プロパティに、<see langword="LocalComputer" />コレクション。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Integrity">
+      <MemberSignature Language="C#" Value="Integrity" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.EnterpriseServices.AuthenticationOption Integrity = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.EnterpriseServices.AuthenticationOption.Integrity" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.AuthenticationOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>資格情報を認証し、転送中の呼び出しのデータが変更されていないことを確認します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.EnterpriseServices.AuthenticationOption None = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.EnterpriseServices.AuthenticationOption.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.AuthenticationOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認証は行われません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Packet">
+      <MemberSignature Language="C#" Value="Packet" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.EnterpriseServices.AuthenticationOption Packet = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.EnterpriseServices.AuthenticationOption.Packet" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.AuthenticationOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>資格情報を認証し、すべての呼び出しデータを受信することを確認します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Privacy">
+      <MemberSignature Language="C#" Value="Privacy" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.EnterpriseServices.AuthenticationOption Privacy = int32(6)" />
+      <MemberSignature Language="DocId" Value="F:System.EnterpriseServices.AuthenticationOption.Privacy" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.AuthenticationOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>資格情報を認証し、データと送信者の id と署名を含む、パケットを暗号化します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

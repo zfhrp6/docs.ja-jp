@@ -1,0 +1,217 @@
+<Type Name="MemoryCacheElement" FullName="System.Runtime.Caching.Configuration.MemoryCacheElement">
+  <TypeSignature Language="C#" Value="public sealed class MemoryCacheElement : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed MemoryCacheElement extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Caching.Configuration.MemoryCacheElement" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Caching</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Runtime.Caching.MemoryCache" /> クラスに基づくキャッシュを構成するために使用される要素を定義します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Caching.Configuration.MemoryCacheElement>クラスは、キャッシュの構成に使用できる要素を定義します。 <xref:System.Runtime.Caching.MemoryCache> クラスの複数のインスタンスを、単一のアプリケーションで使用できます。 構成ファイル内の各 `memoryCache` 要素には、指定した <xref:System.Runtime.Caching.MemoryCache> インスタンスの設定を含むことができます。  
+  
+ `memoryCache`要素が必要です、`namedCaches`子要素です。 既定の構成に加えて、キャッシュの名前付きの構成を定義するには、するには追加`namedCaches`要素。 名前付きキャッシュの構成を追加する方法の詳細については、次を参照してください。 [ &lt;namedCaches&gt;要素 (キャッシュの設定)](~/docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MemoryCacheElement (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.Configuration.MemoryCacheElement.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">特定のキャッシュ構成の一意の名前。</param>
+        <summary><see cref="T:System.Runtime.Caching.Configuration.MemoryCacheElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CacheMemoryLimitMegabytes">
+      <MemberSignature Language="C#" Value="public int CacheMemoryLimitMegabytes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CacheMemoryLimitMegabytes" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.Configuration.MemoryCacheElement.CacheMemoryLimitMegabytes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("cacheMemoryLimitMegabytes", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.IntegerValidator(MinValue=0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメモリの最大サイズをメガバイト単位で設定するのインスタンス、<see cref="T:System.Runtime.Caching.MemoryCache" />オブジェクトまで拡大できます。</summary>
+        <value>最大メモリ サイズをメガバイト単位での量。 既定値は 0 であることを示す<see cref="T:System.Runtime.Caching.MemoryCache" />インスタンスがコンピューターにインストールされているメモリの量に基づく独自のメモリを管理します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Caching.Configuration.MemoryCacheElement.CacheMemoryLimitMegabytes%2A>プロパティの値を表す、`cacheMemoryLimitMegabytes`構成属性で、`namedCaches`構成要素。  
+  
+ キャッシュ サイズが、指定された制限を超える場合、メモリ キャッシュの実装は、キャッシュ エントリを削除します。  
+  
+ このプロパティを個別に設定することができます`namedCaches`要素は、各`namedCaches`固有のキャッシュの構成に対応する要素。  
+  
+ 設定、<xref:System.Runtime.Caching.MemoryCache.CacheMemoryLimit%2A>プロパティを読み取ることができます、`cacheMemoryLimitMegabytes`構成ファイルで属性を構成します。 または、設定は、渡すことができる場合に、<xref:System.Runtime.Caching.MemoryCache>クラスを初期化します。  
+  
+ キャッシュを構成する方法の詳細については、次を参照してください。 [ &lt;namedCaches&gt;要素 (キャッシュの設定)](~/docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.Configuration.MemoryCacheElement.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Configuration.WhiteSpaceTrimStringConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("name", DefaultValue=Mono.Cecil.CustomAttributeArgument, IsKey=true, IsRequired=true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または特定のキャッシュ構成の名前を設定します。</summary>
+        <value>キャッシュの構成の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Caching.Configuration.MemoryCacheElement.Name%2A>プロパティの値は、特定の名前付きキャッシュ構成の一意の識別子。 各キャッシュの構成には一意の ID が必要です。  
+  
+ `memoryCache`によって構成ファイル、一意のキャッシュ構成のセクションが定義されている、`namedCaches`構成のコレクション。 各名前付きキャッシュ エントリには、構成ファイル内の一意の名前が必要です。 この値は、少なくとも 1 つ文字である必要があります。  
+  
+ キャッシュを構成する方法の詳細については、次を参照してください。 [ &lt;namedCaches&gt;要素 (キャッシュの設定)](~/docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PhysicalMemoryLimitPercentage">
+      <MemberSignature Language="C#" Value="public int PhysicalMemoryLimitPercentage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PhysicalMemoryLimitPercentage" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.Configuration.MemoryCacheElement.PhysicalMemoryLimitPercentage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("physicalMemoryLimitPercentage", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.IntegerValidator(MaxValue=100, MinValue=0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキャッシュで使用できるサーバーのメモリの割合を設定します。</summary>
+        <value>キャッシュが使用できる物理メモリの割合は、1 ~ 100 の整数値として表されます。 既定値は 0 であることを示す<see cref="T:System.Runtime.Caching.MemoryCache" />インスタンスがコンピューターにインストールされているメモリの量に基づく独自のメモリを管理します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キャッシュ サイズが、指定された制限を超える場合、メモリ キャッシュの実装は、キャッシュ エントリを削除します。  
+  
+ 設定、<xref:System.Runtime.Caching.MemoryCache.PhysicalMemoryLimit%2A>プロパティを読み取ることができます`physicalMemoryLimitPercentage`アプリケーション構成ファイルで属性を構成します。 また、値渡すことができる場合、<xref:System.Runtime.Caching.MemoryCache>クラスを初期化します。  
+  
+ キャッシュを構成する方法の詳細については、次を参照してください。 [ &lt;namedCaches&gt;要素 (キャッシュの設定)](~/docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PollingInterval">
+      <MemberSignature Language="C#" Value="public TimeSpan PollingInterval { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan PollingInterval" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.Configuration.MemoryCacheElement.PollingInterval" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Configuration.InfiniteTimeSpanConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("pollingInterval", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキャッシュの実装が、現在のメモリ負荷をキャッシュ インスタンスに設定されている絶対指定とパーセンテージに基づくメモリ制限と比較する時間間隔を示す値を設定します。</summary>
+        <value>キャッシュの実装が、現在のメモリ負荷をキャッシュ インスタンスに設定されている絶対指定とパーセンテージに基づくメモリ制限と比較する時間間隔。 既定値は、2 分です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Caching.Configuration.MemoryCacheElement.PollingInterval%2A>プロパティに対応して、`pollingInterval`の属性の構成、`namedCaches`要素。 この属性の構成の設定は、形式で指定された`HH:MM:SS`から読み取ることができます、`pollingInterval`アプリケーションの構成の属性を構成します。 また、値渡すことができる場合、<xref:System.Runtime.Caching.MemoryCache>クラスを初期化します。  
+  
+ キャッシュを構成する方法の詳細については、次を参照してください。 [ &lt;namedCaches&gt;要素 (キャッシュの設定)](~/docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.Configuration.MemoryCacheElement.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

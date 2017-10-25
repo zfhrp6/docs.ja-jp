@@ -1,0 +1,603 @@
+<Type Name="OleDbConnectionStringBuilder" FullName="System.Data.OleDb.OleDbConnectionStringBuilder">
+  <TypeSignature Language="C#" Value="public sealed class OleDbConnectionStringBuilder : System.Data.Common.DbConnectionStringBuilder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed OleDbConnectionStringBuilder extends System.Data.Common.DbConnectionStringBuilder" />
+  <TypeSignature Language="DocId" Value="T:System.Data.OleDb.OleDbConnectionStringBuilder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Common.DbConnectionStringBuilder</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Provider")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Data.OleDb.OleDbConnectionStringBuilder/OleDbConnectionStringBuilderConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Data.OleDb.OleDbConnection" /> クラスで使用される接続文字列の内容を簡単に作成および管理するための手段を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 接続文字列ビルダーを使用すると、開発者はこのクラスのプロパティおよびメソッドを使用することによって、正しい構文の接続文字列をプログラムで作成し、既存の接続文字列の解析や再作成を行うことができます。 接続文字列ビルダーの OLE DB 接続で許可されている既知のキー/値ペアに対応する厳密に型指定のプロパティを提供し、開発者がその他の接続文字列の値の任意のキー/値ペアを追加できます。 <xref:System.Data.OleDb.OleDbConnectionStringBuilder> クラスは、<xref:System.ComponentModel.ICustomTypeDescriptor> インターフェイスを実装します。 これは、デザイン時に、クラスが Visual Studio .NET デザイナーで動作することを意味します。 開発者は、デザイナーを使用して、厳密に型指定されたデータセットと Visual Studio .NET での厳密に型指定された接続を構築と厳密に型指定された接続文字列ビルダー クラスの型に関連付けられているプロパティが表示されますコンバーター既知のキーに共通の値をマップできる必要があります。  
+  
+ アプリケーションの一部として接続文字列を作成する必要がある開発者は、<xref:System.Data.OleDb.OleDbConnectionStringBuilder> クラスを使用して接続文字列を作成および変更できます。 また、このクラスを使用すると、アプリケーションの構成ファイルに保存された接続文字列を容易に管理することができます。 <xref:System.Data.OleDb.OleDbConnectionStringBuilder>のみ、限られたセットの既知のキー/値ペアのチェックを実行します。 そのため、このクラスは、無効な接続文字列の作成に使用できます。 次の表は、既知のキーと内の対応するプロパティ、<xref:System.Data.OleDb.OleDbConnectionStringBuilder>クラスとその既定値です。 これらの特定の値だけでなく開発者に含まれるコレクションに任意のキー/値ペアを追加できます、<xref:System.Data.OleDb.OleDbConnectionStringBuilder>インスタンス。  
+  
+|キー|プロパティ|既定値|  
+|---------|--------------|-------------------|  
+|ファイル名|<xref:System.Data.OleDb.OleDbConnectionStringBuilder.FileName%2A>|""|  
+|プロバイダー|<xref:System.Data.OleDb.OleDbConnectionStringBuilder.Provider%2A>|""|  
+|データ ソース|<xref:System.Data.OleDb.OleDbConnectionStringBuilder.DataSource%2A>|""|  
+|Persist Security Info|<xref:System.Data.OleDb.OleDbConnectionStringBuilder.PersistSecurityInfo%2A>|False|  
+|OLE DB サービス|<xref:System.Data.OleDb.OleDbConnectionStringBuilder.OleDbServices%2A>|-13|  
+  
+ <xref:System.Data.OleDb.OleDbConnectionStringBuilder.Item%2A>プロパティは、悪意のあるエントリの挿入が試行されたを処理します。 たとえば、次のコードを既定値を使用して<xref:System.Data.OleDb.OleDbConnectionStringBuilder.Item%2A>プロパティ (c# のインデクサー) が、入れ子になったキー/値ペアを正しくエスケープします。  
+  
+```vb  
+Dim builder As _  
+    New System.Data.OleDb.OleDbConnectionStringBuilder  
+builder("Provider") = "Microsoft.Jet.OLEDB.4.0"  
+builder("Data Source") = "C:\Sample.mdb"  
+builder("User Id") = "Admin;NewValue=Bad"  
+```  
+  
+```csharp  
+System.Data.OleDb.OleDbConnectionStringBuilder builder =   
+    new System.Data.OleDb.OleDbConnectionStringBuilder();  
+builder["Provider"] = "Microsoft.Jet.OLEDB.4.0";  
+builder["Data Source"] = "C:\\Sample.mdb";  
+builder["User Id"] = "Admin;NewValue=Bad";  
+```  
+  
+ 結果は、無効な値が安全に処理される、次の接続文字列になります。  
+  
+```  
+Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Sample.mdb;User ID="Admin;NewValue=Bad"  
+```  
+  
+   
+  
+## Examples  
+ 次のコンソール アプリケーションは、いくつかの OLE DB データベースの接続文字列を構築します。 最初に、この例では、Microsoft Access データベースの接続文字列を作成し、IBM DB2 データベースの接続文字列を作成します。 この例は、既存の接続文字列を解析し、接続文字列の内容を操作するためのさまざまな方法を示します。  
+  
+> [!NOTE]
+>  この例には、<xref:System.Data.OleDb.OleDbConnectionStringBuilder> による接続文字列の操作方法を示すために、パスワードが含まれています。 実際のアプリケーションでは、Windows 認証を使用することをお勧めします。 パスワードを使用する必要がある場合も、ハードコードされたパスワードをアプリケーションに含めないでください。  
+  
+ [!code-csharp[DataWorks OleDbConnectionStringBuilder#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks OleDbConnectionStringBuilder/CS/source.cs#1)]
+ [!code-vb[DataWorks OleDbConnectionStringBuilder#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks OleDbConnectionStringBuilder/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OleDbConnectionStringBuilder ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbConnectionStringBuilder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.OleDb.OleDbConnectionStringBuilder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OleDbConnectionStringBuilder (string connectionString);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string connectionString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbConnectionStringBuilder.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connectionString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connectionString">オブジェクトの内部的な接続情報のベース。 キー/値ペアに解析します。</param>
+        <summary><see cref="T:System.Data.OleDb.OleDbConnectionStringBuilder" /> クラスの新しいインスタンスを初期化します。 指定された接続文字列によって、インスタンスの内部的な接続情報のデータが提供されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Data.OleDb.OleDbConnectionStringBuilder.Provider%2A>直接プロパティ (設定して、<xref:System.Data.Common.DbConnectionStringBuilder.ConnectionString%2A>プロパティ)、コンス トラクターに、接続文字列をパラメーターとして渡すことで含まれているキー/値ペアのセットが変わる可能性がありますか、<xref:System.Data.OleDb.OleDbConnectionStringBuilder>インスタンス。 設定、 <xref:System.Data.OleDb.OleDbConnectionStringBuilder.Provider%2A> "sqloledb、"プロパティは、たとえば、すべての標準的な SQL 接続文字列プロパティを追加します。 この動作のデモについては、このトピックの例を参照してください。  
+  
+ プロバイダーによっては、接続文字列内での割り当て、<xref:System.Data.OleDb.OleDbConnectionStringBuilder>コンス トラクターが再配置する指定されたキー/値ペアの順序を発生します。  
+  
+   
+  
+## Examples  
+ 次の例を複数作成<xref:System.Data.OleDb.OleDbConnectionStringBuilder>インスタンス、各ケースでのコンス トラクターに別の接続文字列を渡します。 接続に関連付けられているプロバイダーを設定するオブジェクトのコレクション内で定義済みのキー/値ペアのセットと変更方法に注意してください。  
+  
+> [!NOTE]
+>  この例には、<xref:System.Data.OleDb.OleDbConnectionStringBuilder> による接続文字列の操作方法を示すために、パスワードが含まれています。 実際のアプリケーションでは、Windows 認証を使用することをお勧めします。 パスワードを使用する必要がある場合も、ハードコードされたパスワードをアプリケーションに含めないでください。  
+  
+ [!code-csharp[DataWorks OleDbConnectionStringBuilder.Ctor#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks OleDbConnectionStringBuilder.Ctor/CS/source.cs#1)]
+ [!code-vb[DataWorks OleDbConnectionStringBuilder.Ctor#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks OleDbConnectionStringBuilder.Ctor/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">接続文字列形式が正しくありません (おそらくありません、必要な「=」、キー/値ペア内)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public override void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbConnectionStringBuilder.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.OleDb.OleDbConnectionStringBuilder" /> インスタンスの内容を消去します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbConnectionStringBuilder.Clear%2A>メソッドからのすべてのキー/値ペアの削除、 <xref:System.Data.OleDb.OleDbConnectionStringBuilder>、し、既定値に対応するすべてのプロパティをリセットします。 これには、<xref:System.Data.Common.DbConnectionStringBuilder.Count%2A> プロパティを 0 に設定する処理と、<xref:System.Data.Common.DbConnectionStringBuilder.ConnectionString%2A> プロパティを空の文字列に設定する処理も含まれます。  
+  
+   
+  
+## Examples  
+ 次の例を呼び出す場合の効果を示しています、<xref:System.Data.OleDb.OleDbConnectionStringBuilder.Clear%2A>メソッドです。 この例では、<xref:System.Data.OleDb.OleDbConnectionStringBuilder> にいくつかのキー/値ペアを設定してから、<xref:System.Data.OleDb.OleDbConnectionStringBuilder.Clear%2A> メソッドを呼び出して結果を表示しています。  
+  
+> [!NOTE]
+>  この例には、<xref:System.Data.OleDb.OleDbConnectionStringBuilder> による接続文字列の操作方法を示すために、パスワードが含まれています。 実際のアプリケーションでは、Windows 認証を使用することをお勧めします。 パスワードを使用する必要がある場合も、ハードコードされたパスワードをアプリケーションに含めないでください。  
+  
+ [!code-csharp[DataWorks OleDbConnectionStringBuilder.Clear#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks OleDbConnectionStringBuilder.Clear/CS/source.cs#1)]
+ [!code-vb[DataWorks OleDbConnectionStringBuilder.Clear#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks OleDbConnectionStringBuilder.Clear/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsKey">
+      <MemberSignature Language="C#" Value="public override bool ContainsKey (string keyword);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool ContainsKey(string keyword) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbConnectionStringBuilder.ContainsKey(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyword" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="keyword">
+          <see cref="T:System.Data.OleDb.OleDbConnectionStringBuilder" /> 内で検索されるキー。</param>
+        <summary><see cref="T:System.Data.OleDb.OleDbConnectionStringBuilder" /> に特定のキーが格納されているかどうかを判断します。</summary>
+        <returns>true の場合、<see cref="T:System.Data.OleDb.OleDbConnectionStringBuilder" />を持つ、指定した要素が含まれるキーである場合は false。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定が、<xref:System.Data.OleDb.OleDbConnectionStringBuilder.Provider%2A>プロパティをプロバイダーの適切なキー/値ペアで入力可能性があります暗黙的に、<xref:System.Data.OleDb.OleDbConnectionStringBuilder.ContainsKey%2A>メソッドが返されません`true`暗黙的に指定されたキー。 このメソッドが戻る`true`明示的に指定されたキーの場合のみです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OleDb.OleDbConnectionStringBuilder>インスタンス、そのプロパティの一部を設定しを呼び出すことによって、オブジェクト内でさまざまなキーが存在するかどうかを判断、<xref:System.Data.OleDb.OleDbConnectionStringBuilder.ContainsKey%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="keyword" /> が null (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSource">
+      <MemberSignature Language="C#" Value="public string DataSource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataSource" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbConnectionStringBuilder.DataSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DisplayName("Data Source")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはへの接続にデータ ソースの名前を設定します。</summary>
+        <value><see cref="P:System.Data.OleDb.OleDbConnectionStringBuilder.DataSource" /> プロパティの値。値が指定されていない場合は <see langword="String.Empty" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの設定を試行した際に、渡された値が null である場合、<xref:System.Data.OleDb.OleDbConnectionStringBuilder.DataSource%2A> プロパティはリセットされます。 戻り値は、値が設定されていないと、開発者がプロパティを取得しようとした場合、`String.Empty`です。 このプロパティは、接続文字列内の"Data Source"キーに対応しています。  
+  
+   
+  
+## Examples  
+ 次のコンソール アプリケーションの例が新たに作成<xref:System.Data.OleDb.OleDbConnectionStringBuilder>インスタンス、および、セット、<xref:System.Data.OleDb.OleDbConnectionStringBuilder.DataSource%2A>と<xref:System.Data.OleDb.OleDbConnectionStringBuilder.Provider%2A>プロパティです。 最後に、例では、作成、新しい<xref:System.Data.OleDb.OleDbConnection>インスタンス、およびそのオブジェクトを指定されたデータ ストアへの接続に使用します。  
+  
+ [!code-csharp[DataWorks OleDbConnectionStringBuilder.DataSource#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks OleDbConnectionStringBuilder.DataSource/CS/source.cs#1)]
+ [!code-vb[DataWorks OleDbConnectionStringBuilder.DataSource#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks OleDbConnectionStringBuilder.DataSource/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FileName">
+      <MemberSignature Language="C#" Value="public string FileName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FileName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbConnectionStringBuilder.FileName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DisplayName("File Name")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.FileNameEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ ソースに接続するための Universal Data Link (UDL) ファイルの名前を設定します。</summary>
+        <value><see cref="P:System.Data.OleDb.OleDbConnectionStringBuilder.FileName" /> プロパティの値。値が指定されていない場合は <see langword="String.Empty" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの設定を試行した際に、渡された値が null である場合、<xref:System.Data.OleDb.OleDbConnectionStringBuilder.FileName%2A> プロパティはリセットされます。 戻り値は、値が設定されていないと、開発者がプロパティを取得しようとした場合、`String.Empty`です。 このプロパティは、接続文字列内にある、"FileName"キーに対応します。  
+  
+ 設定がこのプロパティは行われません、<xref:System.Data.OleDb.OleDbConnectionStringBuilder>インスタンスを参照先のファイルの内容を読み取る場合でも、ファイルが存在し、有効な接続情報が含まれています。 このプロパティの設定は影響しません以外の値を読み取り、データ ソースに接続するときにファイルを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperties">
+      <MemberSignature Language="C#" Value="protected override void GetProperties (System.Collections.Hashtable propertyDescriptors);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void GetProperties(class System.Collections.Hashtable propertyDescriptors) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbConnectionStringBuilder.GetProperties(System.Collections.Hashtable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyDescriptors" Type="System.Collections.Hashtable" />
+      </Parameters>
+      <Docs>
+        <param name="propertyDescriptors">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public override object this[string keyword] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbConnectionStringBuilder.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyword" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="keyword">取得または設定する項目のキー。</param>
+        <summary>指定されたキーに関連付けられている値を取得または設定します。 C# の場合、このプロパティはインデクサーです。</summary>
+        <value>指定されたキーに関連付けられている値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定するため、<xref:System.Data.OleDb.OleDbConnectionStringBuilder.Provider%2A>プロパティは (に応じて、特定のプロバイダーの動作) のキー/値ペアのコレクションに対応する項目を追加することがあります、明示的に設定していないキーの値を取得することができます。 例については、設定するとすぐに、<xref:System.Data.OleDb.OleDbConnectionStringBuilder.Provider%2A>プロパティを設定していない、自分であって"sqloledb、"に"Workstation ID"の値を取得することができます。 例については、このトピックの例を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.OleDb.OleDbConnectionStringBuilder.Item%2A>プロパティ (c# のインデクサー) を取得し、キー/値ペアのコレクション内の値を設定します。 この場合、プロバイダーを設定しても、選択したプロバイダーに関連付けられているすべてのキー/値ペアの既定値を提供するに注意してください。  
+  
+ [!code-csharp[DataWorks OleDbConnectionStringBuilder.Item#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks OleDbConnectionStringBuilder.Item/CS/source.cs#1)]
+ [!code-vb[DataWorks OleDbConnectionStringBuilder.Item#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks OleDbConnectionStringBuilder.Item/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">接続文字列形式が正しくありません (おそらくありません、必要な「=」、キー/値ペア内)。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="keyword" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Keys">
+      <MemberSignature Language="C#" Value="public override System.Collections.ICollection Keys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection Keys" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbConnectionStringBuilder.Keys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.ICollection" /> 内のキーが格納されている <see cref="T:System.Data.OleDb.OleDbConnectionStringBuilder" /> を取得します。</summary>
+        <value><see cref="T:System.Collections.ICollection" /> 内のキーが格納されている <see cref="T:System.Data.OleDb.OleDbConnectionStringBuilder" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.ICollection> 内の値の順序は指定されていませんが、<xref:System.Collections.ICollection> プロパティによって返される <xref:System.Data.Common.DbConnectionStringBuilder.Values%2A> 内の関連する値と同じ順序です。  
+  
+   
+  
+## Examples  
+ 次に示すコンソール アプリケーション例では、新しい <xref:System.Data.OleDb.OleDbConnectionStringBuilder> を作成します。 このコードでは、<xref:System.Collections.ICollection> プロパティによって返される <xref:System.Data.OleDb.OleDbConnectionStringBuilder.Keys%2A> をループ処理して、キー/値ペアを表示します。  
+  
+> [!NOTE]
+>  この例には、<xref:System.Data.OleDb.OleDbConnectionStringBuilder> による接続文字列の操作方法を示すために、パスワードが含まれています。 実際のアプリケーションでは、Windows 認証を使用することをお勧めします。 パスワードを使用する必要がある場合も、ハードコードされたパスワードをアプリケーションに含めないでください。  
+  
+ [!code-csharp[DataWorks OleDbConnectionStringBuilder.Keys#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks OleDbConnectionStringBuilder.Keys/CS/source.cs#1)]
+ [!code-vb[DataWorks OleDbConnectionStringBuilder.Keys#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks OleDbConnectionStringBuilder.Keys/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OleDbServices">
+      <MemberSignature Language="C#" Value="public int OleDbServices { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 OleDbServices" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbConnectionStringBuilder.OleDbServices" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DisplayName("OLE DB Services")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Data.OleDb.OleDbConnectionStringBuilder/OleDbServicesConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または接続文字列内の OLE DB サービス キーに渡される値を設定します。</summary>
+        <value>接続文字列内の OLE DB サービス キーに対応する値を返します。 既定では、値は、-13 がします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 接続文字列内の OLE DB サービス キーでは、開発者が有効にするにまたは OLE DB サービスを無効にすることのできる値の組み合わせを定義します。 プロパティには、OLE DB のドキュメントで説明されている値のビットごとの組み合わせが含まれています。 このプロパティの適切な値の詳細については、OLE DB プログラマーズ リファレンス、具体的には、「優先するプロバイダー サービスの既定値です。」を参照してください。 このプロパティの既定値は、-13 です。 これは、リソース プール、自動トランザクション参加、セッション レベルの集計、およびなしのクライアント カーソル エンジンの要求に対応します。  
+  
+   
+  
+## Examples  
+ 次の例では処理、<xref:System.Data.OleDb.OleDbConnectionStringBuilder.OleDbServices%2A>プロパティを 2 つの方法でします。 最初に、この操作が、結果として得られる接続文字列に及ぼす影響を示す、プロパティに直接値を割り当てます。 例を次に、クリア、<xref:System.Data.OleDb.OleDbConnectionStringBuilder>し、OLE DB サービス キーの値を含む完全な接続文字列を割り当てます。 この手順では、変更、接続文字列から値を設定することを示しています、 <xref:System.Data.OleDb.OleDbConnectionStringBuilder.OleDbServices%2A> 、プロパティです。  
+  
+ [!code-csharp[DataWorks OleDbConnectionStringBuilder.OleDbServices#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks OleDbConnectionStringBuilder.OleDbServices/CS/source.cs#1)]
+ [!code-vb[DataWorks OleDbConnectionStringBuilder.OleDbServices#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks OleDbConnectionStringBuilder.OleDbServices/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PersistSecurityInfo">
+      <MemberSignature Language="C#" Value="public bool PersistSecurityInfo { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PersistSecurityInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbConnectionStringBuilder.PersistSecurityInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DisplayName("Persist Security Info")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または接続が開いているか、開いている状態になった場合に、接続文字列の一部として、パスワードなどの機密情報を返すかどうかを示すブール値を設定します。</summary>
+        <value><see cref="P:System.Data.OleDb.OleDbConnectionStringBuilder.PersistSecurityInfo" /> プロパティの値。値が指定されていない場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、接続文字列内の"Persist Security Info"キーに対応しています。  
+  
+   
+  
+## Examples  
+ 次の例では処理、<xref:System.Data.OleDb.OleDbConnectionStringBuilder.PersistSecurityInfo%2A>プロパティを 2 つの方法でします。 最初に、この操作が、結果として得られる接続文字列に及ぼす影響を示す、プロパティに直接値を割り当てます。 例を次に、クリア、 <xref:System.Data.OleDb.OleDbConnectionStringBuilder> "Persist Security Info"キーの値を含む完全な接続文字列を割り当てます。 この手順では、変更、接続文字列から値を設定することを示しています、 <xref:System.Data.OleDb.OleDbConnectionStringBuilder.PersistSecurityInfo%2A> 、プロパティです。  
+  
+ [!code-csharp[DataWorks OleDbConnectionStringBuilder.PersistSecurityInfo#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks OleDbConnectionStringBuilder.PersistSecurityInfo/CS/source.cs#1)]
+ [!code-vb[DataWorks OleDbConnectionStringBuilder.PersistSecurityInfo#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks OleDbConnectionStringBuilder.PersistSecurityInfo/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Provider">
+      <MemberSignature Language="C#" Value="public string Provider { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Provider" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbConnectionStringBuilder.Provider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DisplayName("Provider")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Data.OleDb.OleDbConnectionStringBuilder/OleDbProviderConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または内部接続文字列に関連付けられているデータ プロバイダーの名前を表す文字列を設定します。</summary>
+        <value><see cref="P:System.Data.OleDb.OleDbConnectionStringBuilder.Provider" /> プロパティの値。値が指定されていない場合は <see langword="String.Empty" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの設定を試行した際に、渡された値が null である場合、<xref:System.Data.OleDb.OleDbConnectionStringBuilder.Provider%2A> プロパティはリセットされます。 戻り値は、値が設定されていないと、開発者がプロパティを取得しようとした場合、`String.Empty`です。 このプロパティは、接続文字列内にある"Provider"キーに対応します。  
+  
+ 値を設定、`Provider`直接プロパティ (設定して、<xref:System.Data.Common.DbConnectionStringBuilder.ConnectionString%2A>プロパティ)、コンス トラクターに、接続文字列をパラメーターとして渡すことで含まれているキー/値ペアのセットが変わる可能性がありますか、<xref:System.Data.OleDb.OleDbConnectionStringBuilder>インスタンス。 設定、 <xref:System.Data.OleDb.OleDbConnectionStringBuilder.Provider%2A> "sqloledb、"プロパティは、たとえば、すべての標準的な SQL 接続文字列プロパティを追加します。 この動作のデモについては、このトピックの例を参照してください。  
+  
+ プロバイダーによっては、接続文字列内での割り当て、<xref:System.Data.OleDb.OleDbConnectionStringBuilder>コンス トラクターが再配置する指定されたキー/値ペアの順序を発生します。  
+  
+   
+  
+## Examples  
+ 次の例を複数作成<xref:System.Data.OleDb.OleDbConnectionStringBuilder>インスタンス、各ケースでのコンス トラクターに別の接続文字列を渡します。 接続に関連付けられているプロバイダーを設定するオブジェクトのコレクション内で定義済みのキー/値ペアのセットと変更方法に注意してください。  
+  
+> [!NOTE]
+>  この例には、<xref:System.Data.OleDb.OleDbConnectionStringBuilder> による接続文字列の操作方法を示すために、パスワードが含まれています。 実際のアプリケーションでは、Windows 認証を使用することをお勧めします。 パスワードを使用する必要がある場合も、ハードコードされたパスワードをアプリケーションに含めないでください。  
+  
+ [!code-csharp[DataWorks OleDbConnectionStringBuilder.Provider#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks OleDbConnectionStringBuilder.Provider/CS/source.cs#1)]
+ [!code-vb[DataWorks OleDbConnectionStringBuilder.Provider#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks OleDbConnectionStringBuilder.Provider/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public override bool Remove (string keyword);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Remove(string keyword) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbConnectionStringBuilder.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyword" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="keyword">この <see cref="T:System.Data.OleDb.OleDbConnectionStringBuilder" /> 内の接続文字列から削除するキー/値ペアのキー。</param>
+        <summary>指定されたキーを持つエントリを <see cref="T:System.Data.OleDb.OleDbConnectionStringBuilder" /> インスタンスから削除します。</summary>
+        <returns>
+          <see langword="true" />キーが、接続文字列内に存在していて、削除された場合<see langword="false" />キーが存在しなかった場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbConnectionStringBuilder.Remove%2A>メソッドの成功を示す値を返しますから、キー/値ペアを削除する前に、キーの存在を確認する必要はありません、<xref:System.Data.OleDb.OleDbConnectionStringBuilder>インスタンス。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OleDb.OleDbConnectionStringBuilder>の動作を示しています、<xref:System.Data.OleDb.OleDbConnectionStringBuilder.Remove%2A>メソッドです。  
+  
+ [!code-csharp[DataWorks OleDbConnectionStringBuilder.Remove#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks OleDbConnectionStringBuilder.Remove/CS/source.cs#1)]
+ [!code-vb[DataWorks OleDbConnectionStringBuilder.Remove#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks OleDbConnectionStringBuilder.Remove/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="keyword" /> が null (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetValue">
+      <MemberSignature Language="C#" Value="public override bool TryGetValue (string keyword, out object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool TryGetValue(string keyword, [out] object&amp; value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbConnectionStringBuilder.TryGetValue(System.String,System.Object@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyword" Type="System.String" />
+        <Parameter Name="value" Type="System.Object&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="keyword">取得する項目のキー。</param>
+        <param name="value">対応する値<c>キーワード。</c></param>
+        <summary>提供されたキーに対応する値を取得、<see cref="T:System.Data.OleDb.OleDbConnectionStringBuilder" />インスタンス。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="keyword" />それ以外の接続文字列内で見つかった<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 開発者は、<xref:System.Data.OleDb.OleDbConnectionStringBuilder.TryGetValue%2A> メソッドを使用すると、<xref:System.Data.OleDb.OleDbConnectionStringBuilder> から安全に値を取得できます。提供されたキー名が有効なキー名であるかどうかを確認する必要はありません。 <xref:System.Data.OleDb.OleDbConnectionStringBuilder.TryGetValue%2A>例外は発生しませんを呼び出すし、存在しないキーを渡してはその値を取得する前にキーを検索する必要はありません。 呼び出す<xref:System.Data.OleDb.OleDbConnectionStringBuilder.TryGetValue%2A>存在しないキーを使用して null 値が配置されます (`Nothing` Visual Basic で) で、`value`パラメーター。  
+  
+   
+  
+## Examples  
+ 次の例での動作、<xref:System.Data.OleDb.OleDbConnectionStringBuilder.TryGetValue%2A>メソッドです。  
+  
+ [!code-csharp[DataWorks OleDbConnectionStringBuilder.TryGetValue#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks OleDbConnectionStringBuilder.TryGetValue/CS/source.cs#1)]
+ [!code-vb[DataWorks OleDbConnectionStringBuilder.TryGetValue#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks OleDbConnectionStringBuilder.TryGetValue/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="keyword" /> に null 値 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

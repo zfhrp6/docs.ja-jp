@@ -1,0 +1,279 @@
+<Type Name="BinaryMessageFormatter" FullName="System.Messaging.BinaryMessageFormatter">
+  <TypeSignature Language="C#" Value="public class BinaryMessageFormatter : ICloneable, System.Messaging.IMessageFormatter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BinaryMessageFormatter extends System.Object implements class System.ICloneable, class System.Messaging.IMessageFormatter" />
+  <TypeSignature Language="DocId" Value="T:System.Messaging.BinaryMessageFormatter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Messaging</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Messaging.IMessageFormatter</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>シリアル化またはオブジェクト、または接続されているオブジェクト、バイナリ形式を使用して、メッセージ キューのメッセージの本文の間のグラフ全体を逆シリアル化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.BinaryMessageFormatter>非常に効率的にして、ほとんどのオブジェクトをシリアル化に使用できます。 結果は非常にコンパクトで高速で、解析は疎結合としてメッセージングを許可しません、<xref:System.Messaging.XmlMessageFormatter>はします。 疎結合とは、クライアントとサーバーできるいない個別に送受信型のバージョンを意味します。  
+  
+ アプリケーションがのインスタンスを使用してキューにメッセージを送信すると、<xref:System.Messaging.MessageQueue>クラス、フォーマッタ オブジェクトをストリームにシリアル化し、メッセージ本文に挿入します。 使用してキューから読み取るときに、 <xref:System.Messaging.MessageQueue>、フォーマッタにメッセージ データを逆シリアル化、<xref:System.Messaging.Message.Body%2A>のプロパティ、<xref:System.Messaging.Message>です。  
+  
+ <xref:System.Messaging.BinaryMessageFormatter>高速なスループット、<xref:System.Messaging.XmlMessageFormatter>です。 使用して、<xref:System.Messaging.BinaryMessageFormatter>と純粋な速度の疎結合メッセージングではなくが必要です。  
+  
+   
+  
+## Examples  
+ [!code-cpp[MessagingBinaryFormatter#1](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagingBinaryFormatter/CPP/message_binaryformatter.cpp#1)]
+ [!code-csharp[MessagingBinaryFormatter#1](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagingBinaryFormatter/CS/message_binaryformatter.cs#1)]
+ [!code-vb[MessagingBinaryFormatter#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MessagingBinaryFormatter/VB/message_binaryformatter.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BinaryMessageFormatter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.BinaryMessageFormatter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Messaging.BinaryMessageFormatter" />クラス型スタイルまたは上位のオブジェクトのアセンブリのスタイルを指定することがない場合。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値を指定する必要があります、<xref:System.Messaging.BinaryMessageFormatter.TopObjectFormat%2A>プロパティ (グラフのルート オブジェクトを配置する方法を定義します)、および<xref:System.Messaging.BinaryMessageFormatter.TypeFormat%2A>プロパティ (オブジェクトの種類の説明のレイアウトを定義します) のインスタンスを使用する前に、<xref:System.Messaging.BinaryMessageFormatter>クラスをシリアル化およびメッセージを送信します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BinaryMessageFormatter (System.Runtime.Serialization.Formatters.FormatterAssemblyStyle topObjectFormat, System.Runtime.Serialization.Formatters.FormatterTypeStyle typeFormat);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Runtime.Serialization.Formatters.FormatterAssemblyStyle topObjectFormat, valuetype System.Runtime.Serialization.Formatters.FormatterTypeStyle typeFormat) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.BinaryMessageFormatter.#ctor(System.Runtime.Serialization.Formatters.FormatterAssemblyStyle,System.Runtime.Serialization.Formatters.FormatterTypeStyle)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="topObjectFormat" Type="System.Runtime.Serialization.Formatters.FormatterAssemblyStyle" />
+        <Parameter Name="typeFormat" Type="System.Runtime.Serialization.Formatters.FormatterTypeStyle" />
+      </Parameters>
+      <Docs>
+        <param name="topObjectFormat">グラフのトップ (ルート) オブジェクトがシリアル化ストリームのレイアウト方法を決定します。</param>
+        <param name="typeFormat">型の記述のシリアル化ストリームでのレイアウトを決定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Messaging.BinaryMessageFormatter" />クラス、ルート オブジェクトと型の説明の表示形式を指定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRead">
+      <MemberSignature Language="C#" Value="public bool CanRead (System.Messaging.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanRead(class System.Messaging.Message message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.BinaryMessageFormatter.CanRead(System.Messaging.Message)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.Messaging.Message" />
+      </Parameters>
+      <Docs>
+        <param name="message"><see cref="T:System.Messaging.Message" />を検査します。</param>
+        <summary>フォーマッタがメッセージの内容を逆シリアル化できるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />バイナリ メッセージ フォーマッタがメッセージを逆シリアル化できる場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.BinaryMessageFormatter.CanRead%2A>返します`false`場合は、メッセージ本文がバイナリ オブジェクトではありません。  
+  
+ 受信側のコンピューターで<xref:System.Messaging.BinaryMessageFormatter.CanRead%2A>返します`true`逆シリアル化するクラスのアセンブリがローカルに存在する場合。 アセンブリは、グローバル アセンブリ キャッシュ内にあるか、(たとえば、オブジェクトは、カスタム クラスを表す) 場合、アプリケーションにリンクします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="message" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.BinaryMessageFormatter.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>インスタンスを作成、<see cref="T:System.Messaging.BinaryMessageFormatter" />クラスが読み取り/書き込みプロパティ (ルート オブジェクトと型説明形式) は、現在と同じ<see cref="T:System.Messaging.BinaryMessageFormatter" />です。</summary>
+        <returns>オブジェクトのプロパティがこのと同じ<see cref="T:System.Messaging.BinaryMessageFormatter" />メタデータを持つができるフォーマッタ クラスのインスタンスを指定されていません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはフォーマッタのコピーを作成し、この値に、すべてのプロパティを初期化<xref:System.Messaging.BinaryMessageFormatter>です。 スケーラビリティに使用されますが、読み取りを保証やしませんスレッド セーフの記述。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public object Read (System.Messaging.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Read(class System.Messaging.Message message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.BinaryMessageFormatter.Read(System.Messaging.Message)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.Messaging.Message" />
+      </Parameters>
+      <Docs>
+        <param name="message"><see cref="T:System.Messaging.Message" />、バイナリ形式を逆シリアル化します。</param>
+        <summary>指定されたメッセージの内容を読み取りますを逆シリアル化されたメッセージを格納しているオブジェクトを作成します。</summary>
+        <returns>逆シリアル化されたメッセージ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  信頼できないデータをこのメソッドを呼び出すと、セキュリティ上のリスクです。 このメソッドでは、信頼されたデータだけです。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](http://go.microsoft.com/fwlink/?LinkId=330378)です。  
+  
+ メッセージの本文は、バイナリ形式である必要があり、最初にシリアル化したときにメッセージを逆シリアル化に同じのシリアライザーを使用する必要があります。 本文は、カスタム クラスを表している場合、そのクラスのアセンブリがローカルに存在する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">メッセージの<see cref="P:System.Messaging.Message.BodyType" />プロパティは、バイナリ オブジェクトを示しません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="message" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TopObjectFormat">
+      <MemberSignature Language="C#" Value="public System.Runtime.Serialization.Formatters.FormatterAssemblyStyle TopObjectFormat { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.Serialization.Formatters.FormatterAssemblyStyle TopObjectFormat" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.BinaryMessageFormatter.TopObjectFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgTopObjectFormat")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.Formatters.FormatterAssemblyStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を検索して、そのアセンブリの読み込みに関して、グラフのトップ (ルート) オブジェクトの逆シリアル化する方法を定義する値。</summary>
+        <value>1 つ、<see cref="T:System.Runtime.Serialization.Formatters.FormatterAssemblyStyle" />逆シリアル化の動作を定義する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現時点では、既定値を受け入れる必要があります`AssemblyStyle`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeFormat">
+      <MemberSignature Language="C#" Value="public System.Runtime.Serialization.Formatters.FormatterTypeStyle TypeFormat { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.Serialization.Formatters.FormatterTypeStyle TypeFormat" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.BinaryMessageFormatter.TypeFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgTypeFormat")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.Formatters.FormatterTypeStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の種類の説明のシリアル化ストリームでのレイアウトを定義する値。</summary>
+        <value>A<see cref="T:System.Runtime.Serialization.Formatters.FormatterTypeStyle" />型説明の形式を定義します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現時点では、既定値を受け入れる必要があります`TypesWhenNeeded`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public void Write (System.Messaging.Message message, object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(class System.Messaging.Message message, object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.BinaryMessageFormatter.Write(System.Messaging.Message,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.Messaging.Message" />
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="message"><see cref="T:System.Messaging.Message" />が<see cref="P:System.Messaging.Message.Body" />プロパティがシリアル化されたオブジェクトが格納されます。</param>
+        <param name="obj">メッセージの本文にシリアル化するオブジェクト。</param>
+        <summary>メッセージの本文にオブジェクトをシリアル化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キューに書き込む必要がある読み取り時に、最上位のオブジェクトの形式と型の形式を指定する必要ありません。 <xref:System.Messaging.BinaryMessageFormatter.TopObjectFormat%2A>と<xref:System.Messaging.BinaryMessageFormatter.TypeFormat%2A>プロパティは、メッセージを逆シリアル化時にのみ、フォーマッタで使用されます。  
+  
+ <xref:System.Messaging.BinaryMessageFormatter>ほとんどのオブジェクトをシリアル化できますが、結果は疎結合されていません。 ただしは、コンパクトなので、フォーマッタは、ラージ オブジェクトが効率的です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="message" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

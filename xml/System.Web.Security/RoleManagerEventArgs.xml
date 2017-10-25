@@ -1,0 +1,112 @@
+<Type Name="RoleManagerEventArgs" FullName="System.Web.Security.RoleManagerEventArgs">
+  <TypeSignature Language="C#" Value="public sealed class RoleManagerEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit RoleManagerEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Security.RoleManagerEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>イベントのデータを提供、<see cref="E:System.Web.Security.RoleManagerModule.GetRoles" />のイベント、<see cref="T:System.Web.Security.RoleManagerModule" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.RoleManagerEventArgs>オブジェクトにイベント情報を提供、<xref:System.Web.Security.RoleManagerModule.GetRoles>のイベント、<xref:System.Web.Security.RoleManagerModule>クラスです。 <xref:System.Web.Security.RoleManagerEventArgs>オブジェクトへのアクセスを提供する、<xref:System.Web.HttpContext>の現在の要求と`Boolean`<xref:System.Web.Security.RoleManagerEventArgs.RolesPopulated%2A>プロパティを使用を有効にするにまたはの作成をキャンセル、<xref:System.Web.Security.RolePrincipal>によって、<xref:System.Web.Security.RoleManagerModule>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RoleManagerEventArgs (System.Web.HttpContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.HttpContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.RoleManagerEventArgs.#ctor(System.Web.HttpContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.Web.HttpContext" />の現在の要求。</param>
+        <summary>インスタンスを作成、<see cref="T:System.Web.Security.RoleManagerEventArgs" />クラスとセット、<see cref="P:System.Web.Security.RoleManagerEventArgs.Context" />プロパティを指定した<see cref="T:System.Web.HttpContext" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.RoleManagerEventArgs>オブジェクトにイベント情報を提供、<xref:System.Web.Security.RoleManagerModule.GetRoles>のイベント、<xref:System.Web.Security.RoleManagerModule>クラスです。 <xref:System.Web.Security.RoleManagerEventArgs>オブジェクトへのアクセスを提供する、<xref:System.Web.HttpContext>の現在の要求と`Boolean`<xref:System.Web.Security.RoleManagerEventArgs.RolesPopulated%2A>プロパティを使用を有効にするにまたはの作成をキャンセル、<xref:System.Web.Security.RolePrincipal>によって、<xref:System.Web.Security.RoleManagerModule>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Context">
+      <MemberSignature Language="C#" Value="public System.Web.HttpContext Context { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpContext Context" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.RoleManagerEventArgs.Context" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.HttpContext" />現在の要求。</summary>
+        <value><see cref="T:System.Web.HttpContext" />現在の要求</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.RoleManagerEventArgs>オブジェクトにイベント情報を提供、<xref:System.Web.Security.RoleManagerModule.GetRoles>のイベント、<xref:System.Web.Security.RoleManagerModule>クラスです。 <xref:System.Web.Security.RoleManagerEventArgs.Context%2A>プロパティへのアクセスを提供する、<xref:System.Web.HttpContext>の現在の要求。  
+  
+   
+  
+## Examples  
+ 次の例は、 <xref:System.Web.Security.RoleManagerModule.GetRoles> ASP.NET アプリケーションの Global.asax ファイルに含まれるイベント。 <xref:System.Web.Security.RoleManagerModule.GetRoles>イベントは、Web.config ファイルでトレースが有効になっているアプリケーションのトレース通知を追加します。  
+  
+ [!code-csharp[System.Web.Security.RoleManagerModule#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.RoleManagerModule/CS/global.asax#1)]
+ [!code-vb[System.Web.Security.RoleManagerModule#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.RoleManagerModule/VB/global.asax#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RolesPopulated">
+      <MemberSignature Language="C#" Value="public bool RolesPopulated { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RolesPopulated" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.RoleManagerEventArgs.RolesPopulated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在のユーザーにロール情報が適用されているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ロール情報が現在のユーザーに適用されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.RoleManagerEventArgs.RolesPopulated%2A>プロパティを使用を有効にするにまたはの作成をキャンセル、<xref:System.Web.Security.RolePrincipal>によって、<xref:System.Web.Security.RoleManagerModule>です。  
+  
+ 場合に設定`true`で、<xref:System.Web.Security.RoleManagerModule.GetRoles>イベント、<xref:System.Web.Security.RoleManagerModule>現在のユーザーが確認されましたが、現在のユーザーのロール メンバーシップ情報が設定されて、必要なは、そのロールのメンバーシップを想定しています。 によって処理は行われません、<xref:System.Web.Security.RoleManagerModule>を作成する、<xref:System.Web.Security.RolePrincipal>現在のユーザーのオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

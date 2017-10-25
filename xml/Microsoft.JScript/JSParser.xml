@@ -1,0 +1,93 @@
+<Type Name="JSParser" FullName="Microsoft.JScript.JSParser">
+  <TypeSignature Language="C#" Value="public class JSParser" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit JSParser extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.JScript.JSParser" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.JScript</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>JScript コードを解析します。 このクラスは、スキャンおよび解析のカテゴリに属します。 スキャンおよび解析の詳細については、次を参照してください。 [、.NET Framework の言語コンパイラを作成する](http://go.microsoft.com/fwlink/?LinkId=110392)です。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public JSParser (Microsoft.JScript.Context context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.JScript.Context context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.JSParser.#ctor(Microsoft.JScript.Context)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="context" Type="Microsoft.JScript.Context" />
+      </Parameters>
+      <Docs>
+        <param name="context">解析するソース コード。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:Microsoft.JScript.JSParser" />を解析するソース コードを指定します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public Microsoft.JScript.ScriptBlock Parse ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.JScript.ScriptBlock Parse() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.JSParser.Parse" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.JScript.ScriptBlock</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ソース コードを解析します。</summary>
+        <returns>コードの解析によって作成される抽象構文ツリーのルートです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ソース コードが指定された、<xref:Microsoft.JScript.JSParser.%23ctor%28Microsoft.JScript.Context%29>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ParseEvalBody">
+      <MemberSignature Language="C#" Value="public Microsoft.JScript.Block ParseEvalBody ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.JScript.Block ParseEvalBody() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.JSParser.ParseEvalBody" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.JScript.Block</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ソース コードを解析します。 代わりにこのメソッドを使用して<see cref="M:Microsoft.JScript.JSParser.Parse" />内がソース コードの場合、<see langword="eval" />メソッドの呼び出しです。</summary>
+        <returns>コードの解析によって作成される抽象構文ツリーのルートです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ソース コードが指定された、<xref:Microsoft.JScript.JSParser.%23ctor%28Microsoft.JScript.Context%29>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

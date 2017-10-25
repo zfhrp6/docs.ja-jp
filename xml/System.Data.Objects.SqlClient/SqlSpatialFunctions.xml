@@ -1,0 +1,514 @@
+<Type Name="SqlSpatialFunctions" FullName="System.Data.Objects.SqlClient.SqlSpatialFunctions">
+  <TypeSignature Language="C#" Value="public static class SqlSpatialFunctions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit SqlSpatialFunctions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Objects.SqlClient.SqlSpatialFunctions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>SQL クライアントの SQL 空間関数を表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AsTextZM">
+      <MemberSignature Language="C#" Value="public static string AsTextZM (System.Data.Spatial.DbGeography geographyValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string AsTextZM(class System.Data.Spatial.DbGeography geographyValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.SqlClient.SqlSpatialFunctions.AsTextZM(System.Data.Spatial.DbGeography)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("SqlServer", "ASTEXTZM")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="geographyValue" Type="System.Data.Spatial.DbGeography" />
+      </Parameters>
+      <Docs>
+        <param name="geographyValue">地理的な値。</param>
+        <summary>任意の Z (標高) で補完された、geography インスタンスおよび M (メジャー) 値のインスタンスの Open Geospatial Consortium (OGC) Well-Known Text (WKT) 表現を返します。</summary>
+        <returns>Geography インスタンスの Open Geospatial Consortium (OGC) Well-Known Text (WKT) 表現。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AsTextZM">
+      <MemberSignature Language="C#" Value="public static string AsTextZM (System.Data.Spatial.DbGeometry geometryValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string AsTextZM(class System.Data.Spatial.DbGeometry geometryValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.SqlClient.SqlSpatialFunctions.AsTextZM(System.Data.Spatial.DbGeometry)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("SqlServer", "ASTEXTZM")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="geometryValue" Type="System.Data.Spatial.DbGeometry" />
+      </Parameters>
+      <Docs>
+        <param name="geometryValue">ジオメトリ値。</param>
+        <summary>任意の Z (標高) で補完された、geography インスタンスおよび M (メジャー) 値のインスタンスの Open Geospatial Consortium (OGC) Well-Known Text (WKT) 表現を返します。</summary>
+        <returns>Geometry インスタンスの Open Geospatial Consortium (OGC) Well-Known Text (WKT) 表現。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BufferWithTolerance">
+      <MemberSignature Language="C#" Value="public static System.Data.Spatial.DbGeography BufferWithTolerance (System.Data.Spatial.DbGeography geographyValue, Nullable&lt;double&gt; distance, Nullable&lt;double&gt; tolerance, Nullable&lt;bool&gt; relative);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.Spatial.DbGeography BufferWithTolerance(class System.Data.Spatial.DbGeography geographyValue, valuetype System.Nullable`1&lt;float64&gt; distance, valuetype System.Nullable`1&lt;float64&gt; tolerance, valuetype System.Nullable`1&lt;bool&gt; relative) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.SqlClient.SqlSpatialFunctions.BufferWithTolerance(System.Data.Spatial.DbGeography,System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{System.Boolean})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("SqlServer", "BUFFERWITHTOLERANCE")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.Spatial.DbGeography</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="geographyValue" Type="System.Data.Spatial.DbGeography" />
+        <Parameter Name="distance" Type="System.Nullable&lt;System.Double&gt;" />
+        <Parameter Name="tolerance" Type="System.Nullable&lt;System.Double&gt;" />
+        <Parameter Name="relative" Type="System.Nullable&lt;System.Boolean&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="geographyValue">地理的な値。</param>
+        <param name="distance">距離。</param>
+        <param name="tolerance">指定された許容範囲です。</param>
+        <param name="relative">許容範囲値が相対パスまたは絶対かどうかを指定します。</param>
+        <summary>Geography インスタンスからの距離が指定値未満のすべてのポイント値の和集合を表す、指定された許容範囲は、幾何オブジェクトを返します。</summary>
+        <returns>Geography インスタンスからの距離が指定値未満のすべてのポイント値の和集合</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BufferWithTolerance">
+      <MemberSignature Language="C#" Value="public static System.Data.Spatial.DbGeometry BufferWithTolerance (System.Data.Spatial.DbGeometry geometryValue, Nullable&lt;double&gt; distance, Nullable&lt;double&gt; tolerance, Nullable&lt;bool&gt; relative);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.Spatial.DbGeometry BufferWithTolerance(class System.Data.Spatial.DbGeometry geometryValue, valuetype System.Nullable`1&lt;float64&gt; distance, valuetype System.Nullable`1&lt;float64&gt; tolerance, valuetype System.Nullable`1&lt;bool&gt; relative) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.SqlClient.SqlSpatialFunctions.BufferWithTolerance(System.Data.Spatial.DbGeometry,System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{System.Boolean})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("SqlServer", "BUFFERWITHTOLERANCE")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.Spatial.DbGeometry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="geometryValue" Type="System.Data.Spatial.DbGeometry" />
+        <Parameter Name="distance" Type="System.Nullable&lt;System.Double&gt;" />
+        <Parameter Name="tolerance" Type="System.Nullable&lt;System.Double&gt;" />
+        <Parameter Name="relative" Type="System.Nullable&lt;System.Boolean&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="geometryValue">ジオメトリ値。</param>
+        <param name="distance">距離。</param>
+        <param name="tolerance">指定された許容範囲です。</param>
+        <param name="relative">許容範囲値が相対パスまたは絶対かどうかを指定します。</param>
+        <summary>Geometry インスタンスからの距離が指定値未満のすべてのポイント値の和集合を表す、指定された許容範囲は、幾何オブジェクトを返します。</summary>
+        <returns>Geometry インスタンスからの距離が指定値未満のすべてのポイント値の和集合</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnvelopeAngle">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;double&gt; EnvelopeAngle (System.Data.Spatial.DbGeography geographyValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;float64&gt; EnvelopeAngle(class System.Data.Spatial.DbGeography geographyValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.SqlClient.SqlSpatialFunctions.EnvelopeAngle(System.Data.Spatial.DbGeography)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("SqlServer", "ENVELOPEANGLE")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="geographyValue" Type="System.Data.Spatial.DbGeography" />
+      </Parameters>
+      <Docs>
+        <param name="geographyValue">地理的な値。</param>
+        <summary>EnvelopeCenter() で返される地点と角度の geography インスタンスのポイント間の最大角度を返します。</summary>
+        <returns>EnvelopeCenter() によって返されるポイント間の最大角度。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnvelopeCenter">
+      <MemberSignature Language="C#" Value="public static System.Data.Spatial.DbGeography EnvelopeCenter (System.Data.Spatial.DbGeography geographyValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.Spatial.DbGeography EnvelopeCenter(class System.Data.Spatial.DbGeography geographyValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.SqlClient.SqlSpatialFunctions.EnvelopeCenter(System.Data.Spatial.DbGeography)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("SqlServer", "ENVELOPECENTER")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.Spatial.DbGeography</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="geographyValue" Type="System.Data.Spatial.DbGeography" />
+      </Parameters>
+      <Docs>
+        <param name="geographyValue">地理的な値。</param>
+        <summary>Geography インスタンスの外接する円の中心として使用できる点を返します。</summary>
+        <returns>外接する円の中心の場所を指定する SqlGeography 値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filter">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;bool&gt; Filter (System.Data.Spatial.DbGeography geographyValue, System.Data.Spatial.DbGeography geographyOther);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;bool&gt; Filter(class System.Data.Spatial.DbGeography geographyValue, class System.Data.Spatial.DbGeography geographyOther) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.SqlClient.SqlSpatialFunctions.Filter(System.Data.Spatial.DbGeography,System.Data.Spatial.DbGeography)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("SqlServer", "FILTER")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="geographyValue" Type="System.Data.Spatial.DbGeography" />
+        <Parameter Name="geographyOther" Type="System.Data.Spatial.DbGeography" />
+      </Parameters>
+      <Docs>
+        <param name="geographyValue">地理的な値。</param>
+        <param name="geographyOther">フィルターが呼び出されるインスタンスと比較するもう 1 つの geography インスタンスです。</param>
+        <summary>Geography インスタンスでは、別の SqlGeography インスタンスと交差する、インデックスと仮定した場合があるかを決定する高速のインデックス専用積集合メソッドを提供します。</summary>
+        <returns>
+          <see langword="True" />geography インスタンスには、別の SqlGeography インスタンス; 可能性があると交差している場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filter">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;bool&gt; Filter (System.Data.Spatial.DbGeometry geometryValue, System.Data.Spatial.DbGeometry geometryOther);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;bool&gt; Filter(class System.Data.Spatial.DbGeometry geometryValue, class System.Data.Spatial.DbGeometry geometryOther) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.SqlClient.SqlSpatialFunctions.Filter(System.Data.Spatial.DbGeometry,System.Data.Spatial.DbGeometry)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("SqlServer", "FILTER")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="geometryValue" Type="System.Data.Spatial.DbGeometry" />
+        <Parameter Name="geometryOther" Type="System.Data.Spatial.DbGeometry" />
+      </Parameters>
+      <Docs>
+        <param name="geometryValue">ジオメトリ値。</param>
+        <param name="geometryOther">フィルターが呼び出されるインスタンスと比較するもう 1 つの geography インスタンスです。</param>
+        <summary>Geography インスタンスでは、別の SqlGeometry インスタンスと交差する、インデックスと仮定した場合があるかを決定する高速のインデックス専用積集合メソッドを提供します。</summary>
+        <returns>
+          <see langword="True" />geography インスタンスには、別の SqlGeography インスタンス; 可能性があると交差している場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceOf">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;bool&gt; InstanceOf (System.Data.Spatial.DbGeography geographyValue, string geometryTypeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;bool&gt; InstanceOf(class System.Data.Spatial.DbGeography geographyValue, string geometryTypeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.SqlClient.SqlSpatialFunctions.InstanceOf(System.Data.Spatial.DbGeography,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("SqlServer", "INSTANCEOF")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="geographyValue" Type="System.Data.Spatial.DbGeography" />
+        <Parameter Name="geometryTypeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="geographyValue">地理的な値。</param>
+        <param name="geometryTypeName">Geography 型の階層で公開されている 12 種類のいずれかを指定する文字列。</param>
+        <summary>SqlGeography インスタンスが、指定した型と同じであるかどうか。</summary>
+        <returns>Geography 型の階層で公開されている 12 種類のいずれかを指定する文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceOf">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;bool&gt; InstanceOf (System.Data.Spatial.DbGeometry geometryValue, string geometryTypeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;bool&gt; InstanceOf(class System.Data.Spatial.DbGeometry geometryValue, string geometryTypeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.SqlClient.SqlSpatialFunctions.InstanceOf(System.Data.Spatial.DbGeometry,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("SqlServer", "INSTANCEOF")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="geometryValue" Type="System.Data.Spatial.DbGeometry" />
+        <Parameter Name="geometryTypeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="geometryValue">ジオメトリ値。</param>
+        <param name="geometryTypeName">Geography 型の階層で公開されている 12 種類のいずれかを指定する文字列。</param>
+        <summary>SqlGeometry インスタンスが、指定した型と同じであるかどうか。</summary>
+        <returns>Geography 型の階層で公開されている 12 種類のいずれかを指定する文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MakeValid">
+      <MemberSignature Language="C#" Value="public static System.Data.Spatial.DbGeometry MakeValid (System.Data.Spatial.DbGeometry geometryValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.Spatial.DbGeometry MakeValid(class System.Data.Spatial.DbGeometry geometryValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.SqlClient.SqlSpatialFunctions.MakeValid(System.Data.Spatial.DbGeometry)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("SqlServer", "MAKEVALID")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.Spatial.DbGeometry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="geometryValue" Type="System.Data.Spatial.DbGeometry" />
+      </Parameters>
+      <Docs>
+        <param name="geometryValue">ジオメトリ値。</param>
+        <summary>有効な Open Geospatial Consortium (OGC) 型の geometry インスタンスに無効なジオメトリ インスタンスを変換します。</summary>
+        <returns>変換された geometry インスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NumRings">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;int&gt; NumRings (System.Data.Spatial.DbGeography geographyValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;int32&gt; NumRings(class System.Data.Spatial.DbGeography geographyValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.SqlClient.SqlSpatialFunctions.NumRings(System.Data.Spatial.DbGeography)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("SqlServer", "NUMRINGS")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="geographyValue" Type="System.Data.Spatial.DbGeography" />
+      </Parameters>
+      <Docs>
+        <param name="geographyValue">地理的な値。</param>
+        <summary>Polygon インスタンスのリングの合計数を返します。</summary>
+        <returns>呼び出し回数の合計数。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PointGeography">
+      <MemberSignature Language="C#" Value="public static System.Data.Spatial.DbGeography PointGeography (Nullable&lt;double&gt; latitude, Nullable&lt;double&gt; longitude, Nullable&lt;int&gt; spatialReferenceId);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.Spatial.DbGeography PointGeography(valuetype System.Nullable`1&lt;float64&gt; latitude, valuetype System.Nullable`1&lt;float64&gt; longitude, valuetype System.Nullable`1&lt;int32&gt; spatialReferenceId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.SqlClient.SqlSpatialFunctions.PointGeography(System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("SqlServer", "POINTGEOGRAPHY")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.Spatial.DbGeography</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="latitude" Type="System.Nullable&lt;System.Double&gt;" />
+        <Parameter Name="longitude" Type="System.Nullable&lt;System.Double&gt;" />
+        <Parameter Name="spatialReferenceId" Type="System.Nullable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="latitude">生成される Point の x 座標。</param>
+        <param name="longitude">生成される Point の y 座標</param>
+        <param name="spatialReferenceId">Geography インスタンスの SRID。</param>
+        <summary>その x と y 値、および spatial reference ID (SRID)、Point インスタンスを表す geography インスタンスを構築します。</summary>
+        <returns>構築される geography インスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PointGeometry">
+      <MemberSignature Language="C#" Value="public static System.Data.Spatial.DbGeometry PointGeometry (Nullable&lt;double&gt; xCoordinate, Nullable&lt;double&gt; yCoordinate, Nullable&lt;int&gt; spatialReferenceId);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.Spatial.DbGeometry PointGeometry(valuetype System.Nullable`1&lt;float64&gt; xCoordinate, valuetype System.Nullable`1&lt;float64&gt; yCoordinate, valuetype System.Nullable`1&lt;int32&gt; spatialReferenceId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.SqlClient.SqlSpatialFunctions.PointGeometry(System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("SqlServer", "POINTGEOMETRY")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.Spatial.DbGeometry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xCoordinate" Type="System.Nullable&lt;System.Double&gt;" />
+        <Parameter Name="yCoordinate" Type="System.Nullable&lt;System.Double&gt;" />
+        <Parameter Name="spatialReferenceId" Type="System.Nullable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="xCoordinate">生成される Point の x 座標。</param>
+        <param name="yCoordinate">生成される Point の y 座標</param>
+        <param name="spatialReferenceId">Geography インスタンスの SRID。</param>
+        <summary>その x と y 値、および spatial reference ID (SRID)、Point インスタンスを表す geometry インスタンスを構築します。</summary>
+        <returns>構築された geometry インスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reduce">
+      <MemberSignature Language="C#" Value="public static System.Data.Spatial.DbGeography Reduce (System.Data.Spatial.DbGeography geographyValue, Nullable&lt;double&gt; tolerance);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.Spatial.DbGeography Reduce(class System.Data.Spatial.DbGeography geographyValue, valuetype System.Nullable`1&lt;float64&gt; tolerance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.SqlClient.SqlSpatialFunctions.Reduce(System.Data.Spatial.DbGeography,System.Nullable{System.Double})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("SqlServer", "REDUCE")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.Spatial.DbGeography</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="geographyValue" Type="System.Data.Spatial.DbGeography" />
+        <Parameter Name="tolerance" Type="System.Nullable&lt;System.Double&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="geographyValue">地理的な値。</param>
+        <param name="tolerance">Douglas-peucker アルゴリズムに入力するための許容範囲です。 許容範囲は正の数値である必要があります。</param>
+        <summary>指定された許容範囲を持つインスタンスに対して Douglas-peucker アルゴリズムを実行して生成された特定の geography インスタンスの近似を返します。</summary>
+        <returns><see cref="T:System.Data.Spatial.DbGeography" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reduce">
+      <MemberSignature Language="C#" Value="public static System.Data.Spatial.DbGeometry Reduce (System.Data.Spatial.DbGeometry geometryValue, Nullable&lt;double&gt; tolerance);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.Spatial.DbGeometry Reduce(class System.Data.Spatial.DbGeometry geometryValue, valuetype System.Nullable`1&lt;float64&gt; tolerance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.SqlClient.SqlSpatialFunctions.Reduce(System.Data.Spatial.DbGeometry,System.Nullable{System.Double})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("SqlServer", "REDUCE")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.Spatial.DbGeometry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="geometryValue" Type="System.Data.Spatial.DbGeometry" />
+        <Parameter Name="tolerance" Type="System.Nullable&lt;System.Double&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="geometryValue">ジオメトリ値。</param>
+        <param name="tolerance">Douglas-peucker アルゴリズムに入力するための許容範囲です。 許容範囲は正の数値である必要があります。</param>
+        <summary>指定された許容範囲を持つインスタンスに対して Douglas-peucker アルゴリズムを実行して生成された特定の geography インスタンスの近似を返します。</summary>
+        <returns><see cref="T:System.Data.Spatial.DbGeometry" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RingN">
+      <MemberSignature Language="C#" Value="public static System.Data.Spatial.DbGeography RingN (System.Data.Spatial.DbGeography geographyValue, Nullable&lt;int&gt; index);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.Spatial.DbGeography RingN(class System.Data.Spatial.DbGeography geographyValue, valuetype System.Nullable`1&lt;int32&gt; index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.SqlClient.SqlSpatialFunctions.RingN(System.Data.Spatial.DbGeography,System.Nullable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("SqlServer", "RINGN")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.Spatial.DbGeography</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="geographyValue" Type="System.Data.Spatial.DbGeography" />
+        <Parameter Name="index" Type="System.Nullable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="geographyValue">地理的な値。</param>
+        <param name="index">1 から polygon インスタンス内のリング数までの int 式です。</param>
+        <summary>SqlGeography インスタンスの指定したリングを返します。 1 ≤ n ≤ NumRings() です。</summary>
+        <returns>N で指定したリングを表す SqlGeography オブジェクトです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

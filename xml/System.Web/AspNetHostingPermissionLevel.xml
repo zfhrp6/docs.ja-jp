@@ -1,0 +1,125 @@
+<Type Name="AspNetHostingPermissionLevel" FullName="System.Web.AspNetHostingPermissionLevel">
+  <TypeSignature Language="C#" Value="public enum AspNetHostingPermissionLevel" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed AspNetHostingPermissionLevel extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.AspNetHostingPermissionLevel" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>ASP.NET Web アプリケーションに付与される信頼レベルを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください[ASP.NET コード アクセス セキュリティ](http://msdn.microsoft.com/library/0001d062-f5cd-44e5-bb07-35155569fdb8)各信頼レベルに与えられているアクセス許可についての詳細。  
+  
+ この列挙体のメンバーは、最低限の信頼 (アプリケーションを実行するのみ権限を持つ) に完全な信頼 (アプリケーションはコード アクセス セキュリティによって制約なし) の範囲のアプリケーションのセキュリティ レベルを定義します。 ASP.NET リソースとの信頼レベルを設定する、[信頼](http://msdn.microsoft.com/en-us/eeed0fd3-5aaa-4196-94af-e6baea70dded)Web.config ファイルまたは Machine.config ファイル内の構成要素。  
+  
+ 特定のサーバーまたは Web サイトのセキュリティ ポリシーをロックする場合を使用して、[場所](http://msdn.microsoft.com/en-us/922ef7d5-da38-4661-b1c6-5b9e5ceda1d5)要素と組み合わせて、`allowOverride=false`その信頼ポリシーの設定を確認する属性はローカルでオーバーライドされることはできません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="High">
+      <MemberSignature Language="C#" Value="High" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.AspNetHostingPermissionLevel High = int32(500)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.AspNetHostingPermissionLevel.High" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.AspNetHostingPermissionLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>信頼レベルが <see langword="High" /> 以下のレベルに対する要求で保護された機能が成功することを示します。 このレベルは信頼度の低いアクセスをサポートする管理アクセス許可のほとんどを使用する必要があるマネージ コード アプリケーションの信頼性の高いものです。 最も高い一部のアクセス許可 (ネイティブ コードを呼び出す機能など) は与えられませんが、信頼されたアプリケーションを最小の特権で実行したり、信頼度の高いアプリケーションに一定レベルの制約を与えたりする手段が提供されます。 このレベルは、構成することによって許可には、少なくとも、<see cref="F:System.Web.AspNetHostingPermissionLevel.High" />信頼レベルで、[信頼](http://msdn.microsoft.com/en-us/eeed0fd3-5aaa-4196-94af-e6baea70dded)構成ファイル内のセクションです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Low">
+      <MemberSignature Language="C#" Value="Low" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.AspNetHostingPermissionLevel Low = int32(300)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.AspNetHostingPermissionLevel.Low" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.AspNetHostingPermissionLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="F:System.Web.AspNetHostingPermissionLevel.Low" /> レベル以下のレベルに対する要求で保護された機能が成功することを示します。 このレベルは、制約のある環境で限定的なリソースに対する読み取り専用アクセスを許可するために用意されています。 このレベルを指定して、許可、<see cref="F:System.Web.AspNetHostingPermissionLevel.Low" />信頼レベルで、[信頼](http://msdn.microsoft.com/en-us/eeed0fd3-5aaa-4196-94af-e6baea70dded)構成ファイル内のセクションです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Medium">
+      <MemberSignature Language="C#" Value="Medium" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.AspNetHostingPermissionLevel Medium = int32(400)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.AspNetHostingPermissionLevel.Medium" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.AspNetHostingPermissionLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="F:System.Web.AspNetHostingPermissionLevel.Medium" /> レベル以下のレベルに対する要求で保護された機能が成功することを示します。 このレベルは、構成することによって許可には、少なくとも、<see cref="F:System.Web.AspNetHostingPermissionLevel.Medium" />信頼レベルで、[信頼](http://msdn.microsoft.com/en-us/eeed0fd3-5aaa-4196-94af-e6baea70dded)構成ファイル内のセクションです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Minimal">
+      <MemberSignature Language="C#" Value="Minimal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.AspNetHostingPermissionLevel Minimal = int32(200)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.AspNetHostingPermissionLevel.Minimal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.AspNetHostingPermissionLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="F:System.Web.AspNetHostingPermissionLevel.Minimal" /> レベルの要求で保護された機能が成功することを示します。 このレベルでは、コードの実行は許可されますが、システムに存在するリソースとの対話は許可されません。 このレベルは、構成することによって許可には、少なくとも、<see cref="F:System.Web.AspNetHostingPermissionLevel.Minimal" />信頼レベルを使用して、[信頼](http://msdn.microsoft.com/en-us/eeed0fd3-5aaa-4196-94af-e6baea70dded)構成ファイル内のセクションです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.AspNetHostingPermissionLevel None = int32(100)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.AspNetHostingPermissionLevel.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.AspNetHostingPermissionLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセス許可が許可されていないことを示します。 <see cref="T:System.Web.AspNetHostingPermission" /> に対するすべての要求は失敗します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Unrestricted">
+      <MemberSignature Language="C#" Value="Unrestricted" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.AspNetHostingPermissionLevel Unrestricted = int32(600)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.AspNetHostingPermissionLevel.Unrestricted" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.AspNetHostingPermissionLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションのすべての機能を使用するためのアクセス許可に対する要求が、すべて許可されることを示します。 これは、許可を付与する<see langword="Full" />信頼レベルで、[信頼](http://msdn.microsoft.com/en-us/eeed0fd3-5aaa-4196-94af-e6baea70dded)構成ファイル内のセクションです。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

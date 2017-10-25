@@ -1,0 +1,857 @@
+<Type Name="TextReader" FullName="System.IO.TextReader">
+  <TypeSignature Language="C#" Value="public abstract class TextReader : MarshalByRefObject, IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit TextReader extends System.MarshalByRefObject implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.IO.TextReader" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+    <BaseTypeName FrameworkAlternate="netframework-4.5">System.MarshalByRefObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>一連の文字を読み取ることができるリーダーを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.TextReader>抽象基本クラスは、<xref:System.IO.StreamReader>と<xref:System.IO.StringReader>、それぞれストリームと、文字列から文字を読み取るをします。 これらの派生クラスを使用して、指定された範囲の文字を読み取るためのテキスト ファイルを開く、または既存のストリームに基づくリーダーを作成します。  
+  
+> [!IMPORTANT]
+>  この型は、<xref:System.IDisposable>インターフェイスです。 この型から派生した任意の型を使用してが完了したら、直接的または間接的にそれを破棄する必要があります。 型の直接 dispose を呼び出す、<xref:System.IO.TextReader.Dispose%2A>メソッドで、 `try` / `catch`ブロックします。 直接ことのない破棄する場合など、言語コンストラクトを使用して`using`(C# の場合) または`Using`(Visual Basic で)。 詳細については、Dispose、"を使用して、オブジェクトを実装する IDisposable"」、およびを参照してください、<xref:System.IDisposable>インターフェイスに関するトピック。  
+  
+   
+  
+## Examples  
+ <xref:System.IO.TextReader> クラスは抽象クラスです。 そのため、コードでそれをインスタンス化することはありません。 <xref:System.IO.StreamReader>クラスから派生<xref:System.IO.TextReader>し、ストリームから読み取るのために、メンバーの実装を提供します。 次の例を使用して、ファイルのすべての文字を読み取る方法を示しています、<xref:System.IO.StreamReader.ReadAsync%28System.Char%5B%5D%2CSystem.Int32%2CSystem.Int32%29?displayProperty=nameWithType>メソッドです。 インスタンスに文字を追加する前に、アルファベット、数字、または空白文字に各文字かどうかを確認、<xref:System.Text.StringBuilder>クラスです。  
+  
+ [!code-csharp[System.IO.StreamReader#42](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.StreamReader/CS/example42.cs#42)]
+ [!code-vb[System.IO.StreamReader#42](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.StreamReader/VB/example42.vb#42)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>派生クラスで実装する必要があります最小限、<see cref="M:System.IO.TextReader.Peek" />と<see cref="M:System.IO.TextReader.Read" />させるに便利なインスタンス メソッド<see cref="T:System.IO.TextReader" />です。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TextReader ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextReader.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IO.TextReader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスのこのコンス トラクターを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public virtual void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextReader.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IO.TextReader" /> を閉じ、その <see langword="TextReader" /> と関連付けられているシステム リソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装`Close`呼び出し、<xref:System.IO.StringReader.Dispose%28System.Boolean%29?displayProperty=nameWithType>メソッド渡します、`true`値。  
+  
+ 明示的に呼び出す場合を除き、フラッシュされたテキスト リーダーは、基になるエンコーダー フラッシュされません`Close`です。 設定、<xref:System.IO.StreamWriter.AutoFlush%2A?displayProperty=nameWithType>プロパティを`true`に、ストリーム バッファーからデータがフラッシュされますが、エンコーダーの状態はフラッシュされないことを意味します。 これにより、次の文字のブロックを正常にエンコードできるように (一部の文字) の状態を保持するエンコーダー。 このシナリオでは、UTF8、UTF7、エンコーダーは、隣接する文字または文字列を受信した後にのみ特定の文字をエンコードすることができますに影響します。  
+  
+> [!NOTE]
+>  派生クラスでオーバーライドしない、<xref:System.IO.TextReader.Close%2A>メソッドです。 代わりに、オーバーライド、<xref:System.IO.TextReader.Dispose%28System.Boolean%29?displayProperty=nameWithType>リソースを解放するためのコードを追加するメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextReader.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.IO.TextReader" /> オブジェクトによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.TextReader.Dispose%2A> を使い終わったら <xref:System.IO.TextReader> を呼び出します。 <xref:System.IO.TextReader.Dispose%2A> メソッドによって、<xref:System.IO.TextReader> は使用不可の状態になります。 呼び出した後<xref:System.IO.TextReader.Dispose%2A>へのすべての参照を解放する必要があります、<xref:System.IO.TextReader>ガベージ コレクターがメモリを再利用できるようにする、<xref:System.IO.TextReader>占有されていた。  
+  
+ 詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+> [!NOTE]
+>  <xref:System.IO.TextReader.Dispose%2A> への最後の参照を解放する前に、必ず <xref:System.IO.TextReader> を呼び出してください。 そうしないと、ガベージ コレクターが <xref:System.IO.TextReader> オブジェクトの <xref:System.Object.Finalize%2A> メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextReader.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.IO.TextReader" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック`Dispose`メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 既定では、このメソッドを指定します、`disposing`パラメーターとして`true`です。 <xref:System.Object.Finalize%2A>指定します、`disposing`パラメーターとして`false`です。  
+  
+ `disposing` パラメーターが `true` の場合、このメソッドは、この <xref:System.IO.TextReader> が参照しているすべてのマネージ オブジェクトによって保持されているリソースをすべて解放します。 このメソッドは、参照される各オブジェクトの `Dispose` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 このメソッドをオーバーライドする場合は、既に破棄されているを以前の呼び出しでオブジェクトを参照しないように注意する<see langword="Dispose" />です。 このメソッドを実装する方法の詳細については、次を参照してください。 [Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see cref="M:System.IDisposable.Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Null">
+      <MemberSignature Language="C#" Value="public static readonly System.IO.TextReader Null;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.IO.TextReader Null" />
+      <MemberSignature Language="DocId" Value="F:System.IO.TextReader.Null" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.TextReader</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>読み取り対象のデータを <see langword="TextReader" /> に提供しません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り、<xref:System.IO.TextReader.Null>テキスト リーダーは、ストリームの末尾からの読み取りと似ています。  
+  
+-   <xref:System.IO.TextReader.Read%2A>と<xref:System.IO.TextReader.Peek%2A>メソッドは-1 を返します。  
+  
+-   <xref:System.IO.TextReader.ReadBlock%2A>は 0 を返します。  
+  
+-   <xref:System.IO.TextReader.ReadLine%2A>メソッドを返します。`null`です。  
+  
+-   <xref:System.IO.TextReader.ReadToEnd%2A>メソッドは、空の文字列を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Peek">
+      <MemberSignature Language="C#" Value="public virtual int Peek ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 Peek() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextReader.Peek" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リーダーや文字の読み取り元の状態を変更せずに、次の文字を読み取ります。 リーダーから実際に文字を読み取らずに次の文字を返します。</summary>
+        <returns>読み取り対象の次の文字を表す整数。使用できる文字がないか、リーダーがシークをサポートしていない場合は -1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.TextReader.Peek%2A>メソッドは、ファイル、または別のエラーの終了が発生したかどうかを確認するために整数値を返します。 これにより、ユーザーをまず確認かどうか、返される値は-1 にキャストする前に、<xref:System.Char>型です。  
+  
+ 現在の位置、<xref:System.IO.TextReader>この操作では変更されません。 可能な文字がない場合、返される値は-1 です。 既定の実装では、-1 が返されます。  
+  
+ <xref:System.IO.TextReader> クラスは抽象クラスです。 そのため、コードでそれをインスタンス化することはありません。 使用する例については、<xref:System.IO.TextReader.Peek%2A>メソッドを参照してください、<xref:System.IO.StreamReader.Peek%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextReader" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public virtual int Read ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 Read() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextReader.Read" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テキスト リーダーから次の文字を読み取り、1 文字分だけ文字位置を進めます。</summary>
+        <returns>テキスト リーダーからの次の文字。それ以上読み取り可能な文字がない場合は -1。 既定の実装では、-1 が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.TextReader> クラスは抽象クラスです。 そのため、コードでそれをインスタンス化することはありません。 使用する例については、<xref:System.IO.TextReader.Read%2A>メソッドを参照してください、<xref:System.IO.StreamReader.Read%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextReader" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public virtual int Read (char[] buffer, int index, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 Read([out] char[] buffer, int32 index, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextReader.Read(System.Char[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Char[]" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">このメソッドが戻るときまでの値が指定した文字配列が含まれています<c>インデックス</c>と (<c>インデックス</c> + <c>カウント</c>- 1) 文字に置き換え。現在のソースからの読み取り。</param>
+        <param name="index">内の位置<c>バッファー</c>書き込みを開始する位置を示すです。</param>
+        <param name="count">読み取り対象の最大文字数。 指定された文字数をバッファーに読み取る前にリーダーの末尾に到達した場合、メソッドは制御を返します。</param>
+        <summary>指定した最大文字数を現在のリーダーから読み取り、バッファーの指定したインデックス位置にそのデータを書き込みます。</summary>
+        <returns>読み取られた文字数。 この数値は、リーダー内に使用できるデータがあるかどうかによって異なりますが、<paramref name="count" /> 以下の数値になります。 読み取り対象の文字がない場合にこのメソッドを呼び出すと、0 (ゼロ) が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いずれかの後にこのメソッドが戻る`count`文字が読み取られたか、ファイルの末尾に到達します。 <xref:System.IO.TextReader.ReadBlock%2A>このメソッドのブロックのバージョンです。  
+  
+ <xref:System.IO.TextReader> クラスは抽象クラスです。 そのため、コードでそれをインスタンス化することはありません。 使用する例については、<xref:System.IO.TextReader.Read%2A>メソッドを参照してください、<xref:System.IO.StreamReader.Read%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">バッファーの長さマイナス<paramref name="index" />はより小さい<paramref name="count" />です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> または <paramref name="count" /> が負の値です。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextReader" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;int&gt; ReadAsync (char[] buffer, int index, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;int32&gt; ReadAsync(char[] buffer, int32 index, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextReader.ReadAsync(System.Char[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Char[]" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">このメソッドが戻るときまでの値が指定した文字配列が含まれています<c>インデックス</c>と (<c>インデックス</c> + <c>カウント</c>- 1) 文字に置き換え。現在のソースからの読み取り。</param>
+        <param name="index">内の位置<c>バッファー</c>書き込みを開始する位置を示すです。</param>
+        <param name="count">読み取り対象の最大文字数。 指定された文字数をバッファーに読み取る前にテキストの末尾に到達した場合は、現在のメソッドが返ります。</param>
+        <summary>指定した最大文字数を現在のテキスト リーダーから非同期に読み取り、バッファーの指定したインデックス位置にそのデータを書き込みます。</summary>
+        <returns>非同期の読み取り操作を表すタスク。 <paramref name="TResult" /> パラメーターの値には、バッファーに読み込まれるバイトの合計数が含まれます。 現在使用できるバイト数が要求した数より小さい場合、結果の値は要求したバイト数より小さくなることがあります。また、テキストの末尾に到達した場合は 0 になることがあります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タスクが完了した後にいずれかで指定された文字の数、`count`パラメーターの読み取りまたはファイルの末尾に到達します。  
+  
+ <xref:System.IO.TextReader> クラスは抽象クラスです。 そのため、コードでそれをインスタンス化することはありません。 使用する例については、<xref:System.IO.TextReader.ReadAsync%2A>メソッドを参照してください、<xref:System.IO.StreamReader.ReadAsync%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> または <paramref name="count" /> が負の値です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="index" /> と <paramref name="count" /> の合計が、バッファーの長さよりも大きくなっています。</exception>
+        <exception cref="T:System.ObjectDisposedException">テキスト リーダーは破棄されました。</exception>
+        <exception cref="T:System.InvalidOperationException">リーダーは、前の読み取り操作によって現在使用されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadBlock">
+      <MemberSignature Language="C#" Value="public virtual int ReadBlock (char[] buffer, int index, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 ReadBlock([out] char[] buffer, int32 index, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextReader.ReadBlock(System.Char[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Char[]" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">このパラメーターに指定した文字配列の値を持つが含まれるこのメソッドが戻るとき<c>インデックス</c>と (<c>インデックス</c> + <c>カウント</c>-1) に置き換え文字は、現在のソースから読み込まれます。</param>
+        <param name="index">内の位置<c>バッファー</c>書き込みを開始する位置を示すです。</param>
+        <param name="count">読み取り対象の最大文字数。</param>
+        <summary>指定した最大文字数を現在のテキスト リーダーから読み取り、バッファーの指定したインデックス位置にそのデータを書き込みます。</summary>
+        <returns>読み取られた文字数。 この数値は、すべての入力文字が読み取られたかどうかによって異なりますが、<paramref name="count" /> 以下の数値になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基になるテキスト リーダーの位置に読み取られた文字数による高度な`buffer`します。  
+  
+ メソッド ブロックされるまで、`count`文字が読み取られ、またはすべての文字が読み取られました。 これは、ブロックしているバージョンの<xref:System.IO.TextReader.Read%2A>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">バッファーの長さマイナス<paramref name="index" />はより小さい<paramref name="count" />です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> または <paramref name="count" /> が負の値です。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextReader" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadBlockAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;int&gt; ReadBlockAsync (char[] buffer, int index, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;int32&gt; ReadBlockAsync(char[] buffer, int32 index, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextReader.ReadBlockAsync(System.Char[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Char[]" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">このメソッドが戻るときまでの値が指定した文字配列が含まれています<c>インデックス</c>と (<c>インデックス</c> + <c>カウント</c>- 1) 文字に置き換え。現在のソースからの読み取り。</param>
+        <param name="index">内の位置<c>バッファー</c>書き込みを開始する位置を示すです。</param>
+        <param name="count">読み取り対象の最大文字数。 指定された文字数をバッファーに読み取る前にテキストの末尾に到達した場合は、現在のメソッドが返ります。</param>
+        <summary>指定した最大文字数を現在のテキスト リーダーから非同期に読み取り、バッファーの指定したインデックス位置にそのデータを書き込みます。</summary>
+        <returns>非同期の読み取り操作を表すタスク。 <paramref name="TResult" /> パラメーターの値には、バッファーに読み込まれるバイトの合計数が含まれます。 現在使用できるバイト数が要求した数より小さい場合、結果の値は要求したバイト数より小さくなることがあります。また、テキストの末尾に到達した場合は 0 になることがあります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タスクが完了しないかまでで指定された文字の数、`count`パラメーターが読み取られ、または、テキストの末尾に達しています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> または <paramref name="count" /> が負の値です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="index" /> と <paramref name="count" /> の合計が、バッファーの長さよりも大きくなっています。</exception>
+        <exception cref="T:System.ObjectDisposedException">テキスト リーダーは破棄されました。</exception>
+        <exception cref="T:System.InvalidOperationException">リーダーは、前の読み取り操作によって現在使用されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadLine">
+      <MemberSignature Language="C#" Value="public virtual string ReadLine ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string ReadLine() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextReader.ReadLine" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テキスト リーダーから 1 行分の文字を読み取り、そのデータを文字列として返します。</summary>
+        <returns>リーダーの次の行。またはすべての文字が読み取られた場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 行は、一連の文字の後にキャリッジ リターン (0x000d)、ライン フィード (0x000a) として定義されます、キャリッジ リターン、ライン フィード、続いて<xref:System.Environment.NewLine%2A?displayProperty=nameWithType>、またはストリームの終わりのマーカー。 返される文字列には、末尾にキャリッジ リターンとライン フィードが含まれていません。 戻り値は`null`入力ストリームの末尾に達している場合。  
+  
+ メソッドがスローされた場合、<xref:System.OutOfMemoryException>例外、基になるリーダーの位置<xref:System.IO.Stream>文字を読み取るには、メソッドができましたが、内部に既に読み取られた文字の数によっては、高度な<xref:System.IO.TextReader.ReadLine%2A>バッファーは破棄されます。 既に読み取られた文字が回復することはできず、再初期化してのみアクセスできるストリーム内のリーダーの位置は変更できないため、<xref:System.IO.TextReader>オブジェクト。 ストリーム内の最初の位置が不明か、ストリームがシークを基になるをサポートしていない場合<xref:System.IO.Stream>も再初期化する必要があります。  
+  
+ このような状況を回避する必要がありますを使用する堅牢なコードを生成して、<xref:System.IO.TextReader.Read%2A>読み取りが事前に割り当てられたバッファーの文字メソッドとストアです。  
+  
+ <xref:System.IO.TextReader> クラスは抽象クラスです。 そのため、コードでそれをインスタンス化することはありません。 使用する例については、<xref:System.IO.TextReader.ReadLine%2A>メソッドを参照してください、<xref:System.IO.StreamReader.ReadLine%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+        <exception cref="T:System.OutOfMemoryException">返却された文字列にバッファーを割り当てるには、メモリが不足しています。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextReader" /> が閉じています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">次の行の文字数がより大きい<see cref="F:System.Int32.MaxValue" /></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadLineAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;string&gt; ReadLineAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;string&gt; ReadLineAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextReader.ReadLineAsync" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>1 行分の文字を非同期的に読み取り、そのデータを文字列として返します。</summary>
+        <returns>非同期の読み取り操作を表すタスク。 <paramref name="TResult" /> パラメーターの値には、テキスト リーダーの次の行が含まれます。または、すべての文字が読み取られた場合は <see langword="null" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.TextReader> クラスは抽象クラスです。 そのため、コードでそれをインスタンス化することはありません。 使用する例については、<xref:System.IO.TextReader.ReadLineAsync%2A>メソッドを参照してください、<xref:System.IO.StreamReader.ReadLineAsync%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 場合、現在<xref:System.IO.TextReader>によって返される標準入力ストリームを表す、<xref:System.Console.In%2A?displayProperty=nameWithType>プロパティ、<xref:System.IO.TextReader.ReadLineAsync%2A>メソッドの非同期的にではなく同期的に実行します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">次の行の文字数がよりも大きい<see cref="F:System.Int32.MaxValue" />です。</exception>
+        <exception cref="T:System.ObjectDisposedException">テキスト リーダーは破棄されました。</exception>
+        <exception cref="T:System.InvalidOperationException">リーダーは、前の読み取り操作によって現在使用されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadToEnd">
+      <MemberSignature Language="C#" Value="public virtual string ReadToEnd ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string ReadToEnd() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextReader.ReadToEnd" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テキスト リーダーの現在位置から末尾まですべての文字を読み取り、1 つの文字列として返します。</summary>
+        <returns>テキスト リーダーの現在位置から末尾までのすべての文字を含む文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドがスローされた場合、<xref:System.OutOfMemoryException>例外、基になるリーダーの位置<xref:System.IO.Stream>文字を読み取るには、メソッドができましたが、内部に既に読み取られた文字の数によっては、高度な<xref:System.IO.TextReader.ReadToEnd%2A>バッファーは破棄されます。 既に読み取られた文字が回復することはできず、再初期化してのみアクセスできるストリーム内のリーダーの位置は変更できないため、<xref:System.IO.TextReader>です。 ストリーム内の最初の位置が不明か、ストリームがシークを基になるをサポートしていない場合<xref:System.IO.Stream>も再初期化する必要があります。  
+  
+ このような状況を回避する必要がありますを使用する堅牢なコードを生成して、<xref:System.IO.TextReader.Read%2A>読み取りが事前に割り当てられたバッファーの文字メソッドとストアです。  
+  
+ <xref:System.IO.TextReader> クラスは抽象クラスです。 そのため、コードでそれをインスタンス化することはありません。 使用する例については、<xref:System.IO.TextReader.ReadToEnd%2A>メソッドを参照してください、<xref:System.IO.StreamReader.ReadToEnd%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextReader" /> が閉じています。</exception>
+        <exception cref="T:System.OutOfMemoryException">返却された文字列にバッファーを割り当てるには、メモリが不足しています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">次の行の文字数がより大きい<see cref="F:System.Int32.MaxValue" /></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadToEndAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;string&gt; ReadToEndAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;string&gt; ReadToEndAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextReader.ReadToEndAsync" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.CompilerServices.AsyncStateMachine(typeof(System.IO.TextReader/&lt;ReadToEndAsync&gt;c__async0))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テキスト リーダーの現在位置から末尾まですべての文字を非同期的に読み取り、1 つの文字列として返します。</summary>
+        <returns>非同期の読み取り操作を表すタスク。 <paramref name="TResult" /> パラメーターの値には、現在位置からテキスト リーダーの末尾までの文字から成る文字列が含まれます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.TextReader> クラスは抽象クラスです。 そのため、コードでそれをインスタンス化することはありません。 使用する例については、<xref:System.IO.TextReader.ReadToEndAsync%2A>メソッドを参照してください、<xref:System.IO.StreamReader.ReadToEndAsync%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">文字の数がよりも大きい<see cref="F:System.Int32.MaxValue" />です。</exception>
+        <exception cref="T:System.ObjectDisposedException">テキスト リーダーは破棄されました。</exception>
+        <exception cref="T:System.InvalidOperationException">リーダーは、前の読み取り操作によって現在使用されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Synchronized">
+      <MemberSignature Language="C#" Value="public static System.IO.TextReader Synchronized (System.IO.TextReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.TextReader Synchronized(class System.IO.TextReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextReader.Synchronized(System.IO.TextReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.TextReader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.IO.TextReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">同期する <see langword="TextReader" />。</param>
+        <summary>指定した <see langword="TextReader" /> をラップするスレッド セーフ ラッパーを作成します。</summary>
+        <returns>スレッド セーフな <see cref="T:System.IO.TextReader" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のメソッドは、指定の周りをラップするクラスを返します<xref:System.IO.TextReader>インスタンスし、複数のスレッドによってそのへのアクセスを制限します。 返されるラッパーからのすべての読み取りは、スレッド セーフになります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

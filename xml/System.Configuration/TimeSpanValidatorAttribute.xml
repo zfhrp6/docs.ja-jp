@@ -1,0 +1,363 @@
+<Type Name="TimeSpanValidatorAttribute" FullName="System.Configuration.TimeSpanValidatorAttribute">
+  <TypeSignature Language="C#" Value="public sealed class TimeSpanValidatorAttribute : System.Configuration.ConfigurationValidatorAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TimeSpanValidatorAttribute extends System.Configuration.ConfigurationValidatorAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.TimeSpanValidatorAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationValidatorAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>宣言によって構成プロパティの時間検証の実行に .NET Framework に指示します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、<xref:System.Configuration.TimeSpanValidatorAttribute>構成プロパティを装飾する属性。 これは、.NET Framework を使用してプロパティを検証するように指示する、<xref:System.Configuration.TimeSpanValidator>クラスし、の装飾のパラメーターの値を渡します。  
+  
+ 適用できる<xref:System.Configuration.TimeSpanValidatorAttribute>オブジェクト プロパティの型のみです。  
+  
+   
+  
+## Examples  
+ 次の例は、カスタムのプロパティを装飾する方法を示します<xref:System.Configuration.ConfigurationSection>オブジェクトを使用して、<xref:System.Configuration.TimeSpanValidatorAttribute>属性。  
+  
+ [!code-csharp[System.Configuration.ConfigurationValidatorAttributes#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/CS/ConfigurationValidatorAttributes.cs#8)]
+ [!code-vb[System.Configuration.ConfigurationValidatorAttributes#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/VB/ConfigurationValidatorAttributes.vb#8)]  
+  
+ 次の例は、前のサンプルで使用されるカスタム セクションを含む構成ファイルの抜粋です。  
+  
+```  
+<configuration xmlns="http://schemas.microsoft.com/.NetConfiguration/v2.0">  
+  <configSections>  
+    <section name="custom" type="Microsoft.Samples.AspNet.Configuration.SampleSection, ConfigurationValidatorAttribute" />  
+  </configSections>  
+  <custom fileName="NewFile.txt" maxSize="1000" maxAttempts="101" maxUsers="2500" maxIdleTime="00:15:00" />  
+</configuration>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TimeSpanValidatorAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.TimeSpanValidatorAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Configuration.TimeSpanValidatorAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 属性付きのモデルでこのコンス トラクターを使用して関連するプロパティに割り当てられている値の型があることを確認する、<xref:System.TimeSpan>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:System.Configuration.StringValidatorAttribute.%23ctor%2A> コンストラクターを使用する方法を示しています。  
+  
+ [!code-csharp[System.Configuration.ConfigurationValidatorAttributes#12](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/CS/ConfigurationValidatorAttributes.cs#12)]
+ [!code-vb[System.Configuration.ConfigurationValidatorAttributes#12](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/VB/ConfigurationValidatorAttributes.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExcludeRange">
+      <MemberSignature Language="C#" Value="public bool ExcludeRange { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ExcludeRange" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.TimeSpanValidatorAttribute.ExcludeRange" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を含めるかによって定義された範囲の整数を除外するかどうかを示す値<see cref="P:System.Configuration.TimeSpanValidatorAttribute.MinValueString" />と<see cref="P:System.Configuration.TimeSpanValidatorAttribute.MaxValueString" />です。</summary>
+        <value>
+          <see langword="true" />場合は、値を除外する必要があります。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 範囲が含まれますが、<xref:System.Configuration.TimeSpanValidatorAttribute.MinValueString%2A>と<xref:System.Configuration.TimeSpanValidatorAttribute.MaxValueString%2A>プロパティです。 ときに、<xref:System.Configuration.TimeSpanValidatorAttribute.ExcludeRange%2A>プロパティは`false`、許可されている値は、範囲外です。  
+  
+   
+  
+## Examples  
+ <xref:System.Configuration.TimeSpanValidatorAttribute.ExcludeRange%2A> プロパティを使用する方法を次の例に示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationValidatorAttributes#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/CS/ConfigurationValidatorAttributes.cs#8)]
+ [!code-vb[System.Configuration.ConfigurationValidatorAttributes#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/VB/ConfigurationValidatorAttributes.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxValue">
+      <MemberSignature Language="C#" Value="public TimeSpan MaxValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan MaxValue" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.TimeSpanValidatorAttribute.MaxValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最大の絶対パスを取得<see cref="T:System.TimeSpan" />値。</summary>
+        <value>許可される最大<see cref="T:System.TimeSpan" />値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、.NET Framework で許容されている絶対最大値です。 その値がによって定義された、<xref:System.TimeSpan.MaxValue>フィールドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxValueString">
+      <MemberSignature Language="C#" Value="public string MaxValueString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MaxValueString" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.TimeSpanValidatorAttribute.MaxValueString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>相対最大値の設定を取得または<see cref="T:System.TimeSpan" />値。</summary>
+        <value>許可される最大<see cref="T:System.TimeSpan" />値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、ユーザーによって設定された最大の相対値です。  
+  
+   
+  
+## Examples  
+ <xref:System.Configuration.TimeSpanValidatorAttribute.MaxValueString%2A> プロパティを使用する方法を次の例に示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationValidatorAttributes#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/CS/ConfigurationValidatorAttributes.cs#8)]
+ [!code-vb[System.Configuration.ConfigurationValidatorAttributes#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/VB/ConfigurationValidatorAttributes.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">選択した値を表すより小さい<see cref="P:System.Configuration.TimeSpanValidatorAttribute.MinValue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MinValue">
+      <MemberSignature Language="C#" Value="public TimeSpan MinValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan MinValue" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.TimeSpanValidatorAttribute.MinValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>絶対最小値を取得<see cref="T:System.TimeSpan" />値。</summary>
+        <value>最小許容値<see cref="T:System.TimeSpan" />値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、.NET Framework で許容されている絶対最小値です。 その値がによって定義された、<xref:System.TimeSpan.MinValue>フィールドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinValueString">
+      <MemberSignature Language="C#" Value="public string MinValueString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MinValueString" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.TimeSpanValidatorAttribute.MinValueString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の最小の相対<see cref="T:System.TimeSpan" />値。</summary>
+        <value>許容される最小<see cref="T:System.TimeSpan" />値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、ユーザーによって設定された最小の相対値です。  
+  
+   
+  
+## Examples  
+ <xref:System.Configuration.TimeSpanValidatorAttribute.MinValueString%2A> プロパティを使用する方法を次の例に示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationValidatorAttributes#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/CS/ConfigurationValidatorAttributes.cs#8)]
+ [!code-vb[System.Configuration.ConfigurationValidatorAttributes#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/VB/ConfigurationValidatorAttributes.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">選択した値を表す複数の<see cref="P:System.Configuration.TimeSpanValidatorAttribute.MaxValue" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TimeSpanMaxValue">
+      <MemberSignature Language="C#" Value="public const string TimeSpanMaxValue;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string TimeSpanMaxValue" />
+      <MemberSignature Language="DocId" Value="F:System.Configuration.TimeSpanValidatorAttribute.TimeSpanMaxValue" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>絶対最大値を取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 時間間隔の最大許容値を含む文字列です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Configuration.TimeSpanValidatorAttribute.TimeSpanMaxValue>フィールドです。  
+  
+ [!code-csharp[System.Configuration.ConfigurationValidatorAttributes#10](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/CS/ConfigurationValidatorAttributes.cs#10)]
+ [!code-vb[System.Configuration.ConfigurationValidatorAttributes#10](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/VB/ConfigurationValidatorAttributes.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TimeSpanMinValue">
+      <MemberSignature Language="C#" Value="public const string TimeSpanMinValue;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string TimeSpanMinValue" />
+      <MemberSignature Language="DocId" Value="F:System.Configuration.TimeSpanValidatorAttribute.TimeSpanMinValue" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>許容される絶対最小値を取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 時間間隔の最小値を含む文字列です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Configuration.TimeSpanValidatorAttribute.TimeSpanMinValue>フィールドです。  
+  
+ [!code-csharp[System.Configuration.ConfigurationValidatorAttributes#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/CS/ConfigurationValidatorAttributes.cs#11)]
+ [!code-vb[System.Configuration.ConfigurationValidatorAttributes#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/VB/ConfigurationValidatorAttributes.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidatorInstance">
+      <MemberSignature Language="C#" Value="public override System.Configuration.ConfigurationValidatorBase ValidatorInstance { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationValidatorBase ValidatorInstance" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.TimeSpanValidatorAttribute.ValidatorInstance" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationValidatorBase</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスを取得、<see cref="T:System.Configuration.TimeSpanValidator" />クラスです。</summary>
+        <value><see cref="T:System.Configuration.ConfigurationValidatorBase" />バリデーターのインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、<xref:System.Configuration.TimeSpanValidatorAttribute.ValidatorInstance%2A>プロパティを呼び出すことによって文字列の検証を実行するその<xref:System.Configuration.TimeSpanValidator.Validate%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

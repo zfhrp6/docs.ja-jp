@@ -1,0 +1,84 @@
+<Type Name="DynamicEnumProperty" FullName="Microsoft.Build.Framework.XamlTypes.DynamicEnumProperty">
+  <TypeSignature Language="C#" Value="public sealed class DynamicEnumProperty : Microsoft.Build.Framework.XamlTypes.BaseProperty" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DynamicEnumProperty extends Microsoft.Build.Framework.XamlTypes.BaseProperty" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Framework.XamlTypes.DynamicEnumProperty" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Build.Framework.XamlTypes.BaseProperty</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>列挙プロパティのスキーマを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは継承、<xref:Microsoft.Build.Framework.XamlTypes.BaseProperty.Default%2A>プロパティから、<xref:Microsoft.Build.Framework.XamlTypes.BaseProperty>クラスで、このクラスの意味を持ちません。 使用して、<xref:Microsoft.Build.Framework.XamlTypes.EnumValue.IsDefault%2A>プロパティを<xref:Microsoft.Build.Framework.XamlTypes.EnumValue>代わりにこのプロパティの既定値をマークします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DynamicEnumProperty ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Framework.XamlTypes.DynamicEnumProperty.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>動的な列挙型プロパティの既定のコンス トラクターです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnumProvider">
+      <MemberSignature Language="C#" Value="public string EnumProvider { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EnumProvider" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.XamlTypes.DynamicEnumProperty.EnumProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのプロパティの使用可能な値のリストを生成するプロバイダーを設定します。</summary>
+        <value>プロバイダーを返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、逆シリアル化中に設定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderSettings">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.List&lt;Microsoft.Build.Framework.XamlTypes.NameValuePair&gt; ProviderSettings { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.List`1&lt;class Microsoft.Build.Framework.XamlTypes.NameValuePair&gt; ProviderSettings" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.XamlTypes.DynamicEnumProperty.ProviderSettings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.List&lt;Microsoft.Build.Framework.XamlTypes.NameValuePair&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロバイダーに渡すオプションのプロバイダー固有のセットを設定します。</summary>
+        <value>オプションのセットを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,159 @@
+<Type Name="CardSpacePolicyElement" FullName="System.IdentityModel.Selectors.CardSpacePolicyElement">
+  <TypeSignature Language="C#" Value="public class CardSpacePolicyElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CardSpacePolicyElement extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Selectors.CardSpacePolicyElement" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel.Selectors</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>このクラスは、インフラストラクチャで使用するためのクラスです。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CardSpacePolicyElement (System.Xml.XmlElement target, System.Xml.XmlElement issuer, System.Collections.ObjectModel.Collection&lt;System.Xml.XmlElement&gt; parameters, Uri policyNoticeLink, int policyNoticeVersion, bool isManagedIssuer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlElement target, class System.Xml.XmlElement issuer, class System.Collections.ObjectModel.Collection`1&lt;class System.Xml.XmlElement&gt; parameters, class System.Uri policyNoticeLink, int32 policyNoticeVersion, bool isManagedIssuer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.CardSpacePolicyElement.#ctor(System.Xml.XmlElement,System.Xml.XmlElement,System.Collections.ObjectModel.Collection{System.Xml.XmlElement},System.Uri,System.Int32,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Selectors</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="target" Type="System.Xml.XmlElement" />
+        <Parameter Name="issuer" Type="System.Xml.XmlElement" />
+        <Parameter Name="parameters" Type="System.Collections.ObjectModel.Collection&lt;System.Xml.XmlElement&gt;" />
+        <Parameter Name="privacyNoticeLink" Type="System.Uri" />
+        <Parameter Name="privacyNoticeVersion" Type="System.Int32" />
+        <Parameter Name="isManagedIssuer" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="target">このポリシーのターゲットを表す <see cref="T:System.Xml.XmlElement" />。  
+  
+ <see cref="P:System.IdentityModel.Selectors.CardSpacePolicyElement.Target" /> プロパティを設定します。</param>
+        <param name="issuer">ポリシー発行者を表す <see cref="T:System.Xml.XmlElement" />。 <see cref="P:System.IdentityModel.Selectors.CardSpacePolicyElement.Issuer" /> プロパティを設定します。</param>
+        <param name="parameters">この要素のパラメーターを表す <see cref="T:System.Collections.ObjectModel.Collection`1" /> 型の <see cref="T:System.Xml.XmlElement" />。 <see cref="P:System.IdentityModel.Selectors.CardSpacePolicyElement.Parameters" /> プロパティを設定します。</param>
+        <param name="policyNoticeLink">To be added.</param>
+        <param name="policyNoticeVersion">To be added.</param>
+        <param name="isManagedIssuer">
+          発行者がマネージされている場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 <see cref="P:System.IdentityModel.Selectors.CardSpacePolicyElement.IsManagedIssuer" /> プロパティを設定します。</param>
+        <summary>ポリシーのターゲットおよび発行者、ポリシー パラメーター、プライバシーに関する声明の場所、プライバシーに関する声明のバージョンを指定して、<see cref="T:System.IdentityModel.Selectors.CardSpacePolicyElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsManagedIssuer">
+      <MemberSignature Language="C#" Value="public bool IsManagedIssuer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsManagedIssuer" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Selectors.CardSpacePolicyElement.IsManagedIssuer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Selectors</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ポリシーの発行者がマネージ発行者かどうかを示す値を取得または設定します。</summary>
+        <value>
+          発行者がマネージされている場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Issuer">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlElement Issuer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlElement Issuer" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Selectors.CardSpacePolicyElement.Issuer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Selectors</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ポリシー発行者を取得または設定します。</summary>
+        <value>ポリシー発行者を表す <see cref="T:System.Xml.XmlElement" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parameters">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.Xml.XmlElement&gt; Parameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.Xml.XmlElement&gt; Parameters" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Selectors.CardSpacePolicyElement.Parameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Selectors</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.Xml.XmlElement&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素のパラメーターを表す XML 要素のコレクションを取得します。</summary>
+        <value>この要素のパラメーターを表す <see cref="T:System.Collections.ObjectModel.Collection`1" /> 型の <see cref="T:System.Xml.XmlElement" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PolicyNoticeLink">
+      <MemberSignature Language="C#" Value="public Uri PolicyNoticeLink { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri PolicyNoticeLink" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Selectors.CardSpacePolicyElement.PolicyNoticeLink" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Selectors</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このポリシーのプライバシー情報の URI を取得または設定します。</summary>
+        <value>プライバシー ポリシーが存在する場所を示す <see cref="T:System.Uri" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PolicyNoticeVersion">
+      <MemberSignature Language="C#" Value="public int PolicyNoticeVersion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PolicyNoticeVersion" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Selectors.CardSpacePolicyElement.PolicyNoticeVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Selectors</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プライバシー情報のバージョンを取得または設定します。</summary>
+        <value>プライバシー情報のバージョン。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Target">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlElement Target { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlElement Target" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Selectors.CardSpacePolicyElement.Target" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Selectors</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このポリシーのターゲットを取得または設定します。</summary>
+        <value>このポリシーのターゲットを表す <see cref="T:System.Xml.XmlElement" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

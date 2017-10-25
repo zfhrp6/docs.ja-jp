@@ -1,0 +1,239 @@
+<Type Name="SymmetricSecurityKey" FullName="System.IdentityModel.Tokens.SymmetricSecurityKey">
+  <TypeSignature Language="C#" Value="public abstract class SymmetricSecurityKey : System.IdentityModel.Tokens.SecurityKey" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit SymmetricSecurityKey extends System.IdentityModel.Tokens.SecurityKey" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.SymmetricSecurityKey" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Tokens.SecurityKey</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>対称アルゴリズムを使用して生成されるすべてのキーの抽象クラスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、このクラスは、対称キーを使用して XML を変換するインフラストラクチャで使用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected SymmetricSecurityKey ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SymmetricSecurityKey.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Tokens.SymmetricSecurityKey" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateDerivedKey">
+      <MemberSignature Language="C#" Value="public abstract byte[] GenerateDerivedKey (string algorithm, byte[] label, byte[] nonce, int derivedKeyLength, int offset);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance unsigned int8[] GenerateDerivedKey(string algorithm, unsigned int8[] label, unsigned int8[] nonce, int32 derivedKeyLength, int32 offset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SymmetricSecurityKey.GenerateDerivedKey(System.String,System.Byte[],System.Byte[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="algorithm" Type="System.String" />
+        <Parameter Name="label" Type="System.Byte[]" />
+        <Parameter Name="nonce" Type="System.Byte[]" />
+        <Parameter Name="derivedKeyLength" Type="System.Int32" />
+        <Parameter Name="offset" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="algorithm">派生キーの生成に使用する暗号アルゴリズムを表す URI。</param>
+        <param name="label">暗号アルゴリズムのラベル パラメーターを格納する <see cref="T:System.Byte" /> の配列。</param>
+        <param name="nonce">派生キーの作成に使用される nonce を格納する <see cref="T:System.Byte" /> の配列。</param>
+        <param name="derivedKeyLength">派生キーのサイズ。</param>
+        <param name="offset">このメソッドから返されるバイト配列内の派生キーの位置。</param>
+        <summary>派生クラスでオーバーライドされた場合は、指定された暗号アルゴリズムとパラメーターを使用して、現在のキーの派生キーを生成します。</summary>
+        <returns>派生キーを格納する <see cref="T:System.Byte" /> の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ P-SHA1 を暗号アルゴリズムとして指定するには、<xref:System.IdentityModel.Tokens.SecurityAlgorithms.Psha1KeyDerivation> フィールドを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDecryptionTransform">
+      <MemberSignature Language="C#" Value="public abstract System.Security.Cryptography.ICryptoTransform GetDecryptionTransform (string algorithm, byte[] iv);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.Cryptography.ICryptoTransform GetDecryptionTransform(string algorithm, unsigned int8[] iv) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SymmetricSecurityKey.GetDecryptionTransform(System.String,System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.ICryptoTransform</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="algorithm" Type="System.String" />
+        <Parameter Name="iv" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="algorithm">暗号テキスト (暗号化された XML など) を解読する暗号アルゴリズム。</param>
+        <param name="iv">指定したアルゴリズムの初期化ベクトル (<see cref="T:System.Byte" />) を格納する <see langword="IV" /> の配列。</param>
+        <summary>派生クラスでオーバーライドされた場合は、指定した暗号アルゴリズムを使用して暗号テキストを復号化する変換を取得します。</summary>
+        <returns>復号化変換を表す <see cref="T:System.Security.Cryptography.ICryptoTransform" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SecurityAlgorithms> クラス内の復号化アルゴリズムを表すフィールドを使用して、アルゴリズムを指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEncryptionTransform">
+      <MemberSignature Language="C#" Value="public abstract System.Security.Cryptography.ICryptoTransform GetEncryptionTransform (string algorithm, byte[] iv);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.Cryptography.ICryptoTransform GetEncryptionTransform(string algorithm, unsigned int8[] iv) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SymmetricSecurityKey.GetEncryptionTransform(System.String,System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.ICryptoTransform</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="algorithm" Type="System.String" />
+        <Parameter Name="iv" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="algorithm">XML を暗号化する暗号アルゴリズム。</param>
+        <param name="iv">指定したアルゴリズムの初期化ベクトル (<see cref="T:System.Byte" />) を格納する <see langword="IV" /> の配列。</param>
+        <summary>派生クラスでオーバーライドされた場合は、指定した暗号アルゴリズムを使用して XML を暗号化する変換を取得します。</summary>
+        <returns>暗号化変換を表す <see cref="T:System.Security.Cryptography.ICryptoTransform" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SecurityAlgorithms> クラス内の復号化アルゴリズムを表すフィールドを使用して、アルゴリズムを指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIVSize">
+      <MemberSignature Language="C#" Value="public abstract int GetIVSize (string algorithm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 GetIVSize(string algorithm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SymmetricSecurityKey.GetIVSize(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="algorithm" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="algorithm">初期化ベクトル (<see langword="IV" />) のサイズを取得する暗号アルゴリズム。</param>
+        <summary>派生クラスでオーバーライドされた場合は、指定した暗号アルゴリズムに必要な初期化ベクトル (<see langword="IV" />) のサイズ (ビット数) を取得します。</summary>
+        <returns><see langword="IV" /> パラメーターで指定した暗号アルゴリズムに必要な初期化ベクトル (<paramref name="algorithm" />) のサイズ (ビット数)。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetKeyedHashAlgorithm">
+      <MemberSignature Language="C#" Value="public abstract System.Security.Cryptography.KeyedHashAlgorithm GetKeyedHashAlgorithm (string algorithm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.Cryptography.KeyedHashAlgorithm GetKeyedHashAlgorithm(string algorithm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SymmetricSecurityKey.GetKeyedHashAlgorithm(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.KeyedHashAlgorithm</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="algorithm" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="algorithm">インスタンスを取得するためのキー付きハッシュ アルゴリズム。</param>
+        <summary>派生クラスでオーバーライドされた場合は、指定したキー ハッシュ アルゴリズムのインスタンスを取得します。</summary>
+        <returns>キー付きハッシュ アルゴリズムを表す <see cref="T:System.Security.Cryptography.KeyedHashAlgorithm" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SecurityAlgorithms> クラス内のキー付きハッシュ アルゴリズムを表すフィールドを使用して、アルゴリズムを指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSymmetricAlgorithm">
+      <MemberSignature Language="C#" Value="public abstract System.Security.Cryptography.SymmetricAlgorithm GetSymmetricAlgorithm (string algorithm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.Cryptography.SymmetricAlgorithm GetSymmetricAlgorithm(string algorithm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SymmetricSecurityKey.GetSymmetricAlgorithm(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.SymmetricAlgorithm</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="algorithm" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="algorithm">インスタンスを取得するための対称アルゴリズム。</param>
+        <summary>派生クラスでオーバーライドされた場合は、指定した対称アルゴリズムのインスタンスを取得します。</summary>
+        <returns>対称アルゴリズムを表す <see cref="T:System.Security.Cryptography.SymmetricAlgorithm" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SecurityAlgorithms> クラス内の対称アルゴリズムを表すフィールドを使用して、アルゴリズムを指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSymmetricKey">
+      <MemberSignature Language="C#" Value="public abstract byte[] GetSymmetricKey ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance unsigned int8[] GetSymmetricKey() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SymmetricSecurityKey.GetSymmetricKey" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合は、対称キーを表すバイトを取得します。</summary>
+        <returns>対称キーを格納する <see cref="T:System.Byte" /> の配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

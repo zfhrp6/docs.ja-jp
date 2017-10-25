@@ -1,0 +1,380 @@
+<Type Name="DateTimeStyles" FullName="System.Globalization.DateTimeStyles">
+  <TypeSignature Language="C#" Value="public enum DateTimeStyles" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed DateTimeStyles extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Globalization.DateTimeStyles" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>日時解析メソッドに関して、文字列解析をカスタマイズする形式指定オプションを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.DateTimeStyles>値は、次の日付と時刻の解析を含むメソッドのいずれかで使用できます、`styles`パラメーターを解析する文字列内に存在可能なスタイル要素の解釈を定義します。  
+  
+-   <xref:System.DateTime.Parse%2A?displayProperty=nameWithType>  
+  
+-   <xref:System.DateTimeOffset.Parse%2A?displayProperty=nameWithType>  
+  
+-   <xref:System.DateTime.TryParse%2A?displayProperty=nameWithType>  
+  
+-   <xref:System.DateTimeOffset.TryParse%2A?displayProperty=nameWithType>  
+  
+-   <xref:System.DateTime.ParseExact%2A?displayProperty=nameWithType>  
+  
+-   <xref:System.DateTimeOffset.ParseExact%2A?displayProperty=nameWithType>  
+  
+-   <xref:System.DateTime.TryParseExact%2A?displayProperty=nameWithType>  
+  
+-   <xref:System.DateTimeOffset.TryParseExact%2A?displayProperty=nameWithType>  
+  
+ `ParseExact`と`TryParseExact`メソッドは、任意を使用して、<xref:System.Globalization.DateTimeStyles>値。 ただし、none の場合、`Allow*`値が選択されている場合、入力文字列の書式指定文字列とまったく同じ空白文字が必要です。  
+  
+ 入力文字列にタイム ゾーンの兆候が含まれていない場合、日時解析メソッドには、オペレーティング システムのタイム ゾーン設定に基づき、日付と時刻の文字列の値が解釈されます。 変換する日付と時刻、世界協定時またはグリニッジ標準時 (GMT) 場合、アプリケーションは AdjustToUniversal 値を使用する必要があります。 同じ効果を呼び出すことで実現できる、<xref:System.DateTime.ToUniversalTime%2A?displayProperty=nameWithType>または<xref:System.DateTimeOffset.ToUniversalTime%2A?displayProperty=nameWithType>メソッドです。 ただし、AdjustToUniversal 値を使用して、日時解析メソッドより効率的です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AdjustToUniversal">
+      <MemberSignature Language="C#" Value="AdjustToUniversal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.DateTimeStyles AdjustToUniversal = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.DateTimeStyles.AdjustToUniversal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.DateTimeStyles</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>日付と時刻は世界協定時刻 (UTC) として返されます。 入力文字列がタイムゾーン指定子または <see cref="F:System.Globalization.DateTimeStyles.AssumeLocal" /> で現地時刻を示す場合、日付と時刻は現地時刻から UTC に変換されます。 入力文字列がタイムゾーン指定子または <see cref="F:System.Globalization.DateTimeStyles.AssumeUniversal" /> で UTC 時刻を示す場合、変換は発生しません。 入力文字列がローカル時刻または UTC 時刻を示さない場合、変換は発生せず、結果として生成される <see cref="P:System.DateTime.Kind" /> プロパティは <see cref="F:System.DateTimeKind.Unspecified" /> になります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は、RoundtripKind で使用することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowInnerWhite">
+      <MemberSignature Language="C#" Value="AllowInnerWhite" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.DateTimeStyles AllowInnerWhite = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.DateTimeStyles.AllowInnerWhite" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.DateTimeStyles</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文字列内の真ん中にある追加の空白文字は、それが <see cref="T:System.Globalization.DateTimeFormatInfo" /> 形式パターンに現れる場合を除き、解析時に無視する必要があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowLeadingWhite">
+      <MemberSignature Language="C#" Value="AllowLeadingWhite" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.DateTimeStyles AllowLeadingWhite = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.DateTimeStyles.AllowLeadingWhite" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.DateTimeStyles</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>先頭の空白文字は、それが <see cref="T:System.Globalization.DateTimeFormatInfo" /> 形式パターンに現れる場合を除き、解析時に無視する必要があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowTrailingWhite">
+      <MemberSignature Language="C#" Value="AllowTrailingWhite" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.DateTimeStyles AllowTrailingWhite = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.DateTimeStyles.AllowTrailingWhite" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.DateTimeStyles</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>末尾の空白文字は、それが <see cref="T:System.Globalization.DateTimeFormatInfo" /> 形式パターンに現れる場合を除き、解析時に無視する必要があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowWhiteSpaces">
+      <MemberSignature Language="C#" Value="AllowWhiteSpaces" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.DateTimeStyles AllowWhiteSpaces = int32(7)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.DateTimeStyles.AllowWhiteSpaces" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.DateTimeStyles</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>どこでも文字列内にある追加の空白文字は、それが <see cref="T:System.Globalization.DateTimeFormatInfo" /> 形式パターンに現れる場合を除き、解析時に無視する必要があります。 この値は、<see cref="F:System.Globalization.DateTimeStyles.AllowLeadingWhite" />、<see cref="F:System.Globalization.DateTimeStyles.AllowTrailingWhite" />、および <see cref="F:System.Globalization.DateTimeStyles.AllowInnerWhite" /> 値の組み合わせです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AssumeLocal">
+      <MemberSignature Language="C#" Value="AssumeLocal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.DateTimeStyles AssumeLocal = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.DateTimeStyles.AssumeLocal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.DateTimeStyles</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>解析された文字列でタイム ゾーンが指定されていない場合、その文字列は現地時間を示すものと見なされます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は、AssumeUniversal または RoundtripKind で使用することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AssumeUniversal">
+      <MemberSignature Language="C#" Value="AssumeUniversal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.DateTimeStyles AssumeUniversal = int32(64)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.DateTimeStyles.AssumeUniversal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.DateTimeStyles</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>解析された文字列でタイム ゾーンが指定されていない場合、その文字列は UTC を示すものと見なされます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は、AssumeLocal または RoundtripKind で使用することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NoCurrentDateDefault">
+      <MemberSignature Language="C#" Value="NoCurrentDateDefault" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.DateTimeStyles NoCurrentDateDefault = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.DateTimeStyles.NoCurrentDateDefault" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.DateTimeStyles</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>解析された文字列に時刻のみが含まれ、日付が含まれていない場合、解析メソッドは、年  = 1、月 = 1、および日 = 1 のグレゴリオ暦を想定します。 この値が使用されない場合、現在の日付が使用されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.DateTimeStyles None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.DateTimeStyles.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.DateTimeStyles</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定の書式設定オプションを使用する必要があります。 この値は、<see cref="M:System.DateTime.Parse(System.String)" />、<see cref="M:System.DateTime.ParseExact(System.String,System.String,System.IFormatProvider)" />、および <see cref="M:System.DateTime.TryParse(System.String,System.DateTime@)" /> メソッドの既定のスタイルを表します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RoundtripKind">
+      <MemberSignature Language="C#" Value="RoundtripKind" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.DateTimeStyles RoundtripKind = int32(128)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.DateTimeStyles.RoundtripKind" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.DateTimeStyles</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>"o" または "r" 標準形式指定子を使用して <see cref="T:System.DateTime" /> オブジェクトが文字列に変換されるとき、日付の <see cref="T:System.DateTimeKind" /> フィールドは保持され、その文字列は再び <see cref="T:System.DateTime" /> オブジェクトに変換されます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

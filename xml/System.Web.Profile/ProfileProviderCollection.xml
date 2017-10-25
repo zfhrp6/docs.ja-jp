@@ -1,0 +1,119 @@
+<Type Name="ProfileProviderCollection" FullName="System.Web.Profile.ProfileProviderCollection">
+  <TypeSignature Language="C#" Value="public sealed class ProfileProviderCollection : System.Configuration.SettingsProviderCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ProfileProviderCollection extends System.Configuration.SettingsProviderCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Profile.ProfileProviderCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.SettingsProviderCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>継承するオブジェクトのコレクション、<see cref="T:System.Web.Profile.ProfileProvider" />抽象クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り専用で、アプリケーションのプロファイル プロバイダーが公開されている<xref:System.Web.Profile.ProfileProviderCollection>を通じて、<xref:System.Web.Profile.ProfileManager.Providers%2A>のプロパティ、<xref:System.Web.Profile.ProfileManager>クラスです。 名前で、コレクション内の特定のプロファイル プロバイダーにアクセスしてなど、特定のプロバイダーの型としてキャスト<xref:System.Web.Profile.SqlProfileProvider>です。 これにより、単一のアプリケーションで複数のデータ ストアからユーザー プロファイル プロパティを管理することができます。 特定のプロファイル プロバイダーのメンバーのメンバーではないにアクセスすることもできます、<xref:System.Web.Profile.ProfileProvider>抽象クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、アプリケーションとそれらの種類に対して有効なプロバイダーが一覧表示します。  
+  
+ [!code-aspx-csharp[System.Web.Profile.ProfileManager#9](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/CS/Providerscs.aspx#9)]
+ [!code-aspx-vb[System.Web.Profile.ProfileManager#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/VB/Providersvb.aspx#9)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProfileProviderCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileProviderCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しい空のプロファイル プロバイダーのコレクションを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、コードから使用するものではありません。 読み取り専用で、アプリケーションのプロファイル プロバイダーが公開されている<xref:System.Web.Profile.ProfileProviderCollection>を通じて、<xref:System.Web.Profile.ProfileManager.Providers%2A>のプロパティ、<xref:System.Web.Profile.ProfileManager>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public override void Add (System.Configuration.Provider.ProviderBase provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Add(class System.Configuration.Provider.ProviderBase provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileProviderCollection.Add(System.Configuration.Provider.ProviderBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.Configuration.Provider.ProviderBase" />
+      </Parameters>
+      <Docs>
+        <param name="provider">コレクションに追加するプロファイル プロバイダー。</param>
+        <summary>プロファイル プロバイダーをコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コードから使用するものではありません。  
+  
+ プロファイル プロバイダーのインスタンスに追加、`ProfileProviderCollection`を使用して、アプリケーションの[プロバイダー要素 (ASP.NET 設定スキーマ) のプロファイルの](http://msdn.microsoft.com/en-us/9e998377-b07f-44c1-ad9b-20a60e83c18f)構成要素のセクションでします。 プロファイル プロバイダーを使って、コレクションにアクセスすることができます、<xref:System.Web.Profile.ProfileManager.Providers%2A>のプロパティ、<xref:System.Web.Profile.ProfileManager>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="provider" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="provider" />継承する型のではありません、<see cref="T:System.Web.Profile.ProfileProvider" />抽象クラスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.Profile.ProfileProvider this[string name] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Profile.ProfileProvider Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Profile.ProfileProviderCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Profile.ProfileProvider</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">プロファイル プロバイダーの名前。</param>
+        <summary>指定されたプロバイダー名によって参照されているプロファイル プロバイダーを返します。</summary>
+        <value>継承されるオブジェクト、<see cref="T:System.Web.Profile.ProfileProvider" />抽象クラスです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り専用で、アプリケーションのプロファイル プロバイダーが公開されている<xref:System.Web.Profile.ProfileProviderCollection>を通じて、<xref:System.Web.Profile.ProfileManager.Providers%2A>のプロパティ、<xref:System.Web.Profile.ProfileManager>クラスです。 名前で、コレクション内の特定のプロファイル プロバイダーにアクセスしてなど、特定のプロバイダーの型としてキャスト<xref:System.Web.Profile.SqlProfileProvider>です。 これにより、単一のアプリケーションで複数のデータ ストアからユーザー プロファイル プロパティを管理することができます。 特定のプロファイル プロバイダーのメンバーのメンバーではないにアクセスすることもできます、<xref:System.Web.Profile.ProfileProvider>抽象クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

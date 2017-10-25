@@ -1,0 +1,156 @@
+<Type Name="XmlSchemaAny" FullName="System.Xml.Schema.XmlSchemaAny">
+  <TypeSignature Language="C#" Value="public class XmlSchemaAny : System.Xml.Schema.XmlSchemaParticle" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlSchemaAny extends System.Xml.Schema.XmlSchemaParticle" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Schema.XmlSchemaAny" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Xml.Schema.XmlSchemaParticle</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>World Wide Web Consortium (W3C) を表す<see langword="any" />要素。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `any`要素により、すべての要素を指定した名前空間または名前空間を含むに表示される`complexType`要素。  
+  
+   
+  
+## Examples  
+ 次の例を作成、`any`要素。  
+  
+ [!code-cpp[Classic WebData XmlSchemaAny Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlSchemaAny Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlSchemaAny Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlSchemaAny Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlSchemaAny Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlSchemaAny Example/VB/source.vb#1)]  
+  
+ 上記のコード例については、次の XML ファイルが生成されます。  
+  
+ [!code-xml[Classic WebData XmlSchemaAny Example#2](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XmlSchemaAny Example/XML/source.xml#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlSchemaAny ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaAny.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.Schema.XmlSchemaAny" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public string Namespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Namespace" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Schema.XmlSchemaAny.Namespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("namespace")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または使用できる要素を含む名前空間を設定します。</summary>
+        <value>使用可能な要素の名前空間。 既定値は、<see langword="##any" /> です。  
+  
+ 省略可能です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前空間が指定されていない場合`##any`既定値です。 名前空間が指定されている場合があります、次の表に示すように値のいずれか。  
+  
+|Namespace 値|説明|  
+|---------------------|-----------------|  
+|`##any`|任意の名前空間の要素を使用できます。|  
+|`##other`|要素ではない任意の名前空間、`targetNamespace`を含む親要素の`any`要素が存在することができます。|  
+|`##local`|名前空間で修飾されていない要素を使用できます。|  
+|`##targetNamespace`|要素を`targetNamespace`を含む親要素の`any`要素が存在することができます。|  
+|`List of {URIs, ##targetNamespace, ##local}`|名前空間のスペースで区切られた一覧から要素が存在することができます。 一覧は、次を含めることができます。 名前空間の (Uniform Resource Identifier) 参照`##targetNamespace`、および`##local`です。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessContents">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchemaContentProcessing ProcessContents { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.Schema.XmlSchemaContentProcessing ProcessContents" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Schema.XmlSchemaAny.ProcessContents" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("processContents")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchemaContentProcessing</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションまたは XML プロセッサが指定された要素の XML ドキュメントの検証を処理する方法についての情報取得または設定、<see langword="any" />要素。</summary>
+        <value><see cref="T:System.Xml.Schema.XmlSchemaContentProcessing" /> 値のいずれか。 ない場合は<see langword="processContents" />属性を指定すると、既定値は<see langword="Strict" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

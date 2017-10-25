@@ -1,0 +1,2420 @@
+<Type Name="HttpApplication" FullName="System.Web.HttpApplication">
+  <TypeSignature Language="C#" Value="public class HttpApplication : IDisposable, System.ComponentModel.IComponent, System.Web.IHttpAsyncHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HttpApplication extends System.Object implements class System.ComponentModel.IComponent, class System.IDisposable, class System.Web.IHttpAsyncHandler, class System.Web.IHttpHandler" />
+  <TypeSignature Language="DocId" Value="T:System.Web.HttpApplication" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.IComponent</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.IHttpAsyncHandler</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ASP.NET アプリケーション内のすべてのアプリケーション オブジェクトに共通のメソッド、プロパティ、およびイベントを定義します。 このクラスはアプリケーションの基底クラスであり、ユーザーが Global.asax ファイルで定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンス、<xref:System.Web.HttpApplication>クラスは、ASP.NET のインフラストラクチャ内で直接ユーザーではなく作成します。 1 つのインスタンス、<xref:System.Web.HttpApplication>その有効期間で多くの要求を処理するクラスを使用します。 ただし、一度に 1 つの要求を処理できます。 したがって、メンバー変数は、要求ごとのデータの格納に使用できます。  
+  
+ アプリケーションを実装するカスタム モジュールによって処理できるイベントを発生させる、<xref:System.Web.IHttpModule>インターフェイスか、Global.asax で定義されているイベント ハンドラーのコード ファイルします。 実装するカスタムのモジュール、 <xref:System.Web.IHttpModule> App_Code フォルダー内、または Bin フォルダー内の DLL のインターフェイスを置くことができます。  
+  
+ <xref:System.Web.HttpApplication>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+> [!NOTE]
+>  IIS 7.0 を実行して、統合モードでは、Bin フォルダーまたは App_Code フォルダーにカスタムのモジュールは、要求パイプライン内のすべての要求に適用されます。 Global.asax ファイル内のイベント ハンドラーのコードは、ASP.NET ハンドラーにマップされている要求にのみ適用されます。  
+  
+ 次の順序では、アプリケーションのイベントが発生します。  
+  
+1.  <xref:System.Web.HttpApplication.BeginRequest>  
+  
+2.  <xref:System.Web.HttpApplication.AuthenticateRequest>  
+  
+3.  <xref:System.Web.HttpApplication.PostAuthenticateRequest>  
+  
+4.  <xref:System.Web.HttpApplication.AuthorizeRequest>  
+  
+5.  <xref:System.Web.HttpApplication.PostAuthorizeRequest>  
+  
+6.  <xref:System.Web.HttpApplication.ResolveRequestCache>  
+  
+7.  <xref:System.Web.HttpApplication.PostResolveRequestCache>  
+  
+     後に、<xref:System.Web.HttpApplication.PostResolveRequestCache>イベントとの前に、<xref:System.Web.HttpApplication.PostMapRequestHandler>イベント、イベント ハンドラー (これは、要求 URL に対応するページ) が作成されます。 ときに、サーバーが実行されている IIS 7.0 統合モードでの最低限の .NET Framework version 3.0 では、<xref:System.Web.HttpApplication.MapRequestHandler>イベントが発生します。 サーバーは、IIS 7.0 を実行中、クラシック モードまたは IIS の以前のバージョンでは、このイベントを処理することはできません。  
+  
+8.  <xref:System.Web.HttpApplication.PostMapRequestHandler>  
+  
+9. <xref:System.Web.HttpApplication.AcquireRequestState>  
+  
+10. <xref:System.Web.HttpApplication.PostAcquireRequestState>  
+  
+11. <xref:System.Web.HttpApplication.PreRequestHandlerExecute>  
+  
+     イベント ハンドラーが実行されます。  
+  
+12. <xref:System.Web.HttpApplication.PostRequestHandlerExecute>  
+  
+13. <xref:System.Web.HttpApplication.ReleaseRequestState>  
+  
+14. <xref:System.Web.HttpApplication.PostReleaseRequestState>  
+  
+     後に、<xref:System.Web.HttpApplication.PostReleaseRequestState>イベントは、既存の応答フィルターは、出力をフィルター処理されます。  
+  
+15. <xref:System.Web.HttpApplication.UpdateRequestCache>  
+  
+16. <xref:System.Web.HttpApplication.PostUpdateRequestCache>  
+  
+17. <xref:System.Web.HttpApplication.LogRequest>。  
+  
+     IIS 7.0 統合モードでこのイベントはサポートされており、最低限の .NET Framework 3.0  
+  
+18. <xref:System.Web.HttpApplication.PostLogRequest>  
+  
+     このイベントは、IIS 7.0 統合モードがサポートされていると、少なくとも .NET Framework 3.0  
+  
+19. <xref:System.Web.HttpApplication.EndRequest>  
+  
+   
+  
+## Examples  
+ 次の 2 つの例を使用する方法を示す、<xref:System.Web.HttpApplication>クラスとそのイベント。 最初の例では、カスタム HTTP モジュールを作成し、イベントを接続する方法を示します。 2 番目の例では、Web.config ファイルを変更する方法を示します。  
+  
+ 次の例では、カスタム HTTP モジュールを作成して接続する方法、 <xref:System.Web.HttpApplication.AcquireRequestState> HTTP モジュールへのイベントです。 HTTP モジュールは、クライアント要求をフィルター処理することにより、Web アプリケーションのリソースへの各要求をインターセプトします。 サブスクライブする HTTP モジュール、<xref:System.Web.HttpApplication>イベントを実装する必要があります、<xref:System.Web.IHttpModule>インターフェイスです。  
+  
+ [!code-csharp[System.Web.HttpApplication1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpApplication1/cs/source.cs#1)]
+ [!code-vb[System.Web.HttpApplication1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpApplication1/vb/source.vb#1)]  
+  
+ カスタム HTTP モジュール内のイベントが発生することができます、前に、HTTP モジュールについて ASP.NET を通知する Web.config ファイルで構成設定を変更する必要があります。 次の例は、適切な構成設定で、 `httpModules` Web.config ファイルのセクションです。 次の設定は、IIS 7.0 のクラシック モードと IIS の以前のバージョンに適用されます。  
+  
+```csharp  
+<configuration>  
+  <system.web>  
+    <httpModules>  
+      <add type="Samples.AspNet.CS.CustomHTTPModule"  
+        name="CustomHttpModule" />  
+      </httpModules>  
+  </system.web>  
+</configuration>  
+```  
+  
+```vb  
+<configuration>  
+  <system.web>  
+    <httpModules>  
+      <add type="Samples.AspNet.VB.CustomHTTPModule"  
+        name="CustomHttpModule" />  
+      </httpModules>  
+  </system.web>  
+</configuration>  
+```  
+  
+ 次の設定は、IIS 7.0 統合モードに適用されます。  
+  
+```csharp  
+<configuration>  
+  <system.webServer>  
+    <modules>  
+      <add type="Samples.AspNet.CS.CustomHTTPModule"  
+        name="CustomHttpModule" />  
+      </modules>  
+  </system.webServer>  
+</configuration>  
+```  
+  
+```vb  
+<configuration>  
+  <system.webServer>  
+    <modules>  
+      <add type="Samples.AspNet.VB.CustomHTTPModule"  
+        name="CustomHttpModule" />  
+      <modules>  
+  </system.webServer>  
+</configuration>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpApplication ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.HttpApplication" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AcquireRequestState">
+      <MemberSignature Language="C#" Value="public event EventHandler AcquireRequestState;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler AcquireRequestState" />
+      <MemberSignature Language="DocId" Value="E:System.Web.HttpApplication.AcquireRequestState" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET は、現在の要求に関連付けられている現在の状態 (たとえば、セッション状態) を取得するときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpApplication.AcquireRequestState>イベントは、イベント ハンドラーを作成した後に発生します。  
+  
+ イベントを処理する方法の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 処理の例については、<xref:System.Web.HttpApplication.AcquireRequestState>イベントを参照してください、<xref:System.Web.HttpApplication>概要トピックです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnAcquireRequestStateAsync">
+      <MemberSignature Language="C#" Value="public void AddOnAcquireRequestStateAsync (System.Web.BeginEventHandler bh, System.Web.EndEventHandler eh);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnAcquireRequestStateAsync(class System.Web.BeginEventHandler bh, class System.Web.EndEventHandler eh) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnAcquireRequestStateAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bh" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="eh" Type="System.Web.EndEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="bh"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.AcquireRequestState" />です。</param>
+        <param name="eh"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.AcquireRequestState" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.AcquireRequestState" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.AcquireRequestState" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnAcquireRequestStateAsync">
+      <MemberSignature Language="C#" Value="public void AddOnAcquireRequestStateAsync (System.Web.BeginEventHandler beginHandler, System.Web.EndEventHandler endHandler, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnAcquireRequestStateAsync(class System.Web.BeginEventHandler beginHandler, class System.Web.EndEventHandler endHandler, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnAcquireRequestStateAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="beginHandler" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="endHandler" Type="System.Web.EndEventHandler" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="beginHandler"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.AcquireRequestState" />です。</param>
+        <param name="endHandler"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.AcquireRequestState" />です。</param>
+        <param name="state">非同期に追加する、関連付けられた状態<see cref="E:System.Web.HttpApplication.AcquireRequestState" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.AcquireRequestState" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.AcquireRequestState" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnAuthenticateRequestAsync">
+      <MemberSignature Language="C#" Value="public void AddOnAuthenticateRequestAsync (System.Web.BeginEventHandler bh, System.Web.EndEventHandler eh);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnAuthenticateRequestAsync(class System.Web.BeginEventHandler bh, class System.Web.EndEventHandler eh) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnAuthenticateRequestAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bh" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="eh" Type="System.Web.EndEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="bh"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.AuthenticateRequest" />です。</param>
+        <param name="eh"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.AuthenticateRequest" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.AuthenticateRequest" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.AuthenticateRequest" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnAuthenticateRequestAsync">
+      <MemberSignature Language="C#" Value="public void AddOnAuthenticateRequestAsync (System.Web.BeginEventHandler beginHandler, System.Web.EndEventHandler endHandler, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnAuthenticateRequestAsync(class System.Web.BeginEventHandler beginHandler, class System.Web.EndEventHandler endHandler, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnAuthenticateRequestAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="beginHandler" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="endHandler" Type="System.Web.EndEventHandler" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="beginHandler"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.AuthenticateRequest" />です。</param>
+        <param name="endHandler"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.AuthenticateRequest" />です。</param>
+        <param name="state">非同期に追加する、関連付けられた状態<see cref="E:System.Web.HttpApplication.AuthenticateRequest" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.AuthenticateRequest" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.AuthenticateRequest" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnAuthorizeRequestAsync">
+      <MemberSignature Language="C#" Value="public void AddOnAuthorizeRequestAsync (System.Web.BeginEventHandler bh, System.Web.EndEventHandler eh);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnAuthorizeRequestAsync(class System.Web.BeginEventHandler bh, class System.Web.EndEventHandler eh) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnAuthorizeRequestAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bh" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="eh" Type="System.Web.EndEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="bh"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.AuthorizeRequest" />です。</param>
+        <param name="eh"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.AuthorizeRequest" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.AuthorizeRequest" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.AuthorizeRequest" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnAuthorizeRequestAsync">
+      <MemberSignature Language="C#" Value="public void AddOnAuthorizeRequestAsync (System.Web.BeginEventHandler beginHandler, System.Web.EndEventHandler endHandler, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnAuthorizeRequestAsync(class System.Web.BeginEventHandler beginHandler, class System.Web.EndEventHandler endHandler, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnAuthorizeRequestAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="beginHandler" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="endHandler" Type="System.Web.EndEventHandler" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="beginHandler"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.AuthorizeRequest" />です。</param>
+        <param name="endHandler"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.AuthorizeRequest" />です。</param>
+        <param name="state">非同期に追加する、関連付けられた状態<see cref="E:System.Web.HttpApplication.AcquireRequestState" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.AuthorizeRequest" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.AuthorizeRequest" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnBeginRequestAsync">
+      <MemberSignature Language="C#" Value="public void AddOnBeginRequestAsync (System.Web.BeginEventHandler bh, System.Web.EndEventHandler eh);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnBeginRequestAsync(class System.Web.BeginEventHandler bh, class System.Web.EndEventHandler eh) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnBeginRequestAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bh" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="eh" Type="System.Web.EndEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="bh"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.BeginRequest" />です。</param>
+        <param name="eh"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.BeginRequest" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.BeginRequest" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.BeginRequest" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnBeginRequestAsync">
+      <MemberSignature Language="C#" Value="public void AddOnBeginRequestAsync (System.Web.BeginEventHandler beginHandler, System.Web.EndEventHandler endHandler, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnBeginRequestAsync(class System.Web.BeginEventHandler beginHandler, class System.Web.EndEventHandler endHandler, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnBeginRequestAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="beginHandler" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="endHandler" Type="System.Web.EndEventHandler" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="beginHandler"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.BeginRequest" />です。</param>
+        <param name="endHandler"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.BeginRequest" />です。</param>
+        <param name="state">非同期に追加する、関連付けられた状態<see cref="E:System.Web.HttpApplication.BeginRequest" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.BeginRequest" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.BeginRequest" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnEndRequestAsync">
+      <MemberSignature Language="C#" Value="public void AddOnEndRequestAsync (System.Web.BeginEventHandler bh, System.Web.EndEventHandler eh);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnEndRequestAsync(class System.Web.BeginEventHandler bh, class System.Web.EndEventHandler eh) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnEndRequestAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bh" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="eh" Type="System.Web.EndEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="bh"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.EndRequest" />です。</param>
+        <param name="eh"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.EndRequest" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.EndRequest" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.EndRequest" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnEndRequestAsync">
+      <MemberSignature Language="C#" Value="public void AddOnEndRequestAsync (System.Web.BeginEventHandler beginHandler, System.Web.EndEventHandler endHandler, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnEndRequestAsync(class System.Web.BeginEventHandler beginHandler, class System.Web.EndEventHandler endHandler, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnEndRequestAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="beginHandler" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="endHandler" Type="System.Web.EndEventHandler" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="beginHandler"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.EndRequest" />です。</param>
+        <param name="endHandler"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.EndRequest" />です。</param>
+        <param name="state">非同期に追加する、関連付けられた状態<see cref="E:System.Web.HttpApplication.EndRequest" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.EndRequest" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.EndRequest" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="AddOnLogRequestAsync">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.LogRequest" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.LogRequest" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpApplication.AddOnLogRequestAsync%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="AddOnLogRequestAsync">
+      <MemberSignature Language="C#" Value="public void AddOnLogRequestAsync (System.Web.BeginEventHandler bh, System.Web.EndEventHandler eh);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnLogRequestAsync(class System.Web.BeginEventHandler bh, class System.Web.EndEventHandler eh) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnLogRequestAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bh" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="eh" Type="System.Web.EndEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="bh"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.LogRequest" />です。</param>
+        <param name="eh"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.LogRequest" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.LogRequest" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.LogRequest" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpApplication.AddOnLogRequestAsync%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnLogRequestAsync">
+      <MemberSignature Language="C#" Value="public void AddOnLogRequestAsync (System.Web.BeginEventHandler beginHandler, System.Web.EndEventHandler endHandler, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnLogRequestAsync(class System.Web.BeginEventHandler beginHandler, class System.Web.EndEventHandler endHandler, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnLogRequestAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="beginHandler" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="endHandler" Type="System.Web.EndEventHandler" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="beginHandler"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.LogRequest" />です。</param>
+        <param name="endHandler"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.LogRequest" />です。</param>
+        <param name="state">非同期に追加する、関連付けられた状態<see cref="E:System.Web.HttpApplication.LogRequest" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.LogRequest" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.LogRequest" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="AddOnMapRequestHandlerAsync">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.MapRequestHandler" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.MapRequestHandler" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpApplication.AddOnMapRequestHandlerAsync%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="AddOnMapRequestHandlerAsync">
+      <MemberSignature Language="C#" Value="public void AddOnMapRequestHandlerAsync (System.Web.BeginEventHandler bh, System.Web.EndEventHandler eh);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnMapRequestHandlerAsync(class System.Web.BeginEventHandler bh, class System.Web.EndEventHandler eh) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnMapRequestHandlerAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bh" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="eh" Type="System.Web.EndEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="bh"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.MapRequestHandler" />です。</param>
+        <param name="eh"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.MapRequestHandler" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.MapRequestHandler" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.MapRequestHandler" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpApplication.AddOnMapRequestHandlerAsync%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnMapRequestHandlerAsync">
+      <MemberSignature Language="C#" Value="public void AddOnMapRequestHandlerAsync (System.Web.BeginEventHandler beginHandler, System.Web.EndEventHandler endHandler, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnMapRequestHandlerAsync(class System.Web.BeginEventHandler beginHandler, class System.Web.EndEventHandler endHandler, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnMapRequestHandlerAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="beginHandler" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="endHandler" Type="System.Web.EndEventHandler" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="beginHandler"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.MapRequestHandler" />です。</param>
+        <param name="endHandler"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.MapRequestHandler" />です。</param>
+        <param name="state">非同期に追加する、関連付けられた状態<see cref="E:System.Web.HttpApplication.MapRequestHandler" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.MapRequestHandler" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.MapRequestHandler" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnPostAcquireRequestStateAsync">
+      <MemberSignature Language="C#" Value="public void AddOnPostAcquireRequestStateAsync (System.Web.BeginEventHandler bh, System.Web.EndEventHandler eh);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnPostAcquireRequestStateAsync(class System.Web.BeginEventHandler bh, class System.Web.EndEventHandler eh) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnPostAcquireRequestStateAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bh" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="eh" Type="System.Web.EndEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="bh"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.PostAcquireRequestState" />です。</param>
+        <param name="eh"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.PostAcquireRequestState" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.PostAcquireRequestState" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.PostAcquireRequestState" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnPostAcquireRequestStateAsync">
+      <MemberSignature Language="C#" Value="public void AddOnPostAcquireRequestStateAsync (System.Web.BeginEventHandler beginHandler, System.Web.EndEventHandler endHandler, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnPostAcquireRequestStateAsync(class System.Web.BeginEventHandler beginHandler, class System.Web.EndEventHandler endHandler, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnPostAcquireRequestStateAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="beginHandler" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="endHandler" Type="System.Web.EndEventHandler" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="beginHandler"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.PostAcquireRequestState" />です。</param>
+        <param name="endHandler"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.PostAcquireRequestState" />です。</param>
+        <param name="state">非同期に追加する、関連付けられた状態<see cref="E:System.Web.HttpApplication.PostAcquireRequestState" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.PostAcquireRequestState" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.PostAcquireRequestState" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnPostAuthenticateRequestAsync">
+      <MemberSignature Language="C#" Value="public void AddOnPostAuthenticateRequestAsync (System.Web.BeginEventHandler bh, System.Web.EndEventHandler eh);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnPostAuthenticateRequestAsync(class System.Web.BeginEventHandler bh, class System.Web.EndEventHandler eh) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnPostAuthenticateRequestAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bh" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="eh" Type="System.Web.EndEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="bh"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.PostAuthenticateRequest" />です。</param>
+        <param name="eh"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.PostAuthenticateRequest" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.PostAuthenticateRequest" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.PostAuthenticateRequest" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnPostAuthenticateRequestAsync">
+      <MemberSignature Language="C#" Value="public void AddOnPostAuthenticateRequestAsync (System.Web.BeginEventHandler beginHandler, System.Web.EndEventHandler endHandler, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnPostAuthenticateRequestAsync(class System.Web.BeginEventHandler beginHandler, class System.Web.EndEventHandler endHandler, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnPostAuthenticateRequestAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="beginHandler" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="endHandler" Type="System.Web.EndEventHandler" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="beginHandler"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.PostAuthorizeRequest" />です。</param>
+        <param name="endHandler"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.PostAuthorizeRequest" />です。</param>
+        <param name="state">非同期に追加する、関連付けられた状態<see cref="E:System.Web.HttpApplication.PostAuthorizeRequest" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.PostAuthorizeRequest" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.PostAuthorizeRequest" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnPostAuthorizeRequestAsync">
+      <MemberSignature Language="C#" Value="public void AddOnPostAuthorizeRequestAsync (System.Web.BeginEventHandler bh, System.Web.EndEventHandler eh);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnPostAuthorizeRequestAsync(class System.Web.BeginEventHandler bh, class System.Web.EndEventHandler eh) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnPostAuthorizeRequestAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bh" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="eh" Type="System.Web.EndEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="bh"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.PostAuthorizeRequest" />です。</param>
+        <param name="eh"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.PostAuthorizeRequest" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.PostAuthorizeRequest" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.PostAuthorizeRequest" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnPostAuthorizeRequestAsync">
+      <MemberSignature Language="C#" Value="public void AddOnPostAuthorizeRequestAsync (System.Web.BeginEventHandler beginHandler, System.Web.EndEventHandler endHandler, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnPostAuthorizeRequestAsync(class System.Web.BeginEventHandler beginHandler, class System.Web.EndEventHandler endHandler, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnPostAuthorizeRequestAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="beginHandler" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="endHandler" Type="System.Web.EndEventHandler" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="beginHandler"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.PostAuthorizeRequest" />です。</param>
+        <param name="endHandler"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.PostAuthorizeRequest" />です。</param>
+        <param name="state">非同期に追加する、関連付けられた状態<see cref="E:System.Web.HttpApplication.PostAuthorizeRequest" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.PostAuthorizeRequest" />非同期のコレクションに<see cref="E:System.Web.HttpApplication.PostAuthorizeRequest" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="AddOnPostLogRequestAsync">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.PostLogRequest" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.PostLogRequest" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpApplication.AddOnPostLogRequestAsync%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="AddOnPostLogRequestAsync">
+      <MemberSignature Language="C#" Value="public void AddOnPostLogRequestAsync (System.Web.BeginEventHandler bh, System.Web.EndEventHandler eh);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnPostLogRequestAsync(class System.Web.BeginEventHandler bh, class System.Web.EndEventHandler eh) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnPostLogRequestAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bh" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="eh" Type="System.Web.EndEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="bh"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.PostLogRequest" />です。</param>
+        <param name="eh"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.PostLogRequest" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.PostLogRequest" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.PostLogRequest" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpApplication.AddOnPostLogRequestAsync%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnPostLogRequestAsync">
+      <MemberSignature Language="C#" Value="public void AddOnPostLogRequestAsync (System.Web.BeginEventHandler beginHandler, System.Web.EndEventHandler endHandler, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnPostLogRequestAsync(class System.Web.BeginEventHandler beginHandler, class System.Web.EndEventHandler endHandler, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnPostLogRequestAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="beginHandler" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="endHandler" Type="System.Web.EndEventHandler" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="beginHandler"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.PostLogRequest" />です。</param>
+        <param name="endHandler"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.PostLogRequest" />です。</param>
+        <param name="state">非同期に追加する、関連付けられた状態<see cref="E:System.Web.HttpApplication.PostLogRequest" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.PostLogRequest" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.PostLogRequest" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnPostMapRequestHandlerAsync">
+      <MemberSignature Language="C#" Value="public void AddOnPostMapRequestHandlerAsync (System.Web.BeginEventHandler bh, System.Web.EndEventHandler eh);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnPostMapRequestHandlerAsync(class System.Web.BeginEventHandler bh, class System.Web.EndEventHandler eh) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnPostMapRequestHandlerAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bh" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="eh" Type="System.Web.EndEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="bh"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.PostMapRequestHandler" />です。</param>
+        <param name="eh"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.PostMapRequestHandler" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.PostMapRequestHandler" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.PostMapRequestHandler" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnPostMapRequestHandlerAsync">
+      <MemberSignature Language="C#" Value="public void AddOnPostMapRequestHandlerAsync (System.Web.BeginEventHandler beginHandler, System.Web.EndEventHandler endHandler, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnPostMapRequestHandlerAsync(class System.Web.BeginEventHandler beginHandler, class System.Web.EndEventHandler endHandler, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnPostMapRequestHandlerAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="beginHandler" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="endHandler" Type="System.Web.EndEventHandler" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="beginHandler"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.PostMapRequestHandler" />です。</param>
+        <param name="endHandler"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.PostMapRequestHandler" />です。</param>
+        <param name="state">非同期に追加する、関連付けられた状態<see cref="E:System.Web.HttpApplication.PostMapRequestHandler" />コレクション。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.PostMapRequestHandler" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.PostMapRequestHandler" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnPostReleaseRequestStateAsync">
+      <MemberSignature Language="C#" Value="public void AddOnPostReleaseRequestStateAsync (System.Web.BeginEventHandler bh, System.Web.EndEventHandler eh);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnPostReleaseRequestStateAsync(class System.Web.BeginEventHandler bh, class System.Web.EndEventHandler eh) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnPostReleaseRequestStateAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bh" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="eh" Type="System.Web.EndEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="bh"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.PostReleaseRequestState" />です。</param>
+        <param name="eh"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.PostReleaseRequestState" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.PostReleaseRequestState" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.PostReleaseRequestState" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnPostReleaseRequestStateAsync">
+      <MemberSignature Language="C#" Value="public void AddOnPostReleaseRequestStateAsync (System.Web.BeginEventHandler beginHandler, System.Web.EndEventHandler endHandler, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnPostReleaseRequestStateAsync(class System.Web.BeginEventHandler beginHandler, class System.Web.EndEventHandler endHandler, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnPostReleaseRequestStateAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="beginHandler" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="endHandler" Type="System.Web.EndEventHandler" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="beginHandler"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.PostReleaseRequestState" />です。</param>
+        <param name="endHandler"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.PostReleaseRequestState" />です。</param>
+        <param name="state">非同期に追加する、関連付けられた状態<see cref="E:System.Web.HttpApplication.PostReleaseRequestState" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.PostReleaseRequestState" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.PostReleaseRequestState" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnPostRequestHandlerExecuteAsync">
+      <MemberSignature Language="C#" Value="public void AddOnPostRequestHandlerExecuteAsync (System.Web.BeginEventHandler bh, System.Web.EndEventHandler eh);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnPostRequestHandlerExecuteAsync(class System.Web.BeginEventHandler bh, class System.Web.EndEventHandler eh) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnPostRequestHandlerExecuteAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bh" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="eh" Type="System.Web.EndEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="bh"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.PostRequestHandlerExecute" />です。</param>
+        <param name="eh"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.PostRequestHandlerExecute" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.PostRequestHandlerExecute" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.PostRequestHandlerExecute" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnPostRequestHandlerExecuteAsync">
+      <MemberSignature Language="C#" Value="public void AddOnPostRequestHandlerExecuteAsync (System.Web.BeginEventHandler beginHandler, System.Web.EndEventHandler endHandler, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnPostRequestHandlerExecuteAsync(class System.Web.BeginEventHandler beginHandler, class System.Web.EndEventHandler endHandler, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnPostRequestHandlerExecuteAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="beginHandler" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="endHandler" Type="System.Web.EndEventHandler" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="beginHandler"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.PostRequestHandlerExecute" />です。</param>
+        <param name="endHandler"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.PostRequestHandlerExecute" />です。</param>
+        <param name="state">非同期に追加する、関連付けられた状態<see cref="E:System.Web.HttpApplication.PostRequestHandlerExecute" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.PostRequestHandlerExecute" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.PostRequestHandlerExecute" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnPostResolveRequestCacheAsync">
+      <MemberSignature Language="C#" Value="public void AddOnPostResolveRequestCacheAsync (System.Web.BeginEventHandler bh, System.Web.EndEventHandler eh);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnPostResolveRequestCacheAsync(class System.Web.BeginEventHandler bh, class System.Web.EndEventHandler eh) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnPostResolveRequestCacheAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bh" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="eh" Type="System.Web.EndEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="bh"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.PostResolveRequestCache" />です。</param>
+        <param name="eh"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.PostResolveRequestCache" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.PostResolveRequestCache" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.PostResolveRequestCache" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnPostResolveRequestCacheAsync">
+      <MemberSignature Language="C#" Value="public void AddOnPostResolveRequestCacheAsync (System.Web.BeginEventHandler beginHandler, System.Web.EndEventHandler endHandler, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnPostResolveRequestCacheAsync(class System.Web.BeginEventHandler beginHandler, class System.Web.EndEventHandler endHandler, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnPostResolveRequestCacheAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="beginHandler" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="endHandler" Type="System.Web.EndEventHandler" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="beginHandler"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.PostResolveRequestCache" />です。</param>
+        <param name="endHandler"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.PostResolveRequestCache" />です。</param>
+        <param name="state">非同期に追加する、関連付けられた状態<see cref="E:System.Web.HttpApplication.PostResolveRequestCache" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.PostResolveRequestCache" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.PostResolveRequestCache" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnPostUpdateRequestCacheAsync">
+      <MemberSignature Language="C#" Value="public void AddOnPostUpdateRequestCacheAsync (System.Web.BeginEventHandler bh, System.Web.EndEventHandler eh);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnPostUpdateRequestCacheAsync(class System.Web.BeginEventHandler bh, class System.Web.EndEventHandler eh) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnPostUpdateRequestCacheAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bh" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="eh" Type="System.Web.EndEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="bh"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.PostUpdateRequestCache" />です。</param>
+        <param name="eh"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.PostUpdateRequestCache" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.PostUpdateRequestCache" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.PostUpdateRequestCache" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnPostUpdateRequestCacheAsync">
+      <MemberSignature Language="C#" Value="public void AddOnPostUpdateRequestCacheAsync (System.Web.BeginEventHandler beginHandler, System.Web.EndEventHandler endHandler, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnPostUpdateRequestCacheAsync(class System.Web.BeginEventHandler beginHandler, class System.Web.EndEventHandler endHandler, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnPostUpdateRequestCacheAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="beginHandler" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="endHandler" Type="System.Web.EndEventHandler" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="beginHandler"><see cref="T:System.Web.BeginEventHandler" />イベントの非同期処理を開始します。</param>
+        <param name="endHandler"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.PostUpdateRequestCache" />です。</param>
+        <param name="state">非同期に追加する、関連付けられた状態<see cref="E:System.Web.HttpApplication.PostUpdateRequestCache" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.PostUpdateRequestCache" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.PostUpdateRequestCache" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnPreRequestHandlerExecuteAsync">
+      <MemberSignature Language="C#" Value="public void AddOnPreRequestHandlerExecuteAsync (System.Web.BeginEventHandler bh, System.Web.EndEventHandler eh);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnPreRequestHandlerExecuteAsync(class System.Web.BeginEventHandler bh, class System.Web.EndEventHandler eh) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnPreRequestHandlerExecuteAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bh" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="eh" Type="System.Web.EndEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="bh"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.PreRequestHandlerExecute" />です。</param>
+        <param name="eh"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.PreRequestHandlerExecute" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.PreRequestHandlerExecute" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.PreRequestHandlerExecute" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnPreRequestHandlerExecuteAsync">
+      <MemberSignature Language="C#" Value="public void AddOnPreRequestHandlerExecuteAsync (System.Web.BeginEventHandler beginHandler, System.Web.EndEventHandler endHandler, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnPreRequestHandlerExecuteAsync(class System.Web.BeginEventHandler beginHandler, class System.Web.EndEventHandler endHandler, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnPreRequestHandlerExecuteAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="beginHandler" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="endHandler" Type="System.Web.EndEventHandler" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="beginHandler"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.PreRequestHandlerExecute" />です。</param>
+        <param name="endHandler"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.PreRequestHandlerExecute" />です。</param>
+        <param name="state">非同期に追加する、関連付けられた状態<see cref="E:System.Web.HttpApplication.PreRequestHandlerExecute" />コレクション。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.PreRequestHandlerExecute" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.PreRequestHandlerExecute" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnReleaseRequestStateAsync">
+      <MemberSignature Language="C#" Value="public void AddOnReleaseRequestStateAsync (System.Web.BeginEventHandler bh, System.Web.EndEventHandler eh);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnReleaseRequestStateAsync(class System.Web.BeginEventHandler bh, class System.Web.EndEventHandler eh) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnReleaseRequestStateAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bh" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="eh" Type="System.Web.EndEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="bh"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.ReleaseRequestState" />です。</param>
+        <param name="eh"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.ReleaseRequestState" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.ReleaseRequestState" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.ReleaseRequestState" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnReleaseRequestStateAsync">
+      <MemberSignature Language="C#" Value="public void AddOnReleaseRequestStateAsync (System.Web.BeginEventHandler beginHandler, System.Web.EndEventHandler endHandler, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnReleaseRequestStateAsync(class System.Web.BeginEventHandler beginHandler, class System.Web.EndEventHandler endHandler, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnReleaseRequestStateAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="beginHandler" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="endHandler" Type="System.Web.EndEventHandler" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="beginHandler"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.ReleaseRequestState" />です。</param>
+        <param name="endHandler"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.ReleaseRequestState" />です。</param>
+        <param name="state">非同期に追加する、関連付けられた状態<see cref="E:System.Web.HttpApplication.ReleaseRequestState" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.ReleaseRequestState" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.ReleaseRequestState" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnResolveRequestCacheAsync">
+      <MemberSignature Language="C#" Value="public void AddOnResolveRequestCacheAsync (System.Web.BeginEventHandler bh, System.Web.EndEventHandler eh);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnResolveRequestCacheAsync(class System.Web.BeginEventHandler bh, class System.Web.EndEventHandler eh) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnResolveRequestCacheAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bh" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="eh" Type="System.Web.EndEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="bh"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.ResolveRequestCache" />です。</param>
+        <param name="eh"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.ResolveRequestCache" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.ResolveRequestCache" />非同期のコレクションにイベント ハンドラー<see cref="E:System.Web.HttpApplication.ResolveRequestCache" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnResolveRequestCacheAsync">
+      <MemberSignature Language="C#" Value="public void AddOnResolveRequestCacheAsync (System.Web.BeginEventHandler beginHandler, System.Web.EndEventHandler endHandler, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnResolveRequestCacheAsync(class System.Web.BeginEventHandler beginHandler, class System.Web.EndEventHandler endHandler, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnResolveRequestCacheAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="beginHandler" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="endHandler" Type="System.Web.EndEventHandler" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="beginHandler"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.ResolveRequestCache" />です。</param>
+        <param name="endHandler"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.ResolveRequestCache" />です。</param>
+        <param name="state">非同期に追加する、関連付けられた状態<see cref="E:System.Web.HttpApplication.ResolveRequestCache" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.ResolveRequestCache" />非同期のコレクションにイベント ハンドラー<see cref="E:System.Web.HttpApplication.ResolveRequestCache" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnUpdateRequestCacheAsync">
+      <MemberSignature Language="C#" Value="public void AddOnUpdateRequestCacheAsync (System.Web.BeginEventHandler bh, System.Web.EndEventHandler eh);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnUpdateRequestCacheAsync(class System.Web.BeginEventHandler bh, class System.Web.EndEventHandler eh) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnUpdateRequestCacheAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bh" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="eh" Type="System.Web.EndEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="bh"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.UpdateRequestCache" />です。</param>
+        <param name="eh"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.UpdateRequestCache" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.UpdateRequestCache" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.UpdateRequestCache" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOnUpdateRequestCacheAsync">
+      <MemberSignature Language="C#" Value="public void AddOnUpdateRequestCacheAsync (System.Web.BeginEventHandler beginHandler, System.Web.EndEventHandler endHandler, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOnUpdateRequestCacheAsync(class System.Web.BeginEventHandler beginHandler, class System.Web.EndEventHandler endHandler, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.AddOnUpdateRequestCacheAsync(System.Web.BeginEventHandler,System.Web.EndEventHandler,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="beginHandler" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="endHandler" Type="System.Web.EndEventHandler" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="beginHandler"><see cref="T:System.Web.BeginEventHandler" />の非同期処理を開始する、<see cref="E:System.Web.HttpApplication.UpdateRequestCache" />です。</param>
+        <param name="endHandler"><see cref="T:System.Web.EndEventHandler" />の非同期処理を終了する、<see cref="E:System.Web.HttpApplication.UpdateRequestCache" />です。</param>
+        <param name="state">非同期に追加する、関連付けられた状態<see cref="E:System.Web.HttpApplication.UpdateRequestCache" />です。</param>
+        <summary>指定した追加<see cref="E:System.Web.HttpApplication.UpdateRequestCache" />非同期のコレクションにイベント<see cref="E:System.Web.HttpApplication.UpdateRequestCache" />現在の要求のイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Application">
+      <MemberSignature Language="C#" Value="public System.Web.HttpApplicationState Application { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpApplicationState Application" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpApplication.Application" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpApplicationState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションの現在の状態を取得します。</summary>
+        <value><see cref="T:System.Web.HttpApplicationState" />現在の要求。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションの現在の状態は、.NET Framework のオブジェクトと複数のクライアントから複数の Web 要求に関連付けられているスカラー値の両方を格納に使用できるアプリケーション全体のオブジェクトのキー/値のディクショナリで構成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthenticateRequest">
+      <MemberSignature Language="C#" Value="public event EventHandler AuthenticateRequest;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler AuthenticateRequest" />
+      <MemberSignature Language="DocId" Value="E:System.Web.HttpApplication.AuthenticateRequest" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ モジュールが、ユーザーの id を確立されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpApplication.AuthenticateRequest>イベントは、構成済みの認証メカニズムが現在の要求を認証されたことを通知します。 サブスクライブ、<xref:System.Web.HttpApplication.AuthenticateRequest>イベントにより、要求は、接続されているモジュールまたはイベント ハンドラーを処理する前に認証されます。  
+  
+ イベントを処理する方法の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthorizeRequest">
+      <MemberSignature Language="C#" Value="public event EventHandler AuthorizeRequest;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler AuthorizeRequest" />
+      <MemberSignature Language="DocId" Value="E:System.Web.HttpApplication.AuthorizeRequest" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ モジュールがユーザーの承認を確認するときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpApplication.AuthorizeRequest> ASP.NET が現在の要求を承認されているイベントを通知します。 サブスクライブ、<xref:System.Web.HttpApplication.AuthorizeRequest>イベントにより、要求は認証され、アタッチされたモジュールまたはイベント ハンドラーを処理する前に承認されています。  
+  
+ イベントを処理する方法の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginRequest">
+      <MemberSignature Language="C#" Value="public event EventHandler BeginRequest;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler BeginRequest" />
+      <MemberSignature Language="DocId" Value="E:System.Web.HttpApplication.BeginRequest" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET が要求に応答する場合は、実行の HTTP パイプライン チェーンの最初のイベントとして発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpApplication.BeginRequest>イベントは、指定された新しい要求の作成を通知します。 このイベントは、常に発生し、要求の処理中に発生する最初のイベントは、常に。  
+  
+ イベントを処理する方法の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompleteRequest">
+      <MemberSignature Language="C#" Value="public void CompleteRequest ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CompleteRequest() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.CompleteRequest" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ASP.NET のすべてのイベントをバイパスし、HTTP でのフィルタ リング パイプラインの実行のチェインを直接実行すると、<see cref="E:System.Web.HttpApplication.EndRequest" />イベント。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Context">
+      <MemberSignature Language="C#" Value="public System.Web.HttpContext Context { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpContext Context" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpApplication.Context" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の要求に関する HTTP 固有の情報を取得します。</summary>
+        <value><see cref="T:System.Web.HttpContext" />現在の要求。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public virtual void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>破棄、<see cref="T:System.Web.HttpApplication" />インスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpApplication.Request%2A>、 <xref:System.Web.HttpApplication.Response%2A>、 <xref:System.Web.HttpApplication.Session%2A>、および<xref:System.Web.HttpApplication.Application%2A>プロパティは使用できません使用する場合、<xref:System.Web.HttpApplication.Dispose%2A>メソッドを実行します。  
+  
+ <xref:System.Web.HttpApplication.Dispose%2A>メソッドの呼び出し、<xref:System.Web.IHttpModule.Dispose%2A>メソッドを登録済みの各<xref:System.Web.Configuration.SystemWebSectionGroup.HttpModules%2A>アプリケーション インスタンスとが発生し、<xref:System.Web.HttpApplication.Disposed>イベント。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Web.HttpApplication.Dispose" />派生クラスで、基本クラスを呼び出すことを確認<see cref="M:System.Web.HttpApplication.Dispose" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Disposed">
+      <MemberSignature Language="C#" Value="public event EventHandler Disposed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Disposed" />
+      <MemberSignature Language="DocId" Value="E:System.Web.HttpApplication.Disposed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションが破棄されるときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpApplication.Disposed> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるのインスタンスを追加、<xref:System.Web.HttpApplication.Disposed>イベントにデリゲートします。 イベント ハンドラーは、イベントが発生するたびに呼び出されますを削除しない限り、<xref:System.Web.HttpApplication.Disposed>を委任します。  
+  
+ イベントを処理する方法の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndRequest">
+      <MemberSignature Language="C#" Value="public event EventHandler EndRequest;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler EndRequest" />
+      <MemberSignature Language="DocId" Value="E:System.Web.HttpApplication.EndRequest" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET が要求に応答する場合は、HTTP パイプライン チェーン内の実行の最後のイベントとして発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpApplication.EndRequest>イベントは、常にいつ発生するか、<xref:System.Web.HttpApplication.CompleteRequest%2A>メソッドが呼び出されます。  
+  
+ イベントを処理する方法の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Error">
+      <MemberSignature Language="C#" Value="public event EventHandler Error;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Error" />
+      <MemberSignature Language="DocId" Value="E:System.Web.HttpApplication.Error" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>未処理の例外がスローされたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 例外を発生させる、<xref:System.Web.HttpApplication.Error>イベントへの呼び出しでアクセスできる、<xref:System.Web.HttpServerUtility.GetLastError%2A>メソッドです。 アプリケーションでは、カスタムのエラー出力を生成する場合は、ASP.NET によってへの呼び出しによって生成される既定のエラー メッセージを抑制する、<xref:System.Web.HttpServerUtility.ClearError%2A>メソッドです。  
+  
+> [!NOTE]
+>  使用することはできませんが、Web アプリケーションに XML Web サービスが含まれている場合、<xref:System.Web.HttpApplication.Error>これらのサービスのグローバル例外処理のためのイベントです。 XML Web サービスの HTTP ハンドラーは、XML Web サービスで発生し、前に SOAP エラーに変換した任意の例外を使用する、<xref:System.Web.HttpApplication.Error>呼び出されています。 XML Web サービスの例外を処理するには、カスタムのグローバル例外ハンドラーで Web サービスの例外を処理する SOAP 拡張機能を構築します。  
+  
+ イベントを処理する方法の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Events">
+      <MemberSignature Language="C#" Value="protected System.ComponentModel.EventHandlerList Events { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.EventHandlerList Events" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpApplication.Events" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.EventHandlerList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのアプリケーション イベントを処理するハンドラー デリゲートのイベントの一覧を取得します。</summary>
+        <value><see cref="T:System.ComponentModel.EventHandlerList" />イベント ハンドラー デリゲートの名前を格納しています。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOutputCacheProviderName">
+      <MemberSignature Language="C#" Value="public virtual string GetOutputCacheProviderName (System.Web.HttpContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetOutputCacheProviderName(class System.Web.HttpContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.GetOutputCacheProviderName(System.Web.HttpContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.Web.HttpContext" /> HTTP 要求を処理に使用される組み込みのサーバー オブジェクトへの参照を提供します。</param>
+        <summary>Web サイト用に構成されている既定の出力キャッシュ プロバイダーの名前を取得します。</summary>
+        <returns>既定のプロバイダーの名前です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドをオーバーライドし、Web サイトに対して構成されているすべての出力キャッシュ プロバイダーの名前を返すに使用できます。 ASP.NET では、名前付きのプロバイダーへの参照を取得し、実行中の要求の出力キャッシュ データの格納に使用します。  
+  
+ 既定では、ASP.NET では、ページ、およびコントロールをレンダリングするすべての HTTP 応答は、メモリ内の出力キャッシュを使用します。 Web アプリケーションの別のプロバイダー名を指定することによって使用される既定の出力キャッシュ プロバイダーを変更することができます`defaultProvider`です。  
+  
+ さらと個々 の要求の個々 のコントロールに対して別の出力キャッシュ プロバイダーを選択することができます。 別の Web ユーザー コントロールの別の出力キャッシュ プロバイダーを選択する最も簡単な方法は、new を使用して、宣言を行う、`providerName`ページまたはコントロール ディレクティブでは、次の例で示すように属性します。  
+  
+```  
+<%@ OutputCache Duration="60" VaryByParam="None"   
+    providerName="DiskCache" %>  
+```  
+  
+ HTTP 要求に対する別の出力キャッシュ プロバイダーを指定するには、プログラムによって、特定の要求を使用するプロバイダーを指定する、Global.asax ファイルでこのメソッドをオーバーライドします。 詳細については、「[ASP.NET のキャッシュの概要](http://msdn.microsoft.com/library/5ec28012-4972-4dc3-b3e8-9d20401fe11d)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例は、プログラムによって名前付きキャッシュ プロバイダーを指定する方法を示しています。 `DiskCache` Advanced.aspx ページに進みますを任意の HTTP 要求にします。  
+
+```csharp  
+public override string GetOutputCacheProviderName(HttpContext context)  
+{  
+    if (context.Request.Path.EndsWith("Advanced.aspx"))  
+        return "DiskCache";  
+    else  
+        return base.GetOutputCacheProviderName(context);  
+}  
+```  
+
+```vb  
+Public Overloads Overrides Sub GetOutputCacheProviderName(ByVal context _  
+        As HttpContext) As String   
+    If context.Request.Path.EndsWith("Advanced.aspx") Then   
+        Return "DiskCache"   
+    Else   
+        Return MyBase.GetOutputCacheProviderName(context)   
+    End If   
+End Sub  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.Provider.ProviderException">
+          <paramref name="context" /><see langword="null" />または空の文字列。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetVaryByCustomString">
+      <MemberSignature Language="C#" Value="public virtual string GetVaryByCustomString (System.Web.HttpContext context, string custom);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetVaryByCustomString(class System.Web.HttpContext context, string custom) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.GetVaryByCustomString(System.Web.HttpContext,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="custom" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.Web.HttpContext" />現在の Web 要求に関する情報を含むオブジェクト。</param>
+        <param name="custom">どのキャッシュされた応答を使用して、現在の要求に応答するを指定するカスタムの文字列。</param>
+        <summary>アプリケーション全体の実装を提供、<see cref="P:System.Web.UI.PartialCachingAttribute.VaryByCustom" />プロパティです。</summary>
+        <returns>場合の値、<paramref name="custom" />パラメーターは<see langword="&quot;browser&quot;" />、ブラウザーの<see cref="P:System.Web.Configuration.HttpCapabilitiesBase.Type" />、それ以外の<see langword="null" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバーライドできます<xref:System.Web.HttpApplication.GetVaryByCustomString%2A>を現在の要求に基づくカスタム別値を計算する新しいメソッドを追加します。 実装では、認識されないカスタム値を基本クラスを呼び出すためです。 詳細については、次を参照してください。[する方法: 複数のページを使用してカスタム文字列バージョン キャッシュ](http://msdn.microsoft.com/library/b6c73735-a3cd-4d19-ba4d-0431881b0db0)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Init">
+      <MemberSignature Language="C#" Value="public virtual void Init ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Init() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.Init" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>イベント ハンドラーのすべてのモジュールを追加した後は、カスタムの初期化コードを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスでオーバーライドすることができます、<xref:System.Web.HttpApplication.Init%2A>を 1 回限りのカスタムの初期化コードを追加するメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogRequest">
+      <MemberSignature Language="C#" Value="public event EventHandler LogRequest;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler LogRequest" />
+      <MemberSignature Language="DocId" Value="E:System.Web.HttpApplication.LogRequest" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET は、現在の要求のログ記録を実行する直前に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpApplication.LogRequest>イベントは、エラーが発生した場合でも発生します。 イベント ハンドラーを指定することができます、<xref:System.Web.HttpApplication.LogRequest>要求に対してカスタムのログ記録を提供するイベントです。  
+  
+ イベントを処理する方法の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ <xref:System.Web.HttpApplication.LogRequest>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例では、イベント ハンドラーを作成して、<xref:System.Web.HttpApplication.LogRequest>イベント。 イベント ハンドラーでは、その他のいくつかのイベントも処理します。 したがって、<xref:System.Web.HttpContext.CurrentNotification%2A>と<xref:System.Web.HttpContext.IsPostNotification%2A>プロパティを使用して実行するコードを判別します。  
+  
+ [!code-csharp[System.Web.HttpResponse.IsPostNotification#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpResponse.IsPostNotification/CS/App_Code/TestModule.cs#1)]
+ [!code-vb[System.Web.HttpResponse.IsPostNotification#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpResponse.IsPostNotification/VB/App_Code/TestModule.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MapRequestHandler">
+      <MemberSignature Language="C#" Value="public event EventHandler MapRequestHandler;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler MapRequestHandler" />
+      <MemberSignature Language="DocId" Value="E:System.Web.HttpApplication.MapRequestHandler" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求に応答するハンドラーが選択されているときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpApplication.MapRequestHandler>イベントは、現在の要求の要求ハンドラーを決定する ASP.NET インフラストラクチャによって使用されます。 詳細については、次を参照してください。[する方法: HTTP ハンドラーの登録](http://msdn.microsoft.com/library/d5633f9a-03fb-4ccc-a799-dc67d656fa60)です。  
+  
+ イベントを処理する方法の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ <xref:System.Web.HttpApplication.MapRequestHandler>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Modules">
+      <MemberSignature Language="C#" Value="public System.Web.HttpModuleCollection Modules { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpModuleCollection Modules" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpApplication.Modules" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpModuleCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のアプリケーションのモジュールのコレクションを取得します。</summary>
+        <value><see cref="T:System.Web.HttpModuleCollection" />アプリケーション用のモジュールの名前を格納しています。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PostAcquireRequestState">
+      <MemberSignature Language="C#" Value="public event EventHandler PostAcquireRequestState;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler PostAcquireRequestState" />
+      <MemberSignature Language="DocId" Value="E:System.Web.HttpApplication.PostAcquireRequestState" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の要求に関連付けられている要求の状態 (たとえば、セッション状態) が取得されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpApplication.PostAcquireRequestState>後にイベントを生成、<xref:System.Web.HttpApplication.AcquireRequestState>イベントが発生しました。 サブスクライブする機能、<xref:System.Web.HttpApplication.AcquireRequestState>イベントによって処理されるすべてのデータにアクセスできます、<xref:System.Web.HttpApplication.PostAcquireRequestState>です。  
+  
+ イベントを処理する方法の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PostAuthenticateRequest">
+      <MemberSignature Language="C#" Value="public event EventHandler PostAuthenticateRequest;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler PostAuthenticateRequest" />
+      <MemberSignature Language="DocId" Value="E:System.Web.HttpApplication.PostAuthenticateRequest" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ モジュールが、ユーザーの id を確立されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpApplication.PostAuthenticateRequest>後にイベントを生成、<xref:System.Web.HttpApplication.AuthenticateRequest>イベントが発生しました。 サブスクライブする機能、<xref:System.Web.HttpApplication.PostAuthenticateRequest>イベントによって処理されるすべてのデータにアクセスできます、<xref:System.Web.HttpApplication.PostAuthenticateRequest>です。  
+  
+ イベントを処理する方法の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PostAuthorizeRequest">
+      <MemberSignature Language="C#" Value="public event EventHandler PostAuthorizeRequest;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler PostAuthorizeRequest" />
+      <MemberSignature Language="DocId" Value="E:System.Web.HttpApplication.PostAuthorizeRequest" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の要求のユーザーが承認されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpApplication.PostAuthorizeRequest> ASP.NET が現在の要求を承認されているイベントを通知します。 サブスクライブ、<xref:System.Web.HttpApplication.PostAuthorizeRequest>イベントにより、認証と、接続されているモジュールまたはイベント ハンドラーを処理する前に、要求の承認。  
+  
+ イベントを処理する方法の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PostLogRequest">
+      <MemberSignature Language="C#" Value="public event EventHandler PostLogRequest;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler PostLogRequest" />
+      <MemberSignature Language="DocId" Value="E:System.Web.HttpApplication.PostLogRequest" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET のすべてのイベント ハンドラーの処理が完了したときに発生、<see cref="E:System.Web.HttpApplication.LogRequest" />イベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを処理する方法の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ <xref:System.Web.HttpApplication.PostLogRequest>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PostMapRequestHandler">
+      <MemberSignature Language="C#" Value="public event EventHandler PostMapRequestHandler;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler PostMapRequestHandler" />
+      <MemberSignature Language="DocId" Value="E:System.Web.HttpApplication.PostMapRequestHandler" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET が現在の要求を適切なイベント ハンドラーにマップされている場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを処理する方法の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PostReleaseRequestState">
+      <MemberSignature Language="C#" Value="public event EventHandler PostReleaseRequestState;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler PostReleaseRequestState" />
+      <MemberSignature Language="DocId" Value="E:System.Web.HttpApplication.PostReleaseRequestState" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべての要求のイベント ハンドラーと要求の状態データが格納されている ASP.NET の実行が完了したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを処理する方法の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PostRequestHandlerExecute">
+      <MemberSignature Language="C#" Value="public event EventHandler PostRequestHandlerExecute;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler PostRequestHandlerExecute" />
+      <MemberSignature Language="DocId" Value="E:System.Web.HttpApplication.PostRequestHandlerExecute" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>(たとえば、ページまたは XML Web サービス) は、ASP.NET イベントのハンドラーが実行を終了するときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを処理する方法の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PostResolveRequestCache">
+      <MemberSignature Language="C#" Value="public event EventHandler PostResolveRequestCache;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler PostResolveRequestCache" />
+      <MemberSignature Language="DocId" Value="E:System.Web.HttpApplication.PostResolveRequestCache" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET は、現在のイベント ハンドラーの実行をバイパスでき、キャッシュのモジュールをキャッシュからの要求を処理するときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを処理する方法の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PostUpdateRequestCache">
+      <MemberSignature Language="C#" Value="public event EventHandler PostUpdateRequestCache;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler PostUpdateRequestCache" />
+      <MemberSignature Language="DocId" Value="E:System.Web.HttpApplication.PostUpdateRequestCache" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET には、モジュールをキャッシュを更新し、キャッシュからの後続の要求の処理に使用する応答の格納が完了したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpApplication.PostUpdateRequestCache>後にイベントを生成、<xref:System.Web.HttpApplication.UpdateRequestCache>イベントが発生しました。 ときに、<xref:System.Web.HttpApplication.PostUpdateRequestCache>が発生すると、ASP.NET が処理コードを完了し、キャッシュの内容を確定します。  
+  
+ イベントを処理する方法の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreRequestHandlerExecute">
+      <MemberSignature Language="C#" Value="public event EventHandler PreRequestHandlerExecute;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler PreRequestHandlerExecute" />
+      <MemberSignature Language="DocId" Value="E:System.Web.HttpApplication.PreRequestHandlerExecute" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET は、イベント ハンドラー (たとえば、ページまたは XML Web サービス) の実行を開始する直前に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを処理する方法の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreSendRequestContent">
+      <MemberSignature Language="C#" Value="public event EventHandler PreSendRequestContent;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler PreSendRequestContent" />
+      <MemberSignature Language="DocId" Value="E:System.Web.HttpApplication.PreSendRequestContent" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET のコンテンツをクライアントに送信する直前に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpApplication.PreSendRequestContent>イベントが複数回出現する可能性があります。  
+  
+ イベントを処理する方法の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreSendRequestHeaders">
+      <MemberSignature Language="C#" Value="public event EventHandler PreSendRequestHeaders;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler PreSendRequestHeaders" />
+      <MemberSignature Language="DocId" Value="E:System.Web.HttpApplication.PreSendRequestHeaders" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET の HTTP ヘッダーをクライアントに送信する直前に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを処理する方法の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterModule">
+      <MemberSignature Language="C#" Value="public static void RegisterModule (Type moduleType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterModule(class System.Type moduleType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.RegisterModule(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="moduleType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="moduleType">モジュールの型。</param>
+        <summary>アプリケーション モジュールを登録します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReleaseRequestState">
+      <MemberSignature Language="C#" Value="public event EventHandler ReleaseRequestState;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler ReleaseRequestState" />
+      <MemberSignature Language="DocId" Value="E:System.Web.HttpApplication.ReleaseRequestState" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET のすべての要求のイベント ハンドラーの実行が完了した後に発生します。 このイベントは、現在の状態データを保存する状態モジュールをさせます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.HttpApplication.ReleaseRequestState>イベントは、要求には、アプリケーションを終了してください。 および ASP.NET が通知されると、要求の状態を格納します。  
+  
+ イベントを処理する方法の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Request">
+      <MemberSignature Language="C#" Value="public System.Web.HttpRequest Request { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpRequest Request" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpApplication.Request" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpRequest</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の要求の組み込みの要求オブジェクトを取得します。</summary>
+        <value><see cref="T:System.Web.HttpRequest" />アプリケーションが処理しているオブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Web.HttpException"><see cref="T:System.Web.HttpRequest" />オブジェクトが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestCompleted">
+      <MemberSignature Language="C#" Value="public event EventHandler RequestCompleted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler RequestCompleted" />
+      <MemberSignature Language="DocId" Value="E:System.Web.HttpApplication.RequestCompleted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求に関連付けられているマネージ オブジェクトが解放された場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpApplication.RequestCompleted>イベントがすべてのマネージ モジュールの後に呼び出され、ASP.NET パイプライン内のハンドラーが呼び出されました。 すべてのマネージ モジュールとハンドラーの実行がリソースをクリーンアップするモジュールを使用できます。 要求中に作成したマネージ リソースを明示的に破棄する特定の時刻を必要とする場合は、このイベントを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveRequestCache">
+      <MemberSignature Language="C#" Value="public event EventHandler ResolveRequestCache;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler ResolveRequestCache" />
+      <MemberSignature Language="DocId" Value="E:System.Web.HttpApplication.ResolveRequestCache" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシング モジュール イベントのハンドラー (たとえば、ページまたは XML Web サービス) の実行をバイパスして、キャッシュからの要求を処理する ASP.NET ができるようにする承認イベントを完了したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを処理する方法の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Response">
+      <MemberSignature Language="C#" Value="public System.Web.HttpResponse Response { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpResponse Response" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpApplication.Response" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpResponse</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の要求の組み込みの応答オブジェクトを取得します。</summary>
+        <value><see cref="T:System.Web.HttpResponse" />アプリケーションが処理しているオブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Web.HttpException"><see cref="T:System.Web.HttpResponse" />オブジェクトが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Server">
+      <MemberSignature Language="C#" Value="public System.Web.HttpServerUtility Server { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpServerUtility Server" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpApplication.Server" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpServerUtility</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の要求の組み込みのサーバー オブジェクトを取得します。</summary>
+        <value><see cref="T:System.Web.HttpServerUtility" />アプリケーションが処理しているオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Session">
+      <MemberSignature Language="C#" Value="public System.Web.SessionState.HttpSessionState Session { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.SessionState.HttpSessionState Session" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpApplication.Session" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.SessionState.HttpSessionState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セッション データへのアクセスを提供する組み込みのセッション オブジェクトを取得します。</summary>
+        <value><see cref="T:System.Web.SessionState.HttpSessionState" />現在のセッションのオブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Web.HttpException"><see cref="T:System.Web.SessionState.HttpSessionState" />オブジェクトが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Site">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.ISite Site { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.ISite Site" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpApplication.Site" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.ISite</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定サイト インターフェイスを<see cref="T:System.ComponentModel.IComponent" />実装します。</summary>
+        <value><see cref="T:System.ComponentModel.ISite" />オブジェクトにより、管理し、その子コンポーネントと通信するためのコンテナーです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.IHttpAsyncHandler.BeginProcessRequest">
+      <MemberSignature Language="C#" Value="IAsyncResult IHttpAsyncHandler.BeginProcessRequest (System.Web.HttpContext context, AsyncCallback cb, object extraData);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.IAsyncResult System.Web.IHttpAsyncHandler.BeginProcessRequest(class System.Web.HttpContext context, class System.AsyncCallback cb, object extraData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.System#Web#IHttpAsyncHandler#BeginProcessRequest(System.Web.HttpContext,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="cb" Type="System.AsyncCallback" />
+        <Parameter Name="extraData" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.Web.HttpContext" /> HTTP 要求を処理に使用される組み込みのサーバー オブジェクトへの参照を提供します。</param>
+        <param name="cb"><see cref="T:System.AsyncCallback" />非同期メソッドの呼び出しが完了したときに呼び出します。 場合、 <c>cb</c>パラメーターは<see langword="null" />デリゲートは呼び出されません。</param>
+        <param name="extraData">要求を処理するために必要な追加データ。</param>
+        <summary>HTTP のイベント ハンドラーへの非同期呼び出しを開始します。</summary>
+        <returns><see cref="T:System.IAsyncResult" />プロセスの状態に関する情報を格納します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.IHttpAsyncHandler.EndProcessRequest">
+      <MemberSignature Language="C#" Value="void IHttpAsyncHandler.EndProcessRequest (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.IHttpAsyncHandler.EndProcessRequest(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.System#Web#IHttpAsyncHandler#EndProcessRequest(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result"><see cref="T:System.IAsyncResult" />プロセスの状態に関する情報を格納します。</param>
+        <summary>非同期処理を提供<see langword="End" />メソッドは、プロセスが終了するとします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Web.HttpApplication.System%23Web%23IHttpAsyncHandler%23EndProcessRequest%2A>では、非同期処理中に検出した例外が発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.IHttpHandler.IsReusable">
+      <MemberSignature Language="C#" Value="bool System.Web.IHttpHandler.IsReusable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Web.IHttpHandler.IsReusable" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpApplication.System#Web#IHttpHandler#IsReusable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see langword="Boolean" />別の要求が使用できるかどうかを示す値、<see cref="T:System.Web.IHttpHandler" />オブジェクト。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Web.IHttpHandler" />オブジェクトが再利用可能なそれ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 明示的に設定する、`IsReusable`プロパティを`true`または`false`をオーバーライドするコードを提供、`IsReusable`プロパティ アクセサー。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.IHttpHandler.ProcessRequest">
+      <MemberSignature Language="C#" Value="void IHttpHandler.ProcessRequest (System.Web.HttpContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.IHttpHandler.ProcessRequest(class System.Web.HttpContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplication.System#Web#IHttpHandler#ProcessRequest(System.Web.HttpContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.Web.HttpContext" /> HTTP 要求を処理に使用される組み込みのサーバー オブジェクトへの参照を提供します。</param>
+        <summary>カスタム HTTP ハンドラーを実装することにより、HTTP Web 要求の処理、<see cref="T:System.Web.IHttpHandler" />インターフェイスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 継承するクラス、<xref:System.Web.IHttpModule>と<xref:System.Web.IHttpHandler>への参照として提供するインターフェイス、<xref:System.Web.HttpContext>の現在の HTTP 要求オブジェクト。 このオブジェクトが、組み込みへのアクセスを提供`Request`、 `Response`、および`Server`要求のオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">すべての場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateRequestCache">
+      <MemberSignature Language="C#" Value="public event EventHandler UpdateRequestCache;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler UpdateRequestCache" />
+      <MemberSignature Language="DocId" Value="E:System.Web.HttpApplication.UpdateRequestCache" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシング モジュールがキャッシュからの後続の要求の処理に使用される応答を格納できるようにするために、イベント ハンドラーを実行する ASP.NET が完了したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを処理する方法の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="User">
+      <MemberSignature Language="C#" Value="public System.Security.Principal.IPrincipal User { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Principal.IPrincipal User" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpApplication.User" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Principal.IPrincipal</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の要求の組み込みのユーザー オブジェクトを取得します。</summary>
+        <value><see cref="T:System.Security.Principal.IPrincipal" />を現在の認証済みまたは匿名ユーザーを表すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Web.HttpException"><see cref="T:System.Security.Principal.IPrincipal" />オブジェクトが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,456 @@
+<Type Name="LoginDesigner" FullName="System.Web.UI.Design.WebControls.LoginDesigner">
+  <TypeSignature Language="C#" Value="public class LoginDesigner : System.Web.UI.Design.WebControls.CompositeControlDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LoginDesigner extends System.Web.UI.Design.WebControls.CompositeControlDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.LoginDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.WebControls.CompositeControlDesigner</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ビジュアル デザイナーでデザイン時サポートを提供、 <see cref="T:System.Web.UI.WebControls.Login" /> Web サーバー コントロールです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login>コントロール ホスト Web サイトにログオンするユーザーができるユーザー インターフェイスを表示します。  
+  
+ ビジュアル デザイナーでソースからデザイン ビューに切り替えたときに、マークアップのソース コードを説明する、<xref:System.Web.UI.WebControls.Login>コントロールは解析され、デザイン画面でコントロールのデザイン時バージョンを作成します。 ソース ビューに切り替えるには、デザイン時コントロールがマークアップのソース コードを永続化し、Web ページのマークアップに編集します。 <xref:System.Web.UI.Design.WebControls.LoginDesigner>クラスは、デザイン時サポートを提供、<xref:System.Web.UI.WebControls.Login>コントロール。  
+  
+ <xref:System.Web.UI.Design.WebControls.LoginDesigner>クラスのプロパティは、次の機能を提供します。  
+  
+-   <xref:System.Web.UI.Design.WebControls.LoginDesigner.ActionLists%2A>プロパティから返される、<xref:System.ComponentModel.Design.DesignerActionListCollection>通常から派生したオブジェクトを含むオブジェクトを<xref:System.ComponentModel.Design.DesignerActionList>デザイナーの継承ツリーの各レベルのクラスです。  
+  
+-   <xref:System.Web.UI.Design.WebControls.LoginDesigner.AutoFormats%2A>プロパティは、書式指定での表示スキームのコレクションを返します、**オート フォーマット** ダイアログ ボックス。  
+  
+-   <xref:System.Web.UI.Design.WebControls.LoginDesigner.TemplateGroups%2A>プロパティは、関連するフィールドについて、テンプレート グループのコレクションを返します<xref:System.Web.UI.WebControls.Login>コントロールと、最上位<xref:System.Web.UI.WebControls.Login>テンプレート。  
+  
+-   <xref:System.Web.UI.Design.WebControls.LoginDesigner.UsePreviewControl%2A>プロパティは常に返します`true`、デザイナーに関連付けられている一時的なコピーが作成されることを示す<xref:System.Web.UI.WebControls.Login>をデザイン時のマークアップを生成します。  
+  
+ <xref:System.Web.UI.Design.WebControls.LoginDesigner>クラスのメソッドは、次の機能を提供します。  
+  
+-   <xref:System.Web.UI.Design.WebControls.LoginDesigner.GetDesignTimeHtml%2A>メソッドは、関連付けられている表示するために使用するマークアップを返します<xref:System.Web.UI.WebControls.Login>デザイン時にします。  
+  
+-   <xref:System.Web.UI.Design.WebControls.LoginDesigner.GetEditableDesignerRegionContent%2A>メソッドが関連付けられているテンプレートのシリアル化されたコピーを返します<xref:System.Web.UI.WebControls.Login>です。  
+  
+-   <xref:System.Web.UI.Design.WebControls.LoginDesigner.GetErrorDesignTimeHtml%2A>メソッドは、関連付けられている表示するために使用するマークアップを提供する<xref:System.Web.UI.WebControls.Login>デザイン時にエラーが発生しました。  
+  
+-   <xref:System.Web.UI.Design.WebControls.LoginDesigner.Initialize%2A>メソッドには、表示、編集、および関連付けられたデザインにデザイナーができるように準備<xref:System.Web.UI.WebControls.Login>です。  
+  
+-   <xref:System.Web.UI.Design.WebControls.LoginDesigner.PreFilterProperties%2A>からプロパティを削除、追加のプロパティを追加または関連付けられているプロパティをシャドウするメソッドが使用される<xref:System.Web.UI.WebControls.Login>です。  
+  
+-   <xref:System.Web.UI.Design.WebControls.LoginDesigner.SetEditableDesignerRegionContent%2A>メソッドが関連付けられている領域を設定<xref:System.Web.UI.WebControls.Login>コントロール テンプレートのコピーをシリアル化されたからです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、拡張する方法を示します、<xref:System.Web.UI.Design.WebControls.LoginDesigner>クラスから派生したコントロールの外観を変更する、<xref:System.Web.UI.WebControls.Login>コントロールをデザイン時です。  
+  
+ 例では、`MyLogin`から制御、<xref:System.Web.UI.WebControls.Login>です。 `MyLogin`のコピーである、<xref:System.Web.UI.WebControls.Login>コントロール。 例ではまた、`MyLoginDesigner`からクラス、<xref:System.Web.UI.Design.WebControls.LoginDesigner>し、適用、<xref:System.ComponentModel.DesignerAttribute>属性を`MyLoginDesigner`上、`MyLogin`コントロール。  
+  
+ `MyLoginDesigner`よりも優先、<xref:System.Web.UI.Design.WebControls.LoginDesigner.PreFilterProperties%2A>を作成するメソッド、<xref:System.Web.UI.Control.NamingContainer%2A>プロパティに表示される、**プロパティ**デザイン時にグリッドです。 も優先、<xref:System.Web.UI.Design.WebControls.LoginDesigner.GetDesignTimeHtml%2A>場合、そのエクステントの詳細表示するコントロールの周りの青い点線の枠を描画するメソッド、<xref:System.Web.UI.WebControls.WebControl.BorderStyle%2A>のプロパティ、`MyLogin`コントロールは、<xref:System.Web.UI.WebControls.BorderStyle.NotSet>または<xref:System.Web.UI.WebControls.BorderStyle.None>値。 も優先、<xref:System.Web.UI.Design.WebControls.LoginDesigner.GetErrorDesignTimeHtml%2A>赤、太字のテキストに表示されるエラー メッセージが含まれたプレース ホルダーのマークアップを生成するメソッド。  
+  
+ [!code-csharp[System.Web.UI.Design.WebControls.LoginDesigner#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.LoginDesigner/CS/LoginDesigner.cs#1)]
+ [!code-vb[System.Web.UI.Design.WebControls.LoginDesigner#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.LoginDesigner/VB/LoginDesigner.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LoginDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.LoginDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.LoginDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework は、内部での新しいインスタンスを作成、<xref:System.Web.UI.Design.WebControls.LoginDesigner>クラスの関連付けの作成時に<xref:System.Web.UI.WebControls.Login>コントロールまたはそのコントロールをデザイン サーフェイス上のコピー。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActionLists">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.Design.DesignerActionListCollection ActionLists { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.Design.DesignerActionListCollection ActionLists" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.LoginDesigner.ActionLists" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignerActionListCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このデザイナーのデザイナー アクション リスト コレクションを取得します。</summary>
+        <value>このデザイナーと関連付けられた <see cref="T:System.ComponentModel.Design.DesignerActionListCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.LoginDesigner.ActionLists%2A>プロパティを作成、<xref:System.ComponentModel.Design.DesignerActionList>オブジェクトに対して、<xref:System.Web.UI.Design.WebControls.LoginDesigner>クラスに追加、<xref:System.ComponentModel.Design.DesignerActionListCollection>オブジェクトから取得される、<xref:System.Web.UI.Design.WebControls.LoginDesigner.ActionLists%2A>基本プロパティは、しを返します、<xref:System.ComponentModel.Design.DesignerActionListCollection>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowResize">
+      <MemberSignature Language="C#" Value="public override bool AllowResize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowResize" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.LoginDesigner.AllowResize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を指定する値かどうか、<see cref="T:System.Web.UI.Design.WebControls.LoginDesigner" />コントロールがサイズ変更を許可します。</summary>
+        <value>
+          <see langword="true" />コントロールがサイズ変更を許可する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.UI.Design.WebControls.LoginDesigner.RenderOuterTable%2A>プロパティに設定されている`false`コントロールがサイズ変更を許可していません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoFormats">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.Design.DesignerAutoFormatCollection AutoFormats { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Design.DesignerAutoFormatCollection AutoFormats" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.LoginDesigner.AutoFormats" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.DesignerAutoFormatCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表示する定義済み書式指定のコレクションのスキームを取得、**オート フォーマット** ダイアログ ボックス。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.Login" /> の定義済みスキームを格納している <see cref="T:System.Web.UI.Design.DesignerAutoFormatCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.DesignerAutoFormatCollection>オブジェクトには、XML でエンコードされたクラスのメンバー、内部から設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeHtml">
+      <MemberSignature Language="C#" Value="public override string GetDesignTimeHtml (System.Web.UI.Design.DesignerRegionCollection regions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetDesignTimeHtml(class System.Web.UI.Design.DesignerRegionCollection regions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.LoginDesigner.GetDesignTimeHtml(System.Web.UI.Design.DesignerRegionCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="regions" Type="System.Web.UI.Design.DesignerRegionCollection" />
+      </Parameters>
+      <Docs>
+        <param name="regions">コントロールのデザイン時ビューの選択可能領域およびクリック可能領域の定義の追加先となる <see cref="T:System.Web.UI.Design.DesignerRegionCollection" />。</param>
+        <summary>関連付けられたコントロールをデザインに時表示するために使用するマークアップを取得し、デザイナー画面のコレクションに追加します。</summary>
+        <returns>表示するために使用するマークアップを含む文字列、<see cref="T:System.Web.UI.WebControls.Login" />デザイン時にします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.LoginDesigner.GetDesignTimeHtml%2A>メソッドを作成、<xref:System.Web.UI.Design.EditableDesignerRegion>オブジェクトに対して、 <xref:System.Web.UI.WebControls.Login.LayoutTemplate%2A> 、関連するプロパティ<xref:System.Web.UI.WebControls.Login>を制御し、それを追加、<xref:System.Web.UI.Design.DesignerRegionCollection>によって参照されるオブジェクト、`regions`パラメーター。 <xref:System.Web.UI.Design.WebControls.LoginDesigner.GetDesignTimeHtml%2A>メソッドを使用、<xref:System.Web.UI.Design.WebControls.CompositeControlDesigner.GetDesignTimeHtml%2A>ベースのレンダリングをデザイン時のマークアップを生成する方法を<xref:System.Web.UI.WebControls.Login>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Web.UI.Design.WebControls.LoginDesigner.GetDesignTimeHtml%2A>から継承されるクラスのメソッド、<xref:System.Web.UI.Design.WebControls.LoginDesigner>クラスから派生したコントロールの外観を変更する、<xref:System.Web.UI.WebControls.Login>コントロールをデザイン時です。 場合、例では、描画エクステントの詳細に表示するコントロールの周りの青い点線の枠、<xref:System.Web.UI.WebControls.WebControl.BorderStyle%2A>コントロールのプロパティは、<xref:System.Web.UI.WebControls.BorderStyle.NotSet>または<xref:System.Web.UI.WebControls.BorderStyle.None>値。  
+  
+ [!code-csharp[System.Web.UI.Design.WebControls.LoginDesigner#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.LoginDesigner/CS/LoginDesigner.cs#4)]
+ [!code-vb[System.Web.UI.Design.WebControls.LoginDesigner#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.LoginDesigner/VB/LoginDesigner.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合、<see cref="M:System.Web.UI.Design.WebControls.LoginDesigner.GetDesignTimeHtml(System.Web.UI.Design.DesignerRegionCollection)" />メソッドを呼び出すことを確認する、<see cref="M:System.Web.UI.Design.WebControls.CompositeControlDesigner.GetDesignTimeHtml" />基本メソッドが最終的には、いくつかをオーバーライドためレベル、呼び出し、<see cref="T:System.Web.UI.WebControls.Login" />コントロールまたはマークアップを生成するコントロールのコピー。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEditableDesignerRegionContent">
+      <MemberSignature Language="C#" Value="public override string GetEditableDesignerRegionContent (System.Web.UI.Design.EditableDesignerRegion region);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetEditableDesignerRegionContent(class System.Web.UI.Design.EditableDesignerRegion region) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.LoginDesigner.GetEditableDesignerRegionContent(System.Web.UI.Design.EditableDesignerRegion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="region" Type="System.Web.UI.Design.EditableDesignerRegion" />
+      </Parameters>
+      <Docs>
+        <param name="region">内容の取得対象の <see cref="T:System.Web.UI.Design.EditableDesignerRegion" />。</param>
+        <summary>デザイン時に関連付けられたコントロールを表示するために使用されるテンプレートのシリアル化されたコピーを返します。</summary>
+        <returns>関連付けられている表示するために使用されるテンプレートのシリアル化されたコピーを含む文字列<see cref="T:System.Web.UI.WebControls.Login" />デザイン時にします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.LoginDesigner.GetEditableDesignerRegionContent%2A>メソッドのコピーを作成、<xref:System.Web.UI.WebControls.Login.LayoutTemplate%2A>関連付けられているオブジェクト<xref:System.Web.UI.WebControls.Login>コントロール コンテナー内のコントロールをシリアル化されたコピーを返します。  
+  
+ 一部にシリアル化されたテンプレートを復元することができます、<xref:System.Web.UI.WebControls.Login>制御を使用して、<xref:System.Web.UI.Design.WebControls.LoginDesigner.SetEditableDesignerRegionContent%2A>メソッドです。  
+  
+ `region`でパラメーターを使用しない、<xref:System.Web.UI.Design.WebControls.LoginDesigner.GetEditableDesignerRegionContent%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetErrorDesignTimeHtml">
+      <MemberSignature Language="C#" Value="protected override string GetErrorDesignTimeHtml (Exception e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetErrorDesignTimeHtml(class System.Exception e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.LoginDesigner.GetErrorDesignTimeHtml(System.Exception)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="e"><see cref="T:System.Exception" />がスローされました。</param>
+        <summary>エラーが発生すると、デザイン時に関連付けられたコントロールを表示するために使用するマークアップを提供します。</summary>
+        <returns>関連付けられている表示するために使用するマークアップを含む文字列<see cref="T:System.Web.UI.WebControls.Login" />デザイン時にエラーが発生した後にします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プレース ホルダーをデザイン時<xref:System.Web.UI.WebControls.Login>コントロールのレンダリングには、型名、コントロール名、およびエラーを説明するメッセージが含まれています。  
+  
+   
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Web.UI.Design.WebControls.LoginDesigner.GetErrorDesignTimeHtml%2A>から継承されるクラスのメソッド、<xref:System.Web.UI.Design.WebControls.LoginDesigner>クラスから派生したコントロールの外観を変更する、<xref:System.Web.UI.WebControls.Login>コントロールをデザイン時です。 例では、赤、太字のテキストに表示されるエラー メッセージが含まれたプレース ホルダーのマークアップを生成します。  
+  
+ [!code-csharp[System.Web.UI.Design.WebControls.LoginDesigner#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.LoginDesigner/CS/LoginDesigner.cs#2)]
+ [!code-vb[System.Web.UI.Design.WebControls.LoginDesigner#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.LoginDesigner/VB/LoginDesigner.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (System.ComponentModel.IComponent component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(class System.ComponentModel.IComponent component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.LoginDesigner.Initialize(System.ComponentModel.IComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="component">A<see cref="T:System.Web.UI.WebControls.Login" />を実装する、<see cref="T:System.ComponentModel.IComponent" />です。</param>
+        <summary>関連付けられたコントロールをデザイナーで表示、編集、デザインできるように準備します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビジュアル デザイナーの呼び出し、<xref:System.Web.UI.Design.WebControls.LoginDesigner.Initialize%2A>メソッドを表示するために、デザイナーを使用する準備ができたときに、<xref:System.Web.UI.WebControls.Login>コントロール。 <xref:System.Web.UI.Design.WebControls.LoginDesigner.Initialize%2A>メソッドとその基本メソッドのプロパティを構成し、デザイナーの操作のために必要なイベントを設定します。  
+  
+ `component`パラメーターは、<xref:System.Web.UI.WebControls.Login>デザイナーまたはのコピーに関連付けられているコントロール、<xref:System.Web.UI.WebControls.Login>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreFilterProperties">
+      <MemberSignature Language="C#" Value="protected override void PreFilterProperties (System.Collections.IDictionary properties);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void PreFilterProperties(class System.Collections.IDictionary properties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.LoginDesigner.PreFilterProperties(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="properties" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="properties">追加されたプロパティおよびシャドウ プロパティの <see cref="T:System.Collections.IDictionary" /> を実装するコレクション。</param>
+        <summary>プロパティを削除するかに表示する追加のプロパティを追加する、デザイナーによって使用される、**プロパティ**グリッドまたは関連付けられたコントロールのプロパティをシャドウします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロール デザイナーから派生したメソッドを使用して、<xref:System.ComponentModel.Design.ComponentDesigner.PreFilterProperties%2A?displayProperty=nameWithType>デザイナーを実装して、対応するデザイン時のプロパティにさまざまなコントロールのプロパティをシャドウおよびからプロパティをプロパティを追加または削除する方法、**プロパティ**グリッドです。  
+  
+ 場合、<xref:System.Web.UI.WebControls.Login.LayoutTemplate%2A>プロパティが定義されて、<xref:System.Web.UI.WebControls.Login>コントロール、<xref:System.Web.UI.Design.WebControls.LoginDesigner.PreFilterProperties%2A>設定、<xref:System.ComponentModel.BrowsableAttribute>にテンプレート化されたときに適用されないプロパティの属性`false`にそれらのプロパティが表示されないように、**プロパティ**グリッドです。  
+  
+   
+  
+## Examples  
+ 次のサンプル コードから派生するクラスを作成する<xref:System.Web.UI.Design.WebControls.LoginDesigner>、オーバーライドして、<xref:System.Web.UI.Design.WebControls.LoginDesigner.PreFilterProperties%2A>を変更するメソッド、**プロパティ**のグリッド、<xref:System.Web.UI.WebControls.Login>コントロールをデザイン時。 例は、<xref:System.Web.UI.Control.NamingContainer%2A>プロパティに表示される、**プロパティ**グリッドです。  
+  
+ [!code-csharp[System.Web.UI.Design.WebControls.LoginDesigner#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.LoginDesigner/CS/LoginDesigner.cs#3)]
+ [!code-vb[System.Web.UI.Design.WebControls.LoginDesigner#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.LoginDesigner/VB/LoginDesigner.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>上書き、<see cref="M:System.Web.UI.Design.WebControls.LoginDesigner.PreFilterProperties(System.Collections.IDictionary)" />プロパティの追加や、デザイン時のプロパティ コレクション内のプロパティの属性を変更する方法です。 他の処理を実行する前に、基本メソッドを呼び出すことを確認します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderOuterTable">
+      <MemberSignature Language="C#" Value="public bool RenderOuterTable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RenderOuterTable" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.LoginDesigner.RenderOuterTable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を指定する値かどうか、<see cref="T:System.Web.UI.Design.WebControls.LoginDesigner" />コントロールでは、外部テーブル コンテナーを使用して、インライン CSS スタイル ルールを適用します。</summary>
+        <value>
+          <see langword="true" />コントロールでは、外側のテーブル コンテナーを使用して、インライン CSS スタイル規則を適用する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.LoginDesigner>コントロールでは、外部テーブル コンテナーを使用して、マークアップでのインライン スタイル ルールを適用します。 このプロパティを設定して、外部テーブルのコンテナーを削除できます`true`です。 外部テーブルを削除する柔軟性が大きいコントロールによって表示されるマークアップに CSS 規則を適用する方法です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetEditableDesignerRegionContent">
+      <MemberSignature Language="C#" Value="public override void SetEditableDesignerRegionContent (System.Web.UI.Design.EditableDesignerRegion region, string content);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void SetEditableDesignerRegionContent(class System.Web.UI.Design.EditableDesignerRegion region, string content) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.LoginDesigner.SetEditableDesignerRegionContent(System.Web.UI.Design.EditableDesignerRegion,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="region" Type="System.Web.UI.Design.EditableDesignerRegion" />
+        <Parameter Name="content" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="region"><see cref="T:System.Web.UI.Design.EditableDesignerRegion" />を更新する領域の名前を提供します。</param>
+        <param name="content">関連付けられたコントロールのシリアル化されたテンプレートを含む文字列です。</param>
+        <summary>コントロール テンプレートのシリアル化されたコピーから関連付けられたコントロールの領域を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.LoginDesigner.SetEditableDesignerRegionContent%2A>メソッドが関連付けられているシリアル化されたテンプレートを解析<xref:System.Web.UI.WebControls.Login>で指定されているコントロール、`content`パラメーターで指定されているコントロールの領域を更新するテンプレートを使用して、<xref:System.Web.UI.Design.DesignerObject.Name%2A>のプロパティ、`region`パラメーター。  
+  
+ <xref:System.Web.UI.WebControls.Login.LayoutTemplate%2A>のプロパティ、<xref:System.Web.UI.WebControls.Login>コントロールを使用してシリアル化することができます、<xref:System.Web.UI.Design.WebControls.LoginDesigner.GetEditableDesignerRegionContent%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TemplateGroups">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.Design.TemplateGroupCollection TemplateGroups { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Design.TemplateGroupCollection TemplateGroups" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.LoginDesigner.TemplateGroups" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.TemplateGroupCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられたコントロールのフィールドについて、テンプレート グループのコレクションを取得します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.Login" /> 内の各テンプレート フィールドの要素を格納している <see cref="T:System.Web.UI.Design.TemplateGroupCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.LoginDesigner.TemplateGroups%2A>プロパティを取得、<xref:System.Web.UI.Design.TemplateGroupCollection>オブジェクトから、 <xref:System.Web.UI.Design.WebControls.LoginDesigner.TemplateGroups%2A> base プロパティ、および追加し、<xref:System.Web.UI.Design.TemplateGroup>を 1 つを含むオブジェクト<xref:System.Web.UI.Design.TemplateDefinition>オブジェクト、関連するレイアウト テンプレートを<xref:System.Web.UI.WebControls.Login>コントロールを<xref:System.Web.UI.Design.TemplateGroupCollection>です。 <xref:System.Web.UI.Design.WebControls.LoginDesigner.TemplateGroups%2A>プロパティには、これを返します<xref:System.Web.UI.Design.TemplateGroupCollection>呼び出し元にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UsePreviewControl">
+      <MemberSignature Language="C#" Value="protected override bool UsePreviewControl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UsePreviewControl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.LoginDesigner.UsePreviewControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイン時のマークアップを生成するときに、デザイナーに関連付けられた実際のコントロールではなく、一時的なコピーをデザイナーで使用するかどうかを示す値を取得します。</summary>
+        <value>常に <see langword="true" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.LoginDesigner.UsePreviewControl%2A>プロパティは常に`true`、デザイナー<xref:System.Web.UI.Design.ControlDesigner.ViewControl%2A>プロパティが関連付けられているのコピーを返します<xref:System.Web.UI.WebControls.Login>コントロールをデザイン時のマークアップを生成します。 <xref:System.Web.UI.Design.ControlDesigner.ViewControl%2A>プロパティは、実際に保存することによって、コピーを作成<xref:System.Web.UI.WebControls.Login>管理をポイントし、コントロールの永続化された文字列を解析します。 コピーしたコントロールではのすべての永続化には影響しません、<xref:System.Web.UI.WebControls.Login>です。  
+  
+ 場合、<xref:System.Web.UI.Design.WebControls.LoginDesigner.UsePreviewControl%2A>を返すプロパティはオーバーライドされて`false`、デザイナーを使用して、関連付けられている<xref:System.Web.UI.WebControls.Login>ページ マークアップのソースにコントロールをデザイン時の変更、デザイン時のマークアップを生成する自体に保持されます。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドすることができます、<see cref="P:System.Web.UI.Design.WebControls.LoginDesigner.UsePreviewControl" />を返すプロパティ<see langword="false" />またはコントロールをクラス レベルでマークされているかどうかに基づいて、その値を決定する<see cref="T:System.Web.UI.Design.SupportsPreviewControlAttribute" />属性。 場合、<see cref="P:System.Web.UI.Design.WebControls.LoginDesigner.UsePreviewControl" />がオーバーライドされていない、<see cref="T:System.Web.UI.WebControls.Login" />コントロールは無視されます、<see cref="T:System.Web.UI.Design.SupportsPreviewControlAttribute" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

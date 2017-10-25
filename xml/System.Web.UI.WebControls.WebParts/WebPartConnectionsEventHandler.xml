@@ -1,0 +1,32 @@
+<Type Name="WebPartConnectionsEventHandler" FullName="System.Web.UI.WebControls.WebParts.WebPartConnectionsEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void WebPartConnectionsEventHandler(object sender, WebPartConnectionsEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed WebPartConnectionsEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.WebPartConnectionsEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Web.UI.WebControls.WebParts.WebPartConnectionsEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Web.UI.WebControls.WebParts.WebPartConnectionsEventArgs" />。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsConnected" />と<see cref="E:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsDisconnected" />のイベント、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartConnectionsEventHandler>クラス上で発生する 2 つのイベント ハンドラー デリゲートの定義、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロール:<xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsConnected>イベントおよび<xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsDisconnected>イベント。 処理するメソッド、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsConnected>イベントは、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartsConnected%2A>メソッドです。 処理するメソッド、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsDisconnected>イベントは、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartsDisconnected%2A>メソッドです。 どちらの場合、イベント データが含まれている、<xref:System.Web.UI.WebControls.WebParts.WebPartConnectionsEventArgs>オブジェクト。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

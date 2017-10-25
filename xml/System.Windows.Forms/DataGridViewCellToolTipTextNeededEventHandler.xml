@@ -1,0 +1,53 @@
+<Type Name="DataGridViewCellToolTipTextNeededEventHandler" FullName="System.Windows.Forms.DataGridViewCellToolTipTextNeededEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void DataGridViewCellToolTipTextNeededEventHandler(object sender, DataGridViewCellToolTipTextNeededEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DataGridViewCellToolTipTextNeededEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewCellToolTipTextNeededEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.Forms.DataGridViewCellToolTipTextNeededEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.DataGridViewCellToolTipTextNeededEventArgs" />。</param>
+    <summary><see cref="E:System.Windows.Forms.DataGridView.CellToolTipTextNeeded" /> の <see cref="T:System.Windows.Forms.DataGridView" /> イベントを処理するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridView.CellToolTipTextNeeded>のみイベントが発生したときに、<xref:System.Windows.Forms.DataGridView>コントロール<xref:System.Windows.Forms.DataGridView.DataSource%2A>プロパティを設定またはその<xref:System.Windows.Forms.DataGridView.VirtualMode%2A>プロパティは`true`します。  
+  
+ 処理するときに、<xref:System.Windows.Forms.DataGridView.CellToolTipTextNeeded>イベント ハンドラーで指定したツールヒントのテキストが表示されるたびに、マウス ポインターがセル、およびコントロールを<xref:System.Windows.Forms.DataGridView.ShowCellToolTips%2A>プロパティの値が`true`です。 <xref:System.Windows.Forms.DataGridView.CellToolTipTextNeeded>イベントは、現在の状態またはセルの値によって決定されたツールヒントを表示する場合に便利です。  
+  
+ <xref:System.Windows.Forms.DataGridView.CellToolTipTextNeeded>イベントが発生するたびの値、<xref:System.Windows.Forms.DataGridViewCell.ToolTipText%2A?displayProperty=nameWithType>プロパティが取得プログラムや、マウス ポインターがセルに入ったとき。  
+  
+ 使用することができます、<xref:System.Windows.Forms.DataGridViewCellEventArgs.ColumnIndex%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataGridViewCellEventArgs.RowIndex%2A>状態または、セルの値を決定し、この情報を使用して設定するプロパティ、<xref:System.Windows.Forms.DataGridViewCellToolTipTextNeededEventArgs.ToolTipText%2A>プロパティです。 このプロパティは、セルの値で初期化<xref:System.Windows.Forms.DataGridViewCell.ToolTipText%2A>プロパティで、イベントの値をオーバーライドします。  
+  
+ 処理、<xref:System.Windows.Forms.DataGridView.CellToolTipTextNeeded>大量のデータ セルを設定のパフォーマンスの低下を避けるために使用するときにイベント<xref:System.Windows.Forms.DataGridViewCell.ToolTipText%2A>複数のセルの値。 詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールを拡張するためのベスト プラクティス](~/docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md)です。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ <xref:System.Windows.Forms.DataGridViewCellToolTipTextNeededEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、セルの内容に関する追加情報を表示するツールヒントを使用して、`ReportsTo`列です。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridView_SharedRowScenarios#30](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView_SharedRowScenarios/CPP/sharedrows.cpp#30)]
+ [!code-csharp[System.Windows.Forms.DataGridView_SharedRowScenarios#30](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView_SharedRowScenarios/CS/sharedrows.cs#30)]
+ [!code-vb[System.Windows.Forms.DataGridView_SharedRowScenarios#30](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView_SharedRowScenarios/VB/sharedrows.vb#30)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

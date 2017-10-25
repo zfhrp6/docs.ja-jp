@@ -1,0 +1,215 @@
+<Type Name="WebBaseErrorEvent" FullName="System.Web.Management.WebBaseErrorEvent">
+  <TypeSignature Language="C#" Value="public class WebBaseErrorEvent : System.Web.Management.WebManagementEvent" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebBaseErrorEvent extends System.Web.Management.WebManagementEvent" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Management.WebBaseErrorEvent" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Management.WebManagementEvent</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>すべての稼働状況の監視エラー イベントの基本クラスとして機能します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配置済みの Web アプリケーションの管理を運用環境と運用スタッフは、ASP.NET の状態監視できます。 <xref:System.Web.Management>名前空間には、アプリケーションの正常性状態のデータおよびプロバイダーの種類は、このデータ処理をパッケージ化する正常性イベントの種類が含まれています。 正常性イベントの管理を支援するサポート型も含まれています。  
+  
+ <xref:System.Web.Management.WebBaseErrorEvent>クラスは、エラー状態を表す状態監視イベントの基本クラスです。 ASP.NET を使用して<xref:System.Web.Management.WebBaseErrorEvent>と Web アプリケーションの有効期間中にエラー状態を示すために派生型です。  
+  
+> [!NOTE]
+>  ほとんどの場合は実装されている ASP.NET の稼働状況の監視の種類を使用して内の値を指定することで、稼働状況の監視システムを制御する、`healthMonitoring`構成セクション。 独自のカスタム イベントおよびプロバイダーを作成する正常性の監視の種類からも派生できます。 派生する例については、<xref:System.Web.Management.WebBaseErrorEvent>クラスのこのトピックで例を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、次の 2 つの部分です。 1 つは ASP.NET の状態から派生したイベントを使用して監視できるようにする構成ファイルの抜粋、<xref:System.Web.Management.WebBaseErrorEvent>クラスです。 2 番目から派生する方法を示しています、<xref:System.Web.Management.WebBaseErrorEvent>カスタム イベントを作成するクラス。  
+  
+```  
+<healthMonitoring   
+  enabled="true" heartBeatInterval="0">  
+  
+  <providers>  
+    <!-- Define the custom provider that   
+         processes custom Web request events. -->  
+    <add name="SampleWebEventProvider"   
+      type="SamplesAspNet.SampleEventProvider,  
+      webeventprovider,Version=1.0.1573.18094,   
+      Culture=neutral, PublicKeyToken=b5a57a9a9d487cf4,   
+      processorArchitecture=MSIL"/>  
+  </providers>  
+  
+  <eventMappings>  
+  
+    <!--  Define the event source that issues custom events.   -->  
+    <add  name="SampleWebBaseErrorEvent"      
+      type="SamplesAspNet.SampleWebBaseErrorEvent,  
+      webbaseerrorevent,Version=1.0.1573.21549, Culture=neutral,     
+      PublicKeyToken=2a0b23915ac7352b, processorArchitecture=MSIL"/>  
+  </eventMappings>  
+  
+  <rules>  
+    <!-- Associate custom event with related   
+      custom provider -->  
+    <add   
+       name="Custom Web Base Errors"  
+       eventName="SampleWebBaseErrorEvent"   
+       provider="SampleWebEventProvider"   
+       profile="Custom"/>    
+  </rules>  
+  
+</healthMonitoring>  
+```  
+  
+ 次のコードから派生する方法を示しています、<xref:System.Web.Management.WebBaseErrorEvent>カスタム イベントを作成するクラス。  
+  
+ [!code-csharp[System.Web.Management.WebErrorEvent#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebErrorEvent/CS/weberrorevent.cs#1)]
+ [!code-vb[System.Web.Management.WebErrorEvent#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebErrorEvent/VB/weberrorevent.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WebBaseErrorEvent (string message, object eventSource, int eventCode, Exception e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor(string message, object eventSource, int32 eventCode, class System.Exception e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebBaseErrorEvent.#ctor(System.String,System.Object,System.Int32,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="eventSource" Type="System.Object" />
+        <Parameter Name="eventCode" Type="System.Int32" />
+        <Parameter Name="e" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">イベントの説明。</param>
+        <param name="eventSource">イベントのソースであるオブジェクト。</param>
+        <param name="eventCode">イベントに関連付けられているコード。 カスタム イベントを実装するときにイベントのコードがより大きくなければなりません<see cref="F:System.Web.Management.WebEventCodes.WebExtendedBase" />です。</param>
+        <param name="e"><see cref="T:System.Exception" />エラーに関連します。</param>
+        <summary><see cref="T:System.Web.Management.WebBaseErrorEvent" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、ASP.NET の稼働状況の監視システムで内部的に使用します。 このクラスから継承する独自のイベントの種類を実装する場合は、このコンス トラクターを呼び出すことができます。  
+  
+   
+  
+## Examples  
+ 次のコード例のコンス トラクターからこのコンス トラクターを呼び出す方法を示しています、`SampleWebBaseErrorEvent`クラスから派生したクラスは、<xref:System.Web.Management.WebBaseErrorEvent>クラスです。  
+  
+ [!code-csharp[System.Web.Management.WebBaseErrorEvent#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebBaseErrorEvent/CS/webbaseerrorevent.cs#2)]
+ [!code-vb[System.Web.Management.WebBaseErrorEvent#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebBaseErrorEvent/VB/webbaseerrorevent.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WebBaseErrorEvent (string message, object eventSource, int eventCode, int eventDetailCode, Exception e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor(string message, object eventSource, int32 eventCode, int32 eventDetailCode, class System.Exception e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebBaseErrorEvent.#ctor(System.String,System.Object,System.Int32,System.Int32,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="eventSource" Type="System.Object" />
+        <Parameter Name="eventCode" Type="System.Int32" />
+        <Parameter Name="eventDetailCode" Type="System.Int32" />
+        <Parameter Name="e" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">イベントの説明。</param>
+        <param name="eventSource">イベントのソースであるオブジェクト。</param>
+        <param name="eventCode">イベントに関連付けられているコード。 カスタム イベントを実装するときにイベントのコードがより大きくなければなりません<see cref="F:System.Web.Management.WebEventCodes.WebExtendedBase" />です。</param>
+        <param name="eventDetailCode">イベントの詳細な識別子です。</param>
+        <param name="e"><see cref="T:System.Exception" />エラーに関連します。</param>
+        <summary><see cref="T:System.Web.Management.WebBaseErrorEvent" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、ASP.NET の稼働状況の監視システムで内部的に使用します。 このクラスから継承する独自のイベントの種類を実装する場合は、このコンス トラクターを呼び出すことができます。  
+  
+   
+  
+## Examples  
+ 次のコード例のコンス トラクターからこのコンス トラクターを呼び出す方法を示しています、`SampleWebBaseErrorEvent`クラスから派生したクラスは、<xref:System.Web.Management.WebBaseErrorEvent>クラスです。  
+  
+ [!code-csharp[System.Web.Management.WebBaseErrorEvent#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebBaseErrorEvent/CS/webbaseerrorevent.cs#3)]
+ [!code-vb[System.Web.Management.WebBaseErrorEvent#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebBaseErrorEvent/VB/webbaseerrorevent.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ErrorException">
+      <MemberSignature Language="C#" Value="public Exception ErrorException { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Exception ErrorException" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebBaseErrorEvent.ErrorException" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Exception" />エラーに関連します。</summary>
+        <value><see cref="T:System.Exception" />エラーに関連します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタムを実装する場合<xref:System.Web.Management.WebBaseErrorEvent>、カスタム エラー イベントがこの例外を処理することを確認する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncrementPerfCounters">
+      <MemberSignature Language="C#" Value="protected override void IncrementPerfCounters ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void IncrementPerfCounters() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebBaseErrorEvent.IncrementPerfCounters" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>イベントのエラーのパフォーマンスに関連するカウンターをインクリメントします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、次のパフォーマンス カウンターをインクリメントします。  
+  
+-   インフラストラクチャ エラーのイベントが発生します。 これは、生成されるエラー イベントを追跡するグローバル カウンターです。  
+  
+-   エラー イベントが発生します。 これは、アプリケーションの開始後に発生するエラー イベントの数を追跡するアプリケーションに固有のカウンターです。  
+  
+ このメソッドは、親も呼び出します<xref:System.Web.Management.WebBaseEvent.IncrementPerfCounters%2A>イベントが発生したカウンターをインクリメントします。 このカウンターは、発生したイベントの合計数を追跡します。  
+  
+ システム モニター (PerfMon) でこれらのパフォーマンス カウンターを表示する、**カウンターの追加**ウィンドウを選択**ASP.NET**で、**パフォーマンス オブジェクト**ドロップダウン リストで、をクリックし、表示する場合、パフォーマンス カウンターを選択、**追加**ボタンをクリックします。 詳細については、次を参照してください。 [ASP.NET アプリケーションをシステム モニター (PerfMon) を使用して](http://go.microsoft.com/fwlink/?linkid=36882&clcid=0x409)MSDN の IIS のマニュアルでします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,330 @@
+<Type Name="BuildProviderCollection" FullName="System.Web.Configuration.BuildProviderCollection">
+  <TypeSignature Language="C#" Value="public sealed class BuildProviderCollection : System.Configuration.ConfigurationElementCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed BuildProviderCollection extends System.Configuration.ConfigurationElementCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.BuildProviderCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElementCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Configuration.ConfigurationCollection(typeof(System.Web.Configuration.BuildProvider))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Web.Configuration.BuildProvider" /> オブジェクトのコレクションを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.BuildProviderCollection>カスタム リソース ファイルをコンパイルするために使用します。 ビルド プロバイダーの数は任意です。 <xref:System.Web.Configuration.BuildProviderCollection>基になる構成ファイル内の実際の要素を参照していません。 これは、含まれているコンパイルの情報に簡単にアクセスできるようにするコンストラクトです。  
+  
+   
+  
+## Examples  
+ このセクションでは、2 つのコード例を示します。 最初のいくつかのプロパティの値を宣言によって指定する方法を説明、<xref:System.Web.Configuration.BuildProviderCollection>クラスです。 2 番目のメンバーを使用する方法を示します、<xref:System.Web.Configuration.BuildProviderCollection>クラスです。  
+  
+ 次の構成ファイルの例は、宣言のいくつかのプロパティの値を指定する方法を示しています、<xref:System.Web.Configuration.BuildProviderCollection>クラスです。  
+  
+```  
+<system.web>  
+  <compilation>   
+    <buildProviders>  
+      <add extension=".aspx"   
+        type="System.Web.Compilation.PageBuildProvider"  
+         />  
+      <add extension=".ascx"   
+        type="System.Web.Compilation.UserControlBuildProvider"  
+         />  
+      <add extension=".master"   
+        type="System.Web.Compilation.MasterPageBuildProvider"  
+         />  
+      <add extension=".asix"   
+        type="System.Web.Compilation.ImageGeneratorBuildProvider"  
+         />  
+      <add extension=".asmx"   
+        type="System.Web.Compilation.WebServiceBuildProvider"  
+         />  
+      <add extension=".ashx"   
+        type="System.Web.Compilation.WebHandlerBuildProvider"  
+         />  
+      <add extension=".soap"   
+        type="System.Web.Compilation.WebServiceBuildProvider"  
+         />  
+      <add extension=".resx"   
+        type="System.Web.Compilation.ResXBuildProvider"  
+        appliesTo="Resources" />  
+      <add extension=".resources"   
+        type="System.Web.Compilation.ResourcesBuildProvider"  
+        appliesTo="Code, Resources" />  
+      <add extension=".wsdl"   
+        type="System.Web.Compilation.WsdlBuildProvider"  
+        appliesTo="Code" />  
+      <add extension=".xsd"   
+        type="System.Web.Compilation.XsdBuildProvider"  
+        appliesTo="Code" />  
+    </buildProviders>  
+  </compilation>  
+</system.web>  
+  
+```  
+  
+ 次のコード例では、メンバーを使用して、<xref:System.Web.Configuration.BuildProviderCollection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.BuildProviderCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.BuildProviderCollection/CS/BuildProviderCollection.cs#1)]
+ [!code-vb[System.Web.Configuration.BuildProviderCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.BuildProviderCollection/VB/BuildProviderCollection.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BuildProviderCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.BuildProviderCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.BuildProviderCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Web.Configuration.BuildProvider buildProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Web.Configuration.BuildProvider buildProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.BuildProviderCollection.Add(System.Web.Configuration.BuildProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buildProvider" Type="System.Web.Configuration.BuildProvider" />
+      </Parameters>
+      <Docs>
+        <param name="buildProvider"><see cref="T:System.Web.Configuration.BuildProvider" /> オブジェクト。</param>
+        <summary>追加、<see cref="T:System.Web.Configuration.BuildProvider" />オブジェクトを<see cref="T:System.Web.Configuration.BuildProviderCollection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.Configuration.BuildProvider>オブジェクトは既にコレクション内で、ビルド プロバイダーは無視されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.BuildProviderCollection.Add%2A> メソッドの使用方法を示します。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.BuildProviderCollection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.BuildProviderCollection#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.BuildProviderCollection/CS/BuildProviderCollection.cs#4)]
+ [!code-vb[System.Web.Configuration.BuildProviderCollection#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.BuildProviderCollection/VB/BuildProviderCollection.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.BuildProviderCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてを消去<see cref="T:System.Web.Configuration.BuildProvider" />オブジェクトから、<see cref="T:System.Web.Configuration.BuildProviderCollection" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateNewElement">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationElement CreateNewElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Configuration.ConfigurationElement CreateNewElement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.BuildProviderCollection.CreateNewElement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetElementKey">
+      <MemberSignature Language="C#" Value="protected override object GetElementKey (System.Configuration.ConfigurationElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object GetElementKey(class System.Configuration.ConfigurationElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.BuildProviderCollection.GetElementKey(System.Configuration.ConfigurationElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Configuration.ConfigurationElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.BuildProvider this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.BuildProvider Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.BuildProviderCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.BuildProvider</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">特定を指定する整数値<see cref="T:System.Web.Configuration.BuildProvider" />オブジェクト内の<see cref="T:System.Web.Configuration.BuildProviderCollection" />します。</param>
+        <summary>コレクション内の指定したインデックス位置にある <see cref="T:System.Web.Configuration.BuildProvider" /> オブジェクトを取得します。</summary>
+        <value><see cref="T:System.Web.Configuration.BuildProvider" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.BuildProvider this[string name] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.BuildProvider Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.BuildProviderCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.BuildProvider</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Web.Configuration.BuildProvider" />コレクションから返されるオブジェクト。</param>
+        <summary>取得、<see cref="T:System.Web.Configuration.BuildProvider" />指定した名前に基づいて、コレクションの要素。</summary>
+        <value><see cref="T:System.Web.Configuration.BuildProvider" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.BuildProviderCollection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.BuildProviderCollection.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">指定する文字列値、<see cref="T:System.Web.Configuration.BuildProvider" />参照します。</param>
+        <summary>削除、<see cref="T:System.Web.Configuration.BuildProvider" />オブジェクトから、<see cref="T:System.Web.Configuration.BuildProviderCollection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.Configuration.BuildProvider>存在しません、コレクション内のビルド プロバイダーは無視されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.BuildProviderCollection.Remove%2A> メソッドの使用方法を示します。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.BuildProviderCollection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.BuildProviderCollection#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.BuildProviderCollection/CS/BuildProviderCollection.cs#5)]
+ [!code-vb[System.Web.Configuration.BuildProviderCollection#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.BuildProviderCollection/VB/BuildProviderCollection.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.BuildProviderCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">特定の場所を指定する整数値<see cref="T:System.Web.Configuration.BuildProvider" />オブジェクト内の<see cref="T:System.Web.Configuration.BuildProviderCollection" />します。</param>
+        <summary>削除、<see cref="T:System.Web.Configuration.BuildProvider" />から指定したインデックス位置にオブジェクト、<see cref="T:System.Web.Configuration.BuildProviderCollection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インデックスが指定されていない場合、<xref:System.Web.Configuration.BuildProvider>コレクションの範囲外の例外がスローされます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.BuildProviderCollection.RemoveAt%2A> メソッドの使用方法を示します。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.BuildProviderCollection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.BuildProviderCollection#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.BuildProviderCollection/CS/BuildProviderCollection.cs#6)]
+ [!code-vb[System.Web.Configuration.BuildProviderCollection#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.BuildProviderCollection/VB/BuildProviderCollection.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

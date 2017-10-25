@@ -1,0 +1,96 @@
+<Type Name="ScrollItemPattern" FullName="System.Windows.Automation.ScrollItemPattern">
+  <TypeSignature Language="C#" Value="public class ScrollItemPattern : System.Windows.Automation.BasePattern" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ScrollItemPattern extends System.Windows.Automation.BasePattern" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.ScrollItemPattern" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Automation.BasePattern</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Windows.Automation.ScrollPattern" /> コントロール パターンをサポートするコンテナーの子コントロールを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください[UI オートメーション クライアントのコントロール パターン マッピング](~/docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md)このコントロール パターンを実装するコントロールの例についてはします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Pattern">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationPattern Pattern;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationPattern Pattern" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ScrollItemPattern.Pattern" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationPattern</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Automation.ScrollItemPattern" /> コントロール パターンを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.ScrollItemPatternIdentifiers>です。  
+  
+ パターン識別子がなどのメソッドに渡された<xref:System.Windows.Automation.AutomationElement.GetCurrentPattern%2A>から、指定した目的のコントロール パターンを取得する<xref:System.Windows.Automation.AutomationElement>です。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.ScrollItemPattern>からコントロール パターンを取得、<xref:System.Windows.Automation.AutomationElement>です。  
+  
+ [!code-csharp[UIAScrollItemPattern_snip#100](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAScrollItemPattern_snip/CSharp/UIAScrollItemPattern_snippets.cs#100)]
+ [!code-vb[UIAScrollItemPattern_snip#100](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAScrollItemPattern_snip/VisualBasic/UIAScrollItemPattern_snippets.vb#100)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollIntoView">
+      <MemberSignature Language="C#" Value="public void ScrollIntoView ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScrollIntoView() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.ScrollItemPattern.ScrollIntoView" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンテナー オブジェクトのコンテンツ領域を表示するためにスクロール、<see cref="T:System.Windows.Automation.AutomationElement" />コンテナーの可視領域 (ビューポート) 内で。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドでの位置を指定する機能が提供されません、<xref:System.Windows.Automation.AutomationElement>コンテナーの可視領域 (ビューポート) 内で。  
+  
+   
+  
+## Examples  
+ 次の例で、 <xref:System.Windows.Automation.SelectionItemPattern.Select%2A>、<xref:System.Windows.Automation.SelectionItemPattern.AddToSelection%2A>または<xref:System.Windows.Automation.SelectionItemPattern.RemoveFromSelection%2A>スクロールしようとしているイベント ハンドラーは宣言されて、<xref:System.Windows.Automation.SelectionItemPattern>コンテナー コントロールの表示可能領域にオブジェクト。  
+  
+ [!code-csharp[UIAScrollItemPattern_snip#100](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAScrollItemPattern_snip/CSharp/UIAScrollItemPattern_snippets.cs#100)]
+ [!code-vb[UIAScrollItemPattern_snip#100](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAScrollItemPattern_snip/VisualBasic/UIAScrollItemPattern_snippets.vb#100)]  
+[!code-csharp[UIAScrollItemPattern_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAScrollItemPattern_snip/CSharp/UIAScrollItemPattern_snippets.cs#101)]
+[!code-vb[UIAScrollItemPattern_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAScrollItemPattern_snip/VisualBasic/UIAScrollItemPattern_snippets.vb#101)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">項目がビューにスクロールできません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

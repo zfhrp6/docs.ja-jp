@@ -1,0 +1,564 @@
+<Type Name="BitmapDecoder" FullName="System.Windows.Media.Imaging.BitmapDecoder">
+  <TypeSignature Language="C#" Value="public abstract class BitmapDecoder : System.Windows.Threading.DispatcherObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract BitmapDecoder extends System.Windows.Threading.DispatcherObject" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Imaging.BitmapDecoder" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Threading.DispatcherObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ビットマップ フレームのコンテナーを表します。 各ビットマップ フレームは、<see cref="T:System.Windows.Media.Imaging.BitmapSource" />です。 この抽象クラスは、すべての派生デコーダー オブジェクトの基本機能セットを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Imaging.BitmapDecoder><xref:System.Windows.Media.Imaging.BitmapFrame>自体は、コンテナーを<xref:System.Windows.Media.Imaging.BitmapFrame>オブジェクト。 各<xref:System.Windows.Media.Imaging.BitmapFrame>コンテナー内のさまざまなサイズ、解像度、パレットなど、さまざまな属性可能性同じであることができます。  
+  
+ 特定のコーデックが選択されている場合を除き、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]実行時の自動検出を使用してイメージの形式を識別し、適切なコーデックと一致します。 この検出プロセスによりが開発したコーデック、[!INCLUDE[TLA#tla_isv](~/includes/tlasharptla-isv-md.md)]システムによって自動的に検出可能にします。 特定のコーデックを派生クラスを選択する<xref:System.Windows.Media.Imaging.BitmapDecoder>または<xref:System.Windows.Media.Imaging.BitmapEncoder>、ように、<xref:System.Windows.Media.Imaging.TiffBitmapDecoder>クラス、使用する必要があります。  
+  
+ [!INCLUDE[TLA#tla_tiff](~/includes/tlasharptla-tiff-md.md)]および[!INCLUDE[TLA#tla_gif](~/includes/tlasharptla-gif-md.md)]は、複数のフレームをサポートするイメージ形式を実装します。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Windows.Media.Imaging.BitmapDecoder.Create%28System.Uri%2CSystem.Windows.Media.Imaging.BitmapCreateOptions%2CSystem.Windows.Media.Imaging.BitmapCacheOption%29>メソッドを指定したイメージのデコーダーを作成します。 最初の<xref:System.Windows.Media.Imaging.BitmapFrame>イメージが使用されるかのソースとして、<xref:System.Windows.Controls.Image>コントロール。  
+  
+ [!code-csharp[imagingsnippetgallery_procedural_snip#BitmapDecoderCreate](~/samples/snippets/csharp/VS_Snippets_Wpf/ImagingSnippetGallery_procedural_snip/CSharp/BitmapDecoderExample.cs#bitmapdecodercreate)]
+ [!code-vb[imagingsnippetgallery_procedural_snip#BitmapDecoderCreate](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ImagingSnippetGallery_procedural_snip/VB/BitmapDecoderExample.vb#bitmapdecodercreate)]  
+  
+ 次のコード例は、の組み込みを使用する方法を示します<xref:System.Windows.Media.Imaging.TiffBitmapDecoder>を開き、デコード、[!INCLUDE[TLA#tla_tiff](~/includes/tlasharptla-tiff-md.md)]ビットマップ。 その結果<xref:System.Windows.Media.Imaging.BitmapSource>として使用される、<xref:System.Windows.Controls.Image.Source%2A>の<xref:System.Windows.Controls.Image>要素。  
+  
+ [!code-csharp[bitmapframeexample#4](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#4)]
+ [!code-vb[bitmapframeexample#4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected BitmapDecoder ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapDecoder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Windows.Media.Imaging.BitmapDecoder" /> の新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CodecInfo">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Media.Imaging.BitmapCodecInfo CodecInfo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Imaging.BitmapCodecInfo CodecInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapDecoder.CodecInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapCodecInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコーデックを説明する情報を取得します。</summary>
+        <value><see cref="T:System.Windows.Media.Imaging.BitmapCodecInfo" /> のインスタンス。 このプロパティには既定値はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Media.Imaging.BitmapCodecInfo>実装はすべてコーデックに必要です。  
+  
+   
+  
+## Examples  
+ 次のコード例からの情報を読み取る方法を示しています、<xref:System.Windows.Media.Imaging.BitmapCodecInfo>オブジェクトを文字列に送信します。  
+  
+ [!code-csharp[bitmapframeexample#3](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#3)]
+ [!code-vb[bitmapframeexample#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColorContexts">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Media.ColorContext&gt; ColorContexts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Windows.Media.ColorContext&gt; ColorContexts" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapDecoder.ColorContexts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Media.ColorContext&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビットマップに関連付けられているカラー プロファイル (定義されている場合) を表す値を取得します。</summary>
+        <value>ビットマップの埋め込みのカラー プロファイルを表す <see cref="T:System.Windows.Media.ColorContext" /> のインスタンス。 カラー プロファイルが定義されていない場合、このプロパティは <see langword="null" /> を返します。 このプロパティには既定値はありません。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapDecoder Create (System.IO.Stream bitmapStream, System.Windows.Media.Imaging.BitmapCreateOptions createOptions, System.Windows.Media.Imaging.BitmapCacheOption cacheOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.Imaging.BitmapDecoder Create(class System.IO.Stream bitmapStream, valuetype System.Windows.Media.Imaging.BitmapCreateOptions createOptions, valuetype System.Windows.Media.Imaging.BitmapCacheOption cacheOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapDecoder.Create(System.IO.Stream,System.Windows.Media.Imaging.BitmapCreateOptions,System.Windows.Media.Imaging.BitmapCacheOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapDecoder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bitmapStream" Type="System.IO.Stream" />
+        <Parameter Name="createOptions" Type="System.Windows.Media.Imaging.BitmapCreateOptions" />
+        <Parameter Name="cacheOption" Type="System.Windows.Media.Imaging.BitmapCacheOption" />
+      </Parameters>
+      <Docs>
+        <param name="bitmapStream">ファイル ストリームのデコードにビットマップを識別します。</param>
+        <param name="createOptions">識別、<see cref="T:System.Windows.Media.Imaging.BitmapCreateOptions" />このデコーダー。</param>
+        <param name="cacheOption">識別、<see cref="T:System.Windows.Media.Imaging.BitmapCacheOption" />このデコーダー。</param>
+        <summary>作成、<see cref="T:System.Windows.Media.Imaging.BitmapDecoder" />から、<see cref="T:System.IO.Stream" />指定を使用して<see cref="T:System.Windows.Media.Imaging.BitmapCreateOptions" />と<see cref="T:System.Windows.Media.Imaging.BitmapCacheOption" />です。</summary>
+        <returns>A<see cref="T:System.Windows.Media.Imaging.BitmapDecoder" />から、<see cref="T:System.IO.Stream" />指定を使用して<see cref="T:System.Windows.Media.Imaging.BitmapCreateOptions" />と<see cref="T:System.Windows.Media.Imaging.BitmapCacheOption" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Media.Imaging.BitmapCacheOption.OnLoad>を終了する場合の cache オプション、`bitmapStream`デコーダーが作成された後です。 既定値<xref:System.Windows.Media.Imaging.BitmapCacheOption.OnDemand>キャッシュ オプションは、必要なビットマップとクリーンアップは、ガベージ コレクターによって処理されるまで、ストリームへのアクセスが保持されます。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Windows.Media.Imaging.BitmapDecoder.Create%2A>メソッドを指定したイメージのデコーダーを作成します。 最初の<xref:System.Windows.Media.Imaging.BitmapFrame>イメージが使用されるかのソースとして、<xref:System.Windows.Controls.Image>コントロール。  
+  
+ [!code-csharp[imagingsnippetgallery_procedural_snip#BitmapDecoderCreateStream](~/samples/snippets/csharp/VS_Snippets_Wpf/ImagingSnippetGallery_procedural_snip/CSharp/BitmapDecoderExample.cs#bitmapdecodercreatestream)]
+ [!code-vb[imagingsnippetgallery_procedural_snip#BitmapDecoderCreateStream](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ImagingSnippetGallery_procedural_snip/VB/BitmapDecoderExample.vb#bitmapdecodercreatestream)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapDecoder Create (Uri bitmapUri, System.Windows.Media.Imaging.BitmapCreateOptions createOptions, System.Windows.Media.Imaging.BitmapCacheOption cacheOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.Imaging.BitmapDecoder Create(class System.Uri bitmapUri, valuetype System.Windows.Media.Imaging.BitmapCreateOptions createOptions, valuetype System.Windows.Media.Imaging.BitmapCacheOption cacheOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapDecoder.Create(System.Uri,System.Windows.Media.Imaging.BitmapCreateOptions,System.Windows.Media.Imaging.BitmapCacheOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapDecoder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bitmapUri" Type="System.Uri" />
+        <Parameter Name="createOptions" Type="System.Windows.Media.Imaging.BitmapCreateOptions" />
+        <Parameter Name="cacheOption" Type="System.Windows.Media.Imaging.BitmapCacheOption" />
+      </Parameters>
+      <Docs>
+        <param name="bitmapUri"><see cref="T:System.Uri" />のビットマップにデコードします。</param>
+        <param name="createOptions">識別、<see cref="T:System.Windows.Media.Imaging.BitmapCreateOptions" />このデコーダー。</param>
+        <param name="cacheOption">識別、<see cref="T:System.Windows.Media.Imaging.BitmapCacheOption" />このデコーダー。</param>
+        <summary>作成、<see cref="T:System.Windows.Media.Imaging.BitmapDecoder" />から、<see cref="T:System.Uri" />指定を使用して<see cref="T:System.Windows.Media.Imaging.BitmapCreateOptions" />と<see cref="T:System.Windows.Media.Imaging.BitmapCacheOption" />です。</summary>
+        <returns>A<see cref="T:System.Windows.Media.Imaging.BitmapDecoder" />から、<see cref="T:System.Uri" />指定を使用して<see cref="T:System.Windows.Media.Imaging.BitmapCreateOptions" />と<see cref="T:System.Windows.Media.Imaging.BitmapCacheOption" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Windows.Media.Imaging.BitmapDecoder.Create%28System.Uri%2CSystem.Windows.Media.Imaging.BitmapCreateOptions%2CSystem.Windows.Media.Imaging.BitmapCacheOption%29>メソッドを指定したイメージのデコーダーを作成します。 最初の<xref:System.Windows.Media.Imaging.BitmapFrame>イメージが使用されるかのソースとして、<xref:System.Windows.Controls.Image>コントロール。  
+  
+ [!code-csharp[imagingsnippetgallery_procedural_snip#BitmapDecoderCreate](~/samples/snippets/csharp/VS_Snippets_Wpf/ImagingSnippetGallery_procedural_snip/CSharp/BitmapDecoderExample.cs#bitmapdecodercreate)]
+ [!code-vb[imagingsnippetgallery_procedural_snip#BitmapDecoderCreate](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ImagingSnippetGallery_procedural_snip/VB/BitmapDecoderExample.vb#bitmapdecodercreate)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="bitmapUri" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.FileFormatException"><paramref name="bitmapUri" />サポートされていない形式の種類のクラス ID を指定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapDecoder Create (Uri bitmapUri, System.Windows.Media.Imaging.BitmapCreateOptions createOptions, System.Windows.Media.Imaging.BitmapCacheOption cacheOption, System.Net.Cache.RequestCachePolicy uriCachePolicy);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.Imaging.BitmapDecoder Create(class System.Uri bitmapUri, valuetype System.Windows.Media.Imaging.BitmapCreateOptions createOptions, valuetype System.Windows.Media.Imaging.BitmapCacheOption cacheOption, class System.Net.Cache.RequestCachePolicy uriCachePolicy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapDecoder.Create(System.Uri,System.Windows.Media.Imaging.BitmapCreateOptions,System.Windows.Media.Imaging.BitmapCacheOption,System.Net.Cache.RequestCachePolicy)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapDecoder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bitmapUri" Type="System.Uri" />
+        <Parameter Name="createOptions" Type="System.Windows.Media.Imaging.BitmapCreateOptions" />
+        <Parameter Name="cacheOption" Type="System.Windows.Media.Imaging.BitmapCacheOption" />
+        <Parameter Name="uriCachePolicy" Type="System.Net.Cache.RequestCachePolicy" />
+      </Parameters>
+      <Docs>
+        <param name="bitmapUri">元のビットマップの場所、<see cref="T:System.Windows.Media.Imaging.BitmapDecoder" />を作成します。</param>
+        <param name="createOptions">これを作成するために使用できるオプション<see cref="T:System.Windows.Media.Imaging.BitmapDecoder" />です。</param>
+        <param name="cacheOption">これは作成に使用されるキャッシュ オプション<see cref="T:System.Windows.Media.Imaging.BitmapDecoder" />です。</param>
+        <param name="uriCachePolicy">このキャッシュ要件<see cref="T:System.Windows.Media.Imaging.BitmapDecoder" />です。</param>
+        <summary>作成、<see cref="T:System.Windows.Media.Imaging.BitmapDecoder" />から、<see cref="T:System.Uri" />指定を使用して<see cref="T:System.Windows.Media.Imaging.BitmapCreateOptions" />、<see cref="T:System.Windows.Media.Imaging.BitmapCacheOption" />と<see cref="T:System.Net.Cache.RequestCachePolicy" />です。</summary>
+        <returns>A<see cref="T:System.Windows.Media.Imaging.BitmapDecoder" />から、<see cref="T:System.Uri" />指定を使用して<see cref="T:System.Windows.Media.Imaging.BitmapCreateOptions" />、<see cref="T:System.Windows.Media.Imaging.BitmapCacheOption" />と<see cref="T:System.Net.Cache.RequestCachePolicy" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Imaging.BitmapDecoder.Create%28System.Uri%2CSystem.Windows.Media.Imaging.BitmapCreateOptions%2CSystem.Windows.Media.Imaging.BitmapCacheOption%2CSystem.Net.Cache.RequestCachePolicy%29>.NET Framework version 3.5 で導入されました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInPlaceBitmapMetadataWriter">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Media.Imaging.InPlaceBitmapMetadataWriter CreateInPlaceBitmapMetadataWriter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Media.Imaging.InPlaceBitmapMetadataWriter CreateInPlaceBitmapMetadataWriter() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapDecoder.CreateInPlaceBitmapMetadataWriter" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.InPlaceBitmapMetadataWriter</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>インスタンスを作成<see cref="T:System.Windows.Media.Imaging.InPlaceBitmapMetadataWriter" />を使用して、ビットマップのメタデータを更新することです。</summary>
+        <returns><see cref="T:System.Windows.Media.Imaging.InPlaceBitmapMetadataWriter" /> のインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Windows.Media.Imaging.InPlaceBitmapMetadataWriter>ビットマップ イメージに関連付けられているメタデータを更新するためにします。  
+  
+ [!code-cpp[bitmapmetadata#SetQuery](~/samples/snippets/cpp/VS_Snippets_Wpf/BitMapMetadata/CPP/BitmapMetadata.cpp#setquery)]
+ [!code-csharp[bitmapmetadata#SetQuery](~/samples/snippets/csharp/VS_Snippets_Wpf/BitMapMetadata/CSharp/BitmapMetadata.cs#setquery)]
+ [!code-vb[bitmapmetadata#SetQuery](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitMapMetadata/VB/BitmapMetadata.vb#setquery)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ファイルの元のイメージ ストリームは読み取り専用です。</exception>
+        <exception cref="T:System.NotImplementedException">デコーダーは、組み込みのデコーダーではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DownloadCompleted">
+      <MemberSignature Language="C#" Value="public virtual event EventHandler DownloadCompleted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler DownloadCompleted" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Media.Imaging.BitmapDecoder.DownloadCompleted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Imaging.BitmapDecoder" /> によるビットマップ コンテンツのダウンロードが終了したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのビットマップ コンテンツの種類、このイベントを発生いない可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DownloadFailed">
+      <MemberSignature Language="C#" Value="public virtual event EventHandler&lt;System.Windows.Media.ExceptionEventArgs&gt; DownloadFailed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Windows.Media.ExceptionEventArgs&gt; DownloadFailed" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Media.Imaging.BitmapDecoder.DownloadFailed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Windows.Media.ExceptionEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビットマップ コンテンツのダウンロードが失敗したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlTextUsage_DownloadFailed"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ \<*オブジェクト*DownloadFailed ="*EventHandler*".../>  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DownloadProgress">
+      <MemberSignature Language="C#" Value="public virtual event EventHandler&lt;System.Windows.Media.Imaging.DownloadProgressEventArgs&gt; DownloadProgress;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Windows.Media.Imaging.DownloadProgressEventArgs&gt; DownloadProgress" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Media.Imaging.BitmapDecoder.DownloadProgress" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Windows.Media.Imaging.DownloadProgressEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Imaging.BitmapDecoder" /> がビットマップ コンテンツのダウンロードを実行しているときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのビットマップ コンテンツの種類、このイベントを発生いない可能性があります。  
+  
+<a name="xamlTextUsage_DownloadProgress"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ \<*オブジェクト*DownloadProgress ="*EventHandler*".../>  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~BitmapDecoder ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapDecoder.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityTreatAsSafe</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Imaging.BitmapDecoder" /> がガベージ コレクションによって回収される前にリソースを解放し、その他のクリーンアップ操作を実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Object.Finalize%2A>します。 アプリケーション コードではこのメソッドを呼び出す必要がありますいません。オブジェクトの`Finalize`への呼び出しによって、ガベージ コレクターによって終了処理が無効になっていない限り、ガベージ コレクション中にメソッドが自動的に起動、<xref:System.GC.SuppressFinalize%2A>メソッドです。  
+  
+ 詳細については、次を参照してください。 [Finalize メソッドおよびデストラクター](http://msdn.microsoft.com/en-us/fd376774-1643-499b-869e-9546a3aeea70)、[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)、および[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ リソースにアクセスします。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Frames">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Media.Imaging.BitmapFrame&gt; Frames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Windows.Media.Imaging.BitmapFrame&gt; Frames" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapDecoder.Frames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Media.Imaging.BitmapFrame&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビットマップ内の個々のフレームのコンテンツを取得します。</summary>
+        <value><see cref="T:System.Windows.Media.Imaging.BitmapFrame" /> のインスタンス。 このプロパティには既定値はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ のみ[!INCLUDE[TLA#tla_tiff](~/includes/tlasharptla-tiff-md.md)]と[!INCLUDE[TLA#tla_gif](~/includes/tlasharptla-gif-md.md)]イメージが複数のフレームをサポートします。  
+  
+ どの<xref:System.Windows.Media.Imaging.BitmapFrame>このプロパティによって返されるオブジェクトが固定されています。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Media.Imaging.BitmapFrame>として、<xref:System.Windows.Media.Imaging.BitmapSource>です。  
+  
+ [!code-csharp[bitmapframeexample#4](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#4)]
+ [!code-vb[bitmapframeexample#4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDownloading">
+      <MemberSignature Language="C#" Value="public virtual bool IsDownloading { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDownloading" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapDecoder.IsDownloading" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デコーダーが現在のコンテンツをダウンロードするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />デコーダーがコンテンツをダウンロードする場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Metadata">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Media.Imaging.BitmapMetadata Metadata { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Imaging.BitmapMetadata Metadata" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapDecoder.Metadata" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapMetadata</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスを取得<see cref="T:System.Windows.Media.Imaging.BitmapMetadata" />メタデータが定義されている場合は、このビットマップに関連付けられているグローバル メタデータを表すです。</summary>
+        <value>インスタンス<see cref="T:System.Windows.Media.Imaging.BitmapMetadata" />ビットマップに関連付けられているグローバル メタデータを表すです。 このプロパティを返しますのかどうかはメタデータが定義されていない、<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生した、組み込みのいずれも<xref:System.Windows.Media.Imaging.BitmapDecoder>クラスは、グローバル メタデータをサポートします。 イメージの個々 のフレームには、メタデータを追加する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Palette">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Media.Imaging.BitmapPalette Palette { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Imaging.BitmapPalette Palette" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapDecoder.Palette" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapPalette</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Media.Imaging.BitmapPalette" />このデコーダーに関連付けられています。</summary>
+        <value><see cref="T:System.Windows.Media.Imaging.BitmapPalette" />このデコーダーに関連付けられています。 ビットマップにパレットがあるない場合<see langword="null" />が返されます。 このプロパティには既定値はありません。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Preview">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Media.Imaging.BitmapSource Preview { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Imaging.BitmapSource Preview" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapDecoder.Preview" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Media.Imaging.BitmapSource" />が定義されている場合は、このビットマップのグローバル プレビューを表すです。</summary>
+        <value>A<see cref="T:System.Windows.Media.Imaging.BitmapSource" />ビットマップのグローバル プレビューを表すです。 このプロパティを返しますのかどうかはプレビューが定義されていない、<see langword="null" />です。 このプロパティには既定値はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Imaging.BitmapSource>これによって返されるプロパティが固定されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Thumbnail">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Media.Imaging.BitmapSource Thumbnail { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Imaging.BitmapSource Thumbnail" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapDecoder.Thumbnail" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Media.Imaging.BitmapSource" />が定義されている場合、ビットマップのサムネイルを表すです。</summary>
+        <value>A<see cref="T:System.Windows.Media.Imaging.BitmapSource" />ビットマップのサムネイルを表すです。 このプロパティを返しますのかどうかのサムネイルが定義されていない、<see langword="null" />です。 このプロパティには既定値はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ネイティブ形式のいずれもサポートしてグローバルな縮小表示します。 [!INCLUDE[TLA#tla_jpegorg](~/includes/tlasharptla-jpegorg-md.md)]、 [!INCLUDE[TLA#tla_tiff](~/includes/tlasharptla-tiff-md.md)]、および[!INCLUDE[TLA#tla_wdp](~/includes/tlasharptla-wdp-md.md)]フレーム レベル サムネイルを使用してアクセスできることをサポートして、<xref:System.Windows.Media.Imaging.BitmapFrame.Thumbnail%2A>プロパティです。  
+  
+ <xref:System.Windows.Media.Imaging.BitmapSource>これによって返されるプロパティが固定されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapDecoder.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の値を変換、<see cref="T:System.Windows.Media.Imaging.BitmapDecoder" />を<see cref="T:System.String" />です。</summary>
+        <returns><see cref="T:System.Windows.Media.Imaging.BitmapDecoder" /> の文字列形式。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

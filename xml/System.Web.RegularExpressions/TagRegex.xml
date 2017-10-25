@@ -1,0 +1,72 @@
+<Type Name="TagRegex" FullName="System.Web.RegularExpressions.TagRegex">
+  <TypeSignature Language="C#" Value="public class TagRegex : System.Text.RegularExpressions.Regex" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi TagRegex extends System.Text.RegularExpressions.Regex" />
+  <TypeSignature Language="DocId" Value="T:System.Web.RegularExpressions.TagRegex" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.RegularExpressions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Text.RegularExpressions.Regex</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>HTML 要素、XML 要素、または ASP.NET Web サーバー コントロール タグの開始タグを解析する正規表現を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.RegularExpressions.TagRegex>クラスは、ASP.NET は HTML 要素、XML 要素、または対象とするアプリケーションの ASP.NET Web サーバー コントロール タグの開始タグの解析を内部的に使用する正規表現を提供、[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]以降のバージョン。 ASP.NET を使用して、<xref:System.Web.RegularExpressions.TagRegex35?displayProperty=nameWithType>クラスをターゲットとするアプリケーション、[!INCLUDE[net_v35_short](~/includes/net-v35-short-md.md)]と以前のバージョン。  
+  
+> [!NOTE]
+>  <xref:System.Web.RegularExpressions>クラス、.NET Framework での ASP.NET ページの解析は内部的に使用します。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TagRegex ();" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.RegularExpressions.TagRegex.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.RegularExpressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.RegularExpressions.TagRegex" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TagRegex (TimeSpan A_1);" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor(valuetype System.TimeSpan A_1) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.RegularExpressions.TagRegex.#ctor(System.TimeSpan)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.RegularExpressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="A_1" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="A_1">タイムアウト期間、または<see cref="F:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout" />操作に一致する場合はタイムアウトしない必要があります。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.RegularExpressions.TagRegex" />指定したタイムアウト値を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `A_1`パラメーターによって、正規表現エンジンしようとする操作がタイムアウトする前に、一致するものを検索する最大時間間隔を表す<xref:System.Text.RegularExpressions.RegexMatchTimeoutException>式がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

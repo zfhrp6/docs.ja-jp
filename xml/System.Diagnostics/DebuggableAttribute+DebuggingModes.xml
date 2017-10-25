@@ -1,0 +1,205 @@
+<Type Name="DebuggableAttribute+DebuggingModes" FullName="System.Diagnostics.DebuggableAttribute+DebuggingModes">
+  <TypeSignature Language="C#" Value="public enum DebuggableAttribute.DebuggingModes" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi sealed DebuggableAttribute/DebuggingModes extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.DebuggableAttribute.DebuggingModes" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Just-In-Time (JIT) コンパイラ用のデバッグ モードを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.DebuggableAttribute.DebuggingModes>列挙体は、コードの生成中にデバッガーに重要な情報を追跡するために、ランタイムは、方法を指定します。 この情報には、豊富なデバッグ機能を提供する、デバッガーが役立ちます。 .NET Framework version 1.1 とは異なり 2.0 またはそれ以降のバージョンはできません-イン タイム (JIT) コンパイラによって追跡を無効にします。 JIT 追跡は常に、デバッグ可能なファイルを有効にします。  列挙値ではバージョン 2.0 以降では、次の効果があります。  
+  
+|デバッグ モード|結果|  
+|--------------------|------------|  
+|なし|JIT 最適化を有効になっているでの追跡|  
+|既定|JIT 最適化を有効になっているでの追跡|  
+|DisableOptimizations|JIT 最適化を有効になっているでの追跡|  
+|既定 & #124 です。DisableOptimizations|JIT 最適化を無効に上での追跡|  
+  
+ シーケンス ポイントは、デバッガーのユーザーを一意に参照できるようにする期待する Microsoft intermediate language (MSIL) コード内の場所を示すために使用される、ブレークポイントを設定する場合のようです。 JIT コンパイラにより、1 つのネイティブ命令に 2 つの異なるシーケンス ポイントの MSIL はコンパイルされません。 既定では、JIT コンパイラは、プログラム データベース (PDB) ファイルでの他のシーケンス ポイントの一覧については、シンボル ストアを調べます。 ただし、pdb ファイルを読み込む場合、ファイルが使用できることが必要、パフォーマンスが低下します。 バージョン 2.0 以降では、コンパイラを出力できる「暗黙のシーケンス ポイント」MSIL を使用して、MSIL コード ストリーム"`nop"`指示します。 このようなコンパイラでは、PDB ファイルをロードしない共通言語ランタイムに通知する IgnoreSymbolStoreSequencePoints フラグを設定する必要があります。  
+  
+> [!NOTE]
+>  この列挙体は主言語の開発者によって使用されます。 これは一般的に使用されませんアプリケーションの開発。 開発環境を使用して<xref:System.Diagnostics.DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints>コンパイラ パラメーターに基づいて**/debug**と**/optimize**です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="Default" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.DebuggableAttribute/DebuggingModes Default = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.DebuggableAttribute.DebuggingModes.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.DebuggableAttribute+DebuggingModes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最適化の有効化、エディット コンティニュのサポートの無効化、シンボル ストア シーケンス ポイントの使用 (存在する場合) など、既定の動作を使用するよう Just-In-Time (JIT) コンパイラに指示します。 .NET Framework Version 2.0 以降、JIT 追跡情報 (メソッド内のネイティブ コード オフセットに対する MSIL (Microsoft Intermediate Language) オフセットの情報) が常に生成されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DisableOptimizations">
+      <MemberSignature Language="C#" Value="DisableOptimizations" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.DebuggableAttribute/DebuggingModes DisableOptimizations = int32(256)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.DebuggableAttribute.DebuggingModes.DisableOptimizations" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.DebuggableAttribute+DebuggingModes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンパイラで実行する最適化を無効にします。最適化は、出力ファイルのサイズを小さくして、速度と効率を向上させるために実行します。 最適化によって出力ファイルのコードの配置が変更されると、デバッグが困難になる可能性があります。 通常、デバッグ中は最適化を無効にします。 バージョン 2.0 以降の場合、この値と Default (Default | DisableOptimizations) を組み合わせ、JIT 追跡を有効にし、最適化を無効にします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableEditAndContinue">
+      <MemberSignature Language="C#" Value="EnableEditAndContinue" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.DebuggableAttribute/DebuggingModes EnableEditAndContinue = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.DebuggableAttribute.DebuggingModes.EnableEditAndContinue" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.DebuggableAttribute+DebuggingModes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エディット コンティニュを有効にします。 エディット コンティニュを使用すると、プログラムの中断モード時にソース コードに変更を加えることができます。 エディット コンティニュ機能はコンパイラに依存します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreSymbolStoreSequencePoints">
+      <MemberSignature Language="C#" Value="IgnoreSymbolStoreSequencePoints" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.DebuggableAttribute/DebuggingModes IgnoreSymbolStoreSequencePoints = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.DebuggableAttribute+DebuggingModes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プログラム データベース (PDB) シーケンス ポイントではなく、暗黙の MSIL シーケンス ポイントを使用します。 通常、シンボリック情報には、ソース行ごとに少なくとも 1 つの MSIL オフセットが含まれています。 ジャスト イン タイム (JIT) コンパイラは、メソッドをコンパイルするとき、保存する必要がある MSIL オフセットのリストをプロファイリング サービスに要求します。 この MSIL オフセットをシーケンス ポイントと呼びます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.DebuggableAttribute/DebuggingModes None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.DebuggableAttribute.DebuggingModes.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.DebuggableAttribute+DebuggingModes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>.NET Framework Version 2.0 以降、JIT 追跡情報が常に生成されます。このフラグには、<see cref="P:System.Diagnostics.DebuggableAttribute.IsJITTrackingEnabled" /> プロパティが <see langword="false" /> に設定されるということを除き、<see cref="F:System.Diagnostics.DebuggableAttribute.DebuggingModes.Default" /> と同じ効果があります。 ただし、JIT 追跡は常に有効になっているため、プロパティの値はバージョン 2.0 以降では無視されます。  
+  
+ <see cref="F:System.Diagnostics.DebuggableAttribute.DebuggingModes.DisableOptimizations" /> フラグとは異なり、JIT の最適化を無効にする <see cref="F:System.Diagnostics.DebuggableAttribute.DebuggingModes.None" /> フラグを使用することはできません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

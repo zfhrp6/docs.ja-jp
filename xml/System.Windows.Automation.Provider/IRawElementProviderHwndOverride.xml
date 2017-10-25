@@ -1,0 +1,64 @@
+<Type Name="IRawElementProviderHwndOverride" FullName="System.Windows.Automation.Provider.IRawElementProviderHwndOverride">
+  <TypeSignature Language="C#" Value="public interface IRawElementProviderHwndOverride : System.Windows.Automation.Provider.IRawElementProviderSimple" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IRawElementProviderHwndOverride implements class System.Windows.Automation.Provider.IRawElementProviderSimple" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.Provider.IRawElementProviderHwndOverride" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationProvider</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Automation.Provider.IRawElementProviderSimple</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("1d5df27c-8947-4425-b8d9-79787bb460b8")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ウィンドウ ベースの要素のフラグメントの UI オートメーション ツリー内の位置を変更できるようにするメソッドを公開します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetOverrideProviderForHwnd">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.Provider.IRawElementProviderSimple GetOverrideProviderForHwnd (IntPtr hwnd);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Automation.Provider.IRawElementProviderSimple GetOverrideProviderForHwnd(native int hwnd) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Provider.IRawElementProviderHwndOverride.GetOverrideProviderForHwnd(System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Provider.IRawElementProviderSimple</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hwnd" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="hwnd">要素のウィンドウ ハンドル。</param>
+        <summary>指定した要素の UI オートメーション プロバイダーを取得します。</summary>
+        <returns>指定された要素または null 参照のプロバイダー (<see langword="Nothing" />で[!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)]) 要素の既定のプロバイダーがオーバーライドされていない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはフラグメント ルート内で、Hwnd のそれらの子要素が論理的に配置されない場合、ウィンドウ ベースの子要素が含まれているフラグメント内のクライアント側 UI オートメーション プロバイダーによって実装、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]ツリー。 詳細については、非 WPF プロバイダー親の変更と非 WPF プロバイダーの位置を変更で参照してください、[サーバー側 UI オートメーション プロバイダーの実装](~/docs/framework/ui-automation/server-side-ui-automation-provider-implementation.md)トピックです。  
+  
+ 返されるプロバイダーは、フラグメント ツリーの一部である必要があります。 追加のプロパティを指定することも、指定されたコンポーネントのプロパティを上書きします。  
+  
+ 返されるプロバイダーを実装する場合<xref:System.Windows.Automation.Provider.IRawElementProviderFragment>プロバイダーがフラグメントのツリーの一部であるし、フラグメントのルートから移動して到達可能でする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

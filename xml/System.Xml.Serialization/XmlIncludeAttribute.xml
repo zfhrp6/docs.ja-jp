@@ -1,0 +1,132 @@
+<Type Name="XmlIncludeAttribute" FullName="System.Xml.Serialization.XmlIncludeAttribute">
+  <TypeSignature Language="C#" Value="public class XmlIncludeAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlIncludeAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.XmlIncludeAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Struct | System.AttributeTargets.Method | System.AttributeTargets.Interface, AllowMultiple=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>により、<see cref="T:System.Xml.Serialization.XmlSerializer" />をシリアル化またはオブジェクトを逆シリアル化時に、型を認識します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Xml.Serialization.XmlIncludeAttribute>を呼び出すと、<xref:System.Xml.Serialization.XmlSerializer.Serialize%2A>または<xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A>のメソッド、<xref:System.Xml.Serialization.XmlSerializer>クラスです。  
+  
+ 適用するときに、<xref:System.Xml.Serialization.XmlIncludeAttribute>を指定して、<xref:System.Type>派生クラスのです。 ときに、<xref:System.Xml.Serialization.XmlSerializer>基本型と派生クラスでは、両方を含むオブジェクトをシリアル化は両方のオブジェクトの種類を認識することができますし、します。  
+  
+ 使用することができます、 <xref:System.Xml.Serialization.XmlIncludeAttribute> Web サービス記述言語 (WSDL) で記述されているサービスの説明ドキュメントに派生クラスを使用します。 メソッドから返された場合など、 <xref:System.Object>、適用、<xref:System.Xml.Serialization.XmlIncludeAttribute>メソッドに返される実際の種類を指定します。  
+  
+ WSDL の詳細については、「Web サービス記述言語 (WSDL) 1.1」www.w3.org でを参照してください。  
+  
+   
+  
+## Examples  
+ 次の例では、3 番目から継承するの 2 つの 3 つのクラスを示します。 例では、適用、<xref:System.Xml.Serialization.XmlIncludeAttribute>派生クラスの 1 つのインスタンスを返すメソッド。  
+  
+  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlIncludeAttribute (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlIncludeAttribute.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Type" />に含めるオブジェクトの。</param>
+        <summary><see cref="T:System.Xml.Serialization.XmlIncludeAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、3 番目から継承するの 2 つの 3 つのクラスを示します。 例では、適用、<xref:System.Xml.Serialization.XmlIncludeAttribute>クラスを派生するのには、2 つの 1 つのインスタンスを返すメソッド。 例のセット、<xref:System.Xml.Serialization.XmlIncludeAttribute.Type%2A>プロパティを取得するオブジェクトの型。  
+  
+ [!code-cpp[Classic XmlIncludeAttribute.XmlIncludeAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlIncludeAttribute.XmlIncludeAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlIncludeAttribute.XmlIncludeAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlIncludeAttribute.XmlIncludeAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlIncludeAttribute.XmlIncludeAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlIncludeAttribute.XmlIncludeAttribute Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public Type Type { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type Type" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlIncludeAttribute.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはオブジェクトに含めるオブジェクトの種類を設定します。</summary>
+        <value><see cref="T:System.Type" />に含めるオブジェクトの。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、という名前のクラスを定義`Group`、という名前のフィールドが含まれています`Employees`の配列を返す`Employee`オブジェクト。 例では、`Manager`クラス、`Employee`クラス、および適用される、<xref:System.Xml.Serialization.XmlIncludeAttribute>を`Employee`クラスです。 例を作成すると、`Group`オブジェクトを挿入、`Manager`オブジェクトに、`Employee`配列。 最後に、シリアル化、`Group`オブジェクト。  
+  
+ [!code-cpp[Classic XmlIncludeAttribute.Type Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlIncludeAttribute.Type Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlIncludeAttribute.Type Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlIncludeAttribute.Type Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlIncludeAttribute.Type Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlIncludeAttribute.Type Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,84 @@
+<Type Name="ContextExchangeMechanism" FullName="System.ServiceModel.Channels.ContextExchangeMechanism">
+  <TypeSignature Language="C#" Value="public enum ContextExchangeMechanism" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ContextExchangeMechanism extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.ContextExchangeMechanism" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("System.WorkflowServices, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>クライアントとサービス間のメッセージ交換についてコンテキストを交換するための機構として HTTP クッキーを使用するか、SOAP ヘッダーを使用するかを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアントとサービス間のメッセージ交換について <xref:System.ServiceModel.Channels.ContextBindingElement.ContextExchangeMechanism%2A> の値を指定するには、<xref:System.ServiceModel.Channels.ContextBindingElement.%23ctor%28System.Net.Security.ProtectionLevel%2CSystem.ServiceModel.Channels.ContextExchangeMechanism%29> プロパティまたは <xref:System.ServiceModel.Channels.ContextExchangeMechanism> コンストラクターを使用します。  
+  
+ サービス エンドポイントでコンテキスト交換プロトコルのサポートを必要とする場合は、公開されたポリシーにこの条件を明示できます。 SOAP レベルでコンテキスト交換プロトコルをサポートするためのクライアント条件を表しているポリシー アサーションや、HTTP クッキー サポートの有効化を必要とするポリシー アサーションはエンドポイントによって発行できます。 このアサーションはサービスのポリシー内に生成されます。生成は次のように、<xref:System.ServiceModel.Channels.ContextBindingElement.ContextExchangeMechanism%2A> プロパティの値によって制御します。  
+  
+-   HttpCookie、次のアサーションが生成されます。  
+  
+    ```  
+    <HttpUseCookie xmlns="http://schemas.xmlsoap.org/soap/http"/>  
+    ```  
+  
+-   ContextSoapHeader、次のアサーションが生成されます。  
+  
+    ```  
+    <IncludeContext   
+    xmlns="http://schemas.microsoft.com/ws/2006/05/context"  
+    protectionLevel="Sign" />  
+    ```  
+  
+ HttpCookie 列挙体は、トランスポート層で実装されます。 この列挙体は、クライアントが最初の要求を行い、これに対応する返信サービスによってコンテキストが返信される単一方向通信で使用することができます。 その後サービスとクライアント間でやり取りされるすべてのメッセージには、そのメッセージ交換が持続している間、コンテキストが含まれます。 HTTP トランスポートと HTTP クッキーを使用できるようにすることに同意するクライアントを使用するサービス エンドポイントのアプリケーション コンテキストを交換する HttpCookie 列挙体に利用できます。 HTTP クッキーを使用してコンテキストを伝達する場合は、トランスポート セキュリティを使用して保護する必要があります。 この機構は HTTP 以外のトランスポートで使用することはできません。  
+  
+ ContextSoapHeader 列挙では、代わりに、カスタム コンテキスト チャネルに実装され、HTTP 以外のトランスポートと要求/応答や双方向セッションなど、他のメッセージ交換パターンで使用できるを提供します。 このコンテキスト交換プロトコルでは、HTTP クッキーの機能に相当する SOAP ベースの機能がトランスポート層で提供されています。 このプロトコルには、コンテキスト情報を表すための新しい `wsc:Context` SOAP ヘッダーが導入されています。 `wsc:Context` ヘッダーは、WS-Addressing ヘッダーを保護しなければならないのと同じ理由から、送信中に変更されないように保護する必要があります。着信時、これらのヘッダーを使用して正しいワークフロー インスタンスにメッセージがディスパッチされます。 したがって、バインドにメッセージ保護機能がある場合は、SOAP レベルまたはトランスポート レベルで `wsc:Context` ヘッダーにデジタル署名を適用する必要があります。  
+  
+ チャネル レイヤーでは、<xref:System.ServiceModel.Channels.ContextMessageProperty> を使用して、アプリケーション層とコンテキストを送受信します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ContextSoapHeader">
+      <MemberSignature Language="C#" Value="ContextSoapHeader" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Channels.ContextExchangeMechanism ContextSoapHeader = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Channels.ContextExchangeMechanism.ContextSoapHeader" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.ContextExchangeMechanism</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP ヘッダーを使用してコンテキストをやり取りします。 これは既定の交換機構です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="HttpCookie">
+      <MemberSignature Language="C#" Value="HttpCookie" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Channels.ContextExchangeMechanism HttpCookie = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Channels.ContextExchangeMechanism.HttpCookie" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.ContextExchangeMechanism</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTTP クッキーを使用してコンテキストをやり取りします。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

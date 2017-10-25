@@ -1,0 +1,1103 @@
+<Type Name="ClaimsPrincipal" FullName="System.Security.Claims.ClaimsPrincipal">
+  <TypeSignature Language="C#" Value="public class ClaimsPrincipal : System.Security.Principal.IPrincipal" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ClaimsPrincipal extends System.Object implements class System.Security.Principal.IPrincipal" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Claims.ClaimsPrincipal" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Claims</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Security.Principal.IPrincipal</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Security.Principal.IPrincipal" />複数のクレーム ベース id をサポートする実装。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework 4.5 以降、Windows Identity Foundation (WIF) とクレーム ベース id が完全に統合されて、.NET Framework。 つまり、これで、.NET Framework 内のプリンシパルを表す多くのクラスがから派生<xref:System.Security.Claims.ClaimsPrincipal>だけを実装するのではなく、<xref:System.Security.Principal.IPrincipal>インターフェイスです。 実装するだけでなく、<xref:System.Security.Principal.IPrincipal>インターフェイス、<xref:System.Security.Claims.ClaimsPrincipal>プロパティとクレームを操作するための便利なメソッドを公開します。  
+  
+ <xref:System.Security.Claims.ClaimsPrincipal>それぞれが、id のコレクションを公開、<xref:System.Security.Claims.ClaimsIdentity>です。 共通の場合、このコレクションからアクセスできる、<xref:System.Security.Claims.ClaimsPrincipal.Identities%2A>のみ 1 つの要素を持つプロパティです。  
+  
+ 導入<xref:System.Security.Claims.ClaimsPrincipal>最もプリンシパル クラスを派生させる元のプリンシパルとして .NET 4.5 でを強制しません id で処理する方法では何も変更します。 ただし詳細可能性を開きアクセスを細かく機会を提供します。 例:  
+  
+-   アプリケーション コード自体は、ドライブの追加の認証、承認、および個人設定のタスクを現在のプリンシパルに含まれる要求を直接操作できます。  
+  
+-   自分のリソースをフロント処理パイプラインで、まで、コードを実行する前であってもに、、要求の認証と承認のポリシーが対処できるクレームを含むことができます。 派生したクラスのインスタンス、カスタム クレーム認証マネージャーとな web ベースのアプリケーションまたはサービスを構成するなど、<xref:System.Security.Claims.ClaimsAuthenticationManager>クラスです。 要求処理パイプラインを呼び出すように設定すると、<xref:System.Security.Claims.ClaimsAuthenticationManager.Authenticate%2A>渡す、クレーム認証マネージャーのメソッド、<xref:System.Security.Claims.ClaimsPrincipal>受信要求のコンテキストを表すです。 信頼性情報、認証マネージャーは、入力方向の要求の値に基づく認証を実行できます。 できますもフィルター処理、変換、または入力方向の要求セットに要求を追加します。 たとえば、受信要求をローカル ユーザー プロファイルなどのローカル データ ソースから作成された新しい要求を含むセットを強化する使用可能でした。  
+  
+-   Web ベースのアプリケーションを構成するには、カスタム クレーム承認マネージャーから派生したクラスのインスタンスで、<xref:System.Security.Claims.ClaimsAuthorizationManager>クラスです。 要求処理パイプライン構成しておけば、受信をパッケージ化<xref:System.Security.Claims.ClaimsPrincipal>で、<xref:System.Security.Claims.AuthorizationContext>を呼び出すと、<xref:System.Security.Claims.ClaimsAuthorizationManager.CheckAccess%2A>要求、承認マネージャーのメソッドです。 要求承認マネージャーは、入力方向の要求に基づいて承認を適用できます。  
+  
+-   インライン コードのクレームに基づくアクセス確認をカスタム クレーム承認マネージャーをアプリケーションを構成し、いずれかを使用して実行できる、<xref:System.IdentityModel.Services.ClaimsPrincipalPermission>強制アクセス チェックを実行するクラスまたは<xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute>チェックを宣言型のアクセスを実行します。 コードのクレームに基づくアクセス チェックは、処理パイプラインの外部で、インラインで実行されると、要求承認マネージャーが構成されている限り、すべてのアプリケーションで使用できるようにします。  
+  
+ 取得することができます、<xref:System.Security.Claims.ClaimsPrincipal>でキャスト RP アプリケーション (またはスレッドを実行するプリンシパル) の要求に関連付けられているプリンシパルのインスタンス、<xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType>プロパティを<xref:System.Security.Claims.ClaimsPrincipal>です。 関連付けられたクレーム、<xref:System.Security.Claims.ClaimsPrincipal>オブジェクトは、その<xref:System.Security.Claims.ClaimsPrincipal.Claims%2A>プロパティです。 <xref:System.Security.Claims.ClaimsPrincipal.Claims%2A>プロパティには、すべてのプリンシパルに関連付けられている id に含まれる要求を返します。 一般的でない場合、<xref:System.Security.Claims.ClaimsPrincipal>複数含まれている<xref:System.Security.Claims.ClaimsIdentity>インスタンス、行うこともできます、<xref:System.Security.Claims.ClaimsPrincipal.Identities%2A>プロパティまたはするが、プライマリ id を使用してアクセスできます、<xref:System.Security.Claims.ClaimsPrincipal.Identity%2A>プロパティです。 <xref:System.Security.Claims.ClaimsPrincipal>これらのクレームを検索することがあります、いくつかのメソッドを提供し、言語統合クエリ (LINQ) を完全にサポートします。 使用して、プリンシパルに id を追加することができます、<xref:System.Security.Claims.ClaimsPrincipal.AddIdentities%2A>または<xref:System.Security.Claims.ClaimsPrincipal.AddIdentity%2A>メソッドです。  
+  
+> [!NOTE]
+>  Id を追加する、 <xref:System.Security.Claims.ClaimsPrincipal>、呼び出し元は完全な信頼が必要です。  
+  
+ 既定では、WIF 優先順位を付けます<xref:System.Security.Principal.WindowsIdentity>オブジェクトから返されるプライマリ id を選択するときに、<xref:System.Security.Claims.ClaimsPrincipal.Identity%2A>プロパティです。 を通じてデリゲートを指定することによってこの動作を変更することができます、<xref:System.Security.Claims.ClaimsPrincipal.PrimaryIdentitySelector%2A>プロパティを選択します。 <xref:System.Security.Claims.ClaimsPrincipal.ClaimsPrincipalSelector%2A>プロパティに対して同様の機能を提供する、<xref:System.Security.Claims.ClaimsPrincipal.Current%2A>プロパティです。  
+  
+ クレームに基づくモデルでは、プリンシパルが指定されたロールがかどうかは、基になるユーザーによって提示されるクレームによって決まります。 <xref:System.Security.Claims.ClaimsPrincipal.IsInRole%2A>メソッドは、本質的に指定されたロール値を持つクレームが存在しているかどうかを決定するプリンシパルに関連付けられた各 id を検査します。 要求の種類 (によって表される、<xref:System.Security.Claims.Claim.Type%2A?displayProperty=nameWithType>プロパティ) 要求を調べる必要がありますを決定するために使用ロールの中に、チェックがを通じて id で指定されたその<xref:System.Security.Claims.ClaimsIdentity.RoleClaimType%2A?displayProperty=nameWithType>プロパティです。 したがって、ロールのチェック中に検証したクレームは、別の種類別の id のプリンシパルに関連付けられていることができます。  
+  
+   
+  
+## Examples  
+ 次の例では、HTTP 要求でユーザーによって提示されるクレームを抽出し、それらを HTTP 応答に書き込みます。 現在のユーザーがから読み取られる、<xref:System.Web.HttpContext>として、<xref:System.Security.Claims.ClaimsPrincipal>です。 要求を使用して、し、読み取りは、応答に書き込まれます。  
+  
+```  
+  
+ClaimsPrincipal principal = HttpContext.Current.User as ClaimsPrincipal;  
+if (null != principal)  
+{  
+   foreach (Claim claim in principal.Claims)  
+   {  
+      Response.Write("CLAIM TYPE: " + claim.Type + "; CLAIM VALUE: " + claim.Value + "</br>");  
+   }  
+}  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ClaimsPrincipal ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Claims.ClaimsPrincipal" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーの新しいインスタンスに関連付けはありません。 (、<xref:System.Security.Claims.ClaimsPrincipal.Identities%2A>コレクションが空です)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ClaimsPrincipal (System.Collections.Generic.IEnumerable&lt;System.Security.Claims.ClaimsIdentity&gt; identities);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class System.Security.Claims.ClaimsIdentity&gt; identities) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.#ctor(System.Collections.Generic.IEnumerable{System.Security.Claims.ClaimsIdentity})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="identities" Type="System.Collections.Generic.IEnumerable&lt;System.Security.Claims.ClaimsIdentity&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="identities">新しい要求プリンシパルの初期化元 ID。</param>
+        <summary>指定した要求 ID を使用して、<see cref="T:System.Security.Claims.ClaimsPrincipal" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Claims.ClaimsPrincipal.Identities%2A>指定した id を持つコレクションを初期化します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="identities" />is **null**.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ClaimsPrincipal (System.IO.BinaryReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.BinaryReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.#ctor(System.IO.BinaryReader)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="reader" Type="System.IO.BinaryReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">A<see cref="T:System.IO.BinaryReader" />を指す、<see cref="T:System.Security.Claims.ClaimsPrincipal" />です。</param>
+        <summary>インスタンスを初期化<see cref="T:System.Security.Claims.ClaimsPrincipal" />、指定した<see cref="T:System.IO.BinaryReader" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、<xref:System.IO.BinaryReader>からバイトを使用して構築される<xref:System.Security.Claims.ClaimsIdentity.WriteTo%2A>と同じ方法で初期化されると、<xref:System.IO.BinaryWriter>です。
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ClaimsPrincipal (System.Security.Principal.IIdentity identity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Principal.IIdentity identity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.#ctor(System.Security.Principal.IIdentity)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="identity" Type="System.Security.Principal.IIdentity" />
+      </Parameters>
+      <Docs>
+        <param name="identity">新しい要求プリンシパルの初期化元 ID。</param>
+        <summary>指定された ID から <see cref="T:System.Security.Claims.ClaimsPrincipal" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された id から割り当てることが場合<xref:System.Security.Claims.ClaimsIdentity>、初期化に使用されます、<xref:System.Security.Claims.ClaimsPrincipal.Identities%2A>コレクション。 それ以外の場合、<xref:System.Security.Claims.ClaimsIdentity>指定された id を使用して作成され、コレクションを初期化するために使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="identity" />is **null**.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ClaimsPrincipal (System.Security.Principal.IPrincipal principal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Principal.IPrincipal principal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.#ctor(System.Security.Principal.IPrincipal)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="principal" Type="System.Security.Principal.IPrincipal" />
+      </Parameters>
+      <Docs>
+        <param name="principal">新しい要求プリンシパルの初期化元となるプリンシパル。</param>
+        <summary>指定されたプリンシパルから <see cref="T:System.Security.Claims.ClaimsPrincipal" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定されたプリンシパルから割り当てることが場合<xref:System.Security.Claims.ClaimsPrincipal>、その id のすべてに追加されます、<xref:System.Security.Claims.ClaimsPrincipal.Identities%2A>コレクション。 指定されたプリンシパルはから割り当てることがない場合<xref:System.Security.Claims.ClaimsPrincipal>、新しい<xref:System.Security.Claims.ClaimsIdentity>から作成された、<xref:System.Security.Principal.IIdentity>でその<xref:System.Security.Principal.IPrincipal.Identity%2A?displayProperty=nameWithType>プロパティに追加し、<xref:System.Security.Claims.ClaimsPrincipal.Identities%2A>コレクション。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="principal" />is **null**.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ClaimsPrincipal (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">シリアル化データ。</param>
+        <param name="context">シリアル化のコンテキスト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Claims.ClaimsPrincipal" />クラスを使用して作成されたシリアル化されたストリームから<see cref="T:System.Runtime.Serialization.ISerializable" />です。</summary>
+        <remarks>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="info" />is **null**.</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="AddIdentities">
+      <MemberSignature Language="C#" Value="public virtual void AddIdentities (System.Collections.Generic.IEnumerable&lt;System.Security.Claims.ClaimsIdentity&gt; identities);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddIdentities(class System.Collections.Generic.IEnumerable`1&lt;class System.Security.Claims.ClaimsIdentity&gt; identities) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.AddIdentities(System.Collections.Generic.IEnumerable{System.Security.Claims.ClaimsIdentity})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="identities" Type="System.Collections.Generic.IEnumerable&lt;System.Security.Claims.ClaimsIdentity&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="identities">追加する要求 ID。</param>
+        <summary>指定された要求 ID をこの要求プリンシパルに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加の id、<xref:System.Security.Claims.ClaimsPrincipal.Identities%2A>コレクション。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="identities" />is **null**.</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="AddIdentity">
+      <MemberSignature Language="C#" Value="public virtual void AddIdentity (System.Security.Claims.ClaimsIdentity identity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddIdentity(class System.Security.Claims.ClaimsIdentity identity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.AddIdentity(System.Security.Claims.ClaimsIdentity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="identity" Type="System.Security.Claims.ClaimsIdentity" />
+      </Parameters>
+      <Docs>
+        <param name="identity">追加する要求 ID。</param>
+        <summary>指定された要求 ID をこの要求プリンシパルに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Id を追加、<xref:System.Security.Claims.ClaimsPrincipal.Identities%2A>コレクション。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="identity" />is **null**.</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Claims">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IEnumerable&lt;System.Security.Claims.Claim&gt; Claims { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class System.Security.Claims.Claim&gt; Claims" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Claims.ClaimsPrincipal.Claims" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Security.Claims.Claim&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要求プリンシパルと関連付けられているすべての要求 ID のすべての要求を含むコレクションを取得します。</summary>
+        <value>このプリンシパルに関連付けられた要求。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求プリンシパルのコレクションを持ちます<xref:System.Security.Claims.ClaimsIdentity>の Id プロパティを通じてアクセスできるオブジェクト。 各<xref:System.Security.Claims.ClaimsIdentity>コレクション内で 1 つまたは複数のクレームが含まれています。 <xref:System.Security.Claims.ClaimsPrincipal.Claims%2A>プロパティがこのコレクション内でクレーム id のすべてからすべての要求を返します。  
+  
+ <xref:System.Security.Claims.ClaimsPrincipal.Claims%2A>のカスタム実装してプロパティを調べることができます、<xref:System.Security.Claims.ClaimsAuthenticationManager>認証決定を行うまたはフィルター処理、変換、または受信のクレーム セット; を強化するクラスのカスタム実装によって、<xref:System.Security.Claims.ClaimsAuthorizationManager>コレクションに存在する要求に基づいて承認決定を行うカスタマイズしたりするユーザーのアプリケーション コードによって発生または承認ポリシーを適用するクラス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClaimsPrincipalSelector">
+      <MemberSignature Language="C#" Value="public static Func&lt;System.Security.Claims.ClaimsPrincipal&gt; ClaimsPrincipalSelector { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Func`1&lt;class System.Security.Claims.ClaimsPrincipal&gt; ClaimsPrincipalSelector" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Claims.ClaimsPrincipal.ClaimsPrincipalSelector" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Func&lt;System.Security.Claims.ClaimsPrincipal&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Security.Claims.ClaimsPrincipal.Current" /> プロパティによって返される要求プリンシパル ID を選択するために使用するデリゲートを取得または設定します。</summary>
+        <value>デリゲート。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の動作をオーバーライドするには、このプロパティを設定することができます、<xref:System.Security.Claims.ClaimsPrincipal.Current%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">設定操作では、直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで設定することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public virtual System.Security.Claims.ClaimsPrincipal Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.Claims.ClaimsPrincipal Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Claims.ClaimsPrincipal</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスの新しいコピーを作成します。</summary>
+        <returns>現在の <see cref="T:System.Security.Claims.ClaimsPrincipal" /> オブジェクトの新しいコピー。</returns>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateClaimsIdentity">
+      <MemberSignature Language="C#" Value="protected virtual System.Security.Claims.ClaimsIdentity CreateClaimsIdentity (System.IO.BinaryReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Security.Claims.ClaimsIdentity CreateClaimsIdentity(class System.IO.BinaryReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.CreateClaimsIdentity(System.IO.BinaryReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Claims.ClaimsIdentity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.IO.BinaryReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">バイナリ リーダー。</param>
+        <summary>新しい要求の ID を作成します。</summary>
+        <returns>作成された要求 ID。</returns>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="public static System.Security.Claims.ClaimsPrincipal Current { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Security.Claims.ClaimsPrincipal Current" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Claims.ClaimsPrincipal.Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Claims.ClaimsPrincipal</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の要求プリンシパルを取得します。</summary>
+        <value>現在の要求プリンシパル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType>が返されます。 この動作を変更するには設定して、<xref:System.Security.Claims.ClaimsPrincipal.ClaimsPrincipalSelector%2A>プロパティを現在のプリンシパルを決定するために呼び出すデリゲートを指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomSerializationData">
+      <MemberSignature Language="C#" Value="protected virtual byte[] CustomSerializationData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] CustomSerializationData" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Claims.ClaimsPrincipal.CustomSerializationData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生型によって提供されるその他のデータが含まれています。 通常の呼び出し時に設定<see cref="M:System.Security.Claims.ClaimsIdentity.WriteTo(System.IO.BinaryWriter,System.Byte[])" />です。</summary>
+        <value>A<see cref="T:System.Byte" />シリアル化されたデータの追加を表す配列。</value>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindAll">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IEnumerable&lt;System.Security.Claims.Claim&gt; FindAll (Predicate&lt;System.Security.Claims.Claim&gt; match);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.Security.Claims.Claim&gt; FindAll(class System.Predicate`1&lt;class System.Security.Claims.Claim&gt; match) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.FindAll(System.Predicate{System.Security.Claims.Claim})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Security.Claims.Claim&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="match" Type="System.Predicate&lt;System.Security.Claims.Claim&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="match">一致するロジックを実行する関数。</param>
+        <summary>指定された述語と一致するすべての要求を取得します。</summary>
+        <returns>一致する要求。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求プリンシパルに関連付けられているすべての id から信頼性情報を返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="match" />is **null**.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindAll">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IEnumerable&lt;System.Security.Claims.Claim&gt; FindAll (string type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.Security.Claims.Claim&gt; FindAll(string type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.FindAll(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Security.Claims.Claim&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type">要求の照合対象となる要求の種類。</param>
+        <summary>すべての要求、または指定された要求の種類を持つ要求を取得します。</summary>
+        <returns>一致する要求。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求プリンシパルに関連付けられているすべての id から信頼性情報を返します。 序数に基づく大文字と小文字の区別の比較が行われた`type`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" />is **null**.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindFirst">
+      <MemberSignature Language="C#" Value="public virtual System.Security.Claims.Claim FindFirst (Predicate&lt;System.Security.Claims.Claim&gt; match);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.Claims.Claim FindFirst(class System.Predicate`1&lt;class System.Security.Claims.Claim&gt; match) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.FindFirst(System.Predicate{System.Security.Claims.Claim})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Claims.Claim</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="match" Type="System.Predicate&lt;System.Security.Claims.Claim&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="match">一致するロジックを実行する関数。</param>
+        <summary>指定された述語と一致した最初の要求を取得します。</summary>
+        <returns>最初の一致する要求または<see langword="null" />一致が検出されない場合。</returns>
+        <remarks>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="match" />is **null**.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindFirst">
+      <MemberSignature Language="C#" Value="public virtual System.Security.Claims.Claim FindFirst (string type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.Claims.Claim FindFirst(string type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.FindFirst(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Claims.Claim</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type">一致する要求の種類。</param>
+        <summary>指定した要求の種類を持つ最初の要求を取得します。</summary>
+        <returns>最初の一致する要求または<see langword="null" />一致が検出されない場合。</returns>
+        <remarks>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" />is **null**.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="protected virtual void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">データを読み込む先のオブジェクト。</param>
+        <param name="context">このシリアル化のシリアル化先。 指定できます<see langword="null" />です。</param>
+        <summary>追加、 <see cref="T:System.Runtime.Serialization.SerializationInfo" /> 、現在のシリアル化に必要なデータと<see cref="T:System.Security.Claims.ClaimsPrincipal" />オブジェクト。</summary>
+        <remarks>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="info" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="HasClaim">
+      <MemberSignature Language="C#" Value="public virtual bool HasClaim (Predicate&lt;System.Security.Claims.Claim&gt; match);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool HasClaim(class System.Predicate`1&lt;class System.Security.Claims.Claim&gt; match) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.HasClaim(System.Predicate{System.Security.Claims.Claim})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="match" Type="System.Predicate&lt;System.Security.Claims.Claim&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="match">一致するロジックを実行する関数。</param>
+        <summary>この要求プリンシパルに関連付けられている要求 ID のいずれかに、指定された述語と一致する要求が含まれているかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />一致する要求が存在する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="match" />is **null**.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HasClaim">
+      <MemberSignature Language="C#" Value="public virtual bool HasClaim (string type, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool HasClaim(string type, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.HasClaim(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type">一致する要求の種類。</param>
+        <param name="value">一致する要求の値。</param>
+        <summary>この要求プリンシパルに関連付けられているクレーム ID のいずれかに、指定された要求の種類と値を持つ要求が含まれているかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />一致する要求が存在する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チェックしません、<xref:System.Security.Claims.Claim.Issuer%2A>または<xref:System.Security.Claims.Claim.OriginalIssuer%2A>プロパティです。 値の大文字小文字を区別、序数を使用して、比較が行われます型に依存で大文字にします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" />is **null**.  
+  
+ または  
+  
+ <paramref name="value" />is **null**.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Identities">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IEnumerable&lt;System.Security.Claims.ClaimsIdentity&gt; Identities { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class System.Security.Claims.ClaimsIdentity&gt; Identities" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Claims.ClaimsPrincipal.Identities" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Security.Claims.ClaimsIdentity&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクレーム プリンシパルと関連付けられているクレーム ID をすべて含むコレクションを取得します。</summary>
+        <value>クレーム ID のコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一般的なケースでは、コレクションには、1 つの要素のみが含まれています。  
+  
+ コレクションにはいくつかの要素を含めることが`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Identity">
+      <MemberSignature Language="C#" Value="public virtual System.Security.Principal.IIdentity Identity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Principal.IIdentity Identity" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Claims.ClaimsPrincipal.Identity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Principal.IIdentity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要求プリンシパルに関連付けられたプライマリ要求 ID を取得します。</summary>
+        <value>この要求プリンシパルに関連付けられたプライマリ要求 ID。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、フレームワークが型の id を優先<xref:System.Security.Principal.WindowsIdentity>id を返すときにします。 最初の<xref:System.Security.Principal.WindowsIdentity>で見つかった、<xref:System.Security.Claims.ClaimsPrincipal.Identities%2A>コレクションが返されます。 ある場合ありません<xref:System.Security.Principal.WindowsIdentity>から割り当て可能な最初の id、コレクションの<xref:System.Security.Claims.ClaimsIdentity>が返されます。 ある場合ありません<xref:System.Security.Claims.ClaimsIdentity>、`null`が返されます。 場合、<xref:System.Security.Claims.ClaimsPrincipal.Identities%2A>コレクションは空では、<xref:System.ArgumentNullException>がスローされます。  
+  
+ 設定して、既定の動作を変更することができます、<xref:System.Security.Claims.ClaimsPrincipal.PrimaryIdentitySelector%2A>プロパティ id を判別するために呼び出すデリゲートを指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInRole">
+      <MemberSignature Language="C#" Value="public virtual bool IsInRole (string role);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsInRole(string role) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.IsInRole(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="role" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="role">確認するロール。</param>
+        <summary>この要求プリンシパルが表すエンティティ (ユーザー) が、指定したロールにあるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />要求プリンシパルが指定されたロールの場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Claims.ClaimsPrincipal.IsInRole%2A>メソッドでは、この要求プリンシパルが所有する id が種類のクレームを含むかどうかをチェック<xref:System.Security.Claims.ClaimsIdentity.RoleClaimType%2A?displayProperty=nameWithType>要求の値がで指定された値と等しい、`role`パラメーター。  
+  
+> [!NOTE]
+>  各<xref:System.Security.Claims.ClaimsIdentity>はクレームの種類、ロールを表す独自の定義を持ちます。 この要求の種類がアクセスしてを使用して設定することができます、<xref:System.Security.Claims.ClaimsIdentity.RoleClaimType%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrimaryIdentitySelector">
+      <MemberSignature Language="C#" Value="public static Func&lt;System.Collections.Generic.IEnumerable&lt;System.Security.Claims.ClaimsIdentity&gt;,System.Security.Claims.ClaimsIdentity&gt; PrimaryIdentitySelector { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Func`2&lt;class System.Collections.Generic.IEnumerable`1&lt;class System.Security.Claims.ClaimsIdentity&gt;, class System.Security.Claims.ClaimsIdentity&gt; PrimaryIdentitySelector" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Claims.ClaimsPrincipal.PrimaryIdentitySelector" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Func&lt;System.Collections.Generic.IEnumerable&lt;System.Security.Claims.ClaimsIdentity&gt;,System.Security.Claims.ClaimsIdentity&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得および設定によって返されるクレーム id を選択するために使用する、デリゲート、<see cref="P:System.Security.Claims.ClaimsPrincipal.Identity" />プロパティです。</summary>
+        <value>デリゲート。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の動作をオーバーライドするには、このプロパティを設定することができます、<xref:System.Security.Claims.ClaimsPrincipal.Identity%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">設定操作では、直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで設定することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteTo">
+      <MemberSignature Language="C#" Value="public virtual void WriteTo (System.IO.BinaryWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteTo(class System.IO.BinaryWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.WriteTo(System.IO.BinaryWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.IO.BinaryWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">データ記憶域に使用するライター。</param>
+        <summary>使用してシリアル化、<see cref="T:System.IO.BinaryWriter" />です。</summary>
+        <remarks>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteTo">
+      <MemberSignature Language="C#" Value="protected virtual void WriteTo (System.IO.BinaryWriter writer, byte[] userData);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteTo(class System.IO.BinaryWriter writer, unsigned int8[] userData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.WriteTo(System.IO.BinaryWriter,System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.IO.BinaryWriter" />
+        <Parameter Name="userData" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="writer">データ記憶域に使用するライター。</param>
+        <param name="userData">派生型によって提供されるデータを追加します。</param>
+        <summary>使用してシリアル化、<see cref="T:System.IO.BinaryWriter" />です。</summary>
+        <remarks>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,158 @@
+<Type Name="AddingNewEventArgs" FullName="System.ComponentModel.AddingNewEventArgs">
+  <TypeSignature Language="C#" Value="public class AddingNewEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AddingNewEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.AddingNewEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Forms.BindingSource.AddingNew" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.AddingNewEventArgs>クラスのデータを提供、<xref:System.Windows.Forms.BindingSource.AddingNew?displayProperty=nameWithType>項目がコレクションに追加しようとしているように通知イベント。 イベントは、イベント ハンドラー内で、プログラマ<xref:System.ComponentModel.AddingNewEventHandler>を設定して、新しいオブジェクトを指定するオプション、<xref:System.ComponentModel.AddingNewEventArgs.NewObject%2A>プロパティをこの新しい項目。 このプロパティが設定されていない場合、コレクションは通常使用されている新しい項目を構築するために適切な型の既定のコンス トラクターを使用します。 どちらの場合、新しい項目をコレクションに追加されます。  
+  
+ コレクションにも実装されている場合、<xref:System.ComponentModel.ICancelAddNew>インターフェイス、項目は仮を追加、後続の commit または rollback を待機しています。  
+  
+ このイベントは通常使用クラス内のデータ バインディングのシナリオでなど<xref:System.Windows.Forms.BindingSource?displayProperty=nameWithType>と<xref:System.ComponentModel.BindingList%601?displayProperty=nameWithType>です。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.ComponentModel.AddingNewEventArgs>を処理するクラス、<xref:System.Windows.Forms.BindingSource.AddingNew?displayProperty=nameWithType>イベント。 このコード例に示されている例の一部である[する方法: Windows フォーム BindingSource で項目の追加をカスタマイズ](~/docs/framework/winforms/controls/how-to-customize-item-addition-with-the-windows-forms-bindingsource.md)です。  
+  
+ [!code-cpp[System.Windows.Forms.DataConnector.AddingNew#8](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataConnector.AddingNew/CPP/form1.cpp#8)]
+ [!code-csharp[System.Windows.Forms.DataConnector.AddingNew#8](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataConnector.AddingNew/CS/form1.cs#8)]
+ [!code-vb[System.Windows.Forms.DataConnector.AddingNew#8](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataConnector.AddingNew/VB/form1.vb#8)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AddingNewEventArgs ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.AddingNewEventArgs.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.AddingNewEventArgs" />クラスのパラメーターを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のコンス トラクターは、設定、<xref:System.ComponentModel.AddingNewEventArgs.NewObject%2A>プロパティを`null`です。 値が`null`場合は、ことを示します、<xref:System.ComponentModel.AddingNewEventHandler>このプロパティを明示的に設定しません、コレクションはそれ自体に追加する新しい項目を提供する標準的な手順になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AddingNewEventArgs (object newObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object newObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.AddingNewEventArgs.#ctor(System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="newObject" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="newObject"><see cref="T:System.Object" />新しい項目の値として使用します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.AddingNewEventArgs" />クラスの新しいアイテムとして指定したオブジェクトを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.AddingNewEventArgs.%23ctor%2A>コンス トラクターのセット、<xref:System.ComponentModel.AddingNewEventArgs.NewObject%2A>プロパティを`newObject`パラメーター。 このオブジェクトは、イベント ハンドラーでこのプロパティを更新しない限り、関連付けられたコレクションに追加する新しいアイテムとしては使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewObject">
+      <MemberSignature Language="C#" Value="public object NewObject { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object NewObject" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.AddingNewEventArgs.NewObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはバインドの一覧に追加するオブジェクトを設定します。</summary>
+        <value><see cref="T:System.Object" />関連付けられたコレクションに新しい項目として追加します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.ComponentModel.AddingNewEventArgs.NewObject%2A>プロパティに設定されている`null`コレクションが、通常だけで、既定のコンス トラクターを使用して、コレクションに追加する適切な型のオブジェクトを作成する、標準的な操作を行っていることを示します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.ComponentModel.AddingNewEventArgs>を処理するクラス、<xref:System.Windows.Forms.BindingSource.AddingNew?displayProperty=nameWithType>イベント。 このコード例に示されている例の一部である[する方法: Windows フォーム BindingSource で項目の追加をカスタマイズ](~/docs/framework/winforms/controls/how-to-customize-item-addition-with-the-windows-forms-bindingsource.md)です。  
+  
+ [!code-cpp[System.Windows.Forms.DataConnector.AddingNew#8](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataConnector.AddingNew/CPP/form1.cpp#8)]
+ [!code-csharp[System.Windows.Forms.DataConnector.AddingNew#8](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataConnector.AddingNew/CS/form1.cs#8)]
+ [!code-vb[System.Windows.Forms.DataConnector.AddingNew#8](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataConnector.AddingNew/VB/form1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

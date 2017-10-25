@@ -1,0 +1,469 @@
+<Type Name="DataServiceProviderMethods" FullName="System.Data.Services.Providers.DataServiceProviderMethods">
+  <TypeSignature Language="C#" Value="public static class DataServiceProviderMethods" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit DataServiceProviderMethods extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Services.Providers.DataServiceProviderMethods" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>カスタム データ サービス プロバイダーを使用して、リソース セットに対して遅延バインディング操作を実行します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Compare">
+      <MemberSignature Language="C#" Value="public static int Compare (bool left, bool right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 Compare(bool left, bool right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.DataServiceProviderMethods.Compare(System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Boolean" />
+        <Parameter Name="right" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="left">最初のパラメーター値。</param>
+        <param name="right">2 番目のパラメーター値。</param>
+        <summary>演算式に含まれる Boolean 型パラメーターの比較情報を返します。</summary>
+        <returns>
+          <list type="table">
+            <listheader>
+              <term> 値  
+  
+ </term>
+              <description> 条件  
+  
+ </description>
+            </listheader>
+            <item>
+              <term> -1  
+  
+ </term>
+              <description>
+                <paramref name="left" /> は <paramref name="right" /> より小さい値です。  
+  
+ </description>
+            </item>
+            <item>
+              <term> 0  
+  
+ </term>
+              <description> x は y と等価です。  
+  
+ </description>
+            </item>
+            <item>
+              <term> 1  
+  
+ </term>
+              <description>
+                <paramref name="left" /> が <paramref name="right" /> より大きくなっています。  
+  
+ </description>
+            </item>
+          </list>
+        </returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この比較で`true`がより大きい`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Compare">
+      <MemberSignature Language="C#" Value="public static int Compare (Guid left, Guid right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 Compare(valuetype System.Guid left, valuetype System.Guid right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.DataServiceProviderMethods.Compare(System.Guid,System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Guid" />
+        <Parameter Name="right" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="left">最初のパラメーター値。</param>
+        <param name="right">2 番目のパラメーター値。</param>
+        <summary>演算式に含まれる GUID パラメーターの比較情報を返します。</summary>
+        <returns>
+          <list type="table">
+            <listheader>
+              <term> 値  
+  
+ </term>
+              <description> 条件  
+  
+ </description>
+            </listheader>
+            <item>
+              <term> -1  
+  
+ </term>
+              <description>
+                <paramref name="left" /> は <paramref name="right" /> より小さい値です。  
+  
+ </description>
+            </item>
+            <item>
+              <term> 0  
+  
+ </term>
+              <description> x は y と等価です。  
+  
+ </description>
+            </item>
+            <item>
+              <term> 1  
+  
+ </term>
+              <description>
+                <paramref name="left" /> が <paramref name="right" /> より大きくなっています。  
+  
+ </description>
+            </item>
+          </list>
+        </returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 比較はバイト順で実行されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Compare">
+      <MemberSignature Language="C#" Value="public static int Compare (Nullable&lt;bool&gt; left, Nullable&lt;bool&gt; right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 Compare(valuetype System.Nullable`1&lt;bool&gt; left, valuetype System.Nullable`1&lt;bool&gt; right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.DataServiceProviderMethods.Compare(System.Nullable{System.Boolean},System.Nullable{System.Boolean})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Nullable&lt;System.Boolean&gt;" />
+        <Parameter Name="right" Type="System.Nullable&lt;System.Boolean&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="left">最初のパラメーター値。</param>
+        <param name="right">2 番目のパラメーター値。</param>
+        <summary>演算式に含まれる null 許容の Boolean 型パラメーターの比較情報を返します。</summary>
+        <returns>
+          <list type="table">
+            <listheader>
+              <term> 値  
+  
+ </term>
+              <description> 条件  
+  
+ </description>
+            </listheader>
+            <item>
+              <term> -1  
+  
+ </term>
+              <description>
+                <paramref name="left" /> は <paramref name="right" /> より小さい値です。  
+  
+ </description>
+            </item>
+            <item>
+              <term> 0  
+  
+ </term>
+              <description> x は y と等価です。  
+  
+ </description>
+            </item>
+            <item>
+              <term> 1  
+  
+ </term>
+              <description>
+                <paramref name="left" /> が <paramref name="right" /> より大きくなっています。  
+  
+ </description>
+            </item>
+          </list>
+        </returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この比較で`true`がより大きい`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Compare">
+      <MemberSignature Language="C#" Value="public static int Compare (Nullable&lt;Guid&gt; left, Nullable&lt;Guid&gt; right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 Compare(valuetype System.Nullable`1&lt;valuetype System.Guid&gt; left, valuetype System.Nullable`1&lt;valuetype System.Guid&gt; right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.DataServiceProviderMethods.Compare(System.Nullable{System.Guid},System.Nullable{System.Guid})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Nullable&lt;System.Guid&gt;" />
+        <Parameter Name="right" Type="System.Nullable&lt;System.Guid&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="left">最初のパラメーター値。</param>
+        <param name="right">2 番目のパラメーター値。</param>
+        <summary>演算式に含まれる null 許容型の GUID パラメーターの比較情報を返します。</summary>
+        <returns>
+          <list type="table">
+            <listheader>
+              <term> 値  
+  
+ </term>
+              <description> 条件  
+  
+ </description>
+            </listheader>
+            <item>
+              <term> -1  
+  
+ </term>
+              <description>
+                <paramref name="left" /> は <paramref name="right" /> より小さい値です。  
+  
+ </description>
+            </item>
+            <item>
+              <term> 0  
+  
+ </term>
+              <description> x は y と等価です。  
+  
+ </description>
+            </item>
+            <item>
+              <term> 1  
+  
+ </term>
+              <description>
+                <paramref name="left" /> が <paramref name="right" /> より大きくなっています。  
+  
+ </description>
+            </item>
+          </list>
+        </returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 比較はバイト順で実行されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Compare">
+      <MemberSignature Language="C#" Value="public static int Compare (string left, string right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 Compare(string left, string right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.DataServiceProviderMethods.Compare(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.String" />
+        <Parameter Name="right" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="left">最初のパラメーター値。</param>
+        <param name="right">2 番目のパラメーター値。</param>
+        <summary>演算式に含まれる文字列パラメーターの比較情報を返します。</summary>
+        <returns>
+          <list type="table">
+            <listheader>
+              <term> 値  
+  
+ </term>
+              <description> 条件  
+  
+ </description>
+            </listheader>
+            <item>
+              <term> -1  
+  
+ </term>
+              <description>
+                <paramref name="left" /> は <paramref name="right" /> より小さい値です。  
+  
+ </description>
+            </item>
+            <item>
+              <term> 0  
+  
+ </term>
+              <description> x は y と等価です。  
+  
+ </description>
+            </item>
+            <item>
+              <term> 1  
+  
+ </term>
+              <description>
+                <paramref name="left" /> が <paramref name="right" /> より大きくなっています。  
+  
+ </description>
+            </item>
+          </list>
+        </returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 比較は序数順で実行されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Convert">
+      <MemberSignature Language="C#" Value="public static object Convert (object value, System.Data.Services.Providers.ResourceType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Convert(object value, class System.Data.Services.Providers.ResourceType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.DataServiceProviderMethods.Convert(System.Object,System.Data.Services.Providers.ResourceType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="type" Type="System.Data.Services.Providers.ResourceType" />
+      </Parameters>
+      <Docs>
+        <param name="value">要求した <see langword="type" /> にキャストされる値。</param>
+        <param name="type">確認するリソースの種類。</param>
+        <summary>値を指定した型にキャストします。</summary>
+        <returns>要求した <paramref name="value" /> にキャストされた <paramref name="type" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSequenceValue&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEnumerable&lt;T&gt; GetSequenceValue&lt;T&gt; (object value, System.Data.Services.Providers.ResourceProperty property);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IEnumerable`1&lt;!!T&gt; GetSequenceValue&lt;T&gt;(object value, class System.Data.Services.Providers.ResourceProperty property) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.DataServiceProviderMethods.GetSequenceValue``1(System.Object,System.Data.Services.Providers.ResourceProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="property" Type="System.Data.Services.Providers.ResourceProperty" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">結果のシーケンスの型。</typeparam>
+        <param name="value">値を格納しているオブジェクト。</param>
+        <param name="property">
+          値を返す必要があるプロパティを示す <see cref="T:System.Data.Services.Providers.ResourceProperty" />。</param>
+        <summary>指定したオブジェクトから名前付きの値をシーケンスとして取得します。</summary>
+        <returns>要求した値をシーケンスとして格納する <see cref="T:System.Collections.Generic.IEnumerable`1" /> インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A`null`名前付きの値が見つからない場合に値が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="public static object GetValue (object value, System.Data.Services.Providers.ResourceProperty property);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetValue(object value, class System.Data.Services.Providers.ResourceProperty property) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.DataServiceProviderMethods.GetValue(System.Object,System.Data.Services.Providers.ResourceProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="property" Type="System.Data.Services.Providers.ResourceProperty" />
+      </Parameters>
+      <Docs>
+        <param name="value">値を格納しているオブジェクト。</param>
+        <param name="property">
+          値を返す必要があるプロパティを示す <see cref="T:System.Data.Services.Providers.ResourceProperty" />。</param>
+        <summary>指定したオブジェクトから名前付きの値を取得します。</summary>
+        <returns>要求した値を示すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeIs">
+      <MemberSignature Language="C#" Value="public static bool TypeIs (object value, System.Data.Services.Providers.ResourceType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TypeIs(object value, class System.Data.Services.Providers.ResourceType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.DataServiceProviderMethods.TypeIs(System.Object,System.Data.Services.Providers.ResourceType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="type" Type="System.Data.Services.Providers.ResourceType" />
+      </Parameters>
+      <Docs>
+        <param name="value">確認する値。</param>
+        <param name="type">
+          比較する <see cref="T:System.Data.Services.Providers.ResourceType" />。</param>
+        <summary>値が指定した型であるかどうかを確認します。</summary>
+        <returns>A<see cref="T:System.Boolean" />値が<see langword="true" />値が指定した型の場合それ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

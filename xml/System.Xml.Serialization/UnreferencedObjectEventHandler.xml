@@ -1,0 +1,65 @@
+<Type Name="UnreferencedObjectEventHandler" FullName="System.Xml.Serialization.UnreferencedObjectEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void UnreferencedObjectEventHandler(object sender, UnreferencedObjectEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed UnreferencedObjectEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.UnreferencedObjectEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Xml.Serialization.UnreferencedObjectEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Xml.Serialization.UnreferencedObjectEventArgs" />。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Xml.Serialization.XmlSerializer.UnreferencedObject" />のイベント、<see cref="T:System.Xml.Serialization.XmlSerializer" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成するときに、<xref:System.Xml.Serialization.UnreferencedObjectEventHandler>デリゲート、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください[NIB: イベントとデリゲート。](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)  
+  
+ <xref:System.Xml.Serialization.XmlSerializer.UnreferencedObject>イベント発生のみを呼び出すと、<xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では追加、<xref:System.Xml.Serialization.UnreferencedObjectEventHandler>を<xref:System.Xml.Serialization.XmlSerializer>です。 イベントを処理して、`Serializer_UnreferencedObject`メソッドです。 例を実行するには、切り取って UnrefObj.xml をという名前のファイルに次の XML を貼り付けます。  
+  
+```  
+<wrapper>  
+  <Group xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="id1" n1:GroupName=".NET" xmlns:n1="http://www.cpandl.com">  
+   </Group>  
+<Vehicle id="id2" n1:type="Vehicle" xmlns:n1="http://www.w3.org/2001/XMLSchema-instance">  
+    <licenseNumber xmlns:q1="http://www.w3.org/2001/XMLSchema" n1:type="q1:string">ABCD</licenseNumber>  
+  </Vehicle>  
+<Vehicle id="id3" n1:type="Vehicle" xmlns:n1="http://www.w3.org/2001/XMLSchema-instance">  
+    <licenseNumber xmlns:q1="http://www.w3.org/2001/XMLSchema" n1:type="q1:string">1234</licenseNumber>  
+  </Vehicle>  
+</wrapper>  
+```  
+  
+ [!code-cpp[UnreferencedObject Event Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/UnreferencedObject Event Example/CPP/unrefobj.cpp#1)]
+ [!code-csharp[UnreferencedObject Event Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/UnreferencedObject Event Example/CS/unrefobj.cs#1)]
+ [!code-vb[UnreferencedObject Event Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/UnreferencedObject Event Example/VB/unrefobj.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

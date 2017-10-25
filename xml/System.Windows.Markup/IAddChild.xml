@@ -1,0 +1,85 @@
+<Type Name="IAddChild" FullName="System.Windows.Markup.IAddChild">
+  <TypeSignature Language="C#" Value="public interface IAddChild" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IAddChild" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.IAddChild" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>子要素またはテキストの混在を許可する要素を解析するための手段を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 確立するか、WPF では、コンテンツのプロパティまたはコンテンツ モデルを定義するのため<xref:System.Windows.Markup.IAddChild>は廃止されています。 適用、<xref:System.Windows.Markup.ContentPropertyAttribute>をカスタム クラスの代わりにします。  
+  
+ XAML パーサー/プロセッサの動作のため<xref:System.Windows.Markup.IAddChild>は廃止されています。 コレクションの動作には、XAML 型システムの一部は今すぐときと、XAML プロセッサの実装は、System.Xaml アセンブリに専用の Api を使用する必要があります。 全般的なユーザー コードを使用する必要があります、`Add`関連する種類の子コレクションのプロパティに使用されるコレクション型のメソッドです。  
+  
+ 主な残りシナリオ<xref:System.Windows.Markup.IAddChild>サポートするためには、<xref:System.Windows.FrameworkElementFactory>高度なシナリオは、子オブジェクトの作成を処理することができます。 「<xref:System.Windows.FrameworkElementFactory>」を参照してください。  
+  
+ .NET Framework 4.5 ベータ版での呼び出し元は、使用しようとするアプリケーションを対象となる、<xref:System.Windows.Markup.IAddChild>が元のいずれかの API[!INCLUDE[net_v30_short](~/includes/net-v30-short-md.md)]時代 (年号) の目的で (WPF コンテンツ モデルでは、XAML の処理) が必要とする複数の現在<xref:System.Windows.Markup.IAddChild>-クラスの実装が返されます<xref:System.NotImplementedException>または同様の結果を<xref:System.Windows.Markup.IAddChild>API です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddChild">
+      <MemberSignature Language="C#" Value="public void AddChild (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddChild(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.IAddChild.AddChild(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">追加する子オブジェクト。</param>
+        <summary>子オブジェクトを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 確立するか、WPF では、コンテンツのプロパティまたはコンテンツ モデルを定義するのため<xref:System.Windows.Markup.IAddChild>は廃止されています。 適用、<xref:System.Windows.Markup.ContentPropertyAttribute>をカスタム クラスの代わりにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddText">
+      <MemberSignature Language="C#" Value="public void AddText (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddText(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.IAddChild.AddText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">オブジェクトに追加するテキスト。</param>
+        <summary>オブジェクトにノードのテキスト コンテンツを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 「解説」を参照してください<xref:System.Windows.Markup.IAddChild>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

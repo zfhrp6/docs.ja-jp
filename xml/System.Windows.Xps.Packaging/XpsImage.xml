@@ -1,0 +1,40 @@
+<Type Name="XpsImage" FullName="System.Windows.Xps.Packaging.XpsImage">
+  <TypeSignature Language="C#" Value="public class XpsImage : System.Windows.Xps.Packaging.XpsResource" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XpsImage extends System.Windows.Xps.Packaging.XpsResource" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Xps.Packaging.XpsImage" />
+  <AssemblyInfo>
+    <AssemblyName>ReachFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Xps.Packaging.XpsResource</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>内のイメージを表す、<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.Packaging.XpsImage>クラスにパブリック コンス トラクターがありません。  
+  
+ 使用して、<xref:System.Windows.Xps.Packaging.IXpsFixedPageWriter.AddImage%2A>イメージを追加して、新しいドキュメント内の参照を取得します。  
+  
+ 使用して、<xref:System.Windows.Xps.Packaging.IXpsFixedPageReader.GetImage%2A>既存のドキュメントのイメージ参照を取得します。  
+  
+ 設定に基づいて<xref:System.Windows.Xps.Serialization.XpsSerializationManager>と<xref:System.Windows.Xps.Serialization.XpsPackagingPolicy>など<xref:System.Windows.Xps.Serialization.FontSubsetterCommitPolicies>と<xref:System.Windows.Xps.Packaging.PackageInterleavingOrder>のフラッシュ操作、<xref:System.Windows.Xps.Packaging.XpsResource.Commit%2A>のメソッド、<xref:System.Windows.Xps.Packaging.XpsImage>クラスは、完了まで遅れる可能性があります<xref:System.Windows.Xps.Packaging.XpsDocument>が閉じられます。  
+  
+   
+  
+## Examples  
+ 次の例は、イメージを追加する方法を示しています、<xref:System.Windows.Xps.Packaging.XpsDocument>です。  
+  
+ [!code-cpp[XpsCreate#XpsCreateAddPageResources](~/samples/snippets/cpp/VS_Snippets_Wpf/XpsCreate/CPP/XpsCreate.cpp#xpscreateaddpageresources)]
+ [!code-csharp[XpsCreate#XpsCreateAddPageResources](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsCreate/CSharp/XpsCreate.cs#xpscreateaddpageresources)]
+ [!code-vb[XpsCreate#XpsCreateAddPageResources](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsCreate/visualbasic/xpscreate.vb#xpscreateaddpageresources)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members />
+</Type>

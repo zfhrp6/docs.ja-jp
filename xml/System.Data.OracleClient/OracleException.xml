@@ -1,0 +1,77 @@
+<Type Name="OracleException" FullName="System.Data.OracleClient.OracleException">
+  <TypeSignature Language="C#" Value="public sealed class OracleException : System.Data.Common.DbException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit OracleException extends System.Data.Common.DbException" />
+  <TypeSignature Language="DocId" Value="T:System.Data.OracleClient.OracleException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.OracleClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Common.DbException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>警告またはエラーは、Oracle データベースまたは .NET Framework Data Provider for Oracle によって返されるときに生成される例外。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスが作成されるたびに、<xref:System.Data.OracleClient.OracleDataAdapter>で処理できないような状況が発生しました。  
+  
+ エラーの重大度レベルが高すぎる場合、サーバーは <xref:System.Data.OracleClient.OracleConnection> を閉じることがあります。 ただし、ユーザーは接続を再び開き、続行できます。  
+  
+   
+  
+## Examples  
+ 次のコード生成、<xref:System.Data.OracleClient.OracleException>不足しているデータベースによるし、その例外を表示します。  
+  
+ [!code-csharp[Classic WebData OracleException#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OracleException/CS/source.cs#1)]
+ [!code-vb[Classic WebData OracleException#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OracleException/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Code">
+      <MemberSignature Language="C#" Value="public int Code { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Code" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleException.Code" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>整数値として、エラーのコード部分を取得します。</summary>
+        <value>整数値としてエラーのコード部分。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public override void GetObjectData (System.Runtime.Serialization.SerializationInfo si, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo si, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="si" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="si">スローされている例外に関するシリアル化済みオブジェクト データを保持している <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">転送元または転送先についてのコンテキスト情報を含む <see cref="T:System.Runtime.Serialization.StreamingContext" /> です。</param>
+        <summary>例外に関する情報を含む <see cref="T:System.Runtime.Serialization.SerializationInfo" /> を設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

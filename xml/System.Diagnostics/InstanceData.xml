@@ -1,0 +1,144 @@
+<Type Name="InstanceData" FullName="System.Diagnostics.InstanceData">
+  <TypeSignature Language="C#" Value="public class InstanceData" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit InstanceData extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.InstanceData" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>パフォーマンス カウンターのサンプルに関連付けられているインスタンス データを保持します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の内容を表示する、<xref:System.Diagnostics.InstanceData>特定内に存在するオブジェクト<xref:System.Diagnostics.PerformanceCounterCategory>ローカル コンピューター上です。 最初の番号付きリストが表示されます<xref:System.Diagnostics.PerformanceCounter>カテゴリ。 カテゴリの 1 つの番号を入力すると、サンプルが表示されます、各<xref:System.Diagnostics.PerformanceCounter>で、<xref:System.Diagnostics.PerformanceCounterCategory>の各インスタンスに関連付けられているインスタンス データ、<xref:System.Diagnostics.PerformanceCounter>です。  
+  
+ [!code-cpp[System.Diagnostics.InstanceData.CopyTo#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Diagnostics.InstanceData.CopyTo/CPP/instdatacopyto.cpp#1)]
+ [!code-csharp[System.Diagnostics.InstanceData.CopyTo#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.InstanceData.CopyTo/CS/instdatacopyto.cs#1)]
+ [!code-vb[System.Diagnostics.InstanceData.CopyTo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.InstanceData.CopyTo/VB/instdatacopyto.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InstanceData (string instanceName, System.Diagnostics.CounterSample sample);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string instanceName, valuetype System.Diagnostics.CounterSample sample) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.InstanceData.#ctor(System.String,System.Diagnostics.CounterSample)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="instanceName" Type="System.String" />
+        <Parameter Name="sample" Type="System.Diagnostics.CounterSample" />
+      </Parameters>
+      <Docs>
+        <param name="instanceName">パフォーマンス カウンターに関連付けられているインスタンスの名前。</param>
+        <param name="sample">A<see cref="T:System.Diagnostics.CounterSample" />で指定されたインスタンスから取得した、 <c>instanceName</c>パラメーター。</param>
+        <summary>指定されたサンプルとパフォーマンス カウンターのインスタンスを使用して、InstanceData クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Diagnostics.InstanceData>し、一部のフィールドの値を表示します。  
+  
+ [!code-csharp[System.Diagnostics.InstanceData.CopyTo#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.InstanceData.CopyTo/CS/instdatacopyto.cs#3)]
+ [!code-vb[System.Diagnostics.InstanceData.CopyTo#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.InstanceData.CopyTo/VB/instdatacopyto.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceName">
+      <MemberSignature Language="C#" Value="public string InstanceName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string InstanceName" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.InstanceData.InstanceName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスのデータに関連付けられているインスタンス名を取得します。</summary>
+        <value>パフォーマンス カウンターに関連付けられているインスタンスの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Diagnostics.InstanceData>の値を表示およびその<xref:System.Diagnostics.InstanceData.InstanceName%2A>プロパティおよびその他のプロパティです。  
+  
+ [!code-csharp[System.Diagnostics.InstanceData.CopyTo#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.InstanceData.CopyTo/CS/instdatacopyto.cs#3)]
+ [!code-vb[System.Diagnostics.InstanceData.CopyTo#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.InstanceData.CopyTo/VB/instdatacopyto.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RawValue">
+      <MemberSignature Language="C#" Value="public long RawValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 RawValue" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.InstanceData.RawValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パフォーマンス カウンターのサンプルに関連付けられた生データ値を取得します。</summary>
+        <value>パフォーマンス カウンターのサンプルで読み取る生の値に関連付けられている、<see cref="P:System.Diagnostics.InstanceData.Sample" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Diagnostics.InstanceData>の値を表示およびその<xref:System.Diagnostics.InstanceData.RawValue%2A>プロパティおよびその他のプロパティです。  
+  
+ [!code-csharp[System.Diagnostics.InstanceData.CopyTo#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.InstanceData.CopyTo/CS/instdatacopyto.cs#3)]
+ [!code-vb[System.Diagnostics.InstanceData.CopyTo#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.InstanceData.CopyTo/VB/instdatacopyto.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Sample">
+      <MemberSignature Language="C#" Value="public System.Diagnostics.CounterSample Sample { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Diagnostics.CounterSample Sample" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.InstanceData.Sample" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.CounterSample</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このデータを生成したパフォーマンス カウンターのサンプルを取得します。</summary>
+        <value>A<see cref="T:System.Diagnostics.CounterSample" />で指定されたインスタンスから取得した、<see cref="P:System.Diagnostics.InstanceData.InstanceName" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Diagnostics.InstanceData>の値を取得し、<xref:System.Diagnostics.InstanceData.Sample%2A>参照であるプロパティを<xref:System.Diagnostics.CounterSample>です。 この例のフィールドに表示し、<xref:System.Diagnostics.CounterSample>です。  
+  
+ [!code-csharp[System.Diagnostics.InstanceData.CopyTo#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.InstanceData.CopyTo/CS/instdatacopyto.cs#3)]
+ [!code-vb[System.Diagnostics.InstanceData.CopyTo#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.InstanceData.CopyTo/VB/instdatacopyto.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

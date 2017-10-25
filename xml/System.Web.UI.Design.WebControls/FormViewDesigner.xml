@@ -1,0 +1,378 @@
+<Type Name="FormViewDesigner" FullName="System.Web.UI.Design.WebControls.FormViewDesigner">
+  <TypeSignature Language="C#" Value="public class FormViewDesigner : System.Web.UI.Design.WebControls.DataBoundControlDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FormViewDesigner extends System.Web.UI.Design.WebControls.DataBoundControlDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.FormViewDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.WebControls.DataBoundControlDesigner</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Web.UI.WebControls.FormView" /> コントロールを、ビジュアル デザイナーで、デザイン時に使用できるようにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビジュアル デザイナーでソースからデザイン ビューに切り替えたときに、マークアップのソース コードを説明する、<xref:System.Web.UI.WebControls.FormView>コントロールは解析され、デザイン画面でコントロールのデザイン時バージョンを作成します。 ソース ビューに切り替えるには、デザイン時コントロールがマークアップのソース コードを永続化し、Web ページのマークアップに編集します。  
+  
+ プロパティ、<xref:System.Web.UI.Design.WebControls.FormViewDesigner>クラスは、次の機能を提供します。  
+  
+-   <xref:System.Web.UI.Design.WebControls.FormViewDesigner.ActionLists%2A>プロパティから返される、<xref:System.ComponentModel.Design.DesignerActionListCollection>通常から派生したオブジェクトを含むオブジェクトを<xref:System.ComponentModel.Design.DesignerActionList>デザイナーの継承ツリーの各レベルのクラスです。  
+  
+-   <xref:System.Web.UI.Design.WebControls.FormViewDesigner.AutoFormats%2A>プロパティは、書式指定での表示スキームのコレクションを返します、**オート フォーマット** ダイアログ ボックス。  
+  
+-   <xref:System.Web.UI.Design.WebControls.FormViewDesigner.TemplateGroups%2A>プロパティが関連付けられているテンプレートのテンプレート グループのコレクションを返します<xref:System.Web.UI.WebControls.FormView>です。  
+  
+-   <xref:System.Web.UI.Design.WebControls.FormViewDesigner.UsePreviewControl%2A>プロパティは常に返します`true`、デザイナーに関連付けられている一時的なコピーが作成されることを示す<xref:System.Web.UI.WebControls.FormView>をデザイン時のマークアップを生成します。  
+  
+ <xref:System.Web.UI.Design.WebControls.FormViewDesigner>クラスのメソッドは、次の機能を提供します。  
+  
+-   <xref:System.Web.UI.Design.WebControls.FormViewDesigner.GetDesignTimeHtml%2A>メソッドは、関連付けられている表示するために使用するマークアップを返します<xref:System.Web.UI.WebControls.FormView>デザイン時にします。  
+  
+-   <xref:System.Web.UI.Design.WebControls.FormViewDesigner.Initialize%2A>メソッドには、表示、編集、および関連付けられたデザインにデザイナーができるように準備<xref:System.Web.UI.WebControls.FormView>です。  
+  
+-   <xref:System.Web.UI.Design.WebControls.FormViewDesigner.OnSchemaRefreshed%2A>メソッドが呼び出されますに関連付けられているデータ ソースのスキーマ<xref:System.Web.UI.WebControls.FormView>変更します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、拡張する方法を示します、<xref:System.Web.UI.Design.WebControls.FormViewDesigner>クラスから派生したコントロールの外観を変更する、<xref:System.Web.UI.WebControls.FormView>コントロールをデザイン時です。  
+  
+ 例では、`MyFormView`から制御、<xref:System.Web.UI.WebControls.FormView>コントロール。 `MyFormView`のコピーするだけである、<xref:System.Web.UI.WebControls.FormView>です。 例ではまた、`MyFormViewDesigner`からクラス、<xref:System.Web.UI.Design.WebControls.FormViewDesigner>され、配置、<xref:System.ComponentModel.DesignerAttribute>オブジェクトを`MyFormViewDesigner`上、`MyFormView`コントロール。  
+  
+ `MyFormViewDesigner`次の項目をオーバーライドします。  
+  
+-   <xref:System.Web.UI.Design.WebControls.FormViewDesigner.SampleRowCount%2A>あるページャーのデザイン時ビューの行を指定するプロパティ、 `MyFormView` 4 つのページ リンクが含まれます。  
+  
+-   <xref:System.Web.UI.Design.WebControls.FormViewDesigner.GetDesignTimeHtml%2A>メソッドに含める、<xref:System.Web.UI.WebControls.FormView.Caption%2A>で新しい最初の行として、指定される場合は、プロパティ、`MyFormView`デザイン時にグリッドです。 場合、<xref:System.Web.UI.WebControls.WebControl.BorderStyle%2A>のプロパティ、`MyFormView`は、<xref:System.Web.UI.WebControls.BorderStyle.NotSet>または<xref:System.Web.UI.WebControls.BorderStyle.None>値、<xref:System.Web.UI.Design.WebControls.FormViewDesigner.GetDesignTimeHtml%2A>エクステントの詳細に表示されるようにするコントロールを囲む青い点線の枠を描画します。  
+  
+ [!code-csharp[System.Web.UI.Design.WebControls.FormViewDesigner#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.FormViewDesigner/CS/formviewdesigner.cs#1)]
+ [!code-vb[System.Web.UI.Design.WebControls.FormViewDesigner#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.FormViewDesigner/VB/formviewdesigner.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FormViewDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.FormViewDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.FormViewDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework は、内部での新しいインスタンスを作成、<xref:System.Web.UI.Design.WebControls.FormViewDesigner>クラスの関連付けの作成時に<xref:System.Web.UI.WebControls.FormView>コントロールまたはのコピー、<xref:System.Web.UI.WebControls.FormView>デザイン サーフェイス上のコントロールです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActionLists">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.Design.DesignerActionListCollection ActionLists { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.Design.DesignerActionListCollection ActionLists" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.FormViewDesigner.ActionLists" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignerActionListCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このデザイナーのデザイナー アクション リスト コレクションを取得します。</summary>
+        <value>このデザイナーと関連付けられた <see cref="T:System.ComponentModel.Design.DesignerActionListCollection" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoFormats">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.Design.DesignerAutoFormatCollection AutoFormats { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Design.DesignerAutoFormatCollection AutoFormats" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.FormViewDesigner.AutoFormats" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.DesignerAutoFormatCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>書式指定での表示スキームを自動のコレクションを取得、**オート フォーマット** ダイアログ ボックス。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.FormView" /> の定義済みスキームを格納している <see cref="T:System.Web.UI.Design.DesignerAutoFormatCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.DesignerAutoFormatCollection>オブジェクトには、XML でエンコードされたクラスのメンバー、内部から設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeHtml">
+      <MemberSignature Language="C#" Value="public override string GetDesignTimeHtml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetDesignTimeHtml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.FormViewDesigner.GetDesignTimeHtml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイン時に関連付けられたコントロールを描画するために使用するマークアップを取得します。</summary>
+        <returns>デザイン時に <see cref="T:System.Web.UI.WebControls.FormView" /> を表示するために使用するマークアップを格納している <see cref="T:System.String" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 項目テンプレートが定義されている場合、<xref:System.Web.UI.WebControls.FormView>コントロール、<xref:System.Web.UI.Design.WebControls.FormViewDesigner.GetDesignTimeHtml%2A>メソッドのセット、<xref:System.Web.UI.WebControls.FormView.DataKeyNames%2A>コントロールを空のコレクション<xref:System.String>配列の場合は、データ ソースのスキーマを取得できません。 <xref:System.Web.UI.Design.WebControls.FormViewDesigner.GetDesignTimeHtml%2A>更新、<xref:System.ComponentModel.TypeDescriptor>オブジェクトへの呼び出しを強制的に、<xref:System.Web.UI.Design.WebControls.DataBoundControlDesigner.PreFilterProperties%2A>メソッドです。 <xref:System.Web.UI.Design.WebControls.FormViewDesigner.GetDesignTimeHtml%2A>マークアップを生成する基本メソッドを呼び出します。  
+  
+ 項目テンプレートが定義されていない場合、<xref:System.Web.UI.WebControls.FormView>コントロール、<xref:System.Web.UI.Design.WebControls.FormViewDesigner.GetDesignTimeHtml%2A>呼び出し、<xref:System.Web.UI.Design.WebControls.FormViewDesigner.GetEmptyDesignTimeHtml%2A>プレース ホルダーを表示するマークアップを生成するメソッド。  
+  
+   
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Web.UI.Design.WebControls.FormViewDesigner.GetDesignTimeHtml%2A>から継承されるクラスのメソッド、<xref:System.Web.UI.Design.WebControls.FormViewDesigner>の外観を変更するクラス、<xref:System.Web.UI.WebControls.FormView>コントロールをデザイン時です。 この例は、グリッドに表示する新しい最初の行を追加、<xref:System.Web.UI.WebControls.FormView.Caption%2A>プロパティの場合、<xref:System.Web.UI.WebControls.FormView.Caption%2A>が定義されています。 場合、<xref:System.Web.UI.WebControls.WebControl.BorderStyle%2A>から派生したコントロールのプロパティ、<xref:System.Web.UI.WebControls.FormView>は、<xref:System.Web.UI.WebControls.BorderStyle.NotSet>または<xref:System.Web.UI.WebControls.BorderStyle.None>値、<xref:System.Web.UI.Design.WebControls.FormViewDesigner.GetDesignTimeHtml%2A>エクステントの詳細に表示されるようにするコントロールを囲む青い点線の枠を描画します。 この例では、コントロールの実行時の外観は変わりません。  
+  
+ [!code-csharp[System.Web.UI.Design.WebControls.FormViewDesigner#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.FormViewDesigner/CS/formviewdesigner.cs#4)]
+ [!code-vb[System.Web.UI.Design.WebControls.FormViewDesigner#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.FormViewDesigner/VB/formviewdesigner.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合、<see cref="M:System.Web.UI.Design.WebControls.FormViewDesigner.GetDesignTimeHtml" />メソッドを最終的には、いくつかの優先レベルを呼び出すために、基本メソッドを呼び出すことを確認する、<see cref="T:System.Web.UI.WebControls.FormView" />コントロールまたはのコピー、<see cref="T:System.Web.UI.WebControls.FormView" />マークアップを生成するコントロール。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEmptyDesignTimeHtml">
+      <MemberSignature Language="C#" Value="protected override string GetEmptyDesignTimeHtml ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetEmptyDesignTimeHtml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.FormViewDesigner.GetEmptyDesignTimeHtml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイン時に関連付けられたコントロールのプレース ホルダーを表示するために使用されるマークアップ テキストを取得します。</summary>
+        <returns>A<see cref="T:System.String" />デザイン サーフェイス上のプレース ホルダーを表示するマークアップ テキストを格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合のマークアップ、<xref:System.Web.UI.WebControls.FormView>コントロールは含まれません項目テンプレートのいずれか、<xref:System.Web.UI.Design.WebControls.FormViewDesigner.GetDesignTimeHtml%2A>メソッドの呼び出し、<xref:System.Web.UI.Design.WebControls.FormViewDesigner.GetEmptyDesignTimeHtml%2A>メソッドで、テンプレートの内容と項目テンプレートが必要であるメッセージを編集する方法を説明するプレース ホルダーのマークアップを生成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (System.ComponentModel.IComponent component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(class System.ComponentModel.IComponent component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.FormViewDesigner.Initialize(System.ComponentModel.IComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="component"><see cref="T:System.ComponentModel.IComponent" /> を実装する <see cref="T:System.Web.UI.WebControls.FormView" />。</param>
+        <summary>関連付けられたコントロールをデザイナーで表示、編集、デザインできるように準備します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナー ホストの呼び出し、<xref:System.Web.UI.Design.WebControls.FormViewDesigner.Initialize%2A>メソッドを表示するために、デザイナーを使用する準備ができたときに、<xref:System.Web.UI.WebControls.FormView>コントロール。 <xref:System.Web.UI.Design.WebControls.FormViewDesigner.Initialize%2A>とその基本メソッドのプロパティを構成およびデザイナーの操作に必要なイベントに接続します。  
+  
+ `component`パラメーターは、<xref:System.Web.UI.WebControls.FormView>デザイナーまたはのコピーに関連付けられているコントロール、<xref:System.Web.UI.WebControls.FormView>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSchemaRefreshed">
+      <MemberSignature Language="C#" Value="protected override void OnSchemaRefreshed ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnSchemaRefreshed() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.FormViewDesigner.OnSchemaRefreshed" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>関連付けられたコントロールのデータ ソースのスキーマが変更されたときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テンプレート編集モードでもフィールドでは、デザイナーがいない場合は追加または編集するには、<xref:System.Web.UI.Design.WebControls.FormViewDesigner.OnSchemaRefreshed%2A>メソッドの呼び出し、<xref:System.Web.UI.Design.ControlDesigner.InvokeTransactedChange%2A>メソッドを呼び出して、<xref:System.Web.UI.Design.ControlDesigner.OnComponentChanged%2A>を更新するメソッド、<xref:System.Web.UI.WebControls.FormView>コントロール、データ ソースの変更を反映するようにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreFilterProperties">
+      <MemberSignature Language="C#" Value="protected override void PreFilterProperties (System.Collections.IDictionary properties);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void PreFilterProperties(class System.Collections.IDictionary properties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.FormViewDesigner.PreFilterProperties(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="properties" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="properties">コンポーネントのクラスのプロパティです。</param>
+        <summary>追加またはデザイン ホストのプロパティ グリッドで、デザイン時にプロパティを削除または関連付けられたコントロールのプロパティに対応する新しいデザイン時プロパティを提供します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderOuterTable">
+      <MemberSignature Language="C#" Value="public bool RenderOuterTable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RenderOuterTable" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.FormViewDesigner.RenderOuterTable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定するかどうか、<see cref="T:System.Web.UI.Design.WebControls.FormViewDesigner" />コントロールでは、外部テーブル コンテナーを使用して、インライン CSS スタイル ルールを適用します。</summary>
+        <value>
+          <see langword="true" />コントロールでは、外側のテーブル コンテナーを使用して、インライン CSS スタイル規則を適用する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.FormViewDesigner>コントロールでは、外部テーブル コンテナーを使用して、マークアップでのインライン スタイル ルールを適用します。 このプロパティを設定して、外部テーブルのコンテナーを削除できます`true`です。 これは、コントロールのマークアップ内の CSS スタイル規則を適用する面で柔軟性を提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SampleRowCount">
+      <MemberSignature Language="C#" Value="protected override int SampleRowCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SampleRowCount" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.FormViewDesigner.SampleRowCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表示する関連付けられたコントロールのサンプル行の数を取得します。</summary>
+        <value>サンプル行の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.FormViewDesigner.SampleRowCount%2A>は常に返します`2`です。 これにより、2 つのページ リンクのページャー行に表示される、<xref:System.Web.UI.WebControls.FormView>場合は、デザイン時に、制御、<xref:System.Web.UI.WebControls.FormView.PagerSettings%2A>モードは数値です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Web.UI.Design.WebControls.FormViewDesigner.SampleRowCount%2A>から継承されるクラスのプロパティ、<xref:System.Web.UI.Design.WebControls.FormViewDesigner>のページャー行に表示されるページのリンクの数を変更するクラス、<xref:System.Web.UI.WebControls.FormView>コントロールをデザイン時です。 表示する 4 つのページ リンクをさせます。  
+  
+ [!code-csharp[System.Web.UI.Design.WebControls.FormViewDesigner#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.FormViewDesigner/CS/formviewdesigner.cs#2)]
+ [!code-vb[System.Web.UI.Design.WebControls.FormViewDesigner#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.FormViewDesigner/VB/formviewdesigner.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TemplateGroups">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.Design.TemplateGroupCollection TemplateGroups { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Design.TemplateGroupCollection TemplateGroups" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.FormViewDesigner.TemplateGroups" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.TemplateGroupCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられたコントロールのフィールドについて、テンプレート グループのコレクションを取得します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.FormView" /> 内の各テンプレート フィールドの要素を格納している <see cref="T:System.Web.UI.Design.TemplateGroupCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.FormViewDesigner.TemplateGroups%2A>プロパティのコレクションを構築する<xref:System.Web.UI.Design.TemplateGroup>オブジェクト、関連付けられたコントロール テンプレートごとに 1 つ<xref:System.Web.UI.WebControls.FormView>コントロール。 コントロールのテンプレートは、ヘッダー、フッター、ポケットベル、アイテム、アイテムの編集、項目の挿入、および空のデータです。 コントロール テンプレート<xref:System.Web.UI.Design.TemplateGroup>要素を 1 つを含む<xref:System.Web.UI.Design.TemplateDefinition>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UsePreviewControl">
+      <MemberSignature Language="C#" Value="protected override bool UsePreviewControl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UsePreviewControl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.FormViewDesigner.UsePreviewControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイン時のマークアップを生成するデザイナーに関連付けられている実際のコントロールではなく、一時的なコピーをデザイナーが使用するかどうかを示す値を取得します。</summary>
+        <value>常に <see langword="true" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.FormViewDesigner.UsePreviewControl%2A>プロパティが true では常に、デザイナーを使用して、 <xref:System.Web.UI.WebControls.View> 、関連付けられているのコピーを含むコントロール<xref:System.Web.UI.WebControls.FormView>コントロールをデザイン時のマークアップを生成します。 <xref:System.Web.UI.WebControls.View>コントロールではのすべての永続化には影響しません、<xref:System.Web.UI.WebControls.FormView>です。 場合、<xref:System.Web.UI.Design.WebControls.FormViewDesigner.UsePreviewControl%2A>を返すプロパティはオーバーライドされて`false`、デザイナーが関連付けられている使用<xref:System.Web.UI.WebControls.FormView>自体をデザイン時のマークアップを生成します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドすることができます、<see cref="P:System.Web.UI.Design.WebControls.FormViewDesigner.UsePreviewControl" />を返すプロパティ<see langword="false" />またはコントロールをクラス レベルでマークされているかどうかに基づいて、その値を決定する<see cref="T:System.Web.UI.Design.SupportsPreviewControlAttribute" />オブジェクト。 場合、<see cref="P:System.Web.UI.Design.WebControls.FormViewDesigner.UsePreviewControl" />がオーバーライドされていない、<see cref="T:System.Web.UI.WebControls.FormView" />コントロールは無視されます、<see cref="T:System.Web.UI.Design.SupportsPreviewControlAttribute" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

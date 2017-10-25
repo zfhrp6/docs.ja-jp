@@ -1,0 +1,116 @@
+<Type Name="HandledMouseEventArgs" FullName="System.Windows.Forms.HandledMouseEventArgs">
+  <TypeSignature Language="C#" Value="public class HandledMouseEventArgs : System.Windows.Forms.MouseEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HandledMouseEventArgs extends System.Windows.Forms.MouseEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.HandledMouseEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.MouseEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>防ぐためにカスタム コントロールできるように、<see cref="E:System.Windows.Forms.Control.MouseWheel" />からその親コンテナーに送信されるイベント。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する場合は<xref:System.Windows.Forms.HandledMouseEventArgs>自体、マウス ホイールのイベントを処理し、コントロールの直接の親コンテナーから参照されないようにする必要があるコントロールを開発するときに、主にします。 <xref:System.Windows.Forms.HandledMouseEventArgs>によって直接渡さない<xref:System.Windows.Forms.MouseEventHandler>ときの処理、<xref:System.Windows.Forms.Control.MouseWheel>イベント。 代わりに、<xref:System.Windows.Forms.MouseEventHandler>を使用して、<xref:System.Windows.Forms.MouseEventArgs>にキャストする必要がありますが、<xref:System.Windows.Forms.HandledMouseEventArgs>の出現箇所をキャンセルするために<xref:System.Windows.Forms.Control.MouseWheel>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、マウス ホイール イベントをカスタム コントロールで処理済みとしてマークする方法を示します。  
+  
+ [!code-vb[System.Windows.Forms.HandledMouseEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HandledMouseEventArgs/VB/MouseWheelControl.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HandledMouseEventArgs (System.Windows.Forms.MouseButtons button, int clicks, int x, int y, int delta);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Forms.MouseButtons button, int32 clicks, int32 x, int32 y, int32 delta) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HandledMouseEventArgs.#ctor(System.Windows.Forms.MouseButtons,System.Int32,System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="button" Type="System.Windows.Forms.MouseButtons" />
+        <Parameter Name="clicks" Type="System.Int32" />
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="delta" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="button">1 つ、<see cref="T:System.Windows.Forms.MouseButtons" />押されたマウス ボタンを示す値。</param>
+        <param name="clicks">マウス ボタンが押された回数。</param>
+        <param name="x">マウスの x 座標 (ピクセル単位) をクリックします。</param>
+        <param name="y">マウスの y 座標 (ピクセル単位) をクリックします。</param>
+        <param name="delta">マウス ホイールの回転回数を表す符号付きの数値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.HandledMouseEventArgs" />指定のマウス ボタンをマウスのボタンの数をクリックすると、水平方向および垂直画面座標、およびマウス ポインターの位置の変更。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HandledMouseEventArgs (System.Windows.Forms.MouseButtons button, int clicks, int x, int y, int delta, bool defaultHandledValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Forms.MouseButtons button, int32 clicks, int32 x, int32 y, int32 delta, bool defaultHandledValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HandledMouseEventArgs.#ctor(System.Windows.Forms.MouseButtons,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="button" Type="System.Windows.Forms.MouseButtons" />
+        <Parameter Name="clicks" Type="System.Int32" />
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="delta" Type="System.Int32" />
+        <Parameter Name="defaultHandledValue" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="button">1 つ、<see cref="T:System.Windows.Forms.MouseButtons" />押されたマウス ボタンを示す値。</param>
+        <param name="clicks">マウス ボタンが押された回数。</param>
+        <param name="x">マウスの x 座標 (ピクセル単位) をクリックします。</param>
+        <param name="y">マウスの y 座標 (ピクセル単位) をクリックします。</param>
+        <param name="delta">マウス ホイールの回転回数を表す符号付きの数値。</param>
+        <param name="defaultHandledValue">
+          <see langword="true" />イベントが処理された場合それ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.HandledMouseEventArgs" />の指定されたマウス ボタン、マウス ボタンのクリック数、水平方向および垂直画面座標、マウス ポインターの位置、およびイベントを処理するかどうかを示す値を変更します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Handled">
+      <MemberSignature Language="C#" Value="public bool Handled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Handled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HandledMouseEventArgs.Handled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのイベントは、コントロールの親コンテナーに転送するかどうかを設定します。</summary>
+        <value>
+          <see langword="true" />場合は、マウス イベントは、親コントロールに移動する必要があります。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、マウス ホイール イベントをカスタム コントロールで処理済みとしてマークする方法を示します。  
+  
+ [!code-vb[System.Windows.Forms.HandledMouseEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HandledMouseEventArgs/VB/MouseWheelControl.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

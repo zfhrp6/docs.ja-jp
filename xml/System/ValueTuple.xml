@@ -1,0 +1,954 @@
+<Type Name="ValueTuple" FullName="System.ValueTuple">
+  <TypeSignature Language="C#" Value="public struct ValueTuple : IComparable, IComparable&lt;ValueTuple&gt;, IEquatable&lt;ValueTuple&gt;, System.Collections.IStructuralComparable, System.Collections.IStructuralEquatable" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit ValueTuple extends System.ValueType implements class System.Collections.IStructuralComparable, class System.Collections.IStructuralEquatable, class System.IComparable, class System.IComparable`1&lt;valuetype System.ValueTuple&gt;, class System.IEquatable`1&lt;valuetype System.ValueTuple&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.ValueTuple" />
+  <AssemblyInfo>
+    <AssemblyName>System.ValueTuple</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IStructuralComparable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Collections.IStructuralEquatable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IComparable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IComparable&lt;System.ValueTuple&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IEquatable&lt;System.ValueTuple&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>値のタプルを作成するための静的メソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+組は、特定の数と一連の要素を持つデータ構造です。 組の例は、最初の要素では、3 番目の要素では、その年の 2 番目の要素と、その人の収入における年の識別子の名前などの格納に使用する (、3 つ組、すなわちトリプルと呼ばれます) 3 つの要素を持つデータ構造です。  
+  
+値の組がで導入されたタプル型、[!INCLUDE[net_v463](~/includes/net-v463-md.md)]のランタイムの実装を提供する[c# 内の組](~/docs/csharp/tuples.md)と f# の構造体のタプルです。 など、組クラスから異なる<xref:System.Tuple%601>、<xref:System.Tuple%602>など、次のようにします。  
+  
+-   クラス (参照型) ではなく構造体 (値型) です。  
+  
+-   変更可能ではなく読み取り専用です。 つまり、組のコンポーネントの値を変更できます。  
+  
+-   そのデータ メンバーなど`Item1`、`Item2`など、プロパティではなく、フィールドです。  
+  
+<xref:System.ValueTuple>構造体は、要素が存在しない組を表します。 主に、静的メソッドの作成し、値のタプル型のインスタンスを比較することのできると便利です。 そのヘルパー メソッドを使用して、各値の組のコンポーネントの型を明示的に指定せずに、値の組をインスタンス化できます。 呼び出してその静的<xref:System.ValueTuple.Create%2A>メソッド、8 個の要素の 0 からを持つ値のタプルを作成することができます。 値の組の 8 つ以上のコンポーネントと共に、呼び出す必要があります、<xref:System.ValueTuple%608.%23ctor%2A>コンス トラクターです。  
+
+### <a name="serialization-and-value-tuples"></a>シリアル化と値の組
+
+<xref:System.ValueTuple>型は .NET Core でシリアル化可能ではありません 1.x または .NET Framework 4.7 と以前のバージョン。 さらに、.NET 標準 .NET 規格 2.0 では、必須ではないのシリアル化<xref:System.ValueTuple>; のインスタンスかどうか、<xref:System.ValueTuple>インスタンスがシリアル化可能な個別の .NET 標準実装によって異なります。 確認するかどうか、<xref:System.ValueTuple>型が特定の .NET 実装でシリアル化可能な場合、取得、<xref:System.Type>を表すオブジェクト、<xref:System.ValueTuple>を入力しの値を取得、<xref:System.Type.IsSerializable%2A>プロパティです。 .NET Core と .NET Framework でのシリアル化可能な種類の一覧は、次を参照してください。[バイナリのシリアル化](~/docs/standard/serialization/binary-serialization.md)です。
+
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CompareTo">
+      <MemberSignature Language="C#" Value="public int CompareTo (ValueTuple other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 CompareTo(valuetype System.ValueTuple other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ValueTuple.CompareTo(System.ValueTuple)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ValueTuple</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.ValueTuple" />
+      </Parameters>
+      <Docs>
+        <param name="other">現在のインスタンスと比較するオブジェクト。</param>
+        <summary>現在の <see cref="T:System.ValueTuple" /> インスタンスを指定した <see cref="T:System.ValueTuple" /> インスタンスと比較します。 </summary>
+        <returns>このメソッドは、常に 0 を返します。 </returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+        Because a <xref:System.ValueTuple> instance has no elements, any two <xref:System.ValueTuple> instances are considered to be equivalent.
+           ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static ValueTuple Create ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.ValueTuple Create() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ValueTuple.Create" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ValueTuple</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ValueTuple</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンポーネントを持たない新しい値のタプルを作成します。</summary>
+        <returns>コンポーネントを持たない新しい値のタプル。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create&lt;T1&gt;">
+      <MemberSignature Language="C#" Value="public static ValueTuple&lt;T1&gt; Create&lt;T1&gt; (T1 item1);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.ValueTuple`1&lt;!!T1&gt; Create&lt;T1&gt;(!!T1 item1) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ValueTuple.Create``1(``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ValueTuple</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ValueTuple&lt;T1&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="item1" Type="T1" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">値のタプルの唯一のコンポーネントの型。</typeparam>
+        <param name="item1">値のタプルの唯一のコンポーネントの値。</param>
+        <summary>1 個のコンポーネント (シングルトン) を持つ新しい値のタプルを作成します。</summary>
+        <returns>1 個のコンポーネントを持つ値のタプル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ValueTuple.Create%2A>明示的にそのコンポーネントの種類を指定せずに、1 コンポーネントの値の組をインスタンス化に呼び出すことができるヘルパー メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create&lt;T1,T2&gt;">
+      <MemberSignature Language="C#" Value="public static ValueTuple&lt;T1,T2&gt; Create&lt;T1,T2&gt; (T1 item1, T2 item2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.ValueTuple`2&lt;!!T1, !!T2&gt; Create&lt;T1, T2&gt;(!!T1 item1, !!T2 item2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ValueTuple.Create``2(``0,``1)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ValueTuple</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ValueTuple&lt;T1,T2&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="item1" Type="T1" />
+        <Parameter Name="item2" Type="T2" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">値のタプルの 1 番目のコンポーネントの型。</typeparam>
+        <typeparam name="T2">値のタプルの 2 番目のコンポーネントの型。</typeparam>
+        <param name="item1">値のタプルの 1 番目のコンポーネントの値。</param>
+        <param name="item2">値のタプルの 2 番目のコンポーネントの値。</param>
+        <summary>2 個のコンポーネント (ペア) を持つ新しい値のタプルを作成します。</summary>
+        <returns>2 個のコンポーネントを持つ値のタプル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ValueTuple.Create%2A>明示的にそのコンポーネントの種類を指定することがなく、2 コンポーネントの値の組をインスタンス化を呼び出すことができるヘルパー メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create&lt;T1,T2,T3&gt;">
+      <MemberSignature Language="C#" Value="public static ValueTuple&lt;T1,T2,T3&gt; Create&lt;T1,T2,T3&gt; (T1 item1, T2 item2, T3 item3);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.ValueTuple`3&lt;!!T1, !!T2, !!T3&gt; Create&lt;T1, T2, T3&gt;(!!T1 item1, !!T2 item2, !!T3 item3) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ValueTuple.Create``3(``0,``1,``2)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ValueTuple</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ValueTuple&lt;T1,T2,T3&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+        <TypeParameter Name="T3" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="item1" Type="T1" />
+        <Parameter Name="item2" Type="T2" />
+        <Parameter Name="item3" Type="T3" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">値のタプルの 1 番目のコンポーネントの型。</typeparam>
+        <typeparam name="T2">値のタプルの 2 番目のコンポーネントの型。</typeparam>
+        <typeparam name="T3">値のタプルの 3 番目のコンポーネントの型。</typeparam>
+        <param name="item1">値のタプルの 1 番目のコンポーネントの値。</param>
+        <param name="item2">値のタプルの 2 番目のコンポーネントの値。</param>
+        <param name="item3">値のタプルの 3 番目のコンポーネントの値。</param>
+        <summary>3 個のコンポーネント (トリプル) を持つ新しい値のタプルを作成します。</summary>
+        <returns>3 個のコンポーネントを持つ値のタプル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ValueTuple.Create%2A>明示的にそのコンポーネントの種類を指定せずに、3 コンポーネントの値の組をインスタンス化を呼び出すことができるヘルパー メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create&lt;T1,T2,T3,T4&gt;">
+      <MemberSignature Language="C#" Value="public static ValueTuple&lt;T1,T2,T3,T4&gt; Create&lt;T1,T2,T3,T4&gt; (T1 item1, T2 item2, T3 item3, T4 item4);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.ValueTuple`4&lt;!!T1, !!T2, !!T3, !!T4&gt; Create&lt;T1, T2, T3, T4&gt;(!!T1 item1, !!T2 item2, !!T3 item3, !!T4 item4) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ValueTuple.Create``4(``0,``1,``2,``3)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ValueTuple</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ValueTuple&lt;T1,T2,T3,T4&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+        <TypeParameter Name="T3" />
+        <TypeParameter Name="T4" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="item1" Type="T1" />
+        <Parameter Name="item2" Type="T2" />
+        <Parameter Name="item3" Type="T3" />
+        <Parameter Name="item4" Type="T4" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">値のタプルの 1 番目のコンポーネントの型。</typeparam>
+        <typeparam name="T2">値のタプルの 2 番目のコンポーネントの型。</typeparam>
+        <typeparam name="T3">値のタプルの 3 番目のコンポーネントの型。</typeparam>
+        <typeparam name="T4">値のタプルの 4 番目のコンポーネントの型。</typeparam>
+        <param name="item1">値のタプルの 1 番目のコンポーネントの値。</param>
+        <param name="item2">値のタプルの 2 番目のコンポーネントの値。</param>
+        <param name="item3">値のタプルの 3 番目のコンポーネントの値。</param>
+        <param name="item4">値のタプルの 4 番目のコンポーネントの値。</param>
+        <summary>4 個のコンポーネント (クアドラプル) を持つ新しい値のタプルを作成します。</summary>
+        <returns>4 個のコンポーネントを持つ値のタプル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ValueTuple.Create%2A>明示的にそのコンポーネントの種類を指定せずに、4 コンポーネントの値の組をインスタンス化を呼び出すことができるヘルパー メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create&lt;T1,T2,T3,T4,T5&gt;">
+      <MemberSignature Language="C#" Value="public static ValueTuple&lt;T1,T2,T3,T4,T5&gt; Create&lt;T1,T2,T3,T4,T5&gt; (T1 item1, T2 item2, T3 item3, T4 item4, T5 item5);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.ValueTuple`5&lt;!!T1, !!T2, !!T3, !!T4, !!T5&gt; Create&lt;T1, T2, T3, T4, T5&gt;(!!T1 item1, !!T2 item2, !!T3 item3, !!T4 item4, !!T5 item5) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ValueTuple.Create``5(``0,``1,``2,``3,``4)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ValueTuple</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ValueTuple&lt;T1,T2,T3,T4,T5&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+        <TypeParameter Name="T3" />
+        <TypeParameter Name="T4" />
+        <TypeParameter Name="T5" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="item1" Type="T1" />
+        <Parameter Name="item2" Type="T2" />
+        <Parameter Name="item3" Type="T3" />
+        <Parameter Name="item4" Type="T4" />
+        <Parameter Name="item5" Type="T5" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">値のタプルの 1 番目のコンポーネントの型。</typeparam>
+        <typeparam name="T2">値のタプルの 2 番目のコンポーネントの型。</typeparam>
+        <typeparam name="T3">値のタプルの 3 番目のコンポーネントの型。</typeparam>
+        <typeparam name="T4">値のタプルの 4 番目のコンポーネントの型。</typeparam>
+        <typeparam name="T5">値のタプルの 5 番目のコンポーネントの型。</typeparam>
+        <param name="item1">値のタプルの 1 番目のコンポーネントの値。</param>
+        <param name="item2">値のタプルの 2 番目のコンポーネントの値。</param>
+        <param name="item3">値のタプルの 3 番目のコンポーネントの値。</param>
+        <param name="item4">値のタプルの 4 番目のコンポーネントの値。</param>
+        <param name="item5">値のタプルの 5 番目のコンポーネントの値。</param>
+        <summary>5 個のコンポーネント (クインタプル) を持つ新しい値のタプルを作成します。</summary>
+        <returns>5 個のコンポーネントを持つ値のタプル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ValueTuple.Create%2A>明示的にそのコンポーネントの種類を指定せずに、5 コンポーネントの値の組をインスタンス化に呼び出すことができるヘルパー メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create&lt;T1,T2,T3,T4,T5,T6&gt;">
+      <MemberSignature Language="C#" Value="public static ValueTuple&lt;T1,T2,T3,T4,T5,T6&gt; Create&lt;T1,T2,T3,T4,T5,T6&gt; (T1 item1, T2 item2, T3 item3, T4 item4, T5 item5, T6 item6);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.ValueTuple`6&lt;!!T1, !!T2, !!T3, !!T4, !!T5, !!T6&gt; Create&lt;T1, T2, T3, T4, T5, T6&gt;(!!T1 item1, !!T2 item2, !!T3 item3, !!T4 item4, !!T5 item5, !!T6 item6) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ValueTuple.Create``6(``0,``1,``2,``3,``4,``5)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ValueTuple</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ValueTuple&lt;T1,T2,T3,T4,T5,T6&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+        <TypeParameter Name="T3" />
+        <TypeParameter Name="T4" />
+        <TypeParameter Name="T5" />
+        <TypeParameter Name="T6" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="item1" Type="T1" />
+        <Parameter Name="item2" Type="T2" />
+        <Parameter Name="item3" Type="T3" />
+        <Parameter Name="item4" Type="T4" />
+        <Parameter Name="item5" Type="T5" />
+        <Parameter Name="item6" Type="T6" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">値のタプルの 1 番目のコンポーネントの型。</typeparam>
+        <typeparam name="T2">値のタプルの 2 番目のコンポーネントの型。</typeparam>
+        <typeparam name="T3">値のタプルの 3 番目のコンポーネントの型。</typeparam>
+        <typeparam name="T4">値のタプルの 4 番目のコンポーネントの型。</typeparam>
+        <typeparam name="T5">値のタプルの 5 番目のコンポーネントの型。</typeparam>
+        <typeparam name="T6">値のタプルの 6 番目のコンポーネントの型。</typeparam>
+        <param name="item1">値のタプルの 1 番目のコンポーネントの値。</param>
+        <param name="item2">値のタプルの 2 番目のコンポーネントの値。</param>
+        <param name="item3">値のタプルの 3 番目のコンポーネントの値。</param>
+        <param name="item4">値のタプルの 4 番目のコンポーネントの値。</param>
+        <param name="item5">値のタプルの 5 番目のコンポーネントの値。</param>
+        <param name="item6">値のタプルの 6 番目のコンポーネントの値。</param>
+        <summary>6 個のコンポーネント (セクスプル) を持つ新しい値のタプルを作成します。</summary>
+        <returns>6 個のコンポーネントを持つ値のタプル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ValueTuple.Create%2A>明示的にそのコンポーネントの種類を指定せずに、6 コンポーネントの値の組をインスタンス化を呼び出すことができるヘルパー メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create&lt;T1,T2,T3,T4,T5,T6,T7&gt;">
+      <MemberSignature Language="C#" Value="public static ValueTuple&lt;T1,T2,T3,T4,T5,T6,T7&gt; Create&lt;T1,T2,T3,T4,T5,T6,T7&gt; (T1 item1, T2 item2, T3 item3, T4 item4, T5 item5, T6 item6, T7 item7);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.ValueTuple`7&lt;!!T1, !!T2, !!T3, !!T4, !!T5, !!T6, !!T7&gt; Create&lt;T1, T2, T3, T4, T5, T6, T7&gt;(!!T1 item1, !!T2 item2, !!T3 item3, !!T4 item4, !!T5 item5, !!T6 item6, !!T7 item7) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ValueTuple.Create``7(``0,``1,``2,``3,``4,``5,``6)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ValueTuple</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ValueTuple&lt;T1,T2,T3,T4,T5,T6,T7&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+        <TypeParameter Name="T3" />
+        <TypeParameter Name="T4" />
+        <TypeParameter Name="T5" />
+        <TypeParameter Name="T6" />
+        <TypeParameter Name="T7" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="item1" Type="T1" />
+        <Parameter Name="item2" Type="T2" />
+        <Parameter Name="item3" Type="T3" />
+        <Parameter Name="item4" Type="T4" />
+        <Parameter Name="item5" Type="T5" />
+        <Parameter Name="item6" Type="T6" />
+        <Parameter Name="item7" Type="T7" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">値のタプルの 1 番目のコンポーネントの型。</typeparam>
+        <typeparam name="T2">値のタプルの 2 番目のコンポーネントの型。</typeparam>
+        <typeparam name="T3">値のタプルの 3 番目のコンポーネントの型。</typeparam>
+        <typeparam name="T4">値のタプルの 4 番目のコンポーネントの型。</typeparam>
+        <typeparam name="T5">値のタプルの 5 番目のコンポーネントの型。</typeparam>
+        <typeparam name="T6">値のタプルの 6 番目のコンポーネントの型。</typeparam>
+        <typeparam name="T7">値のタプルの 7 番目のコンポーネントの型。</typeparam>
+        <param name="item1">値のタプルの 1 番目のコンポーネントの値。</param>
+        <param name="item2">値のタプルの 2 番目のコンポーネントの値。</param>
+        <param name="item3">値のタプルの 3 番目のコンポーネントの値。</param>
+        <param name="item4">値のタプルの 4 番目のコンポーネントの値。</param>
+        <param name="item5">値のタプルの 5 番目のコンポーネントの値。</param>
+        <param name="item6">値のタプルの 6 番目のコンポーネントの値。</param>
+        <param name="item7">値のタプルの 7 番目のコンポーネントの値。</param>
+        <summary>7 個のコンポーネント (セプタプル) を持つ新しい値のタプルを作成します。</summary>
+        <returns>7 個のコンポーネントを持つ値のタプル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ValueTuple.Create%2A>明示的にそのコンポーネントの種類を指定することがなく 7 コンポーネント値組をインスタンス化に呼び出すことができるヘルパー メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create&lt;T1,T2,T3,T4,T5,T6,T7,T8&gt;">
+      <MemberSignature Language="C#" Value="public static ValueTuple&lt;T1,T2,T3,T4,T5,T6,T7,ValueTuple&lt;T8&gt;&gt; Create&lt;T1,T2,T3,T4,T5,T6,T7,T8&gt; (T1 item1, T2 item2, T3 item3, T4 item4, T5 item5, T6 item6, T7 item7, T8 item8);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.ValueTuple`8&lt;!!T1, !!T2, !!T3, !!T4, !!T5, !!T6, !!T7, valuetype System.ValueTuple`1&lt;!!T8&gt;&gt; Create&lt;T1, T2, T3, T4, T5, T6, T7, T8&gt;(!!T1 item1, !!T2 item2, !!T3 item3, !!T4 item4, !!T5 item5, !!T6 item6, !!T7 item7, !!T8 item8) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ValueTuple.Create``8(``0,``1,``2,``3,``4,``5,``6,``7)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ValueTuple</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ValueTuple&lt;T1,T2,T3,T4,T5,T6,T7,System.ValueTuple&lt;T8&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+        <TypeParameter Name="T3" />
+        <TypeParameter Name="T4" />
+        <TypeParameter Name="T5" />
+        <TypeParameter Name="T6" />
+        <TypeParameter Name="T7" />
+        <TypeParameter Name="T8" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="item1" Type="T1" />
+        <Parameter Name="item2" Type="T2" />
+        <Parameter Name="item3" Type="T3" />
+        <Parameter Name="item4" Type="T4" />
+        <Parameter Name="item5" Type="T5" />
+        <Parameter Name="item6" Type="T6" />
+        <Parameter Name="item7" Type="T7" />
+        <Parameter Name="item8" Type="T8" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">値のタプルの 1 番目のコンポーネントの型。</typeparam>
+        <typeparam name="T2">値のタプルの 2 番目のコンポーネントの型。</typeparam>
+        <typeparam name="T3">値のタプルの 3 番目のコンポーネントの型。</typeparam>
+        <typeparam name="T4">値のタプルの 4 番目のコンポーネントの型。</typeparam>
+        <typeparam name="T5">値のタプルの 5 番目のコンポーネントの型。</typeparam>
+        <typeparam name="T6">値のタプルの 6 番目のコンポーネントの型。</typeparam>
+        <typeparam name="T7">値のタプルの 7 番目のコンポーネントの型。</typeparam>
+        <typeparam name="T8">値のタプルの 8 番目のコンポーネントの型。</typeparam>
+        <param name="item1">値のタプルの 1 番目のコンポーネントの値。</param>
+        <param name="item2">値のタプルの 2 番目のコンポーネントの値。</param>
+        <param name="item3">値のタプルの 3 番目のコンポーネントの値。</param>
+        <param name="item4">値のタプルの 4 番目のコンポーネントの値。</param>
+        <param name="item5">値のタプルの 5 番目のコンポーネントの値。</param>
+        <param name="item6">値のタプルの 6 番目のコンポーネントの値。</param>
+        <param name="item7">値のタプルの 7 番目のコンポーネントの値。</param>
+        <param name="item8">値のタプルの 8 番目のコンポーネントの値。</param>
+        <summary>8 個のコンポーネント (オクタプル) を持つ新しい値のタプルを作成します。</summary>
+        <returns>8 個のコンポーネントを持つ値のタプル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ValueTuple.Create%2A>明示的にそのコンポーネントの種類を指定することがなく、8 コンポーネントの値の組をインスタンス化を呼び出すことができるヘルパー メソッドです。  
+  
+> [!NOTE]
+>  呼び出す必要があります、<xref:System.ValueTuple%608.%23ctor%2A>コンス トラクターを使用する言語は、この目的のため、特別な構文を提供しない限り、9 つまたは複数のコンポーネントでタプルを作成します。 静的メソッド、 <xref:System.ValueTuple> 9 つまたは複数のコンポーネントでタプルを作成する構造体を使用することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ValueTuple.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ValueTuple</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在のインスタンスと比較する対象のオブジェクト。</param>
+        <summary>現在の <see cref="T:System.ValueTuple" /> インスタンスが、指定されたオブジェクトと等しいかどうかを示す値を返します。</summary>
+        <returns>
+          <paramref name="obj" /> が <see cref="T:System.ValueTuple" /> インスタンスである場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (ValueTuple other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(valuetype System.ValueTuple other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ValueTuple.Equals(System.ValueTuple)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ValueTuple</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.ValueTuple" />
+      </Parameters>
+      <Docs>
+        <param name="other">現在のインスタンスと比較する値のタプル。</param>
+        <summary>2 つの <see cref="T:System.ValueTuple" /> インスタンスが等しいかどうかを判断します。 このメソッドは常に <see langword="true" /> を返します。</summary>
+        <returns>このメソッドは常に <see langword="true" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ValueTuple.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ValueTuple</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.ValueTuple" /> インスタンスのハッシュ コードを返します。</summary>
+        <returns>現在の <see cref="T:System.ValueTuple" /> インスタンスのハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IStructuralComparable.CompareTo">
+      <MemberSignature Language="C#" Value="int IStructuralComparable.CompareTo (object other, System.Collections.IComparer comparer);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IStructuralComparable.CompareTo(object other, class System.Collections.IComparer comparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ValueTuple.System#Collections#IStructuralComparable#CompareTo(System.Object,System.Collections.IComparer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ValueTuple</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Object" />
+        <Parameter Name="comparer" Type="System.Collections.IComparer" />
+      </Parameters>
+      <Docs>
+        <param name="other">現在のインスタンスと比較するオブジェクト。</param>
+        <param name="comparer">比較用のカスタムの規則を提供するオブジェクト。 このパラメーターは無視されます。</param>
+        <summary>現在の <see cref="T:System.ValueTuple" /> インスタンスを指定したオブジェクトと比較します。</summary>
+        <returns><paramref name="other" /> が <see cref="T:System.ValueTuple" /> インスタンスである場合は 0、<paramref name="other" /> が<see langword="null" /> である場合は 1 を返します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="other" /> は <see cref="T:System.ValueTuple" /> インスタンスではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IStructuralEquatable.Equals">
+      <MemberSignature Language="C#" Value="bool IStructuralEquatable.Equals (object other, System.Collections.IEqualityComparer comparer);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Collections.IStructuralEquatable.Equals(object other, class System.Collections.IEqualityComparer comparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ValueTuple.System#Collections#IStructuralEquatable#Equals(System.Object,System.Collections.IEqualityComparer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ValueTuple</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Object" />
+        <Parameter Name="comparer" Type="System.Collections.IEqualityComparer" />
+      </Parameters>
+      <Docs>
+        <param name="other">このインスタンスと比較するオブジェクト。</param>
+        <param name="comparer">2 つのオブジェクトが等しいかどうかの評価に使用するメソッドを定義するオブジェクト。</param>
+        <summary>指定した比較メソッドに基づいて、現在の <see cref="T:System.ValueTuple" /> インスタンスが、指定されたオブジェクトと等しいかどうかを示す値を返します。</summary>
+        <returns>
+          現在のインスタンスが指定したオブジェクトと等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス実装です。 のみを指定できる際に使用される、 <xref:System.ValueTuple>t > インスタンスにキャスト、<xref:System.Collections.IStructuralEquatable>インターフェイスです。 <xref:System.Collections.IEqualityComparer.Equals%2A?displayProperty=nameWithType>実装が呼び出される場合にのみ`other`は`null`に正常にすることができるかどうか、キャスト、<xref:System.ValueTuple>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IStructuralEquatable.GetHashCode">
+      <MemberSignature Language="C#" Value="int IStructuralEquatable.GetHashCode (System.Collections.IEqualityComparer comparer);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IStructuralEquatable.GetHashCode(class System.Collections.IEqualityComparer comparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ValueTuple.System#Collections#IStructuralEquatable#GetHashCode(System.Collections.IEqualityComparer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ValueTuple</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="comparer" Type="System.Collections.IEqualityComparer" />
+      </Parameters>
+      <Docs>
+        <param name="comparer">ハッシュ コードを計算する <see cref="M:System.Collections.IEqualityComparer.GetHashCode(System.Object)" /> メソッドのオブジェクト。 このパラメーターは無視されます。</param>
+        <summary>この <see cref="T:System.ValueTuple" /> インスタンスのハッシュ コードを返します。</summary>
+        <returns>この <see cref="T:System.ValueTuple" /> インスタンスのハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IComparable.CompareTo">
+      <MemberSignature Language="C#" Value="int IComparable.CompareTo (object other);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.IComparable.CompareTo(object other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ValueTuple.System#IComparable#CompareTo(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ValueTuple</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="other">現在のインスタンスと比較するオブジェクト</param>
+        <summary>指定したオブジェクトとこの <see cref="T:System.ValueTuple" /> インスタンスを比較し、これらの相対値を示す値を返します。</summary>
+        <returns><paramref name="other" /> が <see cref="T:System.ValueTuple" /> インスタンスである場合は 0。それ以外の場合は、<paramref name="other" /> が <see langword="null" /> である場合は 1。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="other" /> は <see cref="T:System.ValueTuple" /> インスタンスではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.CompilerServices.ITuple.Item">
+      <MemberSignature Language="C#" Value="object System.Runtime.CompilerServices.ITuple.Item[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Runtime.CompilerServices.ITuple.Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.ValueTuple.System#Runtime#CompilerServices#ITuple#Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">To be added.</param>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.CompilerServices.ITuple.Length">
+      <MemberSignature Language="C#" Value="int System.Runtime.CompilerServices.ITuple.Length { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 System.Runtime.CompilerServices.ITuple.Length" />
+      <MemberSignature Language="DocId" Value="P:System.ValueTuple.System#Runtime#CompilerServices#ITuple#Length" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ValueTuple.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ValueTuple</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.ValueTuple" /> オブジェクトの文字列表現を返します。</summary>
+        <returns>このメソッドは常に "()" を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

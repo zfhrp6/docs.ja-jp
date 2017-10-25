@@ -1,0 +1,128 @@
+<Type Name="ObjectContextOptions" FullName="System.Data.Objects.ObjectContextOptions">
+  <TypeSignature Language="C#" Value="public sealed class ObjectContextOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ObjectContextOptions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Objects.ObjectContextOptions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>動作に影響するオプションを定義、<see cref="T:System.Data.Objects.ObjectContext" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ここのコンテンツは更新されません。ここに資料を追加しないでください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="LazyLoadingEnabled">
+      <MemberSignature Language="C#" Value="public bool LazyLoadingEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool LazyLoadingEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.ObjectContextOptions.LazyLoadingEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはナビゲーション プロパティにアクセスするときに関連するオブジェクトが自動的に読み込むかどうかを決定するブール値を設定します。</summary>
+        <value>
+          <see langword="true" />遅延読み込みが有効である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProxyCreationEnabled">
+      <MemberSignature Language="C#" Value="public bool ProxyCreationEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ProxyCreationEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.ObjectContextOptions.ProxyCreationEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または永続化に依存しないカスタム データ クラスのプロキシのインスタンスを作成するかどうかを決定するブール値を設定します。</summary>
+        <value>
+          <see langword="true" />プロキシが作成されます。 場合、それ以外の場合、<see langword="false" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseConsistentNullReferenceBehavior">
+      <MemberSignature Language="C#" Value="public bool UseConsistentNullReferenceBehavior { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseConsistentNullReferenceBehavior" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.ObjectContextOptions.UseConsistentNullReferenceBehavior" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または NullReference 動作の一貫性を使用するかどうかを決定するブール値を設定します。</summary>
+        <value>
+          <see langword="true" />一貫性のある NullReference 動作を使用する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフラグが設定されている場合`false`の値プロパティを設定してから、 <xref:System.Data.Objects.DataClasses.EntityReference%601> FK へのリレーションシップの null と null は既に効果はありません。 このフラグを設定すると`true`、その値を null に設定が常に発生するは null に外部キーと値が現在 null の場合でも削除するリレーションシップ。 既定値は`false`ObjectContext を使用する場合と`true`DbContext を使用する場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseCSharpNullComparisonBehavior">
+      <MemberSignature Language="C#" Value="public bool UseCSharpNullComparisonBehavior { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseCSharpNullComparisonBehavior" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.ObjectContextOptions.UseCSharpNullComparisonBehavior" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または c# NullComparison の動作を使用するかどうかを決定するブール値を設定します。</summary>
+        <value>
+          <see langword="true" />c# NullComparison 動作を使用する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseLegacyPreserveChangesBehavior">
+      <MemberSignature Language="C#" Value="public bool UseLegacyPreserveChangesBehavior { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseLegacyPreserveChangesBehavior" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.ObjectContextOptions.UseLegacyPreserveChangesBehavior" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはレガシ PreserveChanges 動作を使用するかどうかを決定するブール値を設定します。</summary>
+        <value>
+          <see langword="true" />レガシ PreserveChanges 動作を使用する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

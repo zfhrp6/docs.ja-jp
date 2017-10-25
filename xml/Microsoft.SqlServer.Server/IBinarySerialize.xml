@@ -1,0 +1,102 @@
+<Type Name="IBinarySerialize" FullName="Microsoft.SqlServer.Server.IBinarySerialize">
+  <TypeSignature Language="C#" Value="public interface IBinarySerialize" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IBinarySerialize" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.SqlServer.Server.IBinarySerialize" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>ユーザー定義型 (UDT) とユーザー定義集計のシリアル化および逆シリアル化のカスタム実装を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー定義型 (Udt) とユーザー定義集計のいずれか、記憶域の書式を定義する必要が<xref:Microsoft.SqlServer.Server.Format>です。`Native` または<xref:Microsoft.SqlServer.Server.Format>.`UserDefined`です。  
+  
+ <xref:Microsoft.SqlServer.Server.Format>.`Native` SQL サーバーをシリアル化を処理し、自動的に逆シリアル化することができますが、形式を処理できる型の種類に関する制限事項です。 <xref:Microsoft.SqlServer.Server.Format>.`UserDefined` 独自のシリアル化を処理するには、ユーザー定義型と集計を使用できます。 ユーザー定義型と集計をと共に設定されなければなりません<xref:Microsoft.SqlServer.Server.Format>です。`UserDefined` `SqlUserDefinedType`または`SqlUserDefinedAggregate`属性、および実装する必要があります、<xref:Microsoft.SqlServer.Server.IBinarySerialize>インターフェイスです。  
+  
+ カスタムのシリアル化を使用しても各インスタンスの合計サイズは最大 8,000 バイトを現在の制限を許容する必要がありますに注意してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public void Read (System.IO.BinaryReader r);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Read(class System.IO.BinaryReader r) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.SqlServer.Server.IBinarySerialize.Read(System.IO.BinaryReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="r" Type="System.IO.BinaryReader" />
+      </Parameters>
+      <Docs>
+        <param name="r"><see cref="T:System.IO.BinaryReader" />オブジェクトが逆シリアル化するストリームします。</param>
+        <summary>バイナリ形式からユーザー定義型 (UDT) またはユーザー定義集計を生成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.SqlServer.Server.IBinarySerialize.Read%2A>メソッドによって書き込まれた情報を使用して、オブジェクトを構築する必要があります、<xref:Microsoft.SqlServer.Server.IBinarySerialize.Write%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例の実装を示しています、<xref:Microsoft.SqlServer.Server.IBinarySerialize.Read%2A>を使用して、UDT のメソッド、<xref:System.IO.BinaryReader>に保持されていた UDT を逆シリアル化します。 この例では、UDT が 2 つのデータ プロパティを持つ:`StringValue`と`DoubleValue`です。  
+  
+ [!code-csharp[DataWorks IBinarySerialize Samples#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks IBinarySerialize Samples/CS/source.cs#1)]
+ [!code-vb[DataWorks IBinarySerialize Samples#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks IBinarySerialize Samples/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public void Write (System.IO.BinaryWriter w);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(class System.IO.BinaryWriter w) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.SqlServer.Server.IBinarySerialize.Write(System.IO.BinaryWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="w" Type="System.IO.BinaryWriter" />
+      </Parameters>
+      <Docs>
+        <param name="w"><see cref="T:System.IO.BinaryWriter" /> UDT またはユーザー定義集計がシリアル化されたストリーム。</param>
+        <summary>変換され、ユーザー定義型 (UDT) またはユーザー定義集計、バイナリ形式、永続化することがあります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 十分な情報を許可するバイナリ ストリームに書き込む、 <xref:Microsoft.SqlServer.Server.IBinarySerialize.Read%2A> UDT またはユーザー定義集計を構築します。  
+  
+   
+  
+## Examples  
+ 次の例の実装を示しています、<xref:Microsoft.SqlServer.Server.IBinarySerialize.Write%2A>を使用して、UDT のメソッド、<xref:System.IO.BinaryWriter>をユーザー定義のバイナリ形式で UDT をシリアル化します。 Null 文字のスペースの目的は、1 つの UDT と比較 TRANSACT-SQL コード内の別の文字列のバイトを文字列のバイトが比較され、2 バイトが double 型に比較できるように、文字列値が完全に double 型の値から分離することを確認するにはバイト数です。  
+  
+ [!code-csharp[DataWorks IBinarySerialize Samples#2](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks IBinarySerialize Samples/CS/source.cs#2)]
+ [!code-vb[DataWorks IBinarySerialize Samples#2](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks IBinarySerialize Samples/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

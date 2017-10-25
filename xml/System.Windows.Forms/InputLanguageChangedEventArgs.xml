@@ -1,0 +1,274 @@
+<Type Name="InputLanguageChangedEventArgs" FullName="System.Windows.Forms.InputLanguageChangedEventArgs">
+  <TypeSignature Language="C#" Value="public class InputLanguageChangedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit InputLanguageChangedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.InputLanguageChangedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Forms.Form.InputLanguageChanged" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データを使用することができます、<xref:System.Windows.Forms.InputLanguageChangedEventArgs>する入力方式エディター (Ime) を変更または右から左への値を交換するかどうかを決定します。 変更することも、<xref:System.Threading.Thread.CurrentCulture%2A>スレッドのおよび<xref:System.Threading.Thread.CurrentUICulture%2A>プロパティのさまざまなリソースがピックアップを取得できるようにします。  
+  
+ <xref:System.Windows.Forms.InputLanguageChangedEventArgs>ロケールと、新しい入力言語の文字セットを識別します。  
+  
+ <xref:System.Windows.Forms.Form.InputLanguageChanging>イベントの前に、<xref:System.Windows.Forms.Form.InputLanguageChanged>イベント。  
+  
+   
+  
+## Examples  
+ 次の例は、新しい作成<xref:System.Windows.Forms.Form>にイベント ハンドラーをアタッチし、<xref:System.Windows.Forms.Form.InputLanguageChanged>イベント。 このイベントの変更、`IMEmode`入力言語が日本語に変更されたとき。  
+  
+ [!code-cpp[InputLanguageChanged#1](~/samples/snippets/cpp/VS_Snippets_Winforms/InputLanguageChanged/CPP/form1.cpp#1)]
+ [!code-csharp[InputLanguageChanged#1](~/samples/snippets/csharp/VS_Snippets_Winforms/InputLanguageChanged/CS/form1.cs#1)]
+ [!code-vb[InputLanguageChanged#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/InputLanguageChanged/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InputLanguageChangedEventArgs (System.Globalization.CultureInfo culture, byte charSet);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Globalization.CultureInfo culture, unsigned int8 charSet) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.InputLanguageChangedEventArgs.#ctor(System.Globalization.CultureInfo,System.Byte)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="charSet" Type="System.Byte" />
+      </Parameters>
+      <Docs>
+        <param name="culture">入力言語のロケールです。</param>
+        <param name="charSet">新しい入力言語に関連付けられている文字セット。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.InputLanguageChangedEventArgs" />文字セットと指定されたロケールでのクラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InputLanguageChangedEventArgs (System.Windows.Forms.InputLanguage inputLanguage, byte charSet);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.InputLanguage inputLanguage, unsigned int8 charSet) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.InputLanguageChangedEventArgs.#ctor(System.Windows.Forms.InputLanguage,System.Byte)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="inputLanguage" Type="System.Windows.Forms.InputLanguage" />
+        <Parameter Name="charSet" Type="System.Byte" />
+      </Parameters>
+      <Docs>
+        <param name="inputLanguage">入力言語。</param>
+        <param name="charSet">新しい入力言語に関連付けられている文字セット。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.InputLanguageChangedEventArgs" />文字セットと指定した入力言語でクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 入力言語では、カルチャ/キーボード レイアウトの組み合わせを指定します。  
+  
+ 参照してください、<xref:System.Windows.Forms.InputLanguageChangedEventArgs.CharSet%2A>有効な文字セットの一覧のプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CharSet">
+      <MemberSignature Language="C#" Value="public byte CharSet { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8 CharSet" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.InputLanguageChangedEventArgs.CharSet" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しい入力言語に関連付けられている文字セットを取得します。</summary>
+        <value>文字に対応する 8 ビット符号なし整数は、次の表に示すように設定します。  
+  
+ <list type="table"><listheader><term>文字セット  
+  
+ </term><description>値  
+  
+ </description></listheader><item><term>ANSI_CHARSET  
+  
+ </term><description> 0  
+  
+ </description></item><item><term>DEFAULT_CHARSET  
+  
+ </term><description> 1  
+  
+ </description></item><item><term>SYMBOL_CHARSET  
+  
+ </term><description> 2  
+  
+ </description></item><item><term>MAC_CHARSET  
+  
+ </term><description> 77  
+  
+ </description></item><item><term>SHIFTJI_CHARSET  
+  
+ </term><description> 128  
+  
+ </description></item><item><term>HANGEUL_CHARSET  
+  
+ </term><description> 129  
+  
+ </description></item><item><term>HANGUL_CHARSET  
+  
+ </term><description> 129  
+  
+ </description></item><item><term>JOHAB_CHARSET  
+  
+ </term><description> 130  
+  
+ </description></item><item><term>GB2312_CHARSET  
+  
+ </term><description> 134  
+  
+ </description></item><item><term>CHINESEBIG5_CHARSET  
+  
+ </term><description> 136  
+  
+ </description></item><item><term>GREEK_CHARSET  
+  
+ </term><description> 161  
+  
+ </description></item><item><term>TURKISH_CHARSET  
+  
+ </term><description> 162  
+  
+ </description></item><item><term>VIETNAMESE_CHARSET  
+  
+ </term><description> 163  
+  
+ </description></item><item><term>HEBREW_CHARSET  
+  
+ </term><description> 177  
+  
+ </description></item><item><term>ARABIC_CHARSET  
+  
+ </term><description> 178  
+  
+ </description></item><item><term>BALTIC_CHARSET  
+  
+ </term><description> 186  
+  
+ </description></item><item><term>RUSSIAN_CHARSET  
+  
+ </term><description> 204  
+  
+ </description></item><item><term>THAI_CHARSET  
+  
+ </term><description> 222  
+  
+ </description></item><item><term>EASTEUROPE_CHARSET  
+  
+ </term><description> 238  
+  
+ </description></item><item><term>OEM_CHARSET  
+  
+ </term><description> 255  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに、ユーザーが切り替えられる Win32 文字セットです。 システムでは ANSI、正しい文字セットを表示できるフォントを作成するこのプロパティを使用できます。 Unicode システムで、通常必要はありませんこのプロパティを使用します。 代わりに、使用、<xref:System.Globalization.CultureInfo>これらの機能のクラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.Form.InputLanguageChanged?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.Form>という`Form1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.Form.InputLanguageChanged?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#400](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#400)]
+ [!code-vb[System.Windows.Forms.EventExamples#400](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#400)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Culture">
+      <MemberSignature Language="C#" Value="public System.Globalization.CultureInfo Culture { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.CultureInfo Culture" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.InputLanguageChangedEventArgs.Culture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>入力言語のロケールを取得します。</summary>
+        <value>A<see cref="T:System.Globalization.CultureInfo" />入力言語のロケールを指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.InputLanguageChangedEventArgs.Culture%2A>プロパティを指定します、<xref:System.Globalization.CultureInfo>し、言語、サブ言語、国/地域、およびユーザーのカルチャの規則に依存するユーザー設定の情報のセットを定義します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.Form.InputLanguageChanged?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.Form>という`Form1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.Form.InputLanguageChanged?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#400](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#400)]
+ [!code-vb[System.Windows.Forms.EventExamples#400](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#400)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InputLanguage">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.InputLanguage InputLanguage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.InputLanguage InputLanguage" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.InputLanguageChangedEventArgs.InputLanguage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.InputLanguage</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>入力言語を示す値を取得します。</summary>
+        <value>オブジェクトに関連付けられている入力言語。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.Form.InputLanguageChanged?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.Form>という`Form1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.Form.InputLanguageChanged?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#400](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#400)]
+ [!code-vb[System.Windows.Forms.EventExamples#400](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#400)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

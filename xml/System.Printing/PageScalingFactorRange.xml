@@ -1,0 +1,95 @@
+<Type Name="PageScalingFactorRange" FullName="System.Printing.PageScalingFactorRange">
+  <TypeSignature Language="C#" Value="public sealed class PageScalingFactorRange" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PageScalingFactorRange extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Printing.PageScalingFactorRange" />
+  <AssemblyInfo>
+    <AssemblyName>ReachFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プリンターを拡大または縮小、ページ上の印刷イメージを割合の範囲を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、プリンターでサポートされているスケールの範囲を指定するこのクラスを使用する、<xref:System.Printing.PrintCapabilities.PageScalingFactorRange%2A>のプロパティ、<xref:System.Printing.PrintCapabilities>オブジェクト。  
+  
+> [!CAUTION]
+>  クラス内で、 <xref:System.Printing> Windows サービスや ASP.NET アプリケーションまたはサービス内で使用する名前空間はサポートされていません。 パフォーマンスと実行時の例外をサービス低下のいずれかのようなアプリケーションからこれらのクラスを使用しようと、予期しない問題が生じる可能性があります。  
+  
+ Windows フォーム アプリケーションから印刷する場合を参照してください、<xref:System.Drawing.Printing>名前空間。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="MaximumScale">
+      <MemberSignature Language="C#" Value="public int MaximumScale { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaximumScale" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PageScalingFactorRange.MaximumScale" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>範囲の最大パーセンテージを取得します。</summary>
+        <value><see cref="T:System.Int32" />割合を表す値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinimumScale">
+      <MemberSignature Language="C#" Value="public int MinimumScale { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MinimumScale" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PageScalingFactorRange.MinimumScale" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>範囲の最小のパーセンテージを取得します。</summary>
+        <value><see cref="T:System.Int32" />割合を表す値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PageScalingFactorRange.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.String" />範囲の表現。</summary>
+        <returns>A<see cref="T:System.String" />スケールの範囲の表現。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 形式は次のとおりです。  
+  
+ (<xref:System.Printing.PageScalingFactorRange.MinimumScale%2A>, <xref:System.Printing.PageScalingFactorRange.MaximumScale%2A>)  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

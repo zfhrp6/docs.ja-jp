@@ -1,0 +1,182 @@
+<Type Name="SamlDoNotCacheCondition" FullName="System.IdentityModel.Tokens.SamlDoNotCacheCondition">
+  <TypeSignature Language="C#" Value="public class SamlDoNotCacheCondition : System.IdentityModel.Tokens.SamlCondition" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SamlDoNotCacheCondition extends System.IdentityModel.Tokens.SamlCondition" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.SamlDoNotCacheCondition" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Tokens.SamlCondition</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>SAML アサーションの有効性の評価時に考慮する必要のある条件を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlSecurityToken> セキュリティ トークンは、そのクレームの指定に、SAML アサーションと、その SAML アサーションの有効性を評価するときに考慮する必要がある一連の条件を使用します。 <xref:System.IdentityModel.Tokens.SamlDoNotCacheCondition> クラスは、SAML 仕様で定義される条件のいずれかを表し、SAML アサーションをキャッシュしてはならないことをアサートします。 SAML アサーションのこの条件を指定するには、<xref:System.IdentityModel.Tokens.SamlDoNotCacheCondition> プロパティによって返されるコレクションに <xref:System.IdentityModel.Tokens.SamlAssertion.Conditions%2A> クラスを追加します。  
+  
+> [!NOTE]
+>  <xref:System.IdentityModel.Tokens.SamlDoNotCacheCondition> が、<xref:System.IdentityModel.Tokens.SamlSecurityToken> クライアントのセキュリティ トークン サービスによって発行される [!INCLUDE[indigo2](~/includes/indigo2-md.md)] セキュリティ トークンに対して条件として追加された場合、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] クライアントは、このセキュリティ トークンをキャッシュします。 クライアントは発行されたトークンの内容を検査しないため、トークンがキャッシュされます。 クライアントは発行されたトークンの種類に依存せず、返された発行されたトークンを不透明な XML 要素として処理します。 ただし、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] セキュリティでは、受信した発行されたトークンがサービス側でキャッシュされることはなく、トークン認証処理中にトークンの抽出元であるクレームだけがキャッシュされます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SamlDoNotCacheCondition ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlDoNotCacheCondition.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Tokens.SamlDoNotCacheCondition" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、<xref:System.IdentityModel.Tokens.SamlDoNotCacheCondition.IsReadOnly%2A> プロパティを `false` に初期化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public override bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlDoNotCacheCondition.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスのプロパティが読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          このインスタンスのプロパティが読み取り専用の場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlDoNotCacheCondition> クラスのこのインスタンスを読み取り専用にするために、<xref:System.IdentityModel.Tokens.SamlDoNotCacheCondition.MakeReadOnly%2A> メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MakeReadOnly">
+      <MemberSignature Language="C#" Value="public override void MakeReadOnly ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void MakeReadOnly() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlDoNotCacheCondition.MakeReadOnly" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスを読み取り専用にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlDoNotCacheCondition.MakeReadOnly%2A> メソッドが呼び出される場合は、<xref:System.IdentityModel.Tokens.SamlDoNotCacheCondition.IsReadOnly%2A> プロパティが `true` に設定され、このインスタンスのプロパティを設定できなくなります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadXml">
+      <MemberSignature Language="C#" Value="public override void ReadXml (System.Xml.XmlDictionaryReader reader, System.IdentityModel.Tokens.SamlSerializer samlSerializer, System.IdentityModel.Selectors.SecurityTokenSerializer keyInfoSerializer, System.IdentityModel.Selectors.SecurityTokenResolver outOfBandTokenResolver);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ReadXml(class System.Xml.XmlDictionaryReader reader, class System.IdentityModel.Tokens.SamlSerializer samlSerializer, class System.IdentityModel.Selectors.SecurityTokenSerializer keyInfoSerializer, class System.IdentityModel.Selectors.SecurityTokenResolver outOfBandTokenResolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlDoNotCacheCondition.ReadXml(System.Xml.XmlDictionaryReader,System.IdentityModel.Tokens.SamlSerializer,System.IdentityModel.Selectors.SecurityTokenSerializer,System.IdentityModel.Selectors.SecurityTokenResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlDictionaryReader" />
+        <Parameter Name="samlSerializer" Type="System.IdentityModel.Tokens.SamlSerializer" />
+        <Parameter Name="keyInfoSerializer" Type="System.IdentityModel.Selectors.SecurityTokenSerializer" />
+        <Parameter Name="outOfBandTokenResolver" Type="System.IdentityModel.Selectors.SecurityTokenResolver" />
+      </Parameters>
+      <Docs>
+        <param name="reader"><see cref="T:System.Xml.XmlDictionaryReader" /> を読み取る <see langword="&lt;saml:DoNotCacheCondition&gt;" />。</param>
+        <param name="samlSerializer">SAML 仕様で定義されている、SAML 承認ステートメントの XML 要素を読み取ることができる <see cref="T:System.IdentityModel.Tokens.SamlSerializer" />。</param>
+        <param name="keyInfoSerializer">デジタル署名の <see cref="T:System.IdentityModel.Selectors.SecurityTokenSerializer" /> 句を読み取る <see langword="KeyInfo" />。</param>
+        <param name="outOfBandTokenResolver">デジタル署名を作成したセキュリティ トークンを調べる <see cref="T:System.IdentityModel.Selectors.SecurityTokenResolver" />。</param>
+        <summary>指定した XML リーダーから <see langword="&lt;saml:DoNotCacheCondition&gt;" /> 要素を読み取ります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlDoNotCacheCondition.ReadXml%28System.Xml.XmlDictionaryReader%2CSystem.IdentityModel.Tokens.SamlSerializer%2CSystem.IdentityModel.Selectors.SecurityTokenSerializer%2CSystem.IdentityModel.Selectors.SecurityTokenResolver%29> メソッドが、プロパティを設定していません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です  
+  
+ または  
+  
+ <paramref name="samlSerializer" /> は <see langword="null" /> です</exception>
+        <exception cref="T:System.IdentityModel.Tokens.SecurityTokenException">
+          <paramref name="reader" /> が <see langword="&lt;saml:DoNotCacheCondition&gt;" /> 要素をポイントしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteXml">
+      <MemberSignature Language="C#" Value="public override void WriteXml (System.Xml.XmlDictionaryWriter writer, System.IdentityModel.Tokens.SamlSerializer samlSerializer, System.IdentityModel.Selectors.SecurityTokenSerializer keyInfoSerializer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteXml(class System.Xml.XmlDictionaryWriter writer, class System.IdentityModel.Tokens.SamlSerializer samlSerializer, class System.IdentityModel.Selectors.SecurityTokenSerializer keyInfoSerializer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlDoNotCacheCondition.WriteXml(System.Xml.XmlDictionaryWriter,System.IdentityModel.Tokens.SamlSerializer,System.IdentityModel.Selectors.SecurityTokenSerializer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlDictionaryWriter" />
+        <Parameter Name="samlSerializer" Type="System.IdentityModel.Tokens.SamlSerializer" />
+        <Parameter Name="keyInfoSerializer" Type="System.IdentityModel.Selectors.SecurityTokenSerializer" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xml.XmlDictionaryWriter" /> 要素を書き込む <see langword="&lt;saml:DoNotCacheCondition&gt;" />。</param>
+        <param name="samlSerializer">XML 要素を SAML アサーションに書き込むことができる <see cref="T:System.IdentityModel.Tokens.SamlSerializer" />。</param>
+        <param name="keyInfoSerializer"><see cref="T:System.IdentityModel.Selectors.SecurityTokenSerializer" /> 句を書き込むことができる <see langword="KeyInfo" />。</param>
+        <summary>指定した XML シリアライザーに <see langword="&lt;saml:DoNotCacheCondition&gt;" /> 要素を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlDoNotCacheCondition.WriteXml%28System.Xml.XmlDictionaryWriter%2CSystem.IdentityModel.Tokens.SamlSerializer%2CSystem.IdentityModel.Selectors.SecurityTokenSerializer%29> メソッドを使用して、現在の <xref:System.IdentityModel.Tokens.SamlDoNotCacheCondition> インスタンスを `<saml:DoNotCacheCondition>` 要素に書き込みます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です  
+  
+ または  
+  
+ <paramref name="samlSerializer" /> は <see langword="null" /> です</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

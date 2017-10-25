@@ -1,0 +1,973 @@
+<Type Name="ToolStripDropDownItem" FullName="System.Windows.Forms.ToolStripDropDownItem">
+  <TypeSignature Language="C#" Value="public abstract class ToolStripDropDownItem : System.Windows.Forms.ToolStripItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ToolStripDropDownItem extends System.Windows.Forms.ToolStripItem" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ToolStripDropDownItem" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.ToolStripItem</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("DropDownItems")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Windows.Forms.Design.ToolStripMenuItemDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>表示するコントロールの基本的な機能を提供、<see cref="T:System.Windows.Forms.ToolStripDropDown" />ときに、 <see cref="T:System.Windows.Forms.ToolStripDropDownButton" />、 <see cref="T:System.Windows.Forms.ToolStripMenuItem" />、または<see cref="T:System.Windows.Forms.ToolStripSplitButton" />コントロールをクリックします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ToolStripDropDownItem>抽象基本クラスは、 <xref:System.Windows.Forms.ToolStripMenuItem>、 <xref:System.Windows.Forms.ToolStripDropDownButton>、および<xref:System.Windows.Forms.ToolStripSplitButton>項目を直接またはドロップダウン コンテナーのホスト項目をホストすることができます。 設定して、これを行う、<xref:System.Windows.Forms.ToolStripDropDownItem.DropDown%2A>プロパティを<xref:System.Windows.Forms.ToolStripDropDown>と設定、<xref:System.Windows.Forms.ToolStrip.Items%2A>のプロパティ、<xref:System.Windows.Forms.ToolStripDropDown>です。 経由で直接これらドロップダウン項目へのアクセス、<xref:System.Windows.Forms.ToolStripDropDownItem.DropDownItems%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、表示し、非表示にする方法を示します<xref:System.Windows.Forms.ToolStripMenuItem>コントロール。  
+  
+ [!code-csharp[System.Windows.Forms.ToolStripDropDownItem#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStripDropDownItem/CS/Form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ToolStripDropDownItem#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStripDropDownItem/VB/Form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.ToolStripDropDownItem" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ドロップダウン コントロールを派生する必要があります、<xref:System.Windows.Forms.ToolStripDropDownItem>ためのドロップダウン機能するためにクラス、 <xref:System.Windows.Forms.ToolStripDropDownButton>、 <xref:System.Windows.Forms.ToolStripMenuItem>、または<xref:System.Windows.Forms.ToolStripSplitButton>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ToolStripDropDownItem ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripDropDownItem.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.ToolStripDropDownItem" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ドロップダウン コントロールを派生する必要があります、<xref:System.Windows.Forms.ToolStripDropDownItem>ためのドロップダウン機能するためにクラス、 <xref:System.Windows.Forms.ToolStripDropDownButton>、 <xref:System.Windows.Forms.ToolStripMenuItem>、または<xref:System.Windows.Forms.ToolStripSplitButton>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例は、作成および初期化する方法を示します<xref:System.Windows.Forms.ToolStripDropDownItem>コントロール。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.ToolStripDropDownItem>クラスです。  
+  
+ [!code-csharp[System.Windows.Forms.ToolStripDropDownItem#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStripDropDownItem/CS/Form1.cs#2)]
+ [!code-vb[System.Windows.Forms.ToolStripDropDownItem#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStripDropDownItem/VB/Form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ToolStripDropDownItem (string text, System.Drawing.Image image, EventHandler onClick);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(string text, class System.Drawing.Image image, class System.EventHandler onClick) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripDropDownItem.#ctor(System.String,System.Drawing.Image,System.EventHandler)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="image" Type="System.Drawing.Image" />
+        <Parameter Name="onClick" Type="System.EventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="text">ドロップダウン コントロールの表示テキスト。</param>
+        <param name="image"><see cref="T:System.Drawing.Image" />コントロールに表示されます。</param>
+        <param name="onClick">ドロップダウン コントロールがクリックされたときに実行するアクション。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ToolStripDropDownItem" />指定した表示テキスト、イメージ、およびドロップダウン コントロールがクリックされたときに実行するアクションを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ドロップダウン コントロールを派生する必要があります、<xref:System.Windows.Forms.ToolStripDropDownItem>ためのドロップダウン機能するためにクラス、 <xref:System.Windows.Forms.ToolStripDropDownButton>、 <xref:System.Windows.Forms.ToolStripMenuItem>、または<xref:System.Windows.Forms.ToolStripSplitButton>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ToolStripDropDownItem (string text, System.Drawing.Image image, params System.Windows.Forms.ToolStripItem[] dropDownItems);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(string text, class System.Drawing.Image image, class System.Windows.Forms.ToolStripItem[] dropDownItems) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripDropDownItem.#ctor(System.String,System.Drawing.Image,System.Windows.Forms.ToolStripItem[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="image" Type="System.Drawing.Image" />
+        <Parameter Name="dropDownItems" Type="System.Windows.Forms.ToolStripItem[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="text">ドロップダウン コントロールの表示テキスト。</param>
+        <param name="image"><see cref="T:System.Drawing.Image" />コントロールに表示されます。</param>
+        <param name="dropDownItems">A<see cref="T:System.Windows.Forms.ToolStripItem" />ドロップダウン コントロールを含むコレクション。</param>
+        <summary>新しいインスタンスを初期化します、<see cref="T:System.Windows.Forms.ToolStripDropDownItem" />クラスを指定した表示テキスト、イメージ、および<see cref="T:System.Windows.Forms.ToolStripItem" />ドロップダウン コントロールを含むコレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ドロップダウン コントロールを派生する必要があります、<xref:System.Windows.Forms.ToolStripDropDownItem>ためのドロップダウン機能するためにクラス、 <xref:System.Windows.Forms.ToolStripDropDownButton>、 <xref:System.Windows.Forms.ToolStripMenuItem>、または<xref:System.Windows.Forms.ToolStripSplitButton>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ToolStripDropDownItem (string text, System.Drawing.Image image, EventHandler onClick, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(string text, class System.Drawing.Image image, class System.EventHandler onClick, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripDropDownItem.#ctor(System.String,System.Drawing.Image,System.EventHandler,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="image" Type="System.Drawing.Image" />
+        <Parameter Name="onClick" Type="System.EventHandler" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">ドロップダウン コントロールの表示テキスト。</param>
+        <param name="image"><see cref="T:System.Drawing.Image" />コントロールに表示されます。</param>
+        <param name="onClick">ドロップダウン コントロールがクリックされたときに実行するアクション。</param>
+        <param name="name">コントロールの名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ToolStripDropDownItem" />指定した表示テキスト、イメージ、ドロップダウン コントロールがクリックされたときに、名前を制御するアクションを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateAccessibilityInstance">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Forms.AccessibleObject CreateAccessibilityInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Forms.AccessibleObject CreateAccessibilityInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripDropDownItem.CreateAccessibilityInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleObject</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.ToolStripItem" /> の新しいユーザー補助オブジェクトを作成します。</summary>
+        <returns><see cref="T:System.Windows.Forms.AccessibleObject" /> の新しい <see cref="T:System.Windows.Forms.ToolStripItem" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDefaultDropDown">
+      <MemberSignature Language="C#" Value="protected virtual System.Windows.Forms.ToolStripDropDown CreateDefaultDropDown ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Windows.Forms.ToolStripDropDown CreateDefaultDropDown() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripDropDownItem.CreateDefaultDropDown" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripDropDown</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>イベントが定義される汎用的な <see cref="T:System.Windows.Forms.ToolStripDropDown" /> を作成します。</summary>
+        <returns>作成された <see cref="T:System.Windows.Forms.ToolStripDropDown" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ToolStripDropDownItem.CreateDefaultDropDown%2A>場合、メソッドが自動的に呼び出されます、<xref:System.Windows.Forms.ToolStripDropDownItem.DropDown%2A>プロパティを検索しない<xref:System.Windows.Forms.ToolStripDropDown>に関連付けられている、<xref:System.Windows.Forms.ToolStripDropDownItem>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripDropDownItem.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Windows.Forms.ToolStripDropDownItem" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック`Dispose()`メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 `Dispose()`プロテクト呼び出します`Dispose(Boolean)`メソッドを`disposing`パラメーターに設定`true`です。 <xref:System.Object.Finalize%2A>呼び出す`Dispose`で`disposing`'éý'`false`です。  
+  
+ ときに、`disposing`パラメーターが true の場合、このメソッドは、すべてのマネージ オブジェクトによって保持されているすべてのリソースを解放します。 この<xref:System.Windows.Forms.ToolStripDropDownItem>参照します。 このメソッドは、参照される各オブジェクトの `Dispose()` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 オーバーライドする場合<see langword="Dispose(Boolean)" />既に破棄されているを以前の呼び出しでオブジェクトを参照しないように注意する<see langword="Dispose" />です。 実装する方法の詳細についての<see langword="Dispose(Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see langword="Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="DropDown">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ToolStripDropDown DropDown { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ToolStripDropDown DropDown" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ToolStripDropDownItem.DropDown" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.ReferenceConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripDropDown</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Forms.ToolStripDropDown" />されるときに表示されるこの<see cref="T:System.Windows.Forms.ToolStripDropDownItem" />をクリックします。</summary>
+        <value>A<see cref="T:System.Windows.Forms.ToolStripDropDown" />と関連付けられている、<see cref="T:System.Windows.Forms.ToolStripDropDownItem" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ない場合は<xref:System.Windows.Forms.ToolStripDropDown>に関連付けられている、<xref:System.Windows.Forms.ToolStripDropDownItem>への呼び出し<xref:System.Windows.Forms.ToolStripDropDownItem.CreateDefaultDropDown%2A>ジェネリック ドロップダウン コントロールを作成します。  
+  
+> [!NOTE]
+>  ドロップダウン コントロールが自動的に生成、つまり、項目がコレクションに追加されると、設定する場合、<xref:System.Windows.Forms.ToolStripDropDownItem.DropDown%2A>プロパティを明示的なドロップダウン コントロールでは、データを失う可能性があります。  
+  
+   
+  
+## Examples  
+ 次のコード例を割り当てる方法を示しています、<xref:System.Windows.Forms.ContextMenuStrip>コントロールを<xref:System.Windows.Forms.ToolStripDropDownItem>コントロールの<xref:System.Windows.Forms.ToolStripDropDownItem.DropDown%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.ToolStripDropDownItem>クラスです。  
+  
+ [!code-csharp[System.Windows.Forms.ToolStripDropDownItem#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStripDropDownItem/CS/Form1.cs#2)]
+ [!code-vb[System.Windows.Forms.ToolStripDropDownItem#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStripDropDownItem/VB/Form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DropDownClosed">
+      <MemberSignature Language="C#" Value="public event EventHandler DropDownClosed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler DropDownClosed" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripDropDownItem.DropDownClosed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="T:System.Windows.Forms.ToolStripDropDown" />を閉じます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、処理する方法を示します、<xref:System.Windows.Forms.ToolStripDropDownItem.DropDownClosed>複数のイベント<xref:System.Windows.Forms.ToolStripDropDownItem>コントロール。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.ToolStripDropDownItem>クラスです。  
+  
+ [!code-csharp[System.Windows.Forms.ToolStripDropDownItem#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStripDropDownItem/CS/Form1.cs#5)]
+ [!code-vb[System.Windows.Forms.ToolStripDropDownItem#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStripDropDownItem/VB/Form1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DropDownDirection">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ToolStripDropDownDirection DropDownDirection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.ToolStripDropDownDirection DropDownDirection" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ToolStripDropDownItem.DropDownDirection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripDropDownDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを方向を示す値を設定、<see cref="T:System.Windows.Forms.ToolStripDropDownItem" />親コンテナーから取り出されます。</summary>
+        <value><see cref="T:System.Windows.Forms.ToolStripDropDownDirection" /> 値のいずれか。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">プロパティのいずれかではない値に、<see cref="T:System.Windows.Forms.ToolStripDropDownDirection" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DropDownItemClicked">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripItemClickedEventHandler DropDownItemClicked;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripItemClickedEventHandler DropDownItemClicked" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripDropDownItem.DropDownItemClicked" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripItemClickedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.ToolStripDropDown" /> がクリックされた時点で発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、処理する方法を示します、<xref:System.Windows.Forms.ToolStripDropDownItem.DropDownItemClicked>複数のイベント<xref:System.Windows.Forms.ToolStripDropDownItem>コントロール。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.ToolStripDropDownItem>クラスです。  
+  
+ [!code-csharp[System.Windows.Forms.ToolStripDropDownItem#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStripDropDownItem/CS/Form1.cs#4)]
+ [!code-vb[System.Windows.Forms.ToolStripDropDownItem#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStripDropDownItem/VB/Form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DropDownItems">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ToolStripItemCollection DropDownItems { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ToolStripItemCollection DropDownItems" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ToolStripDropDownItem.DropDownItems" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripItemCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内の項目のコレクションを取得、<see cref="T:System.Windows.Forms.ToolStripDropDown" />これに関連付けられている<see cref="T:System.Windows.Forms.ToolStripDropDownItem" />です。</summary>
+        <value>A<see cref="T:System.Windows.Forms.ToolStripItemCollection" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.ToolStripDropDownItem.DropDownItems%2A>すべての項目を取得するプロパティ、<xref:System.Windows.Forms.ToolStripDropDown>によって参照される、<xref:System.Windows.Forms.ToolStripDropDownItem.DropDown%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.ToolStripDropDownItem.DropDownItems%2A>プロパティをメニューのサブメニューを作成します。 完全なコード例は、次を参照してください。[する方法: MenuStrip にオプション ボタンを表示](~/docs/framework/winforms/controls/how-to-display-option-buttons-in-a-menustrip-windows-forms.md)です。  
+  
+ [!code-csharp[ToolStripRadioButtonMenuItem#200](~/samples/snippets/csharp/VS_Snippets_Winforms/ToolStripRadioButtonMenuItem/cs/ToolStripRadioButtonMenuItem.cs#200)]
+ [!code-vb[ToolStripRadioButtonMenuItem#200](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ToolStripRadioButtonMenuItem/vb/ToolStripRadioButtonMenuItem.vb#200)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DropDownLocation">
+      <MemberSignature Language="C#" Value="protected virtual System.Drawing.Point DropDownLocation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Point DropDownLocation" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ToolStripDropDownItem.DropDownLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Point</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>(ピクセル単位) の左上隅の画面座標を取得、<see cref="T:System.Windows.Forms.ToolStripDropDownItem" />です。</summary>
+        <value>A <see langword="Point" /> x と y を表す画面座標 (ピクセル単位)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DropDownOpened">
+      <MemberSignature Language="C#" Value="public event EventHandler DropDownOpened;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler DropDownOpened" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripDropDownItem.DropDownOpened" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="T:System.Windows.Forms.ToolStripDropDown" />開きました。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントは、ユーザーがアイテムまたは呼び出すと、ドロップダウンをクリックしたときに発生、<xref:System.Windows.Forms.ToolStripDropDownItem.ShowDropDown%2A>メソッドです。 このイベントを動的に設定を使用することができます、<xref:System.Windows.Forms.ToolStripDropDown>です。  
+  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、処理する方法を示します、<xref:System.Windows.Forms.ToolStripDropDownItem.DropDownOpened>複数のイベント<xref:System.Windows.Forms.ToolStripDropDownItem>コントロール。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.ToolStripDropDownItem>クラスです。  
+  
+ [!code-csharp[System.Windows.Forms.ToolStripDropDownItem#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStripDropDownItem/CS/Form1.cs#3)]
+ [!code-vb[System.Windows.Forms.ToolStripDropDownItem#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStripDropDownItem/VB/Form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DropDownOpening">
+      <MemberSignature Language="C#" Value="public event EventHandler DropDownOpening;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler DropDownOpening" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripDropDownItem.DropDownOpening" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>として発生、<see cref="T:System.Windows.Forms.ToolStripDropDown" />開いています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolStripDropDownItem.DropDownOpening>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolStripDropDownItem>、ように、<xref:System.Windows.Forms.ToolStripMenuItem>または<xref:System.Windows.Forms.ToolStripDropDownButton>です。 インスタンスを名前`ToolStripDropDownItem1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolStripDropDownItem.DropDownOpening>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#492](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#492)]
+ [!code-vb[System.Windows.Forms.EventExamples#492](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#492)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasDropDown">
+      <MemberSignature Language="C#" Value="public bool HasDropDown { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasDropDown" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ToolStripDropDownItem.HasDropDown" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="P:System.Windows.Forms.ToolStripDropDownItem.DropDown" />の<see cref="T:System.Windows.Forms.ToolStripDropDownItem" />が作成されました。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Windows.Forms.ToolStripDropDownItem.DropDown" />の<see cref="T:System.Windows.Forms.ToolStripDropDownItem" />がそれ以外の場合、作成された<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasDropDownItems">
+      <MemberSignature Language="C#" Value="public virtual bool HasDropDownItems { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasDropDownItems" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ToolStripDropDownItem.HasDropDownItems" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.Forms.ToolStripDropDownItem" />が<see cref="T:System.Windows.Forms.ToolStripDropDown" />それに関連付けられているコントロール。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Windows.Forms.ToolStripDropDownItem" />が<see cref="T:System.Windows.Forms.ToolStripDropDown" />コントロールです。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、クエリ、<xref:System.Windows.Forms.ToolStripDropDownItem.HasDropDownItems%2A>条件付きで表示するプロパティ、<xref:System.Windows.Forms.ToolStripDropDownItem>コントロール。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.ToolStripDropDownItem>クラスです。  
+  
+ [!code-csharp[System.Windows.Forms.ToolStripDropDownItem#6](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStripDropDownItem/CS/Form1.cs#6)]
+ [!code-vb[System.Windows.Forms.ToolStripDropDownItem#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStripDropDownItem/VB/Form1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HideDropDown">
+      <MemberSignature Language="C#" Value="public void HideDropDown ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void HideDropDown() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripDropDownItem.HideDropDown" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>表示、<see cref="T:System.Windows.Forms.ToolStripDropDown" />非表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.ToolStripDropDownItem.HideDropDown%2A>メソッドをユーザーが、関連する使用可能なオプションのいずれかを選択するを防ぐために<xref:System.Windows.Forms.ToolStripDropDown>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例は、非表示にする方法を示します、<xref:System.Windows.Forms.ToolStripDropDownItem>ボタンが押されたときを制御します。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.ToolStripDropDownItem>クラスです。  
+  
+ [!code-csharp[System.Windows.Forms.ToolStripDropDownItem#7](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStripDropDownItem/CS/Form1.cs#7)]
+ [!code-vb[System.Windows.Forms.ToolStripDropDownItem#7](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStripDropDownItem/VB/Form1.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBoundsChanged">
+      <MemberSignature Language="C#" Value="protected override void OnBoundsChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnBoundsChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripDropDownItem.OnBoundsChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.ToolStripItem.Bounds" /> プロパティが変更されたときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDropDownClosed">
+      <MemberSignature Language="C#" Value="protected virtual void OnDropDownClosed (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void OnDropDownClosed(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripDropDownItem.OnDropDownClosed(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ToolStripDropDownItem.DropDownClosed" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.ToolStripDropDownItem.OnDropDownClosed%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.ToolStripDropDownItem.OnDropDownClosed(System.EventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.ToolStripDropDownItem.OnDropDownClosed(System.EventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDropDownHide">
+      <MemberSignature Language="C#" Value="protected virtual void OnDropDownHide (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDropDownHide(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripDropDownItem.OnDropDownHide(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>応答で発生した、<see cref="M:System.Windows.Forms.ToolStripDropDownItem.HideDropDown" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.ToolStripDropDownItem.OnDropDownHide%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.ToolStripDropDownItem.OnDropDownHide(System.EventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.ToolStripDropDownItem.OnDropDownHide(System.EventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDropDownItemClicked">
+      <MemberSignature Language="C#" Value="protected virtual void OnDropDownItemClicked (System.Windows.Forms.ToolStripItemClickedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void OnDropDownItemClicked(class System.Windows.Forms.ToolStripItemClickedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripDropDownItem.OnDropDownItemClicked(System.Windows.Forms.ToolStripItemClickedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripItemClickedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.ToolStripItemClickedEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ToolStripDropDownItem.DropDownItemClicked" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.ToolStripDropDownItem.OnDropDownItemClicked%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.ToolStripDropDownItem.OnDropDownItemClicked(System.Windows.Forms.ToolStripItemClickedEventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.ToolStripDropDownItem.OnDropDownItemClicked(System.Windows.Forms.ToolStripItemClickedEventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDropDownOpened">
+      <MemberSignature Language="C#" Value="protected virtual void OnDropDownOpened (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void OnDropDownOpened(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripDropDownItem.OnDropDownOpened(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ToolStripDropDownItem.DropDownOpened" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.ToolStripDropDownItem.OnDropDownOpened%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.ToolStripDropDownItem.OnDropDownOpened(System.EventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.ToolStripDropDownItem.OnDropDownOpened(System.EventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDropDownShow">
+      <MemberSignature Language="C#" Value="protected virtual void OnDropDownShow (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDropDownShow(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripDropDownItem.OnDropDownShow(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>応答で発生した、<see cref="M:System.Windows.Forms.ToolStripDropDownItem.ShowDropDown" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.ToolStripDropDownItem.OnDropDownShow%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.ToolStripDropDownItem.OnDropDownShow(System.EventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.ToolStripDropDownItem.OnDropDownShow(System.EventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnFontChanged">
+      <MemberSignature Language="C#" Value="protected override void OnFontChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnFontChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripDropDownItem.OnFontChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ToolStripDropDown.FontChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.ToolStripDropDownItem.OnFontChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ToolStripDropDownItem.OnFontChanged(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ToolStripDropDownItem.OnFontChanged(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRightToLeftChanged">
+      <MemberSignature Language="C#" Value="protected override void OnRightToLeftChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnRightToLeftChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripDropDownItem.OnRightToLeftChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.RightToLeftChanged" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pressed">
+      <MemberSignature Language="C#" Value="public override bool Pressed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Pressed" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ToolStripDropDownItem.Pressed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.Forms.ToolStripDropDownItem" />押された状態にします。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Windows.Forms.ToolStripDropDownItem" />押されたが、状態、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessCmdKey">
+      <MemberSignature Language="C#" Value="protected override bool ProcessCmdKey (ref System.Windows.Forms.Message m, System.Windows.Forms.Keys keyData);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance bool ProcessCmdKey(valuetype System.Windows.Forms.Message&amp; m, valuetype System.Windows.Forms.Keys keyData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripDropDownItem.ProcessCmdKey(System.Windows.Forms.Message@,System.Windows.Forms.Keys)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="m" Type="System.Windows.Forms.Message&amp;" RefType="ref" />
+        <Parameter Name="keyData" Type="System.Windows.Forms.Keys" />
+      </Parameters>
+      <Docs>
+        <param name="m">処理するウィンドウ メッセージを表す、参照渡しされた <see cref="T:System.Windows.Forms.Message" />。</param>
+        <param name="keyData">処理するキーを表す <see cref="T:System.Windows.Forms.Keys" /> 値の 1 つ。</param>
+        <summary>コマンド キーを処理します。</summary>
+        <returns>
+          常に <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、メッセージのプリプロセス コマンド キーを処理中に呼び出されます。 コマンド キーは、通常の入力キーに常に優先されるキーです。 コマンド キーの例としては、アクセラレータやメニューのショートカットです。 メソッドが返す必要があります`true`コマンド キーを処理したことを示すために、または`false`をキーは、コマンド キーではないことを示します。  
+  
+ <xref:System.Windows.Forms.ToolStripDropDownItem>このメソッドの実装を呼び出す、<xref:System.Windows.Forms.ToolStrip.ProcessCmdKey%2A>の<xref:System.Windows.Forms.ToolStripDropDownItem.DropDown%2A>内の項目がある場合、<xref:System.Windows.Forms.ToolStripDropDownItem.DropDownItems%2A>コレクション。 それ以外の場合、この実装は、基本クラスの実装を呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">直前の呼び出し元とするためにクラスを継承するこのメソッドを呼び出します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />です。</permission>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合、<see cref="M:System.Windows.Forms.ToolStripItem.ProcessCmdKey(System.Windows.Forms.Message@,System.Windows.Forms.Keys)" />派生クラスでメソッド、メソッドのオーバーライドが返す<see langword="true" />をキーが処理されたことを示します。 派生クラスがこのメソッドをオーバーライドする必要はほとんどありません。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessDialogKey">
+      <MemberSignature Language="C#" Value="protected override bool ProcessDialogKey (System.Windows.Forms.Keys keyData);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance bool ProcessDialogKey(valuetype System.Windows.Forms.Keys keyData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripDropDownItem.ProcessDialogKey(System.Windows.Forms.Keys)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyData" Type="System.Windows.Forms.Keys" />
+      </Parameters>
+      <Docs>
+        <param name="keyData">処理するキーを表す <see cref="T:System.Windows.Forms.Keys" /> 値の 1 つ。</param>
+        <summary>ダイアログ キーを処理します。</summary>
+        <returns>
+          <see langword="true" />アイテムによってキーが処理された場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、上、下、左、右、ENTER、キーと space キーを押すキー ドロップダウン メニューの階層内を移動するために処理するメッセージのプリプロセス時に呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">すべてのウィンドウにこのメソッドを呼び出すクラスを継承します。 関連する列挙値:<see langword="AllWindows" />値<see cref="T:System.Security.Permissions.UIPermissionWindow" />です。</permission>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合、<see cref="M:System.Windows.Forms.ToolStripDropDownItem.ProcessDialogKey(System.Windows.Forms.Keys)" />派生クラスでメソッドをオーバーライドの実装を返す必要があります<see langword="true" />をキーが処理されたことを示します。 派生クラスがこのメソッドをオーバーライドする必要はほとんどありません。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowDropDown">
+      <MemberSignature Language="C#" Value="public void ShowDropDown ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ShowDropDown() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripDropDownItem.ShowDropDown" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>表示、<see cref="T:System.Windows.Forms.ToolStripDropDownItem" />これに関連付けられたコントロール<see cref="T:System.Windows.Forms.ToolStripDropDownItem" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.ToolStripDropDownItem.ShowDropDown%2A>によって設定されたドロップダウン コントロールを表示する方法、<xref:System.Windows.Forms.ToolStripDropDownItem.DropDown%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、表示する方法を示します、<xref:System.Windows.Forms.ToolStripDropDownItem>ボタンが押されたときを制御します。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.ToolStripDropDownItem>クラスです。  
+  
+ [!code-csharp[System.Windows.Forms.ToolStripDropDownItem#6](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStripDropDownItem/CS/Form1.cs#6)]
+ [!code-vb[System.Windows.Forms.ToolStripDropDownItem#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStripDropDownItem/VB/Form1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Windows.Forms.ToolStripDropDownItem" />は親と同じ<see cref="T:System.Windows.Forms.ToolStrip" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

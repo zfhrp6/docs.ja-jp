@@ -1,0 +1,203 @@
+<Type Name="TableLayoutColumnStyleCollection" FullName="System.Windows.Forms.TableLayoutColumnStyleCollection">
+  <TypeSignature Language="C#" Value="public class TableLayoutColumnStyleCollection : System.Windows.Forms.TableLayoutStyleCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TableLayoutColumnStyleCollection extends System.Windows.Forms.TableLayoutStyleCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.TableLayoutColumnStyleCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.TableLayoutStyleCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>格納するコレクション<see cref="T:System.Windows.Forms.ColumnStyle" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TableLayoutColumnStyleCollection>クラスが関連付けられている列の記述に使用されるすべてのスタイルのコレクションを表す<xref:System.Windows.Forms.TableLayoutPanel>です。  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します<xref:System.Windows.Forms.ColumnStyle>の<xref:System.Windows.Forms.TableLayoutColumnStyleCollection>です。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.TableLayoutPanel>コントロール。  
+  
+ [!code-csharp[System.Windows.Forms.TableLayoutPanel#8](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TableLayoutPanel/CS/form1.cs#8)]
+ [!code-vb[System.Windows.Forms.TableLayoutPanel#8](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TableLayoutPanel/VB/form1.vb#8)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (System.Windows.Forms.ColumnStyle columnStyle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Add(class System.Windows.Forms.ColumnStyle columnStyle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TableLayoutColumnStyleCollection.Add(System.Windows.Forms.ColumnStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="columnStyle" Type="System.Windows.Forms.ColumnStyle" />
+      </Parameters>
+      <Docs>
+        <param name="columnStyle"><see cref="T:System.Windows.Forms.ColumnStyle" /> に追加する <see cref="T:System.Windows.Forms.TableLayoutColumnStyleCollection" />。</param>
+        <summary><see cref="T:System.Windows.Forms.TableLayoutColumnStyleCollection" /> に項目を追加します。</summary>
+        <returns>新しい要素が挿入された位置。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TableLayoutColumnStyleCollection.Add%2A>メソッドは、現在のすべてのコントロールにテーブルのレイアウトを再適用<xref:System.Windows.Forms.TableLayoutPanel>コンテナーです。  
+  
+ コレクションに格納されているスタイルの数は、使用可能なメモリによってのみ制限されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Windows.Forms.ColumnStyle columnStyle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Windows.Forms.ColumnStyle columnStyle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TableLayoutColumnStyleCollection.Contains(System.Windows.Forms.ColumnStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="columnStyle" Type="System.Windows.Forms.ColumnStyle" />
+      </Parameters>
+      <Docs>
+        <param name="columnStyle"><see cref="T:System.Windows.Forms.TableLayoutColumnStyleCollection" /> 内で検索される <see cref="T:System.Windows.Forms.ColumnStyle" />。 値として <see langword="null" /> を指定できます。</param>
+        <summary>決定するかどうか、指定した<see cref="T:System.Windows.Forms.ColumnStyle" />がコレクション内にします。</summary>
+        <returns>
+          <see cref="T:System.Windows.Forms.ColumnStyle" /> が <see cref="T:System.Windows.Forms.TableLayoutColumnStyleCollection" /> に存在する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Windows.Forms.ColumnStyle columnStyle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Windows.Forms.ColumnStyle columnStyle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TableLayoutColumnStyleCollection.IndexOf(System.Windows.Forms.ColumnStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="columnStyle" Type="System.Windows.Forms.ColumnStyle" />
+      </Parameters>
+      <Docs>
+        <param name="columnStyle"><see cref="T:System.Windows.Forms.TableLayoutColumnStyleCollection" /> 内で検索される <see cref="T:System.Windows.Forms.ColumnStyle" />。</param>
+        <summary><see cref="T:System.Windows.Forms.TableLayoutColumnStyleCollection" /> 内の特定の項目のインデックスを確認します。</summary>
+        <returns>インデックス<paramref name="columnStyle" />場合に、<see cref="T:System.Windows.Forms.TableLayoutColumnStyleCollection" />以外の場合、-1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TableLayoutColumnStyleCollection.IndexOf%2A>メソッドは、最初の要素の検索を開始、<xref:System.Windows.Forms.TableLayoutColumnStyleCollection>終わり、ときに一致が見つかったか、最後の要素に到達します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.Windows.Forms.ColumnStyle columnStyle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.Windows.Forms.ColumnStyle columnStyle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TableLayoutColumnStyleCollection.Insert(System.Int32,System.Windows.Forms.ColumnStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="columnStyle" Type="System.Windows.Forms.ColumnStyle" />
+      </Parameters>
+      <Docs>
+        <param name="index"><see cref="T:System.Windows.Forms.ColumnStyle" /> を挿入する位置の、0 から始まるインデックス。</param>
+        <param name="columnStyle"><see cref="T:System.Windows.Forms.ColumnStyle" />に挿入する、<see cref="T:System.Windows.Forms.TableLayoutColumnStyleCollection" />です。</param>
+        <summary>挿入、<see cref="T:System.Windows.Forms.ColumnStyle" />に、<see cref="T:System.Windows.Forms.TableLayoutColumnStyleCollection" />指定位置にあります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TableLayoutColumnStyleCollection.Insert%2A>メソッドは、現在のすべてのコントロールにテーブルのレイアウトを再適用<xref:System.Windows.Forms.TableLayoutPanel>コンテナーです。  
+  
+ コレクションに格納されているスタイルの数は、使用可能なメモリによってのみ制限されます。  
+  
+ 連続する要素のコレクションでなど、<xref:System.Windows.Forms.TableLayoutColumnStyleCollection>クラス、挿入ポイントの後にある要素下に挿入される要素を合わせてへ移動します。 移動した要素のインデックスも更新します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ColumnStyle this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ColumnStyle Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TableLayoutColumnStyleCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ColumnStyle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得または設定する <see cref="T:System.Windows.Forms.ColumnStyle" /> の、0 から始まるインデックス番号。</param>
+        <summary>指定したインデックス位置にある <see cref="T:System.Windows.Forms.ColumnStyle" /> を取得または設定します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.ColumnStyle" />指定したインデックス位置。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Windows.Forms.ColumnStyle columnStyle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Windows.Forms.ColumnStyle columnStyle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TableLayoutColumnStyleCollection.Remove(System.Windows.Forms.ColumnStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="columnStyle" Type="System.Windows.Forms.ColumnStyle" />
+      </Parameters>
+      <Docs>
+        <param name="columnStyle"><see cref="T:System.Windows.Forms.ColumnStyle" /> から削除する <see cref="T:System.Windows.Forms.TableLayoutColumnStyleCollection" />。 値として <see langword="null" /> を指定できます。</param>
+        <summary><see cref="T:System.Windows.Forms.ColumnStyle" /> 内で最初に見つかった特定の <see cref="T:System.Windows.Forms.TableLayoutColumnStyleCollection" /> を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TableLayoutColumnStyleCollection.Remove%2A>メソッドは、現在のすべてのコントロールにテーブルのレイアウトを再適用<xref:System.Windows.Forms.TableLayoutPanel>コンテナーです。  
+  
+ 連続する要素のコレクションでなど、<xref:System.Windows.Forms.TableLayoutColumnStyleCollection>クラス、位置の後にある要素上に移動して、繰り上げです。 移動した要素のインデックスも更新します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

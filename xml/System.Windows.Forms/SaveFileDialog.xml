@@ -1,0 +1,196 @@
+<Type Name="SaveFileDialog" FullName="System.Windows.Forms.SaveFileDialog">
+  <TypeSignature Language="C#" Value="public sealed class SaveFileDialog : System.Windows.Forms.FileDialog" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SaveFileDialog extends System.Windows.Forms.FileDialog" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.SaveFileDialog" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.FileDialog</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Windows.Forms.Design.SaveFileDialogDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ファイルの保存場所を選択するユーザーに求めます。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスを開くと既存のファイルを上書きするか、新しいファイルを作成します。  
+  
+ ほとんどの機能でこのクラスが見つかりませんでした、<xref:System.Windows.Forms.FileDialog>クラスです。  
+  
+   
+  
+## Examples  
+ 作成する次のコード例を示します、 <xref:System.Windows.Forms.SaveFileDialog>、メンバーの設定、ダイアログ ボックスを使用して、呼び出して、<xref:System.Windows.Forms.CommonDialog.ShowDialog%2A>メソッド、および現在のファイルを保存します。 例には、それに対するボタンで、フォームが必要です。  
+  
+ [!code-cpp[Classic SaveFileDialog Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic SaveFileDialog Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic SaveFileDialog Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic SaveFileDialog Example/CS/source.cs#1)]
+ [!code-vb[Classic SaveFileDialog Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic SaveFileDialog Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SaveFileDialog ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.SaveFileDialog.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>このクラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、任意のセキュリティ ゾーンでインスタンス化適切なアクセス許可の要求は、個々 のプロパティおよびメソッドに配置されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreatePrompt">
+      <MemberSignature Language="C#" Value="public bool CreatePrompt { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CreatePrompt" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SaveFileDialog.CreatePrompt" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはダイアログ ボックスがユーザーにユーザーが存在しないファイルを指定した場合は、ファイルを作成するアクセス許可を求めますかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ダイアログ ボックスでは、ユーザーが存在しません。 ファイル名を指定した場合は、ファイルを作成する前に、ユーザーがから求められる場合<see langword="false" />場合は、ダイアログ ボックスでは、アクセス許可を求めることがなく、新しいファイルを自動的に作成します。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Windows.Forms.RichTextBox.SaveFile%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.RichTextBox.LoadFile%2A?displayProperty=nameWithType>ストリームを持つメソッドです。 使用しても示します、 <xref:System.Windows.Forms.FileDialog.FileName%2A>、 <xref:System.Windows.Forms.FileDialog.DefaultExt%2A>、 <xref:System.Windows.Forms.SaveFileDialog.CreatePrompt%2A>、および<xref:System.Windows.Forms.SaveFileDialog.OverwritePrompt%2A>メンバー。  
+  
+ これは、プロジェクトにコピーするときに実行する準備が整っている完全な例です。  
+  
+ [!code-cpp[System.Windows.Forms.RichTextBoxSaveFile#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.RichTextBoxSaveFile/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.RichTextBoxSaveFile#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.RichTextBoxSaveFile/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.RichTextBoxSaveFile#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.RichTextBoxSaveFile/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">プロパティを設定します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenFile">
+      <MemberSignature Language="C#" Value="public System.IO.Stream OpenFile ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Stream OpenFile() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.SaveFileDialog.OpenFile" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ユーザーが選択されている読み取り/書き込みアクセス許可を持つファイルを開きます。</summary>
+        <returns>ユーザーによって選択された読み取り/書き込みファイル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!CAUTION]
+>  セキュリティの目的は、このメソッドは、選択した名前の新しいファイルを作成し、読み取り/書き込みアクセス許可を使用して開きます。 これは、ことができますが意図的でない失われるデータを保存する既存のファイルを選択した場合。 既存のデータを維持したまま、既存のファイルにデータを保存するを使用して、<xref:System.IO.File>クラスで返されるファイル名を使用してファイルを開く、<xref:System.Windows.Forms.FileDialog.FileName%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 作成する次のコード例を示します、 <xref:System.Windows.Forms.SaveFileDialog>、メンバーの設定、ダイアログ ボックスを使用して、呼び出して、<xref:System.Windows.Forms.CommonDialog.ShowDialog%2A>メソッド、および選択したファイルを開きます。 例には、それに対するボタンで、フォームが必要です。  
+  
+ [!code-cpp[Classic SaveFileDialog Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic SaveFileDialog Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic SaveFileDialog Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic SaveFileDialog Example/CS/source.cs#1)]
+ [!code-vb[Classic SaveFileDialog Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic SaveFileDialog Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileDialogPermission">ファイルを保存します。 関連する列挙値:<see cref="F:System.Security.Permissions.FileDialogPermissionAccess.Save" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="OverwritePrompt">
+      <MemberSignature Language="C#" Value="public bool OverwritePrompt { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool OverwritePrompt" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SaveFileDialog.OverwritePrompt" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、 <see langword="Save As" />  ダイアログ ボックスは、ユーザーが既に存在するファイル名を指定した場合に警告を表示します。</summary>
+        <value>
+          <see langword="true" />ダイアログ ボックスでは、ユーザーが既に存在します。 ファイル名を指定した場合は、既存のファイルを上書きする前にユーザーがから求められる場合<see langword="false" />場合は、ダイアログ ボックスは自動的にアクセス許可を求めることがなく、既存のファイルを上書きします。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Windows.Forms.RichTextBox.SaveFile%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.RichTextBox.LoadFile%2A?displayProperty=nameWithType>ストリームを持つメソッドです。 使用しても示します、 <xref:System.Windows.Forms.FileDialog.FileName%2A>、 <xref:System.Windows.Forms.FileDialog.DefaultExt%2A>、 <xref:System.Windows.Forms.SaveFileDialog.CreatePrompt%2A>、および<xref:System.Windows.Forms.SaveFileDialog.OverwritePrompt%2A>メンバー。  
+  
+ これは、プロジェクトにコピーするときに実行する準備が整っている完全な例です。  
+  
+ [!code-cpp[System.Windows.Forms.RichTextBoxSaveFile#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.RichTextBoxSaveFile/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.RichTextBoxSaveFile#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.RichTextBoxSaveFile/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.RichTextBoxSaveFile#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.RichTextBoxSaveFile/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">プロパティを設定します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public override void Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.SaveFileDialog.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ダイアログ ボックスのオプションをすべて既定値にリセットします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

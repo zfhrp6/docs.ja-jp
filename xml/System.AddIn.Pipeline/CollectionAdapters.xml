@@ -1,0 +1,192 @@
+<Type Name="CollectionAdapters" FullName="System.AddIn.Pipeline.CollectionAdapters">
+  <TypeSignature Language="C#" Value="public static class CollectionAdapters" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit CollectionAdapters extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.AddIn.Pipeline.CollectionAdapters" />
+  <AssemblyInfo>
+    <AssemblyName>System.AddIn</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アドインとホスト アプリケーションの間で渡されるコレクションを有効にします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスを提供できるようにするメソッド、<xref:System.Collections.Generic.IList%601>コレクションに変換する、<xref:System.AddIn.Contract.IListContract%601>コレクション。 <xref:System.AddIn.Contract.IListContract%601>コレクションの分離の境界を越えて渡され、元に変換する<xref:System.Collections.Generic.IList%601>アドインか、ホスト アプリケーションが使用できるコレクションです。  
+  
+ コレクション内のオブジェクトは、リモート化可能である必要があります。 渡すことのできるオブジェクトの種類の詳細については、次を参照してください。[コントラクト、ビュー、およびアダプター](http://msdn.microsoft.com/en-us/a6460173-9507-4b87-8c07-d4ee245d715c)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ToIList&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IList&lt;T&gt; ToIList&lt;T&gt; (System.AddIn.Contract.IListContract&lt;T&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IList`1&lt;!!T&gt; ToIList&lt;T&gt;(class System.AddIn.Contract.IListContract`1&lt;!!T&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Pipeline.CollectionAdapters.ToIList``1(System.AddIn.Contract.IListContract{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="collection" Type="System.AddIn.Contract.IListContract&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">一覧に含まれているオブジェクトの型。 <c>T</c>シリアル化可能である必要があります。</typeparam>
+        <param name="collection">パイプラインの相手側からコレクションです。</param>
+        <summary>指定された変換<see cref="T:System.AddIn.Contract.IListContract`1" />コレクションに、<see cref="T:System.Collections.Generic.IList`1" />コレクション。</summary>
+        <returns>変換後のコレクションです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ホスト アプリケーションやアドインのことができますを使用して、返された<xref:System.Collections.Generic.IList%601>コレクション。 <xref:System.Collections.Generic.IList%601>コレクションには、リモートの有効期間トークンがあります。<xref:System.AddIn.Contract.IListContract%601>コレクション。  
+  
+ このメソッドのオーバー ロードを使用する必要がありますされる場合にのみの内容、<xref:System.AddIn.Contract.IListContract%601>アドインとホスト (なく種類ビューに適合する必要があります) に直接渡すことができるシリアル化可能な種類です。  
+  
+   
+  
+## Examples  
+ 説明に従って、次の例は、ホスト側アダプター パイプライン セグメントを実装[チュートリアル: コレクションのホスト間で渡すとアドイン](http://msdn.microsoft.com/en-us/b532c604-548e-4fab-b11c-377257dd0ee5)です。例では、カスタムの適応`ProcessBooks`メソッドを実行することで、<xref:System.AddIn.Contract.IListContract%601>アドインから渡され、への変換のコレクション、<xref:System.Collections.Generic.IList%601>ホスト アプリケーションを使用して、コレクション。  
+  
+ [!code-csharp[AddInCollectionPipelineAddInSideAdapter#3](~/samples/snippets/csharp/VS_Snippets_CLR/AddInCollectionPipelineAddInSideAdapter/cs/LibraryManagerViewToContractAddInAdapter.cs#3)]
+ [!code-vb[AddInCollectionPipelineAddInSideAdapter#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/AddInCollectionPipelineAddInSideAdapter/vb/LibraryManagerViewToContractAddInAdapter.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToIList&lt;TContract,TView&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IList&lt;TView&gt; ToIList&lt;TContract,TView&gt; (System.AddIn.Contract.IListContract&lt;TContract&gt; collection, Converter&lt;TContract,TView&gt; contractViewAdapter, Converter&lt;TView,TContract&gt; viewContractAdapter);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IList`1&lt;!!TView&gt; ToIList&lt;TContract, TView&gt;(class System.AddIn.Contract.IListContract`1&lt;!!TContract&gt; collection, class System.Converter`2&lt;!!TContract, !!TView&gt; contractViewAdapter, class System.Converter`2&lt;!!TView, !!TContract&gt; viewContractAdapter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Pipeline.CollectionAdapters.ToIList``2(System.AddIn.Contract.IListContract{``0},System.Converter{``0,``1},System.Converter{``1,``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;TView&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TContract" />
+        <TypeParameter Name="TView" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="collection" Type="System.AddIn.Contract.IListContract&lt;TContract&gt;" />
+        <Parameter Name="contractViewAdapter" Type="System.Converter&lt;TContract,TView&gt;" />
+        <Parameter Name="viewContractAdapter" Type="System.Converter&lt;TView,TContract&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TContract">型のオブジェクトを渡すのコントラクトを定義する型<c>つ</c>分離の境界を越えてです。</typeparam>
+        <typeparam name="TView">一覧で、オブジェクトのビューを定義する型。</typeparam>
+        <param name="collection">パイプラインの相手側に渡すコレクションです。</param>
+        <param name="contractViewAdapter">ビューに予期される型をコントラクトで定義された型からデータを対応するコンバーター。</param>
+        <param name="viewContractAdapter">コントラクトで想定されている型に、ビューで定義された型からデータを対応するコンバーター。</param>
+        <summary>指定した変換<see cref="T:System.AddIn.Contract.IListContract`1" />コレクションに、<see cref="T:System.Collections.Generic.IList`1" />コンバーター アダプターを使用してコレクション。</summary>
+        <returns>変換後のコレクションです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのオーバー ロードを使用して<xref:System.AddIn.Contract.IListContract%601>を渡すことができる、アドインやホスト (ではなく直接渡すことができる単純なシリアル化できる型) にする前に合わせて変更する必要がある型を含むコレクション。 ホスト アプリケーションやアドインのことができますを使用して、返された<xref:System.Collections.Generic.IList%601>コレクション。 リモートの有効期間トークンが<xref:System.AddIn.Contract.IListContract%601>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToIListContract&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.AddIn.Contract.IListContract&lt;T&gt; ToIListContract&lt;T&gt; (System.Collections.Generic.IList&lt;T&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.AddIn.Contract.IListContract`1&lt;!!T&gt; ToIListContract&lt;T&gt;(class System.Collections.Generic.IList`1&lt;!!T&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Pipeline.CollectionAdapters.ToIListContract``1(System.Collections.Generic.IList{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.IListContract&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IList&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">一覧に含まれているオブジェクトの型。 <c>T</c>シリアル化可能である必要があります。</typeparam>
+        <param name="collection">変換するコレクション。</param>
+        <summary>指定した変換<see cref="T:System.Collections.Generic.IList`1" />コレクションに、<see cref="T:System.AddIn.Contract.IListContract`1" />コレクション。</summary>
+        <returns>変換後のコレクションです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.AddIn.Contract.IListContract%601>コレクションは、アドインと、ホスト アプリケーションの分離の境界を越えてマーシャ リングすることができます。  
+  
+ このメソッドのオーバー ロードを使用する必要がありますされる場合にのみの内容、<xref:System.Collections.Generic.IList%601>コレクションはシリアル化可能な型、コントラクト (ではなく型をコントラクトに適合する必要があります) に直接渡すことができます。  
+  
+   
+  
+## Examples  
+ 次の例では、アドイン側アダプター パイプライン セグメントを定義するクラスを実装します。 適応するように、カスタム`ProcessBooks`メソッドを実行することで、<xref:System.Collections.Generic.IList%601>コレクション ビューでは、追加のセグメントから渡されに変換すると、<xref:System.AddIn.Contract.IListContract%601>ホストへ分離の境界を越えてマーシャ リングできるコレクションです。  
+  
+ [!code-csharp[AddInCollectionPipelineHostSideAdapter#4](~/samples/snippets/csharp/VS_Snippets_CLR/AddInCollectionPipelineHostSideAdapter/cs/LibraryManagerContractToViewHostAdapter.cs#4)]
+ [!code-vb[AddInCollectionPipelineHostSideAdapter#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/AddInCollectionPipelineHostSideAdapter/vb/LibraryManagerContractToViewHostAdapter.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToIListContract&lt;TView,TContract&gt;">
+      <MemberSignature Language="C#" Value="public static System.AddIn.Contract.IListContract&lt;TContract&gt; ToIListContract&lt;TView,TContract&gt; (System.Collections.Generic.IList&lt;TView&gt; collection, Converter&lt;TView,TContract&gt; viewContractAdapter, Converter&lt;TContract,TView&gt; contractViewAdapter);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.AddIn.Contract.IListContract`1&lt;!!TContract&gt; ToIListContract&lt;TView, TContract&gt;(class System.Collections.Generic.IList`1&lt;!!TView&gt; collection, class System.Converter`2&lt;!!TView, !!TContract&gt; viewContractAdapter, class System.Converter`2&lt;!!TContract, !!TView&gt; contractViewAdapter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Pipeline.CollectionAdapters.ToIListContract``2(System.Collections.Generic.IList{``0},System.Converter{``0,``1},System.Converter{``1,``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.IListContract&lt;TContract&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TView" />
+        <TypeParameter Name="TContract" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IList&lt;TView&gt;" />
+        <Parameter Name="viewContractAdapter" Type="System.Converter&lt;TView,TContract&gt;" />
+        <Parameter Name="contractViewAdapter" Type="System.Converter&lt;TContract,TView&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TView">一覧で、オブジェクトのビューを定義する型。</typeparam>
+        <typeparam name="TContract">型のオブジェクトを渡すのコントラクトを定義する型<c>つ</c>分離の境界を越えてです。</typeparam>
+        <param name="collection">変換するコレクション。</param>
+        <param name="viewContractAdapter">コントラクトで想定されている型に、ビューで定義された型からデータを対応するコンバーター。</param>
+        <param name="contractViewAdapter">ビューに予期される型をコントラクトで定義された型からデータを対応するコンバーター。</param>
+        <summary>指定した変換<see cref="T:System.Collections.Generic.IList`1" />コレクションに、<see cref="T:System.AddIn.Contract.IListContract`1" />コンバーター アダプターを使用してコレクション。</summary>
+        <returns>変換後のコレクションです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのオーバー ロードを使用して<xref:System.Collections.Generic.IList%601>型、コントラクト (ではなく直接渡すことができる単純なシリアル化できる型) に渡すことができます、前に、コントラクトに適合する必要がありますが含まれているコレクション。 <xref:System.AddIn.Contract.IListContract%601>コレクションは、アドインと、ホスト アプリケーションの分離の境界を越えてマーシャ リングすることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

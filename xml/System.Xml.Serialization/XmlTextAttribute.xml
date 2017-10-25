@@ -1,0 +1,335 @@
+<Type Name="XmlTextAttribute" FullName="System.Xml.Serialization.XmlTextAttribute">
+  <TypeSignature Language="C#" Value="public class XmlTextAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlTextAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.XmlTextAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property | System.AttributeTargets.Field | System.AttributeTargets.Parameter | System.AttributeTargets.ReturnValue)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>示す、<see cref="T:System.Xml.Serialization.XmlSerializer" />それを格納するクラスがシリアル化または逆シリアル化されるときに、メンバーを XML テキストとして扱う必要があります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.XmlTextAttribute>を制御する属性のファミリに属する方法、<xref:System.Xml.Serialization.XmlSerializer>およびオブジェクトを逆シリアル化 (を通じてその<xref:System.Xml.Serialization.XmlSerializer.Serialize%2A>と<xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A>メソッド)。 類似する属性の一覧については、次を参照してください。[コントロール XML シリアル化する属性](~/docs/standard/serialization/attributes-that-control-xml-serialization.md)です。  
+  
+ インスタンスを 1 つだけ、<xref:System.Xml.Serialization.XmlTextAttribute>クラスでクラスを適用できます。  
+  
+ 適用することができます、<xref:System.Xml.Serialization.XmlTextAttribute>パブリック フィールドとパブリックの読み取り/書き込みプロパティ プリミティブと列挙型を返すにします。  
+  
+ 適用することができます、<xref:System.Xml.Serialization.XmlTextAttribute>フィールドまたはプロパティを文字列の配列を返すにします。 型の配列に属性を適用することもできます。<xref:System.Object>設定する必要がありますが、<xref:System.Xml.Serialization.XmlTextAttribute.Type%2A>プロパティを文字列にします。 その場合は、配列に挿入された任意の文字列は XML テキストとしてシリアル化されます。  
+  
+ <xref:System.Xml.Serialization.XmlTextAttribute>を返すフィールドにも適用できる、<xref:System.Xml.XmlNode>または配列の<xref:System.Xml.XmlNode>オブジェクト。  
+  
+ 既定では、 <xref:System.Xml.Serialization.XmlSerializer> XML 要素としてのクラス メンバーをシリアル化します。 ただし、適用する場合、 <xref:System.Xml.Serialization.XmlTextAttribute> 、メンバーに、 <xref:System.Xml.Serialization.XmlSerializer> XML テキストの値に変換します。 これは、値が XML 要素の内容にエンコードされていることを意味します。  
+  
+ [XML スキーマ定義ツール (Xsd.exe)](~/docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md)ときどき生成、 <xref:System.Xml.Serialization.XmlTextAttribute> XML スキーマ定義 (XSD) ファイルからクラスを作成するときにします。 これは、スキーマを含む場合に発生、`complexType`混合コンテンツは; を持つ場合は、対応するクラス メンバーを含みます対象の文字列の配列を返します、<xref:System.Xml.Serialization.XmlTextAttribute>を適用します。 たとえば、ときに、`Xml Schema Definition`ツールはこのスキーマを処理します。  
+  
+```  
+<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace=""   
+xmlns:xs="http://www.w3.org/2001/XMLSchema">  
+  <xs:element name="LinkList" type="LinkList" />  
+  <xs:complexType name="LinkList" mixed="true">  
+    <xs:sequence>  
+      <xs:element minOccurs="1" maxOccurs="1" name="id" type="xs:int" />  
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string" />  
+      <xs:element minOccurs="0" maxOccurs="1" name="next" type="LinkList" />  
+    </xs:sequence>  
+  </xs:complexType>  
+</xs:schema>  
+```  
+  
+ 次のクラスが生成されます (余分なスペースと注釈が削除されました)。  
+  
+ [!code-csharp[XmlTextAttribute#0](~/samples/snippets/csharp/VS_Snippets_Remoting/XmlTextAttribute/cs/source.cs#0)]
+ [!code-vb[XmlTextAttribute#0](~/samples/snippets/visualbasic/VS_Snippets_Remoting/XmlTextAttribute/vb/source.vb#0)]  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+> [!NOTE]
+>  語を使用できます`XmlText`時間が長いではなく、コードで<xref:System.Xml.Serialization.XmlTextAttribute>です。  
+  
+   
+  
+## Examples  
+ [!code-cpp[Classic XmlTextAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlTextAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlTextAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlTextAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlTextAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlTextAttribute Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlTextAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlTextAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.Serialization.XmlTextAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 方法をオーバーライドすることができますを<xref:System.Xml.Serialization.XmlSerializer>を作成して、パブリック フィールドまたはパブリックの読み取り/書き込みプロパティをシリアル化、 <xref:System.Xml.Serialization.XmlAttributes>、設定とその<xref:System.Xml.Serialization.XmlAttributes.XmlText%2A>プロパティを<xref:System.Xml.Serialization.XmlTextAttribute>です。 詳細については、<xref:System.Xml.Serialization.XmlAttributeOverrides> クラスのトピックを参照してください。  
+  
+   
+  
+## Examples  
+ 次の例は、という名前のパブリック フィールドを含むクラスをシリアル化`Comment`です。 例では、適用、<xref:System.Xml.Serialization.XmlTextAttribute>のフィールドに、XML 要素としてシリアル化をオーバーライドすることと、代わりに XML テキストとしてシリアル化します。  
+  
+ [!code-cpp[Classic XmlTextAttribute.XmlTextAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlTextAttribute.XmlTextAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlTextAttribute.XmlTextAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlTextAttribute.XmlTextAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlTextAttribute.XmlTextAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlTextAttribute.XmlTextAttribute Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlTextAttribute (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlTextAttribute.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Type" />シリアル化するメンバーのです。</param>
+        <summary><see cref="T:System.Xml.Serialization.XmlTextAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 方法をオーバーライドすることができますを<xref:System.Xml.Serialization.XmlSerializer>を作成して、パブリック フィールドまたはパブリックの読み取り/書き込みプロパティをシリアル化、 <xref:System.Xml.Serialization.XmlAttributes>、設定とその<xref:System.Xml.Serialization.XmlAttributes.XmlText%2A>プロパティを<xref:System.Xml.Serialization.XmlTextAttribute>です。 詳細については、<xref:System.Xml.Serialization.XmlAttributeOverrides> クラスのトピックを参照してください。  
+  
+   
+  
+## Examples  
+ [!code-cpp[Classic XmlTextAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlTextAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlTextAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlTextAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlTextAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlTextAttribute Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataType">
+      <MemberSignature Language="C#" Value="public string DataType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataType" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlTextAttribute.DataType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定によって生成されるテキストの XML スキーマ定義言語 (XSD) データ型、<see cref="T:System.Xml.Serialization.XmlSerializer" />です。</summary>
+        <value>XML スキーマ (XSD) データ型、World Wide Web Consortium) (www.w3.org) ドキュメント「XML スキーマ パート 2:: データ型」で定義されています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Xml.Serialization.XmlTextAttribute.DataType%2A>プロパティの XML スキーマの単純なデータ型には、生成された XML の形式に影響します。 たとえば、"date"にプロパティの設定が生成されるテキストの例では一般的な日付形式を書式設定: 2001-08-31 です。 これに対し、プロパティの設定、"dateTime"の結果に標準化ドキュメント 8601、「形式の日付と時刻」、国際組織で定義されている、特定の時点で例: 2001-08-15T06:59:11.0508456-07:00 です。  
+  
+ 設定の効果、<xref:System.Xml.Serialization.XmlTextAttribute.DataType%2A>を使用する場合、プロパティを表示もできます、 [XML スキーマ定義ツール (Xsd.exe)](~/docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md)コンパイル済みのファイルの XML スキーマを生成します。 ツールの使用方法の詳細については、次を参照してください。 [、XML スキーマ定義ツールと XML シリアル化](~/docs/standard/serialization/the-xml-schema-definition-tool-and-xml-serialization.md)です。  
+  
+ 次の表は、.NET の同等の XML スキーマの単純なデータ型を一覧表示します。  
+  
+ XML スキーマの`base64Binary`と`hexBinary`データ型の配列を使用して<xref:System.Byte>構造体、および適用、<xref:System.Xml.Serialization.XmlTextAttribute>で、 <xref:System.Xml.Serialization.XmlTextAttribute.DataType%2A> "base64Binary"または"hexBinary"、適切に設定します。 XML スキーマの`time`と`date`データ型を使用して、<xref:System.DateTime>入力し、適用、<xref:System.Xml.Serialization.XmlTextAttribute>で、 <xref:System.Xml.Serialization.XmlTextAttribute.DataType%2A> "date"または"time"に設定します。  
+  
+ 文字列にマップされているすべての XML スキーマ データ型には、適用、<xref:System.Xml.Serialization.XmlTextAttribute>でその<xref:System.Xml.Serialization.XmlTextAttribute.DataType%2A>プロパティを XML スキーマ データ型に設定します。 このメンバーのスキーマだけであり、シリアル化形式は変更されないことに注意してください。  
+  
+> [!NOTE]
+>  プロパティでは、XML スキーマ データ型の 1 つに正確に設定する必要があるため、大文字小文字を区別します。  
+  
+> [!NOTE]
+>  要素は XML としてバイナリ データを渡すことは、XML 属性として渡すことよりも効率的です。  
+  
+ XML スキーマ データ型の詳細については、「XML スキーマ パート 2:: データ型」をという名前の World Wide Web Consortium) (www.w3.org) ドキュメントを参照してください。  
+  
+|XSD データ型|.NET データ型|  
+|-------------------|--------------------|  
+|anyURI|<xref:System.String>|  
+|base64Binary|配列<xref:System.Byte>オブジェクト|  
+|boolean|<xref:System.Boolean>|  
+|byte|<xref:System.SByte>|  
+|date|<xref:System.DateTime>|  
+|dateTime|<xref:System.DateTime>|  
+|decimal|<xref:System.Decimal>|  
+|double|<xref:System.Double>|  
+|ENTITY|<xref:System.String>|  
+|エンティティ|<xref:System.String>|  
+|フローティング|<xref:System.Single>|  
+|gDay|<xref:System.String>|  
+|gMonth|<xref:System.String>|  
+|gMonthDay|<xref:System.String>|  
+|gYear|<xref:System.String>|  
+|gYearMonth|<xref:System.String>|  
+|hexBinary|配列<xref:System.Byte>オブジェクト|  
+|ID|<xref:System.String>|  
+|IDREF|<xref:System.String>|  
+|IDREFS|<xref:System.String>|  
+|int|<xref:System.Int32>|  
+|整数|<xref:System.String>|  
+|language|<xref:System.String>|  
+|long|<xref:System.Int64>|  
+|名前|<xref:System.String>|  
+|NCName|<xref:System.String>|  
+|negativeInteger|<xref:System.String>|  
+|NMTOKEN|<xref:System.String>|  
+|NMTOKENS|<xref:System.String>|  
+|normalizedString|<xref:System.String>|  
+|nonNegativeInteger|<xref:System.String>|  
+|nonPositiveInteger|<xref:System.String>|  
+|NOTATION|<xref:System.String>|  
+|positiveInteger|<xref:System.String>|  
+|QName|<xref:System.Xml.XmlQualifiedName>|  
+|duration|<xref:System.String>|  
+|string|<xref:System.String>|  
+|short|<xref:System.Int16>|  
+|時間|<xref:System.DateTime>|  
+|token|<xref:System.String>|  
+|unsignedByte|<xref:System.Byte>|  
+|unsignedInt|<xref:System.UInt32>|  
+|unsignedLong|<xref:System.UInt64>|  
+|unsignedShort|<xref:System.UInt16>|  
+  
+   
+  
+## Examples  
+ [!code-cpp[Classic XmlTextAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlTextAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlTextAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlTextAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlTextAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlTextAttribute Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception">指定した XML スキーマ データ型は、.NET データ型にマップすることはできません。</exception>
+        <exception cref="T:System.InvalidOperationException">指定した XML スキーマ データ型は、プロパティに対して無効ですし、メンバー型に変換することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public Type Type { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type Type" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlTextAttribute.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメンバーの型を設定します。</summary>
+        <value><see cref="T:System.Type" />メンバーのです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Type>プロパティは、プリミティブ型と列挙体にのみ設定できます。  
+  
+ <xref:System.Xml.Serialization.XmlTextAttribute>を返すフィールドにも適用できる、<xref:System.Xml.XmlNode>または配列の<xref:System.Xml.XmlNode>オブジェクト。  
+  
+ 適用することができます、<xref:System.Xml.Serialization.XmlTextAttribute>フィールドまたはプロパティを文字列の配列を返すにします。 型の配列に属性を適用することもできます。<xref:System.Object>設定する必要がありますが、<xref:System.Xml.Serialization.XmlTextAttribute.Type%2A>プロパティを文字列にします。 その場合は、配列に挿入された任意の文字列は XML テキストとしてシリアル化されます。  
+  
+   
+  
+## Examples  
+ [!code-cpp[Classic XmlTextAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlTextAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlTextAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlTextAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlTextAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlTextAttribute Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

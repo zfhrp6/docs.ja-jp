@@ -1,0 +1,36 @@
+<Type Name="ValidationEventHandler" FullName="System.Xml.Schema.ValidationEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void ValidationEventHandler(object sender, ValidationEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ValidationEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Schema.ValidationEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Xml.Schema.ValidationEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。  
+  
+ **注**コードで使用する前に、センダーの種類を決定します。 送信者は、特定の型のインスタンスを想定することはできません。 送信者がいない null にすることも保証されません。 常にエラー処理ロジックで、キャストを囲みます。</param>
+    <param name="e">イベントのデータ。</param>
+    <summary>XML スキーマ検証イベントを処理するコールバック メソッドを表す、<see cref="T:System.Xml.Schema.ValidationEventArgs" />です。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+</Type>

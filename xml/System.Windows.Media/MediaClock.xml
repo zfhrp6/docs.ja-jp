@@ -1,0 +1,148 @@
+<Type Name="MediaClock" FullName="System.Windows.Media.MediaClock">
+  <TypeSignature Language="C#" Value="public class MediaClock : System.Windows.Media.Animation.Clock" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MediaClock extends System.Windows.Media.Animation.Clock" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.MediaClock" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Animation.Clock</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>メディアのタイミング状態を保持する、<see cref="T:System.Windows.Media.MediaTimeline" />です。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected MediaClock (System.Windows.Media.MediaTimeline media);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor(class System.Windows.Media.MediaTimeline media) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.MediaClock.#ctor(System.Windows.Media.MediaTimeline)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="media" Type="System.Windows.Media.MediaTimeline" />
+      </Parameters>
+      <Docs>
+        <param name="media">メディアのクロックのテンプレートとして使用するタイムラインになります。</param>
+        <summary><see cref="T:System.Windows.Media.MediaClock" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DiscontinuousTimeMovement">
+      <MemberSignature Language="C#" Value="protected override void DiscontinuousTimeMovement ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void DiscontinuousTimeMovement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.MediaClock.DiscontinuousTimeMovement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>呼び出されたときに動作が中断します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCanSlip">
+      <MemberSignature Language="C#" Value="protected override bool GetCanSlip ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool GetCanSlip() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.MediaClock.GetCanSlip" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>メディアのクロックのずれが可能かどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />場合は、メディアのクロックはずれることです。それ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentTimeCore">
+      <MemberSignature Language="C#" Value="protected override TimeSpan GetCurrentTimeCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.TimeSpan GetCurrentTimeCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.MediaClock.GetCurrentTimeCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>実際のメディアの時間を識別する値を取得します。 この値は、スリップ同期に使用できます。</summary>
+        <returns>実際のメディアの時間です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SpeedChanged">
+      <MemberSignature Language="C#" Value="protected override void SpeedChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SpeedChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.MediaClock.SpeedChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クロック速度が変更されたときに呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Stopped">
+      <MemberSignature Language="C#" Value="protected override void Stopped ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Stopped() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.MediaClock.Stopped" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クロックが停止しているときに呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Timeline">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.MediaTimeline Timeline { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.MediaTimeline Timeline" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.MediaClock.Timeline" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.MediaTimeline</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Media.MediaTimeline" />クロックの制御の動作を説明します。</summary>
+        <value><see cref="T:System.Windows.Media.MediaTimeline" />クロックの制御の動作を説明します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

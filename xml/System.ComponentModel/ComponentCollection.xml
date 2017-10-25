@@ -1,0 +1,210 @@
+<Type Name="ComponentCollection" FullName="System.ComponentModel.ComponentCollection">
+  <TypeSignature Language="C#" Value="public class ComponentCollection : System.Collections.ReadOnlyCollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ComponentCollection extends System.Collections.ReadOnlyCollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.ComponentCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+    <BaseTypeName FrameworkAlternate="netframework-4.5">System.Collections.ReadOnlyCollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.ComponentModel.IComponent" /> オブジェクトのコレクション用の読み取り専用コンテナーを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコレクションが継承<xref:System.Collections.ReadOnlyCollectionBase>です。 追加する唯一の方法<xref:System.ComponentModel.IComponent>をこのコレクションにオブジェクト クラスのコンス トラクターを使用する方法です。  
+  
+ このコレクションは、2 つのインデクサー プロパティ、文字列インデクサーおよび整数インデクサーを提供します。 文字列インデクサー プロパティを返しますコンポーネント コレクション内で名前によって場合、<xref:System.ComponentModel.IComponent.Site%2A>コレクション内のコンポーネントのプロパティは使用されません`null`と<xref:System.ComponentModel.ISite.Name%2A>のプロパティ、<xref:System.ComponentModel.IComponent.Site%2A>コンポーネントのプロパティの指定した文字列に一致します。 整数インデクサー プロパティから返される、<xref:System.ComponentModel.IComponent>指定されたコレクションのインデックス位置。 <xref:System.ComponentModel.ComponentCollection.CopyTo%2A>メソッドは、配列の指定したインデックス位置への書き込みを開始、指定した配列にコレクションの内容をコピーします。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.ComponentModel.ComponentCollection>ユーザー設定のコレクションを列挙する`BookComponent`オブジェクト。  
+  
+ [!code-cpp[ContainerExmpl#2](~/samples/snippets/cpp/VS_Snippets_Winforms/ContainerExmpl/CPP/librarycontainer.cpp#2)]
+ [!code-csharp[ContainerExmpl#2](~/samples/snippets/csharp/VS_Snippets_Winforms/ContainerExmpl/CS/librarycontainer.cs#2)]
+ [!code-vb[ContainerExmpl#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ContainerExmpl/VB/librarycontainer.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ComponentCollection (System.ComponentModel.IComponent[] components);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ComponentModel.IComponent[] components) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.ComponentCollection.#ctor(System.ComponentModel.IComponent[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="components" Type="System.ComponentModel.IComponent[]" />
+      </Parameters>
+      <Docs>
+        <param name="components">配列<see cref="T:System.ComponentModel.IComponent" />オブジェクトを使用して、コレクションを初期化します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.ComponentCollection" />クラスの指定されたコンポーネントの配列を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、各追加<xref:System.ComponentModel.IComponent>、指定した<xref:System.ComponentModel.IComponent>コレクションへの配列。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.ComponentModel.ComponentCollection>の配列から`BookComponent`オブジェクト。  
+  
+ [!code-cpp[ContainerExmpl#2](~/samples/snippets/cpp/VS_Snippets_Winforms/ContainerExmpl/CPP/librarycontainer.cpp#2)]
+ [!code-csharp[ContainerExmpl#2](~/samples/snippets/csharp/VS_Snippets_Winforms/ContainerExmpl/CS/librarycontainer.cs#2)]
+ [!code-vb[ContainerExmpl#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ContainerExmpl/VB/librarycontainer.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.ComponentModel.IComponent[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.ComponentModel.IComponent[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.ComponentCollection.CopyTo(System.ComponentModel.IComponent[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.ComponentModel.IComponent[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.ComponentModel.IComponent" />するコレクション内のオブジェクトをコピー先の配列。</param>
+        <param name="index">インデックス、<c>配列</c>開始位置としてコピーをする必要があります。</param>
+        <summary>指定した配列インデックスを開始位置として、配列にコレクション全体をコピーします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public virtual System.ComponentModel.IComponent this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.IComponent Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.ComponentCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.IComponent</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクションのインデックス、<see cref="T:System.ComponentModel.Component" />を取得します。</param>
+        <summary>取得、<see cref="T:System.ComponentModel.Component" />コレクション内の指定したコレクションのインデックス位置。</summary>
+        <value>指定されたインデックス位置にある <see cref="T:System.ComponentModel.IComponent" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、派生クラスでオーバーライドできます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定したインデックスがコレクションのインデックスの範囲内にない場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public virtual System.ComponentModel.IComponent this[string name] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.IComponent Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.ComponentCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.IComponent</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.ComponentModel.IComponent" />を取得します。</param>
+        <summary>指定した名前と一致するコレクション内の任意のコンポーネントを取得します。</summary>
+        <value>指定した名前と一致する名前を持つコンポーネント、<paramref name="name" />パラメーター、または<see langword="null" />コレクション内で名前付きのコンポーネントが見つからない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、派生クラスでオーバーライドできます。  
+  
+ このプロパティを返します、<xref:System.ComponentModel.IComponent>コレクション内で場合その<xref:System.ComponentModel.IComponent.Site%2A>プロパティは使用されません`null`と<xref:System.ComponentModel.ISite.Name%2A>のプロパティ、<xref:System.ComponentModel.IComponent.Site%2A>指定した文字列と一致するプロパティです。  
+  
+> [!NOTE]
+>  この文字列は、コンポーネントが配置される、デザイン時のみに実行される場合にのみ機能します。 サイトに、<xref:System.ComponentModel.Component>実行時に、設定、<xref:System.ComponentModel.Component.Site%2A>のプロパティ、<xref:System.ComponentModel.Component>です。 <xref:System.ComponentModel.ISite.Name%2A>のプロパティ、<xref:System.ComponentModel.ISite>に設定、<xref:System.ComponentModel.IComponent.Site%2A>プロパティは、コンポーネントを取得するには、このプロパティを設定することも必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

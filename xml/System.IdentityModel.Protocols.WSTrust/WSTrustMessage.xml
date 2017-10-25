@@ -1,0 +1,510 @@
+<Type Name="WSTrustMessage" FullName="System.IdentityModel.Protocols.WSTrust.WSTrustMessage">
+  <TypeSignature Language="C#" Value="public abstract class WSTrustMessage : System.IdentityModel.OpenObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit WSTrustMessage extends System.IdentityModel.OpenObject" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Protocols.WSTrust.WSTrustMessage" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.OpenObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>RST および RSTR の基本クラス。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスが表す要素とメッセージに関する詳細については、自分のシナリオに適用される Ws-trust 仕様のバージョンを参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WSTrustMessage ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Protocols.WSTrust.WSTrustMessage" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 機能拡張の既定のコンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowPostdating">
+      <MemberSignature Language="C#" Value="public bool AllowPostdating { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowPostdating" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.AllowPostdating" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または wst:AllowPostdating 要素の内容を設定します。</summary>
+        <value>
+          <see langword="true" />返されたトークンは、遅延のトークンの要求を許可する必要があります場合、それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この省略可能な要素は、トークンは、遅延のトークンの要求を許可する必要がありますを返すことを示します。  
+  
+ このプロパティは通常、トークンの更新のバインディングで使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppliesTo">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Protocols.WSTrust.EndpointReference AppliesTo { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Protocols.WSTrust.EndpointReference AppliesTo" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.AppliesTo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Protocols.WSTrust.EndpointReference</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または wsp:AppliesTo 要素の内容を設定します。</summary>
+        <value><see cref="T:System.ServiceModel.EndpointAddress" />セキュリティ トークンが必要となるエンドポイントのアドレスを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この省略可能な要素をこのセキュリティ トークンが必要なエンドポイント アドレスを指定します。たとえば、トークンを適用するサービスです。  
+  
+ トークンの要求メッセージでは、wst:TokenType または wst:AppliesTo のいずれかを定義してください。 両方を指定すると、wst:AppliesTo フィールドが優先されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthenticationType">
+      <MemberSignature Language="C#" Value="public string AuthenticationType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AuthenticationType" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.AuthenticationType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または wst:AuthenticationType 要素の内容を設定します。</summary>
+        <value>必要な認証の種類を示す URI を含む文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この省略可能な要素は、必要に応じて、認証の種類を示す URI として指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BinaryExchange">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Protocols.WSTrust.BinaryExchange BinaryExchange { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Protocols.WSTrust.BinaryExchange BinaryExchange" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.BinaryExchange" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Protocols.WSTrust.BinaryExchange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または wst:BinaryExchange 要素の内容を設定します。</summary>
+        <value>A<see cref="T:System.IdentityModel.Protocols.WSTrust.BinaryExchange" />で交換される、バイナリ データを格納しています。 これには、その値型と EncodingType 属性だけでなく、実際のデータの内容が含まれます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanonicalizationAlgorithm">
+      <MemberSignature Language="C#" Value="public string CanonicalizationAlgorithm { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CanonicalizationAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.CanonicalizationAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または wst:CanonicalizationAlgorithm 要素の内容を設定します。</summary>
+        <value>標準化アルゴリズムを示す URI を含む文字列です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Context">
+      <MemberSignature Language="C#" Value="public string Context { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Context" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.Context" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または RST、RSTR にコンテキストの属性の内容を設定します。</summary>
+        <value>要求または応答メッセージのコンテキストを識別する URI を含む文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ RST 要素の省略可能なコンテキスト属性は、要求の識別子 (コンテキスト) を指定します。 この要求に関連するすべての後続 RSTR 要素には、この属性を実行する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EncryptionAlgorithm">
+      <MemberSignature Language="C#" Value="public string EncryptionAlgorithm { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EncryptionAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.EncryptionAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または wst:EncryptionAlgorithm 要素の内容を設定します。</summary>
+        <value>暗号化アルゴリズムを示す URI を含む文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この省略可能な URI 要素は、返されたトークン内で使用される、目的の暗号化アルゴリズムを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EncryptWith">
+      <MemberSignature Language="C#" Value="public string EncryptWith { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EncryptWith" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.EncryptWith" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または wst:EncryptWith 要素の内容を設定します。</summary>
+        <value>発行されたセキュリティ トークンに使用する目的の暗号化 algoritm を示す URI を含む文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この省略可能な URI 要素は、発行されたセキュリティ トークンに使用する目的の暗号化アルゴリズムを示します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティを設定しようとすると、<see langword="null" />または空の文字列が発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Entropy">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Protocols.WSTrust.Entropy Entropy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Protocols.WSTrust.Entropy Entropy" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.Entropy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Protocols.WSTrust.Entropy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または wst:Entropy 要素の内容を設定します。</summary>
+        <value>A<see cref="T:System.IdentityModel.Protocols.WSTrust.Entropy" />エントロピ要素の内容を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この省略可能な要素は、キーの作成に使用されるエントロピを指定する要求元を使用します。 これは、トークン発行要求メッセージでよく使用します。 この要素の値は、キーを暗号化するかどうかに応じて、EncryptedKey または BinarySecret をする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeySizeInBits">
+      <MemberSignature Language="C#" Value="public Nullable&lt;int&gt; KeySizeInBits { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;int32&gt; KeySizeInBits" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.KeySizeInBits" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または RequestSecurityToken (RST) メッセージ内の wst:KeySize 要素の内容を設定します。</summary>
+        <value>キー サイズ (ビット単位)。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">0 未満の値を設定しようとすると、発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyType">
+      <MemberSignature Language="C#" Value="public string KeyType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string KeyType" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.KeyType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または RequestSecurityToken (RST) メッセージ内の wst:KeyType 要素の内容を設定します。</summary>
+        <value>必要なキーの種類を識別する URI を含む文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この省略可能な URI 要素は、セキュリティ トークンに必要なキーの種類を示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyWrapAlgorithm">
+      <MemberSignature Language="C#" Value="public string KeyWrapAlgorithm { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string KeyWrapAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.KeyWrapAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または wst:KeyWrapAlgorithm 要素の内容を設定します。</summary>
+        <value>キーを識別する URI を含む文字列では、アルゴリズムをラップします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この省略可能な URI では、STS が非対称キーを使用して証明書利用者に対して発行されたトークンを暗号化するときに、キー ラップに使用する適切なアルゴリズムを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Lifetime">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Protocols.WSTrust.Lifetime Lifetime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Protocols.WSTrust.Lifetime Lifetime" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.Lifetime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Protocols.WSTrust.Lifetime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または RequestSecurityToken (RST) メッセージ内の wst:Lifetime 要素の内容を設定します。</summary>
+        <value>A<see cref="T:System.IdentityModel.Protocols.WSTrust.Lifetime" />を表す、希望する時間を返されたトークンが有効になります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この省略可能な要素は、返されたセキュリティ トークンが有効である目的の時間範囲を指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReplyTo">
+      <MemberSignature Language="C#" Value="public string ReplyTo { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ReplyTo" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.ReplyTo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、証明書利用者への返信に使用するアドレスを設定します。</summary>
+        <value>アドレスを含む文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、Ws-federation プロトコルを受動的なシナリオでのみ使用されているローカルの拡張機能です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestType">
+      <MemberSignature Language="C#" Value="public string RequestType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RequestType" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.RequestType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または wst:RequestType 要素を設定します。</summary>
+        <value>要求の種類を示す URI を含む文字列たとえば、1 つで定義されている定数の<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestTypes" />クラスです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、必須要素は、要求の種類を示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignatureAlgorithm">
+      <MemberSignature Language="C#" Value="public string SignatureAlgorithm { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SignatureAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.SignatureAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または wst:SignatureAlgorithm 要素の内容を設定します。</summary>
+        <value>署名アルゴリズムを示す URI を含む文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この省略可能な URI 要素は、返されたトークン内で使用される、必要な署名アルゴリズムを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignWith">
+      <MemberSignature Language="C#" Value="public string SignWith { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SignWith" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.SignWith" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または wst:SignWith 要素の内容を設定します。</summary>
+        <value>必要な署名アルゴリズムを識別する URI を含む文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この省略可能な URI 要素は、発行されたセキュリティ トークンに使用する必要な署名アルゴリズムを示します。 これは、RequestSecurityToken 要素の拡張機能です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">値を設定しようとすると、<see langword="null" />または空の文字列が発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TokenType">
+      <MemberSignature Language="C#" Value="public string TokenType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TokenType" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.TokenType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または wst:TokenType 要素の内容を設定します。</summary>
+        <value>トークンの種類を示す URI を含む文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この省略可能な要素は、目的のトークンの種類を示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseKey">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Protocols.WSTrust.UseKey UseKey { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Protocols.WSTrust.UseKey UseKey" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.UseKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Protocols.WSTrust.UseKey</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または wst:UseKey 要素の内容を設定します。</summary>
+        <value>A<see cref="T:System.IdentityModel.Protocols.WSTrust.UseKey" />キーを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求元が、新しく作成するのではなく、既存のキーを使用することを希望する場合、任意のキーを含むセキュリティ トークンを参照するこのプロパティを使用できます。 これは、asymetric キー issurance ケースでよく使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

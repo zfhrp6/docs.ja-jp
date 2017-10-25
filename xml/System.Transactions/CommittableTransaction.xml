@@ -1,0 +1,427 @@
+<Type Name="CommittableTransaction" FullName="System.Transactions.CommittableTransaction">
+  <TypeSignature Language="C#" Value="public sealed class CommittableTransaction : System.Transactions.Transaction, IAsyncResult, IDisposable, System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit CommittableTransaction extends System.Transactions.Transaction implements class System.IAsyncResult, class System.IDisposable, class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Transactions.CommittableTransaction" />
+  <AssemblyInfo>
+    <AssemblyName>System.Transactions</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Transactions.Local</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Transactions.Transaction</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IAsyncResult</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>コミットできるトランザクションを示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Transactions.CommittableTransaction> クラスは、<xref:System.Transactions.TransactionScope> クラスが暗黙的に使用されるのと対照的に、アプリケーションがトランザクションを明示的に使用する方法を提供します。 <xref:System.Transactions.TransactionScope> クラスとは異なり、アプリケーション作成者はトランザクションをコミットまたは中止するために、具体的に <xref:System.Transactions.CommittableTransaction.Commit%2A> メソッドまたは <xref:System.Transactions.Transaction.Rollback%2A> メソッドを呼び出す必要があります。 ただし、トランザクションの作成者のみがトランザクションをコミットすることができます。 コミットできるトランザクションのコピーがを介して取得されたため、<xref:System.Transactions.Transaction.Clone%2A>メソッドはコミットされません。  
+  
+> [!NOTE]
+>  使用して暗黙のトランザクションを作成することをお勧め、<xref:System.Transactions.TransactionScope>クラスのアンビエント トランザクションのコンテキストが自動的に管理できるようにします。 使用する必要も、<xref:System.Transactions.TransactionScope>と<xref:System.Transactions.DependentTransaction>複数の関数呼び出しまたは複数のスレッド呼び出しの間で同じトランザクションの使用を必要とするアプリケーションのクラスです。 このモデルの詳細については、次を参照してください。、[を実装する、暗黙的なトランザクションを使用してトランザクション スコープ](~/docs/framework/data/transactions/implementing-an-implicit-transaction-using-transaction-scope.md)トピックです。  
+  
+ 作成する、<xref:System.Transactions.CommittableTransaction>アンビエント トランザクション、これは、コードで実行するトランザクションを自動的に設定しません。 取得または静的なを呼び出すことによって、アンビエント トランザクションを設定することができます<xref:System.Transactions.Transaction.Current%2A?displayProperty=nameWithType>のグローバル プロパティ<xref:System.Transactions.Transaction>オブジェクト。 アンビエント トランザクションの詳細については、の「管理するトランザクションを使用してフロー TransactionScopeOption」を参照してください、[を実装する、暗黙的なトランザクションを使用してトランザクション スコープ](~/docs/framework/data/transactions/implementing-an-implicit-transaction-using-transaction-scope.md)トピックです。 アンビエント トランザクションが設定されていない場合、リソース マネージャーで任意の操作はこのトランザクションの一部ではありません。 明示的に設定し、アンビエント トランザクション リソース マネージャが右のトランザクション コンテキストで動作することを確認するをリセットする必要があります。  
+  
+ なるまで、<xref:System.Transactions.CommittableTransaction>がコミットされると、トランザクションに関連するすべてのリソースがまだロックされています。  
+  
+ <xref:System.Transactions.CommittableTransaction> オブジェクトは再利用できません。 コミットまたはロールバックされましたが、トランザクションで再度使用または現在のアンビエント トランザクションのコンテキストとして設定することはできません。  
+  
+   
+  
+## Examples  
+ 次の例の 2 つの新しいインスタンスを作成する<xref:System.Transactions.CommittableTransaction>、コミットして、それぞれに戻るにロールアップします。  
+  
+  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>この型はスレッド セーフです。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CommittableTransaction ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Transactions.CommittableTransaction.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Transactions.CommittableTransaction" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のサンプルの新しいインスタンスを作成する<xref:System.Transactions.CommittableTransaction>コミットされるとします。  
+  
+ [!code-csharp[Tx_CommittableTx#1](~/samples/snippets/csharp/VS_Snippets_CFX/tx_committabletx/cs/committabletxwithsql.cs#1)]
+ [!code-vb[Tx_CommittableTx#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/tx_committabletx/vb/committabletxwithsql.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.PlatformNotSupportedException">Windows 98、Windows 98 Second Edition または Windows Millennium Edition でトランザクションを作成しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CommittableTransaction (TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Transactions.CommittableTransaction.#ctor(System.TimeSpan)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">最長時間を中止する前に、トランザクションが存在できます。</param>
+        <summary>指定した <paramref name="timeout" /> 値を使用して、<see cref="T:System.Transactions.CommittableTransaction" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.PlatformNotSupportedException">Windows 98、Windows 98 Second Edition または Windows Millennium Edition でトランザクションを作成しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CommittableTransaction (System.Transactions.TransactionOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Transactions.TransactionOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Transactions.CommittableTransaction.#ctor(System.Transactions.TransactionOptions)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="options" Type="System.Transactions.TransactionOptions" />
+      </Parameters>
+      <Docs>
+        <param name="options">A<see cref="T:System.Transactions.TransactionOptions" />新しいトランザクションを使用するトランザクション オプションを記述する構造体。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Transactions.CommittableTransaction" />クラス トランザクション オプションを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のサンプルの新しいインスタンスを作成する<xref:System.Transactions.CommittableTransaction>オプションとし、それを中止します。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.PlatformNotSupportedException">Windows 98、Windows 98 Second Edition または Windows Millennium Edition でトランザクションを作成しようとしました。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="options" /> が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginCommit">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginCommit (AsyncCallback callback, object user_defined_state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginCommit(class System.AsyncCallback callback, object user_defined_state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Transactions.CommittableTransaction.BeginCommit(System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncCallback" Type="System.AsyncCallback" />
+        <Parameter Name="asyncState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="callback">To be added.</param>
+        <param name="user_defined_state">To be added.</param>
+        <summary>非同期的に、トランザクションをコミットを開始します。</summary>
+        <returns><see cref="T:System.IAsyncResult" />非同期操作の状態を確認するか、操作が完了するまで待機する、呼び出し元が使用できるインターフェイス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、トランザクションが完了する前に、すぐに返します。 トランザクション、別のスレッドでのコミットと`asyncCallback`が完了したときに、デリゲートが呼び出されます。 このメソッドが呼び出された後に表示されません、トランザクションの結果が呼び出されるまで<xref:System.Transactions.CommittableTransaction.EndCommit%2A>です。  
+  
+> [!NOTE]
+>  コミット処理は、このメソッドの呼び出しの内部同期をとって実行可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Commit">
+      <MemberSignature Language="C#" Value="public void Commit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Commit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Transactions.CommittableTransaction.Commit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>トランザクションをコミットしようとしています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが呼び出されると、トランザクションに参加する登録されているすべてのオブジェクトをポーリングして、コミットまたはトランザクションをロールバックするには、その投票が個別に示さです。 すべての参加要素は、トランザクションをロールバックする投票する場合、はロールバックし、このメソッドはスロー、<xref:System.Transactions.TransactionException>例外。 これは、トランザクションに対する通常の動作であり、コードでキャッチしてこのような例外を処理する必要があります。  
+  
+ <xref:System.Transactions.CommittableTransaction.Commit%2A>および<xref:System.Transactions.CommittableTransaction.EndCommit%2A>トランザクション処理の最初のフェーズが完了するまでブロックします。 すべてのリソース マネージャーの後に最初のフェーズが終了し、トランザクションの参加リストは、トランザクションの結果に投票がおよび、<xref:System.Transactions.TransactionManager>コミットするか、トランザクションを中止することにしました永続的にします。 処理の 2 番目のフェーズは、常に非同期にします。 したがって、特定のトランザクション内からコミットされたばかりのデータが使用できることすぐにその後このデータを表示する別のトランザクションを使用していないときに保証はありません。  
+  
+ トランザクション処理の最初のフェーズが完了するまでに十分な注意する必要があります (WinForm) の Windows フォーム アプリケーションの場合、またはデッドロックでこのメソッドを使用するときにこのメソッドはブロックが発生することができます。 (たとえば、ボタンをクリックすると)、1 つの WinForm コントロール イベント内でこのメソッドを呼び出すし、同期を使用する場合<xref:System.Windows.Forms.Control.Invoke%2A>デッドロックが発生するトランザクションの処理中のいくつかの UI タスク (たとえば、変化する色) を実行するコントロールを送信するためのメソッドです。 これは、ため、<xref:System.Windows.Forms.Control.Invoke%2A>メソッドは同期であり、UI スレッドには、そのジョブが完了するまで、ワーカー スレッドをブロックします。 ただし、このシナリオでは、UI スレッドも待機しているワーカー スレッドがトランザクションをコミットします。 結果とは、[なし] を続行できませんされ、スコープは、コミットの終了を無期限に待機です。 使用する必要があります<xref:System.Windows.Forms.Control.BeginInvoke%2A>なく<xref:System.Windows.Forms.Control.Invoke%2A>可能な限り、非同期、したがってにくくなりました。 デッドロックになっているためです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Transactions.TransactionInDoubtException">
+          <see cref="M:System.Transactions.CommittableTransaction.Commit" />トランザクションと、トランザクションで呼び出されるとなる<see cref="F:System.Transactions.TransactionStatus.InDoubt" />です。</exception>
+        <exception cref="T:System.Transactions.TransactionAbortedException">
+          <see cref="M:System.Transactions.CommittableTransaction.Commit" />呼び出されたし、最初にトランザクションがロールバックされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EndCommit">
+      <MemberSignature Language="C#" Value="public void EndCommit (IAsyncResult ar);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EndCommit(class System.IAsyncResult ar) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Transactions.CommittableTransaction.EndCommit(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="ar">To be added.</param>
+        <summary>非同期的に、トランザクションをコミットする試みを終了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パラメーターとして指定されたコールバック デリゲートでこのメソッドを呼び出す必要があります、<xref:System.Transactions.CommittableTransaction.BeginCommit%2A>メソッドは、非同期のコミットに関連するクリーンアップ作業を完了するとします。 デリゲートを待たずに早い段階このメソッドを呼び出すことができます。 このメソッドを呼び出すまで、トランザクションが完了していない場合は、このメソッドは、その完了を待機します。  
+  
+> [!CAUTION]
+>  <xref:System.IAsyncResult.CompletedSynchronously%2A>プロパティから返される`asyncResult`は常に`false`場合でも、同期的に、操作を完了します。  
+  
+ <xref:System.Transactions.CommittableTransaction.Commit%2A>および<xref:System.Transactions.CommittableTransaction.EndCommit%2A>トランザクション処理の最初のフェーズが完了するまでブロックします。 すべてのリソース マネージャーの後に最初のフェーズが終了し、トランザクションの参加リストは、トランザクションの結果に投票がおよび、<xref:System.Transactions.TransactionManager>コミットするか、トランザクションを中止することにしました永続的にします。 処理の 2 番目のフェーズは、常に非同期にします。 したがって、特定のトランザクション内からコミットされたばかりのデータが使用できることすぐにその後このデータを表示する別のトランザクションを使用していないときに保証はありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Transactions.TransactionAbortedException">
+          <see cref="M:System.Transactions.CommittableTransaction.BeginCommit(System.AsyncCallback,System.Object)" />呼び出されたし、最初にトランザクションがロールバックされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IAsyncResult.AsyncState">
+      <MemberSignature Language="C#" Value="object System.IAsyncResult.AsyncState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.IAsyncResult.AsyncState" />
+      <MemberSignature Language="DocId" Value="P:System.Transactions.CommittableTransaction.System#IAsyncResult#AsyncState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最後のパラメーターとして指定されたオブジェクトを取得、<see cref="M:System.Transactions.CommittableTransaction.BeginCommit(System.AsyncCallback,System.Object)" />メソッドの呼び出しです。</summary>
+        <value>最後のパラメーターとして指定されたオブジェクト、<see cref="M:System.Transactions.CommittableTransaction.BeginCommit(System.AsyncCallback,System.Object)" />メソッドの呼び出しです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IAsyncResult.AsyncWaitHandle">
+      <MemberSignature Language="C#" Value="System.Threading.WaitHandle System.IAsyncResult.AsyncWaitHandle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Threading.WaitHandle System.IAsyncResult.AsyncWaitHandle" />
+      <MemberSignature Language="DocId" Value="P:System.Transactions.CommittableTransaction.System#IAsyncResult#AsyncWaitHandle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.WaitHandle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Threading.WaitHandle" />非同期操作が完了するまで待機するために使用されます。</summary>
+        <value>A<see cref="T:System.Threading.WaitHandle" />非同期操作が完了するまで待機するために使用されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IAsyncResult.CompletedSynchronously">
+      <MemberSignature Language="C#" Value="bool System.IAsyncResult.CompletedSynchronously { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.IAsyncResult.CompletedSynchronously" />
+      <MemberSignature Language="DocId" Value="P:System.Transactions.CommittableTransaction.System#IAsyncResult#CompletedSynchronously" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>かどうかを示す値を取得、非同期コミット操作を同期的に完了します。</summary>
+        <value>
+          <see langword="true" />非同期のコミット操作が同期的に完了した場合それ以外の場合、<see langword="false" />です。 このプロパティは常に返します<see langword="false" />場合でも、同期的に、操作を完了します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IAsyncResult.IsCompleted">
+      <MemberSignature Language="C#" Value="bool System.IAsyncResult.IsCompleted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.IAsyncResult.IsCompleted" />
+      <MemberSignature Language="DocId" Value="P:System.Transactions.CommittableTransaction.System#IAsyncResult#IsCompleted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>非同期のコミット操作が完了したかどうか示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、操作が完了しました。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.ISerializable.GetObjectData">
+      <MemberSignature Language="C#" Value="void ISerializable.GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.Serialization.ISerializable.GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Transactions.CommittableTransaction.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">To be added.</param>
+        <param name="context">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

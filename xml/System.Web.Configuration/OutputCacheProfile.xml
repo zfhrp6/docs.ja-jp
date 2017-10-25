@@ -1,0 +1,523 @@
+<Type Name="OutputCacheProfile" FullName="System.Web.Configuration.OutputCacheProfile">
+  <TypeSignature Language="C#" Value="public sealed class OutputCacheProfile : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed OutputCacheProfile extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.OutputCacheProfile" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アプリケーション ページで使用できる出力キャッシュ プロファイルを構成します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.OutputCacheProfile>クラスをプログラムでアクセスおよび変更する方法を提供する、`add`の要素、 `outputCacheProfiles` 」の「、`caching`構成ファイルのセクションです。  
+  
+ <xref:System.Web.Configuration.OutputCacheProfile>オブジェクトを一元化して、すべてのページで指定する必要がなくなる依存関係、キャッシュの場所、およびキャッシュの有効期限の時間などのよく使用される構成設定。  
+  
+ <xref:System.Web.Configuration.OutputCacheProfile>を使用してページに適用できる、`CacheProfile`ディレクティブの属性です。  
+  
+> [!NOTE]
+>  ディレクティブに含まれるすべての設定を上書きできます、<xref:System.Web.Configuration.OutputCacheProfile>以外のオブジェクト、<xref:System.Web.Configuration.OutputCacheProfile.Enabled%2A>属性。 これを有効または無効にするには、<xref:System.Web.Configuration.OutputCacheProfile>可能性がありますがオーバーライドされているすべてのページ内のディレクティブを変更する必要はありません。  
+  
+ <xref:System.Web.Caching.CacheDependency>クラスは、依存関係を監視するため、キャッシュされた項目の変更をキャッシュされたアイテムに自動的に削除されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.OutputCacheSettingsSection.OutputCacheProfiles%2A>コレクションへのアクセスをその<xref:System.Web.Configuration.OutputCacheProfile>オブジェクト。  
+  
+ [!code-csharp[System.Web.Configuration.OutputCacheProfile#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfile/CS/OutputCacheProfile.cs#1)]
+ [!code-vb[System.Web.Configuration.OutputCacheProfile#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfile/VB/OutputCacheProfile.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OutputCacheProfile (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.OutputCacheProfile.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">使用する名前の値。</param>
+        <summary><see cref="T:System.Web.Configuration.OutputCacheProfile" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Duration">
+      <MemberSignature Language="C#" Value="public int Duration { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Duration" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.OutputCacheProfile.Duration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("duration", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するページまたはコントロールがキャッシュされる期間。</summary>
+        <value>時間の期間 (秒)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.OutputCacheProfile.Duration%2A>ページやユーザー コントロールをキャッシュする秒単位の時間を表します。 このプロパティの設定 ページまたはコントロールを適用し、自動的にすると、その出力のキャッシュからの HTTP 応答の有効期限ポリシーを確立します。  
+  
+> [!NOTE]
+>  <xref:System.Web.Configuration.OutputCacheProfile.Duration%2A>プロファイルまたはプロファイルを使用してページのディレクティブで定義する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.OutputCacheProfile.Duration%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.OutputCacheProfile#10](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfile/CS/OutputCacheProfile.cs#10)]
+ [!code-vb[System.Web.Configuration.OutputCacheProfile#10](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfile/VB/OutputCacheProfile.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.OutputCacheProfile.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("enabled", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキャッシュが有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />キャッシュが有効である場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.OutputCacheProfile.Enabled%2A>プロパティでは、有効または 1 か所だけでキャッシュのメカニズムを無効にします。 すべてのページまたはこれを使用するコントロールに影響を与えます<xref:System.Web.Configuration.OutputCacheProfile>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.OutputCacheProfile.Enabled%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.OutputCacheProfile#12](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfile/CS/OutputCacheProfile.cs#12)]
+ [!code-vb[System.Web.Configuration.OutputCacheProfile#12](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfile/VB/OutputCacheProfile.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Location">
+      <MemberSignature Language="C#" Value="public System.Web.UI.OutputCacheLocation Location { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.OutputCacheLocation Location" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.OutputCacheProfile.Location" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("location")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.OutputCacheLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または出力キャッシュの場所を設定します。</summary>
+        <value><see cref="T:System.Web.UI.OutputCacheLocation" /> 列挙値のいずれか。 既定値は、<see langword="Any" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Web.Configuration.OutputCacheProfile.Location%2A>に設定されている`Any`、出力キャッシュは、要求元のブラウザー クライアント以外の場合は、プロキシ サーバーまたは要求に参加している他のサーバー上または要求が処理されたサーバーに配置することができます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.OutputCacheProfile.Location%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.OutputCacheProfile#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfile/CS/OutputCacheProfile.cs#5)]
+ [!code-vb[System.Web.Configuration.OutputCacheProfile#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfile/VB/OutputCacheProfile.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.OutputCacheProfile.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Configuration.WhiteSpaceTrimStringConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("name", DefaultValue=Mono.Cecil.CustomAttributeArgument, IsKey=true, IsRequired=true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Web.Configuration.OutputCacheProfile" />名。</summary>
+        <value><see cref="T:System.Web.Configuration.OutputCacheProfile" />名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、<xref:System.Web.Configuration.OutputCacheProfile.Name%2A>に値を割り当てる、`CacheProfile`を適用する場合は、ディレクティブの属性、<xref:System.Web.Configuration.OutputCacheProfile>ページまたは制御する値。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.OutputCacheProfile.Name%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.OutputCacheProfile#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfile/CS/OutputCacheProfile.cs#11)]
+ [!code-vb[System.Web.Configuration.OutputCacheProfile#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfile/VB/OutputCacheProfile.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NoStore">
+      <MemberSignature Language="C#" Value="public bool NoStore { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool NoStore" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.OutputCacheProfile.NoStore" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("noStore", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはセカンダリ ストレージが有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />セカンダリ ストレージが有効である場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 持つページ、<xref:System.Web.Configuration.OutputCacheProfile.NoStore%2A?displayProperty=nameWithType>プロパティに設定`true`セカンダリ ストレージの機密情報を防ぐためにヘッダーを指定する応答を発行します。  
+  
+ この属性を設定する`true`呼び出しと同じ、 <xref:System.Web.HttpCachePolicy.SetNoStore%2A?displayProperty=nameWithType> Web 要求中にメソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.OutputCacheProfile.NoStore%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.OutputCacheProfile#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfile/CS/OutputCacheProfile.cs#4)]
+ [!code-vb[System.Web.Configuration.OutputCacheProfile#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfile/VB/OutputCacheProfile.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.OutputCacheProfile.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SqlDependency">
+      <MemberSignature Language="C#" Value="public string SqlDependency { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SqlDependency" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.OutputCacheProfile.SqlDependency" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("sqlDependency")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Web.Configuration.OutputCacheProfile.SqlDependency" /> プロパティを取得または設定します。</summary>
+        <value><see cref="P:System.Web.Configuration.OutputCacheProfile.SqlDependency" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.OutputCacheProfile.SqlDependency%2A> Web アプリケーションとサーバーのデータでの変更の検出を許可する SQL Server のインスタンスの間のリレーションシップを定義します。 <xref:System.Web.Configuration.OutputCacheProfile.SqlDependency%2A> SQL がテーブルに依存しているときに、キャッシュからキャッシュされたページが削除された出力が変更されていることを確認します。  
+  
+> [!NOTE]
+>  <xref:System.Web.Caching.SqlCacheDependency>クラスは、テーブルを監視するため、キャッシュから項目を自動的に削除するテーブルが変更されたときにします。 このクラスは継承できません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.OutputCacheProfile.SqlDependency%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.OutputCacheProfile#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfile/CS/OutputCacheProfile.cs#7)]
+ [!code-vb[System.Web.Configuration.OutputCacheProfile#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfile/VB/OutputCacheProfile.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VaryByContentEncoding">
+      <MemberSignature Language="C#" Value="public string VaryByContentEncoding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string VaryByContentEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.OutputCacheProfile.VaryByContentEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("varyByContentEncoding")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、セミコロンで区切られた一連のキャッシュに保存するコンテンツのエンコード方式を設定します。</summary>
+        <value>コンテンツのエンコードの一覧。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.OutputCacheProfile.VaryByContentEncoding%2A>によって使用されるものと同じ設定が、`VaryByContentEncoding`ディレクティブの属性です。  
+  
+ <xref:System.Web.Configuration.OutputCacheProfile.VaryByContentEncoding%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VaryByControl">
+      <MemberSignature Language="C#" Value="public string VaryByControl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string VaryByControl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.OutputCacheProfile.VaryByControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("varyByControl")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Web.Configuration.OutputCacheProfile.VaryByControl" /> プロパティを取得または設定します。</summary>
+        <value><see cref="P:System.Web.Configuration.OutputCacheProfile.VaryByControl" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.OutputCacheProfile.VaryByControl%2A>はセミコロンで区切られた一連のキャッシュに保存するコントロールの Id。  
+  
+ 詳細については、次を参照してください。[キャッシュ複数バージョンのユーザー コントロールの出力](http://msdn.microsoft.com/library/7f7d839a-c060-4d2a-9c4e-7fd1080ec0ad)です。  
+  
+> [!NOTE]
+>  <xref:System.Web.Configuration.OutputCacheProfile.VaryByControl%2A>によって使用されるものと同じ設定が、`VaryByControls`ディレクティブの属性です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.OutputCacheProfile.VaryByControl%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.OutputCacheProfile#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfile/CS/OutputCacheProfile.cs#3)]
+ [!code-vb[System.Web.Configuration.OutputCacheProfile#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfile/VB/OutputCacheProfile.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VaryByCustom">
+      <MemberSignature Language="C#" Value="public string VaryByCustom { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string VaryByCustom" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.OutputCacheProfile.VaryByCustom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("varyByCustom")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Web.Configuration.OutputCacheProfile.VaryByCustom" /> プロパティを取得または設定します。</summary>
+        <value><see cref="P:System.Web.Configuration.OutputCacheProfile.VaryByCustom" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.OutputCacheProfile.VaryByCustom%2A>カスタム出力キャッシュの要件を表す任意のテキストを指定できます。 オーバーライドする必要があります、カスタムの文字列が入力した場合、<xref:System.Web.HttpApplication.GetVaryByCustomString%2A>アプリケーションの Global.asax ファイル内のメソッドです。  
+  
+> [!NOTE]
+>  <xref:System.Web.Configuration.OutputCacheProfile.VaryByCustom%2A>によって使用されるものと同じ設定が、`VaryByCustom`ディレクティブの属性です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.OutputCacheProfile.VaryByCustom%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.OutputCacheProfile#9](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfile/CS/OutputCacheProfile.cs#9)]
+ [!code-vb[System.Web.Configuration.OutputCacheProfile#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfile/VB/OutputCacheProfile.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VaryByHeader">
+      <MemberSignature Language="C#" Value="public string VaryByHeader { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string VaryByHeader" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.OutputCacheProfile.VaryByHeader" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("varyByHeader")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Web.Configuration.OutputCacheProfile.VaryByHeader" /> プロパティを取得または設定します。</summary>
+        <value><see cref="P:System.Web.Configuration.OutputCacheProfile.VaryByHeader" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.OutputCacheProfile.VaryByHeader%2A>はセミコロンで区切られた一連のヘッダー、キャッシュされた出力を変更するために使用します。 これらは、要求に関連付けられている HTTP ヘッダーです。 詳細については、次を参照してください。[ページの複数バージョンのキャッシュ](http://msdn.microsoft.com/library/c60284a9-9899-4fdc-a97c-020766b7572e)です。  
+  
+> [!NOTE]
+>  <xref:System.Web.Configuration.OutputCacheProfile.VaryByHeader%2A>によって使用されるものと同じ設定が、`VaryByHeader`の属性、します。 値を設定してすべてのヘッダーで、さまざまな"*"はお勧めしません。 キャッシュのオーバーフローや、サービス拒否攻撃の Web サーバーの場合があります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.OutputCacheProfile.VaryByHeader%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.OutputCacheProfile#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfile/CS/OutputCacheProfile.cs#2)]
+ [!code-vb[System.Web.Configuration.OutputCacheProfile#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfile/VB/OutputCacheProfile.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VaryByParam">
+      <MemberSignature Language="C#" Value="public string VaryByParam { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string VaryByParam" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.OutputCacheProfile.VaryByParam" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("varyByParam")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Web.Configuration.OutputCacheProfile.VaryByParam" /> プロパティを取得または設定します。</summary>
+        <value><see cref="P:System.Web.Configuration.OutputCacheProfile.VaryByParam" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.OutputCacheProfile.VaryByParam%2A>はセミコロンで区切られた一連のパラメーター、キャッシュされた出力を変更するために使用します。 これにより、キャッシュされる出力を取得してクエリ文字列またはフォーム ポスト パラメーター。 たとえば、クエリ文字列またはフォーム ポスト パラメーターのいずれかと共に、ユーザー コントロールの名前を指定することによって、キャッシュへの出力をユーザー コントロールを変更できます。 詳細については、次を参照してください。[キャッシュ複数バージョンのユーザー コントロールの出力](http://msdn.microsoft.com/library/7f7d839a-c060-4d2a-9c4e-7fd1080ec0ad)です。  
+  
+ <xref:System.Web.Configuration.OutputCacheProfile.VaryByParam%2A>プロファイルまたはプロファイルを使用して、ページのディレクティブで設定を定義する必要があります。  
+  
+> [!NOTE]
+>  <xref:System.Web.Configuration.OutputCacheProfile.VaryByParam%2A?displayProperty=nameWithType>によって使用されるものと同じ設定が、`VaryByParam`の属性、します。 値を設定してすべてのパラメーターで、さまざまな"*"はお勧めしません。 キャッシュのオーバーフローや、サービス拒否攻撃の Web サーバーの場合があります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.OutputCacheProfile.VaryByParam%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.OutputCacheProfile#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfile/CS/OutputCacheProfile.cs#8)]
+ [!code-vb[System.Web.Configuration.OutputCacheProfile#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfile/VB/OutputCacheProfile.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

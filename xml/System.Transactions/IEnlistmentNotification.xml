@@ -1,0 +1,225 @@
+<Type Name="IEnlistmentNotification" FullName="System.Transactions.IEnlistmentNotification">
+  <TypeSignature Language="C#" Value="public interface IEnlistmentNotification" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IEnlistmentNotification" />
+  <TypeSignature Language="DocId" Value="T:System.Transactions.IEnlistmentNotification" />
+  <AssemblyInfo>
+    <AssemblyName>System.Transactions</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Transactions.Local</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>リソース マネージャーが参加の登録時にトランザクション マネージャーに対して 2 フェーズ コミット通知コールバックを提供するために実装する必要があるインターフェイスについて説明します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リソース マネージャーをトランザクションに参加するためには、トランザクション マネージャーを通じてトランザクションに参加にする必要があります。 <xref:System.Transactions.Transaction> クラスは、この機能を提供する一連のメソッドを定義しています。これらのメソッドの名前は `Enlist` で始まります。 さまざまな`Enlist`メソッドは、さまざまな種類のリソース マネージャーが持つされた参加リストに対応します。  
+  
+ このクラスでは、リソース マネージャーが参加の登録時にトランザクション マネージャーに対して 2 フェーズ コミットの通知コールバックを提供するために実装する必要がありますインターフェイスについて説明します。 各リソース マネージャーの実装については、<xref:System.Transactions.IEnlistmentNotification>インターフェイス、する必要がありますの参加を使用して、<xref:System.Transactions.Transaction.EnlistVolatile%2A>メソッドまたは<xref:System.Transactions.Transaction.EnlistDurable%2A>のメソッド、<xref:System.Transactions.Transaction>によっては、リソースは、揮発性または持続性のあるかどうかのクラスです。 参加し、2 pc の詳細については、次を参照してください。[リソースをトランザクションの参加者として参加](~/docs/framework/data/transactions/enlisting-resources-as-participants-in-a-transaction.md)と[単一フェーズと複数のフェーズでトランザクションをコミットする](~/docs/framework/data/transactions/committing-a-transaction-in-single-phase-and-multi-phase.md)それぞれします。  
+  
+ トランザクション マネージャーは、次の方法で、2 フェーズ コミット プロトコルのさまざまな段階に参加しているオブジェクトを通知します。  
+  
+|メソッド|説明|  
+|------------|-----------------|  
+|<xref:System.Transactions.IEnlistmentNotification.Prepare%2A>|参加しているオブジェクトのこのメソッドは、トランザクション マネージャーは、トランザクションをコミットできるかどうかの参加者を問い合わせるときに、トランザクションの最初のフェーズ中にトランザクション マネージャーによってコールバックとして使用されます。|  
+|<xref:System.Transactions.IEnlistmentNotification.Commit%2A>|参加しているオブジェクトのこのメソッドは、トランザクションがコミットされた場合、2 番目のフェーズ、トランザクションのトランザクション マネージャーによってコールバックとして使用されます。|  
+|<xref:System.Transactions.IEnlistmentNotification.Rollback%2A>|参加しているオブジェクトのこのメソッドは、(つまり、ロールバックされます)、トランザクションが中止された場合、2 番目のフェーズ、トランザクションのトランザクション マネージャーによってコールバックとして使用されます。|  
+|<xref:System.Transactions.IEnlistmentNotification.InDoubt%2A>|参加しているオブジェクトのこのメソッドは、トランザクションが不明な場合、トランザクションの 2 番目のフェーズ中にトランザクション マネージャーによってコールバックとして使用されます。|  
+  
+> [!NOTE]
+>  順番、または特定の順序では通知を送信されない可能性がありますに注意する必要があります。  
+  
+   
+  
+## Examples  
+ 次の例を使用して、トランザクションの参加者としてオブジェクトを参加させることなど、このインターフェイスの実装を示しています、<xref:System.Transactions.Transaction.EnlistVolatile%2A>メソッドです。  
+  
+ [!code-csharp[Tx_Enlist#1](~/samples/snippets/csharp/VS_Snippets_CFX/tx_enlist/cs/enlist.cs#1)]
+ [!code-vb[Tx_Enlist#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/tx_enlist/vb/enlist.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Commit">
+      <MemberSignature Language="C#" Value="public void Commit (System.Transactions.Enlistment enlistment);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Commit(class System.Transactions.Enlistment enlistment) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Transactions.IEnlistmentNotification.Commit(System.Transactions.Enlistment)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enlistment" Type="System.Transactions.Enlistment" />
+      </Parameters>
+      <Docs>
+        <param name="enlistment"><see cref="T:System.Transactions.Enlistment" />トランザクション マネージャーへの応答を送信するために使用します。</param>
+        <summary>参加していることを通知オブジェクトのトランザクションがコミットされていること。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トランザクション マネージャーでは、トランザクションをコミットするすべての参加者を指示するときに、中、コミットの 2 番目のフェーズに参加しているオブジェクトのこのメソッドを呼び出します。  
+  
+ リソース マネージャーがトランザクションを終了し、TM を呼び出すことによって完了したことを通知するために必要な作業を実行する必要があります、<xref:System.Transactions.Enlistment.Done%2A>メソッドを`enlistment`パラメーター。  
+  
+ リソース マネージャーが永続的に、参加しているが、呼び出すことによって応答しないかどうかは<xref:System.Transactions.Enlistment.Done%2A>メソッド、トランザクション マネージャーは、リソース マネージャーが受信したことを確認は、<xref:System.Transactions.IEnlistmentNotification.Commit%2A>呼び出します。 そのため、トランザクション マネージャーでは、応答を待機中は保持し、このトランザクションに関連する情報を保持します。  場合<xref:System.Transactions.Enlistment.Done%2A>は決して呼び出されると、この特定の情報はの周囲は無期限に保持メモリやシステム全体のリソースにします。 これは、結果、リソースの再利用することはできません。 分散トランザクションの場合このでした MSDTC プロセスが中断される MSDTC のログをいっぱいになってしまいます。 によって管理されるトランザクションの場合<xref:System.Transactions>、この結果、リソース マネージャーのプロセスのメモリの消費量が段階的なと継続的な増加します。 したがって、非常に重要に呼び出すことは、<xref:System.Transactions.Enlistment.Done%2A>メソッドで、リソース マネージャーが完了したら、作業を準備します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InDoubt">
+      <MemberSignature Language="C#" Value="public void InDoubt (System.Transactions.Enlistment enlistment);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void InDoubt(class System.Transactions.Enlistment enlistment) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Transactions.IEnlistmentNotification.InDoubt(System.Transactions.Enlistment)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enlistment" Type="System.Transactions.Enlistment" />
+      </Parameters>
+      <Docs>
+        <param name="enlistment"><see cref="T:System.Transactions.Enlistment" />トランザクション マネージャーへの応答を送信するために使用します。</param>
+        <summary>トランザクションの状態は不明に参加しているオブジェクトに通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トランザクション マネージャーが 1 つの持続性のあるリソースを 1 つのフェーズのコミット操作を呼び出すし、持続性のあるリソースへの接続がトランザクションの結果を取得する前に失われたときに、変動の多いリソースこのメソッドが呼び出されます。 その時点では、トランザクションの結果に安全に特定できません。  
+  
+ として<xref:System.Transactions.IEnlistmentNotification.InDoubt%2A>はトランザクションの最終的な状態にあると、呼び出す必要はありません<xref:System.Transactions.IEnlistmentNotification.Commit%2A>または<xref:System.Transactions.IEnlistmentNotification.Rollback%2A>呼び出した後<xref:System.Transactions.IEnlistmentNotification.InDoubt%2A>です。  
+  
+> [!NOTE]
+>  揮発性リソースに対して、このメソッドの実装に影響を受けるデータを認識するどのような回復またはコンテインメントの操作を実行する必要があります。  呼び出す必要があります、<xref:System.Transactions.Enlistment.Done%2A>メソッドを上、`enlistment`パラメーターの処理が完了します。  
+  
+ リソース マネージャーが永続的に、参加しているが、呼び出すことによって応答しないかどうかは<xref:System.Transactions.Enlistment.Done%2A>メソッド、トランザクション マネージャーは、リソース マネージャーが受信したことを確認は、<xref:System.Transactions.IEnlistmentNotification.InDoubt%2A>呼び出します。 そのため、トランザクション マネージャーでは、応答を待機中は保持し、このトランザクションに関連する情報を保持します。  場合<xref:System.Transactions.Enlistment.Done%2A>は決して呼び出されると、この特定の情報はの周囲は無期限に保持メモリやシステム全体のリソースにします。 これは、結果、リソースの再利用することはできません。 分散トランザクションの場合このでした MSDTC プロセスが中断される MSDTC のログをいっぱいになってしまいます。 によって管理されるトランザクションの場合<xref:System.Transactions>、この結果、リソース マネージャーのプロセスのメモリの消費量が段階的なと継続的な増加します。 したがって、非常に重要に呼び出すことは、<xref:System.Transactions.Enlistment.Done%2A>メソッドで、リソース マネージャーが完了したら、作業を準備します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Prepare">
+      <MemberSignature Language="C#" Value="public void Prepare (System.Transactions.PreparingEnlistment preparingEnlistment);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Prepare(class System.Transactions.PreparingEnlistment preparingEnlistment) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Transactions.IEnlistmentNotification.Prepare(System.Transactions.PreparingEnlistment)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="preparingEnlistment" Type="System.Transactions.PreparingEnlistment" />
+      </Parameters>
+      <Docs>
+        <param name="preparingEnlistment">A<see cref="T:System.Transactions.PreparingEnlistment" />トランザクション マネージャーへの応答を送信するために使用します。</param>
+        <summary>参加しているトランザクションがコミットの準備しているオブジェクトに通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トランザクション マネージャーこのメソッドを呼び出します参加しているリソースのマネージャー、コミットのフェーズ 1 の間、トランザクションをコミットできるかどうかの参加者に問い合わせる際します。  
+  
+ ログインする必要があります、持続性のあるリソース マネージャーを実装しているときに、このフェーズ中にレコードを準備します。 レコードは、回復を実行するために必要なすべての情報を含める必要があります。 これが含まれています、<xref:System.Transactions.PreparingEnlistment.RecoveryInformation%2A>プロパティは、トランザクション マネージャーに渡される、<xref:System.Transactions.TransactionManager.Reenlist%2A>復旧中にメソッドです。 回復の詳細については、次を参照してください。[を実行する回復](http://msdn.microsoft.com/en-us/d342c5c7-da64-4a4c-8e63-b52f4fbf2691)です。  
+  
+ リソース マネージャーは、呼び出す前に完了する必要のあるすべての作業を完了する必要があります、<xref:System.Transactions.PreparingEnlistment.Prepared%2A>のメソッド、`preparingEnlistment`コミットメントにその投票を表すためのパラメーターです。 コミット、ロールバック、または状態が不明で、このようなフェーズ 2 通知を受信する前にこれを行うことを確認する必要があります。 これは、フェーズ 2 の通知を呼び出した同じスレッドでのインラインを実行できないため、<xref:System.Transactions.PreparingEnlistment.Prepared%2A>フェーズ 1 のメソッドです。 このため、フェーズ 2 の通知を受け取る前に既に完了したと考えられる作業 (ロックの解除など) は、<xref:System.Transactions.PreparingEnlistment.Prepared%2A> 呼び出しの後には実行できません。  
+  
+ メソッドを呼び出すこともできます、`preparingEnlistment`ロールバックの投票を表すためのパラメーターです。  
+  
+ 場合は、オブジェクトだけを確認し、トランザクションの進行状況に対応するために呼び出す必要がありますが、このメソッドの実装に参加することがなく、<xref:System.Transactions.Enlistment.Done%2A>のメソッド、`preparingEnlistment`パラメーターの処理が完了します。 これにより、リソース マネージャーではフェーズ 2 の通知は表示されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rollback">
+      <MemberSignature Language="C#" Value="public void Rollback (System.Transactions.Enlistment enlistment);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Rollback(class System.Transactions.Enlistment enlistment) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Transactions.IEnlistmentNotification.Rollback(System.Transactions.Enlistment)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enlistment" Type="System.Transactions.Enlistment" />
+      </Parameters>
+      <Docs>
+        <param name="enlistment">A<see cref="T:System.Transactions.Enlistment" />トランザクション マネージャーへの応答を送信するために使用します。</param>
+        <summary>参加しているオブジェクトに、トランザクションのロールバック通知 (中断)。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トランザクション マネージャーは、トランザクションはロールバック対象の機能を利用できない 1 つまたは複数のトランザクション参加要素のトランザクションをコミットするためには、(中断) ときに、参加しているオブジェクトのこのメソッドを呼び出します。  
+  
+ リソース マネージャーがトランザクションを終了し、TM を呼び出すことによって完了したことを通知するために必要な作業を実行する必要があります、<xref:System.Transactions.Enlistment.Done%2A>メソッドを`enlistment`パラメーター。  
+  
+ リソース マネージャーが永続的に、参加しているが、呼び出すことによって応答しないかどうかは<xref:System.Transactions.Enlistment.Done%2A>メソッド、トランザクション マネージャーは、リソース マネージャーが受信したことを確認は、<xref:System.Transactions.IEnlistmentNotification.Rollback%2A>呼び出します。 そのため、トランザクション マネージャーでは、応答を待機中は保持し、このトランザクションに関連する情報を保持します。  場合<xref:System.Transactions.Enlistment.Done%2A>は決して呼び出されると、この特定の情報はの周囲は無期限に保持メモリやシステム全体のリソースにします。 これは、結果、リソースの再利用することはできません。 分散トランザクションの場合このでした MSDTC プロセスが中断される MSDTC のログをいっぱいになってしまいます。 によって管理されるトランザクションの場合<xref:System.Transactions>、この結果、リソース マネージャーのプロセスのメモリの消費量が段階的なと継続的な増加します。 したがって、非常に重要に呼び出すことは、<xref:System.Transactions.Enlistment.Done%2A>メソッドで、リソース マネージャーが完了したら、作業を準備します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

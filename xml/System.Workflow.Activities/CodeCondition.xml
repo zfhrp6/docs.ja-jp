@@ -1,0 +1,182 @@
+<Type Name="CodeCondition" FullName="System.Workflow.Activities.CodeCondition">
+  <TypeSignature Language="C#" Value="public class CodeCondition : System.Workflow.ComponentModel.ActivityCondition" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CodeCondition extends System.Workflow.ComponentModel.ActivityCondition" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Activities.CodeCondition" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.ComponentModel.ActivityCondition</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Workflow.ComponentModel.Compiler.ActivityValidator(typeof(System.Workflow.Activities.CodeCondition/CodeConditionValidator))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ワークフロー定義内で特定のアクティビティの実行を防止または強制する条件を定義します。 このクラスには、条件の結果を返すための <see cref="T:System.Workflow.Activities.ConditionalEventArgs" /> 型のイベントがあります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeCondition ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.CodeCondition.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Activities.CodeCondition" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ コンストラクターを使用して、<xref:System.Workflow.Activities.CodeCondition> の新しいインスタンスを作成する方法を次のコード例に示します。 また、このコード例では、<xref:System.Workflow.Activities.CodeActivity> クラスの 2 つのインスタンスと <xref:System.Workflow.Activities.ConditionedActivityGroup> クラスの 1 つのインスタンスも作成します。 このコード例は、SimpleCAGWorkflow.designer.cs ファイルから抜粋した ConditionedActivityGroup SDK の一部です。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][ConditionedActivityGroup を使用して](http://msdn.microsoft.com/en-us/5a0b7e9e-def5-46b2-acbb-0005e1aff984)です。  
+  
+```csharp  
+private ConditionedActivityGroup BookingCAG;  
+private CodeActivity Car;  
+private CodeActivity Airline;  
+  
+this.CanModifyActivities = true;  
+CodeCondition codecondition1 = new CodeCondition();  
+CodeCondition codecondition2 = new CodeCondition();  
+this.BookingCAG = new ConditionedActivityGroup();  
+this.Car = new CodeActivity();  
+this.Airline = new CodeActivity();  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Condition">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Workflow.Activities.ConditionalEventArgs&gt; Condition;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Workflow.Activities.ConditionalEventArgs&gt; Condition" />
+      <MemberSignature Language="DocId" Value="E:System.Workflow.Activities.CodeCondition.Condition" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Workflow.Activities.ConditionalEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>条件が評価されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 現在の <xref:System.Workflow.Activities.CodeCondition.Condition> インスタンスの <xref:System.Workflow.Activities.CodeCondition> イベント ハンドラーを結合する方法を次のコード例に示します。 このコード例は、SimpleCAGWorkflow.designer.cs ファイルから抜粋した ConditionedActivityGroup SDK の一部です。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][ConditionedActivityGroup を使用して](http://msdn.microsoft.com/en-us/5a0b7e9e-def5-46b2-acbb-0005e1aff984)です。  
+  
+ [!code-csharp[wf_samples#158](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets11.cs#158)]
+ [!code-vb[wf_samples#158](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets11.vb#158)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConditionEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Workflow.ComponentModel.DependencyProperty ConditionEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Workflow.ComponentModel.DependencyProperty ConditionEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.Activities.CodeCondition.ConditionEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> イベントをターゲットとする <see cref="E:System.Workflow.Activities.CodeCondition.Condition" /> を表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[DependencyPropertyRemark](~/includes/dependencypropertyremark-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Evaluate">
+      <MemberSignature Language="C#" Value="public override bool Evaluate (System.Workflow.ComponentModel.Activity ownerActivity, IServiceProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Evaluate(class System.Workflow.ComponentModel.Activity ownerActivity, class System.IServiceProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.CodeCondition.Evaluate(System.Workflow.ComponentModel.Activity,System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ownerActivity" Type="System.Workflow.ComponentModel.Activity" />
+        <Parameter Name="provider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="ownerActivity">この条件に関連付けられた <see cref="T:System.Workflow.ComponentModel.Activity" />。</param>
+        <param name="provider">この条件評価のための <see cref="T:System.IServiceProvider" />。</param>
+        <summary>基になる条件を評価します。</summary>
+        <returns>
+          条件の評価が true の場合は <see langword="true" />。それ以外の場合は <see langword="false" /> 既定値は、<see langword="false" /> です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBoundValue">
+      <MemberSignature Language="C#" Value="protected override object GetBoundValue (System.Workflow.ComponentModel.ActivityBind bind, Type targetType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object GetBoundValue(class System.Workflow.ComponentModel.ActivityBind bind, class System.Type targetType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.CodeCondition.GetBoundValue(System.Workflow.ComponentModel.ActivityBind,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bind" Type="System.Workflow.ComponentModel.ActivityBind" />
+        <Parameter Name="targetType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="bind">目的の <see cref="T:System.Workflow.ComponentModel.ActivityBind" />。</param>
+        <param name="targetType"><see cref="T:System.Type" /> のターゲットの <see cref="T:System.Workflow.ComponentModel.ActivityBind" />。</param>
+        <summary><see cref="T:System.Object" /> のサブジェクトである <see cref="T:System.Workflow.ComponentModel.ActivityBind" /> を取得します。</summary>
+        <returns><see cref="T:System.Object" /> によってアクティビティにバインドされた <see cref="T:System.Workflow.ComponentModel.ActivityBind" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="bind" /> または <paramref name="targetType" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

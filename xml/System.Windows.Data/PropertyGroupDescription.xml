@@ -1,0 +1,310 @@
+<Type Name="PropertyGroupDescription" FullName="System.Windows.Data.PropertyGroupDescription">
+  <TypeSignature Language="C#" Value="public class PropertyGroupDescription : System.ComponentModel.GroupDescription" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PropertyGroupDescription extends System.ComponentModel.GroupDescription" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Data.PropertyGroupDescription" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.GroupDescription</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プロパティ名を条件として使用して、項目のグループ化について記述します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビューは、ユーザーがパーティション分割を論理グループにコレクション ビュー内のコレクションにグループ化の機能をサポートします。 グループは、明示的 (ユーザーがグループの一覧を提供する) または暗黙的 (グループがデータに応じて動的に生成される) にすることができます。  
+  
+ <xref:System.Windows.Data.PropertyGroupDescription>基づく暗黙のグループを作成することができます、<xref:System.Windows.Data.PropertyGroupDescription.PropertyName%2A>です。 プロパティによってグループ化するだけの場合は、設定、<xref:System.Windows.Data.PropertyGroupDescription.PropertyName%2A>プロパティです。 使用できるグループは最終的に使用される値を変更する場合、<xref:System.Windows.Data.PropertyGroupDescription.Converter%2A>値コンバーターを提供するプロパティです。 たとえば、名前の最初の文字に基づいて項目をグループ化することがあります。 場合、<xref:System.Windows.Data.PropertyGroupDescription.PropertyName%2A>プロパティが設定されていない、項目自体は、値コンバーターに渡されます。 コンバーターがコレクションを返す場合があります。これは、項目が複数のグループ内に現れることを示します。  
+  
+ どのように文字列の比較が場所を使用してを実行する必要がありますを定義することも、<xref:System.Windows.Data.PropertyGroupDescription.StringComparison%2A>プロパティです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PropertyGroupDescription ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.PropertyGroupDescription.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Data.PropertyGroupDescription" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、このコンストラクターを使用する方法を示しています。  
+  
+ [!code-csharp[DataBindingLab#6](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/MainWindow.xaml.cs#6)]
+ [!code-vb[DataBindingLab#6](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DataBindingLab/VisualBasic/MainWindow.xaml.vb#6)]  
+  
+ 完全な例を参照してください。[データ バインディング デモ](http://go.microsoft.com/fwlink/?LinkID=163703)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PropertyGroupDescription (string propertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string propertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.PropertyGroupDescription.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">項目が属するグループを指定するプロパティの名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Data.PropertyGroupDescription" />指定したプロパティ名を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PropertyGroupDescription (string propertyName, System.Windows.Data.IValueConverter converter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string propertyName, class System.Windows.Data.IValueConverter converter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.PropertyGroupDescription.#ctor(System.String,System.Windows.Data.IValueConverter)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="converter" Type="System.Windows.Data.IValueConverter" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">項目が属するグループを指定するプロパティの名前。 これは、する場合<see langword="null" />、項目自体は、値コンバーターに渡されます。</param>
+        <param name="converter"><see cref="T:System.Windows.Data.IValueConverter" />プロパティの値または項目グループを決定するために使用される最終的な値を生成するために項目を適用するオブジェクトが属しています。 コンバーターがコレクションを返す場合があります。これは、項目が複数のグループ内に現れることを示します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Data.PropertyGroupDescription" />コンバーターと指定したプロパティの名前を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PropertyGroupDescription (string propertyName, System.Windows.Data.IValueConverter converter, StringComparison stringComparison);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string propertyName, class System.Windows.Data.IValueConverter converter, valuetype System.StringComparison stringComparison) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.PropertyGroupDescription.#ctor(System.String,System.Windows.Data.IValueConverter,System.StringComparison)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="converter" Type="System.Windows.Data.IValueConverter" />
+        <Parameter Name="stringComparison" Type="System.StringComparison" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">項目が属するグループを指定するプロパティの名前。 これは、する場合<see langword="null" />、項目自体は、値コンバーターに渡されます。</param>
+        <param name="converter"><see cref="T:System.Windows.Data.IValueConverter" />プロパティの値または項目グループを決定するために使用される最終的な値を生成するために項目を適用するオブジェクトが属しています。 コンバーターがコレクションを返す場合があります。これは、項目が複数のグループ内に現れることを示します。</param>
+        <param name="stringComparison">A<see cref="T:System.StringComparison" />項目の値とグループの名前の比較を指定する値。</param>
+        <summary>指定したパラメーターを使用して、<see cref="T:System.Windows.Data.PropertyGroupDescription" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompareNameAscending">
+      <MemberSignature Language="C#" Value="public static System.Collections.IComparer CompareNameAscending { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Collections.IComparer CompareNameAscending" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.PropertyGroupDescription.CompareNameAscending" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IComparer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>名前の昇順でグループを並べる <see cref="T:System.Collections.IComparer" /> 値を取得します。</summary>
+        <value>名前の昇順でグループを並べる <see cref="T:System.Collections.IComparer" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Data.PropertyGroupDescription.CompareNameAscending%2A>値として使用できます<xref:System.ComponentModel.GroupDescription.CustomSort%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompareNameDescending">
+      <MemberSignature Language="C#" Value="public static System.Collections.IComparer CompareNameDescending { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Collections.IComparer CompareNameDescending" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.PropertyGroupDescription.CompareNameDescending" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IComparer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>名前の降順でグループを並べる <see cref="T:System.Collections.IComparer" /> 値を取得します。</summary>
+        <value>名前の降順でグループを並べる <see cref="T:System.Collections.IComparer" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Data.PropertyGroupDescription.CompareNameDescending%2A>値として使用できます<xref:System.ComponentModel.GroupDescription.CustomSort%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Converter">
+      <MemberSignature Language="C#" Value="public System.Windows.Data.IValueConverter Converter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Data.IValueConverter Converter" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.PropertyGroupDescription.Converter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Data.IValueConverter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目が属するグループを決定するために使用される最終的な値を生成するためにプロパティ値または項目に適用されるコンバーターを取得または設定します。</summary>
+        <value>既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用できるグループは最終的に使用される値を変更する場合、<xref:System.Windows.Data.PropertyGroupDescription.Converter%2A>値コンバーターを提供するプロパティです。 たとえば、名前の最初の文字に基づいて項目をグループ化することがあります。 場合、<xref:System.Windows.Data.PropertyGroupDescription.PropertyName%2A>プロパティが設定されていない、項目自体は、値コンバーターに渡されます。 コンバーターがコレクションを返す場合があります。これは、項目が複数のグループ内に現れることを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GroupNameFromItem">
+      <MemberSignature Language="C#" Value="public override object GroupNameFromItem (object item, int level, System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object GroupNameFromItem(object item, int32 level, class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.PropertyGroupDescription.GroupNameFromItem(System.Object,System.Int32,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+        <Parameter Name="level" Type="System.Int32" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="item">グループの名前を返す項目。</param>
+        <param name="level">グループ化のレベル。</param>
+        <param name="culture"><see cref="T:System.Globalization.CultureInfo" />にコンバーターを提供します。</param>
+        <summary>指定したアイテムのグループ名を返します。</summary>
+        <returns>指定したアイテムのグループ名。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NamesMatch">
+      <MemberSignature Language="C#" Value="public override bool NamesMatch (object groupName, object itemName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool NamesMatch(object groupName, object itemName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.PropertyGroupDescription.NamesMatch(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="groupName" Type="System.Object" />
+        <Parameter Name="itemName" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="groupName">確認するグループの名前。</param>
+        <param name="itemName">確認する項目の名前。</param>
+        <summary>項目がグループに属するようにグループ名と項目名が一致するかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />名前が一致し、項目がグループに属しているかどうかそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyName">
+      <MemberSignature Language="C#" Value="public string PropertyName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PropertyName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.PropertyGroupDescription.PropertyName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目が属するグループを決定するために使用されるプロパティの名前を取得または設定します。</summary>
+        <value>既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Data.PropertyGroupDescription>基づく暗黙のグループを作成することができます、<xref:System.Windows.Data.PropertyGroupDescription.PropertyName%2A>です。 プロパティによってグループ化するだけの場合は、設定、<xref:System.Windows.Data.PropertyGroupDescription.PropertyName%2A>プロパティです。 使用できるグループは最終的に使用される値を変更する場合、<xref:System.Windows.Data.PropertyGroupDescription.Converter%2A>値コンバーターを提供するプロパティです。 たとえば、名前の最初の文字に基づいて項目をグループ化することがあります。 場合、<xref:System.Windows.Data.PropertyGroupDescription.PropertyName%2A>プロパティが設定されていない、項目自体は、値コンバーターに渡されます。 コンバーターがコレクションを返す場合があります。これは、項目が複数のグループ内に現れることを示します。  
+  
+ どのように文字列の比較が場所を使用してを実行する必要がありますを定義することも、<xref:System.Windows.Data.PropertyGroupDescription.StringComparison%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StringComparison">
+      <MemberSignature Language="C#" Value="public StringComparison StringComparison { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.StringComparison StringComparison" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.PropertyGroupDescription.StringComparison" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.StringComparison</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.StringComparison" />項目の値の間で比較を指定する値 (によって決定される<see cref="P:System.Windows.Data.PropertyGroupDescription.PropertyName" />と<see cref="P:System.Windows.Data.PropertyGroupDescription.Converter" />) およびグループの名前。</summary>
+        <value>既定値は<see cref="T:System.StringComparison" />.<see langword="Ordinal" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これには、比較の両方の値が文字列でない場合は無視されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

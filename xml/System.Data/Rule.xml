@@ -1,0 +1,149 @@
+<Type Name="Rule" FullName="System.Data.Rule">
+  <TypeSignature Language="C#" Value="public enum Rule" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed Rule extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Rule" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>発生するアクションを示すときに、<see cref="T:System.Data.ForeignKeyConstraint" />が適用されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Rule>値に設定されて、<xref:System.Data.ForeignKeyConstraint.UpdateRule%2A>と<xref:System.Data.ForeignKeyConstraint.DeleteRule%2A>のプロパティ、<xref:System.Data.ForeignKeyConstraint>オブジェクト内で見つかった、<xref:System.Data.DataTable>オブジェクトの<xref:System.Data.ConstraintCollection>します。  
+  
+ <xref:System.Data.Rule>値が列の値を削除または更新されたときに発生するアクションを決定します。 2 つの値の削除はより重要な注意の要件の厳しいルールを設定する場合です。  
+  
+ 値の削除で`Cascade`その値を含むすべての行も削除することを指定します。 `SetNull`すべての子列の値が null 値に設定されますを指定します。 `SetDefault`すべての子列が列の既定値に設定することを指定します。 `None`アクションを実行せず、例外が生成されることを示します。  
+  
+ 値の更新の場合は、の`Cascade`すべての子列が同様に、新しい値で更新することを指定します。 `SetNull`すべての子列が null 値に設定することを指定します。 `SetDefault`すべての子列の値が既定値に設定することを指定します。 `None`アクションを実行しないことを指定しますが、例外を生成します。  
+  
+ 上の制約、<xref:System.Data.DataSet>場合を除き、適用されていない、<xref:System.Data.DataSet.EnforceConstraints%2A>プロパティは`true`します。  
+  
+ ときに、<xref:System.Data.DataTable.AcceptChanges%2A>メソッドが呼び出されると、<xref:System.Data.ForeignKeyConstraint.AcceptRejectRule%2A>さらにどのようなアクションの発生を決定します。  
+  
+   
+  
+## Examples  
+ [!code-vb[Classic WebData ForeignKeyConstraint Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData ForeignKeyConstraint Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Cascade">
+      <MemberSignature Language="C#" Value="Cascade" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Rule Cascade = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Rule.Cascade" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Rule</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられている行を削除または更新します。 既定値です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Rule None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Rule.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Rule</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連する行に対して行われる操作はありません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDefault">
+      <MemberSignature Language="C#" Value="SetDefault" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Rule SetDefault = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Rule.SetDefault" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Rule</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>含まれている値に関連する行の値を設定、<see cref="P:System.Data.DataColumn.DefaultValue" />プロパティです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SetNull">
+      <MemberSignature Language="C#" Value="SetNull" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Rule SetNull = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Rule.SetNull" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Rule</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられている行の値を設定<see langword="DBNull" />です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

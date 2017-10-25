@@ -1,0 +1,86 @@
+<Type Name="DetailsViewMode" FullName="System.Web.UI.WebControls.DetailsViewMode">
+  <TypeSignature Language="C#" Value="public enum DetailsViewMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DetailsViewMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.DetailsViewMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>別のデータ入力モードを表します、<see cref="T:System.Web.UI.WebControls.DetailsView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DetailsViewMode>のデータ入力モードを表す列挙体が使用される、<xref:System.Web.UI.WebControls.DetailsView>コントロール。 コントロールの現在のモードを確認するには<xref:System.Web.UI.WebControls.DetailsView.CurrentMode%2A>プロパティです。 Insert または update 操作の後、<xref:System.Web.UI.WebControls.DetailsView>によって指定されたモードに制御が戻る、<xref:System.Web.UI.WebControls.DetailsView.DefaultMode%2A>プロパティです。 既定では、コントロールは、読み取り専用モードに戻ります。 設定に戻るに代替のモードを指定することができます、<xref:System.Web.UI.WebControls.DetailsView.DefaultMode%2A>プロパティです。 プログラムでモードを変更するには、使用、<xref:System.Web.UI.WebControls.DetailsView.ChangeMode%2A>メソッドです。 ときに、<xref:System.Web.UI.WebControls.DetailsView>制御モードを変更する、次の表に、イベントが発生します。  
+  
+|イベント|説明|  
+|-----------|-----------------|  
+|<xref:System.Web.UI.WebControls.DetailsView.ModeChanging>|発生したときに、<xref:System.Web.UI.WebControls.DetailsView>コントロールは、編集、挿入、および読み取り専用モードの間ですが、モードが実際に変更する前に変更しようとします。 このイベントは、モードの変更をキャンセルよく使用されます。|  
+|<xref:System.Web.UI.WebControls.DetailsView.ModeChanged>|後に発生する<xref:System.Web.UI.WebControls.DetailsView>コントロールは、編集、挿入、または読み取り専用モードから別のモードに変更されました。 このイベントは、タスクを実行する多くの場合、使用時に、<xref:System.Web.UI.WebControls.DetailsView>コントロールがモードを変更します。|  
+  
+   
+  
+## Examples  
+ 次のコード例を保持する方法を示しています、<xref:System.Web.UI.WebControls.DetailsView>コントロールを編集モードを設定して更新操作の後で、<xref:System.Web.UI.WebControls.DetailsView.DefaultMode%2A>プロパティを`DetailsViewMode.Edit`です。  
+  
+ [!code-aspx-csharp[DetailsViewDefaultMode#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DetailsViewDefaultMode/CS/detailsviewdefaultmodecs.aspx#1)]
+ [!code-aspx-vb[DetailsViewDefaultMode#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DetailsViewDefaultMode/VB/detailsviewdefaultmodevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Edit">
+      <MemberSignature Language="C#" Value="Edit" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.DetailsViewMode Edit = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.DetailsViewMode.Edit" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DetailsViewMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが既存のレコードの値に更新できる編集モードです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="Insert" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.DetailsViewMode Insert = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.DetailsViewMode.Insert" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DetailsViewMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが新しいレコードの値を入力できる挿入モードです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadOnly">
+      <MemberSignature Language="C#" Value="ReadOnly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.DetailsViewMode ReadOnly = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.DetailsViewMode.ReadOnly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DetailsViewMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがレコードの値を変更することを防止する表示モード。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

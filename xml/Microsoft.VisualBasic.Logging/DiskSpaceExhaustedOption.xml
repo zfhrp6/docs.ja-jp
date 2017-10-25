@@ -1,0 +1,59 @@
+<Type Name="DiskSpaceExhaustedOption" FullName="Microsoft.VisualBasic.Logging.DiskSpaceExhaustedOption">
+  <TypeSignature Language="C#" Value="public enum DiskSpaceExhaustedOption" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DiskSpaceExhaustedOption extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Logging.DiskSpaceExhaustedOption" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>決定した場合、<see cref="T:Microsoft.VisualBasic.Logging.FileLogTraceListener" />オブジェクトがログに書き込みを試みるし、小さいディスクの空き領域が使用可能なで指定されて、<see cref="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.ReserveDiskSpace" />プロパティです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、 <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.DiskSpaceExhaustedBehavior%2A> DiscardMessages にプロパティが設定されている、ログ メッセージは破棄される場合は既定では予約されているディスク領域が不足します。 これにより、簡単なアプリケーションは、ディスクが十分な空き領域を取得する場合に失敗します。  
+  
+ 堅牢なアプリケーションでは、設定、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.DiskSpaceExhaustedBehavior%2A>プロパティ、ThrowException を追加および`Try...Catch`ログに書き込みを行うすべてのコード ブロック。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DiscardMessages">
+      <MemberSignature Language="C#" Value="DiscardMessages" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.VisualBasic.Logging.DiskSpaceExhaustedOption DiscardMessages = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.VisualBasic.Logging.DiskSpaceExhaustedOption.DiscardMessages" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.Logging.DiskSpaceExhaustedOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ログ メッセージを破棄します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ThrowException">
+      <MemberSignature Language="C#" Value="ThrowException" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.VisualBasic.Logging.DiskSpaceExhaustedOption ThrowException = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.VisualBasic.Logging.DiskSpaceExhaustedOption.ThrowException" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.Logging.DiskSpaceExhaustedOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>例外をスローします。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

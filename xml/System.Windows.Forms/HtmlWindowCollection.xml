@@ -1,0 +1,222 @@
+<Type Name="HtmlWindowCollection" FullName="System.Windows.Forms.HtmlWindowCollection">
+  <TypeSignature Language="C#" Value="public class HtmlWindowCollection : System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HtmlWindowCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.HtmlWindowCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>別に含まれるウィンドウを表す<see cref="T:System.Windows.Forms.HtmlWindow" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ HTML ドキュメントで構成でき、`FRAMESET`固定倍数を定義する`FRAME`オブジェクト、それぞれが独自の HTML ページが含まれています。 または、ドキュメントがの数を含む可能性があります`IFRAME`オブジェクトで、その他のドキュメント内で任意のドキュメントを配置することができます。 `FRAME`オブジェクトと`IFRAME`オブジェクトが、最上位のレベルで表される、 <xref:System.Windows.Forms.HtmlWindowCollection>、型の要素が含まれています<xref:System.Windows.Forms.HtmlWindow>です。  
+  
+ <xref:System.Windows.Forms.HtmlWindowCollection>サポートしている、<xref:System.Collections.IEnumerator>インターフェイスのループ構造体で使用できるようにします。 また、メソッドの呼び出しまたは標準の配列の構文を使用していずれかのコレクションの要素にアクセスできるようにする項目メソッドを定義します。  
+  
+ 新しいウィンドウを作成する場合、<xref:System.Windows.Forms.HtmlWindow.Open%2A>または<xref:System.Windows.Forms.HtmlWindow.OpenNew%2A>メソッド、およびこれらのウィンドウでホストされているドキュメントが含まれる`FRAME`または`IFRAME`要素は、これらの要素に表示される、<xref:System.Windows.Forms.HtmlWindowCollection>の親ページです。  
+  
+ フレームの詳細については、ドキュメントを参照して、<xref:System.Windows.Forms.HtmlWindow.Frames%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、フレームを含むページ内の各ドキュメントを検査し、各ページの今後の調査から出力方向のハイパーリンクのすべてのテーブルを作成します。  
+  
+ [!code-csharp[System.Windows.Forms.HtmlWindow#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlWindow/CS/Form1.cs#2)]
+ [!code-vb[System.Windows.Forms.HtmlWindow#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlWindow/VB/Form1.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlWindowCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション内の要素の数を取得します。</summary>
+        <value>数<see cref="T:System.Windows.Forms.HtmlWindow" />、現在のオブジェクト<see cref="T:System.Windows.Forms.HtmlWindowCollection" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlWindowCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべての要素を反復処理できる列挙子を返します、<see cref="T:System.Windows.Forms.HtmlWindowCollection" />です。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />このコレクションの要素の列挙を有効にします。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Item">
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>か、項目を取得してその<see langword="name" />プロパティまたはコレクション内での位置。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.HtmlWindowCollection.Item%2A>配列の構文を使用して、コレクションの要素にアクセスできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.HtmlWindow this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.HtmlWindow Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlWindowCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlWindow</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">位置、<see cref="T:System.Windows.Forms.HtmlWindow" />コレクション内で。</param>
+        <summary>コレクション内のフレームの位置を指定することにより、フレーム ウィンドウを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.HtmlWindow" />要求されたフレームに対応します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.HtmlWindowCollection>0 から始まるコレクションです。 ある場合*N*に有効な引数、コレクション内の要素<xref:System.Windows.Forms.HtmlWindowCollection.Item%2A>する場合は 0 から整数*N*-1 です。  
+  
+ Windows にレイアウトできません<xref:System.Windows.Forms.HtmlWindowCollection>事前に定義された順序のいずれか。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" />コレクション内の項目の数を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.HtmlWindow this[string windowId] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.HtmlWindow Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlWindowCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlWindow</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="windowId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="windowId">取得する <see cref="T:System.Windows.Forms.HtmlWindow" /> の名前。</param>
+        <summary>フレームの名前を指定することにより、フレーム ウィンドウを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.HtmlWindow" />指定された名前に対応する要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.HtmlWindowCollection.Item%2A>1 つの要素を返すが<xref:System.Windows.Forms.HtmlElement.Name%2A>プロパティに対応して`elementId`です。 ドキュメントには、同じ名前の複数の要素が含まれている場合<xref:System.Windows.Forms.HtmlWindowCollection.Item%2A>コレクション内で最初の 1 つのみが返されます。 すべての要素を取得する必要がある場合、<xref:System.Windows.Forms.HtmlElement.Name%2A>プロパティの`windowId`を使用して、<xref:System.Windows.Forms.HtmlElementCollection.GetElementsByName%2A>メソッド代わりにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="windowId" />名前ではありません、<see langword="Frame" />現在のドキュメントまたはその子のいずれかのオブジェクト。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.CopyTo">
+      <MemberSignature Language="C#" Value="void ICollection.CopyTo (Array dest, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.ICollection.CopyTo(class System.Array dest, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlWindowCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dest" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="dest">1 次元<see cref="T:System.Array" />要素がコレクションからコピー先であること。 <see cref="T:System.Array" /> には、0 から始まるインデックス番号が必要です。</param>
+        <param name="index">コピーの開始位置とする <see langword="Array" /> のインデックス (0 から始まる)。</param>
+        <summary>コレクションの要素を <see cref="T:System.Array" /> にコピーします。<see cref="T:System.Array" /> の特定のインデックスからコピーが開始されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.IsSynchronized">
+      <MemberSignature Language="C#" Value="bool System.Collections.ICollection.IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.ICollection.IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlWindowCollection.System#Collections#ICollection#IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションへのアクセスが同期されている (スレッド セーフである) かどうかを示す値を取得します。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.SyncRoot">
+      <MemberSignature Language="C#" Value="object System.Collections.ICollection.SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.ICollection.SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlWindowCollection.System#Collections#ICollection#SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションへのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value>コレクションへのアクセスを同期するために使用できるオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

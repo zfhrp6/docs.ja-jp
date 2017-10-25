@@ -1,0 +1,115 @@
+<Type Name="ProtocolEndpoint" FullName="System.IdentityModel.Metadata.ProtocolEndpoint">
+  <TypeSignature Language="C#" Value="public class ProtocolEndpoint" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ProtocolEndpoint extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Metadata.ProtocolEndpoint" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>このクラスは、プロトコルのエンドポイントを定義します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProtocolEndpoint ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.ProtocolEndpoint.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Metadata.ProtocolEndpoint" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Metadata.ProtocolEndpoint.Binding%2A>プロパティおよび<xref:System.IdentityModel.Metadata.ProtocolEndpoint.Location%2A>プロパティは両方に初期化`null`新しいインスタンス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProtocolEndpoint (Uri binding, Uri location);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri binding, class System.Uri location) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.ProtocolEndpoint.#ctor(System.Uri,System.Uri)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="binding" Type="System.Uri" />
+        <Parameter Name="location" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="binding">新しいインスタンスのバインドを表す URI。 初期化、<see cref="P:System.IdentityModel.Metadata.ProtocolEndpoint.Binding" />プロパティです。</param>
+        <param name="location">新しいインスタンスの位置を表す URI。 初期化、<see cref="P:System.IdentityModel.Metadata.ProtocolEndpoint.Location" />プロパティです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Metadata.ProtocolEndpoint" />場所と指定したバインディングを持つクラスであります。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Binding">
+      <MemberSignature Language="C#" Value="public Uri Binding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Binding" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Metadata.ProtocolEndpoint.Binding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはバインディングを設定します。 これは、必要な要素です。</summary>
+        <value>現在のインスタンスのバインドを表す URI。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Location">
+      <MemberSignature Language="C#" Value="public Uri Location { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Location" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Metadata.ProtocolEndpoint.Location" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または場所を設定します。 これは、必要な要素です。</summary>
+        <value>現在のインスタンスの位置を表す URI。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResponseLocation">
+      <MemberSignature Language="C#" Value="public Uri ResponseLocation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri ResponseLocation" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Metadata.ProtocolEndpoint.ResponseLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または応答の場所を設定します。 これは、省略可能な要素です。</summary>
+        <value>現在のインスタンスの応答の場所を表す URI。 既定値は、<see langword="null" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

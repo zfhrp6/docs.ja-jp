@@ -1,0 +1,158 @@
+<Type Name="WSDualHttpSecurity" FullName="System.ServiceModel.WSDualHttpSecurity">
+  <TypeSignature Language="C#" Value="public sealed class WSDualHttpSecurity" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WSDualHttpSecurity extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.WSDualHttpSecurity" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.ServiceModel.WSDualHttpBinding" /> のセキュリティ設定を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、`wsDualHttpBinding` バインディングのセキュリティ設定を指定します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WSDualHttpSecurity ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WSDualHttpSecurity.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.WSDualHttpSecurity" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.MessageSecurityOverHttp Message { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.MessageSecurityOverHttp Message" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSDualHttpSecurity.Message" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.MessageSecurityOverHttp</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.WSDualHttpBinding" /> のメッセージ レベルのセキュリティのプロパティを取得します。</summary>
+        <value><see cref="T:System.ServiceModel.MessageSecurityOverHttp" /> 値。 次のデフォルト値が含まれます。<see cref="P:System.ServiceModel.MessageSecurityOverHttp.ClientCredentialType" /> は <see cref="F:System.ServiceModel.MessageCredentialType.Windows" />、<see cref="P:System.ServiceModel.MessageSecurityOverHttp.AlgorithmSuite" /> は <see cref="P:System.ServiceModel.Security.SecurityAlgorithmSuite.Basic256" />、および <see cref="P:System.ServiceModel.MessageSecurityOverHttp.NegotiateServiceCredential" /> は<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されるオブジェクトは、`wsDualHttpBinding` バインディングの詳細なメッセージレベル セキュリティのプロパティを指定します。  
+  
+   
+  
+## Examples  
+ このプロパティにアクセスして <xref:System.ServiceModel.MessageSecurityOverHttp.AlgorithmSuite%2A> プロパティを設定する方法を次のコードに示します。  
+  
+ [!code-csharp[S_UEWSDualHttpSecurity#30](~/samples/snippets/csharp/VS_Snippets_CFX/s_uewsdualhttpsecurity/cs/program.cs#30)]
+ [!code-vb[S_UEWSDualHttpSecurity#30](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uewsdualhttpsecurity/vb/module1.vb#30)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Mode">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.WSDualHttpSecurityMode Mode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.WSDualHttpSecurityMode Mode" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSDualHttpSecurity.Mode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.WSDualHttpSecurityMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>親 <see cref="T:System.ServiceModel.WSDualHttpBinding" /> のセキュリティ モードを取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.WSDualHttpSecurityMode" /> 列挙体の値。 既定値は、<see cref="F:System.ServiceModel.WSDualHttpSecurityMode.Message" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値は、バインディングにメッセージ レベルのセキュリティが適用されるかどうかを決定します。  
+  
+   
+  
+## Examples  
+ 次のコードに、このプロパティを設定する方法を示します。  
+  
+ [!code-csharp[S_UEWSDualHttpSecurity#30](~/samples/snippets/csharp/VS_Snippets_CFX/s_uewsdualhttpsecurity/cs/program.cs#30)]
+ [!code-vb[S_UEWSDualHttpSecurity#30](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uewsdualhttpsecurity/vb/module1.vb#30)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が有効な <see cref="T:System.ServiceModel.WSDualHttpSecurityMode" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeMessage">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeMessage ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeMessage() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WSDualHttpSecurity.ShouldSerializeMessage" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.ServiceModel.WSDualHttpSecurity.Message" /> プロパティが既定値から変更されたためにシリアル化する必要があるかどうかを示す値を返します。 この情報は、WCF によって XAML 統合に使用されます。</summary>
+        <returns>
+          <see langword="true" /> プロパティ値をシリアル化する必要がある場合は <see cref="P:System.ServiceModel.WSDualHttpSecurity.Message" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeMode">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeMode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeMode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WSDualHttpSecurity.ShouldSerializeMode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.ServiceModel.WSDualHttpSecurity.Mode" /> プロパティが既定値から変更されたためにシリアル化する必要があるかどうかを示す値を返します。 この情報は、WCF によって XAML 統合に使用されます。</summary>
+        <returns>
+          <see langword="true" /> プロパティ値をシリアル化する必要がある場合は <see cref="P:System.ServiceModel.WSDualHttpSecurity.Mode" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

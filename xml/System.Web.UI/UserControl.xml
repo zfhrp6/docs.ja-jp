@@ -1,0 +1,930 @@
+<Type Name="UserControl" FullName="System.Web.UI.UserControl">
+  <TypeSignature Language="C#" Value="public class UserControl : System.Web.UI.TemplateControl, System.Web.UI.IAttributeAccessor, System.Web.UI.IUserControlDesignerAccessor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UserControl extends System.Web.UI.TemplateControl implements class System.Web.UI.IAttributeAccessor, class System.Web.UI.INamingContainer, class System.Web.UI.IUserControlDesignerAccessor" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.UserControl" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.TemplateControl</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.IAttributeAccessor</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.UI.IUserControlDesignerAccessor</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("Load")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Design.Serialization.DesignerSerializer("Microsoft.VisualStudio.Web.WebForms.WebFormCodeDomSerializer, Microsoft.VisualStudio.Web, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "System.ComponentModel.Design.Serialization.TypeCodeDomSerializer, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.UserControlDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.ComponentModel.Design.IDesigner))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("Microsoft.VisualStudio.Web.WebForms.WebFormDesigner, Microsoft.VisualStudio.Web, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.ComponentModel.Design.IRootDesigner))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DesignerCategory("ASPXCodeBehind")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ControlBuilder(typeof(System.Web.UI.UserControlControlBuilder))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ParseChildren(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ASP.NET Web アプリケーションのホストであるサーバーから要求された .ascx ファイル (ユーザー コントロールとも呼ばれます) を表します。 このファイルは Web フォーム ページから呼び出す必要があります。それ以外の場合は、解析エラーが発生します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.UserControl>クラスは .ascx 拡張子を持つファイルに関連付けられています。 これらのファイルは実行時としてコンパイル<xref:System.Web.UI.UserControl>オブジェクトし、サーバーのメモリにキャッシュします。  
+  
+ ユーザー コントロール別、後者に含める Web フォーム ページ内の 1 つの .ascx ファイルを宣言することで入れ子にすることができます。  
+  
+ ユーザー コントロールは、ASP.NET Web フォーム ページに含まれ、Web 開発者に一般的に使用される Web UI をキャプチャする簡単な方法を提供します。 これらがインスタンス化と同様の方法でキャッシュされた<xref:System.Web.UI.Page>オブジェクト。 ページとは異なりただし、ユーザー コントロールを呼び出せませんとは別にします。 ページまたは、それを含むその他のユーザー コントロールからのみ呼び出すことができます。  
+  
+ コードの分離手法を使用してユーザー コントロールを作成する場合は、このクラスから派生します。 これには、この手法を使用して Web フォーム ページを開発している場合はお勧めします。  
+  
+ ユーザー コントロールを宣言によって作成する方法の詳細については、次を参照してください。 [ASP.NET ユーザー コントロール](http://msdn.microsoft.com/library/5e601b3d-bb16-4dbe-9e35-7e92a34565ca)です。  
+  
+   
+  
+## Examples  
+ 次の例で定義されているクラス`SimpleControl`、継承、<xref:System.Web.UI.UserControl>クラスし、ASP.NET 分離コード クラスとして使用できます。 使用して、 <xref:System.Web.UI.WebControls.TextBox>、 <xref:System.Web.UI.WebControls.Label>、および<xref:System.Web.UI.WebControls.Button>Web サーバー管理を定義し、`myButton_Click`割り当てるメソッドを<xref:System.Web.UI.WebControls.TextBox.Text%2A?displayProperty=nameWithType>にと共に 2 つのプロパティの値は、文字列を<xref:System.Web.UI.WebControls.Label.Text%2A?displayProperty=nameWithType>プロパティです。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-csharp[Sys.Web.UI.TemplateControl_UserControl#2](~/samples/snippets/csharp/VS_Snippets_WebNet/Sys.Web.UI.TemplateControl_UserControl/CS/simplecontrol.cs#2)]
+ [!code-vb[Sys.Web.UI.TemplateControl_UserControl#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Sys.Web.UI.TemplateControl_UserControl/VB/simplecontrol.vb#2)]  
+  
+ 次の例は、マークアップ .ascx ファイルに含まれているです。 使用することができます、`SimpleControl`この .ascx ファイル内のマークアップ、分離コード クラスとして、前の例で定義されたクラスです。  
+  
+ [!code-aspx-csharp[Sys.Web.UI.TemplateControl_UserControl#3](~/samples/snippets/csharp/VS_Snippets_WebNet/Sys.Web.UI.TemplateControl_UserControl/CS/simpleformcs.ascx#3)]
+ [!code-aspx-vb[Sys.Web.UI.TemplateControl_UserControl#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Sys.Web.UI.TemplateControl_UserControl/VB/simpleformvb.ascx#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UserControl ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.UserControl.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.UserControl" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスが通常作成できません、<xref:System.Web.UI.UserControl>クラスです。 ユーザー コントロールを作成するには、継承、<xref:System.Web.UI.UserControl>クラスです。  
+  
+ ASP.NET ページ上の新しいユーザー コントロールをプログラムで作成するには、使用、<xref:System.Web.UI.TemplateControl.LoadControl%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Application">
+      <MemberSignature Language="C#" Value="public System.Web.HttpApplicationState Application { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpApplicationState Application" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.UserControl.Application" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpApplicationState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の Web 要求に対する <see cref="P:System.Web.HttpContext.Application" /> オブジェクトを取得します。</summary>
+        <value><see cref="T:System.Web.HttpApplicationState" />の現在の Web 要求のオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、次の 2 つのキー値のペアを追加する場合は、ユーザー コントロールに関連付けられているアプリケーションの状態、ユーザー コントロールの<xref:System.Web.UI.UserControl.IsPostBack%2A>プロパティから返される`false`です。 この条件が満たされると、コードを使用して、<xref:System.Web.HttpApplicationState.Add%2A>メソッド、ユーザー コントロールの<xref:System.Web.UI.UserControl.Application%2A>プロパティ、キーとその値を追加します。  
+  
+ [!code-csharp[UserControl_Properties#2](~/samples/snippets/csharp/VS_Snippets_WebNet/UserControl_Properties/CS/usercontrol_properties.cs.aspx#2)]
+ [!code-vb[UserControl_Properties#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/UserControl_Properties/VB/usercontrol_properties.vb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Attributes">
+      <MemberSignature Language="C#" Value="public System.Web.UI.AttributeCollection Attributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.AttributeCollection Attributes" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.UserControl.Attributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.AttributeCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>.Aspx ファイル内でユーザー コントロールのタグで宣言されているすべての属性の名前と値のペアのコレクションを取得します。</summary>
+        <value><see cref="T:System.Web.UI.AttributeCollection" />ユーザー コントロールのタグで宣言されているすべての名前と値のペアを格納するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、ユーザー コントロールの<xref:System.Web.UI.UserControl.Attributes%2A>プロパティへのアクセスを`Message`カスタム コントロール タグに含まれているページでユーザー コントロールをインスタンス化された属性が宣言されています。  
+  
+ [!code-csharp[UserControl_Properties#1](~/samples/snippets/csharp/VS_Snippets_WebNet/UserControl_Properties/CS/usercontrol_properties.cs.aspx#1)]
+ [!code-vb[UserControl_Properties#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/UserControl_Properties/VB/usercontrol_properties.vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cache">
+      <MemberSignature Language="C#" Value="public System.Web.Caching.Cache Cache { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Caching.Cache Cache" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.UserControl.Cache" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Caching.Cache</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.Caching.Cache" />ユーザー コントロールを格納しているアプリケーションに関連付けられているオブジェクト。</summary>
+        <value><see cref="T:System.Web.Caching.Cache" />ユーザー コントロールのデータを格納するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.UserControl.Cache%2A>以降を取得するためのデータを格納することができ、アプリケーション全体で共有します。 保存されているデータは、現在のページやユーザーのセッションに依存しません。 ページまたはアプリケーションのパフォーマンスが向上する場合は、データを作成するには、このプロパティを介してデータにアクセスが遅いです。 詳細については、キャッシュを使用して、次を参照してください。[アプリケーション データをキャッシュ](http://msdn.microsoft.com/library/206f977d-7860-4d20-bdd5-c3b3d8479f3d)です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Web.UI.UserControl.Cache%2A>を格納するプロパティ、<xref:System.Web.UI.WebControls.Label.Text%2A>のプロパティの値、 <xref:System.Web.UI.WebControls.Label> Web サーバー コントロール`txtValue`で、<xref:System.Web.Caching.Cache>ユーザー コントロールのアプリケーションに関連付けられているオブジェクト。 使用して、<xref:System.Web.UI.UserControl.Cache%2A>ためには、アイテムのキー パラメーター値を割り当てるプロパティ`txtName.Text`です。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-csharp[Classic Cache.this Example#2](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic Cache.this Example/CS/source.cs#2)]
+ [!code-vb[Classic Cache.this Example#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic Cache.this Example/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CachePolicy">
+      <MemberSignature Language="C#" Value="public System.Web.UI.ControlCachePolicy CachePolicy { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ControlCachePolicy CachePolicy" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.UserControl.CachePolicy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ControlCachePolicy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このユーザー コントロールのキャッシュのパラメーターのコレクションへの参照を取得します。</summary>
+        <value>A<see cref="T:System.Web.UI.ControlCachePolicy" />このキャッシュ パラメーターを定義するプロパティを含む<see cref="T:System.Web.UI.UserControl" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.UserControl.CachePolicy%2A>プロパティのインスタンスのキャッシュ パラメーターを定義して、<xref:System.Web.UI.UserControl>クラスです。 <xref:System.Web.UI.UserControl.CachePolicy%2A>プロパティは読み取り専用です。 ただし、のプロパティを設定することができます、<xref:System.Web.UI.ControlCachePolicy>返されるオブジェクト。  
+  
+ <xref:System.Web.UI.UserControl.CachePolicy%2A>宣言によってプロパティを設定することはできません。 プログラムで設定する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.ControlCachePolicy.SupportsCaching%2A>場合は、およびユーザー コントロールをキャッシュできるかどうかを決定するプロパティを設定、<xref:System.Web.UI.ControlCachePolicy.Duration%2A>コントロールの 10 秒間キャッシュするプロパティです。  
+  
+ [!code-aspx-csharp[UserControlCachePolicy#1](~/samples/snippets/csharp/VS_Snippets_WebNet/UserControlCachePolicy/CS/usercontrolcachepolicycs.aspx#1)]
+ [!code-aspx-vb[UserControlCachePolicy#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/UserControlCachePolicy/VB/usercontrolcachepolicyvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesignerInitialize">
+      <MemberSignature Language="C#" Value="public void DesignerInitialize ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DesignerInitialize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.UserControl.DesignerInitialize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>RAD デザイナーで必要となるユーザー コントロールの初期化の手順を実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Web.UI.UserControl.DesignerInitialize%2A>メソッド中に、`Page_Init`要求の処理の段階です。 これは、ユーザー コントロールを使用できるように RAD デザイナーなど[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]です。  
+  
+ [!code-csharp[UserControl1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/UserControl1/CS/usercontrol1.cs.aspx#1)]
+ [!code-vb[UserControl1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/UserControl1/VB/usercontrol1.vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeAsUserControl">
+      <MemberSignature Language="C#" Value="public void InitializeAsUserControl (System.Web.UI.Page page);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InitializeAsUserControl(class System.Web.UI.Page page) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.UserControl.InitializeAsUserControl(System.Web.UI.Page)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="page" Type="System.Web.UI.Page" />
+      </Parameters>
+      <Docs>
+        <param name="page"><see cref="T:System.Web.UI.Page" />ユーザー コントロールを含むオブジェクトです。</param>
+        <summary>初期化、<see cref="T:System.Web.UI.UserControl" />宣言によって作成されるオブジェクト。 いくつかの違いは、ページやユーザー コントロールがあるために、このメソッドは、ユーザー コントロールが正しく初期化されていることを確認します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Web.UI.UserControl.InitializeAsUserControl%2A>メソッド中に、`Page_Init`要求の処理の段階です。 ここでは初期化されているページ自体が、別のコントロールを初期化し、合格することが、<xref:System.Web.UI.Page.ID%2A>をこのメソッドのパラメーターとして含むページのプロパティの値。  
+  
+ [!code-csharp[UserControl1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/UserControl1/CS/usercontrol1.cs.aspx#1)]
+ [!code-vb[UserControl1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/UserControl1/VB/usercontrol1.vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPostBack">
+      <MemberSignature Language="C#" Value="public bool IsPostBack { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPostBack" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.UserControl.IsPostBack" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>されている場合やクライアント ポストバックへの応答内のユーザー コントロールに読み込まれているかどうかを示す値を取得読み込まれ、最初にアクセスします。</summary>
+        <value>
+          <see langword="true" />クライアントのポストバック; への応答でユーザー コントロールを読み込んでいる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、次の 2 つのキー値のペアを追加する場合は、ユーザー コントロールに関連付けられているアプリケーションの状態、ユーザー コントロールの<xref:System.Web.UI.UserControl.IsPostBack%2A>プロパティから返される`false`です。 この条件が満たされると、コードを使用して、<xref:System.Web.HttpApplicationState.Add%2A>メソッド、ユーザー コントロールの<xref:System.Web.UI.UserControl.Application%2A>プロパティ、キーとその値を追加します。  
+  
+ [!code-csharp[UserControl_Properties#2](~/samples/snippets/csharp/VS_Snippets_WebNet/UserControl_Properties/CS/usercontrol_properties.cs.aspx#2)]
+ [!code-vb[UserControl_Properties#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/UserControl_Properties/VB/usercontrol_properties.vb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadViewState">
+      <MemberSignature Language="C#" Value="protected override void LoadViewState (object savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void LoadViewState(object savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.UserControl.LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="savedState">復元するユーザー コントロールの状態を表す <see cref="T:System.Object" />。</param>
+        <summary><see cref="M:System.Web.UI.UserControl.SaveViewState" /> メソッドによって保存された前回のユーザー コントロール要求からビュー ステート情報を復元します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、主に、.NET Framework インフラストラクチャによって使用され、コードから直接使用するものではありません。  ただし、コントロールの開発者は、カスタム サーバー コントロールがそのビューステートを復元する方法を指定するには、このメソッドをオーバーライドすることができます。 詳細については、次を参照してください。 [ASP.NET 状態管理の概要](http://msdn.microsoft.com/library/0218d965-5d30-445b-b6a6-8870e70e63ce)です。  
+  
+ 取得する必要はありませんようにフィールドにビュー ステートの値を読み込むことができます、<xref:System.Web.UI.Control.ViewState%2A?displayProperty=nameWithType>プロパティを後でします。 値を挿入することも、<xref:System.Web.UI.Control.ViewState%2A>呼び出しの直前にプロパティ<xref:System.Web.UI.UserControl.SaveViewState%2A>、これは、フィールドをサーバーへのラウンド トリップの後も維持する効果的な方法です。  
+  
+   
+  
+## Examples  
+ 次の例では、そのビューを使用して状態を管理するユーザー コントロール、<xref:System.Web.UI.UserControl.LoadViewState%2A>と<xref:System.Web.UI.UserControl.SaveViewState%2A>メソッドです。  
+  
+ [!code-csharp[UserControl_StateManagement#1](~/samples/snippets/csharp/VS_Snippets_WebNet/UserControl_StateManagement/CS/usercontrol2.cs#1)]
+ [!code-vb[UserControl_StateManagement#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/UserControl_StateManagement/VB/usercontrol2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MapPath">
+      <MemberSignature Language="C#" Value="public string MapPath (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string MapPath(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.UserControl.MapPath(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">マップする仮想ファイル パス。</param>
+        <summary>仮想ファイル パス、絶対パスまたは相対物理ファイル パスを割り当てます。</summary>
+        <returns>ファイルへの物理パス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ While のような<xref:System.Web.UI.Page.MapPath%2A?displayProperty=nameWithType>メソッド、このメソッドが .ascx ファイルの場所、.aspx ファイルの場所ではなくからパスを割り当てます。 このメソッドを使用するにはイメージのディレクトリへのパスを取得またはその他のリソースに関連付けられている、<xref:System.Web.UI.UserControl>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Web.UI.UserControl.MapPath%2A>メソッドに関連付けるには、`actualServerPath`という名前のユーザー コントロールに関連付けられている物理パスを持つ変数`myControl`です。  
+  
+ [!code-csharp[UserControl1#3](~/samples/snippets/csharp/VS_Snippets_WebNet/UserControl1/CS/usercontrol1.cs.aspx#3)]
+ [!code-vb[UserControl1#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/UserControl1/VB/usercontrol1.vb.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInit">
+      <MemberSignature Language="C#" Value="protected override void OnInit (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnInit(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.UserControl.OnInit(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" /> オブジェクト。</param>
+        <summary><see cref="E:System.Web.UI.Control.Init" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによって通知されると、<xref:System.Web.UI.UserControl>インスタンスを作成および設定するために必要な初期化の手順を実行する必要があります。 このメソッドに関連付けられているサイト情報の確認、<xref:System.Web.UI.UserControl>インスタンス化し、として、クラスが正しく初期化されていることを確認、<xref:System.Web.UI.UserControl>オブジェクト。  
+  
+ ユーザー コントロールのライフ サイクルのこの段階で、コントロールのビュー状態を設定する必要があります。 さらがこのコントロールを親または子に関係なく、このメソッドが呼び出されたときにその他のサーバー コントロールにアクセスすることはできません。 その他のサーバー コントロールの作成、アクセスの準備が整ってするではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Request">
+      <MemberSignature Language="C#" Value="public System.Web.HttpRequest Request { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpRequest Request" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.UserControl.Request" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpRequest</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の Web 要求に対する <see cref="T:System.Web.HttpRequest" /> オブジェクトを取得します。</summary>
+        <value><see cref="T:System.Web.HttpRequest" />オブジェクトに関連付けられている、<see cref="T:System.Web.UI.Page" />を格納している、<see cref="T:System.Web.UI.UserControl" />インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Web.UI.UserControl.Request%2A>プロパティをユーザー コントロールの物理パスを取得します。 <xref:System.Web.UI.Control.ID%2A>プロパティに設定`myControl`ユーザー コントロールの位置を含むページを取得、またはユーザー コントロールを使用して、`myControl.Request.Path`構文です。  
+  
+ [!code-csharp[UserControl1#3](~/samples/snippets/csharp/VS_Snippets_WebNet/UserControl1/CS/usercontrol1.cs.aspx#3)]
+ [!code-vb[UserControl1#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/UserControl1/VB/usercontrol1.vb.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Response">
+      <MemberSignature Language="C#" Value="public System.Web.HttpResponse Response { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpResponse Response" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.UserControl.Response" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpResponse</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の Web 要求に対する <see cref="T:System.Web.HttpResponse" /> オブジェクトを取得します。</summary>
+        <value><see cref="T:System.Web.HttpResponse" />オブジェクトに関連付けられている、<see cref="T:System.Web.UI.Page" />を格納している、<see cref="T:System.Web.UI.UserControl" />インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Web.UI.UserControl.Response%2A>ユーザー コントロールが実行されている Web サーバー コンピューターの名前を記述するプロパティです。 `myControl.Response.Write`構文でコントロールを取得する情報を表示するユーザー コントロールに指示、`myControl.Server.Machinename`構文です。  
+  
+ [!code-csharp[UserControl1#3](~/samples/snippets/csharp/VS_Snippets_WebNet/UserControl1/CS/usercontrol1.cs.aspx#3)]
+ [!code-vb[UserControl1#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/UserControl1/VB/usercontrol1.vb.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveViewState">
+      <MemberSignature Language="C#" Value="protected override object SaveViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object SaveViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.UserControl.SaveViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>他のユーザー コントロールの最後のページのポストバック後に発生したビューステートの変更を保存します。</summary>
+        <returns>ユーザー コントロールの現在のビューステートを返します。 返すかどうか、コントロールに関連付けられているビュー ステートがない、<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一般に、このメソッドを呼び出す必要はありません。 ただし、ビュー ステートにカスタム情報を格納する場合は、これを行うには、このメソッドをオーバーライドすることができます。  
+  
+   
+  
+## Examples  
+ 次の例では、そのビューを使用して状態を管理するユーザー コントロール、<xref:System.Web.UI.UserControl.LoadViewState%2A>と<xref:System.Web.UI.UserControl.SaveViewState%2A>メソッドです。  
+  
+ [!code-csharp[UserControl_StateManagement#2](~/samples/snippets/csharp/VS_Snippets_WebNet/UserControl_StateManagement/CS/usercontrol2.cs#2)]
+ [!code-vb[UserControl_StateManagement#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/UserControl_StateManagement/VB/usercontrol2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Server">
+      <MemberSignature Language="C#" Value="public System.Web.HttpServerUtility Server { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpServerUtility Server" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.UserControl.Server" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpServerUtility</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の Web 要求に対する <see cref="T:System.Web.HttpServerUtility" /> オブジェクトを取得します。</summary>
+        <value><see cref="T:System.Web.HttpServerUtility" />オブジェクトに関連付けられている、<see cref="T:System.Web.UI.Page" />を格納している、<see cref="T:System.Web.UI.UserControl" />インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.UserControl.Server%2A>オブジェクトは、ASP ページと互換性ができます。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Web.UI.UserControl.Server%2A>ユーザー コントロールが実行されている Web サーバー コンピューターの名前を記述するプロパティです。 `myControl.Response.Write`構文でコントロールを取得する情報を表示するユーザー コントロールに指示、`myControl.Server.Machinename`構文です。  
+  
+ [!code-csharp[UserControl1#3](~/samples/snippets/csharp/VS_Snippets_WebNet/UserControl1/CS/usercontrol1.cs.aspx#3)]
+ [!code-vb[UserControl1#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/UserControl1/VB/usercontrol1.vb.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Session">
+      <MemberSignature Language="C#" Value="public System.Web.SessionState.HttpSessionState Session { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.SessionState.HttpSessionState Session" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.UserControl.Session" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.SessionState.HttpSessionState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の Web 要求に対する <see cref="T:System.Web.SessionState.HttpSessionState" /> オブジェクトを取得します。</summary>
+        <value><see cref="T:System.Web.UI.UserControl" /> インスタンスを格納する <see cref="T:System.Web.UI.Page" /> に関連付けられた <see cref="T:System.Web.SessionState.HttpSessionState" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例に値を追加する、<xref:System.Web.UI.UserControl.Session%2A>ユーザー コントロールのプロパティです。 `myControl.Session.Add`構文は、2 つの値を挿入<xref:System.Web.UI.WebControls.TextBox>Web サーバー コントロールをユーザー コントロールとそれを含むページに関連付けられているセッションです。  
+  
+ [!code-csharp[UserControl1#6](~/samples/snippets/csharp/VS_Snippets_WebNet/UserControl1/CS/usercontrol1.cs.aspx#6)]
+ [!code-vb[UserControl1#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/UserControl1/VB/usercontrol1.vb.aspx#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IAttributeAccessor.GetAttribute">
+      <MemberSignature Language="C#" Value="string IAttributeAccessor.GetAttribute (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance string System.Web.UI.IAttributeAccessor.GetAttribute(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.UserControl.System#Web#UI#IAttributeAccessor#GetAttribute(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">値を取得する属性の名前。</param>
+        <summary>指定したユーザー コントロール属性の値を返します。</summary>
+        <returns>指定したユーザー コントロール属性の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.UserControl.System%23Web%23UI%23IAttributeAccessor%23GetAttribute%2A>コントロールのプロパティとして公開されていないコントロールの属性の値を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IAttributeAccessor.SetAttribute">
+      <MemberSignature Language="C#" Value="void IAttributeAccessor.SetAttribute (string name, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IAttributeAccessor.SetAttribute(string name, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.UserControl.System#Web#UI#IAttributeAccessor#SetAttribute(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">設定する属性名です。</param>
+        <param name="value">設定する属性の値。</param>
+        <summary>指定したユーザー コントロール属性の値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.UserControl.System%23Web%23UI%23IAttributeAccessor%23SetAttribute%2A>コントロールをプロパティとして公開されていないコントロールの属性の値を設定するメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IUserControlDesignerAccessor.InnerText">
+      <MemberSignature Language="C#" Value="string System.Web.UI.IUserControlDesignerAccessor.InnerText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string System.Web.UI.IUserControlDesignerAccessor.InnerText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.UserControl.System#Web#UI#IUserControlDesignerAccessor#InnerText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または開始タグと終了タグのユーザー コントロールの間に表示されるテキストを設定します。</summary>
+        <value>タグと終了タグのユーザー コントロールの間に表示されるテキストです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IUserControlDesignerAccessor.TagName">
+      <MemberSignature Language="C#" Value="string System.Web.UI.IUserControlDesignerAccessor.TagName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string System.Web.UI.IUserControlDesignerAccessor.TagName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.UserControl.System#Web#UI#IUserControlDesignerAccessor#TagName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはユーザー コントロールの完全なタグ名を設定します。</summary>
+        <value>ユーザー コントロールの完全なタグ名。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Trace">
+      <MemberSignature Language="C#" Value="public System.Web.TraceContext Trace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.TraceContext Trace" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.UserControl.Trace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.TraceContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の Web 要求に対する <see cref="T:System.Web.TraceContext" /> オブジェクトを取得します。</summary>
+        <value>データ、<see cref="T:System.Web.TraceContext" />の現在の Web 要求のオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トレースは、追跡し、Web 要求に関する実行の詳細を表示します。 トレース データを表示されたページに表示される、そのページのトレースを有効にする必要があります。  
+  
+ 既定では、ページのトレースは無効です。 ページのトレースを有効にするを使用して、 [@ Page](http://msdn.microsoft.com/en-us/f06cf9e5-22bb-461d-8b8f-549e53ff40a4)ようディレクティブ: \<% ページ トレース @ ="true"% >  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryUpdateModel&lt;TModel&gt;">
+      <MemberSignature Language="C#" Value="public virtual bool TryUpdateModel&lt;TModel&gt; (TModel model) where TModel : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TryUpdateModel&lt;class TModel&gt;(!!TModel model) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.UserControl.TryUpdateModel``1(``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TModel">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="model" Type="TModel" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TModel">モデル オブジェクトの型。</typeparam>
+        <param name="model">更新するモデル インスタンス。</param>
+        <summary>データ バインド コントロールから値を使用して、モデル インスタンスを更新しようとしています。</summary>
+        <returns>
+          <see langword="true" />モデルのインスタンスが正常に更新された場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.UserControl.TryUpdateModel%2A>メソッド呼び出す必要がありますからコントロールのデータ操作メソッドの内部を使用して、`ModelType`データ バインディングのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryUpdateModel&lt;TModel&gt;">
+      <MemberSignature Language="C#" Value="public virtual bool TryUpdateModel&lt;TModel&gt; (TModel model, System.Web.ModelBinding.IValueProvider valueProvider) where TModel : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TryUpdateModel&lt;class TModel&gt;(!!TModel model, class System.Web.ModelBinding.IValueProvider valueProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.UserControl.TryUpdateModel``1(``0,System.Web.ModelBinding.IValueProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TModel">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="model" Type="TModel" />
+        <Parameter Name="valueProvider" Type="System.Web.ModelBinding.IValueProvider" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TModel">モデル オブジェクトの型。</typeparam>
+        <param name="model">更新するモデル インスタンス。</param>
+        <param name="valueProvider">モデルの更新に使用する値のディクショナリ。</param>
+        <summary>値プロバイダー内の値を使用してモデル インスタンスを更新しようとしています。</summary>
+        <returns>
+          <see langword="true" />モデルのインスタンスが正常に更新された場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.UserControl.TryUpdateModel%2A>メソッドを使用して、コントロールのデータ操作メソッド内から呼び出す必要があります、`ModelType`データ バインディングのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateModel&lt;TModel&gt;">
+      <MemberSignature Language="C#" Value="public virtual void UpdateModel&lt;TModel&gt; (TModel model) where TModel : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void UpdateModel&lt;class TModel&gt;(!!TModel model) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.UserControl.UpdateModel``1(``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TModel">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="model" Type="TModel" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TModel">モデル オブジェクトの型。</typeparam>
+        <param name="model">更新するモデル インスタンス。</param>
+        <summary>データ バインド コントロールの値を使用して、モデルのインスタンスを更新します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">モデル インスタンスが正常に更新されませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateModel&lt;TModel&gt;">
+      <MemberSignature Language="C#" Value="public virtual void UpdateModel&lt;TModel&gt; (TModel model, System.Web.ModelBinding.IValueProvider valueProvider) where TModel : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void UpdateModel&lt;class TModel&gt;(!!TModel model, class System.Web.ModelBinding.IValueProvider valueProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.UserControl.UpdateModel``1(``0,System.Web.ModelBinding.IValueProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TModel">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="model" Type="TModel" />
+        <Parameter Name="valueProvider" Type="System.Web.ModelBinding.IValueProvider" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TModel">モデル オブジェクトの型。</typeparam>
+        <param name="model">更新するモデル インスタンス。</param>
+        <param name="valueProvider">モデルの更新に使用する値のディクショナリ。</param>
+        <summary>ユーザー コントロールの値のプロバイダーからの値を使用して、指定されたモデル インスタンスを更新します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">モデル インスタンスが正常に更新されませんでした。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

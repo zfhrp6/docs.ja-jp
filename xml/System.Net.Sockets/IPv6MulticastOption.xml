@@ -1,0 +1,221 @@
+<Type Name="IPv6MulticastOption" FullName="System.Net.Sockets.IPv6MulticastOption">
+  <TypeSignature Language="C#" Value="public class IPv6MulticastOption" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit IPv6MulticastOption extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Sockets.IPv6MulticastOption" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Sockets</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>IPv6 マルチキャスト グループに参加するためのオプションの値が含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Net.Sockets.IPv6MulticastOption>オブジェクト。  
+  
+ [!code-cpp[System.Net.Sockets.UdpClient.JoinMulticastGroup#4](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Sockets.UdpClient.JoinMulticastGroup/CPP/joinmulticastgroup.cpp#4)]
+ [!code-csharp[System.Net.Sockets.UdpClient.JoinMulticastGroup#4](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Sockets.UdpClient.JoinMulticastGroup/CS/joinmulticastgroup.cs#4)]
+ [!code-vb[System.Net.Sockets.UdpClient.JoinMulticastGroup#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Sockets.UdpClient.JoinMulticastGroup/VB/joinmulticastgroup.vb#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IPv6MulticastOption (System.Net.IPAddress group);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Net.IPAddress group) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.IPv6MulticastOption.#ctor(System.Net.IPAddress)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="group" Type="System.Net.IPAddress" />
+      </Parameters>
+      <Docs>
+        <param name="group"><see cref="T:System.Net.IPAddress" />マルチキャスト グループのです。</param>
+        <summary>新しいバージョンの初期化、<see cref="T:System.Net.Sockets.IPv6MulticastOption" />指定された IP マルチキャスト グループのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Net.Sockets.IPv6MulticastOption>オブジェクト。  
+  
+ [!code-cpp[System.Net.Sockets.UdpClient.JoinMulticastGroup#4](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Sockets.UdpClient.JoinMulticastGroup/CPP/joinmulticastgroup.cpp#4)]
+ [!code-csharp[System.Net.Sockets.UdpClient.JoinMulticastGroup#4](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Sockets.UdpClient.JoinMulticastGroup/CS/joinmulticastgroup.cs#4)]
+ [!code-vb[System.Net.Sockets.UdpClient.JoinMulticastGroup#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Sockets.UdpClient.JoinMulticastGroup/VB/joinmulticastgroup.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="group" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IPv6MulticastOption (System.Net.IPAddress group, long ifindex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Net.IPAddress group, int64 ifindex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.IPv6MulticastOption.#ctor(System.Net.IPAddress,System.Int64)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="group" Type="System.Net.IPAddress" />
+        <Parameter Name="ifindex" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="group">グループ<see cref="T:System.Net.IPAddress" />です。</param>
+        <param name="ifindex">ローカル インターフェイスのアドレス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Sockets.IPv6MulticastOption" />クラスは、指定された IP マルチキャスト グループとローカル インターフェイス アドレスを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `ifindex`パラメーターは、データを受信または送信されるインターフェイスを指定します。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Net.Sockets.IPv6MulticastOption>オブジェクト。  
+  
+ [!code-cpp[System.Net.Sockets.UdpClient.JoinMulticastGroup#5](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Sockets.UdpClient.JoinMulticastGroup/CPP/joinmulticastgroup.cpp#5)]
+ [!code-csharp[System.Net.Sockets.UdpClient.JoinMulticastGroup#5](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Sockets.UdpClient.JoinMulticastGroup/CS/joinmulticastgroup.cs#5)]
+ [!code-vb[System.Net.Sockets.UdpClient.JoinMulticastGroup#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Sockets.UdpClient.JoinMulticastGroup/VB/joinmulticastgroup.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="ifindex" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="ifindex" />0x00000000FFFFFFFF を超えています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="group" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Group">
+      <MemberSignature Language="C#" Value="public System.Net.IPAddress Group { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.IPAddress Group" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.IPv6MulticastOption.Group" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.IPAddress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはマルチキャスト グループの IP アドレスを設定します。</summary>
+        <value><see cref="T:System.Net.IPAddress" />マルチキャスト グループのインターネット アドレスを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Net.Sockets.IPv6MulticastOption>オブジェクト。  
+  
+ [!code-cpp[System.Net.Sockets.UdpClient.JoinMulticastGroup#4](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Sockets.UdpClient.JoinMulticastGroup/CPP/joinmulticastgroup.cpp#4)]
+ [!code-csharp[System.Net.Sockets.UdpClient.JoinMulticastGroup#4](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Sockets.UdpClient.JoinMulticastGroup/CS/joinmulticastgroup.cs#4)]
+ [!code-vb[System.Net.Sockets.UdpClient.JoinMulticastGroup#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Sockets.UdpClient.JoinMulticastGroup/VB/joinmulticastgroup.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="group" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InterfaceIndex">
+      <MemberSignature Language="C#" Value="public long InterfaceIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 InterfaceIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.IPv6MulticastOption.InterfaceIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはマルチキャスト グループに関連付けられているインターフェイス インデックスを設定します。</summary>
+        <value>A<see cref="T:System.UInt64" />インターフェイスのアドレスを指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、データを受信または送信されるインターフェイスを指定します。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Net.Sockets.IPv6MulticastOption>オブジェクト。  
+  
+ [!code-cpp[System.Net.Sockets.UdpClient.JoinMulticastGroup#4](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Sockets.UdpClient.JoinMulticastGroup/CPP/joinmulticastgroup.cpp#4)]
+ [!code-csharp[System.Net.Sockets.UdpClient.JoinMulticastGroup#4](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Sockets.UdpClient.JoinMulticastGroup/CS/joinmulticastgroup.cs#4)]
+ [!code-vb[System.Net.Sockets.UdpClient.JoinMulticastGroup#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Sockets.UdpClient.JoinMulticastGroup/VB/joinmulticastgroup.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定操作に指定されている値は、0 より小さいか、0x00000000FFFFFFFF よりも大きい値です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

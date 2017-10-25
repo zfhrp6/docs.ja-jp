@@ -1,0 +1,136 @@
+<Type Name="TraceFilter" FullName="System.Diagnostics.TraceFilter">
+  <TypeSignature Language="C#" Value="public abstract class TraceFilter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit TraceFilter extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.TraceFilter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>トレース フィルターの実装のためには、基本クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フィルターの追加レイヤーを提供するトレース リスナーがトレース フィルターを使用できるトレース スイッチでは提供されません。 トレース リスナーをトレースのフィルターは含まれて、リスナーの<xref:System.Diagnostics.TraceListener.Filter%2A>プロパティです。 トレース スイッチは、トレースをトレース リスナーに送信するかどうかを決定します。 トレース フィルターを使用すると、個別のトレース リスナーをトレースが関連付けられている出力メディアに書き込まれるかどうかを判断します。 たとえば、各トレース フィルターによって決まる、トレース書き込むことが、コンソールで、<xref:System.Diagnostics.ConsoleTraceListener>がによってイベント ログには、<xref:System.Diagnostics.EventLogTraceListener>です。  
+  
+ 継承するフィルター、<xref:System.Diagnostics.TraceFilter>クラスから継承するトレース リスナーで使用できる、<xref:System.Diagnostics.TraceListener>クラスをトレースするイベントのフィルター処理を実行します。 <xref:System.Diagnostics.TraceFilter>1 つのメソッドを含む<xref:System.Diagnostics.TraceFilter.ShouldTrace%2A>、イベント データを受け取り、イベントをトレースするかどうかを示すフラグを返します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TraceFilter ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.TraceFilter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Diagnostics.TraceFilter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldTrace">
+      <MemberSignature Language="C#" Value="public abstract bool ShouldTrace (System.Diagnostics.TraceEventCache cache, string source, System.Diagnostics.TraceEventType eventType, int id, string formatOrMessage, object[] args, object data1, object[] data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ShouldTrace(class System.Diagnostics.TraceEventCache cache, string source, valuetype System.Diagnostics.TraceEventType eventType, int32 id, string formatOrMessage, object[] args, object data1, object[] data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.TraceFilter.ShouldTrace(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String,System.Object[],System.Object,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cache" Type="System.Diagnostics.TraceEventCache" />
+        <Parameter Name="source" Type="System.String" />
+        <Parameter Name="eventType" Type="System.Diagnostics.TraceEventType" />
+        <Parameter Name="id" Type="System.Int32" />
+        <Parameter Name="formatOrMessage" Type="System.String" />
+        <Parameter Name="args" Type="System.Object[]" />
+        <Parameter Name="data1" Type="System.Object" />
+        <Parameter Name="data" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="cache"><see cref="T:System.Diagnostics.TraceEventCache" />トレース イベントの情報を格納します。</param>
+        <param name="source">ソースの名前。</param>
+        <param name="eventType">トレースを発生させたイベントのタイプを指定する <see cref="T:System.Diagnostics.TraceEventType" /> 値の 1 つ。</param>
+        <param name="id">トレースの識別番号。</param>
+        <param name="formatOrMessage">によって指定された引数の配列の記述に使用するか、形式、 <c>args</c>パラメーター、または書き込むメッセージ。</param>
+        <param name="args">引数オブジェクトの配列。</param>
+        <param name="data1">トレース データ オブジェクト。</param>
+        <param name="data">トレース データ オブジェクトの配列。</param>
+        <summary>派生クラスでオーバーライドされると、トレース リスナーがイベントをトレースするかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />指定したイベントをトレースするにはそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Diagnostics.TraceFilter.ShouldTrace%2A>トレースは、イベントのトレース イベントの種類と等しい場合に発生する必要がありますを示すためにメソッド<xref:System.Diagnostics.TraceEventType?displayProperty=nameWithType>です。  
+  
+ [!code-cpp[System.Diagnostics.TraceFilter#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.diagnostics.tracefilter/cpp/source.cpp#2)]
+ [!code-csharp[System.Diagnostics.TraceFilter#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.diagnostics.tracefilter/cs/source.cs#2)]
+ [!code-vb[System.Diagnostics.TraceFilter#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.diagnostics.tracefilter/vb/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>このメソッドの実装を返す必要があります<see langword="true" />場合は渡されたパラメーターで指定されたイベントをトレースする必要があります。 それ以外の場合、メソッドが返す必要があります<see langword="false" />です。 たとえば、のみのエラー イベントをリスナーに通過を許可するフィルターを調べる必要があります、<paramref name="eventType" />パラメーターと戻り値<see langword="true" />トレース イベントの種類のレベルに設定されている場合<see cref="F:System.Diagnostics.TraceEventType.Error" />返すか大きい値です。 それ以外の場合、または<see langword="false" />です。  
+  
+ 処理するメソッドの実装を準備する必要があります<see langword="null" />で、次のパラメーター: <paramref name="args" />、 <paramref name="data1" />、 <paramref name="data" />、 <paramref name="formatOrMessage" />、および<paramref name="cache" />です。 パラメーター値が場合<see langword="null" />パラメーターは、イベントの一部ではありません。 たとえば場合、<paramref name="args" />パラメーターは<see langword="null" />イベントには、引数がないことを意味します。 場合、<paramref name="data" />パラメーターは<see langword="null" />、1 つまたはゼロのデータ オブジェクトが存在し、します。 1 つのデータ オブジェクトがある場合に記載されます、<paramref name="data1" />パラメーター。 単一のデータ オブジェクトとデータ オブジェクトの配列を区別する理由は、パフォーマンスのためです。 ここでは通常、1 つのオブジェクトをトレースすると、専用の場合、オブジェクト配列を作成する必要はありません。 場合、<paramref name="data" />パラメーターではありません<see langword="null" />、<paramref name="data1" />パラメーターもすることはできません<see langword="null" />です。  
+  
+ 保証される、<paramref name="source" />パラメーターではありません<see langword="null" />と空の文字列ではありません ("") です。  
+  
+ 必要に応じて、メソッドの実装は、次の例外をスローすることができます。  
+  
+-   <see cref="T:System.ArgumentNullException" />if <paramref name="source" /> is <see langword="null" />.  
+  
+-   <see cref="T:System.ArgumentException" />場合<paramref name="eventType" />のいずれかではない、<see cref="T:System.Diagnostics.TraceEventType" />値。  
+  
+-   メソッドの実装に関係のない例外です。 たとえば、<see cref="T:System.Threading.ThreadAbortException" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

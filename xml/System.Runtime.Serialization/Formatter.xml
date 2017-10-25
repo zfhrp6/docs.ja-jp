@@ -1,0 +1,1154 @@
+<Type Name="Formatter" FullName="System.Runtime.Serialization.Formatter">
+  <TypeSignature Language="C#" Value="public abstract class Formatter : System.Runtime.Serialization.IFormatter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit Formatter extends System.Object implements class System.Runtime.Serialization.IFormatter" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Serialization.Formatter" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.IFormatter</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.CLSCompliant(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>共通言語ランタイムのシリアル化フォーマッタの基本機能を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Serialization.Formatter>`abstract`のすべてのランタイムのシリアル化フォーマッタの基本クラスおよび実装するためのいくつかのヘルパー メソッドを提供、<xref:System.Runtime.Serialization.IFormatter>インターフェイスです。 <xref:System.Runtime.Serialization.Formatter>もシリアル化のキュー オブジェクトを管理し、オブジェクトごとに Id を生成します。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>継承する場合<see cref="T:System.Runtime.Serialization.Formatter" />、次のメンバーをオーバーライドする必要があります。  
+  
+-   <see cref="M:System.Runtime.Serialization.Formatter.Serialize(System.IO.Stream,System.Object)" />  
+  
+-   <see cref="M:System.Runtime.Serialization.Formatter.Deserialize(System.IO.Stream)" />  
+  
+-   <see cref="M:System.Runtime.Serialization.Formatter.WriteArray(System.Object,System.String,System.Type)" />  
+  
+-   <see cref="M:System.Runtime.Serialization.Formatter.WriteBoolean(System.Boolean,System.String)" />  
+  
+-   <see cref="M:System.Runtime.Serialization.Formatter.WriteByte(System.Byte,System.String)" />  
+  
+-   <see cref="M:System.Runtime.Serialization.Formatter.WriteChar(System.Char,System.String)" />  
+  
+-   <see cref="M:System.Runtime.Serialization.Formatter.WriteDateTime(System.DateTime,System.String)" />  
+  
+-   <see cref="M:System.Runtime.Serialization.Formatter.WriteDecimal(System.Decimal,System.String)" />  
+  
+-   <see cref="M:System.Runtime.Serialization.Formatter.WriteDouble(System.Double,System.String)" />  
+  
+-   <see cref="M:System.Runtime.Serialization.Formatter.WriteInt16(System.Int16,System.String)" />  
+  
+-   <see cref="M:System.Runtime.Serialization.Formatter.WriteInt32(System.Int32,System.String)" />  
+  
+-   <see cref="M:System.Runtime.Serialization.Formatter.WriteInt64(System.Int64,System.String)" />  
+  
+-   <see cref="M:System.Runtime.Serialization.Formatter.WriteObjectRef(System.Object,System.String,System.Type)" />  
+  
+-   <see cref="M:System.Runtime.Serialization.Formatter.WriteSByte(System.SByte,System.String)" />  
+  
+-   <see cref="M:System.Runtime.Serialization.Formatter.WriteSingle(System.Single,System.String)" />  
+  
+-   <see cref="M:System.Runtime.Serialization.Formatter.WriteTimeSpan(System.TimeSpan,System.String)" />  
+  
+-   <see cref="M:System.Runtime.Serialization.Formatter.WriteUInt16(System.UInt16,System.String)" />  
+  
+-   <see cref="M:System.Runtime.Serialization.Formatter.WriteUInt32(System.UInt32,System.String)" />  
+  
+-   <see cref="M:System.Runtime.Serialization.Formatter.WriteUInt64(System.UInt64,System.String)" />  
+  
+-   <see cref="M:System.Runtime.Serialization.Formatter.WriteValueType(System.Object,System.String,System.Type)" />  
+  
+-   <see cref="P:System.Runtime.Serialization.Formatter.SurrogateSelector" />  
+  
+-   <see cref="P:System.Runtime.Serialization.Formatter.Binder" />  
+  
+-   <see cref="P:System.Runtime.Serialization.Formatter.Context" /></para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Formatter ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.Serialization.Formatter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成、<xref:System.Collections.Queue>オブジェクトをシリアル化のと<xref:System.Runtime.Serialization.ObjectIDGenerator>をそれらの Id を生成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Binder">
+      <MemberSignature Language="C#" Value="public abstract System.Runtime.Serialization.SerializationBinder Binder { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Serialization.SerializationBinder Binder" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.Formatter.Binder" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.SerializationBinder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、取得または設定、<see cref="T:System.Runtime.Serialization.SerializationBinder" />の現在のフォーマッタと共に使用します。</summary>
+        <value>現在のフォーマッタと共に使用する <see cref="T:System.Runtime.Serialization.SerializationBinder" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Serialization.SerializationBinder>逆シリアル化中に渡される型名からの種類の参照を実行します。 ない場合は<xref:System.Runtime.Serialization.SerializationBinder>が設定されている、既定値を使用します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このプロパティを実装する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Context">
+      <MemberSignature Language="C#" Value="public abstract System.Runtime.Serialization.StreamingContext Context { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.Serialization.StreamingContext Context" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.Formatter.Context" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.StreamingContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、取得または設定、<see cref="T:System.Runtime.Serialization.StreamingContext" />現在シリアル化に使用します。</summary>
+        <value><see cref="T:System.Runtime.Serialization.StreamingContext" />現在シリアル化に使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Serialization.StreamingContext>いずれかを示す値を逆シリアル化されるビットの送信元またはシリアル化されるビットの送信先はします。 既定のシリアル化に影響を与えませんがへの引数として渡される<xref:System.Runtime.Serialization.ISerializable>と<xref:System.Runtime.Serialization.ISerializationSurrogate>です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このプロパティを実装する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Deserialize">
+      <MemberSignature Language="C#" Value="public abstract object Deserialize (System.IO.Stream serializationStream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Deserialize(class System.IO.Stream serializationStream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatter.Deserialize(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializationStream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="serializationStream">逆シリアル化するストリーム。</param>
+        <summary>派生クラスでオーバーライドされると、最初そのストリームにシリアル化するグラフと同じオブジェクトのグラフの作成が作成されたときに、フォーマッタにアタッチされているストリームを逆シリアル化します。</summary>
+        <returns>オブジェクトの逆シリアル化されたグラフの最上位オブジェクトです。</returns>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このメソッドを実装する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNext">
+      <MemberSignature Language="C#" Value="protected virtual object GetNext (out long objID);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object GetNext([out] int64&amp; objID) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatter.GetNext(System.Int64@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="objID" Type="System.Int64&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="objID">シリアル化中に、現在のオブジェクトに割り当てられた ID。</param>
+        <summary>[次へ] をフォーマッタの内部作業キューからシリアル化するオブジェクトを返します。</summary>
+        <returns>シリアル化する次のオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 渡すされた方法に基づいて順序を最初に最初のオブジェクトが返される<xref:System.Runtime.Serialization.Formatter.Schedule%2A>です。 オブジェクトの ID を入れる、`objID`パラメーターと、オブジェクトが関数から返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">ワーク キューから取得された次のオブジェクトが割り当てられた ID がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="m_idGenerator">
+      <MemberSignature Language="C#" Value="protected System.Runtime.Serialization.ObjectIDGenerator m_idGenerator;" />
+      <MemberSignature Language="ILAsm" Value=".field family class System.Runtime.Serialization.ObjectIDGenerator m_idGenerator" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Serialization.Formatter.m_idGenerator" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.ObjectIDGenerator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>含まれています、<see cref="T:System.Runtime.Serialization.ObjectIDGenerator" />の現在のフォーマッタと共に使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Serialization.ObjectIDGenerator>識別されたオブジェクトと、指定された Id の一覧を保持します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="m_objectQueue">
+      <MemberSignature Language="C#" Value="protected System.Collections.Queue m_objectQueue;" />
+      <MemberSignature Language="ILAsm" Value=".field family class System.Collections.Queue m_objectQueue" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Serialization.Formatter.m_objectQueue" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Queue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>含まれています、<see cref="T:System.Collections.Queue" />左をシリアル化するオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シリアル化のため予定されているオブジェクト、<xref:System.Runtime.Serialization.Formatter.Schedule%2A>メソッドは、キューにプッシュします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Schedule">
+      <MemberSignature Language="C#" Value="protected virtual long Schedule (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance int64 Schedule(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatter.Schedule(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">シリアル化のスケジュールを設定するオブジェクト。</param>
+        <summary>後でシリアル化するオブジェクトをスケジュールします。</summary>
+        <returns>オブジェクトに割り当てられたオブジェクト ID。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Serialization.Formatter.Schedule%2A>オブジェクトの ID を取得し、場合は、新しいオブジェクト id です。 これは後でシリアル化のためにキューに配置 スケジュールは、シリアル化されるオブジェクトの作業キュー、フォーマッタの内部に保持されます。 オブジェクトが既に作業キューにある場合、これは追加されませんをもう一度けれども、例外はスローされませんいずれか  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Serialize">
+      <MemberSignature Language="C#" Value="public abstract void Serialize (System.IO.Stream serializationStream, object graph);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Serialize(class System.IO.Stream serializationStream, object graph) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatter.Serialize(System.IO.Stream,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializationStream" Type="System.IO.Stream" />
+        <Parameter Name="graph" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="serializationStream">オブジェクトがシリアル化されたストリーム。</param>
+        <param name="graph">シリアル化するグラフのルートにあるオブジェクト。</param>
+        <summary>派生クラスでオーバーライドされると、フォーマッタに既にアタッチされているストリームに指定されたルートを持つオブジェクトのグラフをシリアル化します。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このメソッドを実装する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="SurrogateSelector">
+      <MemberSignature Language="C#" Value="public abstract System.Runtime.Serialization.ISurrogateSelector SurrogateSelector { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Serialization.ISurrogateSelector SurrogateSelector" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.Formatter.SurrogateSelector" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.ISurrogateSelector</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、取得または設定、<see cref="T:System.Runtime.Serialization.ISurrogateSelector" />の現在のフォーマッタと共に使用します。</summary>
+        <value>現在のフォーマッタと共に使用する <see cref="T:System.Runtime.Serialization.ISurrogateSelector" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Runtime.Serialization.SurrogateSelector>の実装を検索する<xref:System.Runtime.Serialization.ISerializationSurrogate>特定の型のシリアル化を制御します。  
+  
+ オブジェクトの種類に対応するサロゲートの場合はかどうか、に、シリアル化および逆シリアル化に渡されます、サロゲート型を実装する場合でも、<xref:System.Runtime.Serialization.ISerializable>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このプロパティを実装する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteArray">
+      <MemberSignature Language="C#" Value="protected abstract void WriteArray (object obj, string name, Type memberType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteArray(object obj, string name, class System.Type memberType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatter.WriteArray(System.Object,System.String,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="memberType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="obj">書き込み先の配列。</param>
+        <param name="name">配列の名前。</param>
+        <param name="memberType">配列を保持する要素の型。</param>
+        <summary>派生クラスでオーバーライドされると、配列をフォーマッタに既にアタッチされているストリームに書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このメソッドを実装する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteBoolean">
+      <MemberSignature Language="C#" Value="protected abstract void WriteBoolean (bool val, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteBoolean(bool val, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatter.WriteBoolean(System.Boolean,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="val" Type="System.Boolean" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="val">書き込む値。</param>
+        <param name="name">メンバーの名前。</param>
+        <summary>派生クラスでオーバーライドされると、ブール値をフォーマッタに既にアタッチされているストリームに書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このメソッドを実装する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteByte">
+      <MemberSignature Language="C#" Value="protected abstract void WriteByte (byte val, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteByte(unsigned int8 val, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatter.WriteByte(System.Byte,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="val" Type="System.Byte" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="val">書き込む値。</param>
+        <param name="name">メンバーの名前。</param>
+        <summary>派生クラスでオーバーライドされると、8 ビット符号なし整数をフォーマッタに既にアタッチされているストリームに書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このメソッドを実装する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteChar">
+      <MemberSignature Language="C#" Value="protected abstract void WriteChar (char val, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteChar(char val, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatter.WriteChar(System.Char,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="val" Type="System.Char" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="val">書き込む値。</param>
+        <param name="name">メンバーの名前。</param>
+        <summary>派生クラスでオーバーライドされると、Unicode 文字をフォーマッタに既にアタッチされているストリームに書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このメソッドを実装する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteDateTime">
+      <MemberSignature Language="C#" Value="protected abstract void WriteDateTime (DateTime val, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteDateTime(valuetype System.DateTime val, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatter.WriteDateTime(System.DateTime,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="val" Type="System.DateTime" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="val">書き込む値。</param>
+        <param name="name">メンバーの名前。</param>
+        <summary>派生クラスでオーバーライドされると、<see cref="T:System.DateTime" />をフォーマッタに既にアタッチされているストリーム。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このメソッドを実装する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteDecimal">
+      <MemberSignature Language="C#" Value="protected abstract void WriteDecimal (decimal val, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteDecimal(valuetype System.Decimal val, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatter.WriteDecimal(System.Decimal,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="val" Type="System.Decimal" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="val">書き込む値。</param>
+        <param name="name">メンバーの名前。</param>
+        <summary>派生クラスでオーバーライドされると、<see cref="T:System.Decimal" />をフォーマッタに既にアタッチされているストリーム。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このメソッドを実装する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteDouble">
+      <MemberSignature Language="C#" Value="protected abstract void WriteDouble (double val, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteDouble(float64 val, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatter.WriteDouble(System.Double,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="val" Type="System.Double" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="val">書き込む値。</param>
+        <param name="name">メンバーの名前。</param>
+        <summary>派生クラスでオーバーライドされると、倍精度浮動小数点数をフォーマッタに既にアタッチされているストリームに書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このメソッドを実装する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteInt16">
+      <MemberSignature Language="C#" Value="protected abstract void WriteInt16 (short val, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteInt16(int16 val, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatter.WriteInt16(System.Int16,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="val" Type="System.Int16" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="val">書き込む値。</param>
+        <param name="name">メンバーの名前。</param>
+        <summary>派生クラスでオーバーライドされると、16 ビット符号付き整数をフォーマッタに既にアタッチされているストリームに書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このメソッドを実装する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteInt32">
+      <MemberSignature Language="C#" Value="protected abstract void WriteInt32 (int val, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteInt32(int32 val, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatter.WriteInt32(System.Int32,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="val" Type="System.Int32" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="val">書き込む値。</param>
+        <param name="name">メンバーの名前。</param>
+        <summary>派生クラスでオーバーライドされると、32 ビット符号付き整数をストリームに書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このメソッドを実装する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteInt64">
+      <MemberSignature Language="C#" Value="protected abstract void WriteInt64 (long val, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteInt64(int64 val, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatter.WriteInt64(System.Int64,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="val" Type="System.Int64" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="val">書き込む値。</param>
+        <param name="name">メンバーの名前。</param>
+        <summary>派生クラスでオーバーライドされると、64 ビット符号付き整数をストリームに書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このメソッドを実装する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteMember">
+      <MemberSignature Language="C#" Value="protected virtual void WriteMember (string memberName, object data);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteMember(string memberName, object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatter.WriteMember(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="memberName" Type="System.String" />
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="memberName">シリアル化するメンバーの名前。</param>
+        <param name="data">フォーマッタに結び付けられているストリームに書き込むオブジェクト。</param>
+        <summary>受信した、データの型を検査し、適切な<see langword="Write" />フォーマッタに既にアタッチされているストリームに書き込みを実行するメソッド。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 正しく、このメソッドを使用するすべての`Write`メソッド (<xref:System.Runtime.Serialization.Formatter.WriteArray%2A>メソッドを<xref:System.Runtime.Serialization.Formatter.WriteBoolean%2A>メソッドを<xref:System.Runtime.Serialization.Formatter.WriteByte%2A>メソッドをおよびな)、適切な機能を持つ必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteObjectRef">
+      <MemberSignature Language="C#" Value="protected abstract void WriteObjectRef (object obj, string name, Type memberType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteObjectRef(object obj, string name, class System.Type memberType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatter.WriteObjectRef(System.Object,System.String,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="memberType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="obj">書き込むオブジェクトの参照。</param>
+        <param name="name">メンバーの名前。</param>
+        <param name="memberType">参照が指すオブジェクトの型。</param>
+        <summary>派生クラスでオーバーライドされると、フォーマッタに既にアタッチされているストリームへのオブジェクト参照を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作業を処理するグラフ ウォーカーでオブジェクトをスケジュールします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このメソッドを実装する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteSByte">
+      <MemberSignature Language="C#" Value="protected abstract void WriteSByte (sbyte val, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteSByte(int8 val, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatter.WriteSByte(System.SByte,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="val" Type="System.SByte" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="val">書き込む値。</param>
+        <param name="name">メンバーの名前。</param>
+        <summary>派生クラスでオーバーライドされると、8 ビット符号付き整数をフォーマッタに既にアタッチされているストリームに書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このメソッドを実装する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteSingle">
+      <MemberSignature Language="C#" Value="protected abstract void WriteSingle (float val, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteSingle(float32 val, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatter.WriteSingle(System.Single,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="val" Type="System.Single" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="val">書き込む値。</param>
+        <param name="name">メンバーの名前。</param>
+        <summary>派生クラスでオーバーライドされると、単精度浮動小数点数をフォーマッタに既にアタッチされているストリームに書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このメソッドを実装する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteTimeSpan">
+      <MemberSignature Language="C#" Value="protected abstract void WriteTimeSpan (TimeSpan val, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteTimeSpan(valuetype System.TimeSpan val, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatter.WriteTimeSpan(System.TimeSpan,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="val" Type="System.TimeSpan" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="val">書き込む値。</param>
+        <param name="name">メンバーの名前。</param>
+        <summary>派生クラスでオーバーライドされると、<see cref="T:System.TimeSpan" />をフォーマッタに既にアタッチされているストリーム。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このメソッドを実装する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteUInt16">
+      <MemberSignature Language="C#" Value="protected abstract void WriteUInt16 (ushort val, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteUInt16(unsigned int16 val, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatter.WriteUInt16(System.UInt16,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="val" Type="System.UInt16" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="val">書き込む値。</param>
+        <param name="name">メンバーの名前。</param>
+        <summary>派生クラスでオーバーライドされると、16 ビット符号なし整数をフォーマッタに既にアタッチされているストリームに書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このメソッドを実装する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteUInt32">
+      <MemberSignature Language="C#" Value="protected abstract void WriteUInt32 (uint val, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteUInt32(unsigned int32 val, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatter.WriteUInt32(System.UInt32,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="val" Type="System.UInt32" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="val">書き込む値。</param>
+        <param name="name">メンバーの名前。</param>
+        <summary>派生クラスでオーバーライドされると、32 ビット符号なし整数をフォーマッタに既にアタッチされているストリームに書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このメソッドを実装する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteUInt64">
+      <MemberSignature Language="C#" Value="protected abstract void WriteUInt64 (ulong val, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteUInt64(unsigned int64 val, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatter.WriteUInt64(System.UInt64,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="val" Type="System.UInt64" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="val">書き込む値。</param>
+        <param name="name">メンバーの名前。</param>
+        <summary>派生クラスでオーバーライドされると、64 ビット符号なし整数をフォーマッタに既にアタッチされているストリームに書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このメソッドを実装する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteValueType">
+      <MemberSignature Language="C#" Value="protected abstract void WriteValueType (object obj, string name, Type memberType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteValueType(object obj, string name, class System.Type memberType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatter.WriteValueType(System.Object,System.String,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="memberType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="obj">値の型を表すオブジェクト。</param>
+        <param name="name">メンバーの名前。</param>
+        <param name="memberType"><see cref="T:System.Type" />値の型。</param>
+        <summary>派生クラスでオーバーライドされると、指定された型の値をフォーマッタに既にアタッチされているストリームに書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このメソッドを実装する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

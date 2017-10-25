@@ -1,0 +1,439 @@
+<Type Name="FontWeights" FullName="System.Windows.FontWeights">
+  <TypeSignature Language="C#" Value="public static class FontWeights" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit FontWeights extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.FontWeights" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>静的な定義済みのセットを提供<see cref="T:System.Windows.FontWeight" />値。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フォントの太さには、フォント、またはストロークの太さの観点からの相対的な重みがについて説明します。 太さの違いは、増加したストロークまたはを同じフォントの「通常」の文字と比較して、フォントの特定の文字に関連付けられている太さによって一般に区別されます。  
+  
+ <xref:System.Windows.FontWeights>値に対応して、`usWeightClass`内の定義、[!INCLUDE[TLA2#tla_opentype](~/includes/tla2sharptla-opentype-md.md)]仕様です。 `usWeightClass` 1 から 999 までの整数値を表します。 値が小さいほど明るい重みです。高い値は、高い負荷に対応する重みを示します。  
+  
+|文字の太さ|usWeightClass|  
+|-----------------|-------------------|  
+|<xref:System.Windows.FontWeights.Thin%2A>|100|  
+|<xref:System.Windows.FontWeights.ExtraLight%2A><br /><br /> <xref:System.Windows.FontWeights.UltraLight%2A>|200|  
+|<xref:System.Windows.FontWeights.Light%2A>|300|  
+|<xref:System.Windows.FontWeights.Normal%2A><br /><br /> <xref:System.Windows.FontWeights.Regular%2A>|400|  
+|<xref:System.Windows.FontWeights.Medium%2A>|500|  
+|<xref:System.Windows.FontWeights.DemiBold%2A><br /><br /> <xref:System.Windows.FontWeights.SemiBold%2A>|600|  
+|<xref:System.Windows.FontWeights.Bold%2A>|700|  
+|<xref:System.Windows.FontWeights.ExtraBold%2A><br /><br /> <xref:System.Windows.FontWeights.UltraBold%2A>|800|  
+|<xref:System.Windows.FontWeights.Black%2A><br /><br /> <xref:System.Windows.FontWeights.Heavy%2A>|900|  
+|<xref:System.Windows.FontWeights.ExtraBlack%2A><br /><br /> <xref:System.Windows.FontWeights.UltraBlack%2A>|950|  
+  
+ 詳細については、 [!INCLUDE[TLA#tla_opentype](~/includes/tlasharptla-opentype-md.md)] `usWeightClass`値を参照してください、 ["フォント ファイル Tables"](http://www.microsoft.com/typography/otspec/otff.htm)のセクションで、[!INCLUDE[TLA2#tla_opentype](~/includes/tla2sharptla-opentype-md.md)]仕様です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、 <xref:System.Windows.FontWeight> "UltraBold"に設定されています。  
+  
+ [!code-xaml[FontSnippets#FontSnippet12](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/Window1.xaml#fontsnippet12)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Black">
+      <MemberSignature Language="C#" Value="public static System.Windows.FontWeight Black { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.FontWeight Black" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FontWeights.Black" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontWeight</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>「黒」フォントの太さを指定します。</summary>
+        <value>「黒」フォントの太さを表す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.FontWeights.Black%2A>フォントの太さには、<xref:System.Windows.FontWeights.Heavy%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bold">
+      <MemberSignature Language="C#" Value="public static System.Windows.FontWeight Bold { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.FontWeight Bold" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FontWeights.Bold" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontWeight</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>"Bold"フォントの太さを指定します。</summary>
+        <value>"Bold"フォントの太さを表す値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DemiBold">
+      <MemberSignature Language="C#" Value="public static System.Windows.FontWeight DemiBold { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.FontWeight DemiBold" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FontWeights.DemiBold" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontWeight</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>"最強 bold"フォントの太さを指定します。</summary>
+        <value>"最強 bold"フォントの太さを表す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.FontWeights.DemiBold%2A>フォントの太さには、<xref:System.Windows.FontWeights.SemiBold%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtraBlack">
+      <MemberSignature Language="C#" Value="public static System.Windows.FontWeight ExtraBlack { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.FontWeight ExtraBlack" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FontWeights.ExtraBlack" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontWeight</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>「極めて黒い」のフォントの太さを指定します。</summary>
+        <value>「極めて黒い」のフォントの太さを表す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.FontWeights.ExtraBlack%2A>フォントの太さは最も高負荷なフォントの太さ。 <xref:System.Windows.FontWeights.ExtraBlack%2A>フォントの太さには、<xref:System.Windows.FontWeights.UltraBlack%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtraBold">
+      <MemberSignature Language="C#" Value="public static System.Windows.FontWeight ExtraBold { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.FontWeight ExtraBold" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FontWeights.ExtraBold" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontWeight</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>「極めて太字」のフォントの太さを指定します。</summary>
+        <value>「極めて太字」のフォントの太さを表す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.FontWeights.ExtraBold%2A>フォントの太さには、<xref:System.Windows.FontWeights.UltraBold%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtraLight">
+      <MemberSignature Language="C#" Value="public static System.Windows.FontWeight ExtraLight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.FontWeight ExtraLight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FontWeights.ExtraLight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontWeight</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>"Light 極めて"のフォントの太さを指定します。</summary>
+        <value>"Light 極めて"のフォントの太さを表す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.FontWeights.ExtraLight%2A>フォントの太さには、<xref:System.Windows.FontWeights.UltraLight%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Heavy">
+      <MemberSignature Language="C#" Value="public static System.Windows.FontWeight Heavy { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.FontWeight Heavy" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FontWeights.Heavy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontWeight</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>「高」のフォントの太さを指定します。</summary>
+        <value>「高」のフォントの太さを表す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.FontWeights.Heavy%2A>フォントの太さには、<xref:System.Windows.FontWeights.Black%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Light">
+      <MemberSignature Language="C#" Value="public static System.Windows.FontWeight Light { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.FontWeight Light" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FontWeights.Light" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontWeight</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>"Light"フォントの太さを指定します。</summary>
+        <value>"Light"フォントの太さを表す値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Medium">
+      <MemberSignature Language="C#" Value="public static System.Windows.FontWeight Medium { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.FontWeight Medium" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FontWeights.Medium" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontWeight</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>「中」フォントの太さを指定します。</summary>
+        <value>「中」フォントの太さを表す値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Normal">
+      <MemberSignature Language="C#" Value="public static System.Windows.FontWeight Normal { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.FontWeight Normal" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FontWeights.Normal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontWeight</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>"Normal"フォントの太さを指定します。</summary>
+        <value>"Normal"フォントの太さを表す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.FontWeights.Normal%2A>フォントの太さには、<xref:System.Windows.FontWeights.Regular%2A>です。  
+  
+   
+  
+## Examples  
+ 「超太字」のフォントの太さには、通常の重量よりも高い負荷に対応ストロークがについて説明します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Regular">
+      <MemberSignature Language="C#" Value="public static System.Windows.FontWeight Regular { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.FontWeight Regular" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FontWeights.Regular" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontWeight</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>「標準」のフォントの太さを指定します。</summary>
+        <value>「標準」のフォントの太さを表す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.FontWeights.Regular%2A>フォントの太さには、<xref:System.Windows.FontWeights.Normal%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SemiBold">
+      <MemberSignature Language="C#" Value="public static System.Windows.FontWeight SemiBold { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.FontWeight SemiBold" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FontWeights.SemiBold" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontWeight</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>"Bold 半"フォントの太さを指定します。</summary>
+        <value>"Bold 半"フォントの太さを表す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.FontWeights.SemiBold%2A>フォントの太さには、<xref:System.Windows.FontWeights.DemiBold%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Thin">
+      <MemberSignature Language="C#" Value="public static System.Windows.FontWeight Thin { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.FontWeight Thin" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FontWeights.Thin" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontWeight</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>"Thin"フォントの太さを指定します。</summary>
+        <value>"Thin"フォントの太さを表す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.FontWeights.Thin%2A>フォントの太さは最も明るいフォントの太さ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UltraBlack">
+      <MemberSignature Language="C#" Value="public static System.Windows.FontWeight UltraBlack { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.FontWeight UltraBlack" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FontWeights.UltraBlack" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontWeight</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>「超黒い」のフォントの太さを指定します。</summary>
+        <value>「超黒い」のフォントの太さを表す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.FontWeights.UltraBlack%2A>フォントの太さは最も高負荷なフォントの太さ。 <xref:System.Windows.FontWeights.UltraBlack%2A>フォントの太さには、<xref:System.Windows.FontWeights.ExtraBlack%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UltraBold">
+      <MemberSignature Language="C#" Value="public static System.Windows.FontWeight UltraBold { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.FontWeight UltraBold" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FontWeights.UltraBold" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontWeight</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>「超太字」のフォントの太さを指定します。</summary>
+        <value>「超太字」のフォントの太さを表す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.FontWeights.UltraBold%2A>フォントの太さには、<xref:System.Windows.FontWeights.ExtraBold%2A>です。  
+  
+   
+  
+## Examples  
+ 「超太字」のフォントの太さには、通常の重量よりも高い負荷に対応ストロークがについて説明します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UltraLight">
+      <MemberSignature Language="C#" Value="public static System.Windows.FontWeight UltraLight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.FontWeight UltraLight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FontWeights.UltraLight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontWeight</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>「超軽量」のフォントの太さを指定します。</summary>
+        <value>「超軽量」のフォントの太さを表す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.FontWeights.UltraLight%2A>フォントの太さには、<xref:System.Windows.FontWeights.ExtraLight%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

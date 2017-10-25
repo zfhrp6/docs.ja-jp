@@ -1,0 +1,300 @@
+<Type Name="ControlPersister" FullName="System.Web.UI.Design.ControlPersister">
+  <TypeSignature Language="C#" Value="public sealed class ControlPersister" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ControlPersister extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.ControlPersister" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>デザイン時に Web サーバー コントロールの永続化するメソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ControlPersister>クラスを永続化できるメソッドを提供する<xref:System.Web.UI.Control>コントロールまたは<xref:System.Web.UI.ITemplate>文字列としての aspx コードをインターフェイスの実装です。 これらのメソッドの実装がなどのメタデータ属性によって決まりますが、 <xref:System.ComponentModel.DefaultValueAttribute>、 <xref:System.Web.UI.PersistenceModeAttribute>、および<xref:System.ComponentModel.DesignerSerializationVisibilityAttribute>です。  
+  
+> [!NOTE]
+>  Web フォーム ページ デザイナー サポートされていません、 <code> Reset <em> PropertyName </em> </code>必要に応じてプロパティを常設するための Microsoft Windows フォーム ベースのコントロールによって公開されるメソッド。  
+  
+ 作成する、<xref:System.Web.UI.Control>オブジェクトまたは<xref:System.Web.UI.ITemplate>コントロールまたはテンプレートの永続性データの文字列を解析してインターフェイスを使用して、<xref:System.Web.UI.Design.ControlParser>クラスのメソッドです。  
+  
+   
+  
+## Examples  
+ [!code-cpp[ControlParserPersisterExample#1](~/samples/snippets/cpp/VS_Snippets_WebNet/ControlParserPersisterExample/CPP/webcustomcontrol1.cpp#1)]
+ [!code-csharp[ControlParserPersisterExample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ControlParserPersisterExample/CS/webcustomcontrol1.cs#1)]
+ [!code-vb[ControlParserPersisterExample#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ControlParserPersisterExample/VB/webcustomcontrol1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="PersistControl">
+      <MemberSignature Language="C#" Value="public static string PersistControl (System.Web.UI.Control control);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string PersistControl(class System.Web.UI.Control control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlPersister.PersistControl(System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="control"><see cref="T:System.Web.UI.Control" />を保持します。</param>
+        <summary>指定したコントロールの永続化の形式を表すデータの文字列を取得します。</summary>
+        <returns>コントロールの永続化の形式を表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが必要な<xref:System.ComponentModel.Design.IDesignerHost>実装が正しく機能します。 このメソッドを使用して、<xref:System.Web.UI.Control.Site%2A>デザイナー ホストを取得する指定されたコントロールのです。  
+  
+   
+  
+## Examples  
+ [!code-cpp[ControlParserPersisterExample#3](~/samples/snippets/cpp/VS_Snippets_WebNet/ControlParserPersisterExample/CPP/webcustomcontrol1.cpp#3)]
+ [!code-csharp[ControlParserPersisterExample#3](~/samples/snippets/csharp/VS_Snippets_WebNet/ControlParserPersisterExample/CS/webcustomcontrol1.cs#3)]
+ [!code-vb[ControlParserPersisterExample#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ControlParserPersisterExample/VB/webcustomcontrol1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PersistControl">
+      <MemberSignature Language="C#" Value="public static void PersistControl (System.IO.TextWriter sw, System.Web.UI.Control control);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void PersistControl(class System.IO.TextWriter sw, class System.Web.UI.Control control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlPersister.PersistControl(System.IO.TextWriter,System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sw" Type="System.IO.TextWriter" />
+        <Parameter Name="control" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="sw"><see cref="T:System.IO.TextWriter" />に永続化されたコントロールにデータを出力します。</param>
+        <param name="control"><see cref="T:System.Web.UI.Control" />を保持します。</param>
+        <summary>指定した指定したコントロールの永続化の形式を表すデータの文字列を出力<see cref="T:System.IO.TextWriter" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが必要な<xref:System.ComponentModel.Design.IDesignerHost>実装が正しく機能します。 このメソッドを使用して、<xref:System.Web.UI.Control.Site%2A>デザイナー ホストを取得する指定されたコントロールのです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PersistControl">
+      <MemberSignature Language="C#" Value="public static string PersistControl (System.Web.UI.Control control, System.ComponentModel.Design.IDesignerHost host);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string PersistControl(class System.Web.UI.Control control, class System.ComponentModel.Design.IDesignerHost host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlPersister.PersistControl(System.Web.UI.Control,System.ComponentModel.Design.IDesignerHost)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Web.UI.Control" />
+        <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
+      </Parameters>
+      <Docs>
+        <param name="control"><see cref="T:System.Web.UI.Control" />を保持します。</param>
+        <param name="host"><see cref="T:System.ComponentModel.Design.IDesignerHost" />コントロールのデザイナー ホストであります。</param>
+        <summary>指定したデザイナー ホストを使用して、指定したコントロールの永続化の形式を表すデータの文字列を取得します。</summary>
+        <returns>コントロールの永続化の形式を表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが必要な<xref:System.ComponentModel.Design.IDesignerHost>実装が正しく機能します。  
+  
+   
+  
+## Examples  
+ [!code-cpp[ControlParserPersisterExample#3](~/samples/snippets/cpp/VS_Snippets_WebNet/ControlParserPersisterExample/CPP/webcustomcontrol1.cpp#3)]
+ [!code-csharp[ControlParserPersisterExample#3](~/samples/snippets/csharp/VS_Snippets_WebNet/ControlParserPersisterExample/CS/webcustomcontrol1.cs#3)]
+ [!code-vb[ControlParserPersisterExample#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ControlParserPersisterExample/VB/webcustomcontrol1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PersistControl">
+      <MemberSignature Language="C#" Value="public static void PersistControl (System.IO.TextWriter sw, System.Web.UI.Control control, System.ComponentModel.Design.IDesignerHost host);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void PersistControl(class System.IO.TextWriter sw, class System.Web.UI.Control control, class System.ComponentModel.Design.IDesignerHost host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlPersister.PersistControl(System.IO.TextWriter,System.Web.UI.Control,System.ComponentModel.Design.IDesignerHost)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sw" Type="System.IO.TextWriter" />
+        <Parameter Name="control" Type="System.Web.UI.Control" />
+        <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
+      </Parameters>
+      <Docs>
+        <param name="sw"><see cref="T:System.IO.TextWriter" />に永続化されたコントロールにデータを出力します。</param>
+        <param name="control"><see cref="T:System.Web.UI.Control" />を保持します。</param>
+        <param name="host"><see cref="T:System.ComponentModel.Design.IDesignerHost" />コントロールのデザイナー ホストであります。</param>
+        <summary>指定した指定したコントロールの永続化の形式を表すデータの文字列を出力<see cref="T:System.IO.TextWriter" />、指定したデザイナー ホストを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが必要な<xref:System.ComponentModel.Design.IDesignerHost>実装が正しく機能します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PersistInnerProperties">
+      <MemberSignature Language="C#" Value="public static string PersistInnerProperties (object component, System.ComponentModel.Design.IDesignerHost host);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string PersistInnerProperties(object component, class System.ComponentModel.Design.IDesignerHost host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlPersister.PersistInnerProperties(System.Object,System.ComponentModel.Design.IDesignerHost)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+        <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
+      </Parameters>
+      <Docs>
+        <param name="component">内部プロパティを永続化するコンポーネント。</param>
+        <param name="host"><see cref="T:System.ComponentModel.Design.IDesignerHost" />コントロールのデザイナー ホストであります。</param>
+        <summary>指定したコントロールの内部プロパティを永続化できるデータの文字列を取得します。</summary>
+        <returns>コントロールの内部プロパティに関する情報を保持を含む文字列です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが必要な<xref:System.ComponentModel.Design.IDesignerHost>実装が正しく機能します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PersistInnerProperties">
+      <MemberSignature Language="C#" Value="public static void PersistInnerProperties (System.IO.TextWriter sw, object component, System.ComponentModel.Design.IDesignerHost host);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void PersistInnerProperties(class System.IO.TextWriter sw, object component, class System.ComponentModel.Design.IDesignerHost host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlPersister.PersistInnerProperties(System.IO.TextWriter,System.Object,System.ComponentModel.Design.IDesignerHost)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sw" Type="System.IO.TextWriter" />
+        <Parameter Name="component" Type="System.Object" />
+        <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
+      </Parameters>
+      <Docs>
+        <param name="sw">使用する <see cref="T:System.IO.TextWriter" />。</param>
+        <param name="component">永続化するコンポーネント。</param>
+        <param name="host"><see cref="T:System.ComponentModel.Design.IDesignerHost" />コントロールのデザイナー ホストであります。</param>
+        <summary>指定した指定したコントロールの内部プロパティを永続化できるデータの文字列を出力<see cref="T:System.IO.TextWriter" />、指定したデザイナー ホストを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが必要な<xref:System.ComponentModel.Design.IDesignerHost>実装が正しく機能します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PersistTemplate">
+      <MemberSignature Language="C#" Value="public static string PersistTemplate (System.Web.UI.ITemplate template, System.ComponentModel.Design.IDesignerHost host);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string PersistTemplate(class System.Web.UI.ITemplate template, class System.ComponentModel.Design.IDesignerHost host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlPersister.PersistTemplate(System.Web.UI.ITemplate,System.ComponentModel.Design.IDesignerHost)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="template" Type="System.Web.UI.ITemplate" />
+        <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
+      </Parameters>
+      <Docs>
+        <param name="template">永続化するテンプレートです。</param>
+        <param name="host"><see cref="T:System.ComponentModel.Design.IDesignerHost" />コントロールのデザイナー ホストであります。</param>
+        <summary>指定されたテンプレートの永続化の形式を表すデータの文字列を取得します。</summary>
+        <returns>テンプレートの永続化の形式を表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ControlPersister.PersistTemplate%2A>メソッドが必要な<xref:System.ComponentModel.Design.IDesignerHost>正常に動作するためにインターフェイスの実装です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PersistTemplate">
+      <MemberSignature Language="C#" Value="public static void PersistTemplate (System.IO.TextWriter writer, System.Web.UI.ITemplate template, System.ComponentModel.Design.IDesignerHost host);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void PersistTemplate(class System.IO.TextWriter writer, class System.Web.UI.ITemplate template, class System.ComponentModel.Design.IDesignerHost host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlPersister.PersistTemplate(System.IO.TextWriter,System.Web.UI.ITemplate,System.ComponentModel.Design.IDesignerHost)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+        <Parameter Name="template" Type="System.Web.UI.ITemplate" />
+        <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.IO.TextWriter" />永続化されたテンプレート データを書き込む。</param>
+        <param name="template">永続化するテンプレートです。</param>
+        <param name="host"><see cref="T:System.ComponentModel.Design.IDesignerHost" />コントロールのデザイナー ホストであります。</param>
+        <summary>データを指定された、指定したテンプレートの永続化の形式を表す文字列を書き込みます<see cref="T:System.IO.TextWriter" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ControlPersister.PersistTemplate%2A>メソッドが必要な<xref:System.ComponentModel.Design.IDesignerHost>正常に動作するためにインターフェイスの実装です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

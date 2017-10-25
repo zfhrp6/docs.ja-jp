@@ -1,0 +1,1298 @@
+<Type Name="Table&lt;TEntity&gt;" FullName="System.Data.Linq.Table&lt;TEntity&gt;">
+  <TypeSignature Language="C#" Value="public sealed class Table&lt;TEntity&gt; : System.Collections.Generic.IEnumerable&lt;TEntity&gt;, System.ComponentModel.IListSource, System.Data.Linq.ITable, System.Linq.IQueryable&lt;TEntity&gt;, System.Linq.IQueryProvider where TEntity : class" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Table`1&lt;class TEntity&gt; extends System.Object implements class System.Collections.Generic.IEnumerable`1&lt;!TEntity&gt;, class System.Collections.IEnumerable, class System.ComponentModel.IListSource, class System.Data.Linq.ITable, class System.Linq.IQueryable, class System.Linq.IQueryable`1&lt;!TEntity&gt;, class System.Linq.IQueryProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Linq.Table`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Linq</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TEntity">
+      <Constraints>
+        <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+      </Constraints>
+    </TypeParameter>
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;TEntity&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ComponentModel.IListSource</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Data.Linq.ITable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Linq.IQueryable&lt;TEntity&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Linq.IQueryProvider</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <typeparam name="TEntity">テーブル内のデータの型。</typeparam>
+    <summary>基になるデータベース内で特定の種類のテーブルを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスを使用すると、テーブルを照会し、追加、削除、およびオブジェクトをアタッチできます。  
+  
+ アプリケーションがアクセスできる、<xref:System.Data.Linq.Table%601>を介してインスタンス<xref:System.Data.Linq.DataContext.GetTable%2A>または厳密に型指定の厳密に型指定されたプロパティを使用して<xref:System.Data.Linq.DataContext>です。 つまり、デザイナーでは、DataContext オブジェクトを生成するときは、各テーブルを表すプロパティを生成します。 例:  
+  
+```  
+[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="SignOffTool")]  
+public partial class DataClasses1DataContext : System.Data.Linq.DataContext {  
+   public System.Data.Linq.Table<User> Users {  
+      get {  
+         return this.GetTable<User>();  
+      }  
+   }  
+}  
+```  
+  
+ この厳密に型指定された DataContext を取得するユーザーのプロパティにアクセスできます`Table<User>`です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName="Attach">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>エンティティをアタッチ、<see cref="T:System.Data.Linq.DataContext" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、`Attach`メソッドのいずれかで作成されているエンティティ<xref:System.Data.Linq.DataContext>クライアントにシリアル化、および戻る (更新を実行または削除の操作を設定すること) とし、逆シリアル化します。 詳細については、次を参照してください。[データで取得および CUD 操作 N 層アプリケーション (LINQ to SQL)](~/docs/framework/data/adonet/sql/linq/data-retrieval-and-cud-operations-in-n-tier-applications.md)です。  
+  
+ しようとしないで`Attach`エンティティをシリアル化を通じてデタッチされていません。 シリアル化されていないエンティティ、エンティティが 2 番目のデータ コンテキストによって追跡された場合、予期しない結果を引き起こす可能性のある遅延ローダーとの関連付けを維持します。  
+  
+ 新しいエンティティがアタッチされると、遅延のすべての子コレクション ローダー (たとえば、`EntitySet`関連付けられているテーブルからのエンティティのコレクション) 初期化されます。 ときに<xref:System.Data.Linq.DataContext.SubmitChanges%2A>が呼び出されると、コレクションの電源が入れられます子のメンバー、`Unmodified`状態です。 子コレクションのメンバーを更新するには、明示的に呼び出す必要があります`Attach`し、そのエンティティを指定します。  
+  
+ `Attach`指定されたオブジェクトのオブジェクト グラフ内のすべてのエンティティをアタッチします。 たとえば、次の c# コード。  
+  
+```  
+using (SampleDataContext db = new SampleDataContext()) {  
+    Employee employee = new Employee { employeeId = 1 };  
+  
+    Master master = new Master();  
+    master.Employee = employee;  
+  
+    Child child = new Child();  
+    child.Employee = employee;  
+  
+    db.Employees.Attach(employee);  
+  
+    master.Child = child;  
+  
+    db.Masters.InsertOnSubmit(master);  
+  
+    db.SubmitChanges();  
+}  
+  
+```  
+  
+ 同等の Visual Basic のコードは次のとおりです。  
+  
+```  
+Using db As New SampleDataContext()    Dim employee As New Employee With { .employeeId = 1 }  
+  
+    Dim master As New Master()  
+    master.Employee = employee  
+  
+    Dim child As New Child()  
+    child.Employee = employee  
+  
+    db.Employees.Attach(employee)  
+  
+    master.Child = child  
+  
+    db.Masters.InsertOnSubmit(master)  
+  
+    db.SubmitChanges()  
+  
+End Using  
+```  
+  
+ 呼び出す`Attach`で`Employee`ために、従業員、マスター、および子要素をアタッチ、`Employee`マスターと子の両方にリレーションシップが存在します。 明示的に呼び出す必要があります`InsertOnSubmit`から状態を変更する接続に挿入します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Attach">
+      <MemberSignature Language="C#" Value="public void Attach (TEntity entity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Attach(!TEntity entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Table`1.Attach(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="TEntity" />
+      </Parameters>
+      <Docs>
+        <param name="entity">アタッチするエンティティの元の値。</param>
+        <summary>新しい切断または「切断」エンティティをアタッチ<see cref="T:System.Data.Linq.DataContext" />元の値がオプティミスティック同時実行制御チェックに必要な場合です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、`Attach`メソッドのいずれかで作成されているエンティティ<xref:System.Data.Linq.DataContext>クライアントにシリアル化、および更新を実行または削除の操作へのシリアル化を解除します。 新しい<xref:System.Data.Linq.DataContext>手段を持ちませんが切断されているエンティティの元の値を追跡するには、クライアントが、それらの値を提供するためです。 このバージョンの<xref:System.Data.Linq.Table%601.Attach%2A>エンティティは、元の値の状態であると見なされます。 このメソッドを呼び出した後し、フィールドを更新できますその、たとえば、クライアントから送信される追加のデータを使用します。  
+  
+ 新しいエンティティがアタッチされると、遅延のすべての子コレクション ローダー (たとえば、`EntitySet`関連付けられているテーブルからのエンティティのコレクション) 初期化されます。 ときに<xref:System.Data.Linq.DataContext.SubmitChanges%2A>が呼び出されると、コレクションの電源が入れられます子のメンバー、`Unmodified`状態です。 子コレクションのメンバーを更新するには、明示的に呼び出す必要があります`Attach`し、そのエンティティを指定します。  
+  
+ 詳細については、次を参照してください。[データで取得および CUD 操作 N 層アプリケーション (LINQ to SQL)](~/docs/framework/data/adonet/sql/linq/data-retrieval-and-cud-operations-in-n-tier-applications.md)です。  
+  
+ しようとしないで`Attach`エンティティをシリアル化を通じてデタッチされていません。 シリアル化されていないエンティティ、エンティティが 2 番目のデータ コンテキストによって追跡された場合、予期しない結果を引き起こす可能性のある遅延ローダーとの関連付けを維持します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Attach">
+      <MemberSignature Language="C#" Value="public void Attach (TEntity entity, bool asModified);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Attach(!TEntity entity, bool asModified) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Table`1.Attach(`0,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="TEntity" />
+        <Parameter Name="asModified" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="entity">アタッチするエンティティ。</param>
+        <param name="asModified">
+          <see langword="true" />変更されたとエンティティをアタッチするには<see langword="false" />としてエンティティをアタッチするくださ。</param>
+        <summary>エンティティをアタッチ、<see cref="T:System.Data.Linq.DataContext" />変更済み、または変更されていない状態にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アタッチする場合*変更済みとして*、エンティティ メンバーのバージョンを宣言する必要がありますか、または更新の競合の確認に参加する必要があります。 新しいエンティティがアタッチされると、遅延のすべての子コレクション ローダー (たとえば、`EntitySet`関連付けられているテーブルからのエンティティのコレクション) 初期化されます。 ときに<xref:System.Data.Linq.DataContext.SubmitChanges%2A>が呼び出されると、コレクションの電源が入れられます子のメンバー、`Unmodified`状態です。 子コレクションのメンバーを更新するには、明示的に呼び出す必要があります`Attach`し、そのエンティティを指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Attach">
+      <MemberSignature Language="C#" Value="public void Attach (TEntity entity, TEntity original);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Attach(!TEntity entity, !TEntity original) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Table`1.Attach(`0,`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="TEntity" />
+        <Parameter Name="original" Type="TEntity" />
+      </Parameters>
+      <Docs>
+        <param name="entity">アタッチするエンティティ。</param>
+        <param name="original">元の値が含まれているデータ メンバーと同じエンティティ型のインスタンス。</param>
+        <summary>エンティティをアタッチ、<see cref="T:System.Data.Linq.DataContext" />いずれか、変更済み、または変更されていない状態で、エンティティと、元の状態の両方を指定しています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の例で、`Customer`オブジェクトが既に正しく構成されています。 呼び出すことができます`Attach`更新プログラムを再生する必要はありません。  
+  
+ 新しいエンティティがアタッチされると、遅延のすべての子コレクション ローダー (たとえば、`EntitySet`関連付けられているテーブルからのエンティティのコレクション) 初期化されます。 ときに<xref:System.Data.Linq.DataContext.SubmitChanges%2A>が呼び出されると、コレクションの電源が入れられます子のメンバー、`Unmodified`状態です。 子コレクションのメンバーを更新するには、明示的に呼び出す必要があります`Attach`し、そのエンティティを指定します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[DLinqNTier#4](~/samples/snippets/csharp/VS_Snippets_Data/DLinqNTier/cs/Program.cs#4)]
+ [!code-vb[DLinqNTier#4](~/samples/snippets/visualbasic/VS_Snippets_Data/DLinqNTier/vb/Module1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="AttachAll&lt;TSubEntity&gt;">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>コレクションのすべてのエンティティをアタッチ、<see cref="T:System.Data.Linq.DataContext" />変更済み、または変更されていない状態にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更済みとしてアタッチする、エンティティは、バージョン メンバーを宣言する必要があるか、または、更新の競合の確認に参加する必要があります。  
+  
+ 新しいエンティティがアタッチされると、遅延のすべての子コレクション ローダー (たとえば、`EntitySet`関連付けられているテーブルからのエンティティのコレクション) 初期化されます。 ときに<xref:System.Data.Linq.DataContext.SubmitChanges%2A>が呼び出されると、コレクションの電源が入れられます子のメンバー、`Unmodified`状態です。 子コレクションのメンバーを更新するには、明示的に呼び出す必要があります`Attach`し、そのエンティティを指定します。  
+  
+ 詳細については、次を参照してください。[データで取得および CUD 操作 N 層アプリケーション (LINQ to SQL)](~/docs/framework/data/adonet/sql/linq/data-retrieval-and-cud-operations-in-n-tier-applications.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="AttachAll&lt;TSubEntity&gt;">
+      <MemberSignature Language="C#" Value="public void AttachAll&lt;TSubEntity&gt; (System.Collections.Generic.IEnumerable&lt;TSubEntity&gt; entities) where TSubEntity : TEntity;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AttachAll&lt;(!TEntity) TSubEntity&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!TSubEntity&gt; entities) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Table`1.AttachAll``1(System.Collections.Generic.IEnumerable{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TSubEntity">
+          <Constraints>
+            <BaseTypeName>TEntity</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="entities" Type="System.Collections.Generic.IEnumerable&lt;TSubEntity&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TSubEntity">アタッチするエンティティの型。</typeparam>
+        <param name="entities">エンティティのコレクション。</param>
+        <summary>コレクションのすべてのエンティティをアタッチ、<see cref="T:System.Data.Linq.DataContext" />変更済み、または変更されていない状態にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、新しいコレクションのすべてのエンティティをアタッチ<xref:System.Data.Linq.DataContext>です。 新しいエンティティがアタッチされると、遅延のすべての子コレクション ローダー (たとえば、`EntitySet`関連付けられているテーブルからのエンティティのコレクション) 初期化されます。 ときに<xref:System.Data.Linq.DataContext.SubmitChanges%2A>が呼び出されると、コレクションの電源が入れられます子のメンバー、`Unmodified`状態です。 子コレクションのメンバーを更新するには、明示的に呼び出す必要があります`Attach`し、そのエンティティを指定します。  
+  
+ 詳細については、次を参照してください。[データで取得および CUD 操作 N 層アプリケーション (LINQ to SQL)](~/docs/framework/data/adonet/sql/linq/data-retrieval-and-cud-operations-in-n-tier-applications.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AttachAll&lt;TSubEntity&gt;">
+      <MemberSignature Language="C#" Value="public void AttachAll&lt;TSubEntity&gt; (System.Collections.Generic.IEnumerable&lt;TSubEntity&gt; entities, bool asModified) where TSubEntity : TEntity;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AttachAll&lt;(!TEntity) TSubEntity&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!TSubEntity&gt; entities, bool asModified) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Table`1.AttachAll``1(System.Collections.Generic.IEnumerable{``0},System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TSubEntity">
+          <Constraints>
+            <BaseTypeName>TEntity</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="entities" Type="System.Collections.Generic.IEnumerable&lt;TSubEntity&gt;" />
+        <Parameter Name="asModified" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TSubEntity">アタッチするエンティティの型。</typeparam>
+        <param name="entities">エンティティのコレクション。</param>
+        <param name="asModified">
+          <see langword="true" />オブジェクトに timestamp や RowVersion メンバーである場合<see langword="false" />元の値は、オプティミスティック同時実行制御チェックに使用されている場合。</param>
+        <summary>コレクションのすべてのエンティティをアタッチ、<see cref="T:System.Data.Linq.DataContext" />変更済み、または変更されていない状態にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コレクションのすべてのエンティティをアタッチ、<xref:System.Data.Linq.DataContext>いずれかで、*変更*または*未変更*状態です。 変更済みとしてアタッチする、エンティティは、バージョン メンバーを宣言する必要があるか、または、更新の競合の確認に参加する必要があります。 未変更としてアタッチする、エンティティが、元の値を表すと見なされます。 このメソッドを呼び出した後に前に、クライアントから他の情報と、エンティティのフィールドを変更できます<xref:System.Data.Linq.DataContext.SubmitChanges%2A>と呼びます。 詳細については、次を参照してください。[データで取得および CUD 操作 N 層アプリケーション (LINQ to SQL)](~/docs/framework/data/adonet/sql/linq/data-retrieval-and-cud-operations-in-n-tier-applications.md)です。  
+  
+ 新しいエンティティがアタッチされると、遅延のすべての子コレクション ローダー (たとえば、`EntitySet`関連付けられているテーブルからのエンティティのコレクション) 初期化されます。 ときに<xref:System.Data.Linq.DataContext.SubmitChanges%2A>が呼び出されると、コレクションの電源が入れられます子のメンバー、`Unmodified`状態です。 子コレクションのメンバーを更新するには、明示的に呼び出す必要があります`Attach`し、そのエンティティを指定します。  
+  
+   
+  
+## Examples  
+ 次の例は、更新する方法を示しています、`Order`別オブジェクト<xref:System.Data.Linq.DataContext>インスタンス。 例では、データベースに接続しているし、行った、 [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] (ここでは、Northwind サンプル データベース) ファイル。  
+  
+ [!code-csharp[DLinqNTier#1](~/samples/snippets/csharp/VS_Snippets_Data/DLinqNTier/cs/Program.cs#1)]
+ [!code-vb[DLinqNTier#1](~/samples/snippets/visualbasic/VS_Snippets_Data/DLinqNTier/vb/Module1.vb#1)]  
+  
+ 次の例で、エンティティ オブジェクトがアタッチされる別のオブジェクトと外部キー関係があるとはキャッシュに格納されているがアタッチされていません。 呼び出すと<xref:System.Data.Linq.DataContext.SubmitChanges%2A>、`ChangeProcessor`を追加、`Insert`すべての外部のキー オブジェクトを操作します。 これは、エンティティのインスタンスが別の再利用場合の副作用として<xref:System.Data.Linq.DataContext>インスタンス。 このため、[!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]はオブジェクトの再利用をサポートしていません。  
+  
+ [!code-csharp[DlinqNTier#7](~/samples/snippets/csharp/VS_Snippets_Data/DLinqNTier/cs/Program.cs#7)]
+ [!code-vb[DlinqNTier#7](~/samples/snippets/visualbasic/VS_Snippets_Data/DLinqNTier/vb/Module1.vb#7)]  
+  
+ 次の例では、顧客 A がすべての注文をキャンセルし、顧客 B がそれらの所有権を取得したシナリオを示します。 顧客 A のすべての注文を同時にアタッチできます。  
+  
+ [!code-csharp[DlinqNTier#3](~/samples/snippets/csharp/VS_Snippets_Data/DLinqNTier/cs/Program.cs#3)]
+ [!code-vb[DlinqNTier#3](~/samples/snippets/visualbasic/VS_Snippets_Data/DLinqNTier/vb/Module1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Context">
+      <MemberSignature Language="C#" Value="public System.Data.Linq.DataContext Context { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Linq.DataContext Context" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Table`1.Context" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Linq.DataContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Data.Linq.DataContext" />これを取得に使用されている<see cref="T:System.Data.Linq.Table`1" />です。</summary>
+        <value>このテーブルの取得に使用されているデータ コンテキスト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteAllOnSubmit&lt;TSubEntity&gt;">
+      <MemberSignature Language="C#" Value="public void DeleteAllOnSubmit&lt;TSubEntity&gt; (System.Collections.Generic.IEnumerable&lt;TSubEntity&gt; entities) where TSubEntity : TEntity;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DeleteAllOnSubmit&lt;(!TEntity) TSubEntity&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!TSubEntity&gt; entities) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Table`1.DeleteAllOnSubmit``1(System.Collections.Generic.IEnumerable{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TSubEntity">
+          <Constraints>
+            <BaseTypeName>TEntity</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="entities" Type="System.Collections.Generic.IEnumerable&lt;TSubEntity&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TSubEntity">削除する要素の型。</typeparam>
+        <param name="entities">削除するエンティティ。</param>
+        <summary>コレクションからすべてのエンティティを格納、<see langword="pending delete" />状態です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、削除の保留中状態に格納されるエンティティは非表示になりません後まで、クエリの結果から<xref:System.Data.Linq.DataContext.SubmitChanges%2A>と呼びます。 削除する前に、切断されているエンティティをアタッチする必要があります。 詳細については、次を参照してください。[データで取得および CUD 操作 N 層アプリケーション (LINQ to SQL)](~/docs/framework/data/adonet/sql/linq/data-retrieval-and-cud-operations-in-n-tier-applications.md)です。  
+  
+ 次の c# スニペットは、このメソッドの用途の 1 つを示しています。  
+  
+```  
+IEnumerable<Customer> customersWithoutOrders = (from c in db.Customers  
+   where c.Orders.Count == 0  
+   select c).ToList();  
+  
+db.Customers.DeleteAllOnSubmit(customersWithoutOrders);  
+db.SubmitChanges();  
+```  
+  
+ Visual basic:  
+  
+```  
+Dim customersWithoutOrders As IEnumerable(Of Customer) = (From c In db.Customers _   
+    Where c.Orders.Count = 0 _   
+    Select c).ToList()  
+  
+db.Customers.DeleteAllOnSubmit(customersWithoutOrders)  
+db.SubmitChanges()  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteOnSubmit">
+      <MemberSignature Language="C#" Value="public void DeleteOnSubmit (TEntity entity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DeleteOnSubmit(!TEntity entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Table`1.DeleteOnSubmit(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="TEntity" />
+      </Parameters>
+      <Docs>
+        <param name="entity">削除するエンティティ。</param>
+        <summary>このテーブルからエンティティを格納、<see langword="pending delete" />状態です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 後まで、クエリ結果から削除されたエンティティは消えません<xref:System.Data.Linq.DataContext.SubmitChanges%2A>と呼びます。 削除する前に、切断されているエンティティをアタッチ最初にする必要があります。 詳細については、次を参照してください。[データで取得および CUD 操作 N 層アプリケーション (LINQ to SQL)](~/docs/framework/data/adonet/sql/linq/data-retrieval-and-cud-operations-in-n-tier-applications.md)です。  
+  
+> [!NOTE]
+>  [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] は連鎖削除操作をサポートせず、認識もしません。 設定する必要がありますに対して制約を持つテーブルの行を削除する場合、`ON DELETE CASCADE`データベース内の外部キー制約での規則や独自のコードを使用して、まず親オブジェクトが削除されないようにする子オブジェクトを削除します。 それ以外の場合は、例外がスローされます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Data.Linq.Table#3](~/samples/snippets/csharp/VS_Snippets_Data/system.data.linq.table/cs/program.cs#3)]
+ [!code-vb[System.Data.Linq.Table#3](~/samples/snippets/visualbasic/VS_Snippets_Data/system.data.linq.table/vb/module1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerator&lt;TEntity&gt; GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerator`1&lt;!TEntity&gt; GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Table`1.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;TEntity&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションを反復処理する列挙子を取得します。</summary>
+        <returns>コレクションの反復処理に使用できる列挙子。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetModifiedMembers">
+      <MemberSignature Language="C#" Value="public System.Data.Linq.ModifiedMemberInfo[] GetModifiedMembers (TEntity entity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Data.Linq.ModifiedMemberInfo[] GetModifiedMembers(!TEntity entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Table`1.GetModifiedMembers(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Linq.ModifiedMemberInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="TEntity" />
+      </Parameters>
+      <Docs>
+        <param name="entity">配列を取得する対象となるエンティティです。</param>
+        <summary>現在と元の値が含まれている変更されたメンバーの配列を返します。</summary>
+        <returns>現在と元の値が含まれている変更されたメンバーの配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNewBindingList">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.IBindingList GetNewBindingList ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ComponentModel.IBindingList GetNewBindingList() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Table`1.GetNewBindingList" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.IBindingList</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ ソースにバインドするための新しいリストを作成します。</summary>
+        <returns>新しい<see cref="T:System.ComponentModel.IBindingList" />データ ソースにバインドするためです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返された一覧が追加、削除、挿入、更新プログラムなどの標準的な操作をサポートしますが、保存をプログラマが明示的に管理する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOriginalEntityState">
+      <MemberSignature Language="C#" Value="public TEntity GetOriginalEntityState (TEntity entity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !TEntity GetOriginalEntityState(!TEntity entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Table`1.GetOriginalEntityState(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TEntity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="TEntity" />
+      </Parameters>
+      <Docs>
+        <param name="entity">元の状態が返されるエンティティです。</param>
+        <summary>返します、<see cref="T:System.Data.Linq.Table`1" />エンティティの元の状態を格納しているインスタンス。</summary>
+        <returns>A<see cref="T:System.Data.Linq.Table`1" />エンティティの元の状態を格納しているインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アイテムが作成または現在接続されているために、エンティティの元の状態を返します<xref:System.Data.Linq.DataContext>です。 シリアル化および逆シリアル化されているエンティティの元の状態を独立した追跡メカニズムによって提供されを新しいエンティティが関連付けられている場合を指定する必要があります<xref:System.Data.Linq.DataContext>です。 詳細については、次を参照してください。[データで取得および CUD 操作 N 層アプリケーション (LINQ to SQL)](~/docs/framework/data/adonet/sql/linq/data-retrieval-and-cud-operations-in-n-tier-applications.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertAllOnSubmit&lt;TSubEntity&gt;">
+      <MemberSignature Language="C#" Value="public void InsertAllOnSubmit&lt;TSubEntity&gt; (System.Collections.Generic.IEnumerable&lt;TSubEntity&gt; entities) where TSubEntity : TEntity;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InsertAllOnSubmit&lt;(!TEntity) TSubEntity&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!TSubEntity&gt; entities) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Table`1.InsertAllOnSubmit``1(System.Collections.Generic.IEnumerable{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TSubEntity">
+          <Constraints>
+            <BaseTypeName>TEntity</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="entities" Type="System.Collections.Generic.IEnumerable&lt;TSubEntity&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TSubEntity">挿入する要素の型。</typeparam>
+        <param name="entities">追加するエンティティ。</param>
+        <summary>コレクションのすべてのエンティティを追加、<see cref="T:System.Data.Linq.DataContext" />で、<see langword="pending insert" />状態です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 後まで、クエリの結果に追加されたエンティティが存在しなくなります<xref:System.Data.Linq.DataContext.SubmitChanges%2A>が呼び出されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertOnSubmit">
+      <MemberSignature Language="C#" Value="public void InsertOnSubmit (TEntity entity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InsertOnSubmit(!TEntity entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Table`1.InsertOnSubmit(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="TEntity" />
+      </Parameters>
+      <Docs>
+        <param name="entity">追加するエンティティ。</param>
+        <summary>内のエンティティを追加、<see langword="pending insert" />をこの状態<see cref="T:System.Data.Linq.Table`1" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 後までは、このテーブルは、追加したエンティティはクエリの結果に表示されませんが<xref:System.Data.Linq.DataContext.SubmitChanges%2A>が呼び出されています。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Data.Linq.Table#1](~/samples/snippets/csharp/VS_Snippets_Data/system.data.linq.table/cs/program.cs#1)]
+ [!code-vb[System.Data.Linq.Table#1](~/samples/snippets/visualbasic/VS_Snippets_Data/system.data.linq.table/vb/module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Table`1.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このエンティティの型が含まれるかどうかを示す値を取得<see cref="T:System.Data.Linq.Table`1" />インスタンスには、主キー。</summary>
+        <value>
+          <see langword="true" />エンティティの種類に主キーがあるない場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.Generic.IEnumerable&lt;TEntity&gt;.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.Generic.IEnumerator&lt;TEntity&gt; IEnumerable&lt;TEntity&gt;.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.Generic.IEnumerator`1&lt;!TEntity&gt; System.Collections.Generic.IEnumerable&lt;TEntity&gt;.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Table`1.System#Collections#Generic#IEnumerable&lt;TEntity&gt;#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;TEntity&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションを反復処理する列挙子を返します。</summary>
+        <returns>コレクションの反復処理に使用できる列挙子。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Table`1.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションを反復処理する列挙子を返します。</summary>
+        <returns>コレクションの反復処理に使用できる列挙子。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Linq.Table%601> のインスタンスが <xref:System.Collections.Generic.IEnumerable%601> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IListSource.ContainsListCollection">
+      <MemberSignature Language="C#" Value="bool System.ComponentModel.IListSource.ContainsListCollection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.ComponentModel.IListSource.ContainsListCollection" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Table`1.System#ComponentModel#IListSource#ContainsListCollection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションがのコレクションであるかどうかを示す値を取得<see cref="T:System.Collections.IList" />オブジェクト。</summary>
+        <value>
+          <see langword="true" />場合は、コレクションは、コレクションの<see cref="T:System.Collections.IList" />オブジェクト。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Linq.Table%601> のインスタンスが <xref:System.ComponentModel.IListSource> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IListSource.GetList">
+      <MemberSignature Language="C#" Value="System.Collections.IList IListSource.GetList ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IList System.ComponentModel.IListSource.GetList() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Table`1.System#ComponentModel#IListSource#GetList" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Collections.IList" />を実装しないオブジェクトからデータ ソースに連結できる、<see cref="T:System.Collections.IList" />自体です。</summary>
+        <returns><see cref="T:System.Collections.IList" />をデータ ソースにバインドできます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Linq.Table%601> のインスタンスが <xref:System.ComponentModel.IListSource> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Data.Linq.ITable.Attach">
+      <MemberSignature Language="C#" Value="void ITable.Attach (object entity);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Data.Linq.ITable.Attach(object entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Table`1.System#Data#Linq#ITable#Attach(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="entity">アタッチするエンティティ。</param>
+        <summary>エンティティをアタッチ、<see cref="T:System.Data.Linq.DataContext" />変更されていない状態にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Linq.Table%601> のインスタンスが <xref:System.Data.Linq.ITable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Data.Linq.ITable.Attach">
+      <MemberSignature Language="C#" Value="void ITable.Attach (object entity, bool asModified);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Data.Linq.ITable.Attach(object entity, bool asModified) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Table`1.System#Data#Linq#ITable#Attach(System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+        <Parameter Name="asModified" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="entity">アタッチするエンティティ。</param>
+        <param name="asModified">
+          <see langword="true" />変更されたとエンティティをアタッチするには<see langword="false" />未変更の状態としてエンティティをアタッチします。</param>
+        <summary>コレクションのすべてのエンティティをアタッチ、<see cref="T:System.Data.Linq.DataContext" />変更済み、または変更されていない状態にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Linq.Table%601> のインスタンスが <xref:System.Data.Linq.ITable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Data.Linq.ITable.Attach">
+      <MemberSignature Language="C#" Value="void ITable.Attach (object entity, object original);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Data.Linq.ITable.Attach(object entity, object original) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Table`1.System#Data#Linq#ITable#Attach(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+        <Parameter Name="original" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="entity">アタッチするエンティティ。</param>
+        <param name="original">元の値が含まれているデータ メンバーと同じエンティティ型のインスタンス。</param>
+        <summary>エンティティをアタッチ、<see cref="T:System.Data.Linq.DataContext" />いずれか、変更済み、または変更されていない状態で、エンティティと、元の状態の両方を指定しています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Linq.Table%601> のインスタンスが <xref:System.Data.Linq.ITable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Data.Linq.ITable.AttachAll">
+      <MemberSignature Language="C#" Value="void ITable.AttachAll (System.Collections.IEnumerable entities);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Data.Linq.ITable.AttachAll(class System.Collections.IEnumerable entities) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Table`1.System#Data#Linq#ITable#AttachAll(System.Collections.IEnumerable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entities" Type="System.Collections.IEnumerable" />
+      </Parameters>
+      <Docs>
+        <param name="entities">アタッチするエンティティのコレクション。</param>
+        <summary>コレクションのすべてのエンティティをアタッチ、<see cref="T:System.Data.Linq.DataContext" />変更済み、または変更されていない状態にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Linq.Table%601> のインスタンスが <xref:System.Data.Linq.ITable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Data.Linq.ITable.AttachAll">
+      <MemberSignature Language="C#" Value="void ITable.AttachAll (System.Collections.IEnumerable entities, bool asModified);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Data.Linq.ITable.AttachAll(class System.Collections.IEnumerable entities, bool asModified) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Table`1.System#Data#Linq#ITable#AttachAll(System.Collections.IEnumerable,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entities" Type="System.Collections.IEnumerable" />
+        <Parameter Name="asModified" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="entities">接続するエンティティのコレクション。</param>
+        <param name="asModified">
+          <see langword="true" />変更されたとエンティティをアタッチするには<see langword="false" />未変更の状態としてエンティティをアタッチします。</param>
+        <summary>コレクションのすべてのエンティティをアタッチ、<see cref="T:System.Data.Linq.DataContext" />変更済み、または変更されていない状態にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Linq.Table%601> のインスタンスが <xref:System.Data.Linq.ITable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Data.Linq.ITable.DeleteAllOnSubmit">
+      <MemberSignature Language="C#" Value="void ITable.DeleteAllOnSubmit (System.Collections.IEnumerable entities);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Data.Linq.ITable.DeleteAllOnSubmit(class System.Collections.IEnumerable entities) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Table`1.System#Data#Linq#ITable#DeleteAllOnSubmit(System.Collections.IEnumerable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entities" Type="System.Collections.IEnumerable" />
+      </Parameters>
+      <Docs>
+        <param name="entities">削除されるエンティティ。</param>
+        <summary>コレクションからすべてのエンティティを格納、<see langword="pending delete" />状態です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Linq.Table%601> のインスタンスが <xref:System.Data.Linq.ITable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Data.Linq.ITable.DeleteOnSubmit">
+      <MemberSignature Language="C#" Value="void ITable.DeleteOnSubmit (object entity);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Data.Linq.ITable.DeleteOnSubmit(object entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Table`1.System#Data#Linq#ITable#DeleteOnSubmit(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="entity">削除するエンティティ。</param>
+        <summary>このテーブルからエンティティを格納、<see langword="pending delete" />状態です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Linq.Table%601> のインスタンスが <xref:System.Data.Linq.ITable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+> [!NOTE]
+>  [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] は連鎖削除操作をサポートせず、認識もしません。 設定する必要がありますに対して制約を持つテーブルの行を削除する場合、`ON DELETE CASCADE`データベース内の外部キー制約での規則や独自のコードを使用して、まず親オブジェクトが削除されないようにする子オブジェクトを削除します。 それ以外の場合は、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Data.Linq.ITable.GetModifiedMembers">
+      <MemberSignature Language="C#" Value="System.Data.Linq.ModifiedMemberInfo[] ITable.GetModifiedMembers (object entity);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance valuetype System.Data.Linq.ModifiedMemberInfo[] System.Data.Linq.ITable.GetModifiedMembers(object entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Table`1.System#Data#Linq#ITable#GetModifiedMembers(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("NOT IMPLEMENTED YET")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.Linq.ModifiedMemberInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="entity">変更されたメンバーを取得する対象となるエンティティです。</param>
+        <summary>現在と元の値が含まれている変更されたメンバーの配列を返します。</summary>
+        <returns>変更されたメンバーの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Linq.Table%601> のインスタンスが <xref:System.Data.Linq.ITable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Data.Linq.ITable.GetOriginalEntityState">
+      <MemberSignature Language="C#" Value="object ITable.GetOriginalEntityState (object entity);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.Data.Linq.ITable.GetOriginalEntityState(object entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Table`1.System#Data#Linq#ITable#GetOriginalEntityState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("NOT IMPLEMENTED YET")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="entity">アクセスするのには、元の状態をエンティティです。</param>
+        <summary>特定のエンティティの元の値を取得します。</summary>
+        <returns>元のエンティティのコピー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Linq.Table%601> のインスタンスが <xref:System.Data.Linq.ITable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Data.Linq.ITable.InsertAllOnSubmit">
+      <MemberSignature Language="C#" Value="void ITable.InsertAllOnSubmit (System.Collections.IEnumerable entities);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Data.Linq.ITable.InsertAllOnSubmit(class System.Collections.IEnumerable entities) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Table`1.System#Data#Linq#ITable#InsertAllOnSubmit(System.Collections.IEnumerable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entities" Type="System.Collections.IEnumerable" />
+      </Parameters>
+      <Docs>
+        <param name="entities">追加するエンティティのコレクション。</param>
+        <summary>コレクションのすべてのエンティティを追加、<see cref="T:System.Data.Linq.DataContext" />で、<see langword="pending insert" />状態です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Linq.Table%601> のインスタンスが <xref:System.Data.Linq.ITable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Data.Linq.ITable.InsertOnSubmit">
+      <MemberSignature Language="C#" Value="void ITable.InsertOnSubmit (object entity);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Data.Linq.ITable.InsertOnSubmit(object entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Table`1.System#Data#Linq#ITable#InsertOnSubmit(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="entity">追加するエンティティ。</param>
+        <summary>内のエンティティを追加、<see langword="pending insert" />このテーブルに状態です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Linq.Table%601> のインスタンスが <xref:System.Data.Linq.ITable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Linq.IQueryable.ElementType">
+      <MemberSignature Language="C#" Value="Type System.Linq.IQueryable.ElementType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type System.Linq.IQueryable.ElementType" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Table`1.System#Linq#IQueryable#ElementType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このオブジェクトに関連付けられている式ツリーは実行時に返される要素の型を取得します。</summary>
+        <value>このオブジェクトに関連付けられている式ツリーは実行時に返される要素の型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Linq.Table%601> のインスタンスが <xref:System.Linq.IQueryable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Linq.IQueryable.Expression">
+      <MemberSignature Language="C#" Value="System.Linq.Expressions.Expression System.Linq.IQueryable.Expression { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Linq.Expressions.Expression System.Linq.IQueryable.Expression" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Table`1.System#Linq#IQueryable#Expression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.Expressions.Expression</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスに関連付けられている式ツリーを取得<see cref="T:System.Linq.IQueryable" />です。</summary>
+        <value><see cref="T:System.Linq.Expressions.Expression" />のこのインスタンスに関連付けられている<see cref="T:System.Linq.IQueryable" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Linq.Table%601> のインスタンスが <xref:System.Linq.IQueryable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Linq.IQueryable.Provider">
+      <MemberSignature Language="C#" Value="System.Linq.IQueryProvider System.Linq.IQueryable.Provider { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Linq.IQueryProvider System.Linq.IQueryable.Provider" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Table`1.System#Linq#IQueryable#Provider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.IQueryProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このデータ ソースに関連付けられているクエリ プロバイダーを取得します。</summary>
+        <value><see cref="T:System.Linq.IQueryProvider" />このデータ ソースに関連付けられています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Linq.Table%601> のインスタンスが <xref:System.Linq.IQueryable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Linq.IQueryProvider.CreateQuery">
+      <MemberSignature Language="C#" Value="System.Linq.IQueryable IQueryProvider.CreateQuery (System.Linq.Expressions.Expression expression);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Linq.IQueryable System.Linq.IQueryProvider.CreateQuery(class System.Linq.Expressions.Expression expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Table`1.System#Linq#IQueryProvider#CreateQuery(System.Linq.Expressions.Expression)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.IQueryable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="expression" Type="System.Linq.Expressions.Expression" />
+      </Parameters>
+      <Docs>
+        <param name="expression">評価の実行元のクエリ式。</param>
+        <summary>構築、<see cref="T:System.Linq.IQueryable" />指定した式ツリーで表されるクエリを評価できるオブジェクト。</summary>
+        <returns><see cref="T:System.Linq.IQueryable" />指定した式ツリーで表されるクエリを評価することができます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Linq.Table%601> のインスタンスが <xref:System.Linq.IQueryProvider> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Linq.IQueryProvider.CreateQuery&lt;TResult&gt;">
+      <MemberSignature Language="C#" Value="System.Linq.IQueryable&lt;TResult&gt; IQueryProvider.CreateQuery&lt;TResult&gt; (System.Linq.Expressions.Expression expression);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Linq.IQueryable`1&lt;!!TResult&gt; System.Linq.IQueryProvider.CreateQuery&lt;TResult&gt;(class System.Linq.Expressions.Expression expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Table`1.System#Linq#IQueryProvider#CreateQuery``1(System.Linq.Expressions.Expression)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.IQueryable&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="expression" Type="System.Linq.Expressions.Expression" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TResult">テーブル内のデータの型。</typeparam>
+        <param name="expression">評価の実行元のクエリ式。</param>
+        <summary>構築、<see cref="T:System.Linq.IQueryable`1" />指定した式ツリーで表されるクエリを評価できるオブジェクト。</summary>
+        <returns><see cref="T:System.Linq.IQueryable`1" />指定した式ツリーで表されるクエリを評価することができます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Linq.Table%601> のインスタンスが <xref:System.Linq.IQueryProvider> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Linq.IQueryProvider.Execute">
+      <MemberSignature Language="C#" Value="object IQueryProvider.Execute (System.Linq.Expressions.Expression expression);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.Linq.IQueryProvider.Execute(class System.Linq.Expressions.Expression expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Table`1.System#Linq#IQueryProvider#Execute(System.Linq.Expressions.Expression)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="expression" Type="System.Linq.Expressions.Expression" />
+      </Parameters>
+      <Docs>
+        <param name="expression">実行するクエリ式。</param>
+        <summary>指定した式ツリーで表されるクエリを実行します。</summary>
+        <returns>この値は、指定されたクエリの実行結果です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Linq.Table%601> のインスタンスが <xref:System.Linq.IQueryProvider> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Linq.IQueryProvider.Execute&lt;TResult&gt;">
+      <MemberSignature Language="C#" Value="TResult IQueryProvider.Execute&lt;TResult&gt; (System.Linq.Expressions.Expression expression);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance !!TResult System.Linq.IQueryProvider.Execute&lt;TResult&gt;(class System.Linq.Expressions.Expression expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Table`1.System#Linq#IQueryProvider#Execute``1(System.Linq.Expressions.Expression)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TResult</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="expression" Type="System.Linq.Expressions.Expression" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TResult">テーブル内のデータの型。</typeparam>
+        <param name="expression">実行するクエリ式。</param>
+        <summary>指定した式ツリーで表される厳密に型指定されたクエリを実行します。</summary>
+        <returns>この値は、指定されたクエリの実行結果です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Linq.Table%601> のインスタンスが <xref:System.Linq.IQueryProvider> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Table`1.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テーブルを表す文字列を返します。</summary>
+        <returns>テーブルの文字列形式。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

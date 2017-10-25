@@ -1,0 +1,485 @@
+<Type Name="AssemblyCatalog" FullName="System.ComponentModel.Composition.Hosting.AssemblyCatalog">
+  <TypeSignature Language="C#" Value="public class AssemblyCatalog : System.ComponentModel.Composition.Primitives.ComposablePartCatalog, System.ComponentModel.Composition.Primitives.ICompositionElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AssemblyCatalog extends System.ComponentModel.Composition.Primitives.ComposablePartCatalog implements class System.ComponentModel.Composition.Primitives.ICompositionElement" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Composition.Hosting.AssemblyCatalog" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Composition.Primitives.ComposablePartCatalog</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.Composition.Primitives.ICompositionElement</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerTypeProxy(typeof(System.ComponentModel.Composition.Hosting.AssemblyCatalogDebuggerProxy))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>マネージ コード アセンブリで属性付きの部分を検出します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Composition.Hosting.AssemblyCatalog>解析すべての部分が、指定したアセンブリ内に存在するために使用します。 オブジェクト参照するか、パスを使用して、対象のアセンブリを示すことができます。  
+  
+> [!IMPORTANT]
+>  この型は、<xref:System.IDisposable>インターフェイスです。 型を使用してが完了したらを直接的または間接的にその破棄する必要があります。 型の直接 dispose を呼び出す、<xref:System.IDisposable.Dispose%2A>メソッドで、 `try` / `catch`ブロックします。 直接ことのない破棄する場合など、言語コンストラクトを使用して`using`(C# の場合) または`Using`(Visual Basic で)。 詳細についてを参照してください"を使用して、オブジェクトを実装する IDisposable"、<xref:System.IDisposable>インターフェイスに関するトピック。  
+  
+ この型はスレッド セーフです。  
+  
+   
+  
+## Examples  
+ 次のコードは、アプリケーションを作成する一般的なシナリオを示して、<xref:System.ComponentModel.Composition.Hosting.AssemblyCatalog>を独自のアセンブリを解析します。 これは、Managed Extensibility Framework (MEF) に 1 つのプロジェクトに含まれている部分を読み込む簡単な方法です。  
+  
+ [!code-csharp[Composition.CompositionContainer#1](~/samples/snippets/csharp/VS_Snippets_Misc/composition.compositioncontainer/cs/program.cs#1)]
+ [!code-vb[Composition.CompositionContainer#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/composition.compositioncontainer/vb/module1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AssemblyCatalog (System.Reflection.Assembly assembly);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Reflection.Assembly assembly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.AssemblyCatalog.#ctor(System.Reflection.Assembly)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="assembly" Type="System.Reflection.Assembly" />
+      </Parameters>
+      <Docs>
+        <param name="assembly">属性を含むアセンブリ<see cref="T:System.Type" />に追加するオブジェクト、<see cref="T:System.ComponentModel.Composition.Hosting.AssemblyCatalog" />オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Composition.Hosting.AssemblyCatalog" />指定したアセンブリを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="assembly" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="assembly" />リフレクション専用コンテキストに読み込まれました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AssemblyCatalog (string codeBase);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string codeBase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.AssemblyCatalog.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="codeBase" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="codeBase"><see cref="T:System.ComponentModel.Composition.Hosting.AssemblyCatalog" /> オブジェクトに追加するための属性付き <see cref="T:System.Type" /> オブジェクトを含むアセンブリのコード ベース (つまり、アセンブリ ファイルへのパス) を指定する文字列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Composition.Hosting.AssemblyCatalog" />指定されたコード ベースを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって参照されるアセンブリ`codeBase`は、読み込みコンテキストに読み込まれます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.BadImageFormatException">
+          <paramref name="codeBase" /> は正しいアセンブリではありません。  
+  
+ または  
+  
+ 2.0 共通言語ランタイムの以前のバージョンが現在読み込まれていると<paramref name="codeBase" />以降のバージョンでコンパイルされました。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、パス検索アクセス許可がありません。</exception>
+        <exception cref="T:System.IO.FileLoadException">
+          <paramref name="codeBase" /> を読み込めませんでした。  
+  
+ または  
+  
+ <paramref name="codeBase" /> がディレクトリを指定しました。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="codeBase" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+          <paramref name="codeBase" /> が見つかりません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="codeBase" /> は長さ 0 の文字列で、空白のみで構成されるか、または <see cref="F:System.IO.Path.InvalidPathChars" /> で定義される 1 つ以上の正しくない文字を含んでいます。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AssemblyCatalog (System.Reflection.Assembly assembly, System.ComponentModel.Composition.Primitives.ICompositionElement definitionOrigin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Reflection.Assembly assembly, class System.ComponentModel.Composition.Primitives.ICompositionElement definitionOrigin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.AssemblyCatalog.#ctor(System.Reflection.Assembly,System.ComponentModel.Composition.Primitives.ICompositionElement)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="assembly" Type="System.Reflection.Assembly" />
+        <Parameter Name="definitionOrigin" Type="System.ComponentModel.Composition.Primitives.ICompositionElement" />
+      </Parameters>
+      <Docs>
+        <param name="assembly">属性を含むアセンブリ<see cref="T:System.Type" />に追加するオブジェクト、<see cref="T:System.ComponentModel.Composition.Hosting.AssemblyCatalog" />オブジェクト。</param>
+        <param name="definitionOrigin">パーツのソースを識別するために診断で使用される要素。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Composition.Hosting.AssemblyCatalog" />指定したアセンブリを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="assembly" /> または <paramref name="definitionOrigin" /> が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="assembly" />リフレクション専用コンテキストに読み込まれました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AssemblyCatalog (System.Reflection.Assembly assembly, System.Reflection.ReflectionContext reflectionContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Reflection.Assembly assembly, class System.Reflection.ReflectionContext reflectionContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.AssemblyCatalog.#ctor(System.Reflection.Assembly,System.Reflection.ReflectionContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="assembly" Type="System.Reflection.Assembly" />
+        <Parameter Name="reflectionContext" Type="System.Reflection.ReflectionContext" />
+      </Parameters>
+      <Docs>
+        <param name="assembly">属性を含むアセンブリ<see cref="T:System.Type" />に追加するオブジェクト、<see cref="T:System.ComponentModel.Composition.Hosting.AssemblyCatalog" />オブジェクト。</param>
+        <param name="reflectionContext">型を解釈するためにカタログで使用されるコンテキスト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Composition.Hosting.AssemblyCatalog" />指定したアセンブリとリフレクション コンテキストを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="assembly" /> または <paramref name="reflectionContext" /> が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="assembly" />リフレクション専用コンテキストに読み込まれました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AssemblyCatalog (string codeBase, System.ComponentModel.Composition.Primitives.ICompositionElement definitionOrigin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string codeBase, class System.ComponentModel.Composition.Primitives.ICompositionElement definitionOrigin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.AssemblyCatalog.#ctor(System.String,System.ComponentModel.Composition.Primitives.ICompositionElement)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="codeBase" Type="System.String" />
+        <Parameter Name="definitionOrigin" Type="System.ComponentModel.Composition.Primitives.ICompositionElement" />
+      </Parameters>
+      <Docs>
+        <param name="codeBase"><see cref="T:System.ComponentModel.Composition.Hosting.AssemblyCatalog" /> オブジェクトに追加するための属性付き <see cref="T:System.Type" /> オブジェクトを含むアセンブリのコード ベース (つまり、アセンブリ ファイルへのパス) を指定する文字列。</param>
+        <param name="definitionOrigin">パーツのソースを識別するために診断で使用される要素。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Composition.Hosting.AssemblyCatalog" />指定されたコード ベースを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.BadImageFormatException">
+          <paramref name="codeBase" /> は正しいアセンブリではありません。  
+  
+ -または-  
+  
+ 共通言語ランタイムのバージョン 2.0 以降が現在読み込まれています。<paramref name="codeBase" /> は、より新しいバージョンでコンパイルされています。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、パス検索アクセス許可がありません。</exception>
+        <exception cref="T:System.IO.FileLoadException">
+          <paramref name="codeBase" /> を読み込めませんでした。  
+  
+ または  
+  
+ <paramref name="codeBase" /> がディレクトリを指定しました。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="codebase" /> または <paramref name="definitionOrigin" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+          <paramref name="codeBase" /> が見つかりません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="codeBase" /> は長さ 0 の文字列で、空白のみで構成されるか、または <see cref="F:System.IO.Path.InvalidPathChars" /> で定義される 1 つ以上の正しくない文字を含んでいます。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AssemblyCatalog (string codeBase, System.Reflection.ReflectionContext reflectionContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string codeBase, class System.Reflection.ReflectionContext reflectionContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.AssemblyCatalog.#ctor(System.String,System.Reflection.ReflectionContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="codeBase" Type="System.String" />
+        <Parameter Name="reflectionContext" Type="System.Reflection.ReflectionContext" />
+      </Parameters>
+      <Docs>
+        <param name="codeBase"><see cref="T:System.ComponentModel.Composition.Hosting.AssemblyCatalog" /> オブジェクトに追加するための属性付き <see cref="T:System.Type" /> オブジェクトを含むアセンブリのコード ベース (つまり、アセンブリ ファイルへのパス) を指定する文字列。</param>
+        <param name="reflectionContext">型を解釈するためにカタログで使用されるコンテキスト。</param>
+        <summary>指定したコード ベースとリフレクション コンテキストを使用して、<see cref="T:System.ComponentModel.Composition.Hosting.AssemblyCatalog" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.BadImageFormatException">
+          <paramref name="codeBase" /> は正しいアセンブリではありません。  
+  
+ -または-  
+  
+ 共通言語ランタイムのバージョン 2.0 以降が現在読み込まれています。<paramref name="codeBase" /> は、より新しいバージョンでコンパイルされています。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、パス検索アクセス許可がありません。</exception>
+        <exception cref="T:System.IO.FileLoadException">
+          <paramref name="codeBase" /> を読み込めませんでした。  
+  
+ または  
+  
+ <paramref name="codeBase" /> がディレクトリを指定しました。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="codebase" /> または <paramref name="reflectionContext" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+          <paramref name="codeBase" /> が見つかりません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="codeBase" /> は長さ 0 の文字列で、空白のみで構成されるか、または <see cref="F:System.IO.Path.InvalidPathChars" /> で定義される 1 つ以上の正しくない文字を含んでいます。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AssemblyCatalog (System.Reflection.Assembly assembly, System.Reflection.ReflectionContext reflectionContext, System.ComponentModel.Composition.Primitives.ICompositionElement definitionOrigin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Reflection.Assembly assembly, class System.Reflection.ReflectionContext reflectionContext, class System.ComponentModel.Composition.Primitives.ICompositionElement definitionOrigin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.AssemblyCatalog.#ctor(System.Reflection.Assembly,System.Reflection.ReflectionContext,System.ComponentModel.Composition.Primitives.ICompositionElement)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="assembly" Type="System.Reflection.Assembly" />
+        <Parameter Name="reflectionContext" Type="System.Reflection.ReflectionContext" />
+        <Parameter Name="definitionOrigin" Type="System.ComponentModel.Composition.Primitives.ICompositionElement" />
+      </Parameters>
+      <Docs>
+        <param name="assembly">属性を含むアセンブリ<see cref="T:System.Type" />に追加するオブジェクト、<see cref="T:System.ComponentModel.Composition.Hosting.AssemblyCatalog" />オブジェクト。</param>
+        <param name="reflectionContext">型を解釈するためにカタログで使用されるコンテキスト。</param>
+        <param name="definitionOrigin">パーツのソースを識別するために診断で使用される要素。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Composition.Hosting.AssemblyCatalog" />指定したアセンブリとリフレクション コンテキストを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="assembly" />、<paramref name="definitionOrigin" />、または <paramref name="reflectionContext" /> が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="assembly" />リフレクション専用コンテキストに読み込まれました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AssemblyCatalog (string codeBase, System.Reflection.ReflectionContext reflectionContext, System.ComponentModel.Composition.Primitives.ICompositionElement definitionOrigin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string codeBase, class System.Reflection.ReflectionContext reflectionContext, class System.ComponentModel.Composition.Primitives.ICompositionElement definitionOrigin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.AssemblyCatalog.#ctor(System.String,System.Reflection.ReflectionContext,System.ComponentModel.Composition.Primitives.ICompositionElement)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="codeBase" Type="System.String" />
+        <Parameter Name="reflectionContext" Type="System.Reflection.ReflectionContext" />
+        <Parameter Name="definitionOrigin" Type="System.ComponentModel.Composition.Primitives.ICompositionElement" />
+      </Parameters>
+      <Docs>
+        <param name="codeBase"><see cref="T:System.ComponentModel.Composition.Hosting.AssemblyCatalog" /> オブジェクトに追加するための属性付き <see cref="T:System.Type" /> オブジェクトを含むアセンブリのコード ベース (つまり、アセンブリ ファイルへのパス) を指定する文字列。</param>
+        <param name="reflectionContext">型を解釈するためにカタログで使用されるコンテキスト。</param>
+        <param name="definitionOrigin">パーツのソースを識別するために診断で使用される要素。</param>
+        <summary>指定したコード ベースとリフレクション コンテキストを使用して、<see cref="T:System.ComponentModel.Composition.Hosting.AssemblyCatalog" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.BadImageFormatException">
+          <paramref name="codeBase" /> は正しいアセンブリではありません。  
+  
+ -または-  
+  
+ 共通言語ランタイムのバージョン 2.0 以降が現在読み込まれています。<paramref name="codeBase" /> は、より新しいバージョンでコンパイルされています。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、パス検索アクセス許可がありません。</exception>
+        <exception cref="T:System.IO.FileLoadException">
+          <paramref name="codeBase" /> を読み込めませんでした。  
+  
+ または  
+  
+ <paramref name="codeBase" /> がディレクトリを指定しました。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="codebase" />、<paramref name="definitionOrigin" />、または <paramref name="reflectionContext" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+          <paramref name="codeBase" /> が見つかりません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="codeBase" /> は長さ 0 の文字列で、空白のみで構成されるか、または <see cref="F:System.IO.Path.InvalidPathChars" /> で定義される 1 つ以上の正しくない文字を含んでいます。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Assembly">
+      <MemberSignature Language="C#" Value="public System.Reflection.Assembly Assembly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.Assembly Assembly" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Composition.Hosting.AssemblyCatalog.Assembly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Assembly</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アセンブリのカタログ内の属性の型が格納されているアセンブリを取得します。</summary>
+        <value>アセンブリの属性付き<see cref="T:System.Type" />にオブジェクトが含まれている、<see cref="T:System.ComponentModel.Composition.Hosting.AssemblyCatalog" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.AssemblyCatalog.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.ComponentModel.Composition.Hosting.AssemblyCatalog" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public override System.Collections.Generic.IEnumerator&lt;System.ComponentModel.Composition.Primitives.ComposablePartDefinition&gt; GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.Generic.IEnumerator`1&lt;class System.ComponentModel.Composition.Primitives.ComposablePartDefinition&gt; GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.AssemblyCatalog.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;System.ComponentModel.Composition.Primitives.ComposablePartDefinition&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>カタログを反復処理する列挙子を返します。</summary>
+        <returns>カタログの反復処理に使用できる列挙子。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExports">
+      <MemberSignature Language="C#" Value="public override System.Collections.Generic.IEnumerable&lt;Tuple&lt;System.ComponentModel.Composition.Primitives.ComposablePartDefinition,System.ComponentModel.Composition.Primitives.ExportDefinition&gt;&gt; GetExports (System.ComponentModel.Composition.Primitives.ImportDefinition definition);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.Tuple`2&lt;class System.ComponentModel.Composition.Primitives.ComposablePartDefinition, class System.ComponentModel.Composition.Primitives.ExportDefinition&gt;&gt; GetExports(class System.ComponentModel.Composition.Primitives.ImportDefinition definition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.AssemblyCatalog.GetExports(System.ComponentModel.Composition.Primitives.ImportDefinition)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Tuple&lt;System.ComponentModel.Composition.Primitives.ComposablePartDefinition,System.ComponentModel.Composition.Primitives.ExportDefinition&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="definition" Type="System.ComponentModel.Composition.Primitives.ImportDefinition" />
+      </Parameters>
+      <Docs>
+        <param name="definition">一致するエクスポートを指定する条件。</param>
+        <summary>インポート定義で指定した条件に一致するエクスポートのコレクションを取得します。</summary>
+        <returns>指定された条件に一致するエクスポートのコレクション<paramref name="definition" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.Composition.Primitives.ICompositionElement.DisplayName">
+      <MemberSignature Language="C#" Value="string System.ComponentModel.Composition.Primitives.ICompositionElement.DisplayName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string System.ComponentModel.Composition.Primitives.ICompositionElement.DisplayName" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Composition.Hosting.AssemblyCatalog.System#ComponentModel#Composition#Primitives#ICompositionElement#DisplayName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表示名を取得、<see cref="T:System.ComponentModel.Composition.Hosting.AssemblyCatalog" />オブジェクト。</summary>
+        <value>このアセンブリと型を表す文字列<see cref="T:System.ComponentModel.Composition.Hosting.AssemblyCatalog" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.ComponentModel.Composition.Hosting.AssemblyCatalog> のインスタンスが <xref:System.ComponentModel.Composition.Primitives.ICompositionElement> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.Composition.Primitives.ICompositionElement.Origin">
+      <MemberSignature Language="C#" Value="System.ComponentModel.Composition.Primitives.ICompositionElement System.ComponentModel.Composition.Primitives.ICompositionElement.Origin { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.Composition.Primitives.ICompositionElement System.ComponentModel.Composition.Primitives.ICompositionElement.Origin" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Composition.Hosting.AssemblyCatalog.System#ComponentModel#Composition#Primitives#ICompositionElement#Origin" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Composition.Primitives.ICompositionElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素の発生元の構成要素を取得します。</summary>
+        <value>常に <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.ComponentModel.Composition.Hosting.AssemblyCatalog> のインスタンスが <xref:System.ComponentModel.Composition.Primitives.ICompositionElement> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.AssemblyCatalog.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アセンブリのカタログの文字列表現を取得します。</summary>
+        <returns>アセンブリのカタログの表現。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

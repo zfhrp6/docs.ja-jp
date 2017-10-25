@@ -1,0 +1,244 @@
+<Type Name="StylusEventArgs" FullName="System.Windows.Input.StylusEventArgs">
+  <TypeSignature Language="C#" Value="public class StylusEventArgs : System.Windows.Input.InputEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StylusEventArgs extends System.Windows.Input.InputEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.StylusEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Input.InputEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>関連付けられているイベントの複数のデータを提供、<see cref="T:System.Windows.Input.Stylus" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.StylusEventArgs>クラスは、次のイベントのデータを提供します。  
+  
+-   <xref:System.Windows.UIElement.StylusUp>  
+  
+-   <xref:System.Windows.UIElement.StylusMove>  
+  
+-   <xref:System.Windows.UIElement.StylusInAirMove>  
+  
+-   <xref:System.Windows.UIElement.StylusEnter>  
+  
+-   <xref:System.Windows.UIElement.StylusLeave>  
+  
+-   <xref:System.Windows.UIElement.StylusInRange>  
+  
+-   <xref:System.Windows.UIElement.StylusOutOfRange>  
+  
+-   <xref:System.Windows.UIElement.GotStylusCapture>  
+  
+-   <xref:System.Windows.UIElement.LostStylusCapture>  
+  
+-   <xref:System.Windows.UIElement.PreviewStylusUp>  
+  
+-   <xref:System.Windows.UIElement.PreviewStylusMove>  
+  
+-   <xref:System.Windows.UIElement.PreviewStylusInAirMove>  
+  
+-   <xref:System.Windows.UIElement.PreviewStylusInRange>  
+  
+-   <xref:System.Windows.UIElement.PreviewStylusOutOfRange>  
+  
+ (で宣言されている同等のイベントだけでなく、<xref:System.Windows.ContentElement>クラス)。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StylusEventArgs (System.Windows.Input.StylusDevice stylus, int timestamp);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Input.StylusDevice stylus, int32 timestamp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusEventArgs.#ctor(System.Windows.Input.StylusDevice,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stylus" Type="System.Windows.Input.StylusDevice" />
+        <Parameter Name="timestamp" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="stylus">イベントに関連付けるスタイラスです。</param>
+        <param name="timestamp">イベントが発生した時刻。</param>
+        <summary><see cref="T:System.Windows.Input.StylusEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPosition">
+      <MemberSignature Language="C#" Value="public System.Windows.Point GetPosition (System.Windows.IInputElement relativeTo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Point GetPosition(class System.Windows.IInputElement relativeTo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusEventArgs.GetPosition(System.Windows.IInputElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="relativeTo" Type="System.Windows.IInputElement" />
+      </Parameters>
+      <Docs>
+        <param name="relativeTo"><see cref="T:System.Windows.IInputElement" />を (<c>x</c>、 <c>y</c>) 座標にマップされます。</param>
+        <summary>スタイラスの位置を取得します。</summary>
+        <returns>A<see cref="T:System.Windows.Point" />の座標に基づく、スタイラスの位置を表す<paramref name="relativeTo" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStylusPoints">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.StylusPointCollection GetStylusPoints (System.Windows.IInputElement relativeTo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Input.StylusPointCollection GetStylusPoints(class System.Windows.IInputElement relativeTo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusEventArgs.GetStylusPoints(System.Windows.IInputElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.StylusPointCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="relativeTo" Type="System.Windows.IInputElement" />
+      </Parameters>
+      <Docs>
+        <param name="relativeTo"><see cref="T:System.Windows.IInputElement" />する、(<c>x, y</c>) 座標、<see cref="T:System.Windows.Input.StylusPointCollection" />マップされます。</param>
+        <summary>返します、<see cref="T:System.Windows.Input.StylusPointCollection" />を格納している<see cref="T:System.Windows.Input.StylusPoint" />指定された入力要素に相対的なオブジェクトです。</summary>
+        <returns>A<see cref="T:System.Windows.Input.StylusPointCollection" />を格納している<see cref="T:System.Windows.Input.StylusPoint" />オブジェクトは、イベントで収集します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="relativeTo" /> が <see cref="T:System.Windows.UIElement" /> でも <see cref="T:System.Windows.FrameworkContentElement" /> でもありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStylusPoints">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.StylusPointCollection GetStylusPoints (System.Windows.IInputElement relativeTo, System.Windows.Input.StylusPointDescription subsetToReformatTo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Input.StylusPointCollection GetStylusPoints(class System.Windows.IInputElement relativeTo, class System.Windows.Input.StylusPointDescription subsetToReformatTo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusEventArgs.GetStylusPoints(System.Windows.IInputElement,System.Windows.Input.StylusPointDescription)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.StylusPointCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="relativeTo" Type="System.Windows.IInputElement" />
+        <Parameter Name="subsetToReformatTo" Type="System.Windows.Input.StylusPointDescription" />
+      </Parameters>
+      <Docs>
+        <param name="relativeTo"><see cref="T:System.Windows.IInputElement" />する、(<c>x, y</c>) 座標、<see cref="T:System.Windows.Input.StylusPointCollection" />マップされます。</param>
+        <param name="subsetToReformatTo"><see cref="T:System.Windows.Input.StylusPointDescription" /> で使用する <see cref="T:System.Windows.Input.StylusPointCollection" />。</param>
+        <summary>返します、<see cref="T:System.Windows.Input.StylusPointCollection" />を使用して、指定した<see cref="T:System.Windows.Input.StylusPointDescription" />が含まれています<see cref="T:System.Windows.Input.StylusPoint" />指定された入力要素に関連するオブジェクト。</summary>
+        <returns>A<see cref="T:System.Windows.Input.StylusPointCollection" />を格納している<see cref="T:System.Windows.Input.StylusPoint" />オブジェクトがイベント発生時に収集します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `subsetToReformatTo`互換性がなければ、<xref:System.Windows.Input.StylusPointCollection.Description%2A>のプロパティ、<xref:System.Windows.Input.StylusPointCollection>から、<xref:System.Windows.Input.StylusEventArgs.GetStylusPoints%28System.Windows.IInputElement%29>メソッドです。 使用して、<xref:System.Windows.Input.StylusPointDescription.GetCommonDescription%2A>取得するメソッド、<xref:System.Windows.Input.StylusPointDescription>呼び出す前に、<xref:System.Windows.Input.StylusEventArgs.GetStylusPoints%28System.Windows.IInputElement%2CSystem.Windows.Input.StylusPointDescription%29>メソッドです。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Input.StylusEventArgs.GetStylusPoints%2A>制約を使用して、<xref:System.Windows.Input.StylusPointCollection>で<xref:System.Windows.Input.StylusEventArgs>場合でも、内の制約`subsetToReformatTo`が異なります。 たとえば場合、`subsetToReformatTo`を使用して<xref:System.Windows.Input.StylusPointProperties.NormalPressure>値 0 と 1023 が<xref:System.Windows.Input.StylusEventArgs>0 から 255 の値を使用して<xref:System.Windows.Input.StylusEventArgs.GetStylusPoints%2A>を返します、 <xref:System.Windows.Input.StylusPointDescription> 0 から 255 までの値を含むです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="relativeTo" /> が <see cref="T:System.Windows.UIElement" /> でも <see cref="T:System.Windows.FrameworkContentElement" /> でもありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InAir">
+      <MemberSignature Language="C#" Value="public bool InAir { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool InAir" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.StylusEventArgs.InAir" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スタイラスが近接しているが、デジタイザーに触れていないかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />スタイラスがデジタイザーに近接しているがデジタイザーに触れることいない場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Inverted">
+      <MemberSignature Language="C#" Value="public bool Inverted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Inverted" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.StylusEventArgs.Inverted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スタイラスが反転するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、スタイラスが反転されます。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeEventHandler">
+      <MemberSignature Language="C#" Value="protected override void InvokeEventHandler (Delegate genericHandler, object genericTarget);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InvokeEventHandler(class System.Delegate genericHandler, object genericTarget) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusEventArgs.InvokeEventHandler(System.Delegate,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="genericHandler" Type="System.Delegate" />
+        <Parameter Name="genericTarget" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="genericHandler">型固有の方法で呼び出すジェネリック ハンドラー。</param>
+        <param name="genericTarget">ハンドラーを呼び出すターゲット。</param>
+        <summary>イベントのシステムの効率を高めることができます、型固有の方法でイベント ハンドラーを呼び出します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装は、ジェネリック ハンドラーをキャスト、<xref:System.Windows.Input.StylusEventHandler>してそれを呼び出します。 この実装パターンとその理由の詳細については、次を参照してください。<xref:System.Windows.RoutedEventArgs.InvokeEventHandler%2A>と[ルーティング イベントの概要](~/docs/framework/wpf/advanced/routed-events-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylusDevice">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.StylusDevice StylusDevice { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.StylusDevice StylusDevice" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.StylusEventArgs.StylusDevice" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.StylusDevice</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Input.StylusDevice" />スタイラスを表すです。</summary>
+        <value><see cref="T:System.Windows.Input.StylusDevice" />スタイラスを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

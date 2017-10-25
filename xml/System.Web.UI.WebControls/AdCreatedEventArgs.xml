@@ -1,0 +1,339 @@
+<Type Name="AdCreatedEventArgs" FullName="System.Web.UI.WebControls.AdCreatedEventArgs">
+  <TypeSignature Language="C#" Value="public class AdCreatedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AdCreatedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.AdCreatedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Web.UI.WebControls.AdRotator.AdCreated" />のイベント、<see cref="T:System.Web.UI.WebControls.AdRotator" />コントロール。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.AdRotator.AdCreated>イベントが発生したときに、<xref:System.Web.UI.WebControls.AdRotator>コントロールがページに、提供情報を表示します。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.Web.UI.WebControls.AdCreatedEventArgs>を参照してください、<xref:System.Web.UI.WebControls.AdCreatedEventArgs.%23ctor%2A>コンス トラクターです。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.AdRotator.AdCreated>イベント。 提供情報に関連付けられている URL を取得時に、<xref:System.Web.UI.WebControls.AdRotator>コントロールが作成を取得し、それはコントロールの下に表示します。 この例では、次の例で示されている XML ファイル (Ads.xml) が必要です。  
+  
+ [!code-aspx-csharp[Classic AdCreatedEventArgs Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic AdCreatedEventArgs Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic AdCreatedEventArgs Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic AdCreatedEventArgs Example/VB/sourcevb.aspx#1)]  
+  
+ 次のコード例では、提供情報を含む XML ファイルの書式を設定する方法を示します。 XML ファイルの詳細については、次を参照してください。、<xref:System.Web.UI.WebControls.AdRotator.AdvertisementFile%2A>のプロパティ、<xref:System.Web.UI.WebControls.AdRotator>クラスです。  
+  
+```  
+<Advertisements>  
+ <Ad>  
+ <ImageUrl>image1.jpg</ImageUrl>  
+ <NavigateUrl>http://www.microsoft.com</NavigateUrl>  
+ <AlternateText>Microsoft Main Site</AlternateText>  
+ <Impressions>80</Impressions>  
+ <Keyword>Topic1</Keyword>  
+ <Caption>This is the caption for Ad#1</Caption>   
+ </Ad>  
+ <Ad>  
+ <ImageUrl>image2.jpg</ImageUrl>  
+ <NavigateUrl>http://www.wingtiptoys.com</NavigateUrl>  
+ <AlternateText>Wingtip Toys</AlternateText>  
+ <Impressions>80</Impressions>  
+ <Keyword>Topic2</Keyword>  
+ <Caption>This is the caption for Ad#2</Caption>   
+ </Ad>  
+</Advertisements>  
+```  
+  
+ [!code-aspx-csharp[AdCreatedEventHandler#1](~/samples/snippets/csharp/VS_Snippets_WebNet/AdCreatedEventHandler/CS/adcreatedeventhandlercs.aspx#1)]
+ [!code-aspx-vb[AdCreatedEventHandler#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/AdCreatedEventHandler/VB/adcreatedeventhandlervb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AdCreatedEventArgs (System.Collections.IDictionary adProperties);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.IDictionary adProperties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.AdCreatedEventArgs.#ctor(System.Collections.IDictionary)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="adProperties" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="adProperties">A <see cref="T:System.Collections.IDictionary" /> XML ファイルから提供情報のプロパティを格納します。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.AdCreatedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.AdCreatedEventArgs>クラスです。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.WebControls.AdCreatedEventArgs>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.AdCreatedEventArgs.AdProperties%2A>|値、`adProperties`パラメーター場合、`adProperties`パラメーターではありません`null`です。 それ以外の場合、空<xref:System.Collections.IDictionary?displayProperty=nameWithType>です。|  
+|<xref:System.Web.UI.WebControls.AdCreatedEventArgs.AlternateText%2A>|場合、`adProperties`パラメーターではありません`null`の値、`adProperties`パラメーターを表す代替テキストです。 それ以外の場合、<xref:System.String.Empty?displayProperty=nameWithType>です。|  
+|<xref:System.Web.UI.WebControls.AdCreatedEventArgs.ImageUrl%2A>|場合、`adProperties`パラメーターではありません`null`の値、`adProperties`パラメーターを表示するイメージの URL を表すそれ以外の場合、<xref:System.String.Empty?displayProperty=nameWithType>です。|  
+|<xref:System.Web.UI.WebControls.AdCreatedEventArgs.NavigateUrl%2A>|場合、`adProperties`パラメーターではありません`null`の値、`adProperties`以外の場合は、移動先の URL を表すパラメーター<xref:System.String.Empty?displayProperty=nameWithType>です。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AdProperties">
+      <MemberSignature Language="C#" Value="public System.Collections.IDictionary AdProperties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IDictionary AdProperties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.AdCreatedEventArgs.AdProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Collections.IDictionary" />現在表示されている提供情報のすべての提供情報のプロパティを含むオブジェクトです。</summary>
+        <value>A<see cref="T:System.Collections.IDictionary" />現在表示されている提供情報の提供情報のプロパティのリストを格納します。 既定値は <see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.AdCreatedEventArgs.AdProperties%2A>を取得するプロパティ、<xref:System.Collections.IDictionary?displayProperty=nameWithType>現在表示されている提供情報の提供情報のプロパティを含むオブジェクトです。 キーと値の<xref:System.Collections.IDictionary?displayProperty=nameWithType>型のオブジェクトは、<xref:System.String?displayProperty=nameWithType>です。  
+  
+ <xref:System.Web.UI.WebControls.AdRotator>コントロールは、コントロールは、Web ページに表示されるたびに提供情報をランダムに選択します。 選択した提供情報の属性が、提供情報の XML ファイルから抽出されに格納されている、<xref:System.Collections.IDictionary?displayProperty=nameWithType>オブジェクト。 ときに、<xref:System.Web.UI.WebControls.AdRotator>コントロールの新しいインスタンスを作成する、<xref:System.Web.UI.WebControls.AdCreatedEventArgs>クラス、<xref:System.Web.UI.WebControls.AdCreatedEventArgs.AdProperties%2A>プロパティを取得による初期化を行う、<xref:System.Collections.IDictionary?displayProperty=nameWithType>オブジェクト。  
+  
+ 広告キャプションなど、提供情報に関するカスタム属性は、提供情報の XML ファイルに含めることもできます。 このプロパティを使用して、<xref:System.Web.UI.WebControls.AdRotator.OnAdCreated%2A>カスタム属性を取得するイベント ハンドラー。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.AdCreatedEventArgs.AdProperties%2A>プロパティに、<xref:System.Web.UI.WebControls.AdRotator.OnAdCreated%2A>にカスタムのキャプションを提供するイベント ハンドラー。  
+  
+ [!code-aspx-csharp[Classic AdCreatedEventArgs.AdProperties Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic AdCreatedEventArgs.AdProperties Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic AdCreatedEventArgs.AdProperties Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic AdCreatedEventArgs.AdProperties Example/VB/sourcevb.aspx#1)]
+ [!code-xml[Classic AdCreatedEventArgs.AdProperties Example#1](~/samples/snippets/common/VS_Snippets_WebNet/Classic AdCreatedEventArgs.AdProperties Example/Common/Ads.xml#1)]  
+  
+ 次のコード例では、提供情報の XML ファイルに広告のカスタム属性を含める方法を示します。 XML ファイルの詳細については、次を参照してください。、<xref:System.Web.UI.WebControls.AdRotator.AdvertisementFile%2A>のプロパティ、<xref:System.Web.UI.WebControls.AdRotator>クラスです。  
+  
+```  
+<Advertisements>  
+ <Ad>  
+ <ImageUrl>image1.jpg</ImageUrl>  
+ <NavigateUrl>http://www.microsoft.com</NavigateUrl>  
+ <AlternateText>Microsoft Main Site</AlternateText>  
+ <Impressions>80</Impressions>  
+ <Keyword>Topic1</Keyword>  
+ <Caption>This is the caption for Ad#1</Caption>   
+ </Ad>  
+ <Ad>  
+ <ImageUrl>image2.jpg</ImageUrl>  
+ <NavigateUrl>http://www.wingtiptoys.com</NavigateUrl>  
+ <AlternateText>Wingtip Toys</AlternateText>  
+ <Impressions>80</Impressions>  
+ <Keyword>Topic2</Keyword>  
+ <Caption>This is the caption for Ad#2</Caption>   
+ </Ad>  
+</Advertisements>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlternateText">
+      <MemberSignature Language="C#" Value="public string AlternateText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AlternateText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.AdCreatedEventArgs.AlternateText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に表示される代替テキスト、<see cref="T:System.Web.UI.WebControls.AdRotator" />広告イメージが使用可能な場合を制御します。 ツール ヒント機能をサポートするブラウザーでは、このテキストを提供情報のツールヒントとして表示します。</summary>
+        <value>イメージが利用できない場合に、提供情報のイメージの代わりに表示されるテキスト。 既定値は <see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.AdCreatedEventArgs.AlternateText%2A>でイメージが指定された場合に表示するテキストを指定するプロパティ、<xref:System.Web.UI.WebControls.AdCreatedEventArgs.ImageUrl%2A>プロパティは使用できません。 ツール ヒント機能をサポートするブラウザーでは、このテキストは、提供情報のツールヒントとしても表示されます。  
+  
+ 別の XML ファイルには、表示されている提供情報のプロパティが含まれています。 <xref:System.Web.UI.WebControls.AdRotator>コントロール セットでは自動的に、<xref:System.Web.UI.WebControls.AdCreatedEventArgs.AlternateText%2A>対応する XML ファイルの代替テキスト エントリを持つプロパティです。 このプロパティは、プログラムでの代替テキストを設定するも使用できます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、プログラムで設定する方法を示します、<xref:System.Web.UI.WebControls.AdCreatedEventArgs.AlternateText%2A>プロパティです。  
+  
+ [!code-aspx-csharp[AdCreatedEventArgsAlternateText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/AdCreatedEventArgsAlternateText/CS/adcreatedeventargsalternatetextcs.aspx#1)]
+ [!code-aspx-vb[AdCreatedEventArgsAlternateText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/AdCreatedEventArgsAlternateText/VB/adcreatedeventargsalternatetextvb.aspx#1)]  
+  
+ 次のコード例では、提供情報を含む XML ファイルの書式を設定する方法を示します。 XML ファイルの詳細については、次を参照してください。、<xref:System.Web.UI.WebControls.AdRotator.AdvertisementFile%2A>のプロパティ、<xref:System.Web.UI.WebControls.AdRotator>クラスです。  
+  
+```  
+<Advertisements>  
+ <Ad>  
+ <ImageUrl>image1.jpg</ImageUrl>  
+ <NavigateUrl>http://www.microsoft.com</NavigateUrl>  
+ <AlternateText>Microsoft Main Site</AlternateText>  
+ <Impressions>80</Impressions>  
+ <Keyword>Topic1</Keyword>  
+ <Caption>This is the caption for Ad#1</Caption>   
+ </Ad>  
+ <Ad>  
+ <ImageUrl>image2.jpg</ImageUrl>  
+ <NavigateUrl>http://www.wingtiptoys.com</NavigateUrl>  
+ <AlternateText>Wingtip Toys</AlternateText>  
+ <Impressions>80</Impressions>  
+ <Keyword>Topic2</Keyword>  
+ <Caption>This is the caption for Ad#2</Caption>   
+ </Ad>  
+</Advertisements>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageUrl">
+      <MemberSignature Language="C#" Value="public string ImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.AdCreatedEventArgs.ImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に表示するイメージの URL、<see cref="T:System.Web.UI.WebControls.AdRotator" />コントロール。</summary>
+        <value>表示するイメージの URL、<see cref="T:System.Web.UI.WebControls.AdRotator" />コントロール。 既定値は <see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.AdCreatedEventArgs.ImageUrl%2A>で提供情報を表示するイメージの URL を指定するプロパティ、<xref:System.Web.UI.WebControls.AdRotator>コントロール。 相対パスまたは絶対 URL を使用することができます。 相対 URL は、サーバーで、完全なパスを指定せず、Web ページやユーザー コントロールの場所にイメージの場所を関連付けます。 Web ページの場所への相対パスでは。 これにより、コード内のイメージへのパスを更新することがなく別のディレクトリに、サーバー上のサイト全体を移動しやすくします。 絶対 URL は、サイトを別のディレクトリに移動する場合は、コードを更新する必要がありますので、完全なパスを提供します。  
+  
+ 別の XML ファイルには、表示されている提供情報のプロパティが含まれています。 <xref:System.Web.UI.WebControls.AdRotator>コントロール セットでは自動的に、<xref:System.Web.UI.WebControls.AdCreatedEventArgs.ImageUrl%2A>プロパティと、対応するイメージの提供情報を含む XML ファイル内の URL エントリです。 このプロパティは、プログラムで使用するイメージ URL を設定するも使用できます。  
+  
+> [!NOTE]
+>  提供情報ファイルを使用するに広告ファイルが配置されているディレクトリに対する相対 URL は、このプロパティの相対 URL を指定します。 含むページやユーザー コントロールのディレクトリに対する相対 URL は、提供情報ファイルを使用する代わりに、相対 URL を直接には、このプロパティを設定した場合、<xref:System.Web.UI.WebControls.AdRotator>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例は、プログラムで設定する方法を示します、<xref:System.Web.UI.WebControls.AdCreatedEventArgs.ImageUrl%2A>プロパティです。  
+  
+ [!code-aspx-csharp[AdCreatedEventArgsImageUrl#1](~/samples/snippets/csharp/VS_Snippets_WebNet/AdCreatedEventArgsImageUrl/CS/adcreatedeventargsimageurlcs.aspx#1)]
+ [!code-aspx-vb[AdCreatedEventArgsImageUrl#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/AdCreatedEventArgsImageUrl/VB/adcreatedeventargsimageurlvb.aspx#1)]  
+  
+ 次のコード例では、提供情報を含む XML ファイルの書式を設定する方法を示します。 XML ファイルの詳細については、次を参照してください。、<xref:System.Web.UI.WebControls.AdRotator.AdvertisementFile%2A>のプロパティ、<xref:System.Web.UI.WebControls.AdRotator>クラスです。  
+  
+```  
+<Advertisements>  
+ <Ad>  
+ <ImageUrl>image1.jpg</ImageUrl>  
+ <NavigateUrl>http://www.microsoft.com</NavigateUrl>  
+ <AlternateText>Microsoft Main Site</AlternateText>  
+ <Impressions>80</Impressions>  
+ <Keyword>Topic1</Keyword>  
+ <Caption>This is the caption for Ad#1</Caption>   
+ </Ad>  
+ <Ad>  
+ <ImageUrl>image2.jpg</ImageUrl>  
+ <NavigateUrl>http://www.wingtiptoys.com</NavigateUrl>  
+ <AlternateText>Wingtip Toys</AlternateText>  
+ <Impressions>80</Impressions>  
+ <Keyword>Topic2</Keyword>  
+ <Caption>This is the caption for Ad#2</Caption>   
+ </Ad>  
+</Advertisements>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NavigateUrl">
+      <MemberSignature Language="C#" Value="public string NavigateUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NavigateUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.AdCreatedEventArgs.NavigateUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するときに表示される Web ページ、<see cref="T:System.Web.UI.WebControls.AdRotator" />コントロールをクリックします。</summary>
+        <value>ときに表示される Web ページ、<see cref="T:System.Web.UI.WebControls.AdRotator" />コントロールをクリックします。 既定値は <see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.AdCreatedEventArgs.NavigateUrl%2A>ときに表示する Web ページを指定するプロパティ、<xref:System.Web.UI.WebControls.AdRotator>コントロールをクリックします。 このプロパティの一般的な用途は、ナビゲーションをリダイレクトするときに、<xref:System.Web.UI.WebControls.AdRotator>コントロールがクリックされると、ユーザーが送信先 URL に進む前に、提供情報をクリックした回数をカウントするページにします。  
+  
+ 別の XML ファイルには、表示されている提供情報のプロパティが含まれています。 <xref:System.Web.UI.WebControls.AdRotator>コントロール セットでは自動的に、 <xref:System.Web.UI.WebControls.AdCreatedEventArgs.NavigateUrl%2A> XML ファイルの対応するナビゲーション URL エントリを持つプロパティです。 このプロパティは、プログラムで移動先の URL を設定するも使用できます。  
+  
+> [!NOTE]
+>  提供情報ファイルを使用するに広告ファイルが配置されているディレクトリに対する相対 URL は、このプロパティの相対 URL を指定します。 含むページやユーザー コントロールのディレクトリに対する相対 URL は、提供情報ファイルを使用する代わりに、相対 URL を直接には、このプロパティを設定した場合、<xref:System.Web.UI.WebControls.AdRotator>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例は、プログラムで設定する方法を示します、<xref:System.Web.UI.WebControls.AdCreatedEventArgs.NavigateUrl%2A>プロパティです。  
+  
+ [!code-aspx-csharp[AdCreatedEventArgsNavigateUrl#1](~/samples/snippets/csharp/VS_Snippets_WebNet/AdCreatedEventArgsNavigateUrl/CS/adcreatedeventargsnavigateurlcs.aspx#1)]
+ [!code-aspx-vb[AdCreatedEventArgsNavigateUrl#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/AdCreatedEventArgsNavigateUrl/VB/adcreatedeventargsnavigateurlvb.aspx#1)]  
+  
+ 次のコード例では、提供情報を含む XML ファイルの書式を設定する方法を示します。 XML ファイルの詳細については、次を参照してください。、<xref:System.Web.UI.WebControls.AdRotator.AdvertisementFile%2A>のプロパティ、<xref:System.Web.UI.WebControls.AdRotator>クラスです。  
+  
+```  
+<Advertisements>  
+ <Ad>  
+ <ImageUrl>image1.jpg</ImageUrl>  
+ <NavigateUrl>http://www.microsoft.com</NavigateUrl>  
+ <AlternateText>Microsoft Main Site</AlternateText>  
+ <Impressions>80</Impressions>  
+ <Keyword>Topic1</Keyword>  
+ <Caption>This is the caption for Ad#1</Caption>   
+ </Ad>  
+ <Ad>  
+ <ImageUrl>image2.jpg</ImageUrl>  
+ <NavigateUrl>http://www.wingtiptoys.com</NavigateUrl>  
+ <AlternateText>Wingtip Toys</AlternateText>  
+ <Impressions>80</Impressions>  
+ <Keyword>Topic2</Keyword>  
+ <Caption>This is the caption for Ad#2</Caption>   
+ </Ad>  
+</Advertisements>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,240 @@
+<Type Name="ITransformProvider" FullName="System.Windows.Automation.Provider.ITransformProvider">
+  <TypeSignature Language="C#" Value="public interface ITransformProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITransformProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.Provider.ITransformProvider" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationProvider</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("6829ddc4-4f91-4ffa-b86f-bd3e2987cb4c")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>2 次元空間内で移動、サイズ変更、または回転できるコントロールへの UI オートメーション クライアントのアクセスをサポートするメソッドとプロパティを公開します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サポートする UI オートメーション プロバイダーに実装される、<xref:System.Windows.Automation.TransformPattern>コントロール パターン。  
+  
+ このコントロール パターンのサポートは、デスクトップ上のオブジェクトに制限されません。 子の移動、サイズ変更、またはコンテナーの境界内で自由に回転でく限り、コンテナー オブジェクトの子にこのコントロール パターンを実装も必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CanMove">
+      <MemberSignature Language="C#" Value="public bool CanMove { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanMove" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Provider.ITransformProvider.CanMove" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールを移動できるかどうかを指定する値を取得します。</summary>
+        <value>
+          要素を移動できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、移動できるコントロールに対して、このメソッドの実装を示しています。  
+  
+ [!code-csharp[UIAITransformProvider_snip#CanMove](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAITransformProvider_snip/CSharp/TransformFragment.cs#canmove)]
+ [!code-vb[UIAITransformProvider_snip#CanMove](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAITransformProvider_snip/visualbasic/transformfragment.vb#canmove)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanResize">
+      <MemberSignature Language="C#" Value="public bool CanResize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanResize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Provider.ITransformProvider.CanResize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定する値を取得するかどうか、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]要素のサイズを変更します。</summary>
+        <value>
+          要素のサイズを変更できる場合は <see langword="true" />。変更できない場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、コントロール サイズを変更できるは、このメソッドの実装を示しています。  
+  
+ [!code-csharp[UIAITransformProvider_snip#CanResize](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAITransformProvider_snip/CSharp/TransformFragment.cs#canresize)]
+ [!code-vb[UIAITransformProvider_snip#CanResize](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAITransformProvider_snip/visualbasic/transformfragment.vb#canresize)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRotate">
+      <MemberSignature Language="C#" Value="public bool CanRotate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRotate" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Provider.ITransformProvider.CanRotate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールを回転できるかどうかを指定する値を取得します。</summary>
+        <value>
+          <see langword="true" />要素を回転できる; 場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、回転することはできません、コントロールに対して、このメソッドの実装を示します。  
+  
+ [!code-csharp[UIAITransformProvider_snip#CanRotate](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAITransformProvider_snip/CSharp/TransformFragment.cs#canrotate)]
+ [!code-vb[UIAITransformProvider_snip#CanRotate](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAITransformProvider_snip/visualbasic/transformfragment.vb#canrotate)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Move">
+      <MemberSignature Language="C#" Value="public void Move (double x, double y);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Move(float64 x, float64 y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Provider.ITransformProvider.Move(System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Double" />
+        <Parameter Name="y" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="x">コントロールの左側の絶対画面座標。</param>
+        <param name="y">コントロールの上部の絶対画面座標。</param>
+        <summary>コントロールを移動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトは、移動、サイズ変更、またはになるように後の画面位置が完全にキーボードまたはマウスへのアクセスし、そのコンテナーの座標外を回転することはできません。 たとえば、トップレベルのウィンドウが完全に画面外に移動や、子オブジェクトは、コンテナーのビューポートの境界の外移動されます。 このような場合、オブジェクトはコンテナーの境界内にオーバーライド上または左座標を使用して、できるだけ要求された画面座標近くに配置されます。  
+  
+   
+  
+## Examples  
+ 次の例は、1 つの可能なカスタム コントロールを移動できるは、このメソッドの実装を示しています。  
+  
+ [!code-csharp[UIAITransformProvider_snip#Move](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAITransformProvider_snip/CSharp/TransformFragment.cs#move)]
+ [!code-vb[UIAITransformProvider_snip#Move](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAITransformProvider_snip/visualbasic/transformfragment.vb#move)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Automation.Provider.ITransformProvider.CanMove" /> プロパティが false の場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Resize">
+      <MemberSignature Language="C#" Value="public void Resize (double width, double height);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Resize(float64 width, float64 height) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Provider.ITransformProvider.Resize(System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="width" Type="System.Double" />
+        <Parameter Name="height" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="width">ウィンドウの新しい幅 (ピクセル単位)。</param>
+        <param name="height">ウィンドウの新しい高さ (ピクセル単位)。</param>
+        <summary>コントロールのサイズを変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールで呼び出された場合は、分割ウィンドウをサポートする、このメソッドは、その他の連続したウィンドウのサイズ変更の副作用を持つことができます。  
+  
+ オブジェクトは、移動、サイズ変更、またはになるように後の画面位置が完全にキーボードまたはマウスへのアクセスし、そのコンテナーの座標外を回転することはできません。 たとえば、トップレベルのウィンドウが完全に画面外に移動や、子オブジェクトは、コンテナーのビューポートの境界の外移動されます。 このような場合、オブジェクトはコンテナーの境界内にオーバーライド上または左座標を使用して、できるだけ要求された画面座標近くに配置されます。  
+  
+   
+  
+## Examples  
+ 次の例は、1 つの可能なサイズを変更できるカスタム コントロールに対して、このメソッドの実装を示しています。  
+  
+ [!code-csharp[UIAITransformProvider_snip#Resize](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAITransformProvider_snip/CSharp/TransformFragment.cs#resize)]
+ [!code-vb[UIAITransformProvider_snip#Resize](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAITransformProvider_snip/visualbasic/transformfragment.vb#resize)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Automation.Provider.ITransformProvider.CanResize" /> プロパティが false の場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Rotate">
+      <MemberSignature Language="C#" Value="public void Rotate (double degrees);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Rotate(float64 degrees) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Provider.ITransformProvider.Rotate(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="degrees" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="degrees">コントロールを回転する角度の数値。 正の値は時計回りの回転、負の値は反時計回りの回転を表します。</param>
+        <summary>コントロールを回転します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトは、移動、サイズを変更またはになるように後の画面位置が完全にキーボードまたはマウスへのアクセスし、そのコンテナーの座標外を回転することはできません。 たとえば、トップレベルのウィンドウが完全に画面外に移動や、子オブジェクトは、コンテナーのビューポートの境界の外移動されます。 このような場合、オブジェクトはコンテナーの境界内にオーバーライド上または左座標を使用して、できるだけ要求された画面座標近くに配置されます。  
+  
+   
+  
+## Examples  
+ 次の例は、1 つの可能なカスタム コントロールを回転できないのは、このメソッドの実装を示しています。  
+  
+ [!code-csharp[UIAITransformProvider_snip#Rotate](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAITransformProvider_snip/CSharp/TransformFragment.cs#rotate)]
+ [!code-vb[UIAITransformProvider_snip#Rotate](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAITransformProvider_snip/visualbasic/transformfragment.vb#rotate)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Automation.Provider.ITransformProvider.CanRotate" /> プロパティが false の場合。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

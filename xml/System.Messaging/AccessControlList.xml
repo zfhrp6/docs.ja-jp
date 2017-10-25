@@ -1,0 +1,212 @@
+<Type Name="AccessControlList" FullName="System.Messaging.AccessControlList">
+  <TypeSignature Language="C#" Value="public class AccessControlList : System.Collections.CollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AccessControlList extends System.Collections.CollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.Messaging.AccessControlList" />
+  <AssemblyInfo>
+    <AssemblyName>System.Messaging</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.CollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>1 つ以上のトラスティのアクセス権を指定したアクセス制御エントリのリストを格納しています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Messaging.AccessControlList>クラスを複数のトラスティを指定およびアクセス許可を設定するときに 1 回の呼び出しを追加する権限にアクセスします。 各トラスティ アクセス権の組み合わせのアクセス制御エントリを追加することで、アクセス制御リストを構築します。  
+  
+ A<xref:System.Messaging.AccessControlList>を許可またはセキュリティ保護可能なオブジェクトへのアクセスを拒否するトラスティを識別します。 プロセスは、セキュリティ保護可能なオブジェクトにアクセスする際に、システムはアクセスを許可するかどうかを判断するオブジェクトのアクセス制御リストでアクセス制御エントリを確認します。 オブジェクトが、アクセス制御リストを持たない場合、システムはすべてに対するフル アクセス権を付与します。 オブジェクトのアクセス制御リストにエントリがあるない場合、システムは、オブジェクトへのアクセス試行をすべてを拒否します。  
+  
+ システムは、1 つまたはすべての要求されたアクセス権を許可するものが見つかるまで、または要求されたアクセス権のいずれかが拒否されるまで、シーケンス内のアクセス制御エントリをチェックします。  
+  
+ 各システム検証<xref:System.Messaging.AccessControlEntry>順番に、次のイベントのいずれかが発生するまで。  
+  
+-   アクセス拒否<xref:System.Messaging.AccessControlEntry>スレッドのアクセス トークンに表示されているトラスティのいずれかに要求されたアクセス権のいずれかを明示的に拒否されます。  
+  
+-   1 つまたは複数のアクセス許可<xref:System.Messaging.AccessControlEntry>項目をスレッドのアクセス トークンを明示的に記載のトラスティがすべての要求されたアクセス権を付与します。  
+  
+-   すべて<xref:System.Messaging.AccessControlEntry>項目がチェックされ、もには、少なくとも 1 つ要求されたアクセス権が許可されていない、アクセスが暗黙的に拒否される場合がします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AccessControlList ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.AccessControlList.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Messaging.AccessControlList" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (System.Messaging.AccessControlEntry entry);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Add(class System.Messaging.AccessControlEntry entry) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.AccessControlList.Add(System.Messaging.AccessControlEntry)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entry" Type="System.Messaging.AccessControlEntry" />
+      </Parameters>
+      <Docs>
+        <param name="entry">A<see cref="T:System.Messaging.AccessControlEntry" />アクセス制御リストの末尾に追加します。</param>
+        <summary>アクセス制御リストにアクセス制御エントリを追加します。</summary>
+        <returns>新しいアクセス制御エントリが挿入された位置。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="entry" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Messaging.AccessControlEntry entry);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Messaging.AccessControlEntry entry) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.AccessControlList.Contains(System.Messaging.AccessControlEntry)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entry" Type="System.Messaging.AccessControlEntry" />
+      </Parameters>
+      <Docs>
+        <param name="entry"><see cref="T:System.Messaging.AccessControlEntry" />アクセス制御リスト内で検索します。</param>
+        <summary>アクセス制御リストが特定のアクセス制御エントリを含めるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />アクセス制御エントリが見つからない場合は、アクセス制御リストにはそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Messaging.AccessControlEntry[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Messaging.AccessControlEntry[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.AccessControlList.CopyTo(System.Messaging.AccessControlEntry[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Messaging.AccessControlEntry[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">型の配列<see cref="T:System.Messaging.AccessControlEntry" />アクセス制御リスト エントリをコピーします。 配列には、0 から始まるインデックスが設定されている必要があります。</param>
+        <param name="index">アクセス制御リスト エントリのコピーを開始する位置を示す、配列内のインデックス。</param>
+        <summary>コピーのアクセスの互換性のある 1 次元配列全体のアクセス制御リストは、対象となる配列の指定したインデックスから始まるエントリを制御します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="array" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />パラメーターが 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="index" />パラメーターがの長さ以上、<paramref name="array" />パラメーター。  
+  
+ または  
+  
+ ソースのアクセス制御リスト内の要素の数から使用可能な領域を超えています<paramref name="index" />アクセス制御エントリのコピー先の配列の末尾にします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Messaging.AccessControlEntry entry);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Messaging.AccessControlEntry entry) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.AccessControlList.IndexOf(System.Messaging.AccessControlEntry)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entry" Type="System.Messaging.AccessControlEntry" />
+      </Parameters>
+      <Docs>
+        <param name="entry"><see cref="T:System.Messaging.AccessControlEntry" />アクセス制御リスト内で検索します。</param>
+        <summary>アクセス制御リストでアクセス制御エントリの特定のインデックスを決定します。</summary>
+        <returns>リスト内で検出された場合、エントリのインデックスそれ以外の場合、-1</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.Messaging.AccessControlEntry entry);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.Messaging.AccessControlEntry entry) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.AccessControlList.Insert(System.Int32,System.Messaging.AccessControlEntry)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="entry" Type="System.Messaging.AccessControlEntry" />
+      </Parameters>
+      <Docs>
+        <param name="index">アクセス制御エントリを挿入する位置の 0 から始まるインデックス。</param>
+        <param name="entry">A<see cref="T:System.Messaging.AccessControlEntry" />アクセス制御リストに挿入します。</param>
+        <summary>指定した位置には、アクセス制御リストにアクセス制御エントリを挿入します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`index`パラメーター アクセス制御リスト内の項目数に等しければ、最後に、エントリが追加されます。 それ以外の場合、カーソル位置の後のエントリは下にリスト内の新しい項目の対応するために移動します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />パラメーターがこのアクセス制御リストに有効なインデックスではありません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="entry" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Messaging.AccessControlEntry entry);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Messaging.AccessControlEntry entry) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.AccessControlList.Remove(System.Messaging.AccessControlEntry)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entry" Type="System.Messaging.AccessControlEntry" />
+      </Parameters>
+      <Docs>
+        <param name="entry"><see cref="T:System.Messaging.AccessControlEntry" />アクセス制御リストから削除します。</param>
+        <summary>アクセス制御リストから、最初に見つかった特定のアクセス制御エントリを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 削除された項目のフォローするアクセス制御エントリに繰りに移動します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="entry" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

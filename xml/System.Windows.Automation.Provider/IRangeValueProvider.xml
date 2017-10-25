@@ -1,0 +1,240 @@
+<Type Name="IRangeValueProvider" FullName="System.Windows.Automation.Provider.IRangeValueProvider">
+  <TypeSignature Language="C#" Value="public interface IRangeValueProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IRangeValueProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.Provider.IRangeValueProvider" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationProvider</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("36dc7aef-33e6-4691-afe1-2be7274b3d33")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ある範囲内の値に設定できるコントロールへの、UI オートメーション クライアントのアクセスをサポートするメソッドとプロパティを公開します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サポートする UI オートメーション プロバイダーに実装される、<xref:System.Windows.Automation.RangeValuePattern>コントロール パターン。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Provider.IRangeValueProvider.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの値は読み取り専用であるかどうかを指定する値を取得します。</summary>
+        <value>
+          <see langword="true" />値が読み取り専用の場合<see langword="false" />場合は、変更することができます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、読み取り専用ではないコントロールに対して、このメソッドの実装を示しています。  
+  
+ [!code-csharp[UIAIRangeValueProvider_snip#IsReadOnly](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAIRangeValueProvider_snip/CSharp/RangeValueFragment.cs#isreadonly)]
+ [!code-vb[UIAIRangeValueProvider_snip#IsReadOnly](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAIRangeValueProvider_snip/visualbasic/rangevaluefragment.vb#isreadonly)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LargeChange">
+      <MemberSignature Language="C#" Value="public double LargeChange { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 LargeChange" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Provider.IRangeValueProvider.LargeChange" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>追加またはから減算する値を取得、<see cref="P:System.Windows.Automation.Provider.IRangeValueProvider.Value" />大きな変更が行われると、pagedown キーなどのプロパティです。</summary>
+        <value>コントロールでサポートされる大きな変更値 (<see langword="Nothing" />で[!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)]) コントロールをサポートしない場合<see cref="P:System.Windows.Automation.Provider.IRangeValueProvider.LargeChange" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、5.0 の大きな変更値を持つコントロールに対して、このメソッドの実装を示しています。  
+  
+ [!code-csharp[UIAIRangeValueProvider_snip#LargeChange](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAIRangeValueProvider_snip/CSharp/RangeValueFragment.cs#largechange)]
+ [!code-vb[UIAIRangeValueProvider_snip#LargeChange](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAIRangeValueProvider_snip/visualbasic/rangevaluefragment.vb#largechange)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Maximum">
+      <MemberSignature Language="C#" Value="public double Maximum { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Maximum" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Provider.IRangeValueProvider.Maximum" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールでサポートされる範囲の最大値を取得します。</summary>
+        <value>コントロールでサポートされる最大値 (<see langword="Nothing" />で[!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)]) コントロールをサポートしない場合<see cref="P:System.Windows.Automation.Provider.IRangeValueProvider.Maximum" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、255.0 の最大値を持つコントロールに対して、このメソッドの実装を示しています。  
+  
+ [!code-csharp[UIAIRangeValueProvider_snip#Maximum](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAIRangeValueProvider_snip/CSharp/RangeValueFragment.cs#maximum)]
+ [!code-vb[UIAIRangeValueProvider_snip#Maximum](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAIRangeValueProvider_snip/visualbasic/rangevaluefragment.vb#maximum)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Minimum">
+      <MemberSignature Language="C#" Value="public double Minimum { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Minimum" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Provider.IRangeValueProvider.Minimum" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールでサポートされる範囲の最小値を取得します。</summary>
+        <value>コントロールでサポートされる最小値 (<see langword="Nothing" />で[!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)]) コントロールをサポートしない場合<see cref="P:System.Windows.Automation.Provider.IRangeValueProvider.Minimum" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、0.0 の最小値を持つコントロールに対して、このメソッドの実装を示しています。  
+  
+ [!code-csharp[UIAIRangeValueProvider_snip#Minimum](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAIRangeValueProvider_snip/CSharp/RangeValueFragment.cs#minimum)]
+ [!code-vb[UIAIRangeValueProvider_snip#Minimum](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAIRangeValueProvider_snip/visualbasic/rangevaluefragment.vb#minimum)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValue">
+      <MemberSignature Language="C#" Value="public void SetValue (double value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetValue(float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Provider.IRangeValueProvider.SetValue(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="value">設定する値。</param>
+        <summary>コントロールの値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定されている実際の値は、コントロールの実装に依存します。 コントロールが、要求された可能性があります丸める`value`上または下です。  
+  
+   
+  
+## Examples  
+ 次の例は、1 つの可能なカスタム コントロールに対して、このメソッドの実装を示しています。 カスタム コントロールでは、基本色のアルファ値を使用して範囲の値が表示されます。  
+  
+ [!code-csharp[UIAIRangeValueProvider_snip#SetValue](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAIRangeValueProvider_snip/CSharp/RangeValueFragment.cs#setvalue)]
+ [!code-vb[UIAIRangeValueProvider_snip#SetValue](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAIRangeValueProvider_snip/visualbasic/rangevaluefragment.vb#setvalue)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="value" /> がコントロールの最小値よりも小さいか、または最大値よりも大きい場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SmallChange">
+      <MemberSignature Language="C#" Value="public double SmallChange { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 SmallChange" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Provider.IRangeValueProvider.SmallChange" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>追加またはから減算する値を取得、<see cref="P:System.Windows.Automation.Provider.IRangeValueProvider.Value" />わずかな変更が行われると、このような方向キーと同様のプロパティです。</summary>
+        <value>小さな変更値または null (<see langword="Nothing" />で[!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)]) コントロールをサポートしない場合<see cref="P:System.Windows.Automation.Provider.IRangeValueProvider.SmallChange" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、1.0 の小さな変更値を持つコントロールに対して、このメソッドの実装を示しています。  
+  
+ [!code-csharp[UIAIRangeValueProvider_snip#SmallChange](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAIRangeValueProvider_snip/CSharp/RangeValueFragment.cs#smallchange)]
+ [!code-vb[UIAIRangeValueProvider_snip#SmallChange](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAIRangeValueProvider_snip/visualbasic/rangevaluefragment.vb#smallchange)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public double Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Value" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Provider.IRangeValueProvider.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの値を取得します。</summary>
+        <value>コントロールまたは null の値 (<see langword="Nothing" />で[!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)]) コントロールをサポートしない場合<see cref="P:System.Windows.Automation.Provider.IRangeValueProvider.Value" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、カスタム コントロールに対して、このメソッドの実装を示しています。 このサンプルの目的は、カスタム コントロールは、基本色のアルファの設定を使用して値を表示します。  
+  
+ [!code-csharp[UIAIRangeValueProvider_snip#Value](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAIRangeValueProvider_snip/CSharp/RangeValueFragment.cs#value)]
+ [!code-vb[UIAIRangeValueProvider_snip#Value](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAIRangeValueProvider_snip/visualbasic/rangevaluefragment.vb#value)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

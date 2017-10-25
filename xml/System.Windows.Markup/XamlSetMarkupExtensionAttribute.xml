@@ -1,0 +1,81 @@
+<Type Name="XamlSetMarkupExtensionAttribute" FullName="System.Windows.Markup.XamlSetMarkupExtensionAttribute">
+  <TypeSignature Language="C#" Value="public sealed class XamlSetMarkupExtensionAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit XamlSetMarkupExtensionAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.XamlSetMarkupExtensionAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class, AllowMultiple=false, Inherited=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>クラスが、マークアップ拡張機能を使用して、値を指定することができます、マークアップ拡張機能のセットの操作を使用するハンドラーを参照ことを示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XAML オブジェクト ライターの既定の実装は、型またはメンバーの値を設定するマークアップ拡張機能の使用を意図的なコールバックがあるかどうかを判断するのに CLR のリフレクションとこの CLR 属性を使用します。 たとえば、<xref:System.Xaml.XamlServices>の読み込みまたは解析、または<xref:System.Xaml.XamlXmlReader>  /  <xref:System.Xaml.XamlObjectWriter>シーケンスはこの属性を使用して、マークアップ拡張機能の使用に基づくオブジェクト ノードを作成するたびに、操作の一部として、名前付きコールバックを呼び出します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlSetMarkupExtensionAttribute (string xamlSetMarkupExtensionHandler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string xamlSetMarkupExtensionHandler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XamlSetMarkupExtensionAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="xamlSetMarkupExtensionHandler" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="xamlSetMarkupExtensionHandler">マークアップ拡張機能を使用するハンドラーの名前は、操作を設定します。</param>
+        <summary><see cref="T:System.Windows.Markup.XamlSetMarkupExtensionAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使って名によって参照されるメソッド、`xamlSetMarkupExtensionHandler`値がジェネリック型に基づいている<xref:System.EventHandler%601>を持つデリゲート<xref:System.Windows.Markup.XamlSetMarkupExtensionEventArgs>イベント データの制約。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XamlSetMarkupExtensionHandler">
+      <MemberSignature Language="C#" Value="public string XamlSetMarkupExtensionHandler { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string XamlSetMarkupExtensionHandler" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.XamlSetMarkupExtensionAttribute.XamlSetMarkupExtensionHandler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マークアップ拡張機能を使用するハンドラーの名前のセットの操作を取得します。</summary>
+        <value>マークアップ拡張機能を使用するハンドラーの名前は、操作を設定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハンドラーがジェネリック型に基づいている<xref:System.EventHandler%601>を持つデリゲート<xref:System.Windows.Markup.XamlSetMarkupExtensionEventArgs>イベント データの制約。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

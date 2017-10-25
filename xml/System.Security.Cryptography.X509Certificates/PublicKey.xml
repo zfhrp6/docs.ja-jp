@@ -1,0 +1,242 @@
+<Type Name="PublicKey" FullName="System.Security.Cryptography.X509Certificates.PublicKey">
+  <TypeSignature Language="C#" Value="public sealed class PublicKey" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PublicKey extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.X509Certificates.PublicKey" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>証明書の公開キーの情報を表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.X509Certificates.PublicKey>オブジェクトには、オブジェクト識別子が含まれています (<xref:System.Security.Cryptography.X509Certificates.PublicKey.Oid%2A>) 公開キー アルゴリズム、ASN でエンコードされたパラメーター、および ASN.1 エンコードされたキーの値を表すです。  
+  
+   
+  
+## Examples  
+ 次の例では、公開キーを使用する方法、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2>ファイルを暗号化するオブジェクト。 また、その証明書の秘密キーを使用して、暗号化されたファイルの暗号化を解除する方法も示します。  
+  
+ [!code-csharp[X509Certificate2#1](~/samples/snippets/csharp/VS_Snippets_CLR/x509certificate2/cs/program.cs#1)]
+ [!code-vb[X509Certificate2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/x509certificate2/vb/program.vb#1)]  
+  
+ 次の例では、証明書ファイルを引数として受け取り、さまざまな証明書のプロパティをコンソールに出力するコマンドラインの実行可能ファイルを作成します。  
+  
+ [!code-cpp[CertInfo#1](~/samples/snippets/cpp/VS_Snippets_CLR/CertInfo/CPP/certinfo.cpp#1)]
+ [!code-csharp[CertInfo#1](~/samples/snippets/csharp/VS_Snippets_CLR/CertInfo/CS/certinfo.cs#1)]
+ [!code-vb[CertInfo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CertInfo/VB/certinfo.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PublicKey (System.Security.Cryptography.Oid oid, System.Security.Cryptography.AsnEncodedData parameters, System.Security.Cryptography.AsnEncodedData keyValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Cryptography.Oid oid, class System.Security.Cryptography.AsnEncodedData parameters, class System.Security.Cryptography.AsnEncodedData keyValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.PublicKey.#ctor(System.Security.Cryptography.Oid,System.Security.Cryptography.AsnEncodedData,System.Security.Cryptography.AsnEncodedData)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="oid" Type="System.Security.Cryptography.Oid" />
+        <Parameter Name="parameters" Type="System.Security.Cryptography.AsnEncodedData" />
+        <Parameter Name="keyValue" Type="System.Security.Cryptography.AsnEncodedData" />
+      </Parameters>
+      <Docs>
+        <param name="oid">公開キーを表すオブジェクト識別子 (OID) オブジェクト。</param>
+        <param name="parameters">公開キーのパラメーターの ASN.1 エンコードされた表現。</param>
+        <param name="keyValue">公開キーの値の ASN.1 エンコードされた表現。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.X509Certificates.PublicKey" />クラスの公開キー、公開キーのパラメーターの ASN.1 エンコードされた表現で、および、ASN.1 エンコードされたパブリック キーの値の形式のオブジェクト識別子 (OID) オブジェクトを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EncodedKeyValue">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.AsnEncodedData EncodedKeyValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.AsnEncodedData EncodedKeyValue" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.X509Certificates.PublicKey.EncodedKeyValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.AsnEncodedData</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>公開キーの値の ASN.1 エンコードされた表現を取得します。</summary>
+        <value>ASN.1 エンコードされた公開キーの値の表現。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、証明書ファイルを引数として受け取り、さまざまな証明書のプロパティをコンソールに出力するコマンドラインの実行可能ファイルを作成します。  
+  
+ [!code-cpp[CertInfo#1](~/samples/snippets/cpp/VS_Snippets_CLR/CertInfo/CPP/certinfo.cpp#1)]
+ [!code-csharp[CertInfo#1](~/samples/snippets/csharp/VS_Snippets_CLR/CertInfo/CS/certinfo.cs#1)]
+ [!code-vb[CertInfo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CertInfo/VB/certinfo.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EncodedParameters">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.AsnEncodedData EncodedParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.AsnEncodedData EncodedParameters" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.X509Certificates.PublicKey.EncodedParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.AsnEncodedData</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>公開キーのパラメーターの ASN.1 エンコードされた表現を取得します。</summary>
+        <value>ASN.1 エンコードの形式を公開キーのパラメーターです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Key">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.AsymmetricAlgorithm Key { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.AsymmetricAlgorithm Key" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.X509Certificates.PublicKey.Key" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.AsymmetricAlgorithm</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Security.Cryptography.RSACryptoServiceProvider" />または<see cref="T:System.Security.Cryptography.DSACryptoServiceProvider" />公開キーを表すオブジェクト。</summary>
+        <value><see cref="T:System.Security.Cryptography.AsymmetricAlgorithm" />公開キーを表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、公開キーを返します。 両方<xref:System.Security.Cryptography.RSA>と<xref:System.Security.Cryptography.DSA>キーはサポートされています。 証明書の公開キーを取得するには、このプロパティを呼び出します。 このプロパティを繰り返し呼び出すでは、同じキーを返します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、現在のユーザー証明書ストアを開き、アクティブな証明書のみを選択し、1 つまたは複数の証明書を選択できます。 この例は、証明書情報をコンソールに書き込みます。  
+  
+ [!code-cpp[CertSelect#1](~/samples/snippets/cpp/VS_Snippets_CLR/CertSelect/CPP/certselect.cpp#1)]
+ [!code-csharp[CertSelect#1](~/samples/snippets/csharp/VS_Snippets_CLR/CertSelect/CS/certselect.cs#1)]
+ [!code-vb[CertSelect#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CertSelect/VB/certselect.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">キーのアルゴリズムがサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Oid">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.Oid Oid { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.Oid Oid" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.X509Certificates.PublicKey.Oid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.Oid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>公開キーのオブジェクト識別子 (OID) オブジェクトを取得します。</summary>
+        <value>公開キーのオブジェクト識別子 (OID) オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクト識別子 (OID) は、オブジェクトのクラスまたは属性を一意に識別する番号です。 オブジェクト識別子は、「1.2.3.4」などのドット形式 10 進数文字列として表されます。 オブジェクト識別子は、グローバルな階層に編成されます。 各国の登録機関では、個人または組織に対してルート オブジェクト識別子の下にグループ化の Oid の階層を管理するルート オブジェクト識別子を発行します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、証明書ファイルを引数として受け取り、さまざまな証明書のプロパティをコンソールに出力するコマンドラインの実行可能ファイルを作成します。  
+  
+ [!code-cpp[CertInfo#1](~/samples/snippets/cpp/VS_Snippets_CLR/CertInfo/CPP/certinfo.cpp#1)]
+ [!code-csharp[CertInfo#1](~/samples/snippets/csharp/VS_Snippets_CLR/CertInfo/CS/certinfo.cs#1)]
+ [!code-vb[CertInfo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CertInfo/VB/certinfo.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

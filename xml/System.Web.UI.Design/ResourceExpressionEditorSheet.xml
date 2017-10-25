@@ -1,0 +1,194 @@
+<Type Name="ResourceExpressionEditorSheet" FullName="System.Web.UI.Design.ResourceExpressionEditorSheet">
+  <TypeSignature Language="C#" Value="public class ResourceExpressionEditorSheet : System.Web.UI.Design.ExpressionEditorSheet" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ResourceExpressionEditorSheet extends System.Web.UI.Design.ExpressionEditorSheet" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.ResourceExpressionEditorSheet" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.ExpressionEditorSheet</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>デザイン タイム エディター シートのリソースでの式、UI のデザイナー ホストのデザイン時にプロパティを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビジュアル デザイナーを使用して、<xref:System.Web.UI.Design.ResourceExpressionEditor>クラス、<xref:System.Web.UI.Design.ResourceExpressionEditorSheet>クラスのリソースの参照を式では、個々 のプロパティを選択し、リソースの式に、選択したリソース expression プロパティ値を結合します。  
+  
+ <xref:System.Web.UI.Design.ConnectionStringsExpressionEditor.GetExpressionEditorSheet%2A?displayProperty=nameWithType> メソッドは <xref:System.Web.UI.Design.ResourceExpressionEditorSheet> オブジェクトを返します。 [式] ダイアログ ボックス コントロールのプロパティを選択して、リソースの式にバインドすると、ビジュアル デザイナーで、<xref:System.Web.UI.Design.ResourceExpressionEditor.GetExpressionEditorSheet%2A>メソッドです。 ビジュアル デザイナーを使用して、返された<xref:System.Web.UI.Design.ResourceExpressionEditorSheet>を要求するオブジェクト、<xref:System.Web.UI.Design.ResourceExpressionEditorSheet.ClassKey%2A>と<xref:System.Web.UI.Design.ResourceExpressionEditorSheet.ResourceKey%2A>プロパティです。 リソース プロパティに式を選択すると、ビジュアル デザイナーを呼び出す、<xref:System.Web.UI.Design.ResourceExpressionEditorSheet.GetExpression%2A>リソース式の文字列にプロパティを結合する方法です。  
+  
+ <xref:System.Web.UI.Design.ResourceExpressionEditorSheet.ResourceKey%2A>リソース式でプロパティを指定する必要があります。 リソースの値のインデックスを作成します。 <xref:System.Web.UI.Design.ResourceExpressionEditorSheet.ClassKey%2A>プロパティはオプションです。 グローバル リソース フォルダーにリソースを定義するクラスのキーまたはファイル名を参照します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、バインド、<xref:System.Web.UI.WebControls.HyperLink.Text%2A>のプロパティ、<xref:System.Web.UI.WebControls.HyperLink>リソース式を使用して、コントロール、<xref:System.Web.UI.Design.ResourceExpressionEditor>です。 例を使用します。  
+  
+1.  Web サイト プロジェクトでは、App_GlobalResources フォルダーに Strings.resx をという名前の新しいリソース ファイルを追加します。  
+  
+2.  という名前の文字列を追加`myLinkText`Strings.resx リソース ファイルを開き、値のテキストに設定、<xref:System.Web.UI.WebControls.HyperLink>コントロール。 たとえば、設定、`myLinkText`文字列の値`This is a link`です。  
+  
+3.  ASP.NET Web ページで追加、<xref:System.Web.UI.WebControls.HyperLink>コントロール。  
+  
+4.  プロパティ グリッドで、`Hyperlink`コントロール をクリックして**式**、省略記号ボタンをクリックし、(**...)**式バインド ダイアログ ボックスを表示します。  
+  
+5.  選択、`Text`プロパティの管理、およびセット**式の型**を`Resources`式の型。 ビジュアル デザイナーで定義されているリソース式プロパティを表示する、<xref:System.Web.UI.Design.ResourceExpressionEditorSheet>オブジェクト。  
+  
+6.  設定、**式プロパティ**次のようにします。  
+  
+    -   設定**した**に`Strings`、コンパイル済みの Strings.resx リソース ファイルのクラス名。  
+  
+    -   設定**ResourceKey**に`myLinkText`Strings.resx で文字列名。  
+  
+ ビジュアル デザイナーを使用して、<xref:System.Web.UI.Design.ResourceExpressionEditor>のリソースの式を割り当てるオブジェクト、`Text`プロパティです。 次の aspx ソースは、リソースの式を使用して設定したプロパティ値の例を示します。  
+  
+ [!code-aspx-csharp[ControlsUsingExpressions#3](~/samples/snippets/csharp/VS_Snippets_WebNet/ControlsUsingExpressions/CS/controlsusingexpressionscs.aspx#3)]
+ [!code-aspx-vb[ControlsUsingExpressions#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ControlsUsingExpressions/VB/controlsusingexpressionsvb.aspx#3)]
+ [!code-xml[ControlsUsingExpressions#3](~/samples/snippets/common/VS_Snippets_WebNet/ControlsUsingExpressions/Common/controlsusingexpressions.xml#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ResourceExpressionEditorSheet (string expression, IServiceProvider serviceProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string expression, class System.IServiceProvider serviceProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ResourceExpressionEditorSheet.#ctor(System.String,System.IServiceProvider)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="expression" Type="System.String" />
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="expression">リソース式、式エディターのシートを初期化するために使用します。</param>
+        <param name="serviceProvider">追加のデザイン時サービスを取得するために使用、デザイナー ホストによって提供されるサービス プロバイダーの実装です。</param>
+        <summary><see cref="T:System.Web.UI.Design.ResourceExpressionEditorSheet" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 初期<xref:System.Web.UI.Design.ResourceExpressionEditorSheet.ClassKey%2A>と<xref:System.Web.UI.Design.ResourceExpressionEditorSheet.ResourceKey%2A>プロパティの値は、入力を使用して設定された`expression`文字列。 <xref:System.Web.UI.Design.ExpressionEditorSheet.ServiceProvider%2A>プロパティが設定されて、その入力`serviceProvider`実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClassKey">
+      <MemberSignature Language="C#" Value="public string ClassKey { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ClassKey" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ResourceExpressionEditorSheet.ClassKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロジェクトのグローバル リソースのフォルダー内のリソースのファイル名に一致するキーを設定します。</summary>
+        <value>グローバル リソースのフォルダー内のリソース ファイルのキー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]、グローバル リソース ファイルは App_GlobalResources フォルダーにあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExpression">
+      <MemberSignature Language="C#" Value="public override string GetExpression ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetExpression() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ResourceExpressionEditorSheet.GetExpression" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>式エディターのシートのプロパティ値によって形成されるリソースの式を返します。</summary>
+        <returns>シートの現在の設定のリソースの式の文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsValid">
+      <MemberSignature Language="C#" Value="public override bool IsValid { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsValid" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ResourceExpressionEditorSheet.IsValid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リソース式文字列が有効かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />リソース式文字列が無効である場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この基本実装を常に返します`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResourceKey">
+      <MemberSignature Language="C#" Value="public string ResourceKey { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ResourceKey" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ResourceExpressionEditorSheet.ResourceKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.Design.ResourceExpressionEditorSheet/ResourceKeyTypeConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリソースの値を検索するキーとして使用されるリソースの名前を設定します。</summary>
+        <value>リソースの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ResourceExpressionEditorSheet.ResourceKey%2A>プロパティのリソースの式が必要です。 リソースの名前を示します。 リソースの名前に使用して実行時およびデザイン時をリソースを検索し、コントロールのプロパティに割り当てます。  
+  
+ たとえば場合、<xref:System.Web.UI.WebControls.Label.Text%2A>プロパティを<xref:System.Web.UI.WebControls.Label>コントロールがリソースの式に割り当てられている`<%$ Resources:Strings, labelText $>`、リソース式が評価されると<xref:System.Web.UI.WebControls.Label.Text%2A>にフィールドが割り当てられて、`labelText`でリソースの値、`Strings`クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

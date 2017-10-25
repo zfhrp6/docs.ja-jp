@@ -1,0 +1,331 @@
+<Type Name="ThreadState" FullName="System.Threading.ThreadState">
+  <TypeSignature Language="C#" Value="public enum ThreadState" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed ThreadState extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.ThreadState" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading.Thread</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>実行状態を指定、<see cref="T:System.Threading.Thread" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Threading.ThreadState>列挙体は、いくつかでのみ関心のあるシナリオをデバッグします。 コードは、スレッドの活動を同期するために、スレッドの状態を使用する必要がありますしないでください。  
+  
+ <xref:System.Threading.ThreadState>スレッドのすべての可能な実行状態のセットを定義します。 スレッドを作成すると、終了するまでの状態の少なくとも 1 つです。 共通言語ランタイム内で作成されたスレッドは最初に、`Unstarted`状態にある場合、ランタイムに付属している外部のスレッドが既に開始中に、`Running`状態です。 `Unstarted`にスレッドが遷移した、`Running`を呼び出して状態<xref:System.Threading.Thread.Start%2A>です。 すべての組み合わせ`ThreadState`値は有効です。 たとえば、スレッドが両方にすることはできません、`Aborted`と`Unstarted`状態です。  
+  
+> [!IMPORTANT]
+>  2 つのスレッドの状態の列挙体がある<xref:System.Threading.ThreadState?displayProperty=nameWithType>と<xref:System.Diagnostics.ThreadState?displayProperty=nameWithType>です。  
+  
+ 次の表は、状態の変更が発生するアクションを示します。  
+  
+|アクション|ThreadState|  
+|------------|-----------------|  
+|スレッドは、共通言語ランタイム内に作成されます。|まだ開始していません。|  
+|別のスレッドの呼び出し、<xref:System.Threading.Thread.Start%2A?displayProperty=nameWithType>新しいスレッドの呼び出しでメソッドを返します。<br /><br /> <xref:System.Threading.Thread.Start%2A>メソッドが実行されている、新しいスレッドが開始されるまで返されません。 呼び出し中に実行します。 どの時点で、新しいスレッドが開始されますを知る方法はありません<xref:System.Threading.Thread.Start%2A>です。|Running|  
+|スレッドの呼び出し<xref:System.Threading.Thread.Sleep%2A>|WaitSleepJoin|  
+|スレッドの呼び出し<xref:System.Threading.Monitor.Wait%2A>別のオブジェクトにします。|WaitSleepJoin|  
+|スレッドの呼び出し<xref:System.Threading.Thread.Join%2A>別のスレッドでします。|WaitSleepJoin|  
+|別のスレッドの呼び出し<xref:System.Threading.Thread.Interrupt%2A>|Running|  
+|別のスレッドの呼び出し<xref:System.Threading.Thread.Suspend%2A>|SuspendRequested|  
+|スレッドが応答する、<xref:System.Threading.Thread.Suspend%2A>要求します。|Suspended|  
+|別のスレッドの呼び出し<xref:System.Threading.Thread.Resume%2A>|Running|  
+|別のスレッドの呼び出し<xref:System.Threading.Thread.Abort%2A>|AbortRequested|  
+|スレッドが応答する、<xref:System.Threading.Thread.Abort%2A>要求します。|停止|  
+|スレッドが終了します。|停止|  
+  
+ 上記の状態、に加えても、`Background`状態は、背景または前景でスレッドが実行されているかどうかを示します。  
+  
+ スレッドは、特定の時点で 1 つ以上の状態であることができます。 呼び出しでスレッドがブロックされている場合など、 <xref:System.Threading.Monitor.Wait%2A>、および別のスレッドの呼び出し<xref:System.Threading.Thread.Abort%2A>、ブロックされたスレッドでブロックされたスレッドされます両方で、`WaitSleepJoin`と`AbortRequested`同時状態です。 ここでは、スレッドがへの呼び出しから戻るとすぐに<xref:System.Threading.Monitor.Wait%2A>かが中断されるは受信、<xref:System.Threading.ThreadAbortException>中止を開始します。  
+  
+ <xref:System.Threading.Thread.ThreadState%2A?displayProperty=nameWithType>スレッドのプロパティは、スレッドの現在の状態を提供します。 アプリケーションは、スレッドが実行されているかどうかを決定するのにビットマスクを使用する必要があります。 値から`Running`はゼロ (0) などの c# コードを使用して、スレッドが実行されているかどうかをテスト`(myThread.ThreadState & (ThreadState.Stopped | ThreadState.Unstarted)) == 0`またはなど、Visual Basic コード`(myThread.ThreadState And (ThreadState.Stopped Or ThreadState.Unstarted)) = 0`です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Aborted">
+      <MemberSignature Language="C#" Value="Aborted" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.ThreadState Aborted = int32(256)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.ThreadState.Aborted" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.ThreadState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スレッドの状態を含む<see cref="F:System.Threading.ThreadState.AbortRequested" />とスレッドが、配信不能であるようになりましたが、状態がまだに変更されていない<see cref="F:System.Threading.ThreadState.Stopped" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AbortRequested">
+      <MemberSignature Language="C#" Value="AbortRequested" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.ThreadState AbortRequested = int32(128)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.ThreadState.AbortRequested" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.ThreadState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="M:System.Threading.Thread.Abort(System.Object)" /> 、スレッドでメソッドが呼び出されて、スレッドをまだ受信していない、保留中<see cref="T:System.Threading.ThreadAbortException" />を中止することを試みます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Background">
+      <MemberSignature Language="C#" Value="Background" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.ThreadState Background = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.ThreadState.Background" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.ThreadState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォア グラウンド スレッドではなく、バック グラウンド スレッドとスレッドを実行中です。 この状態は、設定によって制御されます、<see cref="P:System.Threading.Thread.IsBackground" />プロパティです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Running">
+      <MemberSignature Language="C#" Value="Running" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.ThreadState Running = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.ThreadState.Running" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.ThreadState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スレッドが開始されて、ブロックされていないとが保留中のいいえ<see cref="T:System.Threading.ThreadAbortException" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Stopped">
+      <MemberSignature Language="C#" Value="Stopped" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.ThreadState Stopped = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.ThreadState.Stopped" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.ThreadState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スレッドが停止しました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="StopRequested">
+      <MemberSignature Language="C#" Value="StopRequested" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.ThreadState StopRequested = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.ThreadState.StopRequested" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.ThreadState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スレッドの停止が要求されます。 これは内部使用のみです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Suspended">
+      <MemberSignature Language="C#" Value="Suspended" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.ThreadState Suspended = int32(64)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.ThreadState.Suspended" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.ThreadState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スレッドが中断されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SuspendRequested">
+      <MemberSignature Language="C#" Value="SuspendRequested" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.ThreadState SuspendRequested = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.ThreadState.SuspendRequested" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.ThreadState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スレッドを中断する要求されています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Unstarted">
+      <MemberSignature Language="C#" Value="Unstarted" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.ThreadState Unstarted = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.ThreadState.Unstarted" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.ThreadState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="M:System.Threading.Thread.Start" />スレッドでメソッドが呼び出されていません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="WaitSleepJoin">
+      <MemberSignature Language="C#" Value="WaitSleepJoin" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.ThreadState WaitSleepJoin = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.ThreadState.WaitSleepJoin" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.ThreadState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スレッドがブロックされます。 呼び出しの結果が考えられます<see cref="M:System.Threading.Thread.Sleep(System.Int32)" />または<see cref="M:System.Threading.Thread.Join" />、ロックを要求する — などを呼び出して<see cref="M:System.Threading.Monitor.Enter(System.Object)" />または<see cref="M:System.Threading.Monitor.Wait(System.Object,System.Int32,System.Boolean)" />— などのスレッドの同期オブジェクトで待機しているのか<see cref="T:System.Threading.ManualResetEvent" />です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

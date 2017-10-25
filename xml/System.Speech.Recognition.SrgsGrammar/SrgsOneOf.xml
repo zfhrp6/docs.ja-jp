@@ -1,0 +1,333 @@
+<Type Name="SrgsOneOf" FullName="System.Speech.Recognition.SrgsGrammar.SrgsOneOf">
+  <TypeSignature Language="C#" Value="public class SrgsOneOf : System.Speech.Recognition.SrgsGrammar.SrgsElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit SrgsOneOf extends System.Speech.Recognition.SrgsGrammar.SrgsElement" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Recognition.SrgsGrammar.SrgsOneOf" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Speech.Recognition.SrgsGrammar.SrgsElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("{DebuggerDisplayString ()}")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerTypeProxy(typeof(System.Speech.Recognition.SrgsGrammar.SrgsOneOf/OneOfDebugDisplay))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>別の単語または語句、音声入力に一致するいずれかを使用することがありますのリストを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Speech.Recognition.SrgsGrammar.SrgsOneOf>オブジェクトには、別の単語または語句、読み上げときに、これのいずれかを認識することがありますの一覧が含まれています。 配列から代替のリストをビルドする<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem>オブジェクトまたは配列の<xref:System.String>オブジェクト。 使用して、<xref:System.Speech.Recognition.SrgsGrammar.SrgsOneOf.Items%2A>リスト内の別の項目にアクセスするプロパティです。  
+  
+ <xref:System.Speech.Recognition.SrgsGrammar.SrgsOneOf>クラスを表します、 `one-of` World Wide Web Consortium (W3C) から要素を[音声認識の文法の仕様 (SRGS) バージョン 1.0](http://go.microsoft.com/fwlink/?LinkId=201761)です。 については、SRGS`one-of`要素および System.Speech でのサポートに関する詳細を参照してください。 [1 つの要素の](http://msdn.microsoft.com/en-us/643cee6b-5082-46ea-9fc1-9f3646a95801)します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsOneOf" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスを構築することができます、<xref:System.Speech.Recognition.SrgsGrammar.SrgsOneOf>の配列からクラスを<xref:System.String>オブジェクトの配列から<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem>オブジェクト、または空のリストとして。 使用して<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem>の代わりにオブジェクト<xref:System.String>代替のリスト内のオブジェクトのプロパティを適用できます。<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem>を各項目の一覧で、など<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem.MinRepeat%2A>、 <xref:System.Speech.Recognition.SrgsGrammar.SrgsItem.MaxRepeat%2A>、 <xref:System.Speech.Recognition.SrgsGrammar.SrgsItem.RepeatProbability%2A>、および<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem.Weight%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SrgsOneOf ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsOneOf.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsOneOf" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Speech.Recognition.SrgsGrammar.SrgsOneOf>リストをビルドする<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem>国の名前を含む要素、phrase いずれかのうちの 1 つ含まれている認識を使用できます。 この例でし、その結果のいずれかの追加<xref:System.Speech.Recognition.SrgsGrammar.SrgsOneOf>ヨーロッパ諸国および南アメリカ国のそれぞれの規則にオブジェクト。 さらに、この例では、<xref:System.Speech.Recognition.SrgsGrammar.SrgsOneOf>オブジェクトへのグループ ルール参照を`ruleEurope`と`ruleSAmerica`を 2 つの方法があり、いずれか 1 つのリストにすることがありますを使用する音声指示を認識します。  
+  
+```  
+public void WorldSoccerWinners ()  
+{  
+  
+  // Create an SrgsDocument, create a new rule  
+  // and set its scope to public.  
+  SrgsDocument document = new SrgsDocument();  
+  SrgsRule winnerRule = new SrgsRule("WorldCupWinner");  
+  winnerRule.Scope = SrgsRuleScope.Public;  
+  
+  // Add the introduction.  
+  winnerRule.Elements.Add(new SrgsItem("A nation that has won the world cup is: "));  
+  
+  // Create the rule for the European nations.  
+  SrgsOneOf oneOfEurope = new SrgsOneOf(new SrgsItem[] {new SrgsItem("England"),   
+    new SrgsItem("France"), new SrgsItem("Germany"), new SrgsItem("Italy")});  
+  SrgsRule ruleEurope = (new SrgsRule("EuropeanNations", new SrgsElement[] {oneOfEurope}));  
+  
+  // Create the rule for the South American nations.  
+  SrgsOneOf oneOfSAmerica = new SrgsOneOf(new SrgsItem[] {new SrgsItem("Argentina"),   
+    new SrgsItem("Brazil"), new SrgsItem("Uruguay")});  
+  SrgsRule ruleSAmerica = (new SrgsRule("SouthAmericanNations", new SrgsElement[] {oneOfSAmerica}));  
+  
+  // Add references to winnerRule for ruleEurope and ruleSAmerica.  
+  winnerRule.Elements.Add(new SrgsOneOf(new SrgsItem[] {(new SrgsItem   
+    (new SrgsRuleRef(ruleEurope))), new SrgsItem(new SrgsRuleRef(ruleSAmerica))}));  
+  
+  // Add all the rules to the document and make winnerRule   
+  // the root rule of the document.  
+  document.Rules.Add(new SrgsRule[] {winnerRule, ruleEurope, ruleSAmerica});  
+  document.Root = winnerRule;  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SrgsOneOf (params System.Speech.Recognition.SrgsGrammar.SrgsItem[] items);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Speech.Recognition.SrgsGrammar.SrgsItem[] items) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsOneOf.#ctor(System.Speech.Recognition.SrgsGrammar.SrgsItem[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="items" Type="System.Speech.Recognition.SrgsGrammar.SrgsItem[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="items">追加する別の項目。</param>
+        <summary><see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsItem" /> オブジェクトの配列から <see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsOneOf" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、語句を認識する文法「ワールド カップが勝利した民族が」とそれに続くワールド カップが勝利した国の名前。 という名前のパブリック規則が作成`WorldCupWinner`です。 2 つ作成し、<xref:System.Speech.Recognition.SrgsGrammar.SrgsRule>オブジェクトを使用して<xref:System.Speech.Recognition.SrgsGrammar.SrgsOneOf>オブジェクトの配列を含む新しい<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem>オブジェクト。 この例で生成された文法を表示するには、次を参照してください。<xref:System.Speech.Recognition.SrgsGrammar.SrgsRule.%23ctor%2A>です。  
+  
+```csharp  
+ public void WorldSoccerWinners ()  
+{  
+  
+  // Create an SrgsDocument, create a new rule  
+  // and set its scope to public.  
+  SrgsDocument document = new SrgsDocument();  
+  SrgsRule winnerRule = new SrgsRule("WorldCupWinner");  
+  winnerRule.Scope = SrgsRuleScope.Public;  
+  
+  // Add the introduction.  
+  winnerRule.Elements.Add(new SrgsItem("A nation that has won the world cup is: "));  
+  
+  // Create the rule for the European nations.  
+  SrgsOneOf oneOfEurope = new SrgsOneOf(new SrgsItem[] {new SrgsItem("England"), new SrgsItem("France"), new SrgsItem("Germany"), new SrgsItem("Italy")});  
+  SrgsRule ruleEurope = (new SrgsRule("EuropeanNations", new SrgsElement[] {oneOfEurope}));  
+  
+  // Create the rule for the South American nations.  
+  SrgsOneOf oneOfSAmerica = new SrgsOneOf(new SrgsItem[] {new SrgsItem("Argentina"), new SrgsItem("Brazil"), new SrgsItem("Uruguay")});  
+  SrgsRule ruleSAmerica = (new SrgsRule("SouthAmericanNations", new SrgsElement[] {oneOfSAmerica}));  
+  
+  // Add references to winnerRule for ruleEurope and ruleSAmerica.  
+  winnerRule.Elements.Add(new SrgsOneOf(new SrgsItem[] {(new SrgsItem   
+    (new SrgsRuleRef(ruleEurope))), new SrgsItem(new SrgsRuleRef(ruleSAmerica))}));  
+  
+  // Add all the rules to the document and make winnerRule   
+  // the root rule of the document.  
+  document.Rules.Add(new SrgsRule[] {winnerRule, ruleEurope, ruleSAmerica});  
+  document.Root = winnerRule;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="items" /> は <see langword="null" /> です。  
+  
+ 内の要素で、<paramref name="items" />配列が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SrgsOneOf (params string[] items);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string[] items) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsOneOf.#ctor(System.String[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="items" Type="System.String[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="items">追加する別の項目。</param>
+        <summary><see cref="T:System.String" /> オブジェクトの配列から <see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsOneOf" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、語句を認識する文法「ワールド カップが勝利した民族が」とそれに続くワールド カップが勝利した国の名前。 この例では、<xref:System.Speech.Recognition.SrgsGrammar.SrgsOneOf>要素の配列から許容国名のリストを構築する<xref:System.String>オブジェクト。 この例でし、その結果のいずれかの追加<xref:System.Speech.Recognition.SrgsGrammar.SrgsOneOf>ヨーロッパ諸国および南アメリカ国のそれぞれの規則にオブジェクト。  
+  
+```  
+public void WorldSoccerWinners ()  
+{  
+    // Create a grammar from an SRGSDocument, create a new rule  
+  // and set its scope to public.  
+  SrgsDocument srgsGrammar = new SrgsDocument ();  
+  SrgsRule winnerRule = new SrgsRule ("WorldCupWinner");  
+  winnerRule.Scope = SrgsRuleScope.Public;  
+  
+  // Add the introduction.  
+  winnerRule.Elements.Add (new SrgsItem ("A nation that has won the world cup is"));  
+  
+  // Create the rule for the European nations.  
+  SrgsOneOf oneOfEurope = new SrgsOneOf (new string[] {"England","France","Germany","Italy"});  
+  SrgsRule ruleEurope = (new SrgsRule("EuropeanNations", new SrgsElement[] {oneOfEurope}));  
+  
+  // Create the rule for the South American nations.  
+  SrgsOneOf oneOfSAmerica = new SrgsOneOf (new string[] {"Argentina","Brazil","Uruguay"});  
+  SrgsRule ruleSAmerica = (new SrgsRule("SouthAmericanNations", new SrgsElement[] {oneOfSAmerica}));  
+  
+  // Add references to winnerRule for ruleEurope and ruleSAmerica.  
+  winnerRule.Elements.Add(new SrgsOneOf(new SrgsItem[] {(new SrgsItem   
+    (new SrgsRuleRef(ruleEurope))), new SrgsItem(new SrgsRuleRef(ruleSAmerica))}));  
+  
+  // Add all the rules to the grammar and make winnerRule  
+  // the root rule of the grammar.  
+  srgsGrammar.Rules.Add (new SrgsRule[] {winnerRule, ruleEurope, ruleSAmerica});  
+  srgsGrammar.Root = winnerRule;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="items" /> は <see langword="null" /> です。  
+  
+ 内の要素で、<paramref name="items" />配列が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Speech.Recognition.SrgsGrammar.SrgsItem item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Speech.Recognition.SrgsGrammar.SrgsItem item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsOneOf.Add(System.Speech.Recognition.SrgsGrammar.SrgsItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Speech.Recognition.SrgsGrammar.SrgsItem" />
+      </Parameters>
+      <Docs>
+        <param name="item">代替のリストに追加する項目。</param>
+        <summary>追加、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsItem" />単語または代替のリストに添付する語句を含むです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、語句を認識する文法「ワールド カップが勝利した民族が」とそれに続くワールド カップが勝利した国の名前。 この例では、<xref:System.Speech.Recognition.SrgsGrammar.SrgsOneOf>許容国からの名前の配列のリストを作成するためオブジェクト<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem>オブジェクト。 使用して、<xref:System.Speech.Recognition.SrgsGrammar.SrgsOneOf.Add%2A>メソッド、例では、追加、<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem>に文字列「イタリア」を格納している、<xref:System.Speech.Recognition.SrgsGrammar.SrgsOneOf>オブジェクト`oneOfEurope`です。  
+  
+```  
+public void WorldSoccerWinners ()  
+{  
+  
+  // Create an SrgsDocument, create a new rule  
+  // and set its scope to public.  
+  SrgsDocument document = new SrgsDocument();  
+  SrgsRule winnerRule = new SrgsRule("WorldCupWinner");  
+  winnerRule.Scope = SrgsRuleScope.Public;  
+  
+  // Add the introduction.  
+  winnerRule.Elements.Add(new SrgsItem("A nation that has won the world cup is: "));  
+  
+  // Create the rule for the European nations.  
+  SrgsOneOf oneOfEurope = new SrgsOneOf(new SrgsItem[] {new SrgsItem("England"),   
+    new SrgsItem("France"), new SrgsItem("Germany")});  
+  oneOfEurope.Add(new SrgsItem("Italy"));  
+  SrgsRule ruleEurope = (new SrgsRule("EuropeanNations", new SrgsElement[] {oneOfEurope}));  
+  
+  // Create the rule for the South American nations.  
+  SrgsOneOf oneOfSAmerica = new SrgsOneOf(new SrgsItem[] {new SrgsItem("Argentina"),   
+    new SrgsItem("Brazil"), new SrgsItem("Uruguay")});  
+  SrgsRule ruleSAmerica = (new SrgsRule("SouthAmericanNations", new SrgsElement[] {oneOfSAmerica}));  
+  
+  // Add references to winnerRule for ruleEurope and ruleSAmerica.  
+  winnerRule.Elements.Add(new SrgsOneOf(new SrgsItem[] {(new SrgsItem   
+    (new SrgsRuleRef(ruleEurope))), new SrgsItem(new SrgsRuleRef(ruleSAmerica))}));  
+  
+  // Add all the rules to the document and make winnerRule   
+  // the root rule of the document.  
+  document.Rules.Add(new SrgsRule[] {winnerRule, ruleEurope, ruleSAmerica});  
+  document.Root = winnerRule;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="item" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Items">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.Speech.Recognition.SrgsGrammar.SrgsItem&gt; Items { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.Speech.Recognition.SrgsGrammar.SrgsItem&gt; Items" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SrgsGrammar.SrgsOneOf.Items" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.Speech.Recognition.SrgsGrammar.SrgsItem&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>含まれているすべての代替のリストを取得、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsOneOf" />要素。</summary>
+        <value>代替のリストを返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 別の単語や語句のこのプロパティによって返される可能性がありますに加えられた、<xref:System.Speech.Recognition.SrgsGrammar.SrgsOneOf>として<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem>または<xref:System.String>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

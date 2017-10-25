@@ -1,0 +1,144 @@
+<Type Name="CancelEventArgs" FullName="System.ComponentModel.CancelEventArgs">
+  <TypeSignature Language="C#" Value="public class CancelEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CancelEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.CancelEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>キャンセルできるイベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キャンセルできるようなアクションを実行しようとしているときに、コンポーネントによってキャンセルできるイベントが発生した、<xref:System.Windows.Forms.Form.Closing>のイベント、<xref:System.Windows.Forms.Form>です。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.Form.Closing>イベントは廃止されておりは置き換えられました<xref:System.Windows.Forms.Form.FormClosing>です。 使用法を示すことだけを次に例として提供されて<xref:System.ComponentModel.CancelEventArgs>です。  
+  
+ <xref:System.ComponentModel.CancelEventArgs>提供、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>イベントを取り消す必要があるかどうかを示すプロパティです。  
+  
+   
+  
+## Examples  
+ 次の例で<xref:System.ComponentModel.CancelEventArgs>と<xref:System.ComponentModel.CancelEventHandler>を処理する、<xref:System.Windows.Forms.Form.Closing>のイベント、<xref:System.Windows.Forms.Form>です。 このコードは、作成している前提としています。、<xref:System.Windows.Forms.Form>クラス レベルで<xref:System.Boolean>という名前の変数`isDataSaved`です。 呼び出すステートメントを追加することも想定、`OtherInitialize`メソッドから、フォームの<xref:System.Windows.Forms.Form.Load>メソッドまたはコンス トラクター (への呼び出し後`InitializeComponent`)。  
+  
+ [!code-cpp[Classic CancelEventArgs Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic CancelEventArgs Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic CancelEventArgs Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic CancelEventArgs Example/CS/source.cs#1)]
+ [!code-vb[Classic CancelEventArgs Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic CancelEventArgs Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CancelEventArgs ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.CancelEventArgs.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.CancelEventArgs" />クラス、<see cref="P:System.ComponentModel.CancelEventArgs.Cancel" />プロパティに設定<see langword="false" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CancelEventArgs (bool cancel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool cancel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.CancelEventArgs.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="cancel" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="cancel">
+          <see langword="true" />イベントをキャンセルするにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.CancelEventArgs" />クラス、<see cref="P:System.ComponentModel.CancelEventArgs.Cancel" />プロパティが所定の値に設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cancel">
+      <MemberSignature Language="C#" Value="public bool Cancel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Cancel" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.CancelEventArgs.Cancel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイベントを取り消す必要があるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />イベントをキャンセルする場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で<xref:System.ComponentModel.CancelEventArgs>と<xref:System.ComponentModel.CancelEventHandler>を処理する、<xref:System.Windows.Forms.Form.FormClosing>のイベント、<xref:System.Windows.Forms.Form>です。 このコードは、作成している前提としています。、<xref:System.Windows.Forms.Form>クラス レベルで<xref:System.Boolean>という名前の変数`isDataSaved`です。 呼び出すステートメントを追加することも想定、`OtherInitialize`メソッドから、フォームの<xref:System.Windows.Forms.Form.Load>メソッドまたはコンス トラクター (への呼び出し後`InitializeComponent`)。  
+  
+ [!code-cpp[Classic CancelEventArgs Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic CancelEventArgs Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic CancelEventArgs Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic CancelEventArgs Example/CS/source.cs#1)]
+ [!code-vb[Classic CancelEventArgs Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic CancelEventArgs Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

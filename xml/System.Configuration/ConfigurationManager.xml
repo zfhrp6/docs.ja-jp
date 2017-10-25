@@ -1,0 +1,997 @@
+<Type Name="ConfigurationManager" FullName="System.Configuration.ConfigurationManager">
+  <TypeSignature Language="C#" Value="public static class ConfigurationManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ConfigurationManager extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.ConfigurationManager" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>クライアント アプリケーションの構成ファイルにアクセスできるようにします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationManager>クラスによってアクセス マシン、アプリケーション、およびユーザーの構成情報をできるようにします。 このクラスが置き換えられます、<xref:System.Configuration.ConfigurationSettings>クラスは推奨されなくなりました。 Web アプリケーションを使用して、<xref:System.Web.Configuration.WebConfigurationManager>クラスです。  
+  
+ 使用する、<xref:System.Configuration.ConfigurationManager>クラス、プロジェクトを参照する必要があります、`System.Configuration`アセンブリ。 既定では、コンソール アプリケーションと同様に、いくつかのプロジェクト テンプレートはこのアセンブリを参照しないため、手動で参照する必要があります。  
+  
+> [!NOTE]
+>  アプリケーション構成ファイルの場所と名前は、アプリケーションのホストに依存します。 詳細については、次を参照してください。 [NIB: アプリケーション構成ファイル](http://msdn.microsoft.com/en-us/0d05b1b8-b18b-43d8-bb3c-526ff0c44fe0)です。  
+  
+ 組み込みを使用する<xref:System.Configuration>の種類または構成情報を処理してから派生します。 これらの型を使用すると、構成情報を直接操作することができ、カスタム情報を含めるように構成ファイルを拡張することができます。  
+  
+ <xref:System.Configuration.ConfigurationManager>クラスには、次のタスクを実行できるようにするメンバーが含まれています。  
+  
+-   構成ファイルからセクションを読み取ります。 構成情報にアクセスするには、呼び出し、<xref:System.Configuration.ConfigurationManager.GetSection%2A>メソッドです。 などのいくつかのセクションの`appSettings`と`connectionStrings`を使用して、<xref:System.Configuration.ConfigurationManager.AppSettings%2A>と<xref:System.Configuration.ConfigurationManager.ConnectionStrings%2A>クラスです。 これらのメンバー読み取り専用の操作を実行、構成の 1 つのキャッシュされたインスタンスを使用して、マルチ スレッドに注意してください。  
+  
+-   全体の構成ファイルを読み書きします。 アプリケーションでは、読み取りでき、設定の書き込み構成任意のレベルでは、アプリケーション自体や他のアプリケーションまたはコンピューター、ローカルまたはリモートですることができます。 によって提供されるメソッドのいずれかを使用して、<xref:System.Configuration.ConfigurationManager>クラス SampleApp.exe.config などの構成ファイルを開きます。これらのメソッドが返す、<xref:System.Configuration.Configuration>さらに関連付けられている構成ファイルで作業する使用できるメソッドとプロパティを公開するオブジェクト。 メソッド読み取りまたは書き込み操作および実行ファイルが書き込まれるたびに、構成データを作成します。  
+  
+-   構成タスクをサポートします。 次の種類は、さまざまな構成タスクをサポートするために使用されます。  
+  
+    -   <xref:System.Configuration.SectionInformation>  
+  
+    -   <xref:System.Configuration.PropertyInformation>  
+  
+    -   <xref:System.Configuration.PropertyInformationCollection>  
+  
+    -   <xref:System.Configuration.ElementInformation>  
+  
+    -   <xref:System.Configuration.ContextInformation>  
+  
+    -   <xref:System.Configuration.ConfigurationSectionGroup>  
+  
+    -   <xref:System.Configuration.ConfigurationSectionGroupCollection>  
+  
+     既存の構成情報を使用するだけでなく作成およびなど、組み込みの構成の種類を拡張して、カスタム構成要素と作業、 <xref:System.Configuration.ConfigurationElement>、 <xref:System.Configuration.ConfigurationElementCollection>、 <xref:System.Configuration.ConfigurationProperty>、および<xref:System.Configuration.ConfigurationSection>クラスです。 組み込みの構成の種類をプログラムによって拡張する方法の例は、次を参照してください。<xref:System.Configuration.ConfigurationSection>です。 属性に基づくモデルを使用する組み込みの構成の種類を拡張する方法の例は、次を参照してください。<xref:System.Configuration.ConfigurationElement>です。  
+  
+   
+  
+## Examples  
+ 最初の例では、アプリケーションの設定を読み取り、新しい設定を追加し、既存の設定を更新する単純なコンソール アプリケーションを示します。  
+  
+```csharp  
+using System;  
+using System.Configuration;  
+  
+namespace ConsoleApplication1  
+{  
+    class Program  
+    {  
+        static void Main(string[] args)  
+        {  
+            ReadAllSettings();  
+            ReadSetting("Setting1");  
+            ReadSetting("NotValid");  
+            AddUpdateAppSettings("NewSetting", "May 7, 2014");  
+            AddUpdateAppSettings("Setting1", "May 8, 2014");  
+            ReadAllSettings();  
+        }  
+  
+        static void ReadAllSettings()  
+        {  
+            try  
+            {  
+                var appSettings = ConfigurationManager.AppSettings;  
+  
+                if (appSettings.Count == 0)  
+                {  
+                    Console.WriteLine("AppSettings is empty.");  
+                }  
+                else  
+                {  
+                    foreach (var key in appSettings.AllKeys)  
+                    {  
+                        Console.WriteLine("Key: {0} Value: {1}", key, appSettings[key]);  
+                    }  
+                }  
+            }  
+            catch (ConfigurationErrorsException)  
+            {  
+                Console.WriteLine("Error reading app settings");  
+            }  
+        }  
+  
+        static void ReadSetting(string key)  
+        {  
+            try  
+            {  
+                var appSettings = ConfigurationManager.AppSettings;  
+                string result = appSettings[key] ?? "Not Found";  
+                Console.WriteLine(result);  
+            }  
+            catch (ConfigurationErrorsException)  
+            {  
+                Console.WriteLine("Error reading app settings");  
+            }  
+        }  
+  
+        static void AddUpdateAppSettings(string key, string value)  
+        {  
+            try  
+            {  
+                var configFile = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);  
+                var settings = configFile.AppSettings.Settings;  
+                if (settings[key] == null)  
+                {  
+                    settings.Add(key, value);  
+                }  
+                else  
+                {  
+                    settings[key].Value = value;  
+                }  
+                configFile.Save(ConfigurationSaveMode.Modified);  
+                ConfigurationManager.RefreshSection(configFile.AppSettings.SectionInformation.Name);  
+            }  
+            catch (ConfigurationErrorsException)  
+            {  
+                Console.WriteLine("Error writing app settings");  
+            }  
+        }  
+    }  
+}  
+```  
+  
+```vb  
+Imports System.Configuration  
+Module Module1  
+  
+    Sub Main()  
+        ReadAllSettings()  
+        ReadSetting("Setting1")  
+        ReadSetting("NotValid")  
+        AddUpdateAppSettings("NewSetting", "May 7, 2014")  
+        AddUpdateAppSettings("Setting1", "May 8, 2014")  
+        ReadAllSettings()  
+    End Sub  
+  
+    Sub ReadAllSettings()  
+        Try  
+            Dim appSettings = ConfigurationManager.AppSettings  
+  
+            If appSettings.Count = 0 Then  
+                Console.WriteLine("AppSettings is empty.")  
+            Else  
+                For Each key As String In appSettings.AllKeys  
+                    Console.WriteLine("Key: {0} Value: {1}", key, appSettings(key))  
+                Next  
+            End If  
+        Catch e As ConfigurationErrorsException  
+            Console.WriteLine("Error reading app settings")  
+        End Try  
+    End Sub  
+  
+    Sub ReadSetting(key As String)  
+        Try  
+            Dim appSettings = ConfigurationManager.AppSettings  
+            Dim result As String = appSettings(key)  
+            If IsNothing(result) Then  
+                result = "Not found"  
+            End If  
+            Console.WriteLine(result)  
+        Catch e As ConfigurationErrorsException  
+            Console.WriteLine("Error reading app settings")  
+        End Try  
+    End Sub  
+  
+    Sub AddUpdateAppSettings(key As String, value As String)  
+        Try  
+            Dim configFile = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None)  
+            Dim settings = configFile.AppSettings.Settings  
+            If IsNothing(settings(key)) Then  
+                settings.Add(key, value)  
+            Else  
+                settings(key).Value = value  
+            End If  
+            configFile.Save(ConfigurationSaveMode.Modified)  
+            ConfigurationManager.RefreshSection(configFile.AppSettings.SectionInformation.Name)  
+        Catch e As ConfigurationErrorsException  
+            Console.WriteLine("Error writing app settings")  
+        End Try  
+    End Sub  
+  
+End Module  
+```  
+  
+ 前の例では、プロジェクトに次のように、App.config ファイルを前提としています。  
+  
+```xml  
+<?xml version="1.0" encoding="utf-8" ?>  
+<configuration>  
+    <startup>   
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" />  
+    </startup>  
+  <appSettings>  
+    <add key="Setting1" value="May 5, 2014"/>  
+    <add key="Setting2" value="May 6, 2014"/>  
+  </appSettings>  
+</configuration>  
+```  
+  
+ 次の例では、データベースからデータを読み取る接続文字列を使用する方法を示します。  
+  
+```csharp  
+using System;  
+using System.Configuration;  
+using System.Data.SqlClient;  
+  
+namespace ConsoleApplication1  
+{  
+    class Program  
+    {  
+        static void Main(string[] args)  
+        {  
+            ReadProducts();  
+        }  
+  
+        static void ReadProducts()  
+        {  
+            var connectionString = ConfigurationManager.ConnectionStrings["WingtipToys"].ConnectionString;  
+            string queryString = "SELECT Id, ProductName FROM dbo.Products;";  
+            using (var connection = new SqlConnection(connectionString))  
+            {  
+                var command = new SqlCommand(queryString, connection);  
+                connection.Open();  
+                using (var reader = command.ExecuteReader())  
+                {  
+                    while (reader.Read())  
+                    {  
+                        Console.WriteLine(String.Format("{0}, {1}", reader[0], reader[1]));  
+                    }  
+                }  
+            }  
+        }  
+    }  
+}  
+```  
+  
+```vb  
+Imports System.Configuration  
+Imports System.Data.SqlClient  
+Module Module1  
+  
+    Sub Main()  
+        ReadProducts()  
+    End Sub  
+  
+    Sub ReadProducts()  
+        Dim connectionString = ConfigurationManager.ConnectionStrings("WingtipToys").ConnectionString  
+        Dim queryString = "SELECT Id, ProductName FROM dbo.Products;"  
+        Using connection As New SqlConnection(connectionString)  
+            Dim command = New SqlCommand(queryString, connection)  
+            connection.Open()  
+  
+            Using reader As SqlDataReader = command.ExecuteReader()  
+                While reader.Read()  
+                    Console.WriteLine(String.Format("{0}, {1}", reader(0), reader(1)))  
+                End While  
+            End Using  
+        End Using  
+    End Sub  
+  
+End Module  
+```  
+  
+ 前の例では、プロジェクトには、次に示すように、App.config が前提としています。  
+  
+```xml  
+<?xml version="1.0" encoding="utf-8" ?>  
+<configuration>  
+    <startup>   
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" />  
+    </startup>  
+    <connectionStrings>  
+      <add name="WingtipToys" connectionString="Data Source=(LocalDB)\v11.0;Initial Catalog=WingtipToys;Integrated Security=True;Pooling=False" />  
+    </connectionStrings>  
+</configuration>  
+```  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para><see cref="T:System.Configuration.Configuration" />クラスには、構成ファイルを編集するためのプログラムによるアクセスができるようにします。 によって提供される開いているメソッドのいずれかを使用する<see cref="T:System.Configuration.ConfigurationManager" />です。 これらのメソッドが返す、<see cref="T:System.Configuration.Configuration" />オブジェクトで、さらに必要なメソッドとプロパティを基になる構成ファイルの処理を提供します。 これらのファイルの読み取りまたは書き込みにアクセスできます。  
+  
+ 構成ファイルを読み取るには使用<see cref="M:System.Configuration.Configuration.GetSection(System.String)" />または<see cref="M:System.Configuration.Configuration.GetSectionGroup(System.String)" />構成情報を読み取れません。 ユーザーまたはプロセスを読み取るには、次のアクセス許可がある場合があります。  
+  
+-   現在の構成階層レベルの構成ファイルに対する読み取り権限。  
+  
+-   すべての親に対する権限の構成ファイルを読み取る。  
+  
+ 使用することをお勧め、アプリケーションでは、独自の構成を読み取り専用のアクセスを必要とする場合、<see cref="M:System.Configuration.ConfigurationManager.GetSection(System.String)" />メソッドです。 このメソッドのアクセスを提供する、キャッシュされた構成値を現在のアプリケーションに対してより優れたパフォーマンスは、<see cref="T:System.Configuration.Configuration" />クラスです。  
+  
+ 構成ファイルに書き込むのいずれかの操作を使用して、<see cref="Overload:System.Configuration.Configuration.Save" />メソッドです。 ユーザーまたはプロセスに書き込むには、次のアクセス許可がある場合があります。  
+  
+-   構成ファイルおよび現在の構成階層レベルのディレクトリに対するアクセス許可を記述します。  
+  
+-   すべての構成ファイルの読み取り権限。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="AppSettings">
+      <MemberSignature Language="C#" Value="public static System.Collections.Specialized.NameValueCollection AppSettings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Collections.Specialized.NameValueCollection AppSettings" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationManager.AppSettings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.NameValueCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のアプリケーションの既定構成の <see cref="T:System.Configuration.AppSettingsSection" /> データを取得します。</summary>
+        <value>現在のアプリケーションの既定構成の、<see cref="T:System.Configuration.AppSettingsSection" /> オブジェクトの内容を格納する <see cref="T:System.Collections.Specialized.NameValueCollection" /> オブジェクトを返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Configuration.AppSettingsSection>オブジェクトには、構成ファイルの内容が含まれています。`appSettings`セクションです。  
+  
+   
+  
+## Examples  
+ 最初の例では、アプリケーションの設定を読み取り、新しい設定を追加し、既存の設定を更新する単純なコンソール アプリケーションを示します。  
+  
+```csharp  
+using System;  
+using System.Configuration;  
+  
+namespace ConsoleApplication1  
+{  
+    class Program  
+    {  
+        static void Main(string[] args)  
+        {  
+            ReadAllSettings();  
+            ReadSetting("Setting1");  
+            ReadSetting("NotValid");  
+            AddUpdateAppSettings("NewSetting", "May 7, 2014");  
+            AddUpdateAppSettings("Setting1", "May 8, 2014");  
+            ReadAllSettings();  
+        }  
+  
+        static void ReadAllSettings()  
+        {  
+            try  
+            {  
+                var appSettings = ConfigurationManager.AppSettings;  
+  
+                if (appSettings.Count == 0)  
+                {  
+                    Console.WriteLine("AppSettings is empty.");  
+                }  
+                else  
+                {  
+                    foreach (var key in appSettings.AllKeys)  
+                    {  
+                        Console.WriteLine("Key: {0} Value: {1}", key, appSettings[key]);  
+                    }  
+                }  
+            }  
+            catch (ConfigurationErrorsException)  
+            {  
+                Console.WriteLine("Error reading app settings");  
+            }  
+        }  
+  
+        static void ReadSetting(string key)  
+        {  
+            try  
+            {  
+                var appSettings = ConfigurationManager.AppSettings;  
+                string result = appSettings[key] ?? "Not Found";  
+                Console.WriteLine(result);  
+            }  
+            catch (ConfigurationErrorsException)  
+            {  
+                Console.WriteLine("Error reading app settings");  
+            }  
+        }  
+  
+        static void AddUpdateAppSettings(string key, string value)  
+        {  
+            try  
+            {  
+                var configFile = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);  
+                var settings = configFile.AppSettings.Settings;  
+                if (settings[key] == null)  
+                {  
+                    settings.Add(key, value);  
+                }  
+                else  
+                {  
+                    settings[key].Value = value;  
+                }  
+                configFile.Save(ConfigurationSaveMode.Modified);  
+                ConfigurationManager.RefreshSection(configFile.AppSettings.SectionInformation.Name);  
+            }  
+            catch (ConfigurationErrorsException)  
+            {  
+                Console.WriteLine("Error writing app settings");  
+            }  
+        }  
+    }  
+}  
+```  
+  
+```vb  
+Imports System.Configuration  
+Module Module1  
+  
+    Sub Main()  
+        ReadAllSettings()  
+        ReadSetting("Setting1")  
+        ReadSetting("NotValid")  
+        AddUpdateAppSettings("NewSetting", "May 7, 2014")  
+        AddUpdateAppSettings("Setting1", "May 8, 2014")  
+        ReadAllSettings()  
+    End Sub  
+  
+    Sub ReadAllSettings()  
+        Try  
+            Dim appSettings = ConfigurationManager.AppSettings  
+  
+            If appSettings.Count = 0 Then  
+                Console.WriteLine("AppSettings is empty.")  
+            Else  
+                For Each key As String In appSettings.AllKeys  
+                    Console.WriteLine("Key: {0} Value: {1}", key, appSettings(key))  
+                Next  
+            End If  
+        Catch e As ConfigurationErrorsException  
+            Console.WriteLine("Error reading app settings")  
+        End Try  
+    End Sub  
+  
+    Sub ReadSetting(key As String)  
+        Try  
+            Dim appSettings = ConfigurationManager.AppSettings  
+            Dim result As String = appSettings(key)  
+            If IsNothing(result) Then  
+                result = "Not found"  
+            End If  
+            Console.WriteLine(result)  
+        Catch e As ConfigurationErrorsException  
+            Console.WriteLine("Error reading app settings")  
+        End Try  
+    End Sub  
+  
+    Sub AddUpdateAppSettings(key As String, value As String)  
+        Try  
+            Dim configFile = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None)  
+            Dim settings = configFile.AppSettings.Settings  
+            If IsNothing(settings(key)) Then  
+                settings.Add(key, value)  
+            Else  
+                settings(key).Value = value  
+            End If  
+            configFile.Save(ConfigurationSaveMode.Modified)  
+            ConfigurationManager.RefreshSection(configFile.AppSettings.SectionInformation.Name)  
+        Catch e As ConfigurationErrorsException  
+            Console.WriteLine("Error writing app settings")  
+        End Try  
+    End Sub  
+  
+End Module  
+```  
+  
+ 前の例では、プロジェクトに次のように、App.config ファイルを前提としています。  
+  
+```xml  
+<?xml version="1.0" encoding="utf-8" ?>  
+<configuration>  
+    <startup>   
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" />  
+    </startup>  
+  <appSettings>  
+    <add key="Setting1" value="May 5, 2014"/>  
+    <add key="Setting2" value="May 6, 2014"/>  
+  </appSettings>  
+</configuration>  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">取得できませんでした、<see cref="T:System.Collections.Specialized.NameValueCollection" />アプリケーション設定データを持つオブジェクト。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionStrings">
+      <MemberSignature Language="C#" Value="public static System.Configuration.ConnectionStringSettingsCollection ConnectionStrings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Configuration.ConnectionStringSettingsCollection ConnectionStrings" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationManager.ConnectionStrings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConnectionStringSettingsCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のアプリケーションの既定構成の <see cref="T:System.Configuration.ConnectionStringsSection" /> データを取得します。</summary>
+        <value>現在のアプリケーションの既定構成の、<see cref="T:System.Configuration.ConnectionStringsSection" /> オブジェクトの内容を格納する <see cref="T:System.Configuration.ConnectionStringSettingsCollection" /> オブジェクトを返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Configuration.ConnectionStringsSection>オブジェクトには、構成ファイルの内容が含まれています。`connectionStrings`セクションです。  
+  
+   
+  
+## Examples  
+ 次の例では、データベースからデータを読み取る接続文字列を使用する方法を示します。  
+  
+```csharp  
+using System;  
+using System.Configuration;  
+using System.Data.SqlClient;  
+  
+namespace ConsoleApplication1  
+{  
+    class Program  
+    {  
+        static void Main(string[] args)  
+        {  
+            ReadProducts();  
+        }  
+  
+        static void ReadProducts()  
+        {  
+            var connectionString = ConfigurationManager.ConnectionStrings["WingtipToys"].ConnectionString;  
+            string queryString = "SELECT Id, ProductName FROM dbo.Products;";  
+            using (var connection = new SqlConnection(connectionString))  
+            {  
+                var command = new SqlCommand(queryString, connection);  
+                connection.Open();  
+                using (var reader = command.ExecuteReader())  
+                {  
+                    while (reader.Read())  
+                    {  
+                        Console.WriteLine(String.Format("{0}, {1}", reader[0], reader[1]));  
+                    }  
+                }  
+            }  
+        }  
+    }  
+}  
+```  
+  
+```vb  
+Imports System.Configuration  
+Imports System.Data.SqlClient  
+Module Module1  
+  
+    Sub Main()  
+        ReadProducts()  
+    End Sub  
+  
+    Sub ReadProducts()  
+        Dim connectionString = ConfigurationManager.ConnectionStrings("WingtipToys").ConnectionString  
+        Dim queryString = "SELECT Id, ProductName FROM dbo.Products;"  
+        Using connection As New SqlConnection(connectionString)  
+            Dim command = New SqlCommand(queryString, connection)  
+            connection.Open()  
+  
+            Using reader As SqlDataReader = command.ExecuteReader()  
+                While reader.Read()  
+                    Console.WriteLine(String.Format("{0}, {1}", reader(0), reader(1)))  
+                End While  
+            End Using  
+        End Using  
+    End Sub  
+  
+End Module  
+```  
+  
+ 前の例では、プロジェクトには、次に示すように、App.config が前提としています。  
+  
+```xml  
+<?xml version="1.0" encoding="utf-8" ?>  
+<configuration>  
+    <startup>   
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" />  
+    </startup>  
+    <connectionStrings>  
+      <add name="WingtipToys" connectionString="Data Source=(LocalDB)\v11.0;Initial Catalog=WingtipToys;Integrated Security=True;Pooling=False" />  
+    </connectionStrings>  
+</configuration>  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException"><see cref="T:System.Configuration.ConnectionStringSettingsCollection" /> オブジェクトを取得できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSection">
+      <MemberSignature Language="C#" Value="public static object GetSection (string sectionName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetSection(string sectionName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationManager.GetSection(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sectionName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sectionName">構成セクションのパスと名前。</param>
+        <summary>現在のアプリケーションの既定構成の、指定した構成セクションを取得します。</summary>
+        <returns>指定した<see cref="T:System.Configuration.ConfigurationSection" />オブジェクト、または<see langword="null" />セクションが存在しない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアント アプリケーションの場合は、このメソッドは、アプリケーション構成ファイル、ローカル ユーザーの構成ファイル、およびローミングの構成ファイルをマージすることによって取得された構成ファイルを取得します。  
+  
+ <xref:System.Configuration.ConfigurationManager.GetSection%2A>メソッドにアクセスする実行時の構成については、それを変更することはできません。 使用する、構成を変更する、 <xref:System.Configuration.Configuration.GetSection%2A> 構成ファイルを次の Open メソッドのいずれかを使用して取得するメソッド。  
+  
+-   <xref:System.Configuration.ConfigurationManager.OpenExeConfiguration%2A>  
+  
+-   <xref:System.Configuration.ConfigurationManager.OpenMachineConfiguration%2A>  
+  
+-   <xref:System.Configuration.ConfigurationManager.OpenMappedExeConfiguration%2A>  
+  
+-   <xref:System.Configuration.ConfigurationManager.OpenMappedExeConfiguration%2A>  
+  
+   
+  
+## Examples  
+ <xref:System.Configuration.ConfigurationManager.GetSection%2A> メソッドを使用する方法の例を次に示します。 例では、ために用意されている長い例の一部である、<xref:System.Configuration.ConfigurationManager>クラスです。  
+  
+ [!code-csharp[System.Configuration.ConfigurationManager#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationManager/CS/configurationmanager.cs#7)]
+ [!code-vb[System.Configuration.ConfigurationManager#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationManager/VB/configurationmanager.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成ファイルを読み込めませんでした。</exception>
+        <block subset="none" type="overrides">
+          <para>予期される構成の種類への戻り値をキャストする必要があります。 可能性のあるキャスト例外を回避するを使用して、条件付きのキャスト操作など、 <see langword="as" /> c# または Visual Basic の関数の演算子にします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenExeConfiguration">
+      <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenExeConfiguration (System.Configuration.ConfigurationUserLevel userLevel);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenExeConfiguration(valuetype System.Configuration.ConfigurationUserLevel userLevel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationManager.OpenExeConfiguration(System.Configuration.ConfigurationUserLevel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Configuration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userLevel" Type="System.Configuration.ConfigurationUserLevel" />
+      </Parameters>
+      <Docs>
+        <param name="userLevel"><see cref="T:System.Configuration.ConfigurationUserLevel" />構成を開きます。</param>
+        <summary>現在のアプリケーションの構成ファイルを開きます、<see cref="T:System.Configuration.Configuration" />オブジェクト。</summary>
+        <returns><see cref="T:System.Configuration.Configuration" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアント アプリケーションでは、すべてのユーザー、個々 のユーザーに適用される別の構成とローミング ユーザーに適用される構成に適用されるグローバル構成を使用します。 `userLevel`パラメーターは、ユーザー レベル (構成ファイルは、アプリケーションと同じディレクトリ) があるないかどうかを示すによって開かれる、構成ファイルの場所を決定またはユーザーごとのレベル (構成ファイルはアプリケーション設定のパス、ユーザー レベルによって決まります)。  
+  
+ 次のいずれかを渡すことによって、取得する構成値を指定して`userLevel`:  
+  
+-   取得する、 <xref:System.Configuration.Configuration> 、すべてのユーザーに適用するオブジェクト設定`userLevel`に<xref:System.Configuration.ConfigurationUserLevel.None>です。  
+  
+-   ローカルに取得する<xref:System.Configuration.Configuration>、現在のユーザーに適用するオブジェクト設定`userLevel`に<xref:System.Configuration.ConfigurationUserLevel.PerUserRoamingAndLocal>です。  
+  
+-   ローミングを取得する<xref:System.Configuration.Configuration>、現在のユーザーに適用するオブジェクト設定`userLevel`に<xref:System.Configuration.ConfigurationUserLevel.PerUserRoaming>です。  
+  
+    > [!NOTE]
+    >  取得する、<xref:System.Configuration.Configuration>コードする必要がありますに対する読み取り権限の設定を継承するすべての構成ファイルのリソースのオブジェクトします。 構成ファイルを更新するには、コードは、構成ファイルとそれが存在するディレクトリの両方に対する書き込みアクセス許可をさらが必要です。  
+  
+   
+  
+## Examples  
+ <xref:System.Configuration.ConfigurationManager.OpenExeConfiguration%2A> メソッドを使用するコード例を次に示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationManager#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationManager/CS/configurationmanager.cs#5)]
+ [!code-vb[System.Configuration.ConfigurationManager#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationManager/VB/configurationmanager.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成ファイルを読み込めませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenExeConfiguration">
+      <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenExeConfiguration (string exePath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenExeConfiguration(string exePath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationManager.OpenExeConfiguration(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Configuration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="exePath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="exePath">実行可能 (exe) ファイルのパス。</param>
+        <summary>として指定されたクライアント構成ファイルを開き、<see cref="T:System.Configuration.Configuration" />オブジェクト。</summary>
+        <returns><see cref="T:System.Configuration.Configuration" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアント アプリケーションでは、すべてのユーザー、個々 のユーザーに適用される別の構成とローミング ユーザーに適用される構成に適用されるグローバル構成を使用します。 `userLevel`値が開かれている構成ファイルの場所を決定します。 ユーザー レベル (構成ファイルは、アプリケーションと同じディレクトリ) を持たないかどうかを示します (構成ファイルは、ユーザー レベルの種類によって決まりますアプリケーション設定のパスは). ユーザーごとのレベルまたはします。  
+  
+ 呼び出すことと同じではこのメソッドのオーバー ロードを呼び出して、<xref:System.Configuration.ConfigurationManager.OpenMappedExeConfiguration%28System.Configuration.ExeConfigurationFileMap%2CSystem.Configuration.ConfigurationUserLevel%2CSystem.Boolean%29>を持つオーバー ロード、`preLoad`パラメーターに設定`false`です。  
+  
+   
+  
+## Examples  
+ <xref:System.Configuration.ConfigurationManager.OpenExeConfiguration%2A> メソッドを使用するコード例を次に示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationManager#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationManager/CS/configurationmanager.cs#6)]
+ [!code-vb[System.Configuration.ConfigurationManager#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationManager/VB/configurationmanager.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成ファイルを読み込めませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenMachineConfiguration">
+      <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenMachineConfiguration ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenMachineConfiguration() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationManager.OpenMachineConfiguration" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Configuration</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のコンピューターにマシン構成ファイルを開き、<see cref="T:System.Configuration.Configuration" />オブジェクト。</summary>
+        <returns><see cref="T:System.Configuration.Configuration" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マシン構成設定は、ローカルのアプリケーション用にオーバーライドしない限り、コンピューター全体と、上に存在するすべてのアプリケーションに適用されます。 マシン構成設定は、現在実行中の .NET Framework のバージョンの Machine.config ファイルから読み取られます。 Machine.config ファイルは、次のサブディレクトリにあります。  
+  
+ *%windir%*\Microsoft.NET\Framework\\*バージョン*\config  
+  
+> [!NOTE]
+>  取得する、<xref:System.Configuration.Configuration>コードする必要がありますに対する読み取り権限の設定を継承するすべての構成ファイルのリソースのオブジェクトします。 構成ファイルを更新するには、コードは、構成ファイルとそれが存在するディレクトリの両方に対する書き込みアクセス許可をさらが必要です。 コンピューター上にインストールされている .NET Framework の他のバージョンの Machine.config ファイルにアクセスすることはできません。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.ConfigurationManager.OpenMachineConfiguration%2A>構成ファイルに含まれているすべてのセクションを取得します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationManager#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationManager/CS/configurationmanager.cs#4)]
+ [!code-vb[System.Configuration.ConfigurationManager#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationManager/VB/configurationmanager.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成ファイルを読み込めませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenMappedExeConfiguration">
+      <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenMappedExeConfiguration (System.Configuration.ExeConfigurationFileMap fileMap, System.Configuration.ConfigurationUserLevel userLevel);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenMappedExeConfiguration(class System.Configuration.ExeConfigurationFileMap fileMap, valuetype System.Configuration.ConfigurationUserLevel userLevel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationManager.OpenMappedExeConfiguration(System.Configuration.ExeConfigurationFileMap,System.Configuration.ConfigurationUserLevel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Configuration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileMap" Type="System.Configuration.ExeConfigurationFileMap" />
+        <Parameter Name="userLevel" Type="System.Configuration.ConfigurationUserLevel" />
+      </Parameters>
+      <Docs>
+        <param name="fileMap"><see cref="T:System.Configuration.ExeConfigurationFileMap" />アプリケーションの既定の構成ファイルの代わりに使用する構成ファイルを参照するオブジェクト。</param>
+        <param name="userLevel"><see cref="T:System.Configuration.ConfigurationUserLevel" />オブジェクト構成を開きます。</param>
+        <summary>として指定されたクライアント構成ファイルを開き、<see cref="T:System.Configuration.Configuration" />オブジェクトを指定したファイル マップとユーザー レベルを使用します。</summary>
+        <returns>構成オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationUserLevel>オブジェクトが開かれている構成ファイルの場所を決定します。 ファイルにユーザー レベル (構成ファイルは、アプリケーションと同じディレクトリ) が存在しないかどうかを示す、またはユーザーごとのレベル (構成ファイルがアプリケーション設定のパスによって決まります`userLevel`)。  
+  
+> [!NOTE]
+>  取得する、<xref:System.Configuration.Configuration>コードする必要がありますに対する読み取り権限の設定を継承するすべての構成ファイルのリソースのオブジェクトします。 構成ファイルを更新するには、コードは、構成ファイルとそれが存在するディレクトリの両方に対する書き込みアクセス許可をさらが必要です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.ConfigurationManager.OpenMappedExeConfiguration%2A>構成ファイルに含まれるすべてのセクションを取得します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationManager#9](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationManager/CS/configurationmanager.cs#9)]
+ [!code-vb[System.Configuration.ConfigurationManager#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationManager/VB/configurationmanager.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成ファイルを読み込めませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenMappedExeConfiguration">
+      <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenMappedExeConfiguration (System.Configuration.ExeConfigurationFileMap fileMap, System.Configuration.ConfigurationUserLevel userLevel, bool preLoad);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenMappedExeConfiguration(class System.Configuration.ExeConfigurationFileMap fileMap, valuetype System.Configuration.ConfigurationUserLevel userLevel, bool preLoad) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationManager.OpenMappedExeConfiguration(System.Configuration.ExeConfigurationFileMap,System.Configuration.ConfigurationUserLevel,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Configuration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileMap" Type="System.Configuration.ExeConfigurationFileMap" />
+        <Parameter Name="userLevel" Type="System.Configuration.ConfigurationUserLevel" />
+        <Parameter Name="preLoad" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="fileMap"><see cref="T:System.Configuration.ExeConfigurationFileMap" />を既定のアプリケーション構成ファイルの代わりに使用する構成ファイルを参照するオブジェクト。</param>
+        <param name="userLevel"><see cref="T:System.Configuration.ConfigurationUserLevel" />オブジェクト構成を開きます。</param>
+        <param name="preLoad">
+          <see langword="true" />すべてのセクション グループとセクションをプリロードするにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>として指定されたクライアント構成ファイルを開き、<see cref="T:System.Configuration.Configuration" />オブジェクトを指定したファイル マップ、ユーザー レベル、およびプリロード オプションを使用します。</summary>
+        <returns>構成オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationUserLevel>オブジェクトが開かれる、構成ファイルの場所を決定します。 ファイルにユーザー レベル (構成ファイルは、アプリケーションと同じディレクトリ) が存在しないかどうかを示しますまたはユーザーごとのレベル (構成ファイルがアプリケーション設定のパスによって決定される`userLevel`)。  
+  
+> [!NOTE]
+>  取得する、<xref:System.Configuration.Configuration>コードする必要がありますに対する読み取り権限の設定を継承するすべての構成ファイルのリソースのオブジェクトします。 構成ファイルを更新するには、コードは、構成ファイルとそれが存在するディレクトリの両方に対する書き込みアクセス許可をさらが必要です。  
+  
+ コード例は、次を参照してください。、<xref:System.Configuration.ConfigurationManager.OpenMappedExeConfiguration%2A>オーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成ファイルを読み込めませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenMappedMachineConfiguration">
+      <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenMappedMachineConfiguration (System.Configuration.ConfigurationFileMap fileMap);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenMappedMachineConfiguration(class System.Configuration.ConfigurationFileMap fileMap) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationManager.OpenMappedMachineConfiguration(System.Configuration.ConfigurationFileMap)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Configuration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileMap" Type="System.Configuration.ConfigurationFileMap" />
+      </Parameters>
+      <Docs>
+        <param name="fileMap"><see cref="T:System.Configuration.ExeConfigurationFileMap" />アプリケーションの既定の構成ファイルの代わりに使用する構成ファイルを参照するオブジェクト。</param>
+        <summary>マシン構成ファイルを開き、<see cref="T:System.Configuration.Configuration" />オブジェクトを指定したファイル マップを使用します。</summary>
+        <returns><see cref="T:System.Configuration.Configuration" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マシン構成設定は、ローカルのアプリケーション用にオーバーライドしない限り、コンピューター全体と、上に存在するすべてのアプリケーションに適用されます。 マシン構成設定は、現在実行中の .NET Framework のバージョンの Machine.config ファイルから読み取られます。 Machine.config ファイルは、次のサブディレクトリにあります。  
+  
+ *%windir%*\Microsoft.NET\Framework\\*バージョン*\config  
+  
+> [!NOTE]
+>  取得する、<xref:System.Configuration.Configuration>コードする必要がありますに対する読み取り権限の設定を継承するすべての構成ファイルのリソースのオブジェクトします。 構成ファイルを更新するには、コードは、構成ファイルとそれが存在するディレクトリの両方に対する書き込みアクセス許可をさらが必要です。 コンピューター上にインストールされている .NET Framework の他のバージョンの Machine.config ファイルにアクセスすることはできません。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.ConfigurationManager.OpenMappedMachineConfiguration%2A>構成ファイル内のすべてのセクションを取得します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationManager#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationManager/CS/configurationmanager.cs#4)]
+ [!code-vb[System.Configuration.ConfigurationManager#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationManager/VB/configurationmanager.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成ファイルを読み込めませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RefreshSection">
+      <MemberSignature Language="C#" Value="public static void RefreshSection (string sectionName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RefreshSection(string sectionName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationManager.RefreshSection(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sectionName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sectionName">更新する構成セクション名、またはセクションの構成パスとセクション名。</param>
+        <summary>名前付きセクションを次回取得するときに、ディスクから再読み取りするように、名前付きセクションを更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、他のセクションに影響を与えずに、指定された構成セクションのキャッシュを無効にします。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.ConfigurationManager.RefreshSection%2A>アプリケーション設定の構成セクションを更新する方法です。  
+  
+ [!code-csharp[System.Configuration.ConfigurationManager#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationManager/CS/configurationmanager.cs#7)]
+ [!code-vb[System.Configuration.ConfigurationManager#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationManager/VB/configurationmanager.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

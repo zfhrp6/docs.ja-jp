@@ -1,0 +1,243 @@
+<Type Name="XObjectChangeEventArgs" FullName="System.Xml.Linq.XObjectChangeEventArgs">
+  <TypeSignature Language="C#" Value="public class XObjectChangeEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XObjectChangeEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Linq.XObjectChangeEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XDocument</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.Linq</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+          <see cref="E:System.Xml.Linq.XObject.Changing" /> イベントおよび <see cref="E:System.Xml.Linq.XObject.Changed" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスの目的は、イベント ハンドラーに渡される引数を保持するときに[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]イベントを発生させます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XObjectChangeEventArgs (System.Xml.Linq.XObjectChange objectChange);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Xml.Linq.XObjectChange objectChange) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XObjectChangeEventArgs.#ctor(System.Xml.Linq.XObjectChange)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="objectChange" Type="System.Xml.Linq.XObjectChange" />
+      </Parameters>
+      <Docs>
+        <param name="objectChange"><see cref="T:System.Xml.Linq.XObjectChange" />のイベント引数を格納している[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]イベント。</param>
+        <summary><see cref="T:System.Xml.Linq.XObjectChangeEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り専用フィールド<xref:System.Xml.Linq.XObjectChangeEventArgs.Add>、 <xref:System.Xml.Linq.XObjectChangeEventArgs.Remove>、 <xref:System.Xml.Linq.XObjectChangeEventArgs.Name>、および<xref:System.Xml.Linq.XObjectChangeEventArgs.Value>で発生したすべてのイベント引数の定義済みのインスタンスを提供[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]です。 イベント引数を構築するためには、一般的なユーザーは必要はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public static readonly System.Xml.Linq.XObjectChangeEventArgs Add;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Xml.Linq.XObjectChangeEventArgs Add" />
+      <MemberSignature Language="DocId" Value="F:System.Xml.Linq.XObjectChangeEventArgs.Add" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Linq.XObjectChangeEventArgs</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベント引数を<see cref="F:System.Xml.Linq.XObjectChange.Add" />変更イベントが発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]を発生させます、<xref:System.Xml.Linq.XObjectChange.Add>イベント、引数としてこのプロパティによって返されるインスタンス渡します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public static readonly System.Xml.Linq.XObjectChangeEventArgs Name;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Xml.Linq.XObjectChangeEventArgs Name" />
+      <MemberSignature Language="DocId" Value="F:System.Xml.Linq.XObjectChangeEventArgs.Name" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Linq.XObjectChangeEventArgs</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベント引数を<see cref="F:System.Xml.Linq.XObjectChange.Name" />変更イベントが発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]を発生させます、<xref:System.Xml.Linq.XObjectChange.Name>イベント、引数としてこのプロパティによって返されるインスタンス渡します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ObjectChange">
+      <MemberSignature Language="C#" Value="public System.Xml.Linq.XObjectChange ObjectChange { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.Linq.XObjectChange ObjectChange" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Linq.XObjectChangeEventArgs.ObjectChange" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Linq.XObjectChange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変更の種類を取得します。</summary>
+        <value><see cref="T:System.Xml.Linq.XObjectChange" />変更の種類を格納しています。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public static readonly System.Xml.Linq.XObjectChangeEventArgs Remove;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Xml.Linq.XObjectChangeEventArgs Remove" />
+      <MemberSignature Language="DocId" Value="F:System.Xml.Linq.XObjectChangeEventArgs.Remove" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Linq.XObjectChangeEventArgs</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベント引数を<see cref="F:System.Xml.Linq.XObjectChange.Remove" />変更イベントが発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]を発生させます、<xref:System.Xml.Linq.XObjectChange.Remove>イベント、引数としてこのプロパティによって返されるインスタンス渡します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public static readonly System.Xml.Linq.XObjectChangeEventArgs Value;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Xml.Linq.XObjectChangeEventArgs Value" />
+      <MemberSignature Language="DocId" Value="F:System.Xml.Linq.XObjectChangeEventArgs.Value" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Linq.XObjectChangeEventArgs</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベント引数を<see cref="F:System.Xml.Linq.XObjectChange.Value" />変更イベントが発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]を発生させます、<xref:System.Xml.Linq.XObjectChange.Value>イベント、引数としてこのプロパティによって返されるインスタンス渡します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

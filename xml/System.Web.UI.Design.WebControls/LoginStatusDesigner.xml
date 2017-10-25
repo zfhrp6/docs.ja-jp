@@ -1,0 +1,188 @@
+<Type Name="LoginStatusDesigner" FullName="System.Web.UI.Design.WebControls.LoginStatusDesigner">
+  <TypeSignature Language="C#" Value="public class LoginStatusDesigner : System.Web.UI.Design.WebControls.CompositeControlDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LoginStatusDesigner extends System.Web.UI.Design.WebControls.CompositeControlDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.LoginStatusDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.WebControls.CompositeControlDesigner</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Web.UI.WebControls.LoginStatus" /> Web サーバー コントロールに、ビジュアル デザイナーでのデザイン時サポートを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.LoginStatus>コントロールが自動的にユーザーの認証状態を確認し、適切なログインまたはログアウト オプションを表示するボタンをレンダリングします。  
+  
+ ビジュアル デザイナーでソースからデザイン ビューに切り替えたときに、マークアップのソース コードを説明する、<xref:System.Web.UI.WebControls.LoginStatus>コントロールは解析され、デザイン画面でコントロールのデザイン時バージョンを作成します。 ソース ビューに切り替えるには、デザイン時コントロールがマークアップのソース コードを永続化し、Web ページのマークアップに編集します。 <xref:System.Web.UI.Design.WebControls.LoginStatusDesigner>クラスは、デザイン時サポートを提供、<xref:System.Web.UI.WebControls.LoginStatus>コントロール。  
+  
+ <xref:System.Web.UI.Design.WebControls.LoginStatusDesigner.ActionLists%2A>プロパティから返される、<xref:System.ComponentModel.Design.DesignerActionListCollection>通常から派生したオブジェクトを含むオブジェクトを<xref:System.ComponentModel.Design.DesignerActionList>デザイナーの継承ツリーの各レベルのクラスです。 <xref:System.Web.UI.Design.WebControls.LoginStatusDesigner.UsePreviewControl%2A>プロパティは常に返します`true`、デザイナーに関連付けられている一時的なコピーが作成されることを示す<xref:System.Web.UI.WebControls.LoginStatus>をデザイン時にユーザー認証の状態が使用できないために、デザイン時のマークアップを生成します。  
+  
+ <xref:System.Web.UI.Design.WebControls.LoginStatusDesigner.GetDesignTimeHtml%2A>メソッドは、関連付けられている表示するために使用するマークアップを返します<xref:System.Web.UI.WebControls.LoginStatus>デザイン時にします。 <xref:System.Web.UI.Design.WebControls.LoginStatusDesigner.Initialize%2A>メソッドには、表示、編集、および関連付けられたデザインにデザイナーができるように準備<xref:System.Web.UI.WebControls.LoginStatus>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、拡張する方法を示します、<xref:System.Web.UI.Design.WebControls.LoginStatusDesigner>クラスから派生したコントロールの外観を変更する、<xref:System.Web.UI.WebControls.LoginStatus>コントロールをデザイン時です。  
+  
+ 例では、`MyLoginStatus`から制御、<xref:System.Web.UI.WebControls.LoginStatus>です。 `MyLoginStatus`のコピーである、<xref:System.Web.UI.WebControls.LoginStatus>コントロール。 例では、`MyLoginStatusDesigner`からクラス<xref:System.Web.UI.Design.WebControls.LoginStatusDesigner>、し、適用、<xref:System.ComponentModel.DesignerAttribute>属性を`MyLoginStatusDesigner`上、`MyLoginStatus`コントロール。  
+  
+ `MyLoginStatusDesigner`よりも優先、<xref:System.Web.UI.Design.WebControls.LoginStatusDesigner.GetDesignTimeHtml%2A>場合は、見やすいようにコントロールの周りの青い点線の枠を描画するメソッド、<xref:System.Web.UI.WebControls.WebControl.BorderStyle%2A>のプロパティ、`MyLoginStatus`は、<xref:System.Web.UI.WebControls.BorderStyle.NotSet>または<xref:System.Web.UI.WebControls.BorderStyle.None>値。  
+  
+ [!code-csharp[System.Web.UI.Design.WebControls.LoginStatusDesigner#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.LoginStatusDesigner/CS/LoginStatusDesigner.cs#1)]
+ [!code-vb[System.Web.UI.Design.WebControls.LoginStatusDesigner#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.LoginStatusDesigner/VB/LoginStatusDesigner.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LoginStatusDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.LoginStatusDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.LoginStatusDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework は、内部での新しいインスタンスを作成、<xref:System.Web.UI.Design.WebControls.LoginStatusDesigner>クラスの関連付けの作成時に<xref:System.Web.UI.WebControls.LoginStatus>コントロールまたはそのコントロールをデザイン サーフェイス上のコピー。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActionLists">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.Design.DesignerActionListCollection ActionLists { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.Design.DesignerActionListCollection ActionLists" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.LoginStatusDesigner.ActionLists" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignerActionListCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このデザイナーのデザイナー アクション リスト コレクションを取得します。</summary>
+        <value>このデザイナーと関連付けられた <see cref="T:System.ComponentModel.Design.DesignerActionListCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.LoginStatusDesigner.ActionLists%2A>プロパティを作成、<xref:System.ComponentModel.Design.DesignerActionList>オブジェクトに対して、<xref:System.Web.UI.Design.WebControls.LoginStatusDesigner>クラスに追加、<xref:System.ComponentModel.Design.DesignerActionListCollection>から取得した、<xref:System.Web.UI.Design.WebControls.LoginStatusDesigner.ActionLists%2A>基本プロパティは、しを返します、<xref:System.ComponentModel.Design.DesignerActionListCollection>コレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeHtml">
+      <MemberSignature Language="C#" Value="public override string GetDesignTimeHtml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetDesignTimeHtml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.LoginStatusDesigner.GetDesignTimeHtml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイン時に関連付けられたコントロールを描画するために使用するマークアップを取得します。</summary>
+        <returns>表示するために使用するマークアップを含む文字列、<see cref="T:System.Web.UI.WebControls.LoginStatus" />デザイン時にします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.UI.WebControls.LoginStatus.LogoutText%2A>または<xref:System.Web.UI.WebControls.LoginStatus.LoginText%2A>プロパティかどうか、ユーザーがログイン) にもよりますが`null`、空の文字列 ("")、または 1 つのスペース ("") では、<xref:System.Web.UI.Design.WebControls.LoginStatusDesigner.GetDesignTimeHtml%2A>メソッドのセット、<xref:System.Web.UI.WebControls.LoginStatus.LogoutText%2A>または<xref:System.Web.UI.WebControls.LoginStatus.LoginText%2A>、必要に応じて、プロパティ、<xref:System.Web.UI.Control.ID%2A>プロパティ、角かっこ ("") で囲みます。 次の設定に関係なく、<xref:System.Web.UI.WebControls.LoginStatus.LoginText%2A>または<xref:System.Web.UI.WebControls.LoginStatus.LogoutText%2A>、<xref:System.Web.UI.Design.WebControls.LoginStatusDesigner.GetDesignTimeHtml%2A>メソッドの呼び出し、<xref:System.Web.UI.Design.WebControls.CompositeControlDesigner.GetDesignTimeHtml%2A>ベースのレンダリングをデザイン時のマークアップを生成する方法を<xref:System.Web.UI.WebControls.LoginStatus>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Web.UI.Design.WebControls.LoginStatusDesigner.GetDesignTimeHtml%2A>から継承されるクラスのメソッド、<xref:System.Web.UI.Design.WebControls.LoginStatusDesigner>クラスから派生したコントロールの外観を変更する、<xref:System.Web.UI.WebControls.LoginStatus>デザイン時にクラスです。 場合、例では、描画エクステントの詳細に表示するコントロールの周りの青い点線の枠、<xref:System.Web.UI.WebControls.WebControl.BorderStyle%2A>コントロールのプロパティは、<xref:System.Web.UI.WebControls.BorderStyle.NotSet>または<xref:System.Web.UI.WebControls.BorderStyle.None>値。  
+  
+ [!code-csharp[System.Web.UI.Design.WebControls.LoginStatusDesigner#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.LoginStatusDesigner/CS/LoginStatusDesigner.cs#2)]
+ [!code-vb[System.Web.UI.Design.WebControls.LoginStatusDesigner#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.LoginStatusDesigner/VB/LoginStatusDesigner.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合、<see cref="M:System.Web.UI.Design.WebControls.LoginStatusDesigner.GetDesignTimeHtml" />メソッドを呼び出すことを確認する、<see cref="M:System.Web.UI.Design.WebControls.CompositeControlDesigner.GetDesignTimeHtml" />基本メソッドが最終的には、いくつかをオーバーライドためレベル、呼び出し、<see cref="T:System.Web.UI.WebControls.LoginStatus" />コントロールまたはマークアップを生成するコントロールのコピー。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (System.ComponentModel.IComponent component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(class System.ComponentModel.IComponent component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.LoginStatusDesigner.Initialize(System.ComponentModel.IComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="component"><see cref="T:System.ComponentModel.IComponent" /> を実装する <see cref="T:System.Web.UI.WebControls.LoginStatus" />。</param>
+        <summary>関連付けられたコントロールをデザイナーで表示、編集、デザインできるように準備します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビジュアル デザイナーの呼び出し、<xref:System.Web.UI.Design.WebControls.LoginStatusDesigner.Initialize%2A>メソッドを表示するために、デザイナーを使用する準備ができたときに、<xref:System.Web.UI.WebControls.LoginStatus>コントロール。 <xref:System.Web.UI.Design.WebControls.LoginStatusDesigner.Initialize%2A>とその基本メソッドのプロパティを構成およびデザイナーの操作に必要なイベントを設定します。  
+  
+ `component`パラメーターは、<xref:System.Web.UI.WebControls.LoginStatus>デザイナーまたはのコピーに関連付けられているコントロール、<xref:System.Web.UI.WebControls.LoginStatus>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UsePreviewControl">
+      <MemberSignature Language="C#" Value="protected override bool UsePreviewControl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UsePreviewControl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.LoginStatusDesigner.UsePreviewControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイン時のマークアップを生成するデザイナーに関連付けられている実際のコントロールではなく、一時的なコピーをデザイナーが使用するかどうかを示す値を取得します。</summary>
+        <value>常に <see langword="true" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.LoginStatusDesigner.UsePreviewControl%2A>プロパティは常に`true`、デザイナー<xref:System.Web.UI.Design.ControlDesigner.ViewControl%2A>プロパティが関連付けられているのコピーを返します<xref:System.Web.UI.WebControls.LoginStatus>コントロールをデザイン時のマークアップを生成します。 <xref:System.Web.UI.Design.ControlDesigner.ViewControl%2A>プロパティは、実際に保存することによって、コピーを作成<xref:System.Web.UI.WebControls.LoginStatus>管理をポイントし、コントロールの永続化された文字列を解析します。 コピーしたコントロールでは、実際のすべての永続化には影響しません<xref:System.Web.UI.WebControls.LoginStatus>です。  
+  
+ 場合、<xref:System.Web.UI.Design.WebControls.LoginStatusDesigner.UsePreviewControl%2A>を返すプロパティはオーバーライドされて`false`、デザイナーが関連付けられている使用<xref:System.Web.UI.WebControls.LoginStatus>ページ マークアップのソースにコントロールをデザイン時の変更、デザイン時のマークアップを生成する自体に保持されます。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドすることができます、<see cref="P:System.Web.UI.Design.WebControls.LoginStatusDesigner.UsePreviewControl" />を返すプロパティ<see langword="false" />またはコントロールをクラス レベルでマークされているかどうかに基づいて、その値を決定する<see cref="T:System.Web.UI.Design.SupportsPreviewControlAttribute" />属性。 場合、<see cref="P:System.Web.UI.Design.WebControls.LoginStatusDesigner.UsePreviewControl" />がオーバーライドされていない、<see cref="T:System.Web.UI.WebControls.LoginStatus" />無視、<see cref="T:System.Web.UI.Design.SupportsPreviewControlAttribute" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

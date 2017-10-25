@@ -1,0 +1,62 @@
+<Type Name="WebPartCancelEventArgs" FullName="System.Web.UI.WebControls.WebParts.WebPartCancelEventArgs">
+  <TypeSignature Language="C#" Value="public class WebPartCancelEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebPartCancelEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.WebPartCancelEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Web.UI.WebControls.WebParts.WebPartManager.SelectedWebPartChanging" />イベント、<see cref="E:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartClosing" />イベント、および<see cref="E:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartDeleting" />イベント。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartCancelEventArgs>クラスには、キャンセル可能ないくつかの Web パーツのイベントの情報が含まれています。 これらのイベントが含まれて、 <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SelectedWebPartChanging>、 <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartClosing>、および<xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartDeleting>イベント。 <xref:System.Web.UI.WebControls.WebParts.WebPartCancelEventArgs>クラスは、イベントに関連する Web パーツ コントロールへのアクセスを提供します。 Web パーツ コントロールは、<xref:System.Web.UI.WebControls.WebParts.WebPartCancelEventArgs.WebPart%2A>プロパティです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebPartCancelEventArgs (System.Web.UI.WebControls.WebParts.WebPart webPart);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.WebParts.WebPart webPart) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartCancelEventArgs.#ctor(System.Web.UI.WebControls.WebParts.WebPart)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="webPart" Type="System.Web.UI.WebControls.WebParts.WebPart" />
+      </Parameters>
+      <Docs>
+        <param name="webPart"><see cref="T:System.Web.UI.WebControls.WebParts.WebPart" /> (またはサーバーまたはユーザー コントロール) イベントに関連します。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.WebParts.WebPartCancelEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebPart">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.WebPart WebPart { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPart WebPart" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartCancelEventArgs.WebPart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャンセルできるイベントに関連する Web パーツ コントロールを取得します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />に関係する、 <see cref="E:System.Web.UI.WebControls.WebParts.WebPartManager.SelectedWebPartChanging" />、 <see cref="E:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartClosing" />、または<see cref="E:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartDeleting" />イベント。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

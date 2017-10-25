@@ -1,0 +1,71 @@
+<Type Name="EdmSchemaAttribute" FullName="System.Data.Objects.DataClasses.EdmSchemaAttribute">
+  <TypeSignature Language="C#" Value="public sealed class EdmSchemaAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EdmSchemaAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Objects.DataClasses.EdmSchemaAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly | System.AttributeTargets.Class, AllowMultiple=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>概念モデルのエンティティ型にマップされるクラスがアセンブリに含まれていることを示す属性です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性は、エンティティ型を含むアセンブリに適用されます。 必ず 1 回は適用する必要がありますが、複数回適用される場合もあります。 Visual Basic プロジェクトで 1 つのアセンブリに複数回適用されたときに、<xref:System.Data.Objects.DataClasses.EdmSchemaAttribute.%23ctor%2A>コンス トラクターは、アセンブリによって参照される各概念モデルの一意の GUID の文字列値を指定するために使用する必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EdmSchemaAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.EdmSchemaAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Objects.DataClasses.EdmSchemaAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EdmSchemaAttribute (string assemblyGuid);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string assemblyGuid) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.EdmSchemaAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="assemblyGuid" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyGuid">アセンブリ内のモデルに対する一意の GUID 値を表す文字列。</param>
+        <summary>アセンブリで参照される各モデルに対する一意の値を使用して、<see cref="T:System.Data.Objects.DataClasses.EdmSchemaAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 同じアセンブリによって参照される各概念モデルの一意の GUID の文字列値を指定するのにには、このコンス トラクターを使用します。 これは、Visual Basic プロジェクトで 1 つのアセンブリに対して <xref:System.Data.Objects.DataClasses.EdmSchemaAttribute> が複数回適用されている場合に実行します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

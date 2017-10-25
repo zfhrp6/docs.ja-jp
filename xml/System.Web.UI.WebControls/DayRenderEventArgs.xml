@@ -1,0 +1,221 @@
+<Type Name="DayRenderEventArgs" FullName="System.Web.UI.WebControls.DayRenderEventArgs">
+  <TypeSignature Language="C#" Value="public sealed class DayRenderEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DayRenderEventArgs extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.DayRenderEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Web.UI.WebControls.Calendar.DayRender" />のイベント、<see cref="T:System.Web.UI.WebControls.Calendar" />コントロール。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ バインディングはサポートされていませんが、<xref:System.Web.UI.WebControls.Calendar>コントロールがコンテンツを変更することも、個別の日付のセルの書式設定します。 前に、 <xref:System.Web.UI.WebControls.Calendar> Web ページにコントロールを表示、作成し、コントロールを構成するコンポーネントをアセンブルします。 <xref:System.Web.UI.WebControls.Calendar.DayRender>イベントが発生したときに日付ごとのセル、<xref:System.Web.UI.WebControls.Calendar>コントロールが作成します。 内容とのイベント ハンドラーでコードを提供することでその作成時に、date セルの書式を制御することができます、<xref:System.Web.UI.WebControls.Calendar.DayRender>イベント。  
+  
+ イベント ハンドラーは、<xref:System.Web.UI.WebControls.DayRenderEventArgs>イベント データを格納するオブジェクト。 使用して、<xref:System.Web.UI.WebControls.DayRenderEventArgs.Cell%2A>表示されているセルにアクセスするプロパティです。 表示される日付のプロパティにアクセスするには、使用、<xref:System.Web.UI.WebControls.DayRenderEventArgs.Day%2A>プロパティです。 セルのコンテンツをカスタマイズする際に、ユーザーが表示されている日付を選択する際に、ポストバックの動作を保持することができます。 これは通常、カスタム コンテンツの一部としてのページにポストするためのスクリプトをレンダリングすることによって行います。 サーバーへのページにポストするためのスクリプトを取得するを使用して、<xref:System.Web.UI.WebControls.DayRenderEventArgs.SelectUrl%2A>プロパティです。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.Web.UI.WebControls.DayRenderEventArgs>を参照してください、<xref:System.Web.UI.WebControls.DayRenderEventArgs.%23ctor%2A>コンス トラクターです。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.Calendar.DayRender>表示されている月の日付の色を黄色の背景にイベント。 セルの内容を追加してカスタマイズする方法も示します、<xref:System.Web.UI.LiteralControl?displayProperty=nameWithType>セルへのコントロールです。  
+  
+ [!code-aspx-csharp[Classic Calendar.DayRender Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic Calendar.DayRender Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic Calendar.DayRender Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic Calendar.DayRender Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DayRenderEventArgs (System.Web.UI.WebControls.TableCell cell, System.Web.UI.WebControls.CalendarDay day);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.TableCell cell, class System.Web.UI.WebControls.CalendarDay day) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DayRenderEventArgs.#ctor(System.Web.UI.WebControls.TableCell,System.Web.UI.WebControls.CalendarDay)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="cell" Type="System.Web.UI.WebControls.TableCell" />
+        <Parameter Name="day" Type="System.Web.UI.WebControls.CalendarDay" />
+      </Parameters>
+      <Docs>
+        <param name="cell">A<see cref="T:System.Web.UI.WebControls.TableCell" />内のセルを表す、<see cref="T:System.Web.UI.WebControls.Calendar" />です。</param>
+        <param name="day">A<see cref="T:System.Web.UI.WebControls.CalendarDay" />で表示する日付を表す、<see cref="T:System.Web.UI.WebControls.Calendar" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.DayRenderEventArgs" />クラスの指定されたセルおよびカレンダーの日付を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.DayRenderEventArgs>クラスです。  
+  
+ インスタンス<xref:System.Web.UI.WebControls.DayRenderEventArgs>作成は、このコンス トラクターを呼び出し、次の表に示されているプロパティが指定された値に初期化されます。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.DayRenderEventArgs.Cell%2A>|`cell` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.DayRenderEventArgs.Day%2A>|`day` パラメーターの値。|  
+  
+> [!NOTE]
+>  このコンス トラクターは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DayRenderEventArgs (System.Web.UI.WebControls.TableCell cell, System.Web.UI.WebControls.CalendarDay day, string selectUrl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.TableCell cell, class System.Web.UI.WebControls.CalendarDay day, string selectUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DayRenderEventArgs.#ctor(System.Web.UI.WebControls.TableCell,System.Web.UI.WebControls.CalendarDay,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="cell" Type="System.Web.UI.WebControls.TableCell" />
+        <Parameter Name="day" Type="System.Web.UI.WebControls.CalendarDay" />
+        <Parameter Name="selectUrl" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="cell">A<see cref="T:System.Web.UI.WebControls.TableCell" />内のセルを表す、<see cref="T:System.Web.UI.WebControls.Calendar" />です。</param>
+        <param name="day">A<see cref="T:System.Web.UI.WebControls.CalendarDay" />で表示する日付を表す、<see cref="T:System.Web.UI.WebControls.Calendar" />です。</param>
+        <param name="selectUrl">ページにポストするためのスクリプトは、ユーザーが表示されている日付を選択したときに、サーバーにバックアップします。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.DayRenderEventArgs" />クラスの指定されたセル、カレンダーの日付、および選択 URL を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.DayRenderEventArgs>クラスです。  
+  
+ インスタンス<xref:System.Web.UI.WebControls.DayRenderEventArgs>作成は、このコンス トラクターを呼び出し、次の表に示されているプロパティが指定された値に初期化されます。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.DayRenderEventArgs.Cell%2A>|`cell` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.DayRenderEventArgs.Day%2A>|`day` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.DayRenderEventArgs.SelectUrl%2A>|`selectUrl` パラメーターの値。|  
+  
+> [!NOTE]
+>  このコンス トラクターは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cell">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.TableCell Cell { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.TableCell Cell" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DayRenderEventArgs.Cell" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TableCell</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.TableCell" />でレンダリングされるセルを表すオブジェクト、<see cref="T:System.Web.UI.WebControls.Calendar" />コントロール。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.TableCell" />でレンダリングされるセルを表す、<see cref="T:System.Web.UI.WebControls.Calendar" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DayRenderEventArgs.Cell%2A>で表示されているセルをプログラムで制御するプロパティ、<xref:System.Web.UI.WebControls.Calendar>コントロール。  
+  
+ セルの内容をカスタマイズするには動的にコントロールを追加することによって、<xref:System.Web.UI.Control.Controls%2A?displayProperty=nameWithType>のコレクション、<xref:System.Web.UI.WebControls.DayRenderEventArgs.Cell%2A>プロパティです。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.Calendar.DayRender>イベントが発生したときに、<xref:System.Web.UI.WebControls.Calendar>コントロールを表示している、発生する可能性も、イベントなど、コントロールを追加することはできません<xref:System.Web.UI.WebControls.LinkButton>です。 など静的コントロールのみを追加することができます<xref:System.Web.UI.LiteralControl>、 <xref:System.Web.UI.WebControls.Label>、 <xref:System.Web.UI.WebControls.Image>、および<xref:System.Web.UI.WebControls.HyperLink>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DayRenderEventArgs.Cell%2A>プロパティをプログラムで表示されている月の日付の背景色を黄色に変更します。 セルの内容を追加してカスタマイズする方法も示します、<xref:System.Web.UI.LiteralControl?displayProperty=nameWithType>コントロールを<xref:System.Web.UI.Control.Controls%2A?displayProperty=nameWithType>のコレクション、<xref:System.Web.UI.WebControls.DayRenderEventArgs.Cell%2A>プロパティです。  
+  
+ [!code-aspx-csharp[Classic DayRenderEventArgs.Cell Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DayRenderEventArgs.Cell Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic DayRenderEventArgs.Cell Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DayRenderEventArgs.Cell Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Day">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.CalendarDay Day { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.CalendarDay Day" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DayRenderEventArgs.Day" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.CalendarDay</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.CalendarDay" />でレンダリングされる日を表すオブジェクト、<see cref="T:System.Web.UI.WebControls.Calendar" />コントロール。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.CalendarDay" />でレンダリングされる 1 日を表す、<see cref="T:System.Web.UI.WebControls.Calendar" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DayRenderEventArgs.Day%2A>でレンダリングされて日に関する情報を取得するプロパティ、<xref:System.Web.UI.WebControls.Calendar>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DayRenderEventArgs.Day%2A>を決定するプロパティで 1 日が表示されているかどうか、<xref:System.Web.UI.WebControls.Calendar>コントロールが、現在の月と曜日にします。  
+  
+ [!code-aspx-csharp[Classic DayRenderEventArgs.Day Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DayRenderEventArgs.Day Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic DayRenderEventArgs.Day Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DayRenderEventArgs.Day Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectUrl">
+      <MemberSignature Language="C#" Value="public string SelectUrl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SelectUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DayRenderEventArgs.SelectUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表示する日付を選択すると、サーバーへのページにポストするためのスクリプトを取得、<see cref="T:System.Web.UI.WebControls.Calendar" />コントロール。</summary>
+        <value>日付が表示されているときに、サーバーへのページにポストするためのスクリプトが選択されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DayRenderEventArgs.SelectUrl%2A>で表示する日付を選択すると、サーバーへのページにポストするためのスクリプトを取得するプロパティを<xref:System.Web.UI.WebControls.Calendar>コントロール。 このプロパティは通常、日付の場合、表示する内容をカスタマイズするが、引き続きポストバックの動作を維持するときに使用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、今日の日付を表示する内容をカスタマイズする方法を示します。 値、<xref:System.Web.UI.WebControls.DayRenderEventArgs.SelectUrl%2A>プロパティが表示される内容に挿入できるように、<xref:System.Web.UI.WebControls.Calendar>コントロールは今日の日付を選択すると、サーバーに送信します。  
+  
+ [!code-aspx-csharp[DayRenderEventArgsSelectUrl#1](~/samples/snippets/csharp/VS_Snippets_WebNet/dayrendereventargsselecturl/CS/DayRenderEventArgsSelectUrlcs.aspx#1)]
+ [!code-aspx-vb[DayRenderEventArgsSelectUrl#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/dayrendereventargsselecturl/VB/DayRenderEventArgsSelectUrlvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

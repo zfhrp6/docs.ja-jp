@@ -1,0 +1,190 @@
+<Type Name="TouchEventArgs" FullName="System.Windows.Input.TouchEventArgs">
+  <TypeSignature Language="C#" Value="public class TouchEventArgs : System.Windows.Input.InputEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TouchEventArgs extends System.Windows.Input.InputEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.TouchEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Input.InputEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>タッチ入力イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次のイベントを使用して<xref:System.Windows.Input.TouchEventArgs>です。  
+  
+-   <xref:System.Windows.UIElement.TouchUp?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.UIElement.TouchDown?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.UIElement.TouchEnter?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.UIElement.TouchLeave?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.UIElement.TouchMove?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.UIElement3D.TouchUp?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.UIElement3D.TouchDown?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.UIElement3D.TouchEnter?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.UIElement3D.TouchLeave?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.UIElement3D.TouchMove?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.ContentElement.TouchUp?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.ContentElement.TouchDown?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.ContentElement.TouchEnter?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.ContentElement.TouchLeave?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.ContentElement.TouchMove?displayProperty=nameWithType>  
+  
+   
+  
+## Examples  
+ 次の例のハンドル、<xref:System.Windows.UIElement.TouchUp>で発生するイベント、<xref:System.Windows.Controls.Canvas>です。 チェック、<xref:System.Windows.Input.TouchDevice.Captured%2A>にイベントを発生させたデバイスがキャプチャされることを確認するプロパティ、<xref:System.Windows.Controls.Canvas>です。 である場合、<xref:System.Windows.Input.TouchDevice>を解放します。  
+  
+ この例で使用可能なサンプルが大きくの一部である、<xref:System.Windows.Input.TouchDevice>クラスの概要です。  
+  
+ [!code-csharp[TouchEventsSample#130](~/samples/snippets/csharp/VS_Snippets_Wpf/toucheventssample/cs/mainwindow.xaml.cs#130)]
+ [!code-vb[TouchEventsSample#130](~/samples/snippets/visualbasic/VS_Snippets_Wpf/toucheventssample/vb/mainwindow.xaml.vb#130)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TouchEventArgs (System.Windows.Input.TouchDevice touchDevice, int timestamp);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Input.TouchDevice touchDevice, int32 timestamp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.TouchEventArgs.#ctor(System.Windows.Input.TouchDevice,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="touchDevice" Type="System.Windows.Input.TouchDevice" />
+        <Parameter Name="timestamp" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="touchDevice">このイベントに関連付ける入力デバイス。</param>
+        <param name="timestamp">入力が発生した時刻。</param>
+        <summary><see cref="T:System.Windows.Input.TouchEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIntermediateTouchPoints">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.TouchPointCollection GetIntermediateTouchPoints (System.Windows.IInputElement relativeTo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Input.TouchPointCollection GetIntermediateTouchPoints(class System.Windows.IInputElement relativeTo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.TouchEventArgs.GetIntermediateTouchPoints(System.Windows.IInputElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.TouchPointCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="relativeTo" Type="System.Windows.IInputElement" />
+      </Parameters>
+      <Docs>
+        <param name="relativeTo">座標空間を定義する要素。</param>
+        <summary>タッチ タッチ イベントのすべてのタッチ ポイントとの間で、最も最近使用した前に収集されたを返します。</summary>
+        <returns>最も最近と前の間に収集されたすべてのタッチ ポイントはタッチ イベントです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTouchPoint">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.TouchPoint GetTouchPoint (System.Windows.IInputElement relativeTo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Input.TouchPoint GetTouchPoint(class System.Windows.IInputElement relativeTo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.TouchEventArgs.GetTouchPoint(System.Windows.IInputElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.TouchPoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="relativeTo" Type="System.Windows.IInputElement" />
+      </Parameters>
+      <Docs>
+        <param name="relativeTo">座標空間を定義する要素。</param>
+        <summary>指定した要素に相対的なタッチ デバイスの現在位置を返します。</summary>
+        <returns>指定した要素に相対的なタッチ デバイスの現在の位置。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeEventHandler">
+      <MemberSignature Language="C#" Value="protected override void InvokeEventHandler (Delegate genericHandler, object genericTarget);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InvokeEventHandler(class System.Delegate genericHandler, object genericTarget) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.TouchEventArgs.InvokeEventHandler(System.Delegate,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="genericHandler" Type="System.Delegate" />
+        <Parameter Name="genericTarget" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="genericHandler">型固有の方法で呼び出すジェネリック ハンドラー。</param>
+        <param name="genericTarget">ハンドラーを呼び出すとなるターゲット。</param>
+        <summary>イベントのシステムの効率を高めることができます、型固有の方法でイベント ハンドラーを呼び出します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装は、ジェネリック ハンドラーをキャスト、<xref:System.EventHandler%601>型の<xref:System.Windows.Input.TouchEventArgs>してそれを呼び出します。 この実装パターンとその理由の詳細については、次を参照してください。<xref:System.Windows.RoutedEventArgs.InvokeEventHandler%2A>と[ルーティング イベントの概要](~/docs/framework/wpf/advanced/routed-events-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TouchDevice">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.TouchDevice TouchDevice { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.TouchDevice TouchDevice" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.TouchEventArgs.TouchDevice" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.TouchDevice</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントを生成したタッチを取得します。</summary>
+        <value>イベントを生成したタッチします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のハンドル、<xref:System.Windows.UIElement.TouchUp>で発生するイベント、<xref:System.Windows.Controls.Canvas>です。 チェック、<xref:System.Windows.Input.TouchDevice.Captured%2A>にイベントを発生させたデバイスがキャプチャされることを確認するプロパティ、<xref:System.Windows.Controls.Canvas>です。 である場合、<xref:System.Windows.Input.TouchDevice>を解放します。  
+  
+ この例で使用可能なサンプルが大きくの一部である、<xref:System.Windows.Input.TouchDevice>クラスの概要です。  
+  
+ [!code-csharp[TouchEventsSample#130](~/samples/snippets/csharp/VS_Snippets_Wpf/toucheventssample/cs/mainwindow.xaml.cs#130)]
+ [!code-vb[TouchEventsSample#130](~/samples/snippets/visualbasic/VS_Snippets_Wpf/toucheventssample/vb/mainwindow.xaml.vb#130)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

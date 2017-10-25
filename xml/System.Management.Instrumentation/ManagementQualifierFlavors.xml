@@ -1,0 +1,116 @@
+<Type Name="ManagementQualifierFlavors" FullName="System.Management.Instrumentation.ManagementQualifierFlavors">
+  <TypeSignature Language="C#" Value="public enum ManagementQualifierFlavors" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ManagementQualifierFlavors extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Management.Instrumentation.ManagementQualifierFlavors" />
+  <AssemblyInfo>
+    <AssemblyName>System.Management.Instrumentation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>WMI プロバイダーの拡張機能で使用できる修飾子のフレーバー。  
+  
+ 注: WMI .NET ライブラリは最終的な状態と見なされます。これらのライブラリに影響を与えるセキュリティ以外に関連する問題については、さらなる開発、機能拡張、または更新は利用できません。 [MI Api](https://msdn.microsoft.com/en-us/library/jj152383%28v=vs.80%29.aspx)すべての新しい開発で使用する必要があります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 修飾子のフレーバーの読み取りに関する詳細については、[修飾子のフレーバー](http://go.microsoft.com/fwlink/?LinkId=96563) MSDN の WMI SDK のトピックです。  
+  
+   
+  
+## Examples  
+ 次の例では、DisableOverride ManagementQualifierFlavors 列挙体を使用する方法を示します。 ここでアソシエーション修飾子を適用します。  
+  
+```  
+[ManagementQualifier("Association",  
+Flavor = ManagementQualifierFlavors.DisableOverride)]  
+public class AssociationSampleBase  
+{  
+   [ManagementReference(Type = "UserInfo")]  
+   [ManagementKey]  
+   public string Configuration;  
+  
+   [ManagementReference(Type = "LogInfo")]  
+   [ManagementKey]  
+   public string Hosting;  
+   //additional code omitted  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Amended">
+      <MemberSignature Language="C#" Value="Amended" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Management.Instrumentation.ManagementQualifierFlavors Amended = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Management.Instrumentation.ManagementQualifierFlavors.Amended" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management.Instrumentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.Instrumentation.ManagementQualifierFlavors</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この修飾子は、基本クラス定義では必須ではなく、ローカライズされるアメンドメントに移動できます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ClassOnly">
+      <MemberSignature Language="C#" Value="ClassOnly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Management.Instrumentation.ManagementQualifierFlavors ClassOnly = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Management.Instrumentation.ManagementQualifierFlavors.ClassOnly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management.Instrumentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.Instrumentation.ManagementQualifierFlavors</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この修飾子は、インスタンスに反映されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DisableOverride">
+      <MemberSignature Language="C#" Value="DisableOverride" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Management.Instrumentation.ManagementQualifierFlavors DisableOverride = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Management.Instrumentation.ManagementQualifierFlavors.DisableOverride" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management.Instrumentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.Instrumentation.ManagementQualifierFlavors</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この修飾子は、派生クラスまたはインスタンスではオーバーライドできません。 既定では、反映された修飾子をオーバーライドできることに注意してください。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ThisClassOnly">
+      <MemberSignature Language="C#" Value="ThisClassOnly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Management.Instrumentation.ManagementQualifierFlavors ThisClassOnly = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Management.Instrumentation.ManagementQualifierFlavors.ThisClassOnly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management.Instrumentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.Instrumentation.ManagementQualifierFlavors</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この修飾子は、派生クラスに反映されません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

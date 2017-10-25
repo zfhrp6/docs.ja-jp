@@ -1,0 +1,80 @@
+<Type Name="SiteMapDesignerHierarchicalDataSourceView" FullName="System.Web.UI.Design.WebControls.SiteMapDesignerHierarchicalDataSourceView">
+  <TypeSignature Language="C#" Value="public class SiteMapDesignerHierarchicalDataSourceView : System.Web.UI.Design.DesignerHierarchicalDataSourceView" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SiteMapDesignerHierarchicalDataSourceView extends System.Web.UI.Design.DesignerHierarchicalDataSourceView" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.SiteMapDesignerHierarchicalDataSourceView" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.DesignerHierarchicalDataSourceView</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>階層データ用のデザイン時ビューを提供、<see cref="T:System.Web.SiteMap" />クラスです。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SiteMapDesignerHierarchicalDataSourceView (System.Web.UI.Design.WebControls.SiteMapDataSourceDesigner owner, string viewPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.Design.WebControls.SiteMapDataSourceDesigner owner, string viewPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.SiteMapDesignerHierarchicalDataSourceView.#ctor(System.Web.UI.Design.WebControls.SiteMapDataSourceDesigner,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Web.UI.Design.WebControls.SiteMapDataSourceDesigner" />
+        <Parameter Name="viewPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="owner"><see cref="T:System.Web.UI.Design.WebControls.SiteMapDataSourceDesigner" />関連付けられたデザイナーは<see cref="T:System.Web.UI.WebControls.SiteMapDataSource" />します。</param>
+        <param name="viewPath">ビューに使用するデータ ブロックを定義する XPath クエリ。</param>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.SiteMapDesignerHierarchicalDataSourceView" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeData">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.IHierarchicalEnumerable GetDesignTimeData (out bool isSampleData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.UI.IHierarchicalEnumerable GetDesignTimeData([out] bool&amp; isSampleData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.SiteMapDesignerHierarchicalDataSourceView.GetDesignTimeData(System.Boolean@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.IHierarchicalEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="isSampleData" Type="System.Boolean&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="isSampleData">
+          <see langword="true" />返されるデータがサンプル データであることを示します<see langword="false" />返されたデータが実際のデータであることを示します。</param>
+        <summary>デザイン時のデータを関連付けられているデータ ソース コントロールのスキーマと一致して、データがサンプル データと実際のデータがあるかどうかを示す値を返しますが生成されます。</summary>
+        <returns>関連付けられているデータ ソース コントロールのスキーマと一致するデザイン時のデータ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Schema">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.Design.IDataSourceSchema Schema { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Design.IDataSourceSchema Schema" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.SiteMapDesignerHierarchicalDataSourceView.Schema" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.IDataSourceSchema</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このビュー オブジェクトによって表されるデータ ソース ビューを記述するスキーマを取得します。</summary>
+        <value>このビュー オブジェクトによって表されるデータ ソース ビューを説明するスキーマです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,78 @@
+<Type Name="ITargetBlock&lt;TInput&gt;" FullName="System.Threading.Tasks.Dataflow.ITargetBlock&lt;TInput&gt;">
+  <TypeSignature Language="C#" Value="public interface ITargetBlock&lt;in TInput&gt; : System.Threading.Tasks.Dataflow.IDataflowBlock" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITargetBlock`1&lt;- TInput&gt; implements class System.Threading.Tasks.Dataflow.IDataflowBlock" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.Tasks.Dataflow.ITargetBlock`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+    <AssemblyVersion>4.6.0.0</AssemblyVersion>
+    <AssemblyVersion>4.6.1.0</AssemblyVersion>
+    <AssemblyVersion>4.6.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TInput">
+      <Constraints>
+        <ParameterAttribute>Contravariant</ParameterAttribute>
+      </Constraints>
+    </TypeParameter>
+  </TypeParameters>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Threading.Tasks.Dataflow.IDataflowBlock</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <typeparam name="TInput">受け入れられるデータの種類を指定します、<see cref="T:System.Threading.Tasks.Dataflow.ITargetBlock`1" />です。</typeparam>
+    <summary>データのターゲットであるデータフロー ブロックを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  TPL データ フローのライブラリ (<xref:System.Threading.Tasks.Dataflow> 名前空間) は [!INCLUDE[net_v45](~/includes/net-v45-md.md)] と一緒に配布されません。 インストールする、<xref:System.Threading.Tasks.Dataflow>名前空間でプロジェクトを開く[!INCLUDE[vs_dev11_long](~/includes/vs-dev11-long-md.md)]、選択**NuGet パッケージの管理**プロジェクト メニューのおよびオンラインで検索から、`Microsoft.Tpl.Dataflow`パッケージ。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="OfferMessage">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Dataflow.DataflowMessageStatus OfferMessage (System.Threading.Tasks.Dataflow.DataflowMessageHeader messageHeader, TInput messageValue, System.Threading.Tasks.Dataflow.ISourceBlock&lt;in TInput&gt; source, bool consumeToAccept);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Threading.Tasks.Dataflow.DataflowMessageStatus OfferMessage(valuetype System.Threading.Tasks.Dataflow.DataflowMessageHeader messageHeader, !TInput messageValue, class System.Threading.Tasks.Dataflow.ISourceBlock`1&lt;!TInput&gt; source, bool consumeToAccept) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Dataflow.ITargetBlock`1.OfferMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,`0,System.Threading.Tasks.Dataflow.ISourceBlock{`0},System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Dataflow.DataflowMessageStatus</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageHeader" Type="System.Threading.Tasks.Dataflow.DataflowMessageHeader" />
+        <Parameter Name="messageValue" Type="TInput" />
+        <Parameter Name="source" Type="System.Threading.Tasks.Dataflow.ISourceBlock&lt;TInput&gt;" />
+        <Parameter Name="consumeToAccept" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="messageHeader">A<see cref="T:System.Threading.Tasks.Dataflow.DataflowMessageHeader" />を提供しているメッセージのヘッダーを表すインスタンス。</param>
+        <param name="messageValue">提供されるメッセージの値。</param>
+        <param name="source"><see cref="T:System.Threading.Tasks.Dataflow.ISourceBlock`1" />メッセージを提供します。 null でもかまいません。</param>
+        <param name="consumeToAccept">設定<see langword="true" />に指示を呼び出す対象<see cref="M:System.Threading.Tasks.Dataflow.ISourceBlock`1.ConsumeMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{`0},System.Boolean@)" />への呼び出し中に同期的に<see cref="M:System.Threading.Tasks.Dataflow.ITargetBlock`1.OfferMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,`0,System.Threading.Tasks.Dataflow.ISourceBlock{`0},System.Boolean)" />を取得する前に、<see cref="F:System.Threading.Tasks.Dataflow.DataflowMessageStatus.Accepted" />メッセージを使用するためにします。</param>
+        <summary>メッセージを提供、<see cref="T:System.Threading.Tasks.Dataflow.ITargetBlock`1" />ターゲットを使用したり、メッセージを延期する機会を提供します。</summary>
+        <returns>提供されたメッセージの状態。 メッセージが、ターゲットによって受け入れられた場合<see cref="F:System.Threading.Tasks.Dataflow.DataflowMessageStatus.Accepted" />が返されます、およびターゲットによって所有されているようになりましたので、ソースは、提供されたメッセージを使用できなくする必要があります。 場合は、メッセージは、ターゲットによって延期されました<see cref="F:System.Threading.Tasks.Dataflow.DataflowMessageStatus.Postponed" />が返されますを通知しようとするターゲットが後で使用したり、メッセージの予約として以外の場合は、その間、ソースをまだメッセージを所有してその他のブロックに提供できます。  
+  
+ かどうかには、ターゲットがそれ以外の場合延期されたメッセージが、ソースが<see langword="null" />、<see cref="F:System.Threading.Tasks.Dataflow.DataflowMessageStatus.Declined" />が代わりに返されます。  
+  
+ ターゲットは、メッセージが実行されなかった場合、別のターゲットにメッセージを配信するか、単に破棄して、ソースのために同意を試みた場合<see cref="F:System.Threading.Tasks.Dataflow.DataflowMessageStatus.NotAvailable" />が返されます。  
+  
+ メッセージをそのままにしない場合は、ターゲット<see cref="F:System.Threading.Tasks.Dataflow.DataflowMessageStatus.Declined" />が返されます。 ターゲットがメッセージを受け入れることはありませんを選択しなかった場合は、このソースから別のメッセージをそのまま<see cref="F:System.Threading.Tasks.Dataflow.DataflowMessageStatus.DecliningPermanently" />が返されます。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="messageHeader" />が無効です。  
+  
+ - または - <paramref name="consumeToAccept" /> null 以外に用意されている場合は true のみあります<paramref name="source" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

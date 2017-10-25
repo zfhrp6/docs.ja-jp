@@ -1,0 +1,253 @@
+<Type Name="SqlBulkCopyOptions" FullName="System.Data.SqlClient.SqlBulkCopyOptions">
+  <TypeSignature Language="C#" Value="public enum SqlBulkCopyOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SqlBulkCopyOptions extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Data.SqlClient.SqlBulkCopyOptions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.SqlClient</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>インスタンスで使用する 1 つまたは複数のオプションを指定するビットごとのフラグ<see cref="T:System.Data.SqlClient.SqlBulkCopy" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Data.SqlClient.SqlBulkCopyOptions>列挙型を構築するとき、<xref:System.Data.SqlClient.SqlBulkCopy>インスタンスを変更する方法、<xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer%2A>そのインスタンスのメソッドは動作します。  
+  
+   
+  
+## Examples  
+ 次のコンソール アプリケーションでは、すべての行の id 列の新しい値を生成する代わりに、変換先テーブルの対応する列に、ソース テーブルの id 列の値をコピーする一括読み込みを実行する方法を示します。  
+  
+ オプションで、サンプルを実行する方法、一括読み込みの動作をどのように影響するかを確認する、 **dbo します。BulkCopyDemoMatchingColumns**テーブルが空です。 すべての行は、ソースから読み込みます。 次に、このテーブルを空にせずに、もう一度サンプルを実行します。 例外がスローされ、コードは、主キー違反のために行が追加されなかったことを通知する、コンソール ウィンドウにメッセージを書き込みます。  
+  
+> [!IMPORTANT]
+>  」の説明に従って、作業テーブルを作成していない限り、このサンプルは実行されません[バルク コピー サンプルのセットアップ](~/docs/framework/data/adonet/sql/bulk-copy-example-setup.md)です。 使用する構文を示すためにこのコードが提供される**SqlBulkCopy**のみです。 簡単かつ高速、TRANSACT-SQL の使用には、ソース テーブルと対象テーブルが同じ SQL Server インスタンス内にある場合は、`INSERT … SELECT`ステートメント、データをコピーします。  
+  
+ [!code-csharp[DataWorks SqlBulkCopy.KeepIdentity#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.KeepIdentity/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlBulkCopy.KeepIdentity#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.KeepIdentity/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AllowEncryptedValueModifications">
+      <MemberSignature Language="C#" Value="AllowEncryptedValueModifications" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.SqlClient.SqlBulkCopyOptions AllowEncryptedValueModifications = int32(64)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.SqlClient.SqlBulkCopyOptions.AllowEncryptedValueModifications" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlBulkCopyOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定した場合、**AllowEncryptedValueModifications**一括がデータの暗号化を解除せずにテーブルまたはデータベース間で暗号化されたデータのコピーを有効にします。 通常、アプリケーションは 1 つのテーブルからデータの復号化をしないで暗号化された列からデータを選択し (列暗号化のキーワード設定を無効にして、アプリケーションはデータベースに接続します)、その後、このオプションを使用してまだ暗号化されているデータを一括挿入します。 詳細については、次を参照してください。 [Always Encrypted](https://msdn.microsoft.com/library/mt163865.aspx)です。  
+  
+ 指定する場合に警告を使用して**AllowEncryptedValueModifications**対象列と同じ暗号化の種類、アルゴリズムとキーを使用して正しく暗号化されている場合や、ドライバーはかどうか、データが実際に暗号化されてを参照しないため、データベースが破損する可能性がします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckConstraints">
+      <MemberSignature Language="C#" Value="CheckConstraints" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.SqlClient.SqlBulkCopyOptions CheckConstraints = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.SqlClient.SqlBulkCopyOptions.CheckConstraints" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlBulkCopyOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データの挿入中に、制約をチェックします。 既定では、制約がチェックされません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="Default" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.SqlClient.SqlBulkCopyOptions Default = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.SqlClient.SqlBulkCopyOptions.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlBulkCopyOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのオプションに既定値を使用します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="FireTriggers">
+      <MemberSignature Language="C#" Value="FireTriggers" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.SqlClient.SqlBulkCopyOptions FireTriggers = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.SqlClient.SqlBulkCopyOptions.FireTriggers" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlBulkCopyOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定した場合は、サーバーが、データベースに挿入される行の挿入トリガーを起動することになります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="KeepIdentity">
+      <MemberSignature Language="C#" Value="KeepIdentity" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.SqlClient.SqlBulkCopyOptions KeepIdentity = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.SqlClient.SqlBulkCopyOptions.KeepIdentity" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlBulkCopyOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ソースの ID 値を保持します。 指定しない場合は、コピー先で ID 値が割り当てられます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="KeepNulls">
+      <MemberSignature Language="C#" Value="KeepNulls" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.SqlClient.SqlBulkCopyOptions KeepNulls = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.SqlClient.SqlBulkCopyOptions.KeepNulls" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlBulkCopyOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定値の設定に関係なく、コピー先テーブル内の null 値を保持します。 指定しない場合は、必要に応じて null 値は既定値に置き換えられます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TableLock">
+      <MemberSignature Language="C#" Value="TableLock" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.SqlClient.SqlBulkCopyOptions TableLock = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.SqlClient.SqlBulkCopyOptions.TableLock" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlBulkCopyOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一括コピー操作の実行中に、一括更新ロックを取得します。 指定しない場合、行ロックが使用されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UseInternalTransaction">
+      <MemberSignature Language="C#" Value="UseInternalTransaction" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.SqlClient.SqlBulkCopyOptions UseInternalTransaction = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.SqlClient.SqlBulkCopyOptions.UseInternalTransaction" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlBulkCopyOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定した場合は、一括コピー操作の各バッチが、トランザクション内で発生します。 このオプションを指示するも指定すると、<see cref="T:System.Data.SqlClient.SqlTransaction" />コンス トラクター、オブジェクト、<see cref="T:System.ArgumentException" />が発生します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

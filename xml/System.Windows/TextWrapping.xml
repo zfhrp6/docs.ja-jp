@@ -1,0 +1,81 @@
+<Type Name="TextWrapping" FullName="System.Windows.TextWrapping">
+  <TypeSignature Language="C#" Value="public enum TextWrapping" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed TextWrapping extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.TextWrapping" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None, Readability=System.Windows.Readability.Unreadable)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>格納ボックスの端に達したときにテキストを折り返すかどうかを指定します</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、の値を設定する方法を示します、<xref:System.Windows.TextWrapping>のプロパティ、<xref:System.Windows.Controls.TextBox>です。  
+  
+ [!code-csharp[TextBoxBase_Samp#TextBoxBase12](~/samples/snippets/csharp/VS_Snippets_Wpf/TextBoxBase_Samp/CSharp/Window1.xaml.cs#textboxbase12)]
+ [!code-vb[TextBoxBase_Samp#TextBoxBase12](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextBoxBase_Samp/VisualBasic/Window1.xaml.vb#textboxbase12)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="NoWrap">
+      <MemberSignature Language="C#" Value="NoWrap" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.TextWrapping NoWrap = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.TextWrapping.NoWrap" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.TextWrapping</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行の折り返しは行われません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Wrap">
+      <MemberSignature Language="C#" Value="Wrap" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.TextWrapping Wrap = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.TextWrapping.Wrap" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.TextWrapping</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行が長すぎて利用可能なブロック幅を超える場合は、改行が行われます。スクロールできない固定幅のコンテナーに非常に長い単語が表示されている場合など、標準の改行アルゴリズムで改行の挿入位置を判断できない場合でも改行されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="WrapWithOverflow">
+      <MemberSignature Language="C#" Value="WrapWithOverflow" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.TextWrapping WrapWithOverflow = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.TextWrapping.WrapWithOverflow" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.TextWrapping</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行が長すぎて利用可能なブロック幅を超える場合は、改行が行われます。 ただし、スクロールできない固定幅のコンテナーに非常に長い単語が表示されている場合など、改行アルゴリズムで改行の挿入位置を判断できない場合には、行がブロック幅を超えて表示される可能性があります。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

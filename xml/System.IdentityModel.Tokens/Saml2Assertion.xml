@@ -1,0 +1,360 @@
+<Type Name="Saml2Assertion" FullName="System.IdentityModel.Tokens.Saml2Assertion">
+  <TypeSignature Language="C#" Value="public class Saml2Assertion" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Saml2Assertion extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.Saml2Assertion" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>[Saml2Core、2.3.3] で指定されたアサーション要素を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスが表す要素の詳細については、SAML V2.0 のコア仕様を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Saml2Assertion (System.IdentityModel.Tokens.Saml2NameIdentifier issuer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Tokens.Saml2NameIdentifier issuer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.Saml2Assertion.#ctor(System.IdentityModel.Tokens.Saml2NameIdentifier)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="issuer" Type="System.IdentityModel.Tokens.Saml2NameIdentifier" />
+      </Parameters>
+      <Docs>
+        <param name="issuer">A<see cref="T:System.IdentityModel.Tokens.Saml2NameIdentifier" />アサーションで、要求を行っている SAML 証明機関を指定します。 [Saml2Core、2.3.3] です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Tokens.Saml2Assertion" />指定した発行者を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.Saml2Assertion.IssueInstant%2A>の値に設定されて、<xref:System.DateTime.UtcNow%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="issuer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Advice">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.Saml2Advice Advice { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.Saml2Advice Advice" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2Assertion.Advice" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.Saml2Advice</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>支援するアサーションに関連する追加情報を取得または設定の処理で特定の状況が、そうでないアプリケーションによって無視される可能性がありますアドバイスを理解または作成を希望しないに使用します。 [Saml2Core、2.3.3]</summary>
+        <value>A<see cref="T:System.IdentityModel.Tokens.Saml2Advice" />アサーションに関連する追加の情報を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アドバイスの要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanWriteSourceData">
+      <MemberSignature Language="C#" Value="public virtual bool CanWriteSourceData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanWriteSourceData" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2Assertion.CanWriteSourceData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアサーションが XML のソースから逆シリアル化されたこと、および XML データに変更を再生成できるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />このアサーションが再変更されませんでした。 XML ソース データを出力する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装を使用して読み取るときにソース データを保存し、<xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler.ReadAssertion%2A>メソッドと同じくらいの元のデータを再生成でき、<xref:System.IdentityModel.Tokens.Saml2Assertion.Id%2A>プロパティは、アサーションが読み取られた時刻からは変更されません。  
+  
+> [!IMPORTANT]
+>  異なるデータを持つ SAML アサーションが別の Id を持つことが非常に重要です。 アサーション"template"が読み込まれ、データの特定のビットに読み込まれるというパターンを実装する場合、Id を変更する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Conditions">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.Saml2Conditions Conditions { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.Saml2Conditions Conditions" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2Assertion.Conditions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.Saml2Conditions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の有効性を評価するとき、または、アサーションを使用して評価する必要がある条件。 [Saml2Core 2.3.3]</summary>
+        <value>A<see cref="T:System.IdentityModel.Tokens.Saml2Conditions" />条件を格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 条件の要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EncryptingCredentials">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.EncryptingCredentials EncryptingCredentials { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.EncryptingCredentials EncryptingCredentials" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2Assertion.EncryptingCredentials" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.EncryptingCredentials</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアサーションの暗号化に使用する資格情報を設定します。 暗号化の資格情報でキー識別子が使用される、埋め込みの<see langword="EncryptedKey" />で、<see langword="EncryptedData" />要素。</summary>
+        <value>返します<see cref="T:Microsoft.IdentityModel.Tokens.EncryptingCredentials" />資格情報を表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExternalEncryptedKeys">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.IdentityModel.Tokens.EncryptedKeyIdentifierClause&gt; ExternalEncryptedKeys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.IdentityModel.Tokens.EncryptedKeyIdentifierClause&gt; ExternalEncryptedKeys" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2Assertion.ExternalEncryptedKeys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.IdentityModel.Tokens.EncryptedKeyIdentifierClause&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を指定されている、別の暗号化キーを含むコレクション外部 EncryptedData 要素 EncryptedAssertion 要素の子としてします。</summary>
+        <value>型のコレクション<see cref="T:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause" />キーを格納しています。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.Saml2Id Id { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.Saml2Id Id" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2Assertion.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.Saml2Id</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアサーションの識別子を取得または設定します。 [Saml2Core、2.3.3]</summary>
+        <value>A<see cref="T:System.IdentityModel.Tokens.Saml2Id" />識別子を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ID 属性。 この属性は必須です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティを設定しようとすると、<see langword="null" />に発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IssueInstant">
+      <MemberSignature Language="C#" Value="public DateTime IssueInstant { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime IssueInstant" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2Assertion.IssueInstant" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または問題が発生した時点の時間を UTC に設定します。 [Saml2Core、2.3.3]</summary>
+        <value>A<see cref="T:System.DateTime" />このアサーションが utc 形式で発行された時刻を表すです。 既定値は、<see cref="P:System.DateTime.UtcNow" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ IssueInstant 属性です。 この属性は必須です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Issuer">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.Saml2NameIdentifier Issuer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.Saml2NameIdentifier Issuer" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2Assertion.Issuer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.Saml2NameIdentifier</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアサーションで、要求を行っている SAML 証明機関の識別子を設定します。 [Saml2Core、2.3.3]</summary>
+        <value>A<see cref="T:System.IdentityModel.Tokens.Saml2NameIdentifier" />発行者を指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 発行者の要素。 この要素は必須です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティを設定しようとすると、<see langword="null" />に発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SigningCredentials">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SigningCredentials SigningCredentials { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SigningCredentials SigningCredentials" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2Assertion.SigningCredentials" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SigningCredentials</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>資格情報、発行者、アサーションの整合性を保護するために使用します。</summary>
+        <value>A<see cref="T:System.IdentityModel.Tokens.SigningCredentials" />資格情報を表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Statements">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.IdentityModel.Tokens.Saml2Statement&gt; Statements { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.IdentityModel.Tokens.Saml2Statement&gt; Statements" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2Assertion.Statements" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.IdentityModel.Tokens.Saml2Statement&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアサーション内で行われたサブジェクトに関するステートメントを含むコレクションを取得します。</summary>
+        <value>型のコレクション<see cref="T:System.IdentityModel.Tokens.Saml2Statement" />このアサーションのステートメントを含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコレクション内の要素が型にできます<xref:System.IdentityModel.Tokens.Saml2AttributeStatement>、 <xref:System.IdentityModel.Tokens.Saml2AuthenticationStatement>、や<xref:System.IdentityModel.Tokens.Saml2AuthorizationDecisionStatement>を表す、次の SAML 要素の各: AttributeStatement、AuthnStatement、および AuthzDecisionStatement です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Subject">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.Saml2Subject Subject { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.Saml2Subject Subject" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2Assertion.Subject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.Saml2Subject</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアサーションのステートメントのサブジェクトを設定します。 [Saml2Core、2.3.3]</summary>
+        <value>A<see cref="T:System.IdentityModel.Tokens.Saml2Subject" />件名を指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サブジェクトの要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public string Version { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Version" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2Assertion.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアサーションの SAML バージョンを取得します。 [Saml2Core、2.3.3]</summary>
+        <value>バージョンを表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Version 属性です。バージョン「2.0」のみがサポートされています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteSourceData">
+      <MemberSignature Language="C#" Value="public virtual void WriteSourceData (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteSourceData(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.Saml2Assertion.WriteSourceData(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xml.XmlWriter" />ソース データの書き込みに使用します。</param>
+        <summary>使用可能な場合は、ソース データを書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">ソース データがないです。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

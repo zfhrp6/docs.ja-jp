@@ -1,0 +1,139 @@
+<Type Name="NopReturnReader" FullName="System.Web.Services.Protocols.NopReturnReader">
+  <TypeSignature Language="C#" Value="public class NopReturnReader : System.Web.Services.Protocols.MimeReturnReader" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NopReturnReader extends System.Web.Services.Protocols.MimeReturnReader" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.NopReturnReader" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Services.Protocols.MimeReturnReader</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>受信応答の非実行リーダーとして機能は、HTTP を使用して実装されている Web サービス クライアントが SOAP せずに値を返します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.NopReturnReader>その他のクラスの<xref:System.Web.Services.Protocols>名前空間は、HTTP GET 要求および HTTP POST 操作で Web サービスの .NET Framework の実装をサポートします。 Web サービスのライター、リーダー シリアル化および逆、それぞれ、パラメーターまたは Web メソッドの戻り値のオブジェクトと、HTTP 要求または応答のストリームの間です。 Web サービスのライター、リーダーは、HTTP トランスポートを使用しますが、SOAP 標準を使用してメッセージを交換しません。  
+  
+ <xref:System.Web.Services.Protocols.NopReturnReader>クラス、抽象クラスのインターフェイスのない読み取り実装を提供<xref:System.Web.Services.Protocols.MimeReturnReader>です。  
+  
+ 通常必要はありませんを使用する、<xref:System.Web.Services.Protocols.NopReturnReader>クラスです。 代わりに、Wsdl.exe ツールは、HTTP GET または HTTP POST の実装に応じて、クライアント プロキシ コードを生成するときまたが適用されます。、<xref:System.Web.Services.Protocols.HttpMethodAttribute>各 Web メソッドにし、既定では、設定、属性の<xref:System.Web.Services.Protocols.HttpMethodAttribute.ReturnFormatter%2A>プロパティを<xref:System.Web.Services.Protocols.XmlReturnReader>、別のクラスから派生した<xref:System.Web.Services.Protocols.MimeReturnReader>です。 Wsdl.exe では、プロパティを設定<xref:System.Web.Services.Protocols.NopReturnReader>それ以外の場合、値を決定することがない場合。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NopReturnReader ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.NopReturnReader.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Protocols.NopReturnReader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInitializer">
+      <MemberSignature Language="C#" Value="public override object GetInitializer (System.Web.Services.Protocols.LogicalMethodInfo methodInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object GetInitializer(class System.Web.Services.Protocols.LogicalMethodInfo methodInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.NopReturnReader.GetInitializer(System.Web.Services.Protocols.LogicalMethodInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="methodInfo" Type="System.Web.Services.Protocols.LogicalMethodInfo" />
+      </Parameters>
+      <Docs>
+        <param name="methodInfo">初期化子を取得する Web メソッドを指定する <see cref="T:System.Web.Services.Protocols.LogicalMethodInfo" /> 。</param>
+        <summary>指定したメソッドの初期化子を返します。</summary>
+        <returns>指定したメソッドの初期化子。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 初期化子は、パラメーターとして渡されるオブジェクト、<xref:System.Web.Services.Protocols.NopReturnReader.Initialize%2A>メソッドです。 <xref:System.Web.Services.Protocols.NopReturnReader>クラス初期化子があり、キーワードで参照されるインスタンス`this`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (object initializer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(object initializer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.NopReturnReader.Initialize(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="initializer" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="initializer">別のインスタンス、<see cref="T:System.Web.Services.Protocols.NopReturnReader" />をクラス、<see cref="M:System.Web.Services.Protocols.NopReturnReader.GetInitializer(System.Web.Services.Protocols.LogicalMethodInfo)" />メソッドが以前に呼び出されます。</param>
+        <summary>インスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.NopReturnReader.Initialize%2A>メソッドは、何も行われません。 応答の処理時に呼び出されます。 入力パラメーター、`initializer`は、クライアントの初期化中に取得されているクラスの別のインスタンス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public override object Read (System.Net.WebResponse response, System.IO.Stream responseStream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Read(class System.Net.WebResponse response, class System.IO.Stream responseStream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.NopReturnReader.Read(System.Net.WebResponse,System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="response" Type="System.Net.WebResponse" />
+        <Parameter Name="responseStream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="response">A<see cref="T:System.Net.WebResponse" />操作の出力メッセージを含むオブジェクト。</param>
+        <param name="responseStream">A<see cref="T:System.IO.Stream" />コンテンツを持つ、HTTP 応答の本体で表される、<c>応答</c>パラメーター。</param>
+        <summary>返します<see langword="null" />Web メソッドに HTTP 応答ストリームを逆シリアル化の値を返します。</summary>
+        <returns>
+          <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.NopReturnReader>のクラスの実装、<xref:System.Web.Services.Protocols.MimeReturnReader.Read%2A>メソッドでは、読み込みは行われません。 代わりに返します`null`です。 応答ストリームも閉じられます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

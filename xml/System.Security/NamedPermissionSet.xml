@@ -1,0 +1,456 @@
+<Type Name="NamedPermissionSet" FullName="System.Security.NamedPermissionSet">
+  <TypeSignature Language="C#" Value="public sealed class NamedPermissionSet : System.Security.PermissionSet" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit NamedPermissionSet extends System.Security.PermissionSet" />
+  <TypeSignature Language="DocId" Value="T:System.Security.NamedPermissionSet" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.PermissionSet</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>名前とそれに関連付けられた説明を持つ、アクセス許可セットを定義します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前付きのアクセス許可セットが特定のコード グループに属しているコードに付与するアクセス許可を指定するセキュリティ ポリシー管理で使用されます。 名前は、文字の英数字の文字列です。 説明文字列は、任意の印刷可能な文字で構成できます。  
+  
+   
+  
+## Examples  
+ 次のコード例のメンバーの使用を示しています、<xref:System.Security.NamedPermissionSet>クラスです。  
+  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NamedPermissionSet (System.Security.NamedPermissionSet permSet);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.NamedPermissionSet permSet) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.NamedPermissionSet.#ctor(System.Security.NamedPermissionSet)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="permSet" Type="System.Security.NamedPermissionSet" />
+      </Parameters>
+      <Docs>
+        <param name="permSet">名前付き権限の新しいインスタンスを作成元のセットします。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.NamedPermissionSet" />クラス別の名前付き権限セットからです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NamedPermissionSet (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.NamedPermissionSet.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前付き権限セットを新しい名。</param>
+        <summary>新しい、空のインスタンスを初期化、<see cref="T:System.Security.NamedPermissionSet" />指定した名前のクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前付きのアクセス許可セットを権限なしではなく、このコンス トラクターを使用して作成、<xref:System.Security.Permissions.PermissionState.Unrestricted>アクセス許可の状態。 名前付きアクセス許可制限なしの状態で効果的に設定にはを実装するすべてのアクセス許可が含まれています、<xref:System.Security.Permissions.IUnrestrictedPermission>インターフェイスです。 すべての組み込み権限だけでなくすべてカスタム ユーザー定義のアクセス許可を実装する名前付き権限セットが含まれます<xref:System.Security.Permissions.IUnrestrictedPermission>です。 すべてのアクセス許可のと同じになります、`Unrestricted`アクセス許可の状態。 アクセス許可を実装しない<xref:System.Security.Permissions.IUnrestrictedPermission>空のインスタンスになります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="name" />パラメーターは<see langword="null" />または空の文字列 ("") です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NamedPermissionSet (string name, System.Security.Permissions.PermissionState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, valuetype System.Security.Permissions.PermissionState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.NamedPermissionSet.#ctor(System.String,System.Security.Permissions.PermissionState)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="state" Type="System.Security.Permissions.PermissionState" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前付き権限セットを新しい名。</param>
+        <param name="state"><see cref="T:System.Security.Permissions.PermissionState" /> 値のいずれか。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.NamedPermissionSet" />無制限または完全に制限付きの状態のいずれかで指定した名前のクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前付きアクセス許可制限なしの状態で効果的に設定にはを実装するすべてのアクセス許可が含まれています、<xref:System.Security.Permissions.IUnrestrictedPermission>インターフェイスです。 名前付き権限セットには、すべての組み込み権限とすべてのカスタム アクセス許可が含まれます。 すべてのアクセス許可がある、 `Unrestricted`<xref:System.Security.Permissions.PermissionState>です。 アクセス許可を実装しない<xref:System.Security.Permissions.IUnrestrictedPermission>、空のインスタンスになる id アクセス許可などです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="name" />パラメーターは<see langword="null" />または空の文字列 ("") です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NamedPermissionSet (string name, System.Security.PermissionSet permSet);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, class System.Security.PermissionSet permSet) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.NamedPermissionSet.#ctor(System.String,System.Security.PermissionSet)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="permSet" Type="System.Security.PermissionSet" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前付き権限セットの名前。</param>
+        <param name="permSet">権限セットを新しい名前付き権限セットの値を取得します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.NamedPermissionSet" />アクセス許可セットから指定した名前のクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.NamedPermissionSet.%23ctor%2A>を新規作成するコンス トラクター<xref:System.Security.NamedPermissionSet>オブジェクト。 このコード例に示されている例の一部である、<xref:System.Security.NamedPermissionSet>クラスです。  
+  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="name" />パラメーターは<see langword="null" />または空の文字列 ("") です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Copy">
+      <MemberSignature Language="C#" Value="public override System.Security.PermissionSet Copy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.PermissionSet Copy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.NamedPermissionSet.Copy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.PermissionSet</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>名前付き権限セットを権限セットのコピーを作成します。</summary>
+        <returns>アクセス許可を設定されているアクセス許可のコピーを名前付き権限セットです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の使用を示しています、 <xref:System.Security.NamedPermissionSet.Copy%2A> 、現在のコピーを作成するメソッド<xref:System.Security.NamedPermissionSet>です。 このコード例に示されている例の一部である、<xref:System.Security.NamedPermissionSet>クラスです。  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Copy">
+      <MemberSignature Language="C#" Value="public System.Security.NamedPermissionSet Copy (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.NamedPermissionSet Copy(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.NamedPermissionSet.Copy(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.NamedPermissionSet</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前付き権限セットを新しい名。</param>
+        <summary>別の名前が同じアクセス許可を名前付き権限セットのコピーを作成します。</summary>
+        <returns>新しい名前で設定された名前付きのアクセス許可のコピー。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="name" />パラメーターは<see langword="null" />または空の文字列 ("") です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public string Description { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.Security.NamedPermissionSet.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在の名前付き権限セットの説明テキストを設定します。</summary>
+        <value>名前付き権限セットの説明文です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 説明は、単語のセットに含まれるどのようなアクセス許可およびその用途を理解する管理者を支援します。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、 <xref:System.Security.NamedPermissionSet.Description%2A> 、現在の説明を表示するプロパティを<xref:System.Security.NamedPermissionSet>です。 このコード例に示されている例の一部である、<xref:System.Security.NamedPermissionSet>クラスです。  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.NamedPermissionSet.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在の <see cref="T:System.Security.NamedPermissionSet" /> と比較する <see cref="T:System.Security.NamedPermissionSet" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.Security.NamedPermissionSet" /> オブジェクトが、現在の <see cref="T:System.Security.NamedPermissionSet" /> と等しいかどうかを判断します。</summary>
+        <returns>
+          指定した <see cref="T:System.Security.NamedPermissionSet" /> が現在の <see cref="T:System.Security.NamedPermissionSet" /> オブジェクトと等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、「<xref:System.Object.Equals%2A>」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.NamedPermissionSet.Equals%2A>を比較する 2 つのメソッド<xref:System.Security.NamedPermissionSet>オブジェクト。 このコード例に示されている例の一部である、<xref:System.Security.NamedPermissionSet>クラスです。  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromXml">
+      <MemberSignature Language="C#" Value="public override void FromXml (System.Security.SecurityElement et);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void FromXml(class System.Security.SecurityElement et) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.NamedPermissionSet.FromXml(System.Security.SecurityElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="et" Type="System.Security.SecurityElement" />
+      </Parameters>
+      <Docs>
+        <param name="et">名前付き権限セットの XML 表現を含むセキュリティ要素。</param>
+        <summary>XML エンコードから指定された状態で名前付き権限セットを再構築します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、以前に作成された XML 要素から名前付きのアクセス許可の状態を再作成<xref:System.Security.NamedPermissionSet.ToXml%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.NamedPermissionSet.FromXml%2A>を再作成する方法、<xref:System.Security.NamedPermissionSet>オブジェクト。 このコード例に示されている例の一部である、<xref:System.Security.NamedPermissionSet>クラスです。  
+  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="et" />パラメーターは名前付き権限セットの有効な表現ではありません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="et" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.NamedPermissionSet.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ハッシュ アルゴリズムや、ハッシュ テーブルのようなデータ構造での使用に適している、<see cref="T:System.Security.NamedPermissionSet" /> オブジェクトのハッシュ コードを取得します。</summary>
+        <returns>現在の <see cref="T:System.Security.NamedPermissionSet" /> オブジェクトのハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 同じアクセス許可の 2 つのインスタンスのハッシュ コードが異なる場合があります、ためハッシュ コードを比較する 2 つ使用するされません<xref:System.Security.NamedPermissionSet>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Security.NamedPermissionSet.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在の名前付き権限セットの名前を設定します。</summary>
+        <value>名前付き権限セットの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コード グループは、アクセス許可セットを名前で参照します。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.NamedPermissionSet.Name%2A>の名前を表示するプロパティを<xref:System.Security.NamedPermissionSet>です。 このコード例に示されている例の一部である、<xref:System.Security.NamedPermissionSet>クラスです。  
+  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">名前は<see langword="null" />または空の文字列 ("") です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToXml">
+      <MemberSignature Language="C#" Value="public override System.Security.SecurityElement ToXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.SecurityElement ToXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.NamedPermissionSet.ToXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.SecurityElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>名前付き権限セットの XML 要素の説明を作成します。</summary>
+        <returns>名前付き権限セットの XML 表現。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Security.NamedPermissionSet.FromXml%2A>返される要素によって表される状態を再作成します。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.NamedPermissionSet.ToXml%2A>を再作成する方法、<xref:System.Security.NamedPermissionSet>オブジェクト。 このコード例に示されている例の一部である、<xref:System.Security.NamedPermissionSet>クラスです。  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

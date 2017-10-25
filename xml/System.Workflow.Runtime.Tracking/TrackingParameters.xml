@@ -1,0 +1,225 @@
+<Type Name="TrackingParameters" FullName="System.Workflow.Runtime.Tracking.TrackingParameters">
+  <TypeSignature Language="C#" Value="public sealed class TrackingParameters" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TrackingParameters extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.Tracking.TrackingParameters" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Workflow.Runtime.Tracking.TrackingChannel" /> に関連したワークフロー インスタンスについての情報を格納します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ ランタイム追跡インフラストラクチャは、<xref:System.Workflow.Runtime.Tracking.TrackingParameters> の <xref:System.Workflow.Runtime.Tracking.TrackingService.GetTrackingChannel%2A> を呼び出すときに、<xref:System.Workflow.Runtime.Tracking.TrackingService> オブジェクトを渡します。 <xref:System.Workflow.Runtime.Tracking.TrackingChannel> で受信される追跡データを特定のワークフロー インスタンスに関連付けるために、これらのパラメーターを追跡サービスで使用できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TrackingParameters (Guid instanceId, Type workflowType, System.Workflow.ComponentModel.Activity rootActivity, System.Collections.Generic.IList&lt;string&gt; callPath, Guid callerInstanceId, Guid contextGuid, Guid callerContextGuid, Guid callerParentContextGuid);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Guid instanceId, class System.Type workflowType, class System.Workflow.ComponentModel.Activity rootActivity, class System.Collections.Generic.IList`1&lt;string&gt; callPath, valuetype System.Guid callerInstanceId, valuetype System.Guid contextGuid, valuetype System.Guid callerContextGuid, valuetype System.Guid callerParentContextGuid) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.TrackingParameters.#ctor(System.Guid,System.Type,System.Workflow.ComponentModel.Activity,System.Collections.Generic.IList{System.String},System.Guid,System.Guid,System.Guid,System.Guid)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="instanceId" Type="System.Guid" />
+        <Parameter Name="workflowType" Type="System.Type" />
+        <Parameter Name="rootActivity" Type="System.Workflow.ComponentModel.Activity" />
+        <Parameter Name="callPath" Type="System.Collections.Generic.IList&lt;System.String&gt;" />
+        <Parameter Name="callerInstanceId" Type="System.Guid" />
+        <Parameter Name="contextGuid" Type="System.Guid" />
+        <Parameter Name="callerContextGuid" Type="System.Guid" />
+        <Parameter Name="callerParentContextGuid" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="instanceId">追跡チャネルに関連付けられているワークフロー インスタンスの <see cref="T:System.Guid" />。</param>
+        <param name="workflowType">追跡チャネルに関連付けられているワークフロー インスタンスの <see cref="T:System.Type" />。</param>
+        <param name="rootActivity">追跡チャネルに関連付けられたワークフロー インスタンスのルート <see cref="T:System.Workflow.ComponentModel.Activity" />。</param>
+        <param name="callPath">文字列のリスト。各文字列は、追跡チャネルに関連付けられているワークフロー インスタンスの呼び出しチェーンのアクティビティの <see cref="P:System.Workflow.ComponentModel.Activity.QualifiedName" /> を表します。 現在は、ワークフロー インスタンスを呼び出したアクティビティの <see cref="P:System.Workflow.ComponentModel.Activity.QualifiedName" /> のみリストに含まれます。</param>
+        <param name="callerInstanceId">追跡チャネルに関連付けられたワークフロー インスタンスを呼び出したワークフローの <see cref="T:System.Guid" />。</param>
+        <param name="contextGuid">追跡チャネルに関連付けられたワークフロー インスタンスのルート アクティビティの <see cref="T:System.Workflow.ComponentModel.ActivityExecutionContext" /> を識別する数値。</param>
+        <param name="callerContextGuid">追跡チャネルに関連付けられたワークフロー インスタンスを呼び出したアクティビティの <see cref="T:System.Workflow.ComponentModel.ActivityExecutionContext" /> を識別する数値。</param>
+        <param name="callerParentContextGuid">追跡チャネルに関連付けられたワークフロー インスタンスを呼び出したアクティビティの親 <see cref="T:System.Workflow.ComponentModel.ActivityExecutionContext" /> を識別する数値。</param>
+        <summary><see cref="T:System.Workflow.Runtime.Tracking.TrackingParameters" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンストラクターは、ランタイム追跡インフラストラクチャによって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CallerContextGuid">
+      <MemberSignature Language="C#" Value="public Guid CallerContextGuid { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid CallerContextGuid" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.TrackingParameters.CallerContextGuid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>呼び出し元アクティビティのコンテキスト ID を取得します。</summary>
+        <value>呼び出し元 <see cref="T:System.Guid" /> のコンテキスト ID を含む <see cref="T:System.Workflow.ComponentModel.Activity" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CallerInstanceId">
+      <MemberSignature Language="C#" Value="public Guid CallerInstanceId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid CallerInstanceId" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.TrackingParameters.CallerInstanceId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>追跡チャネルに関連付けられたワークフロー インスタンスを呼び出したワークフロー インスタンスの <see cref="T:System.Guid" /> を取得します。</summary>
+        <value>追跡チャネルに関連付けられたワークフロー インスタンスを呼び出したワークフロー インスタンスの <see cref="T:System.Guid" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CallerParentContextGuid">
+      <MemberSignature Language="C#" Value="public Guid CallerParentContextGuid { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid CallerParentContextGuid" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.TrackingParameters.CallerParentContextGuid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>呼び出し元の親アクティビティのコンテキスト ID を取得します。</summary>
+        <value>呼び出し元の親 <see cref="T:System.Guid" /> のコンテキスト ID を含む <see cref="T:System.Workflow.ComponentModel.Activity" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CallPath">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;string&gt; CallPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;string&gt; CallPath" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.TrackingParameters.CallPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文字列のリストを取得します。それぞれの文字列は、追跡チャネルに関連付けられたワークフロー インスタンスの呼び出しチェーン内のアクティビティの <see cref="P:System.Workflow.ComponentModel.Activity.QualifiedName" /> を表します。</summary>
+        <value>文字列のリスト。各文字列は、追跡チャネルに関連付けられているワークフロー インスタンスの呼び出しチェーンのアクティビティの <see cref="P:System.Workflow.ComponentModel.Activity.QualifiedName" /> を表します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在は、ワークフロー インスタンスを呼び出したアクティビティの <xref:System.Workflow.ComponentModel.Activity.QualifiedName%2A> のみリストに含まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextGuid">
+      <MemberSignature Language="C#" Value="public Guid ContextGuid { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid ContextGuid" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.TrackingParameters.ContextGuid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられたアクティビティのコンテキスト ID を取得します。</summary>
+        <value><see cref="T:System.Guid" /> のコンテキスト ID を含む <see cref="T:System.Workflow.ComponentModel.Activity" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceId">
+      <MemberSignature Language="C#" Value="public Guid InstanceId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid InstanceId" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.TrackingParameters.InstanceId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>追跡チャネルに関連付けられたワークフロー インスタンスの <see cref="T:System.Guid" /> を取得します。</summary>
+        <value>追跡チャネルに関連付けられているワークフロー インスタンスの <see cref="T:System.Guid" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RootActivity">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.Activity RootActivity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.ComponentModel.Activity RootActivity" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.TrackingParameters.RootActivity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Activity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>追跡チャネルに関連付けられたワークフロー インスタンスのルート アクティビティを取得します。</summary>
+        <value>追跡チャネルに関連付けられたワークフロー インスタンスのルート アクティビティを表す <see cref="T:System.Workflow.ComponentModel.Activity" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkflowType">
+      <MemberSignature Language="C#" Value="public Type WorkflowType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type WorkflowType" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.TrackingParameters.WorkflowType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>追跡チャネルに関連付けられたワークフロー インスタンスの <see cref="T:System.Type" /> を取得します。</summary>
+        <value>追跡チャネルに関連付けられているワークフロー インスタンスの <see cref="T:System.Type" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

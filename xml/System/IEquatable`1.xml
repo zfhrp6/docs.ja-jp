@@ -1,0 +1,139 @@
+<Type Name="IEquatable&lt;T&gt;" FullName="System.IEquatable&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public interface IEquatable&lt;T&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IEquatable`1&lt;T&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.IEquatable`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T" />
+  </TypeParameters>
+  <Interfaces />
+  <Docs>
+    <typeparam name="T">比較するオブジェクトの型。</typeparam>
+    <summary>インスタンスの等価性判断を目的とする型固有のメソッドを作成するために値型またはクラスで実装する、汎用のメソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、値を持つことができますされるした処理を表します (例、数値と文字列クラス) の型によって実装されます。 値型またはクラスで実装する、<xref:System.IEquatable%601.Equals%2A>インスタンスの等価性を決定するために適切な種類に固有のメソッドを作成します。  
+  
+> [!NOTE]
+>  <xref:System.IComparable%601>インターフェイスを定義、<xref:System.IComparable%601.CompareTo%2A>メソッドを実装する型のインスタンスの並べ替え順序を決定します。 <xref:System.IEquatable%601>インターフェイスを定義、<xref:System.IEquatable%601.Equals%2A>メソッドを実装する型のインスタンスが等しいかどうかを決定します。  
+  
+ <xref:System.IEquatable%601>インターフェイスがなどのジェネリック コレクション オブジェクトで使用が<xref:System.Collections.Generic.Dictionary%602>、 <xref:System.Collections.Generic.List%601>、および<xref:System.Collections.Generic.LinkedList%601>などのメソッドに等しいかどうかをテストするとき`Contains`、 `IndexOf`、 `LastIndexOf`、および`Remove`です。 ジェネリック コレクション内に保存されている任意のオブジェクトを実装する必要があります。  
+  
+   
+  
+## Examples  
+ 例を参照して、<xref:System.IEquatable%601.Equals%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>型パラメーターを置き換える、<see cref="T:System.IEquatable`1" />がこのインターフェイスを実装している型を持つインターフェイスです。  
+  
+ 実装する場合<see cref="T:System.IEquatable`1" />の基本クラスの実装を上書きすることも必要があります。<see cref="M:System.Object.Equals(System.Object)" />と<see cref="M:System.Object.GetHashCode" />できるように、これらの動作に一貫性のあるのは、<see cref="M:System.IEquatable`1.Equals(`0)" />メソッドです。 オーバーライドする場合<see cref="M:System.Object.Equals(System.Object)" />、静的への呼び出しで、オーバーライドされた実装が呼び出されますも<see langword="Equals(System.Object, System.Object)" />クラスのメソッドです。 さらに、必要がありますをオーバー ロードする、<see langword="op_Equality" />と<see langword="op_Inequality" />演算子。 これにより、すべてのテストが等しいかどうかが一貫性のある結果を返すことです。  
+  
+ <block subset="none" type="note"><para>  
+ 上書きする方法について<see cref="M:System.Object.Equals(System.Object)" />を参照してください、<see cref="M:System.Object.Equals(System.Object)" />資料です。  
+  
+</para></block>  
+  
+ 値型の場合は常に実装する<see cref="T:System.IEquatable`1" />オーバーライドと<see cref="M:System.Object.Equals(System.Object)" />パフォーマンス向上のためです。 <see cref="M:System.Object.Equals(System.Object)" />ボックスの値型と等しいかどうかの 2 つの値を比較するためにリフレクションに依存しています。 両方の実装<see cref="M:System.IEquatable`1.Equals(`0)" />のオーバーライドと<see cref="M:System.Object.Equals(System.Object)" />一貫性のある結果を返す必要があります。  
+  
+ 実装する場合<see cref="T:System.IEquatable`1" />も実装する必要があります<see cref="T:System.IComparable`1" />場合は、型のインスタンスを順次または並べ替えことができます。 型を実装する場合<see cref="T:System.IComparable`1" />、常にも実装する必要があります<see cref="T:System.IEquatable`1" />です。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (T other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(!T other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IEquatable`1.Equals(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="other">このオブジェクトと比較するオブジェクト。</param>
+        <summary>現在のオブジェクトが、同じ型の別のオブジェクトと等しいかどうかを示します。</summary>
+        <returns>
+          現在のオブジェクトが <paramref name="other" /> パラメーターと等しい場合は <see langword="true" />、それ以外の場合は <see langword="false" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装、<xref:System.IEquatable%601.Equals%2A>メソッド型の別のオブジェクトとの等価性テストを実行するためのものが`T`、現在のオブジェクトと同じ型です。 <xref:System.IEquatable%601.Equals%2A>メソッドは、次の状況で呼び出されます。  
+  
+-   ときに、`Equals`メソッドが呼び出されると、`other`パラメーター オブジェクトを表す、厳密に型指定された型の`T`します。 (場合`other`の種類は<xref:System.Object>、基本<xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType>メソッドが呼び出されます。 2 つのメソッドの<xref:System.IEquatable%601.Equals%2A?displayProperty=nameWithType>若干より高いパフォーマンスを提供します)。  
+  
+-   多数のジェネリック コレクション オブジェクトの検索メソッドが呼び出された場合。 これらの型とそのメソッドの一部を以下に示します。  
+  
+    -   ジェネリック オーバー ロードのいくつか、<xref:System.Array.BinarySearch%2A>メソッドです。  
+  
+    -   検索方法、<xref:System.Collections.Generic.List%601>クラスを含む<xref:System.Collections.Generic.List%601.Contains%28%600%29?displayProperty=nameWithType>、 <xref:System.Collections.Generic.List%601.IndexOf%2A?displayProperty=nameWithType>、 <xref:System.Collections.Generic.List%601.LastIndexOf%2A?displayProperty=nameWithType>、および<xref:System.Collections.Generic.List%601.Remove%2A?displayProperty=nameWithType>です。  
+  
+    -   検索方法、<xref:System.Collections.Generic.Dictionary%602>クラスを含む<xref:System.Collections.Generic.Dictionary%602.ContainsKey%2A>と<xref:System.Collections.Generic.IDictionary%602.Remove%2A>です。  
+  
+    -   ジェネリックの検索方法<xref:System.Collections.Generic.LinkedList%601>クラスを含む<xref:System.Collections.Generic.LinkedList%601.Contains%2A?displayProperty=nameWithType>と<xref:System.Collections.Generic.LinkedList%601.Remove%2A>です。  
+  
+ つまり、クラスのオブジェクトは、配列やジェネリック コレクション オブジェクトに格納されること可能性を処理するにを実装することをお勧め<xref:System.IEquatable%601>オブジェクトを簡単に識別および操作できるようにします。  
+  
+ 実装する場合、<xref:System.IEquatable%601.Equals%2A>メソッド、ジェネリック型引数で指定された型を適切に等しいかどうかを定義します。 たとえば、型引数は、 <xref:System.Int32>、2 つの 32 ビット符号付き整数の比較を適切に等しいかどうかを定義します。  
+  
+   
+  
+## Examples  
+ 次の例の実装の一部を示しています、`Person`を実装するクラス<xref:System.IEquatable%601>2 つのプロパティと`LastName`と`SSN`です。 <xref:System.IEquatable%601.Equals%2A>メソッドを返します。`True`場合、 `SSN` 2 つのプロパティ`Person`オブジェクトと同じです。 を返しますそれ以外の場合、`False`です。  
+  
+ [!code-csharp[System.GenericIEquatable.Equals#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.GenericIEquatable.Equals/cs/EqualsEx2.cs#3)]
+ [!code-vb[System.GenericIEquatable.Equals#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.GenericIEquatable.Equals/vb/EqualsEx2.vb#3)]  
+  
+ `Person`オブジェクトを格納することができますし、<xref:System.Collections.Generic.List%601>オブジェクトし、を識別できます、`Contains`メソッドを次の例のようにします。  
+  
+ [!code-csharp[System.GenericIEquatable.Equals#12](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.GenericIEquatable.Equals/cs/Snippet12.cs#12)]
+ [!code-vb[System.GenericIEquatable.Equals#12](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.GenericIEquatable.Equals/vb/Snippet12.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>実装する場合<see cref="M:System.IEquatable`1.Equals(`0)" />の基本クラスの実装を上書きすることも必要があります。<see cref="M:System.Object.Equals(System.Object)" />と<see cref="M:System.Object.GetHashCode" />できるように、これらの動作に一貫性のあるのは、<see cref="M:System.IEquatable`1.Equals(`0)" />メソッドです。 オーバーライドする場合<see cref="M:System.Object.Equals(System.Object)" />、静的への呼び出しで、オーバーライドされた実装が呼び出されますも<see langword="Equals(System.Object, System.Object)" />クラスのメソッドです。 さらに、必要がありますをオーバー ロードする、<see langword="op_Equality" />と<see langword="op_Inequality" />演算子。 これにより、等しいかどうかのすべてのテストに例を示していますが、一貫性のある結果が返されること。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

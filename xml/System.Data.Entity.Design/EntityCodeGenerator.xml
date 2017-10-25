@@ -1,0 +1,281 @@
+<Type Name="EntityCodeGenerator" FullName="System.Data.Entity.Design.EntityCodeGenerator">
+  <TypeSignature Language="C#" Value="public class EntityCodeGenerator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EntityCodeGenerator extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Entity.Design.EntityCodeGenerator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>概念スキーマ定義言語 (CSDL) ファイルからオブジェクト コンテキストおよびエンティティ クラス (オブジェクト レイヤー コード) を生成します。 Entity Framework バージョン 4 以降では、特定のモデル、ObjectContext クラスには型のプロパティが含まれます<see cref="T:System.Data.Objects.ObjectSet`1" />モデルのエンティティ セットを表しています。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EntityCodeGenerator (System.Data.Entity.Design.LanguageOption languageOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Data.Entity.Design.LanguageOption languageOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.EntityCodeGenerator.#ctor(System.Data.Entity.Design.LanguageOption)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="languageOption" Type="System.Data.Entity.Design.LanguageOption" />
+      </Parameters>
+      <Docs>
+        <param name="languageOption">生成されたコードの言語です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.Entity.Design.EntityCodeGenerator" />指定した言語オプションとクラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EdmToObjectNamespaceMap">
+      <MemberSignature Language="C#" Value="public System.Data.Entity.Design.EdmToObjectNamespaceMap EdmToObjectNamespaceMap { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Entity.Design.EdmToObjectNamespaceMap EdmToObjectNamespaceMap" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Entity.Design.EntityCodeGenerator.EdmToObjectNamespaceMap" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Entity.Design.EdmToObjectNamespaceMap</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コードの名前空間マッピングに対する概念スキーマ定義言語 (CSDL) を含む <see cref="T:System.Data.Entity.Design.EdmToObjectNamespaceMap" /> を取得します。</summary>
+        <value>コードの名前空間のマッピングの CSDL は、します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateCode">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Data.Metadata.Edm.EdmSchemaError&gt; GenerateCode (string sourceEdmSchemaFilePath, string targetPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IList`1&lt;class System.Data.Metadata.Edm.EdmSchemaError&gt; GenerateCode(string sourceEdmSchemaFilePath, string targetPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.EntityCodeGenerator.GenerateCode(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Data.Metadata.Edm.EdmSchemaError&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceEdmSchemaFilePath" Type="System.String" />
+        <Parameter Name="targetPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceEdmSchemaFilePath">CSDL ファイルのパス。</param>
+        <param name="targetPath">生成されたオブジェクト レイヤー コードを含むファイルのパス。</param>
+        <summary>指定された概念スキーマ定義言語 (CSDL) ファイルから生成されたオブジェクト レイヤー コードを含むソース コード ファイルを作成します。</summary>
+        <returns>一連の<see cref="T:System.Data.Metadata.Edm.EdmSchemaError" />いずれかに含まれるオブジェクトでエラーが発生します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateCode">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Data.Metadata.Edm.EdmSchemaError&gt; GenerateCode (System.Xml.XmlReader sourceEdmSchema, System.IO.TextWriter target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IList`1&lt;class System.Data.Metadata.Edm.EdmSchemaError&gt; GenerateCode(class System.Xml.XmlReader sourceEdmSchema, class System.IO.TextWriter target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.EntityCodeGenerator.GenerateCode(System.Xml.XmlReader,System.IO.TextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Data.Metadata.Edm.EdmSchemaError&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceEdmSchema" Type="System.Xml.XmlReader" />
+        <Parameter Name="target" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="sourceEdmSchema"><see cref="T:System.Xml.XmlReader" /> CSDL を格納しています。</param>
+        <param name="target"><see cref="T:System.IO.TextWriter" />するオブジェクト層のコードが書き込まれます。</param>
+        <summary>指定された概念スキーマ定義言語 (CSDL) を使用してオブジェクト レイヤー コードを生成、<see cref="T:System.Xml.XmlReader" />オブジェクト、および生成されたコードを出力、<see cref="T:System.IO.TextWriter" />です。</summary>
+        <returns>一連の<see cref="T:System.Data.Metadata.Edm.EdmSchemaError" />いずれかに含まれるオブジェクトでエラーが発生します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateCode">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Data.Metadata.Edm.EdmSchemaError&gt; GenerateCode (string sourceEdmSchemaFilePath, string targetPath, System.Collections.Generic.IEnumerable&lt;string&gt; additionalEdmSchemaFilePaths);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IList`1&lt;class System.Data.Metadata.Edm.EdmSchemaError&gt; GenerateCode(string sourceEdmSchemaFilePath, string targetPath, class System.Collections.Generic.IEnumerable`1&lt;string&gt; additionalEdmSchemaFilePaths) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.EntityCodeGenerator.GenerateCode(System.String,System.String,System.Collections.Generic.IEnumerable{System.String})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Data.Metadata.Edm.EdmSchemaError&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceEdmSchemaFilePath" Type="System.String" />
+        <Parameter Name="targetPath" Type="System.String" />
+        <Parameter Name="additionalEdmSchemaFilePaths" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="sourceEdmSchemaFilePath">CSDL ファイルのパス。</param>
+        <param name="targetPath">生成されたオブジェクト レイヤー コードを含むファイルのパス。</param>
+        <param name="additionalEdmSchemaFilePaths">ソース スキーマ (CSDL ファイル) の参照の解決に使用できるスキーマ ファイル パスの一覧。 ソース スキーマに依存関係がない場合は、空の一覧を渡します。</param>
+        <summary>指定された概念スキーマ定義言語 (CSDL) ファイルから生成されたオブジェクト レイヤー コードを含むソース コード ファイルを作成します。 CSDL ファイルに含まれる参照の解決には、スキーマ ファイル パスの一覧が使用されます。</summary>
+        <returns>一連の<see cref="T:System.Data.Metadata.Edm.EdmSchemaError" />いずれかに含まれるオブジェクトでエラーが発生します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateCode">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Data.Metadata.Edm.EdmSchemaError&gt; GenerateCode (string sourceEdmSchemaFilePath, string targetPath, Version targetEntityFrameworkVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IList`1&lt;class System.Data.Metadata.Edm.EdmSchemaError&gt; GenerateCode(string sourceEdmSchemaFilePath, string targetPath, class System.Version targetEntityFrameworkVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.EntityCodeGenerator.GenerateCode(System.String,System.String,System.Version)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Data.Metadata.Edm.EdmSchemaError&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceEdmSchemaFilePath" Type="System.String" />
+        <Parameter Name="targetPath" Type="System.String" />
+        <Parameter Name="targetEntityFrameworkVersion" Type="System.Version" />
+      </Parameters>
+      <Docs>
+        <param name="sourceEdmSchemaFilePath">CSDL ファイルのパス。</param>
+        <param name="targetPath">生成されたオブジェクト レイヤー コードを含むファイルのパス。</param>
+        <param name="targetEntityFrameworkVersion">対象となっている、内部 Entity Framework バージョンです。</param>
+        <summary>指定された概念スキーマ定義言語 (CSDL) ファイルから生成されたオブジェクト レイヤー コードを含むソース コード ファイルを作成します。 TargetEntityFrameworkVersion パラメーターを使用して内部の Entity Framework のバージョン番号」の説明に従って、<see cref="T:System.Data.Entity.Design.EntityFrameworkVersions" />クラスです。</summary>
+        <returns>一連の<see cref="T:System.Data.Metadata.Edm.EdmSchemaError" />いずれかに含まれるオブジェクトでエラーが発生します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateCode">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Data.Metadata.Edm.EdmSchemaError&gt; GenerateCode (System.Xml.XmlReader sourceEdmSchema, System.IO.TextWriter target, System.Collections.Generic.IEnumerable&lt;System.Xml.XmlReader&gt; additionalEdmSchemas);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IList`1&lt;class System.Data.Metadata.Edm.EdmSchemaError&gt; GenerateCode(class System.Xml.XmlReader sourceEdmSchema, class System.IO.TextWriter target, class System.Collections.Generic.IEnumerable`1&lt;class System.Xml.XmlReader&gt; additionalEdmSchemas) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.EntityCodeGenerator.GenerateCode(System.Xml.XmlReader,System.IO.TextWriter,System.Collections.Generic.IEnumerable{System.Xml.XmlReader})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Data.Metadata.Edm.EdmSchemaError&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceEdmSchema" Type="System.Xml.XmlReader" />
+        <Parameter Name="target" Type="System.IO.TextWriter" />
+        <Parameter Name="additionalEdmSchemas" Type="System.Collections.Generic.IEnumerable&lt;System.Xml.XmlReader&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="sourceEdmSchema"><see cref="T:System.Xml.XmlReader" /> CSDL を格納しています。</param>
+        <param name="target"><see cref="T:System.IO.TextWriter" />に生成されたオブジェクト レイヤー コードを出力します。</param>
+        <param name="additionalEdmSchemas">一連の<see cref="T:System.Xml.XmlReader" />送信元スキーマ (CSDL) によって参照されているスキーマを格納するオブジェクト。 ソース スキーマに依存関係がない場合は、空の一覧を渡します。</param>
+        <summary>指定された概念スキーマ定義言語 (CSDL) に基づいてオブジェクト レイヤー コードを生成、<see cref="T:System.Xml.XmlReader" />オブジェクトを生成されたコードを出力、<see cref="T:System.IO.TextWriter" />です。 一連の<see cref="T:System.Xml.XmlReader" />の CSDL に含まれているすべての参照を解決するのにはオブジェクトを使用します。</summary>
+        <returns>一連の<see cref="T:System.Data.Metadata.Edm.EdmSchemaError" />いずれかに含まれるオブジェクトでエラーが発生します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateCode">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Data.Metadata.Edm.EdmSchemaError&gt; GenerateCode (System.Xml.XmlReader sourceEdmSchema, System.IO.TextWriter target, Version targetEntityFrameworkVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IList`1&lt;class System.Data.Metadata.Edm.EdmSchemaError&gt; GenerateCode(class System.Xml.XmlReader sourceEdmSchema, class System.IO.TextWriter target, class System.Version targetEntityFrameworkVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.EntityCodeGenerator.GenerateCode(System.Xml.XmlReader,System.IO.TextWriter,System.Version)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Data.Metadata.Edm.EdmSchemaError&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceEdmSchema" Type="System.Xml.XmlReader" />
+        <Parameter Name="target" Type="System.IO.TextWriter" />
+        <Parameter Name="targetEntityFrameworkVersion" Type="System.Version" />
+      </Parameters>
+      <Docs>
+        <param name="sourceEdmSchema">CSDL を含む XmlReader です。</param>
+        <param name="target">オブジェクト レイヤー コードの書き込み先となる TextWriter。</param>
+        <param name="targetEntityFrameworkVersion">対象となっている、内部 Entity Framework バージョンです。</param>
+        <summary>XmlReader オブジェクトで指定された概念スキーマ定義言語 (CSDL) を使用してオブジェクト レイヤー コードを生成し、TextWriter に生成されたコードを出力します。 TargetEntityFrameworkVersion パラメーターを使用して内部 EntityFramework バージョン番号」の説明に従って、<see cref="T:System.Data.Entity.Design.EntityFrameworkVersions" />クラスです。</summary>
+        <returns>一連の<see cref="T:System.Data.Metadata.Edm.EdmSchemaError" />いずれかに含まれるオブジェクトでエラーが発生します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateCode">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Data.Metadata.Edm.EdmSchemaError&gt; GenerateCode (string sourceEdmSchemaFilePath, string targetPath, System.Collections.Generic.IEnumerable&lt;string&gt; additionalEdmSchemaFilePaths, Version targetEntityFrameworkVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IList`1&lt;class System.Data.Metadata.Edm.EdmSchemaError&gt; GenerateCode(string sourceEdmSchemaFilePath, string targetPath, class System.Collections.Generic.IEnumerable`1&lt;string&gt; additionalEdmSchemaFilePaths, class System.Version targetEntityFrameworkVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.EntityCodeGenerator.GenerateCode(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.Version)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Data.Metadata.Edm.EdmSchemaError&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceEdmSchemaFilePath" Type="System.String" />
+        <Parameter Name="targetPath" Type="System.String" />
+        <Parameter Name="additionalEdmSchemaFilePaths" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
+        <Parameter Name="targetEntityFrameworkVersion" Type="System.Version" />
+      </Parameters>
+      <Docs>
+        <param name="sourceEdmSchemaFilePath">CSDL ファイルのパス。</param>
+        <param name="targetPath">生成されたオブジェクト レイヤー コードを含むファイルのパス。</param>
+        <param name="additionalEdmSchemaFilePaths">ソース スキーマ (CSDL ファイル) の参照の解決に使用できるスキーマ ファイル パスの一覧。 ソース スキーマに依存関係がない場合は、空の一覧を渡します。</param>
+        <param name="targetEntityFrameworkVersion">対象となっている、内部 Entity Framework バージョンです。</param>
+        <summary>指定された概念スキーマ定義言語 (CSDL) ファイルから生成されたオブジェクト レイヤー コードを含むソース コード ファイルを作成します。 CSDL ファイルに含まれる参照の解決には、スキーマ ファイル パスの一覧が使用されます。 TargetEntityFrameworkVersion パラメーターを使用して内部 EntityFramework バージョン番号」の説明に従って、<see cref="T:System.Data.Entity.Design.EntityFrameworkVersions" />クラスです。</summary>
+        <returns>一連の<see cref="T:System.Data.Metadata.Edm.EdmSchemaError" />いずれかに含まれるオブジェクトでエラーが発生します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateCode">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Data.Metadata.Edm.EdmSchemaError&gt; GenerateCode (System.Xml.XmlReader sourceEdmSchema, System.IO.TextWriter target, System.Collections.Generic.IEnumerable&lt;System.Xml.XmlReader&gt; additionalEdmSchemas, Version targetEntityFrameworkVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IList`1&lt;class System.Data.Metadata.Edm.EdmSchemaError&gt; GenerateCode(class System.Xml.XmlReader sourceEdmSchema, class System.IO.TextWriter target, class System.Collections.Generic.IEnumerable`1&lt;class System.Xml.XmlReader&gt; additionalEdmSchemas, class System.Version targetEntityFrameworkVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.EntityCodeGenerator.GenerateCode(System.Xml.XmlReader,System.IO.TextWriter,System.Collections.Generic.IEnumerable{System.Xml.XmlReader},System.Version)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Data.Metadata.Edm.EdmSchemaError&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceEdmSchema" Type="System.Xml.XmlReader" />
+        <Parameter Name="target" Type="System.IO.TextWriter" />
+        <Parameter Name="additionalEdmSchemas" Type="System.Collections.Generic.IEnumerable&lt;System.Xml.XmlReader&gt;" />
+        <Parameter Name="targetEntityFrameworkVersion" Type="System.Version" />
+      </Parameters>
+      <Docs>
+        <param name="sourceEdmSchema">CSDL を含む XmlReader です。</param>
+        <param name="target">オブジェクト レイヤー コードの書き込み先となる TextWriter。</param>
+        <param name="additionalEdmSchemas">送信元スキーマ (CSDL) によって参照されているスキーマが含まれている XmlReader オブジェクトの一覧。 送信元スキーマがすべての依存関係を持たない場合は、IList、空のオブジェクトに渡します。</param>
+        <param name="targetEntityFrameworkVersion">対象となっている、内部 Entity Framework バージョンです。</param>
+        <summary>指定された概念スキーマ定義言語 (CSDL) ファイルから生成されたオブジェクト レイヤー コードを含むソース コード ファイルを作成します。 TargetEntityFrameworkVersion パラメーターを使用して内部の Entity Framework のバージョン番号」の説明に従って、<see cref="T:System.Data.Entity.Design.EntityFrameworkVersions" />クラスです。</summary>
+        <returns>一連の<see cref="T:System.Data.Metadata.Edm.EdmSchemaError" />いずれかに含まれるオブジェクトでエラーが発生します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LanguageOption">
+      <MemberSignature Language="C#" Value="public System.Data.Entity.Design.LanguageOption LanguageOption { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.Entity.Design.LanguageOption LanguageOption" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Entity.Design.EntityCodeGenerator.LanguageOption" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Entity.Design.LanguageOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>生成されたコードの言語を指定する <see cref="T:System.Data.Entity.Design.LanguageOption" /> 値を取得または設定します。</summary>
+        <value><see cref="T:System.Data.Entity.Design.LanguageOption" /> 値のいずれか。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

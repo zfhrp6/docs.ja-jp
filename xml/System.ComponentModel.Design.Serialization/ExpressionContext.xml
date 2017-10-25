@@ -1,0 +1,193 @@
+<Type Name="ExpressionContext" FullName="System.ComponentModel.Design.Serialization.ExpressionContext">
+  <TypeSignature Language="C#" Value="public sealed class ExpressionContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ExpressionContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.Serialization.ExpressionContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>シリアライザー間でコンテキストの状態を渡す方法を提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.ExpressionContext>コンテキスト スタックに配置され、シリアル化中に最も関連する式が含まれています。 次の c# コードでは、割り当てを示します。  
+  
+```csharp  
+button1.Text = "Hello";  
+```  
+  
+ シリアル化中のいくつかのシリアライザーには、この 1 つのステートメントの作成を担当します。 「こんにちは」を作成するためのこれらのシリアライザーの一方はします。 そのシリアライザー可能性があります式を作成するコンテキストを知る必要がある場合もあります。 前の例では、このコンテキストは必要ありません。 次の c# コードは、コンテキストの知識が必要である状況を示しています。  
+  
+```csharp  
+button1.Text = rm.GetString("button1_Text");  
+```  
+  
+ この場合、リソースの式を作成するシリアライザーは、対象オブジェクトの名前を通知する必要があります。 <xref:System.ComponentModel.Design.Serialization.ExpressionContext>このクラスを使用できます。 各シリアライザーでは、式を作成し、全体としてステートメントの一部を処理するシリアライザーを呼び出す、シリアライザーは式のコンテキストをコンテキスト スタックにプッシュします。 各式のコンテキストでは、スタック上に次の式のコンテキストを検出する親プロパティがあります。 これは、便利な走査機能を提供します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExpressionContext (System.CodeDom.CodeExpression expression, Type expressionType, object owner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeExpression expression, class System.Type expressionType, object owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.ExpressionContext.#ctor(System.CodeDom.CodeExpression,System.Type,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="expression" Type="System.CodeDom.CodeExpression" />
+        <Parameter Name="expressionType" Type="System.Type" />
+        <Parameter Name="owner" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="expression">指定したコード式。</param>
+        <param name="expressionType">指定したコード式の型。</param>
+        <param name="owner">指定したコード式の所有者。</param>
+        <summary>指定した式と所有者を使用して、<see cref="T:System.ComponentModel.Design.Serialization.ExpressionContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="expression" />、<paramref name="expressionType" />、または <paramref name="owner" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExpressionContext (System.CodeDom.CodeExpression expression, Type expressionType, object owner, object presetValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeExpression expression, class System.Type expressionType, object owner, object presetValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.ExpressionContext.#ctor(System.CodeDom.CodeExpression,System.Type,System.Object,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="expression" Type="System.CodeDom.CodeExpression" />
+        <Parameter Name="expressionType" Type="System.Type" />
+        <Parameter Name="owner" Type="System.Object" />
+        <Parameter Name="presetValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="expression">指定したコード式。</param>
+        <param name="expressionType">指定したコード式の型。</param>
+        <param name="owner">指定したコード式の所有者。</param>
+        <param name="presetValue">指定したコード式の事前定義された値。</param>
+        <summary>現在の値を指定して、<see cref="T:System.ComponentModel.Design.Serialization.ExpressionContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="expression" />、<paramref name="expressionType" />、または <paramref name="owner" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Expression">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeExpression Expression { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeExpression Expression" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.Serialization.ExpressionContext.Expression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeExpression</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコンテキストを表す式を取得します。</summary>
+        <value>このコンテキストを表す式です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpressionType">
+      <MemberSignature Language="C#" Value="public Type ExpressionType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ExpressionType" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.Serialization.ExpressionContext.ExpressionType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Type" />式のです。</summary>
+        <value>式の <see cref="T:System.Type" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます<xref:System.ComponentModel.Design.Serialization.ExpressionContext>を式に割り当てるときに、キャストが必要なかどうかを判断します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Owner">
+      <MemberSignature Language="C#" Value="public object Owner { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Owner" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.Serialization.ExpressionContext.Owner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この式を所有するオブジェクトを取得します。</summary>
+        <value>この式を所有するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 式がへのプロパティ参照である場合、<xref:System.Windows.Forms.Control.Text%2A>のインスタンスのプロパティ<xref:System.Windows.Forms.Button>と呼ばれる`button1`、<xref:System.ComponentModel.Design.Serialization.ExpressionContext.Owner%2A>返します`button1`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PresetValue">
+      <MemberSignature Language="C#" Value="public object PresetValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object PresetValue" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.Serialization.ExpressionContext.PresetValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>式の事前設定された値を取得します。</summary>
+        <value>この式の事前定義された値または<see langword="null" />割り当てられていない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つ存在する必要があります、式の事前設定された値が含まれています。 たとえば、式が参照するプロパティの参照を式で、<xref:System.Windows.Forms.Control.Controls%2A>のプロパティ、 <xref:System.Windows.Forms.Button>、<xref:System.ComponentModel.Design.Serialization.ExpressionContext.PresetValue%2A>プロパティにはインスタンスが含まれています、<xref:System.Windows.Forms.Control.Controls%2A>プロパティです。 これは、プロパティは読み取り専用と値を格納するオブジェクトによって事前に設定されたためにです。 一方などのプロパティ<xref:System.Windows.Forms.Control.Text%2A>または<xref:System.Windows.Forms.Control.Visible%2A>事前設定された値が含まれないため、<xref:System.ComponentModel.Design.Serialization.ExpressionContext.PresetValue%2A>プロパティから返される`null`です。  
+  
+ 次の c# コードでは、シリアライザーがシリアル化を使用してこの情報をどのように使用する方法を示します。  
+  
+```csharp  
+Padding p = new Padding();  
+p.Left = 5;  
+button1.Padding = p;  
+  
+button1.Padding.Left = 5;  
+```  
+  
+ シリアライザー、<xref:System.Windows.Forms.Padding>構造体は、最初または 2 番目のフォームを生成する場合に通知する必要があります。 既定では、最初の形式が生成されます。 ある場合にのみ、2 番目の形式が生成、<xref:System.ComponentModel.Design.Serialization.ExpressionContext>コンテキスト スタックを含む、<xref:System.ComponentModel.Design.Serialization.ExpressionContext.PresetValue%2A>の値と等しい、<xref:System.Windows.Forms.Padding>現在シリアル化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,429 @@
+<Type Name="HtmlControlDesigner" FullName="System.Web.UI.Design.HtmlControlDesigner">
+  <TypeSignature Language="C#" Value="public class HtmlControlDesigner : System.ComponentModel.Design.ComponentDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HtmlControlDesigner extends System.ComponentModel.Design.ComponentDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.HtmlControlDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Design.ComponentDesigner</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET サーバー コントロールのデザイン時の基本的な機能を提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HtmlControlDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.HtmlControlDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.HtmlControlDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Behavior">
+      <MemberSignature Language="C#" Value="public System.Web.UI.Design.IHtmlControlDesignerBehavior Behavior { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Design.IHtmlControlDesignerBehavior Behavior" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.HtmlControlDesigner.Behavior" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("The recommended alternative is ControlDesigner.Tag. http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.IHtmlControlDesignerBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデザイナーに関連付けられている DHTML 動作を設定します。</summary>
+        <value><see cref="T:System.Web.UI.Design.IHtmlControlDesignerBehavior" />デザイナーに関連付けられています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.HtmlControlDesigner.Behavior%2A> は互換性のために残されています。 使用して、<xref:System.Web.UI.Design.IControlDesignerTag.SetAttribute%2A>と<xref:System.Web.UI.Design.IControlDesignerTag.GetAttribute%2A>のメソッド、<xref:System.Web.UI.Design.ControlDesigner.Tag%2A>スタイルにプロパティをマップするプロパティです。 使用して、<xref:System.Web.UI.Design.ContainerControlDesigner.GetDesignTimeCssAttributes%2A>メソッドを<xref:System.Web.UI.Design.ContainerControlDesigner>クラスをデザイン時に、コントロールのスタイルを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataBindings">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataBindingCollection DataBindings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.DataBindingCollection DataBindings" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.HtmlControlDesigner.DataBindings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataBindingCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のコントロールのデータ バインディングのコレクションを取得します。</summary>
+        <value>A<see cref="T:System.Web.UI.DataBindingCollection" />現在のコントロールのデータ バインディングを格納します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesignTimeElement">
+      <MemberSignature Language="C#" Value="protected object DesignTimeElement { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DesignTimeElement" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.HtmlControlDesigner.DesignTimeElement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Error: This property can no longer be referenced, and is included to support existing compiled applications. The design-time element may not always provide access to the element in the markup. There are alternate methods on WebFormsRootDesigner for handling client script and controls. http://go.microsoft.com/fwlink/?linkid=14202", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられているコントロールを表すデザイン時のオブジェクトを取得、<see cref="T:System.Web.UI.Design.HtmlControlDesigner" />デザイン サーフェイス上のオブジェクト。</summary>
+        <value>デザイン時のオブジェクトに関連付けられているコントロールを表す、<see cref="T:System.Web.UI.Design.HtmlControlDesigner" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.HtmlControlDesigner.DesignTimeElement%2A>に関連付けられているコントロールを表すデザイン時のオブジェクトを取得するプロパティが、デザイナーによって使用される、<xref:System.Web.UI.Design.HtmlControlDesigner>デザイン サーフェイス上のオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.HtmlControlDesigner.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Web.UI.Design.HtmlControlDesigner" /> オブジェクトによって使用されているアンマネージ リソースを解放します。オプションでマネージ リソースも解放できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック`Dispose()`メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 `Dispose()`プロテクト呼び出します`Dispose(Boolean)`メソッドを`disposing`パラメーターに設定`true`です。 <xref:System.Object.Finalize%2A>呼び出す`Dispose`で`disposing`'éý'`false`です。  
+  
+ `disposing` パラメーターが `true` の場合、このメソッドは、この <xref:System.Web.UI.Design.HtmlControlDesigner> が参照しているすべてのマネージ オブジェクトによって保持されているリソースをすべて解放します。 このメソッドは、参照される各オブジェクトの `Dispose()` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 <see langword="Dispose(Boolean)" /> をオーバーライドする場合は、以前に <see langword="Dispose" /> を呼び出したときに破棄されたオブジェクトを参照しないように注意する必要があります。 実装する方法の詳細についての<see langword="Dispose(Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see langword="Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Expressions">
+      <MemberSignature Language="C#" Value="public System.Web.UI.ExpressionBindingCollection Expressions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ExpressionBindingCollection Expressions" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.HtmlControlDesigner.Expressions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ExpressionBindingCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイン時に現在のコントロールの式のバインドを取得します。</summary>
+        <value><see cref="T:System.Web.UI.ExpressionBindingCollection" />文字列が現在のコントロールのプロパティを設定する式を格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイン ホストなど[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]を使用して、<xref:System.Web.Compilation.ExpressionBuilder>を取得するクラス、<xref:System.Web.UI.Design.ExpressionEditor>を取得するクラス、<xref:System.Web.UI.Design.ExpressionEditorSheet>デザイン時にコントロールのプロパティの式を設定します。 式の文字列は、ローカライズ可能なリソース、アプリケーション設定は、接続文字列、またはカスタム式の型を参照します。  
+  
+ <xref:System.Web.UI.Design.HtmlControlDesigner.Expressions%2A>コレクションが含まれています、<xref:System.Web.UI.ExpressionBinding>の各コントロールのプロパティを関連付けられている式の文字列を持つ要素。 各<xref:System.Web.UI.ExpressionBinding.ExpressionPrefix%2A>の各要素に対してプロパティが関連付けられている式ビルダーの実装を示します。 式の文字列が解析され、それに関連付けられたによって評価される<xref:System.Web.Compilation.ExpressionBuilder>を実行時にコントロールのプロパティ値を決定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (System.ComponentModel.IComponent component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(class System.ComponentModel.IComponent component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.HtmlControlDesigner.Initialize(System.ComponentModel.IComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="component">設計のためのコントロール要素。</param>
+        <summary>デザイナーを初期化し、デザイン用のコンポーネントを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ControlDesigner.Initialize%2A>メソッドは、デザイナーを初期化するために、デザイナー ホストによって呼び出される必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>初期化中に、使用、<see cref="M:System.Web.UI.Design.IControlDesignerTag.SetAttribute(System.String,System.String)" />と<see cref="M:System.Web.UI.Design.IControlDesignerTag.GetAttribute(System.String)" />のメソッド、<see cref="P:System.Web.UI.Design.ControlDesigner.Tag" />スタイルにプロパティをマップするプロパティです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBehaviorAttached">
+      <MemberSignature Language="C#" Value="protected virtual void OnBehaviorAttached ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnBehaviorAttached() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.HtmlControlDesigner.OnBehaviorAttached" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("The recommended alternative is ControlDesigner.Tag. http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>動作は、要素に関連付けられたときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.HtmlControlDesigner.OnBehaviorAttached%2A>メソッドは今後使用しません。 使用して、<xref:System.Web.UI.Design.IControlDesignerTag.SetAttribute%2A>と<xref:System.Web.UI.Design.IControlDesignerTag.GetAttribute%2A>のメソッド、<xref:System.Web.UI.Design.ControlDesigner.Tag%2A>スタイルにプロパティをマップするプロパティです。 使用して、<xref:System.Web.UI.Design.ContainerControlDesigner.GetDesignTimeCssAttributes%2A>メソッドを<xref:System.Web.UI.Design.ContainerControlDesigner>クラスをデザイン時に、コントロールのスタイルを設定します。 上書き、<xref:System.Web.UI.Design.HtmlControlDesigner.Initialize%2A>デザイン時に、コントロールの初期のスタイルを操作するメソッド。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para><see cref="M:System.Web.UI.Design.HtmlControlDesigner.OnBehaviorAttached" />メソッドをオーバーライドされ、動作がデザイナーに関連付けられている場合、追加の処理を実行するために実装できます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBehaviorDetaching">
+      <MemberSignature Language="C#" Value="protected virtual void OnBehaviorDetaching ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnBehaviorDetaching() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.HtmlControlDesigner.OnBehaviorDetaching" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("The recommended alternative is ControlDesigner.Tag. http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>動作の要素から関連付け解除されるときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.HtmlControlDesigner.OnBehaviorDetaching%2A>メソッドは今後使用しません。 使用して、<xref:System.Web.UI.Design.IControlDesignerTag.SetAttribute%2A>と<xref:System.Web.UI.Design.IControlDesignerTag.GetAttribute%2A>のメソッド、<xref:System.Web.UI.Design.ControlDesigner.Tag%2A>スタイルにプロパティをマップするプロパティです。 使用して、<xref:System.Web.UI.Design.ContainerControlDesigner.GetDesignTimeCssAttributes%2A>メソッドを<xref:System.Web.UI.Design.ContainerControlDesigner>クラスをデザイン時に、コントロールのスタイルを設定します。 上書き、<xref:System.Web.UI.Design.HtmlControlDesigner.Dispose%2A>はデザイナーのオブジェクトの解放前に、アクションを実行するコントロール デザイナーのメソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>M:System.Web.UI.Design.HtmlControlDesigner.OnBehaviorDetaching メソッドをオーバーライドし、動作がデザイナーからデタッチされると、追加の処理を実行するために実装できます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBindingsCollectionChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnBindingsCollectionChanged (string propName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnBindingsCollectionChanged(string propName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.HtmlControlDesigner.OnBindingsCollectionChanged(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("The recommended alternative is to handle the Changed event on the DataBindings collection. The DataBindings collection allows more control of the databindings associated with the control. http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propName">変更されたプロパティの名前。</param>
+        <summary>データ バインディングが変更されたときを示すために使用できるメソッドを提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.HtmlControlDesigner.OnBindingsCollectionChanged%2A>コントロール デザイナーがコントロールのデータ バインドに変更を行った後は、コントロール デザイナーがメソッドを呼び出す必要があります。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.HtmlControlDesigner.OnBindingsCollectionChanged%2A>メソッドは今後使用しません。 使用して、<xref:System.Web.UI.DataBindingCollection.Changed>でイベントを<xref:System.Web.UI.Design.HtmlControlDesigner.DataBindings%2A>同等のコントロール デザイナーの機能のコレクション。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para><see cref="M:System.Web.UI.Design.HtmlControlDesigner.OnBindingsCollectionChanged(System.String)" />メソッドをオーバーライドされ、データ バインド コントロールのコレクションが変更されたときに、追加の処理を実行するために実装できます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSetParent">
+      <MemberSignature Language="C#" Value="public virtual void OnSetParent ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnSetParent() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.HtmlControlDesigner.OnSetParent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>親コントロールに関連付けられているコントロールが関連付けられている場合、追加の処理を実行する方法を提供します。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para><see cref="M:System.Web.UI.Design.HtmlControlDesigner.OnSetParent" />メソッドをオーバーライドされ、デザイナーが親コントロールに関連付けられている場合、追加の処理を実行するために実装できます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="PreFilterEvents">
+      <MemberSignature Language="C#" Value="protected override void PreFilterEvents (System.Collections.IDictionary events);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void PreFilterEvents(class System.Collections.IDictionary events) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.HtmlControlDesigner.PreFilterEvents(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="events" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="events"><see cref="T:System.Collections.IDictionary" />を公開するコンポーネントのイベントの名前を格納しています。</param>
+        <summary>デザイン時に公開されているイベントの一覧を設定、<see cref="T:System.ComponentModel.TypeDescriptor" />コンポーネントのオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.HtmlControlDesigner.PreFilterEvents%2A>メソッドは、項目を追加したり、デザイナーがを介して公開するイベントのディクショナリから項目を削除する方法を提供する<xref:System.ComponentModel.TypeDescriptor>オブジェクト。  
+  
+ イベントのディクショナリのキーは、イベントの名前です。 オブジェクトの型が<xref:System.ComponentModel.PropertyDescriptor>です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>を通じてアクセス可能なディクショナリは、直接変更<paramref name="events" />ディクショナリをそのままにしておくことができますか。 オーバーライドする場合、<see cref="M:System.Web.UI.Design.HtmlControlDesigner.PreFilterEvents(System.Collections.IDictionary)" />メソッド、独自のフィルター処理を実行する前に、基本実装を呼び出します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="PreFilterProperties">
+      <MemberSignature Language="C#" Value="protected override void PreFilterProperties (System.Collections.IDictionary properties);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void PreFilterProperties(class System.Collections.IDictionary properties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.HtmlControlDesigner.PreFilterProperties(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="properties" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="properties">コンポーネントのフィルターを適用するプロパティのセット。</param>
+        <summary>により、特定のプロパティのセットを公開するデザイナー、<see cref="T:System.ComponentModel.TypeDescriptor" />デザイン時のオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.HtmlControlDesigner.PreFilterProperties%2A>メソッドは、項目を追加したり、デザイナーがを介して公開するプロパティのディクショナリから項目を削除する方法を提供する<xref:System.ComponentModel.TypeDescriptor>オブジェクト。  
+  
+ プロパティのディクショナリのキーは、プロパティの名前です。 オブジェクトの型が<xref:System.ComponentModel.PropertyDescriptor>です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>を通じてアクセス可能なディクショナリは、直接変更<paramref name="properties" />ディクショナリをそのままにしておくことができますか。 オーバーライドする場合、<see cref="M:System.Web.UI.Design.HtmlControlDesigner.PreFilterProperties(System.Collections.IDictionary)" />メソッド、独自のフィルター処理を実行する前に、基本実装を呼び出します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldCodeSerialize">
+      <MemberSignature Language="C#" Value="public virtual bool ShouldCodeSerialize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShouldCodeSerialize" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.HtmlControlDesigner.ShouldCodeSerialize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use of this property is not recommended because code serialization is not supported. http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはシリアル化中に、現在のデザイン ドキュメントの分離コード ファイルでコントロールのフィールドの宣言を作成するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />、、の宣言を作成する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

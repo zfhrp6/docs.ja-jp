@@ -1,0 +1,426 @@
+<Type Name="ZipArchiveEntry" FullName="System.IO.Compression.ZipArchiveEntry">
+  <TypeSignature Language="C#" Value="public class ZipArchiveEntry" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ZipArchiveEntry extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IO.Compression.ZipArchiveEntry" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.Compression</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>zip アーカイブ内の圧縮ファイルを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Zip アーカイブには、圧縮されたファイルごとにエントリが含まれています。 <xref:System.IO.Compression.ZipArchiveEntry>クラスを使用すると、エントリのプロパティを確認し、開くか、エントリを削除します。 エントリを開くときに、圧縮されたファイルのストリームに書き込むことによって、圧縮されたファイルを変更できます。  
+  
+ Zip アーカイブや、ファイルのエントリを操作するための方法は 3 つのクラス間で分散: <xref:System.IO.Compression.ZipFile>、<xref:System.IO.Compression.ZipArchive>と<xref:System.IO.Compression.ZipArchiveEntry>です。  
+  
+|宛先。。。|使用するケース|  
+|---------|----------|  
+|ディレクトリからの zip のアーカイブを作成します。|<xref:System.IO.Compression.ZipFile.CreateFromDirectory%2A?displayProperty=nameWithType>|  
+|ディレクトリの zip アーカイブのコンテンツを抽出します。|<xref:System.IO.Compression.ZipFile.ExtractToDirectory%2A?displayProperty=nameWithType>|  
+|既存の zip アーカイブを新しいファイルを追加します。|<xref:System.IO.Compression.ZipArchive.CreateEntry%2A?displayProperty=nameWithType>|  
+|Zip アーカイブ内でファイルを取得します。|<xref:System.IO.Compression.ZipArchive.GetEntry%2A?displayProperty=nameWithType>|  
+|Zip アーカイブ内のファイルをすべて取得します。|<xref:System.IO.Compression.ZipArchive.Entries%2A?displayProperty=nameWithType>|  
+|Zip アーカイブに含まれる個々 のファイル ストリームを開く|<xref:System.IO.Compression.ZipArchiveEntry.Open%2A?displayProperty=nameWithType>|  
+|Zip アーカイブからファイルを削除します。|<xref:System.IO.Compression.ZipArchiveEntry.Delete%2A?displayProperty=nameWithType>|  
+  
+ 参照する場合、`System.IO.Compression.FileSystem`プロジェクトでアセンブリの 2 つの拡張メソッドをアクセスすることができます、<xref:System.IO.Compression.ZipArchiveEntry>クラスです。 これらのメソッドは<xref:System.IO.Compression.ZipFileExtensions.ExtractToFile%28System.IO.Compression.ZipArchiveEntry%2CSystem.String%29>と<xref:System.IO.Compression.ZipFileExtensions.ExtractToFile%28System.IO.Compression.ZipArchiveEntry%2CSystem.String%2CSystem.Boolean%29>ファイルにエントリの内容を圧縮解除することができるとします。 `System.IO.Compression.FileSystem`アセンブリでは使用できません[!INCLUDE[win8](~/includes/win8-md.md)]です。 [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)]アプリを使用して、アーカイブのコンテンツを圧縮解除できます<xref:System.IO.Compression.DeflateStream>または<xref:System.IO.Compression.GZipStream>、または使用することができます、[!INCLUDE[wrt](~/includes/wrt-md.md)]型[圧縮](http://go.microsoft.com/fwlink/p/?LinkId=246357)と[圧縮解除プログラム](http://go.microsoft.com/fwlink/?LinkId=246358)して、ファイルを圧縮します。  
+  
+   
+  
+## Examples  
+ 最初の例では、zip アーカイブに新しいエントリを作成し、書き込みにする方法を示します。  
+  
+ [!code-csharp[System.IO.Compression.ZipArchiveMode#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.compression.ziparchivemode/cs/program1.cs#1)]
+ [!code-vb[System.IO.Compression.ZipArchiveMode#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.compression.ziparchivemode/vb/program1.vb#1)]  
+  
+ 2 番目の例を使用する方法を示しています、<xref:System.IO.Compression.ZipFileExtensions.ExtractToFile%28System.IO.Compression.ZipArchiveEntry%2CSystem.String%29>拡張メソッド。 参照する必要があります、`System.IO.Compression.FileSystem`を実行するコードには、プロジェクト内のアセンブリ。  
+  
+ [!code-csharp[System.IO.Compression.ZipArchive#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.compression.ziparchive/cs/program1.cs#1)]
+ [!code-vb[System.IO.Compression.ZipArchive#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.compression.ziparchive/vb/program1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Archive">
+      <MemberSignature Language="C#" Value="public System.IO.Compression.ZipArchive Archive { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IO.Compression.ZipArchive Archive" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Compression.ZipArchiveEntry.Archive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Compression.ZipArchive</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エントリが属する zip アーカイブを取得します。</summary>
+        <value>エントリが属する zip アーカイブまたは<see langword="null" />エントリが削除されている場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompressedLength">
+      <MemberSignature Language="C#" Value="public long CompressedLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 CompressedLength" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Compression.ZipArchiveEntry.CompressedLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>zip アーカイブ内のエントリの圧縮サイズを取得します。</summary>
+        <value>zip アーカイブ内のエントリの圧縮サイズ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ モードが に設定されているときに、このプロパティを取得できません<xref:System.IO.Compression.ZipArchiveMode.Create>に設定されているモードまたは<xref:System.IO.Compression.ZipArchiveMode.Update>エントリが開かれたとします。  
+  
+   
+  
+## Examples  
+ 次の例では、zip アーカイブ内のエントリを取得し、エントリのプロパティを評価する方法を示します。 使用して、 <xref:System.IO.Compression.ZipArchiveEntry.Name%2A> 、エントリの名前を表示するプロパティと<xref:System.IO.Compression.ZipArchiveEntry.Length%2A>と<xref:System.IO.Compression.ZipArchiveEntry.CompressedLength%2A>をどの程度ファイルの圧縮を計算するプロパティです。  
+  
+ [!code-csharp[System.IO.Compression.ZipArchiveEntry#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.compression.ziparchiveentry/cs/program1.cs#1)]
+ [!code-vb[System.IO.Compression.ZipArchiveEntry#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.compression.ziparchiveentry/vb/program1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">エントリが変更されたために、プロパティの値は使用できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Delete">
+      <MemberSignature Language="C#" Value="public void Delete ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Delete() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Compression.ZipArchiveEntry.Delete" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>zip アーカイブからエントリを削除します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.IO.IOException">エントリは、既に読み取りまたは書き込み用に開かれています。</exception>
+        <exception cref="T:System.NotSupportedException">このエントリの zip アーカイブが以外のモードで開かれた<see cref="F:System.IO.Compression.ZipArchiveMode.Update" />です。</exception>
+        <exception cref="T:System.ObjectDisposedException">このエントリの zip アーカイブが破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExternalAttributes">
+      <MemberSignature Language="C#" Value="public int ExternalAttributes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ExternalAttributes" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Compression.ZipArchiveEntry.ExternalAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FullName">
+      <MemberSignature Language="C#" Value="public string FullName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FullName" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Compression.ZipArchiveEntry.FullName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>zip アーカイブ内のエントリの相対パスを取得します。</summary>
+        <value>zip アーカイブ内のエントリの相対パス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Compression.ZipArchiveEntry.FullName%2A>プロパティには、zip アーカイブのエントリのサブディレクトリ階層を含む、相対パスが含まれています。 (これに対し、<xref:System.IO.Compression.ZipArchiveEntry.Name%2A>プロパティは、エントリの名前のみが含まれており、サブディレクトリ階層には含まれません)。使用して、zip アーカイブ内の 2 つのエントリを作成する場合など、<xref:System.IO.Compression.ZipFileExtensions.CreateEntryFromFile%2A>メソッドを提供および`NewEntry.txt`の最初のエントリの名前としてと`AddedFolder\\NewEntry.txt`両方のエントリを持つ 2 番目のエントリの`NewEntry.txt`で、<xref:System.IO.Compression.ZipArchiveEntry.Name%2A>プロパティです。 最初のエントリがあります`NewEntry.txt`で、<xref:System.IO.Compression.ZipArchiveEntry.FullName%2A>プロパティが 2 番目のエントリが`AddedFolder\\NewEntry.txt`で、<xref:System.IO.Compression.ZipArchiveEntry.FullName%2A>プロパティです。  
+  
+ 無効なと絶対パスを指定する文字列を含む、エントリのパスとして、任意の文字列を指定できます。 したがって、<xref:System.IO.Compression.ZipArchiveEntry.FullName%2A>プロパティが正しくフォーマットされていない値を含めることがあります。 Zip アーカイブのコンテンツを抽出するときに、例外が、無効なまたは絶対パスがあります。  
+  
+   
+  
+## Examples  
+ 次の例では、ファイルは .zip ファイルの内容を反復処理し、.txt 拡張子を含むファイルを抽出する方法を示します。  
+  
+ [!code-csharp[System.IO.Compression.ZipArchive#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.compression.ziparchive/cs/program1.cs#1)]
+ [!code-vb[System.IO.Compression.ZipArchive#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.compression.ziparchive/vb/program1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastWriteTime">
+      <MemberSignature Language="C#" Value="public DateTimeOffset LastWriteTime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTimeOffset LastWriteTime" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Compression.ZipArchiveEntry.LastWriteTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTimeOffset</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>zip アーカイブのエントリが最後に変更されたときを取得または設定します。</summary>
+        <value>zip アーカイブ内のエントリが最後に変更された時間。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときにエントリを作成する新しい既存のファイルから呼び出すことによって、 <xref:System.IO.Compression.ZipFileExtensions.CreateEntryFromFile%2A> 、メソッド、<xref:System.IO.Compression.ZipArchiveEntry.LastWriteTime%2A>プロパティ エントリが自動的にセットの最後にファイルが変更されました。 ときにエントリを作成する新しいプログラムで呼び出すことによって、 <xref:System.IO.Compression.ZipArchive.CreateEntry%2A> 、メソッド、<xref:System.IO.Compression.ZipArchiveEntry.LastWriteTime%2A>エントリのプロパティは自動的に実行時に設定します。 明示的に設定する必要がある、エントリを変更する場合、<xref:System.IO.Compression.ZipArchiveEntry.LastWriteTime%2A>プロパティ値を最新の変更の時刻を反映するようにする場合。  
+  
+ このプロパティを設定すると、<xref:System.DateTimeOffset>値は zip アーカイブに固有のタイムスタンプの形式に変換します。 この形式は、2 秒の解像度をサポートします。 許容可能な最初の値は 1980 年 1 月 1 日 0:00:00 (午前 0 時)。 許可されている最新の値を指定するは 2107 は 12 月 31 日 23時 59分: 58 (1 秒前に午前 0 時)。 最終書き込み時刻の値が有効でない場合、プロパティを返します、既定値は 1980 年 1 月 1日 0:00:00 (午前 0 時)。  
+  
+   
+  
+## Examples  
+ 次の例は、zip アーカイブ内のエントリを開き、変更、および設定する方法を示しています、<xref:System.IO.Compression.ZipArchiveEntry.LastWriteTime%2A>プロパティを現在の時刻。  
+  
+ [!code-csharp[System.IO.Compression.ZipArchiveEntry#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.compression.ziparchiveentry/cs/program2.cs#2)]
+ [!code-vb[System.IO.Compression.ZipArchiveEntry#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.compression.ziparchiveentry/vb/program2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">このプロパティを設定するため、失敗しました、エントリの zip アーカイブが<see cref="F:System.IO.Compression.ZipArchiveMode.Read" />モード。</exception>
+        <exception cref="T:System.IO.IOException">アーカイブ モードに設定されて<see cref="F:System.IO.Compression.ZipArchiveMode.Create" />です。  
+  
+ \- または  
+  
+ アーカイブ モードに設定されて<see cref="F:System.IO.Compression.ZipArchiveMode.Update" />エントリが開かれたとします。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">このプロパティ値がいずれかの 1980年より前 1 月 1 日に設定しようとしましたが 0:00:00 (午前 0 時) または 2107 12 月 31 日より後 23時 59分: 58 (1 秒前に午前 0 時)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Length">
+      <MemberSignature Language="C#" Value="public long Length { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 Length" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Compression.ZipArchiveEntry.Length" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>zip アーカイブ内のエントリの非圧縮サイズを取得します。</summary>
+        <value>zip アーカイブ内のエントリの非圧縮サイズ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ モードが に設定されているときに、このプロパティを取得できません<xref:System.IO.Compression.ZipArchiveMode.Create>に設定されているモードまたは<xref:System.IO.Compression.ZipArchiveMode.Update>エントリが開かれたとします。  
+  
+   
+  
+## Examples  
+ 次の例では、zip アーカイブからエントリを取得し、エントリのプロパティを評価する方法を示します。 使用して、 <xref:System.IO.Compression.ZipArchiveEntry.Name%2A> 、エントリの名前を表示するプロパティと<xref:System.IO.Compression.ZipArchiveEntry.Length%2A>と<xref:System.IO.Compression.ZipArchiveEntry.CompressedLength%2A>をどの程度ファイルの圧縮を計算するプロパティです。  
+  
+ [!code-csharp[System.IO.Compression.ZipArchiveEntry#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.compression.ziparchiveentry/cs/program1.cs#1)]
+ [!code-vb[System.IO.Compression.ZipArchiveEntry#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.compression.ziparchiveentry/vb/program1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">エントリが変更されたために、プロパティの値は使用できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Compression.ZipArchiveEntry.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>zip アーカイブ内のエントリのファイル名を取得します。</summary>
+        <value>zip アーカイブ内のエントリのファイル名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Compression.ZipArchiveEntry.Name%2A>プロパティの部分を格納する、<xref:System.IO.Compression.ZipArchiveEntry.FullName%2A>最終的なディレクトリの区切り記号に続くプロパティ (\\)、サブディレクトリ階層が含まれていません。 使用して、zip アーカイブ内の 2 つのエントリを作成する場合など、<xref:System.IO.Compression.ZipFileExtensions.CreateEntryFromFile%2A>メソッドを提供および`NewEntry.txt`の最初のエントリの名前としてと`AddedFolder\\NewEntry.txt`両方のエントリを持つ 2 番目のエントリの`NewEntry.txt`で、<xref:System.IO.Compression.ZipArchiveEntry.Name%2A>プロパティです。 最初のエントリがあります`NewEntry.txt`で、<xref:System.IO.Compression.ZipArchiveEntry.FullName%2A>プロパティが 2 番目のエントリが`AddedFolder\\NewEntry.txt`で、<xref:System.IO.Compression.ZipArchiveEntry.FullName%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、zip アーカイブからエントリを取得し、エントリのプロパティを評価する方法を示します。 使用して、 <xref:System.IO.Compression.ZipArchiveEntry.Name%2A> 、エントリの名前を表示するプロパティと<xref:System.IO.Compression.ZipArchiveEntry.Length%2A>と<xref:System.IO.Compression.ZipArchiveEntry.CompressedLength%2A>をどの程度ファイルの圧縮を計算するプロパティです。  
+  
+ [!code-csharp[System.IO.Compression.ZipArchiveEntry#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.compression.ziparchiveentry/cs/program1.cs#1)]
+ [!code-vb[System.IO.Compression.ZipArchiveEntry#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.compression.ziparchiveentry/vb/program1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Open">
+      <MemberSignature Language="C#" Value="public System.IO.Stream Open ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Stream Open() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Compression.ZipArchiveEntry.Open" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>zip のアーカイブからエントリを開きます。</summary>
+        <returns>エントリの内容を表すストリーム。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Zip アーカイブのエントリのストリームにアクセスするのにには、このメソッドを使用します。 ストリームを取得するには後からの読み取りまたはストリームに書き込むできます。 ストリームに記述するときに、エントリを加えた場合は、zip アーカイブに表示されます。  
+  
+   
+  
+## Examples  
+ 次の例では、新しいエントリを作成するには、ファイルを開く方法、<xref:System.IO.Compression.ZipArchiveEntry.Open%2A>メソッド、およびストリームに書き込むためのです。  
+  
+ [!code-csharp[System.IO.Compression.ZipArchiveMode#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.compression.ziparchivemode/cs/program1.cs#1)]
+ [!code-vb[System.IO.Compression.ZipArchiveMode#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.compression.ziparchivemode/vb/program1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">エントリが現在開いている書き込み用では既にです。  
+  
+ または  
+  
+ エントリはアーカイブから削除されました。  
+  
+ または  
+  
+ このエントリのアーカイブがで開かれた、<see cref="F:System.IO.Compression.ZipArchiveMode.Create" />モード、およびこのエントリが既にに書き込まれました。</exception>
+        <exception cref="T:System.IO.InvalidDataException">エントリがあるか、ありませんアーカイブからまたはが破損しているして読み取ることができません。  
+  
+ または  
+  
+ サポートされていない圧縮方式を使用してエントリが圧縮されています。</exception>
+        <exception cref="T:System.ObjectDisposedException">このエントリの zip アーカイブが破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Compression.ZipArchiveEntry.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>zip アーカイブ内のエントリの相対パスを取得します。</summary>
+        <returns>格納されている値であると、エントリの相対パス、<see cref="P:System.IO.Compression.ZipArchiveEntry.FullName" />プロパティです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

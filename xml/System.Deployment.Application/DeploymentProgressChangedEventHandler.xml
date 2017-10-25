@@ -1,0 +1,32 @@
+<Type Name="DeploymentProgressChangedEventHandler" FullName="System.Deployment.Application.DeploymentProgressChangedEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void DeploymentProgressChangedEventHandler(object sender, DeploymentProgressChangedEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DeploymentProgressChangedEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Deployment.Application.DeploymentProgressChangedEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Deployment</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Deployment.Application.DeploymentProgressChangedEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Deployment.Application.DeploymentProgressChangedEventArgs" />。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Deployment.Application.ApplicationDeployment.CheckForUpdateProgressChanged" />イベント、<see cref="E:System.Deployment.Application.ApplicationDeployment.UpdateProgressChanged" />イベント、または<see cref="E:System.Deployment.Application.ApplicationDeployment.DownloadFileGroupProgressChanged" />のイベント、<see cref="T:System.Deployment.Application.ApplicationDeployment" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Deployment.Application.DeploymentProgressChangedEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

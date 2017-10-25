@@ -1,0 +1,770 @@
+<Type Name="TextLine" FullName="System.Windows.Media.TextFormatting.TextLine">
+  <TypeSignature Language="C#" Value="public abstract class TextLine : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit TextLine extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.TextFormatting.TextLine" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>行のテキストを書式指定サービスをサポートするためには、抽象クラスを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TextLine ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.TextLine.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.TextFormatting.TextLine" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TextLine (double pixelsPerDip);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(float64 pixelsPerDip) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.TextLine.#ctor(System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="pixelsPerDip" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="pixelsPerDip">
+          <c>pixelsPerDip</c> TextSource の PixelsPerDip 値に設定する必要があります。</param>
+        <summary><see cref="T:System.Windows.Media.TextFormatting.TextLine" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター呼び出しが必要なすべてのクラスから継承される<xref:System.Windows.Media.TextFormatting.TextLine>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Baseline">
+      <MemberSignature Language="C#" Value="public abstract double Baseline { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Baseline" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextLine.Baseline" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の基準に上部からの距離を取得<see cref="T:System.Windows.Media.TextFormatting.TextLine" />オブジェクト。</summary>
+        <value>A<see cref="T:System.Double" />基準の距離を表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Collapse">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.Media.TextFormatting.TextLine Collapse (params System.Windows.Media.TextFormatting.TextCollapsingProperties[] collapsingPropertiesList);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Media.TextFormatting.TextLine Collapse(class System.Windows.Media.TextFormatting.TextCollapsingProperties[] collapsingPropertiesList) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.TextLine.Collapse(System.Windows.Media.TextFormatting.TextCollapsingProperties[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.TextFormatting.TextLine</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collapsingPropertiesList" Type="System.Windows.Media.TextFormatting.TextCollapsingProperties[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="collapsingPropertiesList">一連の<see cref="T:System.Windows.Media.TextFormatting.TextCollapsingProperties" />折りたたまれているテキストのプロパティを表すオブジェクト。</param>
+        <summary>折りたたまれたテキストのプロパティに基づく折りたたまれている行を作成します。</summary>
+        <returns>A<see cref="T:System.Windows.Media.TextFormatting.TextLine" />を表示できる折りたたまれている行を表す値です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DependentLength">
+      <MemberSignature Language="C#" Value="public abstract int DependentLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DependentLength" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextLine.DependentLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の行の再フォーマットをトリガーする行の最後の文字の文字数を取得します。</summary>
+        <value><see cref="T:System.Int32" />を文字数を表す値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public abstract void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.TextLine.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>によって使用されるすべてのマネージ コードとアンマネージ リソースを解放、<see cref="T:System.Windows.Media.TextFormatting.TextFormatter" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Draw">
+      <MemberSignature Language="C#" Value="public abstract void Draw (System.Windows.Media.DrawingContext drawingContext, System.Windows.Point origin, System.Windows.Media.TextFormatting.InvertAxes inversion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Draw(class System.Windows.Media.DrawingContext drawingContext, valuetype System.Windows.Point origin, valuetype System.Windows.Media.TextFormatting.InvertAxes inversion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.TextLine.Draw(System.Windows.Media.DrawingContext,System.Windows.Point,System.Windows.Media.TextFormatting.InvertAxes)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="drawingContext" Type="System.Windows.Media.DrawingContext" />
+        <Parameter Name="origin" Type="System.Windows.Point" />
+        <Parameter Name="inversion" Type="System.Windows.Media.TextFormatting.InvertAxes" />
+      </Parameters>
+      <Docs>
+        <param name="drawingContext"><see cref="T:System.Windows.Media.DrawingContext" />先となるオブジェクト、<see cref="T:System.Windows.Media.TextFormatting.TextLine" />が表示されます。</param>
+        <param name="origin">A<see cref="T:System.Windows.Point" />描画の原点を表す値です。</param>
+        <param name="inversion">列挙<see cref="T:System.Windows.Media.TextFormatting.InvertAxes" />描画サーフェイスの水平方向および垂直の軸の反転を示す値。</param>
+        <summary>指定した <see cref="T:System.Windows.Media.DrawingContext" /> に基づいて <see cref="T:System.Windows.Media.TextFormatting.TextLine" /> オブジェクトを表示します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Extent">
+      <MemberSignature Language="C#" Value="public abstract double Extent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Extent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextLine.Extent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最上位から最下位行の黒のピクセルへの距離を取得します。</summary>
+        <value>A<see cref="T:System.Double" />エクステントの距離を表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBackspaceCaretCharacterHit">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.Media.TextFormatting.CharacterHit GetBackspaceCaretCharacterHit (System.Windows.Media.TextFormatting.CharacterHit characterHit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Windows.Media.TextFormatting.CharacterHit GetBackspaceCaretCharacterHit(valuetype System.Windows.Media.TextFormatting.CharacterHit characterHit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.TextLine.GetBackspaceCaretCharacterHit(System.Windows.Media.TextFormatting.CharacterHit)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.TextFormatting.CharacterHit</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="characterHit" Type="System.Windows.Media.TextFormatting.CharacterHit" />
+      </Parameters>
+      <Docs>
+        <param name="characterHit">現在の <see cref="T:System.Windows.Media.TextFormatting.CharacterHit" /> オブジェクト。</param>
+        <summary>バック スペース後ヒット前の文字を取得します。</summary>
+        <returns><see cref="T:System.Windows.Media.TextFormatting.CharacterHit" />バック スペース後のオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCharacterHitFromDistance">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.Media.TextFormatting.CharacterHit GetCharacterHitFromDistance (double distance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Windows.Media.TextFormatting.CharacterHit GetCharacterHitFromDistance(float64 distance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.TextLine.GetCharacterHitFromDistance(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.TextFormatting.CharacterHit</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="distance" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="distance">A<see cref="T:System.Double" />行の先頭からの距離を表す値です。</param>
+        <summary>行の先頭から指定された距離に対応する文字のヒットを取得します。</summary>
+        <returns><see cref="T:System.Windows.Media.TextFormatting.CharacterHit" />内の指定したオブジェクト<paramref name="distance" />行の先頭からです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テキスト フローの方向は、距離の測定方法を決定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDistanceFromCharacterHit">
+      <MemberSignature Language="C#" Value="public abstract double GetDistanceFromCharacterHit (System.Windows.Media.TextFormatting.CharacterHit characterHit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance float64 GetDistanceFromCharacterHit(valuetype System.Windows.Media.TextFormatting.CharacterHit characterHit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.TextLine.GetDistanceFromCharacterHit(System.Windows.Media.TextFormatting.CharacterHit)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="characterHit" Type="System.Windows.Media.TextFormatting.CharacterHit" />
+      </Parameters>
+      <Docs>
+        <param name="characterHit"><see cref="T:System.Windows.Media.TextFormatting.CharacterHit" />オブジェクト クエリを実行する距離。</param>
+        <summary>指定した文字ヒットへの行の先頭からの距離を取得します。</summary>
+        <returns>A<see cref="T:System.Double" />行の先頭からの距離を表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テキスト フローの方向は、距離の測定方法を決定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIndexedGlyphRuns">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.Generic.IEnumerable&lt;System.Windows.Media.TextFormatting.IndexedGlyphRun&gt; GetIndexedGlyphRuns ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.Windows.Media.TextFormatting.IndexedGlyphRun&gt; GetIndexedGlyphRuns() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.TextLine.GetIndexedGlyphRuns" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Windows.Media.TextFormatting.IndexedGlyphRun&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>列挙する列挙子を取得<see cref="T:System.Windows.Media.TextFormatting.IndexedGlyphRun" />内のオブジェクト、<see cref="T:System.Windows.Media.TextFormatting.TextLine" />です。</summary>
+        <returns>使用すると、それぞれを列挙する列挙子<see cref="T:System.Windows.Media.TextFormatting.IndexedGlyphRun" />内のオブジェクト、<see cref="T:System.Windows.Media.TextFormatting.TextLine" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一覧を列挙することによって<xref:System.Windows.Media.TextFormatting.IndexedGlyphRun>オブジェクトをテキスト レイアウト クライアントは各テキストの基になる文字のグリフの情報を取得できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNextCaretCharacterHit">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.Media.TextFormatting.CharacterHit GetNextCaretCharacterHit (System.Windows.Media.TextFormatting.CharacterHit characterHit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Windows.Media.TextFormatting.CharacterHit GetNextCaretCharacterHit(valuetype System.Windows.Media.TextFormatting.CharacterHit characterHit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.TextLine.GetNextCaretCharacterHit(System.Windows.Media.TextFormatting.CharacterHit)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.TextFormatting.CharacterHit</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="characterHit" Type="System.Windows.Media.TextFormatting.CharacterHit" />
+      </Parameters>
+      <Docs>
+        <param name="characterHit">現在の <see cref="T:System.Windows.Media.TextFormatting.CharacterHit" /> オブジェクト。</param>
+        <summary>次の文字がキャレット ナビゲーションのヒットを取得します。</summary>
+        <returns>次<see cref="T:System.Windows.Media.TextFormatting.CharacterHit" />キャレット ナビゲーションに基づいてオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPreviousCaretCharacterHit">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.Media.TextFormatting.CharacterHit GetPreviousCaretCharacterHit (System.Windows.Media.TextFormatting.CharacterHit characterHit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Windows.Media.TextFormatting.CharacterHit GetPreviousCaretCharacterHit(valuetype System.Windows.Media.TextFormatting.CharacterHit characterHit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.TextLine.GetPreviousCaretCharacterHit(System.Windows.Media.TextFormatting.CharacterHit)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.TextFormatting.CharacterHit</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="characterHit" Type="System.Windows.Media.TextFormatting.CharacterHit" />
+      </Parameters>
+      <Docs>
+        <param name="characterHit">現在の <see cref="T:System.Windows.Media.TextFormatting.CharacterHit" /> オブジェクト。</param>
+        <summary>前の文字がキャレット ナビゲーションのヒットを取得します。</summary>
+        <returns>前の<see cref="T:System.Windows.Media.TextFormatting.CharacterHit" />キャレット ナビゲーションに基づいてオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTextBounds">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.Generic.IList&lt;System.Windows.Media.TextFormatting.TextBounds&gt; GetTextBounds (int firstTextSourceCharacterIndex, int textLength);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IList`1&lt;class System.Windows.Media.TextFormatting.TextBounds&gt; GetTextBounds(int32 firstTextSourceCharacterIndex, int32 textLength) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.TextLine.GetTextBounds(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Windows.Media.TextFormatting.TextBounds&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="firstTextSourceCharacterIndex" Type="System.Int32" />
+        <Parameter Name="textLength" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="firstTextSourceCharacterIndex"><see cref="T:System.Int32" />を指定した範囲の最初の文字のインデックスを表す値です。</param>
+        <param name="textLength"><see cref="T:System.Int32" />を指定された範囲の文字数を表す値です。</param>
+        <summary>テキスト行内の文字の範囲を表す外接する四角形の配列を取得します。</summary>
+        <returns>一連の<see cref="T:System.Windows.Media.TextFormatting.TextBounds" />外接する四角形を表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTextCollapsedRanges">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.Generic.IList&lt;System.Windows.Media.TextFormatting.TextCollapsedRange&gt; GetTextCollapsedRanges ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IList`1&lt;class System.Windows.Media.TextFormatting.TextCollapsedRange&gt; GetTextCollapsedRanges() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.TextLine.GetTextCollapsedRanges" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Windows.Media.TextFormatting.TextCollapsedRange&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>行が折りたたまれた後に、折りたたまれたテキスト範囲のコレクションを取得します。</summary>
+        <returns>一連の<see cref="T:System.Windows.Media.TextFormatting.TextCollapsedRange" />折りたたまれているテキストを表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTextLineBreak">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.Media.TextFormatting.TextLineBreak GetTextLineBreak ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Media.TextFormatting.TextLineBreak GetTextLineBreak() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.TextLine.GetTextLineBreak" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.TextFormatting.TextLineBreak</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>改行処理によって中断されたときに、行の状態を取得します。</summary>
+        <returns>A<see cref="T:System.Windows.Media.TextFormatting.TextLineBreak" />改行を表す値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値は`null`段落の末尾に行を終了するときにします。  
+  
+ パラメーターとしてテキスト フォーマッタ クライアントが戻り値を渡すことがあります、<xref:System.Windows.Media.TextFormatting.TextFormatter.FormatLine%2A>メソッドで、同じ paragraph 内で次の行を書式設定時に使用する値を許可します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTextRunSpans">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.Generic.IList&lt;System.Windows.Media.TextFormatting.TextSpan&lt;System.Windows.Media.TextFormatting.TextRun&gt;&gt; GetTextRunSpans ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IList`1&lt;class System.Windows.Media.TextFormatting.TextSpan`1&lt;class System.Windows.Media.TextFormatting.TextRun&gt;&gt; GetTextRunSpans() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.TextLine.GetTextRunSpans" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Windows.Media.TextFormatting.TextSpan&lt;System.Windows.Media.TextFormatting.TextRun&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Windows.Media.TextFormatting.TextRun" />行含まれているテキストの範囲内のオブジェクト。</summary>
+        <returns>一覧を取得<see cref="T:System.Windows.Media.TextFormatting.TextRun" />テキスト範囲に含まれるオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasCollapsed">
+      <MemberSignature Language="C#" Value="public abstract bool HasCollapsed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasCollapsed" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextLine.HasCollapsed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行が折りたたまれているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />、、の行が折りたたまれている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasOverflowed">
+      <MemberSignature Language="C#" Value="public abstract bool HasOverflowed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasOverflowed" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextLine.HasOverflowed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定した段落の幅が、行の内容にオーバーフローが発生するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />、、、行オーバーフローの指定した段落の幅です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Height">
+      <MemberSignature Language="C#" Value="public abstract double Height { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Height" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextLine.Height" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキストの行の高さを取得します。</summary>
+        <value>A<see cref="T:System.Double" />テキスト行の高さを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTruncated">
+      <MemberSignature Language="C#" Value="public virtual bool IsTruncated { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsTruncated" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextLine.IsTruncated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>単語の途中でテキスト行を切り捨てるかどうかを判断します。</summary>
+        <value>
+          <see langword="true" />単語の途中でテキスト行が切り捨てられる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.TextFormatting.TextLine.IsTruncated%2A>プロパティ値が設定される場合にのみ、<xref:System.Windows.TextWrapping>プロパティの<xref:System.Windows.Media.TextFormatting.TextParagraphProperties>に設定されている<xref:System.Windows.TextWrapping.Wrap>、1 つの単語は段落の書式設定の幅より広いとします。 このような状況で<xref:System.Windows.Media.TextFormatting.TextFormatter>で指定した目的の動作を優先する単語は語内の行を切り捨てます<xref:System.Windows.TextWrapping.Wrap>設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Length">
+      <MemberSignature Language="C#" Value="public abstract int Length { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Length" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextLine.Length" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>合計数を取得<see cref="T:System.Windows.Media.TextFormatting.TextSource" />現在の行の位置。</summary>
+        <value><see cref="T:System.Int32" />の合計数を表す値<see cref="T:System.Windows.Media.TextFormatting.TextSource" />現在の行の位置。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MarkerBaseline">
+      <MemberSignature Language="C#" Value="public abstract double MarkerBaseline { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 MarkerBaseline" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextLine.MarkerBaseline" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>線の最高点のエッジからの行のベースライン マーカーまでの距離を取得します。</summary>
+        <value>A<see cref="T:System.Double" />を表すマーカーの基準の距離。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MarkerHeight">
+      <MemberSignature Language="C#" Value="public abstract double MarkerHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 MarkerHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextLine.MarkerHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リスト項目のマーカーの高さを取得します。</summary>
+        <value>A<see cref="T:System.Double" />マーカーの高さを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewlineLength">
+      <MemberSignature Language="C#" Value="public abstract int NewlineLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 NewlineLength" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextLine.NewlineLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行の末尾に改行文字の数を取得します。</summary>
+        <value><see cref="T:System.Int32" />改行文字の数を表す値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OverhangAfter">
+      <MemberSignature Language="C#" Value="public abstract double OverhangAfter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 OverhangAfter" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextLine.OverhangAfter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>黒のピクセルを超える行の下端揃えの距離を取得します。</summary>
+        <value>A<see cref="T:System.Double" />距離の後に、オーバー ハングを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OverhangLeading">
+      <MemberSignature Language="C#" Value="public abstract double OverhangLeading { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 OverhangLeading" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextLine.OverhangLeading" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>先頭の配置の左端の行の前に黒のピクセルを拡張する距離を取得します。</summary>
+        <value>A<see cref="T:System.Double" />オーバー ハングの先頭の距離を表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OverhangTrailing">
+      <MemberSignature Language="C#" Value="public abstract double OverhangTrailing { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 OverhangTrailing" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextLine.OverhangTrailing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>黒のピクセルを右側にある末尾の線のエッジを配置拡張の距離を取得します。</summary>
+        <value>A<see cref="T:System.Double" />オーバー ハングの末尾の距離を表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PixelsPerDip">
+      <MemberSignature Language="C#" Value="public double PixelsPerDip { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 PixelsPerDip" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextLine.PixelsPerDip" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキストを表示する PixelsPerDip を取得または設定します。</summary>
+        <value>現在の <see cref="P:System.Windows.Media.TextFormatting.TextLine.PixelsPerDip" /> 値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Start">
+      <MemberSignature Language="C#" Value="public abstract double Start { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Start" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextLine.Start" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>段落の先頭から行の開始点までの距離を取得します。</summary>
+        <value>A<see cref="T:System.Double" />段落の先頭から行の開始点までの距離を表す値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextBaseline">
+      <MemberSignature Language="C#" Value="public abstract double TextBaseline { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 TextBaseline" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextLine.TextBaseline" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキストの行の基準に、上からの距離を取得します。</summary>
+        <value>A<see cref="T:System.Double" />テキスト ベースラインの距離を表す値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextHeight">
+      <MemberSignature Language="C#" Value="public abstract double TextHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 TextHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextLine.TextHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行のテキストとその他のコンテンツの高さを取得します。</summary>
+        <value><see cref="T:System.Double" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.TextFormatting.TextLine.TextHeight%2A>異なる場合があります、<xref:System.Windows.Media.TextFormatting.TextLine.Height%2A>プロパティ、クライアントが、行の高さを指定した場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrailingWhitespaceLength">
+      <MemberSignature Language="C#" Value="public abstract int TrailingWhitespaceLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 TrailingWhitespaceLength" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextLine.TrailingWhitespaceLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行の最後の空白文字を超えるコード ポイントを空白の数を取得します。</summary>
+        <value><see cref="T:System.Int32" />行の最後の空白文字を超えるコード ポイントを空白の数を表す値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Width">
+      <MemberSignature Language="C#" Value="public abstract double Width { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Width" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextLine.Width" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>末尾の空白文字を除く、テキストの行の幅を取得します。</summary>
+        <value>A<see cref="T:System.Double" />末尾の空白文字を除くテキスト線の幅を表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WidthIncludingTrailingWhitespace">
+      <MemberSignature Language="C#" Value="public abstract double WidthIncludingTrailingWhitespace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 WidthIncludingTrailingWhitespace" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextLine.WidthIncludingTrailingWhitespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>末尾の空白文字を含む、テキストの行の幅を取得します。</summary>
+        <value>A<see cref="T:System.Double" />末尾の空白文字を含むテキスト線の幅を表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

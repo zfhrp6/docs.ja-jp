@@ -1,0 +1,1600 @@
+<Type Name="DataObject" FullName="System.Windows.Forms.DataObject">
+  <TypeSignature Language="C#" Value="public class DataObject : System.Runtime.InteropServices.ComTypes.IDataObject, System.Windows.Forms.IDataObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataObject extends System.Object implements class System.Runtime.InteropServices.ComTypes.IDataObject, class System.Windows.Forms.IDataObject" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataObject" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.InteropServices.ComTypes.IDataObject</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Windows.Forms.IDataObject</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.None)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>基本データ転送機構を実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataObject>実装する、<xref:System.Windows.Forms.IDataObject>インターフェイスを持つメソッドのデータ転送の形式に依存しないメカニズムを提供します。  
+  
+ A<xref:System.Windows.Forms.DataObject>は通常使用、<xref:System.Windows.Forms.Clipboard>およびドラッグ アンド ドロップ操作でします。 <xref:System.Windows.Forms.DataObject>クラスの推奨される実装を提供、<xref:System.Windows.Forms.IDataObject>インターフェイスです。 使用することをお勧めしますが、<xref:System.Windows.Forms.DataObject>を実装するのではなく、クラス<xref:System.Windows.Forms.IDataObject>自分でします。  
+  
+ 複数の異なる形式でデータを格納することができます、<xref:System.Windows.Forms.DataObject>です。 データを取得、<xref:System.Windows.Forms.DataObject>によって、関連付けられている形式。 データに含まれるアプリケーションの適切な形式のデータを配置することによって可能性を高めることができます、対象アプリケーションが認識されていない可能性があります、ため、<xref:System.Windows.Forms.DataObject>複数の形式でします。 参照してください<xref:System.Windows.Forms.DataFormats>定義済みの形式です。 インスタンスを作成することで、独自の形式を実装することができます、<xref:System.Windows.Forms.DataFormats.Format>クラスです。  
+  
+ データを格納する、 <xref:System.Windows.Forms.DataObject>、コンス トラクターに、データを渡す<xref:System.Windows.Forms.DataObject.SetData%2A>です。 複数の形式でデータを追加するには同じ<xref:System.Windows.Forms.DataObject>です。 ネイティブ形式のみ、呼び出しで取得するデータを削除する場合に追加<xref:System.Windows.Forms.DataObject.SetData%28System.String%2CSystem.Boolean%2CSystem.Object%29>で、`autoConvert`パラメーターに設定`false`です。  
+  
+ データを取得できる、<xref:System.Windows.Forms.DataObject>と互換性がある任意の形式で<xref:System.Windows.Forms.DataObject.GetData%2A>です。 たとえば、テキストは Unicode に変換できます。 格納されている形式でデータを取得する呼び出し<xref:System.Windows.Forms.DataObject.GetData%2A>で、`autoConvert`パラメーターに設定`false`です。  
+  
+ データが格納されているどのような形式を特定するのには、呼び出す<xref:System.Windows.Forms.DataObject.GetFormats%2A>です。 調べるには、形式が使用可能なかどうかは、呼び出す<xref:System.Windows.Forms.DataObject.GetDataPresent%2A>目的の形式にします。  
+  
+ [!INCLUDE[dnprdnext](~/includes/dnprdnext-md.md)]、<xref:System.Windows.Forms.DataObject>クラスは、共通の形式のデータを容易にできるように追加のメソッドが操作を提供します。 特定の形式のデータを追加する、 <xref:System.Windows.Forms.DataObject>、使用して、適切な`Set`*形式*メソッドなど<xref:System.Windows.Forms.DataObject.SetText%2A>です。 特定の形式のデータを取得する、 <xref:System.Windows.Forms.DataObject>、まず、適切な`Contains`*形式*メソッド (など<xref:System.Windows.Forms.DataObject.ContainsText%2A>) を決定するかどうか、<xref:System.Windows.Forms.DataObject>その形式でデータを格納し、適切な呼び出し`Get`*形式*メソッド (など<xref:System.Windows.Forms.DataObject.GetText%2A>) 場合は、データを取得する、<xref:System.Windows.Forms.DataObject>それを格納します。  
+  
+> [!NOTE]
+>  クリップボードをメタファイル形式を使用すると、特別な考慮事項が必要な可能性があります。 現在の実装の制限により、<xref:System.Windows.Forms.DataObject>クラス、.NET Framework で使用されるメタファイル形式は、古いメタファイル形式を使用するアプリケーションで認識されない可能性があります。 この場合、クリップボードの Win32 アプリケーション プログラミング インターフェイス (Api) と相互運用する必要があります。 詳細については、記事、323530「メタファイルでクリップボードはいない表示する、すべてのアプリケーション」http://support.microsoft.com で Microsoft サポート技術情報を参照してください。  
+>   
+>  オブジェクトをクリップボードに保存するのには、シリアル化可能にする必要があります。 参照してください<xref:System.Runtime.Serialization>詳細については、シリアル化します。 ターゲット アプリケーションには、非常に特定のデータ形式が必要とする場合、シリアル化プロセス内のデータに追加されたヘッダーからデータを認識するアプリケーションを使用できなくなります。 データ形式を保持するために、データを追加として、<xref:System.Byte>配列を<xref:System.IO.MemoryStream>を渡すと、<xref:System.IO.MemoryStream>を<xref:System.Windows.Forms.DataObject.SetData%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、内のデータを追加、<xref:System.Windows.Forms.DataObject>です。 最初に、新しい<xref:System.Windows.Forms.DataObject>が作成されるコンポーネントがこれに格納されているとします。 適切な種類のデータが存在するかどうかを参照してください。 さらに確認、<xref:System.Windows.Forms.DataObject>です。 結果は、テキスト ボックスに表示されます。 このコードでは、する必要があります`textBox1`が作成されました。  
+  
+ [!code-cpp[Classic DataObject Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataObject Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataObject Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataObject Example/CS/source.cs#1)]
+ [!code-vb[Classic DataObject Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataObject Example/VB/source.vb#1)]  
+  
+ 次の例に格納されたデータの取得、<xref:System.Windows.Forms.DataObject>です。 最初に、新しい<xref:System.Windows.Forms.DataObject>テキスト データで作成されます。 次に、データが取得されると、文字列としての形式を指定して、テキスト ボックスに表示されます。 データの形式は文字列に変換テキストから自動的にします。 このコードでは、する必要があります`textBox1`が作成されました。  
+  
+ [!code-cpp[Classic DataObject Example#2](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataObject Example/CPP/source.cpp#2)]
+ [!code-csharp[Classic DataObject Example#2](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataObject Example/CS/source.cs#2)]
+ [!code-vb[Classic DataObject Example#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataObject Example/VB/source.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataObject ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DataObject" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Windows.Forms.DataObject>データを追加します。 取得し、データが表示されます。 このコードでは、する必要があります`textBox1`が作成されました。  
+  
+ [!code-cpp[Classic DataObject.DataObject2 Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataObject.DataObject2 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataObject.DataObject2 Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataObject.DataObject2 Example/CS/source.cs#1)]
+ [!code-vb[Classic DataObject.DataObject2 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataObject.DataObject2 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataObject (object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.#ctor(System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="data">格納するデータ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.DataObject" />クラスし、指定したオブジェクトを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 任意の形式にデータを追加することができます、<xref:System.Windows.Forms.DataObject>ときにこのコンス トラクターを使用することもとしてデータを追加することができます、<xref:System.Windows.Forms.IDataObject>を複数の一度に書式を提供します。 COM を実装するデータ オブジェクトを追加する COM プログラミングに慣れている場合もできる`IDataObject`インターフェイスです。 詳細については、次を参照してください。 `IDataObject` MSDN ライブラリ http://msdn.microsoft.com/library でします。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Windows.Forms.DataObject>文字列を格納しています。 そのデータ形式を使用してデータを取得します。 結果は、テキスト ボックスに表示されます。 このコードでは、する必要があります`textBox1`が作成されました。  
+  
+ [!code-cpp[Classic DataObject.DataObject3 Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataObject.DataObject3 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataObject.DataObject3 Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataObject.DataObject3 Example/CS/source.cs#1)]
+ [!code-vb[Classic DataObject.DataObject3 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataObject.DataObject3 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataObject (string format, object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string format, object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.#ctor(System.String,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="format">指定したデータの形式。 参照してください<see cref="T:System.Windows.Forms.DataFormats" />定義済みの形式です。</param>
+        <param name="data">格納するデータ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.DataObject" />クラスし、指定された形式で指定したオブジェクトを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Windows.Forms.DataObject>クラスは、文字列型として指定する文字列を使用します。 データを取得、<xref:System.Windows.Forms.DataObject>をテキストとしての形式を指定します。 結果は、テキスト ボックスに表示されます。 このコードでは、する必要があります`textBox1`が作成されました。  
+  
+ [!code-cpp[Classic DataObject.DataObject4 Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataObject.DataObject4 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataObject.DataObject4 Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataObject.DataObject4 Example/CS/source.cs#1)]
+ [!code-vb[Classic DataObject.DataObject4 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataObject.DataObject4 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsAudio">
+      <MemberSignature Language="C#" Value="public virtual bool ContainsAudio ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ContainsAudio() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.ContainsAudio" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ オブジェクト内のデータが含まれるかどうかを示します、<see cref="F:System.Windows.Forms.DataFormats.WaveAudio" />形式です。</summary>
+        <returns>
+          <see langword="true" />データ オブジェクトには、オーディオ データが含まれている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ オブジェクトを取得する前にオーディオ データを格納しているかどうかを判断するには、このメソッドを使用して、<xref:System.Windows.Forms.DataObject.GetAudioStream%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsFileDropList">
+      <MemberSignature Language="C#" Value="public virtual bool ContainsFileDropList ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ContainsFileDropList() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.ContainsFileDropList" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ オブジェクトに含まれるデータが含まれるかどうかを示します、<see cref="F:System.Windows.Forms.DataFormats.FileDrop" />書式設定するか、その形式に変換することができます。</summary>
+        <returns>
+          <see langword="true" />データ オブジェクトには、ファイル ドロップ リストが含まれている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイルのドロップダウン リストは、ファイルのパス情報を格納する文字列のコレクションです。  
+  
+ データ オブジェクトが使用して取得する前にファイルのドロップダウン リストを含むかどうかを判断するには、このメソッドを使用して、<xref:System.Windows.Forms.DataObject.GetFileDropList%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsImage">
+      <MemberSignature Language="C#" Value="public virtual bool ContainsImage ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ContainsImage() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.ContainsImage" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ オブジェクトに含まれるデータが含まれるかどうかを示します、<see cref="F:System.Windows.Forms.DataFormats.Bitmap" />書式設定するか、その形式に変換することができます。</summary>
+        <returns>
+          <see langword="true" />データ オブジェクトには、イメージ データが含まれている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ オブジェクトを取得する前にイメージ データを格納しているかどうかを判断するには、このメソッドを使用して、<xref:System.Windows.Forms.DataObject.GetImage%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsText">
+      <MemberSignature Language="C#" Value="public virtual bool ContainsText ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ContainsText() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.ContainsText" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ オブジェクト内のデータが含まれるかどうかを示します、<see cref="F:System.Windows.Forms.TextDataFormat.UnicodeText" />形式です。</summary>
+        <returns>
+          <see langword="true" />データ オブジェクトには、テキスト データが含まれている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ オブジェクトを取得する前にテキスト データを格納しているかどうかを判断するには、このメソッドを使用して、<xref:System.Windows.Forms.DataObject.GetText%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsText">
+      <MemberSignature Language="C#" Value="public virtual bool ContainsText (System.Windows.Forms.TextDataFormat format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ContainsText(valuetype System.Windows.Forms.TextDataFormat format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.ContainsText(System.Windows.Forms.TextDataFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.Windows.Forms.TextDataFormat" />
+      </Parameters>
+      <Docs>
+        <param name="format"><see cref="T:System.Windows.Forms.TextDataFormat" /> 値のいずれか。</param>
+        <summary>データ オブジェクトに指定されたによって示される形式のテキスト データが含まれるかどうかを示します<see cref="T:System.Windows.Forms.TextDataFormat" />値。</summary>
+        <returns>
+          <see langword="true" />データ オブジェクトには、指定された形式でテキスト データが含まれている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ オブジェクトを取得する前にテキスト データを格納しているかどうかを判断するには、このメソッドを使用して、<xref:System.Windows.Forms.DataObject.GetText%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="format" /> は有効な <see cref="T:System.Windows.Forms.TextDataFormat" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAudioStream">
+      <MemberSignature Language="C#" Value="public virtual System.IO.Stream GetAudioStream ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IO.Stream GetAudioStream() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.GetAudioStream" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ オブジェクトからオーディオ ストリームを取得します。</summary>
+        <returns>A<see cref="T:System.IO.Stream" />オーディオ データを含むまたは<see langword="null" />データ オブジェクトにデータが含まれていないかどうか、<see cref="F:System.Windows.Forms.DataFormats.WaveAudio" />形式です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.DataObject.ContainsAudio%2A>データ オブジェクトに、このメソッドを使用して取得する前にオーディオ データが含まれるかどうかを調べます。  
+  
+ 使用して、<xref:System.Windows.Forms.DataObject.SetAudio%2A>オーディオ データをデータ オブジェクトに追加するメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetData">
+      <MemberSignature Language="C#" Value="public virtual object GetData (string format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetData(string format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.GetData(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="format">取得するデータの形式。 参照してください<see cref="T:System.Windows.Forms.DataFormats" />定義済みの形式です。</param>
+        <summary>指定したデータ形式に関連付けられたデータを返します。</summary>
+        <returns>指定された形式に関連付けられているデータまたは<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定された形式でデータを見つけることはできません、データ形式に変換しようとします。 自動変換に設定とデータが格納されている場合、データは、指定された形式に変換できない場合または`false`、このメソッドが戻る`null`です。  
+  
+ データが関連付けられてまたは形式に変換できるかどうかを判断するのには、呼び出す<xref:System.Windows.Forms.DataObject.GetDataPresent%2A>呼び出す前に<xref:System.Windows.Forms.DataObject.GetData%2A>です。 呼び出す<xref:System.Windows.Forms.DataObject.GetFormats%2A>これに格納されたデータの有効な形式の一覧については<xref:System.Windows.Forms.DataObject>します。  
+  
+> [!NOTE]
+>  データは、格納されている変換が許可されている場合、要求の形式が格納されている形式に互換性がある場合、別の形式に変換できます。 テキストに変換できる Unicode として格納されているデータなどです。  
+>   
+>  ときに`format`は<xref:System.Windows.Forms.DataFormats.Html>ANSI でエンコードされたアプリケーションで文字列を対象とする .NET 4.0 またはそれ以前、このメソッドは .NET 4.5 以上を対象とするアプリケーションで utf-8 でエンコードされた文字列を返します。  
+  
+   
+  
+## Examples  
+ 次のコード例に格納されたデータの取得、<xref:System.Windows.Forms.DataObject>です。 最初に、新しい<xref:System.Windows.Forms.DataObject>テキスト データで作成されます。 次に、データが取得されると、文字列としての形式を指定して、テキスト ボックスに表示されます。  
+  
+ このコードでは、する必要があります`textBox1`が作成されました。  
+  
+ [!code-cpp[classic dataobject example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataObject Example/CPP/source.cpp#1)]
+ [!code-csharp[classic dataobject example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataObject Example/CS/source.cs#1)]
+ [!code-vb[classic dataobject example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataObject Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetData">
+      <MemberSignature Language="C#" Value="public virtual object GetData (Type format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetData(class System.Type format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.GetData(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="format">A<see cref="T:System.Type" />取得するデータの形式を表すです。</param>
+        <summary>指定したクラス型形式に関連付けられたデータを返します。</summary>
+        <returns>指定された形式に関連付けられているデータまたは<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定された形式でデータを見つけることはできません、データ形式に変換しようとします。 自動変換に設定とデータが格納されている場合、データは、指定された形式に変換できない場合または`false`、このメソッドが戻る`null`です。  
+  
+ データが関連付けられてまたは形式に変換できるかどうかを判断するのには、呼び出す<xref:System.Windows.Forms.DataObject.GetDataPresent%2A>呼び出す前に<xref:System.Windows.Forms.DataObject.GetData%2A>です。 呼び出す<xref:System.Windows.Forms.DataObject.GetFormats%2A>これに格納されたデータの有効な形式の一覧については<xref:System.Windows.Forms.DataObject>します。  
+  
+> [!NOTE]
+>  データは、格納されている変換が許可されている場合、要求の形式が格納されている形式に互換性がある場合、別の形式に変換できます。 テキストに変換できる Unicode として格納されているデータなどです。  
+  
+   
+  
+## Examples  
+ 次のコード例に格納されたデータの取得、<xref:System.Windows.Forms.DataObject>です。 最初に、新しい<xref:System.Windows.Forms.DataObject>コンポーネントを使用して作成します。 次に、その型を指定する、データを取得します。 取得したデータの種類は、テキスト ボックスに表示されます。  
+  
+ このコードでは、する必要があります`textBox1`が作成されました。  
+  
+ [!code-cpp[Classic DataObject.GetData2 Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataObject.GetData2 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataObject.GetData2 Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataObject.GetData2 Example/CS/source.cs#1)]
+ [!code-vb[Classic DataObject.GetData2 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataObject.GetData2 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetData">
+      <MemberSignature Language="C#" Value="public virtual object GetData (string format, bool autoConvert);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetData(string format, bool autoConvert) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.GetData(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="autoConvert" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="format">取得するデータの形式。 参照してください<see cref="T:System.Windows.Forms.DataFormats" />定義済みの形式です。</param>
+        <param name="autoConvert">
+          <see langword="true" />指定された形式に変換データそれ以外の場合、<see langword="false" />です。</param>
+        <summary>データを指定形式に変換するかどうかを判断するための自動変換パラメーターを使用して、指定したデータ形式に関連付けられているデータを返します。</summary>
+        <returns>指定された形式に関連付けられているデータまたは<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`autoConvert`パラメーターは`true`形式にデータを変換しようと、このメソッドは、指定された形式でデータを見つけることができません。 データは、指定された形式に変換できない場合、またはに設定の自動変換でデータが格納されている場合`false`、このメソッドが戻る`null`です。  
+  
+ 場合、`autoConvert`パラメーターは`false`、このメソッドは、指定された形式でデータを返しますまたは`null`形式でデータが見つからない場合。  
+  
+ データが関連付けられてまたは形式に変換できるかどうかを判断するのには、呼び出す<xref:System.Windows.Forms.DataObject.GetDataPresent%2A>呼び出す前に<xref:System.Windows.Forms.DataObject.GetData%2A>です。 呼び出す<xref:System.Windows.Forms.DataObject.GetFormats%2A>これに格納されたデータの有効な形式の一覧については<xref:System.Windows.Forms.DataObject>します。  
+  
+> [!NOTE]
+>  データは、格納されている変換が許可されている場合、要求の形式が格納されている形式に互換性がある場合、別の形式に変換できます。 テキストに変換できる Unicode として格納されているデータなどです。  
+>   
+>  ときに`format`は<xref:System.Windows.Forms.DataFormats.Html>ANSI でエンコードされたアプリケーションで文字列を対象とする .NET 4.0 またはそれ以前、このメソッドは .NET 4.5 以上を対象とするアプリケーションで utf-8 でエンコードされた文字列を返します。  
+  
+   
+  
+## Examples  
+ 次のコード例に格納されたデータの取得、<xref:System.Windows.Forms.DataObject>を使用して、`autoConvert`パラメーターをデータ形式に変換するかどうかを指定します。  
+  
+ 最初に、新しい<xref:System.Windows.Forms.DataObject>テキスト データで作成されます。 例でという文字列とない形式の変換は、その形式を指定する、データの取得を試みます、`autoConvert`パラメーターは`false`します。 この操作は失敗に文字列データがないため、<xref:System.Windows.Forms.DataObject>です。  
+  
+ 例が、データを再度取得しようとした次に、使用、`autoConvert`パラメーターに設定`true`です。 この操作が成功して、結果に表示されます、<xref:System.Windows.Forms.MessageBox>です。  
+  
+ このコードでは、する必要があります`textBox1`が作成されました。  
+  
+ [!code-cpp[Classic DataObject.GetData Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataObject.GetData Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataObject.GetData Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataObject.GetData Example/CS/source.cs#1)]
+ [!code-vb[Classic DataObject.GetData Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataObject.GetData Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDataPresent">
+      <MemberSignature Language="C#" Value="public virtual bool GetDataPresent (string format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetDataPresent(string format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.GetDataPresent(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="format">チェック対象となる形式。 参照してください<see cref="T:System.Windows.Forms.DataFormats" />定義済みの形式です。</param>
+        <summary>このデータが格納されているかどうかを判断<see cref="T:System.Windows.Forms.DataObject" />には、関連付けられているか、指定された形式に変換することができます。</summary>
+        <returns>
+          <see langword="true" />このデータが格納されている場合<see cref="T:System.Windows.Forms.DataObject" />には、関連付けられているか、指定された形式に変換できる場合は、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しの前に、形式が存在するかどうかを調べるには、このメソッドを呼び出す<xref:System.Windows.Forms.DataObject.GetData%2A>です。 呼び出す<xref:System.Windows.Forms.DataObject.GetFormats%2A>で使用可能な形式の<xref:System.Windows.Forms.DataObject>します。  
+  
+> [!NOTE]
+>  データは、格納されている変換が許可されている場合、要求の形式が格納されている形式に互換性がある場合、別の形式に変換できます。 テキストに変換できる Unicode として格納されているデータなどです。  
+  
+> [!NOTE]
+>  データを取得できる場合は、例外はスローされません。 代わりに、`false`が返されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、これにデータが格納されているかどうかを判断<xref:System.Windows.Forms.DataObject>には、関連付けられているか、指定した形式に変換することができます。 新しい<xref:System.Windows.Forms.DataObject>文字列とテキストとして指定されている、関連付けられている形式で初期化します。  
+  
+ 例では、テキスト データ内に存在するかどうかを出力し、<xref:System.Windows.Forms.DataObject>です。 このコードでは、する必要があります`textBox1`が作成されました。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDataPresent">
+      <MemberSignature Language="C#" Value="public virtual bool GetDataPresent (Type format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetDataPresent(class System.Type format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.GetDataPresent(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="format">A<see cref="T:System.Type" />をチェックする形式を表すです。</param>
+        <summary>このデータが格納されているかどうかを判断<see cref="T:System.Windows.Forms.DataObject" />には、関連付けられているか、指定された形式に変換することができます。</summary>
+        <returns>
+          <see langword="true" />このデータが格納されている場合<see cref="T:System.Windows.Forms.DataObject" />には、関連付けられているか、指定された形式に変換できる場合は、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しの前に、形式が存在するかどうかを調べるには、このメソッドを呼び出す<xref:System.Windows.Forms.DataObject.GetData%2A>です。 呼び出す<xref:System.Windows.Forms.DataObject.GetFormats%2A>で使用可能な形式の<xref:System.Windows.Forms.DataObject>します。  
+  
+> [!NOTE]
+>  データは、格納されている変換が許可されている場合、要求の形式が格納されている形式に互換性がある場合、別の形式に変換できます。 テキストに変換できる Unicode として格納されているデータなどです。  
+  
+> [!NOTE]
+>  データを取得できる場合は、例外はスローされません。 代わりに、`false`が返されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、指定した型のデータが内に存在するかどうかを決定する<xref:System.Windows.Forms.DataObject>、または指定された型にデータを変換できるかどうか。 結果は、テキスト ボックスに表示されます。 コードでは、する必要があります`textBox1`が作成されました。  
+  
+ [!code-cpp[Classic DataObject.GetDataPresent Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataObject.GetDataPresent Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataObject.GetDataPresent Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataObject.GetDataPresent Example/CS/source.cs#1)]
+ [!code-vb[Classic DataObject.GetDataPresent Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataObject.GetDataPresent Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDataPresent">
+      <MemberSignature Language="C#" Value="public virtual bool GetDataPresent (string format, bool autoConvert);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetDataPresent(string format, bool autoConvert) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.GetDataPresent(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="autoConvert" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="format">チェック対象となる形式。 参照してください<see cref="T:System.Windows.Forms.DataFormats" />定義済みの形式です。</param>
+        <param name="autoConvert">
+          <see langword="true" />このデータが格納されているかどうかを決定する<see cref="T:System.Windows.Forms.DataObject" />指定された形式に変換することができます<see langword="false" />データが指定の形式であるかどうかを確認します。</param>
+        <summary>決定するかどうかこの<see cref="T:System.Windows.Forms.DataObject" />指定された形式でデータを格納または、必要に応じて、指定された形式に変換できるデータが含まれています。</summary>
+        <returns>
+          <see langword="true" />データ、または指定された形式に変換できる場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しの前に、形式が存在するかどうかを調べるには、このメソッドを呼び出す<xref:System.Windows.Forms.DataObject.GetData%2A>です。 呼び出す<xref:System.Windows.Forms.DataObject.GetFormats%2A>で使用可能な形式の<xref:System.Windows.Forms.DataObject>します。  
+  
+ このメソッドが戻る`true`とき。  
+  
+-   `autoConvert`パラメーターは`true`データが適切な形式に変換できる形式とします。  
+  
+-   `autoConvert`パラメーターは`false`データが適切な形式です。  
+  
+ このメソッドが戻る`false`とき。  
+  
+-   `autoConvert`パラメーターは`true`とは、このメソッドは、指定された形式でデータを見つけることができませんまたはと指定された形式に変換できないデータに自動変換設定、データを格納した`false`です。  
+  
+-   `autoConvert`パラメーターは`false`これにデータがないと<xref:System.Windows.Forms.DataObject>指定された形式でします。  
+  
+> [!NOTE]
+>  データは、変換が許可されているストアドを指定すると、要求された形式に格納されている形式に互換性がある場合、別の形式に変換できます。 テキストに変換できる Unicode として格納されているデータなどです。  
+  
+> [!NOTE]
+>  データを取得できる場合は、例外はスローされません。 代わりに、`false`が返されます。  
+  
+   
+  
+## Examples  
+ 次のコード例にデータが格納されているかどうかを判断、<xref:System.Windows.Forms.DataObject>指定した書式と関連付けられています。 最初に、新しい<xref:System.Windows.Forms.DataObject>はテキストとしての形式を指定する、文字列で初期化します。  
+  
+ 続いて、<xref:System.Windows.Forms.DataObject>テキスト形式に関連付けられているデータのクエリが実行を指定する、`autoConvert`パラメーターとして`false`です。 このクエリの結果は、テキスト ボックスで印刷されます。  
+  
+ 続いて、<xref:System.Windows.Forms.DataObject>文字列形式に関連付けられたデータのクエリが実行を指定する、`autoConvert`パラメーターとして`true`です。 結果は、テキスト ボックスで印刷されます。 このコードでは、する必要があります`textBox1`が作成されました。  
+  
+ [!code-cpp[Classic DataObject.GetDataPresent1 Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataObject.GetDataPresent1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataObject.GetDataPresent1 Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataObject.GetDataPresent1 Example/CS/source.cs#1)]
+ [!code-vb[Classic DataObject.GetDataPresent1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataObject.GetDataPresent1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFileDropList">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Specialized.StringCollection GetFileDropList ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Specialized.StringCollection GetFileDropList() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.GetFileDropList" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.StringCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ オブジェクトからファイル名のコレクションを取得します。</summary>
+        <returns>A<see cref="T:System.Collections.Specialized.StringCollection" />ファイル名を含むまたは<see langword="null" />データ オブジェクトに含まれるすべてのデータが含まれていないかどうか、<see cref="F:System.Windows.Forms.DataFormats.FileDrop" />書式設定するか、その形式に変換することができます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイルのドロップダウン リストは、ファイルのパス情報を格納する文字列のコレクションです。  
+  
+ ファイルのドロップダウン リストとしてデータ オブジェクトに格納されている、<xref:System.String>配列。 このメソッドは変換するには、この配列は<xref:System.Collections.Specialized.StringCollection>し、コレクションを返します。  
+  
+ 使用して、<xref:System.Windows.Forms.DataObject.ContainsFileDropList%2A>データ オブジェクトに、このメソッドを使用して取得する前にファイルのドロップダウン リストが含まれるかどうかを調べます。  
+  
+ 使用して、<xref:System.Windows.Forms.DataObject.SetFileDropList%2A>ファイル ドロップ リストをデータ オブジェクトに追加するメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFormats">
+      <MemberSignature Language="C#" Value="public virtual string[] GetFormats ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string[] GetFormats() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.GetFormats" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>これに格納されるデータのすべての形式の一覧を返します<see cref="T:System.Windows.Forms.DataObject" />に関連付けられているかに変換できます。</summary>
+        <returns>型の配列<see cref="T:System.String" />、このオブジェクトに格納されたデータでサポートされているすべての形式の一覧を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す前に、サポートされているデータ形式を取得するには、このメソッドを呼び出す<xref:System.Windows.Forms.DataObject.GetData%2A>です。 参照してください<xref:System.Windows.Forms.DataFormats>定義済みの形式です。  
+  
+> [!NOTE]
+>  データは、変換が許可されているストアドを指定すると、要求された形式に格納されている形式に互換性がある場合、別の形式に変換できます。 テキストに変換できる Unicode として格納されているデータなどです。  
+  
+   
+  
+## Examples  
+ 次のコード例のクエリ、 <xref:System.Windows.Forms.DataObject> 、そのデータに関連付けられている形式と形式のデータに変換できます。 結果のリストは、テキスト ボックスに表示されます。 このコードでは、する必要があります`textBox1`が作成されました。  
+  
+ [!code-cpp[Classic DataObject.GetFormats1 Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataObject.GetFormats1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataObject.GetFormats1 Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataObject.GetFormats1 Example/CS/source.cs#1)]
+ [!code-vb[Classic DataObject.GetFormats1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataObject.GetFormats1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFormats">
+      <MemberSignature Language="C#" Value="public virtual string[] GetFormats (bool autoConvert);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string[] GetFormats(bool autoConvert) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.GetFormats(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="autoConvert" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="autoConvert">
+          <see langword="true" />これに格納されるデータの書式をすべて取得する<see cref="T:System.Windows.Forms.DataObject" />には、関連付けられているまたは; に変換できます<see langword="false" />ネイティブ データ形式のみを取得します。</param>
+        <summary>これに格納されるデータのすべての形式の一覧を返します<see cref="T:System.Windows.Forms.DataObject" />に関連付けられているかに変換できる、自動変換パラメーターを使用してネイティブ データ形式またはすべての形式に変換できるデータを取得するかどうかを決定します。</summary>
+        <returns>型の配列<see cref="T:System.String" />、このオブジェクトに格納されたデータでサポートされているすべての形式の一覧を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す前に、サポートされているデータ形式を取得するには、このメソッドを呼び出す<xref:System.Windows.Forms.DataObject.GetData%2A>です。 参照してください<xref:System.Windows.Forms.DataFormats>定義済みの形式です。  
+  
+> [!NOTE]
+>  データは、変換が許可されているストアドを指定すると、要求された形式に格納されている形式に互換性がある場合、別の形式に変換できます。 テキストに変換できる Unicode として格納されているデータなどです。  
+  
+   
+  
+## Examples  
+ 次のコード例のクエリ、<xref:System.Windows.Forms.DataObject>形式のデータに関連付けられています。 最初のクエリを指定します、`autoConvert`パラメーターとして`false`、のみ、データのネイティブ形式が返されます。 2 番目のクエリを指定します、`autoConvert`パラメーターとして`true`のため、形式の一覧には、形式に変換できるデータが含まれています。  
+  
+ このコードでは、する必要があります`textBox1`が作成されました。  
+  
+ [!code-cpp[Classic DataObject.GetFormats Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataObject.GetFormats Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataObject.GetFormats Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataObject.GetFormats Example/CS/source.cs#1)]
+ [!code-vb[Classic DataObject.GetFormats Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataObject.GetFormats Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetImage">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Image GetImage ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Drawing.Image GetImage() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.GetImage" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Image</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ オブジェクトからイメージを取得します。</summary>
+        <returns><see cref="T:System.Drawing.Image" />データ オブジェクト内の画像データを表すまたは<see langword="null" />データ オブジェクトに含まれるすべてのデータが含まれていないかどうか、<see cref="F:System.Windows.Forms.DataFormats.Bitmap" />書式設定するか、その形式に変換することができます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.DataObject.ContainsImage%2A>データ オブジェクトに、このメソッドを使用して取得する前にイメージ データが含まれるかどうかを調べます。  
+  
+ 使用して、<xref:System.Windows.Forms.DataObject.SetImage%2A>イメージ データをデータ オブジェクトに追加するメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetText">
+      <MemberSignature Language="C#" Value="public virtual string GetText ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetText() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.GetText" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>内のデータ オブジェクトからテキスト データを取得、<see cref="F:System.Windows.Forms.TextDataFormat.UnicodeText" />形式です。</summary>
+        <returns>データ オブジェクトのテキスト データまたは<see cref="F:System.String.Empty" />データ オブジェクトにデータが含まれていない場合、<see cref="F:System.Windows.Forms.TextDataFormat.UnicodeText" />形式です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.DataObject.ContainsText%2A>データ オブジェクトに、このメソッドを使用して取得する前にテキスト データが含まれるかどうかを調べます。  
+  
+ 使用して、<xref:System.Windows.Forms.DataObject.SetText%2A>データ オブジェクトにテキスト データを追加します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetText">
+      <MemberSignature Language="C#" Value="public virtual string GetText (System.Windows.Forms.TextDataFormat format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetText(valuetype System.Windows.Forms.TextDataFormat format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.GetText(System.Windows.Forms.TextDataFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.Windows.Forms.TextDataFormat" />
+      </Parameters>
+      <Docs>
+        <param name="format"><see cref="T:System.Windows.Forms.TextDataFormat" /> 値のいずれか。</param>
+        <summary>指定された、指定された形式でデータ オブジェクトからテキスト データを取得<see cref="T:System.Windows.Forms.TextDataFormat" />値。</summary>
+        <returns>データ オブジェクトのテキスト データまたは<see cref="F:System.String.Empty" />データ オブジェクトに指定された形式でデータが含まれていない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.DataObject.ContainsText%2A>データ オブジェクトに、このメソッドを使用して取得する前にテキスト データが含まれるかどうかを調べます。  
+  
+ 使用して、<xref:System.Windows.Forms.DataObject.SetText%2A>データ オブジェクトにテキスト データを追加します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="format" /> は有効な <see cref="T:System.Windows.Forms.TextDataFormat" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAudio">
+      <MemberSignature Language="C#" Value="public virtual void SetAudio (byte[] audioBytes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetAudio(unsigned int8[] audioBytes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.SetAudio(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="audioBytes" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="audioBytes">A<see cref="T:System.Byte" />オーディオ データを含む配列。</param>
+        <summary>追加、<see cref="T:System.Byte" />配列内のデータ オブジェクトを<see cref="F:System.Windows.Forms.DataFormats.WaveAudio" />形式に変換した後、<see cref="T:System.IO.Stream" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ オブジェクトからオーディオ データを取得する、<xref:System.Windows.Forms.DataObject.ContainsAudio%2A>データ オブジェクトを取得する前にオーディオ データを格納しているかどうかを決定するメソッド、<xref:System.Windows.Forms.DataObject.GetAudioStream%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="audioBytes" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAudio">
+      <MemberSignature Language="C#" Value="public virtual void SetAudio (System.IO.Stream audioStream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetAudio(class System.IO.Stream audioStream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.SetAudio(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="audioStream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="audioStream">A<see cref="T:System.IO.Stream" />オーディオ データを格納します。</param>
+        <summary>追加、<see cref="T:System.IO.Stream" />内のデータ オブジェクトを<see cref="F:System.Windows.Forms.DataFormats.WaveAudio" />形式です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ オブジェクトからオーディオ データを取得する、<xref:System.Windows.Forms.DataObject.ContainsAudio%2A>データ オブジェクトを取得する前にオーディオ データを格納しているかどうかを決定するメソッド、<xref:System.Windows.Forms.DataObject.GetAudioStream%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="audioStream" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetData">
+      <MemberSignature Language="C#" Value="public virtual void SetData (object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetData(object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.SetData(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="data">格納するデータ。</param>
+        <summary>指定したオブジェクトを追加、<see cref="T:System.Windows.Forms.DataObject" />データ形式として、オブジェクトの種類を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ターゲット アプリケーションの形式がわからない場合は、このメソッドを使用して複数の形式でデータを格納できます。 このメソッドを使用して格納されているデータは、取得されるときに、互換性のある形式に変換できます。  
+  
+ <xref:System.Windows.Forms.DataObject.SetData%28System.Object%29>ストアをオーバー ロード、`data`値を呼び出すことによってこれを決定する形式で、<xref:System.Object.GetType%2A?displayProperty=nameWithType>メソッドです。 場合`data`を実装する、<xref:System.Runtime.Serialization.ISerializable>インターフェイスでは、このオーバー ロードも値を格納で、<xref:System.Windows.DataFormats.Serializable>形式です。  
+  
+   
+  
+## Examples  
+ 次のコード例にデータを保存、<xref:System.Windows.Forms.DataObject>です。 最初に、新しい<xref:System.Windows.Forms.DataObject>が作成されるコンポーネントがこれに格納されているとします。 次に、クラスを指定してデータを取得します。 結果は、テキスト ボックスに表示されます。  
+  
+ このコードでは、する必要があります`textBox1`が作成されました。  
+  
+ [!code-cpp[Classic DataObject.SetData3 Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataObject.SetData3 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataObject.SetData3 Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataObject.SetData3 Example/CS/source.cs#1)]
+ [!code-vb[Classic DataObject.SetData3 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataObject.SetData3 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetData">
+      <MemberSignature Language="C#" Value="public virtual void SetData (string format, object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetData(string format, object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.SetData(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="format">データに関連付けられている形式。 参照してください<see cref="T:System.Windows.Forms.DataFormats" />定義済みの形式です。</param>
+        <param name="data">格納するデータ。</param>
+        <summary>指定したオブジェクトを追加、<see cref="T:System.Windows.Forms.DataObject" />指定の書式を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ターゲット アプリケーションの形式がわからない場合は、このメソッドを使用して複数の形式でデータを格納できます。  
+  
+ このメソッドを使用して格納されているデータは、取得されるときに、互換性のある形式に変換できます。  
+  
+   
+  
+## Examples  
+ 次のコード例にデータを保存、 <xref:System.Windows.Forms.DataObject>、Unicode としての形式を指定します。  
+  
+ データは、既定値は、最終的な形式は、互換性のあるときにデータを変換するために、テキスト形式を指定することによって取得されます。 結果は、テキスト ボックスに表示されます。  
+  
+ このコードでは、する必要があります`textBox1`が作成されました。  
+  
+ [!code-cpp[Classic DataObject.SetData1 Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataObject.SetData1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataObject.SetData1 Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataObject.SetData1 Example/CS/source.cs#1)]
+ [!code-vb[Classic DataObject.SetData1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataObject.SetData1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetData">
+      <MemberSignature Language="C#" Value="public virtual void SetData (Type format, object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetData(class System.Type format, object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.SetData(System.Type,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.Type" />
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="format">A<see cref="T:System.Type" />データに関連付けられている形式を表すです。</param>
+        <param name="data">格納するデータ。</param>
+        <summary>指定したオブジェクトを追加、<see cref="T:System.Windows.Forms.DataObject" />形式として、指定した型を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ターゲット アプリケーションの形式がわからない場合は、このメソッドを使用して複数の形式でデータを格納できます。  
+  
+ このメソッドを使用して格納されているデータは、取得されるときに、互換性のある形式に変換できます。  
+  
+   
+  
+## Examples  
+ 次のコード例にデータを保存、<xref:System.Windows.Forms.DataObject>を使用して、<xref:System.Type>データ形式として。 呼び出してデータを取得し、<xref:System.Windows.Forms.DataObject.GetData%2A>を使用して、<xref:System.Type>データ形式を指定します。 結果は、テキスト ボックスに表示されます。  
+  
+ このコードでは、する必要があります`textBox1`が作成されました。  
+  
+ [!code-cpp[Classic DataObject.SetData2 Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataObject.SetData2 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataObject.SetData2 Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataObject.SetData2 Example/CS/source.cs#1)]
+ [!code-vb[Classic DataObject.SetData2 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataObject.SetData2 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetData">
+      <MemberSignature Language="C#" Value="public virtual void SetData (string format, bool autoConvert, object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetData(string format, bool autoConvert, object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.SetData(System.String,System.Boolean,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="autoConvert" Type="System.Boolean" />
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="format">データに関連付けられている形式。 参照してください<see cref="T:System.Windows.Forms.DataFormats" />定義済みの形式です。</param>
+        <param name="autoConvert">
+          <see langword="true" />別の形式に変換するデータを許可するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="data">格納するデータ。</param>
+        <summary>指定したオブジェクトを追加、<see cref="T:System.Windows.Forms.DataObject" />指定した書式を使用して、データを別の形式に変換できるかどうかを示すです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ターゲット アプリケーションの形式がわからない場合は、このメソッドを使用して複数の形式でデータを格納できます。  
+  
+   
+  
+## Examples  
+ 次のコード例にデータを保存、<xref:System.Windows.Forms.DataObject>し、データがネイティブ形式で取得することができますのみを指定します。  
+  
+ 最初に、新しい<xref:System.Windows.Forms.DataObject>を作成します。 Unicode 形式でデータが格納されている、<xref:System.Windows.Forms.DataObject>で`autoConvert`'éý'`false`です。  
+  
+ 次に、<xref:System.Windows.Forms.DataObject>が利用可能なデータ形式の一覧を照会します。 Unicode データは、テキストおよびその他の形式に変換できますが、Unicode 形式のみが返されます。  
+  
+ このコードでは、する必要があります`textBox1`が作成されました。  
+  
+ [!code-cpp[Classic DataObject.SetData Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataObject.SetData Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataObject.SetData Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataObject.SetData Example/CS/source.cs#1)]
+ [!code-vb[Classic DataObject.SetData Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataObject.SetData Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFileDropList">
+      <MemberSignature Language="C#" Value="public virtual void SetFileDropList (System.Collections.Specialized.StringCollection filePaths);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetFileDropList(class System.Collections.Specialized.StringCollection filePaths) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.SetFileDropList(System.Collections.Specialized.StringCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filePaths" Type="System.Collections.Specialized.StringCollection" />
+      </Parameters>
+      <Docs>
+        <param name="filePaths">A<see cref="T:System.Collections.Specialized.StringCollection" />ファイル名を含むです。</param>
+        <summary>ファイル名のコレクション内のデータ オブジェクトを追加、<see cref="F:System.Windows.Forms.DataFormats.FileDrop" />形式です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイルのドロップダウン リストは、ファイルのパス情報を格納する文字列のコレクションです。  
+  
+ ファイルのドロップダウン リストとしてデータ オブジェクトに格納されている、<xref:System.String>配列。 このメソッドは変換`filePaths`を<xref:System.String>配列のデータ オブジェクトを追加する前にします。  
+  
+ データ オブジェクトからファイルのドロップダウン リストを取得する、<xref:System.Windows.Forms.DataObject.ContainsFileDropList%2A>データ オブジェクトで取得する前にその形式でデータを格納しているかどうかを決定するメソッド、<xref:System.Windows.Forms.DataObject.GetFileDropList%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="filePaths" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetImage">
+      <MemberSignature Language="C#" Value="public virtual void SetImage (System.Drawing.Image image);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetImage(class System.Drawing.Image image) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.SetImage(System.Drawing.Image)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="image" Type="System.Drawing.Image" />
+      </Parameters>
+      <Docs>
+        <param name="image"><see cref="T:System.Drawing.Image" />データ オブジェクトに追加します。</param>
+        <summary>追加、<see cref="T:System.Drawing.Image" />内のデータ オブジェクトを<see cref="F:System.Windows.Forms.DataFormats.Bitmap" />形式です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ オブジェクトから画像データを取得する、<xref:System.Windows.Forms.DataObject.ContainsImage%2A>データ オブジェクトを取得する前にイメージ データを格納しているかどうかを決定するメソッド、<xref:System.Windows.Forms.DataObject.GetImage%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="image" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetText">
+      <MemberSignature Language="C#" Value="public virtual void SetText (string textData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetText(string textData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.SetText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textData" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="textData">データ オブジェクトに追加するテキスト。</param>
+        <summary>テキスト データで、データ オブジェクトを追加、<see cref="F:System.Windows.Forms.TextDataFormat.UnicodeText" />形式です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ オブジェクトからテキスト データを取得する、<xref:System.Windows.Forms.DataObject.ContainsText%2A>データ オブジェクトを取得する前にイメージ データを格納しているかどうかを決定するメソッド、<xref:System.Windows.Forms.DataObject.GetText%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="textData" /> は <see langword="null" /> または <see cref="F:System.String.Empty" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetText">
+      <MemberSignature Language="C#" Value="public virtual void SetText (string textData, System.Windows.Forms.TextDataFormat format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetText(string textData, valuetype System.Windows.Forms.TextDataFormat format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.SetText(System.String,System.Windows.Forms.TextDataFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textData" Type="System.String" />
+        <Parameter Name="format" Type="System.Windows.Forms.TextDataFormat" />
+      </Parameters>
+      <Docs>
+        <param name="textData">データ オブジェクトに追加するテキスト。</param>
+        <param name="format"><see cref="T:System.Windows.Forms.TextDataFormat" /> 値のいずれか。</param>
+        <summary>指定された、指定された形式で、データ オブジェクトにテキスト データを追加<see cref="T:System.Windows.Forms.TextDataFormat" />値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ オブジェクトからテキスト データを取得する、<xref:System.Windows.Forms.DataObject.ContainsText%2A>データ オブジェクトを取得する前にイメージ データを格納しているかどうかを決定するメソッド、<xref:System.Windows.Forms.DataObject.GetText%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="textData" /> は <see langword="null" /> または <see cref="F:System.String.Empty" /> です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="format" /> は有効な <see cref="T:System.Windows.Forms.TextDataFormat" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices.ComTypes.IDataObject.DAdvise">
+      <MemberSignature Language="C#" Value="int IDataObject.DAdvise (ref System.Runtime.InteropServices.ComTypes.FORMATETC pFormatetc, System.Runtime.InteropServices.ComTypes.ADVF advf, System.Runtime.InteropServices.ComTypes.IAdviseSink pAdvSink, out int pdwConnection);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Runtime.InteropServices.ComTypes.IDataObject.DAdvise(valuetype System.Runtime.InteropServices.ComTypes.FORMATETC&amp; pFormatetc, valuetype System.Runtime.InteropServices.ComTypes.ADVF advf, class System.Runtime.InteropServices.ComTypes.IAdviseSink pAdvSink, [out] int32&amp; pdwConnection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.System#Runtime#InteropServices#ComTypes#IDataObject#DAdvise(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.ADVF,System.Runtime.InteropServices.ComTypes.IAdviseSink,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pFormatetc" Type="System.Runtime.InteropServices.ComTypes.FORMATETC&amp;" RefType="ref" />
+        <Parameter Name="advf" Type="System.Runtime.InteropServices.ComTypes.ADVF" />
+        <Parameter Name="pAdvSink" Type="System.Runtime.InteropServices.ComTypes.IAdviseSink" />
+        <Parameter Name="pdwConnection" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="pFormatetc">A<see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" />構造、形式、ターゲット デバイス、縦横、および以降の通知に使用されるメディアを定義するには、参照によって渡されます。</param>
+        <param name="advf">1 つ、<see cref="T:System.Runtime.InteropServices.ComTypes.ADVF" />アドバイザリ コネクションを制御するためのフラグのグループを指定する値。</param>
+        <param name="pAdvSink">ポインター、<see cref="T:System.Runtime.InteropServices.ComTypes.IAdviseSink" />変更通知を受信するアドバイズ シンク インターフェイスです。</param>
+        <param name="pdwConnection">このメソッドから制御が戻るときに、この接続を識別する DWORD トークンへのポインターを格納します。 このトークンを後で使用するに渡すことによってアドバイザリ コネクションを削除する<see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.DUnadvise(System.Int32)" />です。 この値が 0 の場合、接続は確立されていません。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>データ オブジェクトとアドバイズ シンク間の接続を作成します。 このメソッドは、アドバイズ シンクをサポートするオブジェクトによって呼び出され、オブジェクトのデータの変更をアドバイズ シンクに通知できるようにします。</summary>
+        <returns>このメソッドは、標準の戻り値である E_INVALIDARG、E_UNEXPECTED、および E_OUTOFMEMORY をサポートすると同時に、次の値もサポートしています。  
+  
+ <list type="table"><listheader><term>値  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term>S_OK  
+  
+ </term><description>アドバイザリ コネクションが作成されました。  
+  
+ </description></item><item><term>E_NOTIMPL  
+  
+ </term><description>このメソッドは、データ オブジェクトに実装されていません。  
+  
+ </description></item><item><term>DV_E_LINDEX  
+  
+ </term><description>に対して無効な値がある<see cref="F:System.Runtime.InteropServices.ComTypes.FORMATETC.lindex" />以外の場合は現時点では、-1 だけがサポートされています。  
+  
+ </description></item><item><term>DV_E_FORMATETC  
+  
+ </term><description>無効な値がある、<paramref name="pFormatetc" />パラメーター。  
+  
+ </description></item><item><term>OLE_E_ADVISENOTSUPPORTED  
+  
+ </term><description>データ オブジェクトは変更通知をサポートしていません。  
+  
+ </description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 <xref:System.Windows.Forms.DataObject> が <xref:System.Runtime.InteropServices.ComTypes.IDataObject> インターフェイスにキャストされた場合にのみ使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices.ComTypes.IDataObject.DUnadvise">
+      <MemberSignature Language="C#" Value="void IDataObject.DUnadvise (int dwConnection);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices.ComTypes.IDataObject.DUnadvise(int32 dwConnection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.System#Runtime#InteropServices#ComTypes#IDataObject#DUnadvise(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dwConnection" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="dwConnection">削除する接続を指定する DWORD トークン。 接続が最初に確立されたときに、<see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.DAdvise(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.ADVF,System.Runtime.InteropServices.ComTypes.IAdviseSink,System.Int32@)" /> から返された値を使用します。</param>
+        <summary>以前に確立されていた通知の接続を破棄します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 <xref:System.Windows.Forms.DataObject> が <xref:System.Runtime.InteropServices.ComTypes.IDataObject> インターフェイスにキャストされた場合にのみ使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices.ComTypes.IDataObject.EnumDAdvise">
+      <MemberSignature Language="C#" Value="int IDataObject.EnumDAdvise (out System.Runtime.InteropServices.ComTypes.IEnumSTATDATA enumAdvise);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Runtime.InteropServices.ComTypes.IDataObject.EnumDAdvise([out] class System.Runtime.InteropServices.ComTypes.IEnumSTATDATA&amp; enumAdvise) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.System#Runtime#InteropServices#ComTypes#IDataObject#EnumDAdvise(System.Runtime.InteropServices.ComTypes.IEnumSTATDATA@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enumAdvise" Type="System.Runtime.InteropServices.ComTypes.IEnumSTATDATA&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="enumAdvise">このメソッドが戻るとき、<see cref="T:System.Runtime.InteropServices.ComTypes.IEnumSTATDATA" />新しい列挙子オブジェクトへのインターフェイス ポインターを受け取る。 実装では、設定する場合<c>enumAdvise</c>に<see langword="null" />現時点でアドバイズ シンクへの接続はありません。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>現在のアドバイザリ コネクションを列挙するために使用できるオブジェクトを作成します。</summary>
+        <returns>このメソッドは、標準の戻り値である E_OUTOFMEMORY をサポートすると同時に、次の値もサポートしています。  
+  
+ <list type="table"><listheader><term>値  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term>S_OK  
+  
+ </term><description>列挙子オブジェクトが正常にインスタンス化されるか、接続がありません。  
+  
+ </description></item><item><term>OLE_E_ADVISENOTSUPPORTED  
+  
+ </term><description>このオブジェクトは、アドバイザリの通知をサポートしていません。  
+  
+ </description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 <xref:System.Windows.Forms.DataObject> が <xref:System.Runtime.InteropServices.ComTypes.IDataObject> インターフェイスにキャストされた場合にのみ使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices.ComTypes.IDataObject.EnumFormatEtc">
+      <MemberSignature Language="C#" Value="System.Runtime.InteropServices.ComTypes.IEnumFORMATETC IDataObject.EnumFormatEtc (System.Runtime.InteropServices.ComTypes.DATADIR dwDirection);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Runtime.InteropServices.ComTypes.IEnumFORMATETC System.Runtime.InteropServices.ComTypes.IDataObject.EnumFormatEtc(valuetype System.Runtime.InteropServices.ComTypes.DATADIR dwDirection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.System#Runtime#InteropServices#ComTypes#IDataObject#EnumFormatEtc(System.Runtime.InteropServices.ComTypes.DATADIR)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.ComTypes.IEnumFORMATETC</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dwDirection" Type="System.Runtime.InteropServices.ComTypes.DATADIR" />
+      </Parameters>
+      <Docs>
+        <param name="dwDirection">1 つ、<see cref="T:System.Runtime.InteropServices.ComTypes.DATADIR" />データの方向を指定する値。</param>
+        <summary>列挙するオブジェクトを作成、<see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" />データ オブジェクトの構造体。 呼び出しで使用されるこれらの構造体<see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@)" />または<see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.SetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@,System.Boolean)" />です。</summary>
+        <returns>このメソッドは、標準の戻り値である E_INVALIDARG および E_OUTOFMEMORY をサポートすると同時に、次の値もサポートしています。  
+  
+ <list type="table"><listheader><term>値  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term>S_OK  
+  
+ </term><description>列挙子オブジェクトが作成されました。  
+  
+ </description></item><item><term>E_NOTIMPL  
+  
+ </term><description>指定した方向、<paramref name="direction" />パラメーターはサポートされていません。  
+  
+ </description></item><item><term>OLE_S_USEREG  
+  
+ </term><description>OLE がレジストリから形式を列挙することを要求します。  
+  
+ </description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 <xref:System.Windows.Forms.DataObject> が <xref:System.Runtime.InteropServices.ComTypes.IDataObject> インターフェイスにキャストされた場合にのみ使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices.ComTypes.IDataObject.GetCanonicalFormatEtc">
+      <MemberSignature Language="C#" Value="int IDataObject.GetCanonicalFormatEtc (ref System.Runtime.InteropServices.ComTypes.FORMATETC pformatetcIn, out System.Runtime.InteropServices.ComTypes.FORMATETC pformatetcOut);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Runtime.InteropServices.ComTypes.IDataObject.GetCanonicalFormatEtc(valuetype System.Runtime.InteropServices.ComTypes.FORMATETC&amp; pformatetcIn, [out] valuetype System.Runtime.InteropServices.ComTypes.FORMATETC&amp; pformatetcOut) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.System#Runtime#InteropServices#ComTypes#IDataObject#GetCanonicalFormatEtc(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.FORMATETC@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pformatetcIn" Type="System.Runtime.InteropServices.ComTypes.FORMATETC&amp;" RefType="ref" />
+        <Parameter Name="pformatetcOut" Type="System.Runtime.InteropServices.ComTypes.FORMATETC&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="pformatetcIn">ポインター、<see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" />形式、メディア、および呼び出し元がなどの後続の呼び出しでデータを取得するにはターゲット デバイスを定義するには、参照によって渡された構造<see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@)" />です。 <see cref="T:System.Runtime.InteropServices.ComTypes.TYMED" />メンバーは、ここでは重要ではありません、無視してください。</param>
+        <param name="pformatetcOut">このメソッドが戻るときへのポインターを含む、<see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" />正規と同じになります、特定の表示について考えられる最も一般的な情報を格納する構造体<c>formatetIn</c>です。 呼び出し元がこの構造体を割り当てる必要があります、<see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetCanonicalFormatEtc(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.FORMATETC@)" />メソッドは、データを入力する必要があります。 などの後続の呼び出し内のデータを取得する<see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@)" />、呼び出し元の指定された値を使用して<c>formatOut</c>指定された値がない限り、<see langword="null" />です。 この値は<see langword="null" />メソッドを返す場合<see langword="DATA_S_SAMEFORMATETC" />です。 <see cref="T:System.Runtime.InteropServices.ComTypes.TYMED" />メンバーは、ここでは重要ではありません、無視してください。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>標準の提供<see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" />より複雑な構造と論理的に等価である構造体。 2 つあるかどうかを判断するには、このメソッドを使用して異なる<see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" />構造体は重複するレンダリングの必要性を削除する、同じデータを返します。</summary>
+        <returns>このメソッドは、標準の戻り値である E_INVALIDARG、E_UNEXPECTED、および E_OUTOFMEMORY をサポートすると同時に、次の値もサポートしています。  
+  
+ <list type="table"><listheader><term>値  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term>S_OK  
+  
+ </term><description>返された<see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" />構造体が渡されたものと異なります。  
+  
+ </description></item><item><term>DATA_S_SAMEFORMATETC  
+  
+ </term><description><see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" />構造体は、同じおよび<see langword="null" />で返される、<paramref name="formatOut" />パラメーター。  
+  
+ </description></item><item><term>DV_E_LINDEX  
+  
+ </term><description>に対して無効な値がある<see cref="F:System.Runtime.InteropServices.ComTypes.FORMATETC.lindex" />以外の場合は現時点では、-1 だけがサポートされています。  
+  
+ </description></item><item><term>DV_E_FORMATETC  
+  
+ </term><description>無効な値がある、<paramref name="pFormatetc" />パラメーター。  
+  
+ </description></item><item><term>OLE_E_NOTRUNNING  
+  
+ </term><description>アプリケーションが実行されていません。  
+  
+ </description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 <xref:System.Windows.Forms.DataObject> が <xref:System.Runtime.InteropServices.ComTypes.IDataObject> インターフェイスにキャストされた場合にのみ使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices.ComTypes.IDataObject.GetData">
+      <MemberSignature Language="C#" Value="void IDataObject.GetData (ref System.Runtime.InteropServices.ComTypes.FORMATETC formatetc, out System.Runtime.InteropServices.ComTypes.STGMEDIUM medium);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices.ComTypes.IDataObject.GetData(valuetype System.Runtime.InteropServices.ComTypes.FORMATETC&amp; formatetc, [out] valuetype System.Runtime.InteropServices.ComTypes.STGMEDIUM&amp; medium) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.System#Runtime#InteropServices#ComTypes#IDataObject#GetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formatetc" Type="System.Runtime.InteropServices.ComTypes.FORMATETC&amp;" RefType="ref" />
+        <Parameter Name="medium" Type="System.Runtime.InteropServices.ComTypes.STGMEDIUM&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="formatetc">ポインター、<see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" />構造、形式、メディア、およびデータを渡すときに使用するターゲット デバイスを定義するには、参照によって渡されます。 ブール型の OR 演算子を使用して複数のメディアを指定し、メソッドがそれらの指定の中から最良のメディアを選択できるようにします。</param>
+        <param name="medium">このメソッドが戻るときへのポインターを含む、<see cref="T:System.Runtime.InteropServices.ComTypes.STGMEDIUM" />構造から返されたデータを含む記憶域メディアを示すその<see cref="F:System.Runtime.InteropServices.ComTypes.STGMEDIUM.tymed" />メンバー、および責任の値を使用してメディアを解放するため、<see cref="F:System.Runtime.InteropServices.ComTypes.STGMEDIUM.pUnkForRelease" />メンバー。 場合<see cref="F:System.Runtime.InteropServices.ComTypes.STGMEDIUM.pUnkForRelease" />は<see langword="null" />、メディアの受信側は、それ以外の解放を担当する<see cref="F:System.Runtime.InteropServices.ComTypes.STGMEDIUM.pUnkForRelease" />を指す、<see langword="IUnknown" />ためインターフェイスの適切なオブジェクトをその<see langword="Release" />メソッドを呼び出すことができます。 メディアを割り当てられているし、で読み込む必要があります<see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@)" />です。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>ソース データ オブジェクトからデータを取得します。 <see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@)" />データ コンシューマーによって呼び出される、メソッドは、指定した説明されているデータをレンダリング<see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" />構造体し、指定したを介して転送<see cref="T:System.Runtime.InteropServices.ComTypes.STGMEDIUM" />構造体。 呼び出し元が、解放するための責任を引き継ぎます、<see cref="T:System.Runtime.InteropServices.ComTypes.STGMEDIUM" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 <xref:System.Windows.Forms.DataObject> が <xref:System.Runtime.InteropServices.ComTypes.IDataObject> インターフェイスにキャストされた場合にのみ使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.OutOfMemoryException">この操作を実行する十分なメモリがありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices.ComTypes.IDataObject.GetDataHere">
+      <MemberSignature Language="C#" Value="void IDataObject.GetDataHere (ref System.Runtime.InteropServices.ComTypes.FORMATETC formatetc, ref System.Runtime.InteropServices.ComTypes.STGMEDIUM medium);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices.ComTypes.IDataObject.GetDataHere(valuetype System.Runtime.InteropServices.ComTypes.FORMATETC&amp; formatetc, valuetype System.Runtime.InteropServices.ComTypes.STGMEDIUM&amp; medium) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.System#Runtime#InteropServices#ComTypes#IDataObject#GetDataHere(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formatetc" Type="System.Runtime.InteropServices.ComTypes.FORMATETC&amp;" RefType="ref" />
+        <Parameter Name="medium" Type="System.Runtime.InteropServices.ComTypes.STGMEDIUM&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="formatetc">ポインター、<see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" />構造、形式、メディア、およびデータを渡すときに使用するターゲット デバイスを定義するには、参照によって渡されます。 指定できる 1 つだけのメディア<see cref="T:System.Runtime.InteropServices.ComTypes.TYMED" />、し、次のオプションのみ<see cref="T:System.Runtime.InteropServices.ComTypes.TYMED" />有効な値: <see cref="F:System.Runtime.InteropServices.ComTypes.TYMED.TYMED_ISTORAGE" />、 <see cref="F:System.Runtime.InteropServices.ComTypes.TYMED.TYMED_ISTREAM" />、 <see cref="F:System.Runtime.InteropServices.ComTypes.TYMED.TYMED_HGLOBAL" />、または<see cref="F:System.Runtime.InteropServices.ComTypes.TYMED.TYMED_FILE" />です。</param>
+        <param name="medium">A <see cref="T:System.Runtime.InteropServices.ComTypes.STGMEDIUM" />、転送されるデータを含む記憶域メディアを定義するには、参照によって渡されます。 メディアを呼び出し元によって割り当てられで読み込む必要があります<see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetDataHere(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@)" />です。 呼び出し元は、メディアを解放する必要もあります。 常に、このメソッドの実装の値を指定する可能性があります<see langword="null" />の<see cref="F:System.Runtime.InteropServices.ComTypes.STGMEDIUM.pUnkForRelease" />のメンバー、<see cref="T:System.Runtime.InteropServices.ComTypes.STGMEDIUM" />をこのパラメーターが指す構造体。</param>
+        <summary>ソース データ オブジェクトからデータを取得します。 このメソッドは、データのコンシューマーによって呼び出されるとは異なります、<see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@)" />メソッドを呼び出し元の割り当てし、指定されたストレージ メディアを解放する必要があります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 <xref:System.Windows.Forms.DataObject> が <xref:System.Runtime.InteropServices.ComTypes.IDataObject> インターフェイスにキャストされた場合にのみ使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices.ComTypes.IDataObject.QueryGetData">
+      <MemberSignature Language="C#" Value="int IDataObject.QueryGetData (ref System.Runtime.InteropServices.ComTypes.FORMATETC formatetc);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Runtime.InteropServices.ComTypes.IDataObject.QueryGetData(valuetype System.Runtime.InteropServices.ComTypes.FORMATETC&amp; formatetc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.System#Runtime#InteropServices#ComTypes#IDataObject#QueryGetData(System.Runtime.InteropServices.ComTypes.FORMATETC@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formatetc" Type="System.Runtime.InteropServices.ComTypes.FORMATETC&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="formatetc">ポインター、<see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" />構造、形式、メディア、およびクエリに使用するターゲット デバイスを定義するには、参照によって渡されます。</param>
+        <summary>データ オブジェクトで記述されているデータを表示できるかどうかを判断、<see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" />構造体。 オブジェクトを呼び出す前にこのメソッドを呼び出すことができます、貼り付け操作または drop 操作をしようとした<see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@)" />操作が成功する可能性があるかどうかを示す値を取得します。</summary>
+        <returns>このメソッドは、標準の戻り値である E_INVALIDARG、E_UNEXPECTED、および E_OUTOFMEMORY をサポートすると同時に、次の値もサポートしています。  
+  
+ <list type="table"><listheader><term>値  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term>S_OK  
+  
+ </term><description>後続の呼び出しに<see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@)" />成功でしょう。  
+  
+ </description></item><item><term>DV_E_LINDEX  
+  
+ </term><description>に対して無効な値<see cref="F:System.Runtime.InteropServices.ComTypes.FORMATETC.lindex" />以外の場合は現時点では、-1 だけがサポートされています。  
+  
+ </description></item><item><term>DV_E_FORMATETC  
+  
+ </term><description>無効な値、<paramref name="pFormatetc" />パラメーター。  
+  
+ </description></item><item><term>DV_E_TYMED  
+  
+ </term><description>無効な<see cref="F:System.Runtime.InteropServices.ComTypes.FORMATETC.tymed" />値。  
+  
+ </description></item><item><term>DV_E_DVASPECT  
+  
+ </term><description>無効な<see cref="F:System.Runtime.InteropServices.ComTypes.FORMATETC.dwAspect" />値。  
+  
+ </description></item><item><term>OLE_E_NOTRUNNING  
+  
+ </term><description>アプリケーションが実行されていません。  
+  
+ </description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 <xref:System.Windows.Forms.DataObject> が <xref:System.Runtime.InteropServices.ComTypes.IDataObject> インターフェイスにキャストされた場合にのみ使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices.ComTypes.IDataObject.SetData">
+      <MemberSignature Language="C#" Value="void IDataObject.SetData (ref System.Runtime.InteropServices.ComTypes.FORMATETC pFormatetcIn, ref System.Runtime.InteropServices.ComTypes.STGMEDIUM pmedium, bool fRelease);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices.ComTypes.IDataObject.SetData(valuetype System.Runtime.InteropServices.ComTypes.FORMATETC&amp; pFormatetcIn, valuetype System.Runtime.InteropServices.ComTypes.STGMEDIUM&amp; pmedium, bool fRelease) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataObject.System#Runtime#InteropServices#ComTypes#IDataObject#SetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pFormatetcIn" Type="System.Runtime.InteropServices.ComTypes.FORMATETC&amp;" RefType="ref" />
+        <Parameter Name="pmedium" Type="System.Runtime.InteropServices.ComTypes.STGMEDIUM&amp;" RefType="ref" />
+        <Parameter Name="fRelease" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="pFormatetcIn">A<see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" />構造、ストレージ メディアに含まれるデータを解釈するときに、データ オブジェクトを使用する書式を定義するには、参照によって渡されます。</param>
+        <param name="pmedium">A<see cref="T:System.Runtime.InteropServices.ComTypes.STGMEDIUM" />構造、データが渡されるストレージ メディアを定義するには、参照によって渡されます。</param>
+        <param name="fRelease">
+          <see langword="true" />データは、呼び出されるを実装するオブジェクトを指定する<see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.SetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@,System.Boolean)" />呼び出しが返された後に、ストレージ メディアを所有します。 つまり、呼び出すことによって使用された後に、データ オブジェクトが、メディアを解放する必要があります、<see langword="ReleaseStgMedium" />関数。 <see langword="false" />呼び出し元は、ストレージ メディアの所有権を保持してをデータ オブジェクトと呼ばれることを指定するには、のみ呼び出しの間の記憶域メディアを使用します。</param>
+        <summary>このメソッドを実装するオブジェクトにデータを転送します。 このメソッドは、データ ソースを格納しているオブジェクトから呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 <xref:System.Windows.Forms.DataObject> が <xref:System.Runtime.InteropServices.ComTypes.IDataObject> インターフェイスにキャストされた場合にのみ使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">このメソッドは、基になるデータ オブジェクトの種類をサポートしていません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,763 @@
+<Type Name="MessageHeader" FullName="System.ServiceModel.Channels.MessageHeader">
+  <TypeSignature Language="C#" Value="public abstract class MessageHeader : System.ServiceModel.Channels.MessageHeaderInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract MessageHeader extends System.ServiceModel.Channels.MessageHeaderInfo" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.MessageHeader" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Channels.MessageHeaderInfo</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>SOAP ヘッダーの内容を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ ヘッダーは、メッセージを説明するオプションのメタデータを格納し、<xref:System.ServiceModel.Channels.Message> クラスによってカプセル化されます。  
+  
+ <xref:System.ServiceModel.Channels.Message> は、アプリケーション固有のメッセージ内の情報を渡すための拡張メカニズムとして使用されるヘッダーを持つことができます。 <xref:System.ServiceModel.Channels.Message.Headers%2A> を使用して、<xref:System.ServiceModel.Channels.MessageHeaders.Add%2A> メソッドを呼び出すことにより、メッセージ ヘッダーをメッセージに追加します。  
+  
+ [!INCLUDE[indigo1](~/includes/indigo1-md.md)] には、次の表に示すように、多数の定義済みのメッセージ ヘッダーが用意されています。  
+  
+|ヘッダー名|説明|  
+|-----------------|-----------------|  
+|目的|メッセージのターゲットのロールを格納します。|  
+|アクション|メッセージの処理方法の説明を提供します。|  
+|FaultTo|エラーの送信先となるノードのアドレスを格納します。|  
+|変換前|メッセージを送ったノードのアドレスを格納します。|  
+|要求|メッセージが要求かどうかを示します。|  
+|MessageID|メッセージの一意の ID を格納します。|  
+|RelatesTo|このメッセージに関連するメッセージの ID を格納します。|  
+|ReplyTo|要求の応答の送信先となるノードのアドレスを格納します。|  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected MessageHeader ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MessageHeader.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Channels.MessageHeader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Actor">
+      <MemberSignature Language="C#" Value="public override string Actor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Actor" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.MessageHeader.Actor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ ヘッダーの対象受信先を取得または設定します。</summary>
+        <value>メッセージ ヘッダーで対象とされている受信者。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが空の場合、ヘッダーは、メッセージの最終受信先に宛てていると解釈されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateHeader">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.MessageHeader CreateHeader (string name, string ns, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.MessageHeader CreateHeader(string name, string ns, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.MessageHeader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="name">ヘッダー XML 要素のローカル名。</param>
+        <param name="ns">ヘッダー XML 要素の名前空間 URI。</param>
+        <param name="value">作成するヘッダーの内容。</param>
+        <summary>指定したデータを使用して、新しいメッセージ ヘッダーを作成します。</summary>
+        <returns>新しい<see cref="T:System.ServiceModel.Channels.MessageHeader" />指定されたデータ オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateHeader">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.MessageHeader CreateHeader (string name, string ns, object value, bool mustUnderstand);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.MessageHeader CreateHeader(string name, string ns, object value, bool mustUnderstand) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.MessageHeader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="mustUnderstand" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name">ヘッダー XML 要素のローカル名。</param>
+        <param name="ns">ヘッダー XML 要素の名前空間 URI。</param>
+        <param name="value">作成するヘッダーの内容。</param>
+        <param name="mustUnderstand">ヘッダーの認識が必要かどうかを指定する値。</param>
+        <summary>指定したデータを使用して、新しいメッセージ ヘッダーを作成します。</summary>
+        <returns>新しい<see cref="T:System.ServiceModel.Channels.MessageHeader" />指定されたデータ オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateHeader">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.MessageHeader CreateHeader (string name, string ns, object value, System.Runtime.Serialization.XmlObjectSerializer serializer);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.MessageHeader CreateHeader(string name, string ns, object value, class System.Runtime.Serialization.XmlObjectSerializer serializer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.MessageHeader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="serializer" Type="System.Runtime.Serialization.XmlObjectSerializer" />
+      </Parameters>
+      <Docs>
+        <param name="name">ヘッダー XML 要素のローカル名。</param>
+        <param name="ns">ヘッダー XML 要素の名前空間 URI。</param>
+        <param name="value">作成するヘッダーの内容。</param>
+        <param name="serializer"><see cref="T:System.Runtime.Serialization.XmlObjectSerializer" />ヘッダーをシリアル化するために使用されます。</param>
+        <summary>XmlFormatter を使用してシリアル化するオブジェクトからヘッダーを作成します。</summary>
+        <returns>新しい<see cref="T:System.ServiceModel.Channels.MessageHeader" />指定されたデータ オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateHeader">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.MessageHeader CreateHeader (string name, string ns, object value, bool mustUnderstand, string actor);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.MessageHeader CreateHeader(string name, string ns, object value, bool mustUnderstand, string actor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object,System.Boolean,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.MessageHeader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="mustUnderstand" Type="System.Boolean" />
+        <Parameter Name="actor" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">ヘッダー XML 要素のローカル名。</param>
+        <param name="ns">ヘッダー XML 要素の名前空間 URI。</param>
+        <param name="value">作成するヘッダーの内容。</param>
+        <param name="mustUnderstand">ヘッダーの認識が必要かどうかを指定する値。</param>
+        <param name="actor">メッセージ ヘッダーで対象とされている受信者。</param>
+        <summary>指定したデータを使用して、新しいメッセージ ヘッダーを作成します。</summary>
+        <returns>新しい<see cref="T:System.ServiceModel.Channels.MessageHeader" />指定されたデータ オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateHeader">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.MessageHeader CreateHeader (string name, string ns, object value, System.Runtime.Serialization.XmlObjectSerializer serializer, bool mustUnderstand);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.MessageHeader CreateHeader(string name, string ns, object value, class System.Runtime.Serialization.XmlObjectSerializer serializer, bool mustUnderstand) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.MessageHeader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="serializer" Type="System.Runtime.Serialization.XmlObjectSerializer" />
+        <Parameter Name="mustUnderstand" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name">ヘッダー XML 要素のローカル名。</param>
+        <param name="ns">ヘッダー XML 要素の名前空間 URI。</param>
+        <param name="value">作成するヘッダーの内容。</param>
+        <param name="serializer"><see cref="T:System.Runtime.Serialization.XmlObjectSerializer" />ヘッダーをシリアル化するために使用されます。</param>
+        <param name="mustUnderstand">ヘッダーの認識が必要かどうかを指定する値。</param>
+        <summary>指定したデータを使用して、新しいメッセージ ヘッダーを作成します。</summary>
+        <returns>新しい<see cref="T:System.ServiceModel.Channels.MessageHeader" />指定されたデータ オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateHeader">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.MessageHeader CreateHeader (string name, string ns, object value, bool mustUnderstand, string actor, bool relay);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.MessageHeader CreateHeader(string name, string ns, object value, bool mustUnderstand, string actor, bool relay) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object,System.Boolean,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.MessageHeader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="mustUnderstand" Type="System.Boolean" />
+        <Parameter Name="actor" Type="System.String" />
+        <Parameter Name="relay" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name">ヘッダー XML 要素のローカル名。</param>
+        <param name="ns">ヘッダー XML 要素の名前空間 URI。</param>
+        <param name="value">作成するヘッダーの内容。</param>
+        <param name="mustUnderstand">ヘッダーの認識が必要かどうかを指定する値。</param>
+        <param name="actor">メッセージ ヘッダーで対象とされている受信者。</param>
+        <param name="relay">ヘッダーの転送が必要かどうかを指定する値。</param>
+        <summary>指定したデータを使用して、新しいメッセージ ヘッダーを作成します。</summary>
+        <returns>新しい<see cref="T:System.ServiceModel.Channels.MessageHeader" />指定されたデータ オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateHeader">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.MessageHeader CreateHeader (string name, string ns, object value, System.Runtime.Serialization.XmlObjectSerializer serializer, bool mustUnderstand, string actor);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.MessageHeader CreateHeader(string name, string ns, object value, class System.Runtime.Serialization.XmlObjectSerializer serializer, bool mustUnderstand, string actor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer,System.Boolean,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.MessageHeader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="serializer" Type="System.Runtime.Serialization.XmlObjectSerializer" />
+        <Parameter Name="mustUnderstand" Type="System.Boolean" />
+        <Parameter Name="actor" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">ヘッダー XML 要素のローカル名。</param>
+        <param name="ns">ヘッダー XML 要素の名前空間 URI。</param>
+        <param name="value">作成するヘッダーの内容。</param>
+        <param name="serializer"><see cref="T:System.Runtime.Serialization.XmlObjectSerializer" />ヘッダーをシリアル化するために使用されます。</param>
+        <param name="mustUnderstand">ヘッダーの認識が必要かどうかを指定する値。</param>
+        <param name="actor">メッセージ ヘッダーで対象とされている受信者。</param>
+        <summary>指定したデータを使用して、新しいメッセージ ヘッダーを作成します。</summary>
+        <returns>新しい<see cref="T:System.ServiceModel.Channels.MessageHeader" />指定されたデータ オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateHeader">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.MessageHeader CreateHeader (string name, string ns, object value, System.Runtime.Serialization.XmlObjectSerializer serializer, bool mustUnderstand, string actor, bool relay);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.MessageHeader CreateHeader(string name, string ns, object value, class System.Runtime.Serialization.XmlObjectSerializer serializer, bool mustUnderstand, string actor, bool relay) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer,System.Boolean,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.MessageHeader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="serializer" Type="System.Runtime.Serialization.XmlObjectSerializer" />
+        <Parameter Name="mustUnderstand" Type="System.Boolean" />
+        <Parameter Name="actor" Type="System.String" />
+        <Parameter Name="relay" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name">ヘッダー XML 要素のローカル名。</param>
+        <param name="ns">ヘッダー XML 要素の名前空間 URI。</param>
+        <param name="value">作成するヘッダーの内容。</param>
+        <param name="serializer"><see cref="T:System.Runtime.Serialization.XmlObjectSerializer" />ヘッダーをシリアル化するために使用されます。</param>
+        <param name="mustUnderstand">ヘッダーの認識が必要かどうかを指定する値。</param>
+        <param name="actor">メッセージ ヘッダーで対象とされている受信者。</param>
+        <param name="relay">ヘッダーの転送が必要かどうかを指定する値。</param>
+        <summary>指定したデータを使用して、新しいメッセージ ヘッダーを作成します。</summary>
+        <returns>新しい<see cref="T:System.ServiceModel.Channels.MessageHeader" />指定されたデータ オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMessageVersionSupported">
+      <MemberSignature Language="C#" Value="public virtual bool IsMessageVersionSupported (System.ServiceModel.Channels.MessageVersion messageVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsMessageVersionSupported(class System.ServiceModel.Channels.MessageVersion messageVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MessageHeader.IsMessageVersionSupported(System.ServiceModel.Channels.MessageVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageVersion" Type="System.ServiceModel.Channels.MessageVersion" />
+      </Parameters>
+      <Docs>
+        <param name="messageVersion">メッセージとその交換に関連付けられている SOAP のバージョンに関連する情報を格納するオブジェクト。</param>
+        <summary>指定したメッセージ バージョンがサポートされるかどうかを検証します。</summary>
+        <returns>
+          指定したメッセージ バージョンがサポートされる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReferenceParameter">
+      <MemberSignature Language="C#" Value="public override bool IsReferenceParameter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReferenceParameter" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.MessageHeader.IsReferenceParameter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ ヘッダーがエンドポイント参照の参照パラメーターを格納しているかどうかを指定する値を取得します。</summary>
+        <value>
+          メッセージ ヘッダーがエンドポイント参照の参照パラメーターを格納している場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照パラメーターに対応、<`ReferenceParameters`> の要素が記述されているので、 [Ws-addressing 仕様](http://go.microsoft.com/fwlink/?LinkID=96163)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MustUnderstand">
+      <MemberSignature Language="C#" Value="public override bool MustUnderstand { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool MustUnderstand" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.MessageHeader.MustUnderstand" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP 1.1/1.2 仕様に従って、ヘッダーを認識する必要があるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          ヘッダーを認識する必要がある場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが `true` で、メッセージ受信者がメッセージ ヘッダーを解釈できない場合、メッセージは処理されず、例外がスローされます。 このプロパティが `false` の場合、受信者は、メッセージ ヘッダーを無視して処理を続行できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnWriteHeaderContents">
+      <MemberSignature Language="C#" Value="protected abstract void OnWriteHeaderContents (System.Xml.XmlDictionaryWriter writer, System.ServiceModel.Channels.MessageVersion messageVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnWriteHeaderContents(class System.Xml.XmlDictionaryWriter writer, class System.ServiceModel.Channels.MessageVersion messageVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MessageHeader.OnWriteHeaderContents(System.Xml.XmlDictionaryWriter,System.ServiceModel.Channels.MessageVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlDictionaryWriter" />
+        <Parameter Name="messageVersion" Type="System.ServiceModel.Channels.MessageVersion" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xml.XmlDictionaryWriter" />ヘッダーの内容をシリアル化するために使用されます。</param>
+        <param name="messageVersion">メッセージとその交換に関連付けられている SOAP のバージョンに関連する情報を格納するオブジェクト。</param>
+        <summary>指定された XML ライターを使用してヘッダーの内容がシリアル化されるときに呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnWriteStartHeader">
+      <MemberSignature Language="C#" Value="protected virtual void OnWriteStartHeader (System.Xml.XmlDictionaryWriter writer, System.ServiceModel.Channels.MessageVersion messageVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnWriteStartHeader(class System.Xml.XmlDictionaryWriter writer, class System.ServiceModel.Channels.MessageVersion messageVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MessageHeader.OnWriteStartHeader(System.Xml.XmlDictionaryWriter,System.ServiceModel.Channels.MessageVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlDictionaryWriter" />
+        <Parameter Name="messageVersion" Type="System.ServiceModel.Channels.MessageVersion" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xml.XmlDictionaryWriter" />開始ヘッダーをシリアル化するために使用されます。</param>
+        <param name="messageVersion">メッセージとその交換に関連付けられている SOAP のバージョンに関連する情報を格納するオブジェクト。</param>
+        <summary>開始ヘッダーが、指定された XML ライターを使用してシリアル化されるときに呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Relay">
+      <MemberSignature Language="C#" Value="public override bool Relay { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Relay" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.MessageHeader.Relay" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ヘッダーの転送が必要かどうかを示す値を取得します。</summary>
+        <value>
+          ヘッダーを転送する必要がある場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SOAP 1.1 仕様に準拠して、この値は常に `false` になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MessageHeader.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメッセージ ヘッダーの文字列表現を返します。</summary>
+        <returns>このメッセージ ヘッダーの文字列形式。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteHeader">
+      <MemberSignature Language="C#" Value="public void WriteHeader (System.Xml.XmlDictionaryWriter writer, System.ServiceModel.Channels.MessageVersion messageVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteHeader(class System.Xml.XmlDictionaryWriter writer, class System.ServiceModel.Channels.MessageVersion messageVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MessageHeader.WriteHeader(System.Xml.XmlDictionaryWriter,System.ServiceModel.Channels.MessageVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlDictionaryWriter" />
+        <Parameter Name="messageVersion" Type="System.ServiceModel.Channels.MessageVersion" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xml.XmlDictionaryWriter" />ヘッダーをシリアル化するために使用されます。</param>
+        <param name="messageVersion">メッセージとその交換に関連付けられている SOAP のバージョンに関連する情報を格納するオブジェクト。</param>
+        <summary>指定した XML ライターを使用して、ヘッダーをシリアル化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteHeader">
+      <MemberSignature Language="C#" Value="public void WriteHeader (System.Xml.XmlWriter writer, System.ServiceModel.Channels.MessageVersion messageVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteHeader(class System.Xml.XmlWriter writer, class System.ServiceModel.Channels.MessageVersion messageVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MessageHeader.WriteHeader(System.Xml.XmlWriter,System.ServiceModel.Channels.MessageVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="messageVersion" Type="System.ServiceModel.Channels.MessageVersion" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xml.XmlWriter" />ヘッダーをシリアル化するために使用されます。</param>
+        <param name="messageVersion">メッセージとその交換に関連付けられている SOAP のバージョンに関連する情報を格納するオブジェクト。</param>
+        <summary>指定した XML ライターを使用して、ヘッダーをシリアル化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteHeaderAttributes">
+      <MemberSignature Language="C#" Value="protected void WriteHeaderAttributes (System.Xml.XmlDictionaryWriter writer, System.ServiceModel.Channels.MessageVersion messageVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteHeaderAttributes(class System.Xml.XmlDictionaryWriter writer, class System.ServiceModel.Channels.MessageVersion messageVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MessageHeader.WriteHeaderAttributes(System.Xml.XmlDictionaryWriter,System.ServiceModel.Channels.MessageVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlDictionaryWriter" />
+        <Parameter Name="messageVersion" Type="System.ServiceModel.Channels.MessageVersion" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xml.XmlDictionaryWriter" />ヘッダー属性にシリアル化に使用されます。</param>
+        <param name="messageVersion">メッセージとその交換に関連付けられている SOAP のバージョンに関連する情報を格納するオブジェクト。</param>
+        <summary>指定した XML ライターを使用してヘッダー属性にシリアル化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteHeaderContents">
+      <MemberSignature Language="C#" Value="public void WriteHeaderContents (System.Xml.XmlDictionaryWriter writer, System.ServiceModel.Channels.MessageVersion messageVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteHeaderContents(class System.Xml.XmlDictionaryWriter writer, class System.ServiceModel.Channels.MessageVersion messageVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MessageHeader.WriteHeaderContents(System.Xml.XmlDictionaryWriter,System.ServiceModel.Channels.MessageVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlDictionaryWriter" />
+        <Parameter Name="messageVersion" Type="System.ServiceModel.Channels.MessageVersion" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xml.XmlWriter" />ヘッダーの内容をシリアル化するために使用されます。</param>
+        <param name="messageVersion">メッセージとその交換に関連付けられている SOAP のバージョンに関連する情報を格納するオブジェクト。</param>
+        <summary>指定した XML ライターを使用して、ヘッダーの内容をシリアル化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteStartHeader">
+      <MemberSignature Language="C#" Value="public void WriteStartHeader (System.Xml.XmlDictionaryWriter writer, System.ServiceModel.Channels.MessageVersion messageVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteStartHeader(class System.Xml.XmlDictionaryWriter writer, class System.ServiceModel.Channels.MessageVersion messageVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MessageHeader.WriteStartHeader(System.Xml.XmlDictionaryWriter,System.ServiceModel.Channels.MessageVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlDictionaryWriter" />
+        <Parameter Name="messageVersion" Type="System.ServiceModel.Channels.MessageVersion" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xml.XmlDictionaryWriter" />開始ヘッダーをシリアル化するために使用されます。</param>
+        <param name="messageVersion">オブジェクトをメッセージとその交換に関連付けられている SOAP のバージョンに関連する情報が含まれています。</param>
+        <summary>指定した XML ライターを使用して、開始ヘッダーをシリアル化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

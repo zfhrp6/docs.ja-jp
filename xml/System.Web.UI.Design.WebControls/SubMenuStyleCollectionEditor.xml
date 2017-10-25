@@ -1,0 +1,174 @@
+<Type Name="SubMenuStyleCollectionEditor" FullName="System.Web.UI.Design.WebControls.SubMenuStyleCollectionEditor">
+  <TypeSignature Language="C#" Value="public class SubMenuStyleCollectionEditor : System.ComponentModel.Design.CollectionEditor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SubMenuStyleCollectionEditor extends System.ComponentModel.Design.CollectionEditor" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.SubMenuStyleCollectionEditor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Design.CollectionEditor</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コンポーネント エディターを提供、 <see cref="T:System.Web.UI.WebControls.SubMenuStyleCollection" /> 、関連するオブジェクト<see cref="T:System.Web.UI.WebControls.Menu" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.SubMenuStyleCollectionEditor>クラスを編集するためのユーザー インターフェイスの提供、<xref:System.Web.UI.WebControls.SubMenuStyle>の要素、 <xref:System.Web.UI.WebControls.SubMenuStyleCollection> 、関連するオブジェクト<xref:System.Web.UI.WebControls.Menu>の制御下で、デザイン時にコントロール、<xref:System.Web.UI.Design.WebControls.MenuDesigner>オブジェクト。  
+  
+ <xref:System.Web.UI.WebControls.SubMenuStyleCollection>に関連付けられている、<xref:System.Web.UI.WebControls.Menu.LevelSubMenuStyles%2A>のプロパティ、<xref:System.Web.UI.WebControls.Menu>コントロール。 <xref:System.Web.UI.WebControls.SubMenuStyleCollection>メニュー構造内のレベル (入れ子の深さ) に依存する静的サブメニュー項目にスタイルを適用するオブジェクトを使用します。  
+  
+ <xref:System.Web.UI.Design.WebControls.SubMenuStyleCollectionEditor>が呼び出される、たとえば、省略記号ボタンを選択して (**.**) で、 **LevelSubMenuStyles**行が、**プロパティ**ビジュアル デザイナーのグリッドです。  
+  
+ <xref:System.Web.UI.Design.WebControls.SubMenuStyleCollectionEditor.CanSelectMultipleInstances%2A>メソッドは常に返します`false`を示す、エディターで、一度に 1 つだけそのオブジェクトを選択できます。 <xref:System.Web.UI.Design.WebControls.SubMenuStyleCollectionEditor.CreateCollectionForm%2A>メソッドを表示および編集する新しいフォームを作成、<xref:System.Web.UI.WebControls.SubMenuStyleCollection>です。  
+  
+ <xref:System.Web.UI.Design.WebControls.SubMenuStyleCollectionEditor.CreateInstance%2A>メソッドは、指定したコレクション項目の種類の新しいインスタンスを作成します。 <xref:System.Web.UI.Design.WebControls.SubMenuStyleCollectionEditor.CreateNewItemTypes%2A>メソッドがエディターで作成できる型の配列を返します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.ComponentModel.EditorAttribute>属性に関連付けるには、<xref:System.Web.UI.Design.WebControls.SubMenuStyleCollectionEditor>と<xref:System.Drawing.Design.UITypeEditor>(コレクション エディター基本クラス) のクラスから派生したカスタムのコントロールのプロパティと、<xref:System.Web.UI.WebControls.WebControl>を取得および設定するには、クラス、<xref:System.Web.UI.WebControls.SubMenuStyleCollection>コレクション。  
+  
+ [!code-csharp[System.Web.UI.Design.WebControls.MenuEditors#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.MenuEditors/CS/MenuEditors.cs#5)]
+ [!code-vb[System.Web.UI.Design.WebControls.MenuEditors#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.MenuEditors/VB/MenuEditors.vb#5)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SubMenuStyleCollectionEditor (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.SubMenuStyleCollectionEditor.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Type" />のコレクションを編集します。</param>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.SubMenuStyleCollectionEditor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework は、内部での新しいインスタンスを作成、<xref:System.Web.UI.Design.WebControls.SubMenuStyleCollectionEditor>クラスを選択すると、たとえば、省略記号ボタン (**.**) で、 **LevelSubMenuStyles**行が、**プロパティ**を設計するときに、ビジュアル デザイナーのグリッド、<xref:System.Web.UI.WebControls.Menu>コントロールまたはコントロールから派生した、<xref:System.Web.UI.WebControls.Menu>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanSelectMultipleInstances">
+      <MemberSignature Language="C#" Value="protected override bool CanSelectMultipleInstances ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool CanSelectMultipleInstances() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.SubMenuStyleCollectionEditor.CanSelectMultipleInstances" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を取得するかどうか複数<see cref="T:System.Web.UI.WebControls.SubMenuStyle" />要素をエディターで一度に 1 つ選択することができます。</summary>
+        <returns>常に <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.SubMenuStyleCollectionEditor.CanSelectMultipleInstances%2A>メソッドは常に返します`false`。 このため、1 つだけ<xref:System.Web.UI.WebControls.SubMenuStyle>時にオブジェクトを選択することができます、<xref:System.Web.UI.Design.WebControls.SubMenuStyleCollectionEditor>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateCollectionForm">
+      <MemberSignature Language="C#" Value="protected override System.ComponentModel.Design.CollectionEditor.CollectionForm CreateCollectionForm ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.ComponentModel.Design.CollectionEditor/CollectionForm CreateCollectionForm() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.SubMenuStyleCollectionEditor.CreateCollectionForm" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.CollectionEditor+CollectionForm</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>表示し、現在の編集をフォームを新規作成<see cref="T:System.Web.UI.WebControls.SubMenuStyleCollection" />コレクション。</summary>
+        <returns>インスタンス、<see cref="T:System.ComponentModel.Design.CollectionEditor.CollectionForm" />として使用する、<see cref="T:System.Web.UI.Design.WebControls.SubMenuStyleCollectionEditor" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.SubMenuStyleCollectionEditor.CreateCollectionForm%2A>メソッドの呼び出し、<xref:System.ComponentModel.Design.CollectionEditor.CreateCollectionForm%2A>ベースを作成する方法、<xref:System.Web.UI.Design.WebControls.SubMenuStyleCollectionEditor>が形成され、フォームのキャプション書式を設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstance">
+      <MemberSignature Language="C#" Value="protected override object CreateInstance (Type itemType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object CreateInstance(class System.Type itemType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.SubMenuStyleCollectionEditor.CreateInstance(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="itemType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="itemType"><see cref="T:System.Type" />の項目を作成します。</param>
+        <summary>指定したコレクション項目の種類の新しいインスタンスを作成します。</summary>
+        <returns>対象となる、指定した型の新しいインスタンス<see cref="T:System.Web.UI.WebControls.SubMenuStyle" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.SubMenuStyleCollectionEditor.CreateInstance%2A>メソッドの使用を新規作成<xref:System.Web.UI.WebControls.SubMenuStyle>オブジェクト。 <xref:System.Web.UI.Design.WebControls.SubMenuStyleCollectionEditor.CreateInstance%2A>呼び出し、<xref:System.Activator.CreateInstance%2A>メソッドは遅延バインディングのサポートのライセンス認証方法にアクセスします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateNewItemTypes">
+      <MemberSignature Language="C#" Value="protected override Type[] CreateNewItemTypes ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Type[] CreateNewItemTypes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.SubMenuStyleCollectionEditor.CreateNewItemTypes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このコレクション エディターで作成できるデータ型を取得します。</summary>
+        <returns>データ型の配列型、<see cref="T:System.Web.UI.Design.WebControls.SubMenuStyleCollectionEditor" />を作成できます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.SubMenuStyleCollectionEditor>オブジェクトを作成できます<xref:System.Web.UI.WebControls.SubMenuStyle>オブジェクトを入力します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

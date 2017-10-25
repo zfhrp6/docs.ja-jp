@@ -1,0 +1,99 @@
+<Type Name="IToolboxUser" FullName="System.Drawing.Design.IToolboxUser">
+  <TypeSignature Language="C#" Value="public interface IToolboxUser" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IToolboxUser" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Design.IToolboxUser" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>現在選択されているツールボックス項目を設定して、デザイナーが特定のツールボックス項目をサポートするかどうかを示すのためのインターフェイスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、デザイナーにツールボックスのサポート機能を提供します。 <xref:System.Drawing.Design.IToolboxUser.GetToolSupported%2A>メソッドを示すかどうか、指定した<xref:System.Drawing.Design.ToolboxItem>現在のデザイナーがアクティブなときに使用できます。 <xref:System.Drawing.Design.IToolboxUser.ToolPicked%2A>メソッドは、指定した選択<xref:System.Drawing.Design.ToolboxItem>です。  
+  
+   
+  
+## Examples  
+ 実装を次のコード例に示します、<xref:System.Drawing.Design.IToolboxUser>インターフェイスを特定の種類のサポートを制限する<xref:System.Drawing.Design.ToolboxItem>オブジェクト。  
+  
+ [!code-cpp[IToolboxUserExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/IToolboxUserExample/CPP/samplecontrol.cpp#1)]
+ [!code-csharp[IToolboxUserExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/IToolboxUserExample/CS/samplecontrol.cs#1)]
+ [!code-vb[IToolboxUserExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IToolboxUserExample/VB/samplecontrol.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetToolSupported">
+      <MemberSignature Language="C#" Value="public bool GetToolSupported (System.Drawing.Design.ToolboxItem tool);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetToolSupported(class System.Drawing.Design.ToolboxItem tool) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.IToolboxUser.GetToolSupported(System.Drawing.Design.ToolboxItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tool" Type="System.Drawing.Design.ToolboxItem" />
+      </Parameters>
+      <Docs>
+        <param name="tool"><see cref="T:System.Drawing.Design.ToolboxItem" />ツールボックスのサポートをテストします。</param>
+        <summary>指定したツールが現在のデザイナーでサポートされているかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />ツールがツールボックスでサポートされていて、有効にできます。<see langword="false" />ドキュメント デザイナーは、ツールを使用する方法を把握していない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナーの実装によって指定されたツールがサポートされている場合、<xref:System.Drawing.Design.IToolboxUser>インターフェイス、このデザイナーにフォーカスがあるときにそのツールがツールボックスで有効にします。 それ以外の場合、無効になります。 ツールが有効になっているようにマークされるとが無効な可能性がありますいないするテストが行われて同じデザイナーのサポートについてはもう一度またはします。  
+  
+   
+  
+## Examples  
+ 実装を次のコード例に示します、<xref:System.Drawing.Design.IToolboxUser.GetToolSupported%2A>メソッドです。  
+  
+ [!code-cpp[IToolboxUserExample#2](~/samples/snippets/cpp/VS_Snippets_Winforms/IToolboxUserExample/CPP/samplecontrol.cpp#2)]
+ [!code-csharp[IToolboxUserExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/IToolboxUserExample/CS/samplecontrol.cs#2)]
+ [!code-vb[IToolboxUserExample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IToolboxUserExample/VB/samplecontrol.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolPicked">
+      <MemberSignature Language="C#" Value="public void ToolPicked (System.Drawing.Design.ToolboxItem tool);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ToolPicked(class System.Drawing.Design.ToolboxItem tool) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.IToolboxUser.ToolPicked(System.Drawing.Design.ToolboxItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tool" Type="System.Drawing.Design.ToolboxItem" />
+      </Parameters>
+      <Docs>
+        <param name="tool"><see cref="T:System.Drawing.Design.ToolboxItem" />を選択します。</param>
+        <summary>指定したツールを選択します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Design.IToolboxUser.ToolPicked%2A>ユーザーがツールボックスの項目をダブルクリックすると呼び出されます。 ドキュメント デザイナーは、指定したツールのコンポーネントを作成する必要があります。 Visual Studio 統合開発環境の呼び出しだけ<xref:System.Drawing.Design.IToolboxUser.ToolPicked%2A>ツールボックスで有効になっているツールです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

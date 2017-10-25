@@ -1,0 +1,392 @@
+<Type Name="LocalBuilder" FullName="System.Reflection.Emit.LocalBuilder">
+  <TypeSignature Language="C#" Value="public sealed class LocalBuilder : System.Reflection.LocalVariableInfo, System.Runtime.InteropServices._LocalBuilder" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit LocalBuilder extends System.Reflection.LocalVariableInfo implements class System.Runtime.InteropServices._LocalBuilder" />
+  <TypeSignature Language="DocId" Value="T:System.Reflection.Emit.LocalBuilder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Reflection.Emit.ILGeneration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Reflection.LocalVariableInfo</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.InteropServices._LocalBuilder</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.None)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComDefaultInterface(typeof(System.Runtime.InteropServices._LocalBuilder))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>メソッドまたはコンス トラクター内でローカル変数を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A`LocalBuilder`を使用してオブジェクトを定義することができます、<xref:System.Reflection.Emit.ILGenerator.DeclareLocal%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、`static`メソッド (`Shared` Visual Basic で) という`Function1`を文字列を返しますを型のパラメーターを持つ<xref:System.Int32>します。 このコード例を作成、メソッドの本文で<xref:System.Reflection.Emit.LocalBuilder>オブジェクトを表す 2 つのローカル変数とセットは、ローカル変数に関する情報をシンボルします。 メソッドは何も行わない重大であるが、メソッドの本体では、ローカル変数にリテラル文字列を格納して、ローカル変数を読み込み、ローカル変数にパラメーターを格納するを示しています。  
+  
+ [!code-cpp[LocalBuilder_Sample_SetLocalSymInfo#1](~/samples/snippets/cpp/VS_Snippets_CLR/LocalBuilder_Sample_SetLocalSymInfo/CPP/localbuilder_sample_4.cpp#1)]
+ [!code-csharp[LocalBuilder_Sample_SetLocalSymInfo#1](~/samples/snippets/csharp/VS_Snippets_CLR/LocalBuilder_Sample_SetLocalSymInfo/CS/localbuilder_sample_4.cs#1)]
+ [!code-vb[LocalBuilder_Sample_SetLocalSymInfo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/LocalBuilder_Sample_SetLocalSymInfo/VB/localbuilder_sample_4.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="IsPinned">
+      <MemberSignature Language="C#" Value="public override bool IsPinned { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPinned" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.LocalBuilder.IsPinned" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.ILGeneration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ローカル変数によって参照されるオブジェクトがメモリに固定されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ローカル変数は、メモリ内で固定によって参照されるオブジェクトの場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アンセーフ コードは、アンマネージ ポインターでを参照する前にオブジェクトを固定する必要があります。 参照先のオブジェクトが固定されているときに、ガベージ コレクションを移動できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalIndex">
+      <MemberSignature Language="C#" Value="public override int LocalIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 LocalIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.LocalBuilder.LocalIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.ILGeneration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッド本体内のローカル変数の 0 から始まるインデックスを取得します。</summary>
+        <value>メソッド本体内でローカル変数の宣言の順序を表す整数値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インデックス番号は、注文のローカル変数に割り当てられているは、宣言または生成されます、0 から始まります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalType">
+      <MemberSignature Language="C#" Value="public override Type LocalType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type LocalType" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.LocalBuilder.LocalType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.ILGeneration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ローカル変数の型を取得します。</summary>
+        <value><see cref="T:System.Type" />のローカル変数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード サンプルは、の使用方法を示します`LocalType`です。 このコードの例の一部である、<xref:System.Reflection.Emit.LocalBuilder>クラスです。  
+  
+ [!code-cpp[LocalBuilder_Sample_SetLocalSymInfo#2](~/samples/snippets/cpp/VS_Snippets_CLR/LocalBuilder_Sample_SetLocalSymInfo/CPP/localbuilder_sample_4.cpp#2)]
+ [!code-csharp[LocalBuilder_Sample_SetLocalSymInfo#2](~/samples/snippets/csharp/VS_Snippets_CLR/LocalBuilder_Sample_SetLocalSymInfo/CS/localbuilder_sample_4.cs#2)]
+ [!code-vb[LocalBuilder_Sample_SetLocalSymInfo#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/LocalBuilder_Sample_SetLocalSymInfo/VB/localbuilder_sample_4.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetLocalSymInfo">
+      <MemberSignature Language="C#" Value="public void SetLocalSymInfo (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetLocalSymInfo(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.LocalBuilder.SetLocalSymInfo(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">ローカル変数の名前。</param>
+        <summary>このローカル変数の名前を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.Emit.LocalBuilder.SetLocalSymInfo%2A>メソッドは動的な型で定義されているメソッドに対してサポートされています。 使用して定義されている動的メソッドはサポートされていません、<xref:System.Reflection.Emit.DynamicMethod>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード サンプルの使用を示しています、<xref:System.Reflection.Emit.LocalBuilder.SetLocalSymInfo%2A>メソッドです。 このコードの例の一部である、<xref:System.Reflection.Emit.LocalBuilder>クラスです。  
+  
+ [!code-cpp[LocalBuilder_Sample_SetLocalSymInfo#2](~/samples/snippets/cpp/VS_Snippets_CLR/LocalBuilder_Sample_SetLocalSymInfo/CPP/localbuilder_sample_4.cpp#2)]
+ [!code-csharp[LocalBuilder_Sample_SetLocalSymInfo#2](~/samples/snippets/csharp/VS_Snippets_CLR/LocalBuilder_Sample_SetLocalSymInfo/CS/localbuilder_sample_4.cs#2)]
+ [!code-vb[LocalBuilder_Sample_SetLocalSymInfo#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/LocalBuilder_Sample_SetLocalSymInfo/VB/localbuilder_sample_4.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">包含する型が作成されました<see cref="M:System.Reflection.Emit.TypeBuilder.CreateType" />です。  
+  
+ または  
+  
+ 含まれているモジュールに対して定義されているシンボルのライターはありません。</exception>
+        <exception cref="T:System.NotSupportedException">このローカルは、動的な型のメソッドではなく、動的メソッドで定義されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetLocalSymInfo">
+      <MemberSignature Language="C#" Value="public void SetLocalSymInfo (string name, int startOffset, int endOffset);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetLocalSymInfo(string name, int32 startOffset, int32 endOffset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.LocalBuilder.SetLocalSymInfo(System.String,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="startOffset" Type="System.Int32" />
+        <Parameter Name="endOffset" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="name">ローカル変数の名前。</param>
+        <param name="startOffset">ローカル変数の構文のスコープの開始オフセット。</param>
+        <param name="endOffset">ローカル変数の構文のスコープの終了オフセット。</param>
+        <summary>このローカル変数の構文のスコープと名前を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.Emit.LocalBuilder.SetLocalSymInfo%2A>メソッドは動的な型で定義されているメソッドに対してサポートされています。 使用して定義されている動的メソッドはサポートされていません、<xref:System.Reflection.Emit.DynamicMethod>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード サンプルの使用を示しています、<xref:System.Reflection.Emit.LocalBuilder.SetLocalSymInfo%2A>メソッドです。 このコードの例の一部である、<xref:System.Reflection.Emit.LocalBuilder>クラスです。  
+  
+ [!code-cpp[LocalBuilder_Sample_SetLocalSymInfo#2](~/samples/snippets/cpp/VS_Snippets_CLR/LocalBuilder_Sample_SetLocalSymInfo/CPP/localbuilder_sample_4.cpp#2)]
+ [!code-csharp[LocalBuilder_Sample_SetLocalSymInfo#2](~/samples/snippets/csharp/VS_Snippets_CLR/LocalBuilder_Sample_SetLocalSymInfo/CS/localbuilder_sample_4.cs#2)]
+ [!code-vb[LocalBuilder_Sample_SetLocalSymInfo#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/LocalBuilder_Sample_SetLocalSymInfo/VB/localbuilder_sample_4.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">包含する型が作成されました<see cref="M:System.Reflection.Emit.TypeBuilder.CreateType" />です。  
+  
+ または  
+  
+ 含まれているモジュールに対して定義されているシンボルのライターはありません。</exception>
+        <exception cref="T:System.NotSupportedException">このローカルは、動的な型のメソッドではなく、動的メソッドで定義されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._LocalBuilder.GetIDsOfNames">
+      <MemberSignature Language="C#" Value="void _LocalBuilder.GetIDsOfNames (ref Guid riid, IntPtr rgszNames, uint cNames, uint lcid, IntPtr rgDispId);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._LocalBuilder.GetIDsOfNames([in]valuetype System.Guid&amp; riid, native int rgszNames, unsigned int32 cNames, unsigned int32 lcid, native int rgDispId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.LocalBuilder.System#Runtime#InteropServices#_LocalBuilder#GetIDsOfNames(System.Guid@,System.IntPtr,System.UInt32,System.UInt32,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="riid" Type="System.Guid&amp;" RefType="ref" />
+        <Parameter Name="rgszNames" Type="System.IntPtr" />
+        <Parameter Name="cNames" Type="System.UInt32" />
+        <Parameter Name="lcid" Type="System.UInt32" />
+        <Parameter Name="rgDispId" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="riid">将来使用するために予約されています。 IID_NULL にする必要があります。</param>
+        <param name="rgszNames">マッピング対象として渡される名前の配列。</param>
+        <param name="cNames">マッピングされる名前のカウント。</param>
+        <param name="lcid">名前を解釈するロケール コンテキスト。</param>
+        <param name="rgDispId">名前に対応する ID を受け取る、呼び出し元が割り当てた配列。</param>
+        <summary>一連の名前を対応する一連のディスパッチ識別子に割り当てます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。 詳細については`IDispatch::GetIDsOfNames`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">COM を使用して遅延バインディング アクセス<c>IDispatch</c>インターフェイスはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._LocalBuilder.GetTypeInfo">
+      <MemberSignature Language="C#" Value="void _LocalBuilder.GetTypeInfo (uint iTInfo, uint lcid, IntPtr ppTInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._LocalBuilder.GetTypeInfo(unsigned int32 iTInfo, unsigned int32 lcid, native int ppTInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.LocalBuilder.System#Runtime#InteropServices#_LocalBuilder#GetTypeInfo(System.UInt32,System.UInt32,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="iTInfo" Type="System.UInt32" />
+        <Parameter Name="lcid" Type="System.UInt32" />
+        <Parameter Name="ppTInfo" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="iTInfo">返される型情報。</param>
+        <param name="lcid">型情報のロケール ID。</param>
+        <param name="ppTInfo">要求された型情報オブジェクトへのポインターを取得します。</param>
+        <summary>オブジェクトの型情報を取得します。この型情報を使用して、インターフェイスの型情報を取得できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。 詳細については`IDispatch::GetTypeInfo`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">COM を使用して遅延バインディング アクセス<c>IDispatch</c>インターフェイスはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._LocalBuilder.GetTypeInfoCount">
+      <MemberSignature Language="C#" Value="void _LocalBuilder.GetTypeInfoCount (out uint pcTInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._LocalBuilder.GetTypeInfoCount([out] unsigned int32&amp; pcTInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.LocalBuilder.System#Runtime#InteropServices#_LocalBuilder#GetTypeInfoCount(System.UInt32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pcTInfo" Type="System.UInt32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="pcTInfo">オブジェクトにより提供される型タイプ情報インターフェイスの数を受け取る場所を指定します。</param>
+        <summary>オブジェクトが提供する型情報インターフェイスの数 (0 または 1) を取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。 詳細については`IDispatch::GetTypeInfoCount`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">COM を使用して遅延バインディング アクセス<c>IDispatch</c>インターフェイスはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._LocalBuilder.Invoke">
+      <MemberSignature Language="C#" Value="void _LocalBuilder.Invoke (uint dispIdMember, ref Guid riid, uint lcid, short wFlags, IntPtr pDispParams, IntPtr pVarResult, IntPtr pExcepInfo, IntPtr puArgErr);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._LocalBuilder.Invoke(unsigned int32 dispIdMember, [in]valuetype System.Guid&amp; riid, unsigned int32 lcid, int16 wFlags, native int pDispParams, native int pVarResult, native int pExcepInfo, native int puArgErr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.LocalBuilder.System#Runtime#InteropServices#_LocalBuilder#Invoke(System.UInt32,System.Guid@,System.UInt32,System.Int16,System.IntPtr,System.IntPtr,System.IntPtr,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dispIdMember" Type="System.UInt32" />
+        <Parameter Name="riid" Type="System.Guid&amp;" RefType="ref" />
+        <Parameter Name="lcid" Type="System.UInt32" />
+        <Parameter Name="wFlags" Type="System.Int16" />
+        <Parameter Name="pDispParams" Type="System.IntPtr" />
+        <Parameter Name="pVarResult" Type="System.IntPtr" />
+        <Parameter Name="pExcepInfo" Type="System.IntPtr" />
+        <Parameter Name="puArgErr" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="dispIdMember">メンバーを識別します。</param>
+        <param name="riid">将来使用するために予約されています。 IID_NULL にする必要があります。</param>
+        <param name="lcid">引数を解釈する対象のロケール コンテキスト。</param>
+        <param name="wFlags">呼び出しのコンテキストを記述するフラグ。</param>
+        <param name="pDispParams">引数の配列、名前付き引数の DISPID の配列、配列内の要素数のカウントを格納している構造体へのポインター。</param>
+        <param name="pVarResult">結果が格納される場所へのポインター。</param>
+        <param name="pExcepInfo">例外情報を格納する構造体へのポインター。</param>
+        <param name="puArgErr">エラーが存在する最初の引数のインデックス。</param>
+        <summary>オブジェクトによって公開されたプロパティおよびメソッドへのアクセスを提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。 詳細については`IDispatch::Invoke`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">COM を使用して遅延バインディング アクセス<c>IDispatch</c>インターフェイスはサポートされていません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

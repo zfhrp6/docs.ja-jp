@@ -1,0 +1,1195 @@
+<Type Name="Domain" FullName="System.DirectoryServices.ActiveDirectory.Domain">
+  <TypeSignature Language="C#" Value="public class Domain : System.DirectoryServices.ActiveDirectory.ActiveDirectoryPartition" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Domain extends System.DirectoryServices.ActiveDirectory.ActiveDirectoryPartition" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.ActiveDirectory.Domain" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.DirectoryServices.ActiveDirectory.ActiveDirectoryPartition</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.ActiveDirectory.Domain" /> クラスは、Active Directory ドメインを表します。</summary>
+    <remarks>To be added.</remarks>
+    <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" /></permission>
+  </Docs>
+  <Members>
+    <Member MemberName="Children">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.DomainCollection Children { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectory.DomainCollection Children" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.Domain.Children" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.DomainCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このドメインの子であるドメインを取得します。</summary>
+        <value><see cref="T:System.DirectoryServices.ActiveDirectory.DomainCollection" />子ドメインを含むオブジェクトです。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateLocalSideOfTrustRelationship">
+      <MemberSignature Language="C#" Value="public void CreateLocalSideOfTrustRelationship (string targetDomainName, System.DirectoryServices.ActiveDirectory.TrustDirection direction, string trustPassword);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CreateLocalSideOfTrustRelationship(string targetDomainName, valuetype System.DirectoryServices.ActiveDirectory.TrustDirection direction, string trustPassword) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.CreateLocalSideOfTrustRelationship(System.String,System.DirectoryServices.ActiveDirectory.TrustDirection,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetDomainName" Type="System.String" />
+        <Parameter Name="direction" Type="System.DirectoryServices.ActiveDirectory.TrustDirection" />
+        <Parameter Name="trustPassword" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetDomainName">信頼が作成されるドメインの DNS 名。</param>
+        <param name="direction">1 つ、<see cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" />メンバーをこのドメインに関連の信頼の方向を決定します。</param>
+        <param name="trustPassword">信頼のパスワード。</param>
+        <summary>指定したドメインとの信頼関係のローカル側を作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、信頼関係の 1 つの側を作成します。 信頼の両方の側が作成されるまで、信頼は確立されません。  
+  
+ `trustPassword`パラメーターが作成された信頼のパスワードを関連付けます。 信頼の相手側が作成されるが同じパスワードを指定し、2 つのローカルの信頼は互いにバインドしています。  
+  
+ プログラムで 1 つのメソッドの呼び出しで信頼関係の両方の側を作成するには、使用、<xref:System.DirectoryServices.ActiveDirectory.Domain.CreateTrustRelationship%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectExistsException">信頼関係が既に存在します。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスへの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーがビジーであるか、使用できません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="targetDomainName" />または<paramref name="trustPassword" />が空です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetDomainName" /> または <paramref name="trustPassword" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="direction" /> は有効な <see cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" /> 値ではありません。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたアカウントには、この操作を実行するためのアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateTrustRelationship">
+      <MemberSignature Language="C#" Value="public void CreateTrustRelationship (System.DirectoryServices.ActiveDirectory.Domain targetDomain, System.DirectoryServices.ActiveDirectory.TrustDirection direction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CreateTrustRelationship(class System.DirectoryServices.ActiveDirectory.Domain targetDomain, valuetype System.DirectoryServices.ActiveDirectory.TrustDirection direction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.CreateTrustRelationship(System.DirectoryServices.ActiveDirectory.Domain,System.DirectoryServices.ActiveDirectory.TrustDirection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetDomain" Type="System.DirectoryServices.ActiveDirectory.Domain" />
+        <Parameter Name="direction" Type="System.DirectoryServices.ActiveDirectory.TrustDirection" />
+      </Parameters>
+      <Docs>
+        <param name="targetDomain">信頼が作成されるドメインを表す <see cref="T:System.DirectoryServices.ActiveDirectory.Domain" /> オブジェクト。</param>
+        <param name="direction">1 つ、<see cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" />メンバーをこのドメインに関連の信頼の方向を決定します。</param>
+        <summary>指定したドメインとの信頼関係の両側を作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、1 つのメソッドの呼び出しで信頼関係の両側を作成します。 <xref:System.DirectoryServices.ActiveDirectory.Domain.CreateLocalSideOfTrustRelationship%2A?displayProperty=nameWithType>信頼関係の 1 つだけの側を作成するメソッドを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectExistsException">信頼関係が既に存在します。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスへの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーは、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetDomain" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="direction" /> は有効な <see cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" /> 値ではありません。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたアカウントには、この操作を実行するためのアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteLocalSideOfTrustRelationship">
+      <MemberSignature Language="C#" Value="public void DeleteLocalSideOfTrustRelationship (string targetDomainName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DeleteLocalSideOfTrustRelationship(string targetDomainName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.DeleteLocalSideOfTrustRelationship(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetDomainName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetDomainName">信頼が存在するドメインの DNS 名。</param>
+        <summary>ローカル側の信頼関係を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 信頼関係の 1 つの側が削除されると、長い信頼が存在します。  
+  
+ 削除する 1 つのメソッド呼び出しと信頼関係の両方の側を使用して、<xref:System.DirectoryServices.ActiveDirectory.Domain.DeleteTrustRelationship%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException"><paramref name="targetDomainName" /> パラメーターで指定された <see cref="T:System.DirectoryServices.ActiveDirectory.Domain" /> との信頼関係が存在しません。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーは、ビジー状態か使用できません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="targetDomainName" /> が空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetDomainName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたアカウントには、この操作を実行するためのアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteTrustRelationship">
+      <MemberSignature Language="C#" Value="public void DeleteTrustRelationship (System.DirectoryServices.ActiveDirectory.Domain targetDomain);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DeleteTrustRelationship(class System.DirectoryServices.ActiveDirectory.Domain targetDomain) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.DeleteTrustRelationship(System.DirectoryServices.ActiveDirectory.Domain)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetDomain" Type="System.DirectoryServices.ActiveDirectory.Domain" />
+      </Parameters>
+      <Docs>
+        <param name="targetDomain">信頼が存在するドメインを表す <see cref="T:System.DirectoryServices.ActiveDirectory.Domain" /> オブジェクト。</param>
+        <summary>信頼関係の両方の側を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 信頼関係の 1 つだけの辺を削除するを使用して、<xref:System.DirectoryServices.ActiveDirectory.Domain.DeleteLocalSideOfTrustRelationship%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">指定された <see cref="T:System.DirectoryServices.ActiveDirectory.Domain" /> とは信頼関係がありません。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーは、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetDomain" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたアカウントには、この操作を実行するためのアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DomainControllers">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.DomainControllerCollection DomainControllers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectory.DomainControllerCollection DomainControllers" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.Domain.DomainControllers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.DomainControllerCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このドメイン内のドメイン コントローラーを取得します。</summary>
+        <value>このドメイン内のドメイン コントローラーを内容とする <see cref="T:System.DirectoryServices.ActiveDirectory.DomainControllerCollection" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DomainMode">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.DomainMode DomainMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DirectoryServices.ActiveDirectory.DomainMode DomainMode" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.Domain.DomainMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.DomainMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このドメインが動作しているモードを取得します。</summary>
+        <value>このドメインが動作しているモードを示す <see cref="T:System.DirectoryServices.ActiveDirectory.DomainMode" /> 値の 1 つ。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DomainModeLevel">
+      <MemberSignature Language="C#" Value="public int DomainModeLevel { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DomainModeLevel" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.Domain.DomainModeLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このドメインが動作しているモード レベルを取得します。</summary>
+        <value>ドメインのモード レベル。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindAllDiscoverableDomainControllers">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.DomainControllerCollection FindAllDiscoverableDomainControllers ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.DomainControllerCollection FindAllDiscoverableDomainControllers() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.FindAllDiscoverableDomainControllers" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.DomainControllerCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このドメイン内の探索可能なドメイン コントローラーをすべて検索します。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.ActiveDirectory.DomainControllerCollection" />このメソッドによって見つかったドメイン コント ローラー オブジェクトを格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ DNS SRV レコードを照会することで、探索可能なドメイン コント ローラーを検索できます。 ジェネリック、サイト固有ではない、ドメイン コント ローラーの SRV レコードを登録するドメイン コント ローラーのみが、このメソッドによって返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーが、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindAllDiscoverableDomainControllers">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.DomainControllerCollection FindAllDiscoverableDomainControllers (string siteName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.DomainControllerCollection FindAllDiscoverableDomainControllers(string siteName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.FindAllDiscoverableDomainControllers(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.DomainControllerCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="siteName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="siteName">ドメイン コントローラーを検索するサイトの名前。</param>
+        <summary>指定したサイト内にあるこのドメイン内の探索可能なドメイン コントローラーをすべて検索します。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.ActiveDirectory.DomainControllerCollection" />このメソッドによって見つかったドメイン コント ローラー オブジェクトを格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ DNS SRV レコードを照会することで、探索可能なドメイン コント ローラーを検索できます。  ドメイン コント ローラーが指定されたサイトの SRV レコードを登録していない場合それが返されません、このメソッドにより場合でも、ドメイン コント ローラーがそのサイト内にある物理的に。  
+  
+ 指定されたサイトの SRV レコードを登録するすべてのドメイン コント ローラーがそのサイト内に物理的に配置されていない場合でも、このメソッドで返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーが、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="siteName" /> が空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="siteName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindAllDomainControllers">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.DomainControllerCollection FindAllDomainControllers ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.DomainControllerCollection FindAllDomainControllers() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.FindAllDomainControllers" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.DomainControllerCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このドメイン内のドメイン コントローラーをすべて検索します。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.ActiveDirectory.DomainControllerCollection" />このメソッドによって見つかったドメイン コント ローラー オブジェクトを格納しています。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーは、ビジーか使用できない状態のいずれかです。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindAllDomainControllers">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.DomainControllerCollection FindAllDomainControllers (string siteName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.DomainControllerCollection FindAllDomainControllers(string siteName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.FindAllDomainControllers(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.DomainControllerCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="siteName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="siteName">ドメイン コントローラーを検索するサイトの名前。</param>
+        <summary>ドメイン内のドメイン コントローラーのうち、指定されたサイト内にもあるものをすべて検索します。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.ActiveDirectory.DomainControllerCollection" />このメソッドによって見つかったドメイン コント ローラー オブジェクトを格納しています。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーがビジーであるか、使用できません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="siteName" /> が空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="siteName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindDomainController">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.DomainController FindDomainController ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.DomainController FindDomainController() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.FindDomainController" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.DomainController</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このドメイン内部の任意のドメイン コントローラーを検索します。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.ActiveDirectory.DomainController" />このメソッドによって見つかったドメイン コント ローラーを表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ドメイン内の任意のドメイン コント ローラーを検索します。 同じドメイン コント ローラーはこのメソッドに別の呼び出しによって検出する保証はありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">ドメイン コントローラーが見つかりません。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスへの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindDomainController">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.DomainController FindDomainController (System.DirectoryServices.ActiveDirectory.LocatorOptions flag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.DomainController FindDomainController(valuetype System.DirectoryServices.ActiveDirectory.LocatorOptions flag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.FindDomainController(System.DirectoryServices.ActiveDirectory.LocatorOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.DomainController</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="flag" Type="System.DirectoryServices.ActiveDirectory.LocatorOptions" />
+      </Parameters>
+      <Docs>
+        <param name="flag">1 つまたは複数の組み合わせ、<see cref="T:System.DirectoryServices.ActiveDirectory.LocatorOptions" />メンバーを検索するドメイン コント ローラーの種類を定義します。</param>
+        <summary>指定された条件を満たすドメイン コントローラーをこのドメインで検索します。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.ActiveDirectory.DomainController" />このメソッドによって見つかったドメイン コント ローラーを表すです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">ドメイン コントローラーが見つかりませんでした。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスへの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="flag" />パラメーターに無効な値が含まれています。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindDomainController">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.DomainController FindDomainController (string siteName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.DomainController FindDomainController(string siteName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.FindDomainController(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.DomainController</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="siteName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="siteName">ドメイン コントローラーを検索するサイトの名前。</param>
+        <summary>このドメインと指定されたサイトでドメイン コントローラーを検索します。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.ActiveDirectory.DomainController" />をこのメソッドによって見つかったドメイン コント ローラーを表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">ドメイン コントローラーが見つかりません。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="siteName" /> が空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="siteName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindDomainController">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.DomainController FindDomainController (string siteName, System.DirectoryServices.ActiveDirectory.LocatorOptions flag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.DomainController FindDomainController(string siteName, valuetype System.DirectoryServices.ActiveDirectory.LocatorOptions flag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.FindDomainController(System.String,System.DirectoryServices.ActiveDirectory.LocatorOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.DomainController</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="siteName" Type="System.String" />
+        <Parameter Name="flag" Type="System.DirectoryServices.ActiveDirectory.LocatorOptions" />
+      </Parameters>
+      <Docs>
+        <param name="siteName">ドメイン コントローラーを検索するサイトの名前。</param>
+        <param name="flag">1 つまたは複数の組み合わせ、<see cref="T:System.DirectoryServices.ActiveDirectory.LocatorOptions" />メンバーを検索するドメイン コント ローラーの種類を定義します。</param>
+        <summary>このドメインの中、および指定されたサイトの中で、指定された条件を満たすドメイン コントローラーを検索します。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.ActiveDirectory.DomainController" />をこのメソッドによって見つかったドメイン コント ローラーを表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">ドメイン コントローラーが見つかりません。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentException">この例外は、以下の理由のうちいずれかによって発生します。  
+  
+-   <paramref name="siteName" /> が空の文字列です。  
+  
+-   <paramref name="flag" /> に無効な値が含まれています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="siteName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Forest">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.Forest Forest { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectory.Forest Forest" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.Domain.Forest" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.Forest</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このドメインをメンバーとして含むフォレストを取得します。</summary>
+        <value>A<see cref="T:System.DirectoryServices.ActiveDirectory.Forest" />をこのドメインのメンバーである、フォレストを表すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllTrustRelationships">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.TrustRelationshipInformationCollection GetAllTrustRelationships ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.TrustRelationshipInformationCollection GetAllTrustRelationships() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.GetAllTrustRelationships" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.TrustRelationshipInformationCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このドメインのすべての信頼関係を取得します。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.ActiveDirectory.TrustRelationshipInformationCollection" />すべてのドメインの信頼関係を含むオブジェクトです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスへの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーが、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたアカウントには、この操作を実行するためのアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetComputerDomain">
+      <MemberSignature Language="C#" Value="public static System.DirectoryServices.ActiveDirectory.Domain GetComputerDomain ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.DirectoryServices.ActiveDirectory.Domain GetComputerDomain() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.GetComputerDomain" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.Domain</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="T:System.DirectoryServices.ActiveDirectory.Domain" />をローカル コンピューターが参加しているドメインを表すオブジェクト。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.ActiveDirectory.Domain" />をローカル コンピューターが参加しているドメインを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値、<xref:System.DirectoryServices.ActiveDirectory.Domain.GetComputerDomain%2A>メソッドは、<xref:System.DirectoryServices.ActiveDirectory.Domain>アプリケーションを実行しているコンピューターが参加しているドメインを表すオブジェクト。  この戻り値は、アプリケーションを実行するドメインの資格情報に依存しないです。 このメソッドでは、下で実行アカウントの信頼されたドメインの資格情報に関係なく、コンピューターのドメインを取得します。  取得する、<xref:System.DirectoryServices.ActiveDirectory.Domain>をユーザーに対応するドメインを表すオブジェクトの資格情報を有効に、アプリケーションが実行されているセキュリティ コンテキストを使用して、<xref:System.DirectoryServices.ActiveDirectory.Domain.GetCurrentDomain%2A>メソッド代わりにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">ドメインへの接続を確立できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentDomain">
+      <MemberSignature Language="C#" Value="public static System.DirectoryServices.ActiveDirectory.Domain GetCurrentDomain ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.DirectoryServices.ActiveDirectory.Domain GetCurrentDomain() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.GetCurrentDomain" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.Domain</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="T:System.DirectoryServices.ActiveDirectory.Domain" />アプリケーションが実行されているセキュリティ コンテキストで有効での現在のユーザー資格情報オブジェクトです。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.ActiveDirectory.Domain" />のアプリケーションが実行されているセキュリティ コンテキストの指定したユーザーのドメインを表すオブジェクトが有効で資格情報します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.DirectoryServices.ActiveDirectory.Domain.GetCurrentDomain%2A>メソッドは、アプリケーションが実行されているドメインの資格情報によって決定されます。  取得する、<xref:System.DirectoryServices.ActiveDirectory.Domain>アプリケーションに関連付けられた資格情報に関係なく、アプリケーションを実行しているコンピューターをドメインを表すオブジェクトが参加しているを使用して、<xref:System.DirectoryServices.ActiveDirectory.Domain.GetComputerDomain%2A>メソッド代わりにします。  
+  
+## <a name="see-also"></a>関連項目  
+ <xref:System.DirectoryServices.ActiveDirectory.Domain.GetComputerDomain%2A>  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">現在のコンテキストとの接続を確立できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDirectoryEntry">
+      <MemberSignature Language="C#" Value="public override System.DirectoryServices.DirectoryEntry GetDirectoryEntry ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.DirectoryServices.DirectoryEntry GetDirectoryEntry() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.GetDirectoryEntry" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.DirectoryEntry</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="T:System.DirectoryServices.DirectoryEntry" />ドメインの既定の名前付けコンテキストを表すオブジェクト。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.DirectoryEntry" />ドメインを表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のオブジェクトは破棄されました。</exception>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDomain">
+      <MemberSignature Language="C#" Value="public static System.DirectoryServices.ActiveDirectory.Domain GetDomain (System.DirectoryServices.ActiveDirectory.DirectoryContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.DirectoryServices.ActiveDirectory.Domain GetDomain(class System.DirectoryServices.ActiveDirectory.DirectoryContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.GetDomain(System.DirectoryServices.ActiveDirectory.DirectoryContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.Domain</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.ActiveDirectory.DirectoryContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" />ターゲットとオブジェクトの取得に使用する資格情報を含むオブジェクト。 コンテキストの型は、ドメインまたはディレクトリのサーバーである必要があります。</param>
+        <summary>取得、<see cref="T:System.DirectoryServices.ActiveDirectory.Domain" />指定したコンテキストのオブジェクト。</summary>
+        <returns><see cref="T:System.DirectoryServices.ActiveDirectory.Domain" />を指定したコンテキストのドメインを表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">指定されたターゲットへの接続を<paramref name="context" />を確立できませんでした。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="context" /> が無効です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSelectiveAuthenticationStatus">
+      <MemberSignature Language="C#" Value="public bool GetSelectiveAuthenticationStatus (string targetDomainName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GetSelectiveAuthenticationStatus(string targetDomainName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.GetSelectiveAuthenticationStatus(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetDomainName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetDomainName">信頼が存在するドメインの DNS 名。</param>
+        <summary>入力方向の信頼の認証の種類を判別します。</summary>
+        <returns>
+          <see langword="true" />場合は、信頼の認証は、オプションを選択します。<see langword="false" />認証がドメイン全体である場合。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException"><paramref name="targetForestName" /> パラメーターで指定された <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> との信頼関係が存在しません。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">LsaQueryTrustedDomainInfoByName への呼び出しが失敗しました。 詳細については、トピックを参照してください。 [LsaQueryTrustedDomainInfoByName](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/secmgmt/security/lsaquerytrusteddomaininfobyname.asp) MSDN ライブラリで[http://msdn.microsoft.com/library](http://msdn.microsoft.com/library)です。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーが、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="targetDomainName" /> が空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetDomainName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">現在のオブジェクトは破棄されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたアカウントには、この操作を実行するためのアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSidFilteringStatus">
+      <MemberSignature Language="C#" Value="public bool GetSidFilteringStatus (string targetDomainName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GetSidFilteringStatus(string targetDomainName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.GetSidFilteringStatus(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetDomainName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetDomainName">信頼関係が存在する相手のドメインの DNS 名。</param>
+        <summary>信頼関係の SID のフィルター処理の状態を判断します。</summary>
+        <returns>
+          <see langword="true" />SID のフィルター処理が有効である場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException"><paramref name="targetForestName" /> パラメーターで指定された <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> との信頼関係が存在しません。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーは、ビジー状態か使用できません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="targetDomainName" /> が空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetDomainName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">現在のオブジェクトは破棄されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたアカウントには、この操作を実行するためのアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTrustRelationship">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.TrustRelationshipInformation GetTrustRelationship (string targetDomainName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.TrustRelationshipInformation GetTrustRelationship(string targetDomainName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.GetTrustRelationship(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.TrustRelationshipInformation</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetDomainName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetDomainName">信頼関係が存在する相手のドメインの DNS 名。</param>
+        <summary>このドメインと指定されたドメインの間の信頼関係を取得します。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.ActiveDirectory.TrustRelationshipInformation" />をこのドメインと指定したドメイン間の信頼関係を表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException"><paramref name="targetForestName" /> パラメーターで指定された <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> との信頼関係が存在しません。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーは、ビジー状態か使用できません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="targetDomainName" /> が空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetDomainName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">現在のオブジェクトは破棄されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたアカウントには、この操作を実行するためのアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InfrastructureRoleOwner">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.DomainController InfrastructureRoleOwner { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectory.DomainController InfrastructureRoleOwner" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.Domain.InfrastructureRoleOwner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.DomainController</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このドメインのインフラストラクチャ ロールの所有者を取得します。</summary>
+        <value><see cref="T:System.DirectoryServices.ActiveDirectory.DomainController" />インフラストラクチャ ロールの所有者を保持するドメイン コント ローラーを表すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Parent">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.Domain Parent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectory.Domain Parent" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.Domain.Parent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.Domain</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このドメインの親ドメインを取得します。</summary>
+        <value><see cref="T:System.DirectoryServices.ActiveDirectory.Domain" />をこのドメインの親ドメインを表すオブジェクト。 <see langword="null" />このドメインは、親ドメインを持ちません。 場合、</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PdcRoleOwner">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.DomainController PdcRoleOwner { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectory.DomainController PdcRoleOwner" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.Domain.PdcRoleOwner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.DomainController</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.DirectoryServices.ActiveDirectory.DomainController" />このドメインのプライマリ ドメイン コント ローラー (PDC) を保持するオブジェクト。</summary>
+        <value><see cref="T:System.DirectoryServices.ActiveDirectory.DomainController" />をこのドメインの PDC エミュレーターの役割を保持するドメイン コント ローラーを表すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RaiseDomainFunctionality">
+      <MemberSignature Language="C#" Value="public void RaiseDomainFunctionality (System.DirectoryServices.ActiveDirectory.DomainMode domainMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RaiseDomainFunctionality(valuetype System.DirectoryServices.ActiveDirectory.DomainMode domainMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.RaiseDomainFunctionality(System.DirectoryServices.ActiveDirectory.DomainMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="domainMode" Type="System.DirectoryServices.ActiveDirectory.DomainMode" />
+      </Parameters>
+      <Docs>
+        <param name="domainMode"><see cref="T:System.DirectoryServices.ActiveDirectory.DomainMode" />ドメインの新しい操作レベルを指定する列挙値。</param>
+        <summary>ドメインの操作モードを生成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.DirectoryServices.ActiveDirectory.DomainMode>値を発生することができますが、低くありません。 つまり、元に戻すことは、ドメインの機能レベルを上げることと、これを行う意思決定を慎重に行う必要があります。  
+  
+ ドメインの操作モードの詳細については、次を参照してください。[ドメインとフォレストの機能](http://www.microsoft.com/resources/documentation/WindowsServ/2003/standard/proddocs/en-us/sag_levels.asp)します。  
+  
+ 次の表に有効な値を定義する`domainMode`ドメインの現在の操作モードに基づきます。  
+  
+|現在のモード|モードを発生させることができます。|  
+|------------------|---------------------------|  
+|<xref:System.DirectoryServices.ActiveDirectory.DomainMode.Windows2000MixedDomain>|<xref:System.DirectoryServices.ActiveDirectory.DomainMode.Windows2000NativeDomain><br /><br /> <xref:System.DirectoryServices.ActiveDirectory.DomainMode.Windows2003InterimDomain><br /><br /> <xref:System.DirectoryServices.ActiveDirectory.DomainMode.Windows2003Domain>|  
+|<xref:System.DirectoryServices.ActiveDirectory.DomainMode.Windows2000NativeDomain>|<xref:System.DirectoryServices.ActiveDirectory.DomainMode.Windows2003Domain>|  
+|<xref:System.DirectoryServices.ActiveDirectory.DomainMode.Windows2003InterimDomain>|<xref:System.DirectoryServices.ActiveDirectory.DomainMode.Windows2003Domain>|  
+|<xref:System.DirectoryServices.ActiveDirectory.DomainMode.Windows2003Domain>|なし|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーは、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ArgumentException">ドメインの現在の操作モードに基づき、指定した値<paramref name="domainMode" />が無効です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="domainMode" /> が有効な <see cref="T:System.DirectoryServices.ActiveDirectory.DomainMode" /> 列挙値ではありません。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたアカウントには、この操作を実行するためのアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RaiseDomainFunctionalityLevel">
+      <MemberSignature Language="C#" Value="public void RaiseDomainFunctionalityLevel (int domainMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RaiseDomainFunctionalityLevel(int32 domainMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.RaiseDomainFunctionalityLevel(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="domainMode" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="domainMode">新しいレベルを表す値。</param>
+        <summary>ドメインの機能レベルを上げます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RepairTrustRelationship">
+      <MemberSignature Language="C#" Value="public void RepairTrustRelationship (System.DirectoryServices.ActiveDirectory.Domain targetDomain);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RepairTrustRelationship(class System.DirectoryServices.ActiveDirectory.Domain targetDomain) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.RepairTrustRelationship(System.DirectoryServices.ActiveDirectory.Domain)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetDomain" Type="System.DirectoryServices.ActiveDirectory.Domain" />
+      </Parameters>
+      <Docs>
+        <param name="targetDomain"><see cref="T:System.DirectoryServices.ActiveDirectory.Domain" />を使用する信頼が存在するドメインを表すオブジェクト。</param>
+        <summary>信頼関係を修復します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、セキュリティで保護されたチャネルの信頼をリセットすることにより、信頼を修復します。 操作は、セキュリティで保護されたチャネルをリセットする失敗した場合、後もリセットされ、信頼のパスワード。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">信頼関係はありません、<see cref="T:System.DirectoryServices.ActiveDirectory.Domain" />で指定された<paramref name="targetDomain" />です。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスへの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">ターゲット サーバーまたはソース サーバーは、ビジー状態または利用できません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetDomain" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたアカウントには、この操作を実行するためのアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RidRoleOwner">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.DomainController RidRoleOwner { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectory.DomainController RidRoleOwner" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.Domain.RidRoleOwner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.DomainController</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このドメインの RID のマスター ロール ホルダーを取得します。</summary>
+        <value><see cref="T:System.DirectoryServices.ActiveDirectory.DomainController" />をこのドメインの相対識別子 (RID) マスターの役割を保持するドメイン コント ローラーを表すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetSelectiveAuthenticationStatus">
+      <MemberSignature Language="C#" Value="public void SetSelectiveAuthenticationStatus (string targetDomainName, bool enable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetSelectiveAuthenticationStatus(string targetDomainName, bool enable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.SetSelectiveAuthenticationStatus(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetDomainName" Type="System.String" />
+        <Parameter Name="enable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="targetDomainName">入力方向の信頼が存在する相手のドメインの DNS 名。</param>
+        <param name="enable">
+          <see langword="true" />選択的認証が有効である場合それ以外の場合、<see langword="false" />です。</param>
+        <summary>入力方向の信頼について認証の選択を有効または無効にします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">指定されているドメイン コント ローラーと信頼関係がない<paramref name="targetDomainName" />です。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーは、ビジー状態か使用できません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="targetDomainName" /> が空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetDomainName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">現在のオブジェクトは破棄されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたアカウントには、この操作を実行するためのアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetSidFilteringStatus">
+      <MemberSignature Language="C#" Value="public void SetSidFilteringStatus (string targetDomainName, bool enable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetSidFilteringStatus(string targetDomainName, bool enable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.SetSidFilteringStatus(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetDomainName" Type="System.String" />
+        <Parameter Name="enable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="targetDomainName">信頼が存在する相手のドメインの DNS 名。</param>
+        <param name="enable">
+          <see langword="true" />SID のフィルター処理を有効にする必要があります。 場合それ以外の場合、<see langword="false" />です。</param>
+        <summary>指定されたドメインでの SID フィルター処理の状態を設定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">指定されているドメインと信頼関係がない<paramref name="targetDomainName" />です。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーは、ビジー状態か使用できません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="targetDomainName" /> が空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetDomainName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">現在のオブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateLocalSideOfTrustRelationship">
+      <MemberSignature Language="C#" Value="public void UpdateLocalSideOfTrustRelationship (string targetDomainName, string newTrustPassword);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UpdateLocalSideOfTrustRelationship(string targetDomainName, string newTrustPassword) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.UpdateLocalSideOfTrustRelationship(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetDomainName" Type="System.String" />
+        <Parameter Name="newTrustPassword" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetDomainName">信頼が存在する相手のドメインの DNS 名。</param>
+        <param name="newTrustPassword">信頼の新しいパスワード。</param>
+        <summary>信頼関係のローカル側のパスワードを更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 信頼を再確立するには、同じパスワードを使用して、信頼の両方の側を更新する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">指定されているドメインと信頼関係がない<paramref name="targetDomainName" />です。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーがビジーであるか、使用できません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="targetDomainName" />または<paramref name="newTrustPassword" />空の文字列します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetDomainName" /> または <paramref name="newTrustPassword" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたアカウントには、この操作を実行するためのアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateLocalSideOfTrustRelationship">
+      <MemberSignature Language="C#" Value="public void UpdateLocalSideOfTrustRelationship (string targetDomainName, System.DirectoryServices.ActiveDirectory.TrustDirection newTrustDirection, string newTrustPassword);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UpdateLocalSideOfTrustRelationship(string targetDomainName, valuetype System.DirectoryServices.ActiveDirectory.TrustDirection newTrustDirection, string newTrustPassword) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.UpdateLocalSideOfTrustRelationship(System.String,System.DirectoryServices.ActiveDirectory.TrustDirection,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetDomainName" Type="System.String" />
+        <Parameter Name="newTrustDirection" Type="System.DirectoryServices.ActiveDirectory.TrustDirection" />
+        <Parameter Name="newTrustPassword" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetDomainName">信頼が存在する相手のドメインの DNS 名。</param>
+        <param name="newTrustDirection"><see cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" />新しい信頼の方向の信頼関係の値。</param>
+        <param name="newTrustPassword">信頼の新しいパスワード。</param>
+        <summary>信頼関係のローカル側のパスワードと信頼の方向を更新します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">指定されているドメインと信頼関係はありません、<paramref name="targetDomainName" />パラメーター。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーがビジーであるか、使用できません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="targetDomainName" />または<paramref name="newTrustPassword" />空の文字列します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetDomainName" />または<paramref name="newTrustPassword" />は<see langword="null" />します。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="newTrustDirection" /> は有効な <see cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" /> 値ではありません。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたアカウントには、この操作を実行するためのアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateTrustRelationship">
+      <MemberSignature Language="C#" Value="public void UpdateTrustRelationship (System.DirectoryServices.ActiveDirectory.Domain targetDomain, System.DirectoryServices.ActiveDirectory.TrustDirection newTrustDirection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UpdateTrustRelationship(class System.DirectoryServices.ActiveDirectory.Domain targetDomain, valuetype System.DirectoryServices.ActiveDirectory.TrustDirection newTrustDirection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.UpdateTrustRelationship(System.DirectoryServices.ActiveDirectory.Domain,System.DirectoryServices.ActiveDirectory.TrustDirection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetDomain" Type="System.DirectoryServices.ActiveDirectory.Domain" />
+        <Parameter Name="newTrustDirection" Type="System.DirectoryServices.ActiveDirectory.TrustDirection" />
+      </Parameters>
+      <Docs>
+        <param name="targetDomain"><see cref="T:System.DirectoryServices.ActiveDirectory.Domain" />を使用する信頼が存在するドメインを表すオブジェクト。</param>
+        <param name="newTrustDirection"><see cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" />信頼関係の新しい信頼の方向を指定する値。</param>
+        <summary>既存の信頼関係の信頼の方向を更新します。 信頼の両方の側で、信頼の方向が更新されます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">指定されているドメインと信頼関係はありません、<paramref name="targetDomain" />パラメーター。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーは、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetDomain" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="newTrustDirection" /> は有効な <see cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" /> 値ではありません。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたアカウントには、この操作を実行するためのアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="VerifyOutboundTrustRelationship">
+      <MemberSignature Language="C#" Value="public void VerifyOutboundTrustRelationship (string targetDomainName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void VerifyOutboundTrustRelationship(string targetDomainName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.VerifyOutboundTrustRelationship(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetDomainName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetDomainName">信頼が存在する相手のドメインの DNS 名。</param>
+        <summary>指定されたドメインで以前に確立された出力方向の信頼が有効であることを確認します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、信頼関係が完全に確立されていることを確認するを使用します。 信頼の両方の側が作成されるまで、信頼は確立されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">指定されているドメインと出力方向の信頼関係がありません<paramref name="targetDomainName" />です。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーは、ビジー状態か使用できません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="targetDomainName" /> が空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetDomainName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたアカウントには、この操作を実行するためのアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="VerifyTrustRelationship">
+      <MemberSignature Language="C#" Value="public void VerifyTrustRelationship (System.DirectoryServices.ActiveDirectory.Domain targetDomain, System.DirectoryServices.ActiveDirectory.TrustDirection direction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void VerifyTrustRelationship(class System.DirectoryServices.ActiveDirectory.Domain targetDomain, valuetype System.DirectoryServices.ActiveDirectory.TrustDirection direction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.VerifyTrustRelationship(System.DirectoryServices.ActiveDirectory.Domain,System.DirectoryServices.ActiveDirectory.TrustDirection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetDomain" Type="System.DirectoryServices.ActiveDirectory.Domain" />
+        <Parameter Name="direction" Type="System.DirectoryServices.ActiveDirectory.TrustDirection" />
+      </Parameters>
+      <Docs>
+        <param name="targetDomain">A<see cref="T:System.DirectoryServices.ActiveDirectory.Domain" />を使用する信頼が存在するドメインを表すオブジェクト。</param>
+        <param name="direction">A<see cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" />信頼の方向、このドメインに関連を指定する値。</param>
+        <summary>指定されたドメインで以前に確立された信頼が有効であることを確認します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、信頼関係が完全に確立されたことを確認します。 信頼の両方の側が作成されるまで、信頼は確立されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">指定されているドメインと信頼関係はありません、<paramref name="targetDomain" />パラメーター、またはターゲット ドメインがありません。 で指定されている信頼の方向、<paramref name="direction" />パラメーター。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスへの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーは、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetDomain" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="direction" /> は有効な <see cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" /> 値ではありません。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたアカウントには、この操作を実行するためのアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,301 @@
+<Type Name="OutOfMemoryException" FullName="System.OutOfMemoryException">
+  <TypeSignature Language="C#" Value="public class OutOfMemoryException : SystemException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit OutOfMemoryException extends System.SystemException" />
+  <TypeSignature Language="DocId" Value="T:System.OutOfMemoryException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Exception</BaseTypeName>
+    <BaseTypeName FrameworkAlternate="netframework-4.5">System.SystemException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プログラムの実行を継続するためのメモリが不足している場合にスローされる例外。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.OutOfMemoryException>例外が 2 つの主要な原因。  
+  
+-   展開しようとしている、<xref:System.Text.StringBuilder>オブジェクトによって定義された長さを超えるその<xref:System.Text.StringBuilder.MaxCapacity%2A?displayProperty=nameWithType>プロパティです。  
+  
+-   共通言語ランタイムには、操作を正常に実行するための十分な連続するメモリを割り当てることができません。 メモリの割り当てを必要とするプロパティ割り当てまたはメソッド呼び出しによってこの例外をスローできます。 原因の詳細については、 <xref:System.OutOfMemoryException> 、例外を参照してください[物理メモリを「メモリ不足の」が参照しない](http://blogs.msdn.com/b/ericlippert/archive/2009/06/08/out-of-memory-does-not-refer-to-physical-memory.aspx)です。  
+  
+     この種類の<xref:System.OutOfMemoryException>例外は重大なエラーを表します。 例外を処理する場合を含めるように、`catch`ブロックを呼び出す、<xref:System.Environment.FailFast%2A?displayProperty=nameWithType>アプリを終了し、次の例のように、システム イベント ログにエントリを追加します。  
+  
+     [!code-csharp[System.OutOfMemoryException#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.outofmemoryexception/cs/failfast1.cs#2)]
+     [!code-vb[System.OutOfMemoryException#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.outofmemoryexception/vb/failfast1.vb#2)]  
+  
+ 例外がスローされ、除去するために行える操作が、次の条件の一部。  
+  
+ 呼び出しには、<xref:System.Text.StringBuilder.Insert%2A?displayProperty=nameWithType>メソッドです。  
+ 長さを拡張しようとして、<xref:System.Text.StringBuilder>オブジェクトで指定されたサイズを超えるその<xref:System.Text.StringBuilder.MaxCapacity%2A?displayProperty=nameWithType>プロパティです。 次の例を示しています、<xref:System.OutOfMemoryException>への呼び出しによってスローされた例外、<xref:System.Text.StringBuilder.Insert%28System.Int32%2CSystem.String%2CSystem.Int32%29?displayProperty=nameWithType>メソッドの例では、オブジェクトの原因となる文字列を挿入しようとしました。<xref:System.Text.StringBuilder.Length%2A>処理能力の上限を超えるプロパティです。  
+  
+ [!code-csharp[System.OutOfMemoryException#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.outofmemoryexception/cs/sb_example1.cs#1)]
+ [!code-vb[System.OutOfMemoryException#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.outofmemoryexception/vb/sb_example1.vb#1)]  
+  
+ エラーを解決するには、次のいずれかの操作を行うことができます。  
+  
+-   呼び出しを置き換える、<xref:System.Text.StringBuilder.%23ctor%28System.Int32%2CSystem.Int32%29?displayProperty=nameWithType>コンス トラクターの呼び出しで、他の<xref:System.Text.StringBuilder>コンス トラクター オーバー ロードします。 最大容量、<xref:System.Text.StringBuilder>オブジェクトは、これは既定値に設定する<xref:System.Int32.MaxValue?displayProperty=nameWithType>です。  
+  
+-   呼び出す、<xref:System.Text.StringBuilder.%23ctor%28System.Int32%2CSystem.Int32%29?displayProperty=nameWithType>を持つコンス トラクター、`maxCapacity`任意の拡張に合わせて十分な大きさの値、<xref:System.Text.StringBuilder>オブジェクト。  
+  
+ アプリは、32 ビット プロセスとして実行されます。  
+ 32 ビット プロセスでは、最大 2 GB の 32 ビット システムでユーザー モード仮想メモリと 4 GB の 64 ビット システムでユーザー モード仮想メモリを割り当てることができます。 これは、ため、共通言語ランタイム、大規模に割り当てが必要なときに十分な連続するメモリを割り当てることが難しく、ことができます。 これに対し、64 ビット プロセスでは、最大 8 TB の仮想メモリを割り当てることができます。 この例外に対処するには、64 ビット プラットフォームを対象とするアプリを再コンパイルします。 Visual Studio での特定のプラットフォームを対象とする方法の詳細については、次を参照してください。[する方法: プロジェクトのターゲット プラットフォームを構成](http://msdn.microsoft.com/library/845302fc-273d-4f81-820a-7296ce91bd76)です。  
+  
+ アプリは、アンマネージ リソースをリークします。  
+ オペレーティング システム ハンドル (待機ハンドルおよびファイル、メモリ マップ ファイル、パイプ、レジストリ キーへのハンドルを含む) などのアンマネージ リソースに割り当てられたメモリとなど、Windows API の呼び出しによって直接、またはメモリ割り当て関数への呼び出しによって割り当てられたメモリ ブロックは管理しません。 ガベージ コレクターはマネージ型に割り当てられたメモリを解放できませんが、`malloc`です。 アンマネージ リソースを消費する型を実装、<xref:System.IDisposable>インターフェイスです。  
+  
+ アンマネージ リソースを使用する型を使用している、する必要がありますを呼び出してその<xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>メソッドの使用を終了するときにします。 (一部の型が実装も、`Close`を関数と同じであるメソッド、`Dispose`メソッドです)。詳細については、次を参照してください。、[オブジェクトを実装する IDisposable のを使用して](~/docs/standard/garbage-collection/using-objects.md)トピックです。  
+  
+ アンマネージ リソースを使用する型を作成した場合は、Dispose パターンを実装している、必要に応じて、指定のファイナライザーを確認します。 詳細については、次を参照してください。、 [Dispose パターン](~/docs/standard/design-guidelines/dispose-pattern.md)、 [Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)、および<xref:System.Object.Finalize%2A?displayProperty=nameWithType>トピックです。  
+  
+ 64 ビット プロセスでは大きな配列を作成しようとするとします。  
+ 既定では、共通言語ランタイムにそのサイズは、2 GB を超えています。 1 つのオブジェクトはできません。 この既定の設定を上書きするには、合計サイズが 2 GB を超える配列を有効にするのに構成ファイルの設定を使用できます。  
+  
+ メモリ内データ (配列、コレクション、またはデータベースのデータ セット) などの非常に大きなセットを使用しています。  
+ メモリ内に存在するデータ セットまたはデータ構造が非常に大きいので、共通言語ランタイムが、それらの連続するのに十分なメモリを割り当てることはできないことになったときに、<xref:System.OutOfMemoryException>例外が発生します。  
+  
+ 防ぐために、<xref:System.OutOfMemoryException>例外の低いデータは、メモリに常駐しているか、データは、小さいメモリ割り当てを必要とするセグメントに分割できるようにアプリケーションを変更する必要があります。 例:  
+  
+-   データベースからのすべてのデータを取得して、フィルター処理することで、アプリ サーバーとのやり取りを最小限に抑えるには場合、は、アプリが必要なデータのサブセットのみを返すクエリを変更する必要があります。 大きなテーブルを使用するときに複数のクエリはほとんど常にすべての単一のテーブルにデータを取得し、それを操作するよりも効率的です。  
+  
+-   ユーザーを動的に作成するクエリを実行している場合は、クエリによって返されるレコードの数が制限されていることを確認する必要があります。  
+  
+-   大きな配列を使用しているかどうか、またはその他のコレクション オブジェクトのサイズの結果が、<xref:System.OutOfMemoryException>の例外を除き、すべて一度に使用するのではなく、データをサブセットとして動作するアプリケーションを変更する必要があります。  
+  
+ 次の例では、200, 000 の浮動小数点値で構成され、平均を計算する配列を取得します。 出力の例を示していますの例では、平均を計算する前にメモリ内で配列全体を格納するため、<xref:System.OutOfMemoryException>がスローされます。  
+  
+ [!code-csharp[System.OutOfMemoryException#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.outofmemoryexception/cs/data1.cs#3)]
+ [!code-vb[System.OutOfMemoryException#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.outofmemoryexception/vb/data1.vb#3)]  
+  
+ 次の例を排除、<xref:System.OutOfMemoryException>さらに処理を許可するように必要な場合は、ファイルにデータをシリアル化する、メモリ内データ セット全体を格納することがなく、受信データを処理することで例外 (これらの行をコメント アウト例では、ここではサイズが 1 GB より大きいファイルが生成されるため)、呼び出し元のルーチンに計算される平均およびケースの数を返すとします。  
+  
+ [!code-csharp[System.OutOfMemoryException#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.outofmemoryexception/cs/data2.cs#4)]
+ [!code-vb[System.OutOfMemoryException#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.outofmemoryexception/vb/data2.vb#4)]  
+  
+ 大きな文字列を連結する繰り返しです。  
+ 文字列は変更できないために、各文字列連結操作は、新しい文字列を作成します。 小さな文字列の場合、または連結操作の数が少ないの影響はごくわずかです。 大きな文字列または大量の連結操作の数は、文字列の連結は、大量のメモリの割り当てやメモリの断片化、パフォーマンスの低下を招く可能性と、場合によって<xref:System.OutOfMemoryException>例外。  
+  
+ 大きな文字列を連結することや、連結操作の数が多いの実行を使用する際、<xref:System.Text.StringBuilder>クラスの代わりに、<xref:System.String>クラスです。 文字列の操作が完了したら、変換、<xref:System.Text.StringBuilder>インスタンスを呼び出すことによって文字列、<xref:System.Text.StringBuilder.ToString%2A?displayProperty=nameWithType>メソッドです。  
+  
+ メモリ内オブジェクトの数が多いをピン留めします。  
+ 長期にわたってメモリ内の多数のオブジェクトをピン留めと、ガベージ コレクターが連続するメモリ ブロックを割り当てる困難ことができます。 ピン留めしたオブジェクトの数が多いメモリ上で例を使用している場合、`fixed`ステートメント (C#) または呼び出すことによって、<xref:System.Runtime.InteropServices.GCHandle.Alloc%28System.Object%2CSystem.Runtime.InteropServices.GCHandleType%29?displayProperty=nameWithType>のハンドル型を持つメソッド<xref:System.Runtime.InteropServices.GCHandleType?displayProperty=nameWithType>、アドレスには、次を行うことができます、<xref:System.OutOfMemoryException>例外。  
+  
+-   各オブジェクトは、ピン留めを本当に必要かどうかを評価します。  
+  
+-   ある各オブジェクトは固定されておらずできるだけ早くを確認します。  
+  
+-   各呼び出しことを確認してください、<xref:System.Runtime.InteropServices.GCHandle.Alloc%28System.Object%2CSystem.Runtime.InteropServices.GCHandleType%29?displayProperty=nameWithType>暗証番号 (pin) のメモリへのメソッドに対応する呼び出しには、<xref:System.Runtime.InteropServices.GCHandle.Free%2A?displayProperty=nameWithType>そのメモリの固定を解除する方法です。  
+  
+ 次の Microsoft intermediate (MSIL) の命令をスロー、<xref:System.OutOfMemoryException>例外。  
+  
+-   [ボックス](http://msdn.microsoft.com/library/system.reflection.emit.opcodes.box.aspx)  
+  
+-   [newarr](http://msdn.microsoft.com/library/system.reflection.emit.opcodes.newarr.aspx)  
+  
+-   [newobj](http://msdn.microsoft.com/library/system.reflection.emit.opcodes.newobj.aspx)newobj  
+  
+ <xref:System.OutOfMemoryException>HRESULT を使用して`COR_E_OUTOFMEMORY`0x8007000E 値を持ちます。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.OutOfMemoryException>を参照してください、<xref:System.OutOfMemoryException.%23ctor%2A>コンス トラクターです。  
+  
+> [!NOTE]
+>  継承された値<xref:System.Exception.Data%2A>プロパティは常に`null`です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OutOfMemoryException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.OutOfMemoryException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.OutOfMemoryException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、 <xref:System.Exception.Message%2A> 「がないプログラムの実行を継続する十分なメモリです」などに、エラーを説明するシステム提供のメッセージの新しいインスタンスのプロパティ。 このメッセージには、現在のシステムのカルチャが考慮されます。  
+  
+ <xref:System.OutOfMemoryException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|`null`。|  
+|<xref:System.Exception.Message%2A>|ローカライズされたエラー メッセージ文字列。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OutOfMemoryException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.OutOfMemoryException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">エラーを説明するメッセージ。</param>
+        <summary>指定したエラー メッセージを使用して、<see cref="T:System.OutOfMemoryException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `message` パラメーターの内容は、ユーザーが理解できる内容にします。 このコンストラクターの呼び出し元は、この文字列が現在のシステムのカルチャに合わせてローカライズ済みであることを確認しておく必要があります。  
+  
+ <xref:System.OutOfMemoryException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|null 参照 (Visual Basic の場合は `Nothing`)。|  
+|<xref:System.Exception.Message%2A>|エラー メッセージ文字列。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected OutOfMemoryException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.OutOfMemoryException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">シリアル化されたオブジェクト データを保持するオブジェクト。</param>
+        <param name="context">転送元または転送先に関する文脈情報。</param>
+        <summary>シリアル化したデータを使用して、<see cref="T:System.OutOfMemoryException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、逆シリアル化中に、ストリームで送信された例外オブジェクトを再構築するために呼び出されます。 詳細については、次を参照してください。 [XML および SOAP シリアル化](~/docs/standard/serialization/xml-and-soap-serialization.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OutOfMemoryException (string message, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.OutOfMemoryException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の原因を説明するエラー メッセージ。</param>
+        <param name="innerException">現在の例外の原因となった例外。 場合、 <c>innerException</c>パラメーターが null 参照ではありません (<see langword="Nothing" /> Visual Basic で) で現在の例外が発生、<see langword="catch" />ブロックは、内部例外を処理します。</param>
+        <summary>指定したエラー メッセージおよびこの例外の原因となった内部例外への参照を使用して、<see cref="T:System.OutOfMemoryException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 前の例外の直接の結果としてスローされる例外は、<xref:System.Exception.InnerException%2A> プロパティに前の例外への参照を含んでいる場合があります。 <xref:System.Exception.InnerException%2A> プロパティは、コンストラクターに渡されたものと同じ値を返します。`Nothing` プロパティによって内部例外値がコンストラクターに渡されなかった場合は、null 参照 (Visual Basic の場合は <xref:System.Exception.InnerException%2A>) を返します。  
+  
+ <xref:System.OutOfMemoryException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|内部例外の参照。|  
+|<xref:System.Exception.Message%2A>|エラー メッセージ文字列。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

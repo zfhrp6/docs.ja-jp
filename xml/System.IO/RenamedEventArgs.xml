@@ -1,0 +1,152 @@
+<Type Name="RenamedEventArgs" FullName="System.IO.RenamedEventArgs">
+  <TypeSignature Language="C#" Value="public class RenamedEventArgs : System.IO.FileSystemEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RenamedEventArgs extends System.IO.FileSystemEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.IO.RenamedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IO.FileSystemEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.IO.FileSystemWatcher.Renamed" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスから継承<xref:System.IO.FileSystemEventArgs>し、古い名前フィールドと以前の名前と、影響を受けたファイルまたはディレクトリの完全なパスを指定する古いの完全なパス フィールドを追加することでそれを拡張します。  
+  
+   
+  
+## Examples  
+ 次の例は、ファイルの変更を監視する FileSystemWatcher を作成する方法を示します (作成、削除、名前の変更、変更)、ディスク ドライブで発生しています。 また、正しくエラー通知を受信する方法も示します。  
+  
+ [!code-csharp[FileSystemWatcher#1](~/samples/snippets/csharp/VS_Snippets_CLR/FileSystemWatcher/cs/filesystemwatcher.cs#1)]
+ [!code-vb[FileSystemWatcher#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/FileSystemWatcher/VB/FileSystemWatcher.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RenamedEventArgs (System.IO.WatcherChangeTypes changeType, string directory, string name, string oldName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.IO.WatcherChangeTypes changeType, string directory, string name, string oldName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.RenamedEventArgs.#ctor(System.IO.WatcherChangeTypes,System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="changeType" Type="System.IO.WatcherChangeTypes" />
+        <Parameter Name="directory" Type="System.String" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="oldName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="changeType"><see cref="T:System.IO.WatcherChangeTypes" /> 値のいずれか。</param>
+        <param name="directory">影響を受けたファイルまたはディレクトリの名前。</param>
+        <param name="name">影響を受けたファイルまたはディレクトリの名前。</param>
+        <param name="oldName">影響を受けたファイルまたはディレクトリの古い名前。</param>
+        <summary><see cref="T:System.IO.RenamedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスから継承、<xref:System.IO.FileSystemEventArgs>クラスし、ファイルまたはディレクトリの影響を受けるは、以前の名前を指定する古い名 フィールドを追加することでそれを拡張します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OldFullPath">
+      <MemberSignature Language="C#" Value="public string OldFullPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string OldFullPath" />
+      <MemberSignature Language="DocId" Value="P:System.IO.RenamedEventArgs.OldFullPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>影響を受けたファイルまたはディレクトリの以前の完全修飾パスを取得します。</summary>
+        <value>影響を受けたファイルまたはディレクトリの以前の完全修飾パス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.IO.RenamedEventArgs.OldFullPath%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.IO.RenamedEventArgs>クラスです。  
+  
+ [!code-csharp[FileSystemWatcher#8](~/samples/snippets/csharp/VS_Snippets_CLR/FileSystemWatcher/cs/filesystemwatcher.cs#8)]
+ [!code-vb[FileSystemWatcher#8](~/samples/snippets/visualbasic/VS_Snippets_CLR/FileSystemWatcher/VB/FileSystemWatcher.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルを読み取る。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="OldName">
+      <MemberSignature Language="C#" Value="public string OldName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string OldName" />
+      <MemberSignature Language="DocId" Value="P:System.IO.RenamedEventArgs.OldName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>影響を受けたファイルまたはディレクトリの古い名前を取得します。</summary>
+        <value>影響を受けたファイルまたはディレクトリの以前の名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

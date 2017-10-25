@@ -1,0 +1,120 @@
+<Type Name="CommandType" FullName="System.Data.CommandType">
+  <TypeSignature Language="C#" Value="public enum CommandType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed CommandType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Data.CommandType" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>コマンド文字列を解釈する方法を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Data.CommandType>ストアド プロシージャにプロパティが設定されている、<xref:System.Data.IDbCommand.CommandText%2A>プロパティにアクセスして、ストアド プロシージャの名前に設定する必要があります。 ユーザーは、エスケープ文字構文を使用または指定したテーブル名に特殊文字が含まれている場合は、修飾文字を含める必要があります。 コマンド オブジェクトの Execute メソッドの 1 つを呼び出すときにすべての行と列の名前付きのテーブルまたはテーブルが返されます。  
+  
+ ときに、<xref:System.Data.CommandType>プロパティが、[tabledirect] に設定されている、<xref:System.Data.IDbCommand.CommandText%2A>プロパティにアクセスして、テーブルの名前に設定する必要があります。 ユーザーは、エスケープ文字構文を使用するか、という名前のテーブルに特殊文字が含まれている場合は、修飾文字を含める必要があります。 Execute メソッドの 1 つを呼び出すときにすべての行と、名前付きのテーブルの列が返されます。  
+  
+ 複数のテーブルにアクセスするために、スペースや余白にアクセスするテーブルの名前を含むなしのコンマ区切りのリストを使用します。 ときに、`CommandText`プロパティは、複数のテーブルを名前で指定されたテーブルの結合が返されます。  
+  
+> [!NOTE]
+>  `TableDirect`OLE DB の .NET Framework データ プロバイダーによってのみにサポートされます。 複数のテーブルへのアクセスがサポートされている場合に<xref:System.Data.CommandType.TableDirect>に設定されている`TableDirect`です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="StoredProcedure">
+      <MemberSignature Language="C#" Value="StoredProcedure" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.CommandType StoredProcedure = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.CommandType.StoredProcedure" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.CommandType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ストアド プロシージャの名前。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TableDirect">
+      <MemberSignature Language="C#" Value="TableDirect" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.CommandType TableDirect = int32(512)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.CommandType.TableDirect" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.CommandType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーブルの名前。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="Text" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.CommandType Text = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.CommandType.Text" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.CommandType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SQL テキスト コマンド。 (既定値。) </summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

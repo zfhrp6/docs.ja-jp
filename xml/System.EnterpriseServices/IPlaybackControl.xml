@@ -1,0 +1,91 @@
+<Type Name="IPlaybackControl" FullName="System.EnterpriseServices.IPlaybackControl">
+  <TypeSignature Language="C#" Value="public interface IPlaybackControl" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IPlaybackControl" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.IPlaybackControl" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("51372AFD-CAE7-11CF-BE81-00AA00A2FA25")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>サーバー側の再生エラーの異常な処理と、メッセージ キュー配信メカニズムのエラーをクライアント側のキュー コンポーネントで機能します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ COM + カタログでコンポーネントを実装するため、定義した例外クラス<xref:System.EnterpriseServices.IPlaybackControl>と元のクラスのインターフェイスです。 元のクラス インターフェイスのメソッドの実装を使用して、クラス自体で障害が発生したメソッドの例外処理を実行できます。 後に呼び出されます<xref:System.EnterpriseServices.IPlaybackControl.FinalClientRetry%2A>または<xref:System.EnterpriseServices.IPlaybackControl.FinalServerRetry%2A>を最初に呼び出されたメソッドの例外を処理します。  
+  
+ キュー コンポーネント プレーヤーのメソッドを呼び出して、<xref:System.EnterpriseServices.IPlaybackControl>にメッセージを最終的な載りましたまたは配信不能キューに配置する例外ハンドラー オブジェクトを通知します。 キュー コンポーネント プレーヤーは、元のメソッド呼び出しで失敗した例外ハンドラー オブジェクトの同じメソッドを呼び出します。 例外ハンドラー オブジェクトは、問題の診断情報の収集など、オブジェクトまたはクライアントに、問題の通知メッセージを生成する、代わりをたとえば、実装できます。 アプリケーションを実装しない場合<xref:System.EnterpriseServices.IPlaybackControl>、キュー コンポーネント プレーヤーは、すべての再試行を過ぎると、有害なメッセージが最終的な載りましたまたは配信不能キューに配置されます。  
+  
+ 有害メッセージは、サーバー名またはキュー システムでの問題のため、いくつかの理由から、処理できないメッセージです。 トランザクションがロールバックされ、有害メッセージはキューの先頭に移動します。 メッセージが再度にデキューされると、同じ条件が発生します。 このメッセージは、何かを行う問題を解決するまで無期限にループを続行できます。 キュー コンポーネント サービスは、一連の再試行を使用して、有害なメッセージを処理します。 いくつかの失敗した再試行後に、メッセージは、最終的な静止キューに移動されます。 有害メッセージ キューに置かれたコンポーネントのメッセージのムーバー ツールを使用して、手動で移動するまでに、静止キューに残ります。  
+  
+ 有害なメッセージ状況解決することも、プログラムでを使用して、<xref:System.EnterpriseServices.IPlaybackControl.FinalServerRetry%2A>メソッドで、遅延のアクティブ化を再生するすべての試行が失敗したサーバー側コンポーネントの作成者に通知します。  
+  
+ 有害なメッセージを検出する場合は、問題の根本原因を迅速に解決できる可能性があります。 たとえば、何らかの理由により、サーバーがオフラインで場合、は、サーバーをオンラインに戻すを取り込むことができます。 問題を迅速に解決することはできない場合、は、トランザクションが発生しなかったことを要求元に通知する別のトランザクションを自動的に生成できます。 要求元は、既にコミットされているトランザクションの効果を反転する補正トランザクションを作成し、ことができます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="FinalClientRetry">
+      <MemberSignature Language="C#" Value="public void FinalClientRetry ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void FinalClientRetry() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.IPlaybackControl.FinalClientRetry" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>あるサーバーにメッセージを配信するメッセージ キューの試行をすべて拒否され、最終的にメッセージがクライアント側のトランザクション配信不能キューにクライアント側の例外処理コンポーネントに通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トランザクション配信不能キューにメッセージが到着、COM + は、この通知を配信サーバー クラスに関連するクライアント側の例外ハンドラーを起動しようとします。 これは最初の呼び出しによって<xref:System.EnterpriseServices.IPlaybackControl.FinalClientRetry%2A>、例外ハンドラー オブジェクトの例外処理のバージョンの障害が発生したメソッドを呼び出すし、します。 この例外メソッドは、エラーの記録、管理者にメール メッセージの送信、またはクライアント側の補正アクション (の以前のトランザクションの効果を反転すること) を実行など、例外の操作を実行できます。 Exception メソッドが成功しなかった場合、メッセージはトランザクション配信不能キューに残ります。  
+  
+ トランザクション配信不能キューは、Microsoft メッセージ キュー (MSMQ) エクスプ ローラーで表示できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FinalServerRetry">
+      <MemberSignature Language="C#" Value="public void FinalServerRetry ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void FinalServerRetry() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.IPlaybackControl.FinalServerRetry" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>サーバーへの遅延のアクティベーションを再生するすべての試行が失敗しましたが、そのメッセージをその最終的な静止キューに移動するには、サーバー側の例外クラスの実装を通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージは、トランザクション配信不能キューに到着、COM + は、この通知を配信サーバー クラスに関連するサーバー側の例外ハンドラーを起動しようとします。 これは最初の呼び出しによって<xref:System.EnterpriseServices.IPlaybackControl.FinalServerRetry%2A>、例外処理のバージョンの例外ハンドラー オブジェクトで障害が発生したメソッドを呼び出して、します。 この例外メソッドは、エラーの記録、管理者にメール メッセージの送信、またはクライアント側の補正アクション (の以前のトランザクションの効果を反転すること) を実行など、例外の操作を実行できます。 サーバー オブジェクトは、このトランザクションを正常に完了するには、あらゆる努力を行います。 それ以外の場合、メッセージを再処理する手動による介入が必要です。 Exception メソッドが成功しなかった場合、メッセージは最終的な静止キューに移動します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

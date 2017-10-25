@@ -1,0 +1,160 @@
+<Type Name="RequiredAttribute" FullName="System.ComponentModel.DataAnnotations.RequiredAttribute">
+  <TypeSignature Language="C#" Value="public class RequiredAttribute : System.ComponentModel.DataAnnotations.ValidationAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RequiredAttribute extends System.ComponentModel.DataAnnotations.ValidationAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.DataAnnotations.RequiredAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.DataAnnotations.ValidationAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property | System.AttributeTargets.Field | System.AttributeTargets.Parameter, AllowMultiple=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>データ フィールドの値が必須であることを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.DataAnnotations.RequiredAttribute>属性は、フォーム上のフィールドが検証されると、フィールドによって、値が必要がありますを指定します。 プロパティの場合に検証例外が発生した`null`、空の文字列が含まれています ("")、または空白文字だけが含まれています。  
+  
+> [!NOTE]
+>  MVC データ モデルまたはエンティティ部分クラスに注釈が付いているフィールドが含まれている場合、<xref:System.ComponentModel.DataAnnotations.RequiredAttribute>ページ以外の属性は、プロパティを含まない、エラーは発生しません。 検証は、サーバーに送信される各フィールドに対してのみ発生します。  
+  
+ Visual Studio プロジェクトとソース コードは、このトピックで使用可能な:[ダウンロード](http://go.microsoft.com/fwlink/?linkid=158686)です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.ComponentModel.DataAnnotations.RequiredAttribute>属性データ フィールドを空にするのには、データベース スキーマのルールを上書きします。 例では、次の手順を実行します。  
+  
+-   メタデータの部分クラスと関連するメタデータ クラスを実装します。  
+  
+-   適用される、関連するメタデータ クラスで、<xref:System.ComponentModel.DataAnnotations.RequiredAttribute>属性は、次の要件を指定します。  
+  
+    -   タイトルのデータ フィールドを空にすることはできません。 検証に失敗した場合、コードの例では検証例外をスローし、エラー メッセージを表示します。 エラー メッセージが指定されたデータ フィールドに、属性が適用される時にします。  
+  
+    -   MiddleName データ フィールドを空にすることはできません。 検証に失敗した場合、コードの例では検証例外をスローし、エラー メッセージを表示します。  
+  
+ [!code-csharp[System.ComponentModel.DataAnnotations.RequiredAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.RequiredAttribute/CS/Customer.cs#1)]
+ [!code-vb[System.ComponentModel.DataAnnotations.RequiredAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.RequiredAttribute/VB/Customer.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RequiredAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.DataAnnotations.RequiredAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、<xref:System.ComponentModel.DataAnnotations.RequiredAttribute.%23ctor%2A> コンストラクターを使用する方法を示しています。 検証に失敗する場合は、動的なデータによって提供される検証エラー メッセージを表示します。  
+  
+ [!code-csharp[System.ComponentModel.DataAnnotations.RequiredAttribute#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.RequiredAttribute/CS/Customer.cs#3)]
+ [!code-vb[System.ComponentModel.DataAnnotations.RequiredAttribute#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.RequiredAttribute/VB/Customer.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowEmptyStrings">
+      <MemberSignature Language="C#" Value="public bool AllowEmptyStrings { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowEmptyStrings" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DataAnnotations.RequiredAttribute.AllowEmptyStrings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または空の文字列が許可されるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />空の文字列が使用できる場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定すると<xref:System.ComponentModel.DataAnnotations.RequiredAttribute.AllowEmptyStrings%2A>に`true`データ フィールドの動的なデータ検証は実行されずする空の文字列を変換、`null`値。 この値は、データベースに渡されます。  
+  
+ データベースが許可しない場合`null`値、エラーが発生します。 このエラーを避けるためには、設定する必要も、<xref:System.ComponentModel.DataAnnotations.DisplayFormatAttribute.ConvertEmptyStringToNull%2A>に`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsValid">
+      <MemberSignature Language="C#" Value="public override bool IsValid (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsValid(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataAnnotations.RequiredAttribute.IsValid(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">検証するデータ フィールドの値。</param>
+        <summary>必要なデータ フィールドの値が空でないことを確認します。</summary>
+        <returns>
+          検証が成功した場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを返しますのかどうか、値は空の文字列には、`false`され、検証エラーが表示されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.DataAnnotations.ValidationException">データ フィールドの値が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

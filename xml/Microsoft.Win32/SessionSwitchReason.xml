@@ -1,0 +1,169 @@
+<Type Name="SessionSwitchReason" FullName="Microsoft.Win32.SessionSwitchReason">
+  <TypeSignature Language="C#" Value="public enum SessionSwitchReason" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SessionSwitchReason extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Win32.SessionSwitchReason" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>セッションの簡易切り替えイベントの種類を表す識別子を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.Win32.SessionSwitchEventArgs>クラスの使用、<xref:Microsoft.Win32.SessionSwitchReason>セッションの簡易切り替えイベントの種類を表すクラス。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ConsoleConnect">
+      <MemberSignature Language="C#" Value="ConsoleConnect" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Win32.SessionSwitchReason ConsoleConnect = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Win32.SessionSwitchReason.ConsoleConnect" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.SessionSwitchReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンソールから、セッションは接続されています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ConsoleDisconnect">
+      <MemberSignature Language="C#" Value="ConsoleDisconnect" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Win32.SessionSwitchReason ConsoleDisconnect = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Win32.SessionSwitchReason.ConsoleDisconnect" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.SessionSwitchReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンソールから、セッションが切断されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoteConnect">
+      <MemberSignature Language="C#" Value="RemoteConnect" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Win32.SessionSwitchReason RemoteConnect = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Win32.SessionSwitchReason.RemoteConnect" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.SessionSwitchReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リモート接続からセッションが接続されています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoteDisconnect">
+      <MemberSignature Language="C#" Value="RemoteDisconnect" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Win32.SessionSwitchReason RemoteDisconnect = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Win32.SessionSwitchReason.RemoteDisconnect" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.SessionSwitchReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リモート接続からのセッションが切断されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SessionLock">
+      <MemberSignature Language="C#" Value="SessionLock" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Win32.SessionSwitchReason SessionLock = int32(7)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Win32.SessionSwitchReason.SessionLock" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.SessionSwitchReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セッションがロックされました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SessionLogoff">
+      <MemberSignature Language="C#" Value="SessionLogoff" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Win32.SessionSwitchReason SessionLogoff = int32(6)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Win32.SessionSwitchReason.SessionLogoff" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.SessionSwitchReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがセッションからログオフしました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SessionLogon">
+      <MemberSignature Language="C#" Value="SessionLogon" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Win32.SessionSwitchReason SessionLogon = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Win32.SessionSwitchReason.SessionLogon" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.SessionSwitchReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがセッションにログオンしました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SessionRemoteControl">
+      <MemberSignature Language="C#" Value="SessionRemoteControl" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Win32.SessionSwitchReason SessionRemoteControl = int32(9)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Win32.SessionSwitchReason.SessionRemoteControl" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.SessionSwitchReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リモート制御モードの間、セッションには、状態が変更されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SessionUnlock">
+      <MemberSignature Language="C#" Value="SessionUnlock" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Win32.SessionSwitchReason SessionUnlock = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Win32.SessionSwitchReason.SessionUnlock" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.SessionSwitchReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セッションがロック解除されました。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

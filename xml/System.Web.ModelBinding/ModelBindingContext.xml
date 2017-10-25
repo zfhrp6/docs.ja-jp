@@ -1,0 +1,235 @@
+<Type Name="ModelBindingContext" FullName="System.Web.ModelBinding.ModelBindingContext">
+  <TypeSignature Language="C#" Value="public class ModelBindingContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ModelBindingContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.ModelBinding.ModelBindingContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>対象のコンテキストは、モデル バインダーが動作します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ModelBindingContext ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ModelBinding.ModelBindingContext.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.ModelBinding.ModelBindingContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ModelBindingContext (System.Web.ModelBinding.ModelBindingContext bindingContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.ModelBinding.ModelBindingContext bindingContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ModelBinding.ModelBindingContext.#ctor(System.Web.ModelBinding.ModelBindingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="bindingContext" Type="System.Web.ModelBinding.ModelBindingContext" />
+      </Parameters>
+      <Docs>
+        <param name="bindingContext">バインド コンテキスト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.ModelBinding.ModelBindingContext" />クラス、クラスの既存のインスタンスを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Model">
+      <MemberSignature Language="C#" Value="public object Model { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Model" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelBindingContext.Model" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはモデルを設定します。</summary>
+        <value>モデル。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">モデルのメタデータは、このプロパティにアクセスする前に設定する必要があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ModelBinderProviders">
+      <MemberSignature Language="C#" Value="public System.Web.ModelBinding.ModelBinderProviderCollection ModelBinderProviders { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.ModelBinding.ModelBinderProviderCollection ModelBinderProviders" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelBindingContext.ModelBinderProviders" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ModelBinding.ModelBinderProviderCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはモデル バインダー プロバイダーのコレクションを設定します。</summary>
+        <value>モデル バインダー プロバイダーのコレクション。 コレクションがまだ存在しない場合は、モデル バインダー プロバイダーの新しいコレクションが作成され、返されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ModelMetadata">
+      <MemberSignature Language="C#" Value="public System.Web.ModelBinding.ModelMetadata ModelMetadata { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.ModelBinding.ModelMetadata ModelMetadata" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelBindingContext.ModelMetadata" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ModelBinding.ModelMetadata</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはモデルのメタデータを設定します。</summary>
+        <value>モデルのメタデータ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ModelName">
+      <MemberSignature Language="C#" Value="public string ModelName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ModelName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelBindingContext.ModelName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはモデルの名前を設定します。</summary>
+        <value>モデルの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ModelState">
+      <MemberSignature Language="C#" Value="public System.Web.ModelBinding.ModelStateDictionary ModelState { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.ModelBinding.ModelStateDictionary ModelState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelBindingContext.ModelState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ModelBinding.ModelStateDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはモデルの状態を設定します。</summary>
+        <value>モデルの状態、またはの新しいインスタンスを<see cref="T:System.Web.ModelBinding.ModelStateDictionary" />モデルの状態がまだ存在しない場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ModelType">
+      <MemberSignature Language="C#" Value="public Type ModelType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ModelType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelBindingContext.ModelType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モデルの種類を取得します。</summary>
+        <value>モデルの型。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">モデルのメタデータは、このプロパティにアクセスする前に設定する必要があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyMetadata">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,System.Web.ModelBinding.ModelMetadata&gt; PropertyMetadata { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, class System.Web.ModelBinding.ModelMetadata&gt; PropertyMetadata" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelBindingContext.PropertyMetadata" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.Web.ModelBinding.ModelMetadata&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モデルのプロパティのメタデータを取得します。</summary>
+        <value>モデルのプロパティのメタデータ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateRequest">
+      <MemberSignature Language="C#" Value="public bool ValidateRequest { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ValidateRequest" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelBindingContext.ValidateRequest" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはクライアントの入力を検証するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />クライアントの入力検証を行います。 場合、それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidationNode">
+      <MemberSignature Language="C#" Value="public System.Web.ModelBinding.ModelValidationNode ValidationNode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.ModelBinding.ModelValidationNode ValidationNode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelBindingContext.ValidationNode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ModelBinding.ModelValidationNode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または検証ノードを設定します。</summary>
+        <value>検証ノード、またはの新しいインスタンス、<see cref="T:System.Web.ModelBinding.ModelValidationNode" />検証ノードがまだ存在しない場合のクラスです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValueProvider">
+      <MemberSignature Language="C#" Value="public System.Web.ModelBinding.IValueProvider ValueProvider { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.ModelBinding.IValueProvider ValueProvider" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelBindingContext.ValueProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ModelBinding.IValueProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または値プロバイダーを設定します。</summary>
+        <value>値プロバイダー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

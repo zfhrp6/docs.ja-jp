@@ -1,0 +1,60 @@
+<Type Name="IObjectHandle" FullName="System.Runtime.Remoting.IObjectHandle">
+  <TypeSignature Language="C#" Value="public interface IObjectHandle" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IObjectHandle" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.IObjectHandle" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("C460E2B4-E199-412a-8456-84DC3E4838C3")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>間接参照から値渡しでマーシャ リング オブジェクトをラップ解除するためのインターフェイスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値渡しでマーシャ リング オブジェクトは、呼び出し元が制御を許可するオブジェクトがそれぞれのドメインに読み込まれるときに、間接参照によって返されることができます。 このインターフェイスを通して間接参照元オブジェクトが呼び出し元のラップを解除できます。  
+  
+ 実装するクラス、<xref:System.Runtime.Remoting.IObjectHandle>インターフェイスを各でラップされたオブジェクトのメタデータを読み込むことがなく複数のアプリケーション ドメイン間でオブジェクトを渡し (ラップされた状態) で使用する<xref:System.AppDomain>使用される、<xref:System.Runtime.Remoting.IObjectHandle>が移動します。 したがって、<xref:System.Runtime.Remoting.IObjectHandle>クラス、呼び出し元の制御ときに、<xref:System.Type>リモート オブジェクトは、ドメインに読み込まれます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Unwrap">
+      <MemberSignature Language="C#" Value="public object Unwrap ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Unwrap() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.IObjectHandle.Unwrap" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトがアンラップされます。</summary>
+        <returns>ラップされていないオブジェクトです。</returns>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="usage">
+          <para>A <see cref="T:System.Runtime.Remoting.ObjectHandle" /> 、リモート<see cref="T:System.MarshalByRefObject" />リモート処理の有効期間サービスが管理しているとします。 有効期間のリースの場合、現在のメソッドの呼び出しが失敗する、<see cref="T:System.Runtime.Remoting.ObjectHandle" />有効期限が切れた。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

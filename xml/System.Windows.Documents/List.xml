@@ -1,0 +1,333 @@
+<Type Name="List" FullName="System.Windows.Documents.List">
+  <TypeSignature Language="C#" Value="public class List : System.Windows.Documents.Block" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi List extends System.Windows.Documents.Block" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Documents.List" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Documents.Block</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("ListItems")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>順序付けられたまたは順序なしリスト内のコンテンツを表すための機能を提供するブロック レベルのフロー コンテンツ要素。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.List>子コンテンツの強力なコンテンツ モデルを適用します。 参照してください[TextElement コンテンツ モデルの概要](~/docs/framework/wpf/advanced/textelement-content-model-overview.md)の詳細については、<xref:System.Windows.Documents.List>コンテンツ モデルです。  
+  
+ <xref:System.Windows.Documents.List>箇条書きと段落番号など、マーカー付き書式設定するように設計のフロー コンテンツ要素。  
+  
+ <xref:System.Windows.Documents.ListItem>要素に対してのみ許容子である、<xref:System.Windows.Documents.List>要素。  
+  
+   
+  
+## Examples  
+ 次の例は、定義する方法を示します、<xref:System.Windows.Documents.List>を使用して[!INCLUDE[TLA#tla_titlexaml](~/includes/tlasharptla-titlexaml-md.md)]です。  
+  
+ [!code-xaml[ListSnippets#_ListXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/ListSnippets/CSharp/Window1.xaml#_listxaml)]  
+  
+ 次の例を作成し、設定する方法を示しています、<xref:System.Windows.Documents.List>プログラムでします。  
+  
+ [!code-csharp[ListSnippets#_List_Props](~/samples/snippets/csharp/VS_Snippets_Wpf/ListSnippets/CSharp/Window1.xaml.cs#_list_props)]
+ [!code-vb[ListSnippets#_List_Props](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ListSnippets/visualbasic/window1.xaml.vb#_list_props)]  
+  
+ この例の表示結果を次の図に示します。  
+  
+ ![スクリーン ショット: 順序指定された](~/add/media/ordered-list.png "スクリーン ショット: 順序付きリスト")  
+  
+ 次の例は、入れ子になったを定義する方法を示しています。 <xref:System.Windows.Documents.List> (一覧内でリスト) を使用して[!INCLUDE[TLA#tla_titlexaml](~/includes/tlasharptla-titlexaml-md.md)]です。  
+  
+ [!code-xaml[ListSnippets#_NestedListXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/ListSnippets/CSharp/Window1.xaml#_nestedlistxaml)]  
+  
+ この例の表示結果を次の図に示します。  
+  
+ ![入れ子になったリスト](~/add/media/flow-nested-list-example.png "入れ子になったリスト")  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public List ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.List.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しい、空のインスタンスを初期化、<see cref="T:System.Windows.Documents.List" />クラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public List (System.Windows.Documents.ListItem listItem);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Documents.ListItem listItem) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.List.#ctor(System.Windows.Documents.ListItem)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="listItem" Type="System.Windows.Documents.ListItem" />
+      </Parameters>
+      <Docs>
+        <param name="listItem">A<see cref="T:System.Windows.Documents.ListItem" />新しいの初期コンテンツを指定するオブジェクト<see cref="T:System.Windows.Documents.List" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Documents.List" />クラス、指定した<see cref="T:System.Windows.Documents.ListItem" />オブジェクトを新しいの初期コンテンツとして<see cref="T:System.Windows.Documents.List" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、このコンス トラクターの使用方法を示します。  
+  
+ [!code-csharp[ListSnippets#_List_Const](~/samples/snippets/csharp/VS_Snippets_Wpf/ListSnippets/CSharp/Window1.xaml.cs#_list_const)]
+ [!code-vb[ListSnippets#_List_Const](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ListSnippets/visualbasic/window1.xaml.vb#_list_const)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ListItems">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.ListItemCollection ListItems { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.ListItemCollection ListItems" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.List.ListItems" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.ListItemCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Documents.ListItemCollection" />を含む、<see cref="T:System.Windows.Documents.ListItem" />要素の内容を構成する、<see cref="T:System.Windows.Documents.List" />です。</summary>
+        <value>A<see cref="T:System.Windows.Documents.ListItemCollection" />を含む、<see cref="T:System.Windows.Documents.ListItem" />要素の内容を構成する、<see cref="T:System.Windows.Documents.List" />です。  
+  
+ このプロパティには既定値はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Documents.ListItemCollection>列挙またはの内容を操作するには、このプロパティによって返される、<xref:System.Windows.Documents.List>要素。  
+  
+   
+  
+## Examples  
+ 次の例での一般的な操作を実行する方法を示して、<xref:System.Windows.Documents.List>を使用して、<xref:System.Windows.Documents.List.ListItems%2A>プロパティです。  
+  
+ [!code-csharp[ListSnippets#_List_ListItems](~/samples/snippets/csharp/VS_Snippets_Wpf/ListSnippets/CSharp/Window1.xaml.cs#_list_listitems)]
+ [!code-vb[ListSnippets#_List_ListItems](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ListSnippets/visualbasic/window1.xaml.vb#_list_listitems)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MarkerOffset">
+      <MemberSignature Language="C#" Value="public double MarkerOffset { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 MarkerOffset" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.List.MarkerOffset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.LengthConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>それぞれの内容の間隔を必要な設定を取得または<see cref="T:System.Windows.Documents.ListItem" />要素、およびリスト マーカーの近傍端。</summary>
+        <value>リスト コンテンツとリスト マーカーの近傍端の間に必要な距離を指定する double 型の値 (デバイスに依存しないピクセル単位)。  
+  
+ 値<see cref="F:System.Double.NaN" />(属性値に相当"<c>自動</c>") により、マーカー オフセット自動的に決定されます。  
+  
+ 既定値は <see cref="F:System.Double.NaN" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlAttributeUsage_MarkerOffset"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object MarkerOffset="double"/>  
+- or -  
+<object MarkerOffset="qualifiedDouble"/>  
+- or -  
+<object MarkerOffset="Auto"/>  
+```  
+  
+<a name="xamlValues_MarkerOffset"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *double*  
+ 文字列表現を<xref:System.Double>値以上になると**0.0**がよりも小さい<xref:System.Double.PositiveInfinity>です。 修飾されていない値は、デバイス非依存ピクセル単位で計測されます。 明示的に、文字列では、小数点を含める必要がありますされません。  
+  
+ *qualifiedDouble*  
+ A*二重*、上記で説明したように値 (ドキュメントを除く`Auto`) 後に、次の単位指定子の 1 つ: `px`、 `in`、 `cm`、`pt`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ `cm`センチメートル; は、します。1cm==(96/2.54) px  
+  
+ `pt`ポイントです。1pt==(96/72) px  
+  
+ 自動  
+ 現在のフォント特性から自動的に決定されますマーカー オフセットが発生します。  プロパティの値に相当<xref:System.Double.NaN>です。  
+  
+<a name="dependencyPropertyInfo_MarkerOffset"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.List.MarkerOffsetProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>, <xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MarkerOffsetProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty MarkerOffsetProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty MarkerOffsetProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.List.MarkerOffsetProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.List.MarkerOffset" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MarkerStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.TextMarkerStyle MarkerStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.TextMarkerStyle MarkerStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.List.MarkerStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.TextMarkerStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のマーカーのスタイル、<see cref="T:System.Windows.Documents.List" />です。</summary>
+        <value>メンバー、<see cref="T:System.Windows.TextMarkerStyle" />を使用するマーカーのスタイルを指定する列挙です。  
+  
+ 既定値は <see cref="F:System.Windows.TextMarkerStyle.Disc" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_MarkerStyle"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.List.MarkerStyle%2A>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>, <xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MarkerStyleProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty MarkerStyleProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty MarkerStyleProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.List.MarkerStyleProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.List.MarkerStyle" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartIndex">
+      <MemberSignature Language="C#" Value="public int StartIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 StartIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.List.StartIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または順序付けされたリスト内の項目のラベル付けの開始インデックスを設定します。</summary>
+        <value>順序付けされたリスト内の項目のラベル付けの開始インデックス。  
+  
+ 既定値は**1**です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティには、順序なしリストへの影響はありません。  
+  
+<a name="dependencyPropertyInfo_StartIndex"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.List.StartIndexProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>, <xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartIndexProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty StartIndexProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty StartIndexProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.List.StartIndexProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.List.StartIndex" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

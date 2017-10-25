@@ -1,0 +1,210 @@
+<Type Name="HwndTarget" FullName="System.Windows.Interop.HwndTarget">
+  <TypeSignature Language="C#" Value="public class HwndTarget : System.Windows.Media.CompositionTarget" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi HwndTarget extends System.Windows.Media.CompositionTarget" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Interop.HwndTarget" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.CompositionTarget</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>視覚的構図をサポートするウィンドウ ハンドルにバインドを表します。</summary>
+    <remarks>To be added.</remarks>
+    <threadsafe>A<see cref="T:System.Windows.Interop.HwndTarget" />はスレッド セーフではありません。 参照することができます、<see cref="T:System.Windows.Interop.HwndTarget" />それを作成したスレッドからのみです。 アクセスしようとする<see cref="T:System.Windows.Interop.HwndTarget" />別のスレッドから、<see cref="T:System.InvalidOperationException" />がスローされます。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HwndTarget (IntPtr hwnd);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(native int hwnd) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.HwndTarget.#ctor(System.IntPtr)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="hwnd" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="hwnd">このオブジェクトを描画する、ウィンドウのハンドルです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Interop.HwndTarget" />クラス、指定した HWND を使用します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.UIPermissionWindow">インスタンスを作成します。 関連する列挙値:<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundColor">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Color BackgroundColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.Color BackgroundColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.HwndTarget.BackgroundColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これによって参照されるウィンドウの背景色を取得または<see cref="T:System.Windows.Interop.HwndTarget" />です。</summary>
+        <value>背景色として、<see cref="T:System.Windows.Media.Color" />値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ その他のビジュアル コンポーネントの前に、背景が描画されます。 使用する色には、アルファ コンポーネントに 1.0 の必要があります。 指定した別のアルファ値を指定しようとするかどうかは<xref:System.Windows.Media.Color>1.0 に自動的にリセットします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public override void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.HwndTarget.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Windows.Interop.HwndTarget" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderMode">
+      <MemberSignature Language="C#" Value="public System.Windows.Interop.RenderMode RenderMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Interop.RenderMode RenderMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.HwndTarget.RenderMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Interop.RenderMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これによって参照されるウィンドウのレンダリング モードの設定を取得または<see cref="T:System.Windows.Interop.HwndTarget" />です。</summary>
+        <value>1 つ、<see cref="T:System.Windows.Interop.RenderMode" />現在を指定する値は、モードを表示します。 既定値は、<see cref="F:System.Windows.Interop.RenderMode.Default" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RootVisual">
+      <MemberSignature Language="C#" Value="public override System.Windows.Media.Visual RootVisual { set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Visual RootVisual" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.HwndTarget.RootVisual" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Visual</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはウィンドウによってホストされているページのルート visual オブジェクトを設定します。</summary>
+        <value>ホストされたページのルート visual オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  このクラスは、このプロパティのセット {} の実装のみをオーバーライドします。 もので get {} の実装が存在しますが、ある、<xref:System.Windows.Media.CompositionTarget>基本クラスが最初にこの仮想プロパティを宣言します。 <xref:System.Windows.Interop.HwndTarget>の場合、このプロパティは、実際に読み取り/書き込み、このドキュメントのトピックでの構文の読み取りに関係なく。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransformFromDevice">
+      <MemberSignature Language="C#" Value="public override System.Windows.Media.Matrix TransformFromDevice { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.Matrix TransformFromDevice" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.HwndTarget.TransformFromDevice" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Matrix</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このターゲットの描画先に関連付けられているデバイスの座標に変換を表す行列を取得します。</summary>
+        <value>変換行列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransformToDevice">
+      <MemberSignature Language="C#" Value="public override System.Windows.Media.Matrix TransformToDevice { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.Matrix TransformToDevice" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.HwndTarget.TransformToDevice" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Matrix</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>描画先に関連付けられているデバイスには、このターゲットの座標に変換を表す行列を取得します。</summary>
+        <value>変換行列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UsesPerPixelOpacity">
+      <MemberSignature Language="C#" Value="public bool UsesPerPixelOpacity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UsesPerPixelOpacity" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.HwndTarget.UsesPerPixelOpacity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ソース ウィンドウ コンテンツのピクセルごとの不透明度の値がレンダリングに使用するかどうかを示す値を取得します。</summary>
+        <value>
+          ピクセルごとの不透明度を使用する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ピクセルごとの不透明度を有効にした場合、レンダリング サブシステムは不要になった (ウィンドウの縁) の非クライアント領域を描画します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

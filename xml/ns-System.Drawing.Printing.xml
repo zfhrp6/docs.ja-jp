@@ -1,0 +1,27 @@
+<Namespace Name="System.Drawing.Printing">
+  <Docs>
+    <summary><see cref="N:System.Drawing.Printing" />名前空間は、Windows フォーム アプリケーションの印刷関連のサービスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、Windows フォーム アプリケーションから印刷するときの新しいインスタンスを作成、<xref:System.Drawing.Printing.PrintDocument>クラスでプロパティを設定など<xref:System.Drawing.Printing.PrintDocument.DefaultPageSettings%2A>と<xref:System.Drawing.Printing.PrintDocument.PrinterSettings%2A>、印刷、および呼び出す方法を記述する、<xref:System.Drawing.Printing.PrintDocument.Print%2A>を実際には、ドキュメントを印刷する方法です。 呼び出す、<xref:System.Drawing.Printing.PrintDocument.Print%2A?displayProperty=nameWithType>メソッドが発生し、<xref:System.Drawing.Printing.PrintDocument.PrintPage?displayProperty=nameWithType>イベントで、印刷ドキュメントのレイアウトを実行する処理する必要があります。  
+  
+ 使用して、<xref:System.Drawing.Printing.PrintPageEventArgs.Graphics%2A>のプロパティ、<xref:System.Drawing.Printing.PrintPageEventArgs>から取得したオブジェクト、<xref:System.Drawing.Printing.PrintDocument.PrintPage?displayProperty=nameWithType>を印刷する出力を指定するイベントです。 テキスト ファイルを印刷する場合を使用して<xref:System.IO.StreamReader>をストリームの呼び出しから時に 1 行を読み取る、 <xref:System.Drawing.Graphics.DrawString%2A> graphics オブジェクトの行を描画するメソッド。 このプロセスの詳細については、次を参照してください。、<xref:System.Drawing.Graphics>と<xref:System.IO.StreamReader>クラスです。 内のテキスト ドキュメントを印刷する例を表示することができます、<xref:System.Drawing.Printing.PrintDocument>クラスの概要に関するトピック。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.TextRenderer.DrawText%2A>のメソッド、<xref:System.Windows.Forms.TextRenderer>クラスは、印刷のサポートされていません。 代わりに、使用、<xref:System.Drawing.Graphics.DrawString%2A>のメソッド、<xref:System.Drawing.Graphics>クラスです。  
+  
+ 派生クラスで実装された場合、<xref:System.Drawing.Printing.PrintController>コントロール方法、<xref:System.Drawing.Printing.PrintDocument>が出力されます。 <xref:System.Drawing.Printing.PrintDocument.Print%2A?displayProperty=nameWithType>メソッドを呼び出して、プリント コント ローラーの<xref:System.Drawing.Printing.PrintController.OnStartPrint%2A>、 <xref:System.Drawing.Printing.PrintController.OnEndPrint%2A>、 <xref:System.Drawing.Printing.PrintController.OnStartPage%2A>、および<xref:System.Drawing.Printing.PrintController.OnEndPage%2A>メソッドで、さらに、プリンターにドキュメントを印刷する方法を説明します。 印刷ダイアログ ボックスの詳細については、次を参照してください。<xref:System.Windows.Forms.PrintDialog>と<xref:System.Windows.Forms.PageSetupDialog>です。  
+  
+ 印刷プレビュー プロセスでは、特殊化されたプリント コント ローラー、ダイアログ ボックスで、およびコントロールを使用します。 このようなプリント コント ローラーと ダイアログ ボックスの例は、次を参照してください。 <xref:System.Drawing.Printing.PreviewPrintController>、 <xref:System.Windows.Forms.PrintPreviewDialog>、および<xref:System.Windows.Forms.PrintPreviewControl>です。  
+  
+> [!CAUTION]
+>  クラス内で、 <xref:System.Drawing.Printing> Windows サービスや ASP.NET アプリケーションまたはサービス内で使用する名前空間はサポートされていません。 パフォーマンスと実行時の例外をサービス低下のいずれかのようなアプリケーションからこれらのクラスを使用しようと、予期しない問題が生じる可能性があります。  
+  
+ Windows Presentation Foundation (WPF) アプリケーションから印刷する場合は、「、<xref:System.Printing>名前空間。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Namespace>

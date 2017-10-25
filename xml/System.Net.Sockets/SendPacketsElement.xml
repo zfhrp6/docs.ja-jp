@@ -1,0 +1,470 @@
+<Type Name="SendPacketsElement" FullName="System.Net.Sockets.SendPacketsElement">
+  <TypeSignature Language="C#" Value="public class SendPacketsElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SendPacketsElement extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Sockets.SendPacketsElement" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Sockets</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>内の要素を表す、<see cref="T:System.Net.Sockets.SendPacketsElement" />配列。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Sockets.SendPacketsElement>クラスが強化するために使用される、<xref:System.Net.Sockets.Socket>最高のパフォーマンスを実現するために非同期のネットワーク I/O を使用するサーバー アプリケーションで使用されるクラスです。 <xref:System.Net.Sockets.SendPacketsElement>クラスが使用されて、<xref:System.Net.Sockets.SocketAsyncEventArgs.SendPacketsElements%2A?displayProperty=nameWithType>を取得または送信されるファイルまたはデータ バッファーを設定するプロパティを使用して、<xref:System.Net.Sockets.Socket.SendPacketsAsync%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>このクラスのインスタンスでは、スレッド セーフです。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SendPacketsElement (byte[] buffer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] buffer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.SendPacketsElement.#ctor(System.Byte[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">使用して送信するデータのバイト配列、<see cref="M:System.Net.Sockets.Socket.SendPacketsAsync(System.Net.Sockets.SocketAsyncEventArgs)" />メソッドです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Sockets.SendPacketsElement" />クラスの指定されたバッファーを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Sockets.SendPacketsElement.%23ctor%28System.Byte%5B%5D%29>コンス トラクターの新しいインスタンスを初期化します、<xref:System.Net.Sockets.SendPacketsElement>データのバイト配列を持つクラス。 <xref:System.Net.Sockets.SendPacketsElement>クラスが使用されて、<xref:System.Net.Sockets.SocketAsyncEventArgs.SendPacketsElements%2A?displayProperty=nameWithType>を取得または送信されるファイルまたはデータ バッファーを設定するプロパティを使用して、<xref:System.Net.Sockets.Socket.SendPacketsAsync%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="buffer" />パラメーターを null にすることはできません</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SendPacketsElement (string filepath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string filepath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.SendPacketsElement.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="filepath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="filepath">使用して転送するファイルのファイル名、<see cref="M:System.Net.Sockets.Socket.SendPacketsAsync(System.Net.Sockets.SocketAsyncEventArgs)" />メソッドです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Sockets.SendPacketsElement" />クラス、指定したファイルを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Sockets.SendPacketsElement.%23ctor%28System.String%29>コンス トラクターの新しいインスタンスを初期化します、<xref:System.Net.Sockets.SendPacketsElement>ファイルのファイル名を持つクラス。 <xref:System.Net.Sockets.SendPacketsElement>クラスが使用されて、<xref:System.Net.Sockets.SocketAsyncEventArgs.SendPacketsElements%2A?displayProperty=nameWithType>を取得または送信されるファイルまたはデータ バッファーを設定するプロパティを使用して、<xref:System.Net.Sockets.Socket.SendPacketsAsync%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 汎用名前付け規則 (UNC) パスがサポートされている、`filepath`パラメーター。 ファイルが現在の作業ディレクトリ内にある場合は、パス情報なしを指定する必要です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="filepath" />パラメーターを null にすることはできません</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SendPacketsElement (byte[] buffer, int offset, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] buffer, int32 offset, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.SendPacketsElement.#ctor(System.Byte[],System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">使用して送信するデータのバイト配列、<see cref="M:System.Net.Sockets.Socket.SendPacketsAsync(System.Net.Sockets.SocketAsyncEventArgs)" />メソッドです。</param>
+        <param name="offset">先頭からのバイト単位のオフセット、<c>バッファー</c>内の場所に、<c>バッファー</c>で指定されるデータの送信を開始する、<c>バッファー</c>パラメーター。</param>
+        <param name="count">送信するバイト数、<c>オフセット</c>パラメーター。 場合<c>カウント</c>0 の場合は、バイト数は送信されません。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Sockets.SendPacketsElement" />クラスの指定されたバッファー、バッファー オフセットおよびカウントを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Sockets.SendPacketsElement.%23ctor%28System.Byte%5B%5D%2CSystem.Int32%2CSystem.Int32%29>コンス トラクターの新しいインスタンスを初期化します、<xref:System.Net.Sockets.SendPacketsElement>データのバイト配列を持つクラス。 <xref:System.Net.Sockets.SendPacketsElement>クラスが使用されて、<xref:System.Net.Sockets.SocketAsyncEventArgs.SendPacketsElements%2A?displayProperty=nameWithType>を取得または送信されるファイルまたはデータ バッファーを設定するプロパティを使用して、<xref:System.Net.Sockets.Socket.SendPacketsAsync%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="buffer" />パラメーターを null にすることはできません</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset" />と<paramref name="count" />パラメーターが 0 以上にする必要があります。  
+  
+ <paramref name="offset" />と<paramref name="count" />バッファーのサイズより小さくなければなりません</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SendPacketsElement (string filepath, int offset, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string filepath, int32 offset, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.SendPacketsElement.#ctor(System.String,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="filepath" Type="System.String" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="filepath">使用して転送するファイルのファイル名、<see cref="M:System.Net.Sockets.Socket.SendPacketsAsync(System.Net.Sockets.SocketAsyncEventArgs)" />メソッドです。</param>
+        <param name="offset">指定されたファイルの送信を開始するファイル内の場所にファイルの先頭からのバイト単位のオフセット、 <c>filepath</c>パラメーター。</param>
+        <param name="count">送信するバイト数、<c>オフセット</c>パラメーター。 場合<c>カウント</c>0 の場合は、ファイル全体を送信します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Sockets.SendPacketsElement" />クラス ファイル名の指定したパス、オフセット、およびカウントを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Sockets.SendPacketsElement.%23ctor%28System.String%2CSystem.Int32%2CSystem.Int32%29>コンス トラクターの新しいインスタンスを初期化します、<xref:System.Net.Sockets.SendPacketsElement>ファイルのファイル名を持つクラス。 <xref:System.Net.Sockets.SendPacketsElement>クラスが使用されて、<xref:System.Net.Sockets.SocketAsyncEventArgs.SendPacketsElements%2A?displayProperty=nameWithType>を取得または送信されるファイルまたはデータ バッファーを設定するプロパティを使用して、<xref:System.Net.Sockets.Socket.SendPacketsAsync%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 汎用名前付け規則 (UNC) パスがサポートされている、`filepath`パラメーター。 ファイルが現在の作業ディレクトリ内にある場合は、パス情報なしを指定する必要です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="filepath" />パラメーターを null にすることはできません</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset" />と<paramref name="count" />パラメーターが 0 以上にする必要があります。  
+  
+ <paramref name="offset" />と<paramref name="count" />で指定されたファイルのサイズより小さくする必要があります、<paramref name="filepath" />パラメーター。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SendPacketsElement (byte[] buffer, int offset, int count, bool endOfPacket);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] buffer, int32 offset, int32 count, bool endOfPacket) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.SendPacketsElement.#ctor(System.Byte[],System.Int32,System.Int32,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+        <Parameter Name="endOfPacket" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">使用して送信するデータのバイト配列、<see cref="M:System.Net.Sockets.Socket.SendPacketsAsync(System.Net.Sockets.SocketAsyncEventArgs)" />メソッドです。</param>
+        <param name="offset">先頭からのバイト単位のオフセット、<c>バッファー</c>内の場所に、<c>バッファー</c>で指定されるデータの送信を開始する、<c>バッファー</c>パラメーター。</param>
+        <param name="count">送信するバイト数です、<c>オフセット</c>パラメーター。 場合<c>カウント</c>0 の場合は、バイト数は送信されません。</param>
+        <param name="endOfPacket">この要素が 1 つの次の要素と組み合わされていない必要がありますを指定するブール値は、トランスポートにソケット レイヤーからの要求を送信します。 このフラグは、データグラムまたはメッセージ指向のソケット上の各メッセージの内容の詳細に制御に使用されます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Sockets.SendPacketsElement" />クラスな sockets 層から、トランスポートへの単一の送信要求の次の要素を持つには、この要素を結合するオプションを使用して、指定されたバッファー、バッファー オフセットとカウントを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Sockets.SendPacketsElement.%23ctor%28System.Byte%5B%5D%2CSystem.Int32%2CSystem.Int32%2CSystem.Boolean%29>コンス トラクターの新しいインスタンスを初期化します、<xref:System.Net.Sockets.SendPacketsElement>データのバイト配列を持つクラス。 <xref:System.Net.Sockets.SendPacketsElement>クラスが使用されて、<xref:System.Net.Sockets.SocketAsyncEventArgs.SendPacketsElements%2A?displayProperty=nameWithType>を取得または送信されるファイルまたはデータ バッファーを設定するプロパティを使用して、<xref:System.Net.Sockets.Socket.SendPacketsAsync%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="buffer" />パラメーターを null にすることはできません</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset" />と<paramref name="count" />パラメーターが 0 以上にする必要があります。  
+  
+ <paramref name="offset" />と<paramref name="count" />バッファーのサイズより小さくなければなりません</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SendPacketsElement (string filepath, int offset, int count, bool endOfPacket);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string filepath, int32 offset, int32 count, bool endOfPacket) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.SendPacketsElement.#ctor(System.String,System.Int32,System.Int32,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="filepath" Type="System.String" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+        <Parameter Name="endOfPacket" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="filepath">使用して転送するファイルのファイル名、<see cref="M:System.Net.Sockets.Socket.SendPacketsAsync(System.Net.Sockets.SocketAsyncEventArgs)" />メソッドです。</param>
+        <param name="offset">指定されたファイルの送信を開始するファイル内の場所にファイルの先頭からのバイト単位のオフセット、 <c>filepath</c>パラメーター。</param>
+        <param name="count">送信するバイト数、<c>オフセット</c>パラメーター。 場合<c>カウント</c>0 の場合は、ファイル全体を送信します。</param>
+        <param name="endOfPacket">この要素が 1 つの次の要素と組み合わされていない必要がありますを指定するブール値は、トランスポートにソケット レイヤーからの要求を送信します。 このフラグは、データグラムまたはメッセージ指向のソケット上の各メッセージの内容の詳細に制御に使用されます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Sockets.SendPacketsElement" />クラスな sockets 層から、トランスポートへの単一の送信要求の次の要素を持つには、この要素を結合するオプションを使用して、指定したファイル名パス、バッファー オフセットとカウントを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Sockets.SendPacketsElement.%23ctor%28System.String%2CSystem.Int32%2CSystem.Int32%2CSystem.Boolean%29>コンス トラクターの新しいインスタンスを初期化します、<xref:System.Net.Sockets.SendPacketsElement>ファイルのファイル名を持つクラス。 <xref:System.Net.Sockets.SendPacketsElement>クラスが使用されて、<xref:System.Net.Sockets.SocketAsyncEventArgs.SendPacketsElements%2A?displayProperty=nameWithType>を取得または送信されるファイルまたはデータ バッファーを設定するプロパティを使用して、<xref:System.Net.Sockets.Socket.SendPacketsAsync%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 汎用名前付け規則 (UNC) パスがサポートされている、`filepath`パラメーター。 ファイルが現在の作業ディレクトリ内にある場合は、パス情報なしを指定する必要です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="filepath" />パラメーターを null にすることはできません</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="offset" />と<paramref name="count" />パラメーターが 0 以上にする必要があります。  
+  
+ <paramref name="offset" />と<paramref name="count" />で指定されたファイルのサイズより小さくする必要があります、<paramref name="filepath" />パラメーター。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Buffer">
+      <MemberSignature Language="C#" Value="public byte[] Buffer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] Buffer" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.SendPacketsElement.Buffer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>場合に送信するバッファーを取得、<see cref="T:System.Net.Sockets.SendPacketsElement" />クラスが初期化されましたが、<paramref name="buffer" />パラメーター。</summary>
+        <value>場合に送信するバイトのバッファー、<see cref="T:System.Net.Sockets.SendPacketsElement" />クラスが初期化されましたが、<paramref name="buffer" />パラメーター。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値、<xref:System.Net.Sockets.SendPacketsElement.Buffer%2A>プロパティには長さ 0 の配列がある場合、<xref:System.Net.Sockets.SendPacketsElement>使用クラスが初期化されていない、`buffer`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.SendPacketsElement.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>送信するバイト数を取得します。</summary>
+        <value>場合に送信するバイト数、<see cref="T:System.Net.Sockets.SendPacketsElement" />クラスが初期化されましたが、<paramref name="count" />パラメーター。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値、<xref:System.Net.Sockets.SendPacketsElement.Count%2A>プロパティがの場合は 0、<xref:System.Net.Sockets.SendPacketsElement>使用クラスが初期化されていない、`count`パラメーター。  
+  
+ 場合<xref:System.Net.Sockets.SendPacketsElement.Count%2A>0 は、ファイルの場合、ファイル全体を送信します。 場合<xref:System.Net.Sockets.SendPacketsElement.Count%2A>0 は、バッファーのバイト数は送信されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndOfPacket">
+      <MemberSignature Language="C#" Value="public bool EndOfPacket { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EndOfPacket" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.SendPacketsElement.EndOfPacket" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素をトランスポートにソケット レイヤーから単一の送信要求の次の要素と組み合わせることはできないかどうかを示すブール値を取得します。</summary>
+        <value>この要素を単一の次の要素と組み合わせることはできないかどうかを示すブール値では、要求を送信します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値、<xref:System.Net.Sockets.SendPacketsElement.EndOfPacket%2A>プロパティが false の場合、<xref:System.Net.Sockets.SendPacketsElement>使用クラスが初期化されていない、`endOfPacket`パラメーターが true に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilePath">
+      <MemberSignature Language="C#" Value="public string FilePath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FilePath" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.SendPacketsElement.FilePath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>場合に送信するファイルのファイル名を取得、<see cref="T:System.Net.Sockets.SendPacketsElement" />クラスが初期化されましたが、<paramref name="filepath" />パラメーター。</summary>
+        <value>場合に送信するファイルのファイル名、<see cref="T:System.Net.Sockets.SendPacketsElement" />クラスが初期化されましたが、<paramref name="filepath" />パラメーター。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 汎用名前付け規則 (UNC) パスがサポートされている、<xref:System.Net.Sockets.SendPacketsElement.FilePath%2A>プロパティです。 ファイルが現在の作業ディレクトリ内にある場合は、パス情報なしを指定する必要です。  
+  
+ 既定値、<xref:System.Net.Sockets.SendPacketsElement.FilePath%2A>プロパティには、空の文字列がある場合、<xref:System.Net.Sockets.SendPacketsElement>使用クラスが初期化されていない、`filepath`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Offset">
+      <MemberSignature Language="C#" Value="public int Offset { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Offset" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.SendPacketsElement.Offset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>(バイト単位) でバッファーまたはファイル内のデータの送信を開始する場所にファイルをデータ バッファーの先頭からのオフセットを取得します。</summary>
+        <value>バッファーまたはファイル内のデータの送信を開始する場所にファイルをデータ バッファーの先頭からのバイト オフセット。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値、<xref:System.Net.Sockets.SendPacketsElement.Offset%2A>プロパティがの場合は 0、<xref:System.Net.Sockets.SendPacketsElement>使用クラスが初期化されていない、`offset`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

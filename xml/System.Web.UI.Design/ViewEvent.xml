@@ -1,0 +1,124 @@
+<Type Name="ViewEvent" FullName="System.Web.UI.Design.ViewEvent">
+  <TypeSignature Language="C#" Value="public sealed class ViewEvent" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ViewEvent extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.ViewEvent" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コントロールのビューのデザイン時に発生したイベントの種類を表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.UI.Design.ViewEvent>オブジェクトはデザイナー コンポーネントをホストで提供される、デザイン、たとえば[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]コントロールのデザイン時ビューの特定のユーザー アクションによって発生するイベントを発生させる場合、します。 <xref:System.Web.UI.Design.IControlDesignerView.ViewEvent?displayProperty=nameWithType>によってイベントが処理される、<xref:System.Web.UI.Design.ViewEventHandler>デリゲートを受け取るメソッド、<xref:System.Web.UI.Design.ViewEventArgs>オブジェクトをパラメーターとして。 <xref:System.Web.UI.Design.ViewEventArgs.EventType%2A>のプロパティ、<xref:System.Web.UI.Design.ViewEventArgs>クラスは、<xref:System.Web.UI.Design.ViewEvent>オブジェクト。 <xref:System.Web.UI.Design.ViewEventHandler>デリゲート メソッドを比較、 <xref:System.Web.UI.Design.ViewEventArgs.EventType%2A> 、静的なプロパティ<xref:System.Web.UI.Design.ViewEvent>イベントが発生したアクションの種類を決定するフィールドです。 たとえば、イベントは、次の状況で発生します。  
+  
+-   デザイン サーフェイス上の領域をクリックします。  
+  
+-   デザイナーでは、デザイン サーフェイス上のコントロールを描画します。  
+  
+-   入力するか、コントロールのテンプレート編集モードを終了するとします。  
+  
+ <xref:System.Web.UI.Design.ControlDesigner>クラスは、既定値を処理するデリゲートを提供します。、<xref:System.Web.UI.Design.IControlDesignerView.ViewEvent?displayProperty=nameWithType>イベント。 カスタム コントロール デザイナーのオーバーライド、 <xref:System.Web.UI.Design.ControlDesigner.OnClick%2A>、 <xref:System.Web.UI.Design.ControlDesigner.OnPaint%2A>、および<xref:System.Web.UI.Design.TemplatedControlDesigner.OnTemplateModeChanged%2A>デザイン画面でコントロールのイベントを処理するメソッド。  
+  
+ デザイナーのホストを初期化します、<xref:System.Web.UI.Design.ViewEventArgs>するオブジェクトをデザイン画面とし、パス上のアクションの種類のオブジェクト、<xref:System.Web.UI.Design.ViewEventHandler>を委任します。 <xref:System.Web.UI.Design.ViewEventArgs.EventType%2A>のプロパティ、<xref:System.Web.UI.Design.ViewEventArgs>オブジェクトは、アクションの種類を示します。  
+  
+-   A<xref:System.Web.UI.Design.ViewEvent.Click>イベント。  
+  
+-   A<xref:System.Web.UI.Design.ViewEvent.Paint>イベント。  
+  
+-   A<xref:System.Web.UI.Design.ViewEvent.TemplateModeChanged>イベント。  
+  
+ <xref:System.Web.UI.Design.ViewEventArgs.EventArgs%2A>プロパティは、アクションの種類に固有のイベント引数を指定します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Click">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.Design.ViewEvent Click;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.Design.ViewEvent Click" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.Design.ViewEvent.Click" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.ViewEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーの領域上をクリックし、ビュー イベントが発生したことを示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.UI.Design.ViewEventHandler>デリゲート メソッドを比較、 <xref:System.Web.UI.Design.ViewEventArgs.EventType%2A> 、静的なプロパティ<xref:System.Web.UI.Design.ViewEvent>イベントが発生したアクションの種類を決定するフィールドです。 A<xref:System.Web.UI.Design.ViewEvent>オブジェクトと等しい<xref:System.Web.UI.Design.ViewEvent.Click>をデザイン サーフェイス上の領域がクリックしたことを示します。  
+  
+ <xref:System.Web.UI.Design.ControlDesigner>クラスは、既定値を提供します。<xref:System.Web.UI.Design.ViewEventHandler>を委任します。 イベントの種類が場合<xref:System.Web.UI.Design.ViewEvent.Click>、デリゲートの呼び出し、<xref:System.Web.UI.Design.ControlDesigner.OnClick%2A>メソッドです。 派生するクラス、<xref:System.Web.UI.Design.ControlDesigner>クラスのオーバーライド、<xref:System.Web.UI.Design.ControlDesigner.OnClick%2A>を処理するメソッドは、デザイン時に領域上のイベントをクリックします。 イベント引数は、存在する場合に、どのデザイナーの領域がクリックしてされたを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Paint">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.Design.ViewEvent Paint;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.Design.ViewEvent Paint" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.Design.ViewEvent.Paint" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.ViewEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイン サーフェイス上のコントロールを描画するため、ビュー イベントが発生したことを示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.UI.Design.ViewEventHandler>デリゲート メソッドを比較、 <xref:System.Web.UI.Design.ViewEventArgs.EventType%2A> 、静的なプロパティ<xref:System.Web.UI.Design.ViewEvent>イベントが発生したアクションの種類を決定するフィールドです。 A<xref:System.Web.UI.Design.ViewEvent>オブジェクトと等しい<xref:System.Web.UI.Design.ViewEvent.Paint>をデザイン画面でコントロールの描画イベントを示します。  
+  
+ <xref:System.Web.UI.Design.ControlDesigner>クラスは、既定値を提供します。<xref:System.Web.UI.Design.ViewEventHandler>を委任します。 イベントの種類が場合<xref:System.Web.UI.Design.ViewEvent.Paint>、デリゲートの呼び出し、<xref:System.Web.UI.Design.ControlDesigner.OnPaint%2A>メソッドです。 派生するクラス、<xref:System.Web.UI.Design.ControlDesigner>クラスのオーバーライド、<xref:System.Web.UI.Design.ControlDesigner.OnPaint%2A>を処理するメソッドは、デザイン時に領域上のイベントをクリックします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TemplateModeChanged">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.Design.ViewEvent TemplateModeChanged;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.Design.ViewEvent TemplateModeChanged" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.Design.ViewEvent.TemplateModeChanged" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.ViewEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロール デザイナーのテンプレート モードを変更するため、ビュー イベントが発生したことを示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.UI.Design.ViewEventHandler>デリゲート メソッドを比較、 <xref:System.Web.UI.Design.ViewEventArgs.EventType%2A> 、静的なプロパティ<xref:System.Web.UI.Design.ViewEvent>イベントが発生したアクションの種類を決定するフィールドです。 A<xref:System.Web.UI.Design.ViewEvent>オブジェクトと等しい<xref:System.Web.UI.Design.ViewEvent.TemplateModeChanged>をデザイン サーフェイス上のコントロールのテンプレート編集モードが変更されたことを示します。  
+  
+ <xref:System.Web.UI.Design.ControlDesigner>クラスは、既定値を提供します。<xref:System.Web.UI.Design.ViewEventHandler>を委任します。 イベントの種類が場合<xref:System.Web.UI.Design.ViewEvent.TemplateModeChanged>、デリゲートの値の設定、<xref:System.Web.UI.Design.ControlDesigner.InTemplateMode%2A>プロパティ。  
+  
+ 派生したカスタム デザイナー、<xref:System.Web.UI.Design.TemplatedControlDesigner>クラスをオーバーライドして、<xref:System.Web.UI.Design.TemplatedControlDesigner.OnTemplateModeChanged%2A>追加処理を実行時にテンプレートのデザイン サーフェイス上のコントロールにモードの変更を編集する方法です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

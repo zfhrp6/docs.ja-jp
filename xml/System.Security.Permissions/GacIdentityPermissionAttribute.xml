@@ -1,0 +1,136 @@
+<Type Name="GacIdentityPermissionAttribute" FullName="System.Security.Permissions.GacIdentityPermissionAttribute">
+  <TypeSignature Language="C#" Value="public sealed class GacIdentityPermissionAttribute : System.Security.Permissions.CodeAccessSecurityAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit GacIdentityPermissionAttribute extends System.Security.Permissions.CodeAccessSecurityAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Permissions.GacIdentityPermissionAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Permissions.CodeAccessSecurityAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly | System.AttributeTargets.Class | System.AttributeTargets.Struct | System.AttributeTargets.Constructor | System.AttributeTargets.Method, AllowMultiple=true, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Security.Permissions.GacIdentityPermission" /> のセキュリティ アクションを、宣言セキュリティを使用してコードに適用できるようにします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、呼び出し元が、グローバル アセンブリ キャッシュ (GAC) に登録されていることを確認する使用されます。  
+  
+ 許可されている宣言のスコープによって異なります、<xref:System.Security.Permissions.SecurityAction>使用される値。  
+  
+ セキュリティ属性によって宣言されたセキュリティ情報は、属性の対象のメタデータに格納され、実行時に、システムによってアクセスされます。 セキュリティ属性は、宣言型セキュリティにのみ使用されます。 命令型のセキュリティのため、対応するアクセス許可クラスを使用して<xref:System.Security.Permissions.GacIdentityPermission>です。  
+  
+> [!IMPORTANT]
+>  以降で、 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、id アクセス許可は使用されません。  
+>   
+>  .NET Framework バージョン 1.0 および 1.1 では、id アクセス許可の要求は、呼び出し元のアセンブリが完全に信頼されている場合でも有効です。 呼び出し元のアセンブリが、完全な信頼がありますが、id アクセス許可の確認要求が失敗したアセンブリが要求されている条件を満たしていない場合。 .NET framework version 2.0 では、id アクセス許可の要求では、呼び出し元のアセンブリに完全な信頼がある場合に効果的です。 これには、特殊なケースとして id アクセス許可の処理方法を排除すること、すべての権限の一貫性が保証されします。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:System.Security.Permissions.GacIdentityPermissionAttribute> の使い方を示しています。  
+  
+ [!code-cpp[System.Security.Permissions.GacIdentityPermissionAttribute#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.GacIdentityPermissionAttribute/CPP/gacidentitypermissionattribute.cpp#1)]
+ [!code-csharp[System.Security.Permissions.GacIdentityPermissionAttribute#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.GacIdentityPermissionAttribute/CS/gacidentitypermissionattribute.cs#1)]
+ [!code-vb[System.Security.Permissions.GacIdentityPermissionAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.GacIdentityPermissionAttribute/VB/gacidentitypermissionattribute.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GacIdentityPermissionAttribute (System.Security.Permissions.SecurityAction action);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.SecurityAction action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.GacIdentityPermissionAttribute.#ctor(System.Security.Permissions.SecurityAction)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="action" Type="System.Security.Permissions.SecurityAction" />
+      </Parameters>
+      <Docs>
+        <param name="action"><see cref="T:System.Security.Permissions.SecurityAction" /> 値のいずれか。</param>
+        <summary>指定した <see cref="T:System.Security.Permissions.SecurityAction" /> 値を使用して、<see cref="T:System.Security.Permissions.GacIdentityPermissionAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンス トラクターが検証する基本クラスを呼び出し、<xref:System.Security.Permissions.SecurityAction>値。  
+  
+ このコンス トラクターに関連付けます、 <xref:System.Security.Permissions.SecurityAction> (たとえば、 `Demand`) で、<xref:System.Security.Permissions.GacIdentityPermission>です。  
+  
+ セキュリティ属性によって宣言されたセキュリティ情報は、属性の対象のメタデータに格納され、実行時に、システムによってアクセスされます。 セキュリティ属性は、宣言型セキュリティにのみ使用されます。 使用して<xref:System.Security.Permissions.GacIdentityPermission>強制セキュリティ。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Security.Permissions.GacIdentityPermissionAttribute.%23ctor%2A>コンス トラクターを呼び出し元のプログラムがグローバル アセンブリ キャッシュ内にある要求です。 この例に示されている例の一部である、<xref:System.Security.Permissions.GacIdentityPermissionAttribute>クラスです。  
+  
+ [!code-cpp[System.Security.Permissions.GacIdentityPermissionAttribute#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.GacIdentityPermissionAttribute/CPP/gacidentitypermissionattribute.cpp#2)]
+ [!code-csharp[System.Security.Permissions.GacIdentityPermissionAttribute#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.GacIdentityPermissionAttribute/CS/gacidentitypermissionattribute.cs#2)]
+ [!code-vb[System.Security.Permissions.GacIdentityPermissionAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.GacIdentityPermissionAttribute/VB/gacidentitypermissionattribute.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="action" />パラメーターが有効ではありません<see cref="T:System.Security.Permissions.SecurityAction" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreatePermission">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission CreatePermission ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission CreatePermission() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.GacIdentityPermissionAttribute.CreatePermission" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しい <see cref="T:System.Security.Permissions.GacIdentityPermission" /> オブジェクトを作成します。</summary>
+        <returns>この属性に対応する <see cref="T:System.Security.Permissions.GacIdentityPermission" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アプリケーション コードからではなく、セキュリティ システムからのみ呼び出す必要があります。  
+  
+ コンパイル時に、属性は、セキュリティの宣言をメタデータのシリアル化された形式に変換されます。 メタデータの宣言セキュリティ データは、このメソッドによって返される権限から作成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,243 @@
+<Type Name="IRawElementProviderFragment" FullName="System.Windows.Automation.Provider.IRawElementProviderFragment">
+  <TypeSignature Language="C#" Value="public interface IRawElementProviderFragment : System.Windows.Automation.Provider.IRawElementProviderSimple" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IRawElementProviderFragment implements class System.Windows.Automation.Provider.IRawElementProviderSimple" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.Provider.IRawElementProviderFragment" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationProvider</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Automation.Provider.IRawElementProviderSimple</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("f7063da8-8359-439c-9297-bbc5299a7d87")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>メソッドとプロパティは、構造体の一部であるユーザー インターフェイス (UI) 要素をリスト ボックスまたはリスト項目などの複数の階層を公開します。 UI オートメーション プロバイダーによって実装されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フラグメントのルート ノードをサポートする必要があります、<xref:System.Windows.Automation.Provider.IRawElementProviderFragmentRoot>から継承されるインターフェイス<xref:System.Windows.Automation.Provider.IRawElementProviderFragment>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BoundingRectangle">
+      <MemberSignature Language="C#" Value="public System.Windows.Rect BoundingRectangle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Rect BoundingRectangle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Provider.IRawElementProviderFragment.BoundingRectangle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素の外接する四角形を取得します。</summary>
+        <value>外接する四角形を画面座標。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 領域は必要ありません、要素が一部隠されているか画面外にある場合です。 <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.IsOffscreen%2A>四角形が実際に表示されているかどうかを示すためにプロパティを設定する必要があります。  
+  
+ 外接する四角形内のすべてのポイントは、必ずしもクリック可能です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、外接する四角形の内部状態を保持、<xref:System.Drawing.Rectangle?displayProperty=nameWithType>に変換する、<xref:System.Windows.Rect?displayProperty=nameWithType>返される前にします。  
+  
+ [!code-csharp[UIAFragmentProvider_snip#104](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAFragmentProvider_snip/CSharp/ListItemFragment.cs#104)]
+ [!code-vb[UIAFragmentProvider_snip#104](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAFragmentProvider_snip/VisualBasic/ListItemFragment.vb#104)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FragmentRoot">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.Provider.IRawElementProviderFragmentRoot FragmentRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Automation.Provider.IRawElementProviderFragmentRoot FragmentRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Provider.IRawElementProviderFragment.FragmentRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Provider.IRawElementProviderFragmentRoot</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フラグメントのルート ノードを取得します。</summary>
+        <value>ルート ノード。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装するプロバイダー<xref:System.Windows.Automation.Provider.IRawElementProviderFragmentRoot>自体を返す必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、リスト ボックス内のリスト項目など、フラグメント内の要素の実装を示します。  
+  
+ [!code-csharp[UIAFragmentProvider_snip#105](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAFragmentProvider_snip/CSharp/ListItemFragment.cs#105)]
+ [!code-vb[UIAFragmentProvider_snip#105](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAFragmentProvider_snip/VisualBasic/ListItemFragment.vb#105)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEmbeddedFragmentRoots">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.Provider.IRawElementProviderSimple[] GetEmbeddedFragmentRoots ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Automation.Provider.IRawElementProviderSimple[] GetEmbeddedFragmentRoots() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Provider.IRawElementProviderFragment.GetEmbeddedFragmentRoots" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Provider.IRawElementProviderSimple[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>埋め込まれているフラグメント ルートの配列を取得、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]要素ツリーは、現在の要素をルートとします。</summary>
+        <returns>ルートのフラグメントの配列または<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが、現在の要素間をホストしている場合にのみ、フラグメントの配列を返します[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]フレームワークです。 ほとんどのプロバイダーを返す`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRuntimeId">
+      <MemberSignature Language="C#" Value="public int[] GetRuntimeId ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32[] GetRuntimeId() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Provider.IRawElementProviderFragment.GetRuntimeId" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>要素のランタイム識別子を取得します。</summary>
+        <returns>要素の一意のランタイム識別子。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装を返す必要があります`null`ウィンドウ ハンドルに対応する要素。 その他の要素を含む配列を返す必要があります<xref:System.Windows.Automation.Provider.AutomationInteropProvider.AppendRuntimeId>フラグメント内で一意である値と、その後です。  
+  
+ フラグメント内で一意性を保証するプロバイダーの責任たとえば、一覧内の各項目を個別に番号する必要があります。 [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]エンジンにより、識別子がすべてのインスタンス間で一意で変換することによって、<xref:System.Windows.Automation.Provider.AutomationInteropProvider.AppendRuntimeId>値。  
+  
+   
+  
+## Examples  
+ 次のコード例は、リスト ボックス内の項目など、フラグメント内の要素によって、このメソッドの実装を示します。 項目が、フラグメントのこのインスタンス内で一意の識別子と<xref:System.Windows.Automation.Provider.AutomationInteropProvider.AppendRuntimeId>値メソッドによって返された識別子が内で一意であることを確認、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]ツリー。  
+  
+ [!code-csharp[UIAFragmentProvider_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAFragmentProvider_snip/CSharp/ListItemFragment.cs#101)]
+ [!code-vb[UIAFragmentProvider_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAFragmentProvider_snip/VisualBasic/ListItemFragment.vb#101)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Navigate">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.Provider.IRawElementProviderFragment Navigate (System.Windows.Automation.Provider.NavigateDirection direction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Automation.Provider.IRawElementProviderFragment Navigate(valuetype System.Windows.Automation.Provider.NavigateDirection direction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Provider.IRawElementProviderFragment.Navigate(System.Windows.Automation.Provider.NavigateDirection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Provider.IRawElementProviderFragment</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="direction" Type="System.Windows.Automation.Provider.NavigateDirection" />
+      </Parameters>
+      <Docs>
+        <param name="direction">移動する方向。</param>
+        <summary>取得、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]ツリー内で指定した方向に要素。</summary>
+        <returns>指定された方向に要素または<see langword="null" />その方向に要素がない場合</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]このメソッドのサーバーの実装の構造を定義する、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]要素ツリー。  
+  
+ ナビゲーションは、該当する場合に、サポートされている上に親下方向に、最初と最後の子を水平方向の活動を 次へと前の兄弟である必要があります。  
+  
+ それぞれの子ノードは 1 つだけの親を持ち、親から到達兄弟のチェーンに配置する必要があります<xref:System.Windows.Automation.Provider.NavigateDirection.FirstChild>と<xref:System.Windows.Automation.Provider.NavigateDirection.LastChild>です。  
+  
+ 兄弟間のリレーションシップを双方向で同一にする必要があります: A が B の場合は<xref:System.Windows.Automation.Provider.NavigateDirection.PreviousSibling>、B は A の<xref:System.Windows.Automation.Provider.NavigateDirection.NextSibling>します。 A<xref:System.Windows.Automation.Provider.NavigateDirection.FirstChild>持たない<xref:System.Windows.Automation.Provider.NavigateDirection.PreviousSibling>、および<xref:System.Windows.Automation.Provider.NavigateDirection.LastChild>持たない<xref:System.Windows.Automation.Provider.NavigateDirection.NextSibling>です。  
+  
+ フラグメント ルートは、親または兄弟へのナビゲーションを有効にしません。フラグメント ルート間ナビゲーションは、既定のウィンドウ プロバイダーによって処理されます。 フラグメント内の要素は、フラグメント内の他の要素にのみ移動する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の実装を示しています。<xref:System.Windows.Automation.Provider.IRawElementProviderFragment.Navigate%2A>を単一の子要素を持つフラグメント ルート。 実装する要素はフラグメント ルートであるため、親要素または要素の兄弟要素へのナビゲーションは、できません。  
+  
+ [!code-csharp[UIAProvider_snip#105](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAProvider_snip/CSharp/FragmentRoot.cs#105)]
+ [!code-vb[UIAProvider_snip#105](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAProvider_snip/VisualBasic/FragmentRoot.vb#105)]  
+  
+ 次の例では、リスト ボックス内で 1 つの項目を表すフラグメントによって、実装を示します。 ここでは、要素は、すべての子ではなく、その親および兄弟にナビゲーションを有効します。  
+  
+ [!code-csharp[UIAFragmentProvider_snip#103](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAFragmentProvider_snip/CSharp/ListItemFragment.cs#103)]
+ [!code-vb[UIAFragmentProvider_snip#103](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAFragmentProvider_snip/VisualBasic/ListItemFragment.vb#103)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFocus">
+      <MemberSignature Language="C#" Value="public void SetFocus ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetFocus() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Provider.IRawElementProviderFragment.SetFocus" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この要素にフォーカスを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]フレームワークはこのフラグメントをホストするインターフェイスの一部が既にこのメソッドを呼び出す前に重点を置いたことを確認してください。 実装内部のフォーカス状態のみを更新する必要があります。たとえばを表示するリスト アイテムを再描画して、フォーカスを持ちます。 たい場合[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]設定ではなく、親ウィンドウのフォーカス、<xref:System.Windows.Automation.Provider.ProviderOptions.ProviderOwnsSetFocus>オプション<xref:System.Windows.Automation.Provider.ProviderOptions>フラグメント ルートのです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,285 @@
+<Type Name="ContextAttribute" FullName="System.Runtime.Remoting.Contexts.ContextAttribute">
+  <TypeSignature Language="C#" Value="public class ContextAttribute : Attribute, System.Runtime.Remoting.Contexts.IContextAttribute, System.Runtime.Remoting.Contexts.IContextProperty" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ContextAttribute extends System.Attribute implements class System.Runtime.Remoting.Contexts.IContextAttribute, class System.Runtime.Remoting.Contexts.IContextProperty" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Contexts.ContextAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.Remoting.Contexts.IContextAttribute</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Remoting.Contexts.IContextProperty</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>既定の実装を提供、<see cref="T:System.Runtime.Remoting.Contexts.IContextAttribute" />と<see cref="T:System.Runtime.Remoting.Contexts.IContextProperty" />インターフェイスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Remoting.Contexts.ContextAttribute>クラスは、ルート コンテキストのすべての属性です。 単純な<xref:System.Runtime.Remoting.Contexts.Context>クラスのプロパティから派生できる<xref:System.Runtime.Remoting.Contexts.ContextAttribute>コンテキストの属性とクラスのコンテキスト プロパティを使用します。 より専門的なまたはより高度なニーズにコンテキストの属性が派生できる<xref:System.Runtime.Remoting.Contexts.ContextAttribute>し、コンテキスト プロパティは、分離されたクラスに分割できます。 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para><see cref="P:System.Runtime.Remoting.Contexts.ContextAttribute.Name" />プロパティを任意のユーザーが派生クラスでオーバーライドしないでください。 現在<see cref="M:System.Runtime.Remoting.Contexts.ContextAttribute.Equals(System.Object)" />と<see cref="M:System.Runtime.Remoting.Contexts.ContextAttribute.GetHashCode" />メソッドは、既定の機能に依存します。 動作を提供する高度なクラスを拡張するため、<see cref="T:System.Runtime.Remoting.Contexts.ContextAttribute" />クラスし、オーバーライド、<see cref="P:System.Runtime.Remoting.Contexts.ContextAttribute.Name" />プロパティもがある場合の既定の実装をオーバーライドする、<see cref="M:System.Runtime.Remoting.Contexts.ContextAttribute.Equals(System.Object)" />と<see cref="M:System.Runtime.Remoting.Contexts.ContextAttribute.GetHashCode" />メソッドです。</para>
+    </block>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContextAttribute (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.ContextAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">コンテキスト属性の名前。</param>
+        <summary>インスタンスを作成、<see cref="T:System.Runtime.Remoting.Contexts.ContextAttribute" />指定した名前のクラスです。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="AttributeName">
+      <MemberSignature Language="C#" Value="protected string AttributeName;" />
+      <MemberSignature Language="ILAsm" Value=".field family string AttributeName" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Remoting.Contexts.ContextAttribute.AttributeName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテキスト属性の名前を示します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.ContextAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">このインスタンスと比較するオブジェクト。</param>
+        <summary>このインスタンスが、指定したオブジェクトと等しいかどうかを示すブール値を返します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="o" />は<see langword="null" />オブジェクト名には、等価、それ以外の場合と<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Freeze">
+      <MemberSignature Language="C#" Value="public virtual void Freeze (System.Runtime.Remoting.Contexts.Context newContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Freeze(class System.Runtime.Remoting.Contexts.Context newContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.ContextAttribute.Freeze(System.Runtime.Remoting.Contexts.Context)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newContext" Type="System.Runtime.Remoting.Contexts.Context" />
+      </Parameters>
+      <Docs>
+        <param name="newContext">固定するコンテキスト。</param>
+        <summary>コンテキストが固定されているときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテキストが固定された後、コンテキスト プロパティを追加できません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.ContextAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します<see cref="T:System.Runtime.Remoting.Contexts.ContextAttribute" />です。</summary>
+        <returns>このインスタンスのハッシュ コード<see cref="T:System.Runtime.Remoting.Contexts.ContextAttribute" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertiesForNewContext">
+      <MemberSignature Language="C#" Value="public virtual void GetPropertiesForNewContext (System.Runtime.Remoting.Activation.IConstructionCallMessage ctorMsg);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetPropertiesForNewContext(class System.Runtime.Remoting.Activation.IConstructionCallMessage ctorMsg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.ContextAttribute.GetPropertiesForNewContext(System.Runtime.Remoting.Activation.IConstructionCallMessage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ctorMsg" Type="System.Runtime.Remoting.Activation.IConstructionCallMessage" />
+      </Parameters>
+      <Docs>
+        <param name="ctorMsg"><see cref="T:System.Runtime.Remoting.Activation.IConstructionCallMessage" />コンテキスト プロパティを追加します。</param>
+        <summary>指定されたメッセージには、現在のコンテキスト プロパティを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Remoting.Contexts.ContextAttribute>クラスは、の実装、<xref:System.Runtime.Remoting.Contexts.IContextProperty>プロパティです。 <xref:System.Runtime.Remoting.Contexts.ContextAttribute.GetPropertiesForNewContext%2A>メソッドを追加するプロパティ、指定された<xref:System.Runtime.Remoting.Activation.IConstructionCallMessage>クラスし、必要なコンテキストの環境で新しいオブジェクトを作成できる、メッセージを受信するとします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="ctorMsg" /> パラメーターが <see langword="null" /> です。</exception>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsContextOK">
+      <MemberSignature Language="C#" Value="public virtual bool IsContextOK (System.Runtime.Remoting.Contexts.Context ctx, System.Runtime.Remoting.Activation.IConstructionCallMessage ctorMsg);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsContextOK(class System.Runtime.Remoting.Contexts.Context ctx, class System.Runtime.Remoting.Activation.IConstructionCallMessage ctorMsg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.ContextAttribute.IsContextOK(System.Runtime.Remoting.Contexts.Context,System.Runtime.Remoting.Activation.IConstructionCallMessage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ctx" Type="System.Runtime.Remoting.Contexts.Context" />
+        <Parameter Name="ctorMsg" Type="System.Runtime.Remoting.Activation.IConstructionCallMessage" />
+      </Parameters>
+      <Docs>
+        <param name="ctx">確認対象のコンテキスト。</param>
+        <param name="ctorMsg"><see cref="T:System.Runtime.Remoting.Activation.IConstructionCallMessage" />コンテキスト プロパティを追加します。</param>
+        <summary>コンテキスト パラメーターがコンテキスト属性の要件を満たしているかどうかを示すブール値を返します。</summary>
+        <returns>
+          <see langword="true" />場合は渡されたコンテキスト心配はいりません。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="ctx" /> または <paramref name="ctorMsg" /> のいずれかが <see langword="null" /> です。</exception>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsNewContextOK">
+      <MemberSignature Language="C#" Value="public virtual bool IsNewContextOK (System.Runtime.Remoting.Contexts.Context newCtx);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsNewContextOK(class System.Runtime.Remoting.Contexts.Context newCtx) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.ContextAttribute.IsNewContextOK(System.Runtime.Remoting.Contexts.Context)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newCtx" Type="System.Runtime.Remoting.Contexts.Context" />
+      </Parameters>
+      <Docs>
+        <param name="newCtx">新しいコンテキスト プロパティが作成されました。</param>
+        <summary>コンテキスト プロパティに新しいコンテキストと互換性があるかどうかを示すブール値を返します。</summary>
+        <returns>
+          <see langword="true" />コンテキスト プロパティは、新しいコンテキストの要件を満たしている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいコンテキストには、すべてのコンテキスト プロパティが追加されると、それらはすべてが照会新しいコンテキストで要件を満たしているかどうか。 コンテキスト プロパティでその他のコンテキスト プロパティを見てでした、<xref:System.Runtime.Remoting.Contexts.Context.ContextProperties%2A>新しいコンテキストのプロパティし、これらの他のコンテキスト プロパティと互換性があるかどうかを確認します。  
+  
+> [!NOTE]
+>  既定では、<xref:System.Runtime.Remoting.Contexts.ContextAttribute.IsNewContextOK%2A>メソッドを返します。`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public virtual string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Contexts.ContextAttribute.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテキスト属性の名前を取得します。</summary>
+        <value>コンテキスト属性の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定の実装を提供<xref:System.Runtime.Remoting.Contexts.ContextAttribute.AttributeName>としてプロパティ名。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>現在のプロパティを任意のユーザーが派生クラスでオーバーライドされない必要があります。 現在<see cref="M:System.Runtime.Remoting.Contexts.ContextAttribute.Equals(System.Object)" />と<see cref="M:System.Runtime.Remoting.Contexts.ContextAttribute.GetHashCode" />メソッドの実装は、既定の機能に依存します。 クラスの拡張を高度な動作を提供する必要があるかどうか、<see cref="T:System.Runtime.Remoting.Contexts.ContextAttribute" />をオーバーライドし、<see cref="P:System.Runtime.Remoting.Contexts.ContextAttribute.Name" />プロパティも、既定の実装をオーバーライドする必要がある、<see cref="M:System.Runtime.Remoting.Contexts.ContextAttribute.Equals(System.Object)" />と<see cref="M:System.Runtime.Remoting.Contexts.ContextAttribute.GetHashCode" />メソッドです。</para>
+        </block>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

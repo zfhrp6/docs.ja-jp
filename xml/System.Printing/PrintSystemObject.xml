@@ -1,0 +1,378 @@
+<Type Name="PrintSystemObject" FullName="System.Printing.PrintSystemObject">
+  <TypeSignature Language="C#" Value="public abstract class PrintSystemObject : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract PrintSystemObject extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Printing.PrintSystemObject" />
+  <AssemblyInfo>
+    <AssemblyName>System.Printing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>印刷システム オブジェクトに共通する基本的なプロパティとメソッドを定義します。 このクラスから派生したクラスは、印刷キュー、プリント サーバー、および印刷ジョブなどのオブジェクトを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 印刷システム オブジェクトの基本クラスでなく、このクラスは、役立ちますメソッドを呼び出すと、アプリケーションが認識していないどのような特定の印刷システム オブジェクトが使用されている型はありません。 などを列挙する可能性があります、<xref:System.Printing.PrintSystemObjects>別のオブジェクトの型、呼び出しのコレクション、<xref:System.Printing.PrintSystemObject.Commit%2A>順番のそれぞれのメソッドです。  
+  
+> [!CAUTION]
+>  クラス内で、 <xref:System.Printing> Windows サービスや ASP.NET アプリケーションまたはサービス内で使用する名前空間はサポートされていません。 パフォーマンスと実行時の例外をサービス低下のいずれかのようなアプリケーションからこれらのクラスを使用しようと、予期しない問題が生じる可能性があります。  
+  
+ Windows フォーム アプリケーションから印刷する場合を参照してください、<xref:System.Drawing.Printing>名前空間。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>クラスを派生させた場合<see cref="T:System.Printing.PrintSystemObject" />、そのクラスからのオブジェクトのコレクションを取得することができます<see cref="T:System.Printing.PrintSystemObjects" />です。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected PrintSystemObject ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintSystemObject.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Printing.PrintSystemObject" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected PrintSystemObject (System.Printing.PrintSystemObjectLoadMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(valuetype System.Printing.PrintSystemObjectLoadMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintSystemObject.#ctor(System.Printing.PrintSystemObjectLoadMode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="mode" Type="System.Printing.PrintSystemObjectLoadMode" />
+      </Parameters>
+      <Docs>
+        <param name="mode">オブジェクトが読み込まれるときに、オブジェクトのプロパティを初期化するかどうかを指定する値。</param>
+        <summary>指定された <see cref="T:System.Printing.PrintSystemObject" /> を使用して、<see cref="T:System.Printing.PrintSystemObjectLoadMode" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseAttributeNames">
+      <MemberSignature Language="C#" Value="protected static string[] BaseAttributeNames ();" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig string[] BaseAttributeNames() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintSystemObject.BaseAttributeNames" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスの属性の名前を取得します。</summary>
+        <returns>配列<see cref="T:System.String" />値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Commit">
+      <MemberSignature Language="C#" Value="public abstract void Commit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Commit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintSystemObject.Commit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、オブジェクトによって表されるハードウェア コンポーネントや、プログラムから実際のソフトウェアをオブジェクトのプロパティに対して行った変更を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によってオーバーライドされた場合など、<xref:System.Printing.PrintServer>クラス、<xref:System.Printing.PrintServer.Commit%2A>に加えられた変更を書き込み、<xref:System.Printing.PrintServer>オブジェクトが表す実際のコンピューターにオブジェクトのプロパティです。  
+  
+   
+  
+## Examples  
+ 次の例は、このメソッドを使用する方法を示しています (上と呼ばれる、<xref:System.Printing.PrintQueue>からメソッドをオーバーライドして、オブジェクト<xref:System.Printing.PrintSystemObject>) 印刷チケットをマージするプロセスの一部として。  
+  
+ [!code-csharp[PrintTicketManagment#UsingMergeAndValidate](~/samples/snippets/csharp/VS_Snippets_Wpf/PrintTicketManagment/CSharp/printticket.cs#usingmergeandvalidate)]
+ [!code-vb[PrintTicketManagment#UsingMergeAndValidate](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PrintTicketManagment/visualbasic/printticket.vb#usingmergeandvalidate)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public override sealed void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintSystemObject.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Printing.PrintSystemObject" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Printing.PrintSystemObject.Dispose> を使い終わったら <xref:System.Printing.PrintSystemObject> を呼び出します。 <xref:System.Printing.PrintSystemObject.Dispose> メソッドによって、<xref:System.Printing.PrintSystemObject> は使用不可の状態になります。 呼び出した後<xref:System.Printing.PrintSystemObject.Dispose>へのすべての参照を解放する必要があります、<xref:System.Printing.PrintSystemObject>ガベージ コレクターがメモリを再利用できるようにする、<xref:System.Printing.PrintSystemObject>占有されていた。 詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+> [!NOTE]
+>  <xref:System.Printing.PrintSystemObject.Dispose> への最後の参照を解放する前に、必ず <xref:System.Printing.PrintSystemObject> を呼び出してください。 そうしないと、ガベージ コレクターが <xref:System.Printing.PrintSystemObject> オブジェクトの <xref:System.Object.Finalize%2A> メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool A_0);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool A_0) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintSystemObject.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptions</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="A_0" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="A_0">To be added.</param>
+        <summary><see cref="T:System.Printing.PrintSystemObject" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック`Dispose()`メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 `Dispose()`プロテクト呼び出します`Dispose(Boolean)`に設定された名前のないブール値パラメーターを持つメソッド`true`です。 <xref:System.Object.Finalize%2A>呼び出す`Dispose`パラメーターを設定して`false`です。  
+  
+ ブール型のパラメーターがの場合`true`、このメソッドは、すべてのマネージ オブジェクトによって保持されているすべてのリソースを解放します。 この<xref:System.Printing.PrintSystemObject>参照します。 このメソッドは、参照される各オブジェクトの `Dispose()` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 <see langword="Dispose(Boolean)" /> をオーバーライドする場合は、以前に <see langword="Dispose" /> を呼び出したときに破棄されたオブジェクトを参照しないように注意する必要があります。 実装する方法の詳細についての<see langword="Dispose(Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see langword="Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~PrintSystemObject ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintSystemObject.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>によって使用されているリソースを解放、<see cref="T:System.Printing.PrintSystemObject" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Printing.PrintSystemObject.Finalize%2A>メソッドとしてリソースをクリーンアップするためのセーフガード機能した場合に、<xref:System.Printing.PrintSystemObject.Dispose%2A>メソッドは呼び出されません。 実装する必要があります、<xref:System.Printing.PrintSystemObject.Finalize%2A>アンマネージ リソースだけをクリーンアップします。 ガベージ コレクターは自動的にマネージ リソースをクリーンアップするため、管理対象のオブジェクトに対してこのメソッドを実装しないでください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="protected void Initialize ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void Initialize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintSystemObject.Initialize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プロパティを初期化、<see cref="T:System.Printing.PrintSystemObject" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InternalDispose">
+      <MemberSignature Language="C#" Value="protected virtual void InternalDispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void InternalDispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintSystemObject.InternalDispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary>派生クラスでオーバーライドされると、によって使用されているアンマネージ リソースを解放、 <see cref="T:System.Printing.PrintSystemObject" />、使用されているマネージ リソースも解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDisposed">
+      <MemberSignature Language="C#" Value="protected bool IsDisposed { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDisposed" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintSystemObject.IsDisposed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはオブジェクトが破棄されているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />オブジェクトは破棄されている場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public virtual string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintSystemObject.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトの名前を取得します。</summary>
+        <value>A<see cref="T:System.String" />オブジェクトの名前を表します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parent">
+      <MemberSignature Language="C#" Value="public virtual System.Printing.PrintSystemObject Parent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Printing.PrintSystemObject Parent" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintSystemObject.Parent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintSystemObject</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトの親を取得します。</summary>
+        <value>別<see cref="T:System.Printing.PrintSystemObject" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ たとえば、印刷キューの親は、キューをホストするプリント サーバーが。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertiesCollection">
+      <MemberSignature Language="C#" Value="public System.Printing.IndexedProperties.PrintPropertyDictionary PropertiesCollection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Printing.IndexedProperties.PrintPropertyDictionary PropertiesCollection" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintSystemObject.PropertiesCollection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.IndexedProperties.PrintPropertyDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>属性と値のペアのコレクションを取得します。</summary>
+        <value>A<see cref="T:System.Printing.IndexedProperties.PrintPropertyDictionary" />属性と値のペアを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、このプロパティを使用して、リフレクションを使用せず、プロパティ、および印刷システム オブジェクトでは、これらのプロパティの種類を実行時に検出する方法を示します。  
+  
+ [!code-csharp[GetPrintObjectPropertyTypesWithoutReflection#ShowPropertyTypesWithoutReflection](~/samples/snippets/csharp/VS_Snippets_Wpf/GetPrintObjectPropertyTypesWithoutReflection/CSharp/Program.cs#showpropertytypeswithoutreflection)]
+ [!code-vb[GetPrintObjectPropertyTypesWithoutReflection#ShowPropertyTypesWithoutReflection](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GetPrintObjectPropertyTypesWithoutReflection/visualbasic/program.vb#showpropertytypeswithoutreflection)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Refresh">
+      <MemberSignature Language="C#" Value="public abstract void Refresh ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Refresh() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintSystemObject.Refresh" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、その値、オブジェクトが表す実際のソフトウェアまたはハードウェア コンポーネントの値が一致するように、派生クラスのオブジェクトのプロパティを更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスのオブジェクトのプロパティに対して行った変更を加えたときに失われる可能性があります、<xref:System.Printing.PrintSystemObject.Refresh%2A>派生クラスを実行します。 場合は、変更がまだ書き込まれていない実際のソフトウェアまたはハードウェアのコンポーネントの派生クラスの実装を使用して、損失が発生<xref:System.Printing.PrintSystemObject.Commit%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

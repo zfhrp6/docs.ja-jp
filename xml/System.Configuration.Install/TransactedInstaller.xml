@@ -1,0 +1,138 @@
+<Type Name="TransactedInstaller" FullName="System.Configuration.Install.TransactedInstaller">
+  <TypeSignature Language="C#" Value="public class TransactedInstaller : System.Configuration.Install.Installer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TransactedInstaller extends System.Configuration.Install.Installer" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.Install.TransactedInstaller" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.Install</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.Install.Installer</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>インストーラーを完全に成功するか、または失敗し、初期状態のままにコンピューターを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ でトランザクションをインストーラーを実行するには、を追加、<xref:System.Configuration.Install.Installer.Installers%2A>プロパティこの<xref:System.Configuration.Install.TransactedInstaller>インスタンス。  
+  
+   
+  
+## Examples  
+ 次の例で、 <xref:System.Configuration.Install.TransactedInstaller.%23ctor%2A>、<xref:System.Configuration.Install.TransactedInstaller.Install%2A>と<xref:System.Configuration.Install.TransactedInstaller.Uninstall%2A>のメソッド、<xref:System.Configuration.Install.TransactedInstaller>クラスです。  
+  
+ この例のような実装を提供する[Installutil.exe (インストーラー ツール)](~/docs/framework/tools/installutil-exe-installer-tool.md)です。 特定のアセンブリの前に、オプションで、アセンブリをインストールします。 アセンブリのオプションが指定されていない場合、直前のアセンブリのオプションは、一覧で、前のアセンブリがある場合に使用されます。 どちらの場合、"/u"または「/アンインストール」オプションを指定すると、アセンブリはアンインストールされます。 場合、「/ですか?」 または"/help"オプションが用意されて、ヘルプ情報がコンソールに表示されます。  
+  
+ [!code-cpp[TransactedInstaller#1](~/samples/snippets/cpp/VS_Snippets_CLR/TransactedInstaller/CPP/transactedinstaller.cpp#1)]
+ [!code-csharp[TransactedInstaller#1](~/samples/snippets/csharp/VS_Snippets_CLR/TransactedInstaller/CS/transactedinstaller.cs#1)]
+ [!code-vb[TransactedInstaller#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/TransactedInstaller/VB/transactedinstaller.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TransactedInstaller ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Install.TransactedInstaller.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Configuration.Install.TransactedInstaller" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Install">
+      <MemberSignature Language="C#" Value="public override void Install (System.Collections.IDictionary savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Install(class System.Collections.IDictionary savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Install.TransactedInstaller.Install(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="savedState"><see cref="T:System.Collections.IDictionary" />でこのメソッドが、コミットを実行するために必要な情報を保存するロールバック、またはアンインストール操作します。</param>
+        <summary>インストールを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Configuration.Install.TransactedInstaller.Install%2A>に含まれる各インストーラーのメソッド、<xref:System.Configuration.Install.Installer.Installers%2A>のこのインスタンスのプロパティです。 <xref:System.Collections.IDictionary>によって参照されるオブジェクト、`savedState`パラメーターが含まれているインストーラーが実行された後、インストールの状態を反映するように更新します。 すべての場合、<xref:System.Configuration.Install.TransactedInstaller.Install%2A>メソッドが成功した、<xref:System.Configuration.Install.Installer.Commit%2A>メソッドが呼び出されます。 それ以外の場合、<xref:System.Configuration.Install.Installer.Rollback%2A>各インストーラーのメソッドが呼び出されます。  
+  
+   
+  
+## Examples  
+ 次の例で、 <xref:System.Configuration.Install.TransactedInstaller.%23ctor%2A>、<xref:System.Configuration.Install.TransactedInstaller.Install%2A>と<xref:System.Configuration.Install.TransactedInstaller.Uninstall%2A>のメソッド、<xref:System.Configuration.Install.TransactedInstaller>クラスです。  
+  
+ この例では、InstallUtil.exe のような実装を提供します。 特定のアセンブリの前に、オプションで、アセンブリをインストールします。 アセンブリのオプションが指定されていない場合、上記のアセンブリのオプションは、一覧で、前のアセンブリがある場合に使用されます。 場合、'/u' または '/アンインストール' のアセンブリをアンインストールし、オプションを指定します。 場合、'/?' または '/help' ヘルプ情報は、コンソールに出力し、オプションが用意されています。  
+  
+ [!code-cpp[TransactedInstaller#1](~/samples/snippets/cpp/VS_Snippets_CLR/TransactedInstaller/CPP/transactedinstaller.cpp#1)]
+ [!code-csharp[TransactedInstaller#1](~/samples/snippets/csharp/VS_Snippets_CLR/TransactedInstaller/CS/transactedinstaller.cs#1)]
+ [!code-vb[TransactedInstaller#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/TransactedInstaller/VB/transactedinstaller.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="savedState" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Exception">インストールが失敗し、ロールバックされています。</exception>
+        <block subset="none" type="usage">
+          <para><see cref="T:System.Collections.IDictionary" />によって指定された、<paramref name="savedState" />パラメーターに渡される場合は空にする必要があります、<see cref="M:System.Configuration.Install.TransactedInstaller.Install(System.Collections.IDictionary)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Uninstall">
+      <MemberSignature Language="C#" Value="public override void Uninstall (System.Collections.IDictionary savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Uninstall(class System.Collections.IDictionary savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Install.TransactedInstaller.Uninstall(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="savedState"><see cref="T:System.Collections.IDictionary" />インストールが完了した後、コンピューターの状態を格納します。</param>
+        <summary>インストールを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 以前に完了したインストールを削除するには、このメソッドを呼び出します。 これは、<xref:System.Configuration.Install.TransactedInstaller.Uninstall%2A>メソッドの呼び出し、<xref:System.Configuration.Install.Installer.Uninstall%2A>内の各インストーラーのメソッド、<xref:System.Configuration.Install.Installer.Installers%2A>プロパティのすべてのリソースをアンインストールするのには、インストール時に設定します。 アンインストール中に例外が無視されます。  
+  
+> [!NOTE]
+>  <xref:System.Configuration.Install.Installer.Install%2A>と<xref:System.Configuration.Install.Installer.Commit%2A>メソッドは、インストール後に、コンピューターの状態を保存、ファイルを含む、<xref:System.Collections.IDictionary>から、`savedState`パラメーターが削除された可能性がある時点で、インストールが完了した後です。 ファイルが削除された場合、`savedState`パラメーターは`null`します。  
+  
+   
+  
+## Examples  
+ 次の例で、 <xref:System.Configuration.Install.TransactedInstaller.%23ctor%2A>、<xref:System.Configuration.Install.TransactedInstaller.Install%2A>と<xref:System.Configuration.Install.TransactedInstaller.Uninstall%2A>のメソッド、<xref:System.Configuration.Install.TransactedInstaller>クラスです。  
+  
+ この例のような実装を提供する[Installutil.exe (インストーラー ツール)](~/docs/framework/tools/installutil-exe-installer-tool.md)です。 特定のアセンブリの前に、オプションで、アセンブリをインストールします。 アセンブリのオプションが指定されていない場合、直前のアセンブリのオプションは、一覧で、前のアセンブリがある場合に使用されます。 どちらの場合、"/u"または「/アンインストール」オプションを指定すると、アセンブリはアンインストールされます。 場合、「/ですか?」 または"/help"オプションが用意されて、ヘルプ情報がコンソールに表示されます。  
+  
+ [!code-cpp[TransactedInstaller#1](~/samples/snippets/cpp/VS_Snippets_CLR/TransactedInstaller/CPP/transactedinstaller.cpp#1)]
+ [!code-csharp[TransactedInstaller#1](~/samples/snippets/csharp/VS_Snippets_CLR/TransactedInstaller/CS/transactedinstaller.cs#1)]
+ [!code-vb[TransactedInstaller#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/TransactedInstaller/VB/transactedinstaller.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

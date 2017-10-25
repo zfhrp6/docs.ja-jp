@@ -1,0 +1,142 @@
+<Type Name="LayoutKind" FullName="System.Runtime.InteropServices.LayoutKind">
+  <TypeSignature Language="C#" Value="public enum LayoutKind" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed LayoutKind extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.LayoutKind" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アンマネージ コードにエクスポートするときにオブジェクトのレイアウトを制御します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体を併用<xref:System.Runtime.InteropServices.StructLayoutAttribute>です。 共通言語ランタイムを使用して、`Auto`既定のレイアウトの値。 関連するレイアウト関連の問題を軽減する、`Auto`値、c#、Visual Basic、および C++ コンパイラを指定`Sequential`のレイアウトを値の型。  
+  
+> [!IMPORTANT]
+>  <xref:System.Runtime.InteropServices.StructLayoutAttribute.Pack?displayProperty=nameWithType>フィールドがデータ フィールドの配置を制御し、したがってに関係なく、レイアウトに影響を与える、<xref:System.Runtime.InteropServices.LayoutKind>を指定する値。 既定では、値<xref:System.Runtime.InteropServices.StructLayoutAttribute.Pack>が 0 で、既定のパッキング サイズは、現在のプラットフォームのことを示します。 たとえば、使用、`Explicit`レイアウトの値し、フィールドのアラインメントを指定バイト境界に設定する必要があります<xref:System.Runtime.InteropServices.StructLayoutAttribute.Pack>目的の結果を取得するには 1 です。  
+  
+   
+  
+## Examples  
+ 次の例のマネージ宣言を示しています、`PtInRect`ポイントは四角形内にあるしを定義するかどうかをチェックする関数、`Point`シーケンシャル レイアウトの構造と`Rect`明示的なレイアウトを含む構造体。  
+  
+ [!code-cpp[LayoutKind#1](~/samples/snippets/cpp/VS_Snippets_CLR/LayoutKind/CPP/layoutkind.cpp#1)]
+ [!code-csharp[LayoutKind#1](~/samples/snippets/csharp/VS_Snippets_CLR/LayoutKind/CS/layoutkind.cs#1)]
+ [!code-vb[LayoutKind#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/LayoutKind/VB/layoutkind.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Auto">
+      <MemberSignature Language="C#" Value="Auto" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.InteropServices.LayoutKind Auto = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.LayoutKind.Auto" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.LayoutKind</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ランタイムは、アンマネージ メモリ内のオブジェクトのメンバーを自動的に適切なレイアウトを選択します。 この列挙体メンバーに定義されているオブジェクトは、マネージ コードの外部で公開することはできません。 これを行うにしようとすると、例外が生成されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Explicit">
+      <MemberSignature Language="C#" Value="Explicit" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.InteropServices.LayoutKind Explicit = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.LayoutKind.Explicit" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.LayoutKind</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アンマネージ メモリ内のオブジェクトの各メンバーの正確な位置を明示的に制御の設定対象になります、<see cref="F:System.Runtime.InteropServices.StructLayoutAttribute.Pack" />フィールドです。 各メンバーを使用する必要があります、<see cref="T:System.Runtime.InteropServices.FieldOffsetAttribute" />型の中でそのフィールドの位置を示すためにします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Sequential">
+      <MemberSignature Language="C#" Value="Sequential" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.InteropServices.LayoutKind Sequential = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.LayoutKind.Sequential" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.LayoutKind</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトのメンバーは、順番に、アンマネージ メモリにエクスポートするときに、順番に配置されます。 メンバーがで指定したパッキングに従ってレイアウト<see cref="F:System.Runtime.InteropServices.StructLayoutAttribute.Pack" />、連続していないことができます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,238 @@
+<Type Name="MessageQueuePermissionEntry" FullName="System.Messaging.MessageQueuePermissionEntry">
+  <TypeSignature Language="C#" Value="public class MessageQueuePermissionEntry" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit MessageQueuePermissionEntry extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Messaging.MessageQueuePermissionEntry" />
+  <AssemblyInfo>
+    <AssemblyName>System.Messaging</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コード アクセス セキュリティ アクセス許可をメッセージングのセットの最小単位を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、次を参照してください。[コード アクセス セキュリティ](http://msdn.microsoft.com/en-us/23a20143-241d-4fe5-9d9f-3933fd594c03)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Messaging.MessageQueuePermissionEntry> の使用方法を示します。  
+  
+ [!code-cpp[MessageQueuePermissionEntry#0](~/samples/snippets/cpp/VS_Snippets_Remoting/MessageQueuePermissionEntry/cpp/class1.cpp#0)]
+ [!code-csharp[MessageQueuePermissionEntry#0](~/samples/snippets/csharp/VS_Snippets_Remoting/MessageQueuePermissionEntry/CS/class1.cs#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MessageQueuePermissionEntry (System.Messaging.MessageQueuePermissionAccess permissionAccess, string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Messaging.MessageQueuePermissionAccess permissionAccess, string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueuePermissionEntry.#ctor(System.Messaging.MessageQueuePermissionAccess,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="permissionAccess" Type="System.Messaging.MessageQueuePermissionAccess" />
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="permissionAccess"><see cref="T:System.Messaging.MessageQueuePermissionAccess" /> 値のビットごとの組み合わせ。 <see cref="P:System.Messaging.MessageQueuePermissionEntry.PermissionAccess" />プロパティがこの値に設定します。</param>
+        <param name="path">によって参照されるキューのパス、<see cref="T:System.Messaging.MessageQueue" />オブジェクト。 <see cref="P:System.Messaging.MessageQueuePermissionEntry.Path" />プロパティがこの値に設定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Messaging.MessageQueuePermissionEntry" />クラスを指定したアクセス許可のアクセス レベルと、キューのパス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、の新しいインスタンスを作成<xref:System.Messaging.MessageQueuePermissionEntry>です。  
+  
+ [!code-cpp[MessageQueuePermissionEntry#1](~/samples/snippets/cpp/VS_Snippets_Remoting/MessageQueuePermissionEntry/cpp/class1.cpp#1)]
+ [!code-csharp[MessageQueuePermissionEntry#1](~/samples/snippets/csharp/VS_Snippets_Remoting/MessageQueuePermissionEntry/CS/class1.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MessageQueuePermissionEntry (System.Messaging.MessageQueuePermissionAccess permissionAccess, string machineName, string label, string category);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Messaging.MessageQueuePermissionAccess permissionAccess, string machineName, string label, string category) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueuePermissionEntry.#ctor(System.Messaging.MessageQueuePermissionAccess,System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="permissionAccess" Type="System.Messaging.MessageQueuePermissionAccess" />
+        <Parameter Name="machineName" Type="System.String" />
+        <Parameter Name="label" Type="System.String" />
+        <Parameter Name="category" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="permissionAccess"><see cref="T:System.Messaging.MessageQueuePermissionAccess" /> 値のビットごとの組み合わせ。 <see cref="P:System.Messaging.MessageQueuePermissionEntry.PermissionAccess" />プロパティがこの値に設定します。</param>
+        <param name="machineName">メッセージ キューのキューが配置されているコンピューターの名前。 <see cref="P:System.Messaging.MessageQueuePermissionEntry.MachineName" />プロパティがこの値に設定します。</param>
+        <param name="label">キューの説明。 <see cref="P:System.Messaging.MessageQueuePermissionEntry.Label" />プロパティがこの値に設定します。</param>
+        <param name="category">キューのカテゴリ (メッセージ キューの種類 id)。 <see cref="P:System.Messaging.MessageQueuePermissionEntry.Category" />プロパティがこの値に設定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Messaging.MessageQueuePermissionEntry" />レベルを指定したアクセス許可のアクセス権を持つクラス、キューが配置されているコンピューター、キューの説明、およびキューのカテゴリの名前。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、の新しいインスタンスを作成<xref:System.Messaging.MessageQueuePermissionEntry>です。  
+  
+ [!code-cpp[MessageQueuePermissionEntry#2](~/samples/snippets/cpp/VS_Snippets_Remoting/MessageQueuePermissionEntry/cpp/class1.cpp#2)]
+ [!code-csharp[MessageQueuePermissionEntry#2](~/samples/snippets/csharp/VS_Snippets_Remoting/MessageQueuePermissionEntry/CS/class1.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Category">
+      <MemberSignature Language="C#" Value="public string Category { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Category" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessageQueuePermissionEntry.Category" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キューのカテゴリを取得します。</summary>
+        <value>アプリケーションは、そのキューを分類するキュー カテゴリ (メッセージ キューの種類の識別子)、します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例には、メッセージ キューのアクセス許可エントリの値が表示されます。<xref:System.Messaging.MessageQueuePermissionEntry.Category%2A>プロパティです。  
+  
+ [!code-cpp[MessageQueuePermissionEntry#3](~/samples/snippets/cpp/VS_Snippets_Remoting/MessageQueuePermissionEntry/cpp/class1.cpp#3)]
+ [!code-csharp[MessageQueuePermissionEntry#3](~/samples/snippets/csharp/VS_Snippets_Remoting/MessageQueuePermissionEntry/CS/class1.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Label">
+      <MemberSignature Language="C#" Value="public string Label { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Label" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessageQueuePermissionEntry.Label" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キューの説明を取得します。</summary>
+        <value>メッセージ キューのラベルです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例には、メッセージ キューのアクセス許可エントリの値が表示されます。<xref:System.Messaging.MessageQueuePermissionEntry.Label%2A>プロパティです。  
+  
+ [!code-cpp[MessageQueuePermissionEntry#4](~/samples/snippets/cpp/VS_Snippets_Remoting/MessageQueuePermissionEntry/cpp/class1.cpp#4)]
+ [!code-csharp[MessageQueuePermissionEntry#4](~/samples/snippets/csharp/VS_Snippets_Remoting/MessageQueuePermissionEntry/CS/class1.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MachineName">
+      <MemberSignature Language="C#" Value="public string MachineName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MachineName" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessageQueuePermissionEntry.MachineName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ キューのキューが配置されているコンピューターの名前を取得します。</summary>
+        <value>キューが配置されているコンピューターの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例には、メッセージ キューのアクセス許可エントリの値が表示されます。<xref:System.Messaging.MessageQueuePermissionEntry.MachineName%2A>プロパティです。  
+  
+ [!code-cpp[MessageQueuePermissionEntry#5](~/samples/snippets/cpp/VS_Snippets_Remoting/MessageQueuePermissionEntry/cpp/class1.cpp#5)]
+ [!code-csharp[MessageQueuePermissionEntry#5](~/samples/snippets/csharp/VS_Snippets_Remoting/MessageQueuePermissionEntry/CS/class1.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public string Path { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Path" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessageQueuePermissionEntry.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キューのパスを取得します。</summary>
+        <value>によって参照されている、キュー、<see cref="T:System.Messaging.MessageQueue" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例には、メッセージ キューのアクセス許可エントリの値が表示されます。<xref:System.Messaging.MessageQueuePermissionEntry.Path%2A>プロパティです。  
+  
+ [!code-cpp[MessageQueuePermissionEntry#6](~/samples/snippets/cpp/VS_Snippets_Remoting/MessageQueuePermissionEntry/cpp/class1.cpp#6)]
+ [!code-csharp[MessageQueuePermissionEntry#6](~/samples/snippets/csharp/VS_Snippets_Remoting/MessageQueuePermissionEntry/CS/class1.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PermissionAccess">
+      <MemberSignature Language="C#" Value="public System.Messaging.MessageQueuePermissionAccess PermissionAccess { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Messaging.MessageQueuePermissionAccess PermissionAccess" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessageQueuePermissionEntry.PermissionAccess" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueuePermissionAccess</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセス許可の要求で使用されるアクセス許可のアクセス レベルを取得します。</summary>
+        <value><see cref="T:System.Messaging.MessageQueuePermissionAccess" /> 値のビットごとの組み合わせ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例には、メッセージ キューのアクセス許可エントリの値が表示されます。<xref:System.Messaging.MessageQueuePermissionEntry.PermissionAccess%2A>プロパティです。  
+  
+ [!code-cpp[MessageQueuePermissionEntry#7](~/samples/snippets/cpp/VS_Snippets_Remoting/MessageQueuePermissionEntry/cpp/class1.cpp#7)]
+ [!code-csharp[MessageQueuePermissionEntry#7](~/samples/snippets/csharp/VS_Snippets_Remoting/MessageQueuePermissionEntry/CS/class1.cs#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

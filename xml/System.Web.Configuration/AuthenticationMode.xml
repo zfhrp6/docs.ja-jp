@@ -1,0 +1,102 @@
+<Type Name="AuthenticationMode" FullName="System.Web.Configuration.AuthenticationMode">
+  <TypeSignature Language="C#" Value="public enum AuthenticationMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed AuthenticationMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.AuthenticationMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>Web アプリケーションで使用する認証モードを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.Configuration.AuthenticationSection.Mode%2A>プログラムで、Web アプリケーションで使用される認証の種類を構成するプロパティ  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.AuthenticationSection.Mode%2A> プロパティへのアクセス方法を次のコード例に示します。  
+  
+ [!code-csharp[System.Web.Configuration.AuthenticationSection#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.AuthenticationSection/CS/authenticationsection.cs#4)]
+ [!code-vb[System.Web.Configuration.AuthenticationSection#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.AuthenticationSection/VB/authenticationsection.vb#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Forms">
+      <MemberSignature Language="C#" Value="Forms" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Configuration.AuthenticationMode Forms = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Configuration.AuthenticationMode.Forms" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.AuthenticationMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認証モードとして ASP.NET フォーム ベースの認証を指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Configuration.AuthenticationMode None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Configuration.AuthenticationMode.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.AuthenticationMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認証なしを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Passport">
+      <MemberSignature Language="C#" Value="Passport" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Configuration.AuthenticationMode Passport = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Configuration.AuthenticationMode.Passport" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("This field is obsolete. The Passport authentication product is no longer supported and has been superseded by Live ID.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.AuthenticationMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認証モードとして Microsoft Passport を指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Windows">
+      <MemberSignature Language="C#" Value="Windows" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Configuration.AuthenticationMode Windows = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Configuration.AuthenticationMode.Windows" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.AuthenticationMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Windows 認証モードを指定します。 このモードでは、インターネット インフォメーション サービス (IIS) の認証メソッド基本、ダイジェスト認証、統合 Windows (NTLM または Kerberos) を使用する場合に適用または証明書します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

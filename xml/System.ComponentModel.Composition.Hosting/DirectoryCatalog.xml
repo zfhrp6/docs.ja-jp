@@ -1,0 +1,644 @@
+<Type Name="DirectoryCatalog" FullName="System.ComponentModel.Composition.Hosting.DirectoryCatalog">
+  <TypeSignature Language="C#" Value="public class DirectoryCatalog : System.ComponentModel.Composition.Primitives.ComposablePartCatalog, System.ComponentModel.Composition.Hosting.INotifyComposablePartCatalogChanged, System.ComponentModel.Composition.Primitives.ICompositionElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DirectoryCatalog extends System.ComponentModel.Composition.Primitives.ComposablePartCatalog implements class System.ComponentModel.Composition.Hosting.INotifyComposablePartCatalogChanged, class System.ComponentModel.Composition.Primitives.ICompositionElement" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Composition.Hosting.DirectoryCatalog" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Composition.Primitives.ComposablePartCatalog</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.Composition.Hosting.INotifyComposablePartCatalogChanged</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ComponentModel.Composition.Primitives.ICompositionElement</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerTypeProxy(typeof(System.ComponentModel.Composition.Hosting.DirectoryCatalog/DirectoryCatalogDebuggerProxy))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>指定したディレクトリのアセンブリ内で属性付きの部分を検出します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.ComponentModel.Composition.Hosting.DirectoryCatalog>指定されたディレクトリの内容を解析するオブジェクト。 ダイナミック リンク ライブラリ (DLL) ファイルに含まれている属性付きパーツが抽出され、カタログから入手できます。特定の Dll の解析を制限すると同じ構文を使用して、検索パターンを指定することができます、<xref:System.IO.Directory.GetFiles%2A?displayProperty=nameWithType>メソッドです。  
+  
+> [!WARNING]
+>  指定されたディレクトリは、管理者以外のユーザーにアクセスを許可する必要があります。 たとえば、インターネット一時ファイルを含むフォルダーを使用して作成の脆弱性、アプリケーションでします。  
+  
+ この型は、<xref:System.IDisposable>インターフェイスです。 型を使用してが完了したらを直接的または間接的にその破棄する必要があります。 型の直接 dispose を呼び出す、<xref:System.IDisposable.Dispose%2A>メソッドで、 `try` / `catch`ブロックします。 直接ことのない破棄する場合など、言語コンストラクトを使用して`using`(C# の場合) または`Using`(Visual Basic で)。 詳細についてを参照してください"を使用して、オブジェクトを実装する IDisposable"、<xref:System.IDisposable>インターフェイスに関するトピック。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.ComponentModel.Composition.Hosting.DirectoryCatalog>の部分から、ディレクトリ、アプリケーションを検索するオブジェクトを実行します。 カタログをテストするのに簡単なインポートを使用します。 このインポートを満たすためには、ディレクトリ内の DLL は、2 つ目のコード ブロックに示すように、一致するエクスポートが必要です。  
+  
+ [!code-csharp[Composition.DirectoryCatalog#1](~/samples/snippets/csharp/VS_Snippets_Misc/composition.directorycatalog/cs/consoleapplication7/program.cs#1)]
+ [!code-vb[Composition.DirectoryCatalog#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/composition.directorycatalog/vb/consoleapplication8/module1.vb#1)]  
+  
+ 一致するエクスポートを作成するには、次のコードは、DLL ファイル内でなければなりません。 Visual Studio で、DLL ファイルを作成するには、ソリューションに「クラス ライブラリ」型の新しいプロジェクトを追加し、そこにこのコードを配置します。  
+  
+ [!code-csharp[Composition.DirectoryCatalog#2](~/samples/snippets/csharp/VS_Snippets_Misc/composition.directorycatalog/cs/classlibrary1/class1.cs#2)]
+ [!code-vb[Composition.DirectoryCatalog#2](~/samples/snippets/visualbasic/VS_Snippets_Misc/composition.directorycatalog/vb/classlibrary1/class1.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DirectoryCatalog (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.DirectoryCatalog.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">カタログに追加するアセンブリをスキャンするディレクトリのパス。  
+  
+ パスが絶対パスまたは相対的にする必要があります<see cref="P:System.AppDomain.BaseDirectory" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Composition.Hosting.DirectoryCatalog" />クラスを使用して<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartDefinition" />オブジェクトで指定したディレクトリ パスのすべての DLL ファイルをベースにします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定した<paramref name="path" />が正しくありません (たとえば、上にある、マップされていないドライブ)。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />長さ 0 の文字列か、空白のみが含まれています、1 つまたは複数の実装に固有の無効な文字が含まれています。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定した<paramref name="path" />ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのコンピューター上でのパスは 248 文字未満である必要があり、ファイル名は 260 文字未満にする必要があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DirectoryCatalog (string path, System.ComponentModel.Composition.Primitives.ICompositionElement definitionOrigin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, class System.ComponentModel.Composition.Primitives.ICompositionElement definitionOrigin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.DirectoryCatalog.#ctor(System.String,System.ComponentModel.Composition.Primitives.ICompositionElement)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="definitionOrigin" Type="System.ComponentModel.Composition.Primitives.ICompositionElement" />
+      </Parameters>
+      <Docs>
+        <param name="path">カタログに追加するアセンブリをスキャンするディレクトリのパス。  
+  
+ パスが絶対パスまたは相対的にする必要があります<see cref="P:System.AppDomain.BaseDirectory" />です。</param>
+        <param name="definitionOrigin">パーツのソースを識別する診断で使用される要素。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Composition.Hosting.DirectoryCatalog" />クラスを使用して<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartDefinition" />オブジェクトの部分の指定したソースに指定したディレクトリ パスにすべての DLL ファイルをベースにします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定した<paramref name="path" />が正しくありません (たとえば、上にある、マップされていないドライブ)。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />長さ 0 の文字列か、空白のみが含まれています、1 つまたは複数の実装に固有の無効な文字が含まれています。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定した<paramref name="path" />ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのコンピューター上でのパスは 248 文字未満である必要があり、ファイル名は 260 文字未満にする必要があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DirectoryCatalog (string path, System.Reflection.ReflectionContext reflectionContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, class System.Reflection.ReflectionContext reflectionContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.DirectoryCatalog.#ctor(System.String,System.Reflection.ReflectionContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="reflectionContext" Type="System.Reflection.ReflectionContext" />
+      </Parameters>
+      <Docs>
+        <param name="path">カタログに追加するアセンブリをスキャンするディレクトリのパス。  
+  
+ パスが絶対パスまたは相対的にする必要があります<see cref="P:System.AppDomain.BaseDirectory" />です。</param>
+        <param name="reflectionContext">パーツを作成するために使用するコンテキスト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Composition.Hosting.DirectoryCatalog" />クラスを使用して<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartDefinition" />オブジェクト指定されたリフレクション コンテキストで、指定したディレクトリ パス内のすべての DLL ファイルをベースにします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定した<paramref name="path" />が正しくありません (たとえば、上にある、マップされていないドライブ)。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />長さ 0 の文字列か、空白のみが含まれています、1 つまたは複数の実装に固有の無効な文字が含まれています。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定した<paramref name="path" />ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのコンピューター上でのパスは 248 文字未満である必要があり、ファイル名は 260 文字未満にする必要があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DirectoryCatalog (string path, string searchPattern);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, string searchPattern) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.DirectoryCatalog.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="searchPattern" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">カタログに追加するアセンブリをスキャンするディレクトリのパス。  
+  
+ パスが絶対パスまたは相対的にする必要があります<see cref="P:System.AppDomain.BaseDirectory" />です。</param>
+        <param name="searchPattern">検索文字列。 文字列の形式が指定したのと同じにする必要があります、<see cref="M:System.IO.Directory.GetFiles(System.String,System.String)" />メソッドです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Composition.Hosting.DirectoryCatalog" />クラスを使用して<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartDefinition" />指定したディレクトリ パスに指定した検索パターンに一致するオブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定した<paramref name="path" />が正しくありません (たとえば、上にある、マップされていないドライブ)。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> または <paramref name="searchPattern" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />長さ 0 の文字列か、空白のみが含まれています、1 つまたは複数の実装に固有の無効な文字が含まれています。  
+  
+ または  
+  
+ <paramref name="searchPattern" /> には有効なパターンが含まれません。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定した<paramref name="path" />ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのコンピューター上でのパスは 248 文字未満である必要があり、ファイル名は 260 文字未満にする必要があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DirectoryCatalog (string path, System.Reflection.ReflectionContext reflectionContext, System.ComponentModel.Composition.Primitives.ICompositionElement definitionOrigin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, class System.Reflection.ReflectionContext reflectionContext, class System.ComponentModel.Composition.Primitives.ICompositionElement definitionOrigin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.DirectoryCatalog.#ctor(System.String,System.Reflection.ReflectionContext,System.ComponentModel.Composition.Primitives.ICompositionElement)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="reflectionContext" Type="System.Reflection.ReflectionContext" />
+        <Parameter Name="definitionOrigin" Type="System.ComponentModel.Composition.Primitives.ICompositionElement" />
+      </Parameters>
+      <Docs>
+        <param name="path">カタログに追加するアセンブリをスキャンするディレクトリのパス。  
+  
+ パスが絶対パスまたは相対的にする必要があります<see cref="P:System.AppDomain.BaseDirectory" />です。</param>
+        <param name="reflectionContext">パーツを作成するために使用するコンテキスト。</param>
+        <param name="definitionOrigin">パーツのソースを識別する診断で使用される要素。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Composition.Hosting.DirectoryCatalog" />クラスを使用して<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartDefinition" />オブジェクト指定されたリフレクション コンテキストで、指定したディレクトリ パス内のすべての DLL ファイルをベースにします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定した<paramref name="path" />が正しくありません (たとえば、上にある、マップされていないドライブ)。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />長さ 0 の文字列か、空白のみが含まれています、1 つまたは複数の実装に固有の無効な文字が含まれています。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定した<paramref name="path" />ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのコンピューター上でのパスは 248 文字未満である必要があり、ファイル名は 260 文字未満にする必要があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DirectoryCatalog (string path, string searchPattern, System.ComponentModel.Composition.Primitives.ICompositionElement definitionOrigin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, string searchPattern, class System.ComponentModel.Composition.Primitives.ICompositionElement definitionOrigin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.DirectoryCatalog.#ctor(System.String,System.String,System.ComponentModel.Composition.Primitives.ICompositionElement)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="searchPattern" Type="System.String" />
+        <Parameter Name="definitionOrigin" Type="System.ComponentModel.Composition.Primitives.ICompositionElement" />
+      </Parameters>
+      <Docs>
+        <param name="path">カタログに追加するアセンブリをスキャンするディレクトリのパス。  
+  
+ パスが絶対パスまたは相対的にする必要があります<see cref="P:System.AppDomain.BaseDirectory" />です。</param>
+        <param name="searchPattern">検索文字列。 文字列の形式が指定したのと同じにする必要があります、<see cref="M:System.IO.Directory.GetFiles(System.String,System.String)" />メソッドです。</param>
+        <param name="definitionOrigin">パーツのソースを識別する診断で使用される要素。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Composition.Hosting.DirectoryCatalog" />クラスを使用して<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartDefinition" />オブジェクトは、部分の指定したソースに指定したディレクトリ パス内の指定した検索パターンに基づいています。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定した<paramref name="path" />が正しくありません (たとえば、上にある、マップされていないドライブ)。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> または <paramref name="searchPattern" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />長さ 0 の文字列か、空白のみが含まれています、1 つまたは複数の実装に固有の無効な文字が含まれています。  
+  
+ または  
+  
+ <paramref name="searchPattern" /> には有効なパターンが含まれません。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定した<paramref name="path" />ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのコンピューター上でのパスは 248 文字未満である必要があり、ファイル名は 260 文字未満にする必要があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DirectoryCatalog (string path, string searchPattern, System.Reflection.ReflectionContext reflectionContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, string searchPattern, class System.Reflection.ReflectionContext reflectionContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.DirectoryCatalog.#ctor(System.String,System.String,System.Reflection.ReflectionContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="searchPattern" Type="System.String" />
+        <Parameter Name="reflectionContext" Type="System.Reflection.ReflectionContext" />
+      </Parameters>
+      <Docs>
+        <param name="path">カタログに追加するアセンブリをスキャンするディレクトリのパス。  
+  
+ パスが絶対パスまたは相対的にする必要があります<see cref="P:System.AppDomain.BaseDirectory" />です。</param>
+        <param name="searchPattern">検索文字列。 文字列の形式が指定したのと同じにする必要があります、<see cref="M:System.IO.Directory.GetFiles(System.String,System.String)" />メソッドです。</param>
+        <param name="reflectionContext">パーツを作成するために使用するコンテキスト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Composition.Hosting.DirectoryCatalog" />クラスを使用して<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartDefinition" />オブジェクトが指定されたリフレクション コンテキストを使用して、指定したディレクトリ パス内の指定した検索パターンに基づいています。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定した<paramref name="path" />が正しくありません (たとえば、上にある、マップされていないドライブ)。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> または <paramref name="searchPattern" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />長さ 0 の文字列か、空白のみが含まれています、1 つまたは複数の実装に固有の無効な文字が含まれています。  
+  
+ または  
+  
+ <paramref name="searchPattern" /> には有効なパターンが含まれません。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定した<paramref name="path" />ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのコンピューター上でのパスは 248 文字未満である必要があり、ファイル名は 260 文字未満にする必要があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DirectoryCatalog (string path, string searchPattern, System.Reflection.ReflectionContext reflectionContext, System.ComponentModel.Composition.Primitives.ICompositionElement definitionOrigin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, string searchPattern, class System.Reflection.ReflectionContext reflectionContext, class System.ComponentModel.Composition.Primitives.ICompositionElement definitionOrigin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.DirectoryCatalog.#ctor(System.String,System.String,System.Reflection.ReflectionContext,System.ComponentModel.Composition.Primitives.ICompositionElement)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="searchPattern" Type="System.String" />
+        <Parameter Name="reflectionContext" Type="System.Reflection.ReflectionContext" />
+        <Parameter Name="definitionOrigin" Type="System.ComponentModel.Composition.Primitives.ICompositionElement" />
+      </Parameters>
+      <Docs>
+        <param name="path">カタログに追加するアセンブリをスキャンするディレクトリのパス。  
+  
+ パスが絶対パスまたは相対的にする必要があります<see cref="P:System.AppDomain.BaseDirectory" />です。</param>
+        <param name="searchPattern">検索文字列。 文字列の形式が指定したのと同じにする必要があります、<see cref="M:System.IO.Directory.GetFiles(System.String,System.String)" />メソッドです。</param>
+        <param name="reflectionContext">パーツを作成するために使用するコンテキスト。</param>
+        <param name="definitionOrigin">パーツのソースを識別する診断で使用される要素。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Composition.Hosting.DirectoryCatalog" />クラスを使用して<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartDefinition" />オブジェクトが指定されたリフレクション コンテキストを使用して、指定したディレクトリ パス内の指定した検索パターンに基づいています。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定した<paramref name="path" />が正しくありません (たとえば、上にある、マップされていないドライブ)。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> または <paramref name="searchPattern" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />長さ 0 の文字列か、空白のみが含まれています、1 つまたは複数の実装に固有の無効な文字が含まれています。  
+  
+ または  
+  
+ <paramref name="searchPattern" /> には有効なパターンが含まれません。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定した<paramref name="path" />ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのコンピューター上でのパスは 248 文字未満である必要があり、ファイル名は 260 文字未満にする必要があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Changed">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.ComponentModel.Composition.Hosting.ComposablePartCatalogChangeEventArgs&gt; Changed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.ComponentModel.Composition.Hosting.ComposablePartCatalogChangeEventArgs&gt; Changed" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.Composition.Hosting.DirectoryCatalog.Changed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.ComponentModel.Composition.Hosting.ComposablePartCatalogChangeEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生するカタログの内容が変更されたとき。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Changing">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.ComponentModel.Composition.Hosting.ComposablePartCatalogChangeEventArgs&gt; Changing;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.ComponentModel.Composition.Hosting.ComposablePartCatalogChangeEventArgs&gt; Changing" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.Composition.Hosting.DirectoryCatalog.Changing" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.ComponentModel.Composition.Hosting.ComposablePartCatalogChangeEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カタログを変更するときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.DirectoryCatalog.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.ComponentModel.Composition.Hosting.DirectoryCatalog" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FullPath">
+      <MemberSignature Language="C#" Value="public string FullPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FullPath" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Composition.Hosting.DirectoryCatalog.FullPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>監視される翻訳済みの絶対パスを取得、<see cref="T:System.ComponentModel.Composition.Hosting.DirectoryCatalog" />オブジェクト。</summary>
+        <value>カタログで計測された翻訳済みの絶対パス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public override System.Collections.Generic.IEnumerator&lt;System.ComponentModel.Composition.Primitives.ComposablePartDefinition&gt; GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.Generic.IEnumerator`1&lt;class System.ComponentModel.Composition.Primitives.ComposablePartDefinition&gt; GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.DirectoryCatalog.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;System.ComponentModel.Composition.Primitives.ComposablePartDefinition&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>カタログを反復処理する列挙子を返します。</summary>
+        <returns>カタログの反復処理に使用できる列挙子。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExports">
+      <MemberSignature Language="C#" Value="public override System.Collections.Generic.IEnumerable&lt;Tuple&lt;System.ComponentModel.Composition.Primitives.ComposablePartDefinition,System.ComponentModel.Composition.Primitives.ExportDefinition&gt;&gt; GetExports (System.ComponentModel.Composition.Primitives.ImportDefinition definition);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.Tuple`2&lt;class System.ComponentModel.Composition.Primitives.ComposablePartDefinition, class System.ComponentModel.Composition.Primitives.ExportDefinition&gt;&gt; GetExports(class System.ComponentModel.Composition.Primitives.ImportDefinition definition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.DirectoryCatalog.GetExports(System.ComponentModel.Composition.Primitives.ImportDefinition)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Tuple&lt;System.ComponentModel.Composition.Primitives.ComposablePartDefinition,System.ComponentModel.Composition.Primitives.ExportDefinition&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="definition" Type="System.ComponentModel.Composition.Primitives.ImportDefinition" />
+      </Parameters>
+      <Docs>
+        <param name="definition">条件、<see cref="T:System.ComponentModel.Composition.Primitives.ExportDefinition" />返されるオブジェクト。</param>
+        <summary>指定されたインポート定義で表される制約に一致するエクスポート定義を取得します。</summary>
+        <returns>含むオブジェクトのコレクション、<see cref="T:System.ComponentModel.Composition.Primitives.ExportDefinition" />オブジェクトとそれに関連付けられた<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartDefinition" />で指定された制約に一致するオブジェクト<paramref name="definition" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.ComponentModel.Composition.Hosting.DirectoryCatalog" />オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="definition" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadedFiles">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;string&gt; LoadedFiles { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;string&gt; LoadedFiles" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Composition.Hosting.DirectoryCatalog.LoadedFiles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カタログで現在読み込まれているファイルのコレクションを取得します。</summary>
+        <value>ファイルのコレクションは、カタログに現在読み込まれています。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnChanged (System.ComponentModel.Composition.Hosting.ComposablePartCatalogChangeEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnChanged(class System.ComponentModel.Composition.Hosting.ComposablePartCatalogChangeEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.DirectoryCatalog.OnChanged(System.ComponentModel.Composition.Hosting.ComposablePartCatalogChangeEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.ComponentModel.Composition.Hosting.ComposablePartCatalogChangeEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納するオブジェクト。</param>
+        <summary><see cref="E:System.ComponentModel.Composition.Hosting.DirectoryCatalog.Changed" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnChanging">
+      <MemberSignature Language="C#" Value="protected virtual void OnChanging (System.ComponentModel.Composition.Hosting.ComposablePartCatalogChangeEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnChanging(class System.ComponentModel.Composition.Hosting.ComposablePartCatalogChangeEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.DirectoryCatalog.OnChanging(System.ComponentModel.Composition.Hosting.ComposablePartCatalogChangeEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.ComponentModel.Composition.Hosting.ComposablePartCatalogChangeEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納するオブジェクト。</param>
+        <summary><see cref="E:System.ComponentModel.Composition.Hosting.DirectoryCatalog.Changing" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public string Path { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Path" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Composition.Hosting.DirectoryCatalog.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>監視されるパスを取得、<see cref="T:System.ComponentModel.Composition.Hosting.DirectoryCatalog" />オブジェクト。</summary>
+        <value>カタログで監視されるパス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Refresh">
+      <MemberSignature Language="C#" Value="public void Refresh ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Refresh() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.DirectoryCatalog.Refresh" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>更新、<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartDefinition" />検索パターンに一致する最新のディレクトリにファイルを持つオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイルがディレクトリに追加された場合、カタログにも追加されます。 ファイルがディレクトリから削除された場合は、カタログからも削除します。 削除されたファイルの場合、アセンブリをすることはできませんので、プロセスからアンロード<xref:System.ComponentModel.Composition.Primitives.ComposablePartDefinition>オブジェクトをそれらのファイルは、カタログからのみ削除されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SearchPattern">
+      <MemberSignature Language="C#" Value="public string SearchPattern { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SearchPattern" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Composition.Hosting.DirectoryCatalog.SearchPattern" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンス トラクターに渡される検索パターンを取得、<see cref="T:System.ComponentModel.Composition.Hosting.DirectoryCatalog" />オブジェクト。</summary>
+        <value>ファイルを検索する検索パターンにカタログを使用します。 既定では *.dll、すべての DLL ファイルが返されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.Composition.Primitives.ICompositionElement.DisplayName">
+      <MemberSignature Language="C#" Value="string System.ComponentModel.Composition.Primitives.ICompositionElement.DisplayName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string System.ComponentModel.Composition.Primitives.ICompositionElement.DisplayName" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Composition.Hosting.DirectoryCatalog.System#ComponentModel#Composition#Primitives#ICompositionElement#DisplayName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Directory のカタログの表示名を取得します。</summary>
+        <value>ディレクトリ カタログの人間が判読できる表示名を表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.ComponentModel.Composition.Hosting.DirectoryCatalog> のインスタンスが <xref:System.ComponentModel.Composition.Primitives.ICompositionElement> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.Composition.Primitives.ICompositionElement.Origin">
+      <MemberSignature Language="C#" Value="System.ComponentModel.Composition.Primitives.ICompositionElement System.ComponentModel.Composition.Primitives.ICompositionElement.Origin { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.Composition.Primitives.ICompositionElement System.ComponentModel.Composition.Primitives.ICompositionElement.Origin" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Composition.Hosting.DirectoryCatalog.System#ComponentModel#Composition#Primitives#ICompositionElement#Origin" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Composition.Primitives.ICompositionElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Directory のカタログが元の合成要素を取得します。</summary>
+        <value>常に <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.ComponentModel.Composition.Hosting.DirectoryCatalog> のインスタンスが <xref:System.ComponentModel.Composition.Primitives.ICompositionElement> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.DirectoryCatalog.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Directory のカタログの文字列表現を取得します。</summary>
+        <returns>カタログの文字列形式。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

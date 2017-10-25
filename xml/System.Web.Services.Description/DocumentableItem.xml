@@ -1,0 +1,216 @@
+<Type Name="DocumentableItem" FullName="System.Web.Services.Description.DocumentableItem">
+  <TypeSignature Language="C#" Value="public abstract class DocumentableItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DocumentableItem extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Description.DocumentableItem" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>どのいくつかのクラスからの抽象基本クラスを表す、<see cref="N:System.Web.Services.Description" />名前空間は、派生します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いくつかのクラスは、このクラスから派生します。  
+  
+-   <xref:System.Web.Services.Description.Binding>  
+  
+-   <xref:System.Web.Services.Description.Import>  
+  
+-   <xref:System.Web.Services.Description.Message>  
+  
+-   <xref:System.Web.Services.Description.MessagePart>  
+  
+-   <xref:System.Web.Services.Description.Operation>  
+  
+-   <xref:System.Web.Services.Description.OperationBinding>  
+  
+-   <xref:System.Web.Services.Description.OperationMessage>  
+  
+-   <xref:System.Web.Services.Description.Port>  
+  
+-   <xref:System.Web.Services.Description.PortType>  
+  
+-   <xref:System.Web.Services.Description.Service>  
+  
+-   <xref:System.Web.Services.Description.Types>  
+  
+ この基本クラスには、1 つのプロパティが含まれています、<xref:System.Web.Services.Description.DocumentableItem.Documentation%2A>プロパティで、WSDL (Web Services Description Language) の特定の要素のテキスト ドキュメントを表します。  
+  
+ WSDL の詳細については、http://www.w3.org/TR/wsdl/ の仕様を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DocumentableItem ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.DocumentableItem.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Web.Services.Description.DocumentableItem" /> クラスのインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Documentation">
+      <MemberSignature Language="C#" Value="public string Documentation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Documentation" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.DocumentableItem.Documentation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlIgnore</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のインスタンスのテキスト ドキュメント、<see cref="T:System.Web.Services.Description.DocumentableItem" />です。</summary>
+        <value>ドキュメントを表す文字列、<see cref="T:System.Web.Services.Description.DocumentableItem" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスでは、このプロパティは、XML Web サービスの要素に追加されたテキストのコメントを表します。 既定の実装は、空の文字列 ("") です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の一般的な使用方法を示します、<xref:System.Web.Services.Description.DocumentableItem.Documentation%2A>プロパティです。  
+  
+ [!code-cpp[DocumentableItemsample#1](~/samples/snippets/cpp/VS_Snippets_Remoting/DocumentableItemsample/CPP/documentableitemsample.cpp#1)]
+ [!code-csharp[DocumentableItemsample#1](~/samples/snippets/csharp/VS_Snippets_Remoting/DocumentableItemsample/CS/documentableitemsample.cs#1)]
+ [!code-vb[DocumentableItemsample#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DocumentableItemsample/VB/documentableitemsample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DocumentationElement">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlElement DocumentationElement { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlElement DocumentationElement" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.DocumentableItem.DocumentationElement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAnyElement(Name="documentation", Namespace="http://schemas.xmlsoap.org/wsdl/")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の documentation 要素、<see cref="T:System.Web.Services.Description.DocumentableItem" />です。</summary>
+        <value>A<see cref="T:System.Xml.XmlElement" />のドキュメントを表す、<see cref="T:System.Web.Services.Description.DocumentableItem" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティには、ドキュメント化する XML Web サービスの説明に追加される XML 要素が含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtensibleAttributes">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlAttribute[] ExtensibleAttributes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlAttribute[] ExtensibleAttributes" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.DocumentableItem.ExtensibleAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAnyAttribute</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlAttribute[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型の配列を取得または<see cref="T:System.Xml.XmlAttribute" />属性の Web サービスの相互運用性と準拠するために WSDL の拡張機能を表します (WS-すれば) Basic Profile 1.1 です。</summary>
+        <value>型の配列<see cref="T:System.Xml.XmlAttribute" />属性の Web サービスの相互運用性と準拠するために WSDL の拡張機能を表します (WS-すれば) Basic Profile 1.1 です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Extensions">
+      <MemberSignature Language="C#" Value="public abstract System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection Extensions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection Extensions" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.DocumentableItem.Extensions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlIgnore</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection" /> に関連付けられている <see cref="T:System.Web.Services.Description.DocumentableItem" /> を取得します。</summary>
+        <value>この <see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection" /> に関連付けられている <see cref="T:System.Web.Services.Description.DocumentableItem" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespaces">
+      <MemberSignature Language="C#" Value="public System.Xml.Serialization.XmlSerializerNamespaces Namespaces { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Serialization.XmlSerializerNamespaces Namespaces" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.DocumentableItem.Namespaces" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlNamespaceDeclarations</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.XmlSerializerNamespaces</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の名前空間プレフィックスと名前空間プレフィックスと名前空間を保持するために使用される名前空間のディクショナリと、<see cref="T:System.Web.Services.Description.ServiceDescription" />オブジェクトを構築します。</summary>
+        <value>A<see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />プレフィックス/名前空間のペアを含むディクショナリ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

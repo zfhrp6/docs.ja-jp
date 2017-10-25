@@ -1,0 +1,415 @@
+<Type Name="RemotingClientProxy" FullName="System.Runtime.Remoting.Services.RemotingClientProxy">
+  <TypeSignature Language="C#" Value="public abstract class RemotingClientProxy : System.ComponentModel.Component" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit RemotingClientProxy extends System.ComponentModel.Component" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Services.RemotingClientProxy" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Remoting</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Component</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>既知のオブジェクトによって生成されたプロキシの抽象基本クラス、 [Soapsuds ツール (Soapsuds.exe)](http://msdn.microsoft.com/en-us/40f6f8c8-b80c-4e9f-a920-31bcd0cf45c5)です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Remoting.Services.RemotingClientProxy>よく知られているオブジェクト (XML Web サービス) を指す Soapsuds で生成されたプロキシのよく使用されるプロパティへのアクセスを提供します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected RemotingClientProxy ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Services.RemotingClientProxy.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Runtime.Remoting.Services.RemotingClientProxy" /> のインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="_tp">
+      <MemberSignature Language="C#" Value="protected object _tp;" />
+      <MemberSignature Language="ILAsm" Value=".field family object _tp" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Remoting.Services.RemotingClientProxy._tp" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リモート処理クライアント プロキシ オブジェクトの内部透過プロキシ。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="_type">
+      <MemberSignature Language="C#" Value="protected Type _type;" />
+      <MemberSignature Language="ILAsm" Value=".field family class System.Type _type" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Remoting.Services.RemotingClientProxy._type" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のプロキシを表すオブジェクトの種類を示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Type>クラスの現在のプロキシを表すオブジェクトの種類。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="_url">
+      <MemberSignature Language="C#" Value="protected string _url;" />
+      <MemberSignature Language="ILAsm" Value=".field family string _url" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Remoting.Services.RemotingClientProxy._url" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のプロキシを表すオブジェクトの URL を示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のプロキシを表すオブジェクトの URL です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowAutoRedirect">
+      <MemberSignature Language="C#" Value="public bool AllowAutoRedirect { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowAutoRedirect" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Services.RemotingClientProxy.AllowAutoRedirect" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサーバーのリダイレクトの自動処理が有効になっているかどうかを示す値を設定します。</summary>
+        <value>サーバー リダイレクトの自動処理が有効かどうかを示すブール値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConfigureProxy">
+      <MemberSignature Language="C#" Value="protected void ConfigureProxy (Type type, string url);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void ConfigureProxy(class System.Type type, string url) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Services.RemotingClientProxy.ConfigureProxy(System.Type,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="url" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Type" />クラスの現在のプロキシを表すオブジェクトの種類。</param>
+        <param name="url">現在のプロキシを表すオブジェクトの URL です。</param>
+        <summary>内部。 既に読み込まれていない場合、チャネルを読み込んで、プロキシを作成することによって、プロキシが自動的に構成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectProxy">
+      <MemberSignature Language="C#" Value="protected void ConnectProxy ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void ConnectProxy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Services.RemotingClientProxy.ConnectProxy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>内部。 指定されているリモート処理チャネルにプロキシを接続する、<see cref="P:System.Runtime.Remoting.Services.RemotingClientProxy.Url" />プロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cookies">
+      <MemberSignature Language="C#" Value="public object Cookies { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Cookies" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Services.RemotingClientProxy.Cookies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティは、現在実装されていません。 プロパティから返される<see langword="null" />(<see langword="Nothing" /> Visual Basic で)。</summary>
+        <value>現在のプロキシの cookie。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Domain">
+      <MemberSignature Language="C#" Value="public string Domain { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Domain" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Services.RemotingClientProxy.Domain" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または基本認証とダイジェスト認証に使用するドメイン名を設定します。</summary>
+        <value>基本認証およびダイジェスト認証に使用するドメインの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リモート処理のセキュリティと認証方法の詳細については、次を参照してください。[セキュリティ](http://msdn.microsoft.com/en-us/9574262c-d4b1-41c5-8600-24ff147c0add)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableCookies">
+      <MemberSignature Language="C#" Value="public bool EnableCookies { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableCookies" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Services.RemotingClientProxy.EnableCookies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティは、現在実装されていません。 プロパティがスローされます、<see cref="T:System.NotSupportedException" />です。</summary>
+        <value>サーバーから受信した cookie の処理が有効になっているかどうかを示すブール値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Password">
+      <MemberSignature Language="C#" Value="public string Password { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Password" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Services.RemotingClientProxy.Password" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または基本認証とダイジェスト認証に使用するパスワードを設定します。</summary>
+        <value>基本認証とダイジェスト認証に使用するパスワード。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リモート処理のセキュリティと認証方法の詳細については、次を参照してください。[セキュリティ](http://msdn.microsoft.com/en-us/9574262c-d4b1-41c5-8600-24ff147c0add)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public string Path { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Path" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Services.RemotingClientProxy.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または要求に使用するサーバーに、ベース URL を設定します。</summary>
+        <value>基本サーバーの URL を要求に使用します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreAuthenticate">
+      <MemberSignature Language="C#" Value="public bool PreAuthenticate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PreAuthenticate" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Services.RemotingClientProxy.PreAuthenticate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または要求の事前認証が有効になっているかどうかを示す値を設定します。</summary>
+        <value>要求の事前認証が有効になっているかどうかを示すブール値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProxyName">
+      <MemberSignature Language="C#" Value="public string ProxyName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ProxyName" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Services.RemotingClientProxy.ProxyName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または要求に使用するプロキシ サーバーの名前を設定します。</summary>
+        <value>要求に使用するプロキシ サーバーの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProxyPort">
+      <MemberSignature Language="C#" Value="public int ProxyPort { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ProxyPort" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Services.RemotingClientProxy.ProxyPort" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または要求に使用するプロキシ サーバーのポート番号を設定します。</summary>
+        <value>要求に使用するプロキシ サーバーのポート番号。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Timeout">
+      <MemberSignature Language="C#" Value="public int Timeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Timeout" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Services.RemotingClientProxy.Timeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または同期呼び出しに使用するミリ秒単位のタイムアウトを設定します。</summary>
+        <value>同期呼び出しに使用するミリ秒単位のタイムアウト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値、<xref:System.Runtime.Remoting.Services.RemotingClientProxy.Timeout%2A>プロパティは-1、およびタイムアウトが (無限のタイムアウト) が発生しないことを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Url">
+      <MemberSignature Language="C#" Value="public string Url { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Url" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Services.RemotingClientProxy.Url" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または要求に使用するサーバーに、ベース URL を設定します。</summary>
+        <value>基本サーバーの URL を要求に使用します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserAgent">
+      <MemberSignature Language="C#" Value="public string UserAgent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UserAgent" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Services.RemotingClientProxy.UserAgent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはユーザー エージェントの要求の HTTP ヘッダーを設定します。</summary>
+        <value>要求のユーザー エージェント HTTP ヘッダー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Username">
+      <MemberSignature Language="C#" Value="public string Username { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Username" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Services.RemotingClientProxy.Username" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または基本認証とダイジェスト認証に送信するユーザー名を設定します。</summary>
+        <value>基本認証とダイジェスト認証に送信するユーザー名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リモート処理のセキュリティと認証方法の詳細については、次を参照してください。[セキュリティ](http://msdn.microsoft.com/en-us/9574262c-d4b1-41c5-8600-24ff147c0add)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

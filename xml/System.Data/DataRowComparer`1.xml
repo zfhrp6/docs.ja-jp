@@ -1,0 +1,137 @@
+<Type Name="DataRowComparer&lt;TRow&gt;" FullName="System.Data.DataRowComparer&lt;TRow&gt;">
+  <TypeSignature Language="C#" Value="public sealed class DataRowComparer&lt;TRow&gt; : System.Collections.Generic.IEqualityComparer&lt;TRow&gt; where TRow : DataRow" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DataRowComparer`1&lt;(class System.Data.DataRow) TRow&gt; extends System.Object implements class System.Collections.Generic.IEqualityComparer`1&lt;!TRow&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Data.DataRowComparer`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.DataSetExtensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TRow">
+      <Constraints>
+        <BaseTypeName>System.Data.DataRow</BaseTypeName>
+      </Constraints>
+    </TypeParameter>
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEqualityComparer&lt;TRow&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <typeparam name="TRow">通常、比較するオブジェクトの種類<see cref="T:System.Data.DataRow" />です。</typeparam>
+    <summary>比較する 2 つ<see cref="T:System.Data.DataRow" />の値に基づく比較を使用して等価性のオブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、実装、<xref:System.Collections.Generic.IEqualityComparer%601>インターフェイスし、比較する値に基づくセマンティクスを使用して<xref:System.Data.DataRow>オブジェクト。 このクラスは必要な一部セットベースの操作の既定の実装 (など<xref:System.Linq.Enumerable.Distinct%2A>、 <xref:System.Linq.Enumerable.Union%2A>、 <xref:System.Linq.Enumerable.Intersect%2A>、および<xref:System.Linq.Enumerable.Except%2A>) 参照に基づくセマンティクスを使用して比較する<xref:System.Data.DataRow>オブジェクトを比較するのではなく、参照、<xref:System.Data.DataRow>オブジェクト値です。 <xref:System.Data.DataRowComparer%601.Default%2A>の値を比較するクラスが使用される、<xref:System.Data.DataRow>オブジェクトし、オブジェクト参照は比較されません。  
+  
+ このクラスを直接インスタンス化することはできません。 代わりに、<xref:System.Data.DataRowComparer%601.Default%2A>のシングルトン インスタンスを返すプロパティを使用する必要があります、<xref:System.Data.DataRowComparer%601.Default%2A>クラスです。  
+  
+ このクラスはステートレスです。  
+  
+ このクラスは封印されておりから派生することはできません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static System.Data.DataRowComparer&lt;TRow&gt; Default { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Data.DataRowComparer`1&lt;!TRow&gt; Default" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataRowComparer`1.Default" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.DataSetExtensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataRowComparer&lt;TRow&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シングルトン インスタンスを取得<see cref="T:System.Data.DataRowComparer`1" />です。 このプロパティは読み取り専用です。</summary>
+        <value>インスタンス、<see cref="T:System.Data.DataRowComparer`1" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは読み取り専用です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (TRow leftRow, TRow rightRow);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(!TRow leftRow, !TRow rightRow) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRowComparer`1.Equals(`0,`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.DataSetExtensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="leftRow" Type="TRow" />
+        <Parameter Name="rightRow" Type="TRow" />
+      </Parameters>
+      <Docs>
+        <param name="leftRow">比較する最初の <see cref="T:System.Data.DataRow" /> オブジェクト。</param>
+        <param name="rightRow">比較する 2 番目の <see cref="T:System.Data.DataRow" /> オブジェクト。</param>
+        <summary>比較する 2 つ<see cref="T:System.Data.DataRow" />列によって、値に基づく比較を使用して、オブジェクトです。</summary>
+        <returns>
+          <see langword="true" />場合、2 つ<see cref="T:System.Data.DataRow" />オブジェクトが等しい。 それ以外の場合、列の値のセットを順序付け<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つのスキーマ<xref:System.Data.DataRow>オブジェクトはチェックされません。 両方<xref:System.Data.DataRow>オブジェクトがまったく同じ順序付けのセットの列の値がある、等しいと見なされます。  
+  
+ 現在の値のみ、<xref:System.Data.DataRow>オブジェクトがチェックされます。 状態、<xref:System.Data.DataRow>オブジェクトはチェックされません。  
+  
+ <xref:System.Data.DataRowComparer`1.Equals*>メソッドの値に基づく比較の実装では、<xref:System.Collections.Generic.IEqualityComparer%601.Equals%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">ソースの一方または両方<see cref="T:System.Data.DataRow" />オブジェクトが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public int GetHashCode (TRow row);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 GetHashCode(!TRow row) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRowComparer`1.GetHashCode(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.DataSetExtensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="row" Type="TRow" />
+      </Parameters>
+      <Docs>
+        <param name="row"><see cref="T:System.Data.DataRow" />からハッシュ コードを計算します。</param>
+        <summary>指定したハッシュ コードを返します<see cref="T:System.Data.DataRow" />オブジェクト。</summary>
+        <returns><see cref="T:System.Int32" />行のハッシュ コードを表す値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataRowComparer%601.GetHashCode%2A>メソッドの値に基づく比較の実装では、<xref:System.Collections.Generic.IEqualityComparer%601.GetHashCode%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">ソース<see cref="T:System.Data.DataRow" />オブジェクトに属していない、<see cref="T:System.Data.DataTable" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">ソース<see cref="T:System.Data.DataRow" />オブジェクトは<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

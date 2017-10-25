@@ -1,0 +1,36 @@
+<Type Name="IDuplexChannel" FullName="System.ServiceModel.Channels.IDuplexChannel">
+  <TypeSignature Language="C#" Value="public interface IDuplexChannel : System.ServiceModel.Channels.IInputChannel, System.ServiceModel.Channels.IOutputChannel" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDuplexChannel implements class System.ServiceModel.Channels.IChannel, class System.ServiceModel.Channels.IInputChannel, class System.ServiceModel.Channels.IOutputChannel, class System.ServiceModel.ICommunicationObject" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.IDuplexChannel" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Channels.IInputChannel</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Channels.IOutputChannel</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>チャネルがメッセージを送信および受信するために実装する必要があるインターフェイスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.IDuplexChannel> インターフェイスは、<xref:System.ServiceModel.Channels.IInputChannel> インターフェイスと <xref:System.ServiceModel.Channels.IOutputChannel> インターフェイスの結合です。 <xref:System.ServiceModel.Channels.IDuplexChannel> インターフェイスを実装するときに、<xref:System.ServiceModel.Channels.IInputChannel> と <xref:System.ServiceModel.Channels.IOutputChannel> を相関させる必要はありません。 つまり、具体的には、このコントラクトでは、<xref:System.ServiceModel.Channels.IInputChannel> を通して受信されるメッセージの送信元が、<xref:System.ServiceModel.Channels.IOutputChannel> を通して送信されるメッセージの受信先と同じである必要はありません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members />
+</Type>

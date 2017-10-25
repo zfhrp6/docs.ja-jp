@@ -1,0 +1,305 @@
+<Type Name="XmlReflectionMember" FullName="System.Xml.Serialization.XmlReflectionMember">
+  <TypeSignature Language="C#" Value="public class XmlReflectionMember" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlReflectionMember extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.XmlReflectionMember" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>SOAP Web サービスの .NET Framework Web サービス メソッドでコードのエンティティと定義されている Web サービス記述言語 (WSDL) メッセージの内容の間のマッピングを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.XmlReflectionMember>クラスは直接使用されません。 代わりに、これが使用されます。  
+  
+-   初期化するために<xref:System.Xml.Serialization.XmlSerializer>オブジェクトを SOAP Web サービスまたはクライアントに .NET Framework の初期化中にします。  
+  
+-   によって、<xref:System.Web.Services.Description.ServiceDescriptionReflector>中にクラス<xref:System.Web.Services.Description.ServiceDescriptionReflector>作成<xref:System.Web.Services.Description.ServiceDescription>SOAP Web サービスとして識別されるクラスのオブジェクトをします。  
+  
+ SOAP Web のリフレクション中に、メソッドの配列をサービス<xref:System.Xml.Serialization.XmlReflectionMember>メッセージの WSDL の定義の内容を表すオブジェクトが生成されます。 SOAP Web サービス メソッドに属している、次の項目の各配列が生成されます。  
+  
+-   入力パラメーターです。  
+  
+-   出力パラメーターと戻り値。  
+  
+-   属性を使用して SOAP ヘッダーを要求します。  
+  
+-   属性を使用して SOAP ヘッダーを応答します。  
+  
+ <xref:System.Xml.Serialization.SoapReflectionImporter>と<xref:System.Xml.Serialization.XmlReflectionImporter>クラスの変換、<xref:System.Xml.Serialization.XmlReflectionMember>に配列、<xref:System.Xml.Serialization.XmlMembersMapping>を格納している、<xref:System.Xml.Serialization.XmlMemberMapping>さらに処理するためのコレクション。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlReflectionMember ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlReflectionMember.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.Serialization.XmlReflectionMember" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsReturnValue">
+      <MemberSignature Language="C#" Value="public bool IsReturnValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReturnValue" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlReflectionMember.IsReturnValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを示す値を設定するかどうか、 <see cref="T:System.Xml.Serialization.XmlReflectionMember" /> Web サービス メソッドの戻り値、出力パラメーターではなくを表します。</summary>
+        <value>
+          <see langword="true" />、メンバーを表す Web サービスの戻り値です。 場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する必要はありません、<xref:System.Xml.Serialization.XmlReflectionMember>クラスとそのプロパティを直接です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="MemberName">
+      <MemberSignature Language="C#" Value="public string MemberName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MemberName" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlReflectionMember.MemberName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのマッピングの Web サービス メソッドのメンバーの名前を設定します。</summary>
+        <value>Web サービス メソッドの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web サービス メソッドのメンバーには、入力パラメーター、出力パラメーター、戻り値の型、入力のヘッダー、または出力ヘッダーがあります。  
+  
+ 使用する必要はありません、<xref:System.Xml.Serialization.XmlReflectionMember>クラスとそのプロパティを直接です。  
+  
+ 参照してください、<xref:System.Xml.Serialization.XmlMembersMapping>クラスに対応して、メンバーの場合、 `<part>` Web サービス記述言語 (WSDL) ドキュメントで定義された要素。 ただし、WSDL 操作とする .NET Framework メソッドの間でラップされたバインディングを使用する (によって示される、<xref:System.Web.Services.Protocols.SoapParameterStyle.Wrapped>列挙体のメンバー)、メソッドのパラメーターと戻り値は、WSDL ドキュメントに表示されません。  
+  
+ Web サービス メソッドが反映されている場合、戻り値の型の<xref:System.Xml.Serialization.XmlReflectionMember.MemberName%2A>プロパティになります (必要に応じてその他のメンバー名から一意になり)、メソッド名と「結果」が追加されます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="MemberType">
+      <MemberSignature Language="C#" Value="public Type MemberType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type MemberType" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlReflectionMember.MemberType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Web サービス メソッドのメンバー コード エンティティのこのマッピングで表される型を設定します。</summary>
+        <value><see cref="T:System.Type" /> Web サービス メソッドのメンバー コードをエンティティのこのマッピングとして表されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web サービス メソッド メンバー コードのエンティティには、入力パラメーター、出力パラメーター、戻り値の型または SOAP ヘッダー属性があります。  
+  
+ 使用する必要はありません、<xref:System.Xml.Serialization.XmlReflectionMember>クラスとそのプロパティを直接です。  
+  
+ 参照してください、<xref:System.Xml.Serialization.XmlMembersMapping>メンバーは、Web サービス記述言語 (WSDL) ドキュメントで定義されている一部の要素に対応している場合、ケースのクラスです。 ただし、WSDL 操作とする .NET Framework メソッドの間でラップされたバインディングを使用する (によって示される、<xref:System.Web.Services.Protocols.SoapParameterStyle.Wrapped>列挙体のメンバー)、メソッドのパラメーターと戻り値は、WSDL ドキュメントに表示されません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="OverrideIsNullable">
+      <MemberSignature Language="C#" Value="public bool OverrideIsNullable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool OverrideIsNullable" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlReflectionMember.OverrideIsNullable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を定義の値を対応する XML 要素の設定を取得または<c>isNullable</c>属性は<see langword="false" />します。</summary>
+        <value>
+          <see langword="True" />オーバーライドする、<see cref="P:System.Xml.Serialization.XmlElementAttribute.IsNullable" />プロパティ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この設定はオーバーライド、<xref:System.Xml.Serialization.XmlElementAttribute.IsNullable%2A>のプロパティ、<xref:System.Xml.Serialization.XmlElementAttribute>属性。 設定されている`true`のみときに SOAP ヘッダーの型はどちらも<xref:System.Web.Services.Protocols.SoapHeader>も<xref:System.Web.Services.Protocols.SoapUnknownHeader>します。  
+  
+ 使用する必要はありません、<xref:System.Xml.Serialization.XmlReflectionMember>クラスとそのプロパティを直接です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SoapAttributes">
+      <MemberSignature Language="C#" Value="public System.Xml.Serialization.SoapAttributes SoapAttributes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Serialization.SoapAttributes SoapAttributes" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlReflectionMember.SoapAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.SoapAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Xml.Serialization.SoapAttributes" />メンバー コードのエンティティに適用されている SOAP に関連する属性のコレクションを使用します。</summary>
+        <value>A<see cref="T:System.Xml.Serialization.SoapAttributes" />をメンバーに適用されている SOAP 属性を表すオブジェクトを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web サービス メソッド メンバー コードのエンティティには、入力パラメーター、出力パラメーター、戻り値の型、入力 SOAP ヘッダー属性、または出力 SOAP ヘッダー属性があります。  
+  
+ 使用する必要はありません、<xref:System.Xml.Serialization.XmlReflectionMember>クラスとそのプロパティを直接です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="XmlAttributes">
+      <MemberSignature Language="C#" Value="public System.Xml.Serialization.XmlAttributes XmlAttributes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Serialization.XmlAttributes XmlAttributes" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlReflectionMember.XmlAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.XmlAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Xml.Serialization.XmlAttributes" />のコレクションを含む<see cref="T:System.Xml.Serialization.XmlSerializer" />-関連するメンバー コードのエンティティに適用されている属性です。</summary>
+        <value><see cref="T:System.Xml.Serialization.XmlAttributes" />メンバー コードに適用されている XML 属性を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web サービス メソッド メンバー コードのエンティティには、入力パラメーター、出力パラメーター、戻り値の型、入力 SOAP ヘッダー属性、または出力 SOAP ヘッダー属性があります。  
+  
+ 使用する必要はありません、<xref:System.Xml.Serialization.XmlReflectionMember>クラスとそのプロパティを直接です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,74 @@
+<Type Name="DebuggerManager+IslandThread" FullName="Microsoft.Build.Debugging.DebuggerManager+IslandThread">
+  <TypeSignature Language="C#" Value="public sealed class DebuggerManager.IslandThread : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi sealed beforefieldinit DebuggerManager/IslandThread extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Debugging.DebuggerManager.IslandThread" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>専用のワーカー スレッドで、アイランドを実行します。 ワーカー スレッドの物理呼び出し履歴は、インタープリターの仮想呼び出し履歴にマップされます。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="IslandWorker">
+      <MemberSignature Language="C#" Value="public static void IslandWorker (Microsoft.Build.Debugging.DebuggerManager.IslandThread controller);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void IslandWorker(class Microsoft.Build.Debugging.DebuggerManager/IslandThread controller) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Debugging.DebuggerManager.IslandThread.IslandWorker(Microsoft.Build.Debugging.DebuggerManager.IslandThread)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="controller" Type="Microsoft.Build.Debugging.DebuggerManager+IslandThread" />
+      </Parameters>
+      <Docs>
+        <param name="controller">エントリ ポイントを呼び出してスレッドです。</param>
+        <summary>プライベートなエントリ ポイントは、諸島から呼び出されます。 アイランドを呼び出すことができるように公開する必要があります。 デバッガーのワーカー スレッドで呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IDisposable.Dispose">
+      <MemberSignature Language="C#" Value="void IDisposable.Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.IDisposable.Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Debugging.DebuggerManager.IslandThread.System#IDisposable#Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.Build.Debugging.DebuggerManager.IslandThread" /> クラスの現在のインスタンスによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Dispose` を使い終わったら <xref:Microsoft.Build.Debugging.DebuggerManager.IslandThread> を呼び出します。 呼び出した後`Dispose`、すべての参照を解放する必要があります、<xref:Microsoft.Build.Debugging.DebuggerManager.IslandThread>ガベージ コレクターが使用していたメモリを再利用できるようにします。  
+  
+ 詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+> [!NOTE]
+>  `Dispose` への最後の参照を解放する前に、必ず <xref:Microsoft.Build.Debugging.DebuggerManager.IslandThread> を呼び出してください。 そうしないと、ガベージ コレクターが <xref:Microsoft.Build.Debugging.DebuggerManager.IslandThread> オブジェクトの `Finalize` メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

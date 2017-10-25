@@ -1,0 +1,72 @@
+<Type Name="ITypeDiscoveryService" FullName="System.ComponentModel.Design.ITypeDiscoveryService">
+  <TypeSignature Language="C#" Value="public interface ITypeDiscoveryService" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITypeDiscoveryService" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.ITypeDiscoveryService" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>デザイン時に利用可能な種類を検出します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.ITypeDiscoveryService>をサービスのクライアントに既存の型または参照先アセンブリの名前が認識していない場合、デザイン時に利用可能な種類を検出するために使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetTypes">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection GetTypes (Type baseType, bool excludeGlobalTypes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.ICollection GetTypes(class System.Type baseType, bool excludeGlobalTypes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.ITypeDiscoveryService.GetTypes(System.Type,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseType" Type="System.Type" />
+        <Parameter Name="excludeGlobalTypes" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="baseType">一致する基本型です。 指定できます<see langword="null" />です。</param>
+        <param name="excludeGlobalTypes">すべての参照アセンブリから型をチェックするかどうかを示します。</param>
+        <summary>利用可能な種類の一覧を取得します。</summary>
+        <returns>指定された条件に一致する型のコレクション<paramref name="baseType" />と<paramref name="excludeGlobalTypes" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`baseType`は`null`、すべての型が返されます。 それ以外の場合、指定した基本型から派生した型のみが返されます。 場合`excludeGlobalTypes`は`false`、すべての参照アセンブリから型をチェックします。 それ以外の場合、グローバル アセンブリ キャッシュ gac にインストールしない参照アセンブリから型のみがチェックされます。 詳細については、次を参照してください。[アセンブリとグローバル アセンブリ キャッシュ](~/docs/framework/app-domains/working-with-assemblies-and-the-gac.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

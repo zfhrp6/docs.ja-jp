@@ -1,0 +1,126 @@
+<Type Name="CodeConstructor" FullName="System.CodeDom.CodeConstructor">
+  <TypeSignature Language="C#" Value="public class CodeConstructor : System.CodeDom.CodeMemberMethod" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CodeConstructor extends System.CodeDom.CodeMemberMethod" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.CodeConstructor" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.CodeDom.CodeMemberMethod</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>型のインスタンス コンス トラクターの宣言を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.CodeConstructor>型のインスタンス コンス トラクターの宣言を表すために使用できます。 使用して<xref:System.CodeDom.CodeTypeConstructor>型の静的コンス トラクターを宣言します。  
+  
+ コンス トラクターが基底クラスのコンス トラクターを呼び出す場合の設定で基本クラスのコンス トラクターのコンス トラクター引数、<xref:System.CodeDom.CodeConstructor.BaseConstructorArgs%2A>プロパティです。 コンス トラクターでは、型の別のコンス トラクターでオーバー ロード、コンス トラクターの引数にオーバー ロードされた型のコンス トラクターに渡すを設定、<xref:System.CodeDom.CodeConstructor.ChainedConstructorArgs%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ この例では、<xref:System.CodeDom.CodeConstructor>コンス トラクターのいくつかの型を宣言します。  
+  
+ [!code-cpp[CodeConstructorExample#2](~/samples/snippets/cpp/VS_Snippets_CLR/CodeConstructorExample/CPP/codeconstructorexample.cpp#2)]
+ [!code-csharp[CodeConstructorExample#2](~/samples/snippets/csharp/VS_Snippets_CLR/CodeConstructorExample/CS/codeconstructorexample.cs#2)]
+ [!code-vb[CodeConstructorExample#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeConstructorExample/VB/codeconstructorexample.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeConstructor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeConstructor.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.CodeDom.CodeConstructor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseConstructorArgs">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeExpressionCollection BaseConstructorArgs { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeExpressionCollection BaseConstructorArgs" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeConstructor.BaseConstructorArgs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeExpressionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基本コンス トラクターの引数のコレクションを取得します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeExpressionCollection" />基底コンス トラクター引数を格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.CodeDom.CodeConstructor>オーバー ロードには基底クラス コンス トラクター、このコレクションには、基本クラスのコンス トラクターに渡す引数が含まれています。 引数なしで基本クラスのコンス トラクターを呼び出すには、次のように設定します。、<xref:System.CodeDom.CodeSnippetExpression>を含む、空の文字列 ("") をこのコレクションにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChainedConstructorArgs">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeExpressionCollection ChainedConstructorArgs { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeExpressionCollection ChainedConstructorArgs" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeConstructor.ChainedConstructorArgs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeExpressionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チェーンされたコンス トラクターの引数のコレクションを取得します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeExpressionCollection" />連鎖コンス トラクターの引数を格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.CodeDom.CodeConstructor>同じの型では、このコレクションの別のコンス トラクターにはオーバー ロードには、型のオーバー ロードされたコンス トラクターに渡す引数が含まれます。 引数なしで現在の型のコンス トラクターを呼び出す、設定、<xref:System.CodeDom.CodeSnippetExpression>を含む、空の文字列 ("") をこのコレクションにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

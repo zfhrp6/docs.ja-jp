@@ -1,0 +1,445 @@
+<Type Name="PageSetupDialog" FullName="System.Windows.Forms.PageSetupDialog">
+  <TypeSignature Language="C#" Value="public sealed class PageSetupDialog : System.Windows.Forms.CommonDialog" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PageSetupDialog extends System.Windows.Forms.CommonDialog" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.PageSetupDialog" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.CommonDialog</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Document")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>設定を変更するページに関連する印刷の余白、用紙の向きなどのユーザーを有効にします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.PageSetupDialog>ダイアログ ボックスで変更、<xref:System.Drawing.Printing.PageSettings>と<xref:System.Drawing.Printing.PrinterSettings>の情報を指定された<xref:System.Windows.Forms.PageSetupDialog.Document%2A>です。 ユーザーには、印刷と余白を操作するダイアログ ボックスのセクションが有効にすることができます。用紙の向き、サイズ、およびソースです。ヘルプを表示して、ネットワークのボタン。 <xref:System.Windows.Forms.PageSetupDialog.MinMargins%2A>プロパティは、ユーザーが選択できる最小のマージンを定義します。  
+  
+ インスタンスを作成する場合、<xref:System.Windows.Forms.PageSetupDialog>クラス、読み取り/書き込みプロパティは、初期値に設定されます。 これらの値の一覧は、次を参照してください。、<xref:System.Windows.Forms.PageSetupDialog.%23ctor%2A>コンス トラクターです。  
+  
+ <xref:System.Windows.Forms.PageSetupDialog>ページの設定を表示する必要がありますを設定する必要があります、 <xref:System.Windows.Forms.PrintDialog.Document%2A>、 <xref:System.Windows.Forms.PrintDialog.PrinterSettings%2A>、または<xref:System.Windows.Forms.PageSetupDialog.PageSettings%2A>呼び出す前にプロパティ<xref:System.Windows.Forms.CommonDialog.ShowDialog%2A>です。 それ以外の場合、例外が発生します。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.Windows.Forms.PageSetupDialog>を使用して、 <xref:System.Windows.Forms.PageSetupDialog.PageSettings%2A>、 <xref:System.Windows.Forms.PageSetupDialog.PrinterSettings%2A>、および<xref:System.Windows.Forms.PageSetupDialog.ShowNetwork%2A>プロパティです。 この例を実行する配置を含むフォーム、<xref:System.Windows.Forms.Button>という名前`Button1`、<xref:System.Windows.Forms.ListBox>という名前`ListBox1`、および<xref:System.Windows.Forms.PageSetupDialog>という名前`PageSetupDialog1`です。 ボタンのクリックを確認してくださいイベントは、この例では、イベント処理メソッドに関連付けられています。  
+  
+ [!code-cpp[System.Windows.Forms.PageSetupDialogExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.PageSetupDialogExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.PageSetupDialogExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.PageSetupDialogExample/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.PageSetupDialogExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.PageSetupDialogExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PageSetupDialog ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.PageSetupDialog.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.PageSetupDialog" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンス<xref:System.Windows.Forms.PageSetupDialog>作成されると、次のプロパティが指定された値に初期化されます。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Windows.Forms.PageSetupDialog.AllowMargins%2A>|`true`|  
+|<xref:System.Windows.Forms.PageSetupDialog.AllowOrientation%2A>|`true`|  
+|<xref:System.Windows.Forms.PageSetupDialog.AllowPaper%2A>|`true`|  
+|<xref:System.Windows.Forms.PageSetupDialog.AllowPrinter%2A>|`true`|  
+|<xref:System.Windows.Forms.PageSetupDialog.Document%2A>|`null`|  
+|<xref:System.Windows.Forms.PageSetupDialog.MinMargins%2A>|`null`|  
+|<xref:System.Windows.Forms.PageSetupDialog.PageSettings%2A>|`null`|  
+|<xref:System.Windows.Forms.PageSetupDialog.PrinterSettings%2A>|`null`|  
+|<xref:System.Windows.Forms.PageSetupDialog.ShowHelp%2A>|`false`|  
+|<xref:System.Windows.Forms.PageSetupDialog.ShowNetwork%2A>|`true`|  
+  
+ プロパティに別個の呼び出しでこれらのプロパティのいずれかの値を変更することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowMargins">
+      <MemberSignature Language="C#" Value="public bool AllowMargins { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowMargins" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PageSetupDialog.AllowMargins" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはダイアログ ボックスの余白のセクションが有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ダイアログ ボックスの余白のセクションが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowOrientation">
+      <MemberSignature Language="C#" Value="public bool AllowOrientation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowOrientation" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PageSetupDialog.AllowOrientation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または (縦と横) ダイアログ ボックスの方向 セクションが有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ダイアログ ボックスの方向 セクションが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowPaper">
+      <MemberSignature Language="C#" Value="public bool AllowPaper { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowPaper" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PageSetupDialog.AllowPaper" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または (用紙サイズと給紙方法) ダイアログ ボックスの 用紙 セクションが有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ダイアログ ボックスの [用紙] セクションが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowPrinter">
+      <MemberSignature Language="C#" Value="public bool AllowPrinter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowPrinter" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PageSetupDialog.AllowPrinter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、**プリンター**ボタンが有効にします。</summary>
+        <value>
+          <see langword="true" />場合、**プリンター**ボタンが有効になっている、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  このプロパティを設定`true`でアプリケーションが実行されている場合は、影響を与えません[!INCLUDE[windowsver](~/includes/windowsver-md.md)]です。 **プリンター**ボタンは表示されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Document">
+      <MemberSignature Language="C#" Value="public System.Drawing.Printing.PrintDocument Document { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Printing.PrintDocument Document" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PageSetupDialog.Document" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Printing.PrintDocument</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値、<see cref="T:System.Drawing.Printing.PrintDocument" />からページの設定を取得します。</summary>
+        <value><see cref="T:System.Drawing.Printing.PrintDocument" />からページの設定を取得します。 既定値は、<see langword="null" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableMetric">
+      <MemberSignature Language="C#" Value="public bool EnableMetric { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableMetric" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PageSetupDialog.EnableMetric" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Always)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するかどうか、余白をミリメートル単位で表示されるときに変換するか自動的に 100 分の 1 インチとの間を示す値。</summary>
+        <value>
+          <see langword="true" />余白は自動的に変換する必要があります。 場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Printing.PageSettings>クラス メジャー<xref:System.Drawing.Printing.PageSettings.Margins%2A?displayProperty=nameWithType>インチ、100 ですが、<xref:System.Windows.Forms.PageSetupDialog>アプリケーションを実行しているシステムのカルチャの設定に応じてミリメートルやインチの余白を設定することができます。  
+  
+ .NET framework version 2.0 このプロパティを設定する必要があります`true`場合は、ドキュメントの余白 (ミリメートル単位) を測定するカルチャで使用できます。 この変換を自分で .NET Framework version 2.0 より前のバージョンで必要となるようを行う場合の既定値を使用する必要があります`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinMargins">
+      <MemberSignature Language="C#" Value="public System.Drawing.Printing.Margins MinMargins { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Printing.Margins MinMargins" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PageSetupDialog.MinMargins" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Printing.Margins</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または余白の最小値を示す値を設定、ユーザーが選択できるインチの 1/10、1/100 でします。</summary>
+        <value>ユーザーが選択できる、余白の最小値 100、インチです。 既定値は、<see langword="null" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageSettings">
+      <MemberSignature Language="C#" Value="public System.Drawing.Printing.PageSettings PageSettings { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Printing.PageSettings PageSettings" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PageSetupDialog.PageSettings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Printing.PageSettings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または変更するページの設定を示す値を設定します。</summary>
+        <value>変更対象の <see cref="T:System.Drawing.Printing.PageSettings" />。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.Windows.Forms.PageSetupDialog>を使用して、 <xref:System.Windows.Forms.PageSetupDialog.PageSettings%2A>、 <xref:System.Windows.Forms.PageSetupDialog.PrinterSettings%2A>、および<xref:System.Windows.Forms.PageSetupDialog.ShowNetwork%2A>プロパティです。 この例を実行する配置を含むフォーム、<xref:System.Windows.Forms.Button>という名前`Button1`、<xref:System.Windows.Forms.ListBox>という名前`ListBox1`、および<xref:System.Windows.Forms.PageSetupDialog>という名前`PageSetupDialog1`です。 ボタンのクリックを確認してくださいイベントは、この例では、イベント処理メソッドに関連付けられています。  
+  
+ [!code-cpp[System.Windows.Forms.PageSetupDialogExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.PageSetupDialogExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.PageSetupDialogExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.PageSetupDialogExample/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.PageSetupDialogExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.PageSetupDialogExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrinterSettings">
+      <MemberSignature Language="C#" Value="public System.Drawing.Printing.PrinterSettings PrinterSettings { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Printing.PrinterSettings PrinterSettings" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PageSetupDialog.PrinterSettings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Printing.PrinterSettings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはユーザーがダイアログ ボックスで [プリンター] ボタンをクリックしたときに変更されているプリンターの設定を設定します。</summary>
+        <value><see cref="T:System.Drawing.Printing.PrinterSettings" />をクリックすると、ユーザー、プリンターを変更します。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.Windows.Forms.PageSetupDialog>を使用して、 <xref:System.Windows.Forms.PageSetupDialog.PageSettings%2A>、 <xref:System.Windows.Forms.PageSetupDialog.PrinterSettings%2A>、および<xref:System.Windows.Forms.PageSetupDialog.ShowNetwork%2A>プロパティです。 この例を実行する配置を含むフォーム、<xref:System.Windows.Forms.Button>という名前`Button1`、<xref:System.Windows.Forms.ListBox>という名前`ListBox1`、および<xref:System.Windows.Forms.PageSetupDialog>という名前`PageSetupDialog1`です。 ボタンのクリックを確認してくださいイベントは、この例では、イベント処理メソッドに関連付けられています。  
+  
+ [!code-cpp[System.Windows.Forms.PageSetupDialogExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.PageSetupDialogExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.PageSetupDialogExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.PageSetupDialogExample/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.PageSetupDialogExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.PageSetupDialogExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public override void Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.PageSetupDialog.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてのオプションを既定値にリセットします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RunDialog">
+      <MemberSignature Language="C#" Value="protected override bool RunDialog (IntPtr hwndOwner);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool RunDialog(native int hwndOwner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.PageSetupDialog.RunDialog(System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hwndOwner" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="hwndOwner">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowHelp">
+      <MemberSignature Language="C#" Value="public bool ShowHelp { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowHelp" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PageSetupDialog.ShowHelp" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、**ヘルプ** ボタンを表示します。</summary>
+        <value>
+          <see langword="true" />場合、**ヘルプ**ボタンが表示されている場合は、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowNetwork">
+      <MemberSignature Language="C#" Value="public bool ShowNetwork { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowNetwork" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PageSetupDialog.ShowNetwork" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、**ネットワーク** ボタンを表示します。</summary>
+        <value>
+          <see langword="true" />場合、**ネットワーク**ボタンが表示されている場合は、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.Windows.Forms.PageSetupDialog>を使用して、 <xref:System.Windows.Forms.PageSetupDialog.PageSettings%2A>、 <xref:System.Windows.Forms.PageSetupDialog.PrinterSettings%2A>、および<xref:System.Windows.Forms.PageSetupDialog.ShowNetwork%2A>プロパティです。 この例を実行する配置を含むフォーム、<xref:System.Windows.Forms.Button>という名前`Button1`、<xref:System.Windows.Forms.ListBox>という名前`ListBox1`、および<xref:System.Windows.Forms.PageSetupDialog>という名前`PageSetupDialog1`です。 ボタンのクリックを確認してくださいイベントは、この例では、イベント処理メソッドに関連付けられています。  
+  
+ [!code-cpp[System.Windows.Forms.PageSetupDialogExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.PageSetupDialogExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.PageSetupDialogExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.PageSetupDialogExample/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.PageSetupDialogExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.PageSetupDialogExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,675 @@
+<Type Name="ImmutableDictionary" FullName="System.Collections.Immutable.ImmutableDictionary">
+  <TypeSignature Language="C#" Value="public static class ImmutableDictionary" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ImmutableDictionary extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.Immutable.ImmutableDictionary" />
+  <AssemblyInfo>
+    <AssemblyName>System.Collections.Immutable</AssemblyName>
+    <AssemblyVersion>1.2.0.0</AssemblyVersion>
+    <AssemblyVersion>1.2.1.0</AssemblyVersion>
+    <AssemblyVersion>1.2.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Collections.Immutable.ImmutableDictionary`2" /> クラスのインスタンスの一連の初期化メソッドを提供します。  
+  
+ [!INCLUDE[immutable_nuget_short](~/includes/immutable-nuget-short-md.md)]</summary>
+    <remarks>To be added.</remarks>
+    <threadsafe>この型はスレッド セーフです。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName="Contains&lt;TKey,TValue&gt;">
+      <MemberSignature Language="C#" Value="public static bool Contains&lt;TKey,TValue&gt; (this System.Collections.Immutable.IImmutableDictionary&lt;TKey,TValue&gt; map, TKey key, TValue value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Contains&lt;TKey, TValue&gt;(class System.Collections.Immutable.IImmutableDictionary`2&lt;!!TKey, !!TValue&gt; map, !!TKey key, !!TValue value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableDictionary.Contains``2(System.Collections.Immutable.IImmutableDictionary{``0,``1},``0,``1)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TKey" />
+        <TypeParameter Name="TValue" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="map" Type="System.Collections.Immutable.IImmutableDictionary&lt;TKey,TValue&gt;" RefType="this" />
+        <Parameter Name="key" Type="TKey" />
+        <Parameter Name="value" Type="TValue" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TKey">変更できないディクショナリ内のキーの型。</typeparam>
+        <typeparam name="TValue">変更できないディクショナリ内の値の型。</typeparam>
+        <param name="map">検索対象の変更できないディクショナリ。</param>
+        <param name="key">変更できないディクショナリ内で検索するキー。</param>
+        <param name="value">キーが見つかった場合は、指定したキーで検索する値。</param>
+        <summary>指定された変更できないディクショナリに、指定したキーと値のペアが格納されているかどうかを判定します。</summary>
+        <returns>
+          指定したキーと値のペアがこのマップに含まれている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create&lt;TKey,TValue&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableDictionary&lt;TKey,TValue&gt; Create&lt;TKey,TValue&gt; ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Immutable.ImmutableDictionary`2&lt;!!TKey, !!TValue&gt; Create&lt;TKey, TValue&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableDictionary.Create``2" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableDictionary&lt;TKey,TValue&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TKey" />
+        <TypeParameter Name="TValue" />
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="TKey">ディクショナリによって格納されるキーの型。</typeparam>
+        <typeparam name="TValue">ディクショナリによって格納される値の型。</typeparam>
+        <summary>空の変更できないディクショナリを作成します。</summary>
+        <returns>空の変更できないディクショナリ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create&lt;TKey,TValue&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableDictionary&lt;TKey,TValue&gt; Create&lt;TKey,TValue&gt; (System.Collections.Generic.IEqualityComparer&lt;TKey&gt; keyComparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Immutable.ImmutableDictionary`2&lt;!!TKey, !!TValue&gt; Create&lt;TKey, TValue&gt;(class System.Collections.Generic.IEqualityComparer`1&lt;!!TKey&gt; keyComparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableDictionary.Create``2(System.Collections.Generic.IEqualityComparer{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableDictionary&lt;TKey,TValue&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TKey" />
+        <TypeParameter Name="TValue" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="keyComparer" Type="System.Collections.Generic.IEqualityComparer&lt;TKey&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TKey">ディクショナリによって格納されるキーの型。</typeparam>
+        <typeparam name="TValue">ディクショナリによって格納される値の型。</typeparam>
+        <param name="keyComparer">ディクショナリ内のキーが等しいかどうかを判定するために使用する実装。</param>
+        <summary>指定されたキーの比較子を使用する、空の変更できないディクショナリを作成します。</summary>
+        <returns>空の変更できないディクショナリ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create&lt;TKey,TValue&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableDictionary&lt;TKey,TValue&gt; Create&lt;TKey,TValue&gt; (System.Collections.Generic.IEqualityComparer&lt;TKey&gt; keyComparer, System.Collections.Generic.IEqualityComparer&lt;TValue&gt; valueComparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Immutable.ImmutableDictionary`2&lt;!!TKey, !!TValue&gt; Create&lt;TKey, TValue&gt;(class System.Collections.Generic.IEqualityComparer`1&lt;!!TKey&gt; keyComparer, class System.Collections.Generic.IEqualityComparer`1&lt;!!TValue&gt; valueComparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableDictionary.Create``2(System.Collections.Generic.IEqualityComparer{``0},System.Collections.Generic.IEqualityComparer{``1})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableDictionary&lt;TKey,TValue&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TKey" />
+        <TypeParameter Name="TValue" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="keyComparer" Type="System.Collections.Generic.IEqualityComparer&lt;TKey&gt;" />
+        <Parameter Name="valueComparer" Type="System.Collections.Generic.IEqualityComparer&lt;TValue&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TKey">ディクショナリによって格納されるキーの型。</typeparam>
+        <typeparam name="TValue">ディクショナリによって格納される値の型。</typeparam>
+        <param name="keyComparer">ディクショナリ内のキーが等しいかどうかを判定するために使用する実装。</param>
+        <param name="valueComparer">ディクショナリ内の値が等しいかどうかを判定するために使用する実装。</param>
+        <summary>指定されたキーの比較子と値の比較子を使用する、空の変更できないディクショナリを作成します。</summary>
+        <returns>空の変更できないディクショナリ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateBuilder&lt;TKey,TValue&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableDictionary&lt;TKey,TValue&gt;.Builder CreateBuilder&lt;TKey,TValue&gt; ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Immutable.ImmutableDictionary`2/Builder&lt;!!TKey, !!TValue&gt; CreateBuilder&lt;TKey, TValue&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableDictionary.CreateBuilder``2" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableDictionary&lt;TKey,TValue&gt;+Builder</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TKey" />
+        <TypeParameter Name="TValue" />
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="TKey">ディクショナリによって格納されるキーの型。</typeparam>
+        <typeparam name="TValue">ディクショナリによって格納される値の型。</typeparam>
+        <summary>新しい変更できないディクショナリ ビルダーを作成します。</summary>
+        <returns>新しいビルダー。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateBuilder&lt;TKey,TValue&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableDictionary&lt;TKey,TValue&gt;.Builder CreateBuilder&lt;TKey,TValue&gt; (System.Collections.Generic.IEqualityComparer&lt;TKey&gt; keyComparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Immutable.ImmutableDictionary`2/Builder&lt;!!TKey, !!TValue&gt; CreateBuilder&lt;TKey, TValue&gt;(class System.Collections.Generic.IEqualityComparer`1&lt;!!TKey&gt; keyComparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableDictionary.CreateBuilder``2(System.Collections.Generic.IEqualityComparer{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableDictionary&lt;TKey,TValue&gt;+Builder</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TKey" />
+        <TypeParameter Name="TValue" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="keyComparer" Type="System.Collections.Generic.IEqualityComparer&lt;TKey&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TKey">ディクショナリによって格納されるキーの型。</typeparam>
+        <typeparam name="TValue">ディクショナリによって格納される値の型。</typeparam>
+        <param name="keyComparer">キーの比較子。</param>
+        <summary>新しい変更できないディクショナリ ビルダーを作成します。</summary>
+        <returns>新しいビルダー。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateBuilder&lt;TKey,TValue&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableDictionary&lt;TKey,TValue&gt;.Builder CreateBuilder&lt;TKey,TValue&gt; (System.Collections.Generic.IEqualityComparer&lt;TKey&gt; keyComparer, System.Collections.Generic.IEqualityComparer&lt;TValue&gt; valueComparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Immutable.ImmutableDictionary`2/Builder&lt;!!TKey, !!TValue&gt; CreateBuilder&lt;TKey, TValue&gt;(class System.Collections.Generic.IEqualityComparer`1&lt;!!TKey&gt; keyComparer, class System.Collections.Generic.IEqualityComparer`1&lt;!!TValue&gt; valueComparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableDictionary.CreateBuilder``2(System.Collections.Generic.IEqualityComparer{``0},System.Collections.Generic.IEqualityComparer{``1})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableDictionary&lt;TKey,TValue&gt;+Builder</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TKey" />
+        <TypeParameter Name="TValue" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="keyComparer" Type="System.Collections.Generic.IEqualityComparer&lt;TKey&gt;" />
+        <Parameter Name="valueComparer" Type="System.Collections.Generic.IEqualityComparer&lt;TValue&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TKey">ディクショナリによって格納されるキーの型。</typeparam>
+        <typeparam name="TValue">ディクショナリによって格納される値の型。</typeparam>
+        <param name="keyComparer">キーの比較子。</param>
+        <param name="valueComparer">値の比較子。</param>
+        <summary>新しい変更できないディクショナリ ビルダーを作成します。</summary>
+        <returns>新しいビルダー。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateRange&lt;TKey,TValue&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableDictionary&lt;TKey,TValue&gt; CreateRange&lt;TKey,TValue&gt; (System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;TKey,TValue&gt;&gt; items);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Immutable.ImmutableDictionary`2&lt;!!TKey, !!TValue&gt; CreateRange&lt;TKey, TValue&gt;(class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Collections.Generic.KeyValuePair`2&lt;!!TKey, !!TValue&gt;&gt; items) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableDictionary.CreateRange``2(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableDictionary&lt;TKey,TValue&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TKey" />
+        <TypeParameter Name="TValue" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="items" Type="System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;TKey,TValue&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TKey">ディクショナリ内のキーの型。</typeparam>
+        <typeparam name="TValue">ディクショナリ内の値の型。</typeparam>
+        <param name="items">変更できなくなる前にディクショナリの作成に使用される項目。</param>
+        <summary>指定された項目を格納する、新しい変更できないディクショナリを作成します。</summary>
+        <returns>指定された項目を格納する、新しい変更できないディクショナリ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateRange&lt;TKey,TValue&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableDictionary&lt;TKey,TValue&gt; CreateRange&lt;TKey,TValue&gt; (System.Collections.Generic.IEqualityComparer&lt;TKey&gt; keyComparer, System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;TKey,TValue&gt;&gt; items);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Immutable.ImmutableDictionary`2&lt;!!TKey, !!TValue&gt; CreateRange&lt;TKey, TValue&gt;(class System.Collections.Generic.IEqualityComparer`1&lt;!!TKey&gt; keyComparer, class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Collections.Generic.KeyValuePair`2&lt;!!TKey, !!TValue&gt;&gt; items) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableDictionary.CreateRange``2(System.Collections.Generic.IEqualityComparer{``0},System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableDictionary&lt;TKey,TValue&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TKey" />
+        <TypeParameter Name="TValue" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="keyComparer" Type="System.Collections.Generic.IEqualityComparer&lt;TKey&gt;" />
+        <Parameter Name="items" Type="System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;TKey,TValue&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TKey">ディクショナリ内のキーの型。</typeparam>
+        <typeparam name="TValue">ディクショナリ内の値の型。</typeparam>
+        <param name="keyComparer">キーの等価性の比較に使用する比較子の実装。</param>
+        <param name="items">変更できなくなる前に、ディクショナリに追加する項目。</param>
+        <summary>指定された項目を格納し、指定されたキーの比較子を使用する、新しい変更できないディクショナリを作成します。</summary>
+        <returns>指定された項目を格納し、指定された比較子を使用する、新しい変更できないディクショナリ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateRange&lt;TKey,TValue&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableDictionary&lt;TKey,TValue&gt; CreateRange&lt;TKey,TValue&gt; (System.Collections.Generic.IEqualityComparer&lt;TKey&gt; keyComparer, System.Collections.Generic.IEqualityComparer&lt;TValue&gt; valueComparer, System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;TKey,TValue&gt;&gt; items);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Immutable.ImmutableDictionary`2&lt;!!TKey, !!TValue&gt; CreateRange&lt;TKey, TValue&gt;(class System.Collections.Generic.IEqualityComparer`1&lt;!!TKey&gt; keyComparer, class System.Collections.Generic.IEqualityComparer`1&lt;!!TValue&gt; valueComparer, class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Collections.Generic.KeyValuePair`2&lt;!!TKey, !!TValue&gt;&gt; items) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableDictionary.CreateRange``2(System.Collections.Generic.IEqualityComparer{``0},System.Collections.Generic.IEqualityComparer{``1},System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableDictionary&lt;TKey,TValue&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TKey" />
+        <TypeParameter Name="TValue" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="keyComparer" Type="System.Collections.Generic.IEqualityComparer&lt;TKey&gt;" />
+        <Parameter Name="valueComparer" Type="System.Collections.Generic.IEqualityComparer&lt;TValue&gt;" />
+        <Parameter Name="items" Type="System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;TKey,TValue&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TKey">ディクショナリ内のキーの型。</typeparam>
+        <typeparam name="TValue">ディクショナリ内の値の型。</typeparam>
+        <param name="keyComparer">キーの等価性の比較に使用する比較子の実装。</param>
+        <param name="valueComparer">値の等価性の比較に使用する比較子の実装。</param>
+        <param name="items">変更できなくなる前に、ディクショナリに追加する項目。</param>
+        <summary>指定された項目を格納し、指定されたキーの比較子を使用する、新しい変更できないディクショナリを作成します。</summary>
+        <returns>指定された項目を格納し、指定された比較子を使用する、新しい変更できないディクショナリ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValueOrDefault&lt;TKey,TValue&gt;">
+      <MemberSignature Language="C#" Value="public static TValue GetValueOrDefault&lt;TKey,TValue&gt; (this System.Collections.Immutable.IImmutableDictionary&lt;TKey,TValue&gt; dictionary, TKey key);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!TValue GetValueOrDefault&lt;TKey, TValue&gt;(class System.Collections.Immutable.IImmutableDictionary`2&lt;!!TKey, !!TValue&gt; dictionary, !!TKey key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableDictionary.GetValueOrDefault``2(System.Collections.Immutable.IImmutableDictionary{``0,``1},``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TValue</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TKey" />
+        <TypeParameter Name="TValue" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="dictionary" Type="System.Collections.Immutable.IImmutableDictionary&lt;TKey,TValue&gt;" RefType="this" />
+        <Parameter Name="key" Type="TKey" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TKey">キーの型。</typeparam>
+        <typeparam name="TValue">値の型。</typeparam>
+        <param name="dictionary">値の取得元となるディクショナリ。</param>
+        <param name="key">検索対象のキー。</param>
+        <summary>一致するキーがディクショナリ内に存在する場合は指定されたキーの値を取得します。</summary>
+        <returns>キーの値または<c>default(TValue)</c>一致するキーが見つからなかった場合です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValueOrDefault&lt;TKey,TValue&gt;">
+      <MemberSignature Language="C#" Value="public static TValue GetValueOrDefault&lt;TKey,TValue&gt; (this System.Collections.Immutable.IImmutableDictionary&lt;TKey,TValue&gt; dictionary, TKey key, TValue defaultValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!TValue GetValueOrDefault&lt;TKey, TValue&gt;(class System.Collections.Immutable.IImmutableDictionary`2&lt;!!TKey, !!TValue&gt; dictionary, !!TKey key, !!TValue defaultValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableDictionary.GetValueOrDefault``2(System.Collections.Immutable.IImmutableDictionary{``0,``1},``0,``1)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TValue</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TKey" />
+        <TypeParameter Name="TValue" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="dictionary" Type="System.Collections.Immutable.IImmutableDictionary&lt;TKey,TValue&gt;" RefType="this" />
+        <Parameter Name="key" Type="TKey" />
+        <Parameter Name="defaultValue" Type="TValue" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TKey">キーの型。</typeparam>
+        <typeparam name="TValue">値の型。</typeparam>
+        <param name="dictionary">値の取得元となるディクショナリ。</param>
+        <param name="key">検索対象のキー。</param>
+        <param name="defaultValue">ディクショナリ内に一致するキーが見つからない場合に返される既定値。</param>
+        <summary>一致するキーがディクショナリ内に存在する場合は指定されたキーの値を取得します。</summary>
+        <returns>キーの値、または一致するキーが見つからなかった場合は <paramref name="defaultValue" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToImmutableDictionary&lt;TKey,TValue&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableDictionary&lt;TKey,TValue&gt; ToImmutableDictionary&lt;TKey,TValue&gt; (this System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;TKey,TValue&gt;&gt; source);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Immutable.ImmutableDictionary`2&lt;!!TKey, !!TValue&gt; ToImmutableDictionary&lt;TKey, TValue&gt;(class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Collections.Generic.KeyValuePair`2&lt;!!TKey, !!TValue&gt;&gt; source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary``2(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableDictionary&lt;TKey,TValue&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TKey" />
+        <TypeParameter Name="TValue" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="source" Type="System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;TKey,TValue&gt;&gt;" RefType="this" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TKey">ディクショナリ内のキーの型。</typeparam>
+        <typeparam name="TValue">ディクショナリ内の値の型。</typeparam>
+        <param name="source">列挙するキーと値のペアのシーケンス。</param>
+        <summary>キーと値のペアのシーケンスを列挙し、その内容の変更できないディクショナリを生成します。</summary>
+        <returns>指定されたシーケンス内のキーと値のペアを格納する、変更できないディクショナリ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToImmutableDictionary&lt;TKey,TValue&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableDictionary&lt;TKey,TValue&gt; ToImmutableDictionary&lt;TKey,TValue&gt; (this System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;TKey,TValue&gt;&gt; source, System.Collections.Generic.IEqualityComparer&lt;TKey&gt; keyComparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Immutable.ImmutableDictionary`2&lt;!!TKey, !!TValue&gt; ToImmutableDictionary&lt;TKey, TValue&gt;(class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Collections.Generic.KeyValuePair`2&lt;!!TKey, !!TValue&gt;&gt; source, class System.Collections.Generic.IEqualityComparer`1&lt;!!TKey&gt; keyComparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary``2(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}},System.Collections.Generic.IEqualityComparer{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableDictionary&lt;TKey,TValue&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TKey" />
+        <TypeParameter Name="TValue" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="source" Type="System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;TKey,TValue&gt;&gt;" RefType="this" />
+        <Parameter Name="keyComparer" Type="System.Collections.Generic.IEqualityComparer&lt;TKey&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TKey">ディクショナリ内のキーの型。</typeparam>
+        <typeparam name="TValue">ディクショナリ内の値の型。</typeparam>
+        <param name="source">列挙するキーと値のペアのシーケンス。</param>
+        <param name="keyComparer">変更できないディクショナリの作成時に使用するキーの比較子。</param>
+        <summary>キーと値のペアのシーケンスを列挙し、指定されたキーの比較子を使用してその内容の変更できないディクショナリを生成します。</summary>
+        <returns>指定されたシーケンス内のキーと値のペアを格納する、変更できないディクショナリ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToImmutableDictionary&lt;TKey,TValue&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableDictionary&lt;TKey,TValue&gt; ToImmutableDictionary&lt;TKey,TValue&gt; (this System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;TKey,TValue&gt;&gt; source, System.Collections.Generic.IEqualityComparer&lt;TKey&gt; keyComparer, System.Collections.Generic.IEqualityComparer&lt;TValue&gt; valueComparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Immutable.ImmutableDictionary`2&lt;!!TKey, !!TValue&gt; ToImmutableDictionary&lt;TKey, TValue&gt;(class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Collections.Generic.KeyValuePair`2&lt;!!TKey, !!TValue&gt;&gt; source, class System.Collections.Generic.IEqualityComparer`1&lt;!!TKey&gt; keyComparer, class System.Collections.Generic.IEqualityComparer`1&lt;!!TValue&gt; valueComparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary``2(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}},System.Collections.Generic.IEqualityComparer{``0},System.Collections.Generic.IEqualityComparer{``1})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableDictionary&lt;TKey,TValue&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TKey" />
+        <TypeParameter Name="TValue" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="source" Type="System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;TKey,TValue&gt;&gt;" RefType="this" />
+        <Parameter Name="keyComparer" Type="System.Collections.Generic.IEqualityComparer&lt;TKey&gt;" />
+        <Parameter Name="valueComparer" Type="System.Collections.Generic.IEqualityComparer&lt;TValue&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TKey">ディクショナリ内のキーの型。</typeparam>
+        <typeparam name="TValue">ディクショナリ内の値の型。</typeparam>
+        <param name="source">列挙するキーと値のペアのシーケンス。</param>
+        <param name="keyComparer">変更できないディクショナリの作成時に使用するキーの比較子。</param>
+        <param name="valueComparer">変更できないディクショナリに使用する値の比較子。</param>
+        <summary>キーと値のペアのシーケンスを列挙し、指定されたキーの比較子と値の比較子を使用してその内容の変更できないディクショナリを生成します。</summary>
+        <returns>指定されたシーケンス内のキーと値のペアを格納する、変更できないディクショナリ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToImmutableDictionary&lt;TSource,TKey&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableDictionary&lt;TKey,TSource&gt; ToImmutableDictionary&lt;TSource,TKey&gt; (this System.Collections.Generic.IEnumerable&lt;TSource&gt; source, Func&lt;TSource,TKey&gt; keySelector);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Immutable.ImmutableDictionary`2&lt;!!TKey, !!TSource&gt; ToImmutableDictionary&lt;TSource, TKey&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!TSource&gt; source, class System.Func`2&lt;!!TSource, !!TKey&gt; keySelector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableDictionary&lt;TKey,TSource&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TSource" />
+        <TypeParameter Name="TKey" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="source" Type="System.Collections.Generic.IEnumerable&lt;TSource&gt;" RefType="this" />
+        <Parameter Name="keySelector" Type="System.Func&lt;TSource,TKey&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TSource">ソース コレクション内の要素の型。</typeparam>
+        <typeparam name="TKey">結果として作成される変更できないディクショナリ内のキーの型。</typeparam>
+        <param name="source">変更できないディクショナリの生成に使用されるソース コレクション。</param>
+        <param name="keySelector">変更できないディクショナリのキーの変換に使用される関数。</param>
+        <summary>ソース キーに変換関数を適用し、変更できないディクショナリを既存の要素のコレクションから作成します。</summary>
+        <returns><paramref name="keySelector" /> の適用によってキーが変換された、<paramref name="source" /> の要素を格納する変更できないディクショナリ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToImmutableDictionary&lt;TSource,TKey&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableDictionary&lt;TKey,TSource&gt; ToImmutableDictionary&lt;TSource,TKey&gt; (this System.Collections.Generic.IEnumerable&lt;TSource&gt; source, Func&lt;TSource,TKey&gt; keySelector, System.Collections.Generic.IEqualityComparer&lt;TKey&gt; keyComparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Immutable.ImmutableDictionary`2&lt;!!TKey, !!TSource&gt; ToImmutableDictionary&lt;TSource, TKey&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!TSource&gt; source, class System.Func`2&lt;!!TSource, !!TKey&gt; keySelector, class System.Collections.Generic.IEqualityComparer`1&lt;!!TKey&gt; keyComparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Collections.Generic.IEqualityComparer{``1})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableDictionary&lt;TKey,TSource&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TSource" />
+        <TypeParameter Name="TKey" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="source" Type="System.Collections.Generic.IEnumerable&lt;TSource&gt;" RefType="this" />
+        <Parameter Name="keySelector" Type="System.Func&lt;TSource,TKey&gt;" />
+        <Parameter Name="keyComparer" Type="System.Collections.Generic.IEqualityComparer&lt;TKey&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TSource">ソース コレクション内の要素の型。</typeparam>
+        <typeparam name="TKey">結果として作成される変更できないディクショナリ内のキーの型。</typeparam>
+        <param name="source">変更できないディクショナリの生成に使用されるソース コレクション。</param>
+        <param name="keySelector">変更できないディクショナリのキーの変換に使用される関数。</param>
+        <param name="keyComparer">ディクショナリに使用するキーの比較子。</param>
+        <summary>シーケンスの変換に基づき、変更できないディクショナリを作成します。</summary>
+        <returns><paramref name="keySelector" /> の適用によってキーが変換された、<paramref name="source" /> の要素を格納する変更できないディクショナリ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToImmutableDictionary&lt;TSource,TKey,TValue&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableDictionary&lt;TKey,TValue&gt; ToImmutableDictionary&lt;TSource,TKey,TValue&gt; (this System.Collections.Generic.IEnumerable&lt;TSource&gt; source, Func&lt;TSource,TKey&gt; keySelector, Func&lt;TSource,TValue&gt; elementSelector);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Immutable.ImmutableDictionary`2&lt;!!TKey, !!TValue&gt; ToImmutableDictionary&lt;TSource, TKey, TValue&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!TSource&gt; source, class System.Func`2&lt;!!TSource, !!TKey&gt; keySelector, class System.Func`2&lt;!!TSource, !!TValue&gt; elementSelector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableDictionary&lt;TKey,TValue&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TSource" />
+        <TypeParameter Name="TKey" />
+        <TypeParameter Name="TValue" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="source" Type="System.Collections.Generic.IEnumerable&lt;TSource&gt;" RefType="this" />
+        <Parameter Name="keySelector" Type="System.Func&lt;TSource,TKey&gt;" />
+        <Parameter Name="elementSelector" Type="System.Func&lt;TSource,TValue&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TSource">シーケンス内の要素の型。</typeparam>
+        <typeparam name="TKey">結果として生成されたディクショナリ内のキーの型。</typeparam>
+        <typeparam name="TValue">結果として生成されたディクショナリ内の値の型。</typeparam>
+        <param name="source">ディクショナリを生成するために列挙するシーケンス。</param>
+        <param name="keySelector">各シーケンス要素からディクショナリのキーを生成する関数。</param>
+        <param name="elementSelector">各シーケンス要素からディクショナリの値を生成する関数。</param>
+        <summary>シーケンスを列挙して変換し、その内容の変更できないディクショナリを生成します。</summary>
+        <returns>指定されたシーケンス内の項目を格納する、変更できないディクショナリ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToImmutableDictionary&lt;TSource,TKey,TValue&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableDictionary&lt;TKey,TValue&gt; ToImmutableDictionary&lt;TSource,TKey,TValue&gt; (this System.Collections.Generic.IEnumerable&lt;TSource&gt; source, Func&lt;TSource,TKey&gt; keySelector, Func&lt;TSource,TValue&gt; elementSelector, System.Collections.Generic.IEqualityComparer&lt;TKey&gt; keyComparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Immutable.ImmutableDictionary`2&lt;!!TKey, !!TValue&gt; ToImmutableDictionary&lt;TSource, TKey, TValue&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!TSource&gt; source, class System.Func`2&lt;!!TSource, !!TKey&gt; keySelector, class System.Func`2&lt;!!TSource, !!TValue&gt; elementSelector, class System.Collections.Generic.IEqualityComparer`1&lt;!!TKey&gt; keyComparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2},System.Collections.Generic.IEqualityComparer{``1})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableDictionary&lt;TKey,TValue&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TSource" />
+        <TypeParameter Name="TKey" />
+        <TypeParameter Name="TValue" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="source" Type="System.Collections.Generic.IEnumerable&lt;TSource&gt;" RefType="this" />
+        <Parameter Name="keySelector" Type="System.Func&lt;TSource,TKey&gt;" />
+        <Parameter Name="elementSelector" Type="System.Func&lt;TSource,TValue&gt;" />
+        <Parameter Name="keyComparer" Type="System.Collections.Generic.IEqualityComparer&lt;TKey&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TSource">シーケンス内の要素の型。</typeparam>
+        <typeparam name="TKey">結果として生成されたディクショナリ内のキーの型。</typeparam>
+        <typeparam name="TValue">結果として生成されたディクショナリ内の値の型。</typeparam>
+        <param name="source">ディクショナリを生成するために列挙するシーケンス。</param>
+        <param name="keySelector">各シーケンス要素からディクショナリのキーを生成する関数。</param>
+        <param name="elementSelector">各シーケンス要素からディクショナリの値を生成する関数。</param>
+        <param name="keyComparer">ディクショナリに使用するキーの比較子。</param>
+        <summary>シーケンスを列挙して変換し、指定されたキーの比較子を使用してその内容の変更できないディクショナリを生成します。</summary>
+        <returns>指定されたシーケンス内の項目を格納する、変更できないディクショナリ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToImmutableDictionary&lt;TSource,TKey,TValue&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableDictionary&lt;TKey,TValue&gt; ToImmutableDictionary&lt;TSource,TKey,TValue&gt; (this System.Collections.Generic.IEnumerable&lt;TSource&gt; source, Func&lt;TSource,TKey&gt; keySelector, Func&lt;TSource,TValue&gt; elementSelector, System.Collections.Generic.IEqualityComparer&lt;TKey&gt; keyComparer, System.Collections.Generic.IEqualityComparer&lt;TValue&gt; valueComparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Immutable.ImmutableDictionary`2&lt;!!TKey, !!TValue&gt; ToImmutableDictionary&lt;TSource, TKey, TValue&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!TSource&gt; source, class System.Func`2&lt;!!TSource, !!TKey&gt; keySelector, class System.Func`2&lt;!!TSource, !!TValue&gt; elementSelector, class System.Collections.Generic.IEqualityComparer`1&lt;!!TKey&gt; keyComparer, class System.Collections.Generic.IEqualityComparer`1&lt;!!TValue&gt; valueComparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2},System.Collections.Generic.IEqualityComparer{``1},System.Collections.Generic.IEqualityComparer{``2})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableDictionary&lt;TKey,TValue&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TSource" />
+        <TypeParameter Name="TKey" />
+        <TypeParameter Name="TValue" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="source" Type="System.Collections.Generic.IEnumerable&lt;TSource&gt;" RefType="this" />
+        <Parameter Name="keySelector" Type="System.Func&lt;TSource,TKey&gt;" />
+        <Parameter Name="elementSelector" Type="System.Func&lt;TSource,TValue&gt;" />
+        <Parameter Name="keyComparer" Type="System.Collections.Generic.IEqualityComparer&lt;TKey&gt;" />
+        <Parameter Name="valueComparer" Type="System.Collections.Generic.IEqualityComparer&lt;TValue&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TSource">シーケンス内の要素の型。</typeparam>
+        <typeparam name="TKey">結果として生成されたディクショナリ内のキーの型。</typeparam>
+        <typeparam name="TValue">結果として生成されたディクショナリ内の値の型。</typeparam>
+        <param name="source">ディクショナリを生成するために列挙するシーケンス。</param>
+        <param name="keySelector">各シーケンス要素からディクショナリのキーを生成する関数。</param>
+        <param name="elementSelector">各シーケンス要素からディクショナリの値を生成する関数。</param>
+        <param name="keyComparer">ディクショナリに使用するキーの比較子。</param>
+        <param name="valueComparer">ディクショナリに使用する値の比較子。</param>
+        <summary>シーケンスを列挙して変換し、指定されたキーの比較子および値の比較子を使用してその内容の変更できないディクショナリを生成します。</summary>
+        <returns>指定されたシーケンス内の項目を格納する、変更できないディクショナリ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

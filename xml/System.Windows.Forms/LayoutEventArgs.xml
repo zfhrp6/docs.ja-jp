@@ -1,0 +1,177 @@
+<Type Name="LayoutEventArgs" FullName="System.Windows.Forms.LayoutEventArgs">
+  <TypeSignature Language="C#" Value="public sealed class LayoutEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit LayoutEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.LayoutEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Forms.Control.Layout" /> イベントのデータを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サイズ変更などのコントロールへの変更、表示子コントロールを非表示にして追加または削除子コントロールなります。 コントロールのために必要なレイアウトに子コントロールです。 A<xref:System.Windows.Forms.LayoutEventArgs>が変更されている子コントロールとその影響を受けたプロパティを指定します。 たとえば、コントロールが表示される最後のレイアウト操作の後、<xref:System.Windows.Forms.Control.Visible%2A>プロパティが影響を受けます。  
+  
+ <xref:System.Windows.Forms.LayoutEventArgs.AffectedControl%2A>と<xref:System.Windows.Forms.LayoutEventArgs.AffectedProperty%2A>プロパティに設定されます`null`場合は値が指定されていない場合に、<xref:System.Windows.Forms.Control.PerformLayout%2A>メソッドが呼び出されました。  
+  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.LayoutEventArgs.AffectedProperty%2A>と<xref:System.Windows.Forms.LayoutEventArgs.AffectedControl%2A>プロパティとして<xref:System.Windows.Forms.LayoutEventHandler>Windows フォームとコントロールと Windows フォームにさまざまなプロパティの変更とそのコントロールのサイズを調整するための引数。  
+  
+ [!code-cpp[LayoutEventArgs#1](~/samples/snippets/cpp/VS_Snippets_Winforms/LayoutEventArgs/CPP/form1.cpp#1)]
+ [!code-csharp[LayoutEventArgs#1](~/samples/snippets/csharp/VS_Snippets_Winforms/LayoutEventArgs/CS/form1.cs#1)]
+ [!code-vb[LayoutEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/LayoutEventArgs/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LayoutEventArgs (System.ComponentModel.IComponent affectedComponent, string affectedProperty);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ComponentModel.IComponent affectedComponent, string affectedProperty) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.LayoutEventArgs.#ctor(System.ComponentModel.IComponent,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="affectedComponent" Type="System.ComponentModel.IComponent" />
+        <Parameter Name="affectedProperty" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="affectedComponent"><see cref="T:System.ComponentModel.Component" />レイアウトの変更により影響を受けます。</param>
+        <param name="affectedProperty">レイアウトの変更により影響を受けるプロパティ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.LayoutEventArgs" />クラスの指定されたコンポーネントと影響を受けたプロパティ。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LayoutEventArgs (System.Windows.Forms.Control affectedControl, string affectedProperty);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.Control affectedControl, string affectedProperty) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.LayoutEventArgs.#ctor(System.Windows.Forms.Control,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="affectedControl" Type="System.Windows.Forms.Control" />
+        <Parameter Name="affectedProperty" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="affectedControl"><see cref="T:System.Windows.Forms.Control" />レイアウトの変更により影響を受けます。</param>
+        <param name="affectedProperty">レイアウトの変更により影響を受けるプロパティ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.LayoutEventArgs" />指定されたコントロールと影響を受けたプロパティを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AffectedComponent">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.IComponent AffectedComponent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.IComponent AffectedComponent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.LayoutEventArgs.AffectedComponent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.IComponent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.ComponentModel.Component" />レイアウトの変更により影響を受けます。</summary>
+        <value><see cref="T:System.ComponentModel.IComponent" />を表す、<see cref="T:System.ComponentModel.Component" />レイアウトの変更により影響を受けます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.Control.Layout?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.Control>、ように、<xref:System.Windows.Forms.Button>または<xref:System.Windows.Forms.ComboBox>です。 インスタンスを名前`Control1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.Control.Layout?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#51](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#51)]
+ [!code-vb[System.Windows.Forms.EventExamples#51](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#51)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AffectedControl">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Control AffectedControl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.Control AffectedControl" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.LayoutEventArgs.AffectedControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Control</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変更により影響を受けた子コントロールを取得します。</summary>
+        <value>子<see cref="T:System.Windows.Forms.Control" />変更の影響をします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.LayoutEventArgs.AffectedControl%2A>プロパティに設定されている`null`場合は値が指定されなかったときに、<xref:System.Windows.Forms.Control.PerformLayout%2A>メソッドが呼び出されました。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.LayoutEventArgs.AffectedProperty%2A>と<xref:System.Windows.Forms.LayoutEventArgs.AffectedControl%2A>プロパティとして<xref:System.Windows.Forms.LayoutEventHandler>Windows フォームとコントロールと Windows フォームにさまざまなプロパティの変更とそのコントロールのサイズを調整するための引数。  
+  
+ [!code-cpp[LayoutEventArgs#1](~/samples/snippets/cpp/VS_Snippets_Winforms/LayoutEventArgs/CPP/form1.cpp#1)]
+ [!code-csharp[LayoutEventArgs#1](~/samples/snippets/csharp/VS_Snippets_Winforms/LayoutEventArgs/CS/form1.cs#1)]
+ [!code-vb[LayoutEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/LayoutEventArgs/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AffectedProperty">
+      <MemberSignature Language="C#" Value="public string AffectedProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AffectedProperty" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.LayoutEventArgs.AffectedProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変更により影響を受けたプロパティを取得します。</summary>
+        <value>変更により影響を受けたプロパティ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 子コントロールが表示される最後のレイアウト操作では、以降の場合、<xref:System.Windows.Forms.Control.Visible%2A>プロパティが影響を受けます。 <xref:System.Windows.Forms.LayoutEventArgs.AffectedProperty%2A>プロパティに設定されている`null`場合は値が指定されなかったときに、<xref:System.Windows.Forms.Control.PerformLayout%2A>メソッドが呼び出されました。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.LayoutEventArgs.AffectedProperty%2A>と<xref:System.Windows.Forms.LayoutEventArgs.AffectedControl%2A>プロパティとして<xref:System.Windows.Forms.LayoutEventHandler>Windows フォームとコントロールと Windows フォームにさまざまなプロパティの変更とそのコントロールのサイズを調整するための引数。  
+  
+ [!code-cpp[LayoutEventArgs#1](~/samples/snippets/cpp/VS_Snippets_Winforms/LayoutEventArgs/CPP/form1.cpp#1)]
+ [!code-csharp[LayoutEventArgs#1](~/samples/snippets/csharp/VS_Snippets_Winforms/LayoutEventArgs/CS/form1.cs#1)]
+ [!code-vb[LayoutEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/LayoutEventArgs/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,286 @@
+<Type Name="TypedMessageConverter" FullName="System.ServiceModel.Description.TypedMessageConverter">
+  <TypeSignature Language="C#" Value="public abstract class TypedMessageConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit TypedMessageConverter extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Description.TypedMessageConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>型指定されたメッセージと型指定のないメッセージの間の変換を行います。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、型指定されたメッセージと型指定のないメッセージの間の変換を行う機能を提供します。 型指定されたメッセージは、<xref:System.ServiceModel.MessageContractAttribute> 属性の注釈を含む型のインスタンスです。 型指定のないメッセージは、<xref:System.ServiceModel.Channels.Message> クラスのインスタンスであるメッセージです。  型に <xref:System.ServiceModel.MessageContractAttribute> の注釈を付けてカスタム メッセージ型を作成し、それを、このクラスで提供されるメソッドを使用して型指定のない <xref:System.ServiceModel.Channels.Message> インスタンスに変換することができます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TypedMessageConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.TypedMessageConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Description.TypedMessageConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Description.TypedMessageConverter Create (Type messageContract, string action);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Description.TypedMessageConverter Create(class System.Type messageContract, string action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.TypedMessageConverter.Create(System.Type,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.TypedMessageConverter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageContract" Type="System.Type" />
+        <Parameter Name="action" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="messageContract"><see cref="T:System.Type" /> の注釈を含む <see cref="T:System.ServiceModel.MessageContractAttribute" /> であるメッセージ コントラクト型。</param>
+        <param name="action">アクション文字列。</param>
+        <summary><see cref="T:System.ServiceModel.Description.TypedMessageConverter" /> のインスタンスを返す静的メソッドを表します。</summary>
+        <returns><see cref="T:System.ServiceModel.Description.TypedMessageConverter" /> のインスタンス。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">引数は、します。<see langword="null" /></exception>
+        <exception cref="T:System.ArgumentException">指定したメッセージ コントラクト型には適用 MessageContractAttribute はありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Description.TypedMessageConverter Create (Type messageContract, string action, System.ServiceModel.DataContractFormatAttribute formatterAttribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Description.TypedMessageConverter Create(class System.Type messageContract, string action, class System.ServiceModel.DataContractFormatAttribute formatterAttribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.TypedMessageConverter.Create(System.Type,System.String,System.ServiceModel.DataContractFormatAttribute)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.TypedMessageConverter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageContract" Type="System.Type" />
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="formatterAttribute" Type="System.ServiceModel.DataContractFormatAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="messageContract"><see cref="T:System.Type" /> の注釈を含む <see cref="T:System.ServiceModel.MessageContractAttribute" /> であるメッセージ コントラクト型。</param>
+        <param name="action">アクション文字列。</param>
+        <param name="formatterAttribute">使用されるフォーマッタを指定する <see cref="T:System.ServiceModel.DataContractFormatAttribute" />。</param>
+        <summary><see cref="T:System.ServiceModel.Description.TypedMessageConverter" /> のインスタンスを返す静的メソッドを表します。</summary>
+        <returns><see cref="T:System.ServiceModel.Description.TypedMessageConverter" /> のインスタンス。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">引数は、します。<see langword="null" /></exception>
+        <exception cref="T:System.ArgumentException">指定したメッセージ コントラクト型には適用 MessageContractAttribute はありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Description.TypedMessageConverter Create (Type messageContract, string action, System.ServiceModel.XmlSerializerFormatAttribute formatterAttribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Description.TypedMessageConverter Create(class System.Type messageContract, string action, class System.ServiceModel.XmlSerializerFormatAttribute formatterAttribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.TypedMessageConverter.Create(System.Type,System.String,System.ServiceModel.XmlSerializerFormatAttribute)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.TypedMessageConverter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageContract" Type="System.Type" />
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="formatterAttribute" Type="System.ServiceModel.XmlSerializerFormatAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="messageContract"><see cref="T:System.Type" /> の注釈を含む <see cref="T:System.ServiceModel.MessageContractAttribute" /> であるメッセージ コントラクト型。</param>
+        <param name="action">アクション文字列。</param>
+        <param name="formatterAttribute">使用されるフォーマッタを指定する <see cref="T:System.ServiceModel.XmlSerializerFormatAttribute" />。</param>
+        <summary><see cref="T:System.ServiceModel.Description.TypedMessageConverter" /> のインスタンスを返す静的メソッドを表します。</summary>
+        <returns><see cref="T:System.ServiceModel.Description.TypedMessageConverter" /> のインスタンス。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">引数は、します。<see langword="null" /></exception>
+        <exception cref="T:System.ArgumentException">指定したメッセージ コントラクト型には適用 MessageContractAttribute はありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Description.TypedMessageConverter Create (Type messageContract, string action, string defaultNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Description.TypedMessageConverter Create(class System.Type messageContract, string action, string defaultNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.TypedMessageConverter.Create(System.Type,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.TypedMessageConverter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageContract" Type="System.Type" />
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="defaultNamespace" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="messageContract"><see cref="T:System.Type" /> の注釈を含む <see cref="T:System.ServiceModel.MessageContractAttribute" /> であるメッセージ コントラクト型。</param>
+        <param name="action">アクション文字列。</param>
+        <param name="defaultNamespace">名前空間。</param>
+        <summary><see cref="T:System.ServiceModel.Description.TypedMessageConverter" /> のインスタンスを返す静的メソッドを表します。</summary>
+        <returns><see cref="T:System.ServiceModel.Description.TypedMessageConverter" /> のインスタンス。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">引数は、します。<see langword="null" /></exception>
+        <exception cref="T:System.ArgumentException">指定したメッセージ コントラクト型には適用 MessageContractAttribute はありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Description.TypedMessageConverter Create (Type messageContract, string action, string defaultNamespace, System.ServiceModel.DataContractFormatAttribute formatterAttribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Description.TypedMessageConverter Create(class System.Type messageContract, string action, string defaultNamespace, class System.ServiceModel.DataContractFormatAttribute formatterAttribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.TypedMessageConverter.Create(System.Type,System.String,System.String,System.ServiceModel.DataContractFormatAttribute)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.TypedMessageConverter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageContract" Type="System.Type" />
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="defaultNamespace" Type="System.String" />
+        <Parameter Name="formatterAttribute" Type="System.ServiceModel.DataContractFormatAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="messageContract"><see cref="T:System.Type" /> の注釈を含む <see cref="T:System.ServiceModel.MessageContractAttribute" /> であるメッセージ コントラクト型。</param>
+        <param name="action">アクション文字列。</param>
+        <param name="defaultNamespace">名前空間。</param>
+        <param name="formatterAttribute">使用されるフォーマッタを指定する <see cref="T:System.ServiceModel.DataContractFormatAttribute" />。</param>
+        <summary><see cref="T:System.ServiceModel.Description.TypedMessageConverter" /> のインスタンスを返す静的メソッドを表します。</summary>
+        <returns><see cref="T:System.ServiceModel.Description.TypedMessageConverter" /> のインスタンス。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">引数は、します。<see langword="null" /></exception>
+        <exception cref="T:System.ArgumentException">指定したメッセージ コントラクト型には適用 MessageContractAttribute はありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Description.TypedMessageConverter Create (Type messageContract, string action, string defaultNamespace, System.ServiceModel.XmlSerializerFormatAttribute formatterAttribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Description.TypedMessageConverter Create(class System.Type messageContract, string action, string defaultNamespace, class System.ServiceModel.XmlSerializerFormatAttribute formatterAttribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.TypedMessageConverter.Create(System.Type,System.String,System.String,System.ServiceModel.XmlSerializerFormatAttribute)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.TypedMessageConverter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageContract" Type="System.Type" />
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="defaultNamespace" Type="System.String" />
+        <Parameter Name="formatterAttribute" Type="System.ServiceModel.XmlSerializerFormatAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="messageContract"><see cref="T:System.Type" /> の注釈を含む <see cref="T:System.ServiceModel.MessageContractAttribute" /> であるメッセージ コントラクト型。</param>
+        <param name="action">アクション文字列。</param>
+        <param name="defaultNamespace">名前空間。</param>
+        <param name="formatterAttribute">使用されるフォーマッタを指定する <see cref="T:System.ServiceModel.XmlSerializerFormatAttribute" />。</param>
+        <summary><see cref="T:System.ServiceModel.Description.TypedMessageConverter" /> のインスタンスを返す静的メソッドを表します。</summary>
+        <returns><see cref="T:System.ServiceModel.Description.TypedMessageConverter" /> のインスタンス。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">引数は、します。<see langword="null" /></exception>
+        <exception cref="T:System.ArgumentException">指定したメッセージ コントラクト型には適用 MessageContractAttribute はありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FromMessage">
+      <MemberSignature Language="C#" Value="public abstract object FromMessage (System.ServiceModel.Channels.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object FromMessage(class System.ServiceModel.Channels.Message message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.TypedMessageConverter.FromMessage(System.ServiceModel.Channels.Message)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+      </Parameters>
+      <Docs>
+        <param name="message">型指定のないメッセージ。</param>
+        <summary>指定した <see cref="T:System.ServiceModel.Channels.Message" /> インスタンスから型指定されたメッセージを作成します。</summary>
+        <returns>型指定されたメッセージであるオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、型指定のない [!INCLUDE[indigo1](~/includes/indigo1-md.md)] メッセージ (<xref:System.ServiceModel.Channels.Message> のインスタンス) を取得し、それを、型指定されたメッセージ (<xref:System.ServiceModel.MessageContractAttribute> の注釈を含む型のインスタンス) に変換します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToMessage">
+      <MemberSignature Language="C#" Value="public abstract System.ServiceModel.Channels.Message ToMessage (object typedMessage);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.Message ToMessage(object typedMessage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.TypedMessageConverter.ToMessage(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.Message</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typedMessage" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="typedMessage">型指定されたメッセージ。</param>
+        <summary>指定した型指定されたメッセージから、<see cref="T:System.ServiceModel.Channels.Message" /> のインスタンスを作成します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.Message" /> のインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToMessage">
+      <MemberSignature Language="C#" Value="public abstract System.ServiceModel.Channels.Message ToMessage (object typedMessage, System.ServiceModel.Channels.MessageVersion version);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.Message ToMessage(object typedMessage, class System.ServiceModel.Channels.MessageVersion version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.TypedMessageConverter.ToMessage(System.Object,System.ServiceModel.Channels.MessageVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.Message</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typedMessage" Type="System.Object" />
+        <Parameter Name="version" Type="System.ServiceModel.Channels.MessageVersion" />
+      </Parameters>
+      <Docs>
+        <param name="typedMessage">型指定されたメッセージ。</param>
+        <param name="version">メッセージに関連付けられている SOAP と WS-Addressing のバージョンを指定する <see cref="T:System.ServiceModel.Channels.MessageVersion" />。</param>
+        <summary>指定したバージョンを使用して、指定した型指定されたメッセージから、<see cref="T:System.ServiceModel.Channels.Message" /> のインスタンスを作成します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.Message" /> のインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

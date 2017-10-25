@@ -1,0 +1,306 @@
+<Type Name="WebReferenceCollection" FullName="System.Web.Services.Description.WebReferenceCollection">
+  <TypeSignature Language="C#" Value="public sealed class WebReferenceCollection : System.Collections.CollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WebReferenceCollection extends System.Collections.CollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Description.WebReferenceCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.CollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コレクションを記述<see cref="T:System.Web.Services.Description.WebReference" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスを使用してのコレクションを渡す<xref:System.Web.Services.Description.WebReference>オブジェクトを静的なを呼び出すときに<xref:System.Web.Services.Description.ServiceDescriptionImporter.GenerateWebReferences%2A>のメソッド、<xref:System.Web.Services.Description.ServiceDescriptionImporter>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、このクラスの使用を示しています。  
+  
+ [!code-csharp[WebServices_GenerateWebReferences#0](~/samples/snippets/csharp/VS_Snippets_Remoting/WebServices_GenerateWebReferences/CS/webreference.cs#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebReferenceCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.WebReferenceCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Description.WebReferenceCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このコンス トラクターの使用を示します。 このコード例に示されている例の一部である、<xref:System.Web.Services.Description.WebReferenceCollection>クラスです。  
+  
+ [!code-csharp[WebServices_GenerateWebReferences#6](~/samples/snippets/csharp/VS_Snippets_Remoting/WebServices_GenerateWebReferences/CS/webreference.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (System.Web.Services.Description.WebReference webReference);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Add(class System.Web.Services.Description.WebReference webReference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.WebReferenceCollection.Add(System.Web.Services.Description.WebReference)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="webReference" Type="System.Web.Services.Description.WebReference" />
+      </Parameters>
+      <Docs>
+        <param name="webReference">追加する Web 参照します。</param>
+        <summary>追加、<see cref="T:System.Web.Services.Description.WebReference" />コレクションへのインスタンス。</summary>
+        <returns>Web 参照の追加のインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web 参照の追加のインデックスは、最後に追加された Web 参照のインデックスより 1 だけ大きい数値です。 インデックスは、0 から始まります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、このメソッドの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Services.Description.WebReferenceCollection>クラスです。  
+  
+ [!code-csharp[WebServices_GenerateWebReferences#6](~/samples/snippets/csharp/VS_Snippets_Remoting/WebServices_GenerateWebReferences/CS/webreference.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Web.Services.Description.WebReference webReference);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Web.Services.Description.WebReference webReference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.WebReferenceCollection.Contains(System.Web.Services.Description.WebReference)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="webReference" Type="System.Web.Services.Description.WebReference" />
+      </Parameters>
+      <Docs>
+        <param name="webReference">検索する Web 参照します。</param>
+        <summary>コレクションが含まれるかどうかを判断する特定<see cref="T:System.Web.Services.Description.WebReference" />インスタンス。</summary>
+        <returns>
+          <see langword="true" />コレクションには、特定の Web 参照インスタンス; が含まれている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Web.Services.Description.WebReferenceCollection.Contains%2A> メソッドを使用するコード例を次に示します。  
+  
+ [!code-csharp[System.Web.Services.Description.WebReferenceCollection#10](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Web.Services.Description.WebReferenceCollection/CS/webreference.cs#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Web.Services.Description.WebReference[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Web.Services.Description.WebReference[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.WebReferenceCollection.CopyTo(System.Web.Services.Description.WebReference[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Web.Services.Description.WebReference[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">コレクションのメンバーのコピー先となる Web 参照の配列。</param>
+        <param name="index">コピーを開始する位置を示す配列のインデックス。</param>
+        <summary>メンバーをコピーを指定した配列にコレクションの指定した配列インデックスを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インデックスは、0 から始まります。 配列は、指定した配列インデックスを開始位置としてコピーされたコレクションの内容に合わせて十分な大きさである必要があります。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Services.Description.WebReferenceCollection.CopyTo%2A> メソッドを使用するコード例を次に示します。  
+  
+ [!code-csharp[System.Web.Services.Description.WebReferenceCollection#10](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Web.Services.Description.WebReferenceCollection/CS/webreference.cs#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Web.Services.Description.WebReference webReference);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Web.Services.Description.WebReference webReference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.WebReferenceCollection.IndexOf(System.Web.Services.Description.WebReference)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="webReference" Type="System.Web.Services.Description.WebReference" />
+      </Parameters>
+      <Docs>
+        <param name="webReference">検索する Web 参照します。</param>
+        <summary>指定したインデックスを決定<see cref="T:System.Web.Services.Description.WebReference" />インスタンス。</summary>
+        <returns>指定された Web 参照またはコレクションに指定された Web 参照が含まれていない場合は-1 のインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インデックスは、0 から始まります。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Services.Description.WebReferenceCollection.IndexOf%2A> メソッドを使用するコード例を次に示します。  
+  
+ [!code-csharp[System.Web.Services.Description.WebReferenceCollection#10](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Web.Services.Description.WebReferenceCollection/CS/webreference.cs#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.Web.Services.Description.WebReference webReference);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.Web.Services.Description.WebReference webReference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.WebReferenceCollection.Insert(System.Int32,System.Web.Services.Description.WebReference)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="webReference" Type="System.Web.Services.Description.WebReference" />
+      </Parameters>
+      <Docs>
+        <param name="index">指定した Web 参照を挿入する位置のインデックス。</param>
+        <param name="webReference">挿入する Web 参照します。</param>
+        <summary>指定した挿入<see cref="T:System.Web.Services.Description.WebReference" />インスタンスの指定したインデックス位置。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションのメンバーのインデックスのインデックスよりも高いを持つ`index`それぞれ 1 ずつ増分されます。 インデックスは、0 から始まります。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Services.Description.WebReferenceCollection.Insert%2A> メソッドを使用するコード例を次に示します。  
+  
+ [!code-csharp[System.Web.Services.Description.WebReferenceCollection#10](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Web.Services.Description.WebReferenceCollection/CS/webreference.cs#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.WebReference this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.WebReference Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.WebReferenceCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.WebReference</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">Web 参照のインデックス。</param>
+        <summary>取得または設定、<see cref="T:System.Web.Services.Description.WebReference" />インスタンスの指定したインデックス位置。</summary>
+        <value><see cref="T:System.Web.Services.Description.WebReference" />インスタンスの指定したインデックス位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インデックスは、0 から始まります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Services.Description.WebReferenceCollection.Item%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Services.Description.WebReferenceCollection#10](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Web.Services.Description.WebReferenceCollection/CS/webreference.cs#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Web.Services.Description.WebReference webReference);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Web.Services.Description.WebReference webReference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.WebReferenceCollection.Remove(System.Web.Services.Description.WebReference)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="webReference" Type="System.Web.Services.Description.WebReference" />
+      </Parameters>
+      <Docs>
+        <param name="webReference">削除する Web 参照します。</param>
+        <summary>指定した <see cref="T:System.Web.Services.Description.WebReference" /> インスタンスをコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションに指定された Web 参照の複数のインスタンスが含まれている場合は、最初のインスタンスのみが削除されます。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Services.Description.WebReferenceCollection.Remove%2A> メソッドを使用するコード例を次に示します。  
+  
+ [!code-csharp[System.Web.Services.Description.WebReferenceCollection#10](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Web.Services.Description.WebReferenceCollection/CS/webreference.cs#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

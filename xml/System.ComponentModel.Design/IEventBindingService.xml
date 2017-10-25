@@ -1,0 +1,351 @@
+<Type Name="IEventBindingService" FullName="System.ComponentModel.Design.IEventBindingService">
+  <TypeSignature Language="C#" Value="public interface IEventBindingService" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IEventBindingService" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.IEventBindingService" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コンポーネント イベントのイベント ハンドラーを登録するためのサービスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント バインディング サービスは、デザイナーのコードからのコンポーネントのイベントをイベント ハンドラーをリンクする方法を提供します。  
+  
+ 使用してコンポーネント イベントをイベント ハンドラーをリンクする、 <xref:System.ComponentModel.Design.IEventBindingService>、最初に取得する必要があります、<xref:System.ComponentModel.EventDescriptor>リンクするコンポーネントのイベントです。 <xref:System.ComponentModel.Design.IEventBindingService>を変換するメソッドを提供、<xref:System.ComponentModel.EventDescriptor>を<xref:System.ComponentModel.PropertyDescriptor>イベントを設定すると、イベント ハンドラー メソッドの名前で使用することができます。  
+  
+ <xref:System.ComponentModel.TypeDescriptor>オブジェクトは、提供、<xref:System.ComponentModel.TypeDescriptor.GetEvents%2A>取得に使用できるメソッド、<xref:System.ComponentModel.EventDescriptorCollection>を含む<xref:System.ComponentModel.EventDescriptor>コンポーネントの各イベントのオブジェクト。 <xref:System.ComponentModel.Design.IEventBindingService.GetEventProperty%2A>と<xref:System.ComponentModel.Design.IEventBindingService.GetEventProperties%2A>のメソッド、<xref:System.ComponentModel.Design.IEventBindingService>を返す、<xref:System.ComponentModel.PropertyDescriptor>各<xref:System.ComponentModel.EventDescriptor>いずれかのメソッドに渡されます。 各<xref:System.ComponentModel.PropertyDescriptor>から返された<xref:System.ComponentModel.Design.IEventBindingService.GetEventProperty%2A>または<xref:System.ComponentModel.Design.IEventBindingService.GetEventProperties%2A>が文字列のプロパティの型。 この文字列を設定するにはリンクを使用してイベントをイベント ハンドラー メソッドの名前を示す値を<xref:System.ComponentModel.PropertyDescriptor.SetValue%2A>のメソッド、<xref:System.ComponentModel.PropertyDescriptor>です。  
+  
+   
+  
+## Examples  
+ 次の例を使用するデザイナー、<xref:System.ComponentModel.Design.IEventBindingService>をデザイン時コンポーネントのデザイナーに追加するカスタムのショートカット メニューのコマンドが呼び出される場合、コンポーネントのイベントをイベント ハンドラーをリンクします。 例を使用して、クラス ライブラリをコンパイルし、Windows フォーム プロジェクトから参照を追加、ツールボックスを右クリックし、ツールボックスのカスタマイズを..., を選択し、クラス ライブラリを選択し、[ok] をクリックするとしてクラス ライブラリのコンポーネントをツールボックスに追加し、EventControl のインスタンスをフォームに追加します。 EventControl を右クリックし、接続 testEvent のショートカット メニューをクリックします。 空のイベント ハンドラー メソッドが作成され、EventControl の testEvent メソッドは、フォームの初期化コードでは、このイベント ハンドラーを初期化します。  
+  
+ [!code-cpp[IEventBindingServiceExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/IEventBindingServiceExample/CPP/source.cpp#1)]
+ [!code-csharp[IEventBindingServiceExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/IEventBindingServiceExample/CS/source.cs#1)]
+ [!code-vb[IEventBindingServiceExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IEventBindingServiceExample/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateUniqueMethodName">
+      <MemberSignature Language="C#" Value="public string CreateUniqueMethodName (System.ComponentModel.IComponent component, System.ComponentModel.EventDescriptor e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string CreateUniqueMethodName(class System.ComponentModel.IComponent component, class System.ComponentModel.EventDescriptor e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IEventBindingService.CreateUniqueMethodName(System.ComponentModel.IComponent,System.ComponentModel.EventDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+        <Parameter Name="e" Type="System.ComponentModel.EventDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="component">コンポーネント インスタンスのイベントに接続されます。</param>
+        <param name="e">名前を作成するイベントです。</param>
+        <summary>指定されたコンポーネントとイベントのイベント ハンドラー メソッドの一意の名前を作成します。</summary>
+        <returns>このイベントのイベント ハンドラー メソッドに推奨される名前です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ユーザーのソース コード内の他のメソッド名から一意の名前を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCompatibleMethods">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection GetCompatibleMethods (System.ComponentModel.EventDescriptor e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.ICollection GetCompatibleMethods(class System.ComponentModel.EventDescriptor e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IEventBindingService.GetCompatibleMethods(System.ComponentModel.EventDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.ComponentModel.EventDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="e">互換性のあるイベント ハンドラー メソッドを取得するイベントです。</param>
+        <summary>指定したイベントと互換性のあるメソッド シグネチャを持つイベント ハンドラー メソッドのコレクションを取得します。</summary>
+        <returns>文字列のコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクション内の各文字列は、指定したイベントと互換性のあるメソッド シグネチャを持つメソッドの名前です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEvent">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.EventDescriptor GetEvent (System.ComponentModel.PropertyDescriptor property);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.EventDescriptor GetEvent(class System.ComponentModel.PropertyDescriptor property) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IEventBindingService.GetEvent(System.ComponentModel.PropertyDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.EventDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="property" Type="System.ComponentModel.PropertyDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="property">このプロパティは、イベントを表します。</param>
+        <summary>取得、<see cref="T:System.ComponentModel.EventDescriptor" />イベントをイベントを表す場合、指定したプロパティ記述子を表します。</summary>
+        <returns><see cref="T:System.ComponentModel.EventDescriptor" />プロパティを表す、イベントまたは<see langword="null" />プロパティは、イベントを表していない場合は。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEventProperties">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.PropertyDescriptorCollection GetEventProperties (System.ComponentModel.EventDescriptorCollection events);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.PropertyDescriptorCollection GetEventProperties(class System.ComponentModel.EventDescriptorCollection events) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IEventBindingService.GetEventProperties(System.ComponentModel.EventDescriptorCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="events" Type="System.ComponentModel.EventDescriptorCollection" />
+      </Parameters>
+      <Docs>
+        <param name="events">プロパティに変換するイベントです。</param>
+        <summary>プロパティ記述子のセットには、一連のイベント記述子を変換します。</summary>
+        <returns>配列<see cref="T:System.ComponentModel.PropertyDescriptor" />イベント セットを記述するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される各<xref:System.ComponentModel.PropertyDescriptor>が、<xref:System.ComponentModel.PropertyDescriptor.PropertyType%2A>の文字列。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEventProperty">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.PropertyDescriptor GetEventProperty (System.ComponentModel.EventDescriptor e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.PropertyDescriptor GetEventProperty(class System.ComponentModel.EventDescriptor e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IEventBindingService.GetEventProperty(System.ComponentModel.EventDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.ComponentModel.EventDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="e">変換するイベントです。</param>
+        <summary>プロパティ記述子には、1 つのイベント記述子を変換します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.PropertyDescriptor" />イベントを説明します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返された<xref:System.ComponentModel.PropertyDescriptor>が、<xref:System.ComponentModel.PropertyDescriptor.PropertyType%2A>の文字列。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowCode">
+      <MemberSignature Language="C#" Value="public bool ShowCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ShowCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IEventBindingService.ShowCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイナーのユーザー コードを表示します。</summary>
+        <returns>
+          <see langword="true" />コードを表示する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コード エディターを表示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowCode">
+      <MemberSignature Language="C#" Value="public bool ShowCode (int lineNumber);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ShowCode(int32 lineNumber) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IEventBindingService.ShowCode(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="lineNumber" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="lineNumber">キャレットを配置する行番号。</param>
+        <summary>指定した行にデザイナーのユーザー コードを表示します。</summary>
+        <returns>
+          <see langword="true" />コードを表示する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コード エディターを表示し、指定した行にカーソルを位置付けます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowCode">
+      <MemberSignature Language="C#" Value="public bool ShowCode (System.ComponentModel.IComponent component, System.ComponentModel.EventDescriptor e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ShowCode(class System.ComponentModel.IComponent component, class System.ComponentModel.EventDescriptor e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IEventBindingService.ShowCode(System.ComponentModel.IComponent,System.ComponentModel.EventDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+        <Parameter Name="e" Type="System.ComponentModel.EventDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="component">イベントに接続されているコンポーネント。</param>
+        <param name="e">表示するイベントです。</param>
+        <summary>指定したイベントのユーザー コードを表示します。</summary>
+        <returns>
+          <see langword="true" />コードを表示する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コード エディターを表示しで指定されたイベントが宣言されている行にカーソルを位置付けます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

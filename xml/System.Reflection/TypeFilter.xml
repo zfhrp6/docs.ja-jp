@@ -1,0 +1,59 @@
+<Type Name="TypeFilter" FullName="System.Reflection.TypeFilter">
+  <TypeSignature Language="C#" Value="public delegate bool TypeFilter(Type m, object filterCriteria);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed TypeFilter extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Reflection.TypeFilter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Reflection</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Parameters>
+    <Parameter Name="m" Type="System.Type" />
+    <Parameter Name="filterCriteria" Type="System.Object" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Boolean</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="m">フィルターを適用する <see langword="Type" /> オブジェクト。</param>
+    <param name="filterCriteria">一覧をフィルター処理するために使用する任意のオブジェクト。</param>
+    <summary><see cref="T:System.Type" /> オブジェクトの配列で表されるクラスをフィルター処理します。</summary>
+    <returns>
+      フィルター選択されたリストに <see cref="T:System.Type" /> を含めるには <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `TypeFilter`デリゲートは、クラスの一覧をフィルター処理に使用します。 配列で表されるクラスをフィルター処理に使用する具体的には、<xref:System.Type>オブジェクト。 <xref:System.Type.FindInterfaces%2A?displayProperty=nameWithType>メソッドでは、このデリゲートを使用して、返されるインターフェイスのリストをフィルター処理します。 すべての派生クラスの<xref:System.Delegate>と<xref:System.MulticastDelegate>コンス トラクターを持つと`DynamicInvoke`メソッドです。 説明で指定された Visual C のコード例を参照してください`Delegate`です。  
+  
+   
+  
+## Examples  
+ この例は、一致するメソッドを定義する方法を示します、<xref:System.Reflection.TypeFilter>デリゲート プロトタイプをフィルター処理したり、一致するエントリのサブセットを返すリフレクションを使用することができます。  
+  
+ [!code-vb[Typefilter#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/TypeFilter/VB/Typefilter.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

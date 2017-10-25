@@ -1,0 +1,1070 @@
+<Type Name="X509Certificate2Collection" FullName="System.Security.Cryptography.X509Certificates.X509Certificate2Collection">
+  <TypeSignature Language="C#" Value="public class X509Certificate2Collection : System.Security.Cryptography.X509Certificates.X509CertificateCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit X509Certificate2Collection extends System.Security.Cryptography.X509Certificates.X509CertificateCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Cryptography.X509Certificates.X509CertificateCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" /> オブジェクトのコレクションを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2>ストアを開くと、結果がによって表される、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2Collection>オブジェクト。 アンマネージ Cryptographic API コンストラクトに慣れている場合を考えることができます、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2Collection>のメモリ ストアとして<xref:System.Security.Cryptography.X509Certificates.X509Certificate2>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例は、現在のユーザーの個人証明書ストアを開いて、のみ有効な証明書を選択、により、ユーザーは、証明書を選択、およびコンソールに証明書と証明書チェーンの情報を書き込みますをします。 出力は、ユーザーが選択した証明書に依存します。  
+  
+ [!code-cpp[certselect#1](~/samples/snippets/cpp/VS_Snippets_CLR/CertSelect/CPP/certselect.cpp#1)]
+ [!code-csharp[certselect#1](~/samples/snippets/csharp/VS_Snippets_CLR/CertSelect/CS/certselect.cs#1)]
+ [!code-vb[certselect#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CertSelect/VB/certselect.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509Certificate2Collection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2Collection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />ことがなく、クラス<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />情報。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、空を作成<xref:System.Security.Cryptography.X509Certificates.X509Certificate2Collection>は、オブジェクトを作成する証明書またはコレクションの情報を使用する他のコンス トラクターとは異なり、オブジェクトです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、現在のユーザーの個人証明書ストアを開いて、のみ有効な証明書を選択、により、ユーザーは、証明書を選択、およびコンソールに証明書と証明書チェーンの情報を書き込みますをします。 出力は、ユーザーが選択した証明書に依存します。  
+  
+ [!code-cpp[certselect#1](~/samples/snippets/cpp/VS_Snippets_CLR/CertSelect/CPP/certselect.cpp#1)]
+ [!code-csharp[certselect#1](~/samples/snippets/csharp/VS_Snippets_CLR/CertSelect/CS/certselect.cs#1)]
+ [!code-vb[certselect#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CertSelect/VB/certselect.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509Certificate2Collection (System.Security.Cryptography.X509Certificates.X509Certificate2 certificate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Cryptography.X509Certificates.X509Certificate2 certificate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2Collection.#ctor(System.Security.Cryptography.X509Certificates.X509Certificate2)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate2" />
+      </Parameters>
+      <Docs>
+        <param name="certificate"><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />からコレクションを開始するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />クラスを使用して、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509Certificate2Collection (System.Security.Cryptography.X509Certificates.X509Certificate2[] certificates);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Cryptography.X509Certificates.X509Certificate2[] certificates) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2Collection.#ctor(System.Security.Cryptography.X509Certificates.X509Certificate2[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="certificates" Type="System.Security.Cryptography.X509Certificates.X509Certificate2[]" />
+      </Parameters>
+      <Docs>
+        <param name="certificates"><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" /> オブジェクトの配列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />クラスの配列を使用して<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、現在のユーザーの個人証明書ストアを開いて、のみ有効な証明書を選択、により、ユーザーは、証明書を選択、およびコンソールに証明書と証明書チェーンの情報を書き込みますをします。 出力は、選択した証明書に依存します。  
+  
+ [!code-cpp[certselect#1](~/samples/snippets/cpp/VS_Snippets_CLR/CertSelect/CPP/certselect.cpp#1)]
+ [!code-csharp[certselect#1](~/samples/snippets/csharp/VS_Snippets_CLR/CertSelect/CS/certselect.cs#1)]
+ [!code-vb[certselect#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CertSelect/VB/certselect.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509Certificate2Collection (System.Security.Cryptography.X509Certificates.X509Certificate2Collection certificates);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Cryptography.X509Certificates.X509Certificate2Collection certificates) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2Collection.#ctor(System.Security.Cryptography.X509Certificates.X509Certificate2Collection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="certificates" Type="System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />
+      </Parameters>
+      <Docs>
+        <param name="certificates"><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" /> オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />クラスの指定された証明書のコレクションを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、現在のユーザーの個人証明書ストアを開いて、のみ有効な証明書を選択、により、ユーザーは、証明書を選択、およびコンソールに証明書と証明書チェーンの情報を書き込みますをします。 出力は、ユーザーが選択した証明書に依存します。  
+  
+ [!code-cpp[certselect#1](~/samples/snippets/cpp/VS_Snippets_CLR/CertSelect/CPP/certselect.cpp#1)]
+ [!code-csharp[certselect#1](~/samples/snippets/csharp/VS_Snippets_CLR/CertSelect/CS/certselect.cs#1)]
+ [!code-vb[certselect#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CertSelect/VB/certselect.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (System.Security.Cryptography.X509Certificates.X509Certificate2 certificate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Add(class System.Security.Cryptography.X509Certificates.X509Certificate2 certificate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2Collection.Add(System.Security.Cryptography.X509Certificates.X509Certificate2)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate2" />
+      </Parameters>
+      <Docs>
+        <param name="certificate">として表される X.509 証明書、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />オブジェクト。</param>
+        <summary><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" /> の末尾にオブジェクトを追加します。</summary>
+        <returns><paramref name="certificate" /> が追加された位置の <see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" /> インデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、追加、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2>コレクションからオブジェクトをし、証明書のインデックス位置を返します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、X.509 証明書ストアを開く、追加され、証明書を削除したうえでとし、ストアを閉じます。 これは、3 つの証明書に追加し、ローカル ストアから削除であると想定します。  
+  
+ [!code-cpp[x509store2#1](~/samples/snippets/cpp/VS_Snippets_CLR/x509store2/CPP/x509store2.cpp#1)]
+ [!code-csharp[x509store2#1](~/samples/snippets/csharp/VS_Snippets_CLR/x509store2/CS/x509store2.cs#1)]
+ [!code-vb[x509store2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/x509store2/vb/x509store2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="certificate" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (System.Security.Cryptography.X509Certificates.X509Certificate2[] certificates);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(class System.Security.Cryptography.X509Certificates.X509Certificate2[] certificates) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2Collection.AddRange(System.Security.Cryptography.X509Certificates.X509Certificate2[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("Method isn't transactional (like documented)")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="certificates" Type="System.Security.Cryptography.X509Certificates.X509Certificate2[]" />
+      </Parameters>
+      <Docs>
+        <param name="certificates"><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" /> オブジェクトの配列。</param>
+        <summary>複数の追加<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />を配列内のオブジェクト、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配列がある場合は、このメソッドを使用して<xref:System.Security.Cryptography.X509Certificates.X509Certificate2>に追加するオブジェクト、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2Collection>オブジェクト。 <xref:System.Security.Cryptography.X509Certificates.X509Certificate2Collection.AddRange%2A>と<xref:System.Security.Cryptography.X509Certificates.X509Certificate2Collection.RemoveRange%2A>メソッド要求の処理トランザクション全体で、1 つ追加された場合はそのため、または削除が失敗した場合、操作全体が中止されました。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="certificates" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (System.Security.Cryptography.X509Certificates.X509Certificate2Collection certificates);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(class System.Security.Cryptography.X509Certificates.X509Certificate2Collection certificates) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2Collection.AddRange(System.Security.Cryptography.X509Certificates.X509Certificate2Collection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("Method isn't transactional (like documented)")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="certificates" Type="System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />
+      </Parameters>
+      <Docs>
+        <param name="certificates"><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" /> オブジェクト。</param>
+        <summary>複数の追加<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />内のオブジェクト、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />を別のオブジェクト<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 証明書がある場合は、このメソッドを使用して、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2Collection>別に追加するオブジェクト<xref:System.Security.Cryptography.X509Certificates.X509Certificate2Collection>オブジェクト。 <xref:System.Security.Cryptography.X509Certificates.X509Certificate2Collection.AddRange%2A>と<xref:System.Security.Cryptography.X509Certificates.X509Certificate2Collection.RemoveRange%2A>メソッド要求の処理トランザクション全体で、1 つ追加された場合はそのため、または削除が失敗した場合、操作全体が中止されました。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="certificates" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Security.Cryptography.X509Certificates.X509Certificate2 certificate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Security.Cryptography.X509Certificates.X509Certificate2 certificate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2Collection.Contains(System.Security.Cryptography.X509Certificates.X509Certificate2)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate2" />
+      </Parameters>
+      <Docs>
+        <param name="certificate"><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />コレクション内で検索するオブジェクト。</param>
+        <summary>指定するかどうか、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />オブジェクトには、特定の証明書が含まれています。</summary>
+        <returns>
+          <see langword="true" />場合、 <see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" /> 、指定されたを含む<paramref name="certificate" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、一方向の検索を実行します。したがって、平均実行時間に比例して、<xref:System.Collections.CollectionBase.Count%2A>プロパティです。 つまり、このメソッドは、O (`n`) 操作、場所`n`は<xref:System.Collections.CollectionBase.Count%2A>します。  
+  
+ このメソッドを呼び出すことで等しいかどうかを判断、<xref:System.Object.Equals%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="certificate" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Export">
+      <MemberSignature Language="C#" Value="public byte[] Export (System.Security.Cryptography.X509Certificates.X509ContentType contentType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int8[] Export(valuetype System.Security.Cryptography.X509Certificates.X509ContentType contentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2Collection.Export(System.Security.Cryptography.X509Certificates.X509ContentType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("only support X509ContentType.Cert")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contentType" Type="System.Security.Cryptography.X509Certificates.X509ContentType" />
+      </Parameters>
+      <Docs>
+        <param name="contentType">サポートされている<see cref="T:System.Security.Cryptography.X509Certificates.X509ContentType" />オブジェクト。</param>
+        <summary>バイト配列に X.509 証明書情報をエクスポートします。</summary>
+        <returns>バイト配列内の X.509 証明書の情報です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パスワードを必要としないコンテンツの種類をサポートします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Export">
+      <MemberSignature Language="C#" Value="public byte[] Export (System.Security.Cryptography.X509Certificates.X509ContentType contentType, string password);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int8[] Export(valuetype System.Security.Cryptography.X509Certificates.X509ContentType contentType, string password) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2Collection.Export(System.Security.Cryptography.X509Certificates.X509ContentType,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("only support X509ContentType.Cert")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contentType" Type="System.Security.Cryptography.X509Certificates.X509ContentType" />
+        <Parameter Name="password" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="contentType">サポートされている<see cref="T:System.Security.Cryptography.X509Certificates.X509ContentType" />オブジェクト。</param>
+        <param name="password">バイト配列を保護するために使用する文字列。</param>
+        <summary>パスワードを使用してバイト配列に X.509 証明書情報をエクスポートします。</summary>
+        <returns>バイト配列内の X.509 証明書の情報です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、次をサポートしている<xref:System.Security.Cryptography.X509Certificates.X509ContentType>型。  
+  
+-   <xref:System.Security.Cryptography.X509Certificates.X509ContentType.Cert>  
+  
+-   <xref:System.Security.Cryptography.X509Certificates.X509ContentType.SerializedCert>  
+  
+-   <xref:System.Security.Cryptography.X509Certificates.X509ContentType.Pfx>  
+  
+-   <xref:System.Security.Cryptography.X509Certificates.X509ContentType.SerializedStore>  
+  
+-   <xref:System.Security.Cryptography.X509Certificates.X509ContentType.Pkcs7>  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">証明書を読み取ることができない、コンテンツが無効か、パスワードを要求する証明書の場合、秘密キー エクスポートできませんでしたに指定されたパスワードが正しくないためです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Find">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.X509Certificate2Collection Find (System.Security.Cryptography.X509Certificates.X509FindType findType, object findValue, bool validOnly);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.Cryptography.X509Certificates.X509Certificate2Collection Find(valuetype System.Security.Cryptography.X509Certificates.X509FindType findType, object findValue, bool validOnly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2Collection.Find(System.Security.Cryptography.X509Certificates.X509FindType,System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("Does not support X509FindType.FindByTemplateName, FindByApplicationPolicy and FindByCertificatePolicy")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509Certificate2Collection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="findType" Type="System.Security.Cryptography.X509Certificates.X509FindType" />
+        <Parameter Name="findValue" Type="System.Object" />
+        <Parameter Name="validOnly" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="findType"><see cref="T:System.Security.Cryptography.X509Certificates.X509FindType" /> 値のいずれか。</param>
+        <param name="findValue">検索条件を表すオブジェクト。</param>
+        <param name="validOnly">
+          <see langword="true" />検索から返される有効な証明書のみを許可するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>検索、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />オブジェクトで指定された検索条件を使用して、<see cref="T:System.Security.Cryptography.X509Certificates.X509FindType" />列挙型、および<paramref name="findValue" />オブジェクト。</summary>
+        <returns><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して検索を<xref:System.Security.Cryptography.X509Certificates.X509Certificate2>オブジェクトのかどうかユーザーの介入は必要ありません。 使用して、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2Collection.Find%2A>メソッドを選択するアクセス許可を<xref:System.Security.Cryptography.X509Certificates.X509Certificate2>オブジェクト。  
+  
+ このメソッドをメソッド呼び出しごとに検索条件を絞り込む、カスケード型または入れ子になったスタイルで使用できることに注意してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、現在のユーザーの個人証明書ストアを開いて、有効な証明書のみを検索、証明書を選択することができます、およびコンソールに証明書と証明書チェーンの情報を書き込みますをします。 出力は、ユーザーが選択した証明書に依存します。  
+  
+ [!code-cpp[certselect#1](~/samples/snippets/cpp/VS_Snippets_CLR/CertSelect/CPP/certselect.cpp#1)]
+ [!code-csharp[certselect#1](~/samples/snippets/csharp/VS_Snippets_CLR/CertSelect/CS/certselect.cs#1)]
+ [!code-vb[certselect#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CertSelect/VB/certselect.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">
+          <paramref name="findType" /> が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.X509Certificate2Enumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.Cryptography.X509Certificates.X509Certificate2Enumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2Collection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509Certificate2Enumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>反復処理できる列挙子を返します、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />オブジェクト。</summary>
+        <returns><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Enumerator" />オブジェクトを反復処理できる、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列挙子は、コレクション内のデータへの読み取り専用のアクセスを許可します。 列挙子を使用して、基になるコレクションを変更することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Import">
+      <MemberSignature Language="C#" Value="public void Import (byte[] rawData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Import(unsigned int8[] rawData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2Collection.Import(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("same limitations as X509Certificate2.Import")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rawData" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="rawData">X.509 証明書のデータを格納しているバイト配列。</param>
+        <summary>バイト配列の形式で証明書をインポート、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、バイト配列の形式で証明書をインポート、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2Collection>オブジェクト。 このメソッドは、次をサポートしている<xref:System.Security.Cryptography.X509Certificates.X509ContentType>型。  
+  
+-   <xref:System.Security.Cryptography.X509Certificates.X509ContentType.Cert>  
+  
+-   <xref:System.Security.Cryptography.X509Certificates.X509ContentType.SerializedCert>  
+  
+-   <xref:System.Security.Cryptography.X509Certificates.X509ContentType.Pfx>  
+  
+-   <xref:System.Security.Cryptography.X509Certificates.X509ContentType.SerializedStore>  
+  
+-   <xref:System.Security.Cryptography.X509Certificates.X509ContentType.Pkcs7>  
+  
+-   <xref:System.Security.Cryptography.X509Certificates.X509ContentType.Authenticode>  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Import">
+      <MemberSignature Language="C#" Value="public void Import (string fileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Import(string fileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2Collection.Import(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("same limitations as X509Certificate2.Import")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">証明書情報を含むファイルの名前。</param>
+        <summary>証明書ファイルをインポート、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、次をサポートしている<xref:System.Security.Cryptography.X509Certificates.X509ContentType>型。  
+  
+-   <xref:System.Security.Cryptography.X509Certificates.X509ContentType.Cert>  
+  
+-   <xref:System.Security.Cryptography.X509Certificates.X509ContentType.SerializedCert>  
+  
+-   <xref:System.Security.Cryptography.X509Certificates.X509ContentType.Pfx>  
+  
+-   <xref:System.Security.Cryptography.X509Certificates.X509ContentType.SerializedStore>  
+  
+-   <xref:System.Security.Cryptography.X509Certificates.X509ContentType.Pkcs7>  
+  
+-   <xref:System.Security.Cryptography.X509Certificates.X509ContentType.Authenticode>  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Import">
+      <MemberSignature Language="C#" Value="public void Import (byte[] rawData, string password, System.Security.Cryptography.X509Certificates.X509KeyStorageFlags keyStorageFlags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Import(unsigned int8[] rawData, string password, valuetype System.Security.Cryptography.X509Certificates.X509KeyStorageFlags keyStorageFlags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2Collection.Import(System.Byte[],System.String,System.Security.Cryptography.X509Certificates.X509KeyStorageFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("same limitations as X509Certificate2.Import")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rawData" Type="System.Byte[]" />
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="keyStorageFlags" Type="System.Security.Cryptography.X509Certificates.X509KeyStorageFlags" />
+      </Parameters>
+      <Docs>
+        <param name="rawData">データを格納するバイト配列、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />オブジェクト。</param>
+        <param name="password">証明書情報にアクセスするために必要なパスワードです。</param>
+        <param name="keyStorageFlags">証明書をインポートする方法と場所を制御する列挙値のビットごとの組み合わせ。</param>
+        <summary>証明書にアクセスするパスワードが必要なバイト配列の形式で、証明書をインポート、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、PFX/PKCS12 バイナリ ラージ オブジェクト (BLOB)、パスワードで保護を使用できます。 PFX/PKCS12 BLOB 内の証明書に関連付けられているキーのコンテナーを作成できる、<xref:System.Security.Cryptography.X509Certificates.X509KeyStorageFlags>値は、このプロセスを制御するために使用できます。 キー コンテナーを作成しない場合に、秘密キーを永続化されないことに注意してください。  
+  
+ このメソッドは、証明書のコレクションに証明書のバイト配列をインポートします。 このメソッドは、次をサポートしている<xref:System.Security.Cryptography.X509Certificates.X509ContentType>型。  
+  
+-   <xref:System.Security.Cryptography.X509Certificates.X509ContentType.Cert>  
+  
+-   <xref:System.Security.Cryptography.X509Certificates.X509ContentType.SerializedCert>  
+  
+-   <xref:System.Security.Cryptography.X509Certificates.X509ContentType.Pfx>  
+  
+-   <xref:System.Security.Cryptography.X509Certificates.X509ContentType.SerializedStore>  
+  
+-   <xref:System.Security.Cryptography.X509Certificates.X509ContentType.Pkcs7>  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Import">
+      <MemberSignature Language="C#" Value="public void Import (string fileName, string password, System.Security.Cryptography.X509Certificates.X509KeyStorageFlags keyStorageFlags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Import(string fileName, string password, valuetype System.Security.Cryptography.X509Certificates.X509KeyStorageFlags keyStorageFlags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2Collection.Import(System.String,System.String,System.Security.Cryptography.X509Certificates.X509KeyStorageFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("same limitations as X509Certificate2.Import")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="keyStorageFlags" Type="System.Security.Cryptography.X509Certificates.X509KeyStorageFlags" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">証明書情報を含むファイルの名前。</param>
+        <param name="password">証明書情報にアクセスするために必要なパスワードです。</param>
+        <param name="keyStorageFlags">証明書をインポートする方法と場所を制御する列挙値のビットごとの組み合わせ。</param>
+        <summary>パスワードが必要な証明書ファイルをインポート、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、PFX/PKCS12 ファイルまたはパスワードが必要なその他の証明書ファイルで使用できます。 PFX/PKCS12 ファイル内の証明書に関連付けられているキーのコンテナーを作成できると<xref:System.Security.Cryptography.X509Certificates.X509KeyStorageFlags>値は、このプロセスを制御するために使用できます。 キー コンテナーを作成しない場合に、秘密キーを永続化されないことに注意してください。  
+  
+ PFX/PKCS12 ファイルが 1 つ以上の証明書を含めることができますに注意してください。 このメソッドは、秘密キーに関連付けられている最初の証明書をインポートします。 または、秘密キーが見つからない場合、最初の証明書が見つかりません。  
+  
+ このメソッドは、次をサポートしている<xref:System.Security.Cryptography.X509Certificates.X509ContentType>型。  
+  
+-   <xref:System.Security.Cryptography.X509Certificates.X509ContentType.Cert>  
+  
+-   <xref:System.Security.Cryptography.X509Certificates.X509ContentType.SerializedCert>  
+  
+-   <xref:System.Security.Cryptography.X509Certificates.X509ContentType.Pfx>  
+  
+-   <xref:System.Security.Cryptography.X509Certificates.X509ContentType.SerializedStore>  
+  
+-   <xref:System.Security.Cryptography.X509Certificates.X509ContentType.Pkcs7>  
+  
+-   <xref:System.Security.Cryptography.X509Certificates.X509ContentType.Authenticode>  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.Security.Cryptography.X509Certificates.X509Certificate2 certificate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.Security.Cryptography.X509Certificates.X509Certificate2 certificate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2Collection.Insert(System.Int32,System.Security.Cryptography.X509Certificates.X509Certificate2)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate2" />
+      </Parameters>
+      <Docs>
+        <param name="index">挿入する位置の 0 から始まるインデックス<c>証明書</c>です。</param>
+        <param name="certificate"><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />挿入するオブジェクト。</param>
+        <summary>オブジェクトを挿入、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />指定したインデックスにあるオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Collections.CollectionBase.Count%2A>リストの容量と既に同じプロパティ、新しい要素が挿入される前に、内部の配列を自動的に再割り当てすることによって、容量が 2 倍になります。  
+  
+ 場合`index`と等しい<xref:System.Collections.CollectionBase.Count%2A>、`certificate`がコレクションの末尾に追加します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="index" />大きい、<see cref="P:System.Collections.CollectionBase.Count" />プロパティです。</exception>
+        <exception cref="T:System.NotSupportedException">コレクションは読み取り専用です。  
+  
+ または  
+  
+ コレクションには、固定サイズが含まれています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="certificate" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.X509Certificate2 this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.X509Certificates.X509Certificate2 Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.X509Certificates.X509Certificate2Collection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509Certificate2</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得または設定する要素の、0 から始まるインデックス番号。</param>
+        <summary>指定したインデックスにある要素を取得または設定します。</summary>
+        <value>指定したインデックス位置にある要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、`myCollection[index]` という構文を使用して、コレクション内の特定の要素にアクセスできます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、現在のユーザーの個人証明書ストアを開いて、のみ有効な証明書を選択、により、ユーザーは、証明書を選択、およびコンソールに証明書と証明書チェーンの情報を書き込みますをします。 出力は、ユーザーが選択した証明書に依存します。  
+  
+ [!code-cpp[certselect#1](~/samples/snippets/cpp/VS_Snippets_CLR/CertSelect/CPP/certselect.cpp#1)]
+ [!code-csharp[certselect#1](~/samples/snippets/csharp/VS_Snippets_CLR/CertSelect/CS/certselect.cs#1)]
+ [!code-vb[certselect#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CertSelect/VB/certselect.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="index" />等しいかより大きい、<see cref="P:System.Collections.CollectionBase.Count" />プロパティです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="index" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Security.Cryptography.X509Certificates.X509Certificate2 certificate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Security.Cryptography.X509Certificates.X509Certificate2 certificate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2Collection.Remove(System.Security.Cryptography.X509Certificates.X509Certificate2)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate2" />
+      </Parameters>
+      <Docs>
+        <param name="certificate"><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />から削除するオブジェクトを<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />オブジェクト。</param>
+        <summary>最初に見つかったからの証明書の削除、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、最初に見つかった位置の証明書を削除します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="certificate" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveRange">
+      <MemberSignature Language="C#" Value="public void RemoveRange (System.Security.Cryptography.X509Certificates.X509Certificate2[] certificates);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveRange(class System.Security.Cryptography.X509Certificates.X509Certificate2[] certificates) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2Collection.RemoveRange(System.Security.Cryptography.X509Certificates.X509Certificate2[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("Method isn't transactional (like documented)")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="certificates" Type="System.Security.Cryptography.X509Certificates.X509Certificate2[]" />
+      </Parameters>
+      <Docs>
+        <param name="certificates"><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" /> オブジェクトの配列。</param>
+        <summary>複数の削除<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />から、配列内のオブジェクト、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配列がある場合は、このメソッドを使用して<xref:System.Security.Cryptography.X509Certificates.X509Certificate2>から削除するオブジェクト、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2Collection>オブジェクト。 <xref:System.Security.Cryptography.X509Certificates.X509Certificate2Collection.AddRange%2A>と<xref:System.Security.Cryptography.X509Certificates.X509Certificate2Collection.RemoveRange%2A>メソッド要求の処理トランザクション全体で、1 つ追加された場合はそのため、または削除が失敗した場合、操作全体が中止されました。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="certificates" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveRange">
+      <MemberSignature Language="C#" Value="public void RemoveRange (System.Security.Cryptography.X509Certificates.X509Certificate2Collection certificates);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveRange(class System.Security.Cryptography.X509Certificates.X509Certificate2Collection certificates) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2Collection.RemoveRange(System.Security.Cryptography.X509Certificates.X509Certificate2Collection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("Method isn't transactional (like documented)")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="certificates" Type="System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />
+      </Parameters>
+      <Docs>
+        <param name="certificates"><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" /> オブジェクト。</param>
+        <summary>複数の削除<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />内のオブジェクト、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />から別のオブジェクト<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 証明書がある場合は、このメソッドを使用して、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2Collection>別から削除するオブジェクト<xref:System.Security.Cryptography.X509Certificates.X509Certificate2Collection>オブジェクト。 <xref:System.Security.Cryptography.X509Certificates.X509Certificate2Collection.AddRange%2A>と<xref:System.Security.Cryptography.X509Certificates.X509Certificate2Collection.RemoveRange%2A>メソッド要求の処理トランザクション全体で、1 つ追加された場合はそのため、または削除が失敗した場合、操作全体が中止されました。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="certificates" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

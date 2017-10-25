@@ -1,0 +1,60 @@
+<Type Name="HideModuleNameAttribute" FullName="Microsoft.VisualBasic.HideModuleNameAttribute">
+  <TypeSignature Language="C#" Value="public sealed class HideModuleNameAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed HideModuleNameAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.HideModuleNameAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class, AllowMultiple=false, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see langword="HideModuleNameAttribute" />をモジュールに適用されるときに、属性により、モジュール メンバーに、モジュールに必要な修飾子のみを使用してアクセスします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性は、モジュール自体を表示することがなくモジュール メンバーを公開するために役立ちます。 IntelliSense を使用する場合、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]の統合開発環境 (IDE)[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]モジュールは、ステートメント入力候補一覧に表示されません。 代わりに、IntelliSense は、モジュール メンバーを示します。  
+  
+ モジュール名が表示されていない場合でも、モジュール メンバーは、モジュール経由でアクセスできます。  
+  
+ 別の識別子または別のモジュールのメンバーとメンバー名が競合する場合、`HideModuleNameAttribute`属性メンバーは、モジュールのレベルでの IntelliSense に表示しません。  
+  
+   
+  
+## Examples  
+ この例を使用する方法を示しています、`HideModuleNameAttribute`には、データベース オブジェクトを追加する属性`My`、を介してアクセスできる`My.Database`です。  
+  
+ [!code-vb[VbCnAttributes#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbCnAttributes/VB/Class2.vb#26)]  
+  
+ `Namespace`ステートメントは、クラスまたはモジュールの外側に記述する必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HideModuleNameAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.HideModuleNameAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:Microsoft.VisualBasic.HideModuleNameAttribute" /> 属性の新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

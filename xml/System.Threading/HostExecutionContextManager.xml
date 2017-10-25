@@ -1,0 +1,194 @@
+<Type Name="HostExecutionContextManager" FullName="System.Threading.HostExecutionContextManager">
+  <TypeSignature Language="C#" Value="public class HostExecutionContextManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HostExecutionContextManager extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.HostExecutionContextManager" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Threading</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>フロー、または、実行コンテキストの移行に参加する共通言語ランタイムのホストを可能にする機能を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、現在<xref:System.AppDomainManager>への参照を持つ、<xref:System.Threading.HostExecutionContextManager>でその<xref:System.AppDomainManager.HostExecutionContextManager%2A>プロパティを共通言語ランタイム マネージャーを呼び出し、毎回の呼び出しを<xref:System.Threading.ExecutionContext.Run%2A?displayProperty=nameWithType>メソッド発生すると、ホストが、実行コンテキストのフローに参加できるようにします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HostExecutionContextManager ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.HostExecutionContextManager.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Threading.HostExecutionContextManager" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Capture">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.HostExecutionContext Capture ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.HostExecutionContext Capture() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.HostExecutionContextManager.Capture" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.HostExecutionContext</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のスレッドからホストの実行コンテキストをキャプチャします。</summary>
+        <returns>A<see cref="T:System.Threading.HostExecutionContext" />を現在のスレッドのホストの実行コンテキストを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Threading.HostExecutionContext>を表すセーフ ハンドルを使用して作成された、`IUnknown`現在のスレッドを実行しているホストへのポインター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Revert">
+      <MemberSignature Language="C#" Value="public virtual void Revert (object previousState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Revert(object previousState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.HostExecutionContextManager.Revert(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.MayFail)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="previousState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="previousState">戻すには以前のコンテキスト状態。</param>
+        <summary>ホストの実行コンテキストを以前の状態に復元します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `previousState`オブジェクトによって返される、<xref:System.Threading.HostExecutionContextManager.SetHostExecutionContext%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="previousState" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="previousState" />現在のスレッドで作成されませんでした。  
+  
+ または  
+  
+ <paramref name="previousState" />最後の状態ではありません、<see cref="T:System.Threading.HostExecutionContext" />です。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetHostExecutionContext">
+      <MemberSignature Language="C#" Value="public virtual object SetHostExecutionContext (System.Threading.HostExecutionContext hostExecutionContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object SetHostExecutionContext(class System.Threading.HostExecutionContext hostExecutionContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.HostExecutionContextManager.SetHostExecutionContext(System.Threading.HostExecutionContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hostExecutionContext" Type="System.Threading.HostExecutionContext" />
+      </Parameters>
+      <Docs>
+        <param name="hostExecutionContext">設定する <see cref="T:System.Threading.HostExecutionContext" />。</param>
+        <summary>指定したホストの実行コンテキストを現在のホストの実行コンテキストを設定します。</summary>
+        <returns>オブジェクトを復元するため、<see cref="T:System.Threading.HostExecutionContext" />を以前の状態。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Threading.HostExecutionContextManager.SetHostExecutionContext%2A>メソッドは現在のホストの実行コンテキストを設定<xref:System.Threading.HostExecutionContext>です。  A<xref:System.Threading.HostExecutionContext>別に引数として使用されている<xref:System.Threading.HostExecutionContextManager.SetHostExecutionContext%2A>メソッドの呼び出しは、このメソッドのパラメーターとで渡すことができません。 代わりに、使用、<xref:System.Threading.HostExecutionContext.CreateCopy%2A?displayProperty=nameWithType>のコピーを作成する方法、<xref:System.Threading.HostExecutionContext>オブジェクトし、コピーを使用して、ホストの実行コンテキストを設定します。  
+  
+ 呼び出す、<xref:System.Threading.HostExecutionContextManager.Revert%2A>このメソッドによって返されるオブジェクトを使用して復元する方法、<xref:System.Threading.HostExecutionContext>を以前の状態。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="hostExecutionContext" />キャプチャ操作で取得されませんでした。  
+  
+ または  
+  
+ <paramref name="hostExecutionContext" />前の引数がされて<see cref="M:System.Threading.HostExecutionContextManager.SetHostExecutionContext(System.Threading.HostExecutionContext)" />メソッドの呼び出しです。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

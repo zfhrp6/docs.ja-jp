@@ -1,0 +1,335 @@
+<Type Name="FlowControl" FullName="Microsoft.VisualBasic.CompilerServices.FlowControl">
+  <TypeSignature Language="C#" Value="public sealed class FlowControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed FlowControl extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.CompilerServices.FlowControl" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コンパイルするため、Visual Basic コンパイラにサービスを提供<see langword="For...Next" />と<see langword="For Each" />ループします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="CheckForSyncLockOnValueType">
+      <MemberSignature Language="C#" Value="public static void CheckForSyncLockOnValueType (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void CheckForSyncLockOnValueType(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.FlowControl.CheckForSyncLockOnValueType(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">同期ロックをチェックする対象のデータを入力します。</param>
+        <summary>指定した型の同期ロックをチェックします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ForEachInArr">
+      <MemberSignature Language="C#" Value="public static System.Collections.IEnumerator ForEachInArr (Array ary);" />
+      <MemberSignature Language="ILAsm" Value=".method public static class System.Collections.IEnumerator ForEachInArr(class System.Array ary) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.FlowControl.ForEachInArr(System.Array)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ary" Type="System.Array" />
+      </Parameters>
+      <Docs>
+        <param name="ary">反復される配列、<see langword="For Each" />ループします。</param>
+        <summary>反復処理されている配列の列挙子を取得、<see langword="For Each" />ループします。</summary>
+        <returns>列挙子<paramref name="ary" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ForEachInObj">
+      <MemberSignature Language="C#" Value="public static System.Collections.IEnumerator ForEachInObj (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public static class System.Collections.IEnumerator ForEachInObj(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.FlowControl.ForEachInObj(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">反復処理されているオブジェクト、<see langword="For Each" />ループします。</param>
+        <summary>反復処理されているオブジェクトの列挙子を取得、<see langword="For Each" />ループします。</summary>
+        <returns>列挙子<paramref name="obj" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ForEachNextObj">
+      <MemberSignature Language="C#" Value="public static bool ForEachNextObj (ref object obj, System.Collections.IEnumerator enumerator);" />
+      <MemberSignature Language="ILAsm" Value=".method public static bool ForEachNextObj(object&amp; obj, class System.Collections.IEnumerator enumerator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.FlowControl.ForEachNextObj(System.Object@,System.Collections.IEnumerator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object&amp;" RefType="ref" />
+        <Parameter Name="enumerator" Type="System.Collections.IEnumerator" />
+      </Parameters>
+      <Docs>
+        <param name="obj">範囲変数、<see langword="For Each" />ループします。</param>
+        <param name="enumerator"><see cref="T:System.Collections.IEnumerator" />で反復処理されているオブジェクトの<see langword="For Each" />ループします。</param>
+        <summary>次のオブジェクトへの参照を設定、<see langword="For Each" />ループします。</summary>
+        <returns>
+          <see langword="True" />場合<paramref name="obj" />は、次のオブジェクトを参照<see langword="False" />オブジェクトがある場合と<paramref name="obj" />は<see langword="Nothing" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ForLoopInitObj">
+      <MemberSignature Language="C#" Value="public static bool ForLoopInitObj (object Counter, object Start, object Limit, object StepValue, ref object LoopForResult, ref object CounterResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public static bool ForLoopInitObj(object Counter, object Start, object Limit, object StepValue, object&amp; LoopForResult, object&amp; CounterResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.FlowControl.ForLoopInitObj(System.Object,System.Object,System.Object,System.Object,System.Object@,System.Object@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Counter" Type="System.Object" />
+        <Parameter Name="Start" Type="System.Object" />
+        <Parameter Name="Limit" Type="System.Object" />
+        <Parameter Name="StepValue" Type="System.Object" />
+        <Parameter Name="LoopForResult" Type="System.Object&amp;" RefType="ref" />
+        <Parameter Name="CounterResult" Type="System.Object&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="Counter">ループ カウンター変数です。</param>
+        <param name="Start">ループ カウンターの初期値。</param>
+        <param name="Limit">値、<see langword="To" />オプション。</param>
+        <param name="StepValue">値、<see langword="Step" />オプション。</param>
+        <param name="LoopForResult">格納するオブジェクトは、ループの値を確認します。</param>
+        <param name="CounterResult">次のループ反復カウンターの値。</param>
+        <summary>初期化、<see langword="For...Next" />ループします。</summary>
+        <returns>
+          <see langword="False" />場合は、ループが終了します。それ以外の場合、<see langword="True" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ForNextCheckDec">
+      <MemberSignature Language="C#" Value="public static bool ForNextCheckDec (decimal count, decimal limit, decimal StepValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static bool ForNextCheckDec(valuetype System.Decimal count, valuetype System.Decimal limit, valuetype System.Decimal StepValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.FlowControl.ForNextCheckDec(System.Decimal,System.Decimal,System.Decimal)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="count" Type="System.Decimal" />
+        <Parameter Name="limit" Type="System.Decimal" />
+        <Parameter Name="StepValue" Type="System.Decimal" />
+      </Parameters>
+      <Docs>
+        <param name="count">必須です。 A<see langword="Decimal" />ループ カウンター変数の初期値を表す値が渡されます。</param>
+        <param name="limit">必須です。 A<see langword="Decimal" />を使用して渡された値を表す、<see langword="To" />キーワード。</param>
+        <param name="StepValue">必須です。 A<see langword="Decimal" />を使用して渡された値を表す、<see langword="Step" />キーワード。</param>
+        <summary>ループ カウンターの有効な値をチェック<see langword="Step" />、および<see langword="To" />値。</summary>
+        <returns>
+          <see langword="True" />場合<paramref name="StepValue" />が 0 より大きいと<paramref name="count" />と同じかそれよりも少ない<paramref name="limit" />、または<paramref name="StepValue" />が 0 未満と<paramref name="count" />がより大きいまたは等しい<paramref name="limit" />、それ以外の<see langword="False" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ForNextCheckObj">
+      <MemberSignature Language="C#" Value="public static bool ForNextCheckObj (object Counter, object LoopObj, ref object CounterResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public static bool ForNextCheckObj(object Counter, object LoopObj, object&amp; CounterResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.FlowControl.ForNextCheckObj(System.Object,System.Object,System.Object@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Counter" Type="System.Object" />
+        <Parameter Name="LoopObj" Type="System.Object" />
+        <Parameter Name="CounterResult" Type="System.Object&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="Counter">ループ カウンター変数です。</param>
+        <param name="LoopObj">格納するオブジェクトは、ループの値を確認します。</param>
+        <param name="CounterResult">次のループ反復カウンターの値。</param>
+        <summary>インクリメント、<see langword="For...Next" />ループします。</summary>
+        <returns>
+          <see langword="False" />場合は、ループが終了します。それ以外の場合、<see langword="True" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ForNextCheckR4">
+      <MemberSignature Language="C#" Value="public static bool ForNextCheckR4 (float count, float limit, float StepValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static bool ForNextCheckR4(float32 count, float32 limit, float32 StepValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.FlowControl.ForNextCheckR4(System.Single,System.Single,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="count" Type="System.Single" />
+        <Parameter Name="limit" Type="System.Single" />
+        <Parameter Name="StepValue" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="count">必須です。 A<see langword="Single" />ループ カウンター変数の初期値を表す値が渡されます。</param>
+        <param name="limit">必須です。 A<see langword="Single" />を使用して渡された値を表す、<see langword="To" />キーワード。</param>
+        <param name="StepValue">必須です。 A<see langword="Single" />を使用して渡された値を表す、<see langword="Step" />キーワード。</param>
+        <summary>ループ カウンターの有効な値をチェック<see langword="Step" />、および<see langword="To" />値。</summary>
+        <returns>
+          <see langword="True" />場合<paramref name="StepValue" />が 0 より大きいと<paramref name="count" />と同じかそれよりも少ない<paramref name="limit" />、または<paramref name="StepValue" />が 0 未満と<paramref name="count" />がより大きいまたは等しい<paramref name="limit" />、それ以外の<see langword="False" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ForNextCheckR8">
+      <MemberSignature Language="C#" Value="public static bool ForNextCheckR8 (double count, double limit, double StepValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static bool ForNextCheckR8(float64 count, float64 limit, float64 StepValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.FlowControl.ForNextCheckR8(System.Double,System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="count" Type="System.Double" />
+        <Parameter Name="limit" Type="System.Double" />
+        <Parameter Name="StepValue" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="count">必須です。 A<see langword="Double" />ループ カウンター変数の初期値を表す値が渡されます。</param>
+        <param name="limit">必須です。 A<see langword="Double" />を使用して渡された値を表す、<see langword="To" />キーワード。</param>
+        <param name="StepValue">必須です。 A<see langword="Double" />を使用して渡された値を表す、<see langword="Step" />キーワード。</param>
+        <summary>ループ カウンターの有効な値をチェック<see langword="Step" />、および<see langword="To" />値。</summary>
+        <returns>
+          <see langword="True" />場合<paramref name="StepValue" />が 0 より大きいと<paramref name="count" />と同じかそれよりも少ない<paramref name="limit" />、または<paramref name="StepValue" />が 0 未満と<paramref name="count" />がより大きいまたは等しい<paramref name="limit" />、それ以外の<see langword="False" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

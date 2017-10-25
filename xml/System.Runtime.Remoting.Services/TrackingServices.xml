@@ -1,0 +1,172 @@
+<Type Name="TrackingServices" FullName="System.Runtime.Remoting.Services.TrackingServices">
+  <TypeSignature Language="C#" Value="public class TrackingServices" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TrackingServices extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Services.TrackingServices" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>登録、登録解除、および追跡ハンドラーの一覧を取得する方法を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハンドラーは追跡を実装するオブジェクトとは、<xref:System.Runtime.Remoting.Services.ITrackingHandler>通知を示すことが必要がある、リモート処理インフラストラクチャをマーシャ リング、マーシャ リングを解除、またはオブジェクトやプロキシの接続が切断されるたびに、インターフェイスです。 登録されているすべてのオブジェクト<xref:System.Runtime.Remoting.Services.TrackingServices>オブジェクトまたは現在のプロキシときに、リモート処理によって呼び出される<xref:System.AppDomain>がマーシャ リング、マーシャ リング解除、または切断します。  
+  
+ すべてのメソッド、<xref:System.Runtime.Remoting.Services.TrackingServices>クラスは静的し、現在のトラッキング ハンドラー操作<xref:System.AppDomain>です。  
+  
+> [!NOTE]
+>  このクラスは、リンク確認要求を使用します。 SecurityException は直前の呼び出し元がインフラストラクチャのアクセス許可を持たない場合にスローされます。 参照してください[リンク確認要求](~/docs/framework/misc/link-demands.md)詳細についてはします。  
+  
+   
+  
+## Examples  
+ 次のコード例のメソッドを使用する方法を示しています、<xref:System.Runtime.Remoting.Services.TrackingServices>クラスを登録および追跡ハンドラーの登録を解除します。  
+  
+ 次のコード例では、追跡ハンドラーを実装する方法を示します。  
+  
+ [!code-csharp[System.Runtime.Remoting.Services.TrackingServices#30](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Services.TrackingServices/CS/trackinghandler.cs#30)]  
+  
+ 次のコード例では、サーバーでこのクラスを実装する方法を示します。  
+  
+ [!code-csharp[System.Runtime.Remoting.Services.TrackingServices#20](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Services.TrackingServices/CS/server.cs#20)]  
+  
+ 次のコード例では、上記のコード例では、サーバーに対するクライアントでこのクラスを実装する方法を示します。  
+  
+ [!code-csharp[System.Runtime.Remoting.Services.TrackingServices#0](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Services.TrackingServices/CS/client.cs#0)]  
+  
+ 次のコード例では、サーバーとクライアントで使用されるリモート オブジェクトを示します。  
+  
+ [!code-csharp[System.Runtime.Remoting.Services.TrackingServices#10](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Services.TrackingServices/CS/remoteservice.cs#10)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TrackingServices ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Services.TrackingServices.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Runtime.Remoting.Services.TrackingServices" /> のインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisteredHandlers">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.Services.ITrackingHandler[] RegisteredHandlers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Runtime.Remoting.Services.ITrackingHandler[] RegisteredHandlers" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Services.TrackingServices.RegisteredHandlers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Services.ITrackingHandler[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>登録されている追跡ハンドラーの配列を取得<see cref="T:System.Runtime.Remoting.Services.TrackingServices" />現在<see cref="T:System.AppDomain" />です。</summary>
+        <value>登録されている追跡ハンドラーの配列<see cref="T:System.Runtime.Remoting.Services.TrackingServices" />現在<see cref="T:System.AppDomain" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ このメソッドを使用する方法を次のコード例に示します。 このコード例は提供されている長い例の一部である、<xref:System.Runtime.Remoting.Services.TrackingServices>クラスです。  
+  
+ [!code-csharp[System.Runtime.Remoting.Services.TrackingServices#22](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Services.TrackingServices/CS/server.cs#22)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterTrackingHandler">
+      <MemberSignature Language="C#" Value="public static void RegisterTrackingHandler (System.Runtime.Remoting.Services.ITrackingHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterTrackingHandler(class System.Runtime.Remoting.Services.ITrackingHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Services.TrackingServices.RegisterTrackingHandler(System.Runtime.Remoting.Services.ITrackingHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="handler" Type="System.Runtime.Remoting.Services.ITrackingHandler" />
+      </Parameters>
+      <Docs>
+        <param name="handler">登録する追跡ハンドラー。</param>
+        <summary>新しい追跡ハンドラーを登録、<see cref="T:System.Runtime.Remoting.Services.TrackingServices" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ このメソッドを使用する方法を次のコード例に示します。 このコード例は提供されている長い例の一部である、<xref:System.Runtime.Remoting.Services.TrackingServices>クラスです。  
+  
+ [!code-csharp[System.Runtime.Remoting.Services.TrackingServices#21](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Services.TrackingServices/CS/server.cs#21)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="handler" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.Remoting.RemotingException">ハンドラーに示されている、<paramref name="handler" />にパラメーターが既に登録されて<see cref="T:System.Runtime.Remoting.Services.TrackingServices" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UnregisterTrackingHandler">
+      <MemberSignature Language="C#" Value="public static void UnregisterTrackingHandler (System.Runtime.Remoting.Services.ITrackingHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void UnregisterTrackingHandler(class System.Runtime.Remoting.Services.ITrackingHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Services.TrackingServices.UnregisterTrackingHandler(System.Runtime.Remoting.Services.ITrackingHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="handler" Type="System.Runtime.Remoting.Services.ITrackingHandler" />
+      </Parameters>
+      <Docs>
+        <param name="handler">登録を解除するハンドラー。</param>
+        <summary>指定した追跡ハンドラーの登録解除<see cref="T:System.Runtime.Remoting.Services.TrackingServices" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ このメソッドを使用する方法を次のコード例に示します。 このコード例は提供されている長い例の一部である、<xref:System.Runtime.Remoting.Services.TrackingServices>クラスです。  
+  
+ [!code-csharp[System.Runtime.Remoting.Services.TrackingServices#23](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Services.TrackingServices/CS/server.cs#23)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="handler" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.Remoting.RemotingException">ハンドラーに示されている、<paramref name="handler" />パラメーターに登録されていない<see cref="T:System.Runtime.Remoting.Services.TrackingServices" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

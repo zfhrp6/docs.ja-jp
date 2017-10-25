@@ -1,0 +1,342 @@
+<Type Name="LocalizableAttribute" FullName="System.ComponentModel.LocalizableAttribute">
+  <TypeSignature Language="C#" Value="public sealed class LocalizableAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit LocalizableAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.LocalizableAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.All)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プロパティをローカライズする必要があるかどうかを指定します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンポーネントについてでマークされたメンバー コードが生成される場合、 <xref:System.ComponentModel.LocalizableAttribute> 'éý'`true`リソース ファイルに保存されているプロパティ値があります。 これらのリソース ファイルは、コードを変更せずにローカライズできます。  
+  
+ 既定では、ローカライズ可能な属性がありませんかでマークされたメンバー、 <xref:System.ComponentModel.LocalizableAttribute> 'éý'`false`されますが、プロパティ値に永続化コード、データ型で使用できる場合です。 それ以外の場合、主要なコンポーネントに設定されている`Localizable`、すべてのプロパティをリソース ファイルに保存されます。 既定値は、`false` です。  
+  
+> [!NOTE]
+>  持つプロパティを指定すると、 <xref:System.ComponentModel.LocalizableAttribute> 'éý' `true`、この属性の値が定数のメンバーに設定されます<xref:System.ComponentModel.LocalizableAttribute.Yes>です。 マークされたプロパティの<xref:System.ComponentModel.LocalizableAttribute>'éý' `false`、値が<xref:System.ComponentModel.LocalizableAttribute.No>です。 そのため、コード内でこの属性の値を確認する場合は、として属性を指定する必要があります<xref:System.ComponentModel.LocalizableAttribute.Yes?displayProperty=nameWithType>または<xref:System.ComponentModel.LocalizableAttribute.No?displayProperty=nameWithType>です。  
+  
+ 詳細については、「[属性](~/docs/standard/attributes/index.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例では、プロパティをローカライズする必要があることをマークします。  
+  
+ [!code-cpp[classic localizableattribute example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic LocalizableAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[classic localizableattribute example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic LocalizableAttribute Example/CS/source.cs#1)]
+ [!code-vb[classic localizableattribute example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic LocalizableAttribute Example/VB/source.vb#1)]  
+  
+ 次の例の値を確認する方法を示しています、<xref:System.ComponentModel.LocalizableAttribute>の`MyProperty`します。 最初に、コードを取得、<xref:System.ComponentModel.PropertyDescriptorCollection>オブジェクトのすべてのプロパティをします。 コードを取得し、`MyProperty`から、<xref:System.ComponentModel.PropertyDescriptorCollection>です。 次に、このプロパティの属性を返し、それらの属性の変数に保存します。  
+  
+ コードの最後に、設定`myAttribute`の値に、<xref:System.ComponentModel.LocalizableAttribute>で、<xref:System.ComponentModel.AttributeCollection>し、プロパティをローカライズする必要があるかどうかを確認します。  
+  
+ [!code-cpp[classic localizableattribute example#2](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic LocalizableAttribute Example/CPP/source.cpp#2)]
+ [!code-csharp[classic localizableattribute example#2](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic LocalizableAttribute Example/CS/source.cs#2)]
+ [!code-vb[classic localizableattribute example#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic LocalizableAttribute Example/VB/source.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LocalizableAttribute (bool isLocalizable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool isLocalizable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.LocalizableAttribute.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="isLocalizable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="isLocalizable">
+          <see langword="true" />プロパティをローカライズする必要があります場合。それ以外の場合、<see langword="false" />です。</param>
+        <summary><see cref="T:System.ComponentModel.LocalizableAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、プロパティをローカライズする必要があることをマークします。 このコードでは、新しい<xref:System.ComponentModel.LocalizableAttribute>、その値に設定<xref:System.ComponentModel.LocalizableAttribute?displayProperty=nameWithType>、し、プロパティにバインドします。  
+  
+ [!code-cpp[Classic LocalizableAttribute.LocalizableAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic LocalizableAttribute.LocalizableAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic LocalizableAttribute.LocalizableAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic LocalizableAttribute.LocalizableAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic LocalizableAttribute.LocalizableAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic LocalizableAttribute.LocalizableAttribute Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static readonly System.ComponentModel.LocalizableAttribute Default;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.ComponentModel.LocalizableAttribute Default" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.LocalizableAttribute.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.LocalizableAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これは既定値を示す<see cref="F:System.ComponentModel.LocalizableAttribute.No" />です。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性が定数のメンバーに設定されている場合、この値を持つプロパティを設定すると、<xref:System.ComponentModel.LocalizableAttribute.No>です。 そのため、属性がコード内でこの値に設定されているかどうか確認する場合は、として属性を指定する必要があります<xref:System.ComponentModel.LocalizableAttribute?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.LocalizableAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">値の等価性をテストするオブジェクト。</param>
+        <summary>指定したオブジェクトの値が、現在と等しいかどうかを返します<see cref="T:System.ComponentModel.LocalizableAttribute" />です。</summary>
+        <returns>
+          <see langword="true" />指定したオブジェクトの値が以下にすると、現在の場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.LocalizableAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>現在の <see cref="T:System.ComponentModel.LocalizableAttribute" /> のハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefaultAttribute">
+      <MemberSignature Language="C#" Value="public override bool IsDefaultAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsDefaultAttribute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.LocalizableAttribute.IsDefaultAttribute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この属性が既定値であるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />属性がこの属性クラスの既定値である場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLocalizable">
+      <MemberSignature Language="C#" Value="public bool IsLocalizable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsLocalizable" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.LocalizableAttribute.IsLocalizable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティをローカライズする必要があるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />プロパティをローカライズする必要があります場合。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を確認する方法を示しています、<xref:System.ComponentModel.LocalizableAttribute>の`MyProperty`します。 最初に、コードを取得、<xref:System.ComponentModel.PropertyDescriptorCollection>オブジェクトのすべてのプロパティをします。 コードを取得し、`MyProperty`から、<xref:System.ComponentModel.PropertyDescriptorCollection>です。 次に、このプロパティの属性を返し、それらの属性の変数に保存します。  
+  
+ コードの最後に、設定`myAttribute`の値に、<xref:System.ComponentModel.LocalizableAttribute>で、<xref:System.ComponentModel.AttributeCollection>し、プロパティをローカライズする必要があるかどうかを確認します。  
+  
+ [!code-cpp[Classic LocalizableAttribute.IsLocalizable Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic LocalizableAttribute.IsLocalizable Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic LocalizableAttribute.IsLocalizable Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic LocalizableAttribute.IsLocalizable Example/CS/source.cs#1)]
+ [!code-vb[Classic LocalizableAttribute.IsLocalizable Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic LocalizableAttribute.IsLocalizable Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="No">
+      <MemberSignature Language="C#" Value="public static readonly System.ComponentModel.LocalizableAttribute No;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.ComponentModel.LocalizableAttribute No" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.LocalizableAttribute.No" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.LocalizableAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティをローカライズしないことを指定します。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドは、この属性の既定の設定です。  
+  
+ 持つプロパティを指定すると、 <xref:System.ComponentModel.LocalizableAttribute> 'éý' `false`、この属性の値が定数のメンバーに設定されます<xref:System.ComponentModel.LocalizableAttribute.No>です。 そのため、属性がコード内でこの値に設定されているかどうか確認する場合は、として属性を指定する必要があります<xref:System.ComponentModel.LocalizableAttribute.No?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Yes">
+      <MemberSignature Language="C#" Value="public static readonly System.ComponentModel.LocalizableAttribute Yes;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.ComponentModel.LocalizableAttribute Yes" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.LocalizableAttribute.Yes" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.LocalizableAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティをローカライズする必要がありますを指定します。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 持つプロパティを指定すると、 <xref:System.ComponentModel.LocalizableAttribute> 'éý' `true`、この属性の値が定数のメンバーに設定されます<xref:System.ComponentModel.LocalizableAttribute.Yes>です。 そのため、属性がコード内でこの値に設定されているかどうか確認する場合は、として属性を指定する必要があります<xref:System.ComponentModel.LocalizableAttribute.Yes?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

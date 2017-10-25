@@ -1,0 +1,103 @@
+<Type Name="Func&lt;T1,T2,TResult&gt;" FullName="System.Func&lt;T1,T2,TResult&gt;">
+  <TypeSignature Language="C#" Value="public delegate TResult Func&lt;in T1,in T2,out TResult&gt;(T1 arg1, T2 arg2);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed Func`3&lt;- T1, - T2, + TResult&gt; extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Func`3" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T1">
+      <Constraints>
+        <ParameterAttribute>Contravariant</ParameterAttribute>
+      </Constraints>
+    </TypeParameter>
+    <TypeParameter Name="T2">
+      <Constraints>
+        <ParameterAttribute>Contravariant</ParameterAttribute>
+      </Constraints>
+    </TypeParameter>
+    <TypeParameter Name="TResult">
+      <Constraints>
+        <ParameterAttribute>Covariant</ParameterAttribute>
+      </Constraints>
+    </TypeParameter>
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("System.Core, Version=3.5.0.0, Culture=Neutral, PublicKeyToken=b77a5c561934e089")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Parameters>
+    <Parameter Name="arg1" Type="T1" />
+    <Parameter Name="arg2" Type="T2" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>TResult</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <typeparam name="T1">このデリゲートによってカプセル化されるメソッドの最初のパラメーターの型。</typeparam>
+    <typeparam name="T2">このデリゲートによってカプセル化されるメソッドの 2 番目のパラメーターの型。</typeparam>
+    <typeparam name="TResult">このデリゲートによってカプセル化されるメソッドの戻り値の型。</typeparam>
+    <param name="arg1">このデリゲートによってカプセル化されるメソッドの最初のパラメーター。</param>
+    <param name="arg2">このデリゲートによってカプセル化されるメソッドの 2 番目のパラメーター。</param>
+    <summary>2 つのパラメーターを持ちで指定された型の値を返すメソッドをカプセル化、<paramref name="TResult" />パラメーター。</summary>
+    <returns>このデリゲートによってカプセル化されるメソッドの戻り値。</returns>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このデリゲートを使用して、明示的にカスタム デリゲートを宣言しなくても、パラメーターとして渡すことができるメソッドを表すことができます。 カプセル化されるメソッドは、このデリゲートによって定義されているメソッドのシグネチャに対応する必要があります。 つまり、カプセル化されるメソッドはそれぞれが渡された値によって、2 つのパラメーターである必要があります、値を返す必要があります。  
+  
+> [!NOTE]
+>  2 つのパラメーターを返すメソッドを参照する`void`(として宣言されている Visual basic、または、`Sub`ではなく同様、 `Function`)、ジェネリックを使用して<xref:System.Action%602>代わりに委任します。  
+  
+ 使用すると、<xref:System.Func%603>デリゲートの 2 つのパラメーターを持つメソッドをカプセル化するデリゲートを明示的に定義する必要はありません。 たとえば、次のコードを明示的に宣言という名前のデリゲート`ExtractMethod`への参照を割り当てると、`ExtractWords`メソッドのデリゲートのインスタンスにします。  
+  
+ [!code-csharp[System.Func~3#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Func~3/cs/Delegate.cs#1)]
+ [!code-vb[System.Func~3#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Func~3/vb/Delegate.vb#1)]  
+  
+ 次の例は、インスタンス化してこのコードを簡略化、<xref:System.Func%603>明示的に新しいデリゲートを定義して、名前付きメソッドをそこに割り当てるのではなくデリゲート。  
+  
+ [!code-csharp[System.Func~3#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Func~3/cs/Func3.cs#2)]
+ [!code-vb[System.Func~3#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Func~3/vb/Func3.vb#2)]  
+  
+ 使用することができます、<xref:System.Func%603>次の例に示すように、C# の場合は、匿名メソッドを持つデリゲートします。 (匿名メソッドの概要については、次を参照してください[匿名メソッド](~/docs/csharp/programming-guide/statements-expressions-operators/anonymous-methods.md)。)。  
+  
+ [!code-csharp[System.Func~3#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Func~3/cs/Anon.cs#3)]  
+  
+ ラムダ式を割り当てることができます、<xref:System.Func%603>デリゲート、次の例に示すようにします。 (ラムダ式の概要については、次を参照してください[ラムダ式](~/docs/visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)と[ラムダ式](~/docs/csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)。)。  
+  
+ [!code-csharp[System.Func~3#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Func~3/cs/Lambda.cs#4)]
+ [!code-vb[System.Func~3#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Func~3/vb/lambda.vb#4)]  
+  
+ ラムダ式の基になる型がジェネリックのいずれかの`Func`デリゲート。 これによって、デリゲートを明示的に割り当てることがなく、ラムダ式をパラメーターとして渡します。 具体的には、ため内の型の多くのメソッド、<xref:System.Linq>名前空間が<xref:System.Func%603>パラメーターを渡すことができますこれらのメソッド、ラムダ式に明示的にインスタンス化しなくても、<xref:System.Func%603>を委任します。  
+  
+   
+  
+## Examples  
+ 次の例では、宣言および使用する方法、<xref:System.Func%603>を委任します。 この例で宣言、<xref:System.Func%603>変数し、それを受け取るラムダ式、<xref:System.String>値と<xref:System.Int32>パラメーターと値。 ラムダ式から返される`true`場合の長さ、<xref:System.String>パラメーターがの値に等しい、<xref:System.Int32>パラメーター。 このメソッドをカプセル化するデリゲートは、クエリ文字列の配列内のフィルター文字列を後で使用されます。  
+  
+ [!code-csharp[System.Func~3#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Func~3/cs/Example.cs#5)]
+ [!code-vb[System.Func~3#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Func~3/vb/Example.vb#5)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

@@ -1,0 +1,118 @@
+<Type Name="ObjectDataSourceMethodEventArgs" FullName="System.Web.UI.WebControls.ObjectDataSourceMethodEventArgs">
+  <TypeSignature Language="C#" Value="public class ObjectDataSourceMethodEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ObjectDataSourceMethodEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ObjectDataSourceMethodEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、 <see cref="E:System.Web.UI.WebControls.ObjectDataSource.Inserting" />、 <see cref="E:System.Web.UI.WebControls.ObjectDataSource.Updating" />、および<see cref="E:System.Web.UI.WebControls.ObjectDataSource.Deleting" />のイベント、<see cref="T:System.Web.UI.WebControls.ObjectDataSource" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ObjectDataSourceMethodEventArgs>クラスが使用されて、 <xref:System.Web.UI.WebControls.ObjectDataSourceView.OnSelecting%2A>、 <xref:System.Web.UI.WebControls.ObjectDataSourceView.OnUpdating%2A>、 <xref:System.Web.UI.WebControls.ObjectDataSourceView.OnInserting%2A>、および<xref:System.Web.UI.WebControls.ObjectDataSourceView.OnDeleting%2A>に渡される入力パラメーターへのアクセスを提供するメソッド、 <xref:System.Web.UI.WebControls.ObjectDataSource.Select%2A>、 <xref:System.Web.UI.WebControls.ObjectDataSource.Update%2A>、 <xref:System.Web.UI.WebControls.ObjectDataSource.Delete%2A>、および<xref:System.Web.UI.WebControls.ObjectDataSource.Insert%2A>のメソッド、<xref:System.Web.UI.WebControls.ObjectDataSource>コントロール。 これらのパラメーターを使用してアクセス、<xref:System.Web.UI.WebControls.ObjectDataSourceMethodEventArgs.InputParameters%2A>プロパティです。 処理するデリゲートを追加することによって、 <xref:System.Web.UI.WebControls.ObjectDataSource.Selecting>、 <xref:System.Web.UI.WebControls.ObjectDataSource.Updating>、 <xref:System.Web.UI.WebControls.ObjectDataSource.Inserting>、または<xref:System.Web.UI.WebControls.ObjectDataSource.Deleting>イベントを確認およびパラメーターの値を操作して必要な追加の処理を実行できます。 このディクショナリ内のパラメーターへの変更は、操作のどのメソッド オーバー ロードを呼び出すに影響します。 ときに、<xref:System.Web.UI.WebControls.ObjectDataSource.DataObjectTypeName%2A>のプロパティ、<xref:System.Web.UI.WebControls.ObjectDataSource>コントロールを設定すると、このディクショナリ内の項目のデータ オブジェクトのプロパティを変更することができますのみです。 追加またはパラメーターを削除することはできません。 詳細については、「<xref:System.Web.UI.WebControls.ObjectDataSource.Delete%2A>」を参照してください。  
+  
+ <xref:System.Web.UI.WebControls.ObjectDataSource>コントロールが基になるビジネス オブジェクトのライフ サイクルのさまざまなタイミングで操作を処理できる多くのイベントを公開します。 次の表は、イベントの一覧し、関連付けられている<xref:System.EventArgs>クラスとイベント ハンドラー デリゲート。  
+  
+|イベント|`EventArgs` クラス|イベント ハンドラー デリゲート|  
+|-----------|-----------------------|---------------------------|  
+|<xref:System.Web.UI.WebControls.ObjectDataSource.ObjectCreating>。<br /><br /> ビジネス オブジェクトのインスタンスが作成される直前に発生します。|<xref:System.Web.UI.WebControls.ObjectDataSourceEventArgs>|<xref:System.Web.UI.WebControls.ObjectDataSourceObjectEventHandler>|  
+|<xref:System.Web.UI.WebControls.ObjectDataSource.ObjectCreated>。<br /><br /> ビジネス オブジェクトのインスタンスが作成された直後後に発生します。|<xref:System.Web.UI.WebControls.ObjectDataSourceEventArgs>|<xref:System.Web.UI.WebControls.ObjectDataSourceObjectEventHandler>|  
+|<xref:System.Web.UI.WebControls.ObjectDataSource.Selecting>。<br /><br /> データが取得される前に発生します。|<xref:System.Web.UI.WebControls.ObjectDataSourceSelectingEventArgs>|<xref:System.Web.UI.WebControls.ObjectDataSourceSelectingEventHandler>|  
+|<xref:System.Web.UI.WebControls.ObjectDataSource.Inserting>、<xref:System.Web.UI.WebControls.ObjectDataSource.Updating>、および <xref:System.Web.UI.WebControls.ObjectDataSource.Deleting>。<br /><br /> Insert、update、または削除操作が実行されるまでに発生します。|<xref:System.Web.UI.WebControls.ObjectDataSourceMethodEventArgs>|<xref:System.Web.UI.WebControls.ObjectDataSourceMethodEventHandler>|  
+|<xref:System.Web.UI.WebControls.ObjectDataSource.Selected>。<br /><br /> データが取得された後に発生します。|<xref:System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs>|<xref:System.Web.UI.WebControls.ObjectDataSourceStatusEventHandler>|  
+|<xref:System.Web.UI.WebControls.ObjectDataSource.Inserted>、<xref:System.Web.UI.WebControls.ObjectDataSource.Updated>、および <xref:System.Web.UI.WebControls.ObjectDataSource.Deleted>。<br /><br /> Insert、update、または削除操作が完了した後に発生します。|<xref:System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs>|<xref:System.Web.UI.WebControls.ObjectDataSourceStatusEventHandler>|  
+|<xref:System.Web.UI.WebControls.ObjectDataSource.ObjectDisposing>。<br /><br /> ビジネス オブジェクトが破棄される前に発生します。|<xref:System.Web.UI.WebControls.ObjectDataSourceDisposingEventArgs>|<xref:System.Web.UI.WebControls.ObjectDataSourceDisposingEventHandler>|  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ObjectDataSource>ビジネス オブジェクトを持つコントロールと<xref:System.Web.UI.WebControls.DetailsView>データを挿入するコントロール。 2 番目のコード例では、最初のコード例で使用される中間層ビジネス オブジェクトの例を提供します。  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ObjectDataSource>ビジネス オブジェクトを持つコントロールと<xref:System.Web.UI.WebControls.DetailsView>データを挿入するコントロール。 <xref:System.Web.UI.WebControls.DetailsView>最初に、新しい表示`NorthwindEmployee`レコードを自動的に生成されたと共に**挿入**ボタンをクリックします。 フィールドにデータを入力した後、<xref:System.Web.UI.WebControls.DetailsView>コントロール をクリックして、**挿入**ボタン、および<xref:System.Web.UI.WebControls.ObjectDataSource.InsertMethod%2A>プロパティを識別するメソッドを実行、<xref:System.Web.UI.WebControls.ObjectDataSource.Insert%2A>アクション。  
+  
+ この例では、`UpdateEmployeeInfo`の挿入を実行するメソッドが使用されます。 ただし、必要な、`NorthwindEmployee`データを挿入するパラメーターです。 コレクションではこのため、文字列の<xref:System.Web.UI.WebControls.DetailsView>コントロール パスに自動的には不十分です。 `NorthwindEmployeeInserting`デリゲートは、<xref:System.Web.UI.WebControls.ObjectDataSourceMethodEventHandler>を処理するオブジェクト、<xref:System.Web.UI.WebControls.ObjectDataSource.Inserting>イベントの前に、入力パラメーターを操作することができます、<xref:System.Web.UI.WebControls.ObjectDataSource.Insert%2A>操作が実行されます。 `UpdateEmployeeInfo`メソッドが必要な`NorthwindEmployee`をパラメーターとしてオブジェクトのいずれかの文字列のコレクションを使用して作成されに追加、<xref:System.Web.UI.WebControls.ObjectDataSourceMethodEventArgs.InputParameters%2A>コレクション。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.ObjectDataSource_4#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_4/CS/objds4cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.ObjectDataSource_4#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_4/VB/objds4vb.aspx#1)]  
+  
+ 次のコード例では、前のコード例を使用する中間層ビジネス オブジェクトの例を提供します。 次の一覧には、このコード例で定義されている 2 つの主要なクラスについて説明します。  
+  
+-   `EmployeeLogic`クラスは、ビジネス ロジックをカプセル化するステートレスなクラスです。  
+  
+-   `NorthwindEmployee`を読み込んで、データ層からデータを永続化に必要な基本的な機能のみを含むモデル クラスであるクラスです。  
+  
+ さらに、`NorthwindDataException`便宜クラスを提供します。  
+  
+ この例のクラスのセットでは、これは Microsoft SQL Server および Microsoft Access で使用できるサンプル データベース Northwind traders というデータベースを使用します。 稼働させるためには、アプリケーション ルートの下、App_Code ディレクトリに置くことによって、またはそれらをコンパイルして、生成された DLL を Bin ディレクトリに配置することによってこれらのクラスを使用します。 `UpdateEmployeeInfo`メソッドは完全に実装されていませんはないデータを挿入する、Northwind traders というデータベースにこの例を試す場合にようにします。  
+  
+ [!code-csharp[System.Web.UI.WebControls.ObjectDataSource_4#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_4/CS/northwindemployee4.cs#2)]
+ [!code-vb[System.Web.UI.WebControls.ObjectDataSource_4#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_4/VB/northwindemployee4.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ObjectDataSourceMethodEventArgs (System.Collections.Specialized.IOrderedDictionary inputParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Specialized.IOrderedDictionary inputParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ObjectDataSourceMethodEventArgs.#ctor(System.Collections.Specialized.IOrderedDictionary)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="inputParameters" Type="System.Collections.Specialized.IOrderedDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="inputParameters"><see cref="T:System.Collections.Specialized.IOrderedDictionary" />の<see cref="T:System.Web.UI.WebControls.Parameter" />ビジネス オブジェクトのメソッドとその関連値のパラメーターの名前を表すオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.ObjectDataSourceMethodEventArgs" />クラスの指定した入力パラメーターのコレクションを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InputParameters">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.IOrderedDictionary InputParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.IOrderedDictionary InputParameters" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ObjectDataSourceMethodEventArgs.InputParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.IOrderedDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビジネス オブジェクト メソッドのパラメーターとその値を格納するコレクションを取得します。</summary>
+        <value><see cref="T:System.Collections.IDictionary" />ビジネス オブジェクト メソッドのパラメーターとその対応する値を表す名前/値ペア。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パラメーターは、参照渡しまたは値によって、ビジネス オブジェクトのメソッドに渡すことができます。 使用する場合、<xref:System.Web.UI.WebControls.ObjectDataSourceMethodEventHandler>を処理するオブジェクト、 <xref:System.Web.UI.WebControls.ObjectDataSourceView.Selecting>、 <xref:System.Web.UI.WebControls.ObjectDataSourceView.Updating>、 <xref:System.Web.UI.WebControls.ObjectDataSourceView.Inserting>、または<xref:System.Web.UI.WebControls.ObjectDataSourceView.Deleting>イベントにアクセスしてこれらのパラメーターを使用して、<xref:System.Web.UI.WebControls.ObjectDataSourceMethodEventArgs.InputParameters%2A>プロパティです。 このディクショナリ内のパラメーターへの変更は、操作のどのメソッド オーバー ロードを呼び出すに影響します。  ときに、<xref:System.Web.UI.WebControls.ObjectDataSource.DataObjectTypeName%2A>のプロパティ、<xref:System.Web.UI.WebControls.ObjectDataSource>コントロールを設定すると、このディクショナリ内の項目のデータ オブジェクトのプロパティのみを変更することができます。 追加またはパラメーターを削除することはできません。 詳細については、「<xref:System.Web.UI.WebControls.ObjectDataSource.Delete%2A>」を参照してください。  
+  
+ 参照によって渡されるパラメーターは、<xref:System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs.OutputParameters%2A>のプロパティ、<xref:System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DropDownList>コントロール、<xref:System.Web.UI.WebControls.TextBox>コントロール、およびいくつか<xref:System.Web.UI.WebControls.ObjectDataSource>コントロール データを更新します。 <xref:System.Web.UI.WebControls.DropDownList> 、Northwind の従業員の名前を表示中に、<xref:System.Web.UI.WebControls.TextBox>コントロールを使用して入力し、アドレス情報を更新します。 <xref:System.Web.UI.WebControls.ObjectDataSource.UpdateParameters%2A>プロパティが含まれています、<xref:System.Web.UI.WebControls.ControlParameter>の選択した値にバインドされているオブジェクト、<xref:System.Web.UI.WebControls.DropDownList>をトリガーするボタンを制御する、<xref:System.Web.UI.WebControls.ObjectDataSource.Update%2A>メソッドは、従業員が選択されている後にのみ有効にします。  
+  
+ この例では、`NorthwindEmployeeUpdating`メソッドは、前に呼び出されます、<xref:System.Web.UI.WebControls.ObjectDataSource.Update%2A>を適切なパラメーターと値を追加するメソッド、<xref:System.Web.UI.WebControls.ObjectDataSourceMethodEventArgs.InputParameters%2A>コレクション。 動的に示したように、または宣言によって、パラメーターと値を追加することができます。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.ObjectDataSource_13#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_13/CS/objds13cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.ObjectDataSource_13#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_13/VB/objds13vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

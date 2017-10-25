@@ -1,0 +1,171 @@
+<Type Name="RegisteredScript" FullName="System.Web.UI.RegisteredScript">
+  <TypeSignature Language="C#" Value="public sealed class RegisteredScript" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit RegisteredScript extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.RegisteredScript" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>既に登録されているクライアント スクリプトにアクセスできるように、<see cref="T:System.Web.UI.Page" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアント スクリプトは、そのキーとその型で一意に識別します。 指定したキーの種類のペアで 1 つだけのスクリプトは、ページを登録できます。  
+  
+ クライアント スクリプトに登録されている順序で出力される保証はありません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddScriptTags">
+      <MemberSignature Language="C#" Value="public bool AddScriptTags { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AddScriptTags" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.RegisteredScript.AddScriptTags" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スクリプト ブロックがで囲まれた Web ページに表示するかどうかを示す値を取得<see langword="&lt;script&gt;" />タグ。</summary>
+        <value>
+          <see langword="true" />囲まれた Web ページで、スクリプトを表示するかどう<see langword="&lt;script&gt;" />タグです。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Control">
+      <MemberSignature Language="C#" Value="public System.Web.UI.Control Control { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Control Control" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.RegisteredScript.Control" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Control</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スクリプトを登録するコントロールを取得します。</summary>
+        <value>スクリプトを登録するコントロールへの参照。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Key">
+      <MemberSignature Language="C#" Value="public string Key { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Key" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.RegisteredScript.Key" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>と共に使用するには、キーを取得、<see cref="P:System.Web.UI.RegisteredScript.Type" />値をスクリプトを識別します。</summary>
+        <value>キーの値です。 この値は、<see langword="null" />または空です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアント スクリプトは、そのキーとその型で一意に識別します。 指定したキーの種類のペアで 1 つだけのスクリプトは、ページを登録できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Script">
+      <MemberSignature Language="C#" Value="public string Script { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Script" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.RegisteredScript.Script" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スクリプトのファイル名を取得します。</summary>
+        <value>スクリプトのファイル名。 この値は、<see langword="null" />または空です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScriptType">
+      <MemberSignature Language="C#" Value="public System.Web.UI.RegisteredScriptType ScriptType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.RegisteredScriptType ScriptType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.RegisteredScript.ScriptType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.RegisteredScriptType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示すときに、スクリプトを実行するスクリプトの種類を取得します。</summary>
+        <value>によって定義された値、<see cref="T:System.Web.UI.RegisteredScriptType" />列挙します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public Type Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type Type" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.RegisteredScript.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアント スクリプト型を取得するには、と共に、<see cref="P:System.Web.UI.RegisteredScript.Key" />値をスクリプトを識別します。</summary>
+        <value>スクリプトの種類。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、通常、スクリプトを登録するコントロールの種類を使用して指定します。  
+  
+ クライアント スクリプトは、そのキーとその型で一意に識別します。 指定したキーの種類のペアで 1 つだけのスクリプトは、ページを登録できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Url">
+      <MemberSignature Language="C#" Value="public string Url { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Url" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.RegisteredScript.Url" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スクリプト ファイルの URL を取得します。</summary>
+        <value>スクリプト ファイルの URL。 この値は、<see langword="null" />または空です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

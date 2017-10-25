@@ -1,0 +1,126 @@
+<Type Name="SystemIdentityModelSection" FullName="System.IdentityModel.Configuration.SystemIdentityModelSection">
+  <TypeSignature Language="C#" Value="public sealed class SystemIdentityModelSection : System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SystemIdentityModelSection extends System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Configuration.SystemIdentityModelSection" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>表す、<see langword="&lt;system.identityModel&gt;" />構成ファイル内のセクションです。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内で、`<system.identityModel>`セクションで、それぞれが一意の名前と特定の構成を定義する複数の id の構成を定義することがあります、たとえば、`<identityConfiguration name="alternate" >`です。 Id モデルのセクションで定義されている id の構成要素のコレクションを使用して取得できる、<xref:System.IdentityModel.Configuration.SystemIdentityModelSection.IdentityConfigurationElements%2A>プロパティです。  
+  
+ Id の構成要素の名前が指定されていない場合、要素は、既定の id 構成を定義します。 既定の id 構成はパッシブなフェデレーション シナリオ常に使用されます。 Id モデルの構成セクションでは、1 つだけの既定の構成があります。 使用して取得できる、<xref:System.IdentityModel.Configuration.SystemIdentityModelSection.DefaultIdentityConfigurationElement%2A>プロパティです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SystemIdentityModelSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Configuration.SystemIdentityModelSection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Configuration.SystemIdentityModelSection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Configuration.SystemIdentityModelSection Current { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.IdentityModel.Configuration.SystemIdentityModelSection Current" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.SystemIdentityModelSection.Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Configuration.SystemIdentityModelSection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の取得<see cref="T:System.IdentityModel.Configuration.SystemIdentityModelSection" />参照します。</summary>
+        <value>現在<see cref="T:System.IdentityModel.Configuration.SystemIdentityModelSection" />参照します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultIdentityConfigurationElement">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Configuration.IdentityConfigurationElement DefaultIdentityConfigurationElement { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.IdentityModel.Configuration.IdentityConfigurationElement DefaultIdentityConfigurationElement" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.SystemIdentityModelSection.DefaultIdentityConfigurationElement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Configuration.IdentityConfigurationElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定を取得します (無名)<see cref="T:System.IdentityModel.Configuration.IdentityConfigurationElement" />構成ファイルからです。</summary>
+        <value>既定値 (無名)<see langword="&lt;identityConfiguration&gt;" />要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `<system.identityModel>`セクションでは、既定値の 1 つだけを含めることができます`<identityConfiguration>`要素。 既定の id 構成はパッシブなフェデレーション シナリオ常に使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IdentityConfigurationElements">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Configuration.IdentityConfigurationElementCollection IdentityConfigurationElements { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Configuration.IdentityConfigurationElementCollection IdentityConfigurationElements" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.SystemIdentityModelSection.IdentityConfigurationElements" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("", Options=System.Configuration.ConfigurationPropertyOptions.IsDefaultCollection)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Configuration.IdentityConfigurationElementCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.IdentityModel.Configuration.IdentityConfigurationElementCollection" />構成ファイルからです。</summary>
+        <value>含むすべてのコレクション、<see langword="&lt;identityConfiguration&gt;" />内の要素、<see langword="&lt;system.identityModel&gt;" />セクションです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SectionName">
+      <MemberSignature Language="C#" Value="public const string SectionName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string SectionName" />
+      <MemberSignature Language="DocId" Value="F:System.IdentityModel.Configuration.SystemIdentityModelSection.SectionName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Windows Identity Foundation (WIF) では定義されている構成セクションの名前system.identityModel です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

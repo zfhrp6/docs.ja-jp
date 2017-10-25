@@ -1,0 +1,39 @@
+<Namespace Name="System.DirectoryServices">
+  <Docs>
+    <summary><see cref="N:System.DirectoryServices" />名前空間は、マネージ コードから Active Directory ドメイン サービスに簡単にアクセスを提供します。 名前空間には、2 つのコンポーネント クラスが含まれています。<see cref="T:System.DirectoryServices.DirectoryEntry" />と<see cref="T:System.DirectoryServices.DirectorySearcher" />、Active Directory サービス インターフェイス (ADSI) テクノロジを使用します。 Adsi エディターは、さまざまなネットワーク プロバイダーを使用するための柔軟なツールとして Microsoft が提供するインターフェイスのセットです。 Adsi エディターは、管理者検索およびネットワークの規模に関係なく、比較的簡単に、ネットワーク上のリソースを管理する機能を示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この名前空間のクラスは、任意の Active Directory ドメイン サービスのサービス プロバイダーで使用できます。 現在のプロバイダーは、: インターネット インフォメーション サービス (IIS)、ライトウェイト ディレクトリ アクセス プロトコル (LDAP)、Novell NetWare ディレクトリ サービス (NDS)、および WinNT です。  
+  
+ Adsi エディターは、Microsoft Active Directory ドメイン サービスを 1 つのインターフェイスを使用して、ネットワーク上のさまざまなディレクトリと対話するアプリケーションを有効にするためのプログラム インターフェイスです。 Adsi エディターを使用して、データベースをバックアップし、プリンターへのアクセス、およびユーザー アカウントの管理などの一般的なタスクを実行するアプリケーションを作成できます。  
+  
+ これらのクラスを使用する前に Active Directory ドメイン サービスの基本的な知識があると見なされます。 Active Directory ドメイン サービスの詳細については、トピックを参照して[Introduction to Active Directory オブジェクト](http://go.microsoft.com/fwlink/?LinkID=121193&clcid=0x409)と[Active Directory テクノロジの背景](http://go.microsoft.com/fwlink/?LinkID=121194&clcid=0x409)、MSDN ライブラリで、次のトピックだけでなく[http://msdn.microsoft.com/library](http://msdn.microsoft.com/library):  
+  
+-   [Active Directory ドメイン サービスを使用します。](http://go.microsoft.com/fwlink/?LinkID=121195&clcid=0x409)  
+  
+-   [Active Directory サービス インターフェイス](http://go.microsoft.com/fwlink/?LinkID=121197&clcid=0x409)  
+  
+-   [ライトウェイト ディレクトリ アクセス プロトコル](http://go.microsoft.com/fwlink/?LinkID=121198&clcid=0x409)  
+  
+-   [Active Directory サービスを実装するインターフェイスをプロバイダー](http://go.microsoft.com/fwlink/?LinkID=121199&clcid=0x409)  
+  
+-   [ADSI オブジェクトへのバインド](http://go.microsoft.com/fwlink/?LinkID=121200&clcid=0x409)  
+  
+-   [IADsOpenDSObject::OpenDSObject](http://go.microsoft.com/fwlink/?LinkID=121201&clcid=0x409)  
+  
+ Active Directory ドメイン サービスでは、ツリー構造を使用します。 ツリー内の各ノードには、一連プロパティにはが含まれています。 走査、検索、およびツリーを変更および読み取りをノードのプロパティに書き込むには、この名前空間を使用します。  
+  
+ <xref:System.DirectoryServices.DirectoryEntry> クラスは、Active Directory ドメイン サービス階層のノードまたはオブジェクトをカプセル化します。 オブジェクトへのバインド プロパティの読み取り、属性を更新するには、このクラスを使用します。 ヘルパー クラスと共に<xref:System.DirectoryServices.DirectoryEntry>ライフ サイクル管理およびナビゲーション メソッドを作成、削除、名前変更、子ノードの移動と列挙子を含むのサポートを提供します。  
+  
+ 使用して、<xref:System.DirectoryServices.DirectorySearcher>を Active Directory ドメイン サービス階層に対するクエリを実行するクラス。 LDAP は、唯一システムが指定した Active Directory サービス インターフェイス (ADSI) プロバイダー検索をサポートします。  
+  
+ を介して、Active Directory ドメイン サービス階層の検索<xref:System.DirectoryServices.DirectorySearcher>のインスタンスを返します<xref:System.DirectoryServices.SearchResult>のインスタンスに含まれており、<xref:System.DirectoryServices.SearchResultCollection>クラスです。  
+  
+ 注: クラス、メソッド、およびプロパティの多く、<xref:System.DirectoryServices>名前空間を使用して、<xref:System.Security.Permissions.SecurityAction.LinkDemand>コード アクセス セキュリティのオプションです。 つまり、コード アクセス セキュリティの要求がのみジャスト イン タイム コンパイル中に発生して、呼び出し元のアセンブリにのみ、すべての呼び出し履歴に要求が実行されます。 このため、呼び出し元を渡さないでくださいが信頼されていないコードを実行時にこの名前空間から作成されるオブジェクト。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Namespace>

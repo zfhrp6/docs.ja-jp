@@ -1,0 +1,641 @@
+<Type Name="MasterPage" FullName="System.Web.UI.MasterPage">
+  <TypeSignature Language="C#" Value="public class MasterPage : System.Web.UI.UserControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MasterPage extends System.Web.UI.UserControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.MasterPage" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.UserControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("Microsoft.VisualStudio.Web.WebForms.MasterPageWebFormDesigner, Microsoft.VisualStudio.Web, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.ComponentModel.Design.IRootDesigner))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ControlBuilder(typeof(System.Web.UI.MasterPageControlBuilder))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ParseChildren(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>テンプレートおよびマージ コンテナーのみで構成されるページの役割を果たします<see cref="T:System.Web.UI.WebControls.Content" />コントロールとその各子コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マスター ページは、テンプレートのコンテナーと、ASP.NET Web アプリケーションのコンテンツ ページのマージのページとして機能します。 マスター ページでは、コンテンツ ページのセット間での構造とコンテンツを共有する便利な手段を提供します。 コンテンツ プレース ホルダーを使用して、コンテンツ ページの内容で置き換えるマスター ページのセクションを定義します。  
+  
+ 必要な XHTML ドキュメント タグを追加するマスター ページとその関連するコンテンツ ページを使用する場合 (など`html`、 `head`、および`body`)、マスター ページにのみとなったファイルを作成、他の .aspx (ASP.NET ページ) スタンドアロンの Web ページとして。 コンテンツ ページでは、マスター ページ内のプレース ホルダーに挿入するコンテンツを定義します。  
+  
+ HTTP 要求が行われると、ページの実行時に、マスター ページとコンテンツのページがコンテンツ ページと同じ名前の 1 つのクラスに結合します。 マージされたクラスの派生元のコンパイル結果を<xref:System.Web.UI.Page>クラスです。  
+  
+ マスター ページには、直接的なマークアップ、サーバー コントロールとコンテナー コントロールを含めることができます。 マスター ページの外部に配置されているすべての要素、<xref:System.Web.UI.WebControls.ContentPlaceHolder>マスター ページとコンテンツ ページをマージに起因するすべてのページにコントロールを表示します。  
+  
+ マスター ページに関連付けられている各コンテンツ ページのマスター ページを参照する必要があります、`MasterPageFile`そのディレクティブの属性です。 コンテンツ ページがのみ含めることができます、`@ Page`ディレクティブと 1 つ以上<xref:System.Web.UI.WebControls.Content>コントロール。 内のすべてのページ、テキスト、マークアップ、およびサーバー コントロールに配置する必要があります<xref:System.Web.UI.WebControls.Content>コントロール。 識別する、<xref:System.Web.UI.WebControls.ContentPlaceHolder>ページのマスターのコントロール、<xref:System.Web.UI.WebControls.Content>コントロールに関連付けられている設定によって、<xref:System.Web.UI.WebControls.Content.ContentPlaceHolderID%2A>のプロパティ、<xref:System.Web.UI.WebControls.Content>コントロール。  
+  
+ 実行時に、それぞれからの動的なコンテンツ<xref:System.Web.UI.WebControls.Content>、要求されたページ内のコントロールは、関連の正確な場所でマスター ページとマージ<xref:System.Web.UI.WebControls.ContentPlaceHolder>コントロール。 他のマークアップおよびマスター ページ内のコントロールは影響を受けません。 マスターの両方のクラスとコンテンツ ページで、イベント ハンドラーを定義できます。 詳細については、次を参照してください。 [ASP.NET マスター ページとページのコンテンツ内のイベント](http://msdn.microsoft.com/library/b3ab2d01-9e37-4788-82d0-c6065e3ff5bd)です。  
+  
+ <xref:System.Web.UI.MasterPage>クラスは、.master 拡張子を持つファイルに関連付けられています。 これらのファイルは実行時としてコンパイル<xref:System.Web.UI.MasterPage>オブジェクトし、サーバーのメモリにキャッシュされます。  
+  
+ マスター ページ可能なコンテンツ ページを介して、<xref:System.Web.UI.Page.Master%2A>ベースのプロパティ<xref:System.Web.UI.Page>クラスです。 <xref:System.Web.UI.Page.Master%2A>プロパティには、マスター ページのインスタンスが返されます。 ただし、これは型指定されたベースとして<xref:System.Web.UI.MasterPage>クラスです。 アクセス制御、プロパティ、およびマスター ページの機能を<xref:System.Web.UI.Page.Master%2A>にプロパティをキャストすることができます、<xref:System.Web.UI.MasterPage>オブジェクト。 使用して、マスター ページのクラス名を定義、`ClassName`ディレクティブの属性です。  
+  
+> [!NOTE]
+>  ブラウザーには、.master 拡張子を持つファイルは提供されません。  
+  
+ マスター ページで有効なディレクティブで使用可能なものと同じ、<xref:System.Web.UI.UserControl>オブジェクト。 次の属性を含めることができます。  
+  
+-   `AutoEventWireup`  
+  
+-   `ClassName`  
+  
+-   `CodeFile`  
+  
+-   `CompilerMode`  
+  
+-   `CompilerOptions`  
+  
+-   `Debug`  
+  
+-   `Description`  
+  
+-   `EnableTheming`  
+  
+-   `EnableViewState`  
+  
+-   `Explicit`  
+  
+-   `Inherits`  
+  
+-   `Language`  
+  
+-   `LinePragmas`  
+  
+-   `MasterPageFile`  
+  
+-   `Src`  
+  
+-   `Strict`  
+  
+-   `WarningLevel`  
+  
+ マスター ページ ディレクティブは、個々 のコンテンツ ページのディレクティブをオーバーライドできません。  
+  
+ マスター ページは、ほとんどの場合、宣言によって作成されます。 マスター ページをプログラムで作成する場合から直接派生、<xref:System.Web.UI.MasterPage>クラスです。 拡張することに加えて、<xref:System.Web.UI.MasterPage>クラス、視覚的に、ソース ファイルで呼び出されますが、クラスに関連付けられているユーザー インターフェイス (UI) を表示する、.master ファイルを作成する必要があります。  
+  
+> [!NOTE]
+>  最初に、独自のクラスを作成してマスター ページを作成する場合は、ページで使用されるクラスに必要なすべての名前空間を含める必要があります。  
+  
+ マスター ページの詳細については、次を参照してください。 [ASP.NET マスター ページ](http://msdn.microsoft.com/library/4e53eedf-8304-4e7a-aed1-691a2623b28b)です。  
+  
+   
+  
+## Examples  
+ このセクションには、4 つのコード例が含まれています。  
+  
+-   最初のコード例では、マスター ページを宣言して作成する方法を示します。  
+  
+-   2 番目のコード例では、最初のコード例で作成されたマスター ページに関連付けられているコンテンツ ページを表します。  
+  
+-   3 番目のコード例では、マスター ページにプロパティを追加する方法を示します。  
+  
+-   4 番目のコード例では、コンテンツ ページを使用して、マスター ページのパブリック プロパティにアクセスする方法を示します。  
+  
+ 次の例では、マスター ページを宣言によって作成およびコンテンツ ページを使用して一部のコンテンツを追加する方法を示します。 最初の Web ページがという名前の .master ページ`MasterPageSample_1.master`です。  
+  
+```csharp  
+<%@ Master Language="C#" %>  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">  
+<html >  
+<head runat="server">  
+    <title>MasterPage Example</title>  
+</head>  
+<body>  
+    <form id="form1" runat="server">  
+    <div>  
+        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server" />  
+    </div>  
+    </form>  
+</body>  
+</html>  
+```  
+  
+```vb  
+<%@ Master Language="VB" %>  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">  
+<html >  
+<head runat="server">  
+    <title>MasterPage Example</title>  
+</head>  
+<body>  
+    <form id="form1" runat="server">  
+    <div>  
+        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server" />  
+    </div>  
+    </form>  
+</body>  
+</html>  
+```  
+  
+ 次の例に関連付けられているコンテンツ ページを表す`MasterPageSample_1.master`です。 含まれている、<xref:System.Web.UI.WebControls.Content>を制御し、特定、<xref:System.Web.UI.WebControls.ContentPlaceHolder>を使用して、コンテンツが関連付けられているコントロール、<xref:System.Web.UI.WebControls.Content.ContentPlaceHolderID%2A>プロパティです。  
+  
+```csharp  
+<%@ Page Language="C#" MasterPageFile="~/MasterPageSample_1cs.master" Title="Content Page"%>  
+  
+<asp:content   
+    runat="server"  
+    contentplaceholderid="ContentPlaceHolder1" >Hello, Master Pages!</asp:content>  
+```  
+  
+```vb  
+<%@ Page Language="VB" MasterPageFile="~/MasterPageSample_1vb.master" Title="Content Page"%>  
+  
+<asp:content   
+    runat="server"  
+    contentplaceholderid="ContentPlaceHolder1" >Hello, Master Pages!</asp:content>  
+```  
+  
+ 次の例では、マスター ページにプロパティを追加する方法を示します。 `ClassName`属性は、マスター ページの名前を使用します。  
+  
+```csharp  
+<%@ Master Language="C#" ClassName="MasterExample" %>  
+  
+<script runat="server">  
+        public string SiteName  
+        {  
+            get { return "My Site Name"; }  
+        }  
+</script>  
+  
+<html >  
+<head runat="server">  
+    <title>MasterPage Example</title>  
+</head>  
+<body>  
+    <form id="form1" runat="server">  
+    <div>  
+        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">  
+        </asp:contentplaceholder>  
+    </div>  
+    </form>  
+</body>  
+</html>  
+```  
+  
+```vb  
+<%@ Master Language="VB" ClassName="MasterExample" %>  
+  
+<script runat="server">  
+  Public ReadOnly Property SiteName() As String  
+    Get  
+      Return "My Site Name"  
+    End Get  
+  End Property  
+  
+</script>  
+  
+<html >  
+<head runat="server">  
+    <title>MasterPage Example</title>  
+</head>  
+<body>  
+    <form id="form1" runat="server">  
+    <div>  
+        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">  
+        </asp:contentplaceholder>  
+    </div>  
+    </form>  
+</body>  
+</html>  
+```  
+  
+ 次の例は、コンテンツ ページを使用して、パブリック プロパティにアクセスする方法を示しています。`SiteName`前のコード例でマスター ページ。  
+  
+```csharp  
+<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" Title="MasterPage Example" %>  
+  
+<script runat="server">  
+  protected void Page_Load(object sender, EventArgs e)  
+  {  
+    MasterExample m = (MasterExample)Page.Master;  
+    mylabel.Text = m.SiteName;  
+  }  
+</script>  
+  
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">  
+    Hello, Master Pages!  
+    <asp:Label runat="server" Text="Label" ID="mylabel"></asp:Label>  
+</asp:Content>  
+```  
+  
+```vb  
+<%@ Page Language="VB" MasterPageFile="~/MasterPage.master" Title="MasterPage Example" %>  
+  
+<script runat="server">  
+  
+  Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs)  
+    Dim m As MasterExample = CType(Page.Master, MasterPage)  
+    mylabel.Text = m.SiteName  
+  End Sub  
+</script>  
+  
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">  
+    Hello, Master Pages!  
+    <asp:Label runat="server" Text="Label" ID="mylabel"></asp:Label>  
+</asp:Content>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MasterPage ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MasterPage.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.MasterPage" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddContentTemplate">
+      <MemberSignature Language="C#" Value="protected void AddContentTemplate (string templateName, System.Web.UI.ITemplate template);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void AddContentTemplate(string templateName, class System.Web.UI.ITemplate template) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MasterPage.AddContentTemplate(System.String,System.Web.UI.ITemplate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="templateName" Type="System.String" />
+        <Parameter Name="template" Type="System.Web.UI.ITemplate" />
+      </Parameters>
+      <Docs>
+        <param name="templateName">一意の名前、<see cref="T:System.Web.UI.WebControls.Content" />です。</param>
+        <param name="template"><see cref="T:System.Web.UI.WebControls.Content" />。</param>
+        <summary>追加、<see cref="T:System.Web.UI.WebControls.Content" />コントロールを<see cref="P:System.Web.UI.MasterPage.ContentTemplates" />ディクショナリ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マスター ページの派生クラスを追加できます<xref:System.Web.UI.WebControls.Content>コントロールを<xref:System.Web.UI.MasterPage.ContentTemplates%2A>ディクショナリを使用して、<xref:System.Web.UI.MasterPage.AddContentTemplate%2A>メソッドです。 派生型が通常オーバーライドしないで、<xref:System.Web.UI.MasterPage.AddContentTemplate%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">A<see cref="T:System.Web.UI.WebControls.Content" />に同じ名前を持つコントロールが既に存在します<see cref="P:System.Web.UI.MasterPage.ContentTemplates" />ディクショナリ。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentPlaceHolders">
+      <MemberSignature Language="C#" Value="protected System.Collections.IList ContentPlaceHolders { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IList ContentPlaceHolders" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.MasterPage.ContentPlaceHolders" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一覧を取得<see cref="T:System.Web.UI.WebControls.ContentPlaceHolder" />コントロール、マスター ページを使用してさまざまな定義をコンテンツ領域です。</summary>
+        <value><see cref="T:System.Collections.IList" />の<see cref="T:System.Web.UI.WebControls.ContentPlaceHolder" />のプレース ホルダーとして使用されるマスター ページ コントロール<see cref="T:System.Web.UI.WebControls.Content" />コンテンツ ページにコントロールが見つかりました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マスター ページ クラスへのアクセスの派生、<xref:System.Web.UI.MasterPage.ContentPlaceHolders%2A>を現在の一覧を表示するプロパティ<xref:System.Web.UI.WebControls.ContentPlaceHolder>マスターに含まれるコントロール。 派生型が通常オーバーライドしないで、<xref:System.Web.UI.MasterPage.ContentPlaceHolders%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentTemplates">
+      <MemberSignature Language="C#" Value="protected System.Collections.IDictionary ContentTemplates { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IDictionary ContentTemplates" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.MasterPage.ContentTemplates" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マスター ページに関連付けられているコンテンツ コントロールの一覧を取得します。</summary>
+        <value><see cref="T:System.Collections.IList" />マスター ページに関連付けられているコンテンツ コントロールのです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マスター ページ クラスへのアクセスの派生、<xref:System.Web.UI.MasterPage.ContentTemplates%2A>現在を取得するプロパティを<xref:System.Web.UI.WebControls.Content>制御、関連するコンテンツ ページで定義されています。 派生型が通常オーバーライドしないで、<xref:System.Web.UI.MasterPage.ContentTemplates%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstantiateInContentPlaceHolder">
+      <MemberSignature Language="C#" Value="public void InstantiateInContentPlaceHolder (System.Web.UI.Control contentPlaceHolder, System.Web.UI.ITemplate template);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InstantiateInContentPlaceHolder(class System.Web.UI.Control contentPlaceHolder, class System.Web.UI.ITemplate template) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MasterPage.InstantiateInContentPlaceHolder(System.Web.UI.Control,System.Web.UI.ITemplate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contentPlaceHolder" Type="System.Web.UI.Control" />
+        <Parameter Name="template" Type="System.Web.UI.ITemplate" />
+      </Parameters>
+      <Docs>
+        <param name="contentPlaceHolder">コンテンツのコンテナーを表すコントロール。</param>
+        <param name="template">使用する <see cref="T:System.Web.UI.WebControls.Content" /> インスタンス。</param>
+        <summary>マスター ページを所有するページに現在のテンプレート コントロールを設定する方法を提供します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Master">
+      <MemberSignature Language="C#" Value="public System.Web.UI.MasterPage Master { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.MasterPage Master" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.MasterPage.Master" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.MasterPage</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>親マスター ページの現在のマスターの取得には、マスター ページのシナリオが入れ子になった。</summary>
+        <value>現在のマスター ページの親であるマスター ページそれ以外の場合、 <see langword="null" />、現在のマスター ページが親を持たない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.MasterPage.Master%2A>マスター ページ階層は、実行時に作成できないためプロパティは読み取り専用です。  
+  
+   
+  
+## Examples  
+ このセクションには、3 つのコード例が含まれています。 最初のコード例は、入れ子になったマスター ページを作成する方法を示します`.`2 番目のコード例は、最初のコード例で作成されたマスター ページを参照する方法を示します。 3 番目のコード例では、2 番目のコード例で作成されたマスター ページを参照するコンテンツ ページを使用する方法を示します。  
+  
+ 次のコード例は、入れ子になったマスター ページを作成する方法を示し、という名前の親マスター ページを表す`ParentMasterPage_1`です。  
+  
+```csharp  
+<%@ Master Language="C#" %>  
+  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">  
+  
+<html >  
+<head runat="server">  
+    <title>Nested Master Page Example</title>  
+</head>  
+<body>  
+    <form id="form1" runat="server">  
+    <h1>This is content in the parent master page.</h1>  
+    <div>  
+        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">  
+        </asp:contentplaceholder>  
+    </div>  
+    </form>  
+</body>  
+</html>  
+```  
+  
+```vb  
+<%@ Master Language="VB" %>  
+  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">  
+  
+<html >  
+<head runat="server">  
+    <title>Nested Master Page Example</title>  
+</head>  
+<body>  
+    <form id="form1" runat="server">  
+    <h1>This is content in the parent master page.</h1>  
+    <div>  
+        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">  
+        </asp:contentplaceholder>  
+    </div>  
+    </form>  
+</body>  
+</html>  
+```  
+  
+ 次のコード例は、という名前の入れ子になったマスター ページを使用する方法を示します`ChildMasterPage_1`前のコード例で作成されたマスター ページを参照します。  
+  
+```csharp  
+<%@ Master Language="C#" MasterPageFile="~/ParentMasterPage_1cs.master" %>  
+  
+<asp:Content Runat="Server" ContentPlaceHolderID="ContentPlaceHolder1">  
+    <h2>This is the content of a nested Master Page.</h2>  
+    <div>  
+        <asp:contentplaceholder id="ContentPlaceHolder2" runat="server">  
+        </asp:contentplaceholder>  
+    </div>  
+</asp:Content>  
+```  
+  
+```vb  
+<%@ Master Language="VB" MasterPageFile="~/ParentMasterPage_1vb.master" %>  
+  
+<asp:Content Runat="Server" ContentPlaceHolderID="ContentPlaceHolder1">  
+    <h2>This is the content of a nested Master Page.</h2>  
+    <div>  
+        <asp:contentplaceholder id="ContentPlaceHolder2" runat="server">  
+        </asp:contentplaceholder>  
+    </div>  
+</asp:Content>  
+```  
+  
+ 次のコード例は、という名前のコンテンツ ページを使用する方法を示します`ContentPage`を参照する、`ChildMasterPage_1`前のコード例で作成されました。  
+  
+```csharp  
+<%@ Page Language="C#" MasterPageFile="~/ChildMasterPage_1cs.master" Title="Untitled Page"%>  
+  
+<asp:content runat="server" contentplaceholderid="ContentPlaceHolder2">  
+This is the content of a Content control.  
+</asp:content>  
+```  
+  
+```vb  
+<%@ Page Language="VB" MasterPageFile="~/ChildMasterPage_1vb.master" Title="Untitled Page"%>  
+  
+<asp:content runat="server" contentplaceholderid="ContentPlaceHolder2">  
+This is the content of a Content control.  
+</asp:content>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MasterPageFile">
+      <MemberSignature Language="C#" Value="public string MasterPageFile { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MasterPageFile" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.MasterPage.MasterPageFile" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を現在のコンテンツを含むマスター ページの名前。</summary>
+        <value>現在のマスター ページの親であるマスター ページの名前それ以外の場合、 <see langword="null" />、現在のマスター ページが親を持たない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ このセクションには、3 つのコード例が含まれています。 最初のコード例は、入れ子になったマスター ページを作成する方法を示します`.`2 番目のコード例は、最初のコード例で作成されたマスター ページを参照する方法を示します。 3 番目のコード例では、2 番目のコード例で作成されたマスター ページを参照するコンテンツ ページを使用する方法を示します。  
+  
+ 次のコード例は、入れ子になったマスター ページを作成する方法を示し、という名前の親マスター ページを表す`ParentMasterPage_1`です。  
+  
+```csharp  
+<%@ Master Language="C#" %>  
+  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">  
+  
+<html >  
+<head runat="server">  
+    <title>Nested Master Page Example</title>  
+</head>  
+<body>  
+    <form id="form1" runat="server">  
+    <h1>This is content in the parent master page.</h1>  
+    <div>  
+        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">  
+        </asp:contentplaceholder>  
+    </div>  
+    </form>  
+</body>  
+</html>  
+```  
+  
+```vb  
+<%@ Master Language="VB" %>  
+  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">  
+  
+<html >  
+<head runat="server">  
+    <title>Nested Master Page Example</title>  
+</head>  
+<body>  
+    <form id="form1" runat="server">  
+    <h1>This is content in the parent master page.</h1>  
+    <div>  
+        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">  
+        </asp:contentplaceholder>  
+    </div>  
+    </form>  
+</body>  
+</html>  
+```  
+  
+ 次のコード例は、という名前の入れ子になったマスター ページを使用する方法を示します`ChildMasterPage_1`前のコード例で作成されたマスター ページを参照します。  
+  
+```csharp  
+<%@ Master Language="C#" MasterPageFile="~/ParentMasterPage_1cs.master" %>  
+  
+<asp:Content Runat="Server" ContentPlaceHolderID="ContentPlaceHolder1">  
+    <h2>This is the content of a nested Master Page.</h2>  
+    <div>  
+        <asp:contentplaceholder id="ContentPlaceHolder2" runat="server">  
+        </asp:contentplaceholder>  
+    </div>  
+</asp:Content>  
+```  
+  
+```vb  
+<%@ Master Language="VB" MasterPageFile="~/ParentMasterPage_1vb.master" %>  
+  
+<asp:Content Runat="Server" ContentPlaceHolderID="ContentPlaceHolder1">  
+    <h2>This is the content of a nested Master Page.</h2>  
+    <div>  
+        <asp:contentplaceholder id="ContentPlaceHolder2" runat="server">  
+        </asp:contentplaceholder>  
+    </div>  
+</asp:Content>  
+```  
+  
+ 次のコード例は、という名前のコンテンツ ページを使用する方法を示します`ContentPage`を参照する、`ChildMasterPage_1`前のコード例で作成されました。  
+  
+```csharp  
+<%@ Page Language="C#" MasterPageFile="~/ChildMasterPage_1cs.master" Title="Untitled Page"%>  
+  
+<asp:content runat="server" contentplaceholderid="ContentPlaceHolder2">  
+This is the content of a Content control.  
+</asp:content>  
+```  
+  
+```vb  
+<%@ Page Language="VB" MasterPageFile="~/ChildMasterPage_1vb.master" Title="Untitled Page"%>  
+  
+<asp:content runat="server" contentplaceholderid="ContentPlaceHolder2">  
+This is the content of a Content control.  
+</asp:content>  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Web.UI.MasterPage.MasterPageFile" />プロパティは、中または前にのみ設定できます、<see cref="E:System.Web.UI.Page.PreInit" />イベント。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

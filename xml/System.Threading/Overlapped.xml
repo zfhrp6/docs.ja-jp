@@ -1,0 +1,624 @@
+<Type Name="Overlapped" FullName="System.Threading.Overlapped">
+  <TypeSignature Language="C#" Value="public class Overlapped" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Overlapped extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.Overlapped" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Threading.Overlapped</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Win32 のマネージ表現を提供<c>OVERLAPPED</c>から情報を転送する方法など、構造体、<see cref="T:System.Threading.Overlapped" />インスタンスを<see cref="T:System.Threading.NativeOverlapped" />構造体。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Threading.Overlapped.Pack%2A>と<xref:System.Threading.Overlapped.UnsafePack%2A>メソッドからの情報を転送する、<xref:System.Threading.Overlapped>オブジェクトを<xref:System.Threading.NativeOverlapped>ファイル I/O を渡すことができるの Win32 API 関数を非同期構造。 <xref:System.Threading.Overlapped.Unpack%2A>メソッドからの情報を転送する、<xref:System.Threading.NativeOverlapped>構造体のインスタンスに、<xref:System.Threading.Overlapped>クラスです。  
+  
+ プロパティの変更、<xref:System.Threading.Overlapped>オブジェクトに関連付けられた影響を与える<xref:System.Threading.NativeOverlapped>構造体、またはその逆です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Overlapped ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Overlapped.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Overlapped</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しい、空のインスタンスを初期化、<see cref="T:System.Threading.Overlapped" />クラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Overlapped (int offsetLo, int offsetHi, int hEvent, IAsyncResult ar);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 offsetLo, int32 offsetHi, int32 hEvent, class System.IAsyncResult ar) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Overlapped.#ctor(System.Int32,System.Int32,System.Int32,System.IAsyncResult)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Overlapped</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Not 64bit compatible.  Please use the constructor that takes IntPtr for the event handle")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="offsetLo" Type="System.Int32" />
+        <Parameter Name="offsetHi" Type="System.Int32" />
+        <Parameter Name="hEvent" Type="System.Int32" />
+        <Parameter Name="ar" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="offsetLo">転送を開始する位置を示すファイルの位置の下位ワード。</param>
+        <param name="offsetHi">転送を開始する位置を示すファイルの位置の上位ワード。</param>
+        <param name="hEvent">I/O 操作が完了したら通知されるイベント ハンドルです。</param>
+        <param name="ar">実装するオブジェクト、<see cref="T:System.IAsyncResult" />インターフェイスし、I/O 操作のステータス情報を提供します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Threading.Overlapped" />指定されたファイルを持つクラスの位置、I/O 操作が完了したら、通知されるイベントと操作の結果を返すためのインターフェイスを 32 ビット整数のハンドル。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Threading.WaitHandle.Handle%2A?displayProperty=nameWithType>から派生した任意のマネージ同期イベントのハンドルを取得するプロパティ、<xref:System.Threading.WaitHandle>クラスです。  
+  
+ 実装<xref:System.IAsyncResult>I/O 操作のステータス情報を提供します。 コンス トラクターに渡す、`ar`パラメーターと後でそれを取得し、<xref:System.Threading.Overlapped.AsyncResult%2A>プロパティです。 コールバック メソッドが指定されている場合、<xref:System.Threading.Overlapped.Pack%2A>または<xref:System.Threading.Overlapped.UnsafePack%2A>メソッド、コールバックを取得できます、<xref:System.IAsyncResult>をアンパックして、<xref:System.Threading.NativeOverlapped>構造体を受信します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Overlapped (int offsetLo, int offsetHi, IntPtr hEvent, IAsyncResult ar);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 offsetLo, int32 offsetHi, native int hEvent, class System.IAsyncResult ar) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Overlapped.#ctor(System.Int32,System.Int32,System.IntPtr,System.IAsyncResult)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Overlapped</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="offsetLo" Type="System.Int32" />
+        <Parameter Name="offsetHi" Type="System.Int32" />
+        <Parameter Name="hEvent" Type="System.IntPtr" />
+        <Parameter Name="ar" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="offsetLo">転送を開始する位置を示すファイルの位置の下位ワード。</param>
+        <param name="offsetHi">転送を開始する位置を示すファイルの位置の上位ワード。</param>
+        <param name="hEvent">I/O 操作が完了したら通知されるイベント ハンドルです。</param>
+        <param name="ar">実装するオブジェクト、<see cref="T:System.IAsyncResult" />インターフェイスし、I/O 操作のステータス情報を提供します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Threading.Overlapped" />指定されたファイルを持つクラスを配置、および操作の結果を返すためのインターフェイスを I/O 操作が完了したら、通知されるイベントを識別するハンドル。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したマネージ同期オブジェクトのハンドルを取得する、<xref:System.Threading.WaitHandle>クラスを使用して、<xref:System.Threading.WaitHandle.SafeWaitHandle%2A?displayProperty=nameWithType>を取得するプロパティ、<xref:Microsoft.Win32.SafeHandles.SafeWaitHandle>オブジェクト、およびを呼び出す、<xref:System.Runtime.InteropServices.SafeHandle.DangerousGetHandle%2A>メソッドです。  
+  
+ 実装<xref:System.IAsyncResult>I/O 操作のステータス情報を提供します。 コンス トラクターに渡す、`ar`パラメーターと後でそれを取得し、<xref:System.Threading.Overlapped.AsyncResult%2A>プロパティです。 コールバック メソッドが指定されている場合、<xref:System.Threading.Overlapped.Pack%2A>または<xref:System.Threading.Overlapped.UnsafePack%2A>メソッド、コールバックを取得できます、<xref:System.IAsyncResult>をアンパックして、<xref:System.Threading.NativeOverlapped>構造体を受信します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AsyncResult">
+      <MemberSignature Language="C#" Value="public IAsyncResult AsyncResult { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IAsyncResult AsyncResult" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Overlapped.AsyncResult" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Overlapped</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または I/O 操作のステータス情報を提供するオブジェクトを設定します。</summary>
+        <value><see cref="T:System.IAsyncResult" /> インターフェイスを実装するオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventHandle">
+      <MemberSignature Language="C#" Value="public int EventHandle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 EventHandle" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Overlapped.EventHandle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Overlapped</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Not 64bit compatible.  Use EventHandleIntPtr instead.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または I/O 操作が完了したら通知される同期イベントを 32 ビット整数のハンドルを設定します。</summary>
+        <value><see cref="T:System.Int32" />同期イベントのハンドルを表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、64 ビット プラットフォームでは使用できません。 代わりに、<xref:System.Threading.Overlapped.EventHandleIntPtr%2A> プロパティを使用してください。  
+  
+ 使用して、<xref:System.Threading.WaitHandle.Handle%2A?displayProperty=nameWithType>から派生した任意のマネージ同期イベントのハンドルを取得するプロパティ、<xref:System.Threading.WaitHandle>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventHandleIntPtr">
+      <MemberSignature Language="C#" Value="public IntPtr EventHandleIntPtr { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance native int EventHandleIntPtr" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Overlapped.EventHandleIntPtr" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Overlapped</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または I/O 操作が完了したら通知される同期イベントをハンドルを設定します。</summary>
+        <value><see cref="T:System.IntPtr" />イベントのハンドルを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したマネージ同期オブジェクトのハンドルを取得する、<xref:System.Threading.WaitHandle>クラスを使用して、<xref:System.Threading.WaitHandle.SafeWaitHandle%2A?displayProperty=nameWithType>を取得するプロパティ、<xref:Microsoft.Win32.SafeHandles.SafeWaitHandle>オブジェクト、およびを呼び出す、<xref:System.Runtime.InteropServices.SafeHandle.DangerousGetHandle%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Free">
+      <MemberSignature Language="C#" Value="public static void Free (System.Threading.NativeOverlapped* nativeOverlappedPtr);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Free(valuetype System.Threading.NativeOverlapped* nativeOverlappedPtr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Overlapped.Free(System.Threading.NativeOverlapped*)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Overlapped</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nativeOverlappedPtr" Type="System.Threading.NativeOverlapped*" />
+      </Parameters>
+      <Docs>
+        <param name="nativeOverlappedPtr">ポインター、<see cref="T:System.Threading.NativeOverlapped" />解放される構造です。</param>
+        <summary>によって割り当てられたネイティブ オーバー ラップ構造に関連付けられたアンマネージ メモリの解放、<see cref="Overload:System.Threading.Overlapped.Pack" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す必要があります、<xref:System.Threading.Overlapped.Free%2A>メソッドを正確に 1 回にすべて<xref:System.Threading.NativeOverlapped>から受信するポインター、<xref:System.Threading.Overlapped.Pack%2A>メソッドです。 呼び出すことがない場合、<xref:System.Threading.Overlapped.Free%2A>メソッド、メモリ リークが発生します。 呼び出す場合は、<xref:System.Threading.Overlapped.Free%2A>メソッドより 1 回、メモリが破損します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="nativeOverlappedPtr" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="OffsetHigh">
+      <MemberSignature Language="C#" Value="public int OffsetHigh { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 OffsetHigh" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Overlapped.OffsetHigh" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Overlapped</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の転送を開始する位置を示すファイルの位置の上位ワード。 ファイルの位置は、ファイルの先頭からのバイト オフセットです。</summary>
+        <value><see cref="T:System.Int32" />ファイルの位置の上位ワードを表す値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OffsetLow">
+      <MemberSignature Language="C#" Value="public int OffsetLow { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 OffsetLow" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Overlapped.OffsetLow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Overlapped</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または転送を開始する位置を示すファイルの位置の下位ワードを設定します。 ファイルの位置は、ファイルの先頭からのバイト オフセットです。</summary>
+        <value><see cref="T:System.Int32" />ファイル位置の下位ワードを表す値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pack">
+      <MemberSignature Language="C#" Value="public System.Threading.NativeOverlapped* Pack (System.Threading.IOCompletionCallback iocb);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Threading.NativeOverlapped* Pack(class System.Threading.IOCompletionCallback iocb) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Overlapped.Pack(System.Threading.IOCompletionCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Overlapped</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use Pack(iocb, userData) instead")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.NativeOverlapped*</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="iocb" Type="System.Threading.IOCompletionCallback" />
+      </Parameters>
+      <Docs>
+        <param name="iocb"><see cref="T:System.Threading.IOCompletionCallback" />非同期 I/O 操作が完了したときに呼び出されるコールバック メソッドを表すデリゲート。</param>
+        <summary>パックの現在のインスタンスに、<see cref="T:System.Threading.NativeOverlapped" />構造体、非同期 I/O 操作が完了したら呼び出されるデリゲートを指定します。</summary>
+        <returns><see cref="T:System.Threading.NativeOverlapped" /> 構造体へのアンマネージ ポインター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによって返されるアンマネージ ポインターは、オーバー ラップされた I/O 操作で、オペレーティング システムに渡すことができます。 <xref:System.Threading.NativeOverlapped>まで物理メモリ内構造は固定されて<xref:System.Threading.Overlapped.Unpack%2A>と呼びます。  
+  
+> [!IMPORTANT]
+>  呼び出し元は、バッファーをピン留めします。 アプリケーション ドメインがアンロードされた場合、ただし、ピン留めされたバッファーへのハンドルが破棄され、バッファーが解放され、解放されたアドレスへの書き込み I/O 操作。 この理由を使用する方がよい、<xref:System.Threading.Overlapped.Pack%28System.Threading.IOCompletionCallback%2CSystem.Object%29>メソッドのオーバー ロードをランタイムが、バッファーをピン留めします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">現在<see cref="T:System.Threading.Overlapped" />は既にパックされています。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Pack">
+      <MemberSignature Language="C#" Value="public System.Threading.NativeOverlapped* Pack (System.Threading.IOCompletionCallback iocb, object userData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Threading.NativeOverlapped* Pack(class System.Threading.IOCompletionCallback iocb, object userData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Overlapped.Pack(System.Threading.IOCompletionCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Overlapped</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.NativeOverlapped*</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="iocb" Type="System.Threading.IOCompletionCallback" />
+        <Parameter Name="userData" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="iocb"><see cref="T:System.Threading.IOCompletionCallback" />非同期 I/O 操作が完了したときに呼び出されるコールバック メソッドを表すデリゲート。</param>
+        <param name="userData">オブジェクトまたは操作の入力または出力バッファーを表すオブジェクトの配列。 各オブジェクトは、バッファー、たとえばバイトの配列を表します。</param>
+        <summary>パックの現在のインスタンスに、<see cref="T:System.Threading.NativeOverlapped" />構造体、非同期 I/O 操作が完了すると呼び出されるデリゲートとバッファーとして機能するマネージ オブジェクトを指定します。</summary>
+        <returns><see cref="T:System.Threading.NativeOverlapped" /> 構造体へのアンマネージ ポインター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによって返されるアンマネージ ポインターは、オーバー ラップされた I/O 操作で、オペレーティング システムに渡すことができます。 <xref:System.Threading.NativeOverlapped>まで物理メモリ内構造は固定されて<xref:System.Threading.Overlapped.Unpack%2A>と呼びます。  
+  
+ 指定されたバッファー、または`userData`非同期 I/O を実行するオペレーティング システムのアンマネージ関数に渡されたものと同じである必要があります。  
+  
+> [!NOTE]
+>  指定されたバッファー、またはランタイムがピン留め`userData`I/O 操作の実行中です。 アプリケーション ドメインが読み込まれている場合、ランタイムは、I/O 操作が完了するまでの固定メモリを保持します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">現在<see cref="T:System.Threading.Overlapped" />は既にパックされています。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Unpack">
+      <MemberSignature Language="C#" Value="public static System.Threading.Overlapped Unpack (System.Threading.NativeOverlapped* nativeOverlappedPtr);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Overlapped Unpack(valuetype System.Threading.NativeOverlapped* nativeOverlappedPtr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Overlapped.Unpack(System.Threading.NativeOverlapped*)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Overlapped</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Overlapped</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nativeOverlappedPtr" Type="System.Threading.NativeOverlapped*" />
+      </Parameters>
+      <Docs>
+        <param name="nativeOverlappedPtr"><see cref="T:System.Threading.NativeOverlapped" /> 構造体へのアンマネージ ポインター。</param>
+        <summary>指定したアンマネージ アンパック<see cref="T:System.Threading.NativeOverlapped" />構造体をマネージ<see cref="T:System.Threading.Overlapped" />オブジェクト。</summary>
+        <returns><see cref="T:System.Threading.Overlapped" />ネイティブ構造体から開梱済みの情報を含むオブジェクトします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Threading.NativeOverlapped>が呼び出されるまで、構造体は物理メモリから解放されず、<xref:System.Threading.Overlapped.Free%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="nativeOverlappedPtr" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UnsafePack">
+      <MemberSignature Language="C#" Value="public System.Threading.NativeOverlapped* UnsafePack (System.Threading.IOCompletionCallback iocb);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Threading.NativeOverlapped* UnsafePack(class System.Threading.IOCompletionCallback iocb) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Overlapped.UnsafePack(System.Threading.IOCompletionCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Overlapped</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use UnsafePack(iocb, userData) instead")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.NativeOverlapped*</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="iocb" Type="System.Threading.IOCompletionCallback" />
+      </Parameters>
+      <Docs>
+        <param name="iocb"><see cref="T:System.Threading.IOCompletionCallback" />非同期 I/O 操作が完了したときに呼び出されるコールバック メソッドを表すデリゲート。</param>
+        <summary>パックの現在のインスタンスに、<see cref="T:System.Threading.NativeOverlapped" />非同期 I/O 操作の完了時に呼び出すデリゲートを指定する構造体。 呼び出し元のスタックを反映しません。</summary>
+        <returns><see cref="T:System.Threading.NativeOverlapped" /> 構造体へのアンマネージ ポインター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによって返されるアンマネージ ポインターは、オーバー ラップされた I/O 操作で、オペレーティング システムに渡すことができます。 <xref:System.Threading.NativeOverlapped>まで物理メモリ内構造は固定されて<xref:System.Threading.Overlapped.Unpack%2A>と呼びます。  
+  
+ 呼び出し元は、バッファーをピン留めします。 アプリケーション ドメインがアンロードされた場合、ただし、ピン留めされたバッファーへのハンドルが破棄され、バッファーが解放され、解放されたアドレスへの書き込み I/O 操作。 この理由を使用する方がよい、<xref:System.Threading.Overlapped.UnsafePack%28System.Threading.IOCompletionCallback%2CSystem.Object%29>メソッドのオーバー ロードをランタイムが、バッファーをピン留めします。  
+  
+> [!CAUTION]
+>  使用して、<xref:System.Threading.Overlapped.UnsafePack%2A>メソッドは、セキュリティ ホールを誤って開けません。 コード アクセス セキュリティは、スタックに基づいて、すべての呼び出し元のアクセス許可をその権限のチェックを行います。 <xref:System.Threading.Overlapped.UnsafePack%2A>メソッドはコール スタックを反映しません。 悪意のあるコードは、アクセス許可のチェックを避けるためにこれを利用できる可能性があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">現在<see cref="T:System.Threading.Overlapped" />は既にパックされています。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UnsafePack">
+      <MemberSignature Language="C#" Value="public System.Threading.NativeOverlapped* UnsafePack (System.Threading.IOCompletionCallback iocb, object userData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Threading.NativeOverlapped* UnsafePack(class System.Threading.IOCompletionCallback iocb, object userData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Overlapped.UnsafePack(System.Threading.IOCompletionCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Overlapped</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.NativeOverlapped*</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="iocb" Type="System.Threading.IOCompletionCallback" />
+        <Parameter Name="userData" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="iocb"><see cref="T:System.Threading.IOCompletionCallback" />非同期 I/O 操作が完了したときに呼び出されるコールバック メソッドを表すデリゲート。</param>
+        <param name="userData">オブジェクトまたは操作の入力または出力バッファーを表すオブジェクトの配列。 各オブジェクトは、バッファー、たとえばバイトの配列を表します。</param>
+        <summary>パックの現在のインスタンスに、<see cref="T:System.Threading.NativeOverlapped" />構造体、非同期 I/O 操作が完了し、マネージ オブジェクトに呼び出すデリゲートは、バッファーとして機能を指定します。 呼び出し元のスタックを反映しません。</summary>
+        <returns><see cref="T:System.Threading.NativeOverlapped" /> 構造体へのアンマネージ ポインター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによって返されるアンマネージ ポインターは、オーバー ラップされた I/O 操作で、オペレーティング システムに渡すことができます。 <xref:System.Threading.NativeOverlapped>まで物理メモリ内構造は固定されて<xref:System.Threading.Overlapped.Unpack%2A>と呼びます。  
+  
+ 指定されたバッファー、または`userData`非同期 I/O を実行するオペレーティング システムのアンマネージ関数に渡されたものと同じである必要があります。  
+  
+ 指定されたバッファー、またはランタイムがピン留め`userData`I/O 操作の実行中です。 アプリケーション ドメインが読み込まれている場合、ランタイムは、I/O 操作が完了するまでの固定メモリを保持します。  
+  
+> [!CAUTION]
+>  使用して、<xref:System.Threading.Overlapped.UnsafePack%2A>メソッドは、セキュリティ ホールを誤って開けません。 コード アクセス セキュリティは、スタックに基づいて、すべての呼び出し元のアクセス許可をその権限のチェックを行います。 <xref:System.Threading.Overlapped.UnsafePack%2A>メソッドはコール スタックを反映しません。 悪意のあるコードは、アクセス許可のチェックを避けるためにこれを利用できる可能性があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.InvalidOperationException">現在<see cref="T:System.Threading.Overlapped" />既にパックします。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

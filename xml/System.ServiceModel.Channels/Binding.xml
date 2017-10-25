@@ -1,0 +1,1108 @@
+<Type Name="Binding" FullName="System.ServiceModel.Channels.Binding">
+  <TypeSignature Language="C#" Value="public abstract class Binding : System.ServiceModel.IDefaultCommunicationTimeouts" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit Binding extends System.Object implements class System.ServiceModel.IDefaultCommunicationTimeouts" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.Binding" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.IDefaultCommunicationTimeouts</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>クライアントとサービスの間の通信に使用するプロトコル、トランスポート、およびメッセージ エンコーダーを指定するバインド要素を格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バインド要素のコレクションを表します。各バインド要素は他のエンドポイントとの通信方法を記述しており、チャネル ファクトリ (クライアント側) およびチャネル リスナー (サービス側) に、整合性を保って組み込まれています。 バインドは、プロトコル チャネル、トランスポート チャネル、およびメッセージ エンコーダーに対応するバインド要素のコレクションを格納しています。 プロトコル チャネルに対しては任意の数のバインド要素が存在できますが、個々のトランスポートとメッセージ エンコーダーに対して存在できるバインド要素はただ 1 つだけです。 バインド内には、一般的に 6 層のバインド要素があります。 スタックの最下位のトランスポート バインド要素とエンコーディング バインド要素だけが必須です。 エンコーディングは各バインドに必要であるため、エンコーディングが指定されていない場合、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] は既定のエンコーディングを自動的に追加します。 既定では、HTTP および HTTPS トランスポートに対してはテキスト/XML、その他のトランスポートに対してはバイナリです。  
+  
+ 各層のオプションの概要を次の表に示します。  
+  
+|レイヤー|オプション|必須|  
+|-----------|-------------|--------------|  
+|トランザクション フロー|<xref:System.ServiceModel.Channels.TransactionFlowBindingElement>|Ｘ|  
+|信頼性|<xref:System.ServiceModel.Channels.ReliableSessionBindingElement>|Ｘ|  
+|セキュリティ|同期、非同期、トランスポート レベル|Ｘ|  
+|形状の変更|<xref:System.ServiceModel.Channels.CompositeDuplexBindingElement>|Ｘ|  
+|トランスポートのアップグレード|SSL ストリーム、Windows ストリーム、ピア リゾルバー|Ｘ|  
+|エンコーディング|テキスト、バイナリ、MTOM、カスタム|はい|  
+|Transport|TCP、名前付きパイプ、HTTP、HTTPS、MSMQ、およびカスタム|はい|  
+  
+ 各バインド要素は、クライアントでのチャネル ファクトリの構築、およびサービスでのチャネル リスナーの構築に対する仕様を提供します。 たとえば、チャネル ファクトリ スタックを作成するときは、バインド内の各バインド要素に対し、スタック内に 1 つのチャネル ファクトリが存在します。 同様のマッピングが、サービス上のスタックでのチャネル リスナーにも適用されます。 これらのエンドポイントの間でチャネル ベースの接続を確立するには、クライアントとサービスの間の整合性が不可欠です。 その結果、各ファクトリとリスナーは、両者を接続するチャネル スタック内の対応するチャネルの送信と受け入れを処理し、これらのチャネルは通信に使用するメッセージを送受信できます。  
+  
+ <xref:System.ServiceModel.Channels.Binding> の各インスタンスには、<xref:System.ServiceModel.Channels.Binding.Name%2A> および <xref:System.ServiceModel.Channels.Binding.Namespace%2A> があり、合わせてサービスのメタデータ内でそのインスタンスを一意に識別します。 名前または名前空間が指定されていない場合は、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] が既定値を自動的に追加します。 既定の名前は `null`、既定の名前空間は http://tempuri.org/ です。 バインディングに対するこのユーザー名は、<xref:System.ServiceModel.Channels.Binding.Scheme%2A> プロパティによって指定されるプロトコル名とは異なります。 たとえば、HTTP バインドをさらに追加する場合は、それらに自由に名前を付けて、すべてのスキームを "http" に設定できます。 <xref:System.ServiceModel.Channels.Binding.Scheme%2A> に基づくアプリケーションまたはマシンの固有のディスパッチはありません。 したがって、既知のプロトコルに対して追加のハンドラーを登録できないという、よくある問題は避けられます。 また、複数のバージョンのバインドの並行使用も、各バージョンに異なる名前を付けることで、簡単に処理できます。  
+  
+ <xref:System.ServiceModel.Channels.Binding> クラスは、長時間リソースを停滞させることによるサービス拒否 (DOS) 攻撃を軽減するために、<xref:System.ServiceModel.IDefaultCommunicationTimeouts> インターフェイスを実装します。 この実装により、接続の確立と終了や、メッセージの送受信に関連付けられている読み取りおよび書き込み操作についての通信タイムアウト値が指定されます。 これらのタイムアウト値とその既定の操作を取得および設定するプロパティを、次の表に示します。  
+  
+|Timeout プロパティ|既定値|  
+|----------------------|-------------------|  
+|<xref:System.ServiceModel.Channels.Binding.OpenTimeout%2A>|1 分|  
+|<xref:System.ServiceModel.Channels.Binding.CloseTimeout%2A>|1 分|  
+|<xref:System.ServiceModel.Channels.Binding.SendTimeout%2A>|1 分|  
+|<xref:System.ServiceModel.Channels.Binding.ReceiveTimeout%2A>|10 分|  
+  
+ <xref:System.ServiceModel.Channels.Binding> を継承してバインドを作成するときは、<xref:System.ServiceModel.Channels.Binding.CreateBindingElements%2A> をオーバーライドする必要があります。  
+  
+ さらに、独自のバインド要素を定義し、前の表で定義されている層の間のどこにでも挿入できます。 詳細については、<xref:System.ServiceModel.Channels.CustomBinding> クラスを参照してください。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UEBinding#11](~/samples/snippets/csharp/VS_Snippets_CFX/s_uebinding/cs/service.cs#11)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Binding ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.Binding.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>既定の名前と名前空間を使用して、<see cref="T:System.ServiceModel.Channels.Binding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の名前は `null`、既定の名前空間は http://tempuri.org/ です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UEBinding#2](~/samples/snippets/csharp/VS_Snippets_CFX/s_uebinding/cs/service.cs#2)]
+ [!code-vb[S_UEBinding#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uebinding/vb/service.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Binding (string name, string ns);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(string name, string ns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.Binding.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">バインディングの <see cref="P:System.ServiceModel.Channels.Binding.Name" />。</param>
+        <param name="ns">バインディングの <see cref="P:System.ServiceModel.Channels.Binding.Namespace" />。</param>
+        <summary>サービスの指定したバインディングを使用して、<see cref="T:System.ServiceModel.Channels.Binding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.Binding.Name%2A> と <xref:System.ServiceModel.Channels.Binding.Namespace%2A> の組み合わせで、サービスのメタデータ内の <xref:System.ServiceModel.Channels.Binding> のインスタンスを一意に特定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> が <see langword="null" /> または空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="ns" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildChannelFactory&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.IChannelFactory&lt;TChannel&gt; BuildChannelFactory&lt;TChannel&gt; (params object[] parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Channels.IChannelFactory`1&lt;!!TChannel&gt; BuildChannelFactory&lt;TChannel&gt;(object[] parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.Binding.BuildChannelFactory``1(System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IChannelFactory&lt;TChannel&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="parameters" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">チャネル ファクトリが作成するチャネルの種類。</typeparam>
+        <param name="parameters">作成されるチャネル ファクトリの要件を指定するオブジェクト配列。</param>
+        <summary>指定した種類のチャネルを作成し、オブジェクト配列で指定されている機能を満たすチャネル ファクトリ スタックを、クライアント上に構築します。</summary>
+        <returns>コレクションによって指定される機能を満たす <see cref="T:System.ServiceModel.Channels.IChannelFactory`1" /> 型の <paramref name="TChannel" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">トランスポート要素がないか、トランスポート要素の順序が正しくないか、スキームが無効であるか、またはメッセージのバージョンが指定されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildChannelFactory&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public virtual System.ServiceModel.Channels.IChannelFactory&lt;TChannel&gt; BuildChannelFactory&lt;TChannel&gt; (System.ServiceModel.Channels.BindingParameterCollection parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.IChannelFactory`1&lt;!!TChannel&gt; BuildChannelFactory&lt;TChannel&gt;(class System.ServiceModel.Channels.BindingParameterCollection parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.Binding.BuildChannelFactory``1(System.ServiceModel.Channels.BindingParameterCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IChannelFactory&lt;TChannel&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="parameters" Type="System.ServiceModel.Channels.BindingParameterCollection" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">チャネル ファクトリが作成するチャネルの種類。</typeparam>
+        <param name="parameters">作成されるチャネル ファクトリの要件を指定する <see cref="T:System.ServiceModel.Channels.BindingParameterCollection" />。</param>
+        <summary>指定した種類のチャネルを作成し、バインド パラメーターのコレクションで指定されている機能を満たすチャネル ファクトリ スタックを、クライアント上に構築します。</summary>
+        <returns>コレクションによって指定される機能を満たす <see cref="T:System.ServiceModel.Channels.IChannelFactory`1" /> 型の <paramref name="TChannel" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">トランスポート要素がないか、トランスポート要素の順序が正しくないか、スキームが無効であるか、またはメッセージのバージョンが指定されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildChannelListener&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public virtual System.ServiceModel.Channels.IChannelListener&lt;TChannel&gt; BuildChannelListener&lt;TChannel&gt; (params object[] parameters) where TChannel : class, System.ServiceModel.Channels.IChannel;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.IChannelListener`1&lt;!!TChannel&gt; BuildChannelListener&lt;class (class System.ServiceModel.Channels.IChannel) TChannel&gt;(object[] parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.Binding.BuildChannelListener``1(System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IChannelListener&lt;TChannel&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+            <InterfaceName>System.ServiceModel.Channels.IChannel</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="parameters" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">チャネル リスナーが受け入れるチャネルの種類。</typeparam>
+        <param name="parameters">作成されるチャネル ファクトリの要件を指定するオブジェクト配列。</param>
+        <summary>指定した種類のチャネルを受け入れ、指定した機能を満たすチャネル リスナーを、サービス上に構築します。</summary>
+        <returns>指定された機能を満たす <see cref="T:System.ServiceModel.Channels.IChannelListener`1" /> 型の <paramref name="TChannel" /></returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">トランスポート要素がないか、トランスポート要素の順序が正しくないか、スキームが無効であるか、またはメッセージのバージョンが指定されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildChannelListener&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public virtual System.ServiceModel.Channels.IChannelListener&lt;TChannel&gt; BuildChannelListener&lt;TChannel&gt; (System.ServiceModel.Channels.BindingParameterCollection parameters) where TChannel : class, System.ServiceModel.Channels.IChannel;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.IChannelListener`1&lt;!!TChannel&gt; BuildChannelListener&lt;class (class System.ServiceModel.Channels.IChannel) TChannel&gt;(class System.ServiceModel.Channels.BindingParameterCollection parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.Binding.BuildChannelListener``1(System.ServiceModel.Channels.BindingParameterCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IChannelListener&lt;TChannel&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+            <InterfaceName>System.ServiceModel.Channels.IChannel</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="parameters" Type="System.ServiceModel.Channels.BindingParameterCollection" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">チャネル リスナーが受け入れるチャネルの種類。</typeparam>
+        <param name="parameters">作成されるチャネル リスナーの要件を指定する <see cref="T:System.ServiceModel.Channels.BindingParameterCollection" />。</param>
+        <summary>指定した種類のチャネルを受け入れ、バインド パラメーターのコレクションで指定されている機能を満たすチャネル リスナーを、サービス上に構築します。</summary>
+        <returns>指定された機能を満たす <see cref="T:System.ServiceModel.Channels.IChannelListener`1" /> 型の <paramref name="TChannel" /></returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">トランスポート要素がないか、トランスポート要素の順序が正しくないか、スキームが無効であるか、またはメッセージのバージョンが指定されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildChannelListener&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public virtual System.ServiceModel.Channels.IChannelListener&lt;TChannel&gt; BuildChannelListener&lt;TChannel&gt; (Uri listenUri, params object[] parameters) where TChannel : class, System.ServiceModel.Channels.IChannel;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.IChannelListener`1&lt;!!TChannel&gt; BuildChannelListener&lt;class (class System.ServiceModel.Channels.IChannel) TChannel&gt;(class System.Uri listenUri, object[] parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.Binding.BuildChannelListener``1(System.Uri,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IChannelListener&lt;TChannel&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+            <InterfaceName>System.ServiceModel.Channels.IChannel</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="listenUriBaseAddress" Type="System.Uri" />
+        <Parameter Name="parameters" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">チャネル リスナーが受け入れるチャネルの種類。</typeparam>
+        <param name="listenUri">To be added.</param>
+        <param name="parameters">作成されるチャネル ファクトリの要件を指定するオブジェクト配列。</param>
+        <summary>指定した種類のチャネルを受け入れ、指定した機能を満たすチャネル リスナーを、サービス上に構築します。</summary>
+        <returns>指定された機能を満たす <see cref="T:System.ServiceModel.Channels.IChannelListener`1" /> 型の <paramref name="TChannel" /></returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">トランスポート要素がないか、トランスポート要素の順序が正しくないか、スキームが無効であるか、またはメッセージのバージョンが指定されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildChannelListener&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public virtual System.ServiceModel.Channels.IChannelListener&lt;TChannel&gt; BuildChannelListener&lt;TChannel&gt; (Uri listenUri, System.ServiceModel.Channels.BindingParameterCollection parameters) where TChannel : class, System.ServiceModel.Channels.IChannel;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.IChannelListener`1&lt;!!TChannel&gt; BuildChannelListener&lt;class (class System.ServiceModel.Channels.IChannel) TChannel&gt;(class System.Uri listenUri, class System.ServiceModel.Channels.BindingParameterCollection parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.Binding.BuildChannelListener``1(System.Uri,System.ServiceModel.Channels.BindingParameterCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IChannelListener&lt;TChannel&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+            <InterfaceName>System.ServiceModel.Channels.IChannel</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="listenUriBaseAddress" Type="System.Uri" />
+        <Parameter Name="parameters" Type="System.ServiceModel.Channels.BindingParameterCollection" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">チャネル リスナーが受け入れるチャネルの種類。</typeparam>
+        <param name="listenUri">To be added.</param>
+        <param name="parameters">作成されるチャネル リスナーの要件を指定する <see cref="T:System.ServiceModel.Channels.BindingParameterCollection" />。</param>
+        <summary>指定した種類のチャネルを受け入れ、指定した機能を満たすチャネル リスナーを、サービス上に構築します。</summary>
+        <returns>指定された機能を満たす <see cref="T:System.ServiceModel.Channels.IChannelListener`1" /> 型の <paramref name="TChannel" /></returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">トランスポート要素がないか、トランスポート要素の順序が正しくないか、スキームが無効であるか、またはメッセージのバージョンが指定されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildChannelListener&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public virtual System.ServiceModel.Channels.IChannelListener&lt;TChannel&gt; BuildChannelListener&lt;TChannel&gt; (Uri listenUriBaseAddress, string listenUriRelativeAddress, params object[] parameters) where TChannel : class, System.ServiceModel.Channels.IChannel;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.IChannelListener`1&lt;!!TChannel&gt; BuildChannelListener&lt;class (class System.ServiceModel.Channels.IChannel) TChannel&gt;(class System.Uri listenUriBaseAddress, string listenUriRelativeAddress, object[] parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.Binding.BuildChannelListener``1(System.Uri,System.String,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IChannelListener&lt;TChannel&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+            <InterfaceName>System.ServiceModel.Channels.IChannel</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="listenUriBaseAddress" Type="System.Uri" />
+        <Parameter Name="listenUriRelativeAddress" Type="System.String" />
+        <Parameter Name="parameters" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">チャネル リスナーが受け入れるチャネルの種類。</typeparam>
+        <param name="listenUriBaseAddress">サービスがリッスンするベース アドレスを提供する <see cref="T:System.Uri" />。</param>
+        <param name="listenUriRelativeAddress">サービスがリッスンするアドレス (ベース アドレスに相対)。</param>
+        <param name="parameters">作成されるチャネル ファクトリの要件を指定するオブジェクト配列。</param>
+        <summary>指定した種類のチャネルを受け入れ、指定した機能を満たすチャネル リスナーを、サービス上に構築します。</summary>
+        <returns>指定された機能を満たす <see cref="T:System.ServiceModel.Channels.IChannelListener`1" /> 型の <paramref name="TChannel" /></returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">トランスポート要素がないか、トランスポート要素の順序が正しくないか、スキームが無効であるか、またはメッセージのバージョンが指定されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildChannelListener&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public virtual System.ServiceModel.Channels.IChannelListener&lt;TChannel&gt; BuildChannelListener&lt;TChannel&gt; (Uri listenUriBaseAddress, string listenUriRelativeAddress, System.ServiceModel.Channels.BindingParameterCollection parameters) where TChannel : class, System.ServiceModel.Channels.IChannel;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.IChannelListener`1&lt;!!TChannel&gt; BuildChannelListener&lt;class (class System.ServiceModel.Channels.IChannel) TChannel&gt;(class System.Uri listenUriBaseAddress, string listenUriRelativeAddress, class System.ServiceModel.Channels.BindingParameterCollection parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.Binding.BuildChannelListener``1(System.Uri,System.String,System.ServiceModel.Channels.BindingParameterCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IChannelListener&lt;TChannel&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+            <InterfaceName>System.ServiceModel.Channels.IChannel</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="listenUriBaseAddress" Type="System.Uri" />
+        <Parameter Name="listenUriRelativeAddress" Type="System.String" />
+        <Parameter Name="parameters" Type="System.ServiceModel.Channels.BindingParameterCollection" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">チャネル リスナーが受け入れるチャネルの種類。</typeparam>
+        <param name="listenUriBaseAddress">サービスがリッスンするベース アドレスを提供する <see cref="T:System.Uri" />。</param>
+        <param name="listenUriRelativeAddress">サービスがリッスンするアドレス (ベース アドレスに相対)。</param>
+        <param name="parameters">作成されるチャネル リスナーの要件を指定する <see cref="T:System.ServiceModel.Channels.BindingParameterCollection" />。</param>
+        <summary>指定した種類のチャネルを受け入れ、指定した機能を満たすチャネル リスナーを、サービス上に構築します。</summary>
+        <returns>指定された機能を満たす <see cref="T:System.ServiceModel.Channels.IChannelListener`1" /> 型の <paramref name="TChannel" /></returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">トランスポート要素がないか、トランスポート要素の順序が正しくないか、スキームが無効であるか、またはメッセージのバージョンが指定されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildChannelListener&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public virtual System.ServiceModel.Channels.IChannelListener&lt;TChannel&gt; BuildChannelListener&lt;TChannel&gt; (Uri listenUriBaseAddress, string listenUriRelativeAddress, System.ServiceModel.Description.ListenUriMode listenUriMode, params object[] parameters) where TChannel : class, System.ServiceModel.Channels.IChannel;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.IChannelListener`1&lt;!!TChannel&gt; BuildChannelListener&lt;class (class System.ServiceModel.Channels.IChannel) TChannel&gt;(class System.Uri listenUriBaseAddress, string listenUriRelativeAddress, valuetype System.ServiceModel.Description.ListenUriMode listenUriMode, object[] parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.Binding.BuildChannelListener``1(System.Uri,System.String,System.ServiceModel.Description.ListenUriMode,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IChannelListener&lt;TChannel&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+            <InterfaceName>System.ServiceModel.Channels.IChannel</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="listenUriBaseAddress" Type="System.Uri" />
+        <Parameter Name="listenUriRelativeAddress" Type="System.String" />
+        <Parameter Name="listenUriMode" Type="System.ServiceModel.Description.ListenUriMode" />
+        <Parameter Name="parameters" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">チャネル リスナーが受け入れるチャネルの種類。</typeparam>
+        <param name="listenUriBaseAddress">サービスがリッスンするベース アドレスを提供する <see cref="T:System.Uri" />。</param>
+        <param name="listenUriRelativeAddress">サービスがリッスンするアドレス (ベース アドレスに相対)。</param>
+        <param name="listenUriMode">サービスがリッスンするために提供される URI が一意であるか、または提供されたとおりに正確に使用できることを、トランスポートが保証する必要があるかどうかを示す <see cref="T:System.ServiceModel.Description.ListenUriMode" /> の値。</param>
+        <param name="parameters">作成されるチャネル ファクトリの要件を指定するオブジェクト配列。</param>
+        <summary>指定した種類のチャネルを受け入れ、指定した機能を満たすチャネル リスナーを、サービス上に構築します。</summary>
+        <returns>指定された機能を満たす <see cref="T:System.ServiceModel.Channels.IChannelListener`1" /> 型の <paramref name="TChannel" /></returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">トランスポート要素がないか、トランスポート要素の順序が正しくないか、スキームが無効であるか、またはメッセージのバージョンが指定されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildChannelListener&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public virtual System.ServiceModel.Channels.IChannelListener&lt;TChannel&gt; BuildChannelListener&lt;TChannel&gt; (Uri listenUriBaseAddress, string listenUriRelativeAddress, System.ServiceModel.Description.ListenUriMode listenUriMode, System.ServiceModel.Channels.BindingParameterCollection parameters) where TChannel : class, System.ServiceModel.Channels.IChannel;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.IChannelListener`1&lt;!!TChannel&gt; BuildChannelListener&lt;class (class System.ServiceModel.Channels.IChannel) TChannel&gt;(class System.Uri listenUriBaseAddress, string listenUriRelativeAddress, valuetype System.ServiceModel.Description.ListenUriMode listenUriMode, class System.ServiceModel.Channels.BindingParameterCollection parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.Binding.BuildChannelListener``1(System.Uri,System.String,System.ServiceModel.Description.ListenUriMode,System.ServiceModel.Channels.BindingParameterCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IChannelListener&lt;TChannel&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+            <InterfaceName>System.ServiceModel.Channels.IChannel</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="listenUriBaseAddress" Type="System.Uri" />
+        <Parameter Name="listenUriRelativeAddress" Type="System.String" />
+        <Parameter Name="listenUriMode" Type="System.ServiceModel.Description.ListenUriMode" />
+        <Parameter Name="parameters" Type="System.ServiceModel.Channels.BindingParameterCollection" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">チャネル リスナーが受け入れるチャネルの種類。</typeparam>
+        <param name="listenUriBaseAddress">サービスがリッスンするベース アドレスを提供する <see cref="T:System.Uri" />。</param>
+        <param name="listenUriRelativeAddress">サービスがリッスンするアドレス (ベース アドレスに相対)。</param>
+        <param name="listenUriMode">サービスがリッスンするために提供される URI が一意であるか、または提供されたとおりに正確に使用できることを、トランスポートが保証する必要があるかどうかを示す <see cref="T:System.ServiceModel.Description.ListenUriMode" /> の値。</param>
+        <param name="parameters">作成されるチャネル リスナーの要件を指定する <see cref="T:System.ServiceModel.Channels.BindingParameterCollection" />。</param>
+        <summary>指定した種類のチャネルを受け入れ、指定した機能を満たすチャネル リスナーを、サービス上に構築します。</summary>
+        <returns>指定された機能を満たす <see cref="T:System.ServiceModel.Channels.IChannelListener`1" /> 型の <paramref name="TChannel" /></returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">トランスポート要素がないか、トランスポート要素の順序が正しくないか、スキームが無効であるか、またはメッセージのバージョンが指定されていません。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="CanBuildChannelFactory&lt;TChannel&gt;">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>特定の条件を満たすチャネル ファクトリ スタックを現在のバインドがクライアント上に構築できるかどうかを示す値を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実際にファクトリを作成する前に、指定した `TChannel` に対して `context` 型のチャネルのチャネル ファクトリを作成できることを確認するには、このメソッドを使用します。 または、<xref:System.ServiceModel.Channels.BindingElement.BuildChannelFactory%2A> を呼び出してチャネル ファクトリを作成し、作成できない場合は生成される例外をキャッチします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="CanBuildChannelFactory&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public bool CanBuildChannelFactory&lt;TChannel&gt; (params object[] parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool CanBuildChannelFactory&lt;TChannel&gt;(object[] parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.Binding.CanBuildChannelFactory``1(System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="parameters" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">ファクトリがテストされているチャネルの種類。</typeparam>
+        <param name="parameters">作成されるチャネル ファクトリの要件を指定するオブジェクト配列。</param>
+        <summary>オブジェクト配列で指定した要件を満たすチャネル ファクトリ スタックを、現在のバインドがクライアント上に構築できるかどうかを示す値を返します。</summary>
+        <returns>
+          指定したチャネル ファクトリ スタックをクライアントで作成できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実際にチャネル ファクトリを作成する前に指定されたバインディング `TChannel` 用に、`parameters` 型のチャネルのチャネル ファクトリを作成できることを確認する場合は、このメソッドを使用します。 または、<xref:System.ServiceModel.Channels.Binding.BuildChannelFactory%60%601%28System.Object%5B%5D%29> を呼び出してチャネル ファクトリを作成し、作成できない場合は生成される例外をキャッチします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanBuildChannelFactory&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public virtual bool CanBuildChannelFactory&lt;TChannel&gt; (System.ServiceModel.Channels.BindingParameterCollection parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanBuildChannelFactory&lt;TChannel&gt;(class System.ServiceModel.Channels.BindingParameterCollection parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.Binding.CanBuildChannelFactory``1(System.ServiceModel.Channels.BindingParameterCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="parameters" Type="System.ServiceModel.Channels.BindingParameterCollection" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">ファクトリがテストされているチャネルの種類。</typeparam>
+        <param name="parameters">作成するチャネル ファクトリの要件を指定する <see cref="T:System.ServiceModel.Channels.BindingParameterCollection" />。</param>
+        <summary>指定したバインド パラメーターのコレクションを満たすチャネル ファクトリ スタックを、現在のバインドがクライアント上に構築できるかどうかを示す値を返します。</summary>
+        <returns>
+          指定したチャネル ファクトリ スタックをクライアントで作成できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実際にチャネル ファクトリを作成する前に指定されたバインディング `TChannel` 用に、`parameters` 型のチャネルのチャネル ファクトリを作成できることを確認する場合は、このメソッドを使用します。 または、<xref:System.ServiceModel.Channels.Binding.BuildChannelFactory%60%601%28System.ServiceModel.Channels.BindingParameterCollection%29> を呼び出してチャネル ファクトリを作成し、作成できない場合は生成される例外をキャッチします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanBuildChannelListener&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public bool CanBuildChannelListener&lt;TChannel&gt; (params object[] parameters) where TChannel : class, System.ServiceModel.Channels.IChannel;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool CanBuildChannelListener&lt;class (class System.ServiceModel.Channels.IChannel) TChannel&gt;(object[] parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.Binding.CanBuildChannelListener``1(System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+            <InterfaceName>System.ServiceModel.Channels.IChannel</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="parameters" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">リスナーがテストされているチャネルの種類。</typeparam>
+        <param name="parameters">作成されるチャネル ファクトリの要件を指定するオブジェクト配列。</param>
+        <summary>オブジェクトの配列で指定した条件を満たすチャネル リスナー スタックを、現在のバインドがサービス上に構築できるかどうかを示す値を返します。</summary>
+        <returns>
+          指定したチャネル リスナー スタックをサービスで作成できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実際にチャネル リスナーを作成する前に指定されたバインディング `TChannel` 用に、`parameters` 型のチャネルのチャネル リスナーを作成できることを確認する場合は、このメソッドを使用します。 または、<xref:System.ServiceModel.Channels.Binding.BuildChannelListener%60%601%28System.Object%5B%5D%29> を呼び出してチャネル リスナーを作成し、作成できない場合は生成される例外をキャッチします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanBuildChannelListener&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public virtual bool CanBuildChannelListener&lt;TChannel&gt; (System.ServiceModel.Channels.BindingParameterCollection parameters) where TChannel : class, System.ServiceModel.Channels.IChannel;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanBuildChannelListener&lt;class (class System.ServiceModel.Channels.IChannel) TChannel&gt;(class System.ServiceModel.Channels.BindingParameterCollection parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.Binding.CanBuildChannelListener``1(System.ServiceModel.Channels.BindingParameterCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+            <InterfaceName>System.ServiceModel.Channels.IChannel</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="parameters" Type="System.ServiceModel.Channels.BindingParameterCollection" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">リスナーがテストされているチャネルの種類。</typeparam>
+        <param name="parameters">作成されるチャネル リスナーの要件を指定する <see cref="T:System.ServiceModel.Channels.BindingParameterCollection" />。</param>
+        <summary>指定したバインド パラメーターのコレクションを満たすチャネル リスナー スタックを、現在のバインドがサービス上に構築できるかどうかを示す値を返します。</summary>
+        <returns>
+          指定したチャネル リスナー スタックをサービスで作成できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実際にチャネル リスナーを作成する前に指定されたバインディング `TChannel` 用に、`parameters` 型のチャネルのチャネル リスナーを作成できることを確認する場合は、このメソッドを使用します。 または、<xref:System.ServiceModel.Channels.Binding.BuildChannelListener%60%601%28System.ServiceModel.Channels.BindingParameterCollection%29> を呼び出してチャネル リスナーを作成し、作成できない場合は生成される例外をキャッチします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloseTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan CloseTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan CloseTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.Binding.CloseTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>接続の終了を待機する時間間隔を取得および設定します。これを超えるとトランスポートで例外が発生します。</summary>
+        <value>クローズ操作がタイムアウトになるまでの時間を表す <see cref="T:System.TimeSpan" />。既定値は 1 分です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値は、バインドのファクトリによって生成されるチャネルおよびリスナーで使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が 0 未満か、または大きすぎます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateBindingElements">
+      <MemberSignature Language="C#" Value="public abstract System.ServiceModel.Channels.BindingElementCollection CreateBindingElements ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.BindingElementCollection CreateBindingElements() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.Binding.CreateBindingElements" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.BindingElementCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、現在のバインドの一部であるバインド要素を格納するコレクションを作成します。</summary>
+        <returns>現在のバインド オブジェクトのバインド要素を正しい順序で格納する、<see cref="T:System.Collections.Generic.ICollection`1" /> 型の <see cref="T:System.ServiceModel.Channels.BindingElement" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素では、<xref:System.ServiceModel.Channels.Binding> オブジェクトが使用する内部要素を参照することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperty&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public T GetProperty&lt;T&gt; (System.ServiceModel.Channels.BindingParameterCollection parameters) where T : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !!T GetProperty&lt;class T&gt;(class System.ServiceModel.Channels.BindingParameterCollection parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.Binding.GetProperty``1(System.ServiceModel.Channels.BindingParameterCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="parameters" Type="System.ServiceModel.Channels.BindingParameterCollection" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">メソッドが照会している、型指定されたオブジェクト。</typeparam>
+        <param name="parameters">作成されるチャネル リスナーの要件を指定する <see cref="T:System.ServiceModel.Channels.BindingParameterCollection" />。</param>
+        <summary>バインド スタックの適切な層から、要求のあった型指定されたオブジェクト (ある場合) を返します。</summary>
+        <returns>要求される型指定されたオブジェクト <paramref name="T" /> がある場合は、そのオブジェクト。ない場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ その層が要求されたオブジェクトを返せる場合は、オブジェクトを返します。 それ以外の場合は、スタック内の次の層に呼び出しを代行させます。 スタックの最下位に達しても、要求されたオブジェクトをサポートする層がない場合、メソッドは、`null` を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MessageVersion">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.MessageVersion MessageVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Channels.MessageVersion MessageVersion" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.Binding.MessageVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.MessageVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインディングで構成されるクライアントとサービスが使用するメッセージ バージョンを取得します。</summary>
+        <value>バインディングで構成されるクライアントとサービスが使用する <see cref="T:System.ServiceModel.Channels.MessageVersion" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.Binding.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインディングの名前を取得または設定します。</summary>
+        <value>バインディングの名前。 既定の名前は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.Binding> の各インスタンスには、<xref:System.ServiceModel.Channels.Binding.Name%2A> と <xref:System.ServiceModel.Channels.Binding.Namespace%2A> があり、これらの組み合わせで、サービスのメタデータ内のバインディングに対するユーザー名を一意に識別します。  
+  
+ バインディングに対するこのユーザー名は、<xref:System.ServiceModel.Channels.Binding.Scheme%2A> プロパティによって指定されるプロトコル名とは異なります。 たとえば、HTTP バインドをさらに追加する場合は、それらに自由に名前を付けて、すべてのスキームを "http" に設定できます。 <xref:System.ServiceModel.Channels.Binding.Scheme%2A> に基づくアプリケーションまたはマシンの固有のディスパッチはありません。 したがって、既知のプロトコルに対して追加のハンドラーを登録できないという、よくある問題は避けられます。 また、複数のバージョンのバインドの並行使用も、各バージョンに異なる名前を付けることで、簡単に処理できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">設定する値には、<see langword="null" /> も空の文字列も指定できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public string Namespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Namespace" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.Binding.Namespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインドの XML 名前空間を取得または設定します。</summary>
+        <value>バインディングの XML 名前空間。 既定値は "http://tempuri.org/" です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.Binding> の各インスタンスには、<xref:System.ServiceModel.Channels.Binding.Name%2A> と <xref:System.ServiceModel.Channels.Binding.Namespace%2A> があり、これらの組み合わせで、サービスのメタデータ内のバインディングに対するユーザー名を一意に識別します。  
+  
+ バインディングに対するこのユーザー名は、<xref:System.ServiceModel.Channels.Binding.Scheme%2A> プロパティによって指定されるプロトコル名とは異なります。 たとえば、HTTP バインドをさらに追加する場合は、それらに自由に名前を付けて、すべてのスキームを "http" に設定できます。 <xref:System.ServiceModel.Channels.Binding.Scheme%2A> に基づくアプリケーションまたはマシンの固有のディスパッチはありません。 したがって、既知のプロトコルに対して追加のハンドラーを登録できないという、よくある問題は避けられます。 また、複数のバージョンのバインドの並行使用も、各バージョンに異なる名前を付けることで、簡単に処理できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">設定する値を <see langword="null" /> にすることはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan OpenTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan OpenTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.Binding.OpenTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>接続の確立を待機する時間間隔を取得および設定します。これを超えるとトランスポートで例外が発生します。</summary>
+        <value>オープン操作がタイムアウトになるまでの時間を表す <see cref="T:System.TimeSpan" />。既定値は 1 分です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値は、バインドのファクトリによって生成されるチャネルおよびリスナーで使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が 0 未満か、または大きすぎます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReceiveTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan ReceiveTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan ReceiveTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.Binding.ReceiveTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーション メッセージが受信されない間に、接続が非アクティブになってから切断されるまでの時間を取得または設定します。</summary>
+        <value>アプリケーションでメッセージを受信する必要がある、タイムアウトまでの制限時間を指定する <see cref="T:System.TimeSpan" />。既定値は、10 分です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 信頼できるセッションを使用しているとき、接続を維持するために適用する必要がある非アクティブ タイマーが 2 つあります。 これらの非アクティブ タイマーのいずれかがオフになると、接続が切断されます。  
+  
+-   非アクティブ タイマーの 1 つは、信頼できるセッションに対して適用され、<xref:System.ServiceModel.ReliableSession.InactivityTimeout%2A> と呼ばれます。 タイムアウト時間内にアプリケーション メッセージまたはインフラストラクチャ メッセージが受信されない場合、この非アクティブ タイマーが発生します。 インフラストラクチャ メッセージは、アプリケーション データを含んでいるのではなく、接続維持や受信確認など、チャネル スタック内でプロトコルの 1 つのために生成されるメッセージです。  
+  
+-   もう 1 つの非アクティブ タイマーはサービスに対して適用され、バインドの <xref:System.ServiceModel.Channels.Binding.ReceiveTimeout%2A> 設定を使用します。 タイムアウト時間内にアプリケーション メッセージが受信されない場合、この非アクティブ タイマーが発生します。 この値は、たとえばクライアントが少なくとも 1 つのメッセージをサーバーに送信してから、サーバーがセッションで使用するチャネルを閉じるまでの最大時間を指定します。 この動作により、クライアントが長時間にわたってサーバーのリソースを保持することが回避されます。  
+  
+ いずれかの非アクティブ タイマーが発生した場合は接続が切断されるので、<xref:System.ServiceModel.ReliableSession.InactivityTimeout%2A> が <xref:System.ServiceModel.Channels.Binding.ReceiveTimeout%2A> を超えてからその値を大きくしても、影響はありません。 これらのタイムアウトの既定は両方とも 10 分です。したがって、信頼できるセッションを使用しているときに設定を変えるには、これらの両方の値を大きくする必要があります。  
+  
+ バインドまたはチャネルでトランザクション フローが有効になっている場合は、指定したタイムアウト時間より操作の実行が長くかかる可能性があります。 このような場合は、タイムアウトの時間が経過し、そのためにトランザクションが中止されるため、操作は失敗します。  
+  
+ セッション、セキュリティを使用する場合、<xref:System.ServiceModel.Channels.Binding.ReceiveTimeout%2A>バインディングの設定値は、セッションのタイムアウトとしても使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が 0 未満か、または大きすぎます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Scheme">
+      <MemberSignature Language="C#" Value="public abstract string Scheme { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Scheme" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.Binding.Scheme" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスとして実装された場合、バインドによって作成されるチャネルおよびリスナー ファクトリが使用するトランスポートを指定する URI スキームを設定します。</summary>
+        <value>現在のバインドによって構築されるファクトリが作成するチャネルまたはリスナーが使用する URI スキーム。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バインディングに対するこのユーザー名は、<xref:System.ServiceModel.Channels.Binding.Scheme%2A> プロパティによって指定されるプロトコル名とは異なります。 <xref:System.ServiceModel.Channels.Binding> の各インスタンスには、<xref:System.ServiceModel.Channels.Binding.Name%2A> と <xref:System.ServiceModel.Channels.Binding.Namespace%2A> があり、これらの組み合わせで、サービスのメタデータ内のバインディングに対するユーザー名を一意に識別します。 たとえば、HTTP バインドをさらに追加する場合は、それらに自由に名前を付けて、すべてのスキームを "http" に設定できます。 <xref:System.ServiceModel.Channels.Binding.Scheme%2A> に基づくアプリケーションまたはマシンの固有のディスパッチはありません。 したがって、既知のプロトコルに対して追加のハンドラーを登録できないという、よくある問題は避けられます。 また、複数のバージョンのバインドの並行使用も、各バージョンに異なる名前を付けることで、簡単に処理できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SendTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan SendTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan SendTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.Binding.SendTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>書き込み操作の完了を待機する時間間隔を取得および設定します。これを超えるとトランスポートで例外が発生します。</summary>
+        <value>書き込み操作を完了する必要がある、タイムアウトまでの制限時間を指定する <see cref="T:System.TimeSpan" />。既定値は 1 分です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バインドまたはチャネルでトランザクション フローが有効になっている場合は、指定したタイムアウト時間より操作の実行が長くかかる可能性があります。 このような場合は、タイムアウトの時間が経過し、そのためにトランザクションが中止されるため、操作は失敗します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が 0 未満か、または大きすぎます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeName">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeName ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeName() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.Binding.ShouldSerializeName" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>バインドの名前をシリアル化する必要があるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />バインディングの名前をシリアル化する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeNamespace">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeNamespace ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeNamespace() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.Binding.ShouldSerializeNamespace" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>バインドの名前空間をシリアル化する必要があるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />バインディング名前空間をシリアル化する必要があります。 場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

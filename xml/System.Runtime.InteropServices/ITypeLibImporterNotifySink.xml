@@ -1,0 +1,98 @@
+<Type Name="ITypeLibImporterNotifySink" FullName="System.Runtime.InteropServices.ITypeLibImporterNotifySink">
+  <TypeSignature Language="C#" Value="public interface ITypeLibImporterNotifySink" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITypeLibImporterNotifySink" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.ITypeLibImporterNotifySink" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("f1c3bf76-c3e4-11d3-88e7-00902754c43a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>タイプ ライブラリのコンバーター、変換の状態の呼び出し元に通知し、変換プロセス自体で呼び出し元を伴うのためのコールバック機構を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、COM タイプ ライブラリをマネージ アセンブリに変換するプロセスで使用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ReportEvent">
+      <MemberSignature Language="C#" Value="public void ReportEvent (System.Runtime.InteropServices.ImporterEventKind eventKind, int eventCode, string eventMsg);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ReportEvent(valuetype System.Runtime.InteropServices.ImporterEventKind eventKind, int32 eventCode, string eventMsg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ITypeLibImporterNotifySink.ReportEvent(System.Runtime.InteropServices.ImporterEventKind,System.Int32,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventKind" Type="System.Runtime.InteropServices.ImporterEventKind" />
+        <Parameter Name="eventCode" Type="System.Int32" />
+        <Parameter Name="eventMsg" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="eventKind"><see cref="T:System.Runtime.InteropServices.ImporterEventKind" />イベントの種類を示す値。</param>
+        <param name="eventCode">イベントに関する追加情報を示します。</param>
+        <param name="eventMsg">イベントによって生成されたメッセージ。</param>
+        <summary>タイプ ライブラリの変換中に発生するイベントを呼び出し元に通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 報告されているイベントが警告またはエラー場合`eventCode`エラーの HRESULT が含まれます。 その他のイベントに対して 0 があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveRef">
+      <MemberSignature Language="C#" Value="public System.Reflection.Assembly ResolveRef (object typeLib);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.Assembly ResolveRef(object typeLib) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ITypeLibImporterNotifySink.ResolveRef(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Assembly</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeLib" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="typeLib">実装するオブジェクト、<see langword="ITypeLib" />を解決する必要があるインターフェイスです。</param>
+        <summary>別のタイプ ライブラリへの参照を解決するのには、ユーザーに確認します。</summary>
+        <returns>対応するアセンブリ<paramref name="typeLib" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タイプ ライブラリの変換中に別のタイプ ライブラリへの参照が見つかった場合、呼び出し元はそのタイプ ライブラリの正しいアセンブリを返すを求められます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

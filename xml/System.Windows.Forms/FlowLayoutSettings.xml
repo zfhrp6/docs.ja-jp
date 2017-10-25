@@ -1,0 +1,177 @@
+<Type Name="FlowLayoutSettings" FullName="System.Windows.Forms.FlowLayoutSettings">
+  <TypeSignature Language="C#" Value="public class FlowLayoutSettings : System.Windows.Forms.LayoutSettings" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FlowLayoutSettings extends System.Windows.Forms.LayoutSettings" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.FlowLayoutSettings" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.LayoutSettings</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("FlowDirection")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>フロー レイアウトに関連付けられている特性を収集します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.FlowLayoutSettings>クラスを収集およびフロー レイアウト スキームに関連付けられている特性を管理します。 このクラスは内部で使用される、<xref:System.Windows.Forms.FlowLayoutPanel>と<xref:System.Windows.Forms.ToolStrip>クラスだけでなく、フロー レイアウト エンジンです。 <xref:System.Windows.Forms.FlowLayoutSettings>クラスは、レイアウト コンテナーの子を制御する方法を決定するレイアウト エンジンで使用します。  
+  
+ <xref:System.Windows.Forms.FlowLayoutSettings>クラスは、次の情報を管理します。  
+  
+-   連続するコントロールのフロー方向。  
+  
+-   内容をラップするか、場合は、子コントロールをクリップするかどうかは、その親内に含まれることはできません。  
+  
+ <xref:System.Windows.Forms.FlowLayoutSettings>パブリック コンス トラクターがありません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="FlowDirection">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.FlowDirection FlowDirection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.FlowDirection FlowDirection" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.FlowLayoutSettings.FlowDirection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.FlowDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または連続するコントロールのフローの方向を示す値を設定します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.FlowDirection" />コンテナー内の連続するコントロールのフロー方向を示すです。 既定値は、<see cref="F:System.Windows.Forms.FlowDirection.LeftToRight" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.FlowLayoutSettings.FlowDirection%2A>既定のプロパティは、<xref:System.Windows.Forms.FlowLayoutSettings>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFlowBreak">
+      <MemberSignature Language="C#" Value="public bool GetFlowBreak (object child);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GetFlowBreak(object child) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.FlowLayoutSettings.GetFlowBreak(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="child" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="child">子コントロール。</param>
+        <summary>ブレーク コントロールの設定、フローを表す値を返します。</summary>
+        <returns>
+          <see langword="true" />フロー中断が設定されている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LayoutEngine">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.Layout.LayoutEngine LayoutEngine { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.Layout.LayoutEngine LayoutEngine" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.FlowLayoutSettings.LayoutEngine" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Layout.LayoutEngine</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のフローのレイアウト エンジンを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.Layout.LayoutEngine" />現在使用されています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TableLayoutSettings.LayoutEngine%2A>プロパティは、通常、2 つのコンテキストで使用します。  
+  
+-   フロー レイアウトを使用するコンテナーです。  
+  
+-   フロー レイアウト コンテナー内に含まれるコントロール (たとえば、ボタンのセルに含まれる、 <xref:System.Windows.Forms.FlowLayoutPanel>)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFlowBreak">
+      <MemberSignature Language="C#" Value="public void SetFlowBreak (object child, bool value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetFlowBreak(object child, bool value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.FlowLayoutSettings.SetFlowBreak(System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="child" Type="System.Object" />
+        <Parameter Name="value" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="child">子コントロール。</param>
+        <param name="value">フロー中断は、設定する値。</param>
+        <summary>セットをフローを表す値は、コントロールの設定を中断します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WrapContents">
+      <MemberSignature Language="C#" Value="public bool WrapContents { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool WrapContents" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.FlowLayoutSettings.WrapContents" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または内容をラップするか、そのコンテナーの元の境界を超えた場合にクリップされるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、内容をラップする必要があります。それ以外の場合、<see langword="false" />場合は、コンテンツをクリップする必要があります。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテナーの領域は、すべての子コントロールを表示するには小さすぎるかどうかに関係なく、少なくとも 1 つのコントロールがクリップされます、<xref:System.Windows.Forms.FlowLayoutSettings.WrapContents%2A>値。  
+  
+ その後、コンテナーのサイズを変更するがレイアウトの再適用に含まれるコントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

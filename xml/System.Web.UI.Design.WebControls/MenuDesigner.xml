@@ -1,0 +1,542 @@
+<Type Name="MenuDesigner" FullName="System.Web.UI.Design.WebControls.MenuDesigner">
+  <TypeSignature Language="C#" Value="public class MenuDesigner : System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner, System.Web.UI.Design.IDataBindingSchemaProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MenuDesigner extends System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner implements class System.Web.UI.Design.IDataBindingSchemaProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.MenuDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.Design.IDataBindingSchemaProvider</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary><see cref="T:System.Web.UI.WebControls.Menu" /> コントロールを、ビジュアル デザイナーで、デザイン時に使用できるようにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Menu>クラスには、Web サーバー コントロールの階層的なメニューが用意されています。  
+  
+ ビジュアル デザイナーでソースからデザイン ビューに切り替えたときにマークアップをソース コードに関連付けられた説明する<xref:System.Web.UI.WebControls.Menu>コントロールは解析され、デザイン画面でコントロールのデザイン時バージョンを作成します。 ソース ビューに切り替えると、デザイン時のコントロールがマークアップに永続化し、既存の Web ページのマークアップに追加します。 <xref:System.Web.UI.Design.WebControls.MenuDesigner>クラスは、デザイン時サポートを提供<xref:System.Web.UI.WebControls.Menu>ビジュアル デザイナーで制御します。  
+  
+ <xref:System.Web.UI.Design.WebControls.MenuDesigner.ActionLists%2A>プロパティから返される、<xref:System.ComponentModel.Design.DesignerActionListCollection>通常から派生したオブジェクトを含むオブジェクトを<xref:System.ComponentModel.Design.DesignerActionList>デザイナーの継承ツリーの各レベルのクラスです。 <xref:System.Web.UI.Design.WebControls.MenuDesigner.AutoFormats%2A>プロパティは、書式指定での表示スキームのコレクションを返します、**オート フォーマット** ダイアログ ボックス。  
+  
+ <xref:System.Web.UI.Design.WebControls.MenuDesigner.TemplateGroups%2A>プロパティが関連付けられているテンプレートのテンプレート グループのコレクションを返します<xref:System.Web.UI.WebControls.Menu>コントロール。 <xref:System.Web.UI.Design.WebControls.MenuDesigner.UsePreviewControl%2A>プロパティは常に返します`true`、デザイナーに関連付けられている一時的なコピーが作成されることを示す<xref:System.Web.UI.WebControls.Menu>をデザイン時のマークアップを生成します。  
+  
+ <xref:System.Web.UI.Design.WebControls.MenuDesigner>クラスのメソッドは、次の機能を提供します。  
+  
+-   <xref:System.Web.UI.Design.WebControls.MenuDesigner.Initialize%2A>メソッドには、表示、編集、および関連付けられたデザインにデザイナーができるように準備<xref:System.Web.UI.WebControls.Menu>コントロール。 <xref:System.Web.UI.Design.WebControls.MenuDesigner.GetDesignTimeHtml%2A>メソッドは、関連付けられている表示するために使用するマークアップを返します<xref:System.Web.UI.WebControls.Menu>デザイン時にします。  
+  
+-   <xref:System.Web.UI.Design.WebControls.MenuDesigner.GetEmptyDesignTimeHtml%2A>メソッドは、デザイン時のマークアップが使用できない場合それ以外の場合に関連付けられたコントロールのプレース ホルダーを表示するマークアップを取得します。 <xref:System.Web.UI.Design.WebControls.MenuDesigner.GetErrorDesignTimeHtml%2A>メソッドは、エラーが発生すると、デザイン時に関連付けられたコントロールを表示するマークアップを提供します。  
+  
+-   <xref:System.Web.UI.Design.WebControls.MenuDesigner.DataBind%2A>メソッドは、関連付けられているバインド<xref:System.Web.UI.WebControls.Menu>デザイン時のデータ ソースを制御します。 <xref:System.Web.UI.Design.WebControls.MenuDesigner.GetSampleDataSource%2A>メソッドは、関連付けられたコントロールのデザイン時に使用できるサンプル データ ソースを構築します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、拡張する方法を示します、<xref:System.Web.UI.Design.WebControls.MenuDesigner>クラスから派生したコントロールの外観を変更する、<xref:System.Web.UI.WebControls.Menu>コントロールをデザイン時です。  
+  
+ 例では、`MyMenu`クラス、<xref:System.Web.UI.WebControls.Menu>です。 `MyMenu`クラスのコピーである、<xref:System.Web.UI.WebControls.Menu>です。 例ではまた、`MyMenuDesigner`からクラス、<xref:System.Web.UI.Design.WebControls.MenuDesigner>クラスを適用してから、<xref:System.ComponentModel.DesignerAttribute>属性を`MyMenuDesigner`上、`MyMenu`クラスです。  
+  
+ `The MyMenuDesigner`次のオーバーライド<xref:System.Web.UI.Design.WebControls.MenuDesigner>メンバー。  
+  
+-   <xref:System.Web.UI.Design.WebControls.MenuDesigner.GetDesignTimeHtml%2A>エクステントの詳細に表示されるようにするコントロールの周囲オレンジ、点線の枠線を描画するメソッド。  
+  
+-   <xref:System.Web.UI.Design.WebControls.MenuDesigner.GetErrorDesignTimeHtml%2A>赤で表示される、エラー メッセージが含まれたプレース ホルダーのマークアップを生成する方法を太字のテキスト。  
+  
+-   <xref:System.Web.UI.Design.WebControls.MenuDesigner.GetEmptyDesignTimeHtml%2A>メニュー項目が定義されていないことを示すメッセージを示すプレース ホルダーのマークアップを生成します。  
+  
+-   <xref:System.Web.UI.Design.WebControls.MenuDesigner.Initialize%2A>をスローするメソッド、<xref:System.ArgumentException>例外、関連付けられているコントロールがない場合、`MyMenu`オブジェクト。  
+  
+ [!code-csharp[System.Web.UI.Design.WebControls.MenuDesigner#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.MenuDesigner/CS/MenuDesigner.cs#1)]
+ [!code-vb[System.Web.UI.Design.WebControls.MenuDesigner#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.MenuDesigner/VB/MenuDesigner.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MenuDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.MenuDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.MenuDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework は、内部での新しいインスタンスを作成、<xref:System.Web.UI.Design.WebControls.MenuDesigner>クラスの関連付けの作成時に<xref:System.Web.UI.WebControls.Menu>コントロールまたはそのコントロールをデザイン サーフェイス上のコピー。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActionLists">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.Design.DesignerActionListCollection ActionLists { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.Design.DesignerActionListCollection ActionLists" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.MenuDesigner.ActionLists" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignerActionListCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このデザイナーのデザイナー アクション リスト コレクションを取得します。</summary>
+        <value>このデザイナーと関連付けられた <see cref="T:System.ComponentModel.Design.DesignerActionListCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.MenuDesigner.ActionLists%2A>プロパティを作成、<xref:System.ComponentModel.Design.DesignerActionList>オブジェクトに対して、<xref:System.Web.UI.Design.WebControls.MenuDesigner>クラスに追加、<xref:System.ComponentModel.Design.DesignerActionListCollection>から取得した、<xref:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.ActionLists%2A>基本プロパティは、しを返します、<xref:System.ComponentModel.Design.DesignerActionListCollection>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoFormats">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.Design.DesignerAutoFormatCollection AutoFormats { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Design.DesignerAutoFormatCollection AutoFormats" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.MenuDesigner.AutoFormats" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.DesignerAutoFormatCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表示する定義済み書式指定のコレクションのスキームを取得、**オート フォーマット** ダイアログ ボックス。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.Menu" /> の定義済みスキームを格納している <see cref="T:System.Web.UI.Design.DesignerAutoFormatCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.DesignerAutoFormatCollection>オブジェクトが定義済み内部定数から取得されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRefreshSchema">
+      <MemberSignature Language="C#" Value="protected bool CanRefreshSchema { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRefreshSchema" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.MenuDesigner.CanRefreshSchema" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロバイダーでスキーマを更新できるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />スキーマを更新することができます。 場合、それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataBind">
+      <MemberSignature Language="C#" Value="protected override void DataBind (System.Web.UI.WebControls.BaseDataBoundControl dataBoundControl);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void DataBind(class System.Web.UI.WebControls.BaseDataBoundControl dataBoundControl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.MenuDesigner.DataBind(System.Web.UI.WebControls.BaseDataBoundControl)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataBoundControl" Type="System.Web.UI.WebControls.BaseDataBoundControl" />
+      </Parameters>
+      <Docs>
+        <param name="dataBoundControl">デザイン時のデータ ソースにバインドする <see cref="T:System.Web.UI.WebControls.Menu" />。</param>
+        <summary>関連付けられたコントロールをデザイン時のデータ ソースにバインドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の条件のいずれかが true の場合、<xref:System.Web.UI.Design.WebControls.MenuDesigner.DataBind%2A>メソッドをクリア、<xref:System.Web.UI.WebControls.Menu.Items%2A>プロパティを呼び出し、続いて、<xref:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.DataBind%2A>メソッドの基本します。  
+  
+-   <xref:System.Web.UI.WebControls.HierarchicalDataBoundControl.DataSourceID%2A>プロパティは使用されません`null`または空の文字列 ("") です。  
+  
+-   <xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSource%2A>プロパティは使用されません`null`です。  
+  
+-   <xref:System.Web.UI.WebControls.Menu.Items%2A>コレクションには、1 つまたは複数の要素が含まれています。  
+  
+ `dataBoundControl`パラメーターは、<xref:System.Web.UI.WebControls.Menu>デザイナーまたはそのコントロールのコピーに関連付けられているコントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeHtml">
+      <MemberSignature Language="C#" Value="public override string GetDesignTimeHtml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetDesignTimeHtml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.MenuDesigner.GetDesignTimeHtml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイン時に関連付けられたコントロールを描画するために使用するマークアップを取得します。</summary>
+        <returns>表示するために使用するマークアップを含む文字列、<see cref="T:System.Web.UI.WebControls.Menu" />デザイン時にします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.MenuDesigner.GetDesignTimeHtml%2A>メソッドの呼び出し、<xref:System.Web.UI.Design.WebControls.MenuDesigner.DataBind%2A>メソッドに関連付けられたデザイン時のデータ ソースをバインドする<xref:System.Web.UI.WebControls.Menu>コントロール、し、<xref:System.Web.UI.Design.WebControls.MenuDesigner.GetDesignTimeHtml%2A>呼び出し、<xref:System.Web.UI.WebControls.Menu.GetDesignModeState%2A>メソッドを呼び出すと、<xref:System.Web.UI.WebControls.Menu>その静的なビューと動的ビューのマークアップを生成するコントロール。 <xref:System.Web.UI.Design.WebControls.MenuDesigner.GetDesignTimeHtml%2A>現在のビューのマークアップを返します。 現在のビューが定義されていない場合、<xref:System.Web.UI.Design.WebControls.MenuDesigner.GetDesignTimeHtml%2A>呼び出し、<xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.GetDesignTimeHtml%2A>メソッドの基本します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Web.UI.Design.WebControls.MenuDesigner.GetDesignTimeHtml%2A>から継承されるクラスのメソッド、<xref:System.Web.UI.Design.WebControls.MenuDesigner>クラスです。 オーバーライド メソッドから派生したコントロールの外観、<xref:System.Web.UI.WebControls.Menu>コントロールをデザイン時です。 場合、例がエクステントの詳細に表示するコントロールの周りオレンジ、点線の枠線を描画、<xref:System.Web.UI.WebControls.WebControl.BorderStyle%2A>コントロールのプロパティは、<xref:System.Web.UI.WebControls.BorderStyle.NotSet>または<xref:System.Web.UI.WebControls.BorderStyle.None>値。  
+  
+ [!code-csharp[System.Web.UI.Design.WebControls.MenuDesigner#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.MenuDesigner/CS/MenuDesigner.cs#4)]
+ [!code-vb[System.Web.UI.Design.WebControls.MenuDesigner#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.MenuDesigner/VB/MenuDesigner.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEmptyDesignTimeHtml">
+      <MemberSignature Language="C#" Value="protected override string GetEmptyDesignTimeHtml ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetEmptyDesignTimeHtml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.MenuDesigner.GetEmptyDesignTimeHtml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイン時のマークアップが使用できない場合それ以外の場合に関連付けられたコントロールのプレース ホルダーを表示するマークアップを取得します。</summary>
+        <returns>デザイン サーフェイス上のプレース ホルダーを表示するマークアップのテキストを含む文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.MenuDesigner.GetEmptyDesignTimeHtml%2A>メソッドを指定するためのプレース ホルダーのマークアップを生成して、<xref:System.Web.UI.WebControls.Menu>名とコレクション エディターを使用して項目を追加するように指示するメッセージを制御します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Web.UI.Design.WebControls.MenuDesigner.GetEmptyDesignTimeHtml%2A>から継承されるクラスのメソッド、<xref:System.Web.UI.Design.WebControls.MenuDesigner>クラスです。 オーバーライド メソッドから派生したコントロールの外観、<xref:System.Web.UI.WebControls.Menu>デザイン時にクラスです。 例では、関連付けられたコントロールのメニュー項目が定義されていないことを示すメッセージが含まれたプレース ホルダーのマークアップを生成します。  
+  
+ [!code-csharp[System.Web.UI.Design.WebControls.MenuDesigner#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.MenuDesigner/CS/MenuDesigner.cs#5)]
+ [!code-vb[System.Web.UI.Design.WebControls.MenuDesigner#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.MenuDesigner/VB/MenuDesigner.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetErrorDesignTimeHtml">
+      <MemberSignature Language="C#" Value="protected override string GetErrorDesignTimeHtml (Exception e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetErrorDesignTimeHtml(class System.Exception e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.MenuDesigner.GetErrorDesignTimeHtml(System.Exception)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="e"><see cref="T:System.Exception" />スローされたオブジェクト。</param>
+        <summary>エラーが発生すると、デザイン時に関連付けられたコントロールを表示するマークアップを提供します。</summary>
+        <returns>関連付けられている表示するために使用するマークアップを含む文字列<see cref="T:System.Web.UI.WebControls.Menu" />デザイン時にエラーが発生した後にします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.MenuDesigner.GetErrorDesignTimeHtml%2A>メソッドがエラーのデザイン時にレンダリングするマークアップを生成<xref:System.Web.UI.WebControls.Menu>コントロールを型名、コントロール名、およびエラーを説明するメッセージを含むプレース ホルダーとして。  
+  
+   
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Web.UI.Design.WebControls.MenuDesigner.GetErrorDesignTimeHtml%2A>から継承されるクラスのメソッド、<xref:System.Web.UI.Design.WebControls.MenuDesigner>クラスです。 オーバーライド メソッドから派生したコントロールの外観、<xref:System.Web.UI.WebControls.Menu>デザイン時にクラスです。 例では、赤、太字のテキストで表示されるエラー メッセージが含まれたプレース ホルダーのマークアップを生成します。  
+  
+ [!code-csharp[System.Web.UI.Design.WebControls.MenuDesigner#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.MenuDesigner/CS/MenuDesigner.cs#2)]
+ [!code-vb[System.Web.UI.Design.WebControls.MenuDesigner#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.MenuDesigner/VB/MenuDesigner.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSampleDataSource">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.IHierarchicalEnumerable GetSampleDataSource ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.IHierarchicalEnumerable GetSampleDataSource() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.MenuDesigner.GetSampleDataSource" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.IHierarchicalEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>関連付けられたコントロールのデザイン時に使用するサンプル データ ソースを構築します。</summary>
+        <returns>実装するオブジェクト、 <see cref="T:System.Web.UI.IHierarchicalEnumerable" /> 、関連付けられているため、データ ソースとして使用する<see cref="T:System.Web.UI.WebControls.Menu" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって作成されますが、サンプル データ ソース、<xref:System.Web.UI.Design.WebControls.MenuDesigner.GetSampleDataSource%2A>メソッドが空のパスでいくつかのルート メニュー項目。 メニュー項目が定義されていない場合、デザイン時にこのサンプルのデータ ソースが使用される関連付けられている<xref:System.Web.UI.WebControls.Menu>コントロールとかどうか、メニューは、データ ソースにバインドできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (System.ComponentModel.IComponent component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(class System.ComponentModel.IComponent component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.MenuDesigner.Initialize(System.ComponentModel.IComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="component">A<see cref="T:System.Web.UI.WebControls.Menu" />を実装する、<see cref="T:System.ComponentModel.IComponent" />インターフェイスです。</param>
+        <summary>関連付けられたコントロールをデザイナーで表示、編集、デザインできるように準備します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビジュアル デザイナーの呼び出し、<xref:System.Web.UI.Design.WebControls.MenuDesigner.Initialize%2A>メソッドを表示するために、デザイナーを使用する準備ができたときに、<xref:System.Web.UI.WebControls.Menu>コントロール。 <xref:System.Web.UI.Design.WebControls.MenuDesigner.Initialize%2A>メソッドとその基本メソッドのプロパティを構成し、デザイナーの操作のために必要なイベントを設定します。  
+  
+ `component`パラメーターは、<xref:System.Web.UI.WebControls.Menu>デザイナーまたはそのコントロールのコピーに関連付けられているコントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Web.UI.Design.WebControls.MenuDesigner.Initialize%2A>から継承されるクラスのメソッド、<xref:System.Web.UI.Design.WebControls.MenuDesigner>クラスです。 オーバーライド メソッドから派生したコントロールの動作、<xref:System.Web.UI.WebControls.Menu>デザイン時にクラスです。 例では、スロー、<xref:System.ArgumentException>例外、関連付けられているコントロールがない場合、`MyMenu`オブジェクト。  
+  
+ [!code-csharp[System.Web.UI.Design.WebControls.MenuDesigner#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.MenuDesigner/CS/MenuDesigner.cs#6)]
+ [!code-vb[System.Web.UI.Design.WebControls.MenuDesigner#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.MenuDesigner/VB/MenuDesigner.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">*コンポーネント*されませんが、<see cref="T:System.Web.UI.WebControls.Menu" />またはから派生したクラスの<see cref="T:System.Web.UI.WebControls.Menu" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RefreshSchema">
+      <MemberSignature Language="C#" Value="protected void RefreshSchema (bool preferSilent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void RefreshSchema(bool preferSilent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.MenuDesigner.RefreshSchema(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="preferSilent" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="preferSilent">場合<see langword="true" />は処理中に例外が発生する際に、エラー メッセージを表示できません。 それ以外の場合、例外メッセージが表示されます。</param>
+        <summary>関連付けられているデータ ソース ビューのスキーマを更新<see cref="T:System.Web.UI.WebControls.Menu" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.MenuDesigner.RefreshSchema%2A>によってデザイン ホスト場合にのみ、メソッドが呼び出される、<xref:System.Web.UI.Design.WebControls.MenuDesigner.CanRefreshSchema%2A>プロパティが true です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Schema">
+      <MemberSignature Language="C#" Value="protected System.Web.UI.Design.IDataSourceViewSchema Schema { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Design.IDataSourceViewSchema Schema" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.MenuDesigner.Schema" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.IDataSourceViewSchema</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられているデータ ソース ビューを記述するスキーマを取得<see cref="T:System.Web.UI.WebControls.Menu" />コントロール。</summary>
+        <value><see cref="T:System.Web.UI.Design.IDataSourceViewSchema" />データ ソースの構造を記述するオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.Design.IDataBindingSchemaProvider.CanRefreshSchema">
+      <MemberSignature Language="C#" Value="bool System.Web.UI.Design.IDataBindingSchemaProvider.CanRefreshSchema { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Web.UI.Design.IDataBindingSchemaProvider.CanRefreshSchema" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.MenuDesigner.System#Web#UI#Design#IDataBindingSchemaProvider#CanRefreshSchema" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロバイダーでスキーマを更新できるかどうかを示す値を取得します。 このメンバーの説明については、<see cref="P:System.Web.UI.Design.IDataBindingSchemaProvider.CanRefreshSchema" /> プロパティを参照してください。</summary>
+        <value>
+          <see langword="true" />、場合、スキーマを更新することができます。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.Design.WebControls.MenuDesigner> のインスタンスが <xref:System.Web.UI.Design.IDataBindingSchemaProvider> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.Design.IDataBindingSchemaProvider.RefreshSchema">
+      <MemberSignature Language="C#" Value="void IDataBindingSchemaProvider.RefreshSchema (bool preferSilent);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.Design.IDataBindingSchemaProvider.RefreshSchema(bool preferSilent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.MenuDesigner.System#Web#UI#Design#IDataBindingSchemaProvider#RefreshSchema(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="preferSilent" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="preferSilent">
+          <see langword="true" />処理中に例外が発生するときにエラー メッセージが表示されないことを示すためにそれ以外の場合、<see langword="false" />です。</param>
+        <summary>このメンバーの説明については、<see cref="M:System.Web.UI.Design.IDataBindingSchemaProvider.RefreshSchema(System.Boolean)" /> メソッドのトピックを参照してください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.Design.WebControls.MenuDesigner> のインスタンスが <xref:System.Web.UI.Design.IDataBindingSchemaProvider> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.Design.IDataBindingSchemaProvider.Schema">
+      <MemberSignature Language="C#" Value="System.Web.UI.Design.IDataSourceViewSchema System.Web.UI.Design.IDataBindingSchemaProvider.Schema { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Design.IDataSourceViewSchema System.Web.UI.Design.IDataBindingSchemaProvider.Schema" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.MenuDesigner.System#Web#UI#Design#IDataBindingSchemaProvider#Schema" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.IDataSourceViewSchema</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーの現在のスキーマ オブジェクトを取得します。 このメンバーの説明については、<see cref="P:System.Web.UI.Design.IDataBindingSchemaProvider.Schema" /> プロパティを参照してください。</summary>
+        <value>デザイナーの現在のスキーマ オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.Design.WebControls.MenuDesigner> のインスタンスが <xref:System.Web.UI.Design.IDataBindingSchemaProvider> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TemplateGroups">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.Design.TemplateGroupCollection TemplateGroups { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Design.TemplateGroupCollection TemplateGroups" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.MenuDesigner.TemplateGroups" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.TemplateGroupCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられたコントロールのテンプレートのテンプレート グループのコレクションを取得します。</summary>
+        <value>A<see cref="T:System.Web.UI.Design.TemplateGroupCollection" />テンプレート内の要素が含まれた、<see cref="T:System.Web.UI.WebControls.Menu" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.MenuDesigner.TemplateGroups%2A>プロパティを取得、<xref:System.Web.UI.Design.TemplateGroupCollection>オブジェクトから、 <xref:System.Web.UI.Design.ControlDesigner.TemplateGroups%2A> base プロパティです。 次に、追加、 <xref:System.Web.UI.Design.TemplateGroupCollection> 、<xref:System.Web.UI.Design.TemplateGroup>という名前のオブジェクト"`ItemTemplates`"を含む 2 つ<xref:System.Web.UI.Design.TemplateDefinition>"StaticItemTemplate"および「後」という名前のオブジェクト。 <xref:System.Web.UI.Design.WebControls.MenuDesigner.TemplateGroups%2A>プロパティには、これを返します<xref:System.Web.UI.Design.TemplateGroupCollection>呼び出し元にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UsePreviewControl">
+      <MemberSignature Language="C#" Value="protected override bool UsePreviewControl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UsePreviewControl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.MenuDesigner.UsePreviewControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーが関連付けられたコントロールのコピーを使用する必要があるかどうか、または、コントロール自体を使用して、デザイン時のマークアップを生成するかどうかを示す値を取得します。</summary>
+        <value>常に <see langword="true" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.MenuDesigner.UsePreviewControl%2A>プロパティは常に`true`、デザイナーを使用して、 <xref:System.Web.UI.WebControls.View> 、関連付けられているのコピーを含むコントロール<xref:System.Web.UI.WebControls.Menu>コントロールをデザイン時のマークアップを生成します。 <xref:System.Web.UI.WebControls.View>コントロールではのすべての永続化には影響しません、<xref:System.Web.UI.WebControls.Menu>オブジェクト。  
+  
+ 場合、<xref:System.Web.UI.Design.WebControls.MenuDesigner.UsePreviewControl%2A>を返すプロパティはオーバーライドされて`false`、デザイナーを使用して、関連付けられている<xref:System.Web.UI.WebControls.Menu>自体をコントロールにデザイン時の変更、デザイン時のマークアップを生成するオブジェクトは、ページ マークアップのソースに保存されています。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドすることができます、<see cref="P:System.Web.UI.Design.WebControls.MenuDesigner.UsePreviewControl" />を返すプロパティ<see langword="false" />またはコントロールをクラス レベルでマークされているかどうかに基づいて、その値を決定する<see cref="T:System.Web.UI.Design.SupportsPreviewControlAttribute" />属性。 場合、<see cref="P:System.Web.UI.Design.WebControls.MenuDesigner.UsePreviewControl" />がオーバーライドされていない、<see cref="T:System.Web.UI.WebControls.Menu" />無視、<see cref="T:System.Web.UI.Design.SupportsPreviewControlAttribute" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

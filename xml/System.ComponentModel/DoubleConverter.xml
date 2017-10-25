@@ -1,0 +1,75 @@
+<Type Name="DoubleConverter" FullName="System.ComponentModel.DoubleConverter">
+  <TypeSignature Language="C#" Value="public class DoubleConverter : System.ComponentModel.BaseNumberConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DoubleConverter extends System.ComponentModel.BaseNumberConverter" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.DoubleConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.BaseNumberConverter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>倍精度に変換する型コンバーターを提供浮動小数点数オブジェクトからさまざまな表現。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンバーターが変換できるのみ、<xref:System.Double>文字列との間のオブジェクト。  
+  
+> [!NOTE]
+>  <xref:System.ComponentModel.DoubleConverter> のインスタンスは作成しないでください。 代わりを呼び出して、<xref:System.ComponentModel.TypeDescriptor.GetConverter%2A>メソッドの<xref:System.ComponentModel.TypeDescriptor>します。 詳細については、例を参照してください、<xref:System.ComponentModel.TypeConverter>基本クラスです。  
+  
+ 型コンバーターの詳細については、次を参照してください。、<xref:System.ComponentModel.TypeConverter>基底クラスと[する方法: 実行する型コンバーターを実装する](http://msdn.microsoft.com/library/90373a3f-d8c8-492d-841c-945d62393c56)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、型の変数を変換<xref:System.Double>文字列、およびその逆です。  
+  
+ [!code-cpp[Converters#11](~/samples/snippets/cpp/VS_Snippets_Winforms/Converters/CPP/converters.cpp#11)]
+ [!code-csharp[Converters#11](~/samples/snippets/csharp/VS_Snippets_Winforms/Converters/CS/converters.cs#11)]
+ [!code-vb[Converters#11](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Converters/VB/converters.vb#11)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DoubleConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DoubleConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.DoubleConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

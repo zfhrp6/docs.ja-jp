@@ -1,0 +1,54 @@
+<Type Name="ParameterXPathQueryGenerator" FullName="System.ServiceModel.Description.ParameterXPathQueryGenerator">
+  <TypeSignature Language="C#" Value="public static class ParameterXPathQueryGenerator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ParameterXPathQueryGenerator extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Description.ParameterXPathQueryGenerator" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データ コントラクトから XPath を作成できます。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateFromDataContractSerializer">
+      <MemberSignature Language="C#" Value="public static string CreateFromDataContractSerializer (System.Xml.Linq.XName serviceContractName, string operationName, string parameterName, bool isReply, Type type, System.Reflection.MemberInfo[] pathToMember, out System.Xml.XmlNamespaceManager namespaces);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string CreateFromDataContractSerializer(class System.Xml.Linq.XName serviceContractName, string operationName, string parameterName, bool isReply, class System.Type type, class System.Reflection.MemberInfo[] pathToMember, [out] class System.Xml.XmlNamespaceManager&amp; namespaces) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.ParameterXPathQueryGenerator.CreateFromDataContractSerializer(System.Xml.Linq.XName,System.String,System.String,System.Boolean,System.Type,System.Reflection.MemberInfo[],System.Xml.XmlNamespaceManager@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceContractName" Type="System.Xml.Linq.XName" />
+        <Parameter Name="operationName" Type="System.String" />
+        <Parameter Name="parameterName" Type="System.String" />
+        <Parameter Name="isReply" Type="System.Boolean" />
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="pathToMember" Type="System.Reflection.MemberInfo[]" />
+        <Parameter Name="namespaces" Type="System.Xml.XmlNamespaceManager&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="serviceContractName">サービス コントラクトの名前空間を含むサービス コントラクト XML 要素の名前。</param>
+        <param name="operationName">サービス操作の名前。</param>
+        <param name="parameterName">サービス操作パラメーターの名前。</param>
+        <param name="isReply">
+          <see langword="true" />サービス操作が応答であることを示しますそれ以外の場合、<see langword="false" />です。</param>
+        <param name="type">データ コントラクト。</param>
+        <param name="pathToMember"><see cref="M:System.Type.GetMember(System.String)" /> クラスの <see cref="T:System.Type" /> メソッドを使用して生成されたメタデータ。クエリの生成に使用する特定のデータ メンバーをポイントします。</param>
+        <param name="namespaces">このメソッドから制御が戻るときに、データ コントラクト内で検出された XML 名前空間とそのプレフィックスを格納します。 このメソッドでこのパラメーターを渡す前に、パラメーターをインスタンス化します。</param>
+        <summary>指定した操作名、パラメーター名、およびデータ コントラクト情報を使用して XPath を作成します。</summary>
+        <returns>指定した操作名、パラメーター名、およびデータ コントラクト情報から生成された XPath。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

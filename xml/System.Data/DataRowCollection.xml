@@ -1,0 +1,710 @@
+<Type Name="DataRowCollection" FullName="System.Data.DataRowCollection">
+  <TypeSignature Language="C#" Value="public sealed class DataRowCollection : System.Data.InternalDataCollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DataRowCollection extends System.Data.InternalDataCollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.Data.DataRowCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.InternalDataCollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>行のコレクションを表します、<see cref="T:System.Data.DataTable" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataRowCollection>の主要なコンポーネントである、<xref:System.Data.DataTable>です。 中に、 <xref:System.Data.DataColumnCollection> 、テーブルのスキーマを定義、 <xref:System.Data.DataRowCollection> 、テーブルの実際のデータが含まれています、各<xref:System.Data.DataRow>で、 <xref:System.Data.DataRowCollection> 1 つの行を表します。  
+  
+ 呼び出すことができます、<xref:System.Data.DataRowCollection.Add%2A>と<xref:System.Data.DataRowCollection.Remove%2A>を挿入および削除メソッド<xref:System.Data.DataRow>オブジェクトから、<xref:System.Data.DataRowCollection>です。 呼び出すこともできます、<xref:System.Data.DataRowCollection.Find%2A>を検索する方法<xref:System.Data.DataRow>、主キー列に特定の値を格納するオブジェクトと<xref:System.Data.DataRowCollection.Contains%2A>文字ベースのデータの 1 つの単語や語句を検索します。  
+  
+ 他の操作、並べ替えまたはフィルター処理など、 <xref:System.Data.DataRowCollection>、メソッドを使用し、<xref:System.Data.DataRowCollection>の関連付けられた<xref:System.Data.DataTable>です。  
+  
+   
+  
+## Examples  
+ このセクションの最初の例は、のすべての行の列 1 の値を出力、<xref:System.Data.DataRowCollection>です。 2 番目の例を使用して作成された新しい行を追加する、<xref:System.Data.DataTable.NewRow%2A>メソッドを<xref:System.Data.DataRowCollection>です。  
+  
+ [!code-csharp[Classic WebData DataRowCollection Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRowCollection Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRowCollection Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRowCollection Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>この型は、マルチ スレッドの読み取り操作に対して安全です。 すべての書き込み操作を同期する必要があります。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Data.DataRow row);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Data.DataRow row) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRowCollection.Add(System.Data.DataRow)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="row" Type="System.Data.DataRow" />
+      </Parameters>
+      <Docs>
+        <param name="row">追加する <see cref="T:System.Data.DataRow" />。</param>
+        <summary>指定した追加<see cref="T:System.Data.DataRow" />を<see cref="T:System.Data.DataRowCollection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しい<xref:System.Data.DataRow>、使用する必要があります、<xref:System.Data.DataTable.NewRow%2A>のメソッド、<xref:System.Data.DataTable>クラスです。 使用すると、<xref:System.Data.DataTable.NewRow%2A>メソッドは、新しい<xref:System.Data.DataRow>親のスキーマを使用してオブジェクトが返される<xref:System.Data.DataTable>です。 作成した後、<xref:System.Data.DataRow>オブジェクトしその列のそれぞれの値を設定、使用、<xref:System.Data.DataRowCollection.Add%2A>オブジェクトをコレクションに追加する方法です。  
+  
+ ユーザーが内の例外を生成する場合、例外を生成、<xref:System.Data.DataTable.RowChanging>イベント。 例外が発生する場合、テーブルに行は追加されません。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.DataRowCollection.Add%2A>メソッドを追加、新しい<xref:System.Data.DataRow>を<xref:System.Data.DataRowCollection>オブジェクト。  
+  
+ [!code-csharp[Classic WebData DataRowCollection.Add Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRowCollection.Add Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRowCollection.Add Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRowCollection.Add Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">行は null です。</exception>
+        <exception cref="T:System.ArgumentException">行は、別のテーブルに属しているか、またはこのテーブルに既に属しています。</exception>
+        <exception cref="T:System.Data.ConstraintException">追加は、制約を無効にします。</exception>
+        <exception cref="T:System.Data.NoNullAllowedException">Null 値を配置しようとする、追加、<see cref="T:System.Data.DataColumn" />場所<see cref="P:System.Data.DataColumn.AllowDBNull" />は false。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Data.DataRow Add (params object[] values);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataRow Add(object[] values) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRowCollection.Add(System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataRow</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="values" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="values">新しい行の作成に使用される値の配列。</param>
+        <summary>指定した値を使用して行を作成し、それを追加、<see cref="T:System.Data.DataRowCollection" />です。</summary>
+        <returns>なし。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Data.DataColumn>オブジェクトがその<xref:System.Data.DataColumn.AutoIncrement%2A>を True に設定すると、null 渡す必要があるその列の既定値を取得します。  
+  
+ 例外は、いずれかの中に例外を生成する場合にも発生することができます、<xref:System.Data.DataTable.ColumnChanging>または<xref:System.Data.DataTable.RowChanging>イベント。 例外が発生する場合、テーブルに行は追加されません。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.DataRowCollection.Add%2A>メソッドを作成し、新しい追加<xref:System.Data.DataRow>オブジェクトを<xref:System.Data.DataRowCollection>です。  
+  
+ [!code-csharp[Classic WebData DataRowCollection.Add1 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRowCollection.Add1 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRowCollection.Add1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRowCollection.Add1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">配列は、テーブル内の列の数を超えています。</exception>
+        <exception cref="T:System.InvalidCastException">値では、各列の型は一致しません。</exception>
+        <exception cref="T:System.Data.ConstraintException">行を追加するには、制約が無効にします。</exception>
+        <exception cref="T:System.Data.NoNullAllowedException">列に null 値を格納しようとしています。 ここで<see cref="P:System.Data.DataColumn.AllowDBNull" />は false。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRowCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべての行のコレクションをクリアします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Data.InvalidConstraintException">A<see cref="T:System.Data.ForeignKeyConstraint" />で強制されて、<see cref="T:System.Data.DataRowCollection" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (object key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(object key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRowCollection.Contains(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">テストするための主キーの値。</param>
+        <summary>コレクション内の任意の行の主キーが指定された値を含むかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />コレクションが含まれている場合、<see cref="T:System.Data.DataRow" />指定したプライマリ キーの値です。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、 <xref:System.Data.DataRowCollection.Contains%2A> 、メソッド、<xref:System.Data.DataTable>オブジェクトを<xref:System.Data.DataRowCollection>オブジェクトが属する必要があります主キー列として指定された少なくとも 1 つの列があります。 参照してください、<xref:System.Data.DataTable.PrimaryKey%2A>主キー列を作成する方法についての詳細プロパティです。  
+  
+ 行に指定された値が含まれているを確認したら、すぐとして使用して、 <xref:System.Data.DataRowCollection.Find%2A> 、固有の仕様を返すメソッドを<xref:System.Data.DataRow>値を持つオブジェクト。  
+  
+   
+  
+## Examples  
+ 次の Visual Basic の例を使用して、<xref:System.Data.DataRowCollection.Contains%2A>メソッドを呼び出せば確認するかどうか、<xref:System.Data.DataRowCollection>オブジェクトには、特定の値が含まれています。  
+  
+ [!code-vb[Classic WebData DataRowCollection.Contains Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRowCollection.Contains Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Data.MissingPrimaryKeyException">テーブルには、主キーがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (object[] keys);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(object[] keys) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRowCollection.Contains(System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keys" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="keys">テストするための主キー値の配列。</param>
+        <summary>コレクション内の行の主キー列が、オブジェクト配列の指定した値を含めるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Data.DataRowCollection" />が含まれています、<see cref="T:System.Data.DataRow" />指定したキー値とそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、 <xref:System.Data.DataRowCollection.Contains%2A> 、値の配列をメソッド、<xref:System.Data.DataTable>オブジェクトを<xref:System.Data.DataRowCollection>オブジェクトに属している必要がありますの主キーとして指定された列の配列があります。 参照してください、<xref:System.Data.DataTable.PrimaryKey%2A>主キー列の配列を作成する方法についての詳細プロパティです。 配列要素の数がの主キー列の数に対応する必要があります、<xref:System.Data.DataTable>です。  
+  
+ 行に指定された値が含まれているを確認したら、すぐに使用して、 <xref:System.Data.DataRowCollection.Find%2A> 、固有の仕様を返すメソッドを<xref:System.Data.DataRow>値を持つオブジェクト。  
+  
+   
+  
+## Examples  
+ 次の Visual Basic の例を使用して、<xref:System.Data.DataRowCollection.Contains%2A>の特定の行を検索するメソッド、<xref:System.Data.DataRowCollection>オブジェクト。 この例は、表内の各主キーの 1 つの要素の値の配列を作成しを返すメソッドに配列を渡します、`true`または`false`です。  
+  
+ [!code-vb[Classic WebData DataRowCollection.Contains1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRowCollection.Contains1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Data.MissingPrimaryKeyException">テーブルには、主キーがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public override void CopyTo (Array ar, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void CopyTo(class System.Array ar, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRowCollection.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ar" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ar"><see langword="DataRowCollection" /> から要素がコピーされる先の 1 次元配列。 配列には、0 から始まるインデックスが設定されている必要があります。</param>
+        <param name="index">配列内のコピーを開始する位置を示す、0 から始まるインデックスです。</param>
+        <summary>すべてをコピー、<see cref="T:System.Data.DataRow" />特定のコピー先配列インデックスから始まる、指定した配列にコレクションからオブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Data.DataRow[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Data.DataRow[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRowCollection.CopyTo(System.Data.DataRow[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Data.DataRow[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see langword="DataRowCollection" /> から要素がコピーされる先の 1 次元配列。 配列には、0 から始まるインデックスが設定されている必要があります。</param>
+        <param name="index">配列内のコピーを開始する位置を示す、0 から始まるインデックスです。</param>
+        <summary>すべてをコピー、<see cref="T:System.Data.DataRow" />特定のコピー先配列インデックスから始まる、指定した配列にコレクションからオブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public override int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataRowCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>合計数を取得<see cref="T:System.Data.DataRow" />このコレクション内のオブジェクト。</summary>
+        <value>合計数<see cref="T:System.Data.DataRow" />このコレクション内のオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Find">
+      <MemberSignature Language="C#" Value="public System.Data.DataRow Find (object key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataRow Find(object key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRowCollection.Find(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataRow</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">主キーの値、<see cref="T:System.Data.DataRow" />を検索します。</param>
+        <summary>主キーの値で指定される行を取得します。</summary>
+        <returns>A<see cref="T:System.Data.DataRow" />指定された主キーの値を格納している以外の場合は、null 値では主キーの値が存在しない場合のそれ以外の場合、<see cref="T:System.Data.DataRowCollection" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、 `Find` 、メソッド、<xref:System.Data.DataTable>オブジェクトを<xref:System.Data.DataRowCollection>オブジェクトに属している必要があります主キー列として指定された少なくとも 1 つの列があります。 参照してください、<xref:System.Data.DataTable.PrimaryKey%2A>主キー列を作成する方法についての詳細プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.DataRowCollection.Find%2A>メソッドを主キーの値「2」コレクション内の<xref:System.Data.DataRow>オブジェクト。 メソッドは、固有の仕様を返します<xref:System.Data.DataRow>オブジェクトされ、その値を変更する必要に応じて。  
+  
+ [!code-csharp[Classic WebData DataRowCollection.Find Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRowCollection.Find Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRowCollection.Find Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRowCollection.Find Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Data.MissingPrimaryKeyException">テーブルには、主キーがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Find">
+      <MemberSignature Language="C#" Value="public System.Data.DataRow Find (object[] keys);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataRow Find(object[] keys) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRowCollection.Find(System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataRow</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keys" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="keys">検索する主キー値の配列。 配列の型は<see langword="Object" />します。</param>
+        <summary>指定された主キーの値が含まれる行を取得します。</summary>
+        <returns>A<see cref="T:System.Data.DataRow" />主キーの値を格納しているオブジェクトの指定以外の場合は、null 値では主キーの値が存在しない場合のそれ以外の場合、<see cref="T:System.Data.DataRowCollection" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、 <xref:System.Data.DataRowCollection.Find%2A> 、メソッド、<xref:System.Data.DataTable>オブジェクトを<xref:System.Data.DataRowCollection>オブジェクトに属している必要があります主キー列として指定された少なくとも 1 つの列があります。 2 つ以上の行には、同じ主キーの値がある、最初に見つかった行が返されます。 これが発生したときに<xref:System.Data.DataSet.EnforceConstraints%2A>が false に設定します。 参照してください、<xref:System.Data.DataTable.PrimaryKey%2A>を作成する方法に関する詳細については、プロパティ、<xref:System.Data.DataTable.PrimaryKey%2A>列、または配列の<xref:System.Data.DataColumn>オブジェクトをテーブルに 1 つ以上の主キーがあります。  
+  
+   
+  
+## Examples  
+ 次の例のコレクション内の特定の行を検索する配列の値を使用して<xref:System.Data.DataRow>オブジェクト。 メソッドが想定する、 <xref:System.Data.DataTable> 3 つの主キー列に存在します。 コードを使用して、値の配列を作成した後、<xref:System.Data.DataRowCollection.Find%2A>する特定のオブジェクトを取得する配列を持つメソッドです。  
+  
+ [!code-csharp[Classic WebData DataRowCollection.Find1 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRowCollection.Find1 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRowCollection.Find1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRowCollection.Find1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException">インデックス値に対応する行がありません。</exception>
+        <exception cref="T:System.Data.MissingPrimaryKeyException">テーブルには、主キーがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public override System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRowCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="T:System.Collections.IEnumerator" />このコレクションにします。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />このコレクションにします。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Data.DataRow row);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Data.DataRow row) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRowCollection.IndexOf(System.Data.DataRow)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="row" Type="System.Data.DataRow" />
+      </Parameters>
+      <Docs>
+        <param name="row">検索対象の <see langword="DataRow" />。</param>
+        <summary>指定したインデックスを取得<see cref="T:System.Data.DataRow" />オブジェクト。</summary>
+        <returns>行、またはコレクション内の行が見つからない場合は-1 の 0 から始まるインデックス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertAt">
+      <MemberSignature Language="C#" Value="public void InsertAt (System.Data.DataRow row, int pos);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InsertAt(class System.Data.DataRow row, int32 pos) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRowCollection.InsertAt(System.Data.DataRow,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="row" Type="System.Data.DataRow" />
+        <Parameter Name="pos" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="row">追加する <see cref="T:System.Data.DataRow" />。</param>
+        <param name="pos">追加する、コレクション内の (0 から始まる) の場所、<see langword="DataRow" />です。</param>
+        <summary>コレクションの指定した位置に新しい行を挿入します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された場所<xref:System.Data.DataRowCollection.InsertAt%2A>内の行の順序によって反映されますが、<xref:System.Data.DataRowCollection>のみです。 複数の行が返される場合、<xref:System.Data.DataRow>配列、挿入された行返されないことがありますで指定された場所に<xref:System.Data.DataRowCollection.InsertAt%2A>です。 たとえば、<xref:System.Data.DataTable.Rows%2A>プロパティが指定された挿入位置の行を返します。 <xref:System.Data.DataTable.Select%2A>および<xref:System.Data.DataRow.GetChildRows%2A>ことはできません。 内容を記述する場合、<xref:System.Data.DataRowCollection>などの XML として<xref:System.Data.DataSet.WriteXml%2A>で指定された順序に従って、行が書き込まれる、<xref:System.Data.DataRowCollection>です。  
+  
+ 値が指定されている場合、`pos`パラメーターは、コレクション内の行の数より大きい値は、新しい行が末尾に追加します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Data.DataRow this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.DataRow Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataRowCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataRow</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">返される行の 0 から始まるインデックス。</param>
+        <summary>指定したインデックス位置の行を取得します。</summary>
+        <value>指定した <see cref="T:System.Data.DataRow" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Data.DataRowCollection.Contains%2A>メソッドのキー列の行の特定の値が存在するかどうかを確認します。  
+  
+   
+  
+## Examples  
+ 次の例の出力に各行の列 1 の値、<xref:System.Data.DataRowCollection>です。  
+  
+ [!code-csharp[Classic WebData DataRowCollection.this Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRowCollection.this Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRowCollection.this Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRowCollection.this Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException">インデックス値は、コレクション内の項目の数を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Data.DataRow row);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Data.DataRow row) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRowCollection.Remove(System.Data.DataRow)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="row" Type="System.Data.DataRow" />
+      </Parameters>
+      <Docs>
+        <param name="row">削除する <see cref="T:System.Data.DataRow" />。</param>
+        <summary>指定された <see cref="T:System.Data.DataRow" /> をコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 行を削除すると、その行のすべてのデータが失われます。 呼び出すことも、<xref:System.Data.DataRow.Delete%2A>のメソッド、<xref:System.Data.DataRow>だけにクラスで、行の削除とマークします。 呼び出す`Remove`は呼び出すことと同じ<xref:System.Data.DataRow.Delete%2A>し、呼び出す<xref:System.Data.DataRow.AcceptChanges%2A>です。  
+  
+ <xref:System.Data.DataRowCollection.Remove%2A>呼び出すことはできません、foreach ループで反復処理中に、<xref:System.Data.DataRowCollection>オブジェクト。 <xref:System.Data.DataRowCollection.Remove%2A>コレクションの状態を変更します。  
+  
+ 使用することも、<xref:System.Data.DataRowCollection.Clear%2A>を一度に 1 つのコレクションのすべてのメンバーを削除します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.DataRowCollection.Remove%2A>で検出された行を削除する方法、<xref:System.Data.DataRowCollection>オブジェクト。 最初の例を使用して、<xref:System.Data.DataRowCollection.Contains%2A>行コレクションに行が含まれているかどうかを調べます。 場合は、<xref:System.Data.DataRowCollection.Find%2A>特定の行を検索するメソッドを使用し、<xref:System.Data.DataRowCollection.Remove%2A>行を削除するメソッドを使用しています。  
+  
+ [!code-vb[Classic WebData DataRowCollection.Remove Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRowCollection.Remove Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRowCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除する行のインデックス。</param>
+        <summary>コレクションから指定したインデックス位置の行を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 行を削除すると、その行のすべてのデータが失われます。 呼び出すことも、<xref:System.Data.DataRow.Delete%2A>のメソッド、<xref:System.Data.DataRow>だけにクラスで、行の削除とマークします。 呼び出す`RemoveAt`は呼び出すことと同じ<xref:System.Data.DataRow.Delete%2A>し、呼び出す<xref:System.Data.DataRow.AcceptChanges%2A>です。  
+  
+ 使用することができます、<xref:System.Data.DataRowCollection.Clear%2A>を一度に 1 つのコレクションのすべてのメンバーを削除します。  
+  
+   
+  
+## Examples  
+ 次の例の最後の行の削除、<xref:System.Data.DataRowCollection>を呼び出して、<xref:System.Data.DataRowCollection.RemoveAt%2A>メソッドです。  
+  
+ [!code-vb[Classic WebData DataRowCollection.RemoveAt Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRowCollection.RemoveAt Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

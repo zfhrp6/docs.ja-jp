@@ -1,0 +1,1323 @@
+<Type Name="XPathMessageFilterTable&lt;TFilterData&gt;" FullName="System.ServiceModel.Dispatcher.XPathMessageFilterTable&lt;TFilterData&gt;">
+  <TypeSignature Language="C#" Value="public class XPathMessageFilterTable&lt;TFilterData&gt; : System.Collections.Generic.ICollection&lt;System.Collections.Generic.KeyValuePair&lt;System.ServiceModel.Dispatcher.MessageFilter,TFilterData&gt;&gt;, System.Collections.Generic.IDictionary&lt;System.ServiceModel.Dispatcher.MessageFilter,TFilterData&gt;, System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;System.ServiceModel.Dispatcher.MessageFilter,TFilterData&gt;&gt;, System.ServiceModel.Dispatcher.IMessageFilterTable&lt;TFilterData&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XPathMessageFilterTable`1&lt;TFilterData&gt; extends System.Object implements class System.Collections.Generic.ICollection`1&lt;valuetype System.Collections.Generic.KeyValuePair`2&lt;class System.ServiceModel.Dispatcher.MessageFilter, !TFilterData&gt;&gt;, class System.Collections.Generic.IDictionary`2&lt;class System.ServiceModel.Dispatcher.MessageFilter, !TFilterData&gt;, class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Collections.Generic.KeyValuePair`2&lt;class System.ServiceModel.Dispatcher.MessageFilter, !TFilterData&gt;&gt;, class System.Collections.IEnumerable, class System.ServiceModel.Dispatcher.IMessageFilterTable`1&lt;!TFilterData&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TFilterData" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.ICollection&lt;System.Collections.Generic.KeyValuePair&lt;System.ServiceModel.Dispatcher.MessageFilter,TFilterData&gt;&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IDictionary&lt;System.ServiceModel.Dispatcher.MessageFilter,TFilterData&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;System.ServiceModel.Dispatcher.MessageFilter,TFilterData&gt;&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Dispatcher.IMessageFilterTable&lt;TFilterData&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.Serialization.DataContract</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <typeparam name="TFilterData">テーブル内の各フィルターに関連付けられたフィルター データの種類。</typeparam>
+    <summary>照合を効率よく行うために、フィルター/データのペアのコレクションを保持します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.XPathMessageFilterTable%601> は、<xref:System.ServiceModel.Dispatcher.IMessageFilterTable%601> インターフェイスを実装します。 このフィルター テーブルは宣言的な XPath フィルターに最適化されているため、テーブル キーは <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> となります。  
+  
+ <xref:System.ServiceModel.Dispatcher.XPathMessageFilterTable%601> クラスは、ほとんどのメッセージ シナリオをカバーし、XPath 1.0 の文法を完全にサポートする XPath のサブセットに合わせてマッチングを最適化します。 また、効率的な並列マッチング用のアルゴリズムも最適化します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XPathMessageFilterTable ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XPathMessageFilterTable (int capacity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 capacity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="capacity" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="capacity">テーブルの初期量。</param>
+        <summary><see cref="T:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Collections.Generic.KeyValuePair&lt;System.ServiceModel.Dispatcher.MessageFilter,TFilterData&gt; item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Add(valuetype System.Collections.Generic.KeyValuePair`2&lt;class System.ServiceModel.Dispatcher.MessageFilter, !TFilterData&gt; item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.Add(System.Collections.Generic.KeyValuePair{System.ServiceModel.Dispatcher.MessageFilter,`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Collections.Generic.KeyValuePair&lt;System.ServiceModel.Dispatcher.MessageFilter,TFilterData&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="item"><see cref="T:System.Collections.Generic.KeyValuePair`2" /> &lt;フィルター、 <c>FilterData</c> &gt;テーブルに追加します。</param>
+        <summary>フィルター/<paramref name="FilterData" /> (キー/値) ペアを <see cref="T:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1" /> に追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Collections.Generic.ICollection%601.Add%2A> クラスの <xref:System.Collections.Generic.ICollection%601> メソッドを実装します。  `filter` パラメーターの <xref:System.ServiceModel.Dispatcher.MessageFilter> 型から <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> への暗黙の型変換を避けるには、厳密に型指定されたオーバーロード <xref:System.ServiceModel.Dispatcher.XPathMessageFilterTable%601.Add%2A> を使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="filter" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Xml.XPath.XPathException">コンパイル エラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.ServiceModel.Dispatcher.MessageFilter filter, TFilterData data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Add(class System.ServiceModel.Dispatcher.MessageFilter filter, !TFilterData data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.Add(System.ServiceModel.Dispatcher.MessageFilter,`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filter" Type="System.ServiceModel.Dispatcher.MessageFilter" />
+        <Parameter Name="data" Type="TFilterData" />
+      </Parameters>
+      <Docs>
+        <param name="filter">追加されるペアのキーとして使用される <see cref="T:System.ServiceModel.Dispatcher.MessageFilter" />。 <see cref="T:System.ServiceModel.Dispatcher.XPathMessageFilter" /> のインスタンスである必要があります。</param>
+        <param name="data"><c>FilterData</c>追加されるペアの値として使用するフィルターに関連付けられています。</param>
+        <summary>フィルター/データ ペアをフィルター テーブルに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `filter` パラメーターの <xref:System.ServiceModel.Dispatcher.MessageFilter> から <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> への内部的な型変換を避けるには、厳密に型指定されたオーバーロード <xref:System.ServiceModel.Dispatcher.XPathMessageFilterTable%601.Add%2A> を使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="filter" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidCastException">
+          <paramref name="filter" /> が <see cref="T:System.ServiceModel.Dispatcher.XPathMessageFilter" /> ではありません。</exception>
+        <exception cref="T:System.Xml.XPath.XPathException">コンパイル エラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.ServiceModel.Dispatcher.XPathMessageFilter filter, TFilterData data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.ServiceModel.Dispatcher.XPathMessageFilter filter, !TFilterData data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.Add(System.ServiceModel.Dispatcher.XPathMessageFilter,`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filter" Type="System.ServiceModel.Dispatcher.XPathMessageFilter" />
+        <Parameter Name="data" Type="TFilterData" />
+      </Parameters>
+      <Docs>
+        <param name="filter">追加されるペアのキーとして使用される <see cref="T:System.ServiceModel.Dispatcher.XPathMessageFilter" />。</param>
+        <param name="data"><c>FilterData</c>フィルターに関連付けられている。 追加するペアの値として使用します。</param>
+        <summary>フィルター/データ ペアをフィルター テーブルに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、フィルター テーブルへの <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> の追加に対して、厳密に型指定されたオーバーロードを提供します。`filter` パラメーターの <xref:System.ServiceModel.Dispatcher.MessageFilter> 型から <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> への暗黙の型変換を避けることができる点が、弱い型指定のオーバーロードより優れています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="filter" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Xml.XPath.XPathException">コンパイル エラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>フィルター テーブルからすべてのフィルター/データ ペアを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Collections.Generic.KeyValuePair&lt;System.ServiceModel.Dispatcher.MessageFilter,TFilterData&gt; item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(valuetype System.Collections.Generic.KeyValuePair`2&lt;class System.ServiceModel.Dispatcher.MessageFilter, !TFilterData&gt; item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.Contains(System.Collections.Generic.KeyValuePair{System.ServiceModel.Dispatcher.MessageFilter,`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Collections.Generic.KeyValuePair&lt;System.ServiceModel.Dispatcher.MessageFilter,TFilterData&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="item"><see cref="T:System.Collections.Generic.KeyValuePair`2" /> &lt; <see cref="T:System.ServiceModel.Dispatcher.MessageFilter" />、 <c>FilterData</c> &gt;テーブルに見つかりません。</param>
+        <summary>指定したフィルターと、それに関連する <paramref name="FilterData" /> がフィルター テーブルに格納されているかどうかを判定します。</summary>
+        <returns>
+          <see langword="true" />場合、フィルター/*FilterData*ペアは、それ以外のフィルター テーブルに含まれている<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フィルターが見つかっても対応するデータが異なる場合、このメソッドは `false` を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsKey">
+      <MemberSignature Language="C#" Value="public bool ContainsKey (System.ServiceModel.Dispatcher.MessageFilter filter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ContainsKey(class System.ServiceModel.Dispatcher.MessageFilter filter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.ContainsKey(System.ServiceModel.Dispatcher.MessageFilter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filter" Type="System.ServiceModel.Dispatcher.MessageFilter" />
+      </Parameters>
+      <Docs>
+        <param name="filter">テストする <see cref="T:System.ServiceModel.Dispatcher.MessageFilter" />。</param>
+        <summary>指定したフィルターがフィルター テーブルに格納されているかどうかを判定します。</summary>
+        <returns>
+          <see langword="true" /> がフィルター テーブル内に存在する場合は <paramref name="filter" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、`ContainsKey` の <xref:System.Collections.Generic.IDictionary%602> メソッドを実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Collections.Generic.KeyValuePair&lt;System.ServiceModel.Dispatcher.MessageFilter,TFilterData&gt;[] array, int arrayIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(valuetype System.Collections.Generic.KeyValuePair`2&lt;class System.ServiceModel.Dispatcher.MessageFilter, !TFilterData&gt;[] array, int32 arrayIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.CopyTo(System.Collections.Generic.KeyValuePair{System.ServiceModel.Dispatcher.MessageFilter,`0}[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Collections.Generic.KeyValuePair&lt;System.ServiceModel.Dispatcher.MessageFilter,TFilterData&gt;[]" />
+        <Parameter Name="arrayIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">型の配列<see cref="T:System.Collections.Generic.KeyValuePair`2" />&lt;フィルター、 <c>FilterData</c> &gt;ペアがコピーされます。</param>
+        <param name="arrayIndex">コピーの開始位置を示すインデックス。</param>
+        <summary>指定したインデックスを配列の開始位置として、配列にフィルター/<paramref name="FilterData" /> のペアをコピーします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィルター テーブル内にある、現在のフィルター/データ ペアの数を取得します。</summary>
+        <value>フィルター テーブル内にある、現在のフィルター/データ ペアの数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerator&lt;System.Collections.Generic.KeyValuePair&lt;System.ServiceModel.Dispatcher.MessageFilter,TFilterData&gt;&gt; GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerator`1&lt;valuetype System.Collections.Generic.KeyValuePair`2&lt;class System.ServiceModel.Dispatcher.MessageFilter, !TFilterData&gt;&gt; GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;System.Collections.Generic.KeyValuePair&lt;System.ServiceModel.Dispatcher.MessageFilter,TFilterData&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>フィルター テーブルを反復処理できる列挙子を返します。</summary>
+        <returns><see cref="T:System.Collections.Generic.IEnumerator`1" /> &lt;KeyValuePair&lt;Filter, FilterData&gt; &gt;フィルター テーブルを反復処理に使用できます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Collections.Generic.SynchronizedCollection%601.GetEnumerator%2A> を実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetMatchingFilter">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定したメッセージまたはバッファー内のメッセージがテーブル内のただ 1 つのフィルターの一致条件を満たしているかどうかを示す値を返し、そのフィルターを <see langword="out" /> パラメーターに設定して返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージがフィルター テーブル内のいずれか 1 つだけのフィルター条件を満たしているかどうかをテストします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetMatchingFilter">
+      <MemberSignature Language="C#" Value="public bool GetMatchingFilter (System.ServiceModel.Channels.Message message, out System.ServiceModel.Dispatcher.MessageFilter filter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetMatchingFilter(class System.ServiceModel.Channels.Message message, [out] class System.ServiceModel.Dispatcher.MessageFilter&amp; filter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.GetMatchingFilter(System.ServiceModel.Channels.Message,System.ServiceModel.Dispatcher.MessageFilter@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="filter" Type="System.ServiceModel.Dispatcher.MessageFilter&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="message">テスト対象の <see cref="T:System.ServiceModel.Channels.Message" />。</param>
+        <param name="filter"><see langword="out" />によって満たされるフィルターを格納するパラメーター、<c>メッセージ</c>です。 フィルターが見つからなかった場合は、このパラメーターに既定値が設定されます。</param>
+        <summary>指定したメッセージがテーブル内のただ 1 つのフィルターの一致条件を満たすかどうかを示す値を返し、そのフィルターを <see langword="out" /> パラメーターに設定して返します。</summary>
+        <returns>メッセージによってクエリ条件が満たされている <see cref="T:System.ServiceModel.Dispatcher.MessageFilter" />。条件を満たすフィルターが見つからない場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つのフィルターがメッセージに一致すると推測され、一致するフィルターが必要な場合に、このメソッドを使用します。  
+  
+ このメソッドは、優先度の最も高いフィルター グループ内で一致するフィルターが 1 つだけ存在するかどうかをテストします。 テーブル内のフィルターは、メッセージ本文を検査できません。  
+  
+ 2 つ以上のフィルタがメッセージに一致すると予測される場合は、<xref:System.ServiceModel.Dispatcher.XPathMessageFilterTable%601.GetMatchingFilters%2A> を使用します。  
+  
+ このメソッドは、<xref:System.ServiceModel.Dispatcher.IMessageFilterTable%601.GetMatchingFilter%2A> を実装します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="message" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ServiceModel.Dispatcher.MultipleFilterMatchesException">2 つ以上のフィルターが <paramref name="message" /> に一致しています。</exception>
+        <exception cref="T:System.ServiceModel.Dispatcher.InvalidBodyAccessException">フィルターがメッセージ本文の内容を検査しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMatchingFilter">
+      <MemberSignature Language="C#" Value="public bool GetMatchingFilter (System.ServiceModel.Channels.MessageBuffer messageBuffer, out System.ServiceModel.Dispatcher.MessageFilter filter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetMatchingFilter(class System.ServiceModel.Channels.MessageBuffer messageBuffer, [out] class System.ServiceModel.Dispatcher.MessageFilter&amp; filter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.GetMatchingFilter(System.ServiceModel.Channels.MessageBuffer,System.ServiceModel.Dispatcher.MessageFilter@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageBuffer" Type="System.ServiceModel.Channels.MessageBuffer" />
+        <Parameter Name="filter" Type="System.ServiceModel.Dispatcher.MessageFilter&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="messageBuffer">テスト対象の <see cref="T:System.ServiceModel.Channels.MessageBuffer" />。</param>
+        <param name="filter"><see langword="out" />によって満たされるフィルターを格納するパラメーター、<c>メッセージ</c>です。 フィルターが見つからなかった場合は、このパラメーターに既定値が設定されます。</param>
+        <summary>指定したメッセージまたはバッファー内のメッセージがテーブル内のただ 1 つのフィルターの一致条件を満たしているかどうかを示す値を返し、そのフィルターを <see langword="out" /> パラメーターに設定して返します。</summary>
+        <returns>バッファー内のメッセージによってクエリ条件が満たされている <see cref="T:System.ServiceModel.Dispatcher.MessageFilter" />。条件を満たすフィルターが見つからない場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つのフィルターがバッファー内のメッセージに一致すると推測され、一致するフィルターが必要な場合に、このメソッドを使用します。  
+  
+ テーブル内のフィルターは、メッセージ本文を検査できます。  
+  
+ 2 つ以上のフィルタがメッセージに一致すると予測される場合は、<xref:System.ServiceModel.Dispatcher.XPathMessageFilterTable%601.GetMatchingFilters%2A> を使用します。  
+  
+ このメソッドは、<xref:System.ServiceModel.Dispatcher.IMessageFilterTable%601.GetMatchingFilter%2A> を実装します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="messageBuffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ServiceModel.Dispatcher.MultipleFilterMatchesException">2 つ以上のフィルターが <paramref name="messageBuffer" /> に一致しています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMatchingFilter">
+      <MemberSignature Language="C#" Value="public bool GetMatchingFilter (System.ServiceModel.Dispatcher.SeekableXPathNavigator navigator, out System.ServiceModel.Dispatcher.MessageFilter filter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GetMatchingFilter(class System.ServiceModel.Dispatcher.SeekableXPathNavigator navigator, [out] class System.ServiceModel.Dispatcher.MessageFilter&amp; filter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.GetMatchingFilter(System.ServiceModel.Dispatcher.SeekableXPathNavigator,System.ServiceModel.Dispatcher.MessageFilter@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="navigator" Type="System.ServiceModel.Dispatcher.SeekableXPathNavigator" />
+        <Parameter Name="filter" Type="System.ServiceModel.Dispatcher.MessageFilter&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="navigator">テスト対象の <see cref="T:System.ServiceModel.Dispatcher.SeekableXPathNavigator" />。</param>
+        <param name="filter"><see langword="out" />によって満たされるフィルターを格納するパラメーター、<c>メッセージ</c>です。 フィルターが見つからなかった場合は、このパラメーターに既定値が設定されます。</param>
+        <summary>指定されたメッセージまたはバッファー内のメッセージがテーブル内のただ 1 つの <see cref="T:System.ServiceModel.Dispatcher.SeekableXPathNavigator" /> の一致条件を満たしているかどうかを示す値を返し、そのフィルターを <see langword="out" /> パラメーターに設定して返します。</summary>
+        <returns>ナビゲーターによってクエリ条件が満たされている <see cref="T:System.ServiceModel.Dispatcher.MessageFilter" />。条件を満たすフィルターが見つからない場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つのフィルターが <xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator> によって指定されたメッセージに一致すると推測され、一致するフィルターが必要な場合に、このメソッドを使用します。  
+  
+ 2 つ以上のフィルタがメッセージに一致すると予測される場合は、<xref:System.ServiceModel.Dispatcher.XPathMessageFilterTable%601.GetMatchingFilters%2A> を使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="navigator" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ServiceModel.Dispatcher.MultipleFilterMatchesException">2 つ以上のフィルターが <paramref name="navigator" /> に一致しています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMatchingFilter">
+      <MemberSignature Language="C#" Value="public bool GetMatchingFilter (System.Xml.XPath.XPathNavigator navigator, out System.ServiceModel.Dispatcher.MessageFilter filter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GetMatchingFilter(class System.Xml.XPath.XPathNavigator navigator, [out] class System.ServiceModel.Dispatcher.MessageFilter&amp; filter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.GetMatchingFilter(System.Xml.XPath.XPathNavigator,System.ServiceModel.Dispatcher.MessageFilter@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
+        <Parameter Name="filter" Type="System.ServiceModel.Dispatcher.MessageFilter&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="navigator">テスト対象の <see cref="T:System.Xml.XPath.XPathNavigator" />。</param>
+        <param name="filter"><see langword="out" />によって満たされるフィルターを格納するパラメーター、<c>ナビゲーター</c>です。 フィルターが見つからなかった場合は、このパラメーターに既定値が設定されます。</param>
+        <summary>指定されたメッセージまたはバッファー内のメッセージがテーブル内のただ 1 つの <see cref="T:System.Xml.XPath.XPathNavigator" /> の一致条件を満たしているかどうかを示す値を返し、そのフィルターを <see langword="out" /> パラメーターに設定して返します。</summary>
+        <returns>ナビゲーターによってクエリ条件が満たされている <see cref="T:System.ServiceModel.Dispatcher.MessageFilter" />。条件を満たすフィルターが見つからない場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つのフィルターが <xref:System.Xml.XPath.XPathNavigator> によって指定されたメッセージに一致すると推測され、一致するフィルターが必要な場合に、このメソッドを使用します。  
+  
+ 2 つ以上のフィルタがメッセージに一致すると予測される場合は、<xref:System.ServiceModel.Dispatcher.XPathMessageFilterTable%601.GetMatchingFilters%2A> を使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="navigator" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ServiceModel.Dispatcher.MultipleFilterMatchesException">2 つ以上のフィルターが <paramref name="navigator" /> に一致しています。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetMatchingFilters">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定した XML ドキュメントがテーブル内のフィルターの一致条件を満たすかどうかを示す値を返し、一致するフィルターをコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ以上のフィルターがメッセージに一致すると推測され、一致するフィルターが必要な場合は、このメソッドを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetMatchingFilters">
+      <MemberSignature Language="C#" Value="public bool GetMatchingFilters (System.ServiceModel.Channels.Message message, System.Collections.Generic.ICollection&lt;System.ServiceModel.Dispatcher.MessageFilter&gt; results);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetMatchingFilters(class System.ServiceModel.Channels.Message message, class System.Collections.Generic.ICollection`1&lt;class System.ServiceModel.Dispatcher.MessageFilter&gt; results) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.GetMatchingFilters(System.ServiceModel.Channels.Message,System.Collections.Generic.ICollection{System.ServiceModel.Dispatcher.MessageFilter})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="results" Type="System.Collections.Generic.ICollection&lt;System.ServiceModel.Dispatcher.MessageFilter&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="message">テスト対象の <see cref="T:System.ServiceModel.Channels.Message" />。</param>
+        <param name="results">格納する参照パラメーター、<see cref="T:System.ServiceModel.Dispatcher.MessageFilter" />で一致するオブジェクト<see cref="T:System.Collections.Generic.ICollection`1" />&lt;フィルター&gt;です。</param>
+        <summary>指定したメッセージがテーブル内の少なくとも 1 つの <see cref="T:System.ServiceModel.Dispatcher.XPathMessageFilter" /> の一致条件を満たしているかどうかを示す値を返し、一致するフィルターをコレクションに追加します。</summary>
+        <returns>
+          <see langword="true" /> がテーブル内の少なくとも 1 つのフィルターの一致条件を満たしている場合は <paramref name="message" />、どのフィルター条件も満たしていない場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ以上のフィルターがメッセージに一致すると推測され、一致するフィルターが必要な場合は、このメソッドを使用します。  
+  
+ テーブル内のフィルターは、メッセージ本文を検査できません。  
+  
+ 一致する <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> オブジェクトは、`results` の <xref:System.Collections.Generic.ICollection%601> パラメーターに格納されます。 これで、該当するフィルターをキーとして指定し、`FilterData` によって提供されているメソッドを使用して、<xref:System.Collections.Generic.IDictionary%602> をフィルター テーブルから復元できます。  
+  
+ このメソッドは、<xref:System.ServiceModel.Dispatcher.IMessageFilterTable%601.GetMatchingFilters%2A> を実装します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="results" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ServiceModel.Dispatcher.InvalidBodyAccessException">フィルターがメッセージ本文の内容を検査しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMatchingFilters">
+      <MemberSignature Language="C#" Value="public bool GetMatchingFilters (System.ServiceModel.Channels.MessageBuffer messageBuffer, System.Collections.Generic.ICollection&lt;System.ServiceModel.Dispatcher.MessageFilter&gt; results);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetMatchingFilters(class System.ServiceModel.Channels.MessageBuffer messageBuffer, class System.Collections.Generic.ICollection`1&lt;class System.ServiceModel.Dispatcher.MessageFilter&gt; results) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.GetMatchingFilters(System.ServiceModel.Channels.MessageBuffer,System.Collections.Generic.ICollection{System.ServiceModel.Dispatcher.MessageFilter})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageBuffer" Type="System.ServiceModel.Channels.MessageBuffer" />
+        <Parameter Name="results" Type="System.Collections.Generic.ICollection&lt;System.ServiceModel.Dispatcher.MessageFilter&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="messageBuffer">テスト対象の <see cref="T:System.ServiceModel.Channels.MessageBuffer" />。</param>
+        <param name="results">格納する参照パラメーター、<see cref="T:System.ServiceModel.Dispatcher.MessageFilter" />で一致するオブジェクト<see cref="T:System.Collections.Generic.ICollection`1" />&lt;フィルター&gt;です。</param>
+        <summary>指定したバッファー内のメッセージがテーブル内の少なくとも 1 つの <see cref="T:System.ServiceModel.Dispatcher.XPathMessageFilter" /> の一致条件を満たしているかどうかを示す値を返し、一致するフィルターをコレクションに追加します。</summary>
+        <returns>
+          <see langword="true" /> がテーブル内の少なくとも 1 つのフィルターの一致条件を満たしている場合は <paramref name="messageBuffer" />、どのフィルター条件も満たしていない場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ以上のフィルターがバッファー内のメッセージに一致すると推測され、一致するフィルターが必要な場合は、このメソッドを使用します。  
+  
+ テーブル内のフィルターは、メッセージ本文を検査できます。  
+  
+ 一致する <xref:System.ServiceModel.Dispatcher.MessageFilter> オブジェクトは、`results` の <xref:System.Collections.Generic.ICollection%601> パラメーターに格納されます。 これで、該当するフィルターをキーとして指定し、`FilterData` によって提供されているメソッドを使用して、<xref:System.Collections.Generic.IDictionary%602> をフィルター テーブルから復元できます。  
+  
+ このメソッドは、<xref:System.ServiceModel.Dispatcher.MessageFilterTable%601.GetMatchingFilters%2A> を実装します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="results" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMatchingFilters">
+      <MemberSignature Language="C#" Value="public bool GetMatchingFilters (System.ServiceModel.Dispatcher.SeekableXPathNavigator navigator, System.Collections.Generic.ICollection&lt;System.ServiceModel.Dispatcher.MessageFilter&gt; results);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GetMatchingFilters(class System.ServiceModel.Dispatcher.SeekableXPathNavigator navigator, class System.Collections.Generic.ICollection`1&lt;class System.ServiceModel.Dispatcher.MessageFilter&gt; results) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.GetMatchingFilters(System.ServiceModel.Dispatcher.SeekableXPathNavigator,System.Collections.Generic.ICollection{System.ServiceModel.Dispatcher.MessageFilter})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="navigator" Type="System.ServiceModel.Dispatcher.SeekableXPathNavigator" />
+        <Parameter Name="results" Type="System.Collections.Generic.ICollection&lt;System.ServiceModel.Dispatcher.MessageFilter&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="navigator">テスト対象の <see cref="T:System.ServiceModel.Dispatcher.SeekableXPathNavigator" />。</param>
+        <param name="results">格納する参照パラメーター、<see cref="T:System.ServiceModel.Dispatcher.MessageFilter" />で一致するオブジェクト<see cref="T:System.Collections.Generic.ICollection`1" />&lt;フィルター&gt;です。</param>
+        <summary>指定したバッファー内のメッセージがテーブル内の少なくとも 1 つの <see cref="T:System.ServiceModel.Dispatcher.SeekableXPathNavigator" /> の一致条件を満たしているかどうかを示す値を返し、一致するフィルターをコレクションに追加します。</summary>
+        <returns>
+          <see langword="true" /> がテーブル内の少なくとも 1 つのフィルターの一致条件を満たしている場合は <paramref name="messageBuffer" />、どのフィルター条件も満たしていない場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ以上のフィルターがナビゲーターに一致すると推測され、一致するフィルターが必要な場合は、このメソッドを使用します。  
+  
+ 1 つのフィルターのみがメッセージに一致すると予測される場合は、<xref:System.ServiceModel.Dispatcher.XPathMessageFilterTable%601.GetMatchingFilter%2A> メソッドを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="results" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMatchingFilters">
+      <MemberSignature Language="C#" Value="public bool GetMatchingFilters (System.Xml.XPath.XPathNavigator navigator, System.Collections.Generic.ICollection&lt;System.ServiceModel.Dispatcher.MessageFilter&gt; results);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GetMatchingFilters(class System.Xml.XPath.XPathNavigator navigator, class System.Collections.Generic.ICollection`1&lt;class System.ServiceModel.Dispatcher.MessageFilter&gt; results) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.GetMatchingFilters(System.Xml.XPath.XPathNavigator,System.Collections.Generic.ICollection{System.ServiceModel.Dispatcher.MessageFilter})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
+        <Parameter Name="results" Type="System.Collections.Generic.ICollection&lt;System.ServiceModel.Dispatcher.MessageFilter&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="navigator">テスト対象の <see cref="T:System.Xml.XPath.XPathNavigator" />。</param>
+        <param name="results">格納する参照パラメーター、<see cref="T:System.ServiceModel.Dispatcher.MessageFilter" />で一致するオブジェクト<see cref="T:System.Collections.Generic.ICollection`1" />&lt;フィルター&gt;です。</param>
+        <summary>指定したバッファー内のメッセージがテーブル内の少なくとも 1 つの <see cref="T:System.Xml.XPath.XPathNavigator" /> の一致条件を満たしているかどうかを示す値を返し、一致するフィルターをコレクションに追加します。</summary>
+        <returns>
+          <see langword="true" /> がテーブル内の少なくとも 1 つのフィルターの一致条件を満たしている場合は <paramref name="messageBuffer" />、どのフィルター条件も満たしていない場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数のフィルターが <xref:System.Xml.XPath.XPathNavigator> によって指定されたメッセージに一致すると推測され、一致するフィルターが必要な場合に、このメソッドを使用します。  
+  
+ 1 つのフィルターのみがメッセージに一致すると予測される場合は、<xref:System.ServiceModel.Dispatcher.XPathMessageFilterTable%601.GetMatchingFilter%2A> メソッドを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="matches" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetMatchingValue">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定したドキュメント オブジェクトがテーブルのただ 1 つの <see cref="T:System.ServiceModel.Dispatcher.XPathMessageFilter" /> の一致条件を満たしているかどうかを示す値を返し、一致するフィルターのデータをコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つのフィルターがドキュメント オブジェクトに一致すると予測され、一致するフィルターから `FilterData` だけを復元する必要がある場合は、次の 4 つのメソッドのいずれか 1 つを使用します。  
+  
+ 最初の 2 つのメソッドの実装は、<xref:System.ServiceModel.Dispatcher.XPathMessageFilterTable%601.GetMatchingValue%2A>です。  
+  
+ メッセージ本文の内容を調べる必要がない場合は、<xref:System.ServiceModel.Dispatcher.XPathMessageFilterTable%601.GetMatchingValue%2A> を使用します。 メッセージ本文の内容を調べる必要がある場合は、<xref:System.ServiceModel.Dispatcher.XPathMessageFilterTable%601.GetMatchingValue%2A> を使用します。  
+  
+ 残りの 2 つのメソッドは、<xref:System.ServiceModel.Dispatcher.XPathMessageFilterTable%601> 固有のオーバーロードです。 ナビゲーターを介して提供されたドキュメントに対してフィルター処理を実行するには、<xref:System.ServiceModel.Dispatcher.XPathMessageFilterTable%601.GetMatchingValue%2A> または <xref:System.ServiceModel.Dispatcher.XPathMessageFilterTable%601.GetMatchingValue%2A> を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetMatchingValue">
+      <MemberSignature Language="C#" Value="public bool GetMatchingValue (System.ServiceModel.Channels.Message message, out TFilterData data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetMatchingValue(class System.ServiceModel.Channels.Message message, [out] !TFilterData&amp; data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.GetMatchingValue(System.ServiceModel.Channels.Message,`0@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="data" Type="TFilterData&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="message">テスト対象の <see cref="T:System.ServiceModel.Channels.Message" />。</param>
+        <param name="data"><see langword="out" />を格納するパラメーター、 <c>FilterData</c>と一致するフィルターの<c>メッセージ</c>です。</param>
+        <summary>指定したメッセージがテーブルのただ 1 つの <see cref="T:System.ServiceModel.Dispatcher.XPathMessageFilter" /> の一致条件を満たしているかどうかを示す値を返し、一致するフィルターのデータを返します。</summary>
+        <returns>
+          メッセージがテーブル内のいずれか 1 つのフィルターの一致条件を満たしている場合は <see langword="true" />、どのフィルター条件も満たしていない場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つのフィルターがメッセージに一致すると予測され、一致するフィルターから `FilterData` だけを復元する必要がある場合は、このメソッドを使用します。  
+  
+ このメソッドは、<xref:System.ServiceModel.Dispatcher.IMessageFilterTable%601.GetMatchingValue%2A> を実装します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="message" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ServiceModel.Dispatcher.MultipleFilterMatchesException">2 つ以上のフィルターが <paramref name="message" /> に一致しています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMatchingValue">
+      <MemberSignature Language="C#" Value="public bool GetMatchingValue (System.ServiceModel.Channels.MessageBuffer messageBuffer, out TFilterData data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetMatchingValue(class System.ServiceModel.Channels.MessageBuffer messageBuffer, [out] !TFilterData&amp; data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.GetMatchingValue(System.ServiceModel.Channels.MessageBuffer,`0@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageBuffer" Type="System.ServiceModel.Channels.MessageBuffer" />
+        <Parameter Name="data" Type="TFilterData&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="messageBuffer">テスト対象の <see cref="T:System.ServiceModel.Channels.MessageBuffer" />。</param>
+        <param name="data"><see langword="out" />を格納するパラメーター、 <c>FilterData</c>と一致するフィルターの<c>messageBuffer</c>です。</param>
+        <summary>指定したバッファー内のメッセージがテーブル内のただ 1 つの <see cref="T:System.ServiceModel.Dispatcher.XPathMessageFilter" /> の一致条件を満たしているかどうかを示す値を返し、一致するフィルターのデータを返します。</summary>
+        <returns>
+          バッファー内のメッセージがテーブル内のいずれか 1 つのフィルターの一致条件を満たしている場合は <see langword="true" />、どのフィルター条件も満たしていない場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つのフィルターがバッファー内のメッセージに一致すると予測され、一致するフィルターから `FilterData` だけを復元する必要がある場合は、このメソッドを使用します。  
+  
+ このメソッドは、<xref:System.ServiceModel.Dispatcher.IMessageFilterTable%601.GetMatchingFilter%2A> を実装します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="message" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ServiceModel.Dispatcher.MultipleFilterMatchesException">2 つ以上のフィルターが <paramref name="messageBuffer" /> に一致しています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMatchingValue">
+      <MemberSignature Language="C#" Value="public bool GetMatchingValue (System.ServiceModel.Dispatcher.SeekableXPathNavigator navigator, out TFilterData data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GetMatchingValue(class System.ServiceModel.Dispatcher.SeekableXPathNavigator navigator, [out] !TFilterData&amp; data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.GetMatchingValue(System.ServiceModel.Dispatcher.SeekableXPathNavigator,`0@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="navigator" Type="System.ServiceModel.Dispatcher.SeekableXPathNavigator" />
+        <Parameter Name="data" Type="TFilterData&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="navigator">テスト対象の <see cref="T:System.ServiceModel.Dispatcher.SeekableXPathNavigator" />。</param>
+        <param name="data"><see langword="out" />を格納するパラメーター、 <c>FilterData</c>に一致する、<c>ナビゲーター</c>です。</param>
+        <summary><see cref="T:System.ServiceModel.Dispatcher.SeekableXPathNavigator" /> がテーブル内のただ 1 つの <paramref name="navigator" /> の一致条件を満たしているかどうかを示す値を返し、一致するフィルターのフィルター データを <see langword="out" /> パラメーターに設定して返します。</summary>
+        <returns>
+          <see langword="true" /> がテーブル内のいずれか 1 つだけのフィルターの一致条件を満たしている場合は <paramref name="navigator" />、どのフィルター条件も満たしていない場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、メッセージが満たす必要のある XPath 条件を指定するために使用します。  
+  
+ このメソッドは <xref:System.ServiceModel.Dispatcher.XPathMessageFilterTable%601.GetMatchingValue%2A> と似ていますが、<xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator> を使用する点が異なります。これは、さまざまな最適化を可能にするメソッドを含むように、<xref:System.Xml.XPath.XPathNavigator> の機能を拡張したものです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="navigator" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ServiceModel.Dispatcher.MultipleFilterMatchesException">2 つ以上のフィルターが <paramref name="navigator" /> に一致しています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMatchingValue">
+      <MemberSignature Language="C#" Value="public bool GetMatchingValue (System.Xml.XPath.XPathNavigator navigator, out TFilterData data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GetMatchingValue(class System.Xml.XPath.XPathNavigator navigator, [out] !TFilterData&amp; data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.GetMatchingValue(System.Xml.XPath.XPathNavigator,`0@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
+        <Parameter Name="data" Type="TFilterData&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="navigator">テスト対象の <see cref="T:System.Xml.XPath.XPathNavigator" />。</param>
+        <param name="data"><see langword="out" />を格納するパラメーター、 <c>FilterData</c>に一致する、<c>ナビゲーター</c>です。</param>
+        <summary><see cref="T:System.Xml.XPath.XPathNavigator" /> がテーブル内のただ 1 つの <paramref name="navigator" /> の一致条件を満たしているかどうかを示す値を返し、一致するフィルターのフィルター データを <see langword="out" /> パラメーターに設定して返します。</summary>
+        <returns>
+          <see langword="true" /> がテーブル内のいずれか 1 つだけのフィルターの一致条件を満たしている場合は <paramref name="navigator" />、どのフィルター条件も満たしていない場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、メッセージが満たす必要のある XPath 条件を指定するために使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="navigator" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ServiceModel.Dispatcher.MultipleFilterMatchesException">2 つ以上のフィルターが <paramref name="navigator" /> に一致しています。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetMatchingValues">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定したメッセージまたはバッファー内のメッセージがテーブル内の少なくとも 1 つのフィルターの一致条件を満たしているかどうかを示す値を返し、一致するフィルターの <paramref name="FilterData" /> をコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ以上のフィルターがメッセージまたはバッファー内のメッセージに一致すると推測され、`FilterData` だけが必要な場合は、このメソッドを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetMatchingValues">
+      <MemberSignature Language="C#" Value="public bool GetMatchingValues (System.ServiceModel.Channels.Message message, System.Collections.Generic.ICollection&lt;TFilterData&gt; results);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetMatchingValues(class System.ServiceModel.Channels.Message message, class System.Collections.Generic.ICollection`1&lt;!TFilterData&gt; results) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.GetMatchingValues(System.ServiceModel.Channels.Message,System.Collections.Generic.ICollection{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="results" Type="System.Collections.Generic.ICollection&lt;TFilterData&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="message">テスト対象の <see cref="T:System.ServiceModel.Channels.Message" />。</param>
+        <param name="results">ジェネリック型でフィルター処理の一致するフィルター データを格納する参照パラメーター <see cref="T:System.Collections.Generic.ICollection`1" /> &lt; <c>FilterData</c>&gt;です。</param>
+        <summary>指定したメッセージがテーブル内の少なくとも 1 つのフィルターの一致条件を満たしているかどうかを示す値を返し、一致するフィルターのフィルター データをコレクションに追加します。</summary>
+        <returns>
+          <see langword="true" /> がテーブル内の少なくとも 1 つのフィルターの一致条件を満たしている場合は <paramref name="message" />、どのフィルター条件も満たしていない場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ以上のフィルターがメッセージに一致すると予測され、フィルター データだけが必要で、メッセージ本文を検査しない場合は、このメソッドを使用します。  
+  
+ 一致する <xref:System.ServiceModel.Dispatcher.MessageFilter> オブジェクトのフィルター データは、`results` の <xref:System.Collections.Generic.ICollection%601> パラメーターに格納されます。  
+  
+ このメソッドは、<xref:System.ServiceModel.Dispatcher.IMessageFilterTable%601.GetMatchingValues%2A> を実装します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="results" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ServiceModel.Dispatcher.InvalidBodyAccessException">フィルターがメッセージ本文の内容を検査しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMatchingValues">
+      <MemberSignature Language="C#" Value="public bool GetMatchingValues (System.ServiceModel.Channels.MessageBuffer messageBuffer, System.Collections.Generic.ICollection&lt;TFilterData&gt; results);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetMatchingValues(class System.ServiceModel.Channels.MessageBuffer messageBuffer, class System.Collections.Generic.ICollection`1&lt;!TFilterData&gt; results) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.GetMatchingValues(System.ServiceModel.Channels.MessageBuffer,System.Collections.Generic.ICollection{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageBuffer" Type="System.ServiceModel.Channels.MessageBuffer" />
+        <Parameter Name="results" Type="System.Collections.Generic.ICollection&lt;TFilterData&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="messageBuffer">テスト対象の <see cref="T:System.ServiceModel.Channels.MessageBuffer" />。</param>
+        <param name="results">ジェネリック型でフィルター処理の一致するフィルター データを格納する参照パラメーター <see cref="T:System.Collections.Generic.ICollection`1" /> &lt; <c>FilterData</c>&gt;です。</param>
+        <summary>指定したバッファー内のメッセージがテーブルの少なくとも 1 つのフィルターの一致条件を満たしているかどうかを示す値を返し、一致するフィルターのフィルター データをコレクションに追加します。</summary>
+        <returns>
+          <see langword="true" /> がテーブル内の少なくとも 1 つのフィルターの一致条件を満たしている場合は <paramref name="message" />、どのフィルター条件も満たしていない場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ以上のフィルターがバッファー内のメッセージに一致すると推測され、フィルター データだけが必要な場合は、このメソッドを使用します。  
+  
+ 一致する <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> オブジェクトのフィルター データは、`results`<xref:System.Collections.Generic.ICollection%601> パラメーターに格納されます。  
+  
+ このメソッドは、<xref:System.ServiceModel.Dispatcher.IMessageFilterTable%601.GetMatchingValues%2A> を実装します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="results" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMatchingValues">
+      <MemberSignature Language="C#" Value="public bool GetMatchingValues (System.ServiceModel.Dispatcher.SeekableXPathNavigator navigator, System.Collections.Generic.ICollection&lt;TFilterData&gt; results);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GetMatchingValues(class System.ServiceModel.Dispatcher.SeekableXPathNavigator navigator, class System.Collections.Generic.ICollection`1&lt;!TFilterData&gt; results) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.GetMatchingValues(System.ServiceModel.Dispatcher.SeekableXPathNavigator,System.Collections.Generic.ICollection{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="navigator" Type="System.ServiceModel.Dispatcher.SeekableXPathNavigator" />
+        <Parameter Name="results" Type="System.Collections.Generic.ICollection&lt;TFilterData&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="navigator">テスト対象の <see cref="T:System.ServiceModel.Dispatcher.SeekableXPathNavigator" />。</param>
+        <param name="results">ジェネリック型でフィルター処理の一致するフィルター データを格納する参照パラメーター <see cref="T:System.Collections.Generic.ICollection`1" /> &lt; <c>FilterData</c>&gt;です。</param>
+        <summary><see cref="T:System.ServiceModel.Dispatcher.SeekableXPathNavigator" /> がテーブル内の少なくとも 1 つの <paramref name="navigator" /> の一致条件を満たしているかどうかを示す値を返し、一致するフィルターのフィルター データをコレクションに追加します。</summary>
+        <returns>
+          <see langword="true" /> がテーブル内の少なくとも 1 つのフィルターの一致条件を満たしている場合は <paramref name="navigator" />、どのフィルター条件も満たしていない場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最適化された XPath ナビゲーター <xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator> から派生した XML ドキュメントのクエリ条件に 2 つ以上のフィルターが一致すると予測され、かつフィルター データだけが必要な場合は、このメソッドを使用します。  
+  
+ 一致する <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> オブジェクトのフィルター データは、`results` の <xref:System.Collections.Generic.ICollection%601> パラメーターに格納されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="results" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMatchingValues">
+      <MemberSignature Language="C#" Value="public bool GetMatchingValues (System.Xml.XPath.XPathNavigator navigator, System.Collections.Generic.ICollection&lt;TFilterData&gt; results);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GetMatchingValues(class System.Xml.XPath.XPathNavigator navigator, class System.Collections.Generic.ICollection`1&lt;!TFilterData&gt; results) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.GetMatchingValues(System.Xml.XPath.XPathNavigator,System.Collections.Generic.ICollection{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
+        <Parameter Name="results" Type="System.Collections.Generic.ICollection&lt;TFilterData&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="navigator">テスト対象の <see cref="T:System.Xml.XPath.XPathNavigator" />。</param>
+        <param name="results">ジェネリック型でフィルター処理の一致するフィルター データを格納する参照パラメーター <see cref="T:System.Collections.Generic.ICollection`1" /> &lt; <c>FilterData</c>&gt;です。</param>
+        <summary><see cref="T:System.Xml.XPath.XPathNavigator" /> がテーブル内の少なくとも 1 つの <paramref name="navigator" /> の一致条件を満たしているかどうかを示す値を返し、一致するフィルターのフィルター データをコレクションに追加します。</summary>
+        <returns>
+          <see langword="true" /> がテーブル内の少なくとも 1 つのフィルターの一致条件を満たしている場合は <paramref name="navigator" />、どのフィルター条件も満たしていない場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最適化された XPath ナビゲーター <xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator> から派生した XML ドキュメントのクエリ条件に 2 つ以上のフィルターが一致すると予測され、かつフィルター データだけが必要な場合は、このメソッドを使用します。  
+  
+ 一致する <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> オブジェクトのフィルター データは、`results` の <xref:System.Collections.Generic.ICollection%601> パラメーターに格納されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="results" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1" /> は読み取り専用ではありません。</summary>
+        <value>常に <see langword="false" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public TFilterData this[System.ServiceModel.Dispatcher.MessageFilter filter] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance !TFilterData Item(class System.ServiceModel.Dispatcher.MessageFilter)" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.Item(System.ServiceModel.Dispatcher.MessageFilter)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TFilterData</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filter" Type="System.ServiceModel.Dispatcher.MessageFilter" />
+      </Parameters>
+      <Docs>
+        <param name="filter">取得または設定するフィルター データに関連付けられている <see cref="T:System.ServiceModel.Dispatcher.MessageFilter" />。</param>
+        <summary>指定した <paramref name="filter" /> に関連付けられているフィルター データを取得または設定します。</summary>
+        <value><paramref name="filter" /> に関連付けられているフィルター データ。 指定した <paramref name="filter" /> が見つからなかった場合、取得操作は <see cref="T:System.Collections.Generic.KeyNotFoundException" /> をスローし、設定操作は指定した <paramref name="filter" /> をキーに持つ新しいフィルター データ要素を作成します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Item` プロパティ (C# のインデクサー) を使用すると、テーブル フィルター コレクション内の `filter` に関連付けられたフィルター データにアクセスできます。使用する構文は、次のとおりです。  
+  
+```csharp  
+myFilters[filter]  
+```  
+  
+```vb  
+myFilters(filter)  
+```  
+  
+ また、アクション フィルター テーブル内に存在しない `Item`/ フィルター データのペアを `filter` プロパティに設定することによって、新しい要素を追加することもできます。 既にテーブル内に存在する `filter` に対応する `Item` プロパティを設定すると、古い値が上書きされます。 対照的に、<xref:System.ServiceModel.Dispatcher.XPathMessageFilterTable%601.Add%2A> メソッドは、`filter` が存在していても、対応するフィルター データを上書きしません。  
+  
+ `Item` の場合、ディクショナリの `filter` は <xref:System.ServiceModel.Dispatcher.XPathMessageFilterTable%601>/フィルター データのペアです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="filter" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Xml.XPath.XPathException">コンパイル エラーが発生しました。</exception>
+        <exception cref="T:System.Collections.Generic.KeyNotFoundException">プロパティを取得しましたが、<paramref name="filter" /> がテーブル内に存在しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Keys">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;System.ServiceModel.Dispatcher.MessageFilter&gt; Keys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;class System.ServiceModel.Dispatcher.MessageFilter&gt; Keys" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.Keys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.ServiceModel.Dispatcher.MessageFilter&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1" /> に格納されている全フィルターのコレクションを取得します。</summary>
+        <value>フィルター テーブルに格納されているすべての <see cref="T:System.Collections.Generic.ICollection`1" /> から成る <see cref="T:System.ServiceModel.Dispatcher.XPathMessageFilter" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、<xref:System.Collections.Generic.IDictionary%602.Keys%2A> を実装します。 フィルター テーブルが実装する <xref:System.Collections.Generic.IDictionary%602> は、ペアのキーとして <xref:System.ServiceModel.Dispatcher.MessageFilter> を使用し、値として `FilterData` を使用します。  
+  
+ コレクション内に返されるフィルターの順序は指定しませんが、`FilterData` プロパティによって返されるコレクション内の対応する <xref:System.ServiceModel.Dispatcher.XPathMessageFilterTable%601.Values%2A> と必ず同じ順序になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NodeQuota">
+      <MemberSignature Language="C#" Value="public int NodeQuota { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 NodeQuota" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.NodeQuota" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.Serialization.DataMember</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="Match" /> メソッドの 1 回の呼び出しの間に個別のフィルターが検査できる XML ドキュメント ノードの最大数を取得または設定します。 この値はフィルターごとに適用されます。</summary>
+        <value>検査できるノードの数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、セキュリティの脅威を軽減できます。 フィルターによっては、評価を行うことにより、非常に高い負荷がかかる場合や実行時間が非常に長くなる場合があります。 <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> は、信頼できないソース (ネットワークからの SOAP メッセージ) のドキュメントに照らし合わせて評価されることがほとんどであり、このドキュメントは悪質なものである可能性があります。 フィルターは XML ドキュメントを処理します。したがって、フィルター テーブルにコンピューター処理の制限を設ける最善の方法は、そのテーブルのフィルターの評価時に検査されるノードの最大数を指定することです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public bool Remove (System.Collections.Generic.KeyValuePair&lt;System.ServiceModel.Dispatcher.MessageFilter,TFilterData&gt; item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Remove(valuetype System.Collections.Generic.KeyValuePair`2&lt;class System.ServiceModel.Dispatcher.MessageFilter, !TFilterData&gt; item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.Remove(System.Collections.Generic.KeyValuePair{System.ServiceModel.Dispatcher.MessageFilter,`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Collections.Generic.KeyValuePair&lt;System.ServiceModel.Dispatcher.MessageFilter,TFilterData&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="item"><see cref="T:System.Collections.Generic.KeyValuePair`2" /> &lt;フィルター、 <c>FilterData</c> &gt;をテーブルから削除します。</param>
+        <summary>フィルターおよび関連するフィルター データを、フィルター テーブルから削除します。</summary>
+        <returns>
+          フィルター /<see langword="true" /> のペアが見つかり、削除された場合は <paramref name="FilterData" />、見つからなかった場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `item` のフィルター キーは存在するが、`FilterData` とは異なるデータに関連付けられている場合、このメソッドはフィルターを削除できず、`false` を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public bool Remove (System.ServiceModel.Dispatcher.MessageFilter filter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Remove(class System.ServiceModel.Dispatcher.MessageFilter filter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.Remove(System.ServiceModel.Dispatcher.MessageFilter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filter" Type="System.ServiceModel.Dispatcher.MessageFilter" />
+      </Parameters>
+      <Docs>
+        <param name="filter">削除する <see cref="T:System.ServiceModel.Dispatcher.MessageFilter" />。</param>
+        <summary>フィルターおよび関連するフィルター データを、フィルター テーブルから削除します。</summary>
+        <returns>
+          フィルターが見つかって削除された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="filter" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidCastException">
+          <paramref name="filter" /> が <see cref="T:System.ServiceModel.Dispatcher.XPathMessageFilter" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public bool Remove (System.ServiceModel.Dispatcher.XPathMessageFilter filter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Remove(class System.ServiceModel.Dispatcher.XPathMessageFilter filter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.Remove(System.ServiceModel.Dispatcher.XPathMessageFilter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filter" Type="System.ServiceModel.Dispatcher.XPathMessageFilter" />
+      </Parameters>
+      <Docs>
+        <param name="filter">削除する <see cref="T:System.ServiceModel.Dispatcher.XPathMessageFilter" />。</param>
+        <summary><see cref="T:System.ServiceModel.Dispatcher.XPathMessageFilter" /> および関連するフィルター データを、フィルター テーブルから削除します。</summary>
+        <returns>
+          <see langword="true" /> が見つかって削除された場合は <see cref="T:System.ServiceModel.Dispatcher.XPathMessageFilter" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したフィルターがフィルター テーブルに存在していない場合でも、このメソッドは例外をスローしません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="filter" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidCastException">
+          <paramref name="filter" /> が <see cref="T:System.ServiceModel.Dispatcher.XPathMessageFilter" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>フィルター テーブルを反復処理できる列挙子を返します。</summary>
+        <returns><see cref="T:System.Collections.Generic.IEnumerator`1" /> &lt;KeyValuePair&lt;Filter, FilterData&gt; &gt;フィルター テーブルを反復処理に使用できます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Collections.Generic.SynchronizedCollection%601.GetEnumerator%2A> を実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrimToSize">
+      <MemberSignature Language="C#" Value="public void TrimToSize ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void TrimToSize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.TrimToSize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>余分な割り当てまたはバッファーを削除し、フィルター テーブルを圧縮します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、概念的には、コレクションの容量をカウントに設定することと同等です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetValue">
+      <MemberSignature Language="C#" Value="public bool TryGetValue (System.ServiceModel.Dispatcher.MessageFilter filter, out TFilterData data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TryGetValue(class System.ServiceModel.Dispatcher.MessageFilter filter, [out] !TFilterData&amp; data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.TryGetValue(System.ServiceModel.Dispatcher.MessageFilter,`0@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filter" Type="System.ServiceModel.Dispatcher.MessageFilter" />
+        <Parameter Name="data" Type="TFilterData&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="filter">データを取得するキー。</param>
+        <param name="data"><c>データ</c>に関連付けられている、<c>フィルター</c>このメソッドが戻る<see langword="true" />、それ以外の型の既定値、<c>データ</c>パラメーター。</param>
+        <summary>フィルターがフィルター テーブルに格納されているかどうかを検査します。</summary>
+        <returns>
+          <see langword="true" /> がフィルター テーブルに存在する場合は <paramref name="filter" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、一致するフィルターが存在しない場合でも例外をスローする代わりに `false` を返すため、フィルター テーブル内にフィルターが存在するかどうかを効率的にチェックできます。 `Item` プロパティ (C# ではインデクサー) を使用してテーブルからフィルターを取得しようとしたときにフィルターが存在しない場合は、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Values">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;TFilterData&gt; Values { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;!TFilterData&gt; Values" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1.Values" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;TFilterData&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><paramref name="FilterData" /> に格納されているすべての <see cref="T:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1" /> のコレクションを取得します。</summary>
+        <value>フィルター テーブルに格納されているすべての <see cref="T:System.Collections.Generic.ICollection`1" /> から成る <paramref name="FilterData" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、<xref:System.Collections.Generic.IDictionary%602.Values%2A> を実装します。 フィルター テーブルによって実装されている <xref:System.Collections.Generic.IDictionary%602><Filter, `FilterData`> は、キーと値のペアとして、<xref:System.ServiceModel.Dispatcher.MessageFilter> および `FilterData` を使用します。  
+  
+ コレクション内に返される `FilterData` の順序は指定しませんが、<xref:System.ServiceModel.Dispatcher.XPathMessageFilterTable%601.Keys%2A> プロパティによって返されるコレクション内の対応するフィルターと必ず同じ順序になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,325 @@
+<Type Name="CipherData" FullName="System.Security.Cryptography.Xml.CipherData">
+  <TypeSignature Language="C#" Value="public sealed class CipherData" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit CipherData extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.Xml.CipherData" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>表す、 <see langword="&lt;CipherData&gt;" /> XML 暗号化要素です。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.CipherData>クラスを表します、 `<CipherData>` XML 暗号化要素です。 暗号化されたデータを提供する必要な要素です。 Base64 でエンコードされたテキストとして、暗号化されたデータを含める必要がありますか、その、`<CipherValue>`要素を使用して、暗号化されたデータを格納している外部の場所への参照を提供したり、`<CipherReference>`要素。  
+  
+ 多くの場合は直接の新しいインスタンスを作成する必要はありません、<xref:System.Security.Cryptography.Xml.CipherData>クラスです。  <xref:System.Security.Cryptography.Xml.SignedXml.EncryptedXml%2A>、 <xref:System.Security.Cryptography.Xml.EncryptedData>、および<xref:System.Security.Cryptography.Xml.EncryptedKey>クラスのインスタンスが作成されます。  
+  
+> [!NOTE]
+>  A<xref:System.Security.Cryptography.Xml.CipherData>オブジェクトは、いずれかを持つことができます、<xref:System.Security.Cryptography.Xml.CipherReference>プロパティまたは<xref:System.Security.Cryptography.Xml.CipherData.CipherValue%2A>プロパティが、両方は使用できません。 A<xref:System.Security.Cryptography.CryptographicException>に両方割り当てられている場合にスローされますが、<xref:System.Security.Cryptography.Xml.CipherData>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Security.Cryptography.Xml.EncryptedData>クラスを作成する、<`EncryptedData`> 要素を含む、<`CipherData`> 要素、その後、XML ファイルに XML を書き込みます。  
+  
+ [!code-cpp[cryptgraphy.Xml.EncryptedData#1](~/samples/snippets/cpp/VS_Snippets_CLR/cryptgraphy.Xml.EncryptedData/cpp/encrypteddata.cpp#1)]
+ [!code-csharp[cryptgraphy.Xml.EncryptedData#1](~/samples/snippets/csharp/VS_Snippets_CLR/cryptgraphy.Xml.EncryptedData/CS/encrypteddata.cs#1)]
+ [!code-vb[cryptgraphy.Xml.EncryptedData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/cryptgraphy.Xml.EncryptedData/VB/encrypteddata.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CipherData ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.CipherData.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.Xml.CipherData" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを作成、<xref:System.Security.Cryptography.Xml.CipherData>を表すオブジェクト、 `<CipherData>` XML 暗号化要素です。 `<CipherData>`要素は、XML 暗号化に必要な要素です。  
+  
+   
+  
+## Examples  
+ <xref:System.Security.Cryptography.Xml.CipherData> クラスの新規インスタンスを作成する方法を、次のコード例に示します。 サンプル全体は含まれて、<xref:System.Security.Cryptography.Xml.CipherData>クラスに関するトピック。  
+  
+ [!code-cpp[cryptgraphy.Xml.EncryptedData#2](~/samples/snippets/cpp/VS_Snippets_CLR/cryptgraphy.Xml.EncryptedData/cpp/encrypteddata.cpp#2)]
+ [!code-csharp[cryptgraphy.Xml.EncryptedData#2](~/samples/snippets/csharp/VS_Snippets_CLR/cryptgraphy.Xml.EncryptedData/CS/encrypteddata.cs#2)]
+ [!code-vb[cryptgraphy.Xml.EncryptedData#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/cryptgraphy.Xml.EncryptedData/VB/encrypteddata.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CipherData (byte[] cipherValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] cipherValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.CipherData.#ctor(System.Byte[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="cipherValue" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="cipherValue">使用する暗号化されたデータ、<see langword="&lt;CipherValue&gt;" />要素。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.Xml.CipherData" />クラスとしてバイト配列を使用して、<see cref="P:System.Security.Cryptography.Xml.CipherData.CipherValue" />値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを作成、<xref:System.Security.Cryptography.Xml.CipherData>を表すオブジェクト、 `<CipherData>` XML 暗号化要素です。 コンス トラクターは、代入、`cipherValue`値を<xref:System.Security.Cryptography.Xml.CipherData.CipherValue%2A>プロパティとして、実際の暗号化されたデータ。  
+  
+> [!NOTE]
+>  `<CipherData>`要素は、いずれかを持つことができます、<xref:System.Security.Cryptography.Xml.CipherReference>または<xref:System.Security.Cryptography.Xml.CipherData.CipherValue%2A>子要素が、両方は使用できません。 A<xref:System.Security.Cryptography.CryptographicException>に両方割り当てられている場合にスローされますが、<xref:System.Security.Cryptography.Xml.CipherData>オブジェクト。  
+  
+   
+  
+## Examples  
+ <xref:System.Security.Cryptography.Xml.CipherData> クラスの新規インスタンスを作成する方法を、次のコード例に示します。  
+  
+ [!code-cpp[cryptography.Xml.EncryptedData2#1](~/samples/snippets/cpp/VS_Snippets_CLR/cryptography.Xml.EncryptedData2/CPP/encrypteddata.cpp#1)]
+ [!code-csharp[cryptography.Xml.EncryptedData2#1](~/samples/snippets/csharp/VS_Snippets_CLR/cryptography.Xml.EncryptedData2/CS/encrypteddata.cs#1)]
+ [!code-vb[cryptography.Xml.EncryptedData2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/cryptography.Xml.EncryptedData2/VB/encrypteddata.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="cipherValue" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Security.Cryptography.Xml.CipherData.CipherValue" />プロパティは既に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CipherData (System.Security.Cryptography.Xml.CipherReference cipherReference);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Cryptography.Xml.CipherReference cipherReference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.CipherData.#ctor(System.Security.Cryptography.Xml.CipherReference)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="cipherReference" Type="System.Security.Cryptography.Xml.CipherReference" />
+      </Parameters>
+      <Docs>
+        <param name="cipherReference">使用する <see cref="T:System.Security.Cryptography.Xml.CipherReference" /> オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.Xml.CipherData" />クラスを使用して、<see cref="T:System.Security.Cryptography.Xml.CipherReference" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを作成、<xref:System.Security.Cryptography.Xml.CipherData>を表すオブジェクト、 `<CipherData>` XML の暗号化と割り当て内の要素、`cipherReference`値を<xref:System.Security.Cryptography.Xml.CipherReference>プロパティです。 <xref:System.Security.Cryptography.Xml.CipherReference>オブジェクトが表す、`<CipherReference>`要素は、暗号化されたデータの場所を提供します。  
+  
+> [!NOTE]
+>  A<xref:System.Security.Cryptography.Xml.CipherData>オブジェクトは、いずれかを持つことができます、<xref:System.Security.Cryptography.Xml.CipherReference>プロパティまたは<xref:System.Security.Cryptography.Xml.CipherData.CipherValue%2A>プロパティが、両方は使用できません。 A<xref:System.Security.Cryptography.CryptographicException>に両方割り当てられている場合にスローされますが、<xref:System.Security.Cryptography.Xml.CipherData>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の新しいインスタンスを作成する方法を示しています、<xref:System.Security.Cryptography.Xml.CipherData>クラスを使用して<xref:System.Security.Cryptography.Xml.CipherReference>情報。  
+  
+ [!code-cpp[cryptography.Xml.CipherReference#1](~/samples/snippets/cpp/VS_Snippets_CLR/cryptography.Xml.CipherReference/CPP/example.cpp#1)]
+ [!code-csharp[cryptography.Xml.CipherReference#1](~/samples/snippets/csharp/VS_Snippets_CLR/cryptography.Xml.CipherReference/CS/example.cs#1)]
+ [!code-vb[cryptography.Xml.CipherReference#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/cryptography.Xml.CipherReference/VB/example.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="cipherValue" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Security.Cryptography.Xml.CipherData.CipherValue" />プロパティは既に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CipherReference">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.Xml.CipherReference CipherReference { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.Xml.CipherReference CipherReference" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.CipherData.CipherReference" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.Xml.CipherReference</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see langword="&lt;CipherReference&gt;" />要素。</summary>
+        <value><see cref="T:System.Security.Cryptography.Xml.CipherReference" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `<CipherReference>`要素は、送信元を識別するには、処理されると、暗号化されたデータが得られます。 この要素の詳細については、次を参照してください。<xref:System.Security.Cryptography.Xml.CipherReference>です。  
+  
+> [!NOTE]
+>  A<xref:System.Security.Cryptography.Xml.CipherData>オブジェクトは、いずれかを持つことができます、<xref:System.Security.Cryptography.Xml.CipherReference>プロパティまたは<xref:System.Security.Cryptography.Xml.CipherData.CipherValue%2A>プロパティが、両方は使用できません。 A<xref:System.Security.Cryptography.CryptographicException>に両方割り当てられている場合にスローされますが、<xref:System.Security.Cryptography.Xml.CipherData>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の新しいインスタンスを作成する方法を示しています、<xref:System.Security.Cryptography.Xml.CipherData>クラスを使用して<xref:System.Security.Cryptography.Xml.CipherReference>情報。  
+  
+ [!code-cpp[cryptography.Xml.CipherReference#1](~/samples/snippets/cpp/VS_Snippets_CLR/cryptography.Xml.CipherReference/CPP/example.cpp#1)]
+ [!code-csharp[cryptography.Xml.CipherReference#1](~/samples/snippets/csharp/VS_Snippets_CLR/cryptography.Xml.CipherReference/CS/example.cs#1)]
+ [!code-vb[cryptography.Xml.CipherReference#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/cryptography.Xml.CipherReference/VB/example.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="P:System.Security.Cryptography.Xml.CipherData.CipherReference" />プロパティに設定された<see langword="null" />です。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Security.Cryptography.Xml.CipherData.CipherReference" />プロパティが複数回設定されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CipherValue">
+      <MemberSignature Language="C#" Value="public byte[] CipherValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] CipherValue" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.CipherData.CipherValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see langword="&lt;CipherValue&gt;" />要素。</summary>
+        <value>表すバイト配列、<see langword="&lt;CipherValue&gt;" />要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値は、暗号化されたデータです。  
+  
+> [!NOTE]
+>  `<CipherData>`要素は、いずれかを持つことができます、<xref:System.Security.Cryptography.Xml.CipherReference>または<xref:System.Security.Cryptography.Xml.CipherData.CipherValue%2A>子要素が、両方は使用できません。 A<xref:System.Security.Cryptography.CryptographicException>に両方割り当てられている場合にスローされますが、<xref:System.Security.Cryptography.Xml.CipherData>オブジェクト。  
+  
+   
+  
+## Examples  
+ <xref:System.Security.Cryptography.Xml.CipherData> クラスの新規インスタンスを作成する方法を、次のコード例に示します。  
+  
+ [!code-cpp[cryptography.Xml.EncryptedData2#1](~/samples/snippets/cpp/VS_Snippets_CLR/cryptography.Xml.EncryptedData2/CPP/encrypteddata.cpp#1)]
+ [!code-csharp[cryptography.Xml.EncryptedData2#1](~/samples/snippets/csharp/VS_Snippets_CLR/cryptography.Xml.EncryptedData2/CS/encrypteddata.cs#1)]
+ [!code-vb[cryptography.Xml.EncryptedData2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/cryptography.Xml.EncryptedData2/VB/encrypteddata.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="P:System.Security.Cryptography.Xml.CipherData.CipherValue" />プロパティに設定された<see langword="null" />です。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Security.Cryptography.Xml.CipherData.CipherValue" />プロパティが複数回設定されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetXml">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlElement GetXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XmlElement GetXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.CipherData.GetXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>XML 値を取得、<see cref="T:System.Security.Cryptography.Xml.CipherData" />オブジェクト。</summary>
+        <returns>A<see cref="T:System.Xml.XmlElement" />の XML の情報を表すオブジェクト、<see cref="T:System.Security.Cryptography.Xml.CipherData" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの XML の出力を使用して、<xref:System.Security.Cryptography.Xml.CipherData>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の新しいインスタンスを作成する方法を示します、<xref:System.Security.Cryptography.Xml.CipherData>オブジェクト。  
+  
+ [!code-cpp[cryptgraphy.Xml.EncryptedData#2](~/samples/snippets/cpp/VS_Snippets_CLR/cryptgraphy.Xml.EncryptedData/cpp/encrypteddata.cpp#2)]
+ [!code-csharp[cryptgraphy.Xml.EncryptedData#2](~/samples/snippets/csharp/VS_Snippets_CLR/cryptgraphy.Xml.EncryptedData/CS/encrypteddata.cs#2)]
+ [!code-vb[cryptgraphy.Xml.EncryptedData#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/cryptgraphy.Xml.EncryptedData/VB/encrypteddata.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Security.Cryptography.Xml.CipherData.CipherValue" />プロパティおよび<see cref="P:System.Security.Cryptography.Xml.CipherData.CipherReference" />プロパティには<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadXml">
+      <MemberSignature Language="C#" Value="public void LoadXml (System.Xml.XmlElement value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void LoadXml(class System.Xml.XmlElement value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.CipherData.LoadXml(System.Xml.XmlElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Xml.XmlElement" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Xml.XmlElement" />読み込む XML データを表すです。</param>
+        <summary>XML データを読み込み、<see cref="T:System.Xml.XmlElement" />に、<see cref="T:System.Security.Cryptography.Xml.CipherData" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.CipherData.LoadXml%2A>メソッドで既存の XML 要素を上書きする、`value`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="value" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Security.Cryptography.Xml.CipherData.CipherValue" />プロパティおよび<see cref="P:System.Security.Cryptography.Xml.CipherData.CipherReference" />プロパティには<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

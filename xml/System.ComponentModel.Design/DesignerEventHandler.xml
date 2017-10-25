@@ -1,0 +1,50 @@
+<Type Name="DesignerEventHandler" FullName="System.ComponentModel.Design.DesignerEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void DesignerEventHandler(object sender, DesignerEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DesignerEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.DesignerEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.ComponentModel.Design.DesignerEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.ComponentModel.Design.DesignerEventArgs" />。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.ComponentModel.Design.IDesignerEventService.DesignerCreated" />と<see cref="E:System.ComponentModel.Design.IDesignerEventService.DesignerDisposed" />ドキュメントを作成または破棄されるときに発生するイベントです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignerEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ 次の例での登録、<xref:System.ComponentModel.Design.DesignerEventHandler>と処理、<xref:System.ComponentModel.Design.IDesignerEventService.DesignerCreated>と<xref:System.ComponentModel.Design.IDesignerEventService.DesignerDisposed>イベント。  
+  
+ [!code-cpp[DesignerEventHandlerExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/DesignerEventHandlerExample/CPP/designereventhandlerexample.cpp#1)]
+ [!code-csharp[DesignerEventHandlerExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/DesignerEventHandlerExample/CS/designereventhandlerexample.cs#1)]
+ [!code-vb[DesignerEventHandlerExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/DesignerEventHandlerExample/VB/designereventhandlerexample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

@@ -1,0 +1,197 @@
+<Type Name="BackEase" FullName="System.Windows.Media.Animation.BackEase">
+  <TypeSignature Language="C#" Value="public class BackEase : System.Windows.Media.Animation.EasingFunctionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BackEase extends System.Windows.Media.Animation.EasingFunctionBase" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.BackEase" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Animation.EasingFunctionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>指定したパスにアニメーション化を開始する前に、アニメーションの動きを若干取り消すイージング関数を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 「バックアップ」現象が発生するとアニメーションを指定してを制御することができます、<xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A>アニメーションのプロパティ値。 次のグラフのさまざまな値を示す<xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A>ここで、 *f*(*t*)、アニメーションの進行状況を表すと*t*時間を表します。  
+  
+ ![BackEase EasingMode のグラフ。] (~/add/media/backease-graph.png "BackEase EasingMode のグラフ。")  
+  
+ この関数で使用される数式は次のです。  
+  
+ ![BackEase 式。] (~/add/media/backease-formula.png "BackEase 式。")  
+  
+> [!NOTE]
+>  このアニメーションでは、取り消すには進行する前に値が発生するため、アニメーション可能性があります補間に負の数が予期せずします。 これにより、負の数値は許可されていないプロパティをアニメーション化するときにエラーが発生することができます。 このアニメーションを適用する場合など、<xref:System.Windows.FrameworkElement.Height%2A>オブジェクトの (0 ~ を 200 からなど、<xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A>の<xref:System.Windows.Media.Animation.EasingMode.EaseIn>) の負の値を補間するアニメーションを試みます<xref:System.Windows.FrameworkElement.Height%2A>エラーをスローします。  
+  
+ だけでなく他のいくつかのイージング関数は<xref:System.Windows.Media.Animation.BackEase>Silverlight の次のサンプルを使用してを調べることができます。  
+  
+ [このサンプルを実行する](http://go.microsoft.com/fwlink/?LinkId=139798&sref=easing_functions_gallery)  
+  
+ 継承することで、独自のカスタム イージング関数を作成するだけでなく、実行時に含まれるイージング関数を使用して、<xref:System.Windows.Media.Animation.EasingFunctionBase>です。  
+  
+<a name="xamlObjectElementUsage_BackEase"></a>   
+## <a name="xaml-object-element-usage"></a>XAML オブジェクト要素の使用方法  
+  
+```  
+<BackEase .../>  
+```  
+  
+   
+  
+## Examples  
+ 次の例に適用されます、<xref:System.Windows.Media.Animation.BackEase>イージング関数を<xref:System.Windows.Media.Animation.DoubleAnimation>の先頭と末尾のアニメーションに若干の取り消しをアニメーションを作成します。  
+  
+ [!code-xaml[BackEase_scale#BackEase_scale](~/samples/snippets/csharp/VS_Snippets_Wpf/backease_scale/CS/window1.xaml#backease_scale)]   
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BackEase ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.BackEase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Animation.BackEase" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Amplitude">
+      <MemberSignature Language="C#" Value="public double Amplitude { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Amplitude" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.BackEase.Amplitude" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に関連付けられている取り消しの振幅、<see cref="T:System.Windows.Media.Animation.BackEase" />アニメーション。</summary>
+        <value>関連付けられている取り消しの振幅、<see cref="T:System.Windows.Media.Animation.BackEase" />アニメーション。 この値は、0 以上にする必要があります。  
+  
+ 既定値は 1 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[DP_ID_field_label](~/includes/dp-id-field-label-md.md)] <xref:System.Windows.Media.Animation.BackEase.AmplitudeProperty>  
+  
+ 振幅が大きいほどが大きいほどの取り消し前に、またはアニメーションの終了後です。  
+  
+ ![異なる振幅値を示します。](~/add/media/backease-amplitude.png "異なる振幅値を示します。")  
+  
+<a name="xamlAttributeUsage_Opacity"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object Amplitude="double" .../>  
+```  
+  
+   
+  
+## Examples  
+ 次の例に適用されます、<xref:System.Windows.Media.Animation.BackEase>イージング関数を<xref:System.Windows.Media.Animation.DoubleAnimation>の先頭と末尾のアニメーションに若干の取り消しをアニメーションを作成します。  
+  
+ [!code-xaml[BackEase_scale#BackEase_scale](~/samples/snippets/csharp/VS_Snippets_Wpf/backease_scale/CS/window1.xaml#backease_scale)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AmplitudeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty AmplitudeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty AmplitudeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.BackEase.AmplitudeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Animation.BackEase.Amplitude" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.BackEase.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Freezable" /> 派生クラスの新しいインスタンスを作成します。 派生クラスを作成するときには、このメソッドをオーバーライドする必要があります。</summary>
+        <returns>新しいインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アニメーションのクラスに継承直接から<xref:System.Windows.Freezable>です。 このため、オーバーライドする必要があります、<xref:System.Windows.Media.Animation.BackEase.CreateInstanceCore%2A>アニメーション オブジェクトを構築するメソッド。  
+  
+   
+  
+## Examples  
+ 次の例は、の一般的な実装を示しています。<xref:System.Windows.Freezable.CreateInstanceCore%2A>です。  
+  
+ [!code-csharp[freezablesample_procedural#CreateInstanceCoreExample](~/samples/snippets/csharp/VS_Snippets_Wpf/freezablesample_procedural/CSharp/freezablesample.cs#createinstancecoreexample)]
+ [!code-vb[freezablesample_procedural#CreateInstanceCoreExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/freezablesample_procedural/visualbasic/freezablesample.vb#createinstancecoreexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EaseInCore">
+      <MemberSignature Language="C#" Value="protected override double EaseInCore (double normalizedTime);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance float64 EaseInCore(float64 normalizedTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.BackEase.EaseInCore(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="normalizedTime" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="normalizedTime">アニメーションの正規化された時間 (進行状況)。</param>
+        <summary>カスタム イージング関数の <see cref="F:System.Windows.Media.Animation.EasingMode.EaseIn" /> モードを生成するためにオーバーライドできるイージング関数のロジック部分を提供します。</summary>
+        <returns>変換された進行状況を表す double 値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは変換のアニメーションの速度を制御する正規化された時間、<xref:System.Windows.Media.Animation.EasingMode.EaseIn>の case<xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A>です。  
+  
+ のみのイージング関数を指定する必要が、<xref:System.Windows.Media.Animation.EasingMode.EaseIn>ためにのケースの実装、<xref:System.Windows.Media.Animation.EasingFunctionBase.Ease%2A>メソッド変換`normalizedTime`の<xref:System.Windows.Media.Animation.EasingMode.EaseOut>と<xref:System.Windows.Media.Animation.EasingMode.EaseInOut>場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

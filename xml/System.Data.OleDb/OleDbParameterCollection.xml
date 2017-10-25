@@ -1,0 +1,938 @@
+<Type Name="OleDbParameterCollection" FullName="System.Data.OleDb.OleDbParameterCollection">
+  <TypeSignature Language="C#" Value="public sealed class OleDbParameterCollection : System.Data.Common.DbParameterCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OleDbParameterCollection extends System.Data.Common.DbParameterCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Data.OleDb.OleDbParameterCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Common.DbParameterCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Editor("Microsoft.VSDesigner.Data.Design.DBParametersEditor, Microsoft.VSDesigner, Version=0.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ListBindable(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>関連するパラメーターのコレクションを表します、<see cref="T:System.Data.OleDb.OleDbCommand" />内の列に対するそれぞれのマッピングだけでなく、<see cref="T:System.Data.DataSet" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクション内のパラメーターの数が、コマンド テキスト内でパラメーターのプレース ホルダーの数に一致する必要があります、それ以外の場合、.NET Framework Data Provider for OLE DB 可能性があります、エラーが発生します。  
+  
+   
+  
+## Examples  
+ 次の例の複数のインスタンスを作成する<xref:System.Data.OleDb.OleDbParameter>を通じて、<xref:System.Data.OleDb.OleDbParameterCollection>内のコレクション、<xref:System.Data.OleDb.OleDbDataAdapter>です。 これらのパラメーターは、データ ソース内のデータを選択し、内のデータを配置に使用、<xref:System.Data.DataSet>です。 この例では、<xref:System.Data.DataSet>と<xref:System.Data.OleDb.OleDbDataAdapter>適切なスキーマ、コマンド、および接続で既に作成されています。  
+  
+ [!code-csharp[Classic WebData OleDbParameter Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OleDbParameter Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData OleDbParameter Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OleDbParameter Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Data.OleDb.OleDbParameter Add (System.Data.OleDb.OleDbParameter value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.OleDb.OleDbParameter Add(class System.Data.OleDb.OleDbParameter value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbParameterCollection.Add(System.Data.OleDb.OleDbParameter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbParameter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Data.OleDb.OleDbParameter" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクションに追加する <see cref="T:System.Data.OleDb.OleDbParameter" />。</param>
+        <summary>指定した追加<see cref="T:System.Data.OleDb.OleDbParameter" />を<see cref="T:System.Data.OleDb.OleDbParameterCollection" />です。</summary>
+        <returns>新しい <see cref="T:System.Data.OleDb.OleDbParameter" /> オブジェクトのインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OleDb.OleDbParameterCollection>を追加し、<xref:System.Data.OleDb.OleDbParameter>です。  
+  
+ [!code-csharp[Classic WebData OleDbParameterCollection.Add5 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OleDbParameterCollection.Add5 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData OleDbParameterCollection.Add5 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OleDbParameterCollection.Add5 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.Data.OleDb.OleDbParameter" />で指定されている、<paramref name="value" />これまたは別のパラメーターが既に<see cref="T:System.Data.OleDb.OleDbParameterCollection" />です。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="value" />パラメーターが null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public override int Add (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 Add(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbParameterCollection.Add(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Object" />。</param>
+        <summary>指定された <see cref="T:System.Data.OleDb.OleDbParameter" /> オブジェクトを <see cref="T:System.Data.OleDb.OleDbParameterCollection" /> に追加します。</summary>
+        <returns>新しいインデックス<see cref="T:System.Data.OleDb.OleDbParameter" />コレクション内のオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Data.OleDb.OleDbParameter Add (string parameterName, System.Data.OleDb.OleDbType oleDbType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.OleDb.OleDbParameter Add(string parameterName, valuetype System.Data.OleDb.OleDbType oleDbType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbParameterCollection.Add(System.String,System.Data.OleDb.OleDbType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbParameter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterName" Type="System.String" />
+        <Parameter Name="oleDbType" Type="System.Data.OleDb.OleDbType" />
+      </Parameters>
+      <Docs>
+        <param name="parameterName">パラメーターの名前。</param>
+        <param name="oleDbType"><see cref="T:System.Data.OleDb.OleDbType" /> 値のいずれか。</param>
+        <summary>追加、<see cref="T:System.Data.OleDb.OleDbParameter" />を<see cref="T:System.Data.OleDb.OleDbParameterCollection" />パラメーター名とデータ型を指定します。</summary>
+        <returns>新しい <see cref="T:System.Data.OleDb.OleDbParameter" /> オブジェクトのインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OleDb.OleDbParameterCollection>を追加し、<xref:System.Data.OleDb.OleDbParameter>です。  
+  
+ [!code-csharp[Classic WebData OleDbParameterCollection.Add6 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OleDbParameterCollection.Add6 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData OleDbParameterCollection.Add6 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OleDbParameterCollection.Add6 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Data.OleDb.OleDbParameter Add (string parameterName, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.OleDb.OleDbParameter Add(string parameterName, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbParameterCollection.Add(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202", false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbParameter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterName" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="parameterName">パラメーターの名前。</param>
+        <param name="value"><see cref="P:System.Data.OleDb.OleDbParameter.Value" />の<see cref="T:System.Data.OleDb.OleDbParameter" />をコレクションに追加します。</param>
+        <summary>追加、<see cref="T:System.Data.OleDb.OleDbParameter" />を<see cref="T:System.Data.OleDb.OleDbParameterCollection" />パラメーター名と値を指定します。</summary>
+        <returns>新しい <see cref="T:System.Data.OleDb.OleDbParameter" /> オブジェクトのインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードを使用する場合に警告を使用して、<xref:System.Data.OleDb.OleDbParameterCollection.Add%2A>整数パラメーターの値を指定します。 このオーバー ロードはため、`value`型の<xref:System.Object>に値を変換する必要があります、<xref:System.Object>次の c# の例に示すように、値が 0 の場合を入力します。  
+  
+```  
+parameters.Add("@pname", Convert.ToInt32(0));  
+```  
+  
+ この変換を実行しない場合、コンパイラが前提としていますを呼び出すしようとしている、<xref:System.Data.OleDb.OleDbParameterCollection.Add%2A>オーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException"><paramref name="value" />パラメーターではありません、<see cref="T:System.Data.OleDb.OleDbParameter" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Data.OleDb.OleDbParameter Add (string parameterName, System.Data.OleDb.OleDbType oleDbType, int size);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.OleDb.OleDbParameter Add(string parameterName, valuetype System.Data.OleDb.OleDbType oleDbType, int32 size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbParameterCollection.Add(System.String,System.Data.OleDb.OleDbType,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbParameter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterName" Type="System.String" />
+        <Parameter Name="oleDbType" Type="System.Data.OleDb.OleDbType" />
+        <Parameter Name="size" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="parameterName">パラメーターの名前。</param>
+        <param name="oleDbType"><see cref="T:System.Data.OleDb.OleDbType" /> 値のいずれか。</param>
+        <param name="size">列の長さ。</param>
+        <summary>追加、<see cref="T:System.Data.OleDb.OleDbParameter" />を<see cref="T:System.Data.OleDb.OleDbParameterCollection" />パラメーター名、データ型、および列の長さを指定します。</summary>
+        <returns>新しい <see cref="T:System.Data.OleDb.OleDbParameter" /> オブジェクトのインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OleDb.OleDbParameterCollection>のインスタンスを追加<xref:System.Data.OleDb.OleDbParameter>をコレクションに新しいへの参照を返しますと<xref:System.Data.OleDb.OleDbParameter>です。  
+  
+ [!code-csharp[Classic WebData OleDbParameterCollection.Add3 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OleDbParameterCollection.Add3 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData OleDbParameterCollection.Add3 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OleDbParameterCollection.Add3 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Data.OleDb.OleDbParameter Add (string parameterName, System.Data.OleDb.OleDbType oleDbType, int size, string sourceColumn);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.OleDb.OleDbParameter Add(string parameterName, valuetype System.Data.OleDb.OleDbType oleDbType, int32 size, string sourceColumn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbParameterCollection.Add(System.String,System.Data.OleDb.OleDbType,System.Int32,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbParameter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterName" Type="System.String" />
+        <Parameter Name="oleDbType" Type="System.Data.OleDb.OleDbType" />
+        <Parameter Name="size" Type="System.Int32" />
+        <Parameter Name="sourceColumn" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="parameterName">パラメーターの名前。</param>
+        <param name="oleDbType"><see cref="T:System.Data.OleDb.OleDbType" /> 値のいずれか。</param>
+        <param name="size">列の長さ。</param>
+        <param name="sourceColumn">ソース列の名前。</param>
+        <summary>追加、<see cref="T:System.Data.OleDb.OleDbParameter" />を<see cref="T:System.Data.OleDb.OleDbParameterCollection" />パラメーター名、データ型、列の長さ、およびソース列名を指定します。</summary>
+        <returns>新しい <see cref="T:System.Data.OleDb.OleDbParameter" /> オブジェクトのインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OleDb.OleDbParameterCollection>のインスタンスを追加<xref:System.Data.OleDb.OleDbParameter>をコレクションに新しいへの参照を返しますと<xref:System.Data.OleDb.OleDbParameter>です。  
+  
+ [!code-csharp[Classic WebData OleDbParameterCollection.Add4 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OleDbParameterCollection.Add4 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData OleDbParameterCollection.Add4 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OleDbParameterCollection.Add4 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public override void AddRange (Array values);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void AddRange(class System.Array values) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbParameterCollection.AddRange(System.Array)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="values" Type="System.Array" />
+      </Parameters>
+      <Docs>
+        <param name="values">追加する <see cref="T:System.Array" /> 値。</param>
+        <summary>値の配列を <see cref="T:System.Data.OleDb.OleDbParameterCollection" /> の末尾に追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (System.Data.OleDb.OleDbParameter[] values);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(class System.Data.OleDb.OleDbParameter[] values) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbParameterCollection.AddRange(System.Data.OleDb.OleDbParameter[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="values" Type="System.Data.OleDb.OleDbParameter[]" />
+      </Parameters>
+      <Docs>
+        <param name="values">追加する <see cref="T:System.Data.OleDbParameter" /> 値。</param>
+        <summary><see cref="T:System.Data.OleDb.OleDbParameter" /> 値の配列を <see cref="T:System.Data.OleDb.OleDbParameterCollection" /> の末尾に追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddWithValue">
+      <MemberSignature Language="C#" Value="public System.Data.OleDb.OleDbParameter AddWithValue (string parameterName, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.OleDb.OleDbParameter AddWithValue(string parameterName, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbParameterCollection.AddWithValue(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbParameter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterName" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="parameterName">パラメーターの名前。</param>
+        <param name="value">追加する値。</param>
+        <summary>値を <see cref="T:System.Data.OleDb.OleDbParameterCollection" /> の末尾に追加します。</summary>
+        <returns><see cref="T:System.Data.OleDb.OleDbParameter" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public override void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbParameterCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべて削除<see cref="T:System.Data.OleDb.OleDbParameter" />オブジェクトから、<see cref="T:System.Data.OleDb.OleDbParameterCollection" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Data.OleDb.OleDbParameter value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Data.OleDb.OleDbParameter value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbParameterCollection.Contains(System.Data.OleDb.OleDbParameter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Data.OleDb.OleDbParameter" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Data.OleDb.OleDbParameter" /> 値。</param>
+        <summary>指定された <see cref="T:System.Data.OleDb.OleDbParameter" /> がこの <see cref="T:System.Data.OleDb.OleDbParameterCollection" /> に含まれているかどうかを調べます。</summary>
+        <returns>
+          <see cref="T:System.Data.OleDb.OleDbParameter" /> がコレクション内に存在する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public override bool Contains (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Contains(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbParameterCollection.Contains(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Object" /> 値。</param>
+        <summary>指定された <see cref="T:System.Object" /> がこの <see cref="T:System.Data.OleDb.OleDbParameterCollection" /> に含まれているかどうかを調べます。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Data.OleDb.OleDbParameterCollection" />含む<paramref name="value" />それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public override bool Contains (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Contains(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbParameterCollection.Contains(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.String" /> 値。</param>
+        <summary>指定された <see cref="T:System.String" /> がこの <see cref="T:System.Data.OleDb.OleDbParameterCollection" /> に含まれているかどうかを調べます。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Data.OleDb.OleDbParameterCollection" />値が含まれます。 それ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public override void CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbParameterCollection.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">現在の <see cref="T:System.Array" /> からコピーされる要素のコピー先となる 1 次元の <see cref="T:System.Data.OleDb.OleDbParameterCollection" />。</param>
+        <param name="index"><see cref="T:System.Array" /> 内でコピーを開始する位置のインデックスを表す 32 ビット整数。</param>
+        <summary>指定された 1 次元 <see cref="T:System.Data.OleDb.OleDbParameterCollection" /> に現在の <see cref="T:System.Array" /> のすべての要素をコピーします。その際、指定されたコピー先の <see cref="T:System.Array" /> インデックス位置からコピーを開始します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Data.OleDb.OleDbParameter[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Data.OleDb.OleDbParameter[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbParameterCollection.CopyTo(System.Data.OleDb.OleDbParameter[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Data.OleDb.OleDbParameter[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">現在の <see cref="T:System.Data.OleDb.OleDbParameterCollection" /> からコピーされる要素のコピー先となる <see cref="T:System.Data.OleDb.OleDbParameterCollection" />。</param>
+        <param name="index"><see cref="T:System.Data.OleDb.OleDbParameterCollection" /> 内でコピーを開始する位置のインデックスを表す 32 ビット整数。</param>
+        <summary>指定された <see cref="T:System.Data.OleDb.OleDbParameterCollection" /> に現在の <see cref="T:System.Data.OleDb.OleDbParameterCollection" /> のすべての要素をコピーします。その際、指定されたコピー先のインデックス位置からコピーを開始します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public override int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbParameterCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内の要素の数を表す整数を返します、<see cref="T:System.Data.OleDb.OleDbParameterCollection" />です。 読み取り専用です。</summary>
+        <value>内の要素の数、<see cref="T:System.Data.OleDb.OleDbParameterCollection" />整数として。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public override System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbParameterCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.OleDb.OleDbParameterCollection" /> を反復処理する列挙子を返します。</summary>
+        <returns><see cref="T:System.Collections.Generic.IEnumerator" /> の <see cref="T:System.Data.OleDb.OleDbParameterCollection" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParameter">
+      <MemberSignature Language="C#" Value="protected override System.Data.Common.DbParameter GetParameter (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Data.Common.DbParameter GetParameter(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbParameterCollection.GetParameter(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbParameter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParameter">
+      <MemberSignature Language="C#" Value="protected override System.Data.Common.DbParameter GetParameter (string parameterName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Data.Common.DbParameter GetParameter(string parameterName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbParameterCollection.GetParameter(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbParameter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="parameterName">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Data.OleDb.OleDbParameter value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Data.OleDb.OleDbParameter value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbParameterCollection.IndexOf(System.Data.OleDb.OleDbParameter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Data.OleDb.OleDbParameter" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Data.OleDb.OleDbParameter" />を検索するコレクション内のオブジェクト。</param>
+        <summary>指定した場所を取得<see cref="T:System.Data.OleDb.OleDbParameter" />コレクション内で。</summary>
+        <returns>指定した 0 から始まる場所<see cref="T:System.Data.OleDb.OleDbParameter" />されている、<see cref="T:System.Data.OleDb.OleDbParameter" />コレクション内で。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public override int IndexOf (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 IndexOf(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbParameterCollection.IndexOf(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">検索する <see cref="T:System.Object" />。</param>
+        <summary>指定した場所<see cref="T:System.Object" />コレクション内で。</summary>
+        <returns>指定した 0 から始まる場所<see cref="T:System.Object" />されている、<see cref="T:System.Data.OleDb.OleDbParameterCollection" />コレクション内で。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public override int IndexOf (string parameterName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 IndexOf(string parameterName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbParameterCollection.IndexOf(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="parameterName">検索する <see cref="T:System.Data.OleDb.OleDbParameter" /> の名前。大文字と小文字が区別されます。</param>
+        <summary>指定された名前を持つ指定された <see cref="T:System.Data.OleDb.OleDbParameter" /> の場所を取得します。</summary>
+        <returns>指定された (大文字と小文字の区別がある) 名前を持つ指定された <see cref="T:System.Data.OleDb.OleDbParameter" /> の 0 から始まる場所。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.Data.OleDb.OleDbParameter value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.Data.OleDb.OleDbParameter value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbParameterCollection.Insert(System.Int32,System.Data.OleDb.OleDbParameter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Data.OleDb.OleDbParameter" />
+      </Parameters>
+      <Docs>
+        <param name="index">値を挿入する位置を示す、0 から始まるインデックス。</param>
+        <param name="value"><see cref="T:System.Data.OleDb.OleDbParameter" />に挿入されるオブジェクト、<see cref="T:System.Data.OleDb.OleDbParameterCollection" />です。</param>
+        <summary><see cref="T:System.Data.OleDb.OleDbParameter" /> オブジェクトを <see cref="T:System.Data.OleDb.OleDbParameterCollection" /> 内の指定されたインデックス位置に挿入します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public override void Insert (int index, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Insert(int32 index, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbParameterCollection.Insert(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">値を挿入する位置を示す、0 から始まるインデックス。</param>
+        <param name="value">A<see cref="T:System.Object" />に挿入される、<see cref="T:System.Data.OleDb.OleDbParameterCollection" />です。</param>
+        <summary><see cref="T:System.Object" /> を <see cref="T:System.Data.OleDb.OleDbParameterCollection" /> 内の指定されたインデックス位置に挿入します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFixedSize">
+      <MemberSignature Language="C#" Value="public override bool IsFixedSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFixedSize" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbParameterCollection.IsFixedSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.OleDb.OleDbParameterCollection" /> で固定サイズが使用されているかどうかを示す値を取得します。 読み取り専用です。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Data.OleDb.OleDbParameterCollection" />が固定サイズです。 それ以外の場合<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public override bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbParameterCollection.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.OleDb.OleDbParameterCollection" /> が読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Data.OleDb.OleDbParameterCollection" />のみです。 それ以外の場合は読み取り<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public override bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbParameterCollection.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.OleDb.OleDbParameterCollection" /> が同期されているかどうかを示す値を取得します。 読み取り専用です。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Data.OleDb.OleDbParameterCollection" />それ以外の同期された<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Data.OleDb.OleDbParameter this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.OleDb.OleDbParameter Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbParameterCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbParameter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得するパラメーターの 0 から始まるインデックス。</param>
+        <summary>指定したインデックス位置にある <see cref="T:System.Data.OleDb.OleDbParameter" /> を取得または設定します。</summary>
+        <value>指定されたインデックス位置にある <see cref="T:System.Data.OleDb.OleDbParameter" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OleDb.OleDbParameterCollection>のインスタンスが追加されます<xref:System.Data.OleDb.OleDbParameter>の名前を表示するのには、コレクション、<xref:System.Data.OleDb.OleDbParameter>オブジェクトし、コレクションをクリアします。  
+  
+ [!code-csharp[Classic WebData OleDbParameterCollection.Count Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OleDbParameterCollection.Count Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData OleDbParameterCollection.Count Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OleDbParameterCollection.Count Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException">指定されたインデックスが存在しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Data.OleDb.OleDbParameter this[string parameterName] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.OleDb.OleDbParameter Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbParameterCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbParameter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="parameterName">取得するパラメーターの名前。</param>
+        <summary>取得または設定、<see cref="T:System.Data.OleDb.OleDbParameter" />指定した名前です。</summary>
+        <value>指定された名前の <see cref="T:System.Data.OleDb.OleDbParameter" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の検索、<xref:System.Data.OleDb.OleDbParameter>と、指定された<xref:System.Data.OleDb.OleDbParameter.ParameterName%2A>内で、<xref:System.Data.OleDb.OleDbParameterCollection>です。 パラメーターが存在する場合の例には、パラメーターのインデックスと名前が表示されます。 パラメーターが存在しない場合は、エラーを表示します。 この例では、<xref:System.Data.OleDb.OleDbParameterCollection>既に作成されています。  
+  
+ [!code-csharp[Classic WebData OleDbParameterCollection.this1 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OleDbParameterCollection.this1 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData OleDbParameterCollection.this1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OleDbParameterCollection.this1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException">指定された名前は存在しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Data.OleDb.OleDbParameter value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Data.OleDb.OleDbParameter value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbParameterCollection.Remove(System.Data.OleDb.OleDbParameter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Data.OleDb.OleDbParameter" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Data.OleDb.OleDbParameter" />コレクションから削除するオブジェクト。</param>
+        <summary>削除、<see cref="T:System.Data.OleDb.OleDbParameter" />から、<see cref="T:System.Data.OleDb.OleDbParameterCollection" />です。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidCastException">パラメーターが <see cref="T:System.Data.OleDb.OleDbParameter" /> ではありません。</exception>
+        <exception cref="T:System.SystemException">パラメーターがコレクションに存在しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public override void Remove (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Remove(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbParameterCollection.Remove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Object" />から削除する、<see cref="T:System.Data.OleDb.OleDbParameterCollection" />です。</param>
+        <summary>削除、<see cref="T:System.Object" />オブジェクトから、<see cref="T:System.Data.OleDb.OleDbParameterCollection" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public override void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbParameterCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除する <see cref="T:System.Data.OleDb.OleDbParameter" /> オブジェクトの 0 から始まるインデックス。</param>
+        <summary>指定されたインデックス位置にある <see cref="T:System.Data.OleDb.OleDbParameter" /> を <see cref="T:System.Data.OleDb.OleDbParameterCollection" /> から削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public override void RemoveAt (string parameterName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void RemoveAt(string parameterName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbParameterCollection.RemoveAt(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="parameterName">名前、<see cref="T:System.Data.OleDb.OleDbParameter" />削除するオブジェクト。</param>
+        <summary>指定されたパラメーター名を持つ <see cref="T:System.Data.OleDb.OleDbParameter" /> を <see cref="T:System.Data.OleDb.OleDbParameterCollection" /> から削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetParameter">
+      <MemberSignature Language="C#" Value="protected override void SetParameter (int index, System.Data.Common.DbParameter value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetParameter(int32 index, class System.Data.Common.DbParameter value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbParameterCollection.SetParameter(System.Int32,System.Data.Common.DbParameter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Data.Common.DbParameter" />
+      </Parameters>
+      <Docs>
+        <param name="index">To be added.</param>
+        <param name="value">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetParameter">
+      <MemberSignature Language="C#" Value="protected override void SetParameter (string parameterName, System.Data.Common.DbParameter value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetParameter(string parameterName, class System.Data.Common.DbParameter value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbParameterCollection.SetParameter(System.String,System.Data.Common.DbParameter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterName" Type="System.String" />
+        <Parameter Name="value" Type="System.Data.Common.DbParameter" />
+      </Parameters>
+      <Docs>
+        <param name="parameterName">To be added.</param>
+        <param name="value">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public override object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbParameterCollection.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.OleDb.OleDbParameterCollection" /> へのアクセスを同期するために使用できるオブジェクトを取得します。 読み取り専用です。</summary>
+        <value><see cref="T:System.Data.OleDb.OleDbParameterCollection" /> へのアクセスを同期するために使用できるオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,273 @@
+<Type Name="SqlFunctionAttribute" FullName="Microsoft.SqlServer.Server.SqlFunctionAttribute">
+  <TypeSignature Language="C#" Value="public class SqlFunctionAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit SqlFunctionAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.SqlServer.Server.SqlFunctionAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method, AllowMultiple=false, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>SQL Server の関数と、ユーザー定義集計のメソッドの定義を示すために使用します。 属性のプロパティは、種類が SQL Server に登録されているときに使用する物理的な特性を反映します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、指定したディレクトリ パスにファイルの一覧を返す集計関数を示します。  
+  
+ [!code-csharp[DataWorks SqlFunctionAttribute Sample#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlFunctionAttribute Sample/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlFunctionAttribute Sample#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlFunctionAttribute Sample/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlFunctionAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.SqlServer.Server.SqlFunctionAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>ユーザー定義の集計では、省略可能な属性の関数として SQL Server で、メソッドを登録するかを示すために使用します。 設定にも使用、 <see cref="P:Microsoft.SqlServer.Server.SqlFunctionAttribute.DataAccess" />、 <see cref="P:Microsoft.SqlServer.Server.SqlFunctionAttribute.FillRowMethodName" />、 <see cref="P:Microsoft.SqlServer.Server.SqlFunctionAttribute.IsDeterministic" />、 <see cref="P:Microsoft.SqlServer.Server.SqlFunctionAttribute.IsPrecise" />、 <see cref="P:Microsoft.SqlServer.Server.SqlFunctionAttribute.Name" />、 <see cref="P:Microsoft.SqlServer.Server.SqlFunctionAttribute.SystemDataAccess" />、および<see cref="P:Microsoft.SqlServer.Server.SqlFunctionAttribute.TableDefinition" />関数の属性のプロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataAccess">
+      <MemberSignature Language="C#" Value="public Microsoft.SqlServer.Server.DataAccessKind DataAccess { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Microsoft.SqlServer.Server.DataAccessKind DataAccess" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlFunctionAttribute.DataAccess" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.SqlServer.Server.DataAccessKind</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関数は、SQL Server のローカル インスタンスに格納されているユーザー データにアクセスするかどうかを示します。</summary>
+        <value>
+          <see cref="T:Microsoft.SqlServer.Server.DataAccessKind" />.<see langword="None" />: データにアクセスしません。 <see cref="T:Microsoft.SqlServer.Server.DataAccessKind" />.<see langword="Read" />: のみユーザー データを読み取ります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は<xref:Microsoft.SqlServer.Server.DataAccessKind.None>.<xref:Microsoft.SqlServer.Server.SqlFunctionAttribute.DataAccess%2A>も必要です (既定) に必要な場合はトランザクションの統合は、リモート サーバーに接続するときにします。  
+  
+ TRANSACT-SQL クエリは、テーブル値関数 (TVF) 内から実行される場合、<xref:Microsoft.SqlServer.Server.DataAccessKind.Read>プロパティを設定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FillRowMethodName">
+      <MemberSignature Language="C#" Value="public string FillRowMethodName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FillRowMethodName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlFunctionAttribute.FillRowMethodName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>TVF のコントラクトによって使用されるテーブル値関数 (TVF) と同じクラスのメソッドの名前。</summary>
+        <value>A <see cref="T:System.String" /> TVF コントラクトで使用されるメソッドの名前を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、次を参照してください。 [CLR トリガー](http://go.microsoft.com/fwlink/?LinkId=128026)です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[VbRaddataSQLObjects#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/VbRaddataSQLObjects/CS/Function1.cs#10)]
+ [!code-vb[VbRaddataSQLObjects#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRaddataSQLObjects/VB/Function1.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDeterministic">
+      <MemberSignature Language="C#" Value="public bool IsDeterministic { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDeterministic" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlFunctionAttribute.IsDeterministic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー定義関数が決定的かどうかを示します。</summary>
+        <value>
+          <see langword="true" />場合は、関数は決定的です。それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー定義関数は常に生成する場合、同じ値が出力、入力値と同じデータベースの状態は決定的であると言われます。  
+  
+ <xref:Microsoft.SqlServer.Server.SqlFunctionAttribute.IsDeterministic%2A>プロパティはインデックス付き計算列およびインデックス付きビューの形式で関数の結果をインデックス作成のために役立ちます。 このプロパティが指定されていない場合、関数は非決定的であると見なされます。  
+  
+ ローカル データにアクセスする関数は決定的になります。 データ アクセスの特性が個別に、キャプチャ、<xref:Microsoft.SqlServer.Server.SqlFunctionAttribute.DataAccess%2A>と<xref:Microsoft.SqlServer.Server.SqlFunctionAttribute.SystemDataAccess%2A>プロパティです。  
+  
+ リモート サーバーにデータのアクセスに注意してください (たとえばを使用して、<xref:System.Data.SqlClient.SqlConnection>別の SQL Server インスタンスに接続する) はユーザー定義関数で使用できます。 まだに従う必要がありますただし、<xref:Microsoft.SqlServer.Server.SqlFunctionAttribute.IsDeterministic%2A>宣言します。 共通言語ランタイム (CLR) 関数は決定的関数として設定されると、リモート サーバーで副作用は発生しません。 コンテキスト接続に対する副作用は制限されているが、SQL Server はリモート接続を介して副作用の制限を強制されません。  
+  
+ この属性の既定値は `false` です。  
+  
+ マークを付けないでください関数が、同じ出力値を常に生成されない場合は決定的関数として同じ入力値と同じデータベースの状態を指定します。 決定的関数としてマークすること、関数がない実際に決定的が破損しているインデックス付きビューと計算列あります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPrecise">
+      <MemberSignature Language="C#" Value="public bool IsPrecise { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPrecise" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlFunctionAttribute.IsPrecise" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関数は、浮動小数点演算などの不正確な計算するかどうかを示します。</summary>
+        <value>
+          <see langword="true" />関数に正確な計算が含まれている場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 関数の有効桁数は、この関数を使用する列のインデックスを作成できる計算される場合を判断するためのプロパティのいずれかです。  
+  
+ この属性の既定値は `false` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlFunctionAttribute.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>対象は、SQL Server に関数を登録する名前です。</summary>
+        <value>A<see cref="T:System.String" />関数の登録されている名前を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性は、ユーザー定義関数として指定されたメソッドを自動的に登録する Microsoft Visual Studio でのみ使用します。 SQL Server では使用されません。  
+  
+ 名前を使用して、ユーザー定義関数が参照されているは、次の例を示す`sp_scalarFunc`です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[VbRaddataSQLObjects#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/VbRaddataSQLObjects/CS/Function1.cs#10)]
+ [!code-vb[VbRaddataSQLObjects#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRaddataSQLObjects/VB/Function1.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemDataAccess">
+      <MemberSignature Language="C#" Value="public Microsoft.SqlServer.Server.SystemDataAccessKind SystemDataAccess { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Microsoft.SqlServer.Server.SystemDataAccessKind SystemDataAccess" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlFunctionAttribute.SystemDataAccess" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.SqlServer.Server.SystemDataAccessKind</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関数がシステム カタログまたは仮想システム テーブルの SQL Server に格納されたデータへのアクセスを必要とするかどうかを示します。</summary>
+        <value>
+          <see cref="T:Microsoft.SqlServer.Server.DataAccessKind" />.<see langword="None" />: システム データにアクセスしません。 <see cref="T:Microsoft.SqlServer.Server.DataAccessKind" />.<see langword="Read" />: のみシステム データを読み取ります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は、<xref:Microsoft.SqlServer.Server.SystemDataAccessKind.None> です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TableDefinition">
+      <MemberSignature Language="C#" Value="public string TableDefinition { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TableDefinition" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlFunctionAttribute.TableDefinition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーブル値関数 (TVF) としてメソッドを使用する場合に、結果のテーブルの定義を表す文字列。</summary>
+        <value>A<see cref="T:System.String" />結果のテーブルの定義を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性は、TVF として指定されたメソッドを自動的に登録する Microsoft Visual Studio でのみ使用されます。 SQL Server では使用されません。  
+  
+ 次の例では、名前を使用して、ユーザー定義関数が参照されているを指定します`sp_tableFunc`です。 `TableDefinition`プロパティの値を`letter nchar(1)`です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[VbRaddataSQLObjects#11](~/samples/snippets/csharp/VS_Snippets_VBCSharp/VbRaddataSQLObjects/CS/Function1.cs#11)]
+ [!code-vb[VbRaddataSQLObjects#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRaddataSQLObjects/VB/Function1.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

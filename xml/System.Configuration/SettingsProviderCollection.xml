@@ -1,0 +1,139 @@
+<Type Name="SettingsProviderCollection" FullName="System.Configuration.SettingsProviderCollection">
+  <TypeSignature Language="C#" Value="public class SettingsProviderCollection : System.Configuration.Provider.ProviderCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SettingsProviderCollection extends System.Configuration.Provider.ProviderCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.SettingsProviderCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.Provider.ProviderCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アプリケーション設定プロバイダーのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.SettingsProviderCollection>クラスの簡単な拡張であり、<xref:System.Configuration.Provider.ProviderCollection>の記憶域を提供するクラス<xref:System.Configuration.SettingsProvider>オブジェクト。  
+  
+ <xref:System.Configuration.ApplicationSettingsBase>を通じてそのアプリケーションの設定のプロパティのそれぞれに関連付けられている設定プロバイダーを管理するには、このコレクション クラスは、<xref:System.Configuration.SettingsProviderAttribute>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SettingsProviderCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.SettingsProviderCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Configuration.SettingsProviderCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、暗黙的に提供されている既定のコンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public override void Add (System.Configuration.Provider.ProviderBase provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Add(class System.Configuration.Provider.ProviderBase provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.SettingsProviderCollection.Add(System.Configuration.Provider.ProviderBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.Configuration.Provider.ProviderBase" />
+      </Parameters>
+      <Docs>
+        <param name="provider">A<see cref="T:System.Configuration.Provider.ProviderBase" />をコレクションに追加します。</param>
+        <summary>新しい設定プロバイダーをコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.Provider.ProviderBase.Name%2A>のプロパティ、<xref:System.Configuration.SettingsProvider>記憶域のキーとして使用されます。  
+  
+> [!CAUTION]
+>  <xref:System.Configuration.SettingsProviderCollection.Add%2A>メソッドには、1 つ<xref:System.Configuration.Provider.ProviderBase>、基底クラスでこの同じメソッドのシグネチャと一致するパラメーター<xref:System.Configuration.Provider.ProviderCollection>場合、このメソッドの例外をスローする、`provider`パラメーターの型ではありません<xref:System.Configuration.SettingsProvider>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="provider" />パラメーターの型ではありません<see cref="T:System.Configuration.SettingsProvider" />です。  
+  
+ または  
+  
+ <see cref="P:System.Configuration.Provider.ProviderBase.Name" />プロバイダーのパラメーターのプロパティが null または空の文字列。  
+  
+ または  
+  
+ 同じ設定プロバイダー<see cref="P:System.Configuration.Provider.ProviderBase.Name" />コレクションに既に存在します。</exception>
+        <exception cref="T:System.NotSupportedException">コレクションは読み取り専用です。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="provider" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Configuration.SettingsProvider this[string name] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.SettingsProvider Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SettingsProviderCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.SettingsProvider</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">A<see cref="T:System.String" />設定プロバイダーのフレンドリ名を格納します。</param>
+        <summary>指定した名前に一致するコレクション内の設定プロバイダーを取得します。</summary>
+        <value>場合、 <see cref="T:System.Configuration.SettingsProvider" /> ;、name パラメーターで指定されている名前に一致するそれ以外の場合、<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ことができます、<xref:System.Configuration.SettingsProviderCollection>を使用して、読み取り専用、<xref:System.Configuration.Provider.ProviderCollection.SetReadOnly%2A>メソッドです。 ただしが正しくないメソッドになど<xref:System.Configuration.SettingsProviderCollection.Add%2A>、 <xref:System.Configuration.Provider.ProviderCollection.Remove%2A>、および<xref:System.Configuration.Provider.ProviderCollection.Clear%2A>でこのようなコレクション。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">コレクションは、この値を設定する場合は読み取り専用です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

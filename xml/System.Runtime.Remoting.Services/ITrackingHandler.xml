@@ -1,0 +1,153 @@
+<Type Name="ITrackingHandler" FullName="System.Runtime.Remoting.Services.ITrackingHandler">
+  <TypeSignature Language="C#" Value="public interface ITrackingHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITrackingHandler" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Services.ITrackingHandler" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>リモート処理インフラストラクチャによって、実装するオブジェクトをマーシャ リング、マーシャ リング解除、およびオブジェクトとプロキシの切断が通知される必要があることを示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 登録されているすべてのオブジェクト<xref:System.Runtime.Remoting.Services.TrackingServices>オブジェクトまたは現在のプロキシときに、リモート処理によって呼び出される<xref:System.AppDomain>がマーシャ リング、マーシャ リング解除、または切断します。  
+  
+ オブジェクトのみを切断できることに注意してください。 ときに、例外がスローされます切断プロキシで呼び出されるとします。  
+  
+> [!NOTE]
+>  このインターフェイスは、リンク確認要求を使用します。 SecurityException は直前の呼び出し元のインターフェイスへの参照を通じて呼び出しし、インフラストラクチャのアクセス許可を持たない場合にスローされます。 参照してください[リンク確認要求](~/docs/framework/misc/link-demands.md)詳細についてはします。  
+  
+   
+  
+## Examples  
+ 次のコード例のメソッドを実装する方法を示しています、<xref:System.Runtime.Remoting.Services.ITrackingHandler>インターフェイスが、リモート処理インフラストラクチャから通知を受信します。  
+  
+ 次のコード例では、このインターフェイスを実装する方法を示します。  
+  
+ [!code-csharp[System.Runtime.Remoting.Services.TrackingServices#30](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Services.TrackingServices/CS/trackinghandler.cs#30)]  
+  
+ 次のコード例では、サーバーにこのインターフェイスを実装する方法を示します。  
+  
+ [!code-csharp[System.Runtime.Remoting.Services.TrackingServices#20](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Services.TrackingServices/CS/server.cs#20)]  
+  
+ 次のコード例では、上記のコード例では、サーバーに対するクライアントでこのインターフェイスを実装する方法を示します。  
+  
+ [!code-csharp[System.Runtime.Remoting.Services.TrackingServices#0](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Services.TrackingServices/CS/client.cs#0)]  
+  
+ 次のコード例では、サーバーとクライアントで使用されるリモート オブジェクトを示します。  
+  
+ [!code-csharp[System.Runtime.Remoting.Services.TrackingServices#10](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Services.TrackingServices/CS/remoteservice.cs#10)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+  </Docs>
+  <Members>
+    <Member MemberName="DisconnectedObject">
+      <MemberSignature Language="C#" Value="public void DisconnectedObject (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DisconnectedObject(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Services.ITrackingHandler.DisconnectedObject(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">切断されているオブジェクト。</param>
+        <summary>オブジェクトがそのプロキシから切断されていることを現在のインスタンスに通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメソッドを実装する方法を示します。 このコード例は提供されている長い例の一部である、<xref:System.Runtime.Remoting.Services.ITrackingHandler>インターフェイスです。  
+  
+ [!code-csharp[System.Runtime.Remoting.Services.TrackingServices#33](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Services.TrackingServices/CS/trackinghandler.cs#33)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MarshaledObject">
+      <MemberSignature Language="C#" Value="public void MarshaledObject (object obj, System.Runtime.Remoting.ObjRef or);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void MarshaledObject(object obj, class System.Runtime.Remoting.ObjRef or) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Services.ITrackingHandler.MarshaledObject(System.Object,System.Runtime.Remoting.ObjRef)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="or" Type="System.Runtime.Remoting.ObjRef" />
+      </Parameters>
+      <Docs>
+        <param name="obj">マーシャ リングされたオブジェクト。</param>
+        <param name="or"><see cref="T:System.Runtime.Remoting.ObjRef" />する結果をマーシャ リングし、指定したオブジェクトを表します。</param>
+        <summary>オブジェクトがマーシャ リングされたことを現在のインスタンスに通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメソッドを実装する方法を示します。 このコード例は提供されている長い例の一部である、<xref:System.Runtime.Remoting.Services.ITrackingHandler>インターフェイスです。  
+  
+ [!code-csharp[System.Runtime.Remoting.Services.TrackingServices#31](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Services.TrackingServices/CS/trackinghandler.cs#31)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnmarshaledObject">
+      <MemberSignature Language="C#" Value="public void UnmarshaledObject (object obj, System.Runtime.Remoting.ObjRef or);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void UnmarshaledObject(object obj, class System.Runtime.Remoting.ObjRef or) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Services.ITrackingHandler.UnmarshaledObject(System.Object,System.Runtime.Remoting.ObjRef)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="or" Type="System.Runtime.Remoting.ObjRef" />
+      </Parameters>
+      <Docs>
+        <param name="obj">マーシャ リングを解除オブジェクトです。</param>
+        <param name="or"><see cref="T:System.Runtime.Remoting.ObjRef" />を表す、指定したオブジェクト。</param>
+        <summary>オブジェクトがマーシャ リングされたことを現在のインスタンスに通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメソッドを実装する方法を示します。 このコード例は提供されている長い例の一部である、<xref:System.Runtime.Remoting.Services.ITrackingHandler>インターフェイスです。  
+  
+ [!code-csharp[System.Runtime.Remoting.Services.TrackingServices#32](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Services.TrackingServices/CS/trackinghandler.cs#32)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

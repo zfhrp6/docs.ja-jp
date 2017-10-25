@@ -1,0 +1,47 @@
+<Type Name="CommandEventHandler" FullName="System.Web.UI.WebControls.CommandEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void CommandEventHandler(object sender, CommandEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed CommandEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.CommandEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Web.UI.WebControls.CommandEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Web.UI.WebControls.CommandEventArgs" />。</param>
+    <summary><see langword="Command" /> イベントを処理するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Command`イベントが発生したときに、 <xref:System.Web.UI.WebControls.Button>、 <xref:System.Web.UI.WebControls.ImageButton>、または<xref:System.Web.UI.WebControls.LinkButton>コントロールがクリックされました。  
+  
+ <xref:System.Web.UI.WebControls.CommandEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次の例には、<xref:System.Web.UI.WebControls.Button.Command>のイベント、<xref:System.Web.UI.WebControls.Button>コントロール。 この例を示す、イベント ハンドラー宣言によってを使用して、<xref:System.Web.UI.WebControls.Button.OnClick%2A>のプロパティ、<xref:System.Web.UI.WebControls.Button>コントロール。  
+  
+ [!code-aspx-csharp[ButtonCommandNameArgument#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ButtonCommandNameArgument/CS/buttoncommandnamecs.aspx#1)]
+ [!code-aspx-vb[ButtonCommandNameArgument#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ButtonCommandNameArgument/VB/buttoncommandnamevb.aspx#1)]  
+  
+ 次のコード例は、イベント ハンドラーを指定し、プログラム内のイベントに追加する方法を示します、`Page_Load`メソッドです。  
+  
+ [!code-aspx-csharp[ButtonCommand#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ButtonCommand/CS/buttoncommandcs.aspx#1)]
+ [!code-aspx-vb[ButtonCommand#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ButtonCommand/VB/buttoncommandvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

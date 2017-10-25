@@ -1,0 +1,174 @@
+<Type Name="ToolboxDataAttribute" FullName="System.Web.UI.ToolboxDataAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ToolboxDataAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ToolboxDataAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.ToolboxDataAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Microsoft Visual Studio などのツールで、ツールボックスからドラッグされるときにカスタム コントロールに対して生成された既定のタグを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、Visual Studio などのツールのビジュアル デザイナーには、空のタグを作成します。 これは、デザイン サーフェイスにビジュアル デザイナーのツールボックスからコントロールが削除されるときに、既定の状態でコントロールを表すタグです。 既定の初期値を指定するには、コントロールが行うことができますのこの属性を使用します。 この属性を使用して、ツールボックスからフォームにコントロールをドラッグすると、デザイナーに配置される初期の HTML コンテンツをカスタマイズすることができます。  
+  
+   
+  
+## Examples  
+  
+```  
+[ ToolboxData("<{0}:MyLabel runat= server Text=   
+       MyLabel><{0}:MyLabel>") ]public class MyLabel : Label {...}  
+```  
+  
+ 次のコード例で、前のコードのプロパティを設定する特定`MyLabel`です。 すべての出現`{0}`がによって、置換、デザイナーに関連付けられているタグ プレフィックスを持つ、`MyLabel`クラスです。  
+  
+ [!code-csharp[SystemWebUI_ToolboxDataAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/SystemWebUI_ToolboxDataAttribute/CS/toolboxdataattribute.cs#1)]
+ [!code-vb[SystemWebUI_ToolboxDataAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/SystemWebUI_ToolboxDataAttribute/VB/toolboxdataattribute.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ToolboxDataAttribute (string data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ToolboxDataAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="data" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="data">として設定する文字列、<see cref="P:System.Web.UI.ToolboxDataAttribute.Data" />です。</param>
+        <summary><see cref="T:System.Web.UI.ToolboxDataAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Data">
+      <MemberSignature Language="C#" Value="public string Data { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Data" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ToolboxDataAttribute.Data" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールのインスタンスを作成するために、ビジュアル デザイナーで使用されているコントロールのプロパティの初期値を表す文字列を取得します。</summary>
+        <value>この属性の初期値を表す文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.ToolboxDataAttribute Default;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.ToolboxDataAttribute Default" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.ToolboxDataAttribute.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ToolboxDataAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定値を表す<see cref="T:System.Web.UI.ToolboxDataAttribute" />カスタム コントロールの値。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ToolboxDataAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">比較するオブジェクト。</param>
+        <summary>テストするかどうか、<see cref="T:System.Web.UI.ToolboxDataAttribute" />オブジェクトが、指定されたオブジェクトと等しい。</summary>
+        <returns>
+          <see langword="true" />、場合、<see cref="T:System.Web.UI.ToolboxDataAttribute" />オブジェクトが、指定したオブジェクトと等しい、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ToolboxDataAttribute.Equals%2A>メソッドは、まずオブジェクトの等価性を比較します。  比較を返す場合`false`、<xref:System.Web.UI.ToolboxDataAttribute.Equals%2A>メソッドのデータを比較し、<xref:System.Web.UI.ToolboxDataAttribute>オブジェクトを最初に指定されたオブジェクトがないことを確認する指定されたオブジェクトをテストした後で指定したオブジェクトのデータ`null`として型指定されても、<xref:System.Web.UI.ToolboxDataAttribute>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ToolboxDataAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>カスタム コントロールのハッシュ コードを返します。</summary>
+        <returns>32 ビット符号付き<see langword="integer" />ハッシュ コードを表すです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefaultAttribute">
+      <MemberSignature Language="C#" Value="public override bool IsDefaultAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsDefaultAttribute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ToolboxDataAttribute.IsDefaultAttribute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テストするかどうか、<see cref="T:System.Web.UI.ToolboxDataAttribute" />オブジェクトには既定値が含まれています、<see cref="P:System.Web.UI.ToolboxDataAttribute.Data" />プロパティです。</summary>
+        <returns>
+          <see langword="true" />、場合、<see cref="T:System.Web.UI.ToolboxDataAttribute" />の既定値が含まれています、<see cref="P:System.Web.UI.ToolboxDataAttribute.Data" />プロパティ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は、空の文字列 ("") です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

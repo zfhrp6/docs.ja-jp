@@ -1,0 +1,88 @@
+<Type Name="FontNumeralAlignment" FullName="System.Windows.FontNumeralAlignment">
+  <TypeSignature Language="C#" Value="public enum FontNumeralAlignment" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed FontNumeralAlignment extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.FontNumeralAlignment" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>数字の配置について説明します、<see cref="T:System.Windows.Documents.Typography" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ OpenType フォントでは、数字を使用する際の幅の調整を制御するプロポーショナルおよび表形式の図機能をサポートします。 プロポーショナルの数字では、それぞれの数字は異なる幅を持つものとして扱われます。たとえば "1" は "5" より狭い幅です。 表形式の図は、位置が揃う垂直方向に、型が財務情報の読みやすさを向上できるように、等幅の数字として扱われます。  
+  
+ 次のテキストは、Miramonte フォントを使用して最初の列に 2 つのプロポーショナル数字を表示します。 「5」と「1」数字の幅の違いに注意してください。 2 番目の列は、表形式の図の機能を使用して調整幅と同じ 2 つの数値を示します。  
+  
+ ![OpenType のプロポーショナル & 表形式の数字を使用してテキストを](~/add/media/opentypefont22.gif "OpenType 比例 & 表形式の数字を使用するテキスト")  
+プロポーショナルおよびタブ付きの図の例  
+  
+> [!NOTE]
+>  ほとんどの OpenType フォントでは、使用可能な合計 OpenType 機能のサブセットのみを公開します。 指定したフォントが特定の機能をサポートしていない場合は、既定のグリフが代わりに使用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のプロパティを使用して、Miramonte フォント比例と表形式の数値を定義する方法を示します、<xref:System.Windows.Documents.Typography>オブジェクト。  
+  
+ [!code-xaml[OpenTypeFontSamples#OpenTypeFontSnippet19](~/samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/Window1.xaml#opentypefontsnippet19)]   
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Normal">
+      <MemberSignature Language="C#" Value="Normal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.FontNumeralAlignment Normal = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FontNumeralAlignment.Normal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontNumeralAlignment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数字の既定の配置が使用されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Proportional">
+      <MemberSignature Language="C#" Value="Proportional" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.FontNumeralAlignment Proportional = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FontNumeralAlignment.Proportional" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontNumeralAlignment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>比例幅の配置を使用します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Tabular">
+      <MemberSignature Language="C#" Value="Tabular" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.FontNumeralAlignment Tabular = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FontNumeralAlignment.Tabular" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontNumeralAlignment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表形式の配置が使用されます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

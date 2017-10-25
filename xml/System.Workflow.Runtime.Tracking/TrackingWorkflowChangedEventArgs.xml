@@ -1,0 +1,74 @@
+<Type Name="TrackingWorkflowChangedEventArgs" FullName="System.Workflow.Runtime.Tracking.TrackingWorkflowChangedEventArgs">
+  <TypeSignature Language="C#" Value="public class TrackingWorkflowChangedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TrackingWorkflowChangedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.Tracking.TrackingWorkflowChangedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ワークフロー インスタンス実行中に発生する、ワークフローの変化に関連したデータを格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ ワークフロー インスタンスの実行中にワークフローが変化したときに、ワークフロー インスタンスに関連した <xref:System.Workflow.Runtime.Tracking.TrackingProfile> の中に、<xref:System.Workflow.Runtime.Tracking.WorkflowTrackPoint> イベント用に構成された <xref:System.Workflow.Runtime.Tracking.TrackingWorkflowEvent.Changed> が含まれる場合、ランタイム追跡インフラストラクチャは <xref:System.Workflow.Runtime.Tracking.WorkflowTrackingRecord.EventArgs%2A> を、追跡サービスに送られる <xref:System.Workflow.Runtime.Tracking.TrackingWorkflowChangedEventArgs> 内の <xref:System.Workflow.Runtime.Tracking.WorkflowTrackingRecord> に設定します。  
+  
+> [!NOTE]
+>  <xref:System.Workflow.Runtime.Tracking.TrackingWorkflowChangedEventArgs> は、ランタイム追跡サービスが <xref:System.Workflow.Runtime.Tracking.WorkflowTrackingRecord> で情報を渡す場合にのみ使用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Changes">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Workflow.ComponentModel.WorkflowChangeAction&gt; Changes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;class System.Workflow.ComponentModel.WorkflowChangeAction&gt; Changes" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.TrackingWorkflowChangedEventArgs.Changes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Workflow.ComponentModel.WorkflowChangeAction&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー インスタンスで発生した変更を取得します。</summary>
+        <value>ワークフロー インスタンスで発生した変更を指定する <see cref="T:System.Workflow.ComponentModel.WorkflowChangeAction" /> オブジェクトのリスト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Definition">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.Activity Definition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.ComponentModel.Activity Definition" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.TrackingWorkflowChangedEventArgs.Definition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Activity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー定義を取得します。</summary>
+        <value>ワークフロー インスタンスのルート アクティビティを表す <see cref="T:System.Workflow.ComponentModel.Activity" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

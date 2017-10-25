@@ -1,0 +1,242 @@
+<Type Name="DebuggableAttribute" FullName="System.Diagnostics.DebuggableAttribute">
+  <TypeSignature Language="C#" Value="public sealed class DebuggableAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DebuggableAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.DebuggableAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly | System.AttributeTargets.Module, AllowMultiple=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ランタイム ジャスト イン タイム (JIT: just-in-time) デバッグ用のコード生成を変更します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.DebuggableAttribute>ランタイムがモジュール内のコードを処理する方法を制御します。 ランタイムは、生成されたコードに関する追加情報を追跡可能性があり、この属性に含まれる値に基づいて特定の最適化を無効にすることがあります。  
+  
+ デバッガーを無視することもできます、<xref:System.Diagnostics.DebuggableAttribute>アセンブリの読み込み時に設定します。 ただし、実行中のプログラムにデバッガーをアタッチできない可能性があります、デバッガーが既に適用されているために、設定を変更するからです。  
+  
+ 使用する、<xref:System.Diagnostics.DebuggableAttribute>リフレクション出力を使用して動的アセンブリで<xref:System.Reflection.Emit.AssemblyBuilder.DefineDynamicModule%2A>メソッド、出力、<xref:System.Diagnostics.DebuggableAttribute>呼び出す前に、<xref:System.Reflection.Emit.AssemblyBuilder.DefineDynamicModule%2A>設定がアセンブリ全体に適用されていることを確認するメソッド。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DebuggableAttribute (System.Diagnostics.DebuggableAttribute.DebuggingModes modes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Diagnostics.DebuggableAttribute/DebuggingModes modes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.DebuggableAttribute.#ctor(System.Diagnostics.DebuggableAttribute.DebuggingModes)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="modes" Type="System.Diagnostics.DebuggableAttribute+DebuggingModes" />
+      </Parameters>
+      <Docs>
+        <param name="modes">ビットごとの組み合わせ、 <see cref="T:System.Diagnostics.DebuggableAttribute.DebuggingModes" /> JIT コンパイラ用のデバッグ モードを指定する値。</param>
+        <summary>Just-In-Time (JIT) コンパイラに対して指定したデバッグ モードを使用して、<see cref="T:System.Diagnostics.DebuggableAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Diagnostics.DebuggableAttribute.%23ctor%28System.Diagnostics.DebuggableAttribute.DebuggingModes%29>を持つコンス トラクター、`modes`のパラメーター値<xref:System.Diagnostics.DebuggableAttribute.DebuggingModes.Default>を呼び出すことと同じです、<xref:System.Diagnostics.DebuggableAttribute.%23ctor%28System.Boolean%2CSystem.Boolean%29>を持つコンス トラクター、`isJITTrackingEnabled`のパラメーター値`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DebuggableAttribute (bool isJITTrackingEnabled, bool isJITOptimizerDisabled);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool isJITTrackingEnabled, bool isJITOptimizerDisabled) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.DebuggableAttribute.#ctor(System.Boolean,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="isJITTrackingEnabled" Type="System.Boolean" />
+        <Parameter Name="isJITOptimizerDisabled" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="isJITTrackingEnabled">
+          デバッグを有効にするには <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <param name="isJITOptimizerDisabled">
+          実行のためのオプティマイザーを無効にするには <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>Just-In-Time (JIT) コンパイラに対して指定した追跡オプションおよび最適化オプションを使用して、<see cref="T:System.Diagnostics.DebuggableAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、プロパティを設定します。<xref:System.Diagnostics.DebuggableAttribute.IsJITTrackingEnabled%2A>と<xref:System.Diagnostics.DebuggableAttribute.IsJITOptimizerDisabled%2A>です。  
+  
+ `isJITTrackingEnabaled`パラメーターに値`true`コードの生成中にデバッガーに重要な情報を追跡するためにランタイムによって、値は`false`追跡なしになります。 ただしデバッグができません。 このパラメーターは、.NET Framework version 2.0 では影響を与えません。  バージョン 2.0 で、Microsoft intermediate language (MSIL) オフセットをメソッド内でネイティブ コード オフセット、JIT 追跡情報が常に生成されます。  
+  
+ `isJITOptimizerDisabled`のパラメーター値`true`デバッグのために最適化の値`false`実行のために最適化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DebuggingFlags">
+      <MemberSignature Language="C#" Value="public System.Diagnostics.DebuggableAttribute.DebuggingModes DebuggingFlags { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Diagnostics.DebuggableAttribute/DebuggingModes DebuggingFlags" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.DebuggableAttribute.DebuggingFlags" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.DebuggableAttribute+DebuggingModes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>属性のデバッグ モードを取得します。</summary>
+        <value>Just-In-Time (JIT) コンパイラのデバッグ モードを説明する <see cref="T:System.Diagnostics.DebuggableAttribute.DebuggingModes" /> 値のビットごとの組み合わせ。 既定値は、<see cref="F:System.Diagnostics.DebuggableAttribute.DebuggingModes.Default" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.DebuggableAttribute.DebuggingFlags%2A>ランタイムを追跡する方法についての重要なデバッガーにコード生成中にプロパティを制御します。 この情報には、豊富なデバッグ機能を提供する、デバッガーが役立ちます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsJITOptimizerDisabled">
+      <MemberSignature Language="C#" Value="public bool IsJITOptimizerDisabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsJITOptimizerDisabled" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.DebuggableAttribute.IsJITOptimizerDisabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ランタイム オプティマイザーを無効にするかどうかを示す値を取得します。</summary>
+        <value>
+          ランタイム オプティマイザーが無効の場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値`true`実行のパフォーマンスの低下を示す可能性がありますランタイムのデバッグのパフォーマンスが向上します。 値`false`実行のパフォーマンスが向上します。 ときに<xref:System.Diagnostics.DebuggableAttribute.IsJITOptimizerDisabled%2A>に設定されている`false`、コードのステップ実行とは異なる動作になる可能性がありますに設定すると`true`コンパイラ可能性があります命令を並べ替えるか、共通コードへのジャンプを挿入します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsJITTrackingEnabled">
+      <MemberSignature Language="C#" Value="public bool IsJITTrackingEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsJITTrackingEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.DebuggableAttribute.IsJITTrackingEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ランタイムがコード生成中にデバッガーのために情報を追跡するかどうかを示す値を取得します。</summary>
+        <value>
+          ランタイムがコード生成中にデバッガーのために情報を追跡する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.DebuggableAttribute.IsJITTrackingEnabled%2A>ランタイムが、コードの生成中にデバッガーに重要な情報を追跡するかどうかを制御します。 この情報には、豊富なデバッグ機能を提供する、デバッガーが役立ちます。  
+  
+ 以降、.NET Framework 2.0 では、デバッグ中に JIT 追跡情報が常に有効になっているし、このプロパティの値は無視されます。  
+  
+> [!NOTE]
+>  追跡情報を生成する・ イン タイム (JIT) コンパイラに指示が、このプロパティは、デバッグする機能を制御しません。 具体的には、コンパイラは、メソッド内のオフセット、ネイティブ コードへの Microsoft Intermediate Language MSIL オフセットを追跡します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

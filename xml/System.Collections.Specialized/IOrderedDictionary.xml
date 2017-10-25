@@ -1,0 +1,309 @@
+<Type Name="IOrderedDictionary" FullName="System.Collections.Specialized.IOrderedDictionary">
+  <TypeSignature Language="C#" Value="public interface IOrderedDictionary : System.Collections.IDictionary" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IOrderedDictionary implements class System.Collections.ICollection, class System.Collections.IDictionary, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.Specialized.IOrderedDictionary" />
+  <AssemblyInfo>
+    <AssemblyName>System.Collections.Specialized</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IDictionary</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>キーと値のペアのインデックス付きコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Specialized.IOrderedDictionary>要素は、キーまたはインデックスにアクセスできます。  
+  
+ 各要素に格納されているキー/値ペアは、<xref:System.Collections.DictionaryEntry>構造体。  
+  
+ 各ペアはではない一意キーを持つ必要があります`null`、値を指定できますが、`null`が一意であるとします。 <xref:System.Collections.Specialized.IOrderedDictionary>インターフェイスにより、格納されているキーと値を列挙するが、特定の並べ替え順序を意味しません。  
+  
+ `foreach` C# 言語のステートメント (`For Each` Visual Basic で)、コレクション内の要素の型のオブジェクトを返します。 の各要素、<xref:System.Collections.IDictionary>キー/値ペアは、要素型は、キーの型または値の型ではありません。 要素の型は、代わりに、<xref:System.Collections.DictionaryEntry>次の例を示します。  
+  
+ [!code-cpp[System.Collections.Specialized.IOrderedDictionary_Implementation#03](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.IOrderedDictionary_Implementation/cpp/remarks.cpp#03)]
+ [!code-csharp[System.Collections.Specialized.IOrderedDictionary_Implementation#03](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.IOrderedDictionary_Implementation/cs/remarks.cs#03)]
+ [!code-vb[System.Collections.Specialized.IOrderedDictionary_Implementation#03](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.IOrderedDictionary_Implementation/vb/remarks.vb#03)]  
+  
+ `foreach`ステートメントは書き込まないことから、コレクションに読み取りのみが使用できる列挙子のラッパー。  
+  
+   
+  
+## Examples  
+ 次のコード例は、簡単な実装を示します<xref:System.Collections.Specialized.IOrderedDictionary>に基づいて、<xref:System.Collections.ArrayList>クラスです。 実装された<xref:System.Collections.Specialized.IOrderedDictionary>値、それぞれの名が一意である追加の要件として、キーと姓と名前を格納します。  
+  
+ [!code-cpp[System.Collections.Specialized.IOrderedDictionary_Implementation#00](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.IOrderedDictionary_Implementation/cpp/iordereddictionary.cpp#00)]
+ [!code-csharp[System.Collections.Specialized.IOrderedDictionary_Implementation#00](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.IOrderedDictionary_Implementation/cs/iordereddictionary.cs#00)]
+ [!code-vb[System.Collections.Specialized.IOrderedDictionary_Implementation#00](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.IOrderedDictionary_Implementation/vb/iordereddictionary.vb#00)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>実装するクラスには、キーを比較するための手段が必要です。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IDictionaryEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IDictionaryEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.IOrderedDictionary.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionaryEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Collections.Specialized.IOrderedDictionary" /> コレクションを反復処理する列挙子を返します。</summary>
+        <returns><see cref="T:System.Collections.IDictionaryEnumerator" />全体の<see cref="T:System.Collections.Specialized.IOrderedDictionary" />コレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [Visual Basic、C# の場合]  
+  
+ C# 言語の `foreach` ステートメント (Visual Basic の場合は `for each`) を使用することで列挙子の複雑さを回避できます。  したがってを使用して`foreach`列挙子を直接操作するのではなくをお勧めします。  
+  
+ 列挙子を使用すると、コレクション内のデータを読み取ることができますが、基になるコレクションを変更することはできません。  
+  
+ 最初に、列挙子はコレクション内の 1 番目の要素の前に位置付けられます。 <xref:System.Collections.IEnumerator.Reset%2A> を実行した場合も、列挙子はこの位置に戻されます。  この位置にある、<xref:System.Collections.IEnumerator.Current%2A>プロパティが定義されていません。 そのため、<xref:System.Collections.IEnumerator.MoveNext%2A> の値を読み取る前に、<xref:System.Collections.IEnumerator.Current%2A> を呼び出して列挙子をコレクションの最初の要素に進める必要があります。  
+  
+ <xref:System.Collections.IEnumerator.Current%2A> は、<xref:System.Collections.IEnumerator.MoveNext%2A> または <xref:System.Collections.IEnumerator.Reset%2A> が呼び出されるまでは同じオブジェクトを返します。 <xref:System.Collections.IEnumerator.MoveNext%2A> は、<xref:System.Collections.IEnumerator.Current%2A> を次の要素に設定します。  
+  
+ 場合<xref:System.Collections.IEnumerator.MoveNext%2A>列挙子をコレクションの末尾が、コレクション内の最後の要素の後に配置されているパスと<xref:System.Collections.IEnumerator.MoveNext%2A>返します`false`です。 列挙子がこの位置では、後続の呼び出しの場合<xref:System.Collections.IEnumerator.MoveNext%2A>を返すことも`false`します。 最後の呼び出し場合<xref:System.Collections.IEnumerator.MoveNext%2A>返される`false`、<xref:System.Collections.IEnumerator.Current%2A>が定義されていません。 <xref:System.Collections.IEnumerator.Current%2A> をコレクションの最初の要素にもう一度設定するには、<xref:System.Collections.IEnumerator.Reset%2A> を呼び出してから <xref:System.Collections.IEnumerator.MoveNext%2A> を呼び出します。  
+  
+ コレクションが変更されない限り、列挙子は有効です。 コレクションに対して変更 (要素の追加、変更、削除など) が行われると、列挙子は回復不可能な無効状態になり、その動作は未定義になります。  
+  
+ 列挙子にはコレクションへの排他アクセス権限はないため、コレクションの列挙処理は本質的にスレッド セーフな処理ではありません。  列挙処理でスレッド セーフを確保するには、列挙処理が終わるまでコレクションをロックできます。  コレクションに対し複数のスレッドがアクセスして読み取りや書き込みを行うことができるようにするには、独自に同期化を実装する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、簡単な実装を示します<xref:System.Collections.Specialized.IOrderedDictionary>に基づいて、<xref:System.Collections.ArrayList>クラスです。 実装された<xref:System.Collections.Specialized.IOrderedDictionary>値、それぞれの名が一意である追加の要件として、キーと姓と名前を格納します。 このコードに示されている例のコードの一部である、<xref:System.Collections.Specialized.IOrderedDictionary>クラスです。  
+  
+ [!code-cpp[System.Collections.Specialized.IOrderedDictionary_Implementation#01](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.IOrderedDictionary_Implementation/cpp/iordereddictionary.cpp#01)]
+ [!code-csharp[System.Collections.Specialized.IOrderedDictionary_Implementation#01](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.IOrderedDictionary_Implementation/cs/iordereddictionary.cs#01)]
+ [!code-vb[System.Collections.Specialized.IOrderedDictionary_Implementation#01](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.IOrderedDictionary_Implementation/vb/iordereddictionary.vb#01)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, object key, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Insert(int32 index, object key, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.IOrderedDictionary.Insert(System.Int32,System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="key" Type="System.Object" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">キーと値のペアを挿入する位置の、0 から始まるインデックス。</param>
+        <param name="key">追加する要素のキーとして使用するオブジェクト。</param>
+        <param name="value">追加する要素の値として使用するオブジェクト。  値として <see langword="null" /> を指定できます。</param>
+        <summary>コレクション内の指定したインデックス位置に、キーと値のペアを挿入します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Specialized.IOrderedDictionary>受け付ける`null`有効な値としてでき、重複する要素。  
+  
+ 場合、`index`パラメーターと等しい<xref:System.Collections.ICollection.Count%2A>、`value`パラメーターがの末尾に追加された、<xref:System.Collections.Specialized.IOrderedDictionary>コレクション。  
+  
+ リストなどの連続する要素のコレクションでは、新しい要素を挿入するために、挿入位置より後にある要素の位置が繰り下げられます。 コレクションにインデックスがある場合、移動した要素のインデックスも更新されます。 この動作は、ここで要素が概念的にグループ化されたハッシュ テーブルなどのコレクションには適用されません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、簡単な実装を示します<xref:System.Collections.Specialized.IOrderedDictionary>に基づいて、<xref:System.Collections.ArrayList>クラスです。 実装された<xref:System.Collections.Specialized.IOrderedDictionary>値、それぞれの名が一意である追加の要件として、キーと姓と名前を格納します。 このコードに示されている例のコードの一部である、<xref:System.Collections.Specialized.IOrderedDictionary>クラスです。  
+  
+ [!code-cpp[System.Collections.Specialized.IOrderedDictionary_Implementation#01](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.IOrderedDictionary_Implementation/cpp/iordereddictionary.cpp#01)]
+ [!code-csharp[System.Collections.Specialized.IOrderedDictionary_Implementation#01](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.IOrderedDictionary_Implementation/cs/iordereddictionary.cs#01)]
+ [!code-vb[System.Collections.Specialized.IOrderedDictionary_Implementation#01](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.IOrderedDictionary_Implementation/vb/iordereddictionary.vb#01)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="index" /> が <see cref="P:System.Collections.ICollection.Count" /> より大きくなっています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">同じキーを持つ要素は既に、<see cref="T:System.Collections.Specialized.IOrderedDictionary" />コレクション。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.Specialized.IOrderedDictionary" />コレクションは読み取り専用です。  
+  
+ または  
+  
+ <see cref="T:System.Collections.Specialized.IOrderedDictionary" />コレクションが固定サイズです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Specialized.IOrderedDictionary.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得または設定する要素の、0 から始まるインデックス番号。</param>
+        <summary>指定したインデックスにある要素を取得または設定します。</summary>
+        <value>指定したインデックス位置にある要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Specialized.IOrderedDictionary>受け付ける`null`有効な値としてでき、重複する要素。  
+  
+ C# 言語キーワードを使用して実装する代わりに、インデクサーの定義、<xref:System.Collections.Specialized.IOrderedDictionary.Item%2A>プロパティです。 Visual Basic は、<xref:System.Collections.Specialized.IOrderedDictionary.Item%2A> を既定のプロパティとして実装しており、同様のインデックス機能を提供します。  
+  
+ このプロパティでは、次の構文を使用して、コレクション内の特定の要素にアクセスすることができます。  
+  
+ [!code-cpp[System.Collections.Specialized.IOrderedDictionary_Implementation#04](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.IOrderedDictionary_Implementation/cpp/remarks.cpp#04)]
+ [!code-csharp[System.Collections.Specialized.IOrderedDictionary_Implementation#04](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.IOrderedDictionary_Implementation/cs/remarks.cs#04)]
+ [!code-vb[System.Collections.Specialized.IOrderedDictionary_Implementation#04](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.IOrderedDictionary_Implementation/vb/remarks.vb#04)]  
+  
+   
+  
+## Examples  
+ 次のコード例は、簡単な実装を示します<xref:System.Collections.Specialized.IOrderedDictionary>に基づいて、<xref:System.Collections.ArrayList>クラスです。 実装された<xref:System.Collections.Specialized.IOrderedDictionary>値、それぞれの名が一意である追加の要件として、キーと姓と名前を格納します。 このコードに示されている例のコードの一部である、<xref:System.Collections.Specialized.IOrderedDictionary>クラスです。  
+  
+ [!code-cpp[System.Collections.Specialized.IOrderedDictionary_Implementation#01](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.IOrderedDictionary_Implementation/cpp/iordereddictionary.cpp#01)]
+ [!code-csharp[System.Collections.Specialized.IOrderedDictionary_Implementation#01](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.IOrderedDictionary_Implementation/cs/iordereddictionary.cs#01)]
+ [!code-vb[System.Collections.Specialized.IOrderedDictionary_Implementation#01](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.IOrderedDictionary_Implementation/vb/iordereddictionary.vb#01)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="index" /> が <see cref="P:System.Collections.ICollection.Count" /> 以上になっています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.IOrderedDictionary.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除する要素の 0 から始まるインデックス。</param>
+        <summary>指定したインデックス位置にある要素を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リストなどの連続する要素のコレクションでは、空白になった位置を埋めるために、削除された要素の後にある要素の位置が繰り上げられます。 コレクションにインデックスがある場合、移動した要素のインデックスも更新されます。 この動作は、ここで要素が概念的にグループ化されたハッシュ テーブルなどのコレクションには適用されません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、簡単な実装を示します<xref:System.Collections.Specialized.IOrderedDictionary>に基づいて、<xref:System.Collections.ArrayList>クラスです。 実装された<xref:System.Collections.Specialized.IOrderedDictionary>値、それぞれの名が一意である追加の要件として、キーと姓と名前を格納します。 このコードに示されている例のコードの一部である、<xref:System.Collections.Specialized.IOrderedDictionary>クラスです。  
+  
+ [!code-cpp[System.Collections.Specialized.IOrderedDictionary_Implementation#01](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.IOrderedDictionary_Implementation/cpp/iordereddictionary.cpp#01)]
+ [!code-csharp[System.Collections.Specialized.IOrderedDictionary_Implementation#01](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.IOrderedDictionary_Implementation/cs/iordereddictionary.cs#01)]
+ [!code-vb[System.Collections.Specialized.IOrderedDictionary_Implementation#01](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.IOrderedDictionary_Implementation/vb/iordereddictionary.vb#01)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="index" /> が <see cref="P:System.Collections.ICollection.Count" /> 以上になっています。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.Specialized.IOrderedDictionary" />コレクションは読み取り専用です。  
+  
+ または  
+  
+ <see cref="T:System.Collections.Specialized.IOrderedDictionary" />コレクションが固定サイズです。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

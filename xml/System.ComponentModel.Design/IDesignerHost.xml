@@ -1,0 +1,817 @@
+<Type Name="IDesignerHost" FullName="System.ComponentModel.Design.IDesignerHost">
+  <TypeSignature Language="C#" Value="public interface IDesignerHost : IServiceProvider, System.ComponentModel.Design.IServiceContainer" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDesignerHost implements class System.ComponentModel.Design.IServiceContainer, class System.IServiceProvider" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.IDesignerHost" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.Design.IServiceContainer</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IServiceProvider</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>デザイナーのトランザクションおよびコンポーネントを管理するためのインターフェイスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.IDesignerHost>コンポーネントの管理、およびデザイナー トランザクションのサポートを提供する .NET Framework のフォーム デザイナーのアーキテクチャで動作するインターフェイス。  
+  
+ .NET Framework では、このインターフェイスの実装は提供されません。 インターフェイスは、デザイナーをサポートする開発ツールによって実装されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を取得する方法を示しています、<xref:System.ComponentModel.Design.IDesignerHost>デザイナーまたは配置のコンポーネントからサービス インターフェイスです。  
+  
+ [!code-cpp[DesignerHostAcquisition#1](~/samples/snippets/cpp/VS_Snippets_Winforms/DesignerHostAcquisition/CPP/source.cpp#1)]
+ [!code-csharp[DesignerHostAcquisition#1](~/samples/snippets/csharp/VS_Snippets_Winforms/DesignerHostAcquisition/CS/source.cs#1)]
+ [!code-vb[DesignerHostAcquisition#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/DesignerHostAcquisition/VB/source.vb#1)]  
+  
+ 次のコード例では、使用方法を示します、<xref:System.ComponentModel.Design.IDesignerHost>プロジェクト コンポーネントの一覧へのインターフェイスです。  
+  
+ [!code-cpp[IDesignerHostExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/IDesignerHostExample/CPP/idesignerhostexample.cpp#1)]
+ [!code-csharp[IDesignerHostExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/IDesignerHostExample/CS/idesignerhostexample.cs#1)]
+ [!code-vb[IDesignerHostExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IDesignerHostExample/VB/idesignerhostexample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="usage">
+      <para>実装を取得する<see cref="T:System.ComponentModel.Design.IDesignerHost" />、開発環境から呼び出す<see cref="M:System.ComponentModel.Component.GetService(System.Type)" />コンポーネントがデザイン モードでアクティブな間は、型を渡します<see cref="T:System.ComponentModel.Design.IDesignerHost" />要求に、<see cref="T:System.ComponentModel.Design.IDesignerHost" />サービス インターフェイスです。  
+  
+ <see cref="T:System.ComponentModel.Design.IDesignerHost" />デザイナーの状態に関連する次のメンバーを提供します。  
+  
+-   <see cref="P:System.ComponentModel.Design.IDesignerHost.Loading" />プロパティは、デザイナーまたはドキュメントが読み込まれるかどうかを示します。  
+  
+-   <see cref="E:System.ComponentModel.Design.IDesignerHost.Activated" />イベントは、デザイナーが表示される前にアクティブになったときに発生します。  
+  
+-   <see cref="E:System.ComponentModel.Design.IDesignerHost.Deactivated" />イベント デザイナーが非アクティブ化されたときに発生します。  
+  
+-   <see cref="E:System.ComponentModel.Design.IDesignerHost.LoadComplete" />イベントは、ドキュメントが読み込まれた後に発生します。  
+  
+-   <see cref="M:System.ComponentModel.Design.IDesignerHost.Activate" />メソッドには、デザイナーがアクティブにします。  
+  
+ <see cref="T:System.ComponentModel.Design.IDesignerHost" />コンポーネントの管理に関連する次のメンバーを提供します。  
+  
+-   <see cref="P:System.ComponentModel.Design.IDesignerHost.Container" />プロパティは、デザイナー ホストのコンテナーを示します。  
+  
+-   <see cref="P:System.ComponentModel.Design.IDesignerHost.RootComponent" />プロパティはルート コンポーネントの基本クラスを示します。  
+  
+-   <see cref="P:System.ComponentModel.Design.IDesignerHost.RootComponentClassName" />プロパティ ルート コンポーネントのクラスの名前を示します。  
+  
+-   <see cref="M:System.ComponentModel.Design.IDesignerHost.CreateComponent(System.Type)" />メソッドは、指定した型のコンポーネントを作成します。  
+  
+-   <see cref="M:System.ComponentModel.Design.IDesignerHost.DestroyComponent(System.ComponentModel.IComponent)" />メソッドは、指定されたコンポーネントを破棄します。  
+  
+-   <see cref="M:System.ComponentModel.Design.IDesignerHost.GetDesigner(System.ComponentModel.IComponent)" />メソッドは、指定されたコンポーネントに関連付けられたデザイナーを取得します。  
+  
+-   <see cref="M:System.ComponentModel.Design.IDesignerHost.GetType(System.String)" />メソッドは、指定した名前の型のインスタンスを取得します。  
+  
+ <see cref="T:System.ComponentModel.Design.IDesignerHost" />トランザクションの管理に関連する次のメンバーを提供します。  
+  
+-   <see cref="P:System.ComponentModel.Design.IDesignerHost.InTransaction" />プロパティは、トランザクションでは、デザイナーがあるかどうかを示します。  
+  
+-   <see cref="P:System.ComponentModel.Design.IDesignerHost.TransactionDescription" />プロパティは現在のトランザクションの説明を示します。  
+  
+-   <see cref="E:System.ComponentModel.Design.IDesignerHost.TransactionClosed" />イベント トランザクションが完了したときに発生します。  
+  
+-   <see cref="E:System.ComponentModel.Design.IDesignerHost.TransactionClosing" />イベント トランザクションが完了するときに発生します。  
+  
+-   <see cref="E:System.ComponentModel.Design.IDesignerHost.TransactionOpened" />イベント トランザクションが開始されたときに発生します。  
+  
+-   <see cref="E:System.ComponentModel.Design.IDesignerHost.TransactionOpening" />イベント トランザクションが開始するときに発生します。  
+  
+-   <see cref="M:System.ComponentModel.Design.IDesignerHost.CreateTransaction" />メソッドを作成し、新しいトランザクションを返します。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="Activate">
+      <MemberSignature Language="C#" Value="public void Activate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Activate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IDesignerHost.Activate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このホストをホストしているデザイナーをアクティブにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー インターフェイスを表示する前に、デザイナーをアクティブにする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Activated">
+      <MemberSignature Language="C#" Value="public event EventHandler Activated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Activated" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.Design.IDesignerHost.Activated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このデザイナーがアクティブになったときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 表示されるまで、デザイナーがアクティブになります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Container">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.IContainer Container { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.IContainer Container" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.IDesignerHost.Container" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.IContainer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このデザイナーのホストのコンテナーを取得します。</summary>
+        <value><see cref="T:System.ComponentModel.IContainer" />このホストのです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、<xref:System.ComponentModel.IContainer>デザイン モードの現在のドキュメントのコンポーネントが含まれます。 ボックスの一覧、を通じて現在のデザイン モードのドキュメントのコンポーネントのいずれかにアクセスしたりすることができます、<xref:System.ComponentModel.IContainer.Components%2A>このメンバー<xref:System.ComponentModel.IContainer>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateComponent">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.IComponent CreateComponent (Type componentClass);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.IComponent CreateComponent(class System.Type componentClass) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IDesignerHost.CreateComponent(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.IComponent</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="componentClass" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="componentClass">作成するコンポーネントの型。</param>
+        <summary>指定した型のコンポーネントを作成し、設計ドキュメントに追加します。</summary>
+        <returns>新しく作成されたコンポーネント。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装するオブジェクトに型を解決できないかどうか<xref:System.ComponentModel.IComponent>例外がスローされます。  
+  
+ このメソッドは、コンポーネントの名前を指定しません。 メソッドは、コンポーネントを作成し、デザイナーのコンテナーに追加します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateComponent">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.IComponent CreateComponent (Type componentClass, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.IComponent CreateComponent(class System.Type componentClass, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IDesignerHost.CreateComponent(System.Type,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.IComponent</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="componentClass" Type="System.Type" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="componentClass">作成するコンポーネントの型。</param>
+        <param name="name">コンポーネントの名前です。</param>
+        <summary>名前と指定した型のコンポーネントを作成し、設計ドキュメントに追加します。</summary>
+        <returns>新しく作成されたコンポーネント。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装するオブジェクトに型を解決できないかどうか<xref:System.ComponentModel.IComponent>例外がスローされます。  
+  
+ このメソッドは、コンポーネントを作成し、デザイナーのコンテナーに追加します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateTransaction">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Design.DesignerTransaction CreateTransaction ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.Design.DesignerTransaction CreateTransaction() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IDesignerHost.CreateTransaction" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignerTransaction</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成、<see cref="T:System.ComponentModel.Design.DesignerTransaction" />イベント シーケンス パフォーマンスを改善し、元に戻すを有効にしてやり直しのサポート機能をカプセル化したことができます。</summary>
+        <returns><see cref="T:System.ComponentModel.Design.DesignerTransaction" /> の新しいインスタンス。 トランザクションでの手順を完了したときに呼び出す必要は<see cref="M:System.ComponentModel.Design.DesignerTransaction.Commit" />このオブジェクトにします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを作成、<xref:System.ComponentModel.Design.DesignerTransaction>一連の操作をカプセル化に使用できます。 デザイナーのトランザクションでは、パフォーマンスを向上させる、操作の処理中に複数の更新プログラムによるちらつきを軽減、およびほとんどの操作を元に戻すを有効にすることができます。  
+  
+ 複数のコンポーネントに関連する時間のかかる操作では、多くのイベントを発生させることができます。 これらのイベントはちらつきを調整するなどの副作用が発生することができます。 またはパフォーマンスが低下します。 複数のコンポーネントを同時に操作または 1 つのコンポーネントの複数のプロパティを設定するとき、は、トランザクション内でこれらの変更を実行することによってパフォーマンスを向上できます。 一部の操作を処理、<xref:System.ComponentModel.Design.IDesignerHost.TransactionOpening>と<xref:System.ComponentModel.Design.IDesignerHost.TransactionClosed>イベントと、トランザクションが実行されていない場合にのみ、作業を実行します。 トランザクションの使用に関する詳細については、ドキュメントを参照して<xref:System.ComponentModel.Design.DesignerTransaction>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateTransaction">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Design.DesignerTransaction CreateTransaction (string description);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.Design.DesignerTransaction CreateTransaction(string description) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IDesignerHost.CreateTransaction(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignerTransaction</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="description" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="description">タイトルまたは新しく作成されたトランザクションの説明。</param>
+        <summary>作成、<see cref="T:System.ComponentModel.Design.DesignerTransaction" />パフォーマンスが向上し、元に戻すを有効にし、指定されたトランザクションの説明を使用して、サポート機能を再実行するイベントのシーケンスをカプセル化したことができます。</summary>
+        <returns>新しい <see cref="T:System.ComponentModel.Design.DesignerTransaction" />。 呼び出す必要があります、トランザクションでの手順を完了すると<see cref="M:System.ComponentModel.Design.DesignerTransaction.Commit" />このオブジェクトにします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを作成、<xref:System.ComponentModel.Design.DesignerTransaction>一連の操作をカプセル化に使用できます。 デザイナーのトランザクションでは、パフォーマンスを向上させる、操作の処理中に複数の更新プログラムによるちらつきを軽減、およびほとんどの操作を元に戻すを有効にすることができます。  
+  
+ 複数のコンポーネントに関連する時間のかかる操作では、多くのイベントを発生させることができます。 これらのイベントはちらつきを調整するなどの副作用が発生することができます。 またはパフォーマンスが低下します。 複数のコンポーネントを同時に操作または 1 つのコンポーネントの複数のプロパティを設定するとき、は、トランザクション内でこれらの変更を実行することによってパフォーマンスを向上できます。 一部の操作を処理、<xref:System.ComponentModel.Design.IDesignerHost.TransactionOpening>と<xref:System.ComponentModel.Design.IDesignerHost.TransactionClosed>イベントと、トランザクションが実行されていない場合にのみ、作業を実行します。 トランザクションの使用に関する詳細については、ドキュメントを参照して<xref:System.ComponentModel.Design.DesignerTransaction>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Deactivated">
+      <MemberSignature Language="C#" Value="public event EventHandler Deactivated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Deactivated" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.Design.IDesignerHost.Deactivated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このデザイナーがアクティブでなくなったときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナーが表示されなくなりますが、直前には、無効になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DestroyComponent">
+      <MemberSignature Language="C#" Value="public void DestroyComponent (System.ComponentModel.IComponent component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DestroyComponent(class System.ComponentModel.IComponent component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IDesignerHost.DestroyComponent(System.ComponentModel.IComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="component">破棄するコンポーネント。</param>
+        <summary>指定したコンポーネントを破棄し、デザイナーのコンテナーから削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesigner">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Design.IDesigner GetDesigner (System.ComponentModel.IComponent component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.Design.IDesigner GetDesigner(class System.ComponentModel.IComponent component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IDesignerHost.GetDesigner(System.ComponentModel.IComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.IDesigner</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="component"><see cref="T:System.ComponentModel.IComponent" />のデザイナーを取得します。</param>
+        <summary>指定したコンポーネントを含むデザイナーのインスタンスを取得します。</summary>
+        <returns><see cref="T:System.ComponentModel.Design.IDesigner" />、または<see langword="null" />場合は、指定したコンポーネントのデザイナーはありません。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetType">
+      <MemberSignature Language="C#" Value="public Type GetType (string typeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Type GetType(string typeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IDesignerHost.GetType(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="typeName">読み込む型の名前。</param>
+        <summary>指定すると、完全修飾型名のインスタンスを取得します。</summary>
+        <returns>指定された型名の型のオブジェクトまたは<see langword="null" />型が見つからない場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InTransaction">
+      <MemberSignature Language="C#" Value="public bool InTransaction { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool InTransaction" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.IDesignerHost.InTransaction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナー ホストが現在トランザクションであるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />トランザクションが実行中である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadComplete">
+      <MemberSignature Language="C#" Value="public event EventHandler LoadComplete;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler LoadComplete" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.Design.IDesignerHost.LoadComplete" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このデザイナーは、ドキュメントの読み込みが完了したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントは、デザイナーでは、ドキュメントの読み込みが完了した後に発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Loading">
+      <MemberSignature Language="C#" Value="public bool Loading { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Loading" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.IDesignerHost.Loading" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーのホストが現在のドキュメントを読み込んでいるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />デザイナー ホストが現在のドキュメントを読み込んでいる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RootComponent">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.IComponent RootComponent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.IComponent RootComponent" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.IDesignerHost.RootComponent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.IComponent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のデザインのルート コンポーネントとして使用される基本クラスのインスタンスを取得します。</summary>
+        <value>ルート コンポーネント クラスのインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この基本クラスは、通常、<xref:System.Windows.Forms.Form>または<xref:System.Windows.Forms.UserControl>インスタンスです。 ユーザーの派生クラスを拡張するクラスを定義します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RootComponentClassName">
+      <MemberSignature Language="C#" Value="public string RootComponentClassName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RootComponentClassName" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.IDesignerHost.RootComponentClassName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ように設計されているクラスの完全修飾名を取得します。</summary>
+        <value>コンポーネントの基本クラスの完全修飾名。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransactionClosed">
+      <MemberSignature Language="C#" Value="public event System.ComponentModel.Design.DesignerTransactionCloseEventHandler TransactionClosed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.Design.DesignerTransactionCloseEventHandler TransactionClosed" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.Design.IDesignerHost.TransactionClosed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignerTransactionCloseEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベント ハンドラーを追加、<see cref="E:System.ComponentModel.Design.IDesignerHost.TransactionClosed" />イベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントは、トランザクションが閉じられた後に発生します。  
+  
+ トランザクションでは、複数の値を変更ことができる場合があります。 トランザクション メソッドでは、パフォーマンスを回避し、ちらつきの反復処理を回避することで問題をする方法を提供します。 これらのメソッドは、トランザクションが終了するまで処理を延期します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransactionClosing">
+      <MemberSignature Language="C#" Value="public event System.ComponentModel.Design.DesignerTransactionCloseEventHandler TransactionClosing;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.Design.DesignerTransactionCloseEventHandler TransactionClosing" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.Design.IDesignerHost.TransactionClosing" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignerTransactionCloseEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベント ハンドラーを追加、<see cref="E:System.ComponentModel.Design.IDesignerHost.TransactionClosing" />イベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントは、トランザクションが完了する前に発生します。  
+  
+ トランザクションでは、複数の値を変更ことができる場合があります。 トランザクション メソッドでは、パフォーマンスを回避し、ちらつきの反復処理を回避することで問題をする方法を提供します。 これらのメソッドは、トランザクションが終了するまで処理を延期します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransactionDescription">
+      <MemberSignature Language="C#" Value="public string TransactionDescription { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TransactionDescription" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.IDesignerHost.TransactionDescription" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のトランザクションの説明を取得します。</summary>
+        <value>現在のトランザクションの説明です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 説明で指定された最後の説明は、<xref:System.ComponentModel.Design.IDesignerHost.CreateTransaction%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransactionOpened">
+      <MemberSignature Language="C#" Value="public event EventHandler TransactionOpened;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler TransactionOpened" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.Design.IDesignerHost.TransactionOpened" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベント ハンドラーを追加、<see cref="E:System.ComponentModel.Design.IDesignerHost.TransactionOpened" />イベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントは、トランザクションが開始されたときに発生します。  
+  
+ トランザクションでは、複数の値を変更ことができる場合があります。 トランザクション メソッドでは、パフォーマンスを回避し、ちらつきの反復処理を回避することで問題をする方法を提供します。 これらのメソッドは、トランザクションが終了するまで処理を延期します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransactionOpening">
+      <MemberSignature Language="C#" Value="public event EventHandler TransactionOpening;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler TransactionOpening" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.Design.IDesignerHost.TransactionOpening" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベント ハンドラーを追加、<see cref="E:System.ComponentModel.Design.IDesignerHost.TransactionOpening" />イベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントは、トランザクションが開始するときに発生します。  
+  
+ このメソッドは、他のハンドラーが、トランザクションが開始したことを通知する前に、操作を実行するクライアントはデザイナー ホストをできます。 のみと、最初の呼び出しは、指定されたハンドラーが呼び出されます<xref:System.ComponentModel.Design.IDesignerHost.CreateTransaction%2A>が行われます。 後続の呼び出しでは、すべてのトランザクション オブジェクトが破棄されるまでは、このイベントは生成されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

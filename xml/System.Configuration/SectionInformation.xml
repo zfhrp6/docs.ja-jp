@@ -1,0 +1,1206 @@
+<Type Name="SectionInformation" FullName="System.Configuration.SectionInformation">
+  <TypeSignature Language="C#" Value="public sealed class SectionInformation" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SectionInformation extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.SectionInformation" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>構成階層内の個々 のセクションに関するメタデータが含まれています。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.SectionInformation>オブジェクトには、構成階層内の個々 のセクションに関するメタデータが含まれています。 このオブジェクトは、検証し、個々 のセクションのプロパティを変更するために使用できます。  
+  
+   
+  
+## Examples  
+ 次の例は、取得する方法を示します、<xref:System.Configuration.SectionInformation>に関連付けられているメタデータ、<xref:System.Configuration.ConfigurationSection>オブジェクト。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#91](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/SectionInforrmation.cs#91)]
+ [!code-vb[System.Configuration.ConfigurationElement#91](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/SectionInforrmation.vb#91)]  
+  
+ 次の例は、前の例で使用される構成ファイルの抜粋です。  
+  
+```  
+<?xml version="1.0" encoding="utf-8"?>  
+<configuration>  
+  <configSections>  
+    <section name="MyUrls" type="Samples.AspNet.UrlsSection,  
+      ConfigurationElement, Version=1.0.0.0, Culture=neutral,  
+      PublicKeyToken=null" allowDefinition="Everywhere"  
+      allowExeDefinition="MachineToApplication"  
+      restartOnExternalChanges="true" />  
+  </configSections>  
+  <MyUrls name="MyFavorites">  
+    <simple name="Contoso" url="http://www.contoso.com" port="8080" />  
+    <urls>  
+      <clear />  
+      <add name="Microsoft" url="http://www.microsoft.com" port="0" />  
+    </urls>  
+  </MyUrls>  
+</configuration>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AllowDefinition">
+      <MemberSignature Language="C#" Value="public System.Configuration.ConfigurationAllowDefinition AllowDefinition { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Configuration.ConfigurationAllowDefinition AllowDefinition" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SectionInformation.AllowDefinition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationAllowDefinition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または構成ファイル階層内の関連する構成セクションを定義できる位置を示す値を設定します。</summary>
+        <value>構成の場所を示す値を指定するファイルの階層は、関連付けられている<see cref="T:System.Configuration.ConfigurationSection" />オブジェクトを宣言することができます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.SectionInformation.AllowDefinition%2A>Web アプリケーションの構成ファイルにのみ適用されます。 クライアント アプリケーションで使用する必要があります<xref:System.Configuration.SectionInformation.AllowExeDefinition%2A>です。  
+  
+   
+  
+## Examples  
+ このセクションの例を取得する方法を示して、<xref:System.Configuration.SectionInformation.AllowDefinition%2A>構成ファイルに関連するセクションの情報にアクセスした後、プロパティの値。  
+  
+ 次の例の取得、<xref:System.Configuration.SectionInformation>オブジェクト。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#95](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/SectionInforrmation.cs#95)]
+ [!code-vb[System.Configuration.ConfigurationElement#95](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/SectionInforrmation.vb#95)]  
+  
+ 次の例の取得、<xref:System.Configuration.SectionInformation.AllowDefinition%2A>値。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#96](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/SectionInforrmation.cs#96)]
+ [!code-vb[System.Configuration.ConfigurationElement#96](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/SectionInforrmation.vb#96)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">選択した値が既に定義されている値と競合しています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowExeDefinition">
+      <MemberSignature Language="C#" Value="public System.Configuration.ConfigurationAllowExeDefinition AllowExeDefinition { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Configuration.ConfigurationAllowExeDefinition AllowExeDefinition" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SectionInformation.AllowExeDefinition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationAllowExeDefinition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または構成ファイル階層内の関連する構成セクションを宣言できる位置を示す値を設定します。</summary>
+        <value>構成の場所を示す値を指定するファイルの階層は、関連付けられている<see cref="T:System.Configuration.ConfigurationSection" />.exe ファイルのオブジェクトを宣言することができます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.SectionInformation.AllowExeDefinition%2A>クライアント アプリケーションの構成ファイルにのみ適用されます。 Web アプリケーションで使用する必要があります<xref:System.Configuration.SectionInformation.AllowDefinition%2A>です。  
+  
+   
+  
+## Examples  
+ このセクションの例を取得する方法を示して、<xref:System.Configuration.SectionInformation.AllowExeDefinition%2A>構成ファイルに関連するセクションの情報にアクセスした後、プロパティの値。  
+  
+ 次の例の取得、<xref:System.Configuration.SectionInformation>オブジェクト。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#95](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/SectionInforrmation.cs#95)]
+ [!code-vb[System.Configuration.ConfigurationElement#95](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/SectionInforrmation.vb#95)]  
+  
+ 次の例の取得、<xref:System.Configuration.SectionInformation.AllowExeDefinition%2A>値。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#97](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/SectionInforrmation.cs#97)]
+ [!code-vb[System.Configuration.ConfigurationElement#97](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/SectionInforrmation.vb#97)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">選択した値が既に定義されている値と競合しています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowLocation">
+      <MemberSignature Language="C#" Value="public bool AllowLocation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowLocation" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SectionInformation.AllowLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を構成セクションが使用できるかどうかを示す値、<see langword="location" />属性。</summary>
+        <value>
+          <see langword="true" />場合、<see langword="location" />属性は許可されている、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定すると`false`、<xref:System.Configuration.SectionInformation.AllowLocation%2A>プロパティは、ネイティブ コード リーダーによって、セクションにアクセスすることを示します。 そのため、使用する、`location`属性は使用できません、ネイティブ コード リーダーの概念をサポートしていないため`location`です。  
+  
+   
+  
+## Examples  
+ このセクションの例を取得する方法を示して、<xref:System.Configuration.SectionInformation.AllowLocation%2A>構成ファイルに関連するセクションの情報にアクセスした後、プロパティの値。  
+  
+ 次の例の取得、<xref:System.Configuration.SectionInformation>オブジェクト。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#95](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/SectionInforrmation.cs#95)]
+ [!code-vb[System.Configuration.ConfigurationElement#95](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/SectionInforrmation.vb#95)]  
+  
+ 次の例の取得、<xref:System.Configuration.SectionInformation.AllowLocation%2A>値。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#98](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/SectionInforrmation.cs#98)]
+ [!code-vb[System.Configuration.ConfigurationElement#98](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/SectionInforrmation.vb#98)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">選択した値が既に定義されている値と競合しています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowOverride">
+      <MemberSignature Language="C#" Value="public bool AllowOverride { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowOverride" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SectionInformation.AllowOverride" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または下位レベルの構成ファイルで関連する構成セクションをオーバーライドできるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、セクションをオーバーライドできます。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ このセクションの例を取得する方法を示して、<xref:System.Configuration.SectionInformation.AllowOverride%2A>構成ファイルに関連するセクションの情報にアクセスした後、プロパティの値。  
+  
+ 次の例の取得、<xref:System.Configuration.SectionInformation>オブジェクト。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#95](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/SectionInforrmation.cs#95)]
+ [!code-vb[System.Configuration.ConfigurationElement#95](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/SectionInforrmation.vb#95)]  
+  
+ 次の例の取得、<xref:System.Configuration.SectionInformation.AllowOverride%2A>値。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#99](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/SectionInforrmation.cs#99)]
+ [!code-vb[System.Configuration.ConfigurationElement#99](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/SectionInforrmation.vb#99)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConfigSource">
+      <MemberSignature Language="C#" Value="public string ConfigSource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConfigSource" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SectionInformation.ConfigSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、このようなファイルが存在する場合は、関連する構成セクションが定義されているインクルード ファイルの名前を設定します。</summary>
+        <value>インクルード ファイルの名前、関連付けられている<see cref="T:System.Configuration.ConfigurationSection" />が定義されている場合は、このようなファイルが存在する場合それ以外の場合、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.SectionInformation.ConfigSource%2A>プロパティの値を表す、`configSource`属性に対して指定されている、<xref:System.Configuration.ConfigurationSection>オブジェクトに関連付けられている、<xref:System.Configuration.SectionInformation>オブジェクト。  
+  
+ A<xref:System.Configuration.ConfigurationSection>実装は、そのセクションの構成設定が定義されている別のファイルを必要に応じて指定できます。 これは、複数の方法で役立ちます。  
+  
+-   インクルード ファイルを使用する構成ファイルのより論理的でモジュール式の構造になります。  
+  
+-   ファイル アクセスのセキュリティとアクセス許可は構成設定のセクションへのアクセスを制限するために使用できます。  
+  
+-   インクルード ファイル内のアプリケーションの初期化中に使用されていない設定を変更して、アプリケーションの再起動を必要とせずに再読み込みできます。  
+  
+ 次の例は、ことを指定する構成ファイルでこの属性が使用される方法を示しています、`pages`セクションは、外部のインクルード ファイルに定義します。  
+  
+ `<pages configSource="pages.config"/>`  
+  
+ インクルード ファイルの構成で設定のいずれかのアプリケーション、変更されるときに再起動する必要があります設定、<xref:System.Configuration.SectionInformation.RestartOnExternalChanges%2A>プロパティを`true`です。  
+  
+ ASP.NET アプリケーションで、実行時に割り当てることができます、<xref:System.Configuration.SectionInformation.ConfigSource%2A>プロパティ、代替の構成ファイルの名前。 その場合は、ファイルの内容は、Web.config ファイルに含まれている既定の接続文字列情報で上書きされます。 別のファイルが存在しないため、実行時に作成されるときにも発生します。 Web.config ファイルに任意の接続文字列情報が含まれていない場合、空のセクションが別のファイルに追加されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="ForceDeclaration">
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>構成ファイルに表示される関連する構成セクションを強制します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 親のファイルから継承されている場合、構成セクションは構成ファイルに書き込まれません。 設定する必要があります、子の構成ファイルに表示する親セクションを設定する場合、<xref:System.Configuration.SectionInformation.ForceDeclaration%2A>に`true`です。 これにより、構成ファイルを移植性の高い 1 台のコンピューターからにします。 これにより、セクションが場合でも、親の構成ファイルを制御することはありませんが存在するかどうかを確認できますも。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="ForceDeclaration">
+      <MemberSignature Language="C#" Value="public void ForceDeclaration ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ForceDeclaration() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.SectionInformation.ForceDeclaration" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>構成ファイルに表示される関連する構成セクションを強制します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.SectionInformation.ForceDeclaration%2A>メソッドは、この<xref:System.Configuration.SectionInformation>構成ファイルに書き込まれる宣言します。  
+  
+> [!NOTE]
+>  <xref:System.Configuration.SectionInformation.ForceDeclaration%2A>メソッドが強制できます、<xref:System.Configuration.SectionInformation>親ファイルで既に宣言されているため、セクションに必要ない場合でも、構成ファイルに書き込まれる宣言します。 使用して、<xref:System.Configuration.SectionInformation.ForceDeclaration%2A>メソッドは、移植性を高める 1 台のコンピューターから別のファイル構成を行うことができます。 セクションにもないが親構成ファイルを制御が存在するかどうかを確認することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForceDeclaration">
+      <MemberSignature Language="C#" Value="public void ForceDeclaration (bool require);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ForceDeclaration(bool require) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.SectionInformation.ForceDeclaration(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="force" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="require">To be added.</param>
+        <summary>構成ファイルに表示される関連する構成セクションを強制的にまたは構成ファイルから既存のセクションを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.SectionInformation.ForceDeclaration%2A>メソッドは、この<xref:System.Configuration.SectionInformation>場合に、構成ファイルに書き込まれる宣言`force`は`true`します。 場合`force`は`false`場合、この操作を無視する場合があります、<xref:System.Configuration.SectionInformation>システムによって宣言が必要です。  
+  
+> [!NOTE]
+>  <xref:System.Configuration.SectionInformation.ForceDeclaration%2A>メソッドが強制できます、<xref:System.Configuration.SectionInformation>場合でも、このセクションでは不要な親ファイルで既に宣言されているため、構成ファイルに書き込まれる宣言します。 使用して、<xref:System.Configuration.SectionInformation.ForceDeclaration%2A>メソッドは、移植性を高める 1 台のコンピューターから別のファイル構成を行うことができます。 これにより、セクションが場合でも、親の構成ファイルを制御することはありませんが存在するかどうかを確認できますも。  
+  
+   
+  
+## Examples  
+ <xref:System.Configuration.SectionInformation.ForceDeclaration%2A> メソッドを使用する方法の例を次に示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#113](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/SectionInforrmation.cs#113)]
+ [!code-vb[System.Configuration.ConfigurationElement#113](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/SectionInforrmation.vb#113)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">
+          <paramref name="require" /><see langword="true" />と関連付けられているセクションは、子構成ファイルにエクスポートできませんまたは宣言されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ForceSave">
+      <MemberSignature Language="C#" Value="public bool ForceSave { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ForceSave" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SectionInformation.ForceSave" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または変更されていない場合でもに関連する構成セクションを保存するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合、関連付けられている<see cref="T:System.Configuration.ConfigurationSection" />、それ以外の変更が行われていない場合でも、オブジェクトを保存、<see langword="false" />です。 既定値は、<see langword="false" /> です。  
+  
+ <block subset="none" type="note"><para>  
+ (変更がない) 場合でも、構成ファイルを保存する場合、ASP.NET は、アプリケーションを再起動します。  
+  
+</para></block></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Configuration.SectionInformation.ForceSave%2A>のプロパティ、<xref:System.Configuration.ConfigurationSection>オブジェクト。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/ConfigurationElement.cs#1)]
+ [!code-vb[System.Configuration.ConfigurationElement#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/ConfigurationElement.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParentSection">
+      <MemberSignature Language="C#" Value="public System.Configuration.ConfigurationSection GetParentSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Configuration.ConfigurationSection GetParentSection() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.SectionInformation.GetParentSection" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationSection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このオブジェクトに関連付けられている構成セクションを格納する構成セクションを取得します。</summary>
+        <returns>含む構成セクション、<see cref="T:System.Configuration.ConfigurationSection" />これに関連付けられている<see cref="T:System.Configuration.SectionInformation" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この場合<xref:System.Configuration.ConfigurationSection>オブジェクトが親のセクションでは、含んでいない、<xref:System.Configuration.SectionInformation.GetParentSection%2A>メソッドとして同じ値を返します、<xref:System.Configuration.SectionInformation.Name%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ <xref:System.Configuration.SectionInformation.GetParentSection%2A> メソッドを使用する方法の例を次に示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#92](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/SectionInforrmation.cs#92)]
+ [!code-vb[System.Configuration.ConfigurationElement#92](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/SectionInforrmation.vb#92)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">メソッドが親セクションから呼び出されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRawXml">
+      <MemberSignature Language="C#" Value="public string GetRawXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetRawXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.SectionInformation.GetRawXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>構成セクションの関連するオブジェクトを表す XML ノード オブジェクトを返します。</summary>
+        <returns>この構成セクションの XML 表現です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Configuration.SectionInformation.GetRawXml%2A> メソッドを使用する方法の例を次に示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#93](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/SectionInforrmation.cs#93)]
+ [!code-vb[System.Configuration.ConfigurationElement#93](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/SectionInforrmation.vb#93)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">この構成オブジェクトがロックされ、編集することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InheritInChildApplications">
+      <MemberSignature Language="C#" Value="public bool InheritInChildApplications { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool InheritInChildApplications" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SectionInformation.InheritInChildApplications" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または関連するアプリケーションのサブディレクトリ内に存在するアプリケーションに関連する構成セクションで指定されている設定が継承されるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />この設定が指定されている場合<see cref="T:System.Configuration.ConfigurationSection" />オブジェクトは、それ以外の子アプリケーションによって継承された<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.SectionInformation.InheritInChildApplications%2A>プロパティを表す、`inheritInChildApplications`の属性、`location`構成ファイル内の要素。  
+  
+ 設定<xref:System.Configuration.SectionInformation.InheritInChildApplications%2A>に`false`固有の設定を特定の場所 (Web サイトのルート ディレクトリ) などのサブディレクトリ内に存在するアプリケーションによって継承されないようにします。  
+  
+ 次の例では、構成ファイルでこの属性を使用して、Web サイトのルートの location 要素で定義された設定を子アプリケーションによって継承されないことを指定する方法を示します。  
+  
+ `<location path="." inheritInChildApplications="false">`  
+  
+ <xref:System.Configuration.SectionInformation.InheritInChildApplications%2A>プロパティのみを場所に固有の構成設定は適用されます。  
+  
+   
+  
+## Examples  
+ 次の例は、取得する方法を示します、<xref:System.Configuration.SectionInformation.InheritInChildApplications%2A>の値、<xref:System.Configuration.ConfigurationSection>オブジェクト。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#100](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/SectionInforrmation.cs#100)]
+ [!code-vb[System.Configuration.ConfigurationElement#100](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/SectionInforrmation.vb#100)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDeclarationRequired">
+      <MemberSignature Language="C#" Value="public bool IsDeclarationRequired { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDeclarationRequired" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SectionInformation.IsDeclarationRequired" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>構成セクションを構成ファイルで宣言する必要があるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、関連付けられている<see cref="T:System.Configuration.ConfigurationSection" />オブジェクトが、構成ファイルで宣言されている、それ以外にする必要があります<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ このセクションの例を取得する方法を示して、<xref:System.Configuration.SectionInformation.IsDeclarationRequired%2A>構成ファイルに関連するセクションの情報にアクセスした後、プロパティの値。  
+  
+ 次の例の取得、<xref:System.Configuration.SectionInformation>オブジェクト。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#102](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/SectionInforrmation.cs#102)]
+ [!code-vb[System.Configuration.ConfigurationElement#102](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/SectionInforrmation.vb#102)]  
+  
+ 次の例の取得、<xref:System.Configuration.SectionInformation.IsDeclarationRequired%2A>値。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#103](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/SectionInforrmation.cs#103)]
+ [!code-vb[System.Configuration.ConfigurationElement#103](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/SectionInforrmation.vb#103)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDeclared">
+      <MemberSignature Language="C#" Value="public bool IsDeclared { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDeclared" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SectionInformation.IsDeclared" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連する構成セクションは、構成ファイルで宣言されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />この場合<see cref="T:System.Configuration.ConfigurationSection" />、それ以外の構成ファイルで宣言された<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ このセクションの例を取得する方法を示して、<xref:System.Configuration.SectionInformation.IsDeclared%2A>構成ファイルに関連するセクションの情報にアクセスした後、プロパティの値。  
+  
+ 次の例の取得、<xref:System.Configuration.SectionInformation>オブジェクト。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#102](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/SectionInforrmation.cs#102)]
+ [!code-vb[System.Configuration.ConfigurationElement#102](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/SectionInforrmation.vb#102)]  
+  
+ 次の例の取得、<xref:System.Configuration.SectionInformation.IsDeclared%2A>値。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#104](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/SectionInforrmation.cs#104)]
+ [!code-vb[System.Configuration.ConfigurationElement#104](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/SectionInforrmation.vb#104)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLocked">
+      <MemberSignature Language="C#" Value="public bool IsLocked { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsLocked" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SectionInformation.IsLocked" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連する構成セクションがロックされているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、セクションがロックされています。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.SectionInformation.IsLocked%2A>プロパティから返される`true`で関連するセクションがロックされている場合、<xref:System.Configuration.SectionInformation.AllowOverride%2A>または<xref:System.Configuration.SectionInformation.AllowDefinition%2A>プロパティです。 オーバーライドまたは現在の構成ファイルで定義できない場合、セクションがロックされています。  
+  
+   
+  
+## Examples  
+ このセクションの例を取得する方法を示して、<xref:System.Configuration.SectionInformation.IsLocked%2A>構成ファイルに関連するセクションの情報にアクセスした後、プロパティの値。  
+  
+ 次の例の取得、<xref:System.Configuration.SectionInformation>オブジェクト。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#102](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/SectionInforrmation.cs#102)]
+ [!code-vb[System.Configuration.ConfigurationElement#102](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/SectionInforrmation.vb#102)]  
+  
+ 次の例の取得、<xref:System.Configuration.SectionInformation.IsLocked%2A>値。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#105](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/SectionInforrmation.cs#105)]
+ [!code-vb[System.Configuration.ConfigurationElement#105](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/SectionInforrmation.vb#105)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsProtected">
+      <MemberSignature Language="C#" Value="public bool IsProtected { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsProtected" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SectionInformation.IsProtected" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連する構成セクションが保護されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />この場合<see cref="T:System.Configuration.ConfigurationSection" />は保護されている、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 保護された構成セクションは、暗号化された読み取り専用です。  
+  
+ 保護された構成セクションの詳細については、次を参照してください。[暗号化の構成情報を使用して保護された構成](http://msdn.microsoft.com/library/51cdfe5b-9d82-458c-94ff-c551c4f38ed1)です。  
+  
+   
+  
+## Examples  
+ このセクションの例を取得する方法を示して、<xref:System.Configuration.SectionInformation.IsProtected%2A>構成ファイルに関連するセクションの情報にアクセスした後、プロパティの値。  
+  
+ 次の例の取得、<xref:System.Configuration.SectionInformation>オブジェクト。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#102](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/SectionInforrmation.cs#102)]
+ [!code-vb[System.Configuration.ConfigurationElement#102](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/SectionInforrmation.vb#102)]  
+  
+ 次の例の取得、<xref:System.Configuration.SectionInformation.IsProtected%2A>値。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#106](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/SectionInforrmation.cs#106)]
+ [!code-vb[System.Configuration.ConfigurationElement#106](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/SectionInforrmation.vb#106)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SectionInformation.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連する構成セクションの名前を取得します。</summary>
+        <value>構成セクションの完全な名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.SectionInformation.Name%2A>パスのないセクションの名前を指定します。  
+  
+   
+  
+## Examples  
+ 次の例は、取得する方法を示します、<xref:System.Configuration.SectionInformation.Name%2A>の値、<xref:System.Configuration.ConfigurationSection>オブジェクト。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#107](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/SectionInforrmation.cs#107)]
+ [!code-vb[System.Configuration.ConfigurationElement#107](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/SectionInforrmation.vb#107)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OverrideMode">
+      <MemberSignature Language="C#" Value="public System.Configuration.OverrideMode OverrideMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Configuration.OverrideMode OverrideMode" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SectionInformation.OverrideMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.OverrideMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Configuration.OverrideMode" />子の構成ファイルで関連する構成セクションをオーバーライドできるかどうかを指定する列挙値。</summary>
+        <value><see cref="T:System.Configuration.OverrideMode" /> 列挙値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.SectionInformation.AllowOverride%2A>プロパティを取得または内のリソースで宣言するかどうかを示す値を設定、`location`要素は子の構成ファイルでオーバーライドされることができます。 <xref:System.Configuration.SectionInformation.OverrideMode%2A>プロパティを取得または同様の動作を指定しますが、特定の構成の要素またはグループに対して実行されのいずれかを使用する値を設定、<xref:System.Configuration.OverrideMode>列挙値。 <xref:System.Configuration.SectionInformation.OverrideMode%2A>プロパティは親要素から継承する動作を有効にします。  
+  
+ 両方をプログラムで設定できない、<xref:System.Configuration.SectionInformation.AllowOverride%2A>と<xref:System.Configuration.SectionInformation.OverrideMode%2A>プロパティです。 設定、<xref:System.Configuration.SectionInformation.AllowOverride%2A>プロパティを`true`設定、<xref:System.Configuration.SectionInformation.OverrideMode%2A>プロパティを<xref:System.Configuration.OverrideMode.Inherit>です。 設定、<xref:System.Configuration.SectionInformation.AllowOverride%2A>プロパティを`false`設定、<xref:System.Configuration.SectionInformation.OverrideMode%2A>プロパティを`false`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">両方を変更しようとしましたが、<see cref="P:System.Configuration.SectionInformation.AllowOverride" />と<see cref="P:System.Configuration.SectionInformation.OverrideMode" />プロパティで、互換性の理由からはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OverrideModeDefault">
+      <MemberSignature Language="C#" Value="public System.Configuration.OverrideMode OverrideModeDefault { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Configuration.OverrideMode OverrideModeDefault" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SectionInformation.OverrideModeDefault" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.OverrideMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または既定値は、子の構成ファイルで構成セクションの動作をオーバーライドを指定する値を設定します。</summary>
+        <value><see cref="T:System.Configuration.OverrideMode" /> 列挙値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.SectionInformation.OverrideModeDefault%2A>構成セクションのプロパティのみ設定できます、<xref:System.Configuration.OverrideMode.Allow>または<xref:System.Configuration.OverrideMode.Deny>の値、<xref:System.Configuration.OverrideMode>列挙します。 設定、<xref:System.Configuration.SectionInformation.OverrideModeDefault%2A>プロパティを<xref:System.Configuration.OverrideMode.Inherit>に設定する値と等価<xref:System.Configuration.OverrideMode.Allow>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">オーバーライド動作は、親の構成セクションで指定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OverrideModeEffective">
+      <MemberSignature Language="C#" Value="public System.Configuration.OverrideMode OverrideModeEffective { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Configuration.OverrideMode OverrideModeEffective" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SectionInformation.OverrideModeEffective" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.OverrideMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>子構成ファイルが、構成セクションをロックするかどうかに基づくさらに構成セクションのオーバーライド動作を取得します。</summary>
+        <value><see cref="T:System.Configuration.OverrideMode" /> 列挙値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティには、どちらかを返します<xref:System.Configuration.OverrideMode.Deny>または<xref:System.Configuration.OverrideMode.Allow>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProtectionProvider">
+      <MemberSignature Language="C#" Value="public System.Configuration.ProtectedConfigurationProvider ProtectionProvider { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ProtectedConfigurationProvider ProtectionProvider" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SectionInformation.ProtectionProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ProtectedConfigurationProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連する構成セクションの保護構成プロバイダーを取得します。</summary>
+        <value>この保護された構成プロバイダー<see cref="T:System.Configuration.ConfigurationSection" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 保護されていないセクションで、<xref:System.Configuration.SectionInformation.ProtectionProvider%2A>プロパティは`null`します。  
+  
+ 保護された構成セクションの詳細については、次を参照してください。[暗号化の構成情報を使用して保護された構成](http://msdn.microsoft.com/library/51cdfe5b-9d82-458c-94ff-c551c4f38ed1)です。  
+  
+   
+  
+## Examples  
+ 次の例は、取得する方法を示します、<xref:System.Configuration.SectionInformation.ProtectSection%2A>の値、<xref:System.Configuration.ConfigurationSection>オブジェクト。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#108](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/SectionInforrmation.cs#108)]
+ [!code-vb[System.Configuration.ConfigurationElement#108](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/SectionInforrmation.vb#108)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProtectSection">
+      <MemberSignature Language="C#" Value="public void ProtectSection (string provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ProtectSection(string provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.SectionInformation.ProtectSection(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="protectionProvider" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="provider">To be added.</param>
+        <summary>保護の構成セクションをマークします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.SectionInformation.ProtectSection%2A>メソッドは、ディスクの暗号化された形式で書き込まれるように、暗号化については、セクションを示します。  
+  
+ 既定では、次の保護プロバイダーが含まれています。  
+  
+ <xref:System.Configuration.DpapiProtectedConfigurationProvider>  
+  
+ <xref:System.Configuration.RsaProtectedConfigurationProvider>  
+  
+> [!NOTE]
+>  呼び出す場合は、<xref:System.Configuration.SectionInformation.ProtectSection%2A>メソッドを`null`パラメーターまたは空の文字列、<xref:System.Configuration.RsaProtectedConfigurationProvider>クラスは、保護プロバイダーとして使用します。  
+  
+ 保護された構成セクションの詳細については、次を参照してください。[暗号化の構成情報を使用して保護された構成](http://msdn.microsoft.com/library/51cdfe5b-9d82-458c-94ff-c551c4f38ed1)です。  
+  
+   
+  
+## Examples  
+ <xref:System.Configuration.SectionInformation.ProtectSection%2A> メソッドを使用する方法の例を次に示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#94](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/SectionInforrmation.cs#94)]
+ [!code-vb[System.Configuration.ConfigurationElement#94](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/SectionInforrmation.vb#94)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Configuration.SectionInformation.AllowLocation" /> プロパティが <see langword="false" /> に設定されている。  
+  
+ \- または  
+  
+ ターゲット セクションが既に保護されているデータ セクションである。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RequirePermission">
+      <MemberSignature Language="C#" Value="public bool RequirePermission { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequirePermission" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SectionInformation.RequirePermission" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連する構成セクションにアクセス許可が必要かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see langword="requirePermission" />属性に設定されている<see langword="true" />、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Configuration.SectionInformation.RequirePermission%2A>に設定されている`true`、`GetSection`メソッドは、アプリケーションの信頼レベルの設定によって制限されています。 これは、メソッドやプロパティの構成セクション ハンドラーへのアクセス許可は、信頼レベルを Web アプリケーションの設定によって制限されていることを意味します。  
+  
+> [!NOTE]
+>  高および完全な信頼は、現在のアプリケーション ドメイン外のファイルへのアクセス許可レベルだけであるために、アプリケーションは、これらの信頼レベルでのみ構成セクション ハンドラーを使用することができます。  
+  
+ ときに<xref:System.Configuration.SectionInformation.RequirePermission%2A>に設定されている`false`、構成データへのアクセスは、アプリケーションの信頼レベル設定によって制限されていません。  
+  
+> [!NOTE]
+>  ACL (アクセス制御リスト) の適切なファイル アクセス許可が引き続き必要に関係なく、<xref:System.Configuration.SectionInformation.RequirePermission%2A>設定します。 ACL アクセス許可は、構成ファイルにアクセスできるユーザーを決定します。  
+  
+   
+  
+## Examples  
+ 次の例では、Web アプリケーションの 2 つの可能な信頼レベルと、<xref:System.Configuration.SectionInformation.RequirePermission%2A>のプロパティ、`appSettings`セクションは`true`します。  
+  
+```  
+<system.web>  
+   // With the following trust value   
+   // the code below works.  
+  <trust level="Full" />  
+</system.web>  
+  
+<system.web>  
+  // With the following trust value   
+  // the code below does not work.  
+  <trust level="Medium" />  
+</system.web>  
+```  
+  
+ 次の例では、信頼レベルが設定されている場合、エラーなく実行されるコードを完全にします。 それ以外の場合、コードは、エラーになります。  
+  
+```csharp  
+AppSettingsSection apSection =   
+  ConfigurationManager.GetSection("appSettings") as AppSettingsSection;  
+  
+NameValueCollection apSectionCollection =  
+  ConfigurationManager.AppSettings;  
+```  
+  
+```vb  
+Dim apSection As AppSettingsSection = _   
+  TryCast(ConfigurationManager.GetSection("appSettings"),   
+    AppSettingsSection)  
+  
+  Dim apSectionCollection As NameValueCollection = _   
+    ConfigurationManager.AppSettings  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">選択した値が既に定義されている値と競合しています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RestartOnExternalChanges">
+      <MemberSignature Language="C#" Value="public bool RestartOnExternalChanges { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RestartOnExternalChanges" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SectionInformation.RestartOnExternalChanges" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>外部の構成の変更を含めるかどうかを指定する値の設定を取得またはファイルには、アプリケーションの再起動が必要です。</summary>
+        <value>
+          <see langword="true" />インクルード ファイルの外部構成が変更された場合にアプリケーションの再起動が必要です。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Configuration.SectionInformation.RestartOnExternalChanges%2A>プロパティを`false`この外部のインクルード ファイルで構成設定が変更されるときに、アプリケーションの再起動を防ぐために<xref:System.Configuration.ConfigurationSection>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例は、取得する方法を示します、<xref:System.Configuration.SectionInformation.RestartOnExternalChanges%2A>のプロパティの値、<xref:System.Configuration.ConfigurationSection>オブジェクト。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#109](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/SectionInforrmation.cs#109)]
+ [!code-vb[System.Configuration.ConfigurationElement#109](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/SectionInforrmation.vb#109)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">選択した値が既に定義されている値と競合しています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RevertToParent">
+      <MemberSignature Language="C#" Value="public void RevertToParent ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RevertToParent() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.SectionInformation.RevertToParent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>関連付けられている構成セクションの親セクションからそのすべての値を継承が発生します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">編集モード以外は、このメソッドを呼び出すことができません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SectionName">
+      <MemberSignature Language="C#" Value="public string SectionName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SectionName" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SectionInformation.SectionName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連する構成セクションの名前を取得します。</summary>
+        <value>関連付けられている名前<see cref="T:System.Configuration.ConfigurationSection" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.SectionInformation.SectionName%2A>プロパティの値が、構成の継承階層を含む完全なセクションの名前。  
+  
+   
+  
+## Examples  
+ 次の例は、取得する方法を示します、<xref:System.Configuration.SectionInformation.SectionName%2A>の値、<xref:System.Configuration.ConfigurationSection>オブジェクト。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#110](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/SectionInforrmation.cs#110)]
+ [!code-vb[System.Configuration.ConfigurationElement#110](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/SectionInforrmation.vb#110)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetRawXml">
+      <MemberSignature Language="C#" Value="public void SetRawXml (string xml);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetRawXml(string xml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.SectionInformation.SetRawXml(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rawXml" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="xml">To be added.</param>
+        <summary>構成ファイル内で関連する構成セクションの XML 表現をオブジェクトを設定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="xml" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public string Type { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Type" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SectionInformation.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはセクションのクラス名を設定します。</summary>
+        <value>これに関連付けられているクラスの名前<see cref="T:System.Configuration.ConfigurationSection" />セクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.SectionInformation.Type%2A>プロパティは、セクション処理するクラスのこのインスタンスの名前を返します、<xref:System.Configuration.ConfigurationSection>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例は、取得する方法を示します、<xref:System.Configuration.SectionInformation.Type%2A>の値、<xref:System.Configuration.ConfigurationSection>オブジェクト。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#111](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/SectionInforrmation.cs#111)]
+ [!code-vb[System.Configuration.ConfigurationElement#111](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/SectionInforrmation.vb#111)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">選択した値は<see langword="null" />または空の文字列 ("") です。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">選択した値が既に定義されている値と競合しています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UnprotectSection">
+      <MemberSignature Language="C#" Value="public void UnprotectSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UnprotectSection() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.SectionInformation.UnprotectSection" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>関連する構成セクションから、保護された構成の暗号化を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 保護された構成セクションの詳細については、次を参照してください。[暗号化の構成情報を使用して保護された構成](http://msdn.microsoft.com/library/51cdfe5b-9d82-458c-94ff-c551c4f38ed1)です。  
+  
+   
+  
+## Examples  
+ 次の例では、このメソッドを使用する方法を示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationElement#112](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/CS/SectionInforrmation.cs#112)]
+ [!code-vb[System.Configuration.ConfigurationElement#112](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationElement/VB/SectionInforrmation.vb#112)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,797 @@
+<Type Name="PackUriHelper" FullName="System.IO.Packaging.PackUriHelper">
+  <TypeSignature Language="C#" Value="public static class PackUriHelper" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed PackUriHelper extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IO.Packaging.PackUriHelper" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.Packaging</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>パック URI オブジェクトを作成および解析するユーティリティ メソッドを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ComparePackUri">
+      <MemberSignature Language="C#" Value="public static int ComparePackUri (Uri firstPackUri, Uri secondPackUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 ComparePackUri(class System.Uri firstPackUri, class System.Uri secondPackUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackUriHelper.ComparePackUri(System.Uri,System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="firstPackUri" Type="System.Uri" />
+        <Parameter Name="secondPackUri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="firstPackUri">最初のパック URI。</param>
+        <param name="secondPackUri">2 番目のパック URI。</param>
+        <summary>2 つのパック URI が同等であるかどうかを示す値を返します。</summary>
+        <returns>間のリレーションシップを示す符号付き整数<paramref name="firstPackUri" />と<paramref name="secondPackUri" />です。  
+  
+ <list type="table"><listheader><term>値  
+  
+ </term><description>意味  
+  
+ </description></listheader><item><term>0 より小さい値  
+  
+ </term><description><paramref name="firstPackUri" /> は <paramref name="secondPackUri" /> より小さい値です。  
+  
+ </description></item><item><term> 0  
+  
+ </term><description><paramref name="firstPackUri" />等価<paramref name="secondPackUri" />です。  
+  
+ </description></item><item><term>0 より大きい値  
+  
+ </term><description><paramref name="firstPackUri" /> が <paramref name="secondPackUri" /> より大きくなっています。  
+  
+ </description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 両方`firstPackUri`と`secondPackUri`は`null`、 <xref:System.IO.Packaging.PackUriHelper.ComparePackUri%2A> 0 を返します。 パック Uri を比較するときに null の URI は常に null URI よりも小さいです。    ケースの場所`firstPackUri`と`secondPackUri`は絶対の両方のパック Uri、<xref:System.IO.Packaging.PackUriHelper.ComparePackUri%2A>比較を実行します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">いずれか<paramref name="firstPackUri" />または<paramref name="secondPackUri" />が絶対[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]です。  
+  
+ または  
+  
+ いずれか<paramref name="firstPackUri" />または<paramref name="secondPackUri" />で始まらない、"pack://"スキームです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ComparePartUri">
+      <MemberSignature Language="C#" Value="public static int ComparePartUri (Uri firstPartUri, Uri secondPartUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 ComparePartUri(class System.Uri firstPartUri, class System.Uri secondPartUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackUriHelper.ComparePartUri(System.Uri,System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="firstPartUri" Type="System.Uri" />
+        <Parameter Name="secondPartUri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="firstPartUri">[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]最初の<see cref="T:System.IO.Packaging.PackagePart" />します。</param>
+        <param name="secondPartUri">[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)] 、2 つ目の<see cref="T:System.IO.Packaging.PackagePart" />します。</param>
+        <summary>2 つのパッケージ パーツであるかどうかを示す値を返します[!INCLUDE[TLA2#tla_uri#plural](~/includes/tla2sharptla-urisharpplural-md.md)]は同等です。</summary>
+        <returns>間のリレーションシップを示す値<paramref name="firstPartUri" />と<paramref name="secondPartUri" />です。  
+  
+ <list type="table"><listheader><term>値  
+  
+ </term><description>意味  
+  
+ </description></listheader><item><term>0 より小さい値  
+  
+ </term><description><paramref name="firstPartUri" /> は <paramref name="secondPartUri" /> より小さい値です。  
+  
+ </description></item><item><term> 0  
+  
+ </term><description><paramref name="firstPartUri" />等価<paramref name="secondPartUri" />です。  
+  
+ </description></item><item><term>0 より大きい値  
+  
+ </term><description><paramref name="firstPartUri" /> が <paramref name="secondPartUri" /> より大きくなっています。  
+  
+ </description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 両方`firstPartUri`と`secondPartUri`は`null`、 <xref:System.IO.Packaging.PackUriHelper.ComparePartUri%2A> 0 を返します。 比較するときに<xref:System.IO.Packaging.PackagePart> [!INCLUDE[TLA2#tla_uri#plural](~/includes/tla2sharptla-urisharpplural-md.md)]、null[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]は常に null 以外よりも小さい[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]です。 ケースの場所`firstPartUri`と`secondPartUri`相対が両方とも<xref:System.IO.Packaging.PackagePart>Uri、<xref:System.IO.Packaging.PackUriHelper.ComparePartUri%2A>比較を実行します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="firstPartUri" />または<paramref name="secondPartUri" />有効な部分ではない[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]構文です。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Create">
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>新しいパック URI を作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表のサンプル ケースを示しています、<xref:System.IO.Packaging.PackUriHelper.Create%2A>メソッドです。  
+  
+|`packageUri`|`partUri`|`fragment`|返されるパック URI|  
+|------------------|---------------|----------------|-----------------------|  
+|http://www.proseware.com/mypackage.pkg|/page1.xaml|#intro|pack://http:、および www.proseware.com、mypackage.pkg/page1.xaml#intro|  
+|http://www.proseware.com/mypackage.pkg|/page2.xaml|**null**|pack://http:、および www.proseware.com、mypackage.pkg/page2.xaml|  
+|http://www.proseware.com/mypackage.pkg|/a/page4.xaml|**null**|pack://http:、および www.proseware.com、mypackage.pkg/a/page4.xaml|  
+|http://www.proseware.com/mypackage.pkg|/%41/%61.xml|**null**|pack://http:、および www.proseware.com、mypackage.pkg/A/a.xml|  
+|http://www.proseware.com/mypackage.pkg|/%25XY.xml|**null**|pack://http:、および www.proseware.com、mypackage.pkg/%25XY.xml|  
+|http://www.proseware.com/mypackage.pkg|/a/page5.xaml|#summary|pack://http:、および www.proseware.com、mypackage.pkg/a/page5.xaml#summary|  
+|http://www.proseware.com/packages.aspx?pkg04|/page1.xaml|#intro|pack://http:、および www.proseware.com、packages.aspx%3fpkg04/page1.xaml#intro|  
+|http://www.proseware.com/mypackage.pkg|**null**|**null**|pack://http:、および www.proseware.com、mypackage.pkg|  
+|ftp://ftp.proseware.com/packages/mypackage1.abc|/a/mydoc.xaml|**null**|pack://ftp:、および ftp.proseware.com,packages,mypackage1.abc/a/mydoc.xaml|  
+|file:///d:/packages/mypackage2.pkg|/a/bar.xaml|#xref|pack://file:、、、d:,packages,mypackage2.pkg/a/bar.xaml#xref|  
+  
+ 複数手順のプロセスは、パック URI を作成します。  たとえば、パック URI の構成で 1 つの手順がのスラッシュ (/) 文字を置き換えるには、`packageUri`をコンマ (,) です。  
+  
+ 文字列変換とパッケージの Uri を生成する方法の詳細についてを参照してください付録 A.4「文字列の変換例」と「付録 B.3"パック URI 作成する」でダウンロード可能な Open Packaging Conventions 仕様[仕様書、およびライセンス ダウンロード](http://go.microsoft.com/fwlink/?LinkID=71255)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static Uri Create (Uri packageUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Uri Create(class System.Uri packageUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackUriHelper.Create(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="packageUri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="packageUri">参照先の <see cref="T:System.IO.Packaging.Package" /> の URI。</param>
+        <summary>パッケージを指す新しいパック URI を作成します。</summary>
+        <returns>指定された <paramref name="packageUri" /> によって参照されている <see cref="T:System.IO.Packaging.Package" /> のパック URI。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `packageUri`として指定されていない可能性があります`null`または空です。  
+  
+ 次の表は、のサンプル ケースを示しています。<xref:System.IO.Packaging.PackUriHelper.Create%2A>です。  
+  
+|`packageUri`|返されるパック URI|  
+|------------------|-----------------------|  
+|http://www.proseware.com/mypackage.pkg|pack://http:、および www.proseware.com、mypackage.pkg|  
+|ftp://ftp.proseware.com/packages/mypackage1.abc|pack://ftp:、および ftp.proseware.com,packages,mypackage1.abc|  
+|file:///d:/packages/mypackage2.pkg|pack://file:、、、d:,packages,mypackage2.pkg|  
+  
+ 複数手順のプロセスは、パック URI を作成します。  たとえば、パック URI の構成で 1 つの手順がのスラッシュ (/) 文字を置き換えるには、`packageUri`をコンマ (,) です。  
+  
+ 文字列変換とパッケージの Uri を生成する方法の詳細についてを参照してください付録 A.4「文字列の変換例」と「付録 B.3"パック URI 作成する」でダウンロード可能な Open Packaging Conventions 仕様[仕様書、およびライセンス ダウンロード](http://go.microsoft.com/fwlink/?LinkID=71255)です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.IO.Packaging.PackUriHelper.Create%2A>パッケージのパッケージを参照する URI を定義するメソッド。  
+  
+ [!code-csharp[RightsManagedPackagePublish#RmPkgPubGetFixDoc](~/samples/snippets/csharp/VS_Snippets_Wpf/RightsManagedPackagePublish/CSharp/Window1.xaml.cs#rmpkgpubgetfixdoc)]
+ [!code-vb[RightsManagedPackagePublish#RmPkgPubGetFixDoc](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RightsManagedPackagePublish/visualbasic/window1.xaml.vb#rmpkgpubgetfixdoc)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="packageUri" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="packageUri" /> は絶対 URI ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static Uri Create (Uri packageUri, Uri partUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Uri Create(class System.Uri packageUri, class System.Uri partUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackUriHelper.Create(System.Uri,System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="packageUri" Type="System.Uri" />
+        <Parameter Name="partUri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="packageUri"><see cref="T:System.IO.Packaging.Package" /> の [!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]。</param>
+        <param name="partUri">[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]の<see cref="T:System.IO.Packaging.PackagePart" />パッケージにします。</param>
+        <summary>パッケージの指定された URI を作成、 <see cref="T:System.IO.Packaging.Package" /> [!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]と[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]パッケージ内のパーツのです。</summary>
+        <returns>パック URI の指定された<see cref="T:System.IO.Packaging.PackagePart" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `packageUri`null または空としていない指定可能性があります。  
+  
+ 場合`partUri`は`null`、返されたパック URI が、パッケージを指します。  
+  
+ 次の表のサンプル ケースを示しています、<xref:System.IO.Packaging.PackUriHelper.Create%2A>メソッドです。  
+  
+|`packageUri`|`partUri`|返されるパック URI|  
+|------------------|---------------|-----------------------|  
+|http://www.proseware.com/mypackage.pkg|/page2.xaml|pack://http:、および www.proseware.com、mypackage.pkg/page2.xaml|  
+|http://www.proseware.com/mypackage.pkg|/a/page4.xaml|pack://http:、および www.proseware.com、mypackage.pkg/a/page4.xaml|  
+|http://www.proseware.com/mypackage.pkg|/%41/%61.xml|pack://http:、および www.proseware.com、mypackage.pkg/A/a.xml|  
+|http://www.proseware.com/mypackage.pkg|/%25XY.xml|pack://http:、および www.proseware.com、mypackage.pkg/%25XY.xml|  
+|http://www.proseware.com/mypackage.pkg|**null**|pack://http:、および www.proseware.com、mypackage.pkg|  
+|ftp://ftp.proseware.com/packages/mypackage1.abc|/a/mydoc.xaml|pack://ftp:、および ftp.proseware.com,packages,mypackage1.abc/a/mydoc.xaml|  
+|file:///d:/packages/mypackage2.pkg|/a/bar.xaml|pack://file:、、、d:,packages,mypackage2.pkg/a/bar.xaml|  
+  
+ 複数手順のプロセスは、パック URI を作成します。  たとえば、パック URI の構成で 1 つの手順がのスラッシュ (/) 文字を置き換えるには、`packageUri`をコンマ (,) です。  
+  
+ 文字列変換とパッケージの Uri を生成する方法の詳細についてを参照してください付録 A.4「文字列の変換例」と「付録 B.3"パック URI 作成する」でダウンロード可能な Open Packaging Conventions 仕様[仕様書、およびライセンス ダウンロード](http://go.microsoft.com/fwlink/?LinkID=71255)です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.IO.Packaging.PackUriHelper.Create%28System.Uri%29>パッケージのパッケージを参照する URI を定義するメソッド。  
+  
+ [!code-csharp[RightsManagedPackagePublish#RmPkgPubGetFixDoc](~/samples/snippets/csharp/VS_Snippets_Wpf/RightsManagedPackagePublish/CSharp/Window1.xaml.cs#rmpkgpubgetfixdoc)]
+ [!code-vb[RightsManagedPackagePublish#RmPkgPubGetFixDoc](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RightsManagedPackagePublish/visualbasic/window1.xaml.vb#rmpkgpubgetfixdoc)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="packageUri" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="packageUri" /> は絶対 URI ではありません。  
+  
+ または  
+  
+ <paramref name="partUri" /> は有効なパーツ URI 構文ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static Uri Create (Uri packageUri, Uri partUri, string fragment);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Uri Create(class System.Uri packageUri, class System.Uri partUri, string fragment) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackUriHelper.Create(System.Uri,System.Uri,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="packageUri" Type="System.Uri" />
+        <Parameter Name="partUri" Type="System.Uri" />
+        <Parameter Name="fragment" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="packageUri"><see cref="T:System.IO.Packaging.Package" /> の [!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]。</param>
+        <param name="partUri">[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]の<see cref="T:System.IO.Packaging.PackagePart" />パッケージにします。</param>
+        <param name="fragment">パッケージ パーツ内の要素を識別する「#」参照。</param>
+        <summary>パッケージの指定された URI を作成、 <see cref="T:System.IO.Packaging.Package" /> [!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]パッケージ、および追加する「#」フラグメント内パーツのです。</summary>
+        <returns>指定したパッケージ、パッケージ パーツ、およびフラグメントを識別するパック URI。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `packageUri`として指定されていない可能性があります`null`または空です。  
+  
+ 場合`partUri`は`null`、返されたパック URI が、パッケージを指します。  
+  
+ `fragment`空の文字列にすることはできませんが、として指定できる`null`です。  として指定されていないときに`null`、`fragment`文字列は、'#' 文字で始める必要があります。  構文の詳細については`fragment`参照セクション 3.5"Fragment"を参照してくださいの[RFC 3986](http://www.ietf.org/rfc/rfc3986.txt)です。  
+  
+ 次の表のサンプル ケースを示しています、<xref:System.IO.Packaging.PackUriHelper.Create%2A>メソッドです。  
+  
+|`packageUri`|`partUri`|`fragment`|返されるパック URI|  
+|------------------|---------------|----------------|-----------------------|  
+|http://www.proseware.com/mypackage.pkg|/page1.xaml|#intro|pack://http:、および www.proseware.com、mypackage.pkg/page1.xaml#intro|  
+|http://www.proseware.com/mypackage.pkg|/page2.xaml|**null**|pack://http:、および www.proseware.com、mypackage.pkg/page2.xaml|  
+|http://www.proseware.com/mypackage.pkg|/a/page4.xaml|**null**|pack://http:、および www.proseware.com、mypackage.pkg/a/page4.xaml|  
+|http://www.proseware.com/mypackage.pkg|/%41/%61.xml|**null**|pack://http:、および www.proseware.com、mypackage.pkg/A/a.xml|  
+|http://www.proseware.com/mypackage.pkg|/%25XY.xml|**null**|pack://http:、および www.proseware.com、mypackage.pkg/%25XY.xml|  
+|http://www.proseware.com/mypackage.pkg|/a/page5.xaml|#summary|pack://http:、および www.proseware.com、mypackage.pkg/a/page5.xaml#summary|  
+|http://www.proseware.com/packages.aspx?pkg04|/page1.xaml|#intro|pack://http:、および www.proseware.com、packages.aspx%3fpkg04/page1.xaml#intro|  
+|http://www.proseware.com/mypackage.pkg|**null**|**null**|pack://http:、および www.proseware.com、mypackage.pkg|  
+|ftp://ftp.proseware.com/packages/mypackage1.abc|/a/mydoc.xaml|**null**|pack://ftp:、および ftp.proseware.com,packages,mypackage1.abc/a/mydoc.xaml|  
+|file:///d:/packages/mypackage2.pkg|/a/bar.xaml|#xref|pack://file:、、、d:,packages,mypackage2.pkg/a/bar.xaml#xref|  
+  
+ 複数手順のプロセスは、パック URI を作成します。  たとえば、パック URI の構成で 1 つの手順がのスラッシュ (/) 文字を置き換えるには、`packageUri`をコンマ (,) です。  
+  
+ 文字列変換とパッケージの Uri を生成する方法の詳細についてを参照してください付録 A.4「文字列の変換例」と「付録 B.3"パック URI 作成する」でダウンロード可能な Open Packaging Conventions 仕様[仕様書、およびライセンス ダウンロード](http://go.microsoft.com/fwlink/?LinkID=71255)です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.IO.Packaging.PackUriHelper.Create%28System.Uri%29>パッケージのパッケージを参照する URI を定義するメソッド。  
+  
+ [!code-csharp[RightsManagedPackagePublish#RmPkgPubGetFixDoc](~/samples/snippets/csharp/VS_Snippets_Wpf/RightsManagedPackagePublish/CSharp/Window1.xaml.cs#rmpkgpubgetfixdoc)]
+ [!code-vb[RightsManagedPackagePublish#RmPkgPubGetFixDoc](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RightsManagedPackagePublish/visualbasic/window1.xaml.vb#rmpkgpubgetfixdoc)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="packageUri" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="packageUri" /> は絶対 URI ではありません。  
+  
+ または  
+  
+ <paramref name="partUri" /> は有効なパーツ URI 構文ではありません。  
+  
+ または  
+  
+ <paramref name="fragment" /> は空であるか、または「#」で始まっています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreatePartUri">
+      <MemberSignature Language="C#" Value="public static Uri CreatePartUri (Uri partUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Uri CreatePartUri(class System.Uri partUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackUriHelper.CreatePartUri(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="partUri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="partUri">URI、<see cref="T:System.IO.Packaging.PackagePart" />パッケージ内で。</param>
+        <summary>書式設定された作成<see cref="T:System.IO.Packaging.PackagePart" />URI。</summary>
+        <returns>書式設定された<see cref="T:System.IO.Packaging.PackagePart" />URI。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]の<xref:System.IO.Packaging.PackagePart>から常に参照されますが、<xref:System.IO.Packaging.Package>ルート。  
+  
+ 返された<xref:System.IO.Packaging.PackagePart>URI は絶対パスで始まる常に「/」で定義されている構文に準拠していると、 [Open Packaging Conventions 仕様](http://go.microsoft.com/fwlink/?LinkID=71255)です。  
+  
+ 次の表は、のサンプル ケースを示しています。<xref:System.IO.Packaging.PackUriHelper.CreatePartUri%2A>です。  
+  
+|`partUri`|返されるパート URI|  
+|---------------|-----------------------|  
+|図 1.jpg|/picture1.jpg|  
+|/picture2.jpg|/picture2.jpg|  
+|a/mydoc.xaml|/a/mydoc.xaml|  
+|/b/bar.xaml|/b/bar.xaml|  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.IO.Packaging.PackUriHelper.CreatePartUri%2A>の相対 Uri を定義するメソッド<xref:System.IO.Packaging.PackagePart>要素。  
+  
+ [!code-csharp[PackageWrite#PackageWriteCreatePartUri](~/samples/snippets/csharp/VS_Snippets_Wpf/PackageWrite/CSharp/PackageWrite.cs#packagewritecreateparturi)]
+ [!code-vb[PackageWrite#PackageWriteCreatePartUri](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PackageWrite/visualbasic/packagewrite.vb#packagewritecreateparturi)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNormalizedPartUri">
+      <MemberSignature Language="C#" Value="public static Uri GetNormalizedPartUri (Uri partUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Uri GetNormalizedPartUri(class System.Uri partUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackUriHelper.GetNormalizedPartUri(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="partUri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="partUri"><see cref="T:System.IO.Packaging.PackagePart" />を正規化する URI。</param>
+        <summary>指定した正規化形式を返します<see cref="T:System.IO.Packaging.PackagePart" />URI。</summary>
+        <returns>正規化された形式の指定された<paramref name="partUri" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Packaging.PackUriHelper.GetNormalizedPartUri%2A>正規化`partUri`を大文字に大文字変換によって (<xref:System.String.ToUpperInvariant%2A?displayProperty=nameWithType>) し、結果を返すことです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="partUri" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPackageUri">
+      <MemberSignature Language="C#" Value="public static Uri GetPackageUri (Uri packUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Uri GetPackageUri(class System.Uri packUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackUriHelper.GetPackageUri(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="packUri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="packUri">パック URI の URI を取得する、<see cref="T:System.IO.Packaging.Package" />です。</param>
+        <summary>指定したパッケージの URI のパッケージ全体を指す内部 URI を返します。</summary>
+        <returns>URI、<see cref="T:System.IO.Packaging.Package" />から、指定した<paramref name="packUri" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、のサンプル ケースを示しています。<xref:System.IO.Packaging.PackUriHelper.GetPackageUri%2A>です。  
+  
+|`packUri`|返されるパッケージ URI|  
+|---------------|--------------------------|  
+|pack://http:、および www.proseware.com、mypackage.xyz/a/mydoc.xaml|http://www.proseware.com/mypackage.xyz|  
+|pack://http:、および www.proseware.com、packages.aspx%3fmypackage/a/bar.xaml|http://www.proseware.com/packages.aspx?mypackage|  
+|pack://http:、および www.proseware.com、mypackage.pkg|http://www.proseware.com/mypackage.pkg|  
+|pack://ftp:、および ftp.proseware.com,packages,mypackage1.abc/a/picture.jpg|ftp://ftp.proseware.com/packages/mypackage1.abc|  
+|pack://file:、、、d:,packages,mypackage2.pkg/a/bar.xaml|file:///d:/packages/mypackage2.pkg|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPartUri">
+      <MemberSignature Language="C#" Value="public static Uri GetPartUri (Uri packUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Uri GetPartUri(class System.Uri packUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackUriHelper.GetPartUri(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="packUri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="packUri">パック URI を返す、 <see cref="T:System.IO.Packaging.PackagePart" /> URI。</param>
+        <summary>URI を返します、<see cref="T:System.IO.Packaging.PackagePart" />指定されたパック URI 内で。</summary>
+        <returns>URI、<see cref="T:System.IO.Packaging.PackagePart" />で、指定された<paramref name="packUri" />、または<see langword="null" />場合<paramref name="packUri" />の代わりにパッケージを指す、<see cref="T:System.IO.Packaging.PackagePart" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返された<xref:System.IO.Packaging.PackagePart>URI パッケージ ルートに対する相対は、絶対パスを常に語句で始まる「/」で定義されている構文に準拠していると、 [Open Packaging Conventions 仕様](http://go.microsoft.com/fwlink/?LinkID=71255)です。  
+  
+ 次の表は、のサンプル ケースを示しています。<xref:System.IO.Packaging.PackUriHelper.GetPartUri%2A>です。  
+  
+|`packUri`|返されるパート URI|  
+|---------------|-----------------------|  
+|pack://http:、および www.proseware.com、mypackage.xyz/a/mydoc.xaml|/a/mydoc.xaml|  
+|pack://http:、および www.proseware.com、packages.aspx%3fmypackage/a/bar.xaml|/a/bar.xaml|  
+|pack://http:、および www.proseware.com、mypackage.pkg|null|  
+|pack://ftp:、および ftp.proseware.com,packages,mypackage1.abc/a/picture.jpg|/a/picture.jpg|  
+|pack://file:、、、d:,packages,mypackage2.pkg/a/bar.xaml|/a/bar.xaml|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRelationshipPartUri">
+      <MemberSignature Language="C#" Value="public static Uri GetRelationshipPartUri (Uri partUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Uri GetRelationshipPartUri(class System.Uri partUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackUriHelper.GetRelationshipPartUri(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="partUri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="partUri"><see cref="P:System.IO.Packaging.PackagePart.Uri" />の<see cref="T:System.IO.Packaging.PackagePart" />関連付けられている URI を返す<see cref="T:System.IO.Packaging.PackageRelationship" />です。</param>
+        <summary>返します、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]に指定された関連付けられているリレーションシップの一部の<see cref="T:System.IO.Packaging.PackagePart" />します。</summary>
+        <returns>URI、<see cref="T:System.IO.Packaging.PackageRelationship" />パートに関連付けられている、<see cref="T:System.IO.Packaging.PackagePart" />で識別される<paramref name="partUri" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `partUri`いずれかを識別する必要があります、 <xref:System.IO.Packaging.Package> (「/」) または<xref:System.IO.Packaging.PackagePart>外にある、<xref:System.IO.Packaging.PackageRelationship>一部です。  
+  
+ 詳細については<xref:System.IO.Packaging.PackageRelationship>パーツでダウンロード可能な Open Packaging Conventions 仕様のセクション 9.3「リレーションシップ」を参照して[仕様書、およびライセンス ダウンロード](http://go.microsoft.com/fwlink/?LinkID=71255)です。  
+  
+   
+  
+## Examples  
+ [WPF におけるパッケージの URI](~/docs/framework/wpf/app-development/pack-uris-in-wpf.md)  
+  
+ [Open Packaging Conventions 仕様](http://go.microsoft.com/fwlink/?LinkID=71255)  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="partUri" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="partUri" />パッケージ パーツ URI 構文が正しくありません。  
+  
+ または  
+  
+ <paramref name="partUri" />絶対 URI です。  
+  
+ または  
+  
+ <paramref name="partUri" />relationship パートを参照します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRelativeUri">
+      <MemberSignature Language="C#" Value="public static Uri GetRelativeUri (Uri sourcePartUri, Uri targetPartUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Uri GetRelativeUri(class System.Uri sourcePartUri, class System.Uri targetPartUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackUriHelper.GetRelativeUri(System.Uri,System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourcePartUri" Type="System.Uri" />
+        <Parameter Name="targetPartUri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="sourcePartUri">[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]のソースの一部です。</param>
+        <param name="targetPartUri">[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]ターゲット部品のです。</param>
+        <summary>返します、相対的な[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]指定した 2 つの間で<see cref="T:System.IO.Packaging.PackagePart" />[!INCLUDE[TLA2#tla_uri#plural](~/includes/tla2sharptla-urisharpplural-md.md)]です。</summary>
+        <returns>相対[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]から<paramref name="sourcePartUri" />に<paramref name="targetPartUri" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、のサンプル ケースを示しています。<xref:System.IO.Packaging.PackUriHelper.GetRelativeUri%2A>です。  
+  
+|`sourcePartUri`|`targetPartUri`|相対 URI が返されます|  
+|---------------------|---------------------|---------------------------|  
+|/mydoc/markup/page.xml|/mydoc/markup/picture.jpg|picture.jpg|  
+|/mydoc/markup/page.xml|/mydoc/picture.jpg|../picture.jpg|  
+|/mydoc/markup/page.xml|/mydoc/images/picture.jpg|../images/picture.jpg|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="sourcePartUri" /> または <paramref name="targetPartUri" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSourcePartUriFromRelationshipPartUri">
+      <MemberSignature Language="C#" Value="public static Uri GetSourcePartUriFromRelationshipPartUri (Uri relationshipPartUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Uri GetSourcePartUriFromRelationshipPartUri(class System.Uri relationshipPartUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackUriHelper.GetSourcePartUriFromRelationshipPartUri(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="relationshipPartUri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="relationshipPartUri">[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]のリレーションシップの部分を返します、<see cref="P:System.IO.Packaging.PackageRelationship.SourceUri" />からです。</param>
+        <summary>返します、<see cref="P:System.IO.Packaging.PackageRelationship.SourceUri" />から、<see cref="T:System.IO.Packaging.PackageRelationship" />と指定した[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]です。</summary>
+        <returns><see cref="P:System.IO.Packaging.PackageRelationship.SourceUri" />の<see cref="T:System.IO.Packaging.PackagePart" />、指定されたリレーションシップから<paramref name="relationshipPartUri" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Packaging.PackageRelationship.SourceUri%2A> Relationship パートのプロパティは、いずれかを識別する必要があります、 <xref:System.IO.Packaging.PackagePart.Package%2A> (「/」) または<xref:System.IO.Packaging.PackagePart>外にある、<xref:System.IO.Packaging.PackageRelationship>です。  
+  
+ たとえば場合、パッケージ パーツ"/files/document.xaml"リレーションシップの一部のソースの所有者は、"/files/_rels/document.xaml.rels"を呼び出す<xref:System.IO.Packaging.PackUriHelper.GetSourcePartUriFromRelationshipPartUri%2A>で、`relationshipPartUri`のパラメーター"/files/_rels/document.xaml.rels"を返します、<xref:System.IO.Packaging.PackageRelationship.SourceUri%2A>の"/files/document.xaml"です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="relationshipPartUri" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="relationshipPartUri" />絶対[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]です。  
+  
+ または  
+  
+ <paramref name="relationshipPartUri" />構文が正しくないため、<see cref="T:System.IO.Packaging.PackagePart" />です。  
+  
+ または  
+  
+ <paramref name="relationshipPartUri" />relationship パートを参照していません。  
+  
+ または  
+  
+ <see cref="P:System.IO.Packaging.PackageRelationship.SourceUri" />リレーションシップの一部が別の relationship パート (無効) を参照します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsRelationshipPartUri">
+      <MemberSignature Language="C#" Value="public static bool IsRelationshipPartUri (Uri partUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsRelationshipPartUri(class System.Uri partUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackUriHelper.IsRelationshipPartUri(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="partUri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="partUri">[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]を確認する、<see cref="T:System.IO.Packaging.PackageRelationship" />一部です。</param>
+        <summary>示す値を返します、指定したかどうか[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]は、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]の<see cref="T:System.IO.Packaging.PackageRelationship" />一部です。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="partUri" />を識別、<see cref="T:System.IO.Packaging.PackageRelationship" />一部です。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="partUri" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="partUri" />絶対[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]です。  
+  
+ または  
+  
+ <paramref name="partUri" />無効な<see cref="T:System.IO.Packaging.PackagePart" />構文です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolvePartUri">
+      <MemberSignature Language="C#" Value="public static Uri ResolvePartUri (Uri sourcePartUri, Uri targetUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Uri ResolvePartUri(class System.Uri sourcePartUri, class System.Uri targetUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackUriHelper.ResolvePartUri(System.Uri,System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourcePartUri" Type="System.Uri" />
+        <Parameter Name="targetUri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="sourcePartUri">ソース部分の URI またはを指定するのには、「/」、<see cref="T:System.IO.Packaging.Package" />ルート。</param>
+        <param name="targetUri">ターゲットのパーツへの相対 URI。</param>
+        <summary>返しますパート ソース パート URI を指定された URI と URI と相対パスをターゲット一部です。</summary>
+        <returns>指定したターゲット部品の URI が解決される<paramref name="SourcePartUri" />と<paramref name="targetUri" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、のサンプル ケースを示しています。<xref:System.IO.Packaging.PackUriHelper.ResolvePartUri%2A>です。  
+  
+|`sourcePartUri`|`targetUri`|返された URI|  
+|---------------------|-----------------|------------------|  
+|/mydoc/markup/page.xml|picture.jpg|/mydoc/markup/picture.jpg|  
+|/mydoc/markup/page.xml|images/picture.jpg|/mydoc/markup/images/picture.jpg|  
+|/mydoc/markup/page.xml|./picture.jpg|/mydoc/markup/picture.jpg|  
+|/mydoc/markup/page.xml|../picture.jpg|/mydoc/picture.jpg|  
+|/mydoc/markup/page.xml|../images/picture.jpg|/mydoc/images/picture.jpg|  
+|/|images/picture.jpg|/images/picture.jpg|  
+  
+   
+  
+## Examples  
+ <xref:System.IO.Packaging.PackUriHelper.ResolvePartUri%2A> メソッドを使用する方法の例を次に示します。  サンプル全体については、次を参照してください。[パッケージ サンプルの読み取り](http://go.microsoft.com/fwlink/?LinkID=160034)です。  
+  
+ [!code-csharp[PackageRead#PackageReadUsing](~/samples/snippets/csharp/VS_Snippets_Wpf/PackageRead/CSharp/PackageRead.cs#packagereadusing)]
+ [!code-vb[PackageRead#PackageReadUsing](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PackageRead/visualbasic/packageread.vb#packagereadusing)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="sourcePartUri" /> または <paramref name="targetUri" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="sourcePartUri" />有効なパーツ URI ではありません。  
+  
+ または  
+  
+ <paramref name="targetUri" />有効な相対 URI ではないです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UriSchemePack">
+      <MemberSignature Language="C#" Value="public static readonly string UriSchemePack;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string UriSchemePack" />
+      <MemberSignature Language="DocId" Value="F:System.IO.Packaging.PackUriHelper.UriSchemePack" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パック URI スキーム名 "pack" を定義します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

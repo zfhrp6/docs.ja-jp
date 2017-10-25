@@ -1,0 +1,211 @@
+<Type Name="Validator" FullName="System.Workflow.ComponentModel.Compiler.Validator">
+  <TypeSignature Language="C#" Value="public class Validator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Validator extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Compiler.Validator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>バリデーター コンポーネントすべての基本クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ Validator クラスは、デザイン時に、アクティビティの構成が適切かどうかを確認するために使います。 バリデーターのインスタンスは、デザイン時に作成し、アクティビティに割り当てられたプロパティを検証するために使います。アクティビティのプロパティ構成が適切でなければ、デザイナーは該当する値にスマート タグ エラーを付けて表示します。 コンパイル時にもバリデーターは使えます。親や子の型、子の個数などの制約が満たされていなければ検証エラーを返します。  さらに、実行時にも、マークアップ ベースのワークフローを作成する際に <xref:System.Workflow.Runtime.WorkflowRuntime.CreateWorkflow%2A> メソッドを使用できます。  
+  
+ バリデーターの主目的は、デザイン時にエラーを検出し、実行時には例外が発生しないようにすることです。  
+  
+ バリデーターには、<xref:System.Workflow.ComponentModel.Compiler.ActivityValidatorAttribute.ValidatorTypeName%2A> 属性を使って検証するアクティビティが関連付けられています。アクティビティ バリデーターはすべて、<xref:System.Workflow.ComponentModel.Compiler.ActivityValidator> クラスを継承しなければなりません。  
+  
+ 特に指定しなければ、メタ プロパティを検証対象とします。実行時に値が変わるインスタンス プロパティは検証しません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Validator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Compiler.Validator.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Compiler.Validator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFullPropertyName">
+      <MemberSignature Language="C#" Value="protected string GetFullPropertyName (System.Workflow.ComponentModel.Compiler.ValidationManager manager);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance string GetFullPropertyName(class System.Workflow.ComponentModel.Compiler.ValidationManager manager) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Compiler.Validator.GetFullPropertyName(System.Workflow.ComponentModel.Compiler.ValidationManager)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="manager" Type="System.Workflow.ComponentModel.Compiler.ValidationManager" />
+      </Parameters>
+      <Docs>
+        <param name="manager">検証に関連付けられている <see cref="T:System.Workflow.ComponentModel.Compiler.ValidationManager" />。</param>
+        <summary>プロパティの完全名を抽出するヘルパー メソッド。</summary>
+        <returns>プロパティの完全名。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 検証するプロパティが入れ子になっているときに有用です。  このメソッドは、スタック内の <xref:System.Workflow.ComponentModel.Compiler.PropertyValidationContext> を順次処理して、プロパティの完全名を構築します。  
+  
+ たとえば My.Actor.Bas という名前は、3 つの <xref:System.Workflow.ComponentModel.Compiler.PropertyValidationContext> 項目を使って組み立てます。  
+  
+ 検証するプロパティの中にコレクション内の項目があれば、そのコレクション名を生成します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="manager" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Validate">
+      <MemberSignature Language="C#" Value="public virtual System.Workflow.ComponentModel.Compiler.ValidationErrorCollection Validate (System.Workflow.ComponentModel.Compiler.ValidationManager manager, object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Workflow.ComponentModel.Compiler.ValidationErrorCollection Validate(class System.Workflow.ComponentModel.Compiler.ValidationManager manager, object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Compiler.Validator.Validate(System.Workflow.ComponentModel.Compiler.ValidationManager,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Compiler.ValidationErrorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="manager" Type="System.Workflow.ComponentModel.Compiler.ValidationManager" />
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="manager">検証に関連付けられている検証マネージャー。</param>
+        <param name="obj">検証する <see cref="T:System.Object" />。</param>
+        <summary>指定されたオブジェクトを検証し、検証エラーのコレクションを返します。</summary>
+        <returns>この操作によって発生した検証エラーを格納している <see cref="T:System.Workflow.ComponentModel.Compiler.ValidationErrorCollection" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="obj" /> が null 参照 (<see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateActivityChange">
+      <MemberSignature Language="C#" Value="public virtual System.Workflow.ComponentModel.Compiler.ValidationError ValidateActivityChange (System.Workflow.ComponentModel.Activity activity, System.Workflow.ComponentModel.ActivityChangeAction action);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Workflow.ComponentModel.Compiler.ValidationError ValidateActivityChange(class System.Workflow.ComponentModel.Activity activity, class System.Workflow.ComponentModel.ActivityChangeAction action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Compiler.Validator.ValidateActivityChange(System.Workflow.ComponentModel.Activity,System.Workflow.ComponentModel.ActivityChangeAction)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Compiler.ValidationError</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activity" Type="System.Workflow.ComponentModel.Activity" />
+        <Parameter Name="action" Type="System.Workflow.ComponentModel.ActivityChangeAction" />
+      </Parameters>
+      <Docs>
+        <param name="activity">指定した <see cref="T:System.Workflow.ComponentModel.Activity" />。</param>
+        <param name="action">指定した <see cref="T:System.Workflow.ComponentModel.ActivityChangeAction" />。</param>
+        <summary>派生クラスでオーバーライドすると、追加または削除された指定の <see cref="T:System.Workflow.ComponentModel.Activity" /> を基に変更内容を検証します。 動的更新の際、ワークフローに変更を施す時点で呼び出されます。</summary>
+        <returns>操作によって生成された <see cref="T:System.Workflow.ComponentModel.Compiler.ValidationError" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基本クラスの実装では、null 参照 (Visual Basic では `Nothing`) を返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="action" /> が null 参照 (<see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateProperties">
+      <MemberSignature Language="C#" Value="public virtual System.Workflow.ComponentModel.Compiler.ValidationErrorCollection ValidateProperties (System.Workflow.ComponentModel.Compiler.ValidationManager manager, object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Workflow.ComponentModel.Compiler.ValidationErrorCollection ValidateProperties(class System.Workflow.ComponentModel.Compiler.ValidationManager manager, object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Compiler.Validator.ValidateProperties(System.Workflow.ComponentModel.Compiler.ValidationManager,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Compiler.ValidationErrorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="manager" Type="System.Workflow.ComponentModel.Compiler.ValidationManager" />
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="manager">検証に関連付けられている検証マネージャー。</param>
+        <param name="obj">検証する <see cref="T:System.Workflow.ComponentModel.Activity" />。</param>
+        <summary>特定のオブジェクト プロパティを自動的に検証するヘルパー メソッド。</summary>
+        <returns>この操作によって発生した検証エラーを格納している <see cref="T:System.Workflow.ComponentModel.Compiler.ValidationErrorCollection" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="obj" /> が null 参照 (<see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateProperty">
+      <MemberSignature Language="C#" Value="protected System.Workflow.ComponentModel.Compiler.ValidationErrorCollection ValidateProperty (System.Reflection.PropertyInfo propertyInfo, object propertyOwner, object propertyValue, System.Workflow.ComponentModel.Compiler.ValidationManager manager);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance class System.Workflow.ComponentModel.Compiler.ValidationErrorCollection ValidateProperty(class System.Reflection.PropertyInfo propertyInfo, object propertyOwner, object propertyValue, class System.Workflow.ComponentModel.Compiler.ValidationManager manager) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Compiler.Validator.ValidateProperty(System.Reflection.PropertyInfo,System.Object,System.Object,System.Workflow.ComponentModel.Compiler.ValidationManager)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Compiler.ValidationErrorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyInfo" Type="System.Reflection.PropertyInfo" />
+        <Parameter Name="propertyOwner" Type="System.Object" />
+        <Parameter Name="propertyValue" Type="System.Object" />
+        <Parameter Name="manager" Type="System.Workflow.ComponentModel.Compiler.ValidationManager" />
+      </Parameters>
+      <Docs>
+        <param name="propertyInfo">検証対象プロパティの <see cref="T:System.Reflection.PropertyInfo" />。</param>
+        <param name="propertyOwner">プロパティの所有者。</param>
+        <param name="propertyValue">プロパティの値。</param>
+        <param name="manager">この操作の <see cref="T:System.Workflow.ComponentModel.Compiler.ValidationManager" />。</param>
+        <summary>プロパティを検証し、その結果を格納した <see cref="T:System.Workflow.ComponentModel.Compiler.ValidationErrorCollection" /> を返します。</summary>
+        <returns>検証結果を格納している <see cref="T:System.Workflow.ComponentModel.Compiler.ValidationErrorCollection" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エラーがなかった場合は空の <xref:System.Workflow.ComponentModel.Compiler.ValidationErrorCollection> が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

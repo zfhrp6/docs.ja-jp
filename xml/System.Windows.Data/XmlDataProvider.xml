@@ -1,0 +1,503 @@
+<Type Name="XmlDataProvider" FullName="System.Windows.Data.XmlDataProvider">
+  <TypeSignature Language="C#" Value="public class XmlDataProvider : System.Windows.Data.DataSourceProvider, System.Windows.Markup.IUriContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlDataProvider extends System.Windows.Data.DataSourceProvider implements class System.Windows.Markup.IUriContext" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Data.XmlDataProvider" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Data.DataSourceProvider</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.IUriContext</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None, Readability=System.Windows.Readability.Unreadable)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("XmlSerializer")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>XML データへのアクセスが宣言型データ バインディングを有効にします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  部分的に信頼されたサンド ボックスで<xref:System.Windows.Data.XmlDataProvider>指定されたデータにアクセスする権限があるない場合は失敗します。 部分信頼セキュリティの詳細については、次を参照してください。 [WPF 部分信頼セキュリティ](~/docs/framework/wpf/wpf-partial-trust-security.md)です。  
+  
+ <xref:System.Windows.Data.XmlDataProvider>アクセスする次の方法を公開する[!INCLUDE[TLA#tla_xml](~/includes/tlasharptla-xml-md.md)]データ。  
+  
+-   インラインを埋め込むことができます[!INCLUDE[TLA2#tla_xml](~/includes/tla2sharptla-xml-md.md)]データを使用して、<xref:System.Windows.Data.XmlDataProvider>クラスです。  
+  
+-   設定することができます、<xref:System.Windows.Data.XmlDataProvider.Source%2A>プロパティを<xref:System.Uri>の[!INCLUDE[TLA2#tla_xml](~/includes/tla2sharptla-xml-md.md)]データ ファイル。  
+  
+-   設定することができます、<xref:System.Windows.Data.XmlDataProvider.Document%2A>プロパティを<xref:System.Xml.XmlDocument>です。  
+  
+ <xref:System.Windows.Data.XmlDataProvider>すべてのバインディングのフル更新を実行時に、<xref:System.Xml.XmlDocument.NodeChanged?displayProperty=nameWithType>イベントが発生します。 特定のノードの最適化機能はありません。  
+  
+ <xref:System.Windows.Data.XmlDataProvider.IsAsynchronous%2A?displayProperty=nameWithType>プロパティに設定されている`true`既定では、つまり、<xref:System.Windows.Data.XmlDataProvider>データを取得しのコレクションを生成する[!INCLUDE[TLA2#tla_xml](~/includes/tla2sharptla-xml-md.md)]ノードが既定で非同期的にします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlDataProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.XmlDataProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Data.XmlDataProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseUri">
+      <MemberSignature Language="C#" Value="protected virtual Uri BaseUri { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri BaseUri" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.XmlDataProvider.BaseUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この型またはメンバーは、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] インフラストラクチャをサポートします。コードから直接使用するためのものではありません。</summary>
+        <value>ベース URI。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginQuery">
+      <MemberSignature Language="C#" Value="protected override void BeginQuery ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void BeginQuery() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.XmlDataProvider.BeginQuery" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>いずれかの読み込み、インラインの準備[!INCLUDE[TLA2#tla_xml](~/includes/tla2sharptla-xml-md.md)]または外部[!INCLUDE[TLA2#tla_xml](~/includes/tla2sharptla-xml-md.md)]ファイルのコレクションを生成する[!INCLUDE[TLA2#tla_xml](~/includes/tla2sharptla-xml-md.md)]ノード。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実行が即時かの値に基づいて、バック グラウンド スレッドで、<xref:System.Windows.Data.XmlDataProvider.IsAsynchronous%2A>プロパティです。  
+  
+ このメソッドは、<xref:System.Windows.Data.DataSourceProvider.InitialLoad%2A>と<xref:System.Windows.Data.DataSourceProvider.Refresh%2A>基本クラスのメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Document">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlDocument Document { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlDocument Document" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.XmlDataProvider.Document" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlDocument</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインディング ソースとして使用される <see cref="T:System.Xml.XmlDocument" /> を取得または設定します。</summary>
+        <value>バインディング ソースとして使用される <see cref="T:System.Xml.XmlDocument" />。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Data.XmlDataProvider>アクセスする次の方法を公開する[!INCLUDE[TLA#tla_xml](~/includes/tlasharptla-xml-md.md)]データ。  
+  
+-   インラインを埋め込むことができます[!INCLUDE[TLA2#tla_xml](~/includes/tla2sharptla-xml-md.md)]データを使用して、<xref:System.Windows.Data.XmlDataProvider>クラスです。  
+  
+-   設定することができます、<xref:System.Windows.Data.XmlDataProvider.Source%2A>プロパティを<xref:System.Uri>の[!INCLUDE[TLA2#tla_xml](~/includes/tla2sharptla-xml-md.md)]データ ファイル。  
+  
+-   このプロパティを設定することができます、<xref:System.Xml.XmlDocument>です。  
+  
+ <xref:System.Windows.Data.XmlDataProvider>ときにすべてのバインディングのフル更新を実行、<xref:System.Xml.XmlDocument.NodeChanged?displayProperty=nameWithType>イベントが発生します。 特定のノードの最適化機能はありません。  
+  
+ 場合、<xref:System.Windows.Data.XmlDataProvider.Source%2A>プロパティが、セットのインライン[!INCLUDE[TLA2#tla_xml](~/includes/tla2sharptla-xml-md.md)]データは破棄されます。 場合、<xref:System.Windows.Data.XmlDataProvider.Document%2A>プロパティを設定すると、次に、<xref:System.Windows.Data.XmlDataProvider.Source%2A>プロパティがオフと任意のインライン[!INCLUDE[TLA2#tla_xml](~/includes/tla2sharptla-xml-md.md)]データは破棄されます。  
+  
+ 次のプロパティの設定に暗黙的になる<xref:System.Windows.Data.XmlDataProvider>を更新するオブジェクト: <xref:System.Windows.Data.XmlDataProvider.Source%2A>、 <xref:System.Windows.Data.XmlDataProvider.Document%2A>、 <xref:System.Windows.Data.XmlDataProvider.XmlNamespaceManager%2A>、および<xref:System.Windows.Data.XmlDataProvider.XPath%2A>です。 複数の更新を誘発プロパティの使用を変更するときに<xref:System.Windows.Data.DataSourceProvider.DeferRefresh%2A>をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndInit">
+      <MemberSignature Language="C#" Value="protected override void EndInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void EndInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.XmlDataProvider.EndInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この要素の初期化が完了したことを示しますこれが原因で、<see cref="M:System.Windows.Data.DataSourceProvider.Refresh" />場合の他の<see cref="M:System.Windows.Data.DataSourceProvider.DeferRefresh" />保留状態になっています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAsynchronous">
+      <MemberSignature Language="C#" Value="public bool IsAsynchronous { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAsynchronous" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.XmlDataProvider.IsAsynchronous" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはワーカー スレッドまたは、アクティブなコンテキストにノード コレクションの作成を実行するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ノード コレクションの作成をワーカー スレッドで実行するにはそれ以外の場合、<see langword="false" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeSource">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeSource ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeSource() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.XmlDataProvider.ShouldSerializeSource" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.Windows.Data.XmlDataProvider.Source" /> プロパティを永続化する必要があるかどうかを示します。</summary>
+        <returns>
+          プロパティの値が既定値から変更されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、`ShouldSerialize`ためメソッドが用意されて、<xref:System.Windows.Data.XmlDataProvider.Source%2A>プロパティには、単純な既定値にありません。 このメソッドは、既定値から、プロパティが変更されたかどうかを示します。 いずれかをデザイナーを開発している場合に通常、このメソッドが呼び出す、<xref:System.Windows.Data.XmlDataProvider>やコントロールを組み込む独自の開発、<xref:System.Windows.Data.XmlDataProvider>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeXmlSerializer">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeXmlSerializer ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeXmlSerializer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.XmlDataProvider.ShouldSerializeXmlSerializer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.Windows.Data.XmlDataProvider.XmlSerializer" /> プロパティを永続化する必要があるかどうかを示します。</summary>
+        <returns>
+          プロパティの値が既定値から変更されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、`ShouldSerialize`ためメソッドが用意されて、<xref:System.Windows.Data.XmlDataProvider.XmlSerializer%2A>プロパティには、単純な既定値にありません。 このメソッドは、既定値から、プロパティが変更されたかどうかを示します。 いずれかをデザイナーを開発している場合に通常、このメソッドが呼び出す、<xref:System.Windows.Data.XmlDataProvider>やコントロールを組み込む独自の開発、<xref:System.Windows.Data.XmlDataProvider>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeXPath">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeXPath ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeXPath() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.XmlDataProvider.ShouldSerializeXPath" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.Windows.Data.XmlDataProvider.XPath" /> プロパティを永続化する必要があるかどうかを示します。</summary>
+        <returns>
+          プロパティの値が既定値から変更されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、`ShouldSerialize`ためメソッドが用意されて、<xref:System.Windows.Data.XmlDataProvider.XPath%2A>プロパティには、単純な既定値にありません。 このメソッドは、既定値から、プロパティが変更されたかどうかを示します。 いずれかをデザイナーを開発している場合に通常、このメソッドが呼び出す、<xref:System.Windows.Data.XmlDataProvider>やコントロールを組み込む独自の開発、<xref:System.Windows.Data.XmlDataProvider>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Source">
+      <MemberSignature Language="C#" Value="public Uri Source { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Source" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.XmlDataProvider.Source" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Uri" />の[!INCLUDE[TLA#tla_xml](~/includes/tlasharptla-xml-md.md)]バインディング ソースとして使用するデータ ファイル。</summary>
+        <value><see cref="T:System.Uri" />の[!INCLUDE[TLA2#tla_xml](~/includes/tla2sharptla-xml-md.md)]バインディング ソースとして使用するデータ ファイル。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Data.XmlDataProvider>アクセスする次の方法を公開する[!INCLUDE[TLA#tla_xml](~/includes/tlasharptla-xml-md.md)]データ。  
+  
+-   インラインを埋め込むことができます[!INCLUDE[TLA2#tla_xml](~/includes/tla2sharptla-xml-md.md)]データを使用して、<xref:System.Windows.Data.XmlDataProvider>クラスです。  
+  
+-   このプロパティを設定することができます、<xref:System.Uri>の[!INCLUDE[TLA2#tla_xml](~/includes/tla2sharptla-xml-md.md)]データ ファイル。  
+  
+-   設定することができます、<xref:System.Windows.Data.XmlDataProvider.Document%2A>プロパティを<xref:System.Xml.XmlDocument>です。  
+  
+ 場合、<xref:System.Windows.Data.XmlDataProvider.Source%2A>プロパティが、セットのインライン[!INCLUDE[TLA2#tla_xml](~/includes/tla2sharptla-xml-md.md)]データは破棄されます。 場合、<xref:System.Windows.Data.XmlDataProvider.Document%2A>プロパティを設定すると、次に、<xref:System.Windows.Data.XmlDataProvider.Source%2A>プロパティがオフと任意のインライン[!INCLUDE[TLA2#tla_xml](~/includes/tla2sharptla-xml-md.md)]データは破棄されます。  
+  
+ 次のプロパティの設定に暗黙的になる<xref:System.Windows.Data.XmlDataProvider>を更新するオブジェクト: <xref:System.Windows.Data.XmlDataProvider.Source%2A>、 <xref:System.Windows.Data.XmlDataProvider.Document%2A>、 <xref:System.Windows.Data.XmlDataProvider.XmlNamespaceManager%2A>、および<xref:System.Windows.Data.XmlDataProvider.XPath%2A>です。 複数の更新を誘発プロパティの使用を変更するときに<xref:System.Windows.Data.DataSourceProvider.DeferRefresh%2A>をお勧めします。  
+  
+   
+  
+## Examples  
+ 埋め込み、一部のアプリケーションで、[!INCLUDE[TLA2#tla_xml](~/includes/tla2sharptla-xml-md.md)]内でインライン、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]コンパイル時に、データの正確な内容を確認する必要があるためにページが便利にすることができます。 外部からデータを取得するため、[!INCLUDE[TLA2#tla_xml](~/includes/tla2sharptla-xml-md.md)]ファイルは、次の例に示すようにします。  
+  
+ [!code-xaml[XMLDataSource2#XmlFileExample](~/samples/snippets/csharp/VS_Snippets_Wpf/XmlDataSource2/CS/Window1.xaml#xmlfileexample)]  
+  
+ 場合、[!INCLUDE[TLA2#tla_xml](~/includes/tla2sharptla-xml-md.md)]リモート データが存在する[!INCLUDE[TLA2#tla_xml](~/includes/tla2sharptla-xml-md.md)]ファイル、アクセスを定義するデータに適切なを割り当てることによって[!INCLUDE[TLA2#tla_url](~/includes/tla2sharptla-url-md.md)]を<xref:System.Windows.Data.XmlDataProvider.Source%2A>次のように属性します。  
+  
+```  
+<XmlDataProvider x:Key="BookData" Source="http://MyUrl" XPath="Books"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IUriContext.BaseUri">
+      <MemberSignature Language="C#" Value="Uri System.Windows.Markup.IUriContext.BaseUri { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri System.Windows.Markup.IUriContext.BaseUri" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.XmlDataProvider.System#Windows#Markup#IUriContext#BaseUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。</summary>
+        <value>ベース URI。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlNamespaceManager">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlNamespaceManager XmlNamespaceManager { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlNamespaceManager XmlNamespaceManager" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.XmlDataProvider.XmlNamespaceManager" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNamespaceManager</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Xml.XmlNamespaceManager" />実行に使用される<see cref="P:System.Windows.Data.XmlDataProvider.XPath" />クエリ。</summary>
+        <value><see cref="T:System.Xml.XmlNamespaceManager" />実行に使用される<see cref="P:System.Windows.Data.XmlDataProvider.XPath" />クエリ。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次のプロパティの設定に暗黙的になる<xref:System.Windows.Data.XmlDataProvider>を更新するオブジェクト: <xref:System.Windows.Data.XmlDataProvider.Source%2A>、 <xref:System.Windows.Data.XmlDataProvider.Document%2A>、 <xref:System.Windows.Data.XmlDataProvider.XmlNamespaceManager%2A>、および<xref:System.Windows.Data.XmlDataProvider.XPath%2A>です。 複数の更新を誘発プロパティの使用を変更するときに<xref:System.Windows.Data.DataSourceProvider.DeferRefresh%2A>をお勧めします。  
+  
+<a name="xamlAttributeUsage_XmlNamespaceManager"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object XmlNamespaceManager="mappingCollection"/>  
+```  
+  
+<a name="xamlValues_XmlNamespaceManager"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *mappingCollection*  
+ <xref:System.Windows.Data.XmlNamespaceMappingCollection>。 参照する、<xref:System.Windows.Data.XmlNamespaceMappingCollection>を使用して、[マークアップ拡張機能と WPF XAML](~/docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、このプロパティを使用する方法を示します。  
+  
+ [!code-xaml[XmlnsBindSnippet#XmlNamespaceMapping](~/samples/snippets/csharp/VS_Snippets_Wpf/XmlnsBindSnippet/CS/Window1.xaml#xmlnamespacemapping)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlSerializer">
+      <MemberSignature Language="C#" Value="public System.Xml.Serialization.IXmlSerializable XmlSerializer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Serialization.IXmlSerializable XmlSerializer" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.XmlDataProvider.XmlSerializer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.IXmlSerializable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インラインの取得[!INCLUDE[TLA2#tla_xml](~/includes/tla2sharptla-xml-md.md)]コンテンツ。</summary>
+        <value>インライン[!INCLUDE[TLA2#tla_xml](~/includes/tla2sharptla-xml-md.md)]コンテンツ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、埋め込みのリテラルの内容をコンパイルするパーサーによって使用[!INCLUDE[TLA2#tla_xml](~/includes/tla2sharptla-xml-md.md)]データ アイランドです。  
+  
+<a name="xamlPropertyElementUsage_XmlSerializer"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<XmlDataProvider>  
+  <XmlDataProvider.XmlSerializer>  
+    <x:XData>  
+       <elementDataRoot>  
+          <elementData/>  
+       <elementDataRoot>  
+    </x:XData>  
+  </XmlDataProvider.XmlSerializer>  
+</XmlDataProvider>  
+--or--  
+<XmlDataProvider>  
+    <x:XData>  
+       <elementDataRoot>  
+          <elementData/>  
+       <elementDataRoot>  
+    </x:XData>  
+</XmlDataProvider>  
+```  
+  
+<a name="xamlValues_XmlSerializer"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *elementDataRoot*  
+ 必須です。 囲まれたデータ アイランドの単一のルート要素です。 1 つのルートがない場合、`x:XData`データ ソースとして無効です。  
+  
+ *elementData*  
+ 省略可能です。 データを表す XML です。 要素のデータとして格納できる要素の任意の数でその他の要素、および XML の一般的な規則の対象に、入れ子になった要素が含まれていることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XPath">
+      <MemberSignature Language="C#" Value="public string XPath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string XPath" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.XmlDataProvider.XPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.Markup.DesignerSerializationOptions(System.Windows.Markup.DesignerSerializationOptions.SerializeAsAttribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see langword="XPath" />データ コレクションの生成に使用するクエリ。</summary>
+        <value><see langword="XPath" />データ コレクションの生成に使用するクエリ。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.XmlNode.SelectNodes%2A?displayProperty=nameWithType>メソッド ハンドル、`XPath`式から、<xref:System.Windows.Data.Binding.XPath%2A>プロパティです。 `XPath`関数はサポートされていません。 `XPath`式についてを参照してください、<xref:System.Xml.XmlNode.SelectNodes%2A>ドキュメントと例」のセクションで提供されるいくつかの例です。  
+  
+ 次のプロパティの設定に暗黙的になる<xref:System.Windows.Data.XmlDataProvider>を更新するオブジェクト: <xref:System.Windows.Data.XmlDataProvider.Source%2A>、 <xref:System.Windows.Data.XmlDataProvider.Document%2A>、 <xref:System.Windows.Data.XmlDataProvider.XmlNamespaceManager%2A>、および<xref:System.Windows.Data.XmlDataProvider.XPath%2A>です。 複数の更新を誘発プロパティの使用を変更するときに<xref:System.Windows.Data.DataSourceProvider.DeferRefresh%2A>をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

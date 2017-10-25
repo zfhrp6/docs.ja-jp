@@ -1,0 +1,619 @@
+<Type Name="ToolStripLabel" FullName="System.Windows.Forms.ToolStripLabel">
+  <TypeSignature Language="C#" Value="public class ToolStripLabel : System.Windows.Forms.ToolStripItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ToolStripLabel extends System.Windows.Forms.ToolStripItem" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ToolStripLabel" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.ToolStripItem</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Forms.Design.ToolStripItemDesignerAvailability(System.Windows.Forms.Design.ToolStripItemDesignerAvailability.ToolStrip)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>表すした<see cref="T:System.Windows.Forms.ToolStripItem" />をテキストとイメージをレンダリングし、ハイパーリンクを表示できます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.ToolStripLabel>テキストとイメージを実装することをレンダリングするラベルを作成するクラス、<xref:System.Windows.Forms.ToolStripItem.TextAlign%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.ToolStripItem.ImageAlign%2A?displayProperty=nameWithType>プロパティです。 <xref:System.Windows.Forms.ToolStripLabel>さらに、1 つまたは複数のハイパーリンクを表示するように有効にする多くのプロパティおよびその他のプロパティのハイパーリンクの動作と外観を変更します。  
+  
+ <xref:System.Windows.Forms.ToolStripLabel>に似ています、<xref:System.Windows.Forms.ToolStripButton>既定でフォーカスが移動されるしないと、プッシュまたは強調表示されたとしてレンダリングされません。  
+  
+ <xref:System.Windows.Forms.ToolStripLabel>ホストされている項目としては、アクセス キーをサポートしています。  
+  
+ 使用して、 <xref:System.Windows.Forms.LinkLabel.LinkColor%2A>、 <xref:System.Windows.Forms.LinkLabel.LinkVisited%2A>、および<xref:System.Windows.Forms.LinkLabel.LinkBehavior%2A>プロパティを<xref:System.Windows.Forms.ToolStripLabel>でリンク コントロールをサポートするために、<xref:System.Windows.Forms.ToolStrip>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、初期化、<xref:System.Windows.Forms.ToolStripLabel>を設定して、リンクを含む、 <xref:System.Windows.Forms.ToolStripLabel.IsLink%2A>、 <xref:System.Windows.Forms.ToolStripLabel.LinkColor%2A>、 <xref:System.Windows.Forms.ToolStripLabel.ActiveLinkColor%2A>、 <xref:System.Windows.Forms.ToolStripLabel.VisitedLinkColor%2A>、<xref:System.Windows.Forms.ToolStripLabel.LinkVisited%2A>と<xref:System.Windows.Forms.ToolStripLabel.LinkBehavior%2A>プロパティです。  
+  
+ [!code-csharp[System.Windows.Forms.ToolStripLabel#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStripLabel/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ToolStripLabel#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStripLabel/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ToolStripLabel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripLabel.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.ToolStripLabel" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ToolStripLabel (System.Drawing.Image image);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Image image) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripLabel.#ctor(System.Drawing.Image)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="image" Type="System.Drawing.Image" />
+      </Parameters>
+      <Docs>
+        <param name="image"><see cref="T:System.Windows.Forms.ToolStripLabel" /> に表示される <see cref="T:System.Drawing.Image" />。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ToolStripLabel" />クラス、表示するイメージを指定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ToolStripLabel (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripLabel.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">表示するテキスト、<see cref="T:System.Windows.Forms.ToolStripLabel" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ToolStripLabel" />クラス、表示するテキストを指定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ToolStripLabel (string text, System.Drawing.Image image);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text, class System.Drawing.Image image) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripLabel.#ctor(System.String,System.Drawing.Image)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="image" Type="System.Drawing.Image" />
+      </Parameters>
+      <Docs>
+        <param name="text">表示するテキスト、<see cref="T:System.Windows.Forms.ToolStripLabel" />です。</param>
+        <param name="image"><see cref="T:System.Windows.Forms.ToolStripLabel" /> に表示される <see cref="T:System.Drawing.Image" />。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ToolStripLabel" />クラス、テキストおよび表示するイメージを指定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ToolStripLabel (string text, System.Drawing.Image image, bool isLink);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text, class System.Drawing.Image image, bool isLink) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripLabel.#ctor(System.String,System.Drawing.Image,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="image" Type="System.Drawing.Image" />
+        <Parameter Name="isLink" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="text">表示するテキスト、<see cref="T:System.Windows.Forms.ToolStripLabel" />です。</param>
+        <param name="image"><see cref="T:System.Windows.Forms.ToolStripLabel" /> に表示される <see cref="T:System.Drawing.Image" />。</param>
+        <param name="isLink">
+          <see langword="true" />場合、 <see cref="T:System.Windows.Forms.ToolStripLabel" /> ; リンクとして機能それ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ToolStripLabel" />指定して、テキストおよびイメージを表示するかどうかと、<see cref="T:System.Windows.Forms.ToolStripLabel" />リンクとして機能します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ToolStripLabel (string text, System.Drawing.Image image, bool isLink, EventHandler onClick);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text, class System.Drawing.Image image, bool isLink, class System.EventHandler onClick) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripLabel.#ctor(System.String,System.Drawing.Image,System.Boolean,System.EventHandler)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="image" Type="System.Drawing.Image" />
+        <Parameter Name="isLink" Type="System.Boolean" />
+        <Parameter Name="onClick" Type="System.EventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="text">表示するテキスト、<see cref="T:System.Windows.Forms.ToolStripLabel" />です。</param>
+        <param name="image"><see cref="T:System.Windows.Forms.ToolStripLabel" /> に表示される <see cref="T:System.Drawing.Image" />。</param>
+        <param name="isLink">
+          <see langword="true" />場合、 <see cref="T:System.Windows.Forms.ToolStripLabel" /> ; リンクとして機能それ以外の場合、<see langword="false" />です。</param>
+        <param name="onClick">A<see cref="E:System.Windows.Forms.ToolStripItem.Click" />イベント ハンドラー。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ToolStripLabel" />クラス、テキストと、表示するイメージを指定するかどうか、<see cref="T:System.Windows.Forms.ToolStripLabel" />は、リンクとして機能し、提供する、<see cref="E:System.Windows.Forms.ToolStripItem.Click" />イベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ToolStripLabel (string text, System.Drawing.Image image, bool isLink, EventHandler onClick, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text, class System.Drawing.Image image, bool isLink, class System.EventHandler onClick, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripLabel.#ctor(System.String,System.Drawing.Image,System.Boolean,System.EventHandler,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="image" Type="System.Drawing.Image" />
+        <Parameter Name="isLink" Type="System.Boolean" />
+        <Parameter Name="onClick" Type="System.EventHandler" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">表示するテキスト、<see cref="T:System.Windows.Forms.ToolStripLabel" />です。</param>
+        <param name="image"><see cref="T:System.Windows.Forms.ToolStripLabel" /> に表示される <see cref="T:System.Drawing.Image" />。</param>
+        <param name="isLink">
+          <see langword="true" />場合、 <see cref="T:System.Windows.Forms.ToolStripLabel" /> ; リンクとして機能それ以外の場合、<see langword="false" />です。</param>
+        <param name="onClick">A<see cref="E:System.Windows.Forms.ToolStripItem.Click" />イベント ハンドラー。</param>
+        <param name="name"><see cref="T:System.Windows.Forms.ToolStripLabel" /> の名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ToolStripLabel" />クラス、テキストと、表示するイメージを指定するかどうか、<see cref="T:System.Windows.Forms.ToolStripLabel" />は、リンクとして機能し、提供する、<see cref="E:System.Windows.Forms.ToolStripItem.Click" />イベント ハンドラーとの名前、<see cref="T:System.Windows.Forms.ToolStripLabel" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActiveLinkColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color ActiveLinkColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color ActiveLinkColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ToolStripLabel.ActiveLinkColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティブなリンクを表示するために使用する色を取得または設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />アクティブなリンクを表示する色を表すです。 既定の色はシステムによって指定されます。 この色は、通常、<see langword="Color.Red" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクティブなリンクは、リンクがクリックしてされている処理中ですです。 これは、状態と同様、<xref:System.Windows.Forms.Button>コントロール。 このプロパティを使用すると、リンクは、リンクがクリックしてされた処理を行ってときに表示される色を指定します。  
+  
+ リンクに関連付けられている色の数があります。 <xref:System.Windows.Forms.LinkLabel.LinkColor%2A>で表示されるすべてのリンクの色を指定します、<xref:System.Windows.Forms.LinkLabel>コントロール。 <xref:System.Windows.Forms.ToolStripLabel.VisitedLinkColor%2A>プロパティでは、ユーザーがアクセスした後に、リンクの色を指定することができます。  
+  
+> [!NOTE]
+>  このプロパティを設定する場合は、色のコントロールの背景色と競合しないするプロパティを設定するか、テキストが正しく表示されないことを確認します。 たとえば、コントロールの背景色が`Color.Red`にこのプロパティを設定および`Color.Red`テキストが正しく表示されませんがクリックしてされた処理を行って、リンクの場合。  
+  
+   
+  
+## Examples  
+ 次のコード例では、初期化、<xref:System.Windows.Forms.ToolStripLabel>を設定して、リンクを含む、 <xref:System.Windows.Forms.ToolStripLabel.IsLink%2A>、 <xref:System.Windows.Forms.ToolStripLabel.LinkColor%2A>、 <xref:System.Windows.Forms.ToolStripLabel.ActiveLinkColor%2A>、 <xref:System.Windows.Forms.ToolStripLabel.VisitedLinkColor%2A>、<xref:System.Windows.Forms.ToolStripLabel.LinkVisited%2A>と<xref:System.Windows.Forms.ToolStripLabel.LinkBehavior%2A>プロパティです。  
+  
+ [!code-csharp[System.Windows.Forms.ToolStripLabel#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStripLabel/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ToolStripLabel#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStripLabel/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanSelect">
+      <MemberSignature Language="C#" Value="public override bool CanSelect { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanSelect" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ToolStripLabel.CanSelect" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>選択可能な状態を示す値を取得、<see cref="T:System.Windows.Forms.ToolStripLabel" />です。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Forms.ToolStripLabel>したの<xref:System.Windows.Forms.ToolStripItem>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateAccessibilityInstance">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Forms.AccessibleObject CreateAccessibilityInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Forms.AccessibleObject CreateAccessibilityInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripLabel.CreateAccessibilityInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleObject</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.ToolStripItem" /> の新しいユーザー補助オブジェクトを作成します。</summary>
+        <returns><see cref="T:System.Windows.Forms.AccessibleObject" /> の新しい <see cref="T:System.Windows.Forms.ToolStripItem" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLink">
+      <MemberSignature Language="C#" Value="public bool IsLink { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsLink" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ToolStripLabel.IsLink" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="T:System.Windows.Forms.ToolStripLabel" />ハイパーリンクです。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Windows.Forms.ToolStripLabel" />ハイパーリンクは、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、初期化、<xref:System.Windows.Forms.ToolStripLabel>を設定して、リンクを含む、 <xref:System.Windows.Forms.ToolStripLabel.IsLink%2A>、 <xref:System.Windows.Forms.ToolStripLabel.LinkColor%2A>、 <xref:System.Windows.Forms.ToolStripLabel.ActiveLinkColor%2A>、 <xref:System.Windows.Forms.ToolStripLabel.VisitedLinkColor%2A>、<xref:System.Windows.Forms.ToolStripLabel.LinkVisited%2A>と<xref:System.Windows.Forms.ToolStripLabel.LinkBehavior%2A>プロパティです。  
+  
+ [!code-csharp[System.Windows.Forms.ToolStripLabel#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStripLabel/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ToolStripLabel#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStripLabel/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LinkBehavior">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.LinkBehavior LinkBehavior { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.LinkBehavior LinkBehavior" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ToolStripLabel.LinkBehavior" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.LinkBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リンクの動作を表す値を取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.LinkBehavior" /> 値のいずれか。 既定値は、<see langword="LinkBehavior.SystemDefault" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、コントロールに表示されているときに、リンクの動作を指定することができます。 たとえば、リンク上にマウス ポインターが場合にのみ、下線付きで表示されるリンクする場合は、設定できますこのプロパティ`LinkBehavior.HoverUnderline`です。 リンクに関連付けることができる動作の種類の詳細については、次を参照してください。<xref:System.Windows.Forms.LinkBehavior>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、初期化、<xref:System.Windows.Forms.ToolStripLabel>を設定して、リンクを含む、 <xref:System.Windows.Forms.ToolStripLabel.IsLink%2A>、 <xref:System.Windows.Forms.ToolStripLabel.LinkColor%2A>、 <xref:System.Windows.Forms.ToolStripLabel.ActiveLinkColor%2A>、 <xref:System.Windows.Forms.ToolStripLabel.VisitedLinkColor%2A>、<xref:System.Windows.Forms.ToolStripLabel.LinkVisited%2A>と<xref:System.Windows.Forms.ToolStripLabel.LinkBehavior%2A>プロパティです。  
+  
+ [!code-csharp[System.Windows.Forms.ToolStripLabel#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStripLabel/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ToolStripLabel#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStripLabel/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LinkColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color LinkColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color LinkColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ToolStripLabel.LinkColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通常のリンクを表示するときに使用する色を取得または設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />通常のリンクを表示するために使用する色を表すです。 既定の色はシステムによって指定されます。 この色は、通常、<see langword="Color.Blue" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、初期化、<xref:System.Windows.Forms.ToolStripLabel>を設定して、リンクを含む、 <xref:System.Windows.Forms.ToolStripLabel.IsLink%2A>、 <xref:System.Windows.Forms.ToolStripLabel.LinkColor%2A>、 <xref:System.Windows.Forms.ToolStripLabel.ActiveLinkColor%2A>、 <xref:System.Windows.Forms.ToolStripLabel.VisitedLinkColor%2A>、<xref:System.Windows.Forms.ToolStripLabel.LinkVisited%2A>と<xref:System.Windows.Forms.ToolStripLabel.LinkBehavior%2A>プロパティです。  
+  
+ [!code-csharp[System.Windows.Forms.ToolStripLabel#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStripLabel/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ToolStripLabel#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStripLabel/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LinkVisited">
+      <MemberSignature Language="C#" Value="public bool LinkVisited { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool LinkVisited" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ToolStripLabel.LinkVisited" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リンク先に移動したことがあることを示すようにリンクを表示するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />それらが先に移動した場合と同様のリンクを表示する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Forms.LinkLabel>コントロールは自動的に表していません、リンクは、表示済みリンクです。 表示済みリンクとしてリンクを表示するには、このプロパティの値を設定することができます`true`のクリック イベントのイベント ハンドラーで、<xref:System.Windows.Forms.LinkLabel>です。 指定された色を使用してアクセスしたリンクが表示されます、<xref:System.Windows.Forms.ToolStripLabel.VisitedLinkColor%2A>のプロパティ、<xref:System.Windows.Forms.ToolStripLabel>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例では、初期化、<xref:System.Windows.Forms.ToolStripLabel>を設定して、リンクを含む、 <xref:System.Windows.Forms.ToolStripLabel.IsLink%2A>、 <xref:System.Windows.Forms.ToolStripLabel.LinkColor%2A>、 <xref:System.Windows.Forms.ToolStripLabel.ActiveLinkColor%2A>、 <xref:System.Windows.Forms.ToolStripLabel.VisitedLinkColor%2A>、<xref:System.Windows.Forms.ToolStripLabel.LinkVisited%2A>と<xref:System.Windows.Forms.ToolStripLabel.LinkBehavior%2A>プロパティです。  
+  
+ [!code-csharp[System.Windows.Forms.ToolStripLabel#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStripLabel/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ToolStripLabel#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStripLabel/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnFontChanged">
+      <MemberSignature Language="C#" Value="protected override void OnFontChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnFontChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripLabel.OnFontChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.FontChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.ToolStripLabel.OnFontChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ToolStripLabel.OnFontChanged(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ToolStripLabel.OnFontChanged(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseEnter">
+      <MemberSignature Language="C#" Value="protected override void OnMouseEnter (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseEnter(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripLabel.OnMouseEnter(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ToolStripItem.MouseEnter" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.ToolStripLabel.OnMouseEnter%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ToolStripLabel.OnMouseEnter(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ToolStripLabel.OnMouseEnter(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseLeave">
+      <MemberSignature Language="C#" Value="protected override void OnMouseLeave (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseLeave(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripLabel.OnMouseLeave(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ToolStripItem.MouseLeave" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.ToolStripLabel.OnMouseLeave%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ToolStripLabel.OnMouseLeave(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ToolStripLabel.OnMouseLeave(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPaint">
+      <MemberSignature Language="C#" Value="protected override void OnPaint (System.Windows.Forms.PaintEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnPaint(class System.Windows.Forms.PaintEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripLabel.OnPaint(System.Windows.Forms.PaintEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.PaintEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.PaintEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ToolStripItem.Paint" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.ToolStripLabel.OnPaint%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ToolStripLabel.OnPaint(System.Windows.Forms.PaintEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ToolStripLabel.OnPaint(System.Windows.Forms.PaintEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessMnemonic">
+      <MemberSignature Language="C#" Value="protected override bool ProcessMnemonic (char charCode);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance bool ProcessMnemonic(char charCode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripLabel.ProcessMnemonic(System.Char)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="charCode" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="charCode">処理対象の文字。</param>
+        <summary>ニーモニック文字を処理します。</summary>
+        <returns>
+          文字がコントロールによってニーモニックとして処理された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アイテムのニーモニック文字を処理する機会を与えるために呼び出されます。 メソッドは、アイテムがニーモニックを処理する状態かどうかと指定された文字がニーモニックを表すかどうかを判定する必要があります。 かどうか、メソッドの動作を実行ニーモニックと戻り値に関連付けられている`true`です。 場合は、メソッドが返す必要があります、`false`です。  
+  
+ <xref:System.Windows.Forms.ToolStripLabel>実装がホストに依存している<xref:System.Windows.Forms.ToolStrip>を呼び出すコントロール、<xref:System.Windows.Forms.Control.IsMnemonic%2A>指定された文字が、項目のテキスト内のニーモニックと一致するかどうかを調べます。 この場合、メソッドのラベルに関連付けられている項目を選択またはを発生させます、<xref:System.Windows.Forms.ToolStripItem.Click>イベントの場合は、項目を選択することはできません。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">すべてのウィンドウにこのメソッドを呼び出すクラスを継承します。 関連する列挙値:<see langword="AllWindows" />値<see cref="T:System.Security.Permissions.UIPermissionWindow" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="VisitedLinkColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color VisitedLinkColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color VisitedLinkColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ToolStripLabel.VisitedLinkColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>以前にリンク先に移動したことのあるリンクを表示するときに使用する色を取得または設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />訪問されているリンクを表示するために使用する色を表すです。 既定の色はシステムによって指定されます。 この色は、通常、<see langword="Color.Purple" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、すべてのリンクについて表示される色を指定することができます、<xref:System.Windows.Forms.ToolStripLabel>ユーザーがアクセスされました。  
+  
+> [!NOTE]
+>  このプロパティを設定する場合は、色のコントロールの背景色と競合しないするプロパティを設定するか、テキストが正しく表示されないことを確認します。 たとえば、コントロールの背景色が`Color.Red`にこのプロパティを設定および`Color.Red`テキストが正しく表示されません、リンクが表示済みリンクとして表示される場合。  
+  
+   
+  
+## Examples  
+ 次のコード例では、初期化、<xref:System.Windows.Forms.ToolStripLabel>を設定して、リンクを含む、 <xref:System.Windows.Forms.ToolStripLabel.IsLink%2A>、 <xref:System.Windows.Forms.ToolStripLabel.LinkColor%2A>、 <xref:System.Windows.Forms.ToolStripLabel.ActiveLinkColor%2A>、 <xref:System.Windows.Forms.ToolStripLabel.VisitedLinkColor%2A>、<xref:System.Windows.Forms.ToolStripLabel.LinkVisited%2A>と<xref:System.Windows.Forms.ToolStripLabel.LinkBehavior%2A>プロパティです。  
+  
+ [!code-csharp[System.Windows.Forms.ToolStripLabel#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStripLabel/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ToolStripLabel#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStripLabel/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

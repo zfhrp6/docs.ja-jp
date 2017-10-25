@@ -1,0 +1,802 @@
+<Type Name="ChannelFactory&lt;TChannel&gt;" FullName="System.ServiceModel.ChannelFactory&lt;TChannel&gt;">
+  <TypeSignature Language="C#" Value="public class ChannelFactory&lt;TChannel&gt; : System.ServiceModel.ChannelFactory, System.ServiceModel.Channels.IChannelFactory&lt;TChannel&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ChannelFactory`1&lt;TChannel&gt; extends System.ServiceModel.ChannelFactory implements class System.ServiceModel.Channels.IChannelFactory, class System.ServiceModel.Channels.IChannelFactory`1&lt;!TChannel&gt;, class System.ServiceModel.ICommunicationObject" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.ChannelFactory`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TChannel" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.ServiceModel.ChannelFactory</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Channels.IChannelFactory&lt;TChannel&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <typeparam name="TChannel">チャネル ファクトリにより作成されたチャネルの型。 この型は、<see cref="T:System.ServiceModel.Channels.IOutputChannel" /> または <see cref="T:System.ServiceModel.Channels.IRequestChannel" /> である必要があります。</typeparam>
+    <summary>さまざまに構成されたサービス エンドポイントにメッセージを送信するためにクライアントが使用する、異なる種類のチャネルを作成するファクトリ。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このジェネリック クラスは、複数の種類のチャネルを作成するために使用できるチャネル ファクトリを作成するという要件を持つ高度なシナリオを可能にします。  
+  
+ プログラムを使用して動作を追加する場合は、チャネルの作成の前に `Behaviors` の適切な <xref:System.ServiceModel.ChannelFactory> プロパティに動作が追加されます。 コード例については、「使用例」のセクションを参照してください。  
+  
+ 多くの場合、この型を使用しているクライアントまたは呼び出し側アプリケーション (たとえば、中間層アプリケーションはクライアント アプリケーションでもあります) には、複雑な状態管理ニーズのほかにパフォーマンス上のニーズもあります。 これらのシナリオの詳細についてを参照してください[中間層クライアント アプリケーション](~/docs/framework/wcf/feature-details/middle-tier-client-applications.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、チャネル ファクトリを作成する方法、およびそれを使用してチャネルを作成および管理する方法を示しています。  
+  
+ [!code-csharp[S_UEChannels#21](~/samples/snippets/csharp/VS_Snippets_CFX/s_uechannels/cs/clientsnippets.cs#21)]  
+  
+ 次のコード例は、チャネル オブジェクトの作成前に、ファクトリによってプログラムでクライアント動作が挿入される方法を示します。  
+  
+ [!code-csharp[ChannelFactoryBehaviors#10](~/samples/snippets/csharp/VS_Snippets_CFX/channelfactorybehaviors/cs/client.cs#10)]
+ [!code-vb[ChannelFactoryBehaviors#10](~/samples/snippets/visualbasic/VS_Snippets_CFX/channelfactorybehaviors/vb/client.vb#10)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>この型はスレッド セーフです。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ChannelFactory ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ChannelFactory`1.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.ChannelFactory`1" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ この例では、<xref:System.ServiceModel.ChannelFactory%601> クラスの新しいオブジェクトを `IRequestChannel` インターフェイスで作成する方法を示します。  
+  
+ [!code-csharp[S_UEChannels#24](~/samples/snippets/csharp/VS_Snippets_CFX/s_uechannels/cs/clientsnippets.cs#24)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ChannelFactory (System.ServiceModel.Channels.Binding binding);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Channels.Binding binding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ChannelFactory`1.#ctor(System.ServiceModel.Channels.Binding)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="binding" Type="System.ServiceModel.Channels.Binding" />
+      </Parameters>
+      <Docs>
+        <param name="binding">ファクトリにより作成されるチャネルのために指定する <see cref="T:System.ServiceModel.Channels.Binding" /> 。</param>
+        <summary><see cref="T:System.ServiceModel.ChannelFactory`1" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、バインド情報を、アプリケーション構成ファイルを使用するのではなく、プログラムで渡す場合に使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ChannelFactory (System.ServiceModel.Description.ServiceEndpoint endpoint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Description.ServiceEndpoint endpoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ChannelFactory`1.#ctor(System.ServiceModel.Description.ServiceEndpoint)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="endpoint" Type="System.ServiceModel.Description.ServiceEndpoint" />
+      </Parameters>
+      <Docs>
+        <param name="endpoint">ファクトリにより作成されるチャネルの <see cref="T:System.ServiceModel.Description.ServiceEndpoint" />。</param>
+        <summary>指定したエンドポイント アドレスを持つチャネルを作成する <see cref="T:System.ServiceModel.ChannelFactory`1" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、サービス エンドポイント情報を、アプリケーション構成ファイルを使用するのではなく、プログラムで渡す場合に使用します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UEChannels#25](~/samples/snippets/csharp/VS_Snippets_CFX/s_uechannels/cs/clientsnippets.cs#25)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="endpoint" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ChannelFactory (string endpointConfigurationName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string endpointConfigurationName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ChannelFactory`1.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="endpointConfigurationName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="endpointConfigurationName">エンドポイントで使用される構成名。</param>
+        <summary>指定したエンドポイントの構成名を使用して、<see cref="T:System.ServiceModel.ChannelFactory`1" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション構成ファイル内で複数のターゲット エンドポイントが存在する場合にこのコンストラクターを使用します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UEChannels#23](~/samples/snippets/csharp/VS_Snippets_CFX/s_uechannels/cs/clientsnippets.cs#23)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="endpointConfigurationName" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ChannelFactory (Type channelType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Type channelType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ChannelFactory`1.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="channelType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="channelType">チャネル ファクトリにより作成される <see cref="T:System.Type" /> のチャネル。</param>
+        <summary><see cref="T:System.ServiceModel.ChannelFactory`1" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、チャネルの種類情報を、アプリケーション構成ファイルを使用するのではなく、プログラムで渡す場合に使用します。 `channelType` パラメーターは、インターフェイスである必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="channelType" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="channelType" /> がクラスまたは値型であり、インターフェイスではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ChannelFactory (System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Channels.Binding binding, class System.ServiceModel.EndpointAddress remoteAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ChannelFactory`1.#ctor(System.ServiceModel.Channels.Binding,System.ServiceModel.EndpointAddress)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="binding" Type="System.ServiceModel.Channels.Binding" />
+        <Parameter Name="remoteAddress" Type="System.ServiceModel.EndpointAddress" />
+      </Parameters>
+      <Docs>
+        <param name="binding">エンドポイントの構成で使用される <see cref="T:System.ServiceModel.Channels.Binding" />。</param>
+        <param name="remoteAddress">サービスの場所を提供する <see cref="T:System.ServiceModel.EndpointAddress" />。</param>
+        <summary>指定したバインドとエンドポイント アドレスを使用して、<see cref="T:System.ServiceModel.ChannelFactory`1" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、バインディングとアドレスの情報を、アプリケーション構成ファイルを使用するのではなく、プログラムで渡す場合に使用します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UEChannels#26](~/samples/snippets/csharp/VS_Snippets_CFX/s_uechannels/cs/clientsnippets.cs#26)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="binding" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ChannelFactory (System.ServiceModel.Channels.Binding binding, string remoteAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Channels.Binding binding, string remoteAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ChannelFactory`1.#ctor(System.ServiceModel.Channels.Binding,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="binding" Type="System.ServiceModel.Channels.Binding" />
+        <Parameter Name="remoteAddress" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="binding">エンドポイントの構成で使用される <see cref="T:System.ServiceModel.Channels.Binding" />。</param>
+        <param name="remoteAddress">サービスの場所を提供するアドレス。</param>
+        <summary>指定したバインドとリモート アドレスを使用して、<see cref="T:System.ServiceModel.ChannelFactory`1" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、リモート アドレス情報に関する情報を、型指定されたオブジェクトではなく、文字列で渡す場合に使用します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UEChannels#29](~/samples/snippets/csharp/VS_Snippets_CFX/s_uechannels/cs/clientsnippets.cs#29)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="remoteAddress" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ChannelFactory (string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string endpointConfigurationName, class System.ServiceModel.EndpointAddress remoteAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ChannelFactory`1.#ctor(System.String,System.ServiceModel.EndpointAddress)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="endpointConfigurationName" Type="System.String" />
+        <Parameter Name="remoteAddress" Type="System.ServiceModel.EndpointAddress" />
+      </Parameters>
+      <Docs>
+        <param name="endpointConfigurationName">エンドポイントで使用される構成名。</param>
+        <param name="remoteAddress">サービスの場所を提供する <see cref="T:System.ServiceModel.EndpointAddress" />。</param>
+        <summary>指定したエンドポイントの名前とリモート アドレスに関連付けられた <see cref="T:System.ServiceModel.ChannelFactory`1" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_UEChannels#24](~/samples/snippets/csharp/VS_Snippets_CFX/s_uechannels/cs/clientsnippets.cs#24)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="endpointConfigurationName" /> または <paramref name="remoteAddress" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="CreateChannel">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定したエンドポイント アドレスへの指定した種類のチャネルを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クラスのジェネリック パラメーターである `TChannel` 型のチャネルを作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="CreateChannel">
+      <MemberSignature Language="C#" Value="public TChannel CreateChannel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !TChannel CreateChannel() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ChannelFactory`1.CreateChannel" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TChannel</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>指定したエンドポイント アドレスへの指定した種類のチャネルを作成します。</summary>
+        <returns>ファクトリによって作成された <paramref name="TChannel" /> 型の <see cref="T:System.ServiceModel.Channels.IChannel" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クラスのジェネリック パラメーターである `TChannel` 型のチャネルを作成します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UEChannels#30](~/samples/snippets/csharp/VS_Snippets_CFX/s_uechannels/cs/clientsnippets.cs#30)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateChannel">
+      <MemberSignature Language="C#" Value="public TChannel CreateChannel (System.ServiceModel.EndpointAddress address);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance !TChannel CreateChannel(class System.ServiceModel.EndpointAddress address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ChannelFactory`1.CreateChannel(System.ServiceModel.EndpointAddress)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TChannel</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.ServiceModel.EndpointAddress" />
+      </Parameters>
+      <Docs>
+        <param name="address">サービスの場所を提供する <see cref="T:System.ServiceModel.EndpointAddress" />。</param>
+        <summary>指定したエンドポイント アドレスのサービスにメッセージを送信するために使用されるチャネルを作成します。</summary>
+        <returns>ファクトリによって作成された <paramref name="TChannel" /> 型の <see cref="T:System.ServiceModel.Channels.IChannel" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_UEChannels#27](~/samples/snippets/csharp/VS_Snippets_CFX/s_uechannels/cs/clientsnippets.cs#27)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="address" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateChannel">
+      <MemberSignature Language="C#" Value="protected static TChannel CreateChannel (string endpointConfigurationName);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig !TChannel CreateChannel(string endpointConfigurationName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ChannelFactory`1.CreateChannel(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TChannel</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="endpointConfigurationName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="endpointConfigurationName">サービスで使用されるエンドポイント構成の名前。</param>
+        <summary>エンドポイントが指定した方法で構成されているサービスにメッセージを送信するために使用されるチャネルを作成します。</summary>
+        <returns>ファクトリによって作成された <paramref name="TChannel" /> 型の <see cref="T:System.ServiceModel.Channels.IChannel" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_UEChannels#21](~/samples/snippets/csharp/VS_Snippets_CFX/s_uechannels/cs/clientsnippets.cs#21)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.ServiceModel.ChannelFactory" /> には、サポートしない二重操作があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateChannel">
+      <MemberSignature Language="C#" Value="public static TChannel CreateChannel (System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress address);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !TChannel CreateChannel(class System.ServiceModel.Channels.Binding binding, class System.ServiceModel.EndpointAddress address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ChannelFactory`1.CreateChannel(System.ServiceModel.Channels.Binding,System.ServiceModel.EndpointAddress)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TChannel</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="binding" Type="System.ServiceModel.Channels.Binding" />
+        <Parameter Name="endpointAddress" Type="System.ServiceModel.EndpointAddress" />
+      </Parameters>
+      <Docs>
+        <param name="binding">エンドポイントの構成で使用される <see cref="T:System.ServiceModel.Channels.Binding" />。</param>
+        <param name="address">To be added.</param>
+        <summary>指定したバインドで構成されているサービス エンドポイントにメッセージを送信するために使用される、指定した種類のチャネルを作成します。</summary>
+        <returns>ファクトリによって作成された <paramref name="TChannel" /> 型の <see cref="T:System.ServiceModel.Channels.IChannel" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_UEChannels#31](~/samples/snippets/csharp/VS_Snippets_CFX/s_uechannels/cs/clientsnippets.cs#31)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.ServiceModel.ChannelFactory" /> には、サポートしない二重操作があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateChannel">
+      <MemberSignature Language="C#" Value="public virtual TChannel CreateChannel (System.ServiceModel.EndpointAddress address, Uri via);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance !TChannel CreateChannel(class System.ServiceModel.EndpointAddress address, class System.Uri via) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ChannelFactory`1.CreateChannel(System.ServiceModel.EndpointAddress,System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TChannel</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.ServiceModel.EndpointAddress" />
+        <Parameter Name="via" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="address">サービスの場所を提供する <see cref="T:System.ServiceModel.EndpointAddress" />。</param>
+        <param name="via">チャネルがメッセージを送信するトランスポート アドレスを含む <see cref="T:System.Uri" />。</param>
+        <summary>指定したトランスポート アドレスを通して指定したエンドポイント アドレスのサービスにメッセージを送信するために使用されるチャネルを作成します。</summary>
+        <returns>ファクトリによって作成された <paramref name="TChannel" /> 型の <see cref="T:System.ServiceModel.Channels.IChannel" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_UEChannels#28](~/samples/snippets/csharp/VS_Snippets_CFX/s_uechannels/cs/clientsnippets.cs#28)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="address" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.ServiceModel.ChannelFactory" /> には、サポートしない二重操作があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateChannel">
+      <MemberSignature Language="C#" Value="public static TChannel CreateChannel (System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress address, Uri via);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !TChannel CreateChannel(class System.ServiceModel.Channels.Binding binding, class System.ServiceModel.EndpointAddress address, class System.Uri via) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ChannelFactory`1.CreateChannel(System.ServiceModel.Channels.Binding,System.ServiceModel.EndpointAddress,System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TChannel</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="binding" Type="System.ServiceModel.Channels.Binding" />
+        <Parameter Name="endpointAddress" Type="System.ServiceModel.EndpointAddress" />
+        <Parameter Name="via" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="binding">エンドポイントの構成で使用される <see cref="T:System.ServiceModel.Channels.Binding" />。</param>
+        <param name="address">To be added.</param>
+        <param name="via">チャネルがメッセージを送信するトランスポート アドレスを含む <see cref="T:System.Uri" />。</param>
+        <summary>指定したバインドで構成された、指定したトランスポート アドレスのサービス エンドポイントにメッセージを送信するために使用される、指定した種類のチャネルを作成します。</summary>
+        <returns>ファクトリによって作成された <paramref name="TChannel" /> 型の <see cref="T:System.ServiceModel.Channels.IChannel" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_UEChannels#33](~/samples/snippets/csharp/VS_Snippets_CFX/s_uechannels/cs/clientsnippets.cs#33)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.ServiceModel.ChannelFactory" /> には、サポートしない二重操作があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateChannelWithActAsToken">
+      <MemberSignature Language="C#" Value="public TChannel CreateChannelWithActAsToken (System.IdentityModel.Tokens.SecurityToken actAsToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !TChannel CreateChannelWithActAsToken(class System.IdentityModel.Tokens.SecurityToken actAsToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ChannelFactory`1.CreateChannelWithActAsToken(System.IdentityModel.Tokens.SecurityToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TChannel</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="actAsToken" Type="System.IdentityModel.Tokens.SecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="actAsToken">セキュリティ トークン。</param>
+        <summary>Act がセキュリティ トークンとしてサービスにメッセージを送信するために使用するチャネルを作成します。</summary>
+        <returns>作成されたチャネル ファクトリ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateChannelWithActAsToken">
+      <MemberSignature Language="C#" Value="public TChannel CreateChannelWithActAsToken (System.IdentityModel.Tokens.SecurityToken actAsToken, System.ServiceModel.EndpointAddress address);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !TChannel CreateChannelWithActAsToken(class System.IdentityModel.Tokens.SecurityToken actAsToken, class System.ServiceModel.EndpointAddress address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ChannelFactory`1.CreateChannelWithActAsToken(System.IdentityModel.Tokens.SecurityToken,System.ServiceModel.EndpointAddress)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TChannel</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="actAsToken" Type="System.IdentityModel.Tokens.SecurityToken" />
+        <Parameter Name="address" Type="System.ServiceModel.EndpointAddress" />
+      </Parameters>
+      <Docs>
+        <param name="actAsToken">セキュリティ トークン</param>
+        <param name="address">サービスの場所を提供するエンドポイント アドレス。</param>
+        <summary>特定のエンドポイント アドレスにセキュリティ トークンとして、act でサービスにメッセージを送信するために使用するチャネルを作成します。</summary>
+        <returns>作成されたチャネル ファクトリ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateChannelWithActAsToken">
+      <MemberSignature Language="C#" Value="public TChannel CreateChannelWithActAsToken (System.IdentityModel.Tokens.SecurityToken actAsToken, System.ServiceModel.EndpointAddress address, Uri via);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !TChannel CreateChannelWithActAsToken(class System.IdentityModel.Tokens.SecurityToken actAsToken, class System.ServiceModel.EndpointAddress address, class System.Uri via) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ChannelFactory`1.CreateChannelWithActAsToken(System.IdentityModel.Tokens.SecurityToken,System.ServiceModel.EndpointAddress,System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TChannel</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="actAsToken" Type="System.IdentityModel.Tokens.SecurityToken" />
+        <Parameter Name="address" Type="System.ServiceModel.EndpointAddress" />
+        <Parameter Name="via" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="actAsToken">セキュリティ トークン</param>
+        <param name="address">サービスの場所を提供するエンドポイント アドレス。</param>
+        <param name="via">チャネルがメッセージを送信するトランスポート アドレスです。</param>
+        <summary>指定したトランスポート アドレスを使って特定のエンドポイント アドレスにセキュリティ トークンとして、act でサービスにメッセージを送信するために使用するチャネルを作成します。</summary>
+        <returns>作成されたチャネル ファクトリ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateChannelWithIssuedToken">
+      <MemberSignature Language="C#" Value="public TChannel CreateChannelWithIssuedToken (System.IdentityModel.Tokens.SecurityToken issuedToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !TChannel CreateChannelWithIssuedToken(class System.IdentityModel.Tokens.SecurityToken issuedToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ChannelFactory`1.CreateChannelWithIssuedToken(System.IdentityModel.Tokens.SecurityToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TChannel</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="issuedToken" Type="System.IdentityModel.Tokens.SecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="issuedToken">発行されたセキュリティ トークンです。</param>
+        <summary>発行されたセキュリティ トークンを使用してサービスにメッセージを送信するために使用するチャネルを作成します。</summary>
+        <returns>作成されたチャネル ファクトリ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateChannelWithIssuedToken">
+      <MemberSignature Language="C#" Value="public TChannel CreateChannelWithIssuedToken (System.IdentityModel.Tokens.SecurityToken issuedToken, System.ServiceModel.EndpointAddress address);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !TChannel CreateChannelWithIssuedToken(class System.IdentityModel.Tokens.SecurityToken issuedToken, class System.ServiceModel.EndpointAddress address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ChannelFactory`1.CreateChannelWithIssuedToken(System.IdentityModel.Tokens.SecurityToken,System.ServiceModel.EndpointAddress)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TChannel</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="issuedToken" Type="System.IdentityModel.Tokens.SecurityToken" />
+        <Parameter Name="address" Type="System.ServiceModel.EndpointAddress" />
+      </Parameters>
+      <Docs>
+        <param name="issuedToken">発行されたセキュリティ トークンです。</param>
+        <param name="address">サービスの場所を提供するエンドポイント アドレス。</param>
+        <summary>メッセージを送信すると、特定のエンドポイントのアドレスで発行されたセキュリティ トークンをサービスに使用されるチャネルを作成します。</summary>
+        <returns>作成されたチャネル ファクトリ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateChannelWithIssuedToken">
+      <MemberSignature Language="C#" Value="public TChannel CreateChannelWithIssuedToken (System.IdentityModel.Tokens.SecurityToken issuedToken, System.ServiceModel.EndpointAddress address, Uri via);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !TChannel CreateChannelWithIssuedToken(class System.IdentityModel.Tokens.SecurityToken issuedToken, class System.ServiceModel.EndpointAddress address, class System.Uri via) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ChannelFactory`1.CreateChannelWithIssuedToken(System.IdentityModel.Tokens.SecurityToken,System.ServiceModel.EndpointAddress,System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TChannel</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="issuedToken" Type="System.IdentityModel.Tokens.SecurityToken" />
+        <Parameter Name="address" Type="System.ServiceModel.EndpointAddress" />
+        <Parameter Name="via" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="issuedToken">発行されたセキュリティ トークンです。</param>
+        <param name="address">サービスの場所を提供するエンドポイント アドレス。</param>
+        <param name="via">チャネルがメッセージを送信するトランスポート アドレスです。</param>
+        <summary>指定したトランスポート アドレスを使って特定のエンドポイント アドレスで発行されたセキュリティ トークン サービスにメッセージを送信に使用されるチャネルを作成します。</summary>
+        <returns>作成されたチャネル ファクトリ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateChannelWithOnBehalfOfToken">
+      <MemberSignature Language="C#" Value="public TChannel CreateChannelWithOnBehalfOfToken (System.IdentityModel.Tokens.SecurityToken onBehalfOf);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !TChannel CreateChannelWithOnBehalfOfToken(class System.IdentityModel.Tokens.SecurityToken onBehalfOf) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ChannelFactory`1.CreateChannelWithOnBehalfOfToken(System.IdentityModel.Tokens.SecurityToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TChannel</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="onBehalfOf" Type="System.IdentityModel.Tokens.SecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="onBehalfOf">セキュリティ トークン。</param>
+        <summary>セキュリティ トークンの on の代理でサービスにメッセージを送信するために使用するチャネルを作成します。</summary>
+        <returns>作成されたチャネル ファクトリ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateChannelWithOnBehalfOfToken">
+      <MemberSignature Language="C#" Value="public TChannel CreateChannelWithOnBehalfOfToken (System.IdentityModel.Tokens.SecurityToken onBehalfOf, System.ServiceModel.EndpointAddress address);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !TChannel CreateChannelWithOnBehalfOfToken(class System.IdentityModel.Tokens.SecurityToken onBehalfOf, class System.ServiceModel.EndpointAddress address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ChannelFactory`1.CreateChannelWithOnBehalfOfToken(System.IdentityModel.Tokens.SecurityToken,System.ServiceModel.EndpointAddress)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TChannel</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="onBehalfOf" Type="System.IdentityModel.Tokens.SecurityToken" />
+        <Parameter Name="address" Type="System.ServiceModel.EndpointAddress" />
+      </Parameters>
+      <Docs>
+        <param name="onBehalfOf">セキュリティ トークン。</param>
+        <param name="address">サービスの場所を提供するエンドポイント アドレス。</param>
+        <summary>特定のエンドポイント アドレスにセキュリティ トークンの on の代理でサービスにメッセージを送信するために使用するチャネルを作成します。</summary>
+        <returns>作成されたチャネル ファクトリ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateChannelWithOnBehalfOfToken">
+      <MemberSignature Language="C#" Value="public TChannel CreateChannelWithOnBehalfOfToken (System.IdentityModel.Tokens.SecurityToken onBehalfOf, System.ServiceModel.EndpointAddress address, Uri via);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !TChannel CreateChannelWithOnBehalfOfToken(class System.IdentityModel.Tokens.SecurityToken onBehalfOf, class System.ServiceModel.EndpointAddress address, class System.Uri via) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ChannelFactory`1.CreateChannelWithOnBehalfOfToken(System.IdentityModel.Tokens.SecurityToken,System.ServiceModel.EndpointAddress,System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TChannel</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="onBehalfOf" Type="System.IdentityModel.Tokens.SecurityToken" />
+        <Parameter Name="address" Type="System.ServiceModel.EndpointAddress" />
+        <Parameter Name="via" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="onBehalfOf">セキュリティ トークン。</param>
+        <param name="address">サービスの場所を提供するエンドポイント アドレス。</param>
+        <param name="via">チャネルがメッセージを送信するトランスポート アドレスです。</param>
+        <summary>指定したトランスポート アドレスを使って特定のエンドポイント アドレスにセキュリティ トークンの on の代理でサービスにメッセージを送信するために使用するチャネルを作成します。</summary>
+        <returns>作成されたチャネル ファクトリ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDescription">
+      <MemberSignature Language="C#" Value="protected override System.ServiceModel.Description.ServiceEndpoint CreateDescription ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.ServiceModel.Description.ServiceEndpoint CreateDescription() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ChannelFactory`1.CreateDescription" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceEndpoint</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>サービス エンドポイントの記述を作成します。</summary>
+        <returns>サービスの <see cref="T:System.ServiceModel.Description.ServiceEndpoint" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">コールバック コントラクトが <see langword="null" /> ですが、サービス エンドポイントは <see langword="null" /> 以外の値を必要とします。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

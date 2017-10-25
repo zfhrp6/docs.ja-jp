@@ -1,0 +1,73 @@
+<Type Name="AudioPlayMode" FullName="Microsoft.VisualBasic.AudioPlayMode">
+  <TypeSignature Language="C#" Value="public enum AudioPlayMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed AudioPlayMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.AudioPlayMode" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>オーディオのメソッドを呼び出すときに、サウンドを再生する方法を示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、`AudioPlayMode`コントロールを列挙メンバー方法、<xref:Microsoft.VisualBasic.Devices.Audio.Play%2A>メソッドは、サウンドを再生します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Background">
+      <MemberSignature Language="C#" Value="Background" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.VisualBasic.AudioPlayMode Background = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.VisualBasic.AudioPlayMode.Background" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.AudioPlayMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>により、<see langword="My.Computer.Audio.Play" />バック グラウンドでサウンドを再生する方法です。 呼び出し元のコードでは引き続き実行されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundLoop">
+      <MemberSignature Language="C#" Value="BackgroundLoop" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.VisualBasic.AudioPlayMode BackgroundLoop = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.VisualBasic.AudioPlayMode.BackgroundLoop" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.AudioPlayMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>により、<see langword="My.Computer.Audio.Play" />までバック グラウンドでサウンドを再生する方法、<see cref="M:Microsoft.VisualBasic.Devices.Audio.Stop" />メソッドが呼び出されます。 呼び出し元のコードでは引き続き実行されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="WaitToComplete">
+      <MemberSignature Language="C#" Value="WaitToComplete" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.VisualBasic.AudioPlayMode WaitToComplete = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.VisualBasic.AudioPlayMode.WaitToComplete" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.AudioPlayMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>により、<see langword="My.Computer.Audio.Play" />コードの呼び出しを続行する前に完了するまでに、サウンド、および待機を再生する方法です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

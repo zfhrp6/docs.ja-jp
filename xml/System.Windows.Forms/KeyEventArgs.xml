@@ -1,0 +1,405 @@
+<Type Name="KeyEventArgs" FullName="System.Windows.Forms.KeyEventArgs">
+  <TypeSignature Language="C#" Value="public class KeyEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit KeyEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.KeyEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Windows.Forms.Control.KeyDown" />または<see cref="E:System.Windows.Forms.Control.KeyUp" />イベント。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A <xref:System.Windows.Forms.KeyEventArgs>、各ユーザーが押され、すべての修飾子キー (ctrl キーを押し、alt キーと shift キーを押し) は、同時に押されたかどうかが渡されたキーを指定する<xref:System.Windows.Forms.Control.KeyDown>または<xref:System.Windows.Forms.Control.KeyUp>イベント。  
+  
+ <xref:System.Windows.Forms.Control.KeyDown>イベント、ユーザーが任意のキーを押したときに発生します。 <xref:System.Windows.Forms.Control.KeyUp>イベント キーを離したときに発生します。 重複して<xref:System.Windows.Forms.Control.KeyDown>イベントには、キーが表示されるたびが発生した場合は、キーを押し、1 つだけが<xref:System.Windows.Forms.Control.KeyUp>キーを離したときにイベントが生成されます。  
+  
+ <xref:System.Windows.Forms.Control.KeyPress>イベントは、キーが押されたときにも発生します。 A<xref:System.Windows.Forms.KeyPressEventArgs>各に渡される<xref:System.Windows.Forms.Control.KeyPress>イベント、し、各キーを押すの結果で構成されている文字を指定します。  
+  
+ イベント モデルについては、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、キーを押すの状態を検出する方法を示します。  
+  
+ **例 1**  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.Control.KeyDown>イベントと、<xref:System.Windows.Forms.Help>ポップアップ スタイル アプリケーションのユーザーにヘルプを表示するクラス。 この例では、<xref:System.Windows.Forms.KeyEventArgs>修飾子キーで F1 キーを押すのすべてのバリエーションのフィルター処理するイベント ハンドラー メソッドに渡されるプロパティです。 さまざまな任意のキーボード修飾子が含まれる F1 を押すと、<xref:System.Windows.Forms.Help>クラスに似ていますのポップアップ ウィンドウを表示する、<xref:System.Windows.Forms.ToolTip>コントロールの付近です。 ユーザーは、ALT + F2 を押すと、追加情報を含む別のヘルプのポップアップが表示されます。  
+  
+ [!code-cpp[KeyEventArgs.Modifiers#1](~/samples/snippets/cpp/VS_Snippets_Winforms/KeyEventArgs.Modifiers/CPP/form1.cpp#1)]
+ [!code-csharp[KeyEventArgs.Modifiers#1](~/samples/snippets/csharp/VS_Snippets_Winforms/KeyEventArgs.Modifiers/CS/form1.cs#1)]
+ [!code-vb[KeyEventArgs.Modifiers#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/KeyEventArgs.Modifiers/VB/form1.vb#1)]  
+  
+ **例 2**  
+  
+ 次の例は、上にマウス ポインターがおよび、ユーザーが ALT キーを押しながら E キーを押し、押されたかどうかを判断、 <xref:System.Windows.Forms.TreeNode>、により、ユーザーが編集される<xref:System.Windows.Forms.TreeNode>です。  
+  
+ [!code-cpp[Windows.Forms.Control Members4#3](~/samples/snippets/cpp/VS_Snippets_Winforms/Windows.Forms.Control Members4/CPP/controlmembers4.cpp#3)]
+ [!code-csharp[Windows.Forms.Control Members4#3](~/samples/snippets/csharp/VS_Snippets_Winforms/Windows.Forms.Control Members4/CS/controlmembers4.cs#3)]
+ [!code-vb[Windows.Forms.Control Members4#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Windows.Forms.Control Members4/VB/controlmembers4.vb#3)]  
+  
+ **例 3**  
+  
+ 次の例では、ユーザーが、非数値キーを押したかどうかを判断し、場合は、キャンセル、<xref:System.Windows.Forms.Control.KeyPress>イベントを使用して、<xref:System.Windows.Forms.KeyEventArgs.Handled%2A>プロパティです。  
+  
+ [!code-cpp[Control.KeyDown#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Control.KeyDown/CPP/form1.cpp#1)]
+ [!code-csharp[Control.KeyDown#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Control.KeyDown/CS/form1.cs#1)]
+ [!code-vb[Control.KeyDown#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Control.KeyDown/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public KeyEventArgs (System.Windows.Forms.Keys keyData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Forms.Keys keyData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.KeyEventArgs.#ctor(System.Windows.Forms.Keys)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="keyData" Type="System.Windows.Forms.Keys" />
+      </Parameters>
+      <Docs>
+        <param name="keyData">A<see cref="T:System.Windows.Forms.Keys" />押されたキーを表すことを示す CTRL、shift キー、および ALT キーを同時に押された修飾子フラグのいずれかと組み合わせて使用します。 使用可能な値が取得されたビットごとの OR を適用する (|) 演算子の定数を<see cref="T:System.Windows.Forms.Keys" />列挙します。</param>
+        <summary><see cref="T:System.Windows.Forms.KeyEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Alt">
+      <MemberSignature Language="C#" Value="public virtual bool Alt { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Alt" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.KeyEventArgs.Alt" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Alt キーが押されたかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、ALT キーが押されたです。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ **例 1**  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.Control.KeyDown>イベントと、<xref:System.Windows.Forms.Help>ポップアップ スタイル アプリケーションのユーザーにヘルプを表示するクラス。 この例では、<xref:System.Windows.Forms.KeyEventArgs>修飾子キーで F1 キーを押すのすべてのバリエーションのフィルター処理するイベント ハンドラー メソッドに渡されるプロパティです。 さまざまな任意のキーボード修飾子が含まれる F1 を押すと、<xref:System.Windows.Forms.Help>クラスに似ていますのポップアップ ウィンドウを表示する、<xref:System.Windows.Forms.ToolTip>コントロールの付近です。 ユーザーは、ALT + F2 を押すと、追加情報を含む別のヘルプのポップアップが表示されます。  
+  
+ [!code-cpp[KeyEventArgs.Modifiers#1](~/samples/snippets/cpp/VS_Snippets_Winforms/KeyEventArgs.Modifiers/CPP/form1.cpp#1)]
+ [!code-csharp[KeyEventArgs.Modifiers#1](~/samples/snippets/csharp/VS_Snippets_Winforms/KeyEventArgs.Modifiers/CS/form1.cs#1)]
+ [!code-vb[KeyEventArgs.Modifiers#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/KeyEventArgs.Modifiers/VB/form1.vb#1)]  
+  
+ **例 2**  
+  
+ 次の例は、上にマウス ポインターがおよび、ユーザーが ALT キーを押しながら E キーを押し、押されたかどうかを判断<xref:System.Windows.Forms.TreeNode>、により、ユーザーが編集される<xref:System.Windows.Forms.TreeNode>です。  
+  
+ [!code-cpp[Windows.Forms.Control Members4#3](~/samples/snippets/cpp/VS_Snippets_Winforms/Windows.Forms.Control Members4/CPP/controlmembers4.cpp#3)]
+ [!code-csharp[Windows.Forms.Control Members4#3](~/samples/snippets/csharp/VS_Snippets_Winforms/Windows.Forms.Control Members4/CS/controlmembers4.cs#3)]
+ [!code-vb[Windows.Forms.Control Members4#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Windows.Forms.Control Members4/VB/controlmembers4.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Control">
+      <MemberSignature Language="C#" Value="public bool Control { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Control" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.KeyEventArgs.Control" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Ctrl キーが押されたかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、CTRL キーが押されたです。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.Control.KeyDown>イベントと、<xref:System.Windows.Forms.Help>ポップアップ スタイル アプリケーションのユーザーにヘルプを表示するクラス。 この例では、<xref:System.Windows.Forms.KeyEventArgs>修飾子キーで F1 キーを押すのすべてのバリエーションのフィルター処理するイベント ハンドラー メソッドに渡されるプロパティです。 さまざまな任意のキーボード修飾子が含まれる F1 を押すと、<xref:System.Windows.Forms.Help>クラスに似ていますのポップアップ ウィンドウを表示する、<xref:System.Windows.Forms.ToolTip>コントロールの付近です。 ユーザーは、ALT + F2 を押すと、追加情報を含む別のヘルプのポップアップが表示されます。  
+  
+ [!code-cpp[KeyEventArgs.Modifiers#1](~/samples/snippets/cpp/VS_Snippets_Winforms/KeyEventArgs.Modifiers/CPP/form1.cpp#1)]
+ [!code-csharp[KeyEventArgs.Modifiers#1](~/samples/snippets/csharp/VS_Snippets_Winforms/KeyEventArgs.Modifiers/CS/form1.cs#1)]
+ [!code-vb[KeyEventArgs.Modifiers#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/KeyEventArgs.Modifiers/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Handled">
+      <MemberSignature Language="C#" Value="public bool Handled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Handled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.KeyEventArgs.Handled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントが処理されたかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />コントロールをバイパスする既定の処理です。それ以外の場合、<see langword="false" />もに沿ってイベントを既定のコントロール ハンドラーに渡す。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.KeyEventArgs.Handled%2A>Windows フォーム内で別のコントロールによっては異なる方法で実装されます。 などのコントロールに対して<xref:System.Windows.Forms.TextBox>どのサブクラス ネイティブ Win32 コントロールで、キーのメッセージが、基になるネイティブ コントロールに渡すことはできませんという意味に解釈されます。 設定した場合`Handled`場合は true を<xref:System.Windows.Forms.TextBox>、コントロールにキーを押す渡しません`events`は基になる Win32 テキスト ボックス コントロールにはまだ表示ユーザーが入力した文字。  
+  
+ 現在のコントロールがキーの使用を受け取らないようにする場合、<xref:System.Windows.Forms.KeyEventArgs.SuppressKeyPress%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、ユーザーが、非数値キーを押したかどうかを判断し、場合は、キャンセル、<xref:System.Windows.Forms.Control.KeyPress>イベントを使用して、<xref:System.Windows.Forms.KeyEventArgs.Handled%2A>プロパティです。  
+  
+ [!code-cpp[Control.KeyDown#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Control.KeyDown/CPP/form1.cpp#1)]
+ [!code-csharp[Control.KeyDown#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Control.KeyDown/CS/form1.cs#1)]
+ [!code-vb[Control.KeyDown#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Control.KeyDown/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyCode">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Keys KeyCode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.Keys KeyCode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.KeyEventArgs.KeyCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Keys</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーボードのコードを取得、<see cref="E:System.Windows.Forms.Control.KeyDown" />または<see cref="E:System.Windows.Forms.Control.KeyUp" />イベント。</summary>
+        <value>A<see cref="T:System.Windows.Forms.Keys" />イベントのコードでキー値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示して、<xref:System.Windows.Forms.KeyEventArgs.KeyCode%2A>どのキーが押されたを決定するプロパティです。  
+  
+ **例 1**  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.Control.KeyDown>イベントと、<xref:System.Windows.Forms.Help>ポップアップ スタイル アプリケーションのユーザーにヘルプを表示するクラス。 この例では、<xref:System.Windows.Forms.KeyEventArgs>修飾子キーで F1 キーを押すのすべてのバリエーションのフィルター処理するイベント ハンドラー メソッドに渡されるプロパティです。 さまざまな任意のキーボード修飾子が含まれる F1 を押すと、<xref:System.Windows.Forms.Help>クラスに似ていますのポップアップ ウィンドウを表示する、<xref:System.Windows.Forms.ToolTip>コントロールの付近です。 ユーザーは、ALT + F2 を押すと、追加情報を含む別のヘルプのポップアップが表示されます。  
+  
+ [!code-cpp[KeyEventArgs.Modifiers#1](~/samples/snippets/cpp/VS_Snippets_Winforms/KeyEventArgs.Modifiers/CPP/form1.cpp#1)]
+ [!code-csharp[KeyEventArgs.Modifiers#1](~/samples/snippets/csharp/VS_Snippets_Winforms/KeyEventArgs.Modifiers/CS/form1.cs#1)]
+ [!code-vb[KeyEventArgs.Modifiers#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/KeyEventArgs.Modifiers/VB/form1.vb#1)]  
+  
+ **例 2**  
+  
+ 次の例は、上にマウス ポインターがおよび、ユーザーが ALT キーを押しながら E キーを押し、押されたかどうかを判断、 <xref:System.Windows.Forms.TreeNode>、により、ユーザーが編集される<xref:System.Windows.Forms.TreeNode>です。  
+  
+ [!code-cpp[Windows.Forms.Control Members4#3](~/samples/snippets/cpp/VS_Snippets_Winforms/Windows.Forms.Control Members4/CPP/controlmembers4.cpp#3)]
+ [!code-csharp[Windows.Forms.Control Members4#3](~/samples/snippets/csharp/VS_Snippets_Winforms/Windows.Forms.Control Members4/CS/controlmembers4.cs#3)]
+ [!code-vb[Windows.Forms.Control Members4#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Windows.Forms.Control Members4/VB/controlmembers4.vb#3)]  
+  
+ **例 3**  
+  
+ 次の例では、ユーザーが、非数値キーを押したかどうかを判断し、場合は、キャンセル、<xref:System.Windows.Forms.Control.KeyPress>イベントを使用して、<xref:System.Windows.Forms.KeyEventArgs.Handled%2A>プロパティです。  
+  
+ [!code-cpp[Control.KeyDown#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Control.KeyDown/CPP/form1.cpp#1)]
+ [!code-csharp[Control.KeyDown#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Control.KeyDown/CS/form1.cs#1)]
+ [!code-vb[Control.KeyDown#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Control.KeyDown/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyData">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Keys KeyData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.Keys KeyData" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.KeyEventArgs.KeyData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Keys</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーのデータを取得、<see cref="E:System.Windows.Forms.Control.KeyDown" />または<see cref="E:System.Windows.Forms.Control.KeyUp" />イベント。</summary>
+        <value>A <see cref="T:System.Windows.Forms.Keys" /> CTRL、shift キーを押し、および ALT キーの組み合わせが、同時に押されたかを示す修飾子フラグと組み合わせて、押されたキーのキー コードを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 定数を使用することができます<xref:System.Windows.Forms.Keys>から情報を抽出する、<xref:System.Windows.Forms.KeyEventArgs.KeyData%2A>プロパティです。 によって返されるデータを比較する、ビットごとの AND 演算子を使用して<xref:System.Windows.Forms.KeyEventArgs.KeyData%2A>の定数で<xref:System.Windows.Forms.Keys>ユーザーが押されたキーに関する情報を取得します。 特定の修飾子キーが押されたかどうかを判断するのには、使用、 <xref:System.Windows.Forms.KeyEventArgs.Control%2A>、 <xref:System.Windows.Forms.KeyEventArgs.Shift%2A>、および<xref:System.Windows.Forms.KeyEventArgs.Alt%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.Control.KeyDown?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.Control>、ように、<xref:System.Windows.Forms.Button>または<xref:System.Windows.Forms.ComboBox>です。 インスタンスを名前`Control1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.Control.KeyDown?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#48](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#48)]
+ [!code-vb[System.Windows.Forms.EventExamples#48](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#48)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyValue">
+      <MemberSignature Language="C#" Value="public int KeyValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 KeyValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.KeyEventArgs.KeyValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーボードの値を取得、<see cref="E:System.Windows.Forms.Control.KeyDown" />または<see cref="E:System.Windows.Forms.Control.KeyUp" />イベント。</summary>
+        <value>整数表現、<see cref="P:System.Windows.Forms.KeyEventArgs.KeyCode" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.Control.KeyDown?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.Control>、ように、<xref:System.Windows.Forms.Button>または<xref:System.Windows.Forms.ComboBox>です。 インスタンスを名前`Control1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.Control.KeyDown?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#48](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#48)]
+ [!code-vb[System.Windows.Forms.EventExamples#48](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#48)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Modifiers">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Keys Modifiers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.Keys Modifiers" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.KeyEventArgs.Modifiers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Keys</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>修飾子のフラグを取得、<see cref="E:System.Windows.Forms.Control.KeyDown" />または<see cref="E:System.Windows.Forms.Control.KeyUp" />イベント。 このフラグは、Ctrl キー、Shift キー、および Alt キーのどの組み合わせが押されたのかを示します。</summary>
+        <value>A <see cref="T:System.Windows.Forms.Keys" /> 1 つまたは複数の修飾子フラグを表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 特定の修飾子キーが押されたかどうかを判断するのには、使用、 <xref:System.Windows.Forms.KeyEventArgs.Control%2A>、 <xref:System.Windows.Forms.KeyEventArgs.Shift%2A>、および<xref:System.Windows.Forms.KeyEventArgs.Alt%2A>プロパティです。 修飾子のフラグのビットごとの OR。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.KeyEventArgs.Modifiers%2A>プロパティを主キーと共にどの修飾子キーが押されたかを判断します。  
+  
+ [!code-cpp[KeyEventArgs.Modifiers#1](~/samples/snippets/cpp/VS_Snippets_Winforms/KeyEventArgs.Modifiers/CPP/form1.cpp#1)]
+ [!code-csharp[KeyEventArgs.Modifiers#1](~/samples/snippets/csharp/VS_Snippets_Winforms/KeyEventArgs.Modifiers/CS/form1.cs#1)]
+ [!code-vb[KeyEventArgs.Modifiers#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/KeyEventArgs.Modifiers/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Shift">
+      <MemberSignature Language="C#" Value="public virtual bool Shift { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Shift" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.KeyEventArgs.Shift" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Shift キーが押されたかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、SHIFT キーが押されたです。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、ヘルプを表示およびユーザーには、F1 キーと Shift キーが押されたかどうかを判断します。  
+  
+ [!code-cpp[KeyEventArgs.Modifiers#1](~/samples/snippets/cpp/VS_Snippets_Winforms/KeyEventArgs.Modifiers/CPP/form1.cpp#1)]
+ [!code-csharp[KeyEventArgs.Modifiers#1](~/samples/snippets/csharp/VS_Snippets_Winforms/KeyEventArgs.Modifiers/CS/form1.cs#1)]
+ [!code-vb[KeyEventArgs.Modifiers#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/KeyEventArgs.Modifiers/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SuppressKeyPress">
+      <MemberSignature Language="C#" Value="public bool SuppressKeyPress { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SuppressKeyPress" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.KeyEventArgs.SuppressKeyPress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キー イベントを基になるコントロールに渡すかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />キー イベントをないコントロールに送信する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 割り当てることができます`true`など、イベント ハンドラーでこのプロパティに<xref:System.Windows.Forms.Control.KeyDown>ユーザー入力を防ぐためです。  
+  
+ 設定<xref:System.Windows.Forms.KeyEventArgs.SuppressKeyPress%2A>に`true`も設定<xref:System.Windows.Forms.KeyEventArgs.Handled%2A>に`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、数値のキーストロークをにより到達できない、<xref:System.Windows.Forms.TextBox>という名前のコントロール`textBox1`です。  
+  
+ [!code-csharp[KeyEventArgs.SuppressKeyPress#1](~/samples/snippets/csharp/VS_Snippets_Winforms/keyeventargs.suppresskeypress/cs/form1.cs#1)]
+ [!code-vb[KeyEventArgs.SuppressKeyPress#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/keyeventargs.suppresskeypress/vb/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

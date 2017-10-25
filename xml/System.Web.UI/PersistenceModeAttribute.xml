@@ -1,0 +1,247 @@
+<Type Name="PersistenceModeAttribute" FullName="System.Web.UI.PersistenceModeAttribute">
+  <TypeSignature Language="C#" Value="public sealed class PersistenceModeAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PersistenceModeAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.PersistenceModeAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.All)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ASP.NET サーバー コントロールのプロパティまたはイベントが永続化する方法、ASP.NET ページをデザイン時に指定するメタデータ属性を定義します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+> [!NOTE]
+>  Visual Studio で Web ページ デザイナー サポートされていません、`ResetPropertyName`必要に応じてプロパティを常設するための Windows フォーム コントロールによって公開されるメソッド。 サーバー コントロールは、によって提供されるメソッドを使用してシリアル化、<xref:System.Web.UI.Design.ControlPersister>クラスです。 これらのメソッドの実装はなどのメタデータ属性によって促進<xref:System.ComponentModel.DefaultValueAttribute>、 <xref:System.Web.UI.PersistenceModeAttribute>、および<xref:System.ComponentModel.DesignerSerializationVisibilityAttribute>です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[PersistenceMode#2](~/samples/snippets/csharp/VS_Snippets_WebNet/PersistenceMode/CS/persistencemodeattributesamples.cs#2)]
+ [!code-vb[PersistenceMode#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PersistenceMode/VB/persistencemodeattributesamples.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PersistenceModeAttribute (System.Web.UI.PersistenceMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Web.UI.PersistenceMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PersistenceModeAttribute.#ctor(System.Web.UI.PersistenceMode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="mode" Type="System.Web.UI.PersistenceMode" />
+      </Parameters>
+      <Docs>
+        <param name="mode"><see cref="T:System.Web.UI.PersistenceMode" />に代入する値<see cref="P:System.Web.UI.PersistenceModeAttribute.Mode" />です。</param>
+        <summary><see cref="T:System.Web.UI.PersistenceModeAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="mode" /> は <see cref="T:System.Web.UI.PersistenceMode" /> 値のいずれでもありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Attribute">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.PersistenceModeAttribute Attribute;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.PersistenceModeAttribute Attribute" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.PersistenceModeAttribute.Attribute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.PersistenceModeAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティまたはイベントが属性として、サーバー コントロールの開始タグに永続化することを指定します。 このフィールドは読み取り専用です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.PersistenceModeAttribute Default;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.PersistenceModeAttribute Default" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.PersistenceModeAttribute.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.PersistenceModeAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定の型を指定します、<see cref="T:System.Web.UI.PersistenceModeAttribute" />クラスです。 既定値は、<see langword="PersistenceMode.Attribute" /> です。 このフィールドは読み取り専用です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EncodedInnerDefaultProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.PersistenceModeAttribute EncodedInnerDefaultProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.PersistenceModeAttribute EncodedInnerDefaultProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.PersistenceModeAttribute.EncodedInnerDefaultProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.PersistenceModeAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティは、HTML エンコード、ASP.NET サーバー コントロールの唯一の内部コンテンツとして永続化を指定します。 このフィールドは読み取り専用です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PersistenceModeAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">比較するオブジェクト。</param>
+        <summary>比較、<see cref="T:System.Web.UI.PersistenceModeAttribute" />別のオブジェクトに対するオブジェクト。</summary>
+        <returns>
+          オブジェクトが等しいと見なされた場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PersistenceModeAttribute.Equals%2A>メソッドは、まず特定のオブジェクトに現在のオブジェクトを比較し、返します`true`が等しい場合は。  それ以外の場合、指定したオブジェクトにもある場合、<xref:System.Web.UI.PersistenceModeAttribute>オブジェクトし、は`null`、<xref:System.Web.UI.PersistenceModeAttribute.Mode%2A>各オブジェクトのプロパティが等しいかどうか比較され、結果が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PersistenceModeAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ハッシュ値を提供する<see cref="T:System.Web.UI.PersistenceModeAttribute" />属性。</summary>
+        <returns>割り当てられるハッシュ値、<see cref="T:System.Web.UI.PersistenceModeAttribute" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InnerDefaultProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.PersistenceModeAttribute InnerDefaultProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.PersistenceModeAttribute InnerDefaultProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.PersistenceModeAttribute.InnerDefaultProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.PersistenceModeAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティは、ASP.NET サーバー コントロールの唯一の内部コンテンツとして永続化することを指定します。 このフィールドは読み取り専用です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InnerProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.PersistenceModeAttribute InnerProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.PersistenceModeAttribute InnerProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.PersistenceModeAttribute.InnerProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.PersistenceModeAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティが、入れ子になったタグと終了タグのサーバー コントロールの永続化することを指定します。 このフィールドは読み取り専用です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefaultAttribute">
+      <MemberSignature Language="C#" Value="public override bool IsDefaultAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsDefaultAttribute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PersistenceModeAttribute.IsDefaultAttribute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示すかどうか、<see cref="T:System.Web.UI.PersistenceModeAttribute" />オブジェクトは、既定の型。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Web.UI.PersistenceModeAttribute" />の既定値の型は、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの呼び出しを実行する、<xref:System.Web.UI.PersistenceModeAttribute.Equals%2A>によって参照されるオブジェクトに渡す方法、<xref:System.Web.UI.PersistenceModeAttribute.Default>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Mode">
+      <MemberSignature Language="C#" Value="public System.Web.UI.PersistenceMode Mode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.PersistenceMode Mode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PersistenceModeAttribute.Mode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.PersistenceMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の値を取得、<see cref="T:System.Web.UI.PersistenceMode" />列挙します。</summary>
+        <value>A<see cref="T:System.Web.UI.PersistenceMode" />を表す列挙体の現在の値。 この値は、 <see langword="Attribute" />、 <see langword="InnerProperty" />、 <see langword="InnerDefaultProperty" />、または<see langword="EncodedInnerDefaultProperty" />です。 既定値は、<see langword="Attribute" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[PersistenceMode#2](~/samples/snippets/csharp/VS_Snippets_WebNet/PersistenceMode/CS/persistencemodeattributesamples.cs#2)]
+ [!code-vb[PersistenceMode#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PersistenceMode/VB/persistencemodeattributesamples.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

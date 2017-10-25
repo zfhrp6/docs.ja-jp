@@ -1,0 +1,3836 @@
+<Type Name="EntityFunctions" FullName="System.Data.Objects.EntityFunctions">
+  <TypeSignature Language="C#" Value="public static class EntityFunctions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit EntityFunctions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Objects.EntityFunctions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>共通言語ランタイムを linq to Entities クエリの概念モデル正規関数を公開する (CLR) メソッドを提供します。 正規関数については、次を参照してください。[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddDays">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;DateTime&gt; AddDays (Nullable&lt;DateTime&gt; dateValue, Nullable&lt;int&gt; addValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; AddDays(valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; dateValue, valuetype System.Nullable`1&lt;int32&gt; addValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.AddDays(System.Nullable{System.DateTime},System.Nullable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "AddDays")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTime&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dateValue" Type="System.Nullable&lt;System.DateTime&gt;" />
+        <Parameter Name="addValue" Type="System.Nullable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="dateValue">有効な日付。</param>
+        <param name="addValue">追加する日数<c>dateValue</c>です。</param>
+        <summary>呼び出す、正規<see langword="AddDays" />関数。 については、正規<see langword="AddDays" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns><paramref name="dateValue" />ずつ<paramref name="addValue" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddDays">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;DateTimeOffset&gt; AddDays (Nullable&lt;DateTimeOffset&gt; dateValue, Nullable&lt;int&gt; addValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; AddDays(valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; dateValue, valuetype System.Nullable`1&lt;int32&gt; addValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.AddDays(System.Nullable{System.DateTimeOffset},System.Nullable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "AddDays")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTimeOffset&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dateValue" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+        <Parameter Name="addValue" Type="System.Nullable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="dateValue">有効な日付時刻のオフセット。</param>
+        <param name="addValue">追加する日数<c>dateValue</c>です。</param>
+        <summary>呼び出す、正規<see langword="AddDays" />関数。 については、正規<see langword="AddDays" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns><paramref name="dateValue" />ずつ<paramref name="addValue" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="AddHours">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>呼び出す、正規<see langword="AddHours" />関数。 については、正規<see langword="AddHours" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="AddHours">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;DateTime&gt; AddHours (Nullable&lt;DateTime&gt; timeValue, Nullable&lt;int&gt; addValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; AddHours(valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; timeValue, valuetype System.Nullable`1&lt;int32&gt; addValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.AddHours(System.Nullable{System.DateTime},System.Nullable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "AddHours")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTime&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeValue" Type="System.Nullable&lt;System.DateTime&gt;" />
+        <Parameter Name="addValue" Type="System.Nullable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeValue">有効な日付。</param>
+        <param name="addValue">追加する時間数<c>timeValue</c>です。</param>
+        <summary>呼び出す、正規<see langword="AddHours" />関数。 については、正規<see langword="AddHours" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns><paramref name="timeValue" />ずつ<paramref name="addValue" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddHours">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;DateTimeOffset&gt; AddHours (Nullable&lt;DateTimeOffset&gt; timeValue, Nullable&lt;int&gt; addValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; AddHours(valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; timeValue, valuetype System.Nullable`1&lt;int32&gt; addValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.AddHours(System.Nullable{System.DateTimeOffset},System.Nullable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "AddHours")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTimeOffset&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeValue" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+        <Parameter Name="addValue" Type="System.Nullable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeValue">有効な日付時刻のオフセット。</param>
+        <param name="addValue">追加する時間数<c>timeValue</c>です。</param>
+        <summary>呼び出す、正規<see langword="AddHours" />関数。 については、正規<see langword="AddHours" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns><paramref name="timeValue" />ずつ<paramref name="addValue" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddHours">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;TimeSpan&gt; AddHours (Nullable&lt;TimeSpan&gt; timeValue, Nullable&lt;int&gt; addValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; AddHours(valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; timeValue, valuetype System.Nullable`1&lt;int32&gt; addValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.AddHours(System.Nullable{System.TimeSpan},System.Nullable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "AddHours")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.TimeSpan&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeValue" Type="System.Nullable&lt;System.TimeSpan&gt;" />
+        <Parameter Name="addValue" Type="System.Nullable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeValue">有効な期間。</param>
+        <param name="addValue">追加する時間数<c>timeValue</c>です。</param>
+        <summary>呼び出す、正規<see langword="AddHours" />関数。 については、正規<see langword="AddHours" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns><paramref name="timeValue" />ずつ<paramref name="addValue" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="AddMicroseconds">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>呼び出す、正規<see langword="AddMicroseconds" />関数。 については、正規<see langword="AddMicroseconds" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="AddMicroseconds">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;DateTime&gt; AddMicroseconds (Nullable&lt;DateTime&gt; timeValue, Nullable&lt;int&gt; addValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; AddMicroseconds(valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; timeValue, valuetype System.Nullable`1&lt;int32&gt; addValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.AddMicroseconds(System.Nullable{System.DateTime},System.Nullable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "AddMicroseconds")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTime&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeValue" Type="System.Nullable&lt;System.DateTime&gt;" />
+        <Parameter Name="addValue" Type="System.Nullable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeValue">有効な日付。</param>
+        <param name="addValue">追加するには、マイクロ秒単位の数<c>timeValue</c>です。</param>
+        <summary>呼び出す、正規<see langword="AddMicroseconds" />関数。 については、正規<see langword="AddMicroseconds" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns><paramref name="timeValue" />ずつ<paramref name="addValue" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddMicroseconds">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;DateTimeOffset&gt; AddMicroseconds (Nullable&lt;DateTimeOffset&gt; timeValue, Nullable&lt;int&gt; addValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; AddMicroseconds(valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; timeValue, valuetype System.Nullable`1&lt;int32&gt; addValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.AddMicroseconds(System.Nullable{System.DateTimeOffset},System.Nullable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "AddMicroseconds")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTimeOffset&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeValue" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+        <Parameter Name="addValue" Type="System.Nullable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeValue">有効な日付時刻のオフセット。</param>
+        <param name="addValue">追加するには、マイクロ秒単位の数<c>timeValue</c>です。</param>
+        <summary>呼び出す、正規<see langword="AddMicroseconds" />関数。 については、正規<see langword="AddMicroseconds" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns><paramref name="timeValue" />ずつ<paramref name="addValue" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddMicroseconds">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;TimeSpan&gt; AddMicroseconds (Nullable&lt;TimeSpan&gt; timeValue, Nullable&lt;int&gt; addValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; AddMicroseconds(valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; timeValue, valuetype System.Nullable`1&lt;int32&gt; addValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.AddMicroseconds(System.Nullable{System.TimeSpan},System.Nullable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "AddMicroseconds")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.TimeSpan&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeValue" Type="System.Nullable&lt;System.TimeSpan&gt;" />
+        <Parameter Name="addValue" Type="System.Nullable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeValue">有効な期間。</param>
+        <param name="addValue">追加するには、マイクロ秒単位の数<c>timeValue</c>です。</param>
+        <summary>呼び出す、正規<see langword="AddMicroseconds" />関数。 については、正規<see langword="AddMicroseconds" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns><paramref name="timeValue" />ずつ<paramref name="addValue" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="AddMilliseconds">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>呼び出す、正規<see langword="AddMilliseconds" />関数。 については、正規<see langword="AddMilliseconds" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="AddMilliseconds">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;DateTime&gt; AddMilliseconds (Nullable&lt;DateTime&gt; timeValue, Nullable&lt;int&gt; addValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; AddMilliseconds(valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; timeValue, valuetype System.Nullable`1&lt;int32&gt; addValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.AddMilliseconds(System.Nullable{System.DateTime},System.Nullable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "AddMilliseconds")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTime&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeValue" Type="System.Nullable&lt;System.DateTime&gt;" />
+        <Parameter Name="addValue" Type="System.Nullable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeValue">有効な日付。</param>
+        <param name="addValue">追加するミリ秒数<c>timeValue</c>です。</param>
+        <summary>呼び出す、正規<see langword="AddMilliseconds" />関数。 については、正規<see langword="AddMilliseconds" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns><paramref name="timeValue" />ずつ<paramref name="addValue" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddMilliseconds">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;DateTimeOffset&gt; AddMilliseconds (Nullable&lt;DateTimeOffset&gt; timeValue, Nullable&lt;int&gt; addValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; AddMilliseconds(valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; timeValue, valuetype System.Nullable`1&lt;int32&gt; addValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.AddMilliseconds(System.Nullable{System.DateTimeOffset},System.Nullable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "AddMilliseconds")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTimeOffset&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeValue" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+        <Parameter Name="addValue" Type="System.Nullable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeValue">有効な日付時刻のオフセット。</param>
+        <param name="addValue">追加するミリ秒数<c>timeValue</c>です。</param>
+        <summary>呼び出す、正規<see langword="AddMilliseconds" />関数。 については、正規<see langword="AddMilliseconds" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns><paramref name="timeValue" />ずつ<paramref name="addValue" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddMilliseconds">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;TimeSpan&gt; AddMilliseconds (Nullable&lt;TimeSpan&gt; timeValue, Nullable&lt;int&gt; addValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; AddMilliseconds(valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; timeValue, valuetype System.Nullable`1&lt;int32&gt; addValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.AddMilliseconds(System.Nullable{System.TimeSpan},System.Nullable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "AddMilliseconds")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.TimeSpan&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeValue" Type="System.Nullable&lt;System.TimeSpan&gt;" />
+        <Parameter Name="addValue" Type="System.Nullable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeValue">有効な期間。</param>
+        <param name="addValue">追加するミリ秒数<c>timeValue</c>です。</param>
+        <summary>呼び出す、正規<see langword="AddMilliseconds" />関数。 については、正規<see langword="AddMilliseconds" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns><paramref name="timeValue" />ずつ<paramref name="addValue" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="AddMinutes">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>呼び出す、正規<see langword="AddMinutes" />関数。 については、正規<see langword="AddMinutes" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="AddMinutes">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;DateTime&gt; AddMinutes (Nullable&lt;DateTime&gt; timeValue, Nullable&lt;int&gt; addValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; AddMinutes(valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; timeValue, valuetype System.Nullable`1&lt;int32&gt; addValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.AddMinutes(System.Nullable{System.DateTime},System.Nullable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "AddMinutes")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTime&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeValue" Type="System.Nullable&lt;System.DateTime&gt;" />
+        <Parameter Name="addValue" Type="System.Nullable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeValue">有効な日付。</param>
+        <param name="addValue">追加する時間を分単位<c>timeValue</c>です。</param>
+        <summary>呼び出す、正規<see langword="AddMinutes" />関数。 については、正規<see langword="AddMinutes" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns><paramref name="timeValue" />ずつ<paramref name="addValue" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddMinutes">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;DateTimeOffset&gt; AddMinutes (Nullable&lt;DateTimeOffset&gt; timeValue, Nullable&lt;int&gt; addValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; AddMinutes(valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; timeValue, valuetype System.Nullable`1&lt;int32&gt; addValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.AddMinutes(System.Nullable{System.DateTimeOffset},System.Nullable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "AddMinutes")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTimeOffset&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeValue" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+        <Parameter Name="addValue" Type="System.Nullable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeValue">有効な日付時刻のオフセット。</param>
+        <param name="addValue">追加する時間を分単位<c>timeValue</c>です。</param>
+        <summary>呼び出す、正規<see langword="AddMinutes" />関数。 については、正規<see langword="AddMinutes" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns><paramref name="timeValue" />ずつ<paramref name="addValue" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddMinutes">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;TimeSpan&gt; AddMinutes (Nullable&lt;TimeSpan&gt; timeValue, Nullable&lt;int&gt; addValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; AddMinutes(valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; timeValue, valuetype System.Nullable`1&lt;int32&gt; addValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.AddMinutes(System.Nullable{System.TimeSpan},System.Nullable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "AddMinutes")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.TimeSpan&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeValue" Type="System.Nullable&lt;System.TimeSpan&gt;" />
+        <Parameter Name="addValue" Type="System.Nullable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeValue">有効な期間。</param>
+        <param name="addValue">追加する時間を分単位<c>timeValue</c>です。</param>
+        <summary>呼び出す、正規<see langword="AddMinutes" />関数。 については、正規<see langword="AddMinutes" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns><paramref name="timeValue" />ずつ<paramref name="addValue" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="AddMonths">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>呼び出す、正規<see langword="AddMonths" />関数。 については、正規<see langword="AddMonths" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="AddMonths">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;DateTime&gt; AddMonths (Nullable&lt;DateTime&gt; dateValue, Nullable&lt;int&gt; addValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; AddMonths(valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; dateValue, valuetype System.Nullable`1&lt;int32&gt; addValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.AddMonths(System.Nullable{System.DateTime},System.Nullable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "AddMonths")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTime&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dateValue" Type="System.Nullable&lt;System.DateTime&gt;" />
+        <Parameter Name="addValue" Type="System.Nullable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="dateValue">有効な日付。</param>
+        <param name="addValue">追加する月数<c>dateValue</c>です。</param>
+        <summary>呼び出す、正規<see langword="AddMonths" />関数。 については、正規<see langword="AddMonths" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns><paramref name="dateValue" />ずつ<paramref name="addValue" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddMonths">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;DateTimeOffset&gt; AddMonths (Nullable&lt;DateTimeOffset&gt; dateValue, Nullable&lt;int&gt; addValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; AddMonths(valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; dateValue, valuetype System.Nullable`1&lt;int32&gt; addValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.AddMonths(System.Nullable{System.DateTimeOffset},System.Nullable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "AddMonths")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTimeOffset&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dateValue" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+        <Parameter Name="addValue" Type="System.Nullable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="dateValue">有効な日付時刻のオフセット。</param>
+        <param name="addValue">追加する月数<c>dateValue</c>です。</param>
+        <summary>呼び出す、正規<see langword="AddMonths" />関数。 については、正規<see langword="AddMonths" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns><paramref name="dateValue" />ずつ<paramref name="addValue" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="AddNanoseconds">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>呼び出す、正規<see langword="AddNanoseconds" />関数。 については、正規<see langword="AddNanoseconds" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="AddNanoseconds">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;DateTime&gt; AddNanoseconds (Nullable&lt;DateTime&gt; timeValue, Nullable&lt;int&gt; addValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; AddNanoseconds(valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; timeValue, valuetype System.Nullable`1&lt;int32&gt; addValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.AddNanoseconds(System.Nullable{System.DateTime},System.Nullable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "AddNanoseconds")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTime&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeValue" Type="System.Nullable&lt;System.DateTime&gt;" />
+        <Parameter Name="addValue" Type="System.Nullable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeValue">有効な日付。</param>
+        <param name="addValue">追加するナノ秒数<c>timeValue</c>です。</param>
+        <summary>呼び出す、正規<see langword="AddNanoseconds" />関数。 については、正規<see langword="AddNanoseconds" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns><paramref name="timeValue" />ずつ<paramref name="addValue" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddNanoseconds">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;DateTimeOffset&gt; AddNanoseconds (Nullable&lt;DateTimeOffset&gt; timeValue, Nullable&lt;int&gt; addValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; AddNanoseconds(valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; timeValue, valuetype System.Nullable`1&lt;int32&gt; addValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.AddNanoseconds(System.Nullable{System.DateTimeOffset},System.Nullable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "AddNanoseconds")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTimeOffset&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeValue" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+        <Parameter Name="addValue" Type="System.Nullable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeValue">有効な日付時刻のオフセット。</param>
+        <param name="addValue">追加するナノ秒数<c>timeValue</c>です。</param>
+        <summary>呼び出す、正規<see langword="AddNanoseconds" />関数。 については、正規<see langword="AddNanoseconds" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns><paramref name="timeValue" />ずつ<paramref name="addValue" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddNanoseconds">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;TimeSpan&gt; AddNanoseconds (Nullable&lt;TimeSpan&gt; timeValue, Nullable&lt;int&gt; addValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; AddNanoseconds(valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; timeValue, valuetype System.Nullable`1&lt;int32&gt; addValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.AddNanoseconds(System.Nullable{System.TimeSpan},System.Nullable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "AddNanoseconds")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.TimeSpan&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeValue" Type="System.Nullable&lt;System.TimeSpan&gt;" />
+        <Parameter Name="addValue" Type="System.Nullable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeValue">有効な期間。</param>
+        <param name="addValue">追加するナノ秒数<c>timeValue</c>です。</param>
+        <summary>呼び出す、正規<see langword="AddNanoseconds" />関数。 については、正規<see langword="AddNanoseconds" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns><paramref name="timeValue" />ずつ<paramref name="addValue" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="AddSeconds">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>呼び出す、正規<see langword="AddSeconds" />関数。 については、正規<see langword="AddSeconds" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="AddSeconds">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;DateTime&gt; AddSeconds (Nullable&lt;DateTime&gt; timeValue, Nullable&lt;int&gt; addValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; AddSeconds(valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; timeValue, valuetype System.Nullable`1&lt;int32&gt; addValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.AddSeconds(System.Nullable{System.DateTime},System.Nullable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "AddSeconds")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTime&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeValue" Type="System.Nullable&lt;System.DateTime&gt;" />
+        <Parameter Name="addValue" Type="System.Nullable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeValue">有効な日付。</param>
+        <param name="addValue">追加する秒数<c>timeValue</c>です。</param>
+        <summary>呼び出す、正規<see langword="AddSeconds" />関数。 については、正規<see langword="AddSeconds" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns><paramref name="timeValue" />ずつ<paramref name="addValue" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddSeconds">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;DateTimeOffset&gt; AddSeconds (Nullable&lt;DateTimeOffset&gt; timeValue, Nullable&lt;int&gt; addValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; AddSeconds(valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; timeValue, valuetype System.Nullable`1&lt;int32&gt; addValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.AddSeconds(System.Nullable{System.DateTimeOffset},System.Nullable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "AddSeconds")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTimeOffset&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeValue" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+        <Parameter Name="addValue" Type="System.Nullable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeValue">有効な日付時刻のオフセット。</param>
+        <param name="addValue">追加する秒数<c>timeValue</c>です。</param>
+        <summary>呼び出す、正規<see langword="AddSeconds" />関数。 については、正規<see langword="AddSeconds" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns><paramref name="timeValue" />ずつ<paramref name="addValue" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddSeconds">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;TimeSpan&gt; AddSeconds (Nullable&lt;TimeSpan&gt; timeValue, Nullable&lt;int&gt; addValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; AddSeconds(valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; timeValue, valuetype System.Nullable`1&lt;int32&gt; addValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.AddSeconds(System.Nullable{System.TimeSpan},System.Nullable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "AddSeconds")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.TimeSpan&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeValue" Type="System.Nullable&lt;System.TimeSpan&gt;" />
+        <Parameter Name="addValue" Type="System.Nullable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeValue">有効な期間。</param>
+        <param name="addValue">追加する秒数<c>timeValue</c>です。</param>
+        <summary>呼び出す、正規<see langword="AddSeconds" />関数。 については、正規<see langword="AddSeconds" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns><paramref name="timeValue" />ずつ<paramref name="addValue" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="AddYears">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>呼び出す、正規<see langword="AddYears" />関数。 については、正規<see langword="AddYears" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="AddYears">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;DateTime&gt; AddYears (Nullable&lt;DateTime&gt; dateValue, Nullable&lt;int&gt; addValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; AddYears(valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; dateValue, valuetype System.Nullable`1&lt;int32&gt; addValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.AddYears(System.Nullable{System.DateTime},System.Nullable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "AddYears")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTime&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dateValue" Type="System.Nullable&lt;System.DateTime&gt;" />
+        <Parameter Name="addValue" Type="System.Nullable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="dateValue">有効な日付。</param>
+        <param name="addValue">追加する年数<c>dateValue</c>です。</param>
+        <summary>呼び出す、正規<see langword="AddYears" />関数。 については、正規<see langword="AddYears" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns><paramref name="dateValue" />ずつ<paramref name="addValue" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddYears">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;DateTimeOffset&gt; AddYears (Nullable&lt;DateTimeOffset&gt; dateValue, Nullable&lt;int&gt; addValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; AddYears(valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; dateValue, valuetype System.Nullable`1&lt;int32&gt; addValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.AddYears(System.Nullable{System.DateTimeOffset},System.Nullable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "AddYears")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTimeOffset&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dateValue" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+        <Parameter Name="addValue" Type="System.Nullable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="dateValue">有効な日付時刻のオフセット。</param>
+        <param name="addValue">追加する年数<c>dateValue</c>です。</param>
+        <summary>呼び出す、正規<see langword="AddYears" />関数。 については、正規<see langword="AddYears" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns><paramref name="dateValue" />ずつ<paramref name="addValue" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AsNonUnicode">
+      <MemberSignature Language="C#" Value="public static string AsNonUnicode (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string AsNonUnicode(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.AsNonUnicode(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">入力文字列。</param>
+        <summary>入力文字列を unicode 以外の文字列として扱われるエンティティのオペレーターに LINQ です。 このメソッドは、のみ、LINQ to Entities クエリ適用します。</summary>
+        <returns>非 unicode 文字列です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AsUnicode">
+      <MemberSignature Language="C#" Value="public static string AsUnicode (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string AsUnicode(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.AsUnicode(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">入力文字列。</param>
+        <summary>LINQ to Entities 演算子、入力文字列に確実には、unicode 文字列として扱われます。 このメソッドは、のみ、LINQ to Entities クエリ適用します。</summary>
+        <returns>Unicode 文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDateTime">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;DateTime&gt; CreateDateTime (Nullable&lt;int&gt; year, Nullable&lt;int&gt; month, Nullable&lt;int&gt; day, Nullable&lt;int&gt; hour, Nullable&lt;int&gt; minute, Nullable&lt;double&gt; second);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; CreateDateTime(valuetype System.Nullable`1&lt;int32&gt; year, valuetype System.Nullable`1&lt;int32&gt; month, valuetype System.Nullable`1&lt;int32&gt; day, valuetype System.Nullable`1&lt;int32&gt; hour, valuetype System.Nullable`1&lt;int32&gt; minute, valuetype System.Nullable`1&lt;float64&gt; second) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.CreateDateTime(System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Double})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "CreateDateTime")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTime&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="year" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="month" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="day" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="hour" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="minute" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="second" Type="System.Nullable&lt;System.Double&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="year">新しい日付の年の部分です。</param>
+        <param name="month">新しい日付の月の部分です。</param>
+        <param name="day">新しい日付の日の部分です。</param>
+        <param name="hour">新しい日付の時間部分は、します。</param>
+        <param name="minute">新しい日付の分の部分です。</param>
+        <param name="second">新しい日付の秒の部分です。 このパラメーターを持つ秒の小数部を指定することもできますに注意してください。</param>
+        <summary>呼び出す、正規<see langword="CreateDateTime" />関数。 については、正規<see langword="CreateDateTime" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns>新しい日付。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDateTimeOffset">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;DateTimeOffset&gt; CreateDateTimeOffset (Nullable&lt;int&gt; year, Nullable&lt;int&gt; month, Nullable&lt;int&gt; day, Nullable&lt;int&gt; hour, Nullable&lt;int&gt; minute, Nullable&lt;double&gt; second, Nullable&lt;int&gt; timeZoneOffset);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; CreateDateTimeOffset(valuetype System.Nullable`1&lt;int32&gt; year, valuetype System.Nullable`1&lt;int32&gt; month, valuetype System.Nullable`1&lt;int32&gt; day, valuetype System.Nullable`1&lt;int32&gt; hour, valuetype System.Nullable`1&lt;int32&gt; minute, valuetype System.Nullable`1&lt;float64&gt; second, valuetype System.Nullable`1&lt;int32&gt; timeZoneOffset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.CreateDateTimeOffset(System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Double},System.Nullable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "CreateDateTimeOffset")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTimeOffset&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="year" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="month" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="day" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="hour" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="minute" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="second" Type="System.Nullable&lt;System.Double&gt;" />
+        <Parameter Name="timeZoneOffset" Type="System.Nullable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="year">新しい日付の年の部分です。</param>
+        <param name="month">新しい日付の月の部分です。</param>
+        <param name="day">新しい日付の日の部分です。</param>
+        <param name="hour">新しい日付の時間部分は、します。</param>
+        <param name="minute">新しい日付の分の部分です。</param>
+        <param name="second">新しい日付の秒の部分です。 このパラメーターを持つ秒の小数部を指定することもできますに注意してください。</param>
+        <param name="timeZoneOffset">タイム ゾーン オフセットの新しい日付の部分です。</param>
+        <summary>呼び出す、正規<see langword="CreateDateTimeOffset" />関数。 については、正規<see langword="CreateDateTimeOffset" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns>新しい日付。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateTime">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;TimeSpan&gt; CreateTime (Nullable&lt;int&gt; hour, Nullable&lt;int&gt; minute, Nullable&lt;double&gt; second);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; CreateTime(valuetype System.Nullable`1&lt;int32&gt; hour, valuetype System.Nullable`1&lt;int32&gt; minute, valuetype System.Nullable`1&lt;float64&gt; second) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.CreateTime(System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Double})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "CreateTime")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.TimeSpan&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hour" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="minute" Type="System.Nullable&lt;System.Int32&gt;" />
+        <Parameter Name="second" Type="System.Nullable&lt;System.Double&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="hour">新しい時間の時間の部分にわたっています。</param>
+        <param name="minute">新しい時刻の分の部分にわたっています。</param>
+        <param name="second">新しい時刻の秒の部分にわたっています。 このパラメーターを持つ秒の小数部を指定することもできますに注意してください。</param>
+        <summary>呼び出す、正規<see langword="CreateTime" />関数。 については、正規<see langword="CreateTime" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns>新しい時間間隔。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="DiffDays">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>呼び出す、正規<see langword="DiffDays" />関数。 については、正規<see langword="DiffDays" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="DiffDays">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;int&gt; DiffDays (Nullable&lt;DateTime&gt; dateValue1, Nullable&lt;DateTime&gt; dateValue2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;int32&gt; DiffDays(valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; dateValue1, valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; dateValue2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.DiffDays(System.Nullable{System.DateTime},System.Nullable{System.DateTime})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "DiffDays")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dateValue1" Type="System.Nullable&lt;System.DateTime&gt;" />
+        <Parameter Name="dateValue2" Type="System.Nullable&lt;System.DateTime&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="dateValue1">有効な日付。</param>
+        <param name="dateValue2">有効な日付。</param>
+        <summary>呼び出す、正規<see langword="DiffDays" />関数。 については、正規<see langword="DiffDays" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns>間の日数<paramref name="dateValue1" />と<paramref name="dateValue2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DiffDays">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;int&gt; DiffDays (Nullable&lt;DateTimeOffset&gt; dateValue1, Nullable&lt;DateTimeOffset&gt; dateValue2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;int32&gt; DiffDays(valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; dateValue1, valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; dateValue2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.DiffDays(System.Nullable{System.DateTimeOffset},System.Nullable{System.DateTimeOffset})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "DiffDays")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dateValue1" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+        <Parameter Name="dateValue2" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="dateValue1">有効な日付時刻のオフセット。</param>
+        <param name="dateValue2">有効な日付時刻のオフセット。</param>
+        <summary>呼び出す、正規<see langword="DiffDays" />関数。 については、正規<see langword="DiffDays" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns>間の日数<paramref name="dateValue1" />と<paramref name="dateValue2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="DiffHours">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>呼び出す、正規<see langword="DiffHours" />関数。 については、正規<see langword="DiffHours" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="DiffHours">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;int&gt; DiffHours (Nullable&lt;DateTime&gt; timeValue1, Nullable&lt;DateTime&gt; timeValue2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;int32&gt; DiffHours(valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; timeValue1, valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; timeValue2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.DiffHours(System.Nullable{System.DateTime},System.Nullable{System.DateTime})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "DiffHours")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeValue1" Type="System.Nullable&lt;System.DateTime&gt;" />
+        <Parameter Name="timeValue2" Type="System.Nullable&lt;System.DateTime&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeValue1">有効な日付。</param>
+        <param name="timeValue2">有効な日付。</param>
+        <summary>呼び出す、正規<see langword="DiffHours" />関数。 については、正規<see langword="DiffHours" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns>間隔を時間単位<paramref name="timeValue1" />と<paramref name="timeValue2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DiffHours">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;int&gt; DiffHours (Nullable&lt;DateTimeOffset&gt; timeValue1, Nullable&lt;DateTimeOffset&gt; timeValue2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;int32&gt; DiffHours(valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; timeValue1, valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; timeValue2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.DiffHours(System.Nullable{System.DateTimeOffset},System.Nullable{System.DateTimeOffset})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "DiffHours")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeValue1" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+        <Parameter Name="timeValue2" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeValue1">有効な日付時刻のオフセット。</param>
+        <param name="timeValue2">有効な日付時刻のオフセット。</param>
+        <summary>呼び出す、正規<see langword="DiffHours" />関数。 については、正規<see langword="DiffHours" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns>間隔を時間単位<paramref name="timeValue1" />と<paramref name="timeValue2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DiffHours">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;int&gt; DiffHours (Nullable&lt;TimeSpan&gt; timeValue1, Nullable&lt;TimeSpan&gt; timeValue2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;int32&gt; DiffHours(valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; timeValue1, valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; timeValue2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.DiffHours(System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "DiffHours")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeValue1" Type="System.Nullable&lt;System.TimeSpan&gt;" />
+        <Parameter Name="timeValue2" Type="System.Nullable&lt;System.TimeSpan&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeValue1">有効な期間。</param>
+        <param name="timeValue2">有効な期間。</param>
+        <summary>呼び出す、正規<see langword="DiffHours" />関数。 については、正規<see langword="DiffHours" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns>間隔を時間単位<paramref name="timeValue1" />と<paramref name="timeValue2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="DiffMicroseconds">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>呼び出す、正規<see langword="DiffMicroseconds" />関数。 については、正規<see langword="DiffMicroseconds" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="DiffMicroseconds">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;int&gt; DiffMicroseconds (Nullable&lt;DateTime&gt; timeValue1, Nullable&lt;DateTime&gt; timeValue2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;int32&gt; DiffMicroseconds(valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; timeValue1, valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; timeValue2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.DiffMicroseconds(System.Nullable{System.DateTime},System.Nullable{System.DateTime})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "DiffMicroseconds")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeValue1" Type="System.Nullable&lt;System.DateTime&gt;" />
+        <Parameter Name="timeValue2" Type="System.Nullable&lt;System.DateTime&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeValue1">有効な日付。</param>
+        <param name="timeValue2">有効な日付。</param>
+        <summary>呼び出す、正規<see langword="DiffMicroseconds" />関数。 については、正規<see langword="DiffMicroseconds" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns>間のマイクロ秒数<paramref name="timeValue1" />と<paramref name="timeValue2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DiffMicroseconds">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;int&gt; DiffMicroseconds (Nullable&lt;DateTimeOffset&gt; timeValue1, Nullable&lt;DateTimeOffset&gt; timeValue2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;int32&gt; DiffMicroseconds(valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; timeValue1, valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; timeValue2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.DiffMicroseconds(System.Nullable{System.DateTimeOffset},System.Nullable{System.DateTimeOffset})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "DiffMicroseconds")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeValue1" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+        <Parameter Name="timeValue2" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeValue1">有効な日付時刻のオフセット。</param>
+        <param name="timeValue2">有効な日付時刻のオフセット。</param>
+        <summary>呼び出す、正規<see langword="DiffMicroseconds" />関数。 については、正規<see langword="DiffMicroseconds" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns>間のマイクロ秒数<paramref name="timeValue1" />と<paramref name="timeValue2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DiffMicroseconds">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;int&gt; DiffMicroseconds (Nullable&lt;TimeSpan&gt; timeValue1, Nullable&lt;TimeSpan&gt; timeValue2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;int32&gt; DiffMicroseconds(valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; timeValue1, valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; timeValue2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.DiffMicroseconds(System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "DiffMicroseconds")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeValue1" Type="System.Nullable&lt;System.TimeSpan&gt;" />
+        <Parameter Name="timeValue2" Type="System.Nullable&lt;System.TimeSpan&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeValue1">有効な期間。</param>
+        <param name="timeValue2">有効な期間。</param>
+        <summary>呼び出す、正規<see langword="DiffMicroseconds" />関数。 については、正規<see langword="DiffMicroseconds" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns>間のマイクロ秒数<paramref name="timeValue1" />と<paramref name="timeValue2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="DiffMilliseconds">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>呼び出す、正規<see langword="DiffMilliseconds" />関数。 については、正規<see langword="DiffMilliseconds" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="DiffMilliseconds">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;int&gt; DiffMilliseconds (Nullable&lt;DateTime&gt; timeValue1, Nullable&lt;DateTime&gt; timeValue2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;int32&gt; DiffMilliseconds(valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; timeValue1, valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; timeValue2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.DiffMilliseconds(System.Nullable{System.DateTime},System.Nullable{System.DateTime})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "DiffMilliseconds")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeValue1" Type="System.Nullable&lt;System.DateTime&gt;" />
+        <Parameter Name="timeValue2" Type="System.Nullable&lt;System.DateTime&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeValue1">有効な日付。</param>
+        <param name="timeValue2">有効な日付。</param>
+        <summary>呼び出す、正規<see langword="DiffMilliseconds" />関数。 については、正規<see langword="DiffMilliseconds" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns>までのミリ秒数<paramref name="timeValue1" />と<paramref name="timeValue2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DiffMilliseconds">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;int&gt; DiffMilliseconds (Nullable&lt;DateTimeOffset&gt; timeValue1, Nullable&lt;DateTimeOffset&gt; timeValue2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;int32&gt; DiffMilliseconds(valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; timeValue1, valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; timeValue2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.DiffMilliseconds(System.Nullable{System.DateTimeOffset},System.Nullable{System.DateTimeOffset})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "DiffMilliseconds")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeValue1" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+        <Parameter Name="timeValue2" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeValue1">有効な日付時刻のオフセット。</param>
+        <param name="timeValue2">有効な日付時刻のオフセット。</param>
+        <summary>呼び出す、正規<see langword="DiffMilliseconds" />関数。 については、正規<see langword="DiffMilliseconds" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns>までのミリ秒数<paramref name="timeValue1" />と<paramref name="timeValue2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DiffMilliseconds">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;int&gt; DiffMilliseconds (Nullable&lt;TimeSpan&gt; timeValue1, Nullable&lt;TimeSpan&gt; timeValue2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;int32&gt; DiffMilliseconds(valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; timeValue1, valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; timeValue2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.DiffMilliseconds(System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "DiffMilliseconds")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeValue1" Type="System.Nullable&lt;System.TimeSpan&gt;" />
+        <Parameter Name="timeValue2" Type="System.Nullable&lt;System.TimeSpan&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeValue1">有効な期間。</param>
+        <param name="timeValue2">有効な期間。</param>
+        <summary>呼び出す、正規<see langword="DiffMilliseconds" />関数。 については、正規<see langword="DiffMilliseconds" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns>までのミリ秒数<paramref name="timeValue1" />と<paramref name="timeValue2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="DiffMinutes">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>呼び出す、正規<see langword="DiffMinutes" />関数。 については、正規<see langword="DiffMinutes" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="DiffMinutes">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;int&gt; DiffMinutes (Nullable&lt;DateTime&gt; timeValue1, Nullable&lt;DateTime&gt; timeValue2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;int32&gt; DiffMinutes(valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; timeValue1, valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; timeValue2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.DiffMinutes(System.Nullable{System.DateTime},System.Nullable{System.DateTime})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "DiffMinutes")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeValue1" Type="System.Nullable&lt;System.DateTime&gt;" />
+        <Parameter Name="timeValue2" Type="System.Nullable&lt;System.DateTime&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeValue1">有効な日付。</param>
+        <param name="timeValue2">有効な日付。</param>
+        <summary>呼び出す、正規<see langword="DiffMinutes" />関数。 については、正規<see langword="DiffMinutes" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns>間隔を分単位の数<paramref name="timeValue1" />と<paramref name="timeValue2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DiffMinutes">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;int&gt; DiffMinutes (Nullable&lt;DateTimeOffset&gt; timeValue1, Nullable&lt;DateTimeOffset&gt; timeValue2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;int32&gt; DiffMinutes(valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; timeValue1, valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; timeValue2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.DiffMinutes(System.Nullable{System.DateTimeOffset},System.Nullable{System.DateTimeOffset})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "DiffMinutes")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeValue1" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+        <Parameter Name="timeValue2" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeValue1">有効な日付時刻のオフセット。</param>
+        <param name="timeValue2">有効な日付時刻のオフセット。</param>
+        <summary>呼び出す、正規<see langword="DiffMinutes" />関数。 については、正規<see langword="DiffMinutes" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns>間隔を分単位の数<paramref name="timeValue1" />と<paramref name="timeValue2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DiffMinutes">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;int&gt; DiffMinutes (Nullable&lt;TimeSpan&gt; timeValue1, Nullable&lt;TimeSpan&gt; timeValue2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;int32&gt; DiffMinutes(valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; timeValue1, valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; timeValue2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.DiffMinutes(System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "DiffMinutes")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeValue1" Type="System.Nullable&lt;System.TimeSpan&gt;" />
+        <Parameter Name="timeValue2" Type="System.Nullable&lt;System.TimeSpan&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeValue1">有効な期間。</param>
+        <param name="timeValue2">有効な期間。</param>
+        <summary>呼び出す、正規<see langword="DiffMinutes" />関数。 については、正規<see langword="DiffMinutes" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns>間隔を分単位の数<paramref name="timeValue1" />と<paramref name="timeValue2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="DiffMonths">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>呼び出す、正規<see langword="DiffMonths" />関数。 については、正規<see langword="DiffMonths" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="DiffMonths">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;int&gt; DiffMonths (Nullable&lt;DateTime&gt; dateValue1, Nullable&lt;DateTime&gt; dateValue2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;int32&gt; DiffMonths(valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; dateValue1, valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; dateValue2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.DiffMonths(System.Nullable{System.DateTime},System.Nullable{System.DateTime})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "DiffMonths")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dateValue1" Type="System.Nullable&lt;System.DateTime&gt;" />
+        <Parameter Name="dateValue2" Type="System.Nullable&lt;System.DateTime&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="dateValue1">有効な日付。</param>
+        <param name="dateValue2">有効な日付。</param>
+        <summary>呼び出す、正規<see langword="DiffMonths" />関数。 については、正規<see langword="DiffMonths" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns>間の月数<paramref name="dateValue1" />と<paramref name="dateValue2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DiffMonths">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;int&gt; DiffMonths (Nullable&lt;DateTimeOffset&gt; dateValue1, Nullable&lt;DateTimeOffset&gt; dateValue2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;int32&gt; DiffMonths(valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; dateValue1, valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; dateValue2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.DiffMonths(System.Nullable{System.DateTimeOffset},System.Nullable{System.DateTimeOffset})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "DiffMonths")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dateValue1" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+        <Parameter Name="dateValue2" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="dateValue1">有効な日付時刻のオフセット。</param>
+        <param name="dateValue2">有効な日付時刻のオフセット。</param>
+        <summary>呼び出す、正規<see langword="DiffMonths" />関数。 については、正規<see langword="DiffMonths" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns>間の月数<paramref name="dateValue1" />と<paramref name="dateValue2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="DiffNanoseconds">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>呼び出す、正規<see langword="DiffNanoseconds" />関数。 については、正規<see langword="DiffNanoseconds" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="DiffNanoseconds">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;int&gt; DiffNanoseconds (Nullable&lt;DateTime&gt; timeValue1, Nullable&lt;DateTime&gt; timeValue2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;int32&gt; DiffNanoseconds(valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; timeValue1, valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; timeValue2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.DiffNanoseconds(System.Nullable{System.DateTime},System.Nullable{System.DateTime})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "DiffNanoseconds")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeValue1" Type="System.Nullable&lt;System.DateTime&gt;" />
+        <Parameter Name="timeValue2" Type="System.Nullable&lt;System.DateTime&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeValue1">有効な日付。</param>
+        <param name="timeValue2">有効な日付。</param>
+        <summary>呼び出す、正規<see langword="DiffNanoseconds" />関数。 については、正規<see langword="DiffNanoseconds" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns>間ナノ秒数<paramref name="timeValue1" />と<paramref name="timeValue2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DiffNanoseconds">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;int&gt; DiffNanoseconds (Nullable&lt;DateTimeOffset&gt; timeValue1, Nullable&lt;DateTimeOffset&gt; timeValue2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;int32&gt; DiffNanoseconds(valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; timeValue1, valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; timeValue2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.DiffNanoseconds(System.Nullable{System.DateTimeOffset},System.Nullable{System.DateTimeOffset})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "DiffNanoseconds")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeValue1" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+        <Parameter Name="timeValue2" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeValue1">有効な日付時刻のオフセット。</param>
+        <param name="timeValue2">有効な日付時刻のオフセット。</param>
+        <summary>呼び出す、正規<see langword="DiffNanoseconds" />関数。 については、正規<see langword="DiffNanoseconds" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns>間ナノ秒数<paramref name="timeValue1" />と<paramref name="timeValue2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DiffNanoseconds">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;int&gt; DiffNanoseconds (Nullable&lt;TimeSpan&gt; timeValue1, Nullable&lt;TimeSpan&gt; timeValue2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;int32&gt; DiffNanoseconds(valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; timeValue1, valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; timeValue2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.DiffNanoseconds(System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "DiffNanoseconds")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeValue1" Type="System.Nullable&lt;System.TimeSpan&gt;" />
+        <Parameter Name="timeValue2" Type="System.Nullable&lt;System.TimeSpan&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeValue1">有効な日付。</param>
+        <param name="timeValue2">有効な日付。</param>
+        <summary>呼び出す、正規<see langword="DiffNanoseconds" />関数。 については、正規<see langword="DiffNanoseconds" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns>間ナノ秒数<paramref name="timeValue1" />と<paramref name="timeValue2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="DiffSeconds">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>呼び出す、正規<see langword="DiffSeconds" />関数。 については、正規<see langword="DiffSeconds" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="DiffSeconds">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;int&gt; DiffSeconds (Nullable&lt;DateTime&gt; timeValue1, Nullable&lt;DateTime&gt; timeValue2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;int32&gt; DiffSeconds(valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; timeValue1, valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; timeValue2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.DiffSeconds(System.Nullable{System.DateTime},System.Nullable{System.DateTime})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "DiffSeconds")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeValue1" Type="System.Nullable&lt;System.DateTime&gt;" />
+        <Parameter Name="timeValue2" Type="System.Nullable&lt;System.DateTime&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeValue1">有効な日付。</param>
+        <param name="timeValue2">有効な日付。</param>
+        <summary>呼び出す、正規<see langword="DiffSeconds" />関数。 については、正規<see langword="DiffSeconds" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns>間隔の秒数<paramref name="timeValue1" />と<paramref name="timeValue2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DiffSeconds">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;int&gt; DiffSeconds (Nullable&lt;DateTimeOffset&gt; timeValue1, Nullable&lt;DateTimeOffset&gt; timeValue2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;int32&gt; DiffSeconds(valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; timeValue1, valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; timeValue2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.DiffSeconds(System.Nullable{System.DateTimeOffset},System.Nullable{System.DateTimeOffset})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "DiffSeconds")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeValue1" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+        <Parameter Name="timeValue2" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeValue1">有効な日付時刻のオフセット。</param>
+        <param name="timeValue2">有効な日付時刻のオフセット。</param>
+        <summary>呼び出す、正規<see langword="DiffSeconds" />関数。 については、正規<see langword="DiffSeconds" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns>間隔の秒数<paramref name="timeValue1" />と<paramref name="timeValue2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DiffSeconds">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;int&gt; DiffSeconds (Nullable&lt;TimeSpan&gt; timeValue1, Nullable&lt;TimeSpan&gt; timeValue2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;int32&gt; DiffSeconds(valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; timeValue1, valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; timeValue2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.DiffSeconds(System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "DiffSeconds")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeValue1" Type="System.Nullable&lt;System.TimeSpan&gt;" />
+        <Parameter Name="timeValue2" Type="System.Nullable&lt;System.TimeSpan&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timeValue1">有効な期間。</param>
+        <param name="timeValue2">有効な期間。</param>
+        <summary>呼び出す、正規<see langword="DiffSeconds" />関数。 については、正規<see langword="DiffSeconds" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns>間隔の秒数<paramref name="timeValue1" />と<paramref name="timeValue2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="DiffYears">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>呼び出す、正規<see langword="DiffYears" />関数。 については、正規<see langword="DiffYears" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="DiffYears">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;int&gt; DiffYears (Nullable&lt;DateTime&gt; dateValue1, Nullable&lt;DateTime&gt; dateValue2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;int32&gt; DiffYears(valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; dateValue1, valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; dateValue2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.DiffYears(System.Nullable{System.DateTime},System.Nullable{System.DateTime})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "DiffYears")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dateValue1" Type="System.Nullable&lt;System.DateTime&gt;" />
+        <Parameter Name="dateValue2" Type="System.Nullable&lt;System.DateTime&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="dateValue1">有効な日付。</param>
+        <param name="dateValue2">有効な日付。</param>
+        <summary>呼び出す、正規<see langword="DiffYears" />関数。 については、正規<see langword="DiffYears" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns>間の年の数<paramref name="dateValue1" />と<paramref name="dateValue2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DiffYears">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;int&gt; DiffYears (Nullable&lt;DateTimeOffset&gt; dateValue1, Nullable&lt;DateTimeOffset&gt; dateValue2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;int32&gt; DiffYears(valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; dateValue1, valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; dateValue2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.DiffYears(System.Nullable{System.DateTimeOffset},System.Nullable{System.DateTimeOffset})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "DiffYears")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dateValue1" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+        <Parameter Name="dateValue2" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="dateValue1">有効な日付時刻のオフセット。</param>
+        <param name="dateValue2">有効な日付時刻のオフセット。</param>
+        <summary>呼び出す、正規<see langword="DiffYears" />関数。 については、正規<see langword="DiffYears" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns>間の年の数<paramref name="dateValue1" />と<paramref name="dateValue2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTotalOffsetMinutes">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;int&gt; GetTotalOffsetMinutes (Nullable&lt;DateTimeOffset&gt; dateTimeOffsetArgument);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;int32&gt; GetTotalOffsetMinutes(valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; dateTimeOffsetArgument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.GetTotalOffsetMinutes(System.Nullable{System.DateTimeOffset})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "GetTotalOffsetMinutes")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dateTimeOffsetArgument" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="dateTimeOffsetArgument">有効な日付時刻のオフセット。</param>
+        <summary>呼び出す、正規<see langword="GetTotalOffsetMinutes" />関数。 については、正規<see langword="GetTotalOffsetMinutes" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns>数を時間 (分) を<paramref name="dateTimeOffsetArgument" />GMT からのオフセットします。 この値は通常、+780 ～ -780 (+ 13 時間～ - 13 時間) の間になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Left">
+      <MemberSignature Language="C#" Value="public static string Left (string stringArgument, Nullable&lt;long&gt; length);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string Left(string stringArgument, valuetype System.Nullable`1&lt;int64&gt; length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.Left(System.String,System.Nullable{System.Int64})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "Left")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stringArgument" Type="System.String" />
+        <Parameter Name="length" Type="System.Nullable&lt;System.Int64&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="stringArgument">有効な文字列式です。</param>
+        <param name="length">取り出す文字数。</param>
+        <summary>呼び出す、正規<see langword="Left" />関数。 については、正規<see langword="Left" />関数を参照してください[文字列正規関数](~/docs/framework/data/adonet/ef/language-reference/string-canonical-functions.md)です。</summary>
+        <returns>最も左<paramref name="length" />の文字数<paramref name="stringArgument" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reverse">
+      <MemberSignature Language="C#" Value="public static string Reverse (string stringArgument);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string Reverse(string stringArgument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.Reverse(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "Reverse")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stringArgument" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="stringArgument">有効な文字列。</param>
+        <summary>呼び出す、正規<see langword="Reverse" />関数。 については、正規<see langword="Reverse" />関数を参照してください[文字列正規関数](~/docs/framework/data/adonet/ef/language-reference/string-canonical-functions.md)です。</summary>
+        <returns>入力文字列の文字の順序と逆になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Right">
+      <MemberSignature Language="C#" Value="public static string Right (string stringArgument, Nullable&lt;long&gt; length);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string Right(string stringArgument, valuetype System.Nullable`1&lt;int64&gt; length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.Right(System.String,System.Nullable{System.Int64})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "Right")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stringArgument" Type="System.String" />
+        <Parameter Name="length" Type="System.Nullable&lt;System.Int64&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="stringArgument">有効な文字列式です。</param>
+        <param name="length">取り出す文字数。</param>
+        <summary>呼び出す、正規<see langword="Right" />関数。 については、正規<see langword="Right" />関数を参照してください[文字列正規関数](~/docs/framework/data/adonet/ef/language-reference/string-canonical-functions.md)です。</summary>
+        <returns>最も右<paramref name="length" />の文字数<paramref name="stringArgument" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="StandardDeviation">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>呼び出す、正規<see langword="StDev" />関数。 については、正規<see langword="StDev" />関数を参照してください[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="StandardDeviation">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;double&gt; StandardDeviation (System.Collections.Generic.IEnumerable&lt;decimal&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;float64&gt; StandardDeviation(class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Decimal&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.StandardDeviation(System.Collections.Generic.IEnumerable{System.Decimal})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "StDev")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;System.Decimal&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="collection">数値のセット。</param>
+        <summary>呼び出す、正規<see langword="StDev" />関数。 については、正規<see langword="StDev" />関数を参照してください[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+        <returns>入力コレクションの統計的標準偏差。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StandardDeviation">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;double&gt; StandardDeviation (System.Collections.Generic.IEnumerable&lt;double&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;float64&gt; StandardDeviation(class System.Collections.Generic.IEnumerable`1&lt;float64&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.StandardDeviation(System.Collections.Generic.IEnumerable{System.Double})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "StDev")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;System.Double&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="collection">数値のセット。</param>
+        <summary>呼び出す、正規<see langword="StDev" />関数。 については、正規<see langword="StDev" />関数を参照してください[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+        <returns>入力コレクションの統計的標準偏差。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StandardDeviation">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;double&gt; StandardDeviation (System.Collections.Generic.IEnumerable&lt;int&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;float64&gt; StandardDeviation(class System.Collections.Generic.IEnumerable`1&lt;int32&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.StandardDeviation(System.Collections.Generic.IEnumerable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "StDev")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="collection">数値のセット。</param>
+        <summary>呼び出す、正規<see langword="StDev" />関数。 については、正規<see langword="StDev" />関数を参照してください[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+        <returns>入力コレクションの統計的標準偏差。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StandardDeviation">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;double&gt; StandardDeviation (System.Collections.Generic.IEnumerable&lt;long&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;float64&gt; StandardDeviation(class System.Collections.Generic.IEnumerable`1&lt;int64&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.StandardDeviation(System.Collections.Generic.IEnumerable{System.Int64})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "StDev")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;System.Int64&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="collection">数値のセット。</param>
+        <summary>呼び出す、正規<see langword="StDev" />関数。 については、正規<see langword="StDev" />関数を参照してください[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+        <returns>入力コレクションの統計的標準偏差。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StandardDeviation">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;double&gt; StandardDeviation (System.Collections.Generic.IEnumerable&lt;Nullable&lt;decimal&gt;&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;float64&gt; StandardDeviation(class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Nullable`1&lt;valuetype System.Decimal&gt;&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.StandardDeviation(System.Collections.Generic.IEnumerable{System.Nullable{System.Decimal}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "StDev")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;System.Nullable&lt;System.Decimal&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="collection">数値のセット。</param>
+        <summary>呼び出す、正規<see langword="StDev" />関数。 については、正規<see langword="StDev" />関数を参照してください[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+        <returns>入力コレクションの統計的標準偏差。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StandardDeviation">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;double&gt; StandardDeviation (System.Collections.Generic.IEnumerable&lt;Nullable&lt;double&gt;&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;float64&gt; StandardDeviation(class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Nullable`1&lt;float64&gt;&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.StandardDeviation(System.Collections.Generic.IEnumerable{System.Nullable{System.Double}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "StDev")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;System.Nullable&lt;System.Double&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="collection">数値のセット。</param>
+        <summary>呼び出す、正規<see langword="StDev" />関数。 については、正規<see langword="StDev" />関数を参照してください[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+        <returns>入力コレクションの統計的標準偏差。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StandardDeviation">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;double&gt; StandardDeviation (System.Collections.Generic.IEnumerable&lt;Nullable&lt;int&gt;&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;float64&gt; StandardDeviation(class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Nullable`1&lt;int32&gt;&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.StandardDeviation(System.Collections.Generic.IEnumerable{System.Nullable{System.Int32}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "StDev")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;System.Nullable&lt;System.Int32&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="collection">数値のセット。</param>
+        <summary>呼び出す、正規<see langword="StDev" />関数。 については、正規<see langword="StDev" />関数を参照してください[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+        <returns>入力コレクションの統計的標準偏差。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StandardDeviation">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;double&gt; StandardDeviation (System.Collections.Generic.IEnumerable&lt;Nullable&lt;long&gt;&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;float64&gt; StandardDeviation(class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Nullable`1&lt;int64&gt;&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.StandardDeviation(System.Collections.Generic.IEnumerable{System.Nullable{System.Int64}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "StDev")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;System.Nullable&lt;System.Int64&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="collection">数値のセット。</param>
+        <summary>呼び出す、正規<see langword="StDev" />関数。 については、正規<see langword="StDev" />関数を参照してください[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+        <returns>入力コレクションの統計的標準偏差。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="StandardDeviationP">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>呼び出す、正規<see langword="StDevP" />関数で、母集団の統計的標準偏差を返します。 については、正規<see langword="StDevP" />関数を参照してください[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="StandardDeviationP">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;double&gt; StandardDeviationP (System.Collections.Generic.IEnumerable&lt;decimal&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;float64&gt; StandardDeviationP(class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Decimal&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.StandardDeviationP(System.Collections.Generic.IEnumerable{System.Decimal})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "StDevP")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;System.Decimal&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="collection">数値のセット。</param>
+        <summary>呼び出す、正規<see langword="StDevP" />関数。 については、正規<see langword="StDevP" />関数を参照してください[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+        <returns>入力コレクションの母集団の統計的標準偏差。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StandardDeviationP">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;double&gt; StandardDeviationP (System.Collections.Generic.IEnumerable&lt;double&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;float64&gt; StandardDeviationP(class System.Collections.Generic.IEnumerable`1&lt;float64&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.StandardDeviationP(System.Collections.Generic.IEnumerable{System.Double})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "StDevP")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;System.Double&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="collection">数値のセット。</param>
+        <summary>呼び出す、正規<see langword="StDevP" />関数。 については、正規<see langword="StDevP" />関数を参照してください[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+        <returns>入力コレクションの母集団の統計的標準偏差。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StandardDeviationP">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;double&gt; StandardDeviationP (System.Collections.Generic.IEnumerable&lt;int&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;float64&gt; StandardDeviationP(class System.Collections.Generic.IEnumerable`1&lt;int32&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.StandardDeviationP(System.Collections.Generic.IEnumerable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "StDevP")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="collection">数値のセット。</param>
+        <summary>呼び出す、正規<see langword="StDevP" />関数。 については、正規<see langword="StDevP" />関数を参照してください[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+        <returns>入力コレクションの母集団の統計的標準偏差。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StandardDeviationP">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;double&gt; StandardDeviationP (System.Collections.Generic.IEnumerable&lt;long&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;float64&gt; StandardDeviationP(class System.Collections.Generic.IEnumerable`1&lt;int64&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.StandardDeviationP(System.Collections.Generic.IEnumerable{System.Int64})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "StDevP")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;System.Int64&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="collection">数値のセット。</param>
+        <summary>呼び出す、正規<see langword="StDevP" />関数。 については、正規<see langword="StDevP" />関数を参照してください[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+        <returns>入力コレクションの母集団の統計的標準偏差。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StandardDeviationP">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;double&gt; StandardDeviationP (System.Collections.Generic.IEnumerable&lt;Nullable&lt;decimal&gt;&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;float64&gt; StandardDeviationP(class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Nullable`1&lt;valuetype System.Decimal&gt;&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.StandardDeviationP(System.Collections.Generic.IEnumerable{System.Nullable{System.Decimal}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "StDevP")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;System.Nullable&lt;System.Decimal&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="collection">数値のセット。</param>
+        <summary>呼び出す、正規<see langword="StDevP" />関数。 については、正規<see langword="StDevP" />関数を参照してください[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+        <returns>入力コレクションの母集団の統計的標準偏差。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StandardDeviationP">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;double&gt; StandardDeviationP (System.Collections.Generic.IEnumerable&lt;Nullable&lt;double&gt;&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;float64&gt; StandardDeviationP(class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Nullable`1&lt;float64&gt;&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.StandardDeviationP(System.Collections.Generic.IEnumerable{System.Nullable{System.Double}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "StDevP")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;System.Nullable&lt;System.Double&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="collection">数値のセット。</param>
+        <summary>呼び出す、正規<see langword="StDevP" />関数。 については、正規<see langword="StDevP" />関数を参照してください[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+        <returns>入力コレクションの母集団の統計的標準偏差。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StandardDeviationP">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;double&gt; StandardDeviationP (System.Collections.Generic.IEnumerable&lt;Nullable&lt;int&gt;&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;float64&gt; StandardDeviationP(class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Nullable`1&lt;int32&gt;&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.StandardDeviationP(System.Collections.Generic.IEnumerable{System.Nullable{System.Int32}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "StDevP")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;System.Nullable&lt;System.Int32&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="collection">数値のセット。</param>
+        <summary>呼び出す、正規<see langword="StDevP" />関数。 については、正規<see langword="StDevP" />関数を参照してください[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+        <returns>入力コレクションの母集団の統計的標準偏差。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StandardDeviationP">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;double&gt; StandardDeviationP (System.Collections.Generic.IEnumerable&lt;Nullable&lt;long&gt;&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;float64&gt; StandardDeviationP(class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Nullable`1&lt;int64&gt;&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.StandardDeviationP(System.Collections.Generic.IEnumerable{System.Nullable{System.Int64}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "StDevP")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;System.Nullable&lt;System.Int64&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="collection">数値のセット。</param>
+        <summary>呼び出す、正規<see langword="StDevP" />関数。 については、正規<see langword="StDevP" />関数を参照してください[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+        <returns>入力コレクションの母集団の統計的標準偏差。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Truncate">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>呼び出す、正規<see langword="Truncate" />関数。 については、正規<see langword="Truncate" />関数を参照してください[数値演算正規関数](~/docs/framework/data/adonet/ef/language-reference/math-canonical-functions.md)です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Truncate">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;decimal&gt; Truncate (Nullable&lt;decimal&gt; value, Nullable&lt;int&gt; digits);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;valuetype System.Decimal&gt; Truncate(valuetype System.Nullable`1&lt;valuetype System.Decimal&gt; value, valuetype System.Nullable`1&lt;int32&gt; digits) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.Truncate(System.Nullable{System.Decimal},System.Nullable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "Truncate")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Decimal&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Nullable&lt;System.Decimal&gt;" />
+        <Parameter Name="digits" Type="System.Nullable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="value">切り捨てる数値。</param>
+        <param name="digits">長さまたは有効桁数に切り捨てられます。</param>
+        <summary>呼び出す、正規<see langword="Truncate" />関数。 については、正規<see langword="Truncate" />関数を参照してください[数値演算正規関数](~/docs/framework/data/adonet/ef/language-reference/math-canonical-functions.md)です。</summary>
+        <returns>
+          <paramref name="value" />長さまたはで指定された有効桁数に切り捨て<paramref name="digits" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Truncate">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;double&gt; Truncate (Nullable&lt;double&gt; value, Nullable&lt;int&gt; digits);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;float64&gt; Truncate(valuetype System.Nullable`1&lt;float64&gt; value, valuetype System.Nullable`1&lt;int32&gt; digits) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.Truncate(System.Nullable{System.Double},System.Nullable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "Truncate")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Nullable&lt;System.Double&gt;" />
+        <Parameter Name="digits" Type="System.Nullable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="value">切り捨てる数値。</param>
+        <param name="digits">長さまたは有効桁数に切り捨てられます。</param>
+        <summary>呼び出す、正規<see langword="Truncate" />関数。 については、正規<see langword="Truncate" />関数を参照してください[数値演算正規関数](~/docs/framework/data/adonet/ef/language-reference/math-canonical-functions.md)です。</summary>
+        <returns>
+          <paramref name="value" />長さまたはで指定された有効桁数に切り捨て<paramref name="digits" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="TruncateTime">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>呼び出す、正規<see langword="TruncateTime" />関数。 については、正規<see langword="TruncateTime" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="TruncateTime">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;DateTime&gt; TruncateTime (Nullable&lt;DateTime&gt; dateValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; TruncateTime(valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; dateValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.TruncateTime(System.Nullable{System.DateTime})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "TruncateTime")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTime&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dateValue" Type="System.Nullable&lt;System.DateTime&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="dateValue">切り捨てを行うための日付。</param>
+        <summary>呼び出す、正規<see langword="TruncateTime" />関数。 については、正規<see langword="TruncateTime" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns>入力された日付、時刻の部分からはクリアされます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TruncateTime">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;DateTimeOffset&gt; TruncateTime (Nullable&lt;DateTimeOffset&gt; dateValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; TruncateTime(valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; dateValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.TruncateTime(System.Nullable{System.DateTimeOffset})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "TruncateTime")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTimeOffset&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dateValue" Type="System.Nullable&lt;System.DateTimeOffset&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="dateValue">切り捨てを行うための日付時刻のオフセット。</param>
+        <summary>呼び出す、正規<see langword="TruncateTime" />関数。 については、正規<see langword="TruncateTime" />関数を参照してください[日付と時刻の正規関数](~/docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)です。</summary>
+        <returns>入力された日付、時刻の部分からはクリアされます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を直接呼び出すことはできません。 この関数は、LINQ to Entities クエリ内でのみ表示できます。  
+  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Var">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>呼び出す、正規<see langword="Var" />関数。 については、正規<see langword="Var" />関数を参照してください[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Var">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;double&gt; Var (System.Collections.Generic.IEnumerable&lt;decimal&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;float64&gt; Var(class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Decimal&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.Var(System.Collections.Generic.IEnumerable{System.Decimal})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "Var")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;System.Decimal&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="collection">分散を計算する対象の値のセット。</param>
+        <summary>呼び出す、正規<see langword="Var" />関数。 については、正規<see langword="Var" />関数を参照してください[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+        <returns>指定したコレクション内のすべての値の統計的変位です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Var">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;double&gt; Var (System.Collections.Generic.IEnumerable&lt;double&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;float64&gt; Var(class System.Collections.Generic.IEnumerable`1&lt;float64&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.Var(System.Collections.Generic.IEnumerable{System.Double})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "Var")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;System.Double&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="collection">分散を計算する対象の値のセット。</param>
+        <summary>呼び出す、正規<see langword="Var" />関数。 については、正規<see langword="Var" />関数を参照してください[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+        <returns>指定したコレクション内のすべての値の統計的変位です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Var">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;double&gt; Var (System.Collections.Generic.IEnumerable&lt;int&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;float64&gt; Var(class System.Collections.Generic.IEnumerable`1&lt;int32&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.Var(System.Collections.Generic.IEnumerable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "Var")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="collection">分散を計算する対象の値のセット。</param>
+        <summary>呼び出す、正規<see langword="Var" />関数。 については、正規<see langword="Var" />関数を参照してください[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+        <returns>指定したコレクション内のすべての値の統計的変位です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Var">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;double&gt; Var (System.Collections.Generic.IEnumerable&lt;long&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;float64&gt; Var(class System.Collections.Generic.IEnumerable`1&lt;int64&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.Var(System.Collections.Generic.IEnumerable{System.Int64})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "Var")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;System.Int64&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="collection">分散を計算する対象の値のセット。</param>
+        <summary>呼び出す、正規<see langword="Var" />関数。 については、正規<see langword="Var" />関数を参照してください[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+        <returns>指定したコレクション内のすべての値の統計的変位です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Var">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;double&gt; Var (System.Collections.Generic.IEnumerable&lt;Nullable&lt;decimal&gt;&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;float64&gt; Var(class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Nullable`1&lt;valuetype System.Decimal&gt;&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.Var(System.Collections.Generic.IEnumerable{System.Nullable{System.Decimal}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "Var")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;System.Nullable&lt;System.Decimal&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="collection">分散を計算する対象の値のセット。</param>
+        <summary>呼び出す、正規<see langword="Var" />関数。 については、正規<see langword="Var" />関数を参照してください[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+        <returns>指定したコレクション内のすべての値の統計的変位です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Var">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;double&gt; Var (System.Collections.Generic.IEnumerable&lt;Nullable&lt;double&gt;&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;float64&gt; Var(class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Nullable`1&lt;float64&gt;&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.Var(System.Collections.Generic.IEnumerable{System.Nullable{System.Double}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "Var")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;System.Nullable&lt;System.Double&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="collection">分散を計算する対象の値のセット。</param>
+        <summary>呼び出す、正規<see langword="Var" />関数。 については、正規<see langword="Var" />関数を参照してください[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+        <returns>指定したコレクション内のすべての値の統計的変位です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Var">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;double&gt; Var (System.Collections.Generic.IEnumerable&lt;Nullable&lt;int&gt;&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;float64&gt; Var(class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Nullable`1&lt;int32&gt;&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.Var(System.Collections.Generic.IEnumerable{System.Nullable{System.Int32}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "Var")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;System.Nullable&lt;System.Int32&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="collection">分散を計算する対象の値のセット。</param>
+        <summary>呼び出す、正規<see langword="Var" />関数。 については、正規<see langword="Var" />関数を参照してください[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+        <returns>指定したコレクション内のすべての値の統計的変位です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Var">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;double&gt; Var (System.Collections.Generic.IEnumerable&lt;Nullable&lt;long&gt;&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;float64&gt; Var(class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Nullable`1&lt;int64&gt;&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.Var(System.Collections.Generic.IEnumerable{System.Nullable{System.Int64}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "Var")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;System.Nullable&lt;System.Int64&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="collection">分散を計算する対象の値のセット。</param>
+        <summary>呼び出す、正規<see langword="Var" />関数。 については、正規<see langword="Var" />関数を参照してください[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+        <returns>指定したコレクション内のすべての値の統計的変位です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="VarP">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>呼び出す、正規<see langword="VarP" />関数で、母集団に対する統計的変位を返します。 については、正規<see langword="VarP" />関数を参照してください[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="VarP">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;double&gt; VarP (System.Collections.Generic.IEnumerable&lt;decimal&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;float64&gt; VarP(class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Decimal&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.VarP(System.Collections.Generic.IEnumerable{System.Decimal})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "VarP")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;System.Decimal&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="collection">分散を計算する対象の値のセット。</param>
+        <summary>呼び出す、正規<see langword="VarP" />関数。 については、正規<see langword="VarP" />関数を参照してください[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+        <returns>指定されたコレクションの母集団の統計的変位です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VarP">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;double&gt; VarP (System.Collections.Generic.IEnumerable&lt;double&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;float64&gt; VarP(class System.Collections.Generic.IEnumerable`1&lt;float64&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.VarP(System.Collections.Generic.IEnumerable{System.Double})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "VarP")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;System.Double&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="collection">分散を計算する対象の値のセット。</param>
+        <summary>呼び出す、正規<see langword="VarP" />関数。 については、正規<see langword="VarP" />関数を参照してください[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+        <returns>指定されたコレクションの母集団の統計的変位です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VarP">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;double&gt; VarP (System.Collections.Generic.IEnumerable&lt;int&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;float64&gt; VarP(class System.Collections.Generic.IEnumerable`1&lt;int32&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.VarP(System.Collections.Generic.IEnumerable{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "VarP")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="collection">分散を計算する対象の値のセット。</param>
+        <summary>呼び出す、正規<see langword="VarP" />関数。 については、正規<see langword="VarP" />関数を参照してください[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+        <returns>指定されたコレクションの母集団の統計的変位です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VarP">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;double&gt; VarP (System.Collections.Generic.IEnumerable&lt;long&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;float64&gt; VarP(class System.Collections.Generic.IEnumerable`1&lt;int64&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.VarP(System.Collections.Generic.IEnumerable{System.Int64})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "VarP")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;System.Int64&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="collection">分散を計算する対象の値のセット。</param>
+        <summary>呼び出す、正規<see langword="VarP" />関数。 については、正規<see langword="VarP" />関数を参照してください[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+        <returns>指定されたコレクションの母集団の統計的変位です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VarP">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;double&gt; VarP (System.Collections.Generic.IEnumerable&lt;Nullable&lt;decimal&gt;&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;float64&gt; VarP(class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Nullable`1&lt;valuetype System.Decimal&gt;&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.VarP(System.Collections.Generic.IEnumerable{System.Nullable{System.Decimal}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "VarP")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;System.Nullable&lt;System.Decimal&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="collection">分散を計算する対象の値のセット。</param>
+        <summary>呼び出す、正規<see langword="VarP" />関数。 については、正規<see langword="VarP" />関数を参照してください[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+        <returns>指定されたコレクションの母集団の統計的変位です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VarP">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;double&gt; VarP (System.Collections.Generic.IEnumerable&lt;Nullable&lt;double&gt;&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;float64&gt; VarP(class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Nullable`1&lt;float64&gt;&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.VarP(System.Collections.Generic.IEnumerable{System.Nullable{System.Double}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "VarP")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;System.Nullable&lt;System.Double&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="collection">分散を計算する対象の値のセット。</param>
+        <summary>呼び出す、正規<see langword="VarP" />関数。 については、正規<see langword="VarP" />関数を参照してください[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+        <returns>指定されたコレクションの母集団の統計的変位です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VarP">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;double&gt; VarP (System.Collections.Generic.IEnumerable&lt;Nullable&lt;int&gt;&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;float64&gt; VarP(class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Nullable`1&lt;int32&gt;&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.VarP(System.Collections.Generic.IEnumerable{System.Nullable{System.Int32}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "VarP")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;System.Nullable&lt;System.Int32&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="collection">分散を計算する対象の値のセット。</param>
+        <summary>呼び出す、正規<see langword="VarP" />関数。 については、正規<see langword="VarP" />関数を参照してください[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+        <returns>指定されたコレクションの母集団の統計的変位です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VarP">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;double&gt; VarP (System.Collections.Generic.IEnumerable&lt;Nullable&lt;long&gt;&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Nullable`1&lt;float64&gt; VarP(class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Nullable`1&lt;int64&gt;&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.EntityFunctions.VarP(System.Collections.Generic.IEnumerable{System.Nullable{System.Int64}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Data.Objects.DataClasses.EdmFunction("Edm", "VarP")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;System.Nullable&lt;System.Int64&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="collection">分散を計算する対象の値のセット。</param>
+        <summary>呼び出す、正規<see langword="VarP" />関数。 については、正規<see langword="VarP" />関数を参照してください[正規関数](~/docs/framework/data/adonet/ef/language-reference/canonical-functions.md)です。</summary>
+        <returns>指定されたコレクションの母集団の統計的変位です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、データベース内の対応する関数に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

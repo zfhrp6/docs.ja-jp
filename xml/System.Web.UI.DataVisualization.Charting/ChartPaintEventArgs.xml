@@ -1,0 +1,127 @@
+<Type Name="ChartPaintEventArgs" FullName="System.Web.UI.DataVisualization.Charting.ChartPaintEventArgs">
+  <TypeSignature Language="C#" Value="public class ChartPaintEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ChartPaintEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.DataVisualization.Charting.ChartPaintEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DataVisualization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>描画イベントのデータを提供、<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.UI.DataVisualization.Charting.ChartPaintEventArgs>時にグラフのプロパティを設定するオブジェクトが使用される、<xref:System.Web.UI.DataVisualization.Charting.Chart.PostPaint>と<xref:System.Web.UI.DataVisualization.Charting.Chart.PrePaint>のイベント、<xref:System.Web.UI.DataVisualization.Charting.Chart>コントロール。  
+  
+ <xref:System.Web.UI.DataVisualization.Charting.ChartPaintEventArgs.Position%2A>プロパティでは、グラフ要素を配置することができます、<xref:System.Web.UI.DataVisualization.Charting.ChartPaintEventArgs.ChartGraphics%2A>プロパティには GDI + の描画操作が容易になります。  
+  
+ <xref:System.Web.UI.DataVisualization.Charting.ChartPaintEventArgs.Chart%2A>プロパティは、ルートに開発者アクセス<xref:System.Web.UI.DataVisualization.Charting.Chart>グラフのさまざまなプロパティを設定するために使用できるオブジェクト。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Chart">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.Chart Chart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.DataVisualization.Charting.Chart Chart" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartPaintEventArgs.Chart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.Chart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルートを取得します<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" />オブジェクト。</summary>
+        <value>ルート<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataVisualization.Charting.ChartPaintEventArgs.Chart%2A>プロパティにより、開発者は時にグラフのプロパティを設定する、<xref:System.Web.UI.DataVisualization.Charting.Chart.PostPaint>と<xref:System.Web.UI.DataVisualization.Charting.Chart.PrePaint>のイベント、<xref:System.Web.UI.DataVisualization.Charting.Chart>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChartElement">
+      <MemberSignature Language="C#" Value="public object ChartElement { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object ChartElement" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartPaintEventArgs.ChartElement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントのオブジェクトを取得します。</summary>
+        <value><see cref="T:System.Object" />グラフ要素を表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChartGraphics">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.ChartGraphics ChartGraphics { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.DataVisualization.Charting.ChartGraphics ChartGraphics" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartPaintEventArgs.ChartGraphics" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.ChartGraphics</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.DataVisualization.Charting.ChartGraphics" /> オブジェクトを取得します。</summary>
+        <value><see cref="T:System.Web.UI.DataVisualization.Charting.ChartGraphics" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 描画イベント中にこのオブジェクトのプロパティを使用します。  
+  
+-   相対または絶対のグラフの座標との間の変換を支援します。  
+  
+-   GDI + を使用してカスタム描画を実行する<xref:System.Drawing.Graphics>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Position">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.ElementPosition Position { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.DataVisualization.Charting.ElementPosition Position" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartPaintEventArgs.Position" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.ElementPosition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.DataVisualization.Charting.ElementPosition" />オブジェクト。</summary>
+        <value><see cref="T:System.Web.UI.DataVisualization.Charting.ElementPosition" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 描画イベント中にこのオブジェクトのプロパティを使用して、グラフ要素を配置します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

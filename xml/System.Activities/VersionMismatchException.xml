@@ -1,0 +1,247 @@
+<Type Name="VersionMismatchException" FullName="System.Activities.VersionMismatchException">
+  <TypeSignature Language="C#" Value="public class VersionMismatchException : Exception" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit VersionMismatchException extends System.Exception" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.VersionMismatchException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Exception</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>バージョンの不一致例外に関する情報を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Windows Workflow Foundation のバージョン管理と動的な更新機能をサポートします。 [!INCLUDE[crabout](~/includes/crabout-md.md)] ワークフローのバージョン管理、ワークフロー ID、および動的な更新に詳細については、次のトピックを参照してください。  
+  
+ [ワークフローのバージョン管理](http://go.microsoft.com/fwlink/?LinkID=271561)  
+ [!INCLUDE[net_v45](~/includes/net-v45-md.md)] で導入されたワークフローのバージョン管理機能について説明します。  
+  
+ [動的な更新](http://go.microsoft.com/fwlink/?LinkId=271563)  
+ 動的更新を使用して、永続化されたワークフロー インスタンスのワークフロー定義を更新する方法について説明します。  
+  
+ [WorkflowApplication Id とバージョン管理を使用](http://go.microsoft.com/fwlink/?LinkId=271564)  
+ <xref:System.Activities.WorkflowIdentity> を使用して、ワークフローの複数バージョンを同時にホストする方法について説明します。  
+  
+ [WorkflowServiceHost でサイド バイ サイドのバージョン管理](http://go.microsoft.com/fwlink/?LinkId=271565)  
+ 単一のエンドポイントでワークフローの複数のバージョンをホストする方法について説明します。  
+  
+ [ワークフローの複数のバージョンを同時にホストする方法](http://go.microsoft.com/fwlink/?LinkId=271566)  
+ これは、ステップで、[チュートリアル入門](http://go.microsoft.com/fwlink/?LinkId=271570)ワークフロー定義の更新と同時に新旧両方の定義を使用してワークフローのホスティングを示します。  
+  
+ [実行中のワークフロー インスタンスの定義を更新する方法](http://go.microsoft.com/fwlink/?LinkId=271567)  
+ これは、ステップで、[チュートリアル入門](http://go.microsoft.com/fwlink/?LinkId=271570)新しいワークフロー定義を使用する永続化されたワークフロー インスタンスの更新を示します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public VersionMismatchException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.VersionMismatchException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Activities.VersionMismatchException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public VersionMismatchException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.VersionMismatchException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の原因を説明するエラー メッセージ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Activities.VersionMismatchException" />クラス、メッセージを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public VersionMismatchException (System.Activities.WorkflowIdentity expectedVersion, System.Activities.WorkflowIdentity actualVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Activities.WorkflowIdentity expectedVersion, class System.Activities.WorkflowIdentity actualVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.VersionMismatchException.#ctor(System.Activities.WorkflowIdentity,System.Activities.WorkflowIdentity)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="expectedVersion" Type="System.Activities.WorkflowIdentity" />
+        <Parameter Name="actualVersion" Type="System.Activities.WorkflowIdentity" />
+      </Parameters>
+      <Docs>
+        <param name="expectedVersion">想定されるバージョンです。</param>
+        <param name="actualVersion">ファイルから実際のバージョン。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Activities.VersionMismatchException" />クラスに想定されるバージョンと実際のバージョンを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected VersionMismatchException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.VersionMismatchException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">スローされた例外に関するシリアル化されたオブジェクト データを保持する SerializationInfo です。</param>
+        <param name="context">ソースまたは転送先に関するコンテキスト情報を含む StreamingContext です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Activities.VersionMismatchException" />クラス情報とコンテキストを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public VersionMismatchException (string message, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.VersionMismatchException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の原因を説明するエラー メッセージ。</param>
+        <param name="innerException">現在の例外の原因となった例外。</param>
+        <summary><see cref="T:System.Activities.VersionMismatchException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public VersionMismatchException (string message, System.Activities.WorkflowIdentity expectedVersion, System.Activities.WorkflowIdentity actualVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Activities.WorkflowIdentity expectedVersion, class System.Activities.WorkflowIdentity actualVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.VersionMismatchException.#ctor(System.String,System.Activities.WorkflowIdentity,System.Activities.WorkflowIdentity)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="expectedVersion" Type="System.Activities.WorkflowIdentity" />
+        <Parameter Name="actualVersion" Type="System.Activities.WorkflowIdentity" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の原因を説明するエラー メッセージ。</param>
+        <param name="expectedVersion">想定されるバージョンです。</param>
+        <param name="actualVersion">ファイルから実際のバージョン。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Activities.VersionMismatchException" />クラスのメッセージ、期待されるバージョンと実際のバージョンを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public VersionMismatchException (string message, System.Activities.WorkflowIdentity expectedVersion, System.Activities.WorkflowIdentity actualVersion, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Activities.WorkflowIdentity expectedVersion, class System.Activities.WorkflowIdentity actualVersion, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.VersionMismatchException.#ctor(System.String,System.Activities.WorkflowIdentity,System.Activities.WorkflowIdentity,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="expectedVersion" Type="System.Activities.WorkflowIdentity" />
+        <Parameter Name="actualVersion" Type="System.Activities.WorkflowIdentity" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の原因を説明するエラー メッセージ。</param>
+        <param name="expectedVersion">想定されるバージョンです。</param>
+        <param name="actualVersion">ファイルから実際のバージョン。</param>
+        <param name="innerException">現在の例外の原因となった例外。</param>
+        <summary><see cref="T:System.Activities.VersionMismatchException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActualVersion">
+      <MemberSignature Language="C#" Value="public System.Activities.WorkflowIdentity ActualVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.WorkflowIdentity ActualVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.VersionMismatchException.ActualVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.WorkflowIdentity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または mismatch 例外から実際のバージョンを設定します。</summary>
+        <value>Mismatch 例外から実際のバージョン。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpectedVersion">
+      <MemberSignature Language="C#" Value="public System.Activities.WorkflowIdentity ExpectedVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.WorkflowIdentity ExpectedVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.VersionMismatchException.ExpectedVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.WorkflowIdentity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または予想される mismatch 例外のバージョンを設定します。</summary>
+        <value>想定される mismatch 例外のバージョン。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public override void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.VersionMismatchException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">スローされた例外に関するシリアル化されたオブジェクト データを保持する SerializationInfo です。</param>
+        <param name="context">ソースまたは転送先に関するコンテキスト情報を含む StreamingContext です。</param>
+        <summary>例外に関する情報を含む SerializationInfo を設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

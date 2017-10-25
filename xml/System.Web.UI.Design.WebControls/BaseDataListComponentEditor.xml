@@ -1,0 +1,116 @@
+<Type Name="BaseDataListComponentEditor" FullName="System.Web.UI.Design.WebControls.BaseDataListComponentEditor">
+  <TypeSignature Language="C#" Value="public abstract class BaseDataListComponentEditor : System.Windows.Forms.Design.WindowsFormsComponentEditor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit BaseDataListComponentEditor extends System.Windows.Forms.Design.WindowsFormsComponentEditor" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.BaseDataListComponentEditor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.Design.WindowsFormsComponentEditor</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コンポーネント エディターを提供する基底クラスから派生する Web サーバー コントロールを<see cref="T:System.Web.UI.WebControls.BaseDataList" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンポーネント エディターは、コントロールのプロパティを編集するためのユーザー インターフェイスを提供します。 コンポーネント エディターがコントロール デザイナーを使用して呼び出されて、**プロパティ ビルダー**コントロールのコンテキスト メニューからメニュー項目。 派生したコンポーネントのエディター、<xref:System.Web.UI.Design.WebControls.BaseDataListComponentEditor>クラスから派生したデザイナーから呼び出されます、<xref:System.Web.UI.Design.WebControls.BaseDataListDesigner>クラスを使用してから派生したコントロールのプロパティを編集、<xref:System.Web.UI.WebControls.BaseDataList>クラスです。 このようなコントロールの例については、次を参照してください。<xref:System.Web.UI.WebControls.DataGrid>と<xref:System.Web.UI.WebControls.DataList>です。  
+  
+ <xref:System.Web.UI.Design.WebControls.BaseDataListComponentEditor.EditComponent%2A>メソッドは、1 つを作成できる場合に、関連付けられたコントロールのコンポーネント エディターを表示します。 <xref:System.Web.UI.Design.WebControls.BaseDataListComponentEditor.GetInitialComponentEditorPageIndex%2A>メソッド コンポーネント エディターに表示される最初のページのインデックスを返します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BaseDataListComponentEditor (int initialPage);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 initialPage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseDataListComponentEditor.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="initialPage" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="initialPage">表示する最初のページのページ コントロール型の配列内のインデックス。</param>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.BaseDataListComponentEditor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したデザイナー、<xref:System.Web.UI.Design.WebControls.BaseDataListDesigner>クラスから派生したコンポーネント エディターを作成する、<xref:System.Web.UI.Design.WebControls.BaseDataListComponentEditor>クラス、ユーザーが選択したときに**プロパティ ビルダー**デザイナー内でコンテキスト メニュー。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditComponent">
+      <MemberSignature Language="C#" Value="public override bool EditComponent (System.ComponentModel.ITypeDescriptorContext context, object obj, System.Windows.Forms.IWin32Window parent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool EditComponent(class System.ComponentModel.ITypeDescriptorContext context, object obj, class System.Windows.Forms.IWin32Window parent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseDataListComponentEditor.EditComponent(System.ComponentModel.ITypeDescriptorContext,System.Object,System.Windows.Forms.IWin32Window)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="parent" Type="System.Windows.Forms.IWin32Window" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />追加のコンテキスト情報を取得するために使用できるオブジェクト。</param>
+        <param name="obj"><see cref="T:System.Object" />を実装する、 <see cref="T:System.ComponentModel.IComponent" />、編集対象のコンポーネントを表します。</param>
+        <param name="parent"><see cref="T:System.Windows.Forms.IWin32Window" />親ウィンドウを表すです。</param>
+        <summary>指定したコンテキストの記述子と親ウィンドウを使用して、指定されたコンポーネントを編集します。</summary>
+        <returns>
+          <see langword="true" />コンポーネントが正常に編集されました。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.BaseDataListComponentEditor.EditComponent%2A>メソッドを取得、<xref:System.Type>を使用してページのコントロール型の配列、<xref:System.Windows.Forms.Design.WindowsFormsComponentEditor.GetComponentEditorPages%2A>メソッドです。 作成、<xref:System.Windows.Forms.Design.ComponentEditorForm>オブジェクトを呼び出し、続いてその<xref:System.Windows.Forms.Design.ComponentEditorForm.ShowForm%2A>コンポーネント エディターを表示するメソッド。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para><see cref="M:System.Windows.Forms.Design.WindowsFormsComponentEditor.GetComponentEditorPages" />を返すメソッドがオーバーライドされる必要がありますが、<see cref="T:System.Type" />ページ コントロール型の配列。 この配列は、の順序で存在する必要があります、<see cref="Overload:System.Web.UI.Design.WebControls.BaseDataListComponentEditor.EditComponent" />メソッドは成功します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInitialComponentEditorPageIndex">
+      <MemberSignature Language="C#" Value="protected override int GetInitialComponentEditorPageIndex ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance int32 GetInitialComponentEditorPageIndex() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseDataListComponentEditor.GetInitialComponentEditorPageIndex" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンポーネント エディターに表示する最初のページのインデックスを取得します。</summary>
+        <returns>配列内の最初のページのインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最初のページが指定されたときに、<xref:System.Web.UI.Design.WebControls.BaseDataListComponentEditor>オブジェクトを作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

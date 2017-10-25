@@ -1,0 +1,72 @@
+<Type Name="RequiredRuntimeAttribute" FullName="Microsoft.Build.Framework.RequiredRuntimeAttribute">
+  <TypeSignature Language="C#" Value="public sealed class RequiredRuntimeAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit RequiredRuntimeAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Framework.RequiredRuntimeAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class, AllowMultiple=false, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>タスクで、CLR ランタイムの特定のバージョンが必要かどうかを識別するタスクの作成者が使用してメタデータの属性を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タスクが付いて、<xref:Microsoft.Build.Framework.RequiredRuntimeAttribute>正規のタスクよりも厳密なランタイム要件があることを示します。 MSBuild に警告に CLR ランタイムの現在のバージョンが必要なバージョンと一致しない場合、タスクの別のプロセスを開始する必要があります。  
+  
+> [!NOTE]
+>  この属性は、1 つだけのバージョンの CLR (2.0) がいずれかを実行できるため、現在の非機能的[!INCLUDE[vstecmsbuild](~/includes/vstecmsbuild-md.md)]version 2.0 または 3.5。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性を使用してメタデータの拡張](~/docs/standard/attributes/index.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RequiredRuntimeAttribute (string runtimeVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string runtimeVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Framework.RequiredRuntimeAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="runtimeVersion" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="runtimeVersion">"V2.0"など、"v"で始まる必要な CLR ランタイムのバージョン</param>
+        <summary><see cref="T:Microsoft.Build.Framework.RequiredRuntimeAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RuntimeVersion">
+      <MemberSignature Language="C#" Value="public string RuntimeVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RuntimeVersion" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.RequiredRuntimeAttribute.RuntimeVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>"V2.0"など、この属性の構築時に指定された CLR ランタイムのバージョンを取得します。</summary>
+        <value>必要な CLR ランタイムのバージョンを含む文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

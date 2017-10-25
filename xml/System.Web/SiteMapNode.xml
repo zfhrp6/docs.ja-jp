@@ -1,0 +1,1419 @@
+<Type Name="SiteMapNode" FullName="System.Web.SiteMapNode">
+  <TypeSignature Language="C#" Value="public class SiteMapNode : ICloneable, System.Web.UI.IHierarchyData, System.Web.UI.INavigateUIData" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SiteMapNode extends System.Object implements class System.ICloneable, class System.Web.UI.IHierarchyData, class System.Web.UI.INavigateUIData" />
+  <TypeSignature Language="DocId" Value="T:System.Web.SiteMapNode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.UI.IHierarchyData</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.UI.INavigateUIData</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>によって記述される階層サイト マップ構造内のノードを表す、<see cref="T:System.Web.SiteMap" />クラスと抽象を実装するクラス<see cref="T:System.Web.SiteMapProvider" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.SiteMapNode>オブジェクトはサイト マップ構造内の Web サイトのページを表します。 <xref:System.Web.SiteMapNode>オブジェクトは、静的なによって読み込まれる<xref:System.Web.SiteMap>実行時にメモリに読み込むサイト マップ データを永続ストレージから 1 つまたは複数のサイト マップ プロバイダーを使用するクラス。 <xref:System.Web.SiteMapNode>オブジェクトがによってラップされた、<xref:System.Web.UI.WebControls.SiteMapNodeItem>クラスを使用して Web サーバー コントロールによってなど、<xref:System.Web.UI.WebControls.SiteMapPath>コントロール。  
+  
+ <xref:System.Web.SiteMapNode>クラスには、1 つのページなど、ページを記述するプロパティを含む、Web サイトでの記述に使用されるいくつかのプロパティが含まれています、 <xref:System.Web.SiteMapNode.Url%2A>、 <xref:System.Web.SiteMapNode.Title%2A>、および<xref:System.Web.SiteMapNode.Description%2A>プロパティです。 一方、<xref:System.Web.SiteMapNode.Url%2A>プロパティを使用、 <xref:System.Web.XmlSiteMapProvider> 、ASP.NET 用の既定のサイト マップ プロバイダーは、プロバイダーがノードを追跡するために使用する内部コレクション内でルックアップ キーとしては、クラス、<xref:System.Web.SiteMapNode>クラスは、基本的なサポート<xref:System.Web.SiteMapNode.Key%2A>サイト マップ プロバイダーによってノードを追跡するために使用できるプロパティです。 さらに、<xref:System.Web.SiteMapNode.Url%2A>プロパティがナビゲーション コントロール、ナビゲーション構造内のページへのハイパーリンクを表示するために使用します。 <xref:System.Web.SiteMapNode.Title%2A>プロパティは、のフレンドリ名、<xref:System.Web.SiteMapNode>は、多くの場合と同じ、HTML フォームのタイトル、Web、およびナビゲーション コントロールで単純なラベルを表示するために使用します。 最後に、<xref:System.Collections.Specialized.NameValueCollection>追加のコレクション<xref:System.Web.SiteMapNode.Attributes%2A>属性がマップ プロバイダーを使用するサイトにある<xref:System.Web.SiteMapNode>オブジェクトには、ベースでは使用できない追加のプロパティも必要な場合<xref:System.Web.SiteMapNode>クラスです。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例では、新しいサイト マップ ノード コレクションを作成し、要素を追加する方法を示します。 2 番目のコード例では、テキスト ファイルからサイト マップ データを読み込む方法を示します。  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.SiteMapNodeCollection.%23ctor%2A>を新規作成するコンス トラクター <xref:System.Web.SiteMapNodeCollection> 、コレクションを使って要素を追加し、<xref:System.Web.SiteMapNodeCollection.Add%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.SiteMapNode_2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SiteMapNode_2/CS/sitemapnode2acs.aspx.cs#1)]
+ [!code-vb[System.Web.SiteMapNode_2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SiteMapNode_2/VB/sitemapnode2avb.aspx.vb#1)]  
+  
+ 次のコード例を示しています、`SimpleTextSiteMapProvider`をコンマで区切られた文字列内のサイト マップ データを含むテキスト ファイルを解析します。 新しい<xref:System.Web.SiteMapNode>オブジェクトは、ファイルから読み取られる行ごとに、クラスの内部の追跡のコレクションに追加します。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.SiteMapProvider>クラスです。  
+  
+ [!code-csharp[Urtue.Samples.Alexkr.SimpleTextSiteMapProvider_1#9](~/samples/snippets/csharp/VS_Snippets_WebNet/Urtue.Samples.Alexkr.SimpleTextSiteMapProvider_1/CS/simpletextsitemapprovider.cs#9)]
+ [!code-vb[Urtue.Samples.Alexkr.SimpleTextSiteMapProvider_1#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Urtue.Samples.Alexkr.SimpleTextSiteMapProvider_1/VB/simpletextsitemapprovider.vb#9)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SiteMapNode (System.Web.SiteMapProvider provider, string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.SiteMapProvider provider, string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNode.#ctor(System.Web.SiteMapProvider,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="provider" Type="System.Web.SiteMapProvider" />
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="provider"><see cref="T:System.Web.SiteMapProvider" />ノードに関連付けられています。</param>
+        <param name="key">プロバイダー固有の検索キー。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.SiteMapNode" />クラスを指定して<paramref name="key" />ノードが表すページと、ノードを管理するサイト マップ プロバイダーを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.XmlSiteMapProvider>クラスで、既定値は、 <xref:System.Web.SiteMapProvider> 、ASP.NET 用のプロバイダーの実装を使用して、 <xref:System.Web.SiteMapNode.Url%2A?displayProperty=nameWithType> (URL が提供されていない場合、追跡 id は、ノードの生成の場合)、ノードの指定した場合、ルックアップ キーとしてのプロパティです。 そのため、いずれか<xref:System.Web.SiteMapNode>コントロールによって使用され、URL を提供する、<xref:System.Web.XmlSiteMapProvider>プロバイダーのスコープ内で一意の URL を指定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <see cref="T:System.Web.SiteMapProvider" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="key" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SiteMapNode (System.Web.SiteMapProvider provider, string key, string url);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.SiteMapProvider provider, string key, string url) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNode.#ctor(System.Web.SiteMapProvider,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="provider" Type="System.Web.SiteMapProvider" />
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="url" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="provider"><see cref="T:System.Web.SiteMapProvider" />ノードに関連付けられています。</param>
+        <param name="key">プロバイダー固有の検索キー。</param>
+        <param name="url">サイト内のノードが表す、ページの URL です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.SiteMapNode" />クラスの指定された URL を使用して、<paramref name="key" />ノードが表す、ページと、ノードを管理するサイト マップ プロバイダーを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.XmlSiteMapProvider>クラスで、既定値は、 <xref:System.Web.SiteMapProvider> 、ASP.NET 用のプロバイダーの実装を使用して、 <xref:System.Web.SiteMapNode.Url%2A?displayProperty=nameWithType> (URL が提供されていない場合、追跡 id は、ノードの生成の場合)、ノードの指定した場合、ルックアップ キーとしてのプロパティです。 そのため、いずれか<xref:System.Web.SiteMapNode>によって使用され、URL を提供するオブジェクト、<xref:System.Web.XmlSiteMapProvider>プロバイダーのスコープ内で一意の URL を指定する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.SiteMapNodeCollection.%23ctor%2A>を新規作成するコンス トラクター <xref:System.Web.SiteMapNodeCollection> 、コレクションを使って要素を追加し、<xref:System.Web.SiteMapNodeCollection.Add%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.SiteMapNode_2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SiteMapNode_2/CS/sitemapnode2acs.aspx.cs#1)]
+ [!code-vb[System.Web.SiteMapNode_2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SiteMapNode_2/VB/sitemapnode2avb.aspx.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <see cref="T:System.Web.SiteMapProvider" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="key" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SiteMapNode (System.Web.SiteMapProvider provider, string key, string url, string title);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.SiteMapProvider provider, string key, string url, string title) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNode.#ctor(System.Web.SiteMapProvider,System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="provider" Type="System.Web.SiteMapProvider" />
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="title" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="provider"><see cref="T:System.Web.SiteMapProvider" />ノードに関連付けられています。</param>
+        <param name="key">プロバイダー固有の検索キー。</param>
+        <param name="url">サイト内のノードが表す、ページの URL です。</param>
+        <param name="title">ナビゲーション コントロールによって表示される多くの場合、ノードのラベルです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.SiteMapNode" />クラスの指定された URL を使用して、<paramref name="key" />ノードが表すページ、タイトル、およびノードを管理するサイト マップ プロバイダーを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.XmlSiteMapProvider>クラスで、既定値は、 <xref:System.Web.SiteMapProvider> 、ASP.NET 用のプロバイダーの実装を使用して、 <xref:System.Web.SiteMapNode.Url%2A?displayProperty=nameWithType> (URL が提供されていない場合、追跡 id は、ノードの生成の場合)、ノードの指定した場合、ルックアップ キーとしてのプロパティです。 そのため、いずれか<xref:System.Web.SiteMapNode>によって使用され、URL を提供するオブジェクト、<xref:System.Web.XmlSiteMapProvider>プロバイダーのスコープ内で一意の URL を指定する必要があります。  
+  
+ ない場合は`title`が指定されてへの呼び出し、<xref:System.Web.SiteMapNode.Title%2A>プロパティの戻り値、<xref:System.String.Empty?displayProperty=nameWithType>フィールドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.SiteMapNode.%23ctor%2A>の新しいインスタンスを作成するコンス トラクター、<xref:System.Web.SiteMapNode>クラスです。 ノードは、Microsoft Access データベースの行からの値で初期化されます。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.StaticSiteMapProvider.BuildSiteMap%2A>メソッドです。  
+  
+ [!code-cpp[Urtue.Samples.Alexkr.AccessSiteMapProvider_1#6](~/samples/snippets/cpp/VS_Snippets_WebNet/Urtue.Samples.Alexkr.AccessSiteMapProvider_1/CPP/accesssitemapprovider.cpp#6)]
+ [!code-csharp[Urtue.Samples.Alexkr.AccessSiteMapProvider_1#6](~/samples/snippets/csharp/VS_Snippets_WebNet/Urtue.Samples.Alexkr.AccessSiteMapProvider_1/CS/accesssitemapprovider.cs#6)]
+ [!code-vb[Urtue.Samples.Alexkr.AccessSiteMapProvider_1#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Urtue.Samples.Alexkr.AccessSiteMapProvider_1/VB/accesssitemapprovider.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <see cref="T:System.Web.SiteMapProvider" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="key" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SiteMapNode (System.Web.SiteMapProvider provider, string key, string url, string title, string description);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.SiteMapProvider provider, string key, string url, string title, string description) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNode.#ctor(System.Web.SiteMapProvider,System.String,System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="provider" Type="System.Web.SiteMapProvider" />
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="title" Type="System.String" />
+        <Parameter Name="description" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="provider"><see cref="T:System.Web.SiteMapProvider" />ノードに関連付けられています。</param>
+        <param name="key">プロバイダー固有の検索キー。</param>
+        <param name="url">サイト内のノードが表す、ページの URL です。</param>
+        <param name="title">ナビゲーション コントロールによって表示される多くの場合、ノードのラベルです。</param>
+        <param name="description">ノードが表す ページの説明です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.SiteMapNode" />クラスの指定された URL を使用して、<paramref name="key" />ノードが表すページ、タイトルと説明、およびノードを管理するサイト マップ プロバイダーを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.XmlSiteMapProvider>クラスで、既定値は、 <xref:System.Web.SiteMapProvider> 、ASP.NET 用のプロバイダーの実装を使用して、 <xref:System.Web.SiteMapNode.Url%2A?displayProperty=nameWithType> (URL が提供されていない場合、追跡 id は、ノードの生成の場合)、ノードの指定した場合、ルックアップ キーとしてのプロパティです。 そのため、いずれか<xref:System.Web.SiteMapNode>によって使用され、URL を提供するオブジェクト、<xref:System.Web.XmlSiteMapProvider>プロバイダーのスコープ内で一意の URL を指定する必要があります。  
+  
+ ない場合は`title`または`description`が指定されてへの呼び出し、<xref:System.Web.SiteMapNode.Title%2A>または<xref:System.Web.SiteMapNode.Description%2A>プロパティの戻り値、<xref:System.String.Empty?displayProperty=nameWithType>フィールドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.SiteMapNode.%23ctor%2A>コンス トラクターを作成する、<xref:System.Web.SiteMapNode>メモリ内のサイト マップを構築する単純なテキスト ファイルからデータを解析してオブジェクト。  
+  
+ このコード例は、抽象の提供された大きな例の一部<xref:System.Web.SiteMapProvider>クラスです。  
+  
+ [!code-csharp[Urtue.Samples.Alexkr.SimpleTextSiteMapProvider_1#9](~/samples/snippets/csharp/VS_Snippets_WebNet/Urtue.Samples.Alexkr.SimpleTextSiteMapProvider_1/CS/simpletextsitemapprovider.cs#9)]
+ [!code-vb[Urtue.Samples.Alexkr.SimpleTextSiteMapProvider_1#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Urtue.Samples.Alexkr.SimpleTextSiteMapProvider_1/VB/simpletextsitemapprovider.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <see cref="T:System.Web.SiteMapProvider" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="key" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SiteMapNode (System.Web.SiteMapProvider provider, string key, string url, string title, string description, System.Collections.IList roles, System.Collections.Specialized.NameValueCollection attributes, System.Collections.Specialized.NameValueCollection explicitResourceKeys, string implicitResourceKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.SiteMapProvider provider, string key, string url, string title, string description, class System.Collections.IList roles, class System.Collections.Specialized.NameValueCollection attributes, class System.Collections.Specialized.NameValueCollection explicitResourceKeys, string implicitResourceKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNode.#ctor(System.Web.SiteMapProvider,System.String,System.String,System.String,System.String,System.Collections.IList,System.Collections.Specialized.NameValueCollection,System.Collections.Specialized.NameValueCollection,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="provider" Type="System.Web.SiteMapProvider" />
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="title" Type="System.String" />
+        <Parameter Name="description" Type="System.String" />
+        <Parameter Name="roles" Type="System.Collections.IList" />
+        <Parameter Name="attributes" Type="System.Collections.Specialized.NameValueCollection" />
+        <Parameter Name="explicitResourceKeys" Type="System.Collections.Specialized.NameValueCollection" />
+        <Parameter Name="implicitResourceKey" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="provider"><see cref="T:System.Web.SiteMapProvider" />ノードに関連付けられています。</param>
+        <param name="key">プロバイダー固有の検索キー。</param>
+        <param name="url">サイト内のノードが表す、ページの URL です。</param>
+        <param name="title">ナビゲーション コントロールによって表示される多くの場合、ノードのラベルです。</param>
+        <param name="description">ノードが表す ページの説明です。</param>
+        <param name="roles"><see cref="T:System.Collections.IList" />によって表されるページを表示するのには許可されている役割の<see cref="T:System.Web.SiteMapNode" />です。</param>
+        <param name="attributes">A<see cref="T:System.Collections.Specialized.NameValueCollection" />初期化するために使用される追加の属性の<see cref="T:System.Web.SiteMapNode" />です。</param>
+        <param name="explicitResourceKeys">A<see cref="T:System.Collections.Specialized.NameValueCollection" />のローカライズに使用される明示的なリソース キー。</param>
+        <param name="implicitResourceKey">ローカライズに使用される暗黙のリソース キー。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.SiteMapNode" />クラス ノード、URL、タイトル、説明、ロール、追加の属性、およびローカリゼーション用リソースの明示的および暗黙的なキーを管理する、指定したサイト マップ プロバイダーを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.XmlSiteMapProvider>クラスで、既定値は、 <xref:System.Web.SiteMapProvider> 、ASP.NET 用のプロバイダーの実装を使用して、 <xref:System.Web.SiteMapNode.Url%2A?displayProperty=nameWithType> (URL が提供されていない場合、追跡 id は、ノードの生成の場合)、ノードの指定した場合、ルックアップ キーとしてのプロパティです。 そのため、いずれか<xref:System.Web.SiteMapNode>によって使用され、URL を提供するオブジェクト、<xref:System.Web.XmlSiteMapProvider>プロバイダーのスコープ内で一意の URL を指定する必要があります。  
+  
+ <xref:System.Collections.Specialized.NameValueCollection>を属性のコレクション、<xref:System.Web.SiteMapNode>が作成されるを通じて使用可能なが、<xref:System.Web.SiteMapNode.Attributes%2A>ノードをマップし、これを行うカスタム クラスを派生するせずにそのような機能を拡張プロパティ、および属性が簡単に追加を適用するサイトを作成します。  
+  
+ 指定、 <xref:System.Collections.IList> 、一連のノードが表示できるロールを提供するロールのコレクションと、<xref:System.Web.SiteMapProvider.SecurityTrimmingEnabled%2A>プロパティから返される`true`です。  詳細については、「<xref:System.Web.SiteMapProvider.SecurityTrimmingEnabled%2A>」を参照してください。  
+  
+ <xref:System.Web.XmlSiteMapProvider>プロバイダーを使用して、<xref:System.Web.SiteMapNode.Url%2A?displayProperty=nameWithType>ルックアップ キーとしてのプロパティです。 そのため、いずれか<xref:System.Web.SiteMapNode>によって使用される、<xref:System.Web.XmlSiteMapProvider>プロバイダーのスコープ内で一意の URL を指定する必要があります。  
+  
+ ない場合は`title`または`description`が指定されてへの呼び出し、<xref:System.Web.SiteMapNode.Title%2A>または<xref:System.Web.SiteMapNode.Description%2A>プロパティの戻り値、<xref:System.String.Empty?displayProperty=nameWithType>フィールドです。  
+  
+ 値を設定するかプログラムでのローカライズ用リソースを指定する`implicitResourceKey`ノードまたはセットのローカライズされたリソースを識別するために使用する一意の名前に`explicitResourceKeys`を<xref:System.Collections.Specialized.NameValueCollection>のコレクション`name/value`場所のペアを`name`ノードのプロパティまたはカスタム属性をローカライズするにはおよび`value`ノードのプロパティまたはカスタム属性のローカライズ値が含まれます。 ローカライズされた値は、適切な .resx ファイルに設定できます。 ローカライズする方法について、 <xref:System.Web.SiteMapNode.Title%2A>、 <xref:System.Web.SiteMapNode.Description%2A>、および任意のカスタム プロパティの<xref:System.Web.SiteMapNode>オブジェクトを参照してください[する方法: サイト マップ データのローカライズ](http://msdn.microsoft.com/library/be63b4a0-fb82-44b4-bdbb-df1d2548cedc)です。 構文要件については、 `explicitResourceKeys` 、コレクションを参照してください<xref:System.Collections.Specialized.NameValueCollection>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <see cref="T:System.Web.SiteMapProvider" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="key" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Attributes">
+      <MemberSignature Language="C#" Value="protected System.Collections.Specialized.NameValueCollection Attributes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.NameValueCollection Attributes" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapNode.Attributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.NameValueCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に対して定義されている厳密に型指定されたプロパティを超える追加の属性のコレクション、<see cref="T:System.Web.SiteMapNode" />クラスです。</summary>
+        <value>A<see cref="T:System.Collections.Specialized.NameValueCollection" />に追加の属性の<see cref="T:System.Web.SiteMapNode" />を超えて<see cref="P:System.Web.SiteMapNode.Title" />、 <see cref="P:System.Web.SiteMapNode.Description" />、 <see cref="P:System.Web.SiteMapNode.Url" />、および<see cref="P:System.Web.SiteMapNode.Roles" />、それ以外の<see langword="null" />属性が存在しない場合は、します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SiteMapNode.Attributes%2A>サイト マップ ノードに追加の属性を適用する必要がある場合、コレクションが通常使用されるようにするためにカスタム クラスを派生したくないが、します。  
+  
+ 保護された<xref:System.Web.SiteMapNode.Attributes%2A>と同じ方法で属性は行われません、<xref:System.Web.SiteMapNode.Title%2A>または<xref:System.Web.SiteMapNode.Description%2A>プロパティです。 ローカライズのサポート、開発者は、既定のインデクサーを使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ノードは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ChildNodes">
+      <MemberSignature Language="C#" Value="public virtual System.Web.SiteMapNodeCollection ChildNodes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.SiteMapNodeCollection ChildNodes" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapNode.ChildNodes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.SiteMapNodeCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべての子の現在のノードの設定を取得または<see cref="T:System.Web.SiteMapNode" />オブジェクトから、関連付けられている<see cref="T:System.Web.SiteMapProvider" />プロバイダー。</summary>
+        <value>読み取り専用<see cref="T:System.Web.SiteMapNodeCollection" />; 現在のノードに存在する場合、子ノードのそれ以外の場合、<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SiteMapNode>依存、<xref:System.Web.SiteMapProvider>ことに関連付けられているその他のサイト マップ ノードの関係を追跡します。 このプロパティを呼び出し、<xref:System.Web.SiteMapProvider.GetChildNodes%2A>をそれ自体を取得するには参照を渡す方法、<xref:System.Web.SiteMapNodeCollection>です。  
+  
+ セキュリティのトリミングを有効にすると、現在のユーザーが閲覧を許可されているノードに対してのみが返されます。 すべての子ノードを表示するユーザーを設定することはできません、空のコレクションが返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ノードは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public virtual System.Web.SiteMapNode Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.SiteMapNode Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNode.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.SiteMapNode</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のノードのコピーである新しいノードを作成します。</summary>
+        <returns>新しいノードには、現在のノードのコピーがします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出し、<xref:System.Web.SiteMapNode.Clone%2A>メソッド パラメーターを設定して`false`です。 プロバイダー、 <xref:System.Web.SiteMapNode.Title%2A>、 <xref:System.Web.SiteMapNode.Url%2A>、 <xref:System.Web.SiteMapNode.Description%2A>、および<xref:System.Web.SiteMapNode.Key%2A>プロパティがコピーされます。 <xref:System.Web.SiteMapNode.Roles%2A>と<xref:System.Web.SiteMapNode.Attributes%2A>コレクションは新しいコレクションにコピーします。 先祖と子ノードは複製されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public virtual System.Web.SiteMapNode Clone (bool cloneParentNodes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.SiteMapNode Clone(bool cloneParentNodes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNode.Clone(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.SiteMapNode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cloneParentNodes" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="cloneParentNodes">
+          <see langword="true" />現在のノードのすべての親と先祖ノードを複製するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>現在のノードでは、必要に応じて、現在のノードのすべての親と先祖ノードの複製のコピーである新しいコピーを作成します。</summary>
+        <returns>新しいノードには、現在のノードのコピーがします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`cloneParentNodes`パラメーターは`true`、<xref:System.Web.SiteMapNode.Clone%2A>メソッドを再帰的には、すべての直接の先祖ノードのクローンを作成し、現在の複製されたノードに関連付けます。 子ノードは複製されません。  
+  
+ <xref:System.Web.SiteMapNode.Roles%2A>と<xref:System.Web.SiteMapNode.Attributes%2A>コレクションは新しいコレクションに適用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を呼び出す方法を示しています、<xref:System.Web.SiteMapNode.Clone%2A>メソッドを現在のノードから重複するサイト マップ ノードを作成します。 `ExpandForumPaths`を処理するメソッドが登録されている、<xref:System.Web.SiteMap.SiteMapResolve>イベント。 使用して、<xref:System.Web.SiteMapNode.Clone%2A>を現在のサイト マップ ノードの作業コピーを作成、パーソナル化データに基づく属性を変更、および作業コピーを返すメソッド。  
+  
+ [!code-csharp[System.Web.SiteMap.SiteMapResolve#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SiteMap.SiteMapResolve/CS/sitemapresolve1cs.aspx.cs#1)]
+ [!code-vb[System.Web.SiteMap.SiteMapResolve#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SiteMap.SiteMapResolve/VB/sitemapresolve1vb.aspx.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public virtual string Description { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapNode.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の説明、<see cref="T:System.Web.SiteMapNode" />です。</summary>
+        <value>ノードの説明を表す文字列それ以外の場合、<see cref="F:System.String.Empty" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 中に、<xref:System.Web.SiteMapNode.Title%2A>の<xref:System.Web.SiteMapNode>ラベルまたはハイパーリンクとしていくつかのナビゲーション コントロールで使用される、<xref:System.Web.SiteMapNode.Description%2A>はマウスのイベントに対して ToolTip 要素として使用します。  
+  
+ ローカライズされた値、<xref:System.Web.SiteMapNode.Description%2A>場合、プロパティが返されます、<xref:System.Web.SiteMapProvider.EnableLocalization%2A>プロパティは`true`します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ノードは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNode.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在と比較するオブジェクト<see cref="T:System.Web.SiteMapNode" />です。</param>
+        <summary>示す値を取得するかどうか、現在<see cref="T:System.Web.SiteMapNode" />指定したオブジェクトと同じです。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="obj" />は両方とも、<see cref="T:System.Web.SiteMapNode" />と、現在同一<see cref="T:System.Web.SiteMapNode" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ<xref:System.Web.SiteMapNode>オブジェクトは、次の条件の両方が満たされた場合に等しいと見なされます。  
+  
+-   両方<xref:System.Web.SiteMapNode>オブジェクトの値が同じである、<xref:System.Web.SiteMapNode.Key%2A>プロパティです。  
+  
+-   両方のカルチャに依存しない、大文字と小文字の比較<xref:System.Web.SiteMapNode.Url%2A>プロパティを返します`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllNodes">
+      <MemberSignature Language="C#" Value="public System.Web.SiteMapNodeCollection GetAllNodes ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.SiteMapNodeCollection GetAllNodes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNode.GetAllNodes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.SiteMapNodeCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべての読み取り専用コレクションを取得して<see cref="T:System.Web.SiteMapNode" />分離の度合いに関係なく、呼び出し元のノードの子孫であるオブジェクト。</summary>
+        <returns>読み取り専用<see cref="T:System.Web.SiteMapNodeCollection" />のすべての子孫を表す、<see cref="T:System.Web.SiteMapNode" />現在のプロバイダーのスコープ内で。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、直接の子ノードとそのすべての子ノードを再帰的に取得します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のすべての子ノードを取得する方法を示します、<xref:System.Web.SiteMap.RootNode%2A>で、<xref:System.Web.SiteMapNode.GetAllNodes%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.SiteMapNodeCollection_1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SiteMapNodeCollection_1/CS/webform1smccs.aspx#1)]
+ [!code-vb[System.Web.SiteMapNodeCollection_1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SiteMapNodeCollection_1/VB/webform1smcvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDataSourceView">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.SiteMapDataSourceView GetDataSourceView (System.Web.UI.WebControls.SiteMapDataSource owner, string viewName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.UI.WebControls.SiteMapDataSourceView GetDataSourceView(class System.Web.UI.WebControls.SiteMapDataSource owner, string viewName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNode.GetDataSourceView(System.Web.UI.WebControls.SiteMapDataSource,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.SiteMapDataSourceView</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Web.UI.WebControls.SiteMapDataSource" />
+        <Parameter Name="viewName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="owner">A<see cref="T:System.Web.UI.WebControls.SiteMapDataSource" />ビューに関連付けられているコントロール。</param>
+        <param name="viewName">ビューの名前。</param>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.SiteMapDataSourceView" />現在のノードに関連付けられているオブジェクト。</summary>
+        <returns>名前付き<see cref="T:System.Web.UI.WebControls.SiteMapDataSourceView" />の現在のノードです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExplicitResourceString">
+      <MemberSignature Language="C#" Value="protected string GetExplicitResourceString (string attributeName, string defaultValue, bool throwIfNotFound);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance string GetExplicitResourceString(string attributeName, string defaultValue, bool throwIfNotFound) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNode.GetExplicitResourceString(System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributeName" Type="System.String" />
+        <Parameter Name="defaultValue" Type="System.String" />
+        <Parameter Name="throwIfNotFound" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="attributeName"><see cref="T:System.Web.SiteMapNode" />をローカライズする属性。</param>
+        <param name="defaultValue">一致するリソースが見つからないかどうかに返される既定値です。</param>
+        <param name="throwIfNotFound">
+          <see langword="true" />スローする、<see cref="T:System.InvalidOperationException" />の明示的なリソースが定義されている場合、 <c>attributeName</c>、 <c>defaultValue</c>は<see langword="null" />、ローカライズされた値は、それ以外の<see langword="false" />します。</param>
+        <summary>基づくローカライズされた文字列を取得、<see cref="T:System.Web.SiteMapNode" />リソースが見つからないかどうか、返される既定の文字列をローカライズする属性とリソースが見つからない場合に例外をスローするかどうかを示すブール値。</summary>
+        <returns>ローカライズされた属性を表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SiteMapNode.GetExplicitResourceString%2A>でメソッドが呼び出される、`get`のアクセサー、 <xref:System.Web.SiteMapNode.Title%2A> 、プロパティ、<xref:System.Web.SiteMapNode.Description%2A>プロパティ、およびカスタム属性で定義されている、<xref:System.Web.SiteMapNode.Attributes%2A>プロパティです。 <xref:System.Web.SiteMapProvider>するオブジェクト、<xref:System.Web.SiteMapNode>が追跡される必要がありますその<xref:System.Web.SiteMapProvider.EnableLocalization%2A>プロパティに設定`true`の<xref:System.Web.SiteMapNode.GetExplicitResourceString%2A>ローカライズされた文字列を返すメソッド。 場合、<xref:System.Web.SiteMapProvider.EnableLocalization%2A>に設定されている`false`、ローカリゼーションが実行されないと、<xref:System.Web.SiteMapNode.GetExplicitResourceString%2A>メソッドが呼び出されることはありません。  
+  
+ <xref:System.Web.SiteMapNode.Title%2A> 、プロパティ、<xref:System.Web.SiteMapNode.Description%2A>プロパティ、およびカスタム属性で定義されている、<xref:System.Web.SiteMapNode.Attributes%2A>プロパティの最初の呼び出し、<xref:System.Web.SiteMapNode.GetImplicitResourceString%2A>メソッドです。 返された場合`null`、<xref:System.Web.SiteMapNode.GetExplicitResourceString%2A>メソッドが呼び出されると`defaultValue`(定義されていると仮定) 明示的なリソースの式の既定値の値に設定し、`throwIfNotFound`に設定`true`です。  
+  
+> [!NOTE]
+>  <xref:System.Web.XmlSiteMapProvider>クラスは、制限を適用する、<xref:System.Web.SiteMapNode>オブジェクトは、式の暗黙のリソースと属性の明示的なリソースの式の両方を定義できません。 ただし、カスタム プロバイダーの実装は、両方を許可する選択できます。  
+  
+ <xref:System.Web.SiteMapNode.GetExplicitResourceString%2A>メソッドを使用、<xref:System.Collections.Specialized.NameValueCollection>リソースのコレクションのキー、<xref:System.Web.SiteMapNode>でオブジェクトが初期化されました。 リソース キーのコレクションが指定されていない場合、<xref:System.Web.SiteMapNode.GetExplicitResourceString%2A>返します`null`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="attributeName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">一致するリソース オブジェクトが見つからなかったと<paramref name="throwIfNotFound" />は<see langword="true" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNode.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ハッシュ コードを返し、<see cref="T:System.Web.SiteMapNode" />オブジェクト。</summary>
+        <returns>ハッシュ コードを表す 32 ビット符号付き整数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 検索するキーを使用してハッシュ コードを生成 (のハッシュは、<xref:System.Web.SiteMapNode.Key%2A>プロパティ) サイト マップ ノードにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHierarchicalDataSourceView">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.SiteMapHierarchicalDataSourceView GetHierarchicalDataSourceView ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.UI.WebControls.SiteMapHierarchicalDataSourceView GetHierarchicalDataSourceView() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNode.GetHierarchicalDataSourceView" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.SiteMapHierarchicalDataSourceView</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.SiteMapHierarchicalDataSourceView" />現在のノードに関連付けられているオブジェクト。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.SiteMapHierarchicalDataSourceView" />の現在のノードです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetImplicitResourceString">
+      <MemberSignature Language="C#" Value="protected string GetImplicitResourceString (string attributeName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance string GetImplicitResourceString(string attributeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNode.GetImplicitResourceString(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="attributeName"><see cref="T:System.Web.SiteMapNode" />をローカライズする属性。</param>
+        <summary>属性名に基づくローカライズされた文字列を取得し、<see cref="P:System.Web.SiteMapProvider.ResourceKey" />プロパティで指定されている、<see cref="T:System.Web.SiteMapProvider" />する、<see cref="T:System.Web.SiteMapNode" />が追跡します。</summary>
+        <returns>ローカライズされた属性を表す文字列。 既定値は、<see langword="null" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SiteMapNode.GetImplicitResourceString%2A>の get アクセサー メソッドが呼び出される、 <xref:System.Web.SiteMapNode.Title%2A> 、プロパティ、<xref:System.Web.SiteMapNode.Description%2A>プロパティ、およびカスタム属性で定義されている、<xref:System.Web.SiteMapNode.Attributes%2A>プロパティです。 <xref:System.Web.SiteMapProvider>プロバイダー、<xref:System.Web.SiteMapNode>オブジェクトが追跡される必要があります、<xref:System.Web.SiteMapProvider.EnableLocalization%2A>プロパティに設定`true`の<xref:System.Web.SiteMapNode.GetImplicitResourceString%2A>メソッドが呼び出されます。 場合、<xref:System.Web.SiteMapProvider.EnableLocalization%2A>に設定されている`false`、ローカリゼーションが実行されないと、<xref:System.Web.SiteMapNode.GetImplicitResourceString%2A>メソッドが呼び出されることはありません。  
+  
+ 場合、<xref:System.Web.SiteMapNode.GetImplicitResourceString%2A>メソッドが空でない文字列を返しますの値になりますこの、 <xref:System.Web.SiteMapNode.Title%2A>、 <xref:System.Web.SiteMapNode.Description%2A>、またはカスタム属性のプロパティです。  
+  
+ <xref:System.Web.SiteMapNode.GetImplicitResourceString%2A>メソッドの値を使用して、<xref:System.Web.SiteMapNode.ResourceKey%2A>属性をローカライズするプロパティです。 場合、<xref:System.Web.SiteMapNode.ResourceKey%2A>が指定されていない、<xref:System.Web.SiteMapNode.GetImplicitResourceString%2A>返します`null`です。  
+  
+> [!NOTE]
+>  <xref:System.Web.XmlSiteMapProvider>クラスは、制限を適用する、<xref:System.Web.SiteMapNode>オブジェクトは、式の暗黙のリソースと属性の明示的なリソースの式の両方を定義できません。 ただし、カスタム プロバイダーの実装は、両方を許可する選択できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="attributeName" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HasChildNodes">
+      <MemberSignature Language="C#" Value="public virtual bool HasChildNodes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasChildNodes" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapNode.HasChildNodes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、現在<see cref="T:System.Web.SiteMapNode" />任意の子ノードがあります。</summary>
+        <value>
+          <see langword="true" />ノードに子がある場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、便利なプロパティを呼び出す、<xref:System.Web.SiteMapNode.ChildNodes%2A>プロパティ内部的には、そのため、パフォーマンスは向上しませんを呼び出した場合よりも、<xref:System.Web.SiteMapNode.ChildNodes%2A>プロパティ自分自身とチェックが空であるかを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAccessibleToUser">
+      <MemberSignature Language="C#" Value="public virtual bool IsAccessibleToUser (System.Web.HttpContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsAccessibleToUser(class System.Web.HttpContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNode.IsAccessibleToUser(System.Web.HttpContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.Web.HttpContext" />ユーザー情報を格納します。</param>
+        <summary>指定したコンテキスト内のユーザーによって指定されたサイト マップ ノードを表示できるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />次の条件のいずれかが満たされた場合: セキュリティ トリミングを有効にして、現在のユーザーが、サイト マップ ノードを表示するには、アクセスを許可するロールの少なくとも 1 つのメンバー現在のアプリケーションの承認要素で、要求されたノードの URL を具体的には、現在のユーザーが承認され、URL がアプリケーションのディレクトリ構造内にあります。現在のスレッドに関連付けられています<see cref="T:System.Security.Principal.WindowsIdentity" />、要求されたノードの URL にアクセスするファイルを含む URL がアプリケーションのディレクトリ構造内にあるとまたはセキュリティ トリミングが有効になっていないと、サイト マップ ノードを表示するのには許可されている、それ以外のすべてのユーザーはそのため、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SiteMapNode.IsAccessibleToUser%2A>メソッドの呼び出し、<xref:System.Web.SiteMapProvider.IsAccessibleToUser%2A>いるノードが関連付けられている渡して、指定されたプロバイダーのメソッド`context`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">指定したコンテキストは<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDescendantOf">
+      <MemberSignature Language="C#" Value="public virtual bool IsDescendantOf (System.Web.SiteMapNode node);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsDescendantOf(class System.Web.SiteMapNode node) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNode.IsDescendantOf(System.Web.SiteMapNode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="node" Type="System.Web.SiteMapNode" />
+      </Parameters>
+      <Docs>
+        <param name="node"><see cref="T:System.Web.SiteMapNode" />を現在のノードが子または子孫のかどうかを確認します。</param>
+        <summary>現在のサイト マップ ノードが子ドメインまたは指定したノードの直系の子孫がかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />現在のノードが子または子孫の指定したノードの場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public virtual string this[string key] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapNode.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">取得する属性またはリソースの文字列を識別する文字列。</param>
+        <summary>取得または設定からカスタム属性、<see cref="P:System.Web.SiteMapNode.Attributes" />コレクションまたはリソースの文字列が指定したキーに基づいています。</summary>
+        <value>によって識別されるカスタム属性またはリソース文字列<paramref name="key" />、それ以外の<see langword="null" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SiteMapNode.Item%2A>プロパティはインデクサーに最初に決定されるかどうか、プロバイダーを追跡する、<xref:System.Web.SiteMapNode>オブジェクトは、ローカリゼーションをサポートしています。 その場合、<xref:System.Web.SiteMapNode.Item%2A>呼び出し、  
+  
+ <xref:System.Web.SiteMapNode.GetImplicitResourceString%2A>引数としてメソッドを`key`パラメーター。 ローカライズされたテキストが返されない場合、<xref:System.Web.SiteMapNode.Item%2A>呼び出し、  
+  
+ <xref:System.Web.SiteMapNode.GetExplicitResourceString%2A> メソッド  
+  
+ ローカライズされたテキストが返されない場合、またはプロバイダーは、ローカライズをサポートしていない場合、<xref:System.Web.SiteMapNode.Item%2A>から要素を返そうと、<xref:System.Web.SiteMapNode.Attributes%2A>コレクションを指定して`key`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ノードは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Key">
+      <MemberSignature Language="C#" Value="public string Key { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Key" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapNode.Key" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サイト マップ ノードの検索キーを表す文字列を取得します。</summary>
+        <value>ルックアップ キーを表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内部的には、サイト ナビゲーション クラスは、ノード間のリレーションシップを確立するためだけでなくもサイト マップ ノードを検索するときに、このルックアップ キーを使用できます。 <xref:System.Web.SiteMapProvider>クラスが公開も、<xref:System.Web.SiteMapProvider.FindSiteMapNodeFromKey%2A>への参照を取得するための手段としてのメソッド、<xref:System.Web.SiteMapNode>キーの値と一致するオブジェクト。  
+  
+ キーに使用される特定の値は、プロバイダー固有です。ただしは保証できません`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NextSibling">
+      <MemberSignature Language="C#" Value="public virtual System.Web.SiteMapNode NextSibling { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.SiteMapNode NextSibling" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapNode.NextSibling" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.SiteMapNode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>次を取得<see cref="T:System.Web.SiteMapNode" />に相対の現在のものと同じ階層レベルのノード、<see cref="P:System.Web.SiteMapNode.ParentNode" />プロパティ (が存在する場合)。</summary>
+        <value>次<see cref="T:System.Web.SiteMapNode" />、逐次的に、現在 1 つの親ノードです。 後にそれ以外の場合、 <see langword="null" />、場合親が存在しないように、これに続くノードがないまたはセキュリティ トリミングを有効に、ユーザーは、親または兄弟ノードの 次へ を表示できません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SiteMapNode.NextSibling%2A>プロパティを開始する、<xref:System.Web.SiteMapProvider>と親ノードを取得するよう、オブジェクトがその内部コレクションを実装するその<xref:System.Web.SiteMapNode.ChildNodes%2A>プロパティは、ノードを同じ順序で、サイト マップに表示されます。 サイト マップ プロバイダーの実装で .NET Framework のコレクション クラスを使用する場合は、実装するコレクションを選択して、<xref:System.Collections.IList>インターフェイスなど、<xref:System.Collections.ArrayList>または<xref:System.Collections.Specialized.ListDictionary>クラスです。 実装していないコレクションを選択した場合、<xref:System.Collections.IList>インターフェイスなど、<xref:System.Collections.Hashtable>クラス、予期しない結果が単純なサイト ナビゲーション操作のために発生することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParentNode">
+      <MemberSignature Language="C#" Value="public virtual System.Web.SiteMapNode ParentNode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.SiteMapNode ParentNode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapNode.ParentNode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.SiteMapNode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Web.SiteMapNode" />現在のノードの親であるオブジェクト。</summary>
+        <value>親<see cref="T:System.Web.SiteMapNode" />、それ以外の<see langword="null" />セキュリティ トリミングが有効になっている場合は、ユーザーは、親ノードを表示できません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SiteMapNode>クラスが、その他のサイト マップ ノードへの関係を追跡するために関連付けられているサイト マップ プロバイダーに依存します。 <xref:System.Web.SiteMapNode.ParentNode%2A>プロパティの呼び出し、<xref:System.Web.SiteMapProvider.GetParentNode%2A>メソッドをそれ自体を親を取得するには参照を渡す<xref:System.Web.SiteMapNode>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ノードは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviousSibling">
+      <MemberSignature Language="C#" Value="public virtual System.Web.SiteMapNode PreviousSibling { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.SiteMapNode PreviousSibling" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapNode.PreviousSibling" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.SiteMapNode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>前の取得<see cref="T:System.Web.SiteMapNode" />を基準とするオブジェクトの現在のものと同じレベルに、<see cref="P:System.Web.SiteMapNode.ParentNode" />オブジェクト (ある場合)。</summary>
+        <value>前の<see cref="T:System.Web.SiteMapNode" />、逐次的に、現在 1 つの親ノードの下の前にそれ以外の場合、<see langword="null" />かどうか、親が存在しない、前に、ノードがない、またはセキュリティ トリミングを有効におよび、ユーザーは、親または前の兄弟ノードを表示できません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SiteMapNode.PreviousSibling%2A>プロパティ前提と親ノードを取得するように、サイト マップ プロバイダーがその内部コレクションを実装しているその<xref:System.Web.SiteMapNode.ChildNodes%2A>オブジェクトでは、ノードを同じ順序で、サイト マップに表示されます。 実装では、.NET Framework のコレクション クラスを使用するかどうか、<xref:System.Web.SiteMapProvider>プロバイダーを実装するコレクションを選択して、<xref:System.Collections.IList>インターフェイスなど、<xref:System.Collections.ArrayList>または<xref:System.Collections.Specialized.ListDictionary>クラスです。 実装していないコレクションを選択した場合、<xref:System.Collections.IList>インターフェイスなど、<xref:System.Collections.Hashtable>クラス、予期しない結果が単純なサイト ナビゲーション操作のために発生することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Provider">
+      <MemberSignature Language="C#" Value="public System.Web.SiteMapProvider Provider { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.SiteMapProvider Provider" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapNode.Provider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.SiteMapProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.SiteMapProvider" />プロバイダーを<see cref="T:System.Web.SiteMapNode" />オブジェクトによって追跡されます。</summary>
+        <value><see cref="T:System.Web.SiteMapProvider" />を<see cref="T:System.Web.SiteMapNode" />によって追跡されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロバイダーは常に返されます。渡す`null`を<xref:System.Web.SiteMapNode>コンス トラクターの結果、<xref:System.ArgumentException>例外。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadOnly">
+      <MemberSignature Language="C#" Value="public bool ReadOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapNode.ReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサイト マップ ノードを変更できるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />サイト マップ ノードを変更できる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.SiteMapNode>オブジェクトは既定では変更可能です。  
+  
+> [!NOTE]
+>  によって返されるすべてのノード、<xref:System.Web.XmlSiteMapProvider>は読み取り専用、既定でします。  
+  
+ <xref:System.Web.SiteMapNode.Attributes%2A>、 <xref:System.Web.SiteMapNode.ChildNodes%2A>、 <xref:System.Web.SiteMapNode.Description%2A>、 <xref:System.Web.SiteMapNode.ParentNode%2A>、 <xref:System.Web.SiteMapNode.Roles%2A>、 <xref:System.Web.SiteMapNode.Title%2A>、および<xref:System.Web.SiteMapNode.Url%2A>プロパティ ミューテーター チェック、<xref:System.Web.SiteMapNode.ReadOnly%2A>サイト マップ ノードのプロパティを変更する前にプロパティです。 ミューテーターが呼び出されると、ノードが読み取り専用の場合、<xref:System.Web.SiteMapNode>オブジェクトがスローされます、<xref:System.InvalidOperationException>例外。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResourceKey">
+      <MemberSignature Language="C#" Value="public string ResourceKey { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ResourceKey" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapNode.ResourceKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のローカライズに使用されるリソース キー、<see cref="T:System.Web.SiteMapNode" />です。</summary>
+        <value>リソース キーの名前を含む文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Set アクセサーを使用して、<xref:System.Web.SiteMapNode.ResourceKey%2A>プロパティと、<xref:System.Web.SiteMapNode.ReadOnly%2A>プロパティは`true`になります、<xref:System.InvalidOperationException>例外。 設定する、<xref:System.Web.SiteMapNode.ResourceKey%2A>の<xref:System.Web.SiteMapNode>オブジェクトを使用して、<xref:System.Web.SiteMapNode.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ノードは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Roles">
+      <MemberSignature Language="C#" Value="public System.Collections.IList Roles { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IList Roles" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapNode.Roles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティによるトリミング中に使用される <see cref="T:System.Web.SiteMapNode" /> オブジェクトに関連付けられているロールのコレクションを取得または設定します。</summary>
+        <value>ロールの <see cref="T:System.Collections.IList" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サイト マップ プロバイダーが現在のユーザーの現在のユーザーの割り当て済みのロールが含まれているかどうかに一部基づいてを表示することができるノードのノード ツリーを構築セキュリティ トリミングが有効になっている場合、<xref:System.Web.SiteMapNode.Roles%2A>コレクション。 URL 承認とファイルの承認は、ユーザーがアクセスする権限を持つかどうかを決定するも使用、<xref:System.Web.SiteMapNode>オブジェクト。 承認の詳細については、次を参照してください。 [ASP.NET 承認](http://msdn.microsoft.com/library/ba7c17d4-f709-4501-8441-2340e2d6db05)です。  
+  
+ 使用することができます、<xref:System.Web.SiteMapNode.%23ctor%2A>にロールの一覧を指定するコンス トラクター、<xref:System.Web.SiteMapNode>オブジェクトが最初に作成されたとき。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ノードは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RootNode">
+      <MemberSignature Language="C#" Value="public virtual System.Web.SiteMapNode RootNode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.SiteMapNode RootNode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapNode.RootNode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.SiteMapNode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サイト マップ プロバイダー階層内のルート プロバイダーのルート ノードを取得します。 プロバイダーの階層構造が存在しない場合、<see cref="P:System.Web.SiteMapNode.RootNode" />プロパティは、現在のプロバイダーのルート ノードを取得します。</summary>
+        <value>A<see cref="T:System.Web.SiteMapNode" />サイト ナビゲーション構造のルート ノードを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SiteMapNode>クラスが、その他のサイト マップ ノードへの関係を追跡するために関連付けられているサイト マップ プロバイダーに依存します。 <xref:System.Web.SiteMapNode.RootNode%2A>プロパティの呼び出し、<xref:System.Web.SiteMapProvider.RootNode%2A>ルート プロバイダーのプロパティ (、<xref:System.Web.SiteMapProvider.RootProvider%2A>プロパティ) ルート ノードを取得します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ルート ノードは、ルート プロバイダーから取得できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ICloneable.Clone">
+      <MemberSignature Language="C#" Value="object ICloneable.Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.ICloneable.Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNode.System#ICloneable#Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のノードのコピーである新しいノードを作成します。 このメンバーの詳細については、「<see cref="M:System.ICloneable.Clone" />」を参照してください。</summary>
+        <returns>新しいノードには、現在のノードのコピーがします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SiteMapNode.Roles%2A>と<xref:System.Web.SiteMapNode.Attributes%2A>コレクションは新しいコレクションにコピーします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IHierarchyData.GetChildren">
+      <MemberSignature Language="C#" Value="System.Web.UI.IHierarchicalEnumerable IHierarchyData.GetChildren ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Web.UI.IHierarchicalEnumerable System.Web.UI.IHierarchyData.GetChildren() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNode.System#Web#UI#IHierarchyData#GetChildren" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.IHierarchicalEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の項目の階層の子のデータ項目を取得します。 このメンバーの詳細については、「<see cref="M:System.Web.UI.IHierarchyData.GetChildren" />」を参照してください。</summary>
+        <returns>階層内の現在の項目の直下の子を表す <see cref="T:System.Web.UI.IHierarchicalEnumerable" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SiteMapNode.System%23Web%23UI%23IHierarchyData%23GetChildren%2A>メソッドからデリゲートを<xref:System.Web.SiteMapNode.ChildNodes%2A>プロパティです。  
+  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.SiteMapNode> のインスタンスが <xref:System.Web.UI.IHierarchyData> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IHierarchyData.GetParent">
+      <MemberSignature Language="C#" Value="System.Web.UI.IHierarchyData IHierarchyData.GetParent ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Web.UI.IHierarchyData System.Web.UI.IHierarchyData.GetParent() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNode.System#Web#UI#IHierarchyData#GetParent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.IHierarchyData</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の項目の階層の親を取得します。 このメンバーの詳細については、「<see cref="M:System.Web.UI.IHierarchyData.GetParent" />」を参照してください。</summary>
+        <returns>階層内の現在の項目の親を表す <see cref="T:System.Web.UI.IHierarchicalEnumerable" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SiteMapNode.System%23Web%23UI%23IHierarchyData%23GetParent%2A>メソッドからデリゲートを<xref:System.Web.SiteMapNode.ParentNode%2A>プロパティです。  
+  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.SiteMapNode> のインスタンスが <xref:System.Web.UI.IHierarchyData> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IHierarchyData.HasChildren">
+      <MemberSignature Language="C#" Value="bool System.Web.UI.IHierarchyData.HasChildren { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Web.UI.IHierarchyData.HasChildren" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapNode.System#Web#UI#IHierarchyData#HasChildren" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.Web.SiteMapNode" /> オブジェクトが子ノードを持っているかどうかを示す値を取得します。 このメンバーの詳細については、「<see cref="P:System.Web.UI.IHierarchyData.HasChildren" />」を参照してください。</summary>
+        <value>
+          ノードが子ノードを持っている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SiteMapNode.System%23Web%23UI%23IHierarchyData%23HasChildren%2A>プロパティを委任する場合、<xref:System.Web.SiteMapNode.HasChildNodes%2A>プロパティです。  
+  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.SiteMapNode> のインスタンスが <xref:System.Web.UI.IHierarchyData> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IHierarchyData.Item">
+      <MemberSignature Language="C#" Value="object System.Web.UI.IHierarchyData.Item { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Web.UI.IHierarchyData.Item" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapNode.System#Web#UI#IHierarchyData#Item" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>階層データ項目を取得します。 このメンバーの詳細については、「<see cref="P:System.Web.UI.IHierarchyData.Item" />」を参照してください。</summary>
+        <value>階層的なデータ ノード オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.SiteMapNode> のインスタンスが <xref:System.Web.UI.IHierarchyData> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IHierarchyData.Path">
+      <MemberSignature Language="C#" Value="string System.Web.UI.IHierarchyData.Path { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string System.Web.UI.IHierarchyData.Path" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapNode.System#Web#UI#IHierarchyData#Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>階層データ項目のパスを取得します。 このメンバーの詳細については、「<see cref="P:System.Web.UI.IHierarchyData.Path" />」を参照してください。</summary>
+        <value>データ項目のパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SiteMapNode.System%23Web%23UI%23IHierarchyData%23Path%2A>プロパティを委任する場合、<xref:System.Web.SiteMapNode.Url%2A>プロパティです。  
+  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.SiteMapNode> のインスタンスが <xref:System.Web.UI.IHierarchyData> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IHierarchyData.Type">
+      <MemberSignature Language="C#" Value="string System.Web.UI.IHierarchyData.Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string System.Web.UI.IHierarchyData.Type" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapNode.System#Web#UI#IHierarchyData#Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>階層データ項目の型名を表す文字列を取得します。 このメンバーの詳細については、「<see cref="P:System.Web.UI.IHierarchyData.Type" />」をご覧ください。</summary>
+        <value>という名前の文字列<c>"SiteMapNode"</c>です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.SiteMapNode> のインスタンスが <xref:System.Web.UI.IHierarchyData> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.INavigateUIData.Description">
+      <MemberSignature Language="C#" Value="string System.Web.UI.INavigateUIData.Description { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string System.Web.UI.INavigateUIData.Description" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapNode.System#Web#UI#INavigateUIData#Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サイト マップ ノードの <see cref="P:System.Web.SiteMapNode.Description" /> プロパティを取得します。 このメンバーの詳細については、「<see cref="P:System.Web.UI.INavigateUIData.Description" />」を参照してください。</summary>
+        <value>ナビゲーション コントロールのノードのツールヒントに表示されるテキスト。それ以外の場合、<see cref="P:System.Web.SiteMapNode.Description" /> が設定されていない場合は <see cref="F:System.String.Empty" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SiteMapNode.System%23Web%23UI%23INavigateUIData%23Description%2A>プロパティを委任する場合、<xref:System.Web.SiteMapNode.Description%2A>プロパティです。  
+  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.SiteMapNode> のインスタンスが <xref:System.Web.UI.INavigateUIData> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.INavigateUIData.Name">
+      <MemberSignature Language="C#" Value="string System.Web.UI.INavigateUIData.Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string System.Web.UI.INavigateUIData.Name" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapNode.System#Web#UI#INavigateUIData#Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サイト マップ ノードの <see cref="P:System.Web.SiteMapNode.Title" /> プロパティを取得します。 このメンバーの詳細については、「<see cref="P:System.Web.UI.INavigateUIData.Name" />」を参照してください。</summary>
+        <value>ナビゲーション コントロールのノードに表示されるテキスト。それ以外の場合、<see cref="P:System.Web.SiteMapNode.Title" /> がノードに対して設定されていない場合は <see cref="F:System.String.Empty" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SiteMapNode.System%23Web%23UI%23INavigateUIData%23Name%2A>プロパティを委任する場合、<xref:System.Web.SiteMapNode.Title%2A>プロパティです。  
+  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.SiteMapNode> のインスタンスが <xref:System.Web.UI.INavigateUIData> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.INavigateUIData.NavigateUrl">
+      <MemberSignature Language="C#" Value="string System.Web.UI.INavigateUIData.NavigateUrl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string System.Web.UI.INavigateUIData.NavigateUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapNode.System#Web#UI#INavigateUIData#NavigateUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サイト マップ ノードの <see cref="P:System.Web.SiteMapNode.Url" /> プロパティを取得します。 このメンバーの詳細については、「<see cref="P:System.Web.UI.INavigateUIData.NavigateUrl" />」を参照してください。</summary>
+        <value>ノードがクリックされたときに移動する URL。それ以外の場合は <see cref="P:System.Web.SiteMapNode.Url" /> がノードに設定されていなければ <see cref="F:System.String.Empty" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SiteMapNode.System%23Web%23UI%23INavigateUIData%23NavigateUrl%2A>プロパティを委任する場合、<xref:System.Web.SiteMapNode.Url%2A>プロパティです。  
+  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.SiteMapNode> のインスタンスが <xref:System.Web.UI.INavigateUIData> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.INavigateUIData.Value">
+      <MemberSignature Language="C#" Value="string System.Web.UI.INavigateUIData.Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string System.Web.UI.INavigateUIData.Value" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapNode.System#Web#UI#INavigateUIData#Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サイト マップ ノードの <see cref="P:System.Web.SiteMapNode.Title" /> プロパティを取得します。 このメンバーの詳細については、「<see cref="P:System.Web.UI.INavigateUIData.Value" />」を参照してください。</summary>
+        <value>表示されていない値。それ以外の場合は <see cref="F:System.String.Empty" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SiteMapNode.System%23Web%23UI%23INavigateUIData%23Value%2A>プロパティを委任する場合、<xref:System.Web.SiteMapNode.Title%2A>プロパティ ポストバック イベントを処理するために使用されるデータなどのナビゲーション ノードに関する追加データを格納するために使用されます。  
+  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.SiteMapNode> のインスタンスが <xref:System.Web.UI.INavigateUIData> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Title">
+      <MemberSignature Language="C#" Value="public virtual string Title { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Title" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapNode.Title" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のタイトル、<see cref="T:System.Web.SiteMapNode" />オブジェクト。</summary>
+        <value>ノードのタイトルを表す文字列。 既定値は、<see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SiteMapNode.Title%2A>プロパティが使用する代わりに、ノードのラベルを表示するためにナビゲーション コントロールで使用される、<xref:System.Web.SiteMapNode.Url%2A>プロパティの中に、<xref:System.Web.SiteMapNode.Description%2A>プロパティは、マウスでポイント イベントのツールヒント要素として使用します。  
+  
+ ローカライズされた値、<xref:System.Web.SiteMapNode.Title%2A>場合、プロパティが返されます、<xref:System.Web.SiteMapProvider.EnableLocalization%2A>プロパティは`true`します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ノードは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNode.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスの値を変換、<see cref="T:System.Web.SiteMapNode" />クラスを等価の文字列形式。</summary>
+        <returns>この値の文字列形式を<see cref="T:System.Web.SiteMapNode" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SiteMapNode.ToString%2A>メソッドを返します、<xref:System.Web.SiteMapNode.Title%2A>のプロパティ、<xref:System.Web.SiteMapNode>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例では、比較、<xref:System.Web.SiteMapNode.ToString%2A>メソッドを<xref:System.Web.SiteMapNode.Url%2A>と<xref:System.Web.SiteMapNode.Title%2A>のプロパティ、<xref:System.Web.SiteMapNode>オブジェクト。  
+  
+ [!code-aspx-csharp[System.Web.SiteMap_2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SiteMap_2/CS/catalog2cs.aspx#1)]
+ [!code-aspx-vb[System.Web.SiteMap_2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SiteMap_2/VB/catalog2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Url">
+      <MemberSignature Language="C#" Value="public virtual string Url { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Url" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapNode.Url" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定ページの URL、<see cref="T:System.Web.SiteMapNode" />オブジェクトを表します。</summary>
+        <value>ノードが表す ページの URL です。 既定値は、<see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.XmlSiteMapProvider> ASP.NET の既定のサイト マップ プロバイダー実装には、クラスを使用して、<xref:System.Web.SiteMapNode.Url%2A?displayProperty=nameWithType>ルックアップ キーとしてのプロパティです。 そのため、いずれか<xref:System.Web.SiteMapNode>オブジェクトによって使用される、<xref:System.Web.XmlSiteMapProvider>クラスでは、プロバイダーのスコープ内で一意の URL が必要です。  
+  
+ 先頭および末尾の空白文字は無視されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、<xref:System.Web.SiteMapNode.Url%2A>のプロパティ、<xref:System.Web.SiteMapNode>オブジェクト。 `AccessSiteMapProvider`を持たない行としてのルート ノードを格納`parentnodeid`定義します。 使用して、行が返されます、<xref:System.Data.OleDb.OleDbDataReader>オブジェクト、および<xref:System.Web.SiteMapNode>データ リーダー内の値のプロパティが設定されます。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.SiteMapProvider>クラスです。  
+  
+ [!code-cpp[Urtue.Samples.Alexkr.AccessSiteMapProvider_1#4](~/samples/snippets/cpp/VS_Snippets_WebNet/Urtue.Samples.Alexkr.AccessSiteMapProvider_1/CPP/accesssitemapprovider.cpp#4)]
+ [!code-csharp[Urtue.Samples.Alexkr.AccessSiteMapProvider_1#4](~/samples/snippets/csharp/VS_Snippets_WebNet/Urtue.Samples.Alexkr.AccessSiteMapProvider_1/CS/accesssitemapprovider.cs#4)]
+ [!code-vb[Urtue.Samples.Alexkr.AccessSiteMapProvider_1#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Urtue.Samples.Alexkr.AccessSiteMapProvider_1/VB/accesssitemapprovider.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ノードは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

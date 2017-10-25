@@ -1,0 +1,353 @@
+<Type Name="WebScriptEnablingBehavior" FullName="System.ServiceModel.Description.WebScriptEnablingBehavior">
+  <TypeSignature Language="C#" Value="public sealed class WebScriptEnablingBehavior : System.ServiceModel.Description.WebHttpBehavior" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WebScriptEnablingBehavior extends System.ServiceModel.Description.WebHttpBehavior" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Description.WebScriptEnablingBehavior" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Description.WebHttpBehavior</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Windows Communication Foundation (WCF) エンドポイントをブラウザー ベースの ASP.NET AJAX クライアントから HTTP 要求を受信できるようにする動作のサポートを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エンドポイントに適用されると、<xref:System.ServiceModel.Description.WebScriptEnablingBehavior> 動作によって、JSON (JavaScript Object Notation) エンコーディングに必要なサポートを除いて、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] と ASP.NET AJAX 統合が有効になります。 JSON を含むさまざまな種類のエンコーディングは、<xref:System.ServiceModel.Configuration.WebMessageEncodingElement> または適切に構成された <xref:System.ServiceModel.WebHttpBinding> によって有効になります。 <xref:System.ServiceModel.Description.WebScriptEnablingBehavior> 動作は <xref:System.ServiceModel.Description.IEndpointBehavior> を実装し、<xref:System.ServiceModel.Description.WebHttpBehavior> から継承します。これにより、SOAP 以外のエンドポイントを公開する [!INCLUDE[indigo2](~/includes/indigo2-md.md)] サービスで、より一般的な Web プログラミング モデルが有効になります。  
+  
+ 具体的に言うと、<xref:System.ServiceModel.Description.WebScriptEnablingBehavior> では以下を使用できます。  
+  
+-   URL サフィックスに基づく操作へのディスパッチ、HTTP 動詞 (POST または GET) の選択のサポート、HTTP キャッシュ期間のコントロールなどの HTTP プログラミング モデル。 [!INCLUDE[crabout](~/includes/crabout-md.md)]HTTP プログラミング モデルは、「 [WCF Web HTTP プログラミング モデルの概要](~/docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md)です。 この動作を使用するときは、既定の HTTP 動詞が POST であることに注意してください。  
+  
+-   操作の要求メッセージと応答メッセージごとの適切なフォーマッタ (URL パラメーターのサポートなど)。  
+  
+-   JavaScript プロキシ エンドポイント。  
+  
+ [!INCLUDE[indigo2](~/includes/indigo2-md.md)] サービスを ASP.NET AJAX クライアントから呼び出すには、サービスが <xref:System.ServiceModel.WebHttpBinding> バインディングによって構成され、<xref:System.ServiceModel.Description.WebScriptEnablingBehavior> がエンドポイント動作のコレクションに追加される必要があります。 これ行うどちらかの構成に追加することによって、<xref:System.ServiceModel.Configuration.WebScriptEnablingElement>に AJAX エンドポイントをアクティブ化して構成を使用せず、<xref:System.ServiceModel.Activation.WebScriptServiceHostFactory>で既定のファクトリではなく、 [ @ServiceHost ](~/docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md) .svc ファイルでディレクティブです。  
+  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]さまざまな方法を有効にする、[!INCLUDE[indigo2](~/includes/indigo2-md.md)]サービスを ASP.NET AJAX クライアントに応答しを参照してください[ASP.NET AJAX 用の WCF サービスの作成](~/docs/framework/wcf/feature-details/creating-wcf-services-for-aspnet-ajax.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebScriptEnablingBehavior ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WebScriptEnablingBehavior.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Description.WebScriptEnablingBehavior" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.WebScriptEnablingBehavior.DefaultBodyStyle%2A> の値を <xref:System.ServiceModel.Web.WebMessageBodyStyle.WrappedRequest> に設定します。  
+  
+ <xref:System.ServiceModel.Description.WebScriptEnablingBehavior.DefaultOutgoingRequestFormat%2A> と <xref:System.ServiceModel.Description.WebScriptEnablingBehavior.DefaultOutgoingResponseFormat%2A> の値を <xref:System.ServiceModel.Web.WebMessageBodyStyle.WrappedRequest> に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddClientErrorInspector">
+      <MemberSignature Language="C#" Value="protected override void AddClientErrorInspector (System.ServiceModel.Description.ServiceEndpoint endpoint, System.ServiceModel.Dispatcher.ClientRuntime clientRuntime);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AddClientErrorInspector(class System.ServiceModel.Description.ServiceEndpoint endpoint, class System.ServiceModel.Dispatcher.ClientRuntime clientRuntime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WebScriptEnablingBehavior.AddClientErrorInspector(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.ClientRuntime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="endpoint" Type="System.ServiceModel.Description.ServiceEndpoint" />
+        <Parameter Name="clientRuntime" Type="System.ServiceModel.Dispatcher.ClientRuntime" />
+      </Parameters>
+      <Docs>
+        <param name="endpoint">To be added.</param>
+        <param name="clientRuntime">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddServerErrorHandlers">
+      <MemberSignature Language="C#" Value="protected override void AddServerErrorHandlers (System.ServiceModel.Description.ServiceEndpoint endpoint, System.ServiceModel.Dispatcher.EndpointDispatcher endpointDispatcher);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AddServerErrorHandlers(class System.ServiceModel.Description.ServiceEndpoint endpoint, class System.ServiceModel.Dispatcher.EndpointDispatcher endpointDispatcher) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WebScriptEnablingBehavior.AddServerErrorHandlers(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.EndpointDispatcher)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="endpoint" Type="System.ServiceModel.Description.ServiceEndpoint" />
+        <Parameter Name="endpointDispatcher" Type="System.ServiceModel.Dispatcher.EndpointDispatcher" />
+      </Parameters>
+      <Docs>
+        <param name="endpoint">To be added.</param>
+        <param name="endpointDispatcher">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyClientBehavior">
+      <MemberSignature Language="C#" Value="public override void ApplyClientBehavior (System.ServiceModel.Description.ServiceEndpoint endpoint, System.ServiceModel.Dispatcher.ClientRuntime clientRuntime);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ApplyClientBehavior(class System.ServiceModel.Description.ServiceEndpoint endpoint, class System.ServiceModel.Dispatcher.ClientRuntime clientRuntime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WebScriptEnablingBehavior.ApplyClientBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.ClientRuntime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="endpoint" Type="System.ServiceModel.Description.ServiceEndpoint" />
+        <Parameter Name="clientRuntime" Type="System.ServiceModel.Dispatcher.ClientRuntime" />
+      </Parameters>
+      <Docs>
+        <param name="endpoint">コントラクトを公開する <see cref="T:System.ServiceModel.Description.ServiceEndpoint" />。</param>
+        <param name="clientRuntime">カスタム動作が適用される <see cref="T:System.ServiceModel.Dispatcher.ClientRuntime" />。</param>
+        <summary>動作をエンドポイント全体のクライアントに適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エンドポイントで使用されるすべてのメッセージまたは特定の操作について、クライアント ランタイムを表示または変更したり、クライアント ランタイムにカスタム拡張機能を追加したりするには、<xref:System.ServiceModel.Description.IEndpointBehavior.ApplyClientBehavior%28System.ServiceModel.Description.ServiceEndpoint%2CSystem.ServiceModel.Dispatcher.ClientRuntime%29> メソッドを実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyDispatchBehavior">
+      <MemberSignature Language="C#" Value="public override void ApplyDispatchBehavior (System.ServiceModel.Description.ServiceEndpoint endpoint, System.ServiceModel.Dispatcher.EndpointDispatcher endpointDispatcher);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ApplyDispatchBehavior(class System.ServiceModel.Description.ServiceEndpoint endpoint, class System.ServiceModel.Dispatcher.EndpointDispatcher endpointDispatcher) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WebScriptEnablingBehavior.ApplyDispatchBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.EndpointDispatcher)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="endpoint" Type="System.ServiceModel.Description.ServiceEndpoint" />
+        <Parameter Name="endpointDispatcher" Type="System.ServiceModel.Dispatcher.EndpointDispatcher" />
+      </Parameters>
+      <Docs>
+        <param name="endpoint">コントラクトを公開する <see cref="T:System.ServiceModel.Description.ServiceEndpoint" />。</param>
+        <param name="endpointDispatcher">カスタム動作が適用される <see cref="T:System.ServiceModel.Dispatcher.EndpointDispatcher" />。</param>
+        <summary>動作をサービス エンドポイントに適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、このメソッドは、動作がエンドポイントに適用されるときに、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] によって自動的に呼び出されます。 そのため、このメソッドを手動で呼び出す必要はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutomaticFormatSelectionEnabled">
+      <MemberSignature Language="C#" Value="public override bool AutomaticFormatSelectionEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutomaticFormatSelectionEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.WebScriptEnablingBehavior.AutomaticFormatSelectionEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>形式の自動選択が有効かどうかを決定する値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />形式の自動選択が有効である場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]形式の自動選択を参照してください[WCF Web HTTP 書式](~/docs/framework/wcf/feature-details/wcf-web-http-formatting.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultBodyStyle">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Web.WebMessageBodyStyle DefaultBodyStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.Web.WebMessageBodyStyle DefaultBodyStyle" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.WebScriptEnablingBehavior.DefaultBodyStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Web.WebMessageBodyStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定のメッセージ本文のスタイルを取得または設定します。</summary>
+        <value><see cref="F:System.ServiceModel.Web.WebMessageBodyStyle.WrappedRequest" /> 値。 この既定値は唯一の有効な値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Web.WebMessageBodyStyle.WrappedRequest> 値はサポートされる唯一の <xref:System.ServiceModel.Web.WebMessageBodyStyle> です。他の値を設定すると、<xref:System.NotSupportedException> がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">設定された本文のスタイルはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultOutgoingRequestFormat">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Web.WebMessageFormat DefaultOutgoingRequestFormat { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.Web.WebMessageFormat DefaultOutgoingRequestFormat" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.WebScriptEnablingBehavior.DefaultOutgoingRequestFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Web.WebMessageFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定の送信要求メッセージ形式を取得または設定します。</summary>
+        <value>送信要求メッセージが使用する <see cref="T:System.ServiceModel.Web.WebMessageFormat" />。 既定値は <see cref="F:System.ServiceModel.Web.WebMessageFormat.Json" /> です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定されたメッセージ形式が <see cref="T:System.ServiceModel.Web.WebMessageFormat" /> の有効な値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultOutgoingResponseFormat">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Web.WebMessageFormat DefaultOutgoingResponseFormat { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.Web.WebMessageFormat DefaultOutgoingResponseFormat" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.WebScriptEnablingBehavior.DefaultOutgoingResponseFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Web.WebMessageFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定の送信応答メッセージ形式を取得または設定します。</summary>
+        <value>送信応答メッセージが使用する <see cref="T:System.ServiceModel.Web.WebMessageFormat" />。 既定値は <see cref="F:System.ServiceModel.Web.WebMessageFormat.Json" /> です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定されたメッセージ形式が <see cref="T:System.ServiceModel.Web.WebMessageFormat" /> の有効な値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FaultExceptionEnabled">
+      <MemberSignature Language="C#" Value="public override bool FaultExceptionEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool FaultExceptionEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.WebScriptEnablingBehavior.FaultExceptionEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内部サーバー エラー (HTTP ステータス コード: 500) が発生したときに FaultException が生成されるかどうかを指定するフラグを取得または設定します。</summary>
+        <value>返します<see langword="true" />フラグが有効である場合、それ以外の場合を返します<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetQueryStringConverter">
+      <MemberSignature Language="C#" Value="protected override System.ServiceModel.Dispatcher.QueryStringConverter GetQueryStringConverter (System.ServiceModel.Description.OperationDescription operationDescription);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.ServiceModel.Dispatcher.QueryStringConverter GetQueryStringConverter(class System.ServiceModel.Description.OperationDescription operationDescription) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WebScriptEnablingBehavior.GetQueryStringConverter(System.ServiceModel.Description.OperationDescription)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Dispatcher.QueryStringConverter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="operationDescription" Type="System.ServiceModel.Description.OperationDescription" />
+      </Parameters>
+      <Docs>
+        <param name="operationDescription">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HelpEnabled">
+      <MemberSignature Language="C#" Value="public override bool HelpEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HelpEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.WebScriptEnablingBehavior.HelpEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[!INCLUDE[indigo2](~/includes/indigo2-md.md)] REST ヘルプ ページが有効かどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />場合、 [!INCLUDE[indigo2](~/includes/indigo2-md.md)] REST ヘルプ ページは、それ以外の有効な<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)][!INCLUDE[indigo2](~/includes/indigo2-md.md)] REST ヘルプ ページを参照してください[WCF Web HTTP サービス ヘルプ ページ](~/docs/framework/wcf/feature-details/wcf-web-http-service-help-page.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Validate">
+      <MemberSignature Language="C#" Value="public override void Validate (System.ServiceModel.Description.ServiceEndpoint endpoint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Validate(class System.ServiceModel.Description.ServiceEndpoint endpoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WebScriptEnablingBehavior.Validate(System.ServiceModel.Description.ServiceEndpoint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="endpoint" Type="System.ServiceModel.Description.ServiceEndpoint" />
+      </Parameters>
+      <Docs>
+        <param name="endpoint">コントラクトを公開する <see cref="T:System.ServiceModel.Description.ServiceEndpoint" />。</param>
+        <summary>エンドポイントが ASP.NET AJAX エンドポイントとして機能するための要件を満たすことを確認します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このエンドポイントが `null` ではないこと、HTTP または HTTPS スキームを使用すること、<xref:System.Xml.Serialization.XmlSerializer> を使用しないこと、HTTP GET または POST 動詞を使用することを検証します。また、バインディングの <xref:System.ServiceModel.Channels.MessageVersion> が <xref:System.ServiceModel.Channels.MessageVersion.None%2A> に設定されていること、バインディングに <xref:System.ServiceModel.Channels.TransportBindingElement> が含まれ、そこで <xref:System.ServiceModel.Channels.TransportBindingElement.ManualAddressing%2A> が `true` に設定されていることを検証します。 このメソッドは、メソッドに SOAP ヘッダーやラッパー名がなく、操作でサポートされていない他の項目もないことも確認します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このエンドポイントは、ASP.NET AJAX エンドポイントであるための要件のいずれかを満たしていません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

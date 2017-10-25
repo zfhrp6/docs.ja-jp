@@ -1,0 +1,119 @@
+<Type Name="TypeLibFuncAttribute" FullName="System.Runtime.InteropServices.TypeLibFuncAttribute">
+  <TypeSignature Language="C#" Value="public sealed class TypeLibFuncAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TypeLibFuncAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.TypeLibFuncAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>含まれています、<see cref="T:System.Runtime.InteropServices.FUNCFLAGS" />に対してこのメソッドは COM タイプ ライブラリからインポートされました。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [Tlbimp.exe (タイプ ライブラリ インポーター)](~/docs/framework/tools/tlbimp-exe-type-library-importer.md)メソッドにこの属性を適用します。  
+  
+ タイプ ライブラリがインポートされ、変更しないでときに、この属性が適用されます。 適用されている場合にのみ、メソッドの<xref:System.Runtime.InteropServices.FUNCFLAGS>0 以外に評価されます。 属性が必要なツールで使用するように設計方法元<xref:System.Runtime.InteropServices.FUNCFLAGS>が設定されます。 共通言語ランタイムでは、この属性は使用しません。  
+  
+   
+  
+## Examples  
+ 次の例は、取得する方法を示します、<xref:System.Runtime.InteropServices.TypeLibFuncAttribute>メソッドの値。  
+  
+ [!code-cpp[ImprovedInteropSnippets#5](~/samples/snippets/cpp/VS_Snippets_CLR/ImprovedInteropSnippets/CPP/codefile5.cpp#5)]
+ [!code-csharp[ImprovedInteropSnippets#5](~/samples/snippets/csharp/VS_Snippets_CLR/ImprovedInteropSnippets/CS/codefile5.cs#5)]
+ [!code-vb[ImprovedInteropSnippets#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/ImprovedInteropSnippets/VB/codefile5.vb#5)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TypeLibFuncAttribute (short flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int16 flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.TypeLibFuncAttribute.#ctor(System.Int16)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="flags" Type="System.Int16" />
+      </Parameters>
+      <Docs>
+        <param name="flags"><see cref="T:System.Runtime.InteropServices.TypeLibFuncFlags" />メソッドの値、属性付き検出されるよう、タイプ ライブラリからインポートできませんでした。</param>
+        <summary>指定した <see cref="T:System.Runtime.InteropServices.TypeLibFuncFlags" /> 値を使用して、<see langword="TypeLibFuncAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TypeLibFuncAttribute (System.Runtime.InteropServices.TypeLibFuncFlags flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Runtime.InteropServices.TypeLibFuncFlags flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.TypeLibFuncAttribute.#ctor(System.Runtime.InteropServices.TypeLibFuncFlags)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="flags" Type="System.Runtime.InteropServices.TypeLibFuncFlags" />
+      </Parameters>
+      <Docs>
+        <param name="flags"><see cref="T:System.Runtime.InteropServices.TypeLibFuncFlags" />メソッドの値、属性付き検出されるよう、タイプ ライブラリからインポートできませんでした。</param>
+        <summary>指定した <see cref="T:System.Runtime.InteropServices.TypeLibFuncFlags" /> 値を使用して、<see langword="TypeLibFuncAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public System.Runtime.InteropServices.TypeLibFuncFlags Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.InteropServices.TypeLibFuncFlags Value" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.TypeLibFuncAttribute.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.TypeLibFuncFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Runtime.InteropServices.TypeLibFuncFlags" />このメソッドの値。</summary>
+        <value><see cref="T:System.Runtime.InteropServices.TypeLibFuncFlags" />このメソッドの値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,274 @@
+<Type Name="DataGridItemCollection" FullName="System.Web.UI.WebControls.DataGridItemCollection">
+  <TypeSignature Language="C#" Value="public class DataGridItemCollection : System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridItemCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.DataGridItemCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary><see cref="T:System.Web.UI.WebControls.DataGrid" /> コントロールに含まれる <see cref="T:System.Web.UI.WebControls.DataGridItem" /> オブジェクトのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataGridItemCollection>クラスのコレクションを表します<xref:System.Web.UI.WebControls.DataGridItem>順番のデータ項目を表す、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 プログラムで取得する<xref:System.Web.UI.WebControls.DataGridItem>オブジェクトから、<xref:System.Web.UI.WebControls.DataGrid>コントロールを使用して次のいずれか。  
+  
+-   1 つを取得するインデクサーを使用して<xref:System.Web.UI.WebControls.DataGridItem>配列表記を使用して、コレクションからオブジェクト。  
+  
+-   使用して、<xref:System.Web.UI.WebControls.DataGridItemCollection.CopyTo%2A>にコレクションの内容をコピーする方法、 <xref:System.Array?displayProperty=nameWithType>、コレクションからアイテムを取得し、使用できます。  
+  
+-   使用して、<xref:System.Web.UI.WebControls.DataGridItemCollection.GetEnumerator%2A>メソッドを作成、<xref:System.Collections.IEnumerator?displayProperty=nameWithType>コレクションから項目を取得するために使用するインターフェイスです。  
+  
+ <xref:System.Web.UI.WebControls.DataGridItemCollection.Count%2A>プロパティ コレクション内のアイテムの合計数を指定およびコレクションの上限を確認に一般的に使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、反復処理する方法を示しています。<xref:System.Web.UI.WebControls.DataGridItem>内のオブジェクト、<xref:System.Web.UI.WebControls.DataGridItemCollection>コレクション。  
+  
+ [!code-aspx-csharp[DataGridColumnVisible#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridColumnVisible/CS/datagridcolumnvisiblecs.aspx#1)]
+ [!code-aspx-vb[DataGridColumnVisible#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridColumnVisible/VB/datagridcolumnvisiblevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridItemCollection (System.Collections.ArrayList items);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.ArrayList items) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGridItemCollection.#ctor(System.Collections.ArrayList)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="items" Type="System.Collections.ArrayList" />
+      </Parameters>
+      <Docs>
+        <param name="items">A<see cref="T:System.Collections.ArrayList" />コレクションの初期化に使用するアイテムを格納しています。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.DataGridItemCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.DataGridItemCollection>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGridItemCollection.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Web.UI.WebControls.DataGridItemCollection" /> からコピーされた項目を受け取る、0 から始まる <see cref="T:System.Array" />。</param>
+        <param name="index">指定した最初の位置<see cref="T:System.Array" />内容のコピーを受信します。</param>
+        <summary>これからすべての項目をコピー<see cref="T:System.Web.UI.WebControls.DataGridItemCollection" />を指定したコレクション<see cref="T:System.Array" />で指定したインデックスから始まる、<see cref="T:System.Array" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内容をコピーするには、このメソッドを使用して、<xref:System.Web.UI.WebControls.DataGridItemCollection>に指定されたコレクション<xref:System.Array?displayProperty=nameWithType>、指定したインデックスから始まります。  
+  
+> [!NOTE]
+>  `array`パラメーターは、0 から始まるである必要があります<xref:System.Array?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGridItemCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数を取得<see cref="T:System.Web.UI.WebControls.DataGridItem" />コレクション内のオブジェクト。</summary>
+        <value>数<see cref="T:System.Web.UI.WebControls.DataGridItem" />コレクション内のオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGridItemCollection.Count%2A>の数を決定するプロパティ<xref:System.Web.UI.WebControls.DataGridItem>内のオブジェクト、<xref:System.Web.UI.WebControls.DataGridItemCollection>コレクション。 <xref:System.Web.UI.WebControls.DataGridItemCollection.Count%2A>プロパティは通常、コレクションのバインド上の決定にコレクションを反復処理する場合に使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGridItemCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、 <see cref="T:System.Collections.IEnumerator" />-すべてを含むオブジェクトを実装する、<see cref="T:System.Web.UI.WebControls.DataGridItem" />内のオブジェクト、<see cref="T:System.Web.UI.WebControls.DataGridItemCollection" />コレクション。</summary>
+        <returns>A <see cref="T:System.Collections.IEnumerator" />-すべてを含むオブジェクトを実装する<see cref="T:System.Web.UI.WebControls.DataGridItem" />内のオブジェクト、<see cref="T:System.Web.UI.WebControls.DataGridItemCollection" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、作成、 <xref:System.Collections.IEnumerator?displayProperty=nameWithType>-内の各項目の取得を反復できるオブジェクトを実装する、<xref:System.Web.UI.WebControls.DataGridItemCollection>コレクション。  
+  
+ 使用して、<xref:System.Collections.IEnumerator.Current%2A?displayProperty=nameWithType>コレクションで示される現在の項目を取得するプロパティです。  
+  
+ 使用して、<xref:System.Collections.IEnumerator.MoveNext%2A?displayProperty=nameWithType>コレクション内の次の項目に移動します。  
+  
+ 使用して、<xref:System.Collections.IEnumerator.Reset%2A?displayProperty=nameWithType>列挙子を初期位置に移動するメソッド。  
+  
+> [!NOTE]
+>  作成した後、 <xref:System.Collections.IEnumerator?displayProperty=nameWithType>-オブジェクトまたはを使用して実装、<xref:System.Collections.IEnumerator.Reset%2A?displayProperty=nameWithType>列挙子をコレクションの最初の項目に移動するメソッドを呼び出す必要があります、<xref:System.Collections.IEnumerator.MoveNext%2A?displayProperty=nameWithType>メソッドです。 によって表される項目のそれ以外の場合、<xref:System.Collections.IEnumerator.Current%2A?displayProperty=nameWithType>プロパティが定義されていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGridItemCollection.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.WebControls.DataGridItem" />内のオブジェクト、<see cref="T:System.Web.UI.WebControls.DataGridItemCollection" />コレクションを変更することができます。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは常に返します`false`ことを示す、<xref:System.Web.UI.WebControls.DataGridItemCollection>コレクションは常に書き込むことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGridItemCollection.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセスをするかどうかを示す値を取得、<see cref="T:System.Web.UI.WebControls.DataGridItemCollection" />コレクションが同期されている (スレッド セーフ)。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティはから派生した、<xref:System.Collections.ICollection?displayProperty=nameWithType>インターフェイスし、常にオーバーライド`false`です。  
+  
+ 詳細については、<xref:System.Web.UI.WebControls.DataGridColumnCollection.IsSynchronized%2A>プロパティを参照してください、<xref:System.Collections.ICollection.IsSynchronized%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Collections.ICollection?displayProperty=nameWithType>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.DataGridItem this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.DataGridItem Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGridItemCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataGridItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクションから取得する <see cref="T:System.Web.UI.WebControls.DataGridItem" /> の 0 から始まるインデックス番号。</param>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.DataGridItem" />オブジェクト、コレクション内の指定したインデックス位置。</summary>
+        <value>コレクション内の指定したインデックス位置の <see cref="T:System.Web.UI.WebControls.DataGridItem" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインデクサーを使用して、取得、<xref:System.Web.UI.WebControls.DataGridItem>オブジェクトから、<xref:System.Web.UI.WebControls.DataGridItemCollection>配列表記を使用して、指定したインデックス位置のコレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGridItemCollection.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセスを同期するために使用できるオブジェクトを取得、<see cref="T:System.Web.UI.WebControls.DataGridItemCollection" />コレクション。</summary>
+        <value>A<see cref="T:System.Object" />コレクションへのアクセスを同期するために使用できます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装で返されるオブジェクトは、<xref:System.Web.UI.WebControls.DataGridItemCollection>オブジェクト自体です。  
+  
+ 詳細については、<xref:System.Web.UI.WebControls.DataGridColumnCollection.SyncRoot%2A>プロパティを参照してください、<xref:System.Collections.ICollection.SyncRoot%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Collections.ICollection?displayProperty=nameWithType>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

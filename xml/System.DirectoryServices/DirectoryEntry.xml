@@ -1,0 +1,1863 @@
+<Type Name="DirectoryEntry" FullName="System.DirectoryServices.DirectoryEntry">
+  <TypeSignature Language="C#" Value="public class DirectoryEntry : System.ComponentModel.Component" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DirectoryEntry extends System.ComponentModel.Component" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.DirectoryEntry" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Component</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.DirectoryServices.Design.DirectoryEntryConverter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.DirectoryServices.DSDescription("DirectoryEntryDesc")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.DirectoryEntry" /> クラスは、Active Directory ドメイン サービス階層のノードまたはオブジェクトをカプセル化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスを使用して、オブジェクトへのバインドまたは読み取りや属性を更新します。 <xref:System.DirectoryServices.DirectoryEntry>、ヘルパー クラスと共にサポート ライフ サイクルの管理とナビゲーション メソッドを提供します。 作成、削除、名前変更、子ノードの移動と子の列挙が含まれます。 ノードを変更した後に、ツリーに保存するには変更をコミットする必要があります。 詳細については、<xref:System.DirectoryServices.DirectoryEntry.CommitChanges%2A> プロパティを参照してください。  
+  
+ <xref:System.DirectoryServices.DirectoryEntry>スキーマのエントリから正規エントリとすべてではなく、一部の情報にアクセスするために使用します。  
+  
+ Active Directory ドメイン サービス階層には、最大で 1000 単位の複数のノードが含まれています。 各ノードは、ネットワーク プリンターまたはドメイン内のユーザーなどのオブジェクトを表します。 企業ネットワークでは、新しい従業員が採用され、ネットワーク プリンターとコンピューターなどのオブジェクトが追加されますよう継続的に変更します。 Active Directory サービス インターフェイス (ADSI) テクノロジは、ディレクトリ ツリーをこれらのオブジェクトをプログラミングで追加する方法を提供します。  
+  
+ 階層内のディレクトリ エントリを作成するには、使用、<xref:System.DirectoryServices.DirectoryEntry.Children%2A>プロパティです。 <xref:System.DirectoryServices.DirectoryEntry.Children%2A>プロパティが提供するコレクション、<xref:System.DirectoryServices.DirectoryEntries.Add%2A>メソッドを使用する、コレクションにバインドされている親ノードのすぐ下にノードを追加します。 をコレクションにノードを追加する場合は、新しいノードの名前と、ノードと関連付けるスキーマ テンプレートの名前を指定する必要があります。 たとえば、"Computer"という名前のスキーマを使用して、階層に新しいコンピューターを追加します。  
+  
+ このクラスも含まれます属性は、次のキャッシュ、ネットワーク トラフィックを最適化することができます。 属性のキャッシュを使用するのを参照してください。、<xref:System.DirectoryServices.DirectoryEntry.UsePropertyCache%2A>プロパティです。  
+  
+ 関連付けられているクラス、<xref:System.DirectoryServices.DirectoryEntry>コンポーネントは、任意の Active Directory ドメイン サービスのサービス プロバイダーで使用できます。 現在のプロバイダーには、インターネット インフォメーション サービス (IIS)、ライトウェイト ディレクトリ アクセス プロトコル (LDAP)、Novell NetWare ディレクトリ サービス (NDS)、および WinNT などがあります。  
+  
+> [!NOTE]
+>  このクラスを使用する前に Active Directory ドメイン サービスの基本的な知識があると見なされます。 詳細については、次を参照してください。、<xref:System.DirectoryServices?displayProperty=nameWithType>名前空間の概要です。  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">
+      <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />
+    </permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DirectoryEntry ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectoryEntry.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.DirectoryServices.DirectoryEntry" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">
+          <see cref="F:System.Security.Permissions.SecurityAction.Demand" />
+        </permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DirectoryEntry (object adsObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object adsObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectoryEntry.#ctor(System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="adsObject" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="adsObject">バインド先のネイティブ Active Directory Domain Services オブジェクトの名前。</param>
+        <summary>指定したネイティブ Active Directory Domain Services オブジェクトにバインドする <see cref="T:System.DirectoryServices.DirectoryEntry" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用するとのメソッドとプロパティを使用するプログラム、<xref:System.DirectoryServices.DirectoryEntry>ネイティブ Active Directory ドメイン サービス オブジェクトに対して、ネイティブの API を介して Iad インターフェイスを実装するクラス。 Iad インターフェイスの詳細については、トピックを参照してください。 [Iad](http://msdn.microsoft.com/library/default.asp?url=/library/adsi/adsi/iads.asp) MSDN ライブラリで[http://msdn.microsoft.com/library](http://msdn.microsoft.com/library)です。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">
+          <see cref="F:System.Security.Permissions.SecurityAction.Demand" />
+        </permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DirectoryEntry (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectoryEntry.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path"><see cref="M:System.DirectoryServices.DirectoryEntry.#ctor(System.String)" /> をディレクトリにバインドするパス。 <see cref="P:System.DirectoryServices.DirectoryEntry.Path" /> プロパティは、この値に初期化されます。</param>
+        <summary>指定したパスにある Active Directory Domain Services のノードに対象のインスタンスをバインドする <see cref="T:System.DirectoryServices.DirectoryEntry" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例ではバインド、<xref:System.DirectoryServices.DirectoryEntry>ディレクトリ エントリに指定したパス、および表示するオブジェクト、<xref:System.DirectoryServices.DirectoryEntry.Path%2A>ノードのによって指定される各子エントリ<xref:System.DirectoryServices.DirectoryEntry.Children%2A>プロパティです。  
+  
+```vb  
+Public Class PrintChildren  
+  
+    'Entry point which delegates to C-style main Private Function.  
+    Public Overloads Shared Sub Main()  
+        Main(System.Environment.GetCommandLineArgs())  
+    End Sub  
+  
+    Overloads Public Shared Sub Main(args() As String)  
+        Dim objDE As DirectoryEntry  
+        Dim strPath As String = "LDAP://DC=onecity,DC=corp,DC=fabrikam,DC=com"  
+        If args.Length > 0 Then  
+            strPath = args(1)  
+        End If   
+        ' Create a new DirectoryEntry with the given path.  
+        objDE = New DirectoryEntry(strPath)  
+  
+        Dim objChildDE As DirectoryEntry  
+        For Each objChildDE In  objDE.Children  
+            Console.WriteLine(objChildDE.Path)  
+        Next objChildDE  
+    End Sub 'Main  
+End Class 'PrintChildren  
+  
+```  
+  
+```csharp  
+public class PrintChildren{  
+   public static void Main(String[] args)  
+   {  
+      DirectoryEntry objDE;  
+      String strPath="LDAP://DC=onecity,DC=corp,DC=fabrikam,DC=com";  
+      if(args.Length>0)strPath=args[1];  
+  
+      // Create a new DirectoryEntry with the given path.  
+      objDE=new DirectoryEntry(strPath);  
+  
+      foreach(DirectoryEntry objChildDE in objDE.Children)  
+        Console.WriteLine(objChildDE.Path);  
+   }  
+ }  
+  
+```  
+  
+```cpp#  
+int main()  
+{  
+    String^ args[] = Environment::GetCommandLineArgs();  
+    DirectoryEntry^ objDE;  
+    String^ strPath = "LDAP://DC=onecity,DC=corp,DC=fabrikam,DC=com";  
+    if(args->Length>1)  
+    {  
+        strPath=args[1];  
+    }  
+  
+    // Create a new DirectoryEntry with the given path.  
+    objDE = gcnew DirectoryEntry(strPath);  
+  
+    System::Collections::IEnumerator^ enum0 = objDE->Children->GetEnumerator();  
+    while (enum0->MoveNext())  
+    {  
+        DirectoryEntry^ objChildDE = safe_cast<DirectoryEntry^>(enum0->Current);  
+        Console::WriteLine(objChildDE->Path);  
+    }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">
+          <see cref="F:System.Security.Permissions.SecurityAction.Demand" />
+        </permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DirectoryEntry (string path, string username, string password);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, string username, string password) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectoryEntry.#ctor(System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path"><see cref="T:System.DirectoryServices.DirectoryEntry" /> のパス。 <see cref="P:System.DirectoryServices.DirectoryEntry.Path" /> プロパティは、この値に初期化されます。</param>
+        <param name="username">クライアントの認証時に使用するユーザー名。 <see cref="P:System.DirectoryServices.DirectoryEntry.Username" /> プロパティは、この値に初期化されます。</param>
+        <param name="password">クライアントの認証時に使用するパスワード。 <see cref="P:System.DirectoryServices.DirectoryEntry.Password" /> プロパティは、この値に初期化されます。</param>
+        <summary><see cref="T:System.DirectoryServices.DirectoryEntry" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">
+          <see cref="F:System.Security.Permissions.SecurityAction.Demand" />
+        </permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DirectoryEntry (string path, string username, string password, System.DirectoryServices.AuthenticationTypes authenticationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, string username, string password, valuetype System.DirectoryServices.AuthenticationTypes authenticationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectoryEntry.#ctor(System.String,System.String,System.String,System.DirectoryServices.AuthenticationTypes)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="authenticationType" Type="System.DirectoryServices.AuthenticationTypes" />
+      </Parameters>
+      <Docs>
+        <param name="path"><see cref="T:System.DirectoryServices.DirectoryEntry" /> のパス。 <see cref="P:System.DirectoryServices.DirectoryEntry.Path" /> プロパティは、この値に初期化されます。</param>
+        <param name="username">クライアントの認証時に使用するユーザー名。 <see cref="P:System.DirectoryServices.DirectoryEntry.Username" /> プロパティは、この値に初期化されます。</param>
+        <param name="password">クライアントの認証時に使用するパスワード。 <see cref="P:System.DirectoryServices.DirectoryEntry.Password" /> プロパティは、この値に初期化されます。</param>
+        <param name="authenticationType"><see cref="T:System.DirectoryServices.AuthenticationTypes" /> 値のいずれか。 <see cref="P:System.DirectoryServices.DirectoryEntry.AuthenticationType" /> プロパティは、この値に初期化されます。</param>
+        <summary><see cref="T:System.DirectoryServices.DirectoryEntry" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">
+          <see cref="F:System.Security.Permissions.SecurityAction.Demand" />
+        </permission>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthenticationType">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.AuthenticationTypes AuthenticationType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DirectoryServices.AuthenticationTypes AuthenticationType" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectoryEntry.AuthenticationType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.DirectoryServices.DSDescription("DSAuthenticationType")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AuthenticationTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用する認証の種類を取得または設定します。</summary>
+        <value><see cref="T:System.DirectoryServices.AuthenticationTypes" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 前のバージョン[!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)]、既定値は<xref:System.DirectoryServices.AuthenticationTypes.None>します。 [!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)] 以降は、既定値は <xref:System.DirectoryServices.AuthenticationTypes.Secure> です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Children">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.DirectoryEntries Children { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.DirectoryEntries Children" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectoryEntry.Children" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.DirectoryServices.DSDescription("DSChildren")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.DirectoryEntries</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Active Directory Domain Services 階層でこのノードの子エントリを取得します。</summary>
+        <value>Active Directory ドメイン サービス階層でこのノードの子エントリを格納している <see cref="T:System.DirectoryServices.DirectoryEntries" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 子エントリは、このノードの直系の子だけです。  
+  
+ このプロパティを使用して、検索、取得、または、階層内のディレクトリ エントリを作成します。 このプロパティは、通常のイテレーション機能と共に提供するコレクション、<xref:System.DirectoryServices.DirectoryEntries.Add%2A>メソッドを使用する、コレクションにバインドされている親ノードのすぐ下にノードを追加します。 をコレクションにノードを追加する場合は、新しいノードの名前と、ノードと関連付けるスキーマ テンプレートの名前を指定する必要があります。 たとえば、"Computer"という名前のスキーマを使用して、階層に新しいコンピューターを追加します。  
+  
+> [!NOTE]
+>  既定では、変更されるローカルにキャッシュします。 変更するノードを追加するか、後に呼び出す必要があります、<xref:System.DirectoryServices.DirectoryEntry.CommitChanges%2A>メソッドに、ツリーに保存するには、変更を確定します。 呼び出す場合<xref:System.DirectoryServices.DirectoryEntry.RefreshCache>呼び出す前に<xref:System.DirectoryServices.DirectoryEntry.CommitChanges%2A>をプロパティ キャッシュにコミットされていない変更は失われます。 詳細については、次を参照してください。、<xref:System.DirectoryServices.DirectoryEntry.CommitChanges%2A>と<xref:System.DirectoryServices.DirectoryEntry.RefreshCache>メソッド、および<xref:System.DirectoryServices.DirectoryEntry.UsePropertyCache%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">子エントリを取得します。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectoryEntry.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.DirectoryServices.DirectoryEntry" /> オブジェクトを閉じ、このコンポーネントと関連付けられているシステム リソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ガベージ コレクションを待機することがなく、管理されていないシステム リソースを解放するには、このメソッドを呼び出します。  
+  
+ 呼び出しに続く<xref:System.DirectoryServices.DirectoryEntry.Close%2A>、に対するすべての操作、<xref:System.DirectoryServices.DirectoryEntry>例外が発生する可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommitChanges">
+      <MemberSignature Language="C#" Value="public void CommitChanges ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CommitChanges() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectoryEntry.CommitChanges" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ディレクトリ エントリに加えられた変更を基になるディレクトリ ストアに保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定には、ローカル コンピューターに、キャッシュ、プロパティの変更は加えされ、最初に読み取られた後に、プロパティ値を読み取るはキャッシュされます。 詳細については、「<xref:System.DirectoryServices.DirectoryEntry.UsePropertyCache%2A>」を参照してください。  
+  
+ キャッシュに加えられた変更には、プロパティの変更だけでなくへの呼び出しが含まれます。 <xref:System.DirectoryServices.DirectoryEntries.Add%2A> (これが新しく作成したエントリの場合)。  
+  
+> [!CAUTION]
+>  呼び出す場合<xref:System.DirectoryServices.DirectoryEntry.RefreshCache%2A>呼び出す前に<xref:System.DirectoryServices.DirectoryEntry.CommitChanges%2A>をプロパティ キャッシュにコミットされていない変更は失われます。  
+  
+## <a name="security"></a>セキュリティ  
+  
+-   使用して、<xref:System.DirectoryServices.DirectoryServicesPermission>読み取り、書き込み、削除、変更すると、および Active Directory ドメイン サービス階層に追加するためのクラスです。 関連する列挙値:<xref:System.DirectoryServices.DirectoryServicesPermissionAccess>です。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">変更をコミットします。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.DirectoryEntry CopyTo (System.DirectoryServices.DirectoryEntry newParent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.DirectoryEntry CopyTo(class System.DirectoryServices.DirectoryEntry newParent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectoryEntry.CopyTo(System.DirectoryServices.DirectoryEntry)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.DirectoryEntry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newParent" Type="System.DirectoryServices.DirectoryEntry" />
+      </Parameters>
+      <Docs>
+        <param name="newParent">作成されるコピーの親になる <see cref="T:System.DirectoryServices.DirectoryEntry" /> オブジェクトの識別名。</param>
+        <summary>指定した親の子として、このエントリのコピーを作成します。</summary>
+        <returns>新しい親の子としてのこのエントリのコピーを表す <see cref="T:System.DirectoryServices.DirectoryEntry" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.DirectoryServices.DirectoryEntry.UsePropertyCache%2A>は`true`、呼び出す<xref:System.DirectoryServices.DirectoryEntry.CommitChanges%2A>永続的なコピーを作成する新しいオブジェクトにします。  
+  
+ ライトウェイト ディレクトリ アクセス プロトコル (LDAP) プロバイダーはサポートされていません、<xref:System.DirectoryServices.DirectoryEntry.CopyTo%28System.DirectoryServices.DirectoryEntry%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">指定した<see cref="T:System.DirectoryServices.DirectoryEntry" />コンテナーではありません。</exception>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">指定したコピーを作成する<see cref="T:System.DirectoryServices.DirectoryEntry" />オブジェクト。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.DirectoryEntry CopyTo (System.DirectoryServices.DirectoryEntry newParent, string newName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.DirectoryEntry CopyTo(class System.DirectoryServices.DirectoryEntry newParent, string newName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectoryEntry.CopyTo(System.DirectoryServices.DirectoryEntry,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.DirectoryEntry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newParent" Type="System.DirectoryServices.DirectoryEntry" />
+        <Parameter Name="newName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="newParent">作成されるコピーの親になる <see cref="T:System.DirectoryServices.DirectoryEntry" /> オブジェクトの DN。</param>
+        <param name="newName">このエントリのコピーの名前。</param>
+        <summary>指定した新しい名前で、指定した親 <see cref="T:System.DirectoryServices.DirectoryEntry" /> オブジェクトの子として、この <see cref="T:System.DirectoryServices.DirectoryEntry" /> オブジェクトのコピーを作成します。</summary>
+        <returns>指定した親の子として名前を変更したこのエントリのコピー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在、ライトウェイト ディレクトリ アクセス プロトコル (LDAP) プロバイダーでは、このメソッドをサポートしていません。  
+  
+ 場合<xref:System.DirectoryServices.DirectoryEntry.UsePropertyCache%2A>は`true`、呼び出す<xref:System.DirectoryServices.DirectoryEntry.CommitChanges%2A>永続的なコピーを作成する新しいオブジェクトにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">指定した<see cref="T:System.DirectoryServices.DirectoryEntry" />オブジェクトがコンテナーではありません。</exception>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">エントリのコピーを作成します。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteTree">
+      <MemberSignature Language="C#" Value="public void DeleteTree ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DeleteTree() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectoryEntry.DeleteTree" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Active Directory Domain Services 階層からこのエントリとそのサブツリー全体を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Active Directory サービス インターフェイス (ADSI) システムが指定したプロバイダーののみ、ライトウェイト ディレクトリ アクセス プロトコル (LDAP) は現在この操作をサポートします。  
+  
+> [!CAUTION]
+>  エントリとそのサブツリー全体は、Active Directory ドメイン サービス階層から削除されます。  
+  
+## <a name="security"></a>セキュリティ  
+  
+-   使用して<xref:System.DirectoryServices.DirectoryServicesPermission>Active Directory ドメイン サービス階層からのエントリを削除するためです。 関連する列挙値:<xref:System.DirectoryServices.DirectoryServicesPermissionAccess?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">指定した<see cref="T:System.DirectoryServices.DirectoryEntry" />コンテナーではありません。</exception>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">エントリとその子を削除します。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectoryEntry.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.DirectoryServices.DirectoryEntry" /> で使用されているリソース (メモリを除く) を解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック<xref:System.ComponentModel.Component.Dispose%2A>メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 <xref:System.ComponentModel.Component.Dispose%2A>プロテクト呼び出します<xref:System.DirectoryServices.DirectoryEntry.Dispose%2A>メソッドを`disposing`パラメーターに設定`true`です。 <xref:System.Object.Finalize%2A>呼び出す<xref:System.ComponentModel.Component.Dispose%2A>で`disposing`'éý'`false`です。  
+  
+ ときに、`disposing`パラメーターが`true`、このメソッドは、すべてのマネージ オブジェクトによって保持されているすべてのリソースを解放します。 この<xref:System.DirectoryServices.DirectoryEntry>オブジェクトが参照されます。 このメソッドは、参照される各オブジェクトの <xref:System.ComponentModel.Component.Dispose%2A> メソッドを呼び出します。  
+  
+ 詳細については、<xref:System.ComponentModel.Component.Dispose%2A>と<xref:System.Object.Finalize%2A>メソッドを参照してください[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see cref="M:System.ComponentModel.Component.Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 <see cref="M:System.DirectoryServices.DirectoryEntry.Dispose(System.Boolean)" /> をオーバーライドする場合は、以前に <see cref="M:System.ComponentModel.Component.Dispose" /> を呼び出したときに破棄されたオブジェクトを参照しないように注意する必要があります。 実装する方法の詳細についての<see cref="M:System.ComponentModel.Component.Dispose" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Exists">
+      <MemberSignature Language="C#" Value="public static bool Exists (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Exists(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectoryEntry.Exists(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">確認するエントリのパス。</param>
+        <summary>指定したパスがディレクトリ サービスの実際のエントリを表しているかどうかを判断します。</summary>
+        <returns>
+          指定したパスがディレクトリ サービスの有効なエントリを表している場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、1 つの引数を受け取りし、パスが有効なに対応しているかどうかを判断<xref:System.DirectoryServices.DirectoryEntry>です。  
+  
+```vb  
+Dim myADSPath As String = "LDAP://onecity/CN=Users,DC=onecity,DC=corp,DC=fabrikam,DC=com"  
+' Determine whether the given path is correct for the DirectoryEntry.  
+If DirectoryEntry.Exists(myADSPath) Then  
+   Console.WriteLine("The path {0} is valid",myADSPath)  
+Else  
+   Console.WriteLine("The path {0} is invalid",myADSPath)  
+End If  
+  
+```  
+  
+```csharp  
+string myADSPath ="LDAP://onecity/CN=Users,DC=onecity,DC=corp,DC=fabrikam,DC=com";  
+  
+// Determine whether the given path is correct for the DirectoryEntry.  
+if (DirectoryEntry.Exists(myADSPath))  
+{  
+    Console.WriteLine("The path {0} is valid",myADSPath);  
+}  
+    else  
+{  
+    Console.WriteLine("The path {0} is invalid",myADSPath);  
+}  
+  
+```  
+  
+```cpp#  
+String^ myADSPath = "LDAP://onecity/CN=Users,DC=onecity,DC=corp,DC=fabrikam,DC=com";  
+// Determine whether the given path is correct for the DirectoryEntry.  
+if (DirectoryEntry::Exists(myADSPath))   
+{  
+    Console::WriteLine("The path {0} is valid", myADSPath);  
+}   
+else   
+{  
+    Console::WriteLine("The path {0} is invalid", myADSPath);  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Guid">
+      <MemberSignature Language="C#" Value="public Guid Guid { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid Guid" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectoryEntry.Guid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.DirectoryServices.DSDescription("DSGuid")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.DirectoryServices.DirectoryEntry" /> の GUID を取得します。</summary>
+        <value><see cref="T:System.DirectoryServices.DirectoryEntry" /> の GUID を表す <see cref="T:System.Guid" /> 構造体。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Active Directory ドメイン サービス内のオブジェクトへのバインドを使用して、<xref:System.DirectoryServices.DirectoryEntry.NativeGuid%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.DirectoryServices.DirectoryEntry.Guid%2A>と<xref:System.DirectoryServices.DirectoryEntry.NativeGuid%2A>のプロパティ、<xref:System.DirectoryServices.DirectoryEntry>クラスです。 この例では、ユーザー指定を取得<xref:System.DirectoryServices.DirectoryEntry>し、表示、<xref:System.DirectoryServices.DirectoryEntry.Guid%2A>と<xref:System.DirectoryServices.DirectoryEntry.NativeGuid%2A>プロパティです。  
+  
+```vb  
+Dim myADSPath As [String] = "LDAP://onecity/CN=Users,DC=onecity,DC=corp,DC=fabrikam,DC=com"  
+Dim myDirectoryEntry As New DirectoryEntry(myADSPath)  
+  
+' Display the Guid and NativeGuid.  
+Console.WriteLine("The GUID of the ADS object:" + myDirectoryEntry.Guid.ToString)  
+Console.WriteLine("The Native GUID of the ADS" + "object:" + myDirectoryEntry.NativeGuid)  
+  
+```  
+  
+```csharp  
+String myADSPath = "LDAP://onecity/CN=Users,DC=onecity,DC=corp,DC=fabrikam,DC=com";  
+DirectoryEntry myDirectoryEntry=new DirectoryEntry(myADSPath);  
+  
+// Display the Guid and NativeGuid.  
+Console.WriteLine("The GUID of the ADS object:"+  
+                  myDirectoryEntry.Guid);  
+Console.WriteLine("The Native GUID of the ADS"+  
+                  "object:"+myDirectoryEntry.NativeGuid);  
+  
+```  
+  
+```cpp#  
+String^ myADSPath = "LDAP://onecity/CN=Users,DC=onecity,DC=corp,DC=fabrikam,DC=com";  
+DirectoryEntry^ myDirectoryEntry = gcnew DirectoryEntry(myADSPath);  
+  
+// Display the Guid and NativeGuid.  
+Console::WriteLine("The GUID of the ADS object: {0}", myDirectoryEntry->Guid);  
+Console::WriteLine("The Native GUID of the ADS object: {0}",  
+                   myDirectoryEntry->NativeGuid);  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke">
+      <MemberSignature Language="C#" Value="public object Invoke (string methodName, params object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object Invoke(string methodName, object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectoryEntry.Invoke(System.String,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="methodName" Type="System.String" />
+        <Parameter Name="args" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="methodName">呼び出すメソッドの名前。</param>
+        <param name="args">呼び出すメソッドの引数を格納している型 <see cref="T:System.Object" /> のオブジェクトの配列。</param>
+        <summary>ネイティブ Active Directory Domain Services オブジェクトでメソッドを呼び出します。</summary>
+        <returns>呼び出されたメソッドの戻り値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ネイティブ メソッドの戻り値に対応する、Iad インターフェイスが実装されている場合<xref:System.DirectoryServices.DirectoryEntry>が返されます。 Iad インターフェイスの詳細については、トピックを参照してください。 [Iad](http://msdn.microsoft.com/library/default.asp?url=/library/adsi/adsi/iads.asp) MSDN ライブラリで[http://msdn.microsoft.com/library](http://msdn.microsoft.com/library/default.asp?url=/library/adsi/adsi/iads.asp)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.DirectoryServices.DirectoryServicesCOMException">ネイティブ メソッドがスローされました、<see cref="T:System.Runtime.InteropServices.COMException" />例外。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException">ネイティブ メソッドがスローされました、<see cref="T:System.Reflection.TargetInvocationException" />例外。 <see cref="P:System.Exception.InnerException" />プロパティが含まれています、<see cref="T:System.Runtime.InteropServices.COMException" />例外が発生した実際のエラーに関する情報を格納します。</exception>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">このメソッドを呼び出します。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeGet">
+      <MemberSignature Language="C#" Value="public object InvokeGet (string propertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object InvokeGet(string propertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectoryEntry.InvokeGet(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">取得するプロパティの名前。</param>
+        <summary>ネイティブ Active Directory Domain Services オブジェクトからプロパティを取得します。</summary>
+        <returns>要求されたプロパティを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは使用できません。 <xref:System.DirectoryServices.DirectoryEntry.Properties%2A>プロパティは、のプロパティにアクセスするために使用する必要があります、<xref:System.DirectoryServices.DirectoryEntry>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">ネイティブ オブジェクトからプロパティを取得します。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeSet">
+      <MemberSignature Language="C#" Value="public void InvokeSet (string propertyName, params object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InvokeSet(string propertyName, object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectoryEntry.InvokeSet(System.String,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="args" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="propertyName">設定するプロパティの名前。</param>
+        <param name="args">設定する Active Directory Domain Services オブジェクト。</param>
+        <summary>ネイティブ Active Directory Domain Services オブジェクトでプロパティを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは使用できません。 <xref:System.DirectoryServices.DirectoryEntry.Properties%2A>プロパティは、のプロパティにアクセスするために使用する必要があります、<xref:System.DirectoryServices.DirectoryEntry>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">ネイティブ オブジェクトのプロパティを設定します。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveTo">
+      <MemberSignature Language="C#" Value="public void MoveTo (System.DirectoryServices.DirectoryEntry newParent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MoveTo(class System.DirectoryServices.DirectoryEntry newParent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectoryEntry.MoveTo(System.DirectoryServices.DirectoryEntry)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newParent" Type="System.DirectoryServices.DirectoryEntry" />
+      </Parameters>
+      <Docs>
+        <param name="newParent">このエントリの移動先の親。</param>
+        <summary>この <see cref="T:System.DirectoryServices.DirectoryEntry" /> オブジェクトを指定した親に移動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.DirectoryServices.DirectoryEntry.UsePropertyCache%2A>は`true`、呼び出し、<xref:System.DirectoryServices.DirectoryEntry.CommitChanges%2A>移動を永続的に行うために新しいオブジェクトのメソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">指定した<see cref="T:System.DirectoryServices.DirectoryEntry" />コンテナーではありません。</exception>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">エントリに移動します。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveTo">
+      <MemberSignature Language="C#" Value="public void MoveTo (System.DirectoryServices.DirectoryEntry newParent, string newName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MoveTo(class System.DirectoryServices.DirectoryEntry newParent, string newName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectoryEntry.MoveTo(System.DirectoryServices.DirectoryEntry,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newParent" Type="System.DirectoryServices.DirectoryEntry" />
+        <Parameter Name="newName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="newParent">このエントリの移動先の親。</param>
+        <param name="newName">このエントリの新しい名前。</param>
+        <summary>この <see cref="T:System.DirectoryServices.DirectoryEntry" /> オブジェクトを指定した親に移動し、その名前を指定した値に変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.DirectoryServices.DirectoryEntry.UsePropertyCache%2A>は`true`、呼び出す<xref:System.DirectoryServices.DirectoryEntry.CommitChanges%2A>移動を永続的に行うために、新しいオブジェクトにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">指定した<see cref="T:System.DirectoryServices.DirectoryEntry" />コンテナーではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectoryEntry.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.DirectoryServices.DSDescription("DSName")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基になるディレクトリ サービスで命名されているオブジェクトの名前を取得します。</summary>
+        <value>基になるディレクトリ サービスで命名されているオブジェクトの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、名前をと共にと<xref:System.DirectoryServices.DirectoryEntry.SchemaClassName%2A>その兄弟からこのエントリを区別、および各コンテナーに兄弟間で一意である必要があります。  
+  
+   
+  
+## Examples  
+ 次の例を作成、 <xref:System.DirectoryServices.DirectoryEntry> Active Directory ドメイン サービス内のノードをします。 これは、後、表示、<xref:System.DirectoryServices.DirectoryEntry.Name%2A>と<xref:System.DirectoryServices.DirectoryEntry.Path%2A>その子ノードのプロパティです。  
+  
+```vb  
+Dim myADSPath As String = "LDAP://onecity/CN=Users,DC=onecity,  
+           _DC=corp,DC=fabrikam,DC=com"  
+Dim myDirectoryEntry As New DirectoryEntry(myADSPath)  
+  
+Console.WriteLine("DirectoryEntry Name :" + myDirectoryEntry.Name)  
+Console.WriteLine(ControlChars.NewLine _  
+        + "The child entries for this node in the Active Directory Domain Services hierarchy")  
+  
+Dim myDirectoryEntryChild As DirectoryEntry  
+For Each myDirectoryEntryChild In  myDirectoryEntry.Children  
+   Console.WriteLine(myDirectoryEntryChild.Path)  
+Next myDirectoryEntryChild  
+```  
+  
+```csharp  
+String myADSPath = "LDAP://onecity/CN=Users,  
+             DC=onecity,DC=corp,DC=fabrikam,DC=com";  
+DirectoryEntry myDirectoryEntry=new DirectoryEntry(myADSPath);  
+  
+Console.WriteLine("DirectoryEntry Name :"+ myDirectoryEntry.Name);  
+Console.WriteLine("\nThe child entries for this node "+  
+   "in the Active Directory Domain Services hierarchy");  
+  
+foreach(DirectoryEntry myDirectoryEntryChild in  
+   myDirectoryEntry.Children)  
+{  
+   Console.WriteLine(myDirectoryEntryChild.Path);  
+}  
+  
+```  
+  
+```cpp#  
+String^ myADSPath = "LDAP://onecity/CN=Users,DC=onecity,DC=corp,DC=fabrikam,DC=com";  
+DirectoryEntry^ myDirectoryEntry = gcnew DirectoryEntry(myADSPath);  
+  
+Console::WriteLine("DirectoryEntry Name : {0}", myDirectoryEntry->Name);  
+Console::WriteLine("\nThe child entries for this node in the Active Directory Domain Services hierarchy");  
+  
+Collections::IEnumerator^ myEnumerator = myDirectoryEntry->Children->GetEnumerator();  
+while (myEnumerator->MoveNext())   
+{  
+    DirectoryEntry^ myDirectoryEntryChild = safe_cast<DirectoryEntry^>(myEnumerator->Current);  
+    Console::WriteLine(myDirectoryEntryChild->Path);  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">名前を取得します。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="NativeGuid">
+      <MemberSignature Language="C#" Value="public string NativeGuid { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NativeGuid" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectoryEntry.NativeGuid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.DirectoryServices.DSDescription("DSNativeGuid")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロバイダーが返す <see cref="T:System.DirectoryServices.DirectoryEntry" /> の GUID を取得します。</summary>
+        <value>プロバイダーが返す <see cref="T:System.DirectoryServices.DirectoryEntry" /> の GUID を表す <see cref="T:System.Guid" /> 構造体。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.DirectoryServices.DirectoryEntry.NativeGuid%2A>プロパティ オブジェクトを Active Directory ドメイン サービスにバインドするとき。  
+  
+> [!NOTE]
+>  ライトウェイト ディレクトリ アクセス プロトコル (LDAP) プロバイダーのグローバル一意識別子を返します、<xref:System.DirectoryServices.DirectoryEntry>インターネット インフォメーション サービス (IIS)、Novell NetWare ディレクトリ サーバー (NDS)、および WinNT プロバイダーとは異なる形式にします。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.DirectoryServices.DirectoryEntry.Guid%2A>と<xref:System.DirectoryServices.DirectoryEntry.NativeGuid%2A>のプロパティ、<xref:System.DirectoryServices.DirectoryEntry>クラスです。 この例では、ユーザー指定を取得<xref:System.DirectoryServices.DirectoryEntry>し、表示、<xref:System.DirectoryServices.DirectoryEntry.Guid%2A>と<xref:System.DirectoryServices.DirectoryEntry.NativeGuid%2A>プロパティです。  
+  
+```vb  
+Dim myADSPath As [String] = "LDAP://onecity/CN=Users,  
+             DC=onecity,DC=corp,DC=fabrikam,DC=com"  
+Dim myDirectoryEntry As New DirectoryEntry(myADSPath)  
+  
+' Display the Guid and NativeGuid.  
+Console.WriteLine("The GUID of the ADS object:" + myDirectoryEntry.Guid.ToString)  
+Console.WriteLine("The Native GUID of the ADS" + "object:" +   
+             myDirectoryEntry.NativeGuid)  
+```  
+  
+```csharp  
+String myADSPath = "LDAP://onecity/CN=Users,  
+             DC=onecity,DC=corp,DC=fabrikam,DC=com";  
+DirectoryEntry myDirectoryEntry=new DirectoryEntry(myADSPath);  
+  
+// Display the Guid and NativeGuid.  
+Console.WriteLine("The GUID of the ADS object:"+  
+                  myDirectoryEntry.Guid);  
+Console.WriteLine("The Native GUID of the ADS"+  
+                  "object:"+myDirectoryEntry.NativeGuid);  
+  
+```  
+  
+```cpp#  
+String^ myADSPath = "LDAP://onecity/CN=Users,DC=onecity,DC=corp,DC=fabrikam,DC=com";  
+DirectoryEntry^ myDirectoryEntry = gcnew DirectoryEntry(myADSPath);  
+  
+// Display the Guid and NativeGuid.  
+Console::WriteLine("The GUID of the ADS object: {0}", myDirectoryEntry->Guid));  
+Console::WriteLine("The Native GUID of the ADS object: {0}",  
+                   myDirectoryEntry->NativeGuid);  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NativeObject">
+      <MemberSignature Language="C#" Value="public object NativeObject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object NativeObject" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectoryEntry.NativeObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.DirectoryServices.DSDescription("DSNativeObject")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ネイティブ Active Directory Service Interfaces (ADSI) オブジェクトを取得します。</summary>
+        <value>ネイティブ ADSI オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、COM インターフェイスを使用する場合は、Iad インターフェイスを実装しているネイティブの Active Directory ドメイン サービス オブジェクトをキャストします。 Iad インターフェイスの詳細については、トピックを参照してください。 [Iad](http://msdn.microsoft.com/library/default.asp?url=/library/adsi/adsi/iads.asp) MSDN ライブラリで[http://msdn.microsoft.com/library](http://msdn.microsoft.com/library/default.asp?url=/library/adsi/adsi/iads.asp)です。  
+  
+ このオブジェクトは、高度なシナリオでは実行できないこと、<xref:System.DirectoryServices?displayProperty=nameWithType>クラスだけです。 これを使用するには、Iad ファミリから COM インターフェイスの 1 つインポートし、このプロパティは、そのインターフェイスをキャストする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ObjectSecurity">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectorySecurity ObjectSecurity { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectorySecurity ObjectSecurity" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectoryEntry.ObjectSecurity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.DirectoryServices.DSDescription("DSObjectSecurity")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectorySecurity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このエントリのセキュリティ記述子を取得または設定します。</summary>
+        <value>このディレクトリ エントリのセキュリティ記述子を表す <see cref="T:System.DirectoryServices.ActiveDirectorySecurity" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">
+          <see cref="F:System.Security.Permissions.SecurityAction.Demand" />アプリケーションを設定するときに実行、<see cref="P:System.DirectoryServices.DirectoryEntry.ObjectSecurity" />プロパティの場合、<see cref="P:System.DirectoryServices.DirectoryEntry.UsePropertyCache" />プロパティは<see langword="false" />します。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Options">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.DirectoryEntryConfiguration Options { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.DirectoryEntryConfiguration Options" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectoryEntry.Options" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.DirectoryServices.DSDescription("DSOptions")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.DirectoryEntryConfiguration</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このエントリのプロバイダー固有のオプションを取得します。</summary>
+        <value>このエントリのプロバイダー固有のオプションが格納された <see cref="T:System.DirectoryServices.DirectoryEntryConfiguration" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">オプションを取得します。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Parent">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.DirectoryEntry Parent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.DirectoryEntry Parent" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectoryEntry.Parent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.DirectoryServices.DSDescription("DSParent")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.DirectoryEntry</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Active Directory Domain Services 階層でのこのエントリの親を取得します。</summary>
+        <value>このエントリの親を表す <see cref="T:System.DirectoryServices.DirectoryEntry" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を検索、特定<xref:System.DirectoryServices.DirectoryEntry>し、表示、<xref:System.DirectoryServices.DirectoryEntry.Name%2A>と<xref:System.DirectoryServices.DirectoryEntry.Parent%2A>結果のです。  
+  
+```vb  
+Dim myADSPath As String = _   
+          "LDAP://onecity/CN=user,CN=Users,DC=onecity,DC=corp,DC=fabrikam,DC=com"  
+Dim myDirectoryEntry As New DirectoryEntry(myADSPath, UserName, SecurelyStoredPassword)  
+  
+Console.WriteLine("Parent is :" + myDirectoryEntry.Parent.Path)  
+  
+```  
+  
+```csharp  
+String myADSPath = "LDAP://onecity/CN=user,CN=Users,DC=onecity,DC=corp,DC=fabrikam,DC=com";  
+DirectoryEntry myDirectoryEntry=new DirectoryEntry(myADSPath, UserName, SecurelyStoredPassword);  
+  
+Console.WriteLine("Parent is :"+myDirectoryEntry.Parent.Path);  
+```  
+  
+```cpp#  
+String^ myADSPath = "LDAP://onecity/CN=user,CN=Users,DC=onecity,DC=corp,DC=fabrikam,DC=com";  
+DirectoryEntry^ myDirectoryEntry = gcnew DirectoryEntry(myADSPath, UserName, SecurelyStoredPassword);  
+  
+Console::WriteLine("Parent is :{0}", myDirectoryEntry->Parent->Path);  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">親を取得します。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Password">
+      <MemberSignature Language="C#" Value="public string Password { set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Password" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectoryEntry.Password" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.DirectoryServices.DSDescription("DSPassword")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントの認証時に使用するパスワードを設定します。</summary>
+        <value>クライアントの認証時に使用するパスワード。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定することができます、<xref:System.DirectoryServices.DirectoryEntry.Username%2A>と<xref:System.DirectoryServices.DirectoryEntry.Password%2A>プロパティを Active Directory ドメイン サービスの情報にアクセスに使用する代替の資格情報を指定します。 その他の<xref:System.DirectoryServices.DirectoryEntry>オブジェクトがこのインスタンスから取得した (を使用して<xref:System.DirectoryServices.DirectoryEntry.Children%2A>) が同じ代替資格情報で自動的に作成します。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.DirectoryServices.DirectoryEntry.Username%2A>と<xref:System.DirectoryServices.DirectoryEntry.Password%2A>のプロパティ、<xref:System.DirectoryServices.DirectoryEntry>クラスです。 この例では、ユーザー指定を取得<xref:System.DirectoryServices.DirectoryEntry>と<xref:System.DirectoryServices.DirectoryEntry.Path%2A>すべてその<xref:System.DirectoryServices.DirectoryEntry.Children%2A>です。  
+  
+```vb  
+Dim myADSPath As String = _  
+      "LDAP://onecity/CN=Users,DC=onecity,DC=corp,DC=fabrikam,DC=com"  
+  
+' Create an Instance of DirectoryEntry.  
+Dim myDirectoryEntry As New DirectoryEntry(myADSPath)  
+myDirectoryEntry.Username = UserName  
+myDirectoryEntry.Password = SecurelyStoredPassword  
+  
+' Get the Child ADS objects.  
+Console.WriteLine("The Child ADS objects are:")  
+Dim myChildDirectoryEntry As DirectoryEntry  
+For Each myChildDirectoryEntry In  myDirectoryEntry.Children  
+   Console.WriteLine(myChildDirectoryEntry.Path)  
+Next myChildDirectoryEntry   
+```  
+  
+```csharp  
+String myADSPath = "LDAP://onecity/CN=Users,  
+         DC=onecity,DC=corp,DC=fabrikam,DC=com";  
+  
+// Create an Instance of DirectoryEntry.  
+DirectoryEntry myDirectoryEntry = new DirectoryEntry(myADSPath);  
+myDirectoryEntry.Username = UserName;  
+myDirectoryEntry.Password = SecurelyStoredPassword;  
+  
+// Get the Child ADS objects.  
+Console.WriteLine("The Child ADS objects are:");  
+foreach(DirectoryEntry myChildDirectoryEntry in myDirectoryEntry.Children)  
+   Console.WriteLine(myChildDirectoryEntry.Path);  
+  
+```  
+  
+```cpp#  
+String^ myADSPath = "LDAP://onecity/CN=Users,DC=onecity,DC=corp,DC=fabrikam,DC=com";  
+  
+// Create an Instance of DirectoryEntry.  
+DirectoryEntry^ myDirectoryEntry = gcnew DirectoryEntry(myADSPath);  
+myDirectoryEntry->Username = UserName;  
+myDirectoryEntry->Password = SecurelyStoredPassword;  
+  
+// Get the Child ADS objects.  
+Console::WriteLine("The Child ADS objects are:");  
+Collections::IEnumerator^ myEnum = myDirectoryEntry->Children->GetEnumerator();  
+while (myEnum->MoveNext())   
+{  
+    DirectoryEntry^ myChildDirectoryEntry = safe_cast<DirectoryEntry^>  
+             (myEnum->Current);  
+    Console::WriteLine(myChildDirectoryEntry->Path);  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public string Path { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Path" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectoryEntry.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.SettingsBindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Diagnostics.Design.StringValueConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.DirectoryServices.DSDescription("DSPath")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.DirectoryServices.DirectoryEntry" /> のパスを取得または設定します。</summary>
+        <value>この <see cref="T:System.DirectoryServices.DirectoryEntry" /> オブジェクトのパス。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.DirectoryServices.DirectoryEntry.Path%2A>プロパティは、ネットワーク環境では、このエントリを一意に識別します。 これを使用してこのエントリを取得することができます常に<xref:System.DirectoryServices.DirectoryEntry.Path%2A>です。  
+  
+ 設定、 <xref:System.DirectoryServices.DirectoryEntry.Path%2A> ; 取得のディレクトリから新しいエントリを格納できません。 現在バインドされているエントリのパスは変更されません。  
+  
+ 関連付けられているクラス、<xref:System.DirectoryServices.DirectoryEntry>コンポーネントは、任意の Active Directory ドメイン サービスのサービス プロバイダーで使用できます。 現在のプロバイダーには、インターネット インフォメーション サービス (IIS)、ライトウェイト ディレクトリ アクセス プロトコル (LDAP)、Novell NetWare ディレクトリ サービス (NDS)、および WinNT などがあります。  
+  
+> [!NOTE]
+>  セクションで、 <xref:System.DirectoryServices.DirectoryEntry.Path%2A> (「://」の前に) プロバイダーを識別する小文字が区別されます。 たとえば、"LDAP://"または"WinNT://"です。  
+  
+ 構文、<xref:System.DirectoryServices.DirectoryEntry.Path%2A>プロパティは、プロバイダーによって異なります。 一般的なシナリオを次に示します。  
+  
+ WinNT  
+  
+-   コンピューターのグループに接続します。 たとえば、"WinNT**://\<ドメイン名 >/\<コンピューター名 >/\<グループ名 >**"です。 ローカル コンピューターに接続している場合は、"WinNT://**\<コンピューター名 >/\<グループ名 >**"です。  
+  
+-   コンピューター上のユーザーに接続します。 たとえば、"WinNT://**\<ドメイン名 >/\<コンピューター名 >/\<ユーザー名 >**"です。 ローカル コンピューターに接続している場合は、"WinNT://**\<コンピューター名 >/\<ユーザー名 >**"です。  
+  
+-   コンピューター上のサービスに接続します。 たとえば、"WinNT://**\<ドメイン名 >/\<コンピューター名 >/\<サービス名 >**"です。 ローカル コンピューターに接続している場合は、"WinNT://**\<コンピューター名 >/\<サービス名 >**"です。  
+  
+-   ネットワーク上のすべてのドメインを検出します。 たとえば、"WinNT:"このエントリの子を列挙することにより、ドメインが見つかりません。  
+  
+ LDAP  
+  
+-   ドメイン内のグループに接続します。 たとえば、"なります\<グループ名 >、CN =\<ユーザー >、DC =\<ドメイン コンポーネント >、DC =\<ドメイン コンポーネント >,..."です。  
+  
+-   ドメイン内のユーザーに接続します。 たとえば、"なります\<完全なユーザー名 >、CN =\<ユーザー >、DC =\<ドメイン コンポーネント >、DC =\<ドメイン コンポーネント >,..."です。  
+  
+-   ドメイン内のコンピューターに接続します。 たとえば、"なります\<コンピューター名 >、CN =\<コンピューター >、DC =\<ドメイン コンポーネント >、DC =\<ドメイン コンポーネント >,..."です。  
+  
+ IIS  
+  
+-   Web ディレクトリに接続します。 たとえば、"IIS://LocalHost/W3SVC/1/ROOT/\<Web ディレクトリ名 >"です。  
+  
+ バインドする LDAP を使用して現在のドメインに"LDAP://RootDSE"のパスを使用し、既定の名前付けコンテキストを取得し、エントリを再バインドします。 例:  
+  
+```csharp  
+String str = ent.Properties["defaultNamingContext"][0];  
+DirectoryEntry domain = new DirectoryEntry("LDAP://" + str);  
+```  
+  
+ 詳細については、トピックと、プロバイダーのマニュアルを参照して[Active Directory サービス インターフェイスを使用して](http://msdn.microsoft.com/library/default.asp?url=/library/adsi/adsi/using_adsi.asp)MSDN ライブラリで[http://msdn.microsoft.com/library](http://msdn.microsoft.com/library)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.PropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.PropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectoryEntry.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.DirectoryServices.DSDescription("DSProperties")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.PropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.DirectoryServices.DirectoryEntry" /> オブジェクトの Active Directory Domain Services のプロパティを取得します。</summary>
+        <value>このエントリに設定されるプロパティが格納された <see cref="T:System.DirectoryServices.PropertyCollection" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティが初期化されていない場合<xref:System.DirectoryServices.DirectoryEntry.Properties%2A>ADSI インターフェイスを呼び出し、 [IADs::Get](http://msdn2.microsoft.com/library/aa746347.aspx)キャッシュから値を取得します。 基のキャッシュが読み込まれていない場合[IADs::Get](http://msdn2.microsoft.com/library/aa746347.aspx)暗黙的に呼び出す[IADs::GetInfo](http://msdn2.microsoft.com/library/aa746349.aspx)です。 このメソッドは、基になるディレクトリ ストアからキャッシュに設定されていない、サポートされているプロパティの値を読み込みます。 後続の呼び出し<xref:System.DirectoryServices.DirectoryEntry.Properties%2A>キャッシュのみでプロパティ値を取得します。 プロパティのキャッシュの読み込みを制御するには、呼び出す<xref:System.DirectoryServices.DirectoryEntry.RefreshCache%2A>です。  
+  
+ **注**、<xref:System.DirectoryServices.DirectoryEntry.Properties%2A>プロパティはサポートされていません、Active Directory クライアント拡張機能 (ディレクトリ) で使用するため[!INCLUDE[WinNt4Family](~/includes/winnt4family-md.md)]です。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">プロパティを取得します。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RefreshCache">
+      <MemberSignature Language="C#" Value="public void RefreshCache ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RefreshCache() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectoryEntry.RefreshCache" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.DirectoryServices.DirectoryEntry" /> オブジェクトのプロパティ値をプロパティ キャッシュに読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!CAUTION]
+>  プロパティのキャッシュにコミットされていない変更はすべて失われます。 使用して、<xref:System.DirectoryServices.DirectoryEntry.CommitChanges%2A>ディレクトリ ストアに変更を保持するメソッド。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">プロパティのキャッシュを更新します。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RefreshCache">
+      <MemberSignature Language="C#" Value="public void RefreshCache (string[] propertyNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RefreshCache(string[] propertyNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectoryEntry.RefreshCache(System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyNames" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="propertyNames">指定したプロパティの配列。</param>
+        <summary>指定したプロパティの値をプロパティ キャッシュに読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!CAUTION]
+>  プロパティのキャッシュにコミットされていない変更はすべて失われます。 使用して<xref:System.DirectoryServices.DirectoryEntry.CommitChanges%2A>ディレクトリ ストアに変更を保持します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">プロパティのキャッシュを更新します。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Rename">
+      <MemberSignature Language="C#" Value="public void Rename (string newName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Rename(string newName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectoryEntry.Rename(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="newName">エントリの新しい名前。</param>
+        <summary>この <see cref="T:System.DirectoryServices.DirectoryEntry" /> オブジェクトの名前を変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  これは、このエントリを参照するために使用するパスには影響もします。  
+  
+ 場合<xref:System.DirectoryServices.DirectoryEntry.UsePropertyCache%2A>は`true`、必ず、<xref:System.DirectoryServices.DirectoryEntry.CommitChanges%2A>移動を永続的に行うために新しいオブジェクトのメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SchemaClassName">
+      <MemberSignature Language="C#" Value="public string SchemaClassName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SchemaClassName" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectoryEntry.SchemaClassName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.DirectoryServices.DSDescription("DSSchemaClassName")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.DirectoryServices.DirectoryEntry" /> オブジェクトのスキーマ クラスの名前を取得します。</summary>
+        <value>この <see cref="T:System.DirectoryServices.DirectoryEntry" /> オブジェクトのスキーマ クラスの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これと同じ、<xref:System.DirectoryServices.DirectoryEntry.Name%2A>のプロパティ、<xref:System.DirectoryServices.DirectoryEntry.SchemaEntry%2A>プロパティです。  
+  
+ A<xref:System.DirectoryServices.DirectoryEntry>オブジェクトのスキーマは、そのプロパティとメソッドを定義します。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.DirectoryServices.DirectoryEntry.SchemaClassName%2A>と<xref:System.DirectoryServices.DirectoryEntry.SchemaEntry%2A>のプロパティ、<xref:System.DirectoryServices.DirectoryEntry>クラスです。 この例では、ユーザー指定を取得<xref:System.DirectoryServices.DirectoryEntry>場合は、そのすべての子を取得し、<xref:System.DirectoryServices.DirectoryEntry.SchemaEntry%2A>コンテナー オブジェクトです。  <xref:System.DirectoryServices.DirectoryEntry.SchemaEntry%2A>オブジェクトがコンテナー オブジェクト、<xref:System.DirectoryServices.DirectoryEntry.Name%2A>そのオブジェクトが"container"です。  
+  
+```vb  
+Dim myADSPath As String = "LDAP://onecity/CN=Users,DC=onecity,DC=corp,DC=fabrikam,DC=com"  
+  
+' Creates an Instance of DirectoryEntry.  
+Dim myDirectoryEntry As New DirectoryEntry(myADSPath, UserName, SecurelyStoredPassword)  
+  
+' Display the 'SchemaClassName'.  
+Console.WriteLine("Schema class name:" + myDirectoryEntry.SchemaClassName)  
+  
+' Gets the SchemaEntry of the ADS object.  
+Dim mySchemaEntry As DirectoryEntry = myDirectoryEntry.SchemaEntry  
+  
+If String.Compare(mySchemaEntry.Name, "container") = 0 Then  
+   Dim myChildDirectoryEntry As DirectoryEntry  
+   For Each myChildDirectoryEntry In  myDirectoryEntry.Children  
+      Console.WriteLine(myChildDirectoryEntry.Path)  
+   Next  
+```  
+  
+```csharp  
+String myADSPath = "LDAP://onecity/CN=Users,DC=onecity,DC=corp,DC=fabrikam,DC=com";  
+  
+// Creates an Instance of DirectoryEntry.  
+DirectoryEntry  myDirectoryEntry=new DirectoryEntry(myADSPath, UserName, SecurelyStoredPassword);  
+  
+// Display the 'SchemaClassName'.  
+Console.WriteLine("Schema class name:" + myDirectoryEntry.SchemaClassName);  
+  
+// Gets the SchemaEntry of the ADS object.  
+DirectoryEntry mySchemaEntry = myDirectoryEntry.SchemaEntry;  
+  
+if (string.Compare(mySchemaEntry.Name, "container") == 0)  
+{  
+   foreach(DirectoryEntry myChildDirectoryEntry in myDirectoryEntry.Children)  
+      Console.WriteLine(myChildDirectoryEntry.Path);  
+}  
+  
+```  
+  
+```cpp#  
+String^ myADSPath = "LDAP://onecity/CN=Users,DC=onecity,DC=corp,DC=fabrikam,DC=com";  
+  
+// Creates an Instance of DirectoryEntry.  
+DirectoryEntry^ myDirectoryEntry = gcnew DirectoryEntry(myADSPath, UserName, SecurelyStoredPassword);  
+  
+// Display the 'SchemaClassName'.  
+Console::WriteLine("Schema class name:{0}", myDirectoryEntry->SchemaClassName);  
+  
+// Gets the SchemaEntry of the ADS Object.  
+DirectoryEntry^ mySchemaEntry = myDirectoryEntry->SchemaEntry;  
+  
+if (!String::Compare(mySchemaEntry->Name, "container"))   
+{  
+    Collections::IEnumerator^ myEnum = myDirectoryEntry->Children->GetEnumerator();  
+    while (myEnum->MoveNext())   
+    {  
+        DirectoryEntry^ myChildDirectoryEntry = safe_cast<DirectoryEntry^>(myEnum->Current);  
+        Console::WriteLine(myChildDirectoryEntry->Path);  
+    }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">スキーマ名を取得します。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SchemaEntry">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.DirectoryEntry SchemaEntry { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.DirectoryEntry SchemaEntry" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectoryEntry.SchemaEntry" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.DirectoryServices.DSDescription("DSSchemaEntry")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.DirectoryEntry</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このエントリのスキーマ オブジェクトを取得します。</summary>
+        <value>このエントリのスキーマ クラスを表す <see cref="T:System.DirectoryServices.DirectoryEntry" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エントリのスキーマでは、その必須および省略可能なプロパティ名の一覧を決定します。  
+  
+ 関連付けられたオブジェクトで使用可能なプロパティとメソッドを調べるには、このプロパティを使用することができます。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.DirectoryServices.DirectoryEntry.SchemaClassName%2A>と<xref:System.DirectoryServices.DirectoryEntry.SchemaEntry%2A>のプロパティ、<xref:System.DirectoryServices.DirectoryEntry>クラスです。 この例では、ユーザー指定を取得<xref:System.DirectoryServices.DirectoryEntry>オブジェクトし、すべての子の取得、<xref:System.DirectoryServices.DirectoryEntry.SchemaEntry%2A>オブジェクトがコンテナー オブジェクトです。  <xref:System.DirectoryServices.DirectoryEntry.SchemaEntry%2A>オブジェクトがコンテナー オブジェクト、<xref:System.DirectoryServices.DirectoryEntry.Name%2A>そのオブジェクトが"container"です。  
+  
+```vb  
+Dim myADSPath As String = "LDAP://onecity/CN=Users,DC=onecity,DC=corp,DC=fabrikam,DC=com"  
+  
+' Creates an Instance of DirectoryEntry.  
+Dim myDirectoryEntry As New DirectoryEntry(myADSPath, UserName, SecurelyStoredPassword)  
+  
+' Display the 'SchemaClassName'.  
+Console.WriteLine("Schema class name:" + myDirectoryEntry.SchemaClassName)  
+  
+' Gets the SchemaEntry of the ADS object.  
+Dim mySchemaEntry As DirectoryEntry = myDirectoryEntry.SchemaEntry  
+  
+If String.Compare(mySchemaEntry.Name, "container") = 0 Then  
+   Dim myChildDirectoryEntry As DirectoryEntry  
+   For Each myChildDirectoryEntry In  myDirectoryEntry.Children  
+      Console.WriteLine(myChildDirectoryEntry.Path)  
+   Next  
+```  
+  
+```csharp  
+String myADSPath = "LDAP://onecity/CN=Users,DC=onecity,DC=corp,DC=fabrikam,DC=com";  
+  
+// Creates an Instance of DirectoryEntry.  
+DirectoryEntry  myDirectoryEntry=new DirectoryEntry(myADSPath, UserName, SecurelyStoredPassword);  
+  
+// Display the 'SchemaClassName'.  
+Console.WriteLine("Schema class name:"+myDirectoryEntry.SchemaClassName);  
+  
+// Gets the SchemaEntry of the ADS object.  
+DirectoryEntry mySchemaEntry = myDirectoryEntry.SchemaEntry;  
+  
+if (string.Compare(mySchemaEntry.Name,"container") == 0)  
+{  
+   foreach(DirectoryEntry myChildDirectoryEntry in myDirectoryEntry.Children)  
+      Console.WriteLine(myChildDirectoryEntry.Path);  
+}  
+  
+```  
+  
+```cpp#  
+String^ myADSPath = "LDAP://onecity/CN=Users,DC=onecity,DC=corp,DC=fabrikam,DC=com";  
+  
+// Creates an Instance of DirectoryEntry.  
+DirectoryEntry^ myDirectoryEntry = gcnew DirectoryEntry(myADSPath, UserName, SecurelyStoredPassword);  
+  
+// Display the 'SchemaClassName'.  
+Console::WriteLine("Schema class name:{0}", myDirectoryEntry->SchemaClassName);  
+  
+// Gets the SchemaEntry of the ADS Object*.  
+DirectoryEntry^ mySchemaEntry = myDirectoryEntry->SchemaEntry;  
+  
+if (!String::Compare(mySchemaEntry->Name, S"container"))   
+{  
+    Collections::IEnumerator^ myEnum = myDirectoryEntry->Children->GetEnumerator();  
+    while (myEnum->MoveNext())   
+    {  
+        DirectoryEntry^ myChildDirectoryEntry = safe_cast<DirectoryEntry^>(myEnum->Current);  
+        Console::WriteLine(myChildDirectoryEntry->Path);  
+    }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">スキーマ オブジェクトを取得します。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UsePropertyCache">
+      <MemberSignature Language="C#" Value="public bool UsePropertyCache { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UsePropertyCache" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectoryEntry.UsePropertyCache" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.DirectoryServices.DSDescription("DSUsePropertyCache")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作を実行するたびにキャッシュをコミットするかどうかを示す値を取得または設定します。</summary>
+        <value>
+          操作を実行するたびにキャッシュをコミットしない場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定には、ローカル コンピューターに、キャッシュ、プロパティの変更は加えされ、最初に読み取られた後に、プロパティ値を読み取るはキャッシュされます。 ときに、<xref:System.DirectoryServices.DirectoryEntry.UsePropertyCache%2A>プロパティは`true`へのアクセス、<xref:System.DirectoryServices.DirectoryEntry>オブジェクトのプロパティが高速です。 これを設定する`false`キャッシュが各操作後にコミットが発生します。  
+  
+ 場合、<xref:System.DirectoryServices.DirectoryEntry.UsePropertyCache%2A>プロパティは`true`呼び出すキャッシュ コミット変更して、<xref:System.DirectoryServices.DirectoryEntry.CommitChanges%2A>メソッドです。 ディレクトリに変更を行った後は、キャッシュ内の値を更新するには、呼び出し、<xref:System.DirectoryServices.DirectoryEntry.RefreshCache%2A>メソッドです。  
+  
+> [!CAUTION]
+>  呼び出す場合<xref:System.DirectoryServices.DirectoryEntry.RefreshCache%2A>呼び出す前に<xref:System.DirectoryServices.DirectoryEntry.CommitChanges%2A>をプロパティ キャッシュにコミットされていない変更は失われます。  
+  
+> [!NOTE]
+>  インターネット インフォメーション サービス (IIS) プロバイダーでは、各操作後にキャッシュをコミットすることはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Username">
+      <MemberSignature Language="C#" Value="public string Username { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Username" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectoryEntry.Username" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Diagnostics.Design.StringValueConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.DirectoryServices.DSDescription("DSUsername")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントの認証時に使用するユーザー名を取得または設定します。</summary>
+        <value>クライアントの認証時に使用するユーザー名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定することができます、<xref:System.DirectoryServices.DirectoryEntry.Username%2A>と<xref:System.DirectoryServices.DirectoryEntry.Password%2A>Active Directory ドメイン サービスの情報にアクセスに使用する代替の資格情報を指定するためにします。 その他の<xref:System.DirectoryServices.DirectoryEntry>オブジェクトがこのインスタンスから取得した (を使用して<xref:System.DirectoryServices.DirectoryEntry.Children%2A>) が同じ代替資格情報で自動的に作成します。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.DirectoryServices.DirectoryEntry.Username%2A>と<xref:System.DirectoryServices.DirectoryEntry.Password%2A>のプロパティ、<xref:System.DirectoryServices.DirectoryEntry>クラスです。 この例では、ユーザー指定を取得<xref:System.DirectoryServices.DirectoryEntry>と<xref:System.DirectoryServices.DirectoryEntry.Path%2A>すべてその<xref:System.DirectoryServices.DirectoryEntry.Children%2A>です。  
+  
+```vb  
+Dim myADSPath As String = _  
+      "LDAP://onecity/CN=Users,DC=onecity,DC=corp,DC=fabrikam,DC=com"  
+  
+' Create an Instance of DirectoryEntry.  
+Dim myDirectoryEntry As New DirectoryEntry(myADSPath)  
+myDirectoryEntry.Username = UserName  
+myDirectoryEntry.Password = SecurelyStoredPassword  
+  
+' Get the Child ADS objects.  
+Console.WriteLine("The Child ADS objects are:")  
+Dim myChildDirectoryEntry As DirectoryEntry  
+For Each myChildDirectoryEntry In  myDirectoryEntry.Children  
+   Console.WriteLine(myChildDirectoryEntry.Path)  
+Next myChildDirectoryEntry  
+```  
+  
+```csharp  
+String myADSPath = "LDAP://onecity/CN=Users,DC=onecity,DC=corp,DC=fabrikam,DC=com";  
+  
+// Create an Instance of DirectoryEntry.  
+DirectoryEntry myDirectoryEntry = new DirectoryEntry(myADSPath);  
+myDirectoryEntry.Username = UserName;  
+myDirectoryEntry.Password = SecurelyStoredPassword;  
+  
+// Get the Child ADS objects.  
+Console.WriteLine("The Child ADS objects are:");  
+foreach(DirectoryEntry myChildDirectoryEntry in myDirectoryEntry.Children)  
+   Console.WriteLine(myChildDirectoryEntry.Path);  
+  
+```  
+  
+```cpp#  
+String^ myADSPath = "LDAP://onecity/CN=Users,DC=onecity,DC=corp,DC=fabrikam,DC=com";  
+  
+// Create an Instance of DirectoryEntry.  
+DirectoryEntry^ myDirectoryEntry = new DirectoryEntry(myADSPath);  
+myDirectoryEntry->Username = UserName;  
+myDirectoryEntry->Password = SecurelyStoredPassword;  
+  
+// Get the Child ADS objects.  
+Console::WriteLine("The Child ADS objects are:");  
+Collections::IEnumerator^ myEnum = myDirectoryEntry->Children->GetEnumerator();  
+while (myEnum->MoveNext())   
+{  
+    DirectoryEntry^ myChildDirectoryEntry = safe_cast<DirectoryEntry^>(myEnum->Current);  
+    Console::WriteLine(myChildDirectoryEntry->Path);  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

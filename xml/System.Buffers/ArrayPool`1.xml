@@ -1,0 +1,203 @@
+<Type Name="ArrayPool&lt;T&gt;" FullName="System.Buffers.ArrayPool&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public abstract class ArrayPool&lt;T&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ArrayPool`1&lt;T&gt; extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Buffers.ArrayPool`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Buffers</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <typeparam name="T">リソース プールに含まれるオブジェクトの型。</typeparam>
+    <summary>型のインスタンスを再利用できるようにするリソース プールを提供<see cref="T:T[]" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+ 使用して、<see cref="T:System.Buffers.ArrayPool{T}"/>レンタルしてバッファーを返すクラス (を使用して、<see cref="M:System.Buffers.ArrayPool`1.Rent(System.Int32)"/>と<see cref="M:System.Buffers.ArrayPool`1.Return(`0[],System.Boolean)"/>メソッド) の配列が作成され、頻繁に破棄される場所の状況でパフォーマンスを向上させることができます、その結果、ガベージ コレクターで大量のメモリ不足です。
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>このクラスは、スレッド セーフです。 すべてのメンバーは複数のスレッドで同時に使用することがあります。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ArrayPool ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Buffers.ArrayPool`1.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Buffers</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="ArrayPool{T}" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+このコンス トラクターが保護されることに注意してください。派生したクラスによってのみ呼び出すことができます、<see cref="ArrayPool{T}"/>クラスです。 
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Buffers.ArrayPool&lt;T&gt; Create ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Buffers.ArrayPool`1&lt;!T&gt; Create() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Buffers.ArrayPool`1.Create" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Buffers</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Buffers.ArrayPool&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="ArrayPool{T}" /> クラスの新しいインスタンスを作成します。</summary>
+        <returns><see cref="ArrayPool{T}" /> クラスの新しいインスタンス。</returns>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Buffers.ArrayPool&lt;T&gt; Create (int maxArrayLength, int maxArraysPerBucket);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Buffers.ArrayPool`1&lt;!T&gt; Create(int32 maxArrayLength, int32 maxArraysPerBucket) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Buffers.ArrayPool`1.Create(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Buffers</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Buffers.ArrayPool&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="maxArrayLength" Type="System.Int32" />
+        <Parameter Name="maxArraysPerBucket" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="maxArrayLength">プールに格納される配列インスタンスの最大長。</param>
+        <param name="maxArraysPerBucket">プール内の各バケットに格納される配列のインスタンスの最大数。 プールは、高速アクセスするためのバケットに同様の長さの配列をグループ化します。</param>
+        <summary>新しいインスタンスを作成、<see cref="ArrayPool{T}" />クラスの指定された構成を使用します。</summary>
+        <returns>新しいインスタンス、<see cref="ArrayPool{T}" />指定の構成を持つクラス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+インスタンス、<see cref="ArrayPool{T}"/>このメソッドによって作成されたクラスは、配列をグループ化なしのバケットには複数の<paramref name="maxArraysPerBucket"/>を超えていないこれらの配列を使用して、各バケットで<paramref name="maxArrayLength"/>の長さ。
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rent">
+      <MemberSignature Language="C#" Value="public abstract T[] Rent (int minimumLength);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance !T[] Rent(int32 minimumLength) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Buffers.ArrayPool`1.Rent(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Buffers</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="minimumLength" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="minimumLength">配列の最小長。</param>
+        <summary>要求された長さには、少なくとものバッファーを取得します。</summary>
+        <returns>型の配列<see cref="T:T[]" />は少なくとも<paramref name="minimumLength" />の長さ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+
+このバッファーは、呼び出し元に貸与し、を使用して同じプールに返される必要があります、<see cref="Return"/>メソッド、ことへの後続の呼び出しで再利用できるように、<see cref="Rent"/>メソッドです。 借りたバッファーが返されないとは、致命的なエラーではありません。 ただしになる可能性がある低下アプリケーションのパフォーマンスにプールが失われるものを置き換える新しいバッファーを作成する必要があります。
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Return">
+      <MemberSignature Language="C#" Value="public abstract void Return (T[] array, bool clearArray = false);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Return(!T[] array, bool clearArray) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Buffers.ArrayPool`1.Return(`0[],System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Buffers</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="T[]" />
+        <Parameter Name="clearArray" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="array">バッファー プールを使用して取得された以前に戻るには、<see cref="Rent" />メソッドです。</param>
+        <param name="clearArray">再利用する前にバッファーの内容を消去する必要があるかどうかを示します。 場合<paramref name="bufferLength" />に設定されている<see langword="true" />、プールは、後続の再利用できるようにするバッファーを格納する場合と、<see cref="Return" />メソッドがクリアされます、<paramref name="array" />その内容のように、後続の呼び出し元を使用して、<see cref="Rent" />メソッドでは、コンテンツは表示されません前の呼び出し元。 場合<paramref name="bufferLength" />に設定されている<see langword="false" />または配列の内容はままになっている場合は、プールには、バッファーをリリースは、変更されません。</param>
+        <summary>以前を使用して取得された、プールに配列を返します、<see cref="Rent" />メソッドを同じ<see cref="ArrayPool{T}" />インスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+
+バッファーがプールに返された、呼び出し元はバッファーのすべての所有権を放棄し、使用しないでください。 特定の呼び出しから返される、参照、<see cref="Rent"/>メソッドを使用して返されるだけ必要があります、<see cref="Return"/>メソッドを 1 回です。 既定値<see cref="ArrayPool{T}"/>可能性があります保持返されたバッファーをレンタルするために、プールが既に格納されているための十分なバッファーを持っていると判断された場合は、もう一度、またはこれから返されたバッファーに解放することがあります。
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Shared">
+      <MemberSignature Language="C#" Value="public static System.Buffers.ArrayPool&lt;T&gt; Shared { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Buffers.ArrayPool`1&lt;!T&gt; Shared" />
+      <MemberSignature Language="DocId" Value="P:System.Buffers.ArrayPool`1.Shared" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Buffers</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Buffers.ArrayPool&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>共有を取得<see cref="ArrayPool{T}" />インスタンス。</summary>
+        <value>共有<see cref="ArrayPool{T}" />インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+
+共有プールの既定の実装を提供する、<see cref="ArrayPool{T}"/>一般的な適用性のためのものでは、クラスです。 共有クラスは、複数のサイズの配列を保持し、実際に要求しましたより大きな配列を送り返す場合がありますには決して送り返すが要求されたよりも小さい配列。 共有クラスを使用して、元のバッファーをレンタル、<see cref="Rent"/>メソッドか、適切なバッファーが使用可能な新しいバッファーの場合は 1 つに割り当てられることはできません、プールから取得されている既存のバッファーになります。
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

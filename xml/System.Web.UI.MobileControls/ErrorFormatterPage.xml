@@ -1,0 +1,171 @@
+<Type Name="ErrorFormatterPage" FullName="System.Web.UI.MobileControls.ErrorFormatterPage">
+  <TypeSignature Language="C#" Value="public class ErrorFormatterPage : System.Web.UI.MobileControls.MobilePage" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ErrorFormatterPage extends System.Web.UI.MobileControls.MobilePage" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.MobileControls.ErrorFormatterPage" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Mobile</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.MobileControls.MobilePage</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Web.Mobile.dll assembly has been deprecated and should no longer be used. For information about how to develop ASP.NET mobile applications, see http://go.microsoft.com/fwlink/?LinkId=157231.")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>モバイル デバイスに例外およびエラー情報をレンダリングする組み込みページを指定します。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このページは、アダプティブ エラー ターゲット デバイスに適切にフォーマットされているエラー メッセージを提供するためのメカニズムの処理で使用され、内部です。  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Web.AspNetHostingPermission">ホスト環境で動作しています。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。アクセス許可の値:<see cref="F:System.Web.AspNetHostingPermissionLevel.Minimal" />です。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ErrorFormatterPage ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.ErrorFormatterPage.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.MobileControls.ErrorFormatterPage" /> クラスの新しいインスタンスを初期化します。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ErrorInfo">
+      <MemberSignature Language="C#" Value="protected System.Web.Mobile.MobileErrorInfo ErrorInfo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Mobile.MobileErrorInfo ErrorInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.MobileControls.ErrorFormatterPage.ErrorInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Mobile.MobileErrorInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>例外に関する情報を返します。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <value>A<see cref="T:System.Web.Mobile.MobileErrorInfo" />エラーに関する情報を含むオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、アダプティブ エラー処理メカニズムが特定のターゲット デバイスのエラー メッセージが適切に書式設定を提供して使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitContent">
+      <MemberSignature Language="C#" Value="protected virtual void InitContent ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void InitContent() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.ErrorFormatterPage.InitContent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得のエラー情報に基づき、エラー ページの内容を初期化します。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基底の実装は、エラーを表示するために必要なモバイル コントロールを作成します。  
+  
+ このプロパティは、内部アダプティブのエラー処理メカニズムを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadPageStateFromPersistenceMedium">
+      <MemberSignature Language="C#" Value="protected override object LoadPageStateFromPersistenceMedium ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object LoadPageStateFromPersistenceMedium() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.ErrorFormatterPage.LoadPageStateFromPersistenceMedium" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>保存されたすべてのビュー状態に関する情報を読み込み、<see cref="T:System.Web.UI.MobileControls.MobilePage" />オブジェクト。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <returns>保存されたビュー ステートを格納するオブジェクト。 内部的には、これは通常、<see cref="T:System.Web.UI.StateBag" />または<see cref="T:System.Collections.IDictionary" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInit">
+      <MemberSignature Language="C#" Value="protected override void OnInit (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnInit(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.ErrorFormatterPage.OnInit(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" /> オブジェクト。</param>
+        <summary>フォームやページなどのオブジェクトが初期化された後に呼び出されます。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Web.UI.Page.OnInit%2A?displayProperty=nameWithType>アダプターのイベント データをカスタマイズする方法です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception">格納されている例外ではありません、<see cref="T:System.Web.HttpContext" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SavePageStateToPersistenceMedium">
+      <MemberSignature Language="C#" Value="protected override void SavePageStateToPersistenceMedium (object viewState);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SavePageStateToPersistenceMedium(object viewState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.ErrorFormatterPage.SavePageStateToPersistenceMedium(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="viewState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="viewState">ビュー ステート情報を格納するオブジェクト。</param>
+        <summary>ページのビューまたはコントロールの状態情報を保存します。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,606 @@
+<Type Name="BuildProvider" FullName="System.Web.Compilation.BuildProvider">
+  <TypeSignature Language="C#" Value="public abstract class BuildProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit BuildProvider extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Compilation.BuildProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET ビルド環境でソース コードを生成するためのプロパティとメソッドのセットを定義します。 このクラスは抽象クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET ビルド環境の用途<xref:System.Web.Compilation.BuildProvider>アプリケーション内で別のファイルの種類のソース コードを生成するオブジェクト。 派生したクラス<xref:System.Web.Compilation.BuildProvider>主に関係のソース コード ファイル、Web ページ、リソース、およびその他のカスタム項目を指定します。  
+  
+ 通常のインスタンスを作成しない、<xref:System.Web.Compilation.BuildProvider>クラスに直接できます。 派生するクラスを実装する代わりに、 <xref:System.Web.Compilation.BuildProvider>、構成して、 <xref:System.Web.Compilation.BuildProvider> ASP.NET 内で使用するための実装が環境を構築します。  
+  
+ インスタンス、<xref:System.Web.Compilation.BuildProvider>でクラスを使用<xref:System.Web.Compilation.AssemblyBuilder>コンパイルされたアセンブリに 1 つまたは複数のファイルをビルドするオブジェクト。 A<xref:System.Web.Compilation.BuildProvider>インスタンスは、個々 のファイルに対する適切な言語でソース コードを生成し、<xref:System.Web.Compilation.AssemblyBuilder>オブジェクトを組み合わせて各から提供されたソース<xref:System.Web.Compilation.BuildProvider>インスタンスを 1 つのアセンブリにします。  
+  
+ ASP.NET ビルド環境のインスタンスを使用して、<xref:System.Web.Compilation.BuildProvider>アプリケーション内でファイルをビルドするクラス。 <xref:System.Web.Compilation.BuildProvider.VirtualPath%2A>のプロパティ、<xref:System.Web.Compilation.BuildProvider>クラスを作成するファイルのパスを示します。 アプリケーション内の各ファイルのファイル拡張子は、対応するビルド プロバイダーにマップされます。 ASP.NET ビルド環境によって初期化、<xref:System.Web.Compilation.BuildProvider>インスタンスの各ファイルのファイル拡張子に基づいたを使用して、<xref:System.Web.Compilation.BuildProvider>ファイルのソース コードを生成するメソッド。 ASP.NET ビルド環境、<xref:System.Web.Compilation.AssemblyBuilder>優先コンパイラ言語とするファイルのコンテキストに基づいて、オブジェクト、<xref:System.Web.Compilation.BuildProvider>メソッドの 1 つまたは複数のファイルからアセンブリを作成するときにできるように、<xref:System.Web.Compilation.BuildProvider>インスタンスは、全体的なアセンブリには、そのファイルのソース コードを行うことができます。  
+  
+ ASP.NET アプリケーション内のファイルの種類のカスタムのビルド アクションを定義するのからクラスを派生する必要があります<xref:System.Web.Compilation.BuildProvider>ファイルの種類を作成するため、派生クラス内のメンバーを実装して、アプリケーション構成ファイル内の対応するファイル拡張子のビルド プロバイダーを構成します。  
+  
+ サポートされているファイルのファイル拡張子を指定し、ビルド プロバイダーがコード ファイル、Web ファイル、リソース ファイル、またはすべてのファイルをサポートするかどうか。 使用して、`type`ビルド プロバイダーの実装の完全修飾型名を指定する属性。 使用して、<xref:System.Web.Compilation.BuildProviderAppliesToAttribute>ビルド プロバイダーが App_Code ディレクトリ内のファイル、ディレクトリ内のファイル、Web コンテンツにグローバルまたはローカル リソース、またはすべてのファイルを適用するかどうかを指定するクラス。 使用して、`extension`属性を識別するために使用するファイル拡張子を指定してファイルを<xref:System.Web.Compilation.BuildProvider>クラスでサポートされます。 使用して、<xref:System.Web.Configuration.BuildProviderCollection>を確認するクラスが、構成ファイル内のプロバイダーをビルドします。 ビルド プロバイダーの構成の詳細については、次を参照してください。 [buildProviders 要素 (ASP.NET 設定スキーマ) のコンパイル](http://msdn.microsoft.com/en-us/40fa889d-5412-487a-b6a9-21eb011c2384)です。  
+  
+ カスタム ファイルの種類のソース コードを生成するビルド プロバイダーを実装するのには、派生クラスを<xref:System.Web.Compilation.BuildProvider>、オーバーライド、<xref:System.Web.Compilation.BuildProvider.GenerateCode%2A>サポートされているファイルの種類のソース コードを生成する方法です。 生成されたソースを追加、 <xref:System.Web.Compilation.AssemblyBuilder> CodeDOM グラフのまたは物理ソース コード ファイルを表すコンテンツとしてフォーム内のオブジェクト。 ビルド プロバイダーは、特定のプログラミング言語を必要とする場合は、上書き、<xref:System.Web.Compilation.BuildProvider.CodeCompilerType%2A>返されるプロパティを<xref:System.Web.Compilation.CompilerType>サポートされているプログラミング言語のオブジェクト。 ビルド プロバイダーに固有のプログラミング言語が必要としない場合は無効、<xref:System.Web.Compilation.BuildProvider.CodeCompilerType%2A>プロパティです。 使用する基本クラスの実装のビルド プロバイダーが Visual Basic や c# など、任意の .NET Framework 言語を使用できることを示します。  
+  
+ Web コンテンツのソース コードを生成するビルド プロバイダーを実装するのには、派生クラスを<xref:System.Web.Compilation.BuildProvider>をオーバーライドし、<xref:System.Web.Compilation.BuildProvider.GetGeneratedType%2A>を返すメソッドを<xref:System.Type>によって生成されたクラスの<xref:System.Web.Compilation.BuildProvider>します。 上書き、<xref:System.Web.Compilation.BuildProvider.GenerateCode%2A>サポートされているファイルによって提供された型のソース コードを生成する方法です。  
+  
+> [!NOTE]
+>  追加、カスタマイズされた<xref:System.Web.Compilation.BuildProvider>Web.config ファイルにクラスは、ASP.NET Web サイトでは動作しますが、ASP.NET Web アプリケーション プロジェクトでは機能しません。 Web アプリケーション プロジェクト、によって生成されるコードでは、<xref:System.Web.Compilation.BuildProvider>クラスは、アプリケーションに含めることはできません。 詳細については、次を参照してください。 [ASP.NET Web アプリケーション プロジェクト プリコンパイル概要](http://msdn.microsoft.com/en-us/b940abbd-178d-4570-b441-52914fa7b887)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、抽象型から継承する簡単なビルド プロバイダーの実装を示しています。<xref:System.Web.Compilation.BuildProvider>基本クラスです。 ビルド プロバイダーは、 <xref:System.Web.Compilation.BuildProvider.CodeCompilerType%2A>、 <xref:System.Web.Compilation.BuildProvider.GetGeneratedType%2A>、および<xref:System.Web.Compilation.BuildProvider.GenerateCode%2A>基底クラスのメンバーです。 この例では、実装は含まれません、`SampleClassGenerator`クラスです。 詳細については、次を参照してください。、<xref:System.CodeDom.CodeCompileUnit>クラスの概要です。  
+  
+ [!code-csharp[System.Web.Compilation.SampleBuildProvider_2#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Compilation.SampleBuildProvider_2/CS/Class1.cs#2)]
+ [!code-vb[System.Web.Compilation.SampleBuildProvider_2#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Compilation.SampleBuildProvider_2/VB/Class1.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected BuildProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.BuildProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Compilation.BuildProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.BuildProvider>クラスは抽象クラスのインスタンスを作成することはできません<xref:System.Web.Compilation.BuildProvider>直接コンス トラクターを使用します。  
+  
+ 派生している場合、<xref:System.Web.Compilation.BuildProvider>クラス、ビルド プロバイダーの実装にカスタムの初期化のアクションを実装するコンス トラクターをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CodeCompilerType">
+      <MemberSignature Language="C#" Value="public virtual System.Web.Compilation.CompilerType CodeCompilerType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Compilation.CompilerType CodeCompilerType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.BuildProvider.CodeCompilerType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Compilation.CompilerType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビルド プロバイダーがカスタム ファイルの種類のソース コードを生成するために使用するコンパイラ タイプを表します。</summary>
+        <value>読み取り専用<see cref="T:System.Web.Compilation.CompilerType" />コード ジェネレーター、コード コンパイラ、および仮想パスのソース コードを構築するために使用するコンパイラ設定を表すです。 基本クラスを返します<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.Compilation.BuildProvider.CodeCompilerType%2A>プロパティを実装するためのソース コードのコンパイルの設定を提供<xref:System.Web.Compilation.BuildProvider>です。 <xref:System.Web.Compilation.BuildProvider.CodeCompilerType%2A>プロパティは`null`かどうかビルド プロバイダーは必要ありません、特定のコード言語の生成とソース コードをコンパイルします。  
+  
+ 値を設定する、<xref:System.Web.Compilation.CompilerType>ビルド プロバイダーの実装を使用して内のオブジェクト、<xref:System.Web.Compilation.BuildProvider.GetDefaultCompilerType%2A>または<xref:System.Web.Compilation.BuildProvider.GetDefaultCompilerTypeForLanguage%2A>メソッドです。  
+  
+ <xref:System.Web.Compilation.CompilerType.CodeDomProviderType%2A>プロパティを指定します、<xref:System.CodeDom.Compiler.CodeDomProvider>実装を生成し、ビルド プロバイダーのソース コードをコンパイルするために使用します。 <xref:System.Web.Compilation.CompilerType.CompilerParameters%2A>プロパティは、ソース コードをアセンブリにコンパイルするために使用される設定を定義します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、抽象型から継承する簡単なビルド プロバイダーの実装を示しています。<xref:System.Web.Compilation.BuildProvider>基本クラスです。 ビルド プロバイダーは、 <xref:System.Web.Compilation.BuildProvider.CodeCompilerType%2A>、 <xref:System.Web.Compilation.BuildProvider.GetGeneratedType%2A>、および<xref:System.Web.Compilation.BuildProvider.GenerateCode%2A>基底クラスのメンバーです。  
+  
+ [!code-csharp[System.Web.Compilation.SampleBuildProvider_2#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Compilation.SampleBuildProvider_2/CS/Class1.cs#2)]
+ [!code-vb[System.Web.Compilation.SampleBuildProvider_2#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Compilation.SampleBuildProvider_2/VB/Class1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateCode">
+      <MemberSignature Language="C#" Value="public virtual void GenerateCode (System.Web.Compilation.AssemblyBuilder assemblyBuilder);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GenerateCode(class System.Web.Compilation.AssemblyBuilder assemblyBuilder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.BuildProvider.GenerateCode(System.Web.Compilation.AssemblyBuilder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assemblyBuilder" Type="System.Web.Compilation.AssemblyBuilder" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyBuilder">ビルド プロバイダーで生成されたソース コードを参照するアセンブリ ビルダー。</param>
+        <summary>ビルド プロバイダーの仮想パスのソース コードを生成し、そのソース コードを指定のアセンブリ ビルダーに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタム ファイルの種類のソース コードを生成するビルド プロバイダーを実装するのには、派生クラスを<xref:System.Web.Compilation.BuildProvider>クラス、し、上書き、<xref:System.Web.Compilation.BuildProvider.GenerateCode%2A>サポートされているファイルの種類のソース コードを生成する方法です。  
+  
+ 通常、ビルド プロバイダーの<xref:System.Web.Compilation.BuildProvider.GenerateCode%2A>実装の読み取り、<xref:System.Web.Compilation.BuildProvider.VirtualPath%2A>プロパティ、内容を解析しを指定した、生成されたソース コードに追加<xref:System.Web.Compilation.AssemblyBuilder>オブジェクト。 ソース コードの形式でアセンブリに協力することができます、<xref:System.IO.TextWriter>オブジェクトまたは CodeDOM グラフ。 ソース コードからアセンブリを追加する、<xref:System.IO.TextWriter>オブジェクトを使用して、<xref:System.Web.Compilation.AssemblyBuilder.CreateCodeFile%2A>メソッドです。 CodeDOM グラフのソース コードをアセンブリに追加するには、使用、<xref:System.Web.Compilation.AssemblyBuilder.AddCodeCompileUnit%2A>メソッドです。  
+  
+ オーバーライドする必要がありますビルド プロバイダーは、特定のプログラミング言語でソース コードを生成する場合、<xref:System.Web.Compilation.BuildProvider.CodeCompilerType%2A>返されるプロパティを<xref:System.Web.Compilation.CompilerType>サポートされているプログラミング言語のオブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例は、抽象型から継承する簡単なビルド プロバイダーの実装を示しています。<xref:System.Web.Compilation.BuildProvider>基本クラスです。 ビルド プロバイダーは、 <xref:System.Web.Compilation.BuildProvider.CodeCompilerType%2A>、 <xref:System.Web.Compilation.BuildProvider.GetGeneratedType%2A>、および<xref:System.Web.Compilation.BuildProvider.GenerateCode%2A>基底クラスのメンバーです。  
+  
+ [!code-csharp[System.Web.Compilation.SampleBuildProvider_2#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Compilation.SampleBuildProvider_2/CS/Class1.cs#2)]
+ [!code-vb[System.Web.Compilation.SampleBuildProvider_2#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Compilation.SampleBuildProvider_2/VB/Class1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCodeCompileUnit">
+      <MemberSignature Language="C#" Value="protected virtual System.CodeDom.CodeCompileUnit GetCodeCompileUnit (out System.Collections.IDictionary linePragmasTable);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance class System.CodeDom.CodeCompileUnit GetCodeCompileUnit([out] class System.Collections.IDictionary&amp; linePragmasTable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.BuildProvider.GetCodeCompileUnit(System.Collections.IDictionary@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeCompileUnit</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="linePragmasTable" Type="System.Collections.IDictionary&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="linePragmasTable">このメソッドが戻るときに、すべての関連付けられている行番号およびソース コードの行プラグマを格納するディクショナリが含まれています。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>生成された CodeDOM グラフのコンテナーを表します。</summary>
+        <returns>によって生成された CodeDOM グラフのコンテナー、<see cref="T:System.Web.Compilation.BuildProvider" />インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用できます、<xref:System.Web.Compilation.ClientBuildManager>クラスの構文の強調表示とデザイナーは、Visual Studio でサポートします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCustomString">
+      <MemberSignature Language="C#" Value="public virtual string GetCustomString (System.CodeDom.Compiler.CompilerResults results);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetCustomString(class System.CodeDom.Compiler.CompilerResults results) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.BuildProvider.GetCustomString(System.CodeDom.Compiler.CompilerResults)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="results" Type="System.CodeDom.Compiler.CompilerResults" />
+      </Parameters>
+      <Docs>
+        <param name="results">ビルド プロバイダーの仮想パスのコンパイル結果。</param>
+        <summary>コンパイルしたアセンブリに保存される文字列を生成します。</summary>
+        <returns>ビルド環境に保存される文字列または<see langword="null" />場合、<see cref="T:System.Web.Compilation.BuildProvider" />インスタンスを実装していません<see cref="M:System.Web.Compilation.BuildProvider.GetCustomString(System.CodeDom.Compiler.CompilerResults)" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.BuildManager.GetCompiledCustomString%2A>のメソッド、<xref:System.Web.Compilation.BuildManager>オブジェクトは、入力の仮想パス、および呼び出し用のビルド プロバイダーのインスタンスを作成、<xref:System.Web.Compilation.BuildProvider.GetCustomString%2A>メソッドを<xref:System.Web.Compilation.BuildProvider>オブジェクト。  
+  
+ 基本<xref:System.Web.Compilation.BuildProvider>クラスを返します`null`の<xref:System.Web.Compilation.BuildProvider.GetCustomString%2A>メソッド、ことを示す<xref:System.Web.Compilation.BuildProvider.GetCustomString%2A>は実装されていません。  
+  
+ 特定のビルド プロバイダーの実装を実装できます<xref:System.Web.Compilation.BuildProvider.GetCustomString%2A>の代わりに、<xref:System.Web.Compilation.BuildProvider.GetGeneratedType%2A>メソッドです。 A<xref:System.Web.Compilation.BuildProvider>オブジェクトを使用して通常<xref:System.Web.Compilation.BuildProvider.GetGeneratedType%2A>を返す、<xref:System.Type>仮想パスのオブジェクト。 ただし、<xref:System.Web.Compilation.BuildProvider.GetCustomString%2A>メソッドを示すために使用できます、<xref:System.Web.Compilation.BuildProvider>仮想パスからオブジェクトが複数の型を生成できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDefaultCompilerType">
+      <MemberSignature Language="C#" Value="protected System.Web.Compilation.CompilerType GetDefaultCompilerType ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Web.Compilation.CompilerType GetDefaultCompilerType() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.BuildProvider.GetDefaultCompilerType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Compilation.CompilerType</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アプリケーションの既定の言語のコンパイラ設定を返します。</summary>
+        <returns>A<see cref="T:System.Web.Compilation.CompilerType" />アプリケーションの既定の言語のコンパイラ設定を表すです。 基本クラスでは、アプリケーション構成ファイルに基づく既定コンパイラを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.Compilation.BuildProvider.GetDefaultCompilerType%2A>ビルド プロバイダーのコンパイラの既定値の型をチェックするメソッド。 使用して、<xref:System.Web.Compilation.BuildProvider.GetDefaultCompilerTypeForLanguage%2A>ビルド プロバイダーの特定の言語名で構成されているコンパイラの型をチェックするメソッド。  
+  
+ 基本<xref:System.Web.Compilation.BuildProvider>クラスは、既定値の型を使用してコンパイラによって異なる、`defaultLanguage`属性の値は、アプリケーション構成ファイルのセクションでします。 使用してコンパイラの既定値の型を設定する compilation セクション内の既定の言語設定がない場合、<xref:Microsoft.VisualBasic.VBCodeProvider>言語プロバイダー。  
+  
+ 派生している場合、<xref:System.Web.Compilation.BuildProvider>使用できるクラス、<xref:System.Web.Compilation.BuildProvider.GetDefaultCompilerType%2A>を設定する、<xref:System.Web.Compilation.BuildProvider.CodeCompilerType%2A>実装内のプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDefaultCompilerTypeForLanguage">
+      <MemberSignature Language="C#" Value="protected System.Web.Compilation.CompilerType GetDefaultCompilerTypeForLanguage (string language);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Web.Compilation.CompilerType GetDefaultCompilerTypeForLanguage(string language) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.BuildProvider.GetDefaultCompilerTypeForLanguage(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Compilation.CompilerType</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="language" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="language">コード言語の名前。</param>
+        <summary>指定された言語に基づくビルド プロバイダーのコンパイラ設定を返します。</summary>
+        <returns>A<see cref="T:System.Web.Compilation.CompilerType" />を表す、指定した言語に基づくビルド プロバイダーのコンパイラ設定します。 基本クラスは、既定のアプリケーション構成ファイルに基づく言語のコンパイラ設定を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.Compilation.BuildProvider.GetDefaultCompilerTypeForLanguage%2A>ビルド プロバイダーの特定の言語名で構成されているコンパイラの型をチェックするメソッド。 使用して、<xref:System.Web.Compilation.BuildProvider.GetDefaultCompilerType%2A>ビルド プロバイダーのコンパイラの既定値の型をチェックするメソッド。  
+  
+ 基本<xref:System.Web.Compilation.BuildProvider>クラスは、既定値の型を使用してコンパイラによって異なる、<xref:System.Web.Configuration.Compiler>内の要素、<xref:System.Web.Configuration.CompilationSection.Compilers%2A>のプロパティ、<xref:System.Web.Configuration.CompilationSection>構成ファイルのオブジェクト。 これは、およびの構成ファイルのセクションでは、要素内の要素を確認するのには等価です。 たとえば、 `language` VB、値の基本クラスのメソッドを返します、<xref:System.Web.Compilation.CompilerType>オブジェクトのインスタンスの構成済みの設定に対応する<xref:Microsoft.VisualBasic.VBCodeProvider?displayProperty=nameWithType>です。  
+  
+ 継承する場合、<xref:System.Web.Compilation.BuildProvider>使用できるクラス、<xref:System.Web.Compilation.BuildProvider.GetDefaultCompilerTypeForLanguage%2A>を設定する、<xref:System.Web.Compilation.BuildProvider.CodeCompilerType%2A>実装でサポートされる言語のプロパティの値。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="language" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Web.HttpException">
+          <paramref name="language" />ビルド プロバイダーの構成済みのコンパイラは一致しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetGeneratedType">
+      <MemberSignature Language="C#" Value="public virtual Type GetGeneratedType (System.CodeDom.Compiler.CompilerResults results);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Type GetGeneratedType(class System.CodeDom.Compiler.CompilerResults results) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.BuildProvider.GetGeneratedType(System.CodeDom.Compiler.CompilerResults)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="results" Type="System.CodeDom.Compiler.CompilerResults" />
+      </Parameters>
+      <Docs>
+        <param name="results">ビルド プロバイダーの仮想パスのコンパイル結果。</param>
+        <summary>仮想パスからビルド プロバイダーによって生成される型を返します。</summary>
+        <returns>仮想パスのビルド プロバイダーによって生成される型。 基本クラスを返します<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .Aspx ファイルなどの Web コンテンツのソース コードを生成するビルド プロバイダーを実装するのには、派生クラスを<xref:System.Web.Compilation.BuildProvider>クラスし、オーバーライド、<xref:System.Web.Compilation.BuildProvider.GetGeneratedType%2A>ビルド プロバイダーによって生成された型を返すメソッド。  
+  
+ ASP.NET ビルド システムが各ビルド プロバイダーのファイルをコンパイルし、生成、<xref:System.CodeDom.Compiler.CompilerResults>に渡されるオブジェクト、<xref:System.Web.Compilation.BuildProvider.GetGeneratedType%2A>メソッドです。 通常、ビルド プロバイダーの<xref:System.Web.Compilation.BuildProvider.GetGeneratedType%2A>実装を使用して、<xref:System.Reflection.Assembly.GetType%2A>メソッドを<xref:System.CodeDom.Compiler.CompilerResults.CompiledAssembly%2A>入力のプロパティ`results`指定された型を取得するオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetResultFlags">
+      <MemberSignature Language="C#" Value="public virtual System.Web.Compilation.BuildProviderResultFlags GetResultFlags (System.CodeDom.Compiler.CompilerResults results);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Web.Compilation.BuildProviderResultFlags GetResultFlags(class System.CodeDom.Compiler.CompilerResults results) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.BuildProvider.GetResultFlags(System.CodeDom.Compiler.CompilerResults)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Compilation.BuildProviderResultFlags</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="results" Type="System.CodeDom.Compiler.CompilerResults" />
+      </Parameters>
+      <Docs>
+        <param name="results">ビルド プロバイダーの仮想パスのコンパイル結果。</param>
+        <summary>仮想パスが構築されたときに必要なアクションを示す値を返します。</summary>
+        <returns>A<see cref="T:System.Web.Compilation.BuildProviderResultFlags" />ビルド環境、ASP.NET での仮想パスが構築された後に必要なアクションを示す値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.BuildProvider.GetResultFlags%2A>のインスタンスを使用する場合、メソッドが ASP.NET ビルド環境によって使用される、<xref:System.Web.Compilation.BuildProvider>ファイルをビルドおよびコンパイル済みのアセンブリをロードするクラス。  
+  
+ 基本<xref:System.Web.Compilation.BuildProvider>クラスのメソッドを返します、<xref:System.Web.Compilation.BuildProviderResultFlags.Default>特別な操作が不要である仮想パスが構築されたときを示す、フィールドの値。  
+  
+ 派生している場合、<xref:System.Web.Compilation.BuildProvider>実装するクラス、<xref:System.Web.Compilation.BuildProvider.GetResultFlags%2A>別返すメソッドを<xref:System.Web.Compilation.BuildProviderResultFlags>カスタム ファイルの種類または仮想パスの値。 たとえば場合の再構築、仮想パスが必要ですを含む、<xref:System.AppDomain>オブジェクトを再読み込みされ、返すことができます、<xref:System.Web.Compilation.BuildProviderResultFlags.ShutdownAppDomainOnChange>から列挙値、<xref:System.Web.Compilation.BuildProvider.GetResultFlags%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenReader">
+      <MemberSignature Language="C#" Value="protected System.IO.TextReader OpenReader ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.IO.TextReader OpenReader() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.BuildProvider.OpenReader" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.TextReader</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のビルド プロバイダー オブジェクトの仮想パスから読み込むのためのテキスト リーダーを開きます。</summary>
+        <returns>開いている<see cref="T:System.IO.TextReader" />の内容の読み取りに使用できる、<see cref="P:System.Web.Compilation.BuildProvider.VirtualPath" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.IO.TextReader.Read%2A>メソッドで返された<xref:System.IO.TextReader>オブジェクトの内容を読み取る、<xref:System.Web.Compilation.BuildProvider.VirtualPath%2A>プロパティを<xref:System.Web.Compilation.BuildProvider>オブジェクト。  
+  
+ 呼び出した後、<xref:System.Web.Compilation.BuildProvider.OpenReader%2A>メソッドを使用する必要あります、<xref:System.IO.TextReader.Close%2A>を終了するメソッド、<xref:System.IO.TextReader>オブジェクトし、関連付けられたシステム リソースを解放します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenReader">
+      <MemberSignature Language="C#" Value="protected System.IO.TextReader OpenReader (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.IO.TextReader OpenReader(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.BuildProvider.OpenReader(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.TextReader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">読み取るへの仮想パス。</param>
+        <summary>指定した仮想パスから読み込むのためのテキスト リーダーを開きます。</summary>
+        <returns>開いている<see cref="T:System.IO.TextReader" />を使用して、指定した仮想パスの内容を読み取ることができます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.IO.TextReader.Read%2A>メソッドで返された<xref:System.IO.TextReader>仮想パスの内容を読み取るためのオブジェクト。  
+  
+ 呼び出した後、<xref:System.Web.Compilation.BuildProvider.OpenReader%2A>メソッドを使用する必要あります、<xref:System.IO.TextReader.Close%2A>を終了するメソッド、<xref:System.IO.TextReader>オブジェクトし、関連付けられたシステム リソースを解放します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenStream">
+      <MemberSignature Language="C#" Value="protected System.IO.Stream OpenStream ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.IO.Stream OpenStream() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.BuildProvider.OpenStream" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のビルド プロバイダー オブジェクトの仮想パスを読み取るためのストリームを開きます。</summary>
+        <returns>開いている<see cref="T:System.IO.Stream" />の内容の読み取りに使用できる、<see cref="P:System.Web.Compilation.BuildProvider.VirtualPath" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.IO.Stream.Read%2A>メソッドで返された<xref:System.IO.Stream>の仮想パスの内容を読み取るためのオブジェクト、<xref:System.Web.Compilation.BuildProvider>オブジェクト。  
+  
+ 呼び出した後、<xref:System.Web.Compilation.BuildProvider.OpenStream%2A>メソッドを使用する必要あります、<xref:System.IO.Stream.Close%2A>を終了するメソッド、<xref:System.IO.Stream>オブジェクトし、関連付けられたシステム リソースを解放します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenStream">
+      <MemberSignature Language="C#" Value="protected System.IO.Stream OpenStream (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.IO.Stream OpenStream(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.BuildProvider.OpenStream(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">読み取るへの仮想パス。</param>
+        <summary>指定した仮想パスから読み取るのためのストリームを開きます。</summary>
+        <returns>開いている<see cref="T:System.IO.Stream" />を使用して、指定した仮想パスの内容を読み取ることができます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.IO.Stream.Read%2A>メソッドで返された<xref:System.IO.Stream>仮想パスの内容を読み取るためのオブジェクト。  
+  
+ 呼び出した後、<xref:System.Web.Compilation.BuildProvider.OpenStream%2A>メソッドを使用する必要あります、<xref:System.IO.Stream.Close%2A>を終了するメソッド、<xref:System.IO.Stream>オブジェクトし、関連付けられたシステム リソースを解放します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessCompileErrors">
+      <MemberSignature Language="C#" Value="public virtual void ProcessCompileErrors (System.CodeDom.Compiler.CompilerResults results);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ProcessCompileErrors(class System.CodeDom.Compiler.CompilerResults results) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.BuildProvider.ProcessCompileErrors(System.CodeDom.Compiler.CompilerResults)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="results" Type="System.CodeDom.Compiler.CompilerResults" />
+      </Parameters>
+      <Docs>
+        <param name="results">コンパイラが発生します。</param>
+        <summary>派生クラスでオーバーライドされると、詳細を提供することを変更できるように、コンパイラ エラー メッセージを確認できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、エラー テキストをユーザーにとってより便利に行うために表示される前に、コンパイラ エラーを修正できますようには、このメソッドをオーバーライドします。 これは、特定のエラーのコンテキストを知るし、それらを修正する方法についてユーザーに情報を提供することができますのシナリオで役立ちます。 元のコンパイラ エラー メッセージは通常、特定の言語コンストラクトに固有、可能性がありますいない実際的な原因やソリューション明白なユーザーにします。  
+  
+ 使用して、エラーにアクセスすることができます、<xref:System.CodeDom.Compiler.CompilerResults>メソッドに渡されるオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReferencedAssemblies">
+      <MemberSignature Language="C#" Value="protected System.Collections.ICollection ReferencedAssemblies { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection ReferencedAssemblies" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.BuildProvider.ReferencedAssemblies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビルド プロバイダーによって生成されたソースでコンパイルしてアセンブリを表します。</summary>
+        <value>ビルド プロバイダーによって生成されたソース コードで参照できるアセンブリの読み取り専用コレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET は、環境によって初期化されたビルド プロバイダーによって参照されるアセンブリのコレクションをビルドします。 ビルド プロバイダーによって生成されたソース コードでは、参照されたアセンブリでパブリック型を使用できます。 参照アセンブリのコレクションは、他の ASP.NET アプリケーションでビルドされたアセンブリおよび構成ファイル内の要素の一覧にアセンブリで構成されます。  
+  
+ ビルド プロバイダーを使用して、追加のアセンブリに追加のビルド プロバイダーは、追加のアセンブリを参照するソース コードを生成する場合、<xref:System.Web.Compilation.AssemblyBuilder.AddAssemblyReference%2A>メソッドです。 ASP.NET ビルド環境では、プロバイダーとの参照で使用できるアセンブリの既定のコレクションをビルドによって追加された両方の参照先アセンブリを使用してアセンブリのコンパイル時に外部のタイプを解決します。  
+  
+ <xref:System.Web.Compilation.BuildProvider.ReferencedAssemblies%2A>コレクションが参照に対してを介して他のビルド プロバイダーによって追加されるアセンブリが含まれない、<xref:System.Web.Compilation.AssemblyBuilder.AddAssemblyReference%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterBuildProvider">
+      <MemberSignature Language="C#" Value="public static void RegisterBuildProvider (string extension, Type providerType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterBuildProvider(string extension, class System.Type providerType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.BuildProvider.RegisterBuildProvider(System.String,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="extension" Type="System.String" />
+        <Parameter Name="providerType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="extension">ビルド プロバイダーが、ファイル名拡張子。</param>
+        <param name="providerType">ビルド プロバイダーのクラスです。</param>
+        <summary>ビルド プロバイダーを登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用するには、Web.config ファイルで定義することではなくビルド プロバイダーを登録します。 ビルド プロバイダーの詳細については、次を参照してください。、<xref:System.Web.Compilation.BuildProvider>クラスと[buildProviders 要素 (ASP.NET 設定スキーマ) のコンパイル](http://msdn.microsoft.com/en-us/40fa889d-5412-487a-b6a9-21eb011c2384)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VirtualPath">
+      <MemberSignature Language="C#" Value="protected string VirtualPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string VirtualPath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.BuildProvider.VirtualPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このビルド プロバイダーの実装でビルドするファイルを表します。</summary>
+        <value>このビルド プロバイダーによってコンパイルされるファイルの仮想パスを指定する読み取り専用の文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 仮想パス、<xref:System.Web.Compilation.BuildProvider>オブジェクトは、ビルド プロバイダーによってコンパイルされるファイルへのパス。 カスタム構成した場合など、 <xref:System.Web.Compilation.BuildProvider> 、Web サイトにより、WebSite1 という名前は、Web サイトに Example.abc、という名前のファイルが含まれている場合、.abc のカスタム拡張機能がある Web サイトのすべてのファイルを作成するクラス、<xref:System.Web.Compilation.BuildProvider.VirtualPath%2A>プロパティ値を格納`/WebSite1/Example.abc`です。  
+  
+ アプリケーション内の各ファイルのファイル拡張子は、ファイルの種類とファイルの種類に対応するビルド プロバイダーを決定します。 ASP.NET ビルド環境によって初期化、<xref:System.Web.Compilation.BuildProvider>オブジェクトの各ファイルのファイルの種類に基づいてを使用して、<xref:System.Web.Compilation.BuildProvider>各ファイルのソースを生成するメソッド。  
+  
+ ビルド プロバイダーの構成の詳細については、次を参照してください。 [buildProviders 要素 (ASP.NET 設定スキーマ) のコンパイル](http://msdn.microsoft.com/en-us/40fa889d-5412-487a-b6a9-21eb011c2384)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VirtualPathDependencies">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.ICollection VirtualPathDependencies { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection VirtualPathDependencies" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.BuildProvider.VirtualPathDependencies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビルド プロバイダーがコードを生成する前に構築する必要がある仮想パスのコレクションを表します。</summary>
+        <value>ビルド プロバイダーのこのインスタンスが依存する仮想パスを表す文字列の読み取り専用コレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.BuildProvider.VirtualPathDependencies%2A>プロパティは使用する前にコンパイルする必要がある仮想パスのコレクション、<xref:System.Web.Compilation.BuildProvider>インスタンスは、ソース コードを生成します。 内の仮想パスからアセンブリ<xref:System.Web.Compilation.BuildProvider.VirtualPathDependencies%2A>のコンパイルへの参照として追加されます、<xref:System.Web.Compilation.BuildProvider>インスタンス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

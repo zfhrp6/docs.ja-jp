@@ -1,0 +1,135 @@
+<Type Name="DesignerEdges" FullName="System.Workflow.ComponentModel.Design.DesignerEdges">
+  <TypeSignature Language="C#" Value="public enum DesignerEdges" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DesignerEdges extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Design.DesignerEdges" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ワークフロー デザイン サーフェイス上のアクティビティ デザイナーの、デザイン時処理 (アクティビティ デザイナー上の <see cref="T:System.Workflow.ComponentModel.Design.Connector" /> 配置など) が実行される端を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.ComponentModel.Design.ConnectionPoint.ConnectionEdge%2A> オブジェクトまたは <xref:System.Workflow.ComponentModel.Design.ConnectionPoint> オブジェクトのコレクションがアクティビティ デザイナーのどこに存在するかを指定する、<xref:System.Workflow.ComponentModel.Design.ConnectionPoint> から返される列挙値です。 <xref:System.Workflow.ComponentModel.Design.ActivityDesigner.GetConnectionPoints%2A> メソッドを使用してこのコレクションを取得できます。  
+  
+ これは、ユーザーがアクティビティ デザイナーのどの端をサイズ変更しているかを、<xref:System.Workflow.ComponentModel.Design.DesignerEdges> から返される <xref:System.Workflow.ComponentModel.Design.ActivityDesignerResizeEventArgs.SizingEdge%2A> 列挙値を監視して判断する場合も使用できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="All">
+      <MemberSignature Language="C#" Value="All" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Workflow.ComponentModel.Design.DesignerEdges All = int32(15)" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.ComponentModel.Design.DesignerEdges.All" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.DesignerEdges</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティビティ デザイナーのすべての端。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Bottom">
+      <MemberSignature Language="C#" Value="Bottom" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Workflow.ComponentModel.Design.DesignerEdges Bottom = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.ComponentModel.Design.DesignerEdges.Bottom" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.DesignerEdges</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティビティ デザイナーの下端。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Left">
+      <MemberSignature Language="C#" Value="Left" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Workflow.ComponentModel.Design.DesignerEdges Left = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.ComponentModel.Design.DesignerEdges.Left" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.DesignerEdges</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティビティ デザイナーの左端。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Workflow.ComponentModel.Design.DesignerEdges None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.ComponentModel.Design.DesignerEdges.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.DesignerEdges</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティビティ デザイナーのどの端でもない。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Right">
+      <MemberSignature Language="C#" Value="Right" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Workflow.ComponentModel.Design.DesignerEdges Right = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.ComponentModel.Design.DesignerEdges.Right" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.DesignerEdges</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティビティ デザイナーの右端。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Top">
+      <MemberSignature Language="C#" Value="Top" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Workflow.ComponentModel.Design.DesignerEdges Top = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.ComponentModel.Design.DesignerEdges.Top" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.DesignerEdges</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティビティ デザイナーの上端。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

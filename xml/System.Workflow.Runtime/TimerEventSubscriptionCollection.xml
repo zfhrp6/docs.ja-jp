@@ -1,0 +1,297 @@
+<Type Name="TimerEventSubscriptionCollection" FullName="System.Workflow.Runtime.TimerEventSubscriptionCollection">
+  <TypeSignature Language="C#" Value="public class TimerEventSubscriptionCollection : System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit TimerEventSubscriptionCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.TimerEventSubscriptionCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Workflow.Runtime.TimerEventSubscription" /> オブジェクトの順序付きリストを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.Runtime.TimerEventSubscriptionCollection> は、ワークフロー インスタンスに関連付けられた <xref:System.Workflow.Runtime.TimerEventSubscription> オブジェクトのキューを表し、このキューを管理するためのメソッドを提供します。 キュー内のサブスクリプションは、その <xref:System.Workflow.Runtime.TimerEventSubscription.ExpiresAt%2A> の値に基づいて順序付けされます。<xref:System.Workflow.Runtime.TimerEventSubscription.ExpiresAt%2A> の値が小さいものほど前に、<xref:System.Workflow.Runtime.TimerEventSubscription.ExpiresAt%2A> の値が大きいものほど後ろに配置されます。 このクラスが提供するメソッドを使用して、ワークフロー インスタンスごとの <xref:System.Workflow.Runtime.TimerEventSubscriptionCollection.TimerCollectionProperty> によって公開されるアクティブ タイマー イベント サブスクリプションのコレクションを管理できます。 <xref:System.Workflow.Runtime.TimerEventSubscriptionCollection.Add%2A> または <xref:System.Workflow.Runtime.TimerEventSubscriptionCollection.Remove%2A> を使用することにより、タイマー キュー内のサブスクリプションを追加または削除できます。 タイマー キュー内の最初の要素が変わると <xref:System.Workflow.Runtime.Hosting.WorkflowSchedulerService> が呼び出され、それまでキューの先頭にあったタイマー イベントがキャンセルされ、新しいタイマー イベントがスケジュールされます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Workflow.Runtime.TimerEventSubscription item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Workflow.Runtime.TimerEventSubscription item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.TimerEventSubscriptionCollection.Add(System.Workflow.Runtime.TimerEventSubscription)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Workflow.Runtime.TimerEventSubscription" />
+      </Parameters>
+      <Docs>
+        <param name="item">タイマー キューに追加する <see cref="T:System.Workflow.Runtime.TimerEventSubscription" />。</param>
+        <summary>タイマー キューに <see cref="T:System.Workflow.Runtime.TimerEventSubscription" /> を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タイマー キューに <xref:System.Workflow.Runtime.TimerEventSubscription> を追加します。 キュー内のサブスクリプションは、<xref:System.Workflow.Runtime.TimerEventSubscription.ExpiresAt%2A?displayProperty=nameWithType> の値に基づいて配置されます。この値が小さいサブスクリプションほど、値の大きいサブスクリプションの前に配置されます。 キューの先頭に新しいサブスクリプションが追加されると、<xref:System.Workflow.Runtime.Hosting.WorkflowSchedulerService.Cancel%2A?displayProperty=nameWithType> が呼び出され、それまでキューの先頭にあったタイマー イベントがキャンセルされます。さらに、<xref:System.Workflow.Runtime.Hosting.WorkflowSchedulerService.Schedule%28System.Threading.WaitCallback%2CSystem.Guid%2CSystem.DateTime%2CSystem.Guid%29?displayProperty=nameWithType> が呼び出され、新しいタイマー イベントがスケジュールされます。 <xref:System.Workflow.Runtime.TimerEventSubscriptionCollection.Add%2A> は新しいサブスクリプションを追加する前に <xref:System.Workflow.Runtime.TimerEventSubscriptionCollection> をロックするので、スレッド セーフです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="item" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.TimerEventSubscriptionCollection.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">
+          <see cref="T:System.Array" /> からコピーされる要素のコピー先となる 1 次元の <see cref="T:System.Workflow.Runtime.TimerEventSubscriptionCollection" />。 <see cref="T:System.Array" /> には、0 から始まるインデックス番号が必要です。</param>
+        <param name="index">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary><see cref="T:System.Workflow.Runtime.TimerEventSubscriptionCollection" /> の要素を既存の 1 次元の <see cref="T:System.Array" /> にコピーします。コピー操作は、配列内の指定したインデックスから始まります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.TimerEventSubscriptionCollection.CopyTo%2A> はスレッド セーフです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.TimerEventSubscriptionCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タイマー キュー内の <see cref="T:System.Workflow.Runtime.TimerEventSubscription" /> オブジェクトの数を取得します。</summary>
+        <value>キュー内の <see cref="T:System.Workflow.Runtime.TimerEventSubscription" /> オブジェクトの数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.TimerEventSubscriptionCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.TimerEventSubscriptionCollection" /> を反復処理する列挙子を返します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" /> の <see cref="T:System.Workflow.Runtime.TimerEventSubscriptionCollection" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.TimerEventSubscriptionCollection> へのアクセスは同期されます。ただし、コレクションの列挙は本質的にはスレッド セーフな方法ではありません。 コレクションが変更されない限り、列挙子は有効です。 コレクションに対して変更 (要素の追加、変更、削除など) が行われると、列挙子は回復不可能な無効状態になり、その動作は未定義になります。 列挙子には、コレクションへの排他アクセスがありません。したがって、コレクションの列挙処理は本質的にスレッド セーフな処理ではありません。 列挙処理中のスレッド セーフを確保するには、<xref:System.Workflow.Runtime.TimerEventSubscriptionCollection> を使用することにより、すべての列挙処理が終わるまで <xref:System.Workflow.Runtime.TimerEventSubscriptionCollection.SyncRoot%2A> をロックします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.TimerEventSubscriptionCollection.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.TimerEventSubscriptionCollection" /> へのアクセスが同期化されている (スレッド セーフである) かどうかを示す値を取得します。</summary>
+        <value><see langword="true" /> へのアクセスが同期化されている (スレッド セーフである) ことを示す <see cref="T:System.Workflow.Runtime.TimerEventSubscriptionCollection" /> を常に返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.TimerEventSubscriptionCollection> へのアクセスは同期されます。ただし、コレクションの列挙は本質的にはスレッド セーフな方法ではありません。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。 <xref:System.Workflow.Runtime.TimerEventSubscriptionCollection.SyncRoot%2A> は、<xref:System.Workflow.Runtime.TimerEventSubscriptionCollection> へのアクセスを同期するために使用できるオブジェクトを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Peek">
+      <MemberSignature Language="C#" Value="public System.Workflow.Runtime.TimerEventSubscription Peek ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Workflow.Runtime.TimerEventSubscription Peek() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.TimerEventSubscriptionCollection.Peek" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.TimerEventSubscription</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>タイマー キューの先頭にある <see cref="T:System.Workflow.Runtime.TimerEventSubscription" /> を削除せずに返します。</summary>
+        <returns>タイマー キューの先頭にある <see cref="T:System.Workflow.Runtime.TimerEventSubscription" />。タイマー キューが空の場合は null 参照 (Visual Basic の場合は <see langword="Nothing" />)。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.TimerEventSubscriptionCollection.Peek%2A> はスレッド セーフです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (Guid timerSubscriptionId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(valuetype System.Guid timerSubscriptionId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.TimerEventSubscriptionCollection.Remove(System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timerSubscriptionId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="timerSubscriptionId">削除する <see cref="T:System.Guid" /> の <see cref="T:System.Workflow.Runtime.TimerEventSubscription" />。</param>
+        <summary>指定したサブスクリプション ID を持つ <see cref="T:System.Workflow.Runtime.TimerEventSubscription" /> を、タイマー キューから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したサブスクリプション ID を持つ <xref:System.Workflow.Runtime.TimerEventSubscription> を、タイマー キューから削除します。 キュー内のサブスクリプションは、<xref:System.Workflow.Runtime.TimerEventSubscription.ExpiresAt%2A?displayProperty=nameWithType> の値に基づいて配置されます。この値が小さいサブスクリプションほど、値の大きいサブスクリプションの前に配置されます。 キューの先頭のサブスクリプションを削除した場合は、<xref:System.Workflow.Runtime.Hosting.WorkflowSchedulerService.Cancel%2A?displayProperty=nameWithType> が呼び出され、そのサブスクリプションに関連付けられていたタイマー イベントがキャンセルされます。さらに、<xref:System.Workflow.Runtime.Hosting.WorkflowSchedulerService.Schedule%28System.Threading.WaitCallback%2CSystem.Guid%2CSystem.DateTime%2CSystem.Guid%29?displayProperty=nameWithType> が呼び出され、現在キューの先頭にあるサブスクリプションのタイマー イベントがスケジュールされます。 <xref:System.Workflow.Runtime.TimerEventSubscriptionCollection.Remove%28System.Guid%29> はスレッド セーフです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Workflow.Runtime.TimerEventSubscription item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Workflow.Runtime.TimerEventSubscription item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.TimerEventSubscriptionCollection.Remove(System.Workflow.Runtime.TimerEventSubscription)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Workflow.Runtime.TimerEventSubscription" />
+      </Parameters>
+      <Docs>
+        <param name="item">タイマー キューから削除する <see cref="T:System.Workflow.Runtime.TimerEventSubscription" />。</param>
+        <summary>タイマー キューから <see cref="T:System.Workflow.Runtime.TimerEventSubscription" /> を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タイマー キューから <xref:System.Workflow.Runtime.TimerEventSubscription> を削除します。 キュー内のサブスクリプションは、<xref:System.Workflow.Runtime.TimerEventSubscription.ExpiresAt%2A?displayProperty=nameWithType> の値に基づいて配置されます。この値が小さいサブスクリプションほど、値の大きいサブスクリプションの前に配置されます。 キューの先頭のサブスクリプションを削除した場合は、<xref:System.Workflow.Runtime.Hosting.WorkflowSchedulerService.Cancel%2A?displayProperty=nameWithType> が呼び出され、そのサブスクリプションに関連付けられていたタイマー イベントがキャンセルされます。さらに、<xref:System.Workflow.Runtime.Hosting.WorkflowSchedulerService.Schedule%28System.Threading.WaitCallback%2CSystem.Guid%2CSystem.DateTime%2CSystem.Guid%29?displayProperty=nameWithType> が呼び出され、現在キューの先頭にあるサブスクリプションのタイマー イベントがスケジュールされます。 <xref:System.Workflow.Runtime.TimerEventSubscriptionCollection.Remove%28System.Guid%29> はスレッド セーフです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="item" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.TimerEventSubscriptionCollection.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.TimerEventSubscriptionCollection" /> へのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value><see cref="T:System.Workflow.Runtime.TimerEventSubscriptionCollection" /> へのアクセスを同期するために使用するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.TimerEventSubscriptionCollection.SyncRoot%2A> は、<xref:System.Workflow.Runtime.TimerEventSubscriptionCollection> へのアクセスを同期するために使用できるオブジェクトを返します。  
+  
+ <xref:System.Workflow.Runtime.TimerEventSubscriptionCollection> へのアクセスは同期されます。ただし、コレクションの列挙は本質的にはスレッド セーフな方法ではありません。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理中のスレッド セーフを確保するには、<xref:System.Workflow.Runtime.TimerEventSubscriptionCollection> を使用することによりすべての列挙処理が終わるまで <xref:System.Workflow.Runtime.TimerEventSubscriptionCollection.SyncRoot%2A> をロックするか、他のスレッドによって行われた変更に起因する例外をキャッチします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TimerCollectionProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Workflow.ComponentModel.DependencyProperty TimerCollectionProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Workflow.ComponentModel.DependencyProperty TimerCollectionProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.Runtime.TimerEventSubscriptionCollection.TimerCollectionProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー インスタンスに関連付けられたタイマー キュー。 このキューには、ワークフローの <see cref="T:System.Workflow.Runtime.TimerEventSubscription" /> オブジェクトが時間順に格納されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

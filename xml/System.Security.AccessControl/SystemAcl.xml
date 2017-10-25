@@ -1,0 +1,650 @@
+<Type Name="SystemAcl" FullName="System.Security.AccessControl.SystemAcl">
+  <TypeSignature Language="C#" Value="public sealed class SystemAcl : System.Security.AccessControl.CommonAcl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SystemAcl extends System.Security.AccessControl.CommonAcl" />
+  <TypeSignature Language="DocId" Value="T:System.Security.AccessControl.SystemAcl" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security.AccessControl</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.AccessControl.CommonAcl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>システム アクセス制御リスト (SACL) を表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SystemAcl (bool isContainer, bool isDS, int capacity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool isContainer, bool isDS, int32 capacity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.SystemAcl.#ctor(System.Boolean,System.Boolean,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="isContainer" Type="System.Boolean" />
+        <Parameter Name="isDS" Type="System.Boolean" />
+        <Parameter Name="capacity" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="isContainer">
+          <see langword="true" />場合、新しい<see cref="T:System.Security.AccessControl.SystemAcl" />オブジェクトがコンテナーです。</param>
+        <param name="isDS">
+          <see langword="true" />場合、新しい<see cref="T:System.Security.AccessControl.SystemAcl" />オブジェクトがディレクトリ オブジェクトのアクセス制御リスト (ACL)。</param>
+        <param name="capacity">アクセス制御エントリ (Ace) の数この<see cref="T:System.Security.AccessControl.SystemAcl" />オブジェクトを含めることができます。 この番号は、ヒントとしてのみ使用するのには。</param>
+        <summary>値を指定して、<see cref="T:System.Security.AccessControl.SystemAcl" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SystemAcl (bool isContainer, bool isDS, System.Security.AccessControl.RawAcl rawAcl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool isContainer, bool isDS, class System.Security.AccessControl.RawAcl rawAcl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.SystemAcl.#ctor(System.Boolean,System.Boolean,System.Security.AccessControl.RawAcl)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="isContainer" Type="System.Boolean" />
+        <Parameter Name="isDS" Type="System.Boolean" />
+        <Parameter Name="rawAcl" Type="System.Security.AccessControl.RawAcl" />
+      </Parameters>
+      <Docs>
+        <param name="isContainer">
+          <see langword="true" />場合、新しい<see cref="T:System.Security.AccessControl.SystemAcl" />オブジェクトがコンテナーです。</param>
+        <param name="isDS">
+          <see langword="true" />場合、新しい<see cref="T:System.Security.AccessControl.SystemAcl" />オブジェクトがディレクトリ オブジェクトのアクセス制御リスト (ACL)。</param>
+        <param name="rawAcl">基になる<see cref="T:System.Security.AccessControl.RawAcl" />、新しいオブジェクト<see cref="T:System.Security.AccessControl.SystemAcl" />オブジェクト。 指定<see langword="null" />を空の ACL を作成します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.AccessControl.SystemAcl" />から、指定した値を指定して<see cref="T:System.Security.AccessControl.RawAcl" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクセス制御エントリ (Ace)、<xref:System.Security.AccessControl.RawAcl>オブジェクトを複製します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SystemAcl (bool isContainer, bool isDS, byte revision, int capacity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool isContainer, bool isDS, unsigned int8 revision, int32 capacity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.SystemAcl.#ctor(System.Boolean,System.Boolean,System.Byte,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="isContainer" Type="System.Boolean" />
+        <Parameter Name="isDS" Type="System.Boolean" />
+        <Parameter Name="revision" Type="System.Byte" />
+        <Parameter Name="capacity" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="isContainer">
+          <see langword="true" />場合、新しい<see cref="T:System.Security.AccessControl.SystemAcl" />オブジェクトがコンテナーです。</param>
+        <param name="isDS">
+          <see langword="true" />場合、新しい<see cref="T:System.Security.AccessControl.SystemAcl" />オブジェクトがディレクトリ オブジェクトのアクセス制御リスト (ACL)。</param>
+        <param name="revision">新しいリビジョン レベル<see cref="T:System.Security.AccessControl.SystemAcl" />オブジェクト。</param>
+        <param name="capacity">アクセス制御エントリ (Ace) の数この<see cref="T:System.Security.AccessControl.SystemAcl" />オブジェクトを含めることができます。 この番号は、ヒントとしてのみ使用するのには。</param>
+        <summary>値を指定して、<see cref="T:System.Security.AccessControl.SystemAcl" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="AddAudit">
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>現在の監査規則の追加<see cref="T:System.Security.AccessControl.SystemAcl" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 監査規則を追加すると、1 つまたは複数既存のアクセス制御エントリ (Ace) を結合する場合があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="AddAudit">
+      <MemberSignature Language="C#" Value="public void AddAudit (System.Security.Principal.SecurityIdentifier sid, System.Security.AccessControl.ObjectAuditRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddAudit(class System.Security.Principal.SecurityIdentifier sid, class System.Security.AccessControl.ObjectAuditRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.SystemAcl.AddAudit(System.Security.Principal.SecurityIdentifier,System.Security.AccessControl.ObjectAuditRule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sid" Type="System.Security.Principal.SecurityIdentifier" />
+        <Parameter Name="rule" Type="System.Security.AccessControl.ObjectAuditRule" />
+      </Parameters>
+      <Docs>
+        <param name="sid"><see cref="T:System.Security.Principal.SecurityIdentifier" />監査規則を追加します。</param>
+        <param name="rule"><see cref="T:System.Security.AccessControl.ObjectAuditRule" />新しい監査規則のです。</param>
+        <summary>現在の監査規則の追加<see cref="T:System.Security.AccessControl.SystemAcl" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 監査規則を追加すると、1 つまたは複数既存のアクセス制御エントリ (Ace) を結合する場合があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAudit">
+      <MemberSignature Language="C#" Value="public void AddAudit (System.Security.AccessControl.AuditFlags auditFlags, System.Security.Principal.SecurityIdentifier sid, int accessMask, System.Security.AccessControl.InheritanceFlags inheritanceFlags, System.Security.AccessControl.PropagationFlags propagationFlags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddAudit(valuetype System.Security.AccessControl.AuditFlags auditFlags, class System.Security.Principal.SecurityIdentifier sid, int32 accessMask, valuetype System.Security.AccessControl.InheritanceFlags inheritanceFlags, valuetype System.Security.AccessControl.PropagationFlags propagationFlags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.SystemAcl.AddAudit(System.Security.AccessControl.AuditFlags,System.Security.Principal.SecurityIdentifier,System.Int32,System.Security.AccessControl.InheritanceFlags,System.Security.AccessControl.PropagationFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="auditFlags" Type="System.Security.AccessControl.AuditFlags" />
+        <Parameter Name="sid" Type="System.Security.Principal.SecurityIdentifier" />
+        <Parameter Name="accessMask" Type="System.Int32" />
+        <Parameter Name="inheritanceFlags" Type="System.Security.AccessControl.InheritanceFlags" />
+        <Parameter Name="propagationFlags" Type="System.Security.AccessControl.PropagationFlags" />
+      </Parameters>
+      <Docs>
+        <param name="auditFlags">追加する監査規則の種類。</param>
+        <param name="sid"><see cref="T:System.Security.Principal.SecurityIdentifier" />監査規則を追加します。</param>
+        <param name="accessMask">新しい監査規則のアクセス マスク。</param>
+        <param name="inheritanceFlags">新しい監査規則の継承プロパティを指定するフラグ。</param>
+        <param name="propagationFlags">新しい監査規則の継承の反映プロパティを指定するフラグ。</param>
+        <summary>現在の監査規則の追加<see cref="T:System.Security.AccessControl.SystemAcl" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 監査規則を追加すると、1 つまたは複数既存のアクセス制御エントリ (Ace) を結合する場合があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAudit">
+      <MemberSignature Language="C#" Value="public void AddAudit (System.Security.AccessControl.AuditFlags auditFlags, System.Security.Principal.SecurityIdentifier sid, int accessMask, System.Security.AccessControl.InheritanceFlags inheritanceFlags, System.Security.AccessControl.PropagationFlags propagationFlags, System.Security.AccessControl.ObjectAceFlags objectFlags, Guid objectType, Guid inheritedObjectType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddAudit(valuetype System.Security.AccessControl.AuditFlags auditFlags, class System.Security.Principal.SecurityIdentifier sid, int32 accessMask, valuetype System.Security.AccessControl.InheritanceFlags inheritanceFlags, valuetype System.Security.AccessControl.PropagationFlags propagationFlags, valuetype System.Security.AccessControl.ObjectAceFlags objectFlags, valuetype System.Guid objectType, valuetype System.Guid inheritedObjectType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.SystemAcl.AddAudit(System.Security.AccessControl.AuditFlags,System.Security.Principal.SecurityIdentifier,System.Int32,System.Security.AccessControl.InheritanceFlags,System.Security.AccessControl.PropagationFlags,System.Security.AccessControl.ObjectAceFlags,System.Guid,System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="auditFlags" Type="System.Security.AccessControl.AuditFlags" />
+        <Parameter Name="sid" Type="System.Security.Principal.SecurityIdentifier" />
+        <Parameter Name="accessMask" Type="System.Int32" />
+        <Parameter Name="inheritanceFlags" Type="System.Security.AccessControl.InheritanceFlags" />
+        <Parameter Name="propagationFlags" Type="System.Security.AccessControl.PropagationFlags" />
+        <Parameter Name="objectFlags" Type="System.Security.AccessControl.ObjectAceFlags" />
+        <Parameter Name="objectType" Type="System.Guid" />
+        <Parameter Name="inheritedObjectType" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="auditFlags">追加する監査規則の種類。</param>
+        <param name="sid"><see cref="T:System.Security.Principal.SecurityIdentifier" />監査規則を追加します。</param>
+        <param name="accessMask">新しい監査規則のアクセス マスク。</param>
+        <param name="inheritanceFlags">新しい監査規則の継承プロパティを指定するフラグ。</param>
+        <param name="propagationFlags">新しい監査規則の継承の反映プロパティを指定するフラグ。</param>
+        <param name="objectFlags">場合を指定するフラグ、 <c>objectType</c>と<c>inheritedObjectType</c>パラメーターが含まれていない<see langword="null" />値。</param>
+        <param name="objectType">新しい監査規則を適用するオブジェクトのクラスの id。</param>
+        <param name="inheritedObjectType">新しい監査規則を継承できる子オブジェクトのクラスの id。</param>
+        <summary>現在の指定された設定で、監査規則を追加<see cref="T:System.Security.AccessControl.SystemAcl" />オブジェクト。 このメソッドは、ディレクトリ オブジェクトのアクセス制御リスト (Acl)、オブジェクトの種類を指定する場合や、新しい監査規則の継承されたオブジェクトの種類に対して使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="RemoveAudit">
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>現在の指定された監査規則を削除<see cref="T:System.Security.AccessControl.SystemAcl" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 監査の削除は、それらを削除するだけでなく Ace を追加する複雑なアルゴリズムを使用して行われます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="RemoveAudit">
+      <MemberSignature Language="C#" Value="public bool RemoveAudit (System.Security.Principal.SecurityIdentifier sid, System.Security.AccessControl.ObjectAuditRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool RemoveAudit(class System.Security.Principal.SecurityIdentifier sid, class System.Security.AccessControl.ObjectAuditRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.SystemAcl.RemoveAudit(System.Security.Principal.SecurityIdentifier,System.Security.AccessControl.ObjectAuditRule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sid" Type="System.Security.Principal.SecurityIdentifier" />
+        <Parameter Name="rule" Type="System.Security.AccessControl.ObjectAuditRule" />
+      </Parameters>
+      <Docs>
+        <param name="sid"><see cref="T:System.Security.Principal.SecurityIdentifier" />監査規則を削除します。</param>
+        <param name="rule"><see cref="T:System.Security.AccessControl.ObjectAuditRule" />監査規則を削除します。</param>
+        <summary>現在の指定された監査規則を削除<see cref="T:System.Security.AccessControl.SystemAcl" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />このメソッドは、指定された監査規則を正常に削除される場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 監査の削除は、それらを削除するだけでなく Ace を追加する複雑なアルゴリズムを使用して行われます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAudit">
+      <MemberSignature Language="C#" Value="public bool RemoveAudit (System.Security.AccessControl.AuditFlags auditFlags, System.Security.Principal.SecurityIdentifier sid, int accessMask, System.Security.AccessControl.InheritanceFlags inheritanceFlags, System.Security.AccessControl.PropagationFlags propagationFlags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool RemoveAudit(valuetype System.Security.AccessControl.AuditFlags auditFlags, class System.Security.Principal.SecurityIdentifier sid, int32 accessMask, valuetype System.Security.AccessControl.InheritanceFlags inheritanceFlags, valuetype System.Security.AccessControl.PropagationFlags propagationFlags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.SystemAcl.RemoveAudit(System.Security.AccessControl.AuditFlags,System.Security.Principal.SecurityIdentifier,System.Int32,System.Security.AccessControl.InheritanceFlags,System.Security.AccessControl.PropagationFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="auditFlags" Type="System.Security.AccessControl.AuditFlags" />
+        <Parameter Name="sid" Type="System.Security.Principal.SecurityIdentifier" />
+        <Parameter Name="accessMask" Type="System.Int32" />
+        <Parameter Name="inheritanceFlags" Type="System.Security.AccessControl.InheritanceFlags" />
+        <Parameter Name="propagationFlags" Type="System.Security.AccessControl.PropagationFlags" />
+      </Parameters>
+      <Docs>
+        <param name="auditFlags">削除する監査規則の種類。</param>
+        <param name="sid"><see cref="T:System.Security.Principal.SecurityIdentifier" />監査規則を削除します。</param>
+        <param name="accessMask">削除する規則のアクセス マスク。</param>
+        <param name="inheritanceFlags">削除する規則の継承プロパティを指定するフラグ。</param>
+        <param name="propagationFlags">削除する規則の継承の反映プロパティを指定するフラグ。</param>
+        <summary>現在の指定された監査規則を削除<see cref="T:System.Security.AccessControl.SystemAcl" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />このメソッドは、指定された監査規則を正常に削除される場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 監査の削除は、それらを削除するだけでなく Ace を追加する複雑なアルゴリズムを使用して行われます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAudit">
+      <MemberSignature Language="C#" Value="public bool RemoveAudit (System.Security.AccessControl.AuditFlags auditFlags, System.Security.Principal.SecurityIdentifier sid, int accessMask, System.Security.AccessControl.InheritanceFlags inheritanceFlags, System.Security.AccessControl.PropagationFlags propagationFlags, System.Security.AccessControl.ObjectAceFlags objectFlags, Guid objectType, Guid inheritedObjectType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool RemoveAudit(valuetype System.Security.AccessControl.AuditFlags auditFlags, class System.Security.Principal.SecurityIdentifier sid, int32 accessMask, valuetype System.Security.AccessControl.InheritanceFlags inheritanceFlags, valuetype System.Security.AccessControl.PropagationFlags propagationFlags, valuetype System.Security.AccessControl.ObjectAceFlags objectFlags, valuetype System.Guid objectType, valuetype System.Guid inheritedObjectType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.SystemAcl.RemoveAudit(System.Security.AccessControl.AuditFlags,System.Security.Principal.SecurityIdentifier,System.Int32,System.Security.AccessControl.InheritanceFlags,System.Security.AccessControl.PropagationFlags,System.Security.AccessControl.ObjectAceFlags,System.Guid,System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="auditFlags" Type="System.Security.AccessControl.AuditFlags" />
+        <Parameter Name="sid" Type="System.Security.Principal.SecurityIdentifier" />
+        <Parameter Name="accessMask" Type="System.Int32" />
+        <Parameter Name="inheritanceFlags" Type="System.Security.AccessControl.InheritanceFlags" />
+        <Parameter Name="propagationFlags" Type="System.Security.AccessControl.PropagationFlags" />
+        <Parameter Name="objectFlags" Type="System.Security.AccessControl.ObjectAceFlags" />
+        <Parameter Name="objectType" Type="System.Guid" />
+        <Parameter Name="inheritedObjectType" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="auditFlags">削除する監査規則の種類。</param>
+        <param name="sid"><see cref="T:System.Security.Principal.SecurityIdentifier" />監査規則を削除します。</param>
+        <param name="accessMask">削除する規則のアクセス マスク。</param>
+        <param name="inheritanceFlags">削除する規則の継承プロパティを指定するフラグ。</param>
+        <param name="propagationFlags">削除する規則の継承の反映プロパティを指定するフラグ。</param>
+        <param name="objectFlags">場合を指定するフラグ、 <c>objectType</c>と<c>inheritedObjectType</c>パラメーターが含まれていない<see langword="null" />値。</param>
+        <param name="objectType">削除された監査の制御規則を適用するオブジェクトのクラスの id。</param>
+        <param name="inheritedObjectType">削除された監査規則を継承できる子オブジェクトのクラスの id。</param>
+        <summary>現在の指定された監査規則を削除<see cref="T:System.Security.AccessControl.SystemAcl" />オブジェクト。 オブジェクトの種類または継承されたオブジェクトの種類を指定する場合は、ディレクトリ オブジェクトのアクセス制御リスト (Acl) に対してこのメソッドを使用します。</summary>
+        <returns>
+          <see langword="true" />このメソッドは、指定された監査規則を正常に削除される場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 監査の削除は、それらを削除するだけでなく Ace を追加する複雑なアルゴリズムを使用して行われます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAuditSpecific">
+      <MemberSignature Language="C#" Value="public void RemoveAuditSpecific (System.Security.Principal.SecurityIdentifier sid, System.Security.AccessControl.ObjectAuditRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAuditSpecific(class System.Security.Principal.SecurityIdentifier sid, class System.Security.AccessControl.ObjectAuditRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.SystemAcl.RemoveAuditSpecific(System.Security.Principal.SecurityIdentifier,System.Security.AccessControl.ObjectAuditRule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sid" Type="System.Security.Principal.SecurityIdentifier" />
+        <Parameter Name="rule" Type="System.Security.AccessControl.ObjectAuditRule" />
+      </Parameters>
+      <Docs>
+        <param name="sid"><see cref="T:System.Security.Principal.SecurityIdentifier" />監査規則を削除します。</param>
+        <param name="rule"><see cref="T:System.Security.AccessControl.ObjectAuditRule" />ルールは削除されます。</param>
+        <summary>現在の指定された監査規則を削除<see cref="T:System.Security.AccessControl.DiscretionaryAcl" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAuditSpecific">
+      <MemberSignature Language="C#" Value="public void RemoveAuditSpecific (System.Security.AccessControl.AuditFlags auditFlags, System.Security.Principal.SecurityIdentifier sid, int accessMask, System.Security.AccessControl.InheritanceFlags inheritanceFlags, System.Security.AccessControl.PropagationFlags propagationFlags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAuditSpecific(valuetype System.Security.AccessControl.AuditFlags auditFlags, class System.Security.Principal.SecurityIdentifier sid, int32 accessMask, valuetype System.Security.AccessControl.InheritanceFlags inheritanceFlags, valuetype System.Security.AccessControl.PropagationFlags propagationFlags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.SystemAcl.RemoveAuditSpecific(System.Security.AccessControl.AuditFlags,System.Security.Principal.SecurityIdentifier,System.Int32,System.Security.AccessControl.InheritanceFlags,System.Security.AccessControl.PropagationFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="auditFlags" Type="System.Security.AccessControl.AuditFlags" />
+        <Parameter Name="sid" Type="System.Security.Principal.SecurityIdentifier" />
+        <Parameter Name="accessMask" Type="System.Int32" />
+        <Parameter Name="inheritanceFlags" Type="System.Security.AccessControl.InheritanceFlags" />
+        <Parameter Name="propagationFlags" Type="System.Security.AccessControl.PropagationFlags" />
+      </Parameters>
+      <Docs>
+        <param name="auditFlags">削除する監査規則の種類。</param>
+        <param name="sid"><see cref="T:System.Security.Principal.SecurityIdentifier" />監査規則を削除します。</param>
+        <param name="accessMask">削除する規則のアクセス マスク。</param>
+        <param name="inheritanceFlags">削除する規則の継承プロパティを指定するフラグ。</param>
+        <param name="propagationFlags">削除する規則の継承の反映プロパティを指定するフラグ。</param>
+        <summary>現在の指定された監査規則を削除<see cref="T:System.Security.AccessControl.DiscretionaryAcl" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAuditSpecific">
+      <MemberSignature Language="C#" Value="public void RemoveAuditSpecific (System.Security.AccessControl.AuditFlags auditFlags, System.Security.Principal.SecurityIdentifier sid, int accessMask, System.Security.AccessControl.InheritanceFlags inheritanceFlags, System.Security.AccessControl.PropagationFlags propagationFlags, System.Security.AccessControl.ObjectAceFlags objectFlags, Guid objectType, Guid inheritedObjectType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAuditSpecific(valuetype System.Security.AccessControl.AuditFlags auditFlags, class System.Security.Principal.SecurityIdentifier sid, int32 accessMask, valuetype System.Security.AccessControl.InheritanceFlags inheritanceFlags, valuetype System.Security.AccessControl.PropagationFlags propagationFlags, valuetype System.Security.AccessControl.ObjectAceFlags objectFlags, valuetype System.Guid objectType, valuetype System.Guid inheritedObjectType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.SystemAcl.RemoveAuditSpecific(System.Security.AccessControl.AuditFlags,System.Security.Principal.SecurityIdentifier,System.Int32,System.Security.AccessControl.InheritanceFlags,System.Security.AccessControl.PropagationFlags,System.Security.AccessControl.ObjectAceFlags,System.Guid,System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="auditFlags" Type="System.Security.AccessControl.AuditFlags" />
+        <Parameter Name="sid" Type="System.Security.Principal.SecurityIdentifier" />
+        <Parameter Name="accessMask" Type="System.Int32" />
+        <Parameter Name="inheritanceFlags" Type="System.Security.AccessControl.InheritanceFlags" />
+        <Parameter Name="propagationFlags" Type="System.Security.AccessControl.PropagationFlags" />
+        <Parameter Name="objectFlags" Type="System.Security.AccessControl.ObjectAceFlags" />
+        <Parameter Name="objectType" Type="System.Guid" />
+        <Parameter Name="inheritedObjectType" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="auditFlags">削除する監査規則の種類。</param>
+        <param name="sid"><see cref="T:System.Security.Principal.SecurityIdentifier" />監査規則を削除します。</param>
+        <param name="accessMask">削除する規則のアクセス マスク。</param>
+        <param name="inheritanceFlags">削除する規則の継承プロパティを指定するフラグ。</param>
+        <param name="propagationFlags">削除する規則の継承の反映プロパティを指定するフラグ。</param>
+        <param name="objectFlags">場合を指定するフラグ、 <c>objectType</c>と<c>inheritedObjectType</c>パラメーターが含まれていない<see langword="null" />値。</param>
+        <param name="objectType">削除された監査の制御規則を適用するオブジェクトのクラスの id。</param>
+        <param name="inheritedObjectType">削除された監査規則を継承できる子オブジェクトのクラスの id。</param>
+        <summary>現在の指定された監査規則を削除<see cref="T:System.Security.AccessControl.DiscretionaryAcl" />オブジェクト。 オブジェクトの種類または継承されたオブジェクトの種類を指定する場合は、ディレクトリ オブジェクトのアクセス制御リスト (Acl) に対してこのメソッドを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="SetAudit">
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定された、指定した監査規則を設定<see cref="T:System.Security.Principal.SecurityIdentifier" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これらすべて既存のアクセス制御エントリ (Ace) 両方に一致する指定されたメソッドの削除<xref:System.Security.Principal.SecurityIdentifier>オブジェクトと指定した監査の条件。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="SetAudit">
+      <MemberSignature Language="C#" Value="public void SetAudit (System.Security.Principal.SecurityIdentifier sid, System.Security.AccessControl.ObjectAuditRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetAudit(class System.Security.Principal.SecurityIdentifier sid, class System.Security.AccessControl.ObjectAuditRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.SystemAcl.SetAudit(System.Security.Principal.SecurityIdentifier,System.Security.AccessControl.ObjectAuditRule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sid" Type="System.Security.Principal.SecurityIdentifier" />
+        <Parameter Name="rule" Type="System.Security.AccessControl.ObjectAuditRule" />
+      </Parameters>
+      <Docs>
+        <param name="sid"><see cref="T:System.Security.Principal.SecurityIdentifier" />監査規則を設定します。</param>
+        <param name="rule"><see cref="T:System.Security.AccessControl.ObjectAuditRule" />監査規則を設定します。</param>
+        <summary>指定された、指定した監査規則を設定<see cref="T:System.Security.Principal.SecurityIdentifier" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAudit">
+      <MemberSignature Language="C#" Value="public void SetAudit (System.Security.AccessControl.AuditFlags auditFlags, System.Security.Principal.SecurityIdentifier sid, int accessMask, System.Security.AccessControl.InheritanceFlags inheritanceFlags, System.Security.AccessControl.PropagationFlags propagationFlags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetAudit(valuetype System.Security.AccessControl.AuditFlags auditFlags, class System.Security.Principal.SecurityIdentifier sid, int32 accessMask, valuetype System.Security.AccessControl.InheritanceFlags inheritanceFlags, valuetype System.Security.AccessControl.PropagationFlags propagationFlags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.SystemAcl.SetAudit(System.Security.AccessControl.AuditFlags,System.Security.Principal.SecurityIdentifier,System.Int32,System.Security.AccessControl.InheritanceFlags,System.Security.AccessControl.PropagationFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="auditFlags" Type="System.Security.AccessControl.AuditFlags" />
+        <Parameter Name="sid" Type="System.Security.Principal.SecurityIdentifier" />
+        <Parameter Name="accessMask" Type="System.Int32" />
+        <Parameter Name="inheritanceFlags" Type="System.Security.AccessControl.InheritanceFlags" />
+        <Parameter Name="propagationFlags" Type="System.Security.AccessControl.PropagationFlags" />
+      </Parameters>
+      <Docs>
+        <param name="auditFlags">設定する監査条件です。</param>
+        <param name="sid"><see cref="T:System.Security.Principal.SecurityIdentifier" />監査規則を設定します。</param>
+        <param name="accessMask">新しい監査規則のアクセス マスク。</param>
+        <param name="inheritanceFlags">新しい監査規則の継承プロパティを指定するフラグ。</param>
+        <param name="propagationFlags">新しい監査規則の継承の反映プロパティを指定するフラグ。</param>
+        <summary>指定された、指定した監査規則を設定<see cref="T:System.Security.Principal.SecurityIdentifier" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 両方指定するすべて既存のアクセス制御エントリ (Ace) と一致するメソッドを削除します<xref:System.Security.Principal.SecurityIdentifier>オブジェクトと指定した監査の条件。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAudit">
+      <MemberSignature Language="C#" Value="public void SetAudit (System.Security.AccessControl.AuditFlags auditFlags, System.Security.Principal.SecurityIdentifier sid, int accessMask, System.Security.AccessControl.InheritanceFlags inheritanceFlags, System.Security.AccessControl.PropagationFlags propagationFlags, System.Security.AccessControl.ObjectAceFlags objectFlags, Guid objectType, Guid inheritedObjectType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetAudit(valuetype System.Security.AccessControl.AuditFlags auditFlags, class System.Security.Principal.SecurityIdentifier sid, int32 accessMask, valuetype System.Security.AccessControl.InheritanceFlags inheritanceFlags, valuetype System.Security.AccessControl.PropagationFlags propagationFlags, valuetype System.Security.AccessControl.ObjectAceFlags objectFlags, valuetype System.Guid objectType, valuetype System.Guid inheritedObjectType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.SystemAcl.SetAudit(System.Security.AccessControl.AuditFlags,System.Security.Principal.SecurityIdentifier,System.Int32,System.Security.AccessControl.InheritanceFlags,System.Security.AccessControl.PropagationFlags,System.Security.AccessControl.ObjectAceFlags,System.Guid,System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="auditFlags" Type="System.Security.AccessControl.AuditFlags" />
+        <Parameter Name="sid" Type="System.Security.Principal.SecurityIdentifier" />
+        <Parameter Name="accessMask" Type="System.Int32" />
+        <Parameter Name="inheritanceFlags" Type="System.Security.AccessControl.InheritanceFlags" />
+        <Parameter Name="propagationFlags" Type="System.Security.AccessControl.PropagationFlags" />
+        <Parameter Name="objectFlags" Type="System.Security.AccessControl.ObjectAceFlags" />
+        <Parameter Name="objectType" Type="System.Guid" />
+        <Parameter Name="inheritedObjectType" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="auditFlags">設定する監査条件です。</param>
+        <param name="sid"><see cref="T:System.Security.Principal.SecurityIdentifier" />監査規則を設定します。</param>
+        <param name="accessMask">新しい監査規則のアクセス マスク。</param>
+        <param name="inheritanceFlags">新しい監査規則の継承プロパティを指定するフラグ。</param>
+        <param name="propagationFlags">新しい監査規則の継承の反映プロパティを指定するフラグ。</param>
+        <param name="objectFlags">場合を指定するフラグ、 <c>objectType</c>と<c>inheritedObjectType</c>パラメーターが含まれていない<see langword="null" />値。</param>
+        <param name="objectType">新しい監査規則を適用するオブジェクトのクラスの id。</param>
+        <param name="inheritedObjectType">新しい監査規則を継承できる子オブジェクトのクラスの id。</param>
+        <summary>指定された、指定した監査規則を設定<see cref="T:System.Security.Principal.SecurityIdentifier" />オブジェクト。 オブジェクトの種類または継承されたオブジェクトの種類を指定する場合は、ディレクトリ オブジェクトのアクセス制御リスト (Acl) に対してこのメソッドを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 両方指定するすべて既存のアクセス制御エントリ (Ace) と一致するメソッドを削除します<xref:System.Security.Principal.SecurityIdentifier>オブジェクトと指定した監査の条件。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

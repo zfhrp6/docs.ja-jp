@@ -1,0 +1,255 @@
+<Type Name="ProcessInfo" FullName="System.Web.ProcessInfo">
+  <TypeSignature Language="C#" Value="public class ProcessInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ProcessInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.ProcessInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>現在実行中のプロセスに関する情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、ASP.NET プロセス モデルで実行されている ASP.NET ワーカー プロセスに関する情報を返します。 この型のオブジェクトは、静的メソッドによって返される<xref:System.Web.ProcessModelInfo.GetCurrentProcessInfo%2A?displayProperty=nameWithType>と<xref:System.Web.ProcessModelInfo.GetHistory%2A?displayProperty=nameWithType>です。 これらのメソッドは、初期化されたオブジェクトを作成する唯一の有効な方法です。  
+  
+> [!NOTE]
+>  Microsoft インターネット インフォメーション サービス (IIS) 6.0 を使用している場合は、によって返されるメトリックを処理、<xref:System.Web.ProcessInfo>クラスは、IIS 5.0 プロセス分離モードで実行している場合にのみ使用できます。 ASP.NET プロセス モデルが無効になっている場合は IIS 6.0 ワーカー プロセス分離モードでを使用していると、<xref:System.Web.HttpException>アクセスするときに例外がスローされます<xref:System.Web.ProcessInfo>メンバー。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、 <xref:System.Web.ProcessInfo.Age%2A>、 <xref:System.Web.ProcessInfo.PeakMemoryUsed%2A>、 <xref:System.Web.ProcessInfo.ProcessID%2A>、 <xref:System.Web.ProcessInfo.RequestCount%2A>、 <xref:System.Web.ProcessInfo.ShutdownReason%2A>、<xref:System.Web.ProcessInfo.StartTime%2A>と<xref:System.Web.ProcessInfo.Status%2A>のプロパティ、<xref:System.Web.ProcessInfo>クラスです。 例では、表示、<xref:System.Web.UI.WebControls.LinkButton>です。 ときに、<xref:System.Web.UI.WebControls.LinkButton>がクリックすると、現在のプロセス情報が表示されます。  
+  
+ [!code-aspx-csharp[ProcessInfo#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ProcessInfo/CS/processinfocs.aspx#1)]
+ [!code-aspx-vb[ProcessInfo#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ProcessInfo/VB/processinfovb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProcessInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ProcessInfo.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.ProcessInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、ASP.NET プロセス モデルで実行されている ASP.NET ワーカー プロセスに関する情報を返します。 この型のオブジェクトがによって返される、`static`メソッド<xref:System.Web.ProcessModelInfo.GetCurrentProcessInfo%2A?displayProperty=nameWithType>と<xref:System.Web.ProcessModelInfo.GetHistory%2A?displayProperty=nameWithType>です。 これらのメソッドは、唯一の有効なを作成する方法、初期化された<xref:System.Web.ProcessInfo>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProcessInfo (DateTime startTime, TimeSpan age, int processID, int requestCount, System.Web.ProcessStatus status, System.Web.ProcessShutdownReason shutdownReason, int peakMemoryUsed);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.DateTime startTime, valuetype System.TimeSpan age, int32 processID, int32 requestCount, valuetype System.Web.ProcessStatus status, valuetype System.Web.ProcessShutdownReason shutdownReason, int32 peakMemoryUsed) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ProcessInfo.#ctor(System.DateTime,System.TimeSpan,System.Int32,System.Int32,System.Web.ProcessStatus,System.Web.ProcessShutdownReason,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="startTime" Type="System.DateTime" />
+        <Parameter Name="age" Type="System.TimeSpan" />
+        <Parameter Name="processID" Type="System.Int32" />
+        <Parameter Name="requestCount" Type="System.Int32" />
+        <Parameter Name="status" Type="System.Web.ProcessStatus" />
+        <Parameter Name="shutdownReason" Type="System.Web.ProcessShutdownReason" />
+        <Parameter Name="peakMemoryUsed" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="startTime">A<see cref="T:System.DateTime" />プロセスが開始された時刻を示すです。</param>
+        <param name="age"><see cref="T:System.TimeSpan" />プロセスが開始されてからの経過時間を示すです。</param>
+        <param name="processID">プロセスに割り当てられた ID 番号。</param>
+        <param name="requestCount">プロセスの開始要求の数。</param>
+        <param name="status">1 つ、<see cref="T:System.Web.ProcessStatus" />プロセスの現在の状態を示す値。</param>
+        <param name="shutdownReason"><see cref="T:System.Web.ProcessShutdownReason" /> 値のいずれか。</param>
+        <param name="peakMemoryUsed">メモリの最大値、(kb 単位)。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.ProcessInfo" />クラスとセットの内部情報を使用して、プロセスの状態を示すです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、ASP.NET プロセス モデルで実行されている ASP.NET ワーカー プロセスに関する情報を返します。 この型のオブジェクトは、静的メソッドによって返される<xref:System.Web.ProcessModelInfo.GetCurrentProcessInfo%2A?displayProperty=nameWithType>と<xref:System.Web.ProcessModelInfo.GetHistory%2A?displayProperty=nameWithType>です。 これらのメソッドは、唯一の有効なを作成する方法、初期化された<xref:System.Web.ProcessInfo>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Age">
+      <MemberSignature Language="C#" Value="public TimeSpan Age { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan Age" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ProcessInfo.Age" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロセスが実行されている時間の長さを取得します。</summary>
+        <value>A<see cref="T:System.TimeSpan" />プロセスが開始されてからの経過時間を示すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PeakMemoryUsed">
+      <MemberSignature Language="C#" Value="public int PeakMemoryUsed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PeakMemoryUsed" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ProcessInfo.PeakMemoryUsed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロセスが使用されるメモリの最大量を取得します。</summary>
+        <value>メモリの最大値、(kb 単位)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessID">
+      <MemberSignature Language="C#" Value="public int ProcessID { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ProcessID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ProcessInfo.ProcessID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロセスに割り当てられた ID 番号を取得します。</summary>
+        <value>Windows によって割り当てられているプロセス ID 番号です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestCount">
+      <MemberSignature Language="C#" Value="public int RequestCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RequestCount" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ProcessInfo.RequestCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロセスの開始要求の数を取得します。</summary>
+        <value>プロセスで実行される要求の数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAll">
+      <MemberSignature Language="C#" Value="public void SetAll (DateTime startTime, TimeSpan age, int processID, int requestCount, System.Web.ProcessStatus status, System.Web.ProcessShutdownReason shutdownReason, int peakMemoryUsed);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetAll(valuetype System.DateTime startTime, valuetype System.TimeSpan age, int32 processID, int32 requestCount, valuetype System.Web.ProcessStatus status, valuetype System.Web.ProcessShutdownReason shutdownReason, int32 peakMemoryUsed) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ProcessInfo.SetAll(System.DateTime,System.TimeSpan,System.Int32,System.Int32,System.Web.ProcessStatus,System.Web.ProcessShutdownReason,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="startTime" Type="System.DateTime" />
+        <Parameter Name="age" Type="System.TimeSpan" />
+        <Parameter Name="processID" Type="System.Int32" />
+        <Parameter Name="requestCount" Type="System.Int32" />
+        <Parameter Name="status" Type="System.Web.ProcessStatus" />
+        <Parameter Name="shutdownReason" Type="System.Web.ProcessShutdownReason" />
+        <Parameter Name="peakMemoryUsed" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="startTime">A<see cref="T:System.DateTime" />プロセスが開始された時刻を示すです。</param>
+        <param name="age">A<see cref="T:System.TimeSpan" />プロセスが開始されてからの経過時間を示すです。</param>
+        <param name="processID">プロセスに割り当てられた ID 番号。</param>
+        <param name="requestCount">プロセスの開始要求の数。</param>
+        <param name="status">1 つ、<see cref="T:System.Web.ProcessStatus" />プロセスの開始後に経過した時間を示す値。</param>
+        <param name="shutdownReason"><see cref="T:System.Web.ProcessShutdownReason" /> 値のいずれか。</param>
+        <param name="peakMemoryUsed">メモリの最大値、(kb 単位)。</param>
+        <summary>プロセスの状態を示す内部の情報を設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShutdownReason">
+      <MemberSignature Language="C#" Value="public System.Web.ProcessShutdownReason ShutdownReason { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.ProcessShutdownReason ShutdownReason" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ProcessInfo.ShutdownReason" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ProcessShutdownReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロセスがシャット ダウンされた理由を示す値を取得します。</summary>
+        <value>上の<see cref="T:System.Web.ProcessShutdownReason" />値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartTime">
+      <MemberSignature Language="C#" Value="public DateTime StartTime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime StartTime" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ProcessInfo.StartTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロセスが開始された時刻を取得します。</summary>
+        <value>A<see cref="T:System.DateTime" />プロセスが開始された時刻を示すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Status">
+      <MemberSignature Language="C#" Value="public System.Web.ProcessStatus Status { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.ProcessStatus Status" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ProcessInfo.Status" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ProcessStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロセスの現在の状態を取得します。</summary>
+        <value>1 つ、<see cref="T:System.Web.ProcessStatus" />プロセスの現在の状態を示す値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

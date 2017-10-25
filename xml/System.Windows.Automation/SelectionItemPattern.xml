@@ -1,0 +1,369 @@
+<Type Name="SelectionItemPattern" FullName="System.Windows.Automation.SelectionItemPattern">
+  <TypeSignature Language="C#" Value="public class SelectionItemPattern : System.Windows.Automation.BasePattern" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SelectionItemPattern extends System.Windows.Automation.BasePattern" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.SelectionItemPattern" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Automation.BasePattern</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>サポートするコンテナー コントロールの選択可能な子項目を表す<see cref="T:System.Windows.Automation.SelectionPattern" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください[UI オートメーション クライアントのコントロール パターン マッピング](~/docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md)このコントロール パターンを実装するコントロールの例についてはします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddToSelection">
+      <MemberSignature Language="C#" Value="public void AddToSelection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddToSelection() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.SelectionItemPattern.AddToSelection" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>選択した項目のコレクションに現在の要素を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、現在選択されている項目のコレクションに要素を追加する方法を示します。  
+  
+ [!code-csharp[UIASelectionItemPattern_snip#103](~/samples/snippets/csharp/VS_Snippets_Wpf/UIASelectionItemPattern_snip/CSharp/UIASelectionItemPattern_snippets.cs#103)]
+ [!code-vb[UIASelectionItemPattern_snip#103](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIASelectionItemPattern_snip/VisualBasic/UIASelectionItemPattern_snippets.vb#103)]  
+[!code-csharp[UIASelectionItemPattern_snip#104](~/samples/snippets/csharp/VS_Snippets_Wpf/UIASelectionItemPattern_snip/CSharp/UIASelectionItemPattern_snippets.cs#104)]
+[!code-vb[UIASelectionItemPattern_snip#104](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIASelectionItemPattern_snip/VisualBasic/UIASelectionItemPattern_snippets.vb#104)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">選択範囲を単一選択コンテナーに追加しようとしましたが、 <see cref="F:System.Windows.Automation.SelectionPattern.CanSelectMultipleProperty" />  =  <see langword="false" />別の要素が既に選択されているとします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Cached">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.SelectionItemPattern.SelectionItemPatternInformation Cached { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Automation.SelectionItemPattern/SelectionItemPatternInformation Cached" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.SelectionItemPattern.Cached" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.SelectionItemPattern+SelectionItemPatternInformation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このキャッシュされたプロパティ値を取得<see cref="T:System.Windows.Automation.SelectionItemPattern" />です。</summary>
+        <value>キャッシュされたプロパティの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キャッシュされたプロパティ値必要がありますが要求されていない以前を使用して、<xref:System.Windows.Automation.CacheRequest>です。 プロパティの現在の値を取得するを使用して、プロパティを取得します。<xref:System.Windows.Automation.SelectionItemPattern.Current%2A>です。  
+  
+ 使用可能なプロパティおよびその使用方法については、次を参照してください。<xref:System.Windows.Automation.SelectionItemPattern.SelectionItemPatternInformation>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">要求されたプロパティがキャッシュ内にありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.SelectionItemPattern.SelectionItemPatternInformation Current { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Automation.SelectionItemPattern/SelectionItemPatternInformation Current" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.SelectionItemPattern.Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.SelectionItemPattern+SelectionItemPatternInformation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この現在のプロパティ値を取得<see cref="T:System.Windows.Automation.SelectionItemPattern" />です。</summary>
+        <value>現在のプロパティ値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このパターンがあります、<xref:System.Windows.Automation.AutomationElement>で、<xref:System.Windows.Automation.AutomationElementMode.Full>の現在の値を取得するために参照します。 場合、<xref:System.Windows.Automation.AutomationElement>を使用して取得された<xref:System.Windows.Automation.AutomationElementMode.None>キャッシュされたデータのみが含まれている、および任意のプロパティの現在の値を取得しようとして例外を発生させます。 使用して<xref:System.Windows.Automation.SelectionItemPattern.Cached%2A>を使用してあらかじめ指定されているプロパティのキャッシュされた値を取得する、<xref:System.Windows.Automation.CacheRequest>です。  
+  
+ 使用可能なプロパティおよびその使用方法については、次を参照してください。<xref:System.Windows.Automation.SelectionItemPattern.SelectionItemPatternInformation>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ElementAddedToSelectionEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationEvent ElementAddedToSelectionEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationEvent ElementAddedToSelectionEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.SelectionItemPattern.ElementAddedToSelectionEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>選択された項目のコレクションに項目が追加されたときに発生するイベントを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合の結果、<xref:System.Windows.Automation.SelectionItemPattern.AddToSelection%2A>呼び出しは単一の選択項目、<xref:System.Windows.Automation.SelectionItemPattern.ElementSelectedEvent>が代わりに発生します。  
+  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.SelectionItemPatternIdentifiers>です。  
+  
+   
+  
+## Examples  
+ 次の例では、イベント リスナーが宣言されている、<xref:System.Windows.Automation.SelectionItemPattern>イベント。  
+  
+ [!code-csharp[UIASelectionItemPattern_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIASelectionItemPattern_snip/CSharp/UIASelectionItemPattern_snippets.cs#101)]
+ [!code-vb[UIASelectionItemPattern_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIASelectionItemPattern_snip/VisualBasic/UIASelectionItemPattern_snippets.vb#101)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ElementRemovedFromSelectionEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationEvent ElementRemovedFromSelectionEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationEvent ElementRemovedFromSelectionEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.SelectionItemPattern.ElementRemovedFromSelectionEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>選択した項目のコレクションから項目が削除されたときに発生するイベントを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合の結果、<xref:System.Windows.Automation.SelectionItemPattern.RemoveFromSelection%2A>呼び出しは単一の選択項目、<xref:System.Windows.Automation.SelectionItemPattern.ElementSelectedEvent>が代わりに発生します。  
+  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.SelectionItemPatternIdentifiers>です。  
+  
+   
+  
+## Examples  
+ 次の例では、イベント リスナーが宣言されている、<xref:System.Windows.Automation.SelectionItemPattern>イベント。  
+  
+ [!code-csharp[UIASelectionItemPattern_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIASelectionItemPattern_snip/CSharp/UIASelectionItemPattern_snippets.cs#101)]
+ [!code-vb[UIASelectionItemPattern_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIASelectionItemPattern_snip/VisualBasic/UIASelectionItemPattern_snippets.vb#101)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ElementSelectedEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationEvent ElementSelectedEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationEvent ElementSelectedEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.SelectionItemPattern.ElementSelectedEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="M:System.Windows.Automation.SelectionItemPattern.Select" />、<see cref="M:System.Windows.Automation.SelectionItemPattern.AddToSelection" />、<see cref="M:System.Windows.Automation.SelectionItemPattern.RemoveFromSelection" /> のいずれかを呼び出した結果として 1 つの項目が選択された状態になったときに発生するイベントを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.SelectionItemPatternIdentifiers>です。  
+  
+   
+  
+## Examples  
+ 次の例では、イベント リスナーが宣言されている、<xref:System.Windows.Automation.SelectionItemPattern>イベント。  
+  
+ [!code-csharp[UIASelectionItemPattern_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIASelectionItemPattern_snip/CSharp/UIASelectionItemPattern_snippets.cs#101)]
+ [!code-vb[UIASelectionItemPattern_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIASelectionItemPattern_snip/VisualBasic/UIASelectionItemPattern_snippets.vb#101)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSelectedProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationProperty IsSelectedProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationProperty IsSelectedProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.SelectionItemPattern.IsSelectedProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Automation.SelectionItemPattern.SelectionItemPatternInformation.IsSelected" /> プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.SelectionItemPatternIdentifiers>です。  
+  
+   
+  
+## Examples  
+ 次の例では、ルート要素がのコレクションを返す関数に渡される[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]ルートの子孫であり、一連のプロパティの条件を満たす要素。  
+  
+ [!code-csharp[UIASelectionItemPattern_snip#100](~/samples/snippets/csharp/VS_Snippets_Wpf/UIASelectionItemPattern_snip/CSharp/UIASelectionItemPattern_snippets.cs#100)]
+ [!code-vb[UIASelectionItemPattern_snip#100](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIASelectionItemPattern_snip/VisualBasic/UIASelectionItemPattern_snippets.vb#100)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pattern">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationPattern Pattern;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationPattern Pattern" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.SelectionItemPattern.Pattern" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationPattern</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Automation.SelectionItemPattern" /> コントロール パターンを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.SelectionItemPatternIdentifiers>です。  
+  
+ パターン識別子がなどのメソッドに渡された<xref:System.Windows.Automation.AutomationElement.GetCurrentPattern%2A>から、指定した目的のコントロール パターンを取得する<xref:System.Windows.Automation.AutomationElement>です。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.SelectionItemPattern>からコントロール パターンを取得、<xref:System.Windows.Automation.AutomationElement>です。  
+  
+ [!code-csharp[UIASelectionItemPattern_snip#102](~/samples/snippets/csharp/VS_Snippets_Wpf/UIASelectionItemPattern_snip/CSharp/UIASelectionItemPattern_snippets.cs#102)]
+ [!code-vb[UIASelectionItemPattern_snip#102](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIASelectionItemPattern_snip/VisualBasic/UIASelectionItemPattern_snippets.vb#102)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveFromSelection">
+      <MemberSignature Language="C#" Value="public void RemoveFromSelection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveFromSelection() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.SelectionItemPattern.RemoveFromSelection" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>選択した項目のコレクションから現在の要素を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、現在選択されている項目のコレクションから要素を削除する方法を示します。  
+  
+ [!code-csharp[UIASelectionItemPattern_snip#103](~/samples/snippets/csharp/VS_Snippets_Wpf/UIASelectionItemPattern_snip/CSharp/UIASelectionItemPattern_snippets.cs#103)]
+ [!code-vb[UIASelectionItemPattern_snip#103](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIASelectionItemPattern_snip/VisualBasic/UIASelectionItemPattern_snippets.vb#103)]  
+[!code-csharp[UIASelectionItemPattern_snip#105](~/samples/snippets/csharp/VS_Snippets_Wpf/UIASelectionItemPattern_snip/CSharp/UIASelectionItemPattern_snippets.cs#105)]
+[!code-vb[UIASelectionItemPattern_snip#105](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIASelectionItemPattern_snip/VisualBasic/UIASelectionItemPattern_snippets.vb#105)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">1 つの項目が選択されている選択コンテナーの選択範囲を削除しようと<see cref="F:System.Windows.Automation.SelectionPattern.IsSelectionRequiredProperty" />  = <see langword="true" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Select">
+      <MemberSignature Language="C#" Value="public void Select ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Select() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.SelectionItemPattern.Select" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>選択したアイテムの選択を解除し、現在の要素を選択します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、項目のテキストを指定することによって、コンテナー内の項目を選択する方法を示します。  
+  
+ [!code-csharp[UIASelectionItemPattern_snip#106](~/samples/snippets/csharp/VS_Snippets_Wpf/UIASelectionItemPattern_snip/CSharp/UIASelectionItemPattern_snippets.cs#106)]
+ [!code-vb[UIASelectionItemPattern_snip#106](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIASelectionItemPattern_snip/VisualBasic/UIASelectionItemPattern_snippets.vb#106)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionContainerProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationProperty SelectionContainerProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationProperty SelectionContainerProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.SelectionItemPattern.SelectionContainerProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Automation.SelectionItemPattern.SelectionItemPatternInformation.SelectionContainer" /> プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.SelectionItemPatternIdentifiers>です。  
+  
+   
+  
+## Examples  
+ 次の例は、取得する方法を示します、<xref:System.Windows.Automation.AutomationElement>選択項目の選択コンテナーを表すです。  
+  
+ [!code-csharp[UIASelectionItemPattern_snip#1035](~/samples/snippets/csharp/VS_Snippets_Wpf/UIASelectionItemPattern_snip/CSharp/UIASelectionItemPattern_snippets.cs#1035)]
+ [!code-vb[UIASelectionItemPattern_snip#1035](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIASelectionItemPattern_snip/VisualBasic/UIASelectionItemPattern_snippets.vb#1035)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

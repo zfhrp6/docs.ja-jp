@@ -1,0 +1,306 @@
+<Type Name="SamlSecurityTokenAuthenticator" FullName="System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator">
+  <TypeSignature Language="C#" Value="public class SamlSecurityTokenAuthenticator : System.IdentityModel.Selectors.SecurityTokenAuthenticator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SamlSecurityTokenAuthenticator extends System.IdentityModel.Selectors.SecurityTokenAuthenticator" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Selectors.SecurityTokenAuthenticator</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.IdentityModel.Tokens.SamlSecurityToken" /> セキュリティ トークンを認証します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator> クラスを使用して、<xref:System.IdentityModel.Tokens.SamlSecurityToken> セキュリティ トークンを認証します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SamlSecurityTokenAuthenticator (System.Collections.Generic.IList&lt;System.IdentityModel.Selectors.SecurityTokenAuthenticator&gt; supportingAuthenticators);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IList`1&lt;class System.IdentityModel.Selectors.SecurityTokenAuthenticator&gt; supportingAuthenticators) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.#ctor(System.Collections.Generic.IList{System.IdentityModel.Selectors.SecurityTokenAuthenticator})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="supportingAuthenticators" Type="System.Collections.Generic.IList&lt;System.IdentityModel.Selectors.SecurityTokenAuthenticator&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="supportingAuthenticators">発行者の <see cref="T:System.Collections.Generic.IList`1" /> セキュリティ トークンを認証するための認証システムを含む <see cref="T:System.IdentityModel.Selectors.SecurityTokenAuthenticator" /> の <see cref="T:System.IdentityModel.Tokens.SecurityToken" />。</param>
+        <summary>一連の認証システムを指定して、<see cref="T:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SamlSecurityTokenAuthenticator (System.Collections.Generic.IList&lt;System.IdentityModel.Selectors.SecurityTokenAuthenticator&gt; supportingAuthenticators, TimeSpan maxClockSkew);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IList`1&lt;class System.IdentityModel.Selectors.SecurityTokenAuthenticator&gt; supportingAuthenticators, valuetype System.TimeSpan maxClockSkew) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.#ctor(System.Collections.Generic.IList{System.IdentityModel.Selectors.SecurityTokenAuthenticator},System.TimeSpan)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="supportingAuthenticators" Type="System.Collections.Generic.IList&lt;System.IdentityModel.Selectors.SecurityTokenAuthenticator&gt;" />
+        <Parameter Name="maxClockSkew" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="supportingAuthenticators">発行者の <see cref="T:System.Collections.Generic.IList`1" /> セキュリティ トークンを認証するための認証システムを含む <see cref="T:System.IdentityModel.Selectors.SecurityTokenAuthenticator" /> の <see cref="T:System.IdentityModel.Tokens.SecurityToken" />。</param>
+        <param name="maxClockSkew">送信者と受信者のクロックのずれの最長時間を表す <see cref="T:System.TimeSpan" />。</param>
+        <summary>一連の認証システムと、送信者と受信者のクロックのずれの最長時間を指定して、<see cref="T:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator" /> の新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowedAudienceUris">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;string&gt; AllowedAudienceUris { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;string&gt; AllowedAudienceUris" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.AllowedAudienceUris" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.IdentityModel.Tokens.SamlSecurityToken" /> インスタンスにより有効と見なされるようにするために、<see cref="T:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator" /> セキュリティ トークンがターゲットとなる可能性があるターゲット URI のセットを取得します。</summary>
+        <value><see cref="T:System.Collections.Generic.IList`1" /> 型の <see cref="T:System.String" />。これは、このセキュリティ トークン認証システムにより有効と見なされる <see cref="T:System.IdentityModel.Tokens.SamlSecurityToken" /> セキュリティ トークンのターゲットとなる URI を含んでいます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フェデレーション アプリケーションの <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.AllowedAudienceUris%2A> プロパティを指定します。これは、<xref:System.IdentityModel.Tokens.SamlSecurityToken> セキュリティ トークンを発行するセキュリティ トークン サービス (STS) を利用します。 STS がセキュリティ トークンを発行する場合、このセキュリティ トークンに <xref:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition> を追加して、セキュリティ トークンの提供先となる Web サービスの URI を指定できます。 これにより、受け取り側 <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator> Web サービスは、次のようにしてこのチェックが行われるように指定することで、発行されたセキュリティ トークンがこの Web サービスを対象としていることを確認できます。  
+  
+-   <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.AudienceUriMode%2A> プロパティを <xref:System.IdentityModel.Selectors.AudienceUriMode.Always> または <xref:System.IdentityModel.Selectors.AudienceUriMode.BearerKeyOnly> に設定します。  
+  
+-   <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.AllowedAudienceUris%2A> コレクションに有効な URI のセットを追加して、これらの URI を指定します。  
+  
+-   オプションで、<xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.ValidateAudienceRestriction%2A> メソッドをオーバーライドし、許可された URI で使用する検証アルゴリズムを指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AudienceUriMode">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Selectors.AudienceUriMode AudienceUriMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.IdentityModel.Selectors.AudienceUriMode AudienceUriMode" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.AudienceUriMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Selectors.AudienceUriMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Selectors.AudienceUriMode" /> セキュリティ トークンの <see cref="T:System.IdentityModel.Tokens.SamlSecurityToken" /> を検証するかどうかを指定する <see cref="T:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition" /> を取得または設定します。</summary>
+        <value><see cref="T:System.IdentityModel.Selectors.AudienceUriMode" /> セキュリティ トークンの <see cref="T:System.IdentityModel.Tokens.SamlSecurityToken" /> を検証するかどうかを指定する <see cref="T:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フェデレーション アプリケーションの <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.AudienceUriMode%2A> プロパティを指定します。これは、<xref:System.IdentityModel.Tokens.SamlSecurityToken> セキュリティ トークンを発行するセキュリティ トークン サービス (STS) を利用します。 STS がセキュリティ トークンを発行する場合、このセキュリティ トークンに <xref:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition> を追加して、セキュリティ トークンの提供先となる Web サービスの URI を指定できます。 これにより、受け取り側 <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator> Web サービスは、次のようにしてこのチェックが行われるように指定することで、発行されたセキュリティ トークンがこの Web サービスを対象としていることを確認できます。  
+  
+-   <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.AudienceUriMode%2A> プロパティを <xref:System.IdentityModel.Selectors.AudienceUriMode.Always> または <xref:System.IdentityModel.Selectors.AudienceUriMode.BearerKeyOnly> に設定します。  
+  
+-   <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.AllowedAudienceUris%2A> コレクションに有効な URI のセットを追加して、これらの URI を指定します。  
+  
+> [!NOTE]
+>  <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.AudienceUriMode%2A> プロパティが <xref:System.IdentityModel.Selectors.AudienceUriMode.BearerKeyOnly> に設定されている場合、保証されていない受信 <xref:System.IdentityModel.Tokens.SamlSecurityToken> には <xref:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition> が必要です。また、<xref:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition.Audiences%2A> コレクションには、<xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.AllowedAudienceUris%2A> コレクションで指定された有効な URI の 1 つと一致する URI が含まれていなければなりません。 保証されていないトークンまたは所有者トークンは、メッセージに含まれているが、メッセージのいかなる部分の署名にも使用されないセキュリティ トークンです。  
+  
+-   オプションで、<xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.ValidateAudienceRestriction%2A> メソッドをオーバーライドし、許可された URI で使用する検証アルゴリズムを指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanValidateTokenCore">
+      <MemberSignature Language="C#" Value="protected override bool CanValidateTokenCore (System.IdentityModel.Tokens.SecurityToken token);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool CanValidateTokenCore(class System.IdentityModel.Tokens.SecurityToken token) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.CanValidateTokenCore(System.IdentityModel.Tokens.SecurityToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="token" Type="System.IdentityModel.Tokens.SecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="token">検証する <see cref="T:System.IdentityModel.Tokens.SecurityToken" />。</param>
+        <summary>指定したセキュリティ トークンをこのセキュリティ トークン認証システムで検証できるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="token" /> セキュリティ トークンである場合は <see cref="T:System.IdentityModel.Tokens.SamlSecurityToken" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.CanValidateTokenCore%2A> メソッドはセキュリティ トークンを認証しません。この認証は、<xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.ValidateTokenCore%2A> メソッドが実行します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveClaimSet">
+      <MemberSignature Language="C#" Value="public virtual System.IdentityModel.Claims.ClaimSet ResolveClaimSet (System.IdentityModel.Tokens.SecurityKeyIdentifier keyIdentifier);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IdentityModel.Claims.ClaimSet ResolveClaimSet(class System.IdentityModel.Tokens.SecurityKeyIdentifier keyIdentifier) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.ResolveClaimSet(System.IdentityModel.Tokens.SecurityKeyIdentifier)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Claims.ClaimSet</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyIdentifier" Type="System.IdentityModel.Tokens.SecurityKeyIdentifier" />
+      </Parameters>
+      <Docs>
+        <param name="keyIdentifier">ID を取得する対象の <see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifier" />。</param>
+        <summary><see cref="T:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator" /> インスタンスの作成時に提供されたサポート セキュリティ認証システムを使用して、指定したキー識別子と関連付けられている ID を解決し、これを <see cref="T:System.IdentityModel.Claims.ClaimSet" /> として返します。</summary>
+        <returns>指定したキー識別子の ID を表す <see cref="T:System.IdentityModel.Claims.ClaimSet" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveClaimSet">
+      <MemberSignature Language="C#" Value="public virtual System.IdentityModel.Claims.ClaimSet ResolveClaimSet (System.IdentityModel.Tokens.SecurityToken token);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IdentityModel.Claims.ClaimSet ResolveClaimSet(class System.IdentityModel.Tokens.SecurityToken token) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.ResolveClaimSet(System.IdentityModel.Tokens.SecurityToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Claims.ClaimSet</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="token" Type="System.IdentityModel.Tokens.SecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="token">ID を取得する対象の <see cref="T:System.IdentityModel.Tokens.SecurityToken" />。</param>
+        <summary><see cref="T:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator" /> インスタンスの作成時に提供されたサポート トークン認証システムを使用して、指定したセキュリティ トークンと関連付けられている ID を解決し、これを <see cref="T:System.IdentityModel.Claims.ClaimSet" /> として返します。</summary>
+        <returns>指定したセキュリティ トークンの ID を表す <see cref="T:System.IdentityModel.Claims.ClaimSet" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveIdentity">
+      <MemberSignature Language="C#" Value="public virtual System.Security.Principal.IIdentity ResolveIdentity (System.IdentityModel.Tokens.SecurityKeyIdentifier keyIdentifier);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.Principal.IIdentity ResolveIdentity(class System.IdentityModel.Tokens.SecurityKeyIdentifier keyIdentifier) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.ResolveIdentity(System.IdentityModel.Tokens.SecurityKeyIdentifier)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Principal.IIdentity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyIdentifier" Type="System.IdentityModel.Tokens.SecurityKeyIdentifier" />
+      </Parameters>
+      <Docs>
+        <param name="keyIdentifier">ID を取得する対象の <see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifier" />。</param>
+        <summary><see cref="T:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator" /> インスタンスの作成時に提供されたサポート セキュリティ トークン認証システムを使用して、指定したキー識別子と関連付けられている ID を解決し、これを <see cref="T:System.Security.Principal.IIdentity" /> として返します。</summary>
+        <returns>指定したキー識別子の ID を表す <see cref="T:System.Security.Principal.IIdentity" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlSecurityToken> セキュリティ トークンは、キー識別子によりキャッシュされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveIdentity">
+      <MemberSignature Language="C#" Value="public virtual System.Security.Principal.IIdentity ResolveIdentity (System.IdentityModel.Tokens.SecurityToken token);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.Principal.IIdentity ResolveIdentity(class System.IdentityModel.Tokens.SecurityToken token) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.ResolveIdentity(System.IdentityModel.Tokens.SecurityToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Principal.IIdentity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="token" Type="System.IdentityModel.Tokens.SecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="token">ID を取得する対象の <see cref="T:System.IdentityModel.Tokens.SecurityToken" />。</param>
+        <summary><see cref="T:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator" /> インスタンスの作成時に提供されたサポート セキュリティ トークン認証システムを使用して、指定したセキュリティ トークンと関連付けられている ID を解決し、これを <see cref="T:System.Security.Principal.IIdentity" /> として返します。</summary>
+        <returns>指定したセキュリティ トークンの ID を表す <see cref="T:System.Security.Principal.IIdentity" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateAudienceRestriction">
+      <MemberSignature Language="C#" Value="protected virtual bool ValidateAudienceRestriction (System.IdentityModel.Tokens.SamlAudienceRestrictionCondition audienceRestrictionCondition);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool ValidateAudienceRestriction(class System.IdentityModel.Tokens.SamlAudienceRestrictionCondition audienceRestrictionCondition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.ValidateAudienceRestriction(System.IdentityModel.Tokens.SamlAudienceRestrictionCondition)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="audienceRestrictionCondition" Type="System.IdentityModel.Tokens.SamlAudienceRestrictionCondition" />
+      </Parameters>
+      <Docs>
+        <param name="audienceRestrictionCondition"><see cref="T:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition" /> セキュリティ トークンが対象とする Web サービスのセットを指定する <see cref="T:System.IdentityModel.Tokens.SamlSecurityToken" />。</param>
+        <summary><see cref="T:System.IdentityModel.Tokens.SamlSecurityToken" /> セキュリティ トークンがこの Web サービスを対象としていたかどうかを検証します。</summary>
+        <returns>
+          <see langword="true" /> パラメーターの <see cref="P:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition.Audiences" /> プロパティが <paramref name="audienceRestrictionCondition" /> コレクションに含まれる場合は <see cref="P:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.AllowedAudienceUris" />、その以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.ValidateAudienceRestriction%2A> メソッドは、<xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.ValidateTokenCore%2A> プロパティが <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.AudienceUriMode%2A> または <xref:System.IdentityModel.Selectors.AudienceUriMode.Always> に設定されている場合、<xref:System.IdentityModel.Selectors.AudienceUriMode.BearerKeyOnly> メソッドにより呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateTokenCore">
+      <MemberSignature Language="C#" Value="protected override System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Policy.IAuthorizationPolicy&gt; ValidateTokenCore (System.IdentityModel.Tokens.SecurityToken token);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.IdentityModel.Policy.IAuthorizationPolicy&gt; ValidateTokenCore(class System.IdentityModel.Tokens.SecurityToken token) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.ValidateTokenCore(System.IdentityModel.Tokens.SecurityToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Policy.IAuthorizationPolicy&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="token" Type="System.IdentityModel.Tokens.SecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="token">検証する <see cref="T:System.IdentityModel.Tokens.SecurityToken" />。</param>
+        <summary>指定したセキュリティ トークンを認証し、セキュリティ トークンの一連の承認ポリシーを返します。</summary>
+        <returns>セキュリティ トークン認証の結果得られた認証ポリシーのセットを含む <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> 型の <see cref="T:System.IdentityModel.Policy.IAuthorizationPolicy" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

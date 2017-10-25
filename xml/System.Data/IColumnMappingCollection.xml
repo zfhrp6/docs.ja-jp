@@ -1,0 +1,270 @@
+<Type Name="IColumnMappingCollection" FullName="System.Data.IColumnMappingCollection">
+  <TypeSignature Language="C#" Value="public interface IColumnMappingCollection : System.Collections.IList" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IColumnMappingCollection implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Collections.IList" />
+  <TypeSignature Language="DocId" Value="T:System.Data.IColumnMappingCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IList</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>DataColumnMapping オブジェクトのコレクションが含まれており、によって実装される、 <see cref="T:System.Data.Common.DataColumnMappingCollection" />、.NET Framework データ プロバイダーで一般的に使用します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.IColumnMappingCollection>インターフェイス ColumnMapping コレクションを実装する継承するクラスを有効にします。 詳細については、次を参照してください。 [DataAdapter DataTable と DataColumn のマップ](~/docs/framework/data/adonet/dataadapter-datatable-and-datacolumn-mappings.md)です。  
+  
+ アプリケーションがのインスタンスを作成していない、<xref:System.Data.IColumnMappingCollection>インターフェイスを直接が継承するクラスのインスタンスを作成、<xref:System.Data.IColumnMappingCollection>です。  
+  
+ 継承するクラス<xref:System.Data.IColumnMappingCollection>継承されたすべてのメンバーを実装して、通常プロバイダー固有の機能を追加するその他のメンバーを定義する必要があります。 たとえば、<xref:System.Data.IColumnMappingCollection>インターフェイスを定義、<xref:System.Data.IColumnMappingCollection.RemoveAt%2A>メソッドです。 さらに、<xref:System.Data.Common.DataTableMappingCollection>クラスは、このメソッドを継承し、定義のオーバー ロードを 2 つ追加<xref:System.Data.Common.DataTableMappingCollection.RemoveAt%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例は、派生クラスのインスタンスを使用して<xref:System.Data.Common.DataTableMapping>を<xref:System.Data.Common.DataColumnMappingCollection.Add%2A>複数<xref:System.Data.Common.DataColumnMapping>オブジェクトをその<xref:System.Data.Common.DataTableMapping.ColumnMappings%2A>ソース テーブルのコレクション、および、これらの一覧のマップが表示されます。 この例では、<xref:System.Data.Common.DataTableMapping>既に作成されています。  
+  
+ [!code-csharp[Classic WebData DataColumnMappingCollection Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataColumnMappingCollection Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataColumnMappingCollection Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataColumnMappingCollection Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>継承する場合、<see cref="T:System.Data.IColumnMappingCollection" />インターフェイスでは、次のコンス トラクターを実装する必要があります。  
+  
+ <list type="table"><listheader><term>項目  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term>ColumnMappingCollection()  
+  
+ </term><description>空の ColumnMappingCollection クラスを作成します。  
+  
+ </description></item></list></para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Data.IColumnMapping Add (string sourceColumnName, string dataSetColumnName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Data.IColumnMapping Add(string sourceColumnName, string dataSetColumnName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.IColumnMappingCollection.Add(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.IColumnMapping</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceColumnName" Type="System.String" />
+        <Parameter Name="dataSetColumnName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceColumnName">基になる列の名前。</param>
+        <param name="dataSetColumnName">名前、<see cref="T:System.Data.DataSet" />列です。</param>
+        <summary>ColumnMapping オブジェクトを基になる列を使用して、ColumnMapping コレクションに追加し、<see cref="T:System.Data.DataSet" />列の名前。</summary>
+        <returns>コレクションに追加された ColumnMapping オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (string sourceColumnName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(string sourceColumnName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.IColumnMappingCollection.Contains(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceColumnName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceColumnName">基になる列の名前。</param>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Data.Common.DataColumnMappingCollection" />が含まれています、<see cref="T:System.Data.Common.DataColumnMapping" />指定したソース列名を持つオブジェクト。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Data.Common.DataColumnMapping" />それ以外の場合、指定したソース列名を持つオブジェクトが存在する<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetByDataSetColumn">
+      <MemberSignature Language="C#" Value="public System.Data.IColumnMapping GetByDataSetColumn (string dataSetColumnName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Data.IColumnMapping GetByDataSetColumn(string dataSetColumnName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.IColumnMappingCollection.GetByDataSetColumn(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.IColumnMapping</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSetColumnName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dataSetColumnName">名前、<see cref="T:System.Data.DataSet" />コレクション内の列です。</param>
+        <summary>指定された ColumnMapping オブジェクトを取得<see cref="T:System.Data.DataSet" />列の名前。</summary>
+        <returns>指定された ColumnMapping オブジェクト<see langword="DataSet" />列の名前。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (string sourceColumnName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 IndexOf(string sourceColumnName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.IColumnMappingCollection.IndexOf(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceColumnName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceColumnName">基になる列の名前。</param>
+        <summary>場所を取得、<see cref="T:System.Data.Common.DataColumnMapping" />指定したソース列名を持つオブジェクト。 名前は大文字小文字を区別します。</summary>
+        <returns>0 から始まる場所、<see langword="DataColumnMapping" />指定したソース列名を持つオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、派生クラスのインスタンスの検索<xref:System.Data.Common.DataColumnMapping>、内の指定したソース列の名前を持つ、<xref:System.Data.Common.DataColumnMappingCollection>コレクション。 場合、<xref:System.Data.Common.DataColumnMapping>存在する場合、名前とマッピングのインデックスを表示します。 マッピングが存在しない場合は、エラーを表示します。 この例では、<xref:System.Data.Common.DataColumnMappingCollection>コレクションが作成されました。  
+  
+ [!code-csharp[Classic WebData DataColumnMappingCollection.this1 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataColumnMappingCollection.this1 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataColumnMappingCollection.this1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataColumnMappingCollection.this1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[string index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.IColumnMappingCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="index"><see langword="SourceColumn" />の名前、<see langword="IColumnMapping" />検索するオブジェクト。</param>
+        <summary>取得または設定、<see cref="T:System.Data.IColumnMapping" />指定したオブジェクト<see langword="SourceColumn" />名。</summary>
+        <value><see langword="IColumnMapping" />指定したオブジェクト<see langword="SourceColumn" />名。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (string sourceColumnName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveAt(string sourceColumnName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.IColumnMappingCollection.RemoveAt(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceColumnName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceColumnName">大文字小文字を区別、<see langword="SourceColumn" />名。</param>
+        <summary>削除、<see cref="T:System.Data.IColumnMapping" />指定したオブジェクト<see cref="P:System.Data.IColumnMapping.SourceColumn" />コレクションの名前。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、派生クラスのインスタンスの検索<xref:System.Data.Common.DataColumnMapping>で、指定された`SourceColumn`内で名前、<xref:System.Data.Common.DataColumnMappingCollection>コレクション。 場合、<xref:System.Data.Common.DataColumnMapping>存在する場合、そのマッピングを削除します。 この例では、<xref:System.Data.Common.DataColumnMappingCollection>コレクションが作成されました。  
+  
+ [!code-csharp[Classic WebData DataColumnMappingCollection.RemoveAt1 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataColumnMappingCollection.RemoveAt1 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataColumnMappingCollection.RemoveAt1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataColumnMappingCollection.RemoveAt1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException">A <see cref="T:System.Data.Common.DataColumnMapping" /> 、指定したオブジェクトが存在しない<see langword="SourceColumn" />名。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

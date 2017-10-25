@@ -1,0 +1,131 @@
+<Type Name="LoaderOptimizationAttribute" FullName="System.LoaderOptimizationAttribute">
+  <TypeSignature Language="C#" Value="public sealed class LoaderOptimizationAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit LoaderOptimizationAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.LoaderOptimizationAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>実行可能アプリケーションの main メソッドの既定のローダー最適化ポリシーを設定するために使用します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.LoaderOptimizationAttribute>実行可能アプリケーションの main メソッドに対してのみ設定できるし、その他のすべてのメソッドでは無視されます。  
+  
+ <xref:System.LoaderOptimizationAttribute>と属性が指定されて、<xref:System.LoaderOptimization>ローダー最適化するためのアプリケーションの種類を示す列挙値は、: `SingleDomain`、 `MultiDomain`、または`MultiDomainHost`です。  
+  
+ この属性は、ローダーにヒントのみであり、プログラムの動作には影響しません。  
+  
+> [!NOTE]
+>  カスタム コード アクセス セキュリティ ポリシーが設定されている場合、<xref:System.AppDomain>を使用して、<xref:System.AppDomain.SetAppDomainPolicy%2A>プロパティ、および<xref:System.AppDomain>を使用して作成されて、<xref:System.LoaderOptimization.MultiDomain>フラグ、効果を指定することと同じ、<xref:System.LoaderOptimization.MultiDomainHost>フラグです。 つまり、GAC のアセンブリのみを共有します。 これが発生した、ローダーが例外をスローしないと、アプリケーションに関連付けられているパフォーマンスの向上は発生しません、<xref:System.LoaderOptimization.MultiDomain>フラグ。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LoaderOptimizationAttribute (byte value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.LoaderOptimizationAttribute.#ctor(System.Byte)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Byte" />
+      </Parameters>
+      <Docs>
+        <param name="value">等価の値、<see cref="T:System.LoaderOptimization" />定数。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.LoaderOptimizationAttribute" />クラスを指定された値。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LoaderOptimizationAttribute (LoaderOptimization value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.LoaderOptimization value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.LoaderOptimizationAttribute.#ctor(System.LoaderOptimization)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.LoaderOptimization" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.LoaderOptimization" /> 定数。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.LoaderOptimizationAttribute" />クラスを指定された値。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public LoaderOptimization Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.LoaderOptimization Value" />
+      <MemberSignature Language="DocId" Value="P:System.LoaderOptimizationAttribute.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.LoaderOptimization</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の取得<see cref="T:System.LoaderOptimization" />のインスタンスの値。</summary>
+        <value><see cref="T:System.LoaderOptimization" /> 定数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

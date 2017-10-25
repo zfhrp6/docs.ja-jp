@@ -1,0 +1,119 @@
+<Type Name="HitTestFilterBehavior" FullName="System.Windows.Media.HitTestFilterBehavior">
+  <TypeSignature Language="C#" Value="public enum HitTestFilterBehavior" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed HitTestFilterBehavior extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.HitTestFilterBehavior" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>ヒット テスト フィルターのコールバック メソッドでヒット テストの戻り値の動作を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ヒット テスト フィルターのコールバックの戻り値は、 <xref:System.Windows.Media.HitTestFilterBehavior>、ヒット テストのビジュアル ツリーを処理するときに、アクションの種類を行う必要がありますを決定します。 たとえば、ヒット テスト フィルターのコールバックが ContinueSkipSelfAndChildren、値を返す場合そのヒット テスト結果の評価からの現在の visual オブジェクトとその子孫を削除できます。  
+  
+> [!NOTE]
+>  オブジェクトのビジュアル ツリーの簡略化すると、ヒット テスト結果の評価パス中に必要な処理量が小さくなります。  
+  
+ ![ヒット テスト フィルターを使用したビジュアル ツリーの簡略化](~/add/media/filteredvisualtree-01.png "ヒット テスト フィルターを使用したビジュアル ツリーの簡略化")  
+ビジュアル ツリーの簡略化  
+  
+   
+  
+## Examples  
+ 次の例を返す方法を示しています、<xref:System.Windows.Media.HitTestFilterBehavior.ContinueSkipSelfAndChildren>ヒット テスト フィルターのコールバック メソッドからの値。 ここでは、フィルターは、ラベルとその子孫をスキップし、他のすべてのヒット テストします。  
+  
+ [!code-csharp[HitTestingOverview#106](~/samples/snippets/csharp/VS_Snippets_Wpf/HitTestingOverview/CSharp/Window1.xaml.cs#106)]
+ [!code-vb[HitTestingOverview#106](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HitTestingOverview/visualbasic/window1.xaml.vb#106)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Continue">
+      <MemberSignature Language="C#" Value="Continue" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.HitTestFilterBehavior Continue = int32(6)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.HitTestFilterBehavior.Continue" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.HitTestFilterBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在に対してヒット テスト<see cref="T:System.Windows.Media.Visual" />とその子孫です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ContinueSkipChildren">
+      <MemberSignature Language="C#" Value="ContinueSkipChildren" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.HitTestFilterBehavior ContinueSkipChildren = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.HitTestFilterBehavior.ContinueSkipChildren" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.HitTestFilterBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在に対してヒット テスト<see cref="T:System.Windows.Media.Visual" />がその子孫ではありません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ContinueSkipSelf">
+      <MemberSignature Language="C#" Value="ContinueSkipSelf" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.HitTestFilterBehavior ContinueSkipSelf = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.HitTestFilterBehavior.ContinueSkipSelf" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.HitTestFilterBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テストの現在の対象にヒットしない<see cref="T:System.Windows.Media.Visual" />、その子孫に対してヒットがテストされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ContinueSkipSelfAndChildren">
+      <MemberSignature Language="C#" Value="ContinueSkipSelfAndChildren" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.HitTestFilterBehavior ContinueSkipSelfAndChildren = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.HitTestFilterBehavior.ContinueSkipSelfAndChildren" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.HitTestFilterBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テストの現在の対象にヒットしない<see cref="T:System.Windows.Media.Visual" />またはその子孫です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Stop">
+      <MemberSignature Language="C#" Value="Stop" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.HitTestFilterBehavior Stop = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.HitTestFilterBehavior.Stop" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.HitTestFilterBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ヒット テストを現在停止<see cref="T:System.Windows.Media.Visual" />です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

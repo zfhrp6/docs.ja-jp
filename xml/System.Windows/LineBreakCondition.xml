@@ -1,0 +1,97 @@
+<Type Name="LineBreakCondition" FullName="System.Windows.LineBreakCondition">
+  <TypeSignature Language="C#" Value="public enum LineBreakCondition" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed LineBreakCondition extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.LineBreakCondition" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>インライン オブジェクトの周りの互換性に影響する条件を記述します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体は、インライン オブジェクトに対して、改行を許可するかどうかについて説明します。 この中断の影響を受ける、<xref:System.Windows.LineBreakCondition>インラインする前にオブジェクト (ある場合) のです。 上部に値を表す次の表では、<xref:System.Windows.LineBreakCondition>左側の値が別のインライン オブジェクトの値を表すに対し 1 つのインラインの値がオブジェクトです。 "True"または"False"の値は、2 つのインライン オブジェクト間で改行を許可するかどうかによって示されます。  
+  
+||||||  
+|-|-|-|-|-|  
+||BreakDesired|BreakPossible|BreakRestrained|BreakAlways|  
+|BreakDesired|True|True|False|True|  
+|BreakPossible|True|False|False|True|  
+|BreakRestrained|False|False|False|True|  
+|BreakAlways|True|True|True|True|  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BreakAlways">
+      <MemberSignature Language="C#" Value="BreakAlways" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.LineBreakCondition BreakAlways = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.LineBreakCondition.BreakAlways" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.LineBreakCondition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>中断は常に許可します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="BreakDesired">
+      <MemberSignature Language="C#" Value="BreakDesired" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.LineBreakCondition BreakDesired = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.LineBreakCondition.BreakDesired" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.LineBreakCondition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>別のオブジェクトによって禁止されていない場合に中断します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="BreakPossible">
+      <MemberSignature Language="C#" Value="BreakPossible" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.LineBreakCondition BreakPossible = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.LineBreakCondition.BreakPossible" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.LineBreakCondition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>別のオブジェクトで許可されている場合を中断します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="BreakRestrained">
+      <MemberSignature Language="C#" Value="BreakRestrained" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.LineBreakCondition BreakRestrained = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.LineBreakCondition.BreakRestrained" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.LineBreakCondition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>常に中断禁止されているその他のオブジェクトに設定されている場合を除き、<see cref="F:System.Windows.LineBreakCondition.BreakAlways" />です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

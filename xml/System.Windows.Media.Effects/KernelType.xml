@@ -1,0 +1,59 @@
+<Type Name="KernelType" FullName="System.Windows.Media.Effects.KernelType">
+  <TypeSignature Language="C#" Value="public enum KernelType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed KernelType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Effects.KernelType" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>効果を作成するために使用されるカーネルを記述します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体は、ぼかしの計算に使用される曲線を指定します。  
+  
+ **パフォーマンスに関するメモ:**ガウスのカーネルが高品質のぼかしを作成しますが、あまり計算を使用しているために、ボックス カーネルを使用して、パフォーマンスに問題がある場合。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Box">
+      <MemberSignature Language="C#" Value="Box" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.Effects.KernelType Box = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Effects.KernelType.Box" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Effects.KernelType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>二乗分布曲線で作成された単純なぼかし。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Gaussian">
+      <MemberSignature Language="C#" Value="Gaussian" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.Effects.KernelType Gaussian = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Effects.KernelType.Gaussian" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Effects.KernelType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ぼかしのスムーズな分布を作成する分布曲線。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

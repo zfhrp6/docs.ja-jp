@@ -1,0 +1,234 @@
+<Type Name="WebRequestErrorEvent" FullName="System.Web.Management.WebRequestErrorEvent">
+  <TypeSignature Language="C#" Value="public class WebRequestErrorEvent : System.Web.Management.WebBaseErrorEvent" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebRequestErrorEvent extends System.Web.Management.WebBaseErrorEvent" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Management.WebRequestErrorEvent" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Management.WebBaseErrorEvent</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Web 要求エラーに関する情報を保持するイベントを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebRequestErrorEvent> Web 要求中にエラーが発生した場合に発生します。 アプリケーションは、このイベントを使用してで定義されている要求に関連する情報を取得する必要があります、<xref:System.Web.Management.WebRequestInformation>と<xref:System.Web.Management.WebThreadInformation>クラスです。  
+  
+> [!NOTE]
+>  ほとんどの場合では、標準の ASP.NET 状態の種類を監視し、設定してその動作を制御、`healthMonitoring`構成セクション。 次の例に示すようにカスタムの型を作成することもできます。 場合は、カスタム イベントの種類を作成して、独自の情報を追加、カスタマイズする必要があります、<xref:System.Web.Management.WebBaseEvent.FormatCustomEventDetails%2A>メソッド、これを回避上書きまたは機密性の高いシステム情報を改ざんします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、次の 2 つの部分です。 最初の部分は、ASP.NET カスタム イベントを使用できるようにする構成ファイルの抜粋です。 2 番目の部分から派生する方法を示しています、<xref:System.Web.Management.WebRequestErrorEvent>カスタム イベントを作成するクラス。  
+  
+```  
+<healthMonitoring enabled="true" heartBeatInterval="0">  
+  <eventMappings>  
+    <add  name="SampleWebRequestErrorEvent" type="SamplesAspNet.SampleWebRequestErrorEvent,webrequesterrorevent,Version=1.0.1573.21654, Culture=neutral, PublicKeyToken=63ada862a6c5af13, processorArchitecture=MSIL"/>  
+  </eventMappings>  
+  
+  <rules>  
+    <add   
+      name="Custom Web Request Error Events"  
+      eventName="SampleWebRequestErrorEvent"   
+      provider="EventLogProvider"    
+      profile="Critical"/>  
+  </rules>  
+</healthMonitoring>  
+```  
+  
+ [!code-csharp[System.Web.Management.WebRequestErrorEvent#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebRequestErrorEvent/CS/webrequesterrorevent.cs#1)]
+ [!code-vb[System.Web.Management.WebRequestErrorEvent#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebRequestErrorEvent/VB/webrequesterrorevent.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Web.Management.WebRequestErrorEvent" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント コードまたは識別子を定義するために使用する値がより大きくする必要があります、<xref:System.Web.Management.WebEventCodes.WebExtendedBase>フィールド定数。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WebRequestErrorEvent (string message, object eventSource, int eventCode, Exception exception);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor(string message, object eventSource, int32 eventCode, class System.Exception exception) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebRequestErrorEvent.#ctor(System.String,System.Object,System.Int32,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="eventSource" Type="System.Object" />
+        <Parameter Name="eventCode" Type="System.Int32" />
+        <Parameter Name="exception" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">イベントの説明。</param>
+        <param name="eventSource">イベントのソースであるオブジェクト。</param>
+        <param name="eventCode">イベントに関連付けられた識別子。 大きい場合があります、<see cref="F:System.Web.Management.WebEventCodes.WebExtendedBase" />フィールド定数。</param>
+        <param name="exception"><see cref="T:System.Exception" />エラーに関連します。</param>
+        <summary>初期化、<see cref="T:System.Web.Management.WebRequestErrorEvent" />指定されたイベントのパラメーターを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターでは、作成することができます、<xref:System.Web.Management.WebRequestErrorEvent>イベントはイベント自体について詳細な情報を指定する必要はありません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを使用する方法を示します。  
+  
+ [!code-csharp[System.Web.Management.WebRequestErrorEvent#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebRequestErrorEvent/CS/webrequesterrorevent.cs#2)]
+ [!code-vb[System.Web.Management.WebRequestErrorEvent#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebRequestErrorEvent/VB/webrequesterrorevent.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WebRequestErrorEvent (string message, object eventSource, int eventCode, int eventDetailCode, Exception exception);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor(string message, object eventSource, int32 eventCode, int32 eventDetailCode, class System.Exception exception) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebRequestErrorEvent.#ctor(System.String,System.Object,System.Int32,System.Int32,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="eventSource" Type="System.Object" />
+        <Parameter Name="eventCode" Type="System.Int32" />
+        <Parameter Name="eventDetailCode" Type="System.Int32" />
+        <Parameter Name="exception" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">イベントの説明。</param>
+        <param name="eventSource">イベントのソースであるオブジェクト。</param>
+        <param name="eventCode">イベントに関連付けられた識別子。 大きくなければなりません<see cref="F:System.Web.Management.WebEventCodes.WebExtendedBase" />フィールド定数。</param>
+        <param name="eventDetailCode">イベント詳細コード識別子です。</param>
+        <param name="exception"><see cref="T:System.Exception" />エラーに関連します。</param>
+        <summary>初期化、<see cref="T:System.Web.Management.WebRequestErrorEvent" />指定されたイベントのパラメーターを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントに関する詳細な情報を指定する必要がある場合は、このコンス トラクターを使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを使用する方法を示します。  
+  
+ [!code-csharp[System.Web.Management.WebRequestErrorEvent#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebRequestErrorEvent/CS/webrequesterrorevent.cs#3)]
+ [!code-vb[System.Web.Management.WebRequestErrorEvent#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebRequestErrorEvent/VB/webrequesterrorevent.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncrementPerfCounters">
+      <MemberSignature Language="C#" Value="protected override void IncrementPerfCounters ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void IncrementPerfCounters() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebRequestErrorEvent.IncrementPerfCounters" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>関連するパフォーマンス カウンターをインクリメントするには、内部的に使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestInformation">
+      <MemberSignature Language="C#" Value="public System.Web.Management.WebRequestInformation RequestInformation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Management.WebRequestInformation RequestInformation" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebRequestErrorEvent.RequestInformation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Management.WebRequestInformation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーション要求情報を取得します。</summary>
+        <value>アプリケーション要求情報です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 標準の要求の情報がによって定義された、<xref:System.Web.Management.WebRequestInformation>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Web.Management.WebRequestErrorEvent.RequestInformation%2A>プロパティの値。  
+  
+ [!code-csharp[System.Web.Management.WebRequestErrorEvent#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebRequestErrorEvent/CS/webrequesterrorevent.cs#5)]
+ [!code-vb[System.Web.Management.WebRequestErrorEvent#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebRequestErrorEvent/VB/webrequesterrorevent.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThreadInformation">
+      <MemberSignature Language="C#" Value="public System.Web.Management.WebThreadInformation ThreadInformation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Management.WebThreadInformation ThreadInformation" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebRequestErrorEvent.ThreadInformation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Management.WebThreadInformation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーション スレッドに関する情報を取得します。</summary>
+        <value>アプリケーション スレッドの情報です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 標準スレッドの情報がによって定義された、<xref:System.Web.Management.WebThreadInformation>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Web.Management.WebRequestErrorEvent.ThreadInformation%2A>プロパティの値。  
+  
+ [!code-csharp[System.Web.Management.WebRequestErrorEvent#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebRequestErrorEvent/CS/webrequesterrorevent.cs#6)]
+ [!code-vb[System.Web.Management.WebRequestErrorEvent#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebRequestErrorEvent/VB/webrequesterrorevent.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

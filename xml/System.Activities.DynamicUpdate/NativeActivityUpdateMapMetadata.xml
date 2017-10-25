@@ -1,0 +1,90 @@
+<Type Name="NativeActivityUpdateMapMetadata" FullName="System.Activities.DynamicUpdate.NativeActivityUpdateMapMetadata">
+  <TypeSignature Language="C#" Value="public class NativeActivityUpdateMapMetadata : System.Activities.DynamicUpdate.UpdateMapMetadata" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NativeActivityUpdateMapMetadata extends System.Activities.DynamicUpdate.UpdateMapMetadata" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.DynamicUpdate.NativeActivityUpdateMapMetadata" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Activities.DynamicUpdate.UpdateMapMetadata</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ネイティブ アクティビティの更新マップのメタデータを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Windows Workflow Foundation のバージョン管理と動的な更新機能をサポートします。 [!INCLUDE[crabout](~/includes/crabout-md.md)] ワークフローのバージョン管理、ワークフロー ID、および動的な更新に詳細については、次のトピックを参照してください。  
+  
+ [ワークフローのバージョン管理](http://go.microsoft.com/fwlink/?LinkID=271561)  
+ [!INCLUDE[net_v45](~/includes/net-v45-md.md)] で導入されたワークフローのバージョン管理機能について説明します。  
+  
+ [動的な更新](http://go.microsoft.com/fwlink/?LinkId=271563)  
+ 動的更新を使用して、永続化されたワークフロー インスタンスのワークフロー定義を更新する方法について説明します。  
+  
+ [WorkflowApplication Id とバージョン管理を使用](http://go.microsoft.com/fwlink/?LinkId=271564)  
+ <xref:System.Activities.WorkflowIdentity> を使用して、ワークフローの複数バージョンを同時にホストする方法について説明します。  
+  
+ [WorkflowServiceHost でサイド バイ サイドのバージョン管理](http://go.microsoft.com/fwlink/?LinkId=271565)  
+ 単一のエンドポイントでワークフローの複数のバージョンをホストする方法について説明します。  
+  
+ [ワークフローの複数のバージョンを同時にホストする方法](http://go.microsoft.com/fwlink/?LinkId=271566)  
+ これは、ステップで、[チュートリアル入門](http://go.microsoft.com/fwlink/?LinkId=271570)ワークフロー定義の更新と同時に新旧両方の定義を使用してワークフローのホスティングを示します。  
+  
+ [実行中のワークフロー インスタンスの定義を更新する方法](http://go.microsoft.com/fwlink/?LinkId=271567)  
+ これは、ステップで、[チュートリアル入門](http://go.microsoft.com/fwlink/?LinkId=271570)新しいワークフロー定義を使用する永続化されたワークフロー インスタンスの更新を示します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="SaveOriginalValue">
+      <MemberSignature Language="C#" Value="public void SaveOriginalValue (System.Activities.Activity updatedChildActivity, object originalValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SaveOriginalValue(class System.Activities.Activity updatedChildActivity, object originalValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateMapMetadata.SaveOriginalValue(System.Activities.Activity,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="updatedChildActivity" Type="System.Activities.Activity" />
+        <Parameter Name="originalValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="updatedChildActivity">更新された子アクティビティ。</param>
+        <param name="originalValue">元の値。</param>
+        <summary>現在のアクティビティは、元の値を保存するオブジェクトを示します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveOriginalValue">
+      <MemberSignature Language="C#" Value="public void SaveOriginalValue (string propertyName, object originalValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SaveOriginalValue(string propertyName, object originalValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateMapMetadata.SaveOriginalValue(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="originalValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">プロパティ名。</param>
+        <param name="originalValue">元の値。</param>
+        <summary>現在のアクティビティは、元の値を保存するオブジェクトを示します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

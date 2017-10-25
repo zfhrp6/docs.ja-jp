@@ -1,0 +1,208 @@
+<Type Name="KnownTypeAttribute" FullName="System.Runtime.Serialization.KnownTypeAttribute">
+  <TypeSignature Language="C#" Value="public sealed class KnownTypeAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit KnownTypeAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Serialization.KnownTypeAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Struct, AllowMultiple=true, Inherited=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>特定の型をシリアル化または逆シリアル化するときに、<see cref="T:System.Runtime.Serialization.DataContractSerializer" /> が認識する必要がある型を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Serialization.KnownTypeAttribute> 属性を型に適用して、この属性が適用された型のインスタンスをシリアル化または逆シリアル化するときに認識する必要がある型を <xref:System.Runtime.Serialization.DataContractSerializer> に指示します。 データ コントラクトを理解する他のシリアライザーも、この属性を認識できます。  
+  
+> [!NOTE]
+>  コードでは、`KnownType` の代わりに `KnownTypeAttribute` という短い語を使用できます。  
+  
+ <xref:System.Runtime.Serialization.KnownTypeAttribute> プロパティを設定して <xref:System.Runtime.Serialization.KnownTypeAttribute.MethodName%2A> インスタンスを 1 つだけ適用するか、または <xref:System.Runtime.Serialization.KnownTypeAttribute> プロパティを設定して 1 つ以上の <xref:System.Runtime.Serialization.KnownTypeAttribute.Type%2A> インスタンスを適用できます。  
+  
+   
+  
+## Examples  
+ `Person` 型をシリアル化または逆シリアル化するときに認識する必要がある `IDInformation` という名前の型と `Person` という名前の型の例を次に示します。  
+  
+ [!code-csharp[KnownTypeAttribute#0](~/samples/snippets/csharp/VS_Snippets_CFX/knowntypeattribute/cs/overview.cs#0)]
+ [!code-vb[KnownTypeAttribute#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/knowntypeattribute/vb/overview.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public KnownTypeAttribute (string methodName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string methodName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.KnownTypeAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="methodName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="methodName">データをシリアル化または逆シリアル化するときに使用される型の <see cref="T:System.Collections.IEnumerable" /> を返すメソッドの名前。</param>
+        <summary>既知の型の <see cref="T:System.Runtime.Serialization.KnownTypeAttribute" /> を返すメソッドの名前を指定して、<see cref="T:System.Collections.IEnumerable" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、クラスのメソッドと一致するメソッド名を使用します。  このメソッドは、<xref:System.Collections.Generic.IEnumerable%601> オブジェクトの <xref:System.Type> を返します。 シリアル化または逆シリアル化の間、コレクション内で検出された型を、属性が適用されたルート型の中で使用できます。  
+  
+   
+  
+## Examples  
+ `methodName` パラメーターを使用して <xref:System.Type> オブジェクトの配列を含む型のメソッドを指定する例を次に示します。  
+  
+ [!code-csharp[KnownTypeAttribute_Ctor_String#1](~/samples/snippets/csharp/VS_Snippets_CFX/knowntypeattribute_ctor_string/cs/knowntype_ctor1.cs#1)]
+ [!code-vb[KnownTypeAttribute_Ctor_String#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/knowntypeattribute_ctor_string/vb/knowntypeattribute_ctor1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public KnownTypeAttribute (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.KnownTypeAttribute.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">データをシリアル化または逆シリアル化するときに既知の型として含まれる <see cref="T:System.Type" />。</param>
+        <summary>型を指定して、<see cref="T:System.Runtime.Serialization.KnownTypeAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ シリアル化または逆シリアル化するときに含める必要がある `Person` という名前の型と `IDInformation` という名前の型の例を次に示します。  
+  
+ [!code-csharp[KnownTypeAttribute#0](~/samples/snippets/csharp/VS_Snippets_CFX/knowntypeattribute/cs/overview.cs#0)]
+ [!code-vb[KnownTypeAttribute#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/knowntypeattribute/vb/overview.vb#0)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MethodName">
+      <MemberSignature Language="C#" Value="public string MethodName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MethodName" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.KnownTypeAttribute.MethodName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シリアル化または逆シリアル化の間に認識する必要がある型のリストを返すメソッドの名前を取得します。</summary>
+        <value><see cref="T:System.String" /> クラスによって定義された型に対するメソッドの名前を含む <see cref="T:System.Runtime.Serialization.KnownTypeAttribute" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドは、<xref:System.Runtime.Serialization.KnownTypeAttribute> が適用されたクラスまたは構造体に対して存在し、静的であり、パラメーターを受け付けず、汎用 <xref:System.Collections.Generic.IEnumerable%601> インターフェイス (<xref:System.Collections.ObjectModel.Collection%601> クラスなど) または <xref:System.Type> オブジェクトの配列を実装する型のインスタンスを返す必要があります。  
+  
+ このメソッドは、型のデータ コントラクトが読み込まれるときに、アプリケーション ドメインごとに 1 回呼び出されます。  
+  
+   
+  
+## Examples  
+ `methodName` パラメーターを使用して <xref:System.Type> オブジェクトの配列を含む型のメソッドを指定する例を次に示します。  
+  
+ [!code-csharp[KnownTypeAttribute_Ctor_String#1](~/samples/snippets/csharp/VS_Snippets_CFX/knowntypeattribute_ctor_string/cs/knowntype_ctor1.cs#1)]
+ [!code-vb[KnownTypeAttribute_Ctor_String#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/knowntypeattribute_ctor_string/vb/knowntypeattribute_ctor1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public Type Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type Type" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.KnownTypeAttribute.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Runtime.Serialization.DataContractSerializer" /> によるシリアル化または逆シリアル化の間に認識する必要がある型を取得します。</summary>
+        <value>シリアル化または逆シリアル化の間に使用される <see cref="T:System.Type" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,32 @@
+<Type Name="RenewedSecurityTokenHandler" FullName="System.ServiceModel.Security.Tokens.RenewedSecurityTokenHandler">
+  <TypeSignature Language="C#" Value="public delegate void RenewedSecurityTokenHandler(SecurityToken newSecurityToken, SecurityToken oldSecurityToken);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed RenewedSecurityTokenHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Security.Tokens.RenewedSecurityTokenHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="newSecurityToken" Type="System.IdentityModel.Tokens.SecurityToken" />
+    <Parameter Name="oldSecurityToken" Type="System.IdentityModel.Tokens.SecurityToken" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="newSecurityToken">更新されたトークン。</param>
+    <param name="oldSecurityToken">期限切れのセキュリティ トークン。</param>
+    <summary>実装された場合、更新されたトークンがクライアントに返される前に呼び出されるデリゲート。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアントは、トークンの期限が切れるときに更新要求を行います。 デリゲートは、更新されたトークンを検査するための拡張ポイントを提供します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

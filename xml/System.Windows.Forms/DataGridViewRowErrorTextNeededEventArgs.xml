@@ -1,0 +1,112 @@
+<Type Name="DataGridViewRowErrorTextNeededEventArgs" FullName="System.Windows.Forms.DataGridViewRowErrorTextNeededEventArgs">
+  <TypeSignature Language="C#" Value="public class DataGridViewRowErrorTextNeededEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridViewRowErrorTextNeededEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewRowErrorTextNeededEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Windows.Forms.DataGridView.RowErrorTextNeeded" />のイベント、<see cref="T:System.Windows.Forms.DataGridView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridView.RowErrorTextNeeded>のみイベントが発生したときに、<xref:System.Windows.Forms.DataGridView>コントロール<xref:System.Windows.Forms.DataGridView.DataSource%2A>プロパティを設定またはその<xref:System.Windows.Forms.DataGridView.VirtualMode%2A>プロパティは`true`します。 処理、<xref:System.Windows.Forms.DataGridView.RowErrorTextNeeded>イベントは、その状態とが含まれている値に応じて、行のエラーを確認する場合に便利です。  
+  
+ 処理するときに、<xref:System.Windows.Forms.DataGridView.RowErrorTextNeeded>イベントを指定するエラー テキスト、ハンドラーを行ヘッダーでエラー グリフが表示される場合を除き、<xref:System.Windows.Forms.DataGridView.ShowRowErrors%2A?displayProperty=nameWithType>プロパティに設定されている`false`です。 エラー グリフ上マウス ポインターを移動すると、ツールヒントにエラー テキストが表示されます。  
+  
+ <xref:System.Windows.Forms.DataGridView.RowErrorTextNeeded>イベントが発生するたびの値、<xref:System.Windows.Forms.DataGridViewRow.ErrorText%2A?displayProperty=nameWithType>プロパティを取得します。  
+  
+ 使用することができます、<xref:System.Windows.Forms.DataGridViewRowErrorTextNeededEventArgs.RowIndex%2A>プロパティを変更またはこの情報を使用して、状態を判断する、行の値を<xref:System.Windows.Forms.DataGridViewRowErrorTextNeededEventArgs.ErrorText%2A>プロパティです。 このプロパティは、行の値で初期化<xref:System.Windows.Forms.DataGridViewRow.ErrorText%2A>プロパティで、イベントの値をオーバーライドします。  
+  
+ 処理、<xref:System.Windows.Forms.DataGridView.RowErrorTextNeeded>大量の行の設定のパフォーマンスの低下を避けるためにデータを操作するときにイベント<xref:System.Windows.Forms.DataGridViewRow.ErrorText%2A>複数行の値。 詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールを拡張するためのベスト プラクティス](~/docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md)です。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、この型の使用を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.DataGridView.RowErrorTextNeeded>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.DataGridView>という`DataGridView1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.DataGridView.RowErrorTextNeeded>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#346](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#346)]
+ [!code-vb[System.Windows.Forms.EventExamples#346](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#346)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ErrorText">
+      <MemberSignature Language="C#" Value="public string ErrorText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ErrorText" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewRowErrorTextNeededEventArgs.ErrorText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または行のエラー テキストを設定します。</summary>
+        <value>行のエラー テキストを表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、初期状態の値を含む、<xref:System.Windows.Forms.DataGridViewRow.ErrorText%2A?displayProperty=nameWithType>プロパティ行に設定されている場合。  
+  
+ <xref:System.Windows.Forms.DataGridViewRowErrorTextNeededEventArgs.ErrorText%2A>プロパティの値が、行ヘッダーでエラー グリフのツールヒントとして表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DataGridViewRowErrorTextNeededEventArgs.ErrorText%2A>イベント ハンドラーのプロパティです。 コードを実際に使用しますが、<xref:System.Windows.Forms.DataGridViewCellErrorTextNeededEventArgs.ErrorText%2A?displayProperty=nameWithType>プロパティは、このプロパティとほぼ同じです、<xref:System.Windows.Forms.DataGridViewRowErrorTextNeededEventArgs.ErrorText%2A>プロパティ<xref:System.Windows.Forms.DataGridViewRowErrorTextNeededEventArgs>です。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridView_SharedRowScenarios#24](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView_SharedRowScenarios/CPP/sharedrows.cpp#24)]
+ [!code-csharp[System.Windows.Forms.DataGridView_SharedRowScenarios#24](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView_SharedRowScenarios/CS/sharedrows.cs#24)]
+ [!code-vb[System.Windows.Forms.DataGridView_SharedRowScenarios#24](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView_SharedRowScenarios/VB/sharedrows.vb#24)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowIndex">
+      <MemberSignature Language="C#" Value="public int RowIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RowIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewRowErrorTextNeededEventArgs.RowIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生した行を取得、<see cref="E:System.Windows.Forms.DataGridView.RowErrorTextNeeded" />イベント。</summary>
+        <value>ゼロ ベースの行インデックス行。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.DataGridView.RowErrorTextNeeded?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.DataGridView>という`DataGridView1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.DataGridView.RowErrorTextNeeded?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#346](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#346)]
+ [!code-vb[System.Windows.Forms.EventExamples#346](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#346)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

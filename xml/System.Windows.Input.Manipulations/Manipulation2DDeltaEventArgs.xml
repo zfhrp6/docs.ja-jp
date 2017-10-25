@@ -1,0 +1,123 @@
+<Type Name="Manipulation2DDeltaEventArgs" FullName="System.Windows.Input.Manipulations.Manipulation2DDeltaEventArgs">
+  <TypeSignature Language="C#" Value="public class Manipulation2DDeltaEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Manipulation2DDeltaEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.Manipulations.Manipulation2DDeltaEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>と共に送信されるデータを表す、<see cref="E:System.Windows.Input.Manipulations.ManipulationProcessor2D.Delta" />イベントまたは<see cref="E:System.Windows.Input.Manipulations.InertiaProcessor2D.Delta" />イベント。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Cumulative">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.Manipulations.ManipulationDelta2D Cumulative { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.Manipulations.ManipulationDelta2D Cumulative" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Manipulations.Manipulation2DDeltaEventArgs.Cumulative" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.Manipulations.ManipulationDelta2D</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作開始後は、変更の合計サイズを取得します。</summary>
+        <value>変更操作が開始されてからの合計サイズ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Delta">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.Manipulations.ManipulationDelta2D Delta { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.Manipulations.ManipulationDelta2D Delta" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Manipulations.Manipulation2DDeltaEventArgs.Delta" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.Manipulations.ManipulationDelta2D</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最後のイベント以降には、変更の量を取得します。</summary>
+        <value>最後のイベント以降の変更の量。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OriginX">
+      <MemberSignature Language="C#" Value="public float OriginX { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 OriginX" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Manipulations.Manipulation2DDeltaEventArgs.OriginX" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作の複合位置の新しい x 座標を取得します。</summary>
+        <value>操作の複合位置の新しい x 座標。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって表される、原点、<xref:System.Windows.Input.Manipulations.Manipulation2DDeltaEventArgs.OriginX%2A>と<xref:System.Windows.Input.Manipulations.Manipulation2DDeltaEventArgs.OriginY%2A>プロパティは、要素に関連付けられているすべてのマニピュレーターの平均位置です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OriginY">
+      <MemberSignature Language="C#" Value="public float OriginY { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 OriginY" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Manipulations.Manipulation2DDeltaEventArgs.OriginY" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作の複合位置の新しい y 座標を取得します。</summary>
+        <value>操作の複合位置の新しい y 座標。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって表される、原点、<xref:System.Windows.Input.Manipulations.Manipulation2DDeltaEventArgs.OriginX%2A>と<xref:System.Windows.Input.Manipulations.Manipulation2DDeltaEventArgs.OriginY%2A>プロパティは、要素に関連付けられているすべてのマニピュレーターの平均位置です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Velocities">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.Manipulations.ManipulationVelocities2D Velocities { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.Manipulations.ManipulationVelocities2D Velocities" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Manipulations.Manipulation2DDeltaEventArgs.Velocities" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.Manipulations.ManipulationVelocities2D</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作の現在の速度を取得します。</summary>
+        <value>操作の現在の速度です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,129 @@
+<Type Name="IRemoteArgumentEnumeratorContract" FullName="System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract">
+  <TypeSignature Language="C#" Value="public interface IRemoteArgumentEnumeratorContract : System.AddIn.Contract.IContract" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IRemoteArgumentEnumeratorContract implements class System.AddIn.Contract.IContract" />
+  <TypeSignature Language="DocId" Value="T:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract" />
+  <AssemblyInfo>
+    <AssemblyName>System.AddIn.Contract</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.AddIn.Contract.IContract</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>コレクションの要素を列挙<see cref="T:System.AddIn.Contract.RemoteArgument" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列挙子を使用すると、コレクション内のデータを読み取ることができますが、基になるコレクションを変更することはできません。  
+  
+ 最初に、列挙子はコレクション内の 1 番目の要素の前に位置付けられます。 この位置での戻り値<xref:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.GetCurrent%2A>が定義されていません。 そのため、呼び出す必要があります<xref:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.MoveNext%2A>列挙子を呼び出す前に、コレクションの最初の要素に進める<xref:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.GetCurrent%2A>です。  
+  
+ <xref:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.GetCurrent%2A> は、<xref:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.MoveNext%2A> が呼び出されるまでは同じオブジェクトを返します。 <xref:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.MoveNext%2A>戻り値の設定<xref:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.GetCurrent%2A>次の要素にします。  
+  
+ 場合<xref:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.MoveNext%2A>列挙子をコレクションの末尾が、コレクション内の最後の要素の後に配置されているパスと<xref:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.MoveNext%2A>返します`false`です。 列挙子がこの位置では、後続の呼び出しの場合<xref:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.MoveNext%2A>を返すことも`false`します。 場合は、最後の呼び出し<xref:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.MoveNext%2A>返される`false`、戻り値の<xref:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.GetCurrent%2A>が定義されていません。  
+  
+ コレクションが変更されない限り、列挙子は有効です。 コレクションに対して変更 (要素の追加、変更、削除など) が行われると、列挙子は回復不可能な無効状態になり、その動作は未定義になります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetCurrent">
+      <MemberSignature Language="C#" Value="public System.AddIn.Contract.RemoteArgument GetCurrent ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.AddIn.Contract.RemoteArgument GetCurrent() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.GetCurrent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.RemoteArgument</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.AddIn.Contract.RemoteArgument" />で列挙子の現在位置にあるコレクション。</summary>
+        <returns><see cref="T:System.AddIn.Contract.RemoteArgument" />で列挙子の現在位置にあるコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値<xref:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.GetCurrent%2A>は、次の条件のいずれかで未定義します。  
+  
+-   列挙子が作成された直後に、コレクション内の最初の要素の前に、列挙子が配置されているまたは<xref:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.Reset%2A>と呼びます。 <xref:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.MoveNext%2A>列挙子を呼び出す前に、コレクションの最初の要素に進めるを呼び出す必要があります<xref:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.GetCurrent%2A>です。  
+  
+-   最後に呼び出した<xref:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.MoveNext%2A>返される`false`コレクションの末尾を示します。  
+  
+-   列挙子は、追加、変更、または削除する要素など、コレクションで行われた変更により無効になりました。  
+  
+ <xref:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.GetCurrent%2A> は、<xref:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.MoveNext%2A> が呼び出されるまでは同じオブジェクトを返します。 <xref:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.MoveNext%2A>戻り値の設定<xref:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.GetCurrent%2A>次の要素にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveNext">
+      <MemberSignature Language="C#" Value="public bool MoveNext ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool MoveNext() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.MoveNext" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>列挙子をコレクションの次の要素に進めます。</summary>
+        <returns>
+          列挙子が次の要素に正常に進んだ場合は <see langword="true" />。列挙子がコレクションの末尾を越えた場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列挙子を作成した後、または後に、<xref:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.Reset%2A>メソッドが呼び出されると、列挙子がコレクションの最初の要素の前に位置付けられます。 最初の呼び出し、<xref:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.MoveNext%2A>メソッドは、列挙子をコレクションの最初の要素に移動します。  
+  
+ 場合<xref:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.MoveNext%2A>列挙子をコレクションの末尾が、コレクション内の最後の要素の後に配置されているパスと<xref:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.MoveNext%2A>返します`false`です。 列挙子がこの位置では、後続の呼び出しの場合<xref:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.MoveNext%2A>を返すことも`false`まで<xref:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.Reset%2A>と呼びます。  
+  
+ コレクションが変更されない限り、列挙子は有効です。 無効になり、次の呼び出しに変更を追加するなど、コレクションを変更、または要素を削除するには、列挙子は回復不可能<xref:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.MoveNext%2A>または<xref:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.Reset%2A>スロー、<xref:System.InvalidOperationException>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">コレクションは、列挙子の作成後に変更されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public void Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>列挙子を初期位置、つまりコレクションの最初の要素の前に設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出した後<xref:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.Reset%2A>の値<xref:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.GetCurrent%2A>が定義されていません。 呼び出す、<xref:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.MoveNext%2A>列挙子をコレクションの最初の要素に移動します。  
+  
+ コレクションが変更されない限り、列挙子は有効です。 無効になり、次の呼び出しに変更を追加するなど、コレクションを変更、または要素を削除するには、列挙子は回復不可能<xref:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.MoveNext%2A>または<xref:System.AddIn.Contract.Collections.IRemoteArgumentEnumeratorContract.Reset%2A>スロー、<xref:System.InvalidOperationException>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">コレクションは、列挙子の作成後に変更されました。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

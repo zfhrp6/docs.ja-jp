@@ -1,0 +1,90 @@
+<Type Name="WebPartZoneBaseDesigner" FullName="System.Web.UI.Design.WebControls.WebParts.WebPartZoneBaseDesigner">
+  <TypeSignature Language="C#" Value="public class WebPartZoneBaseDesigner : System.Web.UI.Design.WebControls.WebParts.WebZoneDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebPartZoneBaseDesigner extends System.Web.UI.Design.WebControls.WebParts.WebZoneDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.WebParts.WebPartZoneBaseDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.WebControls.WebParts.WebZoneDesigner</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Web.UI.Design.WebControls.WebParts.WebPartZoneBaseDesigner" /> コントロールのデザイン時サポートを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.WebParts.WebPartZoneBaseDesigner>基本クラスは、<xref:System.Web.UI.Design.WebControls.WebParts.WebPartZoneDesigner>のカスタム実装をサポートするために、継承できる<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>コントロール。 <xref:System.Web.UI.Design.WebControls.WebParts.WebPartZoneBaseDesigner>独自の基本クラスを拡張<xref:System.Web.UI.Design.WebControls.WebParts.WebZoneDesigner>、オーバーライドすることで、<xref:System.Web.UI.Design.WebControls.WebParts.WebPartZoneBaseDesigner.PreFilterProperties%2A>非表示にする方法、<xref:System.Web.UI.WebControls.WebParts.WebZone.VerbStyle%2A>プロパティです。 それ以外の場合、コントロールの開発者に対して、このクラスの主な目的は、その親とは異なり<xref:System.Web.UI.Design.WebControls.WebParts.WebPartZoneBaseDesigner>直接継承し、基本クラスのパブリックな実装として使用できるように、パブリック コンス トラクターを持ちます。 詳細については、「<xref:System.Web.UI.Design.WebControls.WebParts.WebZoneDesigner>」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebPartZoneBaseDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.WebParts.WebPartZoneBaseDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.WebParts.WebPartZoneBaseDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (System.ComponentModel.IComponent component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(class System.ComponentModel.IComponent component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.WebParts.WebPartZoneBaseDesigner.Initialize(System.ComponentModel.IComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="component"><see cref="T:System.Web.UI.WebControls.WebParts.WebPartZoneBase" />このデザイナーと関連付けられているコントロール。</param>
+        <summary>デザイナーに関連付けられているバインドのインスタンスを初期化<see cref="T:System.Web.UI.WebControls.WebParts.WebPartZoneBase" />コントロール。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreFilterProperties">
+      <MemberSignature Language="C#" Value="protected override void PreFilterProperties (System.Collections.IDictionary properties);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void PreFilterProperties(class System.Collections.IDictionary properties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.WebParts.WebPartZoneBaseDesigner.PreFilterProperties(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="properties" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="properties"><see cref="T:System.Collections.IDictionary" />コントロールに関連付けられたプロパティのセット。</param>
+        <summary>非表示に、<see cref="P:System.Web.UI.WebControls.WebParts.WebZone.VerbStyle" />デザイン時プロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.WebParts.WebPartZoneBaseDesigner.PreFilterProperties%2A>メソッドのオーバーライド<xref:System.Web.UI.Design.ControlDesigner.PreFilterProperties%2A?displayProperty=nameWithType>を非表示に、<xref:System.Web.UI.WebControls.WebParts.WebZone.VerbStyle%2A>親メソッドの呼び出し後にデザイナーのプロパティにします。 これは、既定<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>コントロールでは、ゾーン レベルの動詞はレンダリングされません。 派生クラスで、ゾーン レベルの動詞を表示する場合は、非表示にするには、このメソッドをオーバーライドする必要があります、<xref:System.Web.UI.WebControls.WebParts.WebZone.VerbStyle%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

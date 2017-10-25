@@ -1,0 +1,421 @@
+<Type Name="HttpListenerContext" FullName="System.Net.HttpListenerContext">
+  <TypeSignature Language="C#" Value="public sealed class HttpListenerContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HttpListenerContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Net.HttpListenerContext" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.HttpListener</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>によって使用される要求と応答のオブジェクトへのアクセスを提供、<see cref="T:System.Net.HttpListener" />クラスです。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスによって処理されているクライアントのハイパー テキスト転送プロトコル (HTTP) の要求に関連する情報を提供する<xref:System.Net.HttpListener>オブジェクト。 このクラスもできるようにするメソッドには、 <xref:System.Net.HttpListener> WebSocket の接続を許可するオブジェクト。  
+  
+ <xref:System.Net.HttpListener.GetContext%2A>メソッドのインスタンスを返す、<xref:System.Net.HttpListenerContext>クラスです。 クライアント要求を表すオブジェクトを取得するを使用して、<xref:System.Net.HttpListenerContext.Request%2A>プロパティです。 によってクライアントに送信される応答を表すオブジェクトを取得する、<xref:System.Net.HttpListener>を使用して、<xref:System.Net.HttpListenerContext.Response%2A>プロパティです。 ユーザーのログイン名とするかどうか、認証されてなどの要求を送信するクライアントに関する情報を取得するプロパティを照会することができます、<xref:System.Security.Principal.IPrincipal>によって返されるオブジェクト、<xref:System.Net.HttpListenerContext.User%2A>プロパティです。  
+  
+ 閉じる、<xref:System.Net.HttpListenerContext>オブジェクトは、クライアントに応答を送信しで使用されたリソースを解放、<xref:System.Net.HttpListenerContext>です。 中止、<xref:System.Net.HttpListenerContext>オブジェクトが既に送信されていない、しで使用されたリソースを解放する場合は、クライアントへの応答を破棄、<xref:System.Net.HttpListenerContext>です。 終了または停止した後、<xref:System.Net.HttpListenerContext>オブジェクト、そのメソッドまたはプロパティを参照することはできません。 これを行う場合が表示されます、<xref:System.ObjectDisposedException>例外。  
+  
+   
+  
+## Examples  
+ 次のコード例では、クライアント要求のユーザー情報を表示します。  
+  
+ [!code-csharp[Net_Listener_Basic#8](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#8)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AcceptWebSocketAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;System.Net.WebSockets.HttpListenerWebSocketContext&gt; AcceptWebSocketAsync (string subProtocol);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;class System.Net.WebSockets.HttpListenerWebSocketContext&gt; AcceptWebSocketAsync(string subProtocol) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpListenerContext.AcceptWebSocketAsync(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Net.WebSockets.HttpListenerWebSocketContext&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="subProtocol" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="subProtocol">サポートされている WebSocket サブプロトコル。</param>
+        <summary>非同期操作として WebSocket 接続を受け入れます。</summary>
+        <returns><see cref="T:System.Threading.Tasks.Task`1" /> を返します。  
+  
+ 非同期操作を表すタスク オブジェクト。 <see cref="P:System.Threading.Tasks.Task`1.Result" />タスク オブジェクトのプロパティを返します、<see cref="T:System.Net.WebSockets.HttpListenerWebSocketContext" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作はブロックされません。 返された<xref:System.Threading.Tasks.Task%601>オブジェクトは、WebSocket 接続が許可された後に完了します。  
+  
+ 受信バッファーのサイズは、16,385 バイトです。 WebSocket キープ アライブ間隔は 30,000 (30 秒) の既定値に設定されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="subProtocol" />空の文字列します。  
+  
+ または  
+  
+ <paramref name="subProtocol" />無効な文字が含まれています。</exception>
+        <exception cref="T:System.Net.WebSockets.WebSocketException">WebSocket のハンドシェイクを完了する応答を送信するときにエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AcceptWebSocketAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;System.Net.WebSockets.HttpListenerWebSocketContext&gt; AcceptWebSocketAsync (string subProtocol, TimeSpan keepAliveInterval);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;class System.Net.WebSockets.HttpListenerWebSocketContext&gt; AcceptWebSocketAsync(string subProtocol, valuetype System.TimeSpan keepAliveInterval) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpListenerContext.AcceptWebSocketAsync(System.String,System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Net.WebSockets.HttpListenerWebSocketContext&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="subProtocol" Type="System.String" />
+        <Parameter Name="keepAliveInterval" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="subProtocol">サポートされている WebSocket サブプロトコル。</param>
+        <param name="keepAliveInterval">WebSocket プロトコルのキープ アライブ間隔 (ミリ秒単位)。</param>
+        <summary>非同期操作として、サポートされている WebSocket サブプロトコルと WebSocket キープ アライブ間隔を指定する WebSocket 接続を受け入れます。</summary>
+        <returns><see cref="T:System.Threading.Tasks.Task`1" /> を返します。  
+  
+ 非同期操作を表すタスク オブジェクト。 <see cref="P:System.Threading.Tasks.Task`1.Result" />タスク オブジェクトのプロパティを返します、<see cref="T:System.Net.WebSockets.HttpListenerWebSocketContext" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作はブロックされません。 返された<xref:System.Threading.Tasks.Task%601>オブジェクトは、WebSocket 接続が許可された後に完了します。  
+  
+ 受信バッファーのサイズは、16,385 バイトです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="subProtocol" />空の文字列します。  
+  
+ または  
+  
+ <paramref name="subProtocol" />無効な文字が含まれています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="keepAliveInterval" />小さすぎます。</exception>
+        <exception cref="T:System.Net.WebSockets.WebSocketException">WebSocket のハンドシェイクを完了する応答を送信するときにエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AcceptWebSocketAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;System.Net.WebSockets.HttpListenerWebSocketContext&gt; AcceptWebSocketAsync (string subProtocol, int receiveBufferSize, TimeSpan keepAliveInterval);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;class System.Net.WebSockets.HttpListenerWebSocketContext&gt; AcceptWebSocketAsync(string subProtocol, int32 receiveBufferSize, valuetype System.TimeSpan keepAliveInterval) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpListenerContext.AcceptWebSocketAsync(System.String,System.Int32,System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Net.WebSockets.HttpListenerWebSocketContext&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="subProtocol" Type="System.String" />
+        <Parameter Name="receiveBufferSize" Type="System.Int32" />
+        <Parameter Name="keepAliveInterval" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="subProtocol">サポートされている WebSocket サブプロトコル。</param>
+        <param name="receiveBufferSize">受信バッファー サイズ (バイト単位)。</param>
+        <param name="keepAliveInterval">WebSocket プロトコルのキープ アライブ間隔 (ミリ秒単位)。</param>
+        <summary>WebSocket の接続をサポートされている WebSocket サブプロトコルを指定する許可、バッファー サイズ、および非同期操作として WebSocket キープ アライブ間隔を受信します。</summary>
+        <returns><see cref="T:System.Threading.Tasks.Task`1" /> を返します。  
+  
+ 非同期操作を表すタスク オブジェクト。 <see cref="P:System.Threading.Tasks.Task`1.Result" />タスク オブジェクトのプロパティを返します、<see cref="T:System.Net.WebSockets.HttpListenerWebSocketContext" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作はブロックされません。 返された<xref:System.Threading.Tasks.Task%601>> オブジェクトは、WebSocket 接続が許可された後に完了します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="subProtocol" />空の文字列します。  
+  
+ または  
+  
+ <paramref name="subProtocol" />無効な文字が含まれています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="keepAliveInterval" />小さすぎます。  
+  
+ または  
+  
+ <paramref name="receiveBufferSize" />16 バイト未満です。  
+  
+ または  
+  
+ <paramref name="receiveBufferSize" />64 K バイトを超えています。</exception>
+        <exception cref="T:System.Net.WebSockets.WebSocketException">WebSocket のハンドシェイクを完了する応答を送信するときにエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AcceptWebSocketAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;System.Net.WebSockets.HttpListenerWebSocketContext&gt; AcceptWebSocketAsync (string subProtocol, int receiveBufferSize, TimeSpan keepAliveInterval, ArraySegment&lt;byte&gt; internalBuffer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;class System.Net.WebSockets.HttpListenerWebSocketContext&gt; AcceptWebSocketAsync(string subProtocol, int32 receiveBufferSize, valuetype System.TimeSpan keepAliveInterval, valuetype System.ArraySegment`1&lt;unsigned int8&gt; internalBuffer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpListenerContext.AcceptWebSocketAsync(System.String,System.Int32,System.TimeSpan,System.ArraySegment{System.Byte})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Net.WebSockets.HttpListenerWebSocketContext&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="subProtocol" Type="System.String" />
+        <Parameter Name="receiveBufferSize" Type="System.Int32" />
+        <Parameter Name="keepAliveInterval" Type="System.TimeSpan" />
+        <Parameter Name="internalBuffer" Type="System.ArraySegment&lt;System.Byte&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="subProtocol">サポートされている WebSocket サブプロトコル。</param>
+        <param name="receiveBufferSize">受信バッファー サイズ (バイト単位)。</param>
+        <param name="keepAliveInterval">WebSocket プロトコルのキープ アライブ間隔 (ミリ秒単位)。</param>
+        <param name="internalBuffer">この操作に使用する内部バッファーです。</param>
+        <summary>WebSocket の接続をサポートされている WebSocket サブプロトコルを指定する許可、バッファー サイズ、WebSocket キープ アライブ間隔、および非同期操作として内部バッファーを受信します。</summary>
+        <returns><see cref="T:System.Threading.Tasks.Task`1" /> を返します。  
+  
+ 非同期操作を表すタスク オブジェクト。 <see cref="P:System.Threading.Tasks.Task`1.Result" />タスク オブジェクトのプロパティを返します、<see cref="T:System.Net.WebSockets.HttpListenerWebSocketContext" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作はブロックされません。 返された<xref:System.Threading.Tasks.Task%601>オブジェクトは、WebSocket 接続が許可された後に完了します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="subProtocol" />空の文字列します。  
+  
+ または  
+  
+ <paramref name="subProtocol" />無効な文字が含まれています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="keepAliveInterval" />小さすぎます。  
+  
+ または  
+  
+ <paramref name="receiveBufferSize" />16 バイト未満です。  
+  
+ または  
+  
+ <paramref name="receiveBufferSize" />64 K バイトを超えています。</exception>
+        <exception cref="T:System.Net.WebSockets.WebSocketException">WebSocket のハンドシェイクを完了する応答を送信するときにエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Request">
+      <MemberSignature Language="C#" Value="public System.Net.HttpListenerRequest Request { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.HttpListenerRequest Request" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerContext.Request" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.HttpListenerRequest</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Net.HttpListenerRequest" />リソースのクライアントの要求を表すです。</summary>
+        <value>クライアント要求を表す <see cref="T:System.Net.HttpListenerRequest" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これを閉じた場合<xref:System.Net.HttpListenerContext>、これは応答を送信、クライアントを閉じて、<xref:System.Net.HttpListenerResponse>応答、および閉じるを格納している、<xref:System.Net.HttpListenerRequest>このプロパティによって返されるオブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメソッドを呼び出すことを示します。 `listener`変数が保持されて、<xref:System.Net.HttpListener>オブジェクト。  
+  
+ [!code-csharp[Net_Listener_Basic#3](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Response">
+      <MemberSignature Language="C#" Value="public System.Net.HttpListenerResponse Response { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.HttpListenerResponse Response" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerContext.Response" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.HttpListenerResponse</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Net.HttpListenerResponse" />クライアントの要求に対する応答でクライアントに送信されるオブジェクト。</summary>
+        <value><see cref="T:System.Net.HttpListenerResponse" />オブジェクトが、クライアントへの応答を送信するために使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティを設定して、アプリケーションが応答を構成、<xref:System.Net.HttpListenerResponse>このプロパティによって返されるオブジェクト。 応答を構成した後に送信するクライアントを応答を終了するかによって、これを閉じる<xref:System.Net.HttpListenerContext>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例は、クライアントの要求に対する応答を取得し、応答本文を追加することを示します。  
+  
+ [!code-csharp[Net_Listener_Basic#3](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="usage">
+          <para>注: このメンバーは、アプリケーションでネットワーク トレースを有効にする場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="User">
+      <MemberSignature Language="C#" Value="public System.Security.Principal.IPrincipal User { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Principal.IPrincipal User" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerContext.User" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Principal.IPrincipal</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これによって表される要求がクライアントの id、認証情報、およびセキュリティ ロールを取得するためのオブジェクトを取得<see cref="T:System.Net.HttpListenerContext" />オブジェクト。</summary>
+        <value><see cref="T:System.Security.Principal.IPrincipal" /> 、クライアントを記述するオブジェクトまたは<see langword="null" />場合、<see cref="T:System.Net.HttpListener" />を提供した<see cref="T:System.Net.HttpListenerContext" />認証が不要です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpListener>を使用して認証が必要なことを示す、<xref:System.Net.HttpListener.AuthenticationSchemes%2A>プロパティかを指定して、<xref:System.Net.AuthenticationSchemeSelector>委任を使用して、<xref:System.Net.HttpListener.AuthenticationSchemeSelectorDelegate%2A>プロパティです。  
+  
+ クライアントのログイン名と認証情報を確認するには<xref:System.Security.Principal.IPrincipal.Identity%2A?displayProperty=nameWithType>このプロパティによって返されるオブジェクトのプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、クライアント、および応答でクライアントに返すに関するへのアクセスの id と認証情報を示します。  
+  
+ [!code-csharp[Net_Listener_Basic#8](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#8)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPrincipal" /><see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

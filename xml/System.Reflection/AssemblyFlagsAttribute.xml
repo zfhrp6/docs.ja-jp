@@ -1,0 +1,274 @@
+<Type Name="AssemblyFlagsAttribute" FullName="System.Reflection.AssemblyFlagsAttribute">
+  <TypeSignature Language="C#" Value="public sealed class AssemblyFlagsAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit AssemblyFlagsAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Reflection.AssemblyFlagsAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ビットごとの組み合わせを示す<see cref="T:System.Reflection.AssemblyNameFlags" />ジャストイン タイム (JIT) コンパイラ オプションは、アセンブリが、再ターゲット可能かどうか、完全またはトークンの公開キーがあるかどうかを説明する、アセンブリのフラグ。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.AssemblyNameFlags>列挙は、この属性を使用して設定できるアセンブリの特性を記述します。  
+  
+ アセンブリが指定されているフラグにアクセスするには、使用、<xref:System.Reflection.Assembly.GetName%2A?displayProperty=nameWithType>を取得するプロパティ、<xref:System.Reflection.AssemblyName>オブジェクトを使用して、<xref:System.Reflection.AssemblyName.Flags%2A?displayProperty=nameWithType>を取得するプロパティ、<xref:System.Reflection.AssemblyNameFlags>値。  
+  
+ 指定する<xref:System.Reflection.AssemblyNameFlags>、動的アセンブリのフラグを設定、<xref:System.Reflection.AssemblyName.Flags%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Reflection.AssemblyName>に渡されたオブジェクト、<xref:System.AppDomain.DefineDynamicAssembly%2A?displayProperty=nameWithType>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例に適用する方法を示しています、<xref:System.Reflection.AssemblyFlagsAttribute>アセンブリ、および実行時に、フラグを読み取る方法です。 この例も、属性のインスタンスを作成しを使用して、<xref:System.Reflection.AssemblyFlagsAttribute.AssemblyFlags%2A>フラグを表示するプロパティです。 適用する方法の例については、 <xref:System.Reflection.AssemblyFlagsAttribute> 、動的アセンブリを参照してください、<xref:System.Reflection.AssemblyName.Flags%2A?displayProperty=nameWithType>プロパティです。  
+  
+ [!code-cpp[AssemblyFlagsAttribute#1](~/samples/snippets/cpp/VS_Snippets_CLR/AssemblyFlagsAttribute/CPP/source.cpp#1)]
+ [!code-csharp[AssemblyFlagsAttribute#1](~/samples/snippets/csharp/VS_Snippets_CLR/AssemblyFlagsAttribute/CS/source.cs#1)]
+ [!code-vb[AssemblyFlagsAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/AssemblyFlagsAttribute/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AssemblyFlagsAttribute (int assemblyFlags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 assemblyFlags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.AssemblyFlagsAttribute.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("This constructor has been deprecated. Please use AssemblyFlagsAttribute(AssemblyNameFlags) instead. http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="assemblyFlags" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyFlags">ビットごとの組み合わせ<see cref="T:System.Reflection.AssemblyNameFlags" />フラグ、ジャストイン タイム (JIT) コンパイラ オプション、長期にわたって、アセンブリが、再ターゲット可能かどうかおよび完全またはトークンの公開キーがあるかどうかを表す、整数値としてキャストします。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Reflection.AssemblyFlagsAttribute" />クラスの指定された組み合わせと<see cref="T:System.Reflection.AssemblyNameFlags" />フラグ、整数値としてキャストします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この型指定されていないコンス トラクターは廃止されました。 使用しないでください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AssemblyFlagsAttribute (System.Reflection.AssemblyNameFlags assemblyFlags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Reflection.AssemblyNameFlags assemblyFlags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.AssemblyFlagsAttribute.#ctor(System.Reflection.AssemblyNameFlags)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="assemblyFlags" Type="System.Reflection.AssemblyNameFlags" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyFlags">ビットごとの組み合わせ<see cref="T:System.Reflection.AssemblyNameFlags" />ジャストイン タイム (JIT) コンパイラ オプション、長期にわたって、アセンブリが、再ターゲット可能かどうかおよび完全またはトークンの公開キーがあるかどうかを表すフラグ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Reflection.AssemblyFlagsAttribute" />クラスの指定された組み合わせと<see cref="T:System.Reflection.AssemblyNameFlags" />フラグ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例に適用する方法を示しています、<xref:System.Reflection.AssemblyFlagsAttribute>アセンブリ、および実行時に、フラグを読み取る方法です。 この例も、属性のインスタンスを作成しを使用して、<xref:System.Reflection.AssemblyFlagsAttribute.AssemblyFlags%2A>フラグを表示するプロパティです。 適用する方法の例については、 <xref:System.Reflection.AssemblyFlagsAttribute> 、動的アセンブリを参照してください、<xref:System.Reflection.AssemblyName.Flags%2A?displayProperty=nameWithType>プロパティです。  
+  
+ [!code-cpp[AssemblyFlagsAttribute#1](~/samples/snippets/cpp/VS_Snippets_CLR/AssemblyFlagsAttribute/CPP/source.cpp#1)]
+ [!code-csharp[AssemblyFlagsAttribute#1](~/samples/snippets/csharp/VS_Snippets_CLR/AssemblyFlagsAttribute/CS/source.cs#1)]
+ [!code-vb[AssemblyFlagsAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/AssemblyFlagsAttribute/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AssemblyFlagsAttribute (uint flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int32 flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.AssemblyFlagsAttribute.#ctor(System.UInt32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("This constructor has been deprecated. Please use AssemblyFlagsAttribute(AssemblyNameFlags) instead. http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="flags" Type="System.UInt32" />
+      </Parameters>
+      <Docs>
+        <param name="flags">ビットごとの組み合わせ<see cref="T:System.Reflection.AssemblyNameFlags" />フラグ、ジャストイン タイム (JIT) コンパイラ オプション、長期にわたって、アセンブリが、再ターゲット可能かどうかおよび完全またはトークンの公開キーがあるかどうかを表す、符号なし整数値としてキャストします。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Reflection.AssemblyFlagsAttribute" />クラスの指定された組み合わせと<see cref="T:System.Reflection.AssemblyNameFlags" />フラグ、符号なし整数値としてキャストします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この型指定されていないコンス トラクターは廃止されました。 使用しないでください。  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="M:System.Reflection.AssemblyFlagsAttribute.#ctor(System.Reflection.AssemblyNameFlags)" />
+      </Docs>
+    </Member>
+    <Member MemberName="AssemblyFlags">
+      <MemberSignature Language="C#" Value="public int AssemblyFlags { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 AssemblyFlags" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.AssemblyFlagsAttribute.AssemblyFlags" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>組み合わせを表す整数値を取得<see cref="T:System.Reflection.AssemblyNameFlags" />フラグは、この属性のインスタンスの作成時に指定されています。</summary>
+        <value>ビットごとの組み合わせを表す整数値<see cref="T:System.Reflection.AssemblyNameFlags" />フラグ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、旧バージョンとの互換性のための整数を返します。 値をキャスト、<xref:System.Reflection.AssemblyNameFlags>型を使用する前にします。  
+  
+   
+  
+## Examples  
+ 次のコード例に適用する方法を示しています、<xref:System.Reflection.AssemblyFlagsAttribute>アセンブリ、および実行時に、フラグを読み取る方法です。 この例も、属性のインスタンスを作成しを使用して、<xref:System.Reflection.AssemblyFlagsAttribute.AssemblyFlags%2A>フラグを表示するプロパティです。 適用する方法の例については、 <xref:System.Reflection.AssemblyFlagsAttribute> 、動的アセンブリを参照してください、<xref:System.Reflection.AssemblyName.Flags%2A?displayProperty=nameWithType>プロパティです。  
+  
+ [!code-cpp[AssemblyFlagsAttribute#1](~/samples/snippets/cpp/VS_Snippets_CLR/AssemblyFlagsAttribute/CPP/source.cpp#1)]
+ [!code-csharp[AssemblyFlagsAttribute#1](~/samples/snippets/csharp/VS_Snippets_CLR/AssemblyFlagsAttribute/CS/source.cs#1)]
+ [!code-vb[AssemblyFlagsAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/AssemblyFlagsAttribute/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Flags">
+      <MemberSignature Language="C#" Value="public uint Flags { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int32 Flags" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.AssemblyFlagsAttribute.Flags" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("This property has been deprecated. Please use AssemblyFlags instead. http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.UInt32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>組み合わせを表す符号なし整数値を取得<see cref="T:System.Reflection.AssemblyNameFlags" />フラグは、この属性のインスタンスの作成時に指定されています。</summary>
+        <value>ビットごとの組み合わせを表す符号なし整数値<see cref="T:System.Reflection.AssemblyNameFlags" />フラグ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、旧バージョンとの互換性のための整数を返します。 値をキャスト、<xref:System.Reflection.AssemblyNameFlags>型を使用する前にします。  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="P:System.Reflection.AssemblyFlagsAttribute.AssemblyFlags" />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

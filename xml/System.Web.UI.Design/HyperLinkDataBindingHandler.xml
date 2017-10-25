@@ -1,0 +1,83 @@
+<Type Name="HyperLinkDataBindingHandler" FullName="System.Web.UI.Design.HyperLinkDataBindingHandler">
+  <TypeSignature Language="C#" Value="public class HyperLinkDataBindingHandler : System.Web.UI.Design.DataBindingHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HyperLinkDataBindingHandler extends System.Web.UI.Design.DataBindingHandler" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.HyperLinkDataBindingHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.DataBindingHandler</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ハイパーリンク プロパティのデータ バインディングのハンドラーを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、という名前のクラスを作成`CustomHyperLinkDataBindingHandler`から派生した、`HyperLinkDataBindingHandler`クラスです。 デザイン時のデータ バインドを解決、`CustomHyperLink`クラスを使用して、<xref:System.Web.UI.Design.HyperLinkDataBindingHandler.DataBindControl%2A>メソッドです。  
+  
+ [!code-csharp[HyperLinkDesigner_Resubmit#2](~/samples/snippets/csharp/VS_Snippets_WebNet/HyperLinkDesigner_Resubmit/CS/CustomHyperLinkDesigner.cs#2)]
+ [!code-vb[HyperLinkDesigner_Resubmit#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HyperLinkDesigner_Resubmit/VB/customhyperlinkdesigner.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HyperLinkDataBindingHandler ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.HyperLinkDataBindingHandler.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Web.UI.Design.HyperLinkDataBindingHandler" /> クラスのインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataBindControl">
+      <MemberSignature Language="C#" Value="public override void DataBindControl (System.ComponentModel.Design.IDesignerHost designerHost, System.Web.UI.Control control);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void DataBindControl(class System.ComponentModel.Design.IDesignerHost designerHost, class System.Web.UI.Control control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.HyperLinkDataBindingHandler.DataBindControl(System.ComponentModel.Design.IDesignerHost,System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="designerHost" Type="System.ComponentModel.Design.IDesignerHost" />
+        <Parameter Name="control" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="designerHost"><see cref="T:System.ComponentModel.Design.IDesignerHost" />コントロールを含むドキュメントのです。</param>
+        <param name="control"><see cref="T:System.Web.UI.Control" />データにバインドします。</param>
+        <summary>指定したコントロールのデザイン時のデータ バインディングを解決します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを判断するかどうか、<xref:System.Web.UI.WebControls.HyperLink.Text%2A>と<xref:System.Web.UI.WebControls.HyperLink.NavigateUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.HyperLink>コントロールがデータ バインドします。 場合、<xref:System.Web.UI.WebControls.HyperLink.Text%2A>プロパティは、データ バインドされた、このメソッドは、"データ"にバインドするプロパティの値を設定します。 場合、<xref:System.Web.UI.WebControls.HyperLink.NavigateUrl%2A>プロパティは、データ バインドされた、このメソッドは、コントロールが作業のハイパーリンクの外観を持つようにテキスト文字列プロパティの値を設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、という名前のクラスを作成`CustomHyperLinkDataBindingHandler`から派生した、`HyperLinkDataBindingHandler`クラスです。 デザイン時のデータ バインドを解決、<xref:System.Web.UI.WebControls.HyperLink.ImageUrl%2A>のプロパティ、`CustomHyperLink`クラスの場合、データ バインドされてデザイン時に、プロパティのプレース ホルダー テキストが表示されないようにします。  
+  
+ [!code-csharp[HyperLinkDesigner_Resubmit#2](~/samples/snippets/csharp/VS_Snippets_WebNet/HyperLinkDesigner_Resubmit/CS/CustomHyperLinkDesigner.cs#2)]
+ [!code-vb[HyperLinkDesigner_Resubmit#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HyperLinkDesigner_Resubmit/VB/customhyperlinkdesigner.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

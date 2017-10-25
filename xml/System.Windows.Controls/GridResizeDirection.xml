@@ -1,0 +1,100 @@
+<Type Name="GridResizeDirection" FullName="System.Windows.Controls.GridResizeDirection">
+  <TypeSignature Language="C#" Value="public enum GridResizeDirection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed GridResizeDirection extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.GridResizeDirection" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>指定するかどうか、<see cref="T:System.Windows.Controls.GridSplitter" />コントロールの行の間または列の間の領域を再分配します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙を使用して、<xref:System.Windows.Controls.GridSplitter.ResizeDirection%2A>のプロパティ、<xref:System.Windows.Controls.GridSplitter>コントロール。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Auto">
+      <MemberSignature Language="C#" Value="Auto" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Controls.GridResizeDirection Auto = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.GridResizeDirection.Auto" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.GridResizeDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>値に基づいて領域が再配布、 <see cref="P:System.Windows.FrameworkElement.HorizontalAlignment" />、 <see cref="P:System.Windows.FrameworkElement.VerticalAlignment" />、 <see cref="P:System.Windows.FrameworkElement.ActualWidth" />、および<see cref="P:System.Windows.FrameworkElement.ActualHeight" />のプロパティ、<see cref="T:System.Windows.Controls.GridSplitter" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+-   場合、<xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>に設定されていない<xref:System.Windows.HorizontalAlignment.Stretch>領域が列の間で再配布します。  
+  
+-   場合、<xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>に設定されている<xref:System.Windows.HorizontalAlignment.Stretch>と<xref:System.Windows.FrameworkElement.VerticalAlignment%2A>に設定されていない<xref:System.Windows.VerticalAlignment.Stretch>行の間に領域が再配布します。  
+  
+-   次の条件に該当する列の間で領域は。  
+  
+    -   <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> に <xref:System.Windows.HorizontalAlignment.Stretch> が設定されています。  
+  
+    -   <xref:System.Windows.FrameworkElement.VerticalAlignment%2A> に <xref:System.Windows.VerticalAlignment.Stretch> が設定されています。  
+  
+    -   <xref:System.Windows.FrameworkElement.ActualWidth%2A>と同じかそれよりも少ない、<xref:System.Windows.FrameworkElement.ActualHeight%2A>です。  
+  
+-   次の条件に該当する行の間領域は。  
+  
+    -   <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> が <xref:System.Windows.HorizontalAlignment.Stretch> に設定されます。  
+  
+    -   <xref:System.Windows.FrameworkElement.VerticalAlignment%2A> が <xref:System.Windows.VerticalAlignment.Stretch> に設定されます。  
+  
+    -   <xref:System.Windows.FrameworkElement.ActualWidth%2A>大きい、<xref:System.Windows.FrameworkElement.ActualHeight%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Columns">
+      <MemberSignature Language="C#" Value="Columns" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Controls.GridResizeDirection Columns = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.GridResizeDirection.Columns" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.GridResizeDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スペースは、列の間で再配分されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Rows">
+      <MemberSignature Language="C#" Value="Rows" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Controls.GridResizeDirection Rows = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.GridResizeDirection.Rows" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.GridResizeDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>領域は行の間です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

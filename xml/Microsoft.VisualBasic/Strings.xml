@@ -1,0 +1,3073 @@
+<Type Name="Strings" FullName="Microsoft.VisualBasic.Strings">
+  <TypeSignature Language="C#" Value="public sealed class Strings" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Strings extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Strings" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>Microsoft.VisualBasic.CompilerServices.StandardModule</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see langword="Strings" />モジュールには、文字列操作を実行するために使用する手順が含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このモジュールは、Visual Basic 言語キーワードおよび文字列操作のランタイム ライブラリ メンバーをサポートします。  
+  
+   
+  
+## Examples  
+ 次の例では、そのスペースに文字列に分割する方法を示します。  
+  
+ [!code-vb[VbVbalrStrings#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#13)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Asc">
+      <MemberSignature Language="C#" Value="public static int Asc (char String);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 Asc(char String) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.Asc(System.Char)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="String" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="String">必須です。 任意の有効な<see langword="Char" />または<see langword="String" />式。 場合<c>文字列</c>は、<see langword="String" />式、文字列の最初の文字のみが入力として使用されます。 場合<c>文字列</c>は<see langword="Nothing" />文字が含まれていないか、<see cref="T:System.ArgumentException" />エラーが発生します。</param>
+        <summary>文字に対応する文字コードを表す <see langword="Integer" /> 値を返します。</summary>
+        <returns>文字に対応する文字コードを表す <see langword="Integer" /> 値を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Asc`返します、*コード ポイントが*、または、入力文字の文字コード。 0 ~ 1 バイト文字セット (SBCS) の値の 255-32768 ~ 32767 の 2 バイト文字セット (DBCS) の値を指定できます。  
+  
+ `AscW`入力文字の Unicode コード ポイントを返します。 これは、0 ~ 65535 です。 返される値は、現在のスレッドのカルチャおよびコード ページの設定に依存しません。  
+  
+> [!NOTE]
+>  `AscB`以前のバージョンの Visual Basic の関数が文字ではなく、1 バイトのコードを返します。 2 バイト文字セット (DBCS) のアプリケーションで文字列を変換するため、主に使用されます。 Visual Basic 2005 のすべての文字列は Unicode では、および`AscB`は現在サポートされていません。  
+  
+   
+  
+## Examples  
+ 次の例では、`Asc`を返す関数を`Integer`文字の各文字列の最初の文字に対応するコードです。  
+  
+ [!code-vb[VbVbalrFunctions#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#19)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Asc">
+      <MemberSignature Language="C#" Value="public static int Asc (string String);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 Asc(string String) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.Asc(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="String" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="String">必須です。 任意の有効な<see langword="Char" />または<see langword="String" />式。 場合<c>文字列</c>は、<see langword="String" />式、文字列の最初の文字のみが入力として使用されます。 場合<c>文字列</c>は<see langword="Nothing" />文字が含まれていないか、<see cref="T:System.ArgumentException" />エラーが発生します。</param>
+        <summary>文字に対応する文字コードを表す <see langword="Integer" /> 値を返します。</summary>
+        <returns>文字に対応する文字コードを表す <see langword="Integer" /> 値を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Asc`返します、*コード ポイントが*、または、入力文字の文字コード。 0 ~ 1 バイト文字セット (SBCS) の値の 255-32768 ~ 32767 の 2 バイト文字セット (DBCS) の値を指定できます。  
+  
+ `AscW`入力文字の Unicode コード ポイントを返します。 これは、0 ~ 65535 です。 返される値は、現在のスレッドのカルチャおよびコード ページの設定に依存しません。  
+  
+> [!NOTE]
+>  `AscB`以前のバージョンの Visual Basic の関数が文字ではなく、1 バイトのコードを返します。 2 バイト文字セット (DBCS) のアプリケーションで文字列を変換するため、主に使用されます。 Visual Basic 2005 のすべての文字列は Unicode では、および`AscB`は現在サポートされていません。  
+  
+   
+  
+## Examples  
+ 次の例では、`Asc`を返す関数を`Integer`文字の各文字列の最初の文字に対応するコードです。  
+  
+ [!code-vb[VbVbalrFunctions#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#19)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AscW">
+      <MemberSignature Language="C#" Value="public static int AscW (char String);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 AscW(char String) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.AscW(System.Char)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="String" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="String">必須です。 任意の有効な<see langword="Char" />または<see langword="String" />式。 場合<c>文字列</c>は、<see langword="String" />式、文字列の最初の文字のみが入力として使用されます。 場合<c>文字列</c>は<see langword="Nothing" />文字が含まれていないか、<see cref="T:System.ArgumentException" />エラーが発生します。</param>
+        <summary>文字に対応する文字コードを表す <see langword="Integer" /> 値を返します。</summary>
+        <returns>文字に対応する文字コードを表す <see langword="Integer" /> 値を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Asc`返します、*コード ポイントが*、または、入力文字の文字コード。 0 ~ 1 バイト文字セット (SBCS) の値の 255-32768 ~ 32767 の 2 バイト文字セット (DBCS) の値を指定できます。  
+  
+ `AscW`入力文字の Unicode コード ポイントを返します。 これは、0 ~ 65535 です。 返される値は、現在のスレッドのカルチャおよびコード ページの設定に依存しません。  
+  
+> [!NOTE]
+>  `AscB`以前のバージョンの Visual Basic の関数が文字ではなく、1 バイトのコードを返します。 2 バイト文字セット (DBCS) のアプリケーションで文字列を変換するため、主に使用されます。 Visual Basic 2005 のすべての文字列は Unicode では、および`AscB`は現在サポートされていません。  
+  
+   
+  
+## Examples  
+ 次の例では、`Asc`を返す関数を`Integer`文字の各文字列の最初の文字に対応するコードです。  
+  
+ [!code-vb[VbVbalrFunctions#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#19)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AscW">
+      <MemberSignature Language="C#" Value="public static int AscW (string String);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 AscW(string String) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.AscW(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="String" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="String">必須です。 任意の有効な<see langword="Char" />または<see langword="String" />式。 場合<c>文字列</c>は、<see langword="String" />式、文字列の最初の文字のみが入力として使用されます。 場合<c>文字列</c>は<see langword="Nothing" />文字が含まれていないか、<see cref="T:System.ArgumentException" />エラーが発生します。</param>
+        <summary>文字に対応する文字コードを表す <see langword="Integer" /> 値を返します。</summary>
+        <returns>文字に対応する文字コードを表す <see langword="Integer" /> 値を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Asc`返します、*コード ポイントが*、または、入力文字の文字コード。 0 ~ 1 バイト文字セット (SBCS) の値の 255-32768 ~ 32767 の 2 バイト文字セット (DBCS) の値を指定できます。  
+  
+ `AscW`入力文字の Unicode コード ポイントを返します。 これは、0 ~ 65535 です。 返される値は、現在のスレッドのカルチャおよびコード ページの設定に依存しません。  
+  
+> [!NOTE]
+>  `AscB`以前のバージョンの Visual Basic の関数が文字ではなく、1 バイトのコードを返します。 2 バイト文字セット (DBCS) のアプリケーションで文字列を変換するため、主に使用されます。 Visual Basic 2005 のすべての文字列は Unicode では、および`AscB`は現在サポートされていません。  
+  
+   
+  
+## Examples  
+ 次の例では、`Asc`を返す関数を`Integer`文字の各文字列の最初の文字に対応するコードです。  
+  
+ [!code-vb[VbVbalrFunctions#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#19)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Chr">
+      <MemberSignature Language="C#" Value="public static char Chr (int CharCode);" />
+      <MemberSignature Language="ILAsm" Value=".method public static char Chr(int32 CharCode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.Chr(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Char</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="CharCode" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="CharCode">必須です。 <see langword="Integer" />式を表す、<c>コード ポイントが</c>、または文字の文字コード。</param>
+        <summary>指定された文字コードに対応する文字を返します。</summary>
+        <returns>指定された文字コードに対応する文字を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 受け入れられるように非対称範囲`CharCode`記憶域の違いを補正、`Short`と`Integer`です。 たとえば、-29183 は、 `Short` +36353 が、`Integer`です。 これには、Visual Basic 6.0 との互換性も容易になります。  
+  
+ `Chr`使用して、<xref:System.Text.Encoding>クラス内で、<xref:System.Text?displayProperty=nameWithType>セット (DBCS) の名前空間を現在のスレッドが 1 バイト文字セット (SBCS) または 2 バイト文字を使用するかどうかを判断します。 その`CharCode`コードとして、適切な一連のポイントします。 範囲は 0 ~ 255 の SBCS 文字-32768 から 65535 までの DBCS 文字を指定できます。  
+  
+ 返される値に含まれている現在のスレッドのコード ページによって異なります、<xref:System.Globalization.TextInfo.ANSICodePage%2A>のプロパティ、<xref:System.Globalization.TextInfo>クラス内で、<xref:System.Globalization>名前空間。 取得することができます<xref:System.Globalization.TextInfo.ANSICodePage%2A>を指定して`System.Globalization.CultureInfo.CurrentCulture.TextInfo.ANSICodePage`です。  
+  
+ `ChrW`受け取る`CharCode`unicode コード ポイント。 範囲は、現在のスレッドのカルチャおよびコード ページの設定に依存しません。 -32768 ~-1 の値では、+32768 +65535 ~ の範囲内の値として扱われる同じです。  
+  
+ 0 ~ 31 の数値では、標準の ASCII コードと同じです。 たとえば、`Chr(10)`ライン フィード文字を返します。  
+  
+> [!NOTE]
+>  `ChrB`以前のバージョンの Visual Basic での関数は、1 バイトを返します。 2 バイト文字セット (DBCS) のアプリケーションで文字列を変換するため、主に使用されます。 Visual Basic と .NET Framework でのすべての文字列が Unicode がおよび`ChrB`は現在サポートされていません。  
+  
+   
+  
+## Examples  
+ 次の例では、`Chr`関数を指定した文字コードに関連付けられている文字を返します。  
+  
+ [!code-vb[VbVbalrStrings#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="CharCode" />&lt; 0 または&gt;255<see langword="Chr" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ChrW">
+      <MemberSignature Language="C#" Value="public static char ChrW (int CharCode);" />
+      <MemberSignature Language="ILAsm" Value=".method public static char ChrW(int32 CharCode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.ChrW(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Char</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="CharCode" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="CharCode">必須です。 <see langword="Integer" />式を表す、<c>コード ポイントが</c>、または文字の文字コード。</param>
+        <summary>指定された文字コードに対応する文字を返します。</summary>
+        <returns>指定された文字コードに対応する文字を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 受け入れられるように非対称範囲`CharCode`記憶域の違いを補正、`Short`と`Integer`です。 たとえば、-29183 は、 `Short` +36353 が、`Integer`です。 これには、Visual Basic 6.0 との互換性も容易になります。  
+  
+ `Chr`使用して、<xref:System.Text.Encoding>クラス内で、<xref:System.Text?displayProperty=nameWithType>セット (DBCS) の名前空間を現在のスレッドが 1 バイト文字セット (SBCS) または 2 バイト文字を使用するかどうかを判断します。 その`CharCode`コードとして、適切な一連のポイントします。 範囲は 0 ~ 255 の SBCS 文字-32768 から 65535 までの DBCS 文字を指定できます。  
+  
+ 返される値に含まれている現在のスレッドのコード ページによって異なります、<xref:System.Globalization.TextInfo.ANSICodePage%2A>のプロパティ、<xref:System.Globalization.TextInfo>クラス内で、<xref:System.Globalization>名前空間。 取得することができます<xref:System.Globalization.TextInfo.ANSICodePage%2A>を指定して`System.Globalization.CultureInfo.CurrentCulture.TextInfo.ANSICodePage`です。  
+  
+ `ChrW`受け取る`CharCode`unicode コード ポイント。 範囲は、現在のスレッドのカルチャおよびコード ページの設定に依存しません。 -32768 ~-1 の値では、+32768 +65535 ~ の範囲内の値として扱われる同じです。  
+  
+ 0 ~ 31 の数値では、標準の ASCII コードと同じです。 たとえば、`Chr(10)`ライン フィード文字を返します。  
+  
+> [!NOTE]
+>  `ChrB`以前のバージョンの Visual Basic での関数は、1 バイトを返します。 2 バイト文字セット (DBCS) のアプリケーションで文字列を変換するため、主に使用されます。 Visual Basic と .NET Framework でのすべての文字列が Unicode がおよび`ChrB`は現在サポートされていません。  
+  
+   
+  
+## Examples  
+ 次の例では、`Chr`関数を指定した文字コードに関連付けられている文字を返します。  
+  
+ [!code-vb[VbVbalrStrings#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="CharCode" />&lt; -32768 または&gt;の 65535<see langword="ChrW" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Filter">
+      <MemberSignature Language="C#" Value="public static string[] Filter (object[] Source, string Match, bool Include = true, Microsoft.VisualBasic.CompareMethod Compare = Microsoft.VisualBasic.CompareMethod.Binary);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string[] Filter(object[] Source, string Match, bool Include, valuetype Microsoft.VisualBasic.CompareMethod Compare) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.Filter(System.Object[],System.String,System.Boolean,Microsoft.VisualBasic.CompareMethod)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Source" Type="System.Object[]" />
+        <Parameter Name="Match" Type="System.String" />
+        <Parameter Name="Include" Type="System.Boolean" />
+        <Parameter Name="Compare" Type="Microsoft.VisualBasic.CompareMethod">
+          <Attributes>
+            <Attribute>
+              <AttributeName>Microsoft.VisualBasic.CompilerServices.OptionCompare</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="Source">必須です。 検索する文字列の 1 次元配列。</param>
+        <param name="Match">必須です。 検索する文字列。</param>
+        <param name="Include">省略可能です。 <see langword="Boolean" />値を含めるか除外する部分文字列を返すかどうかを示す<c>一致</c>です。 場合<c>Include</c>は<see langword="True" />、<see langword="Filter" />関数を格納する配列のサブセットを返します<c>一致</c>サブ文字列として。 場合<c>Include</c>は<see langword="False" />、<see langword="Filter" />関数が含まれていない、配列のサブセットを返します<c>一致</c>サブ文字列として。</param>
+        <param name="Compare">省略可能です。 使用する文字列比較の種類を表す数値を指定します。 値については、「設定」を参照してください。</param>
+        <summary>指定されたフィルター条件に基づいた文字列 (<see langword="String" />) 配列のサブセットを含むゼロ ベースの配列を返します。</summary>
+        <returns>指定されたフィルター条件に基づいた文字列 (<see langword="String" />) 配列のサブセットを含むゼロ ベースの配列を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合の一致なし`Match`内で見つかった`Source`、`Filter`関数は、空の配列を返します。 エラーが発生`Source`に設定されている`Nothing`か、1 次元配列ではありません。  
+  
+ によって返される配列、`Filter`関数には、一致した項目のみの要素が含まれています。  
+  
+ `Compare`引数は、次の値を持つことができます。  
+  
+|定数|説明|  
+|-|-|  
+|定数|説明|  
+|`CompareMethod.Binary`|バイナリ比較を実行します|  
+|`CompareMethod.Text`|テキストの比較を実行します。|  
+  
+   
+  
+## Examples  
+ この例での使用、`Filter`関数。  
+  
+ [!code-vb[VbVbalrStrings#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#24)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Source" /><see langword="Nothing" />か、1 次元配列ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Filter">
+      <MemberSignature Language="C#" Value="public static string[] Filter (string[] Source, string Match, bool Include = true, Microsoft.VisualBasic.CompareMethod Compare = Microsoft.VisualBasic.CompareMethod.Binary);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string[] Filter(string[] Source, string Match, bool Include, valuetype Microsoft.VisualBasic.CompareMethod Compare) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.Filter(System.String[],System.String,System.Boolean,Microsoft.VisualBasic.CompareMethod)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Source" Type="System.String[]" />
+        <Parameter Name="Match" Type="System.String" />
+        <Parameter Name="Include" Type="System.Boolean" />
+        <Parameter Name="Compare" Type="Microsoft.VisualBasic.CompareMethod">
+          <Attributes>
+            <Attribute>
+              <AttributeName>Microsoft.VisualBasic.CompilerServices.OptionCompare</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="Source">必須です。 検索する文字列の 1 次元配列。</param>
+        <param name="Match">必須です。 検索する文字列。</param>
+        <param name="Include">省略可能です。 <see langword="Boolean" />値を含めるか除外する部分文字列を返すかどうかを示す<c>一致</c>です。 場合<c>Include</c>は<see langword="True" />、<see langword="Filter" />関数を格納する配列のサブセットを返します<c>一致</c>サブ文字列として。 場合<c>Include</c>は<see langword="False" />、<see langword="Filter" />関数が含まれていない、配列のサブセットを返します<c>一致</c>サブ文字列として。</param>
+        <param name="Compare">省略可能です。 使用する文字列比較の種類を表す数値を指定します。 値については、「設定」を参照してください。</param>
+        <summary>指定されたフィルター条件に基づいた文字列 (<see langword="String" />) 配列のサブセットを含むゼロ ベースの配列を返します。</summary>
+        <returns>指定されたフィルター条件に基づいた文字列 (<see langword="String" />) 配列のサブセットを含むゼロ ベースの配列を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合の一致なし`Match`内で見つかった`Source`、`Filter`関数は、空の配列を返します。 エラーが発生`Source`に設定されている`Nothing`か、1 次元配列ではありません。  
+  
+ によって返される配列、`Filter`関数には、一致した項目のみの要素が含まれています。  
+  
+ `Compare`引数は、次の値を持つことができます。  
+  
+|定数|説明|  
+|-|-|  
+|`CompareMethod.Binary`|バイナリ比較を実行します|  
+|`CompareMethod.Text`|テキストの比較を実行します。|  
+  
+   
+  
+## Examples  
+ この例での使用、`Filter`関数。  
+  
+ [!code-vb[VbVbalrStrings#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#24)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Source" /><see langword="Nothing" />か、1 次元配列ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Format">
+      <MemberSignature Language="C#" Value="public static string Format (object Expression, string Style = &quot;&quot;);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string Format(object Expression, string Style) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.Format(System.Object,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.Object" />
+        <Parameter Name="Style" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="Expression">必須です。 任意の有効な式。</param>
+        <param name="Style">省略可能です。 有効な名前付きまたはユーザー定義形式<see langword="String" />式。</param>
+        <summary>書式指定文字列 (<see langword="String" />) 式に含まれる指示に従って書式設定された文字列を返します。</summary>
+        <returns>書式指定文字列 (<see langword="String" />) 式に含まれる指示に従って書式設定された文字列を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.String.Format%2A?displayProperty=nameWithType>メソッドには、同様の機能も用意されています。  
+  
+ ローカライズされていない数値文字列の書式を設定する場合は、目的の書式が得られるようにするユーザー定義の数値書式指定を使用する必要があります。  
+  
+ 数値の書式設定を指定せずにしようとすると`Style`、`Format`関数と同様の機能を提供する、`Str`関数が国際的に注意してください。 ただし、正の数値形式文字列を使用して、`Format`関数値の符号の予約済み先頭を空白を含めない; を使用して、変換、`Str`関数は、先頭にスペースを保持します。  
+  
+## <a name="different-formats-for-different-numeric-values"></a>別の数値を別の形式  
+ 数値の書式のユーザー定義の式は、セミコロンで区切られた 3 つのセクションを 1 つからができます。 場合、`Style`の引数、`Format`関数には、定義済み数値書式のいずれかが含まれて、1 つだけのセクションでは許可します。  
+  
+|使用する場合|これは、結果|  
+|-|-|  
+|1 つのセクションのみ|フォーマット式は、すべての値に適用されます。|  
+|2 つ|最初のセクションが正の値とゼロに適用されます。2 つ目は、負の値に適用されます。|  
+|3 つ|最初のセクションが正の値に適用されます、負の値に適用される 2 番目および 3 つ目がゼロに適用されます。|  
+  
+ 次の例は 2 つのセクション: 最初の正の値と 0 です書式を定義する。2 番目のセクションでは、負の値の形式を定義します。 以降、`Style`の引数、`Format`関数は、文字列を受け取り、引用符で囲まれています。  
+  
+ [!code-vb[VbVbalrStrings#18](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#18)]  
+  
+ 何もそれらの間のセミコロンを含める場合は、正の値の形式を使用して、欠落したセクションが印刷されます。 たとえば、次の形式が正の値が表示されます、負の値の最初のセクションで、形式を使用および表示`Zero`値が 0 の場合。  
+  
+ [!code-vb[VbVbalrStrings#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#19)]  
+  
+## <a name="predefined-numeric-formats"></a>定義済み数値書式  
+ 次の表は、定義済み数値書式の名前を識別します。 これらは名前で使用する、`Style`の引数、`Format`関数。  
+  
+|形式名|説明|  
+|-|-|  
+|`General Number`、`G`、または `g`|桁区切り記号なしの数を表示します。<br /><br /> たとえば、`Format(&H3FA, "g")`返します`1018`です。|  
+|`Currency`、`C`、または `c`|必要であれば、桁区切り記号の数が表示されます。小数点区切り文字の右側に 2 桁の数字を表示します。 出力は、システムのロケール設定に基づきます。<br /><br /> たとえば、`Format(1234567, "c")`返します`$1,234,567.00`です。|  
+|`Fixed`、`F`、または `f`|小数点区切り文字の右側に少なくとも 1 つの数値を左および 2 桁の数字を表示します。<br /><br /> たとえば、`Format(1234567, "f")`返します`1234567.00`です。|  
+|`Standard`、`N`、または `n`|小数点区切り文字の右側に桁区切り記号、少なくとも 1 つの数値を左および 2 桁の数字の数を表示します。<br /><br /> たとえば、`Format(1234567, "n")`返します`1,234,567.00`です。|  
+|`Percent`|右側にすぐに追加されたパーセント記号 (%) 100 で乗算する数が表示されます。 常に、小数点区切り文字の右側に 2 桁の数字が表示されます。<br /><br /> たとえば、`Format(0.4744, "Percent")`返します`47.44%`です。|  
+|`P`、または`p`|1 つのスペースで右側に付加パーセント記号 (%) 100 倍して桁区切り記号の数が表示されます。 常に、小数点区切り文字の右側に 2 桁の数字が表示されます。<br /><br /> たとえば、`Format(0.80345, "p")`返します`80.35 %`です。|  
+|`Scientific`|2 つの有効桁数を提供する標準の科学的表記法を使用します。<br /><br /> たとえば、`Format(1234567, "Scientific")`返します`1.23E+06`です。|  
+|`E`、または`e`|6 つの有効桁数を提供する標準の科学的表記法を使用します。<br /><br /> たとえば、`Format(1234567, "e")`返します`1.234567e+006`です。|  
+|`D`、または`d`|数値を 10 進数 (基数 10) の書式による数値の値を含む文字列として表示します。 このオプションは整数型のサポート (`Byte`、 `Short`、 `Integer`、 `Long`) のみです。<br /><br /> たとえば、`Format(&H7F, "d")`返します`127`です。|  
+|`X`、または`x`|数値を 16 進数 (基数 16) の書式による数値の値を含む文字列として表示します。 このオプションは整数型のサポート (`Byte`、 `Short`、 `Integer`、 `Long`) のみです。<br /><br /> たとえば、`Format(127, "x")`返します`7f`です。|  
+|`Yes/No`|表示`No`番号が 0、それ以外の場合は、表示`Yes`です。<br /><br /> たとえば、`Format(0, "Yes/No")`返します`No`です。|  
+|`True/False`|表示`False`番号が 0、それ以外の場合は、表示`True`です。<br /><br /> たとえば、`Format(1, "True/False")`返します`True`です。|  
+|`On/Off`|表示`Off`番号が 0、それ以外の場合は、表示`On`です。<br /><br /> たとえば、`Format(1, "On/Off")`返します`On`です。|  
+  
+### <a name="smart-device-developer-notes"></a>スマート デバイスの開発者向け注意事項  
+ `Yes/No`、 `True/False`、および`On/Off`形式がサポートされていません。  
+  
+## <a name="user-defined-numeric-formats"></a>ユーザー定義の数値書式  
+ 次の表では、ユーザー定義の数値書式の作成に使用できる文字を識別します。 これらは、ビルドに使用される可能性があります、`Style`の引数、`Format`関数。  
+  
+|文字|説明|  
+|-|-|  
+|なし|書式なしで数値を表示します。|  
+|(`0`)|桁プレース ホルダーです。 1 桁の数字または 0 を表示します。 式では、書式指定文字列でのゼロに対応する位置に数字がある、表示します。それ以外の場合、その位置に 0 が表示されます。<br /><br /> 0 の場合数がある少ない桁数られます (のどちらにも、10 進数) 書式指定式、先頭または末尾のゼロが表示されます。 数よりも、小数点区切り文字の右側にある複数の数字がある場合、フォーマット式の中で小数点の右側に 0 に数値の小数点以下桁数が 0 としてのラウンドのられます。 数値の小数点区切り文字の左側の桁がある場合、フォーマット式の中で小数点の左側にゼロであり、変更せず余分な桁が表示されますがあります。|  
+|(`#`)|桁プレース ホルダーです。 1 桁の数字または何も表示されます。 式の位置に数字がある場合で、`#`表示; それ以外の場合、その位置に何も表示書式指定文字列に文字が表示されます。<br /><br /> この記号のような機能、`0`桁プレース ホルダー、先頭と末尾のゼロは、数がある少ない桁数よりも多い場合に表示されていない点を除いて`#`フォーマット式の中で小数点の両側の文字です。|  
+|(`.`)|小数点のプレース ホルダーです。 小数点のプレース ホルダーは、小数点区切り文字の右側および左側に表示される数字の数を決定します。 フォーマット式にのみ含まれる場合`#`この記号の左側にある文字以外の数値は小数点区切り文字で始め、1 よりも小さいです。 小数部の先頭にゼロを表示するには、小数点区切り文字の左側に最初の桁プレース ホルダーとして 0 を使用します。 いくつかのロケールでは、小数点区切り文字としてコンマが使用されます。 書式設定された出力で小数点のプレース ホルダーとして使用される実際の文字は、システムによって認識される数値書式によって異なります。 したがって、場合でも、小数点のプレース ホルダーとしてコンマを使用するロケールではの形式で小数点のプレース ホルダーとして、期間を使用する必要があります。 書式指定文字列は、ロケールの正しい形式で表示されます。|  
+|(`%`)|パーセント プレース ホルダーです。 式は、100 を乗算します。 パーセント記号 (`%`) 書式指定文字列の表示位置に挿入されます。|  
+|(`,`)|桁区切り記号。 桁区切り記号は、千が 4 桁以上、小数点区切り文字の左側にある数値の中で、百の位を区切ります。 桁区切り記号の標準の使用が指定の形式に桁プレース ホルダーで囲まれた、桁区切り記号が含まれるかどうか (`0`または`#`)。<br /><br /> (10 進数を指定するかどうか)、小数点区切り文字のまたは一番左にすぐに、桁区切り記号文字の文字列に「スケール数を 1000 で除算して必要に応じて丸める」 500 以上 1,000 未満の数として表示されます`1`、および 500 として表示されるよりも小さい番号`0`です。 2 つ隣接する 1000 単位の区切りにはこの位置の 100万、係数と、各追加の区切りに 1,000 の拡大縮小します。<br /><br /> 小数点区切り文字の左側にすぐに以外の位置または文字列の右端の位置で複数の区切り記号は、桁区切り記号の使用を指定するだけでとして扱われます。 ロケールによって、桁区切り記号としてピリオドが使用されます。 書式設定された出力で桁区切り記号として使用される実際の文字は、システムによって認識される数値書式によって異なります。 したがって、場合でも、桁区切り記号としてピリオドを使用するロケールではの形式で桁区切り記号としてコンマを使用する必要があります。 書式指定文字列は、ロケールの正しい形式で表示されます。<br /><br /> たとえば、次の 3 つの次の書式指定文字列があるとします。<br /><br /> -   `"#,0."`、どの桁区切り記号として「100,000, 000」、文字列、数値の 1億を書式設定をします。<br />-   `"#0,."`、数値の 1億を書式設定文字列「100000」として 1,000 分の 1 の因子を使用します。<br />-   `"#,0,."`、どの桁区切り記号および数値の 1億を書式設定文字列「100,000」として 1,000 分の 1 で、スケーリングします。|  
+|(`:`)|時刻の区切り記号。 いくつかのロケールでは、その他の文字を時刻の区切り記号を表すが使用されます。 時刻の区切り記号は、時間、分、および時刻の値が書式設定されるとき秒を区切ります。 書式付き出力の時刻の区切り記号として使用される実際の文字は、システム設定によって決まります。|  
+|(`/`)|日付の区切り記号。 いくつかのロケールでは、その他の文字を日付の区切り記号を表すが使用されます。 日付の区切り記号は、日付の書式設定日、月、および年を区切ります。 書式設定された出力で日付の区切り記号として使用される実際の文字は、システム設定によって決まります。|  
+|(`E-``E+``e-``e+`)|指数書式。 書式指定式が少なくとも 1 つの桁プレース ホルダーが含まれるかどうか (`0`または`#`) の左側に`E-`、 `E+`、 `e-`、または`e+`、指数表記の数が表示されますと`E`または`e`数と指数部の間に挿入します。 左側の桁プレース ホルダーの数は、指数部の桁数を決定します。 使用して`E-`または`e-`負の指数の横にマイナス記号を挿入します。 使用して`E+`または`e+`を負の指数の横にマイナス記号、正の指数の横にあるプラス記号を配置します。 正しく書式設定をこの記号の右側に桁プレース ホルダーを追加することもあります。|  
+|`-``+``$` ( )|リテラル文字です。 これらの文字が書式指定文字列で入力したとおりに表示されます。 リストされているのいずれかの以外の文字を表示するには、先頭に円記号 (`\`) または二重引用符で囲みます ("") です。|  
+|(`\`)|書式指定文字列内の次の文字を表示します。 リテラル文字として特別な意味を持つ文字を表示するには、先頭に円記号 (`\`)。 円記号自体は表示されません。 円記号の使用は、次の文字を二重引用符で囲むことと同じです。 円記号を表示するには、次の 2 つの円記号を使用 (`\\`)。<br /><br /> リテラルの文字が日付の書式設定と時刻の書式設定文字として表示できません文字の例 (`a`、 `c`、 `d`、 `h`、 `m`、 `n`、 `p`、 `q`、 `s`、 `t`、 `w`、 `y`、 `/`、および`:`)、数値の書式設定文字 (`#`、 `0`、 `%`、 `E`、 `e`、コンマ、および期間)、および文字列の書式設定文字 (`@`、 `&`、 `<`、 `>`、および`!`)。|  
+|(`"``ABC``"`)|二重引用符で囲んだ文字列が表示されます ("") です。 コード内からスタイル引数に文字列を含める、使用する必要があります`Chr(34)`テキストを囲みます (`34`引用符 (") の文字コードに示します)。|  
+  
+### <a name="legacy-code-example"></a>古いコードの例  
+ 次の表には、数値のフォーマット式サンプルにはが含まれています。 (これらの例は、システムのロケール設定が英語 (米国) であると仮定)最初の列には書式指定文字列が含まれています、`Style`の引数、`Format`関数以外のフォーマット済みのデータが列見出しで指定された値を持つ場合、結果の出力を含む、他の列です。  
+  
+|書式設定 (`Style`)|「5」に設定として書式の設定|「-5」として書式設定|「0.5」に設定として書式の設定|  
+|-|-|-|-|  
+|`Zero-length string ("")`|`5`|`-5`|`0.5`|  
+|`0`|`5`|`-5`|`1`|  
+|`0.00`|`5.00`|`-5.00`|`0.50`|  
+|`#,##0`|`5`|`-5`|`1`|  
+|`$#,##0;($#,##0)`|`$5`|`($5)`|`$1`|  
+|`$#,##0.00;($#,##0.00)`|`$5.00`|`($5.00)`|`$0.50`|  
+|`0%`|`500%`|`-500%`|`50%`|  
+|`0.00%`|`500.00%`|`-500.00%`|`50.00%`|  
+|`0.00E+00`|`5.00E+00`|`-5.00E+00`|`5.00E-01`|  
+|`0.00E-00`|`5.00E00`|`-5.00E00`|`5.00E-01`|  
+  
+## <a name="predefined-datetime-formats"></a>定義済み日付/時刻の形式  
+ 次の表は、定義済みの日付と時刻形式の名前を識別します。 これらの名前でのスタイル引数として使用することがあります、`Format`関数。  
+  
+|形式名|説明|  
+|-|-|  
+|`General Date`、または`G`|日付/時刻が表示されます。 たとえば、`3/12/2008 11:07:31 AM` のようにします。 日付の表示は、アプリケーションの現在のカルチャ値によって決定されます。|  
+|`Long Date`、`Medium Date`、または `D`|現在のカルチャの長い日付形式に従って日付を表示します。 たとえば、`Wednesday, March 12, 2008` のようにします。|  
+|`Short Date`、または`d`|現在のカルチャの短い日付形式を使用して日付を表示します。 たとえば、`3/12/2008` のようにします。<br /><br /> `d`文字は、ユーザー定義の日付形式で日付を表示します。|  
+|`Long Time`、`Medium Time`、または `T`|は現在のカルチャの長い形式の時刻の形式を使用して時刻を表示します。通常、時間、分、秒数が含まれます。 たとえば、`11:07:31 AM` のようにします。|  
+|`Short Time` または `t`|現在のカルチャの短い時刻形式を使用して時刻を表示します。 たとえば、`11:07 AM` のようにします。<br /><br /> `t`文字表示`AM`または`PM`値ユーザー定義の時刻の形式で 12 時間制を使用するロケール。|  
+|`f`|長い日付パターンと短い形式の時刻を現在のカルチャの書式に従って表示されます。 たとえば、`Wednesday, March 12, 2008 11:07 AM` のようにします。|  
+|`F`|長い日付パターンと現在のカルチャの書式に従って長い時間が表示されます。 たとえば、`Wednesday, March 12, 2008 11:07:31 AM` のようにします。|  
+|`g`|短い形式の日付と短い形式の時刻を現在のカルチャの書式に従って表示します。 たとえば、`3/12/2008 11:07 AM` のようにします。|  
+|`M`, `m`|月と日付の日を表示します。 たとえば、`March 12` のようにします。<br /><br /> `M`文字は、ユーザー定義の日付書式で月を表示します。 `m`文字は、ユーザー定義の時刻書式で分を表示します。|  
+|`R`, `r`|に従って日付を書式設定、<xref:System.Globalization.DateTimeFormatInfo.RFC1123Pattern%2A>プロパティです。 たとえば、`Wed, 12 Mar 2008 11:07:31 GMT` のようにします。 書式設定された日付は、日付と時刻の値を調整できません。 呼び出しの前に gmt 時刻、日付/時刻値を調整する必要があります、`Format`関数。|  
+|`s`|日付と時刻を並べ替え可能なインデックスとして書式設定します。 たとえば、`2008-03-12T11:07:31` のようにします。<br /><br /> `s`文字は、ユーザー定義の時刻書式で秒を表示します。|  
+|`u`|日付と時刻を GMT 並べ替え可能なインデックスとして書式設定します。 たとえば、`2008-03-12 11:07:31Z` のようにします。|  
+|`U`|日付と時間の長い日付と長い時刻 GMT で書式設定します。 たとえば、`Wednesday, March 12, 2008 6:07:31 PM` のようにします。|  
+|`Y`, `y`|年、月と日付の書式を設定します。 たとえば、`March, 2008` のようにします。<br /><br /> `Y`と`y`文字は、ユーザー定義の日付書式で年を表示します。|  
+  
+ アプリケーションの現在のカルチャ情報の詳細については、次を参照してください。[どのカルチャに影響を与える Visual Basic における文字列](~/docs/visual-basic/programming-guide/language-features/strings/how-culture-affects-strings.md)です。  
+  
+## <a name="user-defined-datetime-formats"></a>ユーザー定義の日付/時刻書式  
+ ユーザー定義の日付/時刻書式の作成に使用できる文字を次の表に示します。 異なり以前のバージョンの[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]、これらの形式の文字は大文字小文字を区別します。  
+  
+|文字|説明|  
+|-|-|  
+|(`:`)|時刻の区切り記号。 いくつかのロケールでは、その他の文字を時刻の区切り記号を表すが使用されます。 時刻の区切り記号は、時間、分、および時刻の値が書式設定されるとき秒を区切ります。 書式付き出力の時刻の区切り記号として使用される実際の文字は、アプリケーションの現在のカルチャ値によって決まります。|  
+|(`/`)|日付の区切り記号。 いくつかのロケールでは、その他の文字を日付の区切り記号を表すが使用されます。 日付の区切り記号は、日付の書式設定日、月、および年を区切ります。 書式設定された出力で日付の区切り記号として使用される実際の文字は、アプリケーションの現在のカルチャによって決まります。|  
+|(`%`)|次の文字が後続の文字に関係なく 1 文字書式として読み取ることを示すために使用します。 ユーザー定義の書式として 1 文字書式を読み取ることを示すためにも使用されます。 追加の詳細については、下記を参照してください。|  
+|`d`|0 を付けない数値で日を表示 (たとえば、 `1`)。 使用して`%d`場合、これは、ユーザー定義の数値書式で唯一の文字です。|  
+|`dd`|0 を付けた数値で日を表示 (たとえば、 `01`)。|  
+|`ddd`|省略形として、曜日を表示します (たとえば、 `Sun`)。|  
+|`dddd`|完全な名前の曜日を表示します (たとえば、 `Sunday`)。|  
+|`M`|0 を付けない数値で月を表示 (たとえば、1 月は`1`)。 使用して`%M`場合、これは、ユーザー定義の数値書式で唯一の文字です。|  
+|`MM`|数値に先行ゼロで、月が表示されます (たとえば、 `01/12/01`)。|  
+|`MMM`|省略形として、月が表示されます (たとえば、 `Jan`)。|  
+|`MMMM`|月の正式名として月を表示します (たとえば、 `January`)。|  
+|`gg`|期間または年号を表す文字列が表示されます (たとえば、 `A.D.`)。|  
+|`h`|12 時間制を使用して 0 を付けない数値で時間を表示します (たとえば、 `1:15:15 PM`)。 使用して`%h`場合、これは、ユーザー定義の数値書式で唯一の文字です。|  
+|`hh`|12 時間制を使用してゼロで始まる数値で時間を表示します (たとえば、 `01:15:15 PM`)。|  
+|`H`|24 時間制を使用して 0 を付けない数値で時間を表示します (たとえば、 `1:15:15`)。 使用して`%H`場合、これは、ユーザー定義の数値書式で唯一の文字です。|  
+|`HH`|24 時間制を使用してゼロで始まる数値で時間を表示します (たとえば、 `01:15:15`)。|  
+|`m`|0 を付けない数値で分を表示します (たとえば、 `12:1:15`)。 使用して`%m`場合、これは、ユーザー定義の数値書式で唯一の文字です。|  
+|`mm`|ゼロで始まる数値で分を表示します (たとえば、 `12:01:15`)。|  
+|`s`|0 を付けない数値で秒を表示します (たとえば、 `12:15:5`)。 使用して`%s`場合、これは、ユーザー定義の数値書式で唯一の文字です。|  
+|`ss`|ゼロで始まる数値で秒を表示します (たとえば、 `12:15:05`)。|  
+|`f`|秒の小数部を表示します。 たとえば`ff`が表示されますが、秒の部分の 1/100`ffff`秒の部分の 1/10000 を表示します。 最大 7 を使用することは`f`ユーザー定義の書式シンボル。 使用して`%f`場合、これは、ユーザー定義の数値書式で唯一の文字です。|  
+|`t`|12 時間制を使用し、表示、大文字`A`正午前に、の時間に大文字が表示されます`P`の正午と午後 11 時 59 分の間の時間 使用して`%t`場合、これは、ユーザー定義の数値書式で唯一の文字です。|  
+|`tt`|12 時間制を使用するロケールでは、表示、大文字`AM`正午前に、の時間が表示されます、大文字`PM`正午と午後 11 時 59 分の間の時間に<br /><br /> 24 時間制を使用するロケールでは、何も表示されません。|  
+|`y`|0 を付けない年数字 (0 ~ 9) を表示します。 使用して`%y`場合、これは、ユーザー定義の数値書式で唯一の文字です。|  
+|`yy`|該当する場合に 0 を付けた 2 桁の数値書式で年を表示します。|  
+|`yyy`|4 桁の数値書式で年を表示します。|  
+|`yyyy`|4 桁の数値書式で年を表示します。|  
+|`z`|先行ゼロなしのタイム ゾーン オフセットを表示します (たとえば、 `-8`)。 使用して`%z`場合、これは、ユーザー定義の数値書式で唯一の文字です。|  
+|`zz`|先行ゼロ付きのタイム ゾーン オフセットを表示します (たとえば、 `-08`)|  
+|`zzz`|完全なタイムゾーン オフセットが表示されます (たとえば、 `-08:00`)|  
+  
+### <a name="legacy-code-example"></a>古いコードの例  
+ ユーザー定義の日付と時刻の形式の例を次に`December 7, 1958, 8:50 PM, 35 seconds`:  
+  
+|形式|表示|  
+|-|-|  
+|`M/d/yy`|`12/7/58`|  
+|`d-MMM`|`7-Dec`|  
+|`d-MMMM-yy`|`7-December-58`|  
+|`d MMMM`|`7 December`|  
+|`MMMM yy`|`December 58`|  
+|`hh:mm tt`|`08:50 PM`|  
+|`h:mm:ss t`|`8:50:35 P`|  
+|`H:mm`|`20:50`|  
+|`H:mm:ss`|`20:50:35`|  
+|`M/d/yyyy H:mm`|`12/7/1958 20:50`|  
+  
+### <a name="smart-device-developer-notes"></a>スマート デバイスの開発者向け注意事項  
+ デバイスの最小期間の精度は、デバイスの製造元によって決定されます。 デバイスの時刻解像度が十分に粗い場合、`f`形式の文字は、そのデバイス上で実行するときは 0 を返します。  
+  
+   
+  
+## Examples  
+ `Format` の書式指定とユーザー定義の書式指定の両方を使って値の書式を指定する、`String` 関数のさまざまな使用例を次に示します。 日付の区切り記号 (`/`)、時刻の区切り記号 (`:`)、および午前/午後を示す文字 (`t` および `tt`) について、システムで実際に表示される書式は、コードが使用するロケール設定によって決まります。 時刻と日付を開発環境で表示する場合は、コード ロケールの短い時刻書式と短い日付書式が使用されます。  
+  
+> [!NOTE]
+>  24 時間制を使用するロケールでは、午前/午後を示す記号 (`t` および `tt`) では何も表示されません。  
+  
+ [!code-vb[VbVbalrStrings#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#27)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatCurrency">
+      <MemberSignature Language="C#" Value="public static string FormatCurrency (object Expression, int NumDigitsAfterDecimal = -1, Microsoft.VisualBasic.TriState IncludeLeadingDigit = Microsoft.VisualBasic.TriState.UseDefault, Microsoft.VisualBasic.TriState UseParensForNegativeNumbers = Microsoft.VisualBasic.TriState.UseDefault, Microsoft.VisualBasic.TriState GroupDigits = Microsoft.VisualBasic.TriState.UseDefault);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string FormatCurrency(object Expression, int32 NumDigitsAfterDecimal, valuetype Microsoft.VisualBasic.TriState IncludeLeadingDigit, valuetype Microsoft.VisualBasic.TriState UseParensForNegativeNumbers, valuetype Microsoft.VisualBasic.TriState GroupDigits) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.FormatCurrency(System.Object,System.Int32,Microsoft.VisualBasic.TriState,Microsoft.VisualBasic.TriState,Microsoft.VisualBasic.TriState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.Object" />
+        <Parameter Name="NumDigitsAfterDecimal" Type="System.Int32" />
+        <Parameter Name="IncludeLeadingDigit" Type="Microsoft.VisualBasic.TriState" />
+        <Parameter Name="UseParensForNegativeNumbers" Type="Microsoft.VisualBasic.TriState" />
+        <Parameter Name="GroupDigits" Type="Microsoft.VisualBasic.TriState" />
+      </Parameters>
+      <Docs>
+        <param name="Expression">必須です。 書式指定される式。</param>
+        <param name="NumDigitsAfterDecimal">省略可能です。 小数点の右側に表示される桁数を表す数値を指定します。 既定値は、-1 で、コンピューターの地域設定を使用することを示します。</param>
+        <param name="IncludeLeadingDigit">省略可能です。 <see cref="T:Microsoft.VisualBasic.TriState" />小数部の値に先行ゼロが表示されるかどうかを示す列挙体です。 値は、「解説」を参照してください。</param>
+        <param name="UseParensForNegativeNumbers">省略可能です。 <see cref="T:Microsoft.VisualBasic.TriState" />かっこで囲まれて負の値を配置するかどうかを示す列挙体です。 値は、「解説」を参照してください。</param>
+        <param name="GroupDigits">省略可能です。 <see cref="T:Microsoft.VisualBasic.TriState" />コンピューターの地域設定で指定された区切り記号を使用して数値をグループ化するかどうかどうかを示す列挙体です。 値は、「解説」を参照してください。</param>
+        <summary>システムの [コントロール パネル] で定義されている通貨記号を使って通貨形式の文字列に書式設定して返す文字列処理関数です。</summary>
+        <returns>システムの [コントロール パネル] で定義されている通貨記号を使って通貨形式の文字列に書式設定して返す文字列処理関数です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つまたは複数の省略可能な引数を省略すると、コンピューターの地域設定と一致する値が代わりに使用されます。  
+  
+ 通貨値を基準として通貨記号の位置は、システムの地域設定によって決まります。  
+  
+> [!NOTE]
+>  すべての設定情報は、アプリケーションのロケールから取得されます。 既定では、コントロール パネルで設定されているロケールとなります。 ただし、これによって変化する可能性プログラムから由来ゼロ以外、.NET Framework を使用して、`Number`タブです。  
+  
+ `IncludeLeadingDigit`、 `UseParensForNegativeNumbers`、および`GroupDigits`引数が小数点の左側の次の列挙値を取得します。  
+  
+|値|説明|  
+|-|-|  
+|`TriState.True`|True|  
+|`TriState.False`|False|  
+|`TriState.UseDefault`|コンピューターの地域の設定|  
+  
+   
+  
+## Examples  
+ `FormatCurrency` 関数の使用例を次に示します。  
+  
+ [!code-vb[VbVbalrStrings#32](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#32)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">数の小数点より後の桁数は 99 より大きいです。</exception>
+        <exception cref="T:System.InvalidCastException">型が数字ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatDateTime">
+      <MemberSignature Language="C#" Value="public static string FormatDateTime (DateTime Expression, Microsoft.VisualBasic.DateFormat NamedFormat = Microsoft.VisualBasic.DateFormat.GeneralDate);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string FormatDateTime(valuetype System.DateTime Expression, valuetype Microsoft.VisualBasic.DateFormat NamedFormat) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.FormatDateTime(System.DateTime,Microsoft.VisualBasic.DateFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.DateTime" />
+        <Parameter Name="NamedFormat" Type="Microsoft.VisualBasic.DateFormat" />
+      </Parameters>
+      <Docs>
+        <param name="Expression">必須です。 <see langword="Date" />書式設定する式。</param>
+        <param name="NamedFormat">省略可能です。 日付/時刻書式を示す数値が使用されます。 省略した場合、<see langword="DateFormat.GeneralDate" />を使用します。</param>
+        <summary>日時の値を表す文字列式を返します。</summary>
+        <returns>日時の値を表す文字列式を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Date`データ型には常に日付と時刻の両方の情報が含まれています。 型変換のために、Visual Basic と 1/1/1 (1 月 1 日 1 年) を基準値の日、00時 00分: 00 (午前 0 時) に中立的な値であること。 書式を設定する場合、`Date`日付/時刻の文字列として値`FormatDateTime`結果の文字列に中立的な値は含まれません。 #1/1/0001 を変換する場合など、9時 30分: &#00; 結果の文字列を「9時 30分: 00」です。日付情報は表示されません。 ただし、日付情報は、元にまだ存在している`Date`値し、などの関数で回復できる`DatePart`です。  
+  
+> [!NOTE]
+>  渡す場合、`Expression`引数として、`String`リテラル、`FormatDateTime`に従って解釈される、<xref:System.Globalization.CultureInfo.CurrentCulture%2A>アプリケーションの設定。 ただし、として渡した場合、`Date`リテラル、形式 #mm/dd/yyyy # ため`FormatDateTime`常に、解釈、`Date`英語 (米国) カルチャに従ってリテラルです。 これは、必要なため、アプリケーションを開発しを使用してコード化された場合`Date`から 1 つのリテラルは、カルチャが、別のカルチャのプラットフォームで実行されます、`Date`リテラルが正しく解析するされない可能性があります。  
+  
+ `NamedFormat`引数は、次の設定。  
+  
+|定数|説明|  
+|-|-|  
+|`DateFormat.GeneralDate`|日付/時刻を表示します。 短い形式の日付として、日付部分を表示します。 時刻部分がある場合は、長い時間として表示します。 存在する場合、両方のパーツを表示します。|  
+|`DateFormat.LongDate`|コンピューターの地域設定で指定された長い日付形式を使用して日付を表示します。|  
+|`DateFormat.ShortDate`|コンピューターの地域設定で指定された短い日付形式を使用して日付を表示します。|  
+|`DateFormat.LongTime`|コンピューターの地域設定で指定された時刻の形式を使用して時刻を表示します。|  
+|`DateFormat.ShortTime`|24 時間形式 (hh:mm) を使用して時刻を表示します。|  
+  
+   
+  
+## Examples  
+ この例での使用、`FormatDateTime`関数。  
+  
+ [!code-vb[VbVbalrStrings#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="NamedFormat" />設定が正しくありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatNumber">
+      <MemberSignature Language="C#" Value="public static string FormatNumber (object Expression, int NumDigitsAfterDecimal = -1, Microsoft.VisualBasic.TriState IncludeLeadingDigit = Microsoft.VisualBasic.TriState.UseDefault, Microsoft.VisualBasic.TriState UseParensForNegativeNumbers = Microsoft.VisualBasic.TriState.UseDefault, Microsoft.VisualBasic.TriState GroupDigits = Microsoft.VisualBasic.TriState.UseDefault);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string FormatNumber(object Expression, int32 NumDigitsAfterDecimal, valuetype Microsoft.VisualBasic.TriState IncludeLeadingDigit, valuetype Microsoft.VisualBasic.TriState UseParensForNegativeNumbers, valuetype Microsoft.VisualBasic.TriState GroupDigits) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.FormatNumber(System.Object,System.Int32,Microsoft.VisualBasic.TriState,Microsoft.VisualBasic.TriState,Microsoft.VisualBasic.TriState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.Object" />
+        <Parameter Name="NumDigitsAfterDecimal" Type="System.Int32" />
+        <Parameter Name="IncludeLeadingDigit" Type="Microsoft.VisualBasic.TriState" />
+        <Parameter Name="UseParensForNegativeNumbers" Type="Microsoft.VisualBasic.TriState" />
+        <Parameter Name="GroupDigits" Type="Microsoft.VisualBasic.TriState" />
+      </Parameters>
+      <Docs>
+        <param name="Expression">必須です。 書式指定される式。</param>
+        <param name="NumDigitsAfterDecimal">省略可能です。 小数点の右側に表示される桁数を表す数値を指定します。 既定値は、-1 で、コンピューターの地域設定を使用することを示します。</param>
+        <param name="IncludeLeadingDigit">省略可能です。 <see cref="T:Microsoft.VisualBasic.TriState" />小数部の値の先頭に 0 が表示されるかどうかを示す定数です。 値については、「設定」を参照してください。</param>
+        <param name="UseParensForNegativeNumbers">省略可能です。 <see cref="T:Microsoft.VisualBasic.TriState" />かっこで囲まれて負の値を配置するかどうかを示す定数です。 値については、「設定」を参照してください。</param>
+        <param name="GroupDigits">省略可能です。 ロケール設定で指定されている桁区切り記号を使用して、数値を区切るかどうかを表す <see cref="T:Microsoft.VisualBasic.TriState" /> 定数を指定します。 値については、「設定」を参照してください。</param>
+        <summary>数値形式の文字列に書式設定して返す文字列処理関数です。</summary>
+        <returns>数値形式の文字列に書式設定して返す文字列処理関数です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つまたは複数の省略可能な引数を省略すると、省略された引数の値は、ロケール設定によって提供されます。  
+  
+> [!NOTE]
+>  すべての設定情報は、アプリケーションのロケールから取得されます。 既定では、コントロール パネルで設定されているロケールとなります。 ただし、その可能性があります変更プログラムで .NET Framework を使用しています。  
+  
+ `IncludeLeadingDigit`、 `UseParensForNegativeNumbers`、および`GroupDigits`引数がある、次の設定。  
+  
+|定数|説明|  
+|-|-|  
+|`TriState.True`|True|  
+|`TriState.False`|False|  
+|`TriState.UseDefault`|コンピューターの地域の設定|  
+  
+   
+  
+## Examples  
+ この例で、`FormatNumber`関数。  
+  
+ [!code-vb[VbVbalrStrings#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#15)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">型が数字ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatPercent">
+      <MemberSignature Language="C#" Value="public static string FormatPercent (object Expression, int NumDigitsAfterDecimal = -1, Microsoft.VisualBasic.TriState IncludeLeadingDigit = Microsoft.VisualBasic.TriState.UseDefault, Microsoft.VisualBasic.TriState UseParensForNegativeNumbers = Microsoft.VisualBasic.TriState.UseDefault, Microsoft.VisualBasic.TriState GroupDigits = Microsoft.VisualBasic.TriState.UseDefault);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string FormatPercent(object Expression, int32 NumDigitsAfterDecimal, valuetype Microsoft.VisualBasic.TriState IncludeLeadingDigit, valuetype Microsoft.VisualBasic.TriState UseParensForNegativeNumbers, valuetype Microsoft.VisualBasic.TriState GroupDigits) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.FormatPercent(System.Object,System.Int32,Microsoft.VisualBasic.TriState,Microsoft.VisualBasic.TriState,Microsoft.VisualBasic.TriState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.Object" />
+        <Parameter Name="NumDigitsAfterDecimal" Type="System.Int32" />
+        <Parameter Name="IncludeLeadingDigit" Type="Microsoft.VisualBasic.TriState" />
+        <Parameter Name="UseParensForNegativeNumbers" Type="Microsoft.VisualBasic.TriState" />
+        <Parameter Name="GroupDigits" Type="Microsoft.VisualBasic.TriState" />
+      </Parameters>
+      <Docs>
+        <param name="Expression">必須です。 書式指定される式。</param>
+        <param name="NumDigitsAfterDecimal">省略可能です。 小数点以下に表示する桁数を表す数値を指定します。 既定値は -1 で、ロケール設定を使用します。</param>
+        <param name="IncludeLeadingDigit">省略可能です。 小数点の左側のゼロを表示するかどうかを表す <see cref="T:Microsoft.VisualBasic.TriState" /> 定数を指定します。 値については、「設定」を参照してください。</param>
+        <param name="UseParensForNegativeNumbers">省略可能です。 負の値をかっこで囲むかどうかを表す <see cref="T:Microsoft.VisualBasic.TriState" /> 定数を指定します。 値については、「設定」を参照してください。</param>
+        <param name="GroupDigits">省略可能です。 ロケール設定で指定されている桁区切り記号を使用して、数値を区切るかどうかを表す <see cref="T:Microsoft.VisualBasic.TriState" /> 定数を指定します。 値については、「設定」を参照してください。</param>
+        <summary>パーセント記号 (%) が付加されたパーセント形式 (100 で乗算した) の文字列に書式設定して返す文字列処理関数です。</summary>
+        <returns>パーセント記号 (%) が付加されたパーセント形式 (100 で乗算した) の文字列に書式設定して返す文字列処理関数です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つまたは複数の省略可能な引数を省略すると、省略された引数の値は、ロケール設定によって提供されます。  
+  
+> [!NOTE]
+>  すべての設定情報は、アプリケーションのロケールから取得されます。 既定では、コントロール パネルで設定されているロケールとなります。 ただし、その可能性があります変更プログラムで .NET Framework を使用しています。  
+  
+ `IncludeLeadingDigit`、 `UseParensForNegativeNumbers`、および`GroupDigits`引数がある、次の設定。  
+  
+|定数|説明|  
+|-|-|  
+|`TriState.True`|True|  
+|`TriState.False`|False|  
+|`TriState.Default`|コンピューターの地域の設定|  
+  
+   
+  
+## Examples  
+ この例での使用、`FormatPercent`関数。  
+  
+ [!code-vb[VbVbalrStrings#28](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#28)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">型が数字ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChar">
+      <MemberSignature Language="C#" Value="public static char GetChar (string str, int Index);" />
+      <MemberSignature Language="ILAsm" Value=".method public static char GetChar(string str, int32 Index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.GetChar(System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Char</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="str" Type="System.String" />
+        <Parameter Name="Index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="str">必須です。 任意の有効な <see langword="String" /> 式。</param>
+        <param name="Index">必須です。 <see langword="Integer" />式。 内の文字の (1 から始まる) インデックス<c>str</c>を指定します。</param>
+        <summary>返します、<see langword="Char" />指定された文字列で指定したインデックスからの文字を表す値です。</summary>
+        <returns>
+          <see langword="Char" />指定された文字列で指定したインデックスからの文字を表す値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`Index`が 1 より小さいか、または最後の文字のインデックスより大きくなって`str`、`ArgumentException`がスローされます。  
+  
+   
+  
+## Examples  
+ この例を使用する方法を示しています、`GetChar`で指定したインデックスから文字を取得する関数、`String`です。  
+  
+ [!code-vb[VbVbalrStrings#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#23)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="str" /><see langword="Nothing" />、 <paramref name="Index" /> &lt; 1、または<paramref name="Index" />の最後の文字のインデックスよりも大きい<paramref name="str" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InStr">
+      <MemberSignature Language="C#" Value="public static int InStr (string String1, string String2, Microsoft.VisualBasic.CompareMethod Compare = Microsoft.VisualBasic.CompareMethod.Binary);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 InStr(string String1, string String2, valuetype Microsoft.VisualBasic.CompareMethod Compare) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.InStr(System.String,System.String,Microsoft.VisualBasic.CompareMethod)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="String1" Type="System.String" />
+        <Parameter Name="String2" Type="System.String" />
+        <Parameter Name="Compare" Type="Microsoft.VisualBasic.CompareMethod">
+          <Attributes>
+            <Attribute>
+              <AttributeName>Microsoft.VisualBasic.CompilerServices.OptionCompare</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="String1">必須です。 <see langword="String" />検索対象の式。</param>
+        <param name="String2">必須です。 <see langword="String" />式が検索されます。</param>
+        <param name="Compare">省略可能です。 文字列比較の種類を指定します。 場合<c>比較</c>を省略すると、<see langword="Option Compare" />比較の種類を指定します。</param>
+        <summary>ある文字列の中から指定した文字列を検索し、最初に見つかった文字列の開始位置を示す整数型の値を返します。</summary>
+        <returns>
+          <list type="table">
+            <item>
+              <term> If  
+  
+ </term>
+              <description> 戻り値  
+  
+ </description>
+            </item>
+            <item>
+              <term>
+                <paramref name="String1" />長さが 0 または<see langword="Nothing" /></term>
+              <description> 0  
+  
+ </description>
+            </item>
+            <item>
+              <term>
+                <paramref name="String2" />長さが 0 または<see langword="Nothing" /></term>
+              <description> 既定値は最初の文字位置、検索の開始位置。  
+  
+ </description>
+            </item>
+            <item>
+              <term>
+                <paramref name="String2" />見つかりません。  
+  
+ </term>
+              <description> 0  
+  
+ </description>
+            </item>
+            <item>
+              <term>
+                <paramref name="String2" />内で見つかった<paramref name="String1" /></term>
+              <description> 一致の開始位置  
+  
+ </description>
+            </item>
+            <item>
+              <term>
+              </term>
+              <description>
+              </description>
+            </item>
+          </list>
+        </returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、`InStr`文字列を解析するときに関数を使用します。  
+  
+> [!NOTE]
+>  `InStrB`以前のバージョンの Visual Basic での関数が文字の位置ではなくバイト単位の数を返します。 2 バイト文字セット (DBCS) のアプリケーションで文字列を変換するため、主に使用されます。 Visual Basic 2005 のすべての文字列は Unicode では、および`InStrB`は現在サポートされていません。  
+  
+ `Compare` 引数の設定は以下の通りです。  
+  
+|定数|値|説明|  
+|-|-|-|  
+|`Binary`|0|バイナリ比較を実行します|  
+|`Text`|1|テキストの比較を実行します。|  
+  
+   
+  
+## Examples  
+ `InStr` 関数を使って、ある文字列の中から指定された文字列を検索し、最初に見つかった文字位置を返す例を次に示します。  
+  
+ [!code-vb[VbVbalrStrings#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InStr">
+      <MemberSignature Language="C#" Value="public static int InStr (int Start, string String1, string String2, Microsoft.VisualBasic.CompareMethod Compare = Microsoft.VisualBasic.CompareMethod.Binary);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 InStr(int32 Start, string String1, string String2, valuetype Microsoft.VisualBasic.CompareMethod Compare) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.InStr(System.Int32,System.String,System.String,Microsoft.VisualBasic.CompareMethod)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Start" Type="System.Int32" />
+        <Parameter Name="String1" Type="System.String" />
+        <Parameter Name="String2" Type="System.String" />
+        <Parameter Name="Compare" Type="Microsoft.VisualBasic.CompareMethod">
+          <Attributes>
+            <Attribute>
+              <AttributeName>Microsoft.VisualBasic.CompilerServices.OptionCompare</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="Start">省略可能です。 各検索の開始位置を設定する数値式です。 省略した場合、最初の文字位置から検索を開始します。 開始インデックスは 1 から始まります。</param>
+        <param name="String1">必須です。 <see langword="String" />検索対象の式。</param>
+        <param name="String2">必須です。 <see langword="String" />式が検索されます。</param>
+        <param name="Compare">省略可能です。 文字列比較の種類を指定します。 場合<c>比較</c>を省略すると、<see langword="Option Compare" />比較の種類を指定します。</param>
+        <summary>ある文字列の中から指定した文字列を検索し、最初に見つかった文字列の開始位置を示す整数型の値を返します。</summary>
+        <returns>
+          <list type="table">
+            <item>
+              <term> If  
+  
+ </term>
+              <description> 戻り値  
+  
+ </description>
+            </item>
+            <item>
+              <term>
+                <paramref name="String1" />長さが 0 または<see langword="Nothing" /></term>
+              <description> 0  
+  
+ </description>
+            </item>
+            <item>
+              <term>
+                <paramref name="String2" />長さが 0 または<see langword="Nothing" /></term>
+              <description>
+                <paramref name="start" />
+              </description>
+            </item>
+            <item>
+              <term>
+                <paramref name="String2" />見つかりません。  
+  
+ </term>
+              <description> 0  
+  
+ </description>
+            </item>
+            <item>
+              <term>
+                <paramref name="String2" />内で見つかった<paramref name="String1" /></term>
+              <description> 一致の開始位置  
+  
+ </description>
+            </item>
+            <item>
+              <term>
+                <paramref name="Start" />&gt;の長さ<paramref name="String1" /></term>
+              <description> 0  
+  
+ </description>
+            </item>
+          </list>
+        </returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、`InStr`文字列を解析するときに関数を使用します。  
+  
+> [!NOTE]
+>  `InStrB`以前のバージョンの Visual Basic での関数が文字の位置ではなくバイト単位の数を返します。 2 バイト文字セット (DBCS) のアプリケーションで文字列を変換するため、主に使用されます。 Visual Basic 2005 のすべての文字列は Unicode では、および`InStrB`は現在サポートされていません。  
+  
+ `Compare` 引数の設定は以下の通りです。  
+  
+|定数|値|説明|  
+|-|-|-|  
+|`Binary`|0|バイナリ比較を実行します|  
+|`Text`|1|テキストの比較を実行します。|  
+  
+   
+  
+## Examples  
+ `InStr` 関数を使って、ある文字列の中から指定された文字列を検索し、最初に見つかった文字位置を返す例を次に示します。  
+  
+ [!code-vb[VbVbalrStrings#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Start" /> &lt; 1.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InStrRev">
+      <MemberSignature Language="C#" Value="public static int InStrRev (string StringCheck, string StringMatch, int Start = -1, Microsoft.VisualBasic.CompareMethod Compare = Microsoft.VisualBasic.CompareMethod.Binary);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 InStrRev(string StringCheck, string StringMatch, int32 Start, valuetype Microsoft.VisualBasic.CompareMethod Compare) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.InStrRev(System.String,System.String,System.Int32,Microsoft.VisualBasic.CompareMethod)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="StringCheck" Type="System.String" />
+        <Parameter Name="StringMatch" Type="System.String" />
+        <Parameter Name="Start" Type="System.Int32" />
+        <Parameter Name="Compare" Type="Microsoft.VisualBasic.CompareMethod">
+          <Attributes>
+            <Attribute>
+              <AttributeName>Microsoft.VisualBasic.CompilerServices.OptionCompare</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="StringCheck">必須です。 検索対象文字列式です。</param>
+        <param name="StringMatch">必須です。 検索対象の文字列式です。</param>
+        <param name="Start">省略可能です。 数値式が 1 から始まる文字列の左端の開始点として、各検索の開始位置を設定します。 場合<c>開始</c>を省略した場合、-1 を使用する、つまり、最後の文字位置から検索を開始します。 検索は、右から左へ進みます。</param>
+        <param name="Compare">省略可能です。 部分文字列を評価するときに使用する比較の種類を表す数値を指定します。 省略した場合、バイナリ比較を実行します。 値の設定を参照してください。</param>
+        <summary>ある文字列の中から指定された文字列を最後の文字位置から検索を開始し、最初に見つかった文字位置 (先頭からその位置までの文字数) を返します。</summary>
+        <returns>
+          <list type="table">
+            <item>
+              <term> If  
+  
+ </term>
+              <description> 戻り値します。  
+  
+ </description>
+            </item>
+            <item>
+              <term>
+                <paramref name="StringCheck" />長さゼロです。  
+  
+ </term>
+              <description> 0  
+  
+ </description>
+            </item>
+            <item>
+              <term>
+                <paramref name="StringMatch" />長さゼロです。  
+  
+ </term>
+              <description>
+                <paramref name="Start" />
+              </description>
+            </item>
+            <item>
+              <term>
+                <paramref name="StringMatch" />見つかりません。  
+  
+ </term>
+              <description> 0  
+  
+ </description>
+            </item>
+            <item>
+              <term>
+                <paramref name="StringMatch" />内で見つかった<paramref name="StringCheck" /></term>
+              <description> 最初の一致が見つかった文字列の右側から始まる位置。  
+  
+ </description>
+            </item>
+            <item>
+              <term>
+                <paramref name="Start" />長さより大きい<paramref name="StringMatch" /></term>
+              <description> 0  
+  
+ </description>
+            </item>
+          </list>
+        </returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ なおの構文、`InStrRev`関数の構文と同じではありません、`InStr`関数。  
+  
+ `Compare`引数は、次の値を持つことができます。  
+  
+|定数|説明|  
+|-|-|  
+|`Binary`|バイナリ比較を実行します。|  
+|`Text`|テキストの比較を実行します。|  
+  
+   
+  
+## Examples  
+ この例での使用、`InStrRev`関数。  
+  
+ [!code-vb[VbVbalrStrings#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#26)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Start" />= 0 or <paramref name="Start" /> &lt; -1.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Join">
+      <MemberSignature Language="C#" Value="public static string Join (object[] SourceArray, string Delimiter = &quot; &quot;);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string Join(object[] SourceArray, string Delimiter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.Join(System.Object[],System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="SourceArray" Type="System.Object[]" />
+        <Parameter Name="Delimiter" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="SourceArray">必須です。 結合する部分文字列を含む 1 次元配列。</param>
+        <param name="Delimiter">省略可能です。 任意の文字列、返される文字列内の部分文字列を区切るために使用します。 省略した場合は、空白文字 ("") を使用します。 場合<c>区切り記号</c>は長さ 0 の文字列 ("") または<see langword="Nothing" />リスト内のすべての項目が区切り文字なしで連結されます。</param>
+        <summary>配列に含まれる多数の部分文字列を結合して作成される文字列を返します。</summary>
+        <returns>配列に含まれる多数の部分文字列を結合して作成される文字列を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 間のパリティがある、`Join`と`Split`関数。 `Join`関数は文字列の配列を使用し、区切り文字列を使用して、1 つの文字列を取得するで結合します。 `Split`関数の文字列を受け取り、文字列の配列を返すため、区切り記号で区切ります。 主な違いが、その`Join`文字列を区切り記号の文字列と連結できる`Split`単一の文字の区切り記号を使用して文字列を区切ることができますのみです。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、`Join`いくつかの文字列からリストを作成する関数。  
+  
+ [!code-vb[VbVbalrStrings#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="SourceArray" />1 次元です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Join">
+      <MemberSignature Language="C#" Value="public static string Join (string[] SourceArray, string Delimiter = &quot; &quot;);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string Join(string[] SourceArray, string Delimiter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.Join(System.String[],System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="SourceArray" Type="System.String[]" />
+        <Parameter Name="Delimiter" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="SourceArray">必須です。 結合する部分文字列を含む 1 次元配列。</param>
+        <param name="Delimiter">省略可能です。 任意の文字列、返される文字列内の部分文字列を区切るために使用します。 省略した場合は、空白文字 ("") を使用します。 場合<c>区切り記号</c>は長さ 0 の文字列 ("") または<see langword="Nothing" />リスト内のすべての項目が区切り文字なしで連結されます。</param>
+        <summary>配列に含まれる多数の部分文字列を結合して作成される文字列を返します。</summary>
+        <returns>配列に含まれる多数の部分文字列を結合して作成される文字列を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 間のパリティがある、`Join`と`Split`関数。 `Join`関数は文字列の配列を使用し、区切り文字列を使用して、1 つの文字列を取得するで結合します。 `Split`関数の文字列を受け取り、文字列の配列を返すため、区切り記号で区切ります。 主な違いが、その`Join`文字列を区切り記号の文字列と連結できる`Split`単一の文字の区切り記号を使用して文字列を区切ることができますのみです。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、`Join`いくつかの文字列からリストを作成する関数。  
+  
+ [!code-vb[VbVbalrStrings#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="SourceArray" />1 次元です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LCase">
+      <MemberSignature Language="C#" Value="public static char LCase (char Value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static char LCase(char Value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.LCase(System.Char)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Char</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Value" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="Value">必須です。 任意の有効な<see langword="String" />または<see langword="Char" />式。</param>
+        <summary>小文字に変換した文字列または文字を返します。</summary>
+        <returns>小文字に変換した文字列または文字を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 大文字のみが変換を小文字です。すべての英小文字とアルファベット以外の文字は変更されません。  
+  
+ この関数は、大文字小文字の変更は、アプリケーションが使用されているロケールに対応できるように文字列を操作するときに、アプリケーションのカルチャ情報を使用します。  
+  
+> [!IMPORTANT]
+>  アプリケーションが、比較演算子またはケース変更操作の結果に基づいてセキュリティ上の決定を行うかどうかは、操作を使用する必要があります、<xref:System.String.Compare%2A?displayProperty=nameWithType>メソッド、およびパス<xref:System.StringComparison.Ordinal>または<xref:System.StringComparison.OrdinalIgnoreCase>の`comparisonType`引数。 詳細については、次を参照してください。[どのカルチャに影響を与える Visual Basic における文字列](~/docs/visual-basic/programming-guide/language-features/strings/how-culture-affects-strings.md)です。  
+  
+   
+  
+## Examples  
+ この例では、`LCase`関数を文字列の小文字のバージョンを返します。  
+  
+ [!code-vb[VbVbalrStrings#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LCase">
+      <MemberSignature Language="C#" Value="public static string LCase (string Value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string LCase(string Value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.LCase(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="Value">必須です。 任意の有効な<see langword="String" />または<see langword="Char" />式。</param>
+        <summary>小文字に変換した文字列または文字を返します。</summary>
+        <returns>小文字に変換した文字列または文字を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 大文字のみが変換を小文字です。すべての英小文字とアルファベット以外の文字は変更されません。  
+  
+ この関数は、大文字小文字の変更は、アプリケーションが使用されているロケールに対応できるように文字列を操作するときに、アプリケーションのカルチャ情報を使用します。  
+  
+> [!IMPORTANT]
+>  アプリケーションが、比較演算子またはケース変更操作の結果に基づいてセキュリティ上の決定を行うかどうかは、操作を使用する必要があります、<xref:System.String.Compare%2A?displayProperty=nameWithType>メソッド、およびパス<xref:System.StringComparison.Ordinal>または<xref:System.StringComparison.OrdinalIgnoreCase>の`comparisonType`引数。 詳細については、次を参照してください。[どのカルチャに影響を与える Visual Basic における文字列](~/docs/visual-basic/programming-guide/language-features/strings/how-culture-affects-strings.md)です。  
+  
+   
+  
+## Examples  
+ この例では、`LCase`関数を文字列の小文字のバージョンを返します。  
+  
+ [!code-vb[VbVbalrStrings#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Left">
+      <MemberSignature Language="C#" Value="public static string Left (string str, int Length);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string Left(string str, int32 Length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.Left(System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="str" Type="System.String" />
+        <Parameter Name="Length" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="str">必須です。 <see langword="String" />左端の文字が返される式です。</param>
+        <param name="Length">必須です。 <see langword="Integer" />式。 取得する文字の数を示す数値式です。 0 の場合、長さ 0 の文字列 ("") が返されます。 大きいかの文字数に等しい場合<c>str</c>、文字列全体が返されます。</param>
+        <summary>指定された文字数を含む文字列を返します。</summary>
+        <returns>指定された文字数を含む文字列を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内の文字の数を決定する`str`を使用して、`Len`関数。 Windows フォーム アプリケーションの場合、またはを持つ他のクラスで使用する場合、`Left`プロパティを持つ関数が完全修飾する必要があります`Microsoft.VisualBasic.Left`です。  
+  
+> [!NOTE]
+>  `LeftB`以前のバージョンの Visual Basic での関数が文字ではなくバイト単位で文字列を返します。 2 バイト文字セット (DBCS) のアプリケーションで文字列を変換するため、主に使用されます。 Unicode では、現在の Visual Basic の文字列をすべてと`LeftB`は現在サポートされていません。  
+  
+   
+  
+## Examples  
+ この例での使用、`Left`の部分文字列を返す関数を指定された`String`です。 持つクラスで、`Left`プロパティである可能性がありますを完全に修飾するために必要な`Left`関数。  
+  
+ [!code-vb[VbVbalrStrings#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Length" /> &lt; 0.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Len">
+      <MemberSignature Language="C#" Value="public static int Len (bool Expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 Len(bool Expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.Len(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="Expression">任意の有効な<see langword="String" />式または変数の名前。 場合<c>式</c>の種類は<see langword="Object" />、<see langword="Len" />関数を返します。 サイズをファイルに書き込むが、<see langword="FilePut" />関数。</param>
+        <summary>文字列の文字数または標準変数の格納に必要なバイト数を含む整数を返します。</summary>
+        <returns>文字列の文字数または標準変数の格納に必要なバイト数を含む整数を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー定義型と`Object`、変数、`Len`関数を返します。 サイズは、ファイルに書き込ま、`FilePut`関数。 場合、`Object`が含まれています、`String`文字列の長さが返されます。 場合、`Object`他の任意の型が含まれていますがによってファイルに書き込まれるときは、オブジェクトのサイズが返されます、`FilePut`関数。  
+  
+ `VBFixedString`書き込まれるときに、(バイト単位)、文字列のサイズを指定するオブジェクトの文字列フィールドに属性を適用することができますをディスクにします。 `Len`関数は、`VBFixedString`属性が、使用可能な場合のサイズを決定する際に`Object`変数。  
+  
+> [!NOTE]
+>  `Len`関数は、実際のユーザー定義データ型の可変長文字列が使用されるときに必要な記憶域バイト数を決定できない場合があります。  
+  
+> [!NOTE]
+>  `LenB`以前のバージョンの Visual Basic での関数が文字ではなく文字列内のバイト数を返します。 2 バイト文字セット (DBCS) のアプリケーションで文字列を変換するため、主に使用されます。 Unicode では、現在の Visual Basic の文字列をすべてと`LenB`は現在サポートされていません。  
+  
+## <a name="smart-device-developer-notes"></a>スマート デバイスの開発者向け注意事項  
+ `Len`関数だけを受け入れる`String`と`Object`パラメーターとして変数です。 場合、`Object`が含まれています、`String`の長さが返されます、`String`です。 パラメーターが NULL の場合`Object`参照、0 が返されます。 場合、 `Object` 、他の種類を含む、例外がスローされます。  
+  
+   
+  
+## Examples  
+ `Len` 関数を使って文字列の文字数を返す例を次に示します。  
+  
+ [!code-vb[VbVbalrStrings#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#33)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Len">
+      <MemberSignature Language="C#" Value="public static int Len (byte Expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 Len(unsigned int8 Expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.Len(System.Byte)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.Byte" />
+      </Parameters>
+      <Docs>
+        <param name="Expression">任意の有効な<see langword="String" />式または変数の名前。 場合<c>式</c>の種類は<see langword="Object" />、<see langword="Len" />関数を返します。 サイズをファイルに書き込むが、<see langword="FilePut" />関数。</param>
+        <summary>文字列の文字数または標準変数の格納に必要なバイト数を含む整数を返します。</summary>
+        <returns>文字列の文字数または標準変数の格納に必要なバイト数を含む整数を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー定義型と`Object`、変数、`Len`関数を返します。 サイズは、ファイルに書き込ま、`FilePut`関数。 場合、`Object`が含まれています、`String`文字列の長さが返されます。 場合、`Object`他の任意の型が含まれていますがによってファイルに書き込まれるときは、オブジェクトのサイズが返されます、`FilePut`関数。  
+  
+ `VBFixedString`書き込まれるときに、(バイト単位)、文字列のサイズを指定するオブジェクトの文字列フィールドに属性を適用することができますをディスクにします。 `Len`関数は、`VBFixedString`属性が、使用可能な場合のサイズを決定する際に`Object`変数。  
+  
+> [!NOTE]
+>  `Len`関数は、実際のユーザー定義データ型の可変長文字列が使用されるときに必要な記憶域バイト数を決定できない場合があります。  
+  
+> [!NOTE]
+>  `LenB`以前のバージョンの Visual Basic での関数が文字ではなく文字列内のバイト数を返します。 2 バイト文字セット (DBCS) のアプリケーションで文字列を変換するため、主に使用されます。 Unicode では、現在の Visual Basic の文字列をすべてと`LenB`は現在サポートされていません。  
+  
+## <a name="smart-device-developer-notes"></a>スマート デバイスの開発者向け注意事項  
+ `Len`関数だけを受け入れる`String`と`Object`パラメーターとして変数です。 場合、`Object`が含まれています、`String`の長さが返されます、`String`です。 パラメーターが NULL の場合`Object`参照、0 が返されます。 場合、 `Object` 、他の種類を含む、例外がスローされます。  
+  
+   
+  
+## Examples  
+ `Len` 関数を使って文字列の文字数を返す例を次に示します。  
+  
+ [!code-vb[VbVbalrStrings#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#33)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Len">
+      <MemberSignature Language="C#" Value="public static int Len (char Expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 Len(char Expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.Len(System.Char)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="Expression">任意の有効な<see langword="String" />式または変数の名前。 場合<c>式</c>の種類は<see langword="Object" />、<see langword="Len" />関数を返します。 サイズをファイルに書き込むが、<see langword="FilePut" />関数。</param>
+        <summary>文字列の文字数または標準変数の格納に必要なバイト数を含む整数を返します。</summary>
+        <returns>文字列の文字数または標準変数の格納に必要なバイト数を含む整数を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー定義型と`Object`、変数、`Len`関数を返します。 サイズは、ファイルに書き込ま、`FilePut`関数。 場合、`Object`が含まれています、`String`文字列の長さが返されます。 場合、`Object`他の任意の型が含まれていますがによってファイルに書き込まれるときは、オブジェクトのサイズが返されます、`FilePut`関数。  
+  
+ `VBFixedString`書き込まれるときに、(バイト単位)、文字列のサイズを指定するオブジェクトの文字列フィールドに属性を適用することができますをディスクにします。 `Len`関数は、`VBFixedString`属性が、使用可能な場合のサイズを決定する際に`Object`変数。  
+  
+> [!NOTE]
+>  `Len`関数は、実際のユーザー定義データ型の可変長文字列が使用されるときに必要な記憶域バイト数を決定できない場合があります。  
+  
+> [!NOTE]
+>  `LenB`以前のバージョンの Visual Basic での関数が文字ではなく文字列内のバイト数を返します。 2 バイト文字セット (DBCS) のアプリケーションで文字列を変換するため、主に使用されます。 Unicode では、現在の Visual Basic の文字列をすべてと`LenB`は現在サポートされていません。  
+  
+## <a name="smart-device-developer-notes"></a>スマート デバイスの開発者向け注意事項  
+ `Len`関数だけを受け入れる`String`と`Object`パラメーターとして変数です。 場合、`Object`が含まれています、`String`の長さが返されます、`String`です。 パラメーターが NULL の場合`Object`参照、0 が返されます。 場合、 `Object` 、他の種類を含む、例外がスローされます。  
+  
+   
+  
+## Examples  
+ `Len` 関数を使って文字列の文字数を返す例を次に示します。  
+  
+ [!code-vb[VbVbalrStrings#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#33)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Len">
+      <MemberSignature Language="C#" Value="public static int Len (DateTime Expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 Len(valuetype System.DateTime Expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.Len(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="Expression">任意の有効な<see langword="String" />式または変数の名前。 場合<c>式</c>の種類は<see langword="Object" />、<see langword="Len" />関数を返します。 サイズをファイルに書き込むが、<see langword="FilePut" />関数。</param>
+        <summary>文字列の文字数または標準変数の格納に必要なバイト数を含む整数を返します。</summary>
+        <returns>文字列の文字数または標準変数の格納に必要なバイト数を含む整数を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー定義型と`Object`、変数、`Len`関数を返します。 サイズは、ファイルに書き込ま、`FilePut`関数。 場合、`Object`が含まれています、`String`文字列の長さが返されます。 場合、`Object`他の任意の型が含まれていますがによってファイルに書き込まれるときは、オブジェクトのサイズが返されます、`FilePut`関数。  
+  
+ `VBFixedString`書き込まれるときに、(バイト単位)、文字列のサイズを指定するオブジェクトの文字列フィールドに属性を適用することができますをディスクにします。 `Len`関数は、`VBFixedString`属性が、使用可能な場合のサイズを決定する際に`Object`変数。  
+  
+> [!NOTE]
+>  `Len`関数は、実際のユーザー定義データ型の可変長文字列が使用されるときに必要な記憶域バイト数を決定できない場合があります。  
+  
+> [!NOTE]
+>  `LenB`以前のバージョンの Visual Basic での関数が文字ではなく文字列内のバイト数を返します。 2 バイト文字セット (DBCS) のアプリケーションで文字列を変換するため、主に使用されます。 Unicode では、現在の Visual Basic の文字列をすべてと`LenB`は現在サポートされていません。  
+  
+## <a name="smart-device-developer-notes"></a>スマート デバイスの開発者向け注意事項  
+ `Len`関数だけを受け入れる`String`と`Object`パラメーターとして変数です。 場合、`Object`が含まれています、`String`の長さが返されます、`String`です。 パラメーターが NULL の場合`Object`参照、0 が返されます。 場合、 `Object` 、他の種類を含む、例外がスローされます。  
+  
+   
+  
+## Examples  
+ `Len` 関数を使って文字列の文字数を返す例を次に示します。  
+  
+ [!code-vb[VbVbalrStrings#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#33)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Len">
+      <MemberSignature Language="C#" Value="public static int Len (decimal Expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 Len(valuetype System.Decimal Expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.Len(System.Decimal)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.Decimal" />
+      </Parameters>
+      <Docs>
+        <param name="Expression">任意の有効な<see langword="String" />式または変数の名前。 場合<c>式</c>の種類は<see langword="Object" />、<see langword="Len" />関数を返します。 サイズをファイルに書き込むが、<see langword="FilePut" />関数。</param>
+        <summary>文字列の文字数または標準変数の格納に必要なバイト数を含む整数を返します。</summary>
+        <returns>文字列の文字数または標準変数の格納に必要なバイト数を含む整数を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー定義型と`Object`、変数、`Len`関数を返します。 サイズは、ファイルに書き込ま、`FilePut`関数。 場合、`Object`が含まれています、`String`文字列の長さが返されます。 場合、`Object`他の任意の型が含まれていますがによってファイルに書き込まれるときは、オブジェクトのサイズが返されます、`FilePut`関数。  
+  
+ `VBFixedString`書き込まれるときに、(バイト単位)、文字列のサイズを指定するオブジェクトの文字列フィールドに属性を適用することができますをディスクにします。 `Len`関数は、`VBFixedString`属性が、使用可能な場合のサイズを決定する際に`Object`変数。  
+  
+> [!NOTE]
+>  `Len`関数は、実際のユーザー定義データ型の可変長文字列が使用されるときに必要な記憶域バイト数を決定できない場合があります。  
+  
+> [!NOTE]
+>  `LenB`以前のバージョンの Visual Basic での関数が文字ではなく文字列内のバイト数を返します。 2 バイト文字セット (DBCS) のアプリケーションで文字列を変換するため、主に使用されます。 Unicode では、現在の Visual Basic の文字列をすべてと`LenB`は現在サポートされていません。  
+  
+## <a name="smart-device-developer-notes"></a>スマート デバイスの開発者向け注意事項  
+ `Len`関数だけを受け入れる`String`と`Object`パラメーターとして変数です。 場合、`Object`が含まれています、`String`の長さが返されます、`String`です。 パラメーターが NULL の場合`Object`参照、0 が返されます。 場合、 `Object` 、他の種類を含む、例外がスローされます。  
+  
+   
+  
+## Examples  
+ `Len` 関数を使って文字列の文字数を返す例を次に示します。  
+  
+ [!code-vb[VbVbalrStrings#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#33)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Len">
+      <MemberSignature Language="C#" Value="public static int Len (double Expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 Len(float64 Expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.Len(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="Expression">任意の有効な<see langword="String" />式または変数の名前。 場合<c>式</c>の種類は<see langword="Object" />、<see langword="Len" />関数を返します。 サイズをファイルに書き込むが、<see langword="FilePut" />関数。</param>
+        <summary>文字列の文字数または標準変数の格納に必要なバイト数を含む整数を返します。</summary>
+        <returns>文字列の文字数または標準変数の格納に必要なバイト数を含む整数を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー定義型と`Object`、変数、`Len`関数を返します。 サイズは、ファイルに書き込ま、`FilePut`関数。 場合、`Object`が含まれています、`String`文字列の長さが返されます。 場合、`Object`他の任意の型が含まれていますがによってファイルに書き込まれるときは、オブジェクトのサイズが返されます、`FilePut`関数。  
+  
+ `VBFixedString`書き込まれるときに、(バイト単位)、文字列のサイズを指定するオブジェクトの文字列フィールドに属性を適用することができますをディスクにします。 `Len`関数は、`VBFixedString`属性が、使用可能な場合のサイズを決定する際に`Object`変数。  
+  
+> [!NOTE]
+>  `Len`関数は、実際のユーザー定義データ型の可変長文字列が使用されるときに必要な記憶域バイト数を決定できない場合があります。  
+  
+> [!NOTE]
+>  `LenB`以前のバージョンの Visual Basic での関数が文字ではなく文字列内のバイト数を返します。 2 バイト文字セット (DBCS) のアプリケーションで文字列を変換するため、主に使用されます。 Unicode では、現在の Visual Basic の文字列をすべてと`LenB`は現在サポートされていません。  
+  
+## <a name="smart-device-developer-notes"></a>スマート デバイスの開発者向け注意事項  
+ `Len`関数だけを受け入れる`String`と`Object`パラメーターとして変数です。 場合、`Object`が含まれています、`String`の長さが返されます、`String`です。 パラメーターが NULL の場合`Object`参照、0 が返されます。 場合、 `Object` 、他の種類を含む、例外がスローされます。  
+  
+   
+  
+## Examples  
+ `Len` 関数を使って文字列の文字数を返す例を次に示します。  
+  
+ [!code-vb[VbVbalrStrings#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#33)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Len">
+      <MemberSignature Language="C#" Value="public static int Len (short Expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 Len(int16 Expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.Len(System.Int16)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.Int16" />
+      </Parameters>
+      <Docs>
+        <param name="Expression">任意の有効な<see langword="String" />式または変数の名前。 場合<c>式</c>の種類は<see langword="Object" />、<see langword="Len" />関数を返します。 サイズをファイルに書き込むが、<see langword="FilePut" />関数。</param>
+        <summary>文字列の文字数または標準変数の格納に必要なバイト数を含む整数を返します。</summary>
+        <returns>文字列の文字数または標準変数の格納に必要なバイト数を含む整数を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー定義型と`Object`、変数、`Len`関数を返します。 サイズは、ファイルに書き込ま、`FilePut`関数。 場合、`Object`が含まれています、`String`文字列の長さが返されます。 場合、`Object`他の任意の型が含まれていますがによってファイルに書き込まれるときは、オブジェクトのサイズが返されます、`FilePut`関数。  
+  
+ `VBFixedString`書き込まれるときに、(バイト単位)、文字列のサイズを指定するオブジェクトの文字列フィールドに属性を適用することができますをディスクにします。 `Len`関数は、`VBFixedString`属性が、使用可能な場合のサイズを決定する際に`Object`変数。  
+  
+> [!NOTE]
+>  `Len`関数は、実際のユーザー定義データ型の可変長文字列が使用されるときに必要な記憶域バイト数を決定できない場合があります。  
+  
+> [!NOTE]
+>  `LenB`以前のバージョンの Visual Basic での関数が文字ではなく文字列内のバイト数を返します。 2 バイト文字セット (DBCS) のアプリケーションで文字列を変換するため、主に使用されます。 Unicode では、現在の Visual Basic の文字列をすべてと`LenB`は現在サポートされていません。  
+  
+## <a name="smart-device-developer-notes"></a>スマート デバイスの開発者向け注意事項  
+ `Len`関数だけを受け入れる`String`と`Object`パラメーターとして変数です。 場合、`Object`が含まれています、`String`の長さが返されます、`String`です。 パラメーターが NULL の場合`Object`参照、0 が返されます。 場合、 `Object` 、他の種類を含む、例外がスローされます。  
+  
+   
+  
+## Examples  
+ `Len` 関数を使って文字列の文字数を返す例を次に示します。  
+  
+ [!code-vb[VbVbalrStrings#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#33)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Len">
+      <MemberSignature Language="C#" Value="public static int Len (int Expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 Len(int32 Expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.Len(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="Expression">任意の有効な<see langword="String" />式または変数の名前。 場合<c>式</c>の種類は<see langword="Object" />、<see langword="Len" />関数を返します。 サイズをファイルに書き込むが、<see langword="FilePut" />関数。</param>
+        <summary>文字列の文字数または標準変数の格納に必要なバイト数を含む整数を返します。</summary>
+        <returns>文字列の文字数または標準変数の格納に必要なバイト数を含む整数を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー定義型と`Object`、変数、`Len`関数を返します。 サイズは、ファイルに書き込ま、`FilePut`関数。 場合、`Object`が含まれています、`String`文字列の長さが返されます。 場合、`Object`他の任意の型が含まれていますがによってファイルに書き込まれるときは、オブジェクトのサイズが返されます、`FilePut`関数。  
+  
+ `VBFixedString`書き込まれるときに、(バイト単位)、文字列のサイズを指定するオブジェクトの文字列フィールドに属性を適用することができますをディスクにします。 `Len`関数は、`VBFixedString`属性が、使用可能な場合のサイズを決定する際に`Object`変数。  
+  
+> [!NOTE]
+>  `Len`関数は、実際のユーザー定義データ型の可変長文字列が使用されるときに必要な記憶域バイト数を決定できない場合があります。  
+  
+> [!NOTE]
+>  `LenB`以前のバージョンの Visual Basic での関数が文字ではなく文字列内のバイト数を返します。 2 バイト文字セット (DBCS) のアプリケーションで文字列を変換するため、主に使用されます。 Unicode では、現在の Visual Basic の文字列をすべてと`LenB`は現在サポートされていません。  
+  
+## <a name="smart-device-developer-notes"></a>スマート デバイスの開発者向け注意事項  
+ `Len`関数だけを受け入れる`String`と`Object`パラメーターとして変数です。 場合、`Object`が含まれています、`String`の長さが返されます、`String`です。 パラメーターが NULL の場合`Object`参照、0 が返されます。 場合、 `Object` 、他の種類を含む、例外がスローされます。  
+  
+   
+  
+## Examples  
+ `Len` 関数を使って文字列の文字数を返す例を次に示します。  
+  
+ [!code-vb[VbVbalrStrings#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#33)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Len">
+      <MemberSignature Language="C#" Value="public static int Len (long Expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 Len(int64 Expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.Len(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="Expression">任意の有効な<see langword="String" />式または変数の名前。 場合<c>式</c>の種類は<see langword="Object" />、<see langword="Len" />関数を返します。 サイズをファイルに書き込むが、<see langword="FilePut" />関数。</param>
+        <summary>文字列の文字数または標準変数の格納に必要なバイト数を含む整数を返します。</summary>
+        <returns>文字列の文字数または標準変数の格納に必要なバイト数を含む整数を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー定義型と`Object`、変数、`Len`関数を返します。 サイズは、ファイルに書き込ま、`FilePut`関数。 場合、`Object`が含まれています、`String`文字列の長さが返されます。 場合、`Object`他の任意の型が含まれていますがによってファイルに書き込まれるときは、オブジェクトのサイズが返されます、`FilePut`関数。  
+  
+ `VBFixedString`書き込まれるときに、(バイト単位)、文字列のサイズを指定するオブジェクトの文字列フィールドに属性を適用することができますをディスクにします。 `Len`関数は、`VBFixedString`属性が、使用可能な場合のサイズを決定する際に`Object`変数。  
+  
+> [!NOTE]
+>  `Len`関数は、実際のユーザー定義データ型の可変長文字列が使用されるときに必要な記憶域バイト数を決定できない場合があります。  
+  
+> [!NOTE]
+>  `LenB`以前のバージョンの Visual Basic での関数が文字ではなく文字列内のバイト数を返します。 2 バイト文字セット (DBCS) のアプリケーションで文字列を変換するため、主に使用されます。 Unicode では、現在の Visual Basic の文字列をすべてと`LenB`は現在サポートされていません。  
+  
+## <a name="smart-device-developer-notes"></a>スマート デバイスの開発者向け注意事項  
+ `Len`関数だけを受け入れる`String`と`Object`パラメーターとして変数です。 場合、`Object`が含まれています、`String`の長さが返されます、`String`です。 パラメーターが NULL の場合`Object`参照、0 が返されます。 場合、 `Object` 、他の種類を含む、例外がスローされます。  
+  
+   
+  
+## Examples  
+ `Len` 関数を使って文字列の文字数を返す例を次に示します。  
+  
+ [!code-vb[VbVbalrStrings#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#33)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Len">
+      <MemberSignature Language="C#" Value="public static int Len (object Expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 Len(object Expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.Len(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Expression">任意の有効な<see langword="String" />式または変数の名前。 場合<c>式</c>の種類は<see langword="Object" />、<see langword="Len" />関数を返します。 サイズをファイルに書き込むが、<see langword="FilePut" />関数。</param>
+        <summary>文字列の文字数または標準変数の格納に必要なバイト数を含む整数を返します。</summary>
+        <returns>文字列の文字数または標準変数の格納に必要なバイト数を含む整数を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー定義型と`Object`、変数、`Len`関数を返します。 サイズは、ファイルに書き込ま、`FilePut`関数。 場合、`Object`が含まれています、`String`文字列の長さが返されます。 場合、`Object`他の任意の型が含まれていますがによってファイルに書き込まれるときは、オブジェクトのサイズが返されます、`FilePut`関数。  
+  
+ `VBFixedString`書き込まれるときに、(バイト単位)、文字列のサイズを指定するオブジェクトの文字列フィールドに属性を適用することができますをディスクにします。 `Len`関数は、`VBFixedString`属性が、使用可能な場合のサイズを決定する際に`Object`変数。  
+  
+> [!NOTE]
+>  `Len`関数は、実際のユーザー定義データ型の可変長文字列が使用されるときに必要な記憶域バイト数を決定できない場合があります。  
+  
+> [!NOTE]
+>  `LenB`以前のバージョンの Visual Basic での関数が文字ではなく文字列内のバイト数を返します。 2 バイト文字セット (DBCS) のアプリケーションで文字列を変換するため、主に使用されます。 Unicode では、現在の Visual Basic の文字列をすべてと`LenB`は現在サポートされていません。  
+  
+## <a name="smart-device-developer-notes"></a>スマート デバイスの開発者向け注意事項  
+ `Len`関数だけを受け入れる`String`と`Object`パラメーターとして変数です。 場合、`Object`が含まれています、`String`の長さが返されます、`String`です。 パラメーターが NULL の場合`Object`参照、0 が返されます。 場合、 `Object` 、他の種類を含む、例外がスローされます。  
+  
+   
+  
+## Examples  
+ `Len` 関数を使って文字列の文字数を返す例を次に示します。  
+  
+ [!code-vb[VbVbalrStrings#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#33)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Len">
+      <MemberSignature Language="C#" Value="public static int Len (sbyte Expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 Len(int8 Expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.Len(System.SByte)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.SByte" />
+      </Parameters>
+      <Docs>
+        <param name="Expression">任意の有効な<see langword="String" />式または変数の名前。 場合<c>式</c>の種類は<see langword="Object" />、<see langword="Len" />関数を返します。 サイズをファイルに書き込むが、<see langword="FilePut" />関数。</param>
+        <summary>文字列の文字数または標準変数の格納に必要なバイト数を含む整数を返します。</summary>
+        <returns>文字列の文字数または標準変数の格納に必要なバイト数を含む整数を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー定義型と`Object`、変数、`Len`関数を返します。 サイズは、ファイルに書き込ま、`FilePut`関数。 場合、`Object`が含まれています、`String`文字列の長さが返されます。 場合、`Object`他の任意の型が含まれていますがによってファイルに書き込まれるときは、オブジェクトのサイズが返されます、`FilePut`関数。  
+  
+ `VBFixedString`書き込まれるときに、(バイト単位)、文字列のサイズを指定するオブジェクトの文字列フィールドに属性を適用することができますをディスクにします。 `Len`関数は、`VBFixedString`属性が、使用可能な場合のサイズを決定する際に`Object`変数。  
+  
+> [!NOTE]
+>  `Len`関数は、実際のユーザー定義データ型の可変長文字列が使用されるときに必要な記憶域バイト数を決定できない場合があります。  
+  
+> [!NOTE]
+>  `LenB`以前のバージョンの Visual Basic での関数が文字ではなく文字列内のバイト数を返します。 2 バイト文字セット (DBCS) のアプリケーションで文字列を変換するため、主に使用されます。 Unicode では、現在の Visual Basic の文字列をすべてと`LenB`は現在サポートされていません。  
+  
+## <a name="smart-device-developer-notes"></a>スマート デバイスの開発者向け注意事項  
+ `Len`関数だけを受け入れる`String`と`Object`パラメーターとして変数です。 場合、`Object`が含まれています、`String`の長さが返されます、`String`です。 パラメーターが NULL の場合`Object`参照、0 が返されます。 場合、 `Object` 、他の種類を含む、例外がスローされます。  
+  
+   
+  
+## Examples  
+ `Len` 関数を使って文字列の文字数を返す例を次に示します。  
+  
+ [!code-vb[VbVbalrStrings#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#33)]  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="M:Microsoft.VisualBasic.Strings.Len(System.Byte)" />
+      </Docs>
+    </Member>
+    <Member MemberName="Len">
+      <MemberSignature Language="C#" Value="public static int Len (float Expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 Len(float32 Expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.Len(System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="Expression">任意の有効な<see langword="String" />式または変数の名前。 場合<c>式</c>の種類は<see langword="Object" />、<see langword="Len" />関数を返します。 サイズをファイルに書き込むが、<see langword="FilePut" />関数。</param>
+        <summary>文字列の文字数または標準変数の格納に必要なバイト数を含む整数を返します。</summary>
+        <returns>文字列の文字数または標準変数の格納に必要なバイト数を含む整数を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー定義型と`Object`、変数、`Len`関数を返します。 サイズは、ファイルに書き込ま、`FilePut`関数。 場合、`Object`が含まれています、`String`文字列の長さが返されます。 場合、`Object`他の任意の型が含まれていますがによってファイルに書き込まれるときは、オブジェクトのサイズが返されます、`FilePut`関数。  
+  
+ `VBFixedString`書き込まれるときに、(バイト単位)、文字列のサイズを指定するオブジェクトの文字列フィールドに属性を適用することができますをディスクにします。 `Len`関数は、`VBFixedString`属性が、使用可能な場合のサイズを決定する際に`Object`変数。  
+  
+> [!NOTE]
+>  `Len`関数は、実際のユーザー定義データ型の可変長文字列が使用されるときに必要な記憶域バイト数を決定できない場合があります。  
+  
+> [!NOTE]
+>  `LenB`以前のバージョンの Visual Basic での関数が文字ではなく文字列内のバイト数を返します。 2 バイト文字セット (DBCS) のアプリケーションで文字列を変換するため、主に使用されます。 Unicode では、現在の Visual Basic の文字列をすべてと`LenB`は現在サポートされていません。  
+  
+## <a name="smart-device-developer-notes"></a>スマート デバイスの開発者向け注意事項  
+ `Len`関数だけを受け入れる`String`と`Object`パラメーターとして変数です。 場合、`Object`が含まれています、`String`の長さが返されます、`String`です。 パラメーターが NULL の場合`Object`参照、0 が返されます。 場合、 `Object` 、他の種類を含む、例外がスローされます。  
+  
+   
+  
+## Examples  
+ `Len` 関数を使って文字列の文字数を返す例を次に示します。  
+  
+ [!code-vb[VbVbalrStrings#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#33)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Len">
+      <MemberSignature Language="C#" Value="public static int Len (string Expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 Len(string Expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.Len(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="Expression">任意の有効な<see langword="String" />式または変数の名前。 場合<c>式</c>の種類は<see langword="Object" />、<see langword="Len" />関数を返します。 サイズをファイルに書き込むが、<see langword="FilePut" />関数。</param>
+        <summary>文字列の文字数または標準変数の格納に必要なバイト数を含む整数を返します。</summary>
+        <returns>文字列の文字数または標準変数の格納に必要なバイト数を含む整数を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー定義型と`Object`、変数、`Len`関数を返します。 サイズは、ファイルに書き込ま、`FilePut`関数。 場合、`Object`が含まれています、`String`文字列の長さが返されます。 場合、`Object`他の任意の型が含まれていますがによってファイルに書き込まれるときは、オブジェクトのサイズが返されます、`FilePut`関数。  
+  
+ `VBFixedString`書き込まれるときに、(バイト単位)、文字列のサイズを指定するオブジェクトの文字列フィールドに属性を適用することができますをディスクにします。 `Len`関数は、`VBFixedString`属性が、使用可能な場合のサイズを決定する際に`Object`変数。  
+  
+> [!NOTE]
+>  `Len`関数は、実際のユーザー定義データ型の可変長文字列が使用されるときに必要な記憶域バイト数を決定できない場合があります。  
+  
+> [!NOTE]
+>  `LenB`以前のバージョンの Visual Basic での関数が文字ではなく文字列内のバイト数を返します。 2 バイト文字セット (DBCS) のアプリケーションで文字列を変換するため、主に使用されます。 Unicode では、現在の Visual Basic の文字列をすべてと`LenB`は現在サポートされていません。  
+  
+## <a name="smart-device-developer-notes"></a>スマート デバイスの開発者向け注意事項  
+ `Len`関数だけを受け入れる`String`と`Object`パラメーターとして変数です。 場合、`Object`が含まれています、`String`の長さが返されます、`String`です。 パラメーターが NULL の場合`Object`参照、0 が返されます。 場合、 `Object` 、他の種類を含む、例外がスローされます。  
+  
+   
+  
+## Examples  
+ `Len` 関数を使って文字列の文字数を返す例を次に示します。  
+  
+ [!code-vb[VbVbalrStrings#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#33)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Len">
+      <MemberSignature Language="C#" Value="public static int Len (ushort Expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 Len(unsigned int16 Expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.Len(System.UInt16)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.UInt16" />
+      </Parameters>
+      <Docs>
+        <param name="Expression">任意の有効な<see langword="String" />式または変数の名前。 場合<c>式</c>の種類は<see langword="Object" />、<see langword="Len" />関数を返します。 サイズをファイルに書き込むが、<see langword="FilePut" />関数。</param>
+        <summary>文字列の文字数または標準変数の格納に必要なバイト数を含む整数を返します。</summary>
+        <returns>文字列の文字数または標準変数の格納に必要なバイト数を含む整数を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー定義型と`Object`、変数、`Len`関数を返します。 サイズは、ファイルに書き込ま、`FilePut`関数。 場合、`Object`が含まれています、`String`文字列の長さが返されます。 場合、`Object`他の任意の型が含まれていますがによってファイルに書き込まれるときは、オブジェクトのサイズが返されます、`FilePut`関数。  
+  
+ `VBFixedString`書き込まれるときに、(バイト単位)、文字列のサイズを指定するオブジェクトの文字列フィールドに属性を適用することができますをディスクにします。 `Len`関数は、`VBFixedString`属性が、使用可能な場合のサイズを決定する際に`Object`変数。  
+  
+> [!NOTE]
+>  `Len`関数は、実際のユーザー定義データ型の可変長文字列が使用されるときに必要な記憶域バイト数を決定できない場合があります。  
+  
+> [!NOTE]
+>  `LenB`以前のバージョンの Visual Basic での関数が文字ではなく文字列内のバイト数を返します。 2 バイト文字セット (DBCS) のアプリケーションで文字列を変換するため、主に使用されます。 Unicode では、現在の Visual Basic の文字列をすべてと`LenB`は現在サポートされていません。  
+  
+## <a name="smart-device-developer-notes"></a>スマート デバイスの開発者向け注意事項  
+ `Len`関数だけを受け入れる`String`と`Object`パラメーターとして変数です。 場合、`Object`が含まれています、`String`の長さが返されます、`String`です。 パラメーターが NULL の場合`Object`参照、0 が返されます。 場合、 `Object` 、他の種類を含む、例外がスローされます。  
+  
+   
+  
+## Examples  
+ `Len` 関数を使って文字列の文字数を返す例を次に示します。  
+  
+ [!code-vb[VbVbalrStrings#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#33)]  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="M:Microsoft.VisualBasic.Strings.Len(System.Int16)" />
+      </Docs>
+    </Member>
+    <Member MemberName="Len">
+      <MemberSignature Language="C#" Value="public static int Len (uint Expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 Len(unsigned int32 Expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.Len(System.UInt32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.UInt32" />
+      </Parameters>
+      <Docs>
+        <param name="Expression">任意の有効な<see langword="String" />式または変数の名前。 場合<c>式</c>の種類は<see langword="Object" />、<see langword="Len" />関数を返します。 サイズをファイルに書き込むが、<see langword="FilePut" />関数。</param>
+        <summary>文字列の文字数または標準変数の格納に必要なバイト数を含む整数を返します。</summary>
+        <returns>文字列の文字数または標準変数の格納に必要なバイト数を含む整数を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー定義型と`Object`、変数、`Len`関数を返します。 サイズは、ファイルに書き込ま、`FilePut`関数。 場合、`Object`が含まれています、`String`文字列の長さが返されます。 場合、`Object`他の任意の型が含まれていますがによってファイルに書き込まれるときは、オブジェクトのサイズが返されます、`FilePut`関数。  
+  
+ `VBFixedString`書き込まれるときに、(バイト単位)、文字列のサイズを指定するオブジェクトの文字列フィールドに属性を適用することができますをディスクにします。 `Len`関数は、`VBFixedString`属性が、使用可能な場合のサイズを決定する際に`Object`変数。  
+  
+> [!NOTE]
+>  `Len`関数は、実際のユーザー定義データ型の可変長文字列が使用されるときに必要な記憶域バイト数を決定できない場合があります。  
+  
+> [!NOTE]
+>  `LenB`以前のバージョンの Visual Basic での関数が文字ではなく文字列内のバイト数を返します。 2 バイト文字セット (DBCS) のアプリケーションで文字列を変換するため、主に使用されます。 Unicode では、現在の Visual Basic の文字列をすべてと`LenB`は現在サポートされていません。  
+  
+## <a name="smart-device-developer-notes"></a>スマート デバイスの開発者向け注意事項  
+ `Len`関数だけを受け入れる`String`と`Object`パラメーターとして変数です。 場合、`Object`が含まれています、`String`の長さが返されます、`String`です。 パラメーターが NULL の場合`Object`参照、0 が返されます。 場合、 `Object` 、他の種類を含む、例外がスローされます。  
+  
+   
+  
+## Examples  
+ `Len` 関数を使って文字列の文字数を返す例を次に示します。  
+  
+ [!code-vb[VbVbalrStrings#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#33)]  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="M:Microsoft.VisualBasic.Strings.Len(System.Int32)" />
+      </Docs>
+    </Member>
+    <Member MemberName="Len">
+      <MemberSignature Language="C#" Value="public static int Len (ulong Expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 Len(unsigned int64 Expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.Len(System.UInt64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.UInt64" />
+      </Parameters>
+      <Docs>
+        <param name="Expression">任意の有効な<see langword="String" />式または変数の名前。 場合<c>式</c>の種類は<see langword="Object" />、<see langword="Len" />関数を返します。 サイズをファイルに書き込むが、<see langword="FilePut" />関数。</param>
+        <summary>文字列の文字数または標準変数の格納に必要なバイト数を含む整数を返します。</summary>
+        <returns>文字列の文字数または標準変数の格納に必要なバイト数を含む整数を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー定義型と`Object`、変数、`Len`関数を返します。 サイズは、ファイルに書き込ま、`FilePut`関数。 場合、`Object`が含まれています、`String`文字列の長さが返されます。 場合、`Object`他の任意の型が含まれていますがによってファイルに書き込まれるときは、オブジェクトのサイズが返されます、`FilePut`関数。  
+  
+ `VBFixedString`書き込まれるときに、(バイト単位)、文字列のサイズを指定するオブジェクトの文字列フィールドに属性を適用することができますをディスクにします。 `Len`関数は、`VBFixedString`属性が、使用可能な場合のサイズを決定する際に`Object`変数。  
+  
+> [!NOTE]
+>  `Len`関数は、実際のユーザー定義データ型の可変長文字列が使用されるときに必要な記憶域バイト数を決定できない場合があります。  
+  
+> [!NOTE]
+>  `LenB`以前のバージョンの Visual Basic での関数が文字ではなく文字列内のバイト数を返します。 2 バイト文字セット (DBCS) のアプリケーションで文字列を変換するため、主に使用されます。 Unicode では、現在の Visual Basic の文字列をすべてと`LenB`は現在サポートされていません。  
+  
+## <a name="smart-device-developer-notes"></a>スマート デバイスの開発者向け注意事項  
+ `Len`関数だけを受け入れる`String`と`Object`パラメーターとして変数です。 場合、`Object`が含まれています、`String`の長さが返されます、`String`です。 パラメーターが NULL の場合`Object`参照、0 が返されます。 場合、 `Object` 、他の種類を含む、例外がスローされます。  
+  
+   
+  
+## Examples  
+ `Len` 関数を使って文字列の文字数を返す例を次に示します。  
+  
+ [!code-vb[VbVbalrStrings#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#33)]  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="M:Microsoft.VisualBasic.Strings.Len(System.Int64)" />
+      </Docs>
+    </Member>
+    <Member MemberName="LSet">
+      <MemberSignature Language="C#" Value="public static string LSet (string Source, int Length);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string LSet(string Source, int32 Length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.LSet(System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Source" Type="System.String" />
+        <Parameter Name="Length" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="Source">必須です。 <see langword="String" />式。 文字列変数の名前です。</param>
+        <param name="Length">必須です。 <see langword="Integer" />式。 返される文字列の長さです。</param>
+        <summary>指定の文字列が含まれている文字列を左寄せで指定の長さに調整して返します。</summary>
+        <returns>指定の文字列が含まれている文字列を左寄せで指定の長さに調整して返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した文字列が指定された長さよりも長い場合は、返される文字列は指定の長さに短縮されます。 指定した文字列が指定された長さより短い場合は、スペースは、適切な長さを生成するために返される文字列の右端に追加されます。  
+  
+   
+  
+## Examples  
+ この例での使用、`LSet`関数。  
+  
+ [!code-vb[VbVbalrStrings#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LTrim">
+      <MemberSignature Language="C#" Value="public static string LTrim (string str);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string LTrim(string str) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.LTrim(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="str" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="str">必須です。 任意の有効な <see langword="String" /> 式。</param>
+        <summary>先頭のスペースなしで指定した文字列のコピーを含む文字列を返します (<see langword="LTrim" />)、末尾のスペース (<see langword="RTrim" />)、なし先頭または末尾のスペース (<see langword="Trim" />)。</summary>
+        <returns>先頭のスペースなしで指定した文字列のコピーを含む文字列を返します (<see langword="LTrim" />)、末尾のスペース (<see langword="RTrim" />)、なし先頭または末尾のスペース (<see langword="Trim" />)。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `LTrim`、 `RTrim`、および`Trim`関数は、文字列の末尾からスペースを削除します。  
+  
+   
+  
+## Examples  
+ この例では、文字列変数から、`LTrim` 関数を使って先頭の空白を除去し、`RTrim` 関数を使って後続の空白を除去しています。 また、`Trim` 関数を使って両方のタイプの空白を除去しています。  
+  
+ [!code-vb[VbVbalrStrings#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#25)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Mid">
+      <MemberSignature Language="C#" Value="public static string Mid (string str, int Start);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string Mid(string str, int32 Start) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.Mid(System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="str" Type="System.String" />
+        <Parameter Name="Start" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="str">必須です。 <see langword="String" />式の文字が返されます。</param>
+        <param name="Start">必須です。 <see langword="Integer" />式。 返される文字の位置を開始しています。 場合<c>開始</c>内の文字数よりも大きい<c>str</c>、<see langword="Mid" />関数は長さ 0 の文字列を返します ("") です。 <c>開始</c>1 から始まります。</param>
+        <summary>文字列内の指定位置から始まるすべての文字を含む文字列を返します。</summary>
+        <returns>文字列の指定位置から始まるすべての文字で構成される文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内の文字の数を決定する`str`を使用して、`Len`関数。  
+  
+ Visual Basic には、`Mid`関数と`Mid`ステートメントです。 この要素はどちらも、文字列の文字の指定された数が、`Mid`関数の中に文字を返します、`Mid`文字をステートメントに置き換えます。 詳細については、次を参照してください。 [Mid ステートメント](~/docs/visual-basic/language-reference/statements/mid-statement.md)です。  
+  
+> [!NOTE]
+>  `MidB`以前のバージョンの Visual Basic での関数が文字ではなくバイト単位で文字列を返します。 2 バイト文字セット (DBCS) のアプリケーションで文字列を変換するため、主に使用されます。 Unicode では、すべての Visual Basic の文字列と`MidB`は現在サポートされていません。  
+  
+   
+  
+## Examples  
+ この例の最後の行のこのオーバー ロードを使用して、`Mid`関数を文字列から 5 番目以降の文字を返します。  
+  
+ [!code-vb[VbVbalrStrings#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#17)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Start" />&lt;= 0 or <paramref name="Length" /> &lt; 0.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Mid">
+      <MemberSignature Language="C#" Value="public static string Mid (string str, int Start, int Length);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string Mid(string str, int32 Start, int32 Length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.Mid(System.String,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="str" Type="System.String" />
+        <Parameter Name="Start" Type="System.Int32" />
+        <Parameter Name="Length" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="str">必須です。 <see langword="String" />式の文字が返されます。</param>
+        <param name="Start">必須です。 <see langword="Integer" />式。 返される文字の位置を開始しています。 場合<c>開始</c>内の文字数よりも大きい<c>str</c>、<see langword="Mid" />関数は長さ 0 の文字列を返します ("") です。 <c>開始</c>は基にしました。</param>
+        <param name="Length">省略可能です。 <see langword="Integer" />式。 取り出す文字数。 省略した場合、またはより少ない場合<c>長さ</c>テキストの文字 (位置にある文字を含む<c>開始</c>)、文字列の末尾を開始位置からのすべての文字が返されます。</param>
+        <summary>指定した文字列の指定した位置から始まる文字数を表す文字列を返します。</summary>
+        <returns>文字列の指定位置から始まる文字の指定された数で構成される文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内の文字の数を決定する`str`を使用して、`Len`関数。  
+  
+ Visual Basic には、`Mid`関数と`Mid`ステートメントです。 この要素はどちらも、文字列の文字の指定された数が、`Mid`関数の中に文字を返します、`Mid`文字をステートメントに置き換えます。 詳細については、次を参照してください。 [Mid ステートメント](~/docs/visual-basic/language-reference/statements/mid-statement.md)です。  
+  
+> [!NOTE]
+>  `MidB`以前のバージョンの Visual Basic での関数が文字ではなくバイト単位で文字列を返します。 2 バイト文字セット (DBCS) のアプリケーションで文字列を変換するため、主に使用されます。 Unicode では、すべての Visual Basic の文字列と`MidB`は現在サポートされていません。  
+  
+   
+  
+## Examples  
+ 最初の 2 つ`Mid`この例では関数では、指定した位置から始まる、文字列から指定された文字数を返します。 (最後の関数を示しています、<xref:Microsoft.VisualBasic.Strings.Mid%28System.String%2CSystem.Int32%29>オーバー ロードして、文字列抽出の開始位置を指定するだけです)。  
+  
+ [!code-vb[VbVbalrStrings#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#17)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Start" />&lt;= 0 or <paramref name="Length" /> &lt; 0.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Replace">
+      <MemberSignature Language="C#" Value="public static string Replace (string Expression, string Find, string Replacement, int Start = 1, int Count = -1, Microsoft.VisualBasic.CompareMethod Compare = Microsoft.VisualBasic.CompareMethod.Binary);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string Replace(string Expression, string Find, string Replacement, int32 Start, int32 Count, valuetype Microsoft.VisualBasic.CompareMethod Compare) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.Replace(System.String,System.String,System.String,System.Int32,System.Int32,Microsoft.VisualBasic.CompareMethod)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.String" />
+        <Parameter Name="Find" Type="System.String" />
+        <Parameter Name="Replacement" Type="System.String" />
+        <Parameter Name="Start" Type="System.Int32" />
+        <Parameter Name="Count" Type="System.Int32" />
+        <Parameter Name="Compare" Type="Microsoft.VisualBasic.CompareMethod">
+          <Attributes>
+            <Attribute>
+              <AttributeName>Microsoft.VisualBasic.CompilerServices.OptionCompare</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="Expression">必須です。 文字列を置き換える部分文字列を含む式。</param>
+        <param name="Find">必須です。 検索対象文字列を指定します。</param>
+        <param name="Replacement">必須です。 置換する部分文字列。</param>
+        <param name="Start">省略可能です。 内の位置に<c>式</c>置換に使用される部分文字列を開始します。 戻り値<see langword="Replace" />文字列で始まる<c>開始</c>、適宜置き換え、します。 省略した場合、1 が使用されます。</param>
+        <param name="Count">省略可能です。 置換を実行する部分文字列の数です。 省略した場合、既定値は、-1 で、「すべての可能な置換してください」</param>
+        <param name="Compare">省略可能です。 部分文字列を評価するときに使用する比較の種類を表す数値を指定します。 値の設定を参照してください。</param>
+        <summary>指定された文字列の一部を指定された回数分別の部分文字列で置換した文字列を返します。</summary>
+        <returns>
+          <see langword="Replace" />次の値を返します。  
+  
+ <list type="table"><item><term>もし  
+  
+ </term><description>置換を返します  
+  
+ </description></item><item><term><paramref name="Find" />長さ 0 の文字列または<see langword="Nothing" /> </term> <description>のコピー <paramref name="Expression" /> </description> </item> <item> <term> <paramref name="Replace" />長さ 0 の文字列  
+  
+ </term><description>コピー<paramref name="Expression" />ない文字列を含む<paramref name="Find" /> </description> </item> <item> <term> <paramref name="Expression" />長さ 0 の文字列または<see langword="Nothing" />、または<paramref name="Start" />がの長さより大きい<paramref name="Expression" /></term> <description> <see langword="Nothing" /> </description> </item> <item> <term> <paramref name="Count" /> 0 は、  
+  
+ </term><description>コピー<paramref name="Expression" /></description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値、`Replace`関数は、指定した位置から始まる文字列`Start`の末尾で終了し、`Expression`で置き換えが行われた文字列で指定されたとおり、`Find`と`Replace`値。  
+  
+ `Compare`引数は、次の値を持つことができます。  
+  
+|定数|説明|  
+|-|-|  
+|`Binary`|バイナリ比較を実行します|  
+|`Text`|テキストの比較を実行します。|  
+  
+   
+  
+## Examples  
+ この例で、`Replace`関数。  
+  
+```vb  
+Dim TestString As String = "Shopping List"  
+' Returns "Shipping List".  
+Dim aString As String = Replace(TestString, "o", "i")  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Count" />&lt; -1 or <paramref name="Start" /> &lt;= 0.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Right">
+      <MemberSignature Language="C#" Value="public static string Right (string str, int Length);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string Right(string str, int32 Length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.Right(System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="str" Type="System.String" />
+        <Parameter Name="Length" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="str">必須です。 <see langword="String" />右端の文字が返される式です。</param>
+        <param name="Length">必須です。 <see langword="Integer" />。 取得する文字の数を示す数値式です。 0 の場合、長さ 0 の文字列 ("") が返されます。 大きいかの文字数に等しい場合<c>str</c>、文字列全体が返されます。</param>
+        <summary>文字列の右端から指定された文字数分の文字列を返します。</summary>
+        <returns>文字列の右端から指定された文字数分の文字列を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内の文字の数を決定する`str`を使用して、`Len`関数。 Windows フォーム、またはを持つ他のクラスで使用されている場合、`Right`プロパティを持つ関数が完全修飾する必要があります`Microsoft.VisualBasic.Strings.Right`です。  
+  
+> [!NOTE]
+>  `RightB`以前のバージョンの Visual Basic での関数が文字ではなく、(バイト単位) の文字列を返します。 2 バイト文字セット (DBCS) のアプリケーションで文字列を変換するため、主に使用されます。 Unicode では、現在の Visual Basic の文字列をすべてと`RightB`は現在サポートされていません。  
+  
+   
+  
+## Examples  
+ この例での使用、`Right`の部分文字列を返す関数を指定された`String`です。 持つクラスで、`Right`プロパティである可能性がありますを完全に修飾するために必要な`Right`関数。  
+  
+ [!code-vb[VbVbalrStrings#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#21)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Length" /> &lt; 0.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RSet">
+      <MemberSignature Language="C#" Value="public static string RSet (string Source, int Length);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string RSet(string Source, int32 Length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.RSet(System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Source" Type="System.String" />
+        <Parameter Name="Length" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="Source">必須です。 <see langword="String" />式。 文字列変数の名前です。</param>
+        <param name="Length">必須です。 <see langword="Integer" />式。 返される文字列の長さです。</param>
+        <summary>文字列と長さが指定され、その長さに調整された文字列右揃えにして文字列を返します。</summary>
+        <returns>文字列と長さが指定され、その長さに調整された文字列右揃えにして文字列を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`Source`よりも長い`Length`、`RSet`のみ、左端の文字、最大の長さを配置`Source`、返される文字列にします。 指定した文字列が指定された長さより短い場合は、適切な長さを生成するために、文字列の左端にスペースが追加されます。 指定した文字列が指定された長さよりも長い場合は、指定された長さに部分は切り捨てられます。  
+  
+   
+  
+## Examples  
+ この例での使用、`RSet`関数。  
+  
+ [!code-vb[VbVbalrStrings#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RTrim">
+      <MemberSignature Language="C#" Value="public static string RTrim (string str);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string RTrim(string str) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.RTrim(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="str" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="str">必須です。 任意の有効な <see langword="String" /> 式。</param>
+        <summary>先頭のスペースなしで指定した文字列のコピーを含む文字列を返します (<see langword="LTrim" />)、末尾のスペース (<see langword="RTrim" />)、なし先頭または末尾のスペース (<see langword="Trim" />)。</summary>
+        <returns>先頭のスペースなしで指定した文字列のコピーを含む文字列を返します (<see langword="LTrim" />)、末尾のスペース (<see langword="RTrim" />)、なし先頭または末尾のスペース (<see langword="Trim" />)。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `LTrim`、 `RTrim`、および`Trim`関数は、文字列の末尾からスペースを削除します。  
+  
+   
+  
+## Examples  
+ この例では、文字列変数から、`LTrim` 関数を使って先頭の空白を除去し、`RTrim` 関数を使って後続の空白を除去しています。 また、`Trim` 関数を使って両方のタイプの空白を除去しています。  
+  
+ [!code-vb[VbVbalrStrings#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#25)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Space">
+      <MemberSignature Language="C#" Value="public static string Space (int Number);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string Space(int32 Number) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.Space(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 <see langword="Integer" />式。 文字列で使用する空白文字の数。</param>
+        <summary>指定された数のスペースから成る文字列を返します。</summary>
+        <returns>指定された数のスペースから成る文字列を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Space`関数は出力を書式設定および固定長文字列内のデータをクリアするのに役立ちます。  
+  
+   
+  
+## Examples  
+ この例では、`Space`関数を指定した数のスペースから成る文字列を返します。  
+  
+ [!code-vb[VbVbalrStrings#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Number" /> &lt; 0.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Split">
+      <MemberSignature Language="C#" Value="public static string[] Split (string Expression, string Delimiter = &quot; &quot;, int Limit = -1, Microsoft.VisualBasic.CompareMethod Compare = Microsoft.VisualBasic.CompareMethod.Binary);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string[] Split(string Expression, string Delimiter, int32 Limit, valuetype Microsoft.VisualBasic.CompareMethod Compare) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.Split(System.String,System.String,System.Int32,Microsoft.VisualBasic.CompareMethod)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.String" />
+        <Parameter Name="Delimiter" Type="System.String" />
+        <Parameter Name="Limit" Type="System.Int32" />
+        <Parameter Name="Compare" Type="Microsoft.VisualBasic.CompareMethod">
+          <Attributes>
+            <Attribute>
+              <AttributeName>Microsoft.VisualBasic.CompilerServices.OptionCompare</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="Expression">必須です。 <see langword="String" />部分文字列と区切り記号を含む式です。</param>
+        <param name="Delimiter">省略可能です。 任意の 1 文字の部分文字列の境界を識別するために使用します。 場合<c>区切り記号</c>を省略すると、空白文字 ("")、区切り記号と見なされます。</param>
+        <param name="Limit">省略可能です。 入力文字列の分割を部分文字列の最大数。 既定値の-1 を示すの出現個所をすべてに、入力文字列を分割する必要があります、<c>区切り記号</c>文字列。</param>
+        <param name="Compare">省略可能です。 部分文字列を評価するときに使用する比較を表す数値を指定します。 値については、「設定」を参照してください。</param>
+        <summary>部分文字列ごとに区切られた文字列からゼロ ベースの 1 次元配列を作成し、返します。</summary>
+        <returns>
+          <see langword="String" /> 配列 場合<paramref name="Expression" />は長さ 0 の文字列 ("")、<see langword="Split" />長さ 0 の文字列を含む 1 つの要素の配列を返します。 場合<paramref name="Delimiter" />長さ 0 の文字列は、それが任意の場所にない場合または<paramref name="Expression" />、<see langword="Split" />全体を含む 1 つの要素の配列を返します<paramref name="Expression" />文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、または`Limit`、-1、`Split`関数は、区切り記号文字列の出現個所をすべてで、入力文字列を分割し、配列内の各部分文字列を返します。 ときに、`Limit`パラメーターは、ゼロより大きく、`Split`関数が、最初は文字列を分割`Limit`-1 出現する、区切り記号の後の部分文字列の配列を返します。 たとえば、`Split("a:b:c", ":")`配列を返します`{"a", "b", "c"}`、中に`Split("a:b:c", ":", 2)`配列を返します`{"a", "b:c"}`です。  
+  
+ ときに、`Split`関数には、行で、次の 2 つの区切り記号または先頭または文字列の末尾に区切り記号が検出すると、空の文字列を囲むとして解釈 ("") です。 たとえば、 `Split("xx", "x")` 3 つの空の文字列を含む配列を返します: 文字列と最初の"x"、"x"、文字列、2 つの間から 1 つの先頭つと最後の"x"と、文字列の末尾の 1 つです。  
+  
+ 次の表に示す方法、省略可能な`Delimiter`、 `Limit`、および`Compare`パラメーターの動作を変更することができます、`Split`関数。  
+  
+|呼び出しを分割します。|戻り値|  
+|-|-|  
+|`Split("42, 12, 19")`|{"42," , "12," , "19"}|  
+|`Split("42, 12, 19", ", ")`|{"42", "12", "19"}|  
+|`Split("42, 12, 19", ", ", 2)`|{"42", "12, 19"}|  
+|`Split("192.168.0.1", ".")`|{"192", "168", "0", "1"}|  
+|`Split("Alice and Bob", " AND ")`|{「Alice と Bob」}|  
+|`Split("Alice and Bob", " AND ", ,CompareMethod.Text)`|{"Alice"、"Bob"}|  
+|`Split("someone@example.com", "@",1)`|{"someone@example.com"}|  
+|`Split("someone@example.com", "@",2)`|{"someone"、"example.com"}|  
+  
+ `Compare`引数は、次の値を持つことができます。  
+  
+|定数|説明|値|  
+|-|-|-|  
+|`CompareMethod.Binary`|バイナリ比較を実行します|0|  
+|`CompareMethod.Text`|テキストの比較を実行します。|1|  
+  
+   
+  
+## Examples  
+ 次の例では、そのスペースに文字列に分割する方法を示します。  
+  
+ [!code-vb[VbVbalrStrings#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#13)]  
+  
+ 次の例では、行の複数の区切り記号の文字列を分割して、空の文字列をフィルター処理する方法を示します。  
+  
+ [!code-vb[VbVbalrStrings#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#14)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StrComp">
+      <MemberSignature Language="C#" Value="public static int StrComp (string String1, string String2, Microsoft.VisualBasic.CompareMethod Compare = Microsoft.VisualBasic.CompareMethod.Binary);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 StrComp(string String1, string String2, valuetype Microsoft.VisualBasic.CompareMethod Compare) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.StrComp(System.String,System.String,Microsoft.VisualBasic.CompareMethod)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="String1" Type="System.String" />
+        <Parameter Name="String2" Type="System.String" />
+        <Parameter Name="Compare" Type="Microsoft.VisualBasic.CompareMethod">
+          <Attributes>
+            <Attribute>
+              <AttributeName>Microsoft.VisualBasic.CompilerServices.OptionCompare</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="String1">必須です。 任意の有効な <see langword="String" /> 式。</param>
+        <param name="String2">必須です。 任意の有効な <see langword="String" /> 式。</param>
+        <param name="Compare">省略可能です。 文字列比較の種類を指定します。 場合<c>比較</c>を省略すると、<see langword="Option Compare" />比較の種類を指定します。</param>
+        <summary>文字列比較の結果により、-1、0、または 1 のいずれかを返します。</summary>
+        <returns><see langword="StrComp" />関数には、次の戻り値。  
+  
+ <list type="table"><item><term>もし  
+  
+ </term><description>StrComp を返します。  
+  
+ </description></item><item><term><paramref name="String1" />個の並べ替えます<paramref name="String2" /> </term> <description> -1  
+  
+ </description></item><item><term><paramref name="String1" />等しい<paramref name="String2" /> </term> <description> 0  
+  
+ </description></item><item><term><paramref name="String1" />後に<paramref name="String2" /> </term> <description> 1  
+  
+ </description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列は、最初の文字で始まり、英数字の並べ替え値によって比較されます。 バイナリの比較、テキストの比較および並べ替え順序の詳細については、次を参照してください。 [Option Compare ステートメント](~/docs/visual-basic/language-reference/statements/option-compare-statement.md)です。  
+  
+ `Compare` 引数の設定は以下の通りです。  
+  
+|定数|説明|  
+|-|-|  
+|`Binary`|文字の内部バイナリ表現から派生した並べ替え順序に基づいて、バイナリ比較を実行します。|  
+|`Text`|システムのによって決まる、大文字と小文字のテキスト並べ替え順序に基づいて、文字列比較を行います`LocaleID`値。|  
+  
+   
+  
+## Examples  
+ この例では、`StrComp`文字列比較の結果を返す関数。  
+  
+ [!code-vb[VbVbalrStrings#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#22)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Compare" /> の値が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StrConv">
+      <MemberSignature Language="C#" Value="public static string StrConv (string str, Microsoft.VisualBasic.VbStrConv Conversion, int LocaleID = 0);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string StrConv(string str, valuetype Microsoft.VisualBasic.VbStrConv Conversion, int32 LocaleID) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.StrConv(System.String,Microsoft.VisualBasic.VbStrConv,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="str" Type="System.String" />
+        <Parameter Name="Conversion" Type="Microsoft.VisualBasic.VbStrConv" />
+        <Parameter Name="LocaleID" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="str">必須です。 <see langword="String" />変換する式。</param>
+        <param name="Conversion">必須です。 <see cref="T:Microsoft.VisualBasic.VbStrConv" />メンバー。 実行する変換の種類を指定する列挙値。</param>
+        <param name="LocaleID">省略可能です。 <see langword="LocaleID" />システムと異なる場合は、値<see langword="LocaleID" />値。 (システム<see langword="LocaleID" />既定値です)。</param>
+        <summary>指定に従って変換された文字列型の値を返します。</summary>
+        <returns>指定に従って変換された文字列型の値を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 定数`VbStrConv.Wide`、 `VbStrConv.Narrow`、 `VbStrConv.SimplifiedChinese`、 `VbStrConv.TraditionalChinese`、`VbStrConv.Katakana`と`VbStrConv.Hiragana`ここでは適用されません、ロケールで使用する場合の実行時エラーが発生することができますが、常にではありません: 定数`VbStrConv.Katakana`と`VbStrConv.Hiragana`日本語言語パックがインストールされて、日本語以外のシステムで使用できます。 さらに、定数の使用`VbStrConv.Wide`と`VbStrConv.Narrow`インストール東アジア言語のすべてのシステムではサポートされています。  
+  
+ この関数は、大文字小文字の変更は、アプリケーションが使用されているロケールに対応できるように文字列を操作するときに、アプリケーションのカルチャ情報を使用します。  
+  
+> [!IMPORTANT]
+>  アプリケーションが、比較演算子またはケース変更操作の結果に基づいてセキュリティ上の決定を行うかどうかは、操作を使用する必要があります、<xref:System.String.Compare%2A?displayProperty=nameWithType>メソッド、およびパス<xref:System.StringComparison.Ordinal>または<xref:System.StringComparison.OrdinalIgnoreCase>の`comparisonType`引数。 詳細については、次を参照してください。[どのカルチャに影響を与える Visual Basic における文字列](~/docs/visual-basic/programming-guide/language-features/strings/how-culture-affects-strings.md)です。  
+  
+ `Conversion` 引数の設定は以下の通りです。  
+  
+|列挙体のメンバー|説明|  
+|-|-|  
+|`VbStrConv.None`|変換は行われません|  
+|`VbStrConv.LinguisticCasing`|ファイル システム (既定値) ではなく、大文字と小文字、言語の規則を使用します。 有効な`VbStrConv.UpperCase`と`VbStrConv.LowerCase`のみです。|  
+|`VbStrConv.UpperCase`|文字列を大文字に変換します。|  
+|`VbStrConv.LowerCase`|文字列を小文字に変換します。|  
+|`VbStrConv.ProperCase`|文字列を大文字に内の各単語の最初の文字に変換します。|  
+|`VbStrConv.Wide`<sup>*</sup>|半角、全角文字 (全角) に文字列 (半角) 文字に変換します。|  
+|`VbStrConv.Narrow`<sup>*</sup>|(全角) 全角文字 (半角) の文字を文字列に変換します。|  
+|`VbStrConv.Katakana`<sup>**</sup>|文字列内のひらがな文字をカタカナ文字に変換します。|  
+|`VbStrConv.Hiragana`<sup>**</sup>|文字列内のカタカナ文字をひらがな文字に変換します。|  
+|`VbStrConv.SimplifiedChinese`<sup>*</sup>|繁体字中国語文字を簡体字中国語に変換します。|  
+|`VbStrConv.TraditionalChinese`<sup>*</sup>|簡体字中国語の文字を繁体字中国語に変換します。|  
+  
+ <sup>*</sup>アジアのロケールに適用されます。  
+  
+ <sup>**</sup>Japan にのみ適用されます。  
+  
+> [!NOTE]
+>  これらの定数は、.NET Framework 共通言語ランタイムで指定されます。 その結果、それらで指定できます任意の場所、実際の値の代わりに、コード。 ほとんどを組み合わせることができます (たとえば、 `UpperCase + Wide`)、相互に排他的な場合以外 (たとえば、 `VbStrConv.Wide + VbStrConv.Narrow`)。  
+  
+ 適切な大文字と小文字の有効な単語の区切り文字を次に示します: Null (`Chr$(0)`)、水平タブ (`Chr$(9)`)、ライン フィード (`Chr$(10)`)、垂直タブ (`Chr$(11)`)、フォーム フィード (`Chr$(12)`)、キャリッジ リターン (`Chr$(13)`)、スペース (1 バイト文字セット) (`Chr$(32)`)。 指定できますが、完全または幅の半分領域の実際の値は、東アジア言語のカルチャの国または地域によって異なります。  
+  
+   
+  
+## Examples  
+ この例は、テキストをすべて小文字に変換します。  
+  
+ [!code-vb[VbVbalrStrings#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">サポートされていない<paramref name="LocaleID" />、 <paramref name="Conversion" /> &lt; 0 または&gt;2048、またはサポートされていない指定したロケールに対して変換します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StrDup">
+      <MemberSignature Language="C#" Value="public static string StrDup (int Number, char Character);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string StrDup(int32 Number, char Character) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.StrDup(System.Int32,System.Char)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.Int32" />
+        <Parameter Name="Character" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 <see langword="Integer" />式。 返される文字列の長さ。</param>
+        <param name="Character">必須です。 任意の有効な<see langword="Char" />、 <see langword="String" />、または<see langword="Object" />式。 式の最初の文字のみが使用されます。 文字が型の場合<see langword="Object" />、いずれかを含めることは、<see langword="Char" />または<see langword="String" />値。</param>
+        <summary>指定された文字が指定された回数繰り返されている文字列型またはオブジェクト型の値を返します。</summary>
+        <returns>指定された文字が指定された回数繰り返されている文字列型またはオブジェクト型の値を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を返します、`String`の文字の繰り返しで構成します。 文字列を構成する文字が最初の文字、`Character`引数、およびそれが重複して`Number`回数。  
+  
+   
+  
+## Examples  
+ この例では、`StrDup`の文字列を返す関数には、文字が重複しています。  
+  
+ [!code-vb[VbVbalrStrings#34](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#34)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Number" />0 未満または<paramref name="Character" />型が無効です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="Character" /> は <see langword="Nothing" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StrDup">
+      <MemberSignature Language="C#" Value="public static object StrDup (int Number, object Character);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object StrDup(int32 Number, object Character) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.StrDup(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.Int32" />
+        <Parameter Name="Character" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 <see langword="Integer" />式。 返される文字列の長さ。</param>
+        <param name="Character">必須です。 任意の有効な<see langword="Char" />、 <see langword="String" />、または<see langword="Object" />式。 式の最初の文字のみが使用されます。 文字が型の場合<see langword="Object" />、いずれかを含めることは、<see langword="Char" />または<see langword="String" />値。</param>
+        <summary>指定された文字が指定された回数繰り返されている文字列型またはオブジェクト型の値を返します。</summary>
+        <returns>指定された文字が指定された回数繰り返されている文字列型またはオブジェクト型の値を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を返します、`String`の文字の繰り返しで構成します。 文字列を構成する文字が最初の文字、`Character`引数、およびそれが重複して`Number`回数。  
+  
+   
+  
+## Examples  
+ この例では、`StrDup`の文字列を返す関数には、文字が重複しています。  
+  
+ [!code-vb[VbVbalrStrings#34](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#34)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Number" />0 未満または<paramref name="Character" />型が無効です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="Character" /> は <see langword="Nothing" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StrDup">
+      <MemberSignature Language="C#" Value="public static string StrDup (int Number, string Character);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string StrDup(int32 Number, string Character) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.StrDup(System.Int32,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.Int32" />
+        <Parameter Name="Character" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 <see langword="Integer" />式。 返される文字列の長さ。</param>
+        <param name="Character">必須です。 任意の有効な<see langword="Char" />、 <see langword="String" />、または<see langword="Object" />式。 式の最初の文字のみが使用されます。 文字が型の場合<see langword="Object" />、いずれかを含めることは、<see langword="Char" />または<see langword="String" />値。</param>
+        <summary>指定された文字が指定された回数繰り返されている文字列型またはオブジェクト型の値を返します。</summary>
+        <returns>指定された文字が指定された回数繰り返されている文字列型またはオブジェクト型の値を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数を返します、`String`の文字の繰り返しで構成します。 文字列を構成する文字が最初の文字、`Character`引数、およびそれが重複して`Number`回数。  
+  
+   
+  
+## Examples  
+ この例では、`StrDup`の文字列を返す関数には、文字が重複しています。  
+  
+ [!code-vb[VbVbalrStrings#34](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#34)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Number" />0 未満または<paramref name="Character" />型が無効です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="Character" /> は <see langword="Nothing" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StrReverse">
+      <MemberSignature Language="C#" Value="public static string StrReverse (string Expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string StrReverse(string Expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.StrReverse(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="Expression">必須です。 文字が元に戻すには文字列式です。 場合<c>式</c>は長さ 0 の文字列 ("")、長さ 0 の文字列が返されます。</param>
+        <summary>指定された文字列の文字の並び順を逆にした文字列を返します。</summary>
+        <returns>指定された文字列の文字の並び順を逆にした文字列を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `StrReverse`関数と同じ文字を含む文字列を返します`Expression`、その逆の順序で。  
+  
+   
+  
+## Examples  
+ [!code-vb[VbVbalrStrings#29](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#29)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Trim">
+      <MemberSignature Language="C#" Value="public static string Trim (string str);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string Trim(string str) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.Trim(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="str" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="str">必須です。 任意の有効な <see langword="String" /> 式。</param>
+        <summary>先頭のスペースなしで指定した文字列のコピーを含む文字列を返します (<see langword="LTrim" />)、末尾のスペース (<see langword="RTrim" />)、なし先頭または末尾のスペース (<see langword="Trim" />)。</summary>
+        <returns>先頭のスペースなしで指定した文字列のコピーを含む文字列を返します (<see langword="LTrim" />)、末尾のスペース (<see langword="RTrim" />)、なし先頭または末尾のスペース (<see langword="Trim" />)。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `LTrim`、 `RTrim`、および`Trim`関数は、文字列の末尾からスペースを削除します。  
+  
+   
+  
+## Examples  
+ この例では、文字列変数から、`LTrim` 関数を使って先頭の空白を除去し、`RTrim` 関数を使って後続の空白を除去しています。 また、`Trim` 関数を使って両方のタイプの空白を除去しています。  
+  
+ [!code-vb[VbVbalrStrings#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#25)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UCase">
+      <MemberSignature Language="C#" Value="public static char UCase (char Value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static char UCase(char Value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.UCase(System.Char)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Char</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Value" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="Value">必須です。 任意の有効な<see langword="String" />または<see langword="Char" />式。</param>
+        <summary>指定された文字列を大文字に変換して文字列型または char 型の値を返します。</summary>
+        <returns>指定された文字列を大文字に変換して文字列型または char 型の値を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 小文字のみが変換を大文字です。すべてのアルファベットの大文字とアルファベット以外の文字は変更されません。  
+  
+ この関数は、大文字小文字の変更は、アプリケーションが使用されているロケールに対応できるように文字列を操作するときに、アプリケーションのカルチャ情報を使用します。  
+  
+> [!IMPORTANT]
+>  アプリケーションが、比較演算子またはケース変更操作の結果に基づいてセキュリティ上の決定を行うかどうかは、操作を使用する必要があります、<xref:System.String.Compare%2A?displayProperty=nameWithType>メソッド、およびパス<xref:System.StringComparison.Ordinal>または<xref:System.StringComparison.OrdinalIgnoreCase>の`comparisonType`引数。 詳細については、次を参照してください。[どのカルチャに影響を与える Visual Basic における文字列](~/docs/visual-basic/programming-guide/language-features/strings/how-culture-affects-strings.md)です。  
+  
+   
+  
+## Examples  
+ `UCase` 関数を使って文字列を大文字に変換して返す例を次に示します。  
+  
+ [!code-vb[VbVbalrStrings#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#31)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UCase">
+      <MemberSignature Language="C#" Value="public static string UCase (string Value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string UCase(string Value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Strings.UCase(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="Value">必須です。 任意の有効な<see langword="String" />または<see langword="Char" />式。</param>
+        <summary>指定された文字列を大文字に変換して文字列型または char 型の値を返します。</summary>
+        <returns>指定された文字列を大文字に変換して文字列型または char 型の値を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 小文字のみが変換を大文字です。すべてのアルファベットの大文字とアルファベット以外の文字は変更されません。  
+  
+ この関数は、大文字小文字の変更は、アプリケーションが使用されているロケールに対応できるように文字列を操作するときに、アプリケーションのカルチャ情報を使用します。  
+  
+> [!IMPORTANT]
+>  アプリケーションが、比較演算子またはケース変更操作の結果に基づいてセキュリティ上の決定を行うかどうかは、操作を使用する必要があります、<xref:System.String.Compare%2A?displayProperty=nameWithType>メソッド、およびパス<xref:System.StringComparison.Ordinal>または<xref:System.StringComparison.OrdinalIgnoreCase>の`comparisonType`引数。 詳細については、次を参照してください。[どのカルチャに影響を与える Visual Basic における文字列](~/docs/visual-basic/programming-guide/language-features/strings/how-culture-affects-strings.md)です。  
+  
+   
+  
+## Examples  
+ `UCase` 関数を使って文字列を大文字に変換して返す例を次に示します。  
+  
+ [!code-vb[VbVbalrStrings#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#31)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

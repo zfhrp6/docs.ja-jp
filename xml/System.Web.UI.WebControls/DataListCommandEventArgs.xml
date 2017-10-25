@@ -1,0 +1,153 @@
+<Type Name="DataListCommandEventArgs" FullName="System.Web.UI.WebControls.DataListCommandEventArgs">
+  <TypeSignature Language="C#" Value="public class DataListCommandEventArgs : System.Web.UI.WebControls.CommandEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataListCommandEventArgs extends System.Web.UI.WebControls.CommandEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.DataListCommandEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.CommandEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、 <see cref="E:System.Web.UI.WebControls.DataList.CancelCommand" />、 <see cref="E:System.Web.UI.WebControls.DataList.DeleteCommand" />、 <see cref="E:System.Web.UI.WebControls.DataList.EditCommand" />、 <see cref="E:System.Web.UI.WebControls.DataList.ItemCommand" />、および<see cref="E:System.Web.UI.WebControls.DataList.UpdateCommand" />のイベント、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataList.CancelCommand>イベントが発生したときに、`Cancel`ボタン内の項目を<xref:System.Web.UI.WebControls.DataList>コントロールがクリックされました。  
+  
+ <xref:System.Web.UI.WebControls.DataList.DeleteCommand>イベントが発生したときに、`Delete`ボタン内の項目を<xref:System.Web.UI.WebControls.DataList>コントロールがクリックされました。  
+  
+ <xref:System.Web.UI.WebControls.DataList.EditCommand>イベントが発生したときに、`Edit`ボタン内の項目を<xref:System.Web.UI.WebControls.DataList>コントロールがクリックされました。  
+  
+ <xref:System.Web.UI.WebControls.DataList.ItemCommand>イベント内の項目のいずれかのボタンをクリックしたときに発生、<xref:System.Web.UI.WebControls.DataList>コントロールをクリックします。 これにより、プログラムによって特定のコマンド ボタンがクリックされたときのテストし、適切な操作を実行することができます。 このイベントは通常のカスタム コマンド ボタンの処理に使用、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+ <xref:System.Web.UI.WebControls.DataList.UpdateCommand>イベントが発生したときに、`Update`ボタン内の項目を<xref:System.Web.UI.WebControls.DataList>コントロールがクリックされました。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.Web.UI.WebControls.DataListCommandEventArgs>を参照してください、<xref:System.Web.UI.WebControls.DataListCommandEventArgs.%23ctor%2A>コンス トラクターです。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次の例では、イベントのハンドラーを定義する方法、 <xref:System.Web.UI.WebControls.DataList.EditCommand>、 <xref:System.Web.UI.WebControls.DataList.UpdateCommand>、<xref:System.Web.UI.WebControls.DataList.CancelCommand>と<xref:System.Web.UI.WebControls.DataList.DeleteCommand>のイベント、<xref:System.Web.UI.WebControls.DataList>コントロール。 この例を示すイベント ハンドラーは、宣言によって、コマンドの各プロパティの対応するイベント ハンドラーを設定、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+ [!code-aspx-csharp[DataListEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListEdit/CS/datalisteditcs.aspx#1)]
+ [!code-aspx-vb[DataListEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListEdit/VB/datalisteditvb.aspx#1)]  
+  
+ 次の例では、イベント ハンドラーを指定し、プログラム内のイベントに追加する方法、`Page_Load`メソッドです。  
+  
+ [!code-aspx-csharp[DataListEdit2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListEdit2/CS/datalistedit2cs.aspx#1)]
+ [!code-aspx-vb[DataListEdit2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListEdit2/VB/datalistedit2vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataListCommandEventArgs (System.Web.UI.WebControls.DataListItem item, object commandSource, System.Web.UI.WebControls.CommandEventArgs originalArgs);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.DataListItem item, object commandSource, class System.Web.UI.WebControls.CommandEventArgs originalArgs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataListCommandEventArgs.#ctor(System.Web.UI.WebControls.DataListItem,System.Object,System.Web.UI.WebControls.CommandEventArgs)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="item" Type="System.Web.UI.WebControls.DataListItem" />
+        <Parameter Name="commandSource" Type="System.Object" />
+        <Parameter Name="originalArgs" Type="System.Web.UI.WebControls.CommandEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="item">選択したアイテムを<see cref="T:System.Web.UI.WebControls.DataList" />です。</param>
+        <param name="commandSource">コマンドのソース。</param>
+        <param name="originalArgs">A<see cref="T:System.Web.UI.WebControls.CommandEventArgs" />元のイベント データを格納します。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.DataListCommandEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.DataListCommandEventArgs>クラスです。  
+  
+ インスタンス<xref:System.Web.UI.WebControls.DataListCommandEventArgs>作成は、このコンス トラクターを呼び出し、次のプロパティが指定された値に初期化されます。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|アイテム|`item` パラメーターの値。|  
+|CommandSource|`commandSource` パラメーターの値。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandSource">
+      <MemberSignature Language="C#" Value="public object CommandSource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object CommandSource" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataListCommandEventArgs.CommandSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンドのソースを取得します。</summary>
+        <value>コマンドのソース。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataListCommandEventArgs.CommandSource%2A>イベントを発生させたコマンド ソースを決定するプロパティです。 どちらのコマンドは、イベントを発生させます。 を決定するは、このプロパティは使用が一般的です。 その後、コマンドに基づく、適切な操作を実行できます。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.DataListCommandEventArgs.CommandSource%2A>プロパティをユーザーが選択したコマンドを決定します。 コマンドに基づく、適切な操作を実行します。  
+  
+ [!code-aspx-csharp[Classic DataListCommandEventArgs.Item Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataListCommandEventArgs.Item Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic DataListCommandEventArgs.Item Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataListCommandEventArgs.Item Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.DataListItem Item { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.DataListItem Item" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataListCommandEventArgs.Item" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataListItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンド ソースが含まれている項目を取得、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.DataListItem" />で選択した項目を表すオブジェクト、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataListCommandEventArgs.Item%2A>プロパティで選択した項目に関する情報にアクセスを<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.DataListCommandEventArgs.Item%2A>で選択した項目に関する情報を表示するプロパティを<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+ [!code-aspx-csharp[DataListEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListEdit/CS/datalisteditcs.aspx#1)]
+ [!code-aspx-vb[DataListEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListEdit/VB/datalisteditvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

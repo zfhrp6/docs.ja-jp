@@ -1,0 +1,99 @@
+<Type Name="UriIdnScope" FullName="System.UriIdnScope">
+  <TypeSignature Language="C#" Value="public enum UriIdnScope" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed UriIdnScope extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.UriIdnScope" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>構成設定の可能な値を提供、<see cref="T:System.Configuration.IdnElement" />で、<see cref="N:System.Configuration" />名前空間。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既存の<xref:System.Uri>RFC 3987 に基づいて国際リソース識別子 (IR) のサポートを提供するクラスが拡張されています。 現在のユーザーは、自分で明確に IRI を有効にしない限り、.NET Framework 2.0 の動作からは変更に気付きません。 これにより、.NET Framework の以前のバージョンとのアプリケーションの互換性を保証します。  
+  
+ 国際化ドメイン名 (IDN) の属性は、IDN 処理だけを制御します。 他のすべての IRI 処理 (文字の正規化の例) は、既定では常に実行します。  
+  
+ 構成の設定、<xref:System.Configuration.IdnElement?displayProperty=nameWithType>が読み取られる 1 回と最初<xref:System.Uri>クラスを構築します。 それ以降の構成設定の変更は無視されます。  
+  
+ IRI サポートの詳細については、「解説」セクションを参照して、<xref:System.Uri>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="All">
+      <MemberSignature Language="C#" Value="All" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.UriIdnScope All = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.UriIdnScope.All" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.UriIdnScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この値は、Unicode ドメイン名を Punycode 同等の (IDN 名) に変換されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AllExceptIntranet">
+      <MemberSignature Language="C#" Value="AllExceptIntranet" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.UriIdnScope AllExceptIntranet = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.UriIdnScope.AllExceptIntranet" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.UriIdnScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この値は、すべての外部 Unicode ドメイン名 (IDN 名) と同等の Punycode を使用するに変換されます。 ここでは、ローカルのイントラネット上の国際化名の処理、イントラネットで使用される DNS サーバーは、Unicode 名をサポートする必要があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.UriIdnScope None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.UriIdnScope.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.UriIdnScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この値は、Unicode のドメイン名を Punycode を使用するには変換されません。 これは、既定値は、.NET Framework 2.0 の動作と一致します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

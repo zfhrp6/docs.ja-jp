@@ -1,0 +1,697 @@
+<Type Name="RolePrincipal" FullName="System.Web.Security.RolePrincipal">
+  <TypeSignature Language="C#" Value="public class RolePrincipal : System.Security.Claims.ClaimsPrincipal, System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit RolePrincipal extends System.Security.Claims.ClaimsPrincipal implements class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Security.RolePrincipal" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Claims.ClaimsPrincipal</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>ロールのメンバーシップを含む、現在の HTTP 要求に対するセキュリティ情報を表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.RolePrincipal>オブジェクトを実装して、<xref:System.Security.Principal.IPrincipal>インターフェイスし、の HTTP 要求の現在のセキュリティ コンテキストを表します。  
+  
+ ロール管理が有効な場合 (を参照してください<xref:System.Web.Security.Roles>) では、<xref:System.Web.Security.RoleManagerModule>割り当てます、<xref:System.Web.Security.RolePrincipal>オブジェクトを<xref:System.Web.HttpContext.User%2A>のプロパティ、 <xref:System.Web.HttpContext.Current%2A><xref:System.Web.HttpContext>です。  
+  
+ <xref:System.Web.Security.RolePrincipal>クラスは、現在の HTTP 要求のセキュリティ id を公開し、さらにロールのメンバーシップのチェックを実行します。 場合<xref:System.Web.Security.Roles.CacheRolesInCookie%2A>は`true`、続いて、<xref:System.Web.Security.RolePrincipal>オブジェクトはキャッシュされたロールの一覧を管理し、キャッシュの現在のユーザー ロールのメンバーシップを検索リストの先頭にの役割<xref:System.Web.Security.Roles.Provider%2A>です。 場合<xref:System.Web.Security.Roles.CacheRolesInCookie%2A>は`false`、<xref:System.Web.Security.RolePrincipal>オブジェクトは常に、ロール プロバイダーを使用してロールのメンバーシップを検索します。  
+  
+ <xref:System.Web.Security.RolePrincipal>オブジェクトが暗号化およびによって識別されるクッキーにキャッシュされているロール情報を暗号化解除、<xref:System.Web.Security.Roles.CookieName%2A>に基づいて、<xref:System.Web.Security.Roles.CookieProtectionValue%2A>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RolePrincipal (System.Security.Principal.IIdentity identity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Principal.IIdentity identity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.RolePrincipal.#ctor(System.Security.Principal.IIdentity)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="identity" Type="System.Security.Principal.IIdentity" />
+      </Parameters>
+      <Docs>
+        <param name="identity">作成するユーザー id、<see cref="T:System.Web.Security.RolePrincipal" />用です。</param>
+        <summary>インスタンスを作成、 <see cref="T:System.Web.Security.RolePrincipal" /> 、指定されたオブジェクト<paramref name="identity" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロード、<xref:System.Web.Security.RolePrincipal.%23ctor%2A>コンス トラクターは、新しい作成<xref:System.Web.Security.RolePrincipal>オブジェクトし、そのプロパティ値を初期化します。 によって識別される cookie からキャッシュされたロールの情報が読み取れません、<xref:System.Web.Security.Roles.CookieName%2A>プロパティです。 <xref:System.Web.Security.RolePrincipal.ProviderName%2A>プロパティに設定されている、<xref:System.Configuration.Provider.ProviderBase.Name%2A>の既定のロール プロバイダーです。  
+  
+ ロール管理を有効にする方法については、次を参照してください。、<xref:System.Web.Security.Roles>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例が新たに作成<xref:System.Web.Security.RolePrincipal>オブジェクト。 場合<xref:System.Web.Security.Roles.CacheRolesInCookie%2A>は`true`、例は、作成、<xref:System.Web.Security.RolePrincipal>で識別される cookie の cookie 情報、<xref:System.Web.Security.Roles.CookieName%2A>プロパティです。  
+  
+ [!code-csharp[System.Web.Security.RolePrincipal#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.RolePrincipal/CS/snippetscs.aspx#2)]
+ [!code-vb[System.Web.Security.RolePrincipal#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.RolePrincipal/VB/snippetsvb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="identity" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected RolePrincipal (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.RolePrincipal.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">データを読み込む先の <see cref="T:System.Runtime.Serialization.SerializationInfo" /> オブジェクト。</param>
+        <param name="context">このシリアル化のシリアル化先。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Security.RolePrincipal" />クラスに含まれている情報を使用して、指定した<see cref="T:System.Runtime.Serialization.SerializationInfo" />オブジェクトと指定したストリーム コンテキストを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RolePrincipal (System.Security.Principal.IIdentity identity, string encryptedTicket);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Principal.IIdentity identity, string encryptedTicket) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.RolePrincipal.#ctor(System.Security.Principal.IIdentity,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="identity" Type="System.Security.Principal.IIdentity" />
+        <Parameter Name="encryptedTicket" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="identity">作成するユーザー id、<see cref="T:System.Web.Security.RolePrincipal" />用です。</param>
+        <param name="encryptedTicket">暗号化されたロール情報を含む文字列です。</param>
+        <summary>インスタンスを作成、 <see cref="T:System.Web.Security.RolePrincipal" /> 、指定されたオブジェクト<paramref name="identity" />指定された対象からロール情報を含む<paramref name="encryptedTicket" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロード、<xref:System.Web.Security.RolePrincipal.%23ctor%2A>コンス トラクターは、新しい作成<xref:System.Web.Security.RolePrincipal>オブジェクトし、そのプロパティ値を初期化します。 現在のユーザー ロール情報は読み取りから提供された`encryptedTicket`およびでキャッシュされた、<xref:System.Web.Security.RolePrincipal>オブジェクト。 <xref:System.Web.Security.RolePrincipal.ProviderName%2A>プロパティに設定されている、<xref:System.Configuration.Provider.ProviderBase.Name%2A>の既定のロール プロバイダーです。  
+  
+ ロール管理を有効にする方法については、次を参照してください。、<xref:System.Web.Security.Roles>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例が新たに作成<xref:System.Web.Security.RolePrincipal>オブジェクト。 場合<xref:System.Web.Security.Roles.CacheRolesInCookie%2A>は`true`、例は、作成、<xref:System.Web.Security.RolePrincipal>で識別される cookie の cookie 情報、<xref:System.Web.Security.Roles.CookieName%2A>プロパティです。  
+  
+ [!code-csharp[System.Web.Security.RolePrincipal#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.RolePrincipal/CS/snippetscs.aspx#2)]
+ [!code-vb[System.Web.Security.RolePrincipal#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.RolePrincipal/VB/snippetsvb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="identity" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="encryptedTicket" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RolePrincipal (string providerName, System.Security.Principal.IIdentity identity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string providerName, class System.Security.Principal.IIdentity identity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.RolePrincipal.#ctor(System.String,System.Security.Principal.IIdentity)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="providerName" Type="System.String" />
+        <Parameter Name="identity" Type="System.Security.Principal.IIdentity" />
+      </Parameters>
+      <Docs>
+        <param name="providerName">ユーザーのロール プロバイダーの名前。</param>
+        <param name="identity">作成するユーザー id、<see cref="T:System.Web.Security.RolePrincipal" />用です。</param>
+        <summary>インスタンスを作成、 <see cref="T:System.Web.Security.RolePrincipal" /> 、指定されたオブジェクト<paramref name="identity" />指定して<paramref name="providerName" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロード、<xref:System.Web.Security.RolePrincipal.%23ctor%2A>コンス トラクターは、新しい作成<xref:System.Web.Security.RolePrincipal>オブジェクトし、そのプロパティ値を初期化します。 <xref:System.Web.Security.RolePrincipal.ProviderName%2A>で指定された値に設定されて、`providerName`パラメーター。  
+  
+ ロール管理を有効にする方法については、次を参照してください。、<xref:System.Web.Security.Roles>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="identity" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="providerName" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="providerName" />アプリケーションの構成に存在しないロール プロバイダーです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RolePrincipal (string providerName, System.Security.Principal.IIdentity identity, string encryptedTicket);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string providerName, class System.Security.Principal.IIdentity identity, string encryptedTicket) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.RolePrincipal.#ctor(System.String,System.Security.Principal.IIdentity,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="providerName" Type="System.String" />
+        <Parameter Name="identity" Type="System.Security.Principal.IIdentity" />
+        <Parameter Name="encryptedTicket" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="providerName">ユーザーのロール プロバイダーの名前。</param>
+        <param name="identity">作成するユーザー id、<see cref="T:System.Web.Security.RolePrincipal" />用です。</param>
+        <param name="encryptedTicket">暗号化されたロール情報を含む文字列です。</param>
+        <summary>インスタンスを作成、 <see cref="T:System.Web.Security.RolePrincipal" /> 、指定されたオブジェクト<paramref name="identity" />指定して<paramref name="providerName" />と指定された対象からロール情報<paramref name="encryptedTicket" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロード、<xref:System.Web.Security.RolePrincipal.%23ctor%2A>コンス トラクターは、新しい作成<xref:System.Web.Security.RolePrincipal>オブジェクトし、そのプロパティ値を初期化します。 現在のユーザー ロール情報は読み取りから提供された`encryptedTicket`およびでキャッシュされた、<xref:System.Web.Security.RolePrincipal>オブジェクト。 <xref:System.Web.Security.RolePrincipal.ProviderName%2A>で指定された値に設定されて、`providerName`パラメーター。  
+  
+ ロール管理を有効にする方法については、次を参照してください。、<xref:System.Web.Security.Roles>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="identity" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="encryptedTicket" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="providerName" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="providerName" />アプリケーションの構成に存在しないロール プロバイダーです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CachedListChanged">
+      <MemberSignature Language="C#" Value="public bool CachedListChanged { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CachedListChanged" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.RolePrincipal.CachedListChanged" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ロール名の一覧をキャッシュするかどうかを示す値を取得、<see cref="T:System.Web.Security.RolePrincipal" />オブジェクトが変更されました。</summary>
+        <value>
+          <see langword="true" />ロール名の一覧がキャッシュされている場合、<see cref="T:System.Web.Security.RolePrincipal" />変更後、それ以外のオブジェクトが表示された<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.RolePrincipal.CachedListChanged%2A>プロパティを返します`true`ロール名が既定のロールから取得された後<xref:System.Web.Security.Roles.Provider%2A>によってキャッシュに追加し、<xref:System.Web.Security.RolePrincipal.GetRoles%2A>メソッド、または、<xref:System.Web.Security.RolePrincipal.IsInRole%2A>メソッドの呼び出し、<xref:System.Web.Security.RoleProvider.IsUserInRole%2A>既定のロール プロバイダーのメソッドの応答を受信し、 `true`、その結果に渡されるロール名に、<xref:System.Web.Security.RolePrincipal.IsInRole%2A>キャッシュに追加されているメソッド。  
+  
+ <xref:System.Web.Security.RolePrincipal.CachedListChanged%2A>場合プロパティは true を返しますも<xref:System.Web.Security.Roles.CookieSlidingExpiration%2A>に設定されている`true`と<xref:System.Web.Security.RolePrincipal.ExpireDate%2A>が経過すると、新規の結果として得られる<xref:System.Web.Security.RolePrincipal.ExpireDate%2A>設定されています。  
+  
+   
+  
+## Examples  
+ 次の例では、ロール管理が有効になっている場合、現在のユーザー ロールのキャッシュ情報が表示されます。 ロール管理を有効にする方法については、次を参照してください。、<xref:System.Web.Security.Roles>クラスです。  
+  
+ [!code-aspx-csharp[System.Web.Security.RolePrincipal#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.RolePrincipal/CS/getroleinfocs.aspx#1)]
+ [!code-aspx-vb[System.Web.Security.RolePrincipal#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.RolePrincipal/VB/getroleinfovb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CookiePath">
+      <MemberSignature Language="C#" Value="public string CookiePath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CookiePath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.RolePrincipal.CookiePath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュされているロール名のクッキーへのパスを取得します。</summary>
+        <value>ロール名がキャッシュされているクッキーのパス。 既定値は / です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.RolePrincipal.CookiePath%2A>プロパティの値を返します、 `cookiePath` ASP.NET アプリケーションの Web.config ファイルからの属性です。 Cookie のパスの詳細については、次を参照してください。<xref:System.Web.HttpCookie.Path%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例では、ロール管理が有効になっている場合、現在のユーザー ロールのキャッシュ情報が表示されます。 ロール管理を有効にする方法については、次を参照してください。、<xref:System.Web.Security.Roles>クラスです。  
+  
+ [!code-aspx-csharp[System.Web.Security.RolePrincipal#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.RolePrincipal/CS/getroleinfocs.aspx#1)]
+ [!code-aspx-vb[System.Web.Security.RolePrincipal#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.RolePrincipal/VB/getroleinfovb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Expired">
+      <MemberSignature Language="C#" Value="public bool Expired { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Expired" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.RolePrincipal.Expired" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ロール クッキーの有効期限が切れているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ロール クッキーの有効期限が切れました。 場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.RolePrincipal.Expired%2A>プロパティから返される、`Boolean`ロール クッキーの有効期限が切れているかどうかを示す値に基づく、<xref:System.Web.Security.RolePrincipal.ExpireDate%2A>と現在の日付と時刻。  
+  
+   
+  
+## Examples  
+ 次の例では、ロール管理が有効になっている場合、現在のユーザー ロールのキャッシュ情報が表示されます。 ロール管理を有効にする方法については、次を参照してください。、<xref:System.Web.Security.Roles>クラスです。  
+  
+ [!code-aspx-csharp[System.Web.Security.RolePrincipal#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.RolePrincipal/CS/getroleinfocs.aspx#1)]
+ [!code-aspx-vb[System.Web.Security.RolePrincipal#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.RolePrincipal/VB/getroleinfovb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpireDate">
+      <MemberSignature Language="C#" Value="public DateTime ExpireDate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime ExpireDate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.RolePrincipal.ExpireDate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ロール クッキーの期限が切れる日時を取得します。</summary>
+        <value><see cref="T:System.DateTime" />ロール クッキーの有効期限が切れるときの値します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、ロール管理が有効になっている場合、現在のユーザー ロールのキャッシュ情報が表示されます。 ロール管理を有効にする方法については、次を参照してください。、<xref:System.Web.Security.Roles>クラスです。  
+  
+ [!code-aspx-csharp[System.Web.Security.RolePrincipal#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.RolePrincipal/CS/getroleinfocs.aspx#1)]
+ [!code-aspx-vb[System.Web.Security.RolePrincipal#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.RolePrincipal/VB/getroleinfovb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="protected override void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.RolePrincipal.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">データを読み込む先の <see cref="T:System.Runtime.Serialization.SerializationInfo" /> オブジェクト。</param>
+        <param name="context">このシリアル化のシリアル化先。</param>
+        <summary>追加、<see cref="T:System.Runtime.Serialization.SerializationInfo" />オブジェクトに指定したストリーム コンテキストを使用して、ターゲット オブジェクトをシリアル化するために必要とされるデータ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、<xref:System.Runtime.Serialization.ISerializable.GetObjectData%28System.Runtime.Serialization.SerializationInfo%2CSystem.Runtime.Serialization.StreamingContext%29> メソッドを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRoles">
+      <MemberSignature Language="C#" Value="public string[] GetRoles ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string[] GetRoles() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.RolePrincipal.GetRoles" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ロールの一覧を取得、<see cref="T:System.Web.Security.RolePrincipal" />のメンバーであります。</summary>
+        <returns>ロールの一覧を<see cref="T:System.Web.Security.RolePrincipal" />のメンバーであります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Web.Security.Roles.CacheRolesInCookie%2A>は`true`によって表されるユーザーのロール名がキャッシュされていると、 <xref:System.Web.Security.RolePrincipal>、続いて、<xref:System.Web.Security.RolePrincipal.GetRoles%2A>メソッドは、ユーザーがのメンバーであるキャッシュでロール名の一覧を返します。 ロール名がキャッシュされていない場合、<xref:System.Web.Security.RolePrincipal.GetRoles%2A>メソッドは、ユーザーが既定のロールからのメンバーであるロール名のリストを返します<xref:System.Web.Security.Roles.Provider%2A>です。 現在のロール名のみ<xref:System.Web.Security.Roles.ApplicationName%2A>が返されます。 ロール名がキャッシュされているかどうかを決定する、<xref:System.Web.Security.RolePrincipal>オブジェクト、チェック、<xref:System.Web.Security.RolePrincipal.IsRoleListCached%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ログオン ユーザーがのメンバーであるロールを表示します。  
+  
+ [!code-aspx-csharp[System.Web.Security.RolePrincipal#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.RolePrincipal/CS/GetRolescs.aspx#7)]
+ [!code-aspx-vb[System.Web.Security.RolePrincipal#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.RolePrincipal/VB/GetRolesvb.aspx#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.Provider.ProviderException"><see cref="P:System.Web.Security.RolePrincipal.Identity" /> プロパティが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Identity">
+      <MemberSignature Language="C#" Value="public override System.Security.Principal.IIdentity Identity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Principal.IIdentity Identity" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.RolePrincipal.Identity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Principal.IIdentity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の HTTP 要求のセキュリティ id を取得します。</summary>
+        <value>現在の HTTP 要求のセキュリティ id。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.RolePrincipal.Identity%2A>の<xref:System.Web.Security.RolePrincipal>場合、オブジェクトが設定、<xref:System.Web.Security.RolePrincipal>コンス トラクターが呼び出されます。  
+  
+   
+  
+## Examples  
+ 次の例では、ロール管理が有効になっている場合、現在のユーザー ロールのキャッシュ情報が表示されます。 ロール管理を有効にする方法については、次を参照してください。、<xref:System.Web.Security.Roles>クラスです。  
+  
+ [!code-aspx-csharp[System.Web.Security.RolePrincipal#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.RolePrincipal/CS/getroleinfocs.aspx#1)]
+ [!code-aspx-vb[System.Web.Security.RolePrincipal#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.RolePrincipal/VB/getroleinfovb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInRole">
+      <MemberSignature Language="C#" Value="public override bool IsInRole (string role);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsInRole(string role) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.RolePrincipal.IsInRole(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="role" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="role">検索するロール。</param>
+        <summary>ユーザーがによって表されるかどうかを示す値を取得、<see cref="T:System.Web.Security.RolePrincipal" />が指定されたロールです。</summary>
+        <returns>
+          <see langword="true" />によって表されるユーザーの場合、<see cref="T:System.Web.Security.RolePrincipal" />が指定されたロールです。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.RolePrincipal.IsInRole%2A>まず、<xref:System.Web.Security.RolePrincipal.IsRoleListCached%2A>プロパティを現在のユーザーのロール名のキャッシュされた一覧が使用できるかどうかを判断します。 場合、<xref:System.Web.Security.RolePrincipal.IsRoleListCached%2A>プロパティは`true`、指定されたロールのキャッシュされたリストがチェックされます。 場合、<xref:System.Web.Security.RolePrincipal.IsInRole%2A>メソッドには、キャッシュされた一覧で、指定したロールが検出されると、それを返します`true`です。  
+  
+ 場合<xref:System.Web.Security.RolePrincipal.IsInRole%2A>指定されたロールを見つけられませんが呼び出す、 <xref:System.Web.Security.RoleProvider.GetRolesForUser%2A> 、既定のメソッド<xref:System.Web.Security.Roles.Provider%2A>ユーザー名が構成済みのデータ ソースからロールに関連付けられているかどうかを決定するインスタンス<xref:System.Web.Security.Roles.ApplicationName%2A>値。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ログオン ユーザーがユーザー ロールを表示するユーザーを許可する前に、管理者ロールがかどうかを確認します。  
+  
+ [!code-aspx-csharp[System.Web.Security.RolePrincipal#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.RolePrincipal/CS/ViewRolescs.aspx#8)]
+ [!code-aspx-vb[System.Web.Security.RolePrincipal#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.RolePrincipal/VB/ViewRolesvb.aspx#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.Provider.ProviderException"><see cref="P:System.Web.Security.RolePrincipal.Identity" /> プロパティが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsRoleListCached">
+      <MemberSignature Language="C#" Value="public bool IsRoleListCached { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsRoleListCached" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.RolePrincipal.IsRoleListCached" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーのロールの一覧がクッキーにキャッシュされているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ロール名が、cookie; にキャッシュされている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`cacheRolesInCookie`に設定されているアプリケーションの Web.config ファイルで属性`true`、特定のロールのユーザー メンバーシップをオンにすると、現在のユーザーのロール名の一覧が cookie に書き込まれます。 <xref:System.Web.Security.RolePrincipal.IsRoleListCached%2A>プロパティは、ロール名を cookie に書き込まれているかどうかを示します。 なお、いなくても、`cacheRolesInCookie`構成属性は、`true`では、<xref:System.Web.Security.RolePrincipal.IsRoleListCached%2A>プロパティは返されません`true`まで cookie にロール情報が書き込まれた後にします。 ユーザーは、実行されるロールはチェックを行わない場合<xref:System.Web.Security.RolePrincipal.IsRoleListCached%2A>戻ります`false`です。  
+  
+   
+  
+## Examples  
+ 次の例では、ロール管理が有効になっている場合、現在のユーザー ロールのキャッシュ情報が表示されます。 ロール管理を有効にする方法については、次を参照してください。、<xref:System.Web.Security.Roles>クラスです。  
+  
+ [!code-aspx-csharp[System.Web.Security.RolePrincipal#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.RolePrincipal/CS/getroleinfocs.aspx#1)]
+ [!code-aspx-vb[System.Web.Security.RolePrincipal#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.RolePrincipal/VB/getroleinfovb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IssueDate">
+      <MemberSignature Language="C#" Value="public DateTime IssueDate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime IssueDate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.RolePrincipal.IssueDate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ロール クッキーが発行された日時を取得します。</summary>
+        <value><see cref="T:System.DateTime" />ロール クッキーが発行されました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、ロール管理が有効になっている場合、現在のユーザー ロールのキャッシュ情報が表示されます。 ロール管理を有効にする方法については、次を参照してください。、<xref:System.Web.Security.Roles>クラスです。  
+  
+ [!code-aspx-csharp[System.Web.Security.RolePrincipal#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.RolePrincipal/CS/getroleinfocs.aspx#1)]
+ [!code-aspx-vb[System.Web.Security.RolePrincipal#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.RolePrincipal/VB/getroleinfovb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderName">
+      <MemberSignature Language="C#" Value="public string ProviderName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ProviderName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.RolePrincipal.ProviderName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>格納し、ユーザーのロール情報を取得するロール プロバイダーの名前を取得します。</summary>
+        <value>格納し、ユーザーのロール情報を取得するロール プロバイダーの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.RolePrincipal.ProviderName%2A>プロパティによって表されるユーザーのロール情報を管理するロール プロバイダーの名前を公開する、<xref:System.Web.Security.RolePrincipal>オブジェクト。 これによりを使用して、ユーザーの特定のロール プロバイダーのインスタンスへのアクセスを<xref:System.Web.Security.Roles.Providers%2A>のプロパティ、<xref:System.Web.Security.Roles>プロバイダーは、アプリケーションの既定のプロバイダー、かどうかに関係なくクラスです。 たとえばを受け取るメソッドを作成することがあります、<xref:System.Web.Security.RolePrincipal>として入力し、表されるユーザーのロールの一覧を返します。 適切なロール プロバイダーを使用するのロールのリストを返すことを確認することができます、<xref:System.Web.Security.RolePrincipal>を呼び出して、<xref:System.Web.Security.RoleProvider.GetRolesForUser%2A>からロール プロバイダーのメソッド、<xref:System.Web.Security.Roles.Providers%2A>でインデックスがコレクション、<xref:System.Web.Security.RolePrincipal.ProviderName%2A>プロパティの値。  
+  
+ 設定する、<xref:System.Web.Security.RolePrincipal>オブジェクト要求ごとに使用する必要があります、<xref:System.Web.Security.RoleManagerModule.GetRoles>アプリケーションの Global.asax ファイルで定義されたイベント ハンドラー。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDirty">
+      <MemberSignature Language="C#" Value="public void SetDirty ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetDirty() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.RolePrincipal.SetDirty" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>変更されたこととしてキャッシュされたロールの一覧を示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.RolePrincipal.SetDirty%2A>メソッドは、設定によって変更されてもとしてキャッシュされたロールの一覧を示します。<xref:System.Web.Security.RolePrincipal.CachedListChanged%2A>に`true`と<xref:System.Web.Security.RolePrincipal.IsRoleListCached%2A>に`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.ISerializable.GetObjectData">
+      <MemberSignature Language="C#" Value="void ISerializable.GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.Serialization.ISerializable.GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.RolePrincipal.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">データの読み込み先となる <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">このシリアル化のシリアル化先。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Runtime.Serialization.ISerializationSurrogate.GetObjectData(System.Object,System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />」をご覧ください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.Security.RolePrincipal> のインスタンスが <xref:System.Runtime.Serialization.ISerializable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToEncryptedTicket">
+      <MemberSignature Language="C#" Value="public string ToEncryptedTicket ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ToEncryptedTicket() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.RolePrincipal.ToEncryptedTicket" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>キャッシュ ロール情報を返します、<see cref="T:System.Web.Security.RolePrincipal" />オブジェクトの暗号化に基づいて、<see cref="P:System.Web.Security.Roles.CookieProtectionValue" />です。</summary>
+        <returns>ロール情報と共にキャッシュされる、<see cref="T:System.Web.Security.RolePrincipal" />オブジェクトの暗号化に基づいて、<see cref="P:System.Web.Security.Roles.CookieProtectionValue" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される値、<xref:System.Web.Security.RolePrincipal.ToEncryptedTicket%2A>メソッドがロールの cookie に格納されているときに<xref:System.Web.Security.Roles.CacheRolesInCookie%2A>は`true`します。  
+  
+   
+  
+## Examples  
+ 次のコード例の結果の書き込み、<xref:System.Web.Security.RolePrincipal.ToEncryptedTicket%2A>ロール クッキー メソッドです。  
+  
+ [!code-csharp[System.Web.Security.RolePrincipal#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.RolePrincipal/CS/snippetscs.aspx#6)]
+ [!code-vb[System.Web.Security.RolePrincipal#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.RolePrincipal/VB/snippetsvb.aspx#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public int Version { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Version" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.RolePrincipal.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ロール クッキーのバージョン番号を取得します。</summary>
+        <value>ロール クッキーのバージョン番号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET の将来のリリースでロールの cookie の形式を変更して、使用するロールの cookie にバージョン番号を含めることによって、<xref:System.Web.Security.RolePrincipal.Version%2A>を異なる形式の間で区別するためのプロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、ロール管理が有効になっている場合、現在のユーザー ロールのキャッシュ情報が表示されます。 ロール管理を有効にする方法については、次を参照してください。、<xref:System.Web.Security.Roles>クラスです。  
+  
+ [!code-aspx-csharp[System.Web.Security.RolePrincipal#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.RolePrincipal/CS/getroleinfocs.aspx#1)]
+ [!code-aspx-vb[System.Web.Security.RolePrincipal#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.RolePrincipal/VB/getroleinfovb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

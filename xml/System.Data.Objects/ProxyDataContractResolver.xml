@@ -1,0 +1,114 @@
+<Type Name="ProxyDataContractResolver" FullName="System.Data.Objects.ProxyDataContractResolver">
+  <TypeSignature Language="C#" Value="public class ProxyDataContractResolver : System.Runtime.Serialization.DataContractResolver" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ProxyDataContractResolver extends System.Runtime.Serialization.DataContractResolver" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Objects.ProxyDataContractResolver" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Runtime.Serialization.DataContractResolver</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>このクラスは、用に作成されたプロキシ型を解決するのに役立ち[永続化非依存](http://msdn.microsoft.com/en-us/5e0fb82a-b6d1-41a1-b37b-c12db61629d3)データ クラスを永続化非依存オブジェクトの実際の型。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ProxyDataContractResolver>クラスが使用されて、<xref:System.Runtime.Serialization.DataContractSerializer>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProxyDataContractResolver ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ProxyDataContractResolver.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Objects.ProxyDataContractResolver" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveName">
+      <MemberSignature Language="C#" Value="public override Type ResolveName (string typeName, string typeNamespace, Type declaredType, System.Runtime.Serialization.DataContractResolver knownTypeResolver);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Type ResolveName(string typeName, string typeNamespace, class System.Type declaredType, class System.Runtime.Serialization.DataContractResolver knownTypeResolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ProxyDataContractResolver.ResolveName(System.String,System.String,System.Type,System.Runtime.Serialization.DataContractResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="typeNamespace" Type="System.String" />
+        <Parameter Name="declaredType" Type="System.Type" />
+        <Parameter Name="knownTypeResolver" Type="System.Runtime.Serialization.DataContractResolver" />
+      </Parameters>
+      <Docs>
+        <param name="typeName">マップする <see langword="xsi:type" /> 情報。</param>
+        <param name="typeNamespace"><see langword="xsi:type" /> の名前空間。</param>
+        <param name="declaredType">宣言された型。</param>
+        <param name="knownTypeResolver"><see cref="T:System.Data.Objects.ProxyDataContractResolver" /> のインスタンス。</param>
+        <summary>逆シリアル化中にいずれかのマップ<see langword="xsi:type" />の実際の型に情報を[永続化非依存](http://msdn.microsoft.com/en-us/5e0fb82a-b6d1-41a1-b37b-c12db61629d3)オブジェクト。</summary>
+        <returns><see langword="xsi:type" /> をマップする型を返します。 <see langword="xsi:type" /> に一致する既知の型が検出されない場合、<see langword="null" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細についてを参照してください: [POCO エンティティの操作](http://msdn.microsoft.com/en-us/5e0fb82a-b6d1-41a1-b37b-c12db61629d3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryResolveType">
+      <MemberSignature Language="C#" Value="public override bool TryResolveType (Type dataContractType, Type declaredType, System.Runtime.Serialization.DataContractResolver knownTypeResolver, out System.Xml.XmlDictionaryString typeName, out System.Xml.XmlDictionaryString typeNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool TryResolveType(class System.Type dataContractType, class System.Type declaredType, class System.Runtime.Serialization.DataContractResolver knownTypeResolver, [out] class System.Xml.XmlDictionaryString&amp; typeName, [out] class System.Xml.XmlDictionaryString&amp; typeNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ProxyDataContractResolver.TryResolveType(System.Type,System.Type,System.Runtime.Serialization.DataContractResolver,System.Xml.XmlDictionaryString@,System.Xml.XmlDictionaryString@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataContractType" Type="System.Type" />
+        <Parameter Name="declaredType" Type="System.Type" />
+        <Parameter Name="knownTypeResolver" Type="System.Runtime.Serialization.DataContractResolver" />
+        <Parameter Name="typeName" Type="System.Xml.XmlDictionaryString&amp;" RefType="out" />
+        <Parameter Name="typeNamespace" Type="System.Xml.XmlDictionaryString&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="dataContractType">永続化非依存オブジェクトの実際の型。</param>
+        <param name="declaredType">宣言された型。</param>
+        <param name="knownTypeResolver"><see cref="T:System.Data.Objects.ProxyDataContractResolver" /> のインスタンス。</param>
+        <param name="typeName">このメソッドが戻るときにの一覧を含む<see langword="xsi:type" />宣言します。</param>
+        <param name="typeNamespace">このメソッドが戻るときに使用される名前空間の一覧が含まれています。</param>
+        <summary>シリアル化中の実際の型をマップ<see langword="xsi:type" />情報。</summary>
+        <returns>
+          <see langword="true" />場合は、型が解決されました。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細についてを参照してください: [POCO エンティティの操作](http://msdn.microsoft.com/en-us/5e0fb82a-b6d1-41a1-b37b-c12db61629d3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,220 @@
+<Type Name="InertiaExpansionBehavior2D" FullName="System.Windows.Input.Manipulations.InertiaExpansionBehavior2D">
+  <TypeSignature Language="C#" Value="public sealed class InertiaExpansionBehavior2D : System.Windows.Input.Manipulations.InertiaParameters2D" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit InertiaExpansionBehavior2D extends System.Windows.Input.Manipulations.InertiaParameters2D" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.Manipulations.InertiaExpansionBehavior2D" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Input.Manipulations.InertiaParameters2D</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>慣性プロセッサの必要な展開の動作について説明します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InertiaExpansionBehavior2D ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Manipulations.InertiaExpansionBehavior2D.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Input.Manipulations.InertiaExpansionBehavior2D" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesiredDeceleration">
+      <MemberSignature Language="C#" Value="public float DesiredDeceleration { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 DesiredDeceleration" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Manipulations.InertiaExpansionBehavior2D.DesiredDeceleration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または乗ミリ秒あたり座標単位で必要な拡張減速を設定します。</summary>
+        <value>座標のミリ秒単位で、必要な拡張減速の 2 乗。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値と同時に、<xref:System.Windows.Input.Manipulations.InertiaExpansionBehavior2D.DesiredExpansionX%2A>と<xref:System.Windows.Input.Manipulations.InertiaExpansionBehavior2D.DesiredExpansionY%2A>プロパティです。 このプロパティは設定<xref:System.Windows.Input.Manipulations.InertiaExpansionBehavior2D.DesiredExpansionX%2A>と<xref:System.Windows.Input.Manipulations.InertiaExpansionBehavior2D.DesiredExpansionY%2A>に`NaN`です。  
+  
+ このプロパティの既定値は `NaN` です。  
+  
+ 慣性プロセッサの実行中に、このプロパティを設定することはできません。それ以外の場合、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesiredExpansionX">
+      <MemberSignature Language="C#" Value="public float DesiredExpansionX { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 DesiredExpansionX" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Manipulations.InertiaExpansionBehavior2D.DesiredExpansionX" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または座標単位で、x 軸に必要な拡張を設定します。</summary>
+        <value>座標単位で、x 軸に必要な拡張します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 拡張は比例する必要があります。 このプロパティの値がの値と等しく必要があります、<xref:System.Windows.Input.Manipulations.InertiaExpansionBehavior2D.DesiredExpansionY%2A>プロパティ、慣性プロセッサが起動します。 それ以外の場合、例外がスローされます。  
+  
+ このプロパティの値と同時に、<xref:System.Windows.Input.Manipulations.InertiaExpansionBehavior2D.DesiredDeceleration%2A>プロパティです。 このプロパティは設定<xref:System.Windows.Input.Manipulations.InertiaExpansionBehavior2D.DesiredDeceleration%2A>に`NaN`です。  
+  
+ このプロパティの既定値は `NaN` です。  
+  
+ <xref:System.Windows.Input.Manipulations.InertiaExpansionBehavior2D.DesiredExpansionX%2A>有限の正の数値でなければなりません。 展開の割合はによって決定されます、<xref:System.Windows.Input.Manipulations.InertiaExpansionBehavior2D.InitialVelocityX%2A>プロパティです。  
+  
+ 慣性プロセッサの実行中に、このプロパティを設定することはできません。それ以外の場合、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesiredExpansionY">
+      <MemberSignature Language="C#" Value="public float DesiredExpansionY { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 DesiredExpansionY" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Manipulations.InertiaExpansionBehavior2D.DesiredExpansionY" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または座標単位で、y 軸に沿って目的の拡張を設定します。</summary>
+        <value>座標単位で、y 軸に沿って目的拡張します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 拡張は比例する必要があります。 このプロパティの値がの値と等しく必要があります、<xref:System.Windows.Input.Manipulations.InertiaExpansionBehavior2D.DesiredExpansionX%2A>プロパティ、慣性プロセッサが起動します。 それ以外の場合、例外がスローされます。  
+  
+ このプロパティの値と同時に、<xref:System.Windows.Input.Manipulations.InertiaExpansionBehavior2D.DesiredDeceleration%2A>プロパティです。 このプロパティは設定<xref:System.Windows.Input.Manipulations.InertiaExpansionBehavior2D.DesiredDeceleration%2A>に`NaN`です。  
+  
+ このプロパティの既定値は `NaN` です。  
+  
+ <xref:System.Windows.Input.Manipulations.InertiaExpansionBehavior2D.DesiredExpansionY%2A>有限の正の数値でなければなりません。 展開の割合はによって決定されます、<xref:System.Windows.Input.Manipulations.InertiaExpansionBehavior2D.InitialVelocityY%2A>プロパティです。  
+  
+ 慣性プロセッサの実行中に、このプロパティを設定することはできません。それ以外の場合、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitialRadius">
+      <MemberSignature Language="C#" Value="public float InitialRadius { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 InitialRadius" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Manipulations.InertiaExpansionBehavior2D.InitialRadius" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または座標単位で平均半径の初期を設定します。</summary>
+        <value>平均半径の初期値、座標単位です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 慣性プロセッサはこのプロパティを使用して、展開されている要素の倍率を計算します。  
+  
+ インスタンスの場合、<xref:System.Windows.Input.Manipulations.InertiaExpansionBehavior2D.InitialVelocityX%2A>と<xref:System.Windows.Input.Manipulations.InertiaExpansionBehavior2D.InitialVelocityY%2A>3.75 にプロパティが設定されて、これが表示されたら、慣性プロセッサ開始膨張速度 (拡張は比例である必要があります)、両方の軸に沿ってミリ秒あたり 3.75 座標単位です。  
+  
+ 展開の割合に関連付けられているスケール ファクターは、展開されている要素のサイズによって異なります。 Small の要素の場合は、この展開の速度は、大きな要素のより大きなスケール ファクターを表します。 設定して要素のサイズの慣性プロセッサに通知する、<xref:System.Windows.Input.Manipulations.InertiaExpansionBehavior2D.InitialRadius%2A>プロパティです。  
+  
+ 既定値、<xref:System.Windows.Input.Manipulations.InertiaExpansionBehavior2D.InitialRadius%2A>プロパティは 1.0 です。  
+  
+ 有効な値は、1.0 以上の有限数です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitialVelocityX">
+      <MemberSignature Language="C#" Value="public float InitialVelocityX { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 InitialVelocityX" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Manipulations.InertiaExpansionBehavior2D.InitialVelocityX" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または 1 ミリ秒あたり座標単位で、x 軸に沿って膨張の初期速度を設定します。</summary>
+        <value>座標のミリ秒単位で、x 軸に沿って膨張の初期速度。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 拡張は比例する必要があります。 このプロパティの値がの値と等しく必要があります、<xref:System.Windows.Input.Manipulations.InertiaExpansionBehavior2D.InitialVelocityY%2A>プロパティ、慣性プロセッサが起動します。 それ以外の場合、例外がスローされます。  
+  
+ このプロパティの既定値は `NaN` です。 このプロパティと<xref:System.Windows.Input.Manipulations.InertiaExpansionBehavior2D.InitialVelocityY%2A>またはこのプロパティを設定する既定値から変更されていないと<xref:System.Windows.Input.Manipulations.InertiaExpansionBehavior2D.InitialVelocityY%2A>をゼロ (0) が無効になります慣性の拡張。  
+  
+ 慣性プロセッサの実行中に、このプロパティを設定することはできません。それ以外の場合、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitialVelocityY">
+      <MemberSignature Language="C#" Value="public float InitialVelocityY { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 InitialVelocityY" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Manipulations.InertiaExpansionBehavior2D.InitialVelocityY" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または 1 ミリ秒あたり座標単位で、y 軸に沿って膨張の初期速度を設定します。</summary>
+        <value>座標のミリ秒単位で、y 軸に沿って膨張の初期速度。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 拡張は比例する必要があります。 このプロパティの値がの値と等しく必要があります、<xref:System.Windows.Input.Manipulations.InertiaExpansionBehavior2D.InitialVelocityX%2A>プロパティ、慣性プロセッサが起動します。 それ以外の場合、例外がスローされます。  
+  
+ このプロパティの既定値は `NaN` です。 このプロパティと<xref:System.Windows.Input.Manipulations.InertiaExpansionBehavior2D.InitialVelocityX%2A>またはこのプロパティを設定する既定値から変更されていないと<xref:System.Windows.Input.Manipulations.InertiaExpansionBehavior2D.InitialVelocityX%2A>をゼロ (0) が無効になります慣性の拡張。  
+  
+ 慣性プロセッサの実行中に、このプロパティを設定することはできません。それ以外の場合、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

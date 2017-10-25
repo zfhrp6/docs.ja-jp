@@ -1,0 +1,335 @@
+<Type Name="MaskDescriptor" FullName="System.Windows.Forms.Design.MaskDescriptor">
+  <TypeSignature Language="C#" Value="public abstract class MaskDescriptor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit MaskDescriptor extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Design.MaskDescriptor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>マスクされたテキスト ボックスの UI 型エディターのオプションを提供する派生クラスのメンバーのセットを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Design.MaskDescriptor>抽象クラスは、すべてのマスク記述子を実装する必要があるプロパティの共通セットを定義します。 UI 型エディターをで使用するための定義済みのマスクのオプションを作成するマスク記述子を使用することができます、<xref:System.Windows.Forms.MaskedTextBox>です。 たとえば、 [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] Postal Code、時刻、さまざまな日付形式、および電話番号などのデータの定義済みのマスクを提供します。 定義済みのすべてのマスクが関連付けられる、<xref:System.ComponentModel.MaskedTextProvider>解析エンジンです。  
+  
+ 検出できます<xref:System.Windows.Forms.Design.MaskDescriptor>種類のクエリを実行して、デザイン時に、<xref:System.ComponentModel.Design.ITypeDiscoveryService>サービス プロバイダー。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected MaskDescriptor ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.MaskDescriptor.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.Design.MaskDescriptor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Design.MaskDescriptor.%23ctor%2A>コンパイラが指定した既定のコンス トラクターは、します。 によって既定のコンス トラクターが必要な<xref:System.ComponentModel.Design.ITypeDiscoveryService>サービス プロバイダー。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Culture">
+      <MemberSignature Language="C#" Value="public virtual System.Globalization.CultureInfo Culture { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.CultureInfo Culture" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Design.MaskDescriptor.Culture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Globalization.CultureInfo" />マスク用に作成されたロケールを表すです。</summary>
+        <value>A<see cref="T:System.Globalization.CultureInfo" />マスク用に作成されたロケールを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object maskDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object maskDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.MaskDescriptor.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="maskDescriptor" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="maskDescriptor">現在の <see cref="T:System.Windows.Forms.Design.MaskDescriptor" /> と比較する <see cref="T:System.Windows.Forms.Design.MaskDescriptor" />。</param>
+        <summary>指定した <see cref="T:System.Windows.Forms.Design.MaskDescriptor" /> が現在の <see cref="T:System.Windows.Forms.Design.MaskDescriptor" /> と等しいかどうかを示します。</summary>
+        <returns>
+          指定した <see langword="true" /> が現在の <see cref="T:System.Windows.Forms.Design.MaskDescriptor" /> と等しい場合は <see cref="T:System.Windows.Forms.Design.MaskDescriptor" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Design.MaskDescriptor.Equals%2A>メソッドを判断するかどうか`maskDescriptor`し、現在のマスク記述子が同じマスクを説明します。  
+  
+ このメソッドが戻る`true`両方のマスク記述子に、次の条件が満たされた場合。  
+  
+ 1. <xref:System.Windows.Forms.Design.MaskDescriptor.Mask%2A>記述子をマスク両方のプロパティは同じです。  
+  
+ 2. 検証する型は、両方のマスク記述子に対して同じです。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.Design.MaskDescriptor.Name%2A>ため、プロパティは考慮されませんが、<xref:System.ComponentModel.MaskedTextProvider>と<xref:System.Windows.Forms.MaskedTextBox>クラスは使用しないでください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.MaskDescriptor.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>特定の型のハッシュ関数として機能します。</summary>
+        <returns>現在の <see cref="T:System.Object" /> のハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsValidMaskDescriptor">
+      <MemberSignature Language="C#" Value="public static bool IsValidMaskDescriptor (System.Windows.Forms.Design.MaskDescriptor maskDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsValidMaskDescriptor(class System.Windows.Forms.Design.MaskDescriptor maskDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.MaskDescriptor.IsValidMaskDescriptor(System.Windows.Forms.Design.MaskDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="maskDescriptor" Type="System.Windows.Forms.Design.MaskDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="maskDescriptor">有効性をテストするマスク記述子。</param>
+        <summary>指定したマスク記述子が有効でありマスクの一覧に追加できるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="maskDescriptor" />が有効であるそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Design.MaskDescriptor.IsValidMaskDescriptor%2A>メソッドを判断するかどうか`maskDescriptor`が有効では、マスクの一覧に追加することができます。  
+  
+ 有効な<xref:System.Windows.Forms.Design.MaskDescriptor>次の条件を満たす必要があります。  
+  
+-   いない`null`です。  
+  
+-   いない`null`または空のマスク。  
+  
+-   いない`null`または空の名前。  
+  
+-   いない`null`または空のサンプルです。  
+  
+-   サンプルは、マスクに基づいて正しいと必要な編集のすべての文字が提供されています。 つまり、マスクが完了したが、必ずしも完全ではありません。  
+  
+-   このサンプルに基づく有効な<xref:System.Windows.Forms.Design.MaskDescriptor.ValidatingType%2A>オブジェクト、存在する場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsValidMaskDescriptor">
+      <MemberSignature Language="C#" Value="public static bool IsValidMaskDescriptor (System.Windows.Forms.Design.MaskDescriptor maskDescriptor, out string validationErrorDescription);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsValidMaskDescriptor(class System.Windows.Forms.Design.MaskDescriptor maskDescriptor, [out] string&amp; validationErrorDescription) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.MaskDescriptor.IsValidMaskDescriptor(System.Windows.Forms.Design.MaskDescriptor,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="maskDescriptor" Type="System.Windows.Forms.Design.MaskDescriptor" />
+        <Parameter Name="validationErrorDescription" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="maskDescriptor">有効性をテストするマスク記述子。</param>
+        <param name="validationErrorDescription">検証エラーを表す文字列。 検証エラーが発生していない場合、 <c>validationErrorDescription</c>は<see cref="F:System.String.Empty" />します。</param>
+        <summary>指定したマスク記述子が有効でありが有効でない場合は、エラーの説明を提供するかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="maskDescriptor" />が有効であるそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Design.MaskDescriptor.IsValidMaskDescriptor%2A>メソッドを判断するかどうか`maskDescriptor`が有効では、マスクの一覧に追加することができます。  
+  
+ 有効な<xref:System.Windows.Forms.Design.MaskDescriptor>次の条件を満たす必要があります。  
+  
+-   いない`null`です。  
+  
+-   いない`null`または空のマスク。  
+  
+-   いない`null`または空の名前。  
+  
+-   いない`null`または空のサンプルです。  
+  
+-   サンプルは、マスクに基づいて正しいと必要な編集のすべての文字が提供されています。 つまり、マスクが完了したが、必ずしも完全ではありません。  
+  
+-   このサンプルに基づく有効な<xref:System.Windows.Forms.Design.MaskDescriptor.ValidatingType%2A>オブジェクト、存在する場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Mask">
+      <MemberSignature Language="C#" Value="public abstract string Mask { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Mask" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Design.MaskDescriptor.Mask" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>定義するマスクを取得します。</summary>
+        <value>A<see cref="T:System.String" />定義されているマスクを含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 定義されている、マスクは、唯一の有効な文字を含める必要があります、<xref:System.ComponentModel.MaskedTextProvider.IsValidMaskChar%2A>のメソッド、<xref:System.ComponentModel.MaskedTextProvider>クラスです。 定義済みのマスクを選択すると[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]、その<xref:System.Windows.Forms.Design.MaskDescriptor.Mask%2A>プロパティが表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public abstract string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Design.MaskDescriptor.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マスクのわかりやすい名前を取得します。</summary>
+        <value>A<see cref="T:System.String" />名またはの簡単な説明を含む、<see cref="P:System.Windows.Forms.Design.MaskDescriptor.Mask" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Design.MaskDescriptor.Name%2A>でプロパティを表示、**マスク説明**のビジュアル エディター内の列、<xref:System.Windows.Forms.MaskedTextBox>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Sample">
+      <MemberSignature Language="C#" Value="public abstract string Sample { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Sample" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Design.MaskDescriptor.Sample" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マスクの書式設定された文字列のサンプルを取得します。</summary>
+        <value>A<see cref="T:System.String" />を使用して書式設定されているテキストを含む、<see cref="P:System.Windows.Forms.Design.MaskDescriptor.Mask" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Design.MaskDescriptor.Sample%2A>でプロパティを表示、**データ形式**のビジュアル エディター内の列、<xref:System.Windows.Forms.MaskedTextBox>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.MaskDescriptor.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のオブジェクトを表す文字列を返します。</summary>
+        <returns>現在のオブジェクトを表す文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidatingType">
+      <MemberSignature Language="C#" Value="public abstract Type ValidatingType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ValidatingType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Design.MaskDescriptor.ValidatingType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マスクに関連付けられている検証を提供する型を取得します。</summary>
+        <value><see cref="T:System.Type" />に対して書式設定された文字列を検証します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Design.MaskDescriptor.ValidatingType%2A>プロパティを使用して、マスクを適用した後に、入力文字列を検証します。 直接対応、<xref:System.Windows.Forms.MaskedTextBox.ValidatingType%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Windows.Forms.MaskedTextBox>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

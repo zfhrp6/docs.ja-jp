@@ -1,0 +1,85 @@
+<Type Name="IMultipleResults" FullName="System.Data.Linq.IMultipleResults">
+  <TypeSignature Language="C#" Value="public interface IMultipleResults : IDisposable, System.Data.Linq.IFunctionResult" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IMultipleResults implements class System.Data.Linq.IFunctionResult, class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Linq.IMultipleResults" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Linq</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Data.Linq.IFunctionResult</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>表すマップされた関数または変数を持つクエリの結果には、シーケンスが返されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の SQL コードの例では、結果形状は入力値 (`shape =1` または `shape = 2`) に応じて変わります。 予測が返される順序は定義されません。  
+  
+   
+  
+## Examples  
+  
+```  
+CREATE PROCEDURE VariableResultShapes(@shape int)  
+AS  
+if(@shape = 1)  
+    select CustomerID, ContactTitle, CompanyName from customers  
+else if(@shape = 2)  
+    select OrderID, ShipName from orders  
+```  
+  
+ [!code-csharp[DLinqSprox#4](~/samples/snippets/csharp/VS_Snippets_Data/DLinqSprox/cs/northwind-sprox.cs#4)]
+ [!code-vb[DLinqSprox#4](~/samples/snippets/visualbasic/VS_Snippets_Data/DLinqSprox/vb/northwind-sprox.vb#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetResult&lt;TElement&gt;">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;TElement&gt; GetResult&lt;TElement&gt; ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;!!TElement&gt; GetResult&lt;TElement&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.IMultipleResults.GetResult``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;TElement&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TElement" />
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="TElement">返されるシーケンスの型。</typeparam>
+        <summary>指定した型のシーケンスとして次の結果を取得します。</summary>
+        <returns>結果を反復処理する列挙です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このストアド プロシージャを実行するには、次のようなコードを使用します。  
+  
+> [!NOTE]
+>  ストアド プロシージャに対する知識に基づいて、<xref:System.Data.Linq.IMultipleResults.GetResult%2A> パターンを使用し、正しい型の列挙子を取得する必要があります。  
+  
+   
+  
+## Examples  
+ [!code-csharp[DLinqSprox#5](~/samples/snippets/csharp/VS_Snippets_Data/DLinqSprox/cs/Program.cs#5)]
+ [!code-vb[DLinqSprox#5](~/samples/snippets/visualbasic/VS_Snippets_Data/DLinqSprox/vb/Module1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

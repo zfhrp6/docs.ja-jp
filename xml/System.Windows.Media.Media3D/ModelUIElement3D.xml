@@ -1,0 +1,157 @@
+<Type Name="ModelUIElement3D" FullName="System.Windows.Media.Media3D.ModelUIElement3D">
+  <TypeSignature Language="C#" Value="public sealed class ModelUIElement3D : System.Windows.UIElement3D" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ModelUIElement3D extends System.Windows.UIElement3D" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Media3D.ModelUIElement3D" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.UIElement3D</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Model")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>入力、フォーカス、およびイベントをサポートする 3-D モデルを表示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.ModelUIElement3D>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例を使用して 2 つのキューブを作成する方法を示しています、<xref:System.Windows.Media.Media3D.ModelUIElement3D>クラス。  
+  
+ [!code-xaml[ContainerModelSample#Viewport3D](~/samples/snippets/csharp/VS_Snippets_Wpf/ContainerModelSample/CSharp/Window1.xaml#viewport3d)]  
+  
+ キューブは、マウス ダウン次のイベント ハンドラーをイベントに応答します。  
+  
+  
+  
+  
+ サンプル全体については、次を参照してください。 [3-D サンプルでのイベントの処理](http://go.microsoft.com/fwlink/?LinkID=159992)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ModelUIElement3D ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.ModelUIElement3D.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Media3D.ContainerUIElement3D" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.ModelUIElement3D.%23ctor%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Model">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Media3D.Model3D Model { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Media3D.Model3D Model" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Media3D.ModelUIElement3D.Model" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.Model3D</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.Media3D.Model3D" />をレンダリングします。</summary>
+        <value><see cref="T:System.Windows.Media.Media3D.Model3D" />をレンダリングします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.ModelUIElement3D.Model%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+<a name="dependencyPropertyInfo_Model"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Media3D.ModelUIElement3D.ModelProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例を使用して 2 つのキューブを作成する方法を示しています、<xref:System.Windows.Media.Media3D.ModelUIElement3D>クラス。  
+  
+ [!code-xaml[ContainerModelSample#Viewport3D](~/samples/snippets/csharp/VS_Snippets_Wpf/ContainerModelSample/CSharp/Window1.xaml#viewport3d)]  
+  
+ キューブは、マウス ダウン次のイベント ハンドラーをイベントに応答します。  
+  
+  
+  
+  
+ サンプル全体については、次を参照してください。 [3-D サンプルでのイベントの処理](http://go.microsoft.com/fwlink/?LinkID=159992)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ModelProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ModelProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ModelProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Media3D.ModelUIElement3D.ModelProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Media3D.ModelUIElement3D.Model" /> 依存関係プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.ModelUIElement3D.ModelProperty>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreateAutomationPeer">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.ModelUIElement3D.OnCreateAutomationPeer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationPeer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

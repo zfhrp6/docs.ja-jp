@@ -1,0 +1,267 @@
+<Type Name="ListViewDeletedEventArgs" FullName="System.Web.UI.WebControls.ListViewDeletedEventArgs">
+  <TypeSignature Language="C#" Value="public class ListViewDeletedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ListViewDeletedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ListViewDeletedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.UI.WebControls.ListView.ItemDeleted" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ListView>制御が発生し、<xref:System.Web.UI.WebControls.ListView.ItemDeleted>イベントと、コントロール内の削除 ボタンがクリックされたまたは<xref:System.Web.UI.WebControls.ListView.DeleteItem%2A>メソッドを呼び出すが、後、<xref:System.Web.UI.WebControls.ListView>コントロールが項目を削除します。 (削除ボタンは、ボタンが`CommandName`プロパティが"Delete"に設定します)。これにより、削除操作の結果を確認するなど、このイベントが発生するたびに、カスタム ルーチンを実行するイベント処理メソッドを提供できます。  
+  
+ A<xref:System.Web.UI.WebControls.ListViewDeletedEventArgs>オブジェクトは、イベント処理メソッドに渡されます。 このオブジェクトでは、影響を受けたアイテムと発生する可能性のあるすべての例外の数を決定することができます。 削除操作の影響を受けたアイテムの数を確認するには<xref:System.Web.UI.WebControls.ListViewDeletedEventArgs.AffectedRows%2A>プロパティです。 任意の例外が発生したかどうかを判断するのには、使用、<xref:System.Web.UI.WebControls.ListViewDeletedEventArgs.Exception%2A>プロパティです。 設定して、イベント処理メソッドで例外を処理するかどうかを示すことができます、<xref:System.Web.UI.WebControls.ListViewDeletedEventArgs.ExceptionHandled%2A>プロパティです。  
+  
+> [!NOTE]
+>  Delete 操作中に例外が発生した場合、<xref:System.Web.UI.WebControls.ListViewDeletedEventArgs.ExceptionHandled%2A>プロパティに設定されている`false`、<xref:System.Web.UI.WebControls.ListView>コントロールは、例外を再スローします。  
+  
+ 削除された項目のキー フィールドにアクセスするには、使用、<xref:System.Web.UI.WebControls.ListViewDeletedEventArgs.Keys%2A>プロパティです。 削除された項目の非キー フィールドにアクセスするを使用して、<xref:System.Web.UI.WebControls.ListViewDeletedEventArgs.Values%2A>プロパティです。 <xref:System.Web.UI.WebControls.ListViewDeletedEventArgs> クラスのインスタンスの初期プロパティ値一覧については、<xref:System.Web.UI.WebControls.ListViewDeletedEventArgs.%23ctor%2A> コンストラクターに関するトピックを参照してください。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、 <xref:System.Web.UI.WebControls.ListViewDeletedEventArgs> delete 操作中に例外が発生したかどうかを決定するオブジェクト。 <xref:System.Web.UI.WebControls.ListViewDeletedEventArgs>オブジェクトが、イベント処理メソッドに渡される、<xref:System.Web.UI.WebControls.ListView.ItemDeleted>イベント。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.ListViewDeletedEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ListViewDeletedEventArgs/CS/ListViewDeletedEventArgsCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.ListViewDeletedEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ListViewDeletedEventArgs/VB/ListViewDeletedEventArgsVB.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewDeletedEventArgs (int affectedRows, Exception exception);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 affectedRows, class System.Exception exception) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListViewDeletedEventArgs.#ctor(System.Int32,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="affectedRows" Type="System.Int32" />
+        <Parameter Name="exception" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="affectedRows">削除操作によって影響を受けた行の数。</param>
+        <param name="exception">削除操作が実行されたときに発生する例外。 例外が発生しなかった場合は使用<see langword="null" />です。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.ListViewDeletedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用することができます、<xref:System.Web.UI.WebControls.ListViewDeletedEventArgs>クラスです。  
+  
+> [!NOTE]
+>  このコンス トラクターはイベントを発生させる場合にコントロールの開発者によって、主に使用します。  
+  
+ <xref:System.Web.UI.WebControls.ListViewDeletedEventArgs> クラスのインスタンスのプロパティの初期値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.ListViewDeletedEventArgs.AffectedRows%2A>|`affectedRows` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.ListViewDeletedEventArgs.Exception%2A>|`e` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.ListViewDeletedEventArgs.ExceptionHandled%2A>|`false`。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AffectedRows">
+      <MemberSignature Language="C#" Value="public int AffectedRows { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 AffectedRows" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewDeletedEventArgs.AffectedRows" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>削除操作によって影響を受けた行の数を取得します。</summary>
+        <value>削除操作によって影響を受けた行の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ListViewDeletedEventArgs.AffectedRows%2A>プロパティをデータ ソース コントロールによって報告された、削除操作の影響を受けたアイテムの数を決定します。 このプロパティは、次の方法で正しい数の項目が削除されたかどうかを決定する通常使用されます。  
+  
+-   1 つの項目のみが削除されたことを確認します。 場合もありますが正しく記述されていない delete ステートメントは、複数の項目を削除することができます。  
+  
+-   Delete 操作中にエラーが発生したが、例外が発生しなかった場合、項目が削除されたことを確認します。  
+  
+-   オプティミスティック同時実行制御をサポートするデータ ソース コントロールにある場合、項目が削除されたことを確認する (など、<xref:System.Web.UI.WebControls.SqlDataSource>と<xref:System.Web.UI.WebControls.ObjectDataSource>コントロール) がその<xref:System.Web.UI.WebControls.SqlDataSource.ConflictDetection%2A>プロパティに設定、`ConflictOptions.CompareAllValues`列挙値。 この設定は、別のユーザーによって変更された項目は削除されません。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ListViewDeletedEventArgs.AffectedRows%2A>プロパティを削除操作中にアイテムが削除されたことを確認してください。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.ListViewDeletedEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ListViewDeletedEventArgs/CS/ListViewDeletedEventArgsCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.ListViewDeletedEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ListViewDeletedEventArgs/VB/ListViewDeletedEventArgsVB.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Exception">
+      <MemberSignature Language="C#" Value="public Exception Exception { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Exception Exception" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewDeletedEventArgs.Exception" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>いずれか、削除操作中に発生した場合は、例外を取得します。</summary>
+        <value>存在する場合に、削除操作中に発生した例外それ以外の場合、<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ListViewDeletedEventArgs.Exception%2A>存在する場合は、削除操作中に発生した例外を取得するプロパティです。 このプロパティを返しますのかどうかは例外が発生しなかった、`null`です。  
+  
+> [!NOTE]
+>  例外が発生し、イベント ハンドラー、設定に、例外を処理する場合、<xref:System.Web.UI.WebControls.ListViewDeletedEventArgs.ExceptionHandled%2A>プロパティを`true`です。 それ以外の場合、<xref:System.Web.UI.WebControls.ListView>コントロールは、例外を再スローします。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、 <xref:System.Web.UI.WebControls.ListViewDeletedEventArgs.Exception%2A> delete 操作中に例外が発生したかどうかを決定するプロパティです。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.ListViewDeletedEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ListViewDeletedEventArgs/CS/ListViewDeletedEventArgsCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.ListViewDeletedEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ListViewDeletedEventArgs/VB/ListViewDeletedEventArgsVB.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExceptionHandled">
+      <MemberSignature Language="C#" Value="public bool ExceptionHandled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ExceptionHandled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewDeletedEventArgs.ExceptionHandled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または削除操作中に発生した例外が、イベント ハンドラーで処理されたかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />例外が処理された場合、イベント ハンドラーです。それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Delete 操作中に例外が発生した、ときに使用して、<xref:System.Web.UI.WebControls.ListViewDeletedEventArgs.ExceptionHandled%2A>イベント中に例外を処理するかどうかを示すプロパティです。 このプロパティ設定されている場合`true`例外は処理され、再スローするいないと見なされます。 このプロパティ設定されている場合`false`、<xref:System.Web.UI.WebControls.ListView>コントロールは、例外を再スローします。 発生した例外を確認するには<xref:System.Web.UI.WebControls.ListViewDeletedEventArgs.Exception%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ListViewDeletedEventArgs.ExceptionHandled%2A>例外が、イベント ハンドラーで処理されたことを示すプロパティです。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.ListViewDeletedEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ListViewDeletedEventArgs/CS/ListViewDeletedEventArgsCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.ListViewDeletedEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ListViewDeletedEventArgs/VB/ListViewDeletedEventArgsVB.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Keys">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.IOrderedDictionary Keys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.IOrderedDictionary Keys" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewDeletedEventArgs.Keys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.IOrderedDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーを取得または削除された項目のキーします。</summary>
+        <value>キーまたは削除された項目のキー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ListViewDeletedEventArgs.Keys%2A>キー フィールドの値にアクセスするプロパティ (の指定に従って、<xref:System.Web.UI.WebControls.ListView.DataKeyNames%2A?displayProperty=nameWithType>プロパティ)、削除された項目の。 たとえば、削除した項目のログを保持するのにこれらの値を使用できます。  
+  
+> [!NOTE]
+>  このプロパティには、キー フィールドのみが含まれています。 非キー フィールドにアクセスするを使用して、<xref:System.Web.UI.WebControls.ListViewDeletedEventArgs.Values%2A>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.ListViewDeletedEventArgs.Keys%2A>プロパティを実装するオブジェクトを返します、<xref:System.Collections.Specialized.IOrderedDictionary>インターフェイスです。 オブジェクトに含まれる<xref:System.Collections.DictionaryEntry>削除された項目のキー フィールドを表すオブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ListViewDeletedEventArgs.Keys%2A>削除された項目のキー フィールドの値にアクセスするプロパティです。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.ListViewDeletedEventArgs#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ListViewDeletedEventArgs/CS/ListViewDeletedEventArgsKeysCS.aspx#2)]
+ [!code-aspx-vb[System.Web.UI.WebControls.ListViewDeletedEventArgs#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ListViewDeletedEventArgs/VB/ListViewDeletedEventArgsKeysVB.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Values">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.IOrderedDictionary Values { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.IOrderedDictionary Values" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewDeletedEventArgs.Values" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.IOrderedDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>削除された項目の非キー フィールドの値を取得します。</summary>
+        <value>削除された項目の非キー フィールドの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ListViewDeletedEventArgs.Values%2A>削除された項目の非キー フィールドの値にアクセスするプロパティです。 たとえば、削除した項目のログを保持するのにこれらの値を使用できます。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.ListViewDeletedEventArgs.Values%2A>プロパティが設定されるは、双方向のバインド式では使用されている場合にのみ、 <xref:System.Web.UI.WebControls.ListView> 、テンプレートなど、<xref:System.Web.UI.WebControls.ListView.ItemTemplate%2A>テンプレート。 双方向のバインド式の詳細については、次を参照してください。[データ バインディング式の構文](http://msdn.microsoft.com/en-us/676beb1d-ddfa-4153-bba8-3c86dcb7ceca)です。  
+  
+ <xref:System.Web.UI.WebControls.ListViewDeletedEventArgs.Values%2A>プロパティを実装するオブジェクトを返します、<xref:System.Collections.Specialized.IOrderedDictionary>インターフェイスです。 オブジェクトに含まれる<xref:System.Collections.DictionaryEntry>削除された項目の非キー フィールドを表すオブジェクト。  
+  
+> [!NOTE]
+>  このプロパティにキー フィールドが含まれていません (で指定されたとおり、<xref:System.Web.UI.WebControls.ListView.DataKeyNames%2A?displayProperty=nameWithType>プロパティ) の削除された項目。 キー フィールドにアクセスするには、使用、<xref:System.Web.UI.WebControls.ListViewDeletedEventArgs.Keys%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ListViewDeletedEventArgs.Values%2A>削除された項目の非キー フィールドの値にアクセスするプロパティです。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.ListViewDeletedEventArgs#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ListViewDeletedEventArgs/CS/ListViewDeletedEventArgsKeysCS.aspx#2)]
+ [!code-aspx-vb[System.Web.UI.WebControls.ListViewDeletedEventArgs#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ListViewDeletedEventArgs/VB/ListViewDeletedEventArgsKeysVB.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

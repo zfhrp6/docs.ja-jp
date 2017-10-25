@@ -1,0 +1,482 @@
+<Type Name="Thumb" FullName="System.Windows.Controls.Primitives.Thumb">
+  <TypeSignature Language="C#" Value="public class Thumb : System.Windows.Controls.Control" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi Thumb extends System.Windows.Controls.Control" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.Primitives.Thumb" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.Control</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("DragDelta")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.NeverLocalize)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ユーザーがドラッグできるコントロールを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Primitives.Thumb>コントロールに含まれる別のコントロールなど、<xref:System.Windows.Controls.Primitives.ScrollBar>または<xref:System.Windows.Controls.Slider>コントロール、ユーザーがコントロールの値を変更できるようにします。 <xref:System.Windows.Controls.Primitives.Thumb>コントロールのサイズ変更にも使用できます。 たとえば、<xref:System.Windows.Controls.Primitives.Thumb>ウィンドウの隅にあるコントロールがサイズ変更操作を開始するには、マウスでクリックして、ユーザーの場所を提供できます。  
+  
+ <xref:System.Windows.Controls.Primitives.Thumb>提供<xref:System.Windows.Controls.Primitives.Thumb.DragStarted>、<xref:System.Windows.Controls.Primitives.Thumb.DragCompleted>と<xref:System.Windows.Controls.Primitives.Thumb.DragDelta>を管理するイベントがマウスのポインターに関連付けられている操作をドラッグします。 ユーザーがマウスの左ボタンを押したとき、<xref:System.Windows.Controls.Primitives.Thumb>コントロールが論理フォーカスとマウスのキャプチャを受け取ると、<xref:System.Windows.Controls.Primitives.Thumb.DragStarted>イベントが発生します。 中に、<xref:System.Windows.Controls.Primitives.Thumb>コントロールにフォーカスとマウスをキャプチャ、<xref:System.Windows.Controls.Primitives.Thumb.DragDelta>イベントを発生させる複数回制限がないです。 ユーザーがマウスの左ボタンを離したときに、<xref:System.Windows.Controls.Primitives.Thumb>コントロールがマウス キャプチャを失ったと<xref:System.Windows.Controls.Primitives.Thumb.DragCompleted>イベントが発生します。  
+  
+ イベント情報の位置で変更が位置を変更しませんが、<xref:System.Windows.Controls.Primitives.Thumb>です。 手動で変更またはの位置を指定する必要があります、<xref:System.Windows.Controls.Primitives.Thumb>またはサイズを変更するか、ドラッグ操作の結果として変更するその他の要素。 <xref:System.Windows.Controls.Primitives.Thumb>コントロールがドラッグ アンド ドロップ機能を提供しません。  
+  
+ A<xref:System.Windows.Controls.Primitives.Thumb>コントロールを受け取ることができますが、マウスのキャプチャ、キーボード フォーカスを受け取ることはできません。 したがって、<xref:System.Windows.UIElement.IsKeyboardFocused%2A>にキーボード フォーカスに対応するプロパティが設定されている`false`です。 この値は、親クラスをオーバーライド<xref:System.Windows.Controls.Control>このプロパティを設定する`true`です。  
+  
+ 機能を提供するドラッグ、クラス処理が提供される、 <xref:System.Windows.ContentElement.MouseLeftButtonDown>、<xref:System.Windows.ContentElement.MouseLeftButtonUp>と<xref:System.Windows.ContentElement.MouseMove>イベント。 詳細については、次を参照してください。、 <xref:System.Windows.Controls.Primitives.Thumb.OnMouseLeftButtonDown%2A>、<xref:System.Windows.Controls.Primitives.Thumb.OnMouseLeftButtonUp%2A>と<xref:System.Windows.Controls.Primitives.Thumb.OnMouseMove%2A>メソッドです。  
+  
+ ときに、<xref:System.Windows.Controls.Primitives.Thumb>の一部である、<xref:System.Windows.Controls.Primitives.Track>表示可能な領域、またはビューポートのサイズでコンテンツをスクロールできるコントロール、<xref:System.Windows.Controls.Primitives.Thumb>ビューポートのサイズを反映します。 詳細については、<xref:System.Windows.Controls.Primitives.Track> クラスを参照してください。 次の図は、<xref:System.Windows.Controls.Primitives.Track.Thumb%2A>の一部であるコントロール、<xref:System.Windows.Controls.Primitives.ScrollBar>コントロール。  
+  
+ ![スクロール バーの図](~/add/media/scrollbar-illustration.JPG "スクロール バーの図")  
+  
+## <a name="customizing-the-thumb-control"></a>Thumb コントロールのカスタマイズ  
+ 設定を適用する、同じプロパティを複数<xref:System.Windows.Controls.Primitives.Thumb>、コントロールを使用して、<xref:System.Windows.FrameworkElement.Style%2A>プロパティです。 既定値を変更することができます<xref:System.Windows.Controls.ControlTemplate>コントロールの外観を一意にします。 作成の詳細については、<xref:System.Windows.Controls.ControlTemplate>を参照してください[、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  部分とに固有の状態を表示する、<xref:System.Windows.Controls.Primitives.Thumb>を参照してください[Thumb Syles とテンプレート](~/docs/framework/wpf/controls/thumb-syles-and-templates.md)です。  
+  
+ コントロールの既定のスタイルでは、このコントロールの依存関係プロパティを設定する場合があります。  プロパティが既定のスタイルが設定されている場合は、アプリケーションでコントロールが表示されたら既定値から、プロパティが変更可能性があります。 既定のスタイルは、いるデスクトップ テーマによっては、アプリケーションが実行されている場合は使用が決定されます。  詳細については、次を参照してください。 [WPF テーマの既定の](http://go.microsoft.com/fwlink/?LinkID=158252)します。  
+  
+> [!NOTE]
+>  Visual プロパティの設定はのみに効果がそのプロパティは、両方のボタン コントロールの既定のテンプレートに存在しを使用して設定されている場合、します。 「を変更する、Visual 構造の制御」 セクションで visual のプロパティの一覧を検索できる[、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Thumb ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.Thumb.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Primitives.Thumb" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelDrag">
+      <MemberSignature Language="C#" Value="public void CancelDrag ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CancelDrag() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.Thumb.CancelDrag" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ドラッグ操作をキャンセル、<see cref="T:System.Windows.Controls.Primitives.Thumb" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Controls.Primitives.Thumb>論理フォーカスとマウスのキャプチャには、このメソッドは、マウスのキャプチャを削除し、<xref:System.Windows.Controls.Primitives.Thumb.DragCompleted>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DragCompleted">
+      <MemberSignature Language="C#" Value="public event System.Windows.Controls.Primitives.DragCompletedEventHandler DragCompleted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Controls.Primitives.DragCompletedEventHandler DragCompleted" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Controls.Primitives.Thumb.DragCompleted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Primitives.DragCompletedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="T:System.Windows.Controls.Primitives.Thumb" />コントロールがマウス キャプチャを失った。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、 <xref:System.Windows.Controls.Primitives.Thumb.DragCompleted> 、マウスの左ボタンが離されたとき、またはイベントが発生した、<xref:System.Windows.Controls.Primitives.Thumb.CancelDrag%2A>メソッドが呼び出されます。  
+  
+ <xref:System.Windows.Controls.Primitives.Thumb>経由でマウス ポインターを一時停止中にユーザーがマウスの左ボタンを押したときに、コントロールがマウスのキャプチャを受け取る、<xref:System.Windows.Controls.Primitives.Thumb>コントロール。  
+  
+ マウスの位置と、<xref:System.Windows.Controls.Primitives.Thumb.DragCompleted>によって提供されるイベントが発生した、 <xref:System.Windows.Controls.Primitives.DragDeltaEventArgs> 、最後の<xref:System.Windows.Controls.Primitives.Thumb.DragDelta>イベント。  
+  
+<a name="routedEventInfo_DragCompleted"></a>   
+## <a name="routed-event-information"></a>ルーティングされたイベント情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.Thumb.DragCompletedEvent>|  
+|ルーティング方法|バブル|  
+|Delegate|<xref:System.Windows.Controls.Primitives.DragCompletedEventHandler>|  
+  
+   
+  
+## Examples  
+ 次の例のイベント ハンドラーに割り当てる方法を示しています、<xref:System.Windows.Controls.Primitives.Thumb.DragCompleted>イベントを<xref:System.Windows.Controls.Primitives.Thumb>コントロール、およびイベント ハンドラーを定義する方法です。 サンプル全体については、次を参照してください。 [Thumb ドラッグ機能のサンプル](http://go.microsoft.com/fwlink/?LinkID=160042)です。  
+  
+ [!code-xaml[Thumb#Thumb](~/samples/snippets/csharp/VS_Snippets_Wpf/Thumb/CSharp/Pane1.xaml#thumb)]  
+  
+ [!code-csharp[Thumb#DragCompletedHandler](~/samples/snippets/csharp/VS_Snippets_Wpf/Thumb/CSharp/Pane1.xaml.cs#dragcompletedhandler)]
+ [!code-vb[Thumb#DragCompletedHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Thumb/VisualBasic/Pane1.xaml.vb#dragcompletedhandler)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DragCompletedEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent DragCompletedEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent DragCompletedEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.Thumb.DragCompletedEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Controls.Primitives.Thumb.DragCompleted" /> ルーティング イベントを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DragDelta">
+      <MemberSignature Language="C#" Value="public event System.Windows.Controls.Primitives.DragDeltaEventHandler DragDelta;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Controls.Primitives.DragDeltaEventHandler DragDelta" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Controls.Primitives.Thumb.DragDelta" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Primitives.DragDeltaEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>位置をマウス変更したときに、1 つ以上の時間が発生した、<see cref="T:System.Windows.Controls.Primitives.Thumb" />コントロールが論理フォーカスとマウスをキャプチャします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Primitives.Thumb>経由でマウス ポインターを一時停止中にユーザーがマウスの左ボタンを押したときに、コントロールがフォーカスとマウスのキャプチャを受け取る、<xref:System.Windows.Controls.Primitives.Thumb>コントロール。 <xref:System.Windows.Controls.Primitives.Thumb>マウスの左ボタンを離したとき、またはコントロールがマウス キャプチャを失った、<xref:System.Windows.Controls.Primitives.Thumb.CancelDrag%2A>メソッドが呼び出されます。  
+  
+ 新しい<xref:System.Windows.Controls.Primitives.Thumb.DragDelta>イベント、マウスの位置を画面に移動するたびに発生します。 そのため、このイベントを発生させる複数回制限がない場合に、<xref:System.Windows.Controls.Primitives.Thumb>コントロールがマウス キャプチャを保持します。  
+  
+<a name="routedEventInfo_DragDelta"></a>   
+## <a name="routed-event-information"></a>ルーティングされたイベント情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.Thumb.DragDeltaEvent>|  
+|ルーティング方法|バブル|  
+|Delegate|<xref:System.Windows.Controls.Primitives.DragDeltaEventHandler>|  
+  
+   
+  
+## Examples  
+ 次の例のイベント ハンドラーに割り当てる方法を示しています、<xref:System.Windows.Controls.Primitives.Thumb.DragDelta>イベントを<xref:System.Windows.Controls.Primitives.Thumb>コントロール、およびイベント ハンドラーを定義する方法です。 サンプル全体については、次を参照してください。 [Thumb ドラッグ機能のサンプル](http://go.microsoft.com/fwlink/?LinkID=160042)です。  
+  
+ [!code-xaml[Thumb#Thumb](~/samples/snippets/csharp/VS_Snippets_Wpf/Thumb/CSharp/Pane1.xaml#thumb)]  
+  
+ [!code-csharp[Thumb#2](~/samples/snippets/csharp/VS_Snippets_Wpf/Thumb/CSharp/Pane1.xaml.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DragDeltaEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent DragDeltaEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent DragDeltaEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.Thumb.DragDeltaEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Controls.Primitives.Thumb.DragDelta" /> ルーティング イベントを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DragStarted">
+      <MemberSignature Language="C#" Value="public event System.Windows.Controls.Primitives.DragStartedEventHandler DragStarted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Controls.Primitives.DragStartedEventHandler DragStarted" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Controls.Primitives.Thumb.DragStarted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Primitives.DragStartedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="T:System.Windows.Controls.Primitives.Thumb" />コントロールが論理フォーカスとマウスのキャプチャを受け取る。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Primitives.Thumb>経由でマウス ポインターを一時停止中にユーザーがマウスの左ボタンを押したときに、コントロールがフォーカスとマウスのキャプチャを受け取る、<xref:System.Windows.Controls.Primitives.Thumb>です。  
+  
+<a name="routedEventInfo_DragStarted"></a>   
+## <a name="routed-event-information"></a>ルーティングされたイベント情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.Thumb.DragStartedEvent>|  
+|ルーティング方法|バブル|  
+|Delegate|<xref:System.Windows.Controls.Primitives.DragStartedEventHandler>|  
+  
+   
+  
+## Examples  
+ 次の例のイベント ハンドラーに割り当てる方法を示しています、<xref:System.Windows.Controls.Primitives.Thumb.DragStarted>イベントを<xref:System.Windows.Controls.Primitives.Thumb>コントロール、およびイベント ハンドラーを定義する方法です。 サンプル全体については、次を参照してください。 [Thumb ドラッグ機能のサンプル](http://go.microsoft.com/fwlink/?LinkID=160042)です。  
+  
+ [!code-xaml[Thumb#Thumb](~/samples/snippets/csharp/VS_Snippets_Wpf/Thumb/CSharp/Pane1.xaml#thumb)]  
+  
+ [!code-csharp[Thumb#DragStartedHandler](~/samples/snippets/csharp/VS_Snippets_Wpf/Thumb/CSharp/Pane1.xaml.cs#dragstartedhandler)]
+ [!code-vb[Thumb#DragStartedHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Thumb/VisualBasic/Pane1.xaml.vb#dragstartedhandler)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DragStartedEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent DragStartedEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent DragStartedEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.Thumb.DragStartedEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Controls.Primitives.Thumb.DragStarted" /> ルーティング イベントを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDragging">
+      <MemberSignature Language="C#" Value="public bool IsDragging { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDragging" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.Thumb.IsDragging" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得するかどうか、<see cref="T:System.Windows.Controls.Primitives.Thumb" />コントロールが論理フォーカスとマウスをキャプチャし、マウスの左ボタンが押されました。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Windows.Controls.Primitives.Thumb" />コントロールにフォーカスとマウス キャプチャです。 それ以外の場合<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Controls.Primitives.Thumb.IsDragging%2A>プロパティの値が変更、<xref:System.Windows.Controls.Primitives.Thumb.OnDraggingChanged%2A>メソッドが呼び出されます。  
+  
+ .NET Framework のバージョン 3.0 Service Pack 1 以降<xref:System.Windows.Controls.Primitives.Thumb.IsDragging%2A>保護されている set アクセス操作子を持ちます。 この機能を使用するのには、アプリケーションが .NET Framework version 3.5 を対象する必要があります。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+<a name="dependencyPropertyInfo_IsDragging"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.Thumb.IsDraggingProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDraggingProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsDraggingProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsDraggingProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.Thumb.IsDraggingProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.Thumb.IsDragging" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreateAutomationPeer">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.Thumb.OnCreateAutomationPeer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationPeer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成、<see cref="T:System.Windows.Automation.Peers.AutomationPeer" />の<see cref="T:System.Windows.Controls.Primitives.Thumb" />コントロール。</summary>
+        <returns>A<see cref="T:System.Windows.Automation.Peers.ThumbAutomationPeer" />の<see cref="T:System.Windows.Controls.Primitives.Thumb" />コントロール。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDraggingChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnDraggingChanged (System.Windows.DependencyPropertyChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDraggingChanged(valuetype System.Windows.DependencyPropertyChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.Thumb.OnDraggingChanged(System.Windows.DependencyPropertyChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.DependencyPropertyChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="P:System.Windows.Controls.Primitives.Thumb.IsDragging" /> プロパティの値の変更に応答します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseLeftButtonDown">
+      <MemberSignature Language="C#" Value="protected override void OnMouseLeftButtonDown (System.Windows.Input.MouseButtonEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseLeftButtonDown(class System.Windows.Input.MouseButtonEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.Thumb.OnMouseLeftButtonDown(System.Windows.Input.MouseButtonEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.MouseButtonEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.Windows.ContentElement.MouseLeftButtonDown" /> イベントのクラス処理を提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装は、<xref:System.Windows.ContentElement.MouseLeftButtonDown>を設定してイベント<xref:System.Windows.RoutedEventArgs.Handled%2A>に`true`です。 また、このメソッドにより、<xref:System.Windows.Controls.Primitives.Thumb>論理フォーカスとマウスのキャプチャ、およびセット、<xref:System.Windows.Controls.Primitives.Thumb.IsDragging%2A>プロパティを`true`です。 この実装でも発生、<xref:System.Windows.Controls.Primitives.Thumb.DragStarted>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseLeftButtonUp">
+      <MemberSignature Language="C#" Value="protected override void OnMouseLeftButtonUp (System.Windows.Input.MouseButtonEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseLeftButtonUp(class System.Windows.Input.MouseButtonEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.Thumb.OnMouseLeftButtonUp(System.Windows.Input.MouseButtonEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.MouseButtonEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.Windows.ContentElement.MouseLeftButtonUp" /> イベントのクラス処理を提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装は、<xref:System.Windows.ContentElement.MouseLeftButtonDown>を設定してイベント<xref:System.Windows.RoutedEventArgs.Handled%2A>に`true`です。 また、このメソッドは削除からマウスのキャプチャ、 <xref:System.Windows.Controls.Primitives.Thumb>、設定と、<xref:System.Windows.Controls.Primitives.Thumb.IsDragging%2A>プロパティを`false`です。 この実装でも発生、<xref:System.Windows.Controls.Primitives.Thumb.DragCompleted>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseMove">
+      <MemberSignature Language="C#" Value="protected override void OnMouseMove (System.Windows.Input.MouseEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseMove(class System.Windows.Input.MouseEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.Thumb.OnMouseMove(System.Windows.Input.MouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.MouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.Windows.UIElement.MouseMove" /> イベントのクラス処理を提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Controls.Primitives.Thumb>論理フォーカスとマウス キャプチャは、この実装が発生、<xref:System.Windows.Controls.Primitives.Thumb.DragDelta>マウスを移動したときにイベント。 このシナリオでは、<xref:System.Windows.UIElement.MouseMove>を設定してイベントが処理される<xref:System.Windows.RoutedEventArgs.Handled%2A>に`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

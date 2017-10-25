@@ -1,0 +1,173 @@
+<Type Name="IErrorHandler" FullName="System.ServiceModel.Dispatcher.IErrorHandler">
+  <TypeSignature Language="C#" Value="public interface IErrorHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IErrorHandler" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.IErrorHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>呼び出し側から返されたエラー メッセージを実装者が制御し、ログ記録などのカスタム エラー処理をオプションで実行できるようにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 明示的に例外がスローされたときに、アプリケーションの動作を制御するには、実装、<xref:System.ServiceModel.Dispatcher.IErrorHandler>インターフェイスし、それを追加、<xref:System.ServiceModel.Dispatcher.ChannelDispatcher>の<xref:System.ServiceModel.Dispatcher.ChannelDispatcher.ErrorHandlers%2A>プロパティです。 <xref:System.ServiceModel.Dispatcher.IErrorHandler> は、生成される SOAP エラーを明示的に制御し、このエラーをクライアントに返すかどうかを決定し、関連付けられたタスク (ログ記録など) を実行できるようにします。 エラー ハンドラーは、<xref:System.ServiceModel.Dispatcher.ChannelDispatcher.ErrorHandlers%2A> プロパティに追加された順序で呼び出されます。  
+  
+ <xref:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault%2A> メソッドを実装して、クライアントに返されるエラー メッセージを制御します。  
+  
+ エラー ログの記録、フェイル ファーストの保証、アプリケーションのシャットダウンなどのエラー関連の動作を行うには、<xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError%2A> メソッドを実装します。  
+  
+> [!NOTE]
+>  <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError%2A> メソッドはさまざまな場所から呼び出すことができるため、このメソッドがどのスレッドで呼び出されるのかについての保証はありません。 <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError%2A> メソッドが操作スレッドで呼び出されるとは限りません。  
+  
+ すべての <xref:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault%2A> 実装は、応答メッセージを送信する前に、まず呼び出されます。 すべての <xref:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault%2A> 実装が呼び出されて返されたときに、`fault` が `null` 以外の場合は、操作コントラクトに従ってクライアントに返されます。 すべての実装が呼び出された後に `fault` が `null` である場合、応答メッセージは <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> プロパティ値で制御されます。  
+  
+> [!NOTE]
+>  例外は、すべての <xref:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault%2A> 実装が呼び出され、応答メッセージがチャネルに渡された後で発生する可能性があります。 (たとえば、メッセージのシリアル化が困難な) チャネル例外が発生した場合<xref:System.ServiceModel.Dispatcher.IErrorHandler>オブジェクトに通知します。 この場合、まだを確認してください、問題を検出するトレースの利用、または、開発環境をキャッチし、自分にこのような例外が表示されます。 トレースの詳細については、次を参照してください。 [、アプリケーションのトラブルシューティングを使用してトレース](~/docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)です。  
+  
+ 応答メッセージが送信された後に、すべての <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError%2A> 実装が同じ順序で呼び出されます。  
+  
+ 通常、<xref:System.ServiceModel.Dispatcher.IErrorHandler> の実装は、サービス (双方向通信の場合は、サービスとクライアント) の <xref:System.ServiceModel.Dispatcher.ChannelDispatcher.ErrorHandlers%2A> プロパティに追加されます。  
+  
+ 動作 (<xref:System.ServiceModel.Dispatcher.IErrorHandler>、<xref:System.ServiceModel.Description.IServiceBehavior?displayProperty=nameWithType>、<xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=nameWithType>、または <xref:System.ServiceModel.Description.IContractBehavior?displayProperty=nameWithType> オブジェクト) を実装して <xref:System.ServiceModel.Description.IOperationBehavior?displayProperty=nameWithType> をランタイムに追加し、プログラム、構成ファイル、またはカスタム属性でその動作を使用して <xref:System.ServiceModel.Dispatcher.IErrorHandler> を関連付けることができます。  
+  
+ 動作を使用してランタイムを変更する方法の詳細については、次を参照してください。[を構成すると、ランタイムのビヘイビアーの使用を拡張する](~/docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、サービス メソッドがマネージ例外をスローしたときに、<xref:System.ServiceModel.Dispatcher.IErrorHandler> 型の <xref:System.ServiceModel.FaultException%601> だけを返す `GreetingFault` を実装するサービスを示します。  
+  
+ [!code-csharp[IErrorHandler#6](~/samples/snippets/csharp/VS_Snippets_CFX/ierrorhandler/cs/ierrorhandler.cs#6)]
+ [!code-vb[IErrorHandler#6](~/samples/snippets/visualbasic/VS_Snippets_CFX/ierrorhandler/vb/ierrorhandler.vb#6)]  
+  
+ 次のコード例では、サービス動作を使用して、<xref:System.ServiceModel.Dispatcher.IErrorHandler> の実装を <xref:System.ServiceModel.Dispatcher.ChannelDispatcher.ErrorHandlers%2A> プロパティに追加する方法を示します。  
+  
+ [!code-csharp[IErrorHandler#7](~/samples/snippets/csharp/VS_Snippets_CFX/ierrorhandler/cs/ierrorhandler.cs#7)]
+ [!code-vb[IErrorHandler#7](~/samples/snippets/visualbasic/VS_Snippets_CFX/ierrorhandler/vb/ierrorhandler.vb#7)]  
+  
+ 次のコード例では、アプリケーション構成ファイルを使用してサービス動作を読み込むようにサービスを構成する方法を示します。 構成ファイル内のサービス動作を公開する方法の詳細については、「<xref:System.ServiceModel.Description.IServiceBehavior>」を参照してください。  
+
+ [!code-xml[IErrorHandler#4](~/samples/snippets/csharp/VS_Snippets_CFX/ierrorhandler/cs/hostapplication.exe.config#4)]   
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="HandleError">
+      <MemberSignature Language="C#" Value="public bool HandleError (Exception exception);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool HandleError(class System.Exception exception) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IErrorHandler.HandleError(System.Exception)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="error" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="exception">To be added.</param>
+        <summary>エラー関連の処理を可能にし、特定の状況でセッションおよびインスタンス コンテキストをディスパッチャーが中断するかどうかを示す値を返します。</summary>
+        <returns>
+          インスタンス コンテキストが <see langword="true" /> でない場合、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] でセッション (存在する場合) およびインスタンス コンテキストを中断しない場合は <see cref="F:System.ServiceModel.InstanceContextMode.Single" />、そうでない場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エラー ログの記録、システム通知、アプリケーションのシャットダウンなどのエラー関連動作を実装し、例外が適切に処理されたかどうかを示す値を返すには、<xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError%2A> メソッドを使用します。  
+  
+> [!NOTE]
+>  <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError%2A> メソッドはさまざまな場所から呼び出すことができるため、このメソッドがどのスレッドで呼び出されるのかについての保証はありません。 <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError%2A> メソッドが操作スレッドで呼び出されるとは限りません。  
+  
+ すべての <xref:System.ServiceModel.Dispatcher.IErrorHandler> 実装が呼び出されます。 既定で (戻り値が`false`)、例外がある場合、ディスパッチャーは任意のセッションを中止し、中止、<xref:System.ServiceModel.InstanceContext>場合、<xref:System.ServiceModel.InstanceContextMode>以外<xref:System.ServiceModel.InstanceContextMode.Single>です。  例外はハンドルされない例外と見なされ、どの状態も破損していると見なされます。  
+  
+ この既定の動作を回避するには、`true` から <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError%2A> を返します。 エラー ハンドラーが `true` を返した場合、失敗した要求に関連する状態の使用を継続しても安全だということを [!INCLUDE[indigo2](~/includes/indigo2-md.md)] に指示します。  
+  
+ エラー ハンドラーが `true` メソッドから<xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError%2A> を返さない場合、例外は未処理と見なされて既定の応答が適用されます。そして、セッション チャネルで通信を行う際や <xref:System.ServiceModel.InstanceContext?displayProperty=nameWithType> プロパティが <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> に設定されていない場合、<xref:System.ServiceModel.InstanceContextMode?displayProperty=nameWithType> とチャネルが中断する可能性があります。  
+  
+ `error` パラメーターは、`null` になることはなく、スローされた例外オブジェクトを格納します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、サービス メソッドがマネージ例外をスローしたときに、<xref:System.ServiceModel.Dispatcher.IErrorHandler> 型の <xref:System.ServiceModel.FaultException%601> だけを返す `GreetingFault` を実装するサービスを示します。  
+  
+ [!code-csharp[IErrorHandler#6](~/samples/snippets/csharp/VS_Snippets_CFX/ierrorhandler/cs/ierrorhandler.cs#6)]
+ [!code-vb[IErrorHandler#6](~/samples/snippets/visualbasic/VS_Snippets_CFX/ierrorhandler/vb/ierrorhandler.vb#6)]  
+  
+ 次のコード例では、サービス動作を使用して、<xref:System.ServiceModel.Dispatcher.IErrorHandler> の実装を <xref:System.ServiceModel.Dispatcher.ChannelDispatcher.ErrorHandlers%2A> プロパティに追加する方法を示します。  
+  
+ [!code-csharp[IErrorHandler#7](~/samples/snippets/csharp/VS_Snippets_CFX/ierrorhandler/cs/ierrorhandler.cs#7)]
+ [!code-vb[IErrorHandler#7](~/samples/snippets/visualbasic/VS_Snippets_CFX/ierrorhandler/vb/ierrorhandler.vb#7)]  
+  
+ 次のコード例では、アプリケーション構成ファイルを使用してサービス動作を読み込むようにサービスを構成する方法を示します。 構成ファイル内のサービス動作を公開する方法の詳細については、「<xref:System.ServiceModel.Description.IServiceBehavior>」を参照してください。  
+  
+ [!code-xml[IErrorHandler#4](~/samples/snippets/csharp/VS_Snippets_CFX/ierrorhandler/cs/hostapplication.exe.config#4)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProvideFault">
+      <MemberSignature Language="C#" Value="public void ProvideFault (Exception exception, System.ServiceModel.Channels.MessageVersion version, ref System.ServiceModel.Channels.Message fault);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ProvideFault(class System.Exception exception, class System.ServiceModel.Channels.MessageVersion version, class System.ServiceModel.Channels.Message&amp; fault) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault(System.Exception,System.ServiceModel.Channels.MessageVersion,System.ServiceModel.Channels.Message@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="error" Type="System.Exception" />
+        <Parameter Name="version" Type="System.ServiceModel.Channels.MessageVersion" />
+        <Parameter Name="fault" Type="System.ServiceModel.Channels.Message&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="exception">To be added.</param>
+        <param name="version">SOAP バージョンのメッセージ。</param>
+        <param name="fault">クライアントまたはサービス (双方向の場合) に返される <see cref="T:System.ServiceModel.Channels.Message" /> オブジェクト。</param>
+        <summary>サービス メソッドの途中で例外から返されるカスタム <see cref="T:System.ServiceModel.FaultException`1" /> を作成できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault%2A> メソッドを実装して、クライアントに返されるカスタムのエラー メッセージを作成します。  <xref:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault%2A>メソッドは常に WCF ランタイムとして特に致命的な例外を認識し、例外自体を再スローを除く、操作のままにして例外のため呼び出されます。 すべての <xref:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault%2A> 実装が呼び出されたときに、エラー メッセージがクライアントに返されます (`fault` が `null` 以外の場合)。 場合、`fault`パラメーターは`null`既定フォールトがクライアントに送信します。  
+  
+> [!NOTE]
+>  処理エラーの原因となった受信メッセージは、このメソッドの間に <xref:System.ServiceModel.OperationContext.RequestContext%2A?displayProperty=nameWithType> プロパティから入手できます。  
+  
+> [!NOTE]
+>  <xref:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault%2A> メソッドはさまざまな場所から呼び出すことができるため、このメソッドがどのスレッドで呼び出されるのかについての保証はありません。 <xref:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault%2A> メソッドが操作スレッドで呼び出されるとは限りません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、サービス メソッドがマネージ例外をスローしたときに、<xref:System.ServiceModel.Dispatcher.IErrorHandler> 型の <xref:System.ServiceModel.FaultException%601> だけを返す `GreetingFault` を実装するサービスを示します。  
+  
+ [!code-csharp[IErrorHandler#6](~/samples/snippets/csharp/VS_Snippets_CFX/ierrorhandler/cs/ierrorhandler.cs#6)]
+ [!code-vb[IErrorHandler#6](~/samples/snippets/visualbasic/VS_Snippets_CFX/ierrorhandler/vb/ierrorhandler.vb#6)]  
+  
+ 次のコード例では、サービス動作を使用して、<xref:System.ServiceModel.Dispatcher.IErrorHandler> の実装を <xref:System.ServiceModel.Dispatcher.ChannelDispatcher.ErrorHandlers%2A> プロパティに追加する方法を示します。  
+  
+ [!code-csharp[IErrorHandler#7](~/samples/snippets/csharp/VS_Snippets_CFX/ierrorhandler/cs/ierrorhandler.cs#7)]
+ [!code-vb[IErrorHandler#7](~/samples/snippets/visualbasic/VS_Snippets_CFX/ierrorhandler/vb/ierrorhandler.vb#7)]  
+  
+ 次のコード例では、アプリケーション構成ファイルを使用してサービス動作を読み込むようにサービスを構成する方法を示します。 構成ファイル内のサービス動作を公開する方法の詳細については、「<xref:System.ServiceModel.Description.IServiceBehavior>」を参照してください。  
+  
+ [!code-xml[IErrorHandler#4](~/samples/snippets/csharp/VS_Snippets_CFX/ierrorhandler/cs/hostapplication.exe.config#4)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

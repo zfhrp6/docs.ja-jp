@@ -1,0 +1,114 @@
+<Type Name="RichTextBoxStreamType" FullName="System.Windows.Forms.RichTextBoxStreamType">
+  <TypeSignature Language="C#" Value="public enum RichTextBoxStreamType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed RichTextBoxStreamType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.RichTextBoxStreamType" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>読み込みおよび内のデータを保存するために使用する入力と出力のストリームの種類を指定します、<see cref="T:System.Windows.Forms.RichTextBox" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すときに、この列挙体のメンバーを使用して、<xref:System.Windows.Forms.RichTextBox.LoadFile%2A>と<xref:System.Windows.Forms.RichTextBox.SaveFile%2A>のメソッド、<xref:System.Windows.Forms.RichTextBox>コントロール。  
+  
+   
+  
+## Examples  
+ 次の例の内容を保存する、 <xref:System.Windows.Forms.RichTextBox> ASCII テキスト ファイルにします。 この例では、<xref:System.Windows.Forms.SaveFileDialog>ユーザーからのパスとファイル名を要求するダイアログ ボックスを表示するクラス。 コードは、コントロールの内容をそのファイルに保存します。 例では、このバージョンを使用して、<xref:System.Windows.Forms.RichTextBox.SaveFile%2A>ファイルが標準のリッチ テキスト形式ではなく ASCII テキスト ファイルとして保存されることを指定します。 この例でコードが配置されている、<xref:System.Windows.Forms.Form>を持つクラス、<xref:System.Windows.Forms.RichTextBox>という名前のコントロール`richTextBox1`です。  
+  
+ [!code-cpp[Classic RichTextBox.SaveFile1 Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic RichTextBox.SaveFile1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic RichTextBox.SaveFile1 Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic RichTextBox.SaveFile1 Example/CS/source.cs#1)]
+ [!code-vb[Classic RichTextBox.SaveFile1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic RichTextBox.SaveFile1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="PlainText">
+      <MemberSignature Language="C#" Value="PlainText" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.RichTextBoxStreamType PlainText = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.RichTextBoxStreamType.PlainText" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.RichTextBoxStreamType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Object Linking and Embedding (OLE) のオブジェクトの場所でスペースを含むプレーン テキスト ストリーム。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RichNoOleObjs">
+      <MemberSignature Language="C#" Value="RichNoOleObjs" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.RichTextBoxStreamType RichNoOleObjs = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.RichTextBoxStreamType.RichNoOleObjs" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.RichTextBoxStreamType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>OLE オブジェクトの代わりにスペースを含むリッチ テキスト形式 (RTF) ストリームです。 この値が正しくのみで使用するため、<see cref="M:System.Windows.Forms.RichTextBox.SaveFile(System.String)" />のメソッド、<see cref="T:System.Windows.Forms.RichTextBox" />コントロール。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RichText">
+      <MemberSignature Language="C#" Value="RichText" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.RichTextBoxStreamType RichText = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.RichTextBoxStreamType.RichText" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.RichTextBoxStreamType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リッチ テキスト形式 (RTF) ストリームです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TextTextOleObjs">
+      <MemberSignature Language="C#" Value="TextTextOleObjs" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.RichTextBoxStreamType TextTextOleObjs = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.RichTextBoxStreamType.TextTextOleObjs" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.RichTextBoxStreamType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>OLE オブジェクトのテキスト表現でプレーン テキスト ストリーム。 この値が正しくのみで使用するため、<see cref="M:System.Windows.Forms.RichTextBox.SaveFile(System.String)" />のメソッド、<see cref="T:System.Windows.Forms.RichTextBox" />コントロール。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UnicodePlainText">
+      <MemberSignature Language="C#" Value="UnicodePlainText" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.RichTextBoxStreamType UnicodePlainText = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.RichTextBoxStreamType.UnicodePlainText" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.RichTextBoxStreamType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Object Linking and Embedding (OLE) のオブジェクトの代わりに空白が含まれるテキスト ストリーム。 テキストは、Unicode でエンコードされます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

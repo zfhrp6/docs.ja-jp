@@ -1,0 +1,101 @@
+<Type Name="ParamArrayAttribute" FullName="System.ParamArrayAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ParamArrayAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ParamArrayAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.ParamArrayAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Parameter, AllowMultiple=false, Inherited=true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>可変個数の引数を指定して呼び出せるメソッドであることを示します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ParamArrayAttribute>メソッドのパラメーターが、パラメーター配列であることを示します。 パラメーター配列では、不明な数の引数を指定をできます。 パラメーター配列は、仮パラメーター リストの最後のパラメーターである必要があり、1 次元配列をする必要があります。 メソッドが呼び出されると、パラメーター配列は 2 つの方法のいずれかで指定するメソッドの引数を許可します。  
+  
+-   型の 1 つの式パラメーターの配列型に暗黙的に変換します。 パラメーター配列は、値を持つパラメーターとして機能します。  
+  
+-   0 個以上の引数、パラメーター配列の要素の型に暗黙的に変換できる型の式の各引数であります。  
+  
+ 次のセクションの例では、両方の呼び出し規約を示しています。  
+  
+> [!NOTE]
+>  通常、<xref:System.ParamArrayAttribute>コード内で直接は使用されません。 代わりに、個々 の言語キーワードなど`ParamArray`Visual basic と`params`、C# の場合は、用のラッパーとして使用されます、<xref:System.ParamArrayAttribute>クラスです。 C# の場合などの一部の言語の言語のキーワードを使用する必要し、の使用を禁止する可能性がありますも<xref:System.ParamArrayAttribute>します。  
+  
+ オーバー ロードの解決中にパラメーター配列をサポートするコンパイラ メソッド オーバー ロードが存在しませんが、パラメーター配列を含むオーバー ロードより少ない 1 つのパラメーターを検出するときに、メソッドと置き換わりますパラメーター配列を含むオーバー ロードします。 呼び出しなど、`String.Split()`インスタンス メソッド (に存在しない、<xref:System.String>クラス) への呼び出しとして解決される、<xref:System.String.Split%28System.Char%5B%5D%29?displayProperty=nameWithType>メソッドです。 コンパイラは渡すことも、必要な型の空の配列メソッドにします。 つまり、メソッドはパラメーター配列内の要素を処理するときの長さが 0 の配列を処理する常に準備する必要があります。 具体的な例を次に示します。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では定義、`Temperature`クラスを含む、`Display`メソッドで、1 つまたは複数の書式設定された温度値を表示するためのものでは、します。 メソッドには、単一のパラメーター `formats`、パラメーター配列として定義されています。  
+  
+ [!code-csharp[System.ParamArrayAttribute#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.ParamArrayAttribute/cs/Example.cs#1)]
+ [!code-vb[System.ParamArrayAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.ParamArrayAttribute/vb/Example.vb#1)]  
+  
+ 次の例では、次の 3 つの異なる呼び出し、`Temperature.Display`メソッドです。 最初の例で、書式指定文字列の配列をメソッドに渡されます。 2 番目の場合、メソッドは 4 つの個別の書式指定文字列を引数として渡されます。 3 番目に、メソッドは、引数なしで呼び出されます。 Visual Basic と c# コンパイラこれの翻訳をへの呼び出しに、例からの出力が示すように、`Display`空の文字列配列を持つメソッドです。  
+  
+ [!code-csharp[System.ParamArrayAttribute#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.ParamArrayAttribute/cs/Example.cs#2)]
+ [!code-vb[System.ParamArrayAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.ParamArrayAttribute/vb/Example.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ParamArrayAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ParamArrayAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ParamArrayAttribute" /> クラスの新しいインスタンスを、既定のプロパティを使用して初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

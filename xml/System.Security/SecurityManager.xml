@@ -1,0 +1,725 @@
+<Type Name="SecurityManager" FullName="System.Security.SecurityManager">
+  <TypeSignature Language="C#" Value="public static class SecurityManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed SecurityManager extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.SecurityManager" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>セキュリティ システムと対話するクラスの主要なアクセスを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セキュリティは、アクセスし、セキュリティ ポリシーの構成を操作するメソッドを提供します。 インスタンスを作成できない<xref:System.Security.SecurityManager>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CheckExecutionRights">
+      <MemberSignature Language="C#" Value="public static bool CheckExecutionRights { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool CheckExecutionRights" />
+      <MemberSignature Language="DocId" Value="P:System.Security.SecurityManager.CheckExecutionRights" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コードが必要になっているかどうかを示す値を取得または<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Execution" />を実行するためにします。</summary>
+        <value>
+          <see langword="true" />コードがある必要場合<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Execution" />; を実行するためにそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、する場合`false`、せずコードも含む<xref:System.Security.Permissions.SecurityPermissionFlag.Execution>を実行できます。 チェックの実行コストが、限定的なポリシーの解決の利点を排除することができます。 このプロパティは、必要に応じて実行チェックを無効にするものです。  
+  
+ までこのプロパティの変更が永続化されていない<xref:System.Security.SecurityManager.SavePolicy%2A>と呼びます。 レジストリ内に保持されるまで、新しいプロセスは変更によって影響されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">このメソッドを呼び出すコードには <see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy" /> がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">ポリシーを変更する権限です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentThreadRequiresSecurityContextCapture">
+      <MemberSignature Language="C#" Value="public static bool CurrentThreadRequiresSecurityContextCapture ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool CurrentThreadRequiresSecurityContextCapture() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecurityManager.CurrentThreadRequiresSecurityContextCapture" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セキュリティ状態が時間内では後で再作成する必要がある場合、現在のスレッドで、キャプチャのセキュリティ コンテキストが必要かを判断します。</summary>
+        <returns>
+          <see langword="false" />スタックには、部分的に信頼されたアプリケーション ドメインがありません。、ありません部分的に信頼されたアセンブリ、およびなしが含まれている場合現在アクティブな<see cref="M:System.Security.CodeAccessPermission.PermitOnly" />または<see cref="M:System.Security.CodeAccessPermission.Deny" />修飾子です。<see langword="true" />場合は、スタックに、これらのいずれも含まれている共通言語ランタイムは保証できません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Security.SecurityManager.CurrentThreadRequiresSecurityContextCapture%2A>メソッドが成功したセキュリティ要求の後に取得されている機密データをキャッシュする前にします。  
+  
+ 場合、<xref:System.Security.CodeAccessPermission.Assert%2A>メソッドが呼び出された高いスタックで、対応するセキュリティ コンテキストをキャプチャすることがなく、データをキャッシュできません必要があります。 取得されるデータがそれ以外の場合、機密性の高い、<xref:System.Security.CodeAccessPermission.Assert%2A>使用可能であるコードになる可能性がありますで実行されていない可能性<xref:System.Security.CodeAccessPermission.Assert%2A>インプレースです。  
+  
+> [!IMPORTANT]
+>  戻り値は信頼性がある場合にのみ`false`、保証されるは、スレッドが、キャプチャのセキュリティ コンテキストを必要とすることを意味します。 セキュリティ コンテキストのキャプチャは、セキュリティの脆弱性を回避する必要がない場合に、メソッドは true を返します。  
+  
+ <xref:System.Security.SecurityManager.CurrentThreadRequiresSecurityContextCapture%2A>主な用途は、不要なセキュリティ コンテキストを避けるためにキャプチャすると、それを使用して、コードがセキュリティに関係し、監査する必要がありますを示すためセキュリティ クリティカルです。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardSandbox">
+      <MemberSignature Language="C#" Value="public static System.Security.PermissionSet GetStandardSandbox (System.Security.Policy.Evidence evidence);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.PermissionSet GetStandardSandbox(class System.Security.Policy.Evidence evidence) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecurityManager.GetStandardSandbox(System.Security.Policy.Evidence)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.PermissionSet</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="evidence" Type="System.Security.Policy.Evidence" />
+      </Parameters>
+      <Docs>
+        <param name="evidence">権限のセットに一致するようにホストの証拠。</param>
+        <summary>指定された証拠を持つアプリケーションに付与しても安全なアクセス許可セットを取得します。</summary>
+        <returns>指定された証拠を持つアプリケーションの許可セットとして使用できるアクセス許可セット。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、ホストは、証拠`evidence`含める必要があります<xref:System.Security.Policy.Zone?displayProperty=nameWithType>証拠。  
+>   
+>  次の表は、各ゾーンに対して返される、アクセス許可セットを示します。  
+  
+|ゾーン|アクセス許可セット|  
+|----------|--------------------|  
+|<xref:System.Security.SecurityZone.MyComputer>|`FullTrust`|  
+|<xref:System.Security.SecurityZone.Intranet>|`LocalIntranet`|  
+|<xref:System.Security.SecurityZone.Trusted>|`Internet`|  
+|<xref:System.Security.SecurityZone.Internet>|`Internet`|  
+|<xref:System.Security.SecurityZone.Untrusted>|なし|  
+|<xref:System.Security.SecurityZone.NoZone>|なし|  
+  
+ などの他の証拠<xref:System.Security.Policy.Url>または<xref:System.Security.Policy.Site>、見なすことができます。  
+  
+ 返されるアクセス許可セットは、アプリケーションを実行するサンド ボックスで使用できます。 このメソッドは、ポリシーが指定されていませんが、ホスト アプリケーションによって要求されたアクセス許可セットが妥当かどうかを判断するのに役立つことに注意してください。 このメソッドは、サンド ボックスに、ゾーンをマップに使用できます。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Security.SecurityManager.GetStandardSandbox%2A>サンド ボックス化されたアプリケーションのアクセス許可を取得する方法を設定します。 サンド ボックスで、アプリケーションの実行に関する詳細については、次を参照してください。[する方法: 実行部分信頼コードをサンド ボックスで](~/docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)です。  
+  
+ [!code-csharp[sandboxingApis#1](~/samples/snippets/csharp/VS_Snippets_CLR/SandboxingAPIs/CS/program.cs#1)]
+ [!code-vb[sandboxingApis#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/SandboxingAPIs/VB/program.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="evidence" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetZoneAndOrigin">
+      <MemberSignature Language="C#" Value="public static void GetZoneAndOrigin (out System.Collections.ArrayList zone, out System.Collections.ArrayList origin);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void GetZoneAndOrigin([out] class System.Collections.ArrayList&amp; zone, [out] class System.Collections.ArrayList&amp; origin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecurityManager.GetZoneAndOrigin(System.Collections.ArrayList@,System.Collections.ArrayList@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="zone" Type="System.Collections.ArrayList&amp;" RefType="out" />
+        <Parameter Name="origin" Type="System.Collections.ArrayList&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="zone">出力パラメーターを含む、<see cref="T:System.Collections.ArrayList" />の許可<see cref="P:System.Security.Permissions.ZoneIdentityPermissionAttribute.Zone" />オブジェクト。</param>
+        <param name="origin">出力パラメーターを含む、<see cref="T:System.Collections.ArrayList" />の許可<see cref="T:System.Security.Permissions.UrlIdentityPermission" />オブジェクト。</param>
+        <summary>現在のアセンブリの許可ゾーン id と URL の id アクセス許可セットを取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ URL およびゾーン実行アセンブリの証拠を使用して呼び出すには、このメソッドに、推奨される代替<xref:System.Security.SecurityManager.ResolvePolicy%2A>証拠の種類ごと。 返される、アクセス許可セット、<xref:System.Security.SecurityManager.ResolvePolicy%2A>呼び出しがそのゾーンと元の URL に基づいて、実行中のアセンブリに許可する権限を識別します。  
+  
+> [!NOTE]
+>  このメンバーは、リンク確認要求ではなく、有効な暗号化キー、擬似キー ECMA 公開キーのです。 .NET Framework 内では、Microsoft 公開キーのリンク確認要求に ECMA 擬似キーのリンク確認要求が自動的に変換します。 セキュリティの例外は、ECMA 擬似キーではなく Microsoft 公開キーに基づいています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">要求<see cref="T:System.Security.Permissions.StrongNameIdentityPermission" />できませんでした。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsGranted">
+      <MemberSignature Language="C#" Value="public static bool IsGranted (System.Security.IPermission perm);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsGranted(class System.Security.IPermission perm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecurityManager.IsGranted(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="perm" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="perm">呼び出し元に与えられたに対してテストするアクセス許可。</param>
+        <summary>呼び出し元に、権限が与えられるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />呼び出し元に与えられるアクセス許可が、アクセス許可を含めるかどうか<paramref name="perm" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 権限の付与はポリシーによって決定され、上書き、assert などの対象の要求とは異なる。 また、<xref:System.Security.SecurityManager.IsGranted%2A>テストのみがスタックに他の呼び出し元に依存しない呼び出し元コード アセンブリの許可します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadPolicyLevelFromFile">
+      <MemberSignature Language="C#" Value="public static System.Security.Policy.PolicyLevel LoadPolicyLevelFromFile (string path, System.Security.PolicyLevelType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Policy.PolicyLevel LoadPolicyLevelFromFile(string path, valuetype System.Security.PolicyLevelType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecurityManager.LoadPolicyLevelFromFile(System.String,System.Security.PolicyLevelType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Policy.PolicyLevel</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="type" Type="System.Security.PolicyLevelType" />
+      </Parameters>
+      <Docs>
+        <param name="path">セキュリティ ポリシー情報を含むファイルへの物理ファイル パス。</param>
+        <param name="type">読み込まれるポリシー レベルの種類を指定する列挙値の 1 つ。</param>
+        <summary>指定されたファイルから <see cref="T:System.Security.Policy.PolicyLevel" /> を読み込みます。</summary>
+        <returns>読み込まれたポリシー レベル。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="path" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="path" /> パラメーターが指定したファイルは存在しません。</exception>
+        <exception cref="T:System.Security.SecurityException">このメソッドを呼び出すコードには <see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy" /> がありません。  
+  
+ または  
+  
+ このメソッドを呼び出すコードには <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /> がありません。  
+  
+ または  
+  
+ このメソッドを呼び出すコードには <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /> がありません。  
+  
+ または  
+  
+ このメソッドを呼び出すコードには <see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" /> がありません。</exception>
+        <exception cref="T:System.NotSupportedException">このメソッドはコード アクセス セキュリティ (CAS) ポリシーを使用しており、[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)] では互換性のために残されています。 .NET Framework の旧バージョンとの互換性のための CAS ポリシーを有効にするには、 [ &lt;legacyCasPolicy&gt;要素](~/docs/framework/configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md)です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">表示およびポリシーを変更する権限です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy" /></permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取りや、ファイルを出力します。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、 <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />、<see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadPolicyLevelFromString">
+      <MemberSignature Language="C#" Value="public static System.Security.Policy.PolicyLevel LoadPolicyLevelFromString (string str, System.Security.PolicyLevelType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Policy.PolicyLevel LoadPolicyLevelFromString(string str, valuetype System.Security.PolicyLevelType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecurityManager.LoadPolicyLevelFromString(System.String,System.Security.PolicyLevelType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Policy.PolicyLevel</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="str" Type="System.String" />
+        <Parameter Name="type" Type="System.Security.PolicyLevelType" />
+      </Parameters>
+      <Docs>
+        <param name="str">構成ファイルに表示されることと同じ形式でセキュリティ ポリシー レベルの XML 表現。</param>
+        <param name="type">読み込まれるポリシー レベルの種類を指定する列挙値の 1 つ。</param>
+        <summary>読み込み、<see cref="T:System.Security.Policy.PolicyLevel" />指定した文字列からです。</summary>
+        <returns>読み込まれたポリシー レベル。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="str" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="str" />パラメーターが無効です。</exception>
+        <exception cref="T:System.Security.SecurityException">このメソッドを呼び出すコードには <see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy" /> がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">表示およびポリシーを変更する権限です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="PolicyHierarchy">
+      <MemberSignature Language="C#" Value="public static System.Collections.IEnumerator PolicyHierarchy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.IEnumerator PolicyHierarchy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecurityManager.PolicyHierarchy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セキュリティ ポリシーの階層にアクセスする列挙子を、コンピューター ポリシーとユーザー ポリシーのようなレベルで提供します。</summary>
+        <returns>セキュリティ ポリシーの階層を構成する <see cref="T:System.Security.Policy.PolicyLevel" /> オブジェクトの列挙子。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返された列挙子は、連続する<xref:System.Security.Policy.PolicyLevel>をそれぞれのポリシーを表すオブジェクト (コンピューター、ユーザー、エンタープライズ、アプリケーション ドメイン) 階層のレベルです。 これらのオブジェクトは、ライブ ポリシー オブジェクトです。これらのオブジェクトを変更すると、予期しない結果が持つことができます。  
+  
+ 最小のポリシーの階層は、コンピューター レベル、エンタープライズ レベル、およびユーザー レベルで構成されます。 ただし、階層では、他のレベルを含めることができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">このメソッドはコード アクセス セキュリティ (CAS) ポリシーを使用しており、[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)] では互換性のために残されています。 .NET Framework の旧バージョンとの互換性のための CAS ポリシーを有効にするには、 [ &lt;legacyCasPolicy&gt;要素](~/docs/framework/configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md)です。</exception>
+        <exception cref="T:System.Security.SecurityException">このメソッドを呼び出すコードには <see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy" /> がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">表示およびポリシーを変更する権限です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolvePolicy">
+      <MemberSignature Language="C#" Value="public static System.Security.PermissionSet ResolvePolicy (System.Security.Policy.Evidence evidence);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.PermissionSet ResolvePolicy(class System.Security.Policy.Evidence evidence) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecurityManager.ResolvePolicy(System.Security.Policy.Evidence)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.PermissionSet</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="evidence" Type="System.Security.Policy.Evidence" />
+      </Parameters>
+      <Docs>
+        <param name="evidence">ポリシーの評価に使用する証拠セット。</param>
+        <summary>指定された証拠に基づいて、コードに与えるアクセス許可を決定します。</summary>
+        <returns>セキュリティ システムで付与できるアクセス許可。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、呼び出し元のコードの id の証拠を提供する、セキュリティ ポリシー エンジンを呼び出します。 結果は、セキュリティ ポリシーによって決定されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">このメソッドはコード アクセス セキュリティ (CAS) ポリシーを使用しており、[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)] では互換性のために残されています。 .NET Framework の旧バージョンとの互換性のための CAS ポリシーを有効にするには、 [ &lt;legacyCasPolicy&gt;要素](~/docs/framework/configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md)です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolvePolicy">
+      <MemberSignature Language="C#" Value="public static System.Security.PermissionSet ResolvePolicy (System.Security.Policy.Evidence[] evidences);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.PermissionSet ResolvePolicy(class System.Security.Policy.Evidence[] evidences) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecurityManager.ResolvePolicy(System.Security.Policy.Evidence[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.PermissionSet</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="evidences" Type="System.Security.Policy.Evidence[]" />
+      </Parameters>
+      <Docs>
+        <param name="evidences">ポリシーの評価に使用される証拠オブジェクトの配列。</param>
+        <summary>指定された証拠に基づいて、コードに与えるアクセス許可を決定します。</summary>
+        <returns>指定された証拠のすべてに適切なアクセス許可のセット。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、セキュリティ ポリシー エンジンの配列を提供<xref:System.Security.Policy.Evidence>オブジェクト。 返されるアクセス許可セットでは、配列内のすべての証拠に適用される権限だけを表します。 これらのアクセス許可は、該当するショートカットは、または各証拠にポリシーが許可されたアクセス許可のサブセットです。 それぞれのポリシーの解決の結果の交差部分を実行していた場合、このメソッドの動作、<xref:System.Security.Policy.Evidence>配列内のオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">このメソッドはコード アクセス セキュリティ (CAS) ポリシーを使用しており、[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)] では互換性のために残されています。 .NET Framework の旧バージョンとの互換性のための CAS ポリシーを有効にするには、 [ &lt;legacyCasPolicy&gt;要素](~/docs/framework/configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md)です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolvePolicy">
+      <MemberSignature Language="C#" Value="public static System.Security.PermissionSet ResolvePolicy (System.Security.Policy.Evidence evidence, System.Security.PermissionSet reqdPset, System.Security.PermissionSet optPset, System.Security.PermissionSet denyPset, out System.Security.PermissionSet denied);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.PermissionSet ResolvePolicy(class System.Security.Policy.Evidence evidence, class System.Security.PermissionSet reqdPset, class System.Security.PermissionSet optPset, class System.Security.PermissionSet denyPset, [out] class System.Security.PermissionSet&amp; denied) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecurityManager.ResolvePolicy(System.Security.Policy.Evidence,System.Security.PermissionSet,System.Security.PermissionSet,System.Security.PermissionSet,System.Security.PermissionSet@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.PermissionSet</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="evidence" Type="System.Security.Policy.Evidence" />
+        <Parameter Name="reqdPset" Type="System.Security.PermissionSet" />
+        <Parameter Name="optPset" Type="System.Security.PermissionSet" />
+        <Parameter Name="denyPset" Type="System.Security.PermissionSet" />
+        <Parameter Name="denied" Type="System.Security.PermissionSet&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="evidence">ポリシーの評価に使用する証拠セット。</param>
+        <param name="reqdPset">コードを実行するために必要なアクセス許可。</param>
+        <param name="optPset">与えられた場合に使用するオプションのアクセス許可。ただし、コードを実行するためには必要ありません。</param>
+        <param name="denyPset">ポリシーがその他の方法で許可しても、コードに決して与えられない拒否されるアクセス許可。</param>
+        <param name="denied">与えられないアクセス許可のセットを格納する出力パラメーター。</param>
+        <summary>指定された証拠と要求に基づいて、コードに与えるアクセス許可を決定します。</summary>
+        <returns>セキュリティ システムが与えるアクセス許可のセット。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出すコードは、呼び出し元のコードの id の証拠と権限のセットを提供、セキュリティ ポリシー エンジン要求します。 結果は、セキュリティ ポリシーによって決定されます。 このメソッドは、セキュリティ システムによって付与される権限のセットを返すし、出力パラメーターとして拒否される権限のセットを返します。 有効な付与されたアクセス許可、拒否されたセットに含まれていない許可されたセットにされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">このメソッドはコード アクセス セキュリティ (CAS) ポリシーを使用しており、[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)] では互換性のために残されています。 .NET Framework の旧バージョンとの互換性のための CAS ポリシーを有効にするには、 [ &lt;legacyCasPolicy&gt;要素](~/docs/framework/configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md)です。</exception>
+        <exception cref="T:System.Security.Policy.PolicyException">ポリシーが <paramref name="reqdPset" /> パラメーターで指定される最小限の要求アクセス許可の付与に失敗しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolvePolicyGroups">
+      <MemberSignature Language="C#" Value="public static System.Collections.IEnumerator ResolvePolicyGroups (System.Security.Policy.Evidence evidence);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.IEnumerator ResolvePolicyGroups(class System.Security.Policy.Evidence evidence) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecurityManager.ResolvePolicyGroups(System.Security.Policy.Evidence)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="evidence" Type="System.Security.Policy.Evidence" />
+      </Parameters>
+      <Docs>
+        <param name="evidence">ポリシーが評価される証拠セット。</param>
+        <summary>指定した証拠と一致するコード グループのコレクションを取得します。</summary>
+        <returns>証拠と一致するコード グループのセットの列挙体。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、特定の種類の証拠と指定したポリシーの構成がどのように連携するかを分析に役立ちます。  
+  
+ 照合ポリシーの階層のすべての該当するレベルのコード グループが返されます、`evidence`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">このメソッドはコード アクセス セキュリティ (CAS) ポリシーを使用しており、[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)] では互換性のために残されています。 .NET Framework の旧バージョンとの互換性のための CAS ポリシーを有効にするには、 [ &lt;legacyCasPolicy&gt;要素](~/docs/framework/configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md)です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveSystemPolicy">
+      <MemberSignature Language="C#" Value="public static System.Security.PermissionSet ResolveSystemPolicy (System.Security.Policy.Evidence evidence);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.PermissionSet ResolveSystemPolicy(class System.Security.Policy.Evidence evidence) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecurityManager.ResolveSystemPolicy(System.Security.Policy.Evidence)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.PermissionSet</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="evidence" Type="System.Security.Policy.Evidence" />
+      </Parameters>
+      <Docs>
+        <param name="evidence">ポリシーの評価に使用する証拠セット。</param>
+        <summary>指定した証拠に基づいたコードに対して与えるアクセス許可を判断します。<see cref="T:System.AppDomain" /> レベルのポリシーは除きます。</summary>
+        <returns>セキュリティ システムで付与できるアクセス許可。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、セキュリティ ポリシー エンジンを起動し、呼び出し元のコードの id の証拠を提供します。 結果は、システム セキュリティ ポリシーを除くいずれかによって決まります<xref:System.AppDomain>ポリシー。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">このメソッドはコード アクセス セキュリティ (CAS) ポリシーを使用しており、[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)] では互換性のために残されています。 .NET Framework の旧バージョンとの互換性のための CAS ポリシーを有効にするには、 [ &lt;legacyCasPolicy&gt;要素](~/docs/framework/configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md)です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SavePolicy">
+      <MemberSignature Language="C#" Value="public static void SavePolicy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SavePolicy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecurityManager.SavePolicy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>変更されたセキュリティ ポリシーの状態を保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって公開されていると、このメソッドは、ポリシーを保存<xref:System.Security.SecurityManager.PolicyHierarchy%2A>、<xref:System.Security.Policy.PolicyLevel>のクラス セキュリティ ポリシーの構成を表します。 このメソッドを呼び出す場合を除き、ポリシー オブジェクトに加えた変更は保存されません. は後続のアプリケーションの実行時に影響しません  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">このメソッドはコード アクセス セキュリティ (CAS) ポリシーを使用しており、[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)] では互換性のために残されています。 .NET Framework の旧バージョンとの互換性のための CAS ポリシーを有効にするには、 [ &lt;legacyCasPolicy&gt;要素](~/docs/framework/configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md)です。</exception>
+        <exception cref="T:System.Security.SecurityException">このメソッドを呼び出すコードには <see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy" /> がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">ポリシーを変更する権限です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SavePolicyLevel">
+      <MemberSignature Language="C#" Value="public static void SavePolicyLevel (System.Security.Policy.PolicyLevel level);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SavePolicyLevel(class System.Security.Policy.PolicyLevel level) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecurityManager.SavePolicyLevel(System.Security.Policy.PolicyLevel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="level" Type="System.Security.Policy.PolicyLevel" />
+      </Parameters>
+      <Docs>
+        <param name="level">保存するポリシー レベル オブジェクト。</param>
+        <summary><see cref="M:System.Security.SecurityManager.LoadPolicyLevelFromFile(System.String,System.Security.PolicyLevelType)" /> で読み込まれて変更されたセキュリティ ポリシー レベルを保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Policy.PolicyLevel>読み込み元と同じ場所に保存されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">このメソッドを呼び出すコードには <see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy" /> がありません。</exception>
+        <exception cref="T:System.NotSupportedException">このメソッドはコード アクセス セキュリティ (CAS) ポリシーを使用しており、[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)] では互換性のために残されています。 .NET Framework の旧バージョンとの互換性のための CAS ポリシーを有効にするには、 [ &lt;legacyCasPolicy&gt;要素](~/docs/framework/configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md)です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">ポリシーを変更する権限です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityEnabled">
+      <MemberSignature Language="C#" Value="public static bool SecurityEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool SecurityEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Security.SecurityManager.SecurityEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("The security manager cannot be turned off on MS runtime")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはセキュリティが有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />セキュリティが有効である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは使用、 [Caspol.exe (コード アクセス セキュリティ ポリシー ツール)](~/docs/framework/tools/caspol-exe-code-access-security-policy-tool.md)  
+  
+ `-security`(`-s`) コードに基づくセキュリティをオフにするにはオプションです。  
+  
+ <xref:System.Security.SecurityManager.SecurityEnabled%2A>管理者コード アクセス セキュリティを無効にするための手段を提供します。 コード アクセス セキュリティを無効にすると、すべてのコード アクセス要求が成功します。 実際には、この場合のすべてのコードが許可`FullTrust`です。 コードが実行できるように、セキュリティ システムをバイパス コード アクセス セキュリティを無効にすると、同等のセキュリティ ポリシーで許可よりもわずかに向上`FullTrust`すべてのコードにします。 このプロパティは、ロールベースのセキュリティを無効になりませんしたがって、<xref:System.Security.Permissions.PrincipalPermission>要求には影響しません。  
+  
+> [!CAUTION]
+>  コード アクセス セキュリティを無効にすると、システムは、ウイルスやワームなどの悪意のあるコードの攻撃を受けやすくなります。 コード アクセス セキュリティを無効にしてもマネージ コードの任意の方法で実行は自動的にブロックしません。 It だけエラーの原因が制限なく、コード アクセス セキュリティ システムで実行するコードを管理およびのみ最も慎重に行う必要があります。 システムのセキュリティを保護するために他のセキュリティ対策を講じている、余分なパフォーマンスを得るためにセキュリティをオフにすることを行うのみ必要があります。 その他のセキュリティ対策の例としては、公衆ネットワークからの切断、コンピューターの物理的な保護などがあります。  
+  
+ までのレジストリでこのプロパティの変更は保持されません<xref:System.Security.SecurityManager.SavePolicy%2A>と呼びます。 レジストリ内に保持されるまで、新しいプロセスは変更によって影響されません。 実行中のプロセスでこのプロパティの値を変更するとは限りません状態を変更しません、期待どおりにします。 変更が反映されていることを確認するを呼び出す必要があります<xref:System.Security.SecurityManager.SavePolicy%2A>し、新しいプロセスを開始します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">このメソッドを呼び出すコードには <see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy" /> がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">ポリシーを変更する権限です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

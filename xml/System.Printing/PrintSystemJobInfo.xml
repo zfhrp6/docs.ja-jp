@@ -1,0 +1,1128 @@
+<Type Name="PrintSystemJobInfo" FullName="System.Printing.PrintSystemJobInfo">
+  <TypeSignature Language="C#" Value="public class PrintSystemJobInfo : System.Printing.PrintSystemObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi PrintSystemJobInfo extends System.Printing.PrintSystemObject" />
+  <TypeSignature Language="DocId" Value="T:System.Printing.PrintSystemJobInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Printing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Printing.PrintSystemObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>詳しくは、印刷ジョブを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスには、パブリック コンス トラクターがありません。 参照を取得する、<xref:System.Printing.PrintSystemJobInfo>オブジェクトを使用して、静的な<xref:System.Printing.PrintSystemJobInfo.Get%2A?displayProperty=nameWithType>メソッドまたは、次のいずれかの<xref:System.Printing.PrintQueue>インスタンス メソッド: <xref:System.Printing.PrintQueue.GetJob%2A>、 <xref:System.Printing.PrintQueue.GetPrintJobInfoCollection%2A>、または<xref:System.Printing.PrintQueue.AddJob%2A>です。  
+  
+ プリンターにジョブが完了するかどうかなど、多数の印刷ジョブ プロパティを渡す必要があります、 <xref:System.Printing.PrintSystemJobInfo> 、アプリケーションが、対応するプロパティを読み取る前にオブジェクト (<xref:System.Printing.PrintSystemJobInfo.IsCompleted%2A>)。 <xref:System.Printing.PrintSystemJobInfo.Refresh%2A>メソッドは、この機能を提供します。  
+  
+ 同様に、アプリケーションが変更された時点の値、<xref:System.Printing.PrintSystemJobInfo.JobName%2A>プロパティを変更する必要がありますに書き込む、印刷キュー ユーティリティ、コンピューター上です。 <xref:System.Printing.PrintSystemJobInfo.Commit%2A>メソッドは、この機能を提供します。  
+  
+ クラスを派生させた場合<xref:System.Printing.PrintSystemJobInfo>追加の書き込み可能なプロパティを持ちのオーバーライドを実装する必要があります、<xref:System.Printing.PrintSystemJobInfo.Refresh%2A>と<xref:System.Printing.PrintSystemJobInfo.Commit%2A>メソッドです。  
+  
+> [!CAUTION]
+>  クラス内で、 <xref:System.Printing> Windows サービスや ASP.NET アプリケーションまたはサービス内で使用する名前空間はサポートされていません。 パフォーマンスと実行時の例外をサービス低下のいずれかのようなアプリケーションからこれらのクラスを使用しようと、予期しない問題が生じる可能性があります。  
+  
+ Windows フォーム アプリケーションから印刷する場合を参照してください、<xref:System.Drawing.Printing>名前空間。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Cancel">
+      <MemberSignature Language="C#" Value="public void Cancel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Cancel() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintSystemJobInfo.Cancel" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>印刷ジョブを取り消します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、このメソッドを使用して印刷ジョブをキャンセルする方法を示します。  
+  
+ [!code-cpp[DiagnoseProblematicPrintJob#HandlePausedJob](~/samples/snippets/cpp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CPP/Program.cpp#handlepausedjob)]
+ [!code-csharp[DiagnoseProblematicPrintJob#HandlePausedJob](~/samples/snippets/csharp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CSharp/Program.cs#handlepausedjob)]
+ [!code-vb[DiagnoseProblematicPrintJob#HandlePausedJob](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/visualbasic/program.vb#handlepausedjob)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Commit">
+      <MemberSignature Language="C#" Value="public override void Commit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Commit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintSystemJobInfo.Commit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プロパティに変更を書き込みます、<see cref="T:System.Printing.PrintSystemJobInfo" />オブジェクトが表す実際の印刷ジョブにオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ のみ、<xref:System.Printing.PrintSystemJobInfo.JobName%2A>プロパティが書き込み可能です。 クラスを派生させた場合<xref:System.Printing.PrintSystemJobInfo>追加の書き込み可能なプロパティを持つ、オーバーライドする必要があります、<xref:System.Printing.PrintSystemJobInfo.Commit%2A>と<xref:System.Printing.PrintSystemJobInfo.Refresh%2A>メソッドを独自の実装です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Get">
+      <MemberSignature Language="C#" Value="public static System.Printing.PrintSystemJobInfo Get (System.Printing.PrintQueue printQueue, int jobIdentifier);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Printing.PrintSystemJobInfo Get(class System.Printing.PrintQueue printQueue, int32 jobIdentifier) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintSystemJobInfo.Get(System.Printing.PrintQueue,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintSystemJobInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="printQueue" Type="System.Printing.PrintQueue" />
+        <Parameter Name="jobIdentifier" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="printQueue">印刷ジョブをホストしている印刷キューです。</param>
+        <param name="jobIdentifier">印刷ジョブの数値 ID です。</param>
+        <summary>取得、 <see cref="T:System.Printing.PrintSystemJobInfo" /> 、指定した指定したジョブの<see cref="T:System.Printing.PrintQueue" />します。</summary>
+        <returns><see cref="T:System.Printing.PrintSystemJobInfo" />に対応する、<paramref name="jobIdentifier" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することも、<xref:System.Printing.PrintQueue.GetJob%2A?displayProperty=nameWithType>を同じ目的のメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HostingPrintQueue">
+      <MemberSignature Language="C#" Value="public System.Printing.PrintQueue HostingPrintQueue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Printing.PrintQueue HostingPrintQueue" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintSystemJobInfo.HostingPrintQueue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintQueue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>印刷ジョブをホストしている印刷キューを取得します。</summary>
+        <value>A<see cref="T:System.Printing.PrintQueue" />印刷ジョブを所有している印刷キューを表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、印刷ジョブに問題を診断するときに、このプロパティを使用する方法を示します。  
+  
+ [!code-cpp[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/cpp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CPP/Program.cpp#spottroubleusingjobproperties)]
+ [!code-csharp[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/csharp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CSharp/Program.cs#spottroubleusingjobproperties)]
+ [!code-vb[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/visualbasic/program.vb#spottroubleusingjobproperties)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HostingPrintServer">
+      <MemberSignature Language="C#" Value="public System.Printing.PrintServer HostingPrintServer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Printing.PrintServer HostingPrintServer" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintSystemJobInfo.HostingPrintServer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintServer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>印刷ジョブの印刷キューをホストしているプリント サーバーを取得します。</summary>
+        <value>A<see cref="T:System.Printing.PrintServer" />のホスティングのプリント サーバー (通常はコンピューター) を表す値、<see cref="T:System.Printing.PrintQueue" />印刷ジョブを所有しています。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InternalDispose">
+      <MemberSignature Language="C#" Value="protected override sealed void InternalDispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InternalDispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintSystemJobInfo.InternalDispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptions</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary>によって使用されているアンマネージ リソースを解放、<see cref="T:System.Printing.PrintSystemJobInfo" />し、必要に応じて、マネージ リソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBlocked">
+      <MemberSignature Language="C#" Value="public bool IsBlocked { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsBlocked" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintSystemJobInfo.IsBlocked" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>印刷ジョブがブロックされているかどうかを示す値を取得し、印刷されないため、します。</summary>
+        <value>
+          <see langword="true" />場合は、印刷ジョブはブロックされます。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、印刷ジョブに問題を診断するときに、このプロパティを使用する方法を示します。  
+  
+ [!code-cpp[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/cpp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CPP/Program.cpp#spottroubleusingjobproperties)]
+ [!code-csharp[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/csharp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CSharp/Program.cs#spottroubleusingjobproperties)]
+ [!code-vb[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/visualbasic/program.vb#spottroubleusingjobproperties)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCompleted">
+      <MemberSignature Language="C#" Value="public bool IsCompleted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCompleted" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintSystemJobInfo.IsCompleted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>印刷ジョブが完了したかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、印刷ジョブが完了するとします。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、印刷ジョブに問題を診断するときに、このプロパティを使用する方法を示します。  
+  
+ [!code-cpp[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/cpp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CPP/Program.cpp#spottroubleusingjobproperties)]
+ [!code-csharp[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/csharp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CSharp/Program.cs#spottroubleusingjobproperties)]
+ [!code-vb[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/visualbasic/program.vb#spottroubleusingjobproperties)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDeleted">
+      <MemberSignature Language="C#" Value="public bool IsDeleted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDeleted" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintSystemJobInfo.IsDeleted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかで表される、印刷ジョブ、<see cref="T:System.Printing.PrintSystemJobInfo" />オブジェクト、印刷キューから削除されました。</summary>
+        <value>
+          <see langword="true" />印刷ジョブが削除された場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ かもしれませんが矛盾オブジェクトが削除されると、独自の状態を報告できるけれどもにことを最初にすることに注意、<xref:System.Printing.PrintSystemJobInfo>オブジェクトのみ*表す*実際の印刷ジョブ。 後者の印刷キューからの削除は自動的に破棄、<xref:System.Printing.PrintSystemJobInfo>アプリケーションのオブジェクト。 同様に、オブジェクトをいずれかから削除されません<xref:System.Printing.PrintJobInfoCollection>が表す印刷ジョブが削除される前に作成されました。 たとえば場合、<xref:System.Printing.PrintQueue.GetPrintJobInfoCollection%2A>メソッドが、印刷ジョブが削除される前に実行は、返されるコレクションが含まれます、<xref:System.Printing.PrintSystemJobInfo>印刷ジョブを表すオブジェクト。 印刷ジョブが削除されたときに、このオブジェクトは、コレクションから削除されません。 場合に、<xref:System.Printing.PrintQueue.GetPrintJobInfoCollection%2A>が再度実行、返されたコレクションには、削除された印刷ジョブを表すメンバーはありません。  
+  
+   
+  
+## Examples  
+ 次の例では、印刷ジョブに問題を診断するときに、このプロパティを使用する方法を示します。  
+  
+ [!code-cpp[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/cpp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CPP/Program.cpp#spottroubleusingjobproperties)]
+ [!code-csharp[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/csharp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CSharp/Program.cs#spottroubleusingjobproperties)]
+ [!code-vb[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/visualbasic/program.vb#spottroubleusingjobproperties)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDeleting">
+      <MemberSignature Language="C#" Value="public bool IsDeleting { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDeleting" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintSystemJobInfo.IsDeleting" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>印刷ジョブが印刷キューから削除されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />印刷ジョブが削除されている場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、印刷ジョブに問題を診断するときに、このプロパティを使用する方法を示します。  
+  
+ [!code-cpp[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/cpp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CPP/Program.cpp#spottroubleusingjobproperties)]
+ [!code-csharp[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/csharp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CSharp/Program.cs#spottroubleusingjobproperties)]
+ [!code-vb[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/visualbasic/program.vb#spottroubleusingjobproperties)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInError">
+      <MemberSignature Language="C#" Value="public bool IsInError { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsInError" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintSystemJobInfo.IsInError" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラー条件が印刷ジョブに関連付けられているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />エラーが発生が印刷ジョブに関連付けられている場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、印刷ジョブに問題を診断するときに、このプロパティを使用する方法を示します。  
+  
+ [!code-cpp[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/cpp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CPP/Program.cpp#spottroubleusingjobproperties)]
+ [!code-csharp[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/csharp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CSharp/Program.cs#spottroubleusingjobproperties)]
+ [!code-vb[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/visualbasic/program.vb#spottroubleusingjobproperties)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOffline">
+      <MemberSignature Language="C#" Value="public bool IsOffline { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsOffline" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintSystemJobInfo.IsOffline" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プリンターがオフラインかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />プリンターがオフラインの場合です。それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値がすべてに反映される、<xref:System.Printing.PrintSystemJobInfo>オブジェクトから、 <xref:System.Printing.PrintQueue.IsOffline%2A> 、ホストのプロパティ<xref:System.Printing.PrintQueue>です。  
+  
+   
+  
+## Examples  
+ 次の例では、印刷ジョブに問題を診断するときに、このプロパティを使用する方法を示します。  
+  
+ [!code-cpp[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/cpp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CPP/Program.cpp#spottroubleusingjobproperties)]
+ [!code-csharp[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/csharp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CSharp/Program.cs#spottroubleusingjobproperties)]
+ [!code-vb[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/visualbasic/program.vb#spottroubleusingjobproperties)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPaperOut">
+      <MemberSignature Language="C#" Value="public bool IsPaperOut { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPaperOut" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintSystemJobInfo.IsPaperOut" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プリンターは、用紙のサイズと、印刷ジョブを必要とする型をすべて実行されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />プリンターで必要な用紙が不足している場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、印刷ジョブに問題を診断するときに、このプロパティを使用する方法を示します。  
+  
+ [!code-cpp[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/cpp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CPP/Program.cpp#spottroubleusingjobproperties)]
+ [!code-csharp[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/csharp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CSharp/Program.cs#spottroubleusingjobproperties)]
+ [!code-vb[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/visualbasic/program.vb#spottroubleusingjobproperties)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPaused">
+      <MemberSignature Language="C#" Value="public bool IsPaused { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPaused" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintSystemJobInfo.IsPaused" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>印刷ジョブが一時停止しているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、印刷ジョブが一時停止です。それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 全体の印刷キューを一時停止もできます。 値など、<xref:System.Printing.PrintSystemJobInfo.IsPaused%2A?displayProperty=nameWithType>できます`false`場合でもの値、<xref:System.Printing.PrintQueue.IsPaused%2A?displayProperty=nameWithType>プロパティは`true`します。  
+  
+   
+  
+## Examples  
+ 次の例では、印刷ジョブに問題を診断するときに、このプロパティを使用する方法を示します。  
+  
+ [!code-cpp[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/cpp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CPP/Program.cpp#spottroubleusingjobproperties)]
+ [!code-csharp[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/csharp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CSharp/Program.cs#spottroubleusingjobproperties)]
+ [!code-vb[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/visualbasic/program.vb#spottroubleusingjobproperties)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPrinted">
+      <MemberSignature Language="C#" Value="public bool IsPrinted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPrinted" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintSystemJobInfo.IsPrinted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>印刷ジョブを印刷するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、印刷ジョブが印刷されます。それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、印刷ジョブに問題を診断するときに、このプロパティを使用する方法を示します。  
+  
+ [!code-cpp[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/cpp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CPP/Program.cpp#spottroubleusingjobproperties)]
+ [!code-csharp[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/csharp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CSharp/Program.cs#spottroubleusingjobproperties)]
+ [!code-vb[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/visualbasic/program.vb#spottroubleusingjobproperties)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPrinting">
+      <MemberSignature Language="C#" Value="public bool IsPrinting { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPrinting" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintSystemJobInfo.IsPrinting" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>印刷ジョブが出力されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />プリンターの印刷が; 場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、印刷ジョブに問題を診断するときに、このプロパティを使用する方法を示します。  
+  
+ [!code-cpp[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/cpp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CPP/Program.cpp#spottroubleusingjobproperties)]
+ [!code-csharp[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/csharp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CSharp/Program.cs#spottroubleusingjobproperties)]
+ [!code-vb[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/visualbasic/program.vb#spottroubleusingjobproperties)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsRestarted">
+      <MemberSignature Language="C#" Value="public bool IsRestarted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsRestarted" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintSystemJobInfo.IsRestarted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>印刷ジョブが再開されたかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />プリンターの印刷が; 場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ジョブを再起動すると、そのままで印刷されます。 使用してで再起動するコントラスト、<xref:System.Printing.PrintSystemJobInfo.Resume%2A>メソッドで、一時停止された時点でジョブを再開します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsRetained">
+      <MemberSignature Language="C#" Value="public bool IsRetained { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsRetained" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintSystemJobInfo.IsRetained" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>印刷後に、印刷ジョブがキューに保存されたかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、印刷ジョブが保存されました。それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、印刷キューで印刷ジョブが保持されます、<xref:System.Printing.PrintQueue.KeepPrintedJobs%2A>のプロパティ、<xref:System.Printing.PrintQueue>にオブジェクトが設定されている`true`キューのプロパティを使用してコミットされている場合、<xref:System.Printing.PrintQueue.Commit%2A>のメソッド、<xref:System.Printing.PrintQueue>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSpooling">
+      <MemberSignature Language="C#" Value="public bool IsSpooling { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSpooling" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintSystemJobInfo.IsSpooling" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>印刷ジョブがスプールされているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />印刷ジョブがスプールされている場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、印刷ジョブに問題を診断するときに、このプロパティを使用する方法を示します。  
+  
+ [!code-cpp[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/cpp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CPP/Program.cpp#spottroubleusingjobproperties)]
+ [!code-csharp[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/csharp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CSharp/Program.cs#spottroubleusingjobproperties)]
+ [!code-vb[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/visualbasic/program.vb#spottroubleusingjobproperties)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUserInterventionRequired">
+      <MemberSignature Language="C#" Value="public bool IsUserInterventionRequired { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsUserInterventionRequired" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintSystemJobInfo.IsUserInterventionRequired" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プリンターにユーザーの介入が必要かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ユーザーの介入が必要です。 場合、それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値はすべてに反映される<xref:System.Printing.PrintSystemJobInfo>オブジェクトから、 <xref:System.Printing.PrintQueue.NeedUserIntervention%2A> 、ホストのプロパティ<xref:System.Printing.PrintQueue>です。  
+  
+   
+  
+## Examples  
+ 次の例では、印刷ジョブに問題を診断するときに、このプロパティを使用する方法を示します。  
+  
+ [!code-cpp[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/cpp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CPP/Program.cpp#spottroubleusingjobproperties)]
+ [!code-csharp[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/csharp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CSharp/Program.cs#spottroubleusingjobproperties)]
+ [!code-vb[DiagnoseProblematicPrintJob#SpotTroubleUsingJobProperties](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/visualbasic/program.vb#spottroubleusingjobproperties)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="JobIdentifier">
+      <MemberSignature Language="C#" Value="public int JobIdentifier { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 JobIdentifier" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintSystemJobInfo.JobIdentifier" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>印刷ジョブの識別番号を取得します。</summary>
+        <value><see cref="T:System.Int32" />印刷ジョブを識別します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ どの番号付けシステムの使用は、プリント サーバー、およびプリント サーバーがプリント サーバー アプライアンスまたはコンピューターのオペレーティング システムによって決まります。 用のオペレーティング システムなど、[!INCLUDE[TLA#tla_whistler](~/includes/tlasharptla-whistler-md.md)]この方法で番号を決定する: オンにすると、プリント サーバーは、そのすべての印刷キューは空の場合、任意のユーザーと任意のキューに送信され、サーバー上の最初の印刷ジョブが割り当てられた ID 番号 2 です。 1 つである数値を各サーバーの後続のジョブが割り当てられてそのサーバーで、前の印刷ジョブより大きい。  
+  
+ 印刷ジョブの印刷キューはその数に影響を与えません。 ジョブがその順序でキュー a、QueueB、および、キュー a に送信キューが 2 と 4 では、ジョブと及ぼしません。  
+  
+ ジョブには、数値が割り当てられた後、数を決して変更しない他のジョブの印刷が完了または取り消された場合でも、または、サーバーを再起動します。 1 つである数値を最初の新しいジョブが割り当てられて既にジョブが 1 つまたは複数のキューで、サーバーが再起動される場合、サーバーが開始されたときに、キューにあったジョブの最大番号より大きい。 ただし、それを再起動するまで、プリント サーバーを再利用しません数値。 印刷前にジョブの最大番号が取り消された場合でも、次のジョブ数を取得、1 つであるより高い。  
+  
+   
+  
+## Examples  
+ 次の例では、印刷ジョブに問題を診断するときに、このプロパティを使用する方法を示します。  
+  
+ [!code-cpp[DiagnoseProblematicPrintJob#EnumerateJobsInQueues](~/samples/snippets/cpp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CPP/Program.cpp#enumeratejobsinqueues)]
+ [!code-csharp[DiagnoseProblematicPrintJob#EnumerateJobsInQueues](~/samples/snippets/csharp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CSharp/Program.cs#enumeratejobsinqueues)]
+ [!code-vb[DiagnoseProblematicPrintJob#EnumerateJobsInQueues](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/visualbasic/program.vb#enumeratejobsinqueues)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="JobName">
+      <MemberSignature Language="C#" Value="public string JobName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string JobName" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintSystemJobInfo.JobName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または印刷ジョブの名前を設定します。</summary>
+        <value>A<see cref="T:System.String" />印刷ジョブの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、印刷ジョブに問題を診断するときに、このプロパティを使用する方法を示します。  
+  
+ [!code-cpp[DiagnoseProblematicPrintJob#EnumerateJobsInQueues](~/samples/snippets/cpp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CPP/Program.cpp#enumeratejobsinqueues)]
+ [!code-csharp[DiagnoseProblematicPrintJob#EnumerateJobsInQueues](~/samples/snippets/csharp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CSharp/Program.cs#enumeratejobsinqueues)]
+ [!code-vb[DiagnoseProblematicPrintJob#EnumerateJobsInQueues](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/visualbasic/program.vb#enumeratejobsinqueues)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="JobSize">
+      <MemberSignature Language="C#" Value="public int JobSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 JobSize" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintSystemJobInfo.JobSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>印刷ジョブのバイト単位のサイズを取得します。</summary>
+        <value><see cref="T:System.Int32" />印刷ジョブのバイト単位のサイズを示すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="JobStatus">
+      <MemberSignature Language="C#" Value="public System.Printing.PrintJobStatus JobStatus { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Printing.PrintJobStatus JobStatus" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintSystemJobInfo.JobStatus" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintJobStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>印刷ジョブの現在の状態を取得します。</summary>
+        <value><see cref="T:System.Printing.PrintJobStatus" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ステータスのプロパティの各など、個別にチェックを回避するための手段を提供<xref:System.Printing.PrintSystemJobInfo.IsPrinting%2A>と<xref:System.Printing.PrintSystemJobInfo.IsPaused%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例では、印刷ジョブに問題を診断するときに、このプロパティを使用する方法を示します。  
+  
+ [!code-cpp[DiagnoseProblematicPrintJob#SpotTroubleUsingJobAttributes](~/samples/snippets/cpp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CPP/Program.cpp#spottroubleusingjobattributes)]
+ [!code-csharp[DiagnoseProblematicPrintJob#SpotTroubleUsingJobAttributes](~/samples/snippets/csharp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CSharp/Program.cs#spottroubleusingjobattributes)]
+ [!code-vb[DiagnoseProblematicPrintJob#SpotTroubleUsingJobAttributes](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/visualbasic/program.vb#spottroubleusingjobattributes)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="JobStream">
+      <MemberSignature Language="C#" Value="public System.IO.Stream JobStream { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IO.Stream JobStream" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintSystemJobInfo.JobStream" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照を取得、<see cref="T:System.IO.Stream" />印刷ジョブのです。</summary>
+        <value>A<see cref="T:System.IO.Stream" />印刷ジョブを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Windows 8 およびそれ以降のバージョンのオペレーティング システムの .NET Framework 4.5 以降、このストリームに書き込まれたデータする必要があります XPS 形式のパッケージ ストリームにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NumberOfPages">
+      <MemberSignature Language="C#" Value="public int NumberOfPages { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 NumberOfPages" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintSystemJobInfo.NumberOfPages" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>印刷ジョブでは、ページの数を取得します。</summary>
+        <value><see cref="T:System.Int32" />ページ印刷ジョブの数を示すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ページは、1 枚の用紙または他の印刷メディアの一方の側です。  
+  
+ 次の表は、このプロパティは、および使用すると、シートの数の値が両面印刷 (二重) の印刷ジョブを呼び出すかどうか、複数のシートごとのページを呼び出すかどうかまたは両方を呼び出すかどうかによって影響を受ける方法を示しています。  
+  
+### <a name="how-duplexing-and-multipage-printing-affect-printing"></a>二重化し、複数ページ印刷に印刷に影響する方法  
+  
+|両面印刷|シートごとのページ|NumberOfPages の値|用紙の物理的な用紙の数|  
+|---------------|---------------------|----------------------------|----------------------------------------|  
+|いいえ|1|ドキュメントのページの数と同じです。|ドキュメントのページの数と同じです。|  
+|はい|1|ドキュメントのページの数と同じです。|ページ ÷ (切り上げ) 2 を文書化します。|  
+|いいえ|複数|ドキュメントのページ ÷ シートごとのページ (切り上げ)。|ドキュメントのページ ÷ シートごとのページ (切り上げ)。|  
+|はい|複数|ドキュメントのページ ÷ シートごとのページ (切り上げ)。|[ドキュメントのページ 1 枚 ÷ ページ] ÷ 2 (切り上げ)。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NumberOfPagesPrinted">
+      <MemberSignature Language="C#" Value="public int NumberOfPagesPrinted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 NumberOfPagesPrinted" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintSystemJobInfo.NumberOfPagesPrinted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既に印刷ページの数を取得します。</summary>
+        <value><see cref="T:System.Int32" />既に印刷ページの数を示すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pause">
+      <MemberSignature Language="C#" Value="public void Pause ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Pause() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintSystemJobInfo.Pause" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>停止するまで、このジョブの印刷<see cref="M:System.Printing.PrintSystemJobInfo.Resume" />を実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 別のジョブがキューにある場合は、現在のジョブが一時停止すると、印刷を開始します。  
+  
+ ホストしている<xref:System.Printing.PrintQueue>も<xref:System.Printing.PrintQueue.Pause%2A>と<xref:System.Printing.PrintQueue.Resume%2A>メソッドです。 印刷キューが一時停止している場合は、個々 のジョブを再開しても印刷を再開するには、そのジョブは発生しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PositionInPrintQueue">
+      <MemberSignature Language="C#" Value="public int PositionInPrintQueue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PositionInPrintQueue" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintSystemJobInfo.PositionInPrintQueue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>印刷キューで印刷ジョブの場所を取得します。</summary>
+        <value><see cref="T:System.Int32" />キュー内の印刷ジョブの位置を示すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Priority">
+      <MemberSignature Language="C#" Value="public System.Printing.PrintJobPriority Priority { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Printing.PrintJobPriority Priority" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintSystemJobInfo.Priority" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintJobPriority</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>印刷キューの他のジョブの基準とした印刷ジョブの優先順位を表す非数値式を取得します。</summary>
+        <value>A<see cref="T:System.Printing.PrintJobPriority" />として印刷ジョブの優先順位を表す<see cref="F:System.Printing.PrintJobPriority.Maximum" />、 <see cref="F:System.Printing.PrintJobPriority.Minimum" />、 <see cref="F:System.Printing.PrintJobPriority.Default" />、または<see cref="F:System.Printing.PrintJobPriority.None" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Refresh">
+      <MemberSignature Language="C#" Value="public override void Refresh ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Refresh() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintSystemJobInfo.Refresh" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プロパティを更新、<see cref="T:System.Printing.PrintSystemJobInfo" />オブジェクトの値、オブジェクトが表す実際の印刷ジョブの値と一致します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティに対して行った変更を加えた、<xref:System.Printing.PrintSystemJobInfo>オブジェクトに書き込まれると、実際の印刷ジョブを使用して、<xref:System.Printing.PrintSystemJobInfo.Commit%2A>メソッドです。 コミットしていないすべての変更が失われたときに、<xref:System.Printing.PrintSystemJobInfo.Refresh%2A>メソッドが実行されます。  
+  
+ クラスを派生させた場合<xref:System.Printing.PrintSystemJobInfo>追加のプロパティを持つし、オーバーライドする必要があります、<xref:System.Printing.PrintSystemJobInfo.Refresh%2A>独自の実装を持つメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Restart">
+      <MemberSignature Language="C#" Value="public void Restart ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Restart() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintSystemJobInfo.Restart" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>最初から印刷ジョブを再起動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 必要に応じて、使用することができます、<xref:System.Printing.PrintSystemJobInfo.Resume%2A>メソッドで、開始、一時停止した時点で、一時停止した印刷ジョブを再開します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Resume">
+      <MemberSignature Language="C#" Value="public void Resume ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Resume() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintSystemJobInfo.Resume" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>一時停止した印刷ジョブの印刷を再開します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ホストしている<xref:System.Printing.PrintQueue>も<xref:System.Printing.PrintQueue.Pause%2A>と<xref:System.Printing.PrintQueue.Resume%2A>メソッドです。 印刷キューが一時停止した場合、個々 のジョブの再開は再開されません印刷ジョブの印刷。  
+  
+   
+  
+## Examples  
+ 次の例では、このメソッドを使用して、一時停止した印刷ジョブを再開する方法を示します。  
+  
+ [!code-cpp[DiagnoseProblematicPrintJob#HandlePausedJob](~/samples/snippets/cpp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CPP/Program.cpp#handlepausedjob)]
+ [!code-csharp[DiagnoseProblematicPrintJob#HandlePausedJob](~/samples/snippets/csharp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CSharp/Program.cs#handlepausedjob)]
+ [!code-vb[DiagnoseProblematicPrintJob#HandlePausedJob](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/visualbasic/program.vb#handlepausedjob)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartTimeOfDay">
+      <MemberSignature Language="C#" Value="public int StartTimeOfDay { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 StartTimeOfDay" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintSystemJobInfo.StartTimeOfDay" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 日深夜世界協定時刻 (UTC) (も呼び出されたグリニッジ標準時 (GMT))、印刷ジョブが印刷を開始する時間を分単位で表したの最も早い時刻を取得します。</summary>
+        <value><see cref="T:System.Int32" />印刷ジョブでは、午前 0 時 (UTC) の後に時間を分単位で表される時刻を開始できるだけ早いを指定します。 最大値は、1439 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ それぞれにこの値を反映<xref:System.Printing.PrintSystemJobInfo>オブジェクトから、<xref:System.Printing.PrintQueue.StartTimeOfDay%2A?displayProperty=nameWithType>ホストしているプロパティ<xref:System.Printing.PrintQueue>時に、ジョブ実行キューに入ります。 場合<xref:System.Printing.PrintQueue.StartTimeOfDay%2A?displayProperty=nameWithType>を変更し、いずれかの<xref:System.Printing.PrintSystemJobInfo.StartTimeOfDay%2A?displayProperty=nameWithType>値よりも前<xref:System.Printing.PrintQueue.StartTimeOfDay%2A?displayProperty=nameWithType>の値に変更が<xref:System.Printing.PrintQueue.StartTimeOfDay%2A?displayProperty=nameWithType>です。  
+  
+ ジョブがキューに追加されるを指定できます、新しい<xref:System.Printing.PrintSystemJobInfo.StartTimeOfDay%2A>を通じて値、 [!INCLUDE[TLA#tla_win](~/includes/tlasharptla-win-md.md)] [!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]より前ではありませんが、<xref:System.Printing.PrintQueue.StartTimeOfDay%2A?displayProperty=nameWithType>です。  
+  
+ UTC タイム ゾーンでしていない場合は、追加またはタイム ゾーンの正しい時刻を取得する 60 の倍数を減算する必要があります。 たとえば、北アメリカ太平洋標準時ゾーンと夏時間削減効果の時間にいる場合内にない効果、ローカル時刻は 8 時間 (utc) より前。 場合<xref:System.Printing.PrintSystemJobInfo.StartTimeOfDay%2A>960、16:00 (午後 4時 00分) (utc) のことを意味するを返します (ため 960/60 = 16)。 これを太平洋標準時に変換するには、480 (= 8 * 60) を減算する必要があります (分) です。  
+  
+ 忘れないでください時間は 24 時間後に 0 にロール オーバーする (つまり 1439 分後に、;)。 場合<xref:System.Printing.PrintSystemJobInfo.StartTimeOfDay%2A>120、つまり、午前 2時 00分 (utc) を返します。 これを太平洋標準時に変換するには-360 になり 480 分は、減算する必要があります。 意味を持つ正の値を取得するには、1440 1080 (午後 6時 00分) 太平洋標準時の最終的な値で、1 日の合計 (分) に負の数値を追加します。  
+  
+ 参照してください<xref:System.TimeZone>、 <xref:System.TimeSpan>、および<xref:System.DateTime>のタイム ゾーン調整を支援するメソッド。  
+  
+ プリンターが常に場合、このプロパティはすべてのタイム ゾーンに 0 を返します。  
+  
+   
+  
+## Examples  
+ 次の例では、問題のある印刷ジョブを診断するプロセスの一部としてこのプロパティを使用する方法を示します。  
+  
+ [!code-cpp[DiagnoseProblematicPrintJob#UsingJobStartAndUntilTimes](~/samples/snippets/cpp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CPP/Program.cpp#usingjobstartanduntiltimes)]
+ [!code-csharp[DiagnoseProblematicPrintJob#UsingJobStartAndUntilTimes](~/samples/snippets/csharp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CSharp/Program.cs#usingjobstartanduntiltimes)]
+ [!code-vb[DiagnoseProblematicPrintJob#UsingJobStartAndUntilTimes](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/visualbasic/program.vb#usingjobstartanduntiltimes)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Submitter">
+      <MemberSignature Language="C#" Value="public string Submitter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Submitter" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintSystemJobInfo.Submitter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>印刷ジョブを送信したユーザーの名前を取得します。</summary>
+        <value>A<see cref="T:System.String" />印刷ジョブを送信したユーザーを識別します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、印刷ジョブに問題を診断するときに、このプロパティを使用する方法を示します。  
+  
+ [!code-cpp[DiagnoseProblematicPrintJob#EnumerateJobsInQueues](~/samples/snippets/cpp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CPP/Program.cpp#enumeratejobsinqueues)]
+ [!code-csharp[DiagnoseProblematicPrintJob#EnumerateJobsInQueues](~/samples/snippets/csharp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CSharp/Program.cs#enumeratejobsinqueues)]
+ [!code-vb[DiagnoseProblematicPrintJob#EnumerateJobsInQueues](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/visualbasic/program.vb#enumeratejobsinqueues)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TimeJobSubmitted">
+      <MemberSignature Language="C#" Value="public DateTime TimeJobSubmitted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime TimeJobSubmitted" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintSystemJobInfo.TimeJobSubmitted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>印刷ジョブが送信された日時を取得します。</summary>
+        <value>A<see cref="T:System.DateTime" />印刷ジョブが送信された日時を含むオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TimeSinceStartedPrinting">
+      <MemberSignature Language="C#" Value="public int TimeSinceStartedPrinting { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 TimeSinceStartedPrinting" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintSystemJobInfo.TimeSinceStartedPrinting" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>印刷ジョブの印刷を開始するためには、時間 (ミリ秒単位) を取得します。</summary>
+        <value><see cref="T:System.Int32" />印刷ジョブが開始されてから時間 (ミリ秒単位) を表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UntilTimeOfDay">
+      <MemberSignature Language="C#" Value="public int UntilTimeOfDay { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 UntilTimeOfDay" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintSystemJobInfo.UntilTimeOfDay" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>深夜世界協定時刻 (UTC) (も呼び出されたグリニッジ標準時 (GMT))、印刷ジョブが印刷を開始する時間を分単位で表される日の最終時刻を取得します。</summary>
+        <value><see cref="T:System.Int32" />午前 0 時 (UTC) の後に時間を分単位で表される、ジョブで印刷できる最終時刻を指定します。 最大値は、1439 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ それぞれにこの値を反映<xref:System.Printing.PrintSystemJobInfo>オブジェクトから、<xref:System.Printing.PrintQueue.UntilTimeOfDay%2A?displayProperty=nameWithType>ホストしているプロパティ<xref:System.Printing.PrintQueue>時に、ジョブ実行キューに入ります。 場合<xref:System.Printing.PrintQueue.UntilTimeOfDay%2A?displayProperty=nameWithType>を変更し、いずれかの<xref:System.Printing.PrintSystemJobInfo.UntilTimeOfDay%2A?displayProperty=nameWithType>値よりも後<xref:System.Printing.PrintQueue.UntilTimeOfDay%2A?displayProperty=nameWithType>はの値に変更<xref:System.Printing.PrintQueue.UntilTimeOfDay%2A?displayProperty=nameWithType>です。  
+  
+ ジョブがキューに追加されるを指定できます、新しい<xref:System.Printing.PrintSystemJobInfo.UntilTimeOfDay%2A>を通じて値、 [!INCLUDE[TLA#tla_win](~/includes/tlasharptla-win-md.md)] [!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]、以降ではありませんが、<xref:System.Printing.PrintQueue.UntilTimeOfDay%2A?displayProperty=nameWithType>です。  
+  
+ UTC タイム ゾーンでしていない場合は、追加またはタイム ゾーンの正しい時刻を取得する 60 の倍数を減算する必要があります。 たとえば、北アメリカ太平洋標準時ゾーンと夏時間削減効果の時間にいる場合内にない効果、ローカル時刻は 8 時間 (utc) より前。 場合<xref:System.Printing.PrintSystemJobInfo.UntilTimeOfDay%2A>960、16:00 (午後 4時 00分) (utc) のことを意味するを返します (ため 960/60 = 16)。 これを太平洋標準時に変換するには、480 (= 8 * 60) を減算する必要があります (分) です。  
+  
+ 忘れないでください時間は 24 時間後に 0 にロール オーバーする (つまり 1439 分後に、;)。 場合<xref:System.Printing.PrintSystemJobInfo.UntilTimeOfDay%2A>120、つまり、午前 2時 00分 (utc) を返します。 これを太平洋標準時に変換するには-360 になり 480 分は、減算する必要があります。 意味を持つ正の値を取得するには、1440 1080 (午後 6時 00分) 太平洋標準時の最終的な値で、1 日の合計 (分) に負の数値を追加します。  
+  
+ 参照してください<xref:System.TimeZone>、 <xref:System.TimeSpan>、および<xref:System.DateTime>のタイム ゾーン調整を支援するメソッド。  
+  
+ プリンターが常に場合、このプロパティはすべてのタイム ゾーンに 0 を返します。  
+  
+   
+  
+## Examples  
+ 次の例では、問題のある印刷ジョブを診断するプロセスの一部としてこのプロパティを使用する方法を示します。  
+  
+ [!code-cpp[DiagnoseProblematicPrintJob#UsingJobStartAndUntilTimes](~/samples/snippets/cpp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CPP/Program.cpp#usingjobstartanduntiltimes)]
+ [!code-csharp[DiagnoseProblematicPrintJob#UsingJobStartAndUntilTimes](~/samples/snippets/csharp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CSharp/Program.cs#usingjobstartanduntiltimes)]
+ [!code-vb[DiagnoseProblematicPrintJob#UsingJobStartAndUntilTimes](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/visualbasic/program.vb#usingjobstartanduntiltimes)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,75 @@
+<Type Name="ClockState" FullName="System.Windows.Media.Animation.ClockState">
+  <TypeSignature Language="C#" Value="public enum ClockState" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ClockState extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.ClockState" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>タイムラインの <see cref="T:System.Windows.Media.Animation.Clock" /> オブジェクトが取りうる状態について説明します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ なお<xref:System.Windows.Media.Animation.ClockState>クロックが一時停止しているかどうか、または時刻をフローさせる方向を示しません。  
+  
+ 目盛りの概念に基づいてこれらの説明詳細については、次を参照してください。、[アニメーションおよびタイミング システムの概要](~/docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Active">
+      <MemberSignature Language="C#" Value="Active" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.Animation.ClockState Active = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.ClockState.Active" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.ClockState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.Windows.Media.Animation.Clock" /> 時間は、親の時間と直接連動して変化します。 タイムラインがアニメーションの場合は、これにアクティブに影響対象のプロパティからの値を変更することがありますので*ティック*(時間のサンプリング ポイント) に目盛り。 タイムラインに子が含まれる場合は、<see cref="F:System.Windows.Media.Animation.ClockState.Active" />、<see cref="F:System.Windows.Media.Animation.ClockState.Filling" />、または <see cref="F:System.Windows.Media.Animation.ClockState.Stopped" />。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Filling">
+      <MemberSignature Language="C#" Value="Filling" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.Animation.ClockState Filling = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.ClockState.Filling" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.ClockState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Animation.Clock" /> タイミングが続行していますが、親のタイミングと連動して変化していません。 タイムラインがアニメーションの場合は、対象のプロパティにアクティブに影響しますが、その値がティックごとに変化しません。 タイムラインに子が含まれる場合は、<see cref="F:System.Windows.Media.Animation.ClockState.Active" />、<see cref="F:System.Windows.Media.Animation.ClockState.Filling" />、または <see cref="F:System.Windows.Media.Animation.ClockState.Stopped" />。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Stopped">
+      <MemberSignature Language="C#" Value="Stopped" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.Animation.ClockState Stopped = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.ClockState.Stopped" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.ClockState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Animation.Clock" /> タイミングが停止されており、クロックの現在の時刻および進行状況の値が定義されていません。 このタイムラインがアニメーションの場合、対象のプロパティに影響していません。 タイムラインに子が含まれる場合は、子も <see cref="F:System.Windows.Media.Animation.ClockState.Stopped" /> です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

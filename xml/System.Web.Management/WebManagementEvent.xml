@@ -1,0 +1,152 @@
+<Type Name="WebManagementEvent" FullName="System.Web.Management.WebManagementEvent">
+  <TypeSignature Language="C#" Value="public class WebManagementEvent : System.Web.Management.WebBaseEvent" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebManagementEvent extends System.Web.Management.WebBaseEvent" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Management.WebManagementEvent" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Management.WebBaseEvent</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アプリケーションとプロセスの情報を保持するイベントの基本クラスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配置済みの Web アプリケーションの管理を運用環境と運用スタッフは、ASP.NET の状態監視できます。 <xref:System.Web.Management?displayProperty=nameWithType>名前空間には、アプリケーションの正常性状態のデータおよびプロバイダーの種類は、このデータ処理をパッケージ化する正常性イベントの種類が含まれています。 正常性イベントの管理を支援するサポート型も含まれています。  
+  
+ <xref:System.Web.Management.WebManagementEvent>すべて ASP.NET 稼働状況の監視イベントの種類の基本クラスです。 使用して、<xref:System.Web.Management.WebProcessInformation>クラスの派生クラスが使用できるプロセス情報を取得します。  
+  
+> [!NOTE]
+>  ほとんどの場合はできる実装されると、ASP.NET の稼働状況の監視の種類を使用して、内の値を指定することで、稼働状況の監視システムを制御する、`healthMonitoring`構成セクション。 独自のカスタム イベントおよびプロバイダーを作成する正常性の監視の種類からも派生できます。 派生する例については、<xref:System.Web.Management.WebManagementEvent>クラスのこのトピックで例を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例から派生することによって、カスタム イベントを実装する方法を示しています、<xref:System.Web.Management.WebManagementEvent>クラスです。  
+  
+ [!code-csharp[System.Web.Management.WebManagementEvent#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebManagementEvent/CS/webmanagementevent.cs#1)]
+ [!code-vb[System.Web.Management.WebManagementEvent#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebManagementEvent/VB/webmanagementevent.vb#1)]  
+  
+ 次は、ASP.NET カスタム イベントを使用できるようにする構成ファイルの抜粋です。  
+  
+```  
+<healthMonitoring enabled="true"   
+  heartBeatInterval="0">  
+  <eventMappings>  
+  
+    <add  name="SampleWebManagementEvent" type="SamplesAspNet.SampleWebManagementEvent,webmanagementevent,Version=1.0.1573.24438, Culture=neutral, PublicKeyToken=2f5f337ae5c9bdaa, processorArchitecture=MSIL"/>  
+  
+  </eventMappings>  
+  <rules>  
+    <add   
+      name="Custom WebManagementEvent"  
+      eventName="SampleWebManagementEvent"  
+      provider="EventLogProvider"  
+      profile="Critical"/>  
+  </rules>  
+</healthMonitoring>  
+```  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>表示するため、カスタム イベントの情報を書式設定と上書き、<see cref="M:System.Web.Management.WebBaseEvent.FormatCustomEventDetails(System.Web.Management.WebEventFormatter)" />メソッドではなく、<see cref="Overload:System.Web.Management.WebBaseEvent.ToString" />メソッドです。 これには、上書きまたは機密性の高いシステム情報の改ざんが回避されます。  
+  
+ イベントのコードを指定する、カスタム イベントをよりも大きい値にする必要があります<see cref="F:System.Web.Management.WebEventCodes.WebExtendedBase" />です。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WebManagementEvent (string message, object eventSource, int eventCode);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor(string message, object eventSource, int32 eventCode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebManagementEvent.#ctor(System.String,System.Object,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="eventSource" Type="System.Object" />
+        <Parameter Name="eventCode" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="message">イベントの説明。</param>
+        <param name="eventSource">イベントのソースであるオブジェクト。</param>
+        <param name="eventCode">イベントに関連付けられているコード。 カスタム イベントを実装するときにイベントのコードがより大きくなければなりません<see cref="F:System.Web.Management.WebEventCodes.WebExtendedBase" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Management.WebManagementEvent" />クラス、指定されたパラメーターを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebManagementEvent.%23ctor%2A>コンス トラクターは、コードから直接使用するものではありません。 ASP.NET によって呼び出されます。 呼び出すことができます、<xref:System.Web.Management.WebManagementEvent.%23ctor%2A>コンス トラクターから派生している場合、<xref:System.Web.Management.WebManagementEvent>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WebManagementEvent (string message, object eventSource, int eventCode, int eventDetailCode);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor(string message, object eventSource, int32 eventCode, int32 eventDetailCode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebManagementEvent.#ctor(System.String,System.Object,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="eventSource" Type="System.Object" />
+        <Parameter Name="eventCode" Type="System.Int32" />
+        <Parameter Name="eventDetailCode" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="message">イベントの説明。</param>
+        <param name="eventSource">イベントのソースであるオブジェクト。</param>
+        <param name="eventCode">イベントに関連付けられているコード。 カスタム イベントを実装するときにイベントのコードがより大きくなければなりません<see cref="F:System.Web.Management.WebEventCodes.WebExtendedBase" />です。</param>
+        <param name="eventDetailCode"><see cref="T:System.Web.Management.WebEventCodes" />イベントの詳細な識別子を指定する値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Management.WebManagementEvent" />クラス、指定されたパラメーターを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebManagementEvent.%23ctor%2A>コンス トラクターは、コードから直接使用するものではありません。 ASP.NET によって呼び出されます。 呼び出すことができます、<xref:System.Web.Management.WebManagementEvent.%23ctor%2A>コンス トラクターから派生している場合、<xref:System.Web.Management.WebManagementEvent>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessInformation">
+      <MemberSignature Language="C#" Value="public System.Web.Management.WebProcessInformation ProcessInformation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Management.WebProcessInformation ProcessInformation" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebManagementEvent.ProcessInformation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Management.WebProcessInformation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET アプリケーション ホスティング プロセスに関する情報を取得します。</summary>
+        <value>A<see cref="T:System.Web.Management.WebProcessInformation" />プロセスに関する情報を含むオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Web.Management.WebManagementEvent.ProcessInformation%2A>値。  
+  
+ [!code-csharp[System.Web.Management.WebManagementEvent#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebManagementEvent/CS/webmanagementevent.cs#5)]
+ [!code-vb[System.Web.Management.WebManagementEvent#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebManagementEvent/VB/webmanagementevent.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

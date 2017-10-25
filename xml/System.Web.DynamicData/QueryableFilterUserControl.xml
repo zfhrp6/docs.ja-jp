@@ -1,0 +1,308 @@
+<Type Name="QueryableFilterUserControl" FullName="System.Web.DynamicData.QueryableFilterUserControl">
+  <TypeSignature Language="C#" Value="public abstract class QueryableFilterUserControl : System.Web.UI.UserControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit QueryableFilterUserControl extends System.Web.UI.UserControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.DynamicData.QueryableFilterUserControl" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DynamicData</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.UserControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>フィルター コントロールの基底クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.QueryableFilterUserControl>クラスは基底クラスにフィルターをレンダリングするユーザー コントロールを基になっているフレームワークのフィルター処理、動的データに接続することができます、<xref:System.Web.UI.WebControls.QueryExtender>クラスです。  
+  
+ 実装をオーバーライドする必要があります、<xref:System.Web.DynamicData.QueryableFilterUserControl.GetQueryable%2A>返すことができる、変更されたコントロール<xref:System.Linq.IQueryable>フィルターの状態を反映するオブジェクト。 基本クラスには、LINQ 式ツリーを構築するためのヘルパー メソッドが含まれています。  
+  
+   
+  
+## Examples  
+ Visual Studio プロジェクトとソース コードは、このトピックで使用可能な:[スキャフォールディング動的データ](http://go.microsoft.com/fwlink/?LinkId=168914)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected QueryableFilterUserControl ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.QueryableFilterUserControl.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.DynamicData.QueryableFilterUserControl" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyEqualityFilter">
+      <MemberSignature Language="C#" Value="public static System.Linq.IQueryable ApplyEqualityFilter (System.Linq.IQueryable source, string propertyName, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Linq.IQueryable ApplyEqualityFilter(class System.Linq.IQueryable source, string propertyName, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.QueryableFilterUserControl.ApplyEqualityFilter(System.Linq.IQueryable,System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.IQueryable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Linq.IQueryable" />
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="source">ソース <see cref="T:System.Linq.IQueryable" /> オブジェクト。</param>
+        <param name="propertyName">プロパティの名前。</param>
+        <param name="value">値、 <c>propertyName</c>パラメーター。</param>
+        <summary>変換された取得<see cref="T:System.Linq.IQueryable" />オブジェクトをソースから<see cref="T:System.Linq.IQueryable" />オブジェクト。</summary>
+        <returns>変換された<see cref="T:System.Linq.IQueryable" />オブジェクトをソースから<see cref="T:System.Linq.IQueryable" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Column">
+      <MemberSignature Language="C#" Value="protected System.Web.DynamicData.MetaColumn Column { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.DynamicData.MetaColumn Column" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.QueryableFilterUserControl.Column" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.MetaColumn</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィルター処理に使用する列を取得します。</summary>
+        <value>フィルター処理に使用する列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultValue">
+      <MemberSignature Language="C#" Value="public string DefaultValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultValue" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.QueryableFilterUserControl.DefaultValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーブルにマップされている既定値を取得します。</summary>
+        <value>テーブルにマップされている既定値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 動的データが、ブール値を提供する既定では、外部キー、および列挙型のフィルターのテンプレートです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultValues">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,object&gt; DefaultValues { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, object&gt; DefaultValues" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.QueryableFilterUserControl.DefaultValues" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーブルにマップされている既定値を取得します。</summary>
+        <value>テーブルにマップされている既定値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler FilterChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler FilterChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Web.DynamicData.QueryableFilterUserControl.FilterChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="M:System.Web.DynamicData.QueryableFilterUserControl.OnFilterChanged" />メソッドが呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterControl">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.Control FilterControl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Control FilterControl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.QueryableFilterUserControl.FilterControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Control</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィルターのテンプレート内のフィルターを処理するデータ コントロールを取得します。</summary>
+        <value>フィルターを処理するデータ コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは`null`場合は、フィルターのテンプレートはオーバーライドしません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetQueryable">
+      <MemberSignature Language="C#" Value="public abstract System.Linq.IQueryable GetQueryable (System.Linq.IQueryable source);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Linq.IQueryable GetQueryable(class System.Linq.IQueryable source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.QueryableFilterUserControl.GetQueryable(System.Linq.IQueryable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.IQueryable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Linq.IQueryable" />
+      </Parameters>
+      <Docs>
+        <param name="source">ソース <see cref="T:System.Linq.IQueryable" /> オブジェクト。</param>
+        <summary>変換された取得<see cref="T:System.Linq.IQueryable" />オブジェクトをソースから<see cref="T:System.Linq.IQueryable" />オブジェクト。</summary>
+        <returns>変換された<see cref="T:System.Linq.IQueryable" />オブジェクトをソースから<see cref="T:System.Linq.IQueryable" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールを派生する場合は、このメソッドを実装する必要があります<xref:System.Web.DynamicData.QueryableFilterUserControl>です。  
+  
+   
+  
+## Examples  
+ このメソッドは、ソースを変換する実装<xref:System.Linq.IQueryable>オブジェクトをターゲットに<xref:System.Linq.IQueryable>オブジェクト。 例として<xref:System.Linq.IQueryable>式を実装することができますを by、範囲、順序を含めるまたは検索します。  
+  
+ 次の例は、実装する方法を示します、<xref:System.Web.DynamicData.QueryableFilterUserControl.GetQueryable%2A>メソッドから派生するブール型フィルターを<xref:System.Web.DynamicData.QueryableFilterUserControl>です。  
+  
+```csharp  
+public override IQueryable GetQueryable(IQueryable source) {  
+    if (String.IsNullOrEmpty(DropDownList1.SelectedValue)) {  
+        return source;  
+    }  
+  
+    bool value = Convert.ToBoolean(DropDownList1.SelectedValue);  
+  
+    ParameterExpression parameterExpression =   
+        Expression.Parameter(source.ElementType, "item");  
+    Expression body = BuildQueryBody(  
+        parameterExpression, value);  
+  
+    LambdaExpression lambda = Expression.Lambda(body,   
+        parameterExpression);  
+    MethodCallExpression whereCall = Expression.Call(  
+        typeof(Queryable),   
+        "Where",   
+        new Type[] { source.ElementType },   
+        source.Expression, Expression.Quote(lambda));  
+    return source.Provider.CreateQuery(whereCall);  
+}  
+```  
+  
+```vb  
+Public Overloads Overrides Function GetQueryable(ByVal source As IQueryable) As IQueryable   
+    If [String].IsNullOrEmpty(DropDownList1.SelectedValue) Then   
+        Return source   
+    End If   
+  
+    Dim value As Boolean = Convert.ToBoolean(DropDownList1.SelectedValue)   
+  
+    Dim parameterExpression As ParameterExpression = Expression.Parameter(source.ElementType, "item")   
+    Dim body As Expression = BuildQueryBody(parameterExpression, value)   
+  
+    Dim lambda As LambdaExpression = Expression.Lambda(body, parameterExpression)   
+    Dim whereCall As MethodCallExpression = Expression.[Call](GetType(Queryable), "Where", _  
+         New Type() {source.ElementType}, source.Expression, Expression.Quote(lambda))   
+    Return source.Provider.CreateQuery(whereCall)   
+End Function  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnFilterChanged">
+      <MemberSignature Language="C#" Value="protected void OnFilterChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void OnFilterChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.QueryableFilterUserControl.OnFilterChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="E:System.Web.DynamicData.QueryableFilterUserControl.FilterChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クエリを再実行する必要があるデータ ソースに通知するために、フィルター選択が変更されたときに、このメソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PopulateListControl">
+      <MemberSignature Language="C#" Value="public void PopulateListControl (System.Web.UI.WebControls.ListControl listControl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void PopulateListControl(class System.Web.UI.WebControls.ListControl listControl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.QueryableFilterUserControl.PopulateListControl(System.Web.UI.WebControls.ListControl)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="listControl" Type="System.Web.UI.WebControls.ListControl" />
+      </Parameters>
+      <Docs>
+        <param name="listControl">リスト コントロール。</param>
+        <summary>すべての外部キーの要素またはテーブル内のブール型の要素を持つリスト コントロールを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 外部キー列には、外部キー テーブルからの要素が格納されます。 ブール型の列には、"All"、"True"と"False"が設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

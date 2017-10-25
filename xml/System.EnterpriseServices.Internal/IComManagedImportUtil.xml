@@ -1,0 +1,120 @@
+<Type Name="IComManagedImportUtil" FullName="System.EnterpriseServices.Internal.IComManagedImportUtil">
+  <TypeSignature Language="C#" Value="public interface IComManagedImportUtil" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IComManagedImportUtil" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.Internal.IComManagedImportUtil" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("c3f8f66b-91be-4c99-a94f-ce3b0a951039")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>識別し、COM + カタログでコンポーネントをインストールします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください<xref:System.EnterpriseServices.Internal.ComManagedImportUtil>の既定の実装の<xref:System.EnterpriseServices.Internal.IComManagedImportUtil>します。  
+  
+ <xref:System.EnterpriseServices.Internal.IComManagedImportUtil>.NET Framework によって内部的に使用されます。 コード内で直接使用する必要はありません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetComponentInfo">
+      <MemberSignature Language="C#" Value="public void GetComponentInfo (string assemblyPath, out string numComponents, out string componentInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetComponentInfo(string assemblyPath, [out] string&amp; numComponents, [out] string&amp; componentInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.IComManagedImportUtil.GetComponentInfo(System.String,System.String@,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(4)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assemblyPath" Type="System.String" />
+        <Parameter Name="numComponents" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="componentInfo" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyPath">アセンブリへのパス。</param>
+        <param name="numComponents">このメソッドが戻るとき、このパラメーターには、アセンブリ内のコンポーネントの数が含まれています。</param>
+        <param name="componentInfo">このメソッドが戻るとき、このパラメーターには、コンポーネントに関する情報が含まれています。</param>
+        <summary>アセンブリからコンポーネント情報を取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはクラス id (Clsid) を識別するには、COM + カタログとは登録前に、DLL 内のコンポーネントの Progid。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="assemblyPath" />空の文字列 ("")、空白しか含んでいない、またはで定義されている 1 つまたは複数の無効な文字が含まれています<see cref="F:System.IO.Path.InvalidPathChars" />です。  
+  
+ または  
+  
+ システムは、絶対パスを取得できませんでした。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="assemblyPath" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="assemblyPath" /> にコロン (":") が含まれています。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InstallAssembly">
+      <MemberSignature Language="C#" Value="public void InstallAssembly (string filename, string parname, string appname);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void InstallAssembly(string filename, string parname, string appname) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.IComManagedImportUtil.InstallAssembly(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(5)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filename" Type="System.String" />
+        <Parameter Name="parname" Type="System.String" />
+        <Parameter Name="appname" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="filename">アセンブリのパス。</param>
+        <param name="parname">COM + パーティション名。</param>
+        <param name="appname">COM + アプリケーション名。</param>
+        <summary>COM + アプリケーションにアセンブリをインストールします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください<xref:System.EnterpriseServices.Internal.ComManagedImportUtil.InstallAssembly%2A>詳細については、このメソッドの実装です。  
+  
+ このメソッドでは、呼び出し元に、ローカル コンピューターで管理者特権が必要です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出しチェーン内の呼び出し元には、アンマネージ コードへのアクセス許可がありません。</exception>
+        <exception cref="T:System.EnterpriseServices.RegistrationException">入力アセンブリに厳密な名前がありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

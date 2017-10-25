@@ -1,0 +1,1759 @@
+<Type Name="FileInfo" FullName="System.IO.FileInfo">
+  <TypeSignature Language="C#" Value="public sealed class FileInfo : System.IO.FileSystemInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit FileInfo extends System.IO.FileSystemInfo" />
+  <TypeSignature Language="DocId" Value="T:System.IO.FileInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.FileSystem</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IO.FileSystemInfo</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ファイルを作成、コピー、削除、移動、および開くためのプロパティおよびインスタンス メソッドを提供し、<see cref="T:System.IO.FileStream" /> オブジェクトを作成できるようにします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  この型の .NET Framework ソース コードを表示するを参照してください。、[参照ソース](http://referencesource.microsoft.com/#mscorlib/system/io/fileinfo.cs#4ee673c1a4ecad41)です。 ソース コードをオンラインで参照、オフラインで表示、リファレンスをダウンロードおよび; デバッグ中にソース (パッチや更新を含む) をステップ参照してください[指示](http://referencesource.microsoft.com/)です。  
+  
+ 使用して、<xref:System.IO.FileInfo>コピー、移動、名前の変更、作成、読み込み、削除、およびファイルへの追加などの一般的な操作のクラスです。  
+  
+ 場合は、同じファイルに対して複数の操作を実行することができますを使用する方が効率的<xref:System.IO.FileInfo>インスタンス メソッドの対応する静的メソッドではなく、<xref:System.IO.File>クラス、セキュリティ チェックは必ずしも必要であるためです。  
+  
+ 多くは、<xref:System.IO.FileInfo>を作成するか、ファイルを開くときに、メソッドが他の I/O 型を返します。 使用できますこれら他の種類をさらに、ファイルを操作します。 詳細についてを参照してください特定<xref:System.IO.FileInfo>などメンバー <xref:System.IO.FileInfo.Open%2A>、 <xref:System.IO.FileInfo.OpenRead%2A>、 <xref:System.IO.FileInfo.OpenText%2A>、 <xref:System.IO.FileInfo.CreateText%2A>、または<xref:System.IO.FileInfo.Create%2A>です。  
+  
+ 既定では、新しいファイルへの完全な読み取り/書き込みアクセスは、すべてのユーザーに与えられます。  
+  
+ 次の表に、さまざまな動作をカスタマイズするために使用される列挙型の<xref:System.IO.FileInfo>メソッドです。  
+  
+|列挙|説明|  
+|-----------------|-----------------|  
+|<xref:System.IO.FileAccess>|読み取りおよび書き込みアクセスをファイルを指定します。|  
+|<xref:System.IO.FileShare>|既に使用されているファイルに対するアクセス許可のレベルを指定します。|  
+|<xref:System.IO.FileMode>|既存のファイルを作成する要求、例外が発生するかどうかと、既存のファイルの内容を保持または上書きするかどうかを指定します。|  
+  
+> [!NOTE]
+>  入力文字列とパスをそのまま使用するメンバー、そのパスは、整形式である必要がありますか、例外が発生します。 たとえば、パスは完全修飾では、スペースで始まり場合、パスは、クラスのメソッドで切り捨てられません。 そのため、パスが正しくないと、例外が発生します。 同様に、パスまたはパスの組み合わせ完全修飾できない 2 回クリックします。 たとえば、"c:\temp c:\windows"では、ほとんどの場合、例外も発生します。 パス文字列を受け取るメソッドを使用する場合、パスが整形式であることを確認します。  
+  
+ パスを受け入れるメンバー ボックスで、パスは、ファイルまたはディレクトリを参照できます。 指定されたパスは相対パスまたは汎用名前付け規則 (UNC) パスのサーバーと共有名にも参照できます。 たとえば、次のすべては、有効なパスは。  
+  
+-   "c:\\\MyDir\\\MyFile.txt"C# の場合、または Visual Basic では、"c:\MyDir\MyFile.txt"です。  
+  
+-   "c:\\\MyDir"C# の場合、または Visual Basic では、"c:\MyDir"です。  
+  
+-   "MyDir\\\MySubdir"C# の場合、または Visual Basic では、"MyDir\MySubDir"です。  
+  
+-   "\\\\\\\MyServer\\\MyShare"C# の場合、または"\\\MyServer\MyShare"Visual Basic でします。  
+  
+ <xref:System.IO.FileInfo>クラスには、ファイルに関する情報を取得するため、次のプロパティが用意されています。 各プロパティを使用する方法の例は、プロパティ ページを参照してください。  
+  
+-   <xref:System.IO.FileInfo.Directory%2A>プロパティは、ファイルの親ディレクトリを表すオブジェクトを取得します。  
+  
+-   <xref:System.IO.FileInfo.DirectoryName%2A>プロパティは、ファイルの親ディレクトリの完全なパスを取得します。  
+  
+-   <xref:System.IO.FileInfo.Exists%2A>プロパティが操作の前に、ファイルの存在を確認します。  
+  
+-   <xref:System.IO.FileInfo.IsReadOnly%2A>プロパティを取得またはファイルを変更できるかどうかを指定する値を設定します。  
+  
+-   <xref:System.IO.FileInfo.Length%2A>ファイルのサイズを取得します。  
+  
+-   <xref:System.IO.FileInfo.Name%2A>ファイルの名前を取得します。  
+  
+   
+  
+## Examples  
+ 次の例では、メインのメンバーの一部を示しています、`FileInfo`クラスです。  
+  
+ プロパティは、最初に取得されると、<xref:System.IO.FileInfo>呼び出し、<xref:System.IO.FileSystemInfo.Refresh%2A>メソッドおよびキャッシュ ファイルの情報です。 後続の呼び出しで呼び出す必要があります<xref:System.IO.FileSystemInfo.Refresh%2A>情報の最新コピーを取得します。  
+  
+ [!code-cpp[FInfo Class#1](~/samples/snippets/cpp/VS_Snippets_CLR/FInfo Class/CPP/finfo class.cpp#1)]
+ [!code-csharp[FInfo Class#1](~/samples/snippets/csharp/VS_Snippets_CLR/FInfo Class/CS/finfo class.cs#1)]
+ [!code-vb[FInfo Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/FInfo Class/VB/finfo class.vb#1)]  
+  
+ この例では、次のような出力を生成します。  
+  
+```  
+Hello  
+And  
+Welcome  
+C:\Users\userName\AppData\Local\Temp\tmp70AB.tmp was copied to C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp.  
+C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileInfo (string fileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">新しいファイルの完全修飾名または相対ファイル名。 パスの末尾がディレクトリの区切り記号にならないようにしてください。</param>
+        <summary>ファイル パスのラッパーとして機能する、<see cref="T:System.IO.FileInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 完全修飾名または相対ファイル名のいずれかを指定することができますが、セキュリティ チェックは、完全修飾名を取得します。  
+  
+   
+  
+## Examples  
+ 次の例では、このコンス トラクターを使用して、2 つのファイルからの読み取りに書き込まれます、コピー、および削除を作成します。  
+  
+ [!code-cpp[finfo ctor#1](~/samples/snippets/cpp/VS_Snippets_CLR/FInfo Ctor/CPP/finfo ctor.cpp#1)]
+ [!code-csharp[finfo ctor#1](~/samples/snippets/csharp/VS_Snippets_CLR/FInfo Ctor/CS/finfo ctor.cs#1)]
+ [!code-vb[finfo ctor#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/FInfo Ctor/VB/finfo ctor.vb#1)]  
+  
+ 次の例は、既存のファイルを開きますまたはファイルを作成化し、ファイルにテキストを追加、結果が表示されます。  
+  
+ [!code-cpp[fileinfomain#1](~/samples/snippets/cpp/VS_Snippets_CLR/fileinfomain/CPP/fileinfomain.cpp#1)]
+ [!code-csharp[fileinfomain#1](~/samples/snippets/csharp/VS_Snippets_CLR/fileinfomain/CS/fileinfomain.cs#1)]
+ [!code-vb[fileinfomain#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/fileinfomain/VB/fileinfomain.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="fileName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentException">ファイル名は空で、空白のみで構成されているか、正しくない文字を含んでいます。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">アクセスを<paramref name="fileName" />が拒否されました。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満でなければなりません。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="fileName" />文字列の途中にコロン (:) が含まれています。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルを読み取る。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendText">
+      <MemberSignature Language="C#" Value="public System.IO.StreamWriter AppendText ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.StreamWriter AppendText() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.AppendText" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.StreamWriter</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IO.StreamWriter" /> のインスタンスが表すファイルの末尾にテキストを追加する <see cref="T:System.IO.FileInfo" /> を作成します。</summary>
+        <returns>新しい <see langword="StreamWriter" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、テキスト ファイルに追加し、ファイルから読み取ります。  
+  
+ [!code-cpp[finfo appendtext#1](~/samples/snippets/cpp/VS_Snippets_CLR/FInfo AppendText/CPP/finfo appendtext.cpp#1)]
+ [!code-csharp[finfo appendtext#1](~/samples/snippets/csharp/VS_Snippets_CLR/FInfo AppendText/CS/finfo appendtext.cs#1)]
+ [!code-vb[finfo appendtext#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/FInfo AppendText/VB/finfo appendtext.vb#1)]  
+  
+ 次の例は、ファイルの末尾にテキストを追加を示し、追加操作の結果をコンソールにも表示されます。 このルーチンが呼び出されると、最初の時間が存在しない場合、ファイルが作成されます。 その後、指定されたテキストは、ファイルに追加されます。  
+  
+ [!code-cpp[fileinfoappendtext#1](~/samples/snippets/cpp/VS_Snippets_CLR/fileinfoappendtext/CPP/fileinfoappendtext.cpp#1)]
+ [!code-csharp[fileinfoappendtext#1](~/samples/snippets/csharp/VS_Snippets_CLR/fileinfoappendtext/CS/fileinfoappendtext.cs#1)]
+ [!code-vb[fileinfoappendtext#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/fileinfoappendtext/VB/fileinfoappendtext.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取りやファイルに追加します。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Append" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public System.IO.FileInfo CopyTo (string destFileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.FileInfo CopyTo(string destFileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.CopyTo(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.FileInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="destFileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="destFileName">コピー先の新しいファイルの名前。</param>
+        <summary>既存のファイルを上書きできないようにして、既存のファイルを新しいファイルにコピーします。</summary>
+        <returns>完全修飾パスを含む新しいファイル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.IO.FileInfo.CopyTo%2A>メソッドを既存のファイルの上書きを許可します。  
+  
+> [!CAUTION]
+>  可能な限りは、このメソッドを使用して短いファイル名 (xxxxxx~1.xxx など) を使用しないでください。 2 つのファイルが該当するショートカットは短いファイル名、このメソッド可能性がありますが失敗して例外を発生させるや望ましくない動作の原因  
+  
+   
+  
+## Examples  
+ 次の例では、両方のオーバー ロードの`CopyTo`メソッドです。  
+  
+ [!code-cpp[finfo copyto2#1](~/samples/snippets/cpp/VS_Snippets_CLR/FInfo CopyTo2/CPP/finfo copyto2.cpp#1)]
+ [!code-csharp[finfo copyto2#1](~/samples/snippets/csharp/VS_Snippets_CLR/FInfo CopyTo2/CS/program.cs#1)]
+ [!code-vb[finfo copyto2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/FInfo CopyTo2/VB/program.vb#1)]  
+  
+ 次の例では、例外をスローして、変換先ファイルが既に存在する場合、別のファイルに 1 つのファイルのコピーを示します。  
+  
+ [!code-cpp[FileInfoCopyTo1#1](~/samples/snippets/cpp/VS_Snippets_CLR/FileInfoCopyTo1/CPP/fileinfocopyto1.cpp#1)]
+ [!code-csharp[FileInfoCopyTo1#1](~/samples/snippets/csharp/VS_Snippets_CLR/FileInfoCopyTo1/CS/fileinfocopyto1.cs#1)]
+ [!code-vb[FileInfoCopyTo1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/FileInfoCopyTo1/VB/fileinfocopyto1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="destFileName" /> は空で、空白のみで構成されているか、正しくない文字を含んでいます。</exception>
+        <exception cref="T:System.IO.IOException">エラーが発生したか、リンク先ファイルが既に存在します。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="destFileName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">ディレクトリ パスが渡されるか、ファイルが別のドライブに移動されています。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException"><paramref name="destFileName" /> で指定されたディレクトリが存在しません。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定されたパスかファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="destFileName" /> の文字列内にコロン (:) が含まれていますが、ボリュームを指定していません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取りや、ファイルを出力します。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public System.IO.FileInfo CopyTo (string destFileName, bool overwrite);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.FileInfo CopyTo(string destFileName, bool overwrite) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.CopyTo(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.FileInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="destFileName" Type="System.String" />
+        <Parameter Name="overwrite" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="destFileName">コピー先の新しいファイルの名前。</param>
+        <param name="overwrite">
+          既存のファイルを上書きできるようにする場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>既存のファイルを上書きできるようにして、既存のファイルを新しいファイルにコピーします。</summary>
+        <returns>新しいファイル。または、<paramref name="overwrite" /> が <see langword="true" /> の場合は、既存のファイルを上書きしたファイル。 ファイルが存在しており、<paramref name="overwrite" /> が <see langword="false" /> の場合は、<see cref="T:System.IO.IOException" /> がスローされます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 許可するか、既存のファイルの上書きしないようにするには、このメソッドを使用します。 使用して、<xref:System.IO.FileInfo.CopyTo%2A>メソッドを既定では、既存のファイルの上書きを防ぐためです。  
+  
+> [!CAUTION]
+>  可能な限りは、このメソッドを使用して短いファイル名 (xxxxxx~1.xxx など) を使用しないでください。 2 つのファイルが該当するショートカットは短いファイル名、このメソッド可能性がありますが失敗して例外を発生させるや望ましくない動作の原因  
+  
+   
+  
+## Examples  
+ 次の例では、両方のオーバー ロードの`CopyTo`メソッドです。  
+  
+ [!code-cpp[finfo copyto2#1](~/samples/snippets/cpp/VS_Snippets_CLR/FInfo CopyTo2/CPP/finfo copyto2.cpp#1)]
+ [!code-csharp[finfo copyto2#1](~/samples/snippets/csharp/VS_Snippets_CLR/FInfo CopyTo2/CS/program.cs#1)]
+ [!code-vb[finfo copyto2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/FInfo CopyTo2/VB/program.vb#1)]  
+  
+ 次の例では、既に存在するファイルを上書きするかどうかを指定する、別のファイルに 1 つのファイルのコピーを示します。  
+  
+ [!code-cpp[fileinfocopyto#1](~/samples/snippets/cpp/VS_Snippets_CLR/fileinfocopyto/CPP/fileinfocopyto.cpp#1)]
+ [!code-csharp[fileinfocopyto#1](~/samples/snippets/csharp/VS_Snippets_CLR/fileinfocopyto/CS/fileinfocopyto.cs#1)]
+ [!code-vb[fileinfocopyto#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/fileinfocopyto/VB/fileinfocopyto.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="destFileName" /> は空で、空白のみで構成されているか、正しくない文字を含んでいます。</exception>
+        <exception cref="T:System.IO.IOException">エラーが発生するか、リンク先のファイルが既に存在し、<paramref name="overwrite" />は<see langword="false" />します。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="destFileName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException"><paramref name="destFileName" /> で指定されたディレクトリが存在しません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">ディレクトリ パスが渡されるか、ファイルが別のドライブに移動されています。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満でなければなりません。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="destFileName" />文字列の途中にコロン (:) が含まれています。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取りや、ファイルを出力します。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public System.IO.FileStream Create ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.FileStream Create() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.Create" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.FileStream</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ファイルを作成します。</summary>
+        <returns>新しいファイル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、新しいファイルへの完全な読み取り/書き込みアクセスは、すべてのユーザーに与えられます。  
+  
+ このメソッドは、によって提供される機能のラッパー<xref:System.IO.File.Create%2A?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次の例は、ファイルへの参照を作成し、使用するディスク上のファイルを作成し`FileInfo.Create()`です。  
+  
+ [!code-cpp[fileinfodelete#1](~/samples/snippets/cpp/VS_Snippets_CLR/fileinfodelete/CPP/fileinfodelete.cpp#1)]
+ [!code-csharp[fileinfodelete#1](~/samples/snippets/csharp/VS_Snippets_CLR/fileinfodelete/CS/fileinfodelete.cs#1)]
+ [!code-vb[fileinfodelete#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/fileinfodelete/VB/fileinfodelete.vb#1)]  
+  
+ 次の例は、ファイルを作成、いくつかのテキストを追加し、ファイルから読み取ります。  
+  
+ [!code-cpp[finfo create#1](~/samples/snippets/cpp/VS_Snippets_CLR/FInfo Create/CPP/finfo create.cpp#1)]
+ [!code-csharp[finfo create#1](~/samples/snippets/csharp/VS_Snippets_CLR/FInfo Create/CS/finfo create.cs#1)]
+ [!code-vb[finfo create#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/FInfo Create/VB/finfo create.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取りや、ファイルを出力します。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateText">
+      <MemberSignature Language="C#" Value="public System.IO.StreamWriter CreateText ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.StreamWriter CreateText() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.CreateText" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.StreamWriter</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しいテキスト ファイルに書き込みを実行する <see cref="T:System.IO.StreamWriter" /> を作成します。</summary>
+        <returns>新しい <see langword="StreamWriter" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、新しいファイルへの完全な読み取り/書き込みアクセスは、すべてのユーザーに与えられます。  
+  
+   
+  
+## Examples  
+ 次の例で、`CreateText`メソッドです。  
+  
+ [!code-cpp[finfo createtext#1](~/samples/snippets/cpp/VS_Snippets_CLR/FInfo CreateText/CPP/finfo createtext.cpp#1)]
+ [!code-csharp[finfo createtext#1](~/samples/snippets/csharp/VS_Snippets_CLR/FInfo CreateText/CS/finfo createtext.cs#1)]
+ [!code-vb[finfo createtext#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/FInfo CreateText/VB/finfo createtext.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UnauthorizedAccessException">このファイル名はディレクトリです。</exception>
+        <exception cref="T:System.IO.IOException">ディスクが読み取り専用です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取りや、ファイルを出力します。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Decrypt">
+      <MemberSignature Language="C#" Value="public void Decrypt ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Decrypt() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.Decrypt" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.IO.FileInfo.Encrypt" /> メソッドを使用して現在のアカウントによって暗号化されたファイルを復号化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.FileInfo.Decrypt%2A>メソッドを使用して暗号化されたファイルを復号化することができます、<xref:System.IO.FileInfo.Encrypt%2A>メソッドです。  <xref:System.IO.FileInfo.Decrypt%2A>メソッドには、現在のユーザー アカウントを使用して暗号化されたファイルのみが復号化できます。  
+  
+ 両方の<xref:System.IO.FileInfo.Encrypt%2A>メソッドおよび<xref:System.IO.FileInfo.Decrypt%2A>メソッドは、コンピューターと、メソッドを呼び出すと、プロセスのファイルの暗号化キーでインストールされている暗号化サービス プロバイダー (CSP) を使用します。  
+  
+ 現在のファイル システムは、Microsoft Windows NT をする必要があります NTFS および現在のオペレーティング システムとしてフォーマットされているまたはそれ以降にする必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.IO.FileInfo.Encrypt%2A>メソッドおよび<xref:System.IO.FileInfo.Decrypt%2A>ファイルを暗号化/暗号化解除する方法です。  
+  
+ [!code-cpp[IO.FileInfo.Encrypt-Decrypt#1](~/samples/snippets/cpp/VS_Snippets_CLR/IO.FileInfo.Encrypt-Decrypt/cpp/sample.cpp#1)]
+ [!code-csharp[IO.FileInfo.Encrypt-Decrypt#1](~/samples/snippets/csharp/VS_Snippets_CLR/IO.FileInfo.Encrypt-Decrypt/CS/sample.cs#1)]
+ [!code-vb[IO.FileInfo.Encrypt-Decrypt#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/IO.FileInfo.Encrypt-Decrypt/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.DriveNotFoundException">正しくないドライブが指定されました。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">現在の <see cref="T:System.IO.FileInfo" /> オブジェクトで記述されているファイルが見つかりませんでした。</exception>
+        <exception cref="T:System.IO.IOException">ファイルを開くときに、I/O エラーが発生しました。</exception>
+        <exception cref="T:System.NotSupportedException">このファイル システムは NTFS ではありません。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">現在のオペレーティング システムは Microsoft Windows NT 以降ではありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">現在の <see cref="T:System.IO.FileInfo" /> オブジェクトで記述されているファイルは読み取り専用です。  
+  
+ または  
+  
+ この操作は、現在のプラットフォームではサポートされていません。  
+  
+ または  
+  
+ 呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、<see cref="F:System.Security.AccessControl.FileSystemRights.Write" />  
+  
+ セキュリティ アクション: 要求します。  
+  
+ 読み取りおよび現在の記述ファイルに書き込みアクセス許可の<see cref="T:System.IO.FileInfo" />オブジェクト。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Delete">
+      <MemberSignature Language="C#" Value="public override void Delete ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Delete() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.Delete" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ファイルを完全に削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイルが存在しない場合は、このメソッドは何も行いません。  
+  
+   
+  
+## Examples  
+ 次の例で、`Delete`メソッドです。  
+  
+ [!code-cpp[finfo delete#1](~/samples/snippets/cpp/VS_Snippets_CLR/FInfo Delete/CPP/finfo delete.cpp#1)]
+ [!code-csharp[finfo delete#1](~/samples/snippets/csharp/VS_Snippets_CLR/FInfo Delete/CS/finfo delete.cs#1)]
+ [!code-vb[finfo delete#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/FInfo Delete/VB/finfo delete.vb#1)]  
+  
+ 次の例を作成するが閉じ、およびファイルを削除します。  
+  
+ [!code-cpp[fileinfodelete#1](~/samples/snippets/cpp/VS_Snippets_CLR/fileinfodelete/CPP/fileinfodelete.cpp#1)]
+ [!code-csharp[fileinfodelete#1](~/samples/snippets/csharp/VS_Snippets_CLR/fileinfodelete/CS/fileinfodelete.cs#1)]
+ [!code-vb[fileinfodelete#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/fileinfodelete/VB/fileinfodelete.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">ターゲット ファイルが、Microsoft Windows NT を実行するコンピューター上で開いているかメモリ マップされています。  
+  
+ または  
+  
+ ファイルに開いているハンドルがあり、オペレーティング システムが Windows XP かそれ以前のバージョンです。 このハンドルが開いている原因は、ディレクトリおよびファイルを列挙したことにある可能性があります。 詳細については、次を参照してください。[する方法: ディレクトリと列挙ファイル](~/docs/standard/io/how-to-enumerate-directories-and-files.md)です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">このパスは、ディレクトリです。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取りや、ファイルを出力します。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Directory">
+      <MemberSignature Language="C#" Value="public System.IO.DirectoryInfo Directory { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IO.DirectoryInfo Directory" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileInfo.Directory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.DirectoryInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>親ディレクトリのインスタンスを取得します。</summary>
+        <value>このファイルの親ディレクトリを表す <see cref="T:System.IO.DirectoryInfo" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列として親ディレクトリを取得するを使用して、<xref:System.IO.FileInfo.DirectoryName%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例が表示されますまたはファイルを作成、完全なパスを決定しを決定およびディレクトリの完全な内容が表示されます。  
+  
+ [!code-cpp[fileinfodirectory#1](~/samples/snippets/cpp/VS_Snippets_CLR/fileinfodirectory/CPP/fileinfodirectory.cpp#1)]
+ [!code-csharp[fileinfodirectory#1](~/samples/snippets/csharp/VS_Snippets_CLR/fileinfodirectory/CS/fileinfodirectory.cs#1)]
+ [!code-vb[fileinfodirectory#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/fileinfodirectory/VB/fileinfodirectory.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.DirectoryNotFoundException">マップされていないドライブにあるなど、指定されたパスが無効です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルを読み取る。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DirectoryName">
+      <MemberSignature Language="C#" Value="public string DirectoryName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DirectoryName" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileInfo.DirectoryName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディレクトリの絶対パスを表す文字列を取得します。</summary>
+        <value>ディレクトリの絶対パスを表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 親ディレクトリを取得する、<xref:System.IO.DirectoryInfo>オブジェクトを使用して、<xref:System.IO.FileInfo.Directory%2A>プロパティです。  
+  
+ 最初に呼び出されると、<xref:System.IO.FileInfo>呼び出し<xref:System.IO.FileSystemInfo.Refresh%2A>ファイルに関する情報がキャッシュされます。 後続の呼び出しで呼び出す必要があります<xref:System.IO.FileSystemInfo.Refresh%2A>情報の最新コピーを取得します。  
+  
+   
+  
+## Examples  
+ 次の例では、指定されたファイルの完全なパスを取得します。  
+  
+ [!code-cpp[System.IO.FileInfo members#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.FileInfo members/CPP/fileinfomembers.cpp#3)]
+ [!code-csharp[System.IO.FileInfo members#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.FileInfo members/CS/fileinfomembers.cs#3)]
+ [!code-vb[System.IO.FileInfo members#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.FileInfo members/VB/fileinfomembers.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          ディレクトリ名に <see langword="null" /> が渡されました。</exception>
+        <exception cref="T:System.IO.PathTooLongException">完全修飾パスが 260 文字以上です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルを読み取る。 関連する列挙。<see cref="T:System.Security.Permissions.FileIOPermissionAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Encrypt">
+      <MemberSignature Language="C#" Value="public void Encrypt ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Encrypt() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.Encrypt" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ファイルを暗号化し、そのファイルの暗号化に使用したアカウントだけが復号化できるようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.FileInfo.Encrypt%2A>メソッドでは、このメソッドの呼び出しに使用するアカウントだけが復号化できるように、ファイルを暗号化することができます。  使用して、<xref:System.IO.FileInfo.Decrypt%2A>によって暗号化されたファイルの暗号化を解除する方法、<xref:System.IO.FileInfo.Encrypt%2A>メソッドです。  
+  
+ 両方の<xref:System.IO.FileInfo.Encrypt%2A>メソッドおよび<xref:System.IO.FileInfo.Decrypt%2A>メソッドは、コンピューターと、メソッドを呼び出すと、プロセスのファイルの暗号化キーでインストールされている暗号化サービス プロバイダー (CSP) を使用します。  
+  
+ 現在のファイル システムは、Microsoft Windows NT をする必要があります NTFS および現在のオペレーティング システムとしてフォーマットされているまたはそれ以降にする必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.IO.FileInfo.Encrypt%2A>メソッドおよび<xref:System.IO.FileInfo.Decrypt%2A>ファイルを暗号化しの暗号化を解除する方法です。  
+  
+ [!code-cpp[IO.FileInfo.Encrypt-Decrypt#1](~/samples/snippets/cpp/VS_Snippets_CLR/IO.FileInfo.Encrypt-Decrypt/cpp/sample.cpp#1)]
+ [!code-csharp[IO.FileInfo.Encrypt-Decrypt#1](~/samples/snippets/csharp/VS_Snippets_CLR/IO.FileInfo.Encrypt-Decrypt/CS/sample.cs#1)]
+ [!code-vb[IO.FileInfo.Encrypt-Decrypt#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/IO.FileInfo.Encrypt-Decrypt/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.DriveNotFoundException">正しくないドライブが指定されました。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">現在の <see cref="T:System.IO.FileInfo" /> オブジェクトで記述されているファイルが見つかりませんでした。</exception>
+        <exception cref="T:System.IO.IOException">ファイルを開くときに、I/O エラーが発生しました。</exception>
+        <exception cref="T:System.NotSupportedException">このファイル システムは NTFS ではありません。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">現在のオペレーティング システムは Microsoft Windows NT 以降ではありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">現在の <see cref="T:System.IO.FileInfo" /> オブジェクトで記述されているファイルは読み取り専用です。  
+  
+ または  
+  
+ この操作は、現在のプラットフォームではサポートされていません。  
+  
+ または  
+  
+ 呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、<see cref="F:System.Security.AccessControl.FileSystemRights.Write" />  
+  
+ セキュリティ アクション: 要求します。  
+  
+ 読み取りおよび現在の記述ファイルに書き込みアクセス許可の<see cref="T:System.IO.FileInfo" />オブジェクト。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Exists">
+      <MemberSignature Language="C#" Value="public override bool Exists { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Exists" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileInfo.Exists" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルが存在するかどうかを示す値を取得します。</summary>
+        <value>
+          ファイルが存在する場合は <see langword="true" />。ファイルが存在しないか、ファイルがディレクトリである場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最初に呼び出されると、<xref:System.IO.FileInfo>呼び出し<xref:System.IO.FileSystemInfo.Refresh%2A>ファイルに関する情報がキャッシュされます。 後続の呼び出しで呼び出す必要があります<xref:System.IO.FileSystemInfo.Refresh%2A>情報の最新コピーを取得します。  
+  
+ <xref:System.IO.FileInfo.Exists%2A>プロパティから返される`false`指定したファイルが存在するかどうかを判断するときにエラーが発生した場合。 これは無効な文字または文字が多すぎます、失敗、または見つからないディスクでは、ファイル名を渡すなどの例外が発生する状況で発生する、呼び出し元には、ファイルの読み取りアクセス許可がない場合またはします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.IO.FileInfo.Exists%2A>プロパティは、開く前にファイルが存在することを確認します。  この手法を使用すると、ファイルが見つからない場合に、カスタム例外をスローします。  
+  
+ [!code-cpp[IO.FileInfo.Exists#1](~/samples/snippets/cpp/VS_Snippets_CLR/IO.FileInfo.Exists/cpp/sample.cpp#1)]
+ [!code-csharp[IO.FileInfo.Exists#1](~/samples/snippets/csharp/VS_Snippets_CLR/IO.FileInfo.Exists/cs/sample.cs#1)]
+ [!code-vb[IO.FileInfo.Exists#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/IO.FileInfo.Exists/vb/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetAccessControl">
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>現在の <see cref="T:System.Security.AccessControl.FileSecurity" /> オブジェクトが示すファイルのアクセス制御リスト (ACL) エントリをカプセル化する <see cref="T:System.IO.FileInfo" /> オブジェクトを取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.IO.FileInfo.GetAccessControl%2A>アクセス権を取得するメソッドが現在のファイルのリスト (ACL) エントリを制御します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetAccessControl">
+      <MemberSignature Language="C#" Value="public System.Security.AccessControl.FileSecurity GetAccessControl ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.AccessControl.FileSecurity GetAccessControl() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.GetAccessControl" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.FileSecurity</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Security.AccessControl.FileSecurity" /> オブジェクトが示すファイルのアクセス制御リスト (ACL) エントリをカプセル化する <see cref="T:System.IO.FileInfo" /> オブジェクトを取得します。</summary>
+        <returns>現在のファイルのアクセス制御規則をカプセル化する <see cref="T:System.Security.AccessControl.FileSecurity" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.IO.FileInfo.GetAccessControl%2A>を現在のファイルのアクセス制御リスト (ACL) エントリを取得する方法です。  
+  
+ ACL には、個人、グループ、または権限がない、指定されたファイルの特定のアクションをユーザーがについて説明します。 詳細については、「[方法: アクセス制御リスト エントリを追加または削除する](~/docs/standard/io/how-to-add-or-remove-access-control-list-entries.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.IO.FileInfo.GetAccessControl%2A>メソッドおよび<xref:System.IO.FileInfo.SetAccessControl%2A>メソッドを追加し、ファイルからのアクセス制御リスト (ACL) エントリを削除します。  この例を実行するには、有効なユーザーまたはグループ アカウントを指定する必要があります。  
+  
+ [!code-cpp[IO.FileInfo.GetAccessControl-SetAccessControl#1](~/samples/snippets/cpp/VS_Snippets_CLR/IO.FileInfo.GetAccessControl-SetAccessControl/cpp/sample.cpp#1)]
+ [!code-csharp[IO.FileInfo.GetAccessControl-SetAccessControl#1](~/samples/snippets/csharp/VS_Snippets_CLR/IO.FileInfo.GetAccessControl-SetAccessControl/CS/sample.cs#1)]
+ [!code-vb[IO.FileInfo.GetAccessControl-SetAccessControl#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/IO.FileInfo.GetAccessControl-SetAccessControl/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">ファイルを開くときに、I/O エラーが発生しました。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">現在のオペレーティング システムは Microsoft Windows 2000 以降ではありません。</exception>
+        <exception cref="T:System.Security.AccessControl.PrivilegeNotHeldException">現在のシステム アカウントには、管理者特権がありません。</exception>
+        <exception cref="T:System.SystemException">ファイルが見つかりませんでした。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">この操作は、現在のプラットフォームではサポートされていません。  
+  
+ または  
+  
+ 呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.NoAccess" />、<see cref="F:System.Security.AccessControl.AccessControlActions.View" />  
+  
+ セキュリティ アクション: 要求します。  
+  
+ アクセス制御リストを読み取る権限。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAccessControl">
+      <MemberSignature Language="C#" Value="public System.Security.AccessControl.FileSecurity GetAccessControl (System.Security.AccessControl.AccessControlSections includeSections);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.AccessControl.FileSecurity GetAccessControl(valuetype System.Security.AccessControl.AccessControlSections includeSections) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.GetAccessControl(System.Security.AccessControl.AccessControlSections)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.FileSecurity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="includeSections" Type="System.Security.AccessControl.AccessControlSections" />
+      </Parameters>
+      <Docs>
+        <param name="includeSections">取得するアクセス制御エントリのグループを指定する <see cref="T:System.Security.AccessControl.AccessControlSections" /> 値の 1 つ。</param>
+        <summary>現在の <see cref="T:System.Security.AccessControl.FileSecurity" /> オブジェクトが示すファイルの、指定した種類のアクセス制御リスト (ACL) エントリをカプセル化する <see cref="T:System.IO.FileInfo" /> オブジェクトを取得します。</summary>
+        <returns>現在のファイルのアクセス制御規則をカプセル化する <see cref="T:System.Security.AccessControl.FileSecurity" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.IO.FileInfo.GetAccessControl%2A>を現在のファイルのアクセス制御リスト (ACL) エントリを取得する方法です。  
+  
+ ACL には、個人、グループ、または権限がない、指定されたファイルの特定のアクションをユーザーがについて説明します。 詳細については、「[方法: アクセス制御リスト エントリを追加または削除する](~/docs/standard/io/how-to-add-or-remove-access-control-list-entries.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">ファイルを開くときに、I/O エラーが発生しました。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">現在のオペレーティング システムは Microsoft Windows 2000 以降ではありません。</exception>
+        <exception cref="T:System.Security.AccessControl.PrivilegeNotHeldException">現在のシステム アカウントには、管理者特権がありません。</exception>
+        <exception cref="T:System.SystemException">ファイルが見つかりませんでした。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">この操作は、現在のプラットフォームではサポートされていません。  
+  
+ または  
+  
+ 呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.NoAccess" />、<see cref="F:System.Security.AccessControl.AccessControlActions.View" />  
+  
+ セキュリティ アクション: 要求します。  
+  
+ アクセス制御リストを読み取る権限。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileInfo.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のファイルが読み取り専用であるかどうかを判断する値を取得または設定します。</summary>
+        <value>
+          現在のファイルが読み取り専用の場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.IO.FileInfo.IsReadOnly%2A>プロパティをすばやく判断または現在のファイルが読み取り専用かどうかを変更します。  
+  
+ 最初に呼び出されると、<xref:System.IO.FileInfo>呼び出し<xref:System.IO.FileSystemInfo.Refresh%2A>ファイルに関する情報がキャッシュされます。 後続の呼び出しで呼び出す必要があります<xref:System.IO.FileSystemInfo.Refresh%2A>情報の最新コピーを取得します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.IO.FileInfo.IsReadOnly%2A>プロパティをファイルが読み取り専用としてマークし、読み取り/書き込みとしてマークします。  
+  
+ [!code-cpp[IO.FileInfo.IsReadOnly#1](~/samples/snippets/cpp/VS_Snippets_CLR/IO.FileInfo.isReadOnly/cpp/sample.cpp#1)]
+ [!code-csharp[IO.FileInfo.IsReadOnly#1](~/samples/snippets/csharp/VS_Snippets_CLR/IO.FileInfo.isReadOnly/CS/sample.cs#1)]
+ [!code-vb[IO.FileInfo.IsReadOnly#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/IO.FileInfo.isReadOnly/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.FileNotFoundException">現在の <see cref="T:System.IO.FileInfo" /> オブジェクトで記述されているファイルが見つかりませんでした。</exception>
+        <exception cref="T:System.IO.IOException">ファイルを開くときに、I/O エラーが発生しました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">この操作は、現在のプラットフォームではサポートされていません。  
+  
+ または  
+  
+ 呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentException">ユーザーが書き込みアクセス許可で、このプロパティを設定試みが<see langword="false" />です。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、<see cref="F:System.Security.AccessControl.FileSystemRights.Write" />  
+  
+ セキュリティ アクション: 要求します。  
+  
+ 読み取りおよび現在の記述ファイルに書き込みアクセス許可の<see cref="T:System.IO.FileInfo" />オブジェクト。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Length">
+      <MemberSignature Language="C#" Value="public long Length { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 Length" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileInfo.Length" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のファイルのサイズをバイト単位で取得します。</summary>
+        <value>現在のファイルのサイズ (バイト単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.IO.FileInfo.Length%2A>プロパティは事前にキャッシュする場合の現在のインスタンス、<xref:System.IO.FileInfo>から、次のいずれかのオブジェクトが返された<xref:System.IO.DirectoryInfo>メソッド。  
+  
+-   <xref:System.IO.DirectoryInfo.GetDirectories%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.GetFiles%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.GetFileSystemInfos%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.EnumerateDirectories%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.EnumerateFiles%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.EnumerateFileSystemInfos%2A>  
+  
+ 最新の値を取得する呼び出し、<xref:System.IO.FileSystemInfo.Refresh%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、指定されたファイルのサイズを表示します。  
+  
+ [!code-cpp[FileLength#1](~/samples/snippets/cpp/VS_Snippets_CLR/FileLength/CPP/filelength.cpp#1)]
+ [!code-csharp[FileLength#1](~/samples/snippets/csharp/VS_Snippets_CLR/FileLength/CS/filelength.cs#1)]
+ [!code-vb[FileLength#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/FileLength/VB/filelength.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">
+          <see cref="M:System.IO.FileSystemInfo.Refresh" />ファイルまたはディレクトリの状態を更新することはできません。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが存在しません。  
+  
+ または  
+  
+ <see langword="Length" />ディレクトリのプロパティが呼び出されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveTo">
+      <MemberSignature Language="C#" Value="public void MoveTo (string destFileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MoveTo(string destFileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.MoveTo(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="destFileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="destFileName">ファイルの移動先のパス。異なるファイル名を指定できます。</param>
+        <summary>指定したファイルを新しい場所に移動します。オプションで新しいファイル名を指定することもできます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ディスク ボリューム間で機能します。 たとえば、ファイル c:\MyFile.txt d:\public に移動することができ、NewFile.txt の名前を変更します。  
+  
+   
+  
+## Examples  
+ 次の例では、別の場所にファイルを移動し、ファイルの名前変更を示します。  
+  
+ [!code-csharp[IO.FileInfo.MoveTo#1](~/samples/snippets/csharp/VS_Snippets_Misc/IO.FileInfo.MoveTo/CS/Program.cs#1)]
+ [!code-vb[IO.FileInfo.MoveTo#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/IO.FileInfo.MoveTo/VB/Program.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">移動先のファイルが既に存在する、移動先のデバイスが準備できていないなど、I/O エラーが発生します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="destFileName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="destFileName" /> は空で、空白のみで構成されているか、正しくない文字を含んでいます。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">
+          <paramref name="destFileName" />読み取り専用か、ディレクトリです。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが見つかりません。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">マップされていないドライブにあるなど、指定されたパスが正しくありません。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定されたパスかファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満でなければなりません。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="destFileName" />文字列の途中にコロン (:) が含まれています。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取りや、ファイルを出力します。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public override string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileInfo.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルの名前を取得します。</summary>
+        <value>ファイルの名前です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最初に呼び出されると、<xref:System.IO.FileInfo>呼び出し<xref:System.IO.FileSystemInfo.Refresh%2A>ファイルに関する情報がキャッシュされます。 後続の呼び出しで呼び出す必要があります<xref:System.IO.FileSystemInfo.Refresh%2A>情報の最新コピーを取得します。  
+  
+ ファイルの名前には、ファイルの拡張子が含まれています。  
+  
+   
+  
+## Examples  
+ 次の例では、`Name`プロパティを現在のディレクトリにファイルの名前を表示します。  
+  
+ [!code-cpp[fileinfoname#1](~/samples/snippets/cpp/VS_Snippets_CLR/fileinfoname/CPP/fileinfoname.cpp#1)]
+ [!code-csharp[fileinfoname#1](~/samples/snippets/csharp/VS_Snippets_CLR/fileinfoname/CS/fileinfoname.cs#1)]
+ [!code-vb[fileinfoname#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/fileinfoname/VB/fileinfoname.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Open">
+      <MemberSignature Language="C#" Value="public System.IO.FileStream Open (System.IO.FileMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.FileStream Open(valuetype System.IO.FileMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.Open(System.IO.FileMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.FileStream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+      </Parameters>
+      <Docs>
+        <param name="mode">ファイルを開くときのモード (<see cref="T:System.IO.FileMode" />、<see langword="Open" /> など) を指定する定数 <see langword="Append" />。</param>
+        <summary>指定したモードでファイルを開きます。</summary>
+        <returns>読み書きアクセス、共有不可の権限を適用し、指定したモードで開くファイル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、ファイルを開く、ファイルにいくつかの情報を追加し、ファイルを読み取ります。  
+  
+ [!code-cpp[finfo open1#1](~/samples/snippets/cpp/VS_Snippets_CLR/FInfo Open1/CPP/finfo open1.cpp#1)]
+ [!code-csharp[finfo open1#1](~/samples/snippets/csharp/VS_Snippets_CLR/FInfo Open1/CS/finfo open1.cs#1)]
+ [!code-vb[finfo open1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/FInfo Open1/VB/finfo open1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが見つかりません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">このファイルは読み取り専用か、ディレクトリです。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">マップされていないドライブにあるなど、指定されたパスが正しくありません。</exception>
+        <exception cref="T:System.IO.IOException">ファイルは既に開いています。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">書き込みと読み取りファイルからです。 関連する列挙:<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />と<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Open">
+      <MemberSignature Language="C#" Value="public System.IO.FileStream Open (System.IO.FileMode mode, System.IO.FileAccess access);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.FileStream Open(valuetype System.IO.FileMode mode, valuetype System.IO.FileAccess access) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.Open(System.IO.FileMode,System.IO.FileAccess)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.FileStream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+      </Parameters>
+      <Docs>
+        <param name="mode">ファイルを開くときのモード (<see cref="T:System.IO.FileMode" />、<see langword="Open" /> など) を指定する定数 <see langword="Append" />。</param>
+        <param name="access">ファイルを <see cref="T:System.IO.FileAccess" />、<see langword="Read" />、または <see langword="Write" /> のいずれのアクセス権で開くかを指定する <see langword="ReadWrite" /> 定数。</param>
+        <summary>読み取り可、書き込み可、または読み書き込み可などのアクセス権を指定し、指定したモードでファイルを開きます。</summary>
+        <returns>指定したモードとアクセス権、および非共有の権限で開く <see cref="T:System.IO.FileStream" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、読み取り専用でファイルを開き、ファイルから読み取ります。  
+  
+ [!code-cpp[finfo open2#1](~/samples/snippets/cpp/VS_Snippets_CLR/FInfo Open2/CPP/finfo open2.cpp#1)]
+ [!code-csharp[finfo open2#1](~/samples/snippets/csharp/VS_Snippets_CLR/FInfo Open2/CS/finfo open2.cs#1)]
+ [!code-vb[finfo open2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/FInfo Open2/VB/finfo open2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが見つかりません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">
+          <paramref name="path" />読み取り専用か、ディレクトリです。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">マップされていないドライブにあるなど、指定されたパスが正しくありません。</exception>
+        <exception cref="T:System.IO.IOException">ファイルは既に開いています。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">書き込みと読み取りファイルからです。 関連する列挙:<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />と<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Open">
+      <MemberSignature Language="C#" Value="public System.IO.FileStream Open (System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.FileStream Open(valuetype System.IO.FileMode mode, valuetype System.IO.FileAccess access, valuetype System.IO.FileShare share) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.Open(System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.FileStream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+        <Parameter Name="share" Type="System.IO.FileShare" />
+      </Parameters>
+      <Docs>
+        <param name="mode">ファイルを開くときのモード (<see cref="T:System.IO.FileMode" />、<see langword="Open" /> など) を指定する定数 <see langword="Append" />。</param>
+        <param name="access">ファイルを <see cref="T:System.IO.FileAccess" />、<see langword="Read" />、または <see langword="Write" /> のいずれのアクセス権で開くかを指定する <see langword="ReadWrite" /> 定数。</param>
+        <param name="share">ファイルに対して他の <see cref="T:System.IO.FileShare" /> オブジェクトが持つアクセスの種類を指定する <see langword="FileStream" /> 定数。</param>
+        <summary>読み取り可、書き込み可、読み書き可などのアクセス権を指定し、指定したモードと共有オプションでファイルを開きます。</summary>
+        <returns>指定したモード、アクセス権、および共有オプションで開く <see cref="T:System.IO.FileStream" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、読み取りと書き込み、だけその他のユーザーまたはプロセスへのアクセスを禁止するファイルを開くときを示します。  
+  
+ [!code-cpp[fileinfoopen#1](~/samples/snippets/cpp/VS_Snippets_CLR/fileinfoopen/CPP/fileinfoopen.cpp#1)]
+ [!code-csharp[fileinfoopen#1](~/samples/snippets/csharp/VS_Snippets_CLR/fileinfoopen/CS/fileinfoopen.cs#1)]
+ [!code-vb[fileinfoopen#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/fileinfoopen/VB/fileinfoopen.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが見つかりません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">
+          <paramref name="path" />読み取り専用か、ディレクトリです。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">マップされていないドライブにあるなど、指定されたパスが正しくありません。</exception>
+        <exception cref="T:System.IO.IOException">ファイルは既に開いています。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">書き込みと読み取りファイルからです。 関連する列挙:<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />と<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenRead">
+      <MemberSignature Language="C#" Value="public System.IO.FileStream OpenRead ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.FileStream OpenRead() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.OpenRead" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.FileStream</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>読み取り専用の <see cref="T:System.IO.FileStream" /> を作成します。</summary>
+        <returns>新しい読み取り専用の <see cref="T:System.IO.FileStream" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り専用に、このメソッドが戻る<xref:System.IO.FileStream>オブジェクトを<xref:System.IO.FileShare>モードに設定された<xref:System.IO.FileShare.Read>です。  
+  
+   
+  
+## Examples  
+ 次の例では、読み取り専用でファイルを開くしから読み取ります。  
+  
+ [!code-cpp[finfo openread#1](~/samples/snippets/cpp/VS_Snippets_CLR/FInfo OpenRead/CPP/finfo openread.cpp#1)]
+ [!code-csharp[finfo openread#1](~/samples/snippets/csharp/VS_Snippets_CLR/FInfo OpenRead/CS/finfo openread.cs#1)]
+ [!code-vb[finfo openread#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/FInfo OpenRead/VB/finfo openread.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UnauthorizedAccessException">
+          <paramref name="path" />読み取り専用か、ディレクトリです。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">マップされていないドライブにあるなど、指定されたパスが正しくありません。</exception>
+        <exception cref="T:System.IO.IOException">ファイルは既に開いています。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルを読み取る。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenText">
+      <MemberSignature Language="C#" Value="public System.IO.StreamReader OpenText ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.StreamReader OpenText() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.OpenText" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IO.StreamReader</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>既存のテキスト ファイルからの読み取りを行う、UTF8 エンコーディングの <see cref="T:System.IO.StreamReader" /> を作成します。</summary>
+        <returns>UTF8 エンコーディングの新しい <see langword="StreamReader" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、ファイルからテキストを読み取ります。  
+  
+ [!code-cpp[finfo opentext#1](~/samples/snippets/cpp/VS_Snippets_CLR/FInfo OpenText/CPP/file opentext.cpp#1)]
+ [!code-csharp[finfo opentext#1](~/samples/snippets/csharp/VS_Snippets_CLR/FInfo OpenText/CS/file opentext.cs#1)]
+ [!code-vb[finfo opentext#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/FInfo OpenText/VB/file opentext.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが見つかりません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">
+          <paramref name="path" />読み取り専用か、ディレクトリです。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">マップされていないドライブにあるなど、指定されたパスが無効です。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取りや、ファイルを出力します。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenWrite">
+      <MemberSignature Language="C#" Value="public System.IO.FileStream OpenWrite ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.FileStream OpenWrite() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.OpenWrite" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.FileStream</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>書き込み専用の <see cref="T:System.IO.FileStream" /> を作成します。</summary>
+        <returns>新規または既存のファイルの書き込み専用の非共有 <see cref="T:System.IO.FileStream" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.FileInfo.OpenWrite%2A>メソッドは、既にファイル パスが存在するかが存在しない場合は、新しいファイルを作成する場合にファイルを開きます。 既存のファイルには追加しません新しいテキスト既存のテキストにします。 代わりに、新しい文字で既存の文字を上書きします。 を上書きした場合より長い文字列 ("This is OpenWrite メソッドのテストです)"など、短い文字列 (「2 つ目の実行」) で、ファイルは混在の文字列 ("2 つ目 runtest OpenWrite メソッドの") です。  
+  
+   
+  
+## Examples  
+ 次の例は、書き込み用にファイルを開き、ファイルから読み取ります。  
+  
+ [!code-cpp[finfo openwrite#1](~/samples/snippets/cpp/VS_Snippets_CLR/FInfo OpenWrite/CPP/file openwrite.cpp#1)]
+ [!code-csharp[finfo openwrite#1](~/samples/snippets/csharp/VS_Snippets_CLR/FInfo OpenWrite/CS/file openwrite.cs#1)]
+ [!code-vb[finfo openwrite#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/FInfo OpenWrite/VB/file openwrite.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UnauthorizedAccessException">インスタンスを作成するときに指定されたパス、<see cref="T:System.IO.FileInfo" />オブジェクトは読み取り専用または、ディレクトリです。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">インスタンスを作成するときに指定されたパス、<see cref="T:System.IO.FileInfo" />オブジェクトはマップされていないドライブにあるなど、無効です。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取りや、ファイルを出力します。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Replace">
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定したファイルの内容を現在の <see cref="T:System.IO.FileInfo" /> オブジェクトが示すファイルと置き換え、元のファイルを削除し、置き換えられたファイルのバックアップを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.IO.FileInfo.Replace%2A>メソッドにすばやくファイルを現在によって記述されるファイルの内容に置き換える必要がある場合<xref:System.IO.FileInfo>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Replace">
+      <MemberSignature Language="C#" Value="public System.IO.FileInfo Replace (string destinationFileName, string destinationBackupFileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.FileInfo Replace(string destinationFileName, string destinationBackupFileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.Replace(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IO.FileInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="destinationFileName" Type="System.String" />
+        <Parameter Name="destinationBackupFileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="destinationFileName">現在のファイルと置き換えるファイルの名前。</param>
+        <param name="destinationBackupFileName">によって記述されるファイルのバックアップの作成に使用するファイルの名前、 <c>destFileName</c>パラメーター。</param>
+        <summary>指定したファイルの内容を現在の <see cref="T:System.IO.FileInfo" /> オブジェクトが示すファイルと置き換え、元のファイルを削除し、置き換えられたファイルのバックアップを作成します。</summary>
+        <returns><see cref="T:System.IO.FileInfo" /> パラメーターが示すファイルに関する情報をカプセル化する <paramref name="destFileName" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.FileInfo.Replace%2A>メソッドは、現在によって記述されるファイルの内容で指定されたファイルの内容を置き換えます<xref:System.IO.FileInfo>オブジェクト。  また、置き換えられたファイルのバックアップを作成します。  最後に、新しい返します<xref:System.IO.FileInfo>上書きされたファイルを記述するオブジェクト。  
+  
+> [!CAUTION]
+>  場合、このメソッドは Windows 2000 環境の成功、`destFileName`は読み取り専用と、例外は発生しません。 使用して、<xref:System.IO.FileInfo.IsReadOnly%2A>かどうか、変換先ファイルは読み取り専用で置き換えるように試行する前に確認するプロパティです。  
+  
+ 渡す`null`を`destBackupFileName`パラメーターが置き換えられるファイルのバックアップを作成したくない場合。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.IO.File.Replace%2A>メソッドを別のファイルとファイルを置き換える、置き換えられたファイルのバックアップを作成しています。  
+  
+ [!code-cpp[IO.FileInfo.Replace#1](~/samples/snippets/cpp/VS_Snippets_CLR/IO.FileInfo.Replace/cpp/sample.cpp#1)]
+ [!code-csharp[IO.FileInfo.Replace#1](~/samples/snippets/csharp/VS_Snippets_CLR/IO.FileInfo.Replace/CS/sample.cs#1)]
+ [!code-vb[IO.FileInfo.Replace#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/IO.FileInfo.Replace/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">により記述されたパス、<paramref name="destFileName" />パラメーターは、正しい書式ではありませんでした。  
+  
+ または  
+  
+ により記述されたパス、<paramref name="destBackupFileName" />パラメーターは、正しい書式ではありませんでした。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="destFileName" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">現在の <see cref="T:System.IO.FileInfo" /> オブジェクトで記述されているファイルが見つかりませんでした。  
+  
+ または  
+  
+ <paramref name="destinationFileName" /> パラメーターで記述されているファイルが見つかりませんでした。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">現在のオペレーティング システムは Microsoft Windows NT 以降ではありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />  
+  
+ セキュリティ アクション: 要求します。  
+  
+ 書き込みアクセス許可が示すファイルを<paramref name="destBackupFileName" />パラメーターが指定されている場合。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Replace">
+      <MemberSignature Language="C#" Value="public System.IO.FileInfo Replace (string destinationFileName, string destinationBackupFileName, bool ignoreMetadataErrors);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.FileInfo Replace(string destinationFileName, string destinationBackupFileName, bool ignoreMetadataErrors) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.Replace(System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IO.FileInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="destinationFileName" Type="System.String" />
+        <Parameter Name="destinationBackupFileName" Type="System.String" />
+        <Parameter Name="ignoreMetadataErrors" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="destinationFileName">現在のファイルと置き換えるファイルの名前。</param>
+        <param name="destinationBackupFileName">によって記述されるファイルのバックアップの作成に使用するファイルの名前、 <c>destFileName</c>パラメーター。</param>
+        <param name="ignoreMetadataErrors">
+          置き換えられるファイルから置き換えるファイルへのマージ エラー (属性や ACL など) を無視する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>指定したファイルの内容を現在の <see cref="T:System.IO.FileInfo" /> オブジェクトが示すファイルと置き換え、元のファイルを削除し、置き換えられたファイルのバックアップを作成します。  また、マージ エラーを無視するかどうかも指定します。</summary>
+        <returns><see cref="T:System.IO.FileInfo" /> パラメーターが示すファイルに関する情報をカプセル化する <paramref name="destFileName" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.FileInfo.Replace%2A>メソッドは、現在によって記述されるファイルの内容で指定されたファイルの内容を置き換えます<xref:System.IO.FileInfo>オブジェクト。  また、置き換えられたファイルのバックアップを作成します。  最後に、新しい返します<xref:System.IO.FileInfo>上書きされたファイルを記述するオブジェクト。  
+  
+> [!CAUTION]
+>  場合、このメソッドは Windows 2000 環境の成功、`destFileName`は読み取り専用と、例外は発生しません。 使用して、<xref:System.IO.FileInfo.IsReadOnly%2A>かどうか、変換先ファイルは読み取り専用で置き換えるように試行する前に確認するプロパティです。  
+  
+ 渡す`null`を`destBackupFileName`パラメーターが置き換えられるファイルのバックアップを作成したくない場合。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.IO.File.Replace%2A>メソッドを別のファイルとファイルを置き換える、置き換えられたファイルのバックアップを作成しています。  
+  
+ [!code-cpp[IO.FileInfo.Replace#1](~/samples/snippets/cpp/VS_Snippets_CLR/IO.FileInfo.Replace/cpp/sample.cpp#1)]
+ [!code-csharp[IO.FileInfo.Replace#1](~/samples/snippets/csharp/VS_Snippets_CLR/IO.FileInfo.Replace/CS/sample.cs#1)]
+ [!code-vb[IO.FileInfo.Replace#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/IO.FileInfo.Replace/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">により記述されたパス、<paramref name="destFileName" />パラメーターは、正しい書式ではありませんでした。  
+  
+ または  
+  
+ により記述されたパス、<paramref name="destBackupFileName" />パラメーターは、正しい書式ではありませんでした。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="destFileName" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">現在の <see cref="T:System.IO.FileInfo" /> オブジェクトで記述されているファイルが見つかりませんでした。  
+  
+ または  
+  
+ <paramref name="destinationFileName" /> パラメーターで記述されているファイルが見つかりませんでした。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">現在のオペレーティング システムは Microsoft Windows NT 以降ではありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />  
+  
+ セキュリティ アクション: 要求します。  
+  
+ 書き込みアクセス許可が示すファイルを<paramref name="destBackupFileName" />パラメーターが指定されている場合。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAccessControl">
+      <MemberSignature Language="C#" Value="public void SetAccessControl (System.Security.AccessControl.FileSecurity fileSecurity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetAccessControl(class System.Security.AccessControl.FileSecurity fileSecurity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.SetAccessControl(System.Security.AccessControl.FileSecurity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileSecurity" Type="System.Security.AccessControl.FileSecurity" />
+      </Parameters>
+      <Docs>
+        <param name="fileSecurity">現在のファイルに適用するアクセス制御リスト (ACL) エントリを示す <see cref="T:System.Security.AccessControl.FileSecurity" /> オブジェクト。</param>
+        <summary><see cref="T:System.Security.AccessControl.FileSecurity" /> オブジェクトが示すアクセス制御リスト (ACL) エントリを、現在の <see cref="T:System.IO.FileInfo" /> オブジェクトが示すファイルに適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.FileInfo.SetAccessControl%2A>メソッドが継承されない ACL リストを表す現在のファイルにアクセス制御リスト (ACL) エントリを適用します。  
+  
+ 使用して、<xref:System.IO.FileInfo.SetAccessControl%2A>メソッドを追加またはファイルの ACL エントリを削除する必要がある場合。  
+  
+> [!CAUTION]
+>  ACL に指定された、`fileSecurity`パラメーターは、ファイルの既存の ACL を置き換えます。 新しいユーザーのアクセス許可を追加する、<xref:System.IO.Directory.GetAccessControl%2A>メソッドを既存の ACL を取得して、変更し、<xref:System.IO.FileInfo.SetAccessControl%2A>をファイルに再度適用します。  
+  
+ ACL には、個人、グループ、または権限がない、指定されたファイルの特定のアクションをユーザーがについて説明します。 詳細については、「[方法: アクセス制御リスト エントリを追加または削除する](~/docs/standard/io/how-to-add-or-remove-access-control-list-entries.md)」を参照してください。  
+  
+ <xref:System.IO.FileInfo.SetAccessControl%2A>メソッドにのみが引き続き発生する<xref:System.Security.AccessControl.FileSecurity>オブジェクトがオブジェクトの作成後に変更されました。  場合、<xref:System.Security.AccessControl.FileSecurity>オブジェクトが変更されていない、ファイルに永続化はできません。  したがって、取得することはありません、 <xref:System.Security.AccessControl.FileSecurity> 1 つのファイルからオブジェクトを別のファイルを同じオブジェクトを再適用します。  
+  
+ ACL の情報を別の 1 つのファイルにコピー: する  
+  
+1.  使用して、<xref:System.IO.FileInfo.GetAccessControl%2A>を取得する方法、<xref:System.Security.AccessControl.FileSecurity>ソース ファイルからのオブジェクト。  
+  
+2.  新しい<xref:System.Security.AccessControl.FileSecurity>先のファイル オブジェクト。  
+  
+3.  使用して、<xref:System.Security.AccessControl.ObjectSecurity.GetSecurityDescriptorBinaryForm%2A>または<xref:System.Security.AccessControl.ObjectSecurity.GetSecurityDescriptorSddlForm%2A>メソッドのソースの<xref:System.Security.AccessControl.FileSecurity>ACL 情報を取得するオブジェクト。  
+  
+4.  使用して、<xref:System.Security.AccessControl.ObjectSecurity.SetSecurityDescriptorBinaryForm%2A>または<xref:System.Security.AccessControl.ObjectSecurity.SetSecurityDescriptorSddlForm%2A>に情報をコピーする方法は、先には、手順 3. で取得<xref:System.Security.AccessControl.FileSecurity>オブジェクト。  
+  
+5.  出力先を設定<xref:System.Security.AccessControl.FileSecurity>、変換先を使用してファイル オブジェクト、<xref:System.IO.FileInfo.SetAccessControl%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.IO.FileInfo.GetAccessControl%2A>メソッドおよび<xref:System.IO.FileInfo.SetAccessControl%2A>メソッドを追加し、ACL エントリをファイルから削除します。  この例を実行するには、有効なユーザーまたはグループ アカウントを指定する必要があります。  
+  
+ [!code-cpp[IO.FileInfo.GetAccessControl-SetAccessControl#1](~/samples/snippets/cpp/VS_Snippets_CLR/IO.FileInfo.GetAccessControl-SetAccessControl/cpp/sample.cpp#1)]
+ [!code-csharp[IO.FileInfo.GetAccessControl-SetAccessControl#1](~/samples/snippets/csharp/VS_Snippets_CLR/IO.FileInfo.GetAccessControl-SetAccessControl/CS/sample.cs#1)]
+ [!code-vb[IO.FileInfo.GetAccessControl-SetAccessControl#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/IO.FileInfo.GetAccessControl-SetAccessControl/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="fileSecurity" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.SystemException">ファイルを検出または変更できませんでした。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">現在のプロセスには、ファイルを開くために必要なアクセス権がありません。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">現在のオペレーティング システムは Microsoft Windows 2000 以降ではありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.NoAccess" />、<see cref="F:System.Security.AccessControl.AccessControlActions.Change" />  
+  
+ セキュリティ アクション: 必要に応じて  
+  
+ ファイルへのアクセス許可。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このパスを文字列として返します。</summary>
+        <returns>パスを表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される文字列、<xref:System.IO.FileInfo.ToString%2A>メソッドは、コンス トラクターに渡されたパスを表します。  作成するときに、<xref:System.IO.FileInfo>オブジェクトのコンス トラクターを使用して、<xref:System.IO.FileInfo.ToString%2A>メソッドの完全修飾パスを返します。  ただし、によって文字列が返される場合がある、<xref:System.IO.FileInfo.ToString%2A>メソッドは、完全修飾パスを表していません。  たとえば、作成、<xref:System.IO.FileInfo>オブジェクトを使用して、 <xref:System.IO.DirectoryInfo.GetFiles%2A> 、メソッド、<xref:System.IO.FileInfo.ToString%2A>メソッドは、完全修飾パスを表していません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

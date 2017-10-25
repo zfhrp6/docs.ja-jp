@@ -1,0 +1,645 @@
+<Type Name="SubMenuStyle" FullName="System.Web.UI.WebControls.SubMenuStyle">
+  <TypeSignature Language="C#" Value="public class SubMenuStyle : System.Web.UI.WebControls.Style, System.ComponentModel.ICustomTypeDescriptor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SubMenuStyle extends System.Web.UI.WebControls.Style implements class System.ComponentModel.ICustomTypeDescriptor" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.SubMenuStyle" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.Style</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.ICustomTypeDescriptor</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>サブメニューのスタイルを表す、<see cref="T:System.Web.UI.WebControls.Menu" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.SubMenuStyle>サブメニューのスタイルを表すクラス、<xref:System.Web.UI.WebControls.Menu>コントロール。 メニューの静的または動的メニューにサブメニューを表示できます。 静的メニューは常の表示、<xref:System.Web.UI.WebControls.Menu>を制御する一方、ユーザーが動的なサブメニューを含む親メニュー項目の上にマウス ポインターを置いたときにのみ動的メニューが表示されます。 次の表に、プロパティを使用して メニューの静的および動的メニューのサブメニューのフォント サイズや色) などの別のスタイル特性を指定できます。  
+  
+|サブメニュー項目のスタイル プロパティ|説明|  
+|---------------------------------|-----------------|  
+|<xref:System.Web.UI.WebControls.Menu.DynamicMenuStyle%2A>|動的メニューのサブメニューのスタイルの設定。|  
+|<xref:System.Web.UI.WebControls.Menu.StaticMenuStyle%2A>|静的メニューのサブメニューのスタイルの設定。|  
+  
+ <xref:System.Web.UI.WebControls.SubMenuStyle>クラスからそのメンバーのほとんどの継承、`Style`クラスです。 拡張されて、`Style`メニュー項目のテキストの周囲のスペースの量を制御するプロパティを提供するクラス。 使用して、<xref:System.Web.UI.WebControls.SubMenuStyle.HorizontalPadding%2A>メニュー項目のテキストの右側と左側の領域の量を制御するプロパティです。 同様に、<xref:System.Web.UI.WebControls.SubMenuStyle.VerticalPadding%2A>プロパティは、メニュー項目のテキストの下と上の領域の量を制御します。  
+  
+ 継承されたスタイルの設定の詳細については、次を参照してください。<xref:System.Web.UI.WebControls.Style>です。  
+  
+> [!NOTE]
+>  設定、`z-index`を設定してサブメニューに関連付けられている HTML オブジェクトの<xref:System.Web.UI.WebControls.Style.CssClass%2A>サブメニューのスタイル プロパティ。 `z-index`属性は、レンダリングされた HTML オブジェクトの重ね順を定義します。 既定では、動的メニュー項目は、既定 z インデックス (0) を持つ HTML オブジェクト上表示されます。  
+  
+   
+  
+## Examples  
+ 次の例では、動的メニューのサブメニューのカスタム スタイルを指定する方法を示します。  
+  
+ [!code-aspx-csharp[MenuDynamicMenuStyle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuDynamicMenuStyle/CS/menudynamicmenustylecs.aspx#1)]
+ [!code-aspx-vb[MenuDynamicMenuStyle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuDynamicMenuStyle/VB/menudynamicmenustylevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SubMenuStyle ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SubMenuStyle.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.SubMenuStyle" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを作成するこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.SubMenuStyle>クラスです。 このコンス トラクターは動的に設定するときに、<xref:System.Web.UI.WebControls.Menu.LevelSubMenuStyles%2A>コレクション。 拡張するときにも使用される、<xref:System.Web.UI.WebControls.Menu>などサブメニュー項目のスタイル プロパティを初期化するためにクラス<xref:System.Web.UI.WebControls.Menu.DynamicMenuStyle%2A>または<xref:System.Web.UI.WebControls.Menu.StaticMenuStyle%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SubMenuStyle (System.Web.UI.StateBag bag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.StateBag bag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SubMenuStyle.#ctor(System.Web.UI.StateBag)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="bag" Type="System.Web.UI.StateBag" />
+      </Parameters>
+      <Docs>
+        <param name="bag">現在の要求のビュー状態情報。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.SubMenuStyle" />指定されたビュー ステート情報を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して新しいを作成する<xref:System.Web.UI.WebControls.SubMenuStyle>要求のビュー ステートに含まれる情報を持つオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyFrom">
+      <MemberSignature Language="C#" Value="public override void CopyFrom (System.Web.UI.WebControls.Style s);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void CopyFrom(class System.Web.UI.WebControls.Style s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SubMenuStyle.CopyFrom(System.Web.UI.WebControls.Style)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.Web.UI.WebControls.Style" />
+      </Parameters>
+      <Docs>
+        <param name="s">コピーする <see cref="T:System.Web.UI.WebControls.Style" /> オブジェクト。</param>
+        <summary>指定したスタイルのプロパティをコピー<see cref="T:System.Web.UI.WebControls.Style" />オブジェクトの現在のインスタンスを<see cref="T:System.Web.UI.WebControls.SubMenuStyle" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.SubMenuStyle.CopyFrom%2A>メソッドを指定のスタイル プロパティを複製する<xref:System.Web.UI.WebControls.Style>内のオブジェクト、<xref:System.Web.UI.WebControls.SubMenuStyle>このメソッドを呼び出すオブジェクト。  
+  
+> [!CAUTION]
+>  現在のインスタンスのすべてのプロパティ、<xref:System.Web.UI.WebControls.SubMenuStyle>クラスは、対応するプロパティで指定した置き換えられます<xref:System.Web.UI.WebControls.Style>オブジェクト。  
+  
+ コピーするスタイル プロパティの設定値を置き換えることがなくを使用、<xref:System.Web.UI.WebControls.SubMenuStyle.MergeWith%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FillStyleAttributes">
+      <MemberSignature Language="C#" Value="protected override void FillStyleAttributes (System.Web.UI.CssStyleCollection attributes, System.Web.UI.IUrlResolutionService urlResolver);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void FillStyleAttributes(class System.Web.UI.CssStyleCollection attributes, class System.Web.UI.IUrlResolutionService urlResolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SubMenuStyle.FillStyleAttributes(System.Web.UI.CssStyleCollection,System.Web.UI.IUrlResolutionService)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributes" Type="System.Web.UI.CssStyleCollection" />
+        <Parameter Name="urlResolver" Type="System.Web.UI.IUrlResolutionService" />
+      </Parameters>
+      <Docs>
+        <param name="attributes"><see cref="T:System.Web.UI.CssStyleCollection" />スタイル プロパティを追加するオブジェクト。</param>
+        <param name="urlResolver"><see cref="T:System.Web.UI.IUrlResolutionService" />-現在の場所 (URL) のコンテキスト情報を格納しているオブジェクトを実装します。</param>
+        <summary>スタイル プロパティを追加、<see cref="T:System.Web.UI.WebControls.SubMenuStyle" />を指定したオブジェクト<see cref="T:System.Web.UI.CssStyleCollection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.SubMenuStyle.FillStyleAttributes%2A>の現在のインスタンスのスタイル プロパティを追加するメソッドを<xref:System.Web.UI.WebControls.SubMenuStyle>を指定したクラス<xref:System.Web.UI.CssStyleCollection?displayProperty=nameWithType>オブジェクト。  
+  
+> [!NOTE]
+>  このメソッドは、コントロールの開発者によってのみ使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalPadding">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.Unit HorizontalPadding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.Unit HorizontalPadding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SubMenuStyle.HorizontalPadding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Web.UI.WebControls.Unit), "")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Unit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または左側の空白部分とサブメニューの左右の間隔を設定します。</summary>
+        <value>サブメニューのテキストの右側と左側の領域の量。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.SubMenuStyle.HorizontalPadding%2A>サブメニュー項目のテキストを含むメニューの端との間にスペースの量を制御するプロパティです。 サブメニュー項目の間の垂直方向のスペースを制御するには、使用、<xref:System.Web.UI.WebControls.SubMenuStyle.VerticalPadding%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">選択した値は<see cref="P:System.Web.UI.WebControls.Unit.Type" /><see cref="F:System.Web.UI.WebControls.UnitType.Percentage" />が 0 未満またはします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MergeWith">
+      <MemberSignature Language="C#" Value="public override void MergeWith (System.Web.UI.WebControls.Style s);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void MergeWith(class System.Web.UI.WebControls.Style s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SubMenuStyle.MergeWith(System.Web.UI.WebControls.Style)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.Web.UI.WebControls.Style" />
+      </Parameters>
+      <Docs>
+        <param name="s"><see cref="T:System.Web.UI.WebControls.Style" />設定を結合するオブジェクト。</param>
+        <summary>指定したスタイルのプロパティを組み合わせて<see cref="T:System.Web.UI.WebControls.Style" />の現在のインスタンスのオブジェクト、<see cref="T:System.Web.UI.WebControls.SubMenuStyle" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.SubMenuStyle.MergeWith%2A>メソッドの指定したスタイルのプロパティを結合する<xref:System.Web.UI.WebControls.Style>のスタイル プロパティを持つオブジェクト、<xref:System.Web.UI.WebControls.SubMenuStyle>からこのメソッドが呼び出されるオブジェクト。  
+  
+> [!CAUTION]
+>  このメソッドは、現在設定されている各プロパティを設定してスタイルのプロパティを結合<xref:System.Web.UI.WebControls.SubMenuStyle>が指定された、対応する値を持つオブジェクト<xref:System.Web.UI.WebControls.Style>オブジェクト。 設定されていないプロパティだけが更新されます。 場合、指定したプロパティ<xref:System.Web.UI.WebControls.Style>オブジェクトが設定されていない、現在の対応するプロパティ<xref:System.Web.UI.WebControls.SubMenuStyle>オブジェクトは変更されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public override void Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SubMenuStyle.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のインスタンスを返します、<see cref="T:System.Web.UI.WebControls.SubMenuStyle" />クラスを元の状態にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.SubMenuStyle.Reset%2A>を削除するメソッドは、状態バッグからスタイル要素を定義し、リセット、<xref:System.Web.UI.WebControls.SubMenuStyle>を元の状態オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ICustomTypeDescriptor.GetAttributes">
+      <MemberSignature Language="C#" Value="System.ComponentModel.AttributeCollection ICustomTypeDescriptor.GetAttributes ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.ComponentModel.AttributeCollection System.ComponentModel.ICustomTypeDescriptor.GetAttributes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SubMenuStyle.System#ComponentModel#ICustomTypeDescriptor#GetAttributes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.AttributeCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="M:System.ComponentModel.ICustomTypeDescriptor.GetAttributes" />」をご覧ください。</summary>
+        <returns><see cref="T:System.ComponentModel.AttributeCollection" />このオブジェクトの属性を含むです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 のみを指定できる際に使用される、<xref:System.Web.UI.WebControls.SubMenuStyle>にインスタンスをキャスト、<xref:System.ComponentModel.ICustomTypeDescriptor>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ICustomTypeDescriptor.GetClassName">
+      <MemberSignature Language="C#" Value="string ICustomTypeDescriptor.GetClassName ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance string System.ComponentModel.ICustomTypeDescriptor.GetClassName() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SubMenuStyle.System#ComponentModel#ICustomTypeDescriptor#GetClassName" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="M:System.ComponentModel.ICustomTypeDescriptor.GetClassName" />」を参照してください。</summary>
+        <returns>オブジェクトのクラス名または<see langword="null" />場合は、クラスには、名前がありません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 のみを指定できる際に使用される、<xref:System.Web.UI.WebControls.SubMenuStyle>にインスタンスをキャスト、<xref:System.ComponentModel.ICustomTypeDescriptor>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ICustomTypeDescriptor.GetComponentName">
+      <MemberSignature Language="C#" Value="string ICustomTypeDescriptor.GetComponentName ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance string System.ComponentModel.ICustomTypeDescriptor.GetComponentName() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SubMenuStyle.System#ComponentModel#ICustomTypeDescriptor#GetComponentName" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="M:System.ComponentModel.ICustomTypeDescriptor.GetComponentName" />」を参照してください。</summary>
+        <returns>オブジェクトの名前または<see langword="null" />オブジェクトに名前がない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 のみを指定できる際に使用される、<xref:System.Web.UI.WebControls.SubMenuStyle>にインスタンスをキャスト、<xref:System.ComponentModel.ICustomTypeDescriptor>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ICustomTypeDescriptor.GetConverter">
+      <MemberSignature Language="C#" Value="System.ComponentModel.TypeConverter ICustomTypeDescriptor.GetConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.ComponentModel.TypeConverter System.ComponentModel.ICustomTypeDescriptor.GetConverter() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SubMenuStyle.System#ComponentModel#ICustomTypeDescriptor#GetConverter" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.TypeConverter</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="M:System.ComponentModel.ICustomTypeDescriptor.GetConverter" />」を参照してください。</summary>
+        <returns>A <see cref="T:System.ComponentModel.TypeConverter" /> 、このオブジェクトのコンバーターであるまたは<see langword="null" />がある場合ありません<see cref="T:System.ComponentModel.TypeConverter" />このオブジェクトにします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 のみを指定できる際に使用される、<xref:System.Web.UI.WebControls.SubMenuStyle>にインスタンスをキャスト、<xref:System.ComponentModel.ICustomTypeDescriptor>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ICustomTypeDescriptor.GetDefaultEvent">
+      <MemberSignature Language="C#" Value="System.ComponentModel.EventDescriptor ICustomTypeDescriptor.GetDefaultEvent ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.ComponentModel.EventDescriptor System.ComponentModel.ICustomTypeDescriptor.GetDefaultEvent() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SubMenuStyle.System#ComponentModel#ICustomTypeDescriptor#GetDefaultEvent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.EventDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="M:System.ComponentModel.ICustomTypeDescriptor.GetDefaultEvent" />」を参照してください。</summary>
+        <returns><see cref="T:System.ComponentModel.EventDescriptor" /> 、オブジェクトの既定のイベントを表すオブジェクトまたは<see langword="null" />オブジェクトにイベントがありません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 のみを指定できる際に使用される、<xref:System.Web.UI.WebControls.SubMenuStyle>にインスタンスをキャスト、<xref:System.ComponentModel.ICustomTypeDescriptor>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ICustomTypeDescriptor.GetDefaultProperty">
+      <MemberSignature Language="C#" Value="System.ComponentModel.PropertyDescriptor ICustomTypeDescriptor.GetDefaultProperty ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.ComponentModel.PropertyDescriptor System.ComponentModel.ICustomTypeDescriptor.GetDefaultProperty() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SubMenuStyle.System#ComponentModel#ICustomTypeDescriptor#GetDefaultProperty" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="M:System.ComponentModel.ICustomTypeDescriptor.GetDefaultProperty" />」を参照してください。</summary>
+        <returns>A<see cref="T:System.ComponentModel.PropertyDescriptor" />をこのオブジェクトの既定のプロパティを表すオブジェクトまたは<see langword="null" />オブジェクトにプロパティがない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 のみを指定できる際に使用される、<xref:System.Web.UI.WebControls.SubMenuStyle>にインスタンスをキャスト、<xref:System.ComponentModel.ICustomTypeDescriptor>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ICustomTypeDescriptor.GetEditor">
+      <MemberSignature Language="C#" Value="object ICustomTypeDescriptor.GetEditor (Type editorBaseType);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.ComponentModel.ICustomTypeDescriptor.GetEditor(class System.Type editorBaseType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SubMenuStyle.System#ComponentModel#ICustomTypeDescriptor#GetEditor(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="editorBaseType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="editorBaseType">A<see cref="T:System.Type" />を表す、このオブジェクトのエディターです。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.ComponentModel.ICustomTypeDescriptor.GetEditor(System.Type)" />」をご覧ください。</summary>
+        <returns><see cref="T:System.Object" />は、このオブジェクトのエディターを指定した型のまたは<see langword="null" />エディターが見つからない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 のみを指定できる際に使用される、<xref:System.Web.UI.WebControls.SubMenuStyle>にインスタンスをキャスト、<xref:System.ComponentModel.ICustomTypeDescriptor>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="System.ComponentModel.ICustomTypeDescriptor.GetEvents">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="Overload:System.Web.UI.WebControls.SubMenuStyle.System#ComponentModel#ICustomTypeDescriptor#GetEvents" />」を参照してください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 のみを指定できる際に使用される、<xref:System.Web.UI.WebControls.SubMenuStyle>にインスタンスをキャスト、<xref:System.ComponentModel.ICustomTypeDescriptor>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="System.ComponentModel.ICustomTypeDescriptor.GetEvents">
+      <MemberSignature Language="C#" Value="System.ComponentModel.EventDescriptorCollection ICustomTypeDescriptor.GetEvents ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.ComponentModel.EventDescriptorCollection System.ComponentModel.ICustomTypeDescriptor.GetEvents() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SubMenuStyle.System#ComponentModel#ICustomTypeDescriptor#GetEvents" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.EventDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="M:System.ComponentModel.ICustomTypeDescriptor.GetEvents" />」を参照してください。</summary>
+        <returns><see cref="T:System.ComponentModel.EventDescriptorCollection" />このインスタンスのイベントを格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 のみを指定できる際に使用される、<xref:System.Web.UI.WebControls.SubMenuStyle>にインスタンスをキャスト、<xref:System.ComponentModel.ICustomTypeDescriptor>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ICustomTypeDescriptor.GetEvents">
+      <MemberSignature Language="C#" Value="System.ComponentModel.EventDescriptorCollection ICustomTypeDescriptor.GetEvents (Attribute[] attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.ComponentModel.EventDescriptorCollection System.ComponentModel.ICustomTypeDescriptor.GetEvents(class System.Attribute[] attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SubMenuStyle.System#ComponentModel#ICustomTypeDescriptor#GetEvents(System.Attribute[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.EventDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributes" Type="System.Attribute[]" />
+      </Parameters>
+      <Docs>
+        <param name="attributes">型の配列<see cref="T:System.Attribute" />フィルターとして使用されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.ComponentModel.ICustomTypeDescriptor.GetEvents(System.Attribute[])" />」をご覧ください。</summary>
+        <returns><see cref="T:System.ComponentModel.EventDescriptorCollection" />このインスタンスのフィルター選択されたイベントを格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 のみを指定できる際に使用される、<xref:System.Web.UI.WebControls.SubMenuStyle>にインスタンスをキャスト、<xref:System.ComponentModel.ICustomTypeDescriptor>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="System.ComponentModel.ICustomTypeDescriptor.GetProperties">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="Overload:System.ComponentModel.ICustomTypeDescriptor.GetProperties" />」を参照してください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 のみを指定できる際に使用される、<xref:System.Web.UI.WebControls.SubMenuStyle>にインスタンスをキャスト、<xref:System.ComponentModel.ICustomTypeDescriptor>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="System.ComponentModel.ICustomTypeDescriptor.GetProperties">
+      <MemberSignature Language="C#" Value="System.ComponentModel.PropertyDescriptorCollection ICustomTypeDescriptor.GetProperties ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.ComponentModel.PropertyDescriptorCollection System.ComponentModel.ICustomTypeDescriptor.GetProperties() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SubMenuStyle.System#ComponentModel#ICustomTypeDescriptor#GetProperties" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="M:System.ComponentModel.ICustomTypeDescriptor.GetProperties" />」を参照してください。</summary>
+        <returns>A<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />このインスタンスのプロパティを格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 のみを指定できる際に使用される、<xref:System.Web.UI.WebControls.SubMenuStyle>にインスタンスをキャスト、<xref:System.ComponentModel.ICustomTypeDescriptor>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ICustomTypeDescriptor.GetProperties">
+      <MemberSignature Language="C#" Value="System.ComponentModel.PropertyDescriptorCollection ICustomTypeDescriptor.GetProperties (Attribute[] attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.ComponentModel.PropertyDescriptorCollection System.ComponentModel.ICustomTypeDescriptor.GetProperties(class System.Attribute[] attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SubMenuStyle.System#ComponentModel#ICustomTypeDescriptor#GetProperties(System.Attribute[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributes" Type="System.Attribute[]" />
+      </Parameters>
+      <Docs>
+        <param name="attributes">型の配列<see cref="T:System.Attribute" />フィルターとして使用されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.ComponentModel.ICustomTypeDescriptor.GetProperties(System.Attribute[])" />」をご覧ください。</summary>
+        <returns>A<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />フィルター選択されたこのインスタンスのプロパティを含むオブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 のみを指定できる際に使用される、<xref:System.Web.UI.WebControls.SubMenuStyle>にインスタンスをキャスト、<xref:System.ComponentModel.ICustomTypeDescriptor>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ICustomTypeDescriptor.GetPropertyOwner">
+      <MemberSignature Language="C#" Value="object ICustomTypeDescriptor.GetPropertyOwner (System.ComponentModel.PropertyDescriptor pd);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.ComponentModel.ICustomTypeDescriptor.GetPropertyOwner(class System.ComponentModel.PropertyDescriptor pd) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SubMenuStyle.System#ComponentModel#ICustomTypeDescriptor#GetPropertyOwner(System.ComponentModel.PropertyDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pd" Type="System.ComponentModel.PropertyDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="pd">A<see cref="T:System.ComponentModel.PropertyDescriptor" />所有者を検索するプロパティを表すです。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.ComponentModel.ICustomTypeDescriptor.GetPropertyOwner(System.ComponentModel.PropertyDescriptor)" />」をご覧ください。</summary>
+        <returns><see cref="T:System.Object" />を表す、指定したプロパティの所有者。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 のみを指定できる際に使用される、<xref:System.Web.UI.WebControls.SubMenuStyle>にインスタンスをキャスト、<xref:System.ComponentModel.ICustomTypeDescriptor>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalPadding">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.Unit VerticalPadding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.Unit VerticalPadding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SubMenuStyle.VerticalPadding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Web.UI.WebControls.Unit), "")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Unit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサブメニューの上下の領域の量を設定します。</summary>
+        <value>サブメニューの下と上の領域の量。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.SubMenuStyle.VerticalPadding%2A>サブメニュー項目のテキストの垂直方向の間隔の量を制御するプロパティです。 サブメニューのテキストの周辺の左右の間隔を制御するには、使用、<xref:System.Web.UI.WebControls.SubMenuStyle.HorizontalPadding%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">選択した値は<see cref="P:System.Web.UI.WebControls.Unit.Type" /><see cref="F:System.Web.UI.WebControls.UnitType.Percentage" />が 0 未満またはします。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

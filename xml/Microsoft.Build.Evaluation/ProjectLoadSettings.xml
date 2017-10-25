@@ -1,0 +1,94 @@
+<Type Name="ProjectLoadSettings" FullName="Microsoft.Build.Evaluation.ProjectLoadSettings">
+  <TypeSignature Language="C#" Value="public enum ProjectLoadSettings" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ProjectLoadSettings extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Evaluation.ProjectLoadSettings" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プロジェクトの読み込みを制御するためのフラグです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、付加的な方法で追加する将来の設定を許可する"flags"列挙型です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="Default" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Build.Evaluation.ProjectLoadSettings Default = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Build.Evaluation.ProjectLoadSettings.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Evaluation.ProjectLoadSettings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通常の負荷。 既定値です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreMissingImports">
+      <MemberSignature Language="C#" Value="IgnoreMissingImports" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Build.Evaluation.ProjectLoadSettings IgnoreMissingImports = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Build.Evaluation.ProjectLoadSettings.IgnoreMissingImports" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Evaluation.ProjectLoadSettings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロジェクトを評価するときに、存在しないターゲット ファイルを無視します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RecordDuplicateButNotCircularImports">
+      <MemberSignature Language="C#" Value="RecordDuplicateButNotCircularImports" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Build.Evaluation.ProjectLoadSettings RecordDuplicateButNotCircularImports = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Build.Evaluation.ProjectLoadSettings.RecordDuplicateButNotCircularImports" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Evaluation.ProjectLoadSettings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>重複ですがない循環インポートを含むをインポートすることを示します、 <c>ImportsIncludingDuplicates</c>プロパティを記録する必要があります</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RejectCircularImports">
+      <MemberSignature Language="C#" Value="RejectCircularImports" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Build.Evaluation.ProjectLoadSettings RejectCircularImports = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Build.Evaluation.ProjectLoadSettings.RejectCircularImports" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Evaluation.ProjectLoadSettings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>循環インポートが検出された場合、例外がスローされることを示します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

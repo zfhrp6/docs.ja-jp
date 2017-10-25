@@ -1,0 +1,268 @@
+<Type Name="FirstMatchCodeGroup" FullName="System.Security.Policy.FirstMatchCodeGroup">
+  <TypeSignature Language="C#" Value="public sealed class FirstMatchCodeGroup : System.Security.Policy.CodeGroup" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit FirstMatchCodeGroup extends System.Security.Policy.CodeGroup" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Policy.FirstMatchCodeGroup" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Policy.CodeGroup</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コード グループのポリシー ステートメントと一致する最初の子コード グループの和集合によって定義されるセキュリティ ポリシーを使用します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コード グループとは、コード アクセス セキュリティ ポリシーの構成要素です。 各ポリシー レベルは、子コード グループを持つことができるルート コード グループで構成されます。 各子コード グループは、独自の子コード グループを持つことができます。この動作は、任意のツリーを形成するレベル数を拡張します。 各コード グループには、そのアセンブリの証拠に基づいてそこに、特定のアセンブリが属しているかを決定するメンバーシップ条件があります。 メンバーシップ条件を持つ指定したアセンブリと一致する唯一のコード グループとその子コード グループは、ポリシーを適用します。  
+  
+ すべてのコード グループと同様に<xref:System.Security.Policy.FirstMatchCodeGroup>アセンブリの証拠がそのメンバーシップ条件に一致する場合にのみ適用されます。 一致がある場合は、最初の一致が発生したときに停止する順序でそれぞれの子のメンバーシップ条件をテストします。 結果<xref:System.Security.Policy.FirstMatchCodeGroup>ルート コード グループのポリシー ステートメントと一致するコード グループの最初の子グループのポリシー ステートメントの和集合です。  
+  
+ <xref:System.Security.Policy.FirstMatchCodeGroup>対象読者は、プログラムから使用のアプリケーション ドメインのホスト ドメイン ポリシーを設定します。  
+  
+   
+  
+## Examples  
+ 次の例では、メンバーの使用、<xref:System.Security.Policy.FirstMatchCodeGroup>クラスです。  
+  
+ [!code-cpp[System.Security.Policy.FirstMatchCodeGroup_Evt#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Policy.FirstMatchCodeGroup_Evt/CPP/members.cpp#1)]
+ [!code-csharp[System.Security.Policy.FirstMatchCodeGroup_Evt#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Policy.FirstMatchCodeGroup_Evt/CS/members.cs#1)]
+ [!code-vb[System.Security.Policy.FirstMatchCodeGroup_Evt#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Policy.FirstMatchCodeGroup_Evt/VB/Form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FirstMatchCodeGroup (System.Security.Policy.IMembershipCondition membershipCondition, System.Security.Policy.PolicyStatement policy);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Policy.IMembershipCondition membershipCondition, class System.Security.Policy.PolicyStatement policy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.FirstMatchCodeGroup.#ctor(System.Security.Policy.IMembershipCondition,System.Security.Policy.PolicyStatement)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="membershipCondition" Type="System.Security.Policy.IMembershipCondition" />
+        <Parameter Name="policy" Type="System.Security.Policy.PolicyStatement" />
+      </Parameters>
+      <Docs>
+        <param name="membershipCondition">このコード グループにポリシーが適用されるかどうかを決定する証拠をテストするメンバーシップ条件です。</param>
+        <param name="policy">メンバーシップ条件に一致するコードを許可するアクセス許可セットと属性の形式で、コード グループのポリシー ステートメントです。</param>
+        <summary><see cref="T:System.Security.Policy.FirstMatchCodeGroup" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、基本的なコード グループを作成し、カスタム コード グループのコンス トラクターから呼び出す必要があります。 使用して子コード グループを追加することができます、<xref:System.Security.Policy.CodeGroup.AddChild%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコードの使用を示しています、<xref:System.Security.Policy.FirstMatchCodeGroup.%23ctor%2A>コンス トラクターです。 このコード例に示されている例の一部である<xref:System.Security.Policy.FirstMatchCodeGroup>クラスです。  
+  
+ [!code-cpp[System.Security.Policy.FirstMatchCodeGroup_Evt#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Policy.FirstMatchCodeGroup_Evt/CPP/members.cpp#2)]
+ [!code-csharp[System.Security.Policy.FirstMatchCodeGroup_Evt#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Policy.FirstMatchCodeGroup_Evt/CS/members.cs#2)]
+ [!code-vb[System.Security.Policy.FirstMatchCodeGroup_Evt#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Policy.FirstMatchCodeGroup_Evt/VB/Form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">型、<paramref name="membershipCondition" />パラメーターが無効です。  
+  
+ または  
+  
+ 型、<paramref name="policy" />パラメーターが無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Copy">
+      <MemberSignature Language="C#" Value="public override System.Security.Policy.CodeGroup Copy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.Policy.CodeGroup Copy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.FirstMatchCodeGroup.Copy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Policy.CodeGroup</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コード グループの詳細コピーを作成します。</summary>
+        <returns>メンバーシップ条件と子コード グループを含む、コード グループの同等のコピー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドもが含まれているすべてのオブジェクトのコピーが行われることを意味、コード グループの詳細コピーを作成します。  
+  
+   
+  
+## Examples  
+ 次のコードを使用する示します<xref:System.Security.Policy.FirstMatchCodeGroup.Copy%2A>コード グループの詳細コピーを作成する方法です。 このコード例に示されている例の一部である<xref:System.Security.Policy.FirstMatchCodeGroup>クラスです。  
+  
+ [!code-cpp[System.Security.Policy.FirstMatchCodeGroup_Evt#18](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Policy.FirstMatchCodeGroup_Evt/CPP/members.cpp#18)]
+ [!code-csharp[System.Security.Policy.FirstMatchCodeGroup_Evt#18](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Policy.FirstMatchCodeGroup_Evt/CS/members.cs#18)]
+ [!code-vb[System.Security.Policy.FirstMatchCodeGroup_Evt#18](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Policy.FirstMatchCodeGroup_Evt/VB/Form1.vb#18)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MergeLogic">
+      <MemberSignature Language="C#" Value="public override string MergeLogic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MergeLogic" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.FirstMatchCodeGroup.MergeLogic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マージ ロジックを取得します。</summary>
+        <value>文字列"First Match"です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードの使用を示しています、<xref:System.Security.Policy.FirstMatchCodeGroup.MergeLogic%2A>このコード グループのマージ ロジックを取得するプロパティです。 このコード例に示されている例の一部である、<xref:System.Security.Policy.FirstMatchCodeGroup>クラスです。  
+  
+ [!code-cpp[System.Security.Policy.FirstMatchCodeGroup_Evt#15](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Policy.FirstMatchCodeGroup_Evt/CPP/members.cpp#15)]
+ [!code-csharp[System.Security.Policy.FirstMatchCodeGroup_Evt#15](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Policy.FirstMatchCodeGroup_Evt/CS/members.cs#15)]
+ [!code-vb[System.Security.Policy.FirstMatchCodeGroup_Evt#15](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Policy.FirstMatchCodeGroup_Evt/VB/Form1.vb#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Resolve">
+      <MemberSignature Language="C#" Value="public override System.Security.Policy.PolicyStatement Resolve (System.Security.Policy.Evidence evidence);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.Policy.PolicyStatement Resolve(class System.Security.Policy.Evidence evidence) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.FirstMatchCodeGroup.Resolve(System.Security.Policy.Evidence)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Policy.PolicyStatement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="evidence" Type="System.Security.Policy.Evidence" />
+      </Parameters>
+      <Docs>
+        <param name="evidence">アセンブリの証拠。</param>
+        <summary>コード グループのポリシーと証拠のセットをその子孫を解決します。</summary>
+        <returns>省略可能な属性は、コード グループによって付与された権限で構成されるポリシー ステートメントまたは<see langword="null" />コード グループが適用されない場合 (メンバーシップ条件は、指定した証拠を一致していません)。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み込まれるアセンブリの証拠を指定するには、このメソッドは、最初に指定された証拠メンバーシップ条件をチェックして、コード グループを評価します。 一致がある場合、このメソッドは、子コード グループの評価を含む、コード グループのポリシー ステートメントを返します。  
+  
+ 最初に一致したコード グループ、各子コード グループのメンバーシップの条件が、証拠に対して追加された順序でテストされます。最初に一致するだけでは、証拠セットで解決されます。 一致しない場合は、親の最初に一致したコード グループのポリシー ステートメントが適用されます。 一致する子コード グループの種類の決定方法に応じて、その下にあるすべての子グループが適用されるしくみ<xref:System.Security.Policy.CodeGroup.Resolve%2A>これらの子グループのメソッドは動作します。  
+  
+ .NET Framework セキュリティ システムを使用して<xref:System.Security.Policy.CodeGroup.Resolve%2A>アセンブリで、結果として得られる、ポリシー ステートメントと、コードから読み込まれているコードに与えるアクセス許可を要求を決定するポリシー レベル上。  
+  
+ このメソッドのこの操作は次のとおりです。  
+  
+ メンバーシップ条件が一致しない場合、指定した証拠、返す`null`、それ以外の設定、アクセス許可 (P) を取得する設定に一致するコード グループのポリシー ステートメントと続行します。 各子コード グループです。 同じ証拠を使用して、コード グループを解決します。場合は、結果は`null`、そのポリシー ステートメントを返します。 子コード グループが一致しない場合は、P (親のポリシー ステートメント) を返します。  
+  
+   
+  
+## Examples  
+ 次のコードの使用を示しています、<xref:System.Security.Policy.FirstMatchCodeGroup.Resolve%2A>コード グループのポリシーを解決するメソッド。 このコード例に示されている例の一部である、<xref:System.Security.Policy.FirstMatchCodeGroup>クラスです。  
+  
+ [!code-cpp[System.Security.Policy.FirstMatchCodeGroup_Evt#19](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Policy.FirstMatchCodeGroup_Evt/CPP/members.cpp#19)]
+ [!code-csharp[System.Security.Policy.FirstMatchCodeGroup_Evt#19](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Policy.FirstMatchCodeGroup_Evt/CS/members.cs#19)]
+ [!code-vb[System.Security.Policy.FirstMatchCodeGroup_Evt#19](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Policy.FirstMatchCodeGroup_Evt/VB/Form1.vb#19)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="evidence" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Policy.PolicyException">(親コード グループと子コード グループを含む) 2 つ以上のコード グループがマークされている<see cref="F:System.Security.Policy.PolicyStatementAttribute.Exclusive" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveMatchingCodeGroups">
+      <MemberSignature Language="C#" Value="public override System.Security.Policy.CodeGroup ResolveMatchingCodeGroups (System.Security.Policy.Evidence evidence);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.Policy.CodeGroup ResolveMatchingCodeGroups(class System.Security.Policy.Evidence evidence) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.FirstMatchCodeGroup.ResolveMatchingCodeGroups(System.Security.Policy.Evidence)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Policy.CodeGroup</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="evidence" Type="System.Security.Policy.Evidence" />
+      </Parameters>
+      <Docs>
+        <param name="evidence">アセンブリの証拠。</param>
+        <summary>一致するコード グループを解決します。</summary>
+        <returns>A<see cref="T:System.Security.Policy.CodeGroup" />一致するコード グループのツリーのルートはします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み込まれるアセンブリの証拠を指定するには、このメソッドは、最初に指定された証拠メンバーシップ条件をチェックして、コード グループを評価します。 一致がある場合、このメソッドは、ルート コード グループを返します。 返される、コード グループには、さらに、指定された証拠と一致したコード グループの完全なセットを反映するために必要に応じて、子コード グループを持つことができる子コード グループが含まれています。  
+  
+ 最初に一致したコード グループ、各子コード グループのメンバーシップの条件が、証拠に対して追加された順序でテストされます。最初に一致するだけでは、証拠セットで解決されます。 一致しない場合は、親の最初に一致したコード グループのポリシー ステートメントが適用されます。 一致する子コード グループの種類の決定方法に応じて、その下にあるすべての子グループが適用されるしくみ<xref:System.Security.Policy.CodeGroup.ResolveMatchingCodeGroups%2A>これらの子グループのメソッドは動作します。  
+  
+   
+  
+## Examples  
+ 次のコードの使用を示しています、<xref:System.Security.Policy.FirstMatchCodeGroup.ResolveMatchingCodeGroups%2A>一致するコード グループを解決する方法です。 このコード例に示されている例の一部である、<xref:System.Security.Policy.FirstMatchCodeGroup>クラスです。  
+  
+ [!code-cpp[System.Security.Policy.FirstMatchCodeGroup_Evt#9](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Policy.FirstMatchCodeGroup_Evt/CPP/members.cpp#9)]
+ [!code-csharp[System.Security.Policy.FirstMatchCodeGroup_Evt#9](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Policy.FirstMatchCodeGroup_Evt/CS/members.cs#9)]
+ [!code-vb[System.Security.Policy.FirstMatchCodeGroup_Evt#9](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Policy.FirstMatchCodeGroup_Evt/VB/Form1.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="evidence" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,90 @@
+<Type Name="LoggerDescription" FullName="Microsoft.Build.BuildEngine.LoggerDescription">
+  <TypeSignature Language="C#" Value="public class LoggerDescription" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LoggerDescription extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.BuildEngine.LoggerDescription" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ロガーをできるだけでなくシリアル化されている別のプロセスの間で受け渡すをインスタンス化に使用できる値のコレクションとしてロガーについて説明します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LoggerDescription (string loggerClassName, string loggerAssemblyName, string loggerAssemblyFile, string loggerSwitchParameters, Microsoft.Build.Framework.LoggerVerbosity verbosity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string loggerClassName, string loggerAssemblyName, string loggerAssemblyFile, string loggerSwitchParameters, valuetype Microsoft.Build.Framework.LoggerVerbosity verbosity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.LoggerDescription.#ctor(System.String,System.String,System.String,System.String,Microsoft.Build.Framework.LoggerVerbosity)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="loggerClassName" Type="System.String" />
+        <Parameter Name="loggerAssemblyName" Type="System.String" />
+        <Parameter Name="loggerAssemblyFile" Type="System.String" />
+        <Parameter Name="loggerSwitchParameters" Type="System.String" />
+        <Parameter Name="verbosity" Type="Microsoft.Build.Framework.LoggerVerbosity" />
+      </Parameters>
+      <Docs>
+        <param name="loggerClassName">ロガーのクラス名。</param>
+        <param name="loggerAssemblyName">ロガーのアセンブリ名。</param>
+        <param name="loggerAssemblyFile">ロガーのアセンブリ ファイル名。</param>
+        <param name="loggerSwitchParameters">ロガーのパラメーターの文字列を<see langword="null" />[なし] を使用する必要がある場合。</param>
+        <param name="verbosity">ロガーの詳細出力スイッチです。  
+  
+ **注**コマンドラインですべてのロガーが同じ詳細レベルを取得します。</param>
+        <summary>指定したパラメーターに基づいてロガーの説明を作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ロガー名は、クラス名とアセンブリ名を組み合わせることによって生成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoggerSwitchParameters">
+      <MemberSignature Language="C#" Value="public string LoggerSwitchParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LoggerSwitchParameters" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.BuildEngine.LoggerDescription.LoggerSwitchParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ロガーのパラメーターの文字列を取得します。</summary>
+        <value>ログのパラメーター以外の文字列の一覧を返します<see langword="null" /> [なし] を使用する必要がある場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Verbosity">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.LoggerVerbosity Verbosity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Microsoft.Build.Framework.LoggerVerbosity Verbosity" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.BuildEngine.LoggerDescription.Verbosity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.LoggerVerbosity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ロガーの詳細レベルを取得します。</summary>
+        <value>ロガーの詳細レベルを表す文字列値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

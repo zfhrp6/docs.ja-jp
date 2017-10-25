@@ -1,0 +1,109 @@
+<Type Name="IOrderedEnumerable&lt;TElement&gt;" FullName="System.Linq.IOrderedEnumerable&lt;TElement&gt;">
+  <TypeSignature Language="C#" Value="public interface IOrderedEnumerable&lt;TElement&gt; : System.Collections.Generic.IEnumerable&lt;TElement&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IOrderedEnumerable`1&lt;TElement&gt; implements class System.Collections.Generic.IEnumerable`1&lt;!TElement&gt;, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Linq.IOrderedEnumerable`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Linq</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TElement" />
+  </TypeParameters>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;TElement&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <typeparam name="TElement">シーケンスの要素の型。</typeparam>
+    <summary>並べ替えられたシーケンスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 継承しているために、この型は列挙可能な<xref:System.Collections.Generic.IEnumerable%601>します。  
+  
+ 拡張メソッド<xref:System.Linq.Enumerable.ThenBy%2A>と<xref:System.Linq.Enumerable.ThenByDescending%2A>型のオブジェクトに対して機能<xref:System.Linq.IOrderedEnumerable%601>します。 型のオブジェクト<xref:System.Linq.IOrderedEnumerable%601>1 番目の並べ替え方法のいずれかを呼び出すことによって取得できます<xref:System.Linq.Enumerable.OrderBy%2A>または<xref:System.Linq.Enumerable.OrderByDescending%2A>を返す、<xref:System.Linq.IOrderedEnumerable%601>です。 <xref:System.Linq.Enumerable.ThenBy%2A>および<xref:System.Linq.Enumerable.ThenByDescending%2A>、下位の並べ替え方法にも型のオブジェクトを返す<xref:System.Linq.IOrderedEnumerable%601>です。 任意の数を連続して呼び出すのでは、この設計<xref:System.Linq.Enumerable.ThenBy%2A>または<xref:System.Linq.Enumerable.ThenByDescending%2A>、各呼び出しが、前の呼び出しから返される、並べ替えたデータに下位順序付けを実行します。  
+  
+   
+  
+## Examples  
+ 次の例では、プライマリとセカンダリの文字列の配列に順序を実行する方法を示します。 示しますを結果として得られる<xref:System.Linq.IOrderedEnumerable%601>は列挙可能です。  
+  
+ [!code-csharp[System.Linq.IOrderedEnumerable#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Linq.IOrderedEnumerable/CS/IOrderedEnumerable.cs#1)]
+ [!code-vb[System.Linq.IOrderedEnumerable#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Linq.IOrderedEnumerable/VB/IOrderedEnumerable.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateOrderedEnumerable&lt;TKey&gt;">
+      <MemberSignature Language="C#" Value="public System.Linq.IOrderedEnumerable&lt;TElement&gt; CreateOrderedEnumerable&lt;TKey&gt; (Func&lt;TElement,TKey&gt; keySelector, System.Collections.Generic.IComparer&lt;TKey&gt; comparer, bool descending);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Linq.IOrderedEnumerable`1&lt;!TElement&gt; CreateOrderedEnumerable&lt;TKey&gt;(class System.Func`2&lt;!TElement, !!TKey&gt; keySelector, class System.Collections.Generic.IComparer`1&lt;!!TKey&gt; comparer, bool descending) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.IOrderedEnumerable`1.CreateOrderedEnumerable``1(System.Func{`0,``0},System.Collections.Generic.IComparer{``0},System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.IOrderedEnumerable&lt;TElement&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TKey" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="keySelector" Type="System.Func&lt;TElement,TKey&gt;" />
+        <Parameter Name="comparer" Type="System.Collections.Generic.IComparer&lt;TKey&gt;" />
+        <Parameter Name="descending" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TKey">によって生成されたキーの型<c>keySelector</c>です。</typeparam>
+        <param name="keySelector"><see cref="T:System.Func`2" />の各要素のキーを抽出するために使用します。</param>
+        <param name="comparer"><see cref="T:System.Collections.Generic.IComparer`1" />返された順序で配置するためのキーを比較するために使用します。</param>
+        <param name="descending">
+          <see langword="true" />降順で要素を並べ替える<see langword="false" />昇順で要素を並べ替える。</param>
+        <summary>後続の要素を<see cref="T:System.Linq.IOrderedEnumerable`1" />キーに従ってします。</summary>
+        <returns><see cref="T:System.Linq.IOrderedEnumerable`1" />要素がキーに従って並べ替えられています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによって提供される機能が用意されてそのような<xref:System.Linq.Enumerable.ThenBy%2A>または<xref:System.Linq.Enumerable.ThenByDescending%2A>かどうかに応じて、`descending`は`true`または`false`です。 型の一連の既に並べ替え済みの下位に順序付けを実行する両方<xref:System.Linq.IOrderedEnumerable%601>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、使用する方法を示します<xref:System.Linq.IOrderedEnumerable`1.CreateOrderedEnumerable*>セカンダリの順序で実行する、<xref:System.Linq.IOrderedEnumerable%601>です。  
+  
+ [!code-csharp[System.Linq.IOrderedEnumerable#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Linq.IOrderedEnumerable/CS/IOrderedEnumerable.cs#2)]
+ [!code-vb[System.Linq.IOrderedEnumerable#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Linq.IOrderedEnumerable/VB/IOrderedEnumerable.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

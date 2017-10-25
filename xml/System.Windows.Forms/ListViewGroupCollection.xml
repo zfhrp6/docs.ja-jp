@@ -1,0 +1,744 @@
+<Type Name="ListViewGroupCollection" FullName="System.Windows.Forms.ListViewGroupCollection">
+  <TypeSignature Language="C#" Value="public class ListViewGroupCollection : System.Collections.IList" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ListViewGroupCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Collections.IList" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ListViewGroupCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IList</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ListBindable(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>内のグループのコレクションを表す、<see cref="T:System.Windows.Forms.ListView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=nameWithType>を取得するプロパティ、<xref:System.Windows.Forms.ListViewGroupCollection>に関連付けられている、<xref:System.Windows.Forms.ListView>コントロール。 このコレクションが含まれています、<xref:System.Windows.Forms.ListViewGroup>コントロール内に表示されるグループを表すオブジェクトと、<xref:System.Windows.Forms.ListView.View%2A?displayProperty=nameWithType>プロパティが以外の値に設定<xref:System.Windows.Forms.View?displayProperty=nameWithType>です。 グループに割り当てられていないすべての項目は、ヘッダー ラベルが"DefaultGroup {0}"既定のグループに表示されます。 既定のグループが含まれていない、<xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=nameWithType>コレクションを変更することはできません。 すべての項目がグループに正しく追加されていることを確認する、デバッグで、主に便利です。 内のグループがない場合、<xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=nameWithType>コレクションをグループ化機能が無効になっています。  
+  
+ 使用して、<xref:System.Windows.Forms.ListViewGroupCollection.Add%2A>コレクションに 1 つのグループを追加します。 使用して、<xref:System.Windows.Forms.ListViewGroupCollection.Insert%2A>コレクション内の特定のインデックスにあるグループに追加するメソッド。 グループを削除するを使用して、<xref:System.Windows.Forms.ListViewGroupCollection.Remove%2A>メソッドです。 使用して、<xref:System.Windows.Forms.ListViewGroupCollection.RemoveAt%2A>グループには、特定のインデックスを削除する方法です。  
+  
+ 追加することはできません、<xref:System.Windows.Forms.ListViewGroup>を複数回のコレクション。 コレクション内のグループの位置を変更するにする必要があります最初、コレクションから削除され、任意の位置に挿入されます。 使用して、<xref:System.Windows.Forms.ListViewGroupCollection.Contains%2A>特定のグループが既にコレクション内にあるかどうかを調べます。 コレクション内のグループのインデックスを取得するを使用して、<xref:System.Windows.Forms.ListViewGroupCollection.IndexOf%2A>メソッドです。 取得または、特定のインデックスにあるグループを設定することができます、<xref:System.Windows.Forms.ListViewGroupCollection.Item%2A>インデクサーです。  
+  
+ 使用して、<xref:System.Windows.Forms.ListViewGroupCollection.AddRange%2A>をコレクションに複数のグループを追加するメソッド。 グループの配列として複数のグループを追加することができます、<xref:System.Windows.Forms.ListViewGroupCollection>を通じて取得した、<xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=nameWithType>別のプロパティ<xref:System.Windows.Forms.ListView>コントロール。 使用して、<xref:System.Windows.Forms.ListViewGroupCollection.Clear%2A>コレクションからすべてのグループを削除する方法です。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.ListViewGroupCollection.Remove%2A>、 <xref:System.Windows.Forms.ListViewGroupCollection.RemoveAt%2A>、および<xref:System.Windows.Forms.ListViewGroupCollection.Clear%2A>メソッドは、グループ、コレクションから削除からのアイテムを削除しないでください、<xref:System.Windows.Forms.ListView>コントロール。 内のグループがない場合、<xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=nameWithType>コレクションが、グループ化機能が無効になっているし、コントロール内のすべての項目が通常どおり表示されます。  
+  
+ <xref:System.Windows.Forms.ListViewGroupCollection.AddRange%2A>と<xref:System.Windows.Forms.ListViewGroupCollection.Clear%2A>内の項目をグループ化する複数の方法を提供するメソッドに便利ですが、<xref:System.Windows.Forms.ListView>コントロール。 これを行うには、複数のグループの配列を作成します。 グループを変更するには、最初に使用して、 <xref:System.Windows.Forms.ListViewGroupCollection.Clear%2A> 、コレクションからすべてのグループを削除してから使用する方法、<xref:System.Windows.Forms.ListViewGroupCollection.AddRange%2A>を表示するグループの [次へ] の配列を追加するメソッド。  
+  
+ 使用して、<xref:System.Windows.Forms.ListViewGroupCollection.CopyTo%2A>に互換性のある配列を指定したインデックスから始まるコレクション内のグループをコピーする方法です。 これにより、たとえばを使用してコレクション内のグループの並べ替えを行うときに、<xref:System.Array.Sort%2A?displayProperty=nameWithType>メソッドです。 これを行うには、グループを互換性のある配列にコピーしてから、配列を並べ替えます。 次に、使用、 <xref:System.Windows.Forms.ListViewGroupCollection.Clear%2A> 、コレクションからすべてのグループを削除してから使用する方法、<xref:System.Windows.Forms.ListViewGroupCollection.AddRange%2A>並べ替えられた配列をコレクションに追加するメソッド。  
+  
+ 使用して、<xref:System.Windows.Forms.ListViewGroupCollection.Count%2A>プロパティ コレクション内のグループの数を調べることです。 コレクションを反復処理に使用して、<xref:System.Collections.IEnumerator>から返される、<xref:System.Windows.Forms.ListViewGroupCollection.GetEnumerator%2A>メソッドです。  
+  
+> [!NOTE]
+>  アプリケーションが呼び出すときに、グループ化機能が Windows XP および Windows Server 2003 ファミリでのみ使用できますが、<xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType>メソッドです。 以前のオペレーティング システムでグループに関連するすべてのコードは無視され、グループが表示されません。 結果として、グループ化機能に依存する任意のコードが正常に動作していない可能性があります。 グループ化機能が使用できるかどうかを決定するテストを含めるようにが利用できない場合は、代替機能を提供してください。 たとえば、グループ別に並べ替えをサポートしないオペレーティング システムで実行されているときに、別の並べ替えを提供することができます。  
+>   
+>  挿入マーク機能は、オペレーティング システムのテーマの機能を提供する同じライブラリによって提供されます。 このライブラリの可用性を確認するには、呼び出し、<xref:System.Windows.Forms.FeatureSupport.IsPresent%28System.Object%29?displayProperty=nameWithType>メソッドのオーバー ロードを渡します、<xref:System.Windows.Forms.OSFeature.Themes?displayProperty=nameWithType>値。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Windows.Forms.ListView>アイテムを整理する詳細ビューのサブアイテム値によってグループ化機能します。 この形式のグループ化は、Windows エクスプ ローラーで使用されているグループに似ています。 例では、グループは動的に作成されます。 サブアイテムの列ごとに一意のサブ項目の値ごとに 1 つのグループが作成されます。 親項目の列の一意の初期名ごとに 1 つのグループが作成されます。 列のヘッダーをクリックすると、その列に対して作成されたグループに項目が並べ替えられます。 同じ列ヘッダーを再度クリックすると、グループの順序を反転させます。  
+  
+ [!code-cpp[System.Windows.Forms.ListView.Groups#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ListView.Groups/CPP/listviewgroupsexample.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ListView.Groups#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListView.Groups/CS/listviewgroupsexample.cs#1)]
+ [!code-vb[System.Windows.Forms.ListView.Groups#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListView.Groups/VB/listviewgroupsexample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (System.Windows.Forms.ListViewGroup group);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Add(class System.Windows.Forms.ListViewGroup group) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroupCollection.Add(System.Windows.Forms.ListViewGroup)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="group" Type="System.Windows.Forms.ListViewGroup" />
+      </Parameters>
+      <Docs>
+        <param name="group">コレクションに追加する <see cref="T:System.Windows.Forms.ListViewGroup" />。</param>
+        <summary>指定された <see cref="T:System.Windows.Forms.ListViewGroup" /> をコレクションに追加します。</summary>
+        <returns>コレクション、またはグループが既にコレクションに存在する場合は-1 内のグループのインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、既存の追加<xref:System.Windows.Forms.ListViewGroup>をコレクションにします。 追加することはできません、<xref:System.Windows.Forms.ListViewGroup>を複数回のコレクション。 呼び出すと、<xref:System.Windows.Forms.ListViewGroupCollection.Add%2A>メソッドを使用して、<xref:System.Windows.Forms.ListViewGroup>がコレクション内に既に、追加は失敗し、-1 が返されます。  
+  
+ コレクションに複数のグループを追加するには、使用、<xref:System.Windows.Forms.ListViewGroupCollection.AddRange%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="group" />少なくとも 1 つ含む<see cref="T:System.Windows.Forms.ListViewItem" />に属している、<see cref="T:System.Windows.Forms.ListView" />これを所有しているもの以外のコントロール<see cref="T:System.Windows.Forms.ListViewGroupCollection" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ListViewGroup Add (string key, string headerText);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.ListViewGroup Add(string key, string headerText) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroupCollection.Add(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ListViewGroup</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="headerText" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">初期値、<see cref="P:System.Windows.Forms.ListViewGroup.Name" />新しいグループのプロパティです。</param>
+        <param name="headerText">初期値、<see cref="P:System.Windows.Forms.ListViewGroup.Header" />新しいグループのプロパティです。</param>
+        <summary>新しく追加<see cref="T:System.Windows.Forms.ListViewGroup" />初期化するために、指定した値を使用して、コレクションに、<see cref="P:System.Windows.Forms.ListViewGroup.Name" />と<see cref="P:System.Windows.Forms.ListViewGroup.Header" />プロパティ</summary>
+        <returns>新しい <see cref="T:System.Windows.Forms.ListViewGroup" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (System.Windows.Forms.ListViewGroup[] groups);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(class System.Windows.Forms.ListViewGroup[] groups) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroupCollection.AddRange(System.Windows.Forms.ListViewGroup[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="groups" Type="System.Windows.Forms.ListViewGroup[]" />
+      </Parameters>
+      <Docs>
+        <param name="groups">型の配列<see cref="T:System.Windows.Forms.ListViewGroup" />コレクションに追加するグループを指定します。</param>
+        <summary>グループの配列をコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバージョンの使用、<xref:System.Windows.Forms.ListViewGroupCollection.AddRange%2A>グループ コレクションにグループの配列を追加するメソッド。 このメソッドは複数作成するときに<xref:System.Windows.Forms.ListViewGroup>オブジェクトし、1 つのメソッドの呼び出しを使用して、コレクションに追加します。 個々 のグループをコレクションに追加するには、使用、<xref:System.Windows.Forms.ListViewGroupCollection.Add%2A>メソッドです。  
+  
+ このメソッドは内の項目をグループ化する複数の方法を提供する場合にも役立ちますを<xref:System.Windows.Forms.ListView>コントロール。 これを行うには、複数のグループの配列を作成します。 グループを変更するには、最初に使用して、 <xref:System.Windows.Forms.ListViewGroupCollection.Clear%2A> 、コレクションからすべてのグループを削除してから使用する方法、<xref:System.Windows.Forms.ListViewGroupCollection.AddRange%2A>グループの別の配列を追加するメソッド。  
+  
+ 異なり、 <xref:System.Windows.Forms.ListViewGroupCollection.Add%2A> 、メソッド、<xref:System.Windows.Forms.ListViewGroupCollection.AddRange%2A>メソッドが追加されているグループが既にコレクション内にするかどうかを決定するために使用する値を返すにはいません。 この情報を必要がある場合、<xref:System.Windows.Forms.ListViewGroupCollection.Contains%2A>メソッドを使用する前に、<xref:System.Windows.Forms.ListViewGroupCollection.AddRange%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例で方法、<xref:System.Windows.Forms.ListViewGroupCollection.AddRange%2A>メソッドを編成するアプリケーションで使用できる<xref:System.Windows.Forms.ListView>サブ項目に値の詳細ビューで項目。 この形式のグループ化は、Windows エクスプ ローラーで使用されているグループに似ています。 例では、グループは動的に作成されます。 サブアイテムの列ごとに一意のサブ項目の値ごとに 1 つのグループが作成されます。 親項目の列の一意の初期名ごとに 1 つのグループが作成されます。 各列に対して作成されたグループは、サブ項目のテキストまたは先頭の文字とハッシュ テーブルに格納されます。 列ヘッダーがクリックされたときに、<xref:System.Windows.Forms.ListViewGroupCollection>がオフになっています。 クリックした列に対応するハッシュ テーブルを取得し、され、適切なグループの各項目が割り当てられます。 ハッシュ テーブル内のグループの並べ替えられた配列を最後に、追加、<xref:System.Windows.Forms.ListViewGroupCollection>です。  
+  
+ 完了の例では、次を参照してください。、<xref:System.Windows.Forms.ListViewGroupCollection>概要リファレンス トピックです。  
+  
+ [!code-cpp[System.Windows.Forms.ListView.Groups#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ListView.Groups/CPP/listviewgroupsexample.cpp#2)]
+ [!code-csharp[System.Windows.Forms.ListView.Groups#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListView.Groups/CS/listviewgroupsexample.cs#2)]
+ [!code-vb[System.Windows.Forms.ListView.Groups#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListView.Groups/VB/listviewgroupsexample.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="groups" />少なくとも 1 つに少なくとも 1 つのグループを含む<see cref="T:System.Windows.Forms.ListViewItem" />に属している、<see cref="T:System.Windows.Forms.ListView" />これを所有しているもの以外のコントロール<see cref="T:System.Windows.Forms.ListViewGroupCollection" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (System.Windows.Forms.ListViewGroupCollection groups);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(class System.Windows.Forms.ListViewGroupCollection groups) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroupCollection.AddRange(System.Windows.Forms.ListViewGroupCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="groups" Type="System.Windows.Forms.ListViewGroupCollection" />
+      </Parameters>
+      <Docs>
+        <param name="groups">A<see cref="T:System.Windows.Forms.ListViewGroupCollection" />を含むコレクションに追加するグループです。</param>
+        <summary>既存のグループを追加<see cref="T:System.Windows.Forms.ListViewGroupCollection" />をコレクションにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバージョンの使用、<xref:System.Windows.Forms.ListViewGroupCollection.AddRange%2A>の要素を追加するメソッドを<xref:System.Windows.Forms.ListViewGroupCollection>を通じて取得した、<xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=nameWithType>プロパティを別の<xref:System.Windows.Forms.ListView>コントロール。  
+  
+ 異なり、 <xref:System.Windows.Forms.ListViewGroupCollection.Add%2A> 、メソッド、<xref:System.Windows.Forms.ListViewGroupCollection.AddRange%2A>メソッドが追加されているグループが既にコレクション内にするかどうかを決定するために使用する値を返すにはいません。 この情報を必要がある場合、<xref:System.Windows.Forms.ListViewGroupCollection.Contains%2A>メソッドを使用する前に、<xref:System.Windows.Forms.ListViewGroupCollection.AddRange%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="groups" />少なくとも 1 つに少なくとも 1 つのグループを含む<see cref="T:System.Windows.Forms.ListViewItem" />に属している、<see cref="T:System.Windows.Forms.ListView" />これを所有しているもの以外のコントロール<see cref="T:System.Windows.Forms.ListViewGroupCollection" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroupCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションからすべてのグループを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションからすべてのグループを削除するのにには、このメソッドを使用します。 グループを削除するに注意してください、<xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=nameWithType>コレクションが項目を削除していない、<xref:System.Windows.Forms.ListView>コントロール。  
+  
+ このメソッドは、グループ化機能を無効にすると便利です。 内のグループがない場合に、<xref:System.Windows.Forms.ListView>を制御する、項目が正常に表示します。 コレクションから個々 のグループを削除するには、使用、<xref:System.Windows.Forms.ListViewGroupCollection.Remove%2A>または<xref:System.Windows.Forms.ListViewGroupCollection.RemoveAt%2A>メソッドです。  
+  
+ このメソッドは、項目をグループ化する複数の方法を提供する場合にも役立ちます。 グループを変更するには、最初に使用して、 <xref:System.Windows.Forms.ListViewGroupCollection.Clear%2A> 、コレクションからすべてのグループを削除してから使用する方法、<xref:System.Windows.Forms.ListViewGroupCollection.AddRange%2A>グループの別の配列を追加するメソッド。  
+  
+   
+  
+## Examples  
+ 次の例で方法、<xref:System.Windows.Forms.ListViewGroupCollection.Clear%2A>メソッドを編成するアプリケーションで使用できる<xref:System.Windows.Forms.ListView>サブ項目に値の詳細ビューで項目。 この形式のグループ化は、Windows エクスプ ローラーで使用されているグループに似ています。 例では、グループは動的に作成されます。 サブアイテムの列ごとに一意のサブ項目の値ごとに 1 つのグループが作成されます。 親項目の列の一意の初期名ごとに 1 つのグループが作成されます。 各列に対して作成されたグループは、サブ項目のテキストまたは先頭の文字とハッシュ テーブルに格納されます。 列ヘッダーがクリックされたときに、<xref:System.Windows.Forms.ListViewGroupCollection>がオフになっています。 クリックした列に対応するハッシュ テーブルを取得し、され、適切なグループの各項目が割り当てられます。 ハッシュ テーブル内のグループの並べ替えられた配列を最後に、追加、<xref:System.Windows.Forms.ListViewGroupCollection>です。  
+  
+ 完了の例では、次を参照してください。、<xref:System.Windows.Forms.ListViewGroupCollection>概要リファレンス トピックです。  
+  
+ [!code-cpp[System.Windows.Forms.ListView.Groups#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ListView.Groups/CPP/listviewgroupsexample.cpp#2)]
+ [!code-csharp[System.Windows.Forms.ListView.Groups#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListView.Groups/CS/listviewgroupsexample.cs#2)]
+ [!code-vb[System.Windows.Forms.ListView.Groups#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListView.Groups/VB/listviewgroupsexample.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Windows.Forms.ListViewGroup value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Windows.Forms.ListViewGroup value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroupCollection.Contains(System.Windows.Forms.ListViewGroup)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Windows.Forms.ListViewGroup" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクション内で検索する <see cref="T:System.Windows.Forms.ListViewGroup" />。</param>
+        <summary>指定されたグループがコレクション内にあるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />グループがコレクション内にある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加することはできません、<xref:System.Windows.Forms.ListViewGroup>を複数回のコレクション。 ただし、別のコピーを追加しようとしても、例外はスローされません。 代わりに、追加は失敗します。 <xref:System.Windows.Forms.ListViewGroupCollection.Add%2A>メソッドは値 – 1 をここでに返します。 <xref:System.Windows.Forms.ListViewGroupCollection.AddRange%2A>と<xref:System.Windows.Forms.ListViewGroupCollection.Insert%2A>メソッド、ただし、戻り値の値がないです。 これらのメソッドのいずれかを使用してグループを追加するときに使用して、<xref:System.Windows.Forms.ListViewGroupCollection.Contains%2A>メソッドを特定するかどうかを判断<xref:System.Windows.Forms.ListViewGroup>がコレクション内に既にです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroupCollection.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Array" />グループがコピーされます。</param>
+        <param name="index">グループのコピー先となる配列内の最初のインデックス。</param>
+        <summary>互換性のある 1 次元コレクション内のグループのコピー<see cref="T:System.Array" />対象となる配列の指定したインデックスから始まります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、 <xref:System.Windows.Forms.ListViewGroupCollection.CopyTo%2A> (含まれている項目の参照を含む) のコレクション内のグループを指定したインデックスから始まる、互換性のある配列にコピーする方法です。 これにより、たとえばを使用してコレクション内のグループの並べ替えを行うときに、<xref:System.Array.Sort%2A?displayProperty=nameWithType>メソッドです。 これを行うには、グループを互換性のある配列にコピーしてから、配列を並べ替えます。 次に、使用、 <xref:System.Windows.Forms.ListViewGroupCollection.Clear%2A> 、コレクションからすべてのグループを削除してから使用する方法、<xref:System.Windows.Forms.ListViewGroupCollection.AddRange%2A>並べ替えられた配列をコレクションに追加するメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewGroupCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション内のグループの数を取得します。</summary>
+        <value>コレクション内のグループの数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、コレクション内のグループの数を決定します。 これは、コレクションをループし、各グループで同じ操作を実行する必要がある場合に便利です。 使用することも、<xref:System.Collections.IEnumerator>によって返される、<xref:System.Windows.Forms.ListViewGroupCollection.GetEnumerator%2A>コレクションを反復処理するメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroupCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションを反復処理する列挙子を返します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />を表すコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、各グループで同じ操作を実行するコレクションを反復処理する必要がある場合に便利です。 また、グループごとに 1 回のコレクションをループできますを使用して、<xref:System.Windows.Forms.ListViewGroupCollection.Count%2A>ループの数を決定するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Windows.Forms.ListViewGroup value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Windows.Forms.ListViewGroup value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroupCollection.IndexOf(System.Windows.Forms.ListViewGroup)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Windows.Forms.ListViewGroup" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクション内で検索する <see cref="T:System.Windows.Forms.ListViewGroup" />。</param>
+        <summary>指定したインデックスを返します<see cref="T:System.Windows.Forms.ListViewGroup" />コレクション内で。</summary>
+        <returns>コレクション、またはグループがコレクション内でない場合は-1 内のグループの 0 から始まるインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクション内のグループのインデックスを確認するのにには、このメソッドを使用します。 これにより、たとえばを使用してコレクションを反復処理するときに、各グループのインデックスを確認する、<xref:System.Collections.IEnumerator>によって返される、<xref:System.Windows.Forms.ListViewGroupCollection.GetEnumerator%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.Windows.Forms.ListViewGroup group);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.Windows.Forms.ListViewGroup group) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroupCollection.Insert(System.Int32,System.Windows.Forms.ListViewGroup)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="group" Type="System.Windows.Forms.ListViewGroup" />
+      </Parameters>
+      <Docs>
+        <param name="index">グループを挿入する位置を示す、コレクション内のインデックス。</param>
+        <param name="group"><see cref="T:System.Windows.Forms.ListViewGroup" />コレクションに挿入します。</param>
+        <summary>指定した挿入<see cref="T:System.Windows.Forms.ListViewGroup" />コレクション内の指定したインデックス位置。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、既存の挿入を<xref:System.Windows.Forms.ListViewGroup>コレクション内で特定のインデックス位置。  
+  
+ 追加することはできません、<xref:System.Windows.Forms.ListViewGroup>を複数回のコレクション。 呼び出すと、<xref:System.Windows.Forms.ListViewGroupCollection.Insert%2A>メソッドが既にコレクション内に、挿入が失敗しただけで、グループを使用します。 使用して、<xref:System.Windows.Forms.ListViewGroupCollection.Contains%2A>特定のグループが既にコレクション内にあるかどうかを決定するを挿入する前にメソッドです。 コレクション内のグループの位置を変更する必要があります最初にそれを削除して、目的のインデックスに挿入します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ListViewGroup this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ListViewGroup Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewGroupCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ListViewGroup</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクション内のインデックス、<see cref="T:System.Windows.Forms.ListViewGroup" />を取得または設定します。</param>
+        <summary>取得または設定、<see cref="T:System.Windows.Forms.ListViewGroup" />コレクション内の指定したインデックス位置。</summary>
+        <value><see cref="T:System.Windows.Forms.ListViewGroup" />コレクション内の指定したインデックス位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、グループ、コレクション内で指定したインデックス位置を取得します。 グループのオブジェクトへの参照があるし、インデックスが必要です、使用して、<xref:System.Windows.Forms.ListViewGroupCollection.IndexOf%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" />小さい 0 またはより大きいか等しい<see cref="P:System.Windows.Forms.ListViewGroupCollection.Count" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ListViewGroup this[string key] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ListViewGroup Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewGroupCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ListViewGroup</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">取得または設定するグループの名前。</param>
+        <summary>取得または設定、 <see cref="T:System.Windows.Forms.ListViewGroup" /> 、指定した<see cref="P:System.Windows.Forms.ListViewGroup.Name" />プロパティの値。</summary>
+        <value><see cref="T:System.Windows.Forms.ListViewGroup" />指定された名前、または<see langword="null" />しない場合<see cref="T:System.Windows.Forms.ListViewGroup" />が存在します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Windows.Forms.ListViewGroup group);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Windows.Forms.ListViewGroup group) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroupCollection.Remove(System.Windows.Forms.ListViewGroup)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="group" Type="System.Windows.Forms.ListViewGroup" />
+      </Parameters>
+      <Docs>
+        <param name="group">コレクションから削除する <see cref="T:System.Windows.Forms.ListViewGroup" />。</param>
+        <summary>指定された <see cref="T:System.Windows.Forms.ListViewGroup" /> をコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ グループへの参照がある場合、コレクションからグループを削除するのにには、このメソッドを使用します。 グループを削除することに注意してください、<xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=nameWithType>コレクションが項目を削除していない、<xref:System.Windows.Forms.ListView>コントロール。  
+  
+ 特定のインデックスのグループを削除するには、使用、<xref:System.Windows.Forms.ListViewGroupCollection.RemoveAt%2A>メソッド代わりにします。 コレクションからすべてのグループを削除するには、使用、<xref:System.Windows.Forms.ListViewGroupCollection.Clear%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroupCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクション内のインデックス、<see cref="T:System.Windows.Forms.ListViewGroup" />を削除します。</param>
+        <summary>削除、<see cref="T:System.Windows.Forms.ListViewGroup" />コレクション内の指定したインデックス位置。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクション内のグループのインデックスがあるときに、コレクションから、グループを削除するのにには、このメソッドを使用します。 グループを削除するに注意してください、<xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=nameWithType>コレクションが項目を削除していない、<xref:System.Windows.Forms.ListView>コントロール。  
+  
+ オブジェクトへの参照を使用してグループを削除するには、使用、<xref:System.Windows.Forms.ListViewGroupCollection.Remove%2A>メソッド代わりにします。 コレクションからすべてのグループを削除するには、使用、<xref:System.Windows.Forms.ListViewGroupCollection.Clear%2A>メソッドです。 コレクションから項目を削除するときにコレクション内の後続の項目のインデックスを変更します。 削除された項目に関するすべての情報が削除されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.IsSynchronized">
+      <MemberSignature Language="C#" Value="bool System.Collections.ICollection.IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.ICollection.IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewGroupCollection.System#Collections#ICollection#IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションへのアクセスが同期されている (スレッド セーフである) かどうかを示す値を取得します。</summary>
+        <value>
+          常に <see langword="true" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.SyncRoot">
+      <MemberSignature Language="C#" Value="object System.Collections.ICollection.SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.ICollection.SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewGroupCollection.System#Collections#ICollection#SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションへのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value>コレクションを同期するために使用するオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Add">
+      <MemberSignature Language="C#" Value="int IList.Add (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IList.Add(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroupCollection.System#Collections#IList#Add(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Windows.Forms.ListViewGroup" /> に追加する <see cref="T:System.Windows.Forms.ListViewGroupCollection" />。</param>
+        <summary>新しく追加<see cref="T:System.Windows.Forms.ListViewGroup" />を<see cref="T:System.Windows.Forms.ListViewGroupCollection" />です。</summary>
+        <returns>位置のインデックス、<see cref="T:System.Windows.Forms.ListViewGroup" />が追加されました。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="value" /> が <see cref="T:System.Windows.Forms.ListViewGroup" /> ではありません。  
+  
+ または  
+  
+ <paramref name="value" />少なくとも 1 つ含む<see cref="T:System.Windows.Forms.ListViewItem" />に属している、<see cref="T:System.Windows.Forms.ListView" />これを所有しているもの以外のコントロール<see cref="T:System.Windows.Forms.ListViewGroupCollection" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Contains">
+      <MemberSignature Language="C#" Value="bool IList.Contains (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Collections.IList.Contains(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroupCollection.System#Collections#IList#Contains(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">表すオブジェクト、<see cref="T:System.Windows.Forms.ListViewGroup" />コレクション内で検索します。</param>
+        <summary>指定した値がコレクション内にあるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="value" />は、<see cref="T:System.Windows.Forms.ListViewGroup" />コレクションに含まれている、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IndexOf">
+      <MemberSignature Language="C#" Value="int IList.IndexOf (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IList.IndexOf(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroupCollection.System#Collections#IList#IndexOf(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Windows.Forms.ListViewGroup" />内を検索する、<see cref="T:System.Windows.Forms.ListViewGroupCollection" />です。</param>
+        <summary>指定した値のコレクション内のインデックスを返します。</summary>
+        <returns>0 から始まるインデックス<paramref name="value" />コレクション内にある場合は-1。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Insert">
+      <MemberSignature Language="C#" Value="void IList.Insert (int index, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Insert(int32 index, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroupCollection.System#Collections#IList#Insert(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">位置、<see cref="T:System.Windows.Forms.ListViewGroup" />コレクションに追加します。</param>
+        <param name="value">コレクションに追加する <see cref="T:System.Windows.Forms.ListViewGroup" />。</param>
+        <summary>挿入、<see cref="T:System.Windows.Forms.ListViewGroup" />に、<see cref="T:System.Windows.Forms.ListViewGroupCollection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`value`されませんが、<xref:System.Windows.Forms.ListViewGroup>コレクションに追加されていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IsFixedSize">
+      <MemberSignature Language="C#" Value="bool System.Collections.IList.IsFixedSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.IList.IsFixedSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewGroupCollection.System#Collections#IList#IsFixedSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションが固定サイズかどうかを示す値を取得します。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IsReadOnly">
+      <MemberSignature Language="C#" Value="bool System.Collections.IList.IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.IList.IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewGroupCollection.System#Collections#IList#IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションが読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Item">
+      <MemberSignature Language="C#" Value="object System.Collections.IList.Item[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.IList.Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewGroupCollection.System#Collections#IList#Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得または設定する要素の、0 から始まるインデックス番号。</param>
+        <summary>取得または設定、<see cref="T:System.Windows.Forms.ListViewGroup" />コレクション内の指定したインデックス位置。</summary>
+        <value>コレクション内の指定したインデックスにある項目を表す <see cref="T:System.Windows.Forms.ListViewGroup" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Remove">
+      <MemberSignature Language="C#" Value="void IList.Remove (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Remove(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroupCollection.System#Collections#IList#Remove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Windows.Forms.ListViewGroup" /> から削除する <see cref="T:System.Windows.Forms.ListViewGroupCollection" />。</param>
+        <summary>削除、<see cref="T:System.Windows.Forms.ListViewGroup" />から、<see cref="T:System.Windows.Forms.ListViewGroupCollection" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

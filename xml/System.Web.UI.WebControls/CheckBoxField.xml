@@ -1,0 +1,648 @@
+<Type Name="CheckBoxField" FullName="System.Web.UI.WebControls.CheckBoxField">
+  <TypeSignature Language="C#" Value="public class CheckBoxField : System.Web.UI.WebControls.BoundField" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CheckBoxField extends System.Web.UI.WebControls.BoundField" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.CheckBoxField" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.BoundField</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データ バインド コントロール内にチェック ボックスとして表示される Boolean フィールドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CheckBoxField>クラスは、データ バインドされたコントロールによって使用 (など<xref:System.Web.UI.WebControls.GridView>と<xref:System.Web.UI.WebControls.DetailsView>) チェック ボックスのブール型のデータ フィールドの値を表示します。 <xref:System.Web.UI.WebControls.CheckBoxField>が使用されているデータ バインド コントロールに応じて異なる方法でオブジェクトが表示されます。 たとえば、<xref:System.Web.UI.WebControls.GridView>表示の制御、<xref:System.Web.UI.WebControls.CheckBoxField>を列としてオブジェクト中に、<xref:System.Web.UI.WebControls.DetailsView>コントロールは行として表示します。  
+  
+> [!NOTE]
+>  データ バインド コントロールが編集モードでチェック ボックスを含むレコードが表示されるまで (読み取り専用) チェック ボックスが無効にします。 レコードを編集モードにする方法の詳細については、親コントロールを含むドキュメントを参照して、<xref:System.Web.UI.WebControls.CheckBoxField>オブジェクト。  
+  
+ 表示するフィールドを指定する、<xref:System.Web.UI.WebControls.CheckBoxField>オブジェクト、設定、<xref:System.Web.UI.WebControls.BoundField.DataField%2A>フィールドの名前を持つプロパティです。  
+  
+> [!NOTE]
+>  のみを選択または選択されていない状態では、チェック ボックスを表示できるため、<xref:System.Web.UI.WebControls.CheckBoxField>オブジェクトは、Boolean データ型、または文字列が解析可能なフィールドにのみバインドできます<xref:System.Boolean.Parse%2A>です。  
+  
+ 設定して各チェック ボックスの横にあるキャプションを表示することができます、<xref:System.Web.UI.WebControls.CheckBoxField.Text%2A>プロパティです。 A<xref:System.Web.UI.WebControls.CheckBoxField>データにバインドされたオブジェクトが非表示に制御できる、<xref:System.Web.UI.WebControls.DataControlField.Visible%2A>プロパティに設定されている`false`です。 フィールドの値を防ぐため、編集モードでは変更されてから、設定、<xref:System.Web.UI.WebControls.BoundField.ReadOnly%2A>プロパティを`true`です。 データにバインドされたレコードの挿入をサポートするをコントロール (など、<xref:System.Web.UI.WebControls.DetailsView>コントロール)、非表示にすることができます、<xref:System.Web.UI.WebControls.CheckBoxField>オブジェクトを設定して挿入モードに、<xref:System.Web.UI.WebControls.DataControlField.InsertVisible%2A>プロパティを`false`です。  
+  
+ ヘッダーとフッター セクションでは、をカスタマイズすることができます、<xref:System.Web.UI.WebControls.CheckBoxField>オブジェクト。 ヘッダーまたはフッター セクションで、キャプションを表示するには、設定、<xref:System.Web.UI.WebControls.DataControlField.HeaderText%2A>または<xref:System.Web.UI.WebControls.DataControlField.FooterText%2A>プロパティ、それぞれします。 設定して、イメージを表示するテキストを表示する、ヘッダー セクションに、代わりに、<xref:System.Web.UI.WebControls.DataControlField.HeaderImageUrl%2A>プロパティです。 ヘッダー セクションを非表示にすることができます、<xref:System.Web.UI.WebControls.CheckBoxField>オブジェクトを設定して、<xref:System.Web.UI.WebControls.DataControlField.ShowHeader%2A>プロパティを`false`です。  
+  
+> [!NOTE]
+>  一部のデータ バインド コントロール (など、<xref:System.Web.UI.WebControls.GridView>コントロール) を表示またはコントロールのすべてのヘッダー セクションだけを非表示にできます。 これらのデータ バインド コントロールをサポートしていない、<xref:System.Web.UI.WebControls.DataControlField.ShowHeader%2A>個々 のバインドされたフィールドのプロパティです。 表示または (使用可能な場合) は、ヘッダー セクション全体のデータ バインド コントロールを非表示、コントロールの使用`ShowHeader`プロパティです。  
+  
+ 外観をカスタマイズできる、<xref:System.Web.UI.WebControls.CheckBoxField>オブジェクト (フォントの色や背景色、)、フィールドの各部分のスタイル プロパティを設定します。 次の表は、異なるスタイル プロパティを一覧表示します。  
+  
+|スタイル プロパティ|説明|  
+|--------------------|-----------------|  
+|<xref:System.Web.UI.WebControls.DataControlField.ControlStyle%2A>|子の Web サーバー コントロールのスタイルの設定、<xref:System.Web.UI.WebControls.CheckBoxField>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.DataControlField.FooterStyle%2A>|フッター セクションのスタイルの設定、<xref:System.Web.UI.WebControls.CheckBoxField>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.DataControlField.HeaderStyle%2A>|ヘッダー セクションのスタイルの設定、<xref:System.Web.UI.WebControls.CheckBoxField>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.DataControlField.ItemStyle%2A>|データ項目のスタイルの設定、<xref:System.Web.UI.WebControls.CheckBoxField>オブジェクト。|  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.CheckBoxField>内のオブジェクト、<xref:System.Web.UI.WebControls.GridView>ブール データ型の Microsoft SQL Server データ ソースのフィールドを表示するコントロール。  
+  
+ [!code-aspx-csharp[CheckBoxField#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CheckBoxField/CS/checkboxfieldcs.aspx#1)]
+ [!code-aspx-vb[CheckBoxField#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CheckBoxField/VB/checkboxfieldvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CheckBoxField ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.CheckBoxField.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.CheckBoxField" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.CheckBoxField>クラスです。 このコンス トラクターは、フィールドを動的に作成されたデータ バインド コントロールに追加する際に通常使用されます。  
+  
+ 動的に追加する、<xref:System.Web.UI.WebControls.CheckBoxField>データ バインド コントロールにオブジェクトを新規作成<xref:System.Web.UI.WebControls.CheckBoxField>オブジェクト、そのプロパティを設定し、データ バインド コントロールのフィールド コレクションに追加します。 たとえば、使用している場合、<xref:System.Web.UI.WebControls.GridView>コントロールを追加、<xref:System.Web.UI.WebControls.CheckBoxField>オブジェクトを<xref:System.Web.UI.WebControls.GridView.Columns%2A>コレクション。  
+  
+> [!NOTE]
+>  フィールドは、データ バインド コントロールを動的に追加することができます、強くお勧めするすべてのフィールドする静的に宣言されているとし、表示または非表示をクリックします。 すべてのフィールドを静的に宣言すると、親データ バインド コントロールのビュー ステートのサイズが縮小します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、コンス トラクターを使用して動的に追加する方法を示します、<xref:System.Web.UI.WebControls.CheckBoxField>オブジェクトを<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[CheckBoxFieldCtor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CheckBoxFieldCtor/CS/checkboxfieldctorcs.aspx#1)]
+ [!code-aspx-vb[CheckBoxFieldCtor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CheckBoxFieldCtor/VB/checkboxfieldctorvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyFormatInEditMode">
+      <MemberSignature Language="C#" Value="public override bool ApplyFormatInEditMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ApplyFormatInEditMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CheckBoxField.ApplyFormatInEditMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>上書き、<see cref="P:System.Web.UI.WebControls.BoundField.ApplyFormatInEditMode" />プロパティです。 このプロパティでサポートされていない、<see cref="T:System.Web.UI.WebControls.CheckBoxField" />クラスです。</summary>
+        <value>
+          常に <see langword="false" />。 このプロパティはサポートされていませんし、スロー、<see cref="T:System.NotSupportedException" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CheckBoxField.ApplyFormatInEditMode%2A>から継承されたプロパティ、<xref:System.Web.UI.WebControls.BoundField>クラスには適用されない、<xref:System.Web.UI.WebControls.CheckBoxField>クラスです。 このプロパティの値にアクセスしようとすると、スロー、<xref:System.NotSupportedException?displayProperty=nameWithType>例外。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">読み取りまたはこのプロパティの値を設定しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertEmptyStringToNull">
+      <MemberSignature Language="C#" Value="public override bool ConvertEmptyStringToNull { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ConvertEmptyStringToNull" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CheckBoxField.ConvertEmptyStringToNull" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>上書き、<see cref="P:System.Web.UI.WebControls.BoundField.ConvertEmptyStringToNull" />プロパティです。 このプロパティでサポートされていない、<see cref="T:System.Web.UI.WebControls.CheckBoxField" />クラスです。</summary>
+        <value>
+          常に <see langword="false" />。 このプロパティはサポートされていませんし、スロー、<see cref="T:System.NotSupportedException" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CheckBoxField.ConvertEmptyStringToNull%2A>から継承されたプロパティ、<xref:System.Web.UI.WebControls.BoundField>クラスには適用されない、<xref:System.Web.UI.WebControls.CheckBoxField>クラスです。 このプロパティの値にアクセスしようとすると、スロー、<xref:System.NotSupportedException?displayProperty=nameWithType>例外。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">読み取りまたはこのプロパティの値を設定しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyProperties">
+      <MemberSignature Language="C#" Value="protected override void CopyProperties (System.Web.UI.WebControls.DataControlField newField);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CopyProperties(class System.Web.UI.WebControls.DataControlField newField) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.CheckBoxField.CopyProperties(System.Web.UI.WebControls.DataControlField)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newField" Type="System.Web.UI.WebControls.DataControlField" />
+      </Parameters>
+      <Docs>
+        <param name="newField"><see cref="T:System.Web.UI.WebControls.DataControlField" /> 、現在のプロパティをコピーする<see cref="T:System.Web.UI.WebControls.CheckBoxField" />にします。</param>
+        <summary>現在のプロパティをコピー<see cref="T:System.Web.UI.WebControls.CheckBoxField" />を指定したオブジェクト<see cref="T:System.Web.UI.WebControls.DataControlField" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CheckBoxField.CopyProperties%2A>メソッドで使用されるヘルパー メソッド、<xref:System.Web.UI.WebControls.DataControlField.CloneField%2A?displayProperty=nameWithType>メソッド、現在のプロパティをコピーする<xref:System.Web.UI.WebControls.CheckBoxField>オブジェクトを<xref:System.Web.UI.WebControls.DataControlField>によって作成されたオブジェクト、<xref:System.Web.UI.WebControls.CheckBoxField.CopyProperties%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Web.UI.WebControls.CheckBoxField.CopyProperties(System.Web.UI.WebControls.DataControlField)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Web.UI.WebControls.BoundField.CopyProperties(System.Web.UI.WebControls.DataControlField)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateField">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.WebControls.DataControlField CreateField ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.WebControls.DataControlField CreateField() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.CheckBoxField.CreateField" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataControlField</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>空の <see cref="T:System.Web.UI.WebControls.CheckBoxField" /> オブジェクトを作成します。</summary>
+        <returns>空の <see cref="T:System.Web.UI.WebControls.CheckBoxField" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CheckBoxField.CreateField%2A>メソッドで使用されるヘルパー メソッド、 <xref:System.Web.UI.WebControls.DataControlField.CloneField%2A?displayProperty=nameWithType> 、空を作成するメソッド<xref:System.Web.UI.WebControls.CheckBoxField>オブジェクトを現在のプロパティ<xref:System.Web.UI.WebControls.CheckBoxField>オブジェクトをコピーすることができます。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Web.UI.WebControls.CheckBoxField.CreateField" />派生クラスである、型の新しいインスタンスを作成し、基本メソッドを呼び出さないことを確認します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="DataField">
+      <MemberSignature Language="C#" Value="public override string DataField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CheckBoxField.DataField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Web.UI.Design.DataSourceBooleanViewSchemaConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定にバインドするデータ フィールドの名前、<see cref="T:System.Web.UI.WebControls.CheckBoxField" />オブジェクト。</summary>
+        <value>バインドするデータ フィールドの名前、<see cref="T:System.Web.UI.WebControls.CheckBoxField" />です。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.CheckBoxField.DataField%2A>プロパティをバインドするデータ フィールドの名前を指定する、<xref:System.Web.UI.WebControls.CheckBoxField>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataFormatString">
+      <MemberSignature Language="C#" Value="public override string DataFormatString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataFormatString" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CheckBoxField.DataFormatString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはフィールドの値の表示形式を指定する文字列を設定します。 このプロパティでサポートされていない、<see cref="T:System.Web.UI.WebControls.CheckBoxField" />クラスです。</summary>
+        <value>フィールドの値の表示形式を指定する書式指定文字列。 このプロパティはサポートされていませんし、スロー、<see cref="T:System.NotSupportedException" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CheckBoxField.DataFormatString%2A>から継承されたプロパティ、<xref:System.Web.UI.WebControls.BoundField>クラスには適用されない、<xref:System.Web.UI.WebControls.CheckBoxField>クラスです。 このプロパティの値にアクセスしようとすると、スロー、<xref:System.NotSupportedException?displayProperty=nameWithType>例外。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">読み取りまたはこのプロパティの値を設定しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtractValuesFromCell">
+      <MemberSignature Language="C#" Value="public override void ExtractValuesFromCell (System.Collections.Specialized.IOrderedDictionary dictionary, System.Web.UI.WebControls.DataControlFieldCell cell, System.Web.UI.WebControls.DataControlRowState rowState, bool includeReadOnly);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ExtractValuesFromCell(class System.Collections.Specialized.IOrderedDictionary dictionary, class System.Web.UI.WebControls.DataControlFieldCell cell, valuetype System.Web.UI.WebControls.DataControlRowState rowState, bool includeReadOnly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.CheckBoxField.ExtractValuesFromCell(System.Collections.Specialized.IOrderedDictionary,System.Web.UI.WebControls.DataControlFieldCell,System.Web.UI.WebControls.DataControlRowState,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dictionary" Type="System.Collections.Specialized.IOrderedDictionary" />
+        <Parameter Name="cell" Type="System.Web.UI.WebControls.DataControlFieldCell" />
+        <Parameter Name="rowState" Type="System.Web.UI.WebControls.DataControlRowState" />
+        <Parameter Name="includeReadOnly" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="dictionary">A<see cref="T:System.Collections.IDictionary" />指定されたセルの値を格納するために使用します。</param>
+        <param name="cell"><see cref="T:System.Web.UI.WebControls.DataControlFieldCell" />取得する値を格納しています。</param>
+        <param name="rowState"><see cref="T:System.Web.UI.WebControls.DataControlRowState" /> 値のいずれか。</param>
+        <param name="includeReadOnly">
+          <see langword="true" />読み取り専用のフィールドの値が含まれるそれ以外の場合、<see langword="false" />です。</param>
+        <summary>指定した入力<see cref="T:System.Collections.IDictionary" />から、指定した値を持つオブジェクト<see cref="T:System.Web.UI.WebControls.DataControlFieldCell" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CheckBoxField.ExtractValuesFromCell%2A>メソッドは、指定された対象から、フィールドの値を取得する便利な手段として提供<xref:System.Web.UI.WebControls.DataControlFieldCell>内のオブジェクト、<xref:System.Web.UI.WebControls.CheckBoxField>オブジェクト。  
+  
+> [!NOTE]
+>  このメソッドは、主にコントロールの開発者によって使用されます。  
+  
+ このメソッドには、戻り値はありません。 フィールドの値を使って参照によって返される代わりに、<xref:System.Collections.IDictionary?displayProperty=nameWithType>オブジェクトに渡された、`dictionary`パラメーター。 反復処理するメソッドが呼び出された後、<xref:System.Collections.IDictionary?displayProperty=nameWithType>フィールド値にアクセスするオブジェクト。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.UI.WebControls.DataControlFieldCell>オブジェクトには、読み取り専用フィールドの値が含まれていますで渡す必要があります`true`の`includeReadOnly`パラメーターをそれらの値が含まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeValue">
+      <MemberSignature Language="C#" Value="protected override object GetDesignTimeValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object GetDesignTimeValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.CheckBoxField.GetDesignTimeValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>フィールドの値を表示するときに使用する値を取得、<see cref="T:System.Web.UI.WebControls.CheckBoxField" />デザイナー内のオブジェクト。</summary>
+        <returns>常に <see langword="true" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CheckBoxField.GetDesignTimeValue%2A>メソッドはどのような値を表示するときに、フィールドの表示を決定するために使用するヘルパー メソッド、<xref:System.Web.UI.WebControls.CheckBoxField>デザイナー内のオブジェクト。 実際のデータを取得できません、データ ソースからデザイン時に、このメソッドによって返される値が表示されます。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>拡張するとき、<see cref="T:System.Web.UI.WebControls.CheckBoxField" />クラスをデザイナーでフィールドに表示する別の値を返すには、このメソッドをオーバーライドすることができます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="HtmlEncode">
+      <MemberSignature Language="C#" Value="public override bool HtmlEncode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HtmlEncode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CheckBoxField.HtmlEncode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>上書き、<see cref="P:System.Web.UI.WebControls.BoundField.HtmlEncode" />プロパティです。 このプロパティでサポートされていない、<see cref="T:System.Web.UI.WebControls.CheckBoxField" />クラスです。</summary>
+        <value>
+          常に <see langword="false" />。 このプロパティはサポートされていませんし、スロー、<see cref="T:System.NotSupportedException" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CheckBoxField.HtmlEncode%2A>から継承されたプロパティ、<xref:System.Web.UI.WebControls.BoundField>クラスには適用されない、<xref:System.Web.UI.WebControls.CheckBoxField>クラスです。 このプロパティの値にアクセスしようとすると、スロー、<xref:System.NotSupportedException?displayProperty=nameWithType>例外。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">読み取りまたはこのプロパティの値を設定しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HtmlEncodeFormatString">
+      <MemberSignature Language="C#" Value="public override bool HtmlEncodeFormatString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HtmlEncodeFormatString" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CheckBoxField.HtmlEncodeFormatString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または書式設定されたテキストを HTML が表示されるまでをエンコードする必要があるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />テキストに HTML エンコードされている必要がある場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ HTML エンコーディング値は、クロスサイト スクリプト攻撃や悪意のあるコンテンツが表示されないようにできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeDataCell">
+      <MemberSignature Language="C#" Value="protected override void InitializeDataCell (System.Web.UI.WebControls.DataControlFieldCell cell, System.Web.UI.WebControls.DataControlRowState rowState);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InitializeDataCell(class System.Web.UI.WebControls.DataControlFieldCell cell, valuetype System.Web.UI.WebControls.DataControlRowState rowState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.CheckBoxField.InitializeDataCell(System.Web.UI.WebControls.DataControlFieldCell,System.Web.UI.WebControls.DataControlRowState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cell" Type="System.Web.UI.WebControls.DataControlFieldCell" />
+        <Parameter Name="rowState" Type="System.Web.UI.WebControls.DataControlRowState" />
+      </Parameters>
+      <Docs>
+        <param name="cell">初期化する <see cref="T:System.Web.UI.WebControls.DataControlFieldCell" />。</param>
+        <param name="rowState"><see cref="T:System.Web.UI.WebControls.DataControlRowState" /> 値のいずれか。</param>
+        <summary>指定された初期化<see cref="T:System.Web.UI.WebControls.DataControlFieldCell" />オブジェクトを指定した行の状態にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CheckBoxField.InitializeDataCell%2A>メソッドは、セルの初期化に使用されるヘルパー メソッド、<xref:System.Web.UI.WebControls.CheckBoxField>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NullDisplayText">
+      <MemberSignature Language="C#" Value="public override string NullDisplayText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NullDisplayText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CheckBoxField.NullDisplayText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィールドの値がフィールドに表示されるテキストを取得または<see langword="null" />です。 このプロパティでサポートされていない、<see cref="T:System.Web.UI.WebControls.CheckBoxField" />クラスです。</summary>
+        <value>値を持つフィールドに表示されるテキスト<see langword="null" />です。 このプロパティはサポートされていませんし、スロー、<see cref="T:System.NotSupportedException" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CheckBoxField.NullDisplayText%2A>から継承されたプロパティ、<xref:System.Web.UI.WebControls.BoundField>クラスには適用されない、<xref:System.Web.UI.WebControls.CheckBoxField>クラスです。 このプロパティの値にアクセスしようとすると、スロー、<xref:System.NotSupportedException?displayProperty=nameWithType>例外。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">読み取りまたはこのプロパティの値を設定しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDataBindField">
+      <MemberSignature Language="C#" Value="protected override void OnDataBindField (object sender, EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnDataBindField(object sender, class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.CheckBoxField.OnDataBindField(System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">イベントのソース。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>チェック ボックスにフィールドの値をバインド、<see cref="T:System.Web.UI.WebControls.CheckBoxField" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CheckBoxField.OnDataBindField%2A>メソッドは、対応するチェック ボックスに、データ ソースのフィールドの値をバインドに使用するヘルパー メソッド、<xref:System.Web.UI.WebControls.CheckBoxField>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">フィールドの値がバインドされているコントロールではありません、<see cref="T:System.Web.UI.WebControls.CheckBox" />コントロール。  
+  
+ \- または  
+  
+ フィールドの値は、ブール値に変換できません。</exception>
+        <block subset="none" type="overrides">
+          <para>拡張するとき、<see cref="T:System.Web.UI.WebControls.CheckBoxField" />クラス、カスタム バインドのルーチンを実行するには、このメソッドをオーバーライドすることができます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsHtmlEncode">
+      <MemberSignature Language="C#" Value="protected override bool SupportsHtmlEncode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsHtmlEncode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CheckBoxField.SupportsHtmlEncode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールが HTML エンコードをサポートしているかどうかを示すブール値を取得します。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコントロールの HTML エンコードはサポートされていないと、このプロパティは常に返します`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public virtual string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CheckBoxField.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の各チェック ボックスの横に表示するキャプション、<see cref="T:System.Web.UI.WebControls.CheckBoxField" />オブジェクト。</summary>
+        <value>各チェック ボックスの横に表示されるキャプション、<see cref="T:System.Web.UI.WebControls.CheckBoxField" />です。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CheckBoxField.Text%2A>の各チェック ボックスの横にあるキャプションを表示するプロパティが使用される、<xref:System.Web.UI.WebControls.CheckBoxField>オブジェクト。 場合、<xref:System.Web.UI.WebControls.CheckBoxField.Text%2A>プロパティが空の文字列、キャプションは表示されません。  
+  
+> [!NOTE]
+>  内のすべてのチェック ボックス、<xref:System.Web.UI.WebControls.CheckBoxField>オブジェクトが同じキャプションを共有します。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.CheckBoxField.Text%2A>のチェック ボックスのカスタムのキャプションを指定するプロパティ、<xref:System.Web.UI.WebControls.CheckBoxField>内のオブジェクト、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[CheckBoxField#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CheckBoxField/CS/checkboxfieldcs.aspx#1)]
+ [!code-aspx-vb[CheckBoxField#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CheckBoxField/VB/checkboxfieldvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateSupportsCallback">
+      <MemberSignature Language="C#" Value="public override void ValidateSupportsCallback ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ValidateSupportsCallback() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.CheckBoxField.ValidateSupportsCallback" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールが含まれるかどうかを判断、<see cref="T:System.Web.UI.WebControls.CheckBoxField" />サポート コールバック オブジェクトします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CheckBoxField.ValidateSupportsCallback%2A>メソッドは、コントロールに含まれているかどうかを判断するために使用するヘルパー メソッド、<xref:System.Web.UI.WebControls.CheckBoxField>サポート コールバック オブジェクトします。 このメソッドがコールバックがサポートされていることを示すために、空のメソッド (コードが含まれていないメソッド) として実装されています。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生したクラス、<see cref="T:System.Web.UI.WebControls.CheckBoxField" />クラス フィールド サポート コールバックによって、コントロールが含まれるかどうかを示すためにこのメソッドをオーバーライドします。 コールバックがサポートされていることを示すために、例外をスローしない空のメソッドとしてこのメソッドを実装しますそれ以外の場合、コールバックがサポートされていない理由を説明するメッセージと共に例外をスローします。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

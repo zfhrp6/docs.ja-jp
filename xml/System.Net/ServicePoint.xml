@@ -1,0 +1,816 @@
+<Type Name="ServicePoint" FullName="System.Net.ServicePoint">
+  <TypeSignature Language="C#" Value="public class ServicePoint" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ServicePoint extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Net.ServicePoint" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.ServicePoint</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>HTTP 接続の接続管理を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.ServicePoint>クラスでリソースの Uniform Resource Identifier () を渡されたホスト情報に基づいて、インターネット リソースへの接続を処理します。 リソースへの初期接続が指定した情報を<xref:System.Net.ServicePoint>オブジェクトを保持し、そのリソースへのすべての後続の要求によって共有されます。  
+  
+ <xref:System.Net.ServicePoint>オブジェクトで管理されて、<xref:System.Net.ServicePointManager>クラスし、作成されますが、必要に応じて、<xref:System.Net.ServicePointManager.FindServicePoint%2A?displayProperty=nameWithType>メソッドです。 <xref:System.Net.ServicePoint>オブジェクトは直接作成されませんが、常に作成および管理して、<xref:System.Net.ServicePointManager>クラスです。 最大数<xref:System.Net.ServicePoint>によって作成できるオブジェクトを設定、<xref:System.Net.ServicePointManager.MaxServicePoints%2A?displayProperty=nameWithType>プロパティです。  
+  
+ 各<xref:System.Net.ServicePoint>オブジェクトを保持インターネット リソースへの接続アイドル状態になるまでで指定された時間より長い、<xref:System.Net.ServicePoint.MaxIdleTime%2A>プロパティです。 ときに、<xref:System.Net.ServicePoint>を超えています、<xref:System.Net.ServicePoint.MaxIdleTime%2A>値、ことができますの別の接続を再利用します。 既定値の<xref:System.Net.ServicePoint.MaxIdleTime%2A>設定されている、<xref:System.Net.ServicePointManager.MaxServicePointIdleTime%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ときに、<xref:System.Net.ServicePoint.ConnectionLeaseTimeout%2A>プロパティが-1 と後、指定した時間が経過すると、アクティブな以外の値に設定<xref:System.Net.ServicePoint>後、次の要求をサービスに接続が閉じられました。 これは、既定では、無期限に開かれたアクティブな接続を必要としないアプリケーションに役立ちます。  
+  
+> [!NOTE]
+>  負荷が高い状態では、一部のアプリケーションがシステム パフォーマンスが低下 (高、変数のトランザクション時間など) する可能性がありますスレッド プール内のフリー スレッド不足実行可能性があります。 参照してください[http://msdn.microsoft.com/library/default.asp?url=/library/dnpag/html/scalenetchapt17.asp](http://msdn.microsoft.com/library/default.asp?url=/library/dnpag/html/scalenetchapt17.asp)さまざまな構成の変更がこの問題を修正することができます。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、 <xref:System.Net.ServicePoint> URI www.contoso.com に接続するオブジェクト。  
+  
+ [!code-cpp[System.Net.ServicePoint#1](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.ServicePoint/CPP/servicepoint.cpp#1)]
+ [!code-csharp[System.Net.ServicePoint#1](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.ServicePoint/CS/servicepoint.cs#1)]
+ [!code-vb[System.Net.ServicePoint#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.ServicePoint/VB/servicepoint.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Address">
+      <MemberSignature Language="C#" Value="public Uri Address { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Address" />
+      <MemberSignature Language="DocId" Value="P:System.Net.ServicePoint.Address" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Net.ServicePoint" /> オブジェクトの接続先サーバーの URI (Uniform Resource Identifier) を取得します。</summary>
+        <value><see cref="T:System.Uri" /> オブジェクトの接続先のインターネット サーバーの URI を格納している <see cref="T:System.Net.ServicePoint" /> クラスのインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このプロパティの値を表示します。  
+  
+ [!code-cpp[System.Net.ServicePoint#2](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.ServicePoint/CPP/servicepoint.cpp#2)]
+ [!code-csharp[System.Net.ServicePoint#2](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.ServicePoint/CS/servicepoint.cs#2)]
+ [!code-vb[System.Net.ServicePoint#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.ServicePoint/VB/servicepoint.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Net.ServicePoint" />ホスト モードにします。</exception>
+        <permission cref="T:System.Net.WebPermission">使用するため<see cref="P:System.Net.ServicePoint.Address" />場合、<see cref="T:System.Net.ServicePoint" />プロキシ サーバーを経由して接続します。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="BindIPEndPointDelegate">
+      <MemberSignature Language="C#" Value="public System.Net.BindIPEndPoint BindIPEndPointDelegate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.BindIPEndPoint BindIPEndPointDelegate" />
+      <MemberSignature Language="DocId" Value="P:System.Net.ServicePoint.BindIPEndPointDelegate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.BindIPEndPoint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ローカルの <see cref="T:System.Net.IPEndPoint" /> を <see cref="T:System.Net.ServicePoint" /> に関連付けるデリゲートを指定します。</summary>
+        <value>強制的に <see cref="T:System.Net.ServicePoint" /> が特定のローカル インターネット プロトコル (IP) アドレスとポート番号を使用するようにするデリゲート。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一部の負荷分散技術特定ローカル IP アドレスとポート番号を使用するクライアントが必要なく<xref:System.Net.IPAddress.Any?displayProperty=nameWithType>(または<xref:System.Net.IPAddress.IPv6Any?displayProperty=nameWithType>インターネット プロトコル バージョン 6 の) と一時的なポートです。 <xref:System.Net.ServicePoint.BindIPEndPointDelegate%2A>この要件を満たすことができます。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">ローカル ポートにバインドします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Certificate">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.X509Certificate Certificate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.X509Certificates.X509Certificate Certificate" />
+      <MemberSignature Language="DocId" Value="P:System.Net.ServicePoint.Certificate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509Certificate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Net.ServicePoint" /> オブジェクト用に受信した証明書を取得します。</summary>
+        <value>この <see cref="T:System.Net.ServicePoint" /> オブジェクト用に受信したセキュリティ証明書を格納している <see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate" /> クラスのインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ただし、<xref:System.Net.ServicePoint>オブジェクトは、インターネット リソースへの複数の接続を行うことができます、唯一の証明書を管理できます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値を表示します。  
+  
+ [!code-cpp[System.Net.ServicePoint#5](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.ServicePoint/CPP/servicepoint.cpp#5)]
+ [!code-csharp[System.Net.ServicePoint#5](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.ServicePoint/CS/servicepoint.cs#5)]
+ [!code-vb[System.Net.ServicePoint#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.ServicePoint/VB/servicepoint.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientCertificate">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.X509Certificate ClientCertificate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.X509Certificates.X509Certificate ClientCertificate" />
+      <MemberSignature Language="DocId" Value="P:System.Net.ServicePoint.ClientCertificate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509Certificate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーに送信された最後のクライアント証明書を取得します。</summary>
+        <value>サーバーに送信された最後のクライアント証明書のパブリック値を格納している <see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このプロパティの値を表示します。  
+  
+ [!code-cpp[System.Net.ServicePoint#5](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.ServicePoint/CPP/servicepoint.cpp#5)]
+ [!code-csharp[System.Net.ServicePoint#5](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.ServicePoint/CS/servicepoint.cs#5)]
+ [!code-vb[System.Net.ServicePoint#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.ServicePoint/VB/servicepoint.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloseConnectionGroup">
+      <MemberSignature Language="C#" Value="public bool CloseConnectionGroup (string connectionGroupName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool CloseConnectionGroup(string connectionGroupName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.ServicePoint.CloseConnectionGroup(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connectionGroupName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connectionGroupName">閉じてこのサービス ポイントから削除する接続を格納している接続グループの名前。</param>
+        <summary>指定した接続グループを、この <see cref="T:System.Net.ServicePoint" /> オブジェクトから削除します。</summary>
+        <returns>接続グループが閉じられたかどうかを示す <see cref="T:System.Boolean" /> 値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 接続グループは、特定の接続または接続のセットに要求のセットを関連付けます。 このメソッドは、削除し、指定された接続グループに属しているすべての接続を閉じます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionLeaseTimeout">
+      <MemberSignature Language="C#" Value="public int ConnectionLeaseTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ConnectionLeaseTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Net.ServicePoint.ConnectionLeaseTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティブな <see cref="T:System.Net.ServicePoint" /> 接続が閉じられるまでのミリ秒単位の時間を取得または設定します。</summary>
+        <value>アクティブな <see cref="T:System.Net.ServicePoint" /> 接続が開いている時間をミリ秒単位で指定する <see cref="T:System.Int32" />。 既定値は -1 で、アクティブな <see cref="T:System.Net.ServicePoint" /> 接続を無制限に接続状態にしておくことができます。 要求の処理後に強制的に <see cref="T:System.Net.ServicePoint" /> 接続を閉じるには、このプロパティを 0 に設定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用していることを確認することができます、<xref:System.Net.ServicePoint>オブジェクトのアクティブな接続したままにしない開く無期限にします。 このプロパティは、シナリオの接続を削除および負荷分散のシナリオなど、定期的に再確立する必要があります。  
+  
+ 既定では、ときに<xref:System.Net.FtpWebRequest.KeepAlive%2A>は`true`を要求、<xref:System.Net.ServicePoint.MaxIdleTime%2A>終わりのタイムアウトを設定するプロパティ<xref:System.Net.ServicePoint>非アクティブな接続します。 場合、<xref:System.Net.ServicePoint>がアクティブな接続は、<xref:System.Net.ServicePoint.MaxIdleTime%2A>影響を与えませんし、接続は無期限に開いたままです。  
+  
+ ときに、<xref:System.Net.ServicePoint.ConnectionLeaseTimeout%2A>プロパティが-1 と後、指定した時間が経過すると、アクティブな以外の値に設定<xref:System.Net.ServicePoint>を設定して、要求を処理した後の接続が閉じられる<xref:System.Net.FtpWebRequest.KeepAlive%2A>に`false`その要求にします。  
+  
+ この値を設定して管理されているすべての接続に影響を与える、<xref:System.Net.ServicePoint>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値を設定します。  
+  
+ [!code-cpp[NCLServicePoint#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLServicePoint/CPP/nclservicepoint.cpp#1)]
+ [!code-csharp[NCLServicePoint#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLServicePoint/CS/nclservicepoint.cs#1)]
+ [!code-vb[NCLServicePoint#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLServicePoint/VB/nclservicepoint.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">セット操作に対して指定された値は、-1 未満の負の数です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionLimit">
+      <MemberSignature Language="C#" Value="public int ConnectionLimit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ConnectionLimit" />
+      <MemberSignature Language="DocId" Value="P:System.Net.ServicePoint.ConnectionLimit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Net.ServicePoint" /> オブジェクトで許可される接続の最大数を取得または設定します。</summary>
+        <value><see cref="T:System.Net.ServicePoint" /> オブジェクトで許可される接続の最大数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.ServicePoint.ConnectionLimit%2A>プロパティの設定接続の最大数、<xref:System.Net.ServicePoint>オブジェクトは、インターネット リソースに加えることができます。 値、<xref:System.Net.ServicePoint.ConnectionLimit%2A>の値に設定されて、<xref:System.Net.ServicePointManager.DefaultConnectionLimit%2A?displayProperty=nameWithType>プロパティと、<xref:System.Net.ServicePoint>オブジェクトが作成されます。 その後に変更<xref:System.Net.ServicePointManager.DefaultConnectionLimit%2A>既存に影響を与えるありません<xref:System.Net.ServicePoint>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Net.ServicePoint.ConnectionLimit%2A>接続の最大数を確認するプロパティを<xref:System.Net.ServicePoint>オブジェクトを指定された Uniform Resource Identifier () を行うことができます。  
+  
+ [!code-cpp[System.Net.ServicePoint#4](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.ServicePoint/CPP/servicepoint.cpp#4)]
+ [!code-csharp[System.Net.ServicePoint#4](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.ServicePoint/CS/servicepoint.cs#4)]
+ [!code-vb[System.Net.ServicePoint#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.ServicePoint/VB/servicepoint.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">接続の制限は、同じか、または 0 より小さいです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionName">
+      <MemberSignature Language="C#" Value="public string ConnectionName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConnectionName" />
+      <MemberSignature Language="DocId" Value="P:System.Net.ServicePoint.ConnectionName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>接続名を取得します。</summary>
+        <value>接続名を表す <see cref="T:System.String" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Net.ServicePoint>オブジェクトが構築した、<xref:System.Uri>オブジェクト (、<xref:System.Net.ServicePointManager.FindServicePoint%2A>または<xref:System.Net.ServicePointManager.FindServicePoint%2A>メソッドの例については、)、続いて、<xref:System.Net.ServicePoint.ConnectionName%2A>プロパティを表します、<xref:System.Uri.Scheme%2A>のプロパティ、<xref:System.Uri>使用されるオブジェクト。  
+  
+ 場合、<xref:System.Net.ServicePoint>オブジェクトは、ネットワークのホストとポートから構築された、<xref:System.Net.ServicePoint.ConnectionName%2A>プロパティには、ホストとネットワーク ポートを表す文字列が含まれています。 場合、<xref:System.Net.ServicePoint.ConnectionName%2A>ホストおよびポートのみからの構築時にプロパティが設定されて<xref:System.Net.WebRequest>が同じオブジェクト<xref:System.Net.WebRequest.ConnectionGroupName%2A>値は、これを使用できます<xref:System.Net.ServicePoint>オブジェクト。  
+  
+   
+  
+## Examples  
+ [!code-cpp[System.Net.ServicePoint#4](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.ServicePoint/CPP/servicepoint.cpp#4)]
+ [!code-csharp[System.Net.ServicePoint#4](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.ServicePoint/CS/servicepoint.cs#4)]
+ [!code-vb[System.Net.ServicePoint#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.ServicePoint/VB/servicepoint.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentConnections">
+      <MemberSignature Language="C#" Value="public int CurrentConnections { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CurrentConnections" />
+      <MemberSignature Language="DocId" Value="P:System.Net.ServicePoint.CurrentConnections" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Net.ServicePoint" /> オブジェクトに関連付けられている、開いている接続の数を取得します。</summary>
+        <value><see cref="T:System.Net.ServicePoint" /> オブジェクトに関連付けられている、開いている接続の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.ServicePoint.CurrentConnections%2A>プロパティには、これに関連付けられている開いてのインターネット接続の数が含まれています。<xref:System.Net.ServicePoint>オブジェクト。 値<xref:System.Net.ServicePoint.CurrentConnections%2A>の上回ることはできません<xref:System.Net.ServicePoint.ConnectionLimit%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Net.ServicePoint.CurrentConnections%2A>プロパティに関連付けられた開いているインターネット接続の数を決定する<xref:System.Net.ServicePoint>オブジェクト。  
+  
+ [!code-cpp[System.Net.ServicePoint#2](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.ServicePoint/CPP/servicepoint.cpp#2)]
+ [!code-csharp[System.Net.ServicePoint#2](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.ServicePoint/CS/servicepoint.cs#2)]
+ [!code-vb[System.Net.ServicePoint#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.ServicePoint/VB/servicepoint.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Expect100Continue">
+      <MemberSignature Language="C#" Value="public bool Expect100Continue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Expect100Continue" />
+      <MemberSignature Language="DocId" Value="P:System.Net.ServicePoint.Expect100Continue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>100-Continue 動作を使用するかどうかを決定する <see cref="T:System.Boolean" /> 値を取得または設定します。</summary>
+        <value>
+          <see langword="POST" /> 要求に対して 100-Continue 応答を見込んでいる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定すると`true`、クライアント要求を使用する、`POST`メソッドは、100 を受信することでクライアントがポストするデータを送信する必要がありますを示すためにサーバーからの応答を続行します。 このメカニズムにより、クライアント要求ヘッダーに基づき、サーバー要求を拒否する場合は、ネットワーク経由で大量のデータを送信する必要があります。  
+  
+ たとえば、<xref:System.Net.ServicePoint.Expect100Continue%2A>プロパティは`false`します。 要求がサーバーに送信されると、データが含まれています。 場合は、要求ヘッダーを読み取った後、サーバー認証が必要ですは 401 応答を送信、クライアントは適切な認証ヘッダーを使用してデータを再送信する必要があります。  
+  
+ 場合、<xref:System.Net.ServicePoint.Expect100Continue%2A>プロパティは`true`、要求ヘッダーがサーバーに送信されます。 サーバーが要求を拒否されない場合は、100、送信-100-continue 応答データを送信することができます。 上記の例のように、サーバー認証が必要な場合は、401 の応答を送信し、クライアントがデータを不必要に転送されません。  
+  
+ このプロパティの値を変更しても、既存の接続には影響しません。 のみ、変更後に作成された新しい接続を受けます。  
+  
+ Expect 100-IETF RFC 2616 10.1.1 で完全に説明している動作を続行します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値を表示します。  
+  
+ [!code-cpp[System.Net.ServicePoint#9](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.ServicePoint/CPP/servicepoint.cpp#9)]
+ [!code-csharp[System.Net.ServicePoint#9](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.ServicePoint/CS/servicepoint.cs#9)]
+ [!code-vb[System.Net.ServicePoint#9](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.ServicePoint/VB/servicepoint.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IdleSince">
+      <MemberSignature Language="C#" Value="public DateTime IdleSince { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime IdleSince" />
+      <MemberSignature Language="DocId" Value="P:System.Net.ServicePoint.IdleSince" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Net.ServicePoint" /> オブジェクトが最後にホストに接続した日付と時刻を取得します。</summary>
+        <value><see cref="T:System.Net.ServicePoint" /> オブジェクトが最後に接続した日付と時刻を格納している <see cref="T:System.DateTime" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.ServicePoint.IdleSince%2A>プロパティは、最後の日付と時刻が、ホストからサービス ポイントが切断されたを記録します。 ときに、現在の時刻の差と<xref:System.Net.ServicePoint.IdleSince%2A>の値を超える<xref:System.Net.ServicePoint.MaxIdleTime%2A>、<xref:System.Net.ServicePoint>オブジェクトは別の接続を再利用できます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Net.ServicePoint.IdleSince%2A>設定し、日付および時刻を取得するプロパティ、<xref:System.Net.ServicePoint>オブジェクトが前回ホストに接続します。  
+  
+ [!code-cpp[System.Net.ServicePoint#3](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.ServicePoint/CPP/servicepoint.cpp#3)]
+ [!code-csharp[System.Net.ServicePoint#3](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.ServicePoint/CS/servicepoint.cs#3)]
+ [!code-vb[System.Net.ServicePoint#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.ServicePoint/VB/servicepoint.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxIdleTime">
+      <MemberSignature Language="C#" Value="public int MaxIdleTime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxIdleTime" />
+      <MemberSignature Language="DocId" Value="P:System.Net.ServicePoint.MaxIdleTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Net.ServicePoint" /> オブジェクトに関連付けられた接続がアイドル状態を持続できる時間を取得または設定します。この時間が経過すると、接続は閉じられます。</summary>
+        <value><see cref="T:System.Net.ServicePoint" /> オブジェクトに関連付けられた接続が閉じられて別の接続で再利用されるまでにアイドル状態を持続できる時間 (ミリ秒単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定することができます<xref:System.Net.ServicePoint.MaxIdleTime%2A>に<xref:System.Threading.Timeout.Infinite?displayProperty=nameWithType>に接続が関連付けられていることを示すために、<xref:System.Net.ServicePoint>オブジェクトがタイムアウトしません。  
+  
+ 既定値、<xref:System.Net.ServicePoint.MaxIdleTime%2A>プロパティの値では、<xref:System.Net.ServicePointManager.MaxServicePointIdleTime%2A?displayProperty=nameWithType>プロパティと、<xref:System.Net.ServicePoint>オブジェクトを作成します。 以降の変更、<xref:System.Net.ServicePointManager.MaxServicePointIdleTime%2A>プロパティが既存の影響を与えるありません<xref:System.Net.ServicePoint>オブジェクト。  
+  
+ ときに、<xref:System.Net.ServicePoint.MaxIdleTime%2A>に関連付けられている接続の<xref:System.Net.ServicePoint>を超えると、接続まで開いたまま、アプリケーションは接続を使用しようとしています。 その時点では、フレームワークは、接続を閉じ、リモート ホストに新しい接続を作成します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Net.ServicePoint.MaxIdleTime%2A>設定および取得するプロパティ、<xref:System.Net.ServicePoint>アイドル時間。  
+  
+ [!code-cpp[System.Net.ServicePoint#3](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.ServicePoint/CPP/servicepoint.cpp#3)]
+ [!code-csharp[System.Net.ServicePoint#3](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.ServicePoint/CS/servicepoint.cs#3)]
+ [!code-vb[System.Net.ServicePoint#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.ServicePoint/VB/servicepoint.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <see cref="P:System.Net.ServicePoint.MaxIdleTime" />設定されているより小さい<see cref="F:System.Threading.Timeout.Infinite" />以上<see cref="F:System.Int32.MaxValue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ProtocolVersion">
+      <MemberSignature Language="C#" Value="public virtual Version ProtocolVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Version ProtocolVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Net.ServicePoint.ProtocolVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Net.ServicePoint" /> オブジェクトが使用する HTTP プロトコルのバージョンを取得します。</summary>
+        <value><see cref="T:System.Net.ServicePoint" /> オブジェクトが使用する HTTP プロトコルのバージョンを格納している <see cref="T:System.Version" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ HTTP プロトコル バージョンとは、http/1.0 および http/1.1 です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値を表示します。  
+  
+ [!code-cpp[System.Net.ServicePoint#5](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.ServicePoint/CPP/servicepoint.cpp#5)]
+ [!code-csharp[System.Net.ServicePoint#5](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.ServicePoint/CS/servicepoint.cs#5)]
+ [!code-vb[System.Net.ServicePoint#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.ServicePoint/VB/servicepoint.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReceiveBufferSize">
+      <MemberSignature Language="C#" Value="public int ReceiveBufferSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ReceiveBufferSize" />
+      <MemberSignature Language="DocId" Value="P:System.Net.ServicePoint.ReceiveBufferSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Net.ServicePoint" /> が使用するソケットの受信バッファーのサイズを取得または設定します。</summary>
+        <value>受信バッファーのサイズ (バイト単位) を格納している <see cref="T:System.Int32" />。 既定値は 8192 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、「<xref:System.Net.Sockets.Socket.ReceiveBufferSize%2A>」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値を設定します。  
+  
+ [!code-cpp[NCLServicePoint#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLServicePoint/CPP/nclservicepoint.cpp#1)]
+ [!code-csharp[NCLServicePoint#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLServicePoint/CS/nclservicepoint.cs#1)]
+ [!code-vb[NCLServicePoint#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLServicePoint/VB/nclservicepoint.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定された設定操作がより大きい値<see cref="F:System.Int32.MaxValue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetTcpKeepAlive">
+      <MemberSignature Language="C#" Value="public void SetTcpKeepAlive (bool enabled, int keepAliveTime, int keepAliveInterval);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetTcpKeepAlive(bool enabled, int32 keepAliveTime, int32 keepAliveInterval) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.ServicePoint.SetTcpKeepAlive(System.Boolean,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enabled" Type="System.Boolean" />
+        <Parameter Name="keepAliveTime" Type="System.Int32" />
+        <Parameter Name="keepAliveInterval" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="enabled">指定されたを使用して有効になりますし、TCP 接続で TCP keep-alive オプションを true に設定する場合<c>keepAliveTime</c>と<c>keepAliveInterval</c>値。  
+  
+ false に設定すると、TCP keep-alive オプションが無効になり、残りのパラメーターは無視されます。  
+  
+ 既定値は false です。</param>
+        <param name="keepAliveTime">最初の keep-alive パケットが送信されるまでアクティビティを行わないタイムアウト値をミリ秒単位で指定します。  
+  
+ 値は 0 よりも大きくする必要があります。  0 またはそれより小さい値が渡されると、<see cref="T:System.ArgumentOutOfRangeException" /> がスローされます。</param>
+        <param name="keepAliveInterval">受信確認が受信されない場合に、連続する keep-alive パケットが送信されるときの間隔をミリ秒単位で指定します。  
+  
+ 値は 0 よりも大きくする必要があります。  0 またはそれより小さい値が渡されると、<see cref="T:System.ArgumentOutOfRangeException" /> がスローされます。</param>
+        <summary>TCP 接続での keep-alive オプションを有効または無効にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションでは、TCP/IP プロバイダーが TCP 接続での keep-alive パケットの使用を有効にすることを要求できます。 既定では TCP 接続での keep-alive パケットの使用が無効になっています。  
+  
+ TCP ソケットときの既定の設定は、2 時間にセットのキープ アライブ タイムアウトとキープ アライブ間隔を 1 秒に初期化されます。 `keepAliveTime`パラメーターが反応のない最初の keep-alive パケットが送信されるまでのミリ秒単位のタイムアウトを指定します。 `keepAliveInterval`パラメーターを指定、間隔 (ミリ秒単位) 間の受信確認を受信しなかった場合、連続する keep-alive パケットが送信されるときにします。 キープ アライブ プローブの数は変更することはできず、10 に設定されています。  
+  
+ Keep-alive の結果として、TCP 接続が削除された場合、<xref:System.Net.Sockets.SocketError>の<xref:System.Net.Sockets.SocketError.NetworkReset>、ソケットで進行中のすべての呼び出しに返される、後続の呼び出しは失敗し、<xref:System.Net.Sockets.SocketError>の<xref:System.Net.Sockets.SocketError.NotConnected>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定された値<paramref name="keepAliveTime" />または<paramref name="keepAliveInterval" />パラメーターが 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsPipelining">
+      <MemberSignature Language="C#" Value="public bool SupportsPipelining { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsPipelining" />
+      <MemberSignature Language="DocId" Value="P:System.Net.ServicePoint.SupportsPipelining" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Net.ServicePoint" /> オブジェクトがパイプライン接続をサポートしているかどうかを示します。</summary>
+        <value>
+          <see cref="T:System.Net.ServicePoint" /> オブジェクトがパイプライン接続をサポートしている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パイプライン化により、各サーバーからの応答を待たずに、永続的な接続経由で複数の要求を送信するクライアント。 サーバーでは、要求が受信したとおりに、同じ順序で、応答を送信します。  
+  
+ パイプライン処理は、IETF RFC 2616 8.1.2.2 セクションで詳しく説明します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値を表示します。  
+  
+ [!code-cpp[System.Net.ServicePoint#5](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.ServicePoint/CPP/servicepoint.cpp#5)]
+ [!code-csharp[System.Net.ServicePoint#5](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.ServicePoint/CS/servicepoint.cs#5)]
+ [!code-vb[System.Net.ServicePoint#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.ServicePoint/VB/servicepoint.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseNagleAlgorithm">
+      <MemberSignature Language="C#" Value="public bool UseNagleAlgorithm { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseNagleAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.Net.ServicePoint.UseNagleAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>その <see cref="T:System.Net.ServicePoint" /> オブジェクトが管理する接続で Nagle アルゴリズムを使用するかどうかを決定する <see cref="T:System.Boolean" /> 値を取得または設定します。</summary>
+        <value>
+          Nagle アルゴリズムを使用する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Nagle アルゴリズムは小さなデータ パケット バッファーに格納し、1 つのパケットとして送信するために使用します。 "Nagling、"と呼ばれる、このプロセスは、送信パケットの数が減るために、広く使用されてし、パケットごとのオーバーヘッドを削減します。  
+  
+ このプロパティの値を変更しても、既存の接続には影響しません。 のみ、変更後に作成された新しい接続を受けます。  
+  
+ Nagle アルゴリズムは IETF RFC 896 で詳しく説明します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値を表示します。  
+  
+ [!code-cpp[System.Net.ServicePoint#9](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.ServicePoint/CPP/servicepoint.cpp#9)]
+ [!code-csharp[System.Net.ServicePoint#9](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.ServicePoint/CS/servicepoint.cs#9)]
+ [!code-vb[System.Net.ServicePoint#9](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.ServicePoint/VB/servicepoint.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,197 @@
+<Type Name="PropertyPath" FullName="System.Windows.PropertyPath">
+  <TypeSignature Language="C#" Value="public sealed class PropertyPath" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PropertyPath extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.PropertyPath" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.PropertyPathConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>別のプロパティの下、または所有している型の下のパスとして、プロパティを記述するためのデータ構造を実装します。 プロパティ パスは、オブジェクトへのデータ バインディングと、アニメーション用のストーリーボードやタイムラインで使用されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスには、文字列が含まれています。 <xref:System.Windows.PropertyPath.Path%2A>、とは、依存関係プロパティの一覧、<xref:System.Windows.PropertyPath.PathParameters%2A>文字列に<xref:System.Windows.PropertyPath.Path%2A>です。  
+  
+ <xref:System.Windows.PropertyPath>2 つの動作モードをサポートしています。  
+  
+ **ソース モード**他の操作のソースとして使用されるプロパティへのパスをについて説明します。 このモードは使用、<xref:System.Windows.Data.Binding>データ バインディングをサポートするクラス。  
+  
+ **ターゲット モード**対象のプロパティとして設定されるプロパティへのパスをについて説明します。 このモードは、ストーリー ボードおよびタイムラインの setter をサポートするためのアニメーションで使用されます。  
+  
+ たとえば、 `Background.Opacity` 2 段階のパスです。 このパスは: 最初に、検索、 `Background` 、オブジェクトのプロパティ オブジェクトを取得する値を`Background`プロパティに設定されているしの値を取得、`Opacity`そのオブジェクトのプロパティです。  
+  
+<a name="xamlAttributeUsage_PropertyPath"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="propertyPath" .../>  
+```  
+  
+<a name="xamlValues_PropertyPath"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *propertyPath*  
+ 単純または複雑なプロパティ パスに評価される文字列。 設定の構文、<xref:System.Windows.PropertyPath>で[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]汎用性が複雑では、別のトピックに記載されて[PropertyPath 構文は XAML](~/docs/framework/wpf/advanced/propertypath-xaml-syntax.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PropertyPath (object parameter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object parameter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.PropertyPath.#ctor(System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="parameter" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="parameter">パスを記述するプロパティのパス、[!INCLUDE[TLA#tla_clr](~/includes/tlasharptla-clr-md.md)]プロパティ、または単一の依存関係プロパティです。</param>
+        <summary><see cref="T:System.Windows.PropertyPath" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターには、バインディング、またはストーリー ボードのターゲットのターゲット モード 1 ステップのプロパティ パスのソース モード プロパティのパスに対して使用されているかどうかに応じて、2 つのまったく異なる用法があります。  
+  
+ これを使用して場合<xref:System.Windows.PropertyPath>バインディング用のソース モードで`parameter`はプロパティ名を表す文字列か、「ステップスルー」へのパス内のプロパティを説明する文字列を指定できます、[!INCLUDE[TLA2#tla_clr](~/includes/tla2sharptla-clr-md.md)]バインディングのソースとして使用されているオブジェクトのオブジェクト モデルです。 バインディング プロパティのパス"の"ステップを識別する文字は、ドット (.) です。 インデクサーの参照 (複数のインデクサーと型の区別を含む) はもサポートされます。 具体的に使用する文字列の構文の詳細については、<xref:System.Windows.Data.Binding>オブジェクトを参照してください<xref:System.Windows.Data.Binding.Path%2A?displayProperty=nameWithType>です。 バインディング ソースとして使用されるプロパティの依存関係プロパティではない必要があります。 双方向のバインドを更新する場合、参照されるプロパティは読み取り/書き込みをする必要があります。 バインディング ターゲットには、依存関係プロパティにも注意してください。 詳細については、「[データ バインディングの概要](~/docs/framework/wpf/data/data-binding-overview.md)です。  
+  
+ これを使用して場合<xref:System.Windows.PropertyPath>目的のモードで、ストーリー ボードのターゲットの単一ステップ パスの`parameter`は、通常は型として指定<xref:System.Windows.DependencyProperty>です。 表す文字列を指定することも、<xref:System.Windows.DependencyProperty.Name%2A>です。 これらのいずれかにより、文字列として内部的に保存されているので、結果は同じに評価されます。 提供された<xref:System.Windows.DependencyProperty>を文字列に変換<xref:System.Windows.Markup.DependencyPropertyConverter>です。 <xref:System.Windows.Markup.DependencyPropertyConverter>指定できるように、依存関係プロパティの修飾の名前付け形式をサポートしている、 *typeName*.*propertyName*修飾する依存関係プロパティ名の文字列、<xref:System.Windows.PropertyPath.%23ctor%2A?displayProperty=nameWithType>コードでコンス トラクターです。 依存関係プロパティの識別子を修飾パスは、複雑なパスとは異なる概念です。 複合パス<xref:System.Windows.PropertyPath>で作成する代わりに、<xref:System.Windows.PropertyPath.%23ctor%2A?displayProperty=nameWithType>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PropertyPath (string path, params object[] pathParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, object[] pathParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.PropertyPath.#ctor(System.String,System.Object[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="pathParameters" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="path">指定する文字列、 <see cref="P:System.Windows.PropertyPath.Path" />、トークン化された形式でします。</param>
+        <param name="pathParameters">設定するオブジェクトの配列、<see cref="P:System.Windows.PropertyPath.PathParameters" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.PropertyPath" />クラス、トークン文字列の指定されたパスとパラメーターを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この署名は通常、に対してのみ使用ターゲット モード<xref:System.Windows.PropertyPath>複合パスを使用します。  
+  
+ このコンス トラクターは`params`の`pathParameters`コンス トラクターの引数。 そのための内容を指定できます`pathParameters`一連のコンマ区切りのコンス トラクター引数を配列の次元し、で設定する必要があるのではなく、配列を設定すると、`pathParameters`項目。 指定する各項目は、次の種類のいずれかを指定する必要があります: <xref:System.Windows.DependencyProperty>、 <xref:System.Reflection.PropertyInfo>、<xref:System.ComponentModel.PropertyDescriptor>です。  
+  
+ パラメーターの要件の詳細については、次を参照してください。<xref:System.Windows.PropertyPath.Path%2A>と<xref:System.Windows.PropertyPath.PathParameters%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public string Path { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Path" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.PropertyPath.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはパスを表す文字列を設定します。</summary>
+        <value>パスを説明する文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに含まれる文字列がかどうかに応じて、次の 3 つのまったく異なる意味を持つ、 <xref:System.Windows.PropertyPath> 、ストーリー ボードのターゲットのターゲット モード 1 ステップのプロパティ パスのバインディング、またはストーリー ボードのターゲットの複雑なパスのソース モード プロパティのパスが使用されています。  
+  
+ これを使用して場合<xref:System.Windows.PropertyPath>バインディング用のソース モードで<xref:System.Windows.PropertyPath.Path%2A>はプロパティ名を表す文字列か、「ステップスルー」へのパス内のプロパティを説明する文字列を指定できます、[!INCLUDE[TLA2#tla_clr](~/includes/tla2sharptla-clr-md.md)]バインディングのソースとして使用されているオブジェクトのオブジェクト モデルです。 バインディング プロパティのパス"の"ステップを識別する文字は、ドット (.) です。 インデクサーの参照 (複数のインデクサーと型の区別を含む) はもサポートされます。 具体的に使用する文字列の構文の詳細については、<xref:System.Windows.Data.Binding>オブジェクトを参照してください<xref:System.Windows.Data.Binding.Path%2A?displayProperty=nameWithType>です。 バインディング ソースとして使用されるプロパティの依存関係プロパティではない必要があります。 双方向のバインドを更新する場合、プロパティのソースは読み取り/書き込みをする必要があります。 バインディング ターゲットには、依存関係プロパティにも注意してください。 詳細については、「[データ バインディングの概要](~/docs/framework/wpf/data/data-binding-overview.md)です。  
+  
+ これを使用する場合<xref:System.Windows.PropertyPath>目的のモードで、ストーリー ボードのターゲットの単一ステップ パスの<xref:System.Windows.PropertyPath>文字列では、 *typeName*.*propertyName*依存関係プロパティの名前の文字列を修飾します。  
+  
+ これを使用する場合<xref:System.Windows.PropertyPath>、ストーリー ボードのターゲットの複雑なパスの<xref:System.Windows.PropertyPath.Path%2A>、トークン化された文字列の形式で指定された各種オブジェクトのリレーションシップを説明するは、<xref:System.Windows.PropertyPath.PathParameters%2A>です。  
+  
+-   配列内の各項目は、かっこで囲まれた項目の配列インデックスを使用して、この形式で指定されます。 たとえば、配列内の最初の項目を指定する文字列トークンは`(0)`します。  
+  
+-   項目 (パス内の「手順」) 間の関係は、ドット (.) で指定します。 前ドットのプロパティは、まず、パスの後のプロパティが、2 番目の手順に (2 つのステップを指定することができます)。 チェーンの最後の手順は、常にアニメーション化されているプロパティを表します。  
+  
+-   インデクサー構文、角かっこ内のインデックスでコレクションのプロパティ内のアイテムへのアクセス ([および])。 インデクサーは、プロパティを表すトークンを追加します。 たとえばからそのプロパティのコレクション内の 2 番目の項目を指定する最初のステップでトークンの組み合わせで、2 段階のパスを次に示します:`(0)[1].(1)`です。 チェーン内の最後のプロパティでインデクサーを使用することはできません。実際のコレクションの位置をアニメーション化することはできません、そのオブジェクトのプロパティをアニメーション化する必要があります。  
+  
+ パス文字列を<xref:System.Windows.PropertyPath>は、通常のコンス トラクターを介して確立:<xref:System.Windows.PropertyPath.%23ctor%28System.Object%29>バインドまたはストーリー ボードの単一ステップのターゲットのシグネチャ、<xref:System.Windows.PropertyPath.%23ctor%28System.String%2CSystem.Object%5B%5D%29>複数ステップのストーリー ボードのターゲットのシグネチャ。  
+  
+ **XAML:**を使用する場合、<xref:System.Windows.PropertyPath>プロパティの参照を記述する[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]属性値を指定する文字列が実行する型コンバーターによって処理される最初、(<xref:System.Windows.PropertyPathConverter>)。 この型コンバーターは、文字列を処理し、に基づいてその構文は、のいずれかを呼び出しますが、<xref:System.Windows.PropertyPath>コンス トラクター シグネチャ。 属性値を処理する型コンバーターをこの間接指定が使用する方法は、通常、<xref:System.Windows.PropertyPath>で[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]、宣言するのではなく、<xref:System.Windows.PropertyPath>オブジェクトの要素などの属性にその特定の値を適用する<xref:System.Windows.PropertyPath.Path%2A>と<xref:System.Windows.PropertyPath.PathParameters%2A>です。 詳細については、次を参照してください。 [PropertyPath 構文は XAML](~/docs/framework/wpf/advanced/propertypath-xaml-syntax.md)です。  
+  
+<a name="xamlTextUsage_Path"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ メンバー、<xref:System.Windows.PropertyPath>型が、通常、ダイレクトでは設定されていない[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]構文です。 「解説」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PathParameters">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;object&gt; PathParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;object&gt; PathParameters" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.PropertyPath.PathParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パスは、インデックス付きのパラメーターを参照するときに使用するパラメーターの一覧を取得します。</summary>
+        <value>パラメーターのリスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティを<xref:System.Windows.PropertyPath>通常のコンス トラクターを使用して確立されます。 設定の<xref:System.Windows.PropertyPath.PathParameters%2A>、<xref:System.Windows.PropertyPath.%23ctor%2A>コンス トラクターは、特に便利なため、`pathParameters`としてコンス トラクターの引数が指定されている`params`配列を作成するためのディメンションを作成または必要がないことを意味します。 追加パラメーターとして、配列の各メンバーを指定するだけです。  
+  
+ 最終的なプロパティを対象となっている場合は、<xref:System.Windows.Freezable>型、値を複製することです。 詳細については、「[ストーリー ボードの概要](~/docs/framework/wpf/graphics-multimedia/storyboards-overview.md)です。  
+  
+ プロパティのチェーンの実際の評価は、ストーリー ボードのアニメーション メカニズムによって実行されます。 <xref:System.Windows.PropertyPath>レベル、検証は行われません、パスの手順がすべての接続を確認します。 インスタンスを持つプロパティのパスを構築できます<xref:System.Windows.Controls.Control.BackgroundProperty?displayProperty=nameWithType>最初の手順として、 <xref:System.Windows.FrameworkElement.FlowDirectionProperty?displayProperty=nameWithType> 2 番目の手順として。 このようなプロパティのパスはため、失敗、ターゲットとして実際に適用されている場合、ブラシの種類を送り返す<xref:System.Windows.Controls.Control.BackgroundProperty?displayProperty=nameWithType>はありません、<xref:System.Windows.FrameworkElement.FlowDirection%2A?displayProperty=nameWithType>プロパティです。 無効なプロパティ パスは、サイレント モードで失敗します。 詳細については、次を参照してください。[ストーリー ボードの概要](~/docs/framework/wpf/graphics-multimedia/storyboards-overview.md)です。  
+  
+ **XAML:**を使用する場合、<xref:System.Windows.PropertyPath>プロパティの参照を記述する[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]属性値を指定する文字列が実行する型コンバーターによって処理される最初、(<xref:System.Windows.PropertyPathConverter>)。 この型コンバーターは、文字列を処理し、に基づいてその構文は、のいずれかを呼び出しますが、<xref:System.Windows.PropertyPath>コンス トラクター シグネチャ。 属性値を処理する型コンバーターをこの間接指定が使用する方法は、通常、<xref:System.Windows.PropertyPath>で[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]、宣言するのではなく、<xref:System.Windows.PropertyPath>オブジェクトの要素などの属性にその特定の値を適用する<xref:System.Windows.PropertyPath.Path%2A>と<xref:System.Windows.PropertyPath.PathParameters%2A>です。 詳細については、次を参照してください。 [PropertyPath 構文は XAML](~/docs/framework/wpf/advanced/propertypath-xaml-syntax.md)です。  
+  
+<a name="xamlTextUsage_PathParameters"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ メンバー、<xref:System.Windows.PropertyPath>型が、通常、ダイレクトでは設定されていない[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]構文です。 「解説」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,96 @@
+<Type Name="CustomUserNameSecurityTokenAuthenticator" FullName="System.IdentityModel.Selectors.CustomUserNameSecurityTokenAuthenticator">
+  <TypeSignature Language="C#" Value="public class CustomUserNameSecurityTokenAuthenticator : System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CustomUserNameSecurityTokenAuthenticator extends System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Selectors.CustomUserNameSecurityTokenAuthenticator" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>カスタム認証方式を使用している <see cref="T:System.IdentityModel.Tokens.UserNameSecurityToken" /> セキュリティ トークンを認証します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.CustomUserNameSecurityTokenAuthenticator> クラスの Windows 認証では不十分な場合は、<xref:System.IdentityModel.Selectors.WindowsUserNameSecurityTokenAuthenticator> クラスをオーバーライドします。 <xref:System.IdentityModel.Selectors.WindowsUserNameSecurityTokenAuthenticator> クラスは、<xref:System.IdentityModel.Tokens.UserNameSecurityToken> セキュリティ トークンのユーザー名とパスワードを Windows アカウントとして認証します。  
+  
+ カスタム認証方式を指定するには、<xref:System.IdentityModel.Selectors.UserNamePasswordValidator> クラスの派生クラスを作成し、認証方式を実装して、作成したクラスを <xref:System.IdentityModel.Selectors.CustomUserNameSecurityTokenAuthenticator> クラスのコンストラクターに渡します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CustomUserNameSecurityTokenAuthenticator (System.IdentityModel.Selectors.UserNamePasswordValidator validator);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Selectors.UserNamePasswordValidator validator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.CustomUserNameSecurityTokenAuthenticator.#ctor(System.IdentityModel.Selectors.UserNamePasswordValidator)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="validator" Type="System.IdentityModel.Selectors.UserNamePasswordValidator" />
+      </Parameters>
+      <Docs>
+        <param name="validator">A<see cref="T:System.IdentityModel.Selectors.UserNamePasswordValidator" />を認証するユーザー名とパスワードのカスタム認証方式を使用します。</param>
+        <summary>指定したバリデーターを使用して、<see cref="T:System.IdentityModel.Selectors.CustomUserNameSecurityTokenAuthenticator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.UserNamePasswordValidator> パラメーターに指定した `validator` は、<xref:System.IdentityModel.Selectors.CustomUserNameSecurityTokenAuthenticator.ValidateUserNamePasswordCore%2A> メソッドでのユーザー認証に使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="validator" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateUserNamePasswordCore">
+      <MemberSignature Language="C#" Value="protected override System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Policy.IAuthorizationPolicy&gt; ValidateUserNamePasswordCore (string userName, string password);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.IdentityModel.Policy.IAuthorizationPolicy&gt; ValidateUserNamePasswordCore(string userName, string password) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.CustomUserNameSecurityTokenAuthenticator.ValidateUserNamePasswordCore(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Policy.IAuthorizationPolicy&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userName" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="userName">セキュリティ トークンに関連付けられたユーザー名。</param>
+        <param name="password">セキュリティ トークンに関連付けられたパスワード。</param>
+        <summary>指定したユーザー名とパスワードを認証し、<see cref="T:System.IdentityModel.Tokens.UserNameSecurityToken" /> セキュリティ トークンの一連の承認ポリシーを返します。</summary>
+        <returns>このアプリケーションで有効な承認ポリシー セットを含む <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> 型の <see cref="T:System.IdentityModel.Policy.IAuthorizationPolicy" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.CustomUserNameSecurityTokenAuthenticator.ValidateUserNamePasswordCore%2A> メソッドは、<xref:System.IdentityModel.Selectors.UserNamePasswordValidator> コンストラクターに渡された <xref:System.IdentityModel.Selectors.CustomUserNameSecurityTokenAuthenticator.%23ctor%2A> を使用して、ユーザーを認証します。  
+  
+ ユーザー名とパスワードを検証できない場合、<xref:System.IdentityModel.Tokens.SecurityTokenValidationException> をスローします。  
+  
+ このアプリケーションに対して有効な承認ポリシーが存在しない場合、<xref:System.Collections.ObjectModel.ReadOnlyCollection%601> 型の空の <xref:System.IdentityModel.Policy.IAuthorizationPolicy> を返します。  
+  
+ ときに`null`から返される、<xref:System.IdentityModel.Selectors.CustomUserNameSecurityTokenAuthenticator.ValidateUserNamePasswordCore%2A>メソッド、[!INCLUDE[vsindigo](~/includes/vsindigo-md.md)]スロー、<xref:System.IdentityModel.Tokens.SecurityTokenValidationException>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="userName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IdentityModel.Tokens.SecurityTokenValidationException">
+          <paramref name="userName" /> と <paramref name="password" /> の組み合わせが有効ではありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

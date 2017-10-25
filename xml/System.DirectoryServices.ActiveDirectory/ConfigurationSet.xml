@@ -1,0 +1,469 @@
+<Type Name="ConfigurationSet" FullName="System.DirectoryServices.ActiveDirectory.ConfigurationSet">
+  <TypeSignature Language="C#" Value="public class ConfigurationSet" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ConfigurationSet extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.ActiveDirectory.ConfigurationSet" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.ActiveDirectory.ConfigurationSet" />クラスを表します。 1 つの設定の構成または複数の AD LDS インスタンス。</summary>
+    <remarks>To be added.</remarks>
+    <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" /></permission>
+  </Docs>
+  <Members>
+    <Member MemberName="AdamInstances">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.AdamInstanceCollection AdamInstances { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectory.AdamInstanceCollection AdamInstances" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.ConfigurationSet.AdamInstances" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.AdamInstanceCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>構成セットにある AD LDS インスタンスの読み取り専用コレクションを取得します。</summary>
+        <value><see cref="T:System.DirectoryServices.ActiveDirectory.AdamInstanceCollection" />オブジェクトを含む、<see cref="T:System.DirectoryServices.ActiveDirectory.AdamInstance" />構成で設定されるオブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationPartitions">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.ApplicationPartitionCollection ApplicationPartitions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectory.ApplicationPartitionCollection ApplicationPartitions" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.ConfigurationSet.ApplicationPartitions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.ApplicationPartitionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>構成で設定されたアプリケーション パーティションの読み取り専用コレクションを取得します。</summary>
+        <value><see cref="T:System.DirectoryServices.ActiveDirectory.ApplicationPartitionCollection" />オブジェクトを含む、<see cref="T:System.DirectoryServices.ActiveDirectory.ApplicationPartition" />構成で設定されるオブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ConfigurationSet.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトによって使用されているすべてのマネージ コードとアンマネージ リソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ConfigurationSet.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">マネージ リソースを解放する必要があるかどうかを決定する <see cref="T:System.Boolean" /> 値。 マネージ リソースを解放する必要がある場合は <see langword="true" />、アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary>オブジェクトによって使用されているアンマネージ リソースを解放し、必要に応じてマネージ リソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindAdamInstance">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.AdamInstance FindAdamInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.AdamInstance FindAdamInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ConfigurationSet.FindAdamInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.AdamInstance</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この構成セット内で AD LDS インスタンスを検索します。</summary>
+        <returns><see cref="T:System.DirectoryServices.ActiveDirectory.AdamInstance" />ことが検出された AD LDS インスタンスを表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">この構成セット内で AD LDS インスタンスが見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindAdamInstance">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.AdamInstance FindAdamInstance (string partitionName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.AdamInstance FindAdamInstance(string partitionName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ConfigurationSet.FindAdamInstance(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.AdamInstance</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="partitionName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="partitionName">A<see cref="T:System.String" />を検索するパーティションを指定します。</param>
+        <summary>所定のパーティション名について、この構成セット内で AD LDS インスタンスを検索します。</summary>
+        <returns><see cref="T:System.DirectoryServices.ActiveDirectory.AdamInstance" />ことが検出された AD LDS インスタンスを表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="partitionName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">指定した AD LDS インスタンス<paramref name="partitionName" />この構成セットに見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindAdamInstance">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.AdamInstance FindAdamInstance (string partitionName, string siteName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.AdamInstance FindAdamInstance(string partitionName, string siteName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ConfigurationSet.FindAdamInstance(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.AdamInstance</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="partitionName" Type="System.String" />
+        <Parameter Name="siteName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="partitionName">A<see cref="T:System.String" />を検索するパーティションを指定します。</param>
+        <param name="siteName">A<see cref="T:System.String" />を検索するサイトを指定します。</param>
+        <summary>所定のパーティション名とサイト名について、この構成セット内で AD LDS インスタンスを検索します。</summary>
+        <returns><see cref="T:System.DirectoryServices.ActiveDirectory.AdamInstance" />ことが検出された AD LDS インスタンスを表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="siteName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">指定した AD LDS インスタンス<paramref name="partitionName" />と<paramref name="siteName" />パラメーターは、この構成セットに見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindAllAdamInstances">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.AdamInstanceCollection FindAllAdamInstances ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.AdamInstanceCollection FindAllAdamInstances() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ConfigurationSet.FindAllAdamInstances" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.AdamInstanceCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この構成セット内のすべての AD LDS インスタンスを返します。</summary>
+        <returns><see cref="T:System.DirectoryServices.ActiveDirectory.AdamInstanceCollection" />オブジェクトを含む、<see cref="T:System.DirectoryServices.ActiveDirectory.AdamInstance" />検出されたオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindAllAdamInstances">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.AdamInstanceCollection FindAllAdamInstances (string partitionName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.AdamInstanceCollection FindAllAdamInstances(string partitionName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ConfigurationSet.FindAllAdamInstances(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.AdamInstanceCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="partitionName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="partitionName">A<see cref="T:System.String" />を検索するパーティションを指定します。</param>
+        <summary>所定のパーティション名に対して、この構成セット内のすべての AD LDS インスタンスを返します。</summary>
+        <returns><see cref="T:System.DirectoryServices.ActiveDirectory.AdamInstanceCollection" />オブジェクトを含む、<see cref="T:System.DirectoryServices.ActiveDirectory.AdamInstance" />検出されたオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="partitionName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindAllAdamInstances">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.AdamInstanceCollection FindAllAdamInstances (string partitionName, string siteName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.AdamInstanceCollection FindAllAdamInstances(string partitionName, string siteName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ConfigurationSet.FindAllAdamInstances(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.AdamInstanceCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="partitionName" Type="System.String" />
+        <Parameter Name="siteName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="partitionName">A<see cref="T:System.String" />を検索するパーティションを指定します。</param>
+        <param name="siteName">A<see cref="T:System.String" />を検索するパーティションを指定します。</param>
+        <summary>所定のパーティション名とサイト名に対して、この構成セット内のすべての AD LDS インスタンスを返します。</summary>
+        <returns><see cref="T:System.DirectoryServices.ActiveDirectory.AdamInstanceCollection" />オブジェクトを含む、<see cref="T:System.DirectoryServices.ActiveDirectory.AdamInstance" />にあるオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="siteName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetConfigurationSet">
+      <MemberSignature Language="C#" Value="public static System.DirectoryServices.ActiveDirectory.ConfigurationSet GetConfigurationSet (System.DirectoryServices.ActiveDirectory.DirectoryContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.DirectoryServices.ActiveDirectory.ConfigurationSet GetConfigurationSet(class System.DirectoryServices.ActiveDirectory.DirectoryContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ConfigurationSet.GetConfigurationSet(System.DirectoryServices.ActiveDirectory.DirectoryContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.ConfigurationSet</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.ActiveDirectory.DirectoryContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" />ターゲットとオブジェクトの取得に使用する資格情報を含むオブジェクト。 コンテキストのターゲットには、AD LDS インスタンスまたは構成セットを識別できる現在のフォレストで serviceConnectionPoint オブジェクトで指定されているキーワードを使用できます。</param>
+        <summary>返します、<see cref="T:System.DirectoryServices.ActiveDirectory.ConfigurationSet" />指定したディレクトリ コンテキストのオブジェクト。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.ActiveDirectory.ConfigurationSet" />構成を表すオブジェクトを指定したコンテキストを設定します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">指定されたターゲット、<paramref name="context" />パラメーターが見つかりませんでした。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="context" />パラメーターが無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDirectoryEntry">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.DirectoryEntry GetDirectoryEntry ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.DirectoryEntry GetDirectoryEntry() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ConfigurationSet.GetDirectoryEntry" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.DirectoryEntry</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="T:System.DirectoryServices.DirectoryEntry" />構成パーティションのオブジェクト。</summary>
+        <returns><see cref="T:System.DirectoryServices.DirectoryEntry" />構成パーティションのオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSecurityLevel">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.ReplicationSecurityLevel GetSecurityLevel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.DirectoryServices.ActiveDirectory.ReplicationSecurityLevel GetSecurityLevel() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ConfigurationSet.GetSecurityLevel" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.ReplicationSecurityLevel</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>AD LDS レプリケーション セキュリティ レベルを返します。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.ActiveDirectory.ReplicationSecurityLevel" />を現在の AD LDS レプリケーションの認証モードを示す値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.ConfigurationSet.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>名前を取得、<see cref="T:System.DirectoryServices.ActiveDirectory.ConfigurationSet" />オブジェクト。</summary>
+        <value>A<see cref="T:System.String" />の名前を格納している、<see cref="T:System.DirectoryServices.ActiveDirectory.ConfigurationSet" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NamingRoleOwner">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.AdamInstance NamingRoleOwner { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectory.AdamInstance NamingRoleOwner" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.ConfigurationSet.NamingRoleOwner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.AdamInstance</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドメイン名前付けマスターの役割の現在の所有者は、AD LDS インスタンスを取得します。</summary>
+        <value><see cref="T:System.DirectoryServices.ActiveDirectory.AdamInstance" />が現在 AD LDS インスタンスを表すオブジェクトをドメイン名前付けマスターの役割を保持します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Schema">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.ActiveDirectorySchema Schema { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectory.ActiveDirectorySchema Schema" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.ConfigurationSet.Schema" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.ActiveDirectorySchema</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>構成セットのスキーマ オブジェクトを取得します。</summary>
+        <value><see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySchema" />をこの構成セットのスキーマを表すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SchemaRoleOwner">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.AdamInstance SchemaRoleOwner { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectory.AdamInstance SchemaRoleOwner" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.ConfigurationSet.SchemaRoleOwner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.AdamInstance</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スキーマ操作マスターの役割の現在の所有者は、AD LDS インスタンスを取得します。</summary>
+        <value><see cref="T:System.DirectoryServices.ActiveDirectory.AdamInstance" />を表す、AD LDS を押しながらオブジェクト  
+  
+ 現在、スキーマ操作マスターの役割を保持するインスタンス。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetSecurityLevel">
+      <MemberSignature Language="C#" Value="public void SetSecurityLevel (System.DirectoryServices.ActiveDirectory.ReplicationSecurityLevel securityLevel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetSecurityLevel(valuetype System.DirectoryServices.ActiveDirectory.ReplicationSecurityLevel securityLevel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ConfigurationSet.SetSecurityLevel(System.DirectoryServices.ActiveDirectory.ReplicationSecurityLevel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="securityLevel" Type="System.DirectoryServices.ActiveDirectory.ReplicationSecurityLevel" />
+      </Parameters>
+      <Docs>
+        <param name="securityLevel"><see cref="T:System.DirectoryServices.ActiveDirectory.ReplicationSecurityLevel" />に AD LDS レプリケーションの認証モードを設定する値。</param>
+        <summary>AD LDS レプリケーション セキュリティ レベルを設定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="securityLevel" /> は有効な <see cref="T:System.DirectoryServices.ActiveDirectory.ReplicationSecurityLevel" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Sites">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.ReadOnlySiteCollection Sites { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectory.ReadOnlySiteCollection Sites" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.ConfigurationSet.Sites" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.ReadOnlySiteCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定で構成されているサイトの読み取り専用コレクションを取得します。</summary>
+        <value><see cref="T:System.DirectoryServices.ActiveDirectory.ReadOnlySiteCollection" />オブジェクトを含む<see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySite" />構成で設定されるオブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ConfigurationSet.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>名前を返します、<see cref="T:System.DirectoryServices.ActiveDirectory.ConfigurationSet" />オブジェクト。</summary>
+        <returns>A <see cref="T:System.String" /> 、現在の名前を格納している<see cref="T:System.DirectoryServices.ActiveDirectory.ConfigurationSet" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

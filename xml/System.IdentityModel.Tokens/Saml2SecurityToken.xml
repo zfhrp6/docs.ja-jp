@@ -1,0 +1,327 @@
+<Type Name="Saml2SecurityToken" FullName="System.IdentityModel.Tokens.Saml2SecurityToken">
+  <TypeSignature Language="C#" Value="public class Saml2SecurityToken : System.IdentityModel.Tokens.SecurityToken" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Saml2SecurityToken extends System.IdentityModel.Tokens.SecurityToken" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.Saml2SecurityToken" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Tokens.SecurityToken</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>SAML アサーションに基づいているセキュリティ トークンを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.Saml2SecurityToken> セキュリティ トークンのクレームは、<xref:System.IdentityModel.Tokens.Saml2Assertion> の一部として示されます。 <xref:System.IdentityModel.Tokens.Saml2Assertion> には、拡張性のある一連のクレームがあります。これは、SAML ステートメントと呼ばれ、<xref:System.IdentityModel.Tokens.Saml2Assertion.Statements%2A> プロパティで表されます。 SAML アサーションを発行した SAML 証明機関は、<xref:System.IdentityModel.Tokens.Saml2Assertion.Issuer%2A> プロパティで指定されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Saml2SecurityToken (System.IdentityModel.Tokens.Saml2Assertion assertion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Tokens.Saml2Assertion assertion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.Saml2SecurityToken.#ctor(System.IdentityModel.Tokens.Saml2Assertion)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="assertion" Type="System.IdentityModel.Tokens.Saml2Assertion" />
+      </Parameters>
+      <Docs>
+        <param name="assertion">このセキュリティ トークンの SAML アサーションを表す <see cref="T:System.IdentityModel.Tokens.Saml2Assertion" />。</param>
+        <summary>指定した SAML アサーションを使用して、<see cref="T:System.IdentityModel.Tokens.Saml2SecurityToken" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.Saml2SecurityToken> セキュリティ トークンの場合、クレームは、SAML アサーションを使用して指定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Saml2SecurityToken (System.IdentityModel.Tokens.Saml2Assertion assertion, System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Tokens.SecurityKey&gt; keys, System.IdentityModel.Tokens.SecurityToken issuerToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Tokens.Saml2Assertion assertion, class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.IdentityModel.Tokens.SecurityKey&gt; keys, class System.IdentityModel.Tokens.SecurityToken issuerToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.Saml2SecurityToken.#ctor(System.IdentityModel.Tokens.Saml2Assertion,System.Collections.ObjectModel.ReadOnlyCollection{System.IdentityModel.Tokens.SecurityKey},System.IdentityModel.Tokens.SecurityToken)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="assertion" Type="System.IdentityModel.Tokens.Saml2Assertion" />
+        <Parameter Name="keys" Type="System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Tokens.SecurityKey&gt;" />
+        <Parameter Name="issuerToken" Type="System.IdentityModel.Tokens.SecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="assertion">このセキュリティ トークンの SAML アサーションを表す <see cref="T:System.IdentityModel.Tokens.Saml2Assertion" />。</param>
+        <param name="keys">このセキュリティ トークンに関連付けられたキーのセット。</param>
+        <param name="issuerToken">このセキュリティ トークンの発行者のトークンです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Tokens.Saml2SecurityToken" />クラスの指定した SAML アサーション、暗号化キーと発行者トークンを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.Saml2SecurityToken> セキュリティ トークンの場合、クレームは、SAML アサーションを使用して指定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Assertion">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.Saml2Assertion Assertion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.Saml2Assertion Assertion" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2SecurityToken.Assertion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.Saml2Assertion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このセキュリティ トークンの SAML アサーションを取得します。</summary>
+        <value>このセキュリティ トークンの SAML アサーションを表す <see cref="T:System.IdentityModel.Tokens.Saml2Assertion" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.Saml2SecurityToken> セキュリティ トークンの場合、クレームは、SAML アサーションを使用して指定されます。  
+  
+ コンストラクターまたは <xref:System.IdentityModel.Tokens.Saml2SecurityToken.%23ctor%28System.IdentityModel.Tokens.Saml2Assertion%29?displayProperty=nameWithType> メソッドを使用して、<xref:System.IdentityModel.Tokens.Saml2SecurityToken.Assertion%2A> プロパティを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanCreateKeyIdentifierClause&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public override bool CanCreateKeyIdentifierClause&lt;T&gt; () where T : System.IdentityModel.Tokens.SecurityKeyIdentifierClause;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanCreateKeyIdentifierClause&lt;(class System.IdentityModel.Tokens.SecurityKeyIdentifierClause) T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.Saml2SecurityToken.CanCreateKeyIdentifierClause``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <BaseTypeName>System.IdentityModel.Tokens.SecurityKeyIdentifierClause</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">作成するキー識別子を指定する <see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />。</typeparam>
+        <summary>このセキュリティ トークンが、指定したキー識別子を作成できるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" /> の型が <paramref name="T" /> の場合は <see cref="T:System.IdentityModel.Tokens.Saml2AssertionKeyIdentifierClause" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.Saml2SecurityToken.CanCreateKeyIdentifierClause%2A> メソッドを使用して、<xref:System.IdentityModel.Tokens.Saml2SecurityToken> セキュリティ トークンが特定のキー識別子を作成できるかどうかを決定します。 キー識別子を作成するには、<xref:System.IdentityModel.Tokens.Saml2SecurityToken.CreateKeyIdentifierClause%60%601> メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateKeyIdentifierClause&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public override T CreateKeyIdentifierClause&lt;T&gt; () where T : System.IdentityModel.Tokens.SecurityKeyIdentifierClause;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance !!T CreateKeyIdentifierClause&lt;(class System.IdentityModel.Tokens.SecurityKeyIdentifierClause) T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.Saml2SecurityToken.CreateKeyIdentifierClause``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <BaseTypeName>System.IdentityModel.Tokens.SecurityKeyIdentifierClause</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">作成するキー識別子を指定する <see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />。</typeparam>
+        <summary>指定したキー識別句を作成します。</summary>
+        <returns>セキュリティ トークンのキー識別子句である <see cref="T:System.IdentityModel.Tokens.Saml2AssertionKeyIdentifierClause" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.Saml2SecurityToken.CanCreateKeyIdentifierClause%2A> メソッドを使用して、<xref:System.IdentityModel.Tokens.Saml2SecurityToken> セキュリティ トークンが特定のキー識別子を作成できるかどうかを決定します。 キー識別子を作成するには、<xref:System.IdentityModel.Tokens.Saml2SecurityToken.CreateKeyIdentifierClause%60%601> メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="T" /> が <see cref="T:System.IdentityModel.Tokens.Saml2AssertionKeyIdentifierClause" /> 型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public override string Id { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Id" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2SecurityToken.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ トークンの一意の識別子を取得します。</summary>
+        <value>セキュリティ トークンの一意の識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.Saml2SecurityToken> セキュリティ トークンが XML にシリアル化されるとき、Id 属性の値に <xref:System.IdentityModel.Tokens.Saml2SecurityToken.Id%2A> プロパティの値が設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IssuerToken">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SecurityToken IssuerToken { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SecurityToken IssuerToken" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2SecurityToken.IssuerToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityToken</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ トークンの発行者を取得します。</summary>
+        <value>発行者のセキュリティ トークンです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MatchesKeyIdentifierClause">
+      <MemberSignature Language="C#" Value="public override bool MatchesKeyIdentifierClause (System.IdentityModel.Tokens.SecurityKeyIdentifierClause keyIdentifierClause);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool MatchesKeyIdentifierClause(class System.IdentityModel.Tokens.SecurityKeyIdentifierClause keyIdentifierClause) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.Saml2SecurityToken.MatchesKeyIdentifierClause(System.IdentityModel.Tokens.SecurityKeyIdentifierClause)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyIdentifierClause" Type="System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />
+      </Parameters>
+      <Docs>
+        <param name="keyIdentifierClause">このインスタンスと比較する <see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />。</param>
+        <summary>このインスタンスのキー識別子が、指定したキー識別子に等しいかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="keyIdentifierClause" /> で <see cref="T:System.IdentityModel.Tokens.Saml2AssertionKeyIdentifierClause" /> プロパティと同じ一意の識別子を保持している場合は <see cref="P:System.IdentityModel.Tokens.Saml2SecurityToken.Id" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityKeys">
+      <MemberSignature Language="C#" Value="public override System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Tokens.SecurityKey&gt; SecurityKeys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.IdentityModel.Tokens.SecurityKey&gt; SecurityKeys" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2SecurityToken.SecurityKeys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Tokens.SecurityKey&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ トークンに関連付けられた暗号化キーを取得します。</summary>
+        <value>セキュリティ トークンに関連付けられている一連のキーを含む、<see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> 型の <see cref="T:System.IdentityModel.Tokens.SecurityKey" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.Saml2SecurityToken.SecurityKeys%2A> プロパティを使用して、このセキュリティ トークンの暗号キーを設定し、SOAP メッセージを保護します。 このキーは、特に SOAP メッセージのデジタル署名または暗号化に使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidFrom">
+      <MemberSignature Language="C#" Value="public override DateTime ValidFrom { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime ValidFrom" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2SecurityToken.ValidFrom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このセキュリティ トークンの有効期間の開始時点を取得します。</summary>
+        <value>このセキュリティ トークンの有効期間の開始時点を示す <see cref="T:System.DateTime" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.Saml2SecurityToken.ValidFrom%2A> および <xref:System.IdentityModel.Tokens.Saml2SecurityToken.ValidTo%2A> プロパティを使用して、<xref:System.IdentityModel.Tokens.Saml2SecurityToken> トークンの有効期間を決定します。 <xref:System.IdentityModel.Tokens.Saml2SecurityToken.ValidFrom%2A> および <xref:System.IdentityModel.Tokens.Saml2SecurityToken.ValidTo%2A> プロパティはそれぞれ、セキュリティ トークンの有効期間の開始と終了の時点を示します。  
+  
+ 既定では、セキュリティ トークンの送信者と受信者の間で、時刻のずれが 5 分まで許容されます。 したがって、<xref:System.IdentityModel.Tokens.Saml2Conditions.NotBefore%2A> プロパティは 1:00 PM に設定され、<xref:System.IdentityModel.Tokens.Saml2SecurityToken.ValidFrom%2A> プロパティは 12:55 PM に設定されます。  
+  
+ <xref:System.IdentityModel.Tokens.Saml2SecurityToken.ValidFrom%2A> プロパティが <xref:System.DateTime.MinValue> に設定されている場合、この <xref:System.IdentityModel.Tokens.Saml2SecurityToken> セキュリティ トークンに関連付けられている SAML アサーションには、条件は設定されていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidTo">
+      <MemberSignature Language="C#" Value="public override DateTime ValidTo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime ValidTo" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2SecurityToken.ValidTo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このセキュリティ トークンの有効期間の終了時点を取得します。</summary>
+        <value>このセキュリティ トークンの有効期間の終了の時点を示す <see cref="T:System.DateTime" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.Saml2SecurityToken.ValidFrom%2A> および <xref:System.IdentityModel.Tokens.Saml2SecurityToken.ValidTo%2A> プロパティを使用して、<xref:System.IdentityModel.Tokens.Saml2SecurityToken> トークンの有効期間を決定します。 <xref:System.IdentityModel.Tokens.Saml2SecurityToken.ValidFrom%2A> および <xref:System.IdentityModel.Tokens.Saml2SecurityToken.ValidTo%2A> プロパティはそれぞれ、セキュリティ トークンの有効期間の開始と終了の時点を示します。  
+  
+ 既定では、セキュリティ トークンの送信者と受信者の間で、時刻のずれが 5 分まで許容されます。 したがって、<xref:System.IdentityModel.Tokens.Saml2Conditions.NotOnOrAfter%2A> プロパティは 1:00 PM に設定され、<xref:System.IdentityModel.Tokens.Saml2SecurityToken.ValidFrom%2A> プロパティは 1:05 PM に設定されます。  
+  
+ <xref:System.IdentityModel.Tokens.Saml2SecurityToken.ValidTo%2A> プロパティが <xref:System.DateTime.MaxValue> に設定されている場合、この <xref:System.IdentityModel.Tokens.Saml2SecurityToken> セキュリティ トークンに関連付けられている SAML アサーションには、条件は設定されていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

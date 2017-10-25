@@ -1,0 +1,65 @@
+<Type Name="WorkflowApplicationAbortedEventArgs" FullName="System.Activities.WorkflowApplicationAbortedEventArgs">
+  <TypeSignature Language="C#" Value="public class WorkflowApplicationAbortedEventArgs : System.Activities.WorkflowApplicationEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WorkflowApplicationAbortedEventArgs extends System.Activities.WorkflowApplicationEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.WorkflowApplicationAbortedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Activities.WorkflowApplicationEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>中止されたワークフロー インスタンスについてのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Activities.WorkflowApplication> によってホストされているワークフローを中止すると、<xref:System.Activities.WorkflowApplication.Aborted%2A> ハンドラーは呼び出されますが、<xref:System.Activities.WorkflowApplication.Completed%2A> ハンドラーは呼び出されません。  
+  
+   
+  
+## Examples  
+ <xref:System.Activities.WorkflowApplicationAbortedEventArgs> インスタンスの <xref:System.Activities.WorkflowApplication.Aborted%2A> ハンドラーに渡される <xref:System.Activities.WorkflowApplication> を調べ、ワークフローが中止された理由に関する情報を表示するコード サンプルを次に示します。  
+  
+ [!code-csharp[CFX_WorkflowApplicationExample#5](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#5)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Reason">
+      <MemberSignature Language="C#" Value="public Exception Reason { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Exception Reason" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.WorkflowApplicationAbortedEventArgs.Reason" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー インスタンスが中止された理由についての情報を提供する例外を取得します。</summary>
+        <value>ワークフロー インスタンスが中止された理由についての情報を提供する例外。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Activities.WorkflowApplication> によってホストされているワークフローを中止すると、<xref:System.Activities.WorkflowApplication.Aborted%2A> ハンドラーは呼び出されますが、<xref:System.Activities.WorkflowApplication.Completed%2A> ハンドラーは呼び出されません。  
+  
+   
+  
+## Examples  
+ <xref:System.Activities.WorkflowApplicationAbortedEventArgs> インスタンスの <xref:System.Activities.WorkflowApplication.Aborted%2A> ハンドラーに渡される <xref:System.Activities.WorkflowApplication> を調べ、ワークフローが中止された理由に関する情報を表示するコード サンプルを次に示します。  
+  
+ [!code-csharp[CFX_WorkflowApplicationExample#5](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

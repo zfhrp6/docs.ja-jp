@@ -1,0 +1,118 @@
+<Type Name="SoapExtensionReflector" FullName="System.Web.Services.Description.SoapExtensionReflector">
+  <TypeSignature Language="C#" Value="public abstract class SoapExtensionReflector" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit SoapExtensionReflector extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Description.SoapExtensionReflector" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>共通のインターフェイスとクラス SOAP 拡張機能の情報を追加するための機能を提供する<see cref="T:System.Web.Services.Description.ServiceDescription" />メソッドごとにオブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 抽象<xref:System.Web.Services.Description.SoapExtensionReflector>クラスは抽象メソッドを公開<xref:System.Web.Services.Description.SoapExtensionReflector.ReflectMethod%2A>です。 この抽象メソッドにより、派生クラスに配置されているオブジェクトに、Web メソッドを反映したときに、SOAP 拡張機能の説明を追加する、<xref:System.Web.Services.Description.ServiceDescription>オブジェクト。 メソッド自体は、入力ではありません。 説明を生成する指定されたバインディングに属するすべての Web メソッドの追加、<xref:System.Web.Services.Description.ServiceDescription>です。  
+  
+ 使用することができます、<xref:System.Web.Services.Description.ServiceDescription>経由で Web サービス記述言語 (WSDL) ドキュメントを生成する、<xref:System.Web.Services.Description.ServiceDescription.Write%2A>メソッドです。 <xref:System.Web.Services.Description.ServiceDescriptionImporter>クラスと関連するクラスを使用できますも、<xref:System.Web.Services.Description.ServiceDescription>クライアント プロキシを生成するコードまたは abstract のサーバー コード。  
+  
+ 派生するクラスを使用して、<xref:System.Web.Services.Description.SoapExtensionReflector>抽象から派生したクラスと組み合わせてクラス<xref:System.Web.Services.Protocols.SoapExtension>クライアントまたはサービスでメッセージの SOAP の実行時の処理を拡張するクラス。  
+  
+ 指定できます<xref:System.Web.Services.Description.SoapExtensionReflector>経由での構成ファイルで、 [ \<soapExtensionReflectorTypes > 要素](http://msdn.microsoft.com/en-us/6950609a-c9a3-4f6f-a5fc-a05d6d204d5c)要素とその子**追加**要素。 Web サービスに発行する ASP.NET Web アプリケーションに、構成を適用することもできます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected SoapExtensionReflector ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.SoapExtensionReflector.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>インスタンスを初期化、<see cref="T:System.Web.Services.Description.SoapExtensionReflector" />クラス</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReflectDescription">
+      <MemberSignature Language="C#" Value="public virtual void ReflectDescription ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ReflectDescription() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.SoapExtensionReflector.ReflectDescription" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>配置を取得するサービス固有の説明情報を生成、<see cref="T:System.Web.Services.Description.ServiceDescription" />バインディングに対応するオブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReflectionContext">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.ProtocolReflector ReflectionContext { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.ProtocolReflector ReflectionContext" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.SoapExtensionReflector.ReflectionContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.ProtocolReflector</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>抽象から派生したクラスのインスタンス取得または設定<see cref="T:System.Web.Services.Description.ProtocolReflector" />クラスを呼び出す、<see cref="M:System.Web.Services.Description.SoapExtensionReflector.ReflectMethod" />メソッドです。</summary>
+        <value>抽象から派生したクラスのインスタンス<see cref="T:System.Web.Services.Description.ProtocolReflector" />クラスを呼び出す、<see cref="M:System.Web.Services.Description.SoapExtensionReflector.ReflectMethod" />メソッドです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したクラスを実装する場合、 <xref:System.Web.Services.Description.SoapExtensionReflector> `abstract`クラス、する必要はありませんから派生したクラスを実装する<xref:System.Web.Services.Description.ProtocolReflector>を呼び出す、<xref:System.Web.Services.Description.SoapExtensionReflector.ReflectMethod%2A>メソッドを設定するか、<xref:System.Web.Services.Description.SoapExtensionReflector.ReflectionContext%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReflectMethod">
+      <MemberSignature Language="C#" Value="public abstract void ReflectMethod ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ReflectMethod() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.SoapExtensionReflector.ReflectMethod" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see langword="Abstract" />派生クラスは、SOAP 拡張機能の情報を追加するために実装する必要がありますメソッド、<see cref="T:System.Web.Services.Description.ServiceDescription" />メソッドごとにオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Description.SoapExtensionReflector.ReflectMethod%2A>メソッドは、バインディングに属する各 Web メソッドを<xref:System.Web.Services.Description.ServiceDescription>を表します。 <xref:System.Web.Services.Description.SoapExtensionReflector.ReflectMethod%2A>メソッドが、Web メソッドを直接使用できません。 SOAP 拡張機能の詳細については、Web サービス クラスから反映されたバインディング内のすべての Web メソッド用に追加されます。  
+  
+ 実装、<xref:System.Web.Services.Description.SoapExtensionReflector.ReflectMethod%2A>操作バインディングなどの情報を生成できる`abstract`操作、およびメッセージ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

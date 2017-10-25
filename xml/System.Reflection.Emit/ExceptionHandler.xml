@@ -1,0 +1,315 @@
+<Type Name="ExceptionHandler" FullName="System.Reflection.Emit.ExceptionHandler">
+  <TypeSignature Language="C#" Value="public struct ExceptionHandler : IEquatable&lt;System.Reflection.Emit.ExceptionHandler&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit ExceptionHandler extends System.ValueType implements class System.IEquatable`1&lt;valuetype System.Reflection.Emit.ExceptionHandler&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Reflection.Emit.ExceptionHandler" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IEquatable&lt;System.Reflection.Emit.ExceptionHandler&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="M:System.Reflection.Emit.MethodBuilder.SetMethodBody(System.Byte[],System.Int32,System.Byte[],System.Collections.Generic.IEnumerable{System.Reflection.Emit.ExceptionHandler},System.Collections.Generic.IEnumerable{System.Int32})" /> などのメソッドに渡される IL のバイト配列内の例外ハンドラーを表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExceptionHandler (int tryOffset, int tryLength, int filterOffset, int handlerOffset, int handlerLength, System.Reflection.ExceptionHandlingClauseOptions kind, int exceptionTypeToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 tryOffset, int32 tryLength, int32 filterOffset, int32 handlerOffset, int32 handlerLength, valuetype System.Reflection.ExceptionHandlingClauseOptions kind, int32 exceptionTypeToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ExceptionHandler.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Reflection.ExceptionHandlingClauseOptions,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="tryOffset" Type="System.Int32" />
+        <Parameter Name="tryLength" Type="System.Int32" />
+        <Parameter Name="filterOffset" Type="System.Int32" />
+        <Parameter Name="handlerOffset" Type="System.Int32" />
+        <Parameter Name="handlerLength" Type="System.Int32" />
+        <Parameter Name="kind" Type="System.Reflection.ExceptionHandlingClauseOptions" />
+        <Parameter Name="exceptionTypeToken" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="tryOffset">この例外ハンドラーによって保護されている最初の命令のバイト オフセット。</param>
+        <param name="tryLength">この例外ハンドラーによって保護されているバイト数。</param>
+        <param name="filterOffset">フィルターのコードの先頭のバイト オフセット。 フィルターのコードは、ハンドラー ブロックの最初の命令で終了します。 フィルター以外の例外ハンドラーでは、このパラメーターに 0 (ゼロ) を指定します。</param>
+        <param name="handlerOffset">この例外ハンドラーの最初の命令のバイト オフセット。</param>
+        <param name="handlerLength">この例外ハンドラー内のバイト数。</param>
+        <param name="kind">例外ハンドラーの種類を指定する列挙値の 1 つ。</param>
+        <param name="exceptionTypeToken">この例外ハンドラーによって処理される例外の種類のトークンです。 該当しない場合は、0 (ゼロ) を指定します。</param>
+        <summary>指定したパラメーターを使用して、<see cref="T:System.Reflection.Emit.ExceptionHandler" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="tryOffset" />、 <paramref name="filterOffset" />、 <paramref name="handlerOffset" />、 <paramref name="tryLength" />、または<paramref name="handlerLength" />負の値します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ExceptionHandler.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">このインスタンスと比較するオブジェクト。</param>
+        <summary>示すかどうかのこのインスタンスの<see cref="T:System.Reflection.Emit.ExceptionHandler" />オブジェクトが、指定されたオブジェクトと等しい。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="obj" />し、このインスタンスが等しい。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Reflection.Emit.ExceptionHandler other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(valuetype System.Reflection.Emit.ExceptionHandler other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ExceptionHandler.Equals(System.Reflection.Emit.ExceptionHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Reflection.Emit.ExceptionHandler" />
+      </Parameters>
+      <Docs>
+        <param name="other">例外ハンドラーは、このインスタンスと比較するオブジェクト。</param>
+        <summary>示すかどうかのこのインスタンスの<see cref="T:System.Reflection.Emit.ExceptionHandler" />オブジェクトが他と等しい<see cref="T:System.Reflection.Emit.ExceptionHandler" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="other" />し、このインスタンスが等しい。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExceptionTypeToken">
+      <MemberSignature Language="C#" Value="public int ExceptionTypeToken { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ExceptionTypeToken" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.ExceptionHandler.ExceptionTypeToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このハンドラーによって処理された例外の種類のトークンを取得します。</summary>
+        <value>存在しない場合、このハンドラーまたは 0 によって処理される例外の種類のトークンです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterOffset">
+      <MemberSignature Language="C#" Value="public int FilterOffset { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 FilterOffset" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.ExceptionHandler.FilterOffset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>例外ハンドラーのフィルターのコードが開始する位置のオフセットのバイトを取得します。</summary>
+        <value>フィルターのコードを開始する位置のバイト オフセットまたはフィルターが存在しない場合は 0 です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ExceptionHandler.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>既定のハッシュ関数として機能します。</summary>
+        <returns>現在のオブジェクトのハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HandlerLength">
+      <MemberSignature Language="C#" Value="public int HandlerLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 HandlerLength" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.ExceptionHandler.HandlerLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>例外ハンドラーのバイト単位の長さを取得します。</summary>
+        <value>例外ハンドラーの長さ、(バイト単位)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HandlerOffset">
+      <MemberSignature Language="C#" Value="public int HandlerOffset { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 HandlerOffset" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.ExceptionHandler.HandlerOffset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>例外ハンドラーの最初の命令のバイト オフセットを取得します。</summary>
+        <value>例外ハンドラーの最初の命令のバイト オフセット。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Kind">
+      <MemberSignature Language="C#" Value="public System.Reflection.ExceptionHandlingClauseOptions Kind { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Reflection.ExceptionHandlingClauseOptions Kind" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.ExceptionHandler.Kind" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.ExceptionHandlingClauseOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このオブジェクトが表す例外ハンドラーの種類を表す値を取得します。</summary>
+        <value>例外ハンドラーの種類を指定する列挙値の 1 つ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Reflection.Emit.ExceptionHandler left, System.Reflection.Emit.ExceptionHandler right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Reflection.Emit.ExceptionHandler left, valuetype System.Reflection.Emit.ExceptionHandler right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ExceptionHandler.op_Equality(System.Reflection.Emit.ExceptionHandler,System.Reflection.Emit.ExceptionHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Reflection.Emit.ExceptionHandler" />
+        <Parameter Name="right" Type="System.Reflection.Emit.ExceptionHandler" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較する最初のオブジェクト。</param>
+        <param name="right">比較する 2 番目のオブジェクト。</param>
+        <summary><see cref="T:System.Reflection.Emit.ExceptionHandler" /> の 2 つの指定したインスタンスが等しいかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" /> と <paramref name="left" /> が等しい場合は <paramref name="right" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Reflection.Emit.ExceptionHandler left, System.Reflection.Emit.ExceptionHandler right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Reflection.Emit.ExceptionHandler left, valuetype System.Reflection.Emit.ExceptionHandler right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ExceptionHandler.op_Inequality(System.Reflection.Emit.ExceptionHandler,System.Reflection.Emit.ExceptionHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Reflection.Emit.ExceptionHandler" />
+        <Parameter Name="right" Type="System.Reflection.Emit.ExceptionHandler" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較する最初のオブジェクト。</param>
+        <param name="right">比較する 2 番目のオブジェクト。</param>
+        <summary><see cref="T:System.Reflection.Emit.ExceptionHandler" /> の 2 つの指定したインスタンスが等しいかどうかを判断します。</summary>
+        <returns>
+          <paramref name="left" /> と <paramref name="right" /> が等しくない場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryLength">
+      <MemberSignature Language="C#" Value="public int TryLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 TryLength" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.ExceptionHandler.TryLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この例外ハンドラーによって保護されているコードのバイト単位の長さを取得します。</summary>
+        <value>この例外ハンドラーによって保護されているコードの長さ、(バイト単位)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryOffset">
+      <MemberSignature Language="C#" Value="public int TryOffset { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 TryOffset" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.ExceptionHandler.TryOffset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この例外ハンドラーによって保護されているコードが開始する位置のオフセットのバイトを取得します。</summary>
+        <value>この例外ハンドラーによって保護されているコードが始まるバイト オフセット。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

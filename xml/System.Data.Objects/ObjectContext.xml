@@ -1,0 +1,2341 @@
+<Type Name="ObjectContext" FullName="System.Data.Objects.ObjectContext">
+  <TypeSignature Language="C#" Value="public class ObjectContext : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ObjectContext extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Objects.ObjectContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>エンティティ データに対してクエリを実行してそのデータをオブジェクトとして操作するための機能を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Data.Objects.ObjectContext> クラスはスレッド セーフではありません。 内のデータ オブジェクトの整合性、<xref:System.Data.Objects.ObjectContext>マルチ スレッド シナリオでは保証できません。  
+  
+ <xref:System.Data.Objects.ObjectContext>クラスは、概念モデルで定義されているエンティティ型のインスタンスであるオブジェクトとしてデータと対話するための主要なクラスです。 <xref:System.Data.Objects.ObjectContext> クラスのインスタンスでは、次のものがカプセル化されます。  
+  
+-   データベースへの接続 (<xref:System.Data.EntityClient.EntityConnection> オブジェクトの形式)  
+  
+-   モデルを記述するメタデータ (<xref:System.Data.Metadata.Edm.MetadataWorkspace> オブジェクトの形式)。  
+  
+-   キャッシュに保存されているオブジェクトを管理する <xref:System.Data.Objects.ObjectStateManager> オブジェクト  
+  
+ 概念モデルを表すオブジェクト レイヤーが、Entity Data Model ツールによって生成されると、クラスを表す、<xref:System.Data.Metadata.Edm.EntityContainer>モデルから派生したが、<xref:System.Data.Objects.ObjectContext>です。  
+  
+   
+  
+## Examples  
+ この例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 この例では、<xref:System.Data.Objects.ObjectContext> を作成する方法を示します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#ObjectContext](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#objectcontext)]
+ [!code-vb[DP ObjectServices Concepts#ObjectContext](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#objectcontext)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ObjectContext (System.Data.EntityClient.EntityConnection connection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.EntityClient.EntityConnection connection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.#ctor(System.Data.EntityClient.EntityConnection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connection" Type="System.Data.EntityClient.EntityConnection" />
+      </Parameters>
+      <Docs>
+        <param name="connection">モデルおよびデータ ソース接続への参照を含む <see cref="T:System.Data.EntityClient.EntityConnection" />。</param>
+        <summary>指定された接続を使用して、<see cref="T:System.Data.Objects.ObjectContext" /> クラスの新しいインスタンスを初期化します。 構築時に、メタデータ ワークスペースが <see cref="T:System.Data.EntityClient.EntityConnection" /> オブジェクトから抽出されます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="connection" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="connection" /> が無効です。  
+  
+ または  
+  
+ メタデータ ワークスペースが無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ObjectContext (string connectionString);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string connectionString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connectionString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connectionString">メタデータ情報へのアクセスも可能にする接続文字列。</param>
+        <summary>指定された接続文字列および既定のエンティティ コンテナー名を使用して、<see cref="T:System.Data.Objects.ObjectContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `connectionString`概念モデルにアクセスして、データ ソースへの接続に必要な情報を格納する文字列です。 <xref:System.Data.EntityClient.EntityConnectionStringBuilder> クラスを使用すると、文字列の形式を適切に設定できます。  
+  
+ アプリケーションの構成ファイルに格納されている名前付き接続文字列を作成します。 代わりにこの名前付き接続文字列を指定することができます、`connectionString`パラメーターをインスタンス化するときに、<xref:System.Data.Objects.ObjectContext>クラスです。  
+  
+   
+  
+## Examples  
+ このトピックの例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 この例では、<xref:System.Data.Objects.ObjectContext> を作成する方法を示します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#ObjectContext](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#objectcontext)]
+ [!code-vb[DP ObjectServices Concepts#ObjectContext](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#objectcontext)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="connectionString" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="connectionString" /> が無効です。  
+  
+ または  
+  
+ メタデータ ワークスペースが無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ObjectContext (System.Data.EntityClient.EntityConnection connection, string defaultContainerName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Data.EntityClient.EntityConnection connection, string defaultContainerName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.#ctor(System.Data.EntityClient.EntityConnection,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connection" Type="System.Data.EntityClient.EntityConnection" />
+        <Parameter Name="defaultContainerName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connection">モデルおよびデータ ソース接続への参照を含む <see cref="T:System.Data.EntityClient.EntityConnection" />。</param>
+        <param name="defaultContainerName">既定のエンティティ コンテナーの名前。 ときに、 <c>defaultContainerName</c>設定されているプロパティが読み取り専用になりますこのメソッドを使用します。</param>
+        <summary>指定された接続およびエンティティ コンテナー名を使用して、<see cref="T:System.Data.Objects.ObjectContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="connection" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="connection" />、 <paramref name="defaultContainerName" />、またはメタデータ ワークスペースが無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ObjectContext (string connectionString, string defaultContainerName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(string connectionString, string defaultContainerName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connectionString" Type="System.String" />
+        <Parameter Name="defaultContainerName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connectionString">メタデータ情報へのアクセスも可能にする接続文字列。</param>
+        <param name="defaultContainerName">既定のエンティティ コンテナーの名前。 ときに、 <c>defaultContainerName</c>設定されているプロパティが読み取り専用になりますこのメソッドを使用します。</param>
+        <summary>指定された接続文字列およびエンティティ コンテナー名を使用して、<see cref="T:System.Data.Objects.ObjectContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `connectionString`概念モデルにアクセスして、データ ソースへの接続に必要な情報を格納する文字列です。 <xref:System.Data.EntityClient.EntityConnectionStringBuilder> クラスを使用すると、文字列の形式を適切に設定できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="connectionString" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="connectionString" />、 <paramref name="defaultContainerName" />、またはメタデータ ワークスペースが無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AcceptAllChanges">
+      <MemberSignature Language="C#" Value="public void AcceptAllChanges ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AcceptAllChanges() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.AcceptAllChanges" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクト コンテキストでのオブジェクトに対するすべての変更を受け入れます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectStateManager> の関連するすべてのエントリに対する変更を受け入れて、結果の状態が未変更またはデタッチ済みになるようにします。  
+  
+ このメソッドは、<xref:System.Data.Objects.ObjectStateEntry> 内の Added または Modified のすべての <xref:System.Data.Objects.ObjectStateManager> オブジェクトを反復処理し、エントリの状態を Unchanged に設定します。 Deleted の項目はデタッチ済みになります。  
+  
+ 場合、<xref:System.Data.Objects.ObjectContext.SaveChanges%2A>メソッドが呼び出されたと<xref:System.Data.Objects.SaveOptions.AcceptAllChangesAfterSave>が指定されていないユーザーが呼び出す必要があります、<xref:System.Data.Objects.ObjectContext.AcceptAllChanges%2A>メソッドです。 <xref:System.Data.Objects.ObjectContext.AcceptAllChanges%2A> メソッドは、失敗したトランザクションを再試行する場合に役立ちます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddObject">
+      <MemberSignature Language="C#" Value="public void AddObject (string entitySetName, object entity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddObject(string entitySetName, object entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.AddObject(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entitySetName" Type="System.String" />
+        <Parameter Name="entity" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="entitySetName">必要に応じてエンティティ コンテナー名で修飾できるエンティティ セット名を表します。</param>
+        <param name="entity">追加する <see cref="T:System.Object" />。</param>
+        <summary>オブジェクトをオブジェクト コンテキストに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトをオブジェクト コンテキストに追加するには、<xref:System.Data.Objects.ObjectContext.AddObject%2A> で <xref:System.Data.Objects.ObjectContext> を呼び出します。 この方法は、オブジェクトがデータ ソースに存在しない新しいオブジェクトである場合に使用します。 詳細については、次を参照してください。[のアタッチとデタッチ オブジェクト](http://msdn.microsoft.com/en-us/41d5c1ef-1b78-4502-aa10-7e1438d62d23)です。  
+  
+ オブジェクトは、<xref:System.Data.Objects.ObjectStateManager>、<xref:System.Data.EntityState.Detached>、または <xref:System.Data.EntityState.Deleted> 状態の <xref:System.Data.EntityState.Added> に追加されます。  
+  
+ オブジェクト コンテキストで他のオブジェクトに関連する新しいオブジェクトを作成する場合、次のいずれかの方法でオブジェクトを追加します。  
+  
+-   <xref:System.Data.Objects.DataClasses.EntityCollection%601.Add%2A> に対して <xref:System.Data.Objects.DataClasses.EntityCollection%601> メソッドを呼び出し、関連オブジェクトを指定します。 一対多または多対多のリレーションシップに対しては、この方法を使用します。  
+  
+-   <xref:System.Data.Objects.DataClasses.EntityReference%601.Value%2A> の <xref:System.Data.Objects.DataClasses.EntityReference%601> プロパティを関連オブジェクトに設定します。 一対一または多対一のリレーションシップに対しては、この方法を使用します。  
+  
+ 詳細については、次を参照してください。[の作成、追加、変更、およびオブジェクトの削除](http://msdn.microsoft.com/en-us/f76f1fad-c553-4b59-820b-89b3dec2fad1)です。  
+  
+ 必要ないオブジェクトがデタッチ済み状態の場合、<xref:System.Data.EntityKey>です。  
+  
+ 規則、`entitySetName`形式は次のようにします。  
+  
+-   場合、<xref:System.Data.Objects.ObjectContext.DefaultContainerName%2A>プロパティは`null`、`entitySetName`ように完全に修飾するが*\<エンティティ コンテナー名 >*.*\<エンティティ セット名 >*です。  
+  
+-   場合<xref:System.Data.Objects.ObjectContext.DefaultContainerName%2A>は`null`、`entitySetName`かまいません*\<エンティティ コンテナー名 >*.*\<エンティティ セット名 >*または*\<エンティティ セット名 >*です。  
+  
+ 場合、`object`が、<xref:System.Data.EntityKey>と`entitySetName`値を持つ、<xref:System.Data.Metadata.Edm.EntitySet>エンティティのキーに一致する必要があります、<xref:System.Data.Metadata.Edm.EntitySet>に基づいてが見つかりましたを`entitySetName`およびエンティティ コンテナー名。  
+  
+   
+  
+## Examples  
+ この例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 例では、新しい製品を追加し、データベースに変更を保存します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#AddObject](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#addobject)]
+ [!code-vb[DP ObjectServices Concepts#AddObject](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#addobject)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="entity" /> パラメーターが <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="entitySetName" />扱われません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyCurrentValues&lt;TEntity&gt;">
+      <MemberSignature Language="C#" Value="public TEntity ApplyCurrentValues&lt;TEntity&gt; (string entitySetName, TEntity currentEntity) where TEntity : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !!TEntity ApplyCurrentValues&lt;class TEntity&gt;(string entitySetName, !!TEntity currentEntity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.ApplyCurrentValues``1(System.String,``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TEntity</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TEntity">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="entitySetName" Type="System.String" />
+        <Parameter Name="currentEntity" Type="TEntity" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TEntity">オブジェクトのエンティティ型。</typeparam>
+        <param name="entitySetName">オブジェクトが属しているエンティティ セットの名前。</param>
+        <param name="currentEntity">元のオブジェクトに適用するプロパティ更新を含むデタッチしたオブジェクト。 エンティティ キー <c>currentEntity</c>と一致する必要があります、<see cref="P:System.Data.Objects.ObjectStateEntry.EntityKey" />内のエントリのプロパティ、<see cref="T:System.Data.Objects.ObjectContext" />です。</param>
+        <summary>指定されたオブジェクトのスカラー値を、同じキーを持つ <see cref="T:System.Data.Objects.ObjectContext" /> のオブジェクトにコピーします。</summary>
+        <returns>更新されたオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectContext.ApplyCurrentValues%2A>外のオブジェクトに加えられた変更を適用するメソッドが使用される、 <xref:System.Data.Objects.ObjectContext>、Web サービスによって受信されたデタッチ済みのオブジェクトなどです。 メソッドは、スカラー値を指定したオブジェクトから内のオブジェクトにコピー、<xref:System.Data.Objects.ObjectContext>同じキーを持ちます。 使用することができます、<xref:System.Data.EntityKey>のデタッチしたオブジェクトをデータ ソースからこのオブジェクトのインスタンスを取得します。 詳細については、次を参照してください。[する方法: そのキーを使用して特定オブジェクトを返す](http://msdn.microsoft.com/en-us/2e9902af-29b0-4e5d-92db-03dfe6ec49bd)です。 オブジェクトの元の値とは異なる値は、変更済みとしてマークされます。 ただし、メソッドでは、関連オブジェクトには、現在の値は当てはまりません`currentEntity`です。  
+  
+ 現在の値のグラフがあり、元の値を適用する場合は、呼び出す<xref:System.Data.Objects.ObjectContext.ApplyOriginalValues%2A>メソッドです。  
+  
+ 使用することも、<xref:System.Data.Objects.ObjectSet%601.ApplyCurrentValues%2A>の<xref:System.Data.Objects.ObjectSet%601>または<xref:System.Data.Objects.ObjectStateEntry.ApplyCurrentValues%2A>のメソッド、<xref:System.Data.Objects.ObjectStateEntry>です。 詳細については、次を参照してください。 [N 層アプリケーションの構築](http://msdn.microsoft.com/en-us/9439d2ba-6b5f-44e8-be65-8a442d922cbb)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="entitySetName" /> または <paramref name="current" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Data.Metadata.Edm.EntitySet" />から<paramref name="entitySetName" />と一致しません、<see cref="T:System.Data.Metadata.Edm.EntitySet" />オブジェクトの<see cref="T:System.Data.EntityKey" />します。  
+  
+ または  
+  
+ オブジェクトに含まれていない、<see cref="T:System.Data.Objects.ObjectStateManager" />かでは、<see cref="F:System.Data.EntityState.Detached" />状態です。  
+  
+ または  
+  
+ 指定したオブジェクトのエンティティ キーが正しくありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="entitySetName" /> が空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyOriginalValues&lt;TEntity&gt;">
+      <MemberSignature Language="C#" Value="public TEntity ApplyOriginalValues&lt;TEntity&gt; (string entitySetName, TEntity originalEntity) where TEntity : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !!TEntity ApplyOriginalValues&lt;class TEntity&gt;(string entitySetName, !!TEntity originalEntity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.ApplyOriginalValues``1(System.String,``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TEntity</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TEntity">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="entitySetName" Type="System.String" />
+        <Parameter Name="originalEntity" Type="TEntity" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TEntity">エンティティ オブジェクトの型。</typeparam>
+        <param name="entitySetName">オブジェクトが属しているエンティティ セットの名前。</param>
+        <param name="originalEntity">オブジェクトに適用する元の値を含むデタッチしたオブジェクト。 エンティティ キー <c>originalEntity</c>と一致する必要があります、<see cref="P:System.Data.Objects.ObjectStateEntry.EntityKey" />内のエントリのプロパティ、<see cref="T:System.Data.Objects.ObjectContext" />です。</param>
+        <summary>指定されたオブジェクトのスカラー値を、同じキーを持つ <see cref="T:System.Data.Objects.ObjectContext" /> のオブジェクトの一連の元の値にコピーします。</summary>
+        <returns>更新されたオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectContext.ApplyOriginalValues%2A>外のオブジェクトに加えられた変更を適用するメソッドが使用される、 <xref:System.Data.Objects.ObjectContext>、Web サービスによって受信されたデタッチ済みのオブジェクトなどです。 メソッドは、スカラー値を指定したオブジェクトから内のオブジェクトにコピー、<xref:System.Data.Objects.ObjectContext>同じキーを持ちます。 使用することができます、<xref:System.Data.EntityKey>のデタッチしたオブジェクトをデータ ソースからこのオブジェクトのインスタンスを取得します。 詳細については、次を参照してください。[する方法: そのキーを使用して特定オブジェクトを返す](http://msdn.microsoft.com/en-us/2e9902af-29b0-4e5d-92db-03dfe6ec49bd)です。 オブジェクトの現在の値とは異なる値は、変更済みとしてマークされます。 ただし、メソッドでは、関連オブジェクトには、現在の値は当てはまりません`originalEntity`です。  
+  
+ 元の値のグラフがあり、現在の値を適用する場合は、呼び出す<xref:System.Data.Objects.ObjectContext.ApplyCurrentValues%2A>メソッドです。  
+  
+ 使用することも、<xref:System.Data.Objects.ObjectSet%601.ApplyOriginalValues%2A>の<xref:System.Data.Objects.ObjectSet%601>または<xref:System.Data.Objects.ObjectStateEntry.ApplyOriginalValues%2A>のメソッド、<xref:System.Data.Objects.ObjectStateEntry>です。 詳細については、次を参照してください。 [N 層アプリケーションの構築](http://msdn.microsoft.com/en-us/9439d2ba-6b5f-44e8-be65-8a442d922cbb)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="entitySetName" /> または <paramref name="original" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Data.Metadata.Edm.EntitySet" />から<paramref name="entitySetName" />と一致しません、<see cref="T:System.Data.Metadata.Edm.EntitySet" />オブジェクトの<see cref="T:System.Data.EntityKey" />します。  
+  
+ または  
+  
+ <see cref="T:System.Data.Objects.ObjectStateEntry" />用に、オブジェクトが見つかりません、<see cref="T:System.Data.Objects.ObjectStateManager" />です。 または  
+  
+ オブジェクトは、<see cref="F:System.Data.EntityState.Added" />または<see cref="F:System.Data.EntityState.Detached" />状態です。  
+  
+ または  
+  
+ 指定したオブジェクトのエンティティ キーは正しくないか、プロパティの変更します。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="entitySetName" /> が空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyPropertyChanges">
+      <MemberSignature Language="C#" Value="public void ApplyPropertyChanges (string entitySetName, object changed);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ApplyPropertyChanges(string entitySetName, object changed) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.ApplyPropertyChanges(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use ApplyCurrentValues instead")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entitySetName" Type="System.String" />
+        <Parameter Name="changed" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="entitySetName">オブジェクトが属しているエンティティ セットの名前。</param>
+        <param name="changed">元のオブジェクトに適用するプロパティ更新を含むデタッチしたオブジェクト。</param>
+        <summary>デタッチしたオブジェクトのプロパティの変更を、オブジェクト コンテキストに既にアタッチされているオブジェクトに適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectContext.ApplyCurrentValues%2A> メソッドは、変更されたデタッチ済みバージョンのオブジェクトのプロパティの変更を、<xref:System.Data.Objects.ObjectContext> にアタッチされている元のバージョンに適用するために使用されます。 これにより、Web サービスで、エンティティ オブジェクトをデタッチして、プロパティ更新が行われるリモート アプリケーションに送信するといったシナリオがサポートされます。 このメソッドを使用すると、より簡単に変更内容を元のオブジェクトに適用し直すことができます。  
+  
+ <xref:System.Data.Objects.ObjectContext.ApplyCurrentValues%2A> の呼び出し後、オブジェクトの状態は <xref:System.Data.EntityState.Modified> になります。 <xref:System.Data.Objects.ObjectContext.SaveChanges%2A> メソッドを呼び出してデータ ソースを更新する必要があります。  
+  
+ 元のオブジェクトは <xref:System.Data.Objects.ObjectStateManager> に存在する必要があり、状態が <xref:System.Data.EntityState.Modified> または <xref:System.Data.EntityState.Unchanged> である必要があります。 変更されたプロパティがある場合にのみ、元のオブジェクトが変更、`changed`オブジェクト。  
+  
+ 指定されたオブジェクトの <xref:System.Data.Objects.DataClasses.EntityObject.EntityKey%2A> プロパティは、有効な <xref:System.Data.EntityKey> に設定する必要があります。  
+  
+ <xref:System.Data.Objects.ObjectContext.ApplyCurrentValues%2A> は、ナビゲーション プロパティまたは関連オブジェクトには影響しません。  
+  
+ <xref:System.Data.Objects.ObjectContext.ApplyCurrentValues%2A> では、特定の型のエンティティ メタデータに存在するプロパティのみが設定されます。 たとえば、部分クラスに追加されているプロパティは、<xref:System.Data.Objects.ObjectContext.ApplyCurrentValues%2A> 操作の対象にはなりません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">ときに<paramref name="entitySetName" />は<see langword="null" />または空の文字列。  
+  
+ または  
+  
+ ときに<paramref name="changed" />は<see langword="null" />します。</exception>
+        <exception cref="T:System.InvalidOperationException">ときに、<see cref="T:System.Data.Metadata.Edm.EntitySet" />から<paramref name="entitySetName" />と一致しません、<see cref="T:System.Data.Metadata.Edm.EntitySet" />オブジェクトの<see cref="T:System.Data.EntityKey" />します。  
+  
+ または  
+  
+ エンティティの状態が <see cref="F:System.Data.EntityState.Modified" /> または <see cref="F:System.Data.EntityState.Unchanged" /> 以外の場合。  
+  
+ または  
+  
+ 元のオブジェクトがコンテキストにアタッチされていません。</exception>
+        <exception cref="T:System.ArgumentException">場合の種類、<paramref name="changed" />オブジェクトは、元のオブジェクトと同じ型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Attach">
+      <MemberSignature Language="C#" Value="public void Attach (System.Data.Objects.DataClasses.IEntityWithKey entity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Attach(class System.Data.Objects.DataClasses.IEntityWithKey entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.Attach(System.Data.Objects.DataClasses.IEntityWithKey)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Data.Objects.DataClasses.IEntityWithKey" />
+      </Parameters>
+      <Docs>
+        <param name="entity">アタッチするオブジェクト。</param>
+        <summary>オブジェクトがエンティティ キーを持つ場合にオブジェクトまたはオブジェクト グラフをオブジェクト コンテキストにアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトをオブジェクト コンテキストにアタッチするには、<xref:System.Data.Objects.ObjectContext.Attach%2A> で <xref:System.Data.Objects.ObjectContext> を呼び出します。 この方法は、オブジェクトが既にデータ ソースに存在するが、現在コンテキストにアタッチされていない場合に使用します。 詳細については、次を参照してください。[オブジェクトのカスタマイズ](http://msdn.microsoft.com/en-us/af6f07ce-2261-4c65-87cf-d018ad082921)です。  
+  
+ <xref:System.Data.Objects.ObjectContext.Attach%2A> は、オブジェクトまたはオブジェクト グラフのトップ レベル オブジェクトをアタッチするために使用されます。  
+  
+ アタッチされるオブジェクトは、<xref:System.Data.Objects.DataClasses.IEntityWithKey> を実装して <xref:System.Data.EntityKey> を公開する必要があります。 生成されたエンティティ クラスは、すべて <xref:System.Data.Objects.DataClasses.IEntityWithKey> を実装しています。  
+  
+ 関連するオブジェクトをアタッチする際にも呼び出す必要があります`Attach`上、<xref:System.Data.Objects.DataClasses.EntityReference%601>または<xref:System.Data.Objects.DataClasses.EntityCollection%601>リレーションシップを定義します。  
+  
+ このメソッドは、<xref:System.Data.Objects.ObjectContext.AttachTo%2A> メソッドを呼び出します。  
+  
+ オブジェクトをアタッチする際は、次の点に注意してください。  
+  
+-   アタッチされるオブジェクトに関連オブジェクトがある場合、それらの関連オブジェクトもオブジェクト コンテキストにアタッチされます。  
+  
+-   オブジェクトは未変更状態でオブジェクト コンテキストに追加されます。  
+  
+-   <xref:System.Data.Objects.ObjectContext.Attach%2A> メソッドに渡されるオブジェクトには、有効な <xref:System.Data.Objects.DataClasses.EntityObject.EntityKey%2A> 値が必要です。 オブジェクトに有効な <xref:System.Data.Objects.DataClasses.EntityObject.EntityKey%2A> 値がない場合は、<xref:System.Data.Objects.ObjectContext.AttachTo%2A> メソッドを使用してエンティティ セットの名前を指定します。  
+  
+   
+  
+## Examples  
+ このトピックの例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 この例では、2 つのオブジェクトをアタッチしてリレーションシップを定義します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#AttachRelatedObjects](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#attachrelatedobjects)]
+ [!code-vb[DP ObjectServices Concepts#AttachRelatedObjects](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#attachrelatedobjects)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="entity" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">エンティティ キーが無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AttachTo">
+      <MemberSignature Language="C#" Value="public void AttachTo (string entitySetName, object entity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AttachTo(string entitySetName, object entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.AttachTo(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entitySetName" Type="System.String" />
+        <Parameter Name="entity" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="entitySetName">必要に応じてエンティティ コンテナー名で修飾できるエンティティ セット名を表します。</param>
+        <param name="entity">アタッチする <see cref="T:System.Object" />。</param>
+        <summary>オブジェクトまたはオブジェクト グラフをオブジェクト コンテキストの特定のエンティティ セットにアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す<xref:System.Data.Objects.ObjectContext.AttachTo%2A>上、<xref:System.Data.Objects.ObjectContext>特定のエンティティ セット、オブジェクト コンテキスト内にオブジェクトをアタッチする場合や、オブジェクトがある、 `null` (`Nothing` Visual Basic で)<xref:System.Data.EntityKey>値。 詳細については、次を参照してください。[のアタッチとデタッチ オブジェクト](http://msdn.microsoft.com/en-us/41d5c1ef-1b78-4502-aa10-7e1438d62d23)です。  
+  
+ アタッチされるオブジェクトには、単一のオブジェクトまたはグラフの一部を指定できます。  
+  
+ 規則、`entitySetName`形式は次のようにします。  
+  
+-   場合、<xref:System.Data.Objects.ObjectContext.DefaultContainerName%2A>プロパティは`null`、`entitySetName`ように完全に修飾するが*\<エンティティ コンテナー名 >*.*\<エンティティ セット名 >*です。  
+  
+-   場合、<xref:System.Data.Objects.ObjectContext.DefaultContainerName%2A>は`null`、`entitySetName`かまいません*\<エンティティ コンテナー名 >*.*\<エンティティ セット名 >*または*\<エンティティ セット名 >*です。  
+  
+ アタッチされるオブジェクトには、<xref:System.Data.EntityKey> が関連付けられている必要はありません。 かどうか、オブジェクトにないエンティティ キー、`entitySetName`空の文字列にすることはできません。  
+  
+ アタッチされるオブジェクトがある場合、<xref:System.Data.EntityKey>と`entitySetName`値を持つ、<xref:System.Data.Metadata.Edm.EntitySet>エンティティのキーに一致する必要があります、<xref:System.Data.Metadata.Edm.EntitySet>に基づいてが見つかりましたを`entitySetName`およびエンティティ コンテナー名。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="entity" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">エンティティ セットが無効です。  
+  
+ または  
+  
+ オブジェクトのキーが一時キーです。  
+  
+ または  
+  
+ オブジェクトが <see cref="T:System.Data.EntityKey" /> を持ち、<see cref="T:System.Data.Metadata.Edm.EntitySet" /> が、メソッドの引数として渡されたエンティティ セットと一致しません。  
+  
+ または  
+  
+ オブジェクトが <see cref="T:System.Data.EntityKey" /> を持たず、エンティティ セットが指定されていません。  
+  
+ または  
+  
+ オブジェクト グラフのオブジェクトの <see cref="T:System.Data.EntityKey" /> が一時キーです。  
+  
+ または  
+  
+ オブジェクト グラフのオブジェクトの <see cref="T:System.Data.EntityKey" /> が無効です (キーの値がオブジェクトの値と一致しないなど)。  
+  
+ または  
+  
+ エンティティ セットが見つかりませんでした、指定された<paramref name="entitySetName" />名およびエンティティ コンテナー名。  
+  
+ または  
+  
+ オブジェクト グラフのオブジェクトが別の状態マネージャーに既に存在します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandTimeout">
+      <MemberSignature Language="C#" Value="public Nullable&lt;int&gt; CommandTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;int32&gt; CommandTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.ObjectContext.CommandTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのオブジェクト コンテキスト操作のタイムアウト値の秒数を取得または設定します。 A<see langword="null" />値では、基になるプロバイダーの既定値が使用されることを示します。</summary>
+        <value>タイムアウト値の秒数を表す <see cref="T:System.Int32" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクト クエリおよび <xref:System.Data.Objects.ObjectContext.SaveChanges%2A> 操作の既定のタイムアウトは、基になる接続プロバイダーによって定義されます。 しかし、次の例に示すように、この既定のタイムアウト値は、<xref:System.Data.Objects.ObjectContext.CommandTimeout%2A> の <xref:System.Data.Objects.ObjectContext> プロパティを使用してオーバーライドできます。  
+  
+ [!code-csharp[DP ObjectServices Concepts#QueryTimeout](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#querytimeout)]
+ [!code-vb[DP ObjectServices Concepts#QueryTimeout](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#querytimeout)]  
+  
+ この処理は、複雑なクエリがある場合や、<xref:System.Data.Objects.ObjectContext.SaveChanges%2A> に対するクエリまたは呼び出しでその他のパフォーマンスの問題によってタイムアウトが頻繁に発生する場合に行います。  
+  
+   
+  
+## Examples  
+ [オブジェクト クエリ](http://msdn.microsoft.com/en-us/0768033c-876f-471d-85d5-264884349276)  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">タイムアウト値が 0 より小さい値です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Connection">
+      <MemberSignature Language="C#" Value="public System.Data.Common.DbConnection Connection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Common.DbConnection Connection" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.ObjectContext.Connection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbConnection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクト コンテキストで使用される接続を取得します。</summary>
+        <value>接続を表す <see cref="T:System.Data.Common.DbConnection" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、コンストラクターに渡された接続オブジェクトまたは構築時に作成された接続オブジェクトを返します。 接続の所有権は、使用されるコンストラクターによって決まります。  
+  
+   
+  
+## Examples  
+ この例では、実行時間の長い <xref:System.Data.EntityClient.EntityConnection> のコンストラクターに渡す <xref:System.Data.Objects.ObjectContext> オブジェクトを作成します。 接続は手動で開きます。 <xref:System.Data.EntityClient.EntityConnection> オブジェクトと <xref:System.Data.Objects.ObjectContext> オブジェクトは、どちらも手動で破棄します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#OpenEntityConnection](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#openentityconnection)]
+ [!code-vb[DP ObjectServices Concepts#OpenEntityConnection](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#openentityconnection)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">ときに、<see cref="T:System.Data.Objects.ObjectContext" />インスタンスは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextOptions">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectContextOptions ContextOptions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Objects.ObjectContextOptions ContextOptions" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.ObjectContext.ContextOptions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.ObjectContextOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Data.Objects.ObjectContextOptions" />の動作に影響するオプションを格納しているインスタンス、<see cref="T:System.Data.Objects.ObjectContext" />です。</summary>
+        <value><see cref="T:System.Data.Objects.ObjectContextOptions" />の動作に影響するオプションを格納しているインスタンス、<see cref="T:System.Data.Objects.ObjectContext" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDatabase">
+      <MemberSignature Language="C#" Value="public void CreateDatabase ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CreateDatabase() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.CreateDatabase" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のデータ ソース接続と内のメタデータを使用して、データベースを作成、<see cref="T:System.Data.Metadata.Edm.StoreItemCollection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す<xref:System.Data.Objects.ObjectContext.CreateDatabaseScript%2A>データ定義言語 (DDL) のスクリプトを表示します。 呼び出す<xref:System.Data.Objects.ObjectContext.CreateDatabase%2A>スクリプトを実行します。  
+  
+ ほとんどの作業を委任、<xref:System.Data.Common.DbProviderServices.CreateDatabase%2A>メソッドです。  
+  
+ 詳細については、次を参照してください。[データ定義言語の操作](~/docs/framework/data/adonet/ef/working-with-data-definition-language.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDatabaseScript">
+      <MemberSignature Language="C#" Value="public string CreateDatabaseScript ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string CreateDatabaseScript() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.CreateDatabaseScript" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>内のメタデータのスキーマ オブジェクト (テーブル、主キー、外部キー) を作成するデータ定義言語 (DDL) のスクリプトを生成、<see cref="T:System.Data.Metadata.Edm.StoreItemCollection" />です。 <see cref="T:System.Data.Metadata.Edm.StoreItemCollection" /> は、ストア スキーマ定義言語 (SSDL) ファイルからメタデータを読み込みます。</summary>
+        <returns>内のメタデータのスキーマ オブジェクトを作成する DDL スクリプト、<see cref="T:System.Data.Metadata.Edm.StoreItemCollection" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す<xref:System.Data.Objects.ObjectContext.CreateDatabaseScript%2A>DDL スクリプトを表示します。 呼び出す<xref:System.Data.Objects.ObjectContext.CreateDatabase%2A>スクリプトを実行します。  
+  
+ ほとんどの作業を委任、<xref:System.Data.Common.DbProviderServices.CreateDatabase%2A>メソッドです。  
+  
+ 詳細については、次を参照してください。[データ定義言語の操作](~/docs/framework/data/adonet/ef/working-with-data-definition-language.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateEntityKey">
+      <MemberSignature Language="C#" Value="public System.Data.EntityKey CreateEntityKey (string entitySetName, object entity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.EntityKey CreateEntityKey(string entitySetName, object entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.CreateEntityKey(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.EntityKey</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entitySetName" Type="System.String" />
+        <Parameter Name="entity" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="entitySetName">エンティティ オブジェクトが属しているエンティティ セットの完全修飾名。</param>
+        <param name="entity">エンティティ キーを取得するオブジェクト。</param>
+        <summary>特定のオブジェクトのエンティティ キーを作成するか、エンティティ キーが既に存在する場合はそのエンティティ キーを返します。</summary>
+        <returns>オブジェクトの <see cref="T:System.Data.EntityKey" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Data.EntityKey>の存在しません、 `entity`、<xref:System.Data.Objects.ObjectContext.CreateEntityKey%2A>メソッドは、その新しいキーを作成します。  
+  
+ このメソッドは、同じ <xref:System.Data.EntityKey> を持つオブジェクトが既に <xref:System.Data.Objects.ObjectContext> にアタッチされているかどうかを確認するために使用されます。 同じ <xref:System.Data.EntityKey> を持つオブジェクトが既にアタッチされている場合は、例外が発生します。 <xref:System.Data.Objects.ObjectContext.CreateEntityKey%2A> メソッドを使用して、デタッチしたオブジェクトの <xref:System.Data.EntityKey> を取得してから、<xref:System.Data.Objects.ObjectContext.Attach%2A> メソッドを呼び出してください。  
+  
+   
+  
+## Examples  
+ このトピックの例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 この例では、<xref:System.Data.Objects.ObjectContext.CreateEntityKey%2A> を使用して既存のオブジェクトのエンティティ キーを取得します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#ApplyItemUpdatesGetObject](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#applyitemupdatesgetobject)]
+ [!code-vb[DP ObjectServices Concepts#ApplyItemUpdatesGetObject](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#applyitemupdatesgetobject)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">いずれかのパラメーターの場合は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="entitySetName" /> が空の場合。  
+  
+ または  
+  
+ 場合の種類、<paramref name="entity" />オブジェクトがエンティティ セットに存在しません。  
+  
+ または  
+  
+ ときに、<paramref name="entitySetName" />が完全に修飾されていません。</exception>
+        <exception cref="T:System.InvalidOperationException">指定されたパラメーターに基づいてエンティティ キーを正常に作成できない場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateObject&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public T CreateObject&lt;T&gt; () where T : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !!T CreateObject&lt;class T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.CreateObject``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">返されるオブジェクトの型。</typeparam>
+        <summary>作成し、要求された型のインスタンスを返します。</summary>
+        <returns>要求された型のインスタンス<paramref name="T" />、またはを有効にする派生型のインスタンス<paramref name="T" />Entity Framework で使用します。 返されるオブジェクトは、要求された型のインスタンスまたはにより、Entity Framework で使用する要求された型の派生型のインスタンスのいずれか。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectContext.CreateObject%2A>メソッドは、Entity Framework によって、返されたオブジェクトを正しく管理できることを確認する POCO カスタム データ クラスを使用します。 詳細については、次を参照してください。 [POCO プロキシの作成のため要件](http://msdn.microsoft.com/en-us/dcdbf982-9b9d-4582-806a-64de4a1c03c8)と[POCO エンティティの操作](http://msdn.microsoft.com/en-us/5e0fb82a-b6d1-41a1-b37b-c12db61629d3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateObjectSet&lt;TEntity&gt;">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectSet&lt;TEntity&gt; CreateObjectSet&lt;TEntity&gt; () where TEntity : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectSet`1&lt;!!TEntity&gt; CreateObjectSet&lt;class TEntity&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.CreateObjectSet``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.ObjectSet&lt;TEntity&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TEntity">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="TEntity">要求されたエンティティ型<see cref="T:System.Data.Objects.ObjectSet`1" />です。</typeparam>
+        <summary>新たに作成<see cref="T:System.Data.Objects.ObjectSet`1" />インスタンス クエリ、追加、変更、および指定されたエンティティ型のオブジェクトを削除するために使用します。</summary>
+        <returns>新しい <see cref="T:System.Data.Objects.ObjectSet`1" /> インスタンス。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Data.Objects.ObjectContext.DefaultContainerName" />プロパティに設定されていない、<see cref="T:System.Data.Objects.ObjectContext" />です。  
+  
+ または  
+  
+ 指定された型は、1 つ以上のエンティティ セットに属しています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateObjectSet&lt;TEntity&gt;">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectSet&lt;TEntity&gt; CreateObjectSet&lt;TEntity&gt; (string entitySetName) where TEntity : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectSet`1&lt;!!TEntity&gt; CreateObjectSet&lt;class TEntity&gt;(string entitySetName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.CreateObjectSet``1(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.ObjectSet&lt;TEntity&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TEntity">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="entitySetName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TEntity">要求されたエンティティ型<see cref="T:System.Data.Objects.ObjectSet`1" />です。</typeparam>
+        <param name="entitySetName">返されたのエンティティ セットの名前<see cref="T:System.Data.Objects.ObjectSet`1" />です。 文字列は場合、既定のコンテナー名で修飾する必要があります、<see cref="P:System.Data.Objects.ObjectContext.DefaultContainerName" />プロパティに設定されていない、<see cref="T:System.Data.Objects.ObjectContext" />です。</param>
+        <summary>新たに作成<see cref="T:System.Data.Objects.ObjectSet`1" />インスタンス クエリ、追加、変更、および指定した型のオブジェクトを削除および指定されたエンティティに名前を設定するために使用します。</summary>
+        <returns>新しい <see cref="T:System.Data.Objects.ObjectSet`1" /> インスタンス。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Data.Metadata.Edm.EntitySet" />から<paramref name="entitySetName" />と一致しません、<see cref="T:System.Data.Metadata.Edm.EntitySet" />オブジェクトの<see cref="T:System.Data.EntityKey" />します。  
+  
+ または  
+  
+ <see cref="P:System.Data.Objects.ObjectContext.DefaultContainerName" />プロパティに設定されていない、<see cref="T:System.Data.Objects.ObjectContext" />の一部として名前が修飾されていないと、<paramref name="entitySetName" />パラメーター。  
+  
+ または  
+  
+ 指定された型は、1 つ以上のエンティティ セットに属しています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateProxyTypes">
+      <MemberSignature Language="C#" Value="public void CreateProxyTypes (System.Collections.Generic.IEnumerable&lt;Type&gt; types);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CreateProxyTypes(class System.Collections.Generic.IEnumerable`1&lt;class System.Type&gt; types) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.CreateProxyTypes(System.Collections.Generic.IEnumerable{System.Type})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="types" Type="System.Collections.Generic.IEnumerable&lt;System.Type&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="types">列挙体<see cref="T:System.Type" />概念モデルにマップするカスタム データ クラスを表すオブジェクト。</param>
+        <summary>指定した列挙体の種類ごとに、Entity Framework で使用できる同等の型を生成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 個々 の種類と、`types`概念モデルのエンティティ型にマップされていない列挙型は無視されます。  
+  
+ 詳細については、次を参照してください。 [POCO プロキシの作成のため要件](http://msdn.microsoft.com/en-us/dcdbf982-9b9d-4582-806a-64de4a1c03c8)と[POCO エンティティの操作](http://msdn.microsoft.com/en-us/5e0fb82a-b6d1-41a1-b37b-c12db61629d3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateQuery&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectQuery&lt;T&gt; CreateQuery&lt;T&gt; (string queryString, params System.Data.Objects.ObjectParameter[] parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectQuery`1&lt;!!T&gt; CreateQuery&lt;T&gt;(string queryString, class System.Data.Objects.ObjectParameter[] parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.CreateQuery``1(System.String,System.Data.Objects.ObjectParameter[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.ObjectQuery&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="queryString" Type="System.String" />
+        <Parameter Name="parameters" Type="System.Data.Objects.ObjectParameter[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <typeparam name="T">返された <see cref="T:System.Data.Objects.ObjectQuery`1" /> のエンティティ型。</typeparam>
+        <param name="queryString">実行するクエリ文字列。</param>
+        <param name="parameters">クエリに渡すパラメーター。</param>
+        <summary>指定されたクエリ文字列を使用して、現在のオブジェクト コンテキストで <see cref="T:System.Data.Objects.ObjectQuery`1" /> を作成します。</summary>
+        <returns>指定された型の <see cref="T:System.Data.Objects.ObjectQuery`1" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のオブジェクト コンテキストに属する指定された型の <xref:System.Data.Objects.ObjectContext.CreateQuery%2A> を作成するには、<xref:System.Data.Objects.ObjectQuery%601> を使用します。  
+  
+   
+  
+## Examples  
+ この例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。  
+  
+ この例では、簡単なクエリを作成して結果のコレクションを反復処理します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#CreateQuery](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#createquery)]
+ [!code-vb[DP ObjectServices Concepts#CreateQuery](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#createquery)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="queryString" /> パラメーターまたは <paramref name="parameters" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DatabaseExists">
+      <MemberSignature Language="C#" Value="public bool DatabaseExists ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool DatabaseExists() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.DatabaseExists" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ ソースの現在のデータ ソース接続のデータベースとして指定されているデータベースが存在するかどうかを確認します。</summary>
+        <returns>
+          <see langword="true" />場合は、データベースが存在します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ほとんどの作業を委任、<xref:System.Data.Common.DbProviderServices.DatabaseExists%2A>メソッドです。  
+  
+ 詳細については、次を参照してください。[データ定義言語の操作](~/docs/framework/data/adonet/ef/working-with-data-definition-language.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultContainerName">
+      <MemberSignature Language="C#" Value="public string DefaultContainerName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultContainerName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.ObjectContext.DefaultContainerName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定のコンテナー名を取得または設定します。</summary>
+        <value>既定のコンテナー名を表す <see cref="T:System.String" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectContext.DefaultContainerName%2A>返さない`null`; されたセットまたは空の文字列値が返されます。 ユーザーがこのプロパティを設定できます`null`、内部的に名前が空の文字列に設定されるので、ユーザーが、両方の空の文字列を確認する必要はありませんが、および`null`です。  
+  
+ 既定のコンテナー名は、コンストラクターの一部としても定義されます。 プロテクト コンストラクターで既定のコンテナー名を設定すると、プロパティが読み取り専用になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteDatabase">
+      <MemberSignature Language="C#" Value="public void DeleteDatabase ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DeleteDatabase() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.DeleteDatabase" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のデータ ソース接続のデータベースとして指定されているデータベースを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ほとんどの作業を委任、<xref:System.Data.Common.DbProviderServices.DeleteDatabase%2A>メソッドです。  
+  
+ 詳細については、次を参照してください。[データ定義言語の操作](~/docs/framework/data/adonet/ef/working-with-data-definition-language.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteObject">
+      <MemberSignature Language="C#" Value="public void DeleteObject (object entity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DeleteObject(object entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.DeleteObject(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="entity">削除するエンティティを示すオブジェクト。 オブジェクトの状態は、<see cref="F:System.Data.EntityState.Detached" /> 以外であればどの状態でもかまいません。</param>
+        <summary>オブジェクトを削除の対象としてマークします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトを <xref:System.Data.Objects.ObjectStateManager> から削除する対象としてマークします。 このオブジェクトは、<xref:System.Data.Objects.ObjectContext.SaveChanges%2A> メソッドが呼び出されると、データ ソースから削除されます。  
+  
+ 親オブジェクトを削除すると、制約のリレーションシップが設定された子オブジェクトもすべて削除されます。 この結果は、リレーションシップに対するアソシエーションの `CascadeDelete` プロパティを有効にすることと同じです。  
+  
+ <xref:System.Data.Objects.ObjectContext.DeleteObject%2A>メソッドは、既に削除されたオブジェクトで呼び出すことができます。  
+  
+   
+  
+## Examples  
+ これらの例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。  
+  
+ この例の構築、<xref:System.Data.EntityKey>特定の ProductID と Product オブジェクトをデータ ソースから取得するキーを使用しての製品を削除、およびデータベースに変更を保存します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#DeleteObject](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#deleteobject)]
+ [!code-vb[DP ObjectServices Concepts#DeleteObject](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#deleteobject)]  
+  
+ この例は、既存の項目の順序を削除、新しい項目を追加し、データベースに変更を保存します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#SaveChanges](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#savechanges)]
+ [!code-vb[DP ObjectServices Concepts#SaveChanges](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#savechanges)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="entity" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="entity" /> は存在しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Detach">
+      <MemberSignature Language="C#" Value="public void Detach (object entity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Detach(object entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.Detach(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="entity">デタッチするオブジェクト。 のみ、<c>エンティティ</c>が削除された同じによって追跡されている関連オブジェクトがある場合<see cref="T:System.Data.Objects.ObjectStateManager" />、自動的にデタッチいないはものです。</param>
+        <summary>オブジェクトをオブジェクト コンテキストから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトを <xref:System.Data.Objects.ObjectStateManager> から削除します。 削除すると、そのオブジェクトの変更の追跡および ID 解決が無効になります。 詳細については、次を参照してください。[のアタッチとデタッチ オブジェクト](http://msdn.microsoft.com/en-us/41d5c1ef-1b78-4502-aa10-7e1438d62d23)です。  
+  
+ <xref:System.Data.Objects.ObjectContext.Detach%2A> メソッドが呼び出されると、このオブジェクトを指す参照がシステムで保持されなくなり、ガベージ コレクターでオブジェクトを収集できるようになります。  
+  
+> [!NOTE]
+>  ガベージ コレクションは、ユーザー コードに、デタッチしたオブジェクトへの参照がない場合にのみ発生します。  
+  
+ オブジェクトをデタッチする際は、次の点に注意してください。  
+  
+-   <xref:System.Data.Objects.ObjectContext.Detach%2A> は、メソッドに渡される特定のオブジェクトにのみ影響します。 オブジェクト コンテキスト内で、デタッチされるオブジェクトに関連オブジェクトがある場合、それらの関連オブジェクトはデタッチされません。  
+  
+-   オブジェクトのデタッチは、データ ソース内のデータには影響しません。  
+  
+-   連鎖削除ディレクティブおよび参照に関する制約は、デタッチ操作中には適用されません。  
+  
+ 詳細については、次を参照してください。[のアタッチとデタッチ オブジェクト](http://msdn.microsoft.com/en-us/41d5c1ef-1b78-4502-aa10-7e1438d62d23)です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[DP ObjectServices Concepts#DetachObjects](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#detachobjects)]
+ [!code-vb[DP ObjectServices Concepts#DetachObjects](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#detachobjects)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="entity" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="entity" />これに関連付けられていない<see cref="T:System.Data.Objects.ObjectContext" />(たとえば、新しく作成および not まだ、任意のコンテキストに関連付けられているまたはその他のいくつかのコンテキストを取得したまたはデタッチが既に)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DetectChanges">
+      <MemberSignature Language="C#" Value="public void DetectChanges ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DetectChanges() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.DetectChanges" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>確実に<see cref="T:System.Data.Objects.ObjectStateEntry" />変更によって追跡されているすべてのオブジェクトの変更と同期されます、<see cref="T:System.Data.Objects.ObjectStateManager" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクト コンテキストで使用されるリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、Entity Framework によって開かれた場合に、接続を閉じます。 後に<xref:System.Data.Objects.ObjectContext.Dispose%2A>が呼び出されると、クエリの実行や呼び出しなどの接続が開いているを必要とする操作、<xref:System.Data.Objects.ObjectQuery.ToTraceString%2A>メソッド、例外が発生します。 クエリの作成やオブジェクトのアタッチなどの、接続が開いている必要がない操作では、例外は発生しません。 <xref:System.Data.Objects.ObjectContext.Dispose%2A>メソッドが明示的に開かれた接続を閉じていません。  
+  
+ スコープを制限する、<xref:System.Data.Objects.ObjectContext>内で、`using`ブロック (`Using` Visual Basic で) リソースが正しく破棄されることを確認します。 詳細については、次を参照してください。[接続の管理とトランザクション](http://msdn.microsoft.com/en-us/b6659d2a-9a45-4e98-acaa-d7a8029e5b99)です。  
+  
+ <xref:System.Data.Objects.ObjectContext.Dispose>メソッドの呼び出し、 `virtual` (`Overridable` Visual Basic で)<xref:System.Data.Objects.ObjectContext.Dispose%28System.Boolean%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary>オブジェクト コンテキストで使用されるリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドでは接続が閉じられます。 後に<xref:System.Data.Objects.ObjectContext.Dispose%2A>が呼び出されると、クエリの実行や呼び出しなどの接続が開いているを必要とする操作、<xref:System.Data.Objects.ObjectQuery.ToTraceString%2A>メソッド、例外が発生します。 クエリの作成やオブジェクトのアタッチなどの、接続が開いている必要がない操作では、例外は発生しません。  
+  
+ スコープを制限する、<xref:System.Data.Objects.ObjectContext>内で、`using`ブロック (`Using` Visual Basic で) リソースが正しく破棄されることを確認します。 詳細については、次を参照してください。[接続の管理とトランザクション](http://msdn.microsoft.com/en-us/b6659d2a-9a45-4e98-acaa-d7a8029e5b99)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteFunction">
+      <MemberSignature Language="C#" Value="public int ExecuteFunction (string functionName, params System.Data.Objects.ObjectParameter[] parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 ExecuteFunction(string functionName, class System.Data.Objects.ObjectParameter[] parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.ExecuteFunction(System.String,System.Data.Objects.ObjectParameter[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="functionName" Type="System.String" />
+        <Parameter Name="parameters" Type="System.Data.Objects.ObjectParameter[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="functionName">ストアド プロシージャまたは関数の名前。 名前では、コンテナー名をなど、 <c>&lt;コンテナー名&gt;.&lt;関数名&gt;</c>です。 既定のコンテナー名がわかっている場合は、関数名のみが必要です。</param>
+        <param name="parameters"><see cref="T:System.Data.Objects.ObjectParameter" /> オブジェクトの配列。</param>
+        <summary>ストアド プロシージャまたは関数、データ ソースで定義され、概念モデルで表現される実行します。関数から返される結果を破棄します。実行によって影響を受ける行の数を返します。</summary>
+        <returns>影響を受けた行の数。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="function" />null または空  
+  
+ または  
+  
+ <paramref name="function" /> が見つかりません。</exception>
+        <exception cref="T:System.InvalidOperationException">エンティティのリーダーはサポートされていない<paramref name="function" />です。  
+  
+ または  
+  
+ リーダーの型の不一致があると、<paramref name="function" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteFunction&lt;TElement&gt;">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectResult&lt;TElement&gt; ExecuteFunction&lt;TElement&gt; (string functionName, params System.Data.Objects.ObjectParameter[] parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectResult`1&lt;!!TElement&gt; ExecuteFunction&lt;TElement&gt;(string functionName, class System.Data.Objects.ObjectParameter[] parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.ExecuteFunction``1(System.String,System.Data.Objects.ObjectParameter[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.ObjectResult&lt;TElement&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TElement" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="functionName" Type="System.String" />
+        <Parameter Name="parameters" Type="System.Data.Objects.ObjectParameter[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <typeparam name="TElement">データ ソースに対して関数が実行されたときに返された <see cref="T:System.Data.Objects.ObjectResult`1" /> のエンティティ型。 この型は、<see cref="T:System.Data.Objects.DataClasses.IEntityWithChangeTracker" /> を実装している必要があります。</typeparam>
+        <param name="functionName">ストアド プロシージャまたは関数の名前。 名前では、コンテナー名をなど、 <c>&lt;コンテナー名&gt;.&lt;関数名&gt;</c>です。 既定のコンテナー名がわかっている場合は、関数名のみが必要です。</param>
+        <param name="parameters"><see cref="T:System.Data.Objects.ObjectParameter" /> オブジェクトの配列。</param>
+        <summary>ストアド プロシージャまたはデータ ソースで定義されている、指定されたパラメーターを使用して、概念モデルにマップする関数を実行します。 型指定されたを返します<see cref="T:System.Data.Objects.ObjectResult`1" />です。</summary>
+        <returns>ストアド プロシージャによって返されるデータの <see cref="T:System.Data.Objects.ObjectResult`1" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectContext.ExecuteFunction%2A>メソッドは、データ ソースで定義され、概念モデルで表現される関数またはストアド プロシージャを実行するために使用するヘルパー メソッドです。 Entity Data Model ツールでは、概念モデルでは、それぞれのメソッドを生成します。 これらのメソッドを呼び出す、厳密に型指定された`ExecuteFunction`を返す型指定された<xref:System.Data.Objects.ObjectResult%601>です。 詳細については、次を参照してください。[ストアド プロシージャ (エンティティ フレームワーク) を使用してアプリケーション コード](http://msdn.microsoft.com/en-us/d13dd33f-fcf9-4e86-bd00-74bc31521536)です。  
+  
+ 関数のすべてのパラメーターはパラメーター配列で要求され、関数自体の型を含む、インポート関数のメタデータに対してすべての型がチェックされます。 `null`CLR 型の値は、値が許可されています。 パラメーターの検証がプロバイダーによって実行されます。  
+  
+ <xref:System.Data.Objects.ObjectContext.ExecuteFunction%2A>メソッドを使用、<xref:System.Data.Objects.MergeOption>値<xref:System.Data.Objects.MergeOption.AppendOnly>です。 そのため、オブジェクト コンテキストでオブジェクトが既に存在する場合に読み込まれません、データ ソースからです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="function" />null または空  
+  
+ または  
+  
+ <paramref name="function" /> が見つかりません。</exception>
+        <exception cref="T:System.InvalidOperationException">エンティティのリーダーはサポートされていない<paramref name="function" />です。  
+  
+ または  
+  
+ リーダーの型の不一致があると、<paramref name="function" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteFunction&lt;TElement&gt;">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectResult&lt;TElement&gt; ExecuteFunction&lt;TElement&gt; (string functionName, System.Data.Objects.MergeOption mergeOption, params System.Data.Objects.ObjectParameter[] parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectResult`1&lt;!!TElement&gt; ExecuteFunction&lt;TElement&gt;(string functionName, valuetype System.Data.Objects.MergeOption mergeOption, class System.Data.Objects.ObjectParameter[] parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.ExecuteFunction``1(System.String,System.Data.Objects.MergeOption,System.Data.Objects.ObjectParameter[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.ObjectResult&lt;TElement&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TElement" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="functionName" Type="System.String" />
+        <Parameter Name="mergeOption" Type="System.Data.Objects.MergeOption" />
+        <Parameter Name="parameters" Type="System.Data.Objects.ObjectParameter[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <typeparam name="TElement">データ ソースに対して関数が実行されたときに返された <see cref="T:System.Data.Objects.ObjectResult`1" /> のエンティティ型。 この型は、<see cref="T:System.Data.Objects.DataClasses.IEntityWithChangeTracker" /> を実装している必要があります。</typeparam>
+        <param name="functionName">ストアド プロシージャまたは関数の名前。 名前では、コンテナー名をなど、 <c>&lt;コンテナー名&gt;.&lt;関数名&gt;</c>です。 既定のコンテナー名がわかっている場合は、関数名のみが必要です。</param>
+        <param name="mergeOption">クエリの実行時に使用する <see cref="T:System.Data.Objects.MergeOption" />。</param>
+        <param name="parameters"><see cref="T:System.Data.Objects.ObjectParameter" /> オブジェクトの配列。</param>
+        <summary>特定のストアド プロシージャまたはデータ ソースで定義されている、指定されたパラメーター、およびマージ オプションを概念モデルで表現する関数を実行します。 型指定されたを返します<see cref="T:System.Data.Objects.ObjectResult`1" />です。</summary>
+        <returns>ストアド プロシージャによって返されるデータの <see cref="T:System.Data.Objects.ObjectResult`1" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectContext.ExecuteFunction%2A>がデータ ソースで定義され、概念モデルで表現するストアド プロシージャまたは関数の実行に使用するヘルパー メソッドです。 Entity Data Model ツールでは、概念モデルでは、それぞれのメソッドを生成します。 これらのメソッドを呼び出す、厳密に型指定された`ExecuteFunction`を返す型指定された<xref:System.Data.Objects.ObjectResult%601>です。 詳細については、次を参照してください。[ストアド プロシージャ (エンティティ フレームワーク) を使用してアプリケーション コード](http://msdn.microsoft.com/en-us/d13dd33f-fcf9-4e86-bd00-74bc31521536)です。  
+  
+ 関数のすべてのパラメーターはパラメーター配列で要求され、関数自体の型を含む、インポート関数のメタデータに対してすべての型がチェックされます。 `null`CLR 型の値は、値が許可されています。 パラメーターの検証がプロバイダーによって実行されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="function" />null または空  
+  
+ または  
+  
+ <paramref name="function" /> が見つかりません。</exception>
+        <exception cref="T:System.InvalidOperationException">エンティティのリーダーはサポートされていない<paramref name="function" />です。  
+  
+ または  
+  
+ リーダーの型の不一致があると、<paramref name="function" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteStoreCommand">
+      <MemberSignature Language="C#" Value="public int ExecuteStoreCommand (string commandText, params object[] parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 ExecuteStoreCommand(string commandText, object[] parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.ExecuteStoreCommand(System.String,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="commandText" Type="System.String" />
+        <Parameter Name="parameters" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="commandText">データ ソースのネイティブ言語で、実行するコマンドです。</param>
+        <param name="parameters">コマンドに渡すパラメーターの配列。</param>
+        <summary>既存の接続を使用してデータ ソースに対して直接任意のコマンドを実行します。</summary>
+        <returns>影響を受けた行の数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パラメーター化コマンドは SQL インジェクション攻撃への対策として利用できます。SQL インジェクション攻撃は、SQL ステートメントに、サーバーのセキュリティを侵害するコマンドを "注入" することによって行われます。 パラメーター化コマンドは、のみ、値と、SQL ステートメントの一部ではないと、外部ソースから受信した値が渡されることを保証する、SQL インジェクション攻撃を防ぐ。 その結果、値に挿入された SQL コマンドは、データ ソースでは実行されません。 これらはパラメーター値としてのみ処理されます。 セキュリティ上の利点に加えては、パラメーター化コマンドは、SQL ステートメントまたはストアド プロシージャに渡された値を整理するための便利なメソッドを提供します。  
+  
+ `parameters` の値には、<xref:System.Data.Common.DbParameter> オブジェクトの配列か、パラメーター値の配列を使用できます。 値が提供されただけの場合、配列の<xref:System.Data.Common.DbParameter>オブジェクトは、配列の値の順序に基づいて作成されます。  
+  
+ ストアのコマンドは、現在のトランザクションが存在する場合は、現在のトランザクションのコンテキストで実行されます。  
+  
+ 詳細については次を参照してください:  
+  
+ [ストアのコマンドを直接実行](http://msdn.microsoft.com/en-us/5708d0a2-3f76-4825-978a-d06ff5c4bb3d)と  
+  
+ [方法: データ ソースに対してコマンドを直接実行](http://msdn.microsoft.com/en-us/def3cc87-cfff-4dee-83cf-1a40c73a2d01)  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteStoreQuery&lt;TElement&gt;">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectResult&lt;TElement&gt; ExecuteStoreQuery&lt;TElement&gt; (string commandText, params object[] parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectResult`1&lt;!!TElement&gt; ExecuteStoreQuery&lt;TElement&gt;(string commandText, object[] parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.ExecuteStoreQuery``1(System.String,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.ObjectResult&lt;TElement&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TElement" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="commandText" Type="System.String" />
+        <Parameter Name="parameters" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <typeparam name="TElement">To be added.</typeparam>
+        <param name="commandText">データ ソースのネイティブ言語で、実行するコマンドです。</param>
+        <param name="parameters">コマンドに渡すパラメーターの配列。</param>
+        <summary>型指定された結果のシーケンスを返す、データ ソースに対して直接クエリを実行します。</summary>
+        <returns>型のオブジェクトの列挙体<paramref name="TResult" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectContext.ExecuteStoreQuery%2A>メソッドは、データ ソースに対して直接任意のコマンドを実行する既存の接続を使用します。 現在トランザクションを実行している場合は、そのトランザクションのコンテキストで格納コマンドが実行されます。  
+  
+ <xref:System.Data.Objects.ObjectContext.ExecuteStoreQuery%2A> メソッドの呼び出しは、<xref:System.Data.Common.DbCommand.ExecuteReader%2A> クラスの <xref:System.Data.Common.DbCommand> メソッドを呼び出すことと同じです。<xref:System.Data.Objects.ObjectContext.ExecuteStoreQuery%2A> のみがエンティティを返し、<xref:System.Data.Common.DbCommand.ExecuteReader%2A> が <xref:System.Data.Common.DbDataReader> のプロパティ値を返します。  
+  
+ 呼び出す、<xref:System.Data.Objects.ObjectContext.ExecuteStoreQuery%2A>で指定されたエンティティ セット名、追跡対象となる結果を得る場合。  
+  
+ 呼び出す、<xref:System.Data.Objects.ObjectContext.Translate%2A>に変換するメソッド、<xref:System.Data.Common.DbDataReader>リーダーには、指定されたエンティティ型にマップされるデータ行が含まれている場合、エンティティ オブジェクトにします。  
+  
+ パラメーター化コマンドは SQL インジェクション攻撃への対策として利用できます。SQL インジェクション攻撃は、SQL ステートメントに、サーバーのセキュリティを侵害するコマンドを "注入" することによって行われます。 パラメーター化コマンドは、のみ、値と、SQL ステートメントの一部ではないと、外部ソースから受信した値が渡されることを保証する、SQL インジェクション攻撃を防ぐ。 その結果、値に挿入された SQL コマンドは、データ ソースでは実行されません。 これらはパラメーター値としてのみ処理されます。 セキュリティ上の利点に加えては、パラメーター化コマンドは、SQL ステートメントまたはストアド プロシージャに渡された値を整理するための便利なメソッドを提供します。  
+  
+ `parameters` の値には、<xref:System.Data.Common.DbParameter> オブジェクトの配列か、パラメーター値の配列を使用できます。 値が提供されただけの場合、配列の<xref:System.Data.Common.DbParameter>オブジェクトは、配列の値の順序に基づいて作成されます。  
+  
+ 詳細については次を参照してください:  
+  
+ [ストアのコマンドを直接実行](http://msdn.microsoft.com/en-us/5708d0a2-3f76-4825-978a-d06ff5c4bb3d)と  
+  
+ [方法: データ ソースに対してコマンドを直接実行](http://msdn.microsoft.com/en-us/def3cc87-cfff-4dee-83cf-1a40c73a2d01)  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteStoreQuery&lt;TEntity&gt;">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectResult&lt;TEntity&gt; ExecuteStoreQuery&lt;TEntity&gt; (string commandText, string entitySetName, System.Data.Objects.MergeOption mergeOption, params object[] parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectResult`1&lt;!!TEntity&gt; ExecuteStoreQuery&lt;TEntity&gt;(string commandText, string entitySetName, valuetype System.Data.Objects.MergeOption mergeOption, object[] parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.ExecuteStoreQuery``1(System.String,System.String,System.Data.Objects.MergeOption,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.ObjectResult&lt;TEntity&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TEntity" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="commandText" Type="System.String" />
+        <Parameter Name="entitySetName" Type="System.String" />
+        <Parameter Name="mergeOption" Type="System.Data.Objects.MergeOption" />
+        <Parameter Name="parameters" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <typeparam name="TEntity">To be added.</typeparam>
+        <param name="commandText">データ ソースのネイティブ言語で、実行するコマンドです。</param>
+        <param name="entitySetName">エンティティ セット、 <c>TResult</c>型です。 エンティティ セット名が指定されていない場合、結果では、追跡する予定がないです。</param>
+        <param name="mergeOption">クエリの実行時に使用する <see cref="T:System.Data.Objects.MergeOption" />。 既定値は、<see cref="F:System.Data.Objects.MergeOption.AppendOnly" /> です。</param>
+        <param name="parameters">コマンドに渡すパラメーターの配列。</param>
+        <summary>データ ソースに対して直接クエリを実行し、型指定された結果のシーケンスを返します。 クエリの結果は、エンティティとして追跡できるようには、エンティティ セットと、マージ オプションを指定します。</summary>
+        <returns>型のオブジェクトの列挙体<paramref name="TResult" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectContext.ExecuteStoreQuery%2A>メソッドは、データ ソースに対して直接任意のコマンドを実行する既存の接続を使用します。 現在トランザクションを実行している場合は、そのトランザクションのコンテキストで格納コマンドが実行されます。  
+  
+ <xref:System.Data.Objects.ObjectContext.ExecuteStoreQuery%2A> メソッドの呼び出しは、<xref:System.Data.Common.DbCommand.ExecuteReader%2A> クラスの <xref:System.Data.Common.DbCommand> メソッドを呼び出すことと同じです。<xref:System.Data.Objects.ObjectContext.ExecuteStoreQuery%2A> のみがエンティティを返し、<xref:System.Data.Common.DbCommand.ExecuteReader%2A> が <xref:System.Data.Common.DbDataReader> のプロパティ値を返します。  
+  
+ 結果がエンティティとして追跡したりする場合、エンティティ セット名を指定します。  
+  
+ 呼び出す<xref:System.Data.Objects.ObjectContext.Translate%2A>に変換するメソッド、<xref:System.Data.Common.DbDataReader>リーダーには、指定されたエンティティ型にマップされるデータ行が含まれている場合、エンティティ オブジェクトにします。  
+  
+ パラメーター化コマンドは SQL インジェクション攻撃への対策として利用できます。SQL インジェクション攻撃は、SQL ステートメントに、サーバーのセキュリティを侵害するコマンドを "注入" することによって行われます。 パラメーター化コマンドは、のみ、値と、SQL ステートメントの一部ではないと、外部ソースから受信した値が渡されることを保証する、SQL インジェクション攻撃を防ぐ。 その結果、値に挿入された SQL コマンドは、データ ソースでは実行されません。 これらはパラメーター値としてのみ処理されます。 セキュリティ上の利点に加えては、パラメーター化コマンドは、SQL ステートメントまたはストアド プロシージャに渡された値を整理するための便利なメソッドを提供します。  
+  
+ `parameters` の値には、<xref:System.Data.Common.DbParameter> オブジェクトの配列か、パラメーター値の配列を使用できます。 値が提供されただけの場合、配列の<xref:System.Data.Common.DbParameter>オブジェクトは、配列の値の順序に基づいて作成されます。  
+  
+ 詳細については次を参照してください:  
+  
+ [ストアのコマンドを直接実行](http://msdn.microsoft.com/en-us/5708d0a2-3f76-4825-978a-d06ff5c4bb3d)と  
+  
+ [方法: データ ソースに対してコマンドを直接実行](http://msdn.microsoft.com/en-us/def3cc87-cfff-4dee-83cf-1a40c73a2d01)  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetKnownProxyTypes">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEnumerable&lt;Type&gt; GetKnownProxyTypes ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IEnumerable`1&lt;class System.Type&gt; GetKnownProxyTypes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.GetKnownProxyTypes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Type&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべての既存のプロキシ型を返します。</summary>
+        <returns><see cref="T:System.Collections.Generic.IEnumerable`1" />のすべての既存のプロキシ型です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectContext.GetKnownProxyTypes%2A> POCO エンティティのプロキシ オブジェクトの生成が有効にすると、メソッドを使用します。 詳細については、次を参照してください。 [POCO プロキシの作成のため要件](http://msdn.microsoft.com/en-us/dcdbf982-9b9d-4582-806a-64de4a1c03c8)と[POCO エンティティの操作](http://msdn.microsoft.com/en-us/5e0fb82a-b6d1-41a1-b37b-c12db61629d3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectByKey">
+      <MemberSignature Language="C#" Value="public object GetObjectByKey (System.Data.EntityKey key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetObjectByKey(class System.Data.EntityKey key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.GetObjectByKey(System.Data.EntityKey)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Data.EntityKey" />
+      </Parameters>
+      <Docs>
+        <param name="key">検索するオブジェクトのキー。</param>
+        <summary>指定されたエンティティ キーを持つオブジェクトを返します。</summary>
+        <returns>エンティティ型のインスタンスである <see cref="T:System.Object" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectContext.GetObjectByKey%2A> は、指定された <xref:System.Data.EntityKey> を持つオブジェクトを <xref:System.Data.Objects.ObjectStateManager> から取得しようとします。 オブジェクトが現在オブジェクト コンテキストに読み込まれていない場合は、データ ソースからオブジェクトを返すためにクエリが実行されます。 詳細については、次を参照してください。[オブジェクト クエリ](http://msdn.microsoft.com/en-us/0768033c-876f-471d-85d5-264884349276)です。  
+  
+ オブジェクトが見つからない場合、<xref:System.Data.Objects.ObjectContext.GetObjectByKey%2A> では <xref:System.Data.ObjectNotFoundException> が発生します。 この例外の処理を避けるには、代わりに <xref:System.Data.Objects.ObjectContext.TryGetObjectByKey%2A> メソッドを使用します。  
+  
+ このメソッドは、<xref:System.Data.EntityState.Deleted> 状態のオブジェクトを返します。  
+  
+ 一時キーを使用してデータ ソースからオブジェクトを取得することはできません。  
+  
+   
+  
+## Examples  
+ この例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 この例では、指定された型のエンティティの <xref:System.Data.EntityKey> を作成して、エンティティをキーでフェッチします。  
+  
+ [!code-csharp[DP ObjectServices Concepts#EntityKeyClass_GetObjectByKey](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#entitykeyclass_getobjectbykey)]
+ [!code-vb[DP ObjectServices Concepts#EntityKeyClass_GetObjectByKey](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#entitykeyclass_getobjectbykey)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="key" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Data.ObjectNotFoundException"><see cref="T:System.Data.Objects.ObjectStateManager" /> またはデータ ソースでオブジェクトが見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectType">
+      <MemberSignature Language="C#" Value="public static Type GetObjectType (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Type GetObjectType(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.GetObjectType(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Type" />プロキシ オブジェクトの。</param>
+        <summary>指定した型のプロキシ オブジェクトに関連付けられている、POCO エンティティのエンティティ型を返します。</summary>
+        <returns><see cref="T:System.Type" />関連付けられている POCO エンティティのです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectContext.GetObjectType%2A> POCO エンティティのプロキシ オブジェクトの生成が有効にすると、メソッドを使用します。 詳細については、次を参照してください。 [POCO プロキシの作成のため要件](http://msdn.microsoft.com/en-us/dcdbf982-9b9d-4582-806a-64de4a1c03c8)と[POCO エンティティの操作](http://msdn.microsoft.com/en-us/5e0fb82a-b6d1-41a1-b37b-c12db61629d3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="LoadProperty">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>POCO カスタム データ クラスを使用しているときに、関連オブジェクトを明示的に読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ POCO カスタム データ クラスを使用する場合、Entity Data Model ツールによって生成されるエンティティ型のインスタンスと同様に関連するオブジェクトを明示的に読み込むことができません。 これは、ツールを返すナビゲーション プロパティを生成するため、<xref:System.Data.Objects.DataClasses.EntityCollection%601>または<xref:System.Data.Objects.DataClasses.EntityReference%601>関連オブジェクトの場合に<xref:System.Data.Objects.DataClasses.RelatedEnd.Load%2A>で呼び出されると、<xref:System.Data.Objects.DataClasses.RelatedEnd>です。 POCO エンティティは、遅延読み込みを使用して設定して、引き続き読み込むことができる、<xref:System.Data.Objects.ObjectContextOptions.LazyLoadingEnabled%2A>プロパティを`true`のインスタンスで<xref:System.Data.Objects.ObjectContextOptions>によって返される、<xref:System.Data.Objects.ObjectContext.ContextOptions%2A?displayProperty=nameWithType>プロパティ、またはに一括読み込みを使用して、<xref:System.Data.Objects.ObjectQuery%601.Include%2A>メソッドを<xref:System.Data.Objects.ObjectQuery%601>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="LoadProperty">
+      <MemberSignature Language="C#" Value="public void LoadProperty (object entity, string navigationProperty);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void LoadProperty(object entity, string navigationProperty) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.LoadProperty(System.Object,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+        <Parameter Name="navigationProperty" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="entity">関連オブジェクトが読み込まれるにはエンティティです。</param>
+        <param name="navigationProperty">読み込まれる関連オブジェクトを返すナビゲーション プロパティの名前。</param>
+        <summary>明示的に指定されたナビゲーション プロパティと既定のマージ オプションを使用して、指定されたオブジェクトに関連オブジェクトを読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectContext.LoadProperty%2A> POCO カスタム データ クラスを使用している場合は、明示的な読み込みを実現するためにメソッドを呼び出す必要があります。  
+  
+ 呼び出した後<xref:System.Data.Objects.ObjectContext.LoadProperty%2A>、関連オブジェクトは、ソース エンティティのナビゲーション プロパティを介してアクセスできます。  
+  
+ POCO カスタム データ クラスを使用する場合、Entity Data Model ツールによって生成されるエンティティ型のインスタンスと同様に関連するオブジェクトを明示的に読み込むことができません。 これは、ツールを返すナビゲーション プロパティを生成するため、<xref:System.Data.Objects.DataClasses.EntityCollection%601>または<xref:System.Data.Objects.DataClasses.EntityReference%601>関連オブジェクトの場合に<xref:System.Data.Objects.DataClasses.RelatedEnd.Load%2A>で呼び出されると、<xref:System.Data.Objects.DataClasses.RelatedEnd>です。 POCO エンティティは、遅延読み込みを使用して設定して、引き続き読み込むことができる、<xref:System.Data.Objects.ObjectContextOptions.LazyLoadingEnabled%2A>プロパティを`true`のインスタンスで<xref:System.Data.Objects.ObjectContextOptions>によって返される、<xref:System.Data.Objects.ObjectContext.ContextOptions%2A?displayProperty=nameWithType>プロパティ、またはに一括読み込みを使用して、<xref:System.Data.Objects.ObjectQuery%601.Include%2A>メソッドを<xref:System.Data.Objects.ObjectQuery%601>です。  
+  
+ ときに、<xref:System.Data.Objects.ObjectContext.LoadProperty%2A>メソッドが呼び出されると、オブジェクトに読み込まれる、<xref:System.Data.Objects.ObjectContext>既定値を使用して、<xref:System.Data.Objects.MergeOption>の値<xref:System.Data.Objects.MergeOption.AppendOnly>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><paramref name="entity" />では、 <see cref="F:System.Data.EntityState.Detached" />、<see cref="F:System.Data.EntityState.Added," />または<see cref="F:System.Data.EntityState.Deleted" />状態  
+  
+ または  
+  
+ <paramref name="entity" />の別のインスタンスにアタッチされて<see cref="T:System.Data.Objects.ObjectContext" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadProperty">
+      <MemberSignature Language="C#" Value="public void LoadProperty (object entity, string navigationProperty, System.Data.Objects.MergeOption mergeOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void LoadProperty(object entity, string navigationProperty, valuetype System.Data.Objects.MergeOption mergeOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.LoadProperty(System.Object,System.String,System.Data.Objects.MergeOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+        <Parameter Name="navigationProperty" Type="System.String" />
+        <Parameter Name="mergeOption" Type="System.Data.Objects.MergeOption" />
+      </Parameters>
+      <Docs>
+        <param name="entity">関連オブジェクトが読み込まれるにはエンティティです。</param>
+        <param name="navigationProperty">読み込まれる関連オブジェクトを返すナビゲーション プロパティの名前。</param>
+        <param name="mergeOption"><see cref="T:System.Data.Objects.MergeOption" />関連オブジェクトを読み込むときに使用する値。</param>
+        <summary>明示的に指定されたナビゲーション プロパティと指定されたマージ オプションを使用して、指定されたオブジェクトに関連するオブジェクトを読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectContext.LoadProperty%2A> POCO カスタム データ クラスを使用している場合は、明示的な読み込みを実現するためにメソッドを呼び出す必要があります。  
+  
+ 呼び出した後<xref:System.Data.Objects.ObjectContext.LoadProperty%2A>、関連オブジェクトは、ソース エンティティのナビゲーション プロパティを介してアクセスできます。  
+  
+ POCO カスタム データ クラスを使用する場合、Entity Data Model ツールによって生成されるエンティティ型のインスタンスと同様に関連するオブジェクトを明示的に読み込むことができません。 これは、ツールを返すナビゲーション プロパティを生成するため、<xref:System.Data.Objects.DataClasses.EntityCollection%601>または<xref:System.Data.Objects.DataClasses.EntityReference%601>関連オブジェクトの場合に<xref:System.Data.Objects.DataClasses.RelatedEnd.Load%2A>で呼び出されると、<xref:System.Data.Objects.DataClasses.RelatedEnd>です。 POCO エンティティは、遅延読み込みを使用して設定して、引き続き読み込むことができる、<xref:System.Data.Objects.ObjectContextOptions.LazyLoadingEnabled%2A>プロパティを`true`のインスタンスで<xref:System.Data.Objects.ObjectContextOptions>によって返される、<xref:System.Data.Objects.ObjectContext.ContextOptions%2A?displayProperty=nameWithType>プロパティ、またはに一括読み込みを使用して、<xref:System.Data.Objects.ObjectQuery%601.Include%2A>メソッドを<xref:System.Data.Objects.ObjectQuery%601>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><paramref name="entity" />では、 <see cref="F:System.Data.EntityState.Detached" />、<see cref="F:System.Data.EntityState.Added," />または<see cref="F:System.Data.EntityState.Deleted" />状態  
+  
+ または  
+  
+ <paramref name="entity" />の別のインスタンスにアタッチされて<see cref="T:System.Data.Objects.ObjectContext" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadProperty&lt;TEntity&gt;">
+      <MemberSignature Language="C#" Value="public void LoadProperty&lt;TEntity&gt; (TEntity entity, System.Linq.Expressions.Expression&lt;Func&lt;TEntity,object&gt;&gt; selector);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void LoadProperty&lt;TEntity&gt;(!!TEntity entity, class System.Linq.Expressions.Expression`1&lt;class System.Func`2&lt;!!TEntity, object&gt;&gt; selector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.LoadProperty``1(``0,System.Linq.Expressions.Expression{System.Func{``0,System.Object}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TEntity" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="entity" Type="TEntity" />
+        <Parameter Name="selector" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;TEntity,System.Object&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TEntity">To be added.</typeparam>
+        <param name="entity">関連オブジェクトが読み込まれるにはソース オブジェクト。</param>
+        <param name="selector">読み込まれる関連オブジェクトを定義する LINQ 式です。</param>
+        <summary>既定のマージ オプションを使用して、指定された LINQ クエリによって指定されたオブジェクトに関連付けられているオブジェクトを明示的に読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectContext.LoadProperty%2A> POCO カスタム データ クラスを使用している場合は、明示的な読み込みを実現するためにメソッドを呼び出す必要があります。  
+  
+ 呼び出した後<xref:System.Data.Objects.ObjectContext.LoadProperty%2A>、関連オブジェクトは、ソース エンティティのナビゲーション プロパティを介してアクセスできます。  
+  
+ 読み込むプロパティがように単純なプロパティのメンバー アクセスでは、形式である必要があります、LINQ の式で指定された`(entity) => entity.PropertyName`ここで、 *PropertyName*読み込まれる関連オブジェクトを返すナビゲーション プロパティです。 LINQ 式の他の形式が使用されている場合、例外が発生します。  
+  
+ POCO カスタム データ クラスを使用する場合、Entity Data Model ツールによって生成されるエンティティ型のインスタンスと同様に関連するオブジェクトを明示的に読み込むことができません。 これは、ツールを返すナビゲーション プロパティを生成するため、<xref:System.Data.Objects.DataClasses.EntityCollection%601>または<xref:System.Data.Objects.DataClasses.EntityReference%601>関連オブジェクトの場合に<xref:System.Data.Objects.DataClasses.RelatedEnd.Load%2A>で呼び出されると、<xref:System.Data.Objects.DataClasses.RelatedEnd>です。 POCO エンティティは、遅延読み込みを使用して設定して、引き続き読み込むことができる、<xref:System.Data.Objects.ObjectContextOptions.LazyLoadingEnabled%2A>プロパティを`true`のインスタンスで<xref:System.Data.Objects.ObjectContextOptions>によって返される、<xref:System.Data.Objects.ObjectContext.ContextOptions%2A?displayProperty=nameWithType>プロパティ、またはに一括読み込みを使用して、<xref:System.Data.Objects.ObjectQuery%601.Include%2A>メソッドを<xref:System.Data.Objects.ObjectQuery%601>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="selector" />有効な入力パラメーターを提供していません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="selector" /> が null です。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="entity" />では、 <see cref="F:System.Data.EntityState.Detached" />、<see cref="F:System.Data.EntityState.Added," />または<see cref="F:System.Data.EntityState.Deleted" />状態  
+  
+ または  
+  
+ <paramref name="entity" />の別のインスタンスにアタッチされて<see cref="T:System.Data.Objects.ObjectContext" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadProperty&lt;TEntity&gt;">
+      <MemberSignature Language="C#" Value="public void LoadProperty&lt;TEntity&gt; (TEntity entity, System.Linq.Expressions.Expression&lt;Func&lt;TEntity,object&gt;&gt; selector, System.Data.Objects.MergeOption mergeOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void LoadProperty&lt;TEntity&gt;(!!TEntity entity, class System.Linq.Expressions.Expression`1&lt;class System.Func`2&lt;!!TEntity, object&gt;&gt; selector, valuetype System.Data.Objects.MergeOption mergeOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.LoadProperty``1(``0,System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Data.Objects.MergeOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TEntity" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="entity" Type="TEntity" />
+        <Parameter Name="selector" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;TEntity,System.Object&gt;&gt;" />
+        <Parameter Name="mergeOption" Type="System.Data.Objects.MergeOption" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TEntity">To be added.</typeparam>
+        <param name="entity">関連オブジェクトが読み込まれるにはソース オブジェクト。</param>
+        <param name="selector">読み込まれる関連オブジェクトを定義する LINQ 式です。</param>
+        <param name="mergeOption"><see cref="T:System.Data.Objects.MergeOption" />関連オブジェクトを読み込むときに使用する値。</param>
+        <summary>明示的に指定されたマージ オプションを使用して、指定された LINQ クエリによって指定されたオブジェクトに関連付けられているオブジェクトを読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectContext.LoadProperty%2A> POCO カスタム データ クラスを使用している場合は、明示的な読み込みを実現するためにメソッドを呼び出す必要があります。  
+  
+ 呼び出した後<xref:System.Data.Objects.ObjectContext.LoadProperty%2A>、関連オブジェクトは、ソース エンティティのナビゲーション プロパティを介してアクセスできます。  
+  
+ 読み込むプロパティがように単純なプロパティのメンバー アクセスでは、形式である必要があります、LINQ の式で指定された`(entity) => entity.PropertyName`場所*PropertyName*読み込まれる関連オブジェクトを返すナビゲーション プロパティです。 LINQ 式の他の形式が使用されている場合、例外が発生します。  
+  
+ POCO カスタム データ クラスを使用する場合、Entity Data Model ツールによって生成されるエンティティ型のインスタンスと同様に関連するオブジェクトを明示的に読み込むことができません。 これは、ツールを返すナビゲーション プロパティを生成するため、<xref:System.Data.Objects.DataClasses.EntityCollection%601>または<xref:System.Data.Objects.DataClasses.EntityReference%601>関連オブジェクトの場合に<xref:System.Data.Objects.DataClasses.RelatedEnd.Load%2A>で呼び出されると、<xref:System.Data.Objects.DataClasses.RelatedEnd>です。 POCO エンティティは、遅延読み込みを使用して設定して、引き続き読み込むことができる、<xref:System.Data.Objects.ObjectContextOptions.LazyLoadingEnabled%2A>プロパティを`true`のインスタンスで<xref:System.Data.Objects.ObjectContextOptions>によって返される、<xref:System.Data.Objects.ObjectContext.ContextOptions%2A?displayProperty=nameWithType>プロパティ、またはに一括読み込みを使用して、<xref:System.Data.Objects.ObjectQuery%601.Include%2A>メソッドを<xref:System.Data.Objects.ObjectQuery%601>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="selector" />有効な入力パラメーターを提供していません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="selector" /> が null です。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="entity" />では、 <see cref="F:System.Data.EntityState.Detached" />、<see cref="F:System.Data.EntityState.Added," />または<see cref="F:System.Data.EntityState.Deleted" />状態  
+  
+ または  
+  
+ <paramref name="entity" />の別のインスタンスにアタッチされて<see cref="T:System.Data.Objects.ObjectContext" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MetadataWorkspace">
+      <MemberSignature Language="C#" Value="public System.Data.Metadata.Edm.MetadataWorkspace MetadataWorkspace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Metadata.Edm.MetadataWorkspace MetadataWorkspace" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.ObjectContext.MetadataWorkspace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.MetadataWorkspace</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクト コンテキストで使用されるメタデータ ワークスペースを取得します。</summary>
+        <value>この <see cref="T:System.Data.Metadata.Edm.MetadataWorkspace" /> に関連付けられている <see cref="T:System.Data.Objects.ObjectContext" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Metadata.Edm.MetadataWorkspace> クラスは、アプリケーションのコンテキストで Entity Data Model (EDM) メタデータを操作できるようにする中心的なランタイム API です。 詳細については、次を参照してください。[メタデータ ワークスペース](http://msdn.microsoft.com/en-us/601aee56-3eda-4caa-9082-a01df76c5e84)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ObjectMaterialized">
+      <MemberSignature Language="C#" Value="public event System.Data.Objects.ObjectMaterializedEventHandler ObjectMaterialized;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Data.Objects.ObjectMaterializedEventHandler ObjectMaterialized" />
+      <MemberSignature Language="DocId" Value="E:System.Data.Objects.ObjectContext.ObjectMaterialized" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.ObjectMaterializedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クエリまたは読み込み操作の一部として、データ ソース内のデータから新しいエンティティ オブジェクトが作成されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントは複雑で、すべてのスカラーと、オブジェクトがコレクションに読み込まれる前に、参照のプロパティが設定されています。 オブジェクト コンテキストで、同じキー値を持つオブジェクトが存在する場合、Entity Framework にオブジェクトが再作成されませんし、このイベントは発生しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ObjectStateManager">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectStateManager ObjectStateManager { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Objects.ObjectStateManager ObjectStateManager" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.ObjectContext.ObjectStateManager" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.ObjectStateManager</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトの変更を追跡するためにオブジェクト コンテキストで使用されるオブジェクト状態マネージャーを取得します。</summary>
+        <value>この <see cref="T:System.Data.Objects.ObjectStateManager" /> で使用される <see cref="T:System.Data.Objects.ObjectContext" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ これらの例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 この例では、<xref:System.Data.Objects.ObjectStateManager> から <xref:System.Data.Objects.ObjectContext> を取得し、状態マネージャーを使用してコンテキスト内のオブジェクトにアクセスします。  
+  
+ [!code-csharp[DP ObjectServices Concepts#ObjectStateManager](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#objectstatemanager)]
+ [!code-vb[DP ObjectServices Concepts#ObjectStateManager](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#objectstatemanager)]  
+  
+ この例では、返された <xref:System.Data.Objects.ObjectStateManager.TryGetObjectStateEntry%2A> で <xref:System.Data.Objects.ObjectStateManager> メソッドを使用して、エンティティ キーに基づいてオブジェクトを取得します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#ApplyItemUpdates](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#applyitemupdates)]
+ [!code-vb[DP ObjectServices Concepts#ApplyItemUpdates](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#applyitemupdates)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QueryProvider">
+      <MemberSignature Language="C#" Value="protected System.Linq.IQueryProvider QueryProvider { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Linq.IQueryProvider QueryProvider" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.ObjectContext.QueryProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.IQueryProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このオブジェクト コンテキストに関連付けられている LINQ クエリ プロバイダーを取得します。</summary>
+        <value><see cref="T:System.Linq.IQueryProvider" />このオブジェクトのコンテキストで使用されるインスタンスです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Refresh">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>オブジェクト コンテキスト内の特定のオブジェクトをデータ ソース内のデータで更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトの更新順序は非決定的です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Refresh">
+      <MemberSignature Language="C#" Value="public void Refresh (System.Data.Objects.RefreshMode refreshMode, System.Collections.IEnumerable collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Refresh(valuetype System.Data.Objects.RefreshMode refreshMode, class System.Collections.IEnumerable collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.Refresh(System.Data.Objects.RefreshMode,System.Collections.IEnumerable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="refreshMode" Type="System.Data.Objects.RefreshMode" />
+        <Parameter Name="collection" Type="System.Collections.IEnumerable" />
+      </Parameters>
+      <Docs>
+        <param name="refreshMode">オブジェクト コンテキストでのプロパティの変更がデータ ソースのプロパティ値で上書きされるかどうかを示す <see cref="T:System.Data.Objects.RefreshMode" /> 値。</param>
+        <param name="collection">更新するオブジェクトの <see cref="T:System.Collections.IEnumerable" /> コレクション。</param>
+        <summary>オブジェクト コンテキスト内のオブジェクトのコレクションをデータ ソース内のデータで更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドには 2 つの目的があります。オブジェクト コンテキスト内のオブジェクトをデータ ソース内のデータで更新できるようにするという目的と、競合を解決するためのメカニズムとしての役割を果たすという目的です。 詳細については、次を参照してください。[変更を保存および管理する同時実行](http://msdn.microsoft.com/en-us/b8378601-4f26-4a05-a24a-f50aeb68610e)です。  
+  
+ オブジェクトの更新順序は非決定的です。  
+  
+ <xref:System.Data.Objects.ObjectContext.Refresh%2A> が呼び出されると、オブジェクトの元の値は常にデータ ソースの値で更新されますが、現在の値はデータ ソースの値で更新される場合と更新されない場合があります。 更新されるかどうかは、<xref:System.Data.Objects.RefreshMode> の値で決まります。 <xref:System.Data.Objects.RefreshMode.StoreWins>モードは、コレクション内のオブジェクトがデータ ソースの値に一致するように更新することを意味します。 <xref:System.Data.Objects.RefreshMode.ClientWins>データ ソースの他の変更されている場合でも、オブジェクト コンテキストでの変更のみが永続化することを意味します。  
+  
+ オブジェクトがデータ ソース側のロジックで更新されるようにするには、<xref:System.Data.Objects.ObjectContext.Refresh%2A> メソッドの呼び出し後に <xref:System.Data.Objects.RefreshMode.StoreWins> を指定して <xref:System.Data.Objects.ObjectContext.SaveChanges%2A> を呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="collection" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="refreshMode" /> が無効です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="collection" /> が空です。  
+  
+ または  
+  
+ オブジェクトがコンテキストにアタッチされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Refresh">
+      <MemberSignature Language="C#" Value="public void Refresh (System.Data.Objects.RefreshMode refreshMode, object entity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Refresh(valuetype System.Data.Objects.RefreshMode refreshMode, object entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.Refresh(System.Data.Objects.RefreshMode,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="refreshMode" Type="System.Data.Objects.RefreshMode" />
+        <Parameter Name="entity" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="refreshMode"><see cref="T:System.Data.Objects.RefreshMode" /> の更新に使用するモードを示す <see cref="T:System.Data.Objects.ObjectStateManager" /> 値のいずれか 1 つ。</param>
+        <param name="entity">更新するオブジェクト。</param>
+        <summary>オブジェクト コンテキスト内のオブジェクトをデータ ソース内のデータで更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectContext.Refresh%2A> には 2 つの目的があります。オブジェクトをデータ ソース内のデータで更新できるようにするという目的と、競合を解決するためのメカニズムとしての役割を果たすという目的です。 詳細については、次を参照してください。[変更を保存および管理する同時実行](http://msdn.microsoft.com/en-us/b8378601-4f26-4a05-a24a-f50aeb68610e)です。  
+  
+ オブジェクトの更新順序は非決定的です。  
+  
+ <xref:System.Data.Objects.ObjectContext.Refresh%2A> メソッドが呼び出されると、オブジェクトの元の値は常にデータ ソースの値で更新されますが、現在の値はデータ ソースの値で更新される場合と更新されない場合があります。 更新されるかどうかは、<xref:System.Data.Objects.RefreshMode> で決まります。 <xref:System.Data.Objects.RefreshMode.StoreWins> モードでは、オブジェクトがデータ ソースの値と一致するように更新されます。 <xref:System.Data.Objects.RefreshMode.ClientWins> モードでは、データ ソースで他の変更が行われた場合でも、オブジェクト コンテキストでの変更のみが保存されます。  
+  
+ オブジェクトがデータ ソース側のロジックで更新されるようにするには、<xref:System.Data.Objects.ObjectContext.Refresh%2A> メソッドの呼び出し後に <xref:System.Data.Objects.RefreshMode.StoreWins> 値を指定して <xref:System.Data.Objects.ObjectContext.SaveChanges%2A> メソッドを呼び出します。  
+  
+   
+  
+## Examples  
+ この例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 この例では、変更を保存します。これにより、同時実行の競合が発生する可能性があります。 その後、変更を再度保存する前にオブジェクト コンテキストを更新することで同時実行の競合を解決する方法を示します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#Concurrency](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#concurrency)]
+ [!code-vb[DP ObjectServices Concepts#Concurrency](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#concurrency)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="collection" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="refreshMode" /> が無効です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="collection" /> が空です。  
+  
+ または  
+  
+ オブジェクトがコンテキストにアタッチされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveChanges">
+      <MemberSignature Language="C#" Value="public int SaveChanges ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 SaveChanges() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.SaveChanges" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべての更新をデータ ソースに保存して、オブジェクト コンテキストの変更の追跡をリセットします。</summary>
+        <returns><see cref="F:System.Data.EntityState.Added" /> が呼び出されたときの <see cref="F:System.Data.EntityState.Modified" />、<see cref="F:System.Data.EntityState.Deleted" />、または <see cref="M:System.Data.Objects.ObjectContext.SaveChanges" /> 状態のオブジェクトの数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアント上のオブジェクトがデータ ソース側のロジックで更新されるようにするには、<xref:System.Data.Objects.ObjectContext.Refresh%2A> の呼び出し後に <xref:System.Data.Objects.RefreshMode.StoreWins> 値を指定して <xref:System.Data.Objects.ObjectContext.SaveChanges%2A> メソッドを呼び出します。 詳細については、次を参照してください。[変更を保存および管理する同時実行](http://msdn.microsoft.com/en-us/b8378601-4f26-4a05-a24a-f50aeb68610e)です。  
+  
+ <xref:System.Data.Objects.ObjectContext.SaveChanges%2A>トランザクション内で動作します。 <xref:System.Data.Objects.ObjectContext.SaveChanges%2A>そのトランザクションをロールバックし、ダーティの場合は、例外をスロー<xref:System.Data.Objects.ObjectStateEntry>オブジェクトを永続化することはできません。  
+  
+ オプティミスティック同時実行制御違反が発生した場合は、<xref:System.Data.OptimisticConcurrencyException> がスローされます。 オプティミスティック同時実行制御違反を解決するには、その違反をキャッチし、<xref:System.Data.Objects.ObjectContext.Refresh%2A> 値または <xref:System.Data.Objects.RefreshMode.StoreWins> 値を指定して <xref:System.Data.Objects.RefreshMode.ClientWins> メソッドを呼び出し、<xref:System.Data.Objects.ObjectContext.SaveChanges%2A> を再度呼び出します。 詳細については、次を参照してください。[する方法: オブジェクト コンテキスト内のデータ同時実行の管理](http://msdn.microsoft.com/en-us/25ffe70d-ce97-4f0a-8ae0-22b7c40f748a)です。  
+  
+   
+  
+## Examples  
+ この例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 この例では、変更を保存します。これにより、同時実行の競合が発生する可能性があります。 その後、変更を再度保存する前にオブジェクト コンテキストを更新することで同時実行の競合を解決する方法を示します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#Concurrency](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#concurrency)]
+ [!code-vb[DP ObjectServices Concepts#Concurrency](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#concurrency)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Data.OptimisticConcurrencyException">データ ソースでオプティミスティック同時実行制御違反が発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveChanges">
+      <MemberSignature Language="C#" Value="public int SaveChanges (bool acceptChangesDuringSave);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 SaveChanges(bool acceptChangesDuringSave) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.SaveChanges(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use SaveChanges(SaveOptions options) instead.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="acceptChangesDuringSave" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="acceptChangesDuringSave">このパラメーターは、クライアント側のトランザクションのサポートに必要です。 場合<see langword="true" />、変更の追跡のすべてのオブジェクトでは後にリセット<see cref="M:System.Data.Objects.ObjectContext.SaveChanges(System.Boolean)" />が完了するとします。 場合<see langword="false" />、呼び出す必要があります、<see cref="M:System.Data.Objects.ObjectContext.AcceptAllChanges" />メソッド<see cref="M:System.Data.Objects.ObjectContext.SaveChanges(System.Boolean)" />です。</param>
+        <summary>すべての更新をデータ ソースに保存して、必要に応じてオブジェクト コンテキストの変更の追跡をリセットします。</summary>
+        <returns><see cref="F:System.Data.EntityState.Added" /> が呼び出されたときの <see cref="F:System.Data.EntityState.Modified" />、<see cref="F:System.Data.EntityState.Deleted" />、または <see cref="M:System.Data.Objects.ObjectContext.SaveChanges" /> 状態のオブジェクトの数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Data.Objects.ObjectContext.SaveChanges%28System.Data.Objects.SaveOptions%29>メソッド代わりにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Data.OptimisticConcurrencyException">オプティミスティック同時実行制御違反が発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveChanges">
+      <MemberSignature Language="C#" Value="public virtual int SaveChanges (System.Data.Objects.SaveOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 SaveChanges(valuetype System.Data.Objects.SaveOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.SaveChanges(System.Data.Objects.SaveOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.Data.Objects.SaveOptions" />
+      </Parameters>
+      <Docs>
+        <param name="options">A<see cref="T:System.Data.Objects.SaveOptions" />操作の動作を決定する値。</param>
+        <summary>指定したデータ ソースへのすべての更新プログラムが引き続き発生する<see cref="T:System.Data.Objects.SaveOptions" />です。</summary>
+        <returns><see cref="F:System.Data.EntityState.Added" /> が呼び出されたときの <see cref="F:System.Data.EntityState.Modified" />、<see cref="F:System.Data.EntityState.Deleted" />、または <see cref="M:System.Data.Objects.ObjectContext.SaveChanges" /> 状態のオブジェクトの数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この特定のオーバー ロードを使用して<xref:System.Data.Objects.ObjectContext.SaveChanges%2A>かされるようにする<xref:System.Data.Objects.ObjectContext.DetectChanges%2A>またはデータ ソースに変更を保存する前に呼び出さ<xref:System.Data.Objects.ObjectContext.AcceptAllChanges%2A>は、データ ソースに変更を保存した後に呼び出されます。  
+  
+ この列挙体には、<xref:System.FlagsAttribute>メンバー値のビットごとの組み合わせのことができます。  
+  
+ クライアント上のオブジェクトがデータ ソース側のロジックで更新されたことを確認するを呼び出すことができます、<xref:System.Data.Objects.ObjectContext.Refresh%2A>メソッドを<xref:System.Data.Objects.RefreshMode.StoreWins>値の呼び出し後に<xref:System.Data.Objects.ObjectContext.SaveChanges%2A>です。 <xref:System.Data.Objects.ObjectContext.SaveChanges%2A>メソッドは、トランザクションで動作します。 <xref:System.Data.Objects.ObjectContext.SaveChanges%2A>そのトランザクションをロールバックし、いずれかのダーティの場合は、例外をスロー<xref:System.Data.Objects.ObjectStateEntry>オブジェクトを永続化することはできません。  
+  
+ オプティミスティック同時実行制御違反が発生した場合は、<xref:System.Data.OptimisticConcurrencyException> がスローされます。 オプティミスティック同時実行制御違反を解決するには、その違反をキャッチし、<xref:System.Data.Objects.ObjectContext.Refresh%2A> 値または <xref:System.Data.Objects.RefreshMode.StoreWins> 値を指定して <xref:System.Data.Objects.RefreshMode.ClientWins> メソッドを呼び出し、<xref:System.Data.Objects.ObjectContext.SaveChanges%2A> メソッドを再度呼び出します。 詳細については、次を参照してください。[する方法: オブジェクト コンテキスト内のデータ同時実行の管理](http://msdn.microsoft.com/en-us/25ffe70d-ce97-4f0a-8ae0-22b7c40f748a)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Data.OptimisticConcurrencyException">オプティミスティック同時実行制御違反が発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SavingChanges">
+      <MemberSignature Language="C#" Value="public event EventHandler SavingChanges;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler SavingChanges" />
+      <MemberSignature Language="DocId" Value="E:System.Data.Objects.ObjectContext.SavingChanges" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変更内容がデータ ソースに保存されるときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectContext.SavingChanges> イベントは、<xref:System.Data.Objects.ObjectContext.SaveChanges%2A> に対する <xref:System.Data.Objects.ObjectContext> 操作の開始時に発生します。 通常、このイベントは、新しい値がデータベースに書き込まれる前に、変更されたオブジェクトを検証するために使用されます。  
+  
+   
+  
+## Examples  
+ この例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 この例では、エンティティ状態の検証を実行する <xref:System.Data.Objects.ObjectContext.SavingChanges> イベントのハンドラーを登録します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#SavingChanges](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#savingchanges)]
+ [!code-vb[DP ObjectServices Concepts#SavingChanges](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#savingchanges)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Translate&lt;TElement&gt;">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectResult&lt;TElement&gt; Translate&lt;TElement&gt; (System.Data.Common.DbDataReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectResult`1&lt;!!TElement&gt; Translate&lt;TElement&gt;(class System.Data.Common.DbDataReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.Translate``1(System.Data.Common.DbDataReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.ObjectResult&lt;TElement&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TElement" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Data.Common.DbDataReader" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TElement">To be added.</typeparam>
+        <param name="reader"><see cref="T:System.Data.Common.DbDataReader" />エンティティ オブジェクトに変換するエンティティ データを格納します。</param>
+        <summary>変換、<see cref="T:System.Data.Common.DbDataReader" />エンティティ データを要求したエンティティ型のオブジェクトの行を格納しています。</summary>
+        <returns>型のオブジェクトの列挙体<paramref name="TResult" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectContext.Translate%2A>からエンティティ データを変換するメソッドが使用される、<xref:System.Data.Common.DbDataReader>を要求する型のオブジェクトにします。 このプロセスは自動的に実行すると、<xref:System.Data.Objects.ObjectQuery%601>はエンティティ データを返すために実行します。 <xref:System.Data.Objects.ObjectContext.Translate%2A>メソッドでは、データ ソースに対して標準的な ADO.NET クエリを実行し、エンティティ オブジェクトに返されるデータ行を変換することができます。  
+  
+ 指定された<xref:System.Data.Common.DbDataReader>要求されたエンティティ型にマップされるデータを含める必要があります。  
+  
+ 詳細については次を参照してください:  
+  
+ [ストアのコマンドを直接実行](http://msdn.microsoft.com/en-us/5708d0a2-3f76-4825-978a-d06ff5c4bb3d)と  
+  
+ [方法: データ ソースに対してコマンドを直接実行](http://msdn.microsoft.com/en-us/def3cc87-cfff-4dee-83cf-1a40c73a2d01)  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">ときに<paramref name="reader" />は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Translate&lt;TEntity&gt;">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectResult&lt;TEntity&gt; Translate&lt;TEntity&gt; (System.Data.Common.DbDataReader reader, string entitySetName, System.Data.Objects.MergeOption mergeOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectResult`1&lt;!!TEntity&gt; Translate&lt;TEntity&gt;(class System.Data.Common.DbDataReader reader, string entitySetName, valuetype System.Data.Objects.MergeOption mergeOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.Translate``1(System.Data.Common.DbDataReader,System.String,System.Data.Objects.MergeOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.ObjectResult&lt;TEntity&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TEntity" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Data.Common.DbDataReader" />
+        <Parameter Name="entitySetName" Type="System.String" />
+        <Parameter Name="mergeOption" Type="System.Data.Objects.MergeOption" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TEntity">To be added.</typeparam>
+        <param name="reader"><see cref="T:System.Data.Common.DbDataReader" />エンティティ オブジェクトに変換するエンティティ データを格納します。</param>
+        <param name="entitySetName">エンティティ セット、 <c>TResult</c>型です。</param>
+        <param name="mergeOption"><see cref="T:System.Data.Objects.MergeOption" />変換時に使用するオブジェクトがオブジェクト コンテキストに追加されます。 既定値は、<see cref="F:System.Data.Objects.MergeOption.AppendOnly" /> です。</param>
+        <summary>変換、<see cref="T:System.Data.Common.DbDataReader" />エンティティ データを要求したエンティティ型、指定されたマージ オプションを使用して、特定のエンティティ セットでのオブジェクトの行を格納しています。</summary>
+        <returns>型のオブジェクトの列挙体<paramref name="TResult" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectContext.Translate%2A>からエンティティ データを変換するメソッドが使用される、<xref:System.Data.Common.DbDataReader>を要求する型のオブジェクトにします。 このプロセスは自動的に実行すると、<xref:System.Data.Objects.ObjectQuery%601>はエンティティ データを返すために実行します。 <xref:System.Data.Objects.ObjectContext.Translate%2A>メソッドでは、データ ソースに対して標準的な ADO.NET クエリを実行し、エンティティ オブジェクトに返されるデータ行を変換することができます。  
+  
+ 指定された<xref:System.Data.Common.DbDataReader>要求されたエンティティ型にマップされるデータを含める必要があります。  
+  
+ 詳細については次を参照してください:  
+  
+ [ストアのコマンドを直接実行](http://msdn.microsoft.com/en-us/5708d0a2-3f76-4825-978a-d06ff5c4bb3d)と  
+  
+ [方法: データ ソースに対してコマンドを直接実行](http://msdn.microsoft.com/en-us/def3cc87-cfff-4dee-83cf-1a40c73a2d01)  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">ときに<paramref name="reader" />は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">ときに、指定された<paramref name="mergeOption" />が無効です<see cref="T:System.Data.Objects.MergeOption" />値。</exception>
+        <exception cref="T:System.InvalidOperationException">ときに、指定された<paramref name="entitySetName" />が有効なエンティティではない設定、<paramref name="TResult" />型です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetObjectByKey">
+      <MemberSignature Language="C#" Value="public bool TryGetObjectByKey (System.Data.EntityKey key, out object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryGetObjectByKey(class System.Data.EntityKey key, [out] object&amp; value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectContext.TryGetObjectByKey(System.Data.EntityKey,System.Object@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Data.EntityKey" />
+        <Parameter Name="value" Type="System.Object&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="key">検索するオブジェクトのキー。</param>
+        <param name="value">このメソッドから制御が戻った時点で、オブジェクトが格納されます。</param>
+        <summary>指定されたエンティティ キーを持つオブジェクトを返します。</summary>
+        <returns>
+          <see langword="true" />場合は、オブジェクトが正常に取得しました。 <see langword="false" />場合、<paramref name="key" />は、一時的な接続が<see langword="null" />、または<paramref name="value" />は<see langword="null" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectContext.TryGetObjectByKey%2A> は、指定された <xref:System.Data.EntityKey> を持つオブジェクトを <xref:System.Data.Objects.ObjectStateManager> から取得しようとします。 オブジェクトが現在オブジェクト コンテキストに読み込まれていない場合は、データ ソースからオブジェクトを返すためにクエリが実行されます。 詳細については、次を参照してください。[オブジェクト クエリ](http://msdn.microsoft.com/en-us/0768033c-876f-471d-85d5-264884349276)です。  
+  
+ オブジェクトが見つからない場合に <xref:System.Data.Objects.ObjectContext.TryGetObjectByKey%2A> で発生する <xref:System.Data.ObjectNotFoundException> の処理を避けるには、<xref:System.Data.Objects.ObjectContext.GetObjectByKey%2A> メソッドを使用します。  
+  
+ このメソッドは、<xref:System.Data.EntityState.Deleted> 状態のオブジェクトを返します。  
+  
+ 一時キーを使用してデータ ソースからオブジェクトを取得することはできません。  
+  
+ <xref:System.Data.Objects.ObjectContext.TryGetObjectByKey%2A>メソッドに適用される標準の .NET`TryParse`のパターンを<xref:System.Data.Objects.ObjectContext.GetObjectByKey%2A>を返すメソッド`false`ときに、<xref:System.Data.ObjectNotFoundException>でキャッチされます。  
+  
+   
+  
+## Examples  
+ このトピックの例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 この例では、指定された型のエンティティの <xref:System.Data.EntityKey> を作成して、エンティティをキーで取得します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#EntityKeyClass_TryGetObjectByKey](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#entitykeyclass_trygetobjectbykey)]
+ [!code-vb[DP ObjectServices Concepts#EntityKeyClass_TryGetObjectByKey](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#entitykeyclass_trygetobjectbykey)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">互換性のないメタデータを<paramref name="key" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

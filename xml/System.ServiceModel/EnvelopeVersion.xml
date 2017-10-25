@@ -1,0 +1,268 @@
+<Type Name="EnvelopeVersion" FullName="System.ServiceModel.EnvelopeVersion">
+  <TypeSignature Language="C#" Value="public sealed class EnvelopeVersion" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EnvelopeVersion extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.EnvelopeVersion" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>メッセージとその交換に関連付けられている SOAP のバージョンに関連する情報を格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在利用できる SOAP バージョンは、SOAP 1.1 および SOAP 1.2 です。 これらの SOAP バージョンにはそれぞれ <xref:System.ServiceModel.EnvelopeVersion> があり、<xref:System.ServiceModel.EnvelopeVersion.Soap11%2A> プロパティと <xref:System.ServiceModel.EnvelopeVersion.Soap12%2A> プロパティを使用して回復できます。 SOAP 形式を使用しない XML メッセージを送受信するために使用される <xref:System.ServiceModel.EnvelopeVersion.None%2A> メッセージ バージョンもあります。 各メッセージ バージョンに関連付けられた処理ロールは、<xref:System.ServiceModel.EnvelopeVersion.NextDestinationActorValue%2A> プロパティと <xref:System.ServiceModel.EnvelopeVersion.GetUltimateDestinationActorValues%2A> メソッドを使用して回復できます。  
+  
+   
+  
+## Examples  
+ 次のコードは、<xref:System.ServiceModel.EnvelopeVersion> のメソッドとプロパティへのアクセス方法を示しています。  
+  
+ [!code-csharp[S_UEEnvelopeVersion#0](~/samples/snippets/csharp/VS_Snippets_CFX/s_ueenvelopeversion/cs/program.cs#0)]
+ [!code-vb[S_UEEnvelopeVersion#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ueenvelopeversion/vb/module1.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetUltimateDestinationActorValues">
+      <MemberSignature Language="C#" Value="public string[] GetUltimateDestinationActorValues ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string[] GetUltimateDestinationActorValues() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.EnvelopeVersion.GetUltimateDestinationActorValues" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のメッセージのバージョンに関連付けられた SOAP ロールの URI 名で、最終送信先を格納する文字列を取得します。</summary>
+        <returns>SOAP1.1 が使用される場合は空の文字列。SOAP1.2 が使用される場合は http://www.w3.org/2003/05/soap-envelope/role/ultimateReceiver を格納する文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `null` が指定された場合、最終受信者は <xref:System.ServiceModel.EnvelopeVersion.None%2A> です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UEEnvelopeVersion#5](~/samples/snippets/csharp/VS_Snippets_CFX/s_ueenvelopeversion/cs/program.cs#5)]
+ [!code-vb[S_UEEnvelopeVersion#5](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ueenvelopeversion/vb/module1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NextDestinationActorValue">
+      <MemberSignature Language="C#" Value="public string NextDestinationActorValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NextDestinationActorValue" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.EnvelopeVersion.NextDestinationActorValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のメッセージのバージョンに関連付けられた SOAP ロールの URI 名で、次の送信先を格納する文字列を取得します。</summary>
+        <value>SOAP1.1 が使用される場合は http://schemas.xmlsoap.org/soap/actor/next を格納する文字列。SOAP1.2 が使用される場合は http://www.w3.org/2003/05/soap-envelope/role/next を格納する文字列。メッセージ バージョンが none の場合は空の文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_UEEnvelopeVersion#4](~/samples/snippets/csharp/VS_Snippets_CFX/s_ueenvelopeversion/cs/program.cs#4)]
+ [!code-vb[S_UEEnvelopeVersion#4](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ueenvelopeversion/vb/module1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.EnvelopeVersion None { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.EnvelopeVersion None" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.EnvelopeVersion.None" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.EnvelopeVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP のバージョンを使用しないエンベロープ バージョンを取得します。</summary>
+        <value>SOAP 形式を使用しないエンベロープ バージョン。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.EnvelopeVersion.None%2A> メッセージ バージョンが使用された場合、SOAP エンベロープは書き出されずにメッセージが本文の内容を出力することを意味します。 これにより、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] チャネルは、SOAP 形式を使用しない XML を予測しているエンドポイントと通信できます。 XML ペイロードはメッセージの本文に格納され、エンコーダーに到達したときに出力される唯一のデータです。  
+  
+ 同様に、XML の任意のチャンクが受信された場合は、チャネル スタックに伝達するためのメッセージにラップされます。 必要なヘッダーが挿入され、メッセージは、SOAP メッセージであるかのように処理されます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UEEnvelopeVersion#3](~/samples/snippets/csharp/VS_Snippets_CFX/s_ueenvelopeversion/cs/program.cs#3)]
+ [!code-vb[S_UEEnvelopeVersion#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ueenvelopeversion/vb/module1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Soap11">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.EnvelopeVersion Soap11 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.EnvelopeVersion Soap11" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.EnvelopeVersion.Soap11" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.EnvelopeVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP1.1 エンベロープ バージョンを取得します。</summary>
+        <value>SOAP1.1<see cref="T:System.ServiceModel.EnvelopeVersion" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[crdefault](~/includes/crdefault-md.md)]スキーマを[SOAP 1.1](http://go.microsoft.com/fwlink/?LinkID=96641)です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UEEnvelopeVersion#1](~/samples/snippets/csharp/VS_Snippets_CFX/s_ueenvelopeversion/cs/program.cs#1)]
+ [!code-vb[S_UEEnvelopeVersion#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ueenvelopeversion/vb/module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Soap12">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.EnvelopeVersion Soap12 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.EnvelopeVersion Soap12" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.EnvelopeVersion.Soap12" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.EnvelopeVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP1.2 エンベロープ バージョンを取得します。</summary>
+        <value>SOAP1.2<see cref="T:System.ServiceModel.EnvelopeVersion" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[crdefault](~/includes/crdefault-md.md)]スキーマを[SOAP 1.2](http://go.microsoft.com/fwlink/?LinkID=96642)です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UEEnvelopeVersion#2](~/samples/snippets/csharp/VS_Snippets_CFX/s_ueenvelopeversion/cs/program.cs#2)]
+ [!code-vb[S_UEEnvelopeVersion#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ueenvelopeversion/vb/module1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.EnvelopeVersion.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のエンベロープ バージョンを表す文字列を取得します。</summary>
+        <returns>現在のエンベロープ バージョンの文字列形式。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、カルチャに基づいた文字列をユーザーが判読できる形で返します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UEEnvelopeVersion#6](~/samples/snippets/csharp/VS_Snippets_CFX/s_ueenvelopeversion/cs/program.cs#6)]
+ [!code-vb[S_UEEnvelopeVersion#6](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ueenvelopeversion/vb/module1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

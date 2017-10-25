@@ -1,0 +1,429 @@
+<Type Name="ServiceEndpoint" FullName="System.ServiceModel.Description.ServiceEndpoint">
+  <TypeSignature Language="C#" Value="public class ServiceEndpoint" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ServiceEndpoint extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Description.ServiceEndpoint" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("Name={name}")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("Address={address}")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>サービスのクライアントがサービスを検索してサービスと通信できるようにするサービス エンドポイントを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サービス エンドポイントには、クライアントがこのエンドポイントでサービスを検索してサービスとの通信を行うために必要なアドレス、バインディング、コントラクト、および動作に関する情報が含まれます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ServiceEndpoint#0](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_serviceendpoint/cs/program.cs#0)]
+ [!code-vb[S_UE_ServiceEndpoint#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_serviceendpoint/vb/program.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceEndpoint (System.ServiceModel.Description.ContractDescription contract);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Description.ContractDescription contract) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.ServiceEndpoint.#ctor(System.ServiceModel.Description.ContractDescription)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contract" Type="System.ServiceModel.Description.ContractDescription" />
+      </Parameters>
+      <Docs>
+        <param name="contract">サービス エンドポイントの <see cref="T:System.ServiceModel.Description.ContractDescription" />。</param>
+        <summary>指定したコントラクトの <see cref="T:System.ServiceModel.Description.ServiceEndpoint" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、エンドポイントのバインディングおよびアドレスが構成で指定されている場合に使用します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ServiceEndpoint#1](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_serviceendpoint/cs/program.cs#1)]
+ [!code-vb[S_UE_ServiceEndpoint#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_serviceendpoint/vb/program.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceEndpoint (System.ServiceModel.Description.ContractDescription contract, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress address);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Description.ContractDescription contract, class System.ServiceModel.Channels.Binding binding, class System.ServiceModel.EndpointAddress address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.ServiceEndpoint.#ctor(System.ServiceModel.Description.ContractDescription,System.ServiceModel.Channels.Binding,System.ServiceModel.EndpointAddress)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contract" Type="System.ServiceModel.Description.ContractDescription" />
+        <Parameter Name="binding" Type="System.ServiceModel.Channels.Binding" />
+        <Parameter Name="address" Type="System.ServiceModel.EndpointAddress" />
+      </Parameters>
+      <Docs>
+        <param name="contract">サービス エンドポイントの <see cref="T:System.ServiceModel.Description.ContractDescription" />。</param>
+        <param name="binding">サービス エンドポイントが通信を行う方法を指定する <see cref="T:System.ServiceModel.Channels.Binding" />。</param>
+        <param name="address">サービス エンドポイントの <see cref="T:System.ServiceModel.EndpointAddress" />。</param>
+        <summary>指定したコントラクト、バインディング、およびアドレスを使用して、<see cref="T:System.ServiceModel.Description.ServiceEndpoint" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コードでサービス エンドポイントを強制的に指定するために、このコンストラクターを使用します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ServiceEndpoint#2](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_serviceendpoint/cs/snippet.cs#2)]
+ [!code-vb[S_UE_ServiceEndpoint#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_serviceendpoint/vb/snippet.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Address">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.EndpointAddress Address { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.EndpointAddress Address" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceEndpoint.Address" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.EndpointAddress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス エンドポイントのエンドポイント アドレスを取得または設定します。</summary>
+        <value>サービス エンドポイントの位置を指定する <see cref="T:System.ServiceModel.EndpointAddress" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サービス エンドポイントがリッスンする <xref:System.ServiceModel.Description.ServiceEndpoint.ListenUri%2A> の既定値は、<xref:System.ServiceModel.EndpointAddress.Uri%2A> から返される <xref:System.ServiceModel.EndpointAddress> の <xref:System.ServiceModel.Description.ServiceEndpoint.Address%2A> によって提供されます。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Description.ServiceEndpoint> を既存の <xref:System.ServiceModel.ServiceHost> に追加して、アドレス プロパティを表示する方法を次の例に示します。  
+  
+ [!code-csharp[S_UE_ServiceEndpoint#3](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_serviceendpoint/cs/program.cs#3)]
+ [!code-vb[S_UE_ServiceEndpoint#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_serviceendpoint/vb/program.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Behaviors">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.KeyedByTypeCollection&lt;System.ServiceModel.Description.IEndpointBehavior&gt; Behaviors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.KeyedByTypeCollection`1&lt;class System.ServiceModel.Description.IEndpointBehavior&gt; Behaviors" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceEndpoint.Behaviors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.KeyedByTypeCollection&lt;System.ServiceModel.Description.IEndpointBehavior&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス エンドポイントの動作を取得します。</summary>
+        <value>サービス エンドポイントに指定された動作を含む <see cref="T:System.Collections.Generic.KeyedByTypeCollection`1" /> 型の <see cref="T:System.ServiceModel.Description.IEndpointBehavior" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 説明階層からアクセスできる動作の型は、特定のレベルに限定されます。 <xref:System.ServiceModel.Description.ServiceEndpoint> から、<xref:System.ServiceModel.Description.IEndpointBehavior> にアクセスできます。  
+  
+ エンドポイントに関連付けられた <xref:System.ServiceModel.Description.IContractBehavior> にアクセスする場合は、<xref:System.ServiceModel.Description.ServiceEndpoint.Contract%2A> プロパティを使用してエンドポイントのコントラクトを取得します。 次に、<xref:System.ServiceModel.Description.ContractDescription.Behaviors%2A> プロパティを呼び出して、エンドポイントに関連付けられている <xref:System.Collections.Generic.KeyedByTypeCollection%601> オブジェクトの <xref:System.ServiceModel.Description.IContractBehavior> を取得します。  
+  
+   
+  
+## Examples  
+ カスタム エンドポイント動作を追加し、その動作にアクセスする方法を次のコードに示します。  
+  
+ [!code-csharp[S_UE_ServiceEndpoint#4](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_serviceendpoint/cs/snippet.cs#4)]
+ [!code-vb[S_UE_ServiceEndpoint#4](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_serviceendpoint/vb/snippet.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Binding">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.Binding Binding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Channels.Binding Binding" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceEndpoint.Binding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.Binding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス エンドポイントのバインディングを取得または設定します。</summary>
+        <value>サービス エンドポイントの <see cref="T:System.ServiceModel.Channels.Binding" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エンドポイントのバインディングは構成ファイルにも指定する、 [&lt;バインド&gt;](~/docs/framework/configure-apps/file-schema/wcf/bindings.md)要素。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ServiceEndpoint#5](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_serviceendpoint/cs/snippet.cs#5)]
+ [!code-vb[S_UE_ServiceEndpoint#5](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_serviceendpoint/vb/snippet.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contract">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ContractDescription Contract { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Description.ContractDescription Contract" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceEndpoint.Contract" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ContractDescription</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス エンドポイントのコントラクトを取得します。</summary>
+        <value>サービス エンドポイントのコントラクトを指定する <see cref="T:System.ServiceModel.Description.ContractDescription" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各サービス エンドポイントは、一意のコントラクトを持っています。 <xref:System.ServiceModel.Description.ContractDescription> から、<xref:System.ServiceModel.Description.OperationDescriptionCollection> プロパティを使用して、コントラクトに含まれるメソッドの <xref:System.ServiceModel.Description.ContractDescription.Operations%2A> にアクセスできます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ServiceEndpoint#5](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_serviceendpoint/cs/snippet.cs#5)]
+ [!code-vb[S_UE_ServiceEndpoint#5](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_serviceendpoint/vb/snippet.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndpointBehaviors">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.KeyedCollection&lt;Type,System.ServiceModel.Description.IEndpointBehavior&gt; EndpointBehaviors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.KeyedCollection`2&lt;class System.Type, class System.ServiceModel.Description.IEndpointBehavior&gt; EndpointBehaviors" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceEndpoint.EndpointBehaviors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.KeyedCollection&lt;System.Type,System.ServiceModel.Description.IEndpointBehavior&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスのエンドポイントの動作を取得します。</summary>
+        <value>サービスのエンドポイントの動作です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSystemEndpoint">
+      <MemberSignature Language="C#" Value="public bool IsSystemEndpoint { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSystemEndpoint" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceEndpoint.IsSystemEndpoint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス エンドポイントがユーザーによって定義されるのではなく、システムによって生成されるかどうかを取得または設定します。</summary>
+        <value>
+          <see langword="true" />サービス エンドポイントがシステムによって生成される場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ListenUri">
+      <MemberSignature Language="C#" Value="public Uri ListenUri { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri ListenUri" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceEndpoint.ListenUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス エンドポイントがリッスンする URI を取得または設定します。</summary>
+        <value>サービス エンドポイントがリッスンする <see cref="T:System.Uri" />。 既定値は、<see cref="P:System.ServiceModel.EndpointAddress.Uri" /> から返される <see cref="T:System.ServiceModel.EndpointAddress" /> の <see cref="P:System.ServiceModel.Description.ServiceEndpoint.Address" /> によって提供されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値も、<xref:System.ServiceModel.Configuration.ServiceEndpointElement.ListenUri%2A> プロパティを使用して設定できます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ServiceEndpoint#5](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_serviceendpoint/cs/snippet.cs#5)]
+ [!code-vb[S_UE_ServiceEndpoint#5](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_serviceendpoint/vb/snippet.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ListenUriMode">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ListenUriMode ListenUriMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.Description.ListenUriMode ListenUriMode" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceEndpoint.ListenUriMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ListenUriMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リッスンするサービスに提供される URI をトランスポートが処理する方法を指定する値を取得または設定します。</summary>
+        <value>サービス エンドポイントの <see cref="T:System.ServiceModel.Description.ListenUriMode" />。 既定値は <see cref="F:System.ServiceModel.Description.ListenUriMode.Explicit" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.ListenUriMode> の値は、トランスポートが <xref:System.ServiceModel.Description.ServiceEndpoint.ListenUri%2A> を処理する方法を決定するために使用されます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ServiceEndpoint#5](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_serviceendpoint/cs/snippet.cs#5)]
+ [!code-vb[S_UE_ServiceEndpoint#5](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_serviceendpoint/vb/snippet.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceEndpoint.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス エンドポイントの名前を取得または設定します。</summary>
+        <value>サービス エンドポイントの名前。 既定値は、バインディング名とコントラクトの説明の名前を連結した値です。 たとえば、<see cref="P:System.ServiceModel.Channels.Binding.Name" /> +'_' + <see cref="P:System.ServiceModel.Description.ContractDescription.Name" /> のようになります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サービスには複数のエンドポイントが存在する場合があるため、エンドポイントの <xref:System.ServiceModel.Description.ServiceEndpoint.Name%2A> はサービスの名前とは異なります。 サービス名へのアクセスは、<xref:System.ServiceModel.Description.ServiceDescription.Name%2A> プロパティを使用して行います。  
+  
+> [!NOTE]
+>  サービスからアクセスは、このプロパティがで指定されます。、< endpoint name ="`endpointName`"\>構成要素。 クライアントからアクセスする場合、このプロパティは `null` になります。 プロパティの getter が (再びクライアントから) 呼び出されると、getter はコントラクトとバインディングに基づいてこのプロパティに既定値を設定します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ServiceEndpoint#5](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_serviceendpoint/cs/snippet.cs#5)]
+ [!code-vb[S_UE_ServiceEndpoint#5](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_serviceendpoint/vb/snippet.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

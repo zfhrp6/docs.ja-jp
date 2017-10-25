@@ -1,0 +1,385 @@
+<Type Name="PackageDigitalSignature" FullName="System.IO.Packaging.PackageDigitalSignature">
+  <TypeSignature Language="C#" Value="public class PackageDigitalSignature" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PackageDigitalSignature extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IO.Packaging.PackageDigitalSignature" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>パッケージ パーツとリレーションシップのセットに適用されるデジタル署名を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.IO.Packaging.PackageDigitalSignature>オブジェクトは変更不可とは、作成後に変更することはできません。  
+  
+ セキュリティのため、<xref:System.IO.Packaging.PackageDigitalSignature>内のパーツを関連付けることができます、<xref:System.IO.Packaging.Package>です。 A <xref:System.IO.Packaging.PackageDigitalSignature> 2 つの機能を提供する X.509 証明書が組み込まれています。  
+  
+-   パーツの発行元を識別および認証します。  
+  
+-   パーツが変更されていないことを検証します。  
+  
+ デジタル署名が変更されてから一部を妨害しないが、任意の方法で、一部が変更された場合に、署名に対して検証チェックが失敗します。 アプリケーションが適切な措置をとれるし — たとえば、部品を開かないように、または部品が変更されており、安全ではないユーザーに通知することできます。  
+  
+ パッケージのデジタル署名の詳細については、MSDN の記事を参照してください。 [Open Packaging Conventions のデジタル署名 Framework](http://go.microsoft.com/fwlink/?LinkId=74494)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CertificateEmbeddingOption">
+      <MemberSignature Language="C#" Value="public System.IO.Packaging.CertificateEmbeddingOption CertificateEmbeddingOption { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.IO.Packaging.CertificateEmbeddingOption CertificateEmbeddingOption" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.PackageDigitalSignature.CertificateEmbeddingOption" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.CertificateEmbeddingOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>X.509 証明書の埋め込みオプションを取得します。</summary>
+        <value>1 つ、<see cref="T:System.IO.Packaging.CertificateEmbeddingOption" />デジタル署名のオプションを指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パッケージの検証に使用される X.509 証明書は、3 つの場所のいずれかで格納されている可能性があります。  
+  
+|||  
+|-|-|  
+|<xref:System.IO.Packaging.CertificateEmbeddingOption.InCertificatePart>|独自の証明書で<xref:System.IO.Packaging.PackagePart>パッケージにします。<br /><br /> 使用する X.509 証明書を取得できます、<xref:System.IO.Packaging.PackageDigitalSignature.Signer%2A>プロパティです。|  
+|<xref:System.IO.Packaging.CertificateEmbeddingOption.InSignaturePart>|コンテンツ内で、<xref:System.IO.Packaging.PackageDigitalSignature.SignaturePart%2A>パッケージにします。<br /><br /> 使用する X.509 証明書を取得できます、<xref:System.IO.Packaging.PackageDigitalSignature.Signer%2A>プロパティです。|  
+|<xref:System.IO.Packaging.CertificateEmbeddingOption.NotEmbedded>|署名を作成するアプリケーションと、アプリケーションの両方で既知の場所にパッケージの外部を後では、署名を検証します。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">デジタル<see cref="P:System.IO.Packaging.PackageDigitalSignature.Signature" />が削除されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPartTransformList">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.List&lt;string&gt; GetPartTransformList (Uri partName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.List`1&lt;string&gt; GetPartTransformList(class System.Uri partName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackageDigitalSignature.GetPartTransformList(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.List&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="partName" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="partName"><see cref="T:System.Uri" />の<see cref="T:System.IO.Packaging.PackagePart" />の変換のリストを返します。</param>
+        <summary>順序付きリストを返します、<see cref="T:System.Security.Cryptography.Xml.Transform" />特定の部分に適用される操作です。</summary>
+        <returns>URI の順序付きリスト文字列など、<see cref="F:System.Security.Cryptography.Xml.SignedXml.XmlDsigCanonicalizationUrl" />または<see cref="F:System.Security.Cryptography.Xml.SignedXml.XmlDsigC14NTransformUrl" />の一部に適用される標準的な XML 変換を表す、指定された<paramref name="partName" />URI。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">デジタル<see cref="P:System.IO.Packaging.PackageDigitalSignature.Signature" />が削除されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Signature">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.Xml.Signature Signature { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.Xml.Signature Signature" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.PackageDigitalSignature.Signature" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.Xml.Signature</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または XML デジタル署名を設定します。</summary>
+        <value>XML デジタル署名します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Packaging.PackageDigitalSignature.Signature%2A>間に、型固有の署名の暗号化機能とシリアル化を実行する基礎クラスにアクセスできるように、<xref:System.IO.Packaging.PackagePart>署名をホストします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">デジタル<see cref="P:System.IO.Packaging.PackageDigitalSignature.Signature" />が削除されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SignaturePart">
+      <MemberSignature Language="C#" Value="public System.IO.Packaging.PackagePart SignaturePart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IO.Packaging.PackagePart SignaturePart" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.PackageDigitalSignature.SignaturePart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.PackagePart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.IO.Packaging.PackagePart" />署名を格納しています。</summary>
+        <value>署名を含むパッケージ パーツです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 署名に副署名したときに、署名のパッケージ パーツが頻繁にアクセスします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">デジタル<see cref="P:System.IO.Packaging.PackageDigitalSignature.Signature" />が削除されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SignatureType">
+      <MemberSignature Language="C#" Value="public string SignatureType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SignatureType" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.PackageDigitalSignature.SignatureType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]署名の種類を識別する文字列。</summary>
+        <value>A[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]署名の種類を識別する文字列。 既定値は、<see cref="F:System.Security.Cryptography.Xml.SignedXml.XmlDsigC14NTransformUrl" /> です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">デジタル<see cref="P:System.IO.Packaging.PackageDigitalSignature.Signature" />が削除されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SignatureValue">
+      <MemberSignature Language="C#" Value="public byte[] SignatureValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] SignatureValue" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.PackageDigitalSignature.SignatureValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>暗号化ハッシュ値を取得、<see cref="P:System.IO.Packaging.PackageDigitalSignature.Signature" />です。</summary>
+        <value>暗号化ハッシュ値を格納するバイト配列、<see cref="P:System.IO.Packaging.PackageDigitalSignature.Signature" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">デジタル<see cref="P:System.IO.Packaging.PackageDigitalSignature.Signature" />が削除されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SignedParts">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;Uri&gt; SignedParts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Uri&gt; SignedParts" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.PackageDigitalSignature.SignedParts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Uri&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのコレクションを取得、<see cref="T:System.IO.Packaging.PackagePart" />オブジェクトが署名で署名します。</summary>
+        <value>すべてのパッケージ パーツが含まれるコレクションは、署名で署名します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">デジタル<see cref="P:System.IO.Packaging.PackageDigitalSignature.Signature" />が削除されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SignedRelationshipSelectors">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IO.Packaging.PackageRelationshipSelector&gt; SignedRelationshipSelectors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.IO.Packaging.PackageRelationshipSelector&gt; SignedRelationshipSelectors" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.PackageDigitalSignature.SignedRelationshipSelectors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IO.Packaging.PackageRelationshipSelector&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一覧を取得、<see cref="T:System.IO.Packaging.PackageRelationship" />署名で署名されている部分です。</summary>
+        <value>一覧、<see cref="T:System.IO.Packaging.PackageRelationship" />署名で署名されている部分です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">デジタル<see cref="P:System.IO.Packaging.PackageDigitalSignature.Signature" />が削除されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Signer">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.X509Certificate Signer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.X509Certificates.X509Certificate Signer" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.PackageDigitalSignature.Signer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509Certificate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>署名者の X.509 証明書を取得します。</summary>
+        <value>署名者のデジタル証明書または<see langword="null" />で証明書が格納されていない場合、<see cref="T:System.IO.Packaging.Package" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Packaging.PackageDigitalSignature.Signer%2A>パッケージ内で、デジタル証明書が格納されている場合、署名者の X.509 証明書が返されます (ときに、<xref:System.IO.Packaging.PackageDigitalSignature.CertificateEmbeddingOption%2A>は<xref:System.IO.Packaging.CertificateEmbeddingOption.InCertificatePart>または<xref:System.IO.Packaging.CertificateEmbeddingOption.InSignaturePart>)。  
+  
+ <xref:System.IO.Packaging.PackageDigitalSignature.Signer%2A>返します`null`と X.509 証明書は、パッケージに格納されていない (ときに、<xref:System.IO.Packaging.PackageDigitalSignature.CertificateEmbeddingOption%2A>は<xref:System.IO.Packaging.CertificateEmbeddingOption.NotEmbedded>)。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">デジタル<see cref="P:System.IO.Packaging.PackageDigitalSignature.Signature" />が削除されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SigningTime">
+      <MemberSignature Language="C#" Value="public DateTime SigningTime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime SigningTime" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.PackageDigitalSignature.SigningTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>署名が作成された日時を取得します。</summary>
+        <value>日付とシグネチャが作成された時刻。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Packaging.PackageDigitalSignature.TimeFormat%2A>プロパティが日付の形式を指定します。  形式、<xref:System.IO.Packaging.PackageDigitalSignature.SigningTime%2A>に基づいて文字列、<xref:System.IO.Packaging.PackageDigitalSignatureManager.TimeFormat%2A?displayProperty=nameWithType>プロパティ、署名の作成時に有効にします。  
+  
+ <xref:System.IO.Packaging.PackageDigitalSignature.SigningTime%2A>ここで、署名が行われたコンピューターのシステム時刻に基づきます。  
+  
+ <xref:System.IO.Packaging.PackageDigitalSignature.SigningTime%2A>"セキュリティで保護された TimeStamp"ではないと、タイム スタンプの信頼された証明機関ではないです。  セキュリティで保護されたタイムスタンプを入手して、信頼されているタイム スタンプ機関を使用して適用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">デジタル<see cref="P:System.IO.Packaging.PackageDigitalSignature.Signature" />が削除されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TimeFormat">
+      <MemberSignature Language="C#" Value="public string TimeFormat { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TimeFormat" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.PackageDigitalSignature.TimeFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によって返されるときの日時の形式を取得、<see cref="P:System.IO.Packaging.PackageDigitalSignature.SigningTime" />プロパティです。</summary>
+        <value>によって返されるときの日時の形式、<see cref="P:System.IO.Packaging.PackageDigitalSignature.SigningTime" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 日付/時刻形式、W3C の構文に準拠[Date and Time Formats](http://go.microsoft.com/fwlink/?LinkId=84446)注意してください。  次の表に示すようにコンポーネントには、構文と表示される区切り記号を使用する必要があります。  
+  
+|TimeFormat|説明|例|  
+|----------------|-----------------|-------------|  
+|YYYY|Year|2005|  
+|YYYY MM|年と月|2005-07|  
+|YYYY-MM-DD|完了日|2005-07-28|  
+|YYYY、MM、DDThh:mmTZD|完全な日付と時間および分|2005-07-28T19:20-1時 00分|  
+|YYYY、MM、DDThh:mm:ssTZD|完全な日付と時間、分、および秒|2005-07-28T19:20:45-1時 00分|  
+|YYYY MM-DDThh:mm:ss.sTZD|完全な日付と時間、分、および小数を含む (秒)|2005-07-28T19:20:45.75-1時 00分|  
+  
+ それぞれの文字について以下に説明します。  
+  
+|||  
+|-|-|  
+|YYYY|4 桁の年 (たとえば 2006 年)|  
+|MM|2 桁の月 (01 = 年 1 月)|  
+|DD|月 (01 ~ 31) の 2 桁の日|  
+|Thh|2 桁の時 (00 ~ 23、24 時間)|  
+|mm|2 桁の分 (00 ~ 59)|  
+|ss|2 桁の秒 (00 ~ 59)|  
+|秒|秒の小数部を表す 1 つ以上の数字|  
+|TZD|タイム ゾーン指定子 (Z または + hh:mm または-hh:mm: mm)|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">デジタル<see cref="P:System.IO.Packaging.PackageDigitalSignature.Signature" />が削除されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Verify">
+      <MemberSignature Language="C#" Value="public System.IO.Packaging.VerifyResult Verify ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.IO.Packaging.VerifyResult Verify() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackageDigitalSignature.Verify" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.VerifyResult</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>X.509 証明書に対してデジタル署名を検証します。</summary>
+        <returns>
+          <see cref="F:System.IO.Packaging.VerifyResult.Success" />検証が成功した場合それ以外の場合、いずれかの<see cref="T:System.IO.Packaging.VerifyResult" />問題を識別する値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドに格納されている組み込みの X.509 証明書に対して署名を検証する、<xref:System.IO.Packaging.Package>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">デジタル<see cref="P:System.IO.Packaging.PackageDigitalSignature.Signature" />が削除されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Verify">
+      <MemberSignature Language="C#" Value="public System.IO.Packaging.VerifyResult Verify (System.Security.Cryptography.X509Certificates.X509Certificate signingCertificate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.IO.Packaging.VerifyResult Verify(class System.Security.Cryptography.X509Certificates.X509Certificate signingCertificate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackageDigitalSignature.Verify(System.Security.Cryptography.X509Certificates.X509Certificate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityTreatAsSafe</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.VerifyResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="signingCertificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate" />
+      </Parameters>
+      <Docs>
+        <param name="signingCertificate">デジタル署名の検証対象となる署名者の X.509 証明書。</param>
+        <summary>指定した X.509 証明書に対してデジタル署名を検証します。</summary>
+        <returns>
+          <see cref="F:System.IO.Packaging.VerifyResult.Success" />検証が成功した場合それ以外の場合、いずれかの<see cref="T:System.IO.Packaging.VerifyResult" />問題を識別する値。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">デジタル<see cref="P:System.IO.Packaging.PackageDigitalSignature.Signature" />が削除されました。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

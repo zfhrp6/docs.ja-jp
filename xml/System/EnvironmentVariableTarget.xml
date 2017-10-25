@@ -1,0 +1,155 @@
+<Type Name="EnvironmentVariableTarget" FullName="System.EnvironmentVariableTarget">
+  <TypeSignature Language="C#" Value="public enum EnvironmentVariableTarget" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed EnvironmentVariableTarget extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.EnvironmentVariableTarget" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Set または get 操作では、環境変数を格納または取得する場所の場所を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnvironmentVariableTarget>の特定のオーバー ロードで列挙を使用、 <xref:System.Environment.SetEnvironmentVariable%2A>、 <xref:System.Environment.GetEnvironmentVariable%2A>、および<xref:System.Environment.GetEnvironmentVariables%2A>場所、または、ターゲットを指定する方法、環境変数の値と名前が格納されているか、取得します。  
+  
+ ターゲットには、3 つの場所のいずれかを指定できます。 現在のプロセス、環境変数が、現在のユーザーに関連付けられているために予約済みの Windows オペレーティング システムのレジストリ キーまたは環境変数がローカル コンピューター上のすべてのユーザーに関連付けられているために予約済みのレジストリ キーに関連付けられている環境ブロックします。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.EnvironmentVariableTarget>作成、変更、および環境変数を削除するメソッドで列挙します。  
+  
+ [!code-cpp[environment.getsetenvar#1](~/samples/snippets/cpp/VS_Snippets_CLR/environment.getsetenvar/CPP/source.cpp#1)]
+ [!code-csharp[environment.getsetenvar#1](~/samples/snippets/csharp/VS_Snippets_CLR/environment.getsetenvar/CS/gsev.cs#1)]
+ [!code-vb[environment.getsetenvar#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/environment.getsetenvar/VB/gsev.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Machine">
+      <MemberSignature Language="C#" Value="Machine" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.EnvironmentVariableTarget Machine = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.EnvironmentVariableTarget.Machine" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnvironmentVariableTarget</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>環境変数を格納またはから取得、 <see langword="HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment" /> Windows オペレーティング システムのレジストリのキー。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーは、設定操作で、環境変数を作成するとき、オペレーティング システムは、現在のプロセスではなく、システム レジストリで、環境変数を格納します。 ローカル コンピューター上のすべてのユーザーは、新しいプロセスを起動する場合、オペレーティング システムでは、レジストリから環境変数をそのプロセスにコピーします。  
+  
+ プロセスが終了すると、オペレーティング システムは、そのプロセス内の環境変数を破棄します。 ただし、レジストリ内の環境変数は、プログラムまたはオペレーティング システム ツールを使用してユーザー削除されるまで保持されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Process">
+      <MemberSignature Language="C#" Value="Process" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.EnvironmentVariableTarget Process = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.EnvironmentVariableTarget.Process" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnvironmentVariableTarget</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>環境変数は、現在のプロセスに関連付けられている環境ブロックから取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーは、設定操作で、環境変数を作成します。  
+  
+ プロセスが終了すると、オペレーティング システムは、そのプロセス内の環境変数を破棄します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="User">
+      <MemberSignature Language="C#" Value="User" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.EnvironmentVariableTarget User = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.EnvironmentVariableTarget.User" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnvironmentVariableTarget</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>環境変数を格納またはから取得、 <see langword="HKEY_CURRENT_USER\Environment" /> Windows オペレーティング システムのレジストリのキー。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーは、設定操作で、環境変数を作成するとき、オペレーティング システムは、現在のプロセスではなく、システム レジストリで、環境変数を格納します。 ユーザーは、新しいプロセスを起動する場合、オペレーティング システムでは、レジストリから環境変数をそのプロセスにコピーします。  
+  
+ プロセスが終了すると、オペレーティング システムは、そのプロセス内の環境変数を破棄します。 ただし、レジストリ内の環境変数は、プログラムまたはオペレーティング システム ツールを使用して、ユーザー削除されるまで保持されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

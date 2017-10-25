@@ -1,0 +1,1008 @@
+<Type Name="MemberInfo" FullName="System.Reflection.MemberInfo">
+  <TypeSignature Language="C#" Value="public abstract class MemberInfo : System.Reflection.ICustomAttributeProvider, System.Runtime.InteropServices._MemberInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit MemberInfo extends System.Object implements class System.Reflection.ICustomAttributeProvider, class System.Runtime.InteropServices._MemberInfo" />
+  <TypeSignature Language="DocId" Value="T:System.Reflection.MemberInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Reflection</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Reflection.ICustomAttributeProvider</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.InteropServices._MemberInfo</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.None)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComDefaultInterface(typeof(System.Runtime.InteropServices._MemberInfo))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>メンバーの属性に関する情報を取得し、メンバーのメタデータにアクセスできるようにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.MemberInfo>クラスは、基本クラスの抽象クラス (コンス トラクター、イベント、フィールド、メソッド、およびプロパティ) のクラスのすべてのメンバーに関する情報を取得するために使用します。  
+  
+ このクラスには、すべてのメンバーで提供される基本的な機能が導入されています。  
+  
+   
+  
+## Examples  
+ この例では、さまざまなリフレクション クラスを使用してアセンブリに含まれるメタデータを分析する方法を示します。  
+  
+ [!code-cpp[Reflection#1](~/samples/snippets/cpp/VS_Snippets_CLR/Reflection/CPP/reflection.cpp#1)]
+ [!code-csharp[Reflection#1](~/samples/snippets/csharp/VS_Snippets_CLR/Reflection/CS/Reflection.cs#1)]
+ [!code-vb[Reflection#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Reflection/VB/Reflection.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 部分信頼コードでこのクラスは継承できません。</permission>
+    <threadsafe>この型はスレッド セーフです。</threadsafe>
+    <block subset="none" type="overrides">
+      <para>継承する場合<see cref="T:System.Reflection.MemberInfo" />は次のメンバーをオーバーライドする必要があります:<see cref="M:System.Reflection.MemberInfo.GetCustomAttributes(System.Boolean)" />と<see cref="M:System.Reflection.MemberInfo.IsDefined(System.Type,System.Boolean)" />です。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected MemberInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MemberInfo.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Reflection.MemberInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスは、これを作成できるのみ`MemberInfo`クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomAttributes">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IEnumerable&lt;System.Reflection.CustomAttributeData&gt; CustomAttributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class System.Reflection.CustomAttributeData&gt; CustomAttributes" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MemberInfo.CustomAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Reflection.CustomAttributeData&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーのカスタム属性を含むコレクションを取得します。</summary>
+        <value>このメンバーのカスタム属性を含むコレクションです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeclaringType">
+      <MemberSignature Language="C#" Value="public abstract Type DeclaringType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type DeclaringType" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MemberInfo.DeclaringType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーを宣言するクラスを取得します。</summary>
+        <value><see langword="Type" />このメンバーを宣言するクラスのオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.MemberInfo.DeclaringType%2A>プロパティへの参照を取得する、<xref:System.Type>このメンバーを宣言する型のオブジェクト。 型のメンバーの型によって宣言または基本型から継承されてため、`Type`によって返されるオブジェクト、<xref:System.Reflection.MemberInfo.DeclaringType%2A>プロパティと同じである可能性がありますいない、 `Type` 、現在の取得に使用されるオブジェクト<xref:System.Reflection.MemberInfo>オブジェクト。  
+  
+-   場合、`Type`オブジェクトからこの`MemberInfo`オブジェクトの取得、このメンバーを宣言していない、<xref:System.Reflection.MemberInfo.DeclaringType%2A>プロパティでは、その基本型のいずれかを表すです。  
+  
+-   場合、`MemberInfo`オブジェクトは、グローバル メンバー (から取得されている場合は、<xref:System.Reflection.Module.GetMethods%2A?displayProperty=nameWithType>モジュールでグローバル メソッドを返すメソッドを)、返された<xref:System.Reflection.MemberInfo.DeclaringType%2A>なります`null`です。  
+  
+   
+  
+## Examples  
+ 次の例では、インターフェイス、 `IValue`、単一のメンバー、`GetValue`です。 4 つのクラスも定義: `A`、基本クラスを実装する、`IValue`インターフェイスです。`B`から継承される`A`の実装を非表示に`GetValue`から基本クラスの実装です。`C`、単にから継承される`A`; と`D`から継承される`A`し、上書きをその`GetValue`メソッド。  例を取得し、<xref:System.Reflection.MemberInfo>型の各メンバーのオブジェクト (から継承されたメンバーを含む<xref:System.Object>) の値を表示およびその<xref:System.Reflection.MemberInfo.DeclaringType%2A>プロパティです。  
+  
+ [!code-csharp[Classic MemberInfo.DeclaringType Example#2](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic MemberInfo.DeclaringType Example/CS/Example2.cs#2)]
+ [!code-vb[Classic MemberInfo.DeclaringType Example#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic MemberInfo.DeclaringType Example/VB/Example2.vb#2)]  
+  
+ 宣言する型を`A.GetValue`は`A`、その`B`2 つ`GetValue`メソッド、1 つで宣言されている`A`として 1 つ`B`、するは、宣言の型と`D.GetValue`は`D`します。  
+  
+> [!NOTE]
+>  `DeclaringType`メンバー名のみと、宣言する型の名前を返します。 戻るには、メンバー名と一緒に、呼び出す`MemberInfo.ToString`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MemberInfo.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">対象のインスタンスと比較する対象のオブジェクト、または <see langword="null" />。</param>
+        <summary>このインスタンスが、指定されたオブジェクトと等価であるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> がこのインスタンスの型および値に等しい場合は <paramref name="obj" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCustomAttributes">
+      <MemberSignature Language="C#" Value="public abstract object[] GetCustomAttributes (bool inherit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object[] GetCustomAttributes(bool inherit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MemberInfo.GetCustomAttributes(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inherit" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="inherit">
+          このメンバーの継承チェーンを検索して属性を見つける場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 このパラメーターはプロパティとイベントを無視します。</param>
+        <summary>派生クラスでオーバーライドされると、このメンバーに適用されるすべてのカスタム属性の配列を返します。</summary>
+        <returns>このメンバーに適用されるすべてのカスタム属性を含む配列。 または属性が定義されていない場合は 0 要素の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは無視、`inherit`プロパティとイベントのパラメーターです。 プロパティとイベントの属性の継承チェーンを検索するには、適切なオーバー ロードを使用して、<xref:System.Attribute.GetCustomAttributes%2A?displayProperty=nameWithType>メソッドです。  
+  
+> [!NOTE]
+>  .NET Framework version 2.0 で新しいメタデータ形式で保存されている場合、このメソッドはメソッド、コンス トラクター、および種類のセキュリティ属性を返します。 バージョン 2.0 でコンパイルされたアセンブリでは、この形式を使用します。 動的アセンブリと .NET Framework の以前のバージョンでコンパイルされたアセンブリは、以前の XML 形式を使用します。 参照してください[宣言セキュリティ属性の出力方法](http://msdn.microsoft.com/en-us/9eeddee8-ca89-4440-b84b-fd613f590cd5)です。  
+  
+   
+  
+## Examples  
+ 次の例は、カスタム属性を定義しを持つ属性`MyClass.MyMethod`、実行時に属性を取得し、結果が表示されます。  
+  
+ [!code-cpp[MemberInfo_GetCustomAttributes1#1](~/samples/snippets/cpp/VS_Snippets_CLR/MemberInfo_GetCustomAttributes1/CPP/memberinfo_getcustomattributes1.cpp#1)]
+ [!code-csharp[MemberInfo_GetCustomAttributes1#1](~/samples/snippets/csharp/VS_Snippets_CLR/MemberInfo_GetCustomAttributes1/CS/memberinfo_getcustomattributes1.cs#1)]
+ [!code-vb[MemberInfo_GetCustomAttributes1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/MemberInfo_GetCustomAttributes1/VB/memberinfo_getcustomattributes1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このメンバーは、リフレクションのみのコンテキストに読み込まれる型に属します。 「[方法: リフレクションのみのコンテキストにアセンブリを読み込む](~/docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md)」を参照してください。</exception>
+        <exception cref="T:System.TypeLoadException">カスタム属性の型を読み込むことができませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCustomAttributes">
+      <MemberSignature Language="C#" Value="public abstract object[] GetCustomAttributes (Type attributeType, bool inherit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object[] GetCustomAttributes(class System.Type attributeType, bool inherit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MemberInfo.GetCustomAttributes(System.Type,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributeType" Type="System.Type" />
+        <Parameter Name="inherit" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="attributeType">検索する属性の種類。 この型に代入可能な属性だけが返されます。</param>
+        <param name="inherit">
+          このメンバーの継承チェーンを検索して属性を見つける場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 このパラメーターはプロパティとイベントを無視します。</param>
+        <summary>派生クラスでオーバーライドされた場合は、このメンバーに適用され、<see cref="T:System.Type" /> によって識別されるカスタム属性の配列を返します。</summary>
+        <returns>このメンバーに適用されるカスタム属性の配列、または <paramref name="attributeType" /> に割り当て可能な属性が適用されていない場合は要素を持たない配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは無視、`inherit`プロパティとイベントのパラメーターです。 プロパティとイベントの属性の継承チェーンを検索するには、適切なオーバー ロードを使用して、<xref:System.Attribute.GetCustomAttributes%2A?displayProperty=nameWithType>メソッドです。  
+  
+> [!NOTE]
+>  .NET framework version 2.0 では、属性が、新しいメタデータ形式で格納されている場合、このメソッドはメソッド、コンス トラクター、および種類のセキュリティ属性を返します。 バージョン 2.0 でコンパイルされたアセンブリでは、この形式を使用します。 動的アセンブリと .NET Framework の以前のバージョンでコンパイルされたアセンブリは、以前の XML 形式を使用します。 参照してください[宣言セキュリティ属性の出力方法](http://msdn.microsoft.com/en-us/9eeddee8-ca89-4440-b84b-fd613f590cd5)です。  
+  
+   
+  
+## Examples  
+ 次の例は、という名前のクラスを定義`BaseClass`を持つ 2 つの非継承メンバー: という名前のスレッドの静的フィールド`total`およびという名前の CLS 非準拠メソッド`MethodA`です。  という名前のクラス`DerivedClass`から継承`BaseClass`オーバーライドとその`MethodA`メソッドです。 メンバーに属性が適用されていないことに注意してください`DerivedClass`です。 この例のメンバーを反復処理`DerivedClass`を決定するかどうか、<xref:System.CLSCompliantAttribute>または<xref:System.ThreadStaticAttribute>に適用された属性します。 `inherit`は`true`、メソッドの継承階層を検索する`DerivedClass`指定の属性です。 例から出力として、`total`フィールドがで修飾された、<xref:System.ThreadStaticAttribute>属性、および`MethodA`でメソッドを装飾、<xref:System.CLSCompliantAttribute>属性。  
+  
+ [!code-csharp[System.Reflection.MemberInfo.GetCustomAttributes#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.Reflection.MemberInfo.GetCustomAttributes/cs/GetCustomAttributes1.cs#1)]
+ [!code-vb[System.Reflection.MemberInfo.GetCustomAttributes#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Reflection.MemberInfo.GetCustomAttributes/vb/GetCustomAttributes1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.TypeLoadException">カスタム属性の型を読み込むことはできません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="attributeType" /> が <see langword="null" /> の場合。</exception>
+        <exception cref="T:System.InvalidOperationException">このメンバーは、リフレクションのみのコンテキストに読み込まれる型に属します。 「[方法: リフレクションのみのコンテキストにアセンブリを読み込む](~/docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md)」を参照してください。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCustomAttributesData">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IList&lt;System.Reflection.CustomAttributeData&gt; GetCustomAttributesData ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IList`1&lt;class System.Reflection.CustomAttributeData&gt; GetCustomAttributesData() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MemberInfo.GetCustomAttributesData" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Reflection.CustomAttributeData&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ターゲット メンバーに適用されている属性に関するデータを表す <see cref="T:System.Reflection.CustomAttributeData" /> オブジェクトのリストを返します。</summary>
+        <returns>ジェネリック リスト<see cref="T:System.Reflection.CustomAttributeData" />対象のメンバーに適用されている属性に関するデータを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リフレクション専用コンテキストに読み込まれるコードでカスタム属性自体が定義されている場合、リフレクションのみのコンテキストでコードのカスタム属性を調べるには、このメソッドを使用します。 メソッドと同様に<xref:System.Attribute.GetCustomAttributes%2A?displayProperty=nameWithType>と<xref:System.Reflection.MemberInfo.GetCustomAttributes%2A?displayProperty=nameWithType>属性のインスタンスを作成するため、このようなケースでは使用できません。 リフレクションのみのコンテキストでコードを実行できません。 詳細については、たとえばコードを参照してください、<xref:System.Reflection.CustomAttributeData>クラスです。  
+  
+ このメソッドは、ための型や入れ子にされた型は、型のメンバー、カスタム属性データを取得、<xref:System.Type>クラスとクラスでは、<xref:System.Reflection>型からメンバーを表す名前空間<xref:System.Reflection.MemberInfo>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MemberInfo.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefined">
+      <MemberSignature Language="C#" Value="public abstract bool IsDefined (Type attributeType, bool inherit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsDefined(class System.Type attributeType, bool inherit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MemberInfo.IsDefined(System.Type,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributeType" Type="System.Type" />
+        <Parameter Name="inherit" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="attributeType">検索するカスタム属性の型。 検索には、派生型が含まれています。</param>
+        <param name="inherit">
+          このメンバーの継承チェーンを検索して属性を見つける場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 このパラメーターはプロパティとイベントを無視します。</param>
+        <summary>派生クラスでオーバーライドされると、指定した型のまたはその派生型の 1 つまたは複数の属性がこのメンバーに適用するかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />場合 1 つまたは複数のインスタンス<paramref name="attributeType" />またはその派生型のいずれかがこのメンバーに適用されている、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは無視、`inherit`プロパティとイベントのパラメーターです。 プロパティとイベントの属性の継承チェーンを検索するには、適切なオーバー ロードを使用して、<xref:System.Attribute.IsDefined%2A?displayProperty=nameWithType>メソッドです。  
+  
+> [!NOTE]
+>  .NET framework version 2.0 では、このメソッドが戻る`true`かどうか、型、メソッド、またはコンス トラクターは、新しいメタデータ形式で格納されているセキュリティ属性。 バージョン 2.0 でコンパイルされたアセンブリでは、この形式を使用します。 動的アセンブリと .NET Framework の以前のバージョンでコンパイルされたアセンブリは、以前の XML 形式を使用します。 参照してください[宣言セキュリティ属性の出力方法](http://msdn.microsoft.com/en-us/9eeddee8-ca89-4440-b84b-fd613f590cd5)です。  
+  
+   
+  
+## Examples  
+ 次の例では、指定した属性が、指定されたメンバーに適用されるかどうかを判断します。  
+  
+ [!code-cpp[MemberInfo_GetCustomAttribute_IsDefined#1](~/samples/snippets/cpp/VS_Snippets_CLR/MemberInfo_GetCustomAttribute_IsDefined/CPP/memberinfo_getcustomattribute_isdefined.cpp#1)]
+ [!code-csharp[MemberInfo_GetCustomAttribute_IsDefined#1](~/samples/snippets/csharp/VS_Snippets_CLR/MemberInfo_GetCustomAttribute_IsDefined/CS/memberinfo_getcustomattribute_isdefined.cs#1)]
+ [!code-vb[MemberInfo_GetCustomAttribute_IsDefined#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/MemberInfo_GetCustomAttribute_IsDefined/VB/memberinfo_getcustomattribute_isdefined.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MemberType">
+      <MemberSignature Language="C#" Value="public abstract System.Reflection.MemberTypes MemberType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Reflection.MemberTypes MemberType" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MemberInfo.MemberType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MemberTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、メンバーの種類を示す <see cref="T:System.Reflection.MemberTypes" /> 値を取得します。メソッド、コンス トラクター、イベント、などです。</summary>
+        <value>メンバーの種類を示す <see cref="T:System.Reflection.MemberTypes" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、派生クラスでオーバーライドされ、上書きが適切なメンバーの種類を取得します。 セットを確認すると、そのため、<xref:System.Reflection.MemberInfo>オブジェクト-によって返される配列など、 <xref:System.Type.GetMembers%2A> —、<xref:System.Reflection.MemberInfo.MemberType%2A>特定のメンバーのメンバーの種類を決定するプロパティを使用できます。  
+  
+ 取得する、`MemberType`プロパティ、クラスを取得します<xref:System.Type>です。 `Type`、取得、<xref:System.Reflection.MethodInfo>配列。 `MethodInfo`配列、取得、`MemberTypes`です。  
+  
+   
+  
+## Examples  
+ 次の例では、指定したクラスの型とメンバーの名前が表示されます。  
+  
+ [!code-cpp[Classic MemberInfo.MemberType Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic MemberInfo.MemberType Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic MemberInfo.MemberType Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic MemberInfo.MemberType Example/CS/source.cs#1)]
+ [!code-vb[Classic MemberInfo.MemberType Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic MemberInfo.MemberType Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MetadataToken">
+      <MemberSignature Language="C#" Value="public virtual int MetadataToken { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MetadataToken" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MemberInfo.MetadataToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メタデータ要素を識別する値を取得します。</summary>
+        <value><see cref="P:System.Reflection.MemberInfo.Module" /> との組み合わせで、メタデータ要素を一意に識別する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して取得したトークンは、アンマネージのリフレクション API に渡すことができます。 詳細についてを参照してください[アンマネージ リフレクション API](http://msdn.microsoft.com/en-us/0c5bb9de-0cf6-438d-ba47-134e6c775fb8)です。  
+  
+> [!NOTE]
+>  アンマネージ リフレクション API を使用するには、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」と「Partition III: CIL Instruction Set」に関する知識が必要です。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">現在の <see cref="T:System.Reflection.MemberInfo" /> は、要素型が完了していない動的な型の配列型で、<see langword="Address" /> などの配列メソッドを表します。 ここでは、メタデータ トークンを取得するを渡します、<see cref="T:System.Reflection.MemberInfo" />オブジェクトを<see cref="M:System.Reflection.Emit.ModuleBuilder.GetMethodToken(System.Reflection.MethodInfo)" />メソッド; またはを使用して、<see cref="M:System.Reflection.Emit.ModuleBuilder.GetArrayMethodToken(System.Type,System.String,System.Reflection.CallingConventions,System.Type,System.Type[])" />を直接使用する代わりに、トークンを取得するメソッド、<see cref="M:System.Reflection.Emit.ModuleBuilder.GetArrayMethod(System.Type,System.String,System.Reflection.CallingConventions,System.Type,System.Type[])" />取得するメソッド、<see cref="T:System.Reflection.MethodInfo" />最初。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Module">
+      <MemberSignature Language="C#" Value="public virtual System.Reflection.Module Module { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.Module Module" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MemberInfo.Module" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Module</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のメンバーを宣言する型が表されるモジュールを取得<see cref="T:System.Reflection.MemberInfo" />が定義されています。</summary>
+        <value><see cref="T:System.Reflection.Module" />でメンバーを宣言する型が現在によって表されるを<see cref="T:System.Reflection.MemberInfo" />が定義されています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、便宜上指定します。 使用すると等価である、<xref:System.Reflection.MemberInfo.DeclaringType%2A>メソッドが宣言されている型を取得するプロパティと、呼び出し元、<xref:System.Type.Module%2A>結果のプロパティ<xref:System.Type>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例は、継承するクラスを宣言して<xref:System.Object>と上書き<xref:System.Object.ToString%2A?displayProperty=nameWithType>です。 例では、取得<xref:System.Reflection.MethodInfo>クラスのオブジェクト`ToString`メソッドと、継承された<xref:System.Object.GetHashCode%2A>メソッド、し、2 つのメソッドが宣言されているモジュールの名前を表示します。  
+  
+ [!code-cpp[System.Reflection.MemberInfo.Module#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Reflection.MemberInfo.Module/cpp/source.cpp#1)]
+ [!code-csharp[System.Reflection.MemberInfo.Module#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Reflection.MemberInfo.Module/CS/source.cs#1)]
+ [!code-vb[System.Reflection.MemberInfo.Module#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Reflection.MemberInfo.Module/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">このメソッドは実装されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public abstract string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MemberInfo.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のメンバーの名前を取得します。</summary>
+        <value>A<see cref="T:System.String" />このメンバーの名前を含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メンバーの簡易名のみが返されます、完全修飾名ではありません。  
+  
+ 取得する、<xref:System.Reflection.MemberInfo.Name%2A>プロパティ、クラスを取得します<xref:System.Type>です。 `Type`、取得、<xref:System.Reflection.MemberInfo>配列。 `MemberInfo` 、配列の要素を取得、`Name`プロパティです。  
+  
+   
+  
+## Examples  
+ この例で一覧表示、`Name`と`DeclaringType`指定したクラスの各メンバーのプロパティです。  
+  
+ [!code-cpp[Classic MemberInfo.Name Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic MemberInfo.Name Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic MemberInfo.Name Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic MemberInfo.Name Example/CS/source.cs#1)]
+ [!code-vb[Classic MemberInfo.Name Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic MemberInfo.Name Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Reflection.MemberInfo left, System.Reflection.MemberInfo right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(class System.Reflection.MemberInfo left, class System.Reflection.MemberInfo right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MemberInfo.op_Equality(System.Reflection.MemberInfo,System.Reflection.MemberInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Reflection.MemberInfo" />
+        <Parameter Name="right" Type="System.Reflection.MemberInfo" />
+      </Parameters>
+      <Docs>
+        <param name="left"><see cref="T:System.Reflection.MemberInfo" />と比較する<c>右</c>です。</param>
+        <param name="right"><see cref="T:System.Reflection.MemberInfo" />と比較する<c>左</c>です。</param>
+        <summary>2 つの <see cref="T:System.Reflection.MemberInfo" /> オブジェクトが等しいかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="left" />と等しい<paramref name="right" />それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Reflection.MemberInfo left, System.Reflection.MemberInfo right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(class System.Reflection.MemberInfo left, class System.Reflection.MemberInfo right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MemberInfo.op_Inequality(System.Reflection.MemberInfo,System.Reflection.MemberInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Reflection.MemberInfo" />
+        <Parameter Name="right" Type="System.Reflection.MemberInfo" />
+      </Parameters>
+      <Docs>
+        <param name="left"><see cref="T:System.Reflection.MemberInfo" />と比較する<c>右</c>です。</param>
+        <param name="right"><see cref="T:System.Reflection.MemberInfo" />と比較する<c>左</c>です。</param>
+        <summary>2 つの <see cref="T:System.Reflection.MemberInfo" /> オブジェクトが等しくないかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="left" />は等しくありません<paramref name="right" />それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReflectedType">
+      <MemberSignature Language="C#" Value="public abstract Type ReflectedType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ReflectedType" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MemberInfo.ReflectedType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスの取得に使用されたクラス オブジェクトを取得<see langword="MemberInfo" />です。</summary>
+        <value>この <see langword="Type" /> オブジェクトを取得するために使用した <see langword="MemberInfo" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `ReflectedType`プロパティの取得、<xref:System.Type>オブジェクトのこのインスタンスの取得に使用された`MemberInfo`です。 これは、ことがありますの値と異なる、<xref:System.Reflection.MemberInfo.DeclaringType%2A>場合は、このプロパティ<xref:System.Reflection.MemberInfo>オブジェクトは、基底クラスから継承されているメンバーを表します。  
+  
+ 場合、`MemberInfo`オブジェクトは、グローバル メンバー (から取得されている場合は、<xref:System.Reflection.Module.GetMethods%2A?displayProperty=nameWithType>モジュールでグローバル メソッドを返すメソッドを)、返された<xref:System.Reflection.MemberInfo.DeclaringType%2A>なります`null`です。  
+  
+   
+  
+## Examples  
+ 次のコード例に示す方法、<xref:System.Reflection.MemberInfo.ReflectedType%2A>変更時にメンバー<xref:System.Object.ToString%2A?displayProperty=nameWithType>から表示、<xref:System.Reflection.MemberInfo>型から取得した<xref:System.Object>との間、<xref:System.Reflection.MemberInfo>から取得した、<xref:System.Reflection.MemberInfo>自体を継承するクラス<xref:System.Object>がオーバーライドしません<xref:System.Object.ToString%2A?displayProperty=nameWithType>です。  
+  
+ [!code-cpp[Classic MemberInfo.ReflectedType Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic MemberInfo.ReflectedType Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic MemberInfo.ReflectedType Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic MemberInfo.ReflectedType Example/CS/source.cs#1)]
+ [!code-vb[Classic MemberInfo.ReflectedType Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic MemberInfo.ReflectedType Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Reflection.ICustomAttributeProvider.GetCustomAttributes">
+      <MemberSignature Language="C#" Value="object[] ICustomAttributeProvider.GetCustomAttributes (bool inherit);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object[] System.Reflection.ICustomAttributeProvider.GetCustomAttributes(bool inherit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MemberInfo.System#Reflection#ICustomAttributeProvider#GetCustomAttributes(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inherit" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="inherit">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Reflection.ICustomAttributeProvider.GetCustomAttributes">
+      <MemberSignature Language="C#" Value="object[] ICustomAttributeProvider.GetCustomAttributes (Type attributeType, bool inherit);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object[] System.Reflection.ICustomAttributeProvider.GetCustomAttributes(class System.Type attributeType, bool inherit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MemberInfo.System#Reflection#ICustomAttributeProvider#GetCustomAttributes(System.Type,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributeType" Type="System.Type" />
+        <Parameter Name="inherit" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="attributeType">To be added.</param>
+        <param name="inherit">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Reflection.ICustomAttributeProvider.IsDefined">
+      <MemberSignature Language="C#" Value="bool ICustomAttributeProvider.IsDefined (Type attributeType, bool inherit);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Reflection.ICustomAttributeProvider.IsDefined(class System.Type attributeType, bool inherit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MemberInfo.System#Reflection#ICustomAttributeProvider#IsDefined(System.Type,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributeType" Type="System.Type" />
+        <Parameter Name="inherit" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="attributeType">To be added.</param>
+        <param name="inherit">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._MemberInfo.GetIDsOfNames">
+      <MemberSignature Language="C#" Value="void _MemberInfo.GetIDsOfNames (ref Guid riid, IntPtr rgszNames, uint cNames, uint lcid, IntPtr rgDispId);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._MemberInfo.GetIDsOfNames([in]valuetype System.Guid&amp; riid, native int rgszNames, unsigned int32 cNames, unsigned int32 lcid, native int rgDispId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MemberInfo.System#Runtime#InteropServices#_MemberInfo#GetIDsOfNames(System.Guid@,System.IntPtr,System.UInt32,System.UInt32,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="riid" Type="System.Guid&amp;" RefType="ref" />
+        <Parameter Name="rgszNames" Type="System.IntPtr" />
+        <Parameter Name="cNames" Type="System.UInt32" />
+        <Parameter Name="lcid" Type="System.UInt32" />
+        <Parameter Name="rgDispId" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="riid">将来使用するために予約されています。 IID_NULL にする必要があります。</param>
+        <param name="rgszNames">マッピング対象として渡される名前の配列。</param>
+        <param name="cNames">マッピングされる名前のカウント。</param>
+        <param name="lcid">名前を解釈するロケール コンテキスト。</param>
+        <param name="rgDispId">名前に対応する ID を受け取る、呼び出し元が割り当てた配列。</param>
+        <summary>一連の名前を対応する一連のディスパッチ識別子に割り当てます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。 詳細については`IDispatch::GetIDsOfNames`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">メソッドは遅延バインド、COM を使用して<c>IDispatch</c>インターフェイスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._MemberInfo.GetType">
+      <MemberSignature Language="C#" Value="Type _MemberInfo.GetType ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Type System.Runtime.InteropServices._MemberInfo.GetType() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MemberInfo.System#Runtime#InteropServices#_MemberInfo#GetType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="T:System.Type" />オブジェクトを表す、<see cref="T:System.Reflection.MemberInfo" />クラスです。</summary>
+        <returns>A<see cref="T:System.Type" />オブジェクトを表す、<see cref="T:System.Reflection.MemberInfo" />クラスです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._MemberInfo.GetTypeInfo">
+      <MemberSignature Language="C#" Value="void _MemberInfo.GetTypeInfo (uint iTInfo, uint lcid, IntPtr ppTInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._MemberInfo.GetTypeInfo(unsigned int32 iTInfo, unsigned int32 lcid, native int ppTInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MemberInfo.System#Runtime#InteropServices#_MemberInfo#GetTypeInfo(System.UInt32,System.UInt32,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="iTInfo" Type="System.UInt32" />
+        <Parameter Name="lcid" Type="System.UInt32" />
+        <Parameter Name="ppTInfo" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="iTInfo">返される型情報。</param>
+        <param name="lcid">型情報のロケール ID。</param>
+        <param name="ppTInfo">要求された型情報オブジェクトへのポインターを取得します。</param>
+        <summary>オブジェクトの型情報を取得します。この型情報を使用して、インターフェイスの型情報を取得できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。 詳細については`IDispatch::GetTypeInfo`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">メソッドは遅延バインド、COM を使用して<c>IDispatch</c>インターフェイスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._MemberInfo.GetTypeInfoCount">
+      <MemberSignature Language="C#" Value="void _MemberInfo.GetTypeInfoCount (out uint pcTInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._MemberInfo.GetTypeInfoCount([out] unsigned int32&amp; pcTInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MemberInfo.System#Runtime#InteropServices#_MemberInfo#GetTypeInfoCount(System.UInt32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pcTInfo" Type="System.UInt32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="pcTInfo">オブジェクトにより提供される型タイプ情報インターフェイスの数を受け取る場所を指定します。</param>
+        <summary>オブジェクトが提供する型情報インターフェイスの数 (0 または 1) を取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。 詳細については`IDispatch::GetTypeInfoCount`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">メソッドは遅延バインド、COM を使用して<c>IDispatch</c>インターフェイスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._MemberInfo.Invoke">
+      <MemberSignature Language="C#" Value="void _MemberInfo.Invoke (uint dispIdMember, ref Guid riid, uint lcid, short wFlags, IntPtr pDispParams, IntPtr pVarResult, IntPtr pExcepInfo, IntPtr puArgErr);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._MemberInfo.Invoke(unsigned int32 dispIdMember, [in]valuetype System.Guid&amp; riid, unsigned int32 lcid, int16 wFlags, native int pDispParams, native int pVarResult, native int pExcepInfo, native int puArgErr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MemberInfo.System#Runtime#InteropServices#_MemberInfo#Invoke(System.UInt32,System.Guid@,System.UInt32,System.Int16,System.IntPtr,System.IntPtr,System.IntPtr,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dispIdMember" Type="System.UInt32" />
+        <Parameter Name="riid" Type="System.Guid&amp;" RefType="ref" />
+        <Parameter Name="lcid" Type="System.UInt32" />
+        <Parameter Name="wFlags" Type="System.Int16" />
+        <Parameter Name="pDispParams" Type="System.IntPtr" />
+        <Parameter Name="pVarResult" Type="System.IntPtr" />
+        <Parameter Name="pExcepInfo" Type="System.IntPtr" />
+        <Parameter Name="puArgErr" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="dispIdMember">メンバーを識別します。</param>
+        <param name="riid">将来使用するために予約されています。 IID_NULL にする必要があります。</param>
+        <param name="lcid">引数を解釈する対象のロケール コンテキスト。</param>
+        <param name="wFlags">呼び出しのコンテキストを記述するフラグ。</param>
+        <param name="pDispParams">引数の配列、名前付き引数の DISPID の配列、配列内の要素数のカウントを格納している構造体へのポインター。</param>
+        <param name="pVarResult">結果が格納される場所へのポインター。</param>
+        <param name="pExcepInfo">例外情報を格納する構造体へのポインター。</param>
+        <param name="puArgErr">エラーが存在する最初の引数のインデックス。</param>
+        <summary>オブジェクトによって公開されたプロパティおよびメソッドへのアクセスを提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。 詳細については`IDispatch::Invoke`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">メソッドは遅延バインド、COM を使用して<c>IDispatch</c>インターフェイスです。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

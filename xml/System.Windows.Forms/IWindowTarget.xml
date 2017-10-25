@@ -1,0 +1,75 @@
+<Type Name="IWindowTarget" FullName="System.Windows.Forms.IWindowTarget">
+  <TypeSignature Language="C#" Value="public interface IWindowTarget" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IWindowTarget" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.IWindowTarget" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>コントロールと、Win32 API の間の通信レイヤーを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Control>クラスは、このインターフェイスを内部的に実装します。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="OnHandleChange">
+      <MemberSignature Language="C#" Value="public void OnHandleChange (IntPtr newHandle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnHandleChange(native int newHandle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.IWindowTarget.OnHandleChange(System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newHandle" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="newHandle">新しいハンドル、<see cref="T:System.Windows.Forms.IWindowTarget" />です。</param>
+        <summary>ハンドルを設定、<see cref="T:System.Windows.Forms.IWindowTarget" />指定したハンドルにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.IWindowTarget.OnHandleChange%2A>コントロールのウィンドウ ハンドルが変更されたときに、メソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="OnMessage">
+      <MemberSignature Language="C#" Value="public void OnMessage (ref System.Windows.Forms.Message m);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnMessage(valuetype System.Windows.Forms.Message&amp; m) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.IWindowTarget.OnMessage(System.Windows.Forms.Message@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="m" Type="System.Windows.Forms.Message&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="m">処理する Windows メッセージ。</param>
+        <summary>Windows メッセージを処理します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

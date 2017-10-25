@@ -1,0 +1,215 @@
+<Type Name="TypeCodeDomSerializer" FullName="System.ComponentModel.Design.Serialization.TypeCodeDomSerializer">
+  <TypeSignature Language="C#" Value="public class TypeCodeDomSerializer : System.ComponentModel.Design.Serialization.CodeDomSerializerBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TypeCodeDomSerializer extends System.ComponentModel.Design.Serialization.CodeDomSerializerBase" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.Serialization.TypeCodeDomSerializer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Design.Serialization.CodeDomSerializerBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Design.Serialization.DefaultSerializationProvider(typeof(System.ComponentModel.Design.Serialization.CodeDomSerializationProvider))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>オブジェクトを新しい型をシリアル化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.TypeCodeDomSerializer>クラスと同じタスクを実行する、<xref:System.ComponentModel.Design.Serialization.CodeDomSerializer>が、新しい型を定義するクラスを使ってこのオブジェクトのシリアル化します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TypeCodeDomSerializer ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.TypeCodeDomSerializer.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.Design.Serialization.TypeCodeDomSerializer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Deserialize">
+      <MemberSignature Language="C#" Value="public virtual object Deserialize (System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager, System.CodeDom.CodeTypeDeclaration declaration);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Deserialize(class System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager, class System.CodeDom.CodeTypeDeclaration declaration) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.TypeCodeDomSerializer.Deserialize(System.ComponentModel.Design.Serialization.IDesignerSerializationManager,System.CodeDom.CodeTypeDeclaration)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="manager" Type="System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />
+        <Parameter Name="declaration" Type="System.CodeDom.CodeTypeDeclaration" />
+      </Parameters>
+      <Docs>
+        <param name="manager">シリアル化に使用するシリアル化マネージャー。</param>
+        <param name="declaration">シリアル化に使用する宣言を入力します。</param>
+        <summary>指定した型の宣言を逆シリアル化します。</summary>
+        <returns>ルート オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.TypeCodeDomSerializer.Deserialize%2A>メソッドは、シリアル化されたコード型宣言を逆シリアル化します。 次の表は、タスクの既定の実装を実行します。  
+  
+|タスク|説明|  
+|----------|-----------------|  
+|大文字小文字の区別のチェック|実装では、検索、<xref:System.CodeDom.Compiler.CodeDomProvider>として大文字と小文字または大文字小文字を区別しないメンバーを扱うべきかを決定するサービスです。|  
+|ステートメントの並べ替え|すべてのメンバー変数と init メソッドのローカル変数は、テーブルに格納されます。 Init メソッド内の各ステートメントが別にグループ化の左側にある、その変数の下の割り当てまたは特定の変数で動作しているすべてのステートメントがグループ化されているため、ステートメントのコレクションに追加します。 ステートメントを持たない変数が破棄されます。|  
+|逆シリアル化|各変数のステートメントのコレクションが変数に従って逆シリアル化します。|  
+  
+ 次の表は、サービス、<xref:System.ComponentModel.Design.Serialization.TypeCodeDomSerializer.Deserialize%2A>メソッドが必要です。  
+  
+|サービス|説明|  
+|-------------|-----------------|  
+|<xref:System.CodeDom.Compiler.CodeDomProvider>|厳密には必要ありません、サービスを利用できる場合は使用を決定するかどうかは、シリアル化大文字と小文字または大文字小文字を区別します。|  
+|<xref:System.ComponentModel.IContainer>|逆シリアル化、クエリの中で、名前テーブルでオブジェクトが存在しない場合<xref:System.ComponentModel.IContainer>が行われます。 このクエリが成功すると、コンテナー オブジェクトがチェックされます。 コンテナーは、コンポーネントに必要な任意のコンテナーの引数の代理としても使用されます。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="manager" /> または <paramref name="typeDecl" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInitializeMethod">
+      <MemberSignature Language="C#" Value="protected virtual System.CodeDom.CodeMemberMethod GetInitializeMethod (System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager, System.CodeDom.CodeTypeDeclaration declaration, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.CodeDom.CodeMemberMethod GetInitializeMethod(class System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager, class System.CodeDom.CodeTypeDeclaration declaration, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.TypeCodeDomSerializer.GetInitializeMethod(System.ComponentModel.Design.Serialization.IDesignerSerializationManager,System.CodeDom.CodeTypeDeclaration,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeMemberMethod</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="manager" Type="System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />
+        <Parameter Name="declaration" Type="System.CodeDom.CodeTypeDeclaration" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="manager">シリアル化に使用するシリアル化マネージャー。</param>
+        <param name="declaration">シリアル化に使用する型宣言。</param>
+        <param name="value">シリアル化に使用する値。</param>
+        <summary>メンバーのシリアル化に使用するステートメントが格納されたメソッドを返します。</summary>
+        <returns>指定したメンバーのすべての初期化コードを出力するために使用されるメソッド。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.TypeCodeDomSerializer.GetInitializeMethod%2A>メソッドは、指定したメンバーをすべての初期化コードを出力するメソッドを返します。 既定の実装では、空のコンス トラクターを返します。 同じメソッドを複数の値に対して返される場合は、メソッドの同じインスタンスが返されます。 使用することができます、<xref:System.CodeDom.CodeObject.UserData%2A?displayProperty=nameWithType>ディクショナリを作成する方法に注意してください。 `typeDecl`パラメーターを使用してインフラストラクチャのメソッドを追加することもできます。 たとえば、オブジェクトごとに別個のメソッドを出力する場合は、1 つのメソッドをさらにすべてのこれらのメソッドを呼び出す必要があります。 このメソッドは、必要に応じてコード型宣言を追加できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="manager" />、<paramref name="typeDecl" />、または <paramref name="value" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInitializeMethods">
+      <MemberSignature Language="C#" Value="protected virtual System.CodeDom.CodeMemberMethod[] GetInitializeMethods (System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager, System.CodeDom.CodeTypeDeclaration declaration);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.CodeDom.CodeMemberMethod[] GetInitializeMethods(class System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager, class System.CodeDom.CodeTypeDeclaration declaration) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.TypeCodeDomSerializer.GetInitializeMethods(System.ComponentModel.Design.Serialization.IDesignerSerializationManager,System.CodeDom.CodeTypeDeclaration)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeMemberMethod[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="manager" Type="System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />
+        <Parameter Name="declaration" Type="System.CodeDom.CodeTypeDeclaration" />
+      </Parameters>
+      <Docs>
+        <param name="manager">シリアル化に使用するシリアル化マネージャー。</param>
+        <param name="declaration">シリアル化に使用する型宣言。</param>
+        <summary>逆シリアル化中に解釈されるメソッドの配列を返します。</summary>
+        <returns>A<see cref="T:System.CodeDom.CodeMemberMethod" />に逆シリアル化中に解釈されるメソッドの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装では、ことで、コンス トラクターを持つ 1 つの要素の配列を返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="manager" /> または <paramref name="typeDecl" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Serialize">
+      <MemberSignature Language="C#" Value="public virtual System.CodeDom.CodeTypeDeclaration Serialize (System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager, object root, System.Collections.ICollection members);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.CodeDom.CodeTypeDeclaration Serialize(class System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager, object root, class System.Collections.ICollection members) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.TypeCodeDomSerializer.Serialize(System.ComponentModel.Design.Serialization.IDesignerSerializationManager,System.Object,System.Collections.ICollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeTypeDeclaration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="manager" Type="System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />
+        <Parameter Name="root" Type="System.Object" />
+        <Parameter Name="members" Type="System.Collections.ICollection" />
+      </Parameters>
+      <Docs>
+        <param name="manager">シリアル化に使用するシリアル化マネージャー。</param>
+        <param name="root">シリアル化するオブジェクト。</param>
+        <param name="members">メンバーの省略可能なコレクション。 指定できます<see langword="null" />または空です。</param>
+        <summary>ルートを定義する新しい型宣言を作成することで、オブジェクトのルートをシリアル化します。</summary>
+        <returns>A<see cref="T:System.CodeDom.CodeTypeDeclaration" />ルート オブジェクトを定義します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.TypeCodeDomSerializer.Serialize%2A>メソッドには、特定のルート オブジェクトとオプションの新しい種類の定義を作成するメンバーのコレクションがシリアル化します。 場合、`members`これらの値がシリアル化、コレクションには、値が含まれています。 値自体をメンバー変数またはローカル変数のいずれかとしてシリアル化可能性があります。 この決定を行うと呼ばれるオブジェクトにエクステンダー プロパティを検索を`GenerateMember`です。 場合`true`メンバーを生成します。 それ以外の場合、ローカル変数が生成されます。 便宜上、`members`コレクションは、ルート オブジェクトを含めることができます。 ここでは、ルート オブジェクトがないとしても追加メンバーまたはローカル変数。  
+  
+ 返される型の名前は、名前付きオブジェクトの場合、ルート オブジェクトの名前から取得されます。 それ以外の場合は、名前がルート クラスの単純な型名から生成します。  
+  
+ 次の表に、既定の実装によって実行されるタスク、<xref:System.ComponentModel.Design.Serialization.TypeCodeDomSerializer.Serialize%2A>メソッドです。  
+  
+|タスク|説明|  
+|----------|-----------------|  
+|コンテキストのシード|データを含むによるシリアル化コンテキストの初期化を行う、<xref:System.ComponentModel.Design.Serialization.RootContext>と<xref:System.CodeDom.CodeTypeDeclaration>|  
+|メンバーのシリアル化|次に、<xref:System.ComponentModel.Design.Serialization.TypeCodeDomSerializer.Serialize%2A>のすべてのメンバーとの呼び出しでは説明<xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeToExpression%2A>です。 実際にシリアル化が行われるため<xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeToExpression%2A>、これにより、シリアル化を行わない 2 回クリックします。|  
+|ルートのシリアル化|次に、ルート オブジェクトをシリアル化し、そのステートメントがステートメントのコレクションに追加します。|  
+|ステートメントの統合|すべてのオブジェクトはシリアル化した後、<xref:System.ComponentModel.Design.Serialization.TypeCodeDomSerializer.Serialize%2A>メソッドがステートメントを注文しから返されたメソッドに追加<xref:System.ComponentModel.Design.Serialization.TypeCodeDomSerializer.GetInitializeMethod%2A>です。 呼び出すすべてのメソッドから返されるコンス トラクターが最後に、用意<xref:System.ComponentModel.Design.Serialization.TypeCodeDomSerializer.GetInitializeMethod%2A>です。|  
+  
+-  
+  
+ 次の表は、オブジェクト、<xref:System.ComponentModel.Design.Serialization.TypeCodeDomSerializer.Serialize%2A>メソッドがコンテキスト スタックに配置します。  
+  
+|インスタンス|説明|  
+|--------------|-----------------|  
+|<xref:System.ComponentModel.Design.Serialization.TypeCodeDomSerializer>|このシリアライザー。 クラスを派生させることがあります方が便利なこのクラスにパブリック プロパティを追加します。|  
+|<xref:System.CodeDom.CodeTypeDeclaration>|作成される型。 ほとんどのオブジェクトでは、これに直接アクセスは必要ありません。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="manager" /> または <paramref name="root" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

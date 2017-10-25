@@ -1,0 +1,85 @@
+<Type Name="CryptoKeyAuditRule" FullName="System.Security.AccessControl.CryptoKeyAuditRule">
+  <TypeSignature Language="C#" Value="public sealed class CryptoKeyAuditRule : System.Security.AccessControl.AuditRule" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit CryptoKeyAuditRule extends System.Security.AccessControl.AuditRule" />
+  <TypeSignature Language="DocId" Value="T:System.Security.AccessControl.CryptoKeyAuditRule" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.AccessControl.AuditRule</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>暗号化キーの監査規則を表します。 監査規則では、ユーザーの id とアクセス マスクの組み合わせを表します。 監査規則には、監査について、ルールは子オブジェクトによって継承、どのように継承伝達され、必要な条件を情報も含まれます。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CryptoKeyAuditRule (System.Security.Principal.IdentityReference identity, System.Security.AccessControl.CryptoKeyRights cryptoKeyRights, System.Security.AccessControl.AuditFlags flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Principal.IdentityReference identity, valuetype System.Security.AccessControl.CryptoKeyRights cryptoKeyRights, valuetype System.Security.AccessControl.AuditFlags flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.CryptoKeyAuditRule.#ctor(System.Security.Principal.IdentityReference,System.Security.AccessControl.CryptoKeyRights,System.Security.AccessControl.AuditFlags)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="identity" Type="System.Security.Principal.IdentityReference" />
+        <Parameter Name="cryptoKeyRights" Type="System.Security.AccessControl.CryptoKeyRights" />
+        <Parameter Name="flags" Type="System.Security.AccessControl.AuditFlags" />
+      </Parameters>
+      <Docs>
+        <param name="identity">監査規則が適用される ID。 このパラメーターは <see cref="T:System.Security.Principal.SecurityIdentifier" /> としてキャスト可能なオブジェクトである必要があります。</param>
+        <param name="cryptoKeyRights">この監査規則が監査を生成するキーの暗号化操作。</param>
+        <param name="flags">監査が生成される条件。</param>
+        <summary>指定した値を使用して、<see cref="T:System.Security.AccessControl.CryptoKeyAuditRule" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CryptoKeyAuditRule (string identity, System.Security.AccessControl.CryptoKeyRights cryptoKeyRights, System.Security.AccessControl.AuditFlags flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string identity, valuetype System.Security.AccessControl.CryptoKeyRights cryptoKeyRights, valuetype System.Security.AccessControl.AuditFlags flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.CryptoKeyAuditRule.#ctor(System.String,System.Security.AccessControl.CryptoKeyRights,System.Security.AccessControl.AuditFlags)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="identity" Type="System.String" />
+        <Parameter Name="cryptoKeyRights" Type="System.Security.AccessControl.CryptoKeyRights" />
+        <Parameter Name="flags" Type="System.Security.AccessControl.AuditFlags" />
+      </Parameters>
+      <Docs>
+        <param name="identity">監査規則が適用される ID。</param>
+        <param name="cryptoKeyRights">この監査規則が監査を生成するキーの暗号化操作。</param>
+        <param name="flags">監査が生成される条件。</param>
+        <summary>指定した値を使用して、<see cref="T:System.Security.AccessControl.CryptoKeyAuditRule" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CryptoKeyRights">
+      <MemberSignature Language="C#" Value="public System.Security.AccessControl.CryptoKeyRights CryptoKeyRights { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.AccessControl.CryptoKeyRights CryptoKeyRights" />
+      <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.CryptoKeyAuditRule.CryptoKeyRights" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.CryptoKeyRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この監査規則が監査を生成する暗号化キーの操作を取得します。</summary>
+        <value>この監査規則が監査を生成するキーの暗号化操作。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

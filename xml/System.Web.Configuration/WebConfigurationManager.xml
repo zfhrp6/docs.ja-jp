@@ -1,0 +1,979 @@
+<Type Name="WebConfigurationManager" FullName="System.Web.Configuration.WebConfigurationManager">
+  <TypeSignature Language="C#" Value="public static class WebConfigurationManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit WebConfigurationManager extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.WebConfigurationManager" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Web アプリケーションに適用されるように、構成ファイルへのアクセスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.WebConfigurationManager>クラスを使用するコンピューターとアプリケーション情報にアクセスします。  
+  
+ 使用して<xref:System.Web.Configuration.WebConfigurationManager>は、Web アプリケーションに関連する構成ファイルで作業することをお勧めします。 クライアント アプリケーションでは、使用して、<xref:System.Configuration.ConfigurationManager>クラスです。  
+  
+ アプリケーションを拡張できる、<xref:System.Configuration>型か、または次の一覧で説明するよう構成情報を処理するには、直接使用します。  
+  
+-   `Handling configuration`。 標準の型を使用して構成情報を処理するためには、次の方法のいずれかを使用します。  
+  
+    -   `Accessing a section`。 アプリケーションの構成情報にアクセスするのいずれかを使用する必要があります、`GetSection`によって提供されるメソッド<xref:System.Web.Configuration.WebConfigurationManager>です。 `<appSettings>`と`<connectionStrings>`を使用する、<xref:System.Web.Configuration.WebConfigurationManager.AppSettings%2A>と<xref:System.Web.Configuration.WebConfigurationManager.ConnectionStrings%2A>プロパティです。 これらのメソッドの読み取り専用の操作を実行、構成の 1 つのキャッシュされたインスタンスを使用して、およびマルチ スレッドに注意してください。  
+  
+    -   `Accessing configuration files`。 アプリケーションでは、読み取りでき、設定の書き込み構成任意のレベルでは、アプリケーション自体や他のアプリケーションまたはコンピューター、ローカルまたはリモートですることができます。 いずれかを使用する、`open`によって提供されるメソッド<xref:System.Web.Configuration.WebConfigurationManager>です。 これらのメソッドが返す、<xref:System.Configuration.Configuration>オブジェクトで、さらに必要なメソッドとプロパティを基になる構成ファイルの処理を提供します。 これらのメソッド読み取りまたは書き込み操作を行い、ファイルが開かれるたびに、構成データを再作成してください。  
+  
+    -   `Advanced configuration`。 高度な構成処理が、型によって提供される<xref:System.Configuration.SectionInformation>、 <xref:System.Configuration.PropertyInformation>、 <xref:System.Configuration.PropertyInformationCollection>、 <xref:System.Configuration.ElementInformation>、 <xref:System.Configuration.ContextInformation>、 <xref:System.Configuration.ConfigurationSectionGroup>、および<xref:System.Configuration.ConfigurationSectionGroupCollection>です。  
+  
+-   `Extending configuration standard types`。 など、標準的な構成の種類を拡張することによって、カスタム構成要素を提供することも<xref:System.Configuration.ConfigurationElement>、 <xref:System.Configuration.ConfigurationElementCollection>、 <xref:System.Configuration.ConfigurationProperty>、および<xref:System.Configuration.ConfigurationSection>プログラムまたは属性付きのモデルを使用しています。 参照してください、<xref:System.Configuration.ConfigurationSection>標準構成の種類をプログラムによって拡張する方法の例のクラスです。 参照してください、<xref:System.Configuration.ConfigurationElement>属性付きのモデルを使用して標準的な構成型を拡張する方法の例のクラスです。  
+  
+   
+  
+## Examples  
+ 次の例の構成情報にアクセスする方法を示しています、  
+  
+ <xref:System.Web.Configuration.WebConfigurationManager.GetSection%2A> メソッド  
+  
+ [!code-csharp[System.Web.Configuration.WebConfigurationManager#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/CS/WebConfigurationManager.cs#2)]
+ [!code-vb[System.Web.Configuration.WebConfigurationManager#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/VB/WebConfigurationManager.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para><see cref="T:System.Configuration.Configuration" />クラスは、構成ファイルを編集するためのプログラムによるアクセスを使用できます。 によって提供される開いているメソッドのいずれかを使用する<see cref="T:System.Web.Configuration.WebConfigurationManager" />です。 これらのメソッドが返す、<see cref="T:System.Configuration.Configuration" />オブジェクトで、さらに必要なメソッドとプロパティを基になる構成ファイルの処理を提供します。 これらのファイルの読み取りまたは書き込みを次のようにアクセスできます。  
+  
+ 使用する<see cref="M:System.Configuration.Configuration.GetSection(System.String)" />または<see cref="M:System.Configuration.Configuration.GetSectionGroup(System.String)" />構成情報を読み取れません。 ユーザーまたはプロセスを読み取るいる必要があります、次の権限に注意してください。  
+  
+-   現在の構成階層レベルの構成ファイルに対する読み取り権限。  
+  
+-   すべての親に対する権限の構成ファイルを読み取る。  
+  
+ アプリケーションでは、独自の構成を読み取り専用のアクセスを必要とする場合は、使用するをお勧めしますが、<see cref="Overload:System.Web.Configuration.WebConfigurationManager.GetSection" />メソッドです。 これらのメソッドのアクセスを提供する、キャッシュされた構成値を現在のアプリケーションに対してより優れたパフォーマンスは、<see cref="T:System.Configuration.Configuration" />クラスです。  
+  
+ <block subset="none" type="note"><para>  
+ 静的なを使用する場合<see langword="GetSection" />を受け取るメソッド、<paramref name="path" />パラメーター、path パラメーターは、アプリケーション、コードが実行されているですそれ以外の場合、パラメーターは無視されますと、現在実行中の構成情報を参照する必要があります。アプリケーションが返されます。  
+  
+</para></block>  
+  
+ いずれかを使用する、<see cref="Overload:System.Configuration.Configuration.Save" />構成情報を書き込む方法です。 ユーザーまたはプロセスに書き込み、いる必要があります、次の権限に注意してください。  
+  
+-   構成ファイルおよび現在の構成階層レベルのディレクトリに対するアクセス許可を記述します。  
+  
+-   すべての構成ファイルの読み取り権限。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="AppSettings">
+      <MemberSignature Language="C#" Value="public static System.Collections.Specialized.NameValueCollection AppSettings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Collections.Specialized.NameValueCollection AppSettings" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.WebConfigurationManager.AppSettings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.NameValueCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web サイトのアプリケーションの設定を取得します。</summary>
+        <value>A<see cref="T:System.Collections.Specialized.NameValueCollection" />オブジェクトを含む、<see cref="T:System.Configuration.AppSettingsSection" />の現在の Web アプリケーションの既定の構成オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.AppSettingsSection>オブジェクトを含む構成ファイルの`<appSettings>`セクションです。  
+  
+   
+  
+## Examples  
+ 次の例の構成情報にアクセスする方法を示しています、<xref:System.Web.Configuration.WebConfigurationManager.AppSettings%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.Configuration.WebConfigurationManager#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/CS/WebConfigurationManager.cs#8)]
+ [!code-vb[System.Web.Configuration.WebConfigurationManager#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/VB/WebConfigurationManager.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">有効な<see cref="T:System.Collections.Specialized.NameValueCollection" />アプリケーション設定データ オブジェクトを取得できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionStrings">
+      <MemberSignature Language="C#" Value="public static System.Configuration.ConnectionStringSettingsCollection ConnectionStrings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Configuration.ConnectionStringSettingsCollection ConnectionStrings" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.WebConfigurationManager.ConnectionStrings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConnectionStringSettingsCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web サイトの接続文字列を取得します。</summary>
+        <value>A<see cref="T:System.Configuration.ConnectionStringSettingsCollection" />の内容を格納しているオブジェクト、<see cref="T:System.Configuration.ConnectionStringsSection" />の現在の Web アプリケーションの既定の構成オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.Configuration.WebConfigurationManager.ConnectionStrings%2A>構成情報にアクセスし、結果を列挙するプロパティです。 返されたを使用して特定の接続文字列にアクセスする<xref:System.Configuration.ConnectionStringSettingsCollection>適切な接続文字列には、インデクサーの名前に置き換えます。  
+  
+ [!code-csharp[System.Web.Configuration.WebConfigurationManager#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/CS/WebConfigurationManager.cs#7)]
+ [!code-vb[System.Web.Configuration.WebConfigurationManager#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/VB/WebConfigurationManager.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">有効な<see cref="T:System.Configuration.ConnectionStringSettingsCollection" />オブジェクトを取得できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSection">
+      <MemberSignature Language="C#" Value="public static object GetSection (string sectionName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetSection(string sectionName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.GetSection(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sectionName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sectionName">構成セクション名。</param>
+        <summary>現在の Web アプリケーションの構成ファイルから指定された構成セクションを取得します。</summary>
+        <returns>指定された構成セクション オブジェクトまたは<see langword="null" />セクションが存在しない場合。 使用でセキュリティ上の制限であることに注意してください<see cref="M:System.Web.Configuration.WebConfigurationManager.GetSection(System.String)" />ランタイム操作として。 たとえば、変更の実行時にセクションにアクセスできません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Web.Configuration.WebConfigurationManager.GetSection%2A>が呼び出されたから、Web アプリケーション内でそのセクションを取得、Web アプリケーションの構成階層構造に従って、システムによって選択された構成ファイルからです。  
+  
+> [!CAUTION]
+>  アプリケーションは、HTTP 以外のプロトコルを使用する場合、<xref:System.Web.Configuration.WebConfigurationManager.GetSection%2A>のパラメーター リストのセクションの名前とパスの両方を受け取るオーバー ロードは、1 つを使用します。 システムでは、構成階層のレベルについてどのような想定が行えないために、構成ファイルのパスを指定する必要があります。 使用する場合、<xref:System.Web.Configuration.WebConfigurationManager.GetSection%2A>のみセクション名、システムを受け取るオーバー ロードは常にしようと、アプリケーション レベルで構成設定を返します。 ただし、その指定されたパスが、現在のアプリケーションの外部にある場合は、パスを受け取るオーバー ロードも返される、現在実行中のアプリケーションのアプリケーション レベルの構成設定に注意してください。  
+  
+ 呼び出すことが<xref:System.Web.Configuration.WebConfigurationManager.GetSection%2A>からクライアント アプリケーション内で。 この場合、クライアントの構成階層構造に従って、システムによって選択された構成ファイルから既定のセクションを取得します。 通常、Machine.config ファイルの場所でマップされている構成がない限り、これです。 構成ファイルの割り当て、マッピングの方法を次に説明を参照してください。  
+  
+> [!NOTE]
+>  <xref:System.Web.Configuration.WebConfigurationManager.GetSection%2A>メソッドは、アプリケーションを実行する階層レベルの構成ファイルのセクションでは動作するランタイム メソッドです。 ランタイム以外の操作を使用して<xref:System.Configuration.Configuration.GetSection%2A>代わりにします。 このメソッドは、構成ファイルを開くためのオーバー ロードされたメソッドのいずれかを使用して取得した構成ファイルの指定されたセクションでは動作<xref:System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration%2A>です。  
+  
+   
+  
+## Examples  
+ このセクションの例の構成情報にアクセスする方法を示して、<xref:System.Web.Configuration.WebConfigurationManager.GetSection%2A>メソッドです。  
+  
+ 次の例は、Web アプリケーションまたはコンソール アプリケーションからアクセスできるセクションを示しています。  
+  
+> [!NOTE]
+>  この例を使用する方法を示しています、<xref:System.Web.Configuration.WebConfigurationManager.GetWebApplicationSection%2A>取得するメソッド、<xref:System.Configuration.ConfigurationSection>構成ファイルからオブジェクト。  
+  
+ [!code-csharp[System.Web.Configuration.WebConfigurationManager#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/CS/WebConfigurationManager.cs#2)]
+ [!code-vb[System.Web.Configuration.WebConfigurationManager#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/VB/WebConfigurationManager.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">有効な構成ファイルを読み込むことができませんでした。</exception>
+        <block subset="none" type="overrides">
+          <para>戻り値は、使用する前に必要な構成型にキャストする必要があります。 可能性のあるキャスト例外を回避するのと同様に、条件付きのキャスト操作を使用する必要があります、 <see langword="as" /> c# または Visual Basic の関数の演算子にします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSection">
+      <MemberSignature Language="C#" Value="public static object GetSection (string sectionName, string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetSection(string sectionName, string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.GetSection(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sectionName" Type="System.String" />
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sectionName">構成セクション名。</param>
+        <param name="path">仮想の構成ファイルのパス。</param>
+        <summary>指定した場所に、Web アプリケーションの構成ファイルから指定された構成セクションを取得します。</summary>
+        <returns>指定された構成セクション オブジェクトまたは<see langword="null" />セクションが存在しない場合。 使用でセキュリティ上の制限であることに注意してください<see cref="M:System.Web.Configuration.WebConfigurationManager.GetSection(System.String,System.String)" />実行時の操作として。 インスタンスの変更、実行時にセクションにアクセスできません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Web.Configuration.WebConfigurationManager.GetSection%2A>が呼び出されたから、Web アプリケーション内でそのセクションを取得、構成階層で指定されたパスで定義された構成ファイルからです。  
+  
+> [!CAUTION]
+>  アプリケーションは、HTTP 以外のプロトコルを使用する場合、<xref:System.Web.Configuration.WebConfigurationManager.GetSection%2A>のパラメーター リストのセクションの名前とパスの両方を受け取るオーバー ロードは、1 つを使用します。 システムでは、構成階層のレベルについてどのような想定が行えないために、構成ファイルのパスを指定する必要があります。 使用する場合、<xref:System.Web.Configuration.WebConfigurationManager.GetSection%2A>のみセクション名、システムを受け取るオーバー ロードは常にしようと、アプリケーション レベルで構成設定を返します。 ただし、その指定されたパスが、現在のアプリケーションの外部にある場合は、パスを受け取るオーバー ロードも返される、現在実行中のアプリケーションのアプリケーション レベルの構成設定に注意してください。  
+  
+ このメソッドは、クライアント アプリケーション内からを呼び出すことはできません。  
+  
+ 現在のレベル、Web アプリケーション ディレクトリを使用してある構成ファイルから構成セクションを取得する場合、<xref:System.Web.Configuration.WebConfigurationManager.GetSection%2A>メソッドです。  
+  
+> [!NOTE]
+>  <xref:System.Web.Configuration.WebConfigurationManager.GetSection%2A>メソッドは、アプリケーションを実行する階層レベルの構成ファイルのセクションで動作しているランタイムのメソッドです。 ランタイム以外の操作を使用して<xref:System.Configuration.Configuration.GetSection%2A>代わりにします。 このメソッドは、のいずれかを使用して取得した構成ファイルの指定されたセクションでは動作、`open`ファイルの構成方法。  
+  
+   
+  
+## Examples  
+ 次の例の構成情報にアクセスする方法を示しています、<xref:System.Web.Configuration.WebConfigurationManager.GetSection%2A>メソッドです。  
+  
+> [!NOTE]
+>  この例を使用する方法を示しています、<xref:System.Web.Configuration.WebConfigurationManager.GetSection%2A>取得するメソッド、<xref:System.Configuration.ConfigurationSection>指定された構成ファイルからオブジェクト。  
+  
+ [!code-csharp[System.Web.Configuration.WebConfigurationManager#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/CS/WebConfigurationManager.cs#5)]
+ [!code-vb[System.Web.Configuration.WebConfigurationManager#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/VB/WebConfigurationManager.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">メソッドは、Web アプリケーションの外部からを呼び出されます。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">有効な構成ファイルを読み込むことができませんでした。</exception>
+        <block subset="none" type="overrides">
+          <para>戻り値は、使用する前に必要な構成型にキャストする必要があります。 可能性のあるキャスト例外を回避するのと同様に、条件付きのキャスト操作を使用する必要があります、 <see langword="as" /> c# または Visual Basic の関数の演算子にします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetWebApplicationSection">
+      <MemberSignature Language="C#" Value="public static object GetWebApplicationSection (string sectionName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetWebApplicationSection(string sectionName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.GetWebApplicationSection(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sectionName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sectionName">構成セクション名。</param>
+        <summary>現在の Web アプリケーションの構成ファイルから指定された構成セクションを取得します。</summary>
+        <returns>指定された構成セクション オブジェクトまたは<see langword="null" />セクションが存在しない場合、または実行時に、セクションにアクセスできない場合、内部オブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Web.Configuration.WebConfigurationManager.GetWebApplicationSection%2A>が呼び出されたから、Web アプリケーション内でそのセクションを取得、Web アプリケーションの構成階層構造に従って、システムによって選択された構成ファイルからです。  
+  
+ 呼び出すことが<xref:System.Web.Configuration.WebConfigurationManager.GetWebApplicationSection%2A>からクライアント アプリケーション内で。 この場合、クライアントの構成階層構造に従って、システムによって選択された構成ファイルから既定のセクションを取得します。 通常、Machine.config ファイルの場所でマップされている構成がない限り、これです。 構成ファイルの割り当て、マッピングの方法を次に説明を参照してください。  
+  
+> [!NOTE]
+>  <xref:System.Web.Configuration.WebConfigurationManager.GetWebApplicationSection%2A>メソッドは、現在のレベルにある、アプリケーション構成ファイルのセクションで機能する実行時の操作です。 <xref:System.Configuration.Configuration.GetSection%2A>メソッド、ただしが実行時の操作ではありませんが、構成ファイルを開くためのメソッドのいずれかを介して取得された、指定したセクションに作用します。  
+  
+   
+  
+## Examples  
+ 次の例の構成情報にアクセスする方法を示しています、<xref:System.Web.Configuration.WebConfigurationManager.GetWebApplicationSection%2A>メソッドです。  
+  
+> [!NOTE]
+>  この例を使用する方法を示しています、<xref:System.Web.Configuration.WebConfigurationManager.GetWebApplicationSection%2A>取得するメソッド、<xref:System.Configuration.ConfigurationSection>既定の構成ファイルからオブジェクト。  
+  
+ [!code-csharp[System.Web.Configuration.WebConfigurationManager#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/CS/WebConfigurationManager.cs#6)]
+ [!code-vb[System.Web.Configuration.WebConfigurationManager#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/VB/WebConfigurationManager.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">有効な構成ファイルを読み込むことができませんでした。</exception>
+        <block subset="none" type="overrides">
+          <para>戻り値は、使用する前に必要な構成型にキャストする必要があります。 可能性のあるキャスト例外を回避するのと同様に、条件付きのキャスト操作を使用する必要があります、 <see langword="as" /> c# または Visual Basic の関数の演算子にします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenMachineConfiguration">
+      <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenMachineConfiguration ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenMachineConfiguration() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.OpenMachineConfiguration" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Configuration</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のコンピューターにマシン構成ファイルを開き、<see cref="T:System.Configuration.Configuration" />読み取りを許可するか、操作を記述するオブジェクト。</summary>
+        <returns><see cref="T:System.Configuration.Configuration" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationManager.OpenMachineConfiguration%2A>メソッドは、アプリケーションが実行されているコンピューター上のマシン構成ファイルを開きます。 このファイルは、標準的なビルド ディレクトリ %windir%\microsoft.net\framework\version\config にあります。  
+  
+   
+  
+## Examples  
+ 次の例の構成情報にアクセスする方法を示しています、<xref:System.Web.Configuration.WebConfigurationManager.OpenMachineConfiguration%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.Configuration.WebConfigurationManager#9](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/CS/WebConfigurationManager.cs#9)]
+ [!code-vb[System.Web.Configuration.WebConfigurationManager#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/VB/WebConfigurationManager.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">有効な構成ファイルを読み込むことができませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenMachineConfiguration">
+      <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenMachineConfiguration (string locationSubPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenMachineConfiguration(string locationSubPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.OpenMachineConfiguration(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Configuration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="locationSubPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="locationSubPath">アプリケーションのパスをマシンの構成が適用されます。</param>
+        <summary>現在のコンピューターにマシン構成ファイルを開き、<see cref="T:System.Configuration.Configuration" />読み取りを許可するか、操作を記述するオブジェクト。</summary>
+        <returns><see cref="T:System.Configuration.Configuration" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドで指定されたディレクトリに適用されるマシン構成ファイルを開き、`locationSubPath`パラメーター。  
+  
+   
+  
+## Examples  
+ 次の例の構成情報にアクセスする方法を示しています、<xref:System.Web.Configuration.WebConfigurationManager.OpenMachineConfiguration%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.Configuration.WebConfigurationManager#10](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/CS/WebConfigurationManager.cs#10)]
+ [!code-vb[System.Web.Configuration.WebConfigurationManager#10](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/VB/WebConfigurationManager.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">有効な構成ファイルを読み込むことができませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenMachineConfiguration">
+      <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenMachineConfiguration (string locationSubPath, string server);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenMachineConfiguration(string locationSubPath, string server) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.OpenMachineConfiguration(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Configuration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="locationSubPath" Type="System.String" />
+        <Parameter Name="server" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="locationSubPath">構成を適用するアプリケーションのパス。</param>
+        <param name="server">構成を取得するサーバーの完全修飾名。</param>
+        <summary>として指定されたサーバー上の指定されたマシン構成ファイルを開き、<see cref="T:System.Configuration.Configuration" />読み取りを許可するか、操作を記述するオブジェクト。</summary>
+        <returns><see cref="T:System.Configuration.Configuration" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドで指定されたディレクトリに配置されているマシン構成ファイルを開き、`locationSubPath`パラメーターで指定されたコンピューターでは、`server`パラメーター。  
+  
+   
+  
+## Examples  
+ 次の例の構成情報にアクセスする方法を示しています、<xref:System.Web.Configuration.WebConfigurationManager.OpenMachineConfiguration%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.Configuration.WebConfigurationManager#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/CS/WebConfigurationManager.cs#11)]
+ [!code-vb[System.Web.Configuration.WebConfigurationManager#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/VB/WebConfigurationManager.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">有効な構成ファイルを読み込むことができませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenMachineConfiguration">
+      <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenMachineConfiguration (string locationSubPath, string server, IntPtr userToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenMachineConfiguration(string locationSubPath, string server, native int userToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.OpenMachineConfiguration(System.String,System.String,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Configuration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="locationSubPath" Type="System.String" />
+        <Parameter Name="server" Type="System.String" />
+        <Parameter Name="userToken" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="locationSubPath">構成を適用するアプリケーションのパス。</param>
+        <param name="server">構成を取得するサーバーの完全修飾名。</param>
+        <param name="userToken">使用するアカウント トークンです。</param>
+        <summary>として指定されたサーバー上の指定されたマシン構成ファイルを開き、<see cref="T:System.Configuration.Configuration" />オブジェクトの読み取りを許可または書き込み操作に指定されたセキュリティ コンテキストを使用します。</summary>
+        <returns><see cref="T:System.Configuration.Configuration" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、権限借用を使用して構成ファイルにアクセスする使用されます。  
+  
+> [!NOTE]
+>  アカウント トークンは通常のインスタンスから取得、<xref:System.Security.Principal.WindowsIdentity>クラスまたは Win32 API への呼び出しなど、アンマネージ コードを呼び出すことによって`LogonUser`です。 アンマネージ コードへの呼び出しの詳細については、次を参照してください。[アンマネージ DLL 関数の使用](~/docs/framework/interop/consuming-unmanaged-dll-functions.md)です。  
+  
+   
+  
+## Examples  
+ 次の例の構成情報にアクセスする方法を示しています、<xref:System.Web.Configuration.WebConfigurationManager.OpenMachineConfiguration%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.Configuration.WebConfigurationManager#12](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/CS/WebConfigurationManager.cs#12)]
+ [!code-vb[System.Web.Configuration.WebConfigurationManager#12](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/VB/WebConfigurationManager.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">有効な値が指定されませんでした、<paramref name="server" />または<paramref name="userToken" />パラメーター。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">有効な構成ファイルを読み込むことができませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenMachineConfiguration">
+      <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenMachineConfiguration (string locationSubPath, string server, string userName, string password);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenMachineConfiguration(string locationSubPath, string server, string userName, string password) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.OpenMachineConfiguration(System.String,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Configuration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="locationSubPath" Type="System.String" />
+        <Parameter Name="server" Type="System.String" />
+        <Parameter Name="userName" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="locationSubPath">構成を適用するアプリケーションのパス。</param>
+        <param name="server">構成を取得するサーバーの完全修飾名。</param>
+        <param name="userName">ファイルを開くときに使用する完全なユーザー名 (domain \user)。</param>
+        <param name="password">ユーザー名のパスワード。</param>
+        <summary>として指定されたサーバー上の指定されたマシン構成ファイルを開き、<see cref="T:System.Configuration.Configuration" />オブジェクトの読み取りを許可または書き込み操作に指定されたセキュリティ コンテキストを使用します。</summary>
+        <returns><see cref="T:System.Configuration.Configuration" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、権限借用を使用して構成ファイルにアクセスする使用されます。  
+  
+   
+  
+## Examples  
+ 次の例の構成情報にアクセスする方法を示しています、<xref:System.Web.Configuration.WebConfigurationManager.OpenMachineConfiguration%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.Configuration.WebConfigurationManager#13](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/CS/WebConfigurationManager.cs#13)]
+ [!code-vb[System.Web.Configuration.WebConfigurationManager#13](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/VB/WebConfigurationManager.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="server" />または<paramref name="userName" />と<paramref name="password" />パラメーターが無効でした。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">有効な構成ファイルを読み込むことができませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenMappedMachineConfiguration">
+      <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenMappedMachineConfiguration (System.Configuration.ConfigurationFileMap fileMap);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenMappedMachineConfiguration(class System.Configuration.ConfigurationFileMap fileMap) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.OpenMappedMachineConfiguration(System.Configuration.ConfigurationFileMap)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Configuration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileMap" Type="System.Configuration.ConfigurationFileMap" />
+      </Parameters>
+      <Docs>
+        <param name="fileMap"><see cref="T:System.Configuration.ConfigurationFileMap" />既定のマシン構成ファイルの代わりに使用するオブジェクト。</param>
+        <summary>としてマシン構成ファイルを開き、<see cref="T:System.Configuration.Configuration" />オブジェクトの読み取りを許可または書き込み操作に指定したファイル マップを使用します。</summary>
+        <returns><see cref="T:System.Configuration.Configuration" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">有効な構成ファイルを読み込むことができませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenMappedMachineConfiguration">
+      <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenMappedMachineConfiguration (System.Configuration.ConfigurationFileMap fileMap, string locationSubPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenMappedMachineConfiguration(class System.Configuration.ConfigurationFileMap fileMap, string locationSubPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.OpenMappedMachineConfiguration(System.Configuration.ConfigurationFileMap,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Configuration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileMap" Type="System.Configuration.ConfigurationFileMap" />
+        <Parameter Name="locationSubPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileMap"><see cref="T:System.Configuration.ConfigurationFileMap" />既定マシン構成ファイルの代わりに使用するオブジェクト。</param>
+        <param name="locationSubPath">特定のリソースでは、構成が適用されます。</param>
+        <summary>としてマシン構成ファイルを開き、<see cref="T:System.Configuration.Configuration" />オブジェクトの読み取りを許可するか、操作を記述する場所と指定したファイル マップを使用します。</summary>
+        <returns><see cref="T:System.Configuration.Configuration" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">有効な構成ファイルを読み込むことができませんでした。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="OpenMappedWebConfiguration">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>として Web アプリケーション構成ファイルを開き、<see cref="T:System.Configuration.Configuration" />オブジェクトの読み取りを許可または書き込み操作に指定したファイル マップを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 物理ディレクトリに、仮想ディレクトリ階層をマップする必要がある場合は、マッピング機構を使用します。  
+  
+   
+  
+## Examples  
+ 次の例では、仮想ディレクトリ階層を物理的にマップする方法を示します。 次に示す例は、オーバー ロードされたメンバーで使用されます。  
+  
+ [!code-csharp[System.Web.Configuration.WebConfigurationManager#20](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/CS/WebConfigurationManager.cs#20)]
+ [!code-vb[System.Web.Configuration.WebConfigurationManager#20](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/VB/WebConfigurationManager.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="OpenMappedWebConfiguration">
+      <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenMappedWebConfiguration (System.Web.Configuration.WebConfigurationFileMap fileMap, string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenMappedWebConfiguration(class System.Web.Configuration.WebConfigurationFileMap fileMap, string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.OpenMappedWebConfiguration(System.Web.Configuration.WebConfigurationFileMap,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Configuration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileMap" Type="System.Web.Configuration.WebConfigurationFileMap" />
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileMap"><see cref="T:System.Web.Configuration.WebConfigurationFileMap" />既定の Web アプリケーション構成ファイルの代わりに使用するオブジェクト。</param>
+        <param name="path">構成ファイルへの仮想パス。</param>
+        <summary>として指定された Web アプリケーション構成ファイルを開き、<see cref="T:System.Configuration.Configuration" />オブジェクトの読み取りを許可するか、操作を記述する、指定したファイル マップと仮想パスを使用します。</summary>
+        <returns><see cref="T:System.Configuration.Configuration" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得する、<xref:System.Configuration.Configuration>のリソースのオブジェクトの権限の設定を継承するすべての構成ファイルで、コードの読み取りが必要です。 構成ファイルを更新するには、コードは、構成ファイルとそれが存在するディレクトリの両方に対する書き込み特権をさらが必要です。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.WebConfigurationManager.OpenMappedWebConfiguration%2A> メソッドを使用する方法の例を次に示します。  
+  
+ [!code-csharp[System.Web.Configuration.WebConfigurationManager#21](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/CS/WebConfigurationManager.cs#21)]
+ [!code-vb[System.Web.Configuration.WebConfigurationManager#21](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/VB/WebConfigurationManager.vb#21)]  
+  
+ 前の例では、次のカスタム メソッドを使用して、生成する、<xref:System.Configuration.ConfigurationFileMap>オブジェクト。  
+  
+ [!code-csharp[System.Web.Configuration.WebConfigurationManager#20](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/CS/WebConfigurationManager.cs#20)]
+ [!code-vb[System.Web.Configuration.WebConfigurationManager#20](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/VB/WebConfigurationManager.vb#20)]  
+  
+ 参照してください<xref:System.Web.Configuration.WebConfigurationManager.OpenMachineConfiguration%2A>を物理的に仮想ディレクトリ階層をマップする方法を示す例についてはします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">有効な構成ファイルを読み込むことができませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenMappedWebConfiguration">
+      <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenMappedWebConfiguration (System.Web.Configuration.WebConfigurationFileMap fileMap, string path, string site);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenMappedWebConfiguration(class System.Web.Configuration.WebConfigurationFileMap fileMap, string path, string site) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.OpenMappedWebConfiguration(System.Web.Configuration.WebConfigurationFileMap,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Configuration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileMap" Type="System.Web.Configuration.WebConfigurationFileMap" />
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="site" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileMap"><see cref="T:System.Web.Configuration.WebConfigurationFileMap" /> Web アプリケーション構成ファイルの既定のマッピングの代わりに使用するオブジェクト。</param>
+        <param name="path">構成ファイルへの仮想パス。</param>
+        <param name="site">インターネット インフォメーション サービス (IIS) の構成に表示されるアプリケーション Web サイトの名前。</param>
+        <summary>として指定された Web アプリケーション構成ファイルを開き、<see cref="T:System.Configuration.Configuration" />オブジェクトの読み取りを許可するか、操作を記述する、指定したファイル マップの仮想パスとサイト名を使用します。</summary>
+        <returns><see cref="T:System.Configuration.Configuration" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得する、<xref:System.Configuration.Configuration>のリソースのオブジェクトの権限の設定を継承するすべての構成ファイルで、コードの読み取りが必要です。 構成ファイルを更新するには、コードは、構成ファイルとそれが存在するディレクトリの両方に対する書き込み特権をさらが必要です。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.WebConfigurationManager.OpenMappedWebConfiguration%2A> メソッドを使用する方法の例を次に示します。  
+  
+ [!code-csharp[System.Web.Configuration.WebConfigurationManager#22](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/CS/WebConfigurationManager.cs#22)]
+ [!code-vb[System.Web.Configuration.WebConfigurationManager#22](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/VB/WebConfigurationManager.vb#22)]  
+  
+ 参照してください<xref:System.Web.Configuration.WebConfigurationManager.OpenMachineConfiguration%2A>を物理的に仮想ディレクトリ階層をマップする方法を示す例についてはします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">有効な構成ファイルを読み込むことができませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenMappedWebConfiguration">
+      <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenMappedWebConfiguration (System.Web.Configuration.WebConfigurationFileMap fileMap, string path, string site, string locationSubPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenMappedWebConfiguration(class System.Web.Configuration.WebConfigurationFileMap fileMap, string path, string site, string locationSubPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.OpenMappedWebConfiguration(System.Web.Configuration.WebConfigurationFileMap,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Configuration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileMap" Type="System.Web.Configuration.WebConfigurationFileMap" />
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="site" Type="System.String" />
+        <Parameter Name="locationSubPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileMap"><see cref="T:System.Web.Configuration.WebConfigurationFileMap" /> Web アプリケーション構成ファイルの既定のマッピングの代わりに使用するオブジェクト。</param>
+        <param name="path">構成ファイルへの仮想パス。</param>
+        <param name="site">インターネット インフォメーション サービス (IIS) の構成に表示されるアプリケーション Web サイトの名前。</param>
+        <param name="locationSubPath">特定のリソースでは、構成が適用されます。</param>
+        <summary>として指定された Web アプリケーション構成ファイルを開き、<see cref="T:System.Configuration.Configuration" />オブジェクトの読み取りを許可するか、操作を記述する、指定したファイル マップ、仮想パス、サイト名、および場所を使用します。</summary>
+        <returns><see cref="T:System.Configuration.Configuration" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得する、<xref:System.Configuration.Configuration>のリソースのオブジェクトの権限の設定を継承するすべての構成ファイルで、コードの読み取りが必要です。 構成ファイルを更新するには、コードは、構成ファイルとそれが存在するディレクトリの両方に対する書き込み特権をさらが必要です。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.WebConfigurationManager.OpenMappedWebConfiguration%2A> メソッドを使用する方法の例を次に示します。  
+  
+ [!code-csharp[System.Web.Configuration.WebConfigurationManager#23](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/CS/WebConfigurationManager.cs#23)]
+ [!code-vb[System.Web.Configuration.WebConfigurationManager#23](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/VB/WebConfigurationManager.vb#23)]  
+  
+ 参照してください<xref:System.Web.Configuration.WebConfigurationManager.OpenMachineConfiguration%2A>を物理的に仮想ディレクトリ階層をマップする方法を示す例についてはします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">有効な構成ファイルを読み込むことができませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenWebConfiguration">
+      <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenWebConfiguration (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenWebConfiguration(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Configuration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">構成ファイルへの仮想パス。 場合<see langword="null" />ルートの Web.config ファイルが開かれます。</param>
+        <summary>として Web アプリケーション構成ファイルを開き、<see cref="T:System.Configuration.Configuration" />オブジェクトの読み取りを許可または書き込み操作に指定された仮想パスを使用します。</summary>
+        <returns><see cref="T:System.Configuration.Configuration" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得する、<xref:System.Configuration.Configuration>のリソースのオブジェクトの権限の設定を継承するすべての構成ファイルで、コードの読み取りが必要です。 構成ファイルを更新するには、コードは、構成ファイルとそれが存在するディレクトリの両方に対する書き込み特権をさらが必要です。  
+  
+   
+  
+## Examples  
+ 次の例の構成情報にアクセスする方法を示しています、<xref:System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.Configuration.WebConfigurationManager#14](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/CS/WebConfigurationManager.cs#14)]
+ [!code-vb[System.Web.Configuration.WebConfigurationManager#14](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/VB/WebConfigurationManager.vb#14)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">有効な構成ファイルを読み込むことができませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenWebConfiguration">
+      <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenWebConfiguration (string path, string site);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenWebConfiguration(string path, string site) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Configuration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="site" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">構成ファイルへの仮想パス。</param>
+        <param name="site">インターネット インフォメーション サービス (IIS) の構成に表示されるアプリケーション Web サイトの名前。</param>
+        <summary>として Web アプリケーション構成ファイルを開き、<see cref="T:System.Configuration.Configuration" />オブジェクトの読み取りを許可するか、操作を記述する、指定した仮想パスとサイト名を使用します。</summary>
+        <returns><see cref="T:System.Configuration.Configuration" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得する、<xref:System.Configuration.Configuration>のリソースのオブジェクトの権限の設定を継承するすべての構成ファイルで、コードの読み取りが必要です。 構成ファイルを更新するには、コードは、構成ファイルとそれが存在するディレクトリの両方に対する書き込み特権をさらが必要です。  
+  
+   
+  
+## Examples  
+ 次の例の構成情報にアクセスする方法を示しています、<xref:System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.Configuration.WebConfigurationManager#15](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/CS/WebConfigurationManager.cs#15)]
+ [!code-vb[System.Web.Configuration.WebConfigurationManager#15](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/VB/WebConfigurationManager.vb#15)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">有効な構成ファイルを読み込むことができませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenWebConfiguration">
+      <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenWebConfiguration (string path, string site, string locationSubPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenWebConfiguration(string path, string site, string locationSubPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Configuration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="site" Type="System.String" />
+        <Parameter Name="locationSubPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">構成ファイルへの仮想パス。</param>
+        <param name="site">インターネット インフォメーション サービス (IIS) の構成に表示されるアプリケーション Web サイトの名前。</param>
+        <param name="locationSubPath">特定のリソースでは、構成が適用されます。</param>
+        <summary>として Web アプリケーション構成ファイルを開き、<see cref="T:System.Configuration.Configuration" />オブジェクトの読み取りを許可するか、操作を記述する、指定した仮想パス、サイト名、および場所を使用します。</summary>
+        <returns><see cref="T:System.Configuration.Configuration" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得する、<xref:System.Configuration.Configuration>のリソースのオブジェクトの権限の設定を継承するすべての構成ファイルで、コードの読み取りが必要です。 構成ファイルを更新するには、コードは、構成ファイルとそれが存在するディレクトリの両方に対する書き込み特権をさらが必要です。  
+  
+   
+  
+## Examples  
+ 次の例の構成情報にアクセスする方法を示しています、<xref:System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.Configuration.WebConfigurationManager#16](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/CS/WebConfigurationManager.cs#16)]
+ [!code-vb[System.Web.Configuration.WebConfigurationManager#16](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/VB/WebConfigurationManager.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">有効な構成ファイルを読み込むことができませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenWebConfiguration">
+      <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenWebConfiguration (string path, string site, string locationSubPath, string server);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenWebConfiguration(string path, string site, string locationSubPath, string server) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration(System.String,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Configuration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="site" Type="System.String" />
+        <Parameter Name="locationSubPath" Type="System.String" />
+        <Parameter Name="server" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">構成ファイルへの仮想パス。</param>
+        <param name="site">インターネット インフォメーション サービス (IIS) の構成に表示されるアプリケーション Web サイトの名前。</param>
+        <param name="locationSubPath">特定のリソースでは、構成が適用されます。</param>
+        <param name="server">Web アプリケーション サーバーのネットワーク名は、上に存在します。</param>
+        <summary>として Web アプリケーション構成ファイルを開き、<see cref="T:System.Configuration.Configuration" />オブジェクトの読み取りを許可または書き込み操作に指定された仮想パス、サイト名、場所、およびサーバーを使用します。</summary>
+        <returns><see cref="T:System.Configuration.Configuration" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得する、<xref:System.Configuration.Configuration>リモート リソースでは、オブジェクトのコードでは、リモート コンピューターで管理者特権が必要です。  
+  
+   
+  
+## Examples  
+ 次の例の構成情報にアクセスする方法を示しています、<xref:System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.Configuration.WebConfigurationManager#17](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/CS/WebConfigurationManager.cs#17)]
+ [!code-vb[System.Web.Configuration.WebConfigurationManager#17](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/VB/WebConfigurationManager.vb#17)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">サーバーのパラメーターが無効でした。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">有効な構成ファイルを読み込むことができませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenWebConfiguration">
+      <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenWebConfiguration (string path, string site, string locationSubPath, string server, IntPtr userToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenWebConfiguration(string path, string site, string locationSubPath, string server, native int userToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration(System.String,System.String,System.String,System.String,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Configuration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="site" Type="System.String" />
+        <Parameter Name="locationSubPath" Type="System.String" />
+        <Parameter Name="server" Type="System.String" />
+        <Parameter Name="userToken" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="path">構成ファイルへの仮想パス。</param>
+        <param name="site">インターネット インフォメーション サービス (IIS) の構成に表示されるアプリケーション Web サイトの名前。</param>
+        <param name="locationSubPath">特定のリソースでは、構成が適用されます。</param>
+        <param name="server">Web アプリケーション サーバーのネットワーク名は、上に存在します。</param>
+        <param name="userToken">使用するアカウント トークンです。</param>
+        <summary>として Web アプリケーション構成ファイルを開き、<see cref="T:System.Configuration.Configuration" />オブジェクトの読み取りを許可または書き込み操作に指定された仮想パス、サイト名、場所、サーバー、およびセキュリティ コンテキストを使用します。</summary>
+        <returns><see cref="T:System.Configuration.Configuration" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、権限借用を使用して構成ファイルにアクセスする使用されます。  
+  
+> [!NOTE]
+>  アカウント トークンは通常のインスタンスから取得、<xref:System.Security.Principal.WindowsIdentity>クラスまたは Win32 API への呼び出しなど、アンマネージ コードを呼び出すことによって`LogonUser`です。 アンマネージ コードへの呼び出しの詳細については、次を参照してください。[アンマネージ DLL 関数の使用](~/docs/framework/interop/consuming-unmanaged-dll-functions.md)です。  
+  
+ 取得する、<xref:System.Configuration.Configuration>リモート リソースでは、オブジェクトのコードでは、リモート コンピューターで管理者特権が必要です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration%2A>構成情報にアクセスするメソッド。  
+  
+ [!code-csharp[System.Web.Configuration.WebConfigurationManager#19](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/CS/WebConfigurationManager.cs#19)]
+ [!code-vb[System.Web.Configuration.WebConfigurationManager#19](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/VB/WebConfigurationManager.vb#19)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="server" />または<paramref name="userToken" />パラメーターが無効でした。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">有効な構成ファイルを読み込むことができませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenWebConfiguration">
+      <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenWebConfiguration (string path, string site, string locationSubPath, string server, string userName, string password);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenWebConfiguration(string path, string site, string locationSubPath, string server, string userName, string password) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration(System.String,System.String,System.String,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Configuration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="site" Type="System.String" />
+        <Parameter Name="locationSubPath" Type="System.String" />
+        <Parameter Name="server" Type="System.String" />
+        <Parameter Name="userName" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">構成ファイルへの仮想パス。</param>
+        <param name="site">インターネット インフォメーション サービス (IIS) の構成に表示されるアプリケーション Web サイトの名前。</param>
+        <param name="locationSubPath">特定のリソースでは、構成が適用されます。</param>
+        <param name="server">Web アプリケーション サーバーのネットワーク名は、上に存在します。</param>
+        <param name="userName">ファイルを開くときに使用する完全なユーザー名 (domain \user)。</param>
+        <param name="password">ユーザー名のパスワード。</param>
+        <summary>として Web アプリケーション構成ファイルを開き、<see cref="T:System.Configuration.Configuration" />オブジェクトの読み取りを許可または書き込み操作に指定された仮想パス、サイト名、場所、サーバー、およびセキュリティ コンテキストを使用します。</summary>
+        <returns><see cref="T:System.Configuration.Configuration" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、権限借用を使用して構成ファイルにアクセスする使用されます。  
+  
+ 取得する、<xref:System.Configuration.Configuration>リモート リソースでは、オブジェクトのコードでは、リモート コンピューターで管理者特権が必要です。  
+  
+ 実行する必要があります、 [ASP.NET IIS 登録ツール (Aspnet_regiis.exe)](http://msdn.microsoft.com/library/6491c41e-e2b0-481f-9863-db3614d5f96b)で、`-config+`リモート コンピューター上の構成ファイルへのアクセスを有効にするオプションです。  
+  
+   
+  
+## Examples  
+ 次の例の構成情報にアクセスする方法を示しています、<xref:System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.Configuration.WebConfigurationManager#18](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/CS/WebConfigurationManager.cs#18)]
+ [!code-vb[System.Web.Configuration.WebConfigurationManager#18](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/VB/WebConfigurationManager.vb#18)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="server" />または<paramref name="userName" />と<paramref name="password" />パラメーターが無効でした。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">有効な構成ファイルを読み込めませんでした。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

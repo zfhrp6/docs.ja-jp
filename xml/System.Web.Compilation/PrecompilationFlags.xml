@@ -1,0 +1,190 @@
+<Type Name="PrecompilationFlags" FullName="System.Web.Compilation.PrecompilationFlags">
+  <TypeSignature Language="C#" Value="public enum PrecompilationFlags" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed PrecompilationFlags extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Compilation.PrecompilationFlags" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プリコンパイル動作を決定するフラグを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `PrecompilationFlags`クラスは、プリコンパイル時に、ビルド マネージャーの動作を定義します。 <xref:System.Web.Compilation.ClientBuildManager>クラスの受け取り`PrecompilationFlags`としてそのコンス トラクターのパラメーターのいずれか。 を通じてプログラムで実行できるプリコンパイル<xref:System.Web.Compilation.ClientBuildManager>または Aspnet_compiler.exe コマンド ライン ツールを使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AllowPartiallyTrustedCallers">
+      <MemberSignature Language="C#" Value="AllowPartiallyTrustedCallers" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Compilation.PrecompilationFlags AllowPartiallyTrustedCallers = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Compilation.PrecompilationFlags.AllowPartiallyTrustedCallers" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Compilation.PrecompilationFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アセンブリに <see cref="T:System.Security.AllowPartiallyTrustedCallersAttribute" /> 属性が生成されます。これは、そのアセンブリが特定の信頼されているコードから呼び出すことができることを意味します。 <see langword="/aptca" /> フラグがコンパイル シンボルとして追加されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Clean">
+      <MemberSignature Language="C#" Value="Clean" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Compilation.PrecompilationFlags Clean = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Compilation.PrecompilationFlags.Clean" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Compilation.PrecompilationFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションは "クリーン" にビルドされます。つまり、コンパイル済みのコンポーネントもすべて再コンパイルされます。 このフィールドは、Aspnet_compiler.exe の <see langword="-c" /> スイッチに対応します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CodeAnalysis">
+      <MemberSignature Language="C#" Value="CodeAnalysis" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Compilation.PrecompilationFlags CodeAnalysis = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Compilation.PrecompilationFlags.CodeAnalysis" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Compilation.PrecompilationFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="/define:CodeAnalysis" /> フラグがコンパイル シンボルとして追加されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="Default" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Compilation.PrecompilationFlags Default = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Compilation.PrecompilationFlags.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Compilation.PrecompilationFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定値です。プリコンパイルに指定する動作は特にありません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DelaySign">
+      <MemberSignature Language="C#" Value="DelaySign" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Compilation.PrecompilationFlags DelaySign = int32(64)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Compilation.PrecompilationFlags.DelaySign" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Compilation.PrecompilationFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>作成されたときにアセンブリが完全に署名されていません。 アセンブリは、Sn.exe などの署名ツールによって後で署名することができます。 <see langword="/delaysign" /> フラグがコンパイル シンボルとして追加されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="FixedNames">
+      <MemberSignature Language="C#" Value="FixedNames" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Compilation.PrecompilationFlags FixedNames = int32(128)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Compilation.PrecompilationFlags.FixedNames" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Compilation.PrecompilationFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アセンブリが、Web ページ用の固定の名前で生成されます。 ファイルはコンパイル中にバッチ処理されず、個別にコンパイルされ、固定の名前が生成されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ForceDebug">
+      <MemberSignature Language="C#" Value="ForceDebug" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Compilation.PrecompilationFlags ForceDebug = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Compilation.PrecompilationFlags.ForceDebug" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Compilation.PrecompilationFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンパイラはデバッグ情報を出力します。 このフィールドは、Aspnet_compiler.exe の <see langword="-d" /> スイッチに対応します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreBadImageFormatException">
+      <MemberSignature Language="C#" Value="IgnoreBadImageFormatException" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Compilation.PrecompilationFlags IgnoreBadImageFormatException = int32(256)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Compilation.PrecompilationFlags.IgnoreBadImageFormatException" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Compilation.PrecompilationFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンパイラは無効なイメージ形式の例外を無視します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OverwriteTarget">
+      <MemberSignature Language="C#" Value="OverwriteTarget" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Compilation.PrecompilationFlags OverwriteTarget = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Compilation.PrecompilationFlags.OverwriteTarget" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Compilation.PrecompilationFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ターゲット ディレクトリを上書きできます。 このフィールドは、Aspnet_compiler.exe の、プリコンパイル済みターゲットに対する <see langword="-f" /> スイッチに対応します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Updatable">
+      <MemberSignature Language="C#" Value="Updatable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Compilation.PrecompilationFlags Updatable = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Compilation.PrecompilationFlags.Updatable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Compilation.PrecompilationFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>配置されたアプリケーションが更新可能になります。 このフィールドは、Aspnet_compiler.exe の <see langword="-u" /> スイッチに対応します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

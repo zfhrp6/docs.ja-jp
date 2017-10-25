@@ -1,0 +1,160 @@
+<Type Name="AnnouncementEndpoint" FullName="System.ServiceModel.Discovery.AnnouncementEndpoint">
+  <TypeSignature Language="C#" Value="public class AnnouncementEndpoint : System.ServiceModel.Description.ServiceEndpoint" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AnnouncementEndpoint extends System.ServiceModel.Description.ServiceEndpoint" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Discovery.AnnouncementEndpoint" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Description.ServiceEndpoint</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>サービスがアナウンス メッセージを送信するために使用する標準エンドポイント。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、固定コントラクトを持つエンドポイントを表現するため、バインディングとアドレスを指定するのみでアナウンス エンドポイントを作成できます。  <xref:System.ServiceModel.Discovery.AnnouncementEndpoint> は、WS-Discovery April 2005 と WS-Discovery July 2008 という探索プロトコルの 2 つのバージョンをサポートしています。 すべてのエンドポイントのインスタンスは、これらのバージョンのどちらか 1 つのみをサポートしています。 どちらのバージョンが提供することによって、エンドポイントによってサポートされることができます、`discoveryVersion`を適切なパラメーター`AnnouncementEndpoint`コンス トラクターです。 既定の探索バージョンは WS-Discovery April 2005 です。  
+  
+ <xref:System.ServiceModel.Discovery.AnnouncementClient> は、<xref:System.ServiceModel.Discovery.AnnouncementEndpoint> をアナウンス送信に使用します。  <xref:System.ServiceModel.Discovery.AnnouncementService> およびそれから派生したすべてのクラスは、<xref:System.ServiceModel.Discovery.AnnouncementEndpoint> を使用してアナウンスをリッスンします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AnnouncementEndpoint ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.AnnouncementEndpoint.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Discovery.AnnouncementEndpoint" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AnnouncementEndpoint (System.ServiceModel.Discovery.DiscoveryVersion discoveryVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Discovery.DiscoveryVersion discoveryVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.AnnouncementEndpoint.#ctor(System.ServiceModel.Discovery.DiscoveryVersion)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="discoveryVersion" Type="System.ServiceModel.Discovery.DiscoveryVersion" />
+      </Parameters>
+      <Docs>
+        <param name="discoveryVersion">使用する探索バージョン。</param>
+        <summary>指定された <see cref="T:System.ServiceModel.Discovery.AnnouncementEndpoint" /> をサポートする <see cref="T:System.ServiceModel.Discovery.DiscoveryVersion" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Discovery.DiscoveryEndpoint> は、WS-Discovery April 2005 と WS-Discovery July 2008 という探索プロトコルの 2 つのバージョンをサポートしています。 特定インスタンスでサポートされているバージョンは、このコンストラクターまたは <xref:System.ServiceModel.Discovery.DiscoveryVersion> パラメーターを取る任意のコンストラクターで指定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AnnouncementEndpoint (System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress address);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Channels.Binding binding, class System.ServiceModel.EndpointAddress address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.AnnouncementEndpoint.#ctor(System.ServiceModel.Channels.Binding,System.ServiceModel.EndpointAddress)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="binding" Type="System.ServiceModel.Channels.Binding" />
+        <Parameter Name="address" Type="System.ServiceModel.EndpointAddress" />
+      </Parameters>
+      <Docs>
+        <param name="binding">バインディング。</param>
+        <param name="address">アドレス。</param>
+        <summary>指定したバインディングとアドレスを持つ <see cref="T:System.ServiceModel.Discovery.AnnouncementEndpoint" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AnnouncementEndpoint (System.ServiceModel.Discovery.DiscoveryVersion discoveryVersion, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress address);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Discovery.DiscoveryVersion discoveryVersion, class System.ServiceModel.Channels.Binding binding, class System.ServiceModel.EndpointAddress address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.AnnouncementEndpoint.#ctor(System.ServiceModel.Discovery.DiscoveryVersion,System.ServiceModel.Channels.Binding,System.ServiceModel.EndpointAddress)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="discoveryVersion" Type="System.ServiceModel.Discovery.DiscoveryVersion" />
+        <Parameter Name="binding" Type="System.ServiceModel.Channels.Binding" />
+        <Parameter Name="address" Type="System.ServiceModel.EndpointAddress" />
+      </Parameters>
+      <Docs>
+        <param name="discoveryVersion">使用する探索バージョン。</param>
+        <param name="binding">使用するバインド。</param>
+        <param name="address">エンドポイントのアドレス。</param>
+        <summary>指定されたバインディングとアドレスを持つ、指定された <see cref="T:System.ServiceModel.Discovery.AnnouncementEndpoint" /> をサポートする <see cref="T:System.ServiceModel.Discovery.DiscoveryVersion" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Discovery.DiscoveryEndpoint> は、WS-Discovery April 2005 と WS-Discovery July 2008 という探索プロトコルの 2 つのバージョンをサポートしています。 特定インスタンスでサポートされているバージョンは、このコンストラクターまたは <xref:System.ServiceModel.Discovery.DiscoveryVersion> パラメーターを取る任意のコンストラクターで指定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DiscoveryVersion">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Discovery.DiscoveryVersion DiscoveryVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Discovery.DiscoveryVersion DiscoveryVersion" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Discovery.AnnouncementEndpoint.DiscoveryVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Discovery.DiscoveryVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアナウンス エンドポイントがサポートする探索バージョンを取得します。</summary>
+        <value>A<see cref="T:System.ServiceModel.Discovery.DiscoveryVersion" />インスタンス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxAnnouncementDelay">
+      <MemberSignature Language="C#" Value="public TimeSpan MaxAnnouncementDelay { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan MaxAnnouncementDelay" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Discovery.AnnouncementEndpoint.MaxAnnouncementDelay" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アナウンス遅延の最大値を取得または設定します。</summary>
+        <value>アナウンス遅延の最大値を含む <see cref="T:System.TimeSpan" /> インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は、ネットワークの機能停止時にすべてのサービスが同時にオンライン状態に戻ることによって発生するネットワーク ストームを防止するためにランダムで短い遅延を指定する <xref:System.TimeSpan> です。 参照してください、 [Ws-discovery April 2005 仕様](http://go.microsoft.com/fwlink/?LinkId=127029)セクションの詳細については、2.4 のプロトコル割り当てします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

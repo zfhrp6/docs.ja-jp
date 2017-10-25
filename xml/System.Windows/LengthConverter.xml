@@ -1,0 +1,185 @@
+<Type Name="LengthConverter" FullName="System.Windows.LengthConverter">
+  <TypeSignature Language="C#" Value="public class LengthConverter : System.ComponentModel.TypeConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LengthConverter extends System.ComponentModel.TypeConverter" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.LengthConverter" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.TypeConverter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>インスタンスとその他の型のインスタンス間で変換、<see cref="T:System.Double" />を表すオブジェクトの長さ。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.LengthConverter>次の型との変換をサポートしています: <xref:System.String>、 <xref:System.Decimal>、 <xref:System.Single>、 <xref:System.Double>、 <xref:System.Int16>、 <xref:System.Int32>、 <xref:System.Int64>、 <xref:System.UInt16>、 <xref:System.UInt32>、および<xref:System.UInt64>です。  
+  
+<a name="XAMLTextUsage_LengthConverter"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+   
+  
+## Examples  
+ 次の例は、作成しのインスタンスを使用する方法を示しています、<xref:System.Windows.LengthConverter>オブジェクト。 カスタム メソッドが呼び出されます`ChangeLeft`が定義されているのコンテンツを変換する、 <xref:System.Windows.Controls.ListBoxItem> (個別に定義されている[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]ファイル) のインスタンスに<xref:System.Double>、以降に、<xref:System.String>です。 このメソッドは、<xref:System.Windows.Controls.ListBoxItem>を<xref:System.Windows.LengthConverter>に変換するオブジェクト、 <xref:System.Windows.Controls.ListBoxItem> <xref:System.Windows.Controls.ContentControl.Content%2A>のインスタンスに<xref:System.Double>です。 この値は既にに変換されたことを確認、<xref:System.String>を使用して、<xref:System.Windows.Controls.Control.ToString%2A>メソッドです。 この値に渡され、<xref:System.Windows.Controls.Canvas.SetLeft%2A>メソッドおよび<xref:System.Windows.Controls.Canvas.GetLeft%2A>のメソッド、<xref:System.Windows.Controls.Canvas>の位置を変更するために、`text1`オブジェクト。  
+  
+ [!code-csharp[CanvasPositioningProperties#2](~/samples/snippets/csharp/VS_Snippets_Wpf/CanvasPositioningProperties/CSharp/Window1.xaml.cs#2)]
+ [!code-vb[CanvasPositioningProperties#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CanvasPositioningProperties/VisualBasic/Window1.xaml.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LengthConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.LengthConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.LengthConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertFrom">
+      <MemberSignature Language="C#" Value="public override bool CanConvertFrom (System.ComponentModel.ITypeDescriptorContext typeDescriptorContext, Type sourceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanConvertFrom(class System.ComponentModel.ITypeDescriptorContext typeDescriptorContext, class System.Type sourceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.LengthConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeDescriptorContext" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="sourceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="typeDescriptorContext">コンポーネントに関するコンテキスト情報を提供します。</param>
+        <param name="sourceType">変換の評価対象のデータ型を識別します。</param>
+        <summary>指定した型から変換があるかどうかを判定、<see cref="T:System.Double" />を表すオブジェクトの長さ。</summary>
+        <returns>
+          <see langword="true" />変換が可能な場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.LengthConverter>次の型との変換をサポートしています: <xref:System.String>、 <xref:System.Decimal>、 <xref:System.Single>、 <xref:System.Double>、 <xref:System.Int16>、 <xref:System.Int32>、 <xref:System.Int64>、 <xref:System.UInt16>、 <xref:System.UInt32>、および<xref:System.UInt64>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertTo">
+      <MemberSignature Language="C#" Value="public override bool CanConvertTo (System.ComponentModel.ITypeDescriptorContext typeDescriptorContext, Type destinationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanConvertTo(class System.ComponentModel.ITypeDescriptorContext typeDescriptorContext, class System.Type destinationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.LengthConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeDescriptorContext" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="destinationType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="typeDescriptorContext">コンポーネントに関するコンテキスト情報を提供します。</param>
+        <param name="destinationType">変換の評価対象のデータ型を識別します。</param>
+        <summary>指定された型への変換が可能かどうかを決定する<see cref="T:System.Double" />を表すオブジェクトの長さ。</summary>
+        <returns>
+          <see langword="true" />場合への変換、<paramref name="destinationType" />が可能であるそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.LengthConverter>supports conversion of the following types: <xref:System.String>, <xref:System.Decimal>, <xref:System.Single>, <xref:System.Double>, <xref:System.Int16>, <xref:System.Int32>, <xref:System.Int64>, <xref:System.UInt16>, <xref:System.UInt32>, and <xref:System.UInt64>.  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertFrom">
+      <MemberSignature Language="C#" Value="public override object ConvertFrom (System.ComponentModel.ITypeDescriptorContext typeDescriptorContext, System.Globalization.CultureInfo cultureInfo, object source);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertFrom(class System.ComponentModel.ITypeDescriptorContext typeDescriptorContext, class System.Globalization.CultureInfo cultureInfo, object source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.LengthConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeDescriptorContext" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="cultureInfo" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="source" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="typeDescriptorContext">コンポーネントに関するコンテキスト情報を提供します。</param>
+        <param name="cultureInfo">変換中に保持されているカルチャ固有の情報を表します。</param>
+        <param name="source">変換されるオブジェクトを識別<see cref="T:System.Double" />です。</param>
+        <summary>インスタンスにその他のデータ型のインスタンスを変換<see cref="T:System.Double" />を表すオブジェクトの長さ。</summary>
+        <returns>インスタンス<see cref="T:System.Double" />変換の値であります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.LengthConverter>supports conversion of the following types: <xref:System.String>, <xref:System.Decimal>, <xref:System.Single>, <xref:System.Double>, <xref:System.Int16>, <xref:System.Int32>, <xref:System.Int64>, <xref:System.UInt16>, <xref:System.UInt32>, <xref:System.UInt64>.  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">場合に発生、<paramref name="source" />は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentException">場合に発生、<paramref name="source" />は<see langword="null" />し、有効な型変換ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertTo">
+      <MemberSignature Language="C#" Value="public override object ConvertTo (System.ComponentModel.ITypeDescriptorContext typeDescriptorContext, System.Globalization.CultureInfo cultureInfo, object value, Type destinationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertTo(class System.ComponentModel.ITypeDescriptorContext typeDescriptorContext, class System.Globalization.CultureInfo cultureInfo, object value, class System.Type destinationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.LengthConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeDescriptorContext" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="cultureInfo" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="destinationType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="typeDescriptorContext">コンテナーなどのコンポーネントのコンテキスト情報を記述および<see cref="T:System.ComponentModel.PropertyDescriptor" />です。</param>
+        <param name="cultureInfo">書記体系、使用されるカレンダーなど、カルチャに固有の情報を識別します。</param>
+        <param name="value">識別、<see cref="T:System.Object" />を変換します。</param>
+        <param name="destinationType">データ型をこのインスタンスの<see cref="T:System.Double" />に変換されます。</param>
+        <summary>インスタンスにその他の型を変換<see cref="T:System.Double" />を表すオブジェクトの長さ。</summary>
+        <returns>新しい<see cref="T:System.Object" />変換の値であります。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">場合に発生、<paramref name="value" />は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentException">場合に発生、<paramref name="value" />は<see langword="null" />となって、 <see cref="T:System.Windows.Media.Brush" />、または<paramref name="destinationType" />が無効です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,195 @@
+<Type Name="DbXmlEnabledProviderManifest" FullName="System.Data.Common.DbXmlEnabledProviderManifest">
+  <TypeSignature Language="C#" Value="public abstract class DbXmlEnabledProviderManifest : System.Data.Common.DbProviderManifest" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DbXmlEnabledProviderManifest extends System.Data.Common.DbProviderManifest" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Common.DbXmlEnabledProviderManifest" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Common.DbProviderManifest</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XML 定義に基づいて <see cref="T:System.Data.Common.DbProviderManifest" /> を実装する基本クラスを表します。 <see cref="T:System.Data.Common.DbXmlEnabledProviderManifest" /> クラスを使用して、実行時にプロバイダー固有の情報を取得できます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Common.DbXmlEnabledProviderManifest> クラスは、EDM への型マッピングが対称的なプロバイダーに特に適しています。 対称的な型マッピングのシナリオでは、マッピングの方向に関係なく、各ストレージ型が単一の Entity Data Model (EDM) 型にマップされます。 言い換えると、EDM からプロバイダーへの型マッピングは、プロバイダーから EDM への型マッピングと同じになります。  
+  
+ 対称的なマッピングのシナリオでは、カスタム プロバイダー クラスを <xref:System.Data.Common.DbXmlEnabledProviderManifest> クラスから派生させることも <xref:System.Data.Common.DbProviderManifest> クラスから派生させることも可能です。 対称的なマッピングのシナリオでは、<xref:System.Data.Common.DbXmlEnabledProviderManifest> クラスを使用することでマニフェストを宣言の形式で指定できるため、カスタム プロバイダー クラスを <xref:System.Data.Common.DbXmlEnabledProviderManifest> クラスから派生させることをお勧めします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DbXmlEnabledProviderManifest (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbXmlEnabledProviderManifest.#ctor(System.Xml.XmlReader)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">プロバイダー マニフェスト ファイルの XML データへのアクセスを提供する <see cref="T:System.Xml.XmlReader" /> オブジェクト。</param>
+        <summary><see cref="T:System.Data.Common.DbXmlEnabledProviderManifest" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Entity Framework プロバイダーをビルドする既定の実装を提供する、指定された XmlReader からの情報をマニフェストします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFacetDescriptions">
+      <MemberSignature Language="C#" Value="public override System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Metadata.Edm.FacetDescription&gt; GetFacetDescriptions (System.Data.Metadata.Edm.EdmType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Data.Metadata.Edm.FacetDescription&gt; GetFacetDescriptions(class System.Data.Metadata.Edm.EdmType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbXmlEnabledProviderManifest.GetFacetDescriptions(System.Data.Metadata.Edm.EdmType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Metadata.Edm.FacetDescription&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Data.Metadata.Edm.EdmType" />
+      </Parameters>
+      <Docs>
+        <param name="type">取得するファセットの説明の <see cref="T:System.Data.Metadata.Edm.EdmType" />。</param>
+        <summary>指定された Entity Data Model (EDM) 型のファセットの説明の一覧を返します。</summary>
+        <returns>指定された EDM 型のファセットの説明の一覧を格納する <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> 型のコレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStoreFunctions">
+      <MemberSignature Language="C#" Value="public override System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Metadata.Edm.EdmFunction&gt; GetStoreFunctions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Data.Metadata.Edm.EdmFunction&gt; GetStoreFunctions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbXmlEnabledProviderManifest.GetStoreFunctions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Metadata.Edm.EdmFunction&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プロバイダーでサポートされている関数の一覧を返します。</summary>
+        <returns>プロバイダーでサポートされている関数の一覧を格納する <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> 型のコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この (null を許容しないメソッドには、ユーザー定義関数は返しません。 プロバイダーで関数がサポートされていない場合は、空のコレクションが返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStoreTypes">
+      <MemberSignature Language="C#" Value="public override System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Metadata.Edm.PrimitiveType&gt; GetStoreTypes ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Data.Metadata.Edm.PrimitiveType&gt; GetStoreTypes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbXmlEnabledProviderManifest.GetStoreTypes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Metadata.Edm.PrimitiveType&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ストレージ プロバイダーでサポートされているプリミティブ型の一覧を返します。</summary>
+        <returns>ストレージ プロバイダーでサポートされているプリミティブ型の一覧を格納する <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> 型のコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ストアが任意の型をサポートしていない場合、この null を許容しない) のメソッドは空のコレクションを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NamespaceName">
+      <MemberSignature Language="C#" Value="public override string NamespaceName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NamespaceName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbXmlEnabledProviderManifest.NamespaceName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロバイダー マニフェストでサポートされる名前空間の名前を取得します。</summary>
+        <value>このプロバイダー マニフェストでサポートされる名前空間の名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StoreTypeNameToEdmPrimitiveType">
+      <MemberSignature Language="C#" Value="protected System.Collections.Generic.Dictionary&lt;string,System.Data.Metadata.Edm.PrimitiveType&gt; StoreTypeNameToEdmPrimitiveType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.Dictionary`2&lt;string, class System.Data.Metadata.Edm.PrimitiveType&gt; StoreTypeNameToEdmPrimitiveType" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbXmlEnabledProviderManifest.StoreTypeNameToEdmPrimitiveType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.Dictionary&lt;System.String,System.Data.Metadata.Edm.PrimitiveType&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定されたストレージ型の名前に適切にマップされた同等の Entity Data Model (EDM) 型を取得します。</summary>
+        <value>指定されたストレージ型の名前に適切にマップされた同等の EDM 型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが null を許容しない) を返します、<xref:System.Collections.Generic.Dictionary`2>オブジェクトでは、キーとしてストレージ型の名前を受け取り、その関連付けられている EDM 型の値を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StoreTypeNameToStorePrimitiveType">
+      <MemberSignature Language="C#" Value="protected System.Collections.Generic.Dictionary&lt;string,System.Data.Metadata.Edm.PrimitiveType&gt; StoreTypeNameToStorePrimitiveType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.Dictionary`2&lt;string, class System.Data.Metadata.Edm.PrimitiveType&gt; StoreTypeNameToStorePrimitiveType" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbXmlEnabledProviderManifest.StoreTypeNameToStorePrimitiveType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.Dictionary&lt;System.String,System.Data.Metadata.Edm.PrimitiveType&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定されたストレージ型の名前に適切にマップされた同等のストレージのプリミティブ型を取得します。</summary>
+        <value>指定されたストレージ型の名前に適切にマップされた同等のストレージのプリミティブ型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが null を許容しない) を返します、<xref:System.Collections.Generic.Dictionary`2>オブジェクトでは、キーとしてストレージ型の名前を受け取り、その関連付けられているストレージのプリミティブ型の値を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

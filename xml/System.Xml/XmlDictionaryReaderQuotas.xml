@@ -1,0 +1,392 @@
+<Type Name="XmlDictionaryReaderQuotas" FullName="System.Xml.XmlDictionaryReaderQuotas">
+  <TypeSignature Language="C#" Value="public sealed class XmlDictionaryReaderQuotas" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit XmlDictionaryReaderQuotas extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.XmlDictionaryReaderQuotas" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.1.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XmlDictionaryReaders の構成可能なクォータ値を格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.XmlDictionary>インスタンスは、シリアル化して、SOAP メッセージを逆シリアル化時に、WCF によって使用されます。 <xref:System.Xml.XmlDictionary> SOAP メッセージのサイズを小さくために使用される文字列と値のペアが含まれています。 メッセージをシリアル化するときは、文字列の代わりに、値が書き込まれます。 値を読み取る、メッセージを逆シリアル化時に、文字列は、メッセージ オブジェクトに書き込まれます。  <xref:System.Xml.XmlDictionaryReaderQuotas>クラスによって使用されるクォータの数値を含んだ、<xref:System.Xml.XmlDictionaryReader>クラスです。 ディクショナリ リーダーの最も重要なセキュリティ機能はクォータです。 ディクショナリ リーダーのファクトリ メソッドに対して、クォータ インスタンスを指定する必要があります。 既定のコンストラクターは "安全な" 既定値 (エンコードされた既定値と同じ) を作成し、クラスはクォータなしでリーダーを作成するための静的な `Max` プロパティを保持します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlDictionaryReaderQuotas ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlDictionaryReaderQuotas.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>このクラスの新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、プロパティを "安全な" 既定値に初期化します。  
+  
+ MaxDepth = 32  
+  
+ MaxStringContentLength = 8192  
+  
+ MaxArrayLength = 16384  
+  
+ MaxBytesPerRead = 4096  
+  
+ MaxNameTableCharCount = 16384  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Xml.XmlDictionaryReaderQuotas quotas);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Xml.XmlDictionaryReaderQuotas quotas) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlDictionaryReaderQuotas.CopyTo(System.Xml.XmlDictionaryReaderQuotas)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="quotas" Type="System.Xml.XmlDictionaryReaderQuotas" />
+      </Parameters>
+      <Docs>
+        <param name="quotas">値をコピーする <see cref="T:System.Xml.XmlDictionaryReaderQuotas" /> インスタンス。</param>
+        <summary>このインスタンスの値に基づいて、渡されるクォータ インスタンスにプロパティを設定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">値の <see langword="set" /> を試みましたが、渡されるインスタンスのクォータ値は読み取り専用です。</exception>
+        <exception cref="T:System.ArgumentNullException">渡されるターゲット<paramref name="quotas" />は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Max">
+      <MemberSignature Language="C#" Value="public static System.Xml.XmlDictionaryReaderQuotas Max { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xml.XmlDictionaryReaderQuotas Max" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlDictionaryReaderQuotas.Max" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlDictionaryReaderQuotas</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのプロパティに最大値を設定して、このクラスのインスタンスを取得します。</summary>
+        <value>プロパティが <see cref="T:System.Xml.XmlDictionaryReaderQuotas" /> に設定された <see cref="F:System.Int32.MaxValue" /> のインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されたインスタンスは読み取り専用です。 クォータなしでリーダーを作成するには、このプロパティを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxArrayLength">
+      <MemberSignature Language="C#" Value="public int MaxArrayLength { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxArrayLength" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlDictionaryReaderQuotas.MaxArrayLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(16384)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>許される最大配列長を取得または設定します。</summary>
+        <value>許される最大配列長。 既定値は 16384 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクォータは、さまざまな API 呼び出しが作成して返す配列の最大長を管理します。 特殊な配列 API、および ReadContentAsBase64() から返されるバイト配列に影響を与えます。 この制限は、データを格納する配列を受け取る ReadContentAsBase64() のオーバーライドには影響を与えません。  
+  
+ このプロパティ値はメッセージ処理のすべてのステップに適用されることに注意してください。 これには、メッセージまたはメッセージ部分のサイズを拡大する可能性のある一部のステップも含まれます。 特に、暗号化はメッセージのサイズを大幅に増やす場合があります。 この値を設定するときは、このことを考慮する必要があります。  
+  
+ パブリック コンストラクターで作成されたインスタンスのプロパティは `set` 可能です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">値の <see langword="set" /> を試みましたが、このインスタンスのクォータ値は読み取り専用です。</exception>
+        <exception cref="T:System.ArgumentException">ゼロより小さい値を <see langword="set" /> しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxBytesPerRead">
+      <MemberSignature Language="C#" Value="public int MaxBytesPerRead { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxBytesPerRead" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlDictionaryReaderQuotas.MaxBytesPerRead" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(4096)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 回の読み取りで返すことができる最大バイト数を取得または設定します。</summary>
+        <value>1 回の読み取りで返すことができる最大バイト数。 既定値は 4096 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクォータは、`Read`() の 1 回の呼び出しでリーダーが処理できるバイト数を制限します。  
+  
+ このクォータが適用される前にエンコーディング層での変換が行われるので、このクォータは概数です。 このクォータは、トランスポート レベルでネットワークから受信するバイト数と密接に結び付けられていますが、このクォータの目的は、1 回の読み取りで受信するデータの量を制御することです。 実際には、開始タグのサイズを制限するために使用されます。 処理のためには開始タグ全体をバッファーに格納する必要があるので (属性の一意性を検証する必要があります)、DOS 攻撃を緩和するためにサイズを制限する必要があります。  
+  
+ パブリック コンストラクターで作成されたインスタンスのプロパティは `set` 可能です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">値の <see langword="set" /> を試みましたが、このインスタンスのクォータ値は読み取り専用です。</exception>
+        <exception cref="T:System.ArgumentException">ゼロより小さい値を <see langword="set" /> しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxDepth">
+      <MemberSignature Language="C#" Value="public int MaxDepth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxDepth" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlDictionaryReaderQuotas.MaxDepth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(32)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>入れ子になったノードの最大深度を取得または設定します。</summary>
+        <value>入れ子になったノードの最大深度。 既定値は 32 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクォータは、XML の入れ子になったノードの深さに対する制限を設定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">値の <see langword="set" /> を試みましたが、このインスタンスのクォータ値は読み取り専用です。</exception>
+        <exception cref="T:System.ArgumentException">ゼロより小さい値を <see langword="set" /> しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxNameTableCharCount">
+      <MemberSignature Language="C#" Value="public int MaxNameTableCharCount { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxNameTableCharCount" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlDictionaryReaderQuotas.MaxNameTableCharCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(16384)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーブル名の最大文字数を取得または設定します。</summary>
+        <value>テーブル名の最大文字数。 既定値は 16384 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクォータは、リーダーの NameTable でアトム化される文字列の総文字数を制限します。 アトム化された文字列は、NameTable に挿入され、削除されることはありません。 その結果、大量の文字データが NameTable に蓄積する可能性があります。 このクォータは、リーダーの NameTable にバッファーできるデータの量を制限します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">値の <see langword="set" /> を試みましたが、このインスタンスのクォータ値は読み取り専用です。</exception>
+        <exception cref="T:System.ArgumentException">ゼロより小さい値を <see langword="set" /> しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxStringContentLength">
+      <MemberSignature Language="C#" Value="public int MaxStringContentLength { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxStringContentLength" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlDictionaryReaderQuotas.MaxStringContentLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(8192)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リーダーによって返される文字列の最大長を取得または設定します。</summary>
+        <value>リーダーによって返される文字列の最大長。 既定値は 8192 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクォータは、さまざまな API が作成して返す文字列の長さを制限します。 `Read`() を呼び出して `Value` プロパティを検査する場合は、リーダーは、文字列値を管理可能な量に分割します (ストリーミング モードのとき)。 一方、`ReadContentAsString`() を呼び出すと、すべての断片が連結され、1 つの大きな文字列が返されます。 バイナリ形式では、要素ノードの値が一連のディクショナリ文字列 ID の場合は、これらの文字列の値が連結されます。 これは非常に大きな量になる可能性があり、この制限はそれを緩和します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">値の <see langword="set" /> を試みましたが、このインスタンスのクォータ値は読み取り専用です。</exception>
+        <exception cref="T:System.ArgumentException">ゼロより小さい値を <see langword="set" /> しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ModifiedQuotas">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlDictionaryReaderQuotaTypes ModifiedQuotas { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.XmlDictionaryReaderQuotaTypes ModifiedQuotas" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlDictionaryReaderQuotas.ModifiedQuotas" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlDictionaryReaderQuotaTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変更後のクォータを取得、<see cref="T:System.Xml.XmlDictionaryReaderQuotas" />です。</summary>
+        <value>クォータを変更した、<see cref="T:System.Xml.XmlDictionaryReaderQuotas" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

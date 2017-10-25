@@ -1,0 +1,199 @@
+<Type Name="PublisherIdentityPermissionAttribute" FullName="System.Security.Permissions.PublisherIdentityPermissionAttribute">
+  <TypeSignature Language="C#" Value="public sealed class PublisherIdentityPermissionAttribute : System.Security.Permissions.CodeAccessSecurityAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit PublisherIdentityPermissionAttribute extends System.Security.Permissions.CodeAccessSecurityAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Permissions.PublisherIdentityPermissionAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Permissions.CodeAccessSecurityAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly | System.AttributeTargets.Class | System.AttributeTargets.Struct | System.AttributeTargets.Constructor | System.AttributeTargets.Method, AllowMultiple=true, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Security.Permissions.PublisherIdentityPermission" /> のセキュリティ アクションを、宣言セキュリティを使用してコードに適用できるようにします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 許可されている宣言のスコープによって異なります、<xref:System.Security.Permissions.SecurityAction>のために使用します。  
+  
+ プロパティ<xref:System.Security.Permissions.PublisherIdentityPermissionAttribute.CertFile%2A>、 <xref:System.Security.Permissions.PublisherIdentityPermissionAttribute.SignedFile%2A>、および<xref:System.Security.Permissions.PublisherIdentityPermissionAttribute.X509Certificate%2A>は相互に排他的です。  
+  
+ セキュリティ属性によって宣言されたセキュリティ情報は、属性の対象のメタデータに格納され、実行時に、システムによってアクセスされます。 セキュリティ属性は、宣言型セキュリティにのみ使用されます。 命令型のセキュリティのアクセス許可の対応するクラスを使用します。  
+  
+> [!IMPORTANT]
+>  以降で、 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、id アクセス許可は使用されません。  
+>   
+>  .NET Framework バージョン 1.0 および 1.1 では、id アクセス許可を持つことはできません、<xref:System.Security.Permissions.PermissionState.Unrestricted>アクセス許可の状態の値。 以降、.NET Framework version 2.0 では、id アクセス許可はアクセス許可の状態値を設定できます。 つまり、2.0 以降のバージョンでは、id アクセス許可を実装するためのアクセス許可と同じ動作、<xref:System.Security.Permissions.IUnrestrictedPermission>インターフェイスです。  
+  
+> [!NOTE]
+>  既定では、コード アクセス セキュリティをチェックしません<xref:System.Security.Policy.Publisher>証拠。 お使いのコンピューターにに基づいてカスタム コード グループが存在しない限り、<xref:System.Security.Policy.PublisherMembershipCondition>クラス、Authenticode 署名の検証をバイパスすることによりパフォーマンスが向上することができます。 提供するランタイムを構成することによってこれを行う<xref:System.Security.Policy.Publisher>コード アクセス セキュリティのための証拠。 このオプションとこれを構成する方法についての詳細アプリケーションは、それを使用、要素を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PublisherIdentityPermissionAttribute (System.Security.Permissions.SecurityAction action);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.SecurityAction action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.PublisherIdentityPermissionAttribute.#ctor(System.Security.Permissions.SecurityAction)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="action" Type="System.Security.Permissions.SecurityAction" />
+      </Parameters>
+      <Docs>
+        <param name="action"><see cref="T:System.Security.Permissions.SecurityAction" /> 値のいずれか。</param>
+        <summary>指定した <see cref="T:System.Security.Permissions.PublisherIdentityPermissionAttribute" /> を使用して、<see cref="T:System.Security.Permissions.SecurityAction" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CertFile">
+      <MemberSignature Language="C#" Value="public string CertFile { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CertFile" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.PublisherIdentityPermissionAttribute.CertFile" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Authenticode X.509v3 証明書を含む証明書ファイルを設定します。</summary>
+        <value>X.509 証明書ファイルのファイル パス (通常は、extension.cer)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Security.Permissions.PublisherIdentityPermissionAttribute.X509Certificate%2A>が設定されている、このプロパティは無視されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreatePermission">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission CreatePermission ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission CreatePermission() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.PublisherIdentityPermissionAttribute.CreatePermission" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成しの新しいインスタンスを返します<see cref="T:System.Security.Permissions.PublisherIdentityPermission" />です。</summary>
+        <returns>この属性に対応する <see cref="T:System.Security.Permissions.PublisherIdentityPermission" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アプリケーション コードからではなく、セキュリティ システムからのみ呼び出す必要があります。  
+  
+ コンパイル時に、属性は、セキュリティの宣言をメタデータのシリアル化された形式に変換されます。 メタデータの宣言セキュリティ データは、この属性に対応する権限をこのメソッドが返すから作成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignedFile">
+      <MemberSignature Language="C#" Value="public string SignedFile { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SignedFile" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.PublisherIdentityPermissionAttribute.SignedFile" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Authenticode X.509v3 証明書を抽出する元の署名済みファイルを設定します。</summary>
+        <value>ファイルのファイル パスは、Authenticode 署名で署名されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いずれか<xref:System.Security.Permissions.PublisherIdentityPermissionAttribute.X509Certificate%2A>または<xref:System.Security.Permissions.PublisherIdentityPermissionAttribute.CertFile%2A>が設定されている、このプロパティは無視されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="X509Certificate">
+      <MemberSignature Language="C#" Value="public string X509Certificate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string X509Certificate" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.PublisherIdentityPermissionAttribute.X509Certificate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または呼び出し元のコードの発行元を識別する Authenticode X.509v3 証明書を設定します。</summary>
+        <value>X.509 証明書の 16 進数表現です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定すると場合、<xref:System.Security.Permissions.PublisherIdentityPermissionAttribute.CertFile%2A>と<xref:System.Security.Permissions.PublisherIdentityPermissionAttribute.SignedFile%2A>は無視されます。  
+  
+ 厳密名ツール (Sn.exe) を実行して 16 進数表記を取得するには、トークンと公開キーのオプションを (**Sn** **-tp** *keyfile* `)` Authenticode 署名を持つファイルと比較します。 詳細については、「[Sn.exe (厳密名ツール)](~/docs/framework/tools/sn-exe-strong-name-tool.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,541 @@
+<Type Name="FormsAuthenticationUserCollection" FullName="System.Web.Configuration.FormsAuthenticationUserCollection">
+  <TypeSignature Language="C#" Value="public sealed class FormsAuthenticationUserCollection : System.Configuration.ConfigurationElementCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed FormsAuthenticationUserCollection extends System.Configuration.ConfigurationElementCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.FormsAuthenticationUserCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElementCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Configuration.ConfigurationCollection(typeof(System.Web.Configuration.FormsAuthenticationUser), AddItemName="user", CollectionType=System.Configuration.ConfigurationElementCollectionType.BasicMap)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Web.Configuration.FormsAuthenticationUser" /> オブジェクトのコレクションを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.FormsAuthenticationCredentials>を使用して、<xref:System.Web.Configuration.FormsAuthenticationUserCollection>プログラムからアクセスし、変更、`users`の要素、 `credentials` 」の「、`forms`のセクションで、`authorization`構成セクション。  
+  
+ この型が所属するグループの一部、 <xref:System.Web.Configuration.FormsAuthenticationConfiguration>、 <xref:System.Web.Configuration.FormsAuthenticationCredentials>、および<xref:System.Web.Configuration.FormsAuthenticationUser>型です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Web.Configuration.FormsAuthenticationUserCollection>既存の Web アプリケーションの構成ファイルからのオブジェクト。  
+  
+> [!NOTE]
+>  使用する場合、`credentials`要素に説明されているガイドラインに従うことを確認する[ASP.NET 認証](http://msdn.microsoft.com/library/fc10b0ef-4ce4-4a7f-9174-886325221ee1)です。 スケーラビリティとセキュリティを高めるには、外部データベースを使用して、ユーザーの資格情報を格納するをお勧めします。 セキュリティで保護された ASP.NET アプリケーションの構築の詳細については、「ASP.NET アプリケーションをセキュリティで保護する、」Microsoft MSDN Web サイト (msdn.microsoft.com) を検索し、"ビルドのセキュリティで保護された ASP.NET アプリケーション: 認証、承認、およびセキュリティ保護通信します。"  
+  
+ [!code-csharp[System.Web.Configuration.FormsAuthenticationCredentials#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationCredentials/CS/formsauthenticationcredentials.cs#1)]
+ [!code-vb[System.Web.Configuration.FormsAuthenticationCredentials#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationCredentials/VB/formsauthenticationcredentials.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FormsAuthenticationUserCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.FormsAuthenticationUserCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.FormsAuthenticationUserCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Web.Configuration.FormsAuthenticationUser user);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Web.Configuration.FormsAuthenticationUser user) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.FormsAuthenticationUserCollection.Add(System.Web.Configuration.FormsAuthenticationUser)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="user" Type="System.Web.Configuration.FormsAuthenticationUser" />
+      </Parameters>
+      <Docs>
+        <param name="user">コレクションに追加する <see cref="T:System.Web.Configuration.FormsAuthenticationUser" /> オブジェクト。</param>
+        <summary><see cref="T:System.Web.Configuration.FormsAuthenticationUser" /> オブジェクトをコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションが含めることはできません、<xref:System.Web.Configuration.FormsAuthenticationUser>と同じ名前のオブジェクト。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.FormsAuthenticationUserCollection.Add%2A> メソッドを使用するコード例を次に示します。  
+  
+ [!code-csharp[System.Web.Configuration.FormsAuthenticationCredentials#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationCredentials/CS/formsauthenticationcredentials.cs#6)]
+ [!code-vb[System.Web.Configuration.FormsAuthenticationCredentials#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationCredentials/VB/formsauthenticationcredentials.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationException"><see cref="T:System.Web.Configuration.FormsAuthenticationUser" />オブジェクトが、コレクション内に既に存在するか、コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AllKeys">
+      <MemberSignature Language="C#" Value="public string[] AllKeys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] AllKeys" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.FormsAuthenticationUserCollection.AllKeys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションのすべてのキーを取得します。</summary>
+        <value><see langword="string" />コレクションのキーを含む配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アクセスを使用することができます、<xref:System.Web.Configuration.FormsAuthenticationUser>コレクションに含まれるオブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.FormsAuthenticationUserCollection.AllKeys%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.FormsAuthenticationCredentials#17](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationCredentials/CS/formsauthenticationcredentials.cs#17)]
+ [!code-vb[System.Web.Configuration.FormsAuthenticationCredentials#17](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationCredentials/VB/formsauthenticationcredentials.vb#17)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.FormsAuthenticationUserCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションからすべての <see cref="T:System.Web.Configuration.FormsAuthenticationUser" /> オブジェクトを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは挿入、`clear`ディレクティブを適切なファイルのセクションに、構成、上位の構成ファイルで定義されている要素へのすべての参照をクリアします。 現在の構成ファイルの適切なセクションで定義されたすべての要素が削除されます。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.FormsAuthenticationUserCollection.Clear%2A> メソッドを使用するコード例を次に示します。  
+  
+ [!code-csharp[System.Web.Configuration.FormsAuthenticationCredentials#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationCredentials/CS/formsauthenticationcredentials.cs#7)]
+ [!code-vb[System.Web.Configuration.FormsAuthenticationCredentials#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationCredentials/VB/formsauthenticationcredentials.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationException">コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CollectionType">
+      <MemberSignature Language="C#" Value="public override System.Configuration.ConfigurationElementCollectionType CollectionType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Configuration.ConfigurationElementCollectionType CollectionType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.FormsAuthenticationUserCollection.CollectionType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationElementCollectionType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.FormsAuthenticationUserCollection" /> の型を取得します。</summary>
+        <value><see cref="T:System.Configuration.ConfigurationElementCollectionType" />このコレクションのです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateNewElement">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationElement CreateNewElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Configuration.ConfigurationElement CreateNewElement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.FormsAuthenticationUserCollection.CreateNewElement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ElementName">
+      <MemberSignature Language="C#" Value="protected override string ElementName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ElementName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.FormsAuthenticationUserCollection.ElementName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Get">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.FormsAuthenticationUser Get (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.Configuration.FormsAuthenticationUser Get(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.FormsAuthenticationUserCollection.Get(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.FormsAuthenticationUser</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクションのユーザーのインデックスです。</param>
+        <summary>取得、<see cref="T:System.Web.Configuration.FormsAuthenticationUser" />指定したインデックス位置にコレクション要素。</summary>
+        <returns>A<see cref="T:System.Web.Configuration.FormsAuthenticationUser" />ユーザー名とパスワードを格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、指定したインデックス位置にあるユーザーの資格情報にアクセスする方法を示します。  
+  
+ [!code-csharp[System.Web.Configuration.FormsAuthenticationCredentials#13](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationCredentials/CS/formsauthenticationcredentials.cs#13)]
+ [!code-vb[System.Web.Configuration.FormsAuthenticationCredentials#13](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationCredentials/VB/formsauthenticationcredentials.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Get">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.FormsAuthenticationUser Get (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.Configuration.FormsAuthenticationUser Get(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.FormsAuthenticationUserCollection.Get(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.FormsAuthenticationUser</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">ユーザーの名前です。</param>
+        <summary>取得、<see cref="T:System.Web.Configuration.FormsAuthenticationUser" />指定の名前を持つコレクションの要素。</summary>
+        <returns>A<see cref="T:System.Web.Configuration.FormsAuthenticationUser" />ユーザー名とパスワードを含むオブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、指定した名前を持つユーザーの資格情報にアクセスする方法を示します。  
+  
+ [!code-csharp[System.Web.Configuration.FormsAuthenticationCredentials#12](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationCredentials/CS/formsauthenticationcredentials.cs#12)]
+ [!code-vb[System.Web.Configuration.FormsAuthenticationCredentials#12](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationCredentials/VB/formsauthenticationcredentials.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetElementKey">
+      <MemberSignature Language="C#" Value="protected override object GetElementKey (System.Configuration.ConfigurationElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object GetElementKey(class System.Configuration.ConfigurationElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.FormsAuthenticationUserCollection.GetElementKey(System.Configuration.ConfigurationElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Configuration.ConfigurationElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetKey">
+      <MemberSignature Language="C#" Value="public string GetKey (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetKey(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.FormsAuthenticationUserCollection.GetKey(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクション内のインデックス。</param>
+        <summary>指定したキーを取得<see cref="T:System.Web.Configuration.FormsAuthenticationUserCollection" />コレクションのインデックス。</summary>
+        <returns>指定したインデックスにあるキーを<see cref="T:System.Web.Configuration.FormsAuthenticationUserCollection" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Web.Configuration.FormsAuthenticationUserCollection.GetKey%2A> メソッドを使用するコード例を次に示します。  
+  
+ [!code-csharp[System.Web.Configuration.FormsAuthenticationCredentials#14](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationCredentials/CS/formsauthenticationcredentials.cs#14)]
+ [!code-vb[System.Web.Configuration.FormsAuthenticationCredentials#14](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationCredentials/VB/formsauthenticationcredentials.vb#14)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.FormsAuthenticationUser this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.FormsAuthenticationUser Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.FormsAuthenticationUserCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.FormsAuthenticationUser</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクションのユーザーのインデックスです。</param>
+        <summary>指定されたインデックス位置にある <see cref="T:System.Web.Configuration.FormsAuthenticationUser" /> を取得します。</summary>
+        <value>A<see cref="T:System.Web.Configuration.FormsAuthenticationUser" />ユーザー名とパスワードを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、指定したインデックス位置にあるユーザーの資格情報にアクセスする方法を示します。  
+  
+ [!code-csharp[System.Web.Configuration.FormsAuthenticationCredentials#15](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationCredentials/CS/formsauthenticationcredentials.cs#15)]
+ [!code-vb[System.Web.Configuration.FormsAuthenticationCredentials#15](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationCredentials/VB/formsauthenticationcredentials.vb#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.FormsAuthenticationUser this[string name] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.FormsAuthenticationUser Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.FormsAuthenticationUserCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.FormsAuthenticationUser</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">ユーザーの名前です。</param>
+        <summary>指定された名前を持つ <see cref="T:System.Web.Configuration.FormsAuthenticationUser" /> を取得します。</summary>
+        <value>A<see cref="T:System.Web.Configuration.FormsAuthenticationUser" />ユーザー名とパスワードを含むオブジェクトです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、指定した名前を持つユーザーの資格情報にアクセスする方法を示します。  
+  
+ [!code-csharp[System.Web.Configuration.FormsAuthenticationCredentials#16](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationCredentials/CS/formsauthenticationcredentials.cs#16)]
+ [!code-vb[System.Web.Configuration.FormsAuthenticationCredentials#16](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationCredentials/VB/formsauthenticationcredentials.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.FormsAuthenticationUserCollection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.FormsAuthenticationUserCollection.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Web.Configuration.FormsAuthenticationUser" />コレクションから削除するオブジェクト。</param>
+        <summary>削除、<see cref="T:System.Web.Configuration.FormsAuthenticationUser" />オブジェクトをコレクションからです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは挿入、`remove`要素を上位の構成ファイルで定義されているいずれかの要素の構成ファイルの該当セクションにします。 要素が現在の構成ファイルの該当セクションに定義されている場合、対応するエントリは、構成ファイルから削除します。 削除するオブジェクトは、コレクションに存在する必要があります。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.FormsAuthenticationUserCollection.Remove%2A> メソッドを使用するコード例を次に示します。  
+  
+ [!code-csharp[System.Web.Configuration.FormsAuthenticationCredentials#9](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationCredentials/CS/formsauthenticationcredentials.cs#9)]
+ [!code-vb[System.Web.Configuration.FormsAuthenticationCredentials#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationCredentials/VB/formsauthenticationcredentials.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationException">ない<see cref="T:System.Web.Configuration.FormsAuthenticationUser" />オブジェクト、コレクション内の指定されたキーに、要素は既に削除されて、コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.FormsAuthenticationUserCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス、<see cref="T:System.Web.Configuration.FormsAuthenticationUser" />コレクションから削除するオブジェクト。</param>
+        <summary>削除、<see cref="T:System.Web.Configuration.FormsAuthenticationUser" />オブジェクトをコレクションから指定したインデックス位置。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは挿入、`remove`要素を上位の構成ファイルで定義されているいずれかの要素の構成ファイルの該当セクションにします。 要素が現在の構成ファイルの該当セクションに定義されている場合、対応するエントリは、構成ファイルから削除します。 削除するオブジェクトは、コレクションに存在する必要があります。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.FormsAuthenticationUserCollection.Remove%2A> メソッドを使用するコード例を次に示します。  
+  
+ [!code-csharp[System.Web.Configuration.FormsAuthenticationCredentials#10](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationCredentials/CS/formsauthenticationcredentials.cs#10)]
+ [!code-vb[System.Web.Configuration.FormsAuthenticationCredentials#10](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationCredentials/VB/formsauthenticationcredentials.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationException">ない<see cref="T:System.Web.Configuration.FormsAuthenticationUser" />オブジェクト、コレクション内の指定したインデックス位置の要素は既に削除されているか、コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Set">
+      <MemberSignature Language="C#" Value="public void Set (System.Web.Configuration.FormsAuthenticationUser user);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Set(class System.Web.Configuration.FormsAuthenticationUser user) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.FormsAuthenticationUserCollection.Set(System.Web.Configuration.FormsAuthenticationUser)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="user" Type="System.Web.Configuration.FormsAuthenticationUser" />
+      </Parameters>
+      <Docs>
+        <param name="user"><see cref="T:System.Web.Configuration.FormsAuthenticationUserCollection" />オブジェクトの変更が必要です。</param>
+        <summary>指定した変更<see cref="T:System.Web.Configuration.FormsAuthenticationUser" />コレクションに含まれるオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Web.Configuration.FormsAuthenticationUserCollection.Set%2A> メソッドを使用するコード例を次に示します。  
+  
+ [!code-csharp[System.Web.Configuration.FormsAuthenticationCredentials#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationCredentials/CS/formsauthenticationcredentials.cs#11)]
+ [!code-vb[System.Web.Configuration.FormsAuthenticationCredentials#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationCredentials/VB/formsauthenticationcredentials.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThrowOnDuplicate">
+      <MemberSignature Language="C#" Value="protected override bool ThrowOnDuplicate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ThrowOnDuplicate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.FormsAuthenticationUserCollection.ThrowOnDuplicate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

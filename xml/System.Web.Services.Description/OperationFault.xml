@@ -1,0 +1,83 @@
+<Type Name="OperationFault" FullName="System.Web.Services.Description.OperationFault">
+  <TypeSignature Language="C#" Value="public sealed class OperationFault : System.Web.Services.Description.OperationMessage" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OperationFault extends System.Web.Services.Description.OperationMessage" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Description.OperationFault" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Services.Description.OperationMessage</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.Services.Configuration.XmlFormatExtensionPoint("Extensions")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>XML Web サービスによって返されるエラー メッセージの仕様を定義します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスのインスタンスのメンバーである、 <xref:System.Web.Services.Description.Operation.Faults%2A> 、親<xref:System.Web.Services.Description.Operation>インスタンス。  
+  
+ <xref:System.Web.Services.Description.OperationFault>クラスが Web サービス記述言語 (WSDL) に対応しています`fault`要素で囲ま、`operation`要素で囲まれた順番、`portType`要素。 WSDL の詳細については、http://www.w3.org/TR/wsdl/ の仕様を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例では、プロパティとによって公開されるメソッドの使用、<xref:System.Web.Services.Description.OperationFault>クラスです。  
+  
+ [!code-cpp[OperationFault_OperationFault#1](~/samples/snippets/cpp/VS_Snippets_Remoting/OperationFault_OperationFault/CPP/operationfault_operationfault.cpp#1)]
+ [!code-csharp[OperationFault_OperationFault#1](~/samples/snippets/csharp/VS_Snippets_Remoting/OperationFault_OperationFault/CS/operationfault_operationfault.cs#1)]
+ [!code-vb[OperationFault_OperationFault#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/OperationFault_OperationFault/VB/operationfault_operationfault.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OperationFault ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.OperationFault.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Description.OperationFault" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Extensions">
+      <MemberSignature Language="C#" Value="public override System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection Extensions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection Extensions" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.OperationFault.Extensions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlIgnore</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection" /> に関連付けられている <see cref="T:System.Web.Services.Description.OperationFault" /> を取得します。</summary>
+        <value>この <see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection" /> に関連付けられている <see cref="T:System.Web.Services.Description.OperationFault" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

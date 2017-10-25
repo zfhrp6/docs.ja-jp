@@ -1,0 +1,200 @@
+<Type Name="RoleGroup" FullName="System.Web.UI.WebControls.RoleGroup">
+  <TypeSignature Language="C#" Value="public sealed class RoleGroup" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit RoleGroup extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.RoleGroup" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コンテンツ テンプレートを関連付ける、 <see cref="T:System.Web.UI.WebControls.LoginView" /> Web サイトに対して定義された 1 つまたは複数のロールで制御します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、 <xref:System.Web.UI.WebControls.LoginView> Web サイトの管理者によって割り当てられているロールに基づいて、Web サイトのユーザーに表示されるコンテンツが含まれているコンテンツのテンプレートのセットを定義するコントロール。 <xref:System.Web.UI.WebControls.RoleGroup>クラスによって使用、<xref:System.Web.UI.WebControls.LoginView>コンテンツ テンプレートを一連のロールに関連付けるを制御します。  
+  
+ ロール グループにテンプレートを動的に割り当てる、設定、<xref:System.Web.UI.WebControls.RoleGroup.ContentTemplate%2A>プロパティを実装するオブジェクトへの参照を<xref:System.Web.UI.ITemplate>インターフェイスです。  
+  
+ 使用するロールの管理を構成する必要があります、<xref:System.Web.UI.WebControls.RoleGroup>クラスです。 詳細については、次を参照してください。[ロール管理の理解](http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6)です。  
+  
+   
+  
+## Examples  
+ 次のコード例にカスタム テンプレートを割り当てます、<xref:System.Web.UI.WebControls.RoleGroup.ContentTemplate%2A>プロパティです。  
+  
+ [!code-aspx-csharp[RoleGroupClass#1](~/samples/snippets/csharp/VS_Snippets_WebNet/RoleGroupClass/CS/rolegroupclasscs.aspx#1)]
+ [!code-aspx-vb[RoleGroupClass#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/RoleGroupClass/VB/rolegroupclassvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RoleGroup ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RoleGroup.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.RoleGroup" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを作成するこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.RoleGroup>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsUser">
+      <MemberSignature Language="C#" Value="public bool ContainsUser (System.Security.Principal.IPrincipal user);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ContainsUser(class System.Security.Principal.IPrincipal user) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RoleGroup.ContainsUser(System.Security.Principal.IPrincipal)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="user" Type="System.Security.Principal.IPrincipal" />
+      </Parameters>
+      <Docs>
+        <param name="user">ロール グループ内で検索するユーザー名。</param>
+        <summary>指定したユーザー ロール グループ内のロールのいずれかのメンバーであるかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />ユーザー ロール グループに関連付けられているロールの 1 つのメンバーである場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.RoleGroup.ContainsUser%2A>メソッドを返します。 `true` 、指定したユーザーがこのロール グループに関連付けられているロールのいずれかのメンバーである場合。 登録されている順番でロールが検索、<xref:System.Web.UI.WebControls.RoleGroup.Roles%2A>プロパティ、および最初の一致が見つかると検索を停止します。  
+  
+ このメソッドを使用して、<xref:System.Web.Security.Roles.IsUserInRole%2A>ユーザー ロールのメンバーであるかどうかを調べます。 使用するロールの管理を構成する必要があります、<xref:System.Web.UI.WebControls.RoleGroup.ContainsUser%2A>メソッドです。 詳細については、次を参照してください。[ロール管理の理解](http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="User" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentTemplate">
+      <MemberSignature Language="C#" Value="public System.Web.UI.ITemplate ContentTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ITemplate ContentTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RoleGroup.ContentTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.TemplateContainer(typeof(System.Web.UI.WebControls.LoginView))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、このロール グループに関連付けられているコンテンツ テンプレートを設定します。</summary>
+        <value><see cref="T:System.Web.UI.ITemplate" />このロール グループに関連付けられています。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.RoleGroup.ContentTemplate%2A>プロパティには、このロール グループのメンバーであるユーザーに表示されるコンテンツが含まれています。  
+  
+   
+  
+## Examples  
+ 次のコード例は、コンテンツのテンプレートを動的に作成します。  
+  
+ [!code-aspx-csharp[RoleGroupClass#1](~/samples/snippets/csharp/VS_Snippets_WebNet/RoleGroupClass/CS/rolegroupclasscs.aspx#1)]
+ [!code-aspx-vb[RoleGroupClass#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/RoleGroupClass/VB/rolegroupclassvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Roles">
+      <MemberSignature Language="C#" Value="public string[] Roles { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] Roles" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RoleGroup.Roles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.WebControls.StringArrayConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、このロール グループに関連付けられているロールを設定します。</summary>
+        <value>このロール グループに関連付けられているロールのコンマ区切りのリスト。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、ロール グループに関連付けるロールの一覧を割り当てます。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.RoleGroup>クラスです。  
+  
+ [!code-csharp[RoleGroupClass#3](~/samples/snippets/csharp/VS_Snippets_WebNet/RoleGroupClass/CS/rolegroupclasscs.aspx#3)]
+ [!code-vb[RoleGroupClass#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/RoleGroupClass/VB/rolegroupclassvb.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RoleGroup.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このロール グループに関連付けられているロールのコンマ区切りの一覧を返します。</summary>
+        <returns>このロール グループに関連付けられているロールのコンマ区切りのリスト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.RoleGroup.ToString%2A>メソッドの内容を返します、<xref:System.Web.UI.WebControls.RoleGroup.Roles%2A>ロール グループに関連付けられているロールのコンマ区切りのリストとしてプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

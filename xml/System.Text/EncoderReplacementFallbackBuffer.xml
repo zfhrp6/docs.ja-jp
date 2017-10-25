@@ -1,0 +1,292 @@
+<Type Name="EncoderReplacementFallbackBuffer" FullName="System.Text.EncoderReplacementFallbackBuffer">
+  <TypeSignature Language="C#" Value="public sealed class EncoderReplacementFallbackBuffer : System.Text.EncoderFallbackBuffer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EncoderReplacementFallbackBuffer extends System.Text.EncoderFallbackBuffer" />
+  <TypeSignature Language="DocId" Value="T:System.Text.EncoderReplacementFallbackBuffer" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Text.EncoderFallbackBuffer</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>元の入力文字をエンコードできないときに使用される代替の入力文字列を表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 適切なエンコーディングが存在しない場合は、文字を同等のエンコード済みバイト シーケンスに変換します。 できない可能性があります。 失敗にエンコーディング用の一般的な理由は、変換操作をエンコードする文字を表現できないコード ページを使用するかどうかです。  
+  
+ 入力文字を出力バイト シーケンスに変換できない場合、<xref:System.Text.EncoderReplacementFallback?displayProperty=nameWithType>オブジェクトは、元の入力文字を置き換えるが置換文字列を提供します。 置換文字列の値を初期化、<xref:System.Text.EncoderReplacementFallback>オブジェクト、およびの値、<xref:System.Text.EncoderReplacementFallback>オブジェクトの値を初期化、<xref:System.Text.EncoderReplacementFallbackBuffer>オブジェクト。 値、<xref:System.Text.EncoderReplacementFallbackBuffer>オブジェクト置換フォールバック バッファーと呼びます。 変換操作は元の入力文字の代わりに、置換フォールバック バッファーをエンコードし、残りの入力の処理を続行します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EncoderReplacementFallbackBuffer (System.Text.EncoderReplacementFallback fallback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Text.EncoderReplacementFallback fallback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.EncoderReplacementFallbackBuffer.#ctor(System.Text.EncoderReplacementFallback)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fallback" Type="System.Text.EncoderReplacementFallback" />
+      </Parameters>
+      <Docs>
+        <param name="fallback"><see cref="T:System.Text.EncoderReplacementFallback" /> オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Text.EncoderReplacementFallbackBuffer" />クラスの値を使用して、<see cref="T:System.Text.EncoderReplacementFallback" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Fallback">
+      <MemberSignature Language="C#" Value="public override bool Fallback (char charUnknown, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Fallback(char charUnknown, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.EncoderReplacementFallbackBuffer.Fallback(System.Char,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="charUnknown" Type="System.Char" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="charUnknown">入力文字です。 このパラメーターは、例外がスローされない場合、この操作で無視されます。</param>
+        <param name="index">入力バッファー内の文字のインデックス位置。 この操作では、このパラメーターが無視されます。</param>
+        <summary>現在の置換文字列を使用して、置換フォールバック バッファーを準備します。</summary>
+        <returns>
+          <see langword="true" />置換文字列が空でない場合<see langword="false" />置換文字列が空の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Text.Encoding.GetBytes%2A>と<xref:System.Text.Encoder.Convert%2A>メソッド呼び出し<xref:System.Text.EncoderReplacementFallbackBuffer.Fallback%2A>が入力内の不明な文字が発生した場合。 場合の戻り値<xref:System.Text.EncoderReplacementFallbackBuffer.Fallback%2A>は`true`、呼び出し元のメソッドを呼び出すことができます、<xref:System.Text.EncoderReplacementFallbackBuffer.GetNextChar%2A>置換フォールバック バッファー内の各文字を取得します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">このメソッドは前にもう一度、<see cref="M:System.Text.EncoderReplacementFallbackBuffer.GetNextChar" />メソッドが置換フォールバック バッファー内のすべての文字を読み取る。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Fallback">
+      <MemberSignature Language="C#" Value="public override bool Fallback (char charUnknownHigh, char charUnknownLow, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Fallback(char charUnknownHigh, char charUnknownLow, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.EncoderReplacementFallbackBuffer.Fallback(System.Char,System.Char,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="charUnknownHigh" Type="System.Char" />
+        <Parameter Name="charUnknownLow" Type="System.Char" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="charUnknownHigh">入力のペアの上位サロゲート。</param>
+        <param name="charUnknownLow">入力のペアの下位サロゲート。</param>
+        <param name="index">入力バッファー内のサロゲート ペアのインデックス位置。</param>
+        <summary>ときに、入力のサロゲート ペアをエンコードすることはできません、またはサロゲート ペアを無視するかどうか、置換文字列を使用できるかどうかを示します。 パラメーターは、入力にサロゲート ペアと、ペアのインデックス位置を指定します。</summary>
+        <returns>
+          <see langword="true" />置換文字列が空でない場合<see langword="false" />置換文字列が空の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Text.Encoding.GetBytes%2A>と<xref:System.Text.Encoder.Convert%2A>メソッド呼び出し<xref:System.Text.EncoderReplacementFallbackBuffer.Fallback%2A>が入力内の不明な文字が発生した場合。 場合の戻り値<xref:System.Text.EncoderReplacementFallbackBuffer.Fallback%2A>は`true`、呼び出し元のメソッドを呼び出すことができます、<xref:System.Text.EncoderReplacementFallbackBuffer.GetNextChar%2A>置換フォールバック バッファー内の各文字を取得します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">このメソッドは前にもう一度、<see cref="M:System.Text.EncoderReplacementFallbackBuffer.GetNextChar" />メソッドが文字を読み取るすべての置換文字列。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">値<paramref name="charUnknownHigh" />u+d800 U + D8FF より大きいか小さいです。  
+  
+ または  
+  
+ 値<paramref name="charUnknownLow" />u+dc00 U+DFFF より大きいか小さいです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNextChar">
+      <MemberSignature Language="C#" Value="public override char GetNextChar ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance char GetNextChar() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.EncoderReplacementFallbackBuffer.GetNextChar" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Char</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>置換フォールバック バッファー内の次の文字を取得します。</summary>
+        <returns>アプリケーションでエンコードできる置換フォールバック バッファー内の次の Unicode 文字。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Text.Encoding.GetBytes%2A>と<xref:System.Text.Encoder.Convert%2A>メソッド呼び出し<xref:System.Text.EncoderReplacementFallbackBuffer.Fallback%2A>不明なサロゲート ペアかが入力文字が発生した場合。 場合の戻り値<xref:System.Text.EncoderReplacementFallbackBuffer.Fallback%2A>は`true`、呼び出し元のメソッドを呼び出すことができます<xref:System.Text.EncoderReplacementFallbackBuffer.GetNextChar%2A>置換フォールバック バッファー内の各文字を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MovePrevious">
+      <MemberSignature Language="C#" Value="public override bool MovePrevious ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool MovePrevious() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.EncoderReplacementFallbackBuffer.MovePrevious" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>次の呼び出しの原因、<see cref="M:System.Text.EncoderReplacementFallbackBuffer.GetNextChar" />メソッドは現在の文字位置の前に、置換フォールバック バッファー内の文字位置にアクセスします。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="M:System.Text.EncoderReplacementFallbackBuffer.MovePrevious" />操作が成功しなかった場合は、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remaining">
+      <MemberSignature Language="C#" Value="public override int Remaining { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Remaining" />
+      <MemberSignature Language="DocId" Value="P:System.Text.EncoderReplacementFallbackBuffer.Remaining" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>処理するための残存置換フォールバック バッファー内の文字数を取得します。</summary>
+        <value>まだ処理されていない、置換フォールバック バッファー内の文字の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Text.EncoderReplacementFallbackBuffer.Fallback%2A>メソッドを返します。`true`場合、<xref:System.Text.EncoderReplacementFallbackBuffer.Remaining%2A>プロパティが 0 以外。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public override void Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.EncoderReplacementFallbackBuffer.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべての内部の状態情報とのこのインスタンス内のデータを初期化します<see cref="T:System.Text.EncoderReplacementFallbackBuffer" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Text.EncoderReplacementFallbackBuffer.Reset%2A>メソッドな永続化された状態の情報や置換文字列の出力を制御するデータを破棄します。 後に、エンコード操作が解決しない場合は、予期しない結果が発生する、<xref:System.Text.EncoderReplacementFallbackBuffer.Reset%2A>メソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

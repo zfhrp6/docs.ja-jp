@@ -1,0 +1,149 @@
+<Type Name="AsyncOperationManager" FullName="System.ComponentModel.AsyncOperationManager">
+  <TypeSignature Language="C#" Value="public static class AsyncOperationManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit AsyncOperationManager extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.AsyncOperationManager" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>非同期メソッドの呼び出しをサポートするクラスの同時実行の管理を提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クラスがに従って非同期動作を提供する必要があるかどうか、 [- イベント ベースの非同期パターンの概要](~/docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)さまざまな同時実行の管理に関する問題が発生します。 これは特に、イベント ハンドラーがスレッドまたはアプリケーションのモデルを適切なコンテキストで呼び出されるようにするための要件 (たとえば、Windows フォーム アプリケーション、[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]アプリケーション、コンソール アプリケーション、およびなど)。 <xref:System.ComponentModel.AsyncOperationManager>によってサポートされているすべてのアプリケーション モデルを正しく実行しているクラスを作成する便利な手段を提供、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。  
+  
+ <xref:System.ComponentModel.AsyncOperationManager>クラスには 1 つのメソッド、 <xref:System.ComponentModel.AsyncOperationManager.CreateOperation%2A>、返された、<xref:System.ComponentModel.AsyncOperation?displayProperty=nameWithType>特定の非同期タスクの期間を追跡するために使用できます。 <xref:System.ComponentModel.AsyncOperation?displayProperty=nameWithType>タスクが完了したら、クライアントに通知するタスクを使用できます。 進行状況およびインクリメンタル結果を post 操作を終了せずにも使用できます。  
+  
+ 非同期のクラスの実装の詳細については、次を参照してください。[イベント ベースの非同期パターンを実装する](~/docs/standard/asynchronous-programming-patterns/implementing-the-event-based-asynchronous-pattern.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.ComponentModel.AsyncOperationManager>任意のアプリケーション モデルに対して非同期操作をサポートするクラスを作成するクラス。 主要なであるかどうかを決定する数値をテストするクラスを実装する方法を示します。 この計算できる時間がかかるため、別のスレッド上で実行します。 進行状況レポート、インクリメンタル結果、および完了通知によって処理されます、<xref:System.ComponentModel.AsyncOperation>クラスは、適切なスレッドまたはコンテキストで、クライアントのイベント ハンドラーが呼び出されたことを実行できるようにします。  
+  
+ 完全なコードの一覧については、次を参照してください。[する方法: イベント ベースの非同期パターンをサポートするコンポーネントを実装する](http://msdn.microsoft.com/library/3c1aa4d4-da87-4a03-b812-3d167b8c57cf)です。 クライアントの完全なコードについては、次を参照してください。[する方法: イベント ベースの非同期パターンのクライアントを実装する](~/docs/standard/asynchronous-programming-patterns/how-to-implement-a-client-of-the-event-based-asynchronous-pattern.md)です。  
+  
+ [!code-csharp[System.ComponentModel.AsyncOperationManager#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#3)]
+ [!code-vb[System.ComponentModel.AsyncOperationManager#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateOperation">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.AsyncOperation CreateOperation (object userSuppliedState);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.AsyncOperation CreateOperation(object userSuppliedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.AsyncOperationManager.CreateOperation(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.AsyncOperation</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userSuppliedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="userSuppliedState">クライアントの状態、タスク ID などの一部を関連付ける特定の非同期操作を使用するオブジェクト。</param>
+        <summary>返します、<see cref="T:System.ComponentModel.AsyncOperation" />の特定の非同期操作の期間を追跡します。</summary>
+        <returns><see cref="T:System.ComponentModel.AsyncOperation" />非同期メソッド呼び出しの期間を追跡するために使用することできます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.AsyncOperationManager.CreateOperation%2A>メソッドを返します、<xref:System.ComponentModel.AsyncOperation?displayProperty=nameWithType>使用できるは、特定の非同期操作の期間を追跡し、操作の完了時に、アプリケーション モデルをアラートを生成します。 また、進行状況およびインクリメンタル結果を post 操作を終了せずに使用することができます。 <xref:System.ComponentModel.AsyncOperation?displayProperty=nameWithType>これらの呼び出しを適切なスレッドまたはアプリケーション モデルのコンテキストを正しくマーシャ リングされます。  
+  
+ イベント ベースの非同期パターンをサポートするクラスを実装する場合、クラスを呼び出す必要があります<xref:System.ComponentModel.AsyncOperationManager.CreateOperation%2A>たびに、 *MethodName* `Async`メソッドが呼び出されます。 メソッドを呼び出すクライアント アプリケーションで使用できる、`userSuppliedState`非同期操作の実行中に発生するイベントを区別するために各呼び出しを一意に識別するパラメーターです。  
+  
+> [!CAUTION]
+>  クライアント コードは一意の値を提供する必要があります、`userSuppliedState`パラメーター。 タスク Id が一意でない進行状況とその他のイベントを正しくレポートする、実装があります。 コードを一意でないタスク ID を確認し、スロー、<xref:System.ArgumentException?displayProperty=nameWithType>いずれかが検出された場合。  
+  
+ コードを追跡する必要がありますすべて<xref:System.ComponentModel.AsyncOperation?displayProperty=nameWithType>によって返される<xref:System.ComponentModel.AsyncOperationManager.CreateOperation%2A>対応する基になる非同期操作でオブジェクトを使用して更新プログラムを公開し、操作を終了します。 この追跡を渡すように単純にすることができます、<xref:System.ComponentModel.AsyncOperation?displayProperty=nameWithType>デリゲートの間でパラメーターとして。 クラスより高度なデザインのコレクションを維持できます<xref:System.ComponentModel.AsyncOperation?displayProperty=nameWithType>オブジェクト、タスクが開始されたときに、オブジェクトを追加し、タスクが完了したか取り消されたときにそれらを削除します。 このアプローチを使用するを確認することができます一意`userSuppliedState`パラメーター値と、複数の同時呼び出しをサポートするクラスを使用する場合に使用する必要があります。  
+  
+ 非同期のクラスの実装の詳細については、次を参照してください。[イベント ベースの非同期パターンを実装する](~/docs/standard/asynchronous-programming-patterns/implementing-the-event-based-asynchronous-pattern.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.ComponentModel.AsyncOperationManager.CreateOperation%2A>メソッドを作成、<xref:System.ComponentModel.AsyncOperation?displayProperty=nameWithType>の非同期操作の期間を追跡します。 このコード例に示されている例の一部である、<xref:System.ComponentModel.AsyncOperationManager>クラスです。  
+  
+ [!code-csharp[System.ComponentModel.AsyncOperationManager#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#3)]
+ [!code-vb[System.ComponentModel.AsyncOperationManager#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SynchronizationContext">
+      <MemberSignature Language="C#" Value="public static System.Threading.SynchronizationContext SynchronizationContext { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Threading.SynchronizationContext SynchronizationContext" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.AsyncOperationManager.SynchronizationContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.SynchronizationContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または非同期操作の同期コンテキストを設定します。</summary>
+        <value>非同期操作の同期コンテキスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装は、フリー スレッドの実装です。  
+  
+ スレッドを設定する必要があります、<xref:System.ComponentModel.AsyncOperationManager.SynchronizationContext%2A>プロパティを`null`オブジェクトをフリー スレッドのファクトリを解放が完了したら、そうしないと、ファクトリが破棄されることはありません。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.NamedPermissionSet">同期コンテキストを設定します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連付けられた状態。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

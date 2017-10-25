@@ -1,0 +1,163 @@
+<Type Name="AssemblySignatureKeyAttribute" FullName="System.Reflection.AssemblySignatureKeyAttribute">
+  <TypeSignature Language="C#" Value="public sealed class AssemblySignatureKeyAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit AssemblySignatureKeyAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Reflection.AssemblySignatureKeyAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly, AllowMultiple=false, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>強力なハッシュ アルゴリズムに簡単ではない以前の厳密な名前キーから大規模なキーへの移行を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しい大きなキーは、署名キーです。 前に、のバージョンで、 [!INCLUDE[net_v45](~/includes/net-v45-md.md)]、署名キーが、id キーと同じです。 以降で、 [!INCLUDE[net_v45](~/includes/net-v45-md.md)]、<xref:System.Reflection.AssemblySignatureKeyAttribute>属性を使用して、アセンブリのメタデータが引き続き古い公開キー トークンとバイナリ ラージ オブジェクト (BLOB) 既存のアセンブリ参照は引き続き機能できるようにします。 また、id キーの所有者からマッピングを取得することを確認します。  
+  
+ 属性の存在は必ずしも厳密な名前の検証が行われること。 共通の完全信頼のシナリオで、属性は考慮されません、厳密な名前の署名は検証しないためです。 ただし、厳密な名前の署名は、検証するのには、ときに厳密な名前の署名と、副署名検証する必要があります。 アセンブリの id キーは、(実際の署名のために使用されるキーと検証) の署名キーと同一ではありません。 Id キーは、異なる (より堅牢な) の署名キーにマップできます。 これにより、アセンブリの id を設定し、署名キーとアルゴリズムをより安全なバージョンに更新できます。  
+  
+ 副署名アドレス セキュリティ上の問題と、悪意のあるアセンブリは、その他のいくつかの id を要求します。 たとえば、悪意のある System.Core.dll アセンブリでそのメタデータを Microsoft のパブリック キーが含まれてし、属性を使用して、副署名が存在しない場合は、攻撃者の署名キーを使用する厳密な名前の検証を指示します。 このため、厳密な名前、検証されて Microsoft アセンブリなりすましことでした。  
+  
+ この新しい属性で使用するためのアセンブリに署名する方法については、次を参照してください。[強化された厳密な名前を付ける](~/docs/framework/app-domains/enhanced-strong-naming.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AssemblySignatureKeyAttribute (string publicKey, string countersignature);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string publicKey, string countersignature) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.AssemblySignatureKeyAttribute.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="publicKey" Type="System.String" />
+        <Parameter Name="countersignature" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="publicKey">パブリックまたは id キーです。</param>
+        <param name="countersignature">厳密な名前キーの署名キーの部分は、副です。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Reflection.AssemblySignatureKeyAttribute" />指定した公開キーと副署名を使用してクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターのパラメーターを生成するのにには、Sn.exe を使用します。  
+  
+```  
+sn -a IdentityPubKey.snk IdentityKey.snk SignaturePubKey.snk  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Countersignature">
+      <MemberSignature Language="C#" Value="public string Countersignature { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Countersignature" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.AssemblySignatureKeyAttribute.Countersignature" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアセンブリの厳密な名前の副署名を取得します。</summary>
+        <value>この署名キーの副署名します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 副署名では、id キーによって署名されている公開キーを表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PublicKey">
+      <MemberSignature Language="C#" Value="public string PublicKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PublicKey" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.AssemblySignatureKeyAttribute.PublicKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アセンブリの署名に使用される厳密な名前の公開キーを取得します。</summary>
+        <value>このアセンブリの公開キー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

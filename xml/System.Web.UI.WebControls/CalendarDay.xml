@@ -1,0 +1,340 @@
+<Type Name="CalendarDay" FullName="System.Web.UI.WebControls.CalendarDay">
+  <TypeSignature Language="C#" Value="public class CalendarDay" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CalendarDay extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.CalendarDay" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>日付、<see cref="T:System.Web.UI.WebControls.Calendar" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.UI.WebControls.CalendarDay>オブジェクトで表す、<xref:System.Web.UI.WebControls.Calendar>コントロール。 このクラスを使用することができます、<xref:System.Web.UI.WebControls.Calendar.DayRender>プログラムにアクセスする日付のプロパティ上にレンダリングされたイベント ハンドラー、<xref:System.Web.UI.WebControls.Calendar>コントロール。 これにより、(かどうか、日付が選択されて、今日の日付、または週末の日付) など、1 日のプロパティを決定し、プログラムでの表示や、1 日の動作を制御することができます。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.Web.UI.WebControls.CalendarDay>を参照してください、<xref:System.Web.UI.WebControls.CalendarDay.%23ctor%2A>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ プロパティを使用する方法の例を次、<xref:System.Web.UI.WebControls.CalendarDay>を決定するオブジェクトで日付が表示されているかどうか、<xref:System.Web.UI.WebControls.Calendar.DayRender>イベントが表示されている月と土曜日や日曜日ではありません。 これらの日付が黄色で表示されます。 なお、<xref:System.Web.UI.WebControls.DayRenderEventArgs.Day%2A>のプロパティ、<xref:System.Web.UI.WebControls.DayRenderEventArgs>オブジェクトに渡さ、<xref:System.Web.UI.WebControls.Calendar.DayRender>イベント ハンドラーは、<xref:System.Web.UI.WebControls.CalendarDay>オブジェクト。  
+  
+ [!code-aspx-csharp[Classic CalendarDay Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic CalendarDay Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic CalendarDay Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic CalendarDay Example/VB/sourcevb.aspx#1)]  
+  
+ [!code-aspx-csharp[CalendarDayRender#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CalendarDayRender/CS/calendardayrendercs.aspx#1)]
+ [!code-aspx-vb[CalendarDayRender#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CalendarDayRender/VB/calendardayrendervb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CalendarDay (DateTime date, bool isWeekend, bool isToday, bool isSelected, bool isOtherMonth, string dayNumberText);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.DateTime date, bool isWeekend, bool isToday, bool isSelected, bool isOtherMonth, string dayNumberText) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.CalendarDay.#ctor(System.DateTime,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="date" Type="System.DateTime" />
+        <Parameter Name="isWeekend" Type="System.Boolean" />
+        <Parameter Name="isToday" Type="System.Boolean" />
+        <Parameter Name="isSelected" Type="System.Boolean" />
+        <Parameter Name="isOtherMonth" Type="System.Boolean" />
+        <Parameter Name="dayNumberText" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="date">A<see cref="T:System.DateTime" />をこのクラスのインスタンスで表される日付を含むオブジェクト。</param>
+        <param name="isWeekend">
+          <see langword="true" />このクラスのインスタンスで表される日付を示すためには、土曜日か日曜日です。それ以外の場合、<see langword="false" />です。</param>
+        <param name="isToday">
+          <see langword="true" />このクラスのインスタンスで表される日付を示すためには、現在の日付です。それ以外の場合、<see langword="false" />です。</param>
+        <param name="isSelected">
+          <see langword="true" />このクラスのインスタンスで表される日付がオンになっていることを示すために、<see cref="T:System.Web.UI.WebControls.Calendar" />コントロール。 それ以外の場合、<see langword="false" />です。</param>
+        <param name="isOtherMonth">
+          <see langword="true" />このクラスのインスタンスで表される日付が表示されている月以外の月のことを示す、<see cref="T:System.Web.UI.WebControls.Calendar" />コントロール。 それ以外の場合、<see langword="false" />です。</param>
+        <param name="dayNumberText">このクラスで表される日付の日の数。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.CalendarDay" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.CalendarDay>クラスです。  
+  
+> [!NOTE]
+>  このコンス トラクターは、使用可能なのインスタンス、<xref:System.Web.UI.WebControls.CalendarDay>クラスはない通常動的に作成します。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.WebControls.CalendarDay>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|日付|`date` パラメーターの値。|  
+|DayNumberText|`dayNumberText` パラメーターの値。|  
+|IsOtherMonth|`isOtherMonth` パラメーターの値。|  
+|IsSelected|`isSelected` パラメーターの値。|  
+|IsToday|`isToday` パラメーターの値。|  
+|IsWeekend|`isWeekEnd` パラメーターの値。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Date">
+      <MemberSignature Language="C#" Value="public DateTime Date { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime Date" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CalendarDay.Date" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスのインスタンスで表される日付を取得します。 このプロパティは読み取り専用です。</summary>
+        <value>A<see cref="T:System.DateTime" />をこのクラスのインスタンスで表される日付を含むオブジェクト。 これは、この値に基づいて、外観や、1 日の動作をプログラムで制御することができます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.CalendarDay.Date%2A>プロパティをプログラムによってこのクラスのインスタンスで表される日付を確認します。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.CalendarDay.Date%2A>で表示する日付を比較するプロパティ、<xref:System.Web.UI.WebControls.Calendar.DayRender>今日の日付とイベント。 上の赤いテキストと黄色のセルに表示されます日が今日の日付の場合は、<xref:System.Web.UI.WebControls.Calendar>コントロール。  
+  
+ [!code-aspx-csharp[Classic CalendarDay.Date Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic CalendarDay.Date Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic CalendarDay.Date Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic CalendarDay.Date Example/VB/sourcevb.aspx#1)]  
+  
+ [!code-aspx-csharp[CalendarDayRender#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CalendarDayRender/CS/calendardayrendercs.aspx#1)]
+ [!code-aspx-vb[CalendarDayRender#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CalendarDayRender/VB/calendardayrendervb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DayNumberText">
+      <MemberSignature Language="C#" Value="public string DayNumberText { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DayNumberText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CalendarDay.DayNumberText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスで表される日付の日の値の等価の文字列を取得、<see cref="T:System.Web.UI.WebControls.CalendarDay" />クラスです。 このプロパティは読み取り専用です。</summary>
+        <value>このクラスのインスタンスで表される日付の日の値の文字列と等価です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.CalendarDay.DayNumberText%2A>プロパティをこのクラスのインスタンスで表される日付の日の値の文字列に相当します。 これは、この値に基づいて、外観や、1 日の動作をプログラムで制御することができます。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.CalendarDay.DayNumberText%2A>で選択した日の値を表示するプロパティを<xref:System.Web.UI.WebControls.Calendar>コントロール。  
+  
+ [!code-aspx-csharp[Classic CalendarDay.DayNumberText Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic CalendarDay.DayNumberText Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic CalendarDay.DayNumberText Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic CalendarDay.DayNumberText Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOtherMonth">
+      <MemberSignature Language="C#" Value="public bool IsOtherMonth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsOtherMonth" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CalendarDay.IsOtherMonth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスのインスタンスで表される日付が以外に表示される月 1 か月であるかどうかを示す値を取得、<see cref="T:System.Web.UI.WebControls.Calendar" />コントロール。 このプロパティは読み取り専用です。</summary>
+        <value>
+          <see langword="true" />かどうか、このクラスのインスタンスで表される日付は、1 か月に表示される月以外では、<see cref="T:System.Web.UI.WebControls.Calendar" />コントロール。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.CalendarDay.IsOtherMonth%2A>プロパティをプログラムでかどうかをこのクラスのインスタンスで表される日付、月に表示される月以外に、<xref:System.Web.UI.WebControls.Calendar>コントロール。 これにより、プログラムからの表示やこの値に基づいて、1 日の動作を制御できます。  
+  
+   
+  
+## Examples  
+ 次の例でのプロパティを使用する方法、<xref:System.Web.UI.WebControls.CalendarDay>を決定するオブジェクトで日付が表示されているかどうか、<xref:System.Web.UI.WebControls.Calendar.DayRender>イベントは、表示されている月でありできません土曜日や日曜日のいずれか。 これらの日付が黄色で表示されます。 なお、<xref:System.Web.UI.WebControls.DayRenderEventArgs.Day%2A>のプロパティ、<xref:System.Web.UI.WebControls.DayRenderEventArgs>オブジェクトに渡さ、<xref:System.Web.UI.WebControls.Calendar.DayRender>イベント ハンドラーは、<xref:System.Web.UI.WebControls.CalendarDay>オブジェクト。  
+  
+ [!code-aspx-csharp[Classic CalendarDay Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic CalendarDay Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic CalendarDay Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic CalendarDay Example/VB/sourcevb.aspx#1)]  
+  
+ [!code-aspx-csharp[CalendarDayRender#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CalendarDayRender/CS/calendardayrendercs.aspx#1)]
+ [!code-aspx-vb[CalendarDayRender#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CalendarDayRender/VB/calendardayrendervb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSelectable">
+      <MemberSignature Language="C#" Value="public bool IsSelectable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSelectable" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CalendarDay.IsSelectable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定でこのクラスのインスタンスで表される日付を選択できるかどうかを示す値、<see cref="T:System.Web.UI.WebControls.Calendar" />コントロール。</summary>
+        <value>
+          <see langword="true" />場合は、日付を選択することができます。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.CalendarDay.IsSelectable%2A>を指定するか、このクラスのインスタンスで表される日付で選択できるかどうかを決定するプロパティ、<xref:System.Web.UI.WebControls.Calendar>コントロール。 これは、この値に基づきますプログラムによって、1 日の外観または動作を制御することができます。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.CalendarDay.IsSelectable%2A>プロパティの現在の日付を選択する機能を無効にする、<xref:System.Web.UI.WebControls.Calendar>コントロール。 なお、<xref:System.Web.UI.WebControls.DayRenderEventArgs.Day%2A>のプロパティ、<xref:System.Web.UI.WebControls.DayRenderEventArgs>オブジェクトに渡さ、<xref:System.Web.UI.WebControls.Calendar.DayRender>イベント ハンドラーは、<xref:System.Web.UI.WebControls.CalendarDay>オブジェクト。  
+  
+ [!code-aspx-csharp[Classic CalendarDay.IsSelectable Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic CalendarDay.IsSelectable Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic CalendarDay.IsSelectable Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic CalendarDay.IsSelectable Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSelected">
+      <MemberSignature Language="C#" Value="public bool IsSelected { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSelected" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CalendarDay.IsSelected" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスのインスタンスで表される日付が選択されているかどうかを示す値を取得、<see cref="T:System.Web.UI.WebControls.Calendar" />コントロール。 このプロパティは読み取り専用です。</summary>
+        <value>
+          <see langword="true" />このクラスのインスタンスで表される日付がで選択されているかどうか、<see cref="T:System.Web.UI.WebControls.Calendar" />コントロール。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.CalendarDay.IsSelected%2A>プログラムによってこのクラスのインスタンスで表される日付が選択されているかどうかを決定するプロパティ、<xref:System.Web.UI.WebControls.Calendar>コントロール。 これは、この値に基づいて、外観や、1 日の動作をプログラムで制御することができます。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.CalendarDay.IsSelected%2A>で現在の日付が選択されているかどうかを決定するプロパティ、<xref:System.Web.UI.WebControls.Calendar>です。 なお、<xref:System.Web.UI.WebControls.DayRenderEventArgs.Day%2A>のプロパティ、<xref:System.Web.UI.WebControls.DayRenderEventArgs>オブジェクトに渡さ、<xref:System.Web.UI.WebControls.Calendar.DayRender>イベント ハンドラーは、<xref:System.Web.UI.WebControls.CalendarDay>オブジェクト。  
+  
+ [!code-aspx-csharp[Classic CalendarDay.IsSelected Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic CalendarDay.IsSelected Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic CalendarDay.IsSelected Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic CalendarDay.IsSelected Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsToday">
+      <MemberSignature Language="C#" Value="public bool IsToday { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsToday" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CalendarDay.IsToday" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスのインスタンスで表される日付が同時日付けで指定されたかどうかを示す値を取得、<see cref="P:System.Web.UI.WebControls.Calendar.TodaysDate" />のプロパティ、<see cref="T:System.Web.UI.WebControls.Calendar" />コントロール。 このプロパティは読み取り専用です。</summary>
+        <value>
+          <see langword="true" />このクラスのインスタンスで表される日付が同時日付けで指定された場合、<see cref="P:System.Web.UI.WebControls.Calendar.TodaysDate" />のプロパティ、<see cref="T:System.Web.UI.WebControls.Calendar" />コントロール。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.CalendarDay.IsToday%2A>プログラムかどうかをこのクラスのインスタンスで表される日付同時日付けで指定されたプロパティ、<xref:System.Web.UI.WebControls.Calendar.TodaysDate%2A>のプロパティ、<xref:System.Web.UI.WebControls.Calendar>コントロール。 これは、この値に基づいて、外観や、1 日の動作をプログラムで制御することができます。  
+  
+> [!NOTE]
+>  指定された日付が、<xref:System.Web.UI.WebControls.Calendar.TodaysDate%2A>プロパティは、サーバーのシステム日付では通常、可能であれば、これを変更するために必要な場合です。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.CalendarDay.IsToday%2A>で日付が表示されている場合を決定するプロパティ、<xref:System.Web.UI.WebControls.Calendar.DayRender>イベントは、現在の日付。 日付が現在の日付の場合にで、赤いテキストと黄色のセルに表示されます、<xref:System.Web.UI.WebControls.Calendar>です。 なお、<xref:System.Web.UI.WebControls.DayRenderEventArgs.Day%2A>のプロパティ、<xref:System.Web.UI.WebControls.DayRenderEventArgs>オブジェクトに渡さ、<xref:System.Web.UI.WebControls.Calendar.DayRender>イベント ハンドラーは、<xref:System.Web.UI.WebControls.CalendarDay>オブジェクト。  
+  
+ [!code-aspx-csharp[Classic CalendarDay.IsToday Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic CalendarDay.IsToday Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic CalendarDay.IsToday Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic CalendarDay.IsToday Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsWeekend">
+      <MemberSignature Language="C#" Value="public bool IsWeekend { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsWeekend" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CalendarDay.IsWeekend" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスのインスタンスで表される日付が土曜日であるかどうかを示す値を取得または日曜日です。 このプロパティは読み取り専用です。</summary>
+        <value>
+          <see langword="true" />このクラスのインスタンスで表される日付が土曜日または日曜日の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.CalendarDay.IsWeekend%2A>プロパティをプログラムによってこのクラスのインスタンスで表される日付は土曜日や日曜日のいずれかであるかどうかを確認します。 これは、この値に基づいて、外観や、1 日の動作をプログラムで制御することができます。  
+  
+   
+  
+## Examples  
+ 次の例でのプロパティを使用する方法、<xref:System.Web.UI.WebControls.CalendarDay>を決定するオブジェクトで日付が表示されているかどうか、<xref:System.Web.UI.WebControls.Calendar.DayRender>イベントは、表示されている月でありできません土曜日や日曜日のいずれか。 これらの日付が黄色で表示されます。 なお、<xref:System.Web.UI.WebControls.DayRenderEventArgs.Day%2A>のプロパティ、<xref:System.Web.UI.WebControls.DayRenderEventArgs>オブジェクトに渡さ、<xref:System.Web.UI.WebControls.Calendar.DayRender>イベント ハンドラーは、<xref:System.Web.UI.WebControls.CalendarDay>オブジェクト。  
+  
+ [!code-aspx-csharp[Classic CalendarDay Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic CalendarDay Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic CalendarDay Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic CalendarDay Example/VB/sourcevb.aspx#1)]  
+  
+ [!code-aspx-csharp[CalendarDayRender#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CalendarDayRender/CS/calendardayrendercs.aspx#1)]
+ [!code-aspx-vb[CalendarDayRender#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CalendarDayRender/VB/calendardayrendervb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

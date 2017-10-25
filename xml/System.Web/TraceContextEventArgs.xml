@@ -1,0 +1,87 @@
+<Type Name="TraceContextEventArgs" FullName="System.Web.TraceContextEventArgs">
+  <TypeSignature Language="C#" Value="public sealed class TraceContextEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TraceContextEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.TraceContextEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>トレース レコードを処理する任意のメソッドのコレクションを提供、<see cref="E:System.Web.TraceContext.TraceFinished" />イベント。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.TraceContextEventArgs>クラスによって使用、<xref:System.Web.TraceContext>結局のところ、トレース情報のトレース レコードへのアクセスを提供するクラスが HTTP 要求の処理中に収集します。 処理するイベント ハンドラー デリゲートを追加することによって、<xref:System.Web.TraceContext.TraceFinished>イベント、レコードの処理、データ ストアに記録またはプロファイリング ツールへの入力として提供します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、登録する方法を示しています、<xref:System.Web.TraceContextEventHandler>を処理するデリゲート、<xref:System.Web.TraceContext.TraceFinished>イベント。 この例では、`OnTraceFinished`メソッドのコレクションにアクセスする<xref:System.Web.TraceContextRecord>オブジェクトを介して、<xref:System.Web.TraceContextEventArgs.TraceRecords%2A>プロパティは、それらを反復処理し、応答ストリームに書き込みます。  
+  
+ [!code-aspx-csharp[System.Web.Trace_3#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Trace_3/CS/form3cs.aspx#1)]
+ [!code-aspx-vb[System.Web.Trace_3#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Trace_3/VB/form3vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TraceContextEventArgs (System.Collections.ICollection records);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.ICollection records) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.TraceContextEventArgs.#ctor(System.Collections.ICollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="records" Type="System.Collections.ICollection" />
+      </Parameters>
+      <Docs>
+        <param name="records">コレクション<see cref="T:System.Web.TraceContextRecord" />を現在の要求のログ記録されたすべてのトレース レコードを表すオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.TraceContextEventArgs" />クラス、提供されたトレース レコードのコレクションを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceRecords">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection TraceRecords { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection TraceRecords" />
+      <MemberSignature Language="DocId" Value="P:System.Web.TraceContextEventArgs.TraceRecords" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Web.TraceContextRecord" />現在の要求に関連付けられているメッセージです。</summary>
+        <value>現在の要求に関連付けられているトレース レコードのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべての呼び出しに、<xref:System.Web.TraceContext.Write%2A?displayProperty=nameWithType>と<xref:System.Web.TraceContext.Warn%2A?displayProperty=nameWithType>メソッドの生成、<xref:System.Web.TraceContextRecord>に追加されるオブジェクト、<xref:System.Web.TraceContextEventArgs.TraceRecords%2A>メッセージのコレクション。 <xref:System.Web.TraceContext.Warn%2A>メソッド呼び出しのセット、<xref:System.Web.TraceContextRecord.IsWarning%2A>プロパティを`true`他のメソッド呼び出しには、設定中に、`false`です。  
+  
+ 反復処理できる、<xref:System.Web.TraceContextEventArgs.TraceRecords%2A>メッセージし、特定のカテゴリと、メッセージのレコードを確認し、警告であるか。  
+  
+   
+  
+## Examples  
+ 次のコード例では、登録する方法を示しています、<xref:System.Web.TraceContextEventHandler>を処理するデリゲート、<xref:System.Web.TraceContext.TraceFinished>イベント。 この例では、`OnTraceFinished`メソッドのコレクションにアクセスする<xref:System.Web.TraceContextRecord>オブジェクトを介して、<xref:System.Web.TraceContextEventArgs.TraceRecords%2A>プロパティは、それらを反復処理し、応答ストリームに書き込みます。  
+  
+ [!code-aspx-csharp[System.Web.Trace_3#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Trace_3/CS/form3cs.aspx#1)]
+ [!code-aspx-vb[System.Web.Trace_3#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Trace_3/VB/form3vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

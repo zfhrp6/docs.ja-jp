@@ -1,0 +1,560 @@
+<Type Name="BaseCompareValidator" FullName="System.Web.UI.WebControls.BaseCompareValidator">
+  <TypeSignature Language="C#" Value="public abstract class BaseCompareValidator : System.Web.UI.WebControls.BaseValidator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit BaseCompareValidator extends System.Web.UI.WebControls.BaseValidator" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.BaseCompareValidator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.BaseValidator</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>型指定された比較を実行する検証コントロールのための、抽象基底クラスとして使用します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseCompareValidator>値を比較するなどの検証コントロール クラスは継承、<xref:System.Web.UI.WebControls.CompareValidator>と<xref:System.Web.UI.WebControls.RangeValidator>コントロール、基本的な一般的な機能を提供します。  
+  
+ 使用して、<xref:System.Web.UI.WebControls.BaseCompareValidator.Type%2A>プロパティをデータを指定する入力値を比較する前に変換されることです。  
+  
+> [!NOTE]
+>  検証する入力コントロールの値は、指定したデータ型に変換できない、検証が失敗します。 <xref:System.Web.UI.WebControls.BaseValidator.IsValid%2A>検証コントロールのプロパティに設定されて`false`です。  
+  
+ <xref:System.Web.UI.WebControls.BaseCompareValidator>クラスは、いくつかの静的なプロパティと比較検証を実行するときに使用されるメソッドにも含まれます。 使用して、特定のデータ型に文字列を変換できるかどうかを決定できます、<xref:System.Web.UI.WebControls.BaseCompareValidator.CanConvert%2A>メソッドです。 2 桁の年を表すことができる最大年が含まれている、<xref:System.Web.UI.WebControls.BaseCompareValidator.CutoffYear%2A>プロパティです。 <xref:System.Web.UI.WebControls.BaseCompareValidator.GetFullYear%2A>メソッドでは、2 桁の年を 4 桁の年に変換することができます。  
+  
+> [!NOTE]
+>  派生する検証コントロールを使用すると、<xref:System.Web.UI.WebControls.BaseCompareValidator>内の制御、<xref:System.Web.UI.UpdatePanel>制御、検証コントロールと関連付けられているコントロールが同じパネルであるかどうかを確認します。 使用しての詳細については、<xref:System.Web.UI.UpdatePanel>部分ページ更新プログラムの制御を参照してください[部分ページ レンダリング概要](http://msdn.microsoft.com/library/5c12736d-d9e9-464a-9388-3fe0f9f49e49)です。  
+  
+ 検証コントロールの詳細については、次を参照してください。<xref:System.Web.UI.WebControls.BaseValidator>です。  
+  
+## <a name="accessibility"></a>ユーザー補助  
+ このコントロールの既定で表示されるマークアップは、Web コンテンツ ユーザー補助ガイドライン 1.0 (WCAG) 優先度 1 のガイドラインなどのユーザー補助の標準に準拠していません可能性があります。 このコントロールのユーザー補助のサポートに関する詳細については、「 [ASP.NET コントロールやアクセシビリティ](http://msdn.microsoft.com/library/847a37e3-ce20-41da-b0d3-7dfb0fdae9a0)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected BaseCompareValidator ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseCompareValidator.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.BaseCompareValidator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseCompareValidator>クラスは抽象クラスを作成することはできません、<xref:System.Web.UI.WebControls.BaseCompareValidator>オブジェクトに直接できます。 このコンス トラクターは、一般的に定義されたプロパティを初期化するために派生クラスのコンス トラクターによって呼び出されます。、<xref:System.Web.UI.WebControls.BaseCompareValidator>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAttributesToRender">
+      <MemberSignature Language="C#" Value="protected override void AddAttributesToRender (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AddAttributesToRender(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseCompareValidator.AddAttributesToRender(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">クライアントに HTML コンテンツを表示する出力ストリームを表す <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary>HTML 属性およびスタイルを指定したコントロールのレンダリングする必要がある追加<see cref="T:System.Web.UI.HtmlTextWriter" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseCompareValidator.AddAttributesToRender%2A>メソッドは、コントロールの HTML タグ内のコントロールの属性を表示するために使用します。 このメソッドは、通常、適切な属性を挿入する派生クラス内でコントロールの開発者によってオーバーライドし、にスタイル、<xref:System.Web.UI.HtmlTextWriter>コントロール用の出力ストリーム。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合、<see cref="M:System.Web.UI.WebControls.BaseCompareValidator.AddAttributesToRender(System.Web.UI.HtmlTextWriter)" />メソッド、基底クラスに対応するメソッドを呼び出してください。 それ以外の場合、基本クラスに含まれる属性はレンダリングされません。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvert">
+      <MemberSignature Language="C#" Value="public static bool CanConvert (string text, System.Web.UI.WebControls.ValidationDataType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool CanConvert(string text, valuetype System.Web.UI.WebControls.ValidationDataType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseCompareValidator.CanConvert(System.String,System.Web.UI.WebControls.ValidationDataType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="type" Type="System.Web.UI.WebControls.ValidationDataType" />
+      </Parameters>
+      <Docs>
+        <param name="text">テストする文字列。</param>
+        <param name="type"><see cref="T:System.Web.UI.WebControls.ValidationDataType" /> 値のいずれか。</param>
+        <summary>指定した文字列を指定されたデータ型に変換できるかどうかを判断します。 このオーバー ロードされたメソッドのテスト、通貨、二重のバージョンと、現在のカルチャで使用される形式を使用して日付値。</summary>
+        <returns>
+          <see langword="true" />指定したデータ文字列を指定されたデータ型に変換できる場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BaseCompareValidator.CanConvert%28System.String%2CSystem.Web.UI.WebControls.ValidationDataType%29>メソッドを指定した文字列を指定したデータ型に変換できるかどうかを判断します。 このメソッドは通常、文字列は、そのデータ型に依存する操作を実行する前に、互換性のあるデータ型に変換できるかどうかをテストする使用します。  
+  
+ このバージョンのメソッドは、現在のカルチャで使用される形式を使用して値をテストします。 カルチャに依存しない形式を使用して値をテストするには、使用、<xref:System.Web.UI.WebControls.BaseCompareValidator.CanConvert%28System.String%2CSystem.Web.UI.WebControls.ValidationDataType%2CSystem.Boolean%29?displayProperty=nameWithType>バージョンのこのメソッドはオーバー ロードします。  
+  
+   
+  
+## Examples  
+ 次の例では、使用方法を示します、<xref:System.Web.UI.WebControls.BaseCompareValidator.CanConvert%2A>メソッドを 2 つの整数値を比較し、2 番目の整数に変換できるかどうかを確認します。  
+  
+ [!code-aspx-csharp[BaseCompareValidatorCanConvert#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BaseCompareValidatorCanConvert/CS/basecomparevalidatorcanconvertcs.aspx#1)]
+ [!code-aspx-vb[BaseCompareValidatorCanConvert#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BaseCompareValidatorCanConvert/VB/basecomparevalidatorcanconvertvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvert">
+      <MemberSignature Language="C#" Value="public static bool CanConvert (string text, System.Web.UI.WebControls.ValidationDataType type, bool cultureInvariant);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool CanConvert(string text, valuetype System.Web.UI.WebControls.ValidationDataType type, bool cultureInvariant) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseCompareValidator.CanConvert(System.String,System.Web.UI.WebControls.ValidationDataType,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="type" Type="System.Web.UI.WebControls.ValidationDataType" />
+        <Parameter Name="cultureInvariant" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="text">テストする文字列。</param>
+        <param name="type"><see cref="T:System.Web.UI.WebControls.ValidationDataType" /> 列挙値のいずれか。</param>
+        <param name="cultureInvariant">
+          <see langword="true" />は、カルチャに依存しない形式を使用して値をテストするにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>指定した文字列を指定されたデータ型に変換できるかどうかを判断します。 このバージョンのオーバー ロードされたメソッドでは、カルチャに依存しない形式を使用して値をテストするかどうかを指定することができます。</summary>
+        <returns>
+          <see langword="true" />指定したデータ文字列を指定されたデータ型に変換できる場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BaseCompareValidator.CanConvert%28System.String%2CSystem.Web.UI.WebControls.ValidationDataType%2CSystem.Boolean%29>メソッドを指定した文字列を指定したデータ型に変換できるかどうかを判断します。 このメソッドは通常、文字列は、そのデータ型に依存する操作を実行する前に、互換性のあるデータ型に変換できるかどうかをテストする使用します。 カルチャに依存しない形式を使用して値をテストすることを示すに`true`の`cultureInvariant`パラメーターです。 それ以外の場合で、現在のカルチャで使用される形式を使用して値がテストされます。 現在のカルチャで使用される形式を使用して値をテストする場合は、使用を検討して、<xref:System.Web.UI.WebControls.BaseCompareValidator.CanConvert%28System.String%2CSystem.Web.UI.WebControls.ValidationDataType%29?displayProperty=nameWithType>バージョンのこのメソッドはオーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Compare">
+      <MemberSignature Language="C#" Value="protected static bool Compare (string leftText, string rightText, System.Web.UI.WebControls.ValidationCompareOperator op, System.Web.UI.WebControls.ValidationDataType type);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig bool Compare(string leftText, string rightText, valuetype System.Web.UI.WebControls.ValidationCompareOperator op, valuetype System.Web.UI.WebControls.ValidationDataType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseCompareValidator.Compare(System.String,System.String,System.Web.UI.WebControls.ValidationCompareOperator,System.Web.UI.WebControls.ValidationDataType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="leftText" Type="System.String" />
+        <Parameter Name="rightText" Type="System.String" />
+        <Parameter Name="op" Type="System.Web.UI.WebControls.ValidationCompareOperator" />
+        <Parameter Name="type" Type="System.Web.UI.WebControls.ValidationDataType" />
+      </Parameters>
+      <Docs>
+        <param name="leftText">演算子の左側にある値。</param>
+        <param name="rightText">演算子の右側にある値。</param>
+        <param name="op"><see cref="T:System.Web.UI.WebControls.ValidationCompareOperator" /> 値のいずれか。</param>
+        <param name="type"><see cref="T:System.Web.UI.WebControls.ValidationDataType" /> 値のいずれか。</param>
+        <summary>指定された演算子とデータ型を使用して 2 つの文字列を比較します。 このオーバー ロードされたメソッドに比較して、通貨、二重のバージョンと、現在のカルチャで使用される形式を使用して日付値。</summary>
+        <returns>
+          <see langword="true" />場合、<paramref name="leftValue" />に関連するパラメーター、<paramref name="rightValue" />パラメーターで指定された方法で、<paramref name="op" />パラメーターです。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseCompareValidator.Compare%28System.String%2CSystem.String%2CSystem.Web.UI.WebControls.ValidationCompareOperator%2CSystem.Web.UI.WebControls.ValidationDataType%29>をテストするメソッドを使用するかどうかの値、`leftText`の値に関連するパラメーター、`rightText`パラメーターで指定された方法で、`op`パラメーター。 `type`パラメーターの比較対象となる値のデータ型を指定します。  
+  
+> [!NOTE]
+>  場合、`op`にパラメーターが設定されている`ValidationCompareOperator.DataTypeCheck`、このメソッドの値のみをテストする、`leftText`で指定されたデータ型のパラメーター、`type`パラメーター。 `rightText`パラメーターは無視されます。  
+  
+ このバージョンのメソッドでは、現在のカルチャで使用される形式を使用して値を比較します。 カルチャに依存しない形式を使用して値を比較する場合、<xref:System.Web.UI.WebControls.BaseCompareValidator.Compare%28System.String%2CSystem.Boolean%2CSystem.String%2CSystem.Boolean%2CSystem.Web.UI.WebControls.ValidationCompareOperator%2CSystem.Web.UI.WebControls.ValidationDataType%29?displayProperty=nameWithType>バージョンのこのメソッドはオーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Compare">
+      <MemberSignature Language="C#" Value="protected static bool Compare (string leftText, bool cultureInvariantLeftText, string rightText, bool cultureInvariantRightText, System.Web.UI.WebControls.ValidationCompareOperator op, System.Web.UI.WebControls.ValidationDataType type);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig bool Compare(string leftText, bool cultureInvariantLeftText, string rightText, bool cultureInvariantRightText, valuetype System.Web.UI.WebControls.ValidationCompareOperator op, valuetype System.Web.UI.WebControls.ValidationDataType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseCompareValidator.Compare(System.String,System.Boolean,System.String,System.Boolean,System.Web.UI.WebControls.ValidationCompareOperator,System.Web.UI.WebControls.ValidationDataType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="leftText" Type="System.String" />
+        <Parameter Name="cultureInvariantLeftText" Type="System.Boolean" />
+        <Parameter Name="rightText" Type="System.String" />
+        <Parameter Name="cultureInvariantRightText" Type="System.Boolean" />
+        <Parameter Name="op" Type="System.Web.UI.WebControls.ValidationCompareOperator" />
+        <Parameter Name="type" Type="System.Web.UI.WebControls.ValidationDataType" />
+      </Parameters>
+      <Docs>
+        <param name="leftText">演算子の左側にある値。</param>
+        <param name="cultureInvariantLeftText">
+          <see langword="true" />左側の値はカルチャに依存しない形式に変換するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="rightText">演算子の右側にある値。</param>
+        <param name="cultureInvariantRightText">
+          <see langword="true" />右側の値はカルチャに依存しない形式に変換するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="op"><see cref="T:System.Web.UI.WebControls.ValidationCompareOperator" /> 値のいずれか。</param>
+        <param name="type"><see cref="T:System.Web.UI.WebControls.ValidationDataType" /> 値のいずれか。</param>
+        <summary>指定されたオペレーターおよび検証データ型を使用して 2 つの文字列を比較します。 このバージョンのオーバー ロードでは、カルチャに依存しない形式を使用して値を比較するかどうかを指定することができます。</summary>
+        <returns>
+          <see langword="true" />場合、<paramref name="leftValue" />に関連するパラメーター、<paramref name="rightValue" />パラメーターで指定された方法で、<paramref name="op" />パラメーターです。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseCompareValidator.Compare%28System.String%2CSystem.Boolean%2CSystem.String%2CSystem.Boolean%2CSystem.Web.UI.WebControls.ValidationCompareOperator%2CSystem.Web.UI.WebControls.ValidationDataType%29>をテストするメソッドを使用するかどうかの値、`leftText`の値に関連するパラメーター、`rightText`パラメーターで指定された方法で、`op`パラメーター。 `type`パラメーターの比較対象となる値のデータ型を指定します。  
+  
+> [!NOTE]
+>  場合、`op`にパラメーターが設定されている`ValidationCompareOperator.DataTypeCheck`、このメソッドの値のみをテストする、`leftText`で指定されたデータ型のパラメーター、`type`パラメーター。 `rightText`パラメーターは無視されます。  
+  
+ カルチャに依存しない形式を使用して値を比較することを示すに`true`の`cultureInvariantLeftText`と`cultureInvariantRightText`パラメーターです。 それ以外の場合、値が比較されます、現在のカルチャで使用される形式です。 現在のカルチャで使用される形式を使用して値を比較するときに、使用を検討して、<xref:System.Web.UI.WebControls.BaseCompareValidator.Compare%28System.String%2CSystem.String%2CSystem.Web.UI.WebControls.ValidationCompareOperator%2CSystem.Web.UI.WebControls.ValidationDataType%29?displayProperty=nameWithType>バージョンのこのメソッドはオーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Convert">
+      <MemberSignature Language="C#" Value="protected static bool Convert (string text, System.Web.UI.WebControls.ValidationDataType type, out object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig bool Convert(string text, valuetype System.Web.UI.WebControls.ValidationDataType type, [out] object&amp; value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseCompareValidator.Convert(System.String,System.Web.UI.WebControls.ValidationDataType,System.Object@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="type" Type="System.Web.UI.WebControls.ValidationDataType" />
+        <Parameter Name="value" Type="System.Object&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="text">変換するテキストです。</param>
+        <param name="type"><see cref="T:System.Web.UI.WebControls.ValidationDataType" /> 値のいずれか。</param>
+        <param name="value">このメソッドが戻るとき、変換結果を持つオブジェクトを格納します。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>指定したテキストを指定したデータ型のオブジェクトに変換します。 このバージョン、オーバー ロードされたメソッドに変換通貨、double、および現在のカルチャで使用される形式を使用して日付値。</summary>
+        <returns>
+          <see langword="true" />変換が成功した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseCompareValidator.Convert%28System.String%2CSystem.Web.UI.WebControls.ValidationDataType%2CSystem.Object%40%29>テキストを指定したデータ型のオブジェクトに変換するメソッドを使用します。 このメソッドを返しますが`true`または`false`で変換が成功したかどうかを示す、変換後の値が格納されている、 `value` `out`パラメーター。  
+  
+> [!NOTE]
+>  変換が成功した場合、`value`にパラメーターが設定されている`null`です。  
+  
+ このバージョンのメソッドでは、現在のカルチャで使用される形式を使用して値に変換します。 カルチャに依存しない形式を使用して値に変換する、<xref:System.Web.UI.WebControls.BaseCompareValidator.Convert%28System.String%2CSystem.Web.UI.WebControls.ValidationDataType%2CSystem.Boolean%2CSystem.Object%40%29?displayProperty=nameWithType>バージョンのこのメソッドはオーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Convert">
+      <MemberSignature Language="C#" Value="protected static bool Convert (string text, System.Web.UI.WebControls.ValidationDataType type, bool cultureInvariant, out object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig bool Convert(string text, valuetype System.Web.UI.WebControls.ValidationDataType type, bool cultureInvariant, [out] object&amp; value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseCompareValidator.Convert(System.String,System.Web.UI.WebControls.ValidationDataType,System.Boolean,System.Object@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="type" Type="System.Web.UI.WebControls.ValidationDataType" />
+        <Parameter Name="cultureInvariant" Type="System.Boolean" />
+        <Parameter Name="value" Type="System.Object&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="text">変換するテキストです。</param>
+        <param name="type"><see cref="T:System.Web.UI.WebControls.ValidationDataType" /> 値のいずれか。</param>
+        <param name="cultureInvariant">
+          <see langword="true" />値はカルチャに依存しない形式に変換するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="value">このメソッドが戻るとき、変換結果を持つオブジェクトを格納します。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>指定したテキストを指定したデータ型のオブジェクトに変換します。 このバージョンのオーバー ロードされたメソッドでは、カルチャに依存しない形式を使用して値を変換するかどうかを指定することができます。</summary>
+        <returns>
+          <see langword="true" />変換が成功した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseCompareValidator.Convert%28System.String%2CSystem.Web.UI.WebControls.ValidationDataType%2CSystem.Boolean%2CSystem.Object%40%29>テキストを指定したデータ型のオブジェクトに変換するメソッドを使用します。 このメソッドを返しますが`true`または`false`で変換が成功したかどうかを示す、変換後の値が格納されている、 `value` `out`パラメーター。  
+  
+> [!NOTE]
+>  変換が成功した場合、`value`にパラメーターが設定されている`null`です。  
+  
+ カルチャに依存しない形式を使用して値を変換するかを示すに`true`の`cultureInvariant`パラメーターです。 それ以外の場合、値が変換、現在のカルチャで使用される形式を使用します。 現在のカルチャで使用される形式を使用して値を変換するときに、使用を検討して、<xref:System.Web.UI.WebControls.BaseCompareValidator.Convert%28System.String%2CSystem.Web.UI.WebControls.ValidationDataType%2CSystem.Object%40%29?displayProperty=nameWithType>バージョンのこのメソッドはオーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CultureInvariantValues">
+      <MemberSignature Language="C#" Value="public bool CultureInvariantValues { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CultureInvariantValues" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseCompareValidator.CultureInvariantValues" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または値が比較する前に、カルチャに依存しない形式に変換するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />比較する前に、値をカルチャに依存しない形式に変換するにはそれ以外の場合、<see langword="false" />です。既定値は<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.BaseCompareValidator.CultureInvariantValues%2A>プロパティに設定されている`true`、いない厳密に型指定されるコントロールのプロパティは、比較する前に、カルチャに依存しない形式に変換されます。 このプロパティに設定するときに`false`値が、現在のカルチャの形式に変換します。 <xref:System.Web.UI.WebControls.BaseCompareValidator.CultureInvariantValues%2A>プロパティでは、Web ページ上のコントロールのユーザーによって入力された値には影響しません。  
+  
+ テーマまたはスタイル シート テーマによって、このプロパティを設定することはできません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CutoffYear">
+      <MemberSignature Language="C#" Value="protected static int CutoffYear { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 CutoffYear" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseCompareValidator.CutoffYear" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>2 桁の年を表すことができる最大の年を取得します。</summary>
+        <value>2 桁の年を表すことができる最大の年。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、 <xref:System.Web.UI.WebControls.BaseCompareValidator.CutoffYear%2A> 100 年の範囲内で 2 桁の年を表すことができる最大の年を決定するプロパティです。 たとえば、このプロパティに値が含まれている場合`2029`1930 に 2029 年を表すことができます、2 桁の年を使用します。 Two digit year 30 は 1930 と解釈され、2029 29 と解釈されます。 このプロパティの値を直接変更することはできません。ただし、2 桁の年を設定して表現できる最大の年を変更することができます、<xref:System.Globalization.Calendar.TwoDigitYearMax%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DetermineRenderUplevel">
+      <MemberSignature Language="C#" Value="protected override bool DetermineRenderUplevel ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool DetermineRenderUplevel() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseCompareValidator.DetermineRenderUplevel" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>検証コントロールを新しい (「アップレベル」) ブラウザーに表示できるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />"高レベル"のブラウザー以外の検証コントロールを表示する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseCompareValidator.DetermineRenderUplevel%2A>メソッドは、主にで使用されるヘルパー関数では、<xref:System.Web.UI.WebControls.BaseValidator.RenderUplevel%2A>クライアントのブラウザーが「上位」の表示 (新しいブラウザーに表示) をサポートしているかどうかを決定するプロパティです。 <xref:System.Web.UI.WebControls.BaseCompareValidator>クラスを返すには、このメソッドをオーバーライド`false`現在のカルチャは、構成のグレゴリオ暦カレンダーを使用している場合。  
+  
+> [!NOTE]
+>  このメソッドは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合、<see cref="M:System.Web.UI.WebControls.BaseCompareValidator.DetermineRenderUplevel" />メソッド、基底クラスに対応するメソッドを呼び出してください。 それ以外の場合、基底クラスで定義された条件がバイパスされます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDateElementOrder">
+      <MemberSignature Language="C#" Value="protected static string GetDateElementOrder ();" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig string GetDateElementOrder() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseCompareValidator.GetDateElementOrder" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のカルチャの日付の値で、月、日、および年が表示される順序を決定します。</summary>
+        <returns>現在のカルチャの日付の値で、月、日、および年が表示される順序を表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 月、日、および日付値の年は、現在のカルチャ設定によって異なる順序で表示できます。 <xref:System.Web.UI.WebControls.BaseCompareValidator.GetDateElementOrder%2A>メソッドを使用してこれらの値が表示される順序を決定します。 次の表は、このメソッドによって返される異なる値を示します。  
+  
+|日付要素の順序|戻り値|  
+|------------------------|------------------|  
+|日、月、年|"dmy"|  
+|月、日、年|"mdy"|  
+|年、月、日|"ymd"|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFullYear">
+      <MemberSignature Language="C#" Value="protected static int GetFullYear (int shortYear);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig int32 GetFullYear(int32 shortYear) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseCompareValidator.GetFullYear(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="shortYear" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="shortYear">2 桁の年。</param>
+        <summary>指定した 2 桁の年の 4 桁の年の形式を生成します。</summary>
+        <returns>指定した 2 桁の年の 4 桁の年の表現。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BaseCompareValidator.GetFullYear%2A>指定した 2 桁の年の 4 桁の年の形式を生成する方法です。 4 桁の年の形式の値によって異なります、<xref:System.Web.UI.WebControls.BaseCompareValidator.CutoffYear%2A>プロパティで、100 年の範囲内で 2 桁の年を表すことができる最大年が含まれています。 たとえば場合、<xref:System.Web.UI.WebControls.BaseCompareValidator.CutoffYear%2A>プロパティ値を格納`2029`、 <xref:System.Web.UI.WebControls.BaseCompareValidator.GetFullYear%2A> 1930 と 2029 の年を返します。 Two digit year 30 は 1930 と解釈され、2029 29 と解釈されます。 表せる 2 桁の年を設定して年の最大値を変更することができます、<xref:System.Globalization.Calendar.TwoDigitYearMax%2A?displayProperty=nameWithType>プロパティです。  
+  
+> [!NOTE]
+>  このメソッドはため`static`、- たとえば、クラス名とメソッド名を修飾することにより、クラスのインスタンスを作成しなくても行うこともできます`BaseCompareValidator.GetFullYear`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.ValidationDataType Type { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.ValidationDataType Type" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseCompareValidator.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ValidationDataType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または比較が行われる前に、比較対象の値に変換されるデータ型を設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.ValidationDataType" /> 列挙値のいずれか。 既定値は <see langword="String" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BaseCompareValidator.Type%2A>プロパティの比較に使用するデータ型を指定します。 <xref:System.Web.UI.WebControls.BaseCompareValidator.Type%2A>プロパティは、さまざまな比較検証コントロールによって異なる方法で使用します。  
+  
+> [!IMPORTANT]
+>  ときに、<xref:System.Web.UI.WebControls.BaseCompareValidator.Type%2A>プロパティに設定されている<xref:System.Web.UI.WebControls.ValidationDataType.Date>と現在のカレンダーの種類はグレゴリオ暦以外、バリデーターにはサーバー側の検証のみを実行します。 検証コントロールのクライアント スクリプトには、構成のグレゴリオ暦カレンダーのみがサポートしています。  
+  
+ たとえば、<xref:System.Web.UI.WebControls.RangeValidator>比較を実行する前に、コントロールをすべて比較する値 (上限の境界、下限の境界、および入力コントロールの値) が指定されたデータ型に変換されます。 ただし、使用する場合、<xref:System.Web.UI.WebControls.CompareValidator>を制御し、設定、<xref:System.Web.UI.WebControls.CompareValidator.Operator%2A>プロパティを`ValidationCompareOperator.DataTypeCheck`、入力コントロールの値のみが指定されたデータ型に変換します。  
+  
+> [!NOTE]
+>  検証コントロールに関連付けられた入力コントロールの値は、指定したデータ型に変換できない、検証が失敗します。 <xref:System.Web.UI.WebControls.BaseValidator.IsValid%2A>検証コントロールのプロパティに設定されて`false`です。  
+  
+ 次の表に、ために使用できる値、<xref:System.Web.UI.WebControls.BaseCompareValidator.Type%2A>プロパティです。  
+  
+|データ型|説明|  
+|---------------|-----------------|  
+|`String`|文字列データ型を指定します。|  
+|`Integer`|32 ビット符号付き整数データ型を指定します。|  
+|`Double`|倍精度浮動小数点数値データ型を指定します。|  
+|`Date`|Date データ型を指定します。|  
+|`Currency`|通貨データ型を指定します。|  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.BaseCompareValidator.Type%2A>比較が行われる前に、比較対象の値に変換されるデータ型を指定するプロパティです。  
+  
+ [!code-aspx-csharp[Classic CompareValidator Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic CompareValidator Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic CompareValidator Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic CompareValidator Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定されたデータ型は、のいずれかのではありません、<see cref="T:System.Web.UI.WebControls.ValidationDataType" />値。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,101 @@
+<Type Name="SearchOption" FullName="System.IO.SearchOption">
+  <TypeSignature Language="C#" Value="public enum SearchOption" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed SearchOption extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.IO.SearchOption" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.FileSystem</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>現在のディレクトリ、または現在のディレクトリとすべてのサブディレクトリを検索するかどうかを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 検索の AllDirectories を選択して、ディレクトリ構造には、ループを作成するリンクが含まれています場合、検索操作が無限ループに入ります。  
+  
+   
+  
+## Examples  
+ 次の例には、すべてのディレクトリととしてでは文字"c"で始まるファイルが一覧表示"c:\\"です。 この例では、<xref:System.IO.SearchOption.AllDirectories>最上位レベルのディレクトリのみを検索するかを指定するために使用します。  
+  
+ [!code-cpp[System.IO.DirectoryInfo_SearchOptions#00](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.DirectoryInfo_SearchOptions/cpp/searchoption.cpp#00)]
+ [!code-csharp[System.IO.DirectoryInfo_SearchOptions#00](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.DirectoryInfo_SearchOptions/cs/searchoption.cs#00)]
+ [!code-vb[System.IO.DirectoryInfo_SearchOptions#00](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.DirectoryInfo_SearchOptions/vb/searchoption.vb#00)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AllDirectories">
+      <MemberSignature Language="C#" Value="AllDirectories" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.SearchOption AllDirectories = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.SearchOption.AllDirectories" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.SearchOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検索操作では、現在のディレクトリとそのすべてのサブディレクトリが含まれています。 このオプションには、検索にマウントされたドライブとシンボリック リンクなどの再解析ポイントが含まれています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TopDirectoryOnly">
+      <MemberSignature Language="C#" Value="TopDirectoryOnly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.SearchOption TopDirectoryOnly = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.SearchOption.TopDirectoryOnly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.SearchOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検索操作では、現在のディレクトリのみが含まれています。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,196 @@
+<Type Name="Group" FullName="System.Text.RegularExpressions.Group">
+  <TypeSignature Language="C#" Value="public class Group : System.Text.RegularExpressions.Capture" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit Group extends System.Text.RegularExpressions.Capture" />
+  <TypeSignature Language="DocId" Value="T:System.Text.RegularExpressions.Group" />
+  <AssemblyInfo>
+    <AssemblyName>System.Text.RegularExpressions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Text.RegularExpressions.Capture</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>単一キャプチャ グループによるキャプチャの結果を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キャプチャ グループは、量化子により、0、1、または単一の一致で文字列をこれ以上をキャプチャできます。 (詳細については、次を参照してください[量指定子](~/docs/standard/base-types/quantifiers-in-regular-expressions.md)。)。単一キャプチャ グループに一致するすべての部分文字列はから利用可能な<xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType>プロパティです。 キャプチャされた最後の部分文字列に関する情報はから直接アクセスできる、`Value`と`Index`プロパティです。 (である、<xref:System.Text.RegularExpressions.Group>インスタンスはによって返されるコレクションの最後の項目と同等、<xref:System.Text.RegularExpressions.Group.Captures%2A>プロパティで、キャプチャ グループによって行われた最後のキャプチャが反映されます)。  
+  
+ この間の関係を明確にする例が役立ちます、<xref:System.Text.RegularExpressions.Group>オブジェクトおよび<xref:System.Text.RegularExpressions.CaptureCollection?displayProperty=nameWithType>によって返される、<xref:System.Text.RegularExpressions.Group.Captures%2A>プロパティです。 正規表現パターン`(\b(\w+?)[,:;]?\s?)+[?.!]`全体の文に一致します。 正規表現は、次の表に示すように定義されています。  
+  
+|パターン|説明|  
+|-------------|-----------------|  
+|`\b`|ワード境界から照合を開始します。|  
+|`(\w+?)`|1 つ以上 (ただし、できるだけ少ない文字数) の単語文字と一致します。 これは、2 つ目の (内部) キャプチャ グループです。 (最初のキャプチャ グループが含まれています、`\b`言語要素です)。|  
+|`[,:;]?`|コンマ、コロン、またはセミコロンの 0 回または 1 回を一致します。|  
+|`\s?`|空白文字の 0 回または 1 回を一致します。|  
+|`(\b(\w+?)[,:;]?\s?)+`|1 回以上の単語の境界、1 つ以上の単語文字、区切り記号および空白文字で構成されるパターンに一致します。 これが最初のキャプチャ グループです。|  
+|`[?.!]`|出現するすべてのピリオド、疑問符 (?)、または感嘆符に一致します。|  
+  
+ この正規表現パターンでサブパターン`(\w+?)`文の内部の複数の単語に一致するよう設計されています。 ただしの値、<xref:System.Text.RegularExpressions.Group>だけで、最後に一致するオブジェクトが表す`(\w+?)`キャプチャすると、一方、<xref:System.Text.RegularExpressions.Group.Captures%2A>プロパティから返される、<xref:System.Text.RegularExpressions.CaptureCollection>キャプチャされたすべてのテキストを表すです。 出力に示す、 <xref:System.Text.RegularExpressions.CaptureCollection> 2 番目のキャプチャ グループ 4 つのオブジェクトを格納します。 これらの最後のタスクに対応する、<xref:System.Text.RegularExpressions.Group>オブジェクト。  
+  
+ [!code-csharp[System.Text.RegularExpressions.Group.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.text.regularexpressions.group.class/cs/groupandcaptures1.cs#1)]
+ [!code-vb[System.Text.RegularExpressions.Group.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.text.regularexpressions.group.class/vb/groupandcaptures1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Captures">
+      <MemberSignature Language="C#" Value="public System.Text.RegularExpressions.CaptureCollection Captures { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Text.RegularExpressions.CaptureCollection Captures" />
+      <MemberSignature Language="DocId" Value="P:System.Text.RegularExpressions.Group.Captures" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.RegularExpressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.RegularExpressions.CaptureCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最も内側左端優先順で、キャプチャ グループに一致するすべてのキャプチャのコレクションを取得 (または最も内側の右端にある最初の順序で、正規表現が変更された場合、<see cref="F:System.Text.RegularExpressions.RegexOptions.RightToLeft" />オプション)。 コレクションには、0 個以上の項目があります。</summary>
+        <value>グループに一致する部分文字列のコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 量指定子がキャプチャに適用されていない場合にグループ化、によって返されるコレクション、<xref:System.Text.RegularExpressions.Group.Captures%2A>プロパティには、1 つが含まれています。<xref:System.Text.RegularExpressions.Capture>として同じサブ文字列に関する情報を提供するオブジェクト、<xref:System.Text.RegularExpressions.Group>オブジェクト。 この例を次に示します。 正規表現を定義`\b(\w+)\b`、1 つの word の文から抽出します。 <xref:System.Text.RegularExpressions.Group>オブジェクトは、"This"、および 1 つのオブジェクトに単語をキャプチャ、<xref:System.Text.RegularExpressions.CaptureCollection>同じキャプチャについての情報が含まれています。  
+  
+ [!code-csharp[System.Text.RegularExpressions.Group.Captures#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.text.regularexpressions.group.captures/cs/captures1.cs#1)]
+ [!code-vb[System.Text.RegularExpressions.Group.Captures#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.text.regularexpressions.group.captures/vb/captures1.vb#1)]  
+  
+ 実際のユーティリティ、<xref:System.Text.RegularExpressions.Group.Captures%2A>プロパティは、量指定子がキャプチャ グループに適用されているため、グループ、1 つの正規表現での複数の部分文字列をキャプチャするときに発生します。 ここで、<xref:System.Text.RegularExpressions.Group>オブジェクトがキャプチャされた最後の部分文字列に関する情報を格納され、<xref:System.Text.RegularExpressions.Group.Captures%2A>プロパティには、グループによってキャプチャされたすべての部分文字列に関する情報が含まれています。 次の例では、正規表現で`\b(\w+\s*)+\.`ピリオドで終了する文全体に一致します。 グループ`(\w+\s*)+`コレクション内の個々 の単語をキャプチャします。 <xref:System.Text.RegularExpressions.Group>コレクションにはに関する情報のみをキャプチャされた最後の部分文字列が含まれています、センテンス内「文の」の最後の単語をキャプチャします。 ただし、グループによってキャプチャされた各単語がによって返されるコレクションから利用可能な<xref:System.Text.RegularExpressions.Group.Captures%2A>プロパティです。  
+  
+ [!code-csharp[System.Text.RegularExpressions.Group.Captures#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.text.regularexpressions.group.captures/cs/captures2.cs#2)]
+ [!code-vb[System.Text.RegularExpressions.Group.Captures#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.text.regularexpressions.group.captures/vb/captures2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Text.RegularExpressions.Group.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.RegularExpressions</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のインスタンスで表すキャプチャ グループの名前を返します。</summary>
+        <value>現在のインスタンスで表されるキャプチャ グループの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Success">
+      <MemberSignature Language="C#" Value="public bool Success { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Success" />
+      <MemberSignature Language="DocId" Value="P:System.Text.RegularExpressions.Group.Success" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.RegularExpressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一致が成功したかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />一致が成功した場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Success`プロパティは、少なくとも 1 つの部分文字列がこのグループによってキャプチャされた場合は true です。 ブール式と同じである (Group.Captures.Count > 0) です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Synchronized">
+      <MemberSignature Language="C#" Value="public static System.Text.RegularExpressions.Group Synchronized (System.Text.RegularExpressions.Group inner);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Text.RegularExpressions.Group Synchronized(class System.Text.RegularExpressions.Group inner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.RegularExpressions.Group.Synchronized(System.Text.RegularExpressions.Group)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.RegularExpressions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.RegularExpressions.Group</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inner" Type="System.Text.RegularExpressions.Group" />
+      </Parameters>
+      <Docs>
+        <param name="inner">入力<see cref="T:System.Text.RegularExpressions.Group" />オブジェクト。</param>
+        <summary>返します、<see langword="Group" />指定と同じであるオブジェクトを安全に複数のスレッド間で共有します。</summary>
+        <returns>正規表現<see langword="Group" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="inner" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

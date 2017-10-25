@@ -1,0 +1,92 @@
+<Type Name="ReferralChasingOptions" FullName="System.DirectoryServices.Protocols.ReferralChasingOptions">
+  <TypeSignature Language="C#" Value="public enum ReferralChasingOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ReferralChasingOptions extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.Protocols.ReferralChasingOptions" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.Protocols.ReferralChasingOptions" />列挙型、およびその参照の追跡を方法を指定します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="All">
+      <MemberSignature Language="C#" Value="All" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.Protocols.ReferralChasingOptions All = int32(96)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.Protocols.ReferralChasingOptions.All" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.Protocols.ReferralChasingOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>いずれかの参照に、従属または外部の種類を追跡します。 値は、96 または 0x60 です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="External">
+      <MemberSignature Language="C#" Value="External" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.Protocols.ReferralChasingOptions External = int32(64)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.Protocols.ReferralChasingOptions.External" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.Protocols.ReferralChasingOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>外部参照を追跡します。 値は、64 ビット、または 0x40 と同じです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.Protocols.ReferralChasingOptions None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.Protocols.ReferralChasingOptions.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.Protocols.ReferralChasingOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照先のサーバーを追跡しません。 このオプションを設定すると、クライアントが紹介プロセスの他のサーバーに接続できなくなります。 値は、0 または 0x0 と同じです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Subordinate">
+      <MemberSignature Language="C#" Value="Subordinate" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.Protocols.ReferralChasingOptions Subordinate = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.Protocols.ReferralChasingOptions.Subordinate" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.Protocols.ReferralChasingOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディレクトリ ツリー内の下位の名前付けコンテキストを下位参照のみを追跡します。 ADSI LDAP プロバイダーは、常に、このフラグ ページング検索をオフにします。 値は、32、または 0x20 と同じです。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

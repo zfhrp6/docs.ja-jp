@@ -1,0 +1,120 @@
+<Type Name="UpdateProgressAssociatedUpdatePanelIDConverter" FullName="System.Web.UI.Design.UpdateProgressAssociatedUpdatePanelIDConverter">
+  <TypeSignature Language="C#" Value="public class UpdateProgressAssociatedUpdatePanelIDConverter : System.ComponentModel.StringConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UpdateProgressAssociatedUpdatePanelIDConverter extends System.ComponentModel.StringConverter" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.UpdateProgressAssociatedUpdatePanelIDConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.StringConverter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コントロールに現在のコンテナーの Id の一覧を取得する型コンバーターを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.UpdateProgressAssociatedUpdatePanelIDConverter> クラスは <xref:System.ComponentModel.StringConverter> クラスから派生します。 コントロールをデザイン時環境でプロパティの編集コントロールに表示される Id の一覧を提供します。  
+  
+ 型コンバーターの詳細については、次を参照してください。[する方法: 実行する型コンバーターを実装する](http://msdn.microsoft.com/library/90373a3f-d8c8-492d-841c-945d62393c56)と[一般的な型変換](http://msdn.microsoft.com/library/49253ae6-7657-4810-82ab-1176a6feeada)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UpdateProgressAssociatedUpdatePanelIDConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.UpdateProgressAssociatedUpdatePanelIDConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.UpdateProgressAssociatedUpdatePanelIDConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  実行する型コンバーターに直接アクセスしません。 代わりに、適切なコンバーターを使用して、<xref:System.ComponentModel.TypeDescriptor>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValues">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.TypeConverter.StandardValuesCollection GetStandardValues (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ComponentModel.TypeConverter/StandardValuesCollection GetStandardValues(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.UpdateProgressAssociatedUpdatePanelIDConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.TypeConverter+StandardValuesCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">このコンバーターが呼び出されている環境の詳細については使用できるコンテキスト。 このパラメーターとそのプロパティを指定できます<see langword="null" />です。</param>
+        <summary>指定した形式コンテキストの <see cref="T:System.ComponentModel.Design.IDesignerHost" /> オブジェクト内のコンテナーから、コントロール ID のコレクションを返します。</summary>
+        <returns>現在のコンテナー内のコントロールのコントロール Id を表す文字列のコレクション。 現在、コンテナー内のコントロールが存在しない場合、メソッドは空のコレクションを返します。 コンテキストが <see langword="null" />、または現在コンテナーが存在しない場合は、<see langword="null" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValuesExclusive">
+      <MemberSignature Language="C#" Value="public override bool GetStandardValuesExclusive (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool GetStandardValuesExclusive(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.UpdateProgressAssociatedUpdatePanelIDConverter.GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">書式指定コンテキスト。</param>
+        <summary>返します。 標準のコレクションの値をするかどうかを示す値が返されますから<see cref="M:System.Web.UI.Design.UpdateProgressAssociatedUpdatePanelIDConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)" />は、指定したコンテキストの使用可能な値の排他的なリスト。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection" />から返された<see cref="M:System.Web.UI.Design.UpdateProgressAssociatedUpdatePanelIDConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)" />; 使用可能な値の排他的なリストは、<see langword="false" />他の値も有効である場合。 既定値は、<see langword="false" /> です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValuesSupported">
+      <MemberSignature Language="C#" Value="public override bool GetStandardValuesSupported (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool GetStandardValuesSupported(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.UpdateProgressAssociatedUpdatePanelIDConverter.GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">書式指定コンテキスト。</param>
+        <summary>このコンバーターが一覧から選択できるコントロールの ID 値のセットをサポートするかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合<see cref="M:System.Web.UI.Design.UpdateProgressAssociatedUpdatePanelIDConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)" />共通コントロールのセットのオブジェクトがサポートする ID 値を検索すると呼ばれる、それ以外にする必要があります<see langword="false" />です。 既定値は、<see langword="true" /> です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

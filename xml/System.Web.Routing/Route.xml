@@ -1,0 +1,402 @@
+<Type Name="Route" FullName="System.Web.Routing.Route">
+  <TypeSignature Language="C#" Value="public class Route : System.Web.Routing.RouteBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Route extends System.Web.Routing.RouteBase" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Routing.Route" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Routing.RouteBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("System.Web.Routing, Version=3.5.0.0, Culture=Neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ルートに関する情報を取得するためのルートを定義するプロパティとメソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Routing.Route>クラスでは、ASP.NET アプリケーションでルーティングの処理方法を指定することができます。 作成する、<xref:System.Web.Routing.Route>各 URL パターンを処理できるクラスにマップする要求のパターンに対応するオブジェクトします。 ルートを追加する、<xref:System.Web.Routing.RouteTable.Routes%2A>コレクション。 アプリケーションでは、要求を受信したときに ASP.NET ルーティングでルートを反復処理、 <xref:System.Web.Routing.RouteTable.Routes%2A> URL のパターンに一致する最初のルートを検索するコレクション。  
+  
+ 設定、 <xref:System.Web.Routing.Route.Url%2A> URL パターンのプロパティです。 URL パターンは、HTTP 要求内のアプリケーション名の後にあるセグメントで構成されます。 たとえば、URL で`http://www.contoso.com/products/show/beverages`、パターンに適用`products/show/beverages`です。 3 つのパターン セグメントなど`{controller}/{action}/{id}`、URL と一致`http://www.contoso.com/products/show/beverages`です。 各セグメントで区切られた、`/`文字です。 セグメントが中かっこで囲まれている (`{`と`}`)、セグメント、URL パラメーターと呼びます。 ASP.NET ルーティング要求から値を取得し、URL パラメーターに割り当てます。 前の例では、URL パラメーター`action`値が割り当てられている`show`です。 場合は、セグメントは中かっこで囲まれていない、値は、リテラル値として扱われます。  
+  
+ 設定、<xref:System.Web.Routing.Route.Defaults%2A>プロパティを<xref:System.Web.Routing.RouteValueDictionary>パラメーターが URL または URL でパラメーター化されていない追加の値を設定するにはない場合に使用される値を含むオブジェクト。 設定、<xref:System.Web.Routing.Route.Constraints%2A>プロパティを<xref:System.Web.Routing.RouteValueDictionary>いずれかの正規表現である値を格納しているオブジェクトまたは<xref:System.Web.Routing.IRouteConstraint>オブジェクト。 これらの値は、パラメーターの値が有効かどうかを判断に使用されます。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Web.Routing.Route>オブジェクトを追加して、<xref:System.Web.Routing.RouteTable.Routes%2A>プロパティです。  
+  
+ [!code-csharp[System.Web.Routing.RouteTable.Routes#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Routing.RouteTable.Routes/cs/Global.asax#1)]
+ [!code-vb[System.Web.Routing.RouteTable.Routes#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Routing.RouteTable.Routes/vb/Global.asax#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Route (string url, System.Web.Routing.IRouteHandler routeHandler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string url, class System.Web.Routing.IRouteHandler routeHandler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.Route.#ctor(System.String,System.Web.Routing.IRouteHandler)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="routeHandler" Type="System.Web.Routing.IRouteHandler" />
+      </Parameters>
+      <Docs>
+        <param name="url">ルートの URL パターン。</param>
+        <param name="routeHandler">ルートの要求を処理するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Routing.Route" />クラスは、指定した URL パターンとハンドラー クラスを使用しています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Web.Routing.Route>オブジェクトを追加して、<xref:System.Web.Routing.RouteTable.Routes%2A>プロパティです。  
+  
+ [!code-csharp[System.Web.Routing.RouteTable.Routes#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Routing.RouteTable.Routes/cs/Global.asax#1)]
+ [!code-vb[System.Web.Routing.RouteTable.Routes#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Routing.RouteTable.Routes/vb/Global.asax#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Route (string url, System.Web.Routing.RouteValueDictionary defaults, System.Web.Routing.IRouteHandler routeHandler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string url, class System.Web.Routing.RouteValueDictionary defaults, class System.Web.Routing.IRouteHandler routeHandler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.Route.#ctor(System.String,System.Web.Routing.RouteValueDictionary,System.Web.Routing.IRouteHandler)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="defaults" Type="System.Web.Routing.RouteValueDictionary" />
+        <Parameter Name="routeHandler" Type="System.Web.Routing.IRouteHandler" />
+      </Parameters>
+      <Docs>
+        <param name="url">ルートの URL パターン。</param>
+        <param name="defaults">URL で欠落しているパラメーターに使用する値。</param>
+        <param name="routeHandler">ルートの要求を処理するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Routing.Route" />クラスは、指定した URL パターン、既定パラメーター値、およびハンドラー クラスを使用しています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Route (string url, System.Web.Routing.RouteValueDictionary defaults, System.Web.Routing.RouteValueDictionary constraints, System.Web.Routing.IRouteHandler routeHandler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string url, class System.Web.Routing.RouteValueDictionary defaults, class System.Web.Routing.RouteValueDictionary constraints, class System.Web.Routing.IRouteHandler routeHandler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.Route.#ctor(System.String,System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteValueDictionary,System.Web.Routing.IRouteHandler)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="defaults" Type="System.Web.Routing.RouteValueDictionary" />
+        <Parameter Name="constraints" Type="System.Web.Routing.RouteValueDictionary" />
+        <Parameter Name="routeHandler" Type="System.Web.Routing.IRouteHandler" />
+      </Parameters>
+      <Docs>
+        <param name="url">ルートの URL パターン。</param>
+        <param name="defaults">URL にすべてのパラメーターが含まれていない場合に使用する値。</param>
+        <param name="constraints">URL パラメーターとして有効な値を指定する正規表現。</param>
+        <param name="routeHandler">ルートの要求を処理するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Routing.Route" />クラスは、指定した URL パターン、既定のパラメーター値、制約、およびハンドラー クラスを使用しています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Route (string url, System.Web.Routing.RouteValueDictionary defaults, System.Web.Routing.RouteValueDictionary constraints, System.Web.Routing.RouteValueDictionary dataTokens, System.Web.Routing.IRouteHandler routeHandler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string url, class System.Web.Routing.RouteValueDictionary defaults, class System.Web.Routing.RouteValueDictionary constraints, class System.Web.Routing.RouteValueDictionary dataTokens, class System.Web.Routing.IRouteHandler routeHandler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.Route.#ctor(System.String,System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteValueDictionary,System.Web.Routing.IRouteHandler)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="defaults" Type="System.Web.Routing.RouteValueDictionary" />
+        <Parameter Name="constraints" Type="System.Web.Routing.RouteValueDictionary" />
+        <Parameter Name="dataTokens" Type="System.Web.Routing.RouteValueDictionary" />
+        <Parameter Name="routeHandler" Type="System.Web.Routing.IRouteHandler" />
+      </Parameters>
+      <Docs>
+        <param name="url">ルートの URL パターン。</param>
+        <param name="defaults">URL にすべてのパラメーターが含まれていない場合に使用する値。</param>
+        <param name="constraints">URL パラメーターとして有効な値を指定する正規表現。</param>
+        <param name="dataTokens">ルート ハンドラーに渡されるが、ルートが特定の URL パターンに一致するかどうかの判定には使用されないカスタム値。 これらの値はルート ハンドラーに渡され、要求の処理に使用できます。</param>
+        <param name="routeHandler">ルートの要求を処理するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Routing.Route" />クラスは、指定した URL パターン、既定のパラメーター値、制約、カスタム値、およびハンドラー クラスを使用しています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Constraints">
+      <MemberSignature Language="C#" Value="public System.Web.Routing.RouteValueDictionary Constraints { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Routing.RouteValueDictionary Constraints" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Routing.Route.Constraints" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Routing.RouteValueDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>URL パラメーターの有効な値を指定する式のディクショナリを取得または設定します。</summary>
+        <value>パラメーター名と式が含まれるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Routing.Route.Constraints%2A>プロパティでは、ルートで処理される URL パラメーターとして指定できる値を制限することができます。 割り当てる、<xref:System.Web.Routing.RouteValueDictionary>オブジェクトを<xref:System.Web.Routing.Route.Constraints%2A>プロパティです。 内の各要素、<xref:System.Web.Routing.RouteValueDictionary>オブジェクトには、パラメーターと、次のいずれかの名前が含まれています。  
+  
+-   正規表現を定義する文字列。 正規表現が区別されません。  
+  
+-   実装するオブジェクト、<xref:System.Web.Routing.IRouteConstraint>とインターフェイスが含まれています、<xref:System.Web.Routing.IRouteConstraint.Match%2A>メソッドです。  
+  
+ <xref:System.Web.Routing.HttpMethodConstraint> クラスは、<xref:System.Web.Routing.IRouteConstraint> インターフェイスを実装します。 インスタンスを含めることができます、<xref:System.Web.Routing.HttpMethodConstraint>クラスを指定する HTTP 動詞はルートの許容の制約として。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Web.Routing.Route>オブジェクトし、設定、 <xref:System.Web.Routing.Route.Constraints%2A>、 <xref:System.Web.Routing.Route.DataTokens%2A>、および<xref:System.Web.Routing.Route.Defaults%2A>プロパティです。  
+  
+ [!code-csharp[System.Web.Routing.Route.ctor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Routing.Route.ctor/cs/Global.asax#1)]
+ [!code-vb[System.Web.Routing.Route.ctor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Routing.Route.ctor/VB/Global.asax#1)]  
+  
+ 例を次に、<xref:System.Web.Routing.Route>オブジェクト<xref:System.Web.Routing.Route.Constraints%2A>プロパティには、という名前のパラメーターが含まれています。`httpMethod`のインスタンスと、<xref:System.Web.Routing.HttpMethodConstraint>値クラス。  
+  
+ [!code-csharp[System.Web.Routing.Route.Constraints#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Routing.Route.Constraints/cs/Global.asax#1)]
+ [!code-vb[System.Web.Routing.Route.Constraints#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Routing.Route.Constraints/vb/Global.asax#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataTokens">
+      <MemberSignature Language="C#" Value="public System.Web.Routing.RouteValueDictionary DataTokens { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Routing.RouteValueDictionary DataTokens" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Routing.Route.DataTokens" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Routing.RouteValueDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルート ハンドラーに渡されるが、ルートが URL パターンに一致するかどうかの判定には使用されないカスタム値を取得または設定します。</summary>
+        <value>カスタム値を格納するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、<xref:System.Web.Routing.RouteData.DataTokens%2A>プロパティを取得またはルートが URL パターンに一致するかどうかを決定に使用されていないルートに関連付けられている値を割り当てます。 これらの値はルート ハンドラーに渡され、要求の処理に使用できます。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Web.Routing.Route>オブジェクトし、設定、 <xref:System.Web.Routing.Route.Constraints%2A>、 <xref:System.Web.Routing.Route.DataTokens%2A>、および<xref:System.Web.Routing.Route.Defaults%2A>プロパティです。  
+  
+ [!code-csharp[System.Web.Routing.Route.ctor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Routing.Route.ctor/cs/Global.asax#1)]
+ [!code-vb[System.Web.Routing.Route.ctor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Routing.Route.ctor/VB/Global.asax#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Defaults">
+      <MemberSignature Language="C#" Value="public System.Web.Routing.RouteValueDictionary Defaults { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Routing.RouteValueDictionary Defaults" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Routing.Route.Defaults" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Routing.RouteValueDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>URL にすべてのパラメーターが含まれていない場合に使用する値を取得または設定します。</summary>
+        <value>パラメーター名と既定値が含まれるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Routing.Route.Defaults%2A>プロパティでは、URL にそのパラメーターのセグメントが含まれていない場合は、URL パラメーターの値を設定することができます。 割り当てる、<xref:System.Web.Routing.RouteValueDictionary>オブジェクトを<xref:System.Web.Routing.Route.Defaults%2A>プロパティです。 内の各要素、<xref:System.Web.Routing.RouteValueDictionary>オブジェクトには、パラメーターとパラメーターが不足している場合に使用する値の名前が含まれています。  
+  
+ 定義されていないパラメーターの既定値を含めることができます、<xref:System.Web.Routing.Route.Url%2A>セグメントとしてプロパティです。 ASP.NET ルーティング要求を処理するときにこの既定値は常にルート ハンドラーに渡されます。 URL を作成すると、セグメントとして定義されていない既定のパラメーターの値が含まれて、ルートはのみ一致と見なされる、指定した値には、ルートの既定値が一致する場合。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Web.Routing.Route>オブジェクトし、設定、 <xref:System.Web.Routing.Route.Constraints%2A>、 <xref:System.Web.Routing.Route.DataTokens%2A>、および<xref:System.Web.Routing.Route.Defaults%2A>プロパティです。  
+  
+ [!code-csharp[System.Web.Routing.Route.ctor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Routing.Route.ctor/cs/Global.asax#1)]
+ [!code-vb[System.Web.Routing.Route.ctor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Routing.Route.ctor/VB/Global.asax#1)]  
+  
+ 次の例は、<xref:System.Web.Routing.Route>オブジェクト<xref:System.Web.Routing.Route.Defaults%2A>プロパティには内のパターンの一部ではないパラメーターが含まれています、<xref:System.Web.Routing.Route.Url%2A>プロパティです。  
+  
+ [!code-csharp[System.Web.Routing.Route.Defaults#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Routing.Route.Defaults/cs/Global.asax#1)]
+ [!code-vb[System.Web.Routing.Route.Defaults#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Routing.Route.Defaults/vb/Global.asax#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRouteData">
+      <MemberSignature Language="C#" Value="public override System.Web.Routing.RouteData GetRouteData (System.Web.HttpContextBase httpContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.Routing.RouteData GetRouteData(class System.Web.HttpContextBase httpContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.Route.GetRouteData(System.Web.HttpContextBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Routing.RouteData</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="httpContext" Type="System.Web.HttpContextBase" />
+      </Parameters>
+      <Docs>
+        <param name="httpContext">HTTP 要求に関する情報をカプセル化するオブジェクト。</param>
+        <summary>要求したルートに関する情報を返します。</summary>
+        <returns>ルート定義からの値を含むオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetVirtualPath">
+      <MemberSignature Language="C#" Value="public override System.Web.Routing.VirtualPathData GetVirtualPath (System.Web.Routing.RequestContext requestContext, System.Web.Routing.RouteValueDictionary values);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.Routing.VirtualPathData GetVirtualPath(class System.Web.Routing.RequestContext requestContext, class System.Web.Routing.RouteValueDictionary values) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.Route.GetVirtualPath(System.Web.Routing.RequestContext,System.Web.Routing.RouteValueDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Routing.VirtualPathData</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="requestContext" Type="System.Web.Routing.RequestContext" />
+        <Parameter Name="values" Type="System.Web.Routing.RouteValueDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="requestContext">要求されたルートに関する情報をカプセル化するオブジェクト。</param>
+        <param name="values">ルートのパラメーターを格納するオブジェクト。</param>
+        <summary>ルートと関連付けられている URL に関する情報を返します。</summary>
+        <returns>ルートに関連付けられている URL に関する情報を格納するオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessConstraint">
+      <MemberSignature Language="C#" Value="protected virtual bool ProcessConstraint (System.Web.HttpContextBase httpContext, object constraint, string parameterName, System.Web.Routing.RouteValueDictionary values, System.Web.Routing.RouteDirection routeDirection);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool ProcessConstraint(class System.Web.HttpContextBase httpContext, object constraint, string parameterName, class System.Web.Routing.RouteValueDictionary values, valuetype System.Web.Routing.RouteDirection routeDirection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.Route.ProcessConstraint(System.Web.HttpContextBase,System.Object,System.String,System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteDirection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="httpContext" Type="System.Web.HttpContextBase" />
+        <Parameter Name="constraint" Type="System.Object" />
+        <Parameter Name="parameterName" Type="System.String" />
+        <Parameter Name="values" Type="System.Web.Routing.RouteValueDictionary" />
+        <Parameter Name="routeDirection" Type="System.Web.Routing.RouteDirection" />
+      </Parameters>
+      <Docs>
+        <param name="httpContext">HTTP 要求に関する情報をカプセル化するオブジェクト。</param>
+        <param name="constraint">正規表現またはオブジェクトを使用してテストを<c>parameterName</c>です。</param>
+        <param name="parameterName">テストするパラメーターの名前。</param>
+        <param name="values">テストする値。</param>
+        <param name="routeDirection">URL ルーティングで受信要求を処理するのか、URL を作成するのかを指定する値。</param>
+        <summary>パラメーター値がそのパラメーターの制約と一致するかどうかを判別します。</summary>
+        <returns>
+          <see langword="true" />パラメーターの値が制約に一致する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="constraint" />正規表現を含む文字列ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RouteHandler">
+      <MemberSignature Language="C#" Value="public System.Web.Routing.IRouteHandler RouteHandler { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Routing.IRouteHandler RouteHandler" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Routing.Route.RouteHandler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Routing.IRouteHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルートの要求を処理するオブジェクトを取得または設定します。</summary>
+        <value>要求を処理するオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Url">
+      <MemberSignature Language="C#" Value="public string Url { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Url" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Routing.Route.Url" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルートの URL パターンを取得または設定します。</summary>
+        <value>URL へのルートを一致させるパターン。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値を代入するときに、 <xref:System.Web.Routing.Route.Url%2A> 、プロパティ、 `/` URL が解析されるときに文字が区切り文字として解釈されます。 かっこを使用して (`{}`) として参照されている変数を定義する、 *URL パラメーター*です。 URL に一致するセグメントの値は、URL パラメーターに割り当てられます。 内の値、<xref:System.Web.Routing.Route.Url%2A>中かっこで囲まれていないプロパティは、リテラル定数として扱われます。  
+  
+ `?`で文字が許可されていない、<xref:System.Web.Routing.Route.Url%2A>プロパティです。 各 URL セグメントは、区切り記号またはリテラル定数のいずれかで区切る必要があります。 使用することができます`{{`または`}}`中かっこ文字のエスケープ文字として。  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Web.Routing.Route.Url%2A>クラスのコンス トラクター内のプロパティです。 パターンには、最初のセグメントと、次の 2 つのセグメントの URL パラメーターのリテラル値"Category"が含まれています。  
+  
+ [!code-csharp[System.Web.Routing.RouteTable.Routes#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Routing.RouteTable.Routes/cs/Global.asax#1)]
+ [!code-vb[System.Web.Routing.RouteTable.Routes#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Routing.RouteTable.Routes/vb/Global.asax#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">次のいずれかになります。  
+  
+-   値の先頭が<c> ~ </c>または<c> /</c>です。  
+  
+-   値が含まれています、<c>しますか?</c> 文字に置き換えらるからです。  
+  
+-   キャッチ オール パラメーターは、最後ではありません。</exception>
+        <exception cref="T:System.Exception">URL セグメントが区切り記号またはリテラル定数で区切られていません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

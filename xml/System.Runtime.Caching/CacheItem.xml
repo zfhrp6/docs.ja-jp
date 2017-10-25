@@ -1,0 +1,169 @@
+<Type Name="CacheItem" FullName="System.Runtime.Caching.CacheItem">
+  <TypeSignature Language="C#" Value="public class CacheItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CacheItem extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Caching.CacheItem" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Caching</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>キャッシュ内の個々 のキャッシュ エントリを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Caching.CacheItem>クラスに含めることができる領域を使用して、キャッシュ エントリの論理表現が用意されています、<xref:System.Runtime.Caching.CacheItem.RegionName%2A>プロパティです。 既定 ASP.NET のキャッシュ実装では、キャッシュ エントリは、キー/値ペアがします。  
+  
+ キャッシュ内のエントリがない<xref:System.Runtime.Caching.CacheItem>インスタンス。 代わりに、キャッシュ プロバイダーは、任意の内部形式が容易であるキャッシュ エントリを格納できます。 ただし、キャッシュ API には、キャッシュ プロバイダー内のエントリをキャッシュに変換できる必要があります。<xref:System.Runtime.Caching.CacheItem>インスタンス (またはその逆)。  
+  
+ カスタムのキャッシュ実装を継承できます、<xref:System.Runtime.Caching.CacheItem>クラスは、キャッシュ エントリに関する追加情報を提供します。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Runtime.Caching.CacheItem>キャッシュ エントリとして、ファイルの内容を格納するクラス。  
+  
+ [!code-csharp[System.Runtime.Caching.CacheItem#1](~/samples/snippets/csharp/VS_Snippets_WebNet/system.runtime.caching.cacheitem/cs/default.aspx.cs#1)]
+ [!code-vb[System.Runtime.Caching.CacheItem#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.runtime.caching.cacheitem/vb/default.aspx.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para><see cref="T:System.Runtime.Caching.ObjectCache" />クラス メソッドそのサポートを追加する、フェッチ、および更新データのキャッシュがあり、これらすべてのメソッドをサポートするオーバー ロードがあります、<see cref="T:System.Runtime.Caching.CacheItem" />クラスです。 したがって、カスタムのキャッシュ実装を作成できます拡張<see cref="T:System.Runtime.Caching.CacheItem" />クラスと共に、既存のクラスの拡張を使用して<see cref="T:System.Runtime.Caching.ObjectCache" />キャッシュ エントリのための API です。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CacheItem (string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.CacheItem.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">一意の識別子、<see cref="T:System.Runtime.Caching.CacheItem" />エントリです。</param>
+        <summary>新しい初期化<see cref="T:System.Runtime.Caching.CacheItem" />インスタンスのキャッシュ エントリの指定したキーを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Runtime.Caching.CacheItem.%23ctor%28System.String%29>メソッドのオーバー ロードが呼び出されると、プロパティ値を<xref:System.Runtime.Caching.CacheItem.RegionName%2A>と<xref:System.Runtime.Caching.CacheItem.Value%2A>に設定されている`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CacheItem (string key, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string key, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.CacheItem.#ctor(System.String,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">一意の識別子、<see cref="T:System.Runtime.Caching.CacheItem" />エントリです。</param>
+        <param name="value">データを<see cref="T:System.Runtime.Caching.CacheItem" />エントリです。</param>
+        <summary>新しい初期化<see cref="T:System.Runtime.Caching.CacheItem" />インスタンスの指定したキーと、キャッシュ エントリの値を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Runtime.Caching.CacheItem.%23ctor%28System.String%2CSystem.Object%29>メソッドのオーバー ロードが呼び出されると、プロパティ値を<xref:System.Runtime.Caching.CacheItem.RegionName%2A>に設定されている`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CacheItem (string key, object value, string regionName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string key, object value, string regionName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.CacheItem.#ctor(System.String,System.Object,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="regionName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">一意の識別子、<see cref="T:System.Runtime.Caching.CacheItem" />エントリです。</param>
+        <param name="value">データを<see cref="T:System.Runtime.Caching.CacheItem" />エントリです。</param>
+        <param name="regionName">格納するキャッシュ内の領域の名前、<see cref="T:System.Runtime.Caching.CacheItem" />エントリです。</param>
+        <summary>新しい初期化<see cref="T:System.Runtime.Caching.CacheItem" />インスタンスの指定したキー、値、およびキャッシュ エントリの領域を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Key">
+      <MemberSignature Language="C#" Value="public string Key { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Key" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.CacheItem.Key" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の一意の識別子、<see cref="T:System.Runtime.Caching.CacheItem" />インスタンス。</summary>
+        <value>識別子、<see cref="T:System.Runtime.Caching.CacheItem" />インスタンス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegionName">
+      <MemberSignature Language="C#" Value="public string RegionName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RegionName" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.CacheItem.RegionName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを含む、キャッシュ内の領域の名前を設定、<see cref="T:System.Runtime.Caching.CacheItem" />エントリです。</summary>
+        <value>キャッシュ内の領域の名前です。 既定値は、<see langword="null" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public object Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Value" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.CacheItem.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データを取得または設定、<see cref="T:System.Runtime.Caching.CacheItem" />インスタンス。</summary>
+        <value>データを<see cref="T:System.Runtime.Caching.CacheItem" />インスタンス。 既定値は、<see langword="null" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,180 @@
+<Type Name="ContextItem" FullName="System.IdentityModel.Protocols.WSTrust.ContextItem">
+  <TypeSignature Language="C#" Value="public class ContextItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ContextItem extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Protocols.WSTrust.ContextItem" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Ws-trust を承認拡張で定義された auth:ContextItem 要素を表します。 これらの拡張機能は、Ws-federation 仕様で定義されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Auth:ContextItem 要素によって表される auth:AdditionalContext 要素のサブ要素は、<xref:System.IdentityModel.Protocols.WSTrust.AdditionalContext>クラスです。  
+  
+ このクラスが表す要素の詳細については、Ws-federation 仕様を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContextItem (Uri name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Protocols.WSTrust.ContextItem.#ctor(System.Uri)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="name">A<see cref="T:System.Uri" />コンテキスト項目の名前を示すです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Protocols.WSTrust.ContextItem" />指定の名前 URI を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Protocols.WSTrust.ContextItem.Value%2A>プロパティおよび<xref:System.IdentityModel.Protocols.WSTrust.ContextItem.Scope%2A>プロパティに設定されて`null`新しいインスタンス。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNull">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Argument">
+          <paramref name="name" /> は絶対 URI ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContextItem (Uri name, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri name, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Protocols.WSTrust.ContextItem.#ctor(System.Uri,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.Uri" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">A<see cref="T:System.Uri" />コンテキスト項目の名前を示すです。</param>
+        <param name="value">コンテキスト項目の値。 指定できます<see langword="null" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Protocols.WSTrust.ContextItem" />指定された URI の名前と値を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Protocols.WSTrust.ContextItem.Scope%2A>プロパティに設定されている`null`新しいインスタンス。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNull">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Argument">
+          <paramref name="name" /> は絶対 URI ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContextItem (Uri name, string value, Uri scope);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri name, string value, class System.Uri scope) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Protocols.WSTrust.ContextItem.#ctor(System.Uri,System.String,System.Uri)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.Uri" />
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="scope" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="name">A<see cref="T:System.Uri" />コンテキスト項目の名前を示すです。</param>
+        <param name="value">コンテキスト項目の値。 指定できます<see langword="null" />です。</param>
+        <param name="scope">コンテキスト項目のスコープです。 指定できます<see langword="null" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Protocols.WSTrust.ContextItem" />指定された URI の名前、値、およびスコープ URI を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNull">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Argument">
+          <paramref name="name" /> は絶対 URI ではありません。  
+  
+ または  
+  
+ <paramref name="scope" /><see langword="null" />絶対 URI ではなくとします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public Uri Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Name" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.ContextItem.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または名前の URI を設定します。</summary>
+        <value>A<see cref="T:System.Uri" />名前属性の値を格納します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scope">
+      <MemberSignature Language="C#" Value="public Uri Scope { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Scope" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.ContextItem.Scope" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはスコープ URI を設定します。</summary>
+        <value>A<see cref="T:System.Uri" />スコープ属性の値を格納しています。 指定できます<see langword="null" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">はない値を設定しようとしましたが<see langword="null" />絶対 URI ではなくとします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public string Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Value" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.ContextItem.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコンテキスト項目の値を設定します。</summary>
+        <value>ContextItem 要素の値。 指定できます<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに設定することができます`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

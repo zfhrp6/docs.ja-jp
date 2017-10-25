@@ -1,0 +1,176 @@
+<Type Name="ICustomAttributeProvider" FullName="System.Reflection.ICustomAttributeProvider">
+  <TypeSignature Language="C#" Value="public interface ICustomAttributeProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ICustomAttributeProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Reflection.ICustomAttributeProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Reflection</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>リフレクション オブジェクトがサポートするために、カスタム属性を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リフレクションのほぼすべてのクラスには、それらに関連付けられた属性を持つことができます。 属性は、標準であることができます (パブリック、プライベート、HelpString) またはカスタムです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetCustomAttributes">
+      <MemberSignature Language="C#" Value="public object[] GetCustomAttributes (bool inherit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object[] GetCustomAttributes(bool inherit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.ICustomAttributeProvider.GetCustomAttributes(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inherit" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="inherit"><see langword="true" /> の場合、継承されたカスタム属性の階層チェーンを検索します。</param>
+        <summary>名前付きの属性を除く、このメンバーに定義されているすべてのカスタム属性の配列、またはカスタム属性がない場合は空の配列を返します。</summary>
+        <returns>カスタム属性を表すオブジェクトの配列。 または、空の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す<xref:System.Reflection.ICustomAttributeProvider.GetCustomAttributes%2A?displayProperty=nameWithType>で<xref:System.Reflection.PropertyInfo>または<xref:System.Reflection.EventInfo>ときに、`inherit`のパラメーター`GetCustomAttributes`は`true`型階層を移動できません。 使用して<xref:System.Attribute?displayProperty=nameWithType>をカスタム属性を継承します。  
+  
+ このメソッドは、非継承メンバーのみで直接定義されたカスタム属性を返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.TypeLoadException">カスタム属性の型を読み込むことはできません。</exception>
+        <exception cref="T:System.Reflection.AmbiguousMatchException">このメンバーには <paramref name="attributeType" /> 型の複数の属性が定義されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCustomAttributes">
+      <MemberSignature Language="C#" Value="public object[] GetCustomAttributes (Type attributeType, bool inherit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object[] GetCustomAttributes(class System.Type attributeType, bool inherit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.ICustomAttributeProvider.GetCustomAttributes(System.Type,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributeType" Type="System.Type" />
+        <Parameter Name="inherit" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="attributeType">カスタム属性の型。</param>
+        <param name="inherit"><see langword="true" /> の場合、継承されたカスタム属性の階層チェーンを検索します。</param>
+        <summary>型で識別された、このメンバーに定義されているカスタム属性の配列、または、この型のカスタム属性がない場合は空の配列を返します。</summary>
+        <returns>カスタム属性を表すオブジェクトの配列。 または、空の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`attributeType`基底クラスまたはインターフェイスでは、このメソッドは、その型の任意の実装を返します。  
+  
+ このメソッドは、非継承メンバーのみで直接定義されたカスタム属性を返します。  
+  
+ 呼び出す<xref:System.Reflection.ICustomAttributeProvider.GetCustomAttributes%2A?displayProperty=nameWithType>で<xref:System.Reflection.PropertyInfo>または<xref:System.Reflection.EventInfo>ときに、`inherit`のパラメーター`GetCustomAttributes`は`true`型階層を移動できません。 使用して<xref:System.Attribute?displayProperty=nameWithType>をカスタム属性を継承します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.TypeLoadException">カスタム属性の型を読み込むことはできません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="attributeType" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefined">
+      <MemberSignature Language="C#" Value="public bool IsDefined (Type attributeType, bool inherit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsDefined(class System.Type attributeType, bool inherit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.ICustomAttributeProvider.IsDefined(System.Type,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributeType" Type="System.Type" />
+        <Parameter Name="inherit" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="attributeType">カスタム属性の型。</param>
+        <param name="inherit"><see langword="true" /> の場合、継承されたカスタム属性の階層チェーンを検索します。</param>
+        <summary><paramref name="attributeType" /> の 1 つ以上のインスタンスがこのメンバーで定義されているかどうかを示します。</summary>
+        <returns>
+          <paramref name="attributeType" /> がこのメンバーで定義されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

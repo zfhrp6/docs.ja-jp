@@ -1,0 +1,256 @@
+<Type Name="TypeValidationEventArgs" FullName="System.Windows.Forms.TypeValidationEventArgs">
+  <TypeSignature Language="C#" Value="public class TypeValidationEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TypeValidationEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.TypeValidationEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted>イベントが発生したときに、<xref:System.Windows.Forms.MaskedTextBox>コントロールは省略可能な型の検証を実行します。 型の検証にのみ発生時に、<xref:System.Windows.Forms.MaskedTextBox.ValidatingType%2A?displayProperty=nameWithType>プロパティは使用されません`null`、原因となどのアクションが発生した、<xref:System.Windows.Forms.MaskedTextBox>コントロールがフォーカスを失います。 *入力検証*によって表される型に書式設定された入力文字列に変換する機能は、<xref:System.Windows.Forms.MaskedTextBox.ValidatingType%2A>プロパティです。 型の検証プロセスの詳細については、次を参照してください。、<xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted>イベント。  
+  
+ イベント ハンドラーが実装されている場合<xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted>、ハンドラーが型のパラメーターを受け取る<xref:System.Windows.Forms.TypeValidationEventArgs>です。 このパラメーターには、型の変換処理が成功したかどうか、検証の種類、およびよびななど、イベントに関する情報が含まれています。  
+  
+   
+  
+## Examples  
+ 次のコード例では、この型の使用を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.MaskedTextBox>という`MaskedTextBox1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#488](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#488)]
+ [!code-vb[System.Windows.Forms.EventExamples#488](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#488)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TypeValidationEventArgs (Type validatingType, bool isValidInput, object returnValue, string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type validatingType, bool isValidInput, object returnValue, string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TypeValidationEventArgs.#ctor(System.Type,System.Boolean,System.Object,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="validatingType" Type="System.Type" />
+        <Parameter Name="isValidInput" Type="System.Boolean" />
+        <Parameter Name="returnValue" Type="System.Object" />
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="validatingType"><see cref="T:System.Type" />に対する書式設定された入力文字列の検証中です。</param>
+        <param name="isValidInput">A<see cref="T:System.Boolean" />書式設定された文字列が検証する型に変換できたかどうかを示す値。</param>
+        <param name="returnValue"><see cref="T:System.Object" />はターゲット型に変換する書式指定文字列の結果。</param>
+        <param name="message">A<see cref="T:System.String" />変換プロセスの説明を格納します。</param>
+        <summary><see cref="T:System.Windows.Forms.TypeValidationEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パラメーターを<xref:System.Windows.Forms.TypeValidationEventArgs.%23ctor%2A>コンス トラクターは、このクラスの対応する読み取り専用プロパティを初期化するために使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cancel">
+      <MemberSignature Language="C#" Value="public bool Cancel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Cancel" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TypeValidationEventArgs.Cancel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイベントを取り消す必要があるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />イベントを取り消す必要があるし、フォーカスが保持しているかどうか、<see cref="T:System.Windows.Forms.MaskedTextBox" />コントロール。 それ以外の場合、<see langword="false" />検証処理を続行します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted>直前にイベントが発生した、<xref:System.Windows.Forms.Control.Validating>イベント。  
+  
+ 設定、<xref:System.Windows.Forms.TypeValidationEventArgs.Cancel%2A>プロパティを`true`で、<xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted>イベント ハンドラーがイベントをキャンセルの原因、<xref:System.Windows.Forms.MaskedTextBox>しない限り、フォーカスを保持するコントロール後続<xref:System.Windows.Forms.Control.Validating>イベントのバージョンを設定する、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A?displayProperty=nameWithType>プロパティを`false`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.MaskedTextBox>という`MaskedTextBox1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#488](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#488)]
+ [!code-vb[System.Windows.Forms.EventExamples#488](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#488)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsValidInput">
+      <MemberSignature Language="C#" Value="public bool IsValidInput { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsValidInput" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TypeValidationEventArgs.IsValidInput" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検証する型に書式設定された入力文字列が正常に変換されたかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />書式設定された入力文字列で指定された型に変換できる場合、<see cref="P:System.Windows.Forms.TypeValidationEventArgs.ValidatingType" />プロパティ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TypeValidationEventArgs.IsValidInput%2A>プロパティの成功を示す、`Parse`については、メソッド、<xref:System.Type>によって表される、<xref:System.Windows.Forms.TypeValidationEventArgs.ValidatingType%2A>プロパティです。 この型に含める必要があります`Parse`は次のシグネチャの一方または両方を持つメソッド。  
+  
+ `public static Object Parse(string)`  
+  
+ `public static Object Parse(string, IFormatProvider)`  
+  
+ `Parse`前に呼び出されます、<xref:System.Windows.Forms.MaskedTextBox>制御が発生し、<xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted>イベント。 プロンプト文字が負符号のコンテンツを含むこのメソッドが呼び出される、<xref:System.Windows.Forms.MaskedTextBox.Text%2A>のプロパティ、<xref:System.Windows.Forms.MaskedTextBox>クラスです。 成功した場合、変換後のオブジェクトを返します返しますそれ以外の場合、`null`です。  
+  
+ 型の検証プロセスの詳細については、次を参照してください。、<xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted>イベント。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.MaskedTextBox>という`MaskedTextBox1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#488](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#488)]
+ [!code-vb[System.Windows.Forms.EventExamples#488](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#488)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="public string Message { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Message" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TypeValidationEventArgs.Message" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変換プロセスを説明するテキスト メッセージを取得します。</summary>
+        <value>A<see cref="T:System.String" />変換プロセスの説明を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 検証プロセスでは、によって定義された型に書式設定されたユーザー入力を変換する必要があります、<xref:System.Windows.Forms.MaskedTextBox.ValidatingType%2A>プロパティです。 <xref:System.Windows.Forms.TypeValidationEventArgs.Message%2A>プロパティには、変換プロセスの説明テキストが含まれています。 <xref:System.Windows.Forms.TypeValidationEventArgs.Message%2A>主に変換が失敗した場合に従い、<xref:System.Windows.Forms.TypeValidationEventArgs.IsValidInput%2A>のプロパティの値`false`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.MaskedTextBox>という`MaskedTextBox1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#488](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#488)]
+ [!code-vb[System.Windows.Forms.EventExamples#488](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#488)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReturnValue">
+      <MemberSignature Language="C#" Value="public object ReturnValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object ReturnValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TypeValidationEventArgs.ReturnValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>書式設定された入力文字列の変換を実行した結果、オブジェクトを取得します。</summary>
+        <value>検証が成功した場合、<see cref="T:System.Object" />変換後の型を表す、それ以外の<see langword="null" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された型に、プロンプト文字を含まない、書式設定された入力文字列を変換しようとしている型の検証プロセス、<xref:System.Windows.Forms.TypeValidationEventArgs.ValidatingType%2A>プロパティです。 <xref:System.Windows.Forms.TypeValidationEventArgs.ReturnValue%2A>プロパティが変換を試行したの結果を表すし、は、によって返される値に相当する機能、<xref:System.Windows.Forms.MaskedTextBox.ValidateText%2A>のメソッド、<xref:System.Windows.Forms.MaskedTextBox>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.MaskedTextBox>という`MaskedTextBox1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#488](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#488)]
+ [!code-vb[System.Windows.Forms.EventExamples#488](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#488)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidatingType">
+      <MemberSignature Language="C#" Value="public Type ValidatingType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ValidatingType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TypeValidationEventArgs.ValidatingType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>書式設定された入力文字列が検証に使用される型を取得します。</summary>
+        <value>ターゲット<see cref="T:System.Type" />変換プロセスのです。 これはならない<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 検証プロセスは、場合にのみ発生<xref:System.Windows.Forms.MaskedTextBox.ValidatingType%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Windows.Forms.MaskedTextBox>クラスがない`null`です。 <xref:System.Windows.Forms.TypeValidationEventArgs.ValidatingType%2A>プロパティを参照して、同じ型で、変換処理の対象の型を表します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.MaskedTextBox>という`MaskedTextBox1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#488](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#488)]
+ [!code-vb[System.Windows.Forms.EventExamples#488](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#488)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

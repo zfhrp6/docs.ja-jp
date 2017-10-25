@@ -1,0 +1,194 @@
+<Type Name="JsonQueryStringConverter" FullName="System.ServiceModel.Dispatcher.JsonQueryStringConverter">
+  <TypeSignature Language="C#" Value="public class JsonQueryStringConverter : System.ServiceModel.Dispatcher.QueryStringConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit JsonQueryStringConverter extends System.ServiceModel.Dispatcher.QueryStringConverter" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.JsonQueryStringConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Web</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Dispatcher.QueryStringConverter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>このクラスは、パラメーター値と JSON (JavaScript Object Notation) を双方向に変換します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パラメーターは、URL 内の JSON クエリ文字列に指定できます。 このクラスは、<xref:System.ServiceModel.Description.WebScriptEnablingBehavior> を使用してブラウザー ベースの ASP.NET AJAX クライアントから HTTP 要求を処理するときに、JSON クエリ文字列パラメーターとサービス操作のパラメーターのマップ方法を制御します。  
+  
+ このクラスは、URI クエリ文字列にエンコードされたパラメーターを持つ HTTP GET/POST 要求を受け入れるように構成されたエンドポイントの [!INCLUDE[indigo1](~/includes/indigo1-md.md)]<xref:System.ServiceModel.Description.WebScriptEnablingBehavior> クラスによって内部的に使用されます。 また、CLR オブジェクトと URI クエリ文字列内の個々の操作要求パラメーター値を変換するために使用されます。 このクラスは、その基本型とは異なり、プリミティブ型と複合型の両方の値をサポートします。  
+  
+ <xref:System.ServiceModel.Dispatcher.JsonQueryStringConverter> は、<xref:System.ServiceModel.Dispatcher.QueryStringConverter> から派生し、次の型をサポートします。  
+  
+-   <xref:System.Byte>  
+  
+-   <xref:System.SByte>  
+  
+-   <xref:System.Int16>  
+  
+-   <xref:System.Int32>  
+  
+-   <xref:System.Int64>  
+  
+-   <xref:System.UInt16>  
+  
+-   <xref:System.UInt32>  
+  
+-   <xref:System.UInt64>  
+  
+-   <xref:System.Single>  
+  
+-   <xref:System.Double>  
+  
+-   <xref:System.Char>  
+  
+-   <xref:System.Decimal>  
+  
+-   <xref:System.Boolean>  
+  
+-   <xref:System.String>  
+  
+-   <xref:System.DateTime>  
+  
+-   <xref:System.TimeSpan>  
+  
+-   <xref:System.Guid>  
+  
+-   <xref:System.Array> 型の <xref:System.Byte>。  
+  
+-   <xref:System.Uri>  
+  
+-   <xref:System.Object>  
+  
+ このコンバーターは、その基本型とは異なり、データ コントラクト モデルに準拠するすべての型を処理できます。 コンバーターは <xref:System.ServiceModel.Dispatcher.QueryStringConverter.ConvertValueToString%28System.Object%2CSystem.Type%29> をオーバーライドして、各パラメーターが既定の <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>、および UTF-8 エンコーディングを使用するように構成された JSON XML ライターを使用して JSON にシリアル化されるようにします。 `null`パラメーターとして返されます`null`です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public JsonQueryStringConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.JsonQueryStringConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Dispatcher.JsonQueryStringConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvert">
+      <MemberSignature Language="C#" Value="public override bool CanConvert (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanConvert(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.JsonQueryStringConverter.CanConvert(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">検証する <see cref="T:System.Type" />。</param>
+        <summary>指定した共通言語ランタイム (CLR) 型がシリアル化および逆シリアル化可能な既知の型かどうかどうかを示す値を取得します。</summary>
+        <returns>
+          型をシリアル化できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これにより、CLR 型を JSON クエリ文字列で使用できるかどうかを確認します。 このような文字列で使用できる CLR 型は、<xref:System.Runtime.Serialization.DataContractSerializer> でサポートされる CLR 型です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="type" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertStringToValue">
+      <MemberSignature Language="C#" Value="public override object ConvertStringToValue (string parameter, Type parameterType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertStringToValue(string parameter, class System.Type parameterType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.JsonQueryStringConverter.ConvertStringToValue(System.String,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameter" Type="System.String" />
+        <Parameter Name="parameterType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="parameter">パラメーター値の JSON 形式。</param>
+        <param name="parameterType">パラメーターを逆シリアル化する <see cref="T:System.Type" />。</param>
+        <summary>JSON (JavaScript Object Notation) クエリ文字列パラメーターを、指定した共通言語ランタイム (CLR) 型に逆シリアル化します。</summary>
+        <returns>パラメーター値から変換された CLR 型のインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertValueToString">
+      <MemberSignature Language="C#" Value="public override string ConvertValueToString (object parameter, Type parameterType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ConvertValueToString(object parameter, class System.Type parameterType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.JsonQueryStringConverter.ConvertValueToString(System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameter" Type="System.Object" />
+        <Parameter Name="parameterType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="parameter">変換するパラメーター値。</param>
+        <param name="parameterType">シリアル化するパラメーターの <see cref="T:System.Type" />。</param>
+        <summary>共通言語ランタイム (CLR) パラメーター型を JSON (JavaScript Object Notation) 表現にシリアル化します。</summary>
+        <returns>CLR 型の JSON クエリ文字列パラメーターのシリアル化。 パラメーターが <see langword="null" /> の場合は、<see langword="null" /> が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンバーターは <xref:System.ServiceModel.Dispatcher.QueryStringConverter.ConvertValueToString%28System.Object%2CSystem.Type%29> をオーバーライドして、各パラメーターが既定の <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>、および UTF-8 エンコーディングを使用するように構成された JSON XML ライターを使用して JSON にシリアル化されるようにします。 このコンバーターは、その基本型とは異なり、データ コントラクト モデルに準拠するすべての型を処理できます。  
+  
+   
+  
+## Examples  
+ 次の操作があるとします。  
+  
+```  
+[WebGet]  
+[OperationContract] public int GetOptionQuote(string ticker, DateTime dte, Option opt);  
+```  
+  
+ この操作により、以下の URL エンコード版である URL が生成されます。  
+  
+```  
+http://localhost/quote.svc/GetOptionQuote?ticker="MSFT"&dte="\/Date(50067823)\/"&opt={"type":"call","strikePrice":"35"}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

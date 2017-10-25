@@ -1,0 +1,25 @@
+<Type Name="InvalidSignatureEventHandler" FullName="System.IO.Packaging.InvalidSignatureEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void InvalidSignatureEventHandler(object sender, SignatureVerificationEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed InvalidSignatureEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.IO.Packaging.InvalidSignatureEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.IO.Packaging.SignatureVerificationEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">無効な<see cref="T:System.IO.Packaging.PackageDigitalSignature" />イベントのソース。</param>
+    <param name="e">イベントのデータ。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.IO.Packaging.PackageDigitalSignatureManager.InvalidSignatureEvent" />されている場合に発生<see cref="M:System.IO.Packaging.PackageDigitalSignatureManager.VerifySignatures(System.Boolean)" />無効な署名が検出されました。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+</Type>

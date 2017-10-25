@@ -1,0 +1,81 @@
+<Type Name="DateTimeSerializationSection+DateTimeSerializationMode" FullName="System.Xml.Serialization.Configuration.DateTimeSerializationSection+DateTimeSerializationMode">
+  <TypeSignature Language="C#" Value="public enum DateTimeSerializationSection.DateTimeSerializationMode" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi sealed DateTimeSerializationSection/DateTimeSerializationMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary><see cref="T:System.DateTime" /> オブジェクトの XML シリアル化形式を決定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体は、シリアル化インフラストラクチャでのみ、使用を公開して使用するものではありません。 実際にシリアル化モードを設定する、アプリケーション構成ファイルを作成し、設定、 [ &lt;dateTimeSerialization&gt;要素](~/docs/standard/serialization/datetimeserialization-element.md)を適切に設定します。 構成ファイルの詳細については、「[構成ファイル スキーマ](~/docs/framework/configure-apps/file-schema/index.md)」を参照してください。  
+  
+ Version 1.0 および 1.1 バージョン 2.0 以降にこのプロパティ設定されている場合だけでなく、.NET Framework の`Local`、<xref:System.DateTime>オブジェクトは、常にローカル時刻としてフォーマットします。 つまり、ローカル タイム ゾーンの情報が、シリアル化されたデータに必ず組み込まれます。 このプロパティを設定`Local`.Net の旧バージョンとの互換性を確保するフレームワークです。  
+  
+ バージョン 2.0 では、このプロパティ設定して、.NET Framework の以降の`Roundtrip`<xref:System.DateTime>を決定するかどうか、ローカル、UTC またはタイム ゾーンが指定されていないなどのシリアル化オブジェクトを調べることがこの情報は、保持されます。 既定の動作は、この、framework の旧バージョンとは通信しないすべての新しいアプリケーションをお勧めします。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="Default" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Xml.Serialization.Configuration.DateTimeSerializationSection/DateTimeSerializationMode Default = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.Configuration.DateTimeSerializationSection+DateTimeSerializationMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="Roundtrip" /> と同じ。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Local">
+      <MemberSignature Language="C#" Value="Local" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Xml.Serialization.Configuration.DateTimeSerializationSection/DateTimeSerializationMode Local = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode.Local" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.Configuration.DateTimeSerializationSection+DateTimeSerializationMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シリアライザーは、すべての <see cref="T:System.DateTime" /> オブジェクトを現地時間としてフォーマットします。 これは、バージョン 1.0 および 1.1 との互換性のためです。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Roundtrip">
+      <MemberSignature Language="C#" Value="Roundtrip" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Xml.Serialization.Configuration.DateTimeSerializationSection/DateTimeSerializationMode Roundtrip = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode.Roundtrip" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.Configuration.DateTimeSerializationSection+DateTimeSerializationMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シリアライザーが個々の <see cref="T:System.DateTime" /> インスタンスを検査し、シリアル化形式 (UTC、ローカル、指定なし) を決定します。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,105 @@
+<Type Name="HeaderElement" FullName="System.Web.Caching.HeaderElement">
+  <TypeSignature Language="C#" Value="public sealed class HeaderElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit HeaderElement extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Caching.HeaderElement" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>出力キャッシュからの応答に含まれている 1 つの HTTP ヘッダーを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Caching.HeaderElement>クラスは、名前/値のペアとして、出力キャッシュで HTTP ヘッダーの内容を表します。 名前と値の両方には、null がある場合があります。 すべてのコレクション<xref:System.Web.Caching.HeaderElement>インスタンスに、出力キャッシュ内のエントリが含まれているため、<xref:System.Web.Caching.IOutputCacheEntry.HeaderElements%2A>コレクション。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HeaderElement (string name, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.HeaderElement.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">HTTP ヘッダーの名前。</param>
+        <param name="value">HTTP ヘッダーの値。</param>
+        <summary><see cref="T:System.Web.Caching.HeaderElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスを作成する場合、<xref:System.Web.Caching.HeaderElement>クラス、値の`name`常に null 以外の場合、空でない文字列があります。 `value`パラメーターは、空の文字列を指定できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Caching.HeaderElement.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>出力キャッシュ内にある HTTP ヘッダーの名前を取得します。</summary>
+        <value>HTTP ヘッダーの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスを作成する場合、<xref:System.Web.Caching.HeaderElement>クラス、値の`name`常に null 以外の場合、空でない文字列があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public string Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Value" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Caching.HeaderElement.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>出力キャッシュ内にある HTTP ヘッダーの値を取得します。</summary>
+        <value>HTTP ヘッダーの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスを作成する場合、<xref:System.Web.Caching.HeaderElement>クラス、`value`パラメーターは、空の文字列を指定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

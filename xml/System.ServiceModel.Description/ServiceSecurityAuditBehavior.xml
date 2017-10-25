@@ -1,0 +1,320 @@
+<Type Name="ServiceSecurityAuditBehavior" FullName="System.ServiceModel.Description.ServiceSecurityAuditBehavior">
+  <TypeSignature Language="C#" Value="public sealed class ServiceSecurityAuditBehavior : System.ServiceModel.Description.IServiceBehavior" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ServiceSecurityAuditBehavior extends System.Object implements class System.ServiceModel.Description.IServiceBehavior" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Description.ServiceSecurityAuditBehavior" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Description.IServiceBehavior</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>セキュリティ イベントの監査動作を指定します。 セキュリティ イベントは通常、トランスポート認証、メッセージ認証、ネゴシエート認証などの認証イベントと承認イベントで構成されます。 詳細については、「<see cref="T:System.ServiceModel.ServiceAuthorizationManager" />」を参照してください。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior> クラスは、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] の認証イベントを監査するために使用されます。 監査を有効にすると、成功した認証、失敗した認証、またはその両方を監査できます。 イベントは、3 種類のイベント ログ (アプリケーション ログ、セキュリティ ログ、およびオペレーティング システムのバージョンに対する既定のログ) のいずれかに書き込まれます。 イベント ログはすべて、Windows イベント ビューアーを使用して表示できます。  
+  
+ このクラスを使用して、書き込み先のイベント ログと書き込む認証イベントの種類を指定します。 また、<xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> プロパティ (既定値は `false`) を `true` に設定することにより、監査エラーを非表示にするかどうかを指定することもできます。  
+  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]セキュリティ イベントの監査[!INCLUDE[indigo2](~/includes/indigo2-md.md)]アプリケーションを参照してください[監査](~/docs/framework/wcf/feature-details/auditing-security-events.md)です。  
+  
+ 構成で監査動作を指定するには、使用、 [ &lt;serviceSecurityAudit&gt;](~/docs/framework/configure-apps/file-schema/wcf/servicesecurityaudit.md)です。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.ServiceHost> クラスのインスタンスを作成し、新しい <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior> をその動作のコレクションに追加するコード例を次に示します。  
+  
+ [!code-csharp[AuditingSecurityEvents#1](~/samples/snippets/csharp/VS_Snippets_CFX/auditingsecurityevents/cs/auditingsecurityevents.cs#1)]
+ [!code-vb[AuditingSecurityEvents#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/auditingsecurityevents/vb/auditingsecurityevents.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceSecurityAuditBehavior ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.ServiceSecurityAuditBehavior.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Description.ServiceSecurityAuditBehavior" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスは、次の既定の設定で作成されます。  
+  
+-   <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.AuditLogLocation%2A> = <xref:System.ServiceModel.AuditLogLocation.Default>;  
+  
+-   <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> = `true`;  
+  
+-   <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.ServiceAuthorizationAuditLevel%2A> = <xref:System.ServiceModel.AuditLevel.None>;  
+  
+-   <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.MessageAuthenticationAuditLevel%2A> = <xref:System.ServiceModel.AuditLevel.None>.  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior> クラスのインスタンスを作成するコードを次に示します。  
+  
+ [!code-csharp[AuditingSecurityEvents#2](~/samples/snippets/csharp/VS_Snippets_CFX/auditingsecurityevents/cs/auditingsecurityevents.cs#2)]
+ [!code-vb[AuditingSecurityEvents#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/auditingsecurityevents/vb/auditingsecurityevents.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuditLogLocation">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.AuditLogLocation AuditLogLocation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.AuditLogLocation AuditLogLocation" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceSecurityAuditBehavior.AuditLogLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.AuditLogLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ関連のイベント ログが書き込まれる場所を取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.AuditLogLocation" />。 既定値は <see cref="F:System.ServiceModel.AuditLogLocation.Default" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `AuditLogLocation.Security` への書き込みを行うには、実行中のスレッド (またはプロセス) が `SeAuditPrivilege` を持っている必要があります。  
+  
+ 使用してこの値を設定することも、 [ &lt;serviceSecurityAudit&gt; ](~/docs/framework/configure-apps/file-schema/wcf/servicesecurityaudit.md)クライアント アプリケーション構成ファイルにします。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior> クラスのインスタンスを作成し、このプロパティを設定するコードを次に示します。  
+  
+ [!code-csharp[AuditingSecurityEvents#2](~/samples/snippets/csharp/VS_Snippets_CFX/auditingsecurityevents/cs/auditingsecurityevents.cs#2)]
+ [!code-vb[AuditingSecurityEvents#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/auditingsecurityevents/vb/auditingsecurityevents.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <see langword="set" /> および <see langword="value" /> は <see cref="T:System.ServiceModel.AuditLogLocation" /> の有効なメンバーではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MessageAuthenticationAuditLevel">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.AuditLevel MessageAuthenticationAuditLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.AuditLevel MessageAuthenticationAuditLevel" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceSecurityAuditBehavior.MessageAuthenticationAuditLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.AuditLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ レベルで監査する認証イベントの種類を取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.AuditLevel" /> 列挙値のいずれか。 既定値は、<see cref="F:System.ServiceModel.AuditLevel.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[indigo1](~/includes/indigo1-md.md)] サービス アプリケーションには、セキュリティを強制できるレベルが 2 つあります。 *サービス*レベル、サービスのすべてのメソッドは、ポリシーによって適用される、同じセキュリティ。 サービス内のメソッドごとに異なる (より厳格な) セキュリティ ポリシーを適用することができます。 メッセージ レベルで監査するイベントの種類を制御する場合は、<xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.MessageAuthenticationAuditLevel%2A> プロパティを使用します。  
+  
+ 使用してこの値を設定することも、 [ &lt;serviceSecurityAudit&gt; ](~/docs/framework/configure-apps/file-schema/wcf/servicesecurityaudit.md)クライアント アプリケーション構成ファイルにします。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior> クラスのインスタンスを作成し、このプロパティを設定するコードを次に示します。  
+  
+ [!code-csharp[AuditingSecurityEvents#3](~/samples/snippets/csharp/VS_Snippets_CFX/auditingsecurityevents/cs/auditingsecurityevents.cs#3)]
+ [!code-vb[AuditingSecurityEvents#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/auditingsecurityevents/vb/auditingsecurityevents.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <see langword="set" /> および <see langword="value" /> は <see cref="T:System.ServiceModel.AuditLevel" /> の有効なメンバーではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceAuthorizationAuditLevel">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.AuditLevel ServiceAuthorizationAuditLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.AuditLevel ServiceAuthorizationAuditLevel" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceSecurityAuditBehavior.ServiceAuthorizationAuditLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.AuditLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス レベルで監査する承認イベントの種類を取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.AuditLevel" /> 列挙値のいずれか。 既定値は、<see langword="None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[indigo1](~/includes/indigo1-md.md)] サービス アプリケーションには、セキュリティを強制できるレベルが 2 つあります。 *サービス*レベル、サービスのすべてのメソッドは、ポリシーによって適用される、同じセキュリティ。 サービス内のメソッドごとに異なる (より厳格な) セキュリティ ポリシーを適用することができます。 サービス レベルで監査するイベントの種類を制御する場合は、<xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.ServiceAuthorizationAuditLevel%2A> プロパティを使用します。  
+  
+ 使用してこの値を設定することも、 [ &lt;serviceSecurityAudit&gt; ](~/docs/framework/configure-apps/file-schema/wcf/servicesecurityaudit.md)クライアント アプリケーション構成ファイルにします。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior> クラスのインスタンスを作成し、このプロパティを設定するコードを次に示します。  
+  
+ [!code-csharp[AuditingSecurityEvents#3](~/samples/snippets/csharp/VS_Snippets_CFX/auditingsecurityevents/cs/auditingsecurityevents.cs#3)]
+ [!code-vb[AuditingSecurityEvents#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/auditingsecurityevents/vb/auditingsecurityevents.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <see langword="set" /> および <see langword="value" /> は <see cref="T:System.ServiceModel.AuditLevel" /> の有効なメンバーではありません。 既定値は、<see cref="F:System.ServiceModel.AuditLevel.None" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SuppressAuditFailure">
+      <MemberSignature Language="C#" Value="public bool SuppressAuditFailure { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SuppressAuditFailure" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>監査の失敗がアプリケーションに影響を及ぼすかどうかを示す値を取得または設定します。</summary>
+        <value>
+          監査の失敗がアプリケーションに影響を及ぼさない場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが `false` の場合、監査が失敗すると例外がスローされ、ユーザー要求が失敗します。  
+  
+ 使用してこの値を設定することも、 [ &lt;serviceSecurityAudit&gt; ](~/docs/framework/configure-apps/file-schema/wcf/servicesecurityaudit.md)クライアント アプリケーション構成ファイルにします。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior> クラスのインスタンスを作成し、このプロパティを設定するコードを次に示します。  
+  
+ [!code-csharp[AuditingSecurityEvents#4](~/samples/snippets/csharp/VS_Snippets_CFX/auditingsecurityevents/cs/auditingsecurityevents.cs#4)]
+ [!code-vb[AuditingSecurityEvents#4](~/samples/snippets/visualbasic/VS_Snippets_CFX/auditingsecurityevents/vb/auditingsecurityevents.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IServiceBehavior.AddBindingParameters">
+      <MemberSignature Language="C#" Value="void IServiceBehavior.AddBindingParameters (System.ServiceModel.Description.ServiceDescription description, System.ServiceModel.ServiceHostBase serviceHostBase, System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Description.ServiceEndpoint&gt; endpoints, System.ServiceModel.Channels.BindingParameterCollection parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IServiceBehavior.AddBindingParameters(class System.ServiceModel.Description.ServiceDescription description, class System.ServiceModel.ServiceHostBase serviceHostBase, class System.Collections.ObjectModel.Collection`1&lt;class System.ServiceModel.Description.ServiceEndpoint&gt; endpoints, class System.ServiceModel.Channels.BindingParameterCollection parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.ServiceSecurityAuditBehavior.System#ServiceModel#Description#IServiceBehavior#AddBindingParameters(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase,System.Collections.ObjectModel.Collection{System.ServiceModel.Description.ServiceEndpoint},System.ServiceModel.Channels.BindingParameterCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="description" Type="System.ServiceModel.Description.ServiceDescription" />
+        <Parameter Name="serviceHostBase" Type="System.ServiceModel.ServiceHostBase" />
+        <Parameter Name="endpoints" Type="System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Description.ServiceEndpoint&gt;" />
+        <Parameter Name="parameters" Type="System.ServiceModel.Channels.BindingParameterCollection" />
+      </Parameters>
+      <Docs>
+        <param name="description">サービスの <see cref="T:System.ServiceModel.Description.ServiceDescription" />。</param>
+        <param name="serviceHostBase">サービスのホスト。</param>
+        <param name="endpoints">サービス エンドポイント。</param>
+        <param name="parameters"><see cref="T:System.ServiceModel.Channels.BindingParameterCollection" />。</param>
+        <summary>コントラクトの実装をサポートするカスタム データをバインド要素に渡します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、カスタム データ オブジェクトを `parameters` コレクションに追加します。バインディング要素は、このオブジェクトを使用して、コントラクトをサポートするための追加情報を取得します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <see langword="set" /> と <paramref name="parameters" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior">
+      <MemberSignature Language="C#" Value="void IServiceBehavior.ApplyDispatchBehavior (System.ServiceModel.Description.ServiceDescription description, System.ServiceModel.ServiceHostBase serviceHostBase);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior(class System.ServiceModel.Description.ServiceDescription description, class System.ServiceModel.ServiceHostBase serviceHostBase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.ServiceSecurityAuditBehavior.System#ServiceModel#Description#IServiceBehavior#ApplyDispatchBehavior(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="description" Type="System.ServiceModel.Description.ServiceDescription" />
+        <Parameter Name="serviceHostBase" Type="System.ServiceModel.ServiceHostBase" />
+      </Parameters>
+      <Docs>
+        <param name="description">サービスの <see cref="T:System.ServiceModel.Description.ServiceDescription" />。</param>
+        <param name="serviceHostBase">サービスのホスト。</param>
+        <summary>ランタイム プロパティの値を変更したり、エラー ハンドラー、メッセージ インターセプター、パラメーター インターセプター、セキュリティ拡張などのカスタム拡張オブジェクトを挿入したりできるようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、一部のカスタム実行シナリオをサポートするために構築される <xref:System.ServiceModel.ServiceHostBase> オブジェクトを検査または変更します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="serviceHostBase" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IServiceBehavior.Validate">
+      <MemberSignature Language="C#" Value="void IServiceBehavior.Validate (System.ServiceModel.Description.ServiceDescription description, System.ServiceModel.ServiceHostBase serviceHostBase);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IServiceBehavior.Validate(class System.ServiceModel.Description.ServiceDescription description, class System.ServiceModel.ServiceHostBase serviceHostBase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.ServiceSecurityAuditBehavior.System#ServiceModel#Description#IServiceBehavior#Validate(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="description" Type="System.ServiceModel.Description.ServiceDescription" />
+        <Parameter Name="serviceHostBase" Type="System.ServiceModel.ServiceHostBase" />
+      </Parameters>
+      <Docs>
+        <param name="description">サービスの <see cref="T:System.ServiceModel.Description.ServiceDescription" />。</param>
+        <param name="serviceHostBase">サービスのホスト。</param>
+        <summary>実装されていません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

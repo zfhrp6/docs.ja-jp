@@ -1,0 +1,58 @@
+<Type Name="DisableDpiAwarenessAttribute" FullName="System.Windows.Media.DisableDpiAwarenessAttribute">
+  <TypeSignature Language="C#" Value="public sealed class DisableDpiAwarenessAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DisableDpiAwarenessAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.DisableDpiAwarenessAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly, AllowMultiple=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>WPF アプリケーションのドット/インチ (dpi) すべてのユーザー インターフェイス要素の認知度を無効にできます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]アプリケーションが dpi 対応で、ユーザー インターフェイスのレイアウトの計算方法はどのように影響します。 ただし、アプリケーションを無効にできます dpi 認識を追加して、<xref:System.Windows.Media.DisableDpiAwarenessAttribute>アプリケーション アセンブリにします。  
+  
+> [!CAUTION]
+>  **いない**dpi 以外に、アプリケーションのすべてのユーザー インターフェイス要素が必要でない限り、アプリケーションには、この属性を設定することをお勧めに注意してください。  
+  
+   
+  
+## Examples  
+ 次の例は、Dpi の認知度を無効にする方法を示しています、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]宣言することによってアプリケーション<xref:System.Windows.Media.DisableDpiAwarenessAttribute>アセンブリ レベルでします。  
+  
+ [!code-csharp[DisableDpiAwareness#DisableDpiAwarenessAttribute1](~/samples/snippets/csharp/VS_Snippets_Wpf/DisableDpiAwareness/CSharp/Window1.xaml.cs#disabledpiawarenessattribute1)]
+ [!code-vb[DisableDpiAwareness#DisableDpiAwarenessAttribute1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DisableDpiAwareness/visualbasic/window1.xaml.vb#disabledpiawarenessattribute1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DisableDpiAwarenessAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DisableDpiAwarenessAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Windows.Media.DisableDpiAwarenessAttribute" /> の新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

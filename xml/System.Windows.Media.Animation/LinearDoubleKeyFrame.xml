@@ -1,0 +1,126 @@
+<Type Name="LinearDoubleKeyFrame" FullName="System.Windows.Media.Animation.LinearDoubleKeyFrame">
+  <TypeSignature Language="C#" Value="public class LinearDoubleKeyFrame : System.Windows.Media.Animation.DoubleKeyFrame" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LinearDoubleKeyFrame extends System.Windows.Media.Animation.DoubleKeyFrame" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.LinearDoubleKeyFrame" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Animation.DoubleKeyFrame</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アニメーション化、 <see cref="T:System.Double" /> 、それぞれに前のキー フレームの値<see cref="P:System.Windows.Media.Animation.DoubleKeyFrame.Value" />線形補間を使用します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスの一部として使用される、<xref:System.Windows.Media.Animation.DoubleKeyFrameCollection>と組み合わせて、<xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>アニメーション化する、<xref:System.Double>一連のキー フレームに沿って。  
+  
+ キー フレームのセグメントを定義する、<xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>属しています。 各キー フレームがターゲット<xref:System.Windows.Media.Animation.DoubleKeyFrame.Value%2A>と<xref:System.Windows.Media.Animation.DoubleKeyFrame.KeyTime%2A>です。 <xref:System.Windows.Media.Animation.DoubleKeyFrame.KeyTime%2A>どの時点を指定します、キー フレームの<xref:System.Windows.Media.Animation.DoubleKeyFrame.Value%2A>に到達します。 キー フレームは、前のキー フレームのターゲット値から独自のターゲット値をアニメーション化します。 前のキー フレームが終了し、独自のキーの日時に達したときに終了時に開始します。  
+  
+ などの線形のキー フレーム<xref:System.Windows.Media.Animation.LinearDoubleKeyFrame>滑らかで線形補間を作成します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinearDoubleKeyFrame ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.LinearDoubleKeyFrame.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Animation.LinearDoubleKeyFrame" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinearDoubleKeyFrame (double value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.LinearDoubleKeyFrame.#ctor(System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="value">キー フレームの終了値 (「ターゲット値」)。</param>
+        <summary>指定した終了値を使用して、<see cref="T:System.Windows.Media.Animation.LinearDoubleKeyFrame" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinearDoubleKeyFrame (double value, System.Windows.Media.Animation.KeyTime keyTime);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 value, valuetype System.Windows.Media.Animation.KeyTime keyTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.LinearDoubleKeyFrame.#ctor(System.Double,System.Windows.Media.Animation.KeyTime)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+        <Parameter Name="keyTime" Type="System.Windows.Media.Animation.KeyTime" />
+      </Parameters>
+      <Docs>
+        <param name="value">キー フレームの終了値 (「ターゲット値」)。</param>
+        <param name="keyTime">キー フレームのキー時刻。 キー時刻によりターゲット値に到達する時点が決まります。この時刻はキー フレームが終了する時点にもなります。</param>
+        <summary>指定した終了値とキー時刻を使用して <see cref="T:System.Windows.Media.Animation.LinearDoubleKeyFrame" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.LinearDoubleKeyFrame.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Animation.LinearDoubleKeyFrame" /> の新しいインスタンスを作成します。</summary>
+        <returns>新しい <see cref="T:System.Windows.Media.Animation.LinearDoubleKeyFrame" /> インスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InterpolateValueCore">
+      <MemberSignature Language="C#" Value="protected override double InterpolateValueCore (double baseValue, double keyFrameProgress);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance float64 InterpolateValueCore(float64 baseValue, float64 keyFrameProgress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.LinearDoubleKeyFrame.InterpolateValueCore(System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseValue" Type="System.Double" />
+        <Parameter Name="keyFrameProgress" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="baseValue">アニメーション化する元の値。</param>
+        <param name="keyFrameProgress">このキー フレームの経過時間の割合を示す 0.0 ～ 1.0 の値。</param>
+        <summary>指定された進行状況の増分を使用して、以前のキー フレーム値と現在のキー フレーム値の間の線形補間を実行します。</summary>
+        <returns>指定された基準値と進行状況が示された、このキー フレームの出力値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,107 @@
+<Type Name="DataSourceOperation" FullName="System.Web.UI.DataSourceOperation">
+  <TypeSignature Language="C#" Value="public enum DataSourceOperation" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DataSourceOperation extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.DataSourceOperation" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>データ ソース コントロールによって実行されるデータの操作を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataSourceOperation>列挙体は、データ ソース コントロールがその基になるデータで実行できるアクションを表します。 データ ソース コントロールなど<xref:System.Web.UI.WebControls.SqlDataSource>と<xref:System.Web.UI.WebControls.ObjectDataSource>実行される操作の種類を追跡するためにこれらの列挙値を使用します。  
+  
+ 5 つの主要なデータ ソース操作がによって表される、<xref:System.Web.UI.DataSourceOperation>列挙します。 Select および SelectCount 値が、Delete、Insert、中に、基になるデータ ソースからデータを取得する操作を示し、値の更新は、データを変更する操作を示します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Delete">
+      <MemberSignature Language="C#" Value="Delete" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.DataSourceOperation Delete = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.DataSourceOperation.Delete" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataSourceOperation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作は、データ ソースからレコードを削除します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="Insert" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.DataSourceOperation Insert = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.DataSourceOperation.Insert" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataSourceOperation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作は、データ ソースに 1 つまたは複数のレコードを挿入します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Select">
+      <MemberSignature Language="C#" Value="Select" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.DataSourceOperation Select = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.DataSourceOperation.Select" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataSourceOperation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作は、データ ソースからレコードを取得します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectCount">
+      <MemberSignature Language="C#" Value="SelectCount" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.DataSourceOperation SelectCount = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.DataSourceOperation.SelectCount" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataSourceOperation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作は、データ ソースからクエリのレコードの合計数を取得します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Update">
+      <MemberSignature Language="C#" Value="Update" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.DataSourceOperation Update = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.DataSourceOperation.Update" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataSourceOperation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作は、データ ソースのレコードを更新します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

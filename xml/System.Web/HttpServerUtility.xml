@@ -1,0 +1,1328 @@
+<Type Name="HttpServerUtility" FullName="System.Web.HttpServerUtility">
+  <TypeSignature Language="C#" Value="public sealed class HttpServerUtility" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HttpServerUtility extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.HttpServerUtility" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Web 要求を処理するヘルパー メソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドとプロパティの<xref:System.Web.HttpServerUtility>クラスは、組み込みを通じて公開される<xref:System.Web.HttpContext.Server%2A>ASP.NET によって提供されるオブジェクト。  
+  
+   
+  
+## Examples  
+ Visual Studio の Web サイト プロジェクトとソース コードは、このトピックで使用可能な:[ダウンロード](http://go.microsoft.com/fwlink/?LinkId=192870)です。  
+  
+ 次の例で使用する方法、<xref:System.Web.HttpServerUtility.HtmlEncode%2A>メソッドおよび<xref:System.Web.HttpServerUtility.UrlEncode%2A>のメソッド、<xref:System.Web.HttpServerUtility>クラスです。 <xref:System.Web.HttpServerUtility.HtmlEncode%2A>メソッドにより、任意のユーザーが指定した文字列入力は実行可能なスクリプトまたは HTML 要素の代わりにブラウザーで静的なテキストとしてレンダリングされますにすることを確認してください。 <xref:System.Web.HttpServerUtility.UrlEncode%2A>正しく HTTP ストリームで送信されるように、メソッドは Url をエンコードします。  
+  
+ [!code-aspx-csharp[System.Web.HttpServerUtility1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpServerUtility1/cs/HttpServerUtilityCS.aspx#1)]
+ [!code-aspx-vb[System.Web.HttpServerUtility1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpServerUtility1/vb/HttpServerUtilityVB.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ClearError">
+      <MemberSignature Language="C#" Value="public void ClearError ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ClearError() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.ClearError" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>前回の例外を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、スローされた最後の例外をクリアします。  
+  
+ [!code-csharp[Classic HttpServerUtility.ClearError Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpServerUtility.ClearError Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpServerUtility.ClearError Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpServerUtility.ClearError Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateObject">
+      <MemberSignature Language="C#" Value="public object CreateObject (string progID);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object CreateObject(string progID) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.CreateObject(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="progID" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="progID">インスタンスを作成するオブジェクトのクラスまたは型。</param>
+        <summary>オブジェクトのプログラム ID (ProgID) で識別されている COM オブジェクトのサーバー インスタンスを作成します。</summary>
+        <returns>新しいオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、オブジェクトの ProgID を使用してオブジェクトを作成します。  
+  
+ [!code-csharp[Classic HttpServerUtility.CreateObject Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpServerUtility.CreateObject Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpServerUtility.CreateObject Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpServerUtility.CreateObject Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">オブジェクトのインスタンスを作成できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateObject">
+      <MemberSignature Language="C#" Value="public object CreateObject (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object CreateObject(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.CreateObject(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">A<see cref="T:System.Type" />を表すオブジェクトを作成します。</param>
+        <summary>オブジェクトの型で識別されている COM オブジェクトのサーバー インスタンスを作成します。</summary>
+        <returns>新しいオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateObjectFromClsid">
+      <MemberSignature Language="C#" Value="public object CreateObjectFromClsid (string clsid);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object CreateObjectFromClsid(string clsid) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.CreateObjectFromClsid(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clsid" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="clsid">インスタンスを作成するオブジェクトのクラス ID。</param>
+        <summary>オブジェクトのクラス ID (CLSID) で識別されている COM オブジェクトのサーバー インスタンスを作成します。</summary>
+        <returns>新しいオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.HttpServerUtility.CreateObjectFromClsid%2A>メソッドを COM オブジェクトのサーバー インスタンスを作成します。  
+  
+ [!code-csharp[Classic HttpServerUtility.CreateObjectFromClsid Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpServerUtility.CreateObjectFromClsid Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpServerUtility.CreateObjectFromClsid Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpServerUtility.CreateObjectFromClsid Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">オブジェクトのインスタンスを作成できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="public void Execute (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Execute(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.Execute(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">実行する URL パス。</param>
+        <summary>指定した仮想パスのハンドラーを現在の要求のコンテキストで実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpServerUtility.Execute%2A>メソッドは、新しいページの実行が完了した後に、元のページの実行を継続します。 <xref:System.Web.HttpServerUtility.Transfer%2A>メソッドが別のハンドラーの実行を無条件で転送します。  
+  
+ ASP.NET を検証しないによって配信されるリソースを表示する現在のユーザーが許可されている、<xref:System.Web.HttpServerUtility.Execute%2A>メソッドです。 ASP.NET が直接によって示されるハンドラーを呼び出しますが、元のリソースのハンドラーが呼び出される前に、ASP.NET 認証と承認ロジックを実行、<xref:System.Web.HttpServerUtility.Execute%2A>メソッドとは、新しいリソースの認証と承認のロジックを再実行されません。 アプリケーションのセキュリティ ポリシーでは、クライアントが適切なリソースへのアクセス許可を得ている必要がある場合、アプリケーションを強制またはカスタムのアクセス制御メカニズムを提供します。  
+  
+ 使用して強制することができます、<xref:System.Web.HttpResponse.Redirect%2A>メソッドの代わりに、<xref:System.Web.HttpServerUtility.Execute%2A>メソッドです。 <xref:System.Web.HttpResponse.Redirect%2A>ブラウザーが、新しいリソースを要求するクライアント側リダイレクトを実行します。 このリダイレクトは、システムへの新しい要求であるために、これがインターネット インフォメーション サービス (IIS) と ASP.NET の両方のセキュリティ ポリシーのすべての認証と承認のロジックに加わっています。  
+  
+ ユーザーが使用するカスタム承認メソッドを組み込むことにより、リソースを表示するアクセス許可を持っていることを確認することができます、<xref:System.Security.Principal.WindowsPrincipal.IsInRole%2A>アプリケーション呼び出される前にメソッド、<xref:System.Web.HttpServerUtility.Execute%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、現在のディレクトリに"Updateinfo.aspx".aspx ページが表示されます。 Updateinfo.aspx ページが表示された後、プログラムの実行は開始ページを返します。  
+  
+ [!code-csharp[Classic HttpServerUtility.Execute Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpServerUtility.Execute Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpServerUtility.Execute Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpServerUtility.Execute Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">現在の <see cref="T:System.Web.HttpContext" /> が <see langword="null" /> です。  
+  
+ \- または  
+  
+ 指定されたハンドラーの実行中にエラーが発生しました。<paramref name="path" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="path" /> は仮想パスではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="public void Execute (string path, bool preserveForm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Execute(string path, bool preserveForm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.Execute(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="preserveForm" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="path">実行する URL パス。</param>
+        <param name="preserveForm">
+          <see cref="P:System.Web.HttpRequest.QueryString" /> コレクションおよび <see cref="P:System.Web.HttpRequest.Form" /> コレクションを保持する場合は、<see langword="true" />。<see cref="P:System.Web.HttpRequest.QueryString" /> コレクションおよび <see cref="P:System.Web.HttpRequest.Form" /> コレクションをクリアする場合は、<see langword="false" />。</param>
+        <summary>現在の要求のコンテキストで指定された仮想パスのハンドラーを実行し、オフにするかどうかを指定します、<see cref="P:System.Web.HttpRequest.QueryString" />と<see cref="P:System.Web.HttpRequest.Form" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、.aspx ページを実行する方法を示します`Updateinfo.aspx`、現在の要求と保持で、<xref:System.Web.HttpRequest.QueryString%2A>と<xref:System.Web.HttpRequest.Form%2A>コレクション。 プログラム実行後に開始ページに戻ります`Updateinfo.aspx`が表示されます。  
+  
+ [!code-csharp[HttpServerUtility.Execute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpServerUtility.Execute/CS/httpserverutility.execute_cs.aspx#1)]
+ [!code-vb[HttpServerUtility.Execute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpServerUtility.Execute/VB/httpserverutility.execute_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">現在の <see cref="T:System.Web.HttpContext" /> が <see langword="null" /> です。  
+  
+ \- または  
+  
+ 指定されたハンドラーの実行中にエラーが発生しました。<paramref name="path" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="path" /> は仮想パスではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="public void Execute (string path, System.IO.TextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Execute(string path, class System.IO.TextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.Execute(System.String,System.IO.TextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="path">実行する URL パス。</param>
+        <param name="writer"><see cref="T:System.IO.TextWriter" />出力をキャプチャします。</param>
+        <summary>指定した仮想パスのハンドラーを現在の要求のコンテキストで実行します。 A<see cref="T:System.IO.TextWriter" />実行したハンドラーからの出力をキャプチャします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpServerUtility.Execute%2A>メソッドは、指定された仮想パスの実行が完了した後に、元の要求の実行を継続します。 <xref:System.Web.HttpServerUtility.Transfer%2A>メソッドが別のハンドラーの実行を無条件で転送します。  
+  
+ ASP.NET を検証しないによって配信されるリソースを表示する現在のユーザーが許可されている、<xref:System.Web.HttpServerUtility.Execute%2A>メソッドです。 ASP.NET が直接によって示されるハンドラーを呼び出しますが、元のリソースのハンドラーが呼び出される前に、ASP.NET 認証と承認ロジックを実行、<xref:System.Web.HttpServerUtility.Execute%2A>メソッドとは、新しいリソースの認証と承認のロジックを再実行されません。 アプリケーションのセキュリティ ポリシーでは、クライアントが適切なリソースへのアクセス許可を得ている必要がある場合、アプリケーションを強制またはカスタムのアクセス制御メカニズムを提供します。  
+  
+ 使用して強制することができます、<xref:System.Web.HttpResponse.Redirect%2A>メソッドの代わりに、<xref:System.Web.HttpServerUtility.Execute%2A>メソッドです。 <xref:System.Web.HttpResponse.Redirect%2A>ブラウザーが、新しいリソースを要求するクライアント側リダイレクトを実行します。 このリダイレクトは、システムへの新しい要求であるために、これがインターネット インフォメーション サービス (IIS) と ASP.NET の両方のセキュリティ ポリシーのすべての認証と承認のロジックに加わっています。  
+  
+ ユーザーが使用するカスタム承認メソッドを組み込むことにより、リソースを表示するアクセス許可を持っていることを確認することができます、<xref:System.Security.Principal.WindowsPrincipal.IsInRole%2A>アプリケーション呼び出される前にメソッド、<xref:System.Web.HttpServerUtility.Execute%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を実行、 `Login.aspx` 、サーバーの現在のディレクトリに ページし、ページを介してから出力を受け取る、<xref:System.IO.StringWriter>オブジェクト`writer`です。 受信した HTML ストリームを書き込みます`writer`http 出力ストリーム。  
+  
+ [!code-csharp[Classic HttpServerUtility.Execute1 Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpServerUtility.Execute1 Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpServerUtility.Execute1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpServerUtility.Execute1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">現在の <see cref="T:System.Web.HttpContext" /> が <see langword="null" /> です。  
+  
+ \- または  
+  
+ 指定されたハンドラーの実行中にエラーが発生しました。<paramref name="path" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="path" /> は仮想パスではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="public void Execute (string path, System.IO.TextWriter writer, bool preserveForm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Execute(string path, class System.IO.TextWriter writer, bool preserveForm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.Execute(System.String,System.IO.TextWriter,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+        <Parameter Name="preserveForm" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="path">実行する URL パス。</param>
+        <param name="writer"><see cref="T:System.IO.TextWriter" />出力をキャプチャします。</param>
+        <param name="preserveForm">
+          <see cref="P:System.Web.HttpRequest.QueryString" /> コレクションおよび <see cref="P:System.Web.HttpRequest.Form" /> コレクションを保持する場合は、<see langword="true" />。<see cref="P:System.Web.HttpRequest.QueryString" /> コレクションおよび <see cref="P:System.Web.HttpRequest.Form" /> コレクションをクリアする場合は、<see langword="false" />。</param>
+        <summary>指定した仮想パスのハンドラーを現在の要求のコンテキストで実行します。 A <see cref="T:System.IO.TextWriter" /> 、ページ、およびブール値パラメーターからの出力をキャプチャすると、オフにするかどうかを指定します、<see cref="P:System.Web.HttpRequest.QueryString" />と<see cref="P:System.Web.HttpRequest.Form" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpServerUtility.Execute%2A>メソッドは、指定した仮想パスの実行が完了した後に、元の要求の実行を継続します。 <xref:System.Web.HttpServerUtility.Transfer%2A>メソッドが別のハンドラーの実行を無条件で転送します。  
+  
+ ASP.NET を検証しないによって配信されるリソースを表示する現在のユーザーが許可されている、<xref:System.Web.HttpServerUtility.Execute%2A>メソッドです。 ASP.NET が直接によって示されるハンドラーを呼び出しますが、元のリソースのハンドラーが呼び出される前に、ASP.NET 認証と承認ロジックを実行、<xref:System.Web.HttpServerUtility.Execute%2A>メソッドとは、新しいリソースの認証と承認のロジックを再実行されません。 アプリケーションのセキュリティ ポリシーでは、クライアントが適切なリソースへのアクセス許可を得ている必要がある場合、アプリケーションを強制またはカスタムのアクセス制御メカニズムを提供します。  
+  
+ 使用して強制することができます、<xref:System.Web.HttpResponse.Redirect%2A>メソッドの代わりに、<xref:System.Web.HttpServerUtility.Execute%2A>メソッドです。 <xref:System.Web.HttpResponse.Redirect%2A>ブラウザーが、新しいリソースを要求するクライアント側リダイレクトを実行します。 このリダイレクトは、システムへの新しい要求であるために、これがインターネット インフォメーション サービス (IIS) と ASP.NET の両方のセキュリティ ポリシーのすべての認証と承認のロジックに加わっています。  
+  
+ ユーザーが使用するカスタム承認メソッドを組み込むことにより、リソースを表示するアクセス許可を持っていることを確認することができます、<xref:System.Security.Principal.WindowsPrincipal.IsInRole%2A>アプリケーション呼び出される前にメソッド、<xref:System.Web.HttpServerUtility.Execute%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を実行、 `Login.aspx` 、サーバーの現在のディレクトリに ページし、ページを介してから出力を受け取る、<xref:System.IO.StringWriter>オブジェクト`writer`です。 受信した HTML ストリームを書き込みます`writer`http 出力ストリーム。 内容、<xref:System.Web.HttpRequest.Form%2A>と<xref:System.Web.HttpRequest.QueryString%2A>コレクションが保持されます。  
+  
+ [!code-csharp[HttpServerUtility.Execute02#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpServerUtility.Execute02/CS/httpserverutility.execute02_cs.aspx#1)]
+ [!code-vb[HttpServerUtility.Execute02#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpServerUtility.Execute02/VB/httpserverutility.execute02_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">現在<see cref="T:System.Web.HttpContext" />null 参照 (<see langword="Nothing" /> Visual Basic で)。  
+  
+ \- または  
+  
+ <paramref name="path" /> がピリオド (.) で終わっています。  
+  
+ \- または  
+  
+ 指定されたハンドラーの実行中にエラーが発生しました。<paramref name="path" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は仮想パスではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="public void Execute (System.Web.IHttpHandler handler, System.IO.TextWriter writer, bool preserveForm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Execute(class System.Web.IHttpHandler handler, class System.IO.TextWriter writer, bool preserveForm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.Execute(System.Web.IHttpHandler,System.IO.TextWriter,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="handler" Type="System.Web.IHttpHandler" />
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+        <Parameter Name="preserveForm" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="handler">HTTP ハンドラーを実装する、<see cref="T:System.Web.IHttpHandler" />を現在の要求を転送します。</param>
+        <param name="writer"><see cref="T:System.IO.TextWriter" />出力をキャプチャします。</param>
+        <param name="preserveForm">
+          <see cref="P:System.Web.HttpRequest.QueryString" /> コレクションおよび <see cref="P:System.Web.HttpRequest.Form" /> コレクションを保持する場合は、<see langword="true" />。<see cref="P:System.Web.HttpRequest.QueryString" /> コレクションおよび <see cref="P:System.Web.HttpRequest.Form" /> コレクションをクリアする場合は、<see langword="false" />。</param>
+        <summary>指定した仮想パスのハンドラーを現在の要求のコンテキストで実行します。 A<see cref="T:System.IO.TextWriter" />実行したハンドラーとブール型パラメーターからの出力をキャプチャすると、オフにするかどうかを指定します、<see cref="P:System.Web.HttpRequest.QueryString" />と<see cref="P:System.Web.HttpRequest.Form" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 事前定義された、特定の種類の共通言語仕様 (CLS) に準拠した任意の言語での HTTP 要求を処理するカスタム HTTP ハンドラーを記述することができます。 従来の ASP (従来の ASP とも呼ばれます) のページまたは ASP.NET ページではなく HTTP ハンドラーのクラスで定義されている実行可能コードは、これらの特定の要求に応答します。 低レベルの要求とインターネット インフォメーション サービス (IIS) を実行している Web サーバーの応答サービスと対話する HTTP ハンドラーを使用して、機能が類似している ISAPI 拡張機能には、プログラミング モデルがより単純です。  
+  
+ ASP.NET を検証しないによって配信されるリソースを表示する現在のユーザーが許可されている、<xref:System.Web.HttpServerUtility.Execute%2A>メソッドです。 ASP.NET が直接で示されているハンドラーを呼び出しますが、元のリソースのハンドラーが呼び出される前に、ASP.NET 認証と承認ロジックを実行、<xref:System.Web.HttpServerUtility.Execute%2A>メソッドとは、新しいリソースの認証と承認のロジックを再実行されません。 アプリケーションのセキュリティ ポリシーでは、クライアント リソースにアクセスするために適切な承認を許可する必要がある場合、アプリケーションを強制またはカスタムのアクセス制御メカニズムを提供します。  
+  
+ 使用して強制することができます、<xref:System.Web.HttpResponse.Redirect%2A>メソッドの代わりに、<xref:System.Web.HttpServerUtility.Execute%2A>メソッドです。 <xref:System.Web.HttpResponse.Redirect%2A>ブラウザーが、新しいリソースを要求するクライアント側リダイレクトを実行します。 このリダイレクトは、システムへの新しい要求であるため、IIS と ASP.NET の両方のセキュリティ ポリシーのすべての認証と承認のロジックにそれが加わっています。  
+  
+ ユーザーが使用するカスタム承認メソッドを組み込むことにより、リソースを表示するアクセス許可を持っていることを確認することができます、<xref:System.Security.Principal.WindowsPrincipal.IsInRole%2A>アプリケーション呼び出される前にメソッド、<xref:System.Web.HttpServerUtility.Execute%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">指定されたハンドラーの実行中にエラーが発生しました。<paramref name="handler" />です。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="handler" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLastError">
+      <MemberSignature Language="C#" Value="public Exception GetLastError ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Exception GetLastError() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.GetLastError" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>前回の例外を返します。</summary>
+        <returns>スローされた前回の例外。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、HTTP 出力ストリームに、アプリケーションの最後のエラーの説明を出力します。 エラーが発生しなかった場合は、「エラーなし」を出力します。  
+  
+ [!code-csharp[Classic HttpServerUtility.GetLastError Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpServerUtility.GetLastError Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpServerUtility.GetLastError Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpServerUtility.GetLastError Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HtmlDecode">
+      <MemberSignature Language="C#" Value="public string HtmlDecode (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string HtmlDecode(string s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.HtmlDecode(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s">デコードする HTML 文字列。</param>
+        <summary>HTML エンコードされた文字列をデコードし、デコードした文字列を返します。</summary>
+        <returns>デコードされたテキスト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ HTML エンコードは、テキストがブラウザーに正しく表示され、ブラウザーで HTML として解釈されないことを確認します。 たとえば、テキスト文字列には、小なり記号が含まれている場合 (\<) またはそれ以上不等号 (>)、ブラウザーではこれらの文字として解釈開始タグまたは HTML タグの終わりかっこです。 文字がエンコードされた HTML の場合は、文字列に変換されます`&lt;`と`&gt;`、それが原因で、ブラウザーで、不等号記号値を超えて正しくを表示します。 <xref:System.Web.HttpServerUtility.HtmlDecode%2A>サーバーに転送されたテキストをデコードします。  
+  
+ このメソッドは、アクセスする便利な手段、<xref:System.Web.HttpUtility.HtmlDecode%2A?displayProperty=nameWithType>実行時に ASP.NET アプリケーションからのメソッドです。 このメソッドを使用して内部的には、<xref:System.Web.HttpUtility.HtmlDecode%2A?displayProperty=nameWithType>文字列をデコードします。  
+  
+ ASP.NET web ページの分離コード ファイル内のインスタンスにアクセス、<xref:System.Web.HttpServerUtility>クラスを通じて、`Server`プロパティです。 分離コード ファイルに含まれていないクラスで使用`HttpContext.Current.Server`のインスタンスにアクセスする、<xref:System.Web.HttpServerUtility>クラスです。  
+  
+ 外部では、web アプリケーションを使用、<xref:System.Net.WebUtility>クラス値をエンコードまたはデコードします。  
+  
+   
+  
+## Examples  
+ 次の例には、関数が含まれています。 `LoadDecodedFile`、ファイルからデータをデコードすると、1 つの文字列にコピーします。  
+  
+ [!code-aspx-csharp[Classic HttpServerUtility.HtmlDecode Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpServerUtility.HtmlDecode Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic HttpServerUtility.HtmlDecode Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpServerUtility.HtmlDecode Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HtmlDecode">
+      <MemberSignature Language="C#" Value="public void HtmlDecode (string s, System.IO.TextWriter output);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void HtmlDecode(string s, class System.IO.TextWriter output) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.HtmlDecode(System.String,System.IO.TextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="output" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="s">デコードする HTML 文字列。</param>
+        <param name="output"><see cref="T:System.IO.TextWriter" />デコードされた文字列を格納している出力ストリーム。</param>
+        <summary>HTML エンコードされた文字列をデコードし、結果として得られるに出力を送信、<see cref="T:System.IO.TextWriter" />出力ストリーム。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ HTML エンコードは、テキストがブラウザーに正しく表示され、ブラウザーで HTML として解釈されないことを確認します。 たとえば、テキスト文字列には、小なり記号が含まれている場合 (\<) またはそれ以上不等号 (>)、ブラウザーではこれらの文字として解釈開始タグまたは HTML タグの終わりかっこです。 文字がエンコードされた HTML の場合は、文字列に変換されます`&lt;`と`&gt;`、それが原因で、ブラウザーで、不等号記号値を超えて正しくを表示します。  
+  
+ <xref:System.Web.HttpServerUtility.HtmlDecode%2A>サーバーに転送されたテキストをデコードします。  
+  
+ <xref:System.Web.HttpServerUtility.HtmlDecode%2A>アクセスする便利な方法は、<xref:System.Web.HttpUtility.HtmlDecode%2A?displayProperty=nameWithType>実行時に ASP.NET アプリケーションからのメソッドです。 内部的には、<xref:System.Web.HttpServerUtility.HtmlDecode%2A>使用<xref:System.Web.HttpUtility.HtmlDecode%2A?displayProperty=nameWithType>に文字列をデコードします。  
+  
+ Web アプリケーションの外部の値をエンコードまたはデコードを使用して、<xref:System.Net.WebUtility>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例では、HTML エンコードされた送信用 HTTP 経由で文字列をデコードします。 という名前の指定された文字列をデコード`EncodedString`テキストが含まれています"これは、&lt;テスト文字列&gt;."、という名前の文字列にコピーして`DecodedString`として"これは、\<テスト文字列 > です。"です。  
+  
+ [!code-csharp[Classic HttpServerUtility.HtmlDecode1 Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpServerUtility.HtmlDecode1 Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpServerUtility.HtmlDecode1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpServerUtility.HtmlDecode1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HtmlEncode">
+      <MemberSignature Language="C#" Value="public string HtmlEncode (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string HtmlEncode(string s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.HtmlEncode(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s">エンコードする文字列。</param>
+        <summary>文字列を HTML エンコードし、エンコードされた文字列を返します。</summary>
+        <returns>HTML エンコードされたテキスト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ HTML エンコードは、テキストがブラウザーに正しく表示され、ブラウザーで HTML として解釈されないことを確認します。 たとえば、テキスト文字列には、小なり記号が含まれている場合 (\<) またはそれ以上不等号 (>)、ブラウザーではこれらの文字として解釈開始タグまたは HTML タグの終わりかっこです。 文字がエンコードされた HTML の場合は、文字列に変換されます`&lt;`と`&gt;`、それが原因で、ブラウザーで、不等号記号値を超えて正しくを表示します。  
+  
+ このメソッドは、アクセスする便利な手段、<xref:System.Web.HttpUtility.HtmlEncode%2A?displayProperty=nameWithType>実行時に ASP.NET アプリケーションからのメソッドです。 このメソッドを使用して内部的には、<xref:System.Web.HttpUtility.HtmlEncode%2A?displayProperty=nameWithType>文字列をエンコードします。  
+  
+ ASP.NET web ページの分離コード ファイル内のインスタンスにアクセス、<xref:System.Web.HttpServerUtility>クラスを通じて、`Server`プロパティです。 分離コード ファイルに含まれていないクラスで使用`HttpContext.Current.Server`のインスタンスにアクセスする、<xref:System.Web.HttpServerUtility>クラスです。  
+  
+ 外部では、web アプリケーションを使用、<xref:System.Net.WebUtility>クラス値をエンコードまたはデコードします。  
+  
+   
+  
+## Examples  
+ 次の例では、方法に値を HTML エンコードする可能性のあるコードのアンセーフ コードを示します。 コードは、web ページの分離コード ファイルに存在します。 エンコードする値は、のみを例を簡略化し、HTML エンコードする場合があります値の型を表示するには、この例では、ハードコーディングです。 通常は HTML エンコードをユーザーまたは要求から受信した値です。 `Result`指す、`Literal`コントロール。  
+  
+ [!code-csharp[System.Web.HttpServerUtility.HtmlEncode#1](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.httpserverutility.htmlencode/cs/default.aspx.cs#1)]
+ [!code-vb[System.Web.HttpServerUtility.HtmlEncode#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.httpserverutility.htmlencode/vb/default.aspx.vb#1)]  
+  
+ 次の例は似ていますが、前の例を示して 方法を HTML エンコードするクラス内の値されていないこと、分離コード ファイル。  
+  
+ [!code-csharp[System.Web.HttpServerUtility.HtmlEncode#2](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.httpserverutility.htmlencode/cs/sampleclass.cs#2)]
+ [!code-vb[System.Web.HttpServerUtility.HtmlEncode#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.httpserverutility.htmlencode/vb/sampleclass.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HtmlEncode">
+      <MemberSignature Language="C#" Value="public void HtmlEncode (string s, System.IO.TextWriter output);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void HtmlEncode(string s, class System.IO.TextWriter output) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.HtmlEncode(System.String,System.IO.TextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="output" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="s">エンコードする文字列。</param>
+        <param name="output"><see cref="T:System.IO.TextWriter" />エンコードの文字列を格納する出力ストリーム。</param>
+        <summary>文字列を HTML エンコードし、結果の出力を<see cref="T:System.IO.TextWriter" />出力ストリーム。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ HTML エンコーディングとは、ブラウザーで、ブラウザーで HTML として解釈されないテキストが正しく表示されることすることを確認します。 たとえば、テキスト文字列には、小なり記号が含まれている場合 (\<) またはそれ以上不等号 (>)、ブラウザーではこれらの文字として解釈開始タグまたは HTML タグの終わりかっこです。 これら 2 つの文字の HTML エンコードでは`&lt;`と`&gt;`、それぞれ、それが原因で、ブラウザーで、不等号記号値を超えて正しくを表示します。  
+  
+ <xref:System.Web.HttpServerUtility.HtmlEncode%2A>アクセスする便利な方法は、<xref:System.Web.HttpUtility.HtmlEncode%2A?displayProperty=nameWithType>実行時に ASP.NET アプリケーションからのメソッドです。 内部的には、<xref:System.Web.HttpServerUtility.HtmlEncode%2A>使用<xref:System.Web.HttpUtility.HtmlEncode%2A?displayProperty=nameWithType>文字列をエンコードします。  
+  
+ Web アプリケーションの外部の値をエンコードまたはデコードを使用して、<xref:System.Net.WebUtility>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例では、http 伝送用の文字列をエンコードします。 という名前の文字列をエンコード`TestString`、テキストが含まれています"これは、\<テスト文字列 > です。"、という名前の文字列にコピーすると`EncodedString`として"これは、&lt;テスト文字列&gt;。"です。  
+  
+ [!code-csharp[Classic HttpServerUtility.HtmlEncode1 Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpServerUtility.HtmlEncode1 Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpServerUtility.HtmlEncode1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpServerUtility.HtmlEncode1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MachineName">
+      <MemberSignature Language="C#" Value="public string MachineName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MachineName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpServerUtility.MachineName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーのコンピューター名を取得します。</summary>
+        <value>ローカル コンピューターの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、文字列変数として、サーバーのコンピューター名を格納します。  
+  
+ [!code-csharp[Classic HttpServerUtility.MachineName Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpServerUtility.MachineName Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpServerUtility.MachineName Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpServerUtility.MachineName Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">コンピューター名が見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MapPath">
+      <MemberSignature Language="C#" Value="public string MapPath (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string MapPath(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.MapPath(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">Web アプリケーション内の仮想パス。</param>
+        <summary>指定した仮想パスに対応する物理ファイル パスを返します。</summary>
+        <returns>対応する Web サーバー上の物理ファイル パス<paramref name="path" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`path`は`null`、<xref:System.Web.HttpServerUtility.MapPath%2A>メソッド パスの現在の要求を格納するディレクトリの完全な物理パスを返します。 相対パスは、既存のファイルまたはフォルダーの値を返すには、このメソッドを指定する必要はありません。 ただし、Web アプリケーションの外部でパスを指定することはできません。  
+  
+> [!IMPORTANT]
+>  <xref:System.Web.HttpServerUtility.MapPath%2A>メソッドに可能性のあるホスティング環境に関する機密情報が含まれています。 戻り値をユーザーに表示されません必要があります。  
+  
+ Web アプリケーションに存在する`C:\ExampleSites\TestMapPath`は、次の結果を返します。  
+  
+|要求します。|`path`|戻り値|  
+|------------------|------------|--------------------|  
+|RootLevelPage.aspx|`null`|C:\ExampleSites\TestMapPath|  
+|RootLevelPage.aspx|"/DownOneLevel/DownLevelPage.aspx"|C:\ExampleSites\TestMapPath\DownOneLevel\DownLevelPage.aspx|  
+|RootLevelPage.aspx|"/NotRealFolder"|C:\ExampleSites\TestMapPath\NotRealFolder|  
+|RootLevelPage.aspx|"../OutsideApplication"|<xref:System.Web.HttpException>|  
+|/DownOneLevel/DownLevelPage.aspx|`null`|C:\ExampleSites\TestMapPath\DownOneLevel|  
+|/DownOneLevel/DownLevelPage.aspx|"../RootLevelPage.aspx"|C:\ExampleSites\TestMapPath\RootLevelPage.aspx|  
+  
+   
+  
+## Examples  
+ 次の例では、相対仮想パスの物理ファイルを取得する方法を示します。 コードは、web ページの分離コード ファイル内に存在し、既定値を利用して`Server`オブジェクト。  
+  
+ [!code-csharp[System.Web.HttpServerUtility.MapPath#1](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.httpserverutility.mappath/cs/default.aspx.cs#1)]
+ [!code-vb[System.Web.HttpServerUtility.MapPath#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.httpserverutility.mappath/vb/default.aspx.vb#1)]  
+  
+ 次の例は似ていますが、前の例に、分離コード ファイルに含まれていないクラス内からの物理パスを取得する方法を示します。  
+  
+ [!code-csharp[System.Web.HttpServerUtility.MapPath#2](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.httpserverutility.mappath/cs/sampleclass.cs#2)]
+ [!code-vb[System.Web.HttpServerUtility.MapPath#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.httpserverutility.mappath/vb/sampleclass.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">現在の <see cref="T:System.Web.HttpContext" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ScriptTimeout">
+      <MemberSignature Language="C#" Value="public int ScriptTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ScriptTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpServerUtility.ScriptTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求タイムアウト値を秒単位で取得し、設定します。</summary>
+        <value>要求のタイムアウト値設定。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpServerUtility.ScriptTimeout%2A>プロパティは、設定を Web.config ファイルで設定できる、`executionTimeout`要素の属性です。 使用したプログラムによるタイムアウトの設定、<xref:System.Web.HttpServerUtility.ScriptTimeout%2A>プロパティがこの Web.config 設定より優先されます。  
+  
+> [!NOTE]
+>  設定した場合、`debug`する要素の属性`true`Web.config ファイルの値で<xref:System.Web.HttpServerUtility.ScriptTimeout%2A>は無視されます。  
+  
+   
+  
+## Examples  
+ 次の例では、60 秒を要求のタイムアウト時間を設定します。  
+  
+ [!code-csharp[Classic HttpServerUtility.ScriptTimeout Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpServerUtility.ScriptTimeout Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpServerUtility.ScriptTimeout Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpServerUtility.ScriptTimeout Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">現在の <see cref="T:System.Web.HttpContext" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">タイムアウト期間は<see langword="null" />か、それ以外の場合、設定できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Transfer">
+      <MemberSignature Language="C#" Value="public void Transfer (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Transfer(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.Transfer(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">サーバー上にある、実行する新しいページの URL パス。</param>
+        <summary>現在の要求に対して、現在のページの実行を終了し、指定された URL パスを使用して新しいページの実行を開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 転送先のページには、別の .aspx ページをする必要があります。 たとえば、.asp ファイルまたは .asmx ページへの転送が正しくありません。 <xref:System.Web.HttpServerUtility.Transfer%2A>メソッドが保持されます、<xref:System.Web.HttpRequest.QueryString%2A>と<xref:System.Web.HttpRequest.Form%2A>コレクション。  
+  
+ <xref:System.Web.HttpServerUtility.Transfer%2A>呼び出し<xref:System.Web.HttpResponse.End%2A>、どのがスローされます、<xref:System.Threading.ThreadAbortException>完了時に例外です。  
+  
+ ASP.NET を検証しないによって配信されるリソースを表示する現在のユーザーが許可されている、<xref:System.Web.HttpServerUtility.Transfer%2A>メソッドです。 ASP.NET が直接によって示されるハンドラーを呼び出しますが、元のリソースのハンドラーが呼び出される前に、ASP.NET 認証と承認ロジックを実行、<xref:System.Web.HttpServerUtility.Transfer%2A>メソッドとは、新しいリソースの認証と承認のロジックを再実行されません。 アプリケーションのセキュリティ ポリシーでは、クライアントが適切なリソースへのアクセス許可を得ている必要がある場合、アプリケーションを強制またはカスタムのアクセス制御メカニズムを提供します。  
+  
+ 使用して強制することができます、<xref:System.Web.HttpResponse.Redirect%2A>メソッドの代わりに、<xref:System.Web.HttpServerUtility.Transfer%2A>メソッドです。 <xref:System.Web.HttpResponse.Redirect%2A>メソッドは、ブラウザーが、新しいリソースを要求するクライアント側リダイレクトを実行します。 このリダイレクトは、システムへの新しい要求であるために、これがインターネット インフォメーション サービス (IIS) と ASP.NET の両方のセキュリティ ポリシーのすべての認証と承認のロジックに加わっています。  
+  
+ ユーザーが使用するカスタム承認メソッドを組み込むことにより、リソースを表示するアクセス許可を持っていることを確認することができます、<xref:System.Security.Principal.WindowsPrincipal.IsInRole%2A>アプリケーション呼び出される前にメソッド、<xref:System.Web.HttpServerUtility.Transfer%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Transfer">
+      <MemberSignature Language="C#" Value="public void Transfer (string path, bool preserveForm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Transfer(string path, bool preserveForm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.Transfer(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="preserveForm" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="path">サーバー上にある、実行する新しいページの URL パス。</param>
+        <param name="preserveForm">
+          <see cref="P:System.Web.HttpRequest.QueryString" /> コレクションおよび <see cref="P:System.Web.HttpRequest.Form" /> コレクションを保持する場合は、<see langword="true" />。<see cref="P:System.Web.HttpRequest.QueryString" /> コレクションおよび <see cref="P:System.Web.HttpRequest.Form" /> コレクションをクリアする場合は、<see langword="false" />。</param>
+        <summary>現在のページの実行を終了し、指定された URL パスを使用して新しいページの実行を開始します。 オフにするかどうかを指定します、<see cref="P:System.Web.HttpRequest.QueryString" />と<see cref="P:System.Web.HttpRequest.Form" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 転送先のページには、別の .aspx ページをする必要があります。 たとえば、.asp ファイルまたは .asmx ページへの転送が正しくありません。  
+  
+ <xref:System.Web.HttpServerUtility.Transfer%2A>呼び出し<xref:System.Web.HttpResponse.End%2A>、どのがスローされます、<xref:System.Threading.ThreadAbortException>完了時に例外です。  
+  
+ 設定した場合、`preserveForm`パラメーターを`true`、対象のページは、前のページのビュー ステートを使用してアクセスするようになります、<xref:System.Web.UI.Page.PreviousPage%2A>プロパティです。  
+  
+ セキュリティのために、おく必要があります、`enableViewStateMac`属性に設定`true`です。 ASP.NET を検証しないによって配信されるリソースを表示する現在のユーザーが許可されている、<xref:System.Web.HttpServerUtility.Transfer%2A>メソッドです。 ASP.NET が直接によって示されるハンドラーを呼び出しますが、元のリソースのハンドラーが呼び出される前に、ASP.NET 認証と承認ロジックを実行、<xref:System.Web.HttpServerUtility.Transfer%2A>メソッドとは、新しいリソースの認証と承認のロジックを再実行されません。 アプリケーションのセキュリティ ポリシーでは、クライアントが適切なリソースへのアクセス許可を得ている必要がある場合、アプリケーションを強制またはカスタムのアクセス制御メカニズムを提供します。  
+  
+ 使用して強制することができます、<xref:System.Web.HttpResponse.Redirect%2A>メソッドの代わりに、<xref:System.Web.HttpServerUtility.Transfer%2A>メソッドです。 <xref:System.Web.HttpResponse.Redirect%2A>メソッドは、ブラウザーが、新しいリソースを要求するクライアント側リダイレクトを実行します。 このリダイレクトは、システムへの新しい要求であるために、これがインターネット インフォメーション サービス (IIS) と ASP.NET の両方のセキュリティ ポリシーのすべての認証と承認のロジックに加わっています。  
+  
+ ユーザーが使用するカスタム承認メソッドを組み込むことにより、リソースを表示するアクセス許可を持っていることを確認することができます、<xref:System.Security.Principal.WindowsPrincipal.IsInRole%2A>アプリケーション呼び出される前にメソッド、<xref:System.Web.HttpServerUtility.Transfer%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、現在のページと同じディレクトリに新しいページを実行します。  
+  
+ [!code-csharp[Classic HttpServerUtility.Transfer Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpServerUtility.Transfer Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpServerUtility.Transfer Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpServerUtility.Transfer Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ApplicationException">現在のページ要求がコールバックです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Transfer">
+      <MemberSignature Language="C#" Value="public void Transfer (System.Web.IHttpHandler handler, bool preserveForm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Transfer(class System.Web.IHttpHandler handler, bool preserveForm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.Transfer(System.Web.IHttpHandler,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="handler" Type="System.Web.IHttpHandler" />
+        <Parameter Name="preserveForm" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="handler">HTTP ハンドラーを実装する、<see cref="T:System.Web.IHttpHandler" />を現在の要求を転送します。</param>
+        <param name="preserveForm">
+          <see cref="P:System.Web.HttpRequest.QueryString" /> コレクションおよび <see cref="P:System.Web.HttpRequest.Form" /> コレクションを保持する場合は、<see langword="true" />。<see cref="P:System.Web.HttpRequest.QueryString" /> コレクションおよび <see cref="P:System.Web.HttpRequest.Form" /> コレクションをクリアする場合は、<see langword="false" />。</param>
+        <summary>現在のページの実行を終了しを実装するカスタム HTTP ハンドラーを使用して新しい要求の実行を開始、<see cref="T:System.Web.IHttpHandler" />インターフェイスし、オフにするかどうかを指定します、<see cref="P:System.Web.HttpRequest.QueryString" />と<see cref="P:System.Web.HttpRequest.Form" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 事前定義された、特定の種類の共通言語仕様 (CLS) に準拠した任意の言語での HTTP 要求を処理するカスタム HTTP ハンドラーを記述することができます。 従来の ASP (従来の ASP とも呼ばれます) のページまたは ASP.NET ページではなく HTTP ハンドラーのクラスで定義されている実行可能コードは、これらの特定の要求に応答します。 低レベルの要求とインターネット インフォメーション サービス (IIS) を実行している Web サーバーの応答サービスと対話する HTTP ハンドラーを使用して、機能が類似している ISAPI 拡張機能には、プログラミング モデルがより単純です。  
+  
+ 設定した場合、`preserveForm`パラメーターを`true`、対象のページは、前のページのビュー ステートを使用してアクセスするようになります、<xref:System.Web.UI.Page.PreviousPage%2A>プロパティです。  
+  
+ セキュリティのために、おく必要があります、`enableViewStateMac`属性に設定`true`です。 ASP.NET を検証しないによって配信されるリソースを表示する現在のユーザーが許可されている、<xref:System.Web.HttpServerUtility.Transfer%2A>メソッドです。 ASP.NET が直接によって示されるハンドラーを呼び出しますが、元のリソースのハンドラーが呼び出される前に、ASP.NET 認証と承認ロジックを実行、<xref:System.Web.HttpServerUtility.Transfer%2A>メソッド、および新しいリソースの再実行されませんが認証および承認ロジック。 アプリケーションのセキュリティ ポリシーでは、クライアントが適切なリソースへのアクセス許可を得ている必要がある場合、アプリケーションを強制またはカスタムのアクセス制御メカニズムを提供します。  
+  
+ 使用して強制することができます、<xref:System.Web.HttpResponse.Redirect%2A>メソッドの代わりに、<xref:System.Web.HttpServerUtility.Transfer%2A>メソッドです。 <xref:System.Web.HttpResponse.Redirect%2A>メソッドは、ブラウザーが、新しいリソースを要求するクライアント側リダイレクトを実行します。 このリダイレクトは、システムへの新しい要求であるため、IIS と ASP.NET の両方のセキュリティ ポリシーのすべての認証と承認のロジックにそれが加わっています。  
+  
+ ユーザーが使用するカスタム承認メソッドを組み込むことにより、リソースを表示するアクセス許可を持っていることを確認することができます、<xref:System.Security.Principal.WindowsPrincipal.IsInRole%2A>アプリケーション呼び出される前にメソッド、<xref:System.Web.HttpServerUtility.Transfer%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ApplicationException">現在のページ要求がコールバックです。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="TransferRequest">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定した URL の非同期実行を行います。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpServerUtility.TransferRequest%2A>.NET Framework version 3.5 で導入されました。 .NET Framework の概要については、次を参照してください。[バージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="TransferRequest">
+      <MemberSignature Language="C#" Value="public void TransferRequest (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void TransferRequest(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.TransferRequest(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">サーバー上にある、実行する新しいページの URL パス。</param>
+        <summary>指定した URL の非同期実行を行います。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのオーバー ロードを呼び出す、<xref:System.Web.HttpServerUtility.TransferRequest%2A>を持つオーバー ロード、`preserveForm`パラメーターに設定`false`、`method`パラメーターに設定`null`、`headers`パラメーターに設定`null`、および`preserveUser`パラメーターに設定`true`です。 詳細については、「解説」セクションを参照してください。<xref:System.Web.HttpServerUtility.TransferRequest%28System.String%2CSystem.Boolean%2CSystem.String%2CSystem.Collections.Specialized.NameValueCollection%29>オーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.PlatformNotSupportedException">要求には、統合パイプライン モードが必要です。[!INCLUDE[iisver](~/includes/iisver-md.md)]です。</exception>
+        <exception cref="T:System.Web.HttpException">要求を処理するサーバーが使用できません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="path" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="path" />パラメーターが無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TransferRequest">
+      <MemberSignature Language="C#" Value="public void TransferRequest (string path, bool preserveForm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void TransferRequest(string path, bool preserveForm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.TransferRequest(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="preserveForm" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="path">サーバー上にある、実行する新しいページの URL パス。</param>
+        <param name="preserveForm">
+          <see langword="true" />保持するために、<see cref="P:System.Web.HttpRequest.Form" />コレクションです。<see langword="false" />をクリアする、<see cref="P:System.Web.HttpRequest.Form" />コレクション。</param>
+        <summary>指定した URL の非同期実行を行い、クエリ文字列パラメーターを保持します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードを呼び出す、<xref:System.Web.HttpServerUtility.TransferRequest%2A>を持つオーバー ロード、`preserveForm`パラメーターに、渡された値を設定、`method`パラメーターに設定`null`、`headers`パラメーターに設定`null`、および`preserveUser`パラメーターに設定`true`です。 詳細については、「解説」セクションを参照してください。<xref:System.Web.HttpServerUtility.TransferRequest%28System.String%2CSystem.Boolean%2CSystem.String%2CSystem.Collections.Specialized.NameValueCollection%29>です。  
+  
+ <xref:System.Web.HttpServerUtility.TransferRequest%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.PlatformNotSupportedException">要求には、統合パイプライン モードが必要です。[!INCLUDE[iisver](~/includes/iisver-md.md)]です。</exception>
+        <exception cref="T:System.Web.HttpException">要求を処理するサーバーが使用できません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="path" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="path" />パラメーターが無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TransferRequest">
+      <MemberSignature Language="C#" Value="public void TransferRequest (string path, bool preserveForm, string method, System.Collections.Specialized.NameValueCollection headers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void TransferRequest(string path, bool preserveForm, string method, class System.Collections.Specialized.NameValueCollection headers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.TransferRequest(System.String,System.Boolean,System.String,System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="preserveForm" Type="System.Boolean" />
+        <Parameter Name="method" Type="System.String" />
+        <Parameter Name="headers" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="path">サーバー上にある、実行する新しいページの URL パス。</param>
+        <param name="preserveForm">
+          <see langword="true" />保持するために、<see cref="P:System.Web.HttpRequest.Form" />コレクションです。<see langword="false" />をクリアする、<see cref="P:System.Web.HttpRequest.Form" />コレクション。</param>
+        <param name="method">新しい要求の実行で使用する HTTP メソッド。</param>
+        <param name="headers">A<see cref="T:System.Collections.Specialized.NameValueCollection" />の新しい要求の要求ヘッダー。</param>
+        <summary>指定した HTTP メソッドおよびヘッダーを使用して、指定した URL の非同期実行を行います。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、統合パイプライン モードでを実行するときは使用[!INCLUDE[iisver](~/includes/iisver-md.md)]正しい要求コンテキストを持つ対象の要求の実行中に 1 つのリソースの種類から別に転送する要求の処理を許可します。 たとえば、使用することができます、 <xref:System.Web.HttpServerUtility.TransferRequest%2A> XML ページに対する要求に ASPX ページの要求を転送する方法です。  
+  
+ <xref:System.Web.HttpServerUtility.TransferRequest%2A>メソッドは、指定された URL は次の条件の実行を非同期の子を実行します。  
+  
+-   場合、`path`パラメーター クエリ文字列を指定する、新しいクエリ文字列として使用されます。 クエリ文字列が含まれていない場合、要求のクエリ文字列は再利用されます。  
+  
+-   場合、`method`パラメーターを指定すると、それが使用されます。 場合は`null`、元の要求の HTTP メソッドが使用されます。  
+  
+-   場合、`preserveForm`パラメーターは`true`要求の現在のエンティティ ボディが対象の要求を使用できます。 これにより、により、フォーム ポストし、転送にアップロードします。  
+  
+-   ユーザー id が元の要求に設定されている場合、id は、新しい要求に転送されます。 これにより、認証済みの要求で新しい要求の認証の結果を再利用できます。 ユーザーを転送するしたくない場合は、ユーザーを設定`null`転送する前に元の要求にします。  
+  
+-   場合、`headers`パラメーターを指定すると、新しい要求が、指定したヘッダーで実行されます。 これにより、要求ヘッダーと、新しい要求の cookie を変更するために使用するか、元の要求の受信場所を指定する特殊なヘッダーを追加します。  
+  
+     このメソッドは、<xref:System.Web.HttpServerUtility.TransferRequest%28System.String%2CSystem.Boolean%2CSystem.String%2CSystem.Collections.Specialized.NameValueCollection%2CSystem.Boolean%29>メソッドのオーバー ロードで、`preserveUser`パラメーターに設定`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.PlatformNotSupportedException">要求が必要です[!INCLUDE[iisver](~/includes/iisver-md.md)]統合モードで実行します。</exception>
+        <exception cref="T:System.Web.HttpException">要求を処理するサーバーが使用できません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="path" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="path" />パラメーターが無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TransferRequest">
+      <MemberSignature Language="C#" Value="public void TransferRequest (string path, bool preserveForm, string method, System.Collections.Specialized.NameValueCollection headers, bool preserveUser);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void TransferRequest(string path, bool preserveForm, string method, class System.Collections.Specialized.NameValueCollection headers, bool preserveUser) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.TransferRequest(System.String,System.Boolean,System.String,System.Collections.Specialized.NameValueCollection,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="preserveForm" Type="System.Boolean" />
+        <Parameter Name="method" Type="System.String" />
+        <Parameter Name="headers" Type="System.Collections.Specialized.NameValueCollection" />
+        <Parameter Name="preserveUser" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="path">パス。</param>
+        <param name="preserveForm">
+          <see langword="true" />保持するために、<see cref="P:System.Web.HttpRequest.Form" />コレクションです。<see langword="false" />をクリアする、<see cref="P:System.Web.HttpRequest.Form" />コレクション。</param>
+        <param name="method">新しい要求で使用する HTTP メソッド。</param>
+        <param name="headers">A<see cref="T:System.Collections.Specialized.NameValueCollection" />新しい要求の要求ヘッダーを含むオブジェクトです。</param>
+        <param name="preserveUser">
+          <see langword="true" />ユーザーの id を保持するにはそれ以外の場合、<see langword="false" />です。 このメソッドの他のメソッド オーバー ロードは、このパラメーターを設定したこのオーバー ロードを呼び出して<see langword="true" />です。</param>
+        <summary>指定した HTTP メソッド、ヘッダー、およびパスを使用して、指定した URL の非同期実行を実行します。また、任意でユーザー id とフォーム値を保持します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、「解説」セクションを参照してください。<xref:System.Web.HttpServerUtility.TransferRequest%28System.String%2CSystem.Boolean%2CSystem.String%2CSystem.Collections.Specialized.NameValueCollection%29>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.PlatformNotSupportedException">要求には、統合パイプライン モードが必要です。[!INCLUDE[iisver](~/includes/iisver-md.md)]です。</exception>
+        <exception cref="T:System.Web.HttpException">要求を処理するサーバーが使用できません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="path" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="path" />パラメーターが無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UrlDecode">
+      <MemberSignature Language="C#" Value="public string UrlDecode (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string UrlDecode(string s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.UrlDecode(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s">デコードする文字列。</param>
+        <summary>文字列を URL デコードし、デコードされた文字列を返します。</summary>
+        <returns>デコードされたテキスト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ URL エンコードにより、すべてのブラウザーが URL 文字列のテキストを正しく送信されます。 質問などの文字 (?) をマークする、アンパサンド (&)、スラッシュ記号 (/)、および空白の切り捨てやブラウザーによっては、破損している可能性があります。 この結果、これらの文字をエンコードする必要があります`<a>`タグまたはクエリ文字列を文字列再で送信できる要求文字列内のブラウザー。  
+  
+ このメソッドは、アクセスする便利な手段、<xref:System.Web.HttpUtility.UrlDecode%2A?displayProperty=nameWithType>実行時に ASP.NET アプリケーションからのメソッドです。 このメソッドを使用して内部的には、<xref:System.Web.HttpUtility.UrlDecode%2A?displayProperty=nameWithType>文字列をデコードします。  
+  
+ ASP.NET web ページの分離コード ファイル内のインスタンスにアクセス、<xref:System.Web.HttpServerUtility>クラスを通じて、`Server`プロパティです。 分離コード ファイルに含まれていないクラスで使用`HttpContext.Current.Server`のインスタンスにアクセスする、<xref:System.Web.HttpServerUtility>クラスです。  
+  
+ 外部では、web アプリケーションを使用、<xref:System.Net.WebUtility>クラス値をエンコードまたはデコードします。  
+  
+   
+  
+## Examples  
+ 例を次にどのように値を URL デコードをから取得するクエリ文字列。 コードは、web ページの分離コード ファイルに存在します。 `ReturnPage`指す、`HyperLink`コントロール。  
+  
+ [!code-csharp[System.Web.HttpServerUtility.UrlDecode#1](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.httpserverutility.urldecode/cs/default.aspx.cs#1)]
+ [!code-vb[System.Web.HttpServerUtility.UrlDecode#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.httpserverutility.urldecode/vb/default.aspx.vb#1)]  
+  
+ 次の例は似ていますが、前の例を示して 方法を URL デコード クラス内の値されていないこと、分離コード ファイル。  
+  
+ [!code-csharp[System.Web.HttpServerUtility.UrlDecode#2](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.httpserverutility.urldecode/cs/sampleclass.cs#2)]
+ [!code-vb[System.Web.HttpServerUtility.UrlDecode#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.httpserverutility.urldecode/vb/sampleclass.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UrlDecode">
+      <MemberSignature Language="C#" Value="public void UrlDecode (string s, System.IO.TextWriter output);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UrlDecode(string s, class System.IO.TextWriter output) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.UrlDecode(System.String,System.IO.TextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="output" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="s">デコードする HTML 文字列。</param>
+        <param name="output"><see cref="T:System.IO.TextWriter" />デコードされた文字列を格納している出力ストリーム。</param>
+        <summary>URL で受信した HTML 文字列をデコードし、結果として得られるに出力を送信、<see cref="T:System.IO.TextWriter" />出力ストリーム。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ URL エンコードにより、すべてのブラウザーが URL 文字列のテキストを正しく送信されます。 質問などの文字 (?) をマークする、アンパサンド (&)、スラッシュ記号 (/)、および空白の切り捨てやブラウザーによっては、破損している可能性があります。 この結果、これらの文字をエンコードする必要があります`<a>`タグまたはクエリ文字列を文字列再で送信できる要求文字列内のブラウザー。  
+  
+ <xref:System.Web.HttpServerUtility.UrlDecode%2A>アクセスする便利な方法は、<xref:System.Web.HttpUtility.UrlDecode%2A?displayProperty=nameWithType>実行時に ASP.NET アプリケーションからのメソッドです。 内部的には、<xref:System.Web.HttpServerUtility.UrlDecode%2A>使用<xref:System.Web.HttpUtility.UrlDecode%2A?displayProperty=nameWithType>に文字列をデコードします。  
+  
+ Web アプリケーションの外部の値をエンコードまたはデコードを使用して、<xref:System.Net.WebUtility>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例は、という名前の文字列をデコード`EncodedString`(URL で受信した) という名前の文字列に`DecodedString`です。  
+  
+ [!code-csharp[Classic HttpServerUtility.UrlDecode1 Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpServerUtility.UrlDecode1 Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpServerUtility.UrlDecode1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpServerUtility.UrlDecode1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="UrlEncode">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>URL を使用して Web サーバーからクライアントへ信頼性のある HTTP 伝送を行うために、文字列をエンコードします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpServerUtility.UrlEncode%2A>アクセスする便利な方法は、<xref:System.Web.HttpUtility.UrlEncode%2A?displayProperty=nameWithType>実行時に ASP.NET アプリケーションからのメソッドです。 内部的には、<xref:System.Web.HttpServerUtility.UrlEncode%2A>使用<xref:System.Web.HttpUtility.UrlEncode%2A?displayProperty=nameWithType>文字列をエンコードします。  
+  
+ Web アプリケーションの外部の値をエンコードまたはデコードを使用して、<xref:System.Net.WebUtility>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="UrlEncode">
+      <MemberSignature Language="C#" Value="public string UrlEncode (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string UrlEncode(string s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.UrlEncode(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s">URL エンコードするテキスト。</param>
+        <summary>文字列を URL エンコードし、エンコードされた文字列を返します。</summary>
+        <returns>URL エンコードされたテキスト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ URL エンコードにより、すべてのブラウザーが URL 文字列のテキストを正しく送信されます。 質問などの文字 (?) をマークする、アンパサンド (&)、スラッシュ記号 (/)、および空白の切り捨てやブラウザーによっては、破損している可能性があります。 この結果、これらの文字をエンコードする必要があります`<a>`タグまたはクエリ文字列を文字列再で送信できる要求文字列内のブラウザー。  
+  
+ このメソッドは、アクセスする便利な手段、<xref:System.Web.HttpUtility.UrlEncode%2A?displayProperty=nameWithType>実行時に ASP.NET アプリケーションからのメソッドです。 このメソッドを使用して内部的には、<xref:System.Web.HttpUtility.UrlEncode%2A?displayProperty=nameWithType>文字列をエンコードします。  
+  
+ ASP.NET web ページの分離コード ファイル内のインスタンスにアクセス、<xref:System.Web.HttpServerUtility>クラスを通じて、`Server`プロパティです。 分離コード ファイルに含まれていないクラスで使用`HttpContext.Current.Server`のインスタンスにアクセスする、<xref:System.Web.HttpServerUtility>クラスです。  
+  
+ 外部では、web アプリケーションを使用、<xref:System.Net.WebUtility>クラス値をエンコードまたはデコードします。  
+  
+   
+  
+## Examples  
+ 例を次にどのように値を URL エンコードするとして使用されているハイパーリンクのクエリ文字列値です。 コードは、web ページの分離コード ファイルに存在します。 エンコードする値は、のみを例を簡略化し、URL エンコードする場合があります値の型を表示するには、この例では、ハードコーディングです。 通常は URL エンコードをユーザーまたは要求から受信した値です。 `NextPage`指す、`HyperLink`コントロール。  
+  
+ [!code-csharp[System.Web.HttpServerUtility.UrlEncode#1](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.httpserverutility.urlencode/cs/default.aspx.cs#1)]
+ [!code-vb[System.Web.HttpServerUtility.UrlEncode#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.httpserverutility.urlencode/vb/default.aspx.vb#1)]  
+  
+ 次の例は似ていますが、前の例を示して 方法 URL エンコードするクラス内の値されていないこと、分離コード ファイル。  
+  
+ [!code-csharp[System.Web.HttpServerUtility.UrlEncode#2](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.httpserverutility.urlencode/cs/sampleclass.cs#2)]
+ [!code-vb[System.Web.HttpServerUtility.UrlEncode#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.httpserverutility.urlencode/vb/sampleclass.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UrlEncode">
+      <MemberSignature Language="C#" Value="public void UrlEncode (string s, System.IO.TextWriter output);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UrlEncode(string s, class System.IO.TextWriter output) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.UrlEncode(System.String,System.IO.TextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="output" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="s">エンコードする文字列。</param>
+        <param name="output"><see cref="T:System.IO.TextWriter" />エンコードの文字列を格納する出力ストリーム。</param>
+        <summary>文字列を URL エンコードし、結果の出力を<see cref="T:System.IO.TextWriter" />出力ストリーム。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ URL エンコードにより、すべてのブラウザーが URL 文字列のテキストを正しく送信されます。 質問などの文字 (?) をマークする、アンパサンド (&)、スラッシュ記号 (/)、および空白の切り捨てやブラウザーによっては、破損している可能性があります。 この結果、これらの文字をエンコードする必要があります`<a>`タグまたはクエリ文字列を文字列再で送信できる要求文字列内のブラウザー。  
+  
+ <xref:System.Web.HttpServerUtility.UrlEncode%2A>アクセスする便利な方法は、<xref:System.Web.HttpUtility.UrlEncode%2A?displayProperty=nameWithType>実行時に ASP.NET アプリケーションからのメソッドです。 内部的には、<xref:System.Web.HttpServerUtility.UrlEncode%2A>使用<xref:System.Web.HttpUtility.UrlEncode%2A?displayProperty=nameWithType>文字列をエンコードします。  
+  
+ Web アプリケーションの外部の値をエンコードまたはデコードを使用して、<xref:System.Net.WebUtility>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例では、http 伝送用の文字列をエンコードします。 という名前の文字列をエンコード`TestString`、テキストが含まれています"これは、\<テスト文字列 > です。"、という名前の文字列にコピーすると`EncodedString`として"この + は + + % 3cTest + 文字列 % 3e。"です。  
+  
+ [!code-csharp[Classic HttpServerUtility.UrlEncode1 Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpServerUtility.UrlEncode1 Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpServerUtility.UrlEncode1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpServerUtility.UrlEncode1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UrlPathEncode">
+      <MemberSignature Language="C#" Value="public string UrlPathEncode (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string UrlPathEncode(string s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.UrlPathEncode(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s">URL エンコードするテキスト。</param>
+        <summary>使用しないでください。ブラウザーの互換性のためだけのものです。 <see cref="M:System.Web.HttpServerUtility.UrlEncode(System.String)" /> を使用してください。</summary>
+        <returns>URL エンコードされたテキスト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UrlTokenDecode">
+      <MemberSignature Language="C#" Value="public static byte[] UrlTokenDecode (string input);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8[] UrlTokenDecode(string input) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.UrlTokenDecode(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="input" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="input">デコードする URL 文字列トークン。</param>
+        <summary>URL 文字列トークンをデコードし、base 64 を使用して等価なバイト配列を作成します。</summary>
+        <returns>デコードされた URL 文字列トークンが格納されたバイト配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpServerUtility.UrlTokenDecode%2A>メソッドは、base64 の数字としてバイナリ データをエンコード、URL 文字列トークンを等価のバイト配列形式に変換します。 使用して、<xref:System.Web.HttpServerUtility.UrlTokenDecode%2A>トークンをデコードするメソッドは、URL で送信しを使用してエンコードされた、<xref:System.Web.HttpServerUtility.UrlTokenEncode%2A>です。  
+  
+ <xref:System.Web.HttpServerUtility.UrlTokenDecode%2A>場合、メソッドは空のバイト配列を返しますが、`input`パラメーターが 1 未満の長さ。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="input" /> パラメーターの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UrlTokenEncode">
+      <MemberSignature Language="C#" Value="public static string UrlTokenEncode (byte[] input);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string UrlTokenEncode(unsigned int8[] input) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.UrlTokenEncode(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="input" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="input">エンコードするバイト配列。</param>
+        <summary>Base64 形式の文字を使用して、バイト配列を等価の文字列表現にエンコードします。この文字列表現は、URL での送信で使用できます。</summary>
+        <returns>トークンの場合、エンコードされたバイト配列を含む文字列*長さ*が 1 よりも大きい場合、空の文字列 ("") です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpServerUtility.UrlTokenEncode%2A>メソッドがバイト配列を base 64 でエンコードされた等価の文字列形式に変換します。 生成される文字列トークンは、URL に送信できます。  
+  
+ <xref:System.Web.HttpServerUtility.UrlTokenEncode%2A>場合に、空の文字列を返す、`input`パラメーターが 1 未満の長さ。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="input" /> パラメーターの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

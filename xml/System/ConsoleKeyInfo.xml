@@ -1,0 +1,437 @@
+<Type Name="ConsoleKeyInfo" FullName="System.ConsoleKeyInfo">
+  <TypeSignature Language="C#" Value="public struct ConsoleKeyInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit ConsoleKeyInfo extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.ConsoleKeyInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Console</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コンソール キーと shift キーを押し、ALT および ctrl キーを押し修飾子キーの状態によって表される文字を含む、押されたコンソール キーについて説明します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ConsoleKeyInfo>型がユーザーによって作成されるものではありません。 代わりに、呼び出し元への応答内のユーザーに返される、<xref:System.Console.ReadKey%2A?displayProperty=nameWithType>メソッドです。  
+  
+ <xref:System.ConsoleKeyInfo>オブジェクトについて説明します、<xref:System.ConsoleKey>定数と Unicode 文字、存在する場合、対応する押されたコンソール キーにします。 <xref:System.ConsoleKeyInfo>オブジェクトについても説明します、ビットごとの組み合わせで<xref:System.ConsoleModifiers>値、1 つ以上の SHIFT、alt キーを押し、または ctrl キーを押し修飾子キーがコンソール キーと同時に押されたかどうか。  
+  
+   
+  
+## Examples  
+ 次の例では、使用方法を示します、<xref:System.ConsoleKeyInfo>読み取り操作内のオブジェクト。  
+  
+ [!code-cpp[console.readkey1#1](~/samples/snippets/cpp/VS_Snippets_CLR/console.readkey1/CPP/rk.cpp#1)]
+ [!code-csharp[console.readkey1#1](~/samples/snippets/csharp/VS_Snippets_CLR/console.readkey1/CS/rk.cs#1)]
+ [!code-vb[console.readkey1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/console.readkey1/VB/rk.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConsoleKeyInfo (char keyChar, ConsoleKey key, bool shift, bool alt, bool control);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(char keyChar, valuetype System.ConsoleKey key, bool shift, bool alt, bool control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ConsoleKeyInfo.#ctor(System.Char,System.ConsoleKey,System.Boolean,System.Boolean,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Console</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="keyChar" Type="System.Char" />
+        <Parameter Name="key" Type="System.ConsoleKey" />
+        <Parameter Name="shift" Type="System.Boolean" />
+        <Parameter Name="alt" Type="System.Boolean" />
+        <Parameter Name="control" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="keyChar">対応する Unicode 文字、<c>キー</c>パラメーター。</param>
+        <param name="key">コンソール キーに対応する、 <c>keyChar</c>パラメーター。</param>
+        <param name="shift">
+          <see langword="true" />SHIFT キーが押されたことを示すためにそれ以外の場合、<see langword="false" />です。</param>
+        <param name="alt">
+          <see langword="true" />ALT キーが押されたことを示すためにそれ以外の場合、<see langword="false" />です。</param>
+        <param name="control">
+          <see langword="true" />CTRL キーが押されたことを示すためにそれ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ConsoleKeyInfo" />指定された文字、コンソール キーと修飾キーを使用して構造体します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この型は、ユーザーによって作成されるものではありません。 代わりに、呼び出し元への応答内のユーザーに返される、<xref:System.Console.ReadKey%2A?displayProperty=nameWithType>メソッドです。  
+  
+ <xref:System.ConsoleKeyInfo>型は、左または右 SHIFT、alt キーを押し、または ctrl キーを押し修飾子キーが押されたかどうかを指定していません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">数値、<paramref name="key" />パラメーターが 0 未満か、255 を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (ConsoleKeyInfo obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Equals(valuetype System.ConsoleKeyInfo obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ConsoleKeyInfo.Equals(System.ConsoleKeyInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Console</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.ConsoleKeyInfo" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在の <see cref="T:System.ConsoleKeyInfo" /> オブジェクトと比較するオブジェクト。</param>
+        <summary>指定された <see cref="T:System.ConsoleKeyInfo" /> オブジェクトと現在の <see cref="T:System.ConsoleKeyInfo" /> オブジェクトが等しいかどうかを示す値を取得します。</summary>
+        <returns>
+          <paramref name="obj" /> が現在の <see cref="T:System.ConsoleKeyInfo" /> オブジェクトに等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ<xref:System.ConsoleKeyInfo>オブジェクトが等しい場合はそれに対応する<xref:System.ConsoleKeyInfo.KeyChar%2A>、 <xref:System.ConsoleKeyInfo.Key%2A>、および<xref:System.ConsoleKeyInfo.Modifiers%2A>プロパティが等しい。  
+  
+ <xref:System.ConsoleKeyInfo.Equals%2A>メソッドがわずかに実行よりも高く、<xref:System.ConsoleKeyInfo.Equals%28System.Object%29?displayProperty=nameWithType>メソッドに変換があるないため`obj`オブジェクトにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ConsoleKeyInfo.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Console</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">現在の <see cref="T:System.ConsoleKeyInfo" /> オブジェクトと比較するオブジェクト。</param>
+        <summary>指定されたオブジェクトと現在の <see cref="T:System.ConsoleKeyInfo" /> オブジェクトが等しいかどうかを示す値を取得します。</summary>
+        <returns>
+          <paramref name="value" /> が <see cref="T:System.ConsoleKeyInfo" /> オブジェクトで、現在の <see cref="T:System.ConsoleKeyInfo" /> オブジェクトと等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ<xref:System.ConsoleKeyInfo>オブジェクトが等しい場合はそれに対応する<xref:System.ConsoleKeyInfo.KeyChar%2A>、 <xref:System.ConsoleKeyInfo.Key%2A>、および<xref:System.ConsoleKeyInfo.Modifiers%2A>プロパティが等しい。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.ConsoleKeyInfo.Equals%2A>メソッドです。  
+  
+ [!code-cpp[system.ConsoleKeyInfo.Equals#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.ConsoleKeyInfo.Equals/cpp/consolekeyinfo.equals.cpp#1)]
+ [!code-csharp[system.ConsoleKeyInfo.Equals#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.ConsoleKeyInfo.Equals/cs/equals.cs#1)]
+ [!code-vb[system.ConsoleKeyInfo.Equals#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.ConsoleKeyInfo.Equals/vb/equals.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ConsoleKeyInfo.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Console</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.ConsoleKeyInfo" /> オブジェクトのハッシュ コードを返します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される値、<xref:System.ConsoleKeyInfo.GetHashCode%2A>メソッドが 1 つを区別適していない<xref:System.ConsoleKeyInfo>から別のオブジェクト。 アプリケーションでは、一意のハッシュ コードを必要とする場合は、上書き、<xref:System.ConsoleKeyInfo.GetHashCode%2A>独自のメソッドを持つメソッドです。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.ConsoleKeyInfo.GetHashCode%2A>メソッドです。  
+  
+ [!code-cpp[System.ConsoleKeyInfo.GetHashCode#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.ConsoleKeyInfo.GetHashcode/cpp/hash.cpp#1)]
+ [!code-csharp[System.ConsoleKeyInfo.GetHashCode#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.ConsoleKeyInfo.GetHashcode/cs/hash.cs#1)]
+ [!code-vb[System.ConsoleKeyInfo.GetHashCode#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.ConsoleKeyInfo.GetHashcode/vb/hash.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Key">
+      <MemberSignature Language="C#" Value="public ConsoleKey Key { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ConsoleKey Key" />
+      <MemberSignature Language="DocId" Value="P:System.ConsoleKeyInfo.Key" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Console</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ConsoleKey</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在で表されたコンソール キーの取得<see cref="T:System.ConsoleKeyInfo" />オブジェクト。</summary>
+        <value>押されたコンソール キーを識別する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、使用方法を示します、<xref:System.ConsoleKeyInfo.Key%2A>プロパティの読み取り操作にします。  
+  
+ [!code-cpp[console.readkey1#1](~/samples/snippets/cpp/VS_Snippets_CLR/console.readkey1/CPP/rk.cpp#1)]
+ [!code-csharp[console.readkey1#1](~/samples/snippets/csharp/VS_Snippets_CLR/console.readkey1/CS/rk.cs#1)]
+ [!code-vb[console.readkey1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/console.readkey1/VB/rk.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyChar">
+      <MemberSignature Language="C#" Value="public char KeyChar { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance char KeyChar" />
+      <MemberSignature Language="DocId" Value="P:System.ConsoleKeyInfo.KeyChar" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Console</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Char</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在によって表される Unicode 文字を取得<see cref="T:System.ConsoleKeyInfo" />オブジェクト。</summary>
+        <value>現在で表されたコンソール キーに対応するオブジェクト<see cref="T:System.ConsoleKeyInfo" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 押されたキーが Unicode 文字にマップされていないかどうか (たとえば、ユーザーが押した場合、 **F1**キーまたは**ホーム**キー) の値、<xref:System.ConsoleKeyInfo.KeyChar%2A>プロパティは \U0000 です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.ConsoleKeyInfo.KeyChar%2A>を文字列にユーザーが入力されている文字を追加するプロパティです。 例では、以外の特殊なキーを無視**ENTER**、 **ESC**、および**BACKSPACE**です。  
+  
+ [!code-csharp[System.ConsoleKeyInfo.KeyChar#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.consolekeyinfo.keychar/cs/keychar1.cs#1)]
+ [!code-vb[System.ConsoleKeyInfo.KeyChar#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.consolekeyinfo.keychar/vb/keychar1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Modifiers">
+      <MemberSignature Language="C#" Value="public ConsoleModifiers Modifiers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ConsoleModifiers Modifiers" />
+      <MemberSignature Language="DocId" Value="P:System.ConsoleKeyInfo.Modifiers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Console</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ConsoleModifiers</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビットごとの組み合わせを取得<see cref="T:System.ConsoleModifiers" />コンソール キーと 1 つまたは複数の修飾子キーを指定する値が同時に押されました。</summary>
+        <value>列挙値のビットごとの組み合わせ。 既定値はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、使用方法を示します、<xref:System.ConsoleKeyInfo.Modifiers%2A>プロパティの読み取り操作にします。  
+  
+ [!code-cpp[console.readkey1#1](~/samples/snippets/cpp/VS_Snippets_CLR/console.readkey1/CPP/rk.cpp#1)]
+ [!code-csharp[console.readkey1#1](~/samples/snippets/csharp/VS_Snippets_CLR/console.readkey1/CS/rk.cs#1)]
+ [!code-vb[console.readkey1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/console.readkey1/VB/rk.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (ConsoleKeyInfo a, ConsoleKeyInfo b);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.ConsoleKeyInfo a, valuetype System.ConsoleKeyInfo b) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ConsoleKeyInfo.op_Equality(System.ConsoleKeyInfo,System.ConsoleKeyInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Console</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="a" Type="System.ConsoleKeyInfo" />
+        <Parameter Name="b" Type="System.ConsoleKeyInfo" />
+      </Parameters>
+      <Docs>
+        <param name="a">比較する最初のオブジェクト。</param>
+        <param name="b">比較する 2 番目のオブジェクト。</param>
+        <summary>指定した <see cref="T:System.ConsoleKeyInfo" /> オブジェクトが等しいかどうかを示します。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="a" /> に等しい場合は <paramref name="b" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ<xref:System.ConsoleKeyInfo>オブジェクトが等しい場合はそれに対応する<xref:System.ConsoleKeyInfo.KeyChar%2A>、 <xref:System.ConsoleKeyInfo.Key%2A>、および<xref:System.ConsoleKeyInfo.Modifiers%2A>プロパティが等しい。  
+  
+ この演算子を同等の方法は<xref:System.ConsoleKeyInfo.Equals%28System.ConsoleKeyInfo%29?displayProperty=nameWithType>します。]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (ConsoleKeyInfo a, ConsoleKeyInfo b);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.ConsoleKeyInfo a, valuetype System.ConsoleKeyInfo b) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ConsoleKeyInfo.op_Inequality(System.ConsoleKeyInfo,System.ConsoleKeyInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Console</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="a" Type="System.ConsoleKeyInfo" />
+        <Parameter Name="b" Type="System.ConsoleKeyInfo" />
+      </Parameters>
+      <Docs>
+        <param name="a">比較する最初のオブジェクト。</param>
+        <param name="b">比較する 2 番目のオブジェクト。</param>
+        <summary>指定した <see cref="T:System.ConsoleKeyInfo" /> オブジェクトが等しくないかどうかを示します。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="a" /> と等しくない場合は <paramref name="b" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ<xref:System.ConsoleKeyInfo>オブジェクトが等しい場合はそれに対応する<xref:System.ConsoleKeyInfo.KeyChar%2A>、 <xref:System.ConsoleKeyInfo.Key%2A>、および<xref:System.ConsoleKeyInfo.Modifiers%2A>プロパティが等しい。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

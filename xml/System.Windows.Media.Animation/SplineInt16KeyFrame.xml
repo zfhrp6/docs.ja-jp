@@ -1,0 +1,199 @@
+<Type Name="SplineInt16KeyFrame" FullName="System.Windows.Media.Animation.SplineInt16KeyFrame">
+  <TypeSignature Language="C#" Value="public class SplineInt16KeyFrame : System.Windows.Media.Animation.Int16KeyFrame" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SplineInt16KeyFrame extends System.Windows.Media.Animation.Int16KeyFrame" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.SplineInt16KeyFrame" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Animation.Int16KeyFrame</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アニメーション化、 <see cref="T:System.Int16" /> 、それぞれに前のキー フレームの値<see cref="P:System.Windows.Media.Animation.Int16KeyFrame.Value" />まで、スプライン補間を使用します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスの一部として使用される、<xref:System.Windows.Media.Animation.Int16KeyFrameCollection>と組み合わせて、<xref:System.Windows.Media.Animation.Int16AnimationUsingKeyFrames>アニメーション化する、<xref:System.Int16>一連のキー フレームに沿って。  
+  
+ キー フレームのセグメントを定義する、<xref:System.Windows.Media.Animation.Int16AnimationUsingKeyFrames>属しています。 各キー フレームがターゲット<xref:System.Windows.Media.Animation.Int16KeyFrame.Value%2A>と<xref:System.Windows.Media.Animation.Int16KeyFrame.KeyTime%2A>です。 <xref:System.Windows.Media.Animation.Int16KeyFrame.KeyTime%2A>どの時点を指定します、キー フレームの<xref:System.Windows.Media.Animation.Int16KeyFrame.Value%2A>に到達します。 キー フレームは、前のキー フレームのターゲット値から独自のターゲット値をアニメーション化します。 前のキー フレームが終了し、独自のキーの日時に達したときに終了時に開始します。  
+  
+ スプライン キー フレームのような<xref:System.Windows.Media.Animation.SplineInt16KeyFrame>によって決定される値の間の変数の遷移を作成、<xref:System.Windows.Media.Animation.SplineInt16KeyFrame.KeySpline%2A>プロパティです。 加速減速などのより現実的な「現実の世界」タイミング効果を実現するまで、スプライン補間を使用できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SplineInt16KeyFrame ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.SplineInt16KeyFrame.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Animation.SplineInt16KeyFrame" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SplineInt16KeyFrame (short value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int16 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.SplineInt16KeyFrame.#ctor(System.Int16)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int16" />
+      </Parameters>
+      <Docs>
+        <param name="value">キー フレームの終了値 (「ターゲット値」)。</param>
+        <summary>指定した終了値を使用して、<see cref="T:System.Windows.Media.Animation.SplineInt16KeyFrame" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SplineInt16KeyFrame (short value, System.Windows.Media.Animation.KeyTime keyTime);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int16 value, valuetype System.Windows.Media.Animation.KeyTime keyTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.SplineInt16KeyFrame.#ctor(System.Int16,System.Windows.Media.Animation.KeyTime)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int16" />
+        <Parameter Name="keyTime" Type="System.Windows.Media.Animation.KeyTime" />
+      </Parameters>
+      <Docs>
+        <param name="value">キー フレームの終了値 (「ターゲット値」)。</param>
+        <param name="keyTime">キー フレームのキー時刻。 キー時刻によりターゲット値に到達する時点が決まります。この時刻はキー フレームが終了する時点にもなります。</param>
+        <summary>指定した終了値とキー時刻を使用して <see cref="T:System.Windows.Media.Animation.SplineInt16KeyFrame" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SplineInt16KeyFrame (short value, System.Windows.Media.Animation.KeyTime keyTime, System.Windows.Media.Animation.KeySpline keySpline);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int16 value, valuetype System.Windows.Media.Animation.KeyTime keyTime, class System.Windows.Media.Animation.KeySpline keySpline) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.SplineInt16KeyFrame.#ctor(System.Int16,System.Windows.Media.Animation.KeyTime,System.Windows.Media.Animation.KeySpline)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int16" />
+        <Parameter Name="keyTime" Type="System.Windows.Media.Animation.KeyTime" />
+        <Parameter Name="keySpline" Type="System.Windows.Media.Animation.KeySpline" />
+      </Parameters>
+      <Docs>
+        <param name="value">キー フレームの終了値 (「ターゲット値」)。</param>
+        <param name="keyTime">キー フレームのキー時刻。 キー時刻によりターゲット値に到達する時点が決まります。この時刻はキー フレームが終了する時点にもなります。</param>
+        <param name="keySpline">
+          <see cref="T:System.Windows.Media.Animation.KeySpline" />キー フレーム。 <see cref="T:System.Windows.Media.Animation.KeySpline" />のキー フレームのアニメーションの進行を定義するベジエ曲線を表します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.Animation.SplineInt16KeyFrame" />クラスの指定した終了値を時間をキーと<see cref="T:System.Windows.Media.Animation.KeySpline" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.SplineInt16KeyFrame.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Animation.SplineInt16KeyFrame" /> の新しいインスタンスを作成します。</summary>
+        <returns>新しく作成した <see cref="T:System.Windows.Media.Animation.SplineInt16KeyFrame" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InterpolateValueCore">
+      <MemberSignature Language="C#" Value="protected override short InterpolateValueCore (short baseValue, double keyFrameProgress);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance int16 InterpolateValueCore(int16 baseValue, float64 keyFrameProgress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.SplineInt16KeyFrame.InterpolateValueCore(System.Int16,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int16</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseValue" Type="System.Int16" />
+        <Parameter Name="keyFrameProgress" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="baseValue">アニメーション化する元の値。</param>
+        <param name="keyFrameProgress">このキー フレームの経過時間の割合を示す 0.0 ～ 1.0 の値。</param>
+        <summary>スプライン補間を使用して、前のキー フレーム値から現在のキー フレーム値まで遷移します。</summary>
+        <returns>指定された基準値と進行状況が示された、このキー フレームの出力値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeySpline">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Animation.KeySpline KeySpline { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Animation.KeySpline KeySpline" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.SplineInt16KeyFrame.KeySpline" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.KeySpline</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このキー フレームのアニメーションの進行を定義する 2 つの制御点を取得または設定します。</summary>
+        <value>キー フレームの進行を定義する、3 次ベジエ曲線を指定する 2 つの制御点。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 理解する方法、 <xref:System.Windows.Media.Animation.SplineInt16KeyFrame.KeySpline%2A> works、3 次ベジエ曲線を理解すると便利です。 3 次ベジエ曲線は、開始点、終点、および 2 つの制御点によって定義されます。 座標を 2 つ、<xref:System.Windows.Media.Animation.SplineInt16KeyFrame.KeySpline%2A>これら 2 つの制御点を定義します。 ベジエ曲線の開始点は常にスプライン キーを記述するときに 0、およびエンド ポイントは常に 1、2 つの制御ポイントのみを定義します。 結果として得られる曲線では、時間セグメント; でアニメーションを補間する方法を指定します曲線では、時間セグメントの上でアニメーションの対象の属性の変化率を表します。 アニメーションの進行状況とベジエ曲線の関係よりわかりやすく表示を参照してください[キー スプライン アニメーション サンプル](http://go.microsoft.com/fwlink/?LinkID=160011)です。  
+  
+<a name="dependencyPropertyInfo_KeySpline"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Animation.SplineInt16KeyFrame.KeySplineProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeySplineProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty KeySplineProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty KeySplineProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.SplineInt16KeyFrame.KeySplineProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Animation.SplineInt16KeyFrame.KeySpline" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

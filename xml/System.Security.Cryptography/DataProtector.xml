@@ -1,0 +1,366 @@
+<Type Name="DataProtector" FullName="System.Security.Cryptography.DataProtector">
+  <TypeSignature Language="C#" Value="public abstract class DataProtector" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DataProtector extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.DataProtector" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データ プロテクターの基本クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、表示や改ざんから格納されたデータを保護します。 保護されたデータへのアクセスは、このクラスのインスタンスを作成して、データを保護するために使用された正確な目的の文字列を使用して取得されます。  呼び出し元には、保護するか、データの保護を解除するキーは不要です。 キーは、暗号化アルゴリズムによって提供されます。  
+  
+ 派生クラスでオーバーライドする必要があります、<xref:System.Security.Cryptography.DataProtector.ProviderProtect%2A>と<xref:System.Security.Cryptography.DataProtector.Unprotect%2A>メソッドを<xref:System.Security.Cryptography.DataProtector>基本クラスの呼び出しに戻します。 オーバーライドする必要があります、<xref:System.Security.Cryptography.DataProtector.IsReprotectRequired%2A>メソッドは、常に返すことができる`true`アプリケーション ストアド暗号化テキストのデータベースを更新する場合に効率の低下する可能性が小さい。 派生クラスが基底クラスのコンス トラクターは、設定を呼び出すコンス トラクターを提供する必要があります、 <xref:System.Security.Cryptography.DataProtector.ApplicationName%2A>、 <xref:System.Security.Cryptography.DataProtector.SpecificPurposes%2A>、および<xref:System.Security.Cryptography.DataProtector.PrimaryPurpose%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、データの余分なエントロピのオプションを使用して保護クラスを使用する保護機能を作成する方法を示します。 既定では、<xref:System.Security.Cryptography.DataProtector>クラス前データを暗号化する目的のプロパティのハッシュを行います。 その機能をオフにして、余分なエントロピ オプションを使用して、データ保護機能を呼び出すときに、余分なエントロピとしてハッシュの目的を使用できます。  
+  
+ [!code-csharp[Cryptography.DataProtector#1](~/samples/snippets/csharp/VS_Snippets_CLR/cryptography.dataprotector/cs/class1.cs#1)]
+ [!code-vb[Cryptography.DataProtector#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/cryptography.dataprotector/vb/class1.vb#1)]  
+  
+ 次の例は、単純なデータ保護機能を使用する、<xref:System.Security.Cryptography.DataProtector.PrependHashedPurposeToPlaintext%2A>の機能、<xref:System.Security.Cryptography.DataProtector>クラスです。  
+  
+ [!code-csharp[Cryptography.MemoryProtector#1](~/samples/snippets/csharp/VS_Snippets_CLR/cryptography.memoryprotector/cs/class1.cs#1)]
+ [!code-vb[Cryptography.MemoryProtector#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/cryptography.memoryprotector/vb/class1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DataProtector (string applicationName, string primaryPurpose, string[] specificPurposes);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(string applicationName, string primaryPurpose, string[] specificPurposes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.DataProtector.#ctor(System.String,System.String,System.String[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="applicationName" Type="System.String" />
+        <Parameter Name="primaryPurpose" Type="System.String" />
+        <Parameter Name="specificPurposes" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="applicationName">アプリケーションの名前。</param>
+        <param name="primaryPurpose">保護されたデータの主な目的です。</param>
+        <param name="specificPurposes">保護されたデータの特定の目的。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Security.Cryptography.DataProtector" />クラスが提供されているアプリケーション名、主な目的は、および特定の目的を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを設定、 <xref:System.Security.Cryptography.DataProtector.ApplicationName%2A>、 <xref:System.Security.Cryptography.DataProtector.PrimaryPurpose%2A>、および<xref:System.Security.Cryptography.DataProtector.SpecificPurposes%2A>プロパティです。 これら 3 つのプロパティの組み合わせでは、保護されるデータを一意に識別する必要があります。 データが一意に識別されない場合は、誤って、不適切なデータを読み取る可能性があります。 または自分の他のデータに置き換えられる可能性があります。 プライマリと特定の目的のペアの例は「請求書」であり、請求書の数、「ギフト カード」とギフト カード番号、"password"、および URL 文字列。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="applicationName" />空の文字列または<see langword="null" />です。  
+  
+ または  
+  
+ <paramref name="primaryPurpose" />空の文字列または<see langword="null" />です。  
+  
+ または  
+  
+ <paramref name="specificPurposes" />空の文字列を含むまたは<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationName">
+      <MemberSignature Language="C#" Value="protected string ApplicationName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ApplicationName" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.DataProtector.ApplicationName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションの名前を取得します。</summary>
+        <value>アプリケーションの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.DataProtector Create (string providerClass, string applicationName, string primaryPurpose, params string[] specificPurposes);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Cryptography.DataProtector Create(string providerClass, string applicationName, string primaryPurpose, string[] specificPurposes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.DataProtector.Create(System.String,System.String,System.String,System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.DataProtector</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="providerClass" Type="System.String" />
+        <Parameter Name="applicationName" Type="System.String" />
+        <Parameter Name="primaryPurpose" Type="System.String" />
+        <Parameter Name="specificPurposes" Type="System.String[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="providerClass">データ プロテクターのクラス名。</param>
+        <param name="applicationName">アプリケーションの名前。</param>
+        <param name="primaryPurpose">保護されたデータの主な目的です。</param>
+        <param name="specificPurposes">保護されたデータの特定の目的。</param>
+        <summary>データ プロテクターの特定のクラス名、アプリケーション名、主な目的、および特定の目的を使用してデータ保護機能の実装のインスタンスを作成します。</summary>
+        <returns>データ保護機能の実装オブジェクトです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="providerClass" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashedPurpose">
+      <MemberSignature Language="C#" Value="protected virtual byte[] GetHashedPurpose ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance unsigned int8[] GetHashedPurpose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.DataProtector.GetHashedPurpose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンス トラクターで指定されたプロパティの値のハッシュを作成します。</summary>
+        <returns>ハッシュを含むバイト配列、 <see cref="P:System.Security.Cryptography.DataProtector.ApplicationName" />、 <see cref="P:System.Security.Cryptography.DataProtector.PrimaryPurpose" />、および<see cref="P:System.Security.Cryptography.DataProtector.SpecificPurposes" />プロパティです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.DataProtector.GetHashedPurpose%2A>アプリケーション名と完全の目的のハッシュを計算します。  完全目的は、すべての連結、<xref:System.Security.Cryptography.DataProtector.PrimaryPurpose%2A>と<xref:System.Security.Cryptography.DataProtector.SpecificPurposes%2A>プロパティです。  これらの 3 つの部分は前にその長さハッシュに戻せるようにします。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Security.Cryptography.DataProtector.GetHashedPurpose%2A>余分なエントロピとして使用する目的のプロパティをハッシュするメソッド。  コード例の一部である、<xref:System.Security.Cryptography.DataProtector>クラスです。  
+  
+ [!code-csharp[Cryptography.DataProtector#3](~/samples/snippets/csharp/VS_Snippets_CLR/cryptography.dataprotector/cs/class1.cs#3)]
+ [!code-vb[Cryptography.DataProtector#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/cryptography.dataprotector/vb/class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReprotectRequired">
+      <MemberSignature Language="C#" Value="public abstract bool IsReprotectRequired (byte[] encryptedData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsReprotectRequired(unsigned int8[] encryptedData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.DataProtector.IsReprotectRequired(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="encryptedData" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="encryptedData">暗号化されたデータに評価されます。</param>
+        <summary>再暗号化が指定した暗号化されたデータに必要なかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />データを再暗号化する必要があります。 場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrependHashedPurposeToPlaintext">
+      <MemberSignature Language="C#" Value="protected virtual bool PrependHashedPurposeToPlaintext { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PrependHashedPurposeToPlaintext" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.DataProtector.PrependHashedPurposeToPlaintext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>暗号化する前に、テキスト配列にハッシュが付加されるかどうかを指定します。</summary>
+        <value>常に <see langword="true" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、ことが前提と派生クラスがのハッシュを付加する、 <xref:System.Security.Cryptography.DataProtector.ApplicationName%2A>、 <xref:System.Security.Cryptography.DataProtector.PrimaryPurpose%2A>、および<xref:System.Security.Cryptography.DataProtector.SpecificPurposes%2A>暗号化、およびは前にプレーン テキストのプロパティを確認および暗号化解除中にハッシュを検証します。  派生クラスが、独自の先頭に追加されたデータを指定する場合は (たとえば、省略可能なエントロピ値として)、このプロパティをオーバーライドして返すように設定`false`です。  場合<xref:System.Security.Cryptography.DataProtector.PrependHashedPurposeToPlaintext%2A>は`false`、<xref:System.Security.Cryptography.DataProtector.Protect%2A>と<xref:System.Security.Cryptography.DataProtector.Unprotect%2A>にを通じて直接渡す、<xref:System.Security.Cryptography.DataProtector.ProviderProtect%2A>と<xref:System.Security.Cryptography.DataProtector.ProviderUnprotect%2A>バイト配列を変更することがなくよりも優先します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrimaryPurpose">
+      <MemberSignature Language="C#" Value="protected string PrimaryPurpose { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PrimaryPurpose" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.DataProtector.PrimaryPurpose" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>保護されたデータの主な目的を取得します。</summary>
+        <value>保護されたデータの主な目的です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Protect">
+      <MemberSignature Language="C#" Value="public byte[] Protect (byte[] userData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int8[] Protect(unsigned int8[] userData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.DataProtector.Protect(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userData" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="userData">データを保護できます。</param>
+        <summary>指定されたユーザー データを保護します。</summary>
+        <returns>暗号化されたデータを格納するバイト配列。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="userData" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderProtect">
+      <MemberSignature Language="C#" Value="protected abstract byte[] ProviderProtect (byte[] userData);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance unsigned int8[] ProviderProtect(unsigned int8[] userData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.DataProtector.ProviderProtect(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userData" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="userData">暗号化するデータ。</param>
+        <summary>クラスの派生クラスでデリゲート メソッドを指定します、<see cref="M:System.Security.Cryptography.DataProtector.Protect(System.Byte[])" />基底クラスのメソッドがコールバックします。</summary>
+        <returns>暗号化されたデータを格納するバイト配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Security.Cryptography.DataProtector.ProviderProtect%2A> メソッドを実装する例を次に示します。  コード例の一部である、<xref:System.Security.Cryptography.DataProtector>クラスです。  
+  
+ [!code-csharp[Cryptography.MemoryProtector#3](~/samples/snippets/csharp/VS_Snippets_CLR/cryptography.memoryprotector/cs/class1.cs#3)]
+ [!code-vb[Cryptography.MemoryProtector#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/cryptography.memoryprotector/vb/class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderUnprotect">
+      <MemberSignature Language="C#" Value="protected abstract byte[] ProviderUnprotect (byte[] encryptedData);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance unsigned int8[] ProviderUnprotect(unsigned int8[] encryptedData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.DataProtector.ProviderUnprotect(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="encryptedData" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="encryptedData">暗号化が解除されるデータ。</param>
+        <summary>クラスの派生クラスでデリゲート メソッドを指定します、<see cref="M:System.Security.Cryptography.DataProtector.Unprotect(System.Byte[])" />基底クラスのメソッドがコールバックします。</summary>
+        <returns>暗号化解除されたデータ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Security.Cryptography.DataProtector.ProviderUnprotect%2A> メソッドを実装する例を次に示します。  コード例の一部である、<xref:System.Security.Cryptography.DataProtector>クラスです。  
+  
+ [!code-csharp[Cryptography.MemoryProtector#4](~/samples/snippets/csharp/VS_Snippets_CLR/cryptography.memoryprotector/cs/class1.cs#4)]
+ [!code-vb[Cryptography.MemoryProtector#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/cryptography.memoryprotector/vb/class1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SpecificPurposes">
+      <MemberSignature Language="C#" Value="protected System.Collections.Generic.IEnumerable&lt;string&gt; SpecificPurposes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;string&gt; SpecificPurposes" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.DataProtector.SpecificPurposes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>保護されたデータの特定の目的を取得します。</summary>
+        <value>保護されたデータの特定の目的のコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Unprotect">
+      <MemberSignature Language="C#" Value="public byte[] Unprotect (byte[] encryptedData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int8[] Unprotect(unsigned int8[] encryptedData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.DataProtector.Unprotect(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="encryptedData" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="encryptedData">保護する暗号化されたデータ。</param>
+        <summary>指定した保護されたデータの保護を解除します。</summary>
+        <returns>プレーン テキスト データを格納するバイト配列。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="encryptedData" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">
+          <paramref name="encryptedData" />無効な目的が含まれています。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

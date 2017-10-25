@@ -1,0 +1,177 @@
+<Type Name="AggregateCacheDependency" FullName="System.Web.Caching.AggregateCacheDependency">
+  <TypeSignature Language="C#" Value="public sealed class AggregateCacheDependency : System.Web.Caching.CacheDependency" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit AggregateCacheDependency extends System.Web.Caching.CacheDependency" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Caching.AggregateCacheDependency" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Caching.CacheDependency</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET アプリケーションに格納されている項目の間で複数の依存関係を組み合わせた<see cref="T:System.Web.Caching.Cache" />オブジェクトと配列の<see cref="T:System.Web.Caching.CacheDependency" />オブジェクト。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Caching.AggregateCacheDependency>クラスが依存関係オブジェクトのコレクションを監視するため、それらを変更すると、キャッシュされた項目が自動的に削除します。 配列内のオブジェクトは、<xref:System.Web.Caching.CacheDependency>オブジェクト、<xref:System.Web.Caching.SqlCacheDependency>オブジェクトから派生したカスタム オブジェクト<xref:System.Web.Caching.CacheDependency>、またはこれらの任意の組み合わせ。  
+  
+ <xref:System.Web.Caching.AggregateCacheDependency>クラスとは異なります、<xref:System.Web.Caching.CacheDependency>クラスにさまざまな種類の複数の依存関係を 1 つのキャッシュされたアイテムに関連付けることができます。 たとえば、SQL Server データベース テーブルと XML ファイルからデータをインポートするページを作成する場合を作成、<xref:System.Web.Caching.SqlCacheDependency>データベース テーブルへの依存関係を表すオブジェクトと<xref:System.Web.Caching.CacheDependency>を XML ファイルへの依存関係を表します。 作成するのではなく、<xref:System.Web.Caching.Cache.Insert%2A?displayProperty=nameWithType>メソッドの呼び出しを各依存関係のインスタンスを作成することができます、<xref:System.Web.Caching.AggregateCacheDependency>に追加される各依存関係を持つクラス。 1 つを行うこともできますし、<xref:System.Web.Caching.Cache.Insert%2A>ページに依存するようにへの呼び出し、<xref:System.Web.Caching.AggregateCacheDependency>インスタンス。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.Caching.AggregateCacheDependency>を追加するクラス、 <xref:System.Data.DataSet>、名前付き`XMLDataSet`、テキスト ファイルと XML ファイルに依存するキャッシュにします。  
+  
+ [!code-vb[CachingSamples_AggregateCacheDependency1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CachingSamples_AggregateCacheDependency1/VB/aggregatecachedependencysamplevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AggregateCacheDependency ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.AggregateCacheDependency.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Caching.AggregateCacheDependency" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、既定のコンス トラクター、<xref:System.Web.Caching.AggregateCacheDependency>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のインスタンスを作成、<xref:System.Web.Caching.AggregateCacheDependency>クラス、引数を受け取らないコンス トラクターを使用します。 2 つ<xref:System.Web.Caching.CacheDependency>オブジェクトが作成されると後に、追加、<xref:System.Web.Caching.CacheDependency>配列、`myDepArray`です。 組み合わせてこのコンス トラクターを使用、<xref:System.Web.Caching.AggregateCacheDependency.Add%2A>に格納されている項目を作成するメソッド、<xref:System.Web.Caching.Cache>両方に依存する<xref:System.Web.Caching.CacheDependency>オブジェクト。  
+  
+ [!code-vb[CachingSamples_AggregateCacheDependency1#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CachingSamples_AggregateCacheDependency1/VB/aggregatecachedependencysamplevb.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (params System.Web.Caching.CacheDependency[] dependencies);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Web.Caching.CacheDependency[] dependencies) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.AggregateCacheDependency.Add(System.Web.Caching.CacheDependency[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dependencies" Type="System.Web.Caching.CacheDependency[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="dependencies">配列<see cref="T:System.Web.Caching.CacheDependency" />を追加するオブジェクト。</param>
+        <summary>配列を追加<see cref="T:System.Web.Caching.CacheDependency" />オブジェクトを<see cref="T:System.Web.Caching.AggregateCacheDependency" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.Caching.AggregateCacheDependency.Add%2A>メソッドと組み合わせて、 <xref:System.Web.Caching.AggregateCacheDependency.%23ctor%2A> 2 つ作成するコンス トラクター<xref:System.Web.Caching.CacheDependency>オブジェクトに追加する、<xref:System.Web.Caching.CacheDependency>という名前の配列`myDepArray`、し、作成、アイテムでキャッシュこれら 2 つに依存します。<xref:System.Web.Caching.CacheDependency>オブジェクト。  
+  
+ [!code-vb[CachingSamples_AggregateCacheDependency1#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CachingSamples_AggregateCacheDependency1/VB/aggregatecachedependencysamplevb.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dependencies" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ A<see cref="T:System.Web.Caching.CacheDependency" />オブジェクトに<paramref name="dependencies" />は<see langword="null" />します。</exception>
+        <exception cref="T:System.InvalidOperationException">A<see cref="T:System.Web.Caching.CacheDependency" />から 1 つ以上のオブジェクトが参照されている<see cref="T:System.Web.Caching.Cache" />エントリです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DependencyDispose">
+      <MemberSignature Language="C#" Value="protected override void DependencyDispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void DependencyDispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.AggregateCacheDependency.DependencyDispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFileDependencies">
+      <MemberSignature Language="C#" Value="public override string[] GetFileDependencies ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string[] GetFileDependencies() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.AggregateCacheDependency.GetFileDependencies" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ファイルの依存関係を取得します。</summary>
+        <returns>ファイルの依存関係。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUniqueID">
+      <MemberSignature Language="C#" Value="public override string GetUniqueID ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetUniqueID() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.AggregateCacheDependency.GetUniqueID" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>一意の識別子を取得、<see cref="T:System.Web.Caching.AggregateCacheDependency" />オブジェクト。</summary>
+        <returns>一意の識別子、<see cref="T:System.Web.Caching.AggregateCacheDependency" />オブジェクト。 関連付けられた依存関係オブジェクトの 1 つの一意の識別子がない場合、<see cref="M:System.Web.Caching.AggregateCacheDependency.GetUniqueID" />メソッドを返します。<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、配列内の依存関係ごとに一意の識別子が割り当てられ、それらの各を返します。 識別子は、(ファイルの依存関係) のファイル名または (キャッシュ キーの依存関係) のキーの名前と、依存関係にこのメソッドが割り当てる文字列のいずれかの組み合わせです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.Caching.AggregateCacheDependency.GetUniqueID%2A>メソッドを作成しのインスタンスの識別子を表示、<xref:System.Web.Caching.AggregateCacheDependency>という名前のクラス`aggDep`を作成および設定したら、します。  
+  
+ [!code-vb[CachingSamples_AggregateCacheDependency1#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CachingSamples_AggregateCacheDependency1/VB/aggregatecachedependencysamplevb.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

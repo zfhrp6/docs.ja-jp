@@ -1,0 +1,1163 @@
+<Type Name="Metafile" FullName="System.Drawing.Imaging.Metafile">
+  <TypeSignature Language="C#" Value="public sealed class Metafile : System.Drawing.Image" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit Metafile extends System.Drawing.Image" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Imaging.Metafile" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Drawing.Image</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Editor("System.Drawing.Design.MetafileEditor, System.Drawing.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>グラフィックのメタファイルを定義します。 メタファイル (構築された) を記録できるグラフィックス処理のシーケンスを記述するレコードが含まれています、再生 (表示)。 このクラスは継承ではありません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用すると、 <xref:System.Drawing.Image.Save%2A> Windows メタファイル形式 (WMF) または拡張メタファイル形式 (EMF) ファイルで、結果として得られるファイルとして画像を保存する方法は代わりに、ポータブル ネットワーク グラフィックス (PNG) ファイルとして保存します。 この問題の原因、[!INCLUDE[ndptecgdiplus](~/includes/ndptecgdiplus-md.md)]コンポーネント、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] .wmf または .emf ファイルとしてファイルを保存するのに使用できるエンコーダーではありません。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Drawing.Imaging.Metafile>を使用して、<xref:System.Drawing.Imaging.Metafile.PlayRecord%2A>メソッドです。  
+  
+ [!code-csharp[System.Drawing.Graphics.EnumerateMetafile#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Graphics.EnumerateMetafile/CS/Form1.cs#1)]
+ [!code-vb[System.Drawing.Graphics.EnumerateMetafile#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Graphics.EnumerateMetafile/VB/Form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.IO.Stream)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream">新しい <see cref="T:System.Drawing.Imaging.Metafile" /> の作成元の <see cref="T:System.IO.Stream" />。</param>
+        <summary>指定したデータ ストリームで <see cref="T:System.Drawing.Imaging.Metafile" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="stream" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (string filename);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string filename) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="filename" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="filename">A<see cref="T:System.String" />新しい作成元のファイル名を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <summary>指定したファイル名から、<see cref="T:System.Drawing.Imaging.Metafile" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を作成および使用する方法を示しています、<xref:System.Drawing.Imaging.Metafile>です。  
+  
+ [!code-csharp[System.Drawing.Graphics.EnumerateMetafile#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Graphics.EnumerateMetafile/CS/Form1.cs#1)]
+ [!code-vb[System.Drawing.Graphics.EnumerateMetafile#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Graphics.EnumerateMetafile/VB/Form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">によって指定されたファイルへの読み取りアクセス<paramref name="filename" />です。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (IntPtr henhmetafile, bool deleteEmf);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(native int henhmetafile, bool deleteEmf) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.IntPtr,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="henhmetafile" Type="System.IntPtr" />
+        <Parameter Name="deleteEmf" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="henhmetafile">拡張メタファイルへのハンドル。</param>
+        <param name="deleteEmf">
+          <see langword="true" />削除する拡張メタファイルの処理時に、<see cref="T:System.Drawing.Imaging.Metafile" />が削除された、それ以外の<see langword="false" />します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.Metafile" />指定のハンドルからクラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (IntPtr referenceHdc, System.Drawing.Imaging.EmfType emfType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(native int referenceHdc, valuetype System.Drawing.Imaging.EmfType emfType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.IntPtr,System.Drawing.Imaging.EmfType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="referenceHdc" Type="System.IntPtr" />
+        <Parameter Name="emfType" Type="System.Drawing.Imaging.EmfType" />
+      </Parameters>
+      <Docs>
+        <param name="referenceHdc">デバイス コンテキストへのハンドルです。</param>
+        <param name="emfType"><see cref="T:System.Drawing.Imaging.EmfType" />の形式を指定する、<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.Metafile" />デバイス コンテキストを指定のハンドルからクラスおよび<see cref="T:System.Drawing.Imaging.EmfType" />の形式を指定する列挙体、<see cref="T:System.Drawing.Imaging.Metafile" />です。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (IntPtr hmetafile, System.Drawing.Imaging.WmfPlaceableFileHeader wmfHeader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(native int hmetafile, class System.Drawing.Imaging.WmfPlaceableFileHeader wmfHeader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.IntPtr,System.Drawing.Imaging.WmfPlaceableFileHeader)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="hmetafile" Type="System.IntPtr" />
+        <Parameter Name="wmfHeader" Type="System.Drawing.Imaging.WmfPlaceableFileHeader" />
+      </Parameters>
+      <Docs>
+        <param name="hmetafile">Windows のハンドル、<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="wmfHeader"><see cref="T:System.Drawing.Imaging.WmfPlaceableFileHeader" />。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.Metafile" />指定のハンドルからクラスおよび<see cref="T:System.Drawing.Imaging.WmfPlaceableFileHeader" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (IntPtr referenceHdc, System.Drawing.Rectangle frameRect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(native int referenceHdc, valuetype System.Drawing.Rectangle frameRect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.IntPtr,System.Drawing.Rectangle)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="referenceHdc" Type="System.IntPtr" />
+        <Parameter Name="frameRect" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="referenceHdc">デバイス コンテキストへのハンドルです。</param>
+        <param name="frameRect">A<see cref="T:System.Drawing.Rectangle" />新しい外接する四角形を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.Metafile" />指定した四角形で囲まれた、指定したデバイス コンテキストからクラスです。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (IntPtr referenceHdc, System.Drawing.RectangleF frameRect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(native int referenceHdc, valuetype System.Drawing.RectangleF frameRect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.IntPtr,System.Drawing.RectangleF)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="referenceHdc" Type="System.IntPtr" />
+        <Parameter Name="frameRect" Type="System.Drawing.RectangleF" />
+      </Parameters>
+      <Docs>
+        <param name="referenceHdc">デバイス コンテキストへのハンドルです。</param>
+        <param name="frameRect">A<see cref="T:System.Drawing.RectangleF" />新しい外接する四角形を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.Metafile" />指定した四角形で囲まれた、指定したデバイス コンテキストからクラスです。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (System.IO.Stream stream, IntPtr referenceHdc);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream, native int referenceHdc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.IO.Stream,System.IntPtr)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="referenceHdc" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="stream">A<see cref="T:System.IO.Stream" />このデータを格納している<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="referenceHdc">デバイス コンテキストへの Windows ハンドル。</param>
+        <summary>指定したデータ ストリームで <see cref="T:System.Drawing.Imaging.Metafile" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (string fileName, IntPtr referenceHdc);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName, native int referenceHdc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.String,System.IntPtr)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="referenceHdc" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">A<see cref="T:System.String" />の新しいファイル名を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="referenceHdc">デバイス コンテキストへの Windows ハンドル。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.Metafile" />指定したファイル名を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">によって指定されたファイルへの読み取りアクセス<paramref name="filename" />です。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (IntPtr referenceHdc, System.Drawing.Imaging.EmfType emfType, string description);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(native int referenceHdc, valuetype System.Drawing.Imaging.EmfType emfType, string description) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.IntPtr,System.Drawing.Imaging.EmfType,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="referenceHdc" Type="System.IntPtr" />
+        <Parameter Name="emfType" Type="System.Drawing.Imaging.EmfType" />
+        <Parameter Name="description" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="referenceHdc">デバイス コンテキストへのハンドルです。</param>
+        <param name="emfType"><see cref="T:System.Drawing.Imaging.EmfType" />の形式を指定する、<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="description">新しいのわかりやすい名前<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.Metafile" />デバイス コンテキストを指定のハンドルからクラスおよび<see cref="T:System.Drawing.Imaging.EmfType" />の形式を指定する列挙体、<see cref="T:System.Drawing.Imaging.Metafile" />です。 文字列は、ファイルの名前を指定できます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (IntPtr hmetafile, System.Drawing.Imaging.WmfPlaceableFileHeader wmfHeader, bool deleteWmf);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(native int hmetafile, class System.Drawing.Imaging.WmfPlaceableFileHeader wmfHeader, bool deleteWmf) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.IntPtr,System.Drawing.Imaging.WmfPlaceableFileHeader,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="hmetafile" Type="System.IntPtr" />
+        <Parameter Name="wmfHeader" Type="System.Drawing.Imaging.WmfPlaceableFileHeader" />
+        <Parameter Name="deleteWmf" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="hmetafile">Windows のハンドル、<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="wmfHeader"><see cref="T:System.Drawing.Imaging.WmfPlaceableFileHeader" />。</param>
+        <param name="deleteWmf">
+          <see langword="true" />新しいハンドルを削除する<see cref="T:System.Drawing.Imaging.Metafile" />ときに、<see cref="T:System.Drawing.Imaging.Metafile" />が削除された、それ以外の<see langword="false" />します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.Metafile" />指定のハンドルからクラスおよび<see cref="T:System.Drawing.Imaging.WmfPlaceableFileHeader" />です。 また、<paramref name="deleteWmf" />メタファイルが削除されたときに、ハンドルを削除するパラメーターを使用することができます。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (IntPtr referenceHdc, System.Drawing.Rectangle frameRect, System.Drawing.Imaging.MetafileFrameUnit frameUnit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(native int referenceHdc, valuetype System.Drawing.Rectangle frameRect, valuetype System.Drawing.Imaging.MetafileFrameUnit frameUnit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.IntPtr,System.Drawing.Rectangle,System.Drawing.Imaging.MetafileFrameUnit)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="referenceHdc" Type="System.IntPtr" />
+        <Parameter Name="frameRect" Type="System.Drawing.Rectangle" />
+        <Parameter Name="frameUnit" Type="System.Drawing.Imaging.MetafileFrameUnit" />
+      </Parameters>
+      <Docs>
+        <param name="referenceHdc">デバイス コンテキストへのハンドルです。</param>
+        <param name="frameRect">A<see cref="T:System.Drawing.Rectangle" />新しい外接する四角形を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="frameUnit">A<see cref="T:System.Drawing.Imaging.MetafileFrameUnit" />の測定単位を指定する<c>frameRect</c>です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.Metafile" />指定された長さの単位を使用する指定された四角形で囲まれた、指定したデバイス コンテキストからクラスです。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (IntPtr referenceHdc, System.Drawing.RectangleF frameRect, System.Drawing.Imaging.MetafileFrameUnit frameUnit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(native int referenceHdc, valuetype System.Drawing.RectangleF frameRect, valuetype System.Drawing.Imaging.MetafileFrameUnit frameUnit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.IntPtr,System.Drawing.RectangleF,System.Drawing.Imaging.MetafileFrameUnit)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="referenceHdc" Type="System.IntPtr" />
+        <Parameter Name="frameRect" Type="System.Drawing.RectangleF" />
+        <Parameter Name="frameUnit" Type="System.Drawing.Imaging.MetafileFrameUnit" />
+      </Parameters>
+      <Docs>
+        <param name="referenceHdc">デバイス コンテキストへのハンドルです。</param>
+        <param name="frameRect">A<see cref="T:System.Drawing.RectangleF" />新しい外接する四角形を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="frameUnit">A<see cref="T:System.Drawing.Imaging.MetafileFrameUnit" />の測定単位を指定する<c>frameRect</c>です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.Metafile" />指定された長さの単位を使用する指定された四角形で囲まれた、指定したデバイス コンテキストからクラスです。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (System.IO.Stream stream, IntPtr referenceHdc, System.Drawing.Imaging.EmfType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream, native int referenceHdc, valuetype System.Drawing.Imaging.EmfType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.IO.Stream,System.IntPtr,System.Drawing.Imaging.EmfType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="referenceHdc" Type="System.IntPtr" />
+        <Parameter Name="type" Type="System.Drawing.Imaging.EmfType" />
+      </Parameters>
+      <Docs>
+        <param name="stream">A<see cref="T:System.IO.Stream" />このデータを格納している<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="referenceHdc">デバイス コンテキストへの Windows ハンドル。</param>
+        <param name="type"><see cref="T:System.Drawing.Imaging.EmfType" />の形式を指定する、<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.Metafile" />指定したデータ ストリーム、デバイス コンテキストへの Windows ハンドルからクラスおよび<see cref="T:System.Drawing.Imaging.EmfType" />の形式を指定する列挙体、<see cref="T:System.Drawing.Imaging.Metafile" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (System.IO.Stream stream, IntPtr referenceHdc, System.Drawing.Rectangle frameRect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream, native int referenceHdc, valuetype System.Drawing.Rectangle frameRect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.IO.Stream,System.IntPtr,System.Drawing.Rectangle)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="referenceHdc" Type="System.IntPtr" />
+        <Parameter Name="frameRect" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="stream">A<see cref="T:System.IO.Stream" />このデータを格納している<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="referenceHdc">デバイス コンテキストへの Windows ハンドル。</param>
+        <param name="frameRect">A<see cref="T:System.Drawing.Rectangle" />新しい外接する四角形を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.Metafile" />指定したデータ ストリーム、デバイス コンテキストへの Windows ハンドルからクラスおよび<see cref="T:System.Drawing.Rectangle" />新しい外接する四角形を表す構造<see cref="T:System.Drawing.Imaging.Metafile" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (System.IO.Stream stream, IntPtr referenceHdc, System.Drawing.RectangleF frameRect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream, native int referenceHdc, valuetype System.Drawing.RectangleF frameRect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.IO.Stream,System.IntPtr,System.Drawing.RectangleF)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="referenceHdc" Type="System.IntPtr" />
+        <Parameter Name="frameRect" Type="System.Drawing.RectangleF" />
+      </Parameters>
+      <Docs>
+        <param name="stream">A<see cref="T:System.IO.Stream" />このデータを格納している<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="referenceHdc">デバイス コンテキストへの Windows ハンドル。</param>
+        <param name="frameRect">A<see cref="T:System.Drawing.RectangleF" />新しい外接する四角形を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.Metafile" />指定したデータ ストリーム、デバイス コンテキストへの Windows ハンドルからクラスおよび<see cref="T:System.Drawing.RectangleF" />新しい外接する四角形を表す構造<see cref="T:System.Drawing.Imaging.Metafile" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (string fileName, IntPtr referenceHdc, System.Drawing.Imaging.EmfType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName, native int referenceHdc, valuetype System.Drawing.Imaging.EmfType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.String,System.IntPtr,System.Drawing.Imaging.EmfType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="referenceHdc" Type="System.IntPtr" />
+        <Parameter Name="type" Type="System.Drawing.Imaging.EmfType" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">A<see cref="T:System.String" />の新しいファイル名を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="referenceHdc">デバイス コンテキストへの Windows ハンドル。</param>
+        <param name="type"><see cref="T:System.Drawing.Imaging.EmfType" />の形式を指定する、<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.Metafile" />指定したファイル名、デバイス コンテキストへの Windows ハンドルを持つクラスと<see cref="T:System.Drawing.Imaging.EmfType" />の形式を指定する列挙体、<see cref="T:System.Drawing.Imaging.Metafile" />です。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">によって指定されたファイルへの読み取りアクセス<paramref name="filename" />です。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (string fileName, IntPtr referenceHdc, System.Drawing.Rectangle frameRect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName, native int referenceHdc, valuetype System.Drawing.Rectangle frameRect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.String,System.IntPtr,System.Drawing.Rectangle)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="referenceHdc" Type="System.IntPtr" />
+        <Parameter Name="frameRect" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">A<see cref="T:System.String" />の新しいファイル名を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="referenceHdc">デバイス コンテキストへの Windows ハンドル。</param>
+        <param name="frameRect">A<see cref="T:System.Drawing.Rectangle" />新しい外接する四角形を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.Metafile" />指定したファイル名、デバイス コンテキストへの Windows ハンドルを持つクラスと<see cref="T:System.Drawing.Rectangle" />新しい外接する四角形を表す構造<see cref="T:System.Drawing.Imaging.Metafile" />です。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">によって指定されたファイルへの読み取りアクセス<paramref name="filename" />です。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (string fileName, IntPtr referenceHdc, System.Drawing.RectangleF frameRect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName, native int referenceHdc, valuetype System.Drawing.RectangleF frameRect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.String,System.IntPtr,System.Drawing.RectangleF)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="referenceHdc" Type="System.IntPtr" />
+        <Parameter Name="frameRect" Type="System.Drawing.RectangleF" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">A<see cref="T:System.String" />の新しいファイル名を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="referenceHdc">デバイス コンテキストへの Windows ハンドル。</param>
+        <param name="frameRect">A<see cref="T:System.Drawing.RectangleF" />新しい外接する四角形を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.Metafile" />指定したファイル名、デバイス コンテキストへの Windows ハンドルを持つクラスと<see cref="T:System.Drawing.RectangleF" />新しい外接する四角形を表す構造<see cref="T:System.Drawing.Imaging.Metafile" />です。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">によって指定されたファイルへの読み取りアクセス<paramref name="filename" />です。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (IntPtr referenceHdc, System.Drawing.Rectangle frameRect, System.Drawing.Imaging.MetafileFrameUnit frameUnit, System.Drawing.Imaging.EmfType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(native int referenceHdc, valuetype System.Drawing.Rectangle frameRect, valuetype System.Drawing.Imaging.MetafileFrameUnit frameUnit, valuetype System.Drawing.Imaging.EmfType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.IntPtr,System.Drawing.Rectangle,System.Drawing.Imaging.MetafileFrameUnit,System.Drawing.Imaging.EmfType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="referenceHdc" Type="System.IntPtr" />
+        <Parameter Name="frameRect" Type="System.Drawing.Rectangle" />
+        <Parameter Name="frameUnit" Type="System.Drawing.Imaging.MetafileFrameUnit" />
+        <Parameter Name="type" Type="System.Drawing.Imaging.EmfType" />
+      </Parameters>
+      <Docs>
+        <param name="referenceHdc">デバイス コンテキストへのハンドルです。</param>
+        <param name="frameRect">A<see cref="T:System.Drawing.Rectangle" />新しい外接する四角形を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="frameUnit">A<see cref="T:System.Drawing.Imaging.MetafileFrameUnit" />の測定単位を指定する<c>frameRect</c>です。</param>
+        <param name="type"><see cref="T:System.Drawing.Imaging.EmfType" />の形式を指定する、<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.Metafile" />の指定された単位を使用する指定された四角形で囲まれた、指定したデバイス コンテキストからクラスおよび<see cref="T:System.Drawing.Imaging.EmfType" />の形式を指定する列挙体、<see cref="T:System.Drawing.Imaging.Metafile" />です。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (IntPtr referenceHdc, System.Drawing.RectangleF frameRect, System.Drawing.Imaging.MetafileFrameUnit frameUnit, System.Drawing.Imaging.EmfType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(native int referenceHdc, valuetype System.Drawing.RectangleF frameRect, valuetype System.Drawing.Imaging.MetafileFrameUnit frameUnit, valuetype System.Drawing.Imaging.EmfType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.IntPtr,System.Drawing.RectangleF,System.Drawing.Imaging.MetafileFrameUnit,System.Drawing.Imaging.EmfType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="referenceHdc" Type="System.IntPtr" />
+        <Parameter Name="frameRect" Type="System.Drawing.RectangleF" />
+        <Parameter Name="frameUnit" Type="System.Drawing.Imaging.MetafileFrameUnit" />
+        <Parameter Name="type" Type="System.Drawing.Imaging.EmfType" />
+      </Parameters>
+      <Docs>
+        <param name="referenceHdc">デバイス コンテキストへのハンドルです。</param>
+        <param name="frameRect">A<see cref="T:System.Drawing.RectangleF" />新しい外接する四角形を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="frameUnit">A<see cref="T:System.Drawing.Imaging.MetafileFrameUnit" />の測定単位を指定する<c>frameRect</c>です。</param>
+        <param name="type"><see cref="T:System.Drawing.Imaging.EmfType" />の形式を指定する、<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.Metafile" />の指定された単位を使用する指定された四角形で囲まれた、指定したデバイス コンテキストからクラスおよび<see cref="T:System.Drawing.Imaging.EmfType" />の形式を指定する列挙体、<see cref="T:System.Drawing.Imaging.Metafile" />です。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (System.IO.Stream stream, IntPtr referenceHdc, System.Drawing.Imaging.EmfType type, string description);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream, native int referenceHdc, valuetype System.Drawing.Imaging.EmfType type, string description) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.IO.Stream,System.IntPtr,System.Drawing.Imaging.EmfType,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="referenceHdc" Type="System.IntPtr" />
+        <Parameter Name="type" Type="System.Drawing.Imaging.EmfType" />
+        <Parameter Name="description" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="stream">A<see cref="T:System.IO.Stream" />このデータを格納している<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="referenceHdc">デバイス コンテキストへの Windows ハンドル。</param>
+        <param name="type"><see cref="T:System.Drawing.Imaging.EmfType" />の形式を指定する、<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="description">A<see cref="T:System.String" />新しいのわかりやすい名前を格納している<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.Metafile" />指定したデータ ストリーム、デバイス コンテキストへの Windows ハンドルからクラスおよび<see cref="T:System.Drawing.Imaging.EmfType" />の形式を指定する列挙体、<see cref="T:System.Drawing.Imaging.Metafile" />です。 新しいのわかりやすい名前を表す文字列も、<see cref="T:System.Drawing.Imaging.Metafile" />追加できます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (System.IO.Stream stream, IntPtr referenceHdc, System.Drawing.Rectangle frameRect, System.Drawing.Imaging.MetafileFrameUnit frameUnit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream, native int referenceHdc, valuetype System.Drawing.Rectangle frameRect, valuetype System.Drawing.Imaging.MetafileFrameUnit frameUnit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.IO.Stream,System.IntPtr,System.Drawing.Rectangle,System.Drawing.Imaging.MetafileFrameUnit)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="referenceHdc" Type="System.IntPtr" />
+        <Parameter Name="frameRect" Type="System.Drawing.Rectangle" />
+        <Parameter Name="frameUnit" Type="System.Drawing.Imaging.MetafileFrameUnit" />
+      </Parameters>
+      <Docs>
+        <param name="stream">A<see cref="T:System.IO.Stream" />このデータを格納している<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="referenceHdc">デバイス コンテキストへの Windows ハンドル。</param>
+        <param name="frameRect">A<see cref="T:System.Drawing.Rectangle" />新しい外接する四角形を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="frameUnit">A<see cref="T:System.Drawing.Imaging.MetafileFrameUnit" />の測定単位を指定する<c>frameRect</c>です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.Metafile" />指定したデータ ストリーム、デバイス コンテキストへの Windows ハンドルからクラスを<see cref="T:System.Drawing.Rectangle" />新しい外接する四角形を表す構造<see cref="T:System.Drawing.Imaging.Metafile" />、および指定された長さの単位。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (System.IO.Stream stream, IntPtr referenceHdc, System.Drawing.RectangleF frameRect, System.Drawing.Imaging.MetafileFrameUnit frameUnit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream, native int referenceHdc, valuetype System.Drawing.RectangleF frameRect, valuetype System.Drawing.Imaging.MetafileFrameUnit frameUnit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.IO.Stream,System.IntPtr,System.Drawing.RectangleF,System.Drawing.Imaging.MetafileFrameUnit)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="referenceHdc" Type="System.IntPtr" />
+        <Parameter Name="frameRect" Type="System.Drawing.RectangleF" />
+        <Parameter Name="frameUnit" Type="System.Drawing.Imaging.MetafileFrameUnit" />
+      </Parameters>
+      <Docs>
+        <param name="stream">A<see cref="T:System.IO.Stream" />このデータを格納している<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="referenceHdc">デバイス コンテキストへの Windows ハンドル。</param>
+        <param name="frameRect">A<see cref="T:System.Drawing.RectangleF" />新しい外接する四角形を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="frameUnit">A<see cref="T:System.Drawing.Imaging.MetafileFrameUnit" />の測定単位を指定する<c>frameRect</c>です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.Metafile" />指定したデータ ストリーム、デバイス コンテキストへの Windows ハンドルからクラスを<see cref="T:System.Drawing.RectangleF" />新しい外接する四角形を表す構造<see cref="T:System.Drawing.Imaging.Metafile" />、および指定された長さの単位。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (string fileName, IntPtr referenceHdc, System.Drawing.Imaging.EmfType type, string description);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName, native int referenceHdc, valuetype System.Drawing.Imaging.EmfType type, string description) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.String,System.IntPtr,System.Drawing.Imaging.EmfType,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="referenceHdc" Type="System.IntPtr" />
+        <Parameter Name="type" Type="System.Drawing.Imaging.EmfType" />
+        <Parameter Name="description" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">A<see cref="T:System.String" />の新しいファイル名を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="referenceHdc">デバイス コンテキストへの Windows ハンドル。</param>
+        <param name="type"><see cref="T:System.Drawing.Imaging.EmfType" />の形式を指定する、<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="description">A<see cref="T:System.String" />新しいのわかりやすい名前を格納している<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.Metafile" />指定したファイル名、デバイス コンテキストへの Windows ハンドルを持つクラスと<see cref="T:System.Drawing.Imaging.EmfType" />の形式を指定する列挙体、<see cref="T:System.Drawing.Imaging.Metafile" />です。 説明の文字列を追加できますをも。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">によって指定されたファイルへの読み取りアクセス<paramref name="filename" />です。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (string fileName, IntPtr referenceHdc, System.Drawing.Rectangle frameRect, System.Drawing.Imaging.MetafileFrameUnit frameUnit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName, native int referenceHdc, valuetype System.Drawing.Rectangle frameRect, valuetype System.Drawing.Imaging.MetafileFrameUnit frameUnit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.String,System.IntPtr,System.Drawing.Rectangle,System.Drawing.Imaging.MetafileFrameUnit)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="referenceHdc" Type="System.IntPtr" />
+        <Parameter Name="frameRect" Type="System.Drawing.Rectangle" />
+        <Parameter Name="frameUnit" Type="System.Drawing.Imaging.MetafileFrameUnit" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">A<see cref="T:System.String" />の新しいファイル名を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="referenceHdc">デバイス コンテキストへの Windows ハンドル。</param>
+        <param name="frameRect">A<see cref="T:System.Drawing.Rectangle" />新しい外接する四角形を表す構造<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="frameUnit">A<see cref="T:System.Drawing.Imaging.MetafileFrameUnit" />の測定単位を指定する<c>frameRect</c>です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.Metafile" />指定したファイル名、デバイス コンテキストへの Windows ハンドルを持つクラス、<see cref="T:System.Drawing.Rectangle" />新しい外接する四角形を表す構造<see cref="T:System.Drawing.Imaging.Metafile" />、および指定された長さの単位。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">によって指定されたファイルへの読み取りアクセス<paramref name="filename" />です。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (string fileName, IntPtr referenceHdc, System.Drawing.RectangleF frameRect, System.Drawing.Imaging.MetafileFrameUnit frameUnit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName, native int referenceHdc, valuetype System.Drawing.RectangleF frameRect, valuetype System.Drawing.Imaging.MetafileFrameUnit frameUnit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.String,System.IntPtr,System.Drawing.RectangleF,System.Drawing.Imaging.MetafileFrameUnit)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="referenceHdc" Type="System.IntPtr" />
+        <Parameter Name="frameRect" Type="System.Drawing.RectangleF" />
+        <Parameter Name="frameUnit" Type="System.Drawing.Imaging.MetafileFrameUnit" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">A<see cref="T:System.String" />の新しいファイル名を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="referenceHdc">デバイス コンテキストへの Windows ハンドル。</param>
+        <param name="frameRect">A<see cref="T:System.Drawing.RectangleF" />新しい外接する四角形を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="frameUnit">A<see cref="T:System.Drawing.Imaging.MetafileFrameUnit" />の測定単位を指定する<c>frameRect</c>です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.Metafile" />指定したファイル名、デバイス コンテキストへの Windows ハンドルを持つクラス、<see cref="T:System.Drawing.RectangleF" />新しい外接する四角形を表す構造<see cref="T:System.Drawing.Imaging.Metafile" />、および指定された長さの単位。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">によって指定されたファイルへの読み取りアクセス<paramref name="filename" />です。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (IntPtr referenceHdc, System.Drawing.Rectangle frameRect, System.Drawing.Imaging.MetafileFrameUnit frameUnit, System.Drawing.Imaging.EmfType type, string desc);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(native int referenceHdc, valuetype System.Drawing.Rectangle frameRect, valuetype System.Drawing.Imaging.MetafileFrameUnit frameUnit, valuetype System.Drawing.Imaging.EmfType type, string desc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.IntPtr,System.Drawing.Rectangle,System.Drawing.Imaging.MetafileFrameUnit,System.Drawing.Imaging.EmfType,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="referenceHdc" Type="System.IntPtr" />
+        <Parameter Name="frameRect" Type="System.Drawing.Rectangle" />
+        <Parameter Name="frameUnit" Type="System.Drawing.Imaging.MetafileFrameUnit" />
+        <Parameter Name="type" Type="System.Drawing.Imaging.EmfType" />
+        <Parameter Name="desc" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="referenceHdc">デバイス コンテキストへのハンドルです。</param>
+        <param name="frameRect">A<see cref="T:System.Drawing.Rectangle" />新しい外接する四角形を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="frameUnit">A<see cref="T:System.Drawing.Imaging.MetafileFrameUnit" />の測定単位を指定する<c>frameRect</c>です。</param>
+        <param name="type"><see cref="T:System.Drawing.Imaging.EmfType" />の形式を指定する、<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="desc">A<see cref="T:System.String" />新しいのわかりやすい名前を格納している<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.Metafile" />の指定された単位を使用する指定された四角形で囲まれた、指定したデバイス コンテキストからクラスおよび<see cref="T:System.Drawing.Imaging.EmfType" />の形式を指定する列挙体、<see cref="T:System.Drawing.Imaging.Metafile" />です。 文字列は、ファイルの名前を指定できます。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (IntPtr referenceHdc, System.Drawing.RectangleF frameRect, System.Drawing.Imaging.MetafileFrameUnit frameUnit, System.Drawing.Imaging.EmfType type, string description);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(native int referenceHdc, valuetype System.Drawing.RectangleF frameRect, valuetype System.Drawing.Imaging.MetafileFrameUnit frameUnit, valuetype System.Drawing.Imaging.EmfType type, string description) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.IntPtr,System.Drawing.RectangleF,System.Drawing.Imaging.MetafileFrameUnit,System.Drawing.Imaging.EmfType,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="referenceHdc" Type="System.IntPtr" />
+        <Parameter Name="frameRect" Type="System.Drawing.RectangleF" />
+        <Parameter Name="frameUnit" Type="System.Drawing.Imaging.MetafileFrameUnit" />
+        <Parameter Name="type" Type="System.Drawing.Imaging.EmfType" />
+        <Parameter Name="description" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="referenceHdc">デバイス コンテキストへのハンドルです。</param>
+        <param name="frameRect">A<see cref="T:System.Drawing.RectangleF" />新しい外接する四角形を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="frameUnit">A<see cref="T:System.Drawing.Imaging.MetafileFrameUnit" />の測定単位を指定する<c>frameRect</c>です。</param>
+        <param name="type"><see cref="T:System.Drawing.Imaging.EmfType" />の形式を指定する、<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="description">A<see cref="T:System.String" />新しいのわかりやすい名前を格納している<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.Metafile" />の指定された単位を使用する指定された四角形で囲まれた、指定したデバイス コンテキストからクラスおよび<see cref="T:System.Drawing.Imaging.EmfType" />の形式を指定する列挙体、<see cref="T:System.Drawing.Imaging.Metafile" />です。 文字列は、ファイルの名前を指定できます。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (System.IO.Stream stream, IntPtr referenceHdc, System.Drawing.Rectangle frameRect, System.Drawing.Imaging.MetafileFrameUnit frameUnit, System.Drawing.Imaging.EmfType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream, native int referenceHdc, valuetype System.Drawing.Rectangle frameRect, valuetype System.Drawing.Imaging.MetafileFrameUnit frameUnit, valuetype System.Drawing.Imaging.EmfType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.IO.Stream,System.IntPtr,System.Drawing.Rectangle,System.Drawing.Imaging.MetafileFrameUnit,System.Drawing.Imaging.EmfType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="referenceHdc" Type="System.IntPtr" />
+        <Parameter Name="frameRect" Type="System.Drawing.Rectangle" />
+        <Parameter Name="frameUnit" Type="System.Drawing.Imaging.MetafileFrameUnit" />
+        <Parameter Name="type" Type="System.Drawing.Imaging.EmfType" />
+      </Parameters>
+      <Docs>
+        <param name="stream">A<see cref="T:System.IO.Stream" />このデータを格納している<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="referenceHdc">デバイス コンテキストへの Windows ハンドル。</param>
+        <param name="frameRect">A<see cref="T:System.Drawing.Rectangle" />新しい外接する四角形を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="frameUnit">A<see cref="T:System.Drawing.Imaging.MetafileFrameUnit" />の測定単位を指定する<c>frameRect</c>です。</param>
+        <param name="type"><see cref="T:System.Drawing.Imaging.EmfType" />の形式を指定する、<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.Metafile" />指定したデータ ストリーム、デバイス コンテキストへの Windows ハンドルからクラスを<see cref="T:System.Drawing.Rectangle" />新しい外接する四角形を表す構造<see cref="T:System.Drawing.Imaging.Metafile" />の指定された単位と<see cref="T:System.Drawing.Imaging.EmfType" />の形式を指定する列挙体、<see cref="T:System.Drawing.Imaging.Metafile" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (System.IO.Stream stream, IntPtr referenceHdc, System.Drawing.RectangleF frameRect, System.Drawing.Imaging.MetafileFrameUnit frameUnit, System.Drawing.Imaging.EmfType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream, native int referenceHdc, valuetype System.Drawing.RectangleF frameRect, valuetype System.Drawing.Imaging.MetafileFrameUnit frameUnit, valuetype System.Drawing.Imaging.EmfType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.IO.Stream,System.IntPtr,System.Drawing.RectangleF,System.Drawing.Imaging.MetafileFrameUnit,System.Drawing.Imaging.EmfType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="referenceHdc" Type="System.IntPtr" />
+        <Parameter Name="frameRect" Type="System.Drawing.RectangleF" />
+        <Parameter Name="frameUnit" Type="System.Drawing.Imaging.MetafileFrameUnit" />
+        <Parameter Name="type" Type="System.Drawing.Imaging.EmfType" />
+      </Parameters>
+      <Docs>
+        <param name="stream">A<see cref="T:System.IO.Stream" />このデータを格納している<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="referenceHdc">デバイス コンテキストへの Windows ハンドル。</param>
+        <param name="frameRect">A<see cref="T:System.Drawing.RectangleF" />新しい外接する四角形を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="frameUnit">A<see cref="T:System.Drawing.Imaging.MetafileFrameUnit" />の測定単位を指定する<c>frameRect</c>です。</param>
+        <param name="type"><see cref="T:System.Drawing.Imaging.EmfType" />の形式を指定する、<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.Metafile" />指定したデータ ストリーム、デバイス コンテキストへの Windows ハンドルからクラスを<see cref="T:System.Drawing.RectangleF" />新しい外接する四角形を表す構造<see cref="T:System.Drawing.Imaging.Metafile" />の指定された単位と<see cref="T:System.Drawing.Imaging.EmfType" />の形式を指定する列挙体、<see cref="T:System.Drawing.Imaging.Metafile" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (string fileName, IntPtr referenceHdc, System.Drawing.Rectangle frameRect, System.Drawing.Imaging.MetafileFrameUnit frameUnit, System.Drawing.Imaging.EmfType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName, native int referenceHdc, valuetype System.Drawing.Rectangle frameRect, valuetype System.Drawing.Imaging.MetafileFrameUnit frameUnit, valuetype System.Drawing.Imaging.EmfType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.String,System.IntPtr,System.Drawing.Rectangle,System.Drawing.Imaging.MetafileFrameUnit,System.Drawing.Imaging.EmfType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="referenceHdc" Type="System.IntPtr" />
+        <Parameter Name="frameRect" Type="System.Drawing.Rectangle" />
+        <Parameter Name="frameUnit" Type="System.Drawing.Imaging.MetafileFrameUnit" />
+        <Parameter Name="type" Type="System.Drawing.Imaging.EmfType" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">A<see cref="T:System.String" />の新しいファイル名を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="referenceHdc">デバイス コンテキストへの Windows ハンドル。</param>
+        <param name="frameRect">A<see cref="T:System.Drawing.Rectangle" />新しい外接する四角形を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="frameUnit">A<see cref="T:System.Drawing.Imaging.MetafileFrameUnit" />の測定単位を指定する<c>frameRect</c>です。</param>
+        <param name="type"><see cref="T:System.Drawing.Imaging.EmfType" />の形式を指定する、<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.Metafile" />指定したファイル名、デバイス コンテキストへの Windows ハンドルを持つクラス、<see cref="T:System.Drawing.Rectangle" />新しい外接する四角形を表す構造<see cref="T:System.Drawing.Imaging.Metafile" />の指定された単位と<see cref="T:System.Drawing.Imaging.EmfType" />の形式を指定する列挙体、<see cref="T:System.Drawing.Imaging.Metafile" />です。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">によって指定されたファイルへの読み取りアクセス<paramref name="filename" />です。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (string fileName, IntPtr referenceHdc, System.Drawing.Rectangle frameRect, System.Drawing.Imaging.MetafileFrameUnit frameUnit, string description);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName, native int referenceHdc, valuetype System.Drawing.Rectangle frameRect, valuetype System.Drawing.Imaging.MetafileFrameUnit frameUnit, string description) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.String,System.IntPtr,System.Drawing.Rectangle,System.Drawing.Imaging.MetafileFrameUnit,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="referenceHdc" Type="System.IntPtr" />
+        <Parameter Name="frameRect" Type="System.Drawing.Rectangle" />
+        <Parameter Name="frameUnit" Type="System.Drawing.Imaging.MetafileFrameUnit" />
+        <Parameter Name="description" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">A<see cref="T:System.String" />の新しいファイル名を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="referenceHdc">デバイス コンテキストへの Windows ハンドル。</param>
+        <param name="frameRect">A<see cref="T:System.Drawing.Rectangle" />新しい外接する四角形を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="frameUnit">A<see cref="T:System.Drawing.Imaging.MetafileFrameUnit" />の測定単位を指定する<c>frameRect</c>です。</param>
+        <param name="description">A<see cref="T:System.String" />新しいのわかりやすい名前を格納している<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.Metafile" />指定したファイル名、デバイス コンテキストへの Windows ハンドルを持つクラス、<see cref="T:System.Drawing.Rectangle" />新しい外接する四角形を表す構造<see cref="T:System.Drawing.Imaging.Metafile" />、および指定された長さの単位。 説明の文字列を追加することもできます。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">によって指定されたファイルへの読み取りアクセス<paramref name="filename" />です。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (string fileName, IntPtr referenceHdc, System.Drawing.RectangleF frameRect, System.Drawing.Imaging.MetafileFrameUnit frameUnit, System.Drawing.Imaging.EmfType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName, native int referenceHdc, valuetype System.Drawing.RectangleF frameRect, valuetype System.Drawing.Imaging.MetafileFrameUnit frameUnit, valuetype System.Drawing.Imaging.EmfType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.String,System.IntPtr,System.Drawing.RectangleF,System.Drawing.Imaging.MetafileFrameUnit,System.Drawing.Imaging.EmfType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="referenceHdc" Type="System.IntPtr" />
+        <Parameter Name="frameRect" Type="System.Drawing.RectangleF" />
+        <Parameter Name="frameUnit" Type="System.Drawing.Imaging.MetafileFrameUnit" />
+        <Parameter Name="type" Type="System.Drawing.Imaging.EmfType" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">A<see cref="T:System.String" />の新しいファイル名を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="referenceHdc">デバイス コンテキストへの Windows ハンドル。</param>
+        <param name="frameRect">A<see cref="T:System.Drawing.RectangleF" />新しい外接する四角形を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="frameUnit">A<see cref="T:System.Drawing.Imaging.MetafileFrameUnit" />の測定単位を指定する<c>frameRect</c>です。</param>
+        <param name="type"><see cref="T:System.Drawing.Imaging.EmfType" />の形式を指定する、<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.Metafile" />指定したファイル名、デバイス コンテキストへの Windows ハンドルを持つクラス、<see cref="T:System.Drawing.RectangleF" />新しい外接する四角形を表す構造<see cref="T:System.Drawing.Imaging.Metafile" />の指定された単位と<see cref="T:System.Drawing.Imaging.EmfType" />の形式を指定する列挙体、<see cref="T:System.Drawing.Imaging.Metafile" />です。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">によって指定されたファイルへの読み取りアクセス<paramref name="filename" />です。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (string fileName, IntPtr referenceHdc, System.Drawing.RectangleF frameRect, System.Drawing.Imaging.MetafileFrameUnit frameUnit, string desc);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName, native int referenceHdc, valuetype System.Drawing.RectangleF frameRect, valuetype System.Drawing.Imaging.MetafileFrameUnit frameUnit, string desc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.String,System.IntPtr,System.Drawing.RectangleF,System.Drawing.Imaging.MetafileFrameUnit,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="referenceHdc" Type="System.IntPtr" />
+        <Parameter Name="frameRect" Type="System.Drawing.RectangleF" />
+        <Parameter Name="frameUnit" Type="System.Drawing.Imaging.MetafileFrameUnit" />
+        <Parameter Name="desc" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">A<see cref="T:System.String" />の新しいファイル名を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="referenceHdc">デバイス コンテキストへの Windows ハンドル。</param>
+        <param name="frameRect">A<see cref="T:System.Drawing.RectangleF" />新しい外接する四角形を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="frameUnit">A<see cref="T:System.Drawing.Imaging.MetafileFrameUnit" />の測定単位を指定する<c>frameRect</c>です。</param>
+        <param name="desc">A<see cref="T:System.String" />新しいのわかりやすい名前を格納している<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.Metafile" />指定したファイル名、デバイス コンテキストへの Windows ハンドルを持つクラス、<see cref="T:System.Drawing.RectangleF" />新しい外接する四角形を表す構造<see cref="T:System.Drawing.Imaging.Metafile" />、および指定された長さの単位。 説明の文字列を追加することもできます。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">によって指定されたファイルへの読み取りアクセス<paramref name="filename" />です。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (System.IO.Stream stream, IntPtr referenceHdc, System.Drawing.Rectangle frameRect, System.Drawing.Imaging.MetafileFrameUnit frameUnit, System.Drawing.Imaging.EmfType type, string description);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream, native int referenceHdc, valuetype System.Drawing.Rectangle frameRect, valuetype System.Drawing.Imaging.MetafileFrameUnit frameUnit, valuetype System.Drawing.Imaging.EmfType type, string description) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.IO.Stream,System.IntPtr,System.Drawing.Rectangle,System.Drawing.Imaging.MetafileFrameUnit,System.Drawing.Imaging.EmfType,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="referenceHdc" Type="System.IntPtr" />
+        <Parameter Name="frameRect" Type="System.Drawing.Rectangle" />
+        <Parameter Name="frameUnit" Type="System.Drawing.Imaging.MetafileFrameUnit" />
+        <Parameter Name="type" Type="System.Drawing.Imaging.EmfType" />
+        <Parameter Name="description" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="stream">A<see cref="T:System.IO.Stream" />このデータを格納している<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="referenceHdc">デバイス コンテキストへの Windows ハンドル。</param>
+        <param name="frameRect">A<see cref="T:System.Drawing.Rectangle" />新しい外接する四角形を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="frameUnit">A<see cref="T:System.Drawing.Imaging.MetafileFrameUnit" />の測定単位を指定する<c>frameRect</c>です。</param>
+        <param name="type"><see cref="T:System.Drawing.Imaging.EmfType" />の形式を指定する、<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="description">A<see cref="T:System.String" />新しいのわかりやすい名前を格納している<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.Metafile" />指定したデータ ストリーム、デバイス コンテキストへの Windows ハンドルからクラスを<see cref="T:System.Drawing.Rectangle" />新しい外接する四角形を表す構造<see cref="T:System.Drawing.Imaging.Metafile" />の指定された単位と<see cref="T:System.Drawing.Imaging.EmfType" />の形式を指定する列挙体、<see cref="T:System.Drawing.Imaging.Metafile" />です。 新しいのわかりやすい名前を表す文字列<see cref="T:System.Drawing.Imaging.Metafile" />を追加できます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (System.IO.Stream stream, IntPtr referenceHdc, System.Drawing.RectangleF frameRect, System.Drawing.Imaging.MetafileFrameUnit frameUnit, System.Drawing.Imaging.EmfType type, string description);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream, native int referenceHdc, valuetype System.Drawing.RectangleF frameRect, valuetype System.Drawing.Imaging.MetafileFrameUnit frameUnit, valuetype System.Drawing.Imaging.EmfType type, string description) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.IO.Stream,System.IntPtr,System.Drawing.RectangleF,System.Drawing.Imaging.MetafileFrameUnit,System.Drawing.Imaging.EmfType,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="referenceHdc" Type="System.IntPtr" />
+        <Parameter Name="frameRect" Type="System.Drawing.RectangleF" />
+        <Parameter Name="frameUnit" Type="System.Drawing.Imaging.MetafileFrameUnit" />
+        <Parameter Name="type" Type="System.Drawing.Imaging.EmfType" />
+        <Parameter Name="description" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="stream">A<see cref="T:System.IO.Stream" />このデータを格納している<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="referenceHdc">デバイス コンテキストへの Windows ハンドル。</param>
+        <param name="frameRect">A<see cref="T:System.Drawing.RectangleF" />新しい外接する四角形を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="frameUnit">A<see cref="T:System.Drawing.Imaging.MetafileFrameUnit" />の測定単位を指定する<c>frameRect</c>です。</param>
+        <param name="type"><see cref="T:System.Drawing.Imaging.EmfType" />の形式を指定する、<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="description">A<see cref="T:System.String" />新しいのわかりやすい名前を格納している<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.Metafile" />指定したデータ ストリーム、デバイス コンテキストへの Windows ハンドルからクラスを<see cref="T:System.Drawing.RectangleF" />新しい外接する四角形を表す構造<see cref="T:System.Drawing.Imaging.Metafile" />の指定された単位と<see cref="T:System.Drawing.Imaging.EmfType" />の形式を指定する列挙体、<see cref="T:System.Drawing.Imaging.Metafile" />です。 新しいのわかりやすい名前を表す文字列<see cref="T:System.Drawing.Imaging.Metafile" />を追加できます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (string fileName, IntPtr referenceHdc, System.Drawing.Rectangle frameRect, System.Drawing.Imaging.MetafileFrameUnit frameUnit, System.Drawing.Imaging.EmfType type, string description);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName, native int referenceHdc, valuetype System.Drawing.Rectangle frameRect, valuetype System.Drawing.Imaging.MetafileFrameUnit frameUnit, valuetype System.Drawing.Imaging.EmfType type, string description) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.String,System.IntPtr,System.Drawing.Rectangle,System.Drawing.Imaging.MetafileFrameUnit,System.Drawing.Imaging.EmfType,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="referenceHdc" Type="System.IntPtr" />
+        <Parameter Name="frameRect" Type="System.Drawing.Rectangle" />
+        <Parameter Name="frameUnit" Type="System.Drawing.Imaging.MetafileFrameUnit" />
+        <Parameter Name="type" Type="System.Drawing.Imaging.EmfType" />
+        <Parameter Name="description" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">A<see cref="T:System.String" />の新しいファイル名を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="referenceHdc">デバイス コンテキストへの Windows ハンドル。</param>
+        <param name="frameRect">A<see cref="T:System.Drawing.Rectangle" />新しい外接する四角形を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="frameUnit">A<see cref="T:System.Drawing.Imaging.MetafileFrameUnit" />の測定単位を指定する<c>frameRect</c>です。</param>
+        <param name="type"><see cref="T:System.Drawing.Imaging.EmfType" />の形式を指定する、<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="description">A<see cref="T:System.String" />新しいのわかりやすい名前を格納している<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.Metafile" />指定したファイル名、デバイス コンテキストへの Windows ハンドルを持つクラス、<see cref="T:System.Drawing.Rectangle" />新しい外接する四角形を表す構造<see cref="T:System.Drawing.Imaging.Metafile" />の指定された単位と<see cref="T:System.Drawing.Imaging.EmfType" />の形式を指定する列挙体、<see cref="T:System.Drawing.Imaging.Metafile" />です。 説明の文字列を追加することもできます。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">によって指定されたファイルへの読み取りアクセス<paramref name="filename" />です。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Metafile (string fileName, IntPtr referenceHdc, System.Drawing.RectangleF frameRect, System.Drawing.Imaging.MetafileFrameUnit frameUnit, System.Drawing.Imaging.EmfType type, string description);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName, native int referenceHdc, valuetype System.Drawing.RectangleF frameRect, valuetype System.Drawing.Imaging.MetafileFrameUnit frameUnit, valuetype System.Drawing.Imaging.EmfType type, string description) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.#ctor(System.String,System.IntPtr,System.Drawing.RectangleF,System.Drawing.Imaging.MetafileFrameUnit,System.Drawing.Imaging.EmfType,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="referenceHdc" Type="System.IntPtr" />
+        <Parameter Name="frameRect" Type="System.Drawing.RectangleF" />
+        <Parameter Name="frameUnit" Type="System.Drawing.Imaging.MetafileFrameUnit" />
+        <Parameter Name="type" Type="System.Drawing.Imaging.EmfType" />
+        <Parameter Name="description" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">A<see cref="T:System.String" />の新しいファイル名を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="referenceHdc">デバイス コンテキストへの Windows ハンドル。</param>
+        <param name="frameRect">A<see cref="T:System.Drawing.RectangleF" />新しい外接する四角形を表す<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="frameUnit">A<see cref="T:System.Drawing.Imaging.MetafileFrameUnit" />の測定単位を指定する<c>frameRect</c>です。</param>
+        <param name="type"><see cref="T:System.Drawing.Imaging.EmfType" />の形式を指定する、<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <param name="description">A<see cref="T:System.String" />新しいのわかりやすい名前を格納している<see cref="T:System.Drawing.Imaging.Metafile" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.Metafile" />指定したファイル名、デバイス コンテキストへの Windows ハンドルを持つクラス、<see cref="T:System.Drawing.RectangleF" />新しい外接する四角形を表す構造<see cref="T:System.Drawing.Imaging.Metafile" />の指定された単位と<see cref="T:System.Drawing.Imaging.EmfType" />の形式を指定する列挙体、<see cref="T:System.Drawing.Imaging.Metafile" />です。 説明の文字列を追加することもできます。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">によって指定されたファイルへの読み取りアクセス<paramref name="filename" />です。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHenhmetafile">
+      <MemberSignature Language="C#" Value="public IntPtr GetHenhmetafile ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance native int GetHenhmetafile() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.GetHenhmetafile" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>拡張する Windows ハンドルを返します<see cref="T:System.Drawing.Imaging.Metafile" />です。</summary>
+        <returns>この強化された Windows ハンドル<see cref="T:System.Drawing.Imaging.Metafile" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMetafileHeader">
+      <MemberSignature Language="C#" Value="public System.Drawing.Imaging.MetafileHeader GetMetafileHeader ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Drawing.Imaging.MetafileHeader GetMetafileHeader() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.GetMetafileHeader" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.MetafileHeader</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Imaging.MetafileHeader" /> に関連付けられている <see cref="T:System.Drawing.Imaging.Metafile" /> を返します。</summary>
+        <returns>この <see cref="T:System.Drawing.Imaging.MetafileHeader" /> に関連付けられている <see cref="T:System.Drawing.Imaging.Metafile" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMetafileHeader">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Imaging.MetafileHeader GetMetafileHeader (IntPtr henhmetafile);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Drawing.Imaging.MetafileHeader GetMetafileHeader(native int henhmetafile) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.GetMetafileHeader(System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.MetafileHeader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="henhmetafile" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="henhmetafile">拡張を識別するハンドル<see cref="T:System.Drawing.Imaging.Metafile" />のヘッダーが返されます。</param>
+        <summary>返します、<see cref="T:System.Drawing.Imaging.MetafileHeader" />に指定された関連付けられている<see cref="T:System.Drawing.Imaging.Metafile" />です。</summary>
+        <returns>指定した <see cref="T:System.Drawing.Imaging.MetafileHeader" /> に関連付けられている <see cref="T:System.Drawing.Imaging.Metafile" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMetafileHeader">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Imaging.MetafileHeader GetMetafileHeader (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Drawing.Imaging.MetafileHeader GetMetafileHeader(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.GetMetafileHeader(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.MetafileHeader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream">A<see cref="T:System.IO.Stream" />を含む、<see cref="T:System.Drawing.Imaging.Metafile" />のヘッダーを取得します。</param>
+        <summary>返します、<see cref="T:System.Drawing.Imaging.MetafileHeader" />に指定された関連付けられている<see cref="T:System.Drawing.Imaging.Metafile" />です。</summary>
+        <returns>指定した <see cref="T:System.Drawing.Imaging.MetafileHeader" /> に関連付けられている <see cref="T:System.Drawing.Imaging.Metafile" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMetafileHeader">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Imaging.MetafileHeader GetMetafileHeader (string fileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Drawing.Imaging.MetafileHeader GetMetafileHeader(string fileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.GetMetafileHeader(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.MetafileHeader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">A<see cref="T:System.String" />の名前を含む、<see cref="T:System.Drawing.Imaging.Metafile" />のヘッダーを取得します。</param>
+        <summary>返します、<see cref="T:System.Drawing.Imaging.MetafileHeader" />に指定された関連付けられている<see cref="T:System.Drawing.Imaging.Metafile" />です。</summary>
+        <returns>指定した <see cref="T:System.Drawing.Imaging.MetafileHeader" /> に関連付けられている <see cref="T:System.Drawing.Imaging.Metafile" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMetafileHeader">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Imaging.MetafileHeader GetMetafileHeader (IntPtr hmetafile, System.Drawing.Imaging.WmfPlaceableFileHeader wmfHeader);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Drawing.Imaging.MetafileHeader GetMetafileHeader(native int hmetafile, class System.Drawing.Imaging.WmfPlaceableFileHeader wmfHeader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.GetMetafileHeader(System.IntPtr,System.Drawing.Imaging.WmfPlaceableFileHeader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.MetafileHeader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hmetafile" Type="System.IntPtr" />
+        <Parameter Name="wmfHeader" Type="System.Drawing.Imaging.WmfPlaceableFileHeader" />
+      </Parameters>
+      <Docs>
+        <param name="hmetafile">ハンドル、<see cref="T:System.Drawing.Imaging.Metafile" />ヘッダーを取得します。</param>
+        <param name="wmfHeader"><see cref="T:System.Drawing.Imaging.WmfPlaceableFileHeader" />。</param>
+        <summary>返します、<see cref="T:System.Drawing.Imaging.MetafileHeader" />に指定された関連付けられている<see cref="T:System.Drawing.Imaging.Metafile" />です。</summary>
+        <returns>指定した <see cref="T:System.Drawing.Imaging.MetafileHeader" /> に関連付けられている <see cref="T:System.Drawing.Imaging.Metafile" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PlayRecord">
+      <MemberSignature Language="C#" Value="public void PlayRecord (System.Drawing.Imaging.EmfPlusRecordType recordType, int flags, int dataSize, byte[] data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void PlayRecord(valuetype System.Drawing.Imaging.EmfPlusRecordType recordType, int32 flags, int32 dataSize, unsigned int8[] data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.Metafile.PlayRecord(System.Drawing.Imaging.EmfPlusRecordType,System.Int32,System.Int32,System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="recordType" Type="System.Drawing.Imaging.EmfPlusRecordType" />
+        <Parameter Name="flags" Type="System.Int32" />
+        <Parameter Name="dataSize" Type="System.Int32" />
+        <Parameter Name="data" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="recordType">要素、<see cref="T:System.Drawing.Imaging.EmfPlusRecordType" />再生されるメタファイル レコードの種類を指定します。</param>
+        <param name="flags">レコードの属性を指定するフラグのセット。</param>
+        <param name="dataSize">レコード データのバイト数。</param>
+        <param name="data">レコード データを含むバイト配列。</param>
+        <summary>個別のメタファイル レコードを再生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Drawing.Imaging.Metafile.PlayRecord%2A> メソッドの使用方法を示します。  
+  
+ [!code-csharp[System.Drawing.Graphics.EnumerateMetafile#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Graphics.EnumerateMetafile/CS/Form1.cs#1)]
+ [!code-vb[System.Drawing.Graphics.EnumerateMetafile#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Graphics.EnumerateMetafile/VB/Form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

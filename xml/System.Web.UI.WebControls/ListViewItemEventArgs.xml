@@ -1,0 +1,107 @@
+<Type Name="ListViewItemEventArgs" FullName="System.Web.UI.WebControls.ListViewItemEventArgs">
+  <TypeSignature Language="C#" Value="public class ListViewItemEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ListViewItemEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ListViewItemEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.UI.WebControls.ListView.ItemCreated" /> イベントおよび <see cref="E:System.Web.UI.WebControls.ListView.ItemDataBound" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 前に、<xref:System.Web.UI.WebControls.ListView>コントロールを表示できる、<xref:System.Web.UI.WebControls.ListViewItem>コントロール内の各項目のオブジェクトを作成する必要があります。 <xref:System.Web.UI.WebControls.ListView.ItemCreated>イベントが発生するたびを内の項目、<xref:System.Web.UI.WebControls.ListView>コントロールを作成します。 これにより、カスタム コンテンツ項目を追加するなど、アイテムが作成されるたびに、カスタム ルーチンを実行するイベント処理メソッドを提供できます。  
+  
+ 同様に、前に、<xref:System.Web.UI.WebControls.ListView>コントロールを表示できる、コントロール内のすべての項目は、データ ソース内のレコードにバインドする必要があります。 <xref:System.Web.UI.WebControls.ListView.ItemDataBound>イベントは、項目 (によって表される、<xref:System.Web.UI.WebControls.ListViewItem>オブジェクト) データには、バインド、<xref:System.Web.UI.WebControls.ListView>コントロール。 これにより、項目が表示される前に、データの値を変更するなどのデータにバインドされるたびに、カスタム ルーチンを実行できます。  
+  
+ A<xref:System.Web.UI.WebControls.ListViewItemEventArgs>オブジェクトがイベントを発生させた、項目のプロパティにアクセスすることにより、イベント処理メソッドに渡されます。 どの項目の種類 (データ項目、空の項目または項目の挿入) が作成されていることを確認するには<xref:System.Web.UI.WebControls.ListViewItem.ItemType%2A>のプロパティ、<xref:System.Web.UI.WebControls.ListViewItem>オブジェクト。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.Web.UI.WebControls.ListViewItemEventArgs>を参照してください、<xref:System.Web.UI.WebControls.ListViewItemEventArgs.%23ctor%2A>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ListViewItemEventArgs>データにバインドされている項目のプロパティにアクセスするオブジェクト。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.ListView.ItemDataBound#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemDataBound/CS/ListViewItemDataBoundCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.ListView.ItemDataBound#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemDataBound/VB/ListViewItemDataBoundVB.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewItemEventArgs (System.Web.UI.WebControls.ListViewItem item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.ListViewItem item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListViewItemEventArgs.#ctor(System.Web.UI.WebControls.ListViewItem)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="item" Type="System.Web.UI.WebControls.ListViewItem" />
+      </Parameters>
+      <Docs>
+        <param name="item">項目の作成中またはデータにバインドします。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.ListViewItemEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.ListViewItemEventArgs>クラスです。  
+  
+> [!NOTE]
+>  このコンス トラクターはイベントを発生させる場合にコントロールの開発者によって、主に使用します。  
+  
+ 次の表のインスタンスの初期プロパティ値、<xref:System.Web.UI.WebControls.ListViewItemEventArgs>クラスです。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.ListViewItemEventArgs.Item%2A>|<xref:System.Web.UI.WebControls.ListViewItem>に含まれているオブジェクト、`item`パラメーター。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.ListViewItem Item { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.ListViewItem Item" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewItemEventArgs.Item" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ListViewItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>作成またはデータにバインドされている項目を取得します。</summary>
+        <value>作成またはデータにバインドされている項目。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ListViewItemEventArgs.Item%2A>作成またはデータにバインドされている項目のプロパティにアクセスするプロパティです。 どの項目の種類 (データ項目、空の項目または項目の挿入) が作成されていることを確認するには<xref:System.Web.UI.WebControls.ListViewItem.ItemType%2A>のプロパティ、<xref:System.Web.UI.WebControls.ListViewItem>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ListViewItemEventArgs.Item%2A>データにバインドされている項目のプロパティにアクセスするプロパティです。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.ListViewItemEventArgs>クラスです。  
+  
+ [!code-csharp[System.Web.UI.WebControls.ListView.ItemDataBound#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemDataBound/CS/ListViewItemDataBoundCS.aspx#2)]
+ [!code-vb[System.Web.UI.WebControls.ListView.ItemDataBound#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemDataBound/VB/ListViewItemDataBoundVB.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

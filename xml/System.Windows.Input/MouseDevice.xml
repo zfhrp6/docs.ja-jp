@@ -1,0 +1,565 @@
+<Type Name="MouseDevice" FullName="System.Windows.Input.MouseDevice">
+  <TypeSignature Language="C#" Value="public abstract class MouseDevice : System.Windows.Input.InputDevice" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit MouseDevice extends System.Windows.Input.InputDevice" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.MouseDevice" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Input.InputDevice</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>マウス デバイスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.MouseDevice>をサポートしている、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]インフラストラクチャ コードから直接使用するものではありません。  
+  
+ マウスの入力を使用して関連する、<xref:System.Windows.Input.Mouse>クラスです。  <xref:System.Windows.Input.Mouse>クラスがアプリケーションに、マウスを表し、メソッド、プロパティ、およびマウスの状態を反映するイベントを提供します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ActiveSource">
+      <MemberSignature Language="C#" Value="public override System.Windows.PresentationSource ActiveSource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.PresentationSource ActiveSource" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MouseDevice.ActiveSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.PresentationSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.PresentationSource" />このデバイスの入力を報告します。</summary>
+        <value>このデバイスの入力のソース。</value>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">アクティブなソースを取得します。  関連付けられた列挙は:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Capture">
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定された要素に対するマウス入力をキャプチャします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素は、マウスをキャプチャ、ときに、カーソルが境界内にあるかどうかを示す、マウス入力を受け取ります。  
+  
+ 場合、<xref:System.Windows.Input.CaptureMode>が指定されていない、既定値<xref:System.Windows.Input.CaptureMode>は<xref:System.Windows.Input.CaptureMode.Element>します。  
+  
+ マウスのキャプチャを解放する呼び出し<xref:System.Windows.Input.MouseDevice.Capture%2A>渡す`null`をキャプチャする要素として。  
+  
+ マウスがキャプチャされる場合と、<xref:System.Windows.Input.Mouse.MouseDown>または<xref:System.Windows.Input.Mouse.MouseUp>イベントが発生し、マウスのボタンの下にある要素を入力することはしません<xref:System.Windows.Input.Mouse.PreviewMouseDownOutsideCapturedElement>と<xref:System.Windows.Input.Mouse.PreviewMouseUpOutsideCapturedElement>最初に発生します。  これにより、キャプチャした要素の前にキャプチャを解放する機会、<xref:System.Windows.Input.Mouse.MouseDown>と<xref:System.Windows.Input.Mouse.MouseUp>イベント ルーティングされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Capture">
+      <MemberSignature Language="C#" Value="public bool Capture (System.Windows.IInputElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Capture(class System.Windows.IInputElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.MouseDevice.Capture(System.Windows.IInputElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.IInputElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">マウスをキャプチャする要素。</param>
+        <summary>指定された要素にマウス イベントをキャプチャします。</summary>
+        <returns>
+          要素がマウスをキャプチャできた場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 境界内にカーソルがあるかどうかのマウス入力を受け取る要素は、マウスをキャプチャ、  
+  
+ 場合、<xref:System.Windows.Input.CaptureMode>が指定されていない、既定値<xref:System.Windows.Input.CaptureMode>は<xref:System.Windows.Input.CaptureMode.Element>します。  
+  
+ マウスのキャプチャを解放する呼び出し<xref:System.Windows.Input.MouseDevice.Capture%2A>渡す`null`をキャプチャする要素として。  
+  
+ マウスがキャプチャされる場合と、<xref:System.Windows.Input.Mouse.MouseDown>または<xref:System.Windows.Input.Mouse.MouseUp>イベントが発生し、マウスのボタンの下にある要素を入力することはしません<xref:System.Windows.Input.Mouse.PreviewMouseDownOutsideCapturedElement>と<xref:System.Windows.Input.Mouse.PreviewMouseUpOutsideCapturedElement>最初に発生します。  これにより、キャプチャした要素の前にキャプチャを解放する機会、<xref:System.Windows.Input.Mouse.MouseDown>と<xref:System.Windows.Input.Mouse.MouseUp>イベント ルーティングされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="element" />is not a <see cref="T:System.Windows.UIElement" /> or <see cref="T:System.Windows.ContentElement" />.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Capture">
+      <MemberSignature Language="C#" Value="public bool Capture (System.Windows.IInputElement element, System.Windows.Input.CaptureMode captureMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Capture(class System.Windows.IInputElement element, valuetype System.Windows.Input.CaptureMode captureMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.MouseDevice.Capture(System.Windows.IInputElement,System.Windows.Input.CaptureMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.IInputElement" />
+        <Parameter Name="captureMode" Type="System.Windows.Input.CaptureMode" />
+      </Parameters>
+      <Docs>
+        <param name="element">要素がマウスをキャプチャするには.</param>
+        <param name="captureMode">使用するキャプチャ ポリシー。</param>
+        <summary>指定した <see cref="T:System.Windows.Input.CaptureMode" /> を使用して、指定された要素に対するマウス入力をキャプチャします。</summary>
+        <returns>
+          要素がマウスをキャプチャできた場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素は、マウスをキャプチャ、ときに、カーソルが境界内にあるかどうかを示す、マウス入力を受け取ります。  
+  
+ マウスのキャプチャを解放する呼び出し<xref:System.Windows.Input.MouseDevice.Capture%2A>渡す`null`をキャプチャする要素として。  
+  
+ マウスがキャプチャされる場合と、<xref:System.Windows.Input.Mouse.MouseDown>または<xref:System.Windows.Input.Mouse.MouseUp>イベントが発生し、マウスのボタンの下にある要素を入力することはしません<xref:System.Windows.Input.Mouse.PreviewMouseDownOutsideCapturedElement>と<xref:System.Windows.Input.Mouse.PreviewMouseUpOutsideCapturedElement>最初に発生します。  これにより、キャプチャした要素の前にキャプチャを解放する機会、<xref:System.Windows.Input.Mouse.MouseDown>と<xref:System.Windows.Input.Mouse.MouseUp>イベント ルーティングされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="element" />is not a <see cref="T:System.Windows.UIElement" /> or <see cref="T:System.Windows.ContentElement" />.</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="captureMode" /> は有効な <see cref="T:System.Windows.Input.CaptureMode" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Captured">
+      <MemberSignature Language="C#" Value="public System.Windows.IInputElement Captured { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.IInputElement Captured" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MouseDevice.Captured" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.IInputElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.IInputElement" />マウスでキャプチャされました。</summary>
+        <value>マウスでキャプチャされる要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素は、マウスをキャプチャ、ときに、カーソルが境界内にあるかどうかを示す、マウス入力を受け取ります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DirectlyOver">
+      <MemberSignature Language="C#" Value="public System.Windows.IInputElement DirectlyOver { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.IInputElement DirectlyOver" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MouseDevice.DirectlyOver" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.IInputElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>直接上にマウス ポインターが要素を取得します。</summary>
+        <value>マウス ポインターの下にある要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ その要素にマウスをキャプチャしたが場合、マウスが要素上で直接と見なされます。  
+  
+ コントロールは、複数の要素で構成されます。 <xref:System.Windows.Input.MouseDevice.DirectlyOver%2A>上にマウス ポインターが複合コントロールおよびコントロール自体ではなく特定の要素を報告します。  のどの部分に応じてなど、 <xref:System.Windows.Controls.Button> 、上にポインターが、<xref:System.Windows.Input.MouseDevice.DirectlyOver%2A>プロパティのレポートを<xref:System.Windows.Controls.TextBox>の<xref:System.Windows.Controls.ContentControl.Content%2A>プロパティまたは<xref:Microsoft.Windows.Themes.ButtonChrome>です。  
+  
+ 使用して、<xref:System.Windows.IInputElement.IsMouseOver%2A>プロパティ<xref:System.Windows.UIElement>と<xref:System.Windows.ContentElement>にマウスが要素、そのビジュアル子要素が含まれているかどうかを決定したり複合要素を制御したりします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetButtonState">
+      <MemberSignature Language="C#" Value="protected System.Windows.Input.MouseButtonState GetButtonState (System.Windows.Input.MouseButton mouseButton);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance valuetype System.Windows.Input.MouseButtonState GetButtonState(valuetype System.Windows.Input.MouseButton mouseButton) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.MouseDevice.GetButtonState(System.Windows.Input.MouseButton)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseButtonState</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mouseButton" Type="System.Windows.Input.MouseButton" />
+      </Parameters>
+      <Docs>
+        <param name="mouseButton">クエリが実行されているボタンです。</param>
+        <summary>指定されたマウス ボタンの状態を取得します。</summary>
+        <returns>ボタンの状態。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetClientPosition">
+      <MemberSignature Language="C#" Value="protected System.Windows.Point GetClientPosition ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance valuetype System.Windows.Point GetClientPosition() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.MouseDevice.GetClientPosition" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityTreatAsSafe</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クライアント座標でマウス ポインターの位置を計算します。</summary>
+        <returns>クライアント座標でマウス ポインターの位置。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetClientPosition">
+      <MemberSignature Language="C#" Value="protected System.Windows.Point GetClientPosition (System.Windows.PresentationSource presentationSource);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance valuetype System.Windows.Point GetClientPosition(class System.Windows.PresentationSource presentationSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.MouseDevice.GetClientPosition(System.Windows.PresentationSource)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="presentationSource" Type="System.Windows.PresentationSource" />
+      </Parameters>
+      <Docs>
+        <param name="presentationSource">マウスの位置を取得する対象のソース。</param>
+        <summary>マウス ポインターの位置を指定した、クライアント座標で計算<see cref="T:System.Windows.PresentationSource" />です。</summary>
+        <returns>マウス ポインターの位置を指定したのクライアント座標で<see cref="T:System.Windows.PresentationSource" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPosition">
+      <MemberSignature Language="C#" Value="public System.Windows.Point GetPosition (System.Windows.IInputElement relativeTo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Point GetPosition(class System.Windows.IInputElement relativeTo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.MouseDevice.GetPosition(System.Windows.IInputElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="relativeTo" Type="System.Windows.IInputElement" />
+      </Parameters>
+      <Docs>
+        <param name="relativeTo">マウスの位置を計算するフレームの参照。</param>
+        <summary>指定した要素に相対的なマウスの位置を取得します。</summary>
+        <returns><paramref name="relativeTo" /> パラメーターに対して相対的なマウスの位置。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マウス ポインターの位置を指定された相対計算<xref:System.Windows.IInputElement>0, 0、元の要素の左上隅にします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="relativeTo" />is <see langword="null" /> or is not a <see cref="T:System.Windows.UIElement" /> or <see cref="T:System.Windows.ContentElement" />.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetScreenPosition">
+      <MemberSignature Language="C#" Value="protected System.Windows.Point GetScreenPosition ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance valuetype System.Windows.Point GetScreenPosition() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.MouseDevice.GetScreenPosition" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>マウス ポインターの画面上の位置を計算します。</summary>
+        <returns>マウス ポインターの位置。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LeftButton">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.MouseButtonState LeftButton { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Input.MouseButtonState LeftButton" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MouseDevice.LeftButton" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseButtonState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このマウス デバイスのマウスの左ボタンの状態を取得します。</summary>
+        <value>ボタンの状態。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MiddleButton">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.MouseButtonState MiddleButton { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Input.MouseButtonState MiddleButton" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MouseDevice.MiddleButton" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseButtonState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このマウス デバイスの中央ボタンの状態。</summary>
+        <value>ボタンの状態。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OverrideCursor">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.Cursor OverrideCursor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.Cursor OverrideCursor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MouseDevice.OverrideCursor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.Cursor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーション全体のカーソルを取得または設定します。</summary>
+        <value>オーバーライドされたカーソルまたは<see langword="null" />場合<see cref="P:System.Windows.Input.MouseDevice.OverrideCursor" />が設定されていません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.Cursor>を<xref:System.Windows.Input.MouseDevice.OverrideCursor%2A>がセットには、アプリケーション全体に適用されます。  
+  
+ オーバーライドをオフに<xref:System.Windows.Input.Cursor>設定、<xref:System.Windows.Input.MouseDevice.OverrideCursor%2A>に`null`です。  
+  
+ 設定<xref:System.Windows.Input.MouseDevice.OverrideCursor%2A>に<xref:System.Windows.Input.Cursors.None%2A>が強制的に表示されますが、マウス カーソルが、マウス イベントは処理されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RightButton">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.MouseButtonState RightButton { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Input.MouseButtonState RightButton" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MouseDevice.RightButton" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseButtonState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このマウス デバイスの右ボタンの状態を取得します。</summary>
+        <value>ボタンの状態。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCursor">
+      <MemberSignature Language="C#" Value="public bool SetCursor (System.Windows.Input.Cursor cursor);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool SetCursor(class System.Windows.Input.Cursor cursor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.MouseDevice.SetCursor(System.Windows.Input.Cursor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cursor" Type="System.Windows.Input.Cursor" />
+      </Parameters>
+      <Docs>
+        <param name="cursor">マウス ポインターの設定先のカーソル。</param>
+        <summary>指定したマウス ポインターを設定します。<see cref="T:System.Windows.Input.Cursor" /></summary>
+        <returns>
+          <see langword="true" />マウス カーソルが設定されている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このカーソルは常に特定適用されないことに注意してください<xref:System.Windows.UIElement>がではなくアプリケーション全体に適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Synchronize">
+      <MemberSignature Language="C#" Value="public void Synchronize ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Synchronize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.MouseDevice.Synchronize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>マウスを強制的に再同期します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.MouseDevice>レイアウトの変更と呼び出しを監視<xref:System.Windows.Input.MouseDevice.Synchronize%2A>です。  あります。 マウス入力システムが変更に応答するため、更新を強制する必要があります。  たとえば、タイマー上にマウス ポインターを再同期する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Target">
+      <MemberSignature Language="C#" Value="public override System.Windows.IInputElement Target { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.IInputElement Target" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MouseDevice.Target" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.IInputElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.IInputElement" />にこのマウス デバイスからの入力を送信します。</summary>
+        <value>入力を受け取る要素です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ターゲットを<xref:System.Windows.Input.MouseDevice>が上にマウスがオブジェクトとマウスのキャプチャを持つオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateCursor">
+      <MemberSignature Language="C#" Value="public void UpdateCursor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UpdateCursor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.MouseDevice.UpdateCursor" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>更新する、マウス カーソルを強制します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XButton1">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.MouseButtonState XButton1 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Input.MouseButtonState XButton1" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MouseDevice.XButton1" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseButtonState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このマウス デバイスの第 1 拡張ボタンの状態を取得します。</summary>
+        <value>ボタンの状態。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XButton2">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.MouseButtonState XButton2 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Input.MouseButtonState XButton2" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MouseDevice.XButton2" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseButtonState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このマウス デバイスの第 2 拡張ボタンの状態を取得します。</summary>
+        <value>ボタンの状態。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

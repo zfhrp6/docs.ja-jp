@@ -1,0 +1,134 @@
+<Type Name="CodeAssignStatement" FullName="System.CodeDom.CodeAssignStatement">
+  <TypeSignature Language="C#" Value="public class CodeAssignStatement : System.CodeDom.CodeStatement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CodeAssignStatement extends System.CodeDom.CodeStatement" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.CodeAssignStatement" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.CodeDom.CodeStatement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>単純な代入ステートメントを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.CodeAssignStatement>別のオブジェクト、またはその他のリファレンスへの参照に、オブジェクトの値を代入するステートメントを表すために使用できます。 単純な代入ステートメントは、フォームでは通常" `value1`  =  `value2` "ここで、`value1`に割り当てられているオブジェクトと`value2`割り当てられています。 <xref:System.CodeDom.CodeAssignStatement.Left%2A>プロパティに割り当てるオブジェクトを示します。 <xref:System.CodeDom.CodeAssignStatement.Right%2A>プロパティに割り当てるオブジェクトを示します。  
+  
+   
+  
+## Examples  
+ 次のコードを作成、<xref:System.CodeDom.CodeAssignStatement>という名前の整数変数に値 10 を割り当てる`i`:  
+  
+ [!code-cpp[CodeAssignStatement#1](~/samples/snippets/cpp/VS_Snippets_CLR/CodeAssignStatement/CPP/codeassignstatementsnippet.cpp#1)]
+ [!code-csharp[CodeAssignStatement#1](~/samples/snippets/csharp/VS_Snippets_CLR/CodeAssignStatement/CS/codeassignstatementsnippet.cs#1)]
+ [!code-vb[CodeAssignStatement#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeAssignStatement/VB/codeassignstatementsnippet.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeAssignStatement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeAssignStatement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.CodeDom.CodeAssignStatement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeAssignStatement (System.CodeDom.CodeExpression left, System.CodeDom.CodeExpression right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeExpression left, class System.CodeDom.CodeExpression right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeAssignStatement.#ctor(System.CodeDom.CodeExpression,System.CodeDom.CodeExpression)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="left" Type="System.CodeDom.CodeExpression" />
+        <Parameter Name="right" Type="System.CodeDom.CodeExpression" />
+      </Parameters>
+      <Docs>
+        <param name="left">代入する変数です。</param>
+        <param name="right">代入する値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeAssignStatement" />クラスの指定された式を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Left">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeExpression Left { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeExpression Left" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeAssignStatement.Left" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeExpression</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはオブジェクトやに割り当てるへの参照を表す式を設定します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeExpression" />に割り当てるへの参照をオブジェクトを示すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Right">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeExpression Right { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeExpression Right" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeAssignStatement.Right" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeExpression</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはオブジェクトや割り当てへの参照を表す式を設定します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeExpression" />割り当てるへの参照をオブジェクトを示すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

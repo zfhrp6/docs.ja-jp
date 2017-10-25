@@ -1,0 +1,66 @@
+<Type Name="NoSettingsVersionUpgradeAttribute" FullName="System.Configuration.NoSettingsVersionUpgradeAttribute">
+  <TypeSignature Language="C#" Value="public sealed class NoSettingsVersionUpgradeAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit NoSettingsVersionUpgradeAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.NoSettingsVersionUpgradeAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>設定プロバイダーにアプリケーションのアップグレードが検出されたときに呼び出される任意のロジックが無効にする必要がありますを指定します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションのバージョン管理をサポートする全機能を備えたアプリケーションの設定プロバイダーを作成するプロバイダーを実装する必要があります、<xref:System.Configuration.IApplicationSettingsProvider>インターフェイスです。 このインターフェイスのメンバーの 1 つ、 <xref:System.Configuration.IApplicationSettingsProvider.Upgrade%2A> 、メソッドは、新しいバージョンのアプリケーションがインストールされているプロバイダーに通知します。 応答として、通常は過去のアプリケーション設定の移行を適切な処置を実行する、プロバイダーが必要です。  
+  
+ <xref:System.Configuration.NoSettingsVersionUpgradeAttribute>を現在の設定クラスに関連付けられているアップグレード ロジックを抑制するプロバイダーに通知します。 そのため、このプロパティ グループの以前のバージョンの値が、新しいインストールに移行する必要がありますされません。  
+  
+> [!NOTE]
+>  この属性は、個々 のアプリケーション設定のプロパティにのみ適用できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NoSettingsVersionUpgradeAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.NoSettingsVersionUpgradeAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Configuration.NoSettingsVersionUpgradeAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、コンパイラが指定した既定のコンス トラクター、<xref:System.Configuration.NoSettingsVersionUpgradeAttribute>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

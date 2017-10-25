@@ -1,0 +1,445 @@
+<Type Name="WindowsPrincipal" FullName="System.Security.Principal.WindowsPrincipal">
+  <TypeSignature Language="C#" Value="public class WindowsPrincipal : System.Security.Claims.ClaimsPrincipal" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit WindowsPrincipal extends System.Security.Claims.ClaimsPrincipal" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Principal.WindowsPrincipal" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Claims.ClaimsPrincipal</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Windows ユーザーの Windows グループのメンバーシップをチェックするコードを有効にします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Principal.WindowsPrincipal>主にクラスを使用して Windows ユーザーのロールをチェックします。 <xref:System.Security.Principal.WindowsPrincipal.IsInRole%2A?displayProperty=nameWithType>メソッドのオーバー ロードを使用して、別のロールのコンテキストを使用して、ユーザー ロールを確認できます。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Security.Principal.WindowsPrincipal.IsInRole%2A>メソッドのオーバー ロードします。 <xref:System.Security.Principal.WindowsBuiltInRole>列挙型は組み込みのロールを識別する相対 id (Rid) のソースとして使用します。 Rid は、現在のプリンシパルの役割の決定に使用されます。  
+  
+ [!code-cpp[System.Security.Principal.WindowsBuiltInRole Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Principal.WindowsBuiltInRole Example/CPP/source.cpp#1)]
+ [!code-csharp[System.Security.Principal.WindowsBuiltInRole Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Principal.WindowsBuiltInRole Example/CS/source.cs#1)]
+ [!code-vb[System.Security.Principal.WindowsBuiltInRole Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Principal.WindowsBuiltInRole Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WindowsPrincipal (System.Security.Principal.WindowsIdentity ntIdentity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Principal.WindowsIdentity ntIdentity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Principal.WindowsPrincipal.#ctor(System.Security.Principal.WindowsIdentity)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="ntIdentity" Type="System.Security.Principal.WindowsIdentity" />
+      </Parameters>
+      <Docs>
+        <param name="ntIdentity"><see cref="T:System.Security.Principal.WindowsPrincipal" /> の新しいインスタンスの生成元となるオブジェクト。</param>
+        <summary>指定した <see cref="T:System.Security.Principal.WindowsIdentity" /> オブジェクトを使用して、<see cref="T:System.Security.Principal.WindowsPrincipal" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、新しい作成<xref:System.Security.Principal.WindowsPrincipal>オブジェクト現在から<xref:System.Security.Principal.WindowsIdentity>オブジェクト。  
+  
+ [!code-cpp[Classic WindowsPrincipal.WindowsPrincipal Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic WindowsPrincipal.WindowsPrincipal Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WindowsPrincipal.WindowsPrincipal Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic WindowsPrincipal.WindowsPrincipal Example/CS/source.cs#1)]
+ [!code-vb[Classic WindowsPrincipal.WindowsPrincipal Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic WindowsPrincipal.WindowsPrincipal Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="ntIdentity" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeviceClaims">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IEnumerable&lt;System.Security.Claims.Claim&gt; DeviceClaims { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class System.Security.Claims.Claim&gt; DeviceClaims" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Principal.WindowsPrincipal.DeviceClaims" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Runtime.CompilerServices.IteratorStateMachine(typeof(System.Security.Principal.WindowsPrincipal/&lt;get_DeviceClaims&gt;d__13))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Security.Claims.Claim&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプリンシパルからすべての Windows デバイスの信頼性情報を取得します。</summary>
+        <value>このプリンシパルからすべての Windows デバイスの信頼性情報のコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Identity">
+      <MemberSignature Language="C#" Value="public override System.Security.Principal.IIdentity Identity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Principal.IIdentity Identity" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Principal.WindowsPrincipal.Identity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Principal.IIdentity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のプリンシパルの id を取得します。</summary>
+        <value><see cref="T:System.Security.Principal.WindowsIdentity" />現在のプリンシパルのオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用して、ユーザーの名前を取得する、<xref:System.Security.Principal.WindowsPrincipal.Identity%2A>のプロパティ、<xref:System.Security.Principal.WindowsPrincipal>オブジェクト。  
+  
+ [!code-cpp[Classic WindowsPrincipal.Identity Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic WindowsPrincipal.Identity Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WindowsPrincipal.Identity Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic WindowsPrincipal.Identity Example/CS/source.cs#1)]
+ [!code-vb[Classic WindowsPrincipal.Identity Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic WindowsPrincipal.Identity Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="IsInRole">
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>現在のプリンシパルが指定した Windows ユーザー グループに属しているかどうかを判断します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの 4 つのオーバー ロードがあります。 パフォーマンス向上のため、<xref:System.Security.Principal.WindowsPrincipal.IsInRole%28System.Security.Principal.SecurityIdentifier%29>オーバー ロードを強くお勧めします。  
+  
+> [!IMPORTANT]
+>  <xref:System.Security.Principal.WindowsPrincipal.IsInRole%2A>メソッドが Windows 98 または Windows Millennium Edition でサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="IsInRole">
+      <MemberSignature Language="C#" Value="public virtual bool IsInRole (int rid);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsInRole(int32 rid) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Principal.WindowsPrincipal.IsInRole(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rid" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="rid">プリンシパルのメンバーシップの状態を確認するための Windows ユーザー グループの RID します。</param>
+        <summary>現在のプリンシパルが、指定された相対識別子 (RID) の Windows ユーザー グループに属しているかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合は、現在のプリンシパルが指定された Windows ユーザー グループのメンバーは、特定のロールです。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しく作成されたロールについては、新しいユーザーなど、新しいグループをテストするときにすることが重要、ログアウトして、ドメイン内のロール情報の伝達を強制実行にログインします。 これを行わない可能性があります、<xref:System.Security.Principal.WindowsPrincipal.IsInRole%2A>を返すテスト`false`です。 このメソッドは Windows 98 または Windows Millennium Edition でサポートされていません。  
+  
+ パフォーマンス向上のため、<xref:System.Security.Principal.WindowsPrincipal.IsInRole%28System.Security.Principal.SecurityIdentifier%29>オーバー ロードは、ユーザーのロールを決定するための推奨されるオーバー ロードとしてお勧めします。  
+  
+> [!NOTE]
+>  Windows Vista では、ユーザー アカウント制御 (UAC: User Account Control) でユーザーの権限が決定されます。 ユーザーが組み込みの Administrators グループのメンバーである場合、そのユーザーには標準ユーザー アクセス トークンおよび管理者アクセス トークンの 2 つのランタイム アクセス トークンが割り当てられています。 既定では、ユーザーは標準ユーザー ロールに所属します。 管理特権が必要なタスクを実行しようとすると、同意を求めるダイアログ ボックスを使用して、ロールを動的に昇格できます。 実行するコード、<xref:System.Security.Principal.WindowsPrincipal.IsInRole%2A>メソッドでは、[同意] ダイアログ ボックスが表示されません。 コードは、組み込みの Administrators グループにいる場合でも、標準ユーザー ロールの場合は false を返します。 アプリケーション アイコンを右クリックし、管理者として実行することを示すコードを実行する前に、ユーザーの権限を昇格させることができます。  
+  
+ 相対識別子 (Rid) は、Windows ユーザー グループのセキュリティ識別子 (SID) のコンポーネントであるし、クロスプラット フォームのローカリゼーションの問題を防ぐために役立つサポートされます。 多くのユーザー アカウント、ローカル グループ、およびグローバル グループ既定 RID 値を持つことがすべてのバージョンの Windows 間で変化します。  
+  
+ たとえば、builtin \administrators ロールの RID は 0x220 です。 入力パラメーターとして 0x220 を使用して、<xref:System.Security.Principal.WindowsPrincipal.IsInRole%2A>メソッド結果`true`がのかどうか、現在のプリンシパルは、管理者が返されます。  
+  
+ 次の表は、RID の既定値を一覧表示します。  
+  
+|組み込みのユーザー|削除します。|  
+|---------------------|---------|  
+|DOMAINNAME\Administrator|0x1F4|  
+|DOMAINNAME\Guest|0x1F5|  
+  
+|組み込みのグローバル グループ|削除します。|  
+|-----------------------------|---------|  
+|DOMAINNAME\Domain Admins|0x200|  
+|DOMAINNAME\Domain ユーザー|0x201|  
+|DOMAINNAME\Domain ゲスト|0x202|  
+  
+|組み込みのローカル グループ|削除します。|  
+|----------------------------|---------|  
+|BUILTIN\Administrators|0x220|  
+|Builtin \users|0x221|  
+|BUILTIN\Guests|0x222|  
+|BUILTIN\Account 演算子|0x224|  
+|BUILTIN\Server 演算子|0x225|  
+|BUILTIN\Print 演算子|0x226|  
+|BUILTIN\Backup 演算子|0x227|  
+|BUILTIN\Replicator|0x228|  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Security.Principal.WindowsPrincipal.IsInRole%2A>メソッドです。 <xref:System.Security.Principal.WindowsBuiltInRole>列挙型は組み込みのロールを識別する Rid のソースとして使用します。 Rid は、現在のプリンシパルの役割の決定に使用されます。  
+  
+ [!code-cpp[System.Security.Principal.WindowsBuiltInRole Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Principal.WindowsBuiltInRole Example/CPP/source.cpp#1)]
+ [!code-csharp[System.Security.Principal.WindowsBuiltInRole Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Principal.WindowsBuiltInRole Example/CS/source.cs#1)]
+ [!code-vb[System.Security.Principal.WindowsBuiltInRole Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Principal.WindowsBuiltInRole Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInRole">
+      <MemberSignature Language="C#" Value="public virtual bool IsInRole (System.Security.Principal.SecurityIdentifier sid);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsInRole(class System.Security.Principal.SecurityIdentifier sid) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Principal.WindowsPrincipal.IsInRole(System.Security.Principal.SecurityIdentifier)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sid" Type="System.Security.Principal.SecurityIdentifier" />
+      </Parameters>
+      <Docs>
+        <param name="sid">A <see cref="T:System.Security.Principal.SecurityIdentifier" /> Windows ユーザー グループを一意に識別します。</param>
+        <summary>現在のプリンシパルが、指定したセキュリティ識別子 (SID) の Windows ユーザー グループに属しているかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />現在のプリンシパルが指定した Windows ユーザー グループのメンバーである場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Principal.SecurityIdentifier>ユーザーまたは Windows 2000、Windows Server、および Windows XP の実装にグループを一意に識別します。 新しく作成されたロールについては、新しいユーザーなど、新しいグループをテストするときにすることが重要、ログアウトして、ドメイン内のロール情報の伝達を強制実行にログインします。 これを行わない可能性があります、<xref:System.Security.Principal.WindowsPrincipal.IsInRole%2A>を返すテスト`false`です。 このメソッドは Windows 98 または Windows Millennium Edition でサポートされていません。  
+  
+> [!NOTE]
+>  Windows Vista では、ユーザー アカウント制御 (UAC: User Account Control) でユーザーの権限が決定されます。 ユーザーが組み込みの Administrators グループのメンバーである場合、そのユーザーには標準ユーザー アクセス トークンおよび管理者アクセス トークンの 2 つのランタイム アクセス トークンが割り当てられています。 既定では、ユーザーは標準ユーザー ロールに所属します。 管理特権が必要なタスクを実行しようとすると、同意を求めるダイアログ ボックスを使用して、ロールを動的に昇格できます。 実行するコード、<xref:System.Security.Principal.WindowsPrincipal.IsInRole%2A>メソッドでは、[同意] ダイアログ ボックスが表示されません。 コードは、組み込みの Administrators グループにいる場合でも、標準ユーザー ロールの場合は false を返します。 アプリケーション アイコンを右クリックし、管理者として実行することを示すコードを実行する前に、ユーザーの権限を昇格させることができます。  
+  
+ パフォーマンス上の理由から、これは、ユーザーのロールを決定する推奨されるオーバー ロードです。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Security.Principal.WindowsPrincipal.IsInRole%28System.Security.Principal.SecurityIdentifier%29?displayProperty=nameWithType>メソッドです。 <xref:System.Security.Principal.WellKnownSidType.BuiltinAdministratorsSid>列挙値を使用して、現在のプリンシパルが管理者であるかどうかを確認します。 完全なコード例については、<xref:System.Security.Principal.WindowsPrincipal.IsInRole%28System.Int32%29?displayProperty=nameWithType>メソッドです。  
+  
+ [!code-csharp[System.Security.Principal.WindowsBuiltInRole Example#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Principal.WindowsBuiltInRole Example/CS/source.cs#5)]
+ [!code-vb[System.Security.Principal.WindowsBuiltInRole Example#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Principal.WindowsBuiltInRole Example/VB/source.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="sid" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">Windows では、Win32 エラーが返されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInRole">
+      <MemberSignature Language="C#" Value="public virtual bool IsInRole (System.Security.Principal.WindowsBuiltInRole role);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsInRole(valuetype System.Security.Principal.WindowsBuiltInRole role) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Principal.WindowsPrincipal.IsInRole(System.Security.Principal.WindowsBuiltInRole)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="role" Type="System.Security.Principal.WindowsBuiltInRole" />
+      </Parameters>
+      <Docs>
+        <param name="role"><see cref="T:System.Security.Principal.WindowsBuiltInRole" /> 値のいずれか。</param>
+        <summary>現在のプリンシパルが、指定した Windows ユーザー グループに属しているかどうかを判断<see cref="T:System.Security.Principal.WindowsBuiltInRole" />です。</summary>
+        <returns>
+          <see langword="true" />現在のプリンシパルが指定した Windows ユーザー グループのメンバーである場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しく作成されたロールについては、新しいユーザーなど、新しいグループをテストするときにすることが重要、ログアウトして、ドメイン内のロール情報の伝達を強制実行にログインします。 これを行わない可能性があります、<xref:System.Security.Principal.WindowsPrincipal.IsInRole%2A>を返すテスト`false`です。 このメソッドは Windows 98 または Windows Millennium Edition でサポートされていません。  
+  
+ パフォーマンス向上のため、<xref:System.Security.Principal.WindowsPrincipal.IsInRole%28System.Security.Principal.SecurityIdentifier%29>オーバー ロードは、ユーザーのロールを決定するための推奨されるオーバー ロードとしてお勧めします。  
+  
+> [!NOTE]
+>  Windows Vista では、ユーザー アカウント制御 (UAC: User Account Control) でユーザーの権限が決定されます。 ユーザーが組み込みの Administrators グループのメンバーである場合、そのユーザーには標準ユーザー アクセス トークンおよび管理者アクセス トークンの 2 つのランタイム アクセス トークンが割り当てられています。 既定では、ユーザーは標準ユーザー ロールに所属します。 管理特権が必要なタスクを実行しようとすると、同意を求めるダイアログ ボックスを使用して、ロールを動的に昇格できます。 実行するコード、<xref:System.Security.Principal.WindowsPrincipal.IsInRole%2A>メソッドでは、[同意] ダイアログ ボックスが表示されません。 コードは、組み込みの Administrators グループにいる場合でも、標準ユーザー ロールの場合は false を返します。 アプリケーション アイコンを右クリックし、管理者として実行することを示すコードを実行する前に、ユーザーの権限を昇格させることができます。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Security.Principal.WindowsBuiltInRole>列挙体の使用を確認するかどうか、現在のプリンシパルを<xref:System.Security.Principal.WindowsBuiltInRole.Administrator>です。 完全なコード例については、<xref:System.Security.Principal.WindowsPrincipal.IsInRole%28System.Int32%29?displayProperty=nameWithType>メソッドです。  
+  
+ [!code-csharp[System.Security.Principal.WindowsBuiltInRole Example#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Principal.WindowsBuiltInRole Example/CS/source.cs#4)]
+ [!code-vb[System.Security.Principal.WindowsBuiltInRole Example#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Principal.WindowsBuiltInRole Example/VB/source.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="role" /> は有効な <see cref="T:System.Security.Principal.WindowsBuiltInRole" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInRole">
+      <MemberSignature Language="C#" Value="public override bool IsInRole (string role);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsInRole(string role) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Principal.WindowsPrincipal.IsInRole(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="role" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="role">メンバーシップを確認する対象の Windows ユーザー グループの名前。</param>
+        <summary>現在のプリンシパルが、指定した名前の Windows ユーザー グループに属しているかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />現在のプリンシパルが指定した Windows ユーザー グループのメンバーである場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しく作成されたロールについては、新しいユーザーなど、新しいグループをテストするときにすることが重要、ログアウトして、ドメイン内のロール情報の伝達を強制実行にログインします。 これを行わない可能性があります、<xref:System.Security.Principal.WindowsPrincipal.IsInRole%2A>を返すテスト`false`です。 このメソッドは Windows 98 または Windows Millennium Edition でサポートされていません。  
+  
+ パフォーマンス向上のため、<xref:System.Security.Principal.WindowsPrincipal.IsInRole%28System.Security.Principal.SecurityIdentifier%29>オーバー ロードは、ユーザーのロールを決定するための推奨されるオーバー ロードとしてお勧めします。  
+  
+> [!NOTE]
+>  Windows Vista では、ユーザー アカウント制御 (UAC: User Account Control) でユーザーの権限が決定されます。 ユーザーが組み込みの Administrators グループのメンバーである場合、そのユーザーには標準ユーザー アクセス トークンおよび管理者アクセス トークンの 2 つのランタイム アクセス トークンが割り当てられています。 既定では、ユーザーは標準ユーザー ロールに所属します。 管理特権が必要なタスクを実行しようとすると、同意を求めるダイアログ ボックスを使用して、ロールを動的に昇格できます。 実行するコード、<xref:System.Security.Principal.WindowsPrincipal.IsInRole%2A>メソッドでは、[同意] ダイアログ ボックスが表示されません。 コードは、組み込みの Administrators グループにいる場合でも、標準ユーザー ロールの場合は false を返します。 アプリケーション アイコンを右クリックし、管理者として実行することを示すコードを実行する前に、ユーザーの権限を昇格させることができます。  
+  
+ 組み込みのロールに対して、`role`文字列は、という形式にする必要があります"BUILTIN\\*場合*"です。 たとえば、Windows 管理者ロールのメンバーシップをテストする、ロールを表す文字列では"builtin \administrators"する必要があります。 バック スラッシュをエスケープする必要があることに注意してください。 次の表には、組み込みのロールが一覧表示します。  
+  
+> [!NOTE]
+>  文字列の形式で組み込みのロールのスペル チェックで使用されているスペルと異なる、<xref:System.Security.Principal.WindowsBuiltInRole>列挙します。 たとえば、列挙体の管理者のスペル チェックは、"Administrator"、"Administrators"です。 このオーバー ロードを使用する場合は、次の表からの役割のスペルを使用します。  
+  
+|組み込みのローカル グループ|  
+|----------------------------|  
+|BUILTIN\Administrators|  
+|Builtin \users|  
+|BUILTIN\Guests|  
+|BUILTIN\Account 演算子|  
+|BUILTIN\Server 演算子|  
+|BUILTIN\Print 演算子|  
+|BUILTIN\Backup 演算子|  
+|BUILTIN\Replicator|  
+  
+ コンピューター固有の役割で、`role`文字列は、という形式にする必要があります"MachineName\\*場合*"です。  
+  
+ ドメイン固有の役割で、`role`文字列は、という形式にする必要があります"DomainName\\*場合*"。 たとえば、 `"SomeDomain\Domain Users`"です。  
+  
+> [!NOTE]
+>  .NET framework version 1.0、`role`パラメーターは大文字小文字を区別します。 .NET Framework version 1.1 以降で、`role`パラメーター小文字は区別されません。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Security.Principal.WindowsPrincipal.IsInRole%28System.String%29?displayProperty=nameWithType>メソッドです。  
+  
+ 文字列`BUILTIN\Administrators`と`BUILTIN\Users`を使用して、現在のプリンシパルが管理者またはユーザーかどうかを判断します。 完全なコード例については、<xref:System.Security.Principal.WindowsPrincipal.IsInRole%28System.Int32%29?displayProperty=nameWithType>メソッドです。  
+  
+ [!code-csharp[System.Security.Principal.WindowsBuiltInRole Example#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Principal.WindowsBuiltInRole Example/CS/source.cs#3)]
+ [!code-vb[System.Security.Principal.WindowsBuiltInRole Example#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Principal.WindowsBuiltInRole Example/VB/source.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">プリンシパル オブジェクトを操作する権限です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPrincipal" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UserClaims">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IEnumerable&lt;System.Security.Claims.Claim&gt; UserClaims { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class System.Security.Claims.Claim&gt; UserClaims" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Principal.WindowsPrincipal.UserClaims" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Runtime.CompilerServices.IteratorStateMachine(typeof(System.Security.Principal.WindowsPrincipal/&lt;get_UserClaims&gt;d__11))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Security.Claims.Claim&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプリンシパルからすべての Windows ユーザーの信頼性情報を取得します。</summary>
+        <value>このプリンシパルからすべての Windows ユーザーの信頼性情報のコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

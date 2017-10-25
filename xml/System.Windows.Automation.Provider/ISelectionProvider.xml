@@ -1,0 +1,136 @@
+<Type Name="ISelectionProvider" FullName="System.Windows.Automation.Provider.ISelectionProvider">
+  <TypeSignature Language="C#" Value="public interface ISelectionProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ISelectionProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.Provider.ISelectionProvider" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationProvider</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("fb8b03af-3bdf-48d4-bd36-1a65793be168")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>個々の選択可能な子項目のコレクションのコンテナーとして機能するコントロールへの UI オートメーション クライアントのアクセスをサポートするメソッドとプロパティを公開します。 このコントロールの子を実装する必要があります<see cref="T:System.Windows.Automation.Provider.ISelectionItemProvider" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サポートする UI オートメーション プロバイダーに実装される、<xref:System.Windows.Automation.SelectionPattern>コントロール パターン。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CanSelectMultiple">
+      <MemberSignature Language="C#" Value="public bool CanSelectMultiple { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanSelectMultiple" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Provider.ISelectionProvider.CanSelectMultiple" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>UI オートメーション プロバイダーが複数の子要素の同時選択を許可するかどうかを示す値を取得します。</summary>
+        <value>
+          複数を選択できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、動的な可能性があります。 たとえば、まれなケースで、コントロールは、初期化では選択ができるように単一の選択項目のみを許可し、以降に複数の項目を許可可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例では、一度に 1 つ以上の項目の選択が許可されていない一覧については、このメソッドの実装を示します。  
+  
+ [!code-csharp[UIAISelectionProvider_ISelectionItemProvider_snip#CanSelectMultiple](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAISelectionProvider_ISelectionItemProvider_snip/CSharp/ListFragment.cs#canselectmultiple)]
+ [!code-vb[UIAISelectionProvider_ISelectionItemProvider_snip#CanSelectMultiple](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAISelectionProvider_ISelectionItemProvider_snip/visualbasic/listfragment.vb#canselectmultiple)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSelection">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.Provider.IRawElementProviderSimple[] GetSelection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Automation.Provider.IRawElementProviderSimple[] GetSelection() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Provider.ISelectionProvider.GetSelection" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Provider.IRawElementProviderSimple[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>選択されている各子要素の UI オートメーション プロバイダーを取得します。</summary>
+        <returns>UI オートメーション プロバイダーのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロバイダーは、値を指定しない場合、UIAutoCore.dll によって既定の空の配列が返されます。  
+  
+   
+  
+## Examples  
+ 次の例では、1 つの可能な単一の選択のみをサポートするリスト ボックスのこのメソッドの実装を示します。  
+  
+ [!code-csharp[UIAISelectionProvider_ISelectionItemProvider_snip#GetSelection](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAISelectionProvider_ISelectionItemProvider_snip/CSharp/ListFragment.cs#getselection)]
+ [!code-vb[UIAISelectionProvider_ISelectionItemProvider_snip#GetSelection](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAISelectionProvider_ISelectionItemProvider_snip/visualbasic/listfragment.vb#getselection)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSelectionRequired">
+      <MemberSignature Language="C#" Value="public bool IsSelectionRequired { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSelectionRequired" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Provider.ISelectionProvider.IsSelectionRequired" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>UI オートメーション プロバイダーが少なくとも 1 つの子要素の選択を必要とするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />選択範囲が必要な場合です。それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを動的にすることができます。 たとえば、コントロールの初期状態がないことを意味、既定で選択された項目<xref:System.Windows.Automation.Provider.ISelectionProvider.IsSelectionRequired%2A>は`false`します。 しかし、項目が 1 つ選択されると、このコントロールは、項目が常に 1 つ以上選択された状態を保持する必要があります。  
+  
+   
+  
+## Examples  
+ 次の例は、常に選択する項目が必要な一覧については、このメソッドの実装を示しています。  
+  
+ [!code-csharp[UIAISelectionProvider_ISelectionItemProvider_snip#IsSelectionRequired](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAISelectionProvider_ISelectionItemProvider_snip/CSharp/ListFragment.cs#isselectionrequired)]
+ [!code-vb[UIAISelectionProvider_ISelectionItemProvider_snip#IsSelectionRequired](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAISelectionProvider_ISelectionItemProvider_snip/visualbasic/listfragment.vb#isselectionrequired)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

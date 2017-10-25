@@ -1,0 +1,102 @@
+<Type Name="CreationPolicy" FullName="System.ComponentModel.Composition.CreationPolicy">
+  <TypeSignature Language="C#" Value="public enum CreationPolicy" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed CreationPolicy extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Composition.CreationPolicy" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>一部がインスタンス化されるタイミングと方法を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンポジションの過程で、<xref:System.ComponentModel.Composition.Hosting.CompositionContainer>エクスポートしてインポートするために記述されたオブジェクトのインスタンスを必要があります。 1 つのエクスポートを使用して、複数のインポートを入力した場合は、次の 2 つの可能な動作があります。 エクスポートされたオブジェクトの 1 つのインスタンスを作成すると、同じオブジェクトへの参照がすべてインポーターに指定されたかインポーターごとに、エクスポートされるオブジェクトの個別のインスタンスを作成します。  
+  
+ 依存する動作が発生した、<xref:System.ComponentModel.Composition.PartCreationPolicyAttribute.CreationPolicy%2A>のプロパティ、<xref:System.ComponentModel.Composition.PartCreationPolicyAttribute>エクスポート %s に接続されていると、<xref:System.ComponentModel.Composition.ImportAttribute.RequiredCreationPolicy%2A>の<xref:System.ComponentModel.Composition.ImportAttribute>です。 値が含まれてはどちらも、<xref:System.ComponentModel.Composition.CreationPolicy>列挙します。 場合は、ポリシーは、互換性のあるが、そのエクスポート見なされません任意のインポートに一致します。 次の表は、これら 2 つのプロパティの相互作用をまとめたものです。  
+  
+|<xref:System.ComponentModel.Composition.ImportAttribute.RequiredCreationPolicy%2A>|エクスポートの<xref:System.ComponentModel.Composition.PartCreationPolicyAttribute.CreationPolicy%2A>いずれかまたは指定なしを指定します。|エクスポートの<xref:System.ComponentModel.Composition.PartCreationPolicyAttribute.CreationPolicy%2A>共有を指定します|エクスポートの<xref:System.ComponentModel.Composition.PartCreationPolicyAttribute.CreationPolicy%2A>NonShared を指定します|  
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
+|どれでも可|エクスポートされたオブジェクトの単一の共有インスタンスが作成されます。|エクスポートされたオブジェクトの単一の共有インスタンスが作成されます。|エクスポートされたオブジェクトの新しいインスタンスは、インポーターごとに作成されます。|  
+|Shared|エクスポートされたオブジェクトの単一の共有インスタンスが作成されます。|エクスポートされたオブジェクトの単一の共有インスタンスが作成されます。|エクスポートは反映されません、インポートに一致します。|  
+|非共有|エクスポートされたオブジェクトの新しいインスタンスは、インポーターごとに作成されます。|エクスポートは反映されません、インポートに一致します。|エクスポートされたオブジェクトの新しいインスタンスは、インポーターごとに作成されます。|  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Any">
+      <MemberSignature Language="C#" Value="Any" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.Composition.CreationPolicy Any = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.Composition.CreationPolicy.Any" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Composition.CreationPolicy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定、<see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer" />最も適切な使用<see cref="T:System.ComponentModel.Composition.CreationPolicy" />の現在のコンテキストを指定された部分。 これは、既定値<see cref="T:System.ComponentModel.Composition.CreationPolicy" />です。 既定では、<see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer" />使用<see cref="F:System.ComponentModel.Composition.CreationPolicy.Shared" />がない限り、<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePart" />またはインポーター要求<see cref="F:System.ComponentModel.Composition.CreationPolicy.NonShared" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NewScope">
+      <MemberSignature Language="C#" Value="NewScope" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.Composition.CreationPolicy NewScope = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.Composition.CreationPolicy.NewScope" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Composition.CreationPolicy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NonShared">
+      <MemberSignature Language="C#" Value="NonShared" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.Composition.CreationPolicy NonShared = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.Composition.CreationPolicy.NonShared" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Composition.CreationPolicy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定する、非共有の新しいインスタンス、関連付けられている<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePart" />によって作成されます、<see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer" />すべての要求元のです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Shared">
+      <MemberSignature Language="C#" Value="Shared" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.Composition.CreationPolicy Shared = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.Composition.CreationPolicy.Shared" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Composition.CreationPolicy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 つが関連付けられているインスタンスを共有することを指定<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePart" />によって作成される、<see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer" />要求側をすべてによって共有されているとします。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

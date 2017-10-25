@@ -1,0 +1,145 @@
+<Type Name="DetailsViewModeEventArgs" FullName="System.Web.UI.WebControls.DetailsViewModeEventArgs">
+  <TypeSignature Language="C#" Value="public class DetailsViewModeEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DetailsViewModeEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.DetailsViewModeEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.UI.WebControls.DetailsView.ModeChanging" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DetailsView.ModeChanging>イベントが発生したときに、<xref:System.Web.UI.WebControls.DetailsView>コントロールが、編集、挿入、および読み取り専用モードの間ですが、モードが実際に変更する前に変更しようとしています。 します。 これにより、構成などのカスタムのルーチンを実行するイベント ハンドラーを提供する、<xref:System.Web.UI.WebControls.DetailsView>特定のモードを制御したり、このイベントが発生するたびにモードの変更をキャンセルします。  
+  
+ A<xref:System.Web.UI.WebControls.DetailsViewModeEventArgs>するモードを決定することができますのイベント ハンドラー オブジェクトが渡される、<xref:System.Web.UI.WebControls.DetailsView>を決定する、コントロールを変更するかどうか、<xref:System.Web.UI.WebControls.DetailsView.ModeChanging>編集操作を取り消すユーザーの結果として、または挿入操作を取り消す必要があることを示すために、イベントが発生しました。 新しいモードを確認するには<xref:System.Web.UI.WebControls.DetailsViewModeEventArgs.NewMode%2A>プロパティです。 使用することも、<xref:System.Web.UI.WebControls.DetailsViewModeEventArgs.NewMode%2A>のいずれかに設定することによって、別のモードを変更するプロパティ、<xref:System.Web.UI.WebControls.DetailsViewMode>列挙値。 使用して、<xref:System.Web.UI.WebControls.DetailsViewModeEventArgs.CancelingEdit%2A>プロパティをユーザーが編集操作を取り消すかどうかを判断します。 挿入操作をキャンセルするには設定、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>プロパティを`true`です。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ <xref:System.Web.UI.WebControls.DetailsViewModeEventArgs> クラスのインスタンスの初期プロパティ値一覧については、<xref:System.Web.UI.WebControls.DetailsViewModeEventArgs.%23ctor%2A> コンストラクターに関するトピックを参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DetailsViewModeEventArgs>オブジェクトのイベント ハンドラーに渡される、<xref:System.Web.UI.WebControls.DetailsView.ModeChanging>ポケットベルを非表示にするイベント行の場合、<xref:System.Web.UI.WebControls.DetailsView>編集モードに切り替え効果を制御します。  
+  
+ [!code-aspx-csharp[DetailsViewModeEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DetailsViewModeEventArgs/CS/detailsviewmodeeventargscs.aspx#1)]
+ [!code-aspx-vb[DetailsViewModeEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DetailsViewModeEventArgs/VB/detailsviewmodeeventargsvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DetailsViewModeEventArgs (System.Web.UI.WebControls.DetailsViewMode mode, bool cancelingEdit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Web.UI.WebControls.DetailsViewMode mode, bool cancelingEdit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DetailsViewModeEventArgs.#ctor(System.Web.UI.WebControls.DetailsViewMode,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="mode" Type="System.Web.UI.WebControls.DetailsViewMode" />
+        <Parameter Name="cancelingEdit" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="mode"><see cref="T:System.Web.UI.WebControls.DetailsViewMode" /> 列挙値のいずれか。</param>
+        <param name="cancelingEdit">
+          <see langword="true" />示すために、<see cref="E:System.Web.UI.WebControls.DetailsView.ModeChanging" />イベントが、それ以外のユーザーが取り消した編集操作の結果として発生<see langword="false" />です。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.DetailsViewModeEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.DetailsViewModeEventArgs>クラスです。  
+  
+ <xref:System.Web.UI.WebControls.DetailsViewModeEventArgs> クラスのインスタンスのプロパティの初期値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.DetailsViewModeEventArgs.CancelingEdit%2A>|`cancelingEdit` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.DetailsViewModeEventArgs.NewMode%2A>|`mode` パラメーターの値。|  
+  
+> [!NOTE]
+>  このコンス トラクターは、イベントを発生させる場合、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelingEdit">
+      <MemberSignature Language="C#" Value="public bool CancelingEdit { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CancelingEdit" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DetailsViewModeEventArgs.CancelingEdit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="E:System.Web.UI.WebControls.DetailsView.ModeChanging" />編集操作を取り消すユーザーの結果としてイベントが発生しました。</summary>
+        <value>
+          <see langword="true" />示すために、<see cref="E:System.Web.UI.WebControls.DetailsView.ModeChanging" />イベントが、それ以外のユーザーが取り消した編集操作の結果として発生<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DetailsView.ModeChanging>イベントが発生したときに、<xref:System.Web.UI.WebControls.DetailsView>コントロールが、編集、挿入、および読み取り専用モードの間ですが、モードが実際に変更する前に変更しようとしています。 します。 使用して、<xref:System.Web.UI.WebControls.DetailsViewModeEventArgs.CancelingEdit%2A>プロパティを決定するかどうか、<xref:System.Web.UI.WebControls.DetailsView.ModeChanging>編集操作を取り消すユーザーの結果としてイベントが発生しました。 リセットするなど、<xref:System.Web.UI.WebControls.DetailsView>編集操作をキャンセルするたびに制御します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DetailsViewModeEventArgs.CancelingEdit%2A>モードの変更をユーザーが取り消した編集操作の結果であるかどうかを決定するプロパティです。  
+  
+ [!code-aspx-csharp[DetailsViewModeEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DetailsViewModeEventArgs/CS/detailsviewmodeeventargscs.aspx#1)]
+ [!code-aspx-vb[DetailsViewModeEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DetailsViewModeEventArgs/VB/detailsviewmodeeventargsvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewMode">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.DetailsViewMode NewMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.DetailsViewMode NewMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DetailsViewModeEventArgs.NewMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DetailsViewMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定モードを<see cref="T:System.Web.UI.WebControls.DetailsView" />コントロールを変更します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.DetailsViewMode" /> 列挙値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DetailsViewModeEventArgs.NewMode%2A>するモードを決定するプロパティ、<xref:System.Web.UI.WebControls.DetailsView>コントロールを変更します。 構成するなど、<xref:System.Web.UI.WebControls.DetailsView>コントロール変更するモードに基づきます。 モードを指定する、このプロパティを使用することも、<xref:System.Web.UI.WebControls.DetailsView>コントロールのいずれかに設定することによって変更、<xref:System.Web.UI.WebControls.DetailsViewMode>列挙値。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DetailsViewModeEventArgs.NewMode%2A>するモードを決定するプロパティ、<xref:System.Web.UI.WebControls.DetailsView>コントロールが遷移します。  
+  
+ [!code-aspx-csharp[DetailsViewModeEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DetailsViewModeEventArgs/CS/detailsviewmodeeventargscs.aspx#1)]
+ [!code-aspx-vb[DetailsViewModeEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DetailsViewModeEventArgs/VB/detailsviewmodeeventargsvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

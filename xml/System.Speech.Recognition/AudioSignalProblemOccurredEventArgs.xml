@@ -1,0 +1,163 @@
+<Type Name="AudioSignalProblemOccurredEventArgs" FullName="System.Speech.Recognition.AudioSignalProblemOccurredEventArgs">
+  <TypeSignature Language="C#" Value="public class AudioSignalProblemOccurredEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AudioSignalProblemOccurredEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Recognition.AudioSignalProblemOccurredEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、 <c>AudioSignalProblemOccurred</c>のイベント、<see cref="T:System.Speech.Recognition.SpeechRecognizer" />または<see cref="T:System.Speech.Recognition.SpeechRecognitionEngine" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンス<xref:System.Speech.Recognition.AudioSignalProblemOccurredEventArgs>場合は、作成、<xref:System.Speech.Recognition.SpeechRecognitionEngine>または<xref:System.Speech.Recognition.SpeechRecognizer>オブジェクト、`AudioSignalProblemOccurred`イベント。 関連する情報を取得する、`AudioSignalProblemOccurred`イベント、イベントのハンドラーで、次のプロパティにアクセスします。  
+  
+-   <xref:System.Speech.Recognition.AudioSignalProblemOccurredEventArgs.AudioLevel%2A>  
+  
+-   <xref:System.Speech.Recognition.AudioSignalProblemOccurredEventArgs.AudioPosition%2A>  
+  
+-   <xref:System.Speech.Recognition.AudioSignalProblemOccurredEventArgs.AudioSignalProblem%2A>  
+  
+-   <xref:System.Speech.Recognition.AudioSignalProblemOccurredEventArgs.RecognizerAudioPosition%2A>  
+  
+ <xref:System.Speech.Recognition.AudioSignalProblemOccurredEventArgs.AudioPosition%2A>プロパティは、生成されたオーディオ ストリーム内の入力デバイスの位置を参照します。 これに対し、<xref:System.Speech.Recognition.AudioSignalProblemOccurredEventArgs.RecognizerAudioPosition%2A>プロパティは、オーディオ入力内の認識エンジンの位置を参照します。 これらの位置は別にすることはできます。 詳細については、次を参照してください。[音声認識イベントを使用した](http://msdn.microsoft.com/en-us/01c598ca-2e0e-4e89-b303-cd1cef9e8482)です。  
+  
+ <xref:System.Speech.Recognition.AudioSignalProblemOccurredEventArgs.AudioSignalProblem%2A>プロパティは、どのような問題が発生したことを示します。  
+  
+ <xref:System.Speech.Recognition.AudioSignalProblemOccurredEventArgs> は、<xref:System.EventArgs> から派生します。  
+  
+   
+  
+## Examples  
+ 次の例に関する情報を収集するイベント ハンドラーを定義する、<xref:System.Speech.Recognition.SpeechRecognitionEngine.AudioSignalProblemOccurred>イベント。  
+  
+```csharp  
+  
+private SpeechRecognitionEngine sre;  
+  
+// Initialize the speech recognition engine.  
+private void Initialize()  
+{  
+  sre = new SpeechRecognitionEngine();  
+  
+  // Add a handler for the AudioSignalProblemOccurred event.  
+  sre.AudioSignalProblemOccurred += new EventHandler<AudioSignalProblemOccurredEventArgs>(sre_AudioSignalProblemOccurred);  
+}  
+  
+// Gather information when the AudioSignalProblemOccurred event is raised.  
+void sre_AudioSignalProblemOccurred(object sender, AudioSignalProblemOccurredEventArgs e)  
+{  
+  StringBuilder details = new StringBuilder();  
+  
+  details.AppendLine("Audio signal problem information:");  
+  details.AppendFormat(  
+    " Audio level:               {0}" + Environment.NewLine +  
+    " Audio position:            {1}" + Environment.NewLine +  
+    " Audio signal problem:      {2}" + Environment.NewLine +  
+    " Recognition engine audio position: {3}" + Environment.NewLine,  
+    e.AudioLevel, e.AudioPosition,  e.AudioSignalProblem,  
+    e.RecognizerAudioPosition);  
+  
+  // Insert additional event handler code here.  
+}  
+  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AudioLevel">
+      <MemberSignature Language="C#" Value="public int AudioLevel { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 AudioLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.AudioSignalProblemOccurredEventArgs.AudioLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントに関連付けられたオーディオ レベルを取得します。</summary>
+        <value>オーディオのレベルの入力時に、 <c>AudioSignalProblemOccurred</c>イベントが発生しました。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AudioPosition">
+      <MemberSignature Language="C#" Value="public TimeSpan AudioPosition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan AudioPosition" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.AudioSignalProblemOccurredEventArgs.AudioPosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>問題の発生場所を示す、入力デバイスのオーディオ ストリーム内の位置を取得します。</summary>
+        <value>入力デバイス内の位置のオーディオ ストリーム、 <c>AudioSignalProblemOccurred</c>イベントが発生しました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Recognition.AudioSignalProblemOccurredEventArgs.AudioPosition%2A>プロパティは、生成されたオーディオ ストリーム内の入力デバイスの位置を参照します。 これに対し、<xref:System.Speech.Recognition.AudioSignalProblemOccurredEventArgs.RecognizerAudioPosition%2A>プロパティは、オーディオ入力内の認識エンジンの位置を参照します。 これらの位置は別にすることはできます。 詳細については、次を参照してください。[音声認識イベントを使用した](http://msdn.microsoft.com/en-us/01c598ca-2e0e-4e89-b303-cd1cef9e8482)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AudioSignalProblem">
+      <MemberSignature Language="C#" Value="public System.Speech.Recognition.AudioSignalProblem AudioSignalProblem { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Speech.Recognition.AudioSignalProblem AudioSignalProblem" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.AudioSignalProblemOccurredEventArgs.AudioSignalProblem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.AudioSignalProblem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>信号のオーディオに関する問題を取得します。</summary>
+        <value>オーディオ信号問題の原因となった、 <c>AudioSignalProblemOccurred</c>イベントが発生します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RecognizerAudioPosition">
+      <MemberSignature Language="C#" Value="public TimeSpan RecognizerAudioPosition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan RecognizerAudioPosition" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.AudioSignalProblemOccurredEventArgs.RecognizerAudioPosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オーディオ入力を認識エンジンが受信した問題の発生場所を示す内の位置を取得します。</summary>
+        <value>認識エンジンが受け取っている場合に、オーディオ入力内の位置、 <c>AudioSignalProblemOccurred</c>イベントが発生しました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Recognition.AudioSignalProblemOccurredEventArgs.AudioPosition%2A>プロパティは、生成されたオーディオ ストリーム内の入力デバイスの位置を参照します。 これに対し、<xref:System.Speech.Recognition.AudioSignalProblemOccurredEventArgs.RecognizerAudioPosition%2A>プロパティは、オーディオ入力内の認識エンジンの位置を参照します。 これらの位置は別にすることはできます。 詳細については、次を参照してください。[音声認識イベントを使用した](http://msdn.microsoft.com/en-us/01c598ca-2e0e-4e89-b303-cd1cef9e8482)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

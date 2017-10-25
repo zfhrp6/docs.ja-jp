@@ -1,0 +1,175 @@
+<Type Name="NormalizationForm" FullName="System.Text.NormalizationForm">
+  <TypeSignature Language="C#" Value="public enum NormalizationForm" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed NormalizationForm extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Text.NormalizationForm" />
+  <AssemblyInfo>
+    <AssemblyName>System.Globalization.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>実行する正規化の種類を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一部の Unicode シーケンスは、同じ文字を表すために、同等と見なされます。 たとえば、次同等と見なされるは"いずれもに"次のいずれかを使用できるため。  
+  
+-   "\u1EAF"  
+  
+-   "\u0103\u0301"  
+  
+-   "\u0061\u0306\u0301"  
+  
+ ただし、序数、つまり、バイナリ、比較を考慮これらのシーケンス異なる別の Unicode コード値を含んでいるためです。 序数に基づく比較を実行する前に、アプリケーションはこれらの文字列をその基本的なコンポーネントに分解するを正規化する必要があります。  
+  
+ 各複合の Unicode 文字は、1 つまたは複数の文字のより基本的なシーケンスにマップされます。 分解のプロセスのより基本的なマッピングに文字列の複合文字を置き換えます。 フルの分解を再帰的には、文字列内の文字のいずれもさらにしないすることのできるまでこの置換を実行します。  
+  
+ Unicode 分解の 2 種類の定義: 互換性分解と標準分解します。 互換性を分解、書式設定情報は失われます。 正規の分解は、互換性の分解のサブセットである、書式設定情報は保持されます。  
+  
+ 2 つの文字のセットは、その完全標準分解が同じ場合は標準的な等価性があると見なされます。 同様に、2 つの文字のセットが、完全な互換性分解が同じ場合は互換性の等価性があると見なされます。  
+  
+ 正規化、分解、および等価性の詳細については、次を参照してください。 [Unicode Standard Annex #15: Unicode 正規化形式](http://unicode.org/reports/tr15/)unicode.org にします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="FormC">
+      <MemberSignature Language="C#" Value="FormC" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Text.NormalizationForm FormC = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Text.NormalizationForm.FormC" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.NormalizationForm</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>完全標準分解を使用して Unicode 文字列を正規化した後、可能な場合は、シーケンスを主要な複合文字で置換することを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="FormD">
+      <MemberSignature Language="C#" Value="FormD" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Text.NormalizationForm FormD = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Text.NormalizationForm.FormD" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.NormalizationForm</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>完全標準分解を使用して Unicode 文字列を正規化したことを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="FormKC">
+      <MemberSignature Language="C#" Value="FormKC" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Text.NormalizationForm FormKC = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Text.NormalizationForm.FormKC" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.NormalizationForm</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>完全互換性分解を使用して Unicode 文字列を正規化した後、可能な場合は、シーケンスを主要な複合文字で置換することを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="FormKD">
+      <MemberSignature Language="C#" Value="FormKD" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Text.NormalizationForm FormKD = int32(6)" />
+      <MemberSignature Language="DocId" Value="F:System.Text.NormalizationForm.FormKD" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.NormalizationForm</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>完全互換性分解を使用して Unicode 文字列を正規化したことを示します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

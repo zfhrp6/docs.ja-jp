@@ -1,0 +1,182 @@
+<Type Name="ISourceBlock&lt;TOutput&gt;" FullName="System.Threading.Tasks.Dataflow.ISourceBlock&lt;TOutput&gt;">
+  <TypeSignature Language="C#" Value="public interface ISourceBlock&lt;out TOutput&gt; : System.Threading.Tasks.Dataflow.IDataflowBlock" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ISourceBlock`1&lt;+ TOutput&gt; implements class System.Threading.Tasks.Dataflow.IDataflowBlock" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.Tasks.Dataflow.ISourceBlock`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+    <AssemblyVersion>4.6.0.0</AssemblyVersion>
+    <AssemblyVersion>4.6.1.0</AssemblyVersion>
+    <AssemblyVersion>4.6.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TOutput">
+      <Constraints>
+        <ParameterAttribute>Covariant</ParameterAttribute>
+      </Constraints>
+    </TypeParameter>
+  </TypeParameters>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Threading.Tasks.Dataflow.IDataflowBlock</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <typeparam name="TOutput">により提供されるデータの種類を指定、<see cref="T:System.Threading.Tasks.Dataflow.ISourceBlock`1" />です。</typeparam>
+    <summary>データのソースであるデータフロー ブロックを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  TPL データフロー ライブラリ (<xref:System.Threading.Tasks.Dataflow>名前空間) は、net_v45 と共に配布されません。 インストールする、<xref:System.Threading.Tasks.Dataflow>名前空間、vs_dev11_long でプロジェクトを開く、プロジェクト メニューから NuGet パッケージの管理を選択およびをオンラインで検索、`Microsoft.Tpl.Dataflow`パッケージです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ConsumeMessage">
+      <MemberSignature Language="C#" Value="public TOutput ConsumeMessage (System.Threading.Tasks.Dataflow.DataflowMessageHeader messageHeader, System.Threading.Tasks.Dataflow.ITargetBlock&lt;out TOutput&gt; target, out bool messageConsumed);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance !TOutput ConsumeMessage(valuetype System.Threading.Tasks.Dataflow.DataflowMessageHeader messageHeader, class System.Threading.Tasks.Dataflow.ITargetBlock`1&lt;!TOutput&gt; target, [out] bool&amp; messageConsumed) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Dataflow.ISourceBlock`1.ConsumeMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{`0},System.Boolean@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TOutput</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageHeader" Type="System.Threading.Tasks.Dataflow.DataflowMessageHeader" />
+        <Parameter Name="target" Type="System.Threading.Tasks.Dataflow.ITargetBlock&lt;TOutput&gt;" />
+        <Parameter Name="messageConsumed" Type="System.Boolean&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="messageHeader"><see cref="T:System.Threading.Tasks.Dataflow.DataflowMessageHeader" />消費されて、メッセージのです。</param>
+        <param name="target"><see cref="T:System.Threading.Tasks.Dataflow.ITargetBlock`1" />メッセージを消費します。</param>
+        <param name="messageConsumed">
+          <see langword="true" />場合は、メッセージが正常に使用されたです。それ以外の場合、<see langword="false" />です。</param>
+        <summary>リンクによって呼び出されます<see cref="T:System.Threading.Tasks.Dataflow.ITargetBlock`1" />に同意し、これによって以前に提供 T:System.Threading.Tasks.Dataflow.DataflowMessageHeader を消費する<see cref="T:System.Threading.Tasks.Dataflow.ISourceBlock`1" />です。</summary>
+        <returns>消費されたメッセージの値。 別にこれは必ずしも対応<see cref="T:System.Threading.Tasks.Dataflow.DataflowMessageHeader" />インスタンスの以前に予約され、として渡されるよりも、<paramref name="messageHeader" />に<see cref="M:System.Threading.Tasks.Dataflow.ISourceBlock`1.ConsumeMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{`0},System.Boolean@)" />です。 消費<see cref="T:System.Threading.Tasks.Dataflow.ITargetBlock`1" />として渡される値ではなく、返される値を使用する必要があります<paramref name="messageValue" />を通じて<see cref="M:System.Threading.Tasks.Dataflow.ITargetBlock`1.OfferMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,`0,System.Threading.Tasks.Dataflow.ISourceBlock{`0},System.Boolean)" />です。  
+  
+ 要求メッセージが使用できない場合、戻り値は null になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ のみ<xref:System.Threading.Tasks.Dataflow.ITargetBlock%601>をこのインスタンスにリンクされている<xref:System.Threading.Tasks.Dataflow.ISourceBlock%601>インスタンスを使用できます<xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.ConsumeMessage%2A>、消費にのみ使用する必要があります<xref:System.Threading.Tasks.Dataflow.DataflowMessageHeader>このソースとターゲットによって以前のインスタンスに提供します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">MessageHeader が正しくありません。</exception>
+        <exception cref="T:System.ArgumentNullException">ターゲットが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LinkTo">
+      <MemberSignature Language="C#" Value="public IDisposable LinkTo (System.Threading.Tasks.Dataflow.ITargetBlock&lt;out TOutput&gt; target, System.Threading.Tasks.Dataflow.DataflowLinkOptions linkOptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IDisposable LinkTo(class System.Threading.Tasks.Dataflow.ITargetBlock`1&lt;!TOutput&gt; target, class System.Threading.Tasks.Dataflow.DataflowLinkOptions linkOptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Dataflow.ISourceBlock`1.LinkTo(System.Threading.Tasks.Dataflow.ITargetBlock{`0},System.Threading.Tasks.Dataflow.DataflowLinkOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IDisposable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Threading.Tasks.Dataflow.ITargetBlock&lt;TOutput&gt;" />
+        <Parameter Name="linkOptions" Type="System.Threading.Tasks.Dataflow.DataflowLinkOptions" />
+      </Parameters>
+      <Docs>
+        <param name="target"><see cref="T:System.Threading.Tasks.Dataflow.ITargetBlock`1" />にすると、このソースに接続します。</param>
+        <param name="linkOptions">A<see cref="T:System.Threading.Tasks.Dataflow.DataflowLinkOptions" />リンクを構成するインスタンス。</param>
+        <summary>リンク、<see cref="T:System.Threading.Tasks.Dataflow.ISourceBlock`1" />を指定した<see cref="T:System.Threading.Tasks.Dataflow.ITargetBlock`1" />です。</summary>
+        <returns>、Dispose を呼び出すことによって、ターゲットからソースを解除する IDisposable です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="target" />null (Visual Basic の場合) の場合は Nothing または<paramref name="linkOptions" />が null (Visual Basic の場合) の場合は Nothing です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReleaseReservation">
+      <MemberSignature Language="C#" Value="public void ReleaseReservation (System.Threading.Tasks.Dataflow.DataflowMessageHeader messageHeader, System.Threading.Tasks.Dataflow.ITargetBlock&lt;out TOutput&gt; target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ReleaseReservation(valuetype System.Threading.Tasks.Dataflow.DataflowMessageHeader messageHeader, class System.Threading.Tasks.Dataflow.ITargetBlock`1&lt;!TOutput&gt; target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Dataflow.ISourceBlock`1.ReleaseReservation(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageHeader" Type="System.Threading.Tasks.Dataflow.DataflowMessageHeader" />
+        <Parameter Name="target" Type="System.Threading.Tasks.Dataflow.ITargetBlock&lt;TOutput&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="messageHeader"><see cref="T:System.Threading.Tasks.Dataflow.DataflowMessageHeader" />リリースされている予約済みのメッセージのです。</param>
+        <param name="target"><see cref="T:System.Threading.Tasks.Dataflow.ITargetBlock`1" />以前に予約されたメッセージを解放します。</param>
+        <summary>リンクによって呼び出されます<see cref="T:System.Threading.Tasks.Dataflow.ITargetBlock`1" />以前に予約を解放する<see cref="T:System.Threading.Tasks.Dataflow.DataflowMessageHeader" />この<see cref="T:System.Threading.Tasks.Dataflow.ISourceBlock`1" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ のみ<xref:System.Threading.Tasks.Dataflow.ITargetBlock%601>をこのインスタンスにリンクされている<xref:System.Threading.Tasks.Dataflow.ISourceBlock%601>インスタンスを使用できます`ReleaseReservation`、リリースにのみ使用する必要があります<xref:System.Threading.Tasks.Dataflow.DataflowMessageHeader>インスタンスは以前と正常にターゲットによって予約されています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="messageHeader" /> が有効ではありません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="target" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="target" />予約されているメッセージがありませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReserveMessage">
+      <MemberSignature Language="C#" Value="public bool ReserveMessage (System.Threading.Tasks.Dataflow.DataflowMessageHeader messageHeader, System.Threading.Tasks.Dataflow.ITargetBlock&lt;out TOutput&gt; target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ReserveMessage(valuetype System.Threading.Tasks.Dataflow.DataflowMessageHeader messageHeader, class System.Threading.Tasks.Dataflow.ITargetBlock`1&lt;!TOutput&gt; target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Dataflow.ISourceBlock`1.ReserveMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageHeader" Type="System.Threading.Tasks.Dataflow.DataflowMessageHeader" />
+        <Parameter Name="target" Type="System.Threading.Tasks.Dataflow.ITargetBlock&lt;TOutput&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="messageHeader"><see cref="T:System.Threading.Tasks.Dataflow.DataflowMessageHeader" />予約されているので、メッセージのです。</param>
+        <param name="target"><see cref="T:System.Threading.Tasks.Dataflow.ITargetBlock`1" />メッセージを予約します。</param>
+        <summary>リンクによって呼び出されます<see cref="T:System.Threading.Tasks.Dataflow.ITargetBlock`1" />を以前に提供された予約<see cref="T:System.Threading.Tasks.Dataflow.DataflowMessageHeader" />この<see cref="T:System.Threading.Tasks.Dataflow.ISourceBlock`1" />です。</summary>
+        <returns>
+          <see langword="true" />場合は、メッセージが正常に予約されました。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ のみ<xref:System.Threading.Tasks.Dataflow.ITargetBlock%601>をこのインスタンスにリンクされている<xref:System.Threading.Tasks.Dataflow.ISourceBlock%601>インスタンスを使用できます<xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.ReserveMessage%2A>、予約にのみ使用する必要があります<xref:System.Threading.Tasks.Dataflow.DataflowMessageHeader>このソースとターゲットによって以前のインスタンスに提供します。  
+  
+ 場合`true`が返されます、<xref:System.Threading.Tasks.Dataflow.ITargetBlock%601>いずれかを呼び出す必要があります、後で<xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.ConsumeMessage%2A>または<xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.ReleaseReservation%2A>このメッセージにします。 これに失敗すると、ソースとその他のターゲットを使用して、これをさらに、メッセージを伝達するできなくなる可能性があります。  
+  
+ <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.ReserveMessage%2A>呼び出さないでくださいターゲットはすべて内部のロックを保持しているときにします。 これに違反するデータ フロー ネットワークでデッドロックを回避するために必要なロック階層。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="messageHeader" /> が有効ではありません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="target" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

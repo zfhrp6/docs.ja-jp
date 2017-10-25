@@ -1,0 +1,260 @@
+<Type Name="DataGridViewSortCompareEventArgs" FullName="System.Windows.Forms.DataGridViewSortCompareEventArgs">
+  <TypeSignature Language="C#" Value="public class DataGridViewSortCompareEventArgs : System.ComponentModel.HandledEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridViewSortCompareEventArgs extends System.ComponentModel.HandledEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewSortCompareEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.HandledEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Forms.DataGridView.SortCompare" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理することができます、<xref:System.Windows.Forms.DataGridView.SortCompare>カスタムの並べ替えを提供するイベントです。 のみでこのイベントが発生したときに、<xref:System.Windows.Forms.DataGridView.DataSource%2A?displayProperty=nameWithType>プロパティが設定されていないと<xref:System.Windows.Forms.DataGridView.VirtualMode%2A?displayProperty=nameWithType>プロパティに設定されている`false`です。 このイベントは、並べ替えられる列のセルの各ペアについて 1 回発生します。 ユーザーが持つ列のヘッダーにクリックしたときにのみ発生する、<xref:System.Windows.Forms.DataGridViewColumn.SortMode%2A?displayProperty=nameWithType>のプロパティの値<xref:System.Windows.Forms.DataGridViewColumnSortMode.Automatic>、呼び出した場合、または、<xref:System.Windows.Forms.DataGridView.Sort%28System.Windows.Forms.DataGridViewColumn%2CSystem.ComponentModel.ListSortDirection%29?displayProperty=nameWithType>オーバー ロードします。 列に対して、このイベントの発生時、<xref:System.Windows.Forms.DataGridViewColumn.SortMode%2A?displayProperty=nameWithType>のプロパティの値<xref:System.Windows.Forms.DataGridViewColumnSortMode.Programmatic>、を介して、手動で並べ替えグリフに表示する必要があります、<xref:System.Windows.Forms.DataGridViewColumnHeaderCell.SortGlyphDirection%2A?displayProperty=nameWithType>プロパティです。  
+  
+ このイベントは、複数の列または 1 つの列では、セルの値を使用して行の並べ替えに使用できます。 使用して、<xref:System.Windows.Forms.DataGridViewSortCompareEventArgs.CellValue1%2A>と<xref:System.Windows.Forms.DataGridViewSortCompareEventArgs.CellValue2%2A>プロパティで指定された列のセルの値を比較する、<xref:System.Windows.Forms.DataGridViewSortCompareEventArgs.Column%2A>プロパティです。 使用して、<xref:System.Windows.Forms.DataGridViewSortCompareEventArgs.RowIndex1%2A>と<xref:System.Windows.Forms.DataGridViewSortCompareEventArgs.RowIndex2%2A>を介して他の列の値にアクセスするプロパティ、<xref:System.Windows.Forms.DataGridView.Rows%2A?displayProperty=nameWithType>コレクション。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します<xref:System.Windows.Forms.DataGridView.SortCompare>複数列の並べ替えにします。 この例で示されている例の一部である[する方法: Windows フォーム DataGridView コントロールでの並べ替えをカスタマイズする](~/docs/framework/winforms/controls/how-to-customize-sorting-in-the-windows-forms-datagridview-control.md)です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridView.SortCompare#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.SortCompare/CS/form1.cs#10)]
+ [!code-vb[System.Windows.Forms.DataGridView.SortCompare#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.SortCompare/VB/form1.vb#10)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridViewSortCompareEventArgs (System.Windows.Forms.DataGridViewColumn dataGridViewColumn, object cellValue1, object cellValue2, int rowIndex1, int rowIndex2);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.DataGridViewColumn dataGridViewColumn, object cellValue1, object cellValue2, int32 rowIndex1, int32 rowIndex2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewSortCompareEventArgs.#ctor(System.Windows.Forms.DataGridViewColumn,System.Object,System.Object,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="dataGridViewColumn" Type="System.Windows.Forms.DataGridViewColumn" />
+        <Parameter Name="cellValue1" Type="System.Object" />
+        <Parameter Name="cellValue2" Type="System.Object" />
+        <Parameter Name="rowIndex1" Type="System.Int32" />
+        <Parameter Name="rowIndex2" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="dataGridViewColumn">並べ替える列。</param>
+        <param name="cellValue1">比較する最初のセルの値。</param>
+        <param name="cellValue2">比較する 2 番目のセルの値。</param>
+        <param name="rowIndex1">最初のセルを含む行のインデックス。</param>
+        <param name="rowIndex2">2 番目のセルを含む行のインデックス。</param>
+        <summary><see cref="T:System.Windows.Forms.DataGridViewSortCompareEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CellValue1">
+      <MemberSignature Language="C#" Value="public object CellValue1 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object CellValue1" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewSortCompareEventArgs.CellValue1" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>比較する最初のセルの値を取得します。</summary>
+        <value>最初のセルの値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは通常と組み合わせて使用、<xref:System.Windows.Forms.DataGridViewSortCompareEventArgs.CellValue2%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します<xref:System.Windows.Forms.DataGridViewSortCompareEventArgs.CellValue1%2A>複数列の並べ替えにします。 この例で示されている例の一部である[する方法: Windows フォーム DataGridView コントロールでの並べ替えをカスタマイズする](~/docs/framework/winforms/controls/how-to-customize-sorting-in-the-windows-forms-datagridview-control.md)です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridView.SortCompare#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.SortCompare/CS/form1.cs#10)]
+ [!code-vb[System.Windows.Forms.DataGridView.SortCompare#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.SortCompare/VB/form1.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CellValue2">
+      <MemberSignature Language="C#" Value="public object CellValue2 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object CellValue2" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewSortCompareEventArgs.CellValue2" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>比較する 2 番目のセルの値を取得します。</summary>
+        <value>2 番目のセルの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは通常と組み合わせて使用、<xref:System.Windows.Forms.DataGridViewSortCompareEventArgs.CellValue1%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します<xref:System.Windows.Forms.DataGridViewSortCompareEventArgs.CellValue2%2A>複数列の並べ替えにします。 この例で示されている例の一部である[する方法: Windows フォーム DataGridView コントロールでの並べ替えをカスタマイズする](~/docs/framework/winforms/controls/how-to-customize-sorting-in-the-windows-forms-datagridview-control.md)です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridView.SortCompare#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.SortCompare/CS/form1.cs#10)]
+ [!code-vb[System.Windows.Forms.DataGridView.SortCompare#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.SortCompare/VB/form1.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Column">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataGridViewColumn Column { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataGridViewColumn Column" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewSortCompareEventArgs.Column" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewColumn</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>並べ替えられる列を取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.DataGridViewColumn" />を並べ替えます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを決定して、プログラムによる並べ替えの並べ替え動作を制御するのに便利です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します<xref:System.Windows.Forms.DataGridViewSortCompareEventArgs.Column%2A>複数列の並べ替えにします。 この例では ID 列を使用してがある場合、同一の値の並べ替えられた列で、他の並べ替えは行われません ID 列に重複する値がある場合、最終的な順序を決定します。 この例で示されている例の一部である[する方法: Windows フォーム DataGridView コントロールでの並べ替えをカスタマイズする](~/docs/framework/winforms/controls/how-to-customize-sorting-in-the-windows-forms-datagridview-control.md)です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridView.SortCompare#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.SortCompare/CS/form1.cs#10)]
+ [!code-vb[System.Windows.Forms.DataGridView.SortCompare#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.SortCompare/VB/form1.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowIndex1">
+      <MemberSignature Language="C#" Value="public int RowIndex1 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RowIndex1" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewSortCompareEventArgs.RowIndex1" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>比較する最初のセルを含む行のインデックスを取得します。</summary>
+        <value>2 番目のセルを含む行のインデックス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、複数の列のセルの値に基づいて行を並べ替えるときに便利です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します<xref:System.Windows.Forms.DataGridViewSortCompareEventArgs.RowIndex1%2A>複数列の並べ替えにします。 この例で示されている例の一部である[する方法: Windows フォーム DataGridView コントロールでの並べ替えをカスタマイズする](~/docs/framework/winforms/controls/how-to-customize-sorting-in-the-windows-forms-datagridview-control.md)です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridView.SortCompare#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.SortCompare/CS/form1.cs#10)]
+ [!code-vb[System.Windows.Forms.DataGridView.SortCompare#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.SortCompare/VB/form1.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowIndex2">
+      <MemberSignature Language="C#" Value="public int RowIndex2 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RowIndex2" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewSortCompareEventArgs.RowIndex2" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>比較する 2 番目のセルを含む行のインデックスを取得します。</summary>
+        <value>2 番目のセルを含む行のインデックス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、複数の列のセルの値に基づいて行を並べ替えるときに便利です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します<xref:System.Windows.Forms.DataGridViewSortCompareEventArgs.RowIndex2%2A>複数列の並べ替えにします。 この例で示されている例の一部である[する方法: Windows フォーム DataGridView コントロールでの並べ替えをカスタマイズする](~/docs/framework/winforms/controls/how-to-customize-sorting-in-the-windows-forms-datagridview-control.md)です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridView.SortCompare#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.SortCompare/CS/form1.cs#10)]
+ [!code-vb[System.Windows.Forms.DataGridView.SortCompare#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.SortCompare/VB/form1.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SortResult">
+      <MemberSignature Language="C#" Value="public int SortResult { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SortResult" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewSortCompareEventArgs.SortResult" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または比較されたセルの並べ替え順序を示す値を設定します。</summary>
+        <value>最初のセルが 2 番目のセルの前に配置する場合は 0 より小さい値最初のセルと 2 番目のセルの値と等価である場合は 0 します。2 番目のセルが最初のセルの前に配置する場合は 0 より大きい。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値の設定は、最後の操作のハンドラーで行うには、通常、<xref:System.Windows.Forms.DataGridView.SortCompare?displayProperty=nameWithType>イベント。 通常この値を設定する、メソッドの戻り値の比較など<xref:System.String.Compare%2A?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します<xref:System.Windows.Forms.DataGridViewSortCompareEventArgs.SortResult%2A>複数列の並べ替えにします。 この例で示されている例の一部である[する方法: Windows フォーム DataGridView コントロールでの並べ替えをカスタマイズする](~/docs/framework/winforms/controls/how-to-customize-sorting-in-the-windows-forms-datagridview-control.md)です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridView.SortCompare#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.SortCompare/CS/form1.cs#10)]
+ [!code-vb[System.Windows.Forms.DataGridView.SortCompare#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.SortCompare/VB/form1.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

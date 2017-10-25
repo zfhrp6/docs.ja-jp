@@ -1,0 +1,178 @@
+<Type Name="ValidationError" FullName="System.Windows.Controls.ValidationError">
+  <TypeSignature Language="C#" Value="public class ValidationError" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ValidationError extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.ValidationError" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>表す、検証エラーは、バインドによって作成される場合にエンジン、 <see cref="T:System.Windows.Controls.ValidationRule" /> 、検証エラーを報告または、<see cref="M:System.Windows.Controls.Validation.MarkInvalid(System.Windows.Data.BindingExpressionBase,System.Windows.Controls.ValidationError)" />メソッドに明示的にします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]データ バインディング モデルで検証規則を関連付けることができます、<xref:System.Windows.Data.Binding>オブジェクト。 コンバーターが呼び出される前に、ターゲットからソース値の転送中に検証が行われます。 次の例は、検証プロセスを説明します。  
+  
+1.  値は、ソース プロパティに、ターゲット プロパティから転送されているが、ときに、データ バインディング エンジン最初削除<xref:System.Windows.Controls.ValidationError>に追加された可能性があります、<xref:System.Windows.Controls.Validation.Errors%2A?displayProperty=nameWithType>バインドされている要素のプロパティを添付します。 任意のカスタム検証規則が定義されているかどうかがチェックされます<xref:System.Windows.Data.Binding>、呼び出している場合、<xref:System.Windows.Controls.ValidationRule.Validate%2A>メソッドごとに<xref:System.Windows.Controls.ValidationRule>までそれらの失敗のいずれかまたはまですべてのパスします。  
+  
+2.  パスしないカスタム ルールがある場合、バインディング エンジンが作成、<xref:System.Windows.Controls.ValidationError>オブジェクトを追加して、<xref:System.Windows.Controls.Validation.Errors%2A?displayProperty=nameWithType>バインドされている要素のコレクション。 ときに<xref:System.Windows.Controls.Validation.Errors%2A?displayProperty=nameWithType>は空でなく、<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>接続されている要素のプロパティが`true`です。 また場合、<xref:System.Windows.Data.Binding.NotifyOnValidationError%2A>のプロパティ、<xref:System.Windows.Data.Binding>に設定されている`true`、バインディング エンジンが発生し、<xref:System.Windows.Controls.Validation.Error?displayProperty=nameWithType>要素のイベントをアタッチします。  
+  
+3.  すべてのルールに合格した場合、バインド エンジンを呼び出しますコンバーターが存在する場合。  
+  
+4.  コンバーターが成功した場合、バインディング エンジンは、基になるプロパティの set アクセス操作子を呼び出します。  
+  
+5.  バインディングの場合、<xref:System.Windows.Controls.ExceptionValidationRule>関連付けられている 3 または 4 のステップ中に例外がスローされたバインディング エンジンが確認するかどうかがあると、<xref:System.Windows.Data.Binding.UpdateSourceExceptionFilter%2A>です。 使用することができます、<xref:System.Windows.Data.Binding.UpdateSourceExceptionFilter%2A>コールバックが例外を処理するためのカスタム ハンドラーを提供します。 場合、<xref:System.Windows.Data.Binding.UpdateSourceExceptionFilter%2A>が指定されていない、 <xref:System.Windows.Data.Binding>、バインディング エンジンを作成、<xref:System.Windows.Controls.ValidationError>例外を使用し、それを追加、<xref:System.Windows.Controls.Validation.Errors%2A?displayProperty=nameWithType>バインドされている要素のコレクション。  
+  
+ どちらの方向 (ソースまたはターゲットをソースにターゲット) に有効な値の転送がクリアされます、<xref:System.Windows.Controls.Validation.Errors%2A?displayProperty=nameWithType>添付プロパティ。  
+  
+   
+  
+## Examples  
+ 次の例は、スタイルのトリガーを作成する、<xref:System.Windows.Controls.ToolTip>検証エラー メッセージを報告します。 <xref:System.Windows.Controls.Validation.Errors%2A?displayProperty=nameWithType>添付プロパティのコレクションを返します<xref:System.Windows.Controls.ValidationError>バインドされている要素のオブジェクト。  
+  
+ [!code-xaml[DataBindingLab#14](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/DataBindingLabApp.xaml#14)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ValidationError (System.Windows.Controls.ValidationRule ruleInError, object bindingInError);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Controls.ValidationRule ruleInError, object bindingInError) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ValidationError.#ctor(System.Windows.Controls.ValidationRule,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="ruleInError" Type="System.Windows.Controls.ValidationRule" />
+        <Parameter Name="bindingInError" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="ruleInError">検証エラーを検出するルール。</param>
+        <param name="bindingInError"><see cref="T:System.Windows.Data.BindingExpression" />または<see cref="T:System.Windows.Data.MultiBindingExpression" />妥当性確認エラーを持つオブジェクト。</param>
+        <summary>指定したパラメーターを使用して、<see cref="T:System.Windows.Controls.ValidationError" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ValidationError (System.Windows.Controls.ValidationRule ruleInError, object bindingInError, object errorContent, Exception exception);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Controls.ValidationRule ruleInError, object bindingInError, object errorContent, class System.Exception exception) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ValidationError.#ctor(System.Windows.Controls.ValidationRule,System.Object,System.Object,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="ruleInError" Type="System.Windows.Controls.ValidationRule" />
+        <Parameter Name="bindingInError" Type="System.Object" />
+        <Parameter Name="errorContent" Type="System.Object" />
+        <Parameter Name="exception" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="ruleInError">検証エラーを検出するルール。</param>
+        <param name="bindingInError"><see cref="T:System.Windows.Data.BindingExpression" />または<see cref="T:System.Windows.Data.MultiBindingExpression" />妥当性確認エラーを持つオブジェクト。</param>
+        <param name="errorContent">エラーに関する情報です。</param>
+        <param name="exception">検証エラーの原因となった例外。 このパラメーターは省略可能でありに設定することができます<see langword="null" />です。</param>
+        <summary>指定したパラメーターを使用して、<see cref="T:System.Windows.Controls.ValidationError" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BindingInError">
+      <MemberSignature Language="C#" Value="public object BindingInError { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object BindingInError" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ValidationError.BindingInError" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Data.BindingExpression" />または<see cref="T:System.Windows.Data.MultiBindingExpression" />このオブジェクト<see cref="T:System.Windows.Controls.ValidationError" />です。 オブジェクト無効か、マークされた明示的にまたは失敗した検証規則がします。</summary>
+        <value><see cref="T:System.Windows.Data.BindingExpression" />または<see cref="T:System.Windows.Data.MultiBindingExpression" />このオブジェクト<see cref="T:System.Windows.Controls.ValidationError" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ErrorContent">
+      <MemberSignature Language="C#" Value="public object ErrorContent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object ErrorContent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ValidationError.ErrorContent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラーを説明する文字列など、この <see cref="T:System.Windows.Controls.ValidationError" /> に追加のコンテキストを提供するオブジェクトを取得または設定します。</summary>
+        <value>この <see cref="T:System.Windows.Controls.ValidationError" /> に追加のコンテキストを提供するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlTextUsage_ErrorContent"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ 例については、例」のセクションを参照してください。  
+  
+   
+  
+## Examples  
+ 次の例は、スタイルのトリガーを作成する、<xref:System.Windows.Controls.ToolTip>検証エラー メッセージを報告します。 <xref:System.Windows.Controls.Validation.Errors%2A?displayProperty=nameWithType>添付プロパティのコレクションを返します<xref:System.Windows.Controls.ValidationError>バインドされている要素のオブジェクト。  
+  
+ [!code-xaml[DataBindingLab#14](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/DataBindingLabApp.xaml#14)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Exception">
+      <MemberSignature Language="C#" Value="public Exception Exception { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Exception Exception" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ValidationError.Exception" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Exception" />この問題の原因となったオブジェクト<see cref="T:System.Windows.Controls.ValidationError" />エラー例外の結果である場合は、します。</summary>
+        <value><see cref="T:System.Exception" />オブジェクト、エラーが例外の結果である場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RuleInError">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.ValidationRule RuleInError { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.ValidationRule RuleInError" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ValidationError.RuleInError" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.ValidationRule</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Controls.ValidationRule" />この問題の原因となったオブジェクト<see cref="T:System.Windows.Controls.ValidationError" />エラーが、検証規則の結果である場合、します。</summary>
+        <value><see cref="T:System.Windows.Controls.ValidationRule" />オブジェクト、エラーが、検証規則の結果である場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

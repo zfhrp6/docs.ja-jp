@@ -1,0 +1,519 @@
+<Type Name="Choices" FullName="System.Speech.Recognition.Choices">
+  <TypeSignature Language="C#" Value="public class Choices" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Choices extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Recognition.Choices" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("{_oneOf.DebugSummary}")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>音声認識の文法の制約で代替のセットを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Speech.Recognition.Choices>オブジェクトがいくつかの値のいずれかを持つことができるフレーズのコンポーネントを表します。 このクラスを使用してから、音声認識の文法を作成するときに、<xref:System.Speech.Recognition.GrammarBuilder>オブジェクト。  
+  
+ たとえば、<xref:System.Speech.Recognition.Choices>オブジェクトは、コンポーネントを表します*colorChoice*語句内"に色を変更する*colorChoice*"ここで許容される値*colorChoice*は"red"または「緑」、"blue"です。  
+  
+> [!NOTE]
+>  使用する、<xref:System.Speech.Recognition.Choices>句のオプション コンポーネントとしてオブジェクトを作成、<xref:System.Speech.Recognition.Choices>オブジェクトを追加して、<xref:System.Speech.Recognition.GrammarBuilder.%23ctor%28System.Speech.Recognition.GrammarBuilder%2CSystem.Int32%2CSystem.Int32%29?displayProperty=nameWithType>オブジェクトを`minRepeat`と`maxRepeat`それぞれ 0 と 1 に設定します。 オプションのコンポーネントが読み上げるかどうか、省略可能なコンポーネントを含む語句を認識できます。  
+  
+ <xref:System.Speech.Recognition.Choices>クラスと同じ機能を提供する、 `one-of` XML 要素によって定義された、[音声認識の文法の仕様 (SRGS) バージョン 1.0](http://www.w3.org/TR/speech-grammar/)と似ています、<xref:System.Speech.Recognition.SrgsGrammar.SrgsOneOf>クラス内で、<xref:System.Speech.Recognition.SrgsGrammar>名前空間。  
+  
+ 音声認識の文法の定義の詳細については、次を参照してください。[音声認識](http://msdn.microsoft.com/en-us/6a7dc524-07fc-4862-8d48-8c10dc64b919)と[作成 GrammarBuilder 文法](http://msdn.microsoft.com/en-us/7e2cc577-cb05-4318-9da3-7c8675d3d9ae)です。  
+  
+   
+  
+## Examples  
+ 次の例は、音声認識の文法、語句の同音"に背景を設定*colorChoice*"ここで、 *colorChoice*定義済みの色のいずれかになります。 <xref:System.Speech.Recognition.GrammarBuilder>文法の制約を定義するために使用します。  
+  
+```csharp  
+  
+private Grammar CreateColorGrammar()  
+{  
+  
+  // Create a Choices object that contains a set of alternative colors.  
+  Choices colorChoice = new Choices(new string[] {"red", "green", "blue"});  
+  colorChoice.Add(new string[] {"cyan", "yellow", "magenta"});  
+  
+  // Construct the phrase.  
+  GrammarBuilder builder = new GrammarBuilder("Set background to");  
+  builder.Append(colorChoice);  
+  
+  // Create a grammar for the phrase.  
+  Grammar colorGrammar = new Grammar(builder);  
+  colorGrammar.Name = "SetBackground";  
+  
+  return colorGrammar;  
+}  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Speech.Recognition.Choices" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構築することができます、<xref:System.Speech.Recognition.Choices>オブジェクト、既定のコンス トラクター (空のオブジェクトを返します) のグループからを使用して<xref:System.String>オブジェクト、またはのセットから<xref:System.Speech.Recognition.GrammarBuilder>オブジェクト。  
+  
+ <xref:System.Speech.Recognition.GrammarBuilder>オブジェクトからの暗黙的な変換をサポートしている<xref:System.Speech.Recognition.SemanticResultValue>と<xref:System.Speech.Recognition.SemanticResultKey>、<xref:System.Speech.Recognition.Choices>キャストを使用してこれらのオブジェクトの配列から構築できます。  
+  
+   
+  
+## Examples  
+ 次の例では<xref:System.Speech.Recognition.Choices>代替の 2 つのリストを作成するオブジェクト。  
+  
+ 最初の<xref:System.Speech.Recognition.Choices>の配列からオブジェクトが構築された<xref:System.String>オブジェクト。 他の<xref:System.Speech.Recognition.Choices>の配列からオブジェクトが構築された<xref:System.Speech.Recognition.GrammarBuilder>オブジェクトをキャストによって暗黙的に変換されます。  
+  
+ この例では、<xref:System.Speech.Recognition.GrammarBuilder>フレーズをアセンブルするオブジェクトを使用して、<xref:System.Speech.Recognition.Choices>オブジェクトと音声を認識するように使用できる 2 つの追加文字列の入力「[phoneType] phone では呼び出し [contactlList]」の形式でたとえば"携帯電話の通話 Jane"です。  
+  
+```  
+public GrammarBuilder ChoicesContructor2 ()  
+{  
+    GrammarBuilder gb = new GrammarBuilder ();  
+    Choices phoneType = new Choices (new string[] {"cell", "home", "work"});  
+    Choices contactList = new Choices (new GrammarBuilder[] {(GrammarBuilder) "Mark", (GrammarBuilder) "Jane", (GrammarBuilder) "Frank"});  
+    gb.Append ("Call");  
+    gb.Append (contactList);  
+    gb.Append ("on");  
+    gb.Append (phoneType);  
+    gb.Append ("phone");  
+    return gb;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Choices ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.Choices.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Speech.Recognition.Choices" />を代替の空のセットを含むクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターでは、代替の有効な場合は、空のセットを返します。 いずれかを使用する代替手段を追加することができます、<xref:System.Speech.Recognition.Choices.Add%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例で<xref:System.Speech.Recognition.Choices>と<xref:System.Speech.Recognition.GrammarBuilder>"自分のセルに呼び出し Anne"や"自分の勤務先電話番号に呼び出し James"などの音声入力を認識するように使用できる語句を作成するオブジェクト。 例からの暗黙的なキャストを使用して<xref:System.Speech.Recognition.Choices>と<xref:System.String>に<xref:System.Speech.Recognition.GrammarBuilder>です。  
+  
+```csharp  
+public Grammar CreatePhonePhrase()  
+{  
+  
+  // Create alternatives for female names and add a phrase.  
+  GrammarBuilder females = new Choices(new string[] { "Anne", "Mary" });  
+  females.Append("on her");  
+  
+  // Create alternatives for male names and add a phrase.  
+  GrammarBuilder males = new Choices(new string[] { "James", "Sam" });  
+  males.Append("on his");  
+  
+  // Create a Choices object that contains an array of alternative  
+  // GrammarBuilder objects.  
+  Choices people = new Choices();  
+  people.Add(new Choices(new GrammarBuilder[] {females, males}));  
+  
+  // Create a Choices object that contains a set of alternative phone types.  
+  Choices phoneType = new Choices();  
+  phoneType.Add(new string[] { "cell", "home", "work" });  
+  
+  // Construct the phrase.  
+  GrammarBuilder gb = new GrammarBuilder();  
+  gb.Append("call");  
+  gb.Append(people);  
+  gb.Append(phoneType);  
+  gb.Append(new GrammarBuilder("phone"), 0, 1);  
+  
+  return new Grammar(gb);  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Choices (params System.Speech.Recognition.GrammarBuilder[] alternateChoices);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Speech.Recognition.GrammarBuilder[] alternateChoices) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.Choices.#ctor(System.Speech.Recognition.GrammarBuilder[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="alternateChoices" Type="System.Speech.Recognition.GrammarBuilder[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="alternateChoices">代替のセットを格納する配列。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Speech.Recognition.Choices" /> 1 つまたは複数を格納する配列からクラスを<see cref="T:System.Speech.Recognition.GrammarBuilder" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各<xref:System.Speech.Recognition.GrammarBuilder>で`alternateChoices`1 つの代替手段を定義します。 場合`alternateChoices`空の配列は、コンス トラクターは、代替の空のセットを返します。 いずれかを使用する代替手段を追加することができます、<xref:System.Speech.Recognition.Choices.Add%2A>メソッドです。  
+  
+ コンス トラクターは、スロー、<xref:System.ArgumentNullException>とき`alternateChoices`は`null`や配列要素のいずれかが`null`です。  
+  
+ <xref:System.Speech.Recognition.GrammarBuilder>クラスの暗黙的な変換のサポートを提供する<xref:System.Speech.Recognition.Choices>、 <xref:System.Speech.Recognition.SemanticResultValue>、および<xref:System.Speech.Recognition.SemanticResultKey>オブジェクトを<xref:System.Speech.Recognition.GrammarBuilder>インスタンス、正しくキャストを使用して、このコンス トラクターこともできますを作成する、<xref:System.Speech.Recognition.Choices>これらのオブジェクトの任意の組み合わせの一覧からのオブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例で`Choices`と<xref:System.Speech.Recognition.GrammarBuilder>オブジェクトを作成する、 <xref:System.Speech.Recognition.Grammar> "自分のセルに呼び出し Anne"や"自分の勤務先電話番号に呼び出し James"などの語句。 例からの暗黙的なキャストを使用して`Choices`と<xref:System.String>に<xref:System.Speech.Recognition.GrammarBuilder>です。  
+  
+```csharp  
+public Grammar CreatePhonePhrase()  
+{  
+  
+  // Create alternatives for female names and add a phrase.  
+  GrammarBuilder females = new Choices(new string[] { "Anne", "Mary" });  
+  females.Append("on her");  
+  
+  // Create alternatives for male names and add a phrase.  
+  GrammarBuilder males = new Choices(new string[] { "James", "Sam" });  
+  males.Append("on his");  
+  
+  // Create a Choices object that contains an array of alternative  
+  // GrammarBuilder objects.  
+  Choices people = new Choices();  
+  people.Add(new Choices(new GrammarBuilder[] {females, males}));  
+  
+  // Create a Choices object that contains a set of alternative phone types.  
+  Choices phoneType = new Choices();  
+  phoneType.Add(new string[] { "cell", "home", "work" });  
+  
+  // Construct the phrase.  
+  GrammarBuilder gb = new GrammarBuilder();  
+  gb.Append("call");  
+  gb.Append(people);  
+  gb.Append(phoneType);  
+  gb.Append(new GrammarBuilder("phone"), 0, 1);  
+  
+  return new Grammar(gb);  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Choices (params string[] phrases);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string[] phrases) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.Choices.#ctor(System.String[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="phrases" Type="System.String[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="phrases">代替のセットを格納する配列。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Speech.Recognition.Choices" /> 1 つまたは複数を格納する配列からクラスを<see cref="T:System.String" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各<xref:System.String>で`phrases`1 つの代替手段を定義します。 音声認識エンジンは、音声入力に一致するのに文字列配列で、項目のいずれかを使用できます。 場合`phrases`空の配列は、コンス トラクターは、代替の空のセットを返します。 いずれかを使用する代替手段を追加することができます、<xref:System.Speech.Recognition.Choices.Add%2A>メソッドです。  
+  
+ コンス トラクターをスロー、<xref:System.ArgumentNullException>とき`phrases`は`null`配列要素のいずれかまたは`null`です。 コンス トラクターは、スロー、<xref:System.ArgumentException>かどうか、配列内の任意の要素は空の文字列 ("") です。  
+  
+   
+  
+## Examples  
+ 次の例で<xref:System.Speech.Recognition.Choices>と<xref:System.Speech.Recognition.GrammarBuilder>オブジェクトを作成する、 <xref:System.Speech.Recognition.Grammar> "自分のセルに呼び出し Anne"や"自分の勤務先電話番号に呼び出し James"などの語句。 例からの暗黙的なキャストを使用して`Choices`と<xref:System.String>に<xref:System.Speech.Recognition.GrammarBuilder>です。  
+  
+```csharp  
+public Grammar CreatePhonePhrase()  
+{  
+  
+  // Create alternatives for female names and add a phrase.  
+  GrammarBuilder females = new Choices(new string[] { "Anne", "Mary" });  
+  females.Append("on her");  
+  
+  // Create alternatives for male names and add a phrase.  
+  GrammarBuilder males = new Choices(new string[] { "James", "Sam" });  
+  males.Append("on his");  
+  
+  // Create a Choices object that contains an array of alternative  
+  // GrammarBuilder objects.  
+  Choices people = new Choices();  
+  people.Add(new Choices(new GrammarBuilder[] {females, males}));  
+  
+  // Create a Choices object that contains a set of alternative phone types.  
+  Choices phoneType = new Choices();  
+  phoneType.Add(new string[] { "cell", "home", "work" });  
+  
+  // Construct the phrase.  
+  GrammarBuilder gb = new GrammarBuilder();  
+  gb.Append("call");  
+  gb.Append(people);  
+  gb.Append(phoneType);  
+  gb.Append(new GrammarBuilder("phone"), 0, 1);  
+  
+  return new Grammar(gb);  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (params System.Speech.Recognition.GrammarBuilder[] alternateChoices);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Speech.Recognition.GrammarBuilder[] alternateChoices) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.Choices.Add(System.Speech.Recognition.GrammarBuilder[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="alternateChoices" Type="System.Speech.Recognition.GrammarBuilder[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="alternateChoices"><see cref="T:System.Speech.Recognition.GrammarBuilder" />これに追加するオブジェクト<see cref="T:System.Speech.Recognition.Choices" />オブジェクト。</param>
+        <summary>1 つ以上含む配列を追加<see cref="T:System.Speech.Recognition.GrammarBuilder" />を代替の一連のオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 暗黙的な変換をサポートするため<xref:System.Speech.Recognition.Choices>、 <xref:System.Speech.Recognition.SemanticResultKey>、および<xref:System.Speech.Recognition.SemanticResultValue>オブジェクトを<xref:System.Speech.Recognition.GrammarBuilder>、これら 3 つのクラスに追加できる、<xref:System.Speech.Recognition.Choices>インスタンスもします。  
+  
+ 場合`alternateChoices`空の配列は、このメソッドは代替のセットを更新できません。  
+  
+ アプリケーションは、両方を使用して<xref:System.Speech.Recognition.Choices.Add%28System.String%5B%5D%29>と<xref:System.Speech.Recognition.Choices.Add%28System.Speech.Recognition.GrammarBuilder%5B%5D%29>に代わる方法を追加する、<xref:System.Speech.Recognition.Choices>オブジェクト。  
+  
+ このメソッドはスロー、<xref:System.ArgumentNullException>とき`alternateChoices`は`null`配列要素のいずれかまたは`null`です。  
+  
+   
+  
+## Examples  
+ 次の例では、"自分のセルに呼び出し Anne"や"自分の勤務先電話番号に呼び出し James"などの語句の音声認識の文法を作成します。 この例の両方のオーバー ロードを使用して、<xref:System.Speech.Recognition.Choices.Add%2A>文法を構築するメソッド。  
+  
+```csharp  
+public Grammar CreatePhonePhrase()  
+{  
+  
+  // Create alternatives for female names and add a phrase.  
+  GrammarBuilder females = new Choices(new string[] { "Anne", "Mary" });  
+  females.Append("on her");  
+  
+  // Create alternatives for male names and add a phrase.  
+  GrammarBuilder males = new Choices(new string[] { "James", "Sam" });  
+  males.Append("on his");  
+  
+  // Create a Choices object that contains an array of alternative  
+  // GrammarBuilder objects.  
+  Choices people = new Choices();  
+  people.Add(new Choices(new GrammarBuilder[] {females, males}));  
+  
+  // Create a Choices object that contains a set of alternative phone types.  
+  Choices phoneType = new Choices();  
+  phoneType.Add(new string[] { "cell", "home", "work" });  
+  
+  // Construct the phrase.  
+  GrammarBuilder gb = new GrammarBuilder();  
+  gb.Append("call");  
+  gb.Append(people);  
+  gb.Append(phoneType);  
+  gb.Append(new GrammarBuilder("phone"), 0, 1);  
+  
+  return new Grammar(gb);  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (params string[] phrases);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(string[] phrases) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.Choices.Add(System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="phrases" Type="System.String[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="phrases">これに追加する文字列<see cref="T:System.Speech.Recognition.Choices" />オブジェクト。</param>
+        <summary>1 つ以上含む配列を追加<see cref="T:System.String" />を代替の一連のオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションは、両方を使用して<xref:System.Speech.Recognition.Choices.Add%28System.String%5B%5D%29>と<xref:System.Speech.Recognition.Choices.Add%28System.Speech.Recognition.GrammarBuilder%5B%5D%29>に代わる方法を追加する、<xref:System.Speech.Recognition.Choices>オブジェクト。  
+  
+ 場合`phrases`空の配列は、このメソッドは代替グリフのセットを更新できません。  
+  
+ このメソッドはスロー、<xref:System.ArgumentNullException>とき`phrases`は`null`配列要素のいずれかまたは`null`です。 このメソッドは、<xref:System.ArgumentException>かどうか、配列内の任意の要素は空の文字列 ("") です。  
+  
+   
+  
+## Examples  
+ 次の例では、"自分のセルに呼び出し Anne"および"自分の勤務先電話番号に呼び出し James"に似ています、音声認識の文法の語句を作成します。 この例の両方のオーバー ロードを使用して、<xref:System.Speech.Recognition.Choices.Add%2A>文法を構築するメソッド。  
+  
+```csharp  
+public Grammar CreatePhonePhrase()  
+{  
+  
+  // Create alternatives for female names and add a phrase.  
+  GrammarBuilder females = new Choices(new string[] { "Anne", "Mary" });  
+  females.Append("on her");  
+  
+  // Create alternatives for male names and add a phrase.  
+  GrammarBuilder males = new Choices(new string[] { "James", "Sam" });  
+  males.Append("on his");  
+  
+  // Create a Choices object that contains an array of alternative  
+  // GrammarBuilder objects.  
+  Choices people = new Choices();  
+  people.Add(new Choices(new GrammarBuilder[] {females, males}));  
+  
+  // Create a Choices object that contains a set of alternative phone types.  
+  Choices phoneType = new Choices();  
+  phoneType.Add(new string[] { "cell", "home", "work" });  
+  
+  // Construct the phrase.  
+  GrammarBuilder gb = new GrammarBuilder();  
+  gb.Append("call");  
+  gb.Append(people);  
+  gb.Append(phoneType);  
+  gb.Append(new GrammarBuilder("phone"), 0, 1);  
+  
+  return new Grammar(gb);  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToGrammarBuilder">
+      <MemberSignature Language="C#" Value="public System.Speech.Recognition.GrammarBuilder ToGrammarBuilder ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Speech.Recognition.GrammarBuilder ToGrammarBuilder() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.Choices.ToGrammarBuilder" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.GrammarBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Speech.Recognition.GrammarBuilder" />オブジェクトからこの<see cref="T:System.Speech.Recognition.Choices" />オブジェクト。</summary>
+        <returns>A<see cref="T:System.Speech.Recognition.GrammarBuilder" />これに一致する<see cref="T:System.Speech.Recognition.Choices" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Recognition.GrammarBuilder>このメソッドによって 1 つに相当する機能によって返される次のいずれかが返されます。  
+  
+-   呼び出す、<xref:System.Speech.Recognition.GrammarBuilder.%23ctor%2A>パラメーターとしては、このオブジェクトを持つコンス トラクターです。  
+  
+-   このオブジェクトのキャスト暗黙的または明示的なを使用して、<xref:System.Speech.Recognition.GrammarBuilder>です。  
+  
+   
+  
+## Examples  
+ 次の例では、背景色を変更するための音声認識文法を作成します。  
+  
+```csharp  
+  
+private Grammar CreateColorChoice()  
+{  
+  
+  // Create a Choices object that contains a set of alternative colors.  
+  Choices colorChoice = new Choices(new string[] {"red", "green", "blue"});  
+  
+  // Construct the phrase.  
+  GrammarBuilder gb = new GrammarBuilder();  
+  gb.Append(new Choices(new string[] {"Set", "Change"}));  
+  gb.Append("background to");  
+  gb.Append(colorChoice.ToGrammarBuilder());  
+  
+  Grammar grammar = new Grammar(gb);  
+  grammar.Name = "modify background color";  
+  
+  return grammar;  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

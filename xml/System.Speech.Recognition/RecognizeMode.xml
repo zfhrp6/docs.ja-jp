@@ -1,0 +1,100 @@
+<Type Name="RecognizeMode" FullName="System.Speech.Recognition.RecognizeMode">
+  <TypeSignature Language="C#" Value="public enum RecognizeMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed RecognizeMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Recognition.RecognizeMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>認識モードの値を列挙します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙はへの引数として使用<xref:System.Speech.Recognition.SpeechRecognitionEngine.RecognizeAsync%28System.Speech.Recognition.RecognizeMode%29>です。  
+  
+   
+  
+## Examples  
+ 次の例は、グラフィカル ユーザー インターフェイスを使用してアプリケーションの開始/停止ボタンの実装を示しています。<xref:System.Speech.Recognition.SpeechRecognitionEngine>です。 アプリケーションの状態に応じて<xref:System.Speech.Recognition.SpeechRecognitionEngine.RecognizeAsync%28System.Speech.Recognition.RecognizeMode%29>ボタンがクリックされたときに、1 つまたは複数の呼び出されます。  
+  
+```  
+private void _startRecogButton_Click(object sender, EventArgs eventArgs)   
+{  
+  
+  // Toggle speech recognition on.  
+  if (_startRecogButton.Text == "Start Speech Recognition")   
+  {       
+    _startRecogButton.Text = "Stop Speech Recognition";  
+    if (_useMultiple)   
+    {  
+      _recognitionEngine.RecognizeAsync(RecognizeMode.Multiple);  
+    }   
+    else   
+    {  
+      _recognitionEngine.RecognizeAsync(RecognizeMode.Single);  
+    }  
+  }  
+  
+  // Toggle speech recognition off.   
+  else   
+  {                                                        
+    _startRecogButton.Text = "Start Speech Recognition";  
+  
+    // Stop after current phrase is finished.  
+    if (_friendlyStop)   
+    {       
+      _recognitionEngine.RecognizeAsyncStop();   
+    }  
+  
+    // Stop before current phrase is finished.  
+    else   
+    {        
+      _recognitionEngine.RecognizeAsyncCancel();   
+    }  
+  }  
+}  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Multiple">
+      <MemberSignature Language="C#" Value="Multiple" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Recognition.RecognizeMode Multiple = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Recognition.RecognizeMode.Multiple" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.RecognizeMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認識が完了した後に終了しないことを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Single">
+      <MemberSignature Language="C#" Value="Single" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Recognition.RecognizeMode Single = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Recognition.RecognizeMode.Single" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.RecognizeMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認識が完了した後に終了したことを指定します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,288 @@
+<Type Name="MessageQueueEnumerator" FullName="System.Messaging.MessageQueueEnumerator">
+  <TypeSignature Language="C#" Value="public class MessageQueueEnumerator : MarshalByRefObject, IDisposable, System.Collections.IEnumerator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MessageQueueEnumerator extends System.MarshalByRefObject implements class System.Collections.IEnumerator, class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Messaging.MessageQueueEnumerator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Messaging</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.MarshalByRefObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IEnumerator</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>メッセージ キュー内のメッセージを列挙するための順方向専用カーソルを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Messaging.MessageQueueEnumerator>動的とのやり取り、ネットワーク上のキューです。 メソッドを介して使用できる、<xref:System.Messaging.MessageQueue>クラスは、いずれかを返すことができます、<xref:System.Messaging.MessageQueueEnumerator>キュー、または、時にキュー コレクションのスナップショットを格納する配列の動的な一覧を含む、指定されたメソッドが呼び出されました。  
+  
+ ネットワークでのキューの定義済みの順序はありません。 たとえば、コンピューター、ラベル、public または private の状態を順序付けられた、またはその他のユーザーがアクセスできる条件はありません。 A<xref:System.Messaging.MessageQueueEnumerator>カーソル、動的なリストの先頭に初期化します。 列挙体の最初のキューにカーソルを移動するには呼び出すことによって<xref:System.Messaging.MessageQueueEnumerator.MoveNext%2A>です。 列挙子が初期化された後に行うこともできます<xref:System.Messaging.MessageQueueEnumerator.MoveNext%2A>残りのキューにします。  
+  
+ ステップ後退することはできません、<xref:System.Messaging.MessageQueueEnumerator>です。 カーソルは、キューの列挙を前方移動を許可するだけです。 ただし、呼び出す<xref:System.Messaging.MessageQueueEnumerator.Reset%2A>列挙体をリセットし、リストの先頭にカーソルを置きます。 列挙子は動的であるために、カーソルの現在位置より後に追加するキューは、列挙子によってアクセスできます。 カーソルの現在位置の前に挿入されているキューは、最初の reset を呼び出すアクセスできません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ネットワーク内のすべてのメッセージ キューを反復処理し、各キューのパスを調査します。 最後に、ネットワーク上のパブリック キューの数を表示します。  
+  
+ [!code-cpp[MessageQueue.GetMessageQueueEnumerator_noparms#1](~/samples/snippets/cpp/VS_Snippets_Remoting/MessageQueue.GetMessageQueueEnumerator_noparms/CPP/mqgetmessagequeueenumerator.cpp#1)]
+ [!code-csharp[MessageQueue.GetMessageQueueEnumerator_noparms#1](~/samples/snippets/csharp/VS_Snippets_Remoting/MessageQueue.GetMessageQueueEnumerator_noparms/CS/mqgetmessagequeueenumerator.cs#1)]
+ [!code-vb[MessageQueue.GetMessageQueueEnumerator_noparms#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MessageQueue.GetMessageQueueEnumerator_noparms/VB/mqgetmessagequeueenumerator.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueueEnumerator.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>列挙子に関連付けられているリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オペレーティング システムは、開いているハンドルが保持されます<xref:System.Messaging.MessageQueueEnumerator.LocatorHandle%2A>カーソルの有効期間中に、キューの列挙子にします。 列挙子の操作が完了したら、呼び出す<xref:System.Messaging.MessageQueueEnumerator.Close%2A>ハンドルに関連付けられているリソースを解放します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="public System.Messaging.MessageQueue Current { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Messaging.MessageQueue Current" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessageQueueEnumerator.Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の取得<see cref="T:System.Messaging.MessageQueue" />列挙体の。</summary>
+        <value>キューは、カーソルの現在の位置します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列挙子の作成時に指定していない、何もするので<xref:System.Messaging.MessageQueueEnumerator.Current%2A>が無効である場合は、アクセス例外がスローされます。 呼び出す必要があります<xref:System.Messaging.MessageQueueEnumerator.MoveNext%2A>に列挙体の最初のキューにカーソルを移動します。  
+  
+ 複数回呼び出す<xref:System.Messaging.MessageQueueEnumerator.Current%2A>なしの介在する呼び出しを<xref:System.Messaging.MessageQueueEnumerator.MoveNext%2A>は同じを返します<xref:System.Messaging.MessageQueue>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">呼び出す<see cref="P:System.Messaging.MessageQueueEnumerator.Current" />最初の呼び出しの前に<see cref="M:System.Messaging.MessageQueueEnumerator.MoveNext" />です。 カーソルは、列挙体の最初の待ち行列の前に位置します。  
+  
+ または  
+  
+ 呼び出す<see cref="P:System.Messaging.MessageQueueEnumerator.Current" />への呼び出し後<see cref="M:System.Messaging.MessageQueueEnumerator.MoveNext" />(列挙体の最後のキューの後にカーソルがあることを示す) 場合は false を返しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueueEnumerator.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Messaging.MessageQueueEnumerator" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す<xref:System.Messaging.MessageQueueEnumerator.Dispose%2A>によりによって使用されるリソース、<xref:System.Messaging.MessageQueueEnumerator>を他の目的に再割り当てされます。 詳細については<xref:System.Messaging.MessageQueueEnumerator.Dispose%2A>を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueueEnumerator.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Messaging.MessageQueueEnumerator" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック<xref:System.Messaging.MessageQueueEnumerator.Dispose%2A>メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 `Dispose`プロテクト呼び出します`Dispose(Boolean)`メソッドを`disposing`パラメーターに設定`true`です。 <xref:System.Object.Finalize%2A>呼び出す`Dispose`で`disposing`'éý'`false`です。  
+  
+ `disposing` パラメーターが `true` の場合、このメソッドは、この <xref:System.Messaging.MessageQueueEnumerator> が参照しているすべてのマネージ オブジェクトによって保持されているリソースをすべて解放します。 このメソッドは、参照される各オブジェクトの `Dispose` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 <see langword="Dispose(Boolean)" /> をオーバーライドする場合は、以前に <see langword="Dispose" /> を呼び出したときに破棄されたオブジェクトを参照しないように注意する必要があります。 実装する方法の詳細についての<see langword="Dispose" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see langword="Dispose" />と<see langword="Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~MessageQueueEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueueEnumerator.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocatorHandle">
+      <MemberSignature Language="C#" Value="public IntPtr LocatorHandle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance native int LocatorHandle" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessageQueueEnumerator.LocatorHandle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ネットワークでキューの検索に使用されるネイティブのメッセージ キュー ハンドルを取得します。</summary>
+        <value>現在のキューへのネイティブ ハンドルです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに不要になったこの<xref:System.Messaging.MessageQueueEnumerator>インスタンス、呼び出す<xref:System.Messaging.MessageQueueEnumerator.Close%2A>リソースには、このハンドルを解放します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Messaging.MessageQueueException">ハンドルが存在しません。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元のコードには、参照のアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveNext">
+      <MemberSignature Language="C#" Value="public bool MoveNext ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool MoveNext() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueueEnumerator.MoveNext" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>いずれかが現在使用可能な場合は、列挙体の次のキューに、列挙子を進めます。</summary>
+        <returns>
+          <see langword="true" />列挙子が次のキューに正常に進んだ場合<see langword="false" />列挙子が列挙体の終わりに達した場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.MessageQueueEnumerator.MoveNext%2A>返します`false`列挙体に関連付けられたキューが存在しない場合にすぐにします。  
+  
+ <xref:System.Messaging.MessageQueueEnumerator.MoveNext%2A>返されます`true`コレクションの末尾に達するまでします。 その`false`連続する呼び出しごとにします。 ただし 1 回<xref:System.Messaging.MessageQueueEnumerator.MoveNext%2A>が返されました`false`へのアクセス、<xref:System.Messaging.MessageQueueEnumerator.Current%2A>プロパティは例外をスローします。  
+  
+ 作成した場合、列挙子は、概念的には前に位置付けられます最初<xref:System.Messaging.MessageQueue>列挙体、および最初の呼び出しの<xref:System.Messaging.MessageQueueEnumerator.MoveNext%2A>ビューには、列挙体の最初のキューを表示します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出し元のコードには、参照のアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public void Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueueEnumerator.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>列挙体の先頭を指すように、カーソル位置をリセットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列挙子は、順方向専用の方向に移動します。 キューの列挙体の先頭に戻るには、このメソッドを使用します。  
+  
+ <xref:System.Messaging.MessageQueueEnumerator.Reset%2A>最初のキュー、リスト内にカーソルを位置付けます。 呼び出す必要はありません<xref:System.Messaging.MessageQueueEnumerator.MoveNext%2A>呼び出した後<xref:System.Messaging.MessageQueueEnumerator.Reset%2A>列挙体の最初のキューにカーソルを移動します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerator.Current">
+      <MemberSignature Language="C#" Value="object System.Collections.IEnumerator.Current { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.IEnumerator.Current" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessageQueueEnumerator.System#Collections#IEnumerator#Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の取得<see cref="T:System.Messaging.MessageQueue" />列挙体の。</summary>
+        <value>キューは、カーソルの現在の位置します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

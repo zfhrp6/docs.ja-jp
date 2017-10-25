@@ -1,0 +1,370 @@
+<Type Name="GridViewAutomationPeer" FullName="System.Windows.Automation.Peers.GridViewAutomationPeer">
+  <TypeSignature Language="C#" Value="public class GridViewAutomationPeer : System.Windows.Automation.Peers.IViewAutomationPeer, System.Windows.Automation.Provider.ITableProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GridViewAutomationPeer extends System.Object implements class System.Windows.Automation.Peers.IViewAutomationPeer, class System.Windows.Automation.Provider.IGridProvider, class System.Windows.Automation.Provider.ITableProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.Peers.GridViewAutomationPeer" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Automation.Peers.IViewAutomationPeer</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Windows.Automation.Provider.ITableProvider</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>公開<see cref="T:System.Windows.Controls.GridView" />UI オートメーションを使用する型。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GridViewAutomationPeer (System.Windows.Controls.GridView owner, System.Windows.Controls.ListView listview);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Controls.GridView owner, class System.Windows.Controls.ListView listview) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.GridViewAutomationPeer.#ctor(System.Windows.Controls.GridView,System.Windows.Controls.ListView)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Controls.GridView" />
+        <Parameter Name="listview" Type="System.Windows.Controls.ListView" />
+      </Parameters>
+      <Docs>
+        <param name="owner">この <see cref="T:System.Windows.Controls.GridView" /> に関連付けられている <see cref="T:System.Windows.Automation.Peers.GridViewAutomationPeer" />。</param>
+        <param name="listview"><see cref="T:System.Windows.Controls.ListView" />を<see cref="T:System.Windows.Controls.GridView" />表示モードとして使用されています。</param>
+        <summary><see cref="T:System.Windows.Automation.Peers.GridViewAutomationPeer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Automation.Peers.IViewAutomationPeer.CreateItemAutomationPeer">
+      <MemberSignature Language="C#" Value="System.Windows.Automation.Peers.ItemAutomationPeer IViewAutomationPeer.CreateItemAutomationPeer (object item);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Windows.Automation.Peers.ItemAutomationPeer System.Windows.Automation.Peers.IViewAutomationPeer.CreateItemAutomationPeer(object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.GridViewAutomationPeer.System#Windows#Automation#Peers#IViewAutomationPeer#CreateItemAutomationPeer(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.ItemAutomationPeer</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="item">項目を作成します。</param>
+        <summary><see cref="T:System.Windows.Automation.Peers.ItemAutomationPeer" /> クラスの新しいインスタンスを作成します。</summary>
+        <returns>アイテムを作成します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Automation.Peers.GridViewAutomationPeer> のインスタンスが <xref:System.Windows.Automation.Peers.IViewAutomationPeer> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Automation.Peers.IViewAutomationPeer.GetAutomationControlType">
+      <MemberSignature Language="C#" Value="System.Windows.Automation.Peers.AutomationControlType IViewAutomationPeer.GetAutomationControlType ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance valuetype System.Windows.Automation.Peers.AutomationControlType System.Windows.Automation.Peers.IViewAutomationPeer.GetAutomationControlType() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.GridViewAutomationPeer.System#Windows#Automation#Peers#IViewAutomationPeer#GetAutomationControlType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationControlType</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>これに関連付けられている要素のコントロールの種類を取得<see cref="T:System.Windows.Automation.Peers.GridViewAutomationPeer" />です。</summary>
+        <returns>列挙体の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Automation.Peers.GridViewAutomationPeer> のインスタンスが <xref:System.Windows.Automation.Peers.IViewAutomationPeer> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Automation.Peers.IViewAutomationPeer.GetChildren">
+      <MemberSignature Language="C#" Value="System.Collections.Generic.List&lt;System.Windows.Automation.Peers.AutomationPeer&gt; IViewAutomationPeer.GetChildren (System.Collections.Generic.List&lt;System.Windows.Automation.Peers.AutomationPeer&gt; children);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.Generic.List`1&lt;class System.Windows.Automation.Peers.AutomationPeer&gt; System.Windows.Automation.Peers.IViewAutomationPeer.GetChildren(class System.Collections.Generic.List`1&lt;class System.Windows.Automation.Peers.AutomationPeer&gt; children) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.GridViewAutomationPeer.System#Windows#Automation#Peers#IViewAutomationPeer#GetChildren(System.Collections.Generic.List{System.Windows.Automation.Peers.AutomationPeer})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.List&lt;System.Windows.Automation.Peers.AutomationPeer&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="children" Type="System.Collections.Generic.List&lt;System.Windows.Automation.Peers.AutomationPeer&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="children">取得する子オブジェクトのコレクション。</param>
+        <summary>指定したの直接の子要素のコレクションを取得[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]ピアです。</summary>
+        <returns>子オブジェクトのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Automation.Peers.GridViewAutomationPeer> のインスタンスが <xref:System.Windows.Automation.Peers.IViewAutomationPeer> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Automation.Peers.IViewAutomationPeer.GetPattern">
+      <MemberSignature Language="C#" Value="object IViewAutomationPeer.GetPattern (System.Windows.Automation.Peers.PatternInterface patternInterface);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.Windows.Automation.Peers.IViewAutomationPeer.GetPattern(valuetype System.Windows.Automation.Peers.PatternInterface patternInterface) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.GridViewAutomationPeer.System#Windows#Automation#Peers#IViewAutomationPeer#GetPattern(System.Windows.Automation.Peers.PatternInterface)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="patternInterface" Type="System.Windows.Automation.Peers.PatternInterface" />
+      </Parameters>
+      <Docs>
+        <param name="patternInterface">列挙体の値。</param>
+        <summary>指定したに関連付けられているコントロール パターンを取得<paramref name="patternInterface" />です。</summary>
+        <returns>場合<paramref name="patternInterface" />は<see cref="F:System.Windows.Automation.Peers.PatternInterface.Grid" />または<see cref="F:System.Windows.Automation.Peers.PatternInterface.Table" />、このメソッドは、コントロール パターンを実装するオブジェクトを返します、それ以外の場合、このメソッドが戻る<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Automation.Peers.GridViewAutomationPeer> のインスタンスが <xref:System.Windows.Automation.Peers.IViewAutomationPeer> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Automation.Peers.IViewAutomationPeer.ItemsChanged">
+      <MemberSignature Language="C#" Value="void IViewAutomationPeer.ItemsChanged (System.Collections.Specialized.NotifyCollectionChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Automation.Peers.IViewAutomationPeer.ItemsChanged(class System.Collections.Specialized.NotifyCollectionChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.GridViewAutomationPeer.System#Windows#Automation#Peers#IViewAutomationPeer#ItemsChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Collections.Specialized.NotifyCollectionChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントに関連付けられたデータ。</param>
+        <summary>項目のコレクションが変更されたときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Automation.Peers.GridViewAutomationPeer> のインスタンスが <xref:System.Windows.Automation.Peers.IViewAutomationPeer> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Automation.Peers.IViewAutomationPeer.ViewDetached">
+      <MemberSignature Language="C#" Value="void IViewAutomationPeer.ViewDetached ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Automation.Peers.IViewAutomationPeer.ViewDetached() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.GridViewAutomationPeer.System#Windows#Automation#Peers#IViewAutomationPeer#ViewDetached" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>カスタム ビューがコントロールに適用される不要になったときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Automation.Peers.GridViewAutomationPeer> のインスタンスが <xref:System.Windows.Automation.Peers.IViewAutomationPeer> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Automation.Provider.IGridProvider.ColumnCount">
+      <MemberSignature Language="C#" Value="int System.Windows.Automation.Provider.IGridProvider.ColumnCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 System.Windows.Automation.Provider.IGridProvider.ColumnCount" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Peers.GridViewAutomationPeer.System#Windows#Automation#Provider#IGridProvider#ColumnCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グリッド内の列の合計数を取得します。</summary>
+        <value>グリッド内の列の合計数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Automation.Peers.GridViewAutomationPeer> のインスタンスが <xref:System.Windows.Automation.Provider.IGridProvider> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Automation.Provider.IGridProvider.GetItem">
+      <MemberSignature Language="C#" Value="System.Windows.Automation.Provider.IRawElementProviderSimple IGridProvider.GetItem (int row, int column);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Windows.Automation.Provider.IRawElementProviderSimple System.Windows.Automation.Provider.IGridProvider.GetItem(int32 row, int32 column) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.GridViewAutomationPeer.System#Windows#Automation#Provider#IGridProvider#GetItem(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Provider.IRawElementProviderSimple</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="row" Type="System.Int32" />
+        <Parameter Name="column" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="row">目的の行の序数。</param>
+        <param name="column">目的の列の序数。</param>
+        <summary>指定されたセルの UI オートメーション プロバイダーを返します。</summary>
+        <returns>指定したセルの UI オートメーション プロバイダー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Automation.Peers.GridViewAutomationPeer> のインスタンスが <xref:System.Windows.Automation.Provider.IGridProvider> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Automation.Provider.IGridProvider.RowCount">
+      <MemberSignature Language="C#" Value="int System.Windows.Automation.Provider.IGridProvider.RowCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 System.Windows.Automation.Provider.IGridProvider.RowCount" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Peers.GridViewAutomationPeer.System#Windows#Automation#Provider#IGridProvider#RowCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グリッド内の行の合計数を取得します。</summary>
+        <value>グリッド内の行の合計数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Automation.Peers.GridViewAutomationPeer> のインスタンスが <xref:System.Windows.Automation.Provider.IGridProvider> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Automation.Provider.ITableProvider.GetColumnHeaders">
+      <MemberSignature Language="C#" Value="System.Windows.Automation.Provider.IRawElementProviderSimple[] ITableProvider.GetColumnHeaders ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Windows.Automation.Provider.IRawElementProviderSimple[] System.Windows.Automation.Provider.ITableProvider.GetColumnHeaders() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.GridViewAutomationPeer.System#Windows#Automation#Provider#ITableProvider#GetColumnHeaders" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Provider.IRawElementProviderSimple[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テーブル内のすべての列ヘッダーを表す UI オートメーション プロバイダーのコレクションを返します。</summary>
+        <returns>UI オートメーション プロバイダーのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Automation.Peers.GridViewAutomationPeer> のインスタンスが <xref:System.Windows.Automation.Provider.ITableProvider> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Automation.Provider.ITableProvider.GetRowHeaders">
+      <MemberSignature Language="C#" Value="System.Windows.Automation.Provider.IRawElementProviderSimple[] ITableProvider.GetRowHeaders ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Windows.Automation.Provider.IRawElementProviderSimple[] System.Windows.Automation.Provider.ITableProvider.GetRowHeaders() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.GridViewAutomationPeer.System#Windows#Automation#Provider#ITableProvider#GetRowHeaders" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Provider.IRawElementProviderSimple[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テーブル内のすべての行ヘッダーを表す UI オートメーション プロバイダーのコレクションを返します。</summary>
+        <returns>UI オートメーション プロバイダーのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Automation.Peers.GridViewAutomationPeer> のインスタンスが <xref:System.Windows.Automation.Provider.ITableProvider> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Automation.Provider.ITableProvider.RowOrColumnMajor">
+      <MemberSignature Language="C#" Value="System.Windows.Automation.RowOrColumnMajor System.Windows.Automation.Provider.ITableProvider.RowOrColumnMajor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Automation.RowOrColumnMajor System.Windows.Automation.Provider.ITableProvider.RowOrColumnMajor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Peers.GridViewAutomationPeer.System#Windows#Automation#Provider#ITableProvider#RowOrColumnMajor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.RowOrColumnMajor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>主要なテーブルの移動方向を取得します。</summary>
+        <value>主要な移動方向。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Automation.Peers.GridViewAutomationPeer> のインスタンスが <xref:System.Windows.Automation.Provider.ITableProvider> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

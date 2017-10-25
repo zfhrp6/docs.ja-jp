@@ -1,0 +1,353 @@
+<Type Name="XamlLoadPermission" FullName="System.Xaml.Permissions.XamlLoadPermission">
+  <TypeSignature Language="C#" Value="public sealed class XamlLoadPermission : System.Security.CodeAccessPermission, System.Security.Permissions.IUnrestrictedPermission" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit XamlLoadPermission extends System.Security.CodeAccessPermission implements class System.Security.Permissions.IUnrestrictedPermission" />
+  <TypeSignature Language="DocId" Value="T:System.Xaml.Permissions.XamlLoadPermission" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.CodeAccessPermission</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Security.Permissions.IUnrestrictedPermission</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>XAML リーダーまたはライターによって使用されているアセンブリから型を読み込むためのアクセス許可を宣言します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xaml.Permissions.XamlLoadPermission>内部型を部分信頼の下で読み込みを許可するかどうかなどのシナリオでは。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlLoadPermission (System.Collections.Generic.IEnumerable&lt;System.Xaml.Permissions.XamlAccessLevel&gt; allowedAccess);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class System.Xaml.Permissions.XamlAccessLevel&gt; allowedAccess) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.Permissions.XamlLoadPermission.#ctor(System.Collections.Generic.IEnumerable{System.Xaml.Permissions.XamlAccessLevel})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="allowedAccess" Type="System.Collections.Generic.IEnumerable&lt;System.Xaml.Permissions.XamlAccessLevel&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="allowedAccess">特定の列挙可能なセット<see cref="T:System.Xaml.Permissions.XamlAccessLevel" />値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xaml.Permissions.XamlLoadPermission" />クラス、特定の列挙可能なセットを使用<see cref="T:System.Xaml.Permissions.XamlAccessLevel" />値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターの呼び出しを初期化します、<xref:System.Xaml.Permissions.XamlLoadPermission.AllowedAccess%2A>各コレクション`allowedAccess`エントリを項目としての戻り値の設定と<xref:System.Xaml.Permissions.XamlLoadPermission.IsUnrestricted%2A>に`false`作成されたインスタンスにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="allowedAccess" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="allowedAccess" />null の項目などの無効な情報が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlLoadPermission (System.Security.Permissions.PermissionState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.PermissionState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.Permissions.XamlLoadPermission.#ctor(System.Security.Permissions.PermissionState)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="state" Type="System.Security.Permissions.PermissionState" />
+      </Parameters>
+      <Docs>
+        <param name="state"><see cref="T:System.Security.Permissions.PermissionState" /> 列挙値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xaml.Permissions.XamlLoadPermission" />クラス、既存のアクセス許可を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Permissions.PermissionState.Unrestricted>戻り値の設定<xref:System.Xaml.Permissions.XamlLoadPermission.IsUnrestricted%2A>に`true`作成されたインスタンスにします。 このコンス トラクターへの呼び出しを設定、<xref:System.Xaml.Permissions.XamlLoadPermission.AllowedAccess%2A>コレクション`null`アクセス許可が報告されている場合は関係ないのでなく<xref:System.Xaml.Permissions.XamlAccessLevel>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlLoadPermission (System.Xaml.Permissions.XamlAccessLevel allowedAccess);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xaml.Permissions.XamlAccessLevel allowedAccess) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.Permissions.XamlLoadPermission.#ctor(System.Xaml.Permissions.XamlAccessLevel)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="allowedAccess" Type="System.Xaml.Permissions.XamlAccessLevel" />
+      </Parameters>
+      <Docs>
+        <param name="allowedAccess">定義<see cref="T:System.Xaml.Permissions.XamlAccessLevel" />値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xaml.Permissions.XamlLoadPermission" />クラス、1 つを使用<see cref="T:System.Xaml.Permissions.XamlAccessLevel" />値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターの呼び出しを初期化します、<xref:System.Xaml.Permissions.XamlLoadPermission.AllowedAccess%2A>を持つコレクション`allowedAccess`唯一の項目としての戻り値の設定と<xref:System.Xaml.Permissions.XamlLoadPermission.IsUnrestricted%2A>に`false`作成されたインスタンスにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="allowedAccess" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowedAccess">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Xaml.Permissions.XamlAccessLevel&gt; AllowedAccess { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;class System.Xaml.Permissions.XamlAccessLevel&gt; AllowedAccess" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.Permissions.XamlLoadPermission.AllowedAccess" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Xaml.Permissions.XamlAccessLevel&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべての一覧を取得<see cref="T:System.Xaml.Permissions.XamlAccessLevel" />値をこの<see cref="T:System.Xaml.Permissions.XamlLoadPermission" />を表します。</summary>
+        <value>読み取り専用リスト<see cref="T:System.Xaml.Permissions.XamlAccessLevel" />値、または<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、現在<xref:System.Xaml.Permissions.XamlLoadPermission>が初期化されるように<xref:System.Xaml.Permissions.XamlLoadPermission.IsUnrestricted%2A>は`true`、<xref:System.Xaml.Permissions.XamlLoadPermission.AllowedAccess%2A>可能性があります`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Copy">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Copy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Copy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.Permissions.XamlLoadPermission.Copy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成して、現在の完全なコピーを返します<see cref="T:System.Xaml.Permissions.XamlLoadPermission" />です。</summary>
+        <returns>現在の <see cref="T:System.Xaml.Permissions.XamlLoadPermission" /> のコピー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インターフェイス コントラクトごと<xref:System.Security.IPermission>この値は<xref:System.Security.IPermission>シグニチャにキャストできますが、<xref:System.Xaml.Permissions.XamlLoadPermission>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromXml">
+      <MemberSignature Language="C#" Value="public override void FromXml (System.Security.SecurityElement elem);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void FromXml(class System.Security.SecurityElement elem) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.Permissions.XamlLoadPermission.FromXml(System.Security.SecurityElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="elem" Type="System.Security.SecurityElement" />
+      </Parameters>
+      <Docs>
+        <param name="elem">セキュリティ オブジェクトの再構築に使用する XML エンコード。</param>
+        <summary>XML エンコードから指定された状態で、セキュリティ オブジェクトを再構築します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="elem" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="elem" />XML エンコードが含まれていない、<see cref="T:System.Xaml.Permissions.XamlLoadPermission" />です。  
+  
+ または  
+  
+ 内の version 属性<paramref name="elem" />はサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Includes">
+      <MemberSignature Language="C#" Value="public bool Includes (System.Xaml.Permissions.XamlAccessLevel requestedAccess);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Includes(class System.Xaml.Permissions.XamlAccessLevel requestedAccess) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.Permissions.XamlLoadPermission.Includes(System.Xaml.Permissions.XamlAccessLevel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="requestedAccess" Type="System.Xaml.Permissions.XamlAccessLevel" />
+      </Parameters>
+      <Docs>
+        <param name="requestedAccess">特定<see cref="T:System.Xaml.Permissions.XamlAccessLevel" />をチェックします。</param>
+        <summary>返します。 かどうかこの<see cref="T:System.Xaml.Permissions.XamlLoadPermission" />、指定が含まれています<see cref="T:System.Xaml.Permissions.XamlAccessLevel" />でその<see cref="P:System.Xaml.Permissions.XamlLoadPermission.AllowedAccess" /> ボックスの一覧です。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="requestedAccess" />内のアイテムとして存在する、 <see cref="P:System.Xaml.Permissions.XamlLoadPermission.AllowedAccess" /> 、現在のリスト<see cref="T:System.Xaml.Permissions.XamlLoadPermission" />です。 それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="requestedAccess" /> が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Intersect">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Intersect (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Intersect(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.Permissions.XamlLoadPermission.Intersect(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">A<see cref="T:System.Xaml.Permissions.XamlLoadPermission" />現在と交差する<see cref="T:System.Xaml.Permissions.XamlLoadPermission" />です。 指定できます<see langword="null" />です。</param>
+        <summary>作成して返します、 <see cref="T:System.Xaml.Permissions.XamlLoadPermission" /> 、現在の積集合は<see cref="T:System.Xaml.Permissions.XamlLoadPermission" />と、指定した権限です。</summary>
+        <returns>現在の積集合を表す新しいアクセス許可<see cref="T:System.Xaml.Permissions.XamlLoadPermission" />と、指定した<see cref="T:System.Xaml.Permissions.XamlLoadPermission" />です。 この新しいアクセス許可は<see langword="null" />積集合が空の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Union、intersect、およびサブセット ロジック<xref:System.Xaml.Permissions.XamlLoadPermission.IsUnrestricted%2A>が最初に確認し、そのチェックのみに基づいて結果を返す場合があります。 次に、<xref:System.Xaml.Permissions.XamlLoadPermission.AllowedAccess%2A>がオンになっています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="target" /><see langword="null" />かではありません、<see cref="T:System.Xaml.Permissions.XamlLoadPermission" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSubsetOf">
+      <MemberSignature Language="C#" Value="public override bool IsSubsetOf (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsSubsetOf(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.Permissions.XamlLoadPermission.IsSubsetOf(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">サブセット リレーションシップをテストするアクセス許可。 指定できます<see langword="null" />です。</param>
+        <summary>決定するかどうか、現在<see cref="T:System.Xaml.Permissions.XamlLoadPermission" />指定のアクセス許可のサブセットです。</summary>
+        <returns>
+          <see langword="true" />場合、現在<see cref="T:System.Xaml.Permissions.XamlLoadPermission" />指定のアクセス許可のサブセットである、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Union、intersect、およびサブセット ロジック<xref:System.Xaml.Permissions.XamlLoadPermission.IsUnrestricted%2A>が最初に確認し、そのチェックのみに基づいて結果を返す場合があります。 次に、<xref:System.Xaml.Permissions.XamlLoadPermission.AllowedAccess%2A>がオンになっています。  
+  
+ 場合`target`は`null`と現在<xref:System.Xaml.Permissions.XamlLoadPermission>は両方とも<xref:System.Xaml.Permissions.XamlLoadPermission.IsUnrestricted%2A>`false`あり、空<xref:System.Xaml.Permissions.XamlLoadPermission.AllowedAccess%2A>一覧で、このメソッドが戻る`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="target" /><see langword="null" />かではありません、<see cref="T:System.Xaml.Permissions.XamlLoadPermission" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUnrestricted">
+      <MemberSignature Language="C#" Value="public bool IsUnrestricted ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsUnrestricted() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.Permissions.XamlLoadPermission.IsUnrestricted" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返すかどうかこの<see cref="T:System.Xaml.Permissions.XamlLoadPermission" />無制限のアクセス許可を表します。</summary>
+        <returns>
+          <see langword="true" />この場合<see cref="T:System.Xaml.Permissions.XamlLoadPermission" />無制限のアクセス許可を表します。 <see langword="false" />この場合<see cref="T:System.Xaml.Permissions.XamlLoadPermission" />特定のアクセス レベルの制限事項が、 <see cref="P:System.Xaml.Permissions.XamlLoadPermission.AllowedAccess" />、またはアクセス許可がありません。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToXml">
+      <MemberSignature Language="C#" Value="public override System.Security.SecurityElement ToXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.SecurityElement ToXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.Permissions.XamlLoadPermission.ToXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.SecurityElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この XML エンコードを作成<see cref="T:System.Xaml.Permissions.XamlLoadPermission" />と現在の状態。</summary>
+        <returns>この XML エンコーディング<see cref="T:System.Xaml.Permissions.XamlLoadPermission" />、状態情報を含むです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Union">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Union (System.Security.IPermission other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Union(class System.Security.IPermission other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.Permissions.XamlLoadPermission.Union(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="other">A<see cref="T:System.Xaml.Permissions.XamlLoadPermission" />現在とを組み合わせる<see cref="T:System.Xaml.Permissions.XamlLoadPermission" />です。 指定できます<see langword="null" />です。</param>
+        <summary>現在の和集合であるアクセス許可を作成<see cref="T:System.Xaml.Permissions.XamlLoadPermission" />と、指定した権限です。</summary>
+        <returns>新しい<see cref="T:System.Xaml.Permissions.XamlLoadPermission" />、現在の和集合を表す<see cref="T:System.Xaml.Permissions.XamlLoadPermission" />と、指定した<see cref="T:System.Xaml.Permissions.XamlLoadPermission" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Union、intersect、およびサブセット ロジック<xref:System.Xaml.Permissions.XamlLoadPermission.IsUnrestricted%2A>が最初に確認し、そのチェックのみに基づいて結果を返す場合があります。 次に、<xref:System.Xaml.Permissions.XamlLoadPermission.AllowedAccess%2A>がオンになっています。  
+  
+ 場合`other`は`null`、現在<xref:System.Xaml.Permissions.XamlLoadPermission>が返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="other" /><see langword="null" />かではありません、<see cref="T:System.Xaml.Permissions.XamlLoadPermission" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

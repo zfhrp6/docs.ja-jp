@@ -1,0 +1,584 @@
+<Type Name="ContainerVisual" FullName="System.Windows.Media.ContainerVisual">
+  <TypeSignature Language="C#" Value="public class ContainerVisual : System.Windows.Media.Visual" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ContainerVisual extends System.Windows.Media.Visual" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.ContainerVisual" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Visual</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Windows.Media.Visual" /> オブジェクトのコレクションを管理します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.ContainerVisual>クラスはコンテナーとしてのコレクションの使用は<xref:System.Windows.Media.Visual>オブジェクト。 <xref:System.Windows.Media.DrawingVisual>クラスから派生、<xref:System.Windows.Media.ContainerVisual>クラスになるよう、<xref:System.Windows.Media.DrawingVisual>クラスはビジュアル オブジェクトのコレクションを含めることもできます。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Media.ContainerVisual>という 2 つの親として使用されるオブジェクト<xref:System.Windows.Media.DrawingVisual>オブジェクト。 オブジェクトに追加される、<xref:System.Windows.Media.ContainerVisual>正しいの描画順序でレンダリングすることを確認する逆の z オーダー (下上から) でオブジェクトを追加する必要があります。 ビジュアル ツリーを正しく列挙するためには、例でのオーバーライドされた実装を提供、<xref:System.Windows.Media.ContainerVisual.GetVisualChild%2A>メソッドおよび<xref:System.Windows.Media.ContainerVisual.VisualChildrenCount%2A>プロパティです。  
+  
+ [!code-csharp[ContainerVisualHost#ContainerVisualHost01](~/samples/snippets/csharp/VS_Snippets_Wpf/ContainerVisualHost/CSharp/Window1.xaml.cs#containervisualhost01)]
+ [!code-vb[ContainerVisualHost#ContainerVisualHost01](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ContainerVisualHost/visualbasic/window1.xaml.vb#containervisualhost01)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContainerVisual ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.ContainerVisual.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.ContainerVisual" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、の新しいインスタンスを作成する方法を示します、<xref:System.Windows.Media.ContainerVisual>オブジェクト、および子ビジュアル オブジェクトを追加します。  
+  
+ [!code-csharp[ContainerVisualSnippets#ContainerVisualSnippet1](~/samples/snippets/csharp/VS_Snippets_Wpf/ContainerVisualSnippets/CSharp/Window1.xaml.cs#containervisualsnippet1)]
+ [!code-vb[ContainerVisualSnippets#ContainerVisualSnippet1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ContainerVisualSnippets/visualbasic/window1.xaml.vb#containervisualsnippet1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BitmapEffect">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Effects.BitmapEffect BitmapEffect { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Effects.BitmapEffect BitmapEffect" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.ContainerVisual.BitmapEffect" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("BitmapEffects are deprecated and no longer function.  Consider using Effects where appropriate instead.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Effects.BitmapEffect</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.Effects.BitmapEffect" />値を<see cref="T:System.Windows.Media.ContainerVisual" />です。</summary>
+        <value>このビジュアル オブジェクトのビットマップ効果。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BitmapEffectInput">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Effects.BitmapEffectInput BitmapEffectInput { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Effects.BitmapEffectInput BitmapEffectInput" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.ContainerVisual.BitmapEffectInput" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("BitmapEffects are deprecated and no longer function.  Consider using Effects where appropriate instead.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Effects.BitmapEffectInput</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.Effects.BitmapEffectInput" />値を<see cref="T:System.Windows.Media.ContainerVisual" />です。</summary>
+        <value>ビットマップ効果は、このビジュアル オブジェクトの値を入力します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CacheMode">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.CacheMode CacheMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.CacheMode CacheMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.ContainerVisual.CacheMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.CacheMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のキャッシュされた表現、<see cref="T:System.Windows.Media.ContainerVisual" />です。</summary>
+        <value>A<see cref="T:System.Windows.Media.CacheMode" />のキャッシュされた表現を保持する、<see cref="T:System.Windows.Media.ContainerVisual" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Windows.Media.ContainerVisual.CacheMode%2A>プロパティを表示するために時間がかかる場合がコンテンツのパフォーマンスを向上させる必要がある場合。 詳細については、「<xref:System.Windows.Media.BitmapCache>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Children">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.VisualCollection Children { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.VisualCollection Children" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.ContainerVisual.Children" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.VisualCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>子コレクションを取得、<see cref="T:System.Windows.Media.ContainerVisual" />です。</summary>
+        <value>A<see cref="T:System.Windows.Media.VisualCollection" />の子を格納している、<see cref="T:System.Windows.Media.ContainerVisual" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、取得する方法を示します、<xref:System.Windows.Media.VisualCollection>から、<xref:System.Windows.Media.ContainerVisual>オブジェクト。  
+  
+ [!code-csharp[ContainerVisualSnippets#ContainerVisualSnippet3](~/samples/snippets/csharp/VS_Snippets_Wpf/ContainerVisualSnippets/CSharp/Window1.xaml.cs#containervisualsnippet3)]
+ [!code-vb[ContainerVisualSnippets#ContainerVisualSnippet3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ContainerVisualSnippets/visualbasic/window1.xaml.vb#containervisualsnippet3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clip">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Geometry Clip { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Geometry Clip" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.ContainerVisual.Clip" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Geometry</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のクリッピング領域、<see cref="T:System.Windows.Media.ContainerVisual" />です。</summary>
+        <value><see cref="T:System.Windows.Media.Geometry" />クリッピング領域を定義します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentBounds">
+      <MemberSignature Language="C#" Value="public System.Windows.Rect ContentBounds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Rect ContentBounds" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.ContainerVisual.ContentBounds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>境界ボックスの内容を取得、<see cref="T:System.Windows.Media.ContainerVisual" />です。</summary>
+        <value>A<see cref="T:System.Windows.Rect" />境界ボックスを指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Media.ContainerVisual.DescendantBounds%2A>プロパティをすべてのコンテンツがすべての子孫の境界ボックスの和集合を返す、<xref:System.Windows.Media.ContainerVisual>オブジェクトが、オブジェクト自体ではありません。  
+  
+   
+  
+## Examples  
+ 次の例の外接する四角形を取得する方法を示しています、<xref:System.Windows.Media.ContainerVisual>オブジェクト。  
+  
+ [!code-csharp[ContainerVisualSnippets#ContainerVisualSnippet4](~/samples/snippets/csharp/VS_Snippets_Wpf/ContainerVisualSnippets/CSharp/Window1.xaml.cs#containervisualsnippet4)]
+ [!code-vb[ContainerVisualSnippets#ContainerVisualSnippet4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ContainerVisualSnippets/visualbasic/window1.xaml.vb#containervisualsnippet4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DescendantBounds">
+      <MemberSignature Language="C#" Value="public System.Windows.Rect DescendantBounds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Rect DescendantBounds" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.ContainerVisual.DescendantBounds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのコンテンツがすべての子孫の境界ボックスの和集合の取得、<see cref="T:System.Windows.Media.ContainerVisual" />の内容は含まれませんが、<see cref="T:System.Windows.Media.ContainerVisual" />です。</summary>
+        <value>A<see cref="T:System.Windows.Rect" />組み合わせの境界ボックスを指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得、<xref:System.Windows.Media.ContainerVisual.ContentBounds%2A>返される、キャッシュされた境界ボックスの四角形のプロパティを<xref:System.Windows.Media.ContainerVisual>自体です。  
+  
+   
+  
+## Examples  
+ 次の例の外接する四角形を取得する方法を示しています、<xref:System.Windows.Media.ContainerVisual>オブジェクトの子です。  
+  
+ [!code-csharp[ContainerVisualSnippets#ContainerVisualSnippet4](~/samples/snippets/csharp/VS_Snippets_Wpf/ContainerVisualSnippets/CSharp/Window1.xaml.cs#containervisualsnippet4)]
+ [!code-vb[ContainerVisualSnippets#ContainerVisualSnippet4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ContainerVisualSnippets/visualbasic/window1.xaml.vb#containervisualsnippet4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Effect">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Effects.Effect Effect { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Effects.Effect Effect" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.ContainerVisual.Effect" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Effects.Effect</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を適用するビットマップ効果、<see cref="T:System.Windows.Media.ContainerVisual" />です。</summary>
+        <value><see cref="T:System.Windows.Media.Effects.Effect" />を表すビットマップ効果。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetVisualChild">
+      <MemberSignature Language="C#" Value="protected override sealed System.Windows.Media.Visual GetVisualChild (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Media.Visual GetVisualChild(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.ContainerVisual.GetVisualChild(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Visual</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">子のインデックス値を表す 32 ビット符号付き整数<see cref="T:System.Windows.Media.Visual" />です。 値<c>インデックス</c>0 にする必要がありますと<see cref="P:System.Windows.Media.ContainerVisual.VisualChildrenCount" />- 1。</param>
+        <summary>指定した子を返します<see cref="T:System.Windows.Media.Visual" />親<see cref="T:System.Windows.Media.ContainerVisual" />です。</summary>
+        <returns>子<see cref="T:System.Windows.Media.Visual" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.Windows.Media.ContainerVisual>子はありません。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Media.ContainerVisual>という 2 つの親として使用されるオブジェクト<xref:System.Windows.Media.DrawingVisual>オブジェクト。 オブジェクトに追加される、<xref:System.Windows.Media.ContainerVisual>正しいの描画順序でレンダリングすることを確認する逆の z オーダー (下上から) でオブジェクトを追加する必要があります。 ビジュアル ツリーを正しく列挙するためには、例でのオーバーライドされた実装を提供、<xref:System.Windows.Media.ContainerVisual.GetVisualChild%2A>メソッドおよび<xref:System.Windows.Media.ContainerVisual.VisualChildrenCount%2A>プロパティです。  
+  
+ [!code-csharp[ContainerVisualHost#ContainerVisualHost01](~/samples/snippets/csharp/VS_Snippets_Wpf/ContainerVisualHost/CSharp/Window1.xaml.cs#containervisualhost01)]
+ [!code-vb[ContainerVisualHost#ContainerVisualHost01](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ContainerVisualHost/visualbasic/window1.xaml.vb#containervisualhost01)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>この呼び出し中に、ビジュアル ツリーを変更できません。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="HitTest">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.HitTestResult HitTest (System.Windows.Point point);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.HitTestResult HitTest(valuetype System.Windows.Point point) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.ContainerVisual.HitTest(System.Windows.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.HitTestResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Windows.Point" />
+      </Parameters>
+      <Docs>
+        <param name="point">ヒット テストするポイント値。</param>
+        <summary>指定して、ヒット テストの最上位のビジュアル オブジェクトを返します、<see cref="T:System.Windows.Point" />です。</summary>
+        <returns>ヒット テストの結果として返されたビジュアルの<see cref="T:System.Windows.Media.HitTestResult" />型です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.HitTestResult.VisualHit%2A>戻り値のプロパティを表す、<xref:System.Windows.Media.Visual>ヒットしたオブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例は、取得する方法を示します、<xref:System.Windows.Media.HitTestResult>からの戻り値、<xref:System.Windows.Media.ContainerVisual.HitTest%2A>メソッドです。  
+  
+ [!code-csharp[ContainerVisualSnippets#ContainerVisualSnippet2](~/samples/snippets/csharp/VS_Snippets_Wpf/ContainerVisualSnippets/CSharp/Window1.xaml.cs#containervisualsnippet2)]
+ [!code-vb[ContainerVisualSnippets#ContainerVisualSnippet2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ContainerVisualSnippets/visualbasic/window1.xaml.vb#containervisualsnippet2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HitTest">
+      <MemberSignature Language="C#" Value="public void HitTest (System.Windows.Media.HitTestFilterCallback filterCallback, System.Windows.Media.HitTestResultCallback resultCallback, System.Windows.Media.HitTestParameters hitTestParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void HitTest(class System.Windows.Media.HitTestFilterCallback filterCallback, class System.Windows.Media.HitTestResultCallback resultCallback, class System.Windows.Media.HitTestParameters hitTestParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.ContainerVisual.HitTest(System.Windows.Media.HitTestFilterCallback,System.Windows.Media.HitTestResultCallback,System.Windows.Media.HitTestParameters)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filterCallback" Type="System.Windows.Media.HitTestFilterCallback" />
+        <Parameter Name="resultCallback" Type="System.Windows.Media.HitTestResultCallback" />
+        <Parameter Name="hitTestParameters" Type="System.Windows.Media.HitTestParameters" />
+      </Parameters>
+      <Docs>
+        <param name="filterCallback">ヒット テストの結果で、ビジュアル ツリーの一部を処理する必要がない場合、その部分を無視できるようにするデリゲート。</param>
+        <param name="resultCallback">ヒット テスト情報の戻り値を制御するために使用されるデリゲート。</param>
+        <param name="hitTestParameters">ヒット テストの一連のパラメーターを定義します。</param>
+        <summary>ヒット テストを開始、<see cref="T:System.Windows.Media.ContainerVisual" />を使用して、<see cref="T:System.Windows.Media.HitTestFilterCallback" />と<see cref="T:System.Windows.Media.HitTestResultCallback" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `filterCallback`パラメーター null でもかまいません。 その場合は、これは無視されます。 場合`filterCallback`は`null`、呼び出す前に呼び出す`resultCallback`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Offset">
+      <MemberSignature Language="C#" Value="public System.Windows.Vector Offset { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Vector Offset" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.ContainerVisual.Offset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Vector</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のオフセット値、<see cref="T:System.Windows.Media.ContainerVisual" />参照点からです。</summary>
+        <value>A<see cref="T:System.Windows.Vector" />のオフセット値を表す、<see cref="T:System.Windows.Media.ContainerVisual" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Opacity">
+      <MemberSignature Language="C#" Value="public double Opacity { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Opacity" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.ContainerVisual.Opacity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の不透明度、<see cref="T:System.Windows.Media.ContainerVisual" />に基づきには、0 = 透明、1 = 非透過です。</summary>
+        <value>0 ~ 1 から完全に透過的に完全に不透明な範囲を指定する値。 0 の値が示す、<see cref="T:System.Windows.Media.ContainerVisual" />が完全に透明、1 の値が示す、<see cref="T:System.Windows.Media.ContainerVisual" />が完全に不透明です。 値 0.5 は 50% 不透明を示します、0.725 の値が 72.5% 不透明を示します。 0 未満の値は 0 として扱われ、1 より大きい値は 1 として扱われます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OpacityMask">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Brush OpacityMask { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Brush OpacityMask" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.ContainerVisual.OpacityMask" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の不透明度マスクを指定するブラシ、<see cref="T:System.Windows.Media.ContainerVisual" />です。</summary>
+        <value>型の値<see cref="T:System.Windows.Media.Brush" />の不透明度マスクの値を表す、<see cref="T:System.Windows.Media.ContainerVisual" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ブラシのアルファ チャネル値に基づいてビネットなどの効果を作成するのには、不透明マスクを使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parent">
+      <MemberSignature Language="C#" Value="public System.Windows.DependencyObject Parent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.DependencyObject Parent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.ContainerVisual.Parent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyObject</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>親を取得します<see cref="T:System.Windows.Media.Visual" />の<see cref="T:System.Windows.Media.ContainerVisual" />です。</summary>
+        <value>ビジュアルの親。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これとして返されます。 注<xref:System.Windows.DependencyObject>、生のオブジェクトではなくです。  
+  
+ このプロパティを返す可能性があります`null`切断されているツリーで、ウィンドウ レベルのツリーのルートに移動した場合またはします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Transform Transform { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Transform Transform" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.ContainerVisual.Transform" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Transform</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に適用される変換、<see cref="T:System.Windows.Media.ContainerVisual" />です。</summary>
+        <value>変換の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Transform>変換のさまざまな形式を統一する基本クラスです。 詳細については、「<xref:System.Windows.Media.Transform>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VisualChildrenCount">
+      <MemberSignature Language="C#" Value="protected override sealed int VisualChildrenCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 VisualChildrenCount" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.ContainerVisual.VisualChildrenCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>子の数を取得、<see cref="T:System.Windows.Media.ContainerVisual" />です。</summary>
+        <value>内の子の数、<see cref="T:System.Windows.Media.VisualCollection" />の<see cref="T:System.Windows.Media.ContainerVisual" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.Windows.Media.ContainerVisual>子はありません。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Media.ContainerVisual>という 2 つの親として使用されるオブジェクト<xref:System.Windows.Media.DrawingVisual>オブジェクト。 オブジェクトに追加される、<xref:System.Windows.Media.ContainerVisual>正しいの描画順序でレンダリングすることを確認する逆の z オーダー (下上から) でオブジェクトを追加する必要があります。 ビジュアル ツリーを正しく列挙するためには、例でのオーバーライドされた実装を提供、<xref:System.Windows.Media.ContainerVisual.GetVisualChild%2A>メソッドおよび<xref:System.Windows.Media.ContainerVisual.VisualChildrenCount%2A>プロパティです。  
+  
+ [!code-csharp[ContainerVisualHost#ContainerVisualHost01](~/samples/snippets/csharp/VS_Snippets_Wpf/ContainerVisualHost/CSharp/Window1.xaml.cs#containervisualhost01)]
+ [!code-vb[ContainerVisualHost#ContainerVisualHost01](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ContainerVisualHost/visualbasic/window1.xaml.vb#containervisualhost01)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生したクラス<see cref="T:System.Windows.Media.ContainerVisual" />実装する必要があります、 <see cref="P:System.Windows.Media.ContainerVisual.VisualChildrenCount" /> visual の子を列挙するプロパティです。 派生したプロパティは、子の数を返す必要があります、<see cref="T:System.Windows.Media.ContainerVisual" />です。  
+  
+ この呼び出し中に、ビジュアル ツリーを変更できません。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="XSnappingGuidelines">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.DoubleCollection XSnappingGuidelines { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.DoubleCollection XSnappingGuidelines" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.ContainerVisual.XSnappingGuidelines" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.DoubleCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の X (水平) ガイドライン、<see cref="T:System.Windows.Media.ContainerVisual" />です。</summary>
+        <value>水平ガイドライン。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ピクセル スナップは、プロセス オブジェクトのエッジがデバイスに固有のピクセル単位で表示できるようにのコンテンツのレイアウトは固定です。 [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] グラフィックス システムでは、デバイスに依存しない単位を使用して、解像度とデバイスの独立性を可能にします。 システムのされた各デバイスに依存しないピクセルが自動的に拡大縮小[!INCLUDE[TLA#tla_dpi](~/includes/tlasharptla-dpi-md.md)]設定します。 これにより、異なる [!INCLUDE[TLA2#tla_dpi](~/includes/tla2sharptla-dpi-md.md)] 設定に対して [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] アプリケーションに適切なスケーリングを提供し、アプリケーションを自動的に [!INCLUDE[TLA2#tla_dpi](~/includes/tla2sharptla-dpi-md.md)] 対応にします。  
+  
+ ただし、この[!INCLUDE[TLA2#tla_dpi](~/includes/tla2sharptla-dpi-md.md)]の独立性がアンチ エイリアス処理のための不規則なエッジ表示を作成できます。 これらの成果物がぼやけていたり、か「ソフト」のエッジとしても表示は、エッジの場所がデバイス ピクセルの間ではなく、デバイスのピクセルの中央にあるときに発生します。 この問題に対処[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]ぼかしアンチ エイリアス処理によって生成されるを排除すること""デバイス ピクセルにスナップ ピクセル スナップを使用するビジュアル ツリー内のオブジェクトの端の方法を提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="YSnappingGuidelines">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.DoubleCollection YSnappingGuidelines { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.DoubleCollection YSnappingGuidelines" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.ContainerVisual.YSnappingGuidelines" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.DoubleCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Y (垂直) ガイドラインの取得または設定、<see cref="T:System.Windows.Media.ContainerVisual" />です。</summary>
+        <value>垂直方向のガイドライン。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ピクセル スナップは、プロセス オブジェクトのエッジがデバイスに固有のピクセル単位で表示できるようにのコンテンツのレイアウトは固定です。 [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] グラフィックス システムでは、デバイスに依存しない単位を使用して、解像度とデバイスの独立性を可能にします。 システムのされた各デバイスに依存しないピクセルが自動的に拡大縮小[!INCLUDE[TLA#tla_dpi](~/includes/tlasharptla-dpi-md.md)]設定します。 これにより、異なる [!INCLUDE[TLA2#tla_dpi](~/includes/tla2sharptla-dpi-md.md)] 設定に対して [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] アプリケーションに適切なスケーリングを提供し、アプリケーションを自動的に [!INCLUDE[TLA2#tla_dpi](~/includes/tla2sharptla-dpi-md.md)] 対応にします。  
+  
+ ただし、この[!INCLUDE[TLA2#tla_dpi](~/includes/tla2sharptla-dpi-md.md)]の独立性がアンチ エイリアス処理のための不規則なエッジ表示を作成できます。 これらの成果物がぼやけていたり、か「ソフト」のエッジとしても表示は、エッジの場所がデバイス ピクセルの間ではなく、デバイスのピクセルの中央にあるときに発生します。 この問題に対処[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]ぼかしアンチ エイリアス処理によって生成されるを排除すること""デバイス ピクセルにスナップ ピクセル スナップを使用するビジュアル ツリー内のオブジェクトの端の方法を提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

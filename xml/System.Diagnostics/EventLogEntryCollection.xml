@@ -1,0 +1,265 @@
+<Type Name="EventLogEntryCollection" FullName="System.Diagnostics.EventLogEntryCollection">
+  <TypeSignature Language="C#" Value="public class EventLogEntryCollection : System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EventLogEntryCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.EventLogEntryCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary><see cref="T:System.Diagnostics.EventLogEntry" /> インスタンスのコレクションのサイズと列挙子を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Diagnostics.EventLogEntryCollection>クラスに関連付けられているエントリを読み取るときに、<xref:System.Diagnostics.EventLog>インスタンス。 <xref:System.Diagnostics.EventLog.Entries%2A>のプロパティ、<xref:System.Diagnostics.EventLog>クラスは、イベント ログ内のすべてのエントリのコレクション。  
+  
+ 新しいエントリは、既存のリストに追加されますが、ため、コレクションのステップ実行することができますを作成した後で作成されたエントリにアクセス、<xref:System.Diagnostics.EventLogEntryCollection>です。 ただし、全体の一覧を表示した後、新しいエントリでない更新します。  
+  
+   
+  
+## Examples  
+ 次の例では、イベント ログ情報を取得する方法、<xref:System.Diagnostics.EventLogEntryCollection>オブジェクト。  
+  
+ [!code-cpp[EventLogEntry_CopyTo#1](~/samples/snippets/cpp/VS_Snippets_CLR/EventLogEntry_CopyTo/CPP/eventlogentry_copyto.cpp#1)]
+ [!code-csharp[EventLogEntry_CopyTo#1](~/samples/snippets/csharp/VS_Snippets_CLR/EventLogEntry_CopyTo/CS/eventlogentry_copyto.cs#1)]
+ [!code-vb[EventLogEntry_CopyTo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/EventLogEntry_CopyTo/VB/eventlogentry_copyto.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Diagnostics.EventLogEntry[] eventLogEntries, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Diagnostics.EventLogEntry[] eventLogEntries, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLogEntryCollection.CopyTo(System.Diagnostics.EventLogEntry[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entries" Type="System.Diagnostics.EventLogEntry[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="eventLogEntries">To be added.</param>
+        <param name="index">配列内のコピーを開始する位置を示す、0 から始まるインデックスです。</param>
+        <summary>要素をコピー、<see cref="T:System.Diagnostics.EventLogEntryCollection" />の配列を<see cref="T:System.Diagnostics.EventLogEntry" />インスタンス、特定の配列インデックスを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいエントリは、既存のリストに追加されますが、ため、コレクションのステップ実行することができますを作成した後で作成されたエントリにアクセス、<xref:System.Diagnostics.EventLogEntryCollection>です。 配列<xref:System.Diagnostics.EventLogEntry>インスタンスは、インスタンス化時に固定します。 したがって、によって返される配列を使用して新しいエントリを読み込むことはできません、<xref:System.Diagnostics.EventLogEntryCollection.CopyTo%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Diagnostics.EventLogEntry>配列と使用、<xref:System.Diagnostics.EventLogEntryCollection.CopyTo%2A>の内容をコピーする方法、<xref:System.Diagnostics.EventLogEntryCollection>にします。  
+  
+ [!code-csharp[EventLogEntry_CopyTo#2](~/samples/snippets/csharp/VS_Snippets_CLR/EventLogEntry_CopyTo/CS/eventlogentry_copyto.cs#2)]
+ [!code-vb[EventLogEntry_CopyTo#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/EventLogEntry_CopyTo/VB/eventlogentry_copyto.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogEntryCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベント ログにエントリの数を取得 (つまり、内の要素の数、<see cref="T:System.Diagnostics.EventLogEntry" />コレクション)。</summary>
+        <value>現在、イベント ログにエントリの数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.EventLogEntryCollection>ログ内のすべてのエントリの動的な一覧を表します。 したがって、<xref:System.Diagnostics.EventLogEntryCollection.Count%2A>の有効期間中に変更するプロパティ、<xref:System.Diagnostics.EventLogEntryCollection>を作成するインスタンス。 使用することをお勧め、<xref:System.Diagnostics.EventLogEntryCollection.Count%2A>変数にその値を代入するのではなく、直接プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Diagnostics.EventLogEntryCollection.Count%2A>プロパティを反復処理を<xref:System.Diagnostics.EventLogEntryCollection>オブジェクト。  
+  
+ [!code-cpp[EventLogEntry_Item#1](~/samples/snippets/cpp/VS_Snippets_CLR/EventLogEntry_Item/CPP/eventlogentry_item.cpp#1)]
+ [!code-csharp[EventLogEntry_Item#1](~/samples/snippets/csharp/VS_Snippets_CLR/EventLogEntry_Item/CS/eventlogentry_item.cs#1)]
+ [!code-vb[EventLogEntry_Item#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/EventLogEntry_Item/VB/eventlogentry_item.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLogEntryCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>に対する単純な反復処理をサポート、<see cref="T:System.Diagnostics.EventLogEntryCollection" />オブジェクト。</summary>
+        <returns>コレクションを反復処理に使用できるオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返されるオブジェクト、<xref:System.Diagnostics.EventLogEntryCollection.GetEnumerator%2A>メソッドのラッパーは、<xref:System.Diagnostics.EventLogEntryCollection>を実装するクラス、<xref:System.Collections.IEnumerator>列挙子。  
+  
+> [!NOTE]
+>  コレクションが変更された場合、イテレーション中に、イテレーションが終了します。 この可能性を回避するのを参照してください。、<xref:System.Diagnostics.EventLogEntryCollection.Item%2A>コレクションを反復処理する方法のプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public virtual System.Diagnostics.EventLogEntry this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Diagnostics.EventLogEntry Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogEntryCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.EventLogEntry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">イベント ログ エントリに関連付けられた 0 から始まるインデックス。</param>
+        <summary>0 (ゼロ) から始まるインデックスに基づく、イベント ログにエントリを取得します。</summary>
+        <value>指定されている場所にあるイベント ログ エントリ、<paramref name="index" />パラメーター。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.EventLogEntry>オブジェクトはイベント ログに到着した時間においてこの順序に従って、イベント ログ システムによってインデックスが作成されます。 使用して、<xref:System.Diagnostics.EventLogEntryCollection.Item%2A>プロパティ コレクション内のインデックスがわかっている特定のイベント ログ エントリを選択します。  
+  
+ 反復処理する、<xref:System.Diagnostics.EventLogEntryCollection>インスタンスの各手順<xref:System.Diagnostics.EventLogEntry>オブジェクトの順番にします。 コレクションは、動的とエントリの数は可能性があります、ループを入力すると変更できないされません。 したがって、使用する必要があります、`for each...next`ループの代わりに、`for(int i=0; i<count, i++)`ループをステップ実行に関連付けられているエントリを<xref:System.Diagnostics.EventLogEntryCollection>エントリのセット全体を検査するインスタンス。  
+  
+ 新しいエントリは、既存のリストに追加されますが、ため、コレクションのステップ実行することができますを作成した後で作成されたエントリにアクセス、<xref:System.Diagnostics.EventLogEntryCollection>です。  
+  
+   
+  
+## Examples  
+ 次の例では、内の項目の情報を表示する方法、<xref:System.Diagnostics.EventLogEntryCollection>オブジェクト。  
+  
+ [!code-cpp[EventLogEntry_Item#2](~/samples/snippets/cpp/VS_Snippets_CLR/EventLogEntry_Item/CPP/eventlogentry_item.cpp#2)]
+ [!code-csharp[EventLogEntry_Item#2](~/samples/snippets/csharp/VS_Snippets_CLR/EventLogEntry_Item/CS/eventlogentry_item.cs#2)]
+ [!code-vb[EventLogEntry_Item#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/EventLogEntry_Item/VB/eventlogentry_item.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.CopyTo">
+      <MemberSignature Language="C#" Value="void ICollection.CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.ICollection.CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLogEntryCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">1 次元<see cref="T:System.Array" />されるコレクションからコピーされた要素のコピー先です。 <see cref="T:System.Array" /> には、0 から始まるインデックス番号が必要です。</param>
+        <param name="index">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary>コレクションの要素を <see cref="T:System.Array" /> にコピーします。<see cref="T:System.Array" /> の特定のインデックスからコピーが開始されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Diagnostics.EventLogEntryCollection.CopyTo%2A>のメソッド、<xref:System.Diagnostics.EventLogEntryCollection>をコレクションのすべてまたは一部をコピーするクラス、<xref:System.Diagnostics.EventLogEntry>配列。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.IsSynchronized">
+      <MemberSignature Language="C#" Value="bool System.Collections.ICollection.IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.ICollection.IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogEntryCollection.System#Collections#ICollection#IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Diagnostics.EventLogEntryCollection" /> へのアクセスが同期されている (スレッド セーフである) かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="false" />場合は、コレクションへのアクセスでは、(スレッド セーフである) は同期されません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.EventLogEntryCollection>クラス、<xref:System.Diagnostics.EventLogEntryCollection.System%23Collections%23ICollection%23IsSynchronized%2A>メソッドは常に返します`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.SyncRoot">
+      <MemberSignature Language="C#" Value="object System.Collections.ICollection.SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.ICollection.SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogEntryCollection.System#Collections#ICollection#SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Diagnostics.EventLogEntryCollection" /> オブジェクトへのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value>コレクションへのアクセスを同期するために使用できるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.EventLogEntryCollection>クラス、<xref:System.Diagnostics.EventLogEntryCollection.System%23Collections%23ICollection%23SyncRoot%2A>現在を常に返します<xref:System.Diagnostics.EventLogEntryCollection>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,157 @@
+<Type Name="AttachedPropertyBrowsableForChildrenAttribute" FullName="System.Windows.AttachedPropertyBrowsableForChildrenAttribute">
+  <TypeSignature Language="C#" Value="public sealed class AttachedPropertyBrowsableForChildrenAttribute : System.Windows.AttachedPropertyBrowsableAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit AttachedPropertyBrowsableForChildrenAttribute extends System.Windows.AttachedPropertyBrowsableAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.AttachedPropertyBrowsableForChildrenAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.AttachedPropertyBrowsableAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method, AllowMultiple=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>添付プロパティが、論理ツリー内の子要素を拡張するブラウズ可能なスコープを持つことを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 用語の意味`browsable`この説明で使用されている[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]の指定された説明に似ています<xref:System.ComponentModel.BrowsableAttribute>、添付プロパティの参照可能な状態のプロパティの情報に特に関連するが、[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]添付プロパティは、主にあるため、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]概念です。  
+  
+ ときにこの[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]、添付プロパティの get アクセサーに適用されるこの[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]添付プロパティの所有者がその他の要素の親要素である場合、添付プロパティが参照できることを指定します。  
+  
+ によって解釈されるとき、デザイナー、記述子の情報では、タイプ、デザイナーは、論理ツリー内のすべての子要素に参照可能なプロパティとしてこのプロパティを追加する必要があります、これを持つ親要素に基づく[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]適用します。  
+  
+ 一般に、参照できる状態には、機能が似ています。 たとえば、<xref:System.Windows.Controls.Canvas.Left%2A?displayProperty=nameWithType>要素の子要素で参照可能な指定は、<xref:System.Windows.Controls.Canvas>ので、<xref:System.Windows.Controls.Canvas>を任意の値をチェックするコードが含まれています<xref:System.Windows.Controls.Canvas.Left%2A?displayProperty=nameWithType>子要素です。  
+  
+ これは、[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]親要素の位置に対して次の 2 つの種類のツリー検出モードをサポートしています: 簡易モードでは、および詳細モード。 簡易モードでの適用されている既定のモード<xref:System.Windows.AttachedPropertyBrowsableForChildrenAttribute> [!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]、直接の親要素の参照可能である添付プロパティの順序でプロパティの所有者の種類である必要があります。 属性を適用することによって詳細モードが宣言されている<xref:System.Windows.AttachedPropertyBrowsableForChildrenAttribute.IncludeDescendants%2A>として`true`です。 詳細モードではより制限の少ない所有者の型は、論理ツリーの先祖方向に移動して、したがって添付プロパティはすべての子要素、いないだけ直接の子要素で参照できることのみが必要です。 詳細モードは、ここで論理ツリー内の中間要素を報告しない場合は true。 親要素と添付プロパティの使用法に対して適用されます。 暗黙の型のコレクション (たとえば、<xref:System.Windows.Controls.UIElementCollection>が暗黙には、<xref:System.Windows.Controls.Panel.Children%2A>の<xref:System.Windows.Controls.Panel>) 方法のための親要素として見なされませんこの[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]ツリー検出モードを宣言します。  
+  
+ これは、[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]添付プロパティの定義の get アクセサーでのみ適用する必要があります。 これは適用されません[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]set アクセサーにします。 設定操作の参照可能にすることは直感的に[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]子要素が存在して、実際の動作を制御する親要素の get アクセサーの特性がします。  
+  
+ 添付プロパティが子要素で参照できるかどうかは、絶対的な保証添付プロパティの値がなんらかの方法で、親要素によって実際に処理されることではありません。 また、<xref:System.Windows.AttachedPropertyBrowsableForChildrenAttribute.IncludeDescendants%2A>値されません、絶対または保証されている処理スコープは直接の親要素を拡張しません。 このすべては、特定の実装です。 ただし、この[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]参照できる状態は、使用状況情報と添付プロパティの機能の情報を報告するための最適の使用可能な機構をレポートします。 したがって、通常と見なすことできます添付プロパティの参照可能な状態が子要素で添付プロパティの値の処理や、アプリケーション コードで関連する親要素によって解釈される方法の動作に似ています。  
+  
+ 添付プロパティの宣言の概要については、次を参照してください。[添付プロパティの概要](~/docs/framework/wpf/advanced/attached-properties-overview.md)です。  
+  
+<a name="xamlTextUsage_AttachedPropertyBrowsableForChildrenAttribute"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ この型のメンバーは、通常では使用されない[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AttachedPropertyBrowsableForChildrenAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.AttachedPropertyBrowsableForChildrenAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.AttachedPropertyBrowsableForChildrenAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の<xref:System.Windows.AttachedPropertyBrowsableForChildrenAttribute.IncludeDescendants%2A>は`false`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.AttachedPropertyBrowsableForChildrenAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj"><see cref="T:System.Windows.AttachedPropertyBrowsableForChildrenAttribute" />現在と比較する<see cref="T:System.Windows.AttachedPropertyBrowsableForChildrenAttribute" />です。</param>
+        <summary>決定するかどうか、現在<see cref="T:System.Windows.AttachedPropertyBrowsableForChildrenAttribute" />[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]が指定したオブジェクトと等しい。</summary>
+        <returns>
+          指定した <see langword="true" /> が現在の <see cref="T:System.Windows.AttachedPropertyBrowsableForChildrenAttribute" /> と等しい場合は <see cref="T:System.Windows.AttachedPropertyBrowsableForChildrenAttribute" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装は、これによって公開される 1 つの可能な設定可能な値の値の等価性をサポートしている[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]、<xref:System.Windows.AttachedPropertyBrowsableForChildrenAttribute.IncludeDescendants%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.AttachedPropertyBrowsableForChildrenAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このハッシュ コードを返します<see cref="T:System.Windows.AttachedPropertyBrowsableForChildrenAttribute" />[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]です。</summary>
+        <returns>32 ビットの符号なし整数値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装は、これによって公開される 1 つの可能な設定可能な値に基づく 2 つのハッシュ値をサポートしている[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]、<xref:System.Windows.AttachedPropertyBrowsableForChildrenAttribute.IncludeDescendants%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncludeDescendants">
+      <MemberSignature Language="C#" Value="public bool IncludeDescendants { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IncludeDescendants" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.AttachedPropertyBrowsableForChildrenAttribute.IncludeDescendants" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>添付プロパティの親要素の検出の詳細モードを使用するかどうかを示す値を取得またはここでこの[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]を適用します。</summary>
+        <value>
+          <see langword="true" />添付プロパティの添付プロパティを所有する親要素の論理ツリー内のすべての子要素の参照可能な場合です。 <see langword="false" />添付プロパティを所有している場合は親要素の直接の子要素の参照だけが添付プロパティ。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって定義される添付プロパティのほとんど[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]適用されている<xref:System.Windows.AttachedPropertyBrowsableForChildrenAttribute>の既定値は<xref:System.Windows.AttachedPropertyBrowsableForChildrenAttribute.IncludeDescendants%2A>として`false`です。  
+  
+<a name="xamlTextUsage_IncludeDescendants"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ この型のメンバーは、通常では使用されない[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,626 @@
+<Type Name="TemplateField" FullName="System.Web.UI.WebControls.TemplateField">
+  <TypeSignature Language="C#" Value="public class TemplateField : System.Web.UI.WebControls.DataControlField" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TemplateField extends System.Web.UI.WebControls.DataControlField" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.TemplateField" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.DataControlField</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データ バインドされたコントロール内にカスタム コンテンツを表示するフィールドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.TemplateField>クラスは、データ バインドされたコントロールによって使用 (など<xref:System.Web.UI.WebControls.GridView>と<xref:System.Web.UI.WebControls.DetailsView>) に表示される各レコードのカスタム コンテンツを表示します。 によって提供されていない定義済みのデータのいずれかのコントロール フィールドをデータ バインド コントロールの内容を表示する必要がある場合 (など<xref:System.Web.UI.WebControls.BoundField>) を使用して、<xref:System.Web.UI.WebControls.TemplateField>カスタム ユーザー インターフェイス (UI) を作成するクラス。 <xref:System.Web.UI.WebControls.TemplateField>が使用されているデータ バインド コントロールに応じて異なる方法でオブジェクトが表示されます。 たとえば、<xref:System.Web.UI.WebControls.GridView>表示を制御、<xref:System.Web.UI.WebControls.TemplateField>を列としてオブジェクトおよび<xref:System.Web.UI.WebControls.DetailsView>コントロールは行として表示します。  
+  
+ さまざまな部分用のカスタム テンプレートを定義することができます、<xref:System.Web.UI.WebControls.TemplateField>オブジェクトの次の表に、テンプレートを使用します。  
+  
+|テンプレート|説明|  
+|--------------|-----------------|  
+|<xref:System.Web.UI.WebControls.TemplateField.AlternatingItemTemplate%2A>|内の項目に交互に表示する内容を指定します、<xref:System.Web.UI.WebControls.TemplateField>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.TemplateField.EditItemTemplate%2A>|アイテムを編集モードで表示するコンテンツを指定します、<xref:System.Web.UI.WebControls.TemplateField>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.TemplateField.FooterTemplate%2A>|フッター セクションに表示する内容を指定します、<xref:System.Web.UI.WebControls.TemplateField>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.TemplateField.HeaderTemplate%2A>|ヘッダー セクションに表示する内容を指定します、<xref:System.Web.UI.WebControls.TemplateField>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.TemplateField.InsertItemTemplate%2A>|アイテムを挿入モードで表示するコンテンツを指定します、<xref:System.Web.UI.WebControls.TemplateField>オブジェクト。 このテンプレートでのみサポート、<xref:System.Web.UI.WebControls.DetailsView>コントロール。|  
+|<xref:System.Web.UI.WebControls.TemplateField.ItemTemplate%2A>|内の項目を表示するコンテンツを指定します、<xref:System.Web.UI.WebControls.TemplateField>オブジェクト。|  
+  
+ 非表示にすることができます、<xref:System.Web.UI.WebControls.TemplateField>を設定してデータ バインド コントロール内のオブジェクト、<xref:System.Web.UI.WebControls.DataControlField.Visible%2A>プロパティを`false`です。  
+  
+ 代わりに、カスタムの定義に<xref:System.Web.UI.WebControls.TemplateField.HeaderTemplate%2A>または<xref:System.Web.UI.WebControls.TemplateField.FooterTemplate%2A>テンプレートのヘッダーとフッター セクションをカスタマイズすることができます、<xref:System.Web.UI.WebControls.TemplateField>オブジェクトの他のプロパティを設定して、<xref:System.Web.UI.WebControls.TemplateField>オブジェクト。 ヘッダーまたはフッター セクションで、キャプションを表示するには、設定、<xref:System.Web.UI.WebControls.DataControlField.HeaderText%2A>または<xref:System.Web.UI.WebControls.DataControlField.FooterText%2A>プロパティ、それぞれします。 設定して、イメージを表示するテキストを表示する、ヘッダー セクションに、代わりに、<xref:System.Web.UI.WebControls.DataControlField.HeaderImageUrl%2A>プロパティです。 ヘッダー セクションを非表示にすることができます、<xref:System.Web.UI.WebControls.TemplateField>オブジェクトを設定して、<xref:System.Web.UI.WebControls.DataControlField.ShowHeader%2A>プロパティを`false`です。  
+  
+> [!NOTE]
+>  一部のデータ バインド コントロール (など、<xref:System.Web.UI.WebControls.GridView>コントロール) を表示またはコントロールのすべてのヘッダー セクションだけを非表示にできます。 これらのデータ バインド コントロールをサポートしていない、<xref:System.Web.UI.WebControls.DataControlField.ShowHeader%2A>個々 のバインドされたフィールドのプロパティです。 またはのヘッダー セクション全体、データ バインド コントロールを非表示に使用、コントロールの`ShowHeader`プロパティ (使用可能な場合)。  
+  
+ 外観をカスタマイズできる、<xref:System.Web.UI.WebControls.TemplateField>オブジェクト (フォントの色や背景色、)、フィールドの各部分のスタイル プロパティを設定します。 次の表は、異なるスタイル プロパティを一覧表示します。  
+  
+|スタイル プロパティ|説明|  
+|--------------------|-----------------|  
+|<xref:System.Web.UI.WebControls.DataControlField.ControlStyle%2A>|子の Web サーバー コントロールのスタイルの設定、<xref:System.Web.UI.WebControls.TemplateField>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.DataControlField.FooterStyle%2A>|フッター セクションのスタイルの設定、<xref:System.Web.UI.WebControls.TemplateField>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.DataControlField.HeaderStyle%2A>|ヘッダー セクションのスタイルの設定、<xref:System.Web.UI.WebControls.TemplateField>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.DataControlField.ItemStyle%2A>|データ項目のスタイルの設定、<xref:System.Web.UI.WebControls.TemplateField>オブジェクト。|  
+  
+   
+  
+## Examples  
+ 次のコード例は、カスタムを作成する方法を示します<xref:System.Web.UI.WebControls.TemplateField>を同じセルで 2 つのフィールドを表示するオブジェクト。 姓と名の最後のフィールドと同じに結合されます<xref:System.Web.UI.WebControls.TemplateField>オブジェクト。  
+  
+ [!code-aspx-csharp[TemplateField#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TemplateField/CS/templatefieldcs.aspx#1)]
+ [!code-aspx-vb[TemplateField#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TemplateField/VB/templatefieldvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TemplateField ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TemplateField.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.TemplateField" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.TemplateField>クラスです。 このコンス トラクターは、フィールドを動的に作成されたデータ バインド コントロールに追加する際に通常使用されます。  
+  
+ 動的に追加する、<xref:System.Web.UI.WebControls.TemplateField>データ バインド コントロールにオブジェクトを新規作成<xref:System.Web.UI.WebControls.TemplateField>オブジェクト、適切なテンプレートの定義、およびデータ バインド コントロールのフィールド コレクションに追加します。 たとえば、使用している場合、<xref:System.Web.UI.WebControls.GridView>コントロールを追加、<xref:System.Web.UI.WebControls.TemplateField>オブジェクトを<xref:System.Web.UI.WebControls.GridView.Columns%2A>コレクション。  
+  
+> [!NOTE]
+>  フィールドは、データ バインド コントロールを動的に追加することができます、強くお勧めことフィールド静的に宣言されていると、表示するか非表示に必要に応じて。 すべてのフィールドを静的に宣言すると、親データ バインド コントロールのビュー ステートのサイズが縮小します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、コンス トラクターを使用して動的に追加する方法を示します、<xref:System.Web.UI.WebControls.TemplateField>フィールド列を<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[TemplateFieldCtor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TemplateFieldCtor/CS/templatefieldctorcs.aspx#1)]
+ [!code-aspx-vb[TemplateFieldCtor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TemplateFieldCtor/VB/templatefieldctorvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlternatingItemTemplate">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.ITemplate AlternatingItemTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ITemplate AlternatingItemTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TemplateField.AlternatingItemTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.TemplateContainer(typeof(System.Web.UI.IDataItemContainer), System.ComponentModel.BindingDirection.TwoWay)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定テンプレート内のアイテムが交互に表示する、<see cref="T:System.Web.UI.WebControls.TemplateField" />オブジェクト。</summary>
+        <value>A<see cref="T:System.Web.UI.ITemplate" />に実装されているオブジェクトにアイテムが交互に表示用にテンプレートを含む、<see cref="T:System.Web.UI.WebControls.TemplateField" />です。 既定値は <see langword="null" /> です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TemplateField.AlternatingItemTemplate%2A>で交互の項目に表示されるカスタム コンテンツを指定するプロパティ、<xref:System.Web.UI.WebControls.TemplateField>オブジェクト。 交互の項目がどのように表示されるかを指定するテンプレートを作成するには、コンテンツを定義します。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.TemplateField.AlternatingItemTemplate%2A>プロパティは通常使用と組み合わせて、<xref:System.Web.UI.WebControls.TemplateField.ItemTemplate%2A>プロパティをデータ バインド コントロールの他のすべての項目について異なる外観を作成します。  
+  
+ 指定するテンプレートを最初に開始タグと終了`<AlternatingItemTemplate>`タグ、開始タグと終了タグの間、`<TemplateField>`要素。 次に、開始タグと終了の間のカスタム コンテンツを追加`<AlternatingItemTemplate>`タグ。 コンテンツには、簡単なプレーン テキストまたはより複雑な (その他のコントロールへの埋め込み、テンプレートなど) を指定できます。  
+  
+ テンプレートで定義されているコントロールをプログラムでアクセスするには、まず特定する<xref:System.Web.UI.WebControls.TableCell>データ バインド コントロール内のオブジェクトには、コントロールが含まれています。 次に、使用、<xref:System.Web.UI.Control.Controls%2A>のコレクション、<xref:System.Web.UI.WebControls.TableCell>コントロールにアクセスするオブジェクト。 使用することも、<xref:System.Web.UI.Control.FindControl%2A>のメソッド、<xref:System.Web.UI.WebControls.TableCell>コントロールがある場合に、コントロールを検索するオブジェクト、<xref:System.Web.UI.Control.ID%2A>指定されたプロパティ。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TemplateField.AlternatingItemTemplate%2A>の項目を代替用のカスタム テンプレートを作成するプロパティ、<xref:System.Web.UI.WebControls.TemplateField>のフィールドの列、<xref:System.Web.UI.WebControls.GridView>コントロール。 テンプレートで指定したテンプレートのバリエーションである、<xref:System.Web.UI.WebControls.TemplateField.ItemTemplate%2A>プロパティ、セルの反対側にイメージが表示されます。  
+  
+ [!code-aspx-csharp[TemplateFieldAlternatingItemTemplate#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TemplateFieldAlternatingItemTemplate/CS/templatefieldalternatingitemtemplatecs.aspx#1)]
+ [!code-aspx-vb[TemplateFieldAlternatingItemTemplate#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TemplateFieldAlternatingItemTemplate/VB/templatefieldalternatingitemtemplatevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertEmptyStringToNull">
+      <MemberSignature Language="C#" Value="public virtual bool ConvertEmptyStringToNull { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ConvertEmptyStringToNull" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TemplateField.ConvertEmptyStringToNull" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか値を<see cref="T:System.Web.UI.WebControls.TemplateField" />オブジェクトをバインドする必要がありますに変換する<see langword="null" />である場合<see cref="F:System.String.Empty" />です。</summary>
+        <value>
+          <see langword="true" />場合、値を<see cref="T:System.Web.UI.WebControls.TemplateField" />に変換される場合にバインドされた<see langword="null" />である場合<see cref="F:System.String.Empty" />、それ以外の<see langword="false" />します。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、テンプレートで行われた双方向のデータ バインド ステートメントに適用されます。 双方向のバインドされたテンプレートと、更新または挿入操作のデータ ソースに値を渡す前に値を抽出、変換が行われます。  
+  
+ たとえば、ユーザーが、空の文字列を入力 ("") のフィールドの値を更新またはレコードを挿入するとき。 使用して、<xref:System.Web.UI.WebControls.TemplateField.ConvertEmptyStringToNull%2A>プロパティを空の文字列値を自動的に変換するかどうかを指定する`null`データ ソースのデータ フィールドが更新された日時。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyProperties">
+      <MemberSignature Language="C#" Value="protected override void CopyProperties (System.Web.UI.WebControls.DataControlField newField);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CopyProperties(class System.Web.UI.WebControls.DataControlField newField) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TemplateField.CopyProperties(System.Web.UI.WebControls.DataControlField)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newField" Type="System.Web.UI.WebControls.DataControlField" />
+      </Parameters>
+      <Docs>
+        <param name="newField"><see cref="T:System.Web.UI.WebControls.DataControlField" /> 、現在のプロパティをコピーする<see cref="T:System.Web.UI.WebControls.TemplateField" />にします。</param>
+        <summary>現在のプロパティをコピー <see cref="T:System.Web.UI.WebControls.TemplateField" />-を指定したオブジェクトを派生<see cref="T:System.Web.UI.WebControls.DataControlField" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.TemplateField.CopyProperties%2A>メソッドは、現在のプロパティをコピーするために使用するヘルパー メソッド<xref:System.Web.UI.WebControls.TemplateField>-派生オブジェクトを<xref:System.Web.UI.WebControls.DataControlField>メソッドによって作成されたオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Web.UI.WebControls.TemplateField.CopyProperties(System.Web.UI.WebControls.DataControlField)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Web.UI.WebControls.DataControlField.CopyProperties(System.Web.UI.WebControls.DataControlField)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateField">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.WebControls.DataControlField CreateField ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.WebControls.DataControlField CreateField() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TemplateField.CreateField" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataControlField</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しい <see cref="T:System.Web.UI.WebControls.TemplateField" /> オブジェクトを作成します。</summary>
+        <returns>新しいは常に返します<see cref="T:System.Web.UI.WebControls.TemplateField" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.TemplateField.CreateField%2A>メソッドは、基本メソッドを返します、<xref:System.Web.UI.WebControls.TemplateField>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Web.UI.WebControls.TemplateField.CreateField" />派生クラスである、型の新しいインスタンスを作成し、基本メソッドを呼び出さないことを確認します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="EditItemTemplate">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.ITemplate EditItemTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ITemplate EditItemTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TemplateField.EditItemTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.TemplateContainer(typeof(System.Web.UI.IDataItemContainer), System.ComponentModel.BindingDirection.TwoWay)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の編集モードでの項目を表示するためのテンプレート、<see cref="T:System.Web.UI.WebControls.TemplateField" />オブジェクト。</summary>
+        <value>A <see cref="T:System.Web.UI.ITemplate" />-編集モードでの項目を表示するためのテンプレートを含むオブジェクトを実装する、<see cref="T:System.Web.UI.WebControls.TemplateField" />です。 既定値は <see langword="null" /> です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TemplateField.EditItemTemplate%2A>プロパティを編集モードであるアイテムに表示されるカスタム コンテンツを指定する、<xref:System.Web.UI.WebControls.TemplateField>オブジェクト。 編集モードで項目を表示する方法を指定するテンプレートを作成するには、コンテンツを定義します。 <xref:System.Web.UI.WebControls.TemplateField.EditItemTemplate%2A>プロパティには、通常、データ ソース内の値を変更するユーザーの入力コントロールが含まれます。  
+  
+ 指定するテンプレートを最初に開始タグと終了`<EditItemTemplate>`タグ、開始タグと終了タグの間、`<TemplateField>`要素。 次に、開始タグと終了の間のカスタム コンテンツを追加`<EditItemTemplate>`タグ。 コンテンツには、簡単なプレーン テキストまたはより複雑な (その他のコントロールへの埋め込み、テンプレートなど) を指定できます。  
+  
+ テンプレートで定義されているコントロールをプログラムでアクセスするには、まず特定する<xref:System.Web.UI.WebControls.TableCell>データ バインド コントロール内のオブジェクトには、コントロールが含まれています。 次に、使用、<xref:System.Web.UI.Control.Controls%2A>のコレクション、<xref:System.Web.UI.WebControls.TableCell>コントロールにアクセスするオブジェクト。 使用することも、<xref:System.Web.UI.Control.FindControl%2A>のメソッド、<xref:System.Web.UI.WebControls.TableCell>コントロールがある場合に、コントロールを検索するオブジェクト、<xref:System.Web.UI.Control.ID%2A>指定されたプロパティ。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TemplateField.EditItemTemplate%2A>編集モードで項目用のカスタム テンプレートを作成するプロパティ、<xref:System.Web.UI.WebControls.TemplateField>のフィールドの列、<xref:System.Web.UI.WebControls.GridView>コントロール。 テンプレートには、ユーザーが値フィールドを空のままにしたことを防ぐため検証サーバー コントロールが含まれています。  
+  
+ [!code-aspx-csharp[TemplateFieldEditItemTemplate#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TemplateFieldEditItemTemplate/CS/templatefieldedititemtemplatecs.aspx#1)]
+ [!code-aspx-vb[TemplateFieldEditItemTemplate#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TemplateFieldEditItemTemplate/VB/templatefieldedititemtemplatevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtractValuesFromCell">
+      <MemberSignature Language="C#" Value="public override void ExtractValuesFromCell (System.Collections.Specialized.IOrderedDictionary dictionary, System.Web.UI.WebControls.DataControlFieldCell cell, System.Web.UI.WebControls.DataControlRowState rowState, bool includeReadOnly);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ExtractValuesFromCell(class System.Collections.Specialized.IOrderedDictionary dictionary, class System.Web.UI.WebControls.DataControlFieldCell cell, valuetype System.Web.UI.WebControls.DataControlRowState rowState, bool includeReadOnly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TemplateField.ExtractValuesFromCell(System.Collections.Specialized.IOrderedDictionary,System.Web.UI.WebControls.DataControlFieldCell,System.Web.UI.WebControls.DataControlRowState,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dictionary" Type="System.Collections.Specialized.IOrderedDictionary" />
+        <Parameter Name="cell" Type="System.Web.UI.WebControls.DataControlFieldCell" />
+        <Parameter Name="rowState" Type="System.Web.UI.WebControls.DataControlRowState" />
+        <Parameter Name="includeReadOnly" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="dictionary"><see cref="T:System.Collections.Specialized.IOrderedDictionary" />。</param>
+        <param name="cell">A<see cref="T:System.Web.UI.WebControls.DataControlFieldCell" />のコントロールまたはテキストを格納している、<see cref="T:System.Web.UI.WebControls.TemplateField" />です。</param>
+        <param name="rowState"><see cref="T:System.Web.UI.WebControls.DataControlRowState" /> 値のいずれか。</param>
+        <param name="includeReadOnly">
+          <see langword="true" />読み取り専用フィールドの値が含まれることを示すために、<c>ディクショナリ</c>コレクションです。 それ以外の場合、<see langword="false" />です。</param>
+        <summary>1 つまたは複数の双方向のバインド ステートメントで指定されたフィールドのデータ コントロールの値が抽出 (<see langword="DataBind" />) 現在のテーブル セルからを指定した値を追加および<see cref="T:System.Collections.Specialized.IOrderedDictionary" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.TemplateField.ExtractValuesFromCell%2A>メソッドはから派生した型によって実装<xref:System.Web.UI.WebControls.DataControlField>など<xref:System.Web.UI.WebControls.TemplateField>です。 このメソッドは、update、insert、または削除操作のデータ ソースに渡されるディクショナリを設定するテンプレートの双方向データ バインドされたフィールドの値を抽出します。 フィールド/値のペアは、メソッドに渡されるディクショナリ コレクションに格納されます。 <xref:System.Web.UI.WebControls.TemplateField.ExtractValuesFromCell%2A>メソッドによって呼び出されます、`ExtractRowValues`データのメソッドなどのコントロール<xref:System.Web.UI.WebControls.DetailsView>と<xref:System.Web.UI.WebControls.GridView>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FooterTemplate">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.ITemplate FooterTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ITemplate FooterTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TemplateField.FooterTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.TemplateContainer(typeof(System.Web.UI.IDataItemContainer))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のフッター セクションを表示するため、テンプレート、<see cref="T:System.Web.UI.WebControls.TemplateField" />オブジェクト。</summary>
+        <value>A <see cref="T:System.Web.UI.ITemplate" />-のフッター セクションを表示するためのテンプレートが含まれるオブジェクトを実装する、<see cref="T:System.Web.UI.WebControls.TemplateField" />です。 既定値は <see langword="null" /> です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TemplateField.FooterTemplate%2A>のフッター セクションに表示されるカスタム コンテンツを指定するプロパティ、<xref:System.Web.UI.WebControls.TemplateField>オブジェクト。 フッター セクションがどのように表示されるかを指定するテンプレートを作成するには、コンテンツを定義します。  
+  
+ 指定するテンプレートを最初に開始タグと終了`<FooterTemplate>`タグ、開始タグと終了タグの間、`<TemplateField>`要素。 次に、開始タグと終了の間のカスタム コンテンツを追加`<FooterTemplate>`タグ。 コンテンツには、簡単なプレーン テキストまたはより複雑な (その他のコントロールへの埋め込み、テンプレートなど) を指定できます。  
+  
+ テンプレートで定義されているコントロールをプログラムでアクセスするには、まず特定する<xref:System.Web.UI.WebControls.TableCell>データ バインド コントロール内のオブジェクトには、コントロールが含まれています。 次に、使用、<xref:System.Web.UI.Control.Controls%2A>のコレクション、<xref:System.Web.UI.WebControls.TableCell>コントロールにアクセスするオブジェクト。 使用することも、<xref:System.Web.UI.Control.FindControl%2A>のメソッド、<xref:System.Web.UI.WebControls.TableCell>コントロールがある場合に、コントロールを検索するオブジェクト、<xref:System.Web.UI.Control.ID%2A>指定されたプロパティ。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TemplateField.FooterTemplate%2A>のフッター セクション用のカスタム テンプレートを作成するプロパティ、<xref:System.Web.UI.WebControls.TemplateField>でフィールドの列、<xref:System.Web.UI.WebControls.GridView>コントロール。 テンプレート内の値の合計を表示する、<xref:System.Web.UI.WebControls.TemplateField>フィールドの列です。  
+  
+ [!code-aspx-csharp[TemplateFieldFooterTemplate#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TemplateFieldFooterTemplate/CS/templatefieldfootertemplatecs.aspx#1)]
+ [!code-aspx-vb[TemplateFieldFooterTemplate#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TemplateFieldFooterTemplate/VB/templatefieldfootertemplatevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderTemplate">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.ITemplate HeaderTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ITemplate HeaderTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TemplateField.HeaderTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.TemplateContainer(typeof(System.Web.UI.IDataItemContainer))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のヘッダー セクションを表示するため、テンプレート、<see cref="T:System.Web.UI.WebControls.TemplateField" />オブジェクト。</summary>
+        <value>A <see cref="T:System.Web.UI.ITemplate" />-のヘッダー セクションを表示するためのテンプレートが含まれるオブジェクトを実装する、<see cref="T:System.Web.UI.WebControls.TemplateField" />データ バインド コントロールにします。 既定値は <see langword="null" /> です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TemplateField.HeaderTemplate%2A>のヘッダー セクションに表示されるカスタム コンテンツを指定するプロパティ、<xref:System.Web.UI.WebControls.TemplateField>オブジェクト。 ヘッダー セクションがどのように表示されるかを指定するテンプレートを作成するには、コンテンツを定義します。  
+  
+ 指定するテンプレートを最初に開始タグと終了`<HeaderTemplate>`タグ、開始タグと終了タグの間、`<TemplateField>`要素。 次に、開始タグと終了の間のカスタム コンテンツを追加`<HeaderTemplate>`タグ。 コンテンツには、簡単なプレーン テキストまたはより複雑な (その他のコントロールへの埋め込み、テンプレートなど) を指定できます。  
+  
+ テンプレートで定義されているコントロールをプログラムでアクセスするには、まず特定する<xref:System.Web.UI.WebControls.TableCell>データ バインド コントロール内のオブジェクトには、コントロールが含まれています。 次に、使用、<xref:System.Web.UI.Control.Controls%2A>のコレクション、<xref:System.Web.UI.WebControls.TableCell>コントロールにアクセスするオブジェクト。 使用することも、<xref:System.Web.UI.Control.FindControl%2A>のメソッド、<xref:System.Web.UI.WebControls.TableCell>コントロールがある場合に、コントロールを検索するオブジェクト、<xref:System.Web.UI.Control.ID%2A>指定されたプロパティ。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TemplateField.HeaderTemplate%2A>のヘッダー セクション用のカスタム テンプレートを作成するプロパティ、<xref:System.Web.UI.WebControls.TemplateField>でフィールドの列、<xref:System.Web.UI.WebControls.GridView>コントロール。 テンプレートは、ユーザーがまたはの行を非表示にできるチェック ボックスを表示、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[TemplateFieldHeaderTemplate#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TemplateFieldHeaderTemplate/CS/templatefieldheadertemplatecs.aspx#1)]
+ [!code-aspx-vb[TemplateFieldHeaderTemplate#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TemplateFieldHeaderTemplate/VB/templatefieldheadertemplatevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeCell">
+      <MemberSignature Language="C#" Value="public override void InitializeCell (System.Web.UI.WebControls.DataControlFieldCell cell, System.Web.UI.WebControls.DataControlCellType cellType, System.Web.UI.WebControls.DataControlRowState rowState, int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void InitializeCell(class System.Web.UI.WebControls.DataControlFieldCell cell, valuetype System.Web.UI.WebControls.DataControlCellType cellType, valuetype System.Web.UI.WebControls.DataControlRowState rowState, int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TemplateField.InitializeCell(System.Web.UI.WebControls.DataControlFieldCell,System.Web.UI.WebControls.DataControlCellType,System.Web.UI.WebControls.DataControlRowState,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cell" Type="System.Web.UI.WebControls.DataControlFieldCell" />
+        <Parameter Name="cellType" Type="System.Web.UI.WebControls.DataControlCellType" />
+        <Parameter Name="rowState" Type="System.Web.UI.WebControls.DataControlRowState" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="cell">A<see cref="T:System.Web.UI.WebControls.DataControlFieldCell" />のコントロールまたはテキストを格納している、<see cref="T:System.Web.UI.WebControls.DataControlField" />です。</param>
+        <param name="cellType"><see cref="T:System.Web.UI.WebControls.DataControlCellType" /> 値のいずれか。</param>
+        <param name="rowState">1 つ、<see cref="T:System.Web.UI.WebControls.DataControlRowState" />を含む行の状態を指定する値、<see cref="T:System.Web.UI.WebControls.DataControlFieldCell" />です。</param>
+        <param name="rowIndex">行のインデックスを<see cref="T:System.Web.UI.WebControls.DataControlFieldCell" />に含まれています。</param>
+        <summary>セルのコントロール コレクションにテキストやコントロールを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用するカスタム データ バインド コントロールを作成するときに、このメソッドを呼び出す<xref:System.Web.UI.WebControls.DataControlFieldCell>コントロールやデータを含むテーブル構造のセルを初期化するためにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertItemTemplate">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.ITemplate InsertItemTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ITemplate InsertItemTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TemplateField.InsertItemTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.TemplateContainer(typeof(System.Web.UI.IDataItemContainer), System.ComponentModel.BindingDirection.TwoWay)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に挿入モードでの項目を表示するためのテンプレート、<see cref="T:System.Web.UI.WebControls.TemplateField" />オブジェクト。</summary>
+        <value>A <see cref="T:System.Web.UI.ITemplate" />-挿入モードでの項目を表示するためのテンプレートを含むオブジェクトを実装する、<see cref="T:System.Web.UI.WebControls.TemplateField" />です。 既定値は <see langword="null" /> です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TemplateField.InsertItemTemplate%2A>アイテムを挿入モードで表示されるカスタム コンテンツを指定するプロパティ、<xref:System.Web.UI.WebControls.TemplateField>オブジェクト。 挿入モードで項目を表示する方法を指定するテンプレートを作成するには、コンテンツを定義します。  
+  
+ 指定するテンプレートを最初に開始タグと終了`<InsertItemTemplate>`タグ、開始タグと終了タグの間、`<TemplateField>`要素。 次に、開始タグと終了の間のカスタム コンテンツを追加`<InsertItemTemplate>`タグ。 コンテンツには、簡単なプレーン テキストまたはより複雑な (その他のコントロールへの埋め込み、テンプレートなど) を指定できます。  
+  
+ テンプレートで定義されているコントロールをプログラムでアクセスするには、まず特定する<xref:System.Web.UI.WebControls.TableCell>データ バインド コントロール内のオブジェクトには、コントロールが含まれています。 次に、使用、<xref:System.Web.UI.Control.Controls%2A>のコレクション、<xref:System.Web.UI.WebControls.TableCell>コントロールにアクセスするオブジェクト。 使用することも、<xref:System.Web.UI.Control.FindControl%2A>のメソッド、<xref:System.Web.UI.WebControls.TableCell>コントロールがある場合に、コントロールを検索するオブジェクト、<xref:System.Web.UI.Control.ID%2A>指定されたプロパティ。  
+  
+> [!NOTE]
+>  など、レコードを挿入できるようにするデータ バインド コントロールでのみこのテンプレートがサポートされているこのテンプレートをサポートしていないすべてのデータ バインド コントロール、<xref:System.Web.UI.WebControls.DetailsView>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TemplateField.InsertItemTemplate%2A>挿入モードで項目用のカスタム テンプレートを作成するプロパティ、<xref:System.Web.UI.WebControls.TemplateField>フィールド 行に、<xref:System.Web.UI.WebControls.DetailsView>コントロール。 テンプレートが表示されます、<xref:System.Web.UI.WebControls.DropDownList>コントロールを定義済み一覧から値を選択することができます。  
+  
+ [!code-aspx-csharp[TemplateFieldInsertItemTemplate#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TemplateFieldInsertItemTemplate/CS/templatefieldinsertitemtemplatecs.aspx#1)]
+ [!code-aspx-vb[TemplateFieldInsertItemTemplate#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TemplateFieldInsertItemTemplate/VB/templatefieldinsertitemtemplatevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemTemplate">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.ITemplate ItemTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ITemplate ItemTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TemplateField.ItemTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.TemplateContainer(typeof(System.Web.UI.IDataItemContainer), System.ComponentModel.BindingDirection.TwoWay)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ バインド コントロール内の項目を表示するためのテンプレートを設定します。</summary>
+        <value>A <see cref="T:System.Web.UI.ITemplate" />-内の項目を表示するためのテンプレートが含まれるオブジェクトを実装する、<see cref="T:System.Web.UI.WebControls.TemplateField" />です。 既定値は <see langword="null" /> です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TemplateField.ItemTemplate%2A>内の項目に対して表示されるカスタム コンテンツを指定するプロパティ、<xref:System.Web.UI.WebControls.TemplateField>オブジェクト。 アイテムがどのように表示されるかを指定するテンプレートを作成するには、コンテンツを定義します。  
+  
+> [!NOTE]
+>  必要に応じて定義することができます、<xref:System.Web.UI.WebControls.TemplateField.AlternatingItemTemplate%2A>プロパティと組み合わせて、<xref:System.Web.UI.WebControls.TemplateField.ItemTemplate%2A>プロパティをデータ バインド コントロールの他のすべての項目について異なる外観を作成します。  
+  
+ 指定するテンプレートを最初に開始タグと終了`<ItemTemplate>`タグ、開始タグと終了タグの間、`<TemplateField>`要素。 次に、開始タグと終了の間のカスタム コンテンツを追加`<ItemTemplate>`タグ。 コンテンツには、簡単なプレーン テキストまたはより複雑な (その他のコントロールへの埋め込み、テンプレートなど) を指定できます。  
+  
+ テンプレートで定義されているコントロールをプログラムでアクセスするには、まず特定する<xref:System.Web.UI.WebControls.TableCell>データ バインド コントロール内のオブジェクトには、コントロールが含まれています。 次に、使用、<xref:System.Web.UI.Control.Controls%2A>のコレクション、<xref:System.Web.UI.WebControls.TableCell>コントロールにアクセスするオブジェクト。 使用することも、<xref:System.Web.UI.Control.FindControl%2A>のメソッド、<xref:System.Web.UI.WebControls.TableCell>コントロールがある場合に、コントロールを検索するオブジェクト、<xref:System.Web.UI.Control.ID%2A>指定されたプロパティ。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TemplateField.ItemTemplate%2A>の項目にカスタム テンプレートを作成するプロパティ、<xref:System.Web.UI.WebControls.TemplateField>フィールドで、<xref:System.Web.UI.WebControls.GridView>コントロール。 テンプレートでフィールドの値が表示されます、<xref:System.Web.UI.WebControls.RadioButtonList>コントロール。  
+  
+ [!code-aspx-csharp[TemplateFieldItemTemplate#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TemplateFieldItemTemplate/CS/templatefielditemtemplatecs.aspx#1)]
+ [!code-aspx-vb[TemplateFieldItemTemplate#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TemplateFieldItemTemplate/VB/templatefielditemtemplatevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateRequestMode">
+      <MemberSignature Language="C#" Value="public System.Web.UI.ValidateRequestMode ValidateRequestMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.ValidateRequestMode ValidateRequestMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TemplateField.ValidateRequestMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ValidateRequestMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールがクライアントの入力を検証するかどうかを指定する値を設定します。</summary>
+        <value>
+          <see langword="true" />コントロールがクライアントの入力を検証する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateSupportsCallback">
+      <MemberSignature Language="C#" Value="public override void ValidateSupportsCallback ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ValidateSupportsCallback() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TemplateField.ValidateSupportsCallback" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールが含まれるかどうかを判断、<see cref="T:System.Web.UI.WebControls.TemplateField" />サポート ページ コールバック オブジェクトします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.TemplateField.ValidateSupportsCallback%2A>メソッドがこのクラスと常にスローのサポートされていません、<xref:System.NotSupportedException>例外。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">このメソッドの既定の実装が呼び出されます。</exception>
+        <block subset="none" type="overrides">
+          <para>派生したクラス、<see cref="T:System.Web.UI.WebControls.TemplateField" />クラス フィールド サポート コールバックによって、コントロールが含まれるかどうかを示すためにこのメソッドをオーバーライドします。 コールバックがサポートされていることを示すために、例外をスローしない空のメソッドとしてこのメソッドを実装しますそれ以外の場合、コールバックがサポートされていない理由を説明するメッセージと共に例外をスローします。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

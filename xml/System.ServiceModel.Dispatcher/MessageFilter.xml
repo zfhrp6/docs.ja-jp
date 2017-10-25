@@ -1,0 +1,200 @@
+<Type Name="MessageFilter" FullName="System.ServiceModel.Dispatcher.MessageFilter">
+  <TypeSignature Language="C#" Value="public abstract class MessageFilter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit MessageFilter extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.MessageFilter" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.Serialization.DataContract</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.Serialization.KnownType(typeof(System.ServiceModel.Dispatcher.MatchNoneMessageFilter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.Serialization.KnownType(typeof(System.ServiceModel.Dispatcher.ActionMessageFilter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.Serialization.KnownType(typeof(System.ServiceModel.Dispatcher.MatchAllMessageFilter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.Serialization.KnownType(typeof(System.ServiceModel.Dispatcher.XPathMessageFilter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>
+      メッセージの照会に使用するさまざまなクラスのフィルターに対する <see langword="abstract" /> 基本クラス。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.MessageFilter> クラスの `abstract` を実装することで、メッセージの検査に使用する基準を指定できます。 通常、フィルターは、メッセージの一部分の検査に基づいてメッセージに対する処理を決定するために、エンドポイント アプリケーションによって使用されます。 たとえば、キュー プロセスでは、XPath 1.0 クエリを使用して既知のヘッダー優先度要素をチェックし、メッセージをキューの先頭に移動するべきかどうかを決定します。  
+  
+ フィルターは、<xref:System.ServiceModel.Dispatcher.IMessageFilterTable%601> を実装するフィルター テーブルに格納されます。 テーブル内の各フィルターは特定のフィルター データに関連付けられており、フィルター データを使用して、メッセージがフィルターに一致した場合に実行するアクションを示すことができます。 メッセージがフィルターの一致条件を満たしているかどうかを判定するには、<xref:System.ServiceModel.Dispatcher.MessageFilter.Match%2A> メソッドを使用します。  
+  
+ フィルター テーブルには変更を検出する手段がないため、フィルターの作成後にはフィルターが使用する基準を変更できません。 フィルターの基準を変更する唯一の方法は、新しいフィルターを作成して既存のフィルターを削除することです。  
+  
+ 次のクラスは、`abstract`<xref:System.ServiceModel.Dispatcher.MessageFilter> クラスを実装しています。  
+  
+-   <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> は、XPath 1.0 の式を使用して、一致の基準を指定します。  
+  
+-   <xref:System.ServiceModel.Dispatcher.MatchAllMessageFilter> は、すべてのメッセージに一致します。  
+  
+-   <xref:System.ServiceModel.Dispatcher.MatchNoneMessageFilter> は、どのメッセージとも一致しません。  
+  
+-   <xref:System.ServiceModel.Dispatcher.ActionMessageFilter> は、メッセージのアクションが、指定されている一連のアクションの 1 つであるかどうかを検査します。  
+  
+-   <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter> は、メッセージが指定されているエンドポイント アドレスを満たすかどうかを検査します。  
+  
+ <xref:System.ServiceModel.Channels.ChannelListenerBase%601> は、キューを使用しないリスナーの作成に使用できる `abstract` 基本クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected MessageFilter ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.MessageFilter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスで呼び出されると、<see cref="T:System.ServiceModel.Dispatcher.MessageFilter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.MessageFilter> から派生するフィルターだけをインスタンス化できるよう、コンストラクターは保護されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFilterTable&lt;FilterData&gt;">
+      <MemberSignature Language="C#" Value="protected virtual System.ServiceModel.Dispatcher.IMessageFilterTable&lt;FilterData&gt; CreateFilterTable&lt;FilterData&gt; ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance class System.ServiceModel.Dispatcher.IMessageFilterTable`1&lt;!!FilterData&gt; CreateFilterTable&lt;FilterData&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.MessageFilter.CreateFilterTable``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Dispatcher.IMessageFilterTable&lt;FilterData&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="FilterData" />
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="FilterData">テーブル内のフィルターに関連付けられたデータ。</typeparam>
+        <summary>指定した型のデータが関連付けられるフィルターのフィルター テーブルを作成します。</summary>
+        <returns><see cref="T:System.ServiceModel.Dispatcher.IMessageFilterTable`1" /> に関連付けられたフィルターを追加できる <paramref name="FilterData" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.ServiceModel.Dispatcher.MessageFilterTable%601> によって呼び出されることを想定しています。 ユーザーは、フィルター テーブルのコンストラクターを呼び出してフィルター テーブルを作成する必要があります。 このメソッドの既定の実装は、各フィルターの <xref:System.ServiceModel.Dispatcher.MessageFilter.Match%2A> メソッドを順番に呼び出すフィルター テーブルを返します。 フィルターを実装するときに、カスタム フィルター テーブルを関連付けるには、このメソッドをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Match">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、メッセージまたはバッファー内のメッセージがフィルターの基準を満たすかどうかを検査します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この 2 つのオーバーロードの違いは、一方は <xref:System.ServiceModel.Channels.Message> パラメーターを受け取り、メッセージ本文を調べることを許可されていないことです。 他方は <xref:System.ServiceModel.Channels.MessageBuffer> パラメーターを受け取り、メッセージの任意の部分を調べることができます。 メッセージ ヘッダーは自動的にバッファーに格納され、フィルターはその内容を取り込まずに調べることができます。 ただし、フィルターがメッセージ本文を調べる場合は、メッセージ全体がバッファーに格納されている必要があります。バッファーに格納されていないメッセージ本文は、クエリによって取り込まれ、その内容が破壊される可能性があるためです。  
+  
+ メッセージ本文を調べる必要がない場合は、<xref:System.ServiceModel.Dispatcher.MessageFilter.Match%2A> を使用します。 メッセージ本文を調べる必要がある場合は、<xref:System.ServiceModel.Dispatcher.MessageFilter.Match%2A> を使用します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Null" /> メッセージは無効であり、<see cref="T:System.ArgumentNullException" /> をスローする必要があります。</para>
+        </block>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Match">
+      <MemberSignature Language="C#" Value="public abstract bool Match (System.ServiceModel.Channels.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Match(class System.ServiceModel.Channels.Message message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.MessageFilter.Match(System.ServiceModel.Channels.Message)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+      </Parameters>
+      <Docs>
+        <param name="message">テスト対象の <see cref="T:System.ServiceModel.Channels.Message" /> オブジェクト。</param>
+        <summary>派生クラスでオーバーライドされると、メッセージがフィルター基準を満たすかどうかを検査します。 本文は検査できません。</summary>
+        <returns>
+          <see langword="true" /> オブジェクトがフィルター条件を満たす場合は <see cref="T:System.ServiceModel.Channels.Message" />、そうでない場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、メッセージ本文の内容は検査できません。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>バッファーに格納されていないメッセージの本文の検査をフィルターが試みる場合、フィルターは <see cref="T:System.ServiceModel.Dispatcher.InvalidBodyAccessException" /> をスローする必要があります。 <see langword="false" /> を返すことはできません。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Match">
+      <MemberSignature Language="C#" Value="public abstract bool Match (System.ServiceModel.Channels.MessageBuffer buffer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Match(class System.ServiceModel.Channels.MessageBuffer buffer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.MessageFilter.Match(System.ServiceModel.Channels.MessageBuffer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.ServiceModel.Channels.MessageBuffer" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">テスト対象の <see cref="T:System.ServiceModel.Channels.MessageBuffer" /> オブジェクト。</param>
+        <summary>派生クラスでオーバーライドされると、バッファー内のメッセージがフィルターの基準を満たすかどうかを検査します。</summary>
+        <returns>
+          <see langword="true" /> オブジェクトがフィルター条件を満たす場合は <see cref="T:System.ServiceModel.Channels.MessageBuffer" />、そうでない場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フィルターで本文を検査する場合は、メッセージが完全にバッファーに格納されている必要があります。 <xref:System.ServiceModel.Channels.MessageBuffer> の本文は完全にバッファーに格納されているため、フィルターで検査できます。 完全にバッファーに格納されていない <xref:System.ServiceModel.Channels.Message> の本文は、フィルター検査で破壊される可能性があります。 <xref:System.ServiceModel.Channels.Message> のヘッダー要素は自動的にバッファーに格納されるため、取り込まずに検査できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

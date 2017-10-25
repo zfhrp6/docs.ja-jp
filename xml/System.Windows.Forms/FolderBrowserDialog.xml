@@ -1,0 +1,355 @@
+<Type Name="FolderBrowserDialog" FullName="System.Windows.Forms.FolderBrowserDialog">
+  <TypeSignature Language="C#" Value="public sealed class FolderBrowserDialog : System.Windows.Forms.CommonDialog" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit FolderBrowserDialog extends System.Windows.Forms.CommonDialog" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.FolderBrowserDialog" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.CommonDialog</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("HelpRequest")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("SelectedPath")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Windows.Forms.Design.FolderBrowserDialogDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>フォルダーを選択するように求めます。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、[参照]、作成、および最終的にフォルダーを選択するユーザーに確認する方法を提供します。 ユーザーがファイルではなく、フォルダーを選択できるようにする場合は、このクラスを使用します。 フォルダーの参照は、ツリー コントロールを介して行われます。 ファイル システムからフォルダーのみを選択できます。仮想フォルダーは選択できません。  
+  
+ 新規作成した後は、通常、 <xref:System.Windows.Forms.FolderBrowserDialog>、設定する、<xref:System.Windows.Forms.FolderBrowserDialog.RootFolder%2A>ブラウズの開始元の場所にします。 必要に応じて、設定することができます、<xref:System.Windows.Forms.FolderBrowserDialog.SelectedPath%2A>のサブフォルダーの絶対パスに<xref:System.Windows.Forms.FolderBrowserDialog.RootFolder%2A>を最初に選択します。 また、必要に応じて設定することができます、<xref:System.Windows.Forms.FolderBrowserDialog.Description%2A>プロパティをユーザーに追加の指示を提供します。 最後を呼び出して、<xref:System.Windows.Forms.CommonDialog.ShowDialog%2A>をユーザーにダイアログ ボックスを表示するメソッド。 ダイアログ ボックスが閉じられるタイミングと起因 ダイアログ ボックス<xref:System.Windows.Forms.CommonDialog.ShowDialog%2A>は<xref:System.Windows.Forms.DialogResult?displayProperty=nameWithType>、<xref:System.Windows.Forms.FolderBrowserDialog.SelectedPath%2A>は選択したフォルダーへのパスを含む文字列になります。  
+  
+ 使用することができます、<xref:System.Windows.Forms.FolderBrowserDialog.ShowNewFolderButton%2A>プロパティ コントロール、ユーザーに新しいフォルダーを作成できる場合に、**新しいフォルダー**ボタンをクリックします。  
+  
+ <xref:System.Windows.Forms.FolderBrowserDialog>モーダル ダイアログ ボックスです。そのため、表示されると、アプリケーションの残りの部分までブロック、ユーザーがフォルダーを選択します。 ダイアログ ボックスはモーダルとして表示される場合 (キーボードまたはマウス クリック) の入力しか発生しません ダイアログ ボックス上のオブジェクトにします。 プログラムを非表示にする必要があります。 または呼び出し元のプログラムへの入力 (通常はユーザーの操作に対する応答) で、ダイアログ ボックスが閉じる発生することができます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、アプリケーション内でのリッチ テキスト (式.rtf) ファイルを開くことができますを作成、<xref:System.Windows.Forms.RichTextBox>コントロール。  
+  
+ [!code-cpp[System.Windows.Forms.FolderBrowserDialog#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.FolderBrowserDialog/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.FolderBrowserDialog#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FolderBrowserDialog/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.FolderBrowserDialog#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FolderBrowserDialog/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FolderBrowserDialog ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.FolderBrowserDialog.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.FolderBrowserDialog" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のコンス トラクターは、既定値にプロパティを初期化します。  
+  
+ 新しい<xref:System.Windows.Forms.FolderBrowserDialog>作成されると、<xref:System.Windows.Forms.FolderBrowserDialog.RootFolder%2A>プロパティに設定されている<xref:System.Environment.SpecialFolder?displayProperty=nameWithType>、<xref:System.Windows.Forms.FolderBrowserDialog.Description%2A>プロパティが空の文字列に設定 ("") では、<xref:System.Windows.Forms.FolderBrowserDialog.SelectedPath%2A>プロパティが空の文字列に設定と<xref:System.Windows.Forms.FolderBrowserDialog.ShowNewFolderButton%2A>プロパティに設定されている`true`です。  
+  
+ 新規作成した後は、通常、 <xref:System.Windows.Forms.FolderBrowserDialog>、設定する、<xref:System.Windows.Forms.FolderBrowserDialog.RootFolder%2A>ブラウズの開始元の場所にします。 必要に応じて、設定することができます、<xref:System.Windows.Forms.FolderBrowserDialog.SelectedPath%2A>のサブフォルダーのパスに<xref:System.Windows.Forms.FolderBrowserDialog.RootFolder%2A>を最初に選択します。 また、必要に応じて設定することができます、<xref:System.Windows.Forms.FolderBrowserDialog.Description%2A>プロパティをユーザーに追加の指示を提供します。 最後を呼び出して、<xref:System.Windows.Forms.CommonDialog.ShowDialog%2A>をユーザーにダイアログ ボックスを表示するメソッド。 ダイアログ ボックスが閉じているときに、起因ダイアログ<xref:System.Windows.Forms.CommonDialog.ShowDialog%2A>は<xref:System.Windows.Forms.DialogResult?displayProperty=nameWithType>、<xref:System.Windows.Forms.FolderBrowserDialog.SelectedPath%2A>は選択したフォルダーへのパスを含む文字列になります。  
+  
+ <xref:System.Windows.Forms.FolderBrowserDialog>モーダル ダイアログ ボックスです。そのため、表示されると、アプリケーションの残りの部分までブロック、ユーザーがフォルダーを選択します。 ダイアログ ボックスはモーダルとして表示される場合 (キーボードまたはマウス クリック) の入力しか発生しません ダイアログ ボックス上のオブジェクトにします。 プログラムを非表示にする必要があります。 または呼び出し元のプログラムへの入力 (通常はユーザーの操作に対する応答) で、ダイアログ ボックスが閉じる発生することができます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、アプリケーション内でのリッチ テキスト (式.rtf) ファイルを開くことができますを作成、<xref:System.Windows.Forms.RichTextBox>コントロール。  
+  
+ [!code-cpp[System.Windows.Forms.FolderBrowserDialog#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.FolderBrowserDialog/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.FolderBrowserDialog#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FolderBrowserDialog/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.FolderBrowserDialog#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FolderBrowserDialog/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public string Description { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.FolderBrowserDialog.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定 ダイアログ ボックスのツリー ビュー コントロール上に表示される説明のテキスト。</summary>
+        <value>表示する説明。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.FolderBrowserDialog.Description%2A>手順と同様に、ユーザーへの追加情報を指定するプロパティを使用できます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、アプリケーション内でのリッチ テキスト (式.rtf) ファイルを開くことができますを作成、<xref:System.Windows.Forms.RichTextBox>コントロール。  
+  
+ [!code-cpp[System.Windows.Forms.FolderBrowserDialog#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.FolderBrowserDialog/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.FolderBrowserDialog#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FolderBrowserDialog/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.FolderBrowserDialog#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FolderBrowserDialog/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HelpRequest">
+      <MemberSignature Language="C#" Value="public event EventHandler HelpRequest;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler HelpRequest" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.FolderBrowserDialog.HelpRequest" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがクリックしたときに発生、**ヘルプ** ダイアログ ボックスにボタンをクリックします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public override void Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.FolderBrowserDialog.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プロパティを既定値にリセットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リセット、 <xref:System.Windows.Forms.FolderBrowserDialog.Description%2A>、 <xref:System.Windows.Forms.FolderBrowserDialog.ShowNewFolderButton%2A>、<xref:System.Windows.Forms.FolderBrowserDialog.SelectedPath%2A>と<xref:System.Windows.Forms.FolderBrowserDialog.RootFolder%2A>プロパティを既定値です。 既定値の一覧は、次を参照してください。、<xref:System.Windows.Forms.FolderBrowserDialog.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RootFolder">
+      <MemberSignature Language="C#" Value="public Environment.SpecialFolder RootFolder { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Environment/SpecialFolder RootFolder" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.FolderBrowserDialog.RootFolder" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.SpecialFolderEnumConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、ルート フォルダーから参照の開始位置を設定します。</summary>
+        <value><see cref="T:System.Environment.SpecialFolder" /> 値のいずれか。 既定値は、<see langword="Desktop" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したフォルダーのみと下にあるすべてのサブフォルダーは、ダイアログ ボックスに表示し、選択可能です。 <xref:System.Windows.Forms.FolderBrowserDialog.SelectedPath%2A>プロパティと共に<xref:System.Windows.Forms.FolderBrowserDialog.RootFolder%2A>、選択したフォルダーが、ダイアログ ボックスが表示されている限り、ときにいるかを判断<xref:System.Windows.Forms.FolderBrowserDialog.SelectedPath%2A>絶対パスのサブフォルダーになっている<xref:System.Windows.Forms.FolderBrowserDialog.RootFolder%2A>(またはより正確には、参照先のサブフォルダーで表されるシェル名前空間の<xref:System.Windows.Forms.FolderBrowserDialog.RootFolder%2A>)。  
+  
+   
+  
+## Examples  
+ 次のコード例は、アプリケーション内でのリッチ テキスト (式.rtf) ファイルを開くことができますを作成、<xref:System.Windows.Forms.RichTextBox>コントロール。  
+  
+ [!code-cpp[System.Windows.Forms.FolderBrowserDialog#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.FolderBrowserDialog/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.FolderBrowserDialog#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FolderBrowserDialog/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.FolderBrowserDialog#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FolderBrowserDialog/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">割り当てられている値は、のいずれかではありません、<see cref="T:System.Environment.SpecialFolder" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RunDialog">
+      <MemberSignature Language="C#" Value="protected override bool RunDialog (IntPtr hWndOwner);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool RunDialog(native int hWndOwner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.FolderBrowserDialog.RunDialog(System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hWndOwner" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="hWndOwner">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedPath">
+      <MemberSignature Language="C#" Value="public string SelectedPath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SelectedPath" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.FolderBrowserDialog.SelectedPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.SelectedPathEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはユーザーによって選択されたパスを設定します。</summary>
+        <value>まず ダイアログ ボックスで選択したフォルダーまたは最後に、ユーザーが選択したフォルダーのパス。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Forms.FolderBrowserDialog.SelectedPath%2A>プロパティ ダイアログ ボックスを表示する前に、このパスのフォルダーは選択したフォルダーと同じくらい<xref:System.Windows.Forms.FolderBrowserDialog.SelectedPath%2A>のサブフォルダーになっている絶対パスに設定されている<xref:System.Windows.Forms.FolderBrowserDialog.RootFolder%2A>(またはより正確には、参照先のサブフォルダーで表されるシェル名前空間の<xref:System.Windows.Forms.FolderBrowserDialog.RootFolder%2A>)。  
+  
+ 場合、<xref:System.Windows.Forms.CommonDialog.ShowDialog%2A>を返します<xref:System.Windows.Forms.DialogResult.OK>、つまり、ユーザーがクリックした、 **OK**  ボタン、<xref:System.Windows.Forms.FolderBrowserDialog.SelectedPath%2A>プロパティは、選択したフォルダーへのパスを含む文字列を返します。 場合<xref:System.Windows.Forms.CommonDialog.ShowDialog%2A>返します<xref:System.Windows.Forms.DialogResult.Cancel>、ダイアログ ボックスを取り消したユーザーを意味、このプロパティは使用されていた ダイアログ ボックスを表示する前に同じ値になります。 ユーザーが物理パス (たとえば、マイ コンピューター) がないフォルダーを選択した場合、 **OK**  ダイアログ ボックスのボタンは無効になります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、アプリケーション内でのリッチ テキスト (式.rtf) ファイルを開くことができますを作成、<xref:System.Windows.Forms.RichTextBox>コントロール。  
+  
+ [!code-cpp[System.Windows.Forms.FolderBrowserDialog#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.FolderBrowserDialog/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.FolderBrowserDialog#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FolderBrowserDialog/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.FolderBrowserDialog#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FolderBrowserDialog/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">パスを取得します。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowNewFolderButton">
+      <MemberSignature Language="C#" Value="public bool ShowNewFolderButton { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowNewFolderButton" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.FolderBrowserDialog.ShowNewFolderButton" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、**新しいフォルダー**フォルダーの参照 ダイアログ ボックスにボタンが表示されます。</summary>
+        <value>
+          <see langword="true" />場合、**新しいフォルダー**ボタンがダイアログ ボックスに、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Windows.Forms.FolderBrowserDialog.ShowNewFolderButton%2A>は`true`、**新しいフォルダー**  ボタンを表示、フォルダーを作成する機会をユーザーに提供します。 ユーザーがクリックしたとき、**新しいフォルダー**ボタンを新しいフォルダーが作成され、ユーザーはフォルダー名を指定するように求められます。 ツリーで選択したノードは、新しいフォルダーの親になります。 実際のキャプション、**新しいフォルダー**ボタンできますによって異なりますが、オペレーティング システム  
+  
+> [!IMPORTANT]
+>  設定<xref:System.Windows.Forms.FolderBrowserDialog.ShowNewFolderButton%2A>に`false`Windows 2000 では機能しません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、アプリケーション内でのリッチ テキスト (式.rtf) ファイルを開くことができますを作成、<xref:System.Windows.Forms.RichTextBox>コントロール。  
+  
+ [!code-cpp[System.Windows.Forms.FolderBrowserDialog#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.FolderBrowserDialog/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.FolderBrowserDialog#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FolderBrowserDialog/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.FolderBrowserDialog#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FolderBrowserDialog/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

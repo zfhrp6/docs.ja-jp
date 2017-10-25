@@ -1,0 +1,358 @@
+<Type Name="IOutputChannel" FullName="System.ServiceModel.Channels.IOutputChannel">
+  <TypeSignature Language="C#" Value="public interface IOutputChannel : System.ServiceModel.Channels.IChannel" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IOutputChannel implements class System.ServiceModel.Channels.IChannel, class System.ServiceModel.ICommunicationObject" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.IOutputChannel" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Channels.IChannel</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>チャネルがメッセージを送信するために実装する必要があるインターフェイスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.IOutputChannel> インターフェイスでは、<xref:System.ServiceModel.ClientBase%601.ChannelBase%601.System%23ServiceModel%23Channels%23IOutputChannel%23Send%2A> 操作の同期および非同期のバリエーションが定義されています。 チャネルで送信されるメッセージの送信先の <xref:System.ServiceModel.Channels.IOutputChannel.RemoteAddress%2A> を提供します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BeginSend">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginSend (System.ServiceModel.Channels.Message message, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginSend(class System.ServiceModel.Channels.Message message, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.IOutputChannel.BeginSend(System.ServiceModel.Channels.Message,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="message">出力チャネルで送信される <see cref="T:System.ServiceModel.Channels.Message" />。</param>
+        <param name="callback"><see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="state">非同期送信操作に関連付けられている状態情報を格納するオブジェクト。アプリケーションで指定します。</param>
+        <summary>出力チャネルの送信先に対してメッセージを送信する非同期操作を開始します。</summary>
+        <returns>非同期メッセージ転送を参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 出力チャネルで送信されるメッセージの送信先は、チャネルの作成時に指定されます。  
+  
+ <xref:System.ServiceModel.Channels.IOutputChannel.BeginSend%2A> メソッドは、リモート エンドポイントへのメッセージ配信を保証しません。 配信保証が必要な場合は、<xref:System.ServiceModel.Channels.IOutputSessionChannel> を使用します。  
+  
+ 送信されたメッセージが、使用されるバインドで許可されている最大メッセージ サイズを超える場合は、<xref:System.ServiceModel.QuotaExceededException> がスローされます。 最大メッセージ サイズは、<xref:System.ServiceModel.Channels.TransportBindingElement.MaxReceivedMessageSize%2A> プロパティで設定されます。 既定値は 65536 バイトです。  
+  
+   
+  
+## Examples  
+ このメソッドを実装する方法を次のコードに示します。  
+  
+ [!code-csharp[S_UE_MessageInterceptor#2](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_messageinterceptor/cs/interceptingchannellistener.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginSend">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginSend (System.ServiceModel.Channels.Message message, TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginSend(class System.ServiceModel.Channels.Message message, valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.IOutputChannel.BeginSend(System.ServiceModel.Channels.Message,System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="message">出力チャネルで送信される <see cref="T:System.ServiceModel.Channels.Message" />。</param>
+        <param name="timeout">送信操作を完了する必要がある、タイムアウトまでの制限時間を指定する <see cref="T:System.TimeSpan" />。</param>
+        <param name="callback">非同期操作送信の完了通知を受信する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="state">非同期送信操作に関連付けられている状態情報を格納するオブジェクト。アプリケーションで指定します。</param>
+        <summary>指定した時間内での出力チャネルの送信先に対するメッセージ送信の非同期操作を開始します。</summary>
+        <returns>非同期の送信操作を参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 出力チャネルで送信されるメッセージの送信先は、チャネルの作成時に指定されます。  
+  
+ <xref:System.ServiceModel.Channels.IOutputChannel.BeginSend%2A> メソッドは、リモート エンドポイントへのメッセージ配信を保証しません。 配信保証が必要な場合は、<xref:System.ServiceModel.Channels.IOutputSessionChannel> を使用します。  
+  
+ 送信されたメッセージが、使用されるバインドで許可されている最大メッセージ サイズを超える場合は、<xref:System.ServiceModel.QuotaExceededException> がスローされます。 最大メッセージ サイズは、<xref:System.ServiceModel.Channels.TransportBindingElement.MaxReceivedMessageSize%2A> プロパティで設定されます。 既定値は 65536 バイトです。  
+  
+   
+  
+## Examples  
+ このメソッドを実装する方法を次のコードに示します。  
+  
+ [!code-csharp[S_UE_MessageInterceptor#3](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_messageinterceptor/cs/interceptingchannellistener.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>指定した <see cref="T:System.TimeoutException" /> が経過した場合、操作は <paramref name="timeout" /> をスローする必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="EndSend">
+      <MemberSignature Language="C#" Value="public void EndSend (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndSend(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.IOutputChannel.EndSend(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result"><see cref="T:System.IAsyncResult" /> メソッドの呼び出しで返された <see cref="Overload:System.ServiceModel.Channels.IOutputChannel.BeginSend" />。</param>
+        <summary>出力チャネルの送信先に対してメッセージを送信する非同期操作を完了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 送信されたメッセージが、使用されるバインドで許可されている最大メッセージ サイズを超える場合は、<xref:System.ServiceModel.QuotaExceededException> がスローされます。 最大メッセージ サイズは、<xref:System.ServiceModel.Channels.TransportBindingElement.MaxReceivedMessageSize%2A> プロパティで設定されます。 既定値は 65536 バイトです。  
+  
+   
+  
+## Examples  
+ このメソッドを実装する方法を次のコードに示します。  
+  
+ [!code-csharp[S_UE_MessageInterceptor#4](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_messageinterceptor/cs/interceptingchannellistener.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoteAddress">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.EndpointAddress RemoteAddress { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.EndpointAddress RemoteAddress" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.IOutputChannel.RemoteAddress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.EndpointAddress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>出力チャネルで送信されるメッセージの送信先となるサービスの送信先を取得します。</summary>
+        <value>出力チャネルでのメッセージの送信先となるサービスの <see cref="T:System.ServiceModel.EndpointAddress" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.EndpointAddress> が指定されていない場合は、<xref:System.ServiceModel.Channels.IOutputChannel.Via%2A> が、最終的な送信先と物理アドレスの両方として機能します。 <xref:System.ServiceModel.Channels.IOutputChannel.Via%2A> が指定されている場合は、メッセージが送信される実際の物理アドレス、およびメッセージがその送信先に到達するまでに経由する必要がある物理アドレスとなります。  
+  
+   
+  
+## Examples  
+ このプロパティを実装する方法を次のコードに示します。  
+  
+ [!code-csharp[S_UE_MessageInterceptor#0](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_messageinterceptor/cs/interceptingchannellistener.cs#0)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Send">
+      <MemberSignature Language="C#" Value="public void Send (System.ServiceModel.Channels.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Send(class System.ServiceModel.Channels.Message message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.IOutputChannel.Send(System.ServiceModel.Channels.Message)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+      </Parameters>
+      <Docs>
+        <param name="message">出力チャネルで送信される <see cref="T:System.ServiceModel.Channels.Message" />。</param>
+        <summary>出力チャネルの送信先にメッセージを送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 出力チャネルで送信されるメッセージの送信先は、チャネルの作成時に指定されます。  
+  
+ <xref:System.ServiceModel.Channels.IOutputChannel.Send%2A> メソッドは、リモート エンドポイントへのメッセージ配信を保証しません。 <xref:System.ServiceModel.Channels.IOutputChannel> の実装では、さまざまな理由で、メッセージがエラー表示なしで削除されます。 たとえば、バッファーに空きがない場合が考えられます。 配信保証が必要な場合は、<xref:System.ServiceModel.Channels.IOutputSessionChannel> を使用します。  
+  
+ メッセージを出力チャネルに渡すと、メッセージが処理されます。 <xref:System.ServiceModel.Channels.IOutputChannel.Send%2A> を呼び出した後は、メッセージの検査、そのメッセージでの <xref:System.ServiceModel.Channels.Message.Close%2A> の呼び出しはできなくなります。  
+  
+   
+  
+## Examples  
+ このメソッドを実装する方法を次のコードに示します。  
+  
+ [!code-csharp[S_UE_MessageInterceptor#5](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_messageinterceptor/cs/interceptingchannellistener.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Send">
+      <MemberSignature Language="C#" Value="public void Send (System.ServiceModel.Channels.Message message, TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Send(class System.ServiceModel.Channels.Message message, valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.IOutputChannel.Send(System.ServiceModel.Channels.Message,System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="message">出力チャネルで送信される <see cref="T:System.ServiceModel.Channels.Message" />。</param>
+        <param name="timeout">送信操作を完了する必要がある、タイムアウトまでの制限時間を指定する <see cref="T:System.TimeSpan" />。</param>
+        <summary>指定した時間内に現在の出力チャネルでメッセージを送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 出力チャネルで送信されるメッセージの送信先は、チャネルの作成時に指定されます。  
+  
+ <xref:System.ServiceModel.Channels.IOutputChannel.Send%2A> メソッドは、リモート エンドポイントへのメッセージ配信を保証しません。 <xref:System.ServiceModel.Channels.IOutputChannel> の実装では、さまざまな理由で、メッセージがエラー表示なしで削除されます。 たとえば、バッファーに空きがない場合が考えられます。 配信保証が必要な場合は、<xref:System.ServiceModel.Channels.IOutputSessionChannel> を使用します。  
+  
+ メッセージを出力チャネルに渡すと、メッセージが処理されます。 <xref:System.ServiceModel.Channels.IOutputChannel.Send%2A> を呼び出した後は、メッセージの検査、そのメッセージでの <xref:System.ServiceModel.Channels.Message.Close%2A> の呼び出しはできなくなります。  
+  
+   
+  
+## Examples  
+ このメソッドを実装する方法を次のコードに示します。  
+  
+ [!code-csharp[S_UE_MessageInterceptor#6](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_messageinterceptor/cs/interceptingchannellistener.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>指定した <see cref="T:System.TimeoutException" /> が経過した場合、操作は <paramref name="timeout" /> をスローする必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Via">
+      <MemberSignature Language="C#" Value="public Uri Via { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Via" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.IOutputChannel.Via" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>出力チャネルで送信されるメッセージの送信先となるトランスポート アドレスを格納する URI を取得します。</summary>
+        <value>出力チャネルで送信されるメッセージの送信先となるトランスポート アドレスを格納する <see cref="T:System.Uri" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.EndpointAddress> が指定されていない場合は、<xref:System.ServiceModel.Channels.IOutputChannel.Via%2A> が、最終的な送信先と物理アドレスの両方として機能します。 <xref:System.ServiceModel.Channels.IOutputChannel.Via%2A> が指定されている場合は、メッセージが送信される実際の物理アドレス、およびメッセージがその送信先に到達するまでに経由する必要がある物理アドレスとなります。  
+  
+   
+  
+## Examples  
+ このプロパティを実装する方法を次のコードに示します。  
+  
+ [!code-csharp[S_UE_MessageInterceptor#1](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_messageinterceptor/cs/interceptingchannellistener.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

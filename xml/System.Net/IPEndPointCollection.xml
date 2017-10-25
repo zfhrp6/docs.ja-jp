@@ -1,0 +1,133 @@
+<Type Name="IPEndPointCollection" FullName="System.Net.IPEndPointCollection">
+  <TypeSignature Language="C#" Value="public class IPEndPointCollection : System.Collections.ObjectModel.Collection&lt;System.Net.IPEndPoint&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit IPEndPointCollection extends System.Collections.ObjectModel.Collection`1&lt;class System.Net.IPEndPoint&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Net.IPEndPointCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.ObjectModel.Collection&lt;System.Net.IPEndPoint&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="!0">System.Net.IPEndPoint</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ネットワーク エンドポイントとしての格納に使用されるコレクションを表します<see cref="T:System.Net.IPEndPoint" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.IPEndPointCollection>から派生したクラスは、<xref:System.Collections.ObjectModel.Collection%601?displayProperty=nameWithType>クラスです。  
+  
+ <xref:System.Net.IPEndPoint>クラスには、ホストとホスト上のサービスに接続するアプリケーションで必要なローカルまたはリモートのポート情報が含まれています。 ホストの IP アドレスと、サービスのポート番号を組み合わせることによって、<xref:System.Net.IPEndPoint>クラスのフォームへの接続がサービス をポイントします。  
+  
+ <xref:System.Net.IPEndPointCollection>内のクラスによってクラスが使用される、<xref:System.Net.PeerToPeer?displayProperty=nameWithType>名前空間。  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>パブリック静的 (<see langword="Shared" /> Visual Basic で) この型のメンバーは、スレッド セーフであります。 インスタンス メンバーの場合は、スレッド セーフであるとは限りません。  
+  
+ A<see cref="T:System.Net.IPEndPointCollection" />コレクションが変更されない限り、複数のリーダーを同時にサポートできます。 それでも、コレクションの列挙は、本質的には、スレッド セーフなプロシージャではします。 列挙処理でスレッド セーフを確保するには、列挙処理が終わるまでコレクションをロックできます。 コレクションに対し複数のスレッドがアクセスして読み取りや書き込みを行うことができるようにするには、独自に同期化を実装する必要があります。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IPEndPointCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IPEndPointCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.IPEndPointCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertItem">
+      <MemberSignature Language="C#" Value="protected override void InsertItem (int index, System.Net.IPEndPoint item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InsertItem(int32 index, class System.Net.IPEndPoint item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IPEndPointCollection.InsertItem(System.Int32,System.Net.IPEndPoint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="item" Type="System.Net.IPEndPoint" />
+      </Parameters>
+      <Docs>
+        <param name="index">位置の 0 から始まるインデックス<c>項目</c>挿入する必要があります。</param>
+        <param name="item"><see cref="T:System.Net.IPEndPoint" />挿入するオブジェクト。 参照型の場合は <see langword="null" /> の値を使用できます。</param>
+        <summary>挿入、<see cref="T:System.Net.IPEndPoint" />に要素を<see cref="T:System.Net.IPEndPointCollection" />指定したインデックス位置。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.IPEndPointCollection>受け付けない`null`として有効な値です。 <xref:System.Net.IPEndPointCollection>重複する要素を許可します。  
+  
+ 場合`index`が内のアイテムの現在の数と等しく、 <xref:System.Net.IPEndPointCollection> 、`item`の末尾に追加された<xref:System.Net.IPEndPointCollection>です。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.ObjectModel.Collection%601.Count%2A?displayProperty=nameWithType>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />パラメーターが 0 より小さい  
+  
+ または  
+  
+ <paramref name="index" />パラメーターが現在のアイテムの数より大きい、<see cref="T:System.Net.IPEndPointCollection" />です。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="item" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetItem">
+      <MemberSignature Language="C#" Value="protected override void SetItem (int index, System.Net.IPEndPoint item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetItem(int32 index, class System.Net.IPEndPoint item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IPEndPointCollection.SetItem(System.Int32,System.Net.IPEndPoint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="item" Type="System.Net.IPEndPoint" />
+      </Parameters>
+      <Docs>
+        <param name="index">置き換える要素の 0 から始まるインデックス番号。</param>
+        <param name="item">新しい<see cref="T:System.Net.IPEndPoint" />指定したインデックス位置にある要素の値。 参照型の場合は <see langword="null" /> の値を使用できます。</param>
+        <summary>置換、<see cref="T:System.Net.IPEndPoint" />指定したインデックス位置にある要素。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.IPEndPointCollection>受け付けない`null`として有効な値です。 <xref:System.Net.IPEndPointCollection>重複する要素を許可します。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />パラメーターが 0 より小さい  
+  
+ または  
+  
+ <paramref name="index" />パラメーターが現在のアイテムの数より大きい、<see cref="T:System.Net.IPEndPointCollection" />です。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="item" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

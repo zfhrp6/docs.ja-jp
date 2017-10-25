@@ -1,0 +1,136 @@
+<Type Name="IDebuggerObject" FullName="Microsoft.JScript.IDebuggerObject">
+  <TypeSignature Language="C#" Value="public interface IDebuggerObject" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDebuggerObject" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.JScript.IDebuggerObject" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.JScript</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("8E93D770-6168-4b68-B896-A71B74C7076A")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>デバッガー オブジェクトに関する情報を提供するメソッドを定義します。 このインターフェイスはすべて<see cref="T:System.Reflection.IReflect" />デバッガーによって実装されているオブジェクト。 現時点では、このインターフェイスは、これらのオブジェクト、スクリプト エンジンをそのためのフラグにのみ機能します。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="HasEnumerableMember">
+      <MemberSignature Language="C#" Value="public bool HasEnumerableMember (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool HasEnumerableMember(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.IDebuggerObject.HasEnumerableMember(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">検索するメンバーの名前。</param>
+        <summary>クラスで実装された場合、現在のオブジェクトに指定した名前を持つし、列挙可能であるメンバーがあるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />現在のオブジェクトを持つ名前付き、列挙可能なメンバー <paramref name="name" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsCOMObject">
+      <MemberSignature Language="C#" Value="public bool IsCOMObject ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsCOMObject() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.IDebuggerObject.IsCOMObject" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クラスで実装された場合、現在のオブジェクトが本当の COM オブジェクト、または管理対象のオブジェクトへのプロキシがあるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />現在のオブジェクトが COM オブジェクトである場合<see langword="false" />場合は、現在のオブジェクトがマネージ オブジェクトへのプロキシです。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsEqual">
+      <MemberSignature Language="C#" Value="public bool IsEqual (Microsoft.JScript.IDebuggerObject o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsEqual(class Microsoft.JScript.IDebuggerObject o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.IDebuggerObject.IsEqual(Microsoft.JScript.IDebuggerObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="Microsoft.JScript.IDebuggerObject" />
+      </Parameters>
+      <Docs>
+        <param name="o">同じかどうかを確認する対象のオブジェクト。</param>
+        <summary>クラスで実装された場合、現在のオブジェクトが、指定したオブジェクトと等しいかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />現在のオブジェクトが同じ場合<paramref name="o" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsScriptFunction">
+      <MemberSignature Language="C#" Value="public bool IsScriptFunction ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsScriptFunction() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.IDebuggerObject.IsScriptFunction" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クラスで実装された場合、現在のオブジェクトがマネージ JScript 関数へのプロキシであるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />現在のオブジェクトが管理対象の JScript 関数; へのプロキシの場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsScriptObject">
+      <MemberSignature Language="C#" Value="public bool IsScriptObject ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsScriptObject() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.IDebuggerObject.IsScriptObject" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クラスで実装された場合、現在のオブジェクトがマネージ JScript オブジェクトへのプロキシであるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />現在のオブジェクトがマネージ JScript オブジェクト; へのプロキシの場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

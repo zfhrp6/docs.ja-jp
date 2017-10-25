@@ -1,0 +1,247 @@
+<Type Name="AppSettingsExpressionBuilder" FullName="System.Web.Compilation.AppSettingsExpressionBuilder">
+  <TypeSignature Language="C#" Value="public class AppSettingsExpressionBuilder : System.Web.Compilation.ExpressionBuilder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AppSettingsExpressionBuilder extends System.Web.Compilation.ExpressionBuilder" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Compilation.AppSettingsExpressionBuilder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Compilation.ExpressionBuilder</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.Compilation.ExpressionEditor("System.Web.UI.Design.AppSettingsExpressionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.Compilation.ExpressionPrefix("AppSettings")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>宣言型の式で指定されている、値を取得、 <see langword="&lt;appSettings&gt;" /> Web.config ファイルのセクションです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.AppSettingsExpressionBuilder>クラス内の値へのアクセスを提供する、 `<appSettings>` Web.config ファイルのセクションです。 `<appSettings>` Web.config ファイルのセクションには、キー/値ペア内のアプリケーション固有の値が含まれています。  
+  
+ 形式の式を割り当てることによって、アプリケーションの値を取得します。  
+  
+ `<%$ AppSettings: appSettingsKey %>`  
+  
+ コントロールの宣言でのプロパティです。 コロン (:) の前に式の一部は、コロンがキーを示す後に式を取得して、一部の種類を指定します。 直前の正規表現は、Web.config ファイルから次の値を取得するは。  
+  
+ `<appSettings>`  
+  
+ `<add key="appSettingsKey" value="appSettingsValue"/>`  
+  
+ `</appSettings>`  
+  
+ ページのパーサーを持つ式を検出した場合、`AppSettings`プレフィックスのインスタンスを作成、<xref:System.Web.Compilation.AppSettingsExpressionBuilder>式を処理するクラス。  
+  
+ 式がコンパイルされるページで、発生した場合、<xref:System.Web.Compilation.AppSettingsExpressionBuilder>オブジェクトは、Web.config ファイルから指定した値を取得するコードを生成します。 このコードは、生成されたページ クラスの実行中に実行されます。 式はコンパイルされませんが、ページで、発生した場合、<xref:System.Web.Compilation.AppSettingsExpressionBuilder>オブジェクトが、ページの解析および実行時に、Web.config ファイルから値を返します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、コンパイルされていないページで、アプリケーションの設定値を取得する方法を示します。  
+  
+ [!code-aspx-csharp[System.Web.Compilation.AppSettingsExpressionBuilder#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Compilation.AppSettingsExpressionBuilder/CS/Default.aspx#1)]
+ [!code-aspx-vb[System.Web.Compilation.AppSettingsExpressionBuilder#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Compilation.AppSettingsExpressionBuilder/VB/Default.aspx#1)]
+  
+ このコードは、Web.config ファイルから次の式を取得します。  
+  
+ `<configuration xmlns="http://schemas.microsoft.com/.NetConfiguration/v2.0">`  
+  
+ `<appSettings>`  
+  
+ `<add key="thisSeason" value="Fall"/>`  
+  
+ `</appSettings>`  
+  
+ `</configuration>`  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AppSettingsExpressionBuilder ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.AppSettingsExpressionBuilder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Compilation.AppSettingsExpressionBuilder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EvaluateExpression">
+      <MemberSignature Language="C#" Value="public override object EvaluateExpression (object target, System.Web.UI.BoundPropertyEntry entry, object parsedData, System.Web.Compilation.ExpressionBuilderContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object EvaluateExpression(object target, class System.Web.UI.BoundPropertyEntry entry, object parsedData, class System.Web.Compilation.ExpressionBuilderContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.AppSettingsExpressionBuilder.EvaluateExpression(System.Object,System.Web.UI.BoundPropertyEntry,System.Object,System.Web.Compilation.ExpressionBuilderContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Object" />
+        <Parameter Name="entry" Type="System.Web.UI.BoundPropertyEntry" />
+        <Parameter Name="parsedData" Type="System.Object" />
+        <Parameter Name="context" Type="System.Web.Compilation.ExpressionBuilderContext" />
+      </Parameters>
+      <Docs>
+        <param name="target">プロパティのエントリを格納するオブジェクト。</param>
+        <param name="entry">式がバインドされているプロパティ.</param>
+        <param name="parsedData">表すオブジェクトを解析済みデータがによって返される<see cref="M:System.Web.Compilation.ExpressionBuilder.ParseExpression(System.String,System.Type,System.Web.Compilation.ExpressionBuilderContext)" />です。</param>
+        <param name="context">コントロールまたはページのプロパティです。</param>
+        <summary>値を返します、 <see langword="&lt;appSettings&gt;" /> Web.config ファイルのセクションです。</summary>
+        <returns><see cref="T:System.Object" />内のキーに関連付けられている、 <see langword="&lt;appSettings&gt;" /> Web.config ファイルのセクションです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、フォームの式`<%$ AppSettings: someApplicationSetting %>`コンパイルなし ページで発生しました。 キー/値ペアから適切な値を取得、 `<appSettings>` Web.config ファイルのセクションです。 このメソッドは<xref:System.Web.Compilation.ExpressionBuilder.EvaluateExpression%2A>を呼び出して、<xref:System.Web.Compilation.AppSettingsExpressionBuilder.GetAppSetting%2A>メソッドを<xref:System.Web.UI.BoundPropertyEntry.Expression%2A>プロパティとして、 `key` 、パラメーター、<xref:System.Web.UI.PropertyEntry.Name%2A>プロパティを<xref:System.Web.UI.PropertyEntry.PropertyInfo%2A?displayProperty=nameWithType>プロパティとして、`propertyName`パラメーター、および<xref:System.Type>の`target`パラメーターとして、`targetType`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAppSetting">
+      <MemberSignature Language="C#" Value="public static object GetAppSetting (string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetAppSetting(string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.AppSettingsExpressionBuilder.GetAppSetting(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">構成ファイルから取得する値のキー。</param>
+        <summary>値を返します、 <see langword="&lt;appSettings&gt;" /> Web.config ファイルのセクションです。</summary>
+        <returns><see cref="T:System.Object" />内のキーに関連付けられている、 <see langword="&lt;appSettings&gt;" /> Web.config ファイルのセクションです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、キーと値のペアから適切な値を取得、 `<appSettings>` Web.config ファイルのセクションです。 取得することによって、値を取得、<xref:System.Configuration.ConfigurationManager.AppSettings%2A>インデックスとしてキーを持つプロパティです。 <xref:System.Object>型では返される<xref:System.String>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">Web.config で、キーが見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAppSetting">
+      <MemberSignature Language="C#" Value="public static object GetAppSetting (string key, Type targetType, string propertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetAppSetting(string key, class System.Type targetType, string propertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.AppSettingsExpressionBuilder.GetAppSetting(System.String,System.Type,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="targetType" Type="System.Type" />
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">構成ファイルから取得する値のキー。</param>
+        <param name="targetType">プロパティのエントリを格納しているオブジェクトの型。</param>
+        <param name="propertyName">式がバインドされているプロパティの名前。</param>
+        <summary>値を返します、<see langword="&lt;appSettings&gt;" />値を含む Web.config ファイルのセクションでは、ターゲット型に変換します。</summary>
+        <returns><see cref="T:System.Object" />内のキーに関連付けられている、 <see langword="&lt;appSettings&gt;" /> Web.config ファイルのセクションです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、キーと値のペアから適切な値を取得、 `<appSettings>` Web.config ファイルのセクションです。 取得することによって、値を取得、<xref:System.Configuration.ConfigurationManager.AppSettings%2A>インデックスとしてキーを持つプロパティです。 結果の文字列値がに基づいて新しい型に変換された、`targetType`と`propertyName`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">Web.config で、キーが見つかりませんでした。  
+  
+ \- または  
+  
+ 戻り値を変換できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCodeExpression">
+      <MemberSignature Language="C#" Value="public override System.CodeDom.CodeExpression GetCodeExpression (System.Web.UI.BoundPropertyEntry entry, object parsedData, System.Web.Compilation.ExpressionBuilderContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.CodeDom.CodeExpression GetCodeExpression(class System.Web.UI.BoundPropertyEntry entry, object parsedData, class System.Web.Compilation.ExpressionBuilderContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.AppSettingsExpressionBuilder.GetCodeExpression(System.Web.UI.BoundPropertyEntry,System.Object,System.Web.Compilation.ExpressionBuilderContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeExpression</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entry" Type="System.Web.UI.BoundPropertyEntry" />
+        <Parameter Name="parsedData" Type="System.Object" />
+        <Parameter Name="context" Type="System.Web.Compilation.ExpressionBuilderContext" />
+      </Parameters>
+      <Docs>
+        <param name="entry">式がバインドされているプロパティです。</param>
+        <param name="parsedData">表すオブジェクトを解析済みデータがによって返される<see cref="M:System.Web.Compilation.ExpressionBuilder.ParseExpression(System.String,System.Type,System.Web.Compilation.ExpressionBuilderContext)" />です。</param>
+        <param name="context">コントロールまたはページのプロパティです。</param>
+        <summary>生成されたページ クラスのプロパティの割り当てを実行するために使用されるコード式を返します。</summary>
+        <returns>A<see cref="T:System.CodeDom.CodeExpression" />プロパティの割り当てに使用されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ページまたはコントロールの CodeDOM の作成時に呼び出されます。 返された<xref:System.CodeDom.CodeExpression>オブジェクトが生成されたページ クラスのプロパティの割り当てを追加するコード式を表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsEvaluate">
+      <MemberSignature Language="C#" Value="public override bool SupportsEvaluate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsEvaluate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.AppSettingsExpressionBuilder.SupportsEvaluate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンパイルされていない ページで、式を評価できるかどうかを示す値を返します。</summary>
+        <value>
+          常に <see langword="true" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.AppSettingsExpressionBuilder.SupportsEvaluate%2A>プロパティを示すかどうか、<xref:System.Web.Compilation.AppSettingsExpressionBuilder.EvaluateExpression%2A>メソッドがクラスに実装されているし、式の値を返すことができます。 <xref:System.Web.Compilation.AppSettingsExpressionBuilder.EvaluateExpression%2A>コンパイルされていない ページで評価される式の式ビルダー以内に実装する必要があります。 <xref:System.Web.Compilation.AppSettingsExpressionBuilder>クラスをサポートしているアプリケーション設定の評価がコンパイルされていないページで、常に返すように`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

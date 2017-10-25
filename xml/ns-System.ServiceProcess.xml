@@ -1,0 +1,15 @@
+<Namespace Name="System.ServiceProcess">
+  <Docs>
+    <summary><see cref="N:System.ServiceProcess" />名前空間を提供できるようにするを実装するクラスは、インストール、および Windows サービス アプリケーションを制御します。 サービスは、ユーザー インターフェイスなしで実行できる実行時間の長い実行可能ファイルです。 継承するサービスの実装では、<see cref="T:System.ServiceProcess.ServiceBase" />クラスとを処理するときに特定の動作を定義する開始、停止、一時停止、およびコマンドは、渡されただけでなくカスタムの動作およびシステムのシャット ダウン時に実行されるアクションを続行します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サービスは、InstallUtil.exe などインストール ユーティリティを使用してインストールされます。 <xref:System.ServiceProcess>名前空間は、サービスの情報をレジストリに書き込むインストール クラスを提供します。 <xref:System.ServiceProcess.ServiceProcessInstaller>クラスには、インストールでのすべてのサービスに共通のコンポーネントをインストールする外側のクラスが用意されています。 インスタンスを作成する各サービスに対して、<xref:System.ServiceProcess.ServiceInstaller>サービス固有の機能をインストールするクラス。  
+  
+ <xref:System.ServiceProcess.ServiceController>クラスを使用すると、既存のサービスに接続し、操作、またはサービスに関する情報を取得します。 このクラスは、管理機能では通常使用され、開始、停止、一時停止、続行、またはサービスでカスタム コマンドを実行することができます。 ここで、<xref:System.ServiceProcess.ServiceBase>クラスは、サービスは、コマンドの実行時に実行します。 処理を定義、<xref:System.ServiceProcess.ServiceController>エージェントすると、サービスに対してこれらのコマンドを呼び出すことができます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Namespace>

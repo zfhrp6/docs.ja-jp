@@ -1,0 +1,191 @@
+<Type Name="ConfigurationBasedIssuerNameRegistry" FullName="System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry">
+  <TypeSignature Language="C#" Value="public class ConfigurationBasedIssuerNameRegistry : System.IdentityModel.Tokens.IssuerNameRegistry" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ConfigurationBasedIssuerNameRegistry extends System.IdentityModel.Tokens.IssuerNameRegistry" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Tokens.IssuerNameRegistry</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>それぞれ発行者によって生成されるトークンの署名を検証するために必要な X.509 証明書の発行者名を関連付ける、アプリケーション構成ファイル内の要素から読み込まれる信頼された発行者の一覧を保持する発行者名レジストリを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry>クラスは、その発行者を参照する名前を各信頼された発行者の証明書をマップして、信頼された発行者のディクショナリを保持します。 証明書は拇印の形式でエンコードされた ASN.1 を使用して指定します。 発行者名は、アプリケーションのスコープ内で一意である限り、任意の文字列にすることができます。 このディクショナリはを介してアクセスできる、<xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.ConfiguredTrustedIssuers%2A>プロパティです。 クラスは、X.509 証明書を解決できるだけです。  
+  
+ 信頼された発行者のマップが下のエントリを追加することで、構成ファイルで指定された、 [ &lt;trustedIssuers&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/trustedissuers.md)要素。 `<trustedIssuers>`要素の子要素、 [ &lt;issuerNameRegistry&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/issuernameregistry.md)要素が有効な場合に、<xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry>でクラスを指定、`type`その要素の属性です。 詳細については、これらの各要素のドキュメントを参照して、 [WIF 構成スキーマ](http://msdn.microsoft.com/library/4d4f6d76-49a5-4bad-b345-097b2e2844e9)です。 発行者名レジストリの詳細については、次を参照してください。、<xref:System.IdentityModel.Tokens.IssuerNameRegistry>クラスです。  
+  
+ 派生できます<xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry>構成ベースの発行者名レジストリの独自の実装です。 どのメソッドをオーバーライドするには、実装は異なります。 たとえば、オーバーライドすることができます、<xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.LoadCustomConfiguration%2A>カスタム構成スキーマから構成を読み込みます。  
+  
+   
+  
+## Examples  
+ 次の XML の構成を表示する、<xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry>セキュリティ トークン ハンドラーのコレクションに追加します。 `<trustedIssuers>`要素は、従来の .NET 構成コレクションのように動作できるように、 `<add>`、`<delete>`と`<clear>`子要素としての要素。  
+  
+```  
+<system.identityModel>  
+  <identityConfiguration>  
+    <securityTokenHandlersCollection>  
+      <securityTokenHandlerConfiguration>  
+        <issuerNameRegistry type="System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry, System.IdentityModel">  
+          <trustedIssuers>  
+             <add thumbprint="97249e … 158de" name="contoso.com" />  
+         </trustedIssuers>  
+        </issuerNameRegistry>  
+      </securityTokenHandlerConfiguration>  
+  </identityConfiguration>  
+</system.identityModel>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConfigurationBasedIssuerNameRegistry ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddTrustedIssuer">
+      <MemberSignature Language="C#" Value="public void AddTrustedIssuer (string certificateThumbprint, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddTrustedIssuer(string certificateThumbprint, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.AddTrustedIssuer(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="certificateThumbprint" Type="System.String" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="certificateThumbprint">ASN.1 は、発行元の証明書の拇印の形式をエンコードします。</param>
+        <param name="name">発行者の名前です。</param>
+        <summary>発行者を信頼された発行者のディクショナリに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 発行者を追加するには、このメソッドを呼び出すことができます、<xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.ConfiguredTrustedIssuers%2A>ディクショナリ。 派生クラスからこのメソッドを呼び出すことができます、<xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.LoadCustomConfiguration%2A>ディクショナリに発行者を追加します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="certificateThumbprint" /> が <see langword="null" /> または空です。  
+  
+ または  
+  
+ <paramref name="name" /> が <see langword="null" /> または空です。</exception>
+        <exception cref="T:System.InvalidOperationException">指定された発行者<paramref name="certificateThumbprint" />既に構成されています。 (発行元は既に、<see cref="P:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.ConfiguredTrustedIssuers" />ディクショナリです)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConfiguredTrustedIssuers">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,string&gt; ConfiguredTrustedIssuers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, string&gt; ConfiguredTrustedIssuers" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.ConfiguredTrustedIssuers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスの構成されている信頼された発行者のディクショナリを取得します。</summary>
+        <value>信頼された発行者を格納するディクショナリ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 辞書にキーであり、ASN.1 エンコード形式の信頼された発行者の証明書の拇印の値は、発行者名。 ディクショナリには、構成に指定されている発行者とに追加されているその他の発行者が含まれています、<xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.AddTrustedIssuer%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIssuerName">
+      <MemberSignature Language="C#" Value="public override string GetIssuerName (System.IdentityModel.Tokens.SecurityToken securityToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetIssuerName(class System.IdentityModel.Tokens.SecurityToken securityToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.GetIssuerName(System.IdentityModel.Tokens.SecurityToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="securityToken" Type="System.IdentityModel.Tokens.SecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="securityToken">発行者名が要求されるセキュリティ トークンです。 として割り当て可能にする必要があります<see cref="T:System.IdentityModel.Tokens.X509SecurityToken" />です。</param>
+        <summary>指定したに関連付けられている発行者名を返します<see cref="T:System.IdentityModel.Tokens.X509SecurityToken" />証明書の拇印を信頼された発行者ディクショナリ内の名前にマップすることによってです。</summary>
+        <returns>発行者名に、トークンの証明書の拇印のエントリが存在する場合、<see cref="P:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.ConfiguredTrustedIssuers" />ディクショナリです。 それ以外の場合、<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装の既定の検索、<xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.ConfiguredTrustedIssuers%2A>ディクショナリで指定された X.509 証明書の拇印の`securityToken`します。 エントリが見つかった場合、発行者名が返されます。それ以外の場合、`null`が返されます。 場合`securityToken`から割り当てることはできません<xref:System.IdentityModel.Tokens.X509SecurityToken>、`null`が返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="securityToken" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadCustomConfiguration">
+      <MemberSignature Language="C#" Value="public override void LoadCustomConfiguration (System.Xml.XmlNodeList customConfiguration);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void LoadCustomConfiguration(class System.Xml.XmlNodeList customConfiguration) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.LoadCustomConfiguration(System.Xml.XmlNodeList)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="customConfiguration" Type="System.Xml.XmlNodeList" />
+      </Parameters>
+      <Docs>
+        <param name="customConfiguration">構成ファイルで指定されている信頼された発行者のマップを表す XML。</param>
+        <summary>構成から信頼された発行者を読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.LoadCustomConfiguration%2A>メソッドは、構成のインフラストラクチャによって呼び出されます。 このメソッドが呼び出されたときに、`nodelist`の最上位レベルの子要素が表示されます、 [ &lt;issuerNameRegistry&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/issuernameregistry.md)構成ファイルからの要素。 属性または派生クラスを定義する構成スキーマに応じて子要素これらの各に含めることがあります。  
+  
+ このメソッドは、構成のインフラストラクチャによって呼び出されます。 既定の実装がから構成を読み込む、 [ &lt;trustedIssuers&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/trustedissuers.md)要素 (下で構成されている、 [ &lt;issuerNameRegistry&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/issuernameregistry.md)要素)。 派生クラスで、独自のカスタム構成要素をサポートするには、このメソッドをオーバーライドすることができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="customConfiguration" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">構成には、認識されない 1 つまたは複数の要素が含まれています。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

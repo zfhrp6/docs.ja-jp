@@ -1,0 +1,739 @@
+<Type Name="Cursor" FullName="System.Windows.Forms.DataVisualization.Charting.Cursor">
+  <TypeSignature Language="C#" Value="public class Cursor : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Cursor extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataVisualization.Charting.Cursor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Enabled")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>軸の位置を定義する水平または垂直の線を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カーソルは、水平または垂直の行で、軸の位置を定義します。 範囲の選択は、先頭と末尾の位置によって定義され、半透明の色を使用して表示する軸に沿った範囲です。  
+  
+ カーソルと範囲選択の両方がによって実装される、<xref:System.Windows.Forms.DataVisualization.Charting.Cursor>として公開されるクラス、<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea.CursorX%2A>と<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea.CursorY%2A>のプロパティ、<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea>オブジェクト。 <xref:System.Windows.Forms.DataVisualization.Charting.ChartArea.CursorX%2A>オブジェクトは、グラフ領域の X 軸と<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea.CursorY%2A>オブジェクトは、Y 軸にします。 <xref:System.Windows.Forms.DataVisualization.Charting.Cursor.AxisType%2A>これらのオブジェクトのプロパティは、関連付けられた軸がプライマリかセカンダリかどうかを決定します。  
+  
+ 外側で見つかりましただけのカーソルと範囲選択の機能、<xref:System.Windows.Forms.DataVisualization.Charting.Cursor>クラスは、ルートにあるカーソルと範囲選択に関連するイベント<xref:System.Windows.Forms.DataVisualization.Charting.Chart>オブジェクト。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Cursor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.Cursor.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DataVisualization.Charting.Cursor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoScroll">
+      <MemberSignature Language="C#" Value="public bool AutoScroll { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoScroll" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Cursor.AutoScroll" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはスクロールを行うか範囲選択操作がグラフ領域の境界を越える場合を決定するフラグを設定します。</summary>
+        <value>
+          <see langword="true" />データ ビューを自動的にスクロールできる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ ビューには、プロットされる系列のすべてのデータ ポイントは表示されません、範囲が、ユーザーが選択されている場合は、ビューの自動スクロールは、このプロパティは`true`とマウス — とカーソルしたがって — がグラフ領域の境界外に移動します。  
+  
+ スクロールがのみ発生する軸に沿ったを表示できる使用可能な多くのデータがある場合。  
+  
+ 通常のすべてのデータを表示しないデータ ビューは、エンドユーザーがデータのサブセットにズーム インする場合になります。 ビューとズームはによって実装される、<xref:System.Windows.Forms.DataVisualization.Charting.AxisScaleView>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AxisType">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.AxisType AxisType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataVisualization.Charting.AxisType AxisType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Cursor.AxisType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.AxisType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定する、カーソルがアタッチされている軸の種類。</summary>
+        <value><see cref="T:System.Windows.Forms.DataVisualization.Charting.AxisType" />軸は、プライマリまたはセカンダリ軸にアタッチされているかどうかを表す列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 軸の 2 つのセットがあります。 プライマリおよびセカンダリ。 プライマリ軸の横棒グラフを除くすべてのグラフは、下 (主軸の x 軸) と、グラフ領域の境界線を左 (主軸の y 軸) にあります。  
+  
+ セカンダリ軸は、右 (第 2 x 軸) と、グラフ領域の境界線の上部 (第 2 y 軸) にあります。  
+  
+> [!NOTE]
+>  プロット グラフ領域内のすべての系列が軸 (たとえば、プライマリ x 軸) の 1 つの種類の (このケースでは、第 2 x 軸) 内の系列では使用されません軸の種類をこのプロパティを設定には効果はありませんのみを使用する場合カーソルは、系列のプロットに使用されている唯一の軸に自動的に添付されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.Cursor.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>解放、リリース、またはアンマネージ リソースをリセットするアプリケーション定義のタスクを実行します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.Cursor.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          <see langword="true" />アンマネージ コードとマネージの両方のリソースを解放するには<see langword="false" />アンマネージ リソースだけを解放します。</param>
+        <summary>リリースでは、アンマネージし、オプションでマネージ リソース。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Interval">
+      <MemberSignature Language="C#" Value="public double Interval { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Interval" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Cursor.Interval" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはカーソルの間隔を設定します。</summary>
+        <value>カーソルの間隔です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataVisualization.Charting.Cursor.Interval%2A>プロパティは、エンドユーザーがカーソルに描画できる頻度および場所を決定だけでなく、先頭と範囲選択の終点に描画できる場所です。 既定値には、0 の値は、カーソルまたは範囲の選択にグラフ領域内で任意の場所描画できることを表します。 0 以外の値は、そのカーソルまたは先頭の選択範囲の終点はユーザーの操作によって設定すると、指定した間隔に描画だけことを示します。  
+  
+ 測定単位がによって決定されます、<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.IntervalType%2A>プロパティです。  
+  
+ このプロパティと組み合わせても使用できます、<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.IntervalOffset%2A>プロパティで、指定した間隔のオフセットを指定することができます。 たとえば、毎週土曜日にのみ表示されますへのカーソルは、1 週間間隔必要がありますと共に指定する、6 日間の間隔のオフセット。 .NET framework では、日曜日は、週の最初の日であると見なされます。  
+  
+ 設定してカーソルのユーザー インターフェイスが有効になっている場合、<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.IsUserEnabled%2A>プロパティ、およびマウスが、グラフ領域の内側がクリックされると、カーソルの位置に設定されます、許容される場所に最も近いです。  
+  
+> [!IMPORTANT]
+>  <xref:System.Windows.Forms.DataVisualization.Charting.Cursor.Interval%2A>プロパティには効果がない場合は、カーソルの位置を設定するか、選択範囲をプログラムによって範囲です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IntervalOffset">
+      <MemberSignature Language="C#" Value="public double IntervalOffset { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 IntervalOffset" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Cursor.IntervalOffset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または間隔のオフセットをどのように影響する、ユーザーが設定されている場合のカーソルと範囲選択の描画位置を設定します。</summary>
+        <value>間隔のオフセット。 既定値は 0 で、制限がないことを示します、および、負の値が許可されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataVisualization.Charting.Cursor.IntervalOffset%2A>プロパティは、カーソルと開始の間隔のオフセットと範囲選択の終了点を決定します。 組み合わせて、<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.Interval%2A>プロパティ、このプロパティは、カーソルを決定し、グラフ領域内に範囲を表示することができます。 既定では、ゼロの値は、オフセットがないことを示します。  
+  
+ 測定単位がによって決定されます、<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.IntervalOffsetType%2A>プロパティです。  
+  
+ オフセットは、カーソルと先頭と範囲選択の終了点を描画することができますを場所に影響します。 たとえば、毎週土曜日にのみ表示されますへのカーソルは、1 週間間隔必要がありますと共に指定する、6 日間の間隔のオフセット。 .NET framework では、日曜日は、週の最初の日であると見なされます。  
+  
+ 設定してカーソルのユーザー インターフェイスが有効になっている場合、<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.IsUserEnabled%2A>プロパティ、およびマウスが、グラフ領域の内側がクリックされると、カーソルの位置に設定されます、許容される場所に最も近いです。  
+  
+> [!IMPORTANT]
+>  間隔に関連するプロパティがある影響しない場合、範囲の選択 またはカーソルの位置をプログラムで設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IntervalOffsetType">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType IntervalOffsetType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType IntervalOffsetType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Cursor.IntervalOffsetType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはカーソルと軸の選択範囲の間隔のオフセットの種類を設定します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType" />間隔のオフセットの測定単位を決定する列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataVisualization.Charting.Cursor.IntervalOffsetType%2A>プロパティを使用して指定されている間隔のオフセットの種類を決定する、<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.IntervalOffset%2A>プロパティです。  
+  
+ 場合、<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.IntervalOffsetType%2A>プロパティに設定されている<xref:System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto>、<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.IntervalType%2A>プロパティ設定が使用されます。  
+  
+> [!NOTE]
+>  間隔に関連するプロパティがある影響しない場合、範囲の選択 またはカーソルの位置をプログラムで設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IntervalType">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType IntervalType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType IntervalType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Cursor.IntervalType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはカーソルと選択した範囲の軸の間隔の種類を設定します。</summary>
+        <value>カーソルと選択した範囲の軸の間隔の種類。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataVisualization.Charting.Cursor.IntervalType%2A>プロパティを使用して指定されている間隔の種類を決定する、<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.Interval%2A>プロパティです。  
+  
+ 間隔の種類がある場合<xref:System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto>、間隔の単位として扱われます、`double`は 1 日に相当するときに<xref:System.DateTime>値を指定します。  
+  
+> [!NOTE]
+>  間隔に関連するプロパティがある影響しない場合、範囲の選択 またはカーソルの位置をプログラムで設定します。  
+  
+ 軸の間隔の種類は、時刻を表す場合 — 時間、分、およびなど — し正しくズームの関数では、有効にするために、<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.IntervalType%2A>時刻値に設定することも必要があります。 たとえば場合は、ChartArea1.AxisX.IntervalType は時間単位で表す、分に、ChartArea1.CursorX.IntervalType を設定可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUserEnabled">
+      <MemberSignature Language="C#" Value="public bool IsUserEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsUserEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Cursor.IsUserEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはまたはカーソルのユーザー インターフェイスを無効にするフラグを設定します。</summary>
+        <value>
+          <see langword="true" />カーソルのユーザー インターフェイスが有効である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUserSelectionEnabled">
+      <MemberSignature Language="C#" Value="public bool IsUserSelectionEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsUserSelectionEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Cursor.IsUserSelectionEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはまたは範囲選択ユーザー インターフェイスを無効にするフラグを設定します。</summary>
+        <value>
+          <see langword="true" />範囲選択ユーザー インターフェイスが有効である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color LineColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color LineColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Cursor.LineColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Color), "Red")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataVisualization.Charting.ChartColorEditor, System.Windows.Forms.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.ColorConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはカーソルの線の色を設定します。</summary>
+        <value>カーソルの線の色。 既定値は <see cref="P:System.Drawing.Color.Red" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineDashStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.ChartDashStyle LineDashStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataVisualization.Charting.ChartDashStyle LineDashStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Cursor.LineDashStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.ChartDashStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはカーソル行のスタイルを設定します。</summary>
+        <value>カーソル行のスタイルです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineWidth">
+      <MemberSignature Language="C#" Value="public int LineWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 LineWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Cursor.LineWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、線の幅 (ピクセル単位)、カーソルの</summary>
+        <value>線の幅 (ピクセル単位)。 既定値は 1 です) です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、カーソルのピクセル単位で、線の幅を指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Position">
+      <MemberSignature Language="C#" Value="public double Position { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Position" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Cursor.Position" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(NaN)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.ParenthesizePropertyName(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.DataVisualization.Charting.DoubleDateNanValueConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはカーソルの位置を設定します。</summary>
+        <value>カーソルの位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティと、カーソル、カーソルの位置をプログラムで設定についての位置を取得するためにことができます。  
+  
+ 位置が計算によって決定されるカーソルが所属する軸の値として、<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.AxisType%2A>プロパティです。 たとえば、主軸の X 軸、2000 年 1 月 1 日の値にこのプロパティを設定する、カーソルが属している場合が軸に沿った 2000 年 1 月 1 日の位置に描画されている x 軸カーソルで発生します。 この軸の値が存在しない場合、カーソルは表示されません。  
+  
+ このプロパティを設定する場合、<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.Interval%2A>と<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.IntervalOffset%2A>プロパティには影響はありません。 この指定された場所にカーソルが表示されます、します。  
+  
+ 設定がこのプロパティを生成しませんが、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.CursorPositionChanged>または<xref:System.Windows.Forms.DataVisualization.Charting.Chart.CursorPositionChanging>イベント。  
+  
+ または、<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.SetCursorPosition%2A>と<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.SetCursorPixelPosition%2A>メソッドは、カーソルを設定するために使用できます。  
+  
+ プログラムで削除するには、カーソルをカーソルの位置を設定するこのプロパティを使用して<xref:System.Double.NaN>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color SelectionColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color SelectionColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Cursor.SelectionColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Color), "LightGray")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataVisualization.Charting.ChartColorEditor, System.Windows.Forms.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.ColorConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータの範囲をハイライト半透明の色を設定します。</summary>
+        <value>強調表示された範囲の色。 既定値は<see cref="P:System.Drawing.Color.LightGray" />120 のアルファ値を持つ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、範囲選択の色を決定し、有効な ARGB (アルファ、赤、緑、青) 値に設定することができます。 透明度のレベルを決定する、アルファ値が指定されていない場合、既定のアルファ値は 120 は使用されます。  
+  
+ 選択した色に設定できる、X と Y 軸カーソルを使用して実装される、<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea.CursorX%2A>と<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea.CursorY%2A>のプロパティ、<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea>オブジェクト、それぞれします。 範囲は、x 軸にのみ選択した場合、 <xref:System.Windows.Forms.DataVisualization.Charting.Cursor.SelectionColor%2A> x 軸カーソルが使用されます。 値の範囲は、y 軸に沿ってのみ選択した場合、<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.SelectionColor%2A>値、y 軸カーソルが使用されます。 両方の軸に沿って範囲が選択されている場合、<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.SelectionColor%2A>値、y 軸カーソルは、選択した色にも使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionEnd">
+      <MemberSignature Language="C#" Value="public double SelectionEnd { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 SelectionEnd" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Cursor.SelectionEnd" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(NaN)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.DataVisualization.Charting.DoubleDateNanValueConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または選択範囲の終了位置を設定します。</summary>
+        <value>範囲選択の終了位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーは、マウスの左ボタンをクリックしてマウスをドラッグして、グラフ領域内の範囲を選択できます。 なお、<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.IsUserSelectionEnabled%2A>プロパティを設定する必要がありますも`true`します。 プログラムでいずれかを使用して選択範囲を設定できますさらに、<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.SelectionEnd%2A>と<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.SelectionStart%2A>プロパティ、または<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.SetSelectionPosition%2A>または<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.SetSelectionPixelPosition%2A>メソッドです。  
+  
+ 範囲選択の終了位置は、カーソルが所属する軸の値として計算されます。 たとえば、カーソルが主軸の x 軸に属しており、設定する場合、<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.SelectionEnd%2A>プロパティに 2000 年 12 月 31 日の値を選択した領域の末尾が 2000 年 12 月 31 日にに沿って行わプライマリ X 軸です。  
+  
+ プログラムで削除するには、範囲の選択 設定、先頭と範囲の終点<xref:System.Double.NaN>を使用して、<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.SelectionEnd%2A>と<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.SelectionStart%2A>プロパティ、またはを使用して、<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.SetSelectionPosition%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionStart">
+      <MemberSignature Language="C#" Value="public double SelectionStart { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 SelectionStart" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Cursor.SelectionStart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(NaN)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.DataVisualization.Charting.DoubleDateNanValueConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはカーソルの選択範囲の開始位置を設定します。</summary>
+        <value>カーソルの選択範囲の開始位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーは、マウスの左ボタンをクリックすると、マウスをドラッグして、カーソルの位置を移動して、範囲を選択できます。 なお、<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.IsUserSelectionEnabled%2A>プロパティを設定する必要がありますも`true`します。 プログラムでいずれかを使用して選択範囲を設定できますさらに、<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.SelectionEnd%2A>と<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.SelectionStart%2A>プロパティ、または<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.SetSelectionPosition%2A>または<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.SetSelectionPixelPosition%2A>メソッドです。  
+  
+ 範囲選択の開始位置は、カーソルが所属する軸の値として計算されます。 たとえば、カーソルが主軸の x 軸に属しており、設定する場合、<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.SelectionStart%2A>プロパティに 2000 年 1 月 1 日の値を選択した領域の先頭が 2000 年 1 月 1 日にに沿って行わプライマリ X 軸です。  
+  
+ プログラムで削除するには、範囲の選択 設定、先頭と範囲の終点<xref:System.Double.NaN>を使用して、<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.SelectionEnd%2A>と<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.SelectionStart%2A>プロパティ、またはを使用して、<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.SetSelectionPosition%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCursorPixelPosition">
+      <MemberSignature Language="C#" Value="public void SetCursorPixelPosition (System.Drawing.PointF point, bool roundToBoundary);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetCursorPixelPosition(valuetype System.Drawing.PointF point, bool roundToBoundary) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.Cursor.SetCursorPixelPosition(System.Drawing.PointF,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Drawing.PointF" />
+        <Parameter Name="roundToBoundary" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="point">A<see cref="T:System.Drawing.PointF" />カーソルを描画するかを指定します。</param>
+        <param name="roundToBoundary">場合<see langword="true" />、カーソルを描画するグラフ領域の最も近い境界に沿っての指定した位置に当てはまらない場合、<see cref="T:System.Windows.Forms.DataVisualization.Charting.ChartArea" />オブジェクト。</param>
+        <summary>指定した位置にカーソルを表示します。 ピクセル単位で測定されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCursorPosition">
+      <MemberSignature Language="C#" Value="public void SetCursorPosition (double newPosition);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetCursorPosition(float64 newPosition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.Cursor.SetCursorPosition(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newPosition" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="newPosition">カーソルの新しい位置。 関連する軸に沿った値として計測されます。</param>
+        <summary>指定した軸の値をグラフ領域内のカーソルの位置を設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetSelectionPixelPosition">
+      <MemberSignature Language="C#" Value="public void SetSelectionPixelPosition (System.Drawing.PointF startPoint, System.Drawing.PointF endPoint, bool roundToBoundary);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetSelectionPixelPosition(valuetype System.Drawing.PointF startPoint, valuetype System.Drawing.PointF endPoint, bool roundToBoundary) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.Cursor.SetSelectionPixelPosition(System.Drawing.PointF,System.Drawing.PointF,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="startPoint" Type="System.Drawing.PointF" />
+        <Parameter Name="endPoint" Type="System.Drawing.PointF" />
+        <Parameter Name="roundToBoundary" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="startPoint">A<see cref="T:System.Drawing.PointF" />範囲選択の開始位置を指定します。</param>
+        <param name="endPoint">A<see cref="T:System.Drawing.PointF" />範囲選択範囲の終了位置を指定します。</param>
+        <param name="roundToBoundary">場合<see langword="true" />、内で指定した位置が当てはまらない場合、始点と終点を最も近いグラフ領域の境界に丸められますが、<see cref="T:System.Windows.Forms.DataVisualization.Charting.ChartArea" />オブジェクト。</param>
+        <summary>範囲選択の開始と終了位置を設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetSelectionPosition">
+      <MemberSignature Language="C#" Value="public void SetSelectionPosition (double newStart, double newEnd);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetSelectionPosition(float64 newStart, float64 newEnd) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.Cursor.SetSelectionPosition(System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newStart" Type="System.Double" />
+        <Parameter Name="newEnd" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="newStart">範囲選択の新しい開始位置。 関連する軸に沿った値として計測されます。</param>
+        <param name="newEnd">範囲選択の新しい終了位置。 関連する軸に沿った値として計測されます。</param>
+        <summary>指定した軸の値は、グラフ領域内の選択範囲の位置を設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

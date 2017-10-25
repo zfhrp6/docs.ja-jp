@@ -1,0 +1,329 @@
+<Type Name="BoundColumn" FullName="System.Web.UI.WebControls.BoundColumn">
+  <TypeSignature Language="C#" Value="public class BoundColumn : System.Web.UI.WebControls.DataGridColumn" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BoundColumn extends System.Web.UI.WebControls.DataGridColumn" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.BoundColumn" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.DataGridColumn</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>列の種類、<see cref="T:System.Web.UI.WebControls.DataGrid" />データ ソースのフィールドにバインドされているコントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BoundColumn>の列の型、<xref:System.Web.UI.WebControls.DataGrid>コントロールにデータ ソースのフィールドの内容を表示します。 値は、1 つの列に表示されます。 フィールドにリンクされて、 <xref:System.Web.UI.WebControls.BoundColumn>、対応するセルのデータ ソースの更新プログラムが反映されますので、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+> [!NOTE]
+>  この列の型は、既定値を<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ スタイル プロパティを使用して、この列の外観を制御する、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+> [!CAUTION]
+>  テキストは HTML エンコードで表示されるまで、<xref:System.Web.UI.WebControls.BoundColumn>です。 これにより、テキストに HTML タグ内のスクリプトを埋め込むことが可能です。 ユーザー入力からこの列の値には、必ずをセキュリティの脆弱性を減らすために値を検証します。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.BoundColumn>の列の型、<xref:System.Web.UI.WebControls.DataGrid>コントロールにデータ ソースのフィールドを表示します。  
+  
+ [!code-aspx-csharp[Classic BoundColumn Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic BoundColumn Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic BoundColumn Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic BoundColumn Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BoundColumn ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BoundColumn.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.BoundColumn" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.BoundColumn>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例で作成しの新しいインスタンスを初期化する方法、<xref:System.Web.UI.WebControls.BoundColumn>クラスに追加して、<xref:System.Web.UI.WebControls.DataGrid.Columns%2A>コレクション。  
+  
+ [!code-aspx-csharp[DataGridCtor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridCtor/CS/datagridctorcs.aspx#1)]
+ [!code-aspx-vb[DataGridCtor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridCtor/VB/datagridctorvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataField">
+      <MemberSignature Language="C#" Value="public virtual string DataField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BoundColumn.DataField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、フィールド名にバインドするデータ ソース、<see cref="T:System.Web.UI.WebControls.BoundColumn" />です。</summary>
+        <value>バインドするフィールドの名前、<see cref="T:System.Web.UI.WebControls.BoundColumn" />です。 既定値は <see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BoundColumn.DataField%2A>プロパティにバインドするフィールドを指定して、<xref:System.Web.UI.WebControls.BoundColumn>です。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.BoundColumn.DataField%2A>にバインドするデータ ソースのフィールドの名前を指定するプロパティ、<xref:System.Web.UI.WebControls.BoundColumn>です。  
+  
+ [!code-aspx-csharp[Classic BoundColumn Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic BoundColumn Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic BoundColumn Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic BoundColumn Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataFormatString">
+      <MemberSignature Language="C#" Value="public virtual string DataFormatString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataFormatString" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BoundColumn.DataFormatString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列内のアイテムの表示形式を指定する文字列を設定します。</summary>
+        <value>列内のアイテムの表示形式を指定する書式指定文字列。 既定値は <see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BoundColumn.DataFormatString%2A>列内の項目のカスタム書式指定を提供するプロパティです。  
+  
+ データの書式指定文字列は、フォームで、コロンで区切られた 2 つの部分で構成されます { `A` : `Bxx` }。 たとえば、書式指定文字列の {0: f2} には、小数点以下 2 桁の固定小数点数が表示されます。  
+  
+> [!NOTE]
+>  文字列全体は、書式指定文字列とリテラル文字列ではなくであることを示すために中かっこで囲む必要があります。 かっこの外側の任意のテキストは、リテラル テキストとして表示されます。  
+  
+ コロンの前に値 (`A`一般的な例で) パラメーターの 0 から始まるリストのパラメーターのインデックスを指定します。  
+  
+> [!NOTE]
+>  各セルには 1 つだけの値がないために、この値を 0 に設定だけことができます。  
+  
+ コロンの後に文字 (`B`一般的な例で)、値を表示する形式を指定します。 次の表は、一般的な形式を示します。  
+  
+|書式指定文字|説明|  
+|----------------------|-----------------|  
+|`C`|通貨書式の数値の値を表示します。|  
+|`D`|10 進数形式で数値を表示します。|  
+|`E`|指数表記の指数の数値を表示します。|  
+|`F`|固定形式で数値を表示します。|  
+|`G`|数値を表示は一般に書式設定します。|  
+|`N`|数値書式の数値の値を表示します。|  
+|`X`|16 進形式で数値を表示します。|  
+  
+> [!NOTE]
+>  形式の文字はを除き、大文字小文字が区別されません`X`、指定した場合、16 進文字が表示されます。  
+  
+ 書式指定文字の後の値 (`xx`一般的な例で) の有効桁数または小数点以下桁数を表示する数を指定します。  
+  
+ 書式指定文字列の詳細については、「[Formatting Types](~/docs/standard/base-types/formatting-types.md)」(型の書式設定) を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.BoundColumn.DataFormatString%2A>内の列のさまざまな形式を指定するプロパティ、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 `Qty`列は、整数として書式設定、`Price`列を通貨として書式設定、`Weight`列は 10 進数として書式設定、および`Expires`列は短い形式の日付と時刻の文字列として書式設定します。  
+  
+ [!code-aspx-csharp[BoundColumnDataFormatString#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BoundColumnDataFormatString/cs/BoundColumnSampleCS.aspx#1)]
+ [!code-aspx-vb[BoundColumnDataFormatString#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BoundColumnDataFormatString/vb/BoundColumnSampleVB.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatDataValue">
+      <MemberSignature Language="C#" Value="protected virtual string FormatDataValue (object dataValue);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string FormatDataValue(object dataValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BoundColumn.FormatDataValue(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="dataValue">書式を設定する値。</param>
+        <summary>指定した値によって示される形式に変換、<see cref="P:System.Web.UI.WebControls.BoundColumn.DataFormatString" />プロパティです。</summary>
+        <returns>指定した値によって示される形式に変換、<see cref="P:System.Web.UI.WebControls.BoundColumn.DataFormatString" />プロパティです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BoundColumn.FormatDataValue%2A>によって指定された値を形式に変換する方法が示される、<xref:System.Web.UI.WebControls.BoundColumn.DataFormatString%2A>プロパティです。  
+  
+> [!NOTE]
+>  このメソッドは、文字列を返しますと等価の値の場合、<xref:System.Web.UI.WebControls.BoundColumn.DataFormatString%2A>プロパティが設定されていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BoundColumn.Initialize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リセット、<see cref="T:System.Web.UI.WebControls.BoundColumn" />を初期状態にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BoundColumn.Initialize%2A>をリセットする方法、<xref:System.Web.UI.WebControls.BoundColumn>を初期状態にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeCell">
+      <MemberSignature Language="C#" Value="public override void InitializeCell (System.Web.UI.WebControls.TableCell cell, int columnIndex, System.Web.UI.WebControls.ListItemType itemType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void InitializeCell(class System.Web.UI.WebControls.TableCell cell, int32 columnIndex, valuetype System.Web.UI.WebControls.ListItemType itemType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BoundColumn.InitializeCell(System.Web.UI.WebControls.TableCell,System.Int32,System.Web.UI.WebControls.ListItemType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cell" Type="System.Web.UI.WebControls.TableCell" />
+        <Parameter Name="columnIndex" Type="System.Int32" />
+        <Parameter Name="itemType" Type="System.Web.UI.WebControls.ListItemType" />
+      </Parameters>
+      <Docs>
+        <param name="cell">A<see cref="T:System.Web.UI.WebControls.TableCell" />をリセットするセルを表すオブジェクト。</param>
+        <param name="columnIndex">セルが配置されている列の番号。</param>
+        <param name="itemType"><see cref="T:System.Web.UI.WebControls.ListItemType" /> 値のいずれか。</param>
+        <summary>指定されたセルのリセット、<see cref="T:System.Web.UI.WebControls.BoundColumn" />を初期状態にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BoundColumn.InitializeCell%2A>メソッドで指定されたセルのリセット、<xref:System.Web.UI.WebControls.BoundColumn>を初期状態にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadOnly">
+      <MemberSignature Language="C#" Value="public virtual bool ReadOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BoundColumn.ReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうかの項目、<see cref="T:System.Web.UI.WebControls.BoundColumn" />編集できます。</summary>
+        <value>
+          <see langword="true" />場合内の項目、<see cref="T:System.Web.UI.WebControls.BoundColumn" />編集後、それ以外にすることはできません<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BoundColumn.ReadOnly%2A>プロパティを指定するかどうかの項目、<xref:System.Web.UI.WebControls.BoundColumn>編集できます。 このプロパティは、プログラムで、列は読み取り専用であるかどうかを確認するも使用できます。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.BoundColumn.ReadOnly%2A>ことを指定するプロパティ、<xref:System.Web.UI.WebControls.BoundColumn>は読み取り専用です。 .Aspx ファイルでは、BoundColumn の 3 つのコントロールを定義し、項目列を読み取り専用に設定します。  
+  
+ [!code-aspx-csharp[BoundColumnReadOnly#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BoundColumnReadOnly/CS/boundcolumnreadonlycs.aspx#1)]
+ [!code-aspx-vb[BoundColumnReadOnly#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BoundColumnReadOnly/VB/boundcolumnreadonlyvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="thisExpr">
+      <MemberSignature Language="C#" Value="public static readonly string thisExpr;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string thisExpr" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.BoundColumn.thisExpr" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文字列を表す"!"です。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BoundColumn.thisExpr>を表すフィールド、"!"文字列。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

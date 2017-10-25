@@ -1,0 +1,939 @@
+<Type Name="Queue" FullName="System.Collections.Queue">
+  <TypeSignature Language="C#" Value="public class Queue : ICloneable, System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit Queue extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.ICloneable" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.Queue" />
+  <AssemblyInfo>
+    <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("Count = {Count}")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerTypeProxy(typeof(System.Collections.Queue/QueueDebugView))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>オブジェクトの先入れ先出しコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、循環を配列として、キューを実装します。 オブジェクトに格納されている、<xref:System.Collections.Queue>が一方の端に挿入され、他から削除します。  
+  
+ キューおよびスタックは場合に役立ちますについて; 一時的な保存する必要があります。つまり、可能性がある場合の値を取得後に要素を破棄します。 使用して<xref:System.Collections.Queue>かどうかは、これが、コレクションに格納される順序と同じ順序での情報にアクセスする必要があります。 使用して<xref:System.Collections.Stack>逆の順序で、情報にアクセスする必要がある場合。 使用して<xref:System.Collections.Concurrent.ConcurrentQueue%601>または<xref:System.Collections.Concurrent.ConcurrentStack%601>同時に複数のスレッドからコレクションにアクセスする必要がある場合。  
+  
+ 次の 3 つの主要な操作を実行できる、<xref:System.Collections.Queue>とその要素。  
+  
+-   <xref:System.Collections.Queue.Enqueue%2A>末尾に要素を追加、<xref:System.Collections.Queue>です。  
+  
+-   <xref:System.Collections.Queue.Dequeue%2A>先頭から最も古い要素を削除、<xref:System.Collections.Queue>です。  
+  
+-   <xref:System.Collections.Queue.Peek%2A>先頭にある最も古い要素を返します、<xref:System.Collections.Queue>からは削除されませんが、<xref:System.Collections.Queue>です。  
+  
+ 容量、<xref:System.Collections.Queue>要素の数が、<xref:System.Collections.Queue>を保持できます。 要素が追加されるにつれて、<xref:System.Collections.Queue>容量を増やすは自動的に再割り当て、必要に応じて。  呼び出すことによって、容量を削減できる<xref:System.Collections.Queue.TrimToSize%2A>です。  
+  
+ 増加率より大きな空き領域が必要な場合に、現在の容量を乗算する数です。  増加率が決まるときに、<xref:System.Collections.Queue>を構築します。 既定の増加率は 2.0 です。 容量、<xref:System.Collections.Queue>少なくとも最低 4 で、増加率に関係なく、常に増加します。 たとえば、 <xref:System.Collections.Queue> 1.0 の増加率が常に高まります容量 4 でより大きな空き領域が必要な場合です。  
+  
+ <xref:System.Collections.Queue>受け付ける`null`有効な値としてでき、重複する要素。  
+  
+ このコレクションの汎用のバージョンについては、次を参照してください。<xref:System.Collections.Generic.Queue%601?displayProperty=nameWithType>  
+  
+   
+  
+## Examples  
+ 次の例は、作成し、値を追加する方法を示しています、<xref:System.Collections.Queue>とその値を印刷する方法です。  
+  
+ [!code-cpp[Classic Queue Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Queue Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Queue Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Queue Example/CS/source.cs#1)]
+ [!code-vb[Classic Queue Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Queue Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>パブリック静的 (<see langword="Shared" /> Visual Basic で) この型のメンバーは、スレッド セーフであります。 インスタンス メンバーの場合は、スレッド セーフであるとは限りません。  
+  
+ スレッド セーフを確保する、 <see cref="T:System.Collections.Queue" />、によって返されるラッパーを介してすべての操作を行う必要があります、<see cref="M:System.Collections.Queue.Synchronized(System.Collections.Queue)" />メソッドです。  
+  
+ コレクションの列挙は、本質的にスレッド セーフなプロシージャではありません。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Queue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Queue.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.Queue" />が空で、クラスの既定の初期量を備え既定の増加率を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 容量、<xref:System.Collections.Queue>要素の数が、<xref:System.Collections.Queue>を保持できます。  要素が追加されるにつれて、<xref:System.Collections.Queue>容量を増やすは自動的に再割り当て、必要に応じて。  呼び出すことによって、容量を削減できる<xref:System.Collections.Queue.TrimToSize%2A>です。  
+  
+ 増加率より大きな空き領域が必要な場合に、現在の容量を乗算する数です。  増加率が決まるときに、<xref:System.Collections.Queue>を構築します。  
+  
+ このコンス トラクターは、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Queue (System.Collections.ICollection col);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.ICollection col) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Queue.#ctor(System.Collections.ICollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="col" Type="System.Collections.ICollection" />
+      </Parameters>
+      <Docs>
+        <param name="col"><see cref="T:System.Collections.ICollection" />から要素をコピーします。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.Queue" />クラスを指定したコレクションからコピーされた要素を含む、コピーした要素の数と同じ初期量があり、既定の増加率を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 容量、<xref:System.Collections.Queue>要素の数が、<xref:System.Collections.Queue>を保持できます。  要素が追加されるにつれて、<xref:System.Collections.Queue>容量を増やすは自動的に再割り当て、必要に応じて。  呼び出すことによって、容量を削減できる<xref:System.Collections.Queue.TrimToSize%2A>です。  
+  
+ 増加率より大きな空き領域が必要な場合に、現在の容量を乗算する数です。  増加率が決まるときに、<xref:System.Collections.Queue>を構築します。  
+  
+ 要素の上にコピー、<xref:System.Collections.Queue>によって読み取られる同じ順序で、<xref:System.Collections.IEnumerator>の<xref:System.Collections.ICollection>です。  
+  
+ このコンス トラクターは、O (`n`) 操作では、ここで`n`内の要素の数は、`col`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="col" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Queue (int capacity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 capacity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Queue.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="capacity" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="capacity"><see cref="T:System.Collections.Queue" /> が格納できる要素数の初期値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.Queue" />が空で、クラス、指定した初期量、および既定の増加率を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 容量、<xref:System.Collections.Queue>要素の数が、<xref:System.Collections.Queue>を保持できます。  要素が追加されるにつれて、<xref:System.Collections.Queue>容量を増やすは自動的に再割り当て、必要に応じて。  呼び出すことによって、容量を削減できる<xref:System.Collections.Queue.TrimToSize%2A>です。  
+  
+ 増加率より大きな空き領域が必要な場合に、現在の容量を乗算する数です。  増加率が決まるときに、<xref:System.Collections.Queue>を構築します。  
+  
+ コレクションのサイズを推定できる場合に要素を追加するときにサイズ変更操作の数を実行する必要があるの初期量を指定する、<xref:System.Collections.Queue>です。  
+  
+ このコンス トラクターは、O (`n`) 操作では、ここで`n`は`capacity`します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="capacity" /> が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Queue (int capacity, float growFactor);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 capacity, float32 growFactor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Queue.#ctor(System.Int32,System.Single)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="capacity" Type="System.Int32" />
+        <Parameter Name="growFactor" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="capacity"><see cref="T:System.Collections.Queue" /> が格納できる要素数の初期値。</param>
+        <param name="growFactor">係数の容量、<see cref="T:System.Collections.Queue" />が展開されています。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.Queue" />クラスは、空を指定した初期量を備え、指定した増加率を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 容量、<xref:System.Collections.Queue>要素の数が、<xref:System.Collections.Queue>を保持できます。  要素が追加されるにつれて、<xref:System.Collections.Queue>容量を増やすは自動的に再割り当て、必要に応じて。  呼び出すことによって、容量を削減できる<xref:System.Collections.Queue.TrimToSize%2A>です。  
+  
+ 増加率より大きな空き領域が必要な場合に、現在の容量を乗算する数です。  増加率が決まるときに、<xref:System.Collections.Queue>を構築します。 容量、<xref:System.Collections.Queue>増加率に関係なくの最小値は常にだけ増加させる; 1.0 の増加率が防ぐことはできません、<xref:System.Collections.Queue>のサイズを大きくします。  
+  
+ コレクションのサイズを推定できる場合に要素を追加するときにサイズ変更操作の数を実行する必要があるの初期量を指定する、<xref:System.Collections.Queue>です。  
+  
+ このコンス トラクターは、O (`n`) 操作では、ここで`n`は`capacity`します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="capacity" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="growFactor" />1.0 より小さいか、10.0 を超えるです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public virtual void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Queue.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Collections.Queue" /> からすべてのオブジェクトを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Queue.Count%2A>0 に設定し、コレクションの要素から他のオブジェクトへの参照も解放します。  
+  
+ 容量はそのまま残ります。 容量をリセットする、 <xref:System.Collections.Queue>、呼び出す<xref:System.Collections.Queue.TrimToSize%2A>です。 空のトリミング<xref:System.Collections.Queue>のキャパシティを設定、<xref:System.Collections.Queue>を既定の容量。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Queue.Count%2A>します。  
+  
+   
+  
+## Examples  
+ 次の例の値をクリアする方法を示しています、<xref:System.Collections.Queue>です。  
+  
+ [!code-cpp[Classic Queue.Clear Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Queue.Clear Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Queue.Clear Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Queue.Clear Example/CS/source.cs#1)]
+ [!code-vb[Classic Queue.Clear Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Queue.Clear Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public virtual object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Queue.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Collections.Queue" /> の簡易コピーを作成します。</summary>
+        <returns><see cref="T:System.Collections.Queue" /> の簡易コピー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションの簡易コピーは、参照型または値の型が参照先のオブジェクトはコピーしないかどうか、コレクションの要素のみをコピーします。 新しいコレクション内の参照は、元のコレクション内の参照をポイントする同じオブジェクトをポイントします。  
+  
+ これに対し、コレクションのディープ コピーされた要素をコピーして、要素が直接または間接的に参照するすべてです。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Queue.Count%2A>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public virtual bool Contains (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Queue.Contains(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj"><see cref="T:System.Collections.Queue" /> 内で検索される <see cref="T:System.Object" />。 値として <see langword="null" /> を指定できます。</param>
+        <summary>ある要素が <see cref="T:System.Collections.Queue" /> 内に存在するかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="obj" /> に存在する場合は <see cref="T:System.Collections.Queue" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出すことで等しいかどうかを判断<xref:System.Object.Equals%2A?displayProperty=nameWithType>です。  
+  
+ このメソッドは、一方向の検索を実行します。そのため、このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Queue.Count%2A>します。  
+  
+ 以降、.NET Framework 2.0 では、このメソッドを使用して、コレクションのオブジェクトの<xref:System.Object.Equals%2A>と<xref:System.IComparable.CompareTo%2A>メソッド`obj`を決定するかどうか`item`が存在します。 .NET Framework の以前のバージョンでは、この決定を使用して行われた、<xref:System.Object.Equals%2A>と<xref:System.IComparable.CompareTo%2A>のメソッド、`obj`パラメーター コレクション内のオブジェクトにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public virtual void CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Queue.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Array" /> から要素がコピーされる 1 次元の <see cref="T:System.Collections.Queue" />。 <see cref="T:System.Array" /> には、0 から始まるインデックス番号が必要です。</param>
+        <param name="index">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary><see cref="T:System.Collections.Queue" /> の要素を既存の 1 次元の <see cref="T:System.Array" /> にコピーします。コピー操作は、配列内の指定したインデックスから始まります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素のコピー先は、<xref:System.Array>を列挙子が反復処理する順序と同じ順序で、<xref:System.Collections.Queue>です。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Queue.Count%2A>します。  
+  
+   
+  
+## Examples  
+ 次の例をコピーする方法を示しています、<xref:System.Collections.Queue>を 1 次元配列にします。  
+  
+ [!code-cpp[Classic Queue.CopyTo Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Queue.CopyTo Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Queue.CopyTo Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Queue.CopyTo Example/CS/source.cs#1)]
+ [!code-vb[Classic Queue.CopyTo Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Queue.CopyTo Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="array" /> が多次元です。  
+  
+ または  
+  
+ コピー元の <see cref="T:System.Collections.Queue" /> の要素数が、コピー先 <paramref name="array" /> の <paramref name="index" /> から最後までの使用可能領域を超えています。</exception>
+        <exception cref="T:System.ArrayTypeMismatchException">コピー元の <see cref="T:System.Collections.Queue" /> の型をコピー先の <paramref name="array" /> の型に自動的にキャストすることはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public virtual int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Queue.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.Queue" /> に格納されている要素の数を取得します。</summary>
+        <value><see cref="T:System.Collections.Queue" /> に格納されている要素の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 容量、<xref:System.Collections.Queue>は要素の数を<xref:System.Collections.Queue>格納できます。 <xref:System.Collections.Queue.Count%2A>実際には、要素の数、<xref:System.Collections.Queue>です。  
+  
+ 容量、<xref:System.Collections.Queue>は常により大きいまたは等しい<xref:System.Collections.Queue.Count%2A>です。 場合<xref:System.Collections.Queue.Count%2A>要素を追加するときに、容量を超える場合、容量は前の要素をコピーし、新しい要素を追加する前に、内部配列の再割り当てによって自動的に増加します。 これは増加率を現在の容量を乗算することによって新しい容量を決定ときに決定されます、<xref:System.Collections.Queue>を構築します。 容量、<xref:System.Collections.Queue>増加率に関係なくの最小値は常にだけ増加させる; 1.0 の増加率が防ぐことはできません、<xref:System.Collections.Queue>のサイズを大きくします。  
+  
+ 呼び出すことによって、容量を削減できる<xref:System.Collections.Queue.TrimToSize%2A>です。  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dequeue">
+      <MemberSignature Language="C#" Value="public virtual object Dequeue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Dequeue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Queue.Dequeue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Collections.Queue" /> の先頭にあるオブジェクトを削除し、返します。</summary>
+        <returns><see cref="T:System.Collections.Queue" /> の先頭から削除されたオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは <xref:System.Collections.Queue.Peek%2A> メソッドに類似していますが、<xref:System.Collections.Queue.Peek%2A> は <xref:System.Collections.Queue> を変更しません。  
+  
+ `null`追加することができます、<xref:System.Collections.Queue>値として。 Null 値との末尾を識別する、 <xref:System.Collections.Queue>、確認、<xref:System.Collections.Queue.Count%2A>プロパティまたは catch、 <xref:System.InvalidOperationException>、ときにスローする、<xref:System.Collections.Queue>が空です。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 次の例は、要素を追加する方法を示しています、 <xref:System.Collections.Queue>、要素を削除、 <xref:System.Collections.Queue>、またはの先頭の要素を表示、<xref:System.Collections.Queue>です。  
+  
+ [!code-cpp[Classic Queue.Enqueue Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Queue.Enqueue Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Queue.Enqueue Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Queue.Enqueue Example/CS/source.cs#1)]
+ [!code-vb[Classic Queue.Enqueue Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Queue.Enqueue Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Collections.Queue" /> が空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Enqueue">
+      <MemberSignature Language="C#" Value="public virtual void Enqueue (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Enqueue(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Queue.Enqueue(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj"><see cref="T:System.Collections.Queue" /> に追加するオブジェクト。 値として <see langword="null" /> を指定できます。</param>
+        <summary><see cref="T:System.Collections.Queue" /> の末尾にオブジェクトを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 容量、<xref:System.Collections.Queue>要素の数が、<xref:System.Collections.Queue>を保持できます。  要素が追加されるにつれて、<xref:System.Collections.Queue>容量を増やすは自動的に再割り当て、必要に応じて。  呼び出すことによって、容量を削減できる<xref:System.Collections.Queue.TrimToSize%2A>です。  
+  
+ 増加率より大きな空き領域が必要な場合に、現在の容量を乗算する数です。  増加率が決まるときに、<xref:System.Collections.Queue>を構築します。 容量、<xref:System.Collections.Queue>増加率に関係なくの最小値は常にだけ増加させる; 1.0 の増加率が防ぐことはできません、<xref:System.Collections.Queue>のサイズを大きくします。  
+  
+ 場合<xref:System.Collections.Queue.Count%2A>が小さい内部配列の容量よりも、このメソッドは、o (1) 操作になります。 内部の配列は、新しい要素のために再割り当てする必要がある、このメソッドが O (`n`) 操作では、ここで`n`は<xref:System.Collections.Queue.Count%2A>します。  
+  
+   
+  
+## Examples  
+ 次の例は、要素を追加する方法を示しています、 <xref:System.Collections.Queue>、要素を削除、 <xref:System.Collections.Queue>、またはの先頭の要素を表示、<xref:System.Collections.Queue>です。  
+  
+ [!code-cpp[Classic Queue.Enqueue Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Queue.Enqueue Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Queue.Enqueue Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Queue.Enqueue Example/CS/source.cs#1)]
+ [!code-vb[Classic Queue.Enqueue Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Queue.Enqueue Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Queue.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Collections.Queue" /> を反復処理する列挙子を返します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" /> の <see cref="T:System.Collections.Queue" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ C# 言語の `foreach` ステートメント (Visual Basic の場合は `for each`) を使用することで列挙子の複雑さを回避できます。  したがって、列挙子を直接操作するのではなく、`foreach` を使用することをお勧めします。  
+  
+ 列挙子を使用すると、コレクション内のデータを読み取ることができますが、基になるコレクションを変更することはできません。  
+  
+ 最初に、列挙子はコレクション内の 1 番目の要素の前に位置付けられます。 <xref:System.Collections.IEnumerator.Reset%2A> を実行した場合も、列挙子はこの位置に戻されます。  この位置では、<xref:System.Collections.IEnumerator.Current%2A> が未定義です。 そのため、<xref:System.Collections.IEnumerator.MoveNext%2A> の値を読み取る前に、<xref:System.Collections.IEnumerator.Current%2A> を呼び出して列挙子をコレクションの最初の要素に進める必要があります。  
+  
+ <xref:System.Collections.IEnumerator.Current%2A> は、<xref:System.Collections.IEnumerator.MoveNext%2A> または <xref:System.Collections.IEnumerator.Reset%2A> が呼び出されるまでは同じオブジェクトを返します。 <xref:System.Collections.IEnumerator.MoveNext%2A> は、<xref:System.Collections.IEnumerator.Current%2A> を次の要素に設定します。  
+  
+ 場合<xref:System.Collections.IEnumerator.MoveNext%2A>列挙子をコレクションの末尾が、コレクション内の最後の要素の後に配置されているパスと<xref:System.Collections.IEnumerator.MoveNext%2A>返します`false`です。 列挙子がこの位置では、後続の呼び出しの場合<xref:System.Collections.IEnumerator.MoveNext%2A>を返すことも`false`します。 最後の呼び出し場合<xref:System.Collections.IEnumerator.MoveNext%2A>返される`false`、<xref:System.Collections.IEnumerator.Current%2A>が定義されていません。 <xref:System.Collections.IEnumerator.Current%2A> をコレクションの最初の要素にもう一度設定するには、<xref:System.Collections.IEnumerator.Reset%2A> を呼び出してから <xref:System.Collections.IEnumerator.MoveNext%2A> を呼び出します。  
+  
+ コレクションが変更されない限り、列挙子は有効です。 コレクションに対して変更 (要素の追加、変更、削除など) が行われると、列挙子は回復不可能な無効状態になり、その動作は未定義になります。  
+  
+ 列挙子にはコレクションへの排他アクセス権限はないため、コレクションの列挙処理は本質的にスレッド セーフな処理ではありません。  列挙処理でスレッド セーフを確保するには、列挙処理が終わるまでコレクションをロックできます。  コレクションに対し複数のスレッドがアクセスして読み取りや書き込みを行うことができるようにするには、独自に同期化を実装する必要があります。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public virtual bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Queue.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.Queue" /> へのアクセスが同期されている (スレッド セーフである) かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" /> へのアクセスが同期されている (スレッド セーフである) 場合は <see cref="T:System.Collections.Queue" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スレッド セーフを確保する、 <xref:System.Collections.Queue>、によって返されるラッパーを介してすべての操作を行う必要があります、<xref:System.Collections.Queue.Synchronized%2A>メソッドです。  
+  
+ コレクションの列挙は、本質的にスレッド セーフなプロシージャではありません。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用してコレクションをロックする方法を示しています、<xref:System.Collections.Queue.SyncRoot%2A>列挙中にします。 このプロパティ値を取得することは、O(1) 操作になります。  
+  
+ [!code-cpp[Classic Queue.IsSynchronized Example#2](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Queue.IsSynchronized Example/CPP/source2.cpp#2)]
+ [!code-csharp[Classic Queue.IsSynchronized Example#2](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Queue.IsSynchronized Example/CS/source2.cs#2)]
+ [!code-vb[Classic Queue.IsSynchronized Example#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Queue.IsSynchronized Example/VB/source2.vb#2)]  
+  
+ 次の例は、同期する方法を示します、 <xref:System.Collections.Queue>、かどうかを<xref:System.Collections.Queue>が同期されているし、同期を使用して<xref:System.Collections.Queue>です。  
+  
+ [!code-cpp[Classic Queue.IsSynchronized Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Queue.IsSynchronized Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Queue.IsSynchronized Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Queue.IsSynchronized Example/CS/source.cs#1)]
+ [!code-vb[Classic Queue.IsSynchronized Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Queue.IsSynchronized Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Peek">
+      <MemberSignature Language="C#" Value="public virtual object Peek ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Peek() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Queue.Peek" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Collections.Queue" /> の先頭にあるオブジェクトを削除せずに返します。</summary>
+        <returns><see cref="T:System.Collections.Queue" /> の先頭にあるオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは <xref:System.Collections.Queue.Dequeue%2A> メソッドに類似していますが、<xref:System.Collections.Queue.Peek%2A> は <xref:System.Collections.Queue> を変更しません。  
+  
+ `null`追加することができます、<xref:System.Collections.Queue>値として。 Null 値との末尾を識別する、 <xref:System.Collections.Queue>、確認、<xref:System.Collections.Queue.Count%2A>プロパティまたは catch、 <xref:System.InvalidOperationException>、ときにスローする、<xref:System.Collections.Queue>が空です。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 次の例は、要素を追加する方法を示しています、 <xref:System.Collections.Queue>、要素を削除、 <xref:System.Collections.Queue>、またはの先頭の要素を表示、<xref:System.Collections.Queue>です。  
+  
+ [!code-cpp[Classic Queue.Enqueue Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Queue.Enqueue Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Queue.Enqueue Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Queue.Enqueue Example/CS/source.cs#1)]
+ [!code-vb[Classic Queue.Enqueue Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Queue.Enqueue Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Collections.Queue" /> が空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Synchronized">
+      <MemberSignature Language="C#" Value="public static System.Collections.Queue Synchronized (System.Collections.Queue queue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Queue Synchronized(class System.Collections.Queue queue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Queue.Synchronized(System.Collections.Queue)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Queue</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="queue" Type="System.Collections.Queue" />
+      </Parameters>
+      <Docs>
+        <param name="queue">同期する <see cref="T:System.Collections.Queue" />。</param>
+        <summary>新しいを返します<see cref="T:System.Collections.Queue" />を元のキューをラップし、スレッド セーフであります。</summary>
+        <returns>A<see cref="T:System.Collections.Queue" />同期されている (スレッド セーフである)。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによって返されるラッパーは、スレッド セーフな方法で実行されるように操作が実行される前に、キューをロックします。  
+  
+ スレッド セーフを確保する、 <xref:System.Collections.Queue>、このラッパーのみを通じてすべての操作を行う必要があります。  
+  
+ コレクションの列挙は、本質的にスレッド セーフなプロシージャではありません。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用してコレクションをロックする方法を示しています、<xref:System.Collections.Queue.SyncRoot%2A>列挙中にします。 このメソッドは、o (1) 操作です。  
+  
+ [!code-cpp[Classic Queue.IsSynchronized Example#2](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Queue.IsSynchronized Example/CPP/source2.cpp#2)]
+ [!code-csharp[Classic Queue.IsSynchronized Example#2](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Queue.IsSynchronized Example/CS/source2.cs#2)]
+ [!code-vb[Classic Queue.IsSynchronized Example#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Queue.IsSynchronized Example/VB/source2.vb#2)]  
+  
+ 次の例は、同期する方法を示します、 <xref:System.Collections.Queue>、かどうかを<xref:System.Collections.Queue>が同期されているし、同期を使用して<xref:System.Collections.Queue>です。  
+  
+ [!code-cpp[Classic Queue.IsSynchronized Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Queue.IsSynchronized Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Queue.IsSynchronized Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Queue.IsSynchronized Example/CS/source.cs#1)]
+ [!code-vb[Classic Queue.IsSynchronized Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Queue.IsSynchronized Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="queue" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public virtual object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Queue.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.Queue" /> へのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value><see cref="T:System.Collections.Queue" /> へのアクセスを同期するために使用できるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 同期されたバージョンを作成する、<xref:System.Collections.Queue>を使用して、<xref:System.Collections.Queue.Synchronized%2A>メソッドです。 ただし、派生クラスは、独自の同期されたバージョンを指定、<xref:System.Collections.Queue>を使用して、<xref:System.Collections.Queue.SyncRoot%2A>プロパティです。 同期されたコードで操作を実行する必要があります、<xref:System.Collections.Queue.SyncRoot%2A>の<xref:System.Collections.Queue>、上で直接、<xref:System.Collections.Queue>です。 これにより、他のオブジェクトから派生したコレクションを適切に操作できるようになります。 具体的には、同時に変更する可能性がある別スレッドとの適切な同期を維持、<xref:System.Collections.Queue>オブジェクト。  
+  
+ コレクションの列挙は、本質的にスレッド セーフなプロシージャではありません。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用してコレクションをロックする方法を示しています、<xref:System.Collections.Queue.SyncRoot%2A>列挙中にします。 このプロパティ値を取得することは、O(1) 操作になります。  
+  
+ [!code-cpp[Classic Queue.IsSynchronized Example#2](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Queue.IsSynchronized Example/CPP/source2.cpp#2)]
+ [!code-csharp[Classic Queue.IsSynchronized Example#2](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Queue.IsSynchronized Example/CS/source2.cs#2)]
+ [!code-vb[Classic Queue.IsSynchronized Example#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Queue.IsSynchronized Example/VB/source2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToArray">
+      <MemberSignature Language="C#" Value="public virtual object[] ToArray ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object[] ToArray() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Queue.ToArray" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Collections.Queue" /> の要素を新しい配列にコピーします。</summary>
+        <returns>コピーした要素を格納する新しい配列、<see cref="T:System.Collections.Queue" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Queue>は変更されません。 先頭から要素の順序と同じ新しい配列の要素の順序は、<xref:System.Collections.Queue>の末尾にします。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Queue.Count%2A>します。  
+  
+   
+  
+## Examples  
+ 次の例をコピーする方法を示しています、<xref:System.Collections.Queue>を 1 次元配列にします。  
+  
+ [!code-cpp[Classic Queue.CopyTo Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Queue.CopyTo Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Queue.CopyTo Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Queue.CopyTo Example/CS/source.cs#1)]
+ [!code-vb[Classic Queue.CopyTo Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Queue.CopyTo Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrimToSize">
+      <MemberSignature Language="C#" Value="public virtual void TrimToSize ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void TrimToSize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Queue.TrimToSize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>容量を <see cref="T:System.Collections.Queue" /> 内にある実際の要素数に設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、キューのメモリ オーバーヘッドを最小のキューに新しい要素が追加されない場合に使用できます。  
+  
+ リセットする、<xref:System.Collections.Queue>を初期状態に呼び出し、<xref:System.Collections.Queue.Clear%2A>メソッドを呼び出す前に<xref:System.Collections.Queue.TrimToSize%2A>です。 空のトリミング<xref:System.Collections.Queue>のキャパシティを設定、<xref:System.Collections.Queue>を既定の容量。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Queue.Count%2A>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.Queue" /> は読み取り専用です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,51 @@
+<Type Name="AsyncCompletedEventHandler" FullName="System.ComponentModel.AsyncCompletedEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void AsyncCompletedEventHandler(object sender, AsyncCompletedEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed AsyncCompletedEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.AsyncCompletedEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.ComponentModel.AsyncCompletedEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.ComponentModel.AsyncCompletedEventArgs" />。</param>
+    <summary>処理するメソッドを表す、 *MethodName* <see langword="Completed" />非同期操作のイベントです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.AsyncCompletedEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、イベントが発生するたびに、イベント ハンドラー メソッドが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+ 呼ばれる、非同期メソッドの*MethodName*、コンポーネントでは、する必要が、対応する*MethodName* `Completed`イベント、および省略可能な*MethodName* `CompletedEventArgs`クラスです。  
+  
+ 非同期メソッドの複数の同時呼び出しをサポートするコンポーネント、クライアントは、一意のトークンを指定できます。 または非同期タスクを区別するために、タスク ID が特定のイベントを発生させます。 クライアントの<xref:System.ComponentModel.AsyncCompletedEventHandler>読み取ることができます、<xref:System.ComponentModel.AsyncCompletedEventArgs.UserState%2A?displayProperty=nameWithType>完了を報告するタスクを決定するプロパティです。 実装を使用する必要があります、<xref:System.ComponentModel.AsyncOperationManager?displayProperty=nameWithType>を作成する、<xref:System.ComponentModel.AsyncOperation?displayProperty=nameWithType>保留中の非同期タスクのクライアントのタスクで Id を関連付けます。  
+  
+   
+  
+## Examples  
+ コード例については、<xref:System.ComponentModel.AsyncCompletedEventHandler>委任の例を参照してください、<xref:System.ComponentModel.AsyncCompletedEventArgs?displayProperty=nameWithType>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

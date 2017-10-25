@@ -1,0 +1,219 @@
+<Type Name="IPersistComponentSettings" FullName="System.Configuration.IPersistComponentSettings">
+  <TypeSignature Language="C#" Value="public interface IPersistComponentSettings" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IPersistComponentSettings" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.IPersistComponentSettings" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>コントロールまたは格納およびアプリケーションの設定を取得するライブラリの標準的な機能を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生する設定のラッパー クラスを作成することで、アプリケーションにアプリケーション設定のサポートを追加する通常、 <xref:System.Configuration.ApplicationSettingsBase>、し、このクラスに特殊なプロパティを追加します。 ただし、このアプローチ十分にカプセル化しないコントロール用のアプリケーション設定の詳細から、コンテナーがシールドされてようにします。 <xref:System.Configuration.IPersistComponentSettings>インターフェイスには、コントロール、コンポーネント、またはライブラリ モジュールにアプリケーション設定の状態変更要求を通信するための標準のインターフェイスを持つアプリケーションが用意されています。 デザイン時ツールは、コントロールおよびコンポーネントを適切に管理するには、このインターフェイスによっても異なります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="LoadComponentSettings">
+      <MemberSignature Language="C#" Value="public void LoadComponentSettings ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void LoadComponentSettings() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.IPersistComponentSettings.LoadComponentSettings" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>対応するプロパティにコントロールのアプリケーションの設定を読み込んで、コントロールの状態を更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一般に、<xref:System.Configuration.IPersistComponentSettings.LoadComponentSettings%2A>メソッドは 2 つの重要な操作を実行します。  
+  
+-   呼び出すことによって通常のアプリケーション設定のプロパティの値を更新するコントロールに含まれる各アプリケーション設定のインスタンスとその<xref:System.Configuration.ApplicationSettingsBase.Reload%2A>メソッドです。  
+  
+-   必要に応じて、プロパティを再読み込みされたこれらの設定に依存する全般プロパティを更新します。 設定クラスが含まれている場合など、`location`設定プロパティ、<xref:System.Configuration.IPersistComponentSettings.LoadComponentSettings%2A>ようにするコントロールの<xref:System.Windows.Forms.Control.Location%2A>プロパティが再読み込みされたこの設定を反映するように更新します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetComponentSettings">
+      <MemberSignature Language="C#" Value="public void ResetComponentSettings ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ResetComponentSettings() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.IPersistComponentSettings.ResetComponentSettings" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールのアプリケーション設定のプロパティを既定値にリセットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装、<xref:System.Configuration.IPersistComponentSettings.ResetComponentSettings%2A>メソッドを呼び出す通常、<xref:System.Configuration.ApplicationSettingsBase.Reset%2A>メソッドが含まれているアプリケーション設定クラスの各インスタンスにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveComponentSettings">
+      <MemberSignature Language="C#" Value="public void SaveComponentSettings ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SaveComponentSettings() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.IPersistComponentSettings.SaveComponentSettings" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールのアプリケーション設定のプロパティを永続化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.IPersistComponentSettings.SaveComponentSettings%2A>メソッドは、関連付けられたデータ ストアに、コントロールのアプリケーション設定のプロパティの値を書き込みます。 メソッドを使用してデータ ストアとシリアル化技法は、各設定クラスに関連付けられている設定プロバイダーによって決定されます、<xref:System.Configuration.SettingsProviderAttribute>です。 使用して設定プロバイダーの選択をオーバーライドすることができます、<xref:System.Configuration.ISettingsProviderService>インターフェイスです。  
+  
+> [!NOTE]
+>  場合、<xref:System.Configuration.IPersistComponentSettings.SaveSettings%2A>プロパティは`true`、コントロールを呼び出す必要があります<xref:System.Configuration.IPersistComponentSettings.SaveComponentSettings%2A>独自で<xref:System.Windows.Forms.Control.Dispose%2A>メソッド、アプリケーションが終了する前に、コントロールの構成データは自動的に格納できるようにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveSettings">
+      <MemberSignature Language="C#" Value="public bool SaveSettings { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SaveSettings" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.IPersistComponentSettings.SaveSettings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールがそのアプリケーション設定のプロパティを自動的に保持する必要があるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />コントロールが状態を自動的に保持する必要があります場合、それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 明示的に呼び出すへの応答でこのデータが保持されます通常コントロール構成データが含まれている場合、<xref:System.Configuration.IPersistComponentSettings.SaveComponentSettings%2A>メソッドも暗黙的にまたはときに、コントロールの<xref:System.Windows.Forms.Control.Dispose%2A>メソッドが呼び出されます。 <xref:System.Configuration.IPersistComponentSettings.SaveSettings%2A>プロパティが破棄されるとき、コントロールがその、構成データを自動的に保持するかどうかを決定します。  
+  
+ 既定値の<xref:System.Configuration.IPersistComponentSettings.SaveSettings%2A>コントロールの実装に依存します。 ドキュメント コントロールには、アプリケーションの設定を使用するかどうか、どのようなデータが保持されの既定値を示す必要があります、<xref:System.Configuration.IPersistComponentSettings.SaveSettings%2A>プロパティは使用できます。  
+  
+   
+  
+## Examples  
+ 次のコード例の値を確認するためのコントロールの適切な方法を示しています、<xref:System.Configuration.IPersistComponentSettings.SaveSettings%2A>プロパティに自動的にその構成データを保持しようとします。  
+  
+ `protected override void Dispose( bool disposing ) {`  
+  
+ `if(disposing) {`  
+  
+ `try {`  
+  
+ `if (SaveSettings) {`  
+  
+ `SaveComponentSettings();`  
+  
+ `}`  
+  
+ `}`  
+  
+ `finally {`  
+  
+ `//...`  
+  
+ `}`  
+  
+ `}`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SettingsKey">
+      <MemberSignature Language="C#" Value="public string SettingsKey { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SettingsKey" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.IPersistComponentSettings.SettingsKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールの現在のインスタンスのアプリケーション設定キーの値を設定します。</summary>
+        <value>A<see cref="T:System.String" />コントロールの現在のインスタンスの設定キーを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Configuration.IPersistComponentSettings.SettingsKey%2A>プロパティを同じのラッパー クラスの複数のインスタンスがある場合は、アプリケーション設定のプロパティのグループを明確にします。 たとえば、コントロールが含まれている、関連付けられているラッパー クラスでは、通常は、同じアプリケーション内の同じコントロールの複数のインスタンスを配置する場合は、ラッパー クラスの複数のインスタンスで発生します。 インスタンスごとの単位で構成データが異なる場合にのみ、設定キーが必要たとえば、動的に配置されているコントロールの場所です。  
+  
+ 使用する、次の一般的な規則が適用<xref:System.Configuration.IPersistComponentSettings.SettingsKey%2A>:  
+  
+-   任意のクラスと同様に、コントロールは、0 個以上のアプリケーション設定クラスを含めることがありますから派生した<xref:System.Configuration.ApplicationSettingsBase>です。 各設定クラスを含む独自<xref:System.Configuration.ApplicationSettingsBase.SettingsKey%2A?displayProperty=nameWithType>プロパティ、そのクラスの複数のインスタンスあいまいさを解決するのに役立ちます。  
+  
+-   コントロールを異なる設定クラスに、インスタンスごとのデータおよび共有データを区切る必要があります。  
+  
+-   インスタンスごとの構成データを使用して、コントロールの`get`のアクセサー、<xref:System.Configuration.IPersistComponentSettings.SettingsKey%2A>プロパティの既定にする必要があります、<xref:System.Windows.Forms.Control.Name%2A>コントロールのです。 ほとんどの場合、コントロールの名前は、アプリケーション内で一意になります。 コントロールには、構成データを共有のみが含まれている場合`get`既定にする必要があります`null`です。  
+  
+-   `set`設定クラスのインスタンスおよび共有構成データを含むを区別するためにこのプロパティのアクセサーを実装する必要があります。 各設定クラスのインスタンスごとにデータを含む`set`に単にパススルーする必要があります、<xref:System.Configuration.ApplicationSettingsBase.SettingsKey%2A?displayProperty=nameWithType>設定クラスのプロパティです。 共有のデータを含む設定クラスの`set`必要がありますいないのアクションを実行する設定クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,77 @@
+<Type Name="MessageQueueTransactionType" FullName="System.Messaging.MessageQueueTransactionType">
+  <TypeSignature Language="C#" Value="public enum MessageQueueTransactionType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed MessageQueueTransactionType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Messaging.MessageQueueTransactionType" />
+  <AssemblyInfo>
+    <AssemblyName>System.Messaging</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>メッセージ キューのトランザクションの種類を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバー ロードを使用してメッセージを読み書きするときに、<xref:System.Messaging.MessageQueue>クラスの<xref:System.Messaging.MessageQueue.Send%2A>または<xref:System.Messaging.MessageQueue.Receive%2A>メソッド (含む<xref:System.Messaging.MessageQueue.ReceiveById%2A>と<xref:System.Messaging.MessageQueue.ReceiveByCorrelationId%2A>) を受け取る、`transactionType`パラメーター、キューと対話する方法を指定することができます。 `Automatic`使用すると送信に (ときにデータベース アプリケーションと対話する) などの外部トランザクションを受信するには、while `Single` 1 つの内部メッセージ キューのトランザクションに使用されます。  
+  
+ `None`使用すると、トランザクションの外部でトランザクション キューからメッセージを受信または非トランザクション キューへトランザクション メッセージを送信できます。 これにより、たとえば、1 つのトランザクション内で送信されたいくつかのメッセージをルーティングするときにできます。  
+  
+ 内部メッセージ キューのトランザクションがない 1 つの内部トランザクションを使用してメッセージを送受信する場合は、インスタンスを作成、<xref:System.Messaging.MessageQueueTransaction>クラスし、のオーバー ロードに渡す、<xref:System.Messaging.MessageQueue.Send%2A>または<xref:System.Messaging.MessageQueue.Receive%2A>を受け取るメソッド、`transaction`を受け取るいずれかではなくパラメーター、`transactionType`パラメーター。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Automatic">
+      <MemberSignature Language="C#" Value="Automatic" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueTransactionType Automatic = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueTransactionType.Automatic" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueTransactionType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Microsoft MTS) または COM + 1.0 Services に使用されるトランザクションの種類。 MTS トランザクション コンテキストが既にあるを場合は、メッセージを送受信するときに使用されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueTransactionType None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueTransactionType.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueTransactionType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作はトランザクションにはできません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Single">
+      <MemberSignature Language="C#" Value="Single" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueTransactionType Single = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueTransactionType.Single" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueTransactionType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 つの内部トランザクションに使用されるトランザクションの種類。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

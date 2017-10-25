@@ -1,0 +1,149 @@
+<Type Name="MessageSecurityOverTcp" FullName="System.ServiceModel.MessageSecurityOverTcp">
+  <TypeSignature Language="C#" Value="public sealed class MessageSecurityOverTcp" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MessageSecurityOverTcp extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.MessageSecurityOverTcp" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.NetTcp</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.1.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>TCP トランスポートを使用して送信されるメッセージのメッセージ レベルのセキュリティを構成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオブジェクトは、<xref:System.ServiceModel.NetTcpBinding.Security%2A> オブジェクトを返す <xref:System.ServiceModel.NetTcpSecurity> プロパティを使用して、バインドからアクセスされます。 <xref:System.ServiceModel.NetTcpSecurity.Message%2A> プロパティは、<xref:System.ServiceModel.MessageSecurityOverTcp> オブジェクトへの参照を提供します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MessageSecurityOverTcp ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MessageSecurityOverTcp.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.NetTcp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.MessageSecurityOverTcp" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlgorithmSuite">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.SecurityAlgorithmSuite AlgorithmSuite { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Security.SecurityAlgorithmSuite AlgorithmSuite" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MessageSecurityOverTcp.AlgorithmSuite" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.ServiceModel.Security.SecurityAlgorithmSuite), "Default")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.SecurityAlgorithmSuite</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージを SOAP レベルで保護するために使用されるアルゴリズム スイートを指定します。</summary>
+        <value><see cref="T:System.ServiceModel.Security.SecurityAlgorithmSuite" /> 既定値は、<see cref="P:System.ServiceModel.Security.SecurityAlgorithmSuite.Basic256" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この設定を修正する場合、関連するアルゴリズムの強さと脆弱性に注意する必要があります。  
+  
+ このプロパティを既定値以外の値に設定を使用して構成ファイルを生成すると[ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](~/docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)が正しく生成されないと、目的の値に対応する構成属性を設定する構成ファイルを手動で編集する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコードでは、このプロパティにアクセスして設定する方法を示します。  
+  
+ [!code-csharp[S_UEMessageSecurityOverTcp#2](~/samples/snippets/csharp/VS_Snippets_CFX/s_uemessagesecurityovertcp/cs/source.cs#2)]
+ [!code-vb[S_UEMessageSecurityOverTcp#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uemessagesecurityovertcp/vb/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="P:System.ServiceModel.MessageSecurityOverTcp.AlgorithmSuite" /> の値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientCredentialType">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.MessageCredentialType ClientCredentialType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.MessageCredentialType ClientCredentialType" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MessageSecurityOverTcp.ClientCredentialType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.NetTcp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.MessageCredentialType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントが SOAP レベルでクライアント自身をサービスに対して認証するために使用する、クライアント資格情報の種類を指定します。</summary>
+        <value><see cref="T:System.ServiceModel.MessageCredentialType" /> 既定値は、<see cref="F:System.ServiceModel.MessageCredentialType.Windows" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値は次の列挙メンバーのいずれかです。  
+  
+-   <xref:System.ServiceModel.HttpClientCredentialType.Basic>  
+  
+-   <xref:System.ServiceModel.HttpClientCredentialType.Certificate>  
+  
+-   <xref:System.ServiceModel.HttpClientCredentialType.Digest>  
+  
+-   <xref:System.ServiceModel.HttpClientCredentialType.None>  
+  
+-   <xref:System.ServiceModel.HttpClientCredentialType.Ntlm>  
+  
+-   <xref:System.ServiceModel.HttpClientCredentialType.Windows>  
+  
+   
+  
+## Examples  
+ 次のコードでは、このプロパティにアクセスして設定する方法を示します。  
+  
+ [!code-csharp[S_UEMessageSecurityOverTcp#2](~/samples/snippets/csharp/VS_Snippets_CFX/s_uemessagesecurityovertcp/cs/source.cs#2)]
+ [!code-vb[S_UEMessageSecurityOverTcp#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uemessagesecurityovertcp/vb/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><see cref="P:System.ServiceModel.MessageSecurityOverTcp.ClientCredentialType" /> の値が有効な <see cref="T:System.ServiceModel.MessageCredentialType" /> ではありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

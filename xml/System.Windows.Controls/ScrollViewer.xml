@@ -1,0 +1,2309 @@
+<Type Name="ScrollViewer" FullName="System.Windows.Controls.ScrollViewer">
+  <TypeSignature Language="C#" Value="public class ScrollViewer : System.Windows.Controls.ContentControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi ScrollViewer extends System.Windows.Controls.ContentControl" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.ScrollViewer" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.ContentControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("ScrollChangedEvent")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.Ignore)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_HorizontalScrollBar", Type=typeof(System.Windows.Controls.Primitives.ScrollBar))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_VerticalScrollBar", Type=typeof(System.Windows.Controls.Primitives.ScrollBar))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_ScrollContentPresenter", Type=typeof(System.Windows.Controls.ScrollContentPresenter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>その他の表示可能な要素を含むことのできるスクロール可能領域を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Controls.ScrollViewer>実際のサイズより小さな領域に表示されるコンテンツを有効にします。  ときのコンテンツ、<xref:System.Windows.Controls.ScrollViewer>がまったく表示されていない、<xref:System.Windows.Controls.ScrollViewer>表示されている、ユーザーのコンテンツの分野の移動に使用できるスクロールバーが表示されます。  含むすべてのコンテンツの領域、<xref:System.Windows.Controls.ScrollViewer>エクステントがします。  コンテンツの表示領域は、ビューポートです。  
+  
+ 物理スクロールは、定義済みの物理インクリメント(通常ピクセル単位で宣言されている値) でコンテンツをスクロールするために使用します。 論理スクロールは、論理ツリーの次の項目にスクロールするために使用します。 論理スクロールの代わりにスクロールする必要がある場合は、ホストをラップ<xref:System.Windows.Controls.Panel>内の要素、<xref:System.Windows.Controls.ScrollViewer>設定とその<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>プロパティを`false`です。 ほとんどの既定のスクロール動作は、物理スクロール<xref:System.Windows.Controls.Panel>要素。  
+  
+ 場合、<xref:System.Windows.Controls.ScrollViewer>に多数の項目、スクロールのパフォーマンスに影響する可能性があります。  この場合、設定<xref:System.Windows.Controls.ScrollViewer.IsDeferredScrollingEnabled%2A>に`true`です。  これが原因で、コンテンツ ビューにドラッグするときに静的なまま、<xref:System.Windows.Controls.Primitives.Thumb>される場合にのみを更新して、<xref:System.Windows.Controls.Primitives.Thumb>を解放します。  
+  
+ スクロール バーはのため、<xref:System.Windows.Controls.ScrollViewer>要素が要素の既定のスタイルで定義されている、カスタム スタイルを適用する場合、スクロール バーが表示されなくなります、<xref:System.Windows.Controls.ScrollViewer>です。 スクロール バーは、表示するには、ユーザー設定のスタイルで定義する必要があります。  
+  
+## <a name="customizing-the-scrollviewer-control"></a>ScrollViewer コントロールのカスタマイズ  
+ 設定を適用する、同じプロパティを複数<xref:System.Windows.Controls.ScrollViewer>、コントロールを使用して、<xref:System.Windows.FrameworkElement.Style%2A>プロパティです。 既定値を変更することができます<xref:System.Windows.Controls.ControlTemplate>コントロールの外観を一意にします。 作成の詳細については、<xref:System.Windows.Controls.ControlTemplate>を参照してください[、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  部分とに固有の状態を表示する、<xref:System.Windows.Controls.ScrollViewer>を参照してください[ScrollViewer スタイルとテンプレート](~/docs/framework/wpf/controls/scrollviewer-styles-and-templates.md)です。  
+  
+ コントロールの既定のスタイルでは、このコントロールの依存関係プロパティを設定する場合があります。  プロパティが既定のスタイルが設定されている場合は、アプリケーションでコントロールが表示されたら既定値から、プロパティが変更可能性があります。 既定のスタイルは、いるデスクトップ テーマによっては、アプリケーションが実行されている場合は使用が決定されます。  詳細については、次を参照してください。 [WPF テーマの既定の](http://go.microsoft.com/fwlink/?LinkID=158252)します。  
+  
+> [!NOTE]
+>  Visual プロパティの設定はのみに効果が場合、このプロパティは、両方に存在<xref:System.Windows.Controls.ScrollViewer>コントロールの既定のテンプレートとを使用して設定をします。 「を変更する、Visual 構造の制御」 セクションで visual のプロパティの一覧を検索できる[、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Controls.ScrollViewer>いくつかのテキストと四角形を格納しています。 スクロール バーは、必要な場合にのみ表示されます。 ウィンドウのサイズを変更すると、スクロール バーが表示され、非表示になります。  
+  
+ [!code-cpp[ScrollViewer#1](~/samples/snippets/cpp/VS_Snippets_Wpf/ScrollViewer/CPP/ScrollViewer_wcp.cpp#1)]
+ [!code-csharp[ScrollViewer#1](~/samples/snippets/csharp/VS_Snippets_Wpf/ScrollViewer/CSharp/ScrollViewer_wcp.cs#1)]
+ [!code-vb[ScrollViewer#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ScrollViewer/VisualBasic/ScrollViewer.vb#1)]
+ [!code-xaml[ScrollViewer#1](~/samples/snippets/xaml/VS_Snippets_Wpf/ScrollViewer/XAML/Pane1.xaml#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ScrollViewer ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.ScrollViewer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ArrangeOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Size ArrangeOverride (System.Windows.Size arrangeSize);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size ArrangeOverride(valuetype System.Windows.Size arrangeSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.ArrangeOverride(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="arrangeSize" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="arrangeSize">この要素が要素自体と子を配置するために使用する親の末尾の領域。</param>
+        <summary>コンテンツを配置、<see cref="T:System.Windows.Controls.ScrollViewer" />です。</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Controls.ScrollViewer.ArrangeOverride(System.Windows.Size)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Controls.ScrollViewer.ArrangeOverride(System.Windows.Size)" />メソッド</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CanContentScroll">
+      <MemberSignature Language="C#" Value="public bool CanContentScroll { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanContentScroll" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ScrollViewer.CanContentScroll" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するかどうかの要素をサポートするかを示す値、<see cref="T:System.Windows.Controls.Primitives.IScrollInfo" />スクロールするインターフェイスを使用します。</summary>
+        <value>
+          <see langword="true" />場合、 <see cref="T:System.Windows.Controls.ScrollViewer" /> ; の論理ユニットの観点からスクロール<see langword="false" />場合、<see cref="T:System.Windows.Controls.ScrollViewer" />物理的な単位でスクロールします。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテンツ、<xref:System.Windows.Controls.ScrollViewer>物理ユニットまたは論理ユニットの単位でスクロールすることができます。 物理的な単位は、デバイス非依存ピクセルです。 内の項目をスクロールするための論理ユニットが使用されて、<xref:System.Windows.Controls.ItemsControl>です。 既定の動作、<xref:System.Windows.Controls.ScrollViewer>その内容をスクロールする物理的な単位を使用することです。 ただし、ここで、<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>に設定されている`true`コンテンツは、論理ユニットを使用してスクロールする可能性があります。 たとえば、 <xref:System.Windows.Controls.ListBox>、 <xref:System.Windows.Controls.ListView>、およびその他のコントロールから継承する<xref:System.Windows.Controls.ItemsControl>論理ユニットを使用してスクロールします。 場合<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>は`true`の値、 <xref:System.Windows.Controls.ScrollViewer.ExtentHeight%2A>、 <xref:System.Windows.Controls.ScrollViewer.ScrollableHeight%2A>、 <xref:System.Windows.Controls.ScrollViewer.ViewportHeight%2A>、および<xref:System.Windows.Controls.ScrollViewer.VerticalOffset%2A>プロパティは、番号物理ユニットではなく、項目の。  
+  
+ 論理スクロールの代わりにスクロールする必要がある場合は、ホストをラップ<xref:System.Windows.Controls.Panel>内の要素、<xref:System.Windows.Controls.ScrollViewer>設定とその<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>プロパティを`false`です。 ほとんどの既定のスクロール動作は、物理スクロール<xref:System.Windows.Controls.Panel>要素。  
+  
+<a name="dependencyPropertyInfo_CanContentScroll"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ScrollViewer.CanContentScrollProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>コードを使用してプロパティです。  
+  
+ [!code-csharp[scrollchangedeventargsLayout#4](~/samples/snippets/csharp/VS_Snippets_Wpf/scrollchangedeventargsLayout/CSharp/Window1.xaml.cs#4)]
+ [!code-vb[scrollchangedeventargsLayout#4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/scrollchangedeventargsLayout/VisualBasic/Window1.xaml.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanContentScrollProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CanContentScrollProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CanContentScrollProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ScrollViewer.CanContentScrollProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ScrollViewer.CanContentScroll" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComputedHorizontalScrollBarVisibility">
+      <MemberSignature Language="C#" Value="public System.Windows.Visibility ComputedHorizontalScrollBarVisibility { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Visibility ComputedHorizontalScrollBarVisibility" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ScrollViewer.ComputedHorizontalScrollBarVisibility" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Visibility</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、水平<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />は表示します。</summary>
+        <value>A<see cref="T:System.Windows.Visibility" />水平スクロール バーが表示されているかどうかを示すです。 既定値は、<see cref="F:System.Windows.Controls.ScrollBarVisibility.Hidden" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_ComputedHorizontalScrollBarVisibility"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ScrollViewer.ComputedHorizontalScrollBarVisibilityProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComputedHorizontalScrollBarVisibilityProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ComputedHorizontalScrollBarVisibilityProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ComputedHorizontalScrollBarVisibilityProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ScrollViewer.ComputedHorizontalScrollBarVisibilityProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ScrollViewer.ComputedHorizontalScrollBarVisibility" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComputedVerticalScrollBarVisibility">
+      <MemberSignature Language="C#" Value="public System.Windows.Visibility ComputedVerticalScrollBarVisibility { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Visibility ComputedVerticalScrollBarVisibility" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ScrollViewer.ComputedVerticalScrollBarVisibility" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Visibility</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか垂直<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />が表示されます。</summary>
+        <value>A<see cref="T:System.Windows.Visibility" />垂直スクロール バーが表示されているかどうかを示すです。 既定値は、<see cref="F:System.Windows.Controls.ScrollBarVisibility.Visible" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_ComputedVerticalScrollBarVisibility"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ScrollViewer.ComputedVerticalScrollBarVisibilityProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComputedVerticalScrollBarVisibilityProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ComputedVerticalScrollBarVisibilityProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ComputedVerticalScrollBarVisibilityProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ScrollViewer.ComputedVerticalScrollBarVisibilityProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ScrollViewer.ComputedVerticalScrollBarVisibility" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentHorizontalOffset">
+      <MemberSignature Language="C#" Value="public double ContentHorizontalOffset { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 ContentHorizontalOffset" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ScrollViewer.ContentHorizontalOffset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表示されるコンテンツの水平方向のオフセットを取得します。</summary>
+        <value>表示されるコンテンツの水平方向のオフセット。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Windows.Controls.ScrollViewer.IsDeferredScrollingEnabled%2A>は`true`、コンテンツがスクロールされる基準を離したときに、<xref:System.Windows.Controls.Primitives.Thumb>の<xref:System.Windows.Controls.Primitives.ScrollBar>です。  ユーザーがドラッグしたときに、 <xref:System.Windows.Controls.Primitives.Thumb>、<xref:System.Windows.Controls.ScrollViewer.ContentHorizontalOffset%2A>値は変更されません。   ユーザーを離したときに、 <xref:System.Windows.Controls.Primitives.Thumb>、<xref:System.Windows.Controls.ScrollViewer.ContentHorizontalOffset%2A>現在更新<xref:System.Windows.Controls.ScrollViewer.HorizontalOffset%2A>値。  
+  
+ ときに<xref:System.Windows.Controls.ScrollViewer.IsDeferredScrollingEnabled%2A>は`false`、ユーザーがドラッグしたときに、コンテンツがスクロールされる基準、<xref:System.Windows.Controls.Primitives.Thumb>です。  この場合、<xref:System.Windows.Controls.ScrollViewer.ContentVerticalOffset%2A>は常と<xref:System.Windows.Controls.ScrollViewer.HorizontalOffset%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentHorizontalOffsetProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ContentHorizontalOffsetProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ContentHorizontalOffsetProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ScrollViewer.ContentHorizontalOffsetProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ScrollViewer.ContentHorizontalOffset" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentVerticalOffset">
+      <MemberSignature Language="C#" Value="public double ContentVerticalOffset { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 ContentVerticalOffset" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ScrollViewer.ContentVerticalOffset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表示されるコンテンツの縦方向のオフセットを取得します。</summary>
+        <value>表示されるコンテンツの縦方向のオフセット。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Windows.Controls.ScrollViewer.IsDeferredScrollingEnabled%2A>は`true`、コンテンツがスクロールされる基準を離したときに、<xref:System.Windows.Controls.Primitives.Thumb>の<xref:System.Windows.Controls.Primitives.ScrollBar>です。  ユーザーがドラッグしたときに、 <xref:System.Windows.Controls.Primitives.Thumb>、<xref:System.Windows.Controls.ScrollViewer.ContentVerticalOffset%2A>は変わりません。  ユーザーを離したときに、 <xref:System.Windows.Controls.Primitives.Thumb>、<xref:System.Windows.Controls.ScrollViewer.ContentVerticalOffset%2A>現在更新<xref:System.Windows.Controls.ScrollViewer.VerticalOffset%2A>値。  
+  
+ ときに<xref:System.Windows.Controls.ScrollViewer.IsDeferredScrollingEnabled%2A>は`false`、ユーザーがドラッグしたときに、コンテンツがスクロールされる基準、<xref:System.Windows.Controls.Primitives.Thumb>です。  この場合、<xref:System.Windows.Controls.ScrollViewer.ContentVerticalOffset%2A>は常と<xref:System.Windows.Controls.ScrollViewer.VerticalOffset%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentVerticalOffsetProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ContentVerticalOffsetProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ContentVerticalOffsetProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ScrollViewer.ContentVerticalOffsetProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ScrollViewer.ContentVerticalOffset" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtentHeight">
+      <MemberSignature Language="C#" Value="public double ExtentHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 ExtentHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ScrollViewer.ExtentHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Layout")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>範囲の縦のサイズを示す値を取得します。</summary>
+        <value>範囲の縦のサイズを表す <see cref="T:System.Double" />。 既定値は 0.0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.ScrollViewer.ExtentHeight%2A>のみの出力プロパティです。指定して効果的に設定することができます、<xref:System.Windows.FrameworkElement.Height%2A>のコンテンツ要素。  
+  
+ 場合<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>は`true`の値、 <xref:System.Windows.Controls.ScrollViewer.ExtentHeight%2A>、 <xref:System.Windows.Controls.ScrollViewer.ScrollableHeight%2A>、 <xref:System.Windows.Controls.ScrollViewer.ViewportHeight%2A>、および<xref:System.Windows.Controls.ScrollViewer.VerticalOffset%2A>プロパティは、数値の項目の。 場合<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>は`false`、これらのプロパティの値は、デバイス非依存ピクセルです。  
+  
+<a name="dependencyPropertyInfo_ExtentHeight"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ScrollViewer.ExtentHeightProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtentHeightProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ExtentHeightProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ExtentHeightProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ScrollViewer.ExtentHeightProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ScrollViewer.ExtentHeight" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtentWidth">
+      <MemberSignature Language="C#" Value="public double ExtentWidth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 ExtentWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ScrollViewer.ExtentWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Layout")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>範囲の横のサイズを含む値を取得します。</summary>
+        <value>エクステントの横幅を表す <see cref="T:System.Double" />。 既定値は 0.0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.ScrollViewer.ExtentWidth%2A>のみの出力プロパティです。指定して効果的に設定することができます、<xref:System.Windows.FrameworkElement.Width%2A>のコンテンツ要素。  
+  
+ 返される値は、デバイス非依存のピクセルの説明です。  
+  
+<a name="dependencyPropertyInfo_ExtentWidth"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ScrollViewer.ExtentWidthProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtentWidthProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ExtentWidthProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ExtentWidthProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ScrollViewer.ExtentWidthProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ScrollViewer.ExtentWidth" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCanContentScroll">
+      <MemberSignature Language="C#" Value="public static bool GetCanContentScroll (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool GetCanContentScroll(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.GetCanContentScroll(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値の読み取り元となる要素。</param>
+        <summary>値を取得、<see cref="P:System.Windows.Controls.ScrollViewer.CanContentScroll" />指定された要素からの依存関係プロパティです。</summary>
+        <returns>
+          <see langword="true" />この要素をスクロールできる場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHorizontalScrollBarVisibility">
+      <MemberSignature Language="C#" Value="public static System.Windows.Controls.ScrollBarVisibility GetHorizontalScrollBarVisibility (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Controls.ScrollBarVisibility GetHorizontalScrollBarVisibility(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.GetHorizontalScrollBarVisibility(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.ScrollBarVisibility</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値の読み取り元となる要素。</param>
+        <summary>値を取得、<see cref="P:System.Windows.Controls.ScrollViewer.HorizontalScrollBarVisibility" />指定された要素からの依存関係プロパティです。</summary>
+        <returns>値、<see cref="P:System.Windows.Controls.ScrollViewer.HorizontalScrollBarVisibility" />依存関係プロパティです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIsDeferredScrollingEnabled">
+      <MemberSignature Language="C#" Value="public static bool GetIsDeferredScrollingEnabled (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool GetIsDeferredScrollingEnabled(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.GetIsDeferredScrollingEnabled(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">オブジェクトを取得する対象から<see cref="P:System.Windows.Controls.ScrollViewer.IsDeferredScrollingEnabled" />です。</param>
+        <summary>指定されたオブジェクトの <see cref="P:System.Windows.Controls.ScrollViewer.IsDeferredScrollingEnabled" /> プロパティの値を返します。</summary>
+        <returns>
+          <see langword="true" />コンテンツが静止している場合と、ユーザーがドラッグ、<see cref="T:System.Windows.Controls.Primitives.Thumb" />の<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPanningDeceleration">
+      <MemberSignature Language="C#" Value="public static double GetPanningDeceleration (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 GetPanningDeceleration(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.GetPanningDeceleration(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値の読み取り元となる要素。</param>
+        <summary>指定されたオブジェクトの <see cref="P:System.Windows.Controls.ScrollViewer.PanningDeceleration" /> プロパティの値を返します。</summary>
+        <returns>速度 <see cref="T:System.Windows.Controls.ScrollViewer" /> は平方ミリ秒ごとに [!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)] で低下します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPanningMode">
+      <MemberSignature Language="C#" Value="public static System.Windows.Controls.PanningMode GetPanningMode (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Controls.PanningMode GetPanningMode(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.GetPanningMode(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.PanningMode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値の読み取り元となる要素。</param>
+        <summary>指定されたオブジェクトの <see cref="P:System.Windows.Controls.ScrollViewer.PanningMode" /> プロパティの値を返します。</summary>
+        <returns>指定する値か<see cref="T:System.Windows.Controls.ScrollViewer" />をタッチ操作に対処します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPanningRatio">
+      <MemberSignature Language="C#" Value="public static double GetPanningRatio (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 GetPanningRatio(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.GetPanningRatio(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値の読み取り元となる要素。</param>
+        <summary>指定されたオブジェクトの <see cref="P:System.Windows.Controls.ScrollViewer.PanningRatio" /> プロパティの値を返します。</summary>
+        <returns>平行移動操作のオフセットへのオフセットをスクロールの比率です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetVerticalScrollBarVisibility">
+      <MemberSignature Language="C#" Value="public static System.Windows.Controls.ScrollBarVisibility GetVerticalScrollBarVisibility (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Controls.ScrollBarVisibility GetVerticalScrollBarVisibility(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.GetVerticalScrollBarVisibility(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.ScrollBarVisibility</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値の読み取り元となる要素。</param>
+        <summary>値を取得、<see cref="P:System.Windows.Controls.ScrollViewer.VerticalScrollBarVisibility" />指定された要素からの依存関係プロパティです。</summary>
+        <returns>値、<see cref="P:System.Windows.Controls.ScrollViewer.VerticalScrollBarVisibility" />依存関係プロパティです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HandlesScrolling">
+      <MemberSignature Language="C#" Value="protected override bool HandlesScrolling { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HandlesScrolling" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ScrollViewer.HandlesScrolling" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールがあることを示す値を取得、<see cref="T:System.Windows.Controls.ScrollViewer" />カスタム キーボード スクロール動作を定義するスタイルで定義されています。</summary>
+        <value>
+          <see langword="true" />このコントロールは、カスタム キーボード スクロール動作を定義している場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを返す場合`true`、キーボード入力がで処理されない、<xref:System.Windows.Controls.ScrollViewer>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HitTestCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Media.HitTestResult HitTestCore (System.Windows.Media.PointHitTestParameters hitTestParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Media.HitTestResult HitTestCore(class System.Windows.Media.PointHitTestParameters hitTestParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.HitTestCore(System.Windows.Media.PointHitTestParameters)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.HitTestResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hitTestParameters" Type="System.Windows.Media.PointHitTestParameters" />
+      </Parameters>
+      <Docs>
+        <param name="hitTestParameters">Visual オブジェクト内でヒット テストのパラメーターです。</param>
+        <summary>指定した点がこの範囲内かどうかを決定するヒット テストを実行する<see cref="T:System.Windows.Controls.ScrollViewer" />です。</summary>
+        <returns>ヒット テストの結果。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalOffset">
+      <MemberSignature Language="C#" Value="public double HorizontalOffset { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 HorizontalOffset" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ScrollViewer.HorizontalOffset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スクロールしたコンテンツの横方向のオフセットを格納する値を取得します。</summary>
+        <value>A<see cref="T:System.Double" />スクロールしたコンテンツの水平方向のオフセットを表すです。 既定値は 0.0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 正<xref:System.Windows.Controls.ScrollViewer.HorizontalOffset%2A>値を左にオフセットされるコンテンツに対応します。  
+  
+ 有効な値は 0 以上、<xref:System.Windows.Controls.ScrollViewer.ExtentWidth%2A>マイナス、<xref:System.Windows.Controls.ScrollViewer.ViewportWidth%2A>です。  
+  
+ 返される値は、デバイス非依存のピクセルの説明です。  
+  
+ 以降で、.NET Framework version 3.5 SP1 では、ときに<xref:System.Windows.Controls.ScrollViewer.IsDeferredScrollingEnabled%2A>は`true`、<xref:System.Windows.Controls.ScrollViewer.HorizontalOffset%2A>としてユーザーのドラッグが変化し続ける、 <xref:System.Windows.Controls.Primitives.Thumb>、までコンテンツ ビューは変更されませんが、<xref:System.Windows.Controls.Primitives.Thumb>を解放します。  この場合、<xref:System.Windows.Controls.ScrollViewer.ContentHorizontalOffset%2A>コンテンツ表示のオフセットを表すと<xref:System.Windows.Controls.ScrollViewer.HorizontalOffset%2A>に基づいてコンテンツのオフセットを表す、<xref:System.Windows.Controls.Primitives.Thumb>位置。  
+  
+<a name="dependencyPropertyInfo_HorizontalOffset"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ScrollViewer.HorizontalOffsetProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalOffsetProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HorizontalOffsetProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HorizontalOffsetProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ScrollViewer.HorizontalOffsetProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ScrollViewer.HorizontalOffset" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalScrollBarVisibility">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.ScrollBarVisibility HorizontalScrollBarVisibility { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.ScrollBarVisibility HorizontalScrollBarVisibility" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ScrollViewer.HorizontalScrollBarVisibility" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.ScrollBarVisibility</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を示す値を取得または水平方向かどうか<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />が表示されます。</summary>
+        <value>A<see cref="T:System.Windows.Controls.ScrollBarVisibility" />を示す値かどうか、水平<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />が表示されます。 既定値は、<see cref="F:System.Windows.Controls.ScrollBarVisibility.Hidden" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、添付プロパティの使用方法もあります。  
+  
+<a name="dependencyPropertyInfo_HorizontalScrollBarVisibility"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ScrollViewer.HorizontalScrollBarVisibilityProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalScrollBarVisibilityProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HorizontalScrollBarVisibilityProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HorizontalScrollBarVisibilityProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ScrollViewer.HorizontalScrollBarVisibilityProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ScrollViewer.HorizontalScrollBarVisibility" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvalidateScrollInfo">
+      <MemberSignature Language="C#" Value="public void InvalidateScrollInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InvalidateScrollInfo() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.InvalidateScrollInfo" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>によって呼び出される、<see cref="T:System.Windows.Controls.Primitives.IScrollInfo" />にアタッチされているインターフェイス、<see cref="T:System.Windows.Controls.ScrollViewer" />スクロール プロパティの値のサイズを変更するとします。 スクロール プロパティには、オフセット、エクステント、ビューポイントがあります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、スクロール バーは、これのスクロール プロパティに依存しているなど、他の要素の無効化を処理<xref:System.Windows.Controls.ScrollViewer>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDeferredScrollingEnabled">
+      <MemberSignature Language="C#" Value="public bool IsDeferredScrollingEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDeferredScrollingEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ScrollViewer.IsDeferredScrollingEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定をユーザーがドラッグしたときにコンテンツが静止しているかどうかを示す値、<see cref="T:System.Windows.Controls.Primitives.Thumb" />の<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />です。</summary>
+        <value>
+          <see langword="true" />コンテンツが静止している場合と、ユーザーがドラッグ、<see cref="T:System.Windows.Controls.Primitives.Thumb" />の<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 多数のアイテムを表示すると、パフォーマンスの問題が発生する可能性があります。  この場合、遅延のスクロールを使用すると便利な場合があります。  詳細については、次を参照してください。[のパフォーマンスの最適化: コントロール](~/docs/framework/wpf/advanced/optimizing-performance-controls.md)です。  
+  
+ このプロパティは、インスタンス プロパティおよび添付プロパティとして使用できます。  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:System.Windows.Controls.ScrollViewer>で、<xref:System.Windows.Controls.ScrollViewer.IsDeferredScrollingEnabled%2A>プロパティに設定`true`です。  
+  
+ [!code-xaml[DeferredScrolling#DeferredScrolling](~/samples/snippets/xaml/VS_Snippets_Wpf/DeferredScrolling/xaml/window1.xaml#deferredscrolling)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDeferredScrollingEnabledProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsDeferredScrollingEnabledProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsDeferredScrollingEnabledProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ScrollViewer.IsDeferredScrollingEnabledProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ScrollViewer.IsDeferredScrollingEnabled" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineDown">
+      <MemberSignature Language="C#" Value="public void LineDown ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void LineDown() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.LineDown" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>スクロール、<see cref="T:System.Windows.Controls.ScrollViewer" />コンテンツを 1 行の下。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが、スクロール動作を誘導していない場合<xref:System.Windows.Controls.ScrollViewer.ScrollInfo%2A>は`null`します。  
+  
+ 論理スクロールは、論理ツリー内の次の要素にスクロールするために使用します。 これは、指定した方向に定義されている物理的なインクリメントでコンテンツをスクロールする物理スクロールとは異なります。 論理スクロールの代わりにスクロールする必要がある場合は、ホストをラップ<xref:System.Windows.Controls.Panel>内の要素、<xref:System.Windows.Controls.ScrollViewer>設定とその<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>プロパティを`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineLeft">
+      <MemberSignature Language="C#" Value="public void LineLeft ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void LineLeft() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.LineLeft" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>スクロール、<see cref="T:System.Windows.Controls.ScrollViewer" />コンテンツを事前に指定された量だけ左にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが、スクロール動作を誘導していない場合<xref:System.Windows.Controls.ScrollViewer.ScrollInfo%2A>は`null`します。  
+  
+ 論理スクロールは、論理ツリー内の次の要素にスクロールするために使用します。 これは、指定した方向に定義されている物理的なインクリメントでコンテンツをスクロールする物理スクロールとは異なります。 論理スクロールの代わりにスクロールする必要がある場合は、ホストをラップ<xref:System.Windows.Controls.Panel>内の要素、<xref:System.Windows.Controls.ScrollViewer>設定とその<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>プロパティを`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineRight">
+      <MemberSignature Language="C#" Value="public void LineRight ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void LineRight() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.LineRight" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>スクロール、<see cref="T:System.Windows.Controls.ScrollViewer" />コンテンツを事前に指定された量だけ右にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが、スクロール動作を誘導していない場合<xref:System.Windows.Controls.ScrollViewer.ScrollInfo%2A>は`null`します。  
+  
+ 論理スクロールは、論理ツリー内の次の要素にスクロールするために使用します。 これは、指定した方向に定義されている物理的なインクリメントでコンテンツをスクロールする物理スクロールとは異なります。 論理スクロールの代わりにスクロールする必要がある場合は、ホストをラップ<xref:System.Windows.Controls.Panel>内の要素、<xref:System.Windows.Controls.ScrollViewer>設定とその<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>プロパティを`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineUp">
+      <MemberSignature Language="C#" Value="public void LineUp ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void LineUp() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.LineUp" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>スクロール、<see cref="T:System.Windows.Controls.ScrollViewer" />コンテンツを 1 行です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが、スクロール動作を誘導していない場合<xref:System.Windows.Controls.ScrollViewer.ScrollInfo%2A>は`null`します。  
+  
+ 論理スクロールは、論理ツリー内の次の要素にスクロールするために使用します。 これは、指定した方向に定義されている物理的なインクリメントでコンテンツをスクロールする物理スクロールとは異なります。 論理スクロールの代わりにスクロールする必要がある場合は、ホストをラップ<xref:System.Windows.Controls.Panel>内の要素、<xref:System.Windows.Controls.ScrollViewer>設定とその<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>プロパティを`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MeasureOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Size MeasureOverride (System.Windows.Size constraint);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size MeasureOverride(valuetype System.Windows.Size constraint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.MeasureOverride(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="constraint" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="constraint">上限<see cref="T:System.Windows.Size" />を超えていない必要があります。</param>
+        <summary>内容を測定、<see cref="T:System.Windows.Controls.ScrollViewer" />要素。</summary>
+        <returns>計算の適切な上限<see cref="T:System.Windows.Size" />の<see cref="T:System.Windows.Controls.ScrollViewer" />要素。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnApplyTemplate">
+      <MemberSignature Language="C#" Value="public override void OnApplyTemplate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void OnApplyTemplate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.OnApplyTemplate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>内部プロセスまたはアプリケーションを呼び出すときに呼び出されます<see cref="M:System.Windows.FrameworkElement.ApplyTemplate" />、現在のテンプレートのビジュアル ツリーの構築に使用されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreateAutomationPeer">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.OnCreateAutomationPeer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationPeer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>適切な提供<see cref="T:System.Windows.Automation.Peers.AutomationPeer" />の一部として、このコントロールの実装、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]オートメーション インフラストラクチャです。</summary>
+        <returns>適切な<see cref="T:System.Windows.Automation.Peers.AutomationPeer" />このコントロールの実装です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnKeyDown">
+      <MemberSignature Language="C#" Value="protected override void OnKeyDown (System.Windows.Input.KeyEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnKeyDown(class System.Windows.Input.KeyEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.OnKeyDown(System.Windows.Input.KeyEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.KeyEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">このイベントの必須の引数。</param>
+        <summary>特定のキーボードの入力に応答し、関連付けられたスクロール動作を呼び出します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次のキーボード入力が認識されます。  
+  
+-   ← キー: コンテンツを左に 1 行の上にスクロールします。  
+  
+-   → キー: コンテンツの右に 1 行をスクロールします。  
+  
+-   上矢印キー: 1 つの行でコンテンツをスクロールします。  
+  
+-   ↓ キー: 1 つの行で内容を下方向にスクロールします。  
+  
+-   PAGE UP: は、現在のページのトップへのコンテンツをスクロールします。  
+  
+-   ページの下では、現在のページの下部にコンテンツをスクロールします。  
+  
+-   ホーム: は、最初のページのトップへのコンテンツをスクロールします。  
+  
+-   終了: は、最後のページの下部にコンテンツをスクロールします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnManipulationCompleted">
+      <MemberSignature Language="C#" Value="protected override void OnManipulationCompleted (System.Windows.Input.ManipulationCompletedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnManipulationCompleted(class System.Windows.Input.ManipulationCompletedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.OnManipulationCompleted(System.Windows.Input.ManipulationCompletedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.ManipulationCompletedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary>ときに呼び出されます、<see cref="E:System.Windows.UIElement.ManipulationCompleted" />イベントが発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.ScrollViewer.OnManipulationCompleted%2A>メソッドのセット、<xref:System.Windows.RoutedEventArgs.Handled%2A>プロパティを`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnManipulationDelta">
+      <MemberSignature Language="C#" Value="protected override void OnManipulationDelta (System.Windows.Input.ManipulationDeltaEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnManipulationDelta(class System.Windows.Input.ManipulationDeltaEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.OnManipulationDelta(System.Windows.Input.ManipulationDeltaEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.ManipulationDeltaEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary>ときに呼び出されます、<see cref="E:System.Windows.UIElement.ManipulationDelta" />イベントが発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.ScrollViewer.OnManipulationDelta%2A>メソッドのセット、<xref:System.Windows.RoutedEventArgs.Handled%2A>プロパティを`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnManipulationInertiaStarting">
+      <MemberSignature Language="C#" Value="protected override void OnManipulationInertiaStarting (System.Windows.Input.ManipulationInertiaStartingEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnManipulationInertiaStarting(class System.Windows.Input.ManipulationInertiaStartingEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.OnManipulationInertiaStarting(System.Windows.Input.ManipulationInertiaStartingEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.ManipulationInertiaStartingEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary>ときに呼び出されます、<see cref="E:System.Windows.UIElement.ManipulationInertiaStarting" />イベントが発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.ScrollViewer.OnManipulationInertiaStarting%2A>メソッドのセット、<xref:System.Windows.RoutedEventArgs.Handled%2A>プロパティを`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnManipulationStarting">
+      <MemberSignature Language="C#" Value="protected override void OnManipulationStarting (System.Windows.Input.ManipulationStartingEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnManipulationStarting(class System.Windows.Input.ManipulationStartingEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.OnManipulationStarting(System.Windows.Input.ManipulationStartingEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.ManipulationStartingEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary>ときに呼び出されます、<see cref="E:System.Windows.UIElement.ManipulationStarting" />イベントが発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.ScrollViewer.OnManipulationInertiaStarting%2A>メソッドのセット、<xref:System.Windows.RoutedEventArgs.Handled%2A>プロパティを`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseLeftButtonDown">
+      <MemberSignature Language="C#" Value="protected override void OnMouseLeftButtonDown (System.Windows.Input.MouseButtonEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseLeftButtonDown(class System.Windows.Input.MouseButtonEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.OnMouseLeftButtonDown(System.Windows.Input.MouseButtonEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.MouseButtonEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">このイベントを記述する必須の引数。</param>
+        <summary>マウスの左ボタンのクリックに応答します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseWheel">
+      <MemberSignature Language="C#" Value="protected override void OnMouseWheel (System.Windows.Input.MouseWheelEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseWheel(class System.Windows.Input.MouseWheelEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.OnMouseWheel(System.Windows.Input.MouseWheelEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.MouseWheelEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">このイベントを記述する必須の引数。</param>
+        <summary>マウス ホイールのクリックに応答します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnScrollChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnScrollChanged (System.Windows.Controls.ScrollChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnScrollChanged(class System.Windows.Controls.ScrollChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.OnScrollChanged(System.Windows.Controls.ScrollChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Controls.ScrollChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e"><see cref="T:System.Windows.Controls.ScrollChangedEventArgs" />スクロール状態の変更に関する情報が含まれています。</param>
+        <summary>スクロール位置、範囲、またはビューポートのサイズの変更など、スクロール状態の変更が検出されたときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドをオーバーライドする場合は、呼び出す`base.OnScrollChanged(ScrollChangedEventArgs)`をこのイベントが発生したことを確認します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStylusSystemGesture">
+      <MemberSignature Language="C#" Value="protected override void OnStylusSystemGesture (System.Windows.Input.StylusSystemGestureEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnStylusSystemGesture(class System.Windows.Input.StylusSystemGestureEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.OnStylusSystemGesture(System.Windows.Input.StylusSystemGestureEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.StylusSystemGestureEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e"><see cref="T:System.Windows.Input.StylusSystemGestureEventArgs" />ジェスチャに関する情報を格納します。</param>
+        <summary>スタイラスによって開始されたタップ ジェスチャが検出されたときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パンに関する意思決定を行うには、内部的に使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageDown">
+      <MemberSignature Language="C#" Value="public void PageDown ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void PageDown() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.PageDown" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>スクロール、<see cref="T:System.Windows.Controls.ScrollViewer" />を 1 ページ下へのコンテンツします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが、スクロール動作を誘導していない場合<xref:System.Windows.Controls.ScrollViewer.ScrollInfo%2A>は`null`します。  
+  
+ 論理スクロールは、論理ツリー内の次の要素にスクロールするために使用します。 これは、指定した方向に定義されている物理的なインクリメントでコンテンツをスクロールする物理スクロールとは異なります。 論理スクロールの代わりにスクロールする必要がある場合は、ホストをラップ<xref:System.Windows.Controls.Panel>内の要素、<xref:System.Windows.Controls.ScrollViewer>設定とその<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>プロパティを`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageLeft">
+      <MemberSignature Language="C#" Value="public void PageLeft ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void PageLeft() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.PageLeft" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>スクロール、<see cref="T:System.Windows.Controls.ScrollViewer" />を 1 ページずつ左へのコンテンツ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが、スクロール動作を誘導していない場合<xref:System.Windows.Controls.ScrollViewer.ScrollInfo%2A>は`null`します。  
+  
+ 論理スクロールは、論理ツリー内の次の要素にスクロールするために使用します。 これは、指定した方向に定義されている物理的なインクリメントでコンテンツをスクロールする物理スクロールとは異なります。 論理スクロールの代わりにスクロールする必要がある場合は、ホストをラップ<xref:System.Windows.Controls.Panel>内の要素、<xref:System.Windows.Controls.ScrollViewer>設定とその<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>プロパティを`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageRight">
+      <MemberSignature Language="C#" Value="public void PageRight ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void PageRight() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.PageRight" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>スクロール、 <see cref="T:System.Windows.Controls.ScrollViewer" /> 1 ページずつ右へのコンテンツ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが、スクロール動作を誘導していない場合<xref:System.Windows.Controls.ScrollViewer.ScrollInfo%2A>は`null`します。  
+  
+ 論理スクロールは、論理ツリー内の次の要素にスクロールするために使用します。 これは、指定した方向に定義されている物理的なインクリメントでコンテンツをスクロールする物理スクロールとは異なります。 論理スクロールの代わりにスクロールする必要がある場合は、ホストをラップ<xref:System.Windows.Controls.Panel>内の要素、<xref:System.Windows.Controls.ScrollViewer>設定とその<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>プロパティを`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageUp">
+      <MemberSignature Language="C#" Value="public void PageUp ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void PageUp() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.PageUp" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>スクロール、<see cref="T:System.Windows.Controls.ScrollViewer" />コンテンツを 1 つのページです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが、スクロール動作を誘導していない場合<xref:System.Windows.Controls.ScrollViewer.ScrollInfo%2A>は`null`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PanningDeceleration">
+      <MemberSignature Language="C#" Value="public double PanningDeceleration { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 PanningDeceleration" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ScrollViewer.PanningDeceleration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、レート<see cref="T:System.Windows.Controls.ScrollViewer" />で速度が低下[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]慣性のときに、平方ミリ秒ごとです。</summary>
+        <value>速度 <see cref="T:System.Windows.Controls.ScrollViewer" /> は平方ミリ秒ごとに [!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)] で低下します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーがスクロールすると、<xref:System.Windows.Controls.ScrollViewer>タッチを使用すると、ユーザー指を置き、 <xref:System.Windows.Controls.ScrollViewer>、短い距離では、画面上で指を移動し、リフト指間に移動します。  この結果は、<xref:System.Windows.Controls.ScrollViewer>ユーザーが指を離す後に移動し続けます。 <xref:System.Windows.Controls.ScrollViewer.PanningDeceleration%2A>プロパティは、ユーザーが指を離す後低下スクロール率を指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PanningDecelerationProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PanningDecelerationProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PanningDecelerationProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ScrollViewer.PanningDecelerationProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ScrollViewer.PanningDeceleration" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PanningMode">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.PanningMode PanningMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.PanningMode PanningMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ScrollViewer.PanningMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.PanningMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定する方法<see cref="T:System.Windows.Controls.ScrollViewer" />をタッチ操作に対処します。</summary>
+        <value>指定する値か<see cref="T:System.Windows.Controls.ScrollViewer" />をタッチ操作に対処します。  既定値は、<see cref="F:System.Windows.Controls.PanningMode.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.ScrollViewer.PanningMode%2A>プロパティを指定するかどうか、<xref:System.Windows.Controls.ScrollViewer>水平、垂直方向にスクロールまたはその両方です。 <xref:System.Windows.Controls.ScrollViewer>ユーザーは、Windows タッチをサポートするタッチ デバイス上のコントロールに指をドラッグしたときにスクロールします。  
+  
+ <xref:System.Windows.Controls.ScrollViewer.PanningMode%2A>上で直接設定するかを指定できます、<xref:System.Windows.Controls.ScrollViewer>または添付プロパティとして使用します。  コントロールが含まれている場合、<xref:System.Windows.Controls.ScrollViewer>でその<xref:System.Windows.Controls.ControlTemplate>を使用して<xref:System.Windows.Controls.ScrollViewer.PanningMode%2A?displayProperty=nameWithType>添付プロパティの動作を指定すると、<xref:System.Windows.Controls.ScrollViewer>で、<xref:System.Windows.Controls.ControlTemplate>です。 使用する場合、<xref:System.Windows.Controls.ScrollViewer>の外側、<xref:System.Windows.Controls.ControlTemplate>設定、<xref:System.Windows.Controls.ScrollViewer.PanningMode%2A>上で直接、<xref:System.Windows.Controls.ScrollViewer>です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Controls.ScrollViewer>にいくつかの要素を追加します。  この例では、ウィンドウのサイズが変更されたときのサイズ`textblock1`も自動的に変更します。  ときに、<xref:System.Windows.Controls.TextBlock>が小さすぎて、すべてのコンテンツ、表示を<xref:System.Windows.Controls.ScrollViewer>スクロール可能になります。 例のセット<xref:System.Windows.Controls.ScrollViewer.PanningMode%2A>に<xref:System.Windows.Controls.PanningMode.Both>、ユーザーがスクロールできるように、<xref:System.Windows.Controls.ScrollViewer>を水平方向および垂直方向に指を使用します。  
+  
+ [!code-xaml[ScrollViewerPanning#PanningModeDirect](~/samples/snippets/csharp/VS_Snippets_Wpf/scrollviewerpanning/CS/mainwindow.xaml#panningmodedirect)]   
+  
+ 次の例を作成、<xref:System.Windows.Controls.TextBox>を使用して<xref:System.Windows.Controls.ScrollViewer.PanningMode%2A?displayProperty=nameWithType>添付プロパティとして。 既定では、<xref:System.Windows.Controls.ScrollViewer>で、<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.TextBox>がその<xref:System.Windows.Controls.PanningMode>に<xref:System.Windows.Controls.PanningMode.VerticalFirst>です。  これは、ユーザーがテキストを強調表示して、ユーザーは、垂直方向に移動する前に、指を水平方向に移動、ときにできるようにします。  例のセット<xref:System.Windows.Controls.ScrollViewer.PanningMode%2A>に<xref:System.Windows.Controls.PanningMode.VerticalOnly>されるため、ユーザーは、指を使用してテキストを選択することはできません。  その設定に注意してください<xref:System.Windows.Controls.PanningMode>に<xref:System.Windows.Controls.PanningMode.Both>からテキストを選択すると、ユーザーを防ぐことができます。  例のセット、<xref:System.Windows.TextWrapping>プロパティを<xref:System.Windows.TextWrapping.Wrap>、水平方向にスクロールする必要はありません。  
+  
+ [!code-xaml[ScrollViewerPanning#PanningModeAttached](~/samples/snippets/csharp/VS_Snippets_Wpf/scrollviewerpanning/CS/mainwindow.xaml#panningmodeattached)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PanningModeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PanningModeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PanningModeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ScrollViewer.PanningModeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ScrollViewer.PanningMode" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PanningRatio">
+      <MemberSignature Language="C#" Value="public double PanningRatio { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 PanningRatio" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ScrollViewer.PanningRatio" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、スクロール操作オフセットを変換するオフセットの比率を設定します。</summary>
+        <value>平行移動操作のオフセットへのオフセットをスクロールの比率です。 既定値は 1 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトの上で指をドラッグすると、平行移動の操作と見なされます。  <xref:System.Windows.Controls.ScrollViewer>スクロールにその操作を使用します。 <xref:System.Windows.Controls.ScrollViewer.PanningRatio%2A>プロパティがどの程度を指定します、<xref:System.Windows.Controls.ScrollViewer>の翻訳単位ごとにスクロールします。  たとえば場合、<xref:System.Windows.Controls.ScrollViewer.PanningRatio%2A>は、2、 <xref:System.Windows.Controls.ScrollViewer> 2 がスクロール[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]のすべて[!INCLUDE[TLA#tla_dipixel](~/includes/tlasharptla-dipixel-md.md)]平行移動操作のです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PanningRatioProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PanningRatioProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PanningRatioProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ScrollViewer.PanningRatioProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ScrollViewer.PanningRatio" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollableHeight">
+      <MemberSignature Language="C#" Value="public double ScrollableHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 ScrollableHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ScrollViewer.ScrollableHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スクロール可能なコンテンツ要素の垂直方向のサイズを表す値を取得します。</summary>
+        <value>A<see cref="T:System.Double" />がスクロール可能なコンテンツ要素の縦のサイズを表すです。 このプロパティには既定値はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>は`true`の値、 <xref:System.Windows.Controls.ScrollViewer.ExtentHeight%2A>、 <xref:System.Windows.Controls.ScrollViewer.ScrollableHeight%2A>、 <xref:System.Windows.Controls.ScrollViewer.ViewportHeight%2A>、および<xref:System.Windows.Controls.ScrollViewer.VerticalOffset%2A>プロパティは、数値の項目の。 場合<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>は`false`、これらのプロパティの値は、デバイス非依存ピクセルです。  
+  
+<a name="dependencyPropertyInfo_ScrollableHeight"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ScrollViewer.ScrollableHeightProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollableHeightProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ScrollableHeightProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ScrollableHeightProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ScrollViewer.ScrollableHeightProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ScrollViewer.ScrollableHeight" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollableWidth">
+      <MemberSignature Language="C#" Value="public double ScrollableWidth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 ScrollableWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ScrollViewer.ScrollableWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スクロール可能なコンテンツ要素の水平方向のサイズを表す値を取得します。</summary>
+        <value>A<see cref="T:System.Double" />がスクロール可能なコンテンツ要素の水平方向のサイズを表すです。 このプロパティには既定値はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_ScrollableWidth"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ScrollViewer.ScrollableWidthProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollableWidthProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ScrollableWidthProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ScrollableWidthProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ScrollViewer.ScrollableWidthProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ScrollViewer.ScrollableWidth" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollChanged">
+      <MemberSignature Language="C#" Value="public event System.Windows.Controls.ScrollChangedEventHandler ScrollChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Controls.ScrollChangedEventHandler ScrollChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Controls.ScrollViewer.ScrollChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Action")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.ScrollChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スクロールの位置、範囲、またはビューポートのサイズに対する変更が検出されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="routedEventInfo_ScrollChanged"></a>   
+## <a name="routed-event-information"></a>ルーティングされたイベント情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ScrollViewer.ScrollChangedEvent>|  
+|ルーティング方法|バブル|  
+|Delegate|<xref:System.Windows.Controls.ScrollChangedEventHandler>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollChangedEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent ScrollChangedEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent ScrollChangedEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ScrollViewer.ScrollChangedEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Controls.ScrollViewer.ScrollChanged" /> ルーティング イベントを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollInfo">
+      <MemberSignature Language="C#" Value="protected System.Windows.Controls.Primitives.IScrollInfo ScrollInfo { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.Primitives.IScrollInfo ScrollInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ScrollViewer.ScrollInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Primitives.IScrollInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を実装する要素、<see cref="T:System.Windows.Controls.Primitives.IScrollInfo" />インターフェイスし、スクロールのこのプロパティの値を提供<see cref="T:System.Windows.Controls.ScrollViewer" />です。</summary>
+        <value>範囲、オフセット、ビューポート サイズなどのスクロール プロパティを制御する要素。 このプロパティには既定値はありません。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollToBottom">
+      <MemberSignature Language="C#" Value="public void ScrollToBottom ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScrollToBottom() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.ScrollToBottom" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>末尾に垂直方向にスクロール、<see cref="T:System.Windows.Controls.ScrollViewer" />コンテンツ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが、スクロール動作を誘導していない場合<xref:System.Windows.Controls.ScrollViewer.ScrollInfo%2A>は`null`します。  
+  
+ 論理スクロールは、論理ツリー内の次の要素にスクロールするために使用します。 これは、指定した方向に定義されている物理的なインクリメントでコンテンツをスクロールする物理スクロールとは異なります。 論理スクロールの代わりにスクロールする必要がある場合は、ホストをラップ<xref:System.Windows.Controls.Panel>内の要素、<xref:System.Windows.Controls.ScrollViewer>設定とその<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>プロパティを`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollToEnd">
+      <MemberSignature Language="C#" Value="public void ScrollToEnd ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScrollToEnd() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.ScrollToEnd" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>末尾に垂直方向にスクロール、<see cref="T:System.Windows.Controls.ScrollViewer" />コンテンツ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、両方垂直および水平方向の端点、コンテンツにスクロールします。  
+  
+ このメソッドが、スクロール動作を誘導していない場合<xref:System.Windows.Controls.ScrollViewer.ScrollInfo%2A>は`null`します。  
+  
+ 論理スクロールは、論理ツリー内の次の要素にスクロールするために使用します。 これは、指定した方向に定義されている物理的なインクリメントでコンテンツをスクロールする物理スクロールとは異なります。 論理スクロールの代わりにスクロールする必要がある場合は、ホストをラップ<xref:System.Windows.Controls.Panel>内の要素、<xref:System.Windows.Controls.ScrollViewer>設定とその<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>プロパティを`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollToHome">
+      <MemberSignature Language="C#" Value="public void ScrollToHome ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScrollToHome() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.ScrollToHome" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>先頭に垂直方向にスクロール、<see cref="T:System.Windows.Controls.ScrollViewer" />コンテンツ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが、スクロール動作を誘導していない場合<xref:System.Windows.Controls.ScrollViewer.ScrollInfo%2A>は`null`します。  
+  
+ 論理スクロールは、論理ツリー内の次の要素にスクロールするために使用します。 これは、指定した方向に定義されている物理的なインクリメントでコンテンツをスクロールする物理スクロールとは異なります。 論理スクロールの代わりにスクロールする必要がある場合は、ホストをラップ<xref:System.Windows.Controls.Panel>内の要素、<xref:System.Windows.Controls.ScrollViewer>設定とその<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>プロパティを`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollToHorizontalOffset">
+      <MemberSignature Language="C#" Value="public void ScrollToHorizontalOffset (double offset);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScrollToHorizontalOffset(float64 offset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.ScrollToHorizontalOffset(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="offset" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="offset">コンテンツのスクロール先の位置。</param>
+        <summary>内のコンテンツのスクロール、<see cref="T:System.Windows.Controls.ScrollViewer" />を指定された水平オフセットの位置。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollToLeftEnd">
+      <MemberSignature Language="C#" Value="public void ScrollToLeftEnd ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScrollToLeftEnd() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.ScrollToLeftEnd" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>先頭に水平方向にスクロール、<see cref="T:System.Windows.Controls.ScrollViewer" />コンテンツ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが、スクロール動作を誘導していない場合<xref:System.Windows.Controls.ScrollViewer.ScrollInfo%2A>は`null`します。  
+  
+ 論理スクロールは、論理ツリー内の次の要素にスクロールするために使用します。 これは、指定した方向に定義されている物理的なインクリメントでコンテンツをスクロールする物理スクロールとは異なります。 論理スクロールの代わりにスクロールする必要がある場合は、ホストをラップ<xref:System.Windows.Controls.Panel>内の要素、<xref:System.Windows.Controls.ScrollViewer>設定とその<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>プロパティを`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollToRightEnd">
+      <MemberSignature Language="C#" Value="public void ScrollToRightEnd ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScrollToRightEnd() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.ScrollToRightEnd" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>末尾に水平方向にスクロール、<see cref="T:System.Windows.Controls.ScrollViewer" />コンテンツ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが、スクロール動作を誘導していない場合<xref:System.Windows.Controls.ScrollViewer.ScrollInfo%2A>は`null`します。  
+  
+ 論理スクロールは、論理ツリー内の次の要素にスクロールするために使用します。 これは、指定した方向に定義されている物理的なインクリメントでコンテンツをスクロールする物理スクロールとは異なります。 論理スクロールの代わりにスクロールする必要がある場合は、ホストをラップ<xref:System.Windows.Controls.Panel>内の要素、<xref:System.Windows.Controls.ScrollViewer>設定とその<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>プロパティを`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollToTop">
+      <MemberSignature Language="C#" Value="public void ScrollToTop ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScrollToTop() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.ScrollToTop" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>先頭に垂直方向にスクロール、<see cref="T:System.Windows.Controls.ScrollViewer" />コンテンツ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが、スクロール動作を誘導していない場合<xref:System.Windows.Controls.ScrollViewer.ScrollInfo%2A>は`null`します。  
+  
+ 論理スクロールは、論理ツリー内の次の要素にスクロールするために使用します。 これは、指定した方向に定義されている物理的なインクリメントでコンテンツをスクロールする物理スクロールとは異なります。 論理スクロールの代わりにスクロールする必要がある場合は、ホストをラップ<xref:System.Windows.Controls.Panel>内の要素、<xref:System.Windows.Controls.ScrollViewer>設定とその<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>プロパティを`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollToVerticalOffset">
+      <MemberSignature Language="C#" Value="public void ScrollToVerticalOffset (double offset);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScrollToVerticalOffset(float64 offset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.ScrollToVerticalOffset(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="offset" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="offset">コンテンツのスクロール先の位置。</param>
+        <summary>内のコンテンツのスクロール、<see cref="T:System.Windows.Controls.ScrollViewer" />を指定した垂直オフセットの位置。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCanContentScroll">
+      <MemberSignature Language="C#" Value="public static void SetCanContentScroll (System.Windows.DependencyObject element, bool canContentScroll);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetCanContentScroll(class System.Windows.DependencyObject element, bool canContentScroll) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.SetCanContentScroll(System.Windows.DependencyObject,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="canContentScroll" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値を設定する要素。</param>
+        <param name="canContentScroll">設定するプロパティ値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.ScrollViewer.CanContentScroll" />指定された要素に依存関係プロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetHorizontalScrollBarVisibility">
+      <MemberSignature Language="C#" Value="public static void SetHorizontalScrollBarVisibility (System.Windows.DependencyObject element, System.Windows.Controls.ScrollBarVisibility horizontalScrollBarVisibility);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetHorizontalScrollBarVisibility(class System.Windows.DependencyObject element, valuetype System.Windows.Controls.ScrollBarVisibility horizontalScrollBarVisibility) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.SetHorizontalScrollBarVisibility(System.Windows.DependencyObject,System.Windows.Controls.ScrollBarVisibility)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="horizontalScrollBarVisibility" Type="System.Windows.Controls.ScrollBarVisibility" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値を設定する要素。</param>
+        <param name="horizontalScrollBarVisibility">設定するプロパティ値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.ScrollViewer.HorizontalScrollBarVisibility" />指定された要素に依存関係プロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetIsDeferredScrollingEnabled">
+      <MemberSignature Language="C#" Value="public static void SetIsDeferredScrollingEnabled (System.Windows.DependencyObject element, bool value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetIsDeferredScrollingEnabled(class System.Windows.DependencyObject element, bool value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.SetIsDeferredScrollingEnabled(System.Windows.DependencyObject,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="element">設定する対象のオブジェクト、<see cref="P:System.Windows.Controls.ScrollViewer.IsDeferredScrollingEnabled" />プロパティです。</param>
+        <param name="value">
+          <see langword="true" />ユーザーがドラッグしたときに、静止コンテンツが、<see cref="T:System.Windows.Controls.Primitives.Thumb" />の<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />、それ以外の<see langword="false" />します。</param>
+        <summary>セット、<see cref="P:System.Windows.Controls.ScrollViewer.IsDeferredScrollingEnabled" />指定したオブジェクトのプロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 多数のアイテムを表示すると、パフォーマンスの問題が発生する可能性があります。  この場合、遅延のスクロールを使用すると便利な場合があります。  詳細については、次を参照してください。[のパフォーマンスの最適化: コントロール](~/docs/framework/wpf/advanced/optimizing-performance-controls.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetPanningDeceleration">
+      <MemberSignature Language="C#" Value="public static void SetPanningDeceleration (System.Windows.DependencyObject element, double value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetPanningDeceleration(class System.Windows.DependencyObject element, float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.SetPanningDeceleration(System.Windows.DependencyObject,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="element">設定する対象のオブジェクト、<see cref="P:System.Windows.Controls.ScrollViewer.PanningDeceleration" />プロパティです。</param>
+        <param name="value">速度 <see cref="T:System.Windows.Controls.ScrollViewer" /> は平方ミリ秒ごとに [!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)] で低下します。</param>
+        <summary>セット、<see cref="P:System.Windows.Controls.ScrollViewer.PanningDeceleration" />指定したオブジェクトのプロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetPanningMode">
+      <MemberSignature Language="C#" Value="public static void SetPanningMode (System.Windows.DependencyObject element, System.Windows.Controls.PanningMode panningMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetPanningMode(class System.Windows.DependencyObject element, valuetype System.Windows.Controls.PanningMode panningMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.SetPanningMode(System.Windows.DependencyObject,System.Windows.Controls.PanningMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="panningMode" Type="System.Windows.Controls.PanningMode" />
+      </Parameters>
+      <Docs>
+        <param name="element">設定する対象のオブジェクト、<see cref="P:System.Windows.Controls.ScrollViewer.PanningMode" />プロパティです。</param>
+        <param name="panningMode">指定する値か<see cref="T:System.Windows.Controls.ScrollViewer" />をタッチ操作に対処します。</param>
+        <summary>セット、<see cref="P:System.Windows.Controls.ScrollViewer.PanningMode" />指定したオブジェクトのプロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetPanningRatio">
+      <MemberSignature Language="C#" Value="public static void SetPanningRatio (System.Windows.DependencyObject element, double value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetPanningRatio(class System.Windows.DependencyObject element, float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.SetPanningRatio(System.Windows.DependencyObject,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="element">設定する対象のオブジェクト、<see cref="P:System.Windows.Controls.ScrollViewer.PanningRatio" />プロパティです。</param>
+        <param name="value">平行移動操作のオフセットへのオフセットをスクロールの比率です。</param>
+        <summary>セット、<see cref="P:System.Windows.Controls.ScrollViewer.PanningRatio" />指定したオブジェクトのプロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetVerticalScrollBarVisibility">
+      <MemberSignature Language="C#" Value="public static void SetVerticalScrollBarVisibility (System.Windows.DependencyObject element, System.Windows.Controls.ScrollBarVisibility verticalScrollBarVisibility);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetVerticalScrollBarVisibility(class System.Windows.DependencyObject element, valuetype System.Windows.Controls.ScrollBarVisibility verticalScrollBarVisibility) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ScrollViewer.SetVerticalScrollBarVisibility(System.Windows.DependencyObject,System.Windows.Controls.ScrollBarVisibility)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="verticalScrollBarVisibility" Type="System.Windows.Controls.ScrollBarVisibility" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値を設定する要素。</param>
+        <param name="verticalScrollBarVisibility">設定するプロパティ値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.ScrollViewer.VerticalScrollBarVisibility" />指定された要素に依存関係プロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalOffset">
+      <MemberSignature Language="C#" Value="public double VerticalOffset { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 VerticalOffset" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ScrollViewer.VerticalOffset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スクロールしたコンテンツの縦方向のオフセットを含む値を取得します。</summary>
+        <value>A<see cref="T:System.Double" />スクロールしたコンテンツの縦方向のオフセットを表すです。 既定値は 0.0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 正<xref:System.Windows.Controls.ScrollViewer.VerticalOffset%2A>値は、ページのトップへのオフセットされているコンテンツに対応します。  
+  
+ 有効な値は 0 以上、<xref:System.Windows.Controls.ScrollViewer.ExtentHeight%2A>マイナス、<xref:System.Windows.Controls.ScrollViewer.ViewportHeight%2A>です。  
+  
+ 場合<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>は`true`の値、 <xref:System.Windows.Controls.ScrollViewer.ExtentHeight%2A>、 <xref:System.Windows.Controls.ScrollViewer.ScrollableHeight%2A>、 <xref:System.Windows.Controls.ScrollViewer.ViewportHeight%2A>、および<xref:System.Windows.Controls.ScrollViewer.VerticalOffset%2A>プロパティは、数値の項目の。 場合<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>は`false`、これらのプロパティの値は、デバイス非依存ピクセルです。  
+  
+ 以降で、.NET Framework version 3.5 SP1 では、ときに<xref:System.Windows.Controls.ScrollViewer.IsDeferredScrollingEnabled%2A>は`true`、<xref:System.Windows.Controls.ScrollViewer.VerticalOffset%2A>としてユーザーのドラッグが変化し続ける、 <xref:System.Windows.Controls.Primitives.Thumb>、までコンテンツ ビューは変更されませんが、<xref:System.Windows.Controls.Primitives.Thumb>を解放します。  この場合、<xref:System.Windows.Controls.ScrollViewer.ContentVerticalOffset%2A>コンテンツ表示のオフセットを表すと<xref:System.Windows.Controls.ScrollViewer.VerticalOffset%2A>に基づいてコンテンツのオフセットを表す、<xref:System.Windows.Controls.Primitives.Thumb>位置。  
+  
+<a name="dependencyPropertyInfo_VerticalOffset"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ScrollViewer.VerticalOffsetProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalOffsetProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty VerticalOffsetProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty VerticalOffsetProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ScrollViewer.VerticalOffsetProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ScrollViewer.VerticalOffset" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalScrollBarVisibility">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.ScrollBarVisibility VerticalScrollBarVisibility { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.ScrollBarVisibility VerticalScrollBarVisibility" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ScrollViewer.VerticalScrollBarVisibility" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.ScrollBarVisibility</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を示す値を取得または垂直方向かどうか<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />が表示されます。</summary>
+        <value>A<see cref="T:System.Windows.Controls.ScrollBarVisibility" />を示す値かどうか垂直<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />が表示されます。 既定値は、<see cref="F:System.Windows.Controls.ScrollBarVisibility.Visible" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_VerticalScrollBarVisibility"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ScrollViewer.VerticalScrollBarVisibilityProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalScrollBarVisibilityProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty VerticalScrollBarVisibilityProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty VerticalScrollBarVisibilityProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ScrollViewer.VerticalScrollBarVisibilityProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ScrollViewer.VerticalScrollBarVisibility" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewportHeight">
+      <MemberSignature Language="C#" Value="public double ViewportHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 ViewportHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ScrollViewer.ViewportHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Layout")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテンツのビューポートの縦幅を含む値を取得します。</summary>
+        <value>A<see cref="T:System.Double" />コンテンツのビューポートの縦のサイズを表すです。 このプロパティには既定値はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビューポートは、コンテンツの表示領域です。  
+  
+ <xref:System.Windows.Controls.ScrollViewer.ViewportHeight%2A>のみの出力プロパティです。指定して効果的に設定することができます、<xref:System.Windows.FrameworkElement.Height%2A>のコンテンツ要素。  
+  
+ 場合<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>は`true`の値、 <xref:System.Windows.Controls.ScrollViewer.ExtentHeight%2A>、 <xref:System.Windows.Controls.ScrollViewer.ScrollableHeight%2A>、 <xref:System.Windows.Controls.ScrollViewer.ViewportHeight%2A>、および<xref:System.Windows.Controls.ScrollViewer.VerticalOffset%2A>プロパティは、数値の項目の。 場合<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>は`false`、これらのプロパティの値は、デバイス非依存ピクセルです。  
+  
+<a name="dependencyPropertyInfo_ViewportHeight"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ScrollViewer.ViewportHeightProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewportHeightProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ViewportHeightProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ViewportHeightProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ScrollViewer.ViewportHeightProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ScrollViewer.ViewportHeight" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewportWidth">
+      <MemberSignature Language="C#" Value="public double ViewportWidth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 ViewportWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ScrollViewer.ViewportWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Layout")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテンツのビューポートの横幅を格納する値を取得します。</summary>
+        <value>A<see cref="T:System.Double" />コンテンツのビューポートの水平方向のサイズを表すです。 既定値は 0.0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビューポートは、コンテンツの表示領域です。  
+  
+<a name="dependencyPropertyInfo_ViewportWidth"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ScrollViewer.ViewportWidthProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewportWidthProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ViewportWidthProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ViewportWidthProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ScrollViewer.ViewportWidthProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ScrollViewer.ViewportWidth" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

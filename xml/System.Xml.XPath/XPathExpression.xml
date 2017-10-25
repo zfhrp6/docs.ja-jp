@@ -1,0 +1,745 @@
+<Type Name="XPathExpression" FullName="System.Xml.XPath.XPathExpression">
+  <TypeSignature Language="C#" Value="public abstract class XPathExpression" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit XPathExpression extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.XPath.XPathExpression" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XPath</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コンパイル済みの XPath 式を表す型クラスが指定されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、の結果として返される、<xref:System.Xml.XPath.XPathNavigator.Compile%2A>のメソッド、<xref:System.Xml.XPath.XPathNavigator>クラスです。 パラメーターでは、 <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A>、 <xref:System.Xml.XPath.XPathNavigator.Matches%2A>、 <xref:System.Xml.XPath.XPathNavigator.Select%2A>、および<xref:System.Xml.XPath.XPathNavigator.SelectSingleNode%2A>のメソッド、<xref:System.Xml.XPath.XPathNavigator>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例では、XPath の戻り値の型を使用して XPath 式を処理する方法を決定する方法を示します。  
+  
+ [!code-cpp[XPathExpression.ReturnType#1](~/samples/snippets/cpp/VS_Snippets_Data/XPathExpression.ReturnType/CPP/returntype.cpp#1)]
+ [!code-csharp[XPathExpression.ReturnType#1](~/samples/snippets/csharp/VS_Snippets_Data/XPathExpression.ReturnType/CS/returntype.cs#1)]
+ [!code-vb[XPathExpression.ReturnType#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XPathExpression.ReturnType/VB/returntype.vb#1)]  
+  
+ この例は、`contosoBooks.xml` ファイルを入力として使用します。  
+  
+```xml  
+  
+<?xml version="1.0" encoding="utf-8" ?>  
+<bookstore xmlns="http://www.contoso.com/books">  
+    <book genre="autobiography" publicationdate="1981-03-22" ISBN="1-861003-11-0">  
+        <title>The Autobiography of Benjamin Franklin</title>  
+        <author>  
+            <first-name>Benjamin</first-name>  
+            <last-name>Franklin</last-name>  
+        </author>  
+        <price>8.99</price>  
+    </book>  
+    <book genre="novel" publicationdate="1967-11-17" ISBN="0-201-63361-2">  
+        <title>The Confidence Man</title>  
+        <author>  
+            <first-name>Herman</first-name>  
+            <last-name>Melville</last-name>  
+        </author>  
+        <price>11.99</price>  
+    </book>  
+    <book genre="philosophy" publicationdate="1991-02-15" ISBN="1-861001-57-6">  
+        <title>The Gorgias</title>  
+        <author>  
+            <name>Plato</name>  
+        </author>  
+        <price>9.99</price>  
+    </book>  
+</bookstore>  
+  
+```  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>継承する場合、<see cref="T:System.Xml.XPath.XPathExpression" />クラスでは、次のメンバーをオーバーライドする必要があります。  
+  
+-   <see cref="M:System.Xml.XPath.XPathExpression.AddSort(System.Object,System.Collections.IComparer)" /><see cref="M:System.Xml.XPath.XPathExpression.AddSort(System.Object,System.Xml.XPath.XmlSortOrder,System.Xml.XPath.XmlCaseOrder,System.String,System.Xml.XPath.XmlDataType)" />  
+  
+-   <see cref="M:System.Xml.XPath.XPathExpression.Clone" />  
+  
+-   <see cref="P:System.Xml.XPath.XPathExpression.Expression" />  
+  
+-   <see cref="P:System.Xml.XPath.XPathExpression.ReturnType" />  
+  
+-   <see cref="M:System.Xml.XPath.XPathExpression.SetContext(System.Xml.IXmlNamespaceResolver)" />  
+  
+-   <see cref="M:System.Xml.XPath.XPathExpression.SetContext(System.Xml.XmlNamespaceManager)" />。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="AddSort">
+      <MemberSignature Language="C#" Value="public abstract void AddSort (object expr, System.Collections.IComparer comparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddSort(object expr, class System.Collections.IComparer comparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XPath.XPathExpression.AddSort(System.Object,System.Collections.IComparer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XPath</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="expr" Type="System.Object" />
+        <Parameter Name="comparer" Type="System.Collections.IComparer" />
+      </Parameters>
+      <Docs>
+        <param name="expr">ソート キーを表すオブジェクト。 これはノードの <see langword="string" /> 値またはコンパイル済みの XPath 式を持つ <see cref="T:System.Xml.XPath.XPathExpression" /> オブジェクトの場合もあります。</param>
+        <param name="comparer"><see cref="T:System.Collections.IComparer" /> 2 つのオブジェクトの等価性を比較するための特定のデータ型の比較を提供するオブジェクト。</param>
+        <summary>派生クラスでオーバーライドされると、指定した XPath 式で選択されたノードを並べ替えます<see cref="T:System.Collections.IComparer" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.XPath.XPathExpression.AddSort%2A>メソッドでの代わりに、データ型のオブジェクトを文字列または数値で並べ替えるにユーザーを有効にします。 <xref:System.Collections.IComparer>オブジェクトの実装を提供する、<xref:System.Collections.IComparer.Compare%2A>ユーザー定義のクラスの並べ替えをサポートするメソッド。  
+  
+ 次の例では、ブックは ISBN 番号で並べ替えられます、`isbn`を実装するオブジェクトには、<xref:System.Collections.IComparer>インターフェイスです。  
+  
+```vb  
+Dim expression As XPathExpression = navigator.Compile("bookstore/book")  
+Dim isbn As ISBN = New ISBN()  
+expression.AddSort("@ISBN", (IComparer)isbn)  
+```  
+  
+```csharp  
+XPathExpression expression = navigator.Compile("bookstore/book");  
+ISBN isbn = new ISBN();  
+expression.AddSort("@ISBN", (IComparer)isbn);  
+```  
+  
+ 重要な注意事項を使用する場合は、次のとおり、<xref:System.Xml.XPath.XPathExpression.AddSort%2A>メソッドです。  
+  
+-   並べ替えの追加順序は、並べ替えキーの順序。  
+  
+-   場合、<xref:System.Xml.XPath.XPathExpression>または並べ替えキーに名前空間の解決が必要、使用する必要があります、<xref:System.Xml.XPath.XPathExpression.SetContext%2A>メソッドを提供する、<xref:System.Xml.XmlNamespaceManager>名前空間の解決。  
+  
+-   場合、<xref:System.Xml.XPath.XPathExpression>プレフィックスを含まない名前空間 (Uniform Resource Identifier) が空の名前空間であると見なされます。 XML には、既定の名前空間が含まれている必要がありますを使用する、<xref:System.Xml.XPath.XPathExpression.SetContext%2A>メソッドを提供し、<xref:System.Xml.XmlNamespaceManager>プレフィックスと既定の名前空間を処理する名前空間 URI を格納しています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.XPath.XPathException"><see cref="T:System.Xml.XPath.XPathExpression" /> または並べ替えキーにプレフィックスが含まれていて、<see cref="T:System.Xml.XmlNamespaceManager" /> が指定されていないか、または指定された <see cref="T:System.Xml.XmlNamespaceManager" /> にプレフィックスが見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddSort">
+      <MemberSignature Language="C#" Value="public abstract void AddSort (object expr, System.Xml.XPath.XmlSortOrder order, System.Xml.XPath.XmlCaseOrder caseOrder, string lang, System.Xml.XPath.XmlDataType dataType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddSort(object expr, valuetype System.Xml.XPath.XmlSortOrder order, valuetype System.Xml.XPath.XmlCaseOrder caseOrder, string lang, valuetype System.Xml.XPath.XmlDataType dataType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XPath.XPathExpression.AddSort(System.Object,System.Xml.XPath.XmlSortOrder,System.Xml.XPath.XmlCaseOrder,System.String,System.Xml.XPath.XmlDataType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XPath</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="expr" Type="System.Object" />
+        <Parameter Name="order" Type="System.Xml.XPath.XmlSortOrder" />
+        <Parameter Name="caseOrder" Type="System.Xml.XPath.XmlCaseOrder" />
+        <Parameter Name="lang" Type="System.String" />
+        <Parameter Name="dataType" Type="System.Xml.XPath.XmlDataType" />
+      </Parameters>
+      <Docs>
+        <param name="expr">ソート キーを表すオブジェクト。 これはノードの <see langword="string" /> 値またはコンパイル済みの XPath 式を持つ <see cref="T:System.Xml.XPath.XPathExpression" /> オブジェクトの場合もあります。</param>
+        <param name="order">並べ替え順序を示す <see cref="T:System.Xml.XPath.XmlSortOrder" /> 値。</param>
+        <param name="caseOrder">大文字と小文字を並べ替える方法を示す <see cref="T:System.Xml.XPath.XmlCaseOrder" /> 値。</param>
+        <param name="lang">比較に使用する言語。 米国向けの "us-en" など、言語種類について <see cref="Overload:System.String.Compare" /> メソッドに渡すことのできる <see cref="T:System.Globalization.CultureInfo" /> クラスを使用します。英語。 空の文字列を指定すると、システム環境を使用して <see cref="T:System.Globalization.CultureInfo" /> を決定します。</param>
+        <param name="dataType">データ型の並べ替え順序を示す <see cref="T:System.Xml.XPath.XmlDataType" /> 値。</param>
+        <summary>派生クラスでオーバーライドされると、指定されたパラメーターに応じて、XPath 式で選択されたノードを並べ替えます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+-   並べ替えの追加順序は、並べ替えキーの順序。  
+  
+-   場合、<xref:System.Xml.XPath.XPathExpression>または並べ替えキーに名前空間の解決が必要、使用する必要があります、<xref:System.Xml.XPath.XPathExpression.SetContext%2A>メソッドを提供する、<xref:System.Xml.XmlNamespaceManager>名前空間の解決。  
+  
+-   場合、<xref:System.Xml.XPath.XPathExpression>プレフィックスを含まない名前空間 (Uniform Resource Identifier) が空の名前空間であると見なされます。 XML には、既定の名前空間が含まれている必要がありますを使用する、<xref:System.Xml.XPath.XPathExpression.SetContext%2A>メソッドを提供し、<xref:System.Xml.XmlNamespaceManager>プレフィックスと既定の名前空間を処理する名前空間 URI を格納しています。  
+  
+   
+  
+## Examples  
+ 次の例では、ブック ドキュメント価格の降順で並べ替えを行う方法を示します。  
+  
+ [!code-vb[XPathXMLExamples#4](~/samples/snippets/visualbasic/VS_Snippets_Data/XPathXMLExamples/vb/xpathexpression.addsort.vb#4)]  
+  
+ [!code-csharp[XPathXMLExamples#5](~/samples/snippets/csharp/VS_Snippets_Data/XPathXMLExamples/cs/xpathexpression.addsort.cs#5)]  
+  
+ この例は、`books.xml` ファイルを入力として使用します。  
+  
+```xml  
+  
+<?xml version="1.0" encoding="utf-8" ?>   
+<bookstore>  
+    <book genre="autobiography" publicationdate="1981-03-22" ISBN="1-861003-11-0">  
+        <title>The Autobiography of Benjamin Franklin</title>  
+        <author>  
+            <first-name>Benjamin</first-name>  
+            <last-name>Franklin</last-name>  
+        </author>  
+        <price>8.99</price>  
+    </book>  
+    <book genre="novel" publicationdate="1967-11-17" ISBN="0-201-63361-2">  
+        <title>The Confidence Man</title>  
+        <author>  
+            <first-name>Herman</first-name>  
+            <last-name>Melville</last-name>  
+        </author>  
+        <price>11.99</price>  
+    </book>  
+    <book genre="philosophy" publicationdate="1991-02-15" ISBN="1-861001-57-6">  
+        <title>The Gorgias</title>  
+        <author>  
+            <name>Plato</name>  
+        </author>  
+        <price>9.99</price>  
+    </book>  
+</bookstore>  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.XPath.XPathException"><see cref="T:System.Xml.XPath.XPathExpression" /> または並べ替えキーにプレフィックスが含まれていて、<see cref="T:System.Xml.XmlNamespaceManager" /> が指定されていないか、または指定された <see cref="T:System.Xml.XmlNamespaceManager" /> にプレフィックスが見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public abstract System.Xml.XPath.XPathExpression Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Xml.XPath.XPathExpression Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XPath.XPathExpression.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XPath</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XPath.XPathExpression</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、この複製を返します<see cref="T:System.Xml.XPath.XPathExpression" />です。</summary>
+        <returns>新しい <see cref="T:System.Xml.XPath.XPathExpression" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスでオーバーライドされると、<xref:System.Xml.XPath.XPathExpression.Clone%2A>メソッドは、この複製を返します<xref:System.Xml.XPath.XPathExpression>これと同じ状態を持つオブジェクト<xref:System.Xml.XPath.XPathExpression>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Compile">
+      <MemberSignature Language="C#" Value="public static System.Xml.XPath.XPathExpression Compile (string xpath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.XPath.XPathExpression Compile(string xpath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XPath.XPathExpression.Compile(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XPath</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XPath.XPathExpression</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xpath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="xpath">XPath 式。</param>
+        <summary>指定された XPath 式をコンパイルし、XPath 式を表す <see cref="T:System.Xml.XPath.XPathExpression" /> オブジェクトを返します。</summary>
+        <returns><see cref="T:System.Xml.XPath.XPathExpression" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の結果の型の 1 つを生成する XPath 式を評価します。  
+  
+-   <xref:System.Xml.XPath.XPathResultType.NodeSet>  
+  
+-   <xref:System.Xml.XPath.XPathResultType.Boolean>  
+  
+-   <xref:System.Xml.XPath.XPathResultType.Number>  
+  
+-   <xref:System.Xml.XPath.XPathResultType.String>  
+  
+> [!NOTE]
+>  無効な数の引数 (または実装されていないユーザー定義関数) でユーザー定義関数が、XPath 式で指定されている場合は、実行時にのみ、例外が発生します。 ユーザー定義関数はコンパイル時にチェックされないため、実行には、式が評価された場合にのみ、ユーザー定義関数に起因する例外が発生します。  
+  
+   
+  
+## Examples  
+ 次の例では、XPath の戻り値の型を使用して XPath 式を処理する方法を決定する方法を示します。 この例では、<xref:System.Xml.XPath.XPathExpression.Compile%2A>を返す新しいメソッドを<xref:System.Xml.XPath.XPathExpression>オブジェクト。  
+  
+ [!code-cpp[XPathExpression.ReturnType#1](~/samples/snippets/cpp/VS_Snippets_Data/XPathExpression.ReturnType/CPP/returntype.cpp#1)]
+ [!code-csharp[XPathExpression.ReturnType#1](~/samples/snippets/csharp/VS_Snippets_Data/XPathExpression.ReturnType/CS/returntype.cs#1)]
+ [!code-vb[XPathExpression.ReturnType#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XPathExpression.ReturnType/VB/returntype.vb#1)]  
+  
+ この例は、`contosoBooks.xml` ファイルを入力として使用します。  
+  
+```xml  
+  
+<?xml version="1.0" encoding="utf-8" ?>  
+<bookstore xmlns="http://www.contoso.com/books">  
+    <book genre="autobiography" publicationdate="1981-03-22" ISBN="1-861003-11-0">  
+        <title>The Autobiography of Benjamin Franklin</title>  
+        <author>  
+            <first-name>Benjamin</first-name>  
+            <last-name>Franklin</last-name>  
+        </author>  
+        <price>8.99</price>  
+    </book>  
+    <book genre="novel" publicationdate="1967-11-17" ISBN="0-201-63361-2">  
+        <title>The Confidence Man</title>  
+        <author>  
+            <first-name>Herman</first-name>  
+            <last-name>Melville</last-name>  
+        </author>  
+        <price>11.99</price>  
+    </book>  
+    <book genre="philosophy" publicationdate="1991-02-15" ISBN="1-861001-57-6">  
+        <title>The Gorgias</title>  
+        <author>  
+            <name>Plato</name>  
+        </author>  
+        <price>9.99</price>  
+    </book>  
+</bookstore>  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">XPath 式のパラメーターが有効な XPath 式ではありません。</exception>
+        <exception cref="T:System.Xml.XPath.XPathException">XPath 式が有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Compile">
+      <MemberSignature Language="C#" Value="public static System.Xml.XPath.XPathExpression Compile (string xpath, System.Xml.IXmlNamespaceResolver nsResolver);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.XPath.XPathExpression Compile(string xpath, class System.Xml.IXmlNamespaceResolver nsResolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XPath.XPathExpression.Compile(System.String,System.Xml.IXmlNamespaceResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XPath</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XPath.XPathExpression</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xpath" Type="System.String" />
+        <Parameter Name="nsResolver" Type="System.Xml.IXmlNamespaceResolver" />
+      </Parameters>
+      <Docs>
+        <param name="xpath">XPath 式。</param>
+        <param name="nsResolver">実装するオブジェクト、<see cref="T:System.Xml.IXmlNamespaceResolver" />名前空間の解決のインターフェイスです。</param>
+        <summary>指定された XPath 式を使用してコンパイル、<see cref="T:System.Xml.IXmlNamespaceResolver" />名前空間の解決、およびを返します。 指定されたオブジェクト、 <see cref="T:System.Xml.XPath.XPathExpression" /> XPath 式を表すオブジェクト。</summary>
+        <returns><see cref="T:System.Xml.XPath.XPathExpression" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の結果の型の 1 つを生成する XPath 式を評価します。  
+  
+-   <xref:System.Xml.XPath.XPathResultType.NodeSet>  
+  
+-   <xref:System.Xml.XPath.XPathResultType.Boolean>  
+  
+-   <xref:System.Xml.XPath.XPathResultType.Number>  
+  
+-   <xref:System.Xml.XPath.XPathResultType.String>  
+  
+> [!NOTE]
+>  引数の数が無効です (または実装されていないユーザー定義関数) でユーザー定義関数が、XPath 式で指定されている場合は、実行時にのみ、例外が発生します。 ユーザー定義関数はコンパイル時にチェックされないため、実行には、式が評価された場合にのみ、ユーザー定義関数に起因する例外が発生します。  
+  
+> [!NOTE]
+>  コンパイルすることはできません、<xref:System.Xml.XPath.XPathExpression>とカスタムのコンテキストを渡すことによって、1 つのステップの<xref:System.Xml.Xsl.XsltContext>を実装する<xref:System.Xml.IXmlNamespaceResolver>、このメソッドに引数として。 使用する、<xref:System.Xml.XPath.XPathExpression>カスタムのコンテキストで呼び出す必要があります、<xref:System.Xml.XPath.XPathExpression.SetContext%2A>メソッド式をコンパイルした後にします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">XPath 式のパラメーターが有効な XPath 式ではありません。</exception>
+        <exception cref="T:System.Xml.XPath.XPathException">XPath 式が有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Expression">
+      <MemberSignature Language="C#" Value="public abstract string Expression { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Expression" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XPath.XPathExpression.Expression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XPath</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、取得、<see langword="string" />の表現、<see cref="T:System.Xml.XPath.XPathExpression" />です。</summary>
+        <value><see langword="string" /> の <see cref="T:System.Xml.XPath.XPathExpression" /> 表現。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReturnType">
+      <MemberSignature Language="C#" Value="public abstract System.Xml.XPath.XPathResultType ReturnType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.XPath.XPathResultType ReturnType" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XPath.XPathExpression.ReturnType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XPath</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XPath.XPathResultType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、XPath 式の結果の型を取得します。</summary>
+        <value>XPath 式の結果の型を表す <see cref="T:System.Xml.XPath.XPathResultType" /> 値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、XPath の戻り値の型を使用して XPath 式を処理する方法を決定する方法を示します。  
+  
+ [!code-cpp[XPathExpression.ReturnType#1](~/samples/snippets/cpp/VS_Snippets_Data/XPathExpression.ReturnType/CPP/returntype.cpp#1)]
+ [!code-csharp[XPathExpression.ReturnType#1](~/samples/snippets/csharp/VS_Snippets_Data/XPathExpression.ReturnType/CS/returntype.cs#1)]
+ [!code-vb[XPathExpression.ReturnType#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XPathExpression.ReturnType/VB/returntype.vb#1)]  
+  
+ この例は、`contosoBooks.xml` ファイルを入力として使用します。  
+  
+```xml  
+  
+<?xml version="1.0" encoding="utf-8" ?>  
+<bookstore xmlns="http://www.contoso.com/books">  
+    <book genre="autobiography" publicationdate="1981-03-22" ISBN="1-861003-11-0">  
+        <title>The Autobiography of Benjamin Franklin</title>  
+        <author>  
+            <first-name>Benjamin</first-name>  
+            <last-name>Franklin</last-name>  
+        </author>  
+        <price>8.99</price>  
+    </book>  
+    <book genre="novel" publicationdate="1967-11-17" ISBN="0-201-63361-2">  
+        <title>The Confidence Man</title>  
+        <author>  
+            <first-name>Herman</first-name>  
+            <last-name>Melville</last-name>  
+        </author>  
+        <price>11.99</price>  
+    </book>  
+    <book genre="philosophy" publicationdate="1991-02-15" ISBN="1-861001-57-6">  
+        <title>The Gorgias</title>  
+        <author>  
+            <name>Plato</name>  
+        </author>  
+        <price>9.99</price>  
+    </book>  
+</bookstore>  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetContext">
+      <MemberSignature Language="C#" Value="public abstract void SetContext (System.Xml.IXmlNamespaceResolver nsResolver);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetContext(class System.Xml.IXmlNamespaceResolver nsResolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XPath.XPathExpression.SetContext(System.Xml.IXmlNamespaceResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XPath</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nsResolver" Type="System.Xml.IXmlNamespaceResolver" />
+      </Parameters>
+      <Docs>
+        <param name="nsResolver">名前空間の解決のために使用する <see cref="T:System.Xml.IXmlNamespaceResolver" /> インターフェイスを実装するオブジェクト。</param>
+        <summary>派生クラスでオーバーライドされる場合に、名前空間の解決に使用する <see cref="T:System.Xml.IXmlNamespaceResolver" /> オブジェクトを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Namespace 解像度が実装するクラスでサポートされている、<xref:System.Xml.IXmlNamespaceResolver>インターフェイスなど、<xref:System.Xml.XmlNamespaceManager>クラスです。 <xref:System.Xml.XmlNamespaceManager>プレフィックスと名前空間 (Uniform Resource Identifier) のマッピングを格納します。 場合、<xref:System.Xml.XPath.XPathExpression>名前空間の解決、プレフィックスと名前空間 URI のペアをなど、オブジェクトに追加する必要がありますが必要です、<xref:System.Xml.XmlNamespaceManager>クラスを実装する、<xref:System.Xml.IXmlNamespaceResolver>インターフェイス、および<xref:System.Xml.XPath.XPathExpression.SetContext%2A>を指定するメソッドを呼び出す必要があります、<xref:System.Xml.IXmlNamespaceResolver>名前空間の解決に使用するインターフェイスのオブジェクト。  
+  
+ 重要な注意事項を使用する場合は、次のとおり、<xref:System.Xml.XPath.XPathExpression.SetContext%2A>メソッドです。  
+  
+-   場合、<xref:System.Xml.XPath.XPathExpression>プレフィックスを含まない名前空間 URI が空の名前空間であると見なされます。 XML には、既定の名前空間が含まれている必要がありますを使用する、<xref:System.Xml.XPath.XPathExpression.SetContext%2A>メソッドし、プレフィックスと既定の名前空間を処理する名前空間 URI を格納しているオブジェクトを提供します。  
+  
+-   指定することも、<xref:System.Xml.IXmlNamespaceResolver>インターフェイス オブジェクトの名前空間への解決、<xref:System.Xml.XPath.XPathExpression.Compile%2A>メソッドを作成するとき、<xref:System.Xml.XPath.XPathExpression>オブジェクト。  
+  
+-   <xref:System.Xml.XPath.XPathExpression.SetContext%2A>受け付ける<xref:System.Xml.Xsl.XsltContext>名前空間の競合回避モジュールとしてので、カスタムのコンテキストを実装し、使用できます関数および変数に基づく<xref:System.Xml.Xsl.IXsltContextFunction>と<xref:System.Xml.Xsl.IXsltContextVariable>です。 XPath 式は、それらで実行されます。 詳細については、次を参照してください。[ユーザー定義関数と変数](~/docs/standard/data/xml/user-defined-functions-and-variables.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、XPath の戻り値の型を使用して XPath 式を処理する方法を決定する方法と使用方法、<xref:System.Xml.XPath.XPathExpression.SetContext%2A>メソッドを提供する、<xref:System.Xml.XmlNamespaceManager>名前空間の解決のオブジェクト。  
+  
+ [!code-cpp[XPathExpression.ReturnType#1](~/samples/snippets/cpp/VS_Snippets_Data/XPathExpression.ReturnType/CPP/returntype.cpp#1)]
+ [!code-csharp[XPathExpression.ReturnType#1](~/samples/snippets/csharp/VS_Snippets_Data/XPathExpression.ReturnType/CS/returntype.cs#1)]
+ [!code-vb[XPathExpression.ReturnType#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XPathExpression.ReturnType/VB/returntype.vb#1)]  
+  
+ この例は、`contosoBooks.xml` ファイルを入力として使用します。  
+  
+```xml  
+  
+<?xml version="1.0" encoding="utf-8" ?>  
+<bookstore xmlns="http://www.contoso.com/books">  
+    <book genre="autobiography" publicationdate="1981-03-22" ISBN="1-861003-11-0">  
+        <title>The Autobiography of Benjamin Franklin</title>  
+        <author>  
+            <first-name>Benjamin</first-name>  
+            <last-name>Franklin</last-name>  
+        </author>  
+        <price>8.99</price>  
+    </book>  
+    <book genre="novel" publicationdate="1967-11-17" ISBN="0-201-63361-2">  
+        <title>The Confidence Man</title>  
+        <author>  
+            <first-name>Herman</first-name>  
+            <last-name>Melville</last-name>  
+        </author>  
+        <price>11.99</price>  
+    </book>  
+    <book genre="philosophy" publicationdate="1991-02-15" ISBN="1-861001-57-6">  
+        <title>The Gorgias</title>  
+        <author>  
+            <name>Plato</name>  
+        </author>  
+        <price>9.99</price>  
+    </book>  
+</bookstore>  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.XPath.XPathException"><see cref="T:System.Xml.IXmlNamespaceResolver" /> オブジェクトのパラメーターが <see cref="T:System.Xml.IXmlNamespaceResolver" /> から派生していません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetContext">
+      <MemberSignature Language="C#" Value="public abstract void SetContext (System.Xml.XmlNamespaceManager nsManager);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetContext(class System.Xml.XmlNamespaceManager nsManager) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XPath.XPathExpression.SetContext(System.Xml.XmlNamespaceManager)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XPath</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nsManager" Type="System.Xml.XmlNamespaceManager" />
+      </Parameters>
+      <Docs>
+        <param name="nsManager">名前空間の解決に使用する <see cref="T:System.Xml.XmlNamespaceManager" /> オブジェクト。</param>
+        <summary>派生クラスでオーバーライドされる場合に、名前空間の解決に使用する <see cref="T:System.Xml.XmlNamespaceManager" /> オブジェクトを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して Namespace 解像度にサポートされている、<xref:System.Xml.XmlNamespaceManager>プレフィックスと名前空間 (Uniform Resource Identifier) のマッピングを格納するクラス。 場合、<xref:System.Xml.XPath.XPathExpression>に名前空間の解決、プレフィックスと名前空間 URI のペアを追加する必要がありますが必要です、<xref:System.Xml.XmlNamespaceManager>オブジェクトおよび<xref:System.Xml.XPath.XPathExpression.SetContext%2A>を指定するメソッドを呼び出す必要があります、<xref:System.Xml.XmlNamespaceManager>名前空間の解決に使用するオブジェクト。  
+  
+ 重要な注意事項を使用する場合は、次のとおり、<xref:System.Xml.XPath.XPathExpression.SetContext%2A>メソッドです。  
+  
+-   場合、<xref:System.Xml.XPath.XPathExpression>プレフィックスを含まない名前空間 URI が空の名前空間であると見なされます。 XML には、既定の名前空間が含まれている必要がありますを使用する、<xref:System.Xml.XPath.XPathExpression.SetContext%2A>メソッドを提供し、<xref:System.Xml.XmlNamespaceManager>プレフィックスと既定の名前空間を処理する名前空間 URI を含むオブジェクト。  
+  
+-   指定することも、<xref:System.Xml.IXmlNamespaceResolver>名前空間を解決するためのオブジェクト、<xref:System.Xml.XPath.XPathExpression.Compile%2A>メソッドを作成するとき、<xref:System.Xml.XPath.XPathExpression>オブジェクト。  
+  
+-   <xref:System.Xml.XPath.XPathExpression.SetContext%2A>受け付ける<xref:System.Xml.Xsl.XsltContext>名前空間の競合回避モジュールとしてので、カスタムのコンテキストを実装し、使用できます関数および変数に基づく<xref:System.Xml.Xsl.IXsltContextFunction>と<xref:System.Xml.Xsl.IXsltContextVariable>です。 XPath 式は、それらで実行されます。 詳細については、次を参照してください。[ユーザー定義関数と変数](~/docs/standard/data/xml/user-defined-functions-and-variables.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、XPath の戻り値の型を使用して XPath 式を処理する方法を決定する方法と使用方法、<xref:System.Xml.XPath.XPathExpression.SetContext%2A>メソッドを提供する、<xref:System.Xml.XmlNamespaceManager>名前空間の解決のオブジェクト。  
+  
+ [!code-cpp[XPathExpression.ReturnType#1](~/samples/snippets/cpp/VS_Snippets_Data/XPathExpression.ReturnType/CPP/returntype.cpp#1)]
+ [!code-csharp[XPathExpression.ReturnType#1](~/samples/snippets/csharp/VS_Snippets_Data/XPathExpression.ReturnType/CS/returntype.cs#1)]
+ [!code-vb[XPathExpression.ReturnType#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XPathExpression.ReturnType/VB/returntype.vb#1)]  
+  
+ この例は、`contosoBooks.xml` ファイルを入力として使用します。  
+  
+```xml  
+  
+<?xml version="1.0" encoding="utf-8" ?>  
+<bookstore xmlns="http://www.contoso.com/books">  
+    <book genre="autobiography" publicationdate="1981-03-22" ISBN="1-861003-11-0">  
+        <title>The Autobiography of Benjamin Franklin</title>  
+        <author>  
+            <first-name>Benjamin</first-name>  
+            <last-name>Franklin</last-name>  
+        </author>  
+        <price>8.99</price>  
+    </book>  
+    <book genre="novel" publicationdate="1967-11-17" ISBN="0-201-63361-2">  
+        <title>The Confidence Man</title>  
+        <author>  
+            <first-name>Herman</first-name>  
+            <last-name>Melville</last-name>  
+        </author>  
+        <price>11.99</price>  
+    </book>  
+    <book genre="philosophy" publicationdate="1991-02-15" ISBN="1-861001-57-6">  
+        <title>The Gorgias</title>  
+        <author>  
+            <name>Plato</name>  
+        </author>  
+        <price>9.99</price>  
+    </book>  
+</bookstore>  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.XPath.XPathException"><see cref="T:System.Xml.XmlNamespaceManager" /> オブジェクトのパラメーターは <see cref="T:System.Xml.XmlNamespaceManager" /> クラスから派生していません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

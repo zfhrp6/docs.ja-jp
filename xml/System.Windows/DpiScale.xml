@@ -1,0 +1,157 @@
+<Type Name="DpiScale" FullName="System.Windows.DpiScale">
+  <TypeSignature Language="C#" Value="public struct DpiScale" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit DpiScale extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.DpiScale" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Windows.Media.Visual" /> または <see cref="T:System.Windows.UIElement" /> の表示元の DPI 情報を格納します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DpiScale (double dpiScaleX, double dpiScaleY);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 dpiScaleX, float64 dpiScaleY) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DpiScale.#ctor(System.Double,System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="dpiScaleX" Type="System.Double" />
+        <Parameter Name="dpiScaleY" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="dpiScaleX">X 軸の DPI スケールします。</param>
+        <param name="dpiScaleY">Y 軸の DPI スケール。</param>
+        <summary><see cref="T:System.Windows.DpiScale" /> 構造体の新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DpiScaleX">
+      <MemberSignature Language="C#" Value="public double DpiScaleX { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 DpiScaleX" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.DpiScale.DpiScaleX" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>X 軸の DPI スケールを取得します。</summary>
+        <value>X 軸の DPI スケール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ たとえば、DPI が 120 である場合は、DpiScaleX なります 1.25 (120/96 インチ)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DpiScaleY">
+      <MemberSignature Language="C#" Value="public double DpiScaleY { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 DpiScaleY" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.DpiScale.DpiScaleY" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Y 軸の DPI スケールを取得します。</summary>
+        <value>Y 軸の DPI スケール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ DpiScaleY は常に、DpiScaleX とけれども、個別のプロパティで値を保存するが、  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PixelsPerDip">
+      <MemberSignature Language="C#" Value="public double PixelsPerDip { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 PixelsPerDip" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.DpiScale.PixelsPerDip" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキストを表示する PixelsPerDip を取得または設定します。</summary>
+        <value>現在の <see cref="P:System.Windows.DpiScale.PixelsPerDip" /> 値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PixelsPerInchX">
+      <MemberSignature Language="C#" Value="public double PixelsPerInchX { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 PixelsPerInchX" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.DpiScale.PixelsPerInchX" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>X 軸に沿った DPI を取得します。</summary>
+        <value>X 軸に沿った DPI。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DpiScale.PixelsPerInchX%2A>および<xref:System.Windows.DpiScale.PixelsPerInchY%2A>インチ内で、画面に描画されるピクセルの数を参照します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PixelsPerInchY">
+      <MemberSignature Language="C#" Value="public double PixelsPerInchY { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 PixelsPerInchY" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.DpiScale.PixelsPerInchY" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Y 軸に沿った DPI を取得します。</summary>
+        <value>Y 軸に沿った DPI。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DpiScale.PixelsPerInchX%2A>および<xref:System.Windows.DpiScale.PixelsPerInchY%2A>インチ内で、画面に描画されるピクセルの数を参照します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

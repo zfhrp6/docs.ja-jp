@@ -1,0 +1,359 @@
+<Type Name="KeysConverter" FullName="System.Windows.Forms.KeysConverter">
+  <TypeSignature Language="C#" Value="public class KeysConverter : System.ComponentModel.TypeConverter, System.Collections.IComparer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit KeysConverter extends System.ComponentModel.TypeConverter implements class System.Collections.IComparer" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.KeysConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.TypeConverter</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IComparer</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>提供、<see cref="T:System.ComponentModel.TypeConverter" />に変換する<see cref="T:System.Windows.Forms.Keys" />オブジェクトとその他の表現の間です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ほとんどの場合、<xref:System.Windows.Forms.KeysConverter>型コンバーターを使用して変換<xref:System.Windows.Forms.Keys>インスタンスとそれに対応するローカライズから<xref:System.String>表現します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.KeysConverter>に変換するクラス、<xref:System.Windows.Forms.Keys.KeyCode>を<xref:System.String>です。 この例では、ある、<xref:System.Windows.Forms.TextBox>という名前`TextBox1`上、<xref:System.Windows.Forms.Form>という`Form1`です。  
+  
+ [!code-csharp[SystemWindowsFormsKeys#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemWindowsFormsKeys/CS/Form1.cs#1)]
+ [!code-vb[SystemWindowsFormsKeys#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemWindowsFormsKeys/VB/Form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public KeysConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.KeysConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Windows.Forms.KeysConverter" /> クラスのインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、既定のコンス トラクターをコンパイラが指定した、<xref:System.Windows.Forms.KeysConverter>クラスです。  
+  
+ 通常を直接インスタンスを作成しないの<xref:System.Windows.Forms.KeysConverter>です。 代わりを呼び出して、<xref:System.ComponentModel.TypeDescriptor.GetConverter%2A>メソッドの<xref:System.ComponentModel.TypeDescriptor>クラスです。 詳細については、例を参照してください、<xref:System.ComponentModel.TypeConverter>基本クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertFrom">
+      <MemberSignature Language="C#" Value="public override bool CanConvertFrom (System.ComponentModel.ITypeDescriptorContext context, Type sourceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanConvertFrom(class System.ComponentModel.ITypeDescriptorContext context, class System.Type sourceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.KeysConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="sourceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />からこのコンバーターが呼び出されている環境に関する追加情報を抽出するために使用する書式指定コンテキストを提供します。 このパラメーターまたはこのパラメーターのプロパティを指定できます<see langword="null" />です。</param>
+        <param name="sourceType"><see cref="T:System.Type" />から変換します。</param>
+        <summary>このコンバーターが、指定したソースの種類のオブジェクトを指定したコンテキストを使用するコンバーターのネイティブ型に変換できるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合は、変換を実行できます。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.KeysConverter.CanConvertFrom%2A>メソッドが返すを特化した`true`場合、`sourceType`パラメーターの型は<xref:System.String>または<xref:System.Enum>配列です。 それ以外の場合、このメソッドの基本実装を評価を延期します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>独自の変換要件を指定するには、このメソッドをオーバーライドします。  
+  
+ このコンバーターが呼び出されている環境に関する追加情報を抽出するコンテキストを使用できます。 可能性があります<see langword="null" />ので、常に確認する必要があります。 また、コンテキスト オブジェクトのプロパティを返すことがあります<see langword="null" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertTo">
+      <MemberSignature Language="C#" Value="public override bool CanConvertTo (System.ComponentModel.ITypeDescriptorContext context, Type destinationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanConvertTo(class System.ComponentModel.ITypeDescriptorContext context, class System.Type destinationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.KeysConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="destinationType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />からこのコンバーターが呼び出されている環境に関する追加情報を抽出するために使用する書式指定コンテキストを提供します。 このパラメーターまたはこのパラメーターのプロパティを指定できます<see langword="null" />です。</param>
+        <param name="destinationType"><see cref="T:System.Type" />に変換します。</param>
+        <summary>このコンバーターが、指定したソースの種類のオブジェクトを指定したコンテキストを使用するコンバーターのネイティブ型に変換できるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合は、変換を実行できます。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.KeysConverter.CanConvertTo%2A>メソッドが返すを特化した`true`場合、`destinationType`パラメーターの型は<xref:System.Enum>配列です。 それ以外の場合、このメソッドの基本実装を評価を延期します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>独自の変換要件を指定するには、このメソッドをオーバーライドします。  
+  
+ このコンバーターが呼び出されている環境に関する追加情報を抽出するコンテキストを使用できます。 可能性があります<see langword="null" />ので、常に確認する必要があります。 また、コンテキスト オブジェクトのプロパティを返すことがあります<see langword="null" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Compare">
+      <MemberSignature Language="C#" Value="public int Compare (object a, object b);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 Compare(object a, object b) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.KeysConverter.Compare(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="a" Type="System.Object" />
+        <Parameter Name="b" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="a"><see cref="T:System.Object" />を比較する最初のキーを表すです。</param>
+        <param name="b"><see cref="T:System.Object" />を比較する 2 番目のキーを表すです。</param>
+        <summary>2 つのキー値の等価性を比較します。</summary>
+        <returns>2 つのパラメーター間のリレーションシップを示す整数。  
+  
+ <list type="table"><listheader><term>値の型  
+  
+ </term><description>条件  
+  
+ </description></listheader><item><term>負の整数。  
+  
+ </term><description><paramref name="a" /> は <paramref name="b" /> より小さい値です。  
+  
+ </description></item><item><term>0  
+  
+ </term><description><paramref name="a" /> と <paramref name="b" /> は等しい。  
+  
+ </description></item><item><term>正の整数。  
+  
+ </term><description><paramref name="a" /> が <paramref name="b" /> より大きくなっています。  
+  
+ </description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して<xref:System.String.Compare%2A?displayProperty=nameWithType>を 2 つのオブジェクトを比較します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertFrom">
+      <MemberSignature Language="C#" Value="public override object ConvertFrom (System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertFrom(class System.ComponentModel.ITypeDescriptorContext context, class System.Globalization.CultureInfo culture, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.KeysConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see langword="ITypeDescriptorContext" />からこのコンバーターが呼び出されている環境に関する追加情報を抽出するために使用する書式指定コンテキストを提供します。 このパラメーターまたはこのパラメーターのプロパティを null にすることができます。</param>
+        <param name="culture">A<see langword="CultureInfo" />ロケール情報を提供するオブジェクト。</param>
+        <param name="value">変換対象のオブジェクト。</param>
+        <summary>指定したオブジェクトをコンバーターのネイティブ型に変換します。</summary>
+        <returns>変換されたを表すオブジェクト<paramref name="value" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.KeysConverter.ConvertFrom%2A>メソッドがオブジェクトの種類の変換に特化した<xref:System.String>または<xref:System.Enum>配列。 この場合、型のオブジェクトは返します<xref:System.Windows.Forms.Keys>です。 それ以外の場合、このメソッドの基本実装を評価を延期します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.FormatException">無効なキーの組み合わせが指定されました。  
+  
+ または  
+  
+ 無効なキー名が指定されました。</exception>
+        <block subset="none" type="overrides">
+          <para><paramref name="context" /> パラメーターを使用すると、このコンバーターが呼び出されている環境についての追加情報を抽出できます。 可能性があります<see langword="null" />ので、常に確認する必要があります。 また、コンテキスト オブジェクトのプロパティを返すことがあります<see langword="null" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertTo">
+      <MemberSignature Language="C#" Value="public override object ConvertTo (System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, Type destinationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertTo(class System.ComponentModel.ITypeDescriptorContext context, class System.Globalization.CultureInfo culture, object value, class System.Type destinationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.KeysConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="destinationType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />からこのコンバーターが呼び出されている環境に関する追加情報を抽出するために使用する書式指定コンテキストを提供します。 このパラメーターまたはこのパラメーターのプロパティを指定できます<see langword="null" />です。</param>
+        <param name="culture">A<see cref="T:System.Globalization.CultureInfo" />ロケール情報を提供します。</param>
+        <param name="value">変換対象の <see cref="T:System.Object" />。</param>
+        <param name="destinationType"><see cref="T:System.Type" />をオブジェクトに変換します。</param>
+        <summary>指定したオブジェクトを指定した型に変換します。</summary>
+        <returns><see cref="T:System.Object" />を表す、変換された<paramref name="value" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.KeysConverter.ConvertTo%2A>メソッドがオブジェクトの種類の変換に特化した<xref:System.Windows.Forms.Keys>または<xref:System.Int32>です。 この場合、型のオブジェクトは返します<xref:System.String>です。 それ以外の場合、このメソッドの基本実装を評価を延期します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="destinationType" /> は <see langword="null" /> です。</exception>
+        <block subset="none" type="overrides">
+          <para>独自の変換要件を指定するには、このメソッドをオーバーライドします。  
+  
+ このコンバーターが呼び出されている環境に関する追加情報を抽出するコンテキスト パラメーターを使用できます。 可能性があります<see langword="null" />ので、常に、戻り値を確認する必要があります。 また、コンテキスト オブジェクトのプロパティを返すことがあります<see langword="null" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValues">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.TypeConverter.StandardValuesCollection GetStandardValues (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ComponentModel.TypeConverter/StandardValuesCollection GetStandardValues(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.KeysConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.TypeConverter+StandardValuesCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />からこのコンバーターが呼び出されている環境に関する追加情報を抽出するために使用する書式指定コンテキストを提供します。 このパラメーターまたはこのパラメーターのプロパティを指定できます<see langword="null" />です。</param>
+        <summary>フォーマット コンテキストが提供されている場合にこの型コンバーターが対象とするデータ型の標準値のコレクションを返します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection" />データ型が標準値セットをサポートしていない場合は空にすることができますが、有効な値の標準セットを保持します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されるコレクションには、変換可能なキーの値が含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValuesExclusive">
+      <MemberSignature Language="C#" Value="public override bool GetStandardValuesExclusive (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool GetStandardValuesExclusive(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.KeysConverter.GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">フォーマッタ コンテキスト。 このオブジェクトは、このコンバーターが呼び出されている環境に関する追加情報を抽出に使用できます。 可能性があります<see langword="null" />ので、常に確認する必要があります。 また、コンテキスト オブジェクトのプロパティを返すことがあります<see langword="null" />です。</param>
+        <summary>標準値のリストがから返されたかどうかを判断<see langword="GetStandardValues" />が、排他的なリストを指定して<see cref="T:System.ComponentModel.ITypeDescriptorContext" />です。</summary>
+        <returns>
+          <see langword="true" />コレクションが返された場合<see cref="Overload:System.Windows.Forms.KeysConverter.GetStandardValues" />使用可能な値の排他的なリストです。 以外の場合、<see langword="false" />他の値も有効である場合。 このメソッドの既定の実装は、常に返します<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `context`パラメーターは、このメソッドの標準の実装では使用されません。  
+  
+ リストが排他的なかどうかは、有効であればなどの他の値がない、<xref:System.Enum>データ型。 リストが排他的なかどうかは、標準値のリストだけでなく他の有効な値がある<xref:System.Windows.Forms.KeysConverter.GetStandardValues%2A>を提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValuesSupported">
+      <MemberSignature Language="C#" Value="public override bool GetStandardValuesSupported (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool GetStandardValuesSupported(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.KeysConverter.GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />からこのコンバーターが呼び出されている環境に関する追加情報を抽出するために使用する書式指定コンテキストを提供します。 このパラメーターまたはこのパラメーターのプロパティを指定できます<see langword="null" />です。</param>
+        <summary>このオブジェクトが一覧から選択できる値の標準セットをサポートしているかどうかを示す値を取得します。</summary>
+        <returns>常に <see langword="true" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `context`パラメーターは、このメソッドの標準の実装では使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

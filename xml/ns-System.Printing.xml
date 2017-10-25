@@ -1,0 +1,32 @@
+<Namespace Name="System.Printing">
+  <Docs>
+    <summary>プリント サーバー、印刷キュー、および印刷ジョブの管理を自動化するためのクラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この名前空間には、次のコア クラスが含まれています。  
+  
+-   <xref:System.Printing.PrintSystemObject>クラスは、他のコアの印刷クラスの基本クラスです。  
+  
+-   <xref:System.Printing.PrintServer>を実際のプリント サーバー、通常はコンピューターを表すクラス。  
+  
+-   <xref:System.Printing.PrintQueue>クラスで、実際の印刷キューとそのプリンターを表します。  
+  
+-   <xref:System.Printing.PrintSystemJobInfo>を特定の印刷ジョブを表すクラス。  
+  
+-   <xref:System.Printing.PrintTicket>クラスは、プリンターに印刷ジョブを処理する方法を指示します。  
+  
+ 派生したクラス、<xref:System.Printing.PrintSystemObject>各クラスが、<xref:System.Printing.PrintSystemObject.Commit%2A>と<xref:System.Printing.PrintSystemObject.Refresh%2A>メソッドです。 これらのメソッドを使用して、クラスのインスタンスが表すことができるハードウェアまたはソフトウェアのコンポーネントと同期していることを確認する必要があります。  
+  
+ <xref:System.Printing>名前空間には、出力を丁合い、プリンターが生成できるかどうかなど、プリンターの機能を記述して、印刷ジョブに対して使用する用紙のサイズなど、プリンターへの指示を指定する多くの列挙型も含まれています。  
+  
+ この名前空間で提供される高度な印刷サービスの一部である[!INCLUDE[TLA#tla_wpf](~/includes/tlasharptla-wpf-md.md)]です。 使用してマネージ コード開発者[!INCLUDE[TLA#tla_winforms](~/includes/tlasharptla-winforms-md.md)]を使用する必要があります、[!INCLUDE[TLA#tla_api](~/includes/tlasharptla-api-md.md)]で、<xref:System.Drawing.Printing>名前空間。  
+  
+> [!CAUTION]
+>  クラス内で、 <xref:System.Printing> Windows サービスや ASP.NET アプリケーションまたはサービス内で使用する名前空間はサポートされていません。 パフォーマンスと実行時の例外をサービス低下のいずれかのようなアプリケーションからこれらのクラスを使用しようと、予期しない問題が生じる可能性があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Namespace>

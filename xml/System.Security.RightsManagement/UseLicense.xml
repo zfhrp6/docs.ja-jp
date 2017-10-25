@@ -1,0 +1,254 @@
+<Type Name="UseLicense" FullName="System.Security.RightsManagement.UseLicense">
+  <TypeSignature Language="C#" Value="public class UseLicense" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UseLicense extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.RightsManagement.UseLicense" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Security.SecurityCritical(System.Security.SecurityCriticalScope.Everything)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>保護された権限管理対象コンテンツへのアクセスを有効にするライセンスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ その他の同様<xref:System.Security.RightsManagement>型、<xref:System.Security.RightsManagement.UseLicense>は完全信頼アプリケーションで使用できるのみです。  
+  
+   
+  
+## Examples  
+ 次の例は、このクラスを使用して初期化する方法を示しています、<xref:System.Security.RightsManagement.PublishLicense>です。  
+  
+ [!code-csharp[RightsManagedPackagePublish#RmPkgPubEncrypt](~/samples/snippets/csharp/VS_Snippets_Wpf/RightsManagedPackagePublish/CSharp/Window1.xaml.cs#rmpkgpubencrypt)]
+ [!code-vb[RightsManagedPackagePublish#RmPkgPubEncrypt](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RightsManagedPackagePublish/visualbasic/window1.xaml.vb#rmpkgpubencrypt)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UseLicense (string useLicense);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string useLicense) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.RightsManagement.UseLicense.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="useLicense" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="useLicense">使用ライセンスをシリアル化[!INCLUDE[TLA#tla_xrml](~/includes/tlasharptla-xrml-md.md)]フォーム。</param>
+        <summary><see cref="T:System.Security.RightsManagement.UseLicense" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="useLicense" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.RightsManagement.RightsManagementException">
+          <paramref name="useLicense" /> が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationData">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,string&gt; ApplicationData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, string&gt; ApplicationData" />
+      <MemberSignature Language="DocId" Value="P:System.Security.RightsManagement.UseLicense.ApplicationData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>処理を行うアプリケーションを発行のアプリケーションから渡されたキーと値のペアを格納しているアプリケーション データ ディクショナリを取得します。</summary>
+        <value>キー/値ペアを格納しているアプリケーション データ ディクショナリは、処理を行うアプリケーションを発行のアプリケーションから渡されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Rights Management Services (RMS) サーバーで処理されるキー/値ペアを 1 つのデータは、文字列のペア"Allow_Server_Editing"/"True"です。  発行が"Allow_Server_Editing"のライセンスを取得/設定"True"は、サービス、または信頼されたサービスは、コンテンツ キーを再利用できます。  
+  
+ キー/値ペア"NOLICCACHE"/「1」が使用ライセンスを使用するアプリケーションのポリシーを埋め込みを制御します。  ときに"NOLICCACHE"/「1」が設定されている、アプリケーションに埋め込まない権限管理ドキュメント内で使用するライセンスが必要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bind">
+      <MemberSignature Language="C#" Value="public System.Security.RightsManagement.CryptoProvider Bind (System.Security.RightsManagement.SecureEnvironment secureEnvironment);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.RightsManagement.CryptoProvider Bind(class System.Security.RightsManagement.SecureEnvironment secureEnvironment) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.RightsManagement.UseLicense.Bind(System.Security.RightsManagement.SecureEnvironment)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.RightsManagement.CryptoProvider</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="secureEnvironment" Type="System.Security.RightsManagement.SecureEnvironment" />
+      </Parameters>
+      <Docs>
+        <param name="secureEnvironment">ライセンスをバインドする環境。</param>
+        <summary>ライセンスをバインドします、指定された<see cref="T:System.Security.RightsManagement.SecureEnvironment" />です。</summary>
+        <returns>A<see cref="T:System.Security.RightsManagement.CryptoProvider" />インスタンスのライセンスのバインディングが成功した場合は、それ以外の場合、<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ライセンスは、セキュリティで保護された環境にはバインドした後、アプリケーションを確認し、ライセンスによって付与された権限します。  
+  
+ 返された<xref:System.Security.RightsManagement.CryptoProvider>インスタンスは、復号化と保護対象の権限管理コンテンツへのアクセスを提供します。  
+  
+   
+  
+## Examples  
+ 次の例は、このメソッドを使用して初期化する方法を示しています、<xref:System.Security.RightsManagement.CryptoProvider>です。  
+  
+ [!code-csharp[RightsManagedPackagePublish#RmPkgPubEncrypt](~/samples/snippets/csharp/VS_Snippets_Wpf/RightsManagedPackagePublish/CSharp/Window1.xaml.cs#rmpkgpubencrypt)]
+ [!code-vb[RightsManagedPackagePublish#RmPkgPubEncrypt](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RightsManagedPackagePublish/visualbasic/window1.xaml.vb#rmpkgpubencrypt)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="secureEnvironment" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentId">
+      <MemberSignature Language="C#" Value="public Guid ContentId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid ContentId" />
+      <MemberSignature Language="DocId" Value="P:System.Security.RightsManagement.UseLicense.ContentId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パブリッシャーで作成したコンテンツ識別子を取得します。</summary>
+        <value>発行元によって作成されたコンテンツの識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.RightsManagement.UseLicense.ContentId%2A>パブリッシャーによって作成され、コンテンツの照合に使用できる、<xref:System.Security.RightsManagement.UseLicense>と<xref:System.Security.RightsManagement.PublishLicense>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object x);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object x) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.RightsManagement.UseLicense.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="x">比較するライセンス。</param>
+        <summary>このライセンスが指定した別のと同じかどうかを使用します。</summary>
+        <returns>
+          <see langword="true" />両方のライセンスが等価である場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.RightsManagement.UseLicense.Equals%2A>シリアル化を比較する等価性テスト[!INCLUDE[TLA#tla_xrml](~/includes/tlasharptla-xrml-md.md)]に指定された文字列、<xref:System.Security.RightsManagement.UseLicense.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.RightsManagement.UseLicense.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このライセンスに関連付けられたハッシュ コードを返します。</summary>
+        <returns>このライセンスのハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されるハッシュ コードを基に、シリアル化された[!INCLUDE[TLA#tla_xrml](~/includes/tlasharptla-xrml-md.md)]に渡された文字列、<xref:System.Security.RightsManagement.UseLicense.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Owner">
+      <MemberSignature Language="C#" Value="public System.Security.RightsManagement.ContentUser Owner { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.RightsManagement.ContentUser Owner" />
+      <MemberSignature Language="DocId" Value="P:System.Security.RightsManagement.UseLicense.Owner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.RightsManagement.ContentUser</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ライセンスの所有者を取得します。</summary>
+        <value>ライセンスの所有者です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ライセンス所有者を取得するには、シリアル化されたから[!INCLUDE[TLA#tla_xrml](~/includes/tlasharptla-xrml-md.md)]に渡された文字列、<xref:System.Security.RightsManagement.UseLicense.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.RightsManagement.UseLicense.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>シリアル[!INCLUDE[TLA2#tla_xrml](~/includes/tla2sharptla-xrml-md.md)]本ライセンスの作成に使用する文字列。</summary>
+        <returns>シリアル化された[!INCLUDE[TLA#tla_xrml](~/includes/tlasharptla-xrml-md.md)]文字列が最初に渡された、<see cref="M:System.Security.RightsManagement.UseLicense.#ctor(System.String)" />コンス トラクターです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

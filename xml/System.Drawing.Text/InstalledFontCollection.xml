@@ -1,0 +1,53 @@
+<Type Name="InstalledFontCollection" FullName="System.Drawing.Text.InstalledFontCollection">
+  <TypeSignature Language="C#" Value="public sealed class InstalledFontCollection : System.Drawing.Text.FontCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit InstalledFontCollection extends System.Drawing.Text.FontCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Text.InstalledFontCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Drawing.Text.FontCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>システムにインストールされているフォントを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Text.InstalledFontCollection>を使用してアプリケーションを実行しているコンピューターにインストールされているフォント ファミリの一覧を取得することができます、<xref:System.Drawing.Text.FontCollection.Families%2A>プロパティです。 フォントとテキスト、コードの例を含むの詳細については、次を参照してください。[を使用するフォントとテキスト](~/docs/framework/winforms/advanced/using-fonts-and-text.md)です。  
+  
+ 使用しないで、<xref:System.Drawing.Text.InstalledFontCollection>クラスを Windows にフォントをインストールします。 代わりに使用して、 [!INCLUDE[ndptecgdi](~/includes/ndptecgdi-md.md)] `AddFontResource`関数。 <xref:System.Drawing.Text.InstalledFontCollection>オブジェクトが、オブジェクトが作成される前に、Windows にインストールされているフォントのみを表示します。  
+  
+   
+  
+## Examples  
+ 次の例は、標準をサポートするフォントの一覧を取得する方法を示しています。<xref:System.Drawing.FontStyle>です。  
+  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。  
+  
+ [!code-csharp[System.Drawing.Misc3#InstalledFonts](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Misc3/CS/Form1.cs#installedfonts)]
+ [!code-vb[System.Drawing.Misc3#InstalledFonts](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Misc3/VB/Form1.vb#installedfonts)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InstalledFontCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Text.InstalledFontCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Drawing.Text.InstalledFontCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

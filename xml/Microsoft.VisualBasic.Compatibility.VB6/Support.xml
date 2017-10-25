@@ -1,0 +1,2833 @@
+<Type Name="Support" FullName="Microsoft.VisualBasic.Compatibility.VB6.Support">
+  <TypeSignature Language="C#" Value="public sealed class Support" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Support extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Compatibility.VB6.Support" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>Microsoft.VisualBasic.CompilerServices.StandardModule</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Visual Basic 6.0 の旧バージョンと互換性のためのさまざまなユーティリティ関数が含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスで関数を使用する Visual Basic 6.0 プロジェクトのアップグレード中に[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 一部の関数は置換ではサポートされなくなった Visual Basic 6.0 関数[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]; オブジェクト モデルの違いを他のユーザーを補正します。  
+  
+ このクラスで関数を使用する、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]プロジェクトへの参照を追加、`Microsoft.VisualBasic.Compatibility.VB6`名前空間。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CopyArray">
+      <MemberSignature Language="C#" Value="public static Array CopyArray (Array SourceArray);" />
+      <MemberSignature Language="ILAsm" Value=".method public static class System.Array CopyArray(class System.Array SourceArray) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.CopyArray(System.Array)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Array</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="SourceArray" Type="System.Array" />
+      </Parameters>
+      <Docs>
+        <param name="SourceArray"><see cref="T:System.Array" />。</param>
+        <summary>割り当ての Visual Basic 6.0 の機能と重複する<see langword="Array" />を<see langword="Variant" />です。</summary>
+        <returns>コピー先の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0`Variant`でデータ型はサポートされなく[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 `CopyArray`アップグレード ツールでコピーする関数が使用される、`Array`またはからに、`Variant`配列。  
+  
+ 配列にコピーする[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]を使用して、 <xref:System.Array.Clone%2A>、<xref:System.Array.Copy%2A>または<xref:System.Array.CopyTo%2A>のメソッド、<xref:System.Array>クラスです。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CursorToIPicture">
+      <MemberSignature Language="C#" Value="public static object CursorToIPicture (System.Windows.Forms.Cursor curs);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object CursorToIPicture(class System.Windows.Forms.Cursor curs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.CursorToIPicture(System.Windows.Forms.Cursor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="curs" Type="System.Windows.Forms.Cursor" />
+      </Parameters>
+      <Docs>
+        <param name="curs">変換対象の <see cref="T:System.Windows.Forms.Cursor" />。</param>
+        <summary>OLE を返します<see langword="IPicture" />オブジェクトを指定された対応する<see cref="T:System.Windows.Forms.Cursor" />です。</summary>
+        <returns><see cref="T:System.Object" /> OLE を表す<see langword="IPicture" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 で、`MouseIcon`を読み込むカスタム フォームまたはコントロールのプロパティを使用でした`MousePointer`(カーソル)。 場合によっては、画像を`MouseIcon`として格納された、 `stdOle.IPicture`; この関数は変換には、アップグレード ツールで使用、<xref:System.Windows.Forms.Cursor>を`stdOle.IPicture`です。  
+  
+ 変換する、<xref:System.Windows.Forms.Cursor>で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]を使用して、<xref:System.Windows.Forms.AxHost.GetIPictureFromCursor%2A>のメソッド、<xref:System.Windows.Forms.AxHost>クラスです。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Eqv">
+      <MemberSignature Language="C#" Value="public static bool Eqv (bool a, bool b);" />
+      <MemberSignature Language="ILAsm" Value=".method public static bool Eqv(bool a, bool b) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.Eqv(System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="a" Type="System.Boolean" />
+        <Parameter Name="b" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="a">比較する <see cref="T:System.Boolean" />。</param>
+        <param name="b">比較する <see cref="T:System.Boolean" />。</param>
+        <summary>2 つの論理等価演算を実行<see cref="T:System.Boolean" />式。</summary>
+        <returns>
+          <see langword="true" />2 つの式が等しい場合はそれ以外の場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いずれかの式が場合`Null`、結果も`Null`します。 ときにどちらの式も`Null`結果は次の表に従って決定されます。  
+  
+|Expression1 がある場合|Expression2 で、|結果は|  
+|-----------------------|------------------------|-------------------|  
+|`true`|`true`|`true`|  
+|`true`|`false`|`false`|  
+|`false`|`true`|`false`|  
+|`false`|`false`|`true`|  
+  
+ [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]、`Eqv`演算子は、Visual Basic 言語の一部ではなくなりました。 の代わりに等号 (=) 比較演算子を使用して`Eqv`論理評価します。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Eqv">
+      <MemberSignature Language="C#" Value="public static byte Eqv (byte a, byte b);" />
+      <MemberSignature Language="ILAsm" Value=".method public static unsigned int8 Eqv(unsigned int8 a, unsigned int8 b) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.Eqv(System.Byte,System.Byte)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="a" Type="System.Byte" />
+        <Parameter Name="b" Type="System.Byte" />
+      </Parameters>
+      <Docs>
+        <param name="a">比較する <see cref="T:System.Byte" />。</param>
+        <param name="b">比較する <see cref="T:System.Byte" />。</param>
+        <summary>2 つの論理等価演算を実行<see cref="T:System.Byte" />式。</summary>
+        <returns>A<see cref="T:System.Byte" />ビットごとの比較の結果を格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Eqv`演算子が 2 つの数値式で同じ位置にビットのビットごとの比較を実行し、対応するの次の表に従ってビットを設定します。  
+  
+|Expression1 でビットの場合|Expression2 内のビットが|結果は|  
+|------------------------------|-------------------------------|-------------------|  
+|0|0|1|  
+|0|1|0|  
+|1|0|0|  
+|1|1|1|  
+  
+ [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]、`Eqv`演算子が; ビットごとの評価を使用して、Visual Basic 言語の一部では不要になった、`Not`と`XOr`演算子。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Eqv">
+      <MemberSignature Language="C#" Value="public static short Eqv (short a, short b);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int16 Eqv(int16 a, int16 b) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.Eqv(System.Int16,System.Int16)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int16</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="a" Type="System.Int16" />
+        <Parameter Name="b" Type="System.Int16" />
+      </Parameters>
+      <Docs>
+        <param name="a">比較する <see cref="T:System.Int16" />。</param>
+        <param name="b">比較する <see cref="T:System.Int16" />。</param>
+        <summary>2 つの論理等価演算を実行<see cref="T:System.Int16" />式。</summary>
+        <returns>A<see cref="T:System.Int16" />比較の結果を格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]、`Eqv`演算子が; ビットごとの評価を使用して、Visual Basic 言語の一部では不要になった、`Not`と`XOr`演算子。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Eqv">
+      <MemberSignature Language="C#" Value="public static int Eqv (int a, int b);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 Eqv(int32 a, int32 b) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.Eqv(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="a" Type="System.Int32" />
+        <Parameter Name="b" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="a">比較する <see cref="T:System.Int32" />。</param>
+        <param name="b">比較する <see cref="T:System.Int32" />。</param>
+        <summary>2 つの論理等価演算を実行<see cref="T:System.Int32" />式。</summary>
+        <returns>A<see cref="T:System.Int32" />比較の結果を格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]、`Eqv`演算子がの一部では不要になった、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]言語; ビットごとの評価を使用して、`Not`と`XOr`演算子。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Eqv">
+      <MemberSignature Language="C#" Value="public static long Eqv (long a, long b);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int64 Eqv(int64 a, int64 b) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.Eqv(System.Int64,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="a" Type="System.Int64" />
+        <Parameter Name="b" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="a">比較する <see cref="T:System.Int64" />。</param>
+        <param name="b">比較する <see cref="T:System.Int64" />。</param>
+        <summary>2 つの論理等価演算を実行<see cref="T:System.Int64" />式。</summary>
+        <returns>A<see cref="T:System.Int64" />比較の結果を格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]、`Eqv`演算子がの一部では不要になった、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]言語; ビットごとの評価を使用して、`Not`と`XOr`演算子。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Eqv">
+      <MemberSignature Language="C#" Value="public static object Eqv (object a, object b);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object Eqv(object a, object b) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.Eqv(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="a" Type="System.Object" />
+        <Parameter Name="b" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="a">比較する <see cref="T:System.Object" />。</param>
+        <param name="b">比較する <see cref="T:System.Object" />。</param>
+        <summary>2 つの論理等価演算を実行<see cref="T:System.Object" />式。</summary>
+        <returns>A<see cref="T:System.Object" />比較の結果を格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]、`Eqv`演算子がの一部では不要になった、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]言語; ビットごとの評価を使用して、`Not`と`XOr`演算子。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontChangeBold">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Font FontChangeBold (System.Drawing.Font CurrentFont, bool Bold);" />
+      <MemberSignature Language="ILAsm" Value=".method public static class System.Drawing.Font FontChangeBold(class System.Drawing.Font CurrentFont, bool Bold) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.FontChangeBold(System.Drawing.Font,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Font</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="CurrentFont" Type="System.Drawing.Font" />
+        <Parameter Name="Bold" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="CurrentFont"><see cref="T:System.Drawing.Font" />。</param>
+        <param name="Bold">
+          <see langword="true" />設定する、<see cref="F:System.Drawing.FontStyle.Bold" />それ以外のビットをスタイル<see langword="false" />です。</param>
+        <summary>変更、<see cref="F:System.Drawing.FontStyle.Bold" />フォントのスタイル ビットです。</summary>
+        <returns>A<see cref="T:System.Drawing.Font" />新しいスタイルが適用されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティを設定して適用された Visual Basic 6.0 では、フォント スタイル[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]を使用してフォントのスタイルが適用される、<xref:System.Drawing.FontStyle>列挙します。 この関数は、Visual Basic 6.0 プロパティ新しい列挙型に変換するため、アップグレード ツールによって使用されます。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontChangeGdiCharSet">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Font FontChangeGdiCharSet (System.Drawing.Font CurrentFont, byte GdiCharSet);" />
+      <MemberSignature Language="ILAsm" Value=".method public static class System.Drawing.Font FontChangeGdiCharSet(class System.Drawing.Font CurrentFont, unsigned int8 GdiCharSet) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.FontChangeGdiCharSet(System.Drawing.Font,System.Byte)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Font</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="CurrentFont" Type="System.Drawing.Font" />
+        <Parameter Name="GdiCharSet" Type="System.Byte" />
+      </Parameters>
+      <Docs>
+        <param name="CurrentFont"><see cref="T:System.Drawing.Font" />。</param>
+        <param name="GdiCharSet">使用する GDI 文字を指定するバイト値を設定します。</param>
+        <summary>指定した GDI 文字セットのフォントを返します。</summary>
+        <returns>A<see cref="T:System.Drawing.Font" />の指定した GDI 文字セット。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 で、`stdFont`オブジェクトが、 `CharSet` GDI を指定するプロパティを文字のフォントのセット。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]のオプションとして、文字セットが指定されて、<xref:System.Drawing.Font>コンス トラクターです。 この関数は変換するアップグレード ツールで使用する`stdFont`を<xref:System.Drawing.Font>です。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontChangeItalic">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Font FontChangeItalic (System.Drawing.Font CurrentFont, bool Italic);" />
+      <MemberSignature Language="ILAsm" Value=".method public static class System.Drawing.Font FontChangeItalic(class System.Drawing.Font CurrentFont, bool Italic) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.FontChangeItalic(System.Drawing.Font,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Font</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="CurrentFont" Type="System.Drawing.Font" />
+        <Parameter Name="Italic" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="CurrentFont"><see cref="T:System.Drawing.Font" />。</param>
+        <param name="Italic">
+          <see langword="true" />設定する、<see cref="F:System.Drawing.FontStyle.Italic" />それ以外のビットをスタイル<see langword="false" />です。</param>
+        <summary>変更、<see cref="F:System.Drawing.FontStyle.Italic" />フォントのスタイル ビットです。</summary>
+        <returns>A<see cref="T:System.Drawing.Font" />新しいスタイルが適用されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティを設定して適用された Visual Basic 6.0 では、フォント スタイル[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]を使用してフォントのスタイルが適用される、<xref:System.Drawing.FontStyle>列挙します。 この関数は、Visual Basic 6.0 プロパティ新しい列挙型に変換するため、アップグレード ツールによって使用されます。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontChangeName">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Font FontChangeName (System.Drawing.Font CurrentFont, string Name);" />
+      <MemberSignature Language="ILAsm" Value=".method public static class System.Drawing.Font FontChangeName(class System.Drawing.Font CurrentFont, string Name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.FontChangeName(System.Drawing.Font,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Font</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="CurrentFont" Type="System.Drawing.Font" />
+        <Parameter Name="Name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="CurrentFont"><see cref="T:System.Drawing.Font" />。</param>
+        <param name="Name">A<see langword="String" />を表す Visual Basic 6.0<see langword="Font" />プロパティです。</param>
+        <summary>新しいを返します<see cref="T:System.Drawing.Font" />特定の Visual Basic 6.0 の<see langword="Font" />します。</summary>
+        <returns>A <see cref="T:System.Drawing.Font" /> Visual Basic 6.0 と一致する<see langword="Font" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 では、フォントの名前がで指定された、`Font`プロパティ  [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]、<xref:System.Drawing.Font.Name%2A>のプロパティ、<xref:System.Drawing.Font>オブジェクト。 この関数は、Visual Basic 6.0 を変換するアップグレード ツールで使用`Font`を<xref:System.Drawing.Font>です。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontChangeSize">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Font FontChangeSize (System.Drawing.Font CurrentFont, float Size);" />
+      <MemberSignature Language="ILAsm" Value=".method public static class System.Drawing.Font FontChangeSize(class System.Drawing.Font CurrentFont, float32 Size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.FontChangeSize(System.Drawing.Font,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Font</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="CurrentFont" Type="System.Drawing.Font" />
+        <Parameter Name="Size" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="CurrentFont"><see cref="T:System.Drawing.Font" />。</param>
+        <param name="Size">A<see langword="Single" />を表す Visual Basic 6.0<see langword="FontSize" />プロパティです。</param>
+        <summary>変更、<see cref="P:System.Drawing.Font.Size" />フォントのプロパティです。</summary>
+        <returns>A <see cref="T:System.Drawing.Font" /> Visual Basic 6.0 と一致する<see langword="FontSize" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 では、フォントのサイズがで指定された、`FontSize`プロパティ  [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]、<xref:System.Drawing.Font.Size%2A>のプロパティ、<xref:System.Drawing.Font>オブジェクト。 この関数は、Visual Basic 6.0 を変換するアップグレード ツールで使用`Font`を<xref:System.Drawing.Font>です。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontChangeStrikeout">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Font FontChangeStrikeout (System.Drawing.Font CurrentFont, bool Strikeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public static class System.Drawing.Font FontChangeStrikeout(class System.Drawing.Font CurrentFont, bool Strikeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.FontChangeStrikeout(System.Drawing.Font,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Font</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="CurrentFont" Type="System.Drawing.Font" />
+        <Parameter Name="Strikeout" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="CurrentFont"><see cref="T:System.Drawing.Font" />。</param>
+        <param name="Strikeout">
+          <see langword="true" />設定する、<see cref="F:System.Drawing.FontStyle.Strikeout" />それ以外のビットをスタイル<see langword="false" />です。</param>
+        <summary>変更、<see cref="F:System.Drawing.FontStyle.Strikeout" />フォントのスタイル ビットです。</summary>
+        <returns>A<see cref="T:System.Drawing.Font" />新しいスタイルが適用されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティを設定して適用された Visual Basic 6.0 では、フォント スタイル[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]を使用してフォントのスタイルが適用される、<xref:System.Drawing.FontStyle>列挙します。 この関数は、Visual Basic 6.0 プロパティ新しい列挙型に変換するため、アップグレード ツールによって使用されます。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontChangeUnderline">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Font FontChangeUnderline (System.Drawing.Font CurrentFont, bool Underline);" />
+      <MemberSignature Language="ILAsm" Value=".method public static class System.Drawing.Font FontChangeUnderline(class System.Drawing.Font CurrentFont, bool Underline) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.FontChangeUnderline(System.Drawing.Font,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Font</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="CurrentFont" Type="System.Drawing.Font" />
+        <Parameter Name="Underline" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="CurrentFont"><see cref="T:System.Drawing.Font" />。</param>
+        <param name="Underline">
+          <see langword="true" />設定する、<see cref="F:System.Drawing.FontStyle.Underline" />それ以外のビットをスタイル<see langword="false" />です。</param>
+        <summary>変更、<see cref="F:System.Drawing.FontStyle.Underline" />フォントのスタイル ビットです。</summary>
+        <returns>A<see cref="T:System.Drawing.Font" />新しいスタイルが適用されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティを設定して適用された Visual Basic 6.0 では、フォント スタイル[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]を使用してフォントのスタイルが適用される、<xref:System.Drawing.FontStyle>列挙します。 この関数は、Visual Basic 6.0 プロパティ新しい列挙型に変換するため、アップグレード ツールによって使用されます。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontToIFont">
+      <MemberSignature Language="C#" Value="public static object FontToIFont (System.Drawing.Font fnt);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object FontToIFont(class System.Drawing.Font fnt) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.FontToIFont(System.Drawing.Font)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fnt" Type="System.Drawing.Font" />
+      </Parameters>
+      <Docs>
+        <param name="fnt">変換対象の <see cref="T:System.Drawing.Font" />。</param>
+        <summary>変換、 <see cref="T:System.Drawing.Font" /> Visual Basic 6.0<see langword="stdFont" />オブジェクト。</summary>
+        <returns><see langword="stdFont" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0`stdFont`オブジェクトが COM に基づいていたおよび該当するショートカットを持たない[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 この関数は間で変換するアップグレード ツールで使用、<xref:System.Drawing.Font>と`stdFont`プロジェクトのアップグレード中にします。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Format">
+      <MemberSignature Language="C#" Value="public static string Format (object Expression, string Style = &quot;&quot;, Microsoft.VisualBasic.FirstDayOfWeek DayOfWeek = Microsoft.VisualBasic.FirstDayOfWeek.Sunday, Microsoft.VisualBasic.FirstWeekOfYear WeekOfYear = Microsoft.VisualBasic.FirstWeekOfYear.Jan1);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string Format(object Expression, string Style, valuetype Microsoft.VisualBasic.FirstDayOfWeek DayOfWeek, valuetype Microsoft.VisualBasic.FirstWeekOfYear WeekOfYear) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.Format(System.Object,System.String,Microsoft.VisualBasic.FirstDayOfWeek,Microsoft.VisualBasic.FirstWeekOfYear)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.Object" />
+        <Parameter Name="Style" Type="System.String" />
+        <Parameter Name="DayOfWeek" Type="Microsoft.VisualBasic.FirstDayOfWeek" />
+        <Parameter Name="WeekOfYear" Type="Microsoft.VisualBasic.FirstWeekOfYear" />
+      </Parameters>
+      <Docs>
+        <param name="Expression"><see cref="T:System.Object" />変換する式。</param>
+        <param name="Style">省略可能です。 A<see cref="T:System.String" />日付形式を表すです。</param>
+        <param name="DayOfWeek">省略可能です。 A<see cref="T:Microsoft.VisualBasic.FirstDayOfWeek" />列挙します。</param>
+        <param name="WeekOfYear">省略可能です。 A<see cref="T:Microsoft.VisualBasic.FirstWeekOfYear" />列挙します。</param>
+        <summary>Visual Basic 6.0 の変換<see langword="Format" />関数との互換性を[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。</summary>
+        <returns>A<see cref="T:System.String" />書式付きデータを格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0`Format`関数では演算が、`Variant`データ型  [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 、`Variant`データ型は存在しません。 この関数は変換するアップグレード ツールで使用、`Variant`を使用して書式設定、`Format`を共通言語ランタイムに準拠した型の関数。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromPixelsUserHeight">
+      <MemberSignature Language="C#" Value="public static double FromPixelsUserHeight (double Height, double ScaleHeight, int OriginalHeightInPixels);" />
+      <MemberSignature Language="ILAsm" Value=".method public static float64 FromPixelsUserHeight(float64 Height, float64 ScaleHeight, int32 OriginalHeightInPixels) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.FromPixelsUserHeight(System.Double,System.Double,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Height" Type="System.Double" />
+        <Parameter Name="ScaleHeight" Type="System.Double" />
+        <Parameter Name="OriginalHeightInPixels" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="Height">A<see cref="T:System.Double" />の高さを表すです。</param>
+        <param name="ScaleHeight">A<see cref="T:System.Double" />を表す Visual Basic 6.0<see langword="ScaleHeight" />現在の<see langword="ScaleMode" />します。</param>
+        <param name="OriginalHeightInPixels"><see langword="Integer" />の高さ (ピクセル単位) を表すです。</param>
+        <summary>Visual Basic 6.0 をピクセル単位に変換します<see langword="ScaleHeight" />測定します。</summary>
+        <returns>A<see cref="T:System.Double" />変換後の Visual Basic 6.0 を格納している<see langword="ScaleHeight" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 には、によって定義された複数の座標系がサポートされている、`ScaleMode`プロパティです。 これには、ユーザー定義の値が含まれています。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]のみ (ピクセル) に基づいている座標系をサポートします。 この関数は、ピクセルとユーザー定義のスケール値の間で変換するアップグレードのツールによって使用されます。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromPixelsUserWidth">
+      <MemberSignature Language="C#" Value="public static double FromPixelsUserWidth (double Width, double ScaleWidth, int OriginalWidthInPixels);" />
+      <MemberSignature Language="ILAsm" Value=".method public static float64 FromPixelsUserWidth(float64 Width, float64 ScaleWidth, int32 OriginalWidthInPixels) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.FromPixelsUserWidth(System.Double,System.Double,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Width" Type="System.Double" />
+        <Parameter Name="ScaleWidth" Type="System.Double" />
+        <Parameter Name="OriginalWidthInPixels" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="Width">A<see cref="T:System.Double" />の幅を表すです。</param>
+        <param name="ScaleWidth">A<see cref="T:System.Double" />を表す Visual Basic 6.0<see langword="ScaleWidth" />現在の<see langword="ScaleMode" />します。</param>
+        <param name="OriginalWidthInPixels"><see langword="Integer" />の幅 (ピクセル単位) を表すです。</param>
+        <summary>Visual Basic 6.0 をピクセル単位に変換します<see langword="ScaleWidth" />測定します。</summary>
+        <returns>A<see cref="T:System.Double" />変換後の Visual Basic 6.0 を格納している<see langword="ScaleWidth" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 には、によって定義された複数の座標系がサポートされている、`ScaleMode`プロパティです。 これには、ユーザー定義の値が含まれています。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]のみ (ピクセル) に基づいている座標系をサポートします。 この関数は、ピクセルとユーザー定義のスケール値の間で変換するアップグレードのツールによって使用されます。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromPixelsUserX">
+      <MemberSignature Language="C#" Value="public static double FromPixelsUserX (double X, double ScaleLeft, double ScaleWidth, int OriginalWidthInPixels);" />
+      <MemberSignature Language="ILAsm" Value=".method public static float64 FromPixelsUserX(float64 X, float64 ScaleLeft, float64 ScaleWidth, int32 OriginalWidthInPixels) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.FromPixelsUserX(System.Double,System.Double,System.Double,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="X" Type="System.Double" />
+        <Parameter Name="ScaleLeft" Type="System.Double" />
+        <Parameter Name="ScaleWidth" Type="System.Double" />
+        <Parameter Name="OriginalWidthInPixels" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="X">X 座標を表す <see cref="T:System.Double" />。</param>
+        <param name="ScaleLeft">A<see cref="T:System.Double" />を表す Visual Basic 6.0<see langword="ScaleLeft" />現在の<see langword="ScaleMode" />します。</param>
+        <param name="ScaleWidth">A<see cref="T:System.Double" />を表す Visual Basic 6.0<see langword="ScaleWidth" />現在の<see langword="ScaleMode" />します。</param>
+        <param name="OriginalWidthInPixels"><see langword="Integer" />の幅 (ピクセル単位) を表すです。</param>
+        <summary>Visual Basic 6.0 をピクセル単位に変換します<see langword="ScaleLeft" />測定します。</summary>
+        <returns>A<see cref="T:System.Double" />変換後の Visual Basic 6.0 を格納している<see langword="ScaleLeft" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 には、によって定義された複数の座標系がサポートされている、`ScaleMode`プロパティです。 これには、ユーザー定義の値が含まれています。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]のみ (ピクセル) に基づいている座標系をサポートします。 この関数は、ピクセルとユーザー定義のスケール値の間で変換するアップグレードのツールによって使用されます。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromPixelsUserY">
+      <MemberSignature Language="C#" Value="public static double FromPixelsUserY (double Y, double ScaleTop, double ScaleHeight, int OriginalHeightInPixels);" />
+      <MemberSignature Language="ILAsm" Value=".method public static float64 FromPixelsUserY(float64 Y, float64 ScaleTop, float64 ScaleHeight, int32 OriginalHeightInPixels) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.FromPixelsUserY(System.Double,System.Double,System.Double,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Y" Type="System.Double" />
+        <Parameter Name="ScaleTop" Type="System.Double" />
+        <Parameter Name="ScaleHeight" Type="System.Double" />
+        <Parameter Name="OriginalHeightInPixels" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="Y">X 座標を表す <see cref="T:System.Double" />。</param>
+        <param name="ScaleTop">A<see cref="T:System.Double" />を表す Visual Basic 6.0<see langword="ScaleTop" />現在の<see langword="ScaleMode" />します。</param>
+        <param name="ScaleHeight">A<see cref="T:System.Double" />を表す Visual Basic 6.0<see langword="ScaleHeight" />現在の<see langword="ScaleMode" />します。</param>
+        <param name="OriginalHeightInPixels"><see langword="Integer" />の高さ (ピクセル単位) を表すです。</param>
+        <summary>Visual Basic 6.0 をピクセル単位に変換します<see langword="ScaleTop" />測定します。</summary>
+        <returns>A<see cref="T:System.Double" />変換後の Visual Basic 6.0 を格納している<see langword="ScaleTop" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 には、によって定義された複数の座標系がサポートされている、`ScaleMode`プロパティです。 これには、ユーザー定義の値が含まれています。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]のみ (ピクセル) に基づいている座標系をサポートします。 この関数は、ピクセルとユーザー定義のスケール値の間で変換するアップグレードのツールによって使用されます。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromPixelsX">
+      <MemberSignature Language="C#" Value="public static double FromPixelsX (double X, Microsoft.VisualBasic.Compatibility.VB6.ScaleMode ToScale);" />
+      <MemberSignature Language="ILAsm" Value=".method public static float64 FromPixelsX(float64 X, valuetype Microsoft.VisualBasic.Compatibility.VB6.ScaleMode ToScale) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.FromPixelsX(System.Double,Microsoft.VisualBasic.Compatibility.VB6.ScaleMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="X" Type="System.Double" />
+        <Parameter Name="ToScale" Type="Microsoft.VisualBasic.Compatibility.VB6.ScaleMode" />
+      </Parameters>
+      <Docs>
+        <param name="X">A<see cref="T:System.Double" />を表す X 座標 (ピクセル単位)。</param>
+        <param name="ToScale">A <see cref="T:Microsoft.VisualBasic.Compatibility.VB6.ScaleMode" /> Visual Basic 6.0 を表す列挙体<see langword="ScaleMode" />に変換します。</param>
+        <summary>ピクセル単位の Visual Basic 6.0 の測定値に変換する指定された<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.ScaleMode" />です。</summary>
+        <returns>A <see cref="T:System.Double" /> 、指定された Visual Basic 6.0 の値を含んでいる<see langword="ScaleMode" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 には、によって定義された複数の座標系がサポートされている、`ScaleMode`プロパティです。 これには、ユーザー定義の値が含まれています。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]のみ (ピクセル) に基づいている座標系をサポートします。 この関数は、ピクセルとユーザー定義のスケール値の間で変換するアップグレードのツールによって使用されます。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromPixelsY">
+      <MemberSignature Language="C#" Value="public static double FromPixelsY (double Y, Microsoft.VisualBasic.Compatibility.VB6.ScaleMode ToScale);" />
+      <MemberSignature Language="ILAsm" Value=".method public static float64 FromPixelsY(float64 Y, valuetype Microsoft.VisualBasic.Compatibility.VB6.ScaleMode ToScale) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.FromPixelsY(System.Double,Microsoft.VisualBasic.Compatibility.VB6.ScaleMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Y" Type="System.Double" />
+        <Parameter Name="ToScale" Type="Microsoft.VisualBasic.Compatibility.VB6.ScaleMode" />
+      </Parameters>
+      <Docs>
+        <param name="Y">A<see cref="T:System.Double" />を表す Y 座標 (ピクセル単位)。</param>
+        <param name="ToScale">A <see cref="T:Microsoft.VisualBasic.Compatibility.VB6.ScaleMode" /> Visual Basic 6.0 を表す列挙体<see langword="ScaleMode" />に変換します。</param>
+        <summary>ピクセル単位の Visual Basic 6.0 の測定値に変換する指定された<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.ScaleMode" />です。</summary>
+        <returns>A <see cref="T:System.Double" /> 、指定された Visual Basic 6.0 の値を含んでいる<see langword="ScaleMode" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 には、によって定義された複数の座標系がサポートされている、`ScaleMode`プロパティです。 これには、ユーザー定義の値が含まれています。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]のみ (ピクセル) に基づいている座標系をサポートします。 この関数は、ピクセルとユーザー定義のスケール値の間で変換するアップグレードのツールによって使用されます。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetActiveControl">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Control GetActiveControl ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static class System.Windows.Forms.Control GetActiveControl() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.GetActiveControl" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Control</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在フォーカスがあるコントロールを取得します。</summary>
+        <returns>現在フォーカスがあるコントロール。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、Visual Basic 6.0 を置換するアップグレード ツールで使用`Screen.ActiveControl`プロパティです。 呼び出すことと同等である<xref:System.Windows.Forms.ContainerControl.ActiveControl%2A>で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCancel">
+      <MemberSignature Language="C#" Value="public static bool GetCancel (System.Windows.Forms.Button btn);" />
+      <MemberSignature Language="ILAsm" Value=".method public static bool GetCancel(class System.Windows.Forms.Button btn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.GetCancel(System.Windows.Forms.Button)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="btn" Type="System.Windows.Forms.Button" />
+      </Parameters>
+      <Docs>
+        <param name="btn"><see cref="T:System.Windows.Forms.Button" /> コントロール。</param>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.Forms.Button" />がフォームに [キャンセル] ボタンをクリックします。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="btn" />[キャンセル] ボタンは、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、それと同等のチェック、<xref:System.Windows.Forms.Form.CancelButton%2A>のプロパティ、<xref:System.Windows.Forms.Form>です。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDefault">
+      <MemberSignature Language="C#" Value="public static bool GetDefault (System.Windows.Forms.Button btn);" />
+      <MemberSignature Language="ILAsm" Value=".method public static bool GetDefault(class System.Windows.Forms.Button btn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.GetDefault(System.Windows.Forms.Button)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="btn" Type="System.Windows.Forms.Button" />
+      </Parameters>
+      <Docs>
+        <param name="btn"><see cref="T:System.Windows.Forms.Button" /> コントロール。</param>
+        <summary>セットを決定する値を取得するかどうか、<see cref="T:System.Windows.Forms.Button" />コントロールがフォーム上の既定のボタンです。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="btn" />既定のボタンは、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、それと同等のチェック、<xref:System.Windows.Forms.Form.AcceptButton%2A>のプロパティ、<xref:System.Windows.Forms.Form>です。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEXEName">
+      <MemberSignature Language="C#" Value="public static string GetEXEName ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static string GetEXEName() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.GetEXEName" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のアプリケーションの実行可能ファイル (.exe) の名前を取得します。</summary>
+        <returns>A<see cref="T:System.String" />ファイル名拡張子を除いた名前を格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHInstance">
+      <MemberSignature Language="C#" Value="public static IntPtr GetHInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static native int GetHInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.GetHInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のアプリケーションのインスタンス ハンドル (HINSTANCE) を取得します。</summary>
+        <returns><see cref="T:System.IntPtr" />の現在のアプリケーション インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、呼び出すことと同等<xref:System.Runtime.InteropServices.Marshal.GetHINSTANCE%2A>です。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetItemData">
+      <MemberSignature Language="C#" Value="public static int GetItemData (System.Windows.Forms.Control Control, int Index);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 GetItemData(class System.Windows.Forms.Control Control, int32 Index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.GetItemData(System.Windows.Forms.Control,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Control" Type="System.Windows.Forms.Control" />
+        <Parameter Name="Index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="Control">A<see cref="T:System.Windows.Forms.ListBox" />または<see cref="T:System.Windows.Forms.ComboBox" />コントロール。</param>
+        <param name="Index"><see langword="Integer" />のインデックスを表す、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.ListBoxItem" />です。</param>
+        <summary>取得、<see langword="Integer" />に関連付けられている、<see cref="T:System.Windows.Forms.ListBox" />または<see cref="T:System.Windows.Forms.ComboBox" />項目。</summary>
+        <returns>指定した <see langword="Integer" /> に関連付けられている <see cref="T:Microsoft.VisualBasic.Compatibility.VB6.ListBoxItem" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 で、`ItemData`プロパティを`ListBox`または`ComboBox`でデザイン時にコントロールを設定することが、**プロパティ**ウィンドウに関連付けるには、`Integer`で、`ListBox`または`ComboBox`項目。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]、`ItemData`プロパティが存在しなくなった;、`GetItemData`と<xref:Microsoft.VisualBasic.Compatibility.VB6.Support.SetItemData%2A>メソッドの動作をエミュレートするために使用できます`ItemData`です。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetItemString">
+      <MemberSignature Language="C#" Value="public static string GetItemString (System.Windows.Forms.Control Control, int Index);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string GetItemString(class System.Windows.Forms.Control Control, int32 Index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.GetItemString(System.Windows.Forms.Control,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Control" Type="System.Windows.Forms.Control" />
+        <Parameter Name="Index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="Control">A<see cref="T:System.Windows.Forms.ListBox" />または<see cref="T:System.Windows.Forms.ComboBox" />コントロール。</param>
+        <param name="Index"><see langword="Integer" />のインデックスを表す、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.ListBoxItem" />です。</param>
+        <summary>取得、<see cref="T:System.String" />に関連付けられている、<see cref="T:System.Windows.Forms.ListBox" />または<see cref="T:System.Windows.Forms.ComboBox" />項目。</summary>
+        <returns>指定した <see cref="T:System.String" /> に関連付けられている <see cref="T:Microsoft.VisualBasic.Compatibility.VB6.ListBoxItem" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、Visual Basic 6.0 をエミュレートするために、アップグレード ツールによって使用`List`プロパティです。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]を使用して、<xref:System.Windows.Forms.ComboBox.Items%2A>または<xref:System.Windows.Forms.ListBox.Items%2A>プロパティ代わりにします。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPath">
+      <MemberSignature Language="C#" Value="public static string GetPath ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static string GetPath() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.GetPath" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アプリケーションの現在のパスを取得します。</summary>
+        <returns>A<see cref="T:System.String" />現在実行中のアセンブリのパスを格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IconToIPicture">
+      <MemberSignature Language="C#" Value="public static object IconToIPicture (System.Drawing.Icon ico);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object IconToIPicture(class System.Drawing.Icon ico) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.IconToIPicture(System.Drawing.Icon)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ico" Type="System.Drawing.Icon" />
+      </Parameters>
+      <Docs>
+        <param name="ico"><see cref="T:System.Drawing.Icon" />。</param>
+        <summary>OLE の取得<see langword="IPicture" />オブジェクトを指定された<see cref="T:System.Drawing.Icon" />です。</summary>
+        <returns>OLE <see langword="IPicture" /> オブジェクトを表す <see cref="T:System.Object" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 では、OLE で`IPicture`; アイコンを指定するオブジェクトを使用する可能性がありますで[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]、OLE`IPicture`形式はサポートされていません。 この関数は間で変換するために使用されてアップグレード ツールで、`IPicture`と<xref:System.Drawing.Icon>です。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IFontToFont">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Font IFontToFont (object objFnt);" />
+      <MemberSignature Language="ILAsm" Value=".method public static class System.Drawing.Font IFontToFont(object objFnt) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.IFontToFont(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Font</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="objFnt" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="objFnt"><see cref="T:System.Object" /> Visual Basic 6.0 を格納している<see langword="stdFont" />です。</param>
+        <summary>Visual Basic 6.0 の変換<see langword="stdFont" />オブジェクトを<see cref="T:System.Drawing.Font" />です。</summary>
+        <returns>変換する指定されたオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0`stdFont`オブジェクトが COM に基づいていたおよび該当するショートカットを持たない[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 この関数は間で変換するアップグレード ツールで使用、<xref:System.Drawing.Font>と`stdFont`プロジェクトのアップグレード中にします。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageToIPicture">
+      <MemberSignature Language="C#" Value="public static object ImageToIPicture (System.Drawing.Image img);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object ImageToIPicture(class System.Drawing.Image img) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.ImageToIPicture(System.Drawing.Image)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="img" Type="System.Drawing.Image" />
+      </Parameters>
+      <Docs>
+        <param name="img"><see cref="T:System.Drawing.Image" />。</param>
+        <summary>OLE の取得<see langword="IPicture" />オブジェクトを指定された<see cref="T:System.Drawing.Image" />です。</summary>
+        <returns>OLE <see langword="IPicture" /> オブジェクトを表す <see cref="T:System.Object" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 では、OLE で`IPicture`; イメージを指定して object を使用してで[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]、OLE`IPicture`形式はサポートされていません。 この関数は間で変換するために使用されてアップグレード ツールで、`IPicture`と<xref:System.Drawing.Image>です。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageToIPictureDisp">
+      <MemberSignature Language="C#" Value="public static object ImageToIPictureDisp (System.Drawing.Image img);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object ImageToIPictureDisp(class System.Drawing.Image img) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.ImageToIPictureDisp(System.Drawing.Image)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="img" Type="System.Drawing.Image" />
+      </Parameters>
+      <Docs>
+        <param name="img"><see cref="T:System.Drawing.Image" />。</param>
+        <summary>OLE の取得<see langword="IPictureDisp" />オブジェクトを指定された<see cref="T:System.Drawing.Image" />です。</summary>
+        <returns>OLE <see langword="IPictureDisp" /> オブジェクトを表す <see cref="T:System.Object" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 では、OLE で`IPictureDisp`; イメージを指定して object を使用してで[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]、OLE`IPicture`形式はサポートされていません。 この関数は間で変換するために使用されてアップグレード ツールで、`IPicture`と<xref:System.Drawing.Image>です。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Imp">
+      <MemberSignature Language="C#" Value="public static bool Imp (bool a, bool b);" />
+      <MemberSignature Language="ILAsm" Value=".method public static bool Imp(bool a, bool b) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.Imp(System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="a" Type="System.Boolean" />
+        <Parameter Name="b" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="a">A<see cref="T:System.Boolean" />式。</param>
+        <param name="b">A<see cref="T:System.Boolean" />式。</param>
+        <summary>2 つの論理暗黙的を実行<see cref="T:System.Boolean" />式。</summary>
+        <returns>A<see cref="T:System.Boolean" />結果を格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0`Imp`の演算子はサポートされなく[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 この関数は置換するアップグレード ツールで使用、`Imp`プロジェクトのアップグレード中に演算子。  
+  
+ [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]を使用して`Not`と`XOr`の代わりに`Imp`です。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Imp">
+      <MemberSignature Language="C#" Value="public static byte Imp (byte a, byte b);" />
+      <MemberSignature Language="ILAsm" Value=".method public static unsigned int8 Imp(unsigned int8 a, unsigned int8 b) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.Imp(System.Byte,System.Byte)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="a" Type="System.Byte" />
+        <Parameter Name="b" Type="System.Byte" />
+      </Parameters>
+      <Docs>
+        <param name="a">A<see cref="T:System.Byte" />式。</param>
+        <param name="b">A<see cref="T:System.Byte" />式。</param>
+        <summary>2 つの論理暗黙的を実行<see cref="T:System.Byte" />式。</summary>
+        <returns>A<see cref="T:System.Byte" />結果を格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0`Imp`の演算子はサポートされなく[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 この関数は置換するアップグレード ツールで使用、`Imp`プロジェクトのアップグレード中に演算子。  
+  
+ [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]を使用して`Not`と`XOr`を置き換える`Imp`です。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Imp">
+      <MemberSignature Language="C#" Value="public static short Imp (short a, short b);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int16 Imp(int16 a, int16 b) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.Imp(System.Int16,System.Int16)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int16</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="a" Type="System.Int16" />
+        <Parameter Name="b" Type="System.Int16" />
+      </Parameters>
+      <Docs>
+        <param name="a">A<see langword="Short" />式。</param>
+        <param name="b">A<see langword="Short" />式。</param>
+        <summary>2 つの論理暗黙的を実行<see cref="T:System.Int16" />式。</summary>
+        <returns>A<see langword="Short" />結果を格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0`Imp`の演算子はサポートされなく[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 この関数は置換するアップグレード ツールで使用、`Imp`プロジェクトのアップグレード中に演算子。  
+  
+ [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]を使用して`Not`と`XOr`を置き換える`Imp`です。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Imp">
+      <MemberSignature Language="C#" Value="public static int Imp (int a, int b);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 Imp(int32 a, int32 b) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.Imp(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="a" Type="System.Int32" />
+        <Parameter Name="b" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="a"><see langword="Integer" />式。</param>
+        <param name="b"><see langword="Integer" />式。</param>
+        <summary>2 つの論理暗黙的を実行<see cref="T:System.Int32" />式。</summary>
+        <returns><see langword="Integer" />結果を格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0`Imp`の演算子はサポートされなく[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 この関数は置換するアップグレード ツールで使用、`Imp`プロジェクトのアップグレード中に演算子。  
+  
+ [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]を使用して`Not`と`XOr`を置き換える`Imp`です。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Imp">
+      <MemberSignature Language="C#" Value="public static long Imp (long a, long b);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int64 Imp(int64 a, int64 b) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.Imp(System.Int64,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="a" Type="System.Int64" />
+        <Parameter Name="b" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="a">A<see langword="Long" />式。</param>
+        <param name="b">A<see langword="Long" />式。</param>
+        <summary>2 つの論理暗黙的を実行<see cref="T:System.Int64" />式。</summary>
+        <returns>A<see langword="Long" />結果を格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0`Imp`の演算子はサポートされなく[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 この関数は置換するアップグレード ツールで使用、`Imp`プロジェクトのアップグレード中に演算子。  
+  
+ [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]を使用して`Not`と`XOr`を置き換える`Imp`です。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Imp">
+      <MemberSignature Language="C#" Value="public static object Imp (object a, object b);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object Imp(object a, object b) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.Imp(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="a" Type="System.Object" />
+        <Parameter Name="b" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="a"><see cref="T:System.Object" />式。</param>
+        <param name="b"><see cref="T:System.Object" />式。</param>
+        <summary>2 つの論理暗黙的を実行<see cref="T:System.Object" />式。</summary>
+        <returns><see cref="T:System.Object" />結果を格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0`Imp`の演算子はサポートされなく[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 この関数は置換するアップグレード ツールで使用、`Imp`プロジェクトのアップグレード中に演算子。 アップグレード中に、Variant データ型にアップグレード<xref:System.Object>です。  
+  
+ [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]を使用して`Not`と`XOr`を置き換える`Imp`です。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IPictureDispToImage">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Image IPictureDispToImage (object pict);" />
+      <MemberSignature Language="ILAsm" Value=".method public static class System.Drawing.Image IPictureDispToImage(object pict) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.IPictureDispToImage(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Image</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pict" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="pict">OLE<see langword="IPictureDisp" />オブジェクト。</param>
+        <summary>取得、<see cref="T:System.Drawing.Image" />特定 ole<see langword="IPictureDisp" />オブジェクト。</summary>
+        <returns>Image オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 では、OLE で`IPictureDisp`; イメージを指定して object を使用してで[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]、OLE`IPicture`形式はサポートされていません。 この関数は間で変換するために使用されてアップグレード ツールで、`IPictureDisp`と<xref:System.Drawing.Image>です。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IPictureToImage">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Image IPictureToImage (object pict);" />
+      <MemberSignature Language="ILAsm" Value=".method public static class System.Drawing.Image IPictureToImage(object pict) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.IPictureToImage(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Image</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pict" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="pict">OLE<see langword="IPicture" />オブジェクト。</param>
+        <summary>取得、<see cref="T:System.Drawing.Image" />特定 ole<see langword="IPicture" />オブジェクト。</summary>
+        <returns>イメージに変換されたオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 では、OLE で`IPicture`; イメージを指定して object を使用してで[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]、OLE`IPicture`形式はサポートされていません。 この関数は間で変換するために使用されてアップグレード ツールで、`IPicture`と<xref:System.Drawing.Image>です。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadResData">
+      <MemberSignature Language="C#" Value="public static object LoadResData (object ID, object restype);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object LoadResData(object ID, object restype) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.LoadResData(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ID" Type="System.Object" />
+        <Parameter Name="restype" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="ID"><see cref="T:System.Object" />リソース ファイル内のデータを指定します。</param>
+        <param name="restype"><see cref="T:System.Object" />リソースの種類を指定します。</param>
+        <summary>リソース (.res) ファイルからのいくつかの可能な型のデータを読み込みます。</summary>
+        <returns><see cref="T:System.Object" />リソースを格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 では、アプリケーションの各国語バージョンは、文字列などのすべてのローカライズ可能な情報を言語ごとに個別のリソース ファイル (.res) に配置することによって作成されました。 実行時に、ロケール固有のリソースから読み込まれたリソース ファイルを呼び出して、 `LoadResString`、 `LoadResPicture`、および`LoadResData`関数。  
+  
+ [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]、アプリケーションの各国語バージョンが変更することによって作成された、`Language`デザイン時にフォームのプロパティです。 個別のリソース ファイル (.resx) が選択されているロケールごとに自動的に作成されます。 不要になったをコードからリソースを明示的に読み込む必要があります。リソースが自動的に読み込まれるベースのユーザーのロケールでします。 詳細については、次を参照してください。 [Windows フォームのグローバル化](~/docs/framework/winforms/advanced/globalizing-windows-forms.md)です。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadResData">
+      <MemberSignature Language="C#" Value="public static object LoadResData (object ID, object restype, System.Globalization.CultureInfo Culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object LoadResData(object ID, object restype, class System.Globalization.CultureInfo Culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.LoadResData(System.Object,System.Object,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ID" Type="System.Object" />
+        <Parameter Name="restype" Type="System.Object" />
+        <Parameter Name="Culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="ID"><see cref="T:System.Object" />リソース ファイル内のデータを指定します。</param>
+        <param name="restype"><see cref="T:System.Object" />リソースの種類を指定します。</param>
+        <param name="Culture">A<see cref="T:System.Globalization.CultureInfo" />ロケールを指定するオブジェクト。</param>
+        <summary>ロケールを指定して、リソース (.res) ファイルからのいくつかの可能な型のデータを読み込みます。</summary>
+        <returns><see cref="T:System.Object" />リソースを格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 では、アプリケーションの各国語バージョンは、文字列などのすべてのローカライズ可能な情報を言語ごとに個別のリソース ファイル (.res) に配置することによって作成されました。 実行時に、ロケール固有のリソースから読み込まれたリソース ファイルを呼び出して、 `LoadResString`、 `LoadResPicture`、および`LoadResData`関数。  
+  
+ [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]、アプリケーションの各国語バージョンが変更することによって作成された、`Language`デザイン時にフォームのプロパティです。 個別のリソース ファイル (.resx) が選択されているロケールごとに自動的に作成されます。 不要になったをコードからリソースを明示的に読み込む必要があります。リソースが自動的に読み込まれるベースのユーザーのロケールでします。 詳細については、次を参照してください。 [Windows フォームのグローバル化](~/docs/framework/winforms/advanced/globalizing-windows-forms.md)です。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadResPicture">
+      <MemberSignature Language="C#" Value="public static object LoadResPicture (object ID, Microsoft.VisualBasic.Compatibility.VB6.LoadResConstants restype);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object LoadResPicture(object ID, valuetype Microsoft.VisualBasic.Compatibility.VB6.LoadResConstants restype) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.LoadResPicture(System.Object,Microsoft.VisualBasic.Compatibility.VB6.LoadResConstants)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ID" Type="System.Object" />
+        <Parameter Name="restype" Type="Microsoft.VisualBasic.Compatibility.VB6.LoadResConstants" />
+      </Parameters>
+      <Docs>
+        <param name="ID"><see cref="T:System.Object" />リソース ファイル内のデータを指定します。</param>
+        <param name="restype">A<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.LoadResConstants" />リソースの種類を指定する列挙です。</param>
+        <summary>リソース (.res) ファイルから、ビットマップ、アイコン、またはカーソルを読み込みます。</summary>
+        <returns><see cref="T:System.Object" />リソースを格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 では、アプリケーションの各国語バージョンは、文字列などのすべてのローカライズ可能な情報を言語ごとに個別のリソース ファイル (.res) に配置することによって作成されました。 実行時に、ロケール固有のリソースから読み込まれたリソース ファイルを呼び出して、 `LoadResString`、 `LoadResPicture`、および`LoadResData`関数。  
+  
+ [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]、アプリケーションの各国語バージョンが変更することによって作成された、`Language`デザイン時にフォームのプロパティです。 個別のリソース ファイル (.resx) が選択されているロケールごとに自動的に作成されます。 不要になったをコードからリソースを明示的に読み込む必要があります。リソースが自動的に読み込まれるベースのユーザーのロケールでします。 詳細については、次を参照してください。 [Windows フォームのグローバル化](~/docs/framework/winforms/advanced/globalizing-windows-forms.md)です。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadResPicture">
+      <MemberSignature Language="C#" Value="public static object LoadResPicture (object ID, Microsoft.VisualBasic.Compatibility.VB6.LoadResConstants restype, System.Globalization.CultureInfo Culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object LoadResPicture(object ID, valuetype Microsoft.VisualBasic.Compatibility.VB6.LoadResConstants restype, class System.Globalization.CultureInfo Culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.LoadResPicture(System.Object,Microsoft.VisualBasic.Compatibility.VB6.LoadResConstants,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ID" Type="System.Object" />
+        <Parameter Name="restype" Type="Microsoft.VisualBasic.Compatibility.VB6.LoadResConstants" />
+        <Parameter Name="Culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="ID"><see cref="T:System.Object" />リソース ファイル内のデータを指定します。</param>
+        <param name="restype">A<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.LoadResConstants" />リソースの種類を指定する列挙です。</param>
+        <param name="Culture">A<see cref="T:System.Globalization.CultureInfo" />ロケールを指定するオブジェクト。</param>
+        <summary>ロケールを指定して、リソース (.res) ファイルから、ビットマップ、アイコン、またはカーソルを読み込みます。</summary>
+        <returns><see cref="T:System.Object" />リソースを格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 では、アプリケーションの各国語バージョンは、文字列などのすべてのローカライズ可能な情報を言語ごとに個別のリソース ファイル (.res) に配置することによって作成されました。 実行時に、ロケール固有のリソースから読み込まれたリソース ファイルを呼び出して、 `LoadResString`、 `LoadResPicture`、および`LoadResData`関数。  
+  
+ [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]、アプリケーションの各国語バージョンが変更することによって作成された、`Language`デザイン時にフォームのプロパティです。 個別のリソース ファイル (.resx) が選択されているロケールごとに自動的に作成されます。 不要になったをコードからリソースを明示的に読み込む必要があります。リソースが自動的に読み込まれるベースのユーザーのロケールでします。 詳細については、次を参照してください。 [Windows フォームのグローバル化](~/docs/framework/winforms/advanced/globalizing-windows-forms.md)です。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadResString">
+      <MemberSignature Language="C#" Value="public static string LoadResString (int ID);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string LoadResString(int32 ID) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.LoadResString(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ID" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ID"><see cref="T:System.Object" />リソース ファイル内のデータを指定します。</param>
+        <summary>リソース (.res) ファイルから文字列を読み込みます。</summary>
+        <returns>A<see cref="T:System.String" />リソースを格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 では、アプリケーションの各国語バージョンは、文字列などのすべてのローカライズ可能な情報を言語ごとに個別のリソース ファイル (.res) に配置することによって作成されました。 実行時に、ロケール固有のリソースから読み込まれたリソース ファイルを呼び出して、 `LoadResString`、 `LoadResPicture`、および`LoadResData`関数。  
+  
+ [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]、アプリケーションの各国語バージョンが変更することによって作成された、`Language`デザイン時にフォームのプロパティです。 個別のリソース ファイル (.resx) が選択されているロケールごとに自動的に作成されます。 不要になったをコードからリソースを明示的に読み込む必要があります。リソースが自動的に読み込まれるベースのユーザーのロケールでします。 詳細については、次を参照してください。 [Windows フォームのグローバル化](~/docs/framework/winforms/advanced/globalizing-windows-forms.md)です。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadResString">
+      <MemberSignature Language="C#" Value="public static string LoadResString (int ID, System.Globalization.CultureInfo Culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string LoadResString(int32 ID, class System.Globalization.CultureInfo Culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.LoadResString(System.Int32,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ID" Type="System.Int32" />
+        <Parameter Name="Culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="ID"><see cref="T:System.Object" />リソース ファイル内のデータを指定します。</param>
+        <param name="Culture">A<see cref="T:System.Globalization.CultureInfo" />ロケールを指定するオブジェクト。</param>
+        <summary>ロケールを指定して、リソース (.res) ファイルから文字列を読み込みます。</summary>
+        <returns>A<see cref="T:System.String" />リソースを格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 では、アプリケーションの各国語バージョンは、文字列などのすべてのローカライズ可能な情報を言語ごとに個別のリソース ファイル (.res) に配置することによって作成されました。 実行時に、ロケール固有のリソースから読み込まれたリソース ファイルを呼び出して、 `LoadResString`、 `LoadResPicture`、および`LoadResData`関数。  
+  
+ [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]、アプリケーションの各国語バージョンが変更することによって作成された、`Language`デザイン時にフォームのプロパティです。 個別のリソース ファイル (.resx) が選択されているロケールごとに自動的に作成されます。 不要になったをコードからリソースを明示的に読み込む必要があります。リソースが自動的に読み込まれるベースのユーザーのロケールでします。 詳細については、次を参照してください。 [Windows フォームのグローバル化](~/docs/framework/winforms/advanced/globalizing-windows-forms.md)です。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PixelsToTwipsX">
+      <MemberSignature Language="C#" Value="public static double PixelsToTwipsX (double X);" />
+      <MemberSignature Language="ILAsm" Value=".method public static float64 PixelsToTwipsX(float64 X) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.PixelsToTwipsX(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="X" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="X">A<see langword="Double" />に変換する X 座標を格納しています。</param>
+        <summary>X 座標をピクセルから twips 単位に変換します。</summary>
+        <returns>A <see langword="Double" /> twips 単位で表される、X 座標を格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 では、座標が必要です。 で表されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]それをピクセル単位で表現されます。 この関数は、2 つの座標システム間で変換をアップグレード ツールによって使用されます。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PixelsToTwipsY">
+      <MemberSignature Language="C#" Value="public static double PixelsToTwipsY (double Y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static float64 PixelsToTwipsY(float64 Y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.PixelsToTwipsY(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Y" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="Y">A<see langword="Double" />に変換する Y 座標を格納しています。</param>
+        <summary>Y 座標をピクセルから twips 単位に変換します。</summary>
+        <returns>A <see langword="Double" /> twips 単位で表される Y 座標を格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 では、座標が必要です。 で表されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]それをピクセル単位で表現されます。 この関数は、2 つの座標システム間で変換をアップグレード ツールによって使用されます。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SendKeys">
+      <MemberSignature Language="C#" Value="public static void SendKeys (string Keys, bool Wait = false);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void SendKeys(string Keys, bool Wait) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.SendKeys(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Keys" Type="System.String" />
+        <Parameter Name="Wait" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="Keys">A<see cref="T:System.String" />キーの値を格納しています。</param>
+        <param name="Wait">
+          <see langword="true" />コントロールがプロシージャに返される前に、キー入力を処理するにはそれ以外の場合<see langword="false" />です。</param>
+        <summary>キーボードで入力する 1 つまたは複数のキーストロークをアクティブなウィンドウに送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、Visual Basic 6.0 をエミュレートするために、アップグレード ツールによって使用`SendKeys`メソッドです。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]を使用して、`My.Computer.Keyboard.SendKeys`メソッド代わりにします。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCancel">
+      <MemberSignature Language="C#" Value="public static void SetCancel (System.Windows.Forms.Button btn, bool Cancel);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void SetCancel(class System.Windows.Forms.Button btn, bool Cancel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.SetCancel(System.Windows.Forms.Button,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="btn" Type="System.Windows.Forms.Button" />
+        <Parameter Name="Cancel" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="btn"><see cref="T:System.Windows.Forms.Button" />。</param>
+        <param name="Cancel">
+          <see langword="true" />場合、Visual Basic 6.0<see langword="CommandButton" />コントロールの<see langword="Cancel" />プロパティは<see langword="true" />それ以外の<see langword="false" />します。</param>
+        <summary>セット、<see cref="P:System.Windows.Forms.Form.CancelButton" />のプロパティ、<see cref="T:System.Windows.Forms.Form" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 では、ブール値で`Default`と`Cancel`のプロパティ、`CommandButton`コントロールは、コントロールの ENTER キーまたは ESC キーをそれぞれ応答するかどうかを判断します。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]、<xref:System.Windows.Forms.Button>コントロールがなくなった`Default`または`Cancel`プロパティです。 <xref:System.Windows.Forms.Form>オブジェクトが<xref:System.Windows.Forms.Form.AcceptButton%2A>と<xref:System.Windows.Forms.Form.CancelButton%2A>プロパティと同じ機能を提供する; これらのプロパティの名前を取得する、<xref:System.Windows.Forms.Button>引数と同様に制御します。  
+  
+ この関数を設定するアップグレード ツールで使用、<xref:System.Windows.Forms.Form.CancelButton%2A>のプロパティ、<xref:System.Windows.Forms.Form>で .based、`Cancel`アップグレード済みの Visual Basic 6.0 のプロパティ`CommandButton`コントロール。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDefault">
+      <MemberSignature Language="C#" Value="public static void SetDefault (System.Windows.Forms.Button btn, bool Default);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void SetDefault(class System.Windows.Forms.Button btn, bool Default) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.SetDefault(System.Windows.Forms.Button,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="btn" Type="System.Windows.Forms.Button" />
+        <Parameter Name="Default" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="btn"><see cref="T:System.Windows.Forms.Button" />。</param>
+        <param name="Default">
+          <see langword="true" />場合、Visual Basic 6.0<see langword="CommandButton" />コントロールの<see langword="Default" />プロパティは<see langword="true" />それ以外の<see langword="false" />します。</param>
+        <summary>セット、<see cref="P:System.Windows.Forms.Form.AcceptButton" />のプロパティ、<see cref="T:System.Windows.Forms.Form" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 では、ブール値で`Default`と`Cancel`のプロパティ、`CommandButton`コントロールは、コントロールの ENTER キーまたは ESC キーをそれぞれ応答するかどうかを判断します。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]、<xref:System.Windows.Forms.Button>コントロールがなくなった`Default`または`Cancel`プロパティです。 <xref:System.Windows.Forms.Form>オブジェクトが<xref:System.Windows.Forms.Form.AcceptButton%2A>と<xref:System.Windows.Forms.Form.CancelButton%2A>プロパティと同じ機能を提供する; これらのプロパティの名前を取得する、<xref:System.Windows.Forms.Button>引数と同様に制御します。  
+  
+ この関数を設定するアップグレード ツールで使用、<xref:System.Windows.Forms.Form.AcceptButton%2A>のプロパティ、<xref:System.Windows.Forms.Form>で .based、`Default`アップグレード済みの Visual Basic 6.0 のプロパティ`CommandButton`コントロール。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetItemData">
+      <MemberSignature Language="C#" Value="public static void SetItemData (System.Windows.Forms.Control Control, int Index, int ItemData);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void SetItemData(class System.Windows.Forms.Control Control, int32 Index, int32 ItemData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.SetItemData(System.Windows.Forms.Control,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Control" Type="System.Windows.Forms.Control" />
+        <Parameter Name="Index" Type="System.Int32" />
+        <Parameter Name="ItemData" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="Control">A<see cref="T:System.Windows.Forms.ListBox" />または<see cref="T:System.Windows.Forms.ComboBox" />コントロール。</param>
+        <param name="Index"><see cref="T:Microsoft.VisualBasic.Compatibility.VB6.ListBoxItem" /> の <see langword="Index" />。</param>
+        <param name="ItemData"><see langword="Integer" />に割り当てる、<see cref="F:Microsoft.VisualBasic.Compatibility.VB6.ListBoxItem.ItemData" />プロパティです。</param>
+        <summary>セット、<see cref="F:Microsoft.VisualBasic.Compatibility.VB6.ListBoxItem.ItemData" />プロパティを<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.ListBoxItem" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 で、`ItemData`プロパティを`ListBox`または`ComboBox`でデザイン時にコントロールを設定することが、**プロパティ**ウィンドウに関連付けるには、`Integer`で、`ListBox`または`ComboBox`項目。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]、`ItemData`プロパティが存在しなくなった;、<xref:Microsoft.VisualBasic.Compatibility.VB6.Support.GetItemData%2A>と`SetItemData`メソッドの動作をエミュレートするために使用できます`ItemData`です。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetItemString">
+      <MemberSignature Language="C#" Value="public static void SetItemString (System.Windows.Forms.Control Control, int Index, string ItemString);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void SetItemString(class System.Windows.Forms.Control Control, int32 Index, string ItemString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.SetItemString(System.Windows.Forms.Control,System.Int32,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Control" Type="System.Windows.Forms.Control" />
+        <Parameter Name="Index" Type="System.Int32" />
+        <Parameter Name="ItemString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="Control">A <see cref="T:System.Windows.Forms.ListBox" /> <see cref="T:System.Windows.Forms.ListBox" />または<see cref="T:System.Windows.Forms.ComboBox" />コントロール。</param>
+        <param name="Index"><see cref="T:Microsoft.VisualBasic.Compatibility.VB6.ListBoxItem" /> の <see langword="Index" />。</param>
+        <param name="ItemString">A<see cref="T:System.String" />に割り当てる、<see cref="F:Microsoft.VisualBasic.Compatibility.VB6.ListBoxItem.ItemString" />プロパティです。</param>
+        <summary>セット、<see cref="F:Microsoft.VisualBasic.Compatibility.VB6.ListBoxItem.ItemString" />プロパティを<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.ListBoxItem" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、Visual Basic 6.0 をエミュレートするために、アップグレード ツールによって使用`List`プロパティです。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]を使用して、<xref:System.Windows.Forms.ComboBox.Items%2A>または<xref:System.Windows.Forms.ListBox.Items%2A>プロパティ代わりにします。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetResourceBaseName">
+      <MemberSignature Language="C#" Value="public static void SetResourceBaseName (string BaseFileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void SetResourceBaseName(string BaseFileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.SetResourceBaseName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="BaseFileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="BaseFileName">リソース ファイル (.res)。</param>
+        <summary>現在、Visual Basic 6.0 のリソース ファイルの名前を割り当てます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]プロジェクトの名前空間。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リソースの処理は、Visual Basic 6.0 の異なるおよび[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 この関数は、Visual Basic 6.0 のリソース ファイルをプロジェクトに追加するアップグレードのツールによって使用されます。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetResourceBaseName">
+      <MemberSignature Language="C#" Value="public static void SetResourceBaseName (string ProjectNamespace, string BaseFileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void SetResourceBaseName(string ProjectNamespace, string BaseFileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.SetResourceBaseName(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ProjectNamespace" Type="System.String" />
+        <Parameter Name="BaseFileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="ProjectNamespace">A<see cref="T:System.String" />を格納している、<see langword="Namespace" />のリソース ファイル。</param>
+        <param name="BaseFileName">リソース ファイル (.res)。</param>
+        <summary>Visual Basic 6.0 リソース ファイルの名前を割り当てます、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]プロジェクトの名前空間。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リソースの処理は、Visual Basic 6.0 の異なるおよび[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 この関数は、Visual Basic 6.0 のリソース ファイルをプロジェクトに追加するアップグレードのツールによって使用されます。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowForm">
+      <MemberSignature Language="C#" Value="public static void ShowForm (System.Windows.Forms.Form Form, int Modal = 0, System.Windows.Forms.Form OwnerForm = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void ShowForm(class System.Windows.Forms.Form Form, int32 Modal, class System.Windows.Forms.Form OwnerForm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.ShowForm(System.Windows.Forms.Form,System.Int32,System.Windows.Forms.Form)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Form" Type="System.Windows.Forms.Form" />
+        <Parameter Name="Modal" Type="System.Int32" />
+        <Parameter Name="OwnerForm" Type="System.Windows.Forms.Form" />
+      </Parameters>
+      <Docs>
+        <param name="Form"><see cref="T:System.Windows.Forms.Form" />を表示します。</param>
+        <param name="Modal">省略可能です。 A<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.FormShowConstants" />モーダルかどうかを指定する列挙です。</param>
+        <param name="OwnerForm">省略可能です。 <c>所有者</c>のパラメーター、<see cref="M:System.Windows.Forms.Form.ShowDialog" />メソッドです。</param>
+        <summary>呼び出して、フォームを表示、<see cref="M:System.Windows.Forms.Control.Show" />または<see cref="M:System.Windows.Forms.Form.ShowDialog" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 で、`Show`メソッドは、フォームはモーダルとして表示するかどうかを指定します。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]によって置き換えられる、<xref:System.Windows.Forms.Control.Show%2A>と<xref:System.Windows.Forms.Form.ShowDialog%2A>メソッドです。 この関数は、Visual Basic 6.0 をマップするアップグレード ツールで使用`Show`するか、メソッド、<xref:System.Windows.Forms.Control.Show%2A>または<xref:System.Windows.Forms.Form.ShowDialog%2A>メソッドです。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TabLayout">
+      <MemberSignature Language="C#" Value="public static string TabLayout (params object[] Args);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string TabLayout(object[] Args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.TabLayout(System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Args" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="Args">式または印刷する式のリスト。</param>
+        <summary>Visual Basic 6.0 をシミュレートするために文字列を書式設定<see langword="Debug.Print" />機能します。</summary>
+        <returns>書式設定された<see cref="T:System.String" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 で、`Debug.Print`メソッドに、`outputlist`において出力をフォーマットする方法を指定するパラメーター、**イミディ エイト**ウィンドウです。 この関数は変換するアップグレード ツールで使用、`outputlist`に表示する文字列にパラメーター、**イミディ エイト**ウィンドウです。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToPixelsUserHeight">
+      <MemberSignature Language="C#" Value="public static double ToPixelsUserHeight (double Height, double ScaleHeight, int OriginalHeightInPixels);" />
+      <MemberSignature Language="ILAsm" Value=".method public static float64 ToPixelsUserHeight(float64 Height, float64 ScaleHeight, int32 OriginalHeightInPixels) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.ToPixelsUserHeight(System.Double,System.Double,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Height" Type="System.Double" />
+        <Parameter Name="ScaleHeight" Type="System.Double" />
+        <Parameter Name="OriginalHeightInPixels" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="Height">A<see cref="T:System.Double" />の高さを表すです。</param>
+        <param name="ScaleHeight">A<see cref="T:System.Double" />を表す Visual Basic 6.0<see langword="ScaleHeight" />現在の<see langword="ScaleMode" />します。</param>
+        <param name="OriginalHeightInPixels"><see langword="Integer" />の高さ (ピクセル単位) を表すです。</param>
+        <summary>Visual Basic 6.0 の変換<see langword="ScaleHeight" />ピクセルの測定値を測定します。</summary>
+        <returns>A<see cref="T:System.Double" />変換後の Visual Basic 6.0 を格納している<see langword="ScaleHeight" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 には、によって定義された複数の座標系がサポートされている、`ScaleMode`プロパティです。 これには、ユーザー定義の値が含まれています。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]のみ (ピクセル) に基づいている座標系をサポートします。 この関数は、ピクセルとユーザー定義のスケール値の間で変換するアップグレードのツールによって使用されます。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToPixelsUserWidth">
+      <MemberSignature Language="C#" Value="public static double ToPixelsUserWidth (double Width, double ScaleWidth, int OriginalWidthInPixels);" />
+      <MemberSignature Language="ILAsm" Value=".method public static float64 ToPixelsUserWidth(float64 Width, float64 ScaleWidth, int32 OriginalWidthInPixels) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.ToPixelsUserWidth(System.Double,System.Double,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Width" Type="System.Double" />
+        <Parameter Name="ScaleWidth" Type="System.Double" />
+        <Parameter Name="OriginalWidthInPixels" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="Width">A<see cref="T:System.Double" />の幅を表すです。</param>
+        <param name="ScaleWidth">A<see cref="T:System.Double" />を表す Visual Basic 6.0<see langword="ScaleWidth" />現在の<see langword="ScaleMode" />します。</param>
+        <param name="OriginalWidthInPixels"><see langword="Integer" />の幅 (ピクセル単位) を表すです。</param>
+        <summary>Visual Basic 6.0 の変換<see langword="ScaleWidth" />ピクセルの測定値を測定します。</summary>
+        <returns>A<see cref="T:System.Double" />変換後の Visual Basic 6.0 を格納している<see langword="ScaleWidth" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 には、によって定義された複数の座標系がサポートされている、`ScaleMode`プロパティです。 これには、ユーザー定義の値が含まれています。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]のみ (ピクセル) に基づいている座標系をサポートします。 この関数は、ピクセルとユーザー定義のスケール値の間で変換するアップグレードのツールによって使用されます。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToPixelsUserX">
+      <MemberSignature Language="C#" Value="public static double ToPixelsUserX (double X, double ScaleLeft, double ScaleWidth, int OriginalWidthInPixels);" />
+      <MemberSignature Language="ILAsm" Value=".method public static float64 ToPixelsUserX(float64 X, float64 ScaleLeft, float64 ScaleWidth, int32 OriginalWidthInPixels) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.ToPixelsUserX(System.Double,System.Double,System.Double,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="X" Type="System.Double" />
+        <Parameter Name="ScaleLeft" Type="System.Double" />
+        <Parameter Name="ScaleWidth" Type="System.Double" />
+        <Parameter Name="OriginalWidthInPixels" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="X">X 座標を表す <see cref="T:System.Double" />。</param>
+        <param name="ScaleLeft">A<see cref="T:System.Double" />を表す Visual Basic 6.0<see langword="ScaleLeft" />現在の<see langword="ScaleMode" />します。</param>
+        <param name="ScaleWidth">A<see cref="T:System.Double" />を表す Visual Basic 6.0<see langword="ScaleWidth" />現在の<see langword="ScaleMode" />します。</param>
+        <param name="OriginalWidthInPixels"><see langword="Integer" />の幅 (ピクセル単位) を表すです。</param>
+        <summary>Visual Basic 6.0 の変換<see langword="ScaleLeft" />ピクセルの測定値を測定します。</summary>
+        <returns>A<see cref="T:System.Double" />変換後の Visual Basic 6.0 を格納している<see langword="ScaleLeft" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 には、によって定義された複数の座標系がサポートされている、`ScaleMode`プロパティです。 これには、ユーザー定義の値が含まれています。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]のみ (ピクセル) に基づいている座標系をサポートします。 この関数は、ピクセルとユーザー定義のスケール値の間で変換するアップグレードのツールによって使用されます。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToPixelsUserY">
+      <MemberSignature Language="C#" Value="public static double ToPixelsUserY (double Y, double ScaleTop, double ScaleHeight, int OriginalHeightInPixels);" />
+      <MemberSignature Language="ILAsm" Value=".method public static float64 ToPixelsUserY(float64 Y, float64 ScaleTop, float64 ScaleHeight, int32 OriginalHeightInPixels) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.ToPixelsUserY(System.Double,System.Double,System.Double,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Y" Type="System.Double" />
+        <Parameter Name="ScaleTop" Type="System.Double" />
+        <Parameter Name="ScaleHeight" Type="System.Double" />
+        <Parameter Name="OriginalHeightInPixels" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="Y">A<see cref="T:System.Double" />を表す Y 座標。</param>
+        <param name="ScaleTop">A<see cref="T:System.Double" />を表す Visual Basic 6.0<see langword="ScaleTop" />現在の<see langword="ScaleMode" />します。</param>
+        <param name="ScaleHeight">A<see cref="T:System.Double" />を表す Visual Basic 6.0<see langword="ScaleHeight" />現在の<see langword="ScaleMode" />します。</param>
+        <param name="OriginalHeightInPixels"><see langword="Integer" />の高さ (ピクセル単位) を表すです。</param>
+        <summary>Visual Basic 6.0 の変換<see langword="ScaleTop" />ピクセルの測定値を測定します。</summary>
+        <returns>A<see cref="T:System.Double" />変換後の Visual Basic 6.0 を格納している<see langword="ScaleLeft" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 には、によって定義された複数の座標系がサポートされている、`ScaleMode`プロパティです。 これには、ユーザー定義の値が含まれています。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]のみ (ピクセル) に基づいている座標系をサポートします。 この関数は、ピクセルとユーザー定義のスケール値の間で変換するアップグレードのツールによって使用されます。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToPixelsX">
+      <MemberSignature Language="C#" Value="public static double ToPixelsX (double X, Microsoft.VisualBasic.Compatibility.VB6.ScaleMode FromScale);" />
+      <MemberSignature Language="ILAsm" Value=".method public static float64 ToPixelsX(float64 X, valuetype Microsoft.VisualBasic.Compatibility.VB6.ScaleMode FromScale) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.ToPixelsX(System.Double,Microsoft.VisualBasic.Compatibility.VB6.ScaleMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="X" Type="System.Double" />
+        <Parameter Name="FromScale" Type="Microsoft.VisualBasic.Compatibility.VB6.ScaleMode" />
+      </Parameters>
+      <Docs>
+        <param name="X">X 座標を表す <see cref="T:System.Double" />。</param>
+        <param name="FromScale">変換元となる Visual Basic 6.0 <see langword="ScaleMode" /> を表す <see cref="T:Microsoft.VisualBasic.Compatibility.VB6.ScaleMode" /> 列挙。</param>
+        <summary>Visual Basic 6.0 単位を、指定した <see cref="T:Microsoft.VisualBasic.Compatibility.VB6.ScaleMode" /> で、ピクセル単位に変換します。</summary>
+        <returns>指定した <see langword="ScaleMode" /> のピクセル値を含む <see cref="T:System.Double" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 には、によって定義された複数の座標系がサポートされている、`ScaleMode`プロパティです。 これには、ユーザー定義の値が含まれています。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]のみ (ピクセル) に基づいている座標系をサポートします。 この関数は、ピクセルとユーザー定義のスケール値の間で変換するアップグレードのツールによって使用されます。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToPixelsY">
+      <MemberSignature Language="C#" Value="public static double ToPixelsY (double Y, Microsoft.VisualBasic.Compatibility.VB6.ScaleMode FromScale);" />
+      <MemberSignature Language="ILAsm" Value=".method public static float64 ToPixelsY(float64 Y, valuetype Microsoft.VisualBasic.Compatibility.VB6.ScaleMode FromScale) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.ToPixelsY(System.Double,Microsoft.VisualBasic.Compatibility.VB6.ScaleMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Y" Type="System.Double" />
+        <Parameter Name="FromScale" Type="Microsoft.VisualBasic.Compatibility.VB6.ScaleMode" />
+      </Parameters>
+      <Docs>
+        <param name="Y">A<see cref="T:System.Double" />を表す Y 座標。</param>
+        <param name="FromScale">変換元となる Visual Basic 6.0 <see langword="ScaleMode" /> を表す <see cref="T:Microsoft.VisualBasic.Compatibility.VB6.ScaleMode" /> 列挙。</param>
+        <summary>Visual Basic 6.0 単位を、指定した <see cref="T:Microsoft.VisualBasic.Compatibility.VB6.ScaleMode" /> で、ピクセル単位に変換します。</summary>
+        <returns>指定した <see langword="ScaleMode" /> のピクセル値を含む <see cref="T:System.Double" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 には、によって定義された複数の座標系がサポートされている、`ScaleMode`プロパティです。 これには、ユーザー定義の値が含まれています。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]のみ (ピクセル) に基づいている座標系をサポートします。 この関数は、ピクセルとユーザー定義のスケール値の間で変換するアップグレードのツールによって使用されます。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TwipsPerPixelX">
+      <MemberSignature Language="C#" Value="public static float TwipsPerPixelX ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static float32 TwipsPerPixelX() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.TwipsPerPixelX" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>使用して画面の設定に基づくピクセルに twips を変換する値を取得します。</summary>
+        <returns>A<see langword="Double" />換算率を格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 では、座標が必要です。 で表されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]それをピクセル単位で表現されます。 この関数は、2 つの座標システム間で変換をアップグレード ツールによって使用されます。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TwipsPerPixelY">
+      <MemberSignature Language="C#" Value="public static float TwipsPerPixelY ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static float32 TwipsPerPixelY() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.TwipsPerPixelY" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>使用して画面の設定に基づくピクセルに twips を変換する値を取得します。</summary>
+        <returns>A<see langword="Double" />換算率を格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 では、座標が必要です。 で表されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]それをピクセル単位で表現されます。 この関数は、2 つの座標システム間で変換をアップグレード ツールによって使用されます。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TwipsToPixelsX">
+      <MemberSignature Language="C#" Value="public static double TwipsToPixelsX (double X);" />
+      <MemberSignature Language="ILAsm" Value=".method public static float64 TwipsToPixelsX(float64 X) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.TwipsToPixelsX(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="X" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="X">A<see langword="Double" />に変換する X 座標を格納しています。</param>
+        <summary>Twips から X 座標をピクセルに変換します。</summary>
+        <returns>A<see langword="Double" />ピクセル単位で表される、X 座標を格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 では、座標が必要です。 で表されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]それをピクセル単位で表現されます。 この関数は、2 つの座標システム間で変換をアップグレード ツールによって使用されます。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TwipsToPixelsY">
+      <MemberSignature Language="C#" Value="public static double TwipsToPixelsY (double Y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static float64 TwipsToPixelsY(float64 Y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.TwipsToPixelsY(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Y" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="Y">A<see langword="Double" />に変換する X 座標を格納しています。</param>
+        <summary>Twips からピクセルの Y 座標に変換します。</summary>
+        <returns>A<see langword="Double" />ピクセル単位で表される Y 座標を格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 では、座標が必要です。 で表されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]それをピクセル単位で表現されます。 この関数は、2 つの座標システム間で変換をアップグレード ツールによって使用されます。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateControls">
+      <MemberSignature Language="C#" Value="public static void ValidateControls (System.Windows.Forms.ContainerControl Form);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void ValidateControls(class System.Windows.Forms.ContainerControl Form) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.ValidateControls(System.Windows.Forms.ContainerControl)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Form" Type="System.Windows.Forms.ContainerControl" />
+      </Parameters>
+      <Docs>
+        <param name="Form"><see cref="T:System.Windows.Forms.ContainerControl" />コントロールが親があります。</param>
+        <summary>Visual Basic 6.0 の動作をエミュレート<see langword="ValidateControls" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 で、`ValidateControls`を強制的に使用された方法、`Validate`フォームが閉じられる; にフォーカスがある場合は、コントロールのイベント、`Validate`イベントが失敗した場合、エラーが発生しました。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]、`ValidateControls`はメソッドに置き換え、<xref:System.Windows.Forms.ContainerControl.Validate%2A>を返すメソッド`true`または`false`です。  
+  
+ この関数は、Visual Basic 6.0 の変動をエミュレートするアップグレードのツールによって使用されます。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WhatsThisMode">
+      <MemberSignature Language="C#" Value="public static void WhatsThisMode (System.Windows.Forms.Form Form);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void WhatsThisMode(class System.Windows.Forms.Form Form) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.WhatsThisMode(System.Windows.Forms.Form)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Form" Type="System.Windows.Forms.Form" />
+      </Parameters>
+      <Docs>
+        <param name="Form"><see cref="T:System.Windows.Forms.Form" />。</param>
+        <summary>Visual Basic 6.0 からアップグレードされたフォームをポップアップ ヘルプを表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 のポップアップ ヘルプを使用して実装された、`WhatsThisButton`と`WhatsThisHelp`、フォームのプロパティ以外のポップアップ ヘルプ[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]を使用して実装は、<xref:System.Windows.Forms.Form.HelpButton%2A>フォームのプロパティです。 この関数は、アップグレードしたアプリケーションでポップアップ ヘルプを表示する方法を変更するアップグレードのツールによって使用されます。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ZOrder">
+      <MemberSignature Language="C#" Value="public static void ZOrder (System.Windows.Forms.Control Control, int Position);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void ZOrder(class System.Windows.Forms.Control Control, int32 Position) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.Support.ZOrder(System.Windows.Forms.Control,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Control" Type="System.Windows.Forms.Control" />
+        <Parameter Name="Position" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="Control"><see cref="T:System.Windows.Forms.Control" />。</param>
+        <param name="Position">A<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.ZOrderConstants" />列挙します。</param>
+        <summary>Visual Basic の変換<see langword="ZOrder" />で使用するためのメソッド[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 で、 `ZOrder` ; のコントロールの重ね順を指定するメソッドが使用された[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]またを置き換え、<xref:System.Windows.Forms.Control.BringToFront%2A>と<xref:System.Windows.Forms.Control.SendToBack%2A>メソッドです。 この関数は、メソッドの間にマップするアップグレードのツールによって使用されます。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

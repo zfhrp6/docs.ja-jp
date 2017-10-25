@@ -1,0 +1,407 @@
+<Type Name="ProfileProvider" FullName="System.Web.Profile.ProfileProvider">
+  <TypeSignature Language="C#" Value="public abstract class ProfileProvider : System.Configuration.SettingsProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ProfileProvider extends System.Configuration.SettingsProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Profile.ProfileProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.SettingsProvider</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET がカスタム プロファイル プロバイダーを使用してプロファイル サービスを提供するために実装するコントラクトを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET プロファイルは、永続的なストレージとユーザー固有のプロパティの取得を提供します。 プロファイル プロパティの値と情報がによって決定方法でデータ ソースに格納されている、<xref:System.Web.Profile.ProfileProvider>実装します。 .NET Framework に含まれているプロファイル プロバイダーを使用することができます (から派生したクラスによって表される、<xref:System.Web.Profile.ProfileProvider>抽象クラス) から派生する新しいクラスを作成することで、独自のプロバイダーを実装することもできます<xref:System.Web.Profile.ProfileProvider>です。  
+  
+ カスタム プロファイル プロバイダーを作成する 2 つの主な理由があります。  
+  
+-   FoxPro データベース、Oracle データベース、またはその他のデータ ストアなど、.NET Framework に付属するプロファイル プロバイダーによってサポートされていないデータ ソースのプロファイル情報を格納する必要があります。  
+  
+-   .NET Framework に付属しているプロバイダーによって使用されるデータベース スキーマとは異なるデータベース スキーマを使用してプロファイル情報を管理する必要があります。 この一般的な例は、企業ネットワークまたは Web サイトの SQL Server データベースに既に存在するユーザー データになります。  
+  
+ <xref:System.Web.Profile.ProfileProvider>抽象クラスから継承、<xref:System.Configuration.SettingsProvider>抽象クラスから継承され、<xref:System.Configuration.Provider.ProviderBase>抽象クラスです。 実装するクラス<xref:System.Web.Profile.ProfileProvider>の必要なメンバーを実装する必要がありますも、<xref:System.Configuration.SettingsProvider>と<xref:System.Configuration.Provider.ProviderBase>抽象クラスです。 プロファイル プロバイダーの実装の詳細については、次を参照してください。[プロファイル プロバイダーを実装する](http://msdn.microsoft.com/library/58de6e99-31a7-41b9-93ed-51b9b4a67e98)です。  
+  
+   
+  
+## Examples  
+ 例については、<xref:System.Web.Profile.ProfileProvider>実装を参照してください[する方法: ビルドおよび実行するサンプル プロファイル プロバイダー](http://msdn.microsoft.com/library/90f65aa9-82dd-4a86-97e6-911037bd6cfa)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ProfileProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Profile.ProfileProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 継承するクラスのコンス トラクターを実装する必要はありません、<xref:System.Web.Profile.ProfileProvider>抽象クラスです。 初期化の値を<xref:System.Web.Profile.ProfileProvider>に実装が渡される、<xref:System.Configuration.Provider.ProviderBase.Initialize%2A>メソッドの実装です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteInactiveProfiles">
+      <MemberSignature Language="C#" Value="public abstract int DeleteInactiveProfiles (System.Web.Profile.ProfileAuthenticationOption authenticationOption, DateTime userInactiveSinceDate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 DeleteInactiveProfiles(valuetype System.Web.Profile.ProfileAuthenticationOption authenticationOption, valuetype System.DateTime userInactiveSinceDate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileProvider.DeleteInactiveProfiles(System.Web.Profile.ProfileAuthenticationOption,System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="authenticationOption" Type="System.Web.Profile.ProfileAuthenticationOption" />
+        <Parameter Name="userInactiveSinceDate" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="authenticationOption">1 つ、<see cref="T:System.Web.Profile.ProfileAuthenticationOption" />値を指定する認証かどうか、匿名、または両方の種類のプロファイルが削除されます。</param>
+        <param name="userInactiveSinceDate">A<see cref="T:System.DateTime" />を識別するユーザー プロファイルがアクティブでないと見なされます。 場合、<see cref="P:System.Web.Profile.ProfileInfo.LastActivityDate" />ユーザー プロファイルの値は、この日付と時刻までに発生する、プロファイルと見なされます使用頻度の低い。</param>
+        <summary>派生クラスでオーバーライドされると、指定した日付より前に発生した最後のアクティビティの日付のプロファイルのすべてのユーザー プロファイル データを削除します。</summary>
+        <returns>データ ソースから削除されたプロファイルの数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileProvider.DeleteInactiveProfiles%2A>メソッドを使用して、データ ソースから未使用のプロファイル データを削除します。 データのみ、`applicationName`構成で指定されたファイルを削除します。 `authenticationOption`パラメーターは、匿名のみプロファイルは、のみプロファイルを認証するかどうかを指定またはすべてのプロファイルを検索します。 プロファイルを<xref:System.Web.Profile.ProfileInfo.LastActivityDate%2A>以前指定したに該当する`userInactiveSinceDate`パラメーターの値が削除されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装するためのメソッド シグネチャを示しています、<xref:System.Web.Profile.ProfileProvider.DeleteInactiveProfiles%2A>メソッドです。 完全な例については<xref:System.Web.Profile.ProfileProvider>実装を参照してください[する方法: ビルドおよび実行するサンプル プロファイル プロバイダー](http://msdn.microsoft.com/library/90f65aa9-82dd-4a86-97e6-911037bd6cfa)です。  
+  
+ [!code-csharp[System.Web.Profile.ProfileProvider#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileProvider/CS/odbcprofileprovidersnippets.cs#3)]
+ [!code-vb[System.Web.Profile.ProfileProvider#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileProvider/VB/odbcprofileprovidersnippets.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteProfiles">
+      <MemberSignature Language="C#" Value="public abstract int DeleteProfiles (string[] usernames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 DeleteProfiles(string[] usernames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileProvider.DeleteProfiles(System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="usernames" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="usernames">削除するプロファイルのユーザー名の文字列配列。</param>
+        <summary>派生クラスでオーバーライドされると、プロファイルのプロパティと指定されたユーザー名の一覧に一致するプロファイルの情報を削除します。</summary>
+        <returns>データ ソースから削除されたプロファイルの数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileProvider.DeleteProfiles%2A>メソッドで指定したプロファイルは削除、`usernames`パラメーター。 データのみ、`applicationName`構成で指定されたファイルを削除します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装するためのメソッド シグネチャを示しています、<xref:System.Web.Profile.ProfileProvider.DeleteProfiles%2A>メソッドです。 完全な例については<xref:System.Web.Profile.ProfileProvider>実装を参照してください[する方法: ビルドおよび実行するサンプル プロファイル プロバイダー](http://msdn.microsoft.com/library/90f65aa9-82dd-4a86-97e6-911037bd6cfa)です。  
+  
+ [!code-csharp[System.Web.Profile.ProfileProvider#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileProvider/CS/odbcprofileprovidersnippets.cs#2)]
+ [!code-vb[System.Web.Profile.ProfileProvider#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileProvider/VB/odbcprofileprovidersnippets.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteProfiles">
+      <MemberSignature Language="C#" Value="public abstract int DeleteProfiles (System.Web.Profile.ProfileInfoCollection profiles);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 DeleteProfiles(class System.Web.Profile.ProfileInfoCollection profiles) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileProvider.DeleteProfiles(System.Web.Profile.ProfileInfoCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="profiles" Type="System.Web.Profile.ProfileInfoCollection" />
+      </Parameters>
+      <Docs>
+        <param name="profiles">A<see cref="T:System.Web.Profile.ProfileInfoCollection" />を削除するプロファイルに関する情報。</param>
+        <summary>派生クラスでオーバーライドされると、プロファイルのプロパティとプロファイルの指定された一覧の情報を削除します。</summary>
+        <returns>データ ソースから削除されたプロファイルの数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileProvider.DeleteProfiles%2A>メソッドで指定したプロファイルは削除、`profiles`パラメーター。 データのみ、`applicationName`構成で指定されたファイルを削除します。  
+  
+ 派生クラスでこのメソッドを実装するときに行うこともできます、`applicationName`値、および<xref:System.Web.Profile.ProfileInfo.UserName%2A>の各プロパティ<xref:System.Web.Profile.ProfileInfo>提供されたオブジェクト<xref:System.Web.Profile.ProfileInfoCollection>をデータ ソースから削除するプロファイルを判断します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装するためのメソッド シグネチャを示しています、<xref:System.Web.Profile.ProfileProvider.DeleteProfiles%2A>メソッドです。 完全な例については<xref:System.Web.Profile.ProfileProvider>実装を参照してください[する方法: ビルドおよび実行するサンプル プロファイル プロバイダー](http://msdn.microsoft.com/library/90f65aa9-82dd-4a86-97e6-911037bd6cfa)です。  
+  
+ [!code-csharp[System.Web.Profile.ProfileProvider#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileProvider/CS/odbcprofileprovidersnippets.cs#1)]
+ [!code-vb[System.Web.Profile.ProfileProvider#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileProvider/VB/odbcprofileprovidersnippets.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindInactiveProfilesByUserName">
+      <MemberSignature Language="C#" Value="public abstract System.Web.Profile.ProfileInfoCollection FindInactiveProfilesByUserName (System.Web.Profile.ProfileAuthenticationOption authenticationOption, string usernameToMatch, DateTime userInactiveSinceDate, int pageIndex, int pageSize, out int totalRecords);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.Profile.ProfileInfoCollection FindInactiveProfilesByUserName(valuetype System.Web.Profile.ProfileAuthenticationOption authenticationOption, string usernameToMatch, valuetype System.DateTime userInactiveSinceDate, int32 pageIndex, int32 pageSize, [out] int32&amp; totalRecords) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileProvider.FindInactiveProfilesByUserName(System.Web.Profile.ProfileAuthenticationOption,System.String,System.DateTime,System.Int32,System.Int32,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Profile.ProfileInfoCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="authenticationOption" Type="System.Web.Profile.ProfileAuthenticationOption" />
+        <Parameter Name="usernameToMatch" Type="System.String" />
+        <Parameter Name="userInactiveSinceDate" Type="System.DateTime" />
+        <Parameter Name="pageIndex" Type="System.Int32" />
+        <Parameter Name="pageSize" Type="System.Int32" />
+        <Parameter Name="totalRecords" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="authenticationOption">1 つ、<see cref="T:System.Web.Profile.ProfileAuthenticationOption" />値を指定する認証かどうか、匿名、または両方の種類のプロファイルが返されます。</param>
+        <param name="usernameToMatch">検索するユーザー名。</param>
+        <param name="userInactiveSinceDate">A<see cref="T:System.DateTime" />を識別するユーザー プロファイルがアクティブでないと見なされます。 場合、<see cref="P:System.Web.Profile.ProfileInfo.LastActivityDate" />ユーザー プロファイルの値は、この日付と時刻までに発生する、プロファイルと見なされます使用頻度の低い。</param>
+        <param name="pageIndex">返される結果ページのインデックス。</param>
+        <param name="pageSize">返される結果ページのサイズ。</param>
+        <param name="totalRecords">このメソッドが戻るときに、プロファイルの合計数が含まれています。</param>
+        <summary>派生クラスでオーバーライドされると、または指定した日付より前に、最後のアクティビティの日付が発生したし、ユーザー名が指定されたユーザー名と一致するプロファイルのプロファイル情報を取得します。</summary>
+        <returns>A<see cref="T:System.Web.Profile.ProfileInfoCollection" />のユーザー名と一致する、指定された無効なプロファイルのユーザー プロファイル情報を含む<paramref name="usernameToMatch" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileProvider.FindInactiveProfilesByUserName%2A>メソッドを使用するユーザー名と一致する、指定されたプロファイルを使用していないユーザー プロファイルのプロファイル情報の取得を`usernameToMatch`パラメーター。 データのみ、`applicationName`構成で指定されたファイルが返されます。 `authenticationOption`パラメーターは、匿名のみプロファイルは、のみプロファイルを認証するかどうかを指定またはすべてのプロファイルを検索します。 検索対象のプロファイルのいずれかのプロファイルが、 <xref:System.Web.Profile.ProfileInfo.LastActivityDate%2A> 、指定された以前に発生する`userInactiveSinceDate`パラメーターの値が返されます。  
+  
+ データ ソースは、ワイルドカード文字などの他の検索機能をサポートしている場合は、ユーザー名をより広範な検索機能を提供できます。  
+  
+ によって返される結果<xref:System.Web.Profile.ProfileProvider.FindInactiveProfilesByUserName%2A>によって制限されて、`pageIndex`と`pageSize`パラメーター。 `pageSize`パラメーターの最大数を特定する<xref:System.Web.Profile.ProfileInfo>で返されるオブジェクト、<xref:System.Web.Profile.ProfileInfoCollection>です。 `pageIndex`パラメーターを返すには、0 が最初のページを識別する結果のページを識別します。 `totalRecords`パラメーターは、`out`構成済みの使用頻度の低いユーザー プロファイルの合計数に設定されているパラメーター`applicationName`を基に、`authenticationOption`と`userInactiveSinceDate`パラメーター。 例では、構成済みの 13 人のユーザーがある場合の`applicationName`、および`pageIndex`値は 1 と、 `pageSize` 5 の<xref:System.Web.Profile.ProfileInfoCollection>返されるは 6 ~ 10 番目の非アクティブに返されるプロファイルが含まれます。 `totalRecords`パラメーターは 13 に設定するとします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装するためのメソッド シグネチャを示しています、<xref:System.Web.Profile.ProfileProvider.FindInactiveProfilesByUserName%2A>メソッドです。 完全な例については<xref:System.Web.Profile.ProfileProvider>実装を参照してください[する方法: ビルドおよび実行するサンプル プロファイル プロバイダー](http://msdn.microsoft.com/library/90f65aa9-82dd-4a86-97e6-911037bd6cfa)です。  
+  
+ [!code-csharp[System.Web.Profile.ProfileProvider#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileProvider/CS/odbcprofileprovidersnippets.cs#5)]
+ [!code-vb[System.Web.Profile.ProfileProvider#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileProvider/VB/odbcprofileprovidersnippets.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindProfilesByUserName">
+      <MemberSignature Language="C#" Value="public abstract System.Web.Profile.ProfileInfoCollection FindProfilesByUserName (System.Web.Profile.ProfileAuthenticationOption authenticationOption, string usernameToMatch, int pageIndex, int pageSize, out int totalRecords);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.Profile.ProfileInfoCollection FindProfilesByUserName(valuetype System.Web.Profile.ProfileAuthenticationOption authenticationOption, string usernameToMatch, int32 pageIndex, int32 pageSize, [out] int32&amp; totalRecords) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileProvider.FindProfilesByUserName(System.Web.Profile.ProfileAuthenticationOption,System.String,System.Int32,System.Int32,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Profile.ProfileInfoCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="authenticationOption" Type="System.Web.Profile.ProfileAuthenticationOption" />
+        <Parameter Name="usernameToMatch" Type="System.String" />
+        <Parameter Name="pageIndex" Type="System.Int32" />
+        <Parameter Name="pageSize" Type="System.Int32" />
+        <Parameter Name="totalRecords" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="authenticationOption">1 つ、<see cref="T:System.Web.Profile.ProfileAuthenticationOption" />値を指定する認証かどうか、匿名、または両方の種類のプロファイルが返されます。</param>
+        <param name="usernameToMatch">検索するユーザー名。</param>
+        <param name="pageIndex">返される結果ページのインデックス。</param>
+        <param name="pageSize">返される結果ページのサイズ。</param>
+        <param name="totalRecords">このメソッドが戻るときに、プロファイルの合計数が含まれています。</param>
+        <summary>派生クラスでオーバーライドされると、ユーザー名が指定されたユーザー名を一致するプロファイルのプロファイル情報を取得します。</summary>
+        <returns>A<see cref="T:System.Web.Profile.ProfileInfoCollection" />のユーザー名と一致する、指定されたプロファイルのユーザー プロファイル情報を含む<paramref name="usernameToMatch" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileProvider.FindProfilesByUserName%2A>メソッドをユーザー名と一致する、指定されたプロファイルのプロファイル情報の一覧を返します`usernameToMatch`パラメーター。 データのみ、`applicationName`構成で指定されたファイルが返されます。 `authenticationOption`パラメーターは、匿名のみプロファイルは、のみプロファイルを認証するかどうかを指定またはすべてのプロファイルを検索します。  
+  
+ データ ソースは、ワイルドカード文字などの他の検索機能をサポートしている場合は、ユーザー名をより広範な検索機能を提供できます。  
+  
+ によって返される結果<xref:System.Web.Profile.ProfileProvider.FindProfilesByUserName%2A>によって制限されて、`pageIndex`と`pageSize`パラメーター。 `pageSize`パラメーターの最大数を特定する<xref:System.Web.Profile.ProfileInfo>で返されるオブジェクト、<xref:System.Web.Profile.ProfileInfoCollection>です。 `pageIndex`パラメーターを返すには、0 が最初のページを識別する結果のページを識別します。 `totalRecords`パラメーターは、`out`構成済みの使用頻度の低いユーザー プロファイルの合計数に設定されているパラメーター`applicationName`を基に、`authenticationOption`と`userInactiveSinceDate`パラメーター。 例では、構成済みの 13 人のユーザーがある場合の`applicationName`、および`pageIndex`値は 1 と、 `pageSize` 5 の<xref:System.Web.Profile.ProfileInfoCollection>返されるは 6 ~ 10 番目の非アクティブに返されるプロファイルが含まれます。 `totalRecords`パラメーターは 13 に設定するとします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装するためのメソッド シグネチャを示しています、<xref:System.Web.Profile.ProfileProvider.FindProfilesByUserName%2A>メソッドです。 完全な例については<xref:System.Web.Profile.ProfileProvider>実装を参照してください[する方法: ビルドおよび実行するサンプル プロファイル プロバイダー](http://msdn.microsoft.com/library/90f65aa9-82dd-4a86-97e6-911037bd6cfa)です。  
+  
+ [!code-csharp[System.Web.Profile.ProfileProvider#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileProvider/CS/odbcprofileprovidersnippets.cs#4)]
+ [!code-vb[System.Web.Profile.ProfileProvider#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileProvider/VB/odbcprofileprovidersnippets.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllInactiveProfiles">
+      <MemberSignature Language="C#" Value="public abstract System.Web.Profile.ProfileInfoCollection GetAllInactiveProfiles (System.Web.Profile.ProfileAuthenticationOption authenticationOption, DateTime userInactiveSinceDate, int pageIndex, int pageSize, out int totalRecords);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.Profile.ProfileInfoCollection GetAllInactiveProfiles(valuetype System.Web.Profile.ProfileAuthenticationOption authenticationOption, valuetype System.DateTime userInactiveSinceDate, int32 pageIndex, int32 pageSize, [out] int32&amp; totalRecords) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileProvider.GetAllInactiveProfiles(System.Web.Profile.ProfileAuthenticationOption,System.DateTime,System.Int32,System.Int32,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Profile.ProfileInfoCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="authenticationOption" Type="System.Web.Profile.ProfileAuthenticationOption" />
+        <Parameter Name="userInactiveSinceDate" Type="System.DateTime" />
+        <Parameter Name="pageIndex" Type="System.Int32" />
+        <Parameter Name="pageSize" Type="System.Int32" />
+        <Parameter Name="totalRecords" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="authenticationOption">1 つ、<see cref="T:System.Web.Profile.ProfileAuthenticationOption" />値を指定する認証かどうか、匿名、または両方の種類のプロファイルが返されます。</param>
+        <param name="userInactiveSinceDate">A<see cref="T:System.DateTime" />を識別するユーザー プロファイルがアクティブでないと見なされます。 場合、<see cref="P:System.Web.Profile.ProfileInfo.LastActivityDate" />ユーザーのプロファイルが発生のまたはこの日付と時刻の前にプロファイルと見なされます使用頻度の低い。</param>
+        <param name="pageIndex">返される結果ページのインデックス。</param>
+        <param name="pageSize">返される結果ページのサイズ。</param>
+        <param name="totalRecords">このメソッドが戻るときに、プロファイルの合計数が含まれています。</param>
+        <summary>派生クラスでオーバーライドされると、プロファイルが指定した日付またはそれ以前に発生した最後のアクティビティの日付のデータ ソースからのユーザー プロファイル データを取得します。</summary>
+        <returns>A<see cref="T:System.Web.Profile.ProfileInfoCollection" />は非アクティブなプロファイルのユーザー プロファイル情報を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileProvider.GetAllInactiveProfiles%2A>未使用のユーザー プロファイルのプロファイル情報を取得するメソッドを使用します。 データのみ、`applicationName`構成で指定されたファイルが返されます。 `authenticationOption`パラメーターは、匿名のみプロファイルは、のみプロファイルを認証するかどうかを指定またはすべてのプロファイルを検索します。 検索対象のプロファイルのいずれかのプロファイルが、 <xref:System.Web.Profile.ProfileInfo.LastActivityDate%2A> 、指定された以前に発生する`userInactiveSinceDate`パラメーターの値が返されます。  
+  
+ によって返される結果<xref:System.Web.Profile.ProfileProvider.GetAllInactiveProfiles%2A>によって制限されて、`pageIndex`と`pageSize`パラメーター。 `pageSize`パラメーターの最大数を特定する<xref:System.Web.Profile.ProfileInfo>で返されるオブジェクト、<xref:System.Web.Profile.ProfileInfoCollection>です。 `pageIndex`パラメーターを返すには、0 が最初のページを識別する結果のページを識別します。 `totalRecords`パラメーターは、`out`構成済みの使用頻度の低いユーザー プロファイルの合計数に設定されているパラメーター`applicationName`を基に、`authenticationOption`と`userInactiveSinceDate`パラメーター。 例では、構成済みの 13 人のユーザーがある場合の`applicationName`、および`pageIndex`値は 1 と、 `pageSize` 5 の<xref:System.Web.Profile.ProfileInfoCollection>返されるは 6 ~ 10 番目の非アクティブに返されるプロファイルが含まれます。 `totalRecords`パラメーターは 13 に設定するとします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装するためのメソッド シグネチャを示しています、<xref:System.Web.Profile.ProfileProvider.GetAllInactiveProfiles%2A>メソッドです。 完全な例については<xref:System.Web.Profile.ProfileProvider>実装を参照してください[する方法: ビルドおよび実行するサンプル プロファイル プロバイダー](http://msdn.microsoft.com/library/90f65aa9-82dd-4a86-97e6-911037bd6cfa)です。  
+  
+ [!code-csharp[System.Web.Profile.ProfileProvider#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileProvider/CS/odbcprofileprovidersnippets.cs#7)]
+ [!code-vb[System.Web.Profile.ProfileProvider#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileProvider/VB/odbcprofileprovidersnippets.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllProfiles">
+      <MemberSignature Language="C#" Value="public abstract System.Web.Profile.ProfileInfoCollection GetAllProfiles (System.Web.Profile.ProfileAuthenticationOption authenticationOption, int pageIndex, int pageSize, out int totalRecords);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.Profile.ProfileInfoCollection GetAllProfiles(valuetype System.Web.Profile.ProfileAuthenticationOption authenticationOption, int32 pageIndex, int32 pageSize, [out] int32&amp; totalRecords) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileProvider.GetAllProfiles(System.Web.Profile.ProfileAuthenticationOption,System.Int32,System.Int32,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Profile.ProfileInfoCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="authenticationOption" Type="System.Web.Profile.ProfileAuthenticationOption" />
+        <Parameter Name="pageIndex" Type="System.Int32" />
+        <Parameter Name="pageSize" Type="System.Int32" />
+        <Parameter Name="totalRecords" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="authenticationOption">1 つ、<see cref="T:System.Web.Profile.ProfileAuthenticationOption" />値を指定する認証かどうか、匿名、または両方の種類のプロファイルが返されます。</param>
+        <param name="pageIndex">返される結果ページのインデックス。</param>
+        <param name="pageSize">返される結果ページのサイズ。</param>
+        <param name="totalRecords">このメソッドが戻るときに、プロファイルの合計数が含まれています。</param>
+        <summary>派生クラスでオーバーライドされると、データ ソースのすべてのプロファイルのユーザー プロファイル データを取得します。</summary>
+        <returns>A<see cref="T:System.Web.Profile.ProfileInfoCollection" />データ ソース内のすべてのプロファイルのユーザー プロファイル情報を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileProvider.GetAllProfiles%2A>メソッドを使用して、すべてのプロファイルのプロファイル情報を取得します。 データのみ、`applicationName`構成で指定されたファイルが返されます。 `authenticationOption`パラメーターは、匿名のみプロファイルは、のみプロファイルを認証するかどうかを指定またはすべてのプロファイルを検索します。  
+  
+ によって返される結果<xref:System.Web.Profile.ProfileProvider.GetAllInactiveProfiles%2A>によって制限されて、`pageIndex`と`pageSize`パラメーター。 `pageSize`パラメーターの最大数を特定する<xref:System.Web.Profile.ProfileInfo>で返されるオブジェクト、<xref:System.Web.Profile.ProfileInfoCollection>です。 `pageIndex`パラメーターを返すには、0 が最初のページを識別する結果のページを識別します。 `totalRecords`パラメーターは、`out`構成済みの使用頻度の低いユーザー プロファイルの合計数に設定されているパラメーター`applicationName`を基に、`authenticationOption`と`userInactiveSinceDate`パラメーター。 例では、構成済みの 13 人のユーザーがある場合の`applicationName`、および`pageIndex`値は 1 と、 `pageSize` 5 の<xref:System.Web.Profile.ProfileInfoCollection>返されるは 6 ~ 10 番目の非アクティブに返されるプロファイルが含まれます。 `totalRecords`パラメーターは 13 に設定するとします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装するためのメソッド シグネチャを示しています、<xref:System.Web.Profile.ProfileProvider.GetAllProfiles%2A>メソッドです。 完全な例については<xref:System.Web.Profile.ProfileProvider>実装を参照してください[する方法: ビルドおよび実行するサンプル プロファイル プロバイダー](http://msdn.microsoft.com/library/90f65aa9-82dd-4a86-97e6-911037bd6cfa)です。  
+  
+ [!code-csharp[System.Web.Profile.ProfileProvider#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileProvider/CS/odbcprofileprovidersnippets.cs#6)]
+ [!code-vb[System.Web.Profile.ProfileProvider#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileProvider/VB/odbcprofileprovidersnippets.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNumberOfInactiveProfiles">
+      <MemberSignature Language="C#" Value="public abstract int GetNumberOfInactiveProfiles (System.Web.Profile.ProfileAuthenticationOption authenticationOption, DateTime userInactiveSinceDate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 GetNumberOfInactiveProfiles(valuetype System.Web.Profile.ProfileAuthenticationOption authenticationOption, valuetype System.DateTime userInactiveSinceDate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileProvider.GetNumberOfInactiveProfiles(System.Web.Profile.ProfileAuthenticationOption,System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="authenticationOption" Type="System.Web.Profile.ProfileAuthenticationOption" />
+        <Parameter Name="userInactiveSinceDate" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="authenticationOption">1 つ、<see cref="T:System.Web.Profile.ProfileAuthenticationOption" />値を指定する認証かどうか、匿名、または両方の種類のプロファイルが返されます。</param>
+        <param name="userInactiveSinceDate">A<see cref="T:System.DateTime" />を識別するユーザー プロファイルがアクティブでないと見なされます。 場合、<see cref="P:System.Web.Profile.ProfileInfo.LastActivityDate" />ユーザーのプロファイルが発生のまたはこの日付と時刻の前にプロファイルと見なされます使用頻度の低い。</param>
+        <summary>派生クラスでオーバーライドされると、指定した日付またはそれ以前に発生した最後のアクティビティの日付のプロファイルの数を返します。</summary>
+        <returns>指定した日付またはそれ以前に発生した最後のアクティビティの日付のプロファイルの数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileProvider.GetNumberOfInactiveProfiles%2A>メソッドを使用して、すべての未使用のユーザー プロファイルの数を取得します。 データのみ、`applicationName`構成で指定されたファイルが返されます。 `authenticationOption`パラメーターは、匿名のみプロファイルは、のみプロファイルを認証するかどうかを指定またはすべてのプロファイルを検索します。 検索対象のプロファイルのいずれかのプロファイルが、 <xref:System.Web.Profile.ProfileInfo.LastActivityDate%2A> 、指定された以前に発生する`userInactiveSinceDate`パラメーターの値がカウントされます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装するためのメソッド シグネチャを示しています、<xref:System.Web.Profile.ProfileProvider.GetNumberOfInactiveProfiles%2A>メソッドです。 完全な例については<xref:System.Web.Profile.ProfileProvider>実装を参照してください[する方法: ビルドおよび実行するサンプル プロファイル プロバイダー](http://msdn.microsoft.com/library/90f65aa9-82dd-4a86-97e6-911037bd6cfa)です。  
+  
+ [!code-csharp[System.Web.Profile.ProfileProvider#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileProvider/CS/odbcprofileprovidersnippets.cs#8)]
+ [!code-vb[System.Web.Profile.ProfileProvider#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileProvider/VB/odbcprofileprovidersnippets.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

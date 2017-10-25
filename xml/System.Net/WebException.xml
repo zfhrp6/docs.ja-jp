@@ -1,0 +1,469 @@
+<Type Name="WebException" FullName="System.Net.WebException">
+  <TypeSignature Language="C#" Value="public class WebException : InvalidOperationException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit WebException extends System.InvalidOperationException implements class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Net.WebException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Requests</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.InvalidOperationException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プラグ可能なプロトコルでネットワークにアクセスしているときにエラーが発生した場合にスローされる例外。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.WebException>の子孫のクラスからクラスがスローされた<xref:System.Net.WebRequest>と<xref:System.Net.WebResponse>インターネットにアクセスするためのホット プラグ可能なプロトコルを実装しています。  
+  
+ ときに<xref:System.Net.WebException>の子によってスローされた、<xref:System.Net.WebRequest>クラス、<xref:System.Net.WebException.Response%2A>プロパティは、アプリケーションへのインターネット応答を提供します。  
+  
+ **関連するヒント**  
+  
+ **要求が失敗した理由を特定の例外の Response プロパティを確認します。**  
+ <xref:System.Net.WebException> 例外が <xref:System.Net.WebRequest> クラスの派生クラスによってスローされた場合、<xref:System.Net.WebException.Response%2A> プロパティにはアプリケーションへのインターネット応答が示されます。  
+  
+ **要求が失敗した理由を特定の例外の Status プロパティを確認します。**  
+ 例外の <xref:System.Net.WebException.Status%2A> プロパティには、このエラーのステータス情報が示されます。 詳細については、「<xref:System.Net.WebExceptionStatus>」を参照してください。  
+  
+ **XML Web サービスにステップするときにタイムアウトが場合、は、XML Web サービス呼び出しを無限のタイムアウト値を設定します。**  
+ 詳細については、次を参照してください。[エラー: タイムアウト中に Web サービスのデバッグ](http://msdn.microsoft.com/library/4b7df112-788a-4429-9a0c-4c6dac4fb609)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.WebException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のコンス トラクターは、の新しいインスタンスを初期化、<xref:System.Net.WebException>クラスです。 <xref:System.Exception.Message%2A>プロパティは、エラーを説明するシステム提供のメッセージに初期化します。 このメッセージには、現在のシステムのカルチャが考慮されます。 <xref:System.Exception.InnerException%2A>と<xref:System.Net.WebException.Response%2A>にプロパティが初期化されます`null`です。 <xref:System.Net.WebException.Status%2A> プロパティは <xref:System.Net.WebExceptionStatus.RequestCanceled> に初期化されます。  
+  
+   
+  
+## Examples  
+ 次の例は、既定値をスロー<xref:System.Net.WebException>です。  
+  
+ [!code-cpp[WebException_Constructor1#1](~/samples/snippets/cpp/VS_Snippets_Remoting/WebException_Constructor1/CPP/webexception_constructor1.cpp#1)]
+ [!code-csharp[WebException_Constructor1#1](~/samples/snippets/csharp/VS_Snippets_Remoting/WebException_Constructor1/CS/webexception_constructor1.cs#1)]
+ [!code-vb[WebException_Constructor1#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/WebException_Constructor1/VB/webexception_constructor1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">エラー メッセージのテキスト。</param>
+        <summary>指定されたエラー メッセージで <see cref="T:System.Net.WebException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.WebException>でインスタンスを初期化、<xref:System.Exception.Message%2A>プロパティの値に設定する`message`です。 場合`message`は`null`、<xref:System.Exception.Message%2A>プロパティは、システム提供のメッセージに初期化します。 <xref:System.Exception.InnerException%2A>と<xref:System.Net.WebException.Response%2A>にプロパティが初期化されます`null`です。 <xref:System.Net.WebException.Status%2A> プロパティは <xref:System.Net.WebExceptionStatus.RequestCanceled> に初期化されます。  
+  
+   
+  
+## Examples  
+ 次の例をスロー、<xref:System.Net.WebException>エラー メッセージを指定しています。  
+  
+ [!code-cpp[WebException_Constructor2#1](~/samples/snippets/cpp/VS_Snippets_Remoting/WebException_Constructor2/CPP/webexception_constructor2.cpp#1)]
+ [!code-csharp[WebException_Constructor2#1](~/samples/snippets/csharp/VS_Snippets_Remoting/WebException_Constructor2/CS/webexception_constructor2.cs#1)]
+ [!code-vb[WebException_Constructor2#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/WebException_Constructor2/VB/webexception_constructor2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WebException (System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo serializationInfo, valuetype System.Runtime.Serialization.StreamingContext streamingContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="serializationInfo" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="streamingContext" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="serializationInfo">新しい <see cref="T:System.Net.WebException" /> をシリアル化するために必要な情報を格納している <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="streamingContext">新しい <see cref="T:System.Net.WebException" /> に関連付けられるシリアル化ストリームの転送元を格納する <see cref="T:System.Runtime.Serialization.StreamingContext" />。</param>
+        <summary>指定した <see cref="T:System.Runtime.Serialization.SerializationInfo" /> インスタンスと <see cref="T:System.Runtime.Serialization.StreamingContext" /> インスタンスから、<see cref="T:System.Net.WebException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを実装して、<xref:System.Runtime.Serialization.ISerializable>のためのインターフェイス、<xref:System.Net.WebException>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebException (string message, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">エラー メッセージのテキスト。</param>
+        <param name="innerException">入れ子になった例外。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.WebException" />クラスを指定したエラー メッセージと入れ子になった例外を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.WebException>でインスタンスを初期化、<xref:System.Exception.Message%2A>プロパティの値に設定する`message`と<xref:System.Exception.InnerException%2A>プロパティの値に設定する`innerException`です。 場合`message`は`null`、<xref:System.Exception.Message%2A>プロパティは、システム提供のメッセージに初期化します。 <xref:System.Exception.InnerException%2A>と<xref:System.Net.WebException.Response%2A>にプロパティが初期化されます`null`です。 <xref:System.Net.WebException.Status%2A> プロパティは <xref:System.Net.WebExceptionStatus.RequestCanceled> に初期化されます。  
+  
+   
+  
+## Examples  
+ 次の例をスロー、<xref:System.Net.WebException>エラー メッセージと入れ子になった例外を指定しています。  
+  
+ [!code-cpp[WebException_Constructor4#1](~/samples/snippets/cpp/VS_Snippets_Remoting/WebException_Constructor4/CPP/webexception_constructor4.cpp#1)]
+ [!code-csharp[WebException_Constructor4#1](~/samples/snippets/csharp/VS_Snippets_Remoting/WebException_Constructor4/CS/webexception_constructor4.cs#1)]
+ [!code-vb[WebException_Constructor4#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/WebException_Constructor4/VB/webexception_constructor4.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebException (string message, System.Net.WebExceptionStatus status);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, valuetype System.Net.WebExceptionStatus status) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebException.#ctor(System.String,System.Net.WebExceptionStatus)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="status" Type="System.Net.WebExceptionStatus" />
+      </Parameters>
+      <Docs>
+        <param name="message">エラー メッセージのテキスト。</param>
+        <param name="status"><see cref="T:System.Net.WebExceptionStatus" /> 値のいずれか。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.WebException" />指定したエラー メッセージと状態を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.WebException>でインスタンスを初期化、<xref:System.Exception.Message%2A>プロパティの値に設定する`message`と<xref:System.Net.WebException.Status%2A>プロパティの値に設定する`status`です。 場合`message`は`null`、<xref:System.Exception.Message%2A>プロパティは、システム提供のメッセージに初期化します。 <xref:System.Exception.InnerException%2A>と<xref:System.Net.WebException.Response%2A>にプロパティが初期化されます`null`です。  
+  
+   
+  
+## Examples  
+ 次の例をスロー、<xref:System.Net.WebException>エラー メッセージを指定することによって、<xref:System.Net.WebExceptionStatus>です。  
+  
+ [!code-cpp[WebException_Constructor3#1](~/samples/snippets/cpp/VS_Snippets_Remoting/WebException_Constructor3/CPP/webexception_constructor3.cpp#1)]
+ [!code-csharp[WebException_Constructor3#1](~/samples/snippets/csharp/VS_Snippets_Remoting/WebException_Constructor3/CS/webexception_constructor3.cs#1)]
+ [!code-vb[WebException_Constructor3#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/WebException_Constructor3/VB/webexception_constructor3.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebException (string message, Exception innerException, System.Net.WebExceptionStatus status, System.Net.WebResponse response);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception innerException, valuetype System.Net.WebExceptionStatus status, class System.Net.WebResponse response) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebException.#ctor(System.String,System.Exception,System.Net.WebExceptionStatus,System.Net.WebResponse)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="innerException" Type="System.Exception" />
+        <Parameter Name="status" Type="System.Net.WebExceptionStatus" />
+        <Parameter Name="response" Type="System.Net.WebResponse" />
+      </Parameters>
+      <Docs>
+        <param name="message">エラー メッセージのテキスト。</param>
+        <param name="innerException">入れ子になった例外。</param>
+        <param name="status"><see cref="T:System.Net.WebExceptionStatus" /> 値のいずれか。</param>
+        <param name="response">A<see cref="T:System.Net.WebResponse" />リモート ホストからの応答を格納しているインスタンス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.WebException" />指定したエラー メッセージ、入れ子になった例外、状態、および応答を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.WebException>でインスタンスを初期化、<xref:System.Exception.Message%2A>プロパティの値に設定する`message`では、<xref:System.Exception.InnerException%2A>プロパティの値に設定する`innerException`、<xref:System.Net.WebException.Status%2A>プロパティの値に設定する`status`、および<xref:System.Net.WebException.Response%2A>プロパティの値に設定`response`です。 場合`message`は`null`、<xref:System.Exception.Message%2A>プロパティは、システム提供のメッセージに初期化します。  
+  
+   
+  
+## Examples  
+ 次の例をスロー、<xref:System.Net.WebException>エラー メッセージを指定することによって、<xref:System.Net.WebExceptionStatus>です。  
+  
+ [!code-cpp[WebException_Constructor5#1](~/samples/snippets/cpp/VS_Snippets_Remoting/WebException_Constructor5/CPP/webexception_constructor5.cpp#1)]
+ [!code-csharp[WebException_Constructor5#1](~/samples/snippets/csharp/VS_Snippets_Remoting/WebException_Constructor5/CS/webexception_constructor5.cs#1)]
+ [!code-vb[WebException_Constructor5#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/WebException_Constructor5/VB/webexception_constructor5.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public override void GetObjectData (System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo serializationInfo, valuetype System.Runtime.Serialization.StreamingContext streamingContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializationInfo" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="streamingContext" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="serializationInfo"><see cref="T:System.Runtime.Serialization.SerializationInfo" />使用します。</param>
+        <param name="streamingContext"><see cref="T:System.Runtime.Serialization.StreamingContext" />使用します。</param>
+        <summary>追加、<see cref="T:System.Runtime.Serialization.SerializationInfo" />をシリアル化するために必要なデータ インスタンス、<see cref="T:System.Net.WebException" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Response">
+      <MemberSignature Language="C#" Value="public System.Net.WebResponse Response { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.WebResponse Response" />
+      <MemberSignature Language="DocId" Value="P:System.Net.WebException.Response" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.WebResponse</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リモート ホストが返される応答を取得します。</summary>
+        <value>インターネット リソースから応答がある場合、<see cref="T:System.Net.WebResponse" />インスタンスをインターネット リソースからのエラー応答を含むそれ以外の場合、<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ HTTP など、一部のインターネット プロトコルを返しますそれ以外の場合有効なことを示す応答のプロトコル レベルでエラーが発生しました。 インターネット要求への応答には、エラーが示されている場合<xref:System.Net.WebRequest.GetResponse%2A?displayProperty=nameWithType>設定、<xref:System.Net.WebException.Status%2A>プロパティを<xref:System.Net.WebExceptionStatus?displayProperty=nameWithType>を提供し、<xref:System.Net.WebResponse>でエラー メッセージを含む、<xref:System.Net.WebException.Response%2A>のプロパティ、<xref:System.Net.WebException>スローされました。 アプリケーションを調べることができます、<xref:System.Net.WebResponse>実際のエラーを確認します。  
+  
+   
+  
+## Examples  
+ 次の例のチェック、<xref:System.Net.WebException.Status%2A>プロパティと、コンソールに出力し、<xref:System.Net.HttpWebResponse.StatusCode%2A>と<xref:System.Net.HttpWebResponse.StatusDescription%2A>、基になる<xref:System.Net.HttpWebResponse>インスタンス。  
+  
+ [!code-cpp[WebException_Status_Response#1](~/samples/snippets/cpp/VS_Snippets_Remoting/WebException_Status_Response/CPP/webexception_status_response.cpp#1)]
+ [!code-csharp[WebException_Status_Response#1](~/samples/snippets/csharp/VS_Snippets_Remoting/WebException_Status_Response/CS/webexception_status_response.cs#1)]
+ [!code-vb[WebException_Status_Response#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/WebException_Status_Response/VB/webexception_status_response.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Status">
+      <MemberSignature Language="C#" Value="public System.Net.WebExceptionStatus Status { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.WebExceptionStatus Status" />
+      <MemberSignature Language="DocId" Value="P:System.Net.WebException.Status" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.WebExceptionStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>応答のステータスを取得します。</summary>
+        <value><see cref="T:System.Net.WebExceptionStatus" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.WebException.Status%2A>プロパティは理由を示す、<xref:System.Net.WebException>です。  
+  
+ 値<xref:System.Net.WebException.Status%2A>の 1 つ、<xref:System.Net.WebExceptionStatus>値。  
+  
+> [!WARNING]
+>  <xref:System.Net.WebExceptionStatus.ProxyNameResolutionFailure>にエラーが返されない[!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)]アプリ。  
+  
+   
+  
+## Examples  
+ 次の例のチェック、<xref:System.Net.WebException.Status%2A>プロパティと、コンソールに出力し、<xref:System.Net.HttpWebResponse.StatusCode%2A>と<xref:System.Net.HttpWebResponse.StatusDescription%2A>、基になる<xref:System.Net.HttpWebResponse>インスタンス。  
+  
+ [!code-cpp[WebException_Status_Response#1](~/samples/snippets/cpp/VS_Snippets_Remoting/WebException_Status_Response/CPP/webexception_status_response.cpp#1)]
+ [!code-csharp[WebException_Status_Response#1](~/samples/snippets/csharp/VS_Snippets_Remoting/WebException_Status_Response/CS/webexception_status_response.cs#1)]
+ [!code-vb[WebException_Status_Response#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/WebException_Status_Response/VB/webexception_status_response.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.ISerializable.GetObjectData">
+      <MemberSignature Language="C#" Value="void ISerializable.GetObjectData (System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.Serialization.ISerializable.GetObjectData(class System.Runtime.Serialization.SerializationInfo serializationInfo, valuetype System.Runtime.Serialization.StreamingContext streamingContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebException.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializationInfo" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="streamingContext" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="serializationInfo">この <see cref="T:System.Net.WebException" /> のシリアル化の転送先となるオブジェクト。</param>
+        <param name="streamingContext">シリアル化の転送先。</param>
+        <summary>このインスタンスを、指定した <see cref="T:System.Runtime.Serialization.SerializationInfo" /> オブジェクトにシリアル化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

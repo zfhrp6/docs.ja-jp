@@ -1,0 +1,277 @@
+<Type Name="MessageLoggingElement" FullName="System.ServiceModel.Configuration.MessageLoggingElement">
+  <TypeSignature Language="C#" Value="public sealed class MessageLoggingElement : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MessageLoggingElement extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Configuration.MessageLoggingElement" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Windows Communication Foundation (WCF) のメッセージ ログ機能の設定を定義する XML 要素を表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MessageLoggingElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.MessageLoggingElement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Configuration.MessageLoggingElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filters">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Configuration.XPathMessageFilterElementCollection Filters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Configuration.XPathMessageFilterElementCollection Filters" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.MessageLoggingElement.Filters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("filters", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Configuration.XPathMessageFilterElementCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ ログに使用される XPathFilter オブジェクトを取得します。</summary>
+        <value>メッセージのログ記録に使用される XPathFilter オブジェクトのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ フィルターは、サービス レベルとトランスポート レベルで適用されます。 1 つ以上のフィルターを定義した場合は、少なくとも 1 つのフィルターと一致するメッセージだけが記録されます。 フィルターを定義しなかった場合は、すべてのメッセージが通過します。  
+  
+ フィルターは、完全な XPath 構文をサポートし、構成ファイルでの出現順に適用されます。 フィルターが構文的に正しくない場合は、構成例外が発生します。  
+  
+   
+  
+## Examples  
+ SOAP ヘッダー セクションがあるメッセージだけを記録するフィルターの設定方法の例を次に示します。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogEntireMessage">
+      <MemberSignature Language="C#" Value="public bool LogEntireMessage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool LogEntireMessage" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.MessageLoggingElement.LogEntireMessage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("logEntireMessage", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ全体 (メッセージ ヘッダーと本文) を記録するかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          メッセージ全体 (メッセージ ヘッダーと本文) を記録する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定は <see langword="false" /> で、メッセージ ヘッダーだけが記録されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この設定は、すべてのメッセージ ログ レベル (サービス、トランスポート、および不正) に影響を与えます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogKnownPii">
+      <MemberSignature Language="C#" Value="public bool LogKnownPii { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool LogKnownPii" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.MessageLoggingElement.LogKnownPii" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("logKnownPii", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既知の Pii 識別子が記録されるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />既知の Pii がログに記録します。 場合、それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogMalformedMessages">
+      <MemberSignature Language="C#" Value="public bool LogMalformedMessages { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool LogMalformedMessages" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.MessageLoggingElement.LogMalformedMessages" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("logMalformedMessages", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>無効なメッセージを記録するかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          無効なメッセージをログに記録する場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogMessagesAtServiceLevel">
+      <MemberSignature Language="C#" Value="public bool LogMessagesAtServiceLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool LogMessagesAtServiceLevel" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.MessageLoggingElement.LogMessagesAtServiceLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("logMessagesAtServiceLevel", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>(暗号化およびトランスポートに関連する変換の前に) メッセージをサービス レベルでトレースするかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          (暗号化およびトランスポートに関連する変換の前に) メッセージをサービス レベルでトレースする場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogMessagesAtTransportLevel">
+      <MemberSignature Language="C#" Value="public bool LogMessagesAtTransportLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool LogMessagesAtTransportLevel" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.MessageLoggingElement.LogMessagesAtTransportLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("logMessagesAtTransportLevel", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージをトランスポート レベルでトレースするかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          メッセージをトランスポート レベルでトレースする場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構成ファイルに指定されたフィルターが適用され、フィルターに一致するメッセージだけがトレースされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxMessagesToLog">
+      <MemberSignature Language="C#" Value="public int MaxMessagesToLog { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxMessagesToLog" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.MessageLoggingElement.MaxMessagesToLog" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("maxMessagesToLog", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.IntegerValidator(MinValue=-1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>記録するメッセージの最大数を指定する値を取得または設定します。</summary>
+        <value>記録するメッセージの最大数。 既定値は 1000 です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxSizeOfMessageToLog">
+      <MemberSignature Language="C#" Value="public int MaxSizeOfMessageToLog { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxSizeOfMessageToLog" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.MessageLoggingElement.MaxSizeOfMessageToLog" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("maxSizeOfMessageToLog", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.IntegerValidator(MinValue=-1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>記録するメッセージの最大サイズ (バイト単位) を指定する値を取得または設定します。</summary>
+        <value>記録するメッセージの最大サイズ (バイト単位)。 サイズが制限より大きいメッセージは、記録されません。 この設定は、すべてのトレース レベルに影響を与えます。 既定は Int32.MaxValue です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.MessageLoggingElement.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

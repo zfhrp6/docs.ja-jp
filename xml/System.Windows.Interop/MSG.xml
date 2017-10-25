@@ -1,0 +1,222 @@
+<Type Name="MSG" FullName="System.Windows.Interop.MSG">
+  <TypeSignature Language="C#" Value="public struct MSG" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit MSG extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Interop.MSG" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>スレッドのメッセージ キューからメッセージの情報が含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この型は、アンマネージのような情報を提供[!INCLUDE[TLA#tla_win32](~/includes/tlasharptla-win32-md.md)] [MSG](http://msdn2.microsoft.com/en-gb/library/ms644958.aspx)構造体。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="hwnd">
+      <MemberSignature Language="C#" Value="public IntPtr hwnd { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance native int hwnd" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.MSG.hwnd" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはウィンドウのウィンドウ プロシージャはメッセージを受信するウィンドウ ハンドル (HWND) を設定します。</summary>
+        <value>ウィンドウ ハンドル (HWND))。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Interop.MSG.hwnd%2A>`null`ときに、メッセージは、スレッド メッセージ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="lParam">
+      <MemberSignature Language="C#" Value="public IntPtr lParam { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance native int lParam" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.MSG.lParam" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<paramref name="lParam" />メッセージに関する追加情報を指定する値。 厳密な意味は、の値によって異なります、<see cref="P:System.Windows.Interop.MSG.message" />メンバー。</summary>
+        <value><paramref name="lParam" />メッセージの値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="message">
+      <MemberSignature Language="C#" Value="public int message { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 message" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.MSG.message" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメッセージの識別子を設定します。</summary>
+        <value>メッセージ ID。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションは、下位ワードにのみ使用できます。上位ワードは、システムによって予約されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="pt_x">
+      <MemberSignature Language="C#" Value="public int pt_x { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 pt_x" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.MSG.pt_x" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、メッセージがポストされたときに、画面で、カーソルの位置の x 座標を設定します。</summary>
+        <value>カーソル位置の x 座標。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="pt_y">
+      <MemberSignature Language="C#" Value="public int pt_y { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 pt_y" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.MSG.pt_y" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメッセージがポストされたときに、画面で、カーソル位置の y 座標を設定します。</summary>
+        <value>カーソル位置の y 座標。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="time">
+      <MemberSignature Language="C#" Value="public int time { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 time" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.MSG.time" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメッセージがポストされた時間を設定します。</summary>
+        <value>メッセージが送信された時刻。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="wParam">
+      <MemberSignature Language="C#" Value="public IntPtr wParam { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance native int wParam" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.MSG.wParam" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<paramref name="wParam" />メッセージに関する追加情報を指定すると、メッセージの値。 正確な意味は、メッセージの値によって異なります。</summary>
+        <value><paramref name="wParam" />メッセージの値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

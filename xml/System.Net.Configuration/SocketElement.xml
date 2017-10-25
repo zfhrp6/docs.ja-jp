@@ -1,0 +1,171 @@
+<Type Name="SocketElement" FullName="System.Net.Configuration.SocketElement">
+  <TypeSignature Language="C#" Value="public sealed class SocketElement : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SocketElement extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Configuration.SocketElement" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>構成するための情報を表す<see cref="T:System.Net.Sockets.Socket" />オブジェクト。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスに対応して、 [&lt;ソケット&gt;要素 (ネットワーク設定)](~/docs/framework/configure-apps/file-schema/network/socket-element-network-settings.md)構成要素。  
+  
+ このクラスは、構成ファイルに格納できる情報にプログラムでアクセスを提供します。  
+  
+ このクラスは、接続、および IPv6 ソケットに対する既定の IP 保護レベルを受け入れるため完了ポートを使用するかどうか、接続するため、完了ポートが使用されるかどうかを指定する使用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SocketElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Configuration.SocketElement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.Configuration.SocketElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを追加、<xref:System.Net.Configuration.SocketElement.AlwaysUseCompletionPortsForAccept%2A>と<xref:System.Net.Configuration.ConnectionManagementElement.MaxConnection%2A>プロパティを<xref:System.Net.Configuration.SocketElement.AlwaysUseCompletionPortsForAccept%2A>コレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlwaysUseCompletionPortsForAccept">
+      <MemberSignature Language="C#" Value="public bool AlwaysUseCompletionPortsForAccept { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AlwaysUseCompletionPortsForAccept" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Configuration.SocketElement.AlwaysUseCompletionPortsForAccept" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("alwaysUseCompletionPortsForAccept", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または接続を受け入れるときに、完了ポートを使用するかどうかを指定するブール値を設定します。</summary>
+        <value>
+          <see langword="true" />補完を使用するポートです。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlwaysUseCompletionPortsForConnect">
+      <MemberSignature Language="C#" Value="public bool AlwaysUseCompletionPortsForConnect { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AlwaysUseCompletionPortsForConnect" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Configuration.SocketElement.AlwaysUseCompletionPortsForConnect" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("alwaysUseCompletionPortsForConnect", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または接続するときに、完了ポートが使用するかどうかを指定するブール値を設定します。</summary>
+        <value>
+          <see langword="true" />補完を使用するポートです。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IPProtectionLevel">
+      <MemberSignature Language="C#" Value="public System.Net.Sockets.IPProtectionLevel IPProtectionLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.Sockets.IPProtectionLevel IPProtectionLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Configuration.SocketElement.IPProtectionLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("ipProtectionLevel", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IPProtectionLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定値を指定する値の設定を取得または<see cref="T:System.Net.Sockets.IPProtectionLevel" />ソケットを使用します。</summary>
+        <value>値、<see cref="T:System.Net.Sockets.IPProtectionLevel" />現在のインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Configuration.SocketElement.IPProtectionLevel%2A>プロパティなど、ローカル リンクまたはサイト ローカル プレフィックスを同じアドレスを特定のスコープ、IPv6 ソケットの制限の構成を有効にします。 このオプションにより、IPv6 ソケットに対するアクセス制限を設定できます。 この制限により、プライベート LAN で実行されるアプリケーションを外部からの攻撃に対して簡単かつ堅牢に強化できます。 このオプションは、拡大変換か、適切な場合は、パブリックおよびプライベートのユーザーまたは必要に応じて同じサイトにのみアクセスを制限することから無制限のアクセスを有効にすると、待機中のソケットのスコープを絞り込みます。 このオプションで指定した 3 つの定義済みの保護レベルには、<xref:System.Net.Sockets.IPProtectionLevel?displayProperty=nameWithType>列挙します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PostDeserialize">
+      <MemberSignature Language="C#" Value="protected override void PostDeserialize ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void PostDeserialize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Configuration.SocketElement.PostDeserialize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Configuration.SocketElement.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

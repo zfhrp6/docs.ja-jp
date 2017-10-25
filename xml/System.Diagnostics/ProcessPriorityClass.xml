@@ -1,0 +1,223 @@
+<Type Name="ProcessPriorityClass" FullName="System.Diagnostics.ProcessPriorityClass">
+  <TypeSignature Language="C#" Value="public enum ProcessPriorityClass" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ProcessPriorityClass extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.ProcessPriorityClass" />
+  <AssemblyInfo>
+    <AssemblyName>System.Diagnostics.Process</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>システムがプロセスに関連付ける優先順位を示します。 この値は、プロセスの各スレッドの優先順位値と組み合わされ、各スレッドの基本優先順位を決定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロセス優先度クラスには、スレッドの優先度レベルの範囲が含まれます。 優先順位が異なるプロセスで実行されているスレッドは、プロセスの優先度クラスに対して実行されます。 オペレーティング システムは、次のプロセッサ時間のスライスをスレッドに与えるかを決定するのに実行可能ファイルのすべてのスレッドの基本優先度レベルを使用します。  
+  
+ Win32 では、クラスごとの 7 つの基本優先度レベルを持つ 4 つの優先度クラスを使用します。 プロセスがプロセッサにアクセスするための他のユーザーの前配置する必要がある場合、経過時間、またはその他の要因をオペレーティング システムは、基本優先度レベルを変更できます時間に基づいています。 さらに、設定<xref:System.Diagnostics.Process.PriorityBoostEnabled%2A>待機状態から取得したスレッドの優先度レベルを一時的に上げることです。 プロセスが待機状態に戻るときに、優先順位がリセットされます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AboveNormal">
+      <MemberSignature Language="C#" Value="AboveNormal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.ProcessPriorityClass AboveNormal = int32(32768)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.ProcessPriorityClass.AboveNormal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.ProcessPriorityClass</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロセスの優先順位を <see langword="Normal" /> より高く <see cref="F:System.Diagnostics.ProcessPriorityClass.High" /> より低く指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="BelowNormal">
+      <MemberSignature Language="C#" Value="BelowNormal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.ProcessPriorityClass BelowNormal = int32(16384)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.ProcessPriorityClass.BelowNormal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.ProcessPriorityClass</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロセスの優先順位を <see langword="Idle" /> より高く <see langword="Normal" /> より低く指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="High">
+      <MemberSignature Language="C#" Value="High" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.ProcessPriorityClass High = int32(128)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.ProcessPriorityClass.High" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.ProcessPriorityClass</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="Task List" /> ダイアログ ボックスなどの、ユーザーから呼び出されたらオペレーティング システムの負荷にかかわらずすぐに応答する必要のある、即時実行を要求される重要なタスクに対して、プロセス実行時間を指定します。 このプロセスのスレッドは、Normal または Idle 優先順位クラスのプロセスのスレッドよりも優先します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!CAUTION]
+>  指定する場合は、細心の注意を使用して`High`プロセスの優先度クラスに、優先度の高いクラスのアプリケーションは、ほぼすべての利用可能なプロセッサ時間を使用できるためです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Idle">
+      <MemberSignature Language="C#" Value="Idle" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.ProcessPriorityClass Idle = int32(64)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.ProcessPriorityClass.Idle" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.ProcessPriorityClass</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロセスのスレッドが、スクリーン セーバーなど、システムがアイドル状態のときにだけ実行されるよう指定します。 このプロセスのスレッドよりも、より高い優先順位クラスで実行されているあらゆるプロセスのスレッドの方が優先します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  アイドル状態の優先度クラスは、子プロセスによって継承されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Normal">
+      <MemberSignature Language="C#" Value="Normal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.ProcessPriorityClass Normal = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.ProcessPriorityClass.Normal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.ProcessPriorityClass</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロセスが特別なスケジューリングを必要としないよう指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RealTime">
+      <MemberSignature Language="C#" Value="RealTime" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.ProcessPriorityClass RealTime = int32(256)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.ProcessPriorityClass.RealTime" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.ProcessPriorityClass</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロセスの優先順位をできるだけ高く指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!CAUTION]
+>  使用して、プロセスのスレッド`RealTime`優先度が重要なタスクを実行するオペレーティング システム プロセスを含む、他のすべてのプロセスのスレッドを切断します。 したがって、`RealTime`ことができます、非常に短い間隔よりも多くのディスク フラッシュまたは応答していないマウスが発生するを実行する優先順位のプロセスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

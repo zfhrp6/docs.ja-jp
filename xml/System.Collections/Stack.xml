@@ -1,0 +1,835 @@
+<Type Name="Stack" FullName="System.Collections.Stack">
+  <TypeSignature Language="C#" Value="public class Stack : ICloneable, System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit Stack extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.ICloneable" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.Stack" />
+  <AssemblyInfo>
+    <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("Count = {Count}")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerTypeProxy(typeof(System.Collections.Stack/StackDebugView))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>シンプルな後入れ先出し (LIFO) の非ジェネリック オブジェクト コレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコレクションのジェネリック バージョンは、<xref:System.Collections.Generic.Stack%601?displayProperty=nameWithType>です。  
+  
+ 容量、<xref:System.Collections.Stack>要素の数が、<xref:System.Collections.Stack>を保持できます。 要素が追加されるにつれて、<xref:System.Collections.Stack>容量を増やすは自動的に再割り当て、必要に応じて。  
+  
+ 場合<xref:System.Collections.Stack.Count%2A>がスタックの容量よりも小さい<xref:System.Collections.Stack.Push%2A>は、o (1) 操作になります。 容量が、新しい要素を格納するためにする必要がある場合<xref:System.Collections.Stack.Push%2A>O になります (`n`) 操作では、ここで`n`は<xref:System.Collections.Stack.Count%2A>します。 <xref:System.Collections.Stack.Pop%2A>o (1) 操作です。  
+  
+ <xref:System.Collections.Stack>受け付ける`null`有効な値としてでき、重複する要素。  
+  
+   
+  
+## Examples  
+ 次の例は、作成し、値を追加する方法を示しています、<xref:System.Collections.Stack>およびその値を表示する方法です。  
+  
+ [!code-cpp[Classic Stack Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Stack Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Stack Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Stack Example/CS/source.cs#1)]
+ [!code-vb[Classic Stack Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Stack Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>パブリック静的 (<see langword="Shared" /> Visual Basic で) この型のメンバーは、スレッド セーフであります。 インスタンス メンバーの場合は、スレッド セーフであるとは限りません。  
+  
+ スレッド セーフを確保する、 <see cref="T:System.Collections.Stack" />、によって返されるラッパーを介してすべての操作を行う必要があります、<see cref="M:System.Collections.Stack.Synchronized(System.Collections.Stack)" />メソッドです。  
+  
+ コレクションの列挙は、本質的にスレッド セーフなプロシージャではありません。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Stack ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Stack.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>空で、既定の初期量を備えた、<see cref="T:System.Collections.Stack" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 容量、<xref:System.Collections.Stack>は要素の数を<xref:System.Collections.Stack>を保持できます。 要素が追加されるにつれて、<xref:System.Collections.Stack>容量を増やすは自動的に内部の配列を再割り当てによる要求どおりです。  
+  
+ コレクションのサイズを推定できる場合に要素を追加するときにサイズ変更操作の数を実行する必要があるの初期量を指定する、<xref:System.Collections.Stack>です。  
+  
+ このコンス トラクターは、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Stack (System.Collections.ICollection col);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.ICollection col) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Stack.#ctor(System.Collections.ICollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="col" Type="System.Collections.ICollection" />
+      </Parameters>
+      <Docs>
+        <param name="col"><see cref="T:System.Collections.ICollection" />から要素をコピーします。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.Stack" />指定したコレクションからコピーされた要素を格納し、コピーされた要素の数と同じ初期量を備えたクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 容量、<xref:System.Collections.Stack>は要素の数を<xref:System.Collections.Stack>を保持できます。 要素が追加されるにつれて、<xref:System.Collections.Stack>容量を増やすは自動的に内部の配列を再割り当てによる要求どおりです。  
+  
+ コレクションのサイズを推定できる場合に要素を追加するときにサイズ変更操作の数を実行する必要があるの初期量を指定する、<xref:System.Collections.Stack>です。  
+  
+ 要素の上にコピー、<xref:System.Collections.Stack>によって読み取られる同じ順序で、<xref:System.Collections.IEnumerator>の<xref:System.Collections.ICollection>です。  
+  
+ このコンス トラクターは、O (`n`) 操作では、ここで`n`内の要素の数は、`col`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="col" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Stack (int initialCapacity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 initialCapacity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Stack.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="initialCapacity" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="initialCapacity"><see cref="T:System.Collections.Stack" /> が格納できる要素数の初期値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.Stack" />はクラスを空にして、指定した初期量または既定の初期量、大きい方です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 容量、<xref:System.Collections.Stack>は要素の数を<xref:System.Collections.Stack>を保持できます。 要素が追加されるにつれて、<xref:System.Collections.Stack>容量を増やすは自動的に内部の配列を再割り当てによる要求どおりです。  
+  
+ コレクションのサイズを推定できる場合に要素を追加するときにサイズ変更操作の数を実行する必要があるの初期量を指定する、<xref:System.Collections.Stack>です。  
+  
+ このコンス トラクターは、O (`n`) 操作では、ここで`n`は`initialCapacity`します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="initialCapacity" /> が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public virtual void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Stack.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Collections.Stack" /> からすべてのオブジェクトを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Stack.Count%2A>0 に設定し、コレクションの要素から他のオブジェクトへの参照も解放します。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Stack.Count%2A>します。  
+  
+   
+  
+## Examples  
+ 次の例の値をクリアする方法を示しています、<xref:System.Collections.Stack>です。  
+  
+ [!code-cpp[Classic Stack.Clear Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Stack.Clear Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Stack.Clear Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Stack.Clear Example/CS/source.cs#1)]
+ [!code-vb[Classic Stack.Clear Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Stack.Clear Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public virtual object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Stack.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Collections.Stack" /> の簡易コピーを作成します。</summary>
+        <returns><see cref="T:System.Collections.Stack" /> の簡易コピー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションの簡易コピーは、参照型または値の型が参照先のオブジェクトはコピーしないかどうか、コレクションの要素のみをコピーします。 新しいコレクション内の参照は、元のコレクション内の参照をポイントする同じオブジェクトをポイントします。  
+  
+ これに対し、コレクションのディープ コピーされた要素をコピーして、要素が直接または間接的に参照するすべてです。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Stack.Count%2A>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public virtual bool Contains (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Stack.Contains(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj"><see cref="T:System.Collections.Stack" /> 内で検索するオブジェクト。 値として <see langword="null" /> を指定できます。</param>
+        <summary>ある要素が <see cref="T:System.Collections.Stack" /> 内に存在するかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />、場合<paramref name="obj" />で見つかった、 <see cref="T:System.Collections.Stack" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出すことで等しいかどうかを判断、<xref:System.Object.Equals%2A?displayProperty=nameWithType>メソッドです。  
+  
+ このメソッドは、一方向の検索を実行します。そのため、このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Stack.Count%2A>します。  
+  
+ 以降、.NET Framework 2.0 では、このメソッドはテスト等しいかどうかを渡すことによって、`obj`への引数、<xref:System.Object.Equals%2A>コレクション内の個々 のオブジェクトのメソッドです。 以前のバージョンの .NET Framework では、この決定が行われたために、コレクション内の個々 の項目を渡すことを使用して、<xref:System.Object.Equals%2A>のメソッド、`obj`引数。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public virtual void CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Stack.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Array" /> から要素がコピーされる 1 次元の <see cref="T:System.Collections.Stack" />。 <see cref="T:System.Array" /> には、0 から始まるインデックス番号が必要です。</param>
+        <param name="index">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary>コピー、<see cref="T:System.Collections.Stack" />既存の 1 次元に<see cref="T:System.Array" />、指定した配列インデックスから始まります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素の最後で先出し (LIFO) の順序への呼び出しの連続してによって返される要素の順序と似ての配列にコピー<xref:System.Collections.Stack.Pop%2A>です。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Stack.Count%2A>します。  
+  
+   
+  
+## Examples  
+ 次の例をコピーする方法を示しています、<xref:System.Collections.Stack>を 1 次元配列にします。  
+  
+ [!code-cpp[Classic Stack.CopyTo Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Stack.CopyTo Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Stack.CopyTo Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Stack.CopyTo Example/CS/source.cs#1)]
+ [!code-vb[Classic Stack.CopyTo Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Stack.CopyTo Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="array" /> が多次元です。  
+  
+ または  
+  
+ コピー元の <see cref="T:System.Collections.Stack" /> の要素数が、コピー先 <paramref name="array" /> の <paramref name="index" /> から最後までの使用可能領域を超えています。</exception>
+        <exception cref="T:System.InvalidCastException">コピー元の <see cref="T:System.Collections.Stack" /> の型をコピー先の <paramref name="array" /> の型に自動的にキャストすることはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public virtual int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Stack.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.Stack" /> に格納されている要素の数を取得します。</summary>
+        <value><see cref="T:System.Collections.Stack" /> に格納されている要素の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 容量は、要素の数を<xref:System.Collections.Stack>格納できます。 <xref:System.Collections.Stack.Count%2A>実際には、要素の数、<xref:System.Collections.Stack>です。  
+  
+ 容量は、常により大きいまたは等しい<xref:System.Collections.Stack.Count%2A>です。 場合<xref:System.Collections.Stack.Count%2A>要素を追加するときに、容量を超える場合、容量は前の要素をコピーし、新しい要素を追加する前に、内部配列の再割り当てによって自動的に増加します。  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Stack.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Collections.IEnumerator" /> の <see cref="T:System.Collections.Stack" /> を返します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" /> の <see cref="T:System.Collections.Stack" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [Visual Basic、C# の場合]  
+  
+ C# 言語の `foreach` ステートメント (Visual Basic の場合は `for each`) を使用することで列挙子の複雑さを回避できます。  したがって、列挙子を直接操作するのではなく、`foreach` を使用することをお勧めします。  
+  
+ 列挙子を使用すると、コレクション内のデータを読み取ることができますが、基になるコレクションを変更することはできません。  
+  
+ 最初に、列挙子はコレクション内の 1 番目の要素の前に位置付けられます。 <xref:System.Collections.IEnumerator.Reset%2A> を実行した場合も、列挙子はこの位置に戻されます。  この位置では、<xref:System.Collections.IEnumerator.Current%2A> が未定義です。 そのため、<xref:System.Collections.IEnumerator.MoveNext%2A> の値を読み取る前に、<xref:System.Collections.IEnumerator.Current%2A> を呼び出して列挙子をコレクションの最初の要素に進める必要があります。  
+  
+ <xref:System.Collections.IEnumerator.Current%2A> は、<xref:System.Collections.IEnumerator.MoveNext%2A> または <xref:System.Collections.IEnumerator.Reset%2A> が呼び出されるまでは同じオブジェクトを返します。 <xref:System.Collections.IEnumerator.MoveNext%2A> は、<xref:System.Collections.IEnumerator.Current%2A> を次の要素に設定します。  
+  
+ 場合<xref:System.Collections.IEnumerator.MoveNext%2A>列挙子をコレクションの末尾が、コレクション内の最後の要素の後に配置されているパスと<xref:System.Collections.IEnumerator.MoveNext%2A>返します`false`です。 列挙子がこの位置では、後続の呼び出しの場合<xref:System.Collections.IEnumerator.MoveNext%2A>を返すことも`false`します。 最後の呼び出し場合<xref:System.Collections.IEnumerator.MoveNext%2A>返される`false`、<xref:System.Collections.IEnumerator.Current%2A>が定義されていません。 <xref:System.Collections.IEnumerator.Current%2A> をコレクションの最初の要素にもう一度設定するには、<xref:System.Collections.IEnumerator.Reset%2A> を呼び出してから <xref:System.Collections.IEnumerator.MoveNext%2A> を呼び出します。  
+  
+ コレクションが変更されない限り、列挙子は有効です。 コレクションに対して変更 (要素の追加、変更、削除など) が行われると、列挙子は回復不可能な無効状態になり、その動作は未定義になります。  
+  
+ 列挙子にはコレクションへの排他アクセス権限はないため、コレクションの列挙処理は本質的にスレッド セーフな処理ではありません。  列挙処理でスレッド セーフを確保するには、列挙処理が終わるまでコレクションをロックできます。  コレクションに対し複数のスレッドがアクセスして読み取りや書き込みを行うことができるようにするには、独自に同期化を実装する必要があります。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public virtual bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Stack.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.Stack" /> へのアクセスが同期されている (スレッド セーフである) かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />、場合へのアクセス、<see cref="T:System.Collections.Stack" />が同期 (スレッド セーフな) です。 それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スレッド セーフを確保する、 <xref:System.Collections.Stack>、によって返されるラッパーを介してすべての操作を行う必要があります、<xref:System.Collections.Stack.Synchronized%2A>メソッドです。  
+  
+ コレクションの列挙は、本質的にスレッド セーフなプロシージャではありません。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。  
+  
+ 次のコード例を使用してコレクションをロックする方法を示しています、<xref:System.Collections.Stack.SyncRoot%2A>列挙中にします。  
+  
+ [!code-cpp[Classic Stack.IsSynchronized Example#2](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Stack.IsSynchronized Example/CPP/source2.cpp#2)]
+ [!code-csharp[Classic Stack.IsSynchronized Example#2](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Stack.IsSynchronized Example/CS/source2.cs#2)]
+ [!code-vb[Classic Stack.IsSynchronized Example#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Stack.IsSynchronized Example/VB/source2.vb#2)]  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+   
+  
+## Examples  
+ 次の例は、同期する方法を示します、 <xref:System.Collections.Stack>、かどうかを<xref:System.Collections.Stack>が同期されているし、同期を使用して<xref:System.Collections.Stack>です。  
+  
+ [!code-cpp[Classic Stack.IsSynchronized Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Stack.IsSynchronized Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Stack.IsSynchronized Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Stack.IsSynchronized Example/CS/source.cs#1)]
+ [!code-vb[Classic Stack.IsSynchronized Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Stack.IsSynchronized Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Peek">
+      <MemberSignature Language="C#" Value="public virtual object Peek ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Peek() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Stack.Peek" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>上部にあるオブジェクトを返します、<see cref="T:System.Collections.Stack" />削除することがなくです。</summary>
+        <returns><see cref="T:System.Object" />の上部にある、<see cref="T:System.Collections.Stack" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは <xref:System.Collections.Stack.Pop%2A> メソッドに類似していますが、<xref:System.Collections.Stack.Peek%2A> は <xref:System.Collections.Stack> を変更しません。  
+  
+ `null`プッシュされることができます、<xref:System.Collections.Stack>必要な場合は、プレース ホルダーとして。 区別する、null 値、スタックの末尾、確認、<xref:System.Collections.Stack.Count%2A>プロパティまたは catch、 <xref:System.InvalidOperationException>、ときにスローする、<xref:System.Collections.Stack>が空です。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 次の例は、要素を追加する方法を示しています、 <xref:System.Collections.Stack>、要素を削除、 <xref:System.Collections.Stack>、またはの上部にある要素を表示、<xref:System.Collections.Stack>です。  
+  
+ [!code-cpp[Classic Stack.Peek Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Stack.Peek Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Stack.Peek Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Stack.Peek Example/CS/source.cs#1)]
+ [!code-vb[Classic Stack.Peek Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Stack.Peek Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Collections.Stack" /> が空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Pop">
+      <MemberSignature Language="C#" Value="public virtual object Pop ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Pop() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Stack.Pop" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>削除し、上部にあるオブジェクトを返します、<see cref="T:System.Collections.Stack" />です。</summary>
+        <returns><see cref="T:System.Object" />の最上部から削除された、<see cref="T:System.Collections.Stack" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは <xref:System.Collections.Stack.Peek%2A> メソッドに類似していますが、<xref:System.Collections.Stack.Peek%2A> は <xref:System.Collections.Stack> を変更しません。  
+  
+ `null`プッシュされることができます、<xref:System.Collections.Stack>必要な場合は、プレース ホルダーとして。 区別する、null 値、スタックの末尾、確認、<xref:System.Collections.Stack.Count%2A>プロパティまたは catch、 <xref:System.InvalidOperationException>、ときにスローする、<xref:System.Collections.Stack>が空です。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 次の例は、要素を追加する方法を示しています、 <xref:System.Collections.Stack>、要素を削除、 <xref:System.Collections.Stack>、またはの上部にある要素を表示、<xref:System.Collections.Stack>です。  
+  
+ [!code-cpp[Classic Stack.Peek Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Stack.Peek Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Stack.Peek Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Stack.Peek Example/CS/source.cs#1)]
+ [!code-vb[Classic Stack.Peek Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Stack.Peek Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Collections.Stack" /> が空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Push">
+      <MemberSignature Language="C#" Value="public virtual void Push (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Push(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Stack.Push(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj"><see cref="T:System.Object" />にプッシュする、<see cref="T:System.Collections.Stack" />です。 値として <see langword="null" /> を指定できます。</param>
+        <summary><see cref="T:System.Collections.Stack" /> の先頭にオブジェクトを挿入します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Collections.Stack.Count%2A>容量の容量と既に同じ、<xref:System.Collections.Stack>内部の配列を自動的に再割り当てが増加し、新しい要素が追加される前に、既存の要素が新しい配列にコピーされます。  
+  
+ `null`プッシュされることができます、<xref:System.Collections.Stack>必要な場合は、プレース ホルダーとして。 スタック内のスロットを占有し、任意のオブジェクトと同様に扱われます。  
+  
+ 場合<xref:System.Collections.Stack.Count%2A>がスタックの容量よりも小さい<xref:System.Collections.Stack.Push%2A>は、o (1) 操作になります。 容量が、新しい要素を格納するためにする必要がある場合<xref:System.Collections.Stack.Push%2A>O になります (`n`) 操作では、ここで`n`は<xref:System.Collections.Stack.Count%2A>します。  
+  
+   
+  
+## Examples  
+ 次の例は、要素を追加する方法を示しています、 <xref:System.Collections.Stack>、要素を削除、 <xref:System.Collections.Stack>、またはの上部にある要素を表示、<xref:System.Collections.Stack>です。  
+  
+ [!code-cpp[Classic Stack.Peek Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Stack.Peek Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Stack.Peek Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Stack.Peek Example/CS/source.cs#1)]
+ [!code-vb[Classic Stack.Peek Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Stack.Peek Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Synchronized">
+      <MemberSignature Language="C#" Value="public static System.Collections.Stack Synchronized (System.Collections.Stack stack);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Stack Synchronized(class System.Collections.Stack stack) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Stack.Synchronized(System.Collections.Stack)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Stack</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stack" Type="System.Collections.Stack" />
+      </Parameters>
+      <Docs>
+        <param name="stack">同期する <see cref="T:System.Collections.Stack" />。</param>
+        <summary>同期されたを返します (スレッド セーフな) ラッパーを<see cref="T:System.Collections.Stack" />です。</summary>
+        <returns>同期されたラッパー、<see cref="T:System.Collections.Stack" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スレッド セーフを確保する、 <xref:System.Collections.Stack>、このラッパーを通じて、すべての操作を行う必要があります。  
+  
+ コレクションの列挙は、本質的にスレッド セーフなプロシージャではありません。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。  
+  
+ 次のコード例を使用してコレクションをロックする方法を示しています、<xref:System.Collections.Stack.SyncRoot%2A>列挙中にします。  
+  
+ [!code-cpp[Classic Stack.IsSynchronized Example#2](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Stack.IsSynchronized Example/CPP/source2.cpp#2)]
+ [!code-csharp[Classic Stack.IsSynchronized Example#2](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Stack.IsSynchronized Example/CS/source2.cs#2)]
+ [!code-vb[Classic Stack.IsSynchronized Example#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Stack.IsSynchronized Example/VB/source2.vb#2)]  
+  
+ このメソッドは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 次の例は、同期する方法を示します、 <xref:System.Collections.Stack>、かどうかを<xref:System.Collections.Stack>が同期されているし、同期を使用して<xref:System.Collections.Stack>です。  
+  
+ [!code-cpp[Classic Stack.IsSynchronized Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Stack.IsSynchronized Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Stack.IsSynchronized Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Stack.IsSynchronized Example/CS/source.cs#1)]
+ [!code-vb[Classic Stack.IsSynchronized Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Stack.IsSynchronized Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stack" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public virtual object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Stack.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.Stack" /> へのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value><see cref="T:System.Object" /> へのアクセスを同期するために使用できる <see cref="T:System.Collections.Stack" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 同期されたバージョンを作成する、<xref:System.Collections.Stack>を使用して、<xref:System.Collections.Stack.Synchronized%2A>メソッドです。 ただし、派生クラスは、独自の同期されたバージョンを指定、<xref:System.Collections.Stack>を使用して、<xref:System.Collections.Stack.SyncRoot%2A>プロパティです。 同期されたコードで操作を実行する必要があります、<xref:System.Collections.Stack.SyncRoot%2A>の<xref:System.Collections.Stack>、上で直接、<xref:System.Collections.Stack>です。 これにより、他のオブジェクトから派生したコレクションを適切に操作できるようになります。 具体的には、同時に変更する可能性がある別スレッドとの適切な同期を維持、<xref:System.Collections.Stack>オブジェクト。  
+  
+ コレクションの列挙は、本質的にスレッド セーフなプロシージャではありません。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。  
+  
+ 次のコード例を使用してコレクションをロックする方法を示しています、<xref:System.Collections.Stack.SyncRoot%2A>列挙中にします。  
+  
+ [!code-cpp[Classic Stack.IsSynchronized Example#2](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Stack.IsSynchronized Example/CPP/source2.cpp#2)]
+ [!code-csharp[Classic Stack.IsSynchronized Example#2](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Stack.IsSynchronized Example/CS/source2.cs#2)]
+ [!code-vb[Classic Stack.IsSynchronized Example#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Stack.IsSynchronized Example/VB/source2.vb#2)]  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToArray">
+      <MemberSignature Language="C#" Value="public virtual object[] ToArray ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object[] ToArray() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Stack.ToArray" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コピー、<see cref="T:System.Collections.Stack" />を新しい配列にします。</summary>
+        <returns>新しい配列の要素のコピーを格納、<see cref="T:System.Collections.Stack" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素の最後で先出し (LIFO) の順序への呼び出しの連続してによって返される要素の順序と似ての配列にコピー<xref:System.Collections.Stack.Pop%2A>です。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Stack.Count%2A>します。  
+  
+   
+  
+## Examples  
+ 次の例をコピーする方法を示しています、<xref:System.Collections.Stack>を 1 次元配列にします。  
+  
+ [!code-cpp[Classic Stack.CopyTo Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Stack.CopyTo Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Stack.CopyTo Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Stack.CopyTo Example/CS/source.cs#1)]
+ [!code-vb[Classic Stack.CopyTo Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Stack.CopyTo Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,241 @@
+<Type Name="HostingEnvironmentSection" FullName="System.Web.Configuration.HostingEnvironmentSection">
+  <TypeSignature Language="C#" Value="public sealed class HostingEnvironmentSection : System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed HostingEnvironmentSection extends System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.HostingEnvironmentSection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アプリケーションのホスト環境の動作を制御する構成設定を定義します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HostingEnvironmentSection>クラスは、プログラムからアクセスし、値を変更する方法を提供、<xref:System.Web.Configuration.HostingEnvironmentSection>構成ファイル内のセクションです。ASP.NET アプリケーションが一定の時間を使用できない場合は、ない場合がに基づいて、メモリからアンロード、<xref:System.Web.Configuration.HostingEnvironmentSection.IdleTimeout%2A>と<xref:System.Web.Configuration.HostingEnvironmentSection.ShutdownTimeout%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ この例は、宣言の複数の属性の値を指定する方法を示します、 [hostingEnvironment 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/043a75c8-231a-4f8d-9633-501530bd7d40)セクションでは、のメンバーとしてアクセスすることも、<xref:System.Web.Configuration.HostingEnvironmentSection>クラスです。  
+  
+ 次の構成ファイルの例は、宣言によっての値を指定する方法を示しています、 [hostingEnvironment 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/043a75c8-231a-4f8d-9633-501530bd7d40)セクションです。  
+  
+```  
+<system.web>  
+  <hostingEnvironment  
+    idleTimeout="20"  
+    shutdownTimeout="30"  
+  />  
+</system.web>  
+```  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.HostingEnvironmentSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HostingEnvironmentSection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HostingEnvironmentSection/CS/hostingenvironmentsection.cs#1)]
+ [!code-vb[System.Web.Configuration.HostingEnvironmentSection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HostingEnvironmentSection/VB/hostingenvironmentsection.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HostingEnvironmentSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HostingEnvironmentSection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>既定の設定を使用して <see cref="T:System.Web.Configuration.HostingEnvironmentSection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HostingEnvironmentSection.%23ctor%2A>コンス トラクターは、コードから直接使用するものではありません。 ASP.NET 構成システムによって呼び出されます。 インスタンスを取得する、<xref:System.Web.Configuration.HostingEnvironmentSection>クラスを使用して、<xref:System.Configuration.Configuration.GetSection%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IdleTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan IdleTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan IdleTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HostingEnvironmentSection.IdleTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Configuration.TimeSpanMinutesOrInfiniteConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("idleTimeout", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.TimeSpanValidator(MaxValueString="10675199.02:48:05.4775807", MinValueString="00:00:00")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または使用頻度の低いアプリケーションをアンロードする前に、分単位で、時間を設定します。</summary>
+        <value>A<see cref="T:System.TimeSpan" />は指定された分数アクティブでないアプリケーションをアンロードする前にします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値、<xref:System.Web.Configuration.HostingEnvironmentSection.IdleTimeout%2A>プロパティは"Infinite"です。 この設定は、コンピューターまたはアプリケーション レベルで設定できます。 この設定が他のレベルで定義されている場合は無視されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.HostingEnvironmentSection.IdleTimeout%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HostingEnvironmentSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HostingEnvironmentSection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HostingEnvironmentSection/CS/hostingenvironmentsection.cs#2)]
+ [!code-vb[System.Web.Configuration.HostingEnvironmentSection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HostingEnvironmentSection/VB/hostingenvironmentsection.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HostingEnvironmentSection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShadowCopyBinAssemblies">
+      <MemberSignature Language="C#" Value="public bool ShadowCopyBinAssemblies { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShadowCopyBinAssemblies" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HostingEnvironmentSection.ShadowCopyBinAssemblies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("shadowCopyBinAssemblies", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または箱内のアプリケーションのアセンブリは、アプリケーションの ASP.NET 一時ファイル ディレクトリにシャドウ コピーであるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />箱にあるアプリケーションのアセンブリがアプリケーションの ASP.NET 一時ファイル ディレクトリにシャドウ コピーである場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShutdownTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan ShutdownTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan ShutdownTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HostingEnvironmentSection.ShutdownTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Configuration.TimeSpanSecondsConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("shutdownTimeout", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.TimeSpanValidator(MaxValueString="10675199.02:48:05.4775807", MinValueString="00:00:00")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアプリケーションを正常にシャット ダウンする秒単位、時間を設定します。</summary>
+        <value>A<see cref="T:System.TimeSpan" />は、指定した秒数、アプリケーションが正常にシャット ダウンします。 既定値は 30 秒です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値、<xref:System.Web.Configuration.HostingEnvironmentSection.ShutdownTimeout%2A>プロパティは 30 秒です。 この設定は、コンピューターまたはアプリケーション レベルで設定できます。 この設定が他の構成レベルで定義されている場合は無視されます。 デバッガーがアプリケーションにアタッチされている場合、アプリケーションはシャット ダウンするされません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.HostingEnvironmentSection.ShutdownTimeout%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HostingEnvironmentSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HostingEnvironmentSection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HostingEnvironmentSection/CS/hostingenvironmentsection.cs#3)]
+ [!code-vb[System.Web.Configuration.HostingEnvironmentSection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HostingEnvironmentSection/VB/hostingenvironmentsection.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UrlMetadataSlidingExpiration">
+      <MemberSignature Language="C#" Value="public TimeSpan UrlMetadataSlidingExpiration { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan UrlMetadataSlidingExpiration" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HostingEnvironmentSection.UrlMetadataSlidingExpiration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Configuration.InfiniteTimeSpanConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("urlMetadataSlidingExpiration", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.TimeSpanValidator(MaxValueString="10675199.02:48:05.4775807", MinValueString="00:00:00")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または ASP.NET が URL のメタデータをキャッシュする方法を決定する値を設定します。</summary>
+        <value>ASP.NET が URL のメタデータをキャッシュする方法を決定する値。 既定値は 1 分です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ URL のメタデータの例は、Web.config ファイルで特定の URL に適用されるセキュリティの制限に関する情報です。  
+  
+ 次の値には、特別な意味があります。  
+  
+-   「無期限」です。 URL のメタデータは、スライド式有効期限なしにキャッシュされます。 つまり、サーバーの使用量のメモリを割り当てられた最大までキャッシュが続行されます。 これは、ASP.NET 3.5 と以前のバージョンの既定の動作です。  
+  
+-   "00:00:00". URL のメタデータはキャッシュされません。 メタデータは、すべての要求を再生成されます。 これは、同じ URL が要求されたほとんどのシナリオに対して最も効率的です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,124 @@
+<Type Name="IWebFormReferenceManager" FullName="System.Web.UI.Design.IWebFormReferenceManager">
+  <TypeSignature Language="C#" Value="public interface IWebFormReferenceManager" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IWebFormReferenceManager" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.IWebFormReferenceManager" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The recommended alternative is System.Web.UI.Design.WebFormsReferenceManager. The WebFormsReferenceManager contains additional functionality and allows for more extensibility. To get the WebFormsReferenceManager use the RootDesigner.ReferenceManager property from your ControlDesigner. http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>現在の Web フォーム プロジェクトで使用される型に関する情報を検索できるインターフェイスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.IWebFormReferenceManager>インターフェイスは今後使用しません。 使用して、<xref:System.Web.UI.Design.WebFormsReferenceManager>デザイナーと同等の機能のクラスです。  
+  
+ Web フォーム ドキュメント デザイナーは、このインターフェイスを実装する必要があります。 このインターフェイスを実装するには、参照を管理し、プロジェクト内で Web フォーム コントロールに関連する情報を提供するデザイナーができるようにします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetObjectType">
+      <MemberSignature Language="C#" Value="public Type GetObjectType (string tagPrefix, string typeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Type GetObjectType(string tagPrefix, string typeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.IWebFormReferenceManager.GetObjectType(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tagPrefix" Type="System.String" />
+        <Parameter Name="typeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="tagPrefix">型のタグ プリフィックス。</param>
+        <param name="typeName">型の名前。</param>
+        <summary>指定したオブジェクトの種類を取得します。</summary>
+        <returns><see cref="T:System.Type" />これが解決できる場合は、オブジェクトの。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.IWebFormReferenceManager.GetObjectType%2A>メソッドは今後使用しません。 使用して、<xref:System.Web.UI.Design.WebFormsReferenceManager.GetType%2A>メソッドを<xref:System.Web.UI.Design.WebFormsReferenceManager>デザイナーと同等の機能のクラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRegisterDirectives">
+      <MemberSignature Language="C#" Value="public string GetRegisterDirectives ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetRegisterDirectives() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.IWebFormReferenceManager.GetRegisterDirectives" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のプロジェクトのレジスタ ディレクティブを取得します。</summary>
+        <returns>現在のプロジェクトのレジスタ ディレクティブです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.IWebFormReferenceManager.GetRegisterDirectives%2A>メソッドは今後使用しません。 使用して、<xref:System.Web.UI.Design.WebFormsReferenceManager.GetRegisterDirectives%2A>メソッドを<xref:System.Web.UI.Design.WebFormsReferenceManager>デザイナーと同等の機能のクラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTagPrefix">
+      <MemberSignature Language="C#" Value="public string GetTagPrefix (Type objectType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetTagPrefix(class System.Type objectType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.IWebFormReferenceManager.GetTagPrefix(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="objectType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="objectType">オブジェクトの型。</param>
+        <summary>指定したオブジェクトの型のタグ プレフィックスを取得します。</summary>
+        <returns>配置できた場合は、指定したオブジェクトの型のタグ プリフィックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.IWebFormReferenceManager.GetTagPrefix%2A>メソッドは今後使用しません。 使用して、<xref:System.Web.UI.Design.WebFormsReferenceManager.GetTagPrefix%2A>メソッドを<xref:System.Web.UI.Design.WebFormsReferenceManager>デザイナーと同等の機能のクラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

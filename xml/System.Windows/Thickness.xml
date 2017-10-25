@@ -1,0 +1,417 @@
+<Type Name="Thickness" FullName="System.Windows.Thickness">
+  <TypeSignature Language="C#" Value="public struct Thickness : IEquatable&lt;System.Windows.Thickness&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit Thickness extends System.ValueType implements class System.IEquatable`1&lt;valuetype System.Windows.Thickness&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Thickness" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IEquatable&lt;System.Windows.Thickness&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.ThicknessConverter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None, Readability=System.Windows.Readability.Unreadable)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>四角形の枠の太さについて記述します。 次の 4 つ<see cref="T:System.Double" />値について説明する、 <see cref="P:System.Windows.Thickness.Left" />、 <see cref="P:System.Windows.Thickness.Top" />、 <see cref="P:System.Windows.Thickness.Right" />、および<see cref="P:System.Windows.Thickness.Bottom" />四角形の辺それぞれします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定できます<xref:System.Windows.Thickness>方法は 2 つの値。 4 つ渡した場合<xref:System.Double>、構造体に値を表す、 <xref:System.Windows.Thickness.Left%2A>、 <xref:System.Windows.Thickness.Top%2A>、<xref:System.Windows.Thickness.Right%2A>と<xref:System.Windows.Thickness.Bottom%2A>辺、それぞれ、外接する四角形のです。 外接する四角形の辺に統一された値を適用、単一の値を指定することもできます。  
+  
+<a name="xamlAttributeUsage_Thickness"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="left"/>  
+- or -  
+<object property="left,top"/>  
+- or -  
+<object property=" left,top,right,bottom" ... />  
+```  
+  
+<a name="xamlValues_Thickness"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *left*  
+ いずれかとして説明されているフレームの左のエッジ、<xref:System.Double>を指定する値、[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]メジャー、または、 *qualifiedDouble* (下記参照)。 下の値の 1 つのメジャーが指定されているメジャーが左側、上部、右側のすべてに適用される、だけの場合、<xref:System.Windows.Thickness>です。 だけを左と上のメジャーのペアを指定すると、これらのメジャーが対称的に適用されます、 <xref:System.Windows.Thickness>: 左の値が右の使用です。 下の上位の値を使用します。  
+  
+ *top*  
+ いずれかとして説明されている、フレームの上部エッジ、<xref:System.Double>を指定する値、[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]メジャー、または、 *qualifiedDouble* (下記参照)。 だけを左と上のメジャーのペアを指定すると、これらのメジャーが対称的に適用されます、 <xref:System.Windows.Thickness>: 左の値が右の使用です。 下の上位の値を使用します。  
+  
+ *right*  
+ いずれかとして説明されているフレームの右の端、<xref:System.Double>を指定する値、[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]メジャー、または、 *qualifiedDouble* (下記参照)。 左側の値を指定しない場合は、左の値に使用されます。  
+  
+ *下部にあります。*  
+ いずれかとして説明されている、フレームの下端、<xref:System.Double>を指定する値、[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]メジャー、または、 *qualifiedDouble* (下記参照)。 左側の値を指定しない場合は、左の値に使用されます。  
+  
+ *qualifiedDouble*  
+ A*二重*値のいずれかのメジャー、前述のよう続けて次の単位の宣言文字列のいずれかの: `px`、 `in`、 `cm`、`pt`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ `cm`センチメートル; は、します。1cm==(96/2.54) px  
+  
+ `pt`ポイントです。1pt==(96/72) px  
+  
+> [!NOTE]
+>  値では、文字列として指定するときに明示的に小数点が含まれません必要があります。 文字列「1」で提供される[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]1.0 コードで参照されている場合の値に評価します。  
+  
+   
+  
+## Examples  
+ 次の例のインスタンスを作成する方法を示しています、<xref:System.Windows.Thickness>構造体し、を使用してそのプロパティを設定[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]とコード。  
+  
+ [!code-csharp[ThicknessStruct#2](~/samples/snippets/csharp/VS_Snippets_Wpf/ThicknessStruct/CSharp/ThicknessSamp.cs#2)]
+ [!code-vb[ThicknessStruct#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ThicknessStruct/VisualBasic/ThicknessSampVB.vb#2)]
+ [!code-xaml[ThicknessStruct#2](~/samples/snippets/xaml/VS_Snippets_Wpf/ThicknessStruct/XAML/default.xaml#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Thickness (double uniformLength);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 uniformLength) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Thickness.#ctor(System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="uniformLength" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="uniformLength">外接する四角形の 4 つの辺をすべてに適用される一定の長さ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Thickness" />をそれぞれの側で指定された uniform 長さを持つ構造体。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Thickness (double left, double top, double right, double bottom);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 left, float64 top, float64 right, float64 bottom) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Thickness.#ctor(System.Double,System.Double,System.Double,System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="left" Type="System.Double" />
+        <Parameter Name="top" Type="System.Double" />
+        <Parameter Name="right" Type="System.Double" />
+        <Parameter Name="bottom" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="left">四角形の左側の太さ。</param>
+        <param name="top">四角形の上側の太さ。</param>
+        <param name="right">四角形の右側の太さ。</param>
+        <param name="bottom">四角形の下側の太さ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Thickness" />を特定の長さを持つ構造体 (として指定された、 <see cref="T:System.Double" />) 四角形の各辺に適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のインスタンスを作成する方法を示しています、<xref:System.Windows.Thickness>コードを使用して構造体。  
+  
+ [!code-csharp[ThicknessStruct#1](~/samples/snippets/csharp/VS_Snippets_Wpf/ThicknessStruct/CSharp/ThicknessSamp.cs#1)]
+ [!code-vb[ThicknessStruct#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ThicknessStruct/VisualBasic/ThicknessSampVB.vb#1)]
+ [!code-xaml[ThicknessStruct#1](~/samples/snippets/xaml/VS_Snippets_Wpf/ThicknessStruct/XAML/default.xaml#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bottom">
+      <MemberSignature Language="C#" Value="public double Bottom { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Bottom" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Thickness.Bottom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または外接する四角形の下のピクセル単位の幅を設定します。</summary>
+        <value>A<see cref="T:System.Double" />のこのインスタンスの外接する四角形の下のピクセル単位の幅を表す<see cref="T:System.Windows.Thickness" />です。 ピクセルは 1/96 インチになります。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を設定する方法を示しています、<xref:System.Windows.Thickness.Bottom%2A>プロパティを使用して[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]とコード。  
+  
+ [!code-csharp[ThicknessStruct#2](~/samples/snippets/csharp/VS_Snippets_Wpf/ThicknessStruct/CSharp/ThicknessSamp.cs#2)]
+ [!code-vb[ThicknessStruct#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ThicknessStruct/VisualBasic/ThicknessSampVB.vb#2)]
+ [!code-xaml[ThicknessStruct#2](~/samples/snippets/xaml/VS_Snippets_Wpf/ThicknessStruct/XAML/default.xaml#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Thickness.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">比較対象のオブジェクト。</param>
+        <summary>これと比較<see cref="T:System.Windows.Thickness" />を別の構造体<see cref="T:System.Object" />等しいかどうか。</summary>
+        <returns>
+          2 つのオブジェクトが等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 論理的に等価な 2 つの浮動小数点値に等しいかどうかテストは、有効桁数エラーように、値が演算を蓄積する可能性が失敗する可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Windows.Thickness thickness);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(valuetype System.Windows.Thickness thickness) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Thickness.Equals(System.Windows.Thickness)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thickness" Type="System.Windows.Thickness" />
+      </Parameters>
+      <Docs>
+        <param name="thickness">インスタンス<see cref="T:System.Windows.Thickness" />等しいかどうかを比較します。</param>
+        <summary>これと比較<see cref="T:System.Windows.Thickness" />を別の構造<see cref="T:System.Windows.Thickness" />構造が等しいかどうか。</summary>
+        <returns>
+          <see langword="true" />場合、2 つの<see cref="T:System.Windows.Thickness" />が等しい。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 等値演算子または非等値と論理的に等価である 2 つの浮動小数点値のテストは、有効桁数エラーように、値が演算を蓄積する可能性が失敗する可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Thickness.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この構造体のハッシュ コードを返します。</summary>
+        <returns>このインスタンスのハッシュ コード<see cref="T:System.Windows.Thickness" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Left">
+      <MemberSignature Language="C#" Value="public double Left { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Left" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Thickness.Left" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>外接する四角形の左辺の幅 (ピクセル単位) を取得または設定します。</summary>
+        <value>A<see cref="T:System.Double" />のこのインスタンスの外接する四角形の左端のピクセル単位の幅を表す<see cref="T:System.Windows.Thickness" />です。 1 ピクセルは 1/96 インチに相当します。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を設定する方法を示しています、<xref:System.Windows.Thickness.Left%2A>プロパティを使用して[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]とコード。  
+  
+ [!code-csharp[ThicknessStruct#2](~/samples/snippets/csharp/VS_Snippets_Wpf/ThicknessStruct/CSharp/ThicknessSamp.cs#2)]
+ [!code-vb[ThicknessStruct#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ThicknessStruct/VisualBasic/ThicknessSampVB.vb#2)]
+ [!code-xaml[ThicknessStruct#2](~/samples/snippets/xaml/VS_Snippets_Wpf/ThicknessStruct/XAML/default.xaml#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Windows.Thickness t1, System.Windows.Thickness t2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Windows.Thickness t1, valuetype System.Windows.Thickness t2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Thickness.op_Equality(System.Windows.Thickness,System.Windows.Thickness)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="t1" Type="System.Windows.Thickness" />
+        <Parameter Name="t2" Type="System.Windows.Thickness" />
+      </Parameters>
+      <Docs>
+        <param name="t1">比較する最初の構造体。</param>
+        <param name="t2">その他の構造体と比較します。</param>
+        <summary>2 つの値を比較<see cref="T:System.Windows.Thickness" />構造が等しいかどうか。</summary>
+        <returns>
+          <see langword="true" />場合、2 つの<see cref="T:System.Windows.Thickness" />が等しい。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 論理的に等価な 2 つの浮動小数点値に等しいかどうかテストは、有効桁数エラーように、値が演算を蓄積する可能性が失敗する可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Windows.Thickness t1, System.Windows.Thickness t2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Windows.Thickness t1, valuetype System.Windows.Thickness t2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Thickness.op_Inequality(System.Windows.Thickness,System.Windows.Thickness)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="t1" Type="System.Windows.Thickness" />
+        <Parameter Name="t2" Type="System.Windows.Thickness" />
+      </Parameters>
+      <Docs>
+        <param name="t1">比較する最初の構造体。</param>
+        <param name="t2">その他の構造体と比較します。</param>
+        <summary>比較する 2 つ<see cref="T:System.Windows.Thickness" />非等値の構造体。</summary>
+        <returns>
+          <see langword="true" />場合、2 つの<see cref="T:System.Windows.Thickness" />が等しくない。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 等値演算子または非等値と論理的に等価である 2 つの浮動小数点値のテストは、有効桁数エラーように、値が演算を蓄積する可能性が失敗する可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Right">
+      <MemberSignature Language="C#" Value="public double Right { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Right" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Thickness.Right" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または四角形領域の右側のピクセル単位の幅を設定します。</summary>
+        <value>A <see cref="T:System.Double" /> (ピクセル単位) のこのインスタンスの外接する四角形の右側にある、幅を表す<see cref="T:System.Windows.Thickness" />です。 ピクセルは 1/96 インチになります。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を設定する方法を示しています、<xref:System.Windows.Thickness.Right%2A>プロパティを使用して[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]とコード。  
+  
+ [!code-csharp[ThicknessStruct#2](~/samples/snippets/csharp/VS_Snippets_Wpf/ThicknessStruct/CSharp/ThicknessSamp.cs#2)]
+ [!code-vb[ThicknessStruct#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ThicknessStruct/VisualBasic/ThicknessSampVB.vb#2)]
+ [!code-xaml[ThicknessStruct#2](~/samples/snippets/xaml/VS_Snippets_Wpf/ThicknessStruct/XAML/default.xaml#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Top">
+      <MemberSignature Language="C#" Value="public double Top { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Top" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Thickness.Top" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または外接する四角形の上のピクセル単位の幅を設定します。</summary>
+        <value>A<see cref="T:System.Double" />面の上のこのインスタンスの外接する四角形のピクセル単位の幅を表す<see cref="T:System.Windows.Thickness" />です。 ピクセルは 1/96 インチになります。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を設定する方法を示しています、<xref:System.Windows.Thickness.Top%2A>プロパティを使用して[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]とコード。  
+  
+ [!code-csharp[ThicknessStruct#2](~/samples/snippets/csharp/VS_Snippets_Wpf/ThicknessStruct/CSharp/ThicknessSamp.cs#2)]
+ [!code-vb[ThicknessStruct#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ThicknessStruct/VisualBasic/ThicknessSampVB.vb#2)]
+ [!code-xaml[ThicknessStruct#2](~/samples/snippets/xaml/VS_Snippets_Wpf/ThicknessStruct/XAML/default.xaml#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Thickness.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>文字列表現を返します、<see cref="T:System.Windows.Thickness" />構造体。</summary>
+        <returns>A<see cref="T:System.String" />を表す、<see cref="T:System.Windows.Thickness" />値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

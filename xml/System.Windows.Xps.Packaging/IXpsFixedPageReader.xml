@@ -1,0 +1,341 @@
+<Type Name="IXpsFixedPageReader" FullName="System.Windows.Xps.Packaging.IXpsFixedPageReader">
+  <TypeSignature Language="C#" Value="public interface IXpsFixedPageReader : System.Windows.Xps.Packaging.IStoryFragmentProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IXpsFixedPageReader implements class System.Windows.Xps.Packaging.IStoryFragmentProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Xps.Packaging.IXpsFixedPageReader" />
+  <AssemblyInfo>
+    <AssemblyName>ReachFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Xps.Packaging.IStoryFragmentProvider</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>各部分を読み取るためのメソッドを定義、<see cref="T:System.Windows.Documents.FixedPage" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、取得する方法を示します、<xref:System.Windows.Xps.Packaging.IXpsFixedPageReader>コレクションから、<xref:System.Windows.Xps.Packaging.IXpsFixedDocumentReader>です。 このサンプルでは、固定ページ リーダーを使用して、新しいを追加する方法も示しています<xref:System.Windows.Documents.DocumentStructures.StoryFragment>ページのドキュメントの構造を定義します。  
+  
+ [!code-csharp[DocumentStructure#DocStrucFixedDoc](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentStructure/CSharp/Window1.xaml.cs#docstrucfixeddoc)]
+ [!code-vb[DocumentStructure#DocStrucFixedDoc](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DocumentStructure/visualbasic/window1.xaml.vb#docstrucfixeddoc)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ColorContexts">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;System.Windows.Xps.Packaging.XpsColorContext&gt; ColorContexts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;class System.Windows.Xps.Packaging.XpsColorContext&gt; ColorContexts" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.IXpsFixedPageReader.ColorContexts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.Windows.Xps.Packaging.XpsColorContext&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページのすべてのカラー コンテキストのコレクションを取得します。</summary>
+        <value><see cref="T:System.Collections.Generic.ICollection`1" />が含まれている各<see cref="T:System.Windows.Xps.Packaging.XpsColorContext" />がページに表示されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Fonts">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;System.Windows.Xps.Packaging.XpsFont&gt; Fonts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;class System.Windows.Xps.Packaging.XpsFont&gt; Fonts" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.IXpsFixedPageReader.Fonts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.Windows.Xps.Packaging.XpsFont&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページで使用されているすべてのフォントのコレクションを取得します。</summary>
+        <value><see cref="T:System.Collections.Generic.ICollection`1" />が含まれている各<see cref="T:System.Windows.Xps.Packaging.XpsFont" />がページに表示されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetColorContext">
+      <MemberSignature Language="C#" Value="public System.Windows.Xps.Packaging.XpsColorContext GetColorContext (Uri uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Xps.Packaging.XpsColorContext GetColorContext(class System.Uri uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.IXpsFixedPageReader.GetColorContext(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.XpsColorContext</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="uri">[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]リソースのです。</param>
+        <summary>カラー コンテキストを取得しますが、指定したリソース[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]です。</summary>
+        <returns><see cref="T:System.Windows.Xps.Packaging.XpsColorContext" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFont">
+      <MemberSignature Language="C#" Value="public System.Windows.Xps.Packaging.XpsFont GetFont (Uri uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Xps.Packaging.XpsFont GetFont(class System.Uri uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.IXpsFixedPageReader.GetFont(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.XpsFont</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="uri">[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]フォントのです。</param>
+        <summary>持つ、指定したフォントを取得する[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]です。</summary>
+        <returns>指定した Uri を使用できるフォントです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetImage">
+      <MemberSignature Language="C#" Value="public System.Windows.Xps.Packaging.XpsImage GetImage (Uri uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Xps.Packaging.XpsImage GetImage(class System.Uri uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.IXpsFixedPageReader.GetImage(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.XpsImage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="uri">[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]イメージのです。</param>
+        <summary>持つ、指定したイメージを取得[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]です。</summary>
+        <returns>指定した Uri を持つイメージです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetResource">
+      <MemberSignature Language="C#" Value="public System.Windows.Xps.Packaging.XpsResource GetResource (Uri resourceUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Xps.Packaging.XpsResource GetResource(class System.Uri resourceUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.IXpsFixedPageReader.GetResource(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.XpsResource</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resourceUri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="resourceUri">[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]リソースのです。</param>
+        <summary>持つ、指定したリソースを取得する[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]です。</summary>
+        <returns>指定された Uri であるリソースです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したリソースの特定の種類が認識していない場合は、このメソッドを使用[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]です。 型をわかっている場合は、このクラスで提供されている型に固有のメソッドのいずれかを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetResourceDictionary">
+      <MemberSignature Language="C#" Value="public System.Windows.Xps.Packaging.XpsResourceDictionary GetResourceDictionary (Uri uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Xps.Packaging.XpsResourceDictionary GetResourceDictionary(class System.Uri uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.IXpsFixedPageReader.GetResourceDictionary(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.XpsResourceDictionary</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="uri">[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]リソース ディクショナリのです。</param>
+        <summary>指定されたリソース ディクショナリを取得[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]です。</summary>
+        <returns>指定した Uri を持つリソース ディクショナリ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Images">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;System.Windows.Xps.Packaging.XpsImage&gt; Images { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;class System.Windows.Xps.Packaging.XpsImage&gt; Images" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.IXpsFixedPageReader.Images" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.Windows.Xps.Packaging.XpsImage&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページのすべてのイメージのコレクションを取得します。</summary>
+        <value><see cref="T:System.Collections.Generic.ICollection`1" />が含まれている各<see cref="T:System.Windows.Xps.Packaging.XpsImage" />がページに表示されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageNumber">
+      <MemberSignature Language="C#" Value="public int PageNumber { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PageNumber" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.IXpsFixedPageReader.PageNumber" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページ番号を取得します。</summary>
+        <value><see cref="T:System.Int32" />を表すページ番号です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrintTicket">
+      <MemberSignature Language="C#" Value="public System.Printing.PrintTicket PrintTicket { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Printing.PrintTicket PrintTicket" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.IXpsFixedPageReader.PrintTicket" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintTicket</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="T:System.Printing.PrintTicket" />、チケットが存在する場合、関連付けられている、<see cref="T:System.Windows.Documents.FixedPage" />です。</summary>
+        <value>A <see cref="T:System.Printing.PrintTicket" /> ; ページの既定の印刷オプションを格納しているまたは<see langword="null" />いない場合<see cref="T:System.Printing.PrintTicket" />ページに対して存在します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、<xref:System.Printing.PrintTicket>の一部、 [!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)] ] ページで、[第 2 章を参照してください、[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]で入手可能仕様[XPS: 仕様とライセンスのダウンロード](http://www.microsoft.com/whdc/xps/downloads.mspx)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResourceDictionaries">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;System.Windows.Xps.Packaging.XpsResourceDictionary&gt; ResourceDictionaries { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;class System.Windows.Xps.Packaging.XpsResourceDictionary&gt; ResourceDictionaries" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.IXpsFixedPageReader.ResourceDictionaries" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.Windows.Xps.Packaging.XpsResourceDictionary&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページのすべてのリソース ディクショナリのコレクションを取得します。</summary>
+        <value><see cref="T:System.Windows.Xps.Packaging.XpsResourceDictionary" /> オブジェクトの <see cref="T:System.Collections.Generic.ICollection`1" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StoryFragment">
+      <MemberSignature Language="C#" Value="public System.Windows.Xps.Packaging.XpsStructure StoryFragment { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Xps.Packaging.XpsStructure StoryFragment" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.IXpsFixedPageReader.StoryFragment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.XpsStructure</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Documents.DocumentStructures.StoryFragments" />のマークアップの一部、[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]パッケージです。</summary>
+        <value><see cref="T:System.Windows.Xps.Packaging.XpsStructure" />を表す、<see cref="T:System.Windows.Documents.DocumentStructures.StoryFragments" />内の要素、[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]パッケージです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、<xref:System.Windows.Documents.DocumentStructures.StoryFragments>の要素、[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]パッケージ、9 の章を参照してください、[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]で入手可能仕様[XPS: 仕様とライセンスのダウンロード](http://www.microsoft.com/whdc/xps/downloads.mspx)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Thumbnail">
+      <MemberSignature Language="C#" Value="public System.Windows.Xps.Packaging.XpsThumbnail Thumbnail { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Xps.Packaging.XpsThumbnail Thumbnail" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.IXpsFixedPageReader.Thumbnail" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.XpsThumbnail</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サムネイルが存在する場合、関連付けられている、サムネイル画像を取得、<see cref="T:System.Windows.Documents.FixedPage" />です。</summary>
+        <value><see cref="T:System.Windows.Xps.Packaging.XpsThumbnail" />イメージを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Uri">
+      <MemberSignature Language="C#" Value="public Uri Uri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Uri" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.IXpsFixedPageReader.Uri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)] の <see cref="T:System.Windows.Documents.FixedPage" /> を取得します。</summary>
+        <value>A<see cref="T:System.Uri" />を表す、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]ページ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlReader">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlReader XmlReader { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlReader XmlReader" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.IXpsFixedPageReader.XmlReader" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlReader</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xml.XmlReader" />ページ。</summary>
+        <value><see cref="T:System.Xml.XmlReader" />ページ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

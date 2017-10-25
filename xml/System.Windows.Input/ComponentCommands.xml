@@ -1,0 +1,1272 @@
+<Type Name="ComponentCommands" FullName="System.Windows.Input.ComponentCommands">
+  <TypeSignature Language="C#" Value="public static class ComponentCommands" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ComponentCommands extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.ComponentCommands" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>キーの入力ジェスチャと <see cref="P:System.Windows.Input.RoutedUICommand.Text" /> プロパティがあらかじめ定義されているコンポーネント関連のコマンドの標準セットを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内のコマンド、<xref:System.Windows.Input.ComponentCommands>クラスと、他のコマンドなど、ライブラリ クラスをコマンド<xref:System.Windows.Input.ApplicationCommands>と<xref:System.Windows.Input.NavigationCommands>、アプリケーション プログラマが頻繁に発生する一般的なコマンドのセットを表すものではします。  コマンドでは、インスタンスのみを表す、<xref:System.Windows.Input.RoutedCommand>とコマンドの実装ロジックではありません。 実装ロジックを使用してコマンドを<xref:System.Windows.UIElement.CommandBindings%2A>です。 たとえば場合、<xref:System.Windows.Input.ComponentCommands.MoveLeft%2A>コントロール (コマンドのターゲット) を実行するロジックでコマンドの実行、<xref:System.Windows.Input.ComponentCommands.MoveLeft%2A>コマンドできない可能性があります、コマンド ターゲットによってため、アプリケーション作成者がコマンド ターゲットがコマンドを処理する方法を決定するロジックの作成を担当します。  
+  
+ 多くのコントロール実装ロジックを提供、ただし、コマンドのライブラリ内のコマンドの多くにします。  など、<xref:System.Windows.Controls.TextBox>クラスのロジックを提供する、<xref:System.Windows.Input.ApplicationCommands.Paste%2A>コマンド、<xref:System.Windows.Input.ApplicationCommands.Cut%2A>コマンド、<xref:System.Windows.Input.ApplicationCommands.Copy%2A>コマンド、<xref:System.Windows.Input.ApplicationCommands.Undo%2A>コマンド、および<xref:System.Windows.Input.ApplicationCommands.Redo%2A>コマンド。 詳細については、特定のコントロール クラスのクラスのドキュメントを参照してください。  
+  
+ コマンドとコマンド実行の詳細については、次を参照してください。[コマンド実行の概要](~/docs/framework/wpf/advanced/commanding-overview.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ExtendSelectionDown">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand ExtendSelectionDown { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand ExtendSelectionDown" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ComponentCommands.ExtendSelectionDown" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[拡張選択 - 下] コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>Shift キーを押しながら下  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>拡張選択-下  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、選択範囲を下方に拡大を設定することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_ExtendSelectionDown"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="ExtendSelectionDown"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtendSelectionLeft">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand ExtendSelectionLeft { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand ExtendSelectionLeft" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ComponentCommands.ExtendSelectionLeft" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>拡張選択 - 左コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>Shift キーを押しながら左  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>拡張選択-左  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、選択範囲を左に拡張を設定することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_ExtendSelectionLeft"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="ExtendSelectionLeft"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtendSelectionRight">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand ExtendSelectionRight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand ExtendSelectionRight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ComponentCommands.ExtendSelectionRight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[拡張選択 - 右] コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>Shift キーを押しながら右  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>拡張選択-右  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドでは、右側の選択範囲を拡張することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_ExtendSelectionRight"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="ExtendSelectionRight"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtendSelectionUp">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand ExtendSelectionUp { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand ExtendSelectionUp" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ComponentCommands.ExtendSelectionUp" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[拡張選択 - 上] コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>Shift キーを押しながら上  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>拡張選択-上  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、選択範囲を上方向へ拡大を設定することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_ExtendSelectionUp"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="ExtendSelectionUp"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveDown">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand MoveDown { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand MoveDown" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ComponentCommands.MoveDown" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>下へ移動コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ダウン  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>下へ移動します。  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドでは、ダウン選択範囲を拡張することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_MoveDown"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="MoveDown"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveFocusBack">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand MoveFocusBack { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand MoveFocusBack" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ComponentCommands.MoveFocusBack" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[フォーカスを前へ移動] コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>Ctrl キーを押しながら左  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>フォーカスを戻す  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドでは、旧バージョンと、選択範囲を拡張することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_MoveFocusBack"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="MoveFocusBack"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveFocusDown">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand MoveFocusDown { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand MoveFocusDown" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ComponentCommands.MoveFocusDown" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[フォーカスを下へ移動] コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>Ctrl キーを押しながら下  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>フォーカスを下へ移動します。  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、拡張を設定することを示す、フォーカスを下へ移動します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_MoveFocusDown"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="MoveFocusDown"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveFocusForward">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand MoveFocusForward { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand MoveFocusForward" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ComponentCommands.MoveFocusForward" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[フォーカスを先へ移動] コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>Ctrl キーを押しながら右  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>フォーカスを前方に移動します。  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドでは、フォーカスを前方に移動することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_MoveFocusForward"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="MoveFocusForward"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveFocusPageDown">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand MoveFocusPageDown { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand MoveFocusPageDown" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ComponentCommands.MoveFocusPageDown" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>「フォーカスをページの下へ移動」コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>Ctrl + pagedown  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>フォーカスのページへ移動します。  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドでは、1 ページ下にフォーカスを移動することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_MoveFocusPageDown"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="MoveFocusPageDown"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveFocusPageUp">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand MoveFocusPageUp { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand MoveFocusPageUp" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ComponentCommands.MoveFocusPageUp" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[フォーカスをページの上へ移動] コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>Ctrl + pageup  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>フォーカス ページ上へ移動します。  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドでは、1 ページ上のフォーカスを移動することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_MoveFocusPageUp"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="MoveFocusPageUp"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveFocusUp">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand MoveFocusUp { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand MoveFocusUp" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ComponentCommands.MoveFocusUp" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[フォーカスを上へ移動] コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>Ctrl キーを押しながら上  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>フォーカスを上へ移動します。  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、フォーカスを上へ移動を設定することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_MoveFocusUp"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="MoveFocusUp"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveLeft">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand MoveLeft { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand MoveLeft" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ComponentCommands.MoveLeft" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>左に移動コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>左  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>左に移動します  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドでは、選択範囲を左に移動することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_MoveLeft"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="MoveLeft"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveRight">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand MoveRight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand MoveRight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ComponentCommands.MoveRight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[右に移動] コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>そうです  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>右に移動します  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、右に移動する選択範囲を設定することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_MoveRight"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="MoveRight"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveToEnd">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand MoveToEnd { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand MoveToEnd" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ComponentCommands.MoveToEnd" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[末尾へ移動] コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>終わり  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>末尾に移動します。  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、移動します。 最後の項目を設定することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_MoveToEnd"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="MoveToEnd"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveToHome">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand MoveToHome { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand MoveToHome" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ComponentCommands.MoveToHome" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[最初へ移動] コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ホーム  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>ホームに移動します。  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、選択範囲の最初の項目へ移動を設定することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_MoveToHome"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="MoveToHome"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveToPageDown">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand MoveToPageDown { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand MoveToPageDown" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ComponentCommands.MoveToPageDown" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページの下へ移動コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>PageDown  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>ページの下へ移動します。  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドでは、選択範囲を 1 ページ下へ移動することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_MoveToPageDown"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="MoveToPageDown"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveToPageUp">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand MoveToPageUp { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand MoveToPageUp" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ComponentCommands.MoveToPageUp" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[ページの上へ移動] コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>PageUp  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>ページの上へ移動します。  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドでは、選択範囲を 1 ページ上を移動することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_MoveToPageUp"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="MoveToPageUp"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveUp">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand MoveUp { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand MoveUp" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ComponentCommands.MoveUp" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>上へ移動コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>アップ  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>上へ移動します。  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、選択範囲を上へ移動を設定することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_MoveUp"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="MoveUp"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollByLine">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand ScrollByLine { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand ScrollByLine" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ComponentCommands.ScrollByLine" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[行ごとにスクロール] コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ジェスチャが定義されていません  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>行ごとにスクロール  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、上方向への行の番号を指定して垂直方向にスクロールを設定することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_ScrollByLine"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="ScrollByLine"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollPageDown">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand ScrollPageDown { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand ScrollPageDown" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ComponentCommands.ScrollPageDown" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[1 ページ下へスクロール] コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>PageDown  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>ページ下へスクロールします。  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、ページが垂直方向に下へスクロールを設定することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_ScrollPageDown"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="ScrollPageDown"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollPageLeft">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand ScrollPageLeft { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand ScrollPageLeft" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ComponentCommands.ScrollPageLeft" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[ページを左にスクロール] コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ジェスチャが定義されていません。  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>ページの左にスクロールします。  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、1 ページ左にスクロールを設定することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_ScrollPageLeft"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="ScrollPageLeft"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollPageRight">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand ScrollPageRight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand ScrollPageRight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ComponentCommands.ScrollPageRight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[ページを右にスクロール] コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ジェスチャが定義されていません。  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>ページの右にスクロールします。  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、1 ページ右にスクロールを設定することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_ScrollPageRight"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="ScrollPageRight"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollPageUp">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand ScrollPageUp { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand ScrollPageUp" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ComponentCommands.ScrollPageUp" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[1 ページ上へスクロール] コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>PageUp  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>ページ上へスクロールします。  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドでは、ページ上の垂直方向へスクロールすることを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_ScrollPageUp"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="ScrollPageUp"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectToEnd">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand SelectToEnd { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand SelectToEnd" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ComponentCommands.SelectToEnd" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[末尾まで選択] コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>Shift キーを押しながら End  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>終了する場合に選択します。  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、項目の選択、現在の項目から最後の項目を設定することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_SelectToEnd"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="SelectToEnd"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectToHome">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand SelectToHome { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand SelectToHome" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ComponentCommands.SelectToHome" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>「先頭まで選択」コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>Shift キーを押しながらホーム  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>ホームを選択します。  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、拡張を設定することを示します。 最初の項目に現在の項目から項目を選択します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_SelectToHome"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="SelectToHome"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectToPageDown">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand SelectToPageDown { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand SelectToPageDown" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ComponentCommands.SelectToPageDown" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[ページの下まで選択] コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>Shift + PageDown  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>下方向のページを選択します。  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、現在のアイテムを 1 ページ下から選択を設定することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_SelectToPageDown"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="SelectToPageDown"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectToPageUp">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand SelectToPageUp { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand SelectToPageUp" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ComponentCommands.SelectToPageUp" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>"ページの上まで選択" コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>Shift キーを押しながら PageUp  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>ページの上まで選択します。  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドでは、1 ページ上の現在の項目から選択することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_SelectToPageUp"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="SelectToPageUp"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

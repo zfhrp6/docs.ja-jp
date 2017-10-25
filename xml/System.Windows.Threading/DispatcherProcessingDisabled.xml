@@ -1,0 +1,175 @@
+<Type Name="DispatcherProcessingDisabled" FullName="System.Windows.Threading.DispatcherProcessingDisabled">
+  <TypeSignature Language="C#" Value="public struct DispatcherProcessingDisabled : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit DispatcherProcessingDisabled extends System.ValueType implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Threading.DispatcherProcessingDisabled" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>無効な状態では、およびディスパッチャーの処理を再度有効にするための手段を提供時に、ディスパッチャーを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Threading.Dispatcher.DisableProcessing%2A>返します、<xref:System.Windows.Threading.DispatcherProcessingDisabled>オブジェクトが呼び出されるとします。  
+  
+ ディスパッチャーの処理を無効にすることは、関連のない再入の可能性を排除するためのものでは、高度な方法です。  
+  
+ 処理を無効にする場合の影響は次のとおりです。  
+  
+-   [!INCLUDE[TLA2#tla_clr#initcap](~/includes/tla2sharptla-clrsharpinitcap-md.md)]ロックはないメッセージをポンプを内部的にします。  
+  
+-   <xref:System.Windows.Threading.DispatcherFrame>オブジェクトは、プッシュは許可されません。  
+  
+-   メッセージの処理が許可されていません。  
+  
+ 呼び出す<xref:System.Windows.Threading.DispatcherProcessingDisabled.Dispose%2A>上、<xref:System.Windows.Threading.DispatcherProcessingDisabled>オブジェクトはディスパッチャーの処理を再度有効にします。  
+  
+   
+  
+## Examples  
+ 次の例では、ディスパッチャーの処理を無効にして、ディスパッチャーの処理を再度有効にする方法を示します。  <xref:System.Windows.Threading.Dispatcher.DisableProcessing%2A>呼び出される、**を使用して**ステートメントです。  <xref:System.Windows.Threading.Dispatcher.DisableProcessing%2A>返します、<xref:System.Windows.Threading.DispatcherProcessingDisabled>に破棄されたときに、オブジェクトとして使用される構造体、**を使用して**ブロックが完了するとします。  呼び出す<xref:System.Windows.Threading.DispatcherProcessingDisabled.Dispose%2A>上、<xref:System.Windows.Threading.DispatcherProcessingDisabled>構造ディスパッチャーの処理を再度有効にします。  
+  
+ [!code-csharp[DispatcherSnippets#DispatcherDisableProcessing](~/samples/snippets/csharp/VS_Snippets_Wpf/DispatcherSnippets/CSharp/Window1.xaml.cs#dispatcherdisableprocessing)]
+ [!code-vb[DispatcherSnippets#DispatcherDisableProcessing](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DispatcherSnippets/visualbasic/window1.xaml.vb#dispatcherdisableprocessing)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.DispatcherProcessingDisabled.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ディスパッチャーの処理を再度有効にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ディスパッチャーの処理を無効にすることは、関連のない再入の可能性を排除するためのものでは、高度な方法です。  
+  
+ 処理を無効にする場合の影響は次のとおりです。  
+  
+-   [!INCLUDE[TLA2#tla_clr#initcap](~/includes/tla2sharptla-clrsharpinitcap-md.md)]ロックはないメッセージをポンプを内部的にします。  
+  
+-   <xref:System.Windows.Threading.DispatcherFrame>オブジェクトは、プッシュは許可されません。  
+  
+-   メッセージの処理が許可されていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.DispatcherProcessingDisabled.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">等しいかどうかを評価するオブジェクト。</param>
+        <summary>決定するかどうか、指定した<see cref="T:System.Windows.Threading.DispatcherProcessingDisabled" />オブジェクトがこれと等しい<see cref="T:System.Windows.Threading.DispatcherProcessingDisabled" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />指定したオブジェクトがこれに等しい場合<see cref="T:System.Windows.Threading.DispatcherProcessingDisabled" />オブジェクト。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.DispatcherProcessingDisabled.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを取得します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Windows.Threading.DispatcherProcessingDisabled left, System.Windows.Threading.DispatcherProcessingDisabled right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Windows.Threading.DispatcherProcessingDisabled left, valuetype System.Windows.Threading.DispatcherProcessingDisabled right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.DispatcherProcessingDisabled.op_Equality(System.Windows.Threading.DispatcherProcessingDisabled,System.Windows.Threading.DispatcherProcessingDisabled)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Windows.Threading.DispatcherProcessingDisabled" />
+        <Parameter Name="right" Type="System.Windows.Threading.DispatcherProcessingDisabled" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較する最初のオブジェクト。</param>
+        <param name="right">比較する 2 番目のオブジェクト。</param>
+        <summary>2 つの <see cref="T:System.Windows.Threading.DispatcherProcessingDisabled" /> オブジェクトが等しいかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Windows.Threading.DispatcherProcessingDisabled" />オブジェクトが等しい。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Windows.Threading.DispatcherProcessingDisabled left, System.Windows.Threading.DispatcherProcessingDisabled right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Windows.Threading.DispatcherProcessingDisabled left, valuetype System.Windows.Threading.DispatcherProcessingDisabled right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.DispatcherProcessingDisabled.op_Inequality(System.Windows.Threading.DispatcherProcessingDisabled,System.Windows.Threading.DispatcherProcessingDisabled)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Windows.Threading.DispatcherProcessingDisabled" />
+        <Parameter Name="right" Type="System.Windows.Threading.DispatcherProcessingDisabled" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較する最初のオブジェクト。</param>
+        <param name="right">比較する 2 番目のオブジェクト。</param>
+        <summary>2 つあるかどうかを決定<see cref="T:System.Windows.Threading.DispatcherProcessingDisabled" />オブジェクトが等しくないです。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Windows.Threading.DispatcherProcessingDisabled" />オブジェクトが等しくない。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

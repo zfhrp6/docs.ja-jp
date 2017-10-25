@@ -1,0 +1,275 @@
+<Type Name="ImportAttribute" FullName="System.ComponentModel.Composition.ImportAttribute">
+  <TypeSignature Language="C#" Value="public class ImportAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ImportAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Composition.ImportAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property | System.AttributeTargets.Field | System.AttributeTargets.Parameter, AllowMultiple=false, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プロパティ、フィールド、またはパラメーターの値がによって提供されることを指定します、<see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 属性付きプログラミング モデルで、<xref:System.ComponentModel.Composition.ImportAttribute>インポート、または特定の部分の依存関係を宣言するために使用します。 プロパティ、フィールド、またはメソッドを装飾できます。 の構成時に、パートのインポートが満たされる、<xref:System.ComponentModel.Composition.Hosting.CompositionContainer>その部分が属するオブジェクトを提供するエクスポートを使用して、<xref:System.ComponentModel.Composition.Hosting.CompositionContainer>オブジェクト。  
+  
+ 指定したエクスポートをインポートが一致するかどうかは、コントラクト名およびコントラクトの型を比較することによって、主に決定されます。 通常は、コードでは、インポート属性を使用する場合は、これらのいずれかを指定する必要はありませんし、装飾されたメンバーの種類から自動的に推論するされます。 インポートには、別の種類 (たとえばの装飾のメンバー、またはそのメンバーによって実装されるインターフェイスの型のサブクラス) のエクスポートが一致する必要がある場合、コントラクト型必要があります明示的に指定します。 コントラクト名ことができますも明示的には、指定した同じ型では、複数のコントラクトを区別する例についてをメタデータでこれを行うには通常ことをお勧めします。 メタデータの詳細については、次を参照してください。<xref:System.ComponentModel.Composition.PartMetadataAttribute>です。  
+  
+   
+  
+## Examples  
+ 次の例で修飾されたメンバーを持つ 3 つのクラスを示しています、<xref:System.ComponentModel.Composition.ImportAttribute>とそれに一致する次の 3 つのエクスポートします。  
+  
+ [!code-csharp[ImportAndExport#1](~/samples/snippets/csharp/VS_Snippets_Misc/importandexport/cs/program.cs#1)]
+ [!code-vb[ImportAndExport#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/importandexport/vb/module1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ImportAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.ImportAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Composition.ImportAttribute" />クラス、コントラクト名を持つエクスポートをインポートします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントラクト名は、呼び出しの結果、<xref:System.ComponentModel.Composition.AttributedModelServices.GetContractName%2A>このマークされている属性を持つプロパティ、フィールド、またはパラメーターの型のメソッドです。  
+  
+ 使用して、コントラクト名を比較、<xref:System.StringComparer.Ordinal%2A>大文字と小文字、非言語的な比較を実行するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ImportAttribute (string contractName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string contractName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.ImportAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contractName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="contractName">インポート、エクスポートのコントラクト名または<see langword="null" />または空の文字列 ("")、コントラクト名を使用します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Composition.ImportAttribute" />クラス、指定したコントラクト名を持つエクスポートをインポートします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントラクト名は、呼び出しの結果、<xref:System.ComponentModel.Composition.AttributedModelServices.GetContractName%2A>この属性でマークされているプロパティ、フィールド、またはパラメーターの型のメソッドです。  
+  
+ 使用して、コントラクト名を比較、<xref:System.StringComparer.Ordinal%2A>大文字と小文字、非言語的な比較を実行するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ImportAttribute (Type contractType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type contractType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.ImportAttribute.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contractType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="contractType">エクスポートのコントラクト名を派生元の型または<see langword="null" />コントラクト名を使用します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Composition.ImportAttribute" />指定した型から派生したクラス、コントラクト名を持つエクスポートをインポートします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントラクト名は、呼び出しの結果、<xref:System.ComponentModel.Composition.AttributedModelServices.GetContractName%2A>メソッド`contractType`です。  
+  
+ コントラクト名は、呼び出しの結果、<xref:System.ComponentModel.Composition.AttributedModelServices.GetContractName%2A>この属性でマークされているプロパティ、フィールド、またはパラメーターの型のメソッドです。  
+  
+ 使用して、コントラクト名を比較、<xref:System.StringComparer.Ordinal%2A>大文字と小文字、非言語的な比較を実行するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ImportAttribute (string contractName, Type contractType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string contractName, class System.Type contractType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.ImportAttribute.#ctor(System.String,System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contractName" Type="System.String" />
+        <Parameter Name="contractType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="contractName">インポート、エクスポートのコントラクト名または<see langword="null" />または空の文字列 ("")、コントラクト名を使用します。</param>
+        <param name="contractType">インポートするエクスポートの型。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Composition.ImportAttribute" />クラス、指定したコントラクト名と型を持つエクスポートをインポートします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowDefault">
+      <MemberSignature Language="C#" Value="public bool AllowDefault { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowDefault" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Composition.ImportAttribute.AllowDefault" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示すかどうか、プロパティ、フィールド、またはパラメーターがその型の既定値にコントラクト名を持つエクスポートがコンテナーに存在しない場合に値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、プロパティ、フィールド、またはパラメーターに設定されますその型の既定値を持つエクスポートがない場合に、<see cref="P:System.ComponentModel.Composition.ImportAttribute.ContractName" />で、 <see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer" />、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティ、フィールド、またはパラメーターの型の既定値は`null`参照型と数値の値はゼロにします。 その他の値の型の既定値はフィールドが値型である場合に 0 に初期化される値型の各フィールドになりますか`null`フィールドが参照型である場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowRecomposition">
+      <MemberSignature Language="C#" Value="public bool AllowRecomposition { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowRecomposition" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Composition.ImportAttribute.AllowRecomposition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコンテナーに対応するコントラクトを持つエクスポートが変更されたときに、プロパティまたはフィールドを再構成するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />プロパティまたはフィールドは再構成が許可する場合と一致するエクスポート<see cref="P:System.ComponentModel.Composition.ImportAttribute.ContractName" />が追加または削除、 <see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer" />、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContractName">
+      <MemberSignature Language="C#" Value="public string ContractName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContractName" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Composition.ImportAttribute.ContractName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インポートするエクスポートのコントラクト名を取得します。</summary>
+        <value>インポートするエクスポートのコントラクト名。 既定値は、空の文字列 ("") です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContractType">
+      <MemberSignature Language="C#" Value="public Type ContractType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ContractType" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Composition.ImportAttribute.ContractType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インポートするエクスポートの種類を取得します。</summary>
+        <value>インポートするエクスポートの型。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiredCreationPolicy">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Composition.CreationPolicy RequiredCreationPolicy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ComponentModel.Composition.CreationPolicy RequiredCreationPolicy" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Composition.ImportAttribute.RequiredCreationPolicy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Composition.CreationPolicy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インポーターが特定する必要があるかを示す値を取得または<see cref="T:System.ComponentModel.Composition.CreationPolicy" />このインポートを満たすために使用するエクスポートします。</summary>
+        <value>次のいずれかの値です。  
+  
+ <see cref="F:System.ComponentModel.Composition.CreationPolicy.Any" />、インポーターは、固有の仕様を必要としない場合<see cref="T:System.ComponentModel.Composition.CreationPolicy" />です。 既定値です。  
+  
+ <see cref="F:System.ComponentModel.Composition.CreationPolicy.Shared" />使用されているすべてのエクスポートがコンテナー内のすべてのパートで共有されることを要求します。  
+  
+ <see cref="F:System.ComponentModel.Composition.CreationPolicy.NonShared" />使用されるすべてのエクスポートは、コンテナーで共有する必要があります。 この場合、各部分は、独自のインスタンスを受け取ります。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Source">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Composition.ImportSource Source { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ComponentModel.Composition.ImportSource Source" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Composition.ImportAttribute.Source" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Composition.ImportSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、このインポートを満たすことがあります、スコープを指定する値を設定します。</summary>
+        <value>このインポートを満たすことがあります、スコープを指定する値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

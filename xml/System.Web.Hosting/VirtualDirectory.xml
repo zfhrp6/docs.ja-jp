@@ -1,0 +1,224 @@
+<Type Name="VirtualDirectory" FullName="System.Web.Hosting.VirtualDirectory">
+  <TypeSignature Language="C#" Value="public abstract class VirtualDirectory : System.Web.Hosting.VirtualFileBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit VirtualDirectory extends System.Web.Hosting.VirtualFileBase" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Hosting.VirtualDirectory" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Hosting.VirtualFileBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>仮想ファイルまたはリソースの場所にディレクトリ オブジェクトを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.VirtualDirectory>クラスは仮想ファイル システム内のディレクトリを表すオブジェクトの基本クラスです。 通常、実装するの子孫、<xref:System.Web.Hosting.VirtualDirectory>ごとクラス<xref:System.Web.Hosting.VirtualPathProvider>クラス、Web アプリケーションで子孫です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Hosting.VirtualDirectory>に格納されている仮想ディレクトリの情報を返すクラスの実装、<xref:System.Data.DataSet>オブジェクト。 このコードのコード例と連動して、<xref:System.Web.Hosting.VirtualPathProvider>と<xref:System.Web.Hosting.VirtualFile>に、データからの仮想リソース ストアが提供するクラスが読み込まれる、<xref:System.Data.DataSet>オブジェクト。 コンパイルして、例を実行するための手順の例」のセクションを参照してください、<xref:System.Web.Hosting.VirtualPathProvider>クラスの概要です。  
+  
+ この例は、2 つの部分、<xref:System.Web.Hosting.VirtualDirectory>クラスの実装と、XML データ ファイルの設定を使用して、<xref:System.Data.DataSet>オブジェクト。  
+  
+ 最初のコード例は、実装の<xref:System.Web.Hosting.VirtualDirectory>クラスです。 コンス トラクターでメソッドを使用して、カスタム<xref:System.Web.Hosting.VirtualPathProvider>オブジェクトを返す、<xref:System.Data.DataSet>オブジェクト。 検索、<xref:System.Data.DataSet>指定された仮想パスに関連付けられているディレクトリ情報を取得するオブジェクト。  
+  
+ [!code-csharp[System.Web.Hosting.VirtualPathProvider#30](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.hosting.virtualpathprovider/CS/SampleVirtualDirectory.cs#30)]
+ [!code-vb[System.Web.Hosting.VirtualPathProvider#30](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.hosting.virtualpathprovider/VB/SampleVirtualDirectory.vb#30)]  
+  
+ 2 番目の例は、XML データ ファイルの作成に使用する、<xref:System.Data.DataSet>カスタムによって返されるオブジェクト<xref:System.Web.Hosting.VirtualPathProvider>オブジェクト。 この XML データは、使用方法を示すために使用、 <xref:System.Web.Hosting.VirtualPathProvider>、 <xref:System.Web.Hosting.VirtualFile>、および<xref:System.Web.Hosting.VirtualDirectory>クラスの外部のデータからデータを取得して、実稼働品質データ ストアを表すものではありません。  
+  
+```  
+<?xml version="1.0" encoding="utf-8" ?>  
+  <resource type="dir"   
+    path="/vrDir"   
+    parentPath=""   
+    content="">  
+    <resource type="file"   
+      path="/vrDir/Level1FileA.vrf"  
+      parentPath="/vrDir"   
+      content="This is the content of file Level1FileA." >  
+    </resource>  
+    <resource type="file"   
+      path="/vrDir/Level1FileB.vrf"  
+      parentPath="/vrDir"   
+      content="This is the content of file Level1FileB.">  
+    </resource>  
+    <resource type="dir"   
+      path="/vrDir/Level2DirA"   
+      parentPath="/vrDir"   
+      content="">  
+        <resource type="file"   
+          path="/vrDir/Level2DirA/Level2FileA.vrf"   
+          parentPath="/vrDir/Level2DirA"   
+          content="This is the content of file Level2FileA." >  
+        </resource>  
+        <resource type="file"   
+          path="/vrDir/Level2DirA/Level2FileB.vrf"  
+          parentPath="/vrDir/Level2DirA"   
+          content="This is the content of file Level2FileB.">  
+        </resource>  
+    </resource>  
+    <resource type="dir"   
+      path="/vrDir/Level2DirB"   
+      parentPath="/vrDir"   
+      content="">  
+      <resource type="file"   
+        path="/vrDir/Level2DirB/Level2FileA.vrf"   
+        parentPath="/vrDir/Level2DirB"   
+        content="This is the content of file Level2FileA." >  
+      </resource>  
+      <resource type="file"   
+        path="/vrDir/Level2DirB/Level2FileB.vrf"  
+        parentPath="/vrDir/Level2DirB"   
+        content="This is the content of file Level2FileB.">  
+       </resource>  
+    </resource>  
+  </resource>  
+```  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>継承する場合、<see cref="T:System.Web.Hosting.VirtualDirectory" />オーバーライドする必要があります、クラス、 <see cref="P:System.Web.Hosting.VirtualDirectory.Children" />、 <see cref="P:System.Web.Hosting.VirtualDirectory.Directories" />、および<see cref="P:System.Web.Hosting.VirtualDirectory.Files" />プロパティを実装するオブジェクトを返す、<see cref="T:System.Collections.IEnumerable" />インターフェイスです。  
+  
+ 仮想ディレクトリ構造に適度な数以上の仮想リソースが含まれている場合は注意して、呼び出すことによって、仮想ディレクトリを列挙するときに消費されるシステム リソースを最小限に抑える、 <see cref="P:System.Web.Hosting.VirtualDirectory.Children" />、 <see cref="P:System.Web.Hosting.VirtualDirectory.Directories" />、または<see cref="P:System.Web.Hosting.VirtualDirectory.Files" />プロパティです。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected VirtualDirectory (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.VirtualDirectory.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">このインスタンスによって表されるリソースの仮想パス。</param>
+        <summary><see cref="T:System.Web.Hosting.VirtualDirectory" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、実装の<xref:System.Web.Hosting.VirtualDirectory.%23ctor%2A>から仮想ファイルの情報を取得するコンス トラクター、<xref:System.Data.DataSet>カスタムによって提供されるオブジェクト<xref:System.Web.Hosting.VirtualPathProvider>オブジェクト。 含まれている、`GetData`設定に使用するメソッド、<xref:System.Web.Hosting.VirtualDirectory>インスタンス。 例を実行するために必要な完全なコードのセクションの例を参照してください、<xref:System.Web.Hosting.VirtualDirectory>クラスの概要です。  
+  
+ [!code-csharp[System.Web.Hosting.VirtualPathProvider#31](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.hosting.virtualpathprovider/CS/SampleVirtualDirectory.cs#31)]
+ [!code-vb[System.Web.Hosting.VirtualPathProvider#31](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.hosting.virtualpathprovider/VB/SampleVirtualDirectory.vb#31)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Children">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.IEnumerable Children { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerable Children" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Hosting.VirtualDirectory.Children" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルとサブディレクトリ内にこの仮想ディレクトリの一覧を取得します。</summary>
+        <value>実装するオブジェクト、<see cref="T:System.Collections.IEnumerable" />インターフェイスを含む<see cref="T:System.Web.Hosting.VirtualFile" />と<see cref="T:System.Web.Hosting.VirtualDirectory" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.VirtualDirectory.Children%2A>プロパティには、両方が含まれます<xref:System.Web.Hosting.VirtualFile>と<xref:System.Web.Hosting.VirtualDirectory>ファイルと仮想ディレクトリに含まれているディレクトリを表すオブジェクト。 のみを返す、<xref:System.Web.Hosting.VirtualFile>オブジェクトを使用して、<xref:System.Web.Hosting.VirtualDirectory.Files%2A>プロパティです。 のみを返す、<xref:System.Web.Hosting.VirtualDirectory>オブジェクトを使用して、<xref:System.Web.Hosting.VirtualDirectory.Directories%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>仮想ディレクトリ構造に適度な数以上の仮想リソースが含まれている場合、仮想ディレクトリを列挙することで消費されるシステム リソースを最小限に抑えるように注意する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Directories">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.IEnumerable Directories { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerable Directories" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Hosting.VirtualDirectory.Directories" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このディレクトリに格納されているすべてのサブディレクトリの一覧を取得します。</summary>
+        <value>実装するオブジェクト、<see cref="T:System.Collections.IEnumerable" />インターフェイスを含む<see cref="T:System.Web.Hosting.VirtualDirectory" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.VirtualDirectory.Directories%2A>プロパティが含まれます<xref:System.Web.Hosting.VirtualDirectory>をこの仮想ディレクトリに含まれているディレクトリを表すオブジェクト。 返される、<xref:System.Web.Hosting.VirtualFile>オブジェクトを使用して、<xref:System.Web.Hosting.VirtualDirectory.Files%2A>プロパティです。 両方を返す<xref:System.Web.Hosting.VirtualFile>と<xref:System.Web.Hosting.VirtualDirectory>オブジェクトを使用して、<xref:System.Web.Hosting.VirtualDirectory.Children%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>仮想ディレクトリ構造に適度な数以上の仮想リソースが含まれている場合、仮想ディレクトリを列挙することで消費されるシステム リソースを最小限に抑えるように注意する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Files">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.IEnumerable Files { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerable Files" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Hosting.VirtualDirectory.Files" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このディレクトリに含まれるすべてのファイルの一覧を取得します。</summary>
+        <value>実装するオブジェクト、<see cref="T:System.Collections.IEnumerable" />インターフェイスを含む<see cref="T:System.Web.Hosting.VirtualFile" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.VirtualDirectory.Files%2A>プロパティが含まれます<xref:System.Web.Hosting.VirtualFile>この仮想ディレクトリに含まれているファイルを表すオブジェクト。 返される、<xref:System.Web.Hosting.VirtualDirectory>オブジェクトを使用して、<xref:System.Web.Hosting.VirtualDirectory.Directories%2A>プロパティです。 両方を返す<xref:System.Web.Hosting.VirtualFile>と<xref:System.Web.Hosting.VirtualDirectory>オブジェクトを使用して、<xref:System.Web.Hosting.VirtualDirectory.Children%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>仮想ディレクトリ構造に適度な数以上の仮想リソースが含まれている場合、仮想ディレクトリを列挙することで消費されるシステム リソースを最小限に抑えるように注意する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDirectory">
+      <MemberSignature Language="C#" Value="public override bool IsDirectory { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDirectory" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Hosting.VirtualDirectory.IsDirectory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>仮想ディレクトリとして扱う必要があるリソースであることを示す値を取得します。</summary>
+        <value>常に <see langword="true" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

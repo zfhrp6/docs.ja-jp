@@ -1,0 +1,910 @@
+<Type Name="ObjectCache" FullName="System.Runtime.Caching.ObjectCache">
+  <TypeSignature Language="C#" Value="public abstract class ObjectCache : System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;string,object&gt;&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ObjectCache extends System.Object implements class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Collections.Generic.KeyValuePair`2&lt;string, object&gt;&gt;, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Caching.ObjectCache" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Caching</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;System.String,System.Object&gt;&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>オブジェクト キャッシュを表し、オブジェクトのキャッシュにアクセスするため、基本メソッドとプロパティを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Caching.ObjectCache>型は、プライマリ メモリ内オブジェクト キャッシュの型。 派生したカスタムのキャッシュ実装を開発するには<xref:System.Runtime.Caching.ObjectCache>クラスです。  
+  
+> [!NOTE]
+>  <xref:System.Runtime.Caching.ObjectCache>クラスは新機能としての[!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]です。  
+  
+ 組み込み<xref:System.Runtime.Caching.MemoryCache>クラスから派生します<xref:System.Runtime.Caching.ObjectCache>クラスです。 <xref:System.Runtime.Caching.MemoryCache>クラスは、具象のみオブジェクト キャッシュの実装で、[!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]から派生した、<xref:System.Runtime.Caching.ObjectCache>クラスです。  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>この型はスレッド セーフです。</threadsafe>
+    <block subset="none" type="overrides">
+      <para><see cref="T:System.Runtime.Caching.ObjectCache" />型が共通のキャッシュ機能のみを表し、方法の必要はありません、<see cref="T:System.Runtime.Caching.ObjectCache" />インスタンスをインスタンス化および取得する必要があります。 さらに、具体的な実装の必要はありません、<see cref="T:System.Runtime.Caching.ObjectCache" />クラスがシングルトンにする必要があります。  
+  
+ <block subset="none" type="note"><para><see cref="T:System.Runtime.Caching.MemoryCache" />シングルトンではありませんが、いくつかまたは可能性のある唯一の 1 つだけを作成する必要があります<see cref="T:System.Runtime.Caching.MemoryCache" />インスタンスとアイテムをキャッシュするコードは、それらのインスタンスを使用する必要があります。  
+  
+</para></block>  
+  
+ 継承する場合、<see cref="T:System.Runtime.Caching.ObjectCache" />クラス、メソッドをオーバーライドする必要があります。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ObjectCache ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.ObjectCache.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>初期化するために、派生クラスのコンス トラクターから呼び出される、<see cref="T:System.Runtime.Caching.ObjectCache" />クラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Add">
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、一致するキーを持つ既存のキャッシュ エントリが返されることを必要とせず、キャッシュにキャッシュ エントリを挿入します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Caching.ObjectCache.Add%2A>メソッドのオーバー ロードを上書きするか、同じキーを持つ既存のキャッシュ エントリを削除することがなく、キャッシュのキャッシュ エントリを挿入しようとしました。 キャッシュ エントリは、型指定されたできます<xref:System.Runtime.Caching.CacheItem>オブジェクトまたは汎用オブジェクトです。  
+  
+ <xref:System.Runtime.Caching.ObjectCache.AddOrGetExisting%2A>メソッドのオーバー ロードおよび<xref:System.Runtime.Caching.ObjectCache.Add%2A>メソッドのオーバー ロードが 1 つの大きな違いがあります。 これらのメソッドは、キャッシュに一致するエントリが見つかった場合に、キャッシュ エントリを挿入するとき、<xref:System.Runtime.Caching.ObjectCache.AddOrGetExisting%2A>メソッドのオーバー ロードは、既存のキャッシュ エントリを返すですが、<xref:System.Runtime.Caching.ObjectCache.Add%2A>メソッドのオーバー ロードがありません。 これらの異なるメソッド オーバー ロードを持つ既存のキャッシュ エントリを必要があるかどうかに基づいて、コードを最適化するために呼び出し元を使用できます。 使用して、既存の値を返す、分散キャッシュで、<xref:System.Runtime.Caching.ObjectCache.AddOrGetExisting%2A>メソッドを使用してブール値を返すよりも高い場合があります<xref:System.Runtime.Caching.ObjectCache.Add%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public virtual bool Add (System.Runtime.Caching.CacheItem item, System.Runtime.Caching.CacheItemPolicy policy);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Add(class System.Runtime.Caching.CacheItem item, class System.Runtime.Caching.CacheItemPolicy policy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.ObjectCache.Add(System.Runtime.Caching.CacheItem,System.Runtime.Caching.CacheItemPolicy)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Runtime.Caching.CacheItem" />
+        <Parameter Name="policy" Type="System.Runtime.Caching.CacheItemPolicy" />
+      </Parameters>
+      <Docs>
+        <param name="item">追加するオブジェクト。</param>
+        <param name="policy">キャッシュ エントリの削除の詳細を格納しているオブジェクト。 このオブジェクトは、単純な絶対有効期限よりも多くの削除オプションを提供します。</param>
+        <summary>派生クラスでオーバーライドされると、しようとするキャッシュ エントリとしてキャッシュに挿入、<see cref="T:System.Runtime.Caching.CacheItem" />インスタンスし、エントリを削除する方法の詳細を追加します。</summary>
+        <returns>
+          <see langword="true" />挿入が成功した場合または<see langword="false" />がある場合、として同じキーを持つキャッシュのエントリでは既に<paramref name="item" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Caching.ObjectCache.Add%2A>メソッドのオーバー ロードは仮想 (抽象化されない) で、<xref:System.Runtime.Caching.ObjectCache>クラスであるため、<xref:System.Runtime.Caching.ObjectCache.Add%2A>メソッドを内部的に呼び出す<xref:System.Runtime.Caching.ObjectCache.AddOrGetExisting%2A>です。 これにより、メソッドのオーバー ロードを提供するキャッシュの実行者が持つの数が減少します。 任意の特別な動作のかどうか、キャッシュの実装は必要ありません、<xref:System.Runtime.Caching.ObjectCache.Add%2A>メソッド、できるだけを実装して、<xref:System.Runtime.Caching.ObjectCache.AddOrGetExisting%2A>メソッドのオーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public virtual bool Add (string key, object value, DateTimeOffset absoluteExpiration, string regionName = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Add(string key, object value, valuetype System.DateTimeOffset absoluteExpiration, string regionName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.ObjectCache.Add(System.String,System.Object,System.DateTimeOffset,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="absoluteExpiration" Type="System.DateTimeOffset" />
+        <Parameter Name="regionName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">キャッシュ エントリの一意の識別子。</param>
+        <param name="value">挿入するオブジェクト。</param>
+        <param name="absoluteExpiration">キャッシュ エントリの有効期限が切れる固定日時。 このパラメーターは必要なときに、<see cref="Overload:System.Runtime.Caching.ObjectCache.Add" />メソッドが呼び出されます。</param>
+        <param name="regionName">省略可能です。 キャッシュ エントリを追加できる、地域が実装されている場合、キャッシュ内の名前付き領域。 領域がで実装されていないため[!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]、既定値は<see langword="null" />します。</param>
+        <summary>派生クラスでオーバーライドされると、すべて既存のキャッシュ エントリを上書きすることがなくキャッシュのキャッシュ エントリを挿入します。</summary>
+        <returns>
+          <see langword="true" />挿入が成功した場合または<see langword="false" />がある場合、として同じキーを持つキャッシュのエントリでは既に<paramref name="key" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Caching.ObjectCache.Add%2A>メソッドのオーバー ロードは仮想 (抽象化されない) で、<xref:System.Runtime.Caching.ObjectCache>クラスであるため、<xref:System.Runtime.Caching.ObjectCache.Add%2A>メソッドを内部的に呼び出す<xref:System.Runtime.Caching.ObjectCache.AddOrGetExisting%2A>です。 これにより、メソッドのオーバー ロードを提供するキャッシュの実行者が持つの数が減少します。 任意の特別な動作のかどうか、キャッシュの実装は必要ありません、<xref:System.Runtime.Caching.ObjectCache.Add%2A>メソッド、できるだけを実装して、<xref:System.Runtime.Caching.ObjectCache.AddOrGetExisting%2A>メソッドのオーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public virtual bool Add (string key, object value, System.Runtime.Caching.CacheItemPolicy policy, string regionName = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Add(string key, object value, class System.Runtime.Caching.CacheItemPolicy policy, string regionName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.ObjectCache.Add(System.String,System.Object,System.Runtime.Caching.CacheItemPolicy,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="policy" Type="System.Runtime.Caching.CacheItemPolicy" />
+        <Parameter Name="regionName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">キャッシュ エントリの一意の識別子。</param>
+        <param name="value">挿入するオブジェクト。</param>
+        <param name="policy">キャッシュ エントリの削除の詳細を格納しているオブジェクト。 このオブジェクトは、単純な絶対有効期限よりも多くの削除オプションを提供します。</param>
+        <param name="regionName">省略可能です。 キャッシュ エントリを追加できる、地域が実装されている場合、キャッシュ内の名前付き領域。 省略可能なパラメーターの既定値は<see langword="null" />します。</param>
+        <summary>派生クラスでオーバーライドされると、キャッシュにエントリを削除する方法に関する情報を指定するキャッシュ エントリを挿入します。</summary>
+        <returns>
+          <see langword="true" />挿入再試行が成功した場合または<see langword="false" />がある場合と同じキーでキャッシュのエントリでは既に<paramref name="key" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Caching.ObjectCache.Add%2A>メソッドのオーバー ロードは仮想 (抽象化されない) で、<xref:System.Runtime.Caching.ObjectCache>クラスであるため、<xref:System.Runtime.Caching.ObjectCache.Add%2A>メソッドを内部的に呼び出す<xref:System.Runtime.Caching.ObjectCache.AddOrGetExisting%2A>です。 これにより、メソッドのオーバー ロードを提供するキャッシュの実行者が持つの数が減少します。 任意の特別な動作のかどうか、キャッシュの実装は必要ありません、<xref:System.Runtime.Caching.ObjectCache.Add%2A>メソッド、できるだけを実装して、<xref:System.Runtime.Caching.ObjectCache.AddOrGetExisting%2A>メソッドのオーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="AddOrGetExisting">
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、キャッシュ内にキャッシュ エントリを挿入しようとして、一致するキーを持つ既存のキャッシュ エントリを返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Caching.ObjectCache.AddOrGetExisting%2A>メソッドのオーバー ロードは、キャッシュにエントリを挿入します。 一致するキーを持つキャッシュ エントリが既に存在する場合、既存のエントリを返します。 キャッシュ エントリを指定できます、<xref:System.Runtime.Caching.CacheItem>オブジェクトまたは汎用オブジェクトです。  
+  
+ 1 つの違いがある、<xref:System.Runtime.Caching.ObjectCache.AddOrGetExisting%2A>オーバー ロードおよび<xref:System.Runtime.Caching.ObjectCache.Add%2A>オーバー ロードします。 これらのオーバー ロードされたメソッド挿入しようとするキャッシュ エントリが、既存の一致するキー挿入されているキャッシュ エントリの場合は、既存のエントリが見つかった場合、<xref:System.Runtime.Caching.ObjectCache.AddOrGetExisting%2A>のオーバー ロードは、既存のキャッシュ エントリを返します。 <xref:System.Runtime.Caching.ObjectCache.Add%2A>オーバー ロードがありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="AddOrGetExisting">
+      <MemberSignature Language="C#" Value="public abstract System.Runtime.Caching.CacheItem AddOrGetExisting (System.Runtime.Caching.CacheItem value, System.Runtime.Caching.CacheItemPolicy policy);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Runtime.Caching.CacheItem AddOrGetExisting(class System.Runtime.Caching.CacheItem value, class System.Runtime.Caching.CacheItemPolicy policy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.ObjectCache.AddOrGetExisting(System.Runtime.Caching.CacheItem,System.Runtime.Caching.CacheItemPolicy)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Caching.CacheItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Runtime.Caching.CacheItem" />
+        <Parameter Name="policy" Type="System.Runtime.Caching.CacheItemPolicy" />
+      </Parameters>
+      <Docs>
+        <param name="value">挿入するオブジェクト。</param>
+        <param name="policy">キャッシュ エントリの削除の詳細を格納しているオブジェクト。 このオブジェクトは、単純な絶対有効期限よりも多くの削除オプションを提供します。</param>
+        <summary>派生クラスでオーバーライドされると、指定した挿入<see cref="T:System.Runtime.Caching.CacheItem" />エントリを削除する方法に関する情報を指定する、キャッシュにオブジェクト。</summary>
+        <returns>同じキーを持つキャッシュ エントリがある場合、指定されたキャッシュ エントリ。それ以外の場合、<see langword="null" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOrGetExisting">
+      <MemberSignature Language="C#" Value="public abstract object AddOrGetExisting (string key, object value, DateTimeOffset absoluteExpiration, string regionName = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object AddOrGetExisting(string key, object value, valuetype System.DateTimeOffset absoluteExpiration, string regionName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.ObjectCache.AddOrGetExisting(System.String,System.Object,System.DateTimeOffset,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="absoluteExpiration" Type="System.DateTimeOffset" />
+        <Parameter Name="regionName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">キャッシュ エントリの一意の識別子。</param>
+        <param name="value">挿入するオブジェクト。</param>
+        <param name="absoluteExpiration">キャッシュ エントリの有効期限が切れる固定日時。</param>
+        <param name="regionName">省略可能です。 キャッシュ エントリを追加できる、地域が実装されている場合、キャッシュ内の名前付き領域。 省略可能なパラメーターの既定値は<see langword="null" />します。</param>
+        <summary>派生クラスでオーバーライドされると、キャッシュを追加するキー、キャッシュ エントリ、絶対有効期限値、および省略可能な領域のオブジェクトを使用して、キャッシュ内にキャッシュ エントリを挿入します。</summary>
+        <returns>同じキーを持つキャッシュ エントリがある場合、指定されたキャッシュ エントリの値です。それ以外の場合、<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、<xref:System.Runtime.Caching.ObjectCache.AddOrGetExisting%28System.String%2CSystem.Object%2CSystem.DateTimeOffset%2CSystem.String%29>メソッドのオーバー ロードがありません、オブジェクトの値を返します、<xref:System.Runtime.Caching.CacheItem>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOrGetExisting">
+      <MemberSignature Language="C#" Value="public abstract object AddOrGetExisting (string key, object value, System.Runtime.Caching.CacheItemPolicy policy, string regionName = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object AddOrGetExisting(string key, object value, class System.Runtime.Caching.CacheItemPolicy policy, string regionName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.ObjectCache.AddOrGetExisting(System.String,System.Object,System.Runtime.Caching.CacheItemPolicy,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="policy" Type="System.Runtime.Caching.CacheItemPolicy" />
+        <Parameter Name="regionName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">キャッシュ エントリの一意の識別子。</param>
+        <param name="value">挿入するオブジェクト。</param>
+        <param name="policy">キャッシュ エントリの削除の詳細を格納しているオブジェクト。 このオブジェクトは、単純な絶対有効期限よりも多くの削除オプションを提供します。</param>
+        <param name="regionName">省略可能です。 キャッシュ エントリを追加できる、地域が実装されている場合、キャッシュ内の名前付き領域。 省略可能なパラメーターの既定値は<see langword="null" />します。</param>
+        <summary>派生クラスでオーバーライドされると、キャッシュ内に、キーと、キャッシュ エントリと、エントリを削除する方法に関する情報の値を指定するキャッシュ エントリを挿入します。</summary>
+        <returns>同じキーを持つキャッシュ エントリがある場合、指定されたキャッシュ エントリの値です。それ以外の場合、<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Caching.ObjectCache.AddOrGetExisting%28System.String%2CSystem.Object%2CSystem.Runtime.Caching.CacheItemPolicy%2CSystem.String%29>メソッドを返すオブジェクトの値を<xref:System.Runtime.Caching.CacheItem>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public abstract bool Contains (string key, string regionName = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(string key, string regionName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.ObjectCache.Contains(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="regionName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">キャッシュ エントリの一意の識別子。</param>
+        <param name="regionName">省略可能です。 キャッシュがある、領域が実装されている場合、キャッシュ内の名前付き領域。 省略可能なパラメーターの既定値は<see langword="null" />します。</param>
+        <summary>派生クラスでオーバーライドされると、キャッシュ エントリがキャッシュに既に存在するかどうかを確認します。</summary>
+        <returns>
+          <see langword="true" />キャッシュと同じキー値を持つキャッシュ エントリを含むかどうか<paramref name="key" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateCacheEntryChangeMonitor">
+      <MemberSignature Language="C#" Value="public abstract System.Runtime.Caching.CacheEntryChangeMonitor CreateCacheEntryChangeMonitor (System.Collections.Generic.IEnumerable&lt;string&gt; keys, string regionName = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Runtime.Caching.CacheEntryChangeMonitor CreateCacheEntryChangeMonitor(class System.Collections.Generic.IEnumerable`1&lt;string&gt; keys, string regionName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.ObjectCache.CreateCacheEntryChangeMonitor(System.Collections.Generic.IEnumerable{System.String},System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Caching.CacheEntryChangeMonitor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keys" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
+        <Parameter Name="regionName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="keys">監視するキャッシュ エントリの一意の識別子。</param>
+        <param name="regionName">省略可能です。 キャッシュがキーに、キャッシュ内の名前付き領域、<c>キー</c>地域が実装されている場合、パラメーターが存在します。 省略可能なパラメーターの既定値は<see langword="null" />します。</param>
+        <summary>派生クラスでオーバーライドされると、作成、<see cref="T:System.Runtime.Caching.CacheEntryChangeMonitor" />オブジェクトへの変更に応答内のイベントをトリガーするキャッシュ エントリを指定します。</summary>
+        <returns>キャッシュ内のキャッシュ エントリを監視する変更監視します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、派生<xref:System.Runtime.Caching.ObjectCache>クラスでオーバーライド ベース<xref:System.Runtime.Caching.ObjectCache.CreateCacheEntryChangeMonitor%2A>メソッド、キャッシュの実装を作成する必要があります、<xref:System.Runtime.Caching.CacheEntryChangeMonitor>オブジェクト。 この特殊な変更通知の呼び出し元で指定されているキャッシュ エントリへの変更がある場合、`keys`パラメーター。 たとえば、監視対象のアイテムで、`keys`このメソッドによって作成された変更の監視イベントをトリガーする、パラメーターを更新またはキャッシュから削除します。  
+  
+ として文字列値を指定することができます、キャッシュの実装では、名前付きキャッシュの領域をサポートする場合、`regionName`パラメーター。 それ以外の場合、既定値に`null`です。  
+  
+> [!NOTE]
+>  すべてのキャッシュ実装では、キャッシュ エントリの変更の監視をサポートします。 キャッシュ実装をサポートしているかどうかを判断する<xref:System.Runtime.Caching.CacheEntryChangeMonitor>オブジェクトが特定のキャッシュ実装では、ドキュメントを参照しています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultCacheCapabilities">
+      <MemberSignature Language="C#" Value="public abstract System.Runtime.Caching.DefaultCacheCapabilities DefaultCacheCapabilities { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.Caching.DefaultCacheCapabilities DefaultCacheCapabilities" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.ObjectCache.DefaultCacheCapabilities" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Caching.DefaultCacheCapabilities</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、キャッシュ実装を提供する機能の説明を取得します。</summary>
+        <value>キャッシュの実装の既定の機能を示すフラグのビットごとの組み合わせ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Get">
+      <MemberSignature Language="C#" Value="public abstract object Get (string key, string regionName = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Get(string key, string regionName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.ObjectCache.Get(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="regionName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">取得するキャッシュ エントリの一意の識別子。</param>
+        <param name="regionName">省略可能です。 地域が実装されている場合は、キャッシュ エントリが追加されたキャッシュ内で名前付き領域。 省略可能なパラメーターの既定値は<see langword="null" />します。</param>
+        <summary>派生クラスでオーバーライドされると、指定されたキャッシュ エントリをキャッシュからオブジェクトとして取得します。</summary>
+        <returns>によって識別されるそのキャッシュ エントリ<paramref name="key" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCacheItem">
+      <MemberSignature Language="C#" Value="public abstract System.Runtime.Caching.CacheItem GetCacheItem (string key, string regionName = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Runtime.Caching.CacheItem GetCacheItem(string key, string regionName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.ObjectCache.GetCacheItem(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Caching.CacheItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="regionName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">取得するキャッシュ エントリの一意の識別子。</param>
+        <param name="regionName">省略可能です。 地域が実装されている場合は、キャッシュが追加されたキャッシュ内で名前付き領域。 領域がで実装されていないため[!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]、既定値は<see langword="null" />します。</param>
+        <summary>派生クラスでオーバーライドされると、としてキャッシュから指定されたキャッシュ エントリを取得、<see cref="T:System.Runtime.Caching.CacheItem" />インスタンス。</summary>
+        <returns>によって識別されるそのキャッシュ エントリ<paramref name="key" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一部のキャッシュ実装が長引く可能性があるために、このメソッドのオーバー ロードが存在する、<xref:System.Runtime.Caching.CacheItem>クラスです。 その場合は、<xref:System.Runtime.Caching.ObjectCache.Get%28System.String%2CSystem.String%29>メソッドのオーバー ロードはキャッシュされたデータに関するすべての情報を必ずしも返されません。 ただし、<xref:System.Runtime.Caching.ObjectCache.GetCacheItem%28System.String%2CSystem.String%29>メソッドのオーバー ロード キャッシュ値だけを返すカスタムのキャッシュを有効にします。  
+  
+ <xref:System.Runtime.Caching.ObjectCache.GetCacheItem%28System.String%2CSystem.String%29>などのメソッドは、<xref:System.Runtime.Caching.ObjectCache.Get%28System.String%2CSystem.String%29>点を除いて、メソッド、<xref:System.Runtime.Caching.ObjectCache.GetCacheItem%28System.String%2CSystem.String%29>メソッドを返します戻り値としてキャッシュ エントリ、<xref:System.Runtime.Caching.CacheItem>インスタンス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCount">
+      <MemberSignature Language="C#" Value="public abstract long GetCount (string regionName = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int64 GetCount(string regionName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.ObjectCache.GetCount(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="regionName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="regionName">省略可能です。 対象のキャッシュ エントリの数は次の手順、地域が実装されている場合、キャッシュ内の名前付き領域。 省略可能なパラメーターの既定値は<see langword="null" />します。</param>
+        <summary>派生クラスでオーバーライドされると、キャッシュ内のキャッシュ エントリの合計数を取得します。</summary>
+        <returns>キャッシュ内のキャッシュ エントリの数。 場合<paramref name="regionName" />は<see langword="null" />カウントが、指定されたキャッシュ領域にあるエントリの数を示します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="protected abstract System.Collections.Generic.IEnumerator&lt;System.Collections.Generic.KeyValuePair&lt;string,object&gt;&gt; GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Collections.Generic.IEnumerator`1&lt;valuetype System.Collections.Generic.KeyValuePair`2&lt;string, object&gt;&gt; GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.ObjectCache.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;System.Collections.Generic.KeyValuePair&lt;System.String,System.Object&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、キャッシュ エントリのコレクションを反復処理に使用できる列挙子を作成します。</summary>
+        <returns>キャッシュ内のキャッシュ エントリへのアクセスを提供する列挙子オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キャッシュの実装側では、オーバーライドでき、キャッシュ エントリのコレクションを反復処理するカスタム手段を提供するには、このメソッドを拡張することができます。  
+  
+> [!NOTE]
+>  列挙子を返すことは、通常、全体のキャッシュ エントリを返すよりも高価な操作です。  
+  
+ このメソッドは、明示的なインターフェイス実装を<xref:System.Runtime.Caching.ObjectCache>のクラスには、<xref:System.Collections.IEnumerable.GetEnumerator%2A>と<xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValues">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.Generic.IDictionary&lt;string,object&gt; GetValues (System.Collections.Generic.IEnumerable&lt;string&gt; keys, string regionName = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IDictionary`2&lt;string, object&gt; GetValues(class System.Collections.Generic.IEnumerable`1&lt;string&gt; keys, string regionName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.ObjectCache.GetValues(System.Collections.Generic.IEnumerable{System.String},System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keys" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
+        <Parameter Name="regionName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="keys">取得するキャッシュ エントリの一意の識別子のコレクション。</param>
+        <param name="regionName">省略可能です。 または複数のキャッシュ エントリが追加領域が実装されている場合、キャッシュ内の名前付き領域。 省略可能なパラメーターの既定値は<see langword="null" />します。</param>
+        <summary>派生クラスでオーバーライドされると、指定したキーに対応するキャッシュ エントリのセットを取得します。</summary>
+        <returns>キャッシュ エントリを表すキー/値ペアのディクショナリ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Caching.ObjectCache.GetValues%28System.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSystem.String%29>メソッドのオーバー ロードが複数のキャッシュ エントリをキャッシュから 1 つのネットワークの呼び出し中にフェッチをサポートしている分散キャッシュのパフォーマンスを最適化します。  
+  
+ 呼び出し元は、1 つまたは複数のキーをメソッドに渡すことができます、すべてのキーがキャッシュ内のエントリを表すことの保証はありません。 そのため、返されたディクショナリには、メソッドに渡されたキーの数より少ない項目が含まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValues">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IDictionary&lt;string,object&gt; GetValues (string regionName, params string[] keys);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IDictionary`2&lt;string, object&gt; GetValues(string regionName, string[] keys) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.ObjectCache.GetValues(System.String,System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="regionName" Type="System.String" />
+        <Parameter Name="keys" Type="System.String[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="regionName">省略可能です。 または複数のキャッシュ エントリが追加領域が実装されている場合、キャッシュ内の名前付き領域。 領域がで実装されていないため[!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]、既定値は<see langword="null" />します。</param>
+        <param name="keys">取得するキャッシュ エントリの一意の識別子のコレクション。</param>
+        <summary>指定したキーに対応するキャッシュ エントリのセットを取得します。</summary>
+        <returns>キャッシュ エントリを表すキー/値ペアのディクショナリ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Caching.ObjectCache.GetValues%2A?displayProperty=nameWithType>などのメソッドのオーバー ロードは、<xref:System.Runtime.Caching.ObjectCache.GetValues%28System.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSystem.String%29>メソッド オーバー ロードが、c# などのマネージ言語でサポートされている省略可能なパラメーターの構文を使用して名前付きの領域を渡すことができます。  
+  
+ このメソッドは仮想メソッド、<xref:System.Runtime.Caching.ObjectCache>クラスが渡される既定の実装を提供、`params`配列を<xref:System.Runtime.Caching.ObjectCache.GetValues%28System.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSystem.String%29>メソッドのオーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Host">
+      <MemberSignature Language="C#" Value="public static IServiceProvider Host { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.IServiceProvider Host" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.ObjectCache.Host" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IServiceProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に利用できる管理されたホスティング環境への参照を<see cref="T:System.Runtime.Caching.ObjectCache" />実装をホスト固有のサービスを提供できる<see cref="T:System.Runtime.Caching.ObjectCache" />実装します。</summary>
+        <value>キャッシュに対応する管理されたホスティング環境への参照。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Caching.ObjectCache.Host%2A>プロパティで使用するためのものが[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]環境をホストし、.NET Framework に依存する動作を実装するキャッシュの実装で環境をホストします。  
+  
+ 次の表に、一連の管理されたホスティング環境から利用できる可能性があるに使用できるホスト環境サービス<xref:System.Runtime.Caching.ObjectCache>実装を介して、<xref:System.Runtime.Caching.ObjectCache.Host%2A>プロパティ。  
+  
+|サービス|説明|  
+|-------------|-----------------|  
+|<xref:System.Runtime.Caching.Hosting.IApplicationIdentifier>|ホスト環境のパフォーマンス カウンターを識別するなどの機能のキャッシュ実装で必要となるアプリケーション ドメイン識別子を提供することができます。|  
+|<xref:System.Runtime.Caching.Hosting.IFileChangeNotificationSystem>|ホスト環境で提供される 1 つを使用する代わりに、カスタムのファイル変更通知システムを提供、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。|  
+|<xref:System.Runtime.Caching.Hosting.IMemoryCacheManager>|ホスト環境のキャッシュ実装レポート キャッシュ メモリ消費をことができます。 これにより、ホスト環境は一元的に複数のキャッシュ実装間でのメモリ消費量を管理できます。|  
+  
+> [!NOTE]
+>  このプロパティの値の呼び出し元では、無制限のコード アクセス セキュリティのアクセス許可が必要です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティに割り当てられている値<see langword="null" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">プロパティ値の 1 つ以上の時間を設定しようとしました。</exception>
+        <permission cref="F:System.Security.Permissions.SecurityAction.Demand">このプロパティのすべてのアクセサーに対する完全な信頼。 このプロパティは、部分的に信頼されたコードでは使用できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="InfiniteAbsoluteExpiration">
+      <MemberSignature Language="C#" Value="public static readonly DateTimeOffset InfiniteAbsoluteExpiration;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.DateTimeOffset InfiniteAbsoluteExpiration" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Caching.ObjectCache.InfiniteAbsoluteExpiration" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTimeOffset</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュ エントリに絶対有効期限がないことを示す値を取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定してキャッシュに挿入するキャッシュ エントリ、<xref:System.Runtime.Caching.ObjectCache.InfiniteAbsoluteExpiration>絶対ポイント時間に基づいてフィールドの値が有効期限の値が決して期限切れとして設定します。 ただし、この設定を持つキャッシュ エントリは、メモリ不足の原因となった変更監視イベントの削除などの特定のキャッシュ実装によって決定されるその他の理由のキャッシュから削除できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public abstract object this[string key] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.ObjectCache.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">キャッシュ内のキャッシュ エントリの一意の識別子。</param>
+        <summary>取得または設定の既定のインデクサー、<see cref="T:System.Runtime.Caching.ObjectCache" />クラスです。</summary>
+        <value>インデクサー、キャッシュ インスタンスに機能するキー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの set アクセサーの動作は次のように、<xref:System.Runtime.Caching.MemoryCache.Set%28System.String%2CSystem.Object%2CSystem.DateTimeOffset%2CSystem.String%29>メソッドです。 内部的には、キャッシュの実装が指定された値を絶対有効期限を設定でした、<xref:System.Runtime.Caching.ObjectCache.InfiniteAbsoluteExpiration>メソッドです。 ただしこの動作は、最終的には最大でキャッシュの実装です。  
+  
+ Get アクセサーの動作が呼び出し元のようには、<xref:System.Collections.Specialized.NameValueCollection.Get%28System.String%29>メソッドを使用して`null`地域名に対応します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public abstract string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.ObjectCache.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定の名前を取得<see cref="T:System.Runtime.Caching.ObjectCache" />インスタンス。</summary>
+        <value>特定のキャッシュ インスタンスの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一部のキャッシュ実装では、1 つのアプリケーションで実行されているキャッシュの複数のインスタンスをサポートします。 このプロパティには、キャッシュ実装は、特定のキャッシュ インスタンスを識別する名前を返すことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NoSlidingExpiration">
+      <MemberSignature Language="C#" Value="public static readonly TimeSpan NoSlidingExpiration;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.TimeSpan NoSlidingExpiration" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Caching.ObjectCache.NoSlidingExpiration" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュ エントリにスライド式有効期限がないことを示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 期間または定義されている時間帯に基づいている有効期限はスライディング有効期限とも呼びます。 通常、スライド式有効期限に基づいて項目を削除するキャッシュ実装時間の指定されたウィンドウでアクセスされていない項目が削除されます。  
+  
+ 設定してキャッシュに挿入するキャッシュ エントリ、<xref:System.Runtime.Caching.ObjectCache.NoSlidingExpiration>フィールドの値をスライドする時間枠で非アクティビティがあるため有効期限の値を削除するかしないように設定します。 ただし、絶対有効期限がある場合、またはその他の削除イベントが発生した、このような変更モニターまたはメモリ圧迫の場合は、キャッシュ項目を削除することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public abstract object Remove (string key, string regionName = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Remove(string key, string regionName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.ObjectCache.Remove(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="regionName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">キャッシュ エントリの一意の識別子。</param>
+        <param name="regionName">省略可能です。 地域が実装されている場合は、キャッシュ エントリが追加されたキャッシュ内で名前付き領域。 省略可能なパラメーターの既定値は<see langword="null" />します。</param>
+        <summary>派生クラスでオーバーライドされると、キャッシュ エントリをキャッシュから削除します。</summary>
+        <returns>キーによって指定された削除されたキャッシュ エントリの値を表すオブジェクトまたは<see langword="null" />場合は、指定したエントリが見つかりませんでした。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 対応するキャッシュのキャッシュ エントリがある場合は、カスタム キャッシュの実装では、このメソッドをオーバーライドするかどうかは`key`、削除された項目の値を返す必要があります。 かどうかは、キャッシュから削除何も行われませんが、メソッドが返す必要があります`null`です。  
+  
+> [!NOTE]
+>  一部の分散キャッシュ実装可能性がありますが、キャッシュから削除された値を返す機能をサポートしていません。 キャッシュの実装が削除されたキャッシュ項目の値を返すことをサポートしていないために、この可能性があります。 戻り値は価格が高すぎると、オブジェクトのマーシャ リングするためにもあります。 このような場合のキャッシュ実装を返すことができます`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Set">
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、キャッシュにキャッシュ エントリを挿入します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一般的な動作、<xref:System.Runtime.Caching.ObjectCache.Set%2A>オーバー ロード メソッドは、挿入または更新操作。 キャッシュ エントリは、指定されたエントリが存在しないか、既に存在する場合に新しい値を持つキャッシュ エントリが更新された場合、新しいエントリとして挿入いずれかです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Set">
+      <MemberSignature Language="C#" Value="public abstract void Set (System.Runtime.Caching.CacheItem item, System.Runtime.Caching.CacheItemPolicy policy);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Set(class System.Runtime.Caching.CacheItem item, class System.Runtime.Caching.CacheItemPolicy policy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.ObjectCache.Set(System.Runtime.Caching.CacheItem,System.Runtime.Caching.CacheItemPolicy)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Runtime.Caching.CacheItem" />
+        <Parameter Name="policy" Type="System.Runtime.Caching.CacheItemPolicy" />
+      </Parameters>
+      <Docs>
+        <param name="item">追加するキャッシュ項目。</param>
+        <param name="policy">キャッシュ エントリの削除の詳細を格納しているオブジェクト。 このオブジェクトは、単純な絶対有効期限よりも多くの削除オプションを提供します。</param>
+        <summary>派生クラスでオーバーライドされると、挿入としてキャッシュにエントリをキャッシュ、<see cref="T:System.Runtime.Caching.CacheItem" />インスタンス、エントリを削除する方法に関する情報を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合のキーを`item`が存在しない`item`が新しいキャッシュ エントリとして挿入されます。 場合に一致するキーを持つ項目`item`から値が存在する`item`更新または既存のキャッシュ エントリの値を上書きするために使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Set">
+      <MemberSignature Language="C#" Value="public abstract void Set (string key, object value, DateTimeOffset absoluteExpiration, string regionName = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Set(string key, object value, valuetype System.DateTimeOffset absoluteExpiration, string regionName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.ObjectCache.Set(System.String,System.Object,System.DateTimeOffset,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="absoluteExpiration" Type="System.DateTimeOffset" />
+        <Parameter Name="regionName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">キャッシュ エントリの一意の識別子。</param>
+        <param name="value">挿入するオブジェクト。</param>
+        <param name="absoluteExpiration">キャッシュ エントリの有効期限が切れる固定日時。</param>
+        <param name="regionName">省略可能です。 キャッシュ エントリを追加できる、地域が実装されている場合、キャッシュ内の名前付き領域。 省略可能なパラメーターの既定値は<see langword="null" />します。</param>
+        <summary>派生クラスでオーバーライドされると、キャッシュ内に有効期限の時間ベースの詳細を指定するキャッシュ エントリを挿入します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合に一致する項目`key`、キャッシュに存在しません`value`と`key`新しいキャッシュ エントリとして挿入するために使用します。 場合に一致するキーを持つ項目`item`存在する場合、キャッシュ エントリが更新されるかを使用して上書き`value`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Set">
+      <MemberSignature Language="C#" Value="public abstract void Set (string key, object value, System.Runtime.Caching.CacheItemPolicy policy, string regionName = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Set(string key, object value, class System.Runtime.Caching.CacheItemPolicy policy, string regionName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.ObjectCache.Set(System.String,System.Object,System.Runtime.Caching.CacheItemPolicy,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="policy" Type="System.Runtime.Caching.CacheItemPolicy" />
+        <Parameter Name="regionName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">キャッシュ エントリの一意の識別子。</param>
+        <param name="value">挿入するオブジェクト。</param>
+        <param name="policy">キャッシュ エントリの削除の詳細を格納しているオブジェクト。 このオブジェクトは、単純な絶対有効期限よりも多くの削除オプションを提供します。</param>
+        <param name="regionName">省略可能です。 キャッシュ エントリを追加できる、地域が実装されている場合、キャッシュ内の名前付き領域。 省略可能なパラメーターの既定値は<see langword="null" />します。</param>
+        <summary>派生クラスでオーバーライドされると、キャッシュにキャッシュ エントリを挿入します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのオーバー ロードでは、絶対有効期限の時間ベースで使用可能なものよりも削除または有効期限の詳細について説明することができます。  
+  
+ 場合に一致する項目`key`、キャッシュに存在しません`value`と`key`新しいキャッシュ エントリとして挿入するために使用します。 場合に一致するキーを持つ項目`item`存在する場合、キャッシュ エントリが更新されるかを使用して上書き`value`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;System.String,System.Object&gt;&gt;.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.Generic.IEnumerator&lt;System.Collections.Generic.KeyValuePair&lt;string,object&gt;&gt; IEnumerable&lt;KeyValuePair&lt;string,object&gt;&gt;.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.Generic.IEnumerator`1&lt;valuetype System.Collections.Generic.KeyValuePair`2&lt;string, object&gt;&gt; System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;System.String,System.Object&gt;&gt;.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.ObjectCache.System#Collections#Generic#IEnumerable&lt;System#Collections#Generic#KeyValuePair&lt;System#String,System#Object&gt;&gt;#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;System.Collections.Generic.KeyValuePair&lt;System.String,System.Object&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.ObjectCache.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ジェネリック コレクションに対する反復処理をサポートします。</summary>
+        <returns>キャッシュ内のアイテムへのアクセスを提供する列挙子オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 派生場合にのみ使用できます<xref:System.Runtime.Caching.ObjectCache>にインスタンスをキャスト、<xref:System.Collections.IEnumerable>インターフェイスです。  
+  
+ 開発者は、このメソッドを使用して、キャッシュ エントリのジェネリック コレクションを反復処理することができます。  
+  
+ これは、既定値<xref:System.Collections.IEnumerable.GetEnumerator%2A>を内部的に呼び出す実装、<xref:System.Runtime.Caching.ObjectCache.GetEnumerator%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

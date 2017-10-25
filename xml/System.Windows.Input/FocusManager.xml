@@ -1,0 +1,409 @@
+<Type Name="FocusManager" FullName="System.Windows.Input.FocusManager">
+  <TypeSignature Language="C#" Value="public static class FocusManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit FocusManager extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.FocusManager" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>確認し、フォーカスのスコープを設定し、スコープ内でフォーカスがある要素を設定するために、静的メソッド、アタッチされるプロパティ、およびイベントのセットを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA#tla_wpf](~/includes/tlasharptla-wpf-md.md)]フォーカスに関して 2 つの概念があります。 キーボード フォーカスと論理フォーカスします。  
+  
+ キーボード フォーカスはキーボード入力を受け取っては現在の要素に関連します。  キーボード フォーカスを持つ 1 つだけの要素があります。  この要素にキーボード フォーカスが<xref:System.Windows.IInputElement.IsKeyboardFocused%2A>'éý'`true`です。  <xref:System.Windows.Input.Keyboard.FocusedElement%2A?displayProperty=nameWithType>キーボード フォーカスを持つ要素を返します。  
+  
+ 論理フォーカスは、<xref:System.Windows.Input.FocusManager.FocusedElement%2A?displayProperty=nameWithType>フォーカスの特定のスコープ内で。  
+  
+ フォーカス範囲を追跡するコンテナー要素とは、<xref:System.Windows.Input.FocusManager.FocusedElement%2A?displayProperty=nameWithType>そのスコープ内で。  既定では、<xref:System.Windows.Window>クラスは、フォーカスの範囲は、 <xref:System.Windows.Controls.Menu>、 <xref:System.Windows.Controls.ContextMenu>、および<xref:System.Windows.Controls.ToolBar>クラスです。  フォーカスの範囲である要素には<xref:System.Windows.Input.FocusManager.IsFocusScope%2A>'éý'`true`です。  
+  
+ 論理フォーカスを持つ複数の要素がありますが、フォーカスを 1 つのスコープ内で論理フォーカスを持つ要素を 1 つしか存在できません。  論理フォーカスを持つ要素によって、キーボード フォーカスがあるとは限りませんが、キーボード フォーカスを持つ要素が論理フォーカスを持ちます。  フォーカスのスコープ内でフォーカスのスコープを定義することができます。  この場合、親フォーカス スコープと子フォーカス スコープの両方を持ちます、<xref:System.Windows.Input.FocusManager.FocusedElement%2A?displayProperty=nameWithType>です。  
+  
+ 次のシナリオにキーボード フォーカスと論理フォーカスを変更する方法を示しています、[!INCLUDE[TLA#tla_wpf](~/includes/tlasharptla-wpf-md.md)]がアプリケーション、<xref:System.Windows.Window>で、<xref:System.Windows.Controls.TextBox>と<xref:System.Windows.Controls.Menu>を持つ、<xref:System.Windows.Controls.MenuItem>です。  キーボード フォーカスが変更されたとき、<xref:System.Windows.Controls.TextBox>を<xref:System.Windows.Controls.MenuItem>、<xref:System.Windows.Controls.TextBox>損失キーボード フォーカスの論理フォーカスは保持されます、<xref:System.Windows.Window>スコープに注目します。  <xref:System.Windows.Controls.MenuItem>がキーボード フォーカスを取得しの論理フォーカスを取得、<xref:System.Windows.Controls.Menu>スコープに注目します。  キーボード フォーカスがルートに返されるときに<xref:System.Windows.Window>、内の要素<xref:System.Windows.Window>論理フォーカスとスコープにフォーカスがここでは、キーボード フォーカスを取得する、<xref:System.Windows.Controls.TextBox>です。  <xref:System.Windows.Controls.TextBox>キーボード フォーカスと論理フォーカスようになりました。  <xref:System.Windows.Controls.MenuItem>がキーボード フォーカスを失ったがの論理フォーカスを保持、<xref:System.Windows.Controls.Menu>スコープに注目します。  
+  
+ 既定値<xref:System.Windows.Input.FocusManager.IsFocusScope%2A>上、 <xref:System.Windows.Window>、 <xref:System.Windows.Controls.Menu>、 <xref:System.Windows.Controls.ToolBar>、および<xref:System.Windows.Controls.ContextMenu>は`true`します。  
+  
+ フォーカスの詳細については、次を参照してください。、[入力概要](~/docs/framework/wpf/advanced/input-overview.md)と[フォーカス概要](~/docs/framework/wpf/advanced/focus-overview.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddGotFocusHandler">
+      <MemberSignature Language="C#" Value="public static void AddGotFocusHandler (System.Windows.DependencyObject element, System.Windows.RoutedEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddGotFocusHandler(class System.Windows.DependencyObject element, class System.Windows.RoutedEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.FocusManager.AddGotFocusHandler(System.Windows.DependencyObject,System.Windows.RoutedEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.RoutedEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">追加するイベント ハンドラー。</param>
+        <summary>ハンドラーを追加、<see cref="E:System.Windows.Input.FocusManager.GotFocus" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddLostFocusHandler">
+      <MemberSignature Language="C#" Value="public static void AddLostFocusHandler (System.Windows.DependencyObject element, System.Windows.RoutedEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddLostFocusHandler(class System.Windows.DependencyObject element, class System.Windows.RoutedEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.FocusManager.AddLostFocusHandler(System.Windows.DependencyObject,System.Windows.RoutedEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.RoutedEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">追加するイベント ハンドラー。</param>
+        <summary>ハンドラーを追加、<see cref="E:System.Windows.Input.FocusManager.LostFocus" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FocusedElementProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FocusedElementProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FocusedElementProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.FocusManager.FocusedElementProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Input.FocusManager.FocusedElement" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFocusedElement">
+      <MemberSignature Language="C#" Value="public static System.Windows.IInputElement GetFocusedElement (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.IInputElement GetFocusedElement(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.FocusManager.GetFocusedElement(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.IInputElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">指定したフォーカスのスコープ内の論理フォーカスを持つ要素。</param>
+        <summary>指定したフォーカスのスコープ内で論理フォーカスを持つ要素を取得します。</summary>
+        <returns>論理フォーカスを持つ指定したフォーカスのスコープ内の要素。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.FocusManager.FocusedElement%2A>フォーカス特定範囲の論理フォーカスを持つ要素。  このオブジェクトは、キーボード フォーカスがない可能性があります。  キーボード フォーカスはキーボード入力を受け取る要素を指します。  フォーカス、キーボード フォーカス、および論理フォーカスの詳細については、次を参照してください。、[入力概要](~/docs/framework/wpf/advanced/input-overview.md)です。  
+  
+ 場合`element`はフォーカス スコープでは、このメソッドは`null`します。  
+  
+ 使用して<xref:System.Windows.Input.FocusManager.SetFocusedElement%2A>、指定したフォーカスのスコープ内で論理フォーカスを持つ要素を指定します。  
+  
+   
+  
+## Examples  
+ 次の例では、論理フォーカスを持つ要素を設定を使用して、<xref:System.Windows.Input.FocusManager.SetFocusedElement%2A>を使用して論理フォーカスを持つ要素を取得し、<xref:System.Windows.Input.FocusManager.GetFocusedElement%2A>です。  
+  
+ [!code-csharp[focussnippets#FocusGetSetFocusedElement](~/samples/snippets/csharp/VS_Snippets_Wpf/FocusSnippets/CSharp/Window1.xaml.cs#focusgetsetfocusedelement)]
+ [!code-vb[focussnippets#FocusGetSetFocusedElement](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FocusSnippets/visualbasic/window1.xaml.vb#focusgetsetfocusedelement)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFocusScope">
+      <MemberSignature Language="C#" Value="public static System.Windows.DependencyObject GetFocusScope (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.DependencyObject GetFocusScope(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.FocusManager.GetFocusScope(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyObject</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">最も近いフォーカス スコープを取得する要素。</param>
+        <summary>指定した要素の最も近い先祖の決定<see cref="P:System.Windows.Input.FocusManager.IsFocusScope" />'éý'<see langword="true" />です。</summary>
+        <returns>指定した要素のフォーカス スコープです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値の<xref:System.Windows.Input.FocusManager.IsFocusScope%2A>上、 <xref:System.Windows.Window>、 <xref:System.Windows.Controls.Menu>、 <xref:System.Windows.Controls.ToolBar>、<xref:System.Windows.Controls.ContextMenu>は`true`します。  
+  
+ フォーカス範囲を追跡するコンテナー要素とは、<xref:System.Windows.Input.FocusManager.FocusedElement%2A?displayProperty=nameWithType>そのスコープ内で。  既定では、<xref:System.Windows.Window>クラスは、フォーカスの範囲は、 <xref:System.Windows.Controls.Menu>、 <xref:System.Windows.Controls.ContextMenu>、および<xref:System.Windows.Controls.ToolBar>クラスです。  フォーカスの範囲である要素には<xref:System.Windows.Input.FocusManager.IsFocusScope%2A>'éý'`true`です。  
+  
+ フォーカス、キーボード フォーカス、および論理フォーカスの詳細については、次を参照してください。、[入力概要](~/docs/framework/wpf/advanced/input-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIsFocusScope">
+      <MemberSignature Language="C#" Value="public static bool GetIsFocusScope (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool GetIsFocusScope(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.FocusManager.GetIsFocusScope(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">添付プロパティの読み込み元の要素。</param>
+        <summary>決定するかどうか、指定した<see cref="T:System.Windows.DependencyObject" />フォーカス スコープです。</summary>
+        <returns>
+          <see langword="true" />場合<see cref="P:System.Windows.Input.FocusManager.IsFocusScope" />に設定されている<see langword="true" />指定した要素です。 それ以外の場合、 <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フォーカス範囲を追跡するコンテナー要素とは、<xref:System.Windows.Input.FocusManager.FocusedElement%2A?displayProperty=nameWithType>そのスコープ内で。  既定では、<xref:System.Windows.Window>クラスは、フォーカスの範囲は、 <xref:System.Windows.Controls.Menu>、 <xref:System.Windows.Controls.ContextMenu>、および<xref:System.Windows.Controls.ToolBar>クラスです。  フォーカスの範囲である要素には<xref:System.Windows.Input.FocusManager.IsFocusScope%2A>'éý'`true`です。  
+  
+ フォーカス、キーボード フォーカス、および論理フォーカスの詳細については、次を参照してください。、[入力概要](~/docs/framework/wpf/advanced/input-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GotFocusEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent GotFocusEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent GotFocusEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.FocusManager.GotFocusEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.Input.FocusManager.GotFocus" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFocusScopeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsFocusScopeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsFocusScopeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.FocusManager.IsFocusScopeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Input.FocusManager.IsFocusScope" /> 添付プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値の<xref:System.Windows.Input.FocusManager.IsFocusScope%2A>上、 <xref:System.Windows.Window>、 <xref:System.Windows.Controls.Menu>、 <xref:System.Windows.Controls.ToolBar>、<xref:System.Windows.Controls.ContextMenu>は`true`します。  
+  
+ フォーカス範囲を追跡するコンテナー要素とは、<xref:System.Windows.Input.FocusManager.FocusedElement%2A?displayProperty=nameWithType>そのスコープ内で。  既定では、<xref:System.Windows.Window>クラスは、フォーカスの範囲は、 <xref:System.Windows.Controls.Menu>、 <xref:System.Windows.Controls.ContextMenu>、および<xref:System.Windows.Controls.ToolBar>クラスです。  フォーカスの範囲である要素には<xref:System.Windows.Input.FocusManager.IsFocusScope%2A>'éý'`true`です。  
+  
+ フォーカス、キーボード フォーカス、および論理フォーカスの詳細については、次を参照してください。、[入力概要](~/docs/framework/wpf/advanced/input-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LostFocusEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent LostFocusEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent LostFocusEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.FocusManager.LostFocusEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.Input.FocusManager.LostFocus" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveGotFocusHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveGotFocusHandler (System.Windows.DependencyObject element, System.Windows.RoutedEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveGotFocusHandler(class System.Windows.DependencyObject element, class System.Windows.RoutedEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.FocusManager.RemoveGotFocusHandler(System.Windows.DependencyObject,System.Windows.RoutedEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.RoutedEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">削除するイベント ハンドラー。</param>
+        <summary>ハンドラーを削除、<see cref="E:System.Windows.Input.FocusManager.GotFocus" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveLostFocusHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveLostFocusHandler (System.Windows.DependencyObject element, System.Windows.RoutedEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveLostFocusHandler(class System.Windows.DependencyObject element, class System.Windows.RoutedEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.FocusManager.RemoveLostFocusHandler(System.Windows.DependencyObject,System.Windows.RoutedEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.RoutedEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">削除するイベント ハンドラー。</param>
+        <summary>ハンドラーを削除、<see cref="E:System.Windows.Input.FocusManager.LostFocus" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFocusedElement">
+      <MemberSignature Language="C#" Value="public static void SetFocusedElement (System.Windows.DependencyObject element, System.Windows.IInputElement value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetFocusedElement(class System.Windows.DependencyObject element, class System.Windows.IInputElement value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.FocusManager.SetFocusedElement(System.Windows.DependencyObject,System.Windows.IInputElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Windows.IInputElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">指定した要素にフォーカス スコープ、<see cref="P:System.Windows.Input.FocusManager.FocusedElement" />です。</param>
+        <param name="value">論理フォーカスを移動する要素。</param>
+        <summary>論理セットは、指定した要素に注目します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.FocusManager.FocusedElement%2A>フォーカス特定範囲の論理フォーカスを持つ要素。  このオブジェクトは、キーボード フォーカスがない可能性があります。  キーボード フォーカスはキーボード入力を受け取る要素を指します。  フォーカス、キーボード フォーカス、および論理フォーカスの詳細については、次を参照してください。、[入力概要](~/docs/framework/wpf/advanced/input-overview.md)です。  
+  
+ 要素がフォーカス スコープの先祖であるフォーカス スコープを指定することができます。  たとえば場合、<xref:System.Windows.Controls.StackPanel>フォーカス スコープとその親は、<xref:System.Windows.Window>フォーカス範囲、<xref:System.Windows.Controls.TextBox>の子、<xref:System.Windows.Controls.StackPanel>を指定できます、<xref:System.Windows.Window>を呼び出すときに、フォーカス スコープとして<xref:System.Windows.Input.FocusManager.SetFocusedElement%2A>です。  <xref:System.Windows.Controls.TextBox> 、<xref:System.Windows.Input.FocusManager.FocusedElement%2A>両方に対して、<xref:System.Windows.Window>スコープを集中と<xref:System.Windows.Controls.StackPanel>スコープを集中します。  
+  
+ <xref:System.Windows.Input.FocusManager.SetFocusedElement%2A>指定したフォーカスの範囲で指定した要素の論理フォーカスを与えるし、要素にキーボード フォーカスを試みます。  
+  
+   
+  
+## Examples  
+ 次の例では、論理フォーカスを持つ要素を設定を使用して、<xref:System.Windows.Input.FocusManager.SetFocusedElement%2A>を使用して論理フォーカスを持つ要素を取得し、<xref:System.Windows.Input.FocusManager.GetFocusedElement%2A>です。  
+  
+ [!code-csharp[focussnippets#FocusGetSetFocusedElement](~/samples/snippets/csharp/VS_Snippets_Wpf/FocusSnippets/CSharp/Window1.xaml.cs#focusgetsetfocusedelement)]
+ [!code-vb[focussnippets#FocusGetSetFocusedElement](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FocusSnippets/visualbasic/window1.xaml.vb#focusgetsetfocusedelement)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetIsFocusScope">
+      <MemberSignature Language="C#" Value="public static void SetIsFocusScope (System.Windows.DependencyObject element, bool value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetIsFocusScope(class System.Windows.DependencyObject element, bool value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.FocusManager.SetIsFocusScope(System.Windows.DependencyObject,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="element">フォーカスのスコープを作成する要素。</param>
+        <param name="value">
+          <see langword="true" />場合<c>要素</c>フォーカス範囲します。 それ以外の場合、<see langword="false" />です。</param>
+        <summary>指定した設定<see cref="T:System.Windows.DependencyObject" />フォーカス スコープとします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フォーカス範囲を追跡するコンテナー要素とは、<xref:System.Windows.Input.FocusManager.FocusedElement%2A?displayProperty=nameWithType>そのスコープ内で。  既定では、<xref:System.Windows.Window>クラスは、フォーカスの範囲は、 <xref:System.Windows.Controls.Menu>、 <xref:System.Windows.Controls.ContextMenu>、および<xref:System.Windows.Controls.ToolBar>クラスです。  フォーカスの範囲である要素には<xref:System.Windows.Input.FocusManager.IsFocusScope%2A>'éý'`true`です。  
+  
+ フォーカス、キーボード フォーカス、および論理フォーカスの詳細については、次を参照してください。、[入力概要](~/docs/framework/wpf/advanced/input-overview.md)です。  
+  
+   
+  
+## Examples  
+ 次の例が要素フォーカス スコープを使用して<xref:System.Windows.Input.FocusManager.SetIsFocusScope%2A>です。  
+  
+ [!code-csharp[focussnippets#FocusSetIsFocusScope](~/samples/snippets/csharp/VS_Snippets_Wpf/FocusSnippets/CSharp/Window1.xaml.cs#focussetisfocusscope)]
+ [!code-vb[focussnippets#FocusSetIsFocusScope](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FocusSnippets/visualbasic/window1.xaml.vb#focussetisfocusscope)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

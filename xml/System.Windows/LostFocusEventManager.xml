@@ -1,0 +1,199 @@
+<Type Name="LostFocusEventManager" FullName="System.Windows.LostFocusEventManager">
+  <TypeSignature Language="C#" Value="public class LostFocusEventManager : System.Windows.WeakEventManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LostFocusEventManager extends System.Windows.WeakEventManager" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.LostFocusEventManager" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.WeakEventManager</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>提供、<see cref="T:System.Windows.WeakEventManager" />実装のリスナーをアタッチする、「脆弱なイベントのリスナー」パターンを使用できるように、<see cref="E:System.Windows.UIElement.LostFocus" />または<see cref="E:System.Windows.ContentElement.LostFocus" />イベント。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このパターンでリスナーをするために、リスナー オブジェクトを実装する必要があります<xref:System.Windows.IWeakEventListener>です。 実装する必要はありません<xref:System.Windows.IWeakEventListener>イベントのソースであるクラスにします。  
+  
+ [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]データ バインディングを使用してこの<xref:System.Windows.WeakEventManager>バインドを更新する内部クラスのリスナーをアタッチできるように、<xref:System.Windows.UIElement.LostFocus?displayProperty=nameWithType>または<xref:System.Windows.ContentElement.LostFocus?displayProperty=nameWithType>バインドの対象となっているオブジェクトのイベントです。 これは通知をサポート、<xref:System.Windows.Data.UpdateSourceTrigger.LostFocus>データ バインディング ターゲットへの参照の強力な作成しなくても、データ バインディングのモード。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddHandler">
+      <MemberSignature Language="C#" Value="public static void AddHandler (System.Windows.DependencyObject source, EventHandler&lt;System.Windows.RoutedEventArgs&gt; handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddHandler(class System.Windows.DependencyObject source, class System.EventHandler`1&lt;class System.Windows.RoutedEventArgs&gt; handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.LostFocusEventManager.AddHandler(System.Windows.DependencyObject,System.EventHandler{System.Windows.RoutedEventArgs})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.EventHandler&lt;System.Windows.RoutedEventArgs&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="source">基になるオブジェクトが発生し、<see cref="E:System.Windows.UIElement.LostFocus" />または<see cref="E:System.Windows.ContentElement.LostFocus" />イベント。</param>
+        <param name="handler">処理するデリゲート、<see cref="E:System.Windows.UIElement.LostFocus" />または<see cref="E:System.Windows.ContentElement.LostFocus" />イベント。</param>
+        <summary>指定されたソースが発生したときに呼び出される指定されたイベント ハンドラーを追加、<see cref="E:System.Windows.UIElement.LostFocus" />または<see cref="E:System.Windows.ContentElement.LostFocus" />イベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 定期受信に使用するイベント ハンドラーを指定するには、このメソッドを使用して、<xref:System.Windows.UIElement.LostFocus?displayProperty=nameWithType>または<xref:System.Windows.ContentElement.LostFocus?displayProperty=nameWithType>イベント.  リスナー オブジェクトを実装する必要はありませんこのメソッドを使用するときに、<xref:System.Windows.IWeakEventListener>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="handler" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddListener">
+      <MemberSignature Language="C#" Value="public static void AddListener (System.Windows.DependencyObject source, System.Windows.IWeakEventListener listener);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddListener(class System.Windows.DependencyObject source, class System.Windows.IWeakEventListener listener) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.LostFocusEventManager.AddListener(System.Windows.DependencyObject,System.Windows.IWeakEventListener)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Windows.DependencyObject" />
+        <Parameter Name="listener" Type="System.Windows.IWeakEventListener" />
+      </Parameters>
+      <Docs>
+        <param name="source">イベントを持つオブジェクト。</param>
+        <param name="listener">リスナーとして追加するオブジェクト。</param>
+        <summary>指定されたソースのリスナーのリストを指定したリスナーを追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewListenerList">
+      <MemberSignature Language="C#" Value="protected override System.Windows.WeakEventManager.ListenerList NewListenerList ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.WeakEventManager/ListenerList NewListenerList() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.LostFocusEventManager.NewListenerList" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.WeakEventManager+ListenerList</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リスナーを格納する新しいオブジェクトを返します、<see cref="E:System.Windows.UIElement.LostFocus" />または<see cref="E:System.Windows.ContentElement.LostFocus" />イベント。</summary>
+        <returns>リスナーを格納する新しいオブジェクト、<see cref="E:System.Windows.UIElement.LostFocus" />または<see cref="E:System.Windows.ContentElement.LostFocus" />イベント。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveHandler (System.Windows.DependencyObject source, EventHandler&lt;System.Windows.RoutedEventArgs&gt; handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveHandler(class System.Windows.DependencyObject source, class System.EventHandler`1&lt;class System.Windows.RoutedEventArgs&gt; handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.LostFocusEventManager.RemoveHandler(System.Windows.DependencyObject,System.EventHandler{System.Windows.RoutedEventArgs})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.EventHandler&lt;System.Windows.RoutedEventArgs&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="source">基になるオブジェクトが発生し、<see cref="E:System.Windows.UIElement.LostFocus" />または<see cref="E:System.Windows.ContentElement.LostFocus" />イベント。</param>
+        <param name="handler">処理するデリゲート、<see cref="E:System.Windows.UIElement.LostFocus" />または<see cref="E:System.Windows.ContentElement.LostFocus" />イベント。</param>
+        <summary>指定したソースから指定されたイベント ハンドラーを削除します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="handler" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveListener">
+      <MemberSignature Language="C#" Value="public static void RemoveListener (System.Windows.DependencyObject source, System.Windows.IWeakEventListener listener);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveListener(class System.Windows.DependencyObject source, class System.Windows.IWeakEventListener listener) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.LostFocusEventManager.RemoveListener(System.Windows.DependencyObject,System.Windows.IWeakEventListener)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Windows.DependencyObject" />
+        <Parameter Name="listener" Type="System.Windows.IWeakEventListener" />
+      </Parameters>
+      <Docs>
+        <param name="source">リスナーを削除するオブジェクト。</param>
+        <param name="listener">削除するリスナー。</param>
+        <summary>指定されたソースのリスナーのリストから、指定されたリスナーを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartListening">
+      <MemberSignature Language="C#" Value="protected override void StartListening (object source);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void StartListening(object source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.LostFocusEventManager.StartListening(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="source">関連の待機を開始する対象となるオブジェクト<see cref="E:System.Windows.UIElement.LostFocus" />イベント。</param>
+        <summary>リッスンを開始、<see cref="E:System.Windows.UIElement.LostFocus" />で指定したソース イベントをそのソースにクラス内部ハンドラーをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 確認する型の指定されたソースがチェック<xref:System.Windows.UIElement>または<xref:System.Windows.ContentElement>、し、そのソースに適切なイベントのクラスのハンドラーを追加します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StopListening">
+      <MemberSignature Language="C#" Value="protected override void StopListening (object source);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void StopListening(object source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.LostFocusEventManager.StopListening(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="source">リッスンを停止する対象となるソース オブジェクト<see cref="E:System.Windows.UIElement.LostFocus" />です。</param>
+        <summary>リッスンが停止、<see cref="E:System.Windows.UIElement.LostFocus" />指定したソースのイベントです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

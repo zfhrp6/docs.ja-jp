@@ -1,0 +1,463 @@
+<Type Name="BaseDataBoundControlDesigner" FullName="System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner">
+  <TypeSignature Language="C#" Value="public abstract class BaseDataBoundControlDesigner : System.Web.UI.Design.ControlDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit BaseDataBoundControlDesigner extends System.Web.UI.Design.ControlDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.ControlDesigner</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Web.UI.WebControls.BaseDataBoundControl" /> クラスから派生するコントロールについて、ビジュアル デザイナーのデザイン時のサポートを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビジュアル デザイナーでソースからデザイン ビューに切り替えたときに、マークアップを説明するから派生したコントロール、<xref:System.Web.UI.WebControls.BaseDataBoundControl>クラスは解析され、デザイン画面でコントロールのデザイン時バージョンを作成します。 ソース ビューに切り替えるには、デザイン時コントロールのコードがマークアップのソースに永続化し、Web ページのマークアップに編集します。  
+  
+ 派生したデザイナー、<xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner>抽象基本クラスから派生したコントロールのデザイン時サポートを提供する、<xref:System.Web.UI.WebControls.BaseDataBoundControl>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected BaseDataBoundControlDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework が内部的にから派生したデザイナーの新しいインスタンスを構築、<xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner>クラスのデザイン サーフェイスに関連付けられたコントロールの作成時にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectToDataSource">
+      <MemberSignature Language="C#" Value="protected abstract bool ConnectToDataSource ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool ConnectToDataSource() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.ConnectToDataSource" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、通常、以前のデータ ソースからのイベントをアンフックし、新しいデータ ソースに新しいイベントをアタッチします。</summary>
+        <returns>
+          <see langword="true" />新しいデータ ソースへの接続を実行した場合、通常です。<see langword="false" />古いデータと新しいデータ ソースが同じ場合です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装、<xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.ConnectToDataSource%2A>方法通常では、これ以前のデータ ソースからのイベントをアンフックし、新しいデータ ソースに新しいイベントをアタッチします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDataSource">
+      <MemberSignature Language="C#" Value="protected abstract void CreateDataSource ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void CreateDataSource() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.CreateDataSource" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、関連付けられている新しいデータ ソースが作成<see cref="T:System.Web.UI.WebControls.BaseDataBoundControl" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、 <xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.CreateDataSource%2A> 、関連付けられたコントロールのデータ ソースの作成に使用できるダイアログ ボックスを表示するオーバーライドを参照してください<xref:System.Web.UI.Design.WebControls.DataBoundControlDesigner.CreateDataSource%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>上書き、<see cref="M:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.CreateDataSource" />を作成する手段を提供するメソッドを<see cref="P:System.Web.UI.WebControls.BaseDataBoundControl.DataSource" />関連付けられているコントロール<see cref="T:System.Web.UI.WebControls.BaseDataBoundControl" />デザイン時のオブジェクト。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="DataBind">
+      <MemberSignature Language="C#" Value="protected abstract void DataBind (System.Web.UI.WebControls.BaseDataBoundControl dataBoundControl);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void DataBind(class System.Web.UI.WebControls.BaseDataBoundControl dataBoundControl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.DataBind(System.Web.UI.WebControls.BaseDataBoundControl)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataBoundControl" Type="System.Web.UI.WebControls.BaseDataBoundControl" />
+      </Parameters>
+      <Docs>
+        <param name="dataBoundControl"><see cref="T:System.Web.UI.WebControls.BaseDataBoundControl" />このデザイナーに関連付けられています。</param>
+        <summary>派生クラスでオーバーライドされるから派生した関連付けられたコントロールを設定するために必要なアクションを実行、<see cref="T:System.Web.UI.WebControls.BaseDataBoundControl" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバーライドする場合、<xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.DataBind%2A>から派生したデザイナーで、<xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner>クラス、デザイン時のマークアップを取得するときにコントロールを正しく表示されるように、データ バインド コントロールを設定するために必要なアクションを実行します。 通常、パフォーマンス上の理由から、ライブ データ ソースではなく、デザイン時のデータ ソースを関連付けられます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSource">
+      <MemberSignature Language="C#" Value="public string DataSource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataSource" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.DataSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の値、<see cref="P:System.Web.UI.WebControls.BaseDataBoundControl.DataSource" />関連付けられたコントロールのプロパティです。</summary>
+        <value>派生したコントロールに関連付けられた使用されているデータ バインディング式<see cref="T:System.Web.UI.WebControls.BaseDataBoundControl" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.DataSource%2A>シャドウするプロパティを使用、<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSource%2A>のプロパティ、<xref:System.Web.UI.WebControls.BaseDataBoundControl>このデザイナーと関連付けられているクラスです。 値、<xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.DataSource%2A>プロパティをデザイナーによって、基になるに対して生成されるタグのデータ バインディング式として永続化<xref:System.Web.UI.WebControls.BaseDataBoundControl>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSourceID">
+      <MemberSignature Language="C#" Value="public string DataSourceID { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataSourceID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.DataSourceID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の値、 <see cref="P:System.Web.UI.WebControls.BaseDataBoundControl.DataSourceID" /> 、基になるプロパティ<see cref="T:System.Web.UI.WebControls.BaseDataBoundControl" />オブジェクト。</summary>
+        <value>ID、 <see cref="T:System.Web.UI.DataSourceControl" /> 、基になるに関連付けられている<see cref="T:System.Web.UI.WebControls.BaseDataBoundControl" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.DataSourceID%2A>シャドウするプロパティを使用、 <xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSourceID%2A> 、基になるプロパティ<xref:System.Web.UI.WebControls.BaseDataBoundControl>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisconnectFromDataSource">
+      <MemberSignature Language="C#" Value="protected abstract void DisconnectFromDataSource ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void DisconnectFromDataSource() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.DisconnectFromDataSource" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、現在のデータ ソースからのイベントをアンフックできます。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>通常、オーバーライド、<see cref="M:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.DisconnectFromDataSource" />切断は、メソッド、<see cref="E:System.Web.UI.Design.IDataSourceDesigner.DataSourceChanged" />と<see cref="E:System.Web.UI.Design.IDataSourceDesigner.SchemaRefreshed" />イベント。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary>によって使用されているアンマネージ リソースを解放、<see cref="T:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner" />オブジェクト、および必要に応じてマネージ リソースをリリースします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.Dispose%2A>メソッドは、すべてのデータ ソースのイベントからデザイナーのイベント ハンドラーがアンフックされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeHtml">
+      <MemberSignature Language="C#" Value="public override string GetDesignTimeHtml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetDesignTimeHtml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.GetDesignTimeHtml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイン時にコントロールを表示するために使用するマークアップを生成します。</summary>
+        <returns>デザイン時にコントロールを表示するために使用するマークアップ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner>クラスは、コントロールを描画する前に、デザイン時にバインディングのために使用されるサンプル データを取得します。 コントロールがデータにバインドされていない場合それを呼び出す、<xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.GetEmptyDesignTimeHtml%2A>メソッドです。 これを呼び出すコントロールを描画中にエラーがある場合、<xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.GetErrorDesignTimeHtml%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEmptyDesignTimeHtml">
+      <MemberSignature Language="C#" Value="protected override string GetEmptyDesignTimeHtml ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetEmptyDesignTimeHtml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.GetEmptyDesignTimeHtml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールが空の場合、またはデータ ソースを取得できない場合は、デザイン時にコントロールを表示するために使用するマークアップを提供します。</summary>
+        <returns>デザイン時にデータ ソースが空の状態でコントロールを表示するために使用するマークアップ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner>クラスは、コントロールを描画する前に、デザイン時にバインディングのために使用されるサンプル データを取得します。 空のデザイン時コントロールは、コントロールの名前と型名を含むプレース ホルダーとして表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetErrorDesignTimeHtml">
+      <MemberSignature Language="C#" Value="protected override string GetErrorDesignTimeHtml (Exception e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetErrorDesignTimeHtml(class System.Exception e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.GetErrorDesignTimeHtml(System.Exception)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="e"><see cref="T:System.Exception" />がスローされました。</param>
+        <summary>エラーが発生すると、デザイン時にコントロールを表示するために使用するマークアップを提供します。</summary>
+        <returns>エラーが発生すると、デザイン時にコントロールを表示するために使用されるマークアップ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エラーのデザイン時コントロールは、型名、コントロール名、およびエラーを説明するメッセージを含むプレース ホルダーとして表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (System.ComponentModel.IComponent component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(class System.ComponentModel.IComponent component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.Initialize(System.ComponentModel.IComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="component">派生したコントロール<see cref="T:System.Web.UI.WebControls.BaseDataBoundControl" />を実装する<see cref="T:System.ComponentModel.IComponent" />です。</param>
+        <summary>関連付けられたコントロールをデザイナーで表示、編集、デザインできるように準備します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナー ホストの呼び出し、<xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.Initialize%2A>メソッドから派生したコントロールを表示するために、デザイナーを使用する準備ができたときに、<xref:System.Web.UI.WebControls.BaseDataBoundControl>クラスです。 <xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.Initialize%2A>メソッドとその基本メソッドのプロパティを構成し、デザイナーの操作のために必要なイベントを接続します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDataSourceChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnDataSourceChanged (bool forceUpdateView);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDataSourceChanged(bool forceUpdateView) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.OnDataSourceChanged(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="forceUpdateView" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="forceUpdateView">
+          <see langword="true" />デザイン時のマークアップ; の更新を強制するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>ときに呼び出されます、関連するデータ ソース<see cref="T:System.Web.UI.WebControls.BaseDataBoundControl" />オブジェクトに対する変更。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.OnDataSourceChanged%2A>メソッドは現在のデータ ソースに接続します。 現在のデータ ソースが、コントロールが以前の接続先、データ ソースと異なる場合、または`forceUpdateView`は`true`、デザイン サーフェイスに関連付けられているコントロールが再描画します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>上書き、<see cref="M:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.OnDataSourceChanged(System.Boolean)" />メソッドに関連付けられたコントロールのデータ ソースが変更されたときに必要な追加の操作を実行します。  
+  
+ オーバーライドする場合、<see cref="M:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.OnDataSourceChanged(System.Boolean)" />メソッド、他の処理を実行する前に基本実装を呼び出します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSchemaRefreshed">
+      <MemberSignature Language="C#" Value="protected virtual void OnSchemaRefreshed ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnSchemaRefreshed() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.OnSchemaRefreshed" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ときに呼び出されます、関連するデータ ソース<see cref="T:System.Web.UI.WebControls.BaseDataBoundControl" />オブジェクトが新しいスキーマを読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.OnSchemaRefreshed%2A>メソッド ハンドル、<xref:System.Web.UI.Design.IDataSourceDesigner.SchemaRefreshed>に発生するイベントをソースのデータのスキーマと関連付けられているコントロールがバインドされているが変わります。 上書き、<xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.OnSchemaRefreshed%2A>新しいスキーマが使用可能なときに必要なその他の操作を実行するメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreFilterProperties">
+      <MemberSignature Language="C#" Value="protected override void PreFilterProperties (System.Collections.IDictionary properties);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void PreFilterProperties(class System.Collections.IDictionary properties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.PreFilterProperties(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="properties" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="properties"><see cref="T:System.Collections.IDictionary" />をフィルター処理プロパティを格納します。</param>
+        <summary>削除するかで表示する追加のプロパティを追加する、デザイナーによって使用される、**プロパティ**グリッドまたは関連付けられたコントロールのプロパティをシャドウします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロール デザイナーから派生したメソッドを使用して、<xref:System.ComponentModel.Design.ComponentDesigner.PreFilterProperties%2A?displayProperty=nameWithType>デザイナーを実装して、対応するデザイン時のプロパティにさまざまなコントロールのプロパティをシャドウおよびプロパティから追加または削除する方法、**プロパティ**グリッドです。  
+  
+ <xref:System.Web.UI.WebControls.BaseDataBoundControl>クラス、 <xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.PreFilterProperties%2A> shadows、<xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.DataSource%2A>コントロールのプロパティです。 属性の配列のコピーを作成、 <xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.DataSource%2A>、影付きのプロパティにこれらの属性を追加します。 設定、 <xref:System.ComponentModel.BrowsableAttribute.Browsable%2A> 、影付きの属性<xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.DataSource%2A>プロパティを`false`しない限り、<xref:System.ComponentModel.BrowsableAttribute.Browsable%2A>の属性、<xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.DataSourceID%2A>コントロールのプロパティに設定が既に`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>上書き、<see cref="M:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.PreFilterProperties(System.Collections.IDictionary)" />プロパティの追加や、デザイン時のプロパティ コレクション内のプロパティの属性を変更する方法です。 他の処理を実行する前に、基本メソッドを呼び出すことを確認します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowCreateDataSourceDialog">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.DialogResult ShowCreateDataSourceDialog (System.Web.UI.Design.ControlDesigner controlDesigner, Type dataSourceType, bool configure, out string dataSourceID);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Forms.DialogResult ShowCreateDataSourceDialog(class System.Web.UI.Design.ControlDesigner controlDesigner, class System.Type dataSourceType, bool configure, [out] string&amp; dataSourceID) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.ShowCreateDataSourceDialog(System.Web.UI.Design.ControlDesigner,System.Type,System.Boolean,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DialogResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="controlDesigner" Type="System.Web.UI.Design.ControlDesigner" />
+        <Parameter Name="dataSourceType" Type="System.Type" />
+        <Parameter Name="configure" Type="System.Boolean" />
+        <Parameter Name="dataSourceID" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="controlDesigner">このデザイナーへの参照。</param>
+        <param name="dataSourceType">データ ソースの種類。</param>
+        <param name="configure">
+          <see langword="true" />構成の編集を有効にまたは<see langword="false" />構成の編集を無効にします。</param>
+        <param name="dataSourceID">ID、<see cref="T:System.Web.UI.DataSourceControl" />ページ上のコントロールです。</param>
+        <summary>デザイン ホストのように[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]、データ ソースを作成するユーザーを支援するダイアログ ボックスを表示します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DialogResult" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

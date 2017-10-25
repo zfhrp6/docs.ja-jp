@@ -1,0 +1,109 @@
+<Type Name="TransactionScopeOption" FullName="System.Transactions.TransactionScopeOption">
+  <TypeSignature Language="C#" Value="public enum TransactionScopeOption" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed TransactionScopeOption extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Transactions.TransactionScopeOption" />
+  <AssemblyInfo>
+    <AssemblyName>System.Transactions</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Transactions.Local</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>トランザクション スコープを作成するための追加オプションを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Transactions.TransactionScopeOption>のさまざまなコンス トラクターに渡される列挙型、<xref:System.Transactions.TransactionScope>スコープのトランザクションの動作を定義するクラス。 この列挙体の使用方法の詳細についてを参照してください「TransactionScopeOption を使用して管理するトランザクション フロー」[を実装する、暗黙的なトランザクションを使用してトランザクション スコープ](~/docs/framework/data/transactions/implementing-an-implicit-transaction-using-transaction-scope.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Required">
+      <MemberSignature Language="C#" Value="Required" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Transactions.TransactionScopeOption Required = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Transactions.TransactionScopeOption.Required" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Transactions.TransactionScopeOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランザクションは、スコープが必要です。 既に存在する場合は、アンビエント トランザクションを使用します。 それ以外の場合、スコープに入る前に新しいトランザクションを作成します。 これが既定値です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresNew">
+      <MemberSignature Language="C#" Value="RequiresNew" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Transactions.TransactionScopeOption RequiresNew = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Transactions.TransactionScopeOption.RequiresNew" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Transactions.TransactionScopeOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しいトランザクションは、スコープ常に作成されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Suppress">
+      <MemberSignature Language="C#" Value="Suppress" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Transactions.TransactionScopeOption Suppress = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Transactions.TransactionScopeOption.Suppress" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Transactions.TransactionScopeOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スコープを作成するときにアンビエント トランザクションのコンテキストが抑制されます。 スコープ内のすべての操作は、アンビエント トランザクション コンテキストを使用せず実行されます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,524 @@
+<Type Name="SqlPersonalizationProvider" FullName="System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider">
+  <TypeSignature Language="C#" Value="public class SqlPersonalizationProvider : System.Web.UI.WebControls.WebParts.PersonalizationProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SqlPersonalizationProvider extends System.Web.UI.WebControls.WebParts.PersonalizationProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.WebParts.PersonalizationProvider</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Microsoft SQL Server を使用するパーソナル化プロバイダーを実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Microsoft SQL Server を使用して、パーソナル化プロバイダーの必要な機能を定義します。 パーソナル化プロバイダーを読み込み、両方の代わりにパーソナル化データを格納、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization>インスタンス。 このクラスは、読み取りおよび SQL Server を実行するコンピューターに書き込みのためのロジックを実装しても実装するすべての抽象メソッドで定義されている<xref:System.Web.UI.WebControls.WebParts.PersonalizationProvider>です。 パーソナル化プロバイダーの詳細については、次を参照してください。<xref:System.Web.UI.WebControls.WebParts.PersonalizationProvider>です。  
+  
+ SQL Server と Web パーツのパーソナル化を使用するデータの設計が 2 つ一般的な SQL データベースのテーブルの存在に依存し、それらをサポートするストアド プロシージャ、ほとんどの SQL ベースの機能の実装のために共有します。 これらのテーブルとビューがインストールされているし、次のスクリプトを使用してアンインストールします。  
+  
+-   installpagepersonalization.sql – は、パーソナル化テーブル、ビュー、および関連するストアド プロシージャをインストールします。  
+  
+-   uninstallpagepersonalization.sql – は、パーソナル化テーブル、ビュー、および関連するストアド プロシージャをアンインストールします。  
+  
+ Web アプリケーションが実行されない場合に既定の信頼レベルのパーソナル化が失敗することに注意する重要な<xref:System.Web.AspNetHostingPermissionLevel.Medium>以上 (を使用して Web.config ファイルでカスタムの信頼レベルを設定することができます、`<trust level="" />`要素)。 <xref:System.Web.UI.WebControls.WebParts.PersonalizationAdministration>と<xref:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider>の信頼レベルの両方のクラスが確認<xref:System.Web.AspNetHostingPermissionLevel.Low>初期化される場合。 レベルの信頼で実行するアプリケーションを構成する場合<xref:System.Web.AspNetHostingPermissionLevel.Low>、既定値を使用して<xref:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider>パーソナル化データにアクセスしようとするアプリケーション、ために失敗することは、アプリケーションでは、初めてのパーソナル化データを管理するにはプロバイダーで実行されている ASP.NET ワーカー プロセス<xref:System.Web.AspNetHostingPermissionLevel.Low>信頼には、さまざまなクラスへの呼び出しに必要な権限はありません、<xref:System.Data.SqlClient>名前空間。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlPersonalizationProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider.%23ctor%2A>コンス トラクターがのインスタンスを作成する ASP.NET によって呼び出されます、<xref:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider>アプリケーションの構成で指定したクラスです。 このコンス トラクターは、コードから使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationName">
+      <MemberSignature Language="C#" Value="public override string ApplicationName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ApplicationName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider.ApplicationName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を保存し、パーソナル化情報を取得するアプリケーションの名前。</summary>
+        <value>パーソナル化情報を格納および取得するアプリケーションの名前です。 既定値は、<see cref="P:System.Web.Hosting.HostingEnvironment.ApplicationVirtualPath" />プロパティの値を現在の<see cref="P:System.Web.HttpContext.Request" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider.ApplicationName%2A>プロパティを使用、<xref:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider>グループ ユーザー情報へのクラスです。 ユーザー情報をアプリケーション名を修飾することにより重複したユーザー名の間の競合を実行しなくても、1 つのデータベースで複数のアプリケーションの情報を格納できます。 複数の ASP.NET アプリケーションが同じユーザー データベースを使用して、内の同じ値を指定しても、<xref:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider.ApplicationName%2A>プロパティです。 <xref:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider.ApplicationName%2A>プログラムでは、プロパティを設定することや、Web アプリケーションを使用して、構成ファイル内で宣言して設定されることができます、`applicationName`属性、`<providers>`セクションです。  
+  
+ 値が指定されていない場合、 `applicationName` Web アプリケーションの構成ファイル内の属性、<xref:System.Web.Hosting.HostingEnvironment.ApplicationVirtualPath%2A>アプリケーションに行われた最初の要求のプロパティの値を使用します。  
+  
+> [!CAUTION]
+>  処理されたすべての要求の 1 つの既定のパーソナル化プロバイダーのインスタンスが使用されるため、<xref:System.Web.HttpApplication>オブジェクトを同時に実行して、設定しようとしています。 複数の要求を持つことができます、<xref:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider.ApplicationName%2A>プロパティの値。 <xref:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider.ApplicationName%2A>プロパティはスレッド セーフである複数の書き込みでは、変更して、<xref:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider.ApplicationName%2A>プロパティの値は、アプリケーションの複数のユーザーに対して予期しない動作になります。 ユーザー設定できるようにするためのコードを避けることをお勧めしますが、<xref:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider.ApplicationName%2A>プロパティに必要な場合を除き、します。 アプリケーションの例の設定で、<xref:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider.ApplicationName%2A>プロパティが必要になる複数のアプリケーションのパーソナル化データを管理する管理アプリケーションは、します。 このようなアプリケーションは、シングル ユーザー アプリケーションと Web アプリケーションではなくにする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.Provider.ProviderException">プロパティは 256 文字を超える長さの文字列に設定されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindState">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection FindState (System.Web.UI.WebControls.WebParts.PersonalizationScope scope, System.Web.UI.WebControls.WebParts.PersonalizationStateQuery query, int pageIndex, int pageSize, out int totalRecords);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection FindState(valuetype System.Web.UI.WebControls.WebParts.PersonalizationScope scope, class System.Web.UI.WebControls.WebParts.PersonalizationStateQuery query, int32 pageIndex, int32 pageSize, [out] int32&amp; totalRecords) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider.FindState(System.Web.UI.WebControls.WebParts.PersonalizationScope,System.Web.UI.WebControls.WebParts.PersonalizationStateQuery,System.Int32,System.Int32,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="System.Web.UI.WebControls.WebParts.PersonalizationScope" />
+        <Parameter Name="query" Type="System.Web.UI.WebControls.WebParts.PersonalizationStateQuery" />
+        <Parameter Name="pageIndex" Type="System.Int32" />
+        <Parameter Name="pageSize" Type="System.Int32" />
+        <Parameter Name="totalRecords" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="scope">A<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" />を示すパーソナル化情報を照会します。 この値を <see langword="null" /> にすることはできません。</param>
+        <param name="query">A<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery" />クエリを含むです。 この値は、<see langword="null" /> の場合もあります。</param>
+        <param name="pageIndex">クエリを開始する場所です。</param>
+        <param name="pageSize">返されるレコードの数です。</param>
+        <param name="totalRecords">使用できるレコードの合計数。</param>
+        <summary>0 個以上を含むコレクションを返します<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo" />-指定されたスコープとパラメーターに基づくオブジェクトを派生します。</summary>
+        <returns>A <see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection" /> 0 個以上含む<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo" />-派生オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される項目のセットを制限、`pageSize`と`pageIndex`パラメーター、場所`pageSize`返されるレコードの数を制御および`pageIndex`どのレコードを返すを制御します。 など、 `pageIndex` 0 と`pageSize`25 は、最初の 25 個の出現回数を返します中に、 `pageIndex` 1 のと`pageSize`25 が戻り値の 26 ~ 50 回の出現します。 使用可能なすべてのレコードをフェッチする場合は、設定`pageIndex`0、および`pageSize`に<xref:System.Int32.MaxValue>です。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo>-派生オブジェクトが順に並べ替えてアルファベット順に返される<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo.Path%2A>と<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.Username%2A>、両方で昇順に並べ替えます。  
+  
+ このメソッドは、基になるデータ ストアにクエリでワイルドカード文字を渡します。 ワイルドカード文字のサポートは、各プロバイダーが、アスタリスク (*)、パーセント記号 (%)、またはアンダー スコア (_) などの文字を処理する方法に依存します。  
+  
+ 通常、SQL 準拠のデータ ストアで実行できるワイルドカード検索部分パスでワイルドカード文字が先頭、末尾、または検索文字列のテキストの中央に表示される、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A>プロパティです。 たとえば、"~/approot"で始まるすべてのパスを検索するため、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A>プロパティを"~/approot%"に設定するとします。  
+  
+ 同様に、部分的なユーザー名にワイルドカード検索が表示のテキスト文字列のどの時点でも、ワイルドカード文字を持つ可能性があります、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UsernameToMatch%2A>プロパティです。 たとえば、"John"で始まるすべてのユーザー名を検索するため、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UsernameToMatch%2A>パラメーターは「John %」のようになります。  
+  
+ 次のクエリの制約が適用されます。  
+  
+-   だけの場合`scope`が提供される、および`query`は`null`またはすべてのプロパティを`query`いずれかを返す`null`または既定の値を指定された一致するすべてのレコード`scope`パラメーターが返されます。  
+  
+-   場合、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A>プロパティは使用されません`null`、返されたレコードは一致するフィルター選択されたに基づいてパスでも、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A>プロパティの値。  
+  
+-   場合、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UsernameToMatch%2A>プロパティは使用されません`null`、返されたレコードは一致するフィルター選択されたに基づいてユーザー名でも、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UsernameToMatch%2A>プロパティの値。  
+  
+-   場合、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate%2A>プロパティは等しくありません<xref:System.DateTime.MaxValue>、返されたレコードはアクティブでないユーザーに関連付けられているレコードだけを返すもフィルター処理し、します。 比較には、レコードが含まれています。 ここで、<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.LastActivityDate%2A>プロパティは、以下に、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate%2A>プロパティです。  
+  
+ このメソッドがクエリ パラメーターの組み合わせを検証できませんに注意してください。 たとえば、コードでは、共有のスコープ内の特定のユーザー名に関連付けられたパーソナル化状態レコードのセットを要求できます。 ユーザー名が共有の情報に関連付けられていないために、返されるコレクションは空になります。  
+  
+ 空のコレクションを返す可能性のあるパラメーターの組み合わせは次のとおりです。  
+  
+-   <xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>組み合わせてスコープ<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A>です。  
+  
+-   <xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User>スコープの一部またはすべての値と組み合わせて、 <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A>、 <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UsernameToMatch%2A>、および<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="pageIndex" /> が 0 未満です。  
+  
+ \- または  
+  
+ <paramref name="pageSize" /> が 0 以下です。  
+  
+ \- または  
+  
+ 組み合わせ<paramref name="pageIndex" />と<paramref name="pageSize" />の結果よりも大きい値に<see cref="F:System.Int32.MaxValue" />です。  
+  
+ \- または  
+  
+ <see cref="P:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch" />非<see langword="null" />は、空の文字列 ("") トリミング後です。  
+  
+ \- または  
+  
+ 長さ<see cref="P:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch" />値がない場合は 256 文字より長い、<see langword="null" />です。  
+  
+ \- または  
+  
+ <see cref="P:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UsernameToMatch" />非<see langword="null" />トリミング後は、空の文字列とします。  
+  
+ \- または  
+  
+ 長さ<see cref="P:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UsernameToMatch" />値がない場合は 256 文字より長い、<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="scope" />指定された有効な値ではありません、<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" />列挙します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCountOfState">
+      <MemberSignature Language="C#" Value="public override int GetCountOfState (System.Web.UI.WebControls.WebParts.PersonalizationScope scope, System.Web.UI.WebControls.WebParts.PersonalizationStateQuery query);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetCountOfState(valuetype System.Web.UI.WebControls.WebParts.PersonalizationScope scope, class System.Web.UI.WebControls.WebParts.PersonalizationStateQuery query) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider.GetCountOfState(System.Web.UI.WebControls.WebParts.PersonalizationScope,System.Web.UI.WebControls.WebParts.PersonalizationStateQuery)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="System.Web.UI.WebControls.WebParts.PersonalizationScope" />
+        <Parameter Name="query" Type="System.Web.UI.WebControls.WebParts.PersonalizationStateQuery" />
+      </Parameters>
+      <Docs>
+        <param name="scope">A<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" />を示すパーソナル化情報を照会します。 この値を <see langword="null" /> にすることはできません。</param>
+        <param name="query">A<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery" />クエリを含むです。 この値は、<see langword="null" /> の場合もあります。</param>
+        <summary>指定された存在している、基になるデータ ストア内の行の数の数を返します<paramref name="scope" />パラメーター。</summary>
+        <returns>指定された存在する、基になるデータ ストア内の行の数<paramref name="scope" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、基になるデータ ストアにクエリでワイルドカード文字を渡します。 ワイルドカード文字のサポートは、各プロバイダーが、アスタリスク (*)、パーセント記号 (%)、またはアンダー スコア (_) などの文字を処理する方法に依存します。  
+  
+ 通常、SQL 準拠のデータ ストアで実行できるワイルドカード検索部分パスでワイルドカード文字が先頭、末尾、または検索文字列のテキストの中央に表示される、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A>プロパティです。 たとえば、"~/approot"で始まるすべてのパスを検索するため、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A>プロパティを"~/approot%"に設定するとします。  
+  
+ 同様に、部分的なユーザー名にワイルドカード検索が表示のテキスト文字列のどの時点でも、ワイルドカード文字を持つ可能性があります、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UsernameToMatch%2A>プロパティです。 たとえば、"John"で始まるすべてのユーザー名を検索するため、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UsernameToMatch%2A>パラメーターは「John %」のようになります。  
+  
+ 次のクエリの制約が適用されます。  
+  
+-   だけの場合`scope`が提供される、および`query`は`null`またはすべてのプロパティを`query`いずれかを返す`null`または既定の値を指定された一致するすべてのレコード`scope`パラメーターが返されます。  
+  
+-   場合、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A>プロパティは使用されません`null`、返されたレコードは一致するフィルター選択されたに基づいてパスでも、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A>プロパティの値。  
+  
+-   場合、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UsernameToMatch%2A>は`null`、返されたレコードは一致するフィルター選択されたに基づいてユーザー名でも、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UsernameToMatch%2A>プロパティの値。  
+  
+-   場合、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate%2A>プロパティは等しくありません<xref:System.DateTime.MaxValue>、返されたレコードはアクティブでないユーザーに関連付けられているレコードだけを返すもフィルター処理し、します。 比較には、レコードが含まれています。 ここで、<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.LastActivityDate%2A>プロパティは、以下に、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate%2A>プロパティです。  
+  
+ このメソッドがクエリ パラメーターの組み合わせを検証できませんに注意してください。 たとえば、コードでは、共有スコープの非アクティブなユーザーに関連付けられている状態レコードの数を要求できます。 非アクティブなカスタマイズの概念がないため、返されるカウントが 0 になります。  
+  
+ 空のコレクションを返す可能性のあるパラメーターの組み合わせは次のとおりです。  
+  
+-   <xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>組み合わせてスコープ<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A>です。  
+  
+-   <xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User>スコープの一部またはすべての値と組み合わせて、 <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A>、 <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UsernameToMatch%2A>、および<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <see cref="P:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch" />非<see langword="null" />は、空の文字列 ("") トリミング後です。  
+  
+ \- または  
+  
+ 長さ<see cref="P:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch" />値がない場合は 256 文字より長い、<see langword="null" />です。  
+  
+ \- または  
+  
+ <see cref="P:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UsernameToMatch" />非<see langword="null" />トリミング後は、空の文字列とします。  
+  
+ \- または  
+  
+ 長さ<see cref="P:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UsernameToMatch" />値がない場合は 256 文字より長い、<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="scope" />指定された有効な値ではありません、<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" />列挙します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (string name, System.Collections.Specialized.NameValueCollection configSettings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(string name, class System.Collections.Specialized.NameValueCollection configSettings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="configSettings" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="name">構成ファイルにアプリケーション名が表示されます。</param>
+        <param name="configSettings">アプリケーションの構成設定。</param>
+        <summary>Microsoft SQL Server のパーソナル化プロバイダーに必要な初期化手順を実装します。 このメソッドはコードから直接使用するためのものではありません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、SQL データベースでの個人用設定を使用するための初期化手順を説明し、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.Provider.ProviderException">プロバイダーの接続文字列が構成されていません。  
+  
+ \- または  
+  
+ プロバイダーの接続文字列が見つかりません。  
+  
+ \- または  
+  
+ プロバイダーの追加の属性がある<see langword="&lt;add&gt;" />構成設定で説明されているもの以外の要素。  
+  
+ \- または  
+  
+ アプリケーション名の長さは 256 文字を超えています。  
+  
+ \- または  
+  
+ アプリケーションをホストしているアプリケーション ドメインが次の信頼レベルで実行されている<see cref="F:System.Web.AspNetHostingPermissionLevel.Medium" />信頼します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="configSettings" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadPersonalizationBlobs">
+      <MemberSignature Language="C#" Value="protected override void LoadPersonalizationBlobs (System.Web.UI.WebControls.WebParts.WebPartManager webPartManager, string path, string userName, ref byte[] sharedDataBlob, ref byte[] userDataBlob);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void LoadPersonalizationBlobs(class System.Web.UI.WebControls.WebParts.WebPartManager webPartManager, string path, string userName, unsigned int8[]&amp; sharedDataBlob, unsigned int8[]&amp; userDataBlob) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider.LoadPersonalizationBlobs(System.Web.UI.WebControls.WebParts.WebPartManager,System.String,System.String,System.Byte[]@,System.Byte[]@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="webPartManager" Type="System.Web.UI.WebControls.WebParts.WebPartManager" />
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="userName" Type="System.String" />
+        <Parameter Name="sharedDataBlob" Type="System.Byte[]&amp;" RefType="ref" />
+        <Parameter Name="userDataBlob" Type="System.Byte[]&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="webPartManager"><see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />パーソナル化データを管理します。</param>
+        <param name="path">パーソナル化情報へのパス、<see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared" />取得キーとして使用するスコープ。</param>
+        <param name="userName">パーソナル化情報のユーザー名、<see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.User" />取得キーとして使用するスコープ。</param>
+        <param name="sharedDataBlob">返されるデータを<see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared" />スコープ。</param>
+        <param name="userDataBlob">返されるデータを<see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.User" />スコープ。</param>
+        <summary>指定したパラメーターに基づいて、基になるデータ ストアから、パーソナル化データを読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、 `webPartManager`、 `path`、および`username`検索キーとして使用されるパラメーター。 返されるデータが含まれています。  
+  
+-   <xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>で返されるデータ、`sharedDataBlob`パラメーター。  
+  
+-   キーの値に応じて<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User>データが返されます、`userDataBlob`パラメーター。 以外`null`値を`userName`パラメーターが示す<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User>データが読み込まれます。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider>オブジェクトが自動的に更新プログラム、<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.LastActivityDate%2A>内の列、`aspnet_Users`テーブル、ページ要求のコンテキストでデータベースからユーザー固有のパーソナル化データが読み込まれます。 この動作により、他の ASP.NET 機能を使用する、<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.LastActivityDate%2A>古いデータを管理するときにプロパティがサイトで最近を決定するものユーザー アクティビティを記録します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetPersonalizationBlob">
+      <MemberSignature Language="C#" Value="protected override void ResetPersonalizationBlob (System.Web.UI.WebControls.WebParts.WebPartManager webPartManager, string path, string userName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ResetPersonalizationBlob(class System.Web.UI.WebControls.WebParts.WebPartManager webPartManager, string path, string userName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider.ResetPersonalizationBlob(System.Web.UI.WebControls.WebParts.WebPartManager,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="webPartManager" Type="System.Web.UI.WebControls.WebParts.WebPartManager" />
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="userName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="webPartManager"><see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />パーソナル化データを管理します。</param>
+        <param name="path">パーソナル化情報へのパス、<see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared" />取得キーとして使用するスコープ。</param>
+        <param name="userName">パーソナル化情報のユーザー名、<see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.User" />取得キーとして使用するスコープ。</param>
+        <summary>パーソナル化データを基になるデータ ストアから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization>このメソッドを使用して、Web サイトのユーザーがページ上の Web パーツのデータをリセットしたときに、パーソナル化データをデータベースから削除します。 場合`username`以外`null`を使用してデータ、<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User>スコープのデータが削除された、それ以外のデータを<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>スコープを削除します。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider>オブジェクトが自動的に更新プログラム、<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.LastActivityDate%2A>内の列、`aspnet_Users`テーブルごとにユーザー固有のパーソナル化データは、ページ要求のコンテキストでデータベースから削除します。 この動作により、他の ASP.NET 機能を使用する、<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.LastActivityDate%2A>サイトで最近を決定するものユーザー アクティビティを記録する古いデータを管理するときの値します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetState">
+      <MemberSignature Language="C#" Value="public override int ResetState (System.Web.UI.WebControls.WebParts.PersonalizationScope scope, string[] paths, string[] usernames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 ResetState(valuetype System.Web.UI.WebControls.WebParts.PersonalizationScope scope, string[] paths, string[] usernames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider.ResetState(System.Web.UI.WebControls.WebParts.PersonalizationScope,System.String[],System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="System.Web.UI.WebControls.WebParts.PersonalizationScope" />
+        <Parameter Name="paths" Type="System.String[]" />
+        <Parameter Name="usernames" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="scope">A<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" />を示すパーソナル化情報を照会します。 この値を <see langword="null" /> にすることはできません。</param>
+        <param name="paths">パーソナル化情報のパス、<see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared" />スコープを削除します。</param>
+        <param name="usernames">パーソナル化情報のユーザー名、<see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.User" />スコープを削除します。</param>
+        <summary>パーソナル化状態情報を指定したパラメーターに基づいて、基になるデータ ストアから削除します。</summary>
+        <returns>削除された行の数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドでは、ワイルドカード文字はサポートされていません。  
+  
+ 次のパラメーターの組み合わせのみが使用できます。  
+  
+-   `scope`パラメーターを設定すると、およびその他のすべてのパラメーターに設定されて`null`です。 この組み合わせによって示されるパーソナル化スコープに関連付けられているすべての Web パーツのパーソナル化データを削除する`scope`です。  
+  
+-   `scope`パラメーターを設定すると、および`paths`パラメーターには、少なくとも 1 つの値が含まれています。 この組み合わせの指定されたパスまたはパスによって示されるパーソナル化スコープ内にあるすべての Web パーツのパーソナル化データを削除する`scope`です。  
+  
+-   `scope`にパラメーターが設定されている<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User>、`paths`パラメーターが設定され、1 つのみのパスが含まれる、`usernames`パラメーターには、少なくとも 1 つの値が含まれています。 この組み合わせは、すべてユーザーの個人用設定に含まれているユーザーに関連付けられている指定されたパスの Web パーツのデータを削除`usernames`です。  
+  
+-   `scope`にパラメーターが設定されている<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User>、`paths`パラメーターは`null`、および`usernames`パラメーターには、少なくとも 1 つの値が含まれています。 この組み合わせに含まれているユーザーに関連付けられているすべてのパスの間でのすべてのユーザーごとの個人用設定、Web パーツのデータの削除`usernames`です。  
+  
+ その他のパラメーター値の組み合わせは無効でありがスローされます、<xref:System.ArgumentException>例外。 たとえば、次の 2 つの組み合わせは許可されていません。  
+  
+-   `usernames`時にパラメーターを指定することはできません、`scope`にパラメーターが設定されている<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>です。  
+  
+-   `paths`パラメーターが 1 つ以上のエントリを含めることはできませんと、`usernames`パラメーターではありません`null`です。  
+  
+ `paths`と`usernames`それぞれの配列内に含まれるパラメーターは、次の検証規則を満たす必要があります。 パラメーター配列のメンバーはすべての規則が失敗した場合、<xref:System.ArgumentException>例外がスローされます。 検証規則は次のとおりです。  
+  
+-   `null`値を指定することはできません。  
+  
+-   空の文字列 ("")、文字列がトリムされた後は許可されていません。  
+  
+-   含まれているユーザー名は使用できません、`usernames`パラメーターはコンマを含めることができます。  
+  
+-   内のパスの長さ、`paths`パラメーターは、256 文字より長くすることはできません。  
+  
+-   内のユーザー名の長さ、`usernames`パラメーターは、256 文字より長くすることはできません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">いずれか、<paramref name="paths" />または<paramref name="usernames" />パラメーターが空の配列。  
+  
+ \- または  
+  
+ <paramref name="paths" />と<paramref name="usernames" />それぞれの配列内に含まれるパラメーターは、検証規則を満たしていません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="scope" />指定のメンバーではない、<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" />列挙します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetUserState">
+      <MemberSignature Language="C#" Value="public override int ResetUserState (string path, DateTime userInactiveSinceDate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 ResetUserState(string path, valuetype System.DateTime userInactiveSinceDate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider.ResetUserState(System.String,System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="userInactiveSinceDate" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="path">削除するパーソナル化データのパス。 この値は、<see langword="null" />することはできません、空の文字列 ("") です。</param>
+        <param name="userInactiveSinceDate">最後のアクティビティを示す日付。</param>
+        <summary>指定したパラメーターに基づいて、基になるデータ ストアからユーザーのパーソナル化データを削除します。</summary>
+        <returns>基になるデータ ストアから削除された行の数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのパラメーターには、次の制限があります。  
+  
+-   `path`パラメーターは、ワイルドカード文字を含めることはできません。  
+  
+-   場合、`path`パラメーターは非`null`、唯一のユーザーごとのパーソナル化レコードに関連付けられているし、`path`は削除されます。  
+  
+-   指定した日以降非アクティブと見なされているユーザーに関連付けられているユーザーごとの個人用設定レコードのみ、`userInactiveSinceDate`パラメーターが削除されます。 厳密な比較がレコードを削除することで、<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.LastActivityDate%2A>プロパティは、以下に、`userInactiveSinceDate`パラメーター。  
+  
+-   両方のパラメーターを指定すると、両方の制約に一致するレコードが削除されます。  
+  
+-   `path`パラメーターを指定できます`null`です。  
+  
+-   `path`パラメーターは、トリミング後に、空の文字列をすることはできません。  
+  
+-   <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate%2A>プロパティは、`null`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> が空の文字列です。  
+  
+ \- または  
+  
+ パスは、長さは 256 文字を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SavePersonalizationBlob">
+      <MemberSignature Language="C#" Value="protected override void SavePersonalizationBlob (System.Web.UI.WebControls.WebParts.WebPartManager webPartManager, string path, string userName, byte[] dataBlob);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SavePersonalizationBlob(class System.Web.UI.WebControls.WebParts.WebPartManager webPartManager, string path, string userName, unsigned int8[] dataBlob) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider.SavePersonalizationBlob(System.Web.UI.WebControls.WebParts.WebPartManager,System.String,System.String,System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="webPartManager" Type="System.Web.UI.WebControls.WebParts.WebPartManager" />
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="userName" Type="System.String" />
+        <Parameter Name="dataBlob" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="webPartManager"><see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />パーソナル化データを管理します。</param>
+        <param name="path">A<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" />パーソナル化情報を保存することを示すです。 この値を <see langword="null" /> にすることはできません。</param>
+        <param name="userName">パーソナル化情報のユーザー名、<see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.User" />キーとして使用するスコープ。</param>
+        <param name="dataBlob">データを保存するバイト配列。</param>
+        <summary>生のパーソナル化データを基になる Microsoft SQL Server データベースに保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 以外`null`ユーザー名を指定すると、`dataBlob`パラメーターには、パーソナル化データが含まれています。<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User>スコープです。 それ以外の場合、`dataBlob`のデータを格納すると見なされます<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>スコープ。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider>オブジェクトが自動的に更新プログラム、<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.LastActivityDate%2A>内の列、`aspnet_Users`テーブルの各時間ユーザー固有のパーソナル化データは、ページ要求のコンテキストでデータベースに保存します。 この動作により、他の ASP.NET 機能を使用する、<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.LastActivityDate%2A>古いデータを管理するときにプロパティがサイトで最近を決定するものユーザー アクティビティを記録します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

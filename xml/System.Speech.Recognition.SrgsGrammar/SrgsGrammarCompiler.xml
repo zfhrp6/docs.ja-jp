@@ -1,0 +1,239 @@
+<Type Name="SrgsGrammarCompiler" FullName="System.Speech.Recognition.SrgsGrammar.SrgsGrammarCompiler">
+  <TypeSignature Language="C#" Value="public static class SrgsGrammarCompiler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit SrgsGrammarCompiler extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Recognition.SrgsGrammar.SrgsGrammarCompiler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コンパイル<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" />ファイルおよび XML 形式の文法を .cfg 拡張子を持つバイナリ文法ファイルに出力をストリームに送信します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンパイルする<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>オブジェクトと XML 形式の文法を音声認識エンジンでの読み込みおよび消費の最適化をバイナリ形式です。 コンパイルのいずれかを使用して、音声認識の文法、<xref:System.Speech.Recognition.SrgsGrammar.SrgsGrammarCompiler.Compile%2A>メソッドは、構築するために必要な時間の量を減らすことができます、<xref:System.Speech.Recognition.Grammar>オブジェクトから、<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>または XML 形式文法します。  
+  
+ 詳細については、次を参照してください。 [SRGS 文法のコンパイル](http://msdn.microsoft.com/en-us/dbdd9e2b-62c7-4938-be84-3dcc77ad454a)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Compile">
+      <MemberSignature Language="C#" Value="public static void Compile (System.Speech.Recognition.SrgsGrammar.SrgsDocument srgsGrammar, System.IO.Stream outputStream);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Compile(class System.Speech.Recognition.SrgsGrammar.SrgsDocument srgsGrammar, class System.IO.Stream outputStream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsGrammarCompiler.Compile(System.Speech.Recognition.SrgsGrammar.SrgsDocument,System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="srgsGrammar" Type="System.Speech.Recognition.SrgsGrammar.SrgsDocument" />
+        <Parameter Name="outputStream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="srgsGrammar">文法をコンパイルします。</param>
+        <param name="outputStream">コンパイルの結果を受信しているストリーム。</param>
+        <summary>コンパイル、 <see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" /> .cfg 拡張子を持つバイナリ文法ファイルにオブジェクトを出力ストリームを送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、次を参照してください。 [SRGS 文法のコンパイル](http://msdn.microsoft.com/en-us/dbdd9e2b-62c7-4938-be84-3dcc77ad454a)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="srgsGrammar" /> は <see langword="null" /> です。  
+  
+ <paramref name="outputStream" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Compile">
+      <MemberSignature Language="C#" Value="public static void Compile (string inputPath, System.IO.Stream outputStream);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Compile(string inputPath, class System.IO.Stream outputStream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsGrammarCompiler.Compile(System.String,System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputPath" Type="System.String" />
+        <Parameter Name="outputStream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="inputPath">コンパイルするファイルのパス。</param>
+        <param name="outputStream">コンパイルの結果を受信しているストリーム。</param>
+        <summary>.Cfg 拡張子を持つバイナリ文法ファイルに XML 形式の文法ファイルをコンパイルし、出力をストリームに送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML 形式の文法ファイルが従う必要があります、[音声認識の文法の仕様 (SRGS) バージョン 1.0](http://www.w3.org/TR/speech-grammar/)です。  
+  
+ ファイルにアクセスするファイルを作成または開くときに、セキュリティ チェックが実行されます。 セキュリティ チェックを通常行わないもう一度ファイルを閉じて、再び開く場合を除き、します。  
+  
+ 詳細については、次を参照してください。 [SRGS 文法のコンパイル](http://msdn.microsoft.com/en-us/dbdd9e2b-62c7-4938-be84-3dcc77ad454a)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="inputPath" /> は <see langword="null" /> です。  
+  
+ <paramref name="outputStream" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="inputPath" /> が空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Compile">
+      <MemberSignature Language="C#" Value="public static void Compile (System.Xml.XmlReader reader, System.IO.Stream outputStream);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Compile(class System.Xml.XmlReader reader, class System.IO.Stream outputStream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsGrammarCompiler.Compile(System.Xml.XmlReader,System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+        <Parameter Name="outputStream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="reader"><see cref="T:System.Xml.XmlReader" />文法を読み取る。 文法は、物理ファイル、またはメモリ内に置くことができます。</param>
+        <param name="outputStream">コンパイルの結果を受信するストリーム。</param>
+        <summary>によって参照される XML 形式の文法ファイルのデータをコンパイル、 <see cref="T:System.Xml.XmlReader" /> .cfg 拡張子を持つバイナリ文法ファイルにし、出力をストリームに送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって参照される XML 形式の文法ファイル、<xref:System.Xml.XmlReader>に準拠する必要があります、[音声認識の文法の仕様 (SRGS) バージョン 1.0](http://www.w3.org/TR/speech-grammar/)です。  
+  
+ 詳細については、次を参照してください。 [SRGS 文法のコンパイル](http://msdn.microsoft.com/en-us/dbdd9e2b-62c7-4938-be84-3dcc77ad454a)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。  
+  
+ <paramref name="outputStream" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CompileClassLibrary">
+      <MemberSignature Language="C#" Value="public static void CompileClassLibrary (System.Speech.Recognition.SrgsGrammar.SrgsDocument srgsGrammar, string outputPath, string[] referencedAssemblies, string keyFile);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void CompileClassLibrary(class System.Speech.Recognition.SrgsGrammar.SrgsDocument srgsGrammar, string outputPath, string[] referencedAssemblies, string keyFile) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsGrammarCompiler.CompileClassLibrary(System.Speech.Recognition.SrgsGrammar.SrgsDocument,System.String,System.String[],System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="srgsGrammar" Type="System.Speech.Recognition.SrgsGrammar.SrgsDocument" />
+        <Parameter Name="outputPath" Type="System.String" />
+        <Parameter Name="referencedAssemblies" Type="System.String[]" />
+        <Parameter Name="keyFile" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="srgsGrammar"><see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" />をコンパイルする文法を格納しています。</param>
+        <param name="outputPath">出力の DLL のパス。</param>
+        <param name="referencedAssemblies">入力の文法から参照されるアセンブリの一覧。</param>
+        <param name="keyFile">これにより、出力に署名する DLL の有効化、キーのペアを格納するファイルの名前。</param>
+        <summary>SRGS document を DLL にコンパイルします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="srgsGrammar" /> は <see langword="null" /> です。  
+  
+ <paramref name="outputPath" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="outputPath" /> が空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CompileClassLibrary">
+      <MemberSignature Language="C#" Value="public static void CompileClassLibrary (string[] inputPaths, string outputPath, string[] referencedAssemblies, string keyFile);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void CompileClassLibrary(string[] inputPaths, string outputPath, string[] referencedAssemblies, string keyFile) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsGrammarCompiler.CompileClassLibrary(System.String[],System.String,System.String[],System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputPaths" Type="System.String[]" />
+        <Parameter Name="outputPath" Type="System.String" />
+        <Parameter Name="referencedAssemblies" Type="System.String[]" />
+        <Parameter Name="keyFile" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="inputPaths">コンパイルの文法の一覧。</param>
+        <param name="outputPath">出力の DLL のパス。</param>
+        <param name="referencedAssemblies">入力の文法から参照されるアセンブリの一覧。</param>
+        <param name="keyFile">これにより、出力に署名する DLL の有効化、キーのペアを格納するファイルの名前。</param>
+        <summary>複数の SRGS 文法を DLL にコンパイルします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="inputPaths" /> は <see langword="null" /> です。  
+  
+ <paramref name="outputPath" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="outputPath" /> が空の文字列です。  
+  
+ 任意の要素、<paramref name="inputPaths" />配列が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CompileClassLibrary">
+      <MemberSignature Language="C#" Value="public static void CompileClassLibrary (System.Xml.XmlReader reader, string outputPath, string[] referencedAssemblies, string keyFile);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void CompileClassLibrary(class System.Xml.XmlReader reader, string outputPath, string[] referencedAssemblies, string keyFile) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsGrammarCompiler.CompileClassLibrary(System.Xml.XmlReader,System.String,System.String[],System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+        <Parameter Name="outputPath" Type="System.String" />
+        <Parameter Name="referencedAssemblies" Type="System.String[]" />
+        <Parameter Name="keyFile" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="reader"><see cref="T:System.Xml.XmlReader" />文法を読み取る。</param>
+        <param name="outputPath">出力の DLL のパス。</param>
+        <param name="referencedAssemblies">入力の文法から参照されるアセンブリの一覧。</param>
+        <param name="keyFile">これにより、出力に署名する DLL の有効化、キーのペアを格納するファイルの名前。</param>
+        <summary>SRGS 文法を DLL にコンパイルします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。  
+  
+ <paramref name="outputPath" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="outputPath" /> が空の文字列です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,202 @@
+<Type Name="Adorner" FullName="System.Windows.Documents.Adorner">
+  <TypeSignature Language="C#" Value="public abstract class Adorner : System.Windows.FrameworkElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit Adorner extends System.Windows.FrameworkElement" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Documents.Adorner" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.FrameworkElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>抽象クラスを表す、<see cref="T:System.Windows.FrameworkElement" />を装飾、<see cref="T:System.Windows.UIElement" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 装飾は、カスタム<xref:System.Windows.FrameworkElement>にバインドされている、<xref:System.Windows.UIElement>です。 装飾は、常に装飾される要素または装飾される要素のコレクションの上にある表示サーフェイス装飾層で表示されます。装飾のレンダリングがレンダリングから独立して、<xref:System.Windows.UIElement>に装飾がバインドされています。 通常、装飾は、装飾対象の要素の左上に位置する標準の 2 次元座標の原点を使用して、バインド先の要素に対して相対的な位置に配置されます。  
+  
+> [!NOTE]
+>  親、<xref:System.Windows.Documents.Adorner>は、<xref:System.Windows.Documents.AdornerLayer>表示するための<xref:System.Windows.Documents.Adorner>装飾される要素ではなく、します。  
+  
+> [!NOTE]
+>  装飾層に配置されているすべてのものは、設定した他のすべてのスタイルの上に描画されます。 つまり、装飾は常に視覚的に最上位にあり、z オーダーを使用してオーバーライドすることはできません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Adorner (System.Windows.UIElement adornedElement);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Windows.UIElement adornedElement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Adorner.#ctor(System.Windows.UIElement)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="adornedElement" Type="System.Windows.UIElement" />
+      </Parameters>
+      <Docs>
+        <param name="adornedElement">装飾のバインド要素。</param>
+        <summary><see cref="T:System.Windows.Documents.Adorner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 継承するクラスを実装するときに<xref:System.Windows.Documents.Adorner>、継承したクラスのコンス トラクターが基底クラス コンス トラクターを呼び出していることを確認します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">*adornedElement*は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AdornedElement">
+      <MemberSignature Language="C#" Value="public System.Windows.UIElement AdornedElement { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.UIElement AdornedElement" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Adorner.AdornedElement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.UIElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.UIElement" />にこの装飾がバインドされています。</summary>
+        <value>このガイドにバインドされている要素です。 既定値は <see langword="null" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesiredTransform">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Media.GeneralTransform GetDesiredTransform (System.Windows.Media.GeneralTransform transform);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Media.GeneralTransform GetDesiredTransform(class System.Windows.Media.GeneralTransform transform) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Adorner.GetDesiredTransform(System.Windows.Media.GeneralTransform)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.GeneralTransform</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="transform" Type="System.Windows.Media.GeneralTransform" />
+      </Parameters>
+      <Docs>
+        <param name="transform">装飾される要素に現在適用されている変換します。</param>
+        <summary>返します、<see cref="T:System.Windows.Media.Transform" />装飾、装飾される要素に現在適用されている変換に基づきます。</summary>
+        <returns>装飾に適用する変換です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 装飾は、修飾要素とは異なる変換する必要があります。 インスタンスなど、ポイントと同様に動作する装飾サイズ変更ハンドルを必要があります変換し、装飾される要素と一緒に回転させるも掛けません。 これに対し、要素の選択範囲を表示する装飾には、装飾される要素と同じ変換を必要があります。  
+  
+ このメソッドは、関連付けられているによって<xref:System.Windows.Documents.AdornerLayer>をフィルター処理する機会迷惑ソフトウェアや不要な変換を提供します。 このメソッドの実装は必要があります (ある装飾される要素に対して変換) 入力方向の変換を確認しは役に立ちませんまたは自体装飾には適用しない側面を取り除きます。 このメソッドは、インスタンスの装飾が装飾される要素に相対的な位置を制御できるようにする翻訳を追加するこの時点でその他の変換の詳細を追加するも使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLayoutClip">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Media.Geometry GetLayoutClip (System.Windows.Size layoutSlotSize);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Media.Geometry GetLayoutClip(valuetype System.Windows.Size layoutSlotSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Adorner.GetLayoutClip(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Geometry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="layoutSlotSize" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="layoutSlotSize">要素によって提供される使用可能なサイズ。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Windows.UIElement.GetLayoutClip(System.Windows.Size)" />」をご覧ください。</summary>
+        <returns>潜在的なクリッピング ジオメトリ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装は常に返します`null`です。  
+  
+ このメソッドは<xref:System.Windows.FrameworkElement.GetLayoutClip%2A>します。  
+  
+ 確実に常に装飾は最上位いないクリッピング制約は無視されます<xref:System.Windows.Documents.Adorner.IsClipEnabled%2A>は`true`します。 これにより、対象の要素の外接する四角形の外部で表示するために装飾できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsClipEnabled">
+      <MemberSignature Language="C#" Value="public bool IsClipEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsClipEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Adorner.IsClipEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または装飾のクリッピングを有効にするかどうかを示す値を設定します。</summary>
+        <value>A<see langword="Boolean" />装飾のクリッピングを有効にするかどうかを示す値。  
+  
+ このプロパティが場合<see langword="false" />装飾はクリップされません。  
+  
+ 場合は、このプロパティは<see langword="true" />、装飾される要素と同じクリッピング ジオメトリを使用して装飾をクリップします。  
+  
+ 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 装飾のクリッピングを有効にするには、大幅なパフォーマンス コストが生じます。 一般に、装飾のクリッピングを無効にする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MeasureOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Size MeasureOverride (System.Windows.Size constraint);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size MeasureOverride(valuetype System.Windows.Size constraint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Adorner.MeasureOverride(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="constraint" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="constraint">装飾を制限するサイズ。</param>
+        <summary>装飾のカスタムの測定の動作を実装します。</summary>
+        <returns>A<see cref="T:System.Windows.Size" />装飾によって必要なレイアウト領域の量を表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、装飾サイズは、装飾される要素と一致します。  
+  
+ このメソッドは<xref:System.Windows.FrameworkElement.MeasureOverride%2A>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,904 @@
+<Type Name="ServiceBase" FullName="System.ServiceProcess.ServiceBase">
+  <TypeSignature Language="C#" Value="public class ServiceBase : System.ComponentModel.Component" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ServiceBase extends System.ComponentModel.Component" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceProcess.ServiceBase" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceProcess</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Component</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.InstallerType(typeof(System.ServiceProcess.ServiceProcessInstaller))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>サービス アプリケーションの一部として存在するサービスの基本クラスを提供します。 <see cref="T:System.ServiceProcess.ServiceBase" />新しいサービス クラスを作成するときからを派生する必要があります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生<xref:System.ServiceProcess.ServiceBase>サービス アプリケーションで、サービス クラスを定義するときにします。 有効なサービスの上書き、<xref:System.ServiceProcess.ServiceBase.OnStart%2A>と<xref:System.ServiceProcess.ServiceBase.OnStop%2A>メソッドです。 オーバーライドすることができます、追加の機能の<xref:System.ServiceProcess.ServiceBase.OnPause%2A>と<xref:System.ServiceProcess.ServiceBase.OnContinue%2A>の特定の動作をサービスの状態の変更に応答します。  
+  
+ サービスは、実行時間の長い実行可能ファイル、ユーザー インターフェイスをサポートしていないとユーザーのログオン アカウントで実行します。 サービスは、すべてのユーザーがコンピューターにログオンすることがなく実行できます。  
+  
+ 既定では、サービスは、管理者アカウントと同じではないシステム アカウントで実行します。 システム アカウントの権限を変更することはできません。 また、使用することができます、<xref:System.ServiceProcess.ServiceProcessInstaller>サービスを実行するユーザー アカウントを指定します。  
+  
+ 実行可能ファイルは 1 つ以上のサービスを含めることができますが、個別に含める必要があります<xref:System.ServiceProcess.ServiceInstaller>サービスごとにします。 <xref:System.ServiceProcess.ServiceInstaller>インスタンスをシステム サービスに登録します。 また、インストーラーは、サービスのコマンドを記録する使用できるイベント ログを含む各サービスを関連付けます。 `main()`実行可能ファイル内の関数を定義するサービスを実行する必要があります。 サービスの現在の作業ディレクトリは、実行可能ファイルが配置されているディレクトリではなく、システム ディレクトリです。  
+  
+ システムが実行可能ファイルを検索し、実行されるサービスを開始するときに、<xref:System.ServiceProcess.ServiceBase.OnStart%2A>実行可能ファイル内に含まれる、そのサービスのメソッドです。 ただし、サービスを実行してはいない実行可能ファイルを実行すると同じです。 実行可能ファイルは、サービスのみを読み込みます。 サービス コントロール マネージャーから、(たとえば、開始および停止) サービスがアクセスします。  
+  
+ 実行可能ファイルが、<xref:System.ServiceProcess.ServiceBase>派生したクラスの 1 つ目のコンス トラクターを使うとき、サービスの開始。 <xref:System.ServiceProcess.ServiceBase.OnStart%2A>コンス トラクターの実行直後に、コマンドの処理メソッドが呼び出されます。 によって実行されるコンス トラクターによって実行される処理を分離する必要があるために、サービスが読み込まれると、最初の時間後にもう一度コンス トラクターが実行されません<xref:System.ServiceProcess.ServiceBase.OnStart%2A>です。 すべてのリソースを解放することができますを<xref:System.ServiceProcess.ServiceBase.OnStop%2A>で作成する必要があります<xref:System.ServiceProcess.ServiceBase.OnStart%2A>です。 コンス トラクターでリソースを作成することを防止されて適切に作成された場合は、サービスの開始後にもう一度<xref:System.ServiceProcess.ServiceBase.OnStop%2A>がリソースを解放します。  
+  
+ サービス コントロール マネージャー (SCM) は、サービスと対話する方法を提供します。 SCM を使用して、サービスを開始、停止、一時停止、続行、またはカスタムのコマンドを渡すことができます。 SCM の値を使用して<xref:System.ServiceProcess.ServiceBase.CanStop%2A>と<xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A>サービスが停止を受け入れるかどうかを判断するのには、一時停止、またはコマンドを続行します。 SCM のコンテキスト メニュー場合にのみで有効にし、停止、一時停止、続行、対応するプロパティ<xref:System.ServiceProcess.ServiceBase.CanStop%2A>または<xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A>は`true`サービス クラスにします。 コマンドが、サービスに渡される有効な場合、および<xref:System.ServiceProcess.ServiceBase.OnStop%2A>、 <xref:System.ServiceProcess.ServiceBase.OnPause%2A>、または<xref:System.ServiceProcess.ServiceBase.OnContinue%2A>と呼びます。 場合<xref:System.ServiceProcess.ServiceBase.CanStop%2A>、 <xref:System.ServiceProcess.ServiceBase.CanShutdown%2A>、または<xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A>は`false`、対応するコマンドの処理メソッド (など<xref:System.ServiceProcess.ServiceBase.OnStop%2A>) は処理されません、メソッドを実装している場合でもです。  
+  
+ 使用することができます、 <xref:System.ServiceProcess.ServiceController> SCM はどのようなプログラムで実行するクラスはユーザー インターフェイスを使用します。 コンソールで利用可能なタスクを自動化できます。 場合<xref:System.ServiceProcess.ServiceBase.CanStop%2A>、 <xref:System.ServiceProcess.ServiceBase.CanShutdown%2A>、または<xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A>は`true`対応するコマンドの処理メソッドを実装していない (など<xref:System.ServiceProcess.ServiceBase.OnStop%2A>)、システムが例外をスローし、コマンドは無視されます。  
+  
+ 実装する必要はありません<xref:System.ServiceProcess.ServiceBase.OnStart%2A>、 <xref:System.ServiceProcess.ServiceBase.OnStop%2A>、またはその他の方法で<xref:System.ServiceProcess.ServiceBase>です。 ただし、サービスの動作は、「<xref:System.ServiceProcess.ServiceBase.OnStart%2A>ので少なくとも、このメンバーをオーバーライドする必要があります。 `main()`実行可能ファイルの関数は、呼び出すことによって、サービス コントロール マネージャーでの実行可能ファイルで、サービスを登録、<xref:System.ServiceProcess.ServiceBase.Run%2A>メソッドです。 <xref:System.ServiceProcess.ServiceBase.ServiceName%2A>のプロパティ、<xref:System.ServiceProcess.ServiceBase>オブジェクトに渡される、<xref:System.ServiceProcess.ServiceBase.Run%2A>メソッドに一致する必要があります、<xref:System.ServiceProcess.ServiceInstaller.ServiceName%2A>そのサービスのサービスのインストーラーのプロパティです。  
+  
+ 使用することができます`InstallUtil.exe`システムにサービスをインストールします。  
+  
+> [!NOTE]
+>  サービスの呼び出しが、どちらの通知を受け取るアプリケーション イベント ログ以外のログを指定することができます、<xref:System.ServiceProcess.ServiceBase.AutoLog%2A>も<xref:System.ServiceProcess.ServiceBase.EventLog%2A>プロパティは、カスタムのログに書き込むことができます。 設定<xref:System.ServiceProcess.ServiceBase.AutoLog%2A>に`false`自動ログ記録を使用したくない場合。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceBase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceProcess.ServiceBase" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスを作成しない、<xref:System.ServiceProcess.ServiceBase>クラスです。 派生して代わりに、<xref:System.ServiceProcess.ServiceBase>および派生クラスをインスタンス化します。 最小値から継承されたクラスのコンス トラクターで実装する必要があります<xref:System.ServiceProcess.ServiceBase>を設定するには、<xref:System.ServiceProcess.ServiceBase.ServiceName%2A>コンポーネントでします。 他の処理は、コンス トラクターで具体的には必要ありません。 ほとんどの初期化を処理する必要があります<xref:System.ServiceProcess.ServiceBase.OnStart%2A>コンス トラクターではなくです。 それ以外の場合、オブジェクトは再初期化が停止した後にサービスを再起動すると保証はありません。  
+  
+ 派生クラスでコンス トラクターをオーバーライドする場合は、コードで基本クラス コンス トラクターを呼び出します。  
+  
+ <xref:System.ServiceProcess.ServiceBase>コンス トラクター セット<xref:System.ServiceProcess.ServiceBase.AutoLog%2A>に`true`です。 自動的に呼び出しをログにサービスにサービス コントロール マネージャー (SCM) からたくない場合は、設定<xref:System.ServiceProcess.ServiceBase.AutoLog%2A>に`false`です。  
+  
+ 実行可能ファイルに 1 つのサービスが含まれている場合、システムは、開始が scm でが選択されているし、Stop が呼び出された場合にデストラクターを実行時に、サービスのコンス トラクターを呼び出します。  
+  
+ 実行可能ファイルに複数のサービスが含まれている場合、実行可能ファイルのすべてのサービスに対して呼び出されるコンス トラクターは、1 つのサービスの開始を呼び出すとが、指定したサービスのみが開始します。 サービスのデストラクターは、サービスをすべて停止している個別ではなく各サービスが停止しているときに一緒に実行されます。  
+  
+> [!NOTE]
+>  基底クラス コンス トラクターをオーバーライドする場合は、派生クラスのコンス トラクターで明示的に呼び出す必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoLog">
+      <MemberSignature Language="C#" Value="public bool AutoLog { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoLog" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceProcess.ServiceBase.AutoLog" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ServiceProcess.ServiceProcessDescription("SBAutoLog")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベント ログの開始、停止、一時停止、および Continue コマンドを報告するかどうかを示します。</summary>
+        <value>
+          <see langword="true" />イベント ログに情報を報告するそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定<xref:System.ServiceProcess.ServiceBase.AutoLog%2A>に`true`サービスの開始、停止、一時停止、状態変更情報だけでなく、コマンドの失敗を報告する、アプリケーション イベント ログを使用してサービスにイベントを続行するように指示します。 サービスの名前は、ログのとして使用<xref:System.Diagnostics.EventLog.Source%2A?displayProperty=nameWithType>です。  
+  
+ アプリケーション ログではなく、カスタム イベント ログに情報を報告の設定、<xref:System.ServiceProcess.ServiceBase.AutoLog%2A>に`false`とコマンドの処理メソッド内の指示に書き込み<xref:System.ServiceProcess.ServiceBase.OnContinue%2A>、 <xref:System.ServiceProcess.ServiceBase.OnPause%2A>、または<xref:System.ServiceProcess.ServiceBase.OnStop%2A>適切なログを送信します。  
+  
+> [!NOTE]
+>  <xref:System.ServiceProcess.ServiceBase.ServiceName%2A>、イベント ログのソース文字列を指定する必要があります前に設定する、サービス、イベント ログへの書き込みを試みます。 ソース名を設定する前に、イベント ログにアクセスしようとしています。 には、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanHandlePowerEvent">
+      <MemberSignature Language="C#" Value="public bool CanHandlePowerEvent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanHandlePowerEvent" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceProcess.ServiceBase.CanHandlePowerEvent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサービスがコンピューターの電源状態の変更の通知を処理できるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />サービス処理に変更が示されているコンピューターの電源状態、<see cref="T:System.ServiceProcess.PowerBroadcastStatus" />クラス、それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、コンピューターの電源状態の変更では、サービス コントロール マネージャー (SCM) を確認、サービスが電源イベントを使用してコマンドの値を受け入れるかどうか<xref:System.ServiceProcess.ServiceBase.CanHandlePowerEvent%2A>です。  
+  
+ 場合<xref:System.ServiceProcess.ServiceBase.CanHandlePowerEvent%2A>は`true`、コマンドは、サービスに渡されると、<xref:System.ServiceProcess.ServiceBase.OnPowerEvent%2A>定義されている場合、メソッドが呼び出されます。 場合<xref:System.ServiceProcess.ServiceBase.OnPowerEvent%2A>は実装されていません SCM が空の基底クラスを通じた電源イベントを処理、派生クラスで<xref:System.ServiceProcess.ServiceBase.OnPowerEvent%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このプロパティは、サービスが開始された後に変更します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanHandleSessionChangeEvent">
+      <MemberSignature Language="C#" Value="public bool CanHandleSessionChangeEvent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanHandleSessionChangeEvent" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceProcess.ServiceBase.CanHandleSessionChangeEvent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサービスで、ターミナル サーバー セッションから受信したセッションの変更イベントを処理できるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />サービスは、ターミナル サーバー セッションの変更イベントを処理できる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">このプロパティは、サービスが開始された後に変更します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanPauseAndContinue">
+      <MemberSignature Language="C#" Value="public bool CanPauseAndContinue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanPauseAndContinue" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceProcess.ServiceBase.CanPauseAndContinue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサービスの一時停止および再開するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、サービスを一時停止できます。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値を設定、<xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A>サービスのコンス トラクター内のプロパティです。  
+  
+ サービスが一時停止しているときに、それが何を停止します。 (いずれかのサービス コントロール マネージャーを使用またはプログラムによって)、サービスを続行すると<xref:System.ServiceProcess.ServiceBase.OnContinue%2A>を実行します。  
+  
+ サービスを一時停止要求を送信すると、システム リソースを節約できます。 一時停止は、すべてのシステム リソースを解放できないことがありますが、停止します。 <xref:System.ServiceProcess.ServiceBase.OnPause%2A>および<xref:System.ServiceProcess.ServiceBase.OnContinue%2A>よりも少ない処理を実行する多くの場合、実装は<xref:System.ServiceProcess.ServiceBase.OnStop%2A>と<xref:System.ServiceProcess.ServiceBase.OnStart%2A>です。  
+  
+ ときに<xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A>は`true`、オーバーライド<xref:System.ServiceProcess.ServiceBase.OnPause%2A>と<xref:System.ServiceProcess.ServiceBase.OnContinue%2A>サービス コントロール マネージャー (SCM) は、サービスに、一時停止または続行要求を通過するときに発生する処理を指定します。 <xref:System.ServiceProcess.ServiceBase.OnContinue%2A>処理を元に戻すに実装する必要があります<xref:System.ServiceProcess.ServiceBase.OnPause%2A>です。  
+  
+ 場合<xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A>は`false`SCM は一時停止を通過しません、またはサービスにため続行を要求、<xref:System.ServiceProcess.ServiceBase.OnPause%2A>と<xref:System.ServiceProcess.ServiceBase.OnContinue%2A>実装されている場合でも、メソッドは呼び出されません。 SCM で、`Pause`と`Continue`コントロールが無効になっているときに<xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A>は`false`します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">サービスが既に開始されています。 <see cref="P:System.ServiceProcess.ServiceBase.CanPauseAndContinue" />サービスが開始されると、プロパティを変更できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanShutdown">
+      <MemberSignature Language="C#" Value="public bool CanShutdown { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanShutdown" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceProcess.ServiceBase.CanShutdown" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはシステムのシャット ダウン時にサービスに通知するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、システムのシャット ダウン時にサービスに通知する必要があります。それ以外の場合、<see langword="false" />です。  既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.ServiceProcess.ServiceBase.CanShutdown%2A>は`true`サービスは、システムのシャット ダウンするときに通知します。 シャット ダウン時に、<xref:System.ServiceProcess.ServiceBase.OnShutdown%2A>派生クラスで実装されている場合、メソッドが呼び出されます。  
+  
+> [!NOTE]
+>  システムのみの原因には、 <xref:System.ServiceProcess.ServiceBase.OnShutdown%2A> ; を実行する方法、サービスを呼び出すことができますが、これは推奨されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">サービスが既に開始されています。 <see cref="P:System.ServiceProcess.ServiceBase.CanShutdown" />サービスが開始されると、プロパティを変更できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanStop">
+      <MemberSignature Language="C#" Value="public bool CanStop { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanStop" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceProcess.ServiceBase.CanStop" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはが開始された後にサービスを停止できるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />サービスを停止する場合、<see cref="M:System.ServiceProcess.ServiceBase.OnStop" />メソッドが呼び出されます。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サービス停止が呼び出されると、サービス コントロール マネージャー (SCM) は、サービスが停止の値を使用してコマンドを受け入れるかどうかを確認<xref:System.ServiceProcess.ServiceBase.CanStop%2A>です。 ほとんどのサービスの値<xref:System.ServiceProcess.ServiceBase.CanStop%2A>は`true`、一部のオペレーティング システム サービスなど、見えないようにユーザーに通知を停止します。  
+  
+ 場合<xref:System.ServiceProcess.ServiceBase.CanStop%2A>は`true`、Stop コマンドは、サービスに渡されると、<xref:System.ServiceProcess.ServiceBase.OnStop%2A>が定義されている場合、メソッドが呼び出されます。 場合<xref:System.ServiceProcess.ServiceBase.OnStop%2A>、停止が空の基底クラスを通じてコマンド SCM ハンドル、派生クラスで実装されていません<xref:System.ServiceProcess.ServiceBase.OnStop%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">サービスが既に開始されています。 <see cref="P:System.ServiceProcess.ServiceBase.CanStop" />サービスが開始されると、プロパティを変更できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceBase.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.ServiceProcess.ServiceBase" /> で使用されていたリソース (メモリを除く) を解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す<xref:System.ServiceProcess.ServiceBase.Dispose%2A>、派生クラスで (これによって内、<xref:System.ServiceProcess.ServiceBase>クラス)、派生クラスの使用が終了したときにします。 <xref:System.ServiceProcess.ServiceBase.Dispose%2A>メソッドを使用できない状態で、派生クラスのままにします。 呼び出した後<xref:System.ServiceProcess.ServiceBase.Dispose%2A>、派生クラスへのすべての参照を解放する必要がありますと<xref:System.ServiceProcess.ServiceBase>が占有されたメモリをガベージ コレクションによって再要求できるようにします。  
+  
+> [!NOTE]
+>  常に呼び出す<xref:System.ServiceProcess.ServiceBase.Dispose%2A>から派生したクラスへの参照を解放する前に<xref:System.ServiceProcess.ServiceBase>です。 それ以外の場合、リソース<xref:System.ServiceProcess.ServiceBase>派生クラスを使用しているがガベージ コレクションは、オブジェクトのデストラクターを呼び出すまで解放されないためです。  
+  
+ <xref:System.ServiceProcess.ServiceBase.OnStop%2A>内のコードを処理するために実装が多くの場合、<xref:System.ServiceProcess.ServiceBase.OnPause%2A>への呼び出しと組み合わせた<xref:System.ServiceProcess.ServiceBase.Dispose%2A>です。 これを行うには、派生クラスでを選択する場合を実装する一般的な<xref:System.ServiceProcess.ServiceBase.OnStart%2A>を自由に割り当てる<xref:System.ServiceProcess.ServiceBase.Dispose%2A>解放します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventLog">
+      <MemberSignature Language="C#" Value="public virtual System.Diagnostics.EventLog EventLog { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Diagnostics.EventLog EventLog" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceProcess.ServiceBase.EventLog" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.EventLog</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス コマンドの呼び出し、開始、停止などの通知、アプリケーション イベント ログに書き込みをする際、イベント ログを取得します。</summary>
+        <value><see cref="T:System.Diagnostics.EventLog" />アプリケーション ログにあるソースが登録されているインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンス トラクターは、<xref:System.ServiceProcess.ServiceBase.EventLog%2A>プロパティを持つインスタンスを<xref:System.Diagnostics.EventLog.Source%2A?displayProperty=nameWithType>と<xref:System.Diagnostics.EventLog.Log%2A?displayProperty=nameWithType>プロパティを設定します。 ソースは、<xref:System.ServiceProcess.ServiceBase.ServiceName%2A>サービスのログで、コンピューターのアプリケーション ログに記録します。 これらの値は、自動的に設定し、ログ サービス コマンドの自動記録は変更できません。  
+  
+ ときに<xref:System.ServiceProcess.ServiceBase.AutoLog%2A>は`true`開始、停止、一時停止、続行、およびカスタムのコマンドは、アプリケーション イベント ログに自動的に記録します。 使用することができます、<xref:System.ServiceProcess.ServiceBase.EventLog%2A>プロパティが追加のメッセージをログに書き込むこともできます。 コンポーネントの呼び出し<xref:System.Diagnostics.EventLog.WriteEntry%2A?displayProperty=nameWithType>これを使用して<xref:System.ServiceProcess.ServiceBase.EventLog%2A>メンバー。  
+  
+ アプリケーション ログではなく、カスタム イベント ログに情報を報告の設定、<xref:System.ServiceProcess.ServiceBase.AutoLog%2A>に`false`とコマンドの処理メソッド内の指示に書き込み<xref:System.ServiceProcess.ServiceBase.OnContinue%2A>、 <xref:System.ServiceProcess.ServiceBase.OnPause%2A>、または<xref:System.ServiceProcess.ServiceBase.OnStop%2A>適切なログを送信します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExitCode">
+      <MemberSignature Language="C#" Value="public int ExitCode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ExitCode" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceProcess.ServiceBase.ExitCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサービスの終了コードを設定します。</summary>
+        <value>サービスの終了コード。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.ServiceProcess.ServiceBase.ExitCode%2A>プロパティをサービス コントロール マネージャーにエラーを示すためにサービスを停止する前に 0 以外の値にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxNameLength">
+      <MemberSignature Language="C#" Value="public const int MaxNameLength = 80;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 MaxNameLength = (80)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceProcess.ServiceBase.MaxNameLength" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>80</MemberValue>
+      <Docs>
+        <summary>サービス名の最大サイズを示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ServiceName および DisplayName 両方に、サービス クラスでプロパティを設定するときに従う必要がありますをサイズ制限があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnContinue">
+      <MemberSignature Language="C#" Value="protected virtual void OnContinue ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnContinue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceBase.OnContinue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスで実装された場合<see cref="M:System.ServiceProcess.ServiceBase.OnContinue" />Continue コマンドがサービス コントロール マネージャー (SCM) によってサービスに送信されるときに実行されます。 一時停止された後に正常に機能しているサービスの再開時に実行されるアクションを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装<xref:System.ServiceProcess.ServiceBase.OnContinue%2A>へのアプリケーションの応答のミラーに<xref:System.ServiceProcess.ServiceBase.OnPause%2A>です。 (いずれかのサービス コンソールを使用またはプログラムによって)、サービスを続行すると、<xref:System.ServiceProcess.ServiceBase.OnContinue%2A>処理を実行して、サービス再びアクティブになった。  
+  
+ <xref:System.ServiceProcess.ServiceBase.OnContinue%2A>オーバーライドするときに期待どおり、<xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A>プロパティは`true`します。  
+  
+ 場合<xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A>は`false`SCM は一時停止を通過しません、またはサービスにため続行を要求、<xref:System.ServiceProcess.ServiceBase.OnPause%2A>と<xref:System.ServiceProcess.ServiceBase.OnContinue%2A>実装されている場合でも、メソッドは呼び出されません。 SCM で、`Pause`と`Continue`コントロールが無効になっているときに<xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A>は`false`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCustomCommand">
+      <MemberSignature Language="C#" Value="protected virtual void OnCustomCommand (int command);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnCustomCommand(int32 command) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceBase.OnCustomCommand(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="command" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="command">コマンド メッセージをサービスに送信します。</param>
+        <summary>派生クラスで実装された場合<see cref="M:System.ServiceProcess.ServiceBase.OnCustomCommand(System.Int32)" />サービス コントロール マネージャー (SCM) は、サービスにカスタム コマンドを渡すときに実行します。 指定したパラメーター値を持つコマンドが発生したときに実行されるアクションを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceProcess.ServiceBase.OnCustomCommand%2A>起動、停止、一時停止と継続的なサービス以外の追加の機能を指定します。  
+  
+ SCM では、サービスをサポートしているかどうかを確認するカスタム コマンドについては検査しません、`command`でパラメーターに渡されます。 サービスに直接カスタム コマンドを渡します。 サービスで認識されない場合、`command`パラメーター、何もしません。  
+  
+ カスタムのコマンドはによって発生させ、<xref:System.ServiceProcess.ServiceController.ExecuteCommand%2A>内のステートメント、<xref:System.ServiceProcess.ServiceController>コンポーネントです。 Switch ステートメントを使用する場合、または.サービスで定義するカスタム コマンドを処理する条件です。  
+  
+ アプリケーションで定義したりで使用できるカスタム コマンドの値のみ<xref:System.ServiceProcess.ServiceBase.OnCustomCommand%2A>128 ~ 255 の範囲とは。 128 未満の整数は、システム予約値に対応します。  
+  
+ 場合、<xref:System.ServiceProcess.ServiceBase.AutoLog%2A>プロパティは`true`、他のすべてのコマンドと同様に、カスタムのコマンドは、メソッドの実行が成功または失敗するかどうかを報告するイベント ログにエントリを書き込みます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPause">
+      <MemberSignature Language="C#" Value="protected virtual void OnPause ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnPause() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceBase.OnPause" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスとして実装された場合は、一時停止コマンドが送信されると、サービスにサービス コントロール マネージャー (SCM) によってを実行します。 サービスが一時中断時に実行するアクションを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.ServiceProcess.ServiceBase.OnPause%2A>サービスが一時停止コマンドを受け取るときに発生する処理を指定します。 <xref:System.ServiceProcess.ServiceBase.OnPause%2A>オーバーライドするときに期待どおり、<xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A>プロパティは`true`します。  
+  
+ (いずれかのサービス コンソールを使用またはプログラムによって)、一時停止したサービスを続行すると、<xref:System.ServiceProcess.ServiceBase.OnContinue%2A>処理が実行され、サービスが再度アクティブになります。  
+  
+ 一時停止コマンドは、特定のイベントに反応するため、アプリケーションだけを許可します。 <xref:System.ServiceProcess.ServiceBase.OnPause%2A>定義していないことを行うには、サービスに何も行いません。  
+  
+ サービスを一時停止要求を送信すると、一時停止は、すべてのシステム リソースを解放しない必要があるためにシステム リソースを節約できます。 たとえば、スレッドのスレッドを開いたままでも、許可できますを停止するのではなく、サービスを一時停止、プロセスによって開かれた場合、サービスを継続するには、そのファイルを再割り当てします必要があります。 すべてのシステム リソースを解放する一時停止を定義する場合、Stop コマンドと同様に動作します。  
+  
+ 設定<xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A>に`true`、オーバーライドと<xref:System.ServiceProcess.ServiceBase.OnPause%2A>と<xref:System.ServiceProcess.ServiceBase.OnContinue%2A>SCM は、サービスに、一時停止または続行要求を通過するときに発生する処理を指定します。 <xref:System.ServiceProcess.ServiceBase.OnContinue%2A>処理を元に戻すに実装する必要があります<xref:System.ServiceProcess.ServiceBase.OnPause%2A>です。  
+  
+ 場合<xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A>は`false`SCM は一時停止を通過しません、またはサービスにため続行を要求、<xref:System.ServiceProcess.ServiceBase.OnPause%2A>と<xref:System.ServiceProcess.ServiceBase.OnContinue%2A>実装されている場合でも、メソッドは呼び出されません。 SCM で、`Pause`と`Continue`コントロールが無効になっているときに<xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A>は`false`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPowerEvent">
+      <MemberSignature Language="C#" Value="protected virtual bool OnPowerEvent (System.ServiceProcess.PowerBroadcastStatus powerStatus);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool OnPowerEvent(valuetype System.ServiceProcess.PowerBroadcastStatus powerStatus) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceBase.OnPowerEvent(System.ServiceProcess.PowerBroadcastStatus)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="powerStatus" Type="System.ServiceProcess.PowerBroadcastStatus" />
+      </Parameters>
+      <Docs>
+        <param name="powerStatus">A<see cref="T:System.ServiceProcess.PowerBroadcastStatus" />の電源状態に関するシステムからの通知を示すです。</param>
+        <summary>派生クラスとして実装された場合は、コンピューターの電源状態が変更されたときに実行します。 これにより、システムのシャット ダウンと同じではない、中断モードに移行するときに、ラップトップ コンピューターに適用されます。</summary>
+        <returns>派生クラスで実装された場合、アプリケーションのニーズは、返される値を決定します。 たとえば場合、<see langword="QuerySuspend" />ブロードキャストのステータスは、アプリケーションを返すことによって、クエリを拒否する可能性があります<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.ServiceProcess.ServiceBase.OnPowerEvent%2A>でシステム イベントに示されているときに発生する処理を指定する、<xref:System.ServiceProcess.PowerBroadcastStatus>列挙--などまたはときに発生コンピューター サスペンド モードで配置バッテリ電力を示します。  
+  
+ <xref:System.ServiceProcess.ServiceBase.OnPowerEvent%2A>オーバーライドするときに期待どおり、<xref:System.ServiceProcess.ServiceBase.CanHandlePowerEvent%2A>プロパティは`true`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSessionChange">
+      <MemberSignature Language="C#" Value="protected virtual void OnSessionChange (System.ServiceProcess.SessionChangeDescription changeDescription);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnSessionChange(valuetype System.ServiceProcess.SessionChangeDescription changeDescription) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceBase.OnSessionChange(System.ServiceProcess.SessionChangeDescription)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="changeDescription" Type="System.ServiceProcess.SessionChangeDescription" />
+      </Parameters>
+      <Docs>
+        <param name="changeDescription">変更の種類を識別する構造体。</param>
+        <summary>ターミナル サーバー セッションからの変更イベントが受信したときに実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定する必要があります、<xref:System.ServiceProcess.ServiceBase.CanHandleSessionChangeEvent%2A>プロパティを`true`このメソッドの実行を有効にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnShutdown">
+      <MemberSignature Language="C#" Value="protected virtual void OnShutdown ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnShutdown() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceBase.OnShutdown" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスとして実装された場合は、システムがシャット ダウン中を実行します。 システムがシャット ダウンの直前に何が起きるかを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.ServiceProcess.ServiceBase.OnShutdown%2A>システム シャット ダウンするときに発生する処理を指定します。  
+  
+ このイベントは、コンピューターが電源オフ時ではなく、オペレーティング システムをシャット ダウン時にのみ発生します。  
+  
+ <xref:System.ServiceProcess.ServiceBase.OnShutdown%2A>オーバーライドするときに期待どおり、<xref:System.ServiceProcess.ServiceBase.CanShutdown%2A>プロパティは`true`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStart">
+      <MemberSignature Language="C#" Value="protected virtual void OnStart (string[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnStart(string[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceBase.OnStart(System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="args" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="args">Start コマンドによって渡されるデータ。</param>
+        <summary>派生クラスとして実装された場合は、Start コマンドを送信すると、サービスまたはサービス コントロール マネージャー (SCM) によって、オペレーティング システムを起動すると (自動的に起動するサービス) を実行します。 サービスの開始時に実行されるアクションを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.ServiceProcess.ServiceBase.OnStart%2A>サービス Start コマンドを受信するときに発生する処理を指定します。 <xref:System.ServiceProcess.ServiceBase.OnStart%2A>サービスの動作を指定する方法です。 <xref:System.ServiceProcess.ServiceBase.OnStart%2A>データを渡す方法として、引数を受け取ることができますが、この使用状況はまれです。  
+  
+> [!CAUTION]
+>  必要がある処理を実行するコンス トラクターを使用しないでください<xref:System.ServiceProcess.ServiceBase.OnStart%2A>です。 使用して<xref:System.ServiceProcess.ServiceBase.OnStart%2A>をサービスのすべての初期化を処理します。 コンス トラクターは、アプリケーションの実行可能ファイルときに呼び出されますが、サービスが実行時ではなく、実行します。 実行可能ファイルを実行する前に<xref:System.ServiceProcess.ServiceBase.OnStart%2A>です。 続行すると、たとえば、ときに、コンス トラクターは再度呼び出されません SCM は、メモリ内のオブジェクトを既に保持しているためです。 場合<xref:System.ServiceProcess.ServiceBase.OnStop%2A>コンス トラクターではなくに割り当てられているリソースを解放<xref:System.ServiceProcess.ServiceBase.OnStart%2A>、必要なリソースを作成できませんが 2 番目に、サービスが呼び出されるときにもう一度です。  
+  
+ 設定して、コンピューターを再起動するときに自動的に開始するサービスを設定することができます、<xref:System.ServiceProcess.ServiceInstaller.StartType%2A>するために、サービスのインストーラーに<xref:System.ServiceProcess.ServiceStartMode.Automatic>です。 このような状況で、<xref:System.ServiceProcess.ServiceBase.OnStart%2A>がシステムの起動時に呼び出されます。  
+  
+ <xref:System.ServiceProcess.ServiceBase.OnStart%2A>派生クラスでオーバーライドされると想定されます。 有効に機能するサービスの<xref:System.ServiceProcess.ServiceBase.OnStart%2A>と<xref:System.ServiceProcess.ServiceBase.OnStop%2A>両方のサービス クラスで実装する必要があります。  
+  
+ サービスの初期化の引数を処理、 <xref:System.ServiceProcess.ServiceBase.OnStart%2A> Main メソッドではなく、メソッドです。 引数、`args`パラメーター配列は、サービス コンソールで、サービスのプロパティ ウィンドウで手動で設定することができます。 コンソールで入力した引数は保存されません。渡すことが、サービスを一時的に、コントロール パネルから、サービスが開始されたときにします。 サービスのレジストリ キーの ImagePath 文字列値に、サービスが自動的に開始されて存在する必要がある引数を配置することができます (hkey_local_machine \system\currentcontrolset\services\\*\<サービス名 >*)。 使用して、レジストリから引数を取得することができます、<xref:System.Environment.GetCommandLineArgs%2A>例については、メソッド:`string[] imagePathArgs = Environment.GetCommandLineArgs();`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStop">
+      <MemberSignature Language="C#" Value="protected virtual void OnStop ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnStop() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceBase.OnStop" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスとして実装された場合を停止するコマンドが送信されると、サービスにサービス コントロール マネージャー (SCM) によってを実行します。 実行しているサービスが停止したときに実行するアクションを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.ServiceProcess.ServiceBase.OnStop%2A>サービスを停止するコマンドを受信するときに発生する処理を指定します。  
+  
+ 値を使用して、SCM では、Stop コマンドを受信するときに<xref:System.ServiceProcess.ServiceBase.CanStop%2A>をサービスが停止コマンドを受け入れるかどうかを確認します。 場合<xref:System.ServiceProcess.ServiceBase.CanStop%2A>は`true`、Stop コマンドは、サービスに渡されると、<xref:System.ServiceProcess.ServiceBase.OnStop%2A>が定義されている場合、メソッドが呼び出されます。 場合<xref:System.ServiceProcess.ServiceBase.OnStop%2A>は実装されていませんサービスでは、SCM が Stop コマンドを処理します。  
+  
+ 場合<xref:System.ServiceProcess.ServiceBase.CanStop%2A>は`false`、SCM Stop コマンドは無視されます。 サービスが渡されない。 Stop コマンドを返し、例外がスローされます。  
+  
+ <xref:System.ServiceProcess.ServiceBase.OnStop%2A>派生クラスでオーバーライドされると想定されます。 有効に機能するサービスの<xref:System.ServiceProcess.ServiceBase.OnStart%2A>と<xref:System.ServiceProcess.ServiceBase.OnStop%2A>両方のサービス クラスで実装する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestAdditionalTime">
+      <MemberSignature Language="C#" Value="public void RequestAdditionalTime (int milliseconds);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RequestAdditionalTime(int32 milliseconds) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceBase.RequestAdditionalTime(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="milliseconds" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="milliseconds">要求時間 (ミリ秒単位)。</param>
+        <summary>保留中の操作の時間を追加要求。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceProcess.ServiceBase.RequestAdditionalTime%2A>メソッドが呼び出されるもので、オーバーライドされた<xref:System.ServiceProcess.ServiceBase.OnContinue%2A>、 <xref:System.ServiceProcess.ServiceBase.OnPause%2A>、 <xref:System.ServiceProcess.ServiceBase.OnStart%2A>、または<xref:System.ServiceProcess.ServiceBase.OnStop%2A>要求をサービス コントロール マネージャー (SCM) が応答するいないと、サービスをマークすることを防ぐために、保留中の操作の時間を追加する方法です。  保留中の操作が続行、一時停止、開始または停止がない場合、<xref:System.InvalidOperationException>がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">サービスが、保留中の状態にない。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Run">
+      <MemberSignature Language="C#" Value="public static void Run (System.ServiceProcess.ServiceBase service);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Run(class System.ServiceProcess.ServiceBase service) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceBase.Run(System.ServiceProcess.ServiceBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="service" Type="System.ServiceProcess.ServiceBase" />
+      </Parameters>
+      <Docs>
+        <param name="service">A<see cref="T:System.ServiceProcess.ServiceBase" />サービスを開始することを示します。</param>
+        <summary>サービス コントロール マネージャー (SCM) とサービスの実行可能ファイルを登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードを呼び出して、`main()`サービス、サービス コントロール マネージャーに、サービスを登録する実行可能ファイルの関数。 呼び出した後<xref:System.ServiceProcess.ServiceBase.Run%28System.ServiceProcess.ServiceBase%29>、サービス コントロール マネージャーへの呼び出しで結果 Start コマンドを発行する、<xref:System.ServiceProcess.ServiceBase.OnStart%2A>サービスのメソッドです。 開始コマンドが実行されるまで、サービスが開始されていません。  
+  
+ <xref:System.ServiceProcess.ServiceBase.Run%2A?displayProperty=nameWithType>メソッドとほぼ同じ方法で呼び出す<xref:System.Windows.Forms.Application.Run%2A?displayProperty=nameWithType>Windows フォーム アプリケーションです。  
+  
+ 場合<xref:System.ServiceProcess.ServiceBase.AutoLog%2A>は`true`、によって、サービスが指定されている場合、イベント ログにエントリが書き込まれる、`service`パラメーターの開始に失敗します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="service" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Run">
+      <MemberSignature Language="C#" Value="public static void Run (System.ServiceProcess.ServiceBase[] services);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Run(class System.ServiceProcess.ServiceBase[] services) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceBase.Run(System.ServiceProcess.ServiceBase[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="services" Type="System.ServiceProcess.ServiceBase[]" />
+      </Parameters>
+      <Docs>
+        <param name="services">サービスを開始することを示す ServiceBase インスタンスの配列。</param>
+        <summary>サービス コントロール マネージャー (SCM) に複数のサービスの実行可能ファイルを登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードを呼び出して、`main()`サービス、サービス コントロール マネージャーに、サービスを登録する実行可能ファイルの関数。 呼び出した後<xref:System.ServiceProcess.ServiceBase.Run%28System.ServiceProcess.ServiceBase%5B%5D%29>、サービス コントロール マネージャーへの呼び出しと、[開始] コマンドの発行、<xref:System.ServiceProcess.ServiceBase.OnStart%2A>サービス内のメソッドです。 Start コマンドが実行されるまで、サービスは開始されません。  
+  
+ <xref:System.ServiceProcess.ServiceBase.Run%2A?displayProperty=nameWithType>とほぼ同じ方法でメソッドが呼び出される、 <xref:System.Windows.Forms.Application.Run%2A?displayProperty=nameWithType> Windows フォーム アプリケーションのメソッドです。  
+  
+ 場合<xref:System.ServiceProcess.ServiceBase.AutoLog%2A>は`true`配列内のサービスが開始に失敗した場合、イベント ログにエントリが書き込まれます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">サービスを開始するが指定されていません。 この配列である可能性があります<see langword="null" />または空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceHandle">
+      <MemberSignature Language="C#" Value="protected IntPtr ServiceHandle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance native int ServiceHandle" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceProcess.ServiceBase.ServiceHandle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスのサービス コントロールのハンドルを取得します。</summary>
+        <value><see cref="T:System.IntPtr" />サービスのサービス コントロールのハンドルを格納する構造体。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サービス コントロール ハンドルは、サービス コントロール マネージャー (SCM) との通信に使用されます。  ハンドルを使用して、アンマネージを使用して、呼び出し側サービスのサービス コントロール マネージャーの状態情報を更新すること`SetServiceStatus`関数。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceMainCallback">
+      <MemberSignature Language="C#" Value="public void ServiceMainCallback (int argCount, IntPtr argPointer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ServiceMainCallback(int32 argCount, native int argPointer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceBase.ServiceMainCallback(System.Int32,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="argCount" Type="System.Int32" />
+        <Parameter Name="argPointer" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="argCount">引数の配列の引数の数。</param>
+        <param name="argPointer"><see cref="T:System.IntPtr" />引数の配列を指す構造体。</param>
+        <summary>コマンド ハンドラーを登録し、サービスを開始します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceName">
+      <MemberSignature Language="C#" Value="public string ServiceName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ServiceName" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceProcess.ServiceBase.ServiceName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Diagnostics.Design.StringValueConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ServiceProcess.ServiceProcessDescription("SBServiceName")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはシステム サービスを識別するために使用する短い名前を設定します。</summary>
+        <value>サービスの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceProcess.ServiceBase.ServiceName%2A>サービス コントロール マネージャーにサービスを識別します。 このプロパティの値は、そのサービスに対して記録された名前と同じにする必要があります、<xref:System.ServiceProcess.ServiceInstaller.ServiceName%2A?displayProperty=nameWithType>インストーラーの対応するクラスのプロパティです。 コードでは、<xref:System.ServiceProcess.ServiceBase.ServiceName%2A>サービスの通常は設定、`main()`実行可能ファイルの関数。  
+  
+ <xref:System.ServiceProcess.ServiceBase.ServiceName%2A>指定にも使用される、<xref:System.Diagnostics.EventLog.Source%2A?displayProperty=nameWithType>に関連付けられている、<xref:System.ServiceProcess.ServiceBase.EventLog%2A>プロパティです。 これは、<xref:System.ServiceProcess.ServiceBase.EventLog%2A>インスタンス サービス コマンドの情報をアプリケーション ログに書き込みますです。  
+  
+ <xref:System.ServiceProcess.ServiceBase.ServiceName%2A>、イベント ログのソース文字列を指定する必要があります前に設定する、サービスがイベント ログに書き込みます。 スローする例外が発生したソース名を設定する前に、イベント ログにアクセスしようとしています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">サービスが既に開始されています。 <see cref="P:System.ServiceProcess.ServiceBase.ServiceName" />サービスが開始されると、プロパティを変更できません。</exception>
+        <exception cref="T:System.ArgumentException">指定した名前が長さ 0 の文字列は、またはよりも長い<see cref="F:System.ServiceProcess.ServiceBase.MaxNameLength" />、または指定した名前には、前方のスラッシュまたは円記号の文字が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Stop">
+      <MemberSignature Language="C#" Value="public void Stop ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Stop() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceBase.Stop" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>サービスの実行を停止します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceProcess.ServiceBase.Stop%2A>メソッドは、停止が保留中を示すためにサービスの状態と呼び出しを設定、<xref:System.ServiceProcess.ServiceBase.OnStop%2A>メソッドです。  アプリケーションが停止したら、サービスの状態が停止に設定します。 アプリケーションが、ホステッド サービスの場合は、アプリケーション ドメインがアンロードされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,63 @@
+<Type Name="AutomationProperty" FullName="System.Windows.Automation.AutomationProperty">
+  <TypeSignature Language="C#" Value="public class AutomationProperty : System.Windows.Automation.AutomationIdentifier" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AutomationProperty extends System.Windows.Automation.AutomationIdentifier" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.AutomationProperty" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationTypes</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Automation.AutomationIdentifier</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プロパティを識別、<see cref="T:System.Windows.Automation.AutomationElement" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、プロパティの値ではなく、プロパティを識別します。 フィールドとしてこの型の静的オブジェクトが見つかった<xref:System.Windows.Automation.AutomationElement>およびコントロール パターン クラスです。  
+  
+   
+  
+## Examples  
+ 次の例は、プロパティ変更イベント ハンドラーを追加し、ハンドラーのチェック、<xref:System.Windows.Automation.AutomationPropertyChangedEventArgs.Property%2A>イベント引数のメンバーに変更されたプロパティを確認します。  
+  
+ [!code-csharp[UIAClient_snip#172](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/PropertySnips.cs#172)]
+ [!code-vb[UIAClient_snip#172](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/PropertySnips.vb#172)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="LookupById">
+      <MemberSignature Language="C#" Value="public static System.Windows.Automation.AutomationProperty LookupById (int id);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Automation.AutomationProperty LookupById(int32 id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.AutomationProperty.LookupById(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationProperty</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="id">プロパティの識別子。</param>
+        <summary>取得、<see cref="T:System.Windows.Automation.AutomationProperty" />指定した数値識別子をカプセル化します。</summary>
+        <returns>To be added.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、プロパティは、によって識別されます、<xref:System.Windows.Automation.AutomationProperty>オブジェクト。 ときにのみこのようなオブジェクトを作成するこのメソッドを使用できます数値識別子 (、<xref:System.Windows.Automation.AutomationIdentifier.Id%2A>から継承<xref:System.Windows.Automation.AutomationIdentifier>) と呼びます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

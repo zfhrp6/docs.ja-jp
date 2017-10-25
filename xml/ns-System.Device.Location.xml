@@ -1,0 +1,23 @@
+<Namespace Name="System.Device.Location">
+  <Docs>
+    <summary><see cref="N:System.Device.Location" />名前空間は、アプリケーション開発者は、単一の API を使用して、コンピューターの場所を簡単にアクセスを許可します。  場所の情報は、GPS、Wi-fi 三など、複数のプロバイダーから取り出され、phone タワー三のセルの可能性があります。 <see cref="N:System.Device.Location" />クラスには、コンピューターに複数の場所のプロバイダーをカプセル化し、シームレスな優先順位付けおよびそれらの間の移行をサポートする単一の API が用意されています。 その結果、この API を使用するアプリケーション開発者は、特定のハードウェア構成にアプリケーションを調整する必要はありません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Device.Location.GeoCoordinateWatcher>クラス場所データを提供緯度と経度に基づいてを調整します。 <xref:System.Device.Location.CivicAddressResolver>と<xref:System.Device.Location.ICivicAddressResolver>型は、座標位置から都市の住所を解決する機能を提供します。 さらに、<xref:System.Device.Location.IGeoPositionWatcher%601>は提供されている場所のデータの種類を拡張するインターフェイスを実装することができます。  
+  
+ Windows 7 ではすべて、<xref:System.Device.Location>場所プロバイダーがインストールされ、コンピューターの場所を特定できる場合は、クラスが完全に機能します。 Windows 7 の Starter Edition では、コントロール パネルで設定できる既定の場所プロバイダーは、サポートされている唯一の場所のプロバイダーです。  
+  
+ **注**Windows 7 以前の Windows バージョンは、次の条件が適用されます。  
+  
+-   すべて<xref:System.Device.Location>コンス トラクターを持つオブジェクトを作成することができますが、<xref:System.Device.Location.GeoCoordinateWatcher.Status%2A>プロパティは、値が常に<xref:System.Device.Location.GeoPositionStatus.Disabled>です。  
+  
+-   によって示される位置、<xref:System.Device.Location.GeoPosition%601.Location%2A>プロパティ<xref:System.Device.Location.GeoCoordinateWatcher.Position%2A>が必ず<xref:System.Device.Location.GeoCoordinate.Unknown>です。  
+  
+-   場所のイベントは発生しません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Namespace>

@@ -1,0 +1,355 @@
+<Type Name="XmlUrlResolver" FullName="System.Xml.XmlUrlResolver">
+  <TypeSignature Language="C#" Value="public class XmlUrlResolver : System.Xml.XmlResolver" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlUrlResolver extends System.Xml.XmlResolver" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.XmlUrlResolver" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Xml.XmlResolver</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>URI (Uniform Resource Identifier) で名前が指定された外部 XML リソースを解決します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.XmlUrlResolver>エンティティ、ドキュメント型定義 (Dtd) またはスキーマなどの外部の XML リソースの解決に使用されます。 使用されてもプロセスを含めるし、拡張スタイル シート言語 (XSL) スタイル シートまたは XML スキーマ定義言語 (XSD) スキーマで検出された要素をインポートします。  
+  
+ <xref:System.Xml.XmlUrlResolver>既定の競合回避モジュールのすべてのクラス、<xref:System.Xml>名前空間。 これは、`file://` および `http://` プロトコルをサポートし、<xref:System.Net.WebRequest> クラスからの要求をサポートします。  
+  
+> [!IMPORTANT]
+>  <xref:System.Xml.XmlUrlResolver> オブジェクトはユーザー資格情報など、重要な情報を含むことがあります。 注意が必要をキャッシュする場合に<xref:System.Xml.XmlUrlResolver>オブジェクトおよび渡さないでください<xref:System.Xml.XmlUrlResolver>信頼できないコンポーネントのオブジェクト。  
+  
+## <a name="resolving-dtds"></a>Dtd の解決  
+ 場合、XML リーダー (<xref:System.Xml.XmlReader>) を外部の DTD を含む XML ファイルの読み取りは、呼び出し、 <xref:System.Xml.XmlUrlResolver.GetEntityAsync%2A?displayProperty=nameWithType> DTD のストリームの表現を取得します。 DTD の URI が相対 URI の場合は、XML リーダーを呼び出して、<xref:System.Xml.XmlUrlResolver.ResolveUri%2A?displayProperty=nameWithType>メソッドの絶対 URI を返すと、指定された`relativeUri`と`baseURi`パラメーター。 場合、<xref:System.Xml.XmlUrlResolver>は、URI を解決する方法がわからない返します`null`です。  
+  
+ <xref:System.Xml.XmlUrlResolver.GetEntity%2A?displayProperty=nameWithType> メソッドでは、必要に応じて <xref:System.Xml.XmlUrlResolver.Credentials%2A> プロパティ内の情報を使用して、リソースにアクセスします。 セキュリティ上の理由から、このプロパティへの `get` アクセサーはありません。 上書きする場合<xref:System.Xml.XmlResolver>、 **GetEntity**の資格情報を使用するメソッドは、**資格情報**プロパティです。  
+  
+ その他のすべての XML リソースの解決は、DTD の解決に非常に似ています。 <xref:System.Xml.XmlResolver>外部のリソースへの接続をネゴシエートしを返します、<xref:System.IO.Stream>コンテンツの表現。 オブジェクトへの呼び出しを行っている<xref:System.Xml.XmlResolver>ストリームを解釈します。  
+  
+## <a name="extending-the-xmlurlresolver-class"></a>XmlUrlResolver クラスを拡張します。  
+ <xref:System.Xml.XmlUrlResolver> の既定の動作では、キャッシュではなくソースから XML データ リソースを解決します。 場合によっては、キャッシュからデータ リソースを解決することでデータ リソース サーバーへのトリップが不要になるため、アプリケーションのパフォーマンスを高めることができます。 このパフォーマンスの向上を重視するか、最新コンテンツの必要性を重視するかを検討する必要があります。  
+  
+ 次の例では拡張<xref:System.Xml.XmlUrlResolver>、新しいクラスの構築と`XmlCachingResolver`、キャッシュからリソースを取得します。 そのために、<xref:System.Xml.XmlUrlResolver.Credentials%2A?displayProperty=nameWithType> プロパティと <xref:System.Xml.XmlUrlResolver.GetEntity%2A?displayProperty=nameWithType> メソッドをオーバーライドします。  
+  
+ [!code-csharp[XmlCachingResolver_ex#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlCachingResolver_ex/CS/XmlCachingResolver_ex.cs#1)]
+ [!code-vb[XmlCachingResolver_ex#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlCachingResolver_ex/VB/XmlCachingResolver_ex.vb#1)]  
+  
+ `XmlCachingResolver` クラスのキャッシュ動作を `GetEntity` メソッドに実装します。 そのために、<xref:System.Net.WebRequest> オブジェクトと <xref:System.Net.Cache.HttpRequestCachePolicy> オブジェクトを新しく作成します。 <xref:System.Net.Cache.HttpRequestCachePolicy> 列挙体の <xref:System.Net.Cache.HttpRequestCacheLevel.Default> メンバーを使用して、<xref:System.Net.Cache.HttpRequestCacheLevel> オブジェクトを作成します。  
+  
+ <xref:System.Net.WebRequest.CachePolicy%2A> オブジェクトの <xref:System.Net.WebRequest> プロパティに <xref:System.Net.Cache.HttpRequestCachePolicy> オブジェクトを設定します。  
+  
+ `XmlCachingResolver``Boolean` を使用して、`enableHttpCaching` クラスのインスタンスを作成します。 この値に設定すると`true`インスタンスが可能であれば、既定のキャッシュからのリソースを解決します。 ときに`enableHttpCaching`に設定されている`false`インスタンスが既定の動作を使用し、それらのソースからリソースを解決します。  
+  
+> [!NOTE]
+>  この例では、.NET Framework の XML クラスの拡張機能を活用します。 他のクラスも、特定のアプリケーションの要件に合わせて拡張し、カスタマイズできます。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Xml.XmlReader>を使用して、<xref:System.Xml.XmlUrlResolver>既定の資格情報を使用します。  
+  
+ [!code-csharp[XmlResolver_Samples#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlResolver_Samples/CS/XmlResolver_Samples.cs#1)]
+ [!code-vb[XmlResolver_Samples#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlResolver_Samples/VB/XmlResolver_Samples.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlUrlResolver ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlUrlResolver.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.XmlUrlResolver" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CachePolicy">
+      <MemberSignature Language="C#" Value="public System.Net.Cache.RequestCachePolicy CachePolicy { set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.Cache.RequestCachePolicy CachePolicy" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlUrlResolver.CachePolicy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Cache.RequestCachePolicy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基になる <see cref="T:System.Net.WebRequest" /> オブジェクトのキャッシュ ポリシーを取得または設定します。</summary>
+        <value>基になる Web 要求のキャッシュ ポリシー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Credentials">
+      <MemberSignature Language="C#" Value="public override System.Net.ICredentials Credentials { set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.ICredentials Credentials" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlUrlResolver.Credentials" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.ICredentials</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web 要求を認証するために使用する資格情報を設定します。</summary>
+        <value>Web 要求を認証するために使用する資格情報。 このプロパティが設定されていない場合、既定値は <see langword="null" /> です。つまり、<see langword="XmlUrlResolver" /> にはユーザーの資格情報がありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 仮想ディレクトリに認証が必要としない場合このプロパティが設定する必要はありません。 それ以外の場合、ユーザーの資格情報を指定する必要があります。  
+  
+ 別の Uri を持つ別の資格情報を関連付けるでき、それらをキャッシュに追加できます。 資格情報を使用して、XML の送信元に関係なく、別の Uri の認証を確認できます。  
+  
+ 次の c# コードを設定する方法を示しています、<xref:System.Xml.XmlUrlResolver.Credentials%2A>資格情報のキャッシュするプロパティです。  
+  
+```  
+NetworkCredential myCred = new NetworkCredential(UserName,SecurelyStoredPassword,Domain);   
+CredentialCache myCache = new CredentialCache();   
+myCache.Add(new Uri("http://www.contoso.com/"), "Basic", myCred);   
+myCache.Add(new Uri("http://app.contoso.com/"), "Basic", myCred);  
+XmlUrlResolver resolver = new XmlUrlResolver();  
+resolver.Credentials = myCache;  
+```  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Xml.XmlUrlResolver>資格情報を持つオブジェクト。 <xref:System.Xml.XmlReader>上、資格情報を使用して、<xref:System.Xml.XmlUrlResolver>ネットワーク リソースにアクセスするオブジェクト。  
+  
+ [!code-csharp[XmlResolver_Samples#2](~/samples/snippets/csharp/VS_Snippets_Data/XmlResolver_Samples/CS/XmlResolver_Samples.cs#2)]
+ [!code-vb[XmlResolver_Samples#2](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlResolver_Samples/VB/XmlResolver_Samples.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEntity">
+      <MemberSignature Language="C#" Value="public override object GetEntity (Uri absoluteUri, string role, Type ofObjectToReturn);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object GetEntity(class System.Uri absoluteUri, string role, class System.Type ofObjectToReturn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlUrlResolver.GetEntity(System.Uri,System.String,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="absoluteUri" Type="System.Uri" />
+        <Parameter Name="role" Type="System.String" />
+        <Parameter Name="ofObjectToReturn" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="absoluteUri"><see cref="M:System.Xml.XmlResolver.ResolveUri(System.Uri,System.String)" /> から返された URI。</param>
+        <param name="role">現在は使用されていません。</param>
+        <param name="ofObjectToReturn">返すオブジェクトの型。 現在の実装では、<see cref="T:System.IO.Stream" /> オブジェクトだけを返します。</param>
+        <summary>URI を実際のリソースを格納しているオブジェクトにマップします。</summary>
+        <returns>ストリーム オブジェクト。ストリーム以外の型が指定された場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、呼び出し元が指定した URI を URI を表すリソースを格納しているオブジェクトにマップするときに使用されます。  
+  
+ このメソッドの非同期バージョンは、<xref:System.Xml.XmlUrlResolver.GetEntityAsync%2A>です。  
+  
+> [!IMPORTANT]
+>  アプリケーションはメモリ サービス拒否の脅威を緩和できます、 <xref:System.Xml.XmlUrlResolver.GetEntity%2A> IStream を実装することによってメソッド<xref:System.Runtime.InteropServices.ComTypes.IStream>読み取られたバイト数を制限します。 これにより、悪意のあるコードが、無限にバイト ストリームを渡すしようとした位置の状況を防ぐ、<xref:System.Xml.XmlUrlResolver.GetEntity%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例で、`GetEntity`と<xref:System.Xml.XmlResolver.ResolveUri%2A>メソッドです。  
+  
+ [!code-cpp[Classic WebData XmlUrlResolver.ResolveUri Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlUrlResolver.ResolveUri Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlUrlResolver.ResolveUri Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlUrlResolver.ResolveUri Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlUrlResolver.ResolveUri Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlUrlResolver.ResolveUri Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.XmlException">
+          <paramref name="ofObjectToReturn" />どちらも<see langword="null" />も<see langword="Stream" />型です。</exception>
+        <exception cref="T:System.UriFormatException">指定された URI は絶対 URI ではないです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="absoluteUri" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Exception">ランタイム エラー (たとえば、中断されたサーバー接続) があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEntityAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task&lt;object&gt; GetEntityAsync (Uri absoluteUri, string role, Type ofObjectToReturn);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task`1&lt;object&gt; GetEntityAsync(class System.Uri absoluteUri, string role, class System.Type ofObjectToReturn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlUrlResolver.GetEntityAsync(System.Uri,System.String,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.CompilerServices.AsyncStateMachine(typeof(System.Xml.XmlUrlResolver/&lt;GetEntityAsync&gt;c__async0))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="absoluteUri" Type="System.Uri" />
+        <Parameter Name="role" Type="System.String" />
+        <Parameter Name="ofObjectToReturn" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="absoluteUri"><see cref="M:System.Xml.XmlResolver.ResolveUri(System.Uri,System.String)" /> から返された URI。</param>
+        <param name="role">現在は使用されていません。</param>
+        <param name="ofObjectToReturn">返すオブジェクトの型。 現在の実装では、<see cref="T:System.IO.Stream" /> オブジェクトだけを返します。</param>
+        <summary>URI を実際のリソースを格納しているオブジェクトに非同期にマップします。</summary>
+        <returns>ストリーム オブジェクト。ストリーム以外の型が指定された場合は <see langword="null" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Proxy">
+      <MemberSignature Language="C#" Value="public System.Net.IWebProxy Proxy { set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.IWebProxy Proxy" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlUrlResolver.Proxy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.IWebProxy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基になる <see cref="T:System.Net.WebRequest" /> オブジェクトのネットワーク プロキシを取得または設定します。</summary>
+        <value>インターネット リソースにアクセスするために使用する <see cref="T:System.Net.IWebProxy" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveUri">
+      <MemberSignature Language="C#" Value="public override Uri ResolveUri (Uri baseUri, string relativeUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Uri ResolveUri(class System.Uri baseUri, string relativeUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlUrlResolver.ResolveUri(System.Uri,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseUri" Type="System.Uri" />
+        <Parameter Name="relativeUri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="baseUri">相対 URI の解決に使用するベース URI。</param>
+        <param name="relativeUri">解決対象の URI。 URI は絶対 URI でも相対 URI でもかまいません。 かどうか絶対で、この値は効果的に置き換え、 <c>baseUri</c>値。 かどうか、相対それを組み合わせて、 <c>baseUri</c>絶対 URI を作成します。</param>
+        <summary>ベース URI および 相対 URI を解決して絶対 URI を返します。</summary>
+        <returns>絶対 URI。相対 URI を解決できない場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 絶対 URI は、この URI に対する相対されているエンティティの後続の要求のベース URI として使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="baseUri" /> が <see langword="null" /> または <paramref name="relativeUri" /> が <see langword="null" /> です。</exception>
+        <block subset="none" type="overrides">
+          <para>このメソッドでは、継承確認要求があります。 オーバーライドする完全な信頼が必要な<see cref="M:System.Xml.XmlUrlResolver.ResolveUri(System.Uri,System.String)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

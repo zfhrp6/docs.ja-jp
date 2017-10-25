@@ -1,0 +1,36 @@
+<Type Name="ViewEventHandler" FullName="System.Web.UI.Design.ViewEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void ViewEventHandler(object sender, ViewEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ViewEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.ViewEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Web.UI.Design.ViewEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを含んでいる <see cref="T:System.Web.UI.Design.ViewEventArgs" /> オブジェクト。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Web.UI.Design.IControlDesignerView.ViewEvent" />を実装する Visual Studio 2005 などのビジュアル デ ザイン ツールによって発生するイベント、<see cref="T:System.Web.UI.Design.IControlDesignerView" />インターフェイスです。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ViewEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+ <xref:System.Web.UI.Design.IControlDesignerView.ViewEvent>イベントは、デザイン画面上のコントロールで特定の操作のデザイナー ホストから発生します。 <xref:System.Web.UI.Design.IControlDesignerView.ViewEvent>によってイベントが処理される、<xref:System.Web.UI.Design.ViewEventHandler>デリゲートを受け取るメソッド、<xref:System.Web.UI.Design.ViewEventArgs>オブジェクトをパラメーターとして。  
+  
+ 通常、コントロール デザイナー クラスは直接実装割り当てたり、<xref:System.Web.UI.Design.ViewEventHandler>を委任します。 <xref:System.Web.UI.Design.ControlDesigner>基底クラスの既定のデリゲートを提供する、<xref:System.Web.UI.Design.IControlDesignerView.ViewEvent>イベント。 カスタム コントロール デザイナーのオーバーライド、 <xref:System.Web.UI.Design.ControlDesigner.OnClick%2A>、 <xref:System.Web.UI.Design.ControlDesigner.OnPaint%2A>、および<xref:System.Web.UI.Design.TemplatedControlDesigner.OnTemplateModeChanged%2A>デザイン画面でコントロールのイベントを処理するメソッド。 <xref:System.Web.UI.Design.ControlDesigner.Initialize%2A>メソッド設定の既定のイベントのデリゲート、<xref:System.Web.UI.Design.IControlDesignerView.ViewEvent>を委任します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

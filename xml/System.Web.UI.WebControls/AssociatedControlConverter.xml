@@ -1,0 +1,76 @@
+<Type Name="AssociatedControlConverter" FullName="System.Web.UI.WebControls.AssociatedControlConverter">
+  <TypeSignature Language="C#" Value="public class AssociatedControlConverter : System.Web.UI.WebControls.ControlIDConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AssociatedControlConverter extends System.Web.UI.WebControls.ControlIDConverter" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.AssociatedControlConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.ControlIDConverter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>一覧を取得する型コンバーターを提供<see cref="T:System.Web.UI.WebControls.WebControl" />現在のコンテナー内のコントロールです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.AssociatedControlConverter>から派生したクラス、<xref:System.Web.UI.WebControls.ControlIDConverter>クラスし、専用のコントロールから派生する型コンバーターを提供、<xref:System.Web.UI.WebControls.WebControl>クラスです。 によって使用されている、<xref:System.Web.UI.WebControls.Label.AssociatedControlID%2A>のプロパティ、<xref:System.Web.UI.WebControls.Label>コントロール。  
+  
+ 型コンバーターの詳細については、次を参照してください。[する方法: 実行する型コンバーターを実装する](http://msdn.microsoft.com/library/90373a3f-d8c8-492d-841c-945d62393c56)または[一般的な型変換](http://msdn.microsoft.com/library/49253ae6-7657-4810-82ab-1176a6feeada)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AssociatedControlConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.AssociatedControlConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.AssociatedControlConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ **注**型コンバーターに直接アクセスする必要があることはありません。 代わりに、適切なコンバーターを使用して、<xref:System.ComponentModel.TypeDescriptor>オブジェクト。 詳細については、例を参照してください。<xref:System.ComponentModel.TypeConverter>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterControl">
+      <MemberSignature Language="C#" Value="protected override bool FilterControl (System.Web.UI.Control control);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool FilterControl(class System.Web.UI.Control control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.AssociatedControlConverter.FilterControl(System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="control">コントロールのインスタンスであるかどうかをテストする、<see cref="T:System.Web.UI.WebControls.WebControl" />です。</param>
+        <summary>指定されたコントロールがから継承するかどうかを示す<see cref="T:System.Web.UI.WebControls.WebControl" />です。</summary>
+        <returns>
+          <see langword="true" />場合、<paramref name="control" />から継承、<see cref="T:System.Web.UI.WebControls.WebControl" />クラスです。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>実装、<see cref="M:System.Web.UI.WebControls.AssociatedControlConverter.FilterControl(System.Web.UI.Control)" />メソッドを返します。<see langword="true" />コントロールがのインスタンスの場合、<see cref="T:System.Web.UI.WebControls.WebControl" />クラスです。 派生したクラス、<see cref="T:System.Web.UI.WebControls.AssociatedControlConverter" />独自のフィルター処理メカニズムを提供するには、このメソッドをオーバーライドします。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

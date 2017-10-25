@@ -1,0 +1,126 @@
+<Type Name="LiteralControlBuilder" FullName="System.Web.UI.WebControls.LiteralControlBuilder">
+  <TypeSignature Language="C#" Value="public class LiteralControlBuilder : System.Web.UI.ControlBuilder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LiteralControlBuilder extends System.Web.UI.ControlBuilder" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.LiteralControlBuilder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.ControlBuilder</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>構築するためにパーサーの対話、<see cref="T:System.Web.UI.WebControls.Literal" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、主にコントロールの開発者に使用されます。 カスタム コントロールのビルダーを作成する、<xref:System.Web.UI.WebControls.Literal>派生コントロール、このクラスから継承する必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LiteralControlBuilder ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.LiteralControlBuilder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.LiteralControlBuilder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowWhitespaceLiterals">
+      <MemberSignature Language="C#" Value="public override bool AllowWhitespaceLiterals ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool AllowWhitespaceLiterals() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.LiteralControlBuilder.AllowWhitespaceLiterals" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロール ビルダーによって表される空白文字リテラルを処理するかどうかを判断、<see cref="T:System.Web.UI.WebControls.Literal" />コントロール。</summary>
+        <returns>
+          <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.LiteralControlBuilder.AllowWhitespaceLiterals%2A>メソッドの継承された実装をオーバーライドする、<xref:System.Web.UI.ControlBuilder.AllowWhitespaceLiterals%2A?displayProperty=nameWithType>常に ホワイト スペースに関連付けられているテキストでことを示すためにメソッド、<xref:System.Web.UI.WebControls.Literal>コントロールでは表されない<xref:System.Web.UI.WebControls.Literal?displayProperty=nameWithType>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendLiteralString">
+      <MemberSignature Language="C#" Value="public override void AppendLiteralString (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void AppendLiteralString(string s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.LiteralControlBuilder.AppendLiteralString(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s">コントロールに追加するコンテンツ。</param>
+        <summary>指定されたリテラル コンテンツをコントロールに追加します。 <see cref="M:System.Web.UI.WebControls.LiteralControlBuilder.AppendLiteralString(System.String)" />メソッドは、ASP.NET ページ フレームワークによって呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列が空白の場合は、設定に従って処理、<xref:System.Web.UI.WebControls.LiteralControlBuilder.AllowWhitespaceLiterals%2A>メソッドです。 それ以外の場合、内部のテキストを表す場合に扱われます、<xref:System.Web.UI.WebControls.Literal.Text%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">リテラル文字列の形式が正しくありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendSubBuilder">
+      <MemberSignature Language="C#" Value="public override void AppendSubBuilder (System.Web.UI.ControlBuilder subBuilder);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void AppendSubBuilder(class System.Web.UI.ControlBuilder subBuilder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.LiteralControlBuilder.AppendSubBuilder(System.Web.UI.ControlBuilder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="subBuilder" Type="System.Web.UI.ControlBuilder" />
+      </Parameters>
+      <Docs>
+        <param name="subBuilder"><see cref="T:System.Web.UI.ControlBuilder" />に子コントロールのビルダーを追加するオブジェクト。</param>
+        <summary>スロー<see cref="T:System.Web.HttpException" />子コントロールのビルダーを追加するのには当てはまりませんので、<see cref="T:System.Web.UI.WebControls.Literal" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ControlBuilder>基底クラスは、このメソッドは、すべての子コントロールに関連付けられたビルダーを追加、<xref:System.Web.UI.WebControls.Literal>を指定したコントロール<xref:System.Web.UI.ControlBuilder?displayProperty=nameWithType>オブジェクト。 このメソッドの継承元、<xref:System.Web.UI.ControlBuilder?displayProperty=nameWithType>クラスし、は適用されません、<xref:System.Web.UI.WebControls.LiteralControlBuilder>です。 オーバーライドされた実装で<xref:System.Web.UI.WebControls.LiteralControlBuilder>、メソッドは常にスロー<xref:System.Web.HttpException>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">このメソッドを使用しようとしました。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

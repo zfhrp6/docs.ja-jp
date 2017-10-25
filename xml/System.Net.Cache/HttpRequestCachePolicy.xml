@@ -1,0 +1,577 @@
+<Type Name="HttpRequestCachePolicy" FullName="System.Net.Cache.HttpRequestCachePolicy">
+  <TypeSignature Language="C#" Value="public class HttpRequestCachePolicy : System.Net.Cache.RequestCachePolicy" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HttpRequestCachePolicy extends System.Net.Cache.RequestCachePolicy" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Cache.HttpRequestCachePolicy" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Requests</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Net.Cache.RequestCachePolicy</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>使用して取得したリソースのアプリケーションのキャッシュ要件を定義<see cref="T:System.Net.HttpWebRequest" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、アプリケーションの既定のキャッシュ ポリシーを指定することができます、<xref:System.Net.HttpWebRequest.DefaultCachePolicy%2A>プロパティまたはアプリケーションまたはマシン構成ファイル。 詳細については、次を参照してください。 [ &lt;requestCaching&gt;要素 (ネットワーク設定)](~/docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)です。  
+  
+ 使用して個々 の要求のキャッシュ ポリシーを指定することができます、<xref:System.Net.WebRequest.CachePolicy%2A>プロパティです。  
+  
+ Web サービスのキャッシュはサポートされていません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、アプリケーション ドメインの既定のキャッシュ ポリシーを作成し、要求をオーバーライドします。  
+  
+ [!code-cpp[NclSimpleCache#2](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLSimpleCache/CPP/NCLSimpleCache.cpp#2)]
+ [!code-csharp[NclSimpleCache#2](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLSimpleCache/CS/example.cs#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpRequestCachePolicy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Cache.HttpRequestCachePolicy.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.Cache.HttpRequestCachePolicy" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、<xref:System.Net.Cache.HttpRequestCachePolicy.Level%2A> プロパティを <xref:System.Net.Cache.HttpRequestCacheLevel.Default> に初期化します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを使用して、キャッシュ ポリシーの設定を示します。  
+  
+ [!code-cpp[NclSimpleCache#11](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLSimpleCache/CPP/NCLSimpleCache.cpp#11)]
+ [!code-csharp[NclSimpleCache#11](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLSimpleCache/CS/example.cs#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpRequestCachePolicy (DateTime cacheSyncDate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.DateTime cacheSyncDate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Cache.HttpRequestCachePolicy.#ctor(System.DateTime)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="cacheSyncDate" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="cacheSyncDate">A<see cref="T:System.DateTime" />キャッシュに格納されているリソースの再検証する時間を指定するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Cache.HttpRequestCachePolicy" />クラス、指定されたキャッシュ同期された日時を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キャッシュ同期日付を利用し、キャッシュ済みコンテンツを再検証する絶対的日付を指定できます。 キャッシュ エントリは、キャッシュの同期の日付より前に再検証最後が、サーバーと再検証が発生します。 キャッシュ エントリがキャッシュの同期日時以降後に再検証して、キャッシュ エントリが無効になるサーバーの再検証の要件はありません、キャッシュからエントリが使用されます。 キャッシュ同期日付が未来の日付に設定されている場合、キャッシュ同期日付が過ぎるまで、要求のたびにエントリが再検証されます。  
+  
+ このコンストラクターは、<xref:System.Net.Cache.HttpRequestCachePolicy.Level%2A> プロパティを <xref:System.Net.Cache.HttpRequestCacheLevel.Default> に初期化します。 <xref:System.Net.Cache.HttpRequestCachePolicy.CacheSyncDate%2A> プロパティは `cacheSyncDate` に初期化されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、キャッシュの同期日時に基づくキャッシュ ポリシーを作成するを示します。  
+  
+ [!code-cpp[NclSimpleCache#3](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLSimpleCache/CPP/NCLSimpleCache.cpp#3)]
+ [!code-csharp[NclSimpleCache#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLSimpleCache/CS/example.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpRequestCachePolicy (System.Net.Cache.HttpRequestCacheLevel level);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Net.Cache.HttpRequestCacheLevel level) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Cache.HttpRequestCachePolicy.#ctor(System.Net.Cache.HttpRequestCacheLevel)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="level" Type="System.Net.Cache.HttpRequestCacheLevel" />
+      </Parameters>
+      <Docs>
+        <param name="level"><see cref="T:System.Net.Cache.HttpRequestCacheLevel" /> 値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Cache.HttpRequestCachePolicy" />クラスの指定されたキャッシュ ポリシーを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、<xref:System.Net.Cache.HttpRequestCachePolicy.Level%2A> プロパティを `level` に初期化します。  
+  
+ <xref:System.Net.Cache.HttpRequestCacheLevel>値を制御するかどうかのキャッシュが有効であり、キャッシュを使用できます。 詳細については、次を参照してください。、<xref:System.Net.Cache.HttpRequestCacheLevel>ドキュメント。  
+  
+   
+  
+## Examples  
+ 次のコード例では、キャッシュから使用するキャッシュ内で見つかったリソースを許可するキャッシュ ポリシーを作成するを示します。  
+  
+ [!code-cpp[NclSimpleCache#12](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLSimpleCache/CPP/NCLSimpleCache.cpp#12)]
+ [!code-csharp[NclSimpleCache#12](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLSimpleCache/CS/example.cs#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpRequestCachePolicy (System.Net.Cache.HttpCacheAgeControl cacheAgeControl, TimeSpan ageOrFreshOrStale);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Net.Cache.HttpCacheAgeControl cacheAgeControl, valuetype System.TimeSpan ageOrFreshOrStale) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Cache.HttpRequestCachePolicy.#ctor(System.Net.Cache.HttpCacheAgeControl,System.TimeSpan)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="cacheAgeControl" Type="System.Net.Cache.HttpCacheAgeControl" />
+        <Parameter Name="ageOrFreshOrStale" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="cacheAgeControl">次のいずれかの<see cref="T:System.Net.Cache.HttpCacheAgeControl" />列挙値: <see cref="F:System.Net.Cache.HttpCacheAgeControl.MaxAge" />、 <see cref="F:System.Net.Cache.HttpCacheAgeControl.MaxStale" />、または<see cref="F:System.Net.Cache.HttpCacheAgeControl.MinFresh" />です。</param>
+        <param name="ageOrFreshOrStale">A<see cref="T:System.TimeSpan" />一定の時間を指定する値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Cache.HttpRequestCachePolicy" />クラスの指定した経過時間のコントロールと時刻の値を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `cacheAgeControl`値の意味を定義する、`ageOrFreshOrStale`パラメーターの値を関連付けられたプロパティを設定するために使用されます。 たとえば、指定<xref:System.Net.Cache.HttpCacheAgeControl.MaxStale>、<xref:System.Net.Cache.HttpRequestCachePolicy.MaxStale%2A>の値に設定されて、`ageOrFreshOrStale`パラメーター。  
+  
+ このコンストラクターは、<xref:System.Net.Cache.HttpRequestCachePolicy.Level%2A> プロパティを <xref:System.Net.Cache.HttpRequestCacheLevel.Default> に初期化します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、最小鮮度に基づくキャッシュ ポリシーを作成するを示します。  
+  
+ [!code-cpp[NclSimpleCache#5](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLSimpleCache/CPP/NCLSimpleCache.cpp#5)]
+ [!code-csharp[NclSimpleCache#5](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLSimpleCache/CS/example.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定された値、<paramref name="cacheAgeControl" />パラメーターは、このコンス トラクターでは使用できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpRequestCachePolicy (System.Net.Cache.HttpCacheAgeControl cacheAgeControl, TimeSpan maxAge, TimeSpan freshOrStale);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Net.Cache.HttpCacheAgeControl cacheAgeControl, valuetype System.TimeSpan maxAge, valuetype System.TimeSpan freshOrStale) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Cache.HttpRequestCachePolicy.#ctor(System.Net.Cache.HttpCacheAgeControl,System.TimeSpan,System.TimeSpan)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="cacheAgeControl" Type="System.Net.Cache.HttpCacheAgeControl" />
+        <Parameter Name="maxAge" Type="System.TimeSpan" />
+        <Parameter Name="freshOrStale" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="cacheAgeControl"><see cref="T:System.Net.Cache.HttpCacheAgeControl" /> 値。</param>
+        <param name="maxAge">A<see cref="T:System.TimeSpan" />リソースの最大有効期間を指定する値。</param>
+        <param name="freshOrStale">A<see cref="T:System.TimeSpan" />一定の時間を指定する値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Cache.HttpRequestCachePolicy" />クラス、指定した最大経過時間、age コントロールの値、および時刻の値を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `cacheAgeControl`の意味を解釈する値が使用される、`freshOrStale`パラメーターの値と関連付けられているプロパティを設定します。 たとえば、指定<xref:System.Net.Cache.HttpCacheAgeControl.MaxStale>、<xref:System.Net.Cache.HttpRequestCachePolicy.MaxStale%2A>の値に設定されて、`freshOrStale`パラメーター。 指定すると<xref:System.Net.Cache.HttpCacheAgeControl.MaxAgeAndMaxStale>、<xref:System.Net.Cache.HttpRequestCachePolicy.MaxAge%2A>プロパティの値を使用して、`maxAge`パラメーターおよび<xref:System.Net.Cache.HttpRequestCachePolicy.MaxStale%2A>プロパティの値を使用して、`freshOrStale`パラメーター。  
+  
+ 特に指定しないことに注意して<xref:System.Net.Cache.HttpCacheAgeControl.MaxAgeAndMaxStale>または<xref:System.Net.Cache.HttpCacheAgeControl.MaxAgeAndMinFresh>、<xref:System.Net.Cache.HttpRequestCachePolicy.MaxAge%2A>プロパティが設定されていません。  
+  
+ このコンストラクターは、<xref:System.Net.Cache.HttpRequestCachePolicy.Level%2A> プロパティを <xref:System.Net.Cache.HttpRequestCacheLevel.Default> に初期化します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、最小鮮度と最大保存期間に基づくキャッシュ ポリシーを作成するを示します。  
+  
+ [!code-cpp[NclSimpleCache#9](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLSimpleCache/CPP/NCLSimpleCache.cpp#9)]
+ [!code-csharp[NclSimpleCache#9](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLSimpleCache/CS/example.cs#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定された値、<paramref name="cacheAgeControl" />パラメーターが無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpRequestCachePolicy (System.Net.Cache.HttpCacheAgeControl cacheAgeControl, TimeSpan maxAge, TimeSpan freshOrStale, DateTime cacheSyncDate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Net.Cache.HttpCacheAgeControl cacheAgeControl, valuetype System.TimeSpan maxAge, valuetype System.TimeSpan freshOrStale, valuetype System.DateTime cacheSyncDate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Cache.HttpRequestCachePolicy.#ctor(System.Net.Cache.HttpCacheAgeControl,System.TimeSpan,System.TimeSpan,System.DateTime)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="cacheAgeControl" Type="System.Net.Cache.HttpCacheAgeControl" />
+        <Parameter Name="maxAge" Type="System.TimeSpan" />
+        <Parameter Name="freshOrStale" Type="System.TimeSpan" />
+        <Parameter Name="cacheSyncDate" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="cacheAgeControl"><see cref="T:System.Net.Cache.HttpCacheAgeControl" /> 値。</param>
+        <param name="maxAge">A<see cref="T:System.TimeSpan" />リソースの最大有効期間を指定する値。</param>
+        <param name="freshOrStale">A<see cref="T:System.TimeSpan" />一定の時間を指定する値。</param>
+        <param name="cacheSyncDate">A<see cref="T:System.DateTime" />キャッシュに格納されているリソースの再検証する時間を指定するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Cache.HttpRequestCachePolicy" />クラスの指定した最大経過時間、経過時間のコントロールの値、時刻の値を使用して、同期された日時をキャッシュします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `cacheAgeControl`の意味を解釈する値が使用される、`freshOrStale`パラメーターの値と関連付けられているプロパティを設定します。 たとえば、指定<xref:System.Net.Cache.HttpCacheAgeControl.MaxStale>、<xref:System.Net.Cache.HttpRequestCachePolicy.MaxStale%2A>の値に設定されて、`freshOrStale`パラメーター。 指定すると<xref:System.Net.Cache.HttpCacheAgeControl.MaxAgeAndMaxStale>、<xref:System.Net.Cache.HttpRequestCachePolicy.MaxAge%2A>プロパティの値を使用して、`maxAge`パラメーターおよび<xref:System.Net.Cache.HttpRequestCachePolicy.MaxStale%2A>プロパティの値を使用して、`freshOrStale`パラメーター。  
+  
+ 特に指定しないことに注意して<xref:System.Net.Cache.HttpCacheAgeControl.MaxAgeAndMaxStale>または<xref:System.Net.Cache.HttpCacheAgeControl.MaxAgeAndMinFresh>、<xref:System.Net.Cache.HttpRequestCachePolicy.MaxAge%2A>プロパティが設定されていません。  
+  
+ このコンス トラクター、<xref:System.Net.Cache.HttpRequestCachePolicy.CacheSyncDate%2A>プロパティを`cacheSyncDate`、し、初期化、<xref:System.Net.Cache.HttpRequestCachePolicy.Level%2A>プロパティを<xref:System.Net.Cache.HttpRequestCacheLevel.Default>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、最小鮮度、最大有効期間、およびキャッシュの同期日時に基づいてキャッシュ ポリシーを作成するを示します。  
+  
+ [!code-cpp[NclSimpleCache#10](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLSimpleCache/CPP/NCLSimpleCache.cpp#10)]
+ [!code-csharp[NclSimpleCache#10](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLSimpleCache/CS/example.cs#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CacheSyncDate">
+      <MemberSignature Language="C#" Value="public DateTime CacheSyncDate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime CacheSyncDate" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Cache.HttpRequestCachePolicy.CacheSyncDate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスのキャッシュの同期日時を取得します。</summary>
+        <value>A<see cref="T:System.DateTime" />の日付に設定値は、このインスタンスの作成時に指定されています。 このプロパティの値は、日が指定されなかった場合<see cref="F:System.DateTime.MinValue" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キャッシュ同期日付を利用し、キャッシュ済みコンテンツを再検証する絶対的日付を指定できます。 キャッシュ エントリは、キャッシュの同期の日付より前に再検証最後が、サーバーと再検証が発生します。 キャッシュ エントリがキャッシュの同期日時以降後に再検証して、キャッシュ エントリが無効になるサーバーの再検証の要件はありません、キャッシュからエントリが使用されます。 キャッシュ同期日付が未来の日付に設定されている場合、キャッシュ同期日付が過ぎるまで、要求のたびにエントリが再検証されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値を表示します。  
+  
+ [!code-cpp[NclSimpleCache#3](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLSimpleCache/CPP/NCLSimpleCache.cpp#3)]
+ [!code-csharp[NclSimpleCache#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLSimpleCache/CS/example.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Level">
+      <MemberSignature Language="C#" Value="public System.Net.Cache.HttpRequestCacheLevel Level { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.Cache.HttpRequestCacheLevel Level" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Cache.HttpRequestCachePolicy.Level" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Cache.HttpRequestCacheLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Net.Cache.HttpRequestCacheLevel" />このインスタンスが作成されたときに指定された値。</summary>
+        <value>A<see cref="T:System.Net.Cache.HttpRequestCacheLevel" />を使用して取得したリソースのキャッシュ動作を指定する値<see cref="T:System.Net.HttpWebRequest" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションで通常使用<xref:System.Net.Cache.HttpRequestCacheLevel.Default>キャッシュ ポリシー レベルとして。 <xref:System.Net.WebRequest.CachePolicy%2A>いない場合は、プロパティ`null`、要求に対して有効なキャッシュ ポリシーを決定します。 使用して、アプリケーション ドメインの既定のポリシーを設定することができます、<xref:System.Net.HttpWebRequest.DefaultCachePolicy%2A>プロパティまたはコンピューターの設定によって、またはアプリケーション構成ファイル。 詳細については、次を参照してください。 [ &lt;requestCaching&gt;要素 (ネットワーク設定)](~/docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値の表示を示しています。  
+  
+ [!code-cpp[NclSimpleCache#11](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLSimpleCache/CPP/NCLSimpleCache.cpp#11)]
+ [!code-csharp[NclSimpleCache#11](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLSimpleCache/CS/example.cs#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxAge">
+      <MemberSignature Language="C#" Value="public TimeSpan MaxAge { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan MaxAge" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Cache.HttpRequestCachePolicy.MaxAge" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュから返されたリソースに許可される最大有効期間を取得します。</summary>
+        <value>A<see cref="T:System.TimeSpan" />最大有効期間値に設定されている値は、このインスタンスの作成時に指定されています。 このプロパティの値は、日が指定されなかった場合<see cref="F:System.DateTime.MinValue" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キャッシュされたリソースのコピーが、指定した時刻の値よりも古い場合は、リソースを再検証する必要があります。 インスタンスを作成するとき、このプロパティの値が指定します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値の表示を示しています。  
+  
+ [!code-cpp[NclSimpleCache#7](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLSimpleCache/CPP/NCLSimpleCache.cpp#7)]
+ [!code-csharp[NclSimpleCache#7](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLSimpleCache/CS/example.cs#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxStale">
+      <MemberSignature Language="C#" Value="public TimeSpan MaxStale { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan MaxStale" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Cache.HttpRequestCachePolicy.MaxStale" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュから返されるリソースに対して許可される最大期限延長値を取得します。</summary>
+        <value>A<see cref="T:System.TimeSpan" />最大期限延長値に設定されている値は、このインスタンスの作成時に指定されています。 このプロパティの値は、日が指定されなかった場合<see cref="F:System.DateTime.MinValue" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、リソースのキャッシュされたコピーを許容可能なコンテンツの有効期限までの時間を指定します。 インスタンスを作成するとき、このプロパティの値が指定します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値の表示を示しています。  
+  
+ [!code-cpp[NclSimpleCache#6](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLSimpleCache/CPP/NCLSimpleCache.cpp#6)]
+ [!code-csharp[NclSimpleCache#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLSimpleCache/CS/example.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinFresh">
+      <MemberSignature Language="C#" Value="public TimeSpan MinFresh { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan MinFresh" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Cache.HttpRequestCachePolicy.MinFresh" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュから返されるリソースに対して許可されている最小鮮度を取得します。</summary>
+        <value>A<see cref="T:System.TimeSpan" />最小鮮度を指定する値は、このインスタンスの作成時に指定されています。 このプロパティの値は、日が指定されなかった場合<see cref="F:System.DateTime.MinValue" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は、リソースのキャッシュされたコピーを許容可能なコンテンツの有効期限までの時間を指定します。 インスタンスを作成するとき、このプロパティの値が指定します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値の表示を示しています。  
+  
+ [!code-cpp[NclSimpleCache#5](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLSimpleCache/CPP/NCLSimpleCache.cpp#5)]
+ [!code-csharp[NclSimpleCache#5](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLSimpleCache/CS/example.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Cache.HttpRequestCachePolicy.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスの文字列表現を返します。</summary>
+        <returns>A<see cref="T:System.String" />このインスタンスのプロパティの値を含む値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列に含まれるコロンを続けて、プロパティを識別するラベル (":") と値。 プロパティは、1 つのスペースで区切られます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメソッドを呼び出すことを示します。  
+  
+ [!code-cpp[NclSimpleCache#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLSimpleCache/CPP/NCLSimpleCache.cpp#1)]
+ [!code-csharp[NclSimpleCache#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLSimpleCache/CS/example.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

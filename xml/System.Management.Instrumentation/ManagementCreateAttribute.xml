@@ -1,0 +1,74 @@
+<Type Name="ManagementCreateAttribute" FullName="System.Management.Instrumentation.ManagementCreateAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ManagementCreateAttribute : System.Management.Instrumentation.ManagementNewInstanceAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ManagementCreateAttribute extends System.Management.Instrumentation.ManagementNewInstanceAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.Management.Instrumentation.ManagementCreateAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Management.Instrumentation.ManagementNewInstanceAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Constructor | System.AttributeTargets.Method, AllowMultiple=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ManagementCreateAttribute は、メソッドがマネージ エンティティの新しいインスタンスを作成することを示すために使用されます。  
+  
+ 注: WMI .NET ライブラリは最終的な状態と見なされます。これらのライブラリに影響を与えるセキュリティ以外に関連する問題については、さらなる開発、機能拡張、または更新は利用できません。 [MI Api](https://msdn.microsoft.com/en-us/library/jj152383%28v=vs.80%29.aspx)すべての新しい開発で使用する必要があります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 管理されたエンティティの有効期間は、それを表す .NET オブジェクトの有効期間にバインドされていません。 プロバイダーは、この属性でマークされたメソッドを使用して、対応するマネージ エンティティの新しいインスタンスを作成することができます。  
+  
+ メソッドのパラメーターは、同じ名前よぶ型をクラスのバインディングのコンス トラクターのパラメーターが必要です。  
+  
+ この属性の使用には、WMI クラスのリポジトリの登録が何も影響がありません。 実行時にのみ使用されます。  
+  
+   
+  
+## Examples  
+ 次の例では、ManagementCreate 属性を使用する方法を示します。  
+  
+```  
+[ManagementEntity]  
+public class ProcessInstance  
+{  
+     [ManagementKey]  
+     public int Id;   
+  
+     [ManagementCreate]  
+     public ProcessInstance StartProcess(string cmdLine)  
+     {  
+        ProcessInstance newProcess = new ProcessInstance(cmdLine);  
+        newProcess.Start();  
+        return newProcess;  
+     }  
+}  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManagementCreateAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.Instrumentation.ManagementCreateAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Management.ManagementCreateAttribute" /> クラスの新しいインスタンスを初期化します。 これは、既定のコンス トラクターです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

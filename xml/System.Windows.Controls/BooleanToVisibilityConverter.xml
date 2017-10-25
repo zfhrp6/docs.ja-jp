@@ -1,0 +1,108 @@
+<Type Name="BooleanToVisibilityConverter" FullName="System.Windows.Controls.BooleanToVisibilityConverter">
+  <TypeSignature Language="C#" Value="public sealed class BooleanToVisibilityConverter : System.Windows.Data.IValueConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit BooleanToVisibilityConverter extends System.Object implements class System.Windows.Data.IValueConverter" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.BooleanToVisibilityConverter" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Data.IValueConverter</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.NeverLocalize)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ブール値とを変換するコンバーターを表します<see cref="T:System.Windows.Visibility" />列挙値。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Controls.BooleanToVisibilityConverter>との間に、ブール値を変換するクラス、<xref:System.Windows.Visibility>値。 <xref:System.Windows.Controls.BooleanToVisibilityConverter.Convert%2A>メソッドを返します。<xref:System.Windows.Visibility?displayProperty=nameWithType>とき`true`に渡されたまたは<xref:System.Windows.Visibility?displayProperty=nameWithType>ときに`false`に渡されます。 なお、<xref:System.Windows.Visibility?displayProperty=nameWithType>値がコントロールを非表示にし、レイアウトのスペースは保持されません。 呼び出すと、<xref:System.Windows.Controls.BooleanToVisibilityConverter.ConvertBack%2A>メソッドが返されます、オブジェクトへの参照を指定し、`true`オブジェクトがある場合<xref:System.Windows.Visibility.Visible>、それ以外を返します`false`です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BooleanToVisibilityConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.BooleanToVisibilityConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.BooleanToVisibilityConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Convert">
+      <MemberSignature Language="C#" Value="public object Convert (object value, Type targetType, object parameter, System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Convert(object value, class System.Type targetType, object parameter, class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.BooleanToVisibilityConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="targetType" Type="System.Type" />
+        <Parameter Name="parameter" Type="System.Object" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="value">変換するブール値。 この値は、標準的なブール値または null 許容のブール値を指定できます。</param>
+        <param name="targetType">このパラメーターは使用されません。</param>
+        <param name="parameter">このパラメーターは使用されません。</param>
+        <param name="culture">このパラメーターは使用されません。</param>
+        <summary>ブール値を変換、<see cref="T:System.Windows.Visibility" />列挙値。</summary>
+        <returns>
+          <see cref="F:System.Windows.Visibility.Visible" />場合<paramref name="value" />は<see langword="true" />、それ以外の<see cref="F:System.Windows.Visibility.Collapsed" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertBack">
+      <MemberSignature Language="C#" Value="public object ConvertBack (object value, Type targetType, object parameter, System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object ConvertBack(object value, class System.Type targetType, object parameter, class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.BooleanToVisibilityConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="targetType" Type="System.Type" />
+        <Parameter Name="parameter" Type="System.Object" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Windows.Visibility" /> 列挙値。</param>
+        <param name="targetType">このパラメーターは使用されません。</param>
+        <param name="parameter">このパラメーターは使用されません。</param>
+        <param name="culture">このパラメーターは使用されません。</param>
+        <summary>変換、<see cref="T:System.Windows.Visibility" />列挙の値をブール値。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="value" />は<see cref="F:System.Windows.Visibility.Visible" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

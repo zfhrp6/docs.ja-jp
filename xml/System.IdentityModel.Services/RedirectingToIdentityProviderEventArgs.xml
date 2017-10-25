@@ -1,0 +1,79 @@
+<Type Name="RedirectingToIdentityProviderEventArgs" FullName="System.IdentityModel.Services.RedirectingToIdentityProviderEventArgs">
+  <TypeSignature Language="C#" Value="public class RedirectingToIdentityProviderEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RedirectingToIdentityProviderEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Services.RedirectingToIdentityProviderEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider>イベントが発生する前に、 <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> id プロバイダーに要求をリダイレクトします。 アクセスしてを介して要求を変更することができます、<xref:System.IdentityModel.Services.RedirectingToIdentityProviderEventArgs.SignInRequestMessage%2A>プロパティです。 たとえば、変更することができます、<xref:System.IdentityModel.Services.FederationMessage.BaseUri%2A>サインイン メッセージを要求をリダイレクトする id プロバイダーを変更するプロパティです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RedirectingToIdentityProviderEventArgs (System.IdentityModel.Services.SignInRequestMessage signInRequestMessage);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Services.SignInRequestMessage signInRequestMessage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.RedirectingToIdentityProviderEventArgs.#ctor(System.IdentityModel.Services.SignInRequestMessage)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="signInRequestMessage" Type="System.IdentityModel.Services.SignInRequestMessage" />
+      </Parameters>
+      <Docs>
+        <param name="signInRequestMessage">Ws-federation パッシブ サインイン メッセージを Id プロバイダーにユーザーをリダイレクトするために使用されます。</param>
+        <summary>インスタンスを初期化、<see cref="T:System.IdentityModel.Services.RedirectingToIdentityProviderEventArgs" />指定 Ws-federation パッシブ サインイン メッセージを使用してクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Services.RedirectingToIdentityProviderEventArgs.SignInRequestMessage%2A>の値に新しいインスタンスのプロパティが初期化されて、`signInRequestMessage`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="signInRequestMessage" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SignInRequestMessage">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Services.SignInRequestMessage SignInRequestMessage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Services.SignInRequestMessage SignInRequestMessage" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.RedirectingToIdentityProviderEventArgs.SignInRequestMessage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Services.SignInRequestMessage</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはユーザーを id プロバイダーにリダイレクトするために使用される Ws-federation パッシブ サインイン メッセージを設定します。</summary>
+        <value>Ws-federation サインイン メッセージを id プロバイダーにユーザーをリダイレクトするために使用されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求を変更するサインイン メッセージのプロパティを変更することができます。 たとえば、変更することができます、<xref:System.IdentityModel.Services.FederationMessage.BaseUri%2A>サインイン メッセージを要求をリダイレクトする id プロバイダーを変更するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティを設定しようとすると、<see langword="null" />に発生します。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

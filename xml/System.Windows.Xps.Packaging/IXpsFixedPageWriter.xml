@@ -1,0 +1,565 @@
+<Type Name="IXpsFixedPageWriter" FullName="System.Windows.Xps.Packaging.IXpsFixedPageWriter">
+  <TypeSignature Language="C#" Value="public interface IXpsFixedPageWriter : System.Windows.Xps.Packaging.IStoryFragmentProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IXpsFixedPageWriter implements class System.Windows.Xps.Packaging.IStoryFragmentProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Xps.Packaging.IXpsFixedPageWriter" />
+  <AssemblyInfo>
+    <AssemblyName>ReachFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Xps.Packaging.IStoryFragmentProvider</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>書き込みのためのメソッドを定義<see cref="T:System.Windows.Documents.FixedPage" />XPS ドキュメントの部分で構成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Xps.Packaging.IXpsFixedDocumentWriter.AddFixedPage%2A>にページを追加する固定ページ ライターを取得するメソッド、<xref:System.Windows.Xps.Packaging.XpsDocument>です。  
+  
+ [!code-cpp[XpsCreate#XpsCreateAddDocContent](~/samples/snippets/cpp/VS_Snippets_Wpf/XpsCreate/CPP/XpsCreate.cpp#xpscreateadddoccontent)]
+ [!code-csharp[XpsCreate#XpsCreateAddDocContent](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsCreate/CSharp/XpsCreate.cs#xpscreateadddoccontent)]
+ [!code-vb[XpsCreate#XpsCreateAddDocContent](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsCreate/visualbasic/xpscreate.vb#xpscreateadddoccontent)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddColorContext">
+      <MemberSignature Language="C#" Value="public System.Windows.Xps.Packaging.XpsColorContext AddColorContext ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Xps.Packaging.XpsColorContext AddColorContext() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.IXpsFixedPageWriter.AddColorContext" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.XpsColorContext</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しく追加<see cref="T:System.Windows.Xps.Packaging.XpsColorContext" />現在のページにします。</summary>
+        <returns>追加された新しいカラー コンテキスト リソース。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.Packaging.IXpsFixedPageWriter.AddColorContext%2A>新しく追加<xref:System.Windows.Xps.Packaging.XpsColorContext>ドキュメント パッケージに現在関連付けと<xref:System.Windows.Documents.FixedPage>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">
+          <see cref="M:System.IDisposable.Dispose" />呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="AddFont">
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>新しく追加<see cref="T:System.Windows.Xps.Packaging.XpsFont" />現在のページにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.Packaging.IXpsFixedPageWriter.AddFont%2A>新しく追加<xref:System.Windows.Xps.Packaging.XpsFont>ドキュメント パッケージに現在関連付けと<xref:System.Windows.Documents.FixedPage>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="AddFont">
+      <MemberSignature Language="C#" Value="public System.Windows.Xps.Packaging.XpsFont AddFont ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Xps.Packaging.XpsFont AddFont() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.IXpsFixedPageWriter.AddFont" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.XpsFont</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しく追加<see cref="T:System.Windows.Xps.Packaging.XpsFont" />現在のページにします。</summary>
+        <returns>追加された新しいフォント リソース。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.Packaging.IXpsFixedPageWriter.AddFont%2A>新しく追加<xref:System.Windows.Xps.Packaging.XpsFont>ドキュメント パッケージに現在関連付けと<xref:System.Windows.Documents.FixedPage>です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Xps.Packaging.IXpsFixedPageWriter.AddFont%2A>フォント リソースをページに追加します。  
+  
+ [!code-cpp[XpsCreate#XpsCreateAddPageResources](~/samples/snippets/cpp/VS_Snippets_Wpf/XpsCreate/CPP/XpsCreate.cpp#xpscreateaddpageresources)]
+ [!code-csharp[XpsCreate#XpsCreateAddPageResources](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsCreate/CSharp/XpsCreate.cs#xpscreateaddpageresources)]
+ [!code-vb[XpsCreate#XpsCreateAddPageResources](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsCreate/visualbasic/xpscreate.vb#xpscreateaddpageresources)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">
+          <see cref="M:System.IDisposable.Dispose" />呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddFont">
+      <MemberSignature Language="C#" Value="public System.Windows.Xps.Packaging.XpsFont AddFont (bool obfuscate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Xps.Packaging.XpsFont AddFont(bool obfuscate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.IXpsFixedPageWriter.AddFont(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.XpsFont</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obfuscate" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="obfuscate">
+          <see langword="true" />フォントを難読化するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>新しい難読化を追加<see cref="T:System.Windows.Xps.Packaging.XpsFont" />現在のページにします。</summary>
+        <returns>追加された新しいフォント リソース。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.Packaging.IXpsFixedPageWriter.AddFont%2A>新しく追加<xref:System.Windows.Xps.Packaging.XpsFont>ドキュメント パッケージに省略可能な難読化されて、現在に関連付けます<xref:System.Windows.Documents.FixedPage>です。  
+  
+ 設定、`obfuscate`パラメーターを`true`とすることが義務づけられますライセンスされた専用のフォントを難読化します。  難読化は、フォントを暗号化していない、独自のフォントを解凍し、他の使用とは別にインストールするを禁止します。  
+  
+ フォントの難読化の詳細については、セクションを参照して 2.1.7.3「埋め込みフォントを難読化」で、 *XPS XML Paper Specification ()*ダウンロード[http://go.microsoft.com/fwlink/?LinkID=65761](http://go.microsoft.com/fwlink/?LinkID=65761)です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Xps.Packaging.IXpsFixedPageWriter.AddFont%2A>フォント リソース ページを追加するのにはメソッドです。  
+  
+ [!code-cpp[XpsCreate#XpsCreateAddPageResources](~/samples/snippets/cpp/VS_Snippets_Wpf/XpsCreate/CPP/XpsCreate.cpp#xpscreateaddpageresources)]
+ [!code-csharp[XpsCreate#XpsCreateAddPageResources](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsCreate/CSharp/XpsCreate.cs#xpscreateaddpageresources)]
+ [!code-vb[XpsCreate#XpsCreateAddPageResources](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsCreate/visualbasic/xpscreate.vb#xpscreateaddpageresources)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">
+          <see cref="M:System.IDisposable.Dispose" />呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddFont">
+      <MemberSignature Language="C#" Value="public System.Windows.Xps.Packaging.XpsFont AddFont (bool obfuscate, bool addRestrictedRelationship);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Xps.Packaging.XpsFont AddFont(bool obfuscate, bool addRestrictedRelationship) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.IXpsFixedPageWriter.AddFont(System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.XpsFont</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obfuscate" Type="System.Boolean" />
+        <Parameter Name="addRestrictedRelationship" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="obfuscate">
+          <see langword="true" />フォントを難読化するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="addRestrictedRelationship">
+          <see langword="true" />このフォントを使用して任意のテキストの変更を禁止それ以外の場合、<see langword="false" />です。</param>
+        <summary>難読化または制限アクセス モードに新しく追加<see cref="T:System.Windows.Xps.Packaging.XpsFont" />現在のページにします。</summary>
+        <returns>追加された新しいフォント リソース。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.Packaging.IXpsFixedPageWriter.AddFont%2A>新しく追加<xref:System.Windows.Xps.Packaging.XpsFont>難読化は省略可能なまたはドキュメント パッケージに制限し、現在関連付けます<xref:System.Windows.Documents.FixedPage>です。  
+  
+ 設定、`obfuscate`パラメーターを`true`とすることが義務づけられますライセンスされた専用のフォントを難読化します。  難読化は、フォントを暗号化していない、独自のフォントを解凍し、他の使用とは別にインストールするを禁止します。  
+  
+ フォントの難読化と、制限されているフォントの使用の詳細については、次を参照してください。、 *XPS XML Paper Specification ()*ダウンロード[http://go.microsoft.com/fwlink/?LinkID=65761](http://go.microsoft.com/fwlink/?LinkID=65761)です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Xps.Packaging.IXpsFixedPageWriter.AddFont%2A>フォント リソースをページに追加します。  
+  
+ [!code-cpp[XpsCreate#XpsCreateAddPageResources](~/samples/snippets/cpp/VS_Snippets_Wpf/XpsCreate/CPP/XpsCreate.cpp#xpscreateaddpageresources)]
+ [!code-csharp[XpsCreate#XpsCreateAddPageResources](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsCreate/CSharp/XpsCreate.cs#xpscreateaddpageresources)]
+ [!code-vb[XpsCreate#XpsCreateAddPageResources](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsCreate/visualbasic/xpscreate.vb#xpscreateaddpageresources)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">
+          <see cref="M:System.IDisposable.Dispose" />呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="AddImage">
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>新しく追加<see cref="T:System.Windows.Xps.Packaging.XpsImage" />現在のページにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.Packaging.IXpsFixedPageWriter.AddImage%2A>新しく追加<xref:System.Windows.Xps.Packaging.XpsImage>ドキュメント パッケージに現在関連付けと<xref:System.Windows.Documents.FixedPage>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="AddImage">
+      <MemberSignature Language="C#" Value="public System.Windows.Xps.Packaging.XpsImage AddImage (string mimeType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Xps.Packaging.XpsImage AddImage(string mimeType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.IXpsFixedPageWriter.AddImage(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.XpsImage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mimeType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="mimeType">[!INCLUDE[TLA2#tla_mime](~/includes/tla2sharptla-mime-md.md)]を追加する画像の種類。</param>
+        <summary>新しく追加<see cref="T:System.Windows.Xps.Packaging.XpsImage" />と指定した[!INCLUDE[TLA2#tla_mime](~/includes/tla2sharptla-mime-md.md)]を現在のページの種類。</summary>
+        <returns>ページに追加された新しいイメージ リソース</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.Packaging.IXpsFixedPageWriter.AddImage%2A>新しく追加<xref:System.Windows.Xps.Packaging.XpsImage>と指定した`mimeType`ドキュメント パッケージに現在関連付けと<xref:System.Windows.Documents.FixedPage>です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Xps.Packaging.IXpsFixedPageWriter.AddImage%2A>ページにイメージ リソースを追加します。  
+  
+ [!code-cpp[XpsCreate#XpsCreateAddPageResources](~/samples/snippets/cpp/VS_Snippets_Wpf/XpsCreate/CPP/XpsCreate.cpp#xpscreateaddpageresources)]
+ [!code-csharp[XpsCreate#XpsCreateAddPageResources](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsCreate/CSharp/XpsCreate.cs#xpscreateaddpageresources)]
+ [!code-vb[XpsCreate#XpsCreateAddPageResources](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsCreate/visualbasic/xpscreate.vb#xpscreateaddpageresources)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">
+          <see cref="M:System.IDisposable.Dispose" />呼び出されました。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="mimeType" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="mimeType" /> が空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddImage">
+      <MemberSignature Language="C#" Value="public System.Windows.Xps.Packaging.XpsImage AddImage (System.Windows.Xps.Packaging.XpsImageType imageType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Xps.Packaging.XpsImage AddImage(valuetype System.Windows.Xps.Packaging.XpsImageType imageType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.IXpsFixedPageWriter.AddImage(System.Windows.Xps.Packaging.XpsImageType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.XpsImage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="imageType" Type="System.Windows.Xps.Packaging.XpsImageType" />
+      </Parameters>
+      <Docs>
+        <param name="imageType">ページに追加するイメージの種類。</param>
+        <summary>新しく追加<see cref="T:System.Windows.Xps.Packaging.XpsImage" />と指定した<see cref="T:System.Windows.Xps.Packaging.XpsImageType" />現在のページにします。</summary>
+        <returns>ページに追加された新しいイメージ リソース</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.Packaging.IXpsFixedPageWriter.AddImage%2A>新しく追加<xref:System.Windows.Xps.Packaging.XpsImage>、指定した<xref:System.Windows.Xps.Packaging.XpsImageType>ドキュメント パッケージに現在に関連付けます<xref:System.Windows.Documents.FixedPage>です。  
+  
+ たとえば、`imageType`できます<xref:System.Windows.Xps.Packaging.XpsImageType.JpegImageType>または<xref:System.Windows.Xps.Packaging.XpsImageType.PngImageType>です。 JPEG または PNG を追加する<xref:System.Windows.Xps.Packaging.XpsImage>、それぞれします。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Xps.Packaging.IXpsFixedPageWriter.AddImage%2A>ページにイメージ リソースを追加します。  
+  
+ [!code-cpp[XpsCreate#XpsCreateAddPageResources](~/samples/snippets/cpp/VS_Snippets_Wpf/XpsCreate/CPP/XpsCreate.cpp#xpscreateaddpageresources)]
+ [!code-csharp[XpsCreate#XpsCreateAddPageResources](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsCreate/CSharp/XpsCreate.cs#xpscreateaddpageresources)]
+ [!code-vb[XpsCreate#XpsCreateAddPageResources](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsCreate/visualbasic/xpscreate.vb#xpscreateaddpageresources)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">
+          <see cref="M:System.IDisposable.Dispose" />呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddResource">
+      <MemberSignature Language="C#" Value="public System.Windows.Xps.Packaging.XpsResource AddResource (Type resourceType, Uri resourceUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Xps.Packaging.XpsResource AddResource(class System.Type resourceType, class System.Uri resourceUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.IXpsFixedPageWriter.AddResource(System.Type,System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.XpsResource</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resourceType" Type="System.Type" />
+        <Parameter Name="resourceUri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="resourceType">追加するリソースの種類。</param>
+        <param name="resourceUri">を追加するリソースの絶対パスまたは<see langword="null" />です。</param>
+        <summary>新しく追加<see cref="T:System.Windows.Xps.Packaging.XpsResource" />現在のページにします。</summary>
+        <returns>新しい[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]追加されたリソース。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.Packaging.IXpsFixedPageWriter.AddResource%2A>新しく追加<xref:System.Windows.Xps.Packaging.XpsResource>ドキュメント パッケージに現在関連付けと<xref:System.Windows.Documents.FixedPage>です。  
+  
+ 場合`resourceUri`は`null`、一意のリソース<xref:System.Windows.Xps.Packaging.IXpsFixedPageWriter.Uri%2A>が自動的に作成します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="resourceType" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">
+          <see cref="M:System.IDisposable.Dispose" />呼び出されました。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="resourceType" /> が空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddResourceDictionary">
+      <MemberSignature Language="C#" Value="public System.Windows.Xps.Packaging.XpsResourceDictionary AddResourceDictionary ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Xps.Packaging.XpsResourceDictionary AddResourceDictionary() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.IXpsFixedPageWriter.AddResourceDictionary" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.XpsResourceDictionary</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>追加、<see cref="T:System.Windows.Xps.Packaging.XpsResourceDictionary" />ページにします。</summary>
+        <returns><see cref="T:System.Windows.Xps.Packaging.XpsResourceDictionary" />ページに追加されました。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.Packaging.IXpsFixedPageWriter.AddResourceDictionary%2A>新しく追加<xref:System.Windows.Xps.Packaging.XpsResourceDictionary>ドキュメント パッケージに現在関連付けと<xref:System.Windows.Documents.FixedPage>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">
+          <see cref="M:System.IDisposable.Dispose" />呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddThumbnail">
+      <MemberSignature Language="C#" Value="public System.Windows.Xps.Packaging.XpsThumbnail AddThumbnail (System.Windows.Xps.Packaging.XpsImageType imageType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Xps.Packaging.XpsThumbnail AddThumbnail(valuetype System.Windows.Xps.Packaging.XpsImageType imageType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.IXpsFixedPageWriter.AddThumbnail(System.Windows.Xps.Packaging.XpsImageType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.XpsThumbnail</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="imageType" Type="System.Windows.Xps.Packaging.XpsImageType" />
+      </Parameters>
+      <Docs>
+        <param name="imageType">ページに追加するサムネイル イメージのイメージの種類。</param>
+        <summary>指定したサムネイル画像を追加<see cref="T:System.Windows.Xps.Packaging.XpsImageType" />現在のページにします。</summary>
+        <returns>追加された新しいのサムネイル画像リソース。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.Packaging.IXpsFixedPageWriter.AddThumbnail%2A>新しく追加<xref:System.Windows.Xps.Packaging.XpsImageType>ドキュメント パッケージに現在関連付けと<xref:System.Windows.Documents.FixedPage>です。  
+  
+ たとえば、`imageType`できます<xref:System.Windows.Xps.Packaging.XpsImageType.JpegImageType>または<xref:System.Windows.Xps.Packaging.XpsImageType.PngImageType>です。 JPEG または PNG のサムネイル画像をそれぞれ追加します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="M:System.Windows.Xps.Packaging.IXpsFixedPageWriter.AddThumbnail(System.Windows.Xps.Packaging.XpsImageType)" />既に呼び出されて、このページの縮小を追加します。</exception>
+        <exception cref="T:System.ObjectDisposedException">
+          <see cref="M:System.IDisposable.Dispose" />呼び出されました。</exception>
+        <block subset="none" type="overrides">
+          <para>各ページは、サムネイルは 1 つだけ含めることができます。  <see cref="T:System.InvalidOperationException" />場合にスローされる<see cref="M:System.Windows.Xps.Packaging.IXpsFixedPageWriter.AddThumbnail(System.Windows.Xps.Packaging.XpsImageType)" />ページの 1 つ以上のサムネイル画像を追加すると呼びます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Commit">
+      <MemberSignature Language="C#" Value="public void Commit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Commit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.IXpsFixedPageWriter.Commit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>フラッシュし、固定ページ ライターを終了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定に基づいて<xref:System.Windows.Xps.Serialization.XpsSerializationManager>と<xref:System.Windows.Xps.Serialization.XpsPackagingPolicy>など<xref:System.Windows.Xps.Serialization.FontSubsetterCommitPolicies>と<xref:System.Windows.Xps.Packaging.PackageInterleavingOrder>のフラッシュ操作、<xref:System.Windows.Xps.Packaging.IXpsFixedPageWriter.Commit%2A>メソッドは、完了まで遅れる可能性があります<xref:System.Windows.Xps.Packaging.XpsDocument>が閉じられます。  
+  
+   
+  
+## Examples  
+ 次の例をフラッシュし、固定ページ writer を閉じる方法を示しています、<xref:System.Windows.Xps.Packaging.IXpsFixedPageWriter.Commit%2A>メソッドです。  
+  
+ [!code-cpp[XpsCreate#XpsCreateAddDocContent](~/samples/snippets/cpp/VS_Snippets_Wpf/XpsCreate/CPP/XpsCreate.cpp#xpscreateadddoccontent)]
+ [!code-csharp[XpsCreate#XpsCreateAddDocContent](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsCreate/CSharp/XpsCreate.cs#xpscreateadddoccontent)]
+ [!code-vb[XpsCreate#XpsCreateAddDocContent](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsCreate/visualbasic/xpscreate.vb#xpscreateadddoccontent)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LinkTargetStream">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;string&gt; LinkTargetStream { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;string&gt; LinkTargetStream" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.IXpsFixedPageWriter.LinkTargetStream" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別する文字列の一覧を取得、<see cref="T:System.Windows.Documents.LinkTarget" />現在のページに含まれているハイパーリンク ポイント。</summary>
+        <value>識別する文字列の一覧、<see cref="T:System.Windows.Documents.LinkTarget" />ページに含まれているハイパーリンク ポイント。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一覧<xref:System.Windows.Documents.LinkTarget>ページが書き込まれた後、ハイパーリンクのポイントがあると、<xref:System.Windows.Xps.Packaging.IXpsFixedPageWriter.Commit%2A>メソッドが呼び出されました。  
+  
+ について<xref:System.Windows.Documents.LinkTarget>要素を参照してください 3.2.3"\<LinkTarget > 要素"で、 *XPS XML Paper Specification ()*ダウンロード[http://go.microsoft.com/fwlink/?LinkID=65761](http://go.microsoft.com/fwlink/?LinkID=65761)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageNumber">
+      <MemberSignature Language="C#" Value="public int PageNumber { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PageNumber" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.IXpsFixedPageWriter.PageNumber" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このページの 0 から始まるページ番号を取得します。</summary>
+        <value>このページの 0 から始まるページ番号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.Packaging.IXpsFixedPageWriter.PageNumber%2A>プロパティでは、0 から始まるページ番号を返しますこれ<xref:System.Windows.Documents.FixedPage>ドキュメントのです。  (<xref:System.Windows.Xps.Packaging.IXpsFixedPageWriter.PageNumber%2A> 0 の値は最初のページです)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrintTicket">
+      <MemberSignature Language="C#" Value="public System.Printing.PrintTicket PrintTicket { set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Printing.PrintTicket PrintTicket" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.IXpsFixedPageWriter.PrintTicket" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintTicket</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページの既定の印刷オプションを設定します。</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Uri">
+      <MemberSignature Language="C#" Value="public Uri Uri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Uri" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.IXpsFixedPageWriter.Uri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]固定ページのです。</summary>
+        <value>[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]固定ページのです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlWriter">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlWriter XmlWriter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlWriter XmlWriter" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.IXpsFixedPageWriter.XmlWriter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlWriter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xml.XmlWriter" />書き込み用[!INCLUDE[TLA2#tla_xml](~/includes/tla2sharptla-xml-md.md)]ページ マークアップ。</summary>
+        <value><see cref="T:System.Xml.XmlWriter" />書き込み用[!INCLUDE[TLA2#tla_xml](~/includes/tla2sharptla-xml-md.md)]ページ マークアップ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Xps.Packaging.IXpsFixedPageWriter.XmlWriter%2A>を取得するメソッド、<xref:System.Xml.XmlWriter>です。  
+  
+ [!code-cpp[XpsCreate#XpsCreateAddDocContent](~/samples/snippets/cpp/VS_Snippets_Wpf/XpsCreate/CPP/XpsCreate.cpp#xpscreateadddoccontent)]
+ [!code-csharp[XpsCreate#XpsCreateAddDocContent](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsCreate/CSharp/XpsCreate.cs#xpscreateadddoccontent)]
+ [!code-vb[XpsCreate#XpsCreateAddDocContent](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsCreate/visualbasic/xpscreate.vb#xpscreateadddoccontent)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

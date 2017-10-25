@@ -1,0 +1,135 @@
+<Type Name="ButtonState" FullName="System.Windows.Forms.ButtonState">
+  <TypeSignature Language="C#" Value="public enum ButtonState" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ButtonState extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ButtonState" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ボタンの外観を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙は、ボタンのさまざまな状態を表します。 既定の状態は`Normal`します。  
+  
+   
+  
+## Examples  
+ この例で使用して、`ButtonState`列挙体、メソッドへのパラメーターとして<xref:System.Windows.Forms.ControlPaint.DrawButton%2A>の状態を指定する`button1`です。 この例を実行を 2 つのボタンを作成し、`button1`と`button2`です。 置換し、`button2_Click`コード例を持つメソッドです。 をクリックして`button2`を再描画する`button1`にその状態を変更および`Flat`です。  
+  
+ [!code-cpp[ButtonState#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ButtonState/CPP/buttonstate1.cpp#1)]
+ [!code-csharp[ButtonState#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ButtonState/CS/buttonstate1.cs#1)]
+ [!code-vb[ButtonState#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ButtonState/VB/buttonstate1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="All">
+      <MemberSignature Language="C#" Value="All" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.ButtonState All = int32(18176)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ButtonState.All" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ButtonState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>除くすべてのフラグ<see langword="Normal" />設定されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Checked">
+      <MemberSignature Language="C#" Value="Checked" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.ButtonState Checked = int32(1024)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ButtonState.Checked" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ButtonState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ボタンは、checked またはラッチ外観です。 この外観を使用して、トグル ボタンが押されたことを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Flat">
+      <MemberSignature Language="C#" Value="Flat" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.ButtonState Flat = int32(16384)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ButtonState.Flat" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ButtonState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ボタンには、フラットな 2 次元の外観を指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Inactive">
+      <MemberSignature Language="C#" Value="Inactive" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.ButtonState Inactive = int32(256)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ButtonState.Inactive" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ButtonState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ボタンがアクティブでない (淡色表示)。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Normal">
+      <MemberSignature Language="C#" Value="Normal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.ButtonState Normal = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ButtonState.Normal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ButtonState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ボタンには、(3 次元) 通常の外観を指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Pushed">
+      <MemberSignature Language="C#" Value="Pushed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.ButtonState Pushed = int32(512)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ButtonState.Pushed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ButtonState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ボタンが押された状態が表示されます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

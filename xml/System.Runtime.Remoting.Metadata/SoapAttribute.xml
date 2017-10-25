@@ -1,0 +1,171 @@
+<Type Name="SoapAttribute" FullName="System.Runtime.Remoting.Metadata.SoapAttribute">
+  <TypeSignature Language="C#" Value="public class SoapAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SoapAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Metadata.SoapAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>すべての SOAP 属性の既定の機能を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Remoting.Metadata.SoapAttribute>が機能しない、および SOAP 属性の基底クラスとしてのみ使用できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Metadata.SoapAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.Remoting.Metadata.SoapAttribute" /> のインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Embedded">
+      <MemberSignature Language="C#" Value="public virtual bool Embedded { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Embedded" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Metadata.SoapAttribute.Embedded" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または SOAP シリアル化中に、型を入れ子にする必要があるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、ターゲット オブジェクトは、SOAP のシリアル化中に入れ子にする必要がありますそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProtXmlNamespace">
+      <MemberSignature Language="C#" Value="protected string ProtXmlNamespace;" />
+      <MemberSignature Language="ILAsm" Value=".field family string ProtXmlNamespace" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Remoting.Metadata.SoapAttribute.ProtXmlNamespace" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の SOAP 属性のターゲットがシリアル化された XML 名前空間。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得またはの値を設定することができます、 <xref:System.Runtime.Remoting.Metadata.SoapAttribute.ProtXmlNamespace> 、public を介してフィールド<xref:System.Runtime.Remoting.Metadata.SoapAttribute.XmlNamespace%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReflectInfo">
+      <MemberSignature Language="C#" Value="protected object ReflectInfo;" />
+      <MemberSignature Language="ILAsm" Value=".field family object ReflectInfo" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Remoting.Metadata.SoapAttribute.ReflectInfo" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生した属性クラスによって使用されるリフレクション オブジェクト、 <see cref="T:System.Runtime.Remoting.Metadata.SoapAttribute" /> XML シリアル化情報を設定するクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する必要はありません、<xref:System.Runtime.Remoting.Metadata.SoapAttribute.ReflectInfo>直接フィールドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseAttribute">
+      <MemberSignature Language="C#" Value="public virtual bool UseAttribute { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseAttribute" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Metadata.SoapAttribute.UseAttribute" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在の属性のターゲットを XML フィールドではなく XML 属性としてシリアル化されるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、現在の属性のターゲット オブジェクトを XML 属性としてシリアル化する必要があります。<see langword="false" />場合は、ターゲット オブジェクトは、サブ要素としてシリアル化する必要があります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ たとえば、フィールド`FieldA`オブジェクトの`ObjectB`で修飾されて、`SoapFieldAttribute(UseAttribute=true)`属性、`FieldA`としてシリアル化される`<ObjectB><FieldA>5</FieldA></ObjectB>`です。 場合、<xref:System.Runtime.Remoting.Metadata.SoapAttribute.UseAttribute%2A>プロパティに設定されている`false`、`FieldA`としてシリアル化される`<ObjectB FieldA="5"></ObjectB>`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlNamespace">
+      <MemberSignature Language="C#" Value="public virtual string XmlNamespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string XmlNamespace" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Metadata.SoapAttribute.XmlNamespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または XML 名前空間の名前を設定します。</summary>
+        <value>現在の属性のターゲットがシリアル化される XML 名前空間の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のプロパティを返す場合`null`、名前空間が修飾されていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

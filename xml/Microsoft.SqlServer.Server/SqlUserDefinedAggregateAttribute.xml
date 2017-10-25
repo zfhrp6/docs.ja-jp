@@ -1,0 +1,285 @@
+<Type Name="SqlUserDefinedAggregateAttribute" FullName="Microsoft.SqlServer.Server.SqlUserDefinedAggregateAttribute">
+  <TypeSignature Language="C#" Value="public sealed class SqlUserDefinedAggregateAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SqlUserDefinedAggregateAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.SqlServer.Server.SqlUserDefinedAggregateAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Struct, AllowMultiple=false, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ユーザー定義集計として型を登録するかを示します。 この属性でプロパティには、種類が SQL Server に登録されているときに使用する物理属性が反映されます。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SQL Server がクラス定義にバインドされているユーザー定義集計の作成、<xref:Microsoft.SqlServer.Server.SqlUserDefinedAggregateAttribute>カスタム属性です。 すべてのユーザー定義集計は、この属性でマーク付けする必要があります。  
+  
+ 詳細と例についてはユーザー定義集計については、SQL Server 2005 オンライン ブック「CLR ユーザー定義集計」を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:Microsoft.SqlServer.Server.SqlUserDefinedAggregateAttribute>ユーザー定義集計の属性です。  集計カスタム シリアル化を使用するには、シリアル化されるとき、8,000 バイトの最大サイズおよびが null、重複、および注文に対して不変です。  
+  
+ [!code-csharp[DataWorks SqlUserDefinedAggregateAttribute Sample#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlUserDefinedAggregateAttribute Sample/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlUserDefinedAggregateAttribute Sample#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlUserDefinedAggregateAttribute Sample/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlUserDefinedAggregateAttribute (Microsoft.SqlServer.Server.Format format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype Microsoft.SqlServer.Server.Format format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.SqlServer.Server.SqlUserDefinedAggregateAttribute.#ctor(Microsoft.SqlServer.Server.Format)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="format" Type="Microsoft.SqlServer.Server.Format" />
+      </Parameters>
+      <Docs>
+        <param name="format">1 つ、<see cref="T:Microsoft.SqlServer.Server.Format" />集計のシリアル化形式を表す値です。</param>
+        <summary>指定された型がユーザー定義の集計と、ユーザー定義集計のストレージ形式であることを示すユーザー定義の集計では、必須の属性を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Format">
+      <MemberSignature Language="C#" Value="public Microsoft.SqlServer.Server.Format Format { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Microsoft.SqlServer.Server.Format Format" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlUserDefinedAggregateAttribute.Format" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.SqlServer.Server.Format</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シリアル化の形式として、<see cref="T:Microsoft.SqlServer.Server.Format" />です。</summary>
+        <value>A<see cref="T:Microsoft.SqlServer.Server.Format" />シリアル化形式を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[VbRaddataSQLObjects#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/VbRaddataSQLObjects/CS/Aggregate1.cs#6)]
+ [!code-vb[VbRaddataSQLObjects#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRaddataSQLObjects/VB/Aggregate1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInvariantToDuplicates">
+      <MemberSignature Language="C#" Value="public bool IsInvariantToDuplicates { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsInvariantToDuplicates" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlUserDefinedAggregateAttribute.IsInvariantToDuplicates" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>集計が重複するバリアント型かどうかを示します。</summary>
+        <value>
+          <see langword="true" />集計は重複しています。 するバリアントがある場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、クエリ プロセッサを使用して、`true`集計は重複するバリアントがある場合。 つまり、集計、X は %s で既に場合 S の集計と同じ {x} ですたとえば、MIN と MAX などの集計関数は、合計ではありませんが、このプロパティを満たします。  
+  
+ このプロパティの設定は、不適切なクエリの結果になります。 このプロパティは、オプティマイザー ヒントです。これは、選択されたプランとクエリによって返される結果の両方に影響します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInvariantToNulls">
+      <MemberSignature Language="C#" Value="public bool IsInvariantToNulls { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsInvariantToNulls" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlUserDefinedAggregateAttribute.IsInvariantToNulls" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Null を許容するバリアント、集計がないかどうかを示します。</summary>
+        <value>
+          <see langword="true" />集計は null が許さするバリアントがある場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、クエリ プロセッサを使用して、`true`集計は null を許容するバリアントがある場合。 つまり、S、{NULL} の集計が S の集計と同じです。たとえば、MIN および MAX などの集計関数は、COUNT(*) ではありませんが、この条件を満たします。  
+  
+ このプロパティの設定は、不適切なクエリの結果になります。 このプロパティは、オプティマイザー ヒントです。選択されたプランとクエリによって返される結果に影響します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInvariantToOrder">
+      <MemberSignature Language="C#" Value="public bool IsInvariantToOrder { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsInvariantToOrder" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlUserDefinedAggregateAttribute.IsInvariantToOrder" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>集計が注文に対して不変でかどうかを示します。</summary>
+        <value>
+          <see langword="true" />集計は注文; バリアントがある場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 将来使用するために予約されています。 このプロパティが、クエリ プロセッサによって現在使用されていません: 順序が保証されません。  
+  
+ このプロパティの設定は、不適切なクエリの結果になります。 このプロパティは、オプティマイザー ヒントです。選択されたプランとクエリによって返される結果に影響します。  
+  
+ このプロパティの既定値は `false` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNullIfEmpty">
+      <MemberSignature Language="C#" Value="public bool IsNullIfEmpty { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNullIfEmpty" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlUserDefinedAggregateAttribute.IsNullIfEmpty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>集計を返すかどうかを示します<see langword="null" />値が累積されていなかった場合。</summary>
+        <value>
+          <see langword="true" />集計を返す場合<see langword="null" />値が行われていない場合それ以外の累計<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、クエリ プロセッサを使用して、 `true` 、集計を返す場合`null`値が累積されていなかった場合。  
+  
+ このプロパティの設定は、不適切なクエリの結果になります。 このプロパティは、オプティマイザー ヒントです。選択されたプランとクエリによって返される結果に影響します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxByteSize">
+      <MemberSignature Language="C#" Value="public int MaxByteSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxByteSize" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlUserDefinedAggregateAttribute.MaxByteSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>(バイト単位) の集計インスタンスの最大サイズ。</summary>
+        <value><see cref="T:System.Int32" />集計インスタンスの最大サイズを表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ネイティブ形式のシリアル化に対して指定するこのプロパティがありませんでした。  
+  
+ 指定する必要があります、<xref:Microsoft.SqlServer.Server.SqlUserDefinedAggregateAttribute.MaxByteSize%2A>ユーザー定義シリアル化を持つプロパティ<xref:Microsoft.SqlServer.Server.Format>です。  
+  
+ このプロパティによって指定の最大許容値、<xref:Microsoft.SqlServer.Server.SqlUserDefinedAggregateAttribute.MaxByteSizeValue>フィールドです。  
+  
+ 許容される最大サイズは、2 ギガバイト (GB) です。 8000 バイト、2 ギガバイトより大きい値を表す 8000 バイト、または-1 ~ 1 の数値を指定できます。  
+  
+ ユーザー定義のシリアル化が指定された集計の<xref:Microsoft.SqlServer.Server.SqlUserDefinedAggregateAttribute.MaxByteSize%2A>シリアル化されたデータの合計サイズを示します。 10 文字の文字列をシリアル化する集計を検討してください (<xref:System.Char>)。 使用して、文字列にシリアル化されるとき、<xref:System.IO.BinaryWriter>シリアル化された文字列の合計サイズは 22 バイト 2 バイト Unicode utf-16 の文字、文字の最大数を掛けたごと、および制御バイト 2 バイトのオーバーヘッドで発生するバイナリ ストリームのシリアル化します。 値を決定するため<xref:Microsoft.SqlServer.Server.SqlUserDefinedAggregateAttribute.MaxByteSize%2A>、シリアル化されたデータの合計サイズを考慮する必要があります。 バイナリ形式でシリアル化データと、シリアル化によるオーバーヘッドのサイズ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxByteSizeValue">
+      <MemberSignature Language="C#" Value="public const int MaxByteSizeValue = 8000;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 MaxByteSizeValue = (8000)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.SqlServer.Server.SqlUserDefinedAggregateAttribute.MaxByteSizeValue" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>8000</MemberValue>
+      <Docs>
+        <summary>(バイト単位) を計算中にこの集計インスタンスの状態を格納するために必要な最大サイズ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Int32>集計インスタンスの最大サイズを表す値です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlUserDefinedAggregateAttribute.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>集計の名前です。</summary>
+        <value>A<see cref="T:System.String" />集計の名前を表す値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

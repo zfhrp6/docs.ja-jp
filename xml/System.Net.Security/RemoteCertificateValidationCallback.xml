@@ -1,0 +1,62 @@
+<Type Name="RemoteCertificateValidationCallback" FullName="System.Net.Security.RemoteCertificateValidationCallback">
+  <TypeSignature Language="C#" Value="public delegate bool RemoteCertificateValidationCallback(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed RemoteCertificateValidationCallback extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Security.RemoteCertificateValidationCallback" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Security</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate" />
+    <Parameter Name="chain" Type="System.Security.Cryptography.X509Certificates.X509Chain" />
+    <Parameter Name="sslPolicyErrors" Type="System.Net.Security.SslPolicyErrors" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Boolean</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">この検証の状態情報を格納するオブジェクト。</param>
+    <param name="certificate">リモート パーティの認証に使用される証明書。</param>
+    <param name="chain">リモート証明書に関連付けられている証明機関のチェーン。</param>
+    <param name="sslPolicyErrors">リモート証明書に関連付けられている 1 つ以上のエラーです。</param>
+    <summary>認証に使用されるリモートの Secure Sockets Layer (SSL) 証明書を確認します。</summary>
+    <returns>A<see cref="T:System.Boolean" />認証に指定された証明書を受け入れるかどうかを決定する値。</returns>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デリゲートの`sslPolicyErrors`引数には、クライアントまたはサーバーの認証中に SSPI によって返される証明書のエラーが含まれています。 <xref:System.Boolean>このデリゲートによって呼び出されるメソッドによって返される値は、正常に認証が許可されているかどうかを決定します。  
+  
+ このデリゲートを使用、<xref:System.Net.Security.SslStream>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のインスタンスによって呼び出されるメソッドを実装する、<xref:System.Net.Security.RemoteCertificateValidationCallback>クラスです。 このメソッドがそれらを表示し、返します検証エラーがある場合`false`、認証されていないサーバーとの通信を防ぐことができます。  
+  
+ [!code-cpp[NCLSslClientSync#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NclSslClientSync/CPP/clientsync.cpp#1)]
+ [!code-csharp[NCLSslClientSync#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NclSslClientSync/CS/clientsync.cs#1)]  
+  
+ 次のコード例では、前のコード例で定義されたメソッドを使用してデリゲートを作成します。  
+  
+ [!code-cpp[NCLSslClientSync#4](~/samples/snippets/cpp/VS_Snippets_Remoting/NclSslClientSync/CPP/clientsync.cpp#4)]
+ [!code-csharp[NCLSslClientSync#4](~/samples/snippets/csharp/VS_Snippets_Remoting/NclSslClientSync/CS/clientsync.cs#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

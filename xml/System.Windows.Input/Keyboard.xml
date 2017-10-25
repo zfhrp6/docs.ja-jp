@@ -1,0 +1,1221 @@
+<Type Name="Keyboard" FullName="System.Windows.Input.Keyboard">
+  <TypeSignature Language="C#" Value="public static class Keyboard" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Keyboard extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.Keyboard" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>キーボード デバイスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.Keyboard>クラスには、キーボードに関連するイベント、メソッド、およびキーボードの状態に関する情報を提供するプロパティが用意されています。  
+  
+ 各イベントを<xref:System.Windows.Input.Keyboard>添付イベントも再によって公開されている要素の基本クラスとして定義<xref:System.Windows.UIElement>と<xref:System.Windows.ContentElement>として新しいルーティングされたイベント。 アプリケーションのキーボード イベントを処理する方が便利です、通常、<xref:System.Windows.UIElement>と<xref:System.Windows.ContentElement>を使用するのではなく、<xref:System.Windows.Input.Keyboard>イベント。 詳細については、「[入力概要](~/docs/framework/wpf/advanced/input-overview.md)です。  
+  
+ キーボード入力を受信する要素の順序で要素がフォーカス可能な状態でなければなりません。 ほとんど<xref:System.Windows.UIElement>派生オブジェクトは既定でフォーカスを設定します。 それ以外の場合、要素をフォーカスを設定するためには、次のように設定します。、<xref:System.Windows.UIElement.Focusable%2A>に基本要素のプロパティに`true`です。  基本要素の詳細については、次を参照してください。[基本要素の概要](~/docs/framework/wpf/advanced/base-elements-overview.md)です。  
+  
+ <xref:System.Windows.Controls.Panel>などのクラス<xref:System.Windows.Controls.StackPanel>と<xref:System.Windows.Controls.Canvas>の既定値を設定<xref:System.Windows.UIElement.Focusable%2A>に`false`です。 したがって、これらのオブジェクトにキーボード フォーカスを取得する<xref:System.Windows.UIElement.Focusable%2A>に設定する必要があります`true`です。  
+  
+ キーボード フォーカスはキーボード入力を受信しているオブジェクトを参照します。 キーボード フォーカスを持つ要素が<xref:System.Windows.IInputElement.IsKeyboardFocused%2A>'éý'`true`です。  全体のデスクトップにキーボード フォーカスを持つ 1 つだけの要素があります。  論理フォーカスは、フォーカスのあるフォーカスのスコープ内でオブジェクトを指します。  フォーカス、キーボード フォーカス、および論理フォーカスの詳細については、次を参照してください。[入力概要](~/docs/framework/wpf/advanced/input-overview.md)と[フォーカス概要](~/docs/framework/wpf/advanced/focus-overview.md)です。  
+  
+ 静的メンバー、<xref:System.Windows.Input.Keyboard>プライマリ クラス デリゲート<xref:System.Windows.Input.KeyboardDevice>もいいように、必ずしもスレッド セーフである呼び出し元のスレッドのです。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Input.Keyboard.IsKeyToggled%2A>メソッド キーが切り替えられた状態を判断します。 場合、<xref:System.Windows.Input.Key>に渡される<xref:System.Windows.Input.Keyboard.IsKeyToggled%2A>が切り替わり、ボタンの背景を変更します。  
+  
+ [!code-csharp[keyargssnippetsample#KeyEventArgsKeyBoardIsToggled](~/samples/snippets/csharp/VS_Snippets_Wpf/KeyArgsSnippetSample/CSharp/Window1.xaml.cs#keyeventargskeyboardistoggled)]
+ [!code-vb[keyargssnippetsample#KeyEventArgsKeyBoardIsToggled](~/samples/snippets/visualbasic/VS_Snippets_Wpf/KeyArgsSnippetSample/visualbasic/window1.xaml.vb#keyeventargskeyboardistoggled)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddGotKeyboardFocusHandler">
+      <MemberSignature Language="C#" Value="public static void AddGotKeyboardFocusHandler (System.Windows.DependencyObject element, System.Windows.Input.KeyboardFocusChangedEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddGotKeyboardFocusHandler(class System.Windows.DependencyObject element, class System.Windows.Input.KeyboardFocusChangedEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Keyboard.AddGotKeyboardFocusHandler(System.Windows.DependencyObject,System.Windows.Input.KeyboardFocusChangedEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.KeyboardFocusChangedEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">追加するイベント ハンドラー。</param>
+        <summary>ハンドラーを追加、<see cref="E:System.Windows.Input.Keyboard.GotKeyboardFocus" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コードへのアクセスの添付プロパティのアクセサーを提供し、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]の属性の処理、<xref:System.Windows.Input.Keyboard.GotKeyboardFocus?displayProperty=nameWithType>イベントをアタッチします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddKeyboardInputProviderAcquireFocusHandler">
+      <MemberSignature Language="C#" Value="public static void AddKeyboardInputProviderAcquireFocusHandler (System.Windows.DependencyObject element, System.Windows.Input.KeyboardInputProviderAcquireFocusEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddKeyboardInputProviderAcquireFocusHandler(class System.Windows.DependencyObject element, class System.Windows.Input.KeyboardInputProviderAcquireFocusEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Keyboard.AddKeyboardInputProviderAcquireFocusHandler(System.Windows.DependencyObject,System.Windows.Input.KeyboardInputProviderAcquireFocusEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.KeyboardInputProviderAcquireFocusEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">追加するイベント ハンドラー。</param>
+        <summary>ハンドラーを追加、<see cref="E:System.Windows.Input.Keyboard.KeyboardInputProviderAcquireFocus" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コードへのアクセスの添付プロパティのアクセサーを提供し、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]の属性の処理、<xref:System.Windows.Input.Keyboard.KeyboardInputProviderAcquireFocus?displayProperty=nameWithType>イベントをアタッチします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddKeyDownHandler">
+      <MemberSignature Language="C#" Value="public static void AddKeyDownHandler (System.Windows.DependencyObject element, System.Windows.Input.KeyEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddKeyDownHandler(class System.Windows.DependencyObject element, class System.Windows.Input.KeyEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Keyboard.AddKeyDownHandler(System.Windows.DependencyObject,System.Windows.Input.KeyEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.KeyEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">追加するイベント ハンドラー。</param>
+        <summary>ハンドラーを追加、<see cref="E:System.Windows.Input.Keyboard.KeyDown" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コードへのアクセスの添付プロパティのアクセサーを提供し、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]の属性の処理、<xref:System.Windows.Input.Keyboard.KeyDown?displayProperty=nameWithType>イベントをアタッチします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddKeyUpHandler">
+      <MemberSignature Language="C#" Value="public static void AddKeyUpHandler (System.Windows.DependencyObject element, System.Windows.Input.KeyEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddKeyUpHandler(class System.Windows.DependencyObject element, class System.Windows.Input.KeyEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Keyboard.AddKeyUpHandler(System.Windows.DependencyObject,System.Windows.Input.KeyEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.KeyEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">追加するイベント ハンドラー。</param>
+        <summary>ハンドラーを追加、<see cref="E:System.Windows.Input.Keyboard.KeyUp" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コードへのアクセスの添付プロパティのアクセサーを提供し、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]の属性の処理、<xref:System.Windows.Input.Keyboard.KeyUp?displayProperty=nameWithType>イベントをアタッチします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddLostKeyboardFocusHandler">
+      <MemberSignature Language="C#" Value="public static void AddLostKeyboardFocusHandler (System.Windows.DependencyObject element, System.Windows.Input.KeyboardFocusChangedEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddLostKeyboardFocusHandler(class System.Windows.DependencyObject element, class System.Windows.Input.KeyboardFocusChangedEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Keyboard.AddLostKeyboardFocusHandler(System.Windows.DependencyObject,System.Windows.Input.KeyboardFocusChangedEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.KeyboardFocusChangedEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">追加するイベント ハンドラー。</param>
+        <summary>ハンドラーを追加、<see cref="E:System.Windows.Input.Keyboard.LostKeyboardFocus" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コードへのアクセスの添付プロパティのアクセサーを提供し、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]の属性の処理、<xref:System.Windows.Input.Keyboard.LostKeyboardFocus?displayProperty=nameWithType>イベントをアタッチします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddPreviewGotKeyboardFocusHandler">
+      <MemberSignature Language="C#" Value="public static void AddPreviewGotKeyboardFocusHandler (System.Windows.DependencyObject element, System.Windows.Input.KeyboardFocusChangedEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddPreviewGotKeyboardFocusHandler(class System.Windows.DependencyObject element, class System.Windows.Input.KeyboardFocusChangedEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Keyboard.AddPreviewGotKeyboardFocusHandler(System.Windows.DependencyObject,System.Windows.Input.KeyboardFocusChangedEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.KeyboardFocusChangedEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">追加するイベント ハンドラー。</param>
+        <summary>ハンドラーを追加、<see cref="E:System.Windows.Input.Keyboard.PreviewGotKeyboardFocus" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コードへのアクセスの添付プロパティのアクセサーを提供し、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]の属性の処理、<xref:System.Windows.Input.Keyboard.PreviewGotKeyboardFocus?displayProperty=nameWithType>イベントをアタッチします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddPreviewKeyboardInputProviderAcquireFocusHandler">
+      <MemberSignature Language="C#" Value="public static void AddPreviewKeyboardInputProviderAcquireFocusHandler (System.Windows.DependencyObject element, System.Windows.Input.KeyboardInputProviderAcquireFocusEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddPreviewKeyboardInputProviderAcquireFocusHandler(class System.Windows.DependencyObject element, class System.Windows.Input.KeyboardInputProviderAcquireFocusEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Keyboard.AddPreviewKeyboardInputProviderAcquireFocusHandler(System.Windows.DependencyObject,System.Windows.Input.KeyboardInputProviderAcquireFocusEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.KeyboardInputProviderAcquireFocusEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">追加するイベント ハンドラー。</param>
+        <summary>ハンドラーを追加、<see cref="E:System.Windows.Input.Keyboard.PreviewKeyboardInputProviderAcquireFocus" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コードへのアクセスの添付プロパティのアクセサーを提供し、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]の属性の処理、<xref:System.Windows.Input.Keyboard.PreviewKeyboardInputProviderAcquireFocus?displayProperty=nameWithType>イベントをアタッチします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddPreviewKeyDownHandler">
+      <MemberSignature Language="C#" Value="public static void AddPreviewKeyDownHandler (System.Windows.DependencyObject element, System.Windows.Input.KeyEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddPreviewKeyDownHandler(class System.Windows.DependencyObject element, class System.Windows.Input.KeyEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Keyboard.AddPreviewKeyDownHandler(System.Windows.DependencyObject,System.Windows.Input.KeyEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.KeyEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">追加するイベント ハンドラー。</param>
+        <summary>ハンドラーを追加、<see cref="E:System.Windows.Input.Keyboard.PreviewKeyDown" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コードへのアクセスの添付プロパティのアクセサーを提供し、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]の属性の処理、<xref:System.Windows.Input.Keyboard.PreviewKeyDown?displayProperty=nameWithType>イベントをアタッチします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddPreviewKeyUpHandler">
+      <MemberSignature Language="C#" Value="public static void AddPreviewKeyUpHandler (System.Windows.DependencyObject element, System.Windows.Input.KeyEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddPreviewKeyUpHandler(class System.Windows.DependencyObject element, class System.Windows.Input.KeyEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Keyboard.AddPreviewKeyUpHandler(System.Windows.DependencyObject,System.Windows.Input.KeyEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.KeyEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">追加するイベント ハンドラー。</param>
+        <summary>ハンドラーを追加、<see cref="E:System.Windows.Input.Keyboard.PreviewKeyUp" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コードへのアクセスの添付プロパティのアクセサーを提供し、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]の属性の処理、<xref:System.Windows.Input.Keyboard.PreviewKeyUp?displayProperty=nameWithType>イベントをアタッチします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddPreviewLostKeyboardFocusHandler">
+      <MemberSignature Language="C#" Value="public static void AddPreviewLostKeyboardFocusHandler (System.Windows.DependencyObject element, System.Windows.Input.KeyboardFocusChangedEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddPreviewLostKeyboardFocusHandler(class System.Windows.DependencyObject element, class System.Windows.Input.KeyboardFocusChangedEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Keyboard.AddPreviewLostKeyboardFocusHandler(System.Windows.DependencyObject,System.Windows.Input.KeyboardFocusChangedEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.KeyboardFocusChangedEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">追加するイベント ハンドラー。</param>
+        <summary>ハンドラーを追加、<see cref="E:System.Windows.Input.Keyboard.PreviewLostKeyboardFocus" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コードへのアクセスの添付プロパティのアクセサーを提供し、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]の属性の処理、<xref:System.Windows.Input.Keyboard.PreviewLostKeyboardFocus?displayProperty=nameWithType>イベントをアタッチします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearFocus">
+      <MemberSignature Language="C#" Value="public static void ClearFocus ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ClearFocus() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Keyboard.ClearFocus" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>フォーカスをクリアします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ WPF が呼び出す Win32 ウィンドウ内でフォーカスがある場合、<xref:System.Windows.Input.Keyboard.ClearFocus%2A>メニューを閉じたときに、フォーカスの復元のメソッドです。  
+  
+ Win32 フォーカスをホストされた子 HWND に返されるメニュー モードを終了するときと、要素に WPF フォーカスがないです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultRestoreFocusMode">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RestoreFocusMode DefaultRestoreFocusMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.Input.RestoreFocusMode DefaultRestoreFocusMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Keyboard.DefaultRestoreFocusMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RestoreFocusMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の動作[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]フォーカスを復元するときにします。</summary>
+        <value>動作を指定する列挙値[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]フォーカスを復元するときにします。 既定で<see cref="F:System.Windows.Input.RestoreFocusMode.Auto" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Focus">
+      <MemberSignature Language="C#" Value="public static System.Windows.IInputElement Focus (System.Windows.IInputElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.IInputElement Focus(class System.Windows.IInputElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Keyboard.Focus(System.Windows.IInputElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.IInputElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.IInputElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">キーボード フォーカスを設定する要素。</param>
+        <summary>指定した要素にキーボード フォーカスを設定します。</summary>
+        <returns>キーボード フォーカスを持つ要素。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素がキーボード入力を受け取るには、要素がフォーカスを設定できる必要があります。 要素をフォーカスを設定するためには、設定、<xref:System.Windows.UIElement.Focusable%2A>に基本要素のプロパティを`true`です。  基本要素の詳細については、次を参照してください。[基本要素の概要](~/docs/framework/wpf/advanced/base-elements-overview.md)です。  <xref:System.Windows.Controls.Panel>などのクラス<xref:System.Windows.Controls.StackPanel>と<xref:System.Windows.Controls.Canvas>の既定値を設定<xref:System.Windows.UIElement.Focusable%2A>に`false`です。 したがって、これらのオブジェクトにキーボード フォーカスを取得する<xref:System.Windows.UIElement.Focusable%2A>に設定する必要があります`true`です。  
+  
+ キーボード フォーカスはキーボード入力を受信しているオブジェクトを参照します。 キーボード フォーカスを持つ要素が<xref:System.Windows.IInputElement.IsKeyboardFocused%2A>'éý'`true`です。  全体のデスクトップにキーボード フォーカスを持つ 1 つだけの要素があります。  論理フォーカスは、フォーカスのあるフォーカスのスコープ内でオブジェクトを指します。  フォーカス、キーボード フォーカス、および論理フォーカスの詳細については、次を参照してください。[入力概要](~/docs/framework/wpf/advanced/input-overview.md)と[フォーカス概要](~/docs/framework/wpf/advanced/focus-overview.md)です。  
+  
+ キーボード フォーカスを持つ要素では、要素が属するフォーカス範囲の論理フォーカスもあります。  論理フォーカスを持つ要素は、可能性がありますか、キーボード フォーカスがない可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:System.Windows.FrameworkElement.Loaded>にキーボード フォーカスを設定するイベント ハンドラー、<xref:System.Windows.Controls.Button>です。  
+  
+ [!code-csharp[focussample#FocusSampleSetFocus](~/samples/snippets/csharp/VS_Snippets_Wpf/FocusSample/CSharp/Window1.xaml.cs#focussamplesetfocus)]
+ [!code-vb[focussample#FocusSampleSetFocus](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FocusSample/visualbasic/window1.xaml.vb#focussamplesetfocus)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FocusedElement">
+      <MemberSignature Language="C#" Value="public static System.Windows.IInputElement FocusedElement { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.IInputElement FocusedElement" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Keyboard.FocusedElement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.IInputElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーボード フォーカスを持つ要素を取得します。</summary>
+        <value>フォーカスのある要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キーボード フォーカスはキーボード入力を受信しているオブジェクトを参照します。 キーボード フォーカスを持つ要素が<xref:System.Windows.IInputElement.IsKeyboardFocused%2A>'éý'`true`です。  全体のデスクトップにキーボード フォーカスを持つ 1 つだけの要素があります。  論理フォーカスは、フォーカスのあるフォーカスのスコープ内でオブジェクトを指します。  フォーカス、キーボード フォーカス、および論理フォーカスの詳細については、次を参照してください。[入力概要](~/docs/framework/wpf/advanced/input-overview.md)と[フォーカス概要](~/docs/framework/wpf/advanced/focus-overview.md)です。  
+  
+ キーボード フォーカスを持つ要素では、要素が属するフォーカス範囲の論理フォーカスもあります。  論理フォーカスを持つ要素は、可能性がありますか、キーボード フォーカスがない可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例は、キーボード フォーカスを持つ要素を取得しにキャスト、<xref:System.Windows.Controls.Control>です。  キーボード フォーカスを持つ要素がある場合、<xref:System.Windows.Controls.Control>要素の背景を変更します。  
+  
+ [!code-csharp[focussample#GetKeyboardFocusedElement](~/samples/snippets/csharp/VS_Snippets_Wpf/FocusSample/CSharp/Window1.xaml.cs#getkeyboardfocusedelement)]
+ [!code-vb[focussample#GetKeyboardFocusedElement](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FocusSample/visualbasic/window1.xaml.vb#getkeyboardfocusedelement)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetKeyStates">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.KeyStates GetKeyStates (System.Windows.Input.Key key);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Input.KeyStates GetKeyStates(valuetype System.Windows.Input.Key key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Keyboard.GetKeyStates(System.Windows.Input.Key)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.KeyStates</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Windows.Input.Key" />
+      </Parameters>
+      <Docs>
+        <param name="key">指定されたキー。</param>
+        <summary>指定したキーの状態のセットを取得します。</summary>
+        <returns><see cref="T:System.Windows.Input.KeyStates" /> 値のビットごとの組み合わせ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.KeyStates>ビット フィールドの列挙体は、します。したがって、キーを複数の状態にすることができます。  たとえば、キーが押された状態でも、切り替えの状態と同様に可能性があります。  ビット比較演算を使用して、キーの状態を正確に判断します。  
+  
+ <xref:System.Windows.Input.Keyboard>クラスには、さまざまなキーの状態情報を取得するためにも使用する静的メソッドが用意されています。  メソッドは、: <xref:System.Windows.Input.Keyboard.IsKeyDown%2A>、 <xref:System.Windows.Input.Keyboard.IsKeyUp%2A>、および<xref:System.Windows.Input.Keyboard.IsKeyToggled%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Input.Keyboard.GetKeyStates%2A>メソッドかどうかを<xref:System.Windows.Input.Key.Return>キーは、<xref:System.Windows.Input.KeyStates.Down>状態です。  AND 演算をビットが比較に使用、<xref:System.Windows.Input.KeyStates>から返された<xref:System.Windows.Input.Keyboard.GetKeyStates%2A>と<xref:System.Windows.Input.Key.Down>状態です。 キーが、バック グラウンドの下にある場合、<xref:System.Windows.Controls.Button>を変更します。  
+  
+ [!code-csharp[keyargssnippetsample#KeyEventArgsKeyBoardGetKeyStates](~/samples/snippets/csharp/VS_Snippets_Wpf/KeyArgsSnippetSample/CSharp/Window1.xaml.cs#keyeventargskeyboardgetkeystates)]
+ [!code-vb[keyargssnippetsample#KeyEventArgsKeyBoardGetKeyStates](~/samples/snippets/visualbasic/VS_Snippets_Wpf/KeyArgsSnippetSample/visualbasic/window1.xaml.vb#keyeventargskeyboardgetkeystates)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GotKeyboardFocusEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent GotKeyboardFocusEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent GotKeyboardFocusEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.Keyboard.GotKeyboardFocusEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.Input.Keyboard.GotKeyboardFocus" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルーティング イベントの識別子は、ルーティングされたイベントが登録され、ルーティングされたイベントを登録するクラスのフィールドと、結果が格納されているときに作成されます。 これらの識別子には、識別名、所有者型、ハンドラーの型、ルーティング方法、およびイベントの所有者を追加するためのユーティリティ メソッドが含まれます。 多くの場合、特定のルーティング イベントを識別するのにイベント システム メソッドへのパラメーターとしてこれらの識別子を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsKeyDown">
+      <MemberSignature Language="C#" Value="public static bool IsKeyDown (System.Windows.Input.Key key);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsKeyDown(valuetype System.Windows.Input.Key key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Keyboard.IsKeyDown(System.Windows.Input.Key)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Windows.Input.Key" />
+      </Parameters>
+      <Docs>
+        <param name="key">指定されたキー。</param>
+        <summary>指定したキーが押されたかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="key" />リストでは、状態、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.Keyboard.GetKeyStates%2A>状態は、特定のキーのセットを決定するメソッドを使用できます。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Input.Keyboard.IsKeyDown%2A>メソッドを特定のキーの状態を確認します。  <xref:System.Windows.Input.Key.Return>にキーが渡される、<xref:System.Windows.Input.Keyboard.IsKeyDown%2A>メソッドです。  メソッドを返す場合`true`の背景、<xref:System.Windows.Controls.Button>を変更します。  
+  
+ [!code-csharp[keyargssnippetsample#KeyEventArgsKeyBoardIsKeyDown](~/samples/snippets/csharp/VS_Snippets_Wpf/KeyArgsSnippetSample/CSharp/Window1.xaml.cs#keyeventargskeyboardiskeydown)]
+ [!code-vb[keyargssnippetsample#KeyEventArgsKeyBoardIsKeyDown](~/samples/snippets/visualbasic/VS_Snippets_Wpf/KeyArgsSnippetSample/visualbasic/window1.xaml.vb#keyeventargskeyboardiskeydown)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsKeyToggled">
+      <MemberSignature Language="C#" Value="public static bool IsKeyToggled (System.Windows.Input.Key key);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsKeyToggled(valuetype System.Windows.Input.Key key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Keyboard.IsKeyToggled(System.Windows.Input.Key)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Windows.Input.Key" />
+      </Parameters>
+      <Docs>
+        <param name="key">指定されたキー。</param>
+        <summary>指定したキーを切り替えるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="key" />、切り替えられたが、状態、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.Keyboard.GetKeyStates%2A>状態は、特定のキーのセットを決定するメソッドを使用できます。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Input.Keyboard.IsKeyToggled%2A>メソッドを特定のキーの状態を確認します。 <xref:System.Windows.Input.Key.Return>にキーが渡される、<xref:System.Windows.Input.Keyboard.IsKeyToggled%2A>メソッドです。  メソッドを返す場合`true`、しの背景、<xref:System.Windows.Controls.Button>が変更されました。  
+  
+ [!code-csharp[keyargssnippetsample#KeyEventArgsKeyBoardIsToggled](~/samples/snippets/csharp/VS_Snippets_Wpf/KeyArgsSnippetSample/CSharp/Window1.xaml.cs#keyeventargskeyboardistoggled)]
+ [!code-vb[keyargssnippetsample#KeyEventArgsKeyBoardIsToggled](~/samples/snippets/visualbasic/VS_Snippets_Wpf/KeyArgsSnippetSample/visualbasic/window1.xaml.vb#keyeventargskeyboardistoggled)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsKeyUp">
+      <MemberSignature Language="C#" Value="public static bool IsKeyUp (System.Windows.Input.Key key);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsKeyUp(valuetype System.Windows.Input.Key key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Keyboard.IsKeyUp(System.Windows.Input.Key)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Windows.Input.Key" />
+      </Parameters>
+      <Docs>
+        <param name="key">チェックするキー。</param>
+        <summary>指定したキーが離されたかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="key" />上では、状態、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.Keyboard.GetKeyStates%2A>状態は、特定のキーのセットを決定するメソッドを使用できます。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Input.Keyboard.IsKeyUp%2A>メソッドを特定のキーの状態を確認します。  <xref:System.Windows.Input.Key.Return>にキーが渡される、<xref:System.Windows.Input.Keyboard.IsKeyUp%2A>メソッドです。  メソッドを返す場合`true`、しの背景、<xref:System.Windows.Controls.Button>が変更されました。  
+  
+ [!code-csharp[keyargssnippetsample#KeyEventArgsKeyBoardIsKeyUp](~/samples/snippets/csharp/VS_Snippets_Wpf/KeyArgsSnippetSample/CSharp/Window1.xaml.cs#keyeventargskeyboardiskeyup)]
+ [!code-vb[keyargssnippetsample#KeyEventArgsKeyBoardIsKeyUp](~/samples/snippets/visualbasic/VS_Snippets_Wpf/KeyArgsSnippetSample/visualbasic/window1.xaml.vb#keyeventargskeyboardiskeyup)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyboardInputProviderAcquireFocusEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent KeyboardInputProviderAcquireFocusEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent KeyboardInputProviderAcquireFocusEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.Keyboard.KeyboardInputProviderAcquireFocusEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.Input.Keyboard.KeyboardInputProviderAcquireFocus" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルーティング イベントの識別子は、ルーティングされたイベントが登録され、ルーティングされたイベントを登録するクラスのフィールドと、結果が格納されているときに作成されます。 これらの識別子には、識別名、所有者型、ハンドラーの型、ルーティング方法、およびイベントの所有者を追加するためのユーティリティ メソッドが含まれます。 多くの場合、特定のルーティング イベントを識別するのにイベント システム メソッドへのパラメーターとしてこれらの識別子を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyDownEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent KeyDownEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent KeyDownEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.Keyboard.KeyDownEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.Input.Keyboard.KeyDown" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルーティング イベントの識別子は、ルーティングされたイベントが登録され、ルーティングされたイベントを登録するクラスのフィールドと、結果が格納されているときに作成されます。 これらの識別子には、識別名、所有者型、ハンドラーの型、ルーティング方法、およびイベントの所有者を追加するためのユーティリティ メソッドが含まれます。 多くの場合、特定のルーティング イベントを識別するのにイベント システム メソッドへのパラメーターとしてこれらの識別子を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyUpEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent KeyUpEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent KeyUpEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.Keyboard.KeyUpEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.Input.Keyboard.KeyUp" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルーティング イベントの識別子は、ルーティングされたイベントが登録され、ルーティングされたイベントを登録するクラスのフィールドと、結果が格納されているときに作成されます。 これらの識別子には、識別名、所有者型、ハンドラーの型、ルーティング方法、およびイベントの所有者を追加するためのユーティリティ メソッドが含まれます。 多くの場合、特定のルーティング イベントを識別するのにイベント システム メソッドへのパラメーターとしてこれらの識別子を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LostKeyboardFocusEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent LostKeyboardFocusEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent LostKeyboardFocusEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.Keyboard.LostKeyboardFocusEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.Input.Keyboard.LostKeyboardFocus" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルーティング イベントの識別子は、ルーティングされたイベントが登録され、ルーティングされたイベントを登録するクラスのフィールドと、結果が格納されているときに作成されます。 これらの識別子には、識別名、所有者型、ハンドラーの型、ルーティング方法、およびイベントの所有者を追加するためのユーティリティ メソッドが含まれます。 多くの場合、特定のルーティング イベントを識別するのにイベント システム メソッドへのパラメーターとしてこれらの識別子を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Modifiers">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.ModifierKeys Modifiers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.Input.ModifierKeys Modifiers" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Keyboard.Modifiers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ModifierKeys</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セットを取得<see cref="T:System.Windows.Input.ModifierKeys" />は現在押されています。</summary>
+        <value><see cref="T:System.Windows.Input.ModifierKeys" /> 値のビットごとの組み合わせ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.ModifierKeys>の複数の修飾子キーを同時に押すことは少しのフィールドの列挙は、します。  押された修飾子キーの正確なセットを決定するビット操作を使用します。  
+  
+   
+  
+## Examples  
+ 次の例は、かどうかをビットと比較を使用して、<xref:System.Windows.Input.ModifierKeys.Control>修飾子キーが押されました。  
+  
+ [!code-csharp[keyargssnippetsample#KeyboardModifiersBitOperation](~/samples/snippets/csharp/VS_Snippets_Wpf/KeyArgsSnippetSample/CSharp/Window1.xaml.cs#keyboardmodifiersbitoperation)]
+ [!code-vb[keyargssnippetsample#KeyboardModifiersBitOperation](~/samples/snippets/visualbasic/VS_Snippets_Wpf/KeyArgsSnippetSample/visualbasic/window1.xaml.vb#keyboardmodifiersbitoperation)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewGotKeyboardFocusEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent PreviewGotKeyboardFocusEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent PreviewGotKeyboardFocusEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.Keyboard.PreviewGotKeyboardFocusEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.Input.Keyboard.PreviewGotKeyboardFocus" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルーティング イベントの識別子は、ルーティングされたイベントが登録され、ルーティングされたイベントを登録するクラスのフィールドと、結果が格納されているときに作成されます。 これらの識別子には、識別名、所有者型、ハンドラーの型、ルーティング方法、およびイベントの所有者を追加するためのユーティリティ メソッドが含まれます。 多くの場合、特定のルーティング イベントを識別するのにイベント システム メソッドへのパラメーターとしてこれらの識別子を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewKeyboardInputProviderAcquireFocusEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent PreviewKeyboardInputProviderAcquireFocusEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent PreviewKeyboardInputProviderAcquireFocusEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.Keyboard.PreviewKeyboardInputProviderAcquireFocusEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.Input.Keyboard.PreviewKeyboardInputProviderAcquireFocus" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルーティング イベントの識別子は、ルーティングされたイベントが登録され、ルーティングされたイベントを登録するクラスのフィールドと、結果が格納されているときに作成されます。 これらの識別子には、識別名、所有者型、ハンドラーの型、ルーティング方法、およびイベントの所有者を追加するためのユーティリティ メソッドが含まれます。 多くの場合、特定のルーティング イベントを識別するのにイベント システム メソッドへのパラメーターとしてこれらの識別子を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewKeyDownEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent PreviewKeyDownEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent PreviewKeyDownEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.Keyboard.PreviewKeyDownEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.Input.Keyboard.PreviewKeyDown" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルーティング イベントの識別子は、ルーティングされたイベントが登録され、ルーティングされたイベントを登録するクラスのフィールドと、結果が格納されているときに作成されます。 これらの識別子には、識別名、所有者型、ハンドラーの型、ルーティング方法、およびイベントの所有者を追加するためのユーティリティ メソッドが含まれます。 多くの場合、特定のルーティング イベントを識別するのにイベント システム メソッドへのパラメーターとしてこれらの識別子を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewKeyUpEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent PreviewKeyUpEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent PreviewKeyUpEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.Keyboard.PreviewKeyUpEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.Input.Keyboard.PreviewKeyUp" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルーティング イベントの識別子は、ルーティングされたイベントが登録され、ルーティングされたイベントを登録するクラスのフィールドと、結果が格納されているときに作成されます。 これらの識別子には、識別名、所有者型、ハンドラーの型、ルーティング方法、およびイベントの所有者を追加するためのユーティリティ メソッドが含まれます。 多くの場合、特定のルーティング イベントを識別するのにイベント システム メソッドへのパラメーターとしてこれらの識別子を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewLostKeyboardFocusEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent PreviewLostKeyboardFocusEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent PreviewLostKeyboardFocusEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.Keyboard.PreviewLostKeyboardFocusEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.Input.Keyboard.PreviewLostKeyboardFocus" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルーティング イベントの識別子は、ルーティングされたイベントが登録され、ルーティングされたイベントを登録するクラスのフィールドと、結果が格納されているときに作成されます。 これらの識別子には、識別名、所有者型、ハンドラーの型、ルーティング方法、およびイベントの所有者を追加するためのユーティリティ メソッドが含まれます。 多くの場合、特定のルーティング イベントを識別するのにイベント システム メソッドへのパラメーターとしてこれらの識別子を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrimaryDevice">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.KeyboardDevice PrimaryDevice { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.KeyboardDevice PrimaryDevice" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Keyboard.PrimaryDevice" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.KeyboardDevice</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プライマリ キーボード入力デバイスを取得します。</summary>
+        <value>デバイス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveGotKeyboardFocusHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveGotKeyboardFocusHandler (System.Windows.DependencyObject element, System.Windows.Input.KeyboardFocusChangedEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveGotKeyboardFocusHandler(class System.Windows.DependencyObject element, class System.Windows.Input.KeyboardFocusChangedEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Keyboard.RemoveGotKeyboardFocusHandler(System.Windows.DependencyObject,System.Windows.Input.KeyboardFocusChangedEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.KeyboardFocusChangedEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">削除するイベント ハンドラー。</param>
+        <summary>ハンドラーを削除、<see cref="E:System.Windows.Input.Keyboard.GotKeyboardFocus" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コードへのアクセスの添付プロパティのアクセサーを提供、<xref:System.Windows.Input.Keyboard.GotKeyboardFocus?displayProperty=nameWithType>イベントをアタッチします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveKeyboardInputProviderAcquireFocusHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveKeyboardInputProviderAcquireFocusHandler (System.Windows.DependencyObject element, System.Windows.Input.KeyboardInputProviderAcquireFocusEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveKeyboardInputProviderAcquireFocusHandler(class System.Windows.DependencyObject element, class System.Windows.Input.KeyboardInputProviderAcquireFocusEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Keyboard.RemoveKeyboardInputProviderAcquireFocusHandler(System.Windows.DependencyObject,System.Windows.Input.KeyboardInputProviderAcquireFocusEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.KeyboardInputProviderAcquireFocusEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">削除するイベント ハンドラー。</param>
+        <summary>ハンドラーを削除、<see cref="E:System.Windows.Input.Keyboard.KeyboardInputProviderAcquireFocus" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コードへのアクセスの添付プロパティのアクセサーを提供、<xref:System.Windows.Input.Keyboard.KeyboardInputProviderAcquireFocus?displayProperty=nameWithType>イベントをアタッチします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveKeyDownHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveKeyDownHandler (System.Windows.DependencyObject element, System.Windows.Input.KeyEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveKeyDownHandler(class System.Windows.DependencyObject element, class System.Windows.Input.KeyEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Keyboard.RemoveKeyDownHandler(System.Windows.DependencyObject,System.Windows.Input.KeyEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.KeyEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">削除するイベント ハンドラー。</param>
+        <summary>ハンドラーを削除、<see cref="E:System.Windows.Input.Keyboard.KeyDown" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コードへのアクセスの添付プロパティのアクセサーを提供、<xref:System.Windows.Input.Keyboard.KeyDown?displayProperty=nameWithType>イベントをアタッチします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveKeyUpHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveKeyUpHandler (System.Windows.DependencyObject element, System.Windows.Input.KeyEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveKeyUpHandler(class System.Windows.DependencyObject element, class System.Windows.Input.KeyEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Keyboard.RemoveKeyUpHandler(System.Windows.DependencyObject,System.Windows.Input.KeyEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.KeyEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">削除するイベント ハンドラー。</param>
+        <summary>ハンドラーを削除、<see cref="E:System.Windows.Input.Keyboard.KeyUp" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コードへのアクセスの添付プロパティのアクセサーを提供、<xref:System.Windows.Input.Keyboard.KeyUp?displayProperty=nameWithType>イベントをアタッチします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveLostKeyboardFocusHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveLostKeyboardFocusHandler (System.Windows.DependencyObject element, System.Windows.Input.KeyboardFocusChangedEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveLostKeyboardFocusHandler(class System.Windows.DependencyObject element, class System.Windows.Input.KeyboardFocusChangedEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Keyboard.RemoveLostKeyboardFocusHandler(System.Windows.DependencyObject,System.Windows.Input.KeyboardFocusChangedEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.KeyboardFocusChangedEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">削除するイベント ハンドラー。</param>
+        <summary>ハンドラーを削除、<see cref="E:System.Windows.Input.Keyboard.LostKeyboardFocus" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コードへのアクセスの添付プロパティのアクセサーを提供、<xref:System.Windows.Input.Keyboard.LostKeyboardFocus?displayProperty=nameWithType>イベントをアタッチします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemovePreviewGotKeyboardFocusHandler">
+      <MemberSignature Language="C#" Value="public static void RemovePreviewGotKeyboardFocusHandler (System.Windows.DependencyObject element, System.Windows.Input.KeyboardFocusChangedEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemovePreviewGotKeyboardFocusHandler(class System.Windows.DependencyObject element, class System.Windows.Input.KeyboardFocusChangedEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Keyboard.RemovePreviewGotKeyboardFocusHandler(System.Windows.DependencyObject,System.Windows.Input.KeyboardFocusChangedEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.KeyboardFocusChangedEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">削除するイベント ハンドラー。</param>
+        <summary>ハンドラーを削除、<see cref="E:System.Windows.Input.Keyboard.PreviewGotKeyboardFocus" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コードへのアクセスの添付プロパティのアクセサーを提供、<xref:System.Windows.Input.Keyboard.PreviewGotKeyboardFocus?displayProperty=nameWithType>イベントをアタッチします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemovePreviewKeyboardInputProviderAcquireFocusHandler">
+      <MemberSignature Language="C#" Value="public static void RemovePreviewKeyboardInputProviderAcquireFocusHandler (System.Windows.DependencyObject element, System.Windows.Input.KeyboardInputProviderAcquireFocusEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemovePreviewKeyboardInputProviderAcquireFocusHandler(class System.Windows.DependencyObject element, class System.Windows.Input.KeyboardInputProviderAcquireFocusEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Keyboard.RemovePreviewKeyboardInputProviderAcquireFocusHandler(System.Windows.DependencyObject,System.Windows.Input.KeyboardInputProviderAcquireFocusEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.KeyboardInputProviderAcquireFocusEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">削除するイベント ハンドラー。</param>
+        <summary>ハンドラーを削除、<see cref="E:System.Windows.Input.Keyboard.PreviewKeyboardInputProviderAcquireFocus" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コードへのアクセスの添付プロパティのアクセサーを提供、<xref:System.Windows.Input.Keyboard.PreviewKeyboardInputProviderAcquireFocus?displayProperty=nameWithType>イベントをアタッチします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemovePreviewKeyDownHandler">
+      <MemberSignature Language="C#" Value="public static void RemovePreviewKeyDownHandler (System.Windows.DependencyObject element, System.Windows.Input.KeyEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemovePreviewKeyDownHandler(class System.Windows.DependencyObject element, class System.Windows.Input.KeyEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Keyboard.RemovePreviewKeyDownHandler(System.Windows.DependencyObject,System.Windows.Input.KeyEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.KeyEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">削除するイベント ハンドラー。</param>
+        <summary>ハンドラーを削除、<see cref="E:System.Windows.Input.Keyboard.PreviewKeyDown" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コードへのアクセスの添付プロパティのアクセサーを提供、<xref:System.Windows.Input.Keyboard.PreviewKeyDown?displayProperty=nameWithType>イベントをアタッチします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemovePreviewKeyUpHandler">
+      <MemberSignature Language="C#" Value="public static void RemovePreviewKeyUpHandler (System.Windows.DependencyObject element, System.Windows.Input.KeyEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemovePreviewKeyUpHandler(class System.Windows.DependencyObject element, class System.Windows.Input.KeyEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Keyboard.RemovePreviewKeyUpHandler(System.Windows.DependencyObject,System.Windows.Input.KeyEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.KeyEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">削除するイベント ハンドラー。</param>
+        <summary>ハンドラーを削除、<see cref="E:System.Windows.Input.Keyboard.PreviewKeyUp" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コードへのアクセスの添付プロパティのアクセサーを提供、<xref:System.Windows.Input.Keyboard.PreviewKeyUp?displayProperty=nameWithType>イベントをアタッチします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemovePreviewLostKeyboardFocusHandler">
+      <MemberSignature Language="C#" Value="public static void RemovePreviewLostKeyboardFocusHandler (System.Windows.DependencyObject element, System.Windows.Input.KeyboardFocusChangedEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemovePreviewLostKeyboardFocusHandler(class System.Windows.DependencyObject element, class System.Windows.Input.KeyboardFocusChangedEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Keyboard.RemovePreviewLostKeyboardFocusHandler(System.Windows.DependencyObject,System.Windows.Input.KeyboardFocusChangedEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.KeyboardFocusChangedEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">削除するイベント ハンドラー。</param>
+        <summary>ハンドラーを削除、<see cref="E:System.Windows.Input.Keyboard.PreviewLostKeyboardFocus" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コードへのアクセスの添付プロパティのアクセサーを提供、<xref:System.Windows.Input.Keyboard.PreviewLostKeyboardFocus?displayProperty=nameWithType>イベントをアタッチします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

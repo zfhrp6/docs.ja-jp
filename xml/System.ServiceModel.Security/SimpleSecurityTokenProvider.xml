@@ -1,0 +1,70 @@
+<Type Name="SimpleSecurityTokenProvider" FullName="System.ServiceModel.Security.SimpleSecurityTokenProvider">
+  <TypeSignature Language="C#" Value="public class SimpleSecurityTokenProvider : System.IdentityModel.Selectors.SecurityTokenProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SimpleSecurityTokenProvider extends System.IdentityModel.Selectors.SecurityTokenProvider" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Security.SimpleSecurityTokenProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Selectors.SecurityTokenProvider</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>フェデレーション バインディングに対して発行されたトークンとして、セキュリティ トークンを生成するセキュリティ トークン プロバイダーを表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SimpleSecurityTokenProvider (System.IdentityModel.Tokens.SecurityToken token, System.IdentityModel.Selectors.SecurityTokenRequirement tokenRequirement);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Tokens.SecurityToken token, class System.IdentityModel.Selectors.SecurityTokenRequirement tokenRequirement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.SimpleSecurityTokenProvider.#ctor(System.IdentityModel.Tokens.SecurityToken,System.IdentityModel.Selectors.SecurityTokenRequirement)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="token" Type="System.IdentityModel.Tokens.SecurityToken" />
+        <Parameter Name="tokenRequirement" Type="System.IdentityModel.Selectors.SecurityTokenRequirement" />
+      </Parameters>
+      <Docs>
+        <param name="token">A<see cref="T:System.IdentityModel.Tokens.SecurityToken" />を提供するセキュリティ トークンを表すです。</param>
+        <param name="tokenRequirement">A<see cref="T:System.IdentityModel.Selectors.SecurityTokenRequirement" />をセキュリティで保護されたメッセージに指定されたトークンで使用されるバインドにより記述された要件が含まれています。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ServiceModel.Security.SimpleSecurityTokenProvider" />指定されたトークンと要件をトークンのバインドを使用してクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フェデレーション バインディングに対して発行されたトークンとして、セキュリティ トークンを生成するセキュリティ トークン プロバイダーを作成します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="token" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTokenCore">
+      <MemberSignature Language="C#" Value="protected override System.IdentityModel.Tokens.SecurityToken GetTokenCore (TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.IdentityModel.Tokens.SecurityToken GetTokenCore(valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.SimpleSecurityTokenProvider.GetTokenCore(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">A<see cref="T:System.TimeSpan" />タイムアウト期間を格納しています。</param>
+        <summary>指定されたタイムアウトに従ってセキュリティ トークンを作成します。</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,92 @@
+<Type Name="ExtendedDN" FullName="System.DirectoryServices.ExtendedDN">
+  <TypeSignature Language="C#" Value="public enum ExtendedDN" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ExtendedDN extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.ExtendedDN" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>拡張された識別名を返す形式を指定する <see cref="T:System.DirectoryServices.ExtendedDN" /> 列挙体。 この列挙体は <see cref="P:System.DirectoryServices.DirectorySearcher.ExtendedDN" /> プロパティで使用されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 識別名の拡張のフォームには、オブジェクトの objectGUID プロパティの文字列表現が含まれています。 ユーザー、グループ、およびコンピューターなどのセキュリティ プリンシパルのオブジェクトで拡張された形式に objectSID プロパティの文字列表現も含まれます。 ObjectGUID や objectSID プロパティの詳細については、トピックを参照して[オブジェクト Guid](http://msdn.microsoft.com/library/default.asp?url=/library/adschema/adschema/a_objectguid.asp)と[オブジェクト Sid](http://msdn.microsoft.com/library/default.asp?url=/library/adschema/adschema/a_objectguid.asp) MSDN ライブラリで[http://msdn.microsoft.com/library](http://msdn.microsoft.com/library)です。  
+  
+   
+  
+## Examples  
+ 次の c# の例では、16 進形式で識別名のコレクションを返す方法を示します。  
+  
+```csharp  
+using System.DirectoryServices;  
+...  
+DirectorySearcher src = new DirectorySearcher("…");  
+src.PropertiesToLoad = new string[] {ntSecurityDescriptor,…};  
+src.ExtendedDN = ExtendedDN.HexString;  
+SearchResultCollection res = src.FindAll();  
+  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="HexString">
+      <MemberSignature Language="C#" Value="HexString" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.ExtendedDN HexString = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.ExtendedDN.HexString" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ExtendedDN</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>16 進形式を使用して識別名を示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.ExtendedDN None = int32(-1)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.ExtendedDN.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ExtendedDN</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別名形式を使用して識別名を示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Standard">
+      <MemberSignature Language="C#" Value="Standard" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.ExtendedDN Standard = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.ExtendedDN.Standard" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ExtendedDN</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>標準文字列形式を使用して識別名を示します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

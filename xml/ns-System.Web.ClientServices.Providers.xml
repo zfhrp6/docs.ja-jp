@@ -1,0 +1,17 @@
+<Namespace Name="System.Web.ClientServices.Providers">
+  <Docs>
+    <summary><see cref="N:System.Web.ClientServices.Providers" />名前空間には、クライアント サービス プロバイダーと Microsoft Ajax 認証、ロール、Windows ベース アプリケーションでのアクセスをサポートし、サービスをプロファイルする他のクラスが含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内のクラス、<xref:System.Web.ClientServices.Providers>名前空間は、Windows ベースのアプリケーションで使用できるようにクライアント アプリケーション サービス プロバイダー、[!INCLUDE[ajax_current_short](~/includes/ajax-current-short-md.md)]認証、ロール、およびプロファイル サービス。 これらのサービスを有効にして、アプリケーション構成ファイルでクライアント サービス プロバイダーを指定してを介して既存のサービスにアクセスし、[!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)]メンバーシップ、id、およびアプリケーションの設定のインフラストラクチャです。 クライアント サービス プロバイダーでは、保存し、アプリケーションがオフラインのときは、ローカル データ キャッシュ内のユーザー情報を取得する不定期の接続もサポートされます。 詳細については、「[クライアント アプリケーション サービス](~/docs/framework/common-client-technologies/client-application-services.md)」を参照してください。  
+  
+ ログイン サービスにアクセスするには、指定することによって、Windows 認証またはフォーム認証を行うこともできます、<xref:System.Web.ClientServices.Providers.ClientWindowsAuthenticationMembershipProvider>または<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider>アプリケーションの構成にします。 Windows 認証では、ユーザーがログインしたとき、オペレーティング システムを提供する id を使用します。 フォーム認証では、する必要がある、ユーザーからログイン情報を取得し、サービスに渡すことです。 こうことを指定して、<xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider>で実装が、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider>構成します。 <xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider.GetCredentials%2A?displayProperty=nameWithType>メソッドを返します、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationCredentials>ユーザー ログイン情報を含むオブジェクトです。 [ログイン] ダイアログ ボックスを表示することによって、このオブジェクトをなど、設定、<xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider.GetCredentials%2A>メソッドです。  
+  
+ ロールおよびプロファイル サービスにアクセスするには、指定、<xref:System.Web.ClientServices.Providers.ClientRoleProvider>と<xref:System.Web.ClientServices.Providers.ClientSettingsProvider>アプリケーションの構成にします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Namespace>

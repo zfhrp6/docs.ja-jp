@@ -1,0 +1,203 @@
+<Type Name="IDisposable" FullName="System.IDisposable">
+  <TypeSignature Language="C#" Value="public interface IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.IDisposable" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アンマネージ リソースを解放するためのメカニズムを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  この型の .NET Framework ソース コードを表示するを参照してください。、[参照ソース](http://referencesource.microsoft.com/#mscorlib/system/idisposable.cs#1f55292c3174123d)です。 ソース コードをオンラインで参照、オフラインで表示、リファレンスをダウンロードおよび; デバッグ中にソース (パッチや更新を含む) をステップ参照してください[指示](http://referencesource.microsoft.com/)です。  
+  
+ このインターフェイスの主な用途では、アンマネージ リソースを解放します。 ガベージ コレクターは、自動的にそのオブジェクトを使用できなくする場合は、マネージ オブジェクトに割り当てられたメモリを解放します。 ただし、ガベージ コレクションが行われるタイミングを予想することはできません。 さらに、ガベージ コレクターは、ウィンドウ ハンドルなどのアンマネージ リソースの知識がないか、ファイルおよびストリームを開きます。  
+  
+ 使用して、<xref:System.IDisposable.Dispose%2A>ガベージ コレクターにアンマネージ リソースを明示的に解放するには、このインターフェイスのメソッドです。 オブジェクトのコンシューマーは、オブジェクトが不要になったとき、このメソッドを呼び出すことができます。  
+  
+> [!WARNING]
+>  重大な変更を追加するのには、<xref:System.IDisposable>既存のクラスへのインターフェイスです。 型の既存のコンシューマーが呼び出すことはできませんので<xref:System.IDisposable.Dispose%2A>、特定の種類によって保持されているアンマネージ リソースを解放することをすることはできません。  
+  
+ <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>インスタンスによって所有されているリソースは不要になったときに、型のコンシューマーによって実装が呼び出されるで管理されているオブジェクトをラップする必要がありますか、 <xref:System.Runtime.InteropServices.SafeHandle> (、推奨される代替手段)、またはオーバーライドする必要があります<xref:System.Object.Finalize%2A?displayProperty=nameWithType>イベントで呼び出しを忘れた場合は、コンシューマーは、アンマネージ リソースを解放する<xref:System.IDisposable.Dispose%2A>です。  
+  
+> [!IMPORTANT]
+>  .NET Framework で、C++ コンパイラがリソースの確定的な破棄をサポートしの直接の実装はできません、<xref:System.IDisposable.Dispose%2A>メソッドです。  
+  
+ 方法の詳細についてはこのインターフェイスと<xref:System.Object.Finalize%2A?displayProperty=nameWithType>メソッドを使用するを参照してください、[ガベージ コレクション](http://msdn.microsoft.com/library/22b6cb97-0c80-4eeb-a2cf-5ed7655e37f9)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)トピックです。  
+  
+## <a name="using-an-object-that-implements-idisposable"></a>IDisposable を実装するオブジェクトを使用します。  
+ アプリは単に実装するオブジェクトを使用する場合、<xref:System.IDisposable>インターフェイス、オブジェクトを呼び出す必要があります<xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>その使用が終了した場合に実装します。 プログラミング言語によっては、2 つの方法のいずれかでこれを行うことができます。  
+  
+-   言語を使用して構築など、 `using` c# および Visual Basic でのステートメント。  
+  
+-   呼び出しをラップすることによって、<xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>での実装、 `try` / `finally`ブロックします。  
+  
+> [!NOTE]
+>  ドキュメント型を実装する<xref:System.IDisposable>そのことに注意してくださいし、アラームを呼び出してその<xref:System.IDisposable.Dispose%2A>実装します。  
+  
+<a name="Using"></a>   
+### <a name="the-c-and-visual-basic-using-statement"></a>C# および Visual Basic を使用してステートメント  
+ など、言語にコンストラクトがサポートしている場合、[を使用して](~/docs/csharp/language-reference/keywords/using.md)(C#) ステートメントと[Using](~/docs/visual-basic/language-reference/statements/using-statement.md) Visual Basic でのステートメントを使用する明示的に呼び出す代わりに<xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>自分でします。 次の例では、この方法を定義する、`WordCount`ファイルとその中の単語の数に関する情報を保持するクラス。  
+  
+ [!code-csharp[System.IDisposable#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.idisposable/cs/calling1.cs#1)]
+ [!code-vb[System.IDisposable#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.idisposable/vb/calling1.vb#1)]  
+  
+ `using`ステートメントは構文上の便利な実際にします。 コンパイル時に、言語コンパイラを実装する中間言語 (IL) の`try` / `finally`ブロックします。  
+  
+ 詳細については、`using`ステートメントを参照してください、 [Using ステートメント](~/docs/visual-basic/language-reference/statements/using-statement.md)または[ステートメントを使用して](~/docs/csharp/language-reference/keywords/using-statement.md)トピックです。  
+  
+### <a name="the-tryfinally-block"></a>Try/finally ブロック  
+ 使用するプログラミング言語がのようなコンストラクトをサポートしないかどうか、 `using` c# または Visual Basic では、ステートメントで呼び出すか、またはそれを使用しないようにする場合、<xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>実装から、`finally`のブロック、 `try` / `finally`ステートメントです。 次の例が置き換えられます、`using`と前の例ではブロック、 `try` / `finally`ブロックします。  
+  
+ [!code-csharp[System.IDisposable#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.idisposable/cs/calling2.cs#2)]
+ [!code-vb[System.IDisposable#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.idisposable/vb/calling2.vb#2)]  
+  
+ 詳細については、 `try` / `finally`パターンは、「[を再試行してください.キャッチしてください.Finally ステートメント](~/docs/visual-basic/language-reference/statements/try-catch-finally-statement.md)、 [、try-finally](~/docs/csharp/language-reference/keywords/try-finally.md)、または[try-finally ステートメント](http://msdn.microsoft.com/library/514400c1-c322-4bf3-9e48-3047240b8a82)です。  
+  
+## <a name="implementing-idisposable"></a>IDisposable の実装  
+ 実装する必要があります<xref:System.IDisposable>の種類のアンマネージ リソースを直接使用する場合にのみです。 型のコンシューマーが呼び出すことができます、<xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>実装のインスタンスが不要になったときにリソースを解放します。 呼び出しに失敗した場合を処理するために<xref:System.IDisposable.Dispose%2A>、いずれかから派生したクラスを使用する必要があります<xref:System.Runtime.InteropServices.SafeHandle>するか、アンマネージ リソースをラップする必要がありますオーバーライド、<xref:System.Object.Finalize%2A?displayProperty=nameWithType>参照型のメソッドです。 使用するいずれの場合、<xref:System.IDisposable.Dispose%2A>解放、リリース、またはアンマネージ リソースをリセットするなど、アンマネージ リソースを使用した後、必要なクリーンアップ処理をすべてを実行するメソッド。  
+  
+> [!IMPORTANT]
+>  基本クラスを定義する場合はアンマネージ リソースを使用する、またはのいずれかが傾向があります、サブクラスは破棄されなければなりません、実装する必要があります、<xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>メソッドの 2 番目のオーバー ロードを提供および`Dispose`、次のセクションで説明したようにします。  
+  
+<a name="BaseClasses"></a>   
+## <a name="idisposable-and-the-inheritance-hierarchy"></a>IDisposable および継承階層  
+ 破棄可能にする必要のあるサブクラスを持つ基本クラスを実装する必要があります<xref:System.IDisposable>次のようにします。 実装するときに、このパターンを使用する必要があります<xref:System.IDisposable>任意の型にはない`sealed`(`NotInheritable` Visual Basic で)。  
+  
+-   1 つのパブリック非仮想を指定しなければなりません<xref:System.IDisposable.Dispose>メソッドとプロテクト仮想`Dispose(Boolean disposing)`メソッドです。  
+  
+-   <xref:System.IDisposable.Dispose>メソッドを呼び出す必要があります`Dispose(true)`パフォーマンスの終了処理を抑制する必要があります。  
+  
+-   基本型はファイナライザーを含めることはできません。  
+  
+ 次のコード フラグメントでは、基本クラスで dispose パターンを反映しています。 種類をオーバーライドしないことを想定しています、<xref:System.Object.Finalize%2A?displayProperty=nameWithType>メソッドです。  
+  
+ [!code-csharp[System.IDisposable#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.idisposable/cs/base1.cs#3)]
+ [!code-vb[System.IDisposable#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.idisposable/vb/base1.vb#3)]  
+  
+ オーバーライドする場合、<xref:System.Object.Finalize%2A?displayProperty=nameWithType>メソッド、クラスは、次のパターンを実装する必要があります。  
+  
+ [!code-csharp[System.IDisposable#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.idisposable/cs/base2.cs#5)]
+ [!code-vb[System.IDisposable#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.idisposable/vb/base2.vb#5)]  
+  
+ サブクラスは破棄可能なパターンを次のように実装する必要があります。  
+  
+-   これらは `Dispose(Boolean)` をオーバーライドし、基底クラスの `Dispose(Boolean)` の実装を呼び出す必要があります。  
+  
+-   必要な場合にはファイナライザーを提供します。 ファイナライザーは `Dispose(false)` を呼び出す必要があります。  
+  
+ 派生クラスは実装しないこと自体に注意してください、<xref:System.IDisposable>インターフェイスし、パラメーターなしを含めないでください<xref:System.IDisposable.Dispose%2A>メソッドです。 のみ、基本クラスをオーバーライドする`Dispose(Boolean)`メソッドです。  
+  
+ 次のコード フラグメントでは、派生クラスで dispose パターンを反映しています。 種類をオーバーライドしないことを想定しています、<xref:System.Object.Finalize%2A?displayProperty=nameWithType>メソッドです。  
+  
+ [!code-csharp[System.IDisposable#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.idisposable/cs/derived1.cs#4)]
+ [!code-vb[System.IDisposable#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.idisposable/vb/derived1.vb#4)]  
+  
+   
+  
+## Examples  
+ 次の例は、リソースを実装するクラスを作成する方法を示します、<xref:System.IDisposable>インターフェイスです。  
+  
+ [!code-cpp[System.IDisposable.Dispose Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IDisposable.Dispose Example/CPP/idisposabledispose.cpp#1)]
+ [!code-csharp[System.IDisposable.Dispose Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IDisposable.Dispose Example/CS/idisposabledispose.cs#1)]
+ [!code-vb[System.IDisposable.Dispose Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IDisposable.Dispose Example/VB/idisposabledispose.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IDisposable.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アンマネージ リソースの解放またはリセットに関連付けられているアプリケーション定義のタスクを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、閉じるか、ファイル、ストリームは、このインターフェイスを実装するクラスのインスタンスによって保持されているハンドルなどのアンマネージ リソースを解放します。 規則では、このメソッドは、オブジェクトによって保持されているリソースの解放に関連するすべてのタスクの使用や再利用するため、オブジェクトを準備します。  
+  
+> [!WARNING]
+>  実装するクラスを使用している場合、<xref:System.IDisposable>インターフェイスを呼び出す必要があります、<xref:System.IDisposable.Dispose%2A>クラスの使用が終了した場合に実装します。 詳細については、「IDisposable を実装するオブジェクトを使用して」のセクションを参照して、<xref:System.IDisposable>トピックです。  
+  
+ このメソッドを実装する場合は、すべて保持しているリソースは、包含階層からの呼び出しに適用して解放を確認します。 たとえば、オブジェクト A がオブジェクト B を割り当て、オブジェクト B オブジェクトを割り当てます、C、A からの<xref:System.IDisposable.Dispose%2A>実装を呼び出す必要があります<xref:System.IDisposable.Dispose%2A>B を呼び出す必要がありますに<xref:System.IDisposable.Dispose%2A>C 上  
+  
+> [!IMPORTANT]
+>  C++ コンパイラがリソースの確定的な破棄をサポートしているし、直接実装を許可しない、<xref:System.IDisposable.Dispose%2A>メソッドです。  
+  
+ オブジェクトを呼び出す必要がありますも、<xref:System.IDisposable.Dispose%2A>基底クラスを実装する場合、基底クラスのメソッド<xref:System.IDisposable>です。 実装の詳細については<xref:System.IDisposable>基底クラスとそのサブクラスでは、「IDisposable と継承の階層構造」のセクションを参照してください、<xref:System.IDisposable>トピックです。  
+  
+ オブジェクトの<xref:System.IDisposable.Dispose%2A>メソッドが複数回呼び出されると、オブジェクトは、最初の 1 つ後のすべての呼び出しを無視する必要があります。 場合、オブジェクトが例外をスローする必要があります、<xref:System.IDisposable.Dispose%2A>メソッドには複数回は呼び出されます。 インスタンス メソッド以外の<xref:System.IDisposable.Dispose%2A>スローすることができます、<xref:System.ObjectDisposedException>リソースは既に破棄されています。  
+  
+ ユーザーは、解放されている状態と割り当てられた状態を示すために特別な規則を使用するリソースの種類と思ったかもしれません。 この例は、従来から開くと考えるまたは終了するストリーム クラスです。 など、カスタマイズされた名前のパブリック メソッドを実装するこのような規則を持つクラスの実装側こともできます`Close`、その呼び出し、<xref:System.IDisposable.Dispose%2A>メソッドです。  
+  
+ <xref:System.IDisposable.Dispose%2A>メソッドを明示的に呼び出す必要があります、常にアンマネージ リソースに含まれない危険性があるオブジェクトのコンシューマーが呼び出しに失敗したため、解放、<xref:System.IDisposable.Dispose%2A>メソッドです。 これにはこれを回避する 2 つの方法があります。  
+  
+-   派生したオブジェクトでマネージ リソースをラップ<xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType>です。 <xref:System.IDisposable.Dispose%2A>実装し、<xref:System.IDisposable.Dispose%2A>のメソッド、<xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType>インスタンス。 詳細については、「SafeHandle 代わりに、」セクションを参照して、<xref:System.Object.Finalize%2A?displayProperty=nameWithType>トピックです。  
+  
+-   リソースを解放するファイナライザーを実装するときに<xref:System.IDisposable.Dispose%2A>は呼び出されません。 既定では、ガベージ コレクターによって、そのメモリを解放する前に、オブジェクトのファイナライザーが自動的に呼び出します。 ただし場合、<xref:System.IDisposable.Dispose%2A>メソッドがされた呼び出されると、その必要はありません通常ガベージ コレクターが破棄されたオブジェクトのファイナライザーを呼び出します。 自動終了処理を防ぐために<xref:System.IDisposable.Dispose%2A>実装を呼び出すことができます、<xref:System.GC.SuppressFinalize%2A?displayProperty=nameWithType>メソッドです。  
+  
+ など、アンマネージ リソースにアクセスできるオブジェクトを使用すると、<xref:System.IO.StreamWriter>を使用して、インスタンスを作成することをお勧めは、`using`ステートメントです。 `using`ステートメントは、ストリームと呼び出しに自動的に閉じる<xref:System.IDisposable.Dispose%2A>オブジェクトによって使用されているコードが完了したときにします。 例については、次を参照してください。、<xref:System.IO.StreamWriter>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例は、実装する方法を示しています、<xref:System.IDisposable.Dispose%2A>メソッドです。  
+  
+ [!code-cpp[System.IDisposable.Dispose Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IDisposable.Dispose Example/CPP/idisposabledispose.cpp#1)]
+ [!code-csharp[System.IDisposable.Dispose Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IDisposable.Dispose Example/CS/idisposabledispose.cs#1)]
+ [!code-vb[System.IDisposable.Dispose Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IDisposable.Dispose Example/VB/idisposabledispose.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

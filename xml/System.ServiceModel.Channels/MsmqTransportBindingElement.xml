@@ -1,0 +1,365 @@
+<Type Name="MsmqTransportBindingElement" FullName="System.ServiceModel.Channels.MsmqTransportBindingElement">
+  <TypeSignature Language="C#" Value="public sealed class MsmqTransportBindingElement : System.ServiceModel.Channels.MsmqBindingElementBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MsmqTransportBindingElement extends System.ServiceModel.Channels.MsmqBindingElementBase" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.MsmqTransportBindingElement" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Channels.MsmqBindingElementBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ネイティブのメッセージ キュー (MSMQ) プロトコルを使用する Windows Communication Foundation (WCF) サービスのキュー通信プロパティを指定するために使用するバインド要素を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.MsmqTransportBindingElement> は、ユーザーがキューに置かれている通信チャネルのプロパティを設定できるようにします。 キューに置かれている通信チャネルは、そのトランスポートにメッセージ キューを使用します。  
+  
+ このバインディング要素は、メッセージ キューの標準バインディング (<xref:System.ServiceModel.NetMsmqBinding>) で使用される既定のバインディング要素です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ImperativeNetMsmq#0](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_imperativenetmsmq/cs/service.cs#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MsmqTransportBindingElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MsmqTransportBindingElement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Channels.MsmqTransportBindingElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_UE_ImperativeNetMsmq#1](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_imperativenetmsmq/cs/service.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildChannelFactory&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Channels.IChannelFactory&lt;TChannel&gt; BuildChannelFactory&lt;TChannel&gt; (System.ServiceModel.Channels.BindingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Channels.IChannelFactory`1&lt;!!TChannel&gt; BuildChannelFactory&lt;TChannel&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MsmqTransportBindingElement.BuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IChannelFactory&lt;TChannel&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel"><see cref="T:System.ServiceModel.Channels.IOutputSessionChannel" /> クラスまたは <see cref="T:System.ServiceModel.Channels.IOutputChannel" /> クラス。</typeparam>
+        <param name="context">チャネル ファクトリのビルドに使用する <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+        <summary>指定したコンテキストを使用してチャネル ファクトリを作成します。</summary>
+        <returns>既存のメッセージ キュー (MSMQ) アプリケーションへのメッセージ送信用チャネルを作成するためのメッセージ キュー チャネル ファクトリ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バインド要素に設定されているプロパティを使用して、チャネル ファクトリが作成および初期化されます。 初期化されたチャネル ファクトリは、次に、メッセージをメッセージ キューに送信するために使用できる出力チャネルの作成に使用されます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ImperativeNetMsmq#7](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_imperativenetmsmq/cs/snippets.cs#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">コンテキスト値が null です。</exception>
+        <exception cref="T:System.ArgumentException">TChannel が IOutputChannel または IOutputSessionChannel ではありません。</exception>
+        <exception cref="T:System.InvalidOperationException">MsmqTransportSecurity.MsmqProtectionLevel が EncryptAndSign で、UseActiveDirectory が false です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildChannelListener&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Channels.IChannelListener&lt;TChannel&gt; BuildChannelListener&lt;TChannel&gt; (System.ServiceModel.Channels.BindingContext context) where TChannel : class, System.ServiceModel.Channels.IChannel;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Channels.IChannelListener`1&lt;!!TChannel&gt; BuildChannelListener&lt;class (class System.ServiceModel.Channels.IChannel) TChannel&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MsmqTransportBindingElement.BuildChannelListener``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IChannelListener&lt;TChannel&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+            <InterfaceName>System.ServiceModel.Channels.IChannel</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">チャネル リスナーのビルドに使用されるチャネルの種類。 許可されているチャネルの種類は、<see cref="T:System.ServiceModel.Channels.IInputSessionChannel" /> クラスまたは <see cref="T:System.ServiceModel.Channels.IInputChannel" /> クラスです。</typeparam>
+        <param name="context">チャネル リスナーのビルドに使用する <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+        <summary>指定したコンテキストを使用してチャネル リスナーを作成します。</summary>
+        <returns>既存のメッセージ キュー (MSMQ) アプリケーションからのメッセージを受信するためのチャネルの作成に使用する MSMQ チャネル リスナー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_UE_ImperativeNetMsmq#8](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_imperativenetmsmq/cs/snippets.cs#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">コンテキスト値が null です。</exception>
+        <exception cref="T:System.ArgumentException">TChannel が IInputChannel または IInputSessionChannel ではありません。</exception>
+        <exception cref="T:System.InvalidOperationException">MsmqTransportSecurity.MsmqAuthenticationMode が Certificate または WindowsDomain で、MsmqTransportSecurity.MsmqProtectionLevel が None です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanBuildChannelFactory&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public override bool CanBuildChannelFactory&lt;TChannel&gt; (System.ServiceModel.Channels.BindingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanBuildChannelFactory&lt;TChannel&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MsmqTransportBindingElement.CanBuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">チャネル リスナーのビルドに使用されるチャネルの種類。 許可されているチャネルの種類は、<see cref="T:System.ServiceModel.Channels.IOutputSessionChannel" /> クラスまたは <see cref="T:System.ServiceModel.Channels.IOutputChannel" /> クラスです。</typeparam>
+        <param name="context">チャネル ファクトリのビルドに使用する <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+        <summary>指定したコンテキストを使用してチャネル ファクトリを作成できるかどうかを示すブール値を返します。</summary>
+        <returns>
+          与えられたコンテキストでチャネル ファクトリをビルドできる場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 <see langword="true" /> が <paramref name="TChannel" /> または <see cref="T:System.ServiceModel.Channels.IOutputChannel" /> の場合にのみ、バインディング要素は <see cref="T:System.ServiceModel.Channels.IOutputSessionChannel" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_UE_ImperativeNetMsmq#9](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_imperativenetmsmq/cs/snippets.cs#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanBuildChannelListener&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public override bool CanBuildChannelListener&lt;TChannel&gt; (System.ServiceModel.Channels.BindingContext context) where TChannel : class, System.ServiceModel.Channels.IChannel;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanBuildChannelListener&lt;class (class System.ServiceModel.Channels.IChannel) TChannel&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MsmqTransportBindingElement.CanBuildChannelListener``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+            <InterfaceName>System.ServiceModel.Channels.IChannel</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">チャネル リスナーのビルドに使用されるチャネルの種類。 許可されているチャネルの種類は、<see cref="T:System.ServiceModel.Channels.IInputSessionChannel" /> クラスまたは <see cref="T:System.ServiceModel.Channels.IInputChannel" /> クラスです。</typeparam>
+        <param name="context">チャネル リスナーのビルドに使用する <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+        <summary>指定したコンテキストを使用してチャネル リスナーを作成できるかどうかを示すブール値を返します。</summary>
+        <returns>
+          与えられたコンテキストでチャネル リスナーをビルドできる場合は <see langword="true" />、それ以外の場合は <see langword="false" />。  
+  
+ <see langword="true" /> が <paramref name="TChannel" /> または <see cref="T:System.ServiceModel.Channels.IInputChannel" /> の場合にのみ、バインディングは <see cref="T:System.ServiceModel.Channels.IInputSessionChannel" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_UE_ImperativeNetMsmq#10](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_imperativenetmsmq/cs/snippets.cs#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Channels.BindingElement Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Channels.BindingElement Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MsmqTransportBindingElement.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.BindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>バインド要素の複製を返します。</summary>
+        <returns>バインド要素の複製。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_UE_ImperativeNetMsmq#6](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_imperativenetmsmq/cs/snippets.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxPoolSize">
+      <MemberSignature Language="C#" Value="public int MaxPoolSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxPoolSize" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.MsmqTransportBindingElement.MaxPoolSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内部メッセージ キュー (MSMQ) メッセージ オブジェクトを格納するプールの最大サイズを指定する整数を取得または設定します。</summary>
+        <value>内部メッセージ キュー メッセージ オブジェクトを格納するプールの最大サイズを指定する整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内部メッセージ キュー メッセージ オブジェクト プールは、メッセージの送受信時にこれらのオブジェクトが割り当てられないようにするために使用されます。 最大プール サイズは、パフォーマンス チューニング パラメーターです。 既定値は 8 です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ImperativeNetMsmq#2](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_imperativenetmsmq/cs/snippets.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="QueueTransferProtocol">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.QueueTransferProtocol QueueTransferProtocol { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.QueueTransferProtocol QueueTransferProtocol" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.MsmqTransportBindingElement.QueueTransferProtocol" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.QueueTransferProtocol</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインディングが使用するキューに置かれた通信チャネルのトランスポートを示す列挙値を取得または設定します。</summary>
+        <value>キュー マネージャー間のメッセージ配信に使用されるトランスポートを指定する <see cref="T:System.ServiceModel.QueueTransferProtocol" /> 列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キュー (MSMQ) は、SOAP リライアブル メッセージ プロトコル (SRMP) を使用する場合は Active Directory アドレス指定をサポートしないため、<xref:System.ServiceModel.Channels.MsmqTransportBindingElement.QueueTransferProtocol%2A> が <xref:System.ServiceModel.QueueTransferProtocol.Srmp> に設定されている場合は、<xref:System.ServiceModel.QueueTransferProtocol.Srmp> を <xref:System.ServiceModel.Channels.MsmqTransportBindingElement.UseActiveDirectory%2A> または `true` に設定しないでください。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ImperativeNetMsmq#3](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_imperativenetmsmq/cs/snippets.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が、<see cref="T:System.ServiceModel.QueueTransferProtocol" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Scheme">
+      <MemberSignature Language="C#" Value="public override string Scheme { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Scheme" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.MsmqTransportBindingElement.Scheme" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このトランスポート バインド要素で使用されるアドレス指定スキームを格納する <see cref="T:System.String" /> を返します。</summary>
+        <value>このトランスポート バインド要素で使用されるアドレス指定スキームを格納する <see cref="T:System.String" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.MsmqTransportBindingElement.Scheme%2A> プロパティは文字列 "net.msmq" を返します。  
+  
+ メッセージ キュー (MSMQ) のキューに置かれているトランスポートは、net.msmq などの複数のアドレス指定スキームをサポートします。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ImperativeNetMsmq#4](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_imperativenetmsmq/cs/snippets.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseActiveDirectory">
+      <MemberSignature Language="C#" Value="public bool UseActiveDirectory { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseActiveDirectory" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.MsmqTransportBindingElement.UseActiveDirectory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キューのアドレスを Active Directory を使用して変換する必要があるかどうかを示すブール値を返します。</summary>
+        <value>
+          キューのアドレスを Active Directory を使用して変換する必要がある場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Message Queuing (MSMQ) キューのアドレスは、パス名または直接形式名で構成できます。 直接形式名を使用する場合、MSMQ は、DNS、NetBIOS、または IP を使用してキュー名を解決します。 パス名を使用する場合、MSMQ は、Active Directory を使用してキュー名を解決します。  
+  
+ 既定では、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] キューに置かれているトランスポートは、メッセージ キューの URI を直接形式名に変換します。 <xref:System.ServiceModel.Channels.MsmqTransportBindingElement.UseActiveDirectory%2A> プロパティを `true` に設定すると、キューに置かれているトランスポートが DNS、NetBIOS、または IP ではなく Active Directory を使用してコンピューター名を解決する必要があることを、アプリケーションで指定できます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ImperativeNetMsmq#5](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_imperativenetmsmq/cs/snippets.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

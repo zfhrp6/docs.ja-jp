@@ -1,0 +1,1182 @@
+<Type Name="OleDbSchemaGuid" FullName="System.Data.OleDb.OleDbSchemaGuid">
+  <TypeSignature Language="C#" Value="public sealed class OleDbSchemaGuid" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OleDbSchemaGuid extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.OleDb.OleDbSchemaGuid" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>指定されたテーブルのスキーマの型を返します、<see cref="M:System.Data.OleDb.OleDbConnection.GetOleDbSchemaTable(System.Guid,System.Object[])" />メソッドです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内の各フィールド、<xref:System.Data.OleDb.OleDbSchemaGuid>クラスの OLE DB スキーマ行セットにマップします。  
+  
+> [!NOTE]
+>  一部のメンバー、<xref:System.Data.OleDb.OleDbSchemaGuid>クラス (など<xref:System.Data.OleDb.OleDbSchemaGuid.Procedure_Columns>スキーマ)、OLE DB プロバイダーでサポートされていない可能性があります。 データベースのシステム テーブルのクエリを実行してこのスキーマ情報を取得できるかどうかを決定する、データベースのマニュアルを参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OleDbSchemaGuid ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbSchemaGuid.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.OleDb.OleDbSchemaGuid" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Assertions">
+      <MemberSignature Language="C#" Value="public static readonly Guid Assertions;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid Assertions" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.Assertions" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定のユーザーによって所有されているカタログで定義されているアサーションを返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbSchemaGuid.Assertions>OLE DB アサーション行セットにマップされます。 、それ以外の場合に指定されていない限り、制限列は、次の順序で返されます。  
+  
+|制限列|CLR データ型|説明|  
+|------------------------|-------------------|-----------------|  
+|CONSTRAINT_CATALOG|`string`|カタログの名前。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|CONSTRAINT_SCHEMA|`string`|非修飾スキーマ名です。 プロバイダーはスキーマをサポートしていない場合は、null 値です。|  
+|CONSTRAINT_NAME|`string`|制約の名前です。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Catalogs">
+      <MemberSignature Language="C#" Value="public static readonly Guid Catalogs;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid Catalogs" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.Catalogs" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ソースからアクセス可能なカタログに関連付けられている物理属性を返します。 特定のユーザーによって所有されているカタログで定義されているアサーションを返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbSchemaGuid.Catalogs>OLE DB カタログ行セットにマップし、次の制限列を返します。  
+  
+|制限列|CLR データ型|説明|  
+|------------------------|-------------------|-----------------|  
+|CATALOG_NAME|`string`|カタログの名前。 Null 値にすることはできません。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Character_Sets">
+      <MemberSignature Language="C#" Value="public static readonly Guid Character_Sets;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid Character_Sets" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.Character_Sets" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定のユーザーにアクセスできるカタログで定義されている文字セットを返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbSchemaGuid.Character_Sets>OLE DB CHARACTER_SETS 行セットにマップされます。 、それ以外の場合に指定されていない限り、制限列は、次の順序で返されます。  
+  
+|制限列|CLR データ型|説明|  
+|------------------------|-------------------|-----------------|  
+|CHARACTER_SET_CATALOG|`string`|カタログの名前。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|CHARACTER_SET_SCHEMA|`string`|非修飾スキーマ名です。 プロバイダーはスキーマをサポートしていない場合は、null 値です。|  
+|CHARACTER_SET_NAME|`string`|文字セットの名前。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Check_Constraints">
+      <MemberSignature Language="C#" Value="public static readonly Guid Check_Constraints;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid Check_Constraints" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.Check_Constraints" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定のユーザーによって所有されているカタログで定義された check 制約を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbSchemaGuid.Check_Constraints>OLE DB CHECK_CONSTRAINTS 行セットにマップされます。 、それ以外の場合に指定されていない限り、制限列は、次の順序で返されます。  
+  
+|制限列|CLR データ型|説明|  
+|------------------------|-------------------|-----------------|  
+|CONSTRAINT_CATALOG|`string`|カタログの名前。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|CONSTRAINT_SCHEMA|`string`|非修飾スキーマ名です。 プロバイダーはスキーマをサポートしていない場合は、null 値です。|  
+|CONSTRAINT_NAME|`string`|制約の名前です。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Check_Constraints_By_Table">
+      <MemberSignature Language="C#" Value="public static readonly Guid Check_Constraints_By_Table;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid Check_Constraints_By_Table" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.Check_Constraints_By_Table" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定のユーザーによって所有されているカタログで定義された check 制約を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbSchemaGuid.Check_Constraints>OLE DB CHECK_CONSTRAINTS 行セットにマップされます。 、それ以外の場合に指定されていない限り、制限列は、次の順序で返されます。  
+  
+|制限列|CLR データ型|説明|  
+|------------------------|-------------------|-----------------|  
+|CONSTRAINT_CATALOG|`string`|カタログの名前。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|CONSTRAINT_SCHEMA|`string`|非修飾スキーマ名です。 プロバイダーはスキーマをサポートしていない場合は、null 値です。|  
+|CONSTRAINT_NAME|`string`|制約の名前です。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Collations">
+      <MemberSignature Language="C#" Value="public static readonly Guid Collations;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid Collations" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.Collations" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定のユーザーにアクセスできるカタログで定義されている文字の照合順序を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbSchemaGuid.Collations>OLE DB の照合順序の行セットにマップされます。 、それ以外の場合に指定されていない限り、制限列は、次の順序で返されます。  
+  
+|制限列|CLR データ型|説明|  
+|------------------------|-------------------|-----------------|  
+|COLLATION_CATALOG|`string`|カタログの名前。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|COLLATION_SCHEMA|`string`|非修飾スキーマ名です。 プロバイダーはスキーマをサポートしていない場合は、null 値です。|  
+|COLLATION_NAME|`string`|照合順序名。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Column_Domain_Usage">
+      <MemberSignature Language="C#" Value="public static readonly Guid Column_Domain_Usage;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid Column_Domain_Usage" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.Column_Domain_Usage" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カタログで定義されているし、特定のユーザーが所有するドメインに依存しているカタログで定義されている列を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbSchemaGuid.Column_Domain_Usage>OLE DB COLUMN_DOMAIN_USAGE 行セットにマップされます。 、それ以外の場合に指定されていない限り、制限列は、次の順序で返されます。  
+  
+|制限列|CLR データ型|説明|  
+|------------------------|-------------------|-----------------|  
+|DOMAIN_CATALOG|`string`|カタログの名前。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|DOMAIN_SCHEMA|`string`|非修飾スキーマ名です。 プロバイダーはスキーマをサポートしていない場合は、null 値です。|  
+|DOMAIN_NAME|`string`|ビューの名前。|  
+|COLUMN_NAME|`string`|列名。 この列は、COLUMN_GUID および COLUMN_PROPID 列と共に、フォームの列の id。 1 つ以上のこれらの列は、プロバイダーを使用して DBID 構造体の要素によって、null 値になります。 (DBID は COLUMN_DOMAIN_USAGE 行セットの COLUMN_NAME 列にシリアル化された正式な構造体です)。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Column_Privileges">
+      <MemberSignature Language="C#" Value="public static readonly Guid Column_Privileges;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid Column_Privileges" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.Column_Privileges" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用可能なや特定のユーザーに許可されているカタログで定義されているテーブルの列に対して、権限を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbSchemaGuid.Column_Privileges>OLE DB column_privileges も行セットにマップされます。 、それ以外の場合に指定されていない限り、制限列は、次の順序で返されます。  
+  
+|制限列|CLR データ型|説明|  
+|------------------------|-------------------|-----------------|  
+|TABLE_CATALOG|`string`|テーブルが定義されているカタログ名。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|TABLE_SCHEMA|`string`|テーブルが定義されている非修飾スキーマ名です。 プロバイダーはスキーマをサポートしていない場合は、null 値です。|  
+|TABLE_NAME|`string`|テーブル名。|  
+|COLUMN_NAME|`string`|列名。 この列は、COLUMN_GUID および COLUMN_PROPID 列と共に、フォームの列の id。 1 つ以上のこれらの列は、プロバイダーを使用して DBID 構造体の要素によって、null 値になります。|  
+|GRANTOR|`string`|TABLE_NAME 内のテーブルに対する特権を付与するユーザー。|  
+|GRANTEE|`string`|ユーザー名 (または「パブリック」) に、特権が与えられています。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Columns">
+      <MemberSignature Language="C#" Value="public static readonly Guid Columns;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid Columns" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.Columns" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定のユーザーにアクセスできるカタログで定義されているテーブル (ビューを含む) の列を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbSchemaGuid.Columns>OLE DB COLUMNS 行セットにマップされます。 、それ以外の場合に指定されていない限り、制限列は、次の順序で返されます。  
+  
+|制限列|CLR データ型|説明|  
+|------------------------|-------------------|-----------------|  
+|TABLE_CATALOG|`string`|カタログの名前。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|TABLE_SCHEMA|`string`|非修飾スキーマ名です。 プロバイダーはスキーマをサポートしていない場合は、null 値です。|  
+|TABLE_NAME|`string`|テーブル名。 返される列は、null 値を含めることはできません。|  
+|COLUMN_NAME|`string`|列の名前これは一意でない可能性があります。 これを特定できない場合は、null 値が返されます。 この列は、COLUMN_GUID および COLUMN_PROPID 列と共に、フォームの列の id。 1 つ以上のこれらの列は、プロバイダーを使用して DBID 構造体の要素によって、null 値になります。 (DBID は COLUMN_DOMAIN_USAGE 行セットの COLUMN_NAME 列にシリアル化された正式な構造体です)。可能であれば、結果として得られる列の ID は永続的にする必要があります。 ただし、プロバイダーによっては列の永続的な id をサポートしています。 ベース テーブルの列 ID がビューの下にあるバリアント型にする必要があります。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Constraint_Column_Usage">
+      <MemberSignature Language="C#" Value="public static readonly Guid Constraint_Column_Usage;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid Constraint_Column_Usage" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.Constraint_Column_Usage" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照制約、unique 制約、check 制約、およびアサーションによって使用される、カタログで定義されているし、特定のユーザーが所有する列を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbSchemaGuid.Constraint_Column_Usage>OLE DB CONSTRAINT_COLUMN_USAGE 行セットにマップされます。 、それ以外の場合に指定されていない限り、制限列は、次の順序で返されます。  
+  
+|制限列|CLR データ型|説明|  
+|------------------------|-------------------|-----------------|  
+|TABLE_CATALOG|`string`|テーブルが定義されているカタログ名。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|TABLE_SCHEMA|`string`|テーブルが定義されている非修飾スキーマ名です。 プロバイダーはスキーマをサポートしていない場合は、null 値です。|  
+|TABLE_NAME|`string`|テーブル名。|  
+|COLUMN_NAME|`string`|列名。 この列は、COLUMN_GUID および COLUMN_PROPID 列と共に、フォームの列の id。 1 つ以上のこれらの列は、プロバイダーを使用して DBID 構造体の要素によって、null 値になります。|  
+|CONSTRAINT_CATALOG|`string`|カタログの名前。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|CONSTRAINT_SCHEMA|`string`|非修飾スキーマ名です。 プロバイダーはスキーマをサポートしていない場合は、null 値です。|  
+|CONSTRAINT_NAME|`string`|制約の名前です。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Constraint_Table_Usage">
+      <MemberSignature Language="C#" Value="public static readonly Guid Constraint_Table_Usage;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid Constraint_Table_Usage" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.Constraint_Table_Usage" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照制約、unique 制約、check 制約、およびカタログで定義され、特定のユーザーによって所有アサーションによって使用されているテーブルを返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbSchemaGuid.Constraint_Table_Usage>OLE DB CONSTRAINT_TABLE_USAGE 行セットにマップされます。 、それ以外の場合に指定されていない限り、制限列は、次の順序で返されます。  
+  
+|制限列|CLR データ型|説明|  
+|------------------------|-------------------|-----------------|  
+|TABLE_CATALOG|`string`|テーブルが定義されているカタログ名。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|TABLE_SCHEMA|`string`|テーブルが定義されている非修飾スキーマ名です。 プロバイダーはスキーマをサポートしていない場合は、null 値です。|  
+|TABLE_NAME|`string`|テーブル名。|  
+|CONSTRAINT_CATALOG|`string`|カタログの名前。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|CONSTRAINT_SCHEMA|`string`|非修飾スキーマ名です。 プロバイダーはスキーマをサポートしていない場合は、null 値です。|  
+|CONSTRAINT_NAME|`string`|制約の名前です。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DbInfoKeywords">
+      <MemberSignature Language="C#" Value="public static readonly Guid DbInfoKeywords;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid DbInfoKeywords" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.DbInfoKeywords" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロバイダー固有のキーワードの一覧を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Data.OleDb.OleDbSchemaGuid.DbInfoKeywords>は OLE DB IDBInfo::GetKeywords インターフェイスを呼び出すことに相当します。 キーワードの一覧は、「キーワード」をという 1 つの列を持つ DataTable として返されます。 プロバイダーによって返される各キーワードは、DataTable 内の独自の行になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DbInfoLiterals">
+      <MemberSignature Language="C#" Value="public static readonly Guid DbInfoLiterals;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid DbInfoLiterals" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.DbInfoLiterals" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト コマンドで使用されるプロバイダー固有のリテラルの一覧を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Data.OleDb.OleDbSchemaGuid.DbInfoLiterals>は、OLE DB の呼び出しに相当**IDBInfo::GetLiteralInfo**インターフェイス、または ADO`Connection.OpenSchema`メソッドを`adSchemaDBInfoLiterals`定数。  
+  
+ 使用する場合、<xref:System.Data.OleDb.OleDbConnection.GetOleDbSchemaTable%2A>メソッド場合、`schema`パラメーターには値が含まれています<xref:System.Data.OleDb.OleDbSchemaGuid.DbInfoLiterals>と`restrictions`パラメーターには、1 つまたは複数の制限が含まれています、<xref:System.ArgumentException>が生成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Foreign_Keys">
+      <MemberSignature Language="C#" Value="public static readonly Guid Foreign_Keys;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid Foreign_Keys" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.Foreign_Keys" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定のユーザーによってカタログで定義されている外部キー列を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbSchemaGuid.Foreign_Keys>OLE DB の FOREIGN_KEYS 行セットにマップされます。 、それ以外の場合に指定されていない限り、制限列は、次の順序で返されます。  
+  
+|制限列|CLR データ型|説明|  
+|------------------------|-------------------|-----------------|  
+|PK_TABLE_CATALOG|`string`|主キー テーブルが定義されているカタログ名。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|PK_TABLE_SCHEMA|`string`|主キー テーブルが定義されている非修飾スキーマ名です。 プロバイダーはスキーマをサポートしていない場合は、null 値です。|  
+|PK_TABLE_NAME、|`string`|主キー テーブルの名前です。|  
+|FK_TABLE_CATALOG|`string`|外部キー テーブルが定義されているカタログ名。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|FK_TABLE_SCHEMA|`string`|外部キー テーブルが定義されている非修飾スキーマ名です。 プロバイダーはスキーマをサポートしていない場合は、null 値です。|  
+|FK_TABLE_NAME|`string`|外部キー テーブルの名前です。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Indexes">
+      <MemberSignature Language="C#" Value="public static readonly Guid Indexes;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid Indexes" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.Indexes" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定のユーザーによって所有されているカタログで定義されているインデックスを返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbSchemaGuid.Indexes>OLE DB インデックス行セットにマップされます。 、それ以外の場合に指定されていない限り、制限列は、次の順序で返されます。  
+  
+|制限列|CLR データ型|説明|  
+|------------------------|-------------------|-----------------|  
+|TABLE_CATALOG|`string`|カタログの名前。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|TABLE_SCHEMA|`string`|非修飾スキーマ名です。 プロバイダーはスキーマをサポートしていない場合は、null 値です。|  
+|INDEX_NAME|`string`|インデックスの名前。|  
+|TYPE|`UInt16 (Int32)`|インデックスの種類。 次のいずれかになります。<br /><br /> DBPROPVAL_IT_BTREE、インデックスは B +-ツリー。<br /><br /> DBPROPVAL_IT_HASH、インデックスはハッシュ ファイルを使用して、たとえば、線形または拡張可能なハッシュです。<br /><br /> DBPROPVAL_IT_CONTENT、インデックスは、コンテンツのインデックスです。<br /><br /> DBPROPVAL_IT_OTHER、インデックスは、インデックスの他のいくつかの種類です。|  
+|TABLE_NAME|`string`|テーブル名。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Key_Column_Usage">
+      <MemberSignature Language="C#" Value="public static readonly Guid Key_Column_Usage;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid Key_Column_Usage" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.Key_Column_Usage" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定のユーザーによってキーとして制約されているカタログで定義されている列を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbSchemaGuid.Key_Column_Usage>OLE DB KEY_COLUMN_USAGE 行セットにマップされます。 、それ以外の場合に指定されていない限り、制限列は、次の順序で返されます。  
+  
+|制限列|CLR データ型|説明|  
+|------------------------|-------------------|-----------------|  
+|CONSTRAINT_CATALOG|`string`|カタログの名前。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|CONSTRAINT_SCHEMA|`string`|非修飾スキーマ名です。 プロバイダーはスキーマをサポートしていない場合は、null 値です。|  
+|CONSTRAINT_NAME|`string`|制約の名前です。|  
+|TABLE_CATALOG|`string`|キー列を含むテーブルが定義されているカタログ名。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|TABLE_SCHEMA|`string`|キー列を含むテーブルが定義されている非修飾スキーマ名です。 プロバイダーはスキーマをサポートしていない場合は、null 値です。|  
+|TABLE_NAME|`string`|キー列を含むテーブル名です。|  
+|COLUMN_NAME|`string`|一意、主キー、または外部キーに参加している列の名前。 この列は、COLUMN_GUID および COLUMN_PROPID 列と共に、フォームの列の id。 1 つ以上のこれらの列は、プロバイダーを使用して DBID 構造体の要素によって、null 値になります。 (DBID は COLUMN_DOMAIN_USAGE 行セットの COLUMN_NAME 列にシリアル化された正式な構造体です)。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Primary_Keys">
+      <MemberSignature Language="C#" Value="public static readonly Guid Primary_Keys;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid Primary_Keys" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.Primary_Keys" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定のユーザーによってカタログで定義されている主キー列を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbSchemaGuid.Primary_Keys>OLE DB の PRIMARY_KEYS 行セットにマップされます。 、それ以外の場合に指定されていない限り、制限列は、次の順序で返されます。  
+  
+|制限列|CLR データ型|説明|  
+|------------------------|-------------------|-----------------|  
+|TABLE_CATALOG|`string`|テーブルが定義されているカタログ名。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|TABLE_SCHEMA|`string`|テーブルが定義されている非修飾スキーマ名です。 プロバイダーはスキーマをサポートしていない場合は、null 値です。|  
+|TABLE_NAME|`string`|テーブル名。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Procedure_Columns">
+      <MemberSignature Language="C#" Value="public static readonly Guid Procedure_Columns;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid Procedure_Columns" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.Procedure_Columns" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロシージャによって返される行セットの列に関する情報を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbSchemaGuid.Procedure_Columns>OLE DB PROCEDURE_COLUMNS 行セットにマップされます。 、それ以外の場合に指定されていない限り、制限列は、次の順序で返されます。  
+  
+|制限列|CLR データ型|説明|  
+|------------------------|-------------------|-----------------|  
+|PROCEDURE_CATALOG|`string`|カタログの名前。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|PROCEDURE_SCHEMA|`string`|非修飾スキーマ名です。 プロバイダーはスキーマをサポートしていない場合は、null 値です。|  
+|PROCEDURE_NAME|`string`|プロシージャの名前。|  
+|COLUMN_NAME|`string`|列の名前これは一意でない可能性があります。 これを特定できない場合は、null 値が返されます。 この列は、COLUMN_GUID および COLUMN_PROPID 列と共に、フォームの列の id。 1 つ以上のこれらの列は、プロバイダーを使用して DBID 構造体の要素によって、null 値になります。|  
+  
+> [!NOTE]
+>  <xref:System.Data.OleDb.OleDbSchemaGuid.Procedure_Columns> MDAC 2.7 に含まれている OLE DB プロバイダーでスキーマがサポートされていません。 データベースのシステム テーブルのクエリを実行してこのスキーマ情報を取得できるかどうかを決定する、データベースのマニュアルを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Procedure_Parameters">
+      <MemberSignature Language="C#" Value="public static readonly Guid Procedure_Parameters;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid Procedure_Parameters" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.Procedure_Parameters" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パラメーターとプロシージャのリターン コードに関する情報を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbSchemaGuid.Procedure_Parameters>OLE DB PROCEDURE_PARAMETERS 行セットにマップされます。 、それ以外の場合に指定されていない限り、制限列は、次の順序で返されます。  
+  
+|制限列|CLR データ型|説明|  
+|------------------------|-------------------|-----------------|  
+|PROCEDURE_CATALOG|`string`|カタログの名前。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|PROCEDURE_SCHEMA|`string`|スキーマ名です。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|PROCEDURE_NAME|`string`|プロシージャの名前。|  
+|PARAMETER_NAME|`string`|パラメーター名です。 パラメーターの名前が付いていない場合は、null 値。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Procedures">
+      <MemberSignature Language="C#" Value="public static readonly Guid Procedures;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid Procedures" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.Procedures" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定のユーザーによって所有されているカタログで定義されているプロシージャを返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbSchemaGuid.Procedures>OLE DB プロシージャ行セットにマップされます。 、それ以外の場合に指定されていない限り、制限列は、次の順序で返されます。  
+  
+|制限列|CLR データ型|説明|  
+|------------------------|-------------------|-----------------|  
+|PROCEDURE_CATALOG|`string`|カタログの名前。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|PROCEDURE_SCHEMA|`string`|非修飾スキーマ名です。 プロバイダーはスキーマをサポートしていない場合は、null 値です。|  
+|PROCEDURE_NAME|`string`|プロシージャの名前。|  
+|PROCEDURE_TYPE|`UInt16`|DB_PT_UNKNOWN It では、返された値があるかどうかが不明です。<br /><br /> DB_PT_PROCEDURE プロシージャです。返される値はありません。<br /><br /> DB_PT_FUNCTION 関数です。返される値があります。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Provider_Types">
+      <MemberSignature Language="C#" Value="public static readonly Guid Provider_Types;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid Provider_Types" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.Provider_Types" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>OLE DB の .NET Framework データ プロバイダーによってサポートされている基本データ型を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbSchemaGuid.Provider_Types>OLE DB PROVIDER_TYPES 行セットにマップされます。 、それ以外の場合に指定されていない限り、制限列は、次の順序で返されます。  
+  
+|制限列|CLR データ型|説明|  
+|------------------------|-------------------|-----------------|  
+|DATA_TYPE|`UInt16 (Int32)`|データ型のインジケーター。|  
+|BEST_MATCH|`Int16`|VARIANT_TRUE のデータ型は、データ ストア内のすべてのデータ型と、DATA_TYPE 列の値で示される OLE DB データ型間の最適な一致です。<br /><br /> VARIANT_FALSE のデータ型は、最適な一致ではありません。 DATA_TYPE 列の値が同じには行の各セットに対して、BEST_MATCH 列は 1 行だけでを VARIANT_TRUE に設定されます。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Referential_Constraints">
+      <MemberSignature Language="C#" Value="public static readonly Guid Referential_Constraints;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid Referential_Constraints" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.Referential_Constraints" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定のユーザーによって所有されているカタログで定義されている参照に関する制約を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbSchemaGuid.Referential_Constraints>OLE DB REFERENTIAL_CONSTRAINTS 行セットにマップされます。 、それ以外の場合に指定されていない限り、制限列は、次の順序で返されます。  
+  
+|制限列|CLR データ型|説明|  
+|------------------------|-------------------|-----------------|  
+|CONSTRAINT_CATALOG|`string`|カタログの名前。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|CONSTRAINT_SCHEMA|`string`|非修飾スキーマ名です。 プロバイダーはスキーマをサポートしていない場合は、null 値です。|  
+|CONSTRAINT_NAME|`string`|制約の名前です。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SchemaGuids">
+      <MemberSignature Language="C#" Value="public static readonly Guid SchemaGuids;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid SchemaGuids" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.SchemaGuids" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>その Guid と制限列の説明へのポインターによって識別されるスキーマ行セットの一覧を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Data.OleDb.OleDbSchemaGuid.SchemaGuids>は、OLE DB の呼び出しに相当**idbschemarowset::getschemas**インターフェイスです。 スキーマと制約事項の一覧は、「スキーマ」および"RestrictionSupport"という名前の 2 つの列を DataTable として返されます。 プロバイダーによって返される、スキーマの GUID と制約のビットマスクのそれぞれの組み合わせは、DataTable の行になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Schemata">
+      <MemberSignature Language="C#" Value="public static readonly Guid Schemata;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid Schemata" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.Schemata" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定のユーザーによって所有されているスキーマ オブジェクトを返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbSchemaGuid.Schemata>OLE DB SCHEMATAS 行セットにマップされます。 、それ以外の場合に指定されていない限り、制限列は、次の順序で返されます。  
+  
+|制限列|CLR データ型|説明|  
+|------------------------|-------------------|-----------------|  
+|CATALOG_NAME|`string`|カタログの名前。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|SCHEMA_NAME|`string`|非修飾スキーマ名|  
+|SCHEMA_OWNER|`string`|スキーマを所有しているユーザー。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Sql_Languages">
+      <MemberSignature Language="C#" Value="public static readonly Guid Sql_Languages;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid Sql_Languages" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.Sql_Languages" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>準拠レベル、オプション、およびカタログで定義されているデータには、SQL 実装処理によってサポートされている言語を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbSchemaGuid.Sql_Languages>OLE DB SQL_LANGUAGES 行セットにマップされます。 、それ以外の場合に指定されていない限り、制限列は、次の順序で返されます。  
+  
+|制限列|CLR データ型|説明|  
+|------------------------|-------------------|-----------------|  
+|SQL_LANGUAGE_SOURCE|`string`|"ISO 9075"標準の SQL です。|  
+|SQL_LANGUAGE_YEAR|`string`|「1992」ANSI SQL 92 – 準拠 SQL に適切です。|  
+|SQL_LANGUAGE_CONFORMANCE|`string`|次のいずれかの:「エントリ」、「中間」または"FULL"です。|  
+|SQL_LANGUAGE_INTEGRITY|`string`|省略可能を"YES"= 整合性機能はサポートされています。<br /><br /> "NO"Optional = 整合性機能はサポートされていません。|  
+|SQL_LANGUAGE_IMPLEMENTATION|`string`|NULL"ISO 9075"を実装します。|  
+|SQL_LANGUAGE_BINDING_STYLE|`string`|C と C++ の呼び出しの"DIRECT"に、SQL の実行を指示します。|  
+|SQL_LANGUAGE_PROGRAMMING_LANGUAGE|`string`|NULL。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Statistics">
+      <MemberSignature Language="C#" Value="public static readonly Guid Statistics;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid Statistics" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.Statistics" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定のユーザーによって所有されているカタログで定義されている統計を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbSchemaGuid.Statistics>OLE DB の統計情報の行セットにマップされます。 、それ以外の場合に指定されていない限り、制限列は、次の順序で返されます。  
+  
+|制限列|CLR データ型|説明|  
+|------------------------|-------------------|-----------------|  
+|TABLE_CATALOG|`string`|カタログの名前。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|TABLE_SCHEMA|`string`|非修飾スキーマ名です。 プロバイダーはスキーマをサポートしていない場合は、null 値です。|  
+|TABLE_NAME|`string`|テーブル名。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Table_Constraints">
+      <MemberSignature Language="C#" Value="public static readonly Guid Table_Constraints;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid Table_Constraints" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.Table_Constraints" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定のユーザーによって所有されているカタログで定義されているテーブルの制約を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbSchemaGuid.Table_Constraints>OLE DB TABLE_CONSTRAINTS 行セットにマップされます。 、それ以外の場合に指定されていない限り、制限列は、次の順序で返されます。  
+  
+|制限列|CLR データ型|説明|  
+|------------------------|-------------------|-----------------|  
+|CONSTRAINT_CATALOG|`string`|カタログの名前。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|CONSTRAINT_SCHEMA|`string`|非修飾スキーマ名です。 プロバイダーはスキーマをサポートしていない場合は、null 値です。|  
+|CONSTRAINT_NAME|`string`|制約の名前です。|  
+|TABLE_CATALOG|`string`|テーブルが定義されているカタログ名。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|TABLE_SCHEMA|`string`|テーブルが定義されている非修飾スキーマ名です。 プロバイダーはスキーマをサポートしていない場合は、null 値です。|  
+|TABLE_NAME|`string`|テーブル名。|  
+|CONSTRAINT_TYPE|`string`|制約の種類。 次のいずれかの: 一意の主キー、外部キー、またはチェックします。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Table_Privileges">
+      <MemberSignature Language="C#" Value="public static readonly Guid Table_Privileges;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid Table_Privileges" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.Table_Privileges" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カタログで定義されているユーザーが利用できる、または特定のユーザーによって付与されるテーブルの特権を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbSchemaGuid.Table_Privileges>OLE DB TABLE_PRIVILEGES 行セットにマップされます。 、それ以外の場合に指定されていない限り、制限列は、次の順序で返されます。  
+  
+|制限列|CLR データ型|説明|  
+|------------------------|-------------------|-----------------|  
+|TABLE_CATALOG|`string`|テーブルが定義されているカタログ名。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|TABLE_SCHEMA|`string`|テーブルが定義されている非修飾スキーマ名です。 プロバイダーはスキーマをサポートしていない場合は、null 値です。|  
+|TABLE_NAME|`string`|テーブル名。|  
+|GRANTOR|`string`|TABLE_NAME 内のテーブルに対する特権を付与するユーザー。|  
+|GRANTEE|`string`|ユーザー名 (または「パブリック」) に、特権が与えられています。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Table_Statistics">
+      <MemberSignature Language="C#" Value="public static readonly Guid Table_Statistics;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid Table_Statistics" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.Table_Statistics" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロバイダー内のテーブルの統計情報の使用可能なセットについて説明します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbSchemaGuid.Table_Statistics>OLE DB TABLE_STATISTICS 行セットにマップされます。 、それ以外の場合に指定されていない限り、制限列は、次の順序で返されます。  
+  
+|制限列|CLR データ型|説明|  
+|------------------------|-------------------|-----------------|  
+|TABLE_CATALOG|`string`|この統計情報のテーブルのカタログ名。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|TABLE_SCHEMA|`string`|テーブルのスキーマ名です。 プロバイダーはスキーマをサポートしていない場合は、null 値です。|  
+|TABLE_NAME|`string`|テーブル名。|  
+|STATISTICS_CATALOG|`string`|Statistic のカタログ名。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|STATISTICS_SCHEMA|`string`|Statistic のスキーマ名です。 プロバイダーはスキーマをサポートしていない場合は、null 値です。|  
+|STATISTICS_NAME|`string`|統計の名前です。|  
+|STATISTICS_TYPE|`UInt16 (Int32)`|この統計情報でサポートされている統計情報の種類を指定するビットマスク。<br /><br /> DBSTAT_HISTOGRAM-ヒストグラムのサポートを示します。<br /><br /> DBSTAT_COLUMN_CARDINALITY — では、列の基数のサポートを示します。<br /><br /> DBSTAT_TUPLE_CARDINALITY — 組基数のサポートを示します。<br /><br /> `Note:`ヒストグラムは、複数列統計の最初の列のみに対応します。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Tables">
+      <MemberSignature Language="C#" Value="public static readonly Guid Tables;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid Tables" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.Tables" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーブル (ビューを含む)、カタログで定義されている特定のユーザーにアクセスできるを返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbSchemaGuid.Tables>OLE DB の TABLES 行セットにマップされます。 、それ以外の場合に指定されていない限り、制限列は、次の順序で返されます。  
+  
+|制限列|CLR データ型|説明|  
+|------------------------|-------------------|-----------------|  
+|TABLE_CATALOG|`string`|カタログの名前。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|TABLE_SCHEMA|`string`|非修飾スキーマ名です。 プロバイダーはスキーマをサポートしていない場合は、null 値です。|  
+|TABLE_NAME|`string`|テーブル名。 返される列は、null 値を含めることはできません。|  
+|TABLE_TYPE|`string`|テーブルの型。 次のコードか、プロバイダー固有の値のいずれかの:"ALIAS"、"TABLE"「シノニム」、"システム TABLE"、"VIEW"、「グローバルの一時」、「ローカル一時」、または「システム ビュー」です。 返される列は、null 値を含めることはできません。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Tables_Info">
+      <MemberSignature Language="C#" Value="public static readonly Guid Tables_Info;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid Tables_Info" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.Tables_Info" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定のユーザーにアクセス可能であるテーブル (ビューを含む) を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbSchemaGuid.Tables_Info>OLE DB TABLES_INFO 行セットにマップされます。 、それ以外の場合に指定されていない限り、制限列は、次の順序で返されます。  
+  
+|制限列|CLR データ型|説明|  
+|------------------------|-------------------|-----------------|  
+|TABLE_TYPE|`string`|テーブルの型。 次のコードか、プロバイダー固有の値のいずれかの: エイリアス、テーブル、シノニム、システム テーブル、ビュー、グローバルの一時、ローカル一時、外部テーブル、またはシステム ビューです。|  
+|TABLE_CATALOG|`string`|カタログの名前。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|TABLE_SCHEMA|`string`|非修飾スキーマ名です。 プロバイダーはスキーマをサポートしていない場合は、null 値です。|  
+|TABLE_NAME|`string`|テーブル名。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Translations">
+      <MemberSignature Language="C#" Value="public static readonly Guid Translations;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid Translations" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.Translations" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定のユーザーにアクセスできるカタログで定義されている文字変換を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbSchemaGuid.Translations>OLE DB 翻訳行セットにマップされます。 、それ以外の場合に指定されていない限り、制限列は、次の順序で返されます。  
+  
+|制限列|CLR データ型|説明|  
+|------------------------|-------------------|-----------------|  
+|TRANSLATION_CATALOG|`string`|カタログの名前。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|TRANSLATION_SCHEMA|`string`|非修飾スキーマ名です。 プロバイダーはスキーマをサポートしていない場合は、null 値です。|  
+|TRANSLATION_NAME|`string`|翻訳の名前。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Trustee">
+      <MemberSignature Language="C#" Value="public static readonly Guid Trustee;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid Trustee" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.Trustee" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ソースで定義されたトラスティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbSchemaGuid.Trustee>OLE DB トラスティ スキーマにマップされます。 、それ以外の場合に指定されていない限り、制限列は、次の順序で返されます。  
+  
+|制限列|CLR データ型|説明|  
+|------------------------|-------------------|-----------------|  
+|TRUSTEE_NAME|`string`|トラスティの名前です。|  
+|TRUSTEE_GUID|`guid`|トラスティを一意に識別する GUID です。 トラスティの識別に Guid を使用しないプロバイダーは、この列で null 値を返す必要があります。|  
+|TRUSTEE_PROPID|`UInt32 (Int64)`|トラスティを一意に識別する propid です。 Propid をトラスティの識別に使用しないプロバイダーは、この列で null 値を返す必要があります。|  
+|TRUSTEE_TYPE|`UInt32 (Int64)`|Trustee の種類。 次のいずれかになります。<br /><br /> TRUSTEE_IS_UNKNOWN - トラスティは、不明な型は必ずしも型が無効です。<br /><br /> TRUSTEE_IS_USER - トラスティ アカウントは、ユーザー アカウントです。<br /><br /> TRUSTEE_IS_GROUP - トラスティは、グループ アカウントです。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Usage_Privileges">
+      <MemberSignature Language="C#" Value="public static readonly Guid Usage_Privileges;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid Usage_Privileges" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.Usage_Privileges" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カタログで定義されているオブジェクトに使用できる、または特定のユーザーによって付与された使用権限を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbSchemaGuid.Usage_Privileges>OLE DB USAGE_PRIVILEGES 行セットにマップされます。 、それ以外の場合に指定されていない限り、制限列は、次の順序で返されます。  
+  
+|制限列|CLR データ型|説明|  
+|------------------------|-------------------|-----------------|  
+|OBJECT_CATALOG|`string`|オブジェクトが定義されているカタログ名。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|OBJECT_SCHEMA|`string`|オブジェクトが定義されている非修飾スキーマ名です。 プロバイダーはスキーマをサポートしていない場合は、null 値です。|  
+|OBJECT_NAME|`string`|オブジェクトの名前。|  
+|OBJECT_TYPE|`string`|オブジェクトの種類。 次のいずれかの: ドメイン、文字セット、照合順序、または平行移動します。|  
+|GRANTOR|`string`|OBJECT_NAME 内のオブジェクトに対する特権を付与するユーザー。|  
+|GRANTEE|`string`|ユーザー名 (または「パブリック」) に、特権が与えられています。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="View_Column_Usage">
+      <MemberSignature Language="C#" Value="public static readonly Guid View_Column_Usage;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid View_Column_Usage" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.View_Column_Usage" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>返しますが、列がテーブルの表示は、依存、カタログで定義されている、特定のユーザーによって所有されています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbSchemaGuid.View_Column_Usage>OLE DB VIEW_COLUMN_USAGE 行セットにマップされます。 、それ以外の場合に指定されていない限り、制限列は、次の順序で返されます。  
+  
+|制限列|CLR データ型|説明|  
+|------------------------|-------------------|-----------------|  
+|VIEW_CATALOG|string|カタログの名前。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|VIEW_SCHEMA|string|非修飾スキーマ名です。 プロバイダーはスキーマをサポートしていない場合は、null 値です。|  
+|VIEW_NAME|string|ビューの名前。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="View_Table_Usage">
+      <MemberSignature Language="C#" Value="public static readonly Guid View_Table_Usage;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid View_Table_Usage" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.View_Table_Usage" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>依存するが、テーブルを表示、カタログで定義および特定のユーザーによって所有するテーブルを返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbSchemaGuid.View_Table_Usage>OLE DB VIEW_TABLE_USAGE 行セットにマップされます。 、それ以外の場合に指定されていない限り、制限列は、次の順序で返されます。  
+  
+|制限列|CLR データ型|説明|  
+|------------------------|-------------------|-----------------|  
+|VIEW_CATALOG|`string`|カタログの名前。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|VIEW_SCHEMA|`string`|非修飾スキーマ名です。 プロバイダーはスキーマをサポートしていない場合は、null 値です。|  
+|VIEW_NAME|`string`|ビューの名前。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Views">
+      <MemberSignature Language="C#" Value="public static readonly Guid Views;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Guid Views" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbSchemaGuid.Views" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定のユーザーにアクセスできるカタログで定義されているビューを返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbSchemaGuid.Views>OLE DB ビューの行セットにマップされます。 、それ以外の場合に指定されていない限り、制限列は、次の順序で返されます。  
+  
+|制限列|CLR データ型|説明|  
+|------------------------|-------------------|-----------------|  
+|TABLE_CATALOG|`string`|カタログの名前。 プロバイダーがカタログをサポートしていない場合は、null 値です。|  
+|TABLE_SCHEMA|`string`|非修飾スキーマ名です。 プロバイダーはスキーマをサポートしていない場合は、null 値です。|  
+|TABLE_NAME|`string`|ビューの名前。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

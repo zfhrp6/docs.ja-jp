@@ -1,0 +1,65 @@
+<Type Name="PeerMessagePropagationFilter" FullName="System.ServiceModel.PeerMessagePropagationFilter">
+  <TypeSignature Language="C#" Value="public abstract class PeerMessagePropagationFilter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit PeerMessagePropagationFilter extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.PeerMessagePropagationFilter" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ピア チャネル メッセージ フィルターの基本クラスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ピア チャネルを介して送信されるメッセージのフィルターの実装は、このクラスから派生させる必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected PeerMessagePropagationFilter ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.PeerMessagePropagationFilter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.PeerMessagePropagationFilter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldMessagePropagate">
+      <MemberSignature Language="C#" Value="public abstract System.ServiceModel.PeerMessagePropagation ShouldMessagePropagate (System.ServiceModel.Channels.Message message, System.ServiceModel.PeerMessageOrigination origination);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.ServiceModel.PeerMessagePropagation ShouldMessagePropagate(class System.ServiceModel.Channels.Message message, valuetype System.ServiceModel.PeerMessageOrigination origination) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.PeerMessagePropagationFilter.ShouldMessagePropagate(System.ServiceModel.Channels.Message,System.ServiceModel.PeerMessageOrigination)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.PeerMessagePropagation</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="origination" Type="System.ServiceModel.PeerMessageOrigination" />
+      </Parameters>
+      <Docs>
+        <param name="message">伝達を評価するメッセージ。</param>
+        <param name="origination">評価対象のメッセージの発信元 (ローカルまたはリモート) を指定する <see cref="T:System.ServiceModel.PeerMessageOrigination" /> 列挙値。</param>
+        <summary>ピア チャネルで受信したメッセージを伝達する必要があるかどうかを示す値を返し、伝達する必要がある場合は、メッセージの送信先も返します。</summary>
+        <returns>メッセージの宛先 (ローカル、リモート、その両方、または伝達なし) を示す <see cref="T:System.ServiceModel.PeerMessagePropagation" /> 列挙値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,142 @@
+<Type Name="InstrumentationClassAttribute" FullName="System.Management.Instrumentation.InstrumentationClassAttribute">
+  <TypeSignature Language="C#" Value="public class InstrumentationClassAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit InstrumentationClassAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Management.Instrumentation.InstrumentationClassAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Management</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Struct)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>クラスがイベントまたはインスタンスのインストルメンテーションを提供することを指定します。  
+  
+ 注: WMI .NET ライブラリは最終的な状態と見なされます。これらのライブラリに影響を与えるセキュリティ以外に関連する問題については、さらなる開発、機能拡張、または更新は利用できません。 [MI Api](https://msdn.microsoft.com/en-us/library/jj152383%28v=vs.80%29.aspx)すべての新しい開発で使用する必要があります。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InstrumentationClassAttribute (System.Management.Instrumentation.InstrumentationType instrumentationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Management.Instrumentation.InstrumentationType instrumentationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.Instrumentation.InstrumentationClassAttribute.#ctor(System.Management.Instrumentation.InstrumentationType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="instrumentationType" Type="System.Management.Instrumentation.InstrumentationType" />
+      </Parameters>
+      <Docs>
+        <param name="instrumentationType">このクラスが提供する実装の型。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.Instrumentation.InstrumentationClassAttribute" />を持つ別の型からこの型を派生している場合に使用されるクラス、<see cref="T:System.Management.Instrumentation.InstrumentationClassAttribute" />属性、または最上位レベルの実装クラスの場合 (から派生した、インスタンスまたは抽象クラスが基底クラス、またはイベントがない場合など、 **__ExtrinsicEvent**)。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InstrumentationClassAttribute (System.Management.Instrumentation.InstrumentationType instrumentationType, string managedBaseClassName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Management.Instrumentation.InstrumentationType instrumentationType, string managedBaseClassName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.Instrumentation.InstrumentationClassAttribute.#ctor(System.Management.Instrumentation.InstrumentationType,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="instrumentationType" Type="System.Management.Instrumentation.InstrumentationType" />
+        <Parameter Name="managedBaseClassName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="instrumentationType">このクラスが提供する実装の型。</param>
+        <param name="managedBaseClassName">基本クラスの名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.Instrumentation.InstrumentationClassAttribute" />を既存の基本クラスのスキーマを持つクラス。 クラスは、既存の WMI の基本クラスのプロパティの適切なメンバーの定義を含める必要があります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstrumentationType">
+      <MemberSignature Language="C#" Value="public System.Management.Instrumentation.InstrumentationType InstrumentationType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Management.Instrumentation.InstrumentationType InstrumentationType" />
+      <MemberSignature Language="DocId" Value="P:System.Management.Instrumentation.InstrumentationClassAttribute.InstrumentationType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.Instrumentation.InstrumentationType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのクラスが提供する実装の種類を設定します。</summary>
+        <value>返します、<see cref="T:System.Management.Instrumentation.InstrumentationType" />このクラスが提供する実装の種類を表す列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ 含まれています、<xref:System.Management.Instrumentation.InstrumentationType>をインストルメント化されたイベント、インスタンス、または抽象クラスは、このかどうかを示す値。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ManagedBaseClassName">
+      <MemberSignature Language="C#" Value="public string ManagedBaseClassName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ManagedBaseClassName" />
+      <MemberSignature Language="DocId" Value="P:System.Management.Instrumentation.InstrumentationClassAttribute.ManagedBaseClassName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのインストルメンテーション クラスの基底クラスの名前を設定します。</summary>
+        <value>返します、<see cref="T:System.String" />実装クラスの基底クラスの名前を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ ない場合`null`、この文字列は、このクラスは、CIM スキーマ内から継承する WMI の基本クラスを示します。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

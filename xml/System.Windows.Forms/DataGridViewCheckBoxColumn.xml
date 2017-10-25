@@ -1,0 +1,437 @@
+<Type Name="DataGridViewCheckBoxColumn" FullName="System.Windows.Forms.DataGridViewCheckBoxColumn">
+  <TypeSignature Language="C#" Value="public class DataGridViewCheckBoxColumn : System.Windows.Forms.DataGridViewColumn" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridViewCheckBoxColumn extends System.Windows.Forms.DataGridViewColumn" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewCheckBoxColumn" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.DataGridViewColumn</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Drawing.ToolboxBitmap(typeof(System.Windows.Forms.DataGridViewCheckBoxColumn), "DataGridViewCheckBoxColumn.bmp")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コレクションをホスト<see cref="T:System.Windows.Forms.DataGridViewCheckBoxCell" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewCheckBoxColumn>クラスは、特殊な種類の<xref:System.Windows.Forms.DataGridViewColumn>クラスの 2 つの状態を示すセルを論理的にホストするために使用します。 A<xref:System.Windows.Forms.DataGridViewCheckBoxColumn>が関連付けられている<xref:System.Windows.Forms.DataGridViewCheckBoxCell>ですべて<xref:System.Windows.Forms.DataGridViewRow>と交差することです。 各セルは、次のようなユーザー インターフェイス (UI) を提供する<xref:System.Windows.Forms.CheckBox>コントロール。  
+  
+ この列の型の既定の並べ替えモードは<xref:System.Windows.Forms.DataGridViewColumnSortMode.NotSortable>します。  
+  
+ 通常は、チェック ボックス セルの値は記憶域は、その他のデータと同様に、または一括操作を実行するものです。 処理することができる場合、ユーザーは、チェック ボックス セルをクリックして、すぐに応答する場合、<xref:System.Windows.Forms.DataGridView.CellContentClick?displayProperty=nameWithType>セルの値が更新される前に、イベントでなく、このイベントが発生します。 1 つのオプションは、予期された値を計算する、クリックの時に新しい値を必要がある場合、現在の値に基づいています。 すぐに、変更をコミットし、処理は、別の方法として、<xref:System.Windows.Forms.DataGridView.CellValueChanged?displayProperty=nameWithType>イベントに応答します。 セルがクリックされたときに、変更をコミットするには、処理、<xref:System.Windows.Forms.DataGridView.CurrentCellDirtyStateChanged?displayProperty=nameWithType>イベント。 呼び出しでは、ハンドラーを現在のセルがチェック ボックス セルの場合、<xref:System.Windows.Forms.DataGridView.CommitEdit%2A?displayProperty=nameWithType>メソッドを渡します、<xref:System.Windows.Forms.DataGridViewDataErrorContexts.Commit>値。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DataGridViewCheckBoxColumn>を従業員がオフィス外をマークします。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>クラスの概要に関するトピック。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#20](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CPP/employees.cpp#20)]
+ [!code-csharp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CS/employees.cs#20)]
+ [!code-vb[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/VB/employees.vb#20)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>派生したときに<see cref="T:System.Windows.Forms.DataGridViewCheckBoxColumn" />、派生クラスに新しいプロパティを追加、上書きすることを確認して、<see cref="M:System.Windows.Forms.DataGridViewColumn.Clone" />複製操作時に新しいプロパティをコピーします。 基本クラスの呼び出す必要もあります<see cref="M:System.Windows.Forms.DataGridViewColumn.Clone" />メソッドの基本クラスのプロパティが新しいセルにコピーされるようにします。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridViewCheckBoxColumn ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxColumn.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.DataGridViewCheckBoxColumn" />クラスが既定の状態にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 引数を指定するのにはこの既定のコンス トラクターを使用して`false`を<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.%23ctor%28System.Boolean%29>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridViewCheckBoxColumn (bool threeState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool threeState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxColumn.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="threeState" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="threeState">
+          <see langword="true" />3 つの状態を持つチェック ボックスを表示するには<see langword="false" />を 2 つの状態を持つチェック ボックスを表示します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.DataGridViewCheckBoxColumn" />し、2 つまたは 3 つの状態を持つチェック ボックスを表示するように構成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、次のプロパティを設定して、列を初期化します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.CellTemplate%2A>|新しい<xref:System.Windows.Forms.DataGridViewCheckBoxCell>でその<xref:System.Windows.Forms.DataGridViewCheckBoxCell.ThreeState%2A>プロパティに初期化されて、`threeState`パラメーターの値。|  
+|<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState%2A>|`threeState` パラメーターの値。|  
+|<xref:System.Windows.Forms.DataGridViewColumn.SortMode%2A?displayProperty=nameWithType>|<xref:System.Windows.Forms.DataGridViewColumnSortMode?displayProperty=nameWithType>|  
+|<xref:System.Windows.Forms.DataGridViewCellStyle.Alignment%2A>のプロパティ、<xref:System.Windows.Forms.DataGridViewCellStyle>によって返されるオブジェクト、<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.DefaultCellStyle%2A>プロパティです。|<xref:System.Windows.Forms.DataGridViewContentAlignment?displayProperty=nameWithType>|  
+|<xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>のプロパティ、<xref:System.Windows.Forms.DataGridViewCellStyle>によって返されるオブジェクト、<xref:System.Windows.Forms.DataGridViewColumn.DefaultCellStyle%2A>プロパティです。|<xref:System.Windows.Forms.CheckState?displayProperty=nameWithType>場合`threeState`は`true`、それ以外の`false`します。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CellTemplate">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.DataGridViewCell CellTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataGridViewCell CellTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCheckBoxColumn.CellTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewCell</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しいセルの作成に使用するテンプレートを取得または設定します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataGridViewCell" />列内のすべてのセルが後にモデル化します。 既定値は、新しい<see cref="T:System.Windows.Forms.DataGridViewCheckBoxCell" />インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンス トラクター、<xref:System.Windows.Forms.DataGridViewCheckBoxColumn>クラスは、新しく作成するには、このプロパティを初期化<xref:System.Windows.Forms.DataGridViewCheckBoxCell>です。  
+  
+> [!CAUTION]
+>  セル テンプレートのプロパティの変更はすぐに影響しません、列の既存のセルのユーザー インターフェイス (UI)。 これらの変更のみが明らかな列が再生成 (列を並べ替えることで、たとえば、またはを呼び出すことによって、<xref:System.Windows.Forms.DataGridView.InvalidateColumn%2A?displayProperty=nameWithType>メソッド)。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DataGridViewCheckBoxColumn>を従業員がオフィス外をマークします。 セル テンプレートはチェック ボックス列のすべてのセルに、同じ色を適用するために使用します。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>クラスの概要に関するトピック。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#20](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CPP/employees.cpp#20)]
+ [!code-csharp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CS/employees.cs#20)]
+ [!code-vb[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/VB/employees.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">値の型はありませんが、プロパティが設定<see cref="T:System.Windows.Forms.DataGridViewCheckBoxCell" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultCellStyle">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.DataGridViewCellStyle DefaultCellStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataGridViewCellStyle DefaultCellStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCheckBoxColumn.DefaultCellStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewCellStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列の既定のセル スタイルを取得または設定します。</summary>
+        <value>既定スタイルとして適用される <see cref="T:System.Windows.Forms.DataGridViewCellStyle" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値<xref:System.Windows.Forms.DataGridViewCellStyle>これによって返されるプロパティは、次の初期プロパティ値。  
+  
+|`DataGridViewCellStyle` プロパティ|既定値|  
+|--------------------------------------|-------------------|  
+|<xref:System.Windows.Forms.DataGridViewCellStyle.Alignment%2A>|<xref:System.Windows.Forms.DataGridViewContentAlignment?displayProperty=nameWithType>|  
+|<xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>|<xref:System.Windows.Forms.CheckState?displayProperty=nameWithType>場合、初期<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState%2A>プロパティの値が`true`、それ以外の`false`します。|  
+  
+ これらの値のオーバーライドで指定された値、<xref:System.Windows.Forms.DataGridView.DefaultCellStyle%2A>のプロパティ、<xref:System.Windows.Forms.DataGridView>を制御するが、その他のセル スタイル プロパティによってオーバーライドされる可能性があります。 詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールのセル スタイル](~/docs/framework/winforms/controls/cell-styles-in-the-windows-forms-datagridview-control.md)です。  
+  
+ 場合、<xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>によって返されるオブジェクトのプロパティ、<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.DefaultCellStyle%2A>プロパティの値を持つ`false`、変更、<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState%2A>プロパティの値を`true`が自動的に設定<xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>に<xref:System.Windows.Forms.CheckState.Indeterminate>です。 場合<xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>の値を持つ<xref:System.Windows.Forms.CheckState.Indeterminate>、変更、<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState%2A>プロパティの値を`false`が自動的に設定<xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>に`false`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの使用方法を示します。  
+  
+ [!code-csharp[System.Windows.Forms.GridViewContentAlignment#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.GridViewContentAlignment/CS/changecolumnalignment.cs#1)]
+ [!code-vb[System.Windows.Forms.GridViewContentAlignment#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.GridViewContentAlignment/VB/changecolumnalignment.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FalseValue">
+      <MemberSignature Language="C#" Value="public object FalseValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object FalseValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCheckBoxColumn.FalseValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.StringConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セルの値に対応する基になる値の設定を取得または<see langword="false" />、チェック ボックスとして表示されます。</summary>
+        <value><see cref="T:System.Object" />として扱うはこの列のセルの値を表す、<see langword="false" />値。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.FalseValue%2A>、 <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.TrueValue%2A>、および<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.IndeterminateValue%2A>プロパティを基になるデータ ソースで発生すると、これらの状態に関連する値を決定します。  
+  
+ 取得するか、このプロパティの設定を取得または設定、<xref:System.Windows.Forms.DataGridViewCheckBoxCell.FalseValue%2A>によって返されるセルのオブジェクトのプロパティ、<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.CellTemplate%2A>プロパティです。 またセットでこのプロパティを設定、<xref:System.Windows.Forms.DataGridViewCheckBoxCell.FalseValue%2A>列と更新のすべてのセルのプロパティ列を表示します。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、 <xref:System.Windows.Forms.DataGridViewCheckBoxColumn> office 光源の状態を追跡します。 <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.FalseValue%2A>プロパティに関連付けます「消える」 `false`、<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.TrueValue%2A>プロパティは「呼び出すこと」を関連付けます`true`、および<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.IndeterminateValue%2A>プロパティが「不明」不確定に関連付けられます。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox#0](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox/cpp/trivaluevirtualcheckbox.cpp#0)]
+ [!code-csharp[System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox#0](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox/CS/trivaluevirtualcheckbox.cs#0)]
+ [!code-vb[System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox#0](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox/VB/trivaluevirtualcheckbox.vb#0)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewCheckBoxColumn.CellTemplate" /> プロパティの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FlatStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.FlatStyle FlatStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.FlatStyle FlatStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCheckBoxColumn.FlatStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.FlatStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはチェック ボックス セルのフラット スタイルの外観を設定します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.FlatStyle" />列内のセルの外観を示す値。 既定値は、<see cref="F:System.Windows.Forms.FlatStyle.Standard" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual スタイルを使用する チェック ボックス セルを表示するには、このプロパティを設定<xref:System.Windows.Forms.FlatStyle.System>を呼び出すと、<xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType>する前にメソッド<xref:System.Windows.Forms.Application.Run%2A?displayProperty=nameWithType>です。  
+  
+ 取得するか、このプロパティの設定を取得または設定、<xref:System.Windows.Forms.DataGridViewCheckBoxCell.FlatStyle%2A>によって返されるセルのオブジェクトのプロパティ、<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.CellTemplate%2A>プロパティです。 またセットでこのプロパティを設定、<xref:System.Windows.Forms.DataGridViewCheckBoxCell.FlatStyle%2A>列と更新のすべてのセルのプロパティ列を表示します。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DataGridViewCheckBoxColumn>を従業員がオフィス外をマークします。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>クラスの概要に関するトピック。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#20](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CPP/employees.cpp#20)]
+ [!code-csharp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CS/employees.cs#20)]
+ [!code-vb[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/VB/employees.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewCheckBoxColumn.CellTemplate" /> プロパティの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IndeterminateValue">
+      <MemberSignature Language="C#" Value="public object IndeterminateValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object IndeterminateValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCheckBoxColumn.IndeterminateValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.StringConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、不確定に対応する基になる値を設定または<see langword="null" />セルの値で、無効になっているチェック ボックスとして表示されます。</summary>
+        <value><see cref="T:System.Object" />不確定な値として扱われますこの列のセルの値を表すです。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.FalseValue%2A>、 <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.TrueValue%2A>、および<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.IndeterminateValue%2A>プロパティを基になるデータ ソースで発生すると、これらの状態に関連する値を決定します。  
+  
+ 取得するか、このプロパティの設定を取得または設定、<xref:System.Windows.Forms.DataGridViewCheckBoxCell.IndeterminateValue%2A>によって返されるセルのオブジェクトのプロパティ、<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.CellTemplate%2A>プロパティです。 またセットでこのプロパティを設定、<xref:System.Windows.Forms.DataGridViewCheckBoxCell.IndeterminateValue%2A>列と更新のすべてのセルのプロパティ列を表示します。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、 <xref:System.Windows.Forms.DataGridViewCheckBoxColumn> office 光源の状態を追跡します。 <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.FalseValue%2A>プロパティに関連付けます「消える」 `false`、<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.TrueValue%2A>プロパティは「呼び出すこと」を関連付けます`true`、および<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.IndeterminateValue%2A>プロパティが「不明」不確定に関連付けられます。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox#0](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox/cpp/trivaluevirtualcheckbox.cpp#0)]
+ [!code-csharp[System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox#0](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox/CS/trivaluevirtualcheckbox.cs#0)]
+ [!code-vb[System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox#0](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox/VB/trivaluevirtualcheckbox.vb#0)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewCheckBoxColumn.CellTemplate" /> プロパティの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ThreeState">
+      <MemberSignature Language="C#" Value="public bool ThreeState { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ThreeState" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはホスト型のチェック ボックス セルが 2 ではなく 3 つのチェック状態を許可するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合、ホストされている<see cref="T:System.Windows.Forms.DataGridViewCheckBoxCell" />オブジェクトが、それ以外の 3 番目、不確定な状態になり得る<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 不確定な状態役に立ちます、たとえば、チェック ボックスで、既定値を設定したくない場合。  
+  
+ 取得するか、このプロパティの設定を取得または設定、<xref:System.Windows.Forms.DataGridViewCheckBoxCell.ThreeState%2A>によって返されるセルのオブジェクトのプロパティ、<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.CellTemplate%2A>プロパティです。 またセットでこのプロパティを設定、<xref:System.Windows.Forms.DataGridViewCheckBoxCell.ThreeState%2A>列と更新のすべてのセルのプロパティ列を表示します。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+ 場合、<xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>によって返されるオブジェクトのプロパティ、<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.DefaultCellStyle%2A>プロパティの値を持つ`false`、変更、<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState%2A>プロパティの値を`true`が自動的に設定<xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>に<xref:System.Windows.Forms.CheckState.Indeterminate>です。 場合<xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>の値を持つ<xref:System.Windows.Forms.CheckState.Indeterminate>、変更、<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState%2A>プロパティの値を`false`が自動的に設定<xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>に`false`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、 <xref:System.Windows.Forms.DataGridViewCheckBoxColumn> office 光源の状態を追跡します。 <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.FalseValue%2A>プロパティに関連付けます「消える」 `false`、<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.TrueValue%2A>プロパティは「呼び出すこと」を関連付けます`true`、および<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.IndeterminateValue%2A>プロパティが「不明」不確定に関連付けられます。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox#0](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox/cpp/trivaluevirtualcheckbox.cpp#0)]
+ [!code-csharp[System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox#0](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox/CS/trivaluevirtualcheckbox.cs#0)]
+ [!code-vb[System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox#0](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox/VB/trivaluevirtualcheckbox.vb#0)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewCheckBoxColumn.CellTemplate" /> プロパティの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxColumn.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>列を説明する文字列を取得します。</summary>
+        <returns>A<see cref="T:System.String" />列を説明します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrueValue">
+      <MemberSignature Language="C#" Value="public object TrueValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object TrueValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCheckBoxColumn.TrueValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.StringConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セルの値に対応する基になる値の設定を取得または<see langword="true" />、チェック ボックスとして表示されます。</summary>
+        <value><see cref="T:System.Object" />として扱いますが、セルの値を表す、<see langword="true" />値。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.FalseValue%2A>、 <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.TrueValue%2A>、および<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.IndeterminateValue%2A>プロパティを基になるデータ ソースで発生すると、これらの状態に関連する値を決定します。  
+  
+ 取得するか、このプロパティの設定を取得または設定、<xref:System.Windows.Forms.DataGridViewCheckBoxCell.TrueValue%2A>によって返されるセルのオブジェクトのプロパティ、<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.CellTemplate%2A>プロパティです。 またセットでこのプロパティを設定、<xref:System.Windows.Forms.DataGridViewCheckBoxCell.TrueValue%2A>列と更新のすべてのセルのプロパティ列を表示します。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、 <xref:System.Windows.Forms.DataGridViewCheckBoxColumn> office 光源の状態を追跡します。 <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.FalseValue%2A>プロパティに関連付けます「消える」 `false`、<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.TrueValue%2A>プロパティは「呼び出すこと」を関連付けます`true`、および<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.IndeterminateValue%2A>プロパティが「不明」不確定に関連付けられます。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox#0](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox/cpp/trivaluevirtualcheckbox.cpp#0)]
+ [!code-csharp[System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox#0](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox/CS/trivaluevirtualcheckbox.cs#0)]
+ [!code-vb[System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox#0](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox/VB/trivaluevirtualcheckbox.vb#0)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewCheckBoxColumn.CellTemplate" /> プロパティの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

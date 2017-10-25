@@ -1,0 +1,241 @@
+<Type Name="HitTestResult" FullName="System.Windows.Forms.DataVisualization.Charting.HitTestResult">
+  <TypeSignature Language="C#" Value="public class HitTestResult" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HitTestResult extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataVisualization.Charting.HitTestResult" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ヒット テストの結果を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataVisualization.Charting.HitTestResult>クラスがヒット テストの結果を表し、から、返されたオブジェクトとして公開される、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.HitTest%2A>メソッドの呼び出しです。  
+  
+ ヒット テストでは、グラフ要素がある点に注意を決定するグラフの特定の時点を確認します。 グラフ要素が検出された場合、<xref:System.Windows.Forms.DataVisualization.Charting.HitTestResult>そのグラフ要素に関する情報を取得するクラスを使用します。  
+  
+ グラフ要素が見つかった場合、<xref:System.Windows.Forms.DataVisualization.Charting.HitTestResult.Object%2A>グラフ要素に参照プロパティが返されます。 これが唯一の例外<xref:System.Windows.Forms.DataVisualization.Charting.DataPoint>オブジェクト、その場合、このプロパティの戻り値は`null`します。  
+  
+ データ ポイントがある場合を使用できます、<xref:System.Windows.Forms.DataVisualization.Charting.HitTestResult.PointIndex%2A>そのデータ ポイントのインデックスを取得するプロパティです。 つまり、内の位置の 0 から始まるインデックス、<xref:System.Windows.Forms.DataVisualization.Charting.DataPointCollection>です。 使用して、<xref:System.Windows.Forms.DataVisualization.Charting.HitTestResult.Series%2A>プロパティ、関連付けられている取得を<xref:System.Windows.Forms.DataVisualization.Charting.Series>データ ポイントのオブジェクト。  
+  
+ <xref:System.Windows.Forms.DataVisualization.Charting.HitTestResult.ChartArea%2A>と<xref:System.Windows.Forms.DataVisualization.Charting.HitTestResult.Axis%2A>プロパティを使用して、関連するグラフ領域とグラフ要素の軸を取得、存在する場合: ヒット テストによって返されます。 これらのプロパティがあります注`null`場合は、返されたグラフ要素に関連付けられたグラフ エリアまたは軸があるありません。  
+  
+ 使用して、<xref:System.Windows.Forms.DataVisualization.Charting.ChartElementType>プロパティをヒット テストによって返されるグラフ要素の種類を決定します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HitTestResult ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.HitTestResult.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DataVisualization.Charting.HitTestResult" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Axis">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.Axis Axis { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataVisualization.Charting.Axis Axis" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.HitTestResult.Axis" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.Axis</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Forms.DataVisualization.Charting.Axis" />ヒット テストによって返されるグラフ要素に関連付けることができるオブジェクト。 関連付けられているが存在する<see cref="T:System.Windows.Forms.DataVisualization.Charting.Axis" />オブジェクト グラフ要素が指定した位置で検出されたかどうかに依存し、グラフ要素の型が返されました。</summary>
+        <value><see cref="T:System.Windows.Forms.DataVisualization.Charting.Axis" />オブジェクト、それ以外の場合<see langword="null" />です。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ヒット テストによって返されるグラフのオブジェクトが軸に関連付けられているオブジェクトの場合:、スクロール バーの要素、目盛り、グリッド線またはストリップ ラインなど —、<xref:System.Windows.Forms.DataVisualization.Charting.HitTestResult.Axis%2A>プロパティは参照、<xref:System.Windows.Forms.DataVisualization.Charting.Axis>返されたグラフ オブジェクトが関連付けられているオブジェクト。 それ以外の場合にこのプロパティが表示されます`null`です。  
+  
+ なお、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.HitTest%2A>後者グラフ要素の可能性がありますまたは指定した位置にできない可能性があります、メソッドを明示的に呼び出すことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChartArea">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.ChartArea ChartArea { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataVisualization.Charting.ChartArea ChartArea" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.HitTestResult.ChartArea" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.ChartArea</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Forms.DataVisualization.Charting.ChartArea" />ヒット テストによって返されるグラフ要素に関連付けることができるオブジェクト。 存在、<see cref="T:System.Windows.Forms.DataVisualization.Charting.ChartArea" />オブジェクト グラフ要素が指定した位置で検出されたかどうかに依存し、グラフ要素の型が返されました。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataVisualization.Charting.ChartArea" />オブジェクト、それ以外の場合<see langword="null" />です。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ グラフのオブジェクトがヒット テストがによって返される場合、<xref:System.Windows.Forms.DataVisualization.Charting.HitTestResult.ChartArea%2A>プロパティは参照、<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea>返されたグラフ要素に関連付けられているオブジェクト。  
+  
+ ヒット テストがグラフ要素が返されない場合、このプロパティの値がなります`null`です。  
+  
+ **注**、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.HitTest%2A>後者グラフ要素の可能性がありますまたは指定した位置にできない可能性があります、メソッドを明示的に呼び出すことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChartElementType">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.ChartElementType ChartElementType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataVisualization.Charting.ChartElementType ChartElementType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.HitTestResult.ChartElementType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.ChartElementType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはヒット テストから返された場合に、グラフ要素の型を設定します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataVisualization.Charting.ChartElementType" />ヒット テストによって返されるグラフ要素の型を示す列挙値。 既定値は <see cref="F:System.Windows.Forms.DataVisualization.Charting.ChartElementType.Nothing" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ヒット テストから返された場合は、グラフ要素の種類を判断するこのプロパティを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Object">
+      <MemberSignature Language="C#" Value="public object Object { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Object" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.HitTestResult.Object" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、ヒット テストから返された場合に、オブジェクトを設定します。</summary>
+        <value>型のオブジェクト<see cref="T:System.Object" />それ以外の場合、<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ グラフ要素がこのプロパティは、そのグラフ要素を参照するヒット テストがチェックされている位置にある場合は、それ以外の場合このプロパティの値になります`null`です。  
+  
+> [!NOTE]
+>  かどうかは、データ ポイントがヒット テストによって返される、このプロパティを返しますが、`null`です。 データ ポイントに関する情報を取得するを使用して、<xref:System.Windows.Forms.DataVisualization.Charting.HitTestResult.PointIndex%2A>と<xref:System.Windows.Forms.DataVisualization.Charting.HitTestResult.Series%2A>プロパティ代わりにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PointIndex">
+      <MemberSignature Language="C#" Value="public int PointIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PointIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.HitTestResult.PointIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、ヒット テストから返された場合に、データ ポイントのインデックスを設定します。</summary>
+        <value><see langword="integer" />ヒット テストによって返されるデータ ポイントのインデックスを表す値です。 既定値は負の値 1 (-1)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ ポイントがヒット テストによってチェックされている場所にある場合、<xref:System.Windows.Forms.DataVisualization.Charting.HitTestResult.PointIndex%2A>プロパティは、そのデータ ポイントの 0 から始まるインデックスを返しますが、それ以外の場合、負の値が返されます 1 (-1)。  
+  
+ すべてのデータ ポイントが格納されている、 <xref:System.Windows.Forms.DataVisualization.Charting.DataPointCollection>、として公開されている、<xref:System.Windows.Forms.DataVisualization.Charting.Series.Points%2A>の collection プロパティ、<xref:System.Windows.Forms.DataVisualization.Charting.Series>オブジェクト以外のインデックスの場合は、<xref:System.Windows.Forms.DataVisualization.Charting.DataPointCollection>は 0 から始まる。  
+  
+ 使用して、<xref:System.Windows.Forms.DataVisualization.Charting.HitTestResult.Series%2A>プロパティをデータ ポイントが所属する系列を決定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Series">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.Series Series { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataVisualization.Charting.Series Series" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.HitTestResult.Series" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.Series</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、ヒット テストから返された場合に、データ ポイントの関連する系列を設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.DataVisualization.Charting.Series" />ヒット テストによって返されるデータ ポイントに属していること。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ ポイントがヒット テストでチェックする位置にある場合は、このプロパティは参照、<xref:System.Windows.Forms.DataVisualization.Charting.Series>データ ポイントに属しているオブジェクト。 ヒット テストがデータ ポイントが返されない場合、このプロパティの値がなります`null`です。  
+  
+ 返されるデータ ポイントのインデックスを確認するには<xref:System.Windows.Forms.DataVisualization.Charting.HitTestResult.PointIndex%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SubObject">
+      <MemberSignature Language="C#" Value="public object SubObject { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SubObject" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.HitTestResult.SubObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ヒット テストから返された場合は、下位のオブジェクトを取得します。</summary>
+        <value>型のサブオブジェクト<see cref="T:System.Object" />それ以外の場合、<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 下位のオブジェクトの例は、<xref:System.Windows.Forms.DataVisualization.Charting.Axis>内に表示されるオブジェクト、<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,95 @@
+<Type Name="PreProcessInputEventArgs" FullName="System.Windows.Input.PreProcessInputEventArgs">
+  <TypeSignature Language="C#" Value="public sealed class PreProcessInputEventArgs : System.Windows.Input.ProcessInputEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PreProcessInputEventArgs extends System.Windows.Input.ProcessInputEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.PreProcessInputEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Input.ProcessInputEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>前処理入力イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ さらに処理されてからの入力を停止前処理の入力をキャンセルします。  リッスン、<xref:System.Windows.Input.InputManager.PreNotifyInput>別のハンドラーが処理する前の入力をキャンセルするかどうかを決定します。  
+  
+ 入力のステージング領域への入力を処理する[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]イベント。  
+  
+ すべて<xref:System.Windows.Input.InputManager.PreProcessInput>入力ハンドラーのいずれかが取り消された場合でも、イベント ハンドラーが呼び出されます。  ハンドラーさらに、ツリーをキャンセル、入力を確認するには、リッスン、<xref:System.Windows.Input.InputManager.PreNotifyInput>イベント。  
+  
+ <xref:System.Windows.Input.PreProcessInputEventArgs>と共に使用される、<xref:System.Windows.Input.InputManager.PreProcessInput>イベント。  
+  
+ 入力が処理される[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]フォロー段階で。  
+  
+1.  前処理段階。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PreProcessInput>イベント。  
+  
+2.  ステージを事前に通知します。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PreNotifyInput>イベント。  
+  
+3.  [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]入力イベントまたはイベントが発生します。  
+  
+4.  後の段階を通知します。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PostNotifyInput>イベント。  
+  
+5.  処理後の段階です。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PostProcessInput>イベント。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Cancel">
+      <MemberSignature Language="C#" Value="public void Cancel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Cancel() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.PreProcessInputEventArgs.Cancel" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>入力イベントの処理をキャンセルします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ さらに処理されてからの入力を停止前処理の入力をキャンセルします。  リッスン、<xref:System.Windows.Input.InputManager.PreNotifyInput>別のハンドラーが処理する前の入力をキャンセルするかどうかを決定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Canceled">
+      <MemberSignature Language="C#" Value="public bool Canceled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Canceled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.PreProcessInputEventArgs.Canceled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>入力イベントの処理がキャンセルされたかどうかを判断します。</summary>
+        <value>
+          <see langword="true" />場合は、処理が取り消されました。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ さらに処理されてからの入力を停止前処理の入力をキャンセルします。  リッスン、<xref:System.Windows.Input.InputManager.PreNotifyInput>別のハンドラーが処理する前の入力をキャンセルするかどうかを決定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

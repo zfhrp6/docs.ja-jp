@@ -1,0 +1,318 @@
+<Type Name="SettingsBase" FullName="System.Configuration.SettingsBase">
+  <TypeSignature Language="C#" Value="public abstract class SettingsBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit SettingsBase extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.SettingsBase" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ユーザーのプロパティ設定をサポートするために使用される基本クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET Web フォームと Windows フォームは、ユーザー設定をサポートするのに構成設定と同じインフラストラクチャを使用します。 ASP.NET 内のユーザー設定は、ASP.NET プロファイルと呼ばれる多くの場合。 設定、インフラストラクチャは、<xref:System.Configuration.SettingsBase>基底クラス、<xref:System.Configuration.SettingsProperty>クラス、<xref:System.Configuration.SettingsPropertyValue>クラス、<xref:System.Configuration.SettingsContext>クラス、<xref:System.Configuration.SettingsProvider>クラス、および<xref:System.Configuration.SettingAttribute>  
+  
+ クラスの新しいインスタンスを初期化します。  
+  
+ 基本クラスの設定は、共通のインフラストラクチャを定義すると、設定のプロパティを永続化のみを提供します。 これらの基本クラスの派生方法と、ランタイム環境、に応じて API を設定はさまざまなレベルの機能を提供できます。 たとえば、ASP.NET プロファイルは、ユーザーごとの設定を保存および読み込み要求セマンティクスに従ってを提供するのに基本クラスの設定を使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected SettingsBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.SettingsBase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Configuration.SettingsBase" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Context">
+      <MemberSignature Language="C#" Value="public virtual System.Configuration.SettingsContext Context { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.SettingsContext Context" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SettingsBase.Context" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.SettingsContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられた設定のコンテキストを取得します。</summary>
+        <value>A<see cref="T:System.Configuration.SettingsContext" />設定インスタンスに関連付けられています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Configuration.SettingsContext>設定を永続化プロバイダーが使用できるコンテキスト情報を提供するアプリケーションで使用します。  
+  
+ 各設定クラスから派生した<xref:System.Configuration.SettingsBase>が関連付けられているコンテキスト。 コンテキストは、identity 追加情報については、設定を設定プロバイダーに渡されます。 そのため、コンテキストは設定プロバイダーが関連付けられている設定値を保持する方法を決定するためのヒントとして機能します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public void Initialize (System.Configuration.SettingsContext context, System.Configuration.SettingsPropertyCollection properties, System.Configuration.SettingsProviderCollection providers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Initialize(class System.Configuration.SettingsContext context, class System.Configuration.SettingsPropertyCollection properties, class System.Configuration.SettingsProviderCollection providers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.SettingsBase.Initialize(System.Configuration.SettingsContext,System.Configuration.SettingsPropertyCollection,System.Configuration.SettingsProviderCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Configuration.SettingsContext" />
+        <Parameter Name="properties" Type="System.Configuration.SettingsPropertyCollection" />
+        <Parameter Name="providers" Type="System.Configuration.SettingsProviderCollection" />
+      </Parameters>
+      <Docs>
+        <param name="context">設定のプロパティに関連する設定コンテキスト。</param>
+        <param name="properties">設定のプロパティからアクセス可能な<see cref="T:System.Configuration.SettingsBase" />インスタンス。</param>
+        <param name="providers">読み込み、プロパティの値を保存するときに使用する初期化済みのプロバイダー。</param>
+        <summary>によって使用される内部プロパティを初期化<see cref="T:System.Configuration.SettingsBase" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SettingsBase.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>(スレッド セーフな) オブジェクトへのアクセスが同期されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合へのアクセス、 <see cref="T:System.Configuration.SettingsBase" /> 、それ以外の同期された<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public virtual object this[string propertyName] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SettingsBase.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">A<see cref="T:System.String" />にアクセスするプロパティの名前を含むです。</param>
+        <summary>取得または設定の指定したプロパティの値を設定します。</summary>
+        <value>場合、設定の名前付きプロパティの値が見つかりました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.SettingsBase.Item%2A>プロパティ、インデクサーとも呼ばれますが設定クラスから派生で日常的に使用<xref:System.Configuration.SettingsBase>です。 <xref:System.Configuration.SettingsBase.Item%2A>プロパティ、クラスのパブリック プロパティの対応する設定のプロパティをバインドします。  
+  
+ プロパティをアクセスすると、最初に、<xref:System.Configuration.SettingsBase>インスタンスは、要求されたプロパティと同一のプロバイダーを共有する他のすべてのプロパティを検出します。 <xref:System.Configuration.SettingsBase>インスタンス次のセットを渡して、プロバイダーによって呼び出されます<xref:System.Configuration.SettingsProperty>プロバイダーを取得するデータを表すオブジェクト。  
+  
+ インデクサーが取得され、場合に、スレッド セーフな方法でプロパティのデータを設定<xref:System.Configuration.SettingsBase.IsSynchronized%2A>は`true`します。 A<xref:System.Configuration.SettingsBase>既定のインスタンスはスレッド セーフではありません。 ただし、呼び出す<xref:System.Configuration.SettingsBase.Synchronized%2A>を渡して、<xref:System.Configuration.SettingsBase>するインスタンス、<xref:System.Configuration.SettingsBase>インデクサーが、スレッド セーフな方法で動作します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.SettingsPropertyNotFoundException">現在のオブジェクトに関連付けられたプロパティがないか、指定したプロパティが見つかりませんでした。</exception>
+        <exception cref="T:System.Configuration.SettingsPropertyIsReadOnlyException">読み取り専用プロパティを設定しようとしています。</exception>
+        <exception cref="T:System.Configuration.SettingsPropertyWrongTypeException">指定された値は、設定プロパティと互換性のない型のセットの操作中にです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="public virtual System.Configuration.SettingsPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.SettingsPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SettingsBase.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.SettingsPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定のプロパティのコレクションを取得します。</summary>
+        <value>A<see cref="T:System.Configuration.SettingsPropertyCollection" />すべてを含むコレクション、<see cref="T:System.Configuration.SettingsProperty" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `get`のアクセサー、<xref:System.Configuration.SettingsBase.Properties%2A>プロパティのコレクションを返します<xref:System.Configuration.SettingsProperty>によって管理されるプロパティに関連付けられたインスタンス、<xref:System.Configuration.SettingsBase>インスタンス。  
+  
+ <xref:System.Configuration.SettingsBase>クラスはその名前、プロパティの型、設定プロバイダー、既定値、および読み取り専用の状態およびシリアル化の基本設定など、設定の特定の特性をネイティブに認識します。 これらの特性はプロパティとしてミラー化されて、<xref:System.Configuration.SettingsProperty>クラスです。 その他のすべての属性、<xref:System.Configuration.SettingsProperty>クラスが渡されるだけと、関連付けられている設定プロバイダーに、<xref:System.Configuration.SettingsAttributeDictionary>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyValues">
+      <MemberSignature Language="C#" Value="public virtual System.Configuration.SettingsPropertyValueCollection PropertyValues { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.SettingsPropertyValueCollection PropertyValues" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SettingsBase.PropertyValues" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.SettingsPropertyValueCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティの値の設定のコレクションを取得します。</summary>
+        <value>コレクション<see cref="T:System.Configuration.SettingsPropertyValue" />によって管理されるプロパティの実際のデータ値を表すオブジェクト、<see cref="T:System.Configuration.SettingsBase" />インスタンス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Providers">
+      <MemberSignature Language="C#" Value="public virtual System.Configuration.SettingsProviderCollection Providers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.SettingsProviderCollection Providers" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SettingsBase.Providers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.SettingsProviderCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定プロバイダーのコレクションを取得します。</summary>
+        <value><see cref="T:System.Configuration.SettingsProviderCollection" /> オブジェクトを含んでいる <see cref="T:System.Configuration.SettingsProvider" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public virtual void Save ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Save() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.SettingsBase.Save" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>設定のプロパティの現在の値を格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.SettingsBase>インスタンス グループの各プロパティに関連付けられているプロバイダーに基づくプロパティです。 各プロバイダーは、シーケンス、し呼び出され、プロバイダーを保存する必要がありますプロパティのセットが渡されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Synchronized">
+      <MemberSignature Language="C#" Value="public static System.Configuration.SettingsBase Synchronized (System.Configuration.SettingsBase settingsBase);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.SettingsBase Synchronized(class System.Configuration.SettingsBase settingsBase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.SettingsBase.Synchronized(System.Configuration.SettingsBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.SettingsBase</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="settingsBase" Type="System.Configuration.SettingsBase" />
+      </Parameters>
+      <Docs>
+        <param name="settingsBase">ユーザーのプロパティ設定をサポートするために使用されるクラス。</param>
+        <summary>提供、<see cref="T:System.Configuration.SettingsBase" />クラスが同期されている (スレッド セーフで)。</summary>
+        <returns>A<see cref="T:System.Configuration.SettingsBase" />が同期されているクラスです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インデクサーでは取得し、場合、スレッド セーフな方法でプロパティのデータを設定、<xref:System.Configuration.SettingsBase.IsSynchronized%2A>プロパティに設定されている`true`です。  A<xref:System.Configuration.SettingsBase>既定のインスタンスはスレッド セーフではありません。  ただし、呼び出すことができます<xref:System.Configuration.SettingsBase.Synchronized%2A>を渡して、<xref:System.Configuration.SettingsBase>するインスタンス、<xref:System.Configuration.SettingsBase>インデクサーが、スレッド セーフな方法で動作します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

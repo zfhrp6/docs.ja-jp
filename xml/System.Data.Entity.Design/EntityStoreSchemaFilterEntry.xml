@@ -1,0 +1,182 @@
+<Type Name="EntityStoreSchemaFilterEntry" FullName="System.Data.Entity.Design.EntityStoreSchemaFilterEntry">
+  <TypeSignature Language="C#" Value="public class EntityStoreSchemaFilterEntry" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EntityStoreSchemaFilterEntry extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Entity.Design.EntityStoreSchemaFilterEntry" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>1 つのフィルター エントリを表します。 フィルターは、生成中に特定のデータベース オブジェクトを許可または除外するために使用されます。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EntityStoreSchemaFilterEntry (string catalog, string schema, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string catalog, string schema, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.EntityStoreSchemaFilterEntry.#ctor(System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="catalog" Type="System.String" />
+        <Parameter Name="schema" Type="System.String" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="catalog">適切なカタログを選択するために使用するパターン。</param>
+        <param name="schema">適切なスキーマを選択するために使用するパターン。スキーマで制限しない場合は null が使用されます。</param>
+        <param name="name">適切な名前を選択するために使用するパターン。名前で制限しない場合は null が使用されます。</param>
+        <summary>指定したカタログ、スキーマ、および名前フィルターを使用して、<see cref="T:System.Data.Entity.Design.EntityStoreSchemaFilterEntry" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EntityStoreSchemaFilterEntry (string catalog, string schema, string name, System.Data.Entity.Design.EntityStoreSchemaFilterObjectTypes types, System.Data.Entity.Design.EntityStoreSchemaFilterEffect effect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string catalog, string schema, string name, valuetype System.Data.Entity.Design.EntityStoreSchemaFilterObjectTypes types, valuetype System.Data.Entity.Design.EntityStoreSchemaFilterEffect effect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.EntityStoreSchemaFilterEntry.#ctor(System.String,System.String,System.String,System.Data.Entity.Design.EntityStoreSchemaFilterObjectTypes,System.Data.Entity.Design.EntityStoreSchemaFilterEffect)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="catalog" Type="System.String" />
+        <Parameter Name="schema" Type="System.String" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="types" Type="System.Data.Entity.Design.EntityStoreSchemaFilterObjectTypes" />
+        <Parameter Name="effect" Type="System.Data.Entity.Design.EntityStoreSchemaFilterEffect" />
+      </Parameters>
+      <Docs>
+        <param name="catalog">適切なカタログを選択するために使用するパターン。カタログで制限しない場合は null が使用されます。</param>
+        <param name="schema">適切なスキーマを選択するために使用するパターン。スキーマで制限しない場合は null が使用されます。</param>
+        <param name="name">適切な名前を選択するために使用するパターン。名前で制限しない場合は null が使用されます。</param>
+        <param name="types">このフィルターの適用先となるオブジェクトの種類。</param>
+        <param name="effect">指定したフィルターに一致するエントリを許可するか除外するかを示す <see cref="T:System.Data.Entity.Design.EntityStoreSchemaFilterEffect" /> 値。</param>
+        <summary>指定したカタログ、スキーマ、名前、型フィルター、およびフィルター効果設定を使用して、<see cref="T:System.Data.Entity.Design.EntityStoreSchemaFilterEntry" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Catalog">
+      <MemberSignature Language="C#" Value="public string Catalog { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Catalog" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Entity.Design.EntityStoreSchemaFilterEntry.Catalog" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>適切なカタログを選択するために使用するパターンを取得します。</summary>
+        <value>データベース名が Catalog.Schema.Name として書式設定、データベース名のカタログ部分です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Effect">
+      <MemberSignature Language="C#" Value="public System.Data.Entity.Design.EntityStoreSchemaFilterEffect Effect { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.Entity.Design.EntityStoreSchemaFilterEffect Effect" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Entity.Design.EntityStoreSchemaFilterEntry.Effect" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.Entity.Design.EntityStoreSchemaFilterEffect</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このフィルターが結果に及ぼす影響を取得します。</summary>
+        <value><see cref="T:System.Data.Entity.Design.EntityStoreSchemaFilterEffect" />を許可するか、指定したフィルターに一致するエントリを除外するかどうかを示す値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Entity.Design.EntityStoreSchemaFilterEntry.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>適切な名前を選択するために使用するパターンを取得します。</summary>
+        <value>データベース名が Catalog.Schema.Name として書式設定、データベース名の名前部分です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Schema">
+      <MemberSignature Language="C#" Value="public string Schema { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Schema" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Entity.Design.EntityStoreSchemaFilterEntry.Schema" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>適切なスキーマを選択するために使用するパターンを取得します。</summary>
+        <value>データベース名が Catalog.Schema.Name として書式設定、データベース名のスキーマの部分です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Types">
+      <MemberSignature Language="C#" Value="public System.Data.Entity.Design.EntityStoreSchemaFilterObjectTypes Types { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.Entity.Design.EntityStoreSchemaFilterObjectTypes Types" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Entity.Design.EntityStoreSchemaFilterEntry.Types" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.Entity.Design.EntityStoreSchemaFilterObjectTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このフィルターの適用先となるオブジェクトの種類を取得します。</summary>
+        <value>フィルターの適用先となるオブジェクトの種類を示す <see cref="T:System.Data.Entity.Design.EntityStoreSchemaFilterObjectTypes" /> 値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

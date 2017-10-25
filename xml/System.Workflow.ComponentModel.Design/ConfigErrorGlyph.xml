@@ -1,0 +1,170 @@
+<Type Name="ConfigErrorGlyph" FullName="System.Workflow.ComponentModel.Design.ConfigErrorGlyph">
+  <TypeSignature Language="C#" Value="public class ConfigErrorGlyph : System.Workflow.ComponentModel.Design.DesignerGlyph" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ConfigErrorGlyph extends System.Workflow.ComponentModel.Design.DesignerGlyph" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Design.ConfigErrorGlyph" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.ComponentModel.Design.DesignerGlyph</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>デザイン時にユーザーが必要なデザイナー アクションを実行しなかったときに <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" /> が表示するグリフを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ アクティビティ デザイナーは <xref:System.Workflow.ComponentModel.Design.ConfigErrorGlyph> を使用して、デザイナー画面上のスマート タグに関連付けられたアクションを表示します。 たとえば、アクティビティがユーザーによるプロパティの設定を必要とする場合、アクティビティ デザイナーは <xref:System.Workflow.ComponentModel.Design.ConfigErrorGlyph> を表示することによって、プロパティを設定する必要があることをユーザーに通知します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConfigErrorGlyph ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ConfigErrorGlyph.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.ConfigErrorGlyph" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanBeActivated">
+      <MemberSignature Language="C#" Value="public override bool CanBeActivated { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanBeActivated" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ConfigErrorGlyph.CanBeActivated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.ConfigErrorGlyph" /> が、自身が関連付けられている <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" /> にフォーカスを獲得できるかどうかを示す値を取得します。</summary>
+        <value>
+          デザイナーのグリフをアクティブにできる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBounds">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Rectangle GetBounds (System.Workflow.ComponentModel.Design.ActivityDesigner designer, bool activated);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.Drawing.Rectangle GetBounds(class System.Workflow.ComponentModel.Design.ActivityDesigner designer, bool activated) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ConfigErrorGlyph.GetBounds(System.Workflow.ComponentModel.Design.ActivityDesigner,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="designer" Type="System.Workflow.ComponentModel.Design.ActivityDesigner" />
+        <Parameter Name="activated" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="designer">グリフを関連付ける <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" />。</param>
+        <param name="activated">
+          グリフをアクティビティ デザイナー画面に表示するかどうかを指定する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>指定した <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" /> のグリフの境界を返します。</summary>
+        <returns>グリフの境界を表す <see cref="T:System.Drawing.Rectangle" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="designer" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnActivate">
+      <MemberSignature Language="C#" Value="protected override void OnActivate (System.Workflow.ComponentModel.Design.ActivityDesigner designer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnActivate(class System.Workflow.ComponentModel.Design.ActivityDesigner designer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ConfigErrorGlyph.OnActivate(System.Workflow.ComponentModel.Design.ActivityDesigner)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="designer" Type="System.Workflow.ComponentModel.Design.ActivityDesigner" />
+      </Parameters>
+      <Docs>
+        <param name="designer">グリフが描画される <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" />。</param>
+        <summary>アクティブにするアクションが実行されたグリフに対して、それが完了したことを通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.ConfigErrorGlyph.OnActivate%2A> が呼び出されると、グリフに関連付けられたデザイナー動詞がアクティビティ デザイナー画面に表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPaint">
+      <MemberSignature Language="C#" Value="protected override void OnPaint (System.Drawing.Graphics graphics, bool activated, System.Workflow.ComponentModel.Design.AmbientTheme ambientTheme, System.Workflow.ComponentModel.Design.ActivityDesigner designer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnPaint(class System.Drawing.Graphics graphics, bool activated, class System.Workflow.ComponentModel.Design.AmbientTheme ambientTheme, class System.Workflow.ComponentModel.Design.ActivityDesigner designer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ConfigErrorGlyph.OnPaint(System.Drawing.Graphics,System.Boolean,System.Workflow.ComponentModel.Design.AmbientTheme,System.Workflow.ComponentModel.Design.ActivityDesigner)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="activated" Type="System.Boolean" />
+        <Parameter Name="ambientTheme" Type="System.Workflow.ComponentModel.Design.AmbientTheme" />
+        <Parameter Name="designer" Type="System.Workflow.ComponentModel.Design.ActivityDesigner" />
+      </Parameters>
+      <Docs>
+        <param name="graphics">塗りつぶしと描画タスクを実行する <see cref="T:System.Drawing.Graphics" />。</param>
+        <param name="activated">
+          グリフをデザイン サーフェイスに表示する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <param name="ambientTheme">アンビエント プロパティ設定へのアクセスに使用する <see cref="T:System.Workflow.ComponentModel.Design.AmbientTheme" />。</param>
+        <param name="designer">ユーザー アクションに関する情報の取得元の <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" />。</param>
+        <summary>アクティビティ デザイナー画面にグリフをレンダリングするために必要なタスクを実行します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Priority">
+      <MemberSignature Language="C#" Value="public override int Priority { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Priority" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ConfigErrorGlyph.Priority" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティビティ デザイナー画面でのグリフの優先順位設定を取得します。</summary>
+        <value>アクティビティ デザイン サーフェイスの <see cref="T:System.Workflow.ComponentModel.Design.ConfigErrorGlyph" /> の優先順位を表す整数値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

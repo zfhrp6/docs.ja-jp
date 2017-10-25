@@ -1,0 +1,149 @@
+<Type Name="SmtpMail" FullName="System.Web.Mail.SmtpMail">
+  <TypeSignature Language="C#" Value="public class SmtpMail" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SmtpMail extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Mail.SmtpMail" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The recommended alternative is System.Net.Mail.SmtpClient. http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プロパティと Collaboration データ オブジェクトを Windows 2000 (CDOSYS) メッセージ コンポーネントを使用してメッセージを送信するためのメソッドを提供します。 代替手段のことをお勧めします。<see cref="N:System.Net.Mail" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Microsoft Windows 2000 に組み込まれている SMTP メール サービスまたは任意の SMTP サーバーのいずれか、メール メッセージを配信できます。 型、 <xref:System.Web.Mail> ASP.NET または任意のマネージ アプリケーションから、名前空間を使用することができます。  
+  
+ 場合、<xref:System.Web.Mail.SmtpMail.SmtpServer%2A>プロパティが設定されていない、メールは、既定ではキューに置かれたシステムでは Windows 2000、呼び出し元のプログラムでネットワーク トラフィックをブロックしないことを確認します。 場合、<xref:System.Web.Mail.SmtpMail>プロパティが設定されて、メールは、指定したサーバーに直接送信します。  
+  
+   
+  
+## Examples  
+ 次の例は、コマンドラインから電子メールを送信するために使用するコンソール アプリケーションにコンパイルできます。 MailMessage.exe をという名前のファイルの例をコンパイルする場合は、次のように電子メールを送信する実行可能ファイルを使用します。  
+  
+```  
+MailMessage to@contoso.com from@contoso.com test hello  
+```  
+  
+ [!code-csharp[System.Web.Mail.SmtpMail#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Mail.SmtpMail/CS/systemwebmailsmtpmail.cs#1)]
+ [!code-vb[System.Web.Mail.SmtpMail#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Mail.SmtpMail/VB/systemwebmailsmtpmail.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Send">
+      <MemberSignature Language="C#" Value="public static void Send (System.Web.Mail.MailMessage message);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Send(class System.Web.Mail.MailMessage message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Mail.SmtpMail.Send(System.Web.Mail.MailMessage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.Web.Mail.MailMessage" />
+      </Parameters>
+      <Docs>
+        <param name="message">送信する <see cref="T:System.Web.Mail.MailMessage" />。</param>
+        <summary>プロパティで指定された引数を使用して電子メール メッセージを送信、<see cref="T:System.Web.Mail.MailMessage" />クラスです。 代替手段のことをお勧めします。<see cref="N:System.Net.Mail" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、使用する方法を示しています。<xref:System.Web.Mail.MailMessage>を使用して電子メール メッセージを送信する<xref:System.Web.Mail.SmtpMail>です。  
+  
+ [!code-csharp[Classic SmtpMail.Send Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic SmtpMail.Send Example/CS/smtpmailsend.cs#1)]
+ [!code-vb[Classic SmtpMail.Send Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic SmtpMail.Send Example/VB/smtpmailsend.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.COMException">メールを送信することはできません。</exception>
+        <exception cref="T:System.PlatformNotSupportedException"><see cref="M:System.Web.Mail.SmtpMail.Send(System.Web.Mail.MailMessage)" />メソッドには、Microsoft Windows NT、Windows 2000、または Windows XP オペレーティング システムが必要です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Send">
+      <MemberSignature Language="C#" Value="public static void Send (string from, string to, string subject, string messageText);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Send(string from, string to, string subject, string messageText) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Mail.SmtpMail.Send(System.String,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="from" Type="System.String" />
+        <Parameter Name="to" Type="System.String" />
+        <Parameter Name="subject" Type="System.String" />
+        <Parameter Name="messageText" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="from">電子メールの送信者のアドレス。</param>
+        <param name="to">電子メールの受信者のアドレス。</param>
+        <param name="subject">電子メール メッセージの件名行。</param>
+        <param name="messageText">電子メール メッセージの本文。</param>
+        <summary>指定したコピー先のパラメーターを使用して電子メール メッセージを送信します。 代替手段のことをお勧めします。<see cref="N:System.Net.Mail" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用して、単純なメッセージを送信する方法を示しています。<xref:System.Web.Mail.SmtpMail>です。  
+  
+ [!code-csharp[Classic SmtpMail.Send Example#2](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic SmtpMail.Send Example/CS/smtpmailsend.cs#2)]
+ [!code-vb[Classic SmtpMail.Send Example#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic SmtpMail.Send Example/VB/smtpmailsend.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.PlatformNotSupportedException"><see cref="M:System.Web.Mail.SmtpMail.Send(System.String,System.String,System.String,System.String)" />メソッドには、Microsoft Windows NT、Windows 2000、または Windows XP オペレーティング システムが必要です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SmtpServer">
+      <MemberSignature Language="C#" Value="public static string SmtpServer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property string SmtpServer" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Mail.SmtpMail.SmtpServer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を使用して電子メール メッセージを送信する SMTP リレー メール サーバーの名前。 代替手段のことをお勧めします。<see cref="N:System.Net.Mail" />です。</summary>
+        <value>電子メールのリレー サーバーの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ローカルの SMTP サーバー (Windows 2000 と Windows Server 2003 に含まれる) が (ポート 25) を通じて直接 SMTP トラフィックをブロックするファイアウォールの内側にある場合はかどうか、スマート ホストが使用可能なインターネットへの SMTP メッセージの中継が許可されているネットワーク上を検索する必要があります。  
+  
+ スマート ホストは、内部の SMTP サーバーからインターネットに直接送信する電子メール メッセージを中継するアクセス許可を持つ SMTP サーバーです。 スマート ホストは、電子メールのゲートウェイとして機能するために、内部ネットワークとインターネットの両方を同時に接続できる必要があります。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Web.Mail.SmtpMail.SmtpServer#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Mail.SmtpMail.SmtpServer/CS/systemwebmailsmtpmailsmtpserver.cs#1)]
+ [!code-vb[System.Web.Mail.SmtpMail.SmtpServer#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Mail.SmtpMail.SmtpServer/VB/systemwebmailsmtpmailsmtpserver.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

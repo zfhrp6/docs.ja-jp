@@ -1,0 +1,124 @@
+<Type Name="HotSpotMode" FullName="System.Web.UI.WebControls.HotSpotMode">
+  <TypeSignature Language="C#" Value="public enum HotSpotMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed HotSpotMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.HotSpotMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>動作を指定します、<see cref="T:System.Web.UI.WebControls.HotSpot" />内のオブジェクト、<see cref="T:System.Web.UI.WebControls.ImageMap" />タイミングを制御、<see cref="T:System.Web.UI.WebControls.HotSpot" />をクリックします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.HotSpotMode>列挙型に適用可能な動作を表す、<xref:System.Web.UI.WebControls.HotSpot>オブジェクト内に<xref:System.Web.UI.WebControls.ImageMap>コントロール。 <xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A?displayProperty=nameWithType>と<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A?displayProperty=nameWithType>プロパティの動作を設定するこれらの列挙値を使用して、<xref:System.Web.UI.WebControls.HotSpot>オブジェクトがクリックされたとき。 両方のプロパティが設定されている場合、<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A?displayProperty=nameWithType>ごとに指定されたプロパティ<xref:System.Web.UI.WebControls.HotSpot>オブジェクトよりも優先、<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A?displayProperty=nameWithType>コントロールのプロパティです。  
+  
+ 指定した場合`HotSpotMode.NotSet`の<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A?displayProperty=nameWithType>、1 つのプロパティ<xref:System.Web.UI.WebControls.HotSpot>オブジェクト、<xref:System.Web.UI.WebControls.HotSpot>の親からその動作を取得<xref:System.Web.UI.WebControls.ImageMap>コントロールの<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A?displayProperty=nameWithType>プロパティ。 このシナリオでは場合、<xref:System.Web.UI.WebControls.ImageMap>コントロールの<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A>プロパティが、`NotSet`または値が指定されていない、既定の動作は、URL に移動されます。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.UI.WebControls.ImageMap>コントロールの動作が指定されていないかを使用して、<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A?displayProperty=nameWithType>プロパティまたは<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A?displayProperty=nameWithType>プロパティを<xref:System.Web.UI.WebControls.HotSpot>オブジェクトの動作は既定に`HotSpotMode.Navigate`です。 さらに場合、<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A?displayProperty=nameWithType>プロパティを<xref:System.Web.UI.WebControls.HotSpot>オブジェクトを<xref:System.Web.UI.WebControls.ImageMap>コントロールに含まれるに設定されている`HotSpotMode.NotSet`の値が指定されていないと、<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A?displayProperty=nameWithType>プロパティは、既定の動作です`HotSpotMode.Navigate`です。  
+  
+ 指定する場合`HotSpotMode.Navigate`のいずれか、<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A?displayProperty=nameWithType>プロパティまたは<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A?displayProperty=nameWithType>プロパティ ページは、URL に移動ときに、<xref:System.Web.UI.WebControls.HotSpot>をクリックします。 使用して、<xref:System.Web.UI.MobileControls.Image.NavigateUrl%2A?displayProperty=nameWithType>または<xref:System.Web.UI.WebControls.HotSpot.NavigateUrl%2A?displayProperty=nameWithType>プロパティに移動する URL を指定します。  
+  
+ 指定する場合`HotSpotMode.PostBack`のいずれか、<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A?displayProperty=nameWithType>プロパティまたは<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A?displayProperty=nameWithType>プロパティ ページで、サーバーへのポストバックが生成されるときに、<xref:System.Web.UI.WebControls.HotSpot>をクリックします。 使用して、<xref:System.Web.UI.WebControls.HotSpot.PostBackValue%2A>プロパティの名前を指定する、<xref:System.Web.UI.WebControls.HotSpot>オブジェクト。 この名前は、<xref:System.Web.UI.WebControls.ImageMapEventArgs>ポストバック イベントが発生するイベント データ。 ポストバック時に<xref:System.Web.UI.WebControls.HotSpot>がクリックされると、<xref:System.Web.UI.WebControls.ImageMap.Click>イベントが発生します。 ポストバック時にプログラムによってコントロールに、操作を実行<xref:System.Web.UI.WebControls.HotSpot>がのイベント ハンドラーを指定する をクリックして、<xref:System.Web.UI.WebControls.ImageMap.Click>イベント。  
+  
+ 指定した場合`HotSpotMode.Inactive`の<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A?displayProperty=nameWithType>プロパティ、<xref:System.Web.UI.WebControls.HotSpot>オブジェクトを持たないすべての動作がクリックされたとき。 この値を使用するより大きな active ホット スポットの中の非アクティブのホット スポットを作成します。 このオプションを指定すると、内のホット スポットのより複雑なゾーンを作成すること、<xref:System.Web.UI.WebControls.ImageMap>コントロール。  
+  
+ アクティブなホット スポット内の非アクティブな領域を作成するよりも前にアクティブで、アクティブなホット スポットを指定する必要があります、<xref:System.Web.UI.WebControls.ImageMap>コントロール。 たとえば、次<xref:System.Web.UI.WebControls.ImageMap>大規模な active 円形のホット スポット内で非アクティブな循環ホット スポットを指定することで、アクティブなリングを定義します。  
+  
+```  
+<asp:ImageMap ID="SaturnImage"   
+       ImageUrl="~/saturn.PNG"   
+       runat="server" OnClick="SaturnImage_Click">  
+    <asp:CircleHotSpot AlternateText="planet" HotSpotMode=PostBack  
+          PostBackValue="planet" Radius=40 X=100 Y=100 />  
+  
+    <asp:CircleHotSpot HotSpotMode=Inactive   
+          Radius=60 X=100 Y=100 />  
+    <asp:CircleHotSpot AlternateText="rings" HotSpotMode=PostBack  
+          PostBackValue="rings" Radius=80 X=100 Y=100 />  
+</asp:ImageMap>  
+```  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.HotSpotMode>列挙の値を設定、<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A?displayProperty=nameWithType>プロパティです。 このページには、<xref:System.Web.UI.WebControls.ImageMap>を含む 2 つのコントロール<xref:System.Web.UI.WebControls.RectangleHotSpot>オブジェクト。 <xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A?displayProperty=nameWithType>プロパティに設定されている`HotSpotMode.PostBack`、それが原因で、ページにポスト バックするサーバーごとにユーザーをホット スポット領域のいずれかをクリックします。 <xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A>のいずれかのプロパティが設定されていない、<xref:System.Web.UI.WebControls.RectangleHotSpot>オブジェクトを取得するための動作、<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A?displayProperty=nameWithType>プロパティです。 この例を正しく実行するには、独自のイメージを指定する必要があります、<xref:System.Web.UI.WebControls.Image.ImageUrl%2A>プロパティと、アプリケーションが特定できるようににイメージへのパスを適切に更新します。  
+  
+ [!code-aspx-csharp[ImageMap.HotSpotMode1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ImageMap.HotSpotMode1/CS/imagemap.hotspotmode1cs.aspx#1)]
+ [!code-aspx-vb[ImageMap.HotSpotMode1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ImageMap.HotSpotMode1/VB/imagemap.hotspotmode1vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Inactive">
+      <MemberSignature Language="C#" Value="Inactive" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.HotSpotMode Inactive = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.HotSpotMode.Inactive" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.HotSpotMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.HotSpot" />すべての動作はありません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Navigate">
+      <MemberSignature Language="C#" Value="Navigate" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.HotSpotMode Navigate = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.HotSpotMode.Navigate" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.HotSpotMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.HotSpot" /> URL に移動します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NotSet">
+      <MemberSignature Language="C#" Value="NotSet" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.HotSpotMode NotSet = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.HotSpotMode.NotSet" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.HotSpotMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.HotSpot" />設定されている動作を使用して、<see cref="T:System.Web.UI.WebControls.ImageMap" />コントロールの<see cref="P:System.Web.UI.WebControls.ImageMap.HotSpotMode" />プロパティです。 場合、<see cref="T:System.Web.UI.WebControls.ImageMap" />コントロールを動作を一切定義しません、<see cref="T:System.Web.UI.WebControls.HotSpot" />オブジェクトは、URL に移動します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PostBack">
+      <MemberSignature Language="C#" Value="PostBack" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.HotSpotMode PostBack = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.HotSpotMode.PostBack" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.HotSpotMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.HotSpot" />サーバーへのポストバックが生成されます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

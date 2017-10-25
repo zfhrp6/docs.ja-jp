@@ -1,0 +1,120 @@
+<Type Name="AssemblyResourceLoader" FullName="System.Web.Handlers.AssemblyResourceLoader">
+  <TypeSignature Language="C#" Value="public sealed class AssemblyResourceLoader : System.Web.IHttpHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit AssemblyResourceLoader extends System.Object implements class System.Web.IHttpHandler" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Handlers.AssemblyResourceLoader" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.IHttpHandler</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>アセンブリーから埋め込まれたリソースを読み込むために使用する HTTP ハンドラーを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Handlers.AssemblyResourceLoader>クラスは ASP.NET ページまたはコンパイルされた .NET アセンブリからのクライアントのスクリプト、イメージ、およびデータ ファイルなどの埋め込みリソースの読み込みを制御できるようにする HTTP ハンドラー。 .NET アセンブリにリソースを埋め込む方法の詳細については、使用するコンパイラのドキュメントを参照してください。  
+  
+ <xref:System.Web.Handlers.AssemblyResourceLoader>によって生成された Url に対して行われる要求に応答するハンドラー、<xref:System.Web.UI.ClientScriptManager.GetWebResourceUrl%2A>メソッドです。 要求に応答する前に、<xref:System.Web.Handlers.AssemblyResourceLoader>ハンドラーによって、リソースを Web 経由で直接使用する必要があります。  
+  
+ フォームの要求に応答するハンドラー  
+  
+```  
+WebResource.axd?d=<encrypted identifier>&t=<time stamp value>  
+```  
+  
+ ここで`<encryped identifier>`要求された Web リソースを一意に識別および`<time stamp value>`タイムスタンプ、要求されたアセンブリのアセンブリへの変更を検出できるように、キャッシュされたリソースが無効にします。  
+  
+ このクラスは、ASP.NET のインフラストラクチャをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AssemblyResourceLoader ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Handlers.AssemblyResourceLoader.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Handlers.AssemblyResourceLoader" /> クラスの新しいインスタンスを初期化します。 このコンス トラクターは、ASP.NET のインフラストラクチャをサポートしているし、コードから直接使用するものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.IHttpHandler.IsReusable">
+      <MemberSignature Language="C#" Value="bool System.Web.IHttpHandler.IsReusable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Web.IHttpHandler.IsReusable" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Handlers.AssemblyResourceLoader.System#Web#IHttpHandler#IsReusable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>別の要求を再利用できるかどうかを示す値を取得、<see cref="T:System.Web.IHttpHandler" />インスタンス。</summary>
+        <value>
+          常に <see langword="true" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.Handlers.AssemblyResourceLoader> のインスタンスが <xref:System.Web.IHttpHandler> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.IHttpHandler.ProcessRequest">
+      <MemberSignature Language="C#" Value="void IHttpHandler.ProcessRequest (System.Web.HttpContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.IHttpHandler.ProcessRequest(class System.Web.HttpContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Handlers.AssemblyResourceLoader.System#Web#IHttpHandler#ProcessRequest(System.Web.HttpContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">要求のコンテキスト。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)" />」をご覧ください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.Handlers.AssemblyResourceLoader> のインスタンスが <xref:System.Web.IHttpHandler> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">Web リソース要求が正しくありません。  
+  
+ \- または  
+  
+ アセンブリ名が見つかりませんでした。  
+  
+ \- または  
+  
+ リソース名が、アセンブリに見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

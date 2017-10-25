@@ -1,0 +1,1148 @@
+<Type Name="WebPartPersonalization" FullName="System.Web.UI.WebControls.WebParts.WebPartPersonalization">
+  <TypeSignature Language="C#" Value="public class WebPartPersonalization" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebPartPersonalization extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.WebControls.EmptyStringExpandableObjectConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>実装して低レベルのパーソナル化の操作です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、下位レベルのパーソナル化操作の実行に必要なロジックを実装します。 <xref:System.Web.UI.WebControls.WebParts.WebPartManager>クラス パーソナル化の高度なライフ サイクルを管理するは、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization>特定のパーソナル化操作を実行するために必要な物理的な手順を実際に実装するクラス。 <xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization>クラスに依存し、実装の<xref:System.Web.UI.WebControls.WebParts.PersonalizationProvider>パーソナル化情報の基になるデータ ストアと通信できません。  
+  
+ 既定の実装を使用する場合、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>のインスタンスを作成、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization>参照することで使用できるクラス、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.Personalization%2A>プロパティです。 アクセスするなど、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.InitialScope%2A>を指定するプロパティ、`WebPartManager.Personalization.InitialScope`です。  
+  
+   
+  
+## Examples  
+ 次のコード例に示す方法、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization>パーソナル化スコープが個人用に設定されたプロパティの結果に与える影響の例を提供するだけでなく、クラスを使用します。 この例では、5 つのファイルがあります。  
+  
+-   .Aspx ページ宣言によって 2 つの Web パーツ ゾーンを作成する各コントロールにします。  
+  
+-   ユーザー コントロールと呼ばれる`Color.ascx`ユーザーの権限の状態情報を変更して、共有スコープの入力に基づいてテキスト ボックスの背景色を適用するカスタム プロパティを変更することができます。  
+  
+-   ユーザー コントロールと呼ばれる`Persmode.ascx`は、現在のページのスコープを示すし、共有スコープを入力するか、データを変更するには、現在のユーザー権限以外の場合は 2 つのボタンです。 現在のユーザーのパーソナル化情報をリセットする 1 つとスコープを変更する 1 つも用意されています。  
+  
+-   ユーザーを承認するために使用されるログイン コントロール。  
+  
+-   パーソナル化状態を変更して、共有スコープの入力をユーザーに承認する例を提供するセクションを Web.config ファイルです。  
+  
+ 次のコードの aspx ページの作成、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>と 2 つの Web パーツ ゾーンを表示、`Color.ascx`と`Persmode.ascx`コントロール。 ページは、現在のユーザー情報の取得に使用されるログイン ページを読み込みます。 ASP.NET Web サイト管理ツールを使用して[!INCLUDE[vsprvsext](~/includes/vsprvsext-md.md)]ページにアクセスするユーザーを作成します。 スコープを変更して、状態情報を変更する構成ファイルでの承認を与えるユーザーの例については、Web.config ファイルを参照してください。  
+  
+ [!code-aspx-csharp[WebParts_WebPartPersonalization#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartPersonalization/CS/Defaultcs.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPartPersonalization#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartPersonalization/VB/Defaultvb.aspx#1)]  
+  
+ 次のコード例では、ログイン ページを作成します。 ログインに成功すると、メインの aspx ページにリダイレクトします。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[WebParts_WebPartPersonalization#5](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartPersonalization/CS/login.aspx#5)]
+ [!code-aspx-vb[WebParts_WebPartPersonalization#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartPersonalization/VB/login.aspx#5)]  
+  
+ 次のコード例は、このアプリケーションの Web.config ファイルの一部です。 このセクションでは、この場合は"user2"で、ユーザーの承認を設定する共有パーソナル化スコープに入る、パーソナル化状態情報を変更する方法を示します。 また、この場合は"admin"共有パーソナル化スコープに入るとパーソナル化状態情報を変更するのには、"admin"ロールにユーザーを許可するために使用する、ロールの例を示します。  
+  
+ [!code-aspx-csharp[WebParts_WebPartPersonalization#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartPersonalization/CS/web.config#2)]
+ [!code-aspx-vb[WebParts_WebPartPersonalization#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartPersonalization/VB/web.config#2)]
+  
+ 次のコード例と呼ばれる、ユーザー コントロールを作成する`Color.ascx`、現在のパーソナル化スコープとユーザーの権限に基づいて、2 つのテキスト ボックスの背景色がここでは、個人用に設定されたプロパティを変更することができます.  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[WebParts_WebPartPersonalization#3](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartPersonalization/CS/color.ascx#3)]
+ [!code-aspx-vb[WebParts_WebPartPersonalization#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartPersonalization/VB/color.ascx#3)]  
+  
+ 次のコード例と呼ばれる、ユーザー コントロールを作成する`Persmode.ascx`、現在のパーソナル化スコープを表示して、ユーザーを変更する権限の状態およびスコープの共有を入力するのには。 現在のパーソナル化状態をリセットするためのリセット ボタンもあります。  
+  
+ [!code-aspx-csharp[WebParts_WebPartPersonalization#4](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartPersonalization/CS/persMode.ascx#4)]
+ [!code-aspx-vb[WebParts_WebPartPersonalization#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartPersonalization/VB/persMode.ascx#4)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para><see cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />クラス緊密な連携、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />コントロールとパーソナル化インフラストラクチャの残りの部分です。 個人用設定の既定の実装は、パーソナル化のニーズを満たす必要がありますを非常に堅牢なサブシステムです。 ほとんどの場合、パーソナル化をカスタマイズする場合を作成使用するためのデータ プロバイダーからクラスを作成することで、パーソナル化プロバイダーが継承、<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationProvider" />です。  
+  
+ パーソナル化サブシステムによって提供されるものとが大幅に異なるを作成するかどうか、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />と<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />クラス、カスタムを作成する必要があります<see cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />から派生することによって実装<see cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />し、独自のカスタムの追加ロジック。 カスタムを作成し、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />から派生することによって実装<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />、独自のカスタム ロジックを追加し、上書き、<see cref="M:System.Web.UI.WebControls.WebParts.WebPartManager.CreatePersonalization" />を返すカスタム メソッドを<see cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />実装します。 <see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />コントロールによってパーソナル化インフラストラクチャへの要求を使用する、 <see cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" /> 、インスタンス、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />コントロールが対話またはへの参照を保持して直接<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationProvider" />実装します。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebPartPersonalization (System.Web.UI.WebControls.WebParts.WebPartManager owner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.WebParts.WebPartManager owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartPersonalization.#ctor(System.Web.UI.WebControls.WebParts.WebPartManager)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Web.UI.WebControls.WebParts.WebPartManager" />
+      </Parameters>
+      <Docs>
+        <param name="owner"><see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />パーソナル化情報を管理するために使用</param>
+        <summary><see cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、このクラスのインスタンスを初期化しに関連付けます、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>に代わってコントロール、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization>インスタンスはパーソナル化操作を実行します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="owner" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyPersonalizationState">
+      <MemberSignature Language="C#" Value="protected virtual void ApplyPersonalizationState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void ApplyPersonalizationState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ApplyPersonalizationState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>パーソナル化データを親に適用<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.IsEnabled%2A>プロパティに設定されている`true`、このメソッドは、<xref:System.Web.UI.WebControls.WebParts.PersonalizationState.ApplyWebPartPersonalization%2A>メソッドを<xref:System.Web.UI.WebControls.WebParts.PersonalizationState>パーソナル化状態を指定された Web パーツ コントロールに適用するインスタンス。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">基になるデータ ストアから読み込まれる前に、パーソナル化状態を適用しようとしました。  
+  
+ \- または  
+  
+ データ ストアから返されたパーソナル化状態が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyPersonalizationState">
+      <MemberSignature Language="C#" Value="protected virtual void ApplyPersonalizationState (System.Web.UI.WebControls.WebParts.WebPart webPart);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void ApplyPersonalizationState(class System.Web.UI.WebControls.WebParts.WebPart webPart) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ApplyPersonalizationState(System.Web.UI.WebControls.WebParts.WebPart)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="webPart" Type="System.Web.UI.WebControls.WebParts.WebPart" />
+      </Parameters>
+      <Docs>
+        <param name="webPart">Web パーツは、パーソナル化データを適用するコントロールします。</param>
+        <summary>指定されたパーソナル化データに適用<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />これを行うには親によって要求されたときに制御<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、個人にパーソナル化データを適用する<xref:System.Web.UI.WebControls.WebParts.WebPart>-これを行うには親によって要求されたときにクラスを派生<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロール。  
+  
+ 場合、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.IsEnabled%2A>プロパティに設定されている`true`、このメソッドは、<xref:System.Web.UI.WebControls.WebParts.PersonalizationState.ApplyWebPartPersonalization%2A>メソッドを<xref:System.Web.UI.WebControls.WebParts.PersonalizationState>パーソナル化状態を指定された Web パーツ コントロールに適用するインスタンス。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">パーソナル化状態を親によって管理されていない Web パーツ コントロールに適用しようとした<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="webPart" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">基になるデータ ストアから読み込まれる前に、パーソナル化状態を適用しようとしました。  
+  
+ \- または  
+  
+ データ ストアから返されたパーソナル化状態が<see langword="null" />です。  
+  
+ \- または  
+  
+ パーソナル化データを複数回、同じ Web パーツ コントロールに適用しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanEnterSharedScope">
+      <MemberSignature Language="C#" Value="public bool CanEnterSharedScope { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanEnterSharedScope" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartPersonalization.CanEnterSharedScope" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>入力するユーザーに権限があるかどうかを示す値を返します<see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared" />スコープ。</summary>
+        <value>
+          <see langword="true" />入力をユーザーが承認されている場合<see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared" />スコープです。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを返します`true`でユーザーが承認されている場合、<xref:System.Web.UI.WebControls.WebParts.WebPartUserCapability>を入力する<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>スコープ。  
+  
+ 初めてが、プロパティが呼び出されると、ユーザーの入力を右側を判定<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>スコープを設定して、情報をキャッシュします。 場合、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.UserCapabilities%2A>ディクショナリが変更された後、初めてこれプロパティが呼び出されると、変更は、このプロパティを後続の呼び出しには表示されません。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用して、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.CanEnterSharedScope%2A>プロパティです。 このコードで見つかったより大きなコード サンプルの一部である、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization>クラスの説明。  
+  
+ [!code-csharp[WebParts_WebPartPersonalization#7](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartPersonalization/CS/persMode.ascx#7)]
+ [!code-vb[WebParts_WebPartPersonalization#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartPersonalization/VB/persMode.ascx#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangeScope">
+      <MemberSignature Language="C#" Value="protected virtual void ChangeScope (System.Web.UI.WebControls.WebParts.PersonalizationScope scope);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ChangeScope(valuetype System.Web.UI.WebControls.WebParts.PersonalizationScope scope) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ChangeScope(System.Web.UI.WebControls.WebParts.PersonalizationScope)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="System.Web.UI.WebControls.WebParts.PersonalizationScope" />
+      </Parameters>
+      <Docs>
+        <param name="scope">現在のページに新しいパーソナル化スコープです。</param>
+        <summary>現在のページの変更<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" />に指定されたスコープのインスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドで指定された新しいスコープを現在実行中のページのパーソナル化スコープを変更する、`newScope`パラメーター。 このメソッドは、パブリックによって呼び出されるプロテクト ヘルパー メソッド<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ToggleScope%2A>メソッドです。 切り替える 3 つ以上の可能なスコープがある場合は、将来の機能拡張を処理する、この保護されたメソッドが存在しています。  
+  
+ 場合、現在のスコープと`newScope`同じの値は、このメソッドに操作が実行されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">切り替える場合<see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.User" />スコープを<see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared" />スコープ、現在のユーザーに機能がなく、ユーザーを入力する<see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared" />スコープ。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="scope" />有効なメンバーではない、<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" />列挙します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyPersonalizationState">
+      <MemberSignature Language="C#" Value="protected virtual void CopyPersonalizationState (System.Web.UI.WebControls.WebParts.WebPart webPartA, System.Web.UI.WebControls.WebParts.WebPart webPartB);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void CopyPersonalizationState(class System.Web.UI.WebControls.WebParts.WebPart webPartA, class System.Web.UI.WebControls.WebParts.WebPart webPartB) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartPersonalization.CopyPersonalizationState(System.Web.UI.WebControls.WebParts.WebPart,System.Web.UI.WebControls.WebParts.WebPart)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="webPartA" Type="System.Web.UI.WebControls.WebParts.WebPart" />
+        <Parameter Name="webPartB" Type="System.Web.UI.WebControls.WebParts.WebPart" />
+      </Parameters>
+      <Docs>
+        <param name="webPartA">パーソナル化データを提供する Web パーツ コントロール。</param>
+        <param name="webPartB">Web パーツ コントロールは、パーソナル化データを受信します。</param>
+        <summary>1 つの Web パーツ コントロールからパーソナル化状態を抽出し、2 番目の Web パーツ コントロールに適用されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドからパーソナル化状態を抽出する`webPartA`し、それを適用`webPartB`です。 このメソッドが想定する`webPartA`と`webPartB`は同じ型です。 Web パーツ コントロール場合<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>でラップした子コントロールからコントロール、メソッドはコピー パーソナル化状態`webPartA`でラップした子コントロールを`webPartB`です。  
+  
+ コピー操作の一環として`webPartB`「ダーティ」とマークされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="webPartA" /> または <paramref name="webPartB" /> のいずれかが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="webPartA" />および<paramref name="webPartB" />ではない同じ<see cref="T:System.Type" />です。  
+  
+ \- または  
+  
+ <paramref name="webPartA" />および<paramref name="webPartB" />は<see cref="T:System.Web.UI.WebControls.WebParts.GenericWebPart" />が不足している子コントロールのコントロールが、いずれかまたは両方。  
+  
+ \- または  
+  
+ <paramref name="webPartA" />および<paramref name="webPartB" />は<see cref="T:System.Web.UI.WebControls.WebParts.GenericWebPart" />、コントロールがその子コントロールではない同じ<see cref="T:System.Type" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public virtual bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartPersonalization.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パーソナル化が有効にする要求されたかどうかを示す値を返しますの関連付けられた<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />コントロール。</summary>
+        <value>
+          <see langword="true" />パーソナル化が有効である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、パーソナル化を有効にするのには親要求かどうかを示す<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロール。 これは、目的との微妙でありながら重要な相違点<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.IsEnabled%2A>と<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.IsInitialized%2A>です。  
+  
+ このプロパティは、完了する前にのみ設定できる、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールの<xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnInit%2A>メソッドです。 実際には、つまり、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.Enabled%2A>プロパティは、ページのマークアップで設定する必要があります、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>パーソナル化を無効にする場合は、要素。 このプロパティを設定中にする代わりに、`PreInit`のフェーズ、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロール。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">関連付けられた後、このプロパティの値を設定しようとしましたが<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />コントロールの<see cref="M:System.Web.UI.WebControls.WebParts.WebPartManager.OnInit(System.EventArgs)" />メソッドの実行が完了します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnsureEnabled">
+      <MemberSignature Language="C#" Value="public void EnsureEnabled (bool ensureModifiable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EnsureEnabled(bool ensureModifiable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartPersonalization.EnsureEnabled(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ensureModifiable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="ensureModifiable">チェックの種類を示すブール値を作成する必要があります。</param>
+        <summary>確実に、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />初期化、または現在のユーザーには、パーソナル化状態を変更する権限が与えられて、インスタンスが完了しました。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、いくつかで使用されるヘルパー メソッド<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization>メソッドを次の 2 つのいずれかを確認してください。  
+  
+-   <xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization>インスタンスの初期化が完了 (たとえば、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.Load%2A>メソッドが呼び出され、正常に完了しました)。 場合に、このチェックが行われますが、`ensureModifiable`パラメーターと等しい`false`です。  
+  
+     \- または  
+  
+-   現在のユーザーは、パーソナル化状態を変更する権限を持っています。 場合、このチェックが行われます`ensureModifiable`equals`true`です。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールがケースの数にもこのメソッドを呼び出します。  
+  
+-   標準以外に、表示モードを切り替えます。 現在のユーザーは、パーソナル化状態を変更する権限が必要です。  
+  
+-   追加するには、削除、または Web パーツ コントロールを移動します。 現在のユーザーは、パーソナル化状態を変更する権限が必要です。  
+  
+-   接続するには、切断、および Web パーツ コントロールを編集します。 現在のユーザーは、パーソナル化状態を変更する権限が必要です。  
+  
+-   ページ上の Web パーツ コントロールをエクスポートします。 <xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization>インスタンスの初期化完了が必要があります。  
+  
+-   Web パーツをインポートするには、次のコマンドを制御します。 現在のユーザーは、パーソナル化状態を変更する権限が必要です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">現在のユーザーにパーソナル化情報を変更する権限がないか、他のチェックが失敗しました。  
+  
+ \- または  
+  
+ <see cref="P:System.Web.UI.WebControls.WebParts.WebPartPersonalization.IsEnabled" />返される<see langword="false" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnterSharedScopeUserCapability">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.WebControls.WebParts.WebPartUserCapability EnterSharedScopeUserCapability;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.WebControls.WebParts.WebPartUserCapability EnterSharedScopeUserCapability" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.WebParts.WebPartPersonalization.EnterSharedScopeUserCapability" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartUserCapability</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartUserCapability" />インスタンスを入力するユーザーの承認の<see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared" />スコープ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー権利はで、文字列"enterSharedScope"で表される、<xref:System.Web.UI.WebControls.WebParts.WebPartUserCapability>インスタンス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtractPersonalizationState">
+      <MemberSignature Language="C#" Value="protected virtual void ExtractPersonalizationState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void ExtractPersonalizationState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ExtractPersonalizationState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>パーソナル化データを抽出し、親から<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.IsEnabled%2A>プロパティに設定されている`true`、ページ要求時に、パーソナル化状態がリセットされないと (場合など、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ShouldResetPersonalizationState%2A>プロパティは`false`)、このメソッドが親からパーソナル化データを抽出し、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>中に制御その<xref:System.Web.UI.Page.SaveStateComplete>イベント。  
+  
+ このメソッドは、<xref:System.Web.UI.WebControls.WebParts.PersonalizationState.ExtractWebPartManagerPersonalization%2A>メソッドを<xref:System.Web.UI.WebControls.WebParts.PersonalizationState>パーソナル化状態を親から抽出するインスタンス<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロール。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">基になるデータ ストアから読み込まれる前に、パーソナル化状態を抽出しようとしました。  
+  
+ \- または  
+  
+ パーソナル化状態がまだ適用されていません。  
+  
+ \- または  
+  
+ <see cref="P:System.Web.UI.Control.ID" />の<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />がパーソナル化データが適用された後に変更します。  
+  
+ \- または  
+  
+ データ ストアから返されたパーソナル化状態が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtractPersonalizationState">
+      <MemberSignature Language="C#" Value="protected virtual void ExtractPersonalizationState (System.Web.UI.WebControls.WebParts.WebPart webPart);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void ExtractPersonalizationState(class System.Web.UI.WebControls.WebParts.WebPart webPart) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ExtractPersonalizationState(System.Web.UI.WebControls.WebParts.WebPart)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="webPart" Type="System.Web.UI.WebControls.WebParts.WebPart" />
+      </Parameters>
+      <Docs>
+        <param name="webPart">Web パーツは、パーソナル化データを含む抽出を制御します。</param>
+        <summary>そのためには親によって要求されたときに、Web パーツ コントロールからパーソナル化データを抽出<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.IsEnabled%2A>プロパティに設定されている`true`、ページ要求時に、パーソナル化状態がリセットされないと (場合など、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ShouldResetPersonalizationState%2A>プロパティは`false`)、このメソッドで指定された Web パーツ コントロールからパーソナル化データを抽出し、`webPart`です。 このメソッドは、<xref:System.Web.UI.WebControls.WebParts.PersonalizationState.ExtractWebPartPersonalization%2A>メソッドを<xref:System.Web.UI.WebControls.WebParts.PersonalizationState>パーソナル化状態を指定された Web パーツ コントロールから抽出するインスタンス。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">親によって管理されていない Web パーツ コントロールからパーソナル化状態を抽出しようとした<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">基になるデータ ストアから読み込まれる前に、パーソナル化状態を抽出しようとしました。  
+  
+ \- または  
+  
+ パーソナル化状態がまだ適用されていません。  
+  
+ \- または  
+  
+ <see cref="P:System.Web.UI.Control.ID" />の<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />がパーソナル化データが適用された後に変更します。  
+  
+ \- または  
+  
+ データ ストアから返されたパーソナル化状態が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAuthorizationFilter">
+      <MemberSignature Language="C#" Value="protected virtual string GetAuthorizationFilter (string webPartID);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance string GetAuthorizationFilter(string webPartID) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartPersonalization.GetAuthorizationFilter(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="webPartID" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="webPartID">取得するフィルターに関連付けられている Web パーツ コントロールの ID。</param>
+        <summary>指定した Web パーツ コントロールに関連付けられている場合は、承認フィルターを取得します。</summary>
+        <returns>指定した Web パーツ コントロールの承認フィルター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって識別される、Web パーツ コントロールに関連付けられている場合、このメソッドは、承認フィルターを取得`webPartID`です。 シリアル化され、パーソナル化によって管理される各 Web パーツ コントロールに関連付けられている、`webPartID`パラメーター。 実行時に、ページの<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールは、各 Web パーツ コントロールを承認するかどうかを決定することにより、ページに表示されるコントロールをフィルター処理できます。 この認証情報は、各 Web パーツ コントロールに関連付けられたデータを文字列として格納されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">承認を取得しようとしましたがときにフィルター処理<see cref="P:System.Web.UI.WebControls.WebParts.WebPartPersonalization.IsEnabled" />は<see langword="false" />が早すぎるので、ページ ライフ サイクルにおけるこのメソッドを呼び出すことによってです。  
+  
+ \- または  
+  
+ 承認フィルターを取得しようとしましたが、パーソナル化状態が読み込まれていません。  
+  
+ \- または  
+  
+ データ ストアから返されたパーソナル化状態が<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="webPartID" /> は <see langword="null" /> または空の文字列 ("") です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HasPersonalizationState">
+      <MemberSignature Language="C#" Value="public virtual bool HasPersonalizationState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasPersonalizationState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartPersonalization.HasPersonalizationState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パーソナル化データ、現在のページとパーソナル化スコープを関連付けるかどうかを示す値を返します。</summary>
+        <value>
+          <see langword="true" />ページはパーソナル化データがそれに関連付けられている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、現在のページおよびスコープの組み合わせに関連付けられているパーソナル化データがあるかどうかを決定するための便利なメソッドです。 メソッドの呼び出しでは内部的には、<xref:System.Web.UI.WebControls.WebParts.PersonalizationProvider.GetCountOfState%2A>プロバイダー データが存在するかどうかを確認します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">関連付けられたパーソナル化プロバイダーはありません、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />インスタンス。 これは、プロパティに関連付けられている完了する前にアクセスする場合に発生<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />コントロールの<see cref="M:System.Web.UI.WebControls.WebParts.WebPartManager.OnInit(System.EventArgs)" />メソッドです。  
+  
+ \- または  
+  
+ 値、<see cref="P:System.Web.UI.Control.Page" />関連付けられているプロパティ<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />は<see langword="null" />します。  
+  
+ \- または  
+  
+ 値、<see cref="P:System.Web.UI.Page.Request" />プロパティを<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />コントロールに関連付けられている<see cref="T:System.Web.UI.Page" />インスタンスが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InitialScope">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.WebParts.PersonalizationScope InitialScope { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.WebParts.PersonalizationScope InitialScope" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartPersonalization.InitialScope" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PersonalizationScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または既定のパーソナル化スコープを設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" /> 、既定のパーソナル化スコープ、関連付けられていることを示す<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、親オブジェクトで使用される既定のパーソナル化スコープを表す<xref:System.Web.UI.WebControls.WebParts.WebPartManager>の適切なスコープは以前の知識がない場合は、制御します。 このプロパティが明示的に設定されていない場合、既定値は返す<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User>スコープ。  
+  
+ このプロパティは、完了する前にのみ設定できる、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールの<xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnInit%2A>メソッドです。 これは実際、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.InitialScope%2A>でページのマークアップで設定する必要があります、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>要素。 このプロパティを設定中にする代わりに、`PreInit`のフェーズ、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロール。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">関連付けられた後、その現在の値以外の値にこのプロパティを設定しようとしましたが<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />コントロールの<see cref="M:System.Web.UI.WebControls.WebParts.WebPartManager.OnInit(System.EventArgs)" />メソッドの実行が完了します。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">値を設定しようとしました<see cref="P:System.Web.UI.WebControls.WebParts.WebPartPersonalization.InitialScope" />がのメンバーでない、<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" />列挙します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEnabled">
+      <MemberSignature Language="C#" Value="public bool IsEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartPersonalization.IsEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パーソナル化が有効のこのインスタンスのパーソナル化データが正常に読み込まれたかどうかを示す値を取得、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />クラスです。</summary>
+        <value>
+          <see langword="true" />現在のパーソナル化が有効になっている場合<see cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />インスタンスとパーソナル化データが正常に読み込まれた、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パーソナル化データを読み込む前にこのプロパティは常に返します`false`です。 たとえば、このプロパティが返されます`false`中に、`PreInit`フェーズ。 関連付けられた後<xref:System.Web.UI.WebControls.WebParts.WebPartManager>の<xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnInit%2A>メソッドが正常に完了 (を<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.Load%2A>メソッドが呼び出されます)、このプロパティを返します`true`です。  
+  
+ このプロパティは、保護対象のパブリックにアクセスできる別名<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.IsInitialized%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInitialized">
+      <MemberSignature Language="C#" Value="protected bool IsInitialized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsInitialized" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartPersonalization.IsInitialized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パーソナル化が有効のこのインスタンスのパーソナル化データが正常に読み込まれたかどうかを示す値を取得、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />クラスです。</summary>
+        <value>
+          <see langword="true" />このインスタンスのパーソナル化が初期化される場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パーソナル化機能が有効になっている場合 (場合、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.Enabled%2A>プロパティに設定されている`true`) では、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization>インスタンスは、関連付けられている後すぐに初期化されると見なされます<xref:System.Web.UI.WebControls.WebParts.WebPartManager>の<xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnInit%2A>メソッドが正常に完了 (によって、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.Load%2A>メソッドが呼び出されます)。 パーソナル化データを読み込む前にこのを常に返します`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsModifiable">
+      <MemberSignature Language="C#" Value="public bool IsModifiable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsModifiable" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartPersonalization.IsModifiable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>状態情報を変更する現在のユーザーが承認済みかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />状態情報を変更するユーザーが承認されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが呼び出されると、最初に、パーソナル化状態を変更するユーザーの権利を決定する結果をキャッシュします。 場合、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.UserCapabilities%2A>後初めてこのプロパティが呼び出されたときにディクショナリが変更されると、変更は反映されませんこのプロパティを後続の呼び出しで。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用して、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.IsModifiable%2A>プロパティです。 このコードで見つかったより大きなコード サンプルの一部である、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization>クラスの説明。  
+  
+ [!code-csharp[WebParts_WebPartPersonalization#6](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartPersonalization/CS/persMode.ascx#6)]
+ [!code-vb[WebParts_WebPartPersonalization#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartPersonalization/VB/persMode.ascx#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="protected virtual System.Web.UI.WebControls.WebParts.PersonalizationScope Load ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance valuetype System.Web.UI.WebControls.WebParts.PersonalizationScope Load() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartPersonalization.Load" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PersonalizationScope</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>パーソナル化を初期化します。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" />親インスタンス<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、親の代わりのパーソナル化情報を初期化するためのメイン エントリ ポイント<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロール。 このメソッドは、親の中に呼び出されます<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールの<xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnInit%2A>メソッドです。 通常、パーソナル化が、親で無効になって場合<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロール、このメソッドは決して呼び出されません。  
+  
+ このメソッドの中には、次の初期化が発生します。  
+  
+-   示されている既定のパーソナル化プロバイダー、またはカスタム プロバイダーのいずれかへの参照、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>ページ マークアップ、または<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ProviderName%2A>プロパティを取得します。  
+  
+-   ユーザー機能を判断する、プロバイダーが呼び出されます (<xref:System.Web.UI.WebControls.WebParts.PersonalizationProvider.DetermineUserCapabilities%2A>)、現在実行しているユーザーです。  
+  
+-   現在のページ/ユーザー/スコープの組み合わせのパーソナル化状態がプロバイダーによって、基になるデータ ストアから読み込まれた (<xref:System.Web.UI.WebControls.WebParts.PersonalizationProvider.LoadPersonalizationState%2A>) および内で格納されている、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization>インスタンス。  
+  
+-   現在のページ/ユーザー/スコープのパーソナル化スコープは、プロバイダーによって決まります (<xref:System.Web.UI.WebControls.WebParts.PersonalizationProvider.DetermineInitialScope%2A>)。 この決定の結果は、の値と異なる可能性があります、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.InitialScope%2A>プロパティです。  
+  
+ 値としてこのメソッドから返されるスコープの値が使用される、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.Scope%2A>プロパティです。  
+  
+> [!NOTE]
+>  <xref:System.InvalidOperationException>場合にのみ、有効化されていないパーソナル化のための例外が発生、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.Load%2A>メソッドが直接呼び出されます。 実装では、ASP.NET、内部のヘルパー メソッドが実際には、読み込みを実行すると呼ばれ、かどうかパーソナル化が有効でないページのこのヘルパー メソッドをサイレント モードで返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">パーソナル化が有効でない場合、このメソッドが呼び出されます (<see cref="P:System.Web.UI.WebControls.WebParts.WebPartPersonalization.Enabled" /> equals <see langword="false" />)。  
+  
+ \- または  
+  
+ 値、<see cref="P:System.Web.UI.Control.Page" />関連付けられているプロパティ<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />は<see langword="null" />します。  
+  
+ \- または  
+  
+ 値、<see cref="P:System.Web.UI.Page.Request" />プロパティを<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />コントロールに関連付けられている<see cref="T:System.Web.UI.Page" />インスタンスが<see langword="null" />です。</exception>
+        <exception cref="T:System.Configuration.Provider.ProviderException">プロバイダーがで明示的に設定するかページ マークアップ、または<see cref="P:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ProviderName" />プロパティとプロバイダーが見つかりません。  
+  
+ \- または  
+  
+ パーソナル化状態データを格納しているオブジェクト<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentException">読み込みとデータを逆シリアル化中に問題が発生しました。  
+  
+ \- または  
+  
+ 構成ファイル内のパーソナル化プロバイダーの定義のエラーが発生しました。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">基になるのパーソナル化プロバイダーは、既定のプロバイダーが見つかりませんでしたまたはパーソナル化プロバイダーを初期化しようとしているときにエラーが発生したために初期化できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ModifyStateUserCapability">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.WebControls.WebParts.WebPartUserCapability ModifyStateUserCapability;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.WebControls.WebParts.WebPartUserCapability ModifyStateUserCapability" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ModifyStateUserCapability" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartUserCapability</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartUserCapability" />パーソナル化状態を変更するユーザーの承認のインスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー権利はで、文字列"modifyState"で表される、<xref:System.Web.UI.WebControls.WebParts.WebPartUserCapability>インスタンス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderName">
+      <MemberSignature Language="C#" Value="public virtual string ProviderName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ProviderName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ProviderName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはパーソナル化のプロバイダー名を設定します。</summary>
+        <value>パーソナル化プロバイダーの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、ページの宣言では、このプロパティの設定値を返します。 このプロパティが設定されていないかどうかそれを返します<xref:System.String.Empty>です。 この場合、ページが、構成ファイルで指定された既定のパーソナル化プロバイダーを使用します。  
+  
+ このプロパティは、完了する前にのみ設定できる、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールの<xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnInit%2A>メソッドです。 つまり、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ProviderName%2A>でページの宣言でプロパティを設定する必要があります、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>要素。  このプロパティを設定中にする代わりに、`PreInit`フェーズ。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このプロパティの後に、現在の値以外の値を設定しようとしましたが、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />コントロールの<see cref="M:System.Web.UI.WebControls.WebParts.WebPartManager.OnInit(System.EventArgs)" />メソッドが完了します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetPersonalizationState">
+      <MemberSignature Language="C#" Value="public virtual void ResetPersonalizationState ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ResetPersonalizationState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ResetPersonalizationState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のページ、スコープ、および基になるデータ ストア内のユーザーのパーソナル化データをリセットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、現在のページ、スコープ、および基になるデータ ストア内のユーザーのパーソナル化データをリセットします。 リセットの副作用として、現在実行中のページは再実行、<xref:System.Web.HttpServerUtility.Transfer%2A>呼び出します。 この転送が現在のページとしてを再実行することに注意してください、`GET`ページが最初に要求した方法に関係なく要求します。  
+  
+ このメソッドは、いつでも呼び出すことができます。 内部的には、このメソッドは、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ResetPersonalizationState%2A>プロバイダーのメソッドです。 データを正常にリセットした後、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ShouldResetPersonalizationState%2A>プロパティに設定されている`true`です。 このプロパティを別の場所で使用、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization>コントロールのプロパティから抽出のパーソナル化データをバイパスするインスタンスし、データは既にリセットされている場合は、これを保存します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />インスタンスが有効なパーソナル化プロバイダーを参照できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="protected virtual void Save ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Save() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartPersonalization.Save" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のページ、スコープ、およびユーザーのパーソナル化データを基になるデータ ストアに保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 中にこのメソッドは、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールの<xref:System.Web.UI.Page.SaveStateComplete>イベント。 内部的には、メソッドの呼び出し、<xref:System.Web.UI.WebControls.WebParts.PersonalizationProvider.SavePersonalizationState%2A>プロバイダーのメソッドです。  
+  
+ 現在実行中のユーザーと呼ばれる機能があるない場合に、パーソナル化データを保存しようとしています。 <xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ModifyStateUserCapability> (現在内<xref:System.Web.UI.WebControls.WebParts.WebPartUserCapability>インスタンス) の結果、<xref:System.InvalidOperationException>例外。 のみがある場合は true に注意してください。 場合、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールが、保護されていると呼ばれる<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.Save%2A>メソッドを直接です。 実装では、ASP.NET、内部のヘルパー メソッドが実際に呼び出されて、保存を実行し、このヘルパー メソッドがサイレント モードで現在実行中のユーザーにデータを変更する権限がないかどうかを返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">現在のユーザーと呼ばれる機能はありません。<see cref="F:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ModifyStateUserCapability" />です。  
+  
+ \- または  
+  
+ <see cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />インスタンスが有効なパーソナル化プロバイダーを参照できません。  
+  
+ \- または  
+  
+ パーソナル化プロバイダーが現在関連付けられていない、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />インスタンス。 このメソッドを呼び出す前に呼び出した場合に発生<see cref="M:System.Web.UI.WebControls.WebParts.WebPartPersonalization.Load" />(パーソナル化プロバイダーの参照は呼び出し中に取得した<see cref="M:System.Web.UI.WebControls.WebParts.WebPartPersonalization.Load" />です。  
+  
+ \- または  
+  
+ パーソナル化状態が読み込まれていません。  
+  
+ \- または  
+  
+ <see cref="T:System.Web.UI.Page" />関連付けられているインスタンス<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />は<see langword="null" />します。  
+  
+ \- または  
+  
+ 値、<see cref="P:System.Web.UI.Page.Request" />プロパティを<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />コントロールに関連付けられている<see cref="T:System.Web.UI.Page" />インスタンスが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Scope">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.PersonalizationScope Scope { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.WebParts.PersonalizationScope Scope" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartPersonalization.Scope" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PersonalizationScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>親の現在のパーソナル化スコープを取得<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" />インスタンスのスコープを示す、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は、最初にに基づいて設定から返される値、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.Load%2A>メソッドです。 この値は呼び出すことによって変更されることができます、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ToggleScope%2A>メソッドです。  
+  
+ 適用して、パーソナル化情報を抽出するために使用されるスコープがこれを表すことに注意してください。 このプロパティの値が異なる場合があります、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.InitialScope%2A>プロパティまたは<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ChangeScope%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDirty">
+      <MemberSignature Language="C#" Value="protected virtual void SetDirty ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void SetDirty() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartPersonalization.SetDirty" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>親のマークを付けます<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />が変更されたパーソナル化データを持つものとしてコントロール (は「ダーティ」) です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.IsEnabled%2A>プロパティに設定されている`true`、このメソッドは、親を示します<xref:System.Web.UI.WebControls.WebParts.WebPartManager>「ダーティ」としてを制御します。 実装の詳細によって、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>のコントロールのインスタンス<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization>、このメソッドはセキュリティ チェックを呼び出し、コード アクセス セキュリティのアクセス許可チェック可能性があります。 内部的には、このメソッドは、<xref:System.Web.UI.WebControls.WebParts.PersonalizationState.SetWebPartManagerDirty%2A>メソッドです。  
+  
+ なお、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールが内部的には「ダーティ」の状態を追跡し、使用して、マネージャーの"dirtiness"を公開、<xref:System.Web.UI.WebControls.WebParts.IPersonalizable.IsDirty%2A>プロパティではなく、このメソッドを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">パーソナル化データが読み込まれていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDirty">
+      <MemberSignature Language="C#" Value="protected virtual void SetDirty (System.Web.UI.WebControls.WebParts.WebPart webPart);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void SetDirty(class System.Web.UI.WebControls.WebParts.WebPart webPart) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartPersonalization.SetDirty(System.Web.UI.WebControls.WebParts.WebPart)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="webPart" Type="System.Web.UI.WebControls.WebParts.WebPart" />
+      </Parameters>
+      <Docs>
+        <param name="webPart">「ダーティ」としてマークする Web パーツ コントロール。</param>
+        <summary>変更されたパーソナル化データを持つものとして指定された Web パーツ コントロールのマークを付けます (は「ダーティ」) です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.IsEnabled%2A>プロパティに設定されている`true`、このメソッドは「ダーティ」として指定された Web パーツ コントロールを示します。 実装の詳細によって、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>のコントロールのインスタンス<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization>、このメソッドはセキュリティ チェックを呼び出し、コード アクセス セキュリティのアクセス許可チェック可能性があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">親によって管理されていない Web パーツ コントロールの「ダーティ」としてマークする試行<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">パーソナル化データが読み込まれていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldResetPersonalizationState">
+      <MemberSignature Language="C#" Value="protected bool ShouldResetPersonalizationState { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShouldResetPersonalizationState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ShouldResetPersonalizationState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を現在のページのパーソナル化データがリセットされたかどうかを示す値 (たとえば、要求されましたパーソナル化データを基になるデータ ストアから削除する)。</summary>
+        <value>
+          <see langword="true" />現在のページのパーソナル化状態がリセットされた場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティ設定されている場合`true`、現在のページのパーソナル化状態がリセットされ、コントロールからとそれ以降のパーソナル化データの抽出が操作を保存することをスキップすることを示します。 現時点では、このプロパティに設定が自動的に`true`パーソナル化インフラストラクチャによって場合、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ResetPersonalizationState%2A>メソッドが呼び出されます。  
+  
+ このプロパティを設定するときに制限はありませんが、プロパティ必要がありますに設定することに注意してください`true`より前のバージョン、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールの<xref:System.Web.UI.Page.SaveStateComplete>イベント影響がないようにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToggleScope">
+      <MemberSignature Language="C#" Value="public virtual void ToggleScope ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ToggleScope() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ToggleScope" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のページのパーソナル化スコープのスイッチ<see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.User" />に<see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared" />またはから<see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared" />に<see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.User" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、現在実行中のページのパーソナル化スコープを切り替えます。 結果のスコープを切り替えて、<xref:System.Web.HttpServerUtility.Transfer%2A>現在実行中のページに戻ります。  
+  
+ エクスポート中に呼び出されたか、Web パーツ コントロールのインポートが発生している場合、このメソッドによって操作は実行されません。  
+  
+ スコープの切り替え要求が経由で送信されたページの発生したかどうか、`POST`要求し、クエリ文字列の値は、転送中に保持されます以外の場合は、ページが経由で送信されたクエリ文字列パラメーターは保持されません、`GET`要求します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用して、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ToggleScope%2A>メソッドです。 このコードで見つかったより大きなコード サンプルの一部である、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization>クラスの説明。  
+  
+ [!code-csharp[WebParts_WebPartPersonalization#7](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartPersonalization/CS/persMode.ascx#7)]
+ [!code-vb[WebParts_WebPartPersonalization#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartPersonalization/VB/persMode.ascx#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">現在のユーザーに機能がなく、ユーザーを入力する<see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared" />から切り替えるしようとするときのスコープ<see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.User" />スコープを<see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared" />スコープ。  
+  
+ \- または  
+  
+ <see cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />インスタンスが初期化を完了していません。  
+  
+ \- または  
+  
+ <see cref="T:System.Web.UI.Page" />関連付けられているインスタンス<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />は<see langword="null" />します。  
+  
+ \- または  
+  
+ 値、<see cref="P:System.Web.UI.Page.Request" />プロパティを<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />コントロールに関連付けられている<see cref="T:System.Web.UI.Page" />インスタンスが<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">定義されていないスコープに切り替えるしようとしましたが、<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" />列挙します。 技術的には、このような状況は発生しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UserCapabilities">
+      <MemberSignature Language="C#" Value="protected virtual System.Collections.IDictionary UserCapabilities { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IDictionary UserCapabilities" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartPersonalization.UserCapabilities" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー権限のセットを取得<see cref="T:System.Web.UI.WebControls.WebParts.WebPartUserCapability" />現在のユーザーに付与します。</summary>
+        <value><see cref="T:System.Collections.IDictionary" /> 、Empty のいずれか、現在のユーザーに付与されたユーザー機能のセットを含んでいる<see cref="T:System.Collections.Specialized.HybridDictionary" />場合は、ユーザーが匿名です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在、<xref:System.Web.UI.WebControls.WebParts.WebPartUserCapability>クラスには、ユーザーの機能を示す 2 つの値が含まれています:`modifyState`と`enterSharedScope`です。 ヘルパーのプロパティを持つチェックできる、ディクショナリ内に含まれる機能、使いやすさの<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.IsModifiable%2A>と<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.CanEnterSharedScope%2A>です。 これらのプロパティのいずれかがアクセスされていない; 後に機能を変更するのには制限に注意してください。詳細については、各プロパティの [説明] セクションを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebPartManager">
+      <MemberSignature Language="C#" Value="protected System.Web.UI.WebControls.WebParts.WebPartManager WebPartManager { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPartManager WebPartManager" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartPersonalization.WebPartManager" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartManager</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の親のインスタンスを取得<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />これに関連付けられたコントロール<see cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />インスタンス。</summary>
+        <value>現在の親<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>のこのインスタンスに関連付けられたコントロール、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

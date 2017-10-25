@@ -1,0 +1,304 @@
+<Type Name="UnsignedPublishLicense" FullName="System.Security.RightsManagement.UnsignedPublishLicense">
+  <TypeSignature Language="C#" Value="public class UnsignedPublishLicense" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UnsignedPublishLicense extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.RightsManagement.UnsignedPublishLicense" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Security.SecurityCritical(System.Security.SecurityCriticalScope.Everything)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>署名されていない権限管理<see cref="T:System.Security.RightsManagement.PublishLicense" />または unsigned<see cref="T:System.Security.RightsManagement.PublishLicense" />テンプレート。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.RightsManagement.PublishLicense>権限、ユーザー、およびその他のセキュリティに関連する情報に関するセキュリティ データを定義します。  ライセンスは、特定のコンピューター上の特定のユーザーが指定された権限が管理されたコンテンツを使用する方法を定義します。  
+  
+ 公開プロセスでは、ドキュメントの作成者の権利の情報を定義すると、<xref:System.Security.RightsManagement.UnsignedPublishLicense>です。  次に、アプリケーションの作成の呼び出し、 <xref:System.Security.RightsManagement.UnsignedPublishLicense>.<xref:System.Security.RightsManagement.UnsignedPublishLicense.Sign%2A>メソッドを作成、署名付き<xref:System.Security.RightsManagement.PublishLicense>します。  サインインした<xref:System.Security.RightsManagement.PublishLicense>を呼び出すエンドユーザー クライアント アプリケーションに提供できる、<xref:System.Security.RightsManagement.PublishLicense.AcquireUseLicense%2A>を要求するエンドユーザー<xref:System.Security.RightsManagement.UseLicense>です。  返された<xref:System.Security.RightsManagement.UseLicense>ユーザーに与えられている権限を行使するクライアント アプリケーションを使用します。  
+  
+ ドキュメントの作成者が使用できる、<xref:System.Security.RightsManagement.UnsignedPublishLicense>クラス、署名を作成するか<xref:System.Security.RightsManagement.PublishLicense>、または、ビルドし、シリアル化、<xref:System.Security.RightsManagement.PublishLicense>テンプレート。  
+  
+ その他の同様<xref:System.Security.RightsManagement>型、<xref:System.Security.RightsManagement.UnsignedPublishLicense>は完全信頼アプリケーションで使用できるのみです。  
+  
+<a name="xamlTextUsage_UnsignedPublishLicense"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ この型は、通常では使用されない[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UnsignedPublishLicense ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.RightsManagement.UnsignedPublishLicense.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.RightsManagement.UnsignedPublishLicense" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.RightsManagement.UnsignedPublishLicense>空で、署名されていない発行ライセンスを作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UnsignedPublishLicense (string publishLicenseTemplate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string publishLicenseTemplate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.RightsManagement.UnsignedPublishLicense.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="publishLicenseTemplate" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="publishLicenseTemplate">[!INCLUDE[TLA#tla_xrml](~/includes/tlasharptla-xrml-md.md)]公開ライセンス テンプレートを使用してこのライセンスを作成します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.RightsManagement.UnsignedPublishLicense" />から、指定したクラス[!INCLUDE[TLA2#tla_xrml](~/includes/tla2sharptla-xrml-md.md)]公開ライセンス テンプレート。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `publishLicenseTemplate` [!INCLUDE[TLA2#tla_xrml](~/includes/tla2sharptla-xrml-md.md)] `<RANGETIME>`または`<INTERVALTIME>`要素は無視されるときに、<xref:System.Security.RightsManagement.UnsignedPublishLicense>によって作成された、 <xref:System.Security.RightsManagement.UnsignedPublishLicense.%23ctor%2A>(String) コンス トラクターです。  発行ライセンスに対してこれらの値を指定する、<xref:System.Security.RightsManagement.ContentGrant>プロパティ<xref:System.Security.RightsManagement.ContentGrant.ValidFrom%2A>と<xref:System.Security.RightsManagement.ContentGrant.ValidUntil%2A>明示的に設定する必要があります。  次の例は、明示的に設定する方法を示します、<xref:System.Security.RightsManagement.ContentGrant.ValidFrom%2A>と<xref:System.Security.RightsManagement.ContentGrant.ValidUntil%2A>プロパティです。  
+  
+ [!code-csharp[UnsignedPubLicense_snip#RmPkgPubGrants](~/samples/snippets/csharp/VS_Snippets_Wpf/UnsignedPubLicense_snip/CSharp/Window1.xaml.cs#rmpkgpubgrants)]
+ [!code-vb[UnsignedPubLicense_snip#RmPkgPubGrants](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UnsignedPubLicense_snip/visualbasic/window1.xaml.vb#rmpkgpubgrants)]  
+  
+   
+  
+## Examples  
+ 次の例は、このコンストラクターを使用する方法を示しています。  
+  
+ [!code-csharp[RightsManagedPackagePublish#RmPkgPubUnPubLic](~/samples/snippets/csharp/VS_Snippets_Wpf/RightsManagedPackagePublish/CSharp/Window1.xaml.cs#rmpkgpubunpublic)]
+ [!code-vb[RightsManagedPackagePublish#RmPkgPubUnPubLic](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RightsManagedPackagePublish/visualbasic/window1.xaml.vb#rmpkgpubunpublic)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentId">
+      <MemberSignature Language="C#" Value="public Guid ContentId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid ContentId" />
+      <MemberSignature Language="DocId" Value="P:System.Security.RightsManagement.UnsignedPublishLicense.ContentId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発行者が作成したコンテンツ識別子を取得または設定します。</summary>
+        <value>発行者が作成した、権限が管理されたコンテンツの識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パブリッシャーによって、作成、<xref:System.Security.RightsManagement.UnsignedPublishLicense.ContentId%2A>で権限が管理されたコンテンツを識別する、<xref:System.Security.RightsManagement.UseLicense>と<xref:System.Security.RightsManagement.PublishLicense>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Grants">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;System.Security.RightsManagement.ContentGrant&gt; Grants { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;class System.Security.RightsManagement.ContentGrant&gt; Grants" />
+      <MemberSignature Language="DocId" Value="P:System.Security.RightsManagement.UnsignedPublishLicense.Grants" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.Security.RightsManagement.ContentGrant&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>割り当てられたユーザー権限のコレクションを取得します。</summary>
+        <value>本ライセンスに記載されている割り当てられたユーザー権限のコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalizedNameDescriptionDictionary">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;int,System.Security.RightsManagement.LocalizedNameDescriptionPair&gt; LocalizedNameDescriptionDictionary { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;int32, class System.Security.RightsManagement.LocalizedNameDescriptionPair&gt; LocalizedNameDescriptionDictionary" />
+      <MemberSignature Language="DocId" Value="P:System.Security.RightsManagement.UnsignedPublishLicense.LocalizedNameDescriptionDictionary" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.Int32,System.Security.RightsManagement.LocalizedNameDescriptionPair&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>名前と説明のペアのコレクションを取得します。</summary>
+        <value>名前と説明のペアのコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Owner">
+      <MemberSignature Language="C#" Value="public System.Security.RightsManagement.ContentUser Owner { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.RightsManagement.ContentUser Owner" />
+      <MemberSignature Language="DocId" Value="P:System.Security.RightsManagement.UnsignedPublishLicense.Owner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.RightsManagement.ContentUser</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコンテンツの所有者を設定します。</summary>
+        <value>公開されたコンテンツを所有するユーザー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.RightsManagement.UnsignedPublishLicense.Owner%2A>所有するユーザーを指定します、<xref:System.Security.RightsManagement.PublishLicense>です。  
+  
+ <xref:System.Security.RightsManagement.UnsignedPublishLicense.Owner%2A>発行ライセンスの所有者ノードに関連付けられても[!INCLUDE[TLA#tla_xrml](~/includes/tlasharptla-xrml-md.md)]します。  
+  
+   
+  
+## Examples  
+ 次の例は、このプロパティを使用して割り当てる方法を示します、<xref:System.Security.RightsManagement.ContentUser>です。  
+  
+ [!code-csharp[RightsManagedPackagePublish#RmPkgPubUnPubLic](~/samples/snippets/csharp/VS_Snippets_Wpf/RightsManagedPackagePublish/CSharp/Window1.xaml.cs#rmpkgpubunpublic)]
+ [!code-vb[RightsManagedPackagePublish#RmPkgPubUnPubLic](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RightsManagedPackagePublish/visualbasic/window1.xaml.vb#rmpkgpubunpublic)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReferralInfoName">
+      <MemberSignature Language="C#" Value="public string ReferralInfoName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ReferralInfoName" />
+      <MemberSignature Language="DocId" Value="P:System.Security.RightsManagement.UnsignedPublishLicense.ReferralInfoName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または作成者やコンテンツの発行元の連絡先名を設定します。</summary>
+        <value>作成者またはコンテンツの発行元の連絡先の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlTextUsage_ReferralInfoName"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ この型のメンバーは、通常では使用されない[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReferralInfoUri">
+      <MemberSignature Language="C#" Value="public Uri ReferralInfoUri { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri ReferralInfoUri" />
+      <MemberSignature Language="DocId" Value="P:System.Security.RightsManagement.UnsignedPublishLicense.ReferralInfoUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>連絡先の設定を取得または[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]作成者またはコンテンツの発行元。</summary>
+        <value>連絡先[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]作成者またはコンテンツの発行元。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlTextUsage_ReferralInfoUri"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ この型のメンバーは、通常では使用されない[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Sign">
+      <MemberSignature Language="C#" Value="public System.Security.RightsManagement.PublishLicense Sign (System.Security.RightsManagement.SecureEnvironment secureEnvironment, out System.Security.RightsManagement.UseLicense authorUseLicense);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.RightsManagement.PublishLicense Sign(class System.Security.RightsManagement.SecureEnvironment secureEnvironment, [out] class System.Security.RightsManagement.UseLicense&amp; authorUseLicense) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.RightsManagement.UnsignedPublishLicense.Sign(System.Security.RightsManagement.SecureEnvironment,System.Security.RightsManagement.UseLicense@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.RightsManagement.PublishLicense</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="secureEnvironment" Type="System.Security.RightsManagement.SecureEnvironment" />
+        <Parameter Name="authorUseLicense" Type="System.Security.RightsManagement.UseLicense&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="secureEnvironment">ライセンスの有効化およびバインディングをセキュリティで保護された環境。</param>
+        <param name="authorUseLicense">返される、<see cref="T:System.Security.RightsManagement.UseLicense" />ドキュメントの作成者にします。</param>
+        <summary>符号付き作成<see cref="T:System.Security.RightsManagement.PublishLicense" />を返します、<see cref="T:System.Security.RightsManagement.UseLicense" />ドキュメントの作成者の。</summary>
+        <returns>サインインした<see cref="T:System.Security.RightsManagement.PublishLicense" />この署名によって作成<see cref="T:System.Security.RightsManagement.UnsignedPublishLicense" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、このクラスを使用して初期化する方法を示しています、<xref:System.Security.RightsManagement.PublishLicense>です。  
+  
+ [!code-csharp[RightsManagedPackagePublish#RmPkgPubEncrypt](~/samples/snippets/csharp/VS_Snippets_Wpf/RightsManagedPackagePublish/CSharp/Window1.xaml.cs#rmpkgpubencrypt)]
+ [!code-vb[RightsManagedPackagePublish#RmPkgPubEncrypt](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RightsManagedPackagePublish/visualbasic/window1.xaml.vb#rmpkgpubencrypt)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.RightsManagement.UnsignedPublishLicense.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成されたシリアル化されたテンプレートを返します、[!INCLUDE[TLA2#tla_xrml](~/includes/tla2sharptla-xrml-md.md)]の<see cref="T:System.Security.RightsManagement.UnsignedPublishLicense" />です。</summary>
+        <returns>シリアル化されたテンプレートから作成された、[!INCLUDE[TLA2#tla_xrml](~/includes/tla2sharptla-xrml-md.md)]の<see cref="T:System.Security.RightsManagement.UnsignedPublishLicense" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,286 @@
+<Type Name="Button" FullName="System.Windows.Controls.Button">
+  <TypeSignature Language="C#" Value="public class Button : System.Windows.Controls.Primitives.ButtonBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi Button extends System.Windows.Controls.Primitives.ButtonBase" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.Button" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.Primitives.ButtonBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Controls.Primitives.ButtonBase.Click" /> イベントに反応する Windows ボタン コントロールを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Button>クラスから直接継承、<xref:System.Windows.Controls.Primitives.ButtonBase?displayProperty=nameWithType>クラスです。  
+  
+ **コンテンツ モデル:** <xref:System.Windows.Controls.Button>は、<xref:System.Windows.Controls.ContentControl>です。 そのコンテンツ プロパティは<xref:System.Windows.Controls.ContentControl.Content%2A>します。  
+  
+ 処理、 <xref:System.Windows.Controls.Primitives.ButtonBase.Click?displayProperty=nameWithType> 、ユーザーがクリックしたときに応答するイベント、<xref:System.Windows.Controls.Button>です。  
+  
+ <xref:System.Windows.Controls.Primitives.ButtonBase.OnMouseLeftButtonDown%2A>メソッド マーク、<xref:System.Windows.UIElement.MouseLeftButtonDown>イベントを処理します。 応答する、<xref:System.Windows.UIElement.MouseLeftButtonDown>イベント、イベント ハンドラーをアタッチ、<xref:System.Windows.ContentElement.PreviewMouseLeftButtonDown>イベント、または呼び出し<xref:System.Windows.UIElement.AddHandler%28System.Windows.RoutedEvent%2CSystem.Delegate%2CSystem.Boolean%29>で`handledEventsToo`'éý'`true`です。  
+  
+## <a name="customizing-the-button-control"></a>ボタン コントロールのカスタマイズ  
+ 設定を適用する、同じプロパティを複数<xref:System.Windows.Controls.Button>、コントロールを使用して、<xref:System.Windows.FrameworkElement.Style%2A>プロパティです。 既定値を変更することができます<xref:System.Windows.Controls.ControlTemplate>コントロールの外観を一意にします。 作成の詳細については、<xref:System.Windows.Controls.ControlTemplate>を参照してください[、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  部分とに固有の状態を表示する、<xref:System.Windows.Controls.Button>を参照してください[ボタンのスタイルとテンプレート](~/docs/framework/wpf/controls/button-styles-and-templates.md)です。  
+  
+ コントロールの既定のスタイルでは、このコントロールの依存関係プロパティを設定する場合があります。  プロパティが既定のスタイルが設定されている場合は、アプリケーションでコントロールが表示されたら既定値から、プロパティが変更可能性があります。 既定のスタイルは、いるデスクトップ テーマによっては、アプリケーションが実行されている場合は使用が決定されます。  詳細については、次を参照してください。 [WPF テーマの既定の](http://go.microsoft.com/fwlink/?LinkID=158252)します。  
+  
+> [!NOTE]
+>  Visual プロパティの設定はのみに効果が場合、このプロパティは、両方に存在<xref:System.Windows.Controls.Button>コントロールの既定のテンプレートとを使用して設定をします。 「を変更する、Visual 構造の制御」 セクションで visual のプロパティの一覧を検索できる[、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、次の 3 つの異なる方法でクリックに応答する 3 つのボタンを示します。  
+  
+-   ホバー時: 最初のボタンは、ユーザーがボタンの上をマウスを置くとに色を変更します。  
+  
+-   キーを押します。 2 番目のボタンは、ボタンの上にマウス ポインターが、マウスを押すことが必要です。  
+  
+-   リリース: マウスが押され、ボタンにリリースするまで、3 番目はボタンの背景色をリセットされませんしません。  
+  
+ [!code-xaml[ClickModes_snip#1](~/samples/snippets/csharp/VS_Snippets_Wpf/ClickModes_snip/CSharp/Pane1.xaml#1)]  
+  
+ [!code-csharp[ClickModes_snip#2](~/samples/snippets/csharp/VS_Snippets_Wpf/ClickModes_snip/CSharp/Pane1.xaml.cs#2)]
+ [!code-vb[ClickModes_snip#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ClickModes_snip/VisualBasic/Window1.xaml.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Button ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Button.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Button" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCancel">
+      <MemberSignature Language="C#" Value="public bool IsCancel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCancel" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Button.IsCancel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="T:System.Windows.Controls.Button" />は [キャンセル] ボタンをクリックします。 ユーザーは、ESC キーを押して、[キャンセル] ボタンをアクティブ化できます。</summary>
+        <value>
+          <see langword="true" />場合、 <see cref="T:System.Windows.Controls.Button" /> [キャンセル] ボタンは、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定すると、<xref:System.Windows.Controls.Button.IsCancel%2A>するボタンのプロパティ`true`、作成する、<xref:System.Windows.Controls.Button>で登録されている、<xref:System.Windows.Input.AccessKeyManager>です。 ユーザーが ESC キーを押したときに、ボタンがアクティブ化します。  
+  
+<a name="dependencyPropertyInfo_IsCancel"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Button.IsCancelProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例では、このプロパティを使用して、[キャンセル] ボタンを作成する方法を示します。  
+  
+ [!code-xaml[ButtonProps_snip#2](~/samples/snippets/csharp/VS_Snippets_Wpf/ButtonProps_snip/CSharp/Page1.xaml#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCancelProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsCancelProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsCancelProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Button.IsCancelProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Button.IsCancel" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefault">
+      <MemberSignature Language="C#" Value="public bool IsDefault { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDefault" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Button.IsDefault" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="T:System.Windows.Controls.Button" />既定のボタンです。 ユーザーは、ENTER キーを押すと、既定のボタンを呼び出します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Windows.Controls.Button" />既定のボタンは、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定すると、<xref:System.Windows.Controls.Button.IsDefault%2A>するボタンのプロパティ`true`、ボタンを登録する、<xref:System.Windows.Input.AccessKeyManager>できるように、ユーザーが ENTER キーを押すと、ボタンを呼び出すことができます。  
+  
+<a name="dependencyPropertyInfo_IsDefault"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Button.IsDefaultProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例では、既定のボタンとしてボタンを指定する方法を示します。  
+  
+ [!code-xaml[ButtonProps_snip#1](~/samples/snippets/csharp/VS_Snippets_Wpf/ButtonProps_snip/CSharp/Page1.xaml#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefaulted">
+      <MemberSignature Language="C#" Value="public bool IsDefaulted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDefaulted" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Button.IsDefaulted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、 <see cref="T:System.Windows.Controls.Button" /> ENTER キーを押すユーザーがアクティブ化されるボタンします。</summary>
+        <value>
+          <see langword="true" />ユーザーが ENTER; を押すと、ボタンがアクティブにする場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Button.IsDefaulted%2A>プロパティは`true`ときに、<xref:System.Windows.Controls.Button.IsDefault%2A>プロパティに設定されている`true`フォーカスがあるコントロールでは入力として入力は受け付けられません。  たとえば、**実行** ダイアログ ボックス、 **ok**ボタンは既定のボタンです。 テキスト ボックスにフォーカスがあるときに<xref:System.Windows.Controls.Button.IsDefaulted%2A>上、 **[ok]**ボタンは`true`のため、ユーザーが ENTER キーを押して、ボタンをアクティブ化します。  
+  
+> [!NOTE]
+>  既定のボタンにフォーカスが<xref:System.Windows.Controls.Button.IsDefaulted%2A>は`false`します。 これは、ため、<xref:System.Windows.Controls.Primitives.ButtonBase.OnKeyDown%2A>メソッドは、入力を処理し、必要はありません<xref:System.Windows.Controls.Button.IsDefaulted%2A>に設定する`true`です。  
+  
+<a name="dependencyPropertyInfo_IsDefaulted"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Button.IsDefaultedProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例を確認する方法を示して かどうか、<xref:System.Windows.Controls.Button.IsDefaulted%2A>プロパティは`true`の既定のボタンです。  
+  
+ [!code-csharp[ButtonProps_snip#3](~/samples/snippets/csharp/VS_Snippets_Wpf/ButtonProps_snip/CSharp/Page1.xaml.cs#3)]
+ [!code-vb[ButtonProps_snip#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ButtonProps_snip/VisualBasic/Window1.xaml.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefaultedProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsDefaultedProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsDefaultedProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Button.IsDefaultedProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Button.IsDefaulted" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefaultProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsDefaultProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsDefaultProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Button.IsDefaultProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Button.IsDefault" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClick">
+      <MemberSignature Language="C#" Value="protected override void OnClick ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnClick() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Button.OnClick" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ときに呼び出されます、<see cref="T:System.Windows.Controls.Button" />をクリックします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreateAutomationPeer">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Button.OnCreateAutomationPeer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationPeer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>適切な作成<see cref="T:System.Windows.Automation.Peers.ButtonAutomationPeer" />このコントロールの一部として、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]インフラストラクチャです。</summary>
+        <returns>A<see cref="T:System.Windows.Automation.Peers.ButtonAutomationPeer" />このコントロール。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,73 @@
+<Type Name="Cursor" FullName="System.Messaging.Cursor">
+  <TypeSignature Language="C#" Value="public sealed class Cursor : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Cursor extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Messaging.Cursor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Messaging</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>A<see cref="T:System.Messaging.Cursor" />の特定の場所を維持するために使用される、<see cref="T:System.Messaging.MessageQueue" />キューのメッセージを読み取るとき。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カーソルを取得する、 <xref:System.Messaging.MessageQueue>、呼び出し、<xref:System.Messaging.MessageQueue.CreateCursor%2A>そのキューのメソッドです。  
+  
+ A<xref:System.Messaging.Cursor>などのメソッドで使用される<xref:System.Messaging.MessageQueue.Peek%28System.TimeSpan%2CSystem.Messaging.Cursor%2CSystem.Messaging.PeekAction%29>と<xref:System.Messaging.MessageQueue.Receive%28System.TimeSpan%2CSystem.Messaging.Cursor%29>をキューの先頭ではないメッセージを読み取る必要がある場合。 これには、同期的または非同期的にメッセージの読み取りが含まれます。 カーソルは、キューの最初のメッセージのみを読み取るために使用する必要はありません。  
+  
+ トランザクション内のメッセージを読み取るときにメッセージ キューはロールバックされませんカーソルの移動、トランザクションが中止された場合。 たとえば、2 つのメッセージ、A1 と A2、キューがあるとします。 A1、トランザクションの実行中のメッセージを削除する場合は、メッセージ A2 に、カーソルを移動するメッセージ キューです。 ただし、何らかの理由で、トランザクションが中止された場合、キューがカーソルに戻す A1 が挿入されたメッセージにとどまります A2 のメッセージをします。  
+  
+ カーソルを閉じるを呼び出す<xref:System.Messaging.Cursor.Close%2A>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.Cursor.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>カーソルを閉じて、メッセージ キューが関連付けられているリソースを解放できるようにします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.Cursor.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Messaging.Cursor" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

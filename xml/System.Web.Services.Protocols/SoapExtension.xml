@@ -1,0 +1,278 @@
+<Type Name="SoapExtension" FullName="System.Web.Services.Protocols.SoapExtension">
+  <TypeSignature Language="C#" Value="public abstract class SoapExtension" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit SoapExtension extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.SoapExtension" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET を使用して作成された XML Web サービスの SOAP 拡張機能の基本クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET では、機能拡張メカニズムを使用して構築する SOAP 関連のインフラストラクチャです。 ASP.NET の SOAP 拡張機能のアーキテクチャを検査またはメッセージ処理、クライアントまたはサーバーのいずれかの特定の段階でメッセージを変更する拡張機能を中心にします。  
+  
+ 派生して ASP.NET SOAP 拡張機能、<xref:System.Web.Services.Protocols.SoapExtension>クラスです。 <xref:System.Web.Services.Protocols.SoapExtension.GetInitializer%2A>と<xref:System.Web.Services.Protocols.SoapExtension.Initialize%2A>メソッドには、パフォーマンスを強化するために SOAP 拡張機能を初期化するための代替機構が用意されています。 <xref:System.Web.Services.Protocols.SoapExtension.ProcessMessage%2A>定義されている各段階で、メソッドが呼び出されると、ほとんどの SOAP 拡張機能の中核部分は、 <xref:System.Web.Services.Protocols.SoapMessageStage>、その特定の SOAP 拡張機能の目的の動作を実行する SOAP 拡張機能を許可します。 SOAP 要求または SOAP 応答にする必要がある SOAP 拡張機能が変更の<xref:System.Web.Services.Protocols.SoapExtension.ChainStream%2A>がネットワーク経由で送信する提案されたデータを受信する機会を提供します。  
+  
+   
+  
+## Examples  
+ 次`TraceExtension`SOAP 拡張機能は、SOAP 要求と、XML Web サービス メソッドに適用されるときに指定したファイルへの SOAP 応答を出力します。 XML Web サービスを実行するには、次の SOAP 拡張機能がインストール、ASPNET ユーザー アカウントは、ログ ファイルを記述するディレクトリに対する書き込みアクセス許可が必要です。  
+  
+ [!code-cpp[Classic SoapExtension Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic SoapExtension Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic SoapExtension Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic SoapExtension Example/CS/source.cs#1)]
+ [!code-vb[Classic SoapExtension Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic SoapExtension Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected SoapExtension ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapExtension.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Protocols.SoapExtension" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChainStream">
+      <MemberSignature Language="C#" Value="public virtual System.IO.Stream ChainStream (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IO.Stream ChainStream(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapExtension.ChainStream(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream">SOAP 要求または応答を格納しているメモリ バッファー。</param>
+        <summary>派生クラスでオーバーライドされると、SOAP 拡張機能には、SOAP 要求または応答を格納しているメモリ バッファーにへのアクセスを可能です。</summary>
+        <returns>A<see cref="T:System.IO.Stream" />この SOAP 拡張機能を変更できる新しいメモリ バッファーを表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.SoapExtension.ChainStream%2A>により、優先順位が高い SOAP 拡張機能が送信されるか、ネットワーク経由で返される SOAP メッセージに最も近いの実際のデータを変更できます。  
+  
+ SOAP 拡張機能の参照を保存する必要があります、<xref:System.IO.Stream>に渡された<xref:System.Web.Services.Protocols.SoapExtension.ChainStream%2A>と<xref:System.IO.Stream>から返された<xref:System.Web.Services.Protocols.SoapExtension.ChainStream%2A>です。 XML Web サービス メソッドを使用して実行する SOAP 拡張機能が構成されている場合、<xref:System.IO.Stream>に渡された<xref:System.Web.Services.Protocols.SoapExtension.ChainStream%2A>でシリアル化された SOAP 要求が含まれています、 <xref:System.Web.Services.Protocols.SoapMessageStage.BeforeDeserialize><xref:System.Web.Services.Protocols.SoapMessageStage>です。 同様に、<xref:System.IO.Stream>から返された参照<xref:System.Web.Services.Protocols.SoapExtension.ChainStream%2A>に書き込まれるシリアル化が発生し、そのためにシリアル化された SOAP 応答を含む、 <xref:System.Web.Services.Protocols.SoapMessageStage.AfterSerialize><xref:System.Web.Services.Protocols.SoapMessageStage>です。  
+  
+   
+  
+## Examples  
+ 次の例では、両方を保存、<xref:System.IO.Stream>に渡された<xref:System.Web.Services.Protocols.SoapExtension.ChainStream%2A>と<xref:System.IO.Stream>から返された<xref:System.Web.Services.Protocols.SoapExtension.ChainStream%2A>メンバー変数`oldStream`と`newStream`、それぞれします。  
+  
+ [!code-cpp[Classic SoapExtension.ChainStream Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic SoapExtension.ChainStream Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic SoapExtension.ChainStream Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic SoapExtension.ChainStream Example/CS/source.cs#1)]
+ [!code-vb[Classic SoapExtension.ChainStream Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic SoapExtension.ChainStream Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInitializer">
+      <MemberSignature Language="C#" Value="public abstract object GetInitializer (Type serviceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetInitializer(class System.Type serviceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapExtension.GetInitializer(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="serviceType">SOAP 拡張機能を適用する XML Web サービスを実装するクラスの型。</param>
+        <summary>派生クラスでオーバーライドされると、1 つに XML Web サービスを実装するクラスに固有のデータを初期化するために SOAP 拡張機能は、パフォーマンス コストを時間します。</summary>
+        <returns><see cref="T:System.Object" /> SOAP 拡張機能がキャッシュを初期化します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバー ロード<xref:System.Web.Services.Protocols.SoapExtension.GetInitializer%2A>から呼び出されるを ASP.NET は、SOAP 拡張機能の指定方法によって異なります。 SOAP 拡張機能を指定するための 2 つの方法はあります。  
+  
+-   派生する、カスタム属性を適用<xref:System.Web.Services.Protocols.SoapExtensionAttribute>、個々 の XML Web サービス メソッドにします。  
+  
+-   Web.config または app.config 構成ファイル内の参照を追加します。  
+  
+ 構成ファイルのいずれかへの参照を追加する場合は、その構成ファイルのスコープ内のすべての XML Web サービスは SOAP 拡張機能が実行されます。 ASP.NET を起動、構成ファイルを参照することで、SOAP 拡張機能を指定する場合、<xref:System.Web.Services.Protocols.SoapExtension.GetInitializer%2A>オーバー ロードに渡される、<xref:System.Type>です。 ASP.NET を起動をカスタム属性を適用することで、拡張機能を指定する場合、<xref:System.Web.Services.Protocols.SoapExtension.GetInitializer%2A>で渡された、<xref:System.Web.Services.Protocols.LogicalMethodInfo>と<xref:System.Web.Services.Protocols.SoapExtensionAttribute>です。  
+  
+ SOAP 拡張機能を構成ファイルに追加する方法の詳細については、「 [&#91;\<topic://cpconconfigurationoptionsforaspnetwebservices > & #93 です。](http://msdn.microsoft.com/en-us/1f0d71bc-8faa-4730-b500-2a6c7b5d4f6b).  
+  
+   
+  
+## Examples  
+ 次のコードでは、SOAP 拡張機能の特定のデータを保存のいずれかの方法を示しています、XML Web サービスごとです。 SOAP 拡張機能を構成するには、属性ではなく、構成ファイルを使用する場合、SOAP 拡張機能は、SOAP 拡張機能を適用する各クラスのデータを格納できます。 この例では、キャッシュに XML Web サービスを実装するクラスの名前に基づいて、XML Web サービス メソッドとの間に送信される SOAP メッセージを記録するファイルの名前を保存します。 このコード例は含まれている TraceExtension SOAP 拡張機能の完全なコード例の一部である、<xref:System.Web.Services.Protocols.SoapExtension>クラスの概要です。  
+  
+ [!code-cpp[SoapExtension.GetInitializer-Type#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapExtension.GetInitializer-Type/CPP/traceextension.cpp#1)]
+ [!code-csharp[SoapExtension.GetInitializer-Type#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapExtension.GetInitializer-Type/CS/traceextension.cs#1)]
+ [!code-vb[SoapExtension.GetInitializer-Type#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapExtension.GetInitializer-Type/VB/traceextension.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInitializer">
+      <MemberSignature Language="C#" Value="public abstract object GetInitializer (System.Web.Services.Protocols.LogicalMethodInfo methodInfo, System.Web.Services.Protocols.SoapExtensionAttribute attribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetInitializer(class System.Web.Services.Protocols.LogicalMethodInfo methodInfo, class System.Web.Services.Protocols.SoapExtensionAttribute attribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapExtension.GetInitializer(System.Web.Services.Protocols.LogicalMethodInfo,System.Web.Services.Protocols.SoapExtensionAttribute)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="methodInfo" Type="System.Web.Services.Protocols.LogicalMethodInfo" />
+        <Parameter Name="attribute" Type="System.Web.Services.Protocols.SoapExtensionAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="methodInfo">A <see cref="T:System.Web.Services.Protocols.LogicalMethodInfo" /> SOAP 拡張機能を適用する XML Web サービス メソッドの特定の関数のプロトタイプを表すです。</param>
+        <param name="attribute"><see cref="T:System.Web.Services.Protocols.SoapExtensionAttribute" /> XML Web サービス メソッドに適用します。</param>
+        <summary>派生クラスでオーバーライドされると、1 つに XML Web サービス メソッドに適用する属性を使用して、XML Web サービス メソッドに固有のデータを初期化するために SOAP 拡張機能は、パフォーマンス コストを時間します。</summary>
+        <returns><see cref="T:System.Object" /> SOAP 拡張機能がキャッシュを初期化します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SOAP 拡張機能が構成ファイルを参照してくださいで構成されている場合、<xref:System.Web.Services.Protocols.SoapExtension.GetInitializer%2A>を受け入れるオーバー ロード、<xref:System.Type>です。  
+  
+ SOAP 拡張機能にデータを初期化するために次の 3 つの機会があり、ユーザーがさまざまな目的を持っている、それらはすべては。  
+  
+-   SOAP 拡張機能がインスタンス化され、は、通常のメンバー変数を初期化するために使用するたびに、クラス コンス トラクターのときに、クラス コンス トラクターが呼び出されます。  
+  
+-   <xref:System.Web.Services.Protocols.SoapExtension.GetInitializer%2A> - <xref:System.Web.Services.Protocols.SoapExtension.GetInitializer%2A>を初めて、SOAP 要求が行われる XML Web サービス メソッド、1 回だけに、ただし、呼び出されます。 XML Web サービス メソッドへのカスタム属性が適用されている場合、<xref:System.Web.Services.Protocols.SoapExtension.GetInitializer%2A>メソッドが呼び出されます。 これにより、SOAP 拡張を問い合わせるため、<xref:System.Web.Services.Protocols.LogicalMethodInfo>プロトタイプについてかから派生したクラスによって渡される拡張機能に固有のデータにアクセスする XML Web サービス メソッドの<xref:System.Web.Services.Protocols.SoapExtensionAttribute>します。 戻り値は、ASP.NET によってキャッシュされ、それ以降に渡された<xref:System.Web.Services.Protocols.SoapExtension.Initialize%2A>メソッドです。 そのため、初期化がで行う<xref:System.Web.Services.Protocols.SoapExtension.GetInitializer%2A>本質的には、1 回限りのパフォーマンスが低下にカプセル化します。  
+  
+-   <xref:System.Web.Services.Protocols.SoapExtension.Initialize%2A> - <xref:System.Web.Services.Protocols.SoapExtension.Initialize%2A>たびに、SOAP 要求が、XML Web サービス メソッドに行われますが、利点は、クラスのコンス トラクターで呼び出される、<xref:System.Object>で初期化<xref:System.Web.Services.Protocols.SoapExtension.GetInitializer%2A>に渡されます。  
+  
+   
+  
+## Examples  
+ 次のコードから派生するクラスを使用して渡された SOAP 拡張機能に固有のデータを取得する方法を示します<xref:System.Web.Services.Protocols.SoapExtensionAttribute>でそのデータをキャッシュし<xref:System.Web.Services.Protocols.SoapExtension.GetInitializer%2A>です。 このコード例の完全なコード例の一部である、 `TraceExtension` SOAP 拡張機能は含まれている、<xref:System.Web.Services.Protocols.SoapExtension>クラスの概要です。 このコード例は、`TraceExtensionAttribute`に渡される、`attribute`パラメーター。 完全なコード例では`TraceExtensionAttribute`から派生した<xref:System.Web.Services.Protocols.SoapExtensionAttribute>し、追加、`Filename`プロパティとはどのような<xref:System.Web.Services.Protocols.SoapExtension.GetInitializer%2A>キャッシュに格納します。  
+  
+ [!code-cpp[Classic SoapExtension.GetInitializer Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic SoapExtension.GetInitializer Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic SoapExtension.GetInitializer Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic SoapExtension.GetInitializer Example/CS/source.cs#1)]
+ [!code-vb[Classic SoapExtension.GetInitializer Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic SoapExtension.GetInitializer Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public abstract void Initialize (object initializer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Initialize(object initializer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapExtension.Initialize(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="initializer" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="initializer"><see cref="T:System.Object" />から返された<see cref="M:System.Web.Services.Protocols.SoapExtension.GetInitializer(System.Web.Services.Protocols.LogicalMethodInfo,System.Web.Services.Protocols.SoapExtensionAttribute)" />ASP.NET によってキャッシュされます。</param>
+        <summary>派生クラスでオーバーライドされると、により、SOAP 拡張機能でキャッシュされたデータを使用してそれ自体を初期化するために、<see cref="M:System.Web.Services.Protocols.SoapExtension.GetInitializer(System.Web.Services.Protocols.LogicalMethodInfo,System.Web.Services.Protocols.SoapExtensionAttribute)" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SOAP 拡張機能にデータを初期化するために次の 3 つの機会があり、ユーザーがさまざまな目的を持っている、それらはすべては。  
+  
+-   SOAP 拡張機能がインスタンス化され、は、通常のメンバー変数を初期化するために使用するたびに、クラス コンス トラクターのときに、クラス コンス トラクターが呼び出されます。  
+  
+-   <xref:System.Web.Services.Protocols.SoapExtension.GetInitializer%2A> - <xref:System.Web.Services.Protocols.SoapExtension.GetInitializer%2A>を初めて、SOAP 要求が行われる XML Web サービス メソッド、1 回だけに、ただし、呼び出されます。 XML Web サービス メソッドへのカスタム属性が適用されている場合、<xref:System.Web.Services.Protocols.SoapExtension.GetInitializer%2A>メソッドが呼び出されます。 これにより、SOAP 拡張を問い合わせるため、<xref:System.Web.Services.Protocols.LogicalMethodInfo>プロトタイプについてかから派生したクラスによって渡される拡張機能に固有のデータにアクセスする XML Web サービス メソッドの<xref:System.Web.Services.Protocols.SoapExtensionAttribute>します。 戻り値は、ASP.NET によってキャッシュされ、それ以降に渡された<xref:System.Web.Services.Protocols.SoapExtension.Initialize%2A>メソッドです。 そのため、初期化がで行う<xref:System.Web.Services.Protocols.SoapExtension.GetInitializer%2A>本質的には、1 回限りのパフォーマンスが低下にカプセル化します。  
+  
+-   <xref:System.Web.Services.Protocols.SoapExtension.Initialize%2A> - <xref:System.Web.Services.Protocols.SoapExtension.Initialize%2A>たびに、SOAP 要求が、XML Web サービス メソッドに行われますが、利点は、クラスのコンス トラクターで呼び出される、<xref:System.Object>で初期化<xref:System.Web.Services.Protocols.SoapExtension.GetInitializer%2A>に渡されます。  
+  
+-  
+  
+> [!NOTE]
+>  派生することがなく、SOAP 拡張機能を追加することもできます。<xref:System.Web.Services.Protocols.SoapExtensionAttribute>を使用して、 [ \<soapExtensionTypes > 要素](http://msdn.microsoft.com/en-us/7a373a98-6d82-4f8d-a6fc-2996da3fd54c)構成ファイルにします。 詳細については、「 [ \<soapExtensionTypes > 要素](http://msdn.microsoft.com/en-us/7a373a98-6d82-4f8d-a6fc-2996da3fd54c)と[SOAP メッセージ変更を使用して SOAP 拡張機能](http://msdn.microsoft.com/en-us/97d81ace-95e7-4acc-ae39-9692a0021e95)します。  
+  
+-  
+  
+   
+  
+## Examples  
+ 次の例では、中にキャッシュされたデータを使用する方法を示しています、<xref:System.Web.Services.Protocols.SoapExtension.GetInitializer%2A>メソッドです。  
+  
+ [!code-cpp[Classic SoapExtension.Initialize Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic SoapExtension.Initialize Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic SoapExtension.Initialize Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic SoapExtension.Initialize Example/CS/source.cs#1)]
+ [!code-vb[Classic SoapExtension.Initialize Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic SoapExtension.Initialize Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessMessage">
+      <MemberSignature Language="C#" Value="public abstract void ProcessMessage (System.Web.Services.Protocols.SoapMessage message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ProcessMessage(class System.Web.Services.Protocols.SoapMessage message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapExtension.ProcessMessage(System.Web.Services.Protocols.SoapMessage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.Web.Services.Protocols.SoapMessage" />
+      </Parameters>
+      <Docs>
+        <param name="message">処理対象の <see cref="T:System.Web.Services.Protocols.SoapMessage" />。</param>
+        <summary>派生クラスでオーバーライドされると、により、受信する SOAP 拡張機能、<see cref="T:System.Web.Services.Protocols.SoapMessage" />各プロセスに<see cref="T:System.Web.Services.Protocols.SoapMessageStage" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.SoapExtension.ProcessMessage%2A>呼び出されたすべての<xref:System.Web.Services.Protocols.SoapMessageStage>ASP.NET とそのクライアントを使用して作成された両方の XML Web サービスに適用される SOAP 拡張機能の段階です。 各<xref:System.Web.Services.Protocols.SoapMessageStage>から派生したクラスのインスタンス<xref:System.Web.Services.Protocols.SoapMessage>に渡される<xref:System.Web.Services.Protocols.SoapExtension.ProcessMessage%2A>です。 XML Web サービス クライアントでは SOAP 拡張機能が実行されている場合、<xref:System.Web.Services.Protocols.SoapClientMessage>オブジェクトに渡されて<xref:System.Web.Services.Protocols.SoapExtension.ProcessMessage%2A>以外の場合、<xref:System.Web.Services.Protocols.SoapServerMessage>オブジェクトが渡されました。  
+  
+   
+  
+## Examples  
+ 次の例は、 <xref:System.Web.Services.Protocols.SoapExtension.ProcessMessage%2A> SOAP 要求と SOAP 応答を記録する SOAP 拡張機能の一部です。 ログ記録で、<xref:System.Web.Services.Protocols.SoapMessage>で、 <xref:System.Web.Services.Protocols.SoapMessageStage.AfterSerialize> <xref:System.Web.Services.Protocols.SoapMessageStage>、SOAP 拡張機能へのアクセス、<xref:System.Web.Services.Protocols.SoapMessage.Stream%2A>ネットワーク経由で送信します。 SOAP 拡張機能が ASP.NET を使用して作成された XML Web サービス メソッドに適用されている場合、 <xref:System.Web.Services.Protocols.SoapMessage.Stream%2A> XML Web サービス メソッドからの SOAP 応答が含まれています。 SOAP 拡張機能が、XML Web サービス クライアントに適用されている場合、 <xref:System.Web.Services.Protocols.SoapMessage.Stream%2A> XML Web サービス メソッドへの SOAP 要求が含まれています。  
+  
+ クラシック SoapExtension.ProcessMessage 例 1  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

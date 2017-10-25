@@ -1,0 +1,45 @@
+<Type Name="PropertyValueUIItemInvokeHandler" FullName="System.Drawing.Design.PropertyValueUIItemInvokeHandler">
+  <TypeSignature Language="C#" Value="public delegate void PropertyValueUIItemInvokeHandler(ITypeDescriptorContext context, PropertyDescriptor descriptor, PropertyValueUIItem invokedItem);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed PropertyValueUIItemInvokeHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Design.PropertyValueUIItemInvokeHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+    <Parameter Name="descriptor" Type="System.ComponentModel.PropertyDescriptor" />
+    <Parameter Name="invokedItem" Type="System.Drawing.Design.PropertyValueUIItem" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />ダブルクリックされたアイコンに関連付けられているプロパティ。</param>
+    <param name="descriptor">ダブルクリックされたアイコンに関連付けられているプロパティ。</param>
+    <param name="invokedItem"><see cref="T:System.Drawing.Design.PropertyValueUIItem" />ダブルクリックされたアイコンに関連付けられています。</param>
+    <summary><see cref="P:System.Drawing.Design.PropertyValueUIItem.InvokeHandler" /> の <see cref="T:System.Drawing.Design.PropertyValueUIItem" /> イベントを処理するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [プロパティ] ウィンドウで、アイコンのダブルクリックを発生させる、<xref:System.Drawing.Design.PropertyValueUIItem.InvokeHandler%2A>のイベント、<xref:System.Drawing.Design.PropertyValueUIItem>アイコンに関連付けられています。 <xref:System.Drawing.Design.PropertyValueUIItem.InvokeHandler%2A>イベントは通常、ユーザー インターフェイス (UI) プロパティの値を編集するを起動します。 追加、<xref:System.Drawing.Design.PropertyValueUIItemInvokeHandler>を<xref:System.Drawing.Design.PropertyValueUIItem.InvokeHandler%2A>のプロパティ、<xref:System.Drawing.Design.PropertyValueUIItem>にプロパティ名の横に表示されるアイコンがダブルクリックされたときに、適切な動作を実行するイベント ハンドラーを割り当てます。  
+  
+ <xref:System.Drawing.Design.PropertyValueUIItemInvokeHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Drawing.Design.PropertyValueUIItem>という名前のコンポーネントのプロパティのオブジェクト`HorizontalMargin`または`VerticalMargin`です。 <xref:System.Drawing.Design.PropertyValueUIItem>これらのプロパティは、画像、ツールヒント、およびプロパティのイメージがクリックされたときに、メッセージ ボックスを表示するイベント ハンドラーを提供します。 このコード例に示されている例の一部である、<xref:System.Drawing.Design.IPropertyValueUIService>インターフェイスです。  
+  
+ [!code-cpp[IPropertyValueUIServiceExample#2](~/samples/snippets/cpp/VS_Snippets_Winforms/IPropertyValueUIServiceExample/CPP/propertyuicomponent.cpp#2)]
+ [!code-csharp[IPropertyValueUIServiceExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/IPropertyValueUIServiceExample/CS/propertyuicomponent.cs#2)]
+ [!code-vb[IPropertyValueUIServiceExample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IPropertyValueUIServiceExample/VB/propertyuicomponent.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

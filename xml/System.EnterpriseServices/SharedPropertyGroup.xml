@@ -1,0 +1,157 @@
+<Type Name="SharedPropertyGroup" FullName="System.EnterpriseServices.SharedPropertyGroup">
+  <TypeSignature Language="C#" Value="public sealed class SharedPropertyGroup" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SharedPropertyGroup extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.SharedPropertyGroup" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>共有のプロパティのコレクションを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共有のプロパティ グループは、格納マネージャーによって同期されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.EnterpriseServices.SharedPropertyGroupManager> SharedPropertyGroup を作成するクラス。  
+  
+ [!code-cpp[EnterpriseServices_SharedProperties#0](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServices_SharedProperties/CPP/receiptcounterclass.cpp#0)]
+ [!code-csharp[EnterpriseServices_SharedProperties#0](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices_SharedProperties/CS/receiptcounterclass.cs#0)]
+ [!code-vb[EnterpriseServices_SharedProperties#0](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServices_SharedProperties/VB/receiptcounterclass.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateProperty">
+      <MemberSignature Language="C#" Value="public System.EnterpriseServices.SharedProperty CreateProperty (string name, out bool fExists);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.EnterpriseServices.SharedProperty CreateProperty(string name, [out] bool&amp; fExists) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.SharedPropertyGroup.CreateProperty(System.String,System.Boolean@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.SharedProperty</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="fExists" Type="System.Boolean&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="name">新しいプロパティの名前。</param>
+        <param name="fExists">プロパティが存在するかどうかを判断します。 設定<see langword="true" />プロパティが存在する場合に返された場合。</param>
+        <summary>指定した名前のプロパティを作成します。</summary>
+        <returns>要求された <see cref="T:System.EnterpriseServices.SharedProperty" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、`CreateProperty`共有プロパティを作成します。  
+  
+ [!code-cpp[EnterpriseServices_SharedProperties#21](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServices_SharedProperties/CPP/receiptcounterclass.cpp#21)]
+ [!code-csharp[EnterpriseServices_SharedProperties#21](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices_SharedProperties/CS/receiptcounterclass.cs#21)]
+ [!code-vb[EnterpriseServices_SharedProperties#21](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServices_SharedProperties/VB/receiptcounterclass.vb#21)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreatePropertyByPosition">
+      <MemberSignature Language="C#" Value="public System.EnterpriseServices.SharedProperty CreatePropertyByPosition (int position, out bool fExists);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.EnterpriseServices.SharedProperty CreatePropertyByPosition(int32 position, [out] bool&amp; fExists) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.SharedPropertyGroup.CreatePropertyByPosition(System.Int32,System.Boolean@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.SharedProperty</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int32" />
+        <Parameter Name="fExists" Type="System.Boolean&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="position">新しいプロパティのインデックス</param>
+        <param name="fExists">プロパティが存在するかどうかを判断します。 設定<see langword="true" />プロパティが存在する場合に返された場合。</param>
+        <summary>指定された位置に、プロパティを作成します。</summary>
+        <returns>要求された <see cref="T:System.EnterpriseServices.SharedProperty" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Property">
+      <MemberSignature Language="C#" Value="public System.EnterpriseServices.SharedProperty Property (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.EnterpriseServices.SharedProperty Property(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.SharedPropertyGroup.Property(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.SharedProperty</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">要求されたプロパティの名前。</param>
+        <summary>指定した名前のプロパティを返します。</summary>
+        <returns>要求された <see cref="T:System.EnterpriseServices.SharedProperty" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 異なり<xref:System.EnterpriseServices.SharedPropertyGroup.CreateProperty%2A>、このプロパティは既に存在する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyByPosition">
+      <MemberSignature Language="C#" Value="public System.EnterpriseServices.SharedProperty PropertyByPosition (int position);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.EnterpriseServices.SharedProperty PropertyByPosition(int32 position) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.SharedPropertyGroup.PropertyByPosition(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.SharedProperty</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="position">プロパティのインデックス。</param>
+        <summary>指定された位置にプロパティを返します。</summary>
+        <returns>要求された <see cref="T:System.EnterpriseServices.SharedProperty" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 異なり<xref:System.EnterpriseServices.SharedPropertyGroup.CreatePropertyByPosition%2A>、このプロパティは既に存在する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

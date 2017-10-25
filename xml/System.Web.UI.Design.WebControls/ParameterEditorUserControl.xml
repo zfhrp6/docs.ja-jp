@@ -1,0 +1,241 @@
+<Type Name="ParameterEditorUserControl" FullName="System.Web.UI.Design.WebControls.ParameterEditorUserControl">
+  <TypeSignature Language="C#" Value="public class ParameterEditorUserControl : System.Windows.Forms.UserControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ParameterEditorUserControl extends System.Windows.Forms.UserControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.ParameterEditorUserControl" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.UserControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>再利用可能な<see cref="T:System.Windows.Forms.UserControl" />オブジェクトを編集<see cref="T:System.Web.UI.WebControls.ParameterCollection" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.ParameterCollectionEditor>クラスを編集するためのユーザー インターフェイスの提供、<xref:System.Web.UI.WebControls.Parameter>要素<xref:System.Web.UI.WebControls.ParameterCollection>デザイン時にコントロールのいくつかの異なるプロパティによって参照されるオブジェクト。  
+  
+ <xref:System.Web.UI.Design.WebControls.ParameterEditorUserControl>クラスの機能のほとんどをカプセル化、<xref:System.Web.UI.Design.WebControls.ParameterCollectionEditor>です。 <xref:System.Web.UI.Design.WebControls.ParameterCollectionEditor>を保持する外側のフォームから成る、 <xref:System.Web.UI.Design.WebControls.ParameterEditorUserControl>、および**[ok]**と**キャンセル**ボタン。  
+  
+ <xref:System.Web.UI.Design.WebControls.ParameterEditorUserControl.AddParameters%2A>メソッドは、既存のパラメーターの配列を追加、<xref:System.Web.UI.Design.WebControls.ParameterEditorUserControl>です。 <xref:System.Web.UI.Design.WebControls.ParameterEditorUserControl.ClearParameters%2A>メソッドからのすべてのパラメーターを削除する、<xref:System.Web.UI.Design.WebControls.ParameterEditorUserControl>です。 <xref:System.Web.UI.Design.WebControls.ParameterEditorUserControl.GetParameters%2A>メソッドからのすべてのパラメーターの取得、<xref:System.Web.UI.Design.WebControls.ParameterEditorUserControl>です。  
+  
+ <xref:System.Web.UI.Design.WebControls.ParameterEditorUserControl.SetAllowCollectionChanges%2A>メソッドを追加および削除の機能のパラメーターにできるかどうかを制御する、<xref:System.Web.UI.Design.WebControls.ParameterEditorUserControl>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ParameterEditorUserControl (IServiceProvider serviceProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IServiceProvider serviceProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.ParameterEditorUserControl.#ctor(System.IServiceProvider)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="serviceProvider"><see cref="T:System.IServiceProvider" />インターフェイスのように、現在のデザイン ホスト[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]です。</param>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.ParameterEditorUserControl" /> を指定して <see cref="T:System.IServiceProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.ParameterEditorUserControl.%23ctor%2A>コンス トラクターのコントロールは、コンポーネントを初期化します、<xref:System.Web.UI.Design.WebControls.ParameterEditorUserControl>オブジェクトは、UI 要素を初期化します、個々 のコンポーネントのエディターにイベントを接続し、追加コンポーネント エディターが、<xref:System.Windows.Forms.Control.Controls%2A>のコレクション、<xref:System.Web.UI.Design.WebControls.ParameterEditorUserControl>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddParameters">
+      <MemberSignature Language="C#" Value="public void AddParameters (System.Web.UI.WebControls.Parameter[] parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddParameters(class System.Web.UI.WebControls.Parameter[] parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.ParameterEditorUserControl.AddParameters(System.Web.UI.WebControls.Parameter[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameters" Type="System.Web.UI.WebControls.Parameter[]" />
+      </Parameters>
+      <Docs>
+        <param name="parameters">A<see cref="T:System.Web.UI.WebControls.Parameter" />エディターに追加する既存のパラメーターの配列。</param>
+        <summary>エディターには、既存のパラメーターの配列を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.ParameterEditorUserControl.AddParameters%2A>メソッドを追加、<xref:System.Web.UI.WebControls.Parameter>の要素`parameters`を<xref:System.Windows.Forms.ListView>内の制御、<xref:System.Web.UI.Design.WebControls.ParameterEditorUserControl>オブジェクト。 1 つ以上を使用する必要がある場合<xref:System.Web.UI.WebControls.Parameter>要素、<xref:System.Web.UI.Design.WebControls.ParameterEditorUserControl.AddParameters%2A>で最初の 1 つを選択、<xref:System.Windows.Forms.ListView>です。 次に、<xref:System.Web.UI.Design.WebControls.ParameterEditorUserControl.AddParameters%2A>更新、<xref:System.Windows.Forms.ListView>コントロールとが発生し、<xref:System.Web.UI.WebControls.ParameterCollection.ParametersChanged>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearParameters">
+      <MemberSignature Language="C#" Value="public void ClearParameters ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ClearParameters() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.ParameterEditorUserControl.ClearParameters" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>エディターからのすべてのパラメーターを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.ParameterEditorUserControl.ClearParameters%2A>メソッドからのパラメーターを削除する、<xref:System.Windows.Forms.ListView>内の制御、<xref:System.Web.UI.Design.WebControls.ParameterEditorUserControl>オブジェクト。 次に、<xref:System.Web.UI.Design.WebControls.ParameterEditorUserControl.ClearParameters%2A>更新、<xref:System.Windows.Forms.ListView>コントロールとが発生し、<xref:System.Web.UI.WebControls.ParameterCollection.ParametersChanged>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParameters">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.Parameter[] GetParameters ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.UI.WebControls.Parameter[] GetParameters() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.ParameterEditorUserControl.GetParameters" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Parameter[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>エディターからのすべてのパラメーターを取得します。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.Parameter" />エディターからのすべてのパラメーターの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.ParameterEditorUserControl.GetParameters%2A>メソッド、<xref:System.Web.UI.WebControls.Parameter>からすべてのパラメーターを持つ配列、<xref:System.Windows.Forms.ListView>内の制御、<xref:System.Web.UI.Design.WebControls.ParameterEditorUserControl>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnParametersChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnParametersChanged (object sender, EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnParametersChanged(object sender, class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.ParameterEditorUserControl.OnParametersChanged(System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">イベントのソース。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" /> オブジェクト。</param>
+        <summary>発生させる、<see cref="E:System.Web.UI.Design.WebControls.ParameterEditorUserControl.ParametersChanged" />エディター内のパラメーターの状態が変化したときにイベント。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParametersChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler ParametersChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler ParametersChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.Design.WebControls.ParameterEditorUserControl.ParametersChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>任意のパラメーターまたはパラメーターのプロパティのいずれかが変更されたときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParametersConfigured">
+      <MemberSignature Language="C#" Value="public bool ParametersConfigured { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ParametersConfigured" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.ParameterEditorUserControl.ParametersConfigured" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エディター内のすべてのパラメーターが構成されているかどうかを示す値を返します。</summary>
+        <value>
+          <see langword="true" />場合は、エディターのすべてのパラメーターが完全に構成されます。それ以外の場合<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAllowCollectionChanges">
+      <MemberSignature Language="C#" Value="public void SetAllowCollectionChanges (bool allowChanges);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetAllowCollectionChanges(bool allowChanges) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.ParameterEditorUserControl.SetAllowCollectionChanges(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="allowChanges" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="allowChanges">A<see cref="T:System.Boolean" />追加および削除の機能にできるかどうかを示す、<see cref="T:System.Web.UI.WebControls.ParameterCollection" />編集されています。</param>
+        <summary>追加および削除の機能、エディター内の値にできるかどうかを制御します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.ParameterEditorUserControl.SetAllowCollectionChanges%2A>メソッドを追加および削除の機能にできるかどうかを制御する、<xref:System.Web.UI.WebControls.ParameterCollection>内の要素、<xref:System.Web.UI.Design.WebControls.ParameterEditorUserControl>オブジェクト。 <xref:System.Web.UI.Design.WebControls.ParameterEditorUserControl.SetAllowCollectionChanges%2A>有効または無効にして、上、下、[追加と削除] ボタンが、これには影響しません個々 の編集<xref:System.Web.UI.WebControls.Parameter>要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeDescriptionProvider">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.TypeDescriptionProvider TypeDescriptionProvider { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.TypeDescriptionProvider TypeDescriptionProvider" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.ParameterEditorUserControl.TypeDescriptionProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.TypeDescriptionProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メタデータを提供、<see cref="T:System.Web.UI.Design.WebControls.ParameterEditorUserControl" />クラスです。</summary>
+        <value>型記述子プロバイダー オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

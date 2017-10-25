@@ -1,0 +1,76 @@
+<Type Name="WorkflowDebuggerSteppingAttribute" FullName="System.Workflow.Runtime.DebugEngine.WorkflowDebuggerSteppingAttribute">
+  <TypeSignature Language="C#" Value="public sealed class WorkflowDebuggerSteppingAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WorkflowDebuggerSteppingAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.DebugEngine.WorkflowDebuggerSteppingAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class, AllowMultiple=false, Inherited=true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>同時に実行される子アクティビティを持つ複合アクティビティに対するデバッグのステップ実行動作を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ この属性は、同時に実行される子アクティビティに対するデバッグの順序を判断するために、ワークフロー デバッガーによって使用されます。 これによって、複合アクティビティの 1 つの分岐にフォーカスを保持する、または同時に実行される子アクティビティ間でフォーカスを移動して切り替えることが可能になります。  
+  
+ この属性は、子アクティビティではなく複合アクティビティを修飾する必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkflowDebuggerSteppingAttribute (System.Workflow.Runtime.DebugEngine.WorkflowDebuggerSteppingOption steppingOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Workflow.Runtime.DebugEngine.WorkflowDebuggerSteppingOption steppingOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.DebugEngine.WorkflowDebuggerSteppingAttribute.#ctor(System.Workflow.Runtime.DebugEngine.WorkflowDebuggerSteppingOption)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="steppingOption" Type="System.Workflow.Runtime.DebugEngine.WorkflowDebuggerSteppingOption" />
+      </Parameters>
+      <Docs>
+        <param name="steppingOption">同時に実行される子アクティビティに対するステップ実行動作を指定する <see cref="T:System.Workflow.Runtime.DebugEngine.WorkflowDebuggerSteppingOption" /> 列挙値。</param>
+        <summary><see cref="T:System.Workflow.Runtime.DebugEngine.WorkflowDebuggerSteppingAttribute" /> 列挙値を使用して、<see cref="T:System.Workflow.Runtime.DebugEngine.WorkflowDebuggerSteppingOption" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SteppingOption">
+      <MemberSignature Language="C#" Value="public System.Workflow.Runtime.DebugEngine.WorkflowDebuggerSteppingOption SteppingOption { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Workflow.Runtime.DebugEngine.WorkflowDebuggerSteppingOption SteppingOption" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.DebugEngine.WorkflowDebuggerSteppingAttribute.SteppingOption" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.DebugEngine.WorkflowDebuggerSteppingOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>複合アクティビティに対するステップ実行動作を取得します。</summary>
+        <value><see cref="T:System.Workflow.Runtime.DebugEngine.WorkflowDebuggerSteppingOption" /> 列挙値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

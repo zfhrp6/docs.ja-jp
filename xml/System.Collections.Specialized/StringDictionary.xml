@@ -1,0 +1,778 @@
+<Type Name="StringDictionary" FullName="System.Collections.Specialized.StringDictionary">
+  <TypeSignature Language="C#" Value="public class StringDictionary : System.Collections.IEnumerable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit StringDictionary extends System.Object implements class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.Specialized.StringDictionary" />
+  <AssemblyInfo>
+    <AssemblyName>System.Collections.Specialized</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IEnumerable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Design.Serialization.DesignerSerializer("System.Diagnostics.Design.StringDictionaryCodeDomSerializer, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "System.ComponentModel.Design.Serialization.CodeDomSerializer, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>キーと、オブジェクトではなく文字列として厳密に型指定された値とのハッシュ テーブルを実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キーには`null`値のことができますが、します。  
+  
+ 大文字と小文字でキーが処理されます。文字列ディクショナリを使用する前に小文字に変換されます。  
+  
+ .NET framework バージョン 1.0 では、このクラスは、カルチャに依存した文字列比較を使用します。 ただし、.NET framework version 1.1 以降では、このクラスを使用して<xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>文字列を比較するときにします。 比較と並べ替えのカルチャのしくみの詳細については、次を参照してください。[カルチャを認識しない文字列操作の実行](~/docs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、一部のプロパティとメソッドを示しています。<xref:System.Collections.Specialized.StringDictionary>です。  
+  
+ [!code-cpp[System.Collection.Specialized.StringDictionary#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary/CPP/stringdictionary.cpp#1)]
+ [!code-csharp[System.Collection.Specialized.StringDictionary#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary/CS/stringdictionary.cs#1)]
+ [!code-vb[System.Collection.Specialized.StringDictionary#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary/VB/stringdictionary.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>パブリック静的 (<see langword="Shared" /> Visual Basic で) この型のメンバーは、スレッド セーフであります。 インスタンス メンバーの場合は、スレッド セーフであるとは限りません。  
+  
+ この実装は同期済みは提供されませんの (スレッド セーフな) ラッパー、 <see cref="T:System.Collections.Specialized.StringDictionary" />、派生クラスは、独自の同期されたバージョンを作成できますが、<see cref="T:System.Collections.Specialized.StringDictionary" />を使用して、<see cref="P:System.Collections.Specialized.StringDictionary.SyncRoot" />プロパティです。  
+  
+ コレクションの列挙は、本質的にスレッド セーフなプロシージャではありません。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StringDictionary ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.StringDictionary.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Collections.Specialized.StringDictionary" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、一部のプロパティとメソッドを示しています。<xref:System.Collections.Specialized.StringDictionary>です。  
+  
+ [!code-cpp[System.Collection.Specialized.StringDictionary#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary/CPP/stringdictionary.cpp#1)]
+ [!code-csharp[System.Collection.Specialized.StringDictionary#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary/CS/stringdictionary.cs#1)]
+ [!code-vb[System.Collection.Specialized.StringDictionary#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary/VB/stringdictionary.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public virtual void Add (string key, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Add(string key, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.StringDictionary.Add(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">追加するエントリのキー。</param>
+        <param name="value">追加するエントリの値。 値として <see langword="null" /> を指定できます。</param>
+        <summary>指定したキーと値を持つエントリを追加、<see cref="T:System.Collections.Specialized.StringDictionary" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 大文字と小文字でキーが処理されます。文字列ディクショナリに追加される前に小文字に変換されます。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 次のコード例を追加し、要素を削除する方法を示しています、<xref:System.Collections.Specialized.StringDictionary>です。  
+  
+ [!code-cpp[System.Collection.Specialized.StringDictionary_AddRemove#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary_AddRemove/CPP/stringdictionary_addremove.cpp#1)]
+ [!code-csharp[System.Collection.Specialized.StringDictionary_AddRemove#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary_AddRemove/CS/stringdictionary_addremove.cs#1)]
+ [!code-vb[System.Collection.Specialized.StringDictionary_AddRemove#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary_AddRemove/VB/stringdictionary_addremove.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">同じキーを持つエントリは既に、<see cref="T:System.Collections.Specialized.StringDictionary" />です。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.Specialized.StringDictionary" /> は読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public virtual void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.StringDictionary.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてのエントリを削除、<see cref="T:System.Collections.Specialized.StringDictionary" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Specialized.StringDictionary.Count%2A>します。  
+  
+   
+  
+## Examples  
+ 次のコード例を追加し、要素を削除する方法を示しています、<xref:System.Collections.Specialized.StringDictionary>です。  
+  
+ [!code-cpp[System.Collection.Specialized.StringDictionary_AddRemove#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary_AddRemove/CPP/stringdictionary_addremove.cpp#1)]
+ [!code-csharp[System.Collection.Specialized.StringDictionary_AddRemove#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary_AddRemove/CS/stringdictionary_addremove.cs#1)]
+ [!code-vb[System.Collection.Specialized.StringDictionary_AddRemove#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary_AddRemove/VB/stringdictionary_addremove.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.Specialized.StringDictionary" /> は読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsKey">
+      <MemberSignature Language="C#" Value="public virtual bool ContainsKey (string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ContainsKey(string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.StringDictionary.ContainsKey(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">
+          <see cref="T:System.Collections.Specialized.StringDictionary" /> 内で検索されるキー。</param>
+        <summary>かどうかを<see cref="T:System.Collections.Specialized.StringDictionary" />特定のキーが含まれています。</summary>
+        <returns>
+          指定したキーを持つエントリが <see cref="T:System.Collections.Specialized.StringDictionary" /> に格納されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 大文字と小文字でキーが処理されます。使用前に小文字に変換されます。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+ 以降、.NET Framework 2.0 では、このメソッドを使用して、コレクションのオブジェクトの<xref:System.Object.Equals%2A>と<xref:System.IComparable.CompareTo%2A>メソッド`item`を決定するかどうか`item`が存在します。 .NET Framework の以前のバージョンでは、この決定を使用して行われた、<xref:System.Object.Equals%2A>と<xref:System.IComparable.CompareTo%2A>のメソッド、`item`パラメーター コレクション内のオブジェクトにします。  
+  
+   
+  
+## Examples  
+ 次のコード内の要素の検索の例、<xref:System.Collections.Specialized.StringDictionary>です。  
+  
+ [!code-cpp[System.Collection.Specialized.StringDictionary_Contains#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary_Contains/CPP/stringdictionary_contains.cpp#1)]
+ [!code-csharp[System.Collection.Specialized.StringDictionary_Contains#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary_Contains/CS/stringdictionary_contains.cs#1)]
+ [!code-vb[System.Collection.Specialized.StringDictionary_Contains#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary_Contains/VB/stringdictionary_contains.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">キーが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsValue">
+      <MemberSignature Language="C#" Value="public virtual bool ContainsValue (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ContainsValue(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.StringDictionary.ContainsValue(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">
+          <see cref="T:System.Collections.Specialized.StringDictionary" /> 内で検索される値。 値として <see langword="null" /> を指定できます。</param>
+        <summary>かどうかを<see cref="T:System.Collections.Specialized.StringDictionary" />特定の値が含まれています。</summary>
+        <returns>
+          指定した値を持つ要素が <see langword="true" /> に格納されている場合は <see cref="T:System.Collections.Specialized.StringDictionary" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ StringDictionary の要素の値を使用して、指定した値に比較されます、<xref:System.Object.Equals%2A?displayProperty=nameWithType>メソッドです。  
+  
+ このメソッドは、一方向の検索を実行します。したがって、平均実行時間に比例して<xref:System.Collections.Specialized.StringDictionary.Count%2A>です。 つまり、このメソッドは、O (`n`) 操作、場所`n`は<xref:System.Collections.Specialized.StringDictionary.Count%2A>します。  
+  
+ 以降、.NET Framework 2.0 では、このメソッドを使用して、コレクションのオブジェクトの<xref:System.Object.Equals%2A>と<xref:System.IComparable.CompareTo%2A>メソッド`item`を決定するかどうか`item`が存在します。 .NET Framework の以前のバージョンでは、この決定を使用して行われた、<xref:System.Object.Equals%2A>と<xref:System.IComparable.CompareTo%2A>のメソッド、`item`パラメーター コレクション内のオブジェクトにします。  
+  
+   
+  
+## Examples  
+ 次のコード内の要素の検索の例、<xref:System.Collections.Specialized.StringDictionary>です。  
+  
+ [!code-cpp[System.Collection.Specialized.StringDictionary_Contains#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary_Contains/CPP/stringdictionary_contains.cpp#1)]
+ [!code-csharp[System.Collection.Specialized.StringDictionary_Contains#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary_Contains/CS/stringdictionary_contains.cs#1)]
+ [!code-vb[System.Collection.Specialized.StringDictionary_Contains#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary_Contains/VB/stringdictionary_contains.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public virtual void CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.StringDictionary.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">1 次元<see cref="T:System.Array" />からコピーされた値の変換先は、<see cref="T:System.Collections.Specialized.StringDictionary" />です。</param>
+        <param name="index">コピー開始位置、配列内のインデックス。</param>
+        <summary>文字列ディクショナリの値を 1 次元にコピー<see cref="T:System.Array" />インスタンスの指定したインデックス位置。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Specialized.StringDictionary.CopyTo%2A>オブジェクトを型にキャストできますをコピー<xref:System.Collections.DictionaryEntry?displayProperty=nameWithType>です。 <xref:System.Collections.DictionaryEntry>キーと値の両方が含まれています。  
+  
+ コピーされた要素、<xref:System.Array>を列挙子を反復処理するのと同じ順序で並べ替えられて、<xref:System.Collections.Specialized.StringDictionary>です。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Specialized.StringDictionary.Count%2A>します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、StringDictionary を配列にコピーする方法を示します。  
+  
+ [!code-cpp[System.Collections.Specialized.StringDictionary.CopyTo#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.StringDictionary.CopyTo/CPP/stringdictionary_copyto.cpp#1)]
+ [!code-csharp[System.Collections.Specialized.StringDictionary.CopyTo#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.StringDictionary.CopyTo/CS/stringdictionary_copyto.cs#1)]
+ [!code-vb[System.Collections.Specialized.StringDictionary.CopyTo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.StringDictionary.CopyTo/VB/stringdictionary_copyto.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="array" /> が多次元です。  
+  
+ -または-  
+  
+ <see cref="T:System.Collections.Specialized.StringDictionary" /> の要素の数が、<paramref name="array" /> の <paramref name="index" /> から最後までの空き領域を超えています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> は、<paramref name="array" /> の下限を下回っています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public virtual int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Specialized.StringDictionary.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キー/値ペアの数を取得、<see cref="T:System.Collections.Specialized.StringDictionary" />です。</summary>
+        <value>キー/値の数のペアで、<see cref="T:System.Collections.Specialized.StringDictionary" />です。  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、の要素を列挙、<xref:System.Collections.Specialized.StringDictionary>です。  
+  
+ [!code-cpp[System.Collection.Specialized.StringDictionary_Enumeration#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary_Enumeration/CPP/stringdictionary_enumeration.cpp#1)]
+ [!code-csharp[System.Collection.Specialized.StringDictionary_Enumeration#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary_Enumeration/CS/stringdictionary_enumeration.cs#1)]
+ [!code-vb[System.Collection.Specialized.StringDictionary_Enumeration#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary_Enumeration/VB/stringdictionary_enumeration.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.StringDictionary.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>文字列ディクショナリを反復処理する列挙子を返します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />文字列ディクショナリを反復処理します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ C# 言語の `foreach` ステートメント (Visual Basic の場合は `for each`) を使用することで列挙子の複雑さを回避できます。  したがって、列挙子を直接操作するのではなく、`foreach` を使用することをお勧めします。  
+  
+ 列挙子を使用すると、コレクション内のデータを読み取ることができますが、基になるコレクションを変更することはできません。  
+  
+ 最初に、列挙子はコレクション内の 1 番目の要素の前に位置付けられます。 <xref:System.Collections.IEnumerator.Reset%2A> を実行した場合も、列挙子はこの位置に戻されます。  この位置では、<xref:System.Collections.IEnumerator.Current%2A> が未定義です。 そのため、<xref:System.Collections.IEnumerator.MoveNext%2A> の値を読み取る前に、<xref:System.Collections.IEnumerator.Current%2A> を呼び出して列挙子をコレクションの最初の要素に進める必要があります。  
+  
+ <xref:System.Collections.IEnumerator.Current%2A> は、<xref:System.Collections.IEnumerator.MoveNext%2A> または <xref:System.Collections.IEnumerator.Reset%2A> が呼び出されるまでは同じオブジェクトを返します。 <xref:System.Collections.IEnumerator.MoveNext%2A> は、<xref:System.Collections.IEnumerator.Current%2A> を次の要素に設定します。  
+  
+ 場合<xref:System.Collections.IEnumerator.MoveNext%2A>列挙子をコレクションの末尾が、コレクション内の最後の要素の後に配置されているパスと<xref:System.Collections.IEnumerator.MoveNext%2A>返します`false`です。 列挙子がこの位置では、後続の呼び出しの場合<xref:System.Collections.IEnumerator.MoveNext%2A>を返すことも`false`します。 最後の呼び出し場合<xref:System.Collections.IEnumerator.MoveNext%2A>返される`false`、<xref:System.Collections.IEnumerator.Current%2A>が定義されていません。 <xref:System.Collections.IEnumerator.Current%2A> をコレクションの最初の要素にもう一度設定するには、<xref:System.Collections.IEnumerator.Reset%2A> を呼び出してから <xref:System.Collections.IEnumerator.MoveNext%2A> を呼び出します。  
+  
+ コレクションが変更されない限り、列挙子は有効です。 コレクションに対して変更 (要素の追加、変更、削除など) が行われると、列挙子は回復不可能な無効状態になり、その動作は未定義になります。  
+  
+ 列挙子にはコレクションへの排他アクセス権限はないため、コレクションの列挙処理は本質的にスレッド セーフな処理ではありません。  列挙処理でスレッド セーフを確保するには、列挙処理が終わるまでコレクションをロックできます。  コレクションに対し複数のスレッドがアクセスして読み取りや書き込みを行うことができるようにするには、独自に同期化を実装する必要があります。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の要素を列挙、<xref:System.Collections.Specialized.StringDictionary>です。  
+  
+ [!code-cpp[System.Collection.Specialized.StringDictionary_Enumeration#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary_Enumeration/CPP/stringdictionary_enumeration.cpp#1)]
+ [!code-csharp[System.Collection.Specialized.StringDictionary_Enumeration#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary_Enumeration/CS/stringdictionary_enumeration.cs#1)]
+ [!code-vb[System.Collection.Specialized.StringDictionary_Enumeration#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary_Enumeration/VB/stringdictionary_enumeration.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public virtual bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Specialized.StringDictionary.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.Specialized.StringDictionary" /> へのアクセスが同期されている (スレッド セーフである) かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" /> へのアクセスが同期されている (スレッド セーフである) 場合は <see cref="T:System.Collections.Specialized.StringDictionary" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Collections.Specialized.StringDictionary>インスタンスが同期されていません。 派生クラスでの同期されたバージョンを提供できる、<xref:System.Collections.Specialized.StringDictionary>を使用して、<xref:System.Collections.Specialized.StringDictionary.SyncRoot%2A>プロパティです。  
+  
+ コレクションの列挙は、本質的にスレッド セーフなプロシージャではありません。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用してコレクションをロックする方法を示しています、<xref:System.Collections.Specialized.StringDictionary.SyncRoot%2A>列挙中にします。  
+  
+ [!code-cpp[System.Collection.Specialized.StringDictionary#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary/CPP/source2.cpp#2)]
+ [!code-csharp[System.Collection.Specialized.StringDictionary#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary/CS/source2.cs#2)]
+ [!code-vb[System.Collection.Specialized.StringDictionary#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary/VB/source2.vb#2)]  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public virtual string this[string key] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Specialized.StringDictionary.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">値を取得または設定する対象のキー。</param>
+        <summary>指定されたキーに関連付けられている値を取得または設定します。</summary>
+        <value>指定されたキーに関連付けられている値。 かどうか、指定したキーが見つからない、Get を返します<see langword="null" />、し、セットが指定されたキーに新しいエントリを作成します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 大文字と小文字でキーが処理されます。使用前に小文字に変換されます。  
+  
+ キーには`null`値のことができますが、します。 区別するために`null`指定したキーが見つからないため、返されると`null`指定したキーの値が返される`null`を使用して、<xref:System.Collections.Specialized.StringDictionary.ContainsKey%2A>一覧で、キーが存在するかどうかを決定するメソッド。  
+  
+ C# 言語キーワードを使用して実装する代わりに、インデクサーの定義、<xref:System.Collections.Specialized.StringDictionary.Item%2A>プロパティです。 Visual Basic は、<xref:System.Collections.Specialized.StringDictionary.Item%2A> を既定のプロパティとして実装しており、同様のインデックス機能を提供します。  
+  
+ このプロパティの値を取得する場合は、o (1) 操作です。プロパティの設定は、o (1) 操作ではもです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の要素を列挙、<xref:System.Collections.Specialized.StringDictionary>です。  
+  
+ [!code-cpp[System.Collection.Specialized.StringDictionary_Enumeration#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary_Enumeration/CPP/stringdictionary_enumeration.cpp#1)]
+ [!code-csharp[System.Collection.Specialized.StringDictionary_Enumeration#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary_Enumeration/CS/stringdictionary_enumeration.cs#1)]
+ [!code-vb[System.Collection.Specialized.StringDictionary_Enumeration#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary_Enumeration/VB/stringdictionary_enumeration.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Keys">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.ICollection Keys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection Keys" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Specialized.StringDictionary.Keys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内のキーのコレクションを取得、<see cref="T:System.Collections.Specialized.StringDictionary" />です。</summary>
+        <value><see cref="T:System.Collections.ICollection" />内のキーを提供する、<see cref="T:System.Collections.Specialized.StringDictionary" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内のキーの順序、<xref:System.Collections.ICollection>は指定しませんが、関連付けられている値と同じ順序、<xref:System.Collections.ICollection>によって返される、<xref:System.Collections.Specialized.StringDictionary.Values%2A>メソッドです。  
+  
+ 返された<xref:System.Collections.ICollection>静的コピーではありません。 代わりに、、<xref:System.Collections.ICollection>は元のキーを逆参照<xref:System.Collections.Specialized.StringDictionary>です。 そのため、変更、<xref:System.Collections.Specialized.StringDictionary>に反映されるまでに続行、<xref:System.Collections.ICollection>です。  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の要素を列挙、<xref:System.Collections.Specialized.StringDictionary>です。  
+  
+ [!code-cpp[System.Collection.Specialized.StringDictionary_Enumeration#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary_Enumeration/CPP/stringdictionary_enumeration.cpp#1)]
+ [!code-csharp[System.Collection.Specialized.StringDictionary_Enumeration#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary_Enumeration/CS/stringdictionary_enumeration.cs#1)]
+ [!code-vb[System.Collection.Specialized.StringDictionary_Enumeration#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary_Enumeration/VB/stringdictionary_enumeration.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public virtual void Remove (string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Remove(string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.StringDictionary.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">削除するエントリのキー。</param>
+        <summary>指定したキーを持つエントリを文字列ディクショナリから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Collections.Specialized.StringDictionary>指定のキーを持つ要素が含まれていない、<xref:System.Collections.Specialized.StringDictionary>は変更されません。 例外をスローすることはありません。  
+  
+ 大文字と小文字でキーが処理されます。文字列ディクショナリから削除するエントリを見つけるためには、使用前に小文字に変換されます。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 次のコード例を追加し、要素を削除する方法を示しています、<xref:System.Collections.Specialized.StringDictionary>です。  
+  
+ [!code-cpp[System.Collection.Specialized.StringDictionary_AddRemove#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary_AddRemove/CPP/stringdictionary_addremove.cpp#1)]
+ [!code-csharp[System.Collection.Specialized.StringDictionary_AddRemove#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary_AddRemove/CS/stringdictionary_addremove.cs#1)]
+ [!code-vb[System.Collection.Specialized.StringDictionary_AddRemove#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary_AddRemove/VB/stringdictionary_addremove.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">キーが<see langword="null" />です。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.Specialized.StringDictionary" /> は読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public virtual object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Specialized.StringDictionary.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.Specialized.StringDictionary" /> へのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value><see cref="T:System.Object" /> へのアクセスを同期するために使用できる <see cref="T:System.Collections.Specialized.StringDictionary" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスは、独自の同期されたバージョンを指定できます、<xref:System.Collections.Specialized.StringDictionary>を使用して、<xref:System.Collections.Specialized.StringDictionary.SyncRoot%2A>プロパティです。 同期されたコードで操作を実行する必要があります、<xref:System.Collections.Specialized.StringDictionary.SyncRoot%2A>の<xref:System.Collections.Specialized.StringDictionary>、上で直接、<xref:System.Collections.Specialized.StringDictionary>です。 これにより、他のオブジェクトから派生したコレクションを適切に操作できるようになります。 具体的には、同時に変更する可能性がある別スレッドとの適切な同期を維持、<xref:System.Collections.Specialized.StringDictionary>オブジェクト。  
+  
+ コレクションの列挙は、本質的にスレッド セーフなプロシージャではありません。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用してコレクションをロックする方法を示しています、<xref:System.Collections.Specialized.StringDictionary.SyncRoot%2A>列挙中にします。  
+  
+ [!code-cpp[System.Collection.Specialized.StringDictionary#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary/CPP/source2.cpp#2)]
+ [!code-csharp[System.Collection.Specialized.StringDictionary#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary/CS/source2.cs#2)]
+ [!code-vb[System.Collection.Specialized.StringDictionary#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary/VB/source2.vb#2)]  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Values">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.ICollection Values { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection Values" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Specialized.StringDictionary.Values" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>値のコレクションを取得、<see cref="T:System.Collections.Specialized.StringDictionary" />です。</summary>
+        <value><see cref="T:System.Collections.ICollection" />内の値を提供する、<see cref="T:System.Collections.Specialized.StringDictionary" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内の値の順序、<xref:System.Collections.ICollection>は指定しませんが、関連付けられているキーと同じ順序、<xref:System.Collections.ICollection>によって返される、<xref:System.Collections.Specialized.StringDictionary.Keys%2A>メソッドです。  
+  
+ 返された<xref:System.Collections.ICollection>静的コピーではありません。 代わりに、、<xref:System.Collections.ICollection>は元の値を逆参照<xref:System.Collections.Specialized.StringDictionary>です。 そのため、変更、<xref:System.Collections.Specialized.StringDictionary>に反映されるまでに続行、<xref:System.Collections.ICollection>です。  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の要素を列挙、<xref:System.Collections.Specialized.StringDictionary>です。  
+  
+ [!code-cpp[System.Collection.Specialized.StringDictionary_Enumeration#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary_Enumeration/CPP/values.cpp#2)]
+ [!code-csharp[System.Collection.Specialized.StringDictionary_Enumeration#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary_Enumeration/CS/values.cs#2)]
+ [!code-vb[System.Collection.Specialized.StringDictionary_Enumeration#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collection.Specialized.StringDictionary_Enumeration/VB/values.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

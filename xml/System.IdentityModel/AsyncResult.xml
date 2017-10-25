@@ -1,0 +1,308 @@
+<Type Name="AsyncResult" FullName="System.IdentityModel.AsyncResult">
+  <TypeSignature Language="C#" Value="public abstract class AsyncResult : IAsyncResult, IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit AsyncResult extends System.Object implements class System.IAsyncResult, class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.AsyncResult" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IAsyncResult</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>実装する抽象基本クラス、<see cref="T:System.IAsyncResult" />インターフェイスです。 派生元の基底クラスとして機能<see cref="T:System.IAsyncResult" />非同期プログラミングの一般的なシナリオに使用できるオブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、次を参照してください。、<xref:System.IAsyncResult?displayProperty=nameWithType>インターフェイスです。  
+  
+ <xref:System.IdentityModel.TypedAsyncResult%601> クラスは <xref:System.IdentityModel.AsyncResult> から派生したものです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected AsyncResult ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.AsyncResult.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>インスタンスを初期化するために派生クラスのコンス トラクターから呼び出される、<see cref="T:System.IdentityModel.AsyncResult" />コールバック デリゲートまたは状態オブジェクトがないクラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected AsyncResult (object state);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.AsyncResult.#ctor(System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="state">非同期操作に関する情報を限定または格納するユーザー定義オブジェクト。</param>
+        <summary>インスタンスを初期化するために派生クラスのコンス トラクターから呼び出される、<see cref="T:System.IdentityModel.AsyncResult" />コールバック デリゲートはありませんは状態オブジェクトが存在するクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected AsyncResult (AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.AsyncResult.#ctor(System.AsyncCallback,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="callback">非同期操作が完了したときに呼び出されるメソッド。</param>
+        <param name="state">非同期操作に関する情報を限定または格納するユーザー定義オブジェクト。</param>
+        <summary>インスタンスを初期化するために派生クラスのコンス トラクターから呼び出される、<see cref="T:System.IdentityModel.AsyncResult" />コールバック デリゲートと、状態オブジェクトを持つクラスであります。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AsyncState">
+      <MemberSignature Language="C#" Value="public object AsyncState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object AsyncState" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.AsyncResult.AsyncState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>非同期操作に関する情報を限定または格納するユーザー定義オブジェクトを取得します。</summary>
+        <value>非同期操作に関する情報を限定または格納するユーザー定義オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、次を参照してください。、<xref:System.IAsyncResult.AsyncState%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AsyncWaitHandle">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.WaitHandle AsyncWaitHandle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Threading.WaitHandle AsyncWaitHandle" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.AsyncResult.AsyncWaitHandle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.WaitHandle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Threading.WaitHandle" />非同期操作が完了するまで待機するために使用されます。</summary>
+        <value>A<see cref="T:System.Threading.WaitHandle" />非同期操作が完了するまで待機するために使用されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、次を参照してください。、<xref:System.IAsyncResult.AsyncWaitHandle%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Complete">
+      <MemberSignature Language="C#" Value="protected void Complete (bool completedSynchronously);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void Complete(bool completedSynchronously) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.AsyncResult.Complete(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="completedSynchronously" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="completedSynchronously">
+          <see langword="true" />非同期操作が同期的に完了した場合それ以外の場合<see langword="false" />です。</param>
+        <summary>非同期操作が完了し、例外は発生しなかったときは、このバージョンの完了を呼び出します。 これは、操作の状態を更新し、コールバックを通知します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Complete">
+      <MemberSignature Language="C#" Value="protected void Complete (bool completedSynchronously, Exception exception);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void Complete(bool completedSynchronously, class System.Exception exception) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.AsyncResult.Complete(System.Boolean,System.Exception)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="completedSynchronously" Type="System.Boolean" />
+        <Parameter Name="exception" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="completedSynchronously">
+          <see langword="true" />非同期操作が同期的に完了した場合それ以外の場合<see langword="false" />です。</param>
+        <param name="exception">非同期操作の処理中に発生した例外。</param>
+        <summary>処理中に例外が発生する場合は、このバージョンの完了を呼び出します。 コールバックを通知するだけでなく、例外をキャプチャし、への呼び出し中にスローされるを格納、<see cref="M:System.IdentityModel.AsyncResult.End(System.IAsyncResult)" />メソッドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompletedSynchronously">
+      <MemberSignature Language="C#" Value="public bool CompletedSynchronously { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CompletedSynchronously" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.AsyncResult.CompletedSynchronously" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>非同期操作が同期的に完了したかどうかを示す値を取得します。</summary>
+        <value>
+          非同期操作が同期的に完了した場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、次を参照してください。、<xref:System.IAsyncResult.CompletedSynchronously%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.AsyncResult.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.AsyncResult" /> クラスの現在のインスタンスによって使用されているリソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool isExplicitDispose);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool isExplicitDispose) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.AsyncResult.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="isExplicitDispose" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="isExplicitDispose">
+          マネージ リソースとアンマネージ リソースを解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。 <see langword="true" />Dispose を明示的に呼び出すことを示します。</param>
+        <summary><see cref="T:System.IdentityModel.AsyncResult" /> クラスの現在のインスタンスによって使用されているマネージ リソースとアンマネージ リソースを解放するために、<see cref="M:System.IdentityModel.AsyncResult.Dispose" /> メソッドと <see cref="M:System.IdentityModel.AsyncResult.Finalize" /> メソッドによって呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="End">
+      <MemberSignature Language="C#" Value="public static void End (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void End(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.AsyncResult.End(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result"><see cref="T:System.IAsyncResult" />非同期操作の状態を表すです。</param>
+        <summary>このメソッドを呼び出すときに、<c>終了</c>関数の非同期操作が完了します。 非同期操作が完了していくつかの一般的な検証を実行することを確認します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~AsyncResult ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.AsyncResult.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>により、<see cref="T:System.IdentityModel.AsyncResult" />リソースを解放し、それがガベージ コレクションによって回収される前に、他のクリーンアップ操作を実行しようとするオブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCompleted">
+      <MemberSignature Language="C#" Value="public bool IsCompleted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCompleted" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.AsyncResult.IsCompleted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>非同期操作が完了したかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、操作が完了しました。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

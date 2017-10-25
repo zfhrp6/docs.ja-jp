@@ -1,0 +1,99 @@
+<Type Name="WebPartHelpMode" FullName="System.Web.UI.WebControls.WebParts.WebPartHelpMode">
+  <TypeSignature Language="C#" Value="public enum WebPartHelpMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed WebPartHelpMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.WebPartHelpMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>ヘルプ コンテンツを表示するためのユーザー インターフェイス (Ui) の使用可能な型を指定します、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPart.HelpMode%2A>ブラウザーがコントロールのヘルプ コンテンツを表示する方法を決定するプロパティを使用します。 <xref:System.Web.UI.WebControls.WebParts.WebPartHelpMode>列挙型に適用できる値が含まれています、<xref:System.Web.UI.WebControls.WebParts.WebPart.HelpMode%2A>プロパティです。 既定値、<xref:System.Web.UI.WebControls.WebParts.WebPart.HelpMode%2A>プロパティは、モーダルします。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.WebPart.HelpMode%2A>プロパティを同じブラウザー ウィンドウ内のコントロールのヘルプを表示します。 この例の最初の部分は、カスタム コントロールの使用を想定しています`TextDisplayWebPart`の例」のセクションに存在する、<xref:System.Web.UI.WebControls.WebParts.WebPart.HelpMode%2A>クラスの概要です。  
+  
+ このコード例は、架空のヘルプ コンテンツを格納している HTML ページも含まれています。、`TextDisplayWebPart`コントロール。 この例を実行するの Textwebparthelp.htm をという名前のファイルに次のコードを保存して .aspx ページと、サイトの同じディレクトリに配置します。  
+  
+```  
+<html>  
+<head runat="server">  
+    <title>Text Content WebPart Help</title>  
+</head>  
+<body>  
+  <div>  
+  <h1>Text Content WebPart Help</h1>  
+  To make the WebPart control work...  
+  </div>  
+</body>  
+</html>  
+```  
+  
+ この例の最後の部分は、Web ページを参照する方法を表示、`TextDisplayWebPart`コントロール。 宣言型マークアップで、なお、<xref:System.Web.UI.WebControls.WebParts.WebPart.HelpMode%2A>プロパティの値は、[移動] に設定され、コードはまたの値を設定、<xref:System.Web.UI.WebControls.WebParts.WebPart.HelpUrl%2A>プロパティをヘルプ コンテンツを含む、HTML ファイルの名前にします。 ブラウザーにページを読み込むしの動詞メニューのヘルプの動詞をクリックして、<xref:System.Web.UI.WebControls.WebParts.WebPartHelpMode.Navigate>コントロール。  
+  
+ [!code-aspx-csharp[WebParts_WebPart_HelpMode#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPart_HelpMode/CS/helpmodecs.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPart_HelpMode#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPart_HelpMode/VB/helpmodevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Modal">
+      <MemberSignature Language="C#" Value="Modal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.WebParts.WebPartHelpMode Modal = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.WebParts.WebPartHelpMode.Modal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartHelpMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この機能がブラウザーには、別のブラウザー ウィンドウを開きます。 ユーザーは、Web パーツ ページに戻る前に、ウィンドウを閉じる必要があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Modeless">
+      <MemberSignature Language="C#" Value="Modeless" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.WebParts.WebPartHelpMode Modeless = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.WebParts.WebPartHelpMode.Modeless" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartHelpMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この機能がブラウザーには、別のブラウザー ウィンドウを開きます。 ユーザーは、Web ページに戻る前に、ウィンドウを閉じるにはありません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Navigate">
+      <MemberSignature Language="C#" Value="Navigate" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.WebParts.WebPartHelpMode Navigate = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.WebParts.WebPartHelpMode.Navigate" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartHelpMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーのウィンドウで Web パーツ ページに置換します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

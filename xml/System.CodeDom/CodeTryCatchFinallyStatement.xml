@@ -1,0 +1,187 @@
+<Type Name="CodeTryCatchFinallyStatement" FullName="System.CodeDom.CodeTryCatchFinallyStatement">
+  <TypeSignature Language="C#" Value="public class CodeTryCatchFinallyStatement : System.CodeDom.CodeStatement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CodeTryCatchFinallyStatement extends System.CodeDom.CodeStatement" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.CodeTryCatchFinallyStatement" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.CodeDom.CodeStatement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>表す、<see langword="try" />ブロックの任意の数を<see langword="catch" />句し、必要に応じて、<see langword="finally" />ブロックします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.CodeTryCatchFinallyStatement>表すために使用する、 `try` / `catch`コードのブロックです。  
+  
+ <xref:System.CodeDom.CodeTryCatchFinallyStatement.TryStatements%2A>プロパティには内で実行するステートメントが含まれています、`try`ブロックします。 <xref:System.CodeDom.CodeTryCatchFinallyStatement.CatchClauses%2A>プロパティが含まれています、`catch`キャッチされた例外を処理する句。 <xref:System.CodeDom.CodeTryCatchFinallyStatement.FinallyStatements%2A>プロパティには内で実行するステートメントが含まれています、`finally`ブロックします。  
+  
+> [!NOTE]
+>  すべての言語サポート`try` / `catch`ブロックします。 呼び出す、<xref:System.CodeDom.Compiler.ICodeGenerator.Supports%2A>メソッドを<xref:System.CodeDom.Compiler.GeneratorSupport?displayProperty=nameWithType>コード ジェネレーターをサポートしているかどうかを決定するフラグ`try` / `catch`ブロックします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の使用を示します、 <xref:System.CodeDom.CodeTryCatchFinallyStatement> try... を定義する... catch ステートメントを例外処理のために最後にします。  
+  
+ [!code-cpp[CodeTryCatchFinallyExample#2](~/samples/snippets/cpp/VS_Snippets_CLR/CodeTryCatchFinallyExample/CPP/codetrycatchfinallyexample.cpp#2)]
+ [!code-csharp[CodeTryCatchFinallyExample#2](~/samples/snippets/csharp/VS_Snippets_CLR/CodeTryCatchFinallyExample/CS/codetrycatchfinallyexample.cs#2)]
+ [!code-vb[CodeTryCatchFinallyExample#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeTryCatchFinallyExample/VB/codetrycatchfinallyexample.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeTryCatchFinallyStatement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeTryCatchFinallyStatement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.CodeDom.CodeTryCatchFinallyStatement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeTryCatchFinallyStatement (System.CodeDom.CodeStatement[] tryStatements, System.CodeDom.CodeCatchClause[] catchClauses);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeStatement[] tryStatements, class System.CodeDom.CodeCatchClause[] catchClauses) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeTryCatchFinallyStatement.#ctor(System.CodeDom.CodeStatement[],System.CodeDom.CodeCatchClause[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="tryStatements" Type="System.CodeDom.CodeStatement[]" />
+        <Parameter Name="catchClauses" Type="System.CodeDom.CodeCatchClause[]" />
+      </Parameters>
+      <Docs>
+        <param name="tryStatements">配列<see cref="T:System.CodeDom.CodeStatement" />してステートメントを示すオブジェクト。</param>
+        <param name="catchClauses">配列<see cref="T:System.CodeDom.CodeCatchClause" />catch 句を示すオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeTryCatchFinallyStatement" />クラス try の指定したステートメントを使用して、catch 句。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeTryCatchFinallyStatement (System.CodeDom.CodeStatement[] tryStatements, System.CodeDom.CodeCatchClause[] catchClauses, System.CodeDom.CodeStatement[] finallyStatements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeStatement[] tryStatements, class System.CodeDom.CodeCatchClause[] catchClauses, class System.CodeDom.CodeStatement[] finallyStatements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeTryCatchFinallyStatement.#ctor(System.CodeDom.CodeStatement[],System.CodeDom.CodeCatchClause[],System.CodeDom.CodeStatement[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="tryStatements" Type="System.CodeDom.CodeStatement[]" />
+        <Parameter Name="catchClauses" Type="System.CodeDom.CodeCatchClause[]" />
+        <Parameter Name="finallyStatements" Type="System.CodeDom.CodeStatement[]" />
+      </Parameters>
+      <Docs>
+        <param name="tryStatements">配列<see cref="T:System.CodeDom.CodeStatement" />してステートメントを示すオブジェクト。</param>
+        <param name="catchClauses">配列<see cref="T:System.CodeDom.CodeCatchClause" />catch 句を示すオブジェクト。</param>
+        <param name="finallyStatements">配列<see cref="T:System.CodeDom.CodeStatement" />を示すオブジェクト、最後を使用してステートメントです。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.CodeDom.CodeTryCatchFinallyStatement" /> try の指定したステートメントを使用して、句、および最後にステートメントをキャッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CatchClauses">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeCatchClauseCollection CatchClauses { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeCatchClauseCollection CatchClauses" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeTryCatchFinallyStatement.CatchClauses" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeCatchClauseCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用する catch 句を取得します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeCatchClauseCollection" />を示す、catch 句を使用します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FinallyStatements">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeStatementCollection FinallyStatements { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeStatementCollection FinallyStatements" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeTryCatchFinallyStatement.FinallyStatements" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeStatementCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、最後を使用してステートメントです。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeStatementCollection" />を示す、最後にステートメントです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryStatements">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeStatementCollection TryStatements { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeStatementCollection TryStatements" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeTryCatchFinallyStatement.TryStatements" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeStatementCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>再試行するステートメントを取得します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeStatementCollection" />を示す内のステートメントを再試行してください。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,435 @@
+<Type Name="EntityConnectionStringBuilder" FullName="System.Data.EntityClient.EntityConnectionStringBuilder">
+  <TypeSignature Language="C#" Value="public sealed class EntityConnectionStringBuilder : System.Data.Common.DbConnectionStringBuilder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EntityConnectionStringBuilder extends System.Data.Common.DbConnectionStringBuilder" />
+  <TypeSignature Language="DocId" Value="T:System.Data.EntityClient.EntityConnectionStringBuilder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Common.DbConnectionStringBuilder</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>EntityClient で使用される接続文字列の内容を簡単に作成および管理するための手段を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 接続文字列ビルダーを使用すると、開発者はこのクラスのプロパティおよびメソッドを使用することによって、正しい構文の接続文字列をプログラムで作成し、既存の接続文字列の解析や再作成を行うことができます。 接続文字列ビルダーは、既知のキーワード/値ペアに対応する厳密に型指定されたプロパティを提供します。 アプリケーションの一部として接続文字列を作成する必要がある開発者は、<xref:System.Data.EntityClient.EntityConnectionStringBuilder> クラスを使用して接続文字列を作成および変更できます。  
+  
+ <xref:System.Data.EntityClient.EntityConnectionStringBuilder> は、<xref:System.Data.EntityClient.EntityConnectionStringBuilder> プロパティ値として公開されている、有効なキーワード/値ペアをチェックします。  
+  
+> [!NOTE]
+>  基になるデータ ソースの接続文字列は、<xref:System.Data.EntityClient.EntityConnectionStringBuilder.ProviderConnectionString%2A> プロパティによって提供されます。 提供されたプロバイダー接続文字列に対しては、有効なキーワード/値ペアのチェックは行われません。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.EntityClient.EntityConnectionStringBuilder> と <xref:System.Data.SqlClient.SqlConnectionStringBuilder> を組み合わせて使用しています。  
+  
+ [!code-csharp[eSQLBasicExamples#BuildingConnectionStringWithEntityCommand](~/samples/snippets/csharp/VS_Snippets_Data/eSQLBasicExamples/CS/Program.cs#buildingconnectionstringwithentitycommand)]
+ [!code-vb[eSQLBasicExamples#BuildingConnectionStringWithEntityCommand](~/samples/snippets/visualbasic/VS_Snippets_Data/eSQLBasicExamples/VB/Program.vb#buildingconnectionstringwithentitycommand)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EntityConnectionStringBuilder ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.EntityClient.EntityConnectionStringBuilder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.EntityClient.EntityConnectionStringBuilder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Data.EntityClient.EntityConnectionStringBuilder> と <xref:System.Data.SqlClient.SqlConnectionStringBuilder> を組み合わせて使用しています。 コードのプロパティを設定する、`SqlConnectionStringBuilder`を作成する、<xref:System.Data.SqlClient.SqlConnection>を基になるプロバイダーの接続文字列の一部を提供する接続文字列。 使用して、プロバイダー名を設定することはできません注、`SqlConnectionStringBuilder`が有効でないため`SqlConnection`接続文字列の構文。 このコードを作成、<xref:System.Data.EntityClient.EntityConnection>接続文字列を設定して`EntityConnectionStringBuilder`プロパティです。  
+  
+ [!code-csharp[eSQLBasicExamples#BuildingConnectionStringWithEntityCommand](~/samples/snippets/csharp/VS_Snippets_Data/eSQLBasicExamples/CS/Program.cs#buildingconnectionstringwithentitycommand)]
+ [!code-vb[eSQLBasicExamples#BuildingConnectionStringWithEntityCommand](~/samples/snippets/visualbasic/VS_Snippets_Data/eSQLBasicExamples/VB/Program.vb#buildingconnectionstringwithentitycommand)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EntityConnectionStringBuilder (string connectionString);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string connectionString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.EntityClient.EntityConnectionStringBuilder.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connectionString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connectionString">基になるデータ ソースに対するプロバイダーに固有の接続文字列。</param>
+        <summary>提供された接続文字列を使用して、<see cref="T:System.Data.EntityClient.EntityConnectionStringBuilder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された`connectionString`有効なキーワード/値ペアがチェックされません。 有効なキーワード/値の構文については、「<xref:System.Data.EntityClient.EntityConnection.ConnectionString%2A>」を参照してください。  
+  
+ プロバイダーの不変名を指定する必要があります、`connectionString`パラメーター。 サポートされているプロバイダーは次のとおりです。  
+  
+-   `System.Data.Odbc`  
+  
+-   `System.Data.OleDb`  
+  
+-   `System.Data.OracleClient`  
+  
+-   `System.Data.SqlClient`  
+  
+-   `Microsoft.SqlServerCe.Client`  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.EntityClient.EntityConnectionStringBuilder> と <xref:System.Data.SqlClient.SqlConnectionStringBuilder> を組み合わせて使用しています。 コードのプロパティを設定する、`SqlConnectionStringBuilder`を作成する、<xref:System.Data.SqlClient.SqlConnection>を基になるプロバイダーの接続文字列の一部を提供する接続文字列。 使用して、プロバイダー名を設定することはできません注、`SqlConnectionStringBuilder`が有効でないため`SqlConnection`接続文字列の構文。 このコードを作成、<xref:System.Data.EntityClient.EntityConnection>接続文字列を設定して`EntityConnectionStringBuilder`プロパティです。 使用していない、`connectionString`オーバー ロードします。  
+  
+ [!code-csharp[eSQLBasicExamples#BuildingConnectionStringWithEntityCommand](~/samples/snippets/csharp/VS_Snippets_Data/eSQLBasicExamples/CS/Program.cs#buildingconnectionstringwithentitycommand)]
+ [!code-vb[eSQLBasicExamples#BuildingConnectionStringWithEntityCommand](~/samples/snippets/visualbasic/VS_Snippets_Data/eSQLBasicExamples/VB/Program.vb#buildingconnectionstringwithentitycommand)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public override void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.EntityClient.EntityConnectionStringBuilder.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.EntityClient.EntityConnectionStringBuilder" /> インスタンスの内容を消去します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.EntityClient.EntityConnectionStringBuilder.Clear%2A>メソッドからのすべてのキーワード/値ペアを削除する、<xref:System.Data.EntityClient.EntityConnectionStringBuilder>し、すべての対応するプロパティを null に戻します (`Nothing`で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)])。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsKey">
+      <MemberSignature Language="C#" Value="public override bool ContainsKey (string keyword);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool ContainsKey(string keyword) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.EntityClient.EntityConnectionStringBuilder.ContainsKey(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyword" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="keyword">
+          <see cref="T:System.Data.EntityClient.EntityConnectionStringBuilder" /> 内で検索されるキー。</param>
+        <summary><see cref="T:System.Data.EntityClient.EntityConnectionStringBuilder" /> に特定のキーが格納されているかどうかを判断します。</summary>
+        <returns>返します<see langword="true" />場合、<see cref="T:System.Data.EntityClient.EntityConnectionStringBuilder" />を持つ、指定した要素が含まれるキー、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFixedSize">
+      <MemberSignature Language="C#" Value="public override bool IsFixedSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFixedSize" />
+      <MemberSignature Language="DocId" Value="P:System.Data.EntityClient.EntityConnectionStringBuilder.IsFixedSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.EntityClient.EntityConnectionStringBuilder" /> で固定サイズが使用されているかどうかを示す値を取得します。</summary>
+        <value>返します<see langword="true" />すべてのケースであるため、<see cref="T:System.Data.EntityClient.EntityConnectionStringBuilder" />キーワード/値ペアの固定サイズのコレクションを提供します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public override object this[string keyword] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.EntityClient.EntityConnectionStringBuilder.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyword" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="keyword">取得または設定する項目のキー。</param>
+        <summary>指定されたキーに関連付けられている値を取得または設定します。 C# の場合、このプロパティはインデクサーです。</summary>
+        <value>指定されたキーに関連付けられている値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.EntityClient.EntityConnectionStringBuilder> には固定サイズのディクショナリが含まれているので、ディクショナリに存在しないキーを追加しようとすると <xref:System.Collections.Generic.KeyNotFoundException> がスローされます。  
+  
+ 有効なキーワード/値の構文については、「<xref:System.Data.EntityClient.EntityConnection.ConnectionString%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="keyword" />null 参照 (<see langword="Nothing" />で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)])。</exception>
+        <exception cref="T:System.Collections.Generic.KeyNotFoundException">利用可能なキーの一覧に存在しないキーを追加しようとしました。</exception>
+        <exception cref="T:System.FormatException">接続文字列に無効な値が含まれています (具体的には、Boolean 値または数値が要求されているにもかかわらず適切な値が提供されませんでした)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Keys">
+      <MemberSignature Language="C#" Value="public override System.Collections.ICollection Keys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection Keys" />
+      <MemberSignature Language="DocId" Value="P:System.Data.EntityClient.EntityConnectionStringBuilder.Keys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.ICollection" /> 内のキーが格納されている <see cref="T:System.Data.EntityClient.EntityConnectionStringBuilder" /> を取得します。</summary>
+        <value><see cref="T:System.Collections.ICollection" /> 内のキーが格納されている <see cref="T:System.Data.EntityClient.EntityConnectionStringBuilder" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 有効なキーワード/値の構文については、「<xref:System.Data.EntityClient.EntityConnection.ConnectionString%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Metadata">
+      <MemberSignature Language="C#" Value="public string Metadata { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Metadata" />
+      <MemberSignature Language="DocId" Value="P:System.Data.EntityClient.EntityConnectionStringBuilder.Metadata" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DisplayName("Metadata")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>接続文字列内のメタデータの位置を取得または設定します。</summary>
+        <value>接続文字列内のメタデータの位置を取得または設定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 有効なキーワード/値の構文については、「<xref:System.Data.EntityClient.EntityConnection.ConnectionString%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Data.EntityClient.EntityConnectionStringBuilder.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DisplayName("Name")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>構成ファイルに定義されるセクションの名前を取得または設定します。</summary>
+        <value>構成ファイル内のセクションの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 有効なキーワード/値の構文については、「<xref:System.Data.EntityClient.EntityConnection.ConnectionString%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Provider">
+      <MemberSignature Language="C#" Value="public string Provider { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Provider" />
+      <MemberSignature Language="DocId" Value="P:System.Data.EntityClient.EntityConnectionStringBuilder.Provider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DisplayName("Provider")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>接続文字列内の基になる [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] データ プロバイダーの名前を取得または設定します。</summary>
+        <value>基になる [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] データ プロバイダーの不変名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロバイダーの不変名は、基になるプロバイダーの <xref:System.Data.Common.DbProviderFactory> オブジェクトを取得するために使用されます。  
+  
+ 有効なキーワード/値の構文については、「<xref:System.Data.EntityClient.EntityConnection.ConnectionString%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderConnectionString">
+      <MemberSignature Language="C#" Value="public string ProviderConnectionString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ProviderConnectionString" />
+      <MemberSignature Language="DocId" Value="P:System.Data.EntityClient.EntityConnectionStringBuilder.ProviderConnectionString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DisplayName("Provider Connection String")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内部のプロバイダー固有の接続文字列を取得または設定します。</summary>
+        <value>内部のプロバイダー固有の接続文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロバイダー固有の接続文字列に対しては、設定する前に有効なキーワード/値ペアのチェックは行われません。 開発者は、厳密に型指定された接続文字列ビルダー クラスを使用するか、<xref:System.Data.Common.DbConnectionStringBuilder> クラスを使用して、接続文字列を作成できます。 <xref:System.Data.Common.DbConnectionStringBuilder> では、有効なキーワード/値ペアのチェックは行われません。 したがって、このクラスを使用して無効な接続文字列を作成することは可能です。  
+  
+ 有効なキーワード/値の構文については、「<xref:System.Data.EntityClient.EntityConnection.ConnectionString%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public override bool Remove (string keyword);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Remove(string keyword) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.EntityClient.EntityConnectionStringBuilder.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyword" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="keyword">この <see cref="T:System.Data.EntityClient.EntityConnectionStringBuilder" /> 内の接続文字列から削除するキーワード/値ペアのキー。</param>
+        <summary>指定されたキーを持つエントリを <see cref="T:System.Data.EntityClient.EntityConnectionStringBuilder" /> インスタンスから削除します。</summary>
+        <returns>返します<see langword="true" />キーは、接続文字列が存在しが削除された場合<see langword="false" />キーが存在しなかった場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Remove`メソッドの成功を示す値を返しますからキーワード/値ペアを削除する前にキーを検索する必要はありません、<xref:System.Data.EntityClient.EntityConnectionStringBuilder>インスタンス。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="keyword" />is null (<see langword="Nothing" /> in [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)])</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetValue">
+      <MemberSignature Language="C#" Value="public override bool TryGetValue (string keyword, out object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool TryGetValue(string keyword, [out] object&amp; value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.EntityClient.EntityConnectionStringBuilder.TryGetValue(System.String,System.Object@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyword" Type="System.String" />
+        <Parameter Name="value" Type="System.Object&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="keyword">取得する項目のキー。</param>
+        <param name="value">対応する値<c>キーワード。</c></param>
+        <summary>提供されたキーに対応する値をこの <see cref="T:System.Data.EntityClient.EntityConnectionStringBuilder" /> から取得します。</summary>
+        <returns>返します<see langword="true" />場合<paramref name="keyword" />、それ以外の接続文字列内で見つかった<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 開発者は、<xref:System.Data.EntityClient.EntityConnectionStringBuilder.TryGetValue%2A> メソッドを使用して、<xref:System.Data.EntityClient.EntityConnectionStringBuilder> から安全に値を取得できます。提供されたキー名が有効なキー名であるかどうかを確認する必要はありません。 `TryGetValue`存在しないキーを渡すと、例外は発生しません。 呼び出す`TryGetValue`存在しないキーで null 値を格納します (`Nothing` Visual Basic で) で、`value`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="keyword" /> に null 値 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

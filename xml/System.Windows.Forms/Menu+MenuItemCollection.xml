@@ -1,0 +1,1045 @@
+<Type Name="Menu+MenuItemCollection" FullName="System.Windows.Forms.Menu+MenuItemCollection">
+  <TypeSignature Language="C#" Value="public class Menu.MenuItemCollection : System.Collections.IList" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi beforefieldinit Menu/MenuItemCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Collections.IList" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Menu.MenuItemCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IList</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ListBindable(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Windows.Forms.MenuItem" /> オブジェクトのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスのコレクションを表す<xref:System.Windows.Forms.MenuItem>オブジェクトに格納されている、 <xref:System.Windows.Forms.MainMenu>、 <xref:System.Windows.Forms.ContextMenu>、または<xref:System.Windows.Forms.MenuItem>です。 <xref:System.Windows.Forms.MainMenu>と<xref:System.Windows.Forms.ContextMenu>クラス、このコレクションは、コントロールのメニュー全体構造体を表します。 <xref:System.Windows.Forms.MenuItem>クラスでは、このコレクションを表しますに関連付けられているサブメニュー項目の一覧、<xref:System.Windows.Forms.MenuItem>です。  
+  
+ <xref:System.Windows.Forms.Menu.MenuItemCollection.Add%2A>と<xref:System.Windows.Forms.Menu.MenuItemCollection.Remove%2A>メソッドでは、追加し、個々 のメニュー項目をコレクションから削除することができます。 使用することも、<xref:System.Windows.Forms.Menu.MenuItemCollection.Clear%2A>コレクションからすべてのメニュー項目を削除する方法です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MenuItemCollection (System.Windows.Forms.Menu owner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.Menu owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Menu.MenuItemCollection.#ctor(System.Windows.Forms.Menu)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Forms.Menu" />
+      </Parameters>
+      <Docs>
+        <param name="owner"><see cref="T:System.Windows.Forms.Menu" />このコレクションを所有しています。</param>
+        <summary><see cref="T:System.Windows.Forms.Menu.MenuItemCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスから派生するクラスをコレクションに関連付けることが必要です<xref:System.Windows.Forms.Menu>、ように、 <xref:System.Windows.Forms.MainMenu>、 <xref:System.Windows.Forms.ContextMenu>、または<xref:System.Windows.Forms.MenuItem>クラスです。 このコレクションに関連付けられているメニューを指定する必要があります、ためは、複数のメニュー項目のコレクションを作成し、必要に応じて、メニューに関連付けることはできません。 メニューに関連付けられているメニュー項目を切り替えるには、するためには、項目のコレクションをクリアし、コレクションに表示するメニュー項目を追加する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.MenuItem Add (string caption);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Forms.MenuItem Add(string caption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Menu.MenuItemCollection.Add(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MenuItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="caption" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="caption">メニュー項目のキャプションです。</param>
+        <summary>新しく追加<see cref="T:System.Windows.Forms.MenuItem" />、指定されたキャプションと、現在のメニューの末尾にします。</summary>
+        <returns>A<see cref="T:System.Windows.Forms.MenuItem" />コレクションに追加するメニュー項目を表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A <xref:System.Windows.Forms.MenuItem> 、一度に 1 つのメニューにのみ格納できるし、同じメニューにも複数回追加することはできません。 再利用する、<xref:System.Windows.Forms.MenuItem>複数のメニューで使用して、<xref:System.Windows.Forms.MenuItem.CloneMenu%2A>のメソッド、<xref:System.Windows.Forms.MenuItem>クラスです。 削除する、<xref:System.Windows.Forms.MenuItem>先ほど追加したが、使用して、<xref:System.Windows.Forms.Menu.MenuItemCollection.Remove%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、派生クラスを使用して<xref:System.Windows.Forms.MainMenu>メインのメニューを作成する`mainMenu1`を持つ 2 つ<xref:System.Windows.Forms.MenuItem>に追加されたオブジェクトの<xref:System.Windows.Forms.Menu.MenuItems%2A>コレクション。 コードが割り当てられます`mainMenu1`を<xref:System.Windows.Forms.Form.Menu%2A>のプロパティ、<xref:System.Windows.Forms.Form>です。 この例では、この例で定義されているコードは、フォーム内に記述する必要があります。  
+  
+ [!code-cpp[Classic Menu.MenuItemCollection.Add Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Menu.MenuItemCollection.Add Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Menu.MenuItemCollection.Add Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Menu.MenuItemCollection.Add Example/CS/source.cs#1)]
+ [!code-vb[Classic Menu.MenuItemCollection.Add Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Menu.MenuItemCollection.Add Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public virtual int Add (System.Windows.Forms.MenuItem item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 Add(class System.Windows.Forms.MenuItem item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Menu.MenuItemCollection.Add(System.Windows.Forms.MenuItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Windows.Forms.MenuItem" />
+      </Parameters>
+      <Docs>
+        <param name="item">追加する <see cref="T:System.Windows.Forms.MenuItem" />。</param>
+        <summary>以前に作成した追加<see cref="T:System.Windows.Forms.MenuItem" />現在のメニューの末尾にします。</summary>
+        <returns>コレクション内のアイテムの格納場所の 0 から始まるインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A <xref:System.Windows.Forms.MenuItem> 、一度に 1 つのメニューにのみ格納できるし、同じメニューにも複数回追加することはできません。 再利用する、<xref:System.Windows.Forms.MenuItem>複数のメニューで使用して、<xref:System.Windows.Forms.MenuItem.CloneMenu%2A>のメソッド、<xref:System.Windows.Forms.MenuItem>クラスです。 削除する、<xref:System.Windows.Forms.MenuItem>先ほど追加したが、使用して、<xref:System.Windows.Forms.Menu.MenuItemCollection.Remove%2A>メソッドです。  
+  
+ このバージョンの<xref:System.Windows.Forms.Menu.MenuItemCollection.Add%2A>メソッドを追加できます以前に作成した<xref:System.Windows.Forms.MenuItem> メニューの末尾にオブジェクトの項目のコレクション。  
+  
+   
+  
+## Examples  
+ 次のコード例は、派生クラスのインスタンスを作成<xref:System.Windows.Forms.MainMenu>、し、追加、<xref:System.Windows.Forms.MenuItem>のコレクションに<xref:System.Windows.Forms.MenuItem>オブジェクト。 この例では、この例で定義されたメソッドがフォームのクラス内にあるし、そのフォーム クラスのメソッドによって呼び出されることが必要です。  
+  
+ [!code-cpp[Classic Menu.MenuItems Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Menu.MenuItems Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Menu.MenuItems Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Menu.MenuItems Example/CS/source.cs#1)]
+ [!code-vb[Classic Menu.MenuItems Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Menu.MenuItems Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public virtual int Add (int index, System.Windows.Forms.MenuItem item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 Add(int32 index, class System.Windows.Forms.MenuItem item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Menu.MenuItemCollection.Add(System.Int32,System.Windows.Forms.MenuItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="item" Type="System.Windows.Forms.MenuItem" />
+      </Parameters>
+      <Docs>
+        <param name="index">新しい項目を追加する位置。</param>
+        <param name="item">追加する <see cref="T:System.Windows.Forms.MenuItem" />。</param>
+        <summary>以前に作成した追加<see cref="T:System.Windows.Forms.MenuItem" />メニュー項目のコレクション内で指定したインデックス位置。</summary>
+        <returns>コレクション内のアイテムの格納場所の 0 から始まるインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A <xref:System.Windows.Forms.MenuItem> 、一度に 1 つのメニューにのみ格納できるし、同じメニューにも複数回追加することはできません。 再利用する、<xref:System.Windows.Forms.MenuItem>複数のメニューで使用して、<xref:System.Windows.Forms.MenuItem.CloneMenu%2A>のメソッド、<xref:System.Windows.Forms.MenuItem>クラスです。 削除する、<xref:System.Windows.Forms.MenuItem>先ほど追加したが、使用して、<xref:System.Windows.Forms.Menu.MenuItemCollection.Remove%2A>メソッドです。  
+  
+ このバージョンの<xref:System.Windows.Forms.Menu.MenuItemCollection.Add%2A>メソッドを追加できます以前に作成した<xref:System.Windows.Forms.MenuItem>オブジェクトをコレクション内の特定のインデックス位置。 どの<xref:System.Windows.Forms.MenuItem>そのインデックス、およびそのすべてに現在ある<xref:System.Windows.Forms.MenuItem>そのインデックスの後にオブジェクトがコレクション内で [次へ] の最小のインデックスに移動されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、派生クラスのインスタンスを作成<xref:System.Windows.Forms.MainMenu>、し、追加、<xref:System.Windows.Forms.MenuItem>オブジェクトのコレクションを<xref:System.Windows.Forms.MenuItem>メニューの特定の場所にオブジェクトの項目のコレクション。 この例では、この例で定義されたメソッドがフォームのクラス内にあるし、そのフォーム クラスのメソッドによって呼び出されることが必要です。  
+  
+ [!code-cpp[Classic Menu.MenuItemCollection.Add4 Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Menu.MenuItemCollection.Add4 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Menu.MenuItemCollection.Add4 Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Menu.MenuItemCollection.Add4 Example/CS/source.cs#1)]
+ [!code-vb[Classic Menu.MenuItemCollection.Add4 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Menu.MenuItemCollection.Add4 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception"><see cref="T:System.Windows.Forms.MenuItem" />追加されるは既に使用されています。</exception>
+        <exception cref="T:System.ArgumentException">指定されたインデックス、<paramref name="index" />パラメーターがコレクションのサイズより大きい。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.MenuItem Add (string caption, EventHandler onClick);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Forms.MenuItem Add(string caption, class System.EventHandler onClick) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Menu.MenuItemCollection.Add(System.String,System.EventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MenuItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="caption" Type="System.String" />
+        <Parameter Name="onClick" Type="System.EventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="caption">メニュー項目のキャプションです。</param>
+        <param name="onClick"><see cref="T:System.EventHandler" />アイテムが、ユーザーがクリックされたとき、またはユーザーがメニュー項目のアクセラレータまたはショートカット キーを押したときに呼び出されるイベント ハンドラーを表すです。</param>
+        <summary>新しく追加<see cref="T:System.Windows.Forms.MenuItem" />指定されたキャプションと指定したイベントのハンドラーを現在のメニューの末尾に、<see cref="E:System.Windows.Forms.MenuItem.Click" />イベント。</summary>
+        <returns>A<see cref="T:System.Windows.Forms.MenuItem" />コレクションに追加するメニュー項目を表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A <xref:System.Windows.Forms.MenuItem> 、一度に 1 つのメニューにのみ格納できるし、同じメニューにも複数回追加することはできません。 再利用する、<xref:System.Windows.Forms.MenuItem>複数のメニューで使用して、<xref:System.Windows.Forms.MenuItem.CloneMenu%2A>のメソッド、<xref:System.Windows.Forms.MenuItem>クラスです。 削除する、<xref:System.Windows.Forms.MenuItem>先ほど追加したが、使用して、<xref:System.Windows.Forms.Menu.MenuItemCollection.Remove%2A>メソッドです。  
+  
+ このバージョンの<xref:System.Windows.Forms.Menu.MenuItemCollection.Add%2A>メソッドでは、メニュー項目を処理するデリゲートのキャプションを指定することができます、<xref:System.Windows.Forms.MenuItem.Click>イベント。 このバージョンを使用することができます、<xref:System.Windows.Forms.Menu.MenuItemCollection.Add%2A>メソッドが既にアプリケーションに処理するイベント ハンドラーがある場合、<xref:System.Windows.Forms.MenuItem.Click>イベント。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.MenuItem.Click>のイベントは発生しません、<xref:System.Windows.Forms.MenuItem>サブメニュー項目を格納しています。  
+  
+   
+  
+## Examples  
+ 次のコード例は、派生クラスを使用して<xref:System.Windows.Forms.MainMenu>メインのメニューを作成する`mainMenu1`を持つ 2 つ<xref:System.Windows.Forms.MenuItem>に追加されたオブジェクトの<xref:System.Windows.Forms.Menu.MenuItems%2A>コレクション。 コードは、このバージョンを使用して、<xref:System.Windows.Forms.Menu.MenuItemCollection.Add%2A>のイベント ハンドラーを定義するメソッド、 <xref:System.Windows.Forms.MenuItem.Click> 2 つ目のメニュー項目のイベントは、コレクションに追加します。 コードが割り当てられます`mainMenu1`を<xref:System.Windows.Forms.Form.Menu%2A>のプロパティ、<xref:System.Windows.Forms.Form>です。 この例では、この例で定義されているコードがフォーム内にあることが必要です。  
+  
+ [!code-cpp[Classic Menu.MenuItemCollection.Add1 Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Menu.MenuItemCollection.Add1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Menu.MenuItemCollection.Add1 Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Menu.MenuItemCollection.Add1 Example/CS/source.cs#1)]
+ [!code-vb[Classic Menu.MenuItemCollection.Add1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Menu.MenuItemCollection.Add1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.MenuItem Add (string caption, System.Windows.Forms.MenuItem[] items);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Forms.MenuItem Add(string caption, class System.Windows.Forms.MenuItem[] items) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Menu.MenuItemCollection.Add(System.String,System.Windows.Forms.MenuItem[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MenuItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="caption" Type="System.String" />
+        <Parameter Name="items" Type="System.Windows.Forms.MenuItem[]" />
+      </Parameters>
+      <Docs>
+        <param name="caption">メニュー項目のキャプションです。</param>
+        <param name="items">配列<see cref="T:System.Windows.Forms.MenuItem" />オブジェクトこの<see cref="T:System.Windows.Forms.MenuItem" />が含まれます。</param>
+        <summary>新しく追加<see cref="T:System.Windows.Forms.MenuItem" />、キャプションを指定して、このメニューの末尾に<see cref="E:System.Windows.Forms.MenuItem.Click" />イベント ハンドラー、および項目。</summary>
+        <returns>A<see cref="T:System.Windows.Forms.MenuItem" />コレクションに追加するメニュー項目を表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A <xref:System.Windows.Forms.MenuItem> 、一度に 1 つのメニューにのみ格納できるし、同じメニューにも複数回追加することはできません。 再利用する、<xref:System.Windows.Forms.MenuItem>複数のメニューで使用して、<xref:System.Windows.Forms.MenuItem.CloneMenu%2A>のメソッド、<xref:System.Windows.Forms.MenuItem>クラスです。 削除する、<xref:System.Windows.Forms.MenuItem>先ほど追加したが、使用して、<xref:System.Windows.Forms.Menu.MenuItemCollection.Remove%2A>メソッドです。  
+  
+ このバージョンの<xref:System.Windows.Forms.Menu.MenuItemCollection.Add%2A>メソッドでは、メニュー項目を処理するデリゲートのキャプションを指定できます。 その<xref:System.Windows.Forms.MenuItem.Click>イベント。 このバージョンを使用することができます、<xref:System.Windows.Forms.Menu.MenuItemCollection.Add%2A>メソッドが既にアプリケーションに処理するイベント ハンドラーがある場合、<xref:System.Windows.Forms.MenuItem.Click>イベント。 このバージョンのメソッドもすることができますの配列を指定以前に作成した<xref:System.Windows.Forms.MenuItem>コレクションに追加するオブジェクト。 この機能を使用するには既存の再利用する<xref:System.Windows.Forms.MenuItem>を使用して複製されたオブジェクト、<xref:System.Windows.Forms.MenuItem.CloneMenu%2A>メソッドです。 場合、`items`パラメーターが空でないまたは`null`、<xref:System.Windows.Forms.MenuItem>コレクションに追加されると、サブメニュー項目が含まれます。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.MenuItem.Click>のイベントは発生しません、<xref:System.Windows.Forms.MenuItem>サブメニュー項目を格納しています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public virtual void AddRange (System.Windows.Forms.MenuItem[] items);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddRange(class System.Windows.Forms.MenuItem[] items) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Menu.MenuItemCollection.AddRange(System.Windows.Forms.MenuItem[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="items" Type="System.Windows.Forms.MenuItem[]" />
+      </Parameters>
+      <Docs>
+        <param name="items">配列<see cref="T:System.Windows.Forms.MenuItem" />コレクションに追加するメニュー項目を表すオブジェクト。</param>
+        <summary>以前に作成の配列を追加<see cref="T:System.Windows.Forms.MenuItem" />をコレクションにオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 以前に作成のグループをすばやく追加する方法を使用することができます<xref:System.Windows.Forms.MenuItem>オブジェクトを手動で追加するのではなくコレクション<xref:System.Windows.Forms.MenuItem>を使用してコレクションに、<xref:System.Windows.Forms.Menu.MenuItemCollection.Add%2A>メソッドです。 コレクションには、既に含まれている場合<xref:System.Windows.Forms.MenuItem>オブジェクトをこのメソッドを呼び出すと、新しいは追加<xref:System.Windows.Forms.MenuItem>コレクションの末尾にオブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例は、配列とコピーを作成、<xref:System.Windows.Forms.Menu.MenuItemCollection>から 2 つのオブジェクト<xref:System.Windows.Forms.MenuItem>配列オブジェクト。 例では、配列をコピーし、<xref:System.Windows.Forms.MenuItem>のコントロール コレクションにオブジェクト、<xref:System.Windows.Forms.ContextMenu>という`contextMenu1`です。 この例では、2 つ<xref:System.Windows.Forms.MenuItem>というサブメニュー項目を格納するオブジェクト`menuItem1`と`menuItem2`です。  
+  
+ [!code-cpp[Classic Menu.MenuItemCollection.CopyTo Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Menu.MenuItemCollection.CopyTo Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Menu.MenuItemCollection.CopyTo Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Menu.MenuItemCollection.CopyTo Example/CS/source.cs#1)]
+ [!code-vb[Classic Menu.MenuItemCollection.CopyTo Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Menu.MenuItemCollection.CopyTo Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public virtual void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Menu.MenuItemCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべて削除<see cref="T:System.Windows.Forms.MenuItem" />オブジェクト、メニュー項目のコレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、メニューからメニュー項目のコレクション全体をオフにします。 コレクションから個々 のメニュー項目を削除するには、使用、<xref:System.Windows.Forms.Menu.MenuItemCollection.Remove%2A>メソッドです。 新規に追加する<xref:System.Windows.Forms.MenuItem>をコレクションにオブジェクトを使用して、<xref:System.Windows.Forms.Menu.MenuItemCollection.Add%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ この例では、メイン メニューを作成する`myMainMenu`、2 つの<xref:System.Windows.Forms.MenuItem>オブジェクト、`File`と`Edit`です。 `File`メニューが 3 つのサブメニュー項目`New`、 `Open`、および`Exit`です。 使用して、`Clear`メソッドをすべて削除すると、<xref:System.Windows.Forms.MenuItem>内のオブジェクト、 `File` ] メニューの [コレクション。 このプログラムは、既に作成したことが必要です、<xref:System.Windows.Forms.Form>という`Form1`です。  
+  
+ [!code-cpp[ClearItems#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ClearItems/CPP/clearitems.cpp#1)]
+ [!code-csharp[ClearItems#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ClearItems/CS/clearitems.cs#1)]
+ [!code-vb[ClearItems#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClearItems/VB/clearitems.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Windows.Forms.MenuItem value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Windows.Forms.MenuItem value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Menu.MenuItemCollection.Contains(System.Windows.Forms.MenuItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Windows.Forms.MenuItem" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクション内で検索する <see cref="T:System.Windows.Forms.MenuItem" />。</param>
+        <summary>かどうかを指定した<see cref="T:System.Windows.Forms.MenuItem" />コレクションのメンバーであります。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Windows.Forms.MenuItem" />コレクションのメンバーである、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドでは、確認することができるかどうか、<xref:System.Windows.Forms.MenuItem>に対して操作を実行する前に、コレクションのメンバーである、<xref:System.Windows.Forms.MenuItem>です。 確認するため、このメソッドを使用することができます、<xref:System.Windows.Forms.MenuItem>に追加されたかが、コレクションのメンバーであります。  
+  
+   
+  
+## Examples  
+ この例では、メイン メニューを作成する`myMainMenu`、2 つの<xref:System.Windows.Forms.MenuItem>オブジェクト、`File`と`Edit`です。 `File`メニューが 3 つのサブメニュー項目`New`、 `Open`、および`Exit`です。 使用して、<xref:System.Windows.Forms.Menu.MenuItemCollection.Contains%2A>かどうかをチェックするメソッドを`File`] メニューの [コレクション アイテムを含む`Open`です。 項目が存在する場合は、テキスト ボックスに結果を表示します。 このプログラムは、既に作成したことが必要です、<xref:System.Windows.Forms.Form>という`Form1`です。  
+  
+ [!code-cpp[ContainsItems#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ContainsItems/CPP/containsitems.cpp#1)]
+ [!code-csharp[ContainsItems#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ContainsItems/CS/containsitems.cs#1)]
+ [!code-vb[ContainsItems#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ContainsItems/VB/containsitems.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsKey">
+      <MemberSignature Language="C#" Value="public virtual bool ContainsKey (string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ContainsKey(string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Menu.MenuItemCollection.ContainsKey(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">検索する項目の名前。</param>
+        <summary>コレクションに、指定されたキーに項目が含まれているかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />それ以外の場合、指定したキーを持つ項目がコレクションに含まれている場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Menu.Name%2A>プロパティのキーに対応する<xref:System.Windows.Forms.MenuItem>で、<xref:System.Windows.Forms.Menu.MenuItemCollection>です。  
+  
+ キーの比較は区別されません。 場合、`key`パラメーターは`null`または空の文字列、<xref:System.Windows.Forms.Menu.MenuItemCollection.ContainsKey%2A>を返します`false.`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (Array dest, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array dest, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Menu.MenuItemCollection.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dest" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="dest">コピー先の配列。</param>
+        <param name="index">開始位置を示す、コピー先の配列のインデックス。</param>
+        <summary>配列内の指定位置にある既存の配列にコレクション全体をコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用するには結合する<xref:System.Windows.Forms.MenuItem>を 1 つの配列に複数のコレクションからオブジェクト。 この機能では、メニュー項目で使用するための 2 つ以上のセットを簡単に結合することができます、<xref:System.Windows.Forms.ContextMenu>または<xref:System.Windows.Forms.MainMenu>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、配列とコピーを作成、<xref:System.Windows.Forms.Menu.MenuItemCollection>から 2 つのオブジェクト<xref:System.Windows.Forms.MenuItem>配列オブジェクト。 例では、配列をコピーし、<xref:System.Windows.Forms.MenuItem>のコントロール コレクションにオブジェクト、<xref:System.Windows.Forms.ContextMenu>という`contextMenu1`です。 この例では、2 つ<xref:System.Windows.Forms.MenuItem>というサブメニュー項目を格納するオブジェクト`menuItem1`と`menuItem2`です。  
+  
+ [!code-cpp[Classic Menu.MenuItemCollection.CopyTo Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Menu.MenuItemCollection.CopyTo Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Menu.MenuItemCollection.CopyTo Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Menu.MenuItemCollection.CopyTo Example/CS/source.cs#1)]
+ [!code-vb[Classic Menu.MenuItemCollection.CopyTo Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Menu.MenuItemCollection.CopyTo Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Menu.MenuItemCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>合計数を示す値を取得<see cref="T:System.Windows.Forms.MenuItem" />コレクション内のオブジェクト。</summary>
+        <value>数<see cref="T:System.Windows.Forms.MenuItem" />コレクション内のオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Count`プロパティの数を保持する<xref:System.Windows.Forms.MenuItem>コレクションに割り当てられたオブジェクト。 使用することができます、`Count`プロパティ値のコレクションを反復処理するループの上限とします。 コレクションのインデックス値には、0 から始まるインデックスがあるため、ループ変数から 1 を減算する必要があります、ことに注意してください。 このアカウントがない場合は、コレクションの上限を超えるし、例外をスローします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、メインのメニューを作成する方法を示しています。 `myMainMenu`、いずれかで<xref:System.Windows.Forms.MenuItem>、 `File`、3 つのサブメニュー項目を持つ: `New`、 `Open`、および`Exit`です。 使用して、`Count`内のオブジェクトの数をカウントする、プロパティ、`File`メニューと、メッセージ ボックスにこの数を表示します。 この例では、既に作成したことが必要です、<xref:System.Windows.Forms.Form>という`Form1`です。  
+  
+ [!code-cpp[CountProperty#1](~/samples/snippets/cpp/VS_Snippets_Winforms/CountProperty/CPP/countitems.cpp#1)]
+ [!code-csharp[CountProperty#1](~/samples/snippets/csharp/VS_Snippets_Winforms/CountProperty/CS/countitems.cs#1)]
+ [!code-vb[CountProperty#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/CountProperty/VB/countitems.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Find">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.MenuItem[] Find (string key, bool searchAllChildren);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.MenuItem[] Find(string key, bool searchAllChildren) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Menu.MenuItemCollection.Find(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MenuItem[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="searchAllChildren" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="key">検索対象のメニュー項目の名前。</param>
+        <param name="searchAllChildren">
+          <see langword="true" />子メニュー項目を検索するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>必要に応じてサブメニュー項目を検索、指定したキーを持つ項目を検索します。</summary>
+        <returns>配列<see cref="T:System.Windows.Forms.MenuItem" />オブジェクト<see cref="P:System.Windows.Forms.Menu.Name" />プロパティは、指定された一致<paramref name="key" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キーの比較は区別されません。 場合、`key`パラメーターは`null`または空の文字列の一致がないか<xref:System.Windows.Forms.Menu.MenuItemCollection.Find%2A>空の配列を返します。  
+  
+ <xref:System.Windows.Forms.Menu.Name%2A>プロパティのキーに対応する<xref:System.Windows.Forms.MenuItem>で、<xref:System.Windows.Forms.Menu.MenuItemCollection>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /> が <see langword="null" /> または空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Menu.MenuItemCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>メニュー項目のコレクションを反復処理に使用できる列挙子を返します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />メニュー項目のコレクションを表すです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Windows.Forms.MenuItem value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Windows.Forms.MenuItem value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Menu.MenuItemCollection.IndexOf(System.Windows.Forms.MenuItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Windows.Forms.MenuItem" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクション内で検索する <see cref="T:System.Windows.Forms.MenuItem" />。</param>
+        <summary>コレクション内の特定の項目のインデックスを取得します。</summary>
+        <returns>コレクションに見つかった項目の 0 から始まるインデックスそれ以外の場合、-1 を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、メインのメニューを作成する方法を示しています。 `myMainMenu`、2 つの<xref:System.Windows.Forms.MenuItem>オブジェクト、`File`と`Edit`です。 `File`  メニューの 3 つのサブメニュー項目がある: `New`、 `Open`、および`Exit`です。 使用して、<xref:System.Windows.Forms.Menu.MenuItemCollection.IndexOf%2A>のインデックスを取得するメソッドを`Exit`内の項目、`File`メニュー コレクションし、メッセージ ボックスにその値を表示します。 この例では、既に作成したことが必要です、<xref:System.Windows.Forms.Form>という`Form1`です。  
+  
+ [!code-cpp[IndexOf#1](~/samples/snippets/cpp/VS_Snippets_Winforms/IndexOf/CPP/indexof.cpp#1)]
+ [!code-csharp[IndexOf#1](~/samples/snippets/csharp/VS_Snippets_Winforms/IndexOf/CS/indexof.cs#1)]
+ [!code-vb[IndexOf#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IndexOf/VB/indexof.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOfKey">
+      <MemberSignature Language="C#" Value="public virtual int IndexOfKey (string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 IndexOfKey(string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Menu.MenuItemCollection.IndexOfKey(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">検索対象のメニュー項目の名前。</param>
+        <summary>指定されたキーにメニュー項目の最初に見つかった位置のインデックスを検索します。</summary>
+        <returns>指定したキーを持つ最初のメニュー項目の 0 から始まるインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Windows.Forms.Menu.MenuItemCollection.IndexOfKey%2A>と呼ばれる順次、最後のインデックスを最初に、キーの一致のチェックは、検索は、コレクションの先頭から開始一致が存在しない場合に返されます。  
+  
+ <xref:System.Windows.Forms.Menu.Name%2A>プロパティのキーに対応する<xref:System.Windows.Forms.MenuItem>で、<xref:System.Windows.Forms.Menu.MenuItemCollection>です。  
+  
+ キーの比較は区別されません。 場合、`key`パラメーターは`null`または空の文字列の一致がないか<xref:System.Windows.Forms.Menu.MenuItemCollection.IndexOfKey%2A>-1 を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Menu.MenuItemCollection.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションが読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          コレクションが読み取り専用の場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.MenuItem this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.MenuItem Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Menu.MenuItemCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MenuItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">位置を示すインデックス、<see cref="T:System.Windows.Forms.MenuItem" />コレクション内で。</param>
+        <summary>取得、<see cref="T:System.Windows.Forms.MenuItem" />インデックス内の指定したコレクション内の場所を作成します。</summary>
+        <value>指定したインデックス位置にある <see cref="T:System.Windows.Forms.MenuItem" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 割り当てる<xref:System.Windows.Forms.MenuItem>オブジェクトから取得するのにまたは特定の場所に、 <xref:System.Windows.Forms.Menu.MenuItemCollection>、特定のインデックス値を持つコレクション オブジェクトを参照することができます。 インデックス値、 <xref:System.Windows.Forms.Menu.MenuItemCollection> 0 から始まるインデックスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="value" /> パラメーターが <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="index" />パラメーターが 0 未満です。  
+  
+ または  
+  
+ <paramref name="index" />パラメーターは、コレクション内のメニュー項目の数より大きくなると、メニュー項目のコレクションが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.MenuItem this[string key] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.MenuItem Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Menu.MenuItemCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MenuItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">コレクションから取得する項目の名前。</param>
+        <summary>指定したキーを持つ項目をコレクションから取得します。</summary>
+        <value>指定したキーを持つ <see cref="T:System.Windows.Forms.MenuItem" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Menu.Name%2A>プロパティのキーに対応する<xref:System.Windows.Forms.MenuItem>で、<xref:System.Windows.Forms.Menu.MenuItemCollection>です。  
+  
+ キーの比較は区別されません。 場合、`key`パラメーターは`null`または空の文字列、<xref:System.Windows.Forms.Menu.MenuItemCollection.Item%2A>を返します`null.`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public virtual void Remove (System.Windows.Forms.MenuItem item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Remove(class System.Windows.Forms.MenuItem item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Menu.MenuItemCollection.Remove(System.Windows.Forms.MenuItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Windows.Forms.MenuItem" />
+      </Parameters>
+      <Docs>
+        <param name="item">削除する <see cref="T:System.Windows.Forms.MenuItem" />。</param>
+        <summary>指定された削除<see cref="T:System.Windows.Forms.MenuItem" />メニュー項目のコレクションから。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.MenuItem>アイテムがコレクション内の 1 つの位置を移動するすべての後続メニュー、メニュー項目コレクションから削除されます。 このバージョンを使用することができます、 `Remove` 、固有の仕様を削除する<xref:System.Windows.Forms.MenuItem>への参照を使用して、コレクションから、<xref:System.Windows.Forms.MenuItem>を削除します。 参照がない場合、<xref:System.Windows.Forms.MenuItem>を削除することに対応するインデックスをパラメーターとして受け取るこのメソッドの他のバージョンを使用することができます、<xref:System.Windows.Forms.MenuItem>を削除します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、メインのメニューを作成する方法を示しています。 `myMainMenu`、2 つの<xref:System.Windows.Forms.MenuItem>オブジェクト、`File`と`Edit`です。 `File`  メニューの 3 つのサブメニュー項目がある: `New`、 `Open`、および`Exit`です。 使用して、`Remove`メソッドを削除する、`Open`項目を`File`メニュー コレクション。 この例では、既に作成したことが必要です、<xref:System.Windows.Forms.Form>という`Form1`です。  
+  
+ [!code-cpp[RemoveMenuItems#1](~/samples/snippets/cpp/VS_Snippets_Winforms/RemoveMenuItems/CPP/removeitems.cpp#1)]
+ [!code-csharp[RemoveMenuItems#1](~/samples/snippets/csharp/VS_Snippets_Winforms/RemoveMenuItems/CS/removeitems.cs#1)]
+ [!code-vb[RemoveMenuItems#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/RemoveMenuItems/VB/removeitems.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public virtual void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Menu.MenuItemCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス、<see cref="T:System.Windows.Forms.MenuItem" />を削除します。</param>
+        <summary>削除、<see cref="T:System.Windows.Forms.MenuItem" />メニュー項目コレクションから指定したインデックス位置。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.MenuItem>アイテムがコレクション内の 1 つの位置を移動するすべての後続メニュー、メニュー項目コレクションから削除されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、メインのメニューを作成する方法を示しています。 `myMainMenu`、2 つの<xref:System.Windows.Forms.MenuItem>オブジェクト、`File`と`Edit`です。 `File`  メニューの 3 つのサブメニュー項目がある: `New`、 `Open`、および`Exit`です。 使用して、`RemoveAt`メソッドを削除する、`Exit`項目を`File`] メニューの [コレクションのインデックス番号を使用します。 この例では、既に作成したことが必要です、<xref:System.Windows.Forms.Form>という`Form1`です。  
+  
+ [!code-cpp[RemoveAt#1](~/samples/snippets/cpp/VS_Snippets_Winforms/RemoveAt/CPP/removeat.cpp#1)]
+ [!code-csharp[RemoveAt#1](~/samples/snippets/csharp/VS_Snippets_Winforms/RemoveAt/CS/removeat.cs#1)]
+ [!code-vb[RemoveAt#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/RemoveAt/VB/removeat.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveByKey">
+      <MemberSignature Language="C#" Value="public virtual void RemoveByKey (string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveByKey(string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Menu.MenuItemCollection.RemoveByKey(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">削除するメニュー項目の名前。</param>
+        <summary>指定されたキーにメニュー項目をコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Menu.Name%2A>プロパティのキーに対応する<xref:System.Windows.Forms.MenuItem>で、<xref:System.Windows.Forms.Menu.MenuItemCollection>です。  
+  
+ キーの比較は区別されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.IsSynchronized">
+      <MemberSignature Language="C#" Value="bool System.Collections.ICollection.IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.ICollection.IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Menu.MenuItemCollection.System#Collections#ICollection#IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Collections.ICollection.IsSynchronized" />」をご覧ください。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Forms.Menu.MenuItemCollection> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.SyncRoot">
+      <MemberSignature Language="C#" Value="object System.Collections.ICollection.SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.ICollection.SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Menu.MenuItemCollection.System#Collections#ICollection#SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Collections.ICollection.SyncRoot" />」を参照してください。</summary>
+        <value><see cref="T:System.Windows.Forms.Menu.MenuItemCollection" /> へのアクセスを同期するために使用できるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Forms.Menu.MenuItemCollection> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Add">
+      <MemberSignature Language="C#" Value="int IList.Add (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IList.Add(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Menu.MenuItemCollection.System#Collections#IList#Add(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクションに追加する <see cref="T:System.Windows.Forms.MenuItem" />。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Collections.IList.Add(System.Object)" />」をご覧ください。</summary>
+        <returns>位置、<see cref="T:System.Windows.Forms.MenuItem" />挿入されました。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Forms.Menu.MenuItemCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Contains">
+      <MemberSignature Language="C#" Value="bool IList.Contains (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Collections.IList.Contains(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Menu.MenuItemCollection.System#Collections#IList#Contains(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクション内で検索するオブジェクト。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Collections.IList.Contains(System.Object)" />」をご覧ください。</summary>
+        <returns>
+          <see langword="true" />指定したオブジェクトがある場合、<see cref="T:System.Windows.Forms.MenuItem" />コレクションにそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Forms.Menu.MenuItemCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IndexOf">
+      <MemberSignature Language="C#" Value="int IList.IndexOf (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IList.IndexOf(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Menu.MenuItemCollection.System#Collections#IList#IndexOf(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクション内で検索する <see cref="T:System.Windows.Forms.MenuItem" />。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Collections.IList.IndexOf(System.Object)" />」をご覧ください。</summary>
+        <returns>0 から始まるインデックス場合<paramref name="value" />は、<see cref="T:System.Windows.Forms.MenuItem" />コレクションには-1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Forms.Menu.MenuItemCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Insert">
+      <MemberSignature Language="C#" Value="void IList.Insert (int index, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Insert(int32 index, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Menu.MenuItemCollection.System#Collections#IList#Insert(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">位置の 0 から始まるインデックス、<see cref="T:System.Windows.Forms.MenuItem" />挿入する必要があります。</param>
+        <param name="value"><see cref="T:System.Windows.Forms.MenuItem" />に挿入する、<see cref="T:System.Windows.Forms.Menu.MenuItemCollection" />です。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Collections.IList.Insert(System.Int32,System.Object)" />」をご覧ください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Forms.Menu.MenuItemCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IsFixedSize">
+      <MemberSignature Language="C#" Value="bool System.Collections.IList.IsFixedSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.IList.IsFixedSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Menu.MenuItemCollection.System#Collections#IList#IsFixedSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Collections.IList.IsFixedSize" />」を参照してください。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Forms.Menu.MenuItemCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Item">
+      <MemberSignature Language="C#" Value="object System.Collections.IList.Item[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.IList.Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Menu.MenuItemCollection.System#Collections#IList#Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得する要素の 0 から始まるインデックス。</param>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Collections.IList.Item(System.Int32)" />」をご覧ください。</summary>
+        <value>指定されたインデックス位置にある <see cref="T:System.Windows.Forms.MenuItem" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Forms.Menu.MenuItemCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Remove">
+      <MemberSignature Language="C#" Value="void IList.Remove (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Remove(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Menu.MenuItemCollection.System#Collections#IList#Remove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">削除する <see cref="T:System.Windows.Forms.MenuItem" />。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Collections.IList.Remove(System.Object)" />」をご覧ください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Forms.Menu.MenuItemCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

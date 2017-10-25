@@ -1,0 +1,407 @@
+<Type Name="MeshGeometry3D" FullName="System.Windows.Media.Media3D.MeshGeometry3D">
+  <TypeSignature Language="C#" Value="public sealed class MeshGeometry3D : System.Windows.Media.Media3D.Geometry3D" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed MeshGeometry3D extends System.Windows.Media.Media3D.Geometry3D" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Media3D.MeshGeometry3D" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Media3D.Geometry3D</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プリミティブ 3-D 図形を作成するための三角形です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ MeshGeometry3D により、開発者は、位置、normal、およびテクスチャ座標の情報を指定できます。  <xref:System.Windows.Media.Media3D.MeshGeometry3D.Positions%2A>プロパティは必須です。  
+  
+ 法線は、プリミティブ メッシュの正面に関連付けられていると見なされます。  ワインディング順序 (メッシュの各三角形を構成する位置を指定する順序) では、特定の面が前面または背面に接続するかどうかを決定します。  前面の三角形の中に反時計回りの順序でワインディングは背面の三角形の時計回りの順番でワインディングはします。  
+  
+   
+  
+## Examples  
+ [!code-xaml[basic3d#Basic3DXAML3DN3](~/samples/snippets/xaml/VS_Snippets_Wpf/Basic3D/XAML/Window1.xaml#basic3dxaml3dn3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MeshGeometry3D ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.MeshGeometry3D.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Media3D.MeshGeometry3D" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[3dgallery_procedural_snip#Basic3DShapeCodeExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/3DGallery_procedural_snip/CSharp/Basic3DShapeExample.cs#basic3dshapecodeexamplewholepage)]
+ [!code-vb[3dgallery_procedural_snip#Basic3DShapeCodeExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/3DGallery_procedural_snip/visualbasic/basic3dshapeexample.vb#basic3dshapecodeexamplewholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bounds">
+      <MemberSignature Language="C#" Value="public override System.Windows.Media.Media3D.Rect3D Bounds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.Media3D.Rect3D Bounds" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Media3D.MeshGeometry3D.Bounds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.Rect3D</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>境界を取得<see cref="T:System.Windows.Media.Media3D.Rect3D" />この<see cref="T:System.Windows.Media.Media3D.MeshGeometry3D" />です。</summary>
+        <value>境界<see cref="T:System.Windows.Media.Media3D.Rect3D" />の<see cref="T:System.Windows.Media.Media3D.MeshGeometry3D" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Media3D.MeshGeometry3D Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Media3D.MeshGeometry3D Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.MeshGeometry3D.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.MeshGeometry3D</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.Media3D.MeshGeometry3D" /> の変更可能な複製を作成し、このオブジェクトの値の詳細コピーを作成します。 このメソッドは、依存関係プロパティをコピーするときにリソース参照とデータ バインディングをコピーしますが (ただし、これらは解決されなくなる場合があります)、アニメーションやその現在の値はコピーしません。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティが <see langword="true." /> であった場合でも、<see langword="false" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.Clone%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCurrentValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Media3D.MeshGeometry3D CloneCurrentValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Media3D.MeshGeometry3D CloneCurrentValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.MeshGeometry3D.CloneCurrentValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.MeshGeometry3D</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.Media3D.MeshGeometry3D" /> オブジェクトの変更可能な複製を作成し、このオブジェクトの現在値の詳細コピーを作成します。 リソース参照、データ バインディング、アニメーションはコピーされませんが、それらの現在値はコピーされます。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see langword="false" /> プロパティが <see cref="P:System.Windows.Freezable.IsFrozen" /> であった場合でも、<see langword="true" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.CloneCurrentValue%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.MeshGeometry3D.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Normals">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Media3D.Vector3DCollection Normals { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Media3D.Vector3DCollection Normals" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Media3D.MeshGeometry3D.Normals" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.Vector3DCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の法線ベクトルのコレクション、<see cref="T:System.Windows.Media.Media3D.MeshGeometry3D" />です。</summary>
+        <value>
+          <see cref="T:System.Windows.Media.Media3D.Vector3DCollection" />MeshGeometry3D の法線ベクトルが含まれています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 法線ベクトルは、メッシュを定義する各三角形の表面に対して垂直のベクターです。 法線は、特定の三角形の表面が点灯しているかどうかを決定します。  
+  
+ <xref:System.Windows.Media.Media3D.MeshGeometry3D>により、開発者は、位置、normal、およびテクスチャ座標の情報を指定します。  
+  
+ 法線は、プリミティブ メッシュの正面に関連付けられていると見なされます。  ワインディング順序 (メッシュの各三角形を構成する位置を指定する順序) では、特定の面が前面または背面に接続するかどうかを決定します。  
+  
+ 法線が指定されていない場合、その世代は、開発者が、メッシュの三角形のインデックスを指定するかどうかによって異なります。  法線がなります三角形のインデックスを指定する場合に隣接する面を受け取るを生成します。  三角形のインデックスが指定されていない場合は、指定の三角形の 1 つだけの標準が生成されます。  メッシュ内でファセットの外観があります。  
+  
+<a name="dependencyPropertyInfo_Normals"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Media3D.MeshGeometry3D.NormalsProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ [!code-xaml[basic3d#Basic3DXAML3DN3](~/samples/snippets/xaml/VS_Snippets_Wpf/Basic3D/XAML/Window1.xaml#basic3dxaml3dn3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NormalsProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty NormalsProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty NormalsProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Media3D.MeshGeometry3D.NormalsProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Media3D.MeshGeometry3D.Normals" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPropertyChanged">
+      <MemberSignature Language="C#" Value="protected override void OnPropertyChanged (System.Windows.DependencyPropertyChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnPropertyChanged(valuetype System.Windows.DependencyPropertyChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.MeshGeometry3D.OnPropertyChanged(System.Windows.DependencyPropertyChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.DependencyPropertyChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Positions">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Media3D.Point3DCollection Positions { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Media3D.Point3DCollection Positions" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Media3D.MeshGeometry3D.Positions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.Point3DCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の頂点の位置のコレクション、<see cref="T:System.Windows.Media.Media3D.MeshGeometry3D" />です。</summary>
+        <value>
+          <see cref="T:System.Windows.Media.Media3D.Point3DCollection" />MeshGeometry3D の頂点の位置を含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティで指定したポイントでは、3-D メッシュを構成する三角形の頂点を表します。  
+  
+ ワインディング順序 (メッシュの各三角形を構成する位置を指定する順序) では、特定の面が前面または背面に接続するかどうかを決定します。  前面の三角形の中に反時計回りの順序でワインディングは背面の三角形の時計回りの順番でワインディングはします。  
+  
+<a name="dependencyPropertyInfo_Positions"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Media3D.MeshGeometry3D.PositionsProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ [!code-xaml[basic3d#Basic3DXAML3DN3](~/samples/snippets/xaml/VS_Snippets_Wpf/Basic3D/XAML/Window1.xaml#basic3dxaml3dn3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PositionsProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PositionsProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PositionsProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Media3D.MeshGeometry3D.PositionsProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Media3D.MeshGeometry3D.Positions" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextureCoordinates">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.PointCollection TextureCoordinates { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.PointCollection TextureCoordinates" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Media3D.MeshGeometry3D.TextureCoordinates" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.PointCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のテクスチャ座標のコレクション、<see cref="T:System.Windows.Media.Media3D.MeshGeometry3D" />です。</summary>
+        <value>
+          <see cref="T:System.Windows.Media.PointCollection" />MeshGeometry3D テクスチャ座標を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テクスチャ座標を決定する方法、<xref:System.Windows.Media.Media3D.Material>メッシュを構成する三角形の頂点にマップされます。  
+  
+ **注**を MeshGeometry3D のテクスチャ座標が指定されていない場合、マテリアル可能性があります正しく表示されません。  
+  
+<a name="dependencyPropertyInfo_TextureCoordinates"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Media3D.MeshGeometry3D.TextureCoordinatesProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ [!code-xaml[basic3d#Basic3DXAML3DN3](~/samples/snippets/xaml/VS_Snippets_Wpf/Basic3D/XAML/Window1.xaml#basic3dxaml3dn3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextureCoordinatesProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TextureCoordinatesProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TextureCoordinatesProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Media3D.MeshGeometry3D.TextureCoordinatesProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Media3D.MeshGeometry3D.TextureCoordinates" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TriangleIndices">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Int32Collection TriangleIndices { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Int32Collection TriangleIndices" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Media3D.MeshGeometry3D.TriangleIndices" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Int32Collection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の三角形のインデックスのコレクション、<see cref="T:System.Windows.Media.Media3D.MeshGeometry3D" />です。</summary>
+        <value>MeshGeometry3D の三角形のインデックスを含むコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した 3-D で三角形で三角形の頂点の位置が指定されたかどうかを三角形の面、前面の順序をメッシュか背面です。  
+  
+ [Windows Presentation Foundation](http://msdn.microsoft.com/library/f667bd15-2134-41e9-b4af-5ced6fafab5d)反時計回りワインディング順序を使用する 3-D 実装; は、前面メッシュ三角形の位置を決定する必要がありますを指定する反時計回りの順番でメッシュの正面から見たです。  
+  
+ 設定、<xref:System.Windows.Media.Media3D.MeshGeometry3D.TriangleIndices%2A>プロパティはオプションです。 インデックスが指定されていない場合は、インデックス付きでない方法で三角形が描画されます。 次の 3 つの位置の各セットは、三角形になります。  
+  
+<a name="dependencyPropertyInfo_TriangleIndices"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Media3D.MeshGeometry3D.TriangleIndicesProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ [!code-xaml[basic3d#Basic3DXAML3DN3](~/samples/snippets/xaml/VS_Snippets_Wpf/Basic3D/XAML/Window1.xaml#basic3dxaml3dn3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TriangleIndicesProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TriangleIndicesProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TriangleIndicesProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Media3D.MeshGeometry3D.TriangleIndicesProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Media3D.MeshGeometry3D.TriangleIndices" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

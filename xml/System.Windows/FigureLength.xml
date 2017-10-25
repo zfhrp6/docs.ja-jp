@@ -1,0 +1,433 @@
+<Type Name="FigureLength" FullName="System.Windows.FigureLength">
+  <TypeSignature Language="C#" Value="public struct FigureLength : IEquatable&lt;System.Windows.FigureLength&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit FigureLength extends System.ValueType implements class System.IEquatable`1&lt;valuetype System.Windows.FigureLength&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.FigureLength" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IEquatable&lt;System.Windows.FigureLength&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.FigureLengthConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>高さまたは幅の説明、<see cref="T:System.Windows.Documents.Figure" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlAttributeUsage_Duration"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="length"/>  
+- or -  
+<object property="qualifiedDouble"/>  
+```  
+  
+<a name="xamlValues_Thickness"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *length*  
+ 幅または高さの<xref:System.Windows.Documents.Figure>(ピクセル単位) として説明されている、<xref:System.Double>値。 単位の宣言文字列でこの値を修飾する代わりに、(`px`、 `in`、 `cm`、 `pt`) を参照してください*qualifiedDouble*以下です。  
+  
+ *qualifiedDouble*  
+ A*二重*値前述続けて次の単位の宣言文字列のいずれかの: `px`、 `in`、 `cm`、`pt`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ `cm`センチメートル; は、します。1cm==(96/2.54) px  
+  
+ `pt`ポイントです。1pt==(96/72) px  
+  
+   
+  
+## Examples  
+ 次の例で、ユーザーがクリックしたときに、 <xref:System.Windows.Documents.Figure>、<xref:System.Windows.Documents.Figure.Width%2A>の<xref:System.Windows.Documents.Figure>が減少します。 このサンプルの XAML を次に示します。  
+  
+ [!code-xaml[FlowMiscSnippets_snip#FigureLengthExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowMiscSnippets_snip/cs/figurelengthexample.xaml#figurelengthexamplewholepage)]  
+  
+ 以下は、コードを減らすために使用、<xref:System.Windows.Documents.Figure.Width%2A>の<xref:System.Windows.Documents.Figure>です。  
+  
+ [!code-csharp[FlowMiscSnippets_snip#FigureLengthCodeBehindExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowMiscSnippets_snip/cs/figurelengthexample.xaml.cs#figurelengthcodebehindexamplewholepage)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FigureLength (double pixels);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 pixels) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FigureLength.#ctor(System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="pixels" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="pixels">長さを構成するデバイスに依存しないピクセル (96 ピクセル/インチ) の数。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.FigureLength" />ピクセル数を指定したクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、ユーザーがクリックしたときに、 <xref:System.Windows.Documents.Figure>、<xref:System.Windows.Documents.Figure.Width%2A>の<xref:System.Windows.Documents.Figure>が減少します。 このサンプルの XAML を次に示します。  
+  
+ [!code-xaml[FlowMiscSnippets_snip#FigureLengthExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowMiscSnippets_snip/cs/figurelengthexample.xaml#figurelengthexamplewholepage)]  
+  
+ 以下は、コードを減らすために使用、<xref:System.Windows.Documents.Figure.Width%2A>の<xref:System.Windows.Documents.Figure>です。  
+  
+ [!code-csharp[FlowMiscSnippets_snip#FigureLengthCodeBehindExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowMiscSnippets_snip/cs/figurelengthexample.xaml.cs#figurelengthcodebehindexamplewholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FigureLength (double value, System.Windows.FigureUnitType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 value, valuetype System.Windows.FigureUnitType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FigureLength.#ctor(System.Double,System.Windows.FigureUnitType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+        <Parameter Name="type" Type="System.Windows.FigureUnitType" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="P:System.Windows.FigureLength.Value" />の<see cref="T:System.Windows.FigureLength" />クラスです。</param>
+        <param name="type"><see cref="P:System.Windows.FigureLength.Value" />の<see cref="P:System.Windows.FigureLength.FigureUnitType" />クラスです。</param>
+        <summary>指定された <see cref="T:System.Windows.FigureLength" /> と <see cref="P:System.Windows.FigureLength.Value" /> を使用して、<see cref="P:System.Windows.FigureLength.FigureUnitType" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、ユーザーがクリックしたときに、 <xref:System.Windows.Documents.Figure>、<xref:System.Windows.Documents.Figure.Width%2A>の<xref:System.Windows.Documents.Figure>が減少します。 このサンプルの XAML を次に示します。  
+  
+ [!code-xaml[FlowMiscSnippets_snip#FigureLengthExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowMiscSnippets_snip/cs/figurelengthexample.xaml#figurelengthexamplewholepage)]  
+  
+ 以下は、コードを減らすために使用、<xref:System.Windows.Documents.Figure.Width%2A>の<xref:System.Windows.Documents.Figure>です。  
+  
+ [!code-csharp[FlowMiscSnippets_snip#FigureLengthCodeBehindExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowMiscSnippets_snip/cs/figurelengthexample.xaml.cs#figurelengthcodebehindexamplewholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Equals">
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>比較する 2 つ<see cref="T:System.Windows.FigureLength" />構造が等しいかどうか。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ<xref:System.Windows.FigureLength>構造正確に同じでなければなりません、あらゆる方法でないだけが同じである<xref:System.Windows.FigureLength.Value%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object oCompare);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object oCompare) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FigureLength.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oCompare" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="oCompare"><see cref="T:System.Object" />このインスタンスと比較します。</param>
+        <summary>決定するかどうか、指定した<see cref="T:System.Object" />は、<see cref="T:System.Windows.FigureLength" />これと同じであるかどうかと<see cref="T:System.Windows.FigureLength" />です。</summary>
+        <returns>
+          <paramref name="oCompare" /> が <see cref="T:System.Windows.FigureLength" /> であり、この <see cref="T:System.Windows.FigureLength" /> と同一である場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Windows.FigureLength figureLength);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(valuetype System.Windows.FigureLength figureLength) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FigureLength.Equals(System.Windows.FigureLength)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="figureLength" Type="System.Windows.FigureLength" />
+      </Parameters>
+      <Docs>
+        <param name="figureLength"><see cref="T:System.Windows.FigureLength" />このインスタンスと比較します。</param>
+        <summary>比較する 2 つ<see cref="T:System.Windows.FigureLength" />構造が等しいかどうか。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="figureLength" />はこれと同じ<see cref="T:System.Windows.FigureLength" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FigureUnitType">
+      <MemberSignature Language="C#" Value="public System.Windows.FigureUnitType FigureUnitType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FigureUnitType FigureUnitType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FigureLength.FigureUnitType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FigureUnitType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.FigureLength.Value" /> の単位型を取得します。</summary>
+        <value>このユニットの種類<see cref="P:System.Windows.FigureLength.Value" />です。 既定値は <see cref="F:System.Windows.FigureUnitType.Auto" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用してこのユニットの種類をさらに、値を見つけることができます、<xref:System.Windows.FigureLength.Value%2A>プロパティです。  
+  
+ このプロパティは読み取り専用です。 このプロパティの値を設定するには、使用、<xref:System.Windows.FigureLength.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FigureLength.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.FigureLength" /> のハッシュ コードを返します。</summary>
+        <returns>ハッシュ コードをこの<see cref="T:System.Windows.FigureLength" />構造体。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAbsolute">
+      <MemberSignature Language="C#" Value="public bool IsAbsolute { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAbsolute" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FigureLength.IsAbsolute" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>決定する値を取得するかどうかこの<see cref="T:System.Windows.FigureLength" />絶対値をピクセル単位) を保持します。</summary>
+        <value>**true**場合は、この<see cref="T:System.Windows.FigureLength" />を保持、絶対値 (ピクセル単位) です。 それ以外の場合、 **false**です。 既定値は**false**です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAuto">
+      <MemberSignature Language="C#" Value="public bool IsAuto { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAuto" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FigureLength.IsAuto" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>決定する値を取得するかどうかこの<see cref="T:System.Windows.FigureLength" />が自動で (指定しない場合)。</summary>
+        <value>**true**この<see cref="T:System.Windows.FigureLength" />が自動で (指定されていません)。 それ以外の場合、 **false**です。 既定値は**true**です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsColumn">
+      <MemberSignature Language="C#" Value="public bool IsColumn { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsColumn" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FigureLength.IsColumn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>決定する値を取得するかどうかこの<see cref="T:System.Windows.FigureLength" />が、<see cref="T:System.Windows.FigureUnitType" />のプロパティの値<see cref="F:System.Windows.FigureUnitType.Column" />です。</summary>
+        <value>**true**この<see cref="T:System.Windows.FigureLength" />が、<see cref="T:System.Windows.FigureUnitType" />のプロパティの値<see cref="F:System.Windows.FigureUnitType.Column" />、それ以外の**false**です。 既定値は**false**です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsContent">
+      <MemberSignature Language="C#" Value="public bool IsContent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsContent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FigureLength.IsContent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>決定する値を取得するかどうかこの<see cref="T:System.Windows.FigureLength" />が、<see cref="T:System.Windows.FigureUnitType" />のプロパティの値<see cref="F:System.Windows.FigureUnitType.Content" />です。</summary>
+        <value>返します**true**この<see cref="T:System.Windows.FigureLength" />が、<see cref="T:System.Windows.FigureUnitType" />のプロパティの値<see cref="F:System.Windows.FigureUnitType.Content" />、それ以外の**false**です。 既定値は**false**です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPage">
+      <MemberSignature Language="C#" Value="public bool IsPage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPage" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FigureLength.IsPage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>決定する値を取得するかどうかこの<see cref="T:System.Windows.FigureLength" />が、<see cref="T:System.Windows.FigureUnitType" />のプロパティの値<see cref="F:System.Windows.FigureUnitType.Page" />です。</summary>
+        <value>**true**この<see cref="T:System.Windows.FigureLength" />が、<see cref="T:System.Windows.FigureUnitType" />のプロパティの値<see cref="F:System.Windows.FigureUnitType.Page" />、それ以外の**false**です。 既定値は**false**です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Windows.FigureLength fl1, System.Windows.FigureLength fl2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Windows.FigureLength fl1, valuetype System.Windows.FigureLength fl2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FigureLength.op_Equality(System.Windows.FigureLength,System.Windows.FigureLength)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fl1" Type="System.Windows.FigureLength" />
+        <Parameter Name="fl2" Type="System.Windows.FigureLength" />
+      </Parameters>
+      <Docs>
+        <param name="fl1">比較する最初の <see cref="T:System.Windows.FigureLength" /> 構造体。</param>
+        <param name="fl2">比較する 2 番目の <see cref="T:System.Windows.FigureLength" /> 構造体。</param>
+        <summary>比較する 2 つ<see cref="T:System.Windows.FigureLength" />構造が等しいかどうか。</summary>
+        <returns>
+          <see langword="true" /> と <paramref name="fl1" /> が等しい場合は <paramref name="fl2" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は<xref:System.Windows.FigureLength.Equals%2A?displayProperty=nameWithType>します。 ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Windows.FigureLength fl1, System.Windows.FigureLength fl2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Windows.FigureLength fl1, valuetype System.Windows.FigureLength fl2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FigureLength.op_Inequality(System.Windows.FigureLength,System.Windows.FigureLength)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fl1" Type="System.Windows.FigureLength" />
+        <Parameter Name="fl2" Type="System.Windows.FigureLength" />
+      </Parameters>
+      <Docs>
+        <param name="fl1">比較する最初の <see cref="T:System.Windows.FigureLength" /> 構造体。</param>
+        <param name="fl2">比較する 2 番目の <see cref="T:System.Windows.FigureLength" /> 構造体。</param>
+        <summary>比較する 2 つ<see cref="T:System.Windows.FigureLength" />非等値の構造体。</summary>
+        <returns>
+          <paramref name="fl1" /> と <paramref name="fl2" /> が等しくない場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法の否定である<xref:System.Windows.FigureLength.Equals%2A?displayProperty=nameWithType>です。 ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FigureLength.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成、<see cref="T:System.String" />表現<see cref="T:System.Windows.FigureLength" />です。</summary>
+        <returns>A<see cref="T:System.String" />表現<see cref="T:System.Windows.FigureLength" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public double Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Value" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FigureLength.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Windows.FigureLength" /> の値を取得します。</summary>
+        <value>この <see cref="T:System.Windows.FigureLength" /> の値を取得します。 既定値は<c>1</c>です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用してこの値の単位型を見つけることができます、<xref:System.Windows.FigureLength.FigureUnitType%2A>プロパティです。  
+  
+ このプロパティは読み取り専用です。 このプロパティの値を設定するには、使用、<xref:System.Windows.FigureLength.%23ctor%2A>または<xref:System.Windows.FigureLength.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

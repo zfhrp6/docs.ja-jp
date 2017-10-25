@@ -1,0 +1,172 @@
+<Type Name="ManagedToNativeComInteropStubAttribute" FullName="System.Runtime.InteropServices.ManagedToNativeComInteropStubAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ManagedToNativeComInteropStubAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ManagedToNativeComInteropStubAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.ManagedToNativeComInteropStubAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method, AllowMultiple=false, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>マネージ型から COM への相互運用シナリオでの相互運用機能のスタブのユーザーのカスタマイズのサポートを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性は、マーシャ リングの概要の知識と、次の操作への相互運用機能の呼び出しの内部動作開発者が相互運用機能を使用します。  
+  
+-   実行時ではなく、ビルド時にカスタマイズされた相互運用機能のスタブを活用します。  
+  
+-   カスタマイズされた相互運用機能のスタブをデバッグします。  
+  
+-   ランタイムが提供していないスタブ内のマーシャ リングの機能を提供します。  
+  
+-   ユーザー固有のメソッドのディスパッチの機能を提供します。  
+  
+ この属性は、マネージからネイティブへの COM 相互運用機能の対応するスタブ メソッドを指定するインターフェイスのメソッドに適用します。  
+  
+ この属性は、実行時に検出した場合、共通言語ランタイムの相互運用機能のスタブは動的に生成されません。 代わりに、ビルド時に作成されたカスタムのスタブを呼び出します。  
+  
+ <xref:System.Runtime.InteropServices.ManagedToNativeComInteropStubAttribute>属性は、次の特性を持ちます。  
+  
+-   この属性は、マークされているインターフェイスのメソッドでのみ使用できます`[ComImport]`です。 属性はインターフェイス以外の型に適用する場合は、ランタイムによって無視されます。  
+  
+-   この属性は、インターフェイス内で同じ方法で 1 回だけ使用できます。 複数回使用されている場合、コンパイラは、属性の重複エラーを生成します。  
+  
+-   基底インターフェイスから、属性を継承することはありません。 派生インターフェイスは、属性を明示的に割り当てる必要があります。  
+  
+-   属性付きメソッドを含むアセンブリには、カスタマイズされたスタブする必要がありますも含まれます。  
+  
+ オーバー ロードされたスタブ メソッドは、有効です。 型のみおよびスタブ メソッドの名前を指定すると、ランタイムは、対応するスタブを検出します。 これは、インターフェイス メソッド上のすべての引数を確認して、完全署名の明示的なを使用して照合を実行することで`this`ポインター。  
+  
+ 同じスタブ メソッド; の共有へのインターフェイスで複数のメソッドのこともただし、必要がありますに注意する共有のスタブを使用するとします。  
+  
+> [!NOTE]
+>  スタブ メソッドは静的である必要があります。  
+  
+ 次の c# コードの実行時ではなく、ビルド時にカスタマイズされた相互運用機能のスタブを使用するランタイムに通知できます。  
+  
+```  
+[ComImport]  
+interface IMyInterface  
+{  
+    [ManagedToNativeComInteropStubAttribute(typeof(TestStubClass),  
+              "ForwardTestStub")]  
+    void GetString (string arg);  
+}  
+```  
+  
+ 対応するスタブのメソッドを宣言するのに次のコードを使用できます。  
+  
+```  
+class TestStubClass  
+{  
+    internal static void ForwardTestStub(IMyInterface thisObject,  
+             string arg) {…}  
+}  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManagedToNativeComInteropStubAttribute (Type classType, string methodName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type classType, string methodName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ManagedToNativeComInteropStubAttribute.#ctor(System.Type,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="classType" Type="System.Type" />
+        <Parameter Name="methodName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="classType">必要なスタブ メソッドを含むクラスです。</param>
+        <param name="methodName">スタブ メソッドの名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.InteropServices.ManagedToNativeComInteropStubAttribute" />指定したクラスの型とメソッドの名前を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="methodName" />見つかりません。  
+  
+ または  
+  
+ メソッドは静的か非ジェネリックではありません。  
+  
+ または  
+  
+ メソッドのパラメーター リストでは、スタブに必要なパラメーター リストが一致しません。</exception>
+        <exception cref="T:System.MethodAccessException">スタブ メソッドがプライベートまたはプロテクトのアクセシビリティを持つため、またはセキュリティ上の問題のため、マネージ相互運用メソッドを格納しているインターフェイスは、スタブ メソッドへのアクセスがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ClassType">
+      <MemberSignature Language="C#" Value="public Type ClassType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ClassType" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.ManagedToNativeComInteropStubAttribute.ClassType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>必要なスタブ メソッドを含むクラスを取得します。</summary>
+        <value>このクラスは、カスタマイズされた相互運用機能のスタブが含まれています。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MethodName">
+      <MemberSignature Language="C#" Value="public string MethodName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MethodName" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.ManagedToNativeComInteropStubAttribute.MethodName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スタブ メソッドの名前を取得します。</summary>
+        <value>カスタマイズされた相互運用機能のスタブの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

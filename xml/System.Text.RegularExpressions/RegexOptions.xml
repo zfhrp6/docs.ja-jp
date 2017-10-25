@@ -1,0 +1,358 @@
+<Type Name="RegexOptions" FullName="System.Text.RegularExpressions.RegexOptions">
+  <TypeSignature Language="C#" Value="public enum RegexOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed RegexOptions extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Text.RegularExpressions.RegexOptions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Text.RegularExpressions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>正規表現オプションを設定するために使用する列挙値を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Text.RegularExpressions.RegexOptions>の次のメンバーに値をパラメーターとして指定することができます、<xref:System.Text.RegularExpressions.Regex>クラス。  
+  
+-   <xref:System.Text.RegularExpressions.Regex.%23ctor%28System.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType>クラスのコンス トラクターです。  
+  
+-   <xref:System.Text.RegularExpressions.Regex.Split%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType> メソッド。  
+  
+-   <xref:System.Text.RegularExpressions.Regex.IsMatch%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType> メソッド。  
+  
+-   <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType> メソッド。  
+  
+-   <xref:System.Text.RegularExpressions.Regex.Matches%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType> メソッド。  
+  
+-   <xref:System.Text.RegularExpressions.Regex.Replace%28System.String%2CSystem.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType>と<xref:System.Text.RegularExpressions.Regex.Replace%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.MatchEvaluator%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType>メソッドです。  
+  
+ A<xref:System.Text.RegularExpressions.RegexOptions>へのパラメーターとして値を指定することができますも、<xref:System.Text.RegularExpressions.RegexCompilationInfo.%23ctor%2A>コンス トラクター、またはそれに直接割り当てすることができます、<xref:System.Text.RegularExpressions.RegexCompilationInfo.Options%2A>プロパティです。 その結果、<xref:System.Text.RegularExpressions.RegexCompilationInfo>への呼び出しでオブジェクトを使用して、<xref:System.Text.RegularExpressions.Regex.CompileToAssembly%2A>メソッドです。  
+  
+ メンバーによって提供されるいくつかのオプション、 <xref:System.Text.RegularExpressions.RegexOptions> (具体的には、その ExplicitCapture、IgnoreCase、複数行および単一行のメンバー) で列挙は、正規表現パターンのインライン オプション文字を使用して、代わりに指定できます。 詳細については、「[正規表現のオプション](~/docs/standard/base-types/regular-expression-options.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、次の 2 つの正規表現のテキストに重複する単語を識別するが、異なるインスタンス化する<xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture?displayProperty=nameWithType>値。 最初の正規表現が区別されません。場合に、単語が、前の単語と同じかどうかを判断する場合は無視されます。 2 つ目の正規表現が区別されます。単語が重複と見なされるに正確に前の単語の大文字と小文字を一致しなければなりません。  
+  
+ [!code-csharp[System.Text.RegularExpressions.RegexOptions#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Text.RegularExpressions.RegexOptions/cs/RegexOptions.cs#1)]
+ [!code-vb[System.Text.RegularExpressions.RegexOptions#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Text.RegularExpressions.RegexOptions/vb/RegexOptions.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Compiled">
+      <MemberSignature Language="C#" Value="Compiled" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Text.RegularExpressions.RegexOptions Compiled = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Text.RegularExpressions.RegexOptions.Compiled" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.RegularExpressions</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.RegularExpressions.RegexOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>正規表現をコンパイルしてアセンブリを作成することを指定します。 これにより実行速度は速くなりますが、起動にかかる時間は長くなります。 この値に割り当てる必要があります、<see cref="P:System.Text.RegularExpressions.RegexCompilationInfo.Options" />プロパティを呼び出すときに、<see cref="M:System.Text.RegularExpressions.Regex.CompileToAssembly(System.Text.RegularExpressions.RegexCompilationInfo[],System.Reflection.AssemblyName)" />メソッドです。 詳細についてを参照してください「コンパイルされた正規表現」、[正規表現のオプション](~/docs/standard/base-types/regular-expression-options.md)トピックです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CultureInvariant">
+      <MemberSignature Language="C#" Value="CultureInvariant" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Text.RegularExpressions.RegexOptions CultureInvariant = int32(512)" />
+      <MemberSignature Language="DocId" Value="F:System.Text.RegularExpressions.RegexOptions.CultureInvariant" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.RegularExpressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.RegularExpressions.RegexOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>言語の違いが無視されるように指定します。 詳細についてを参照してください「比較を使用して、インバリアント カルチャ」、[正規表現のオプション](~/docs/standard/base-types/regular-expression-options.md)トピックです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ECMAScript">
+      <MemberSignature Language="C#" Value="ECMAScript" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Text.RegularExpressions.RegexOptions ECMAScript = int32(256)" />
+      <MemberSignature Language="DocId" Value="F:System.Text.RegularExpressions.RegexOptions.ECMAScript" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.RegularExpressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.RegularExpressions.RegexOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>式の ECMAScript 準拠の動作を有効にします。 この値との組み合わせでのみ使用できます、 <see cref="F:System.Text.RegularExpressions.RegexOptions.IgnoreCase" />、 <see cref="F:System.Text.RegularExpressions.RegexOptions.Multiline" />、および<see cref="F:System.Text.RegularExpressions.RegexOptions.Compiled" />値。 この値を他の値と組み合わせて使用すると、例外が発生します。  
+  
+ 詳細については、<see cref="F:System.Text.RegularExpressions.RegexOptions.ECMAScript" />オプションの「ECMAScript 一致の動作」を参照してください、[正規表現のオプション](~/docs/standard/base-types/regular-expression-options.md)トピックです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ExplicitCapture">
+      <MemberSignature Language="C#" Value="ExplicitCapture" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Text.RegularExpressions.RegexOptions ExplicitCapture = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Text.RegularExpressions.RegexOptions.ExplicitCapture" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.RegularExpressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.RegularExpressions.RegexOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>のみが有効なキャプチャが明示的に名前または番号形式のことを指定します (?&lt;名前&gt;...)。 これにより、不恰好な表現 (?:...) を使用しなくても、名前のないかっこが非キャプチャ グループとして機能するようになります。 詳細については、「明示的なキャプチャのみ」のセクションを参照してください、[正規表現のオプション](~/docs/standard/base-types/regular-expression-options.md)トピックです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreCase">
+      <MemberSignature Language="C#" Value="IgnoreCase" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Text.RegularExpressions.RegexOptions IgnoreCase = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Text.RegularExpressions.RegexOptions.IgnoreCase" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.RegularExpressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.RegularExpressions.RegexOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検索時に大文字と小文字を区別しないことを指定します。 詳細については、「Case-Insensitive 一致」のセクションを参照して、[正規表現のオプション](~/docs/standard/base-types/regular-expression-options.md)トピックです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnorePatternWhitespace">
+      <MemberSignature Language="C#" Value="IgnorePatternWhitespace" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Text.RegularExpressions.RegexOptions IgnorePatternWhitespace = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.RegularExpressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.RegularExpressions.RegexOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パターンからエスケープが解除された空白を削除し、# でマークされたコメントを有効にします。 ただし、この値に影響を与えるまたはしません内の空白を除去[文字クラス](~/docs/standard/base-types/character-classes-in-regular-expressions.md)、numeric[量指定子](~/docs/standard/base-types/quantifiers-in-regular-expressions.md)、または個々 の先頭を示すトークン[正規表現言語要素](~/docs/standard/base-types/regular-expression-language-quick-reference.md)です。 詳細については、「空白文字を無視する」の参照、[正規表現のオプション](~/docs/standard/base-types/regular-expression-options.md)トピックです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Multiline">
+      <MemberSignature Language="C#" Value="Multiline" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Text.RegularExpressions.RegexOptions Multiline = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Text.RegularExpressions.RegexOptions.Multiline" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.RegularExpressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.RegularExpressions.RegexOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>複数行モードを指定します。 ^ と $ の意味を変更して、文字列全体の先頭と末尾だけでなく、任意の行の先頭と末尾にもそれぞれが一致するようにします。 詳細については、「複数行モード」セクションを参照してください、[正規表現のオプション](~/docs/standard/base-types/regular-expression-options.md)トピックです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Text.RegularExpressions.RegexOptions None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Text.RegularExpressions.RegexOptions.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.RegularExpressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.RegularExpressions.RegexOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オプションが何も設定されないことを指定します。 正規表現エンジンの既定の動作の詳細については、「既定のオプション」セクションを参照してください、[正規表現のオプション](~/docs/standard/base-types/regular-expression-options.md)トピックです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RightToLeft">
+      <MemberSignature Language="C#" Value="RightToLeft" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Text.RegularExpressions.RegexOptions RightToLeft = int32(64)" />
+      <MemberSignature Language="DocId" Value="F:System.Text.RegularExpressions.RegexOptions.RightToLeft" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.RegularExpressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.RegularExpressions.RegexOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検索が左から右ではなく右から左になされるように指定します。 詳細についてを参照してください「右から左モード」で、[正規表現のオプション](~/docs/standard/base-types/regular-expression-options.md)トピックです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Singleline">
+      <MemberSignature Language="C#" Value="Singleline" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Text.RegularExpressions.RegexOptions Singleline = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Text.RegularExpressions.RegexOptions.Singleline" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.RegularExpressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.RegularExpressions.RegexOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>単一行モードを指定します。 \n 以外の任意の文字ではなく、すべての文字と一致するようにピリオド (.) の意味を変更します。 詳細についてを参照してください「単一行モード」で、[正規表現のオプション](~/docs/standard/base-types/regular-expression-options.md)トピックです。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,360 @@
+<Type Name="ReadOnlyAttribute" FullName="System.ComponentModel.ReadOnlyAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ReadOnlyAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ReadOnlyAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.ReadOnlyAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.All)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>かどうかをこの属性が関連付けられているプロパティは読み取り専用または読み取り/書き込みを指定します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マークされたメンバー、 <xref:System.ComponentModel.ReadOnlyAttribute> 'éý'`true`がないか、`Set`メソッドを変更することはできません。 この属性を持っていないとマークされているメンバー、 <xref:System.ComponentModel.ReadOnlyAttribute> 'éý'`false`読み取り/書き込み、および変更できます。 既定値は、<xref:System.ComponentModel.ReadOnlyAttribute.No> です。  
+  
+> [!IMPORTANT]
+>  <xref:System.ComponentModel.PropertyDescriptor>クラスは、強制、<xref:System.ComponentModel.ReadOnlyAttribute>デザイン環境では実行時にします。 持つプロパティを指定すると、 <xref:System.ComponentModel.ReadOnlyAttribute> 'éý' `true`、この属性の値が定数のメンバーに設定されます<xref:System.ComponentModel.ReadOnlyAttribute.Yes>です。 マークされたプロパティの<xref:System.ComponentModel.ReadOnlyAttribute>'éý' `false`、値が<xref:System.ComponentModel.ReadOnlyAttribute.No>です。 そのため、コード内でこの属性の値を確認する場合は、として属性を指定する必要があります<xref:System.ComponentModel.ReadOnlyAttribute.Yes?displayProperty=nameWithType>または<xref:System.ComponentModel.ReadOnlyAttribute.No?displayProperty=nameWithType>です。  
+  
+ 詳細については、「[属性](~/docs/standard/attributes/index.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、プロパティが読み取り専用としてマークします。  
+  
+ [!code-cpp[Classic ReadOnlyAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ReadOnlyAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ReadOnlyAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ReadOnlyAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic ReadOnlyAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ReadOnlyAttribute Example/VB/source.vb#1)]  
+  
+ 次のコード例の値を確認する方法を示しています、<xref:System.ComponentModel.ReadOnlyAttribute>の`MyProperty`します。 最初に、コードを取得、<xref:System.ComponentModel.PropertyDescriptorCollection>オブジェクトのすべてのプロパティをします。 次に、インデックス、<xref:System.ComponentModel.PropertyDescriptorCollection>を取得する`MyProperty`です。 このプロパティの属性を返し、属性変数に保存します。  
+  
+ この例の値をチェックする 2 つの異なる方法を表示する、<xref:System.ComponentModel.ReadOnlyAttribute>です。 この例では、2 つ目のコード フラグメントで、<xref:System.ComponentModel.ReadOnlyAttribute.Equals%2A>メソッドです。 この例では、最後のコード フラグメントで、<xref:System.ComponentModel.ReadOnlyAttribute.IsReadOnly%2A>プロパティの値を確認します。  
+  
+ [!code-cpp[Classic ReadOnlyAttribute Example#2](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ReadOnlyAttribute Example/CPP/source.cpp#2)]
+ [!code-csharp[Classic ReadOnlyAttribute Example#2](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ReadOnlyAttribute Example/CS/source.cs#2)]
+ [!code-vb[Classic ReadOnlyAttribute Example#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ReadOnlyAttribute Example/VB/source.vb#2)]  
+  
+ 持つクラスをマークした場合、 <xref:System.ComponentModel.ReadOnlyAttribute>、次のコード例を使用して値を確認します。  
+  
+ [!code-cpp[Classic ReadOnlyAttribute Example#3](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ReadOnlyAttribute Example/CPP/source.cpp#3)]
+ [!code-csharp[Classic ReadOnlyAttribute Example#3](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ReadOnlyAttribute Example/CS/source.cs#3)]
+ [!code-vb[Classic ReadOnlyAttribute Example#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ReadOnlyAttribute Example/VB/source.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ReadOnlyAttribute (bool isReadOnly);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool isReadOnly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.ReadOnlyAttribute.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="isReadOnly" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="isReadOnly">
+          <see langword="true" />この属性が関連付けプロパティを表示するには読み取り専用です。<see langword="false" />プロパティが読み取り/書き込みを表示します。</param>
+        <summary><see cref="T:System.ComponentModel.ReadOnlyAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マークされたメンバー、 <xref:System.ComponentModel.ReadOnlyAttribute> 'éý'`true`がないか、`Set`メソッドを変更することはできません。 この属性を持っていないとマークされているメンバー、 <xref:System.ComponentModel.ReadOnlyAttribute> 'éý'`false`読み取り/書き込み、および変更できます。 既定値は、<xref:System.ComponentModel.ReadOnlyAttribute.No> です。  
+  
+> [!NOTE]
+>  持つプロパティを指定すると、 <xref:System.ComponentModel.ReadOnlyAttribute> 'éý' `true`、この属性の値が定数のメンバーに設定されます<xref:System.ComponentModel.ReadOnlyAttribute.Yes>です。 マークされたプロパティの<xref:System.ComponentModel.ReadOnlyAttribute>'éý' `false`、値が<xref:System.ComponentModel.ReadOnlyAttribute.No>です。 そのため、コード内でこの属性の値を確認する場合は、として属性を指定する必要があります<xref:System.ComponentModel.ReadOnlyAttribute.Yes?displayProperty=nameWithType>または<xref:System.ComponentModel.ReadOnlyAttribute.No?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、プロパティが読み取り専用としてマークします。 このコードでは、新しい<xref:System.ComponentModel.ReadOnlyAttribute>、その値に設定<xref:System.ComponentModel.ReadOnlyAttribute.Yes?displayProperty=nameWithType>、し、プロパティにバインドします。  
+  
+ [!code-cpp[Classic ReadOnlyAttribute.ReadOnlyAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ReadOnlyAttribute.ReadOnlyAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ReadOnlyAttribute.ReadOnlyAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ReadOnlyAttribute.ReadOnlyAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic ReadOnlyAttribute.ReadOnlyAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ReadOnlyAttribute.ReadOnlyAttribute Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static readonly System.ComponentModel.ReadOnlyAttribute Default;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.ComponentModel.ReadOnlyAttribute Default" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.ReadOnlyAttribute.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.ReadOnlyAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定値を指定します、 <see cref="T:System.ComponentModel.ReadOnlyAttribute" />、これは<see cref="F:System.ComponentModel.ReadOnlyAttribute.No" />(つまり、この属性にバインドされたプロパティが読み取り/書き込み)。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性が定数のメンバーに設定されている場合、この値を持つプロパティを設定すると、<xref:System.ComponentModel.ReadOnlyAttribute.No>です。 そのため、属性がコード内でこの値に設定されているかどうか確認する場合は、として属性を指定する必要があります<xref:System.ComponentModel.ReadOnlyAttribute.No?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.ReadOnlyAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">比較対象のもう 1 つのオブジェクト。</param>
+        <summary>このインスタンスと指定したオブジェクトが等しいかどうかを示します。</summary>
+        <returns>
+          <paramref name="value" /> がこのインスタンスと等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.ReadOnlyAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>現在の <see cref="T:System.ComponentModel.ReadOnlyAttribute" /> のハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefaultAttribute">
+      <MemberSignature Language="C#" Value="public override bool IsDefaultAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsDefaultAttribute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.ReadOnlyAttribute.IsDefaultAttribute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この属性が既定値であるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />属性がこの属性クラスの既定値である場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.ReadOnlyAttribute.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この属性に関連付けられているプロパティは読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />プロパティにこの属性がバインドされている場合は読み取り専用です。<see langword="false" />プロパティが読み取り/書き込みの場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を参照してくださいかどうか確認するかどうか`MyProperty`は読み取り専用です。 コードでの属性を取得する最初に、`MyProperty`次の手順で。  
+  
+-   取得する、<xref:System.ComponentModel.PropertyDescriptorCollection>オブジェクトのすべてのプロパティをします。  
+  
+-   インデックスを付ける、<xref:System.ComponentModel.PropertyDescriptorCollection>を取得する`MyProperty`です。  
+  
+-   このプロパティの属性の属性変数に保存します。  
+  
+ コードを設定し、`myAttribute`の値に、<xref:System.ComponentModel.ReadOnlyAttribute>で、<xref:System.ComponentModel.AttributeCollection>し、プロパティは読み取り専用であるかどうかを確認します。  
+  
+ [!code-cpp[Classic ReadOnlyAttribute.IsReadOnly Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ReadOnlyAttribute.IsReadOnly Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ReadOnlyAttribute.IsReadOnly Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ReadOnlyAttribute.IsReadOnly Example/CS/source.cs#1)]
+ [!code-vb[Classic ReadOnlyAttribute.IsReadOnly Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ReadOnlyAttribute.IsReadOnly Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="No">
+      <MemberSignature Language="C#" Value="public static readonly System.ComponentModel.ReadOnlyAttribute No;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.ComponentModel.ReadOnlyAttribute No" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.ReadOnlyAttribute.No" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.ReadOnlyAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この属性がバインドされたプロパティが読み取り/書き込みし、変更できることを指定します。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドは、この属性の既定の設定です。  
+  
+ 持つプロパティを指定すると、 <xref:System.ComponentModel.ReadOnlyAttribute> 'éý' `false`、この属性の値が定数のメンバーに設定されます<xref:System.ComponentModel.ReadOnlyAttribute.No>です。 そのため、属性がコード内でこの値に設定されているかどうか確認する場合は、として属性を指定する必要があります<xref:System.ComponentModel.ReadOnlyAttribute.No?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Yes">
+      <MemberSignature Language="C#" Value="public static readonly System.ComponentModel.ReadOnlyAttribute Yes;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.ComponentModel.ReadOnlyAttribute Yes" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.ReadOnlyAttribute.Yes" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.ReadOnlyAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この属性に関連付けられているプロパティは読み取り専用、サーバー エクスプ ローラーでは変更できませんを指定します。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 持つプロパティを指定すると、 <xref:System.ComponentModel.ReadOnlyAttribute> 'éý' `true`、この属性の値が定数のメンバーに設定されます<xref:System.ComponentModel.ReadOnlyAttribute.Yes>です。 そのため、属性がコード内でこの値に設定されているかどうか確認する場合は、として属性を指定する必要があります<xref:System.ComponentModel.ReadOnlyAttribute.Yes?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

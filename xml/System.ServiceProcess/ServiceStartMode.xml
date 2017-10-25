@@ -1,0 +1,135 @@
+<Type Name="ServiceStartMode" FullName="System.ServiceProcess.ServiceStartMode">
+  <TypeSignature Language="C#" Value="public enum ServiceStartMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ServiceStartMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceProcess.ServiceStartMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceProcess</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>サービスの開始モードを示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceProcess.ServiceStartMode>サービスのインストーラーによってシステムの起動時に、新しいサービスを無効にするかどうか、システムが、システムのスタートアップ時に自動的にサービスを開始するかどうか、またはかどうか、サービスを手動で開始するユーザーまたはアプリケーションによってを指定するためです。 使用して、<xref:System.ServiceProcess.ServiceController.StartType%2A?displayProperty=nameWithType>を特定のサービスの起動方法を示すプロパティです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Automatic">
+      <MemberSignature Language="C#" Value="Automatic" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceProcess.ServiceStartMode Automatic = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceProcess.ServiceStartMode.Automatic" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.ServiceStartMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システムの起動時に、オペレーティング システムによってサービスが開始される (または開始された) ことを示します。 自動的に開始されるサービスが手動で開始されるサービスに依存する場合は、手動で開始されるサービスもシステムの起動時に自動的に開始されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Boot">
+      <MemberSignature Language="C#" Value="Boot" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceProcess.ServiceStartMode Boot = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceProcess.ServiceStartMode.Boot" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.ServiceStartMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスがシステム ローダーによって開始されるデバイス ドライバーであることを示します。 この値は、デバイス ドライバーに対してのみ有効です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Disabled">
+      <MemberSignature Language="C#" Value="Disabled" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceProcess.ServiceStartMode Disabled = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceProcess.ServiceStartMode.Disabled" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.ServiceStartMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーまたはアプリケーションによってサービスが開始できないよう、サービスが無効になっていることを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Manual">
+      <MemberSignature Language="C#" Value="Manual" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceProcess.ServiceStartMode Manual = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceProcess.ServiceStartMode.Manual" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.ServiceStartMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスが ユーザー (サービス コントロール マネージャーを使用) によって手動でのみ開始されるか、またはアプリケーションによって開始されるかを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="System">
+      <MemberSignature Language="C#" Value="System" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceProcess.ServiceStartMode System = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceProcess.ServiceStartMode.System" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.ServiceStartMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスが <see langword="IOInitSystem" /> 関数によって開始されるデバイス ドライバーであることを示します。 この値は、デバイス ドライバーに対してのみ有効です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

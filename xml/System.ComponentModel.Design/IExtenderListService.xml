@@ -1,0 +1,69 @@
+<Type Name="IExtenderListService" FullName="System.ComponentModel.Design.IExtenderListService">
+  <TypeSignature Language="C#" Value="public interface IExtenderListService" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IExtenderListService" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.IExtenderListService" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>拡張プロバイダーの一覧を表示するインターフェイスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 拡張プロバイダーの一覧を提供する必要がある場合は、サイトにこのサービスを実装できます。 既定では、各コンポーネントを実装するコンテナー内のクエリを実行してエクステンダーの一覧が生成<xref:System.ComponentModel.IExtenderProvider>エクステンダーのそれぞれを提供します。 このインターフェイスを実装するとコンポーネントのサイトで、コンテナーは、プロバイダーの一覧をオーバーライドできます。  
+  
+   
+  
+## Examples  
+ 次の例では、使用方法を示します、<xref:System.ComponentModel.Design.IExtenderListService>現在アクティブな拡張プロバイダーのセットを取得します。  
+  
+ [!code-cpp[ExtenderListServiceExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ExtenderListServiceExample/CPP/extenderlistserviceexample.cpp#1)]
+ [!code-csharp[ExtenderListServiceExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ExtenderListServiceExample/CS/extenderlistserviceexample.cs#1)]
+ [!code-vb[ExtenderListServiceExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ExtenderListServiceExample/VB/extenderlistserviceexample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetExtenderProviders">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.IExtenderProvider[] GetExtenderProviders ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.IExtenderProvider[] GetExtenderProviders() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IExtenderListService.GetExtenderProviders" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.IExtenderProvider[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンポーネントの拡張プロバイダーのセットを取得します。</summary>
+        <returns>型の配列<see cref="T:System.ComponentModel.IExtenderProvider" />アクティブな拡張プロバイダーを一覧表示します。 プロバイダーがない場合は、空の配列が返されます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

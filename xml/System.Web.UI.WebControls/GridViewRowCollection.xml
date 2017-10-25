@@ -1,0 +1,336 @@
+<Type Name="GridViewRowCollection" FullName="System.Web.UI.WebControls.GridViewRowCollection">
+  <TypeSignature Language="C#" Value="public class GridViewRowCollection : System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GridViewRowCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.GridViewRowCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary><see cref="T:System.Web.UI.WebControls.GridView" /> コントロールに含まれる <see cref="T:System.Web.UI.WebControls.GridViewRow" /> オブジェクトのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.GridViewRowCollection>を格納および管理のコレクション クラスが使用される<xref:System.Web.UI.WebControls.GridViewRow>内のオブジェクト、<xref:System.Web.UI.WebControls.GridView>コントロール。 内の行ごと、<xref:System.Web.UI.WebControls.GridView>コントロールがによって表される、<xref:System.Web.UI.WebControls.GridViewRow>オブジェクト。 <xref:System.Web.UI.WebControls.GridView>コントロールは、すべてのでは、そのデータ行を格納、<xref:System.Web.UI.WebControls.GridView.Rows%2A>コレクション。  
+  
+ <xref:System.Web.UI.WebControls.GridViewRowCollection>クラスは、コレクション内の項目にアクセスするいくつかの方法をサポートします。  
+  
+-   使用して、<xref:System.Web.UI.WebControls.GridViewRowCollection.Item%2A>を直接取得するためのインデクサー、<xref:System.Web.UI.WebControls.GridViewRow>特定の 0 から始まるインデックス位置のオブジェクト。  
+  
+-   使用して、<xref:System.Web.UI.WebControls.GridViewRowCollection.GetEnumerator%2A>コレクションを反復処理に使用できる列挙子を取得します。  
+  
+-   使用して、<xref:System.Web.UI.WebControls.GridViewRowCollection.CopyTo%2A>にコレクション内の項目をコピーする方法、<xref:System.Array?displayProperty=nameWithType>コレクション内の項目にアクセスするために使用するオブジェクト。  
+  
+ コレクション内の項目の合計数を調べるを使用して、<xref:System.Web.UI.WebControls.GridViewRowCollection.Count%2A>プロパティ  
+  
+   
+  
+## Examples  
+ 次の例を反復処理する方法を示します、<xref:System.Web.UI.WebControls.GridView.Rows%2A>のコレクション、<xref:System.Web.UI.WebControls.GridView>制御し、ページで、列の値を表示します。  
+  
+ [!code-aspx-csharp[GridViewRowCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewRowCollection/CS/gridviewrowcollectioncs.aspx#1)]
+ [!code-aspx-vb[GridViewRowCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewRowCollection/VB/gridviewrowcollectionvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GridViewRowCollection (System.Collections.ArrayList rows);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.ArrayList rows) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.GridViewRowCollection.#ctor(System.Collections.ArrayList)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="rows" Type="System.Collections.ArrayList" />
+      </Parameters>
+      <Docs>
+        <param name="rows"><see cref="T:System.Collections.ArrayList" />オブジェクトを含む、<see cref="T:System.Web.UI.WebControls.GridViewRow" />コレクションの初期化に使用するオブジェクト。</param>
+        <summary>指定した <see cref="T:System.Collections.ArrayList" /> オブジェクトを使用して、<see cref="T:System.Web.UI.WebControls.GridViewRowCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.GridViewRowCollection>クラス<xref:System.Collections.ArrayList?displayProperty=nameWithType>オブジェクト。 <xref:System.Collections.ArrayList?displayProperty=nameWithType>オブジェクトを含めることは、<xref:System.Web.UI.WebControls.GridViewRow>オブジェクト コレクションを設定するときに使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Web.UI.WebControls.GridViewRow[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Web.UI.WebControls.GridViewRow[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.GridViewRowCollection.CopyTo(System.Web.UI.WebControls.GridViewRow[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Web.UI.WebControls.GridViewRow[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">0 から始まる<see cref="T:System.Array" />オブジェクトからコピーされた項目を受信する、<see cref="T:System.Web.UI.WebControls.GridViewRowCollection" />オブジェクト。</param>
+        <param name="index">指定した最初のインデックス<see cref="T:System.Array" />内容のコピーを受け取るオブジェクト。</param>
+        <summary>これからすべての項目をコピー<see cref="T:System.Web.UI.WebControls.GridViewRowCollection" />を指定した<see cref="T:System.Array" />オブジェクト、指定したインデックスから始まる、<see cref="T:System.Array" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッド内の項目のコピーを使用して、<xref:System.Web.UI.WebControls.GridViewRowCollection>に指定したオブジェクト<xref:System.Array?displayProperty=nameWithType>オブジェクト、指定したインデックスから始まります。 <xref:System.Array?displayProperty=nameWithType>オブジェクトは、コレクション内の項目にアクセスし、使用できます。  
+  
+> [!NOTE]
+>  0 から始まるが使用する必要があります<xref:System.Array?displayProperty=nameWithType>オブジェクトに対して、`array`パラメーター。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.GridViewRowCollection.CopyTo%2A>を配列にコレクションの項目をコピーします。 配列を反復処理され、ページに表示される最初のセルの値。  
+  
+ [!code-aspx-csharp[GridViewRowCollectionCopyTo#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewRowCollectionCopyTo/CS/gridviewrowcollectioncopytocs.aspx#1)]
+ [!code-aspx-vb[GridViewRowCollectionCopyTo#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewRowCollectionCopyTo/VB/gridviewrowcollectioncopytovb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.GridViewRowCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内の項目の数を取得、<see cref="T:System.Web.UI.WebControls.GridViewRowCollection" />オブジェクト。</summary>
+        <value>内の項目数、<see cref="T:System.Web.UI.WebControls.GridViewRowCollection" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.GridViewRowCollection.Count%2A>プロパティ コレクション内の項目数を決定します。 <xref:System.Web.UI.WebControls.GridViewRowCollection.Count%2A>プロパティは通常、コレクションのバインド上の決定にコレクションを反復処理する場合に使用します。 <xref:System.Web.UI.WebControls.GridViewRowCollection.Count%2A>も通常、プロパティはコレクションが空かどうかを使用します。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.GridViewRowCollection.Count%2A>プロパティを決定するかどうか、<xref:System.Web.UI.WebControls.GridView>コントロールには、すべてのレコードが含まれています。 値が 0 では、ことを示しますより大きい、<xref:System.Web.UI.WebControls.GridView>コントロールには、少なくとも 1 つのレコードが含まれています。  
+  
+ [!code-aspx-csharp[GridViewRowCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewRowCollection/CS/gridviewrowcollectioncs.aspx#1)]
+ [!code-aspx-vb[GridViewRowCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewRowCollection/VB/gridviewrowcollectionvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.GridViewRowCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてを含む列挙子を返します<see cref="T:System.Web.UI.WebControls.GridViewRow" />内のオブジェクト、<see cref="T:System.Web.UI.WebControls.GridViewRowCollection" />です。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />すべてを含むオブジェクトを実装する<see cref="T:System.Web.UI.WebControls.GridViewRow" />内のオブジェクト、<see cref="T:System.Web.UI.WebControls.GridViewRowCollection" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用できる反復直線的内の各項目にアクセスする列挙子を取得、<xref:System.Web.UI.WebControls.GridViewRowCollection>です。 列挙子の現在位置にあるアイテムにアクセスするには、<xref:System.Collections.IEnumerator.Current%2A?displayProperty=nameWithType>プロパティです。 使用して、<xref:System.Collections.IEnumerator.MoveNext%2A?displayProperty=nameWithType>コレクション内の次の項目に移動します。 列挙子を初期位置に移動するには、使用、<xref:System.Collections.IEnumerator.Reset%2A?displayProperty=nameWithType>メソッドです。  
+  
+> [!NOTE]
+>  ときに最初に列挙子を取得または使用する、<xref:System.Collections.IEnumerator.Reset%2A?displayProperty=nameWithType>列挙子をコレクションの最初の項目に移動するメソッドを呼び出す必要があります、<xref:System.Collections.IEnumerator.MoveNext%2A?displayProperty=nameWithType>メソッドです。 それ以外の場合で表される項目、<xref:System.Collections.IEnumerator.Current%2A?displayProperty=nameWithType>プロパティが定義されていません。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.GridViewRowCollection.GetEnumerator%2A>コレクションからの値を格納する列挙子を取得します。 列挙子を反復処理され、ページに表示される最初のセルの値。  
+  
+ [!code-aspx-csharp[GridViewRowCollectionGetEnumerator#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewRowCollectionGetEnumerator/CS/gridviewrowcollectiongetenumeratorcs.aspx#1)]
+ [!code-aspx-vb[GridViewRowCollectionGetEnumerator#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewRowCollectionGetEnumerator/VB/gridviewrowcollectiongetenumeratorvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.GridViewRowCollection.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかの行、<see cref="T:System.Web.UI.WebControls.GridViewRowCollection" />オブジェクトを変更できます。</summary>
+        <value>常に <see langword="false" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.GridViewRowCollection.IsReadOnly%2A>プロパティを決定するかどうか、<xref:System.Web.UI.WebControls.GridViewRow>内のオブジェクト、<xref:System.Web.UI.WebControls.GridViewRowCollection>オブジェクトを変更できます。  
+  
+> [!NOTE]
+>  このプロパティは常にオーバーライドされて`false`ことを示す、<xref:System.Web.UI.WebControls.GridViewRow>内のオブジェクト、<xref:System.Web.UI.WebControls.GridViewRowCollection>常にオブジェクトを変更できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.GridViewRowCollection.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.WebControls.GridViewRowCollection" />オブジェクトが同期されている (スレッド セーフ)。</summary>
+        <value>常に <see langword="false" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.GridViewRowCollection.IsSynchronized%2A>プロパティを決定するかどうか、<xref:System.Web.UI.WebControls.GridViewRowCollection>オブジェクトはスレッド セーフであります。  
+  
+> [!NOTE]
+>  このプロパティは常にオーバーライドされて`false`ことを示す、<xref:System.Web.UI.WebControls.GridViewRowCollection>オブジェクトはスレッド セーフではありません。  
+  
+ 詳細については、<xref:System.Web.UI.WebControls.GridViewRowCollection.IsSynchronized%2A>プロパティを参照してください、<xref:System.Collections.ICollection.IsSynchronized%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Collections.ICollection?displayProperty=nameWithType>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.GridViewRow this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.GridViewRow Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.GridViewRowCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.GridViewRow</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス、<see cref="T:System.Web.UI.WebControls.GridViewRow" />コレクションから取得するオブジェクト。</param>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.GridViewRow" />指定したインデックスにあるオブジェクト。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.GridViewRow" />オブジェクト、コレクション内の指定したインデックス位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインデクサーを使用して取得する、<xref:System.Web.UI.WebControls.GridViewRow>配列表記を使用して、指定されたインデックスでコレクションからのオブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例では、インデクサーを使用して取得する方法、<xref:System.Web.UI.WebControls.GridViewRow>オブジェクトをコレクションからです。 内のセルの値、<xref:System.Web.UI.WebControls.GridViewRow>オブジェクトは、ページに表示されます。  
+  
+ [!code-aspx-csharp[GridViewRowCollectionIndexer#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewRowCollectionIndexer/CS/gridviewrowcollectionindexercs.aspx#1)]
+ [!code-aspx-vb[GridViewRowCollectionIndexer#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewRowCollectionIndexer/VB/gridviewrowcollectionindexervb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.GridViewRowCollection.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションへのアクセスを同期するために使用するオブジェクトを取得します。</summary>
+        <value><see cref="T:System.Object" />コレクションへのアクセスを同期するために使用できます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.GridViewRowCollection.SyncRoot%2A>コレクションへのアクセスを同期するために使用できるオブジェクトを取得するプロパティです。 この実装で返されるオブジェクトは、<xref:System.Web.UI.WebControls.GridViewRowCollection>オブジェクト自体です。  
+  
+ 詳細については、<xref:System.Web.UI.WebControls.GridViewRowCollection.SyncRoot%2A>プロパティを参照してください、<xref:System.Collections.ICollection.SyncRoot%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Collections.ICollection?displayProperty=nameWithType>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.CopyTo">
+      <MemberSignature Language="C#" Value="void ICollection.CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.ICollection.CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.GridViewRowCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">1 次元<see cref="T:System.Array" />からコピーした要素のコピー先であるオブジェクトを<see cref="T:System.Collections.ICollection" />インターフェイスです。 配列には、0 から始まるインデックスが設定されている必要があります。</param>
+        <param name="index">内の 0 から始まるインデックス、<see cref="T:System.Array" />するコピー オブジェクトを開始します。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Collections.ICollection.CopyTo(System.Array,System.Int32)" />」をご覧ください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 使用する場合にのみ、<xref:System.Web.UI.WebControls.GridViewRowCollection>にインスタンスをキャスト、<xref:System.Collections.ICollection?displayProperty=nameWithType>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

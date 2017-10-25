@@ -1,0 +1,474 @@
+<Type Name="Reference" FullName="System.Security.Cryptography.Xml.Reference">
+  <TypeSignature Language="C#" Value="public class Reference" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Reference extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.Xml.Reference" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XML 署名の <see langword="&lt;reference&gt;" /> 要素を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.Reference>オブジェクトが表す、<`reference`> XML デジタル署名の仕様によって定義された XML デジタル署名の要素。  
+  
+ 使用して、<xref:System.Security.Cryptography.Xml.Reference>次の情報を指定するオブジェクト。  
+  
+-   データ オブジェクトの署名に使用されるダイジェスト アルゴリズム。  この値が必要です。  
+  
+-   UNIFORM Resource Identifier () のデータ オブジェクトに署名します。 URI には、ファイル パスまたは XML ドキュメント内の特定の要素を指定できます。  この値が必要です。  
+  
+-   ダイジェストを生成する前に適用する変換のチェーン。 この値はオプションです。  
+  
+-   署名するオブジェクトの型。  この値はオプションです。  
+  
+-   現在の参照に使用される一意の識別子`<reference>`要素。  この値はオプションです。  
+  
+ 詳細については、<`reference`> 要素を参照してください、W3C の仕様 www.w3.org/TR/xmldsig-core/ にします。  
+  
+   
+  
+## Examples  
+ 次のコード例を生成し、XML 署名エンベロープを使用することを確認する方法を示しています、<xref:System.Security.Cryptography.Xml.Reference>オブジェクト。  
+  
+ [!code-cpp[System.Security.Cryptography.XML-XMLDsigEnvelope#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.XML-XMLDsigEnvelope/CPP/xmldsigenv.cpp#1)]
+ [!code-csharp[System.Security.Cryptography.XML-XMLDsigEnvelope#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.XML-XMLDsigEnvelope/CS/xmldsigenv.cs#1)]
+ [!code-vb[System.Security.Cryptography.XML-XMLDsigEnvelope#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.XML-XMLDsigEnvelope/VB/xmldsigenv.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Reference ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.Reference.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.Xml.Reference" /> クラスの新しいインスタンスを、既定のプロパティを使用して初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を生成し、XML 署名エンベロープを使用することを確認する方法を示しています、<xref:System.Security.Cryptography.Xml.Reference>オブジェクト。  
+  
+ [!code-cpp[System.Security.Cryptography.XML-XMLDsigEnvelope#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.XML-XMLDsigEnvelope/CPP/xmldsigenv.cpp#1)]
+ [!code-csharp[System.Security.Cryptography.XML-XMLDsigEnvelope#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.XML-XMLDsigEnvelope/CS/xmldsigenv.cs#1)]
+ [!code-vb[System.Security.Cryptography.XML-XMLDsigEnvelope#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.XML-XMLDsigEnvelope/VB/xmldsigenv.vb#1)]  
+  
+ 次のコード例を生成し、デタッチされた署名を使用して XML を確認する方法を示しています、<xref:System.Security.Cryptography.Xml.Reference>オブジェクト。  
+  
+ [!code-cpp[System.Security.Cryptography.XML-XMLDsigDetached#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.XML-XMLDsigDetached/CPP/xmldsigdetach.cpp#1)]
+ [!code-csharp[System.Security.Cryptography.XML-XMLDsigDetached#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.XML-XMLDsigDetached/CS/xmldsigdetach.cs#1)]
+ [!code-vb[System.Security.Cryptography.XML-XMLDsigDetached#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.XML-XMLDsigDetached/VB/xmldsigdetach.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Reference (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.Reference.#ctor(System.IO.Stream)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream"><see cref="T:System.IO.Stream" />の新しいインスタンスを初期化する<see cref="T:System.Security.Cryptography.Xml.Reference" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.Xml.Reference" />の指定したハッシュ値を持つクラス<see cref="T:System.IO.Stream" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、<xref:System.Security.Cryptography.Xml.Reference>オブジェクトに対応するハッシュ値を`stream`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Reference (string uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.Reference.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="uri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="uri"><see cref="T:System.Uri" />の新しいインスタンスを初期化する<see cref="T:System.Security.Cryptography.Xml.Reference" />です。</param>
+        <summary>指定した <see cref="T:System.Security.Cryptography.Xml.Reference" /> を使用して、<see cref="T:System.Uri" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、<xref:System.Security.Cryptography.Xml.Reference>オブジェクトに対する特別な処理を使用して URI でデータに`""`、 `#xpointer(/)`、および`#xxxx`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Security.Cryptography.Xml.Reference>クラスを署名およびエンベロープ署名を使用して XML ドキュメントを確認してください。  
+  
+ [!code-cpp[Cryptography.XML.Signature - Envelope#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.Signature - Envelope/CPP/sample.cpp#1)]
+ [!code-csharp[Cryptography.XML.Signature - Envelope#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.Signature - Envelope/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.Signature - Envelope#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.Signature - Envelope/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddTransform">
+      <MemberSignature Language="C#" Value="public void AddTransform (System.Security.Cryptography.Xml.Transform transform);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddTransform(class System.Security.Cryptography.Xml.Transform transform) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.Reference.AddTransform(System.Security.Cryptography.Xml.Transform)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="transform" Type="System.Security.Cryptography.Xml.Transform" />
+      </Parameters>
+      <Docs>
+        <param name="transform">変換のリストに追加する変換です。</param>
+        <summary>追加、<see cref="T:System.Security.Cryptography.Xml.Transform" />ダイジェスト アルゴリズムに渡す前に、データ上で実行される変換のリストにオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.Reference.AddTransform%2A>メソッドは、変更、`<Transform>`要素および XML デジタル署名の関連付けられているサブ要素です。  
+  
+ 変換は、追加された順序で適用されます。 変換が指定されていない場合、必要な最小バージョンの変換が自動的に追加されます。  
+  
+ XML デジタル署名の詳細については、www.w3.org/TR/xmldsig-core/ に W3C の仕様を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例を生成し、XML 署名エンベロープを使用することを確認する方法を示しています、<xref:System.Security.Cryptography.Xml.Reference>オブジェクト。  
+  
+ [!code-cpp[System.Security.Cryptography.XML-XMLDsigEnvelope#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.XML-XMLDsigEnvelope/CPP/xmldsigenv.cpp#1)]
+ [!code-csharp[System.Security.Cryptography.XML-XMLDsigEnvelope#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.XML-XMLDsigEnvelope/CS/xmldsigenv.cs#1)]
+ [!code-vb[System.Security.Cryptography.XML-XMLDsigEnvelope#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.XML-XMLDsigEnvelope/VB/xmldsigenv.vb#1)]  
+  
+ 次のコード例を生成し、デタッチされた署名を使用して XML を確認する方法を示しています、<xref:System.Security.Cryptography.Xml.Reference>オブジェクト。  
+  
+ [!code-cpp[System.Security.Cryptography.XML-XMLDsigDetached#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.XML-XMLDsigDetached/CPP/xmldsigdetach.cpp#1)]
+ [!code-csharp[System.Security.Cryptography.XML-XMLDsigDetached#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.XML-XMLDsigDetached/CS/xmldsigdetach.cs#1)]
+ [!code-vb[System.Security.Cryptography.XML-XMLDsigDetached#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.XML-XMLDsigDetached/VB/xmldsigdetach.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="transform" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DigestMethod">
+      <MemberSignature Language="C#" Value="public string DigestMethod { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DigestMethod" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.Reference.DigestMethod" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ダイジェスト メソッド識別子 URI (Uniform Resource)、現在の取得または設定<see cref="T:System.Security.Cryptography.Xml.Reference" />です。</summary>
+        <value>ダイジェスト メソッド、現在の URI<see cref="T:System.Security.Cryptography.Xml.Reference" />です。 既定値は、"http://www.w3.org/2000/09/xmldsig#sha1"です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.Reference.DigestMethod%2A>プロパティを表す URI 文字列を使用して、<`DigestMethod`> XML デジタル署名の要素。  
+  
+ ダイジェスト メソッドはハッシュに使用するアルゴリズムでは、<xref:System.Security.Cryptography.Xml.Reference>です。 既定のアルゴリズムは<xref:System.Security.Cryptography.SHA1>します。  
+  
+ XML デジタル署名の詳細については、www.w3.org/TR/xmldsig-core/ に W3C の仕様を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DigestValue">
+      <MemberSignature Language="C#" Value="public byte[] DigestValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] DigestValue" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.Reference.DigestValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のダイジェスト値の設定を取得または<see cref="T:System.Security.Cryptography.Xml.Reference" />です。</summary>
+        <value>現在のダイジェスト値<see cref="T:System.Security.Cryptography.Xml.Reference" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.Reference.DigestValue%2A>プロパティを表すバイト配列を使用して、<`DigestValue`> XML デジタル署名の要素。  
+  
+ <xref:System.Security.Cryptography.Xml.Reference.DigestValue%2A>プロパティにはで記述されるオブジェクトのダイジェストの Base 64 でエンコードされた値が含まれています、<xref:System.Security.Cryptography.Xml.Reference.Uri%2A>プロパティです。  
+  
+ <xref:System.Security.Cryptography.Xml.Reference.DigestValue%2A>プロパティが自動的に加え、適切な値への呼び出しを行うたびに<xref:System.Security.Cryptography.Pkcs.SignedCms.ComputeSignature%2A>です。  
+  
+ XML デジタル署名の詳細については、www.w3.org/TR/xmldsig-core/ に W3C の仕様を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetXml">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlElement GetXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XmlElement GetXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.Reference.GetXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>XML 表現を返します、<see cref="T:System.Security.Cryptography.Xml.Reference" />です。</summary>
+        <returns>XML 表現、<see cref="T:System.Security.Cryptography.Xml.Reference" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Security.Cryptography.Xml.Reference.DigestMethod" /> プロパティが <see langword="null" /> です。  
+  
+ または  
+  
+ <see cref="P:System.Security.Cryptography.Xml.Reference.DigestValue" /> プロパティが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public string Id { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Id" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.Reference.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の ID を取得または<see cref="T:System.Security.Cryptography.Xml.Reference" />です。</summary>
+        <value>現在の ID<see cref="T:System.Security.Cryptography.Xml.Reference" />です。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Security.Cryptography.Xml.Reference.Id%2A>を現在の XML 形式の文字列 ID を追加するプロパティ<xref:System.Security.Cryptography.Xml.Reference>要素。 ID が使用される参照を<xref:System.Security.Cryptography.Xml.Reference>別の場所からの要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadXml">
+      <MemberSignature Language="C#" Value="public void LoadXml (System.Xml.XmlElement value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void LoadXml(class System.Xml.XmlElement value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.Reference.LoadXml(System.Xml.XmlElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Xml.XmlElement" />
+      </Parameters>
+      <Docs>
+        <param name="value">読み込み元の XML 要素、<see cref="T:System.Security.Cryptography.Xml.Reference" />状態です。</param>
+        <summary>読み込み、<see cref="T:System.Security.Cryptography.Xml.Reference" />状態の XML 要素からです。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="value" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="value" />パラメーターに変換が含まれていません。  
+  
+ または  
+  
+ <paramref name="value" />パラメーターには、不明な変換が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TransformChain">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.Xml.TransformChain TransformChain { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.Xml.TransformChain TransformChain" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.Reference.TransformChain" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>set: System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.Xml.TransformChain</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の変換チェーンを取得<see cref="T:System.Security.Cryptography.Xml.Reference" />です。</summary>
+        <value>現在の変換チェーン<see cref="T:System.Security.Cryptography.Xml.Reference" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.Reference.TransformChain%2A>プロパティは、<`Transform`> 要素および XML デジタル署名の関連付けられているサブ要素です。  
+  
+ 変換チェーンは、変換の順序付きリストです。 これらの変換の出力で指定したハッシュ アルゴリズムへの入力の構成、<xref:System.Security.Cryptography.Xml.Reference.DigestMethod%2A>プロパティです。  
+  
+ XML デジタル署名の詳細については、www.w3.org/TR/xmldsig-core/ に W3C の仕様を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public string Type { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Type" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.Reference.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または署名されているオブジェクトの種類を設定します。</summary>
+        <value>署名されているオブジェクトの型。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Uri">
+      <MemberSignature Language="C#" Value="public string Uri { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Uri" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.Reference.Uri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.Security.Cryptography.Xml.Reference" /> の <see cref="T:System.Uri" /> を取得または設定します。</summary>
+        <value>現在の <see cref="T:System.Security.Cryptography.Xml.Reference" /> の <see cref="T:System.Uri" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.Reference.Uri%2A>プロパティを表す文字列 (Uniform Resource Identifier) を使用して、<`URI`> XML デジタル署名の要素。  
+  
+ 使用して、<xref:System.Security.Cryptography.Xml.Reference.Uri%2A>サインインとに署名したり、ドキュメント全体を署名することを示すために現在の XML ドキュメントの要素を指定するドキュメントの場所を指定するプロパティです。  
+  
+ XML デジタル署名を正常に作成するを設定する必要があります、<xref:System.Security.Cryptography.Xml.Reference.Uri%2A>プロパティです。 次の表に、値を渡すことができる、<xref:System.Security.Cryptography.Xml.Reference.Uri%2A>プロパティです。  
+  
+|オブジェクトに署名するには|渡された値、<xref:System.Security.Cryptography.Xml.Reference.Uri%2A>プロパティ|  
+|--------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
+|XML ドキュメント全体エンベロープ署名を使用します。|空の文字列:""|  
+|エンベロープ署名を使用して XML ドキュメント内の特定の要素。|属性の名前 ID によって識別される XML 要素の名前 文字列は、次の形式を取得する必要があります、`IDname`有効な属性の名前 ID の名前を指定します。<br /><br /> "#Idname"|  
+|デタッチされた署名を使用するファイルです。|ファイルの URI:"c:\data.jpg"または"c:\data.xml"です。|  
+  
+ XML デジタル署名の詳細については、World Wide Web Consortium (W3C) を参照してください。 [XML 署名の構文と処理の仕様](http://www.w3.org/TR/xmldsig-core/)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を生成し、XML 署名エンベロープを使用することを確認する方法を示しています、<xref:System.Security.Cryptography.Xml.Reference>オブジェクト。  
+  
+ [!code-cpp[System.Security.Cryptography.XML-XMLDsigEnvelope#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.XML-XMLDsigEnvelope/CPP/xmldsigenv.cpp#1)]
+ [!code-csharp[System.Security.Cryptography.XML-XMLDsigEnvelope#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.XML-XMLDsigEnvelope/CS/xmldsigenv.cs#1)]
+ [!code-vb[System.Security.Cryptography.XML-XMLDsigEnvelope#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.XML-XMLDsigEnvelope/VB/xmldsigenv.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

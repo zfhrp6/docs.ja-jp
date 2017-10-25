@@ -1,0 +1,231 @@
+<Type Name="ConsumerConnectionPoint" FullName="System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint">
+  <TypeSignature Language="C#" Value="public class ConsumerConnectionPoint : System.Web.UI.WebControls.WebParts.ConnectionPoint" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi ConsumerConnectionPoint extends System.Web.UI.WebControls.WebParts.ConnectionPoint" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.WebParts.ConnectionPoint</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プロバイダーとの接続を形成するコンシューマーとして機能するサーバー コントロールを有効にする接続ポイント オブジェクトを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべての Web パーツには、2 つのサーバー コントロールの間の接続が、各コントロールは、その他のコントロールへの接続および指定するか、コントロールがプロバイダーまたは接続のコンシューマーとして指定されているかどうかに応じて、データを使用することを有効にするに関連付けられた接続ポイント オブジェクト (その他の要件) が必要です。 A<xref:System.Web.UI.WebControls.WebParts.ConnectionPoint>オブジェクトには一般に、コントロールが別のコントロールおよびと共有できるデータの種類に接続できる方法の詳細が含まれています。 接続でコンシューマーとして機能するコントロール、その接続ポイントがある必要があります、<xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint>オブジェクト。 Web パーツの接続および接続ポイントの詳細については、「参照」セクションのトピックを参照してください。  
+  
+ 作成する、<xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint>オブジェクトをいくつかの手順が必要。  
+  
+1.  インターフェイス インスタンスを参照するコンシューマー コントロールを有効にします。 A<xref:System.Web.UI.WebControls.WebParts.WebPart>またはその他のサーバー コントロール (任意の型に追加するサーバー コントロールの<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>ゾーンを使用できます)、特定のインターフェイスのインスタンスからデータを使用できる必要があります。 コントロール必要があるインターフェイスを実装していませんプロバイダーのみには、これを実装する必要があります。 コンシューマーがプロバイダーによって提供される、正確なインターフェイスの型で使用するか、または、していない場合、<xref:System.Web.UI.WebControls.WebParts.WebPartTransformer>コンシューマーによって認識される型に、プロバイダーのインターフェイス型からデータを変換するオブジェクトを使用できます。 コンシューマーを有効にする一般的な方法は、目的のインターフェイス型への参照を格納するプライベート フィールドを宣言します。  
+  
+2.  コールバック メソッドを識別します。 コンシューマーのメソッドは、プロバイダーとの接続を確立するために、コールバック メソッドとして識別される必要があります。 このメソッドは、プロバイダーを実装し、割り当てるプライベート フィールド (たとえば) に作成されたことの最初の手順で、インターフェイスのインスタンスを取得します。 コンシューマーのコールバック メソッドを識別するための Web パーツ方法は、追加する、`ConnectionConsumer`メタデータの属性 (によって定義された、<xref:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute>クラス) インターフェイスのインスタンスを受信するメソッドにします。 属性が追加されたときにのみ必要なパラメーター、コンシューマー接続ポイントを使用する表示名です。 ID など、省略可能なパラメーターも追加できます。  
+  
+3.  プロセスとインターフェイスのインスタンスからデータを出力します。 必要に応じて、データでは、内部処理を実行し、通常コンシューマー コントロールは表示ページにデータ。 これを行う一般的な方法は、コントロールのオーバーライドする<xref:System.Web.UI.Control.OnPreRender%2A>メソッドです。  
+  
+    > [!NOTE]
+    >  同期の要求時にコンシューマー要求する必要がありますデータ プロバイダーから直接中または直後後、<xref:System.Web.UI.Control.PreRender>イベント。 非同期の要求時にレンダリング中に、任意の時点で、プロバイダーのコールバック メソッドが呼び出されない場合、開発者と仮定できますコンシューマーにデータが送信されなかったこと。  
+  
+ コンシューマーとして機能するコントロールを備えたされましたが、後に、コントロールは、接続 (装備され使用可能なプロバイダーのコントロールがまたがあると仮定) に参加できます。 Web ページのマークアップで、宣言型の静的な接続を作成する開発者が使用して、`<asp:webpartconnection>`要素。 場合、`ConnectionConsumer`コールバック メソッドを識別するコンシューマー ソース コード内の属性は、接続ポイントの ID を指定し、その値を割り当てる必要があります、`ConsumerConnectionPointID`属性、`<asp:webpartconnection>`ページの要素。 開発者がコンシューマー接続ポイントの ID を指定する理由は、コンシューマー コントロールで定義されている複数の接続ポイントがあるかどうかです。 割り当てられる値がないコンシューマー コントロールのコンシューマー接続ポイントの ID が指定されていない場合、`ConsumerConnectionPointID`から取得した既定値を使用して、接続が作成するため、ページで、属性、<xref:System.Web.UI.WebControls.WebParts.ConnectionPoint.DefaultID>フィールドです。  
+  
+ コードで接続を作成するには、開発者を新規に作成する必要があります<xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint>オブジェクトを呼び出して、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.GetConsumerConnectionPoints%2A>メソッドの ID またはインデックスの定義と共に、コンシューマー コントロールの ID を渡す<xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint>コンシューマー コントロール内のオブジェクト。 返された<xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint>プロバイダー コントロールと、対応するへの参照をコンシューマー コントロールへの参照と共にオブジェクト<xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint>オブジェクトでは、すべてに渡される、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectWebParts%2A>メソッドを作成、新しい<xref:System.Web.UI.WebControls.WebParts.WebPartConnection>オブジェクト。  
+  
+ 開発者は、宣言またはプログラムによって、接続を確立するための一部として、コンシューマー接続ポイントを使用できますが、ユーザーも、ユーザー インターフェイス (UI) 経由の接続を確立するためにコンシューマー接続ポイントと対話できます。 開発者は、宣言する場合、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール、Web ページ上ユーザー接続を作成するためのランタイムの UI を提供します。 ユーザーをクリックして接続を確立するための出発点としてプロバイダーのコントロールを選択する場合、動詞を接続 (コンシューマーを選択する可能性があります以外の場合は、結果として得られる接続に違いはありません)、使用可能なコンシューマー接続ポイント (またはポイントが複数の場合) の表示名でのドロップダウン リスト コントロールが UI に表示されます、プロバイダーがデータを送信できます。 ユーザーは、接続を確立するコンシューマー接続ポイントを選択する必要があります。  
+  
+ A<xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint>オブジェクトは、特定のコンシューマーのコントロールを直接関連付けます、基数、継承元のプロパティでは、接続の詳細を格納<xref:System.Web.UI.WebControls.WebParts.ConnectionPoint>クラスです。 たとえばでは、継承された<xref:System.Web.UI.WebControls.WebParts.ConnectionPoint.InterfaceType%2A>プロパティを使用してインターフェイスの型を保持するコンシューマー接続ポイント。 プロバイダーとの接続でコンシューマー両方インターフェイスの種類を理解して場合、コントロールは互換性のあるおよび直接接続を形成することです。 互換性がありませんし、使用する必要があります、プロバイダーとコンシューマーは、同じインターフェイス型を扱うことはできない場合、<xref:System.Web.UI.WebControls.WebParts.WebPartTransformer>プロバイダー接続ポイントの翻訳をオブジェクト<xref:System.Web.UI.WebControls.WebParts.ConnectionPoint.InterfaceType%2A>コンシューマーが使用できる型にプロパティです。 他の重要な継承されたプロパティは、<xref:System.Web.UI.WebControls.WebParts.ConnectionPoint.DisplayName%2A>をコンシューマー接続を選択するユーザーの UI に表示するフレンドリ名を提供するプロパティが接続を作成するときにポイントします。 開発者を追加するときに、表示名は必須のパラメーター、`ConnectionConsumer`属性コンシューマー コントロールのコールバック メソッドにします。 継承された<xref:System.Web.UI.WebControls.WebParts.ConnectionPoint.ID%2A>プロパティは上に示されて、コンシューマーは、複数の接続ポイントを持つことのコンシューマー接続ポイントの一意識別子を提供するために便利です。 コンシューマーでは複数<xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint>オブジェクトとに定義された、この場合は、開発者を追加するときに、`ConnectionConsumer`属性、メソッドに各接続ポイントを区別するために ID 値を指定する必要があります。 その他の注目すべき継承されたプロパティは 1 つは、<xref:System.Web.UI.WebControls.WebParts.ConnectionPoint.AllowsMultipleConnections%2A>プロパティで、コンシューマー接続ポイントが複数のプロバイダーに同時に接続できるかどうかを示します。 このプロパティの値が`false`コンシューマー接続ポイントの既定 (既定値は一方`true`プロバイダー接続ポイントの)。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint>固有のいくつかのメソッドを追加するクラスから継承してメンバーに、<xref:System.Web.UI.WebControls.WebParts.ConnectionPoint>クラスです。 <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint.SetObject%2A>メソッド、コンシューマーの独自定義されたコールバック メソッドを呼び出して、プロバイダーからインターフェイスのインスタンスを取得します。 <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint.SupportsConnection%2A>メソッド接続ポイントが関連付けられているコンシューマー コントロールの現在の状態に基づいて、接続を確立できないかどうかを示すブール値を返します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、宣言によって接続を作成、プログラム、または UI の各ケースでは、コンシューマー接続ポイントを使用する簡単な方法を示します。  
+  
+ この例では、4 つの部分があります。  
+  
+-   Web パーツを変更することができますユーザー コントロールは、ページのモードを表示します。  
+  
+-   ソース インターフェイスと 2 つのコード<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。  
+  
+-   すべてのコントロールをホストし、コード例を実行する Web ページ。  
+  
+-   ページの例を実行する方法の説明。  
+  
+ このコード例の最初の部分は、ユーザーが Web ページの表示モードを変更できるユーザー コントロールです。 次のソース コード、ファイルを保存 .ascx、それにに割り当てられているファイルの名前、`Src`の属性、`Register`ホストする Web ページの上部にあるディレクティブは、このユーザー コントロールをします。 詳細については、このコントロールでモードと、ソース コードの説明を表示を参照してください[チュートリアル: Web パーツ ページの表示モードの変更](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0)です。  
+  
+ [!code-aspx-csharp[WebParts_ConnectionPoint_Overview#6](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/CS/displaymodemenucs.ascx#6)]
+ [!code-aspx-vb[WebParts_ConnectionPoint_Overview#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/VB/DisplayModeMenuVB.ascx#6)]  
+  
+ コード例の 2 番目の部分では、インターフェイスとコントロールのソース コードを示します。 ソース ファイルには、という名前の単純なインターフェイスが含まれています。`IZipCode`です。 <xref:System.Web.UI.WebControls.WebParts.WebPart>という名前のクラス`ZipCodeWebPart`インターフェイスを実装して、プロバイダー コントロールとして機能します。 他の<xref:System.Web.UI.WebControls.WebParts.WebPart>クラスの名前は`WeatherWebPart`、し、接続のコンシューマーとして機能します。 このクラスは、という名前のメソッドを持つ`GetZipCode`のインスタンスを取得する、`IZipCode`プロバイダー コントロールからのインターフェイスです。 このメソッドが、コンシューマーの接続ポイント メソッドとしてマークされていることに注意してください、`ConnectionConsumer`メタデータ内の属性です。 これは、コンシューマー コントロールの接続ポイント メソッドを識別するためのメカニズムです。  
+  
+ コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 このコード例では、動的なコンパイルを使用します。 コンパイルする方法について説明するチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-csharp[WebParts_ConnectionPoint_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/CS/ZipCodeComponent.cs#2)]
+ [!code-vb[WebParts_ConnectionPoint_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/VB/ZipCodeComponent.vb#2)]  
+  
+ コード例の 3 番目の部分は、Web ページです。 上部にある、 `Register`  ページで、接続を構成するカスタム コントロールおよび変更できるようにするユーザー コントロールを登録するためのディレクティブの表示モード。 接続自体が内で宣言によって作成された、`<staticconnections>`ページ上の要素。 これは、接続を作成する 1 つの方法-注、`ConsumerConnectionPointID`属性、`<asp:webpartconnection>`要素。 プログラムからの接続を作成することもできます。これを行うためのコードは、`Button1_Click`メソッドです。 ここで、<xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint>オブジェクトが作成され、実際の接続を作成するメソッドに渡されます。 宣言またはプログラムによって、接続が作成されるかどうかの接続ポイントはコンシューマーとプロバイダーの常に指定する必要があります。 `Button2_Click`メソッドへのアクセス、<xref:System.Web.UI.WebControls.WebParts.ConnectionPoint>コンシューマーとプロバイダーの両方のオブジェクトし、ページ内のラベルに、プロパティ値の一部を書き込みます。  
+  
+ [!code-aspx-csharp[WebParts_ConnectionPoint_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/CS/connectionPointCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionPoint_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/VB/connectionPointVB.aspx#1)]  
+  
+ ブラウザーでページを読み込んだ後、**コネクション ポイントの詳細**ボタンをクリックします。 宣言型の接続で確立されているプロバイダーおよびコンシューマー接続ポイントに関する情報が表示されます。 次に、使用、**表示モード**接続モードのドロップダウン コントロールをページに切り替えます。 動詞メニューを開き、 **ZIP コード プロバイダー** <xref:System.Web.UI.WebControls.WebParts.WebPart> (タイトル バーに下向きの矢印によって表される)、コントロール動詞を接続 をクリックします。 UI が表示されたら、接続はによって自動的に作成された、`<asp:connectionszone>`コントロール、ページで宣言します。 これは、ここで説明した宣言とプログラムのメソッドと共に (UI) を経由して接続を作成する別の方法です。 クリックして、**切断**を既存の静的な接続を終了するボタンをクリックします。 クリックして、**コンシューマーへの接続を作成する**リンクします。 UI では、コンシューマー接続ポイントの表示名を一覧表示するドロップダウン コントロールが表示されます。 ドロップダウン リストで、接続ポイントを選択し、クリックして**接続**接続を完了します。 次に、をクリックして**切断**もう一度です。 クリックして、**動的接続**プログラムで接続を作成するボタンをクリックします。 使用して、**表示モード**コントロールをページをブラウズ モードを返します。 クリックして、**接続ポイントの詳細**を示すために、ボタンをもう一度、に関する詳細情報コンシューマー接続ポイント オブジェクト 1 回以上です。  
+  
+ 接続を確立して、次の 3 つの方法でコンシューマー接続ポイントを使用して、例で説明しました Web ページのマークアップで宣言された静的な接続。使用するコードで作成した接続、<xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint>オブジェクト、およびユーザー接続の UI を使って作成した接続です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConsumerConnectionPoint (System.Reflection.MethodInfo callbackMethod, Type interfaceType, Type controlType, string displayName, string id, bool allowsMultipleConnections);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Reflection.MethodInfo callbackMethod, class System.Type interfaceType, class System.Type controlType, string displayName, string id, bool allowsMultipleConnections) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint.#ctor(System.Reflection.MethodInfo,System.Type,System.Type,System.String,System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="callbackMethod" Type="System.Reflection.MethodInfo" />
+        <Parameter Name="interfaceType" Type="System.Type" />
+        <Parameter Name="controlType" Type="System.Type" />
+        <Parameter Name="displayName" Type="System.String" />
+        <Parameter Name="id" Type="System.String" />
+        <Parameter Name="allowsMultipleConnections" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="callbackMethod">インターフェイス インスタンスが接続を確立するコンシューマーに返されますコンシューマー コントロールのメソッドです。</param>
+        <param name="interfaceType"><see cref="T:System.Type" />のコンシューマーをプロバイダーから受信するインターフェイスです。</param>
+        <param name="controlType"><see cref="T:System.Type" />のコンシューマー接続ポイントが関連付けられているコンシューマー コントロール。</param>
+        <param name="displayName">接続のユーザー インターフェイス (UI) のユーザーに表示されるコンシューマー接続ポイントの表示名。</param>
+        <param name="id">コンシューマー接続ポイントの一意の識別子。</param>
+        <param name="allowsMultipleConnections">コンシューマー接続ポイントに同時に複数のプロバイダーに接続できるかどうかを示すブール値。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint.%23ctor%2A>のコンス トラクター、<xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint>クラスは、基底コンス トラクター、さまざまなパラメーターを渡すと、基本クラスの初期化を呼び出すだけです。  
+  
+ 基本クラス コンス トラクターでは、接続ポイントのパラメーターの数を確認し、いくつかの例外をスローすることができます。 可能性のある例外の一覧は、例外を参照してください。  
+  
+ 呼び出すことができます、<xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint.%23ctor%2A>の独自のインスタンスを作成するコンス トラクター、<xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint>クラスです。 ただし、しているだけで接続を確立して、クラスを拡張しない場合を呼び出す必要があります、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.GetConsumerConnectionPoints%2A>プロバイダーの接続ポイント オブジェクトを返します。  
+  
+   
+  
+## Examples  
+ 派生する次のコード例には、<xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint>カスタム プロバイダー接続ポイントを作成するクラス。  
+  
+ このコード例では、3 つの部分があります。  
+  
+-   プロバイダーを含むソース ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>を制御するコンシューマー<xref:System.Web.UI.WebControls.WebParts.WebPart>制御、およびカスタム<xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint>オブジェクト。  
+  
+-   静的な接続のコントロールをホストする Web ページ。  
+  
+-   コード例を実行する方法の説明。  
+  
+ このコード例の最初の部分はコンシューマーとプロバイダーのソース<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、およびカスタム<xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint>という名前のクラス`TableConsumerConnectionPoint`です。 なおのコンス トラクター、`TableConsumerConnectionPoint`クラスは、パラメーターを渡すことが、必要なパラメーター セクションに記載されている、基底コンス トラクターを呼び出します。 またを注意してください、`TableConsumer`クラス、`SetConnectionInterface`メソッドは、接続のコールバック メソッドとして指定され、`ConnectionConsumer`属性宣言のカスタム`TableConsumerConnectionPoint`をパラメーターとして。 これは、カスタムのコンシューマー接続ポイントを作成し、それをコンシューマーのコントロールに関連付ける方法を示しています。 この例では、ソース コードが動的にコンパイルされる、ため、ソース コード ファイルを Web アプリケーションの App_Code サブフォルダーに配置する必要があります。  
+  
+ [!code-csharp[UI.WebControls.WebParts.ProviderConnectionPoint#1](~/samples/snippets/csharp/VS_Snippets_WebNet/UI.WebControls.WebParts.ProviderConnectionPoint/CS/connectionControls.cs#1)]  
+  
+ コード例の 2 番目の部分は、静的な Web パーツ接続においてカスタム コントロールをホストする Web ページです。 ページの上部には、`Register`ディレクティブをプレフィックスとカスタム コントロールの名前空間を宣言します。 使用して、接続が宣言されている、`<asp:webpartconnection>`要素、およびプロバイダーとコンシューマーのコントロールが内で宣言された、`<asp:webpartzone>`要素。  
+  
+ [!code-aspx-csharp[UI.WebControls.WebParts.ProviderConnectionPoint#3](~/samples/snippets/csharp/VS_Snippets_WebNet/UI.WebControls.WebParts.ProviderConnectionPoint/CS/defaultcs.aspx#3)]  
+  
+ ブラウザーでページを読み込みます。 既にコントロール間の接続が存在し、接続がページに静的な接続として宣言されているため、コンシューマーは、プロバイダーからのデータが表示されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="callbackMethod" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="interfaceType" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="controlType" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="displayName" /> は <see langword="null" /> または空の文字列 ("") です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="controlType" />コンシューマー コントロールと同じ型ではありません (または、有効なクラスがそこから派生)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetObject">
+      <MemberSignature Language="C#" Value="public virtual void SetObject (System.Web.UI.Control control, object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetObject(class System.Web.UI.Control control, object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint.SetObject(System.Web.UI.Control,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Web.UI.Control" />
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="control">コンシューマー接続ポイントに関連付けられているコンシューマー コントロール。</param>
+        <param name="data">プロバイダーのコントロールからインターフェイスのインスタンスが返されます。</param>
+        <summary>コンシューマー コントロールのコールバック メソッドを呼び出すし、プロバイダーのコントロールからインターフェイスのインスタンスを取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コンシューマーのコントロールのデータを格納するプロバイダーからインターフェイスのインスタンスを受け取ります。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint.SetObject%2A>メソッドによって呼び出されます<xref:System.Web.UI.WebControls.WebParts.WebPartConnection>オブジェクトの接続をアクティブ化時にします。 これは、接続を開始して、データを共有する 2 つのコントロールを有効化の一部である重要な手順です。  
+  
+ 接続のコンシューマー コントロールは、プロバイダーと同じ型のインターフェイスを使用できる必要があります。 コントロールとの互換性がない場合は、および<xref:System.Web.UI.WebControls.WebParts.WebPartTransformer>オブジェクトは、接続を確立するために使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="control" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsConnection">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsConnection (System.Web.UI.Control control, System.Web.UI.WebControls.WebParts.ConnectionInterfaceCollection secondaryInterfaces);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SupportsConnection(class System.Web.UI.Control control, class System.Web.UI.WebControls.WebParts.ConnectionInterfaceCollection secondaryInterfaces) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint.SupportsConnection(System.Web.UI.Control,System.Web.UI.WebControls.WebParts.ConnectionInterfaceCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Web.UI.Control" />
+        <Parameter Name="secondaryInterfaces" Type="System.Web.UI.WebControls.WebParts.ConnectionInterfaceCollection" />
+      </Parameters>
+      <Docs>
+        <param name="control">コンシューマー コントロールに関連付けられている、<see cref="T:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint" />です。</param>
+        <param name="secondaryInterfaces">A<see cref="T:System.Web.UI.WebControls.WebParts.ConnectionInterfaceCollection" />接続に参加しているセカンダリ インターフェイスです。</param>
+        <summary>コンシューマー接続ポイントが現在の接続を確立できるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合は、接続ポイントの現在接続を確立できます。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint.SupportsConnection%2A>メソッド実装を返しますでは常に`true`のすべてのケースで、<xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint>クラスです。 このメソッドの目的は、の状態を確認する`control`と`secondaryInterfaces`を決定する特定の重要な時点でかどうか、<xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint>オブジェクトが現在の接続を作成できません。  
+  
+ シナリオがある場所`control`が不可能になること、接続を構成できる状態では、または where`secondaryInterfaces`接続を確立できる前に存在する必要があります。 このような場合、開発者がから継承できます、<xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint>クラス、および上書き、<xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint.SupportsConnection%2A>メソッド、接続ポイントが接続に対応している場合を決定するカスタム実装を提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,249 @@
+<Type Name="IInternalConfigRoot" FullName="System.Configuration.Internal.IInternalConfigRoot">
+  <TypeSignature Language="C#" Value="public interface IInternalConfigRoot" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IInternalConfigRoot" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.Internal.IInternalConfigRoot" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>構成のルート オブジェクトをサポートするために、.NET 構造体の内部で使用されるインターフェイスを定義します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ConfigChanged">
+      <MemberSignature Language="C#" Value="public event System.Configuration.Internal.InternalConfigEventHandler ConfigChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Configuration.Internal.InternalConfigEventHandler ConfigChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Configuration.Internal.IInternalConfigRoot.ConfigChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Internal.InternalConfigEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>処理するメソッドを表す、<see cref="E:System.Configuration.Internal.IInternalConfigRoot.ConfigChanged" />のイベント、<see cref="T:System.Configuration.Internal.IInternalConfigRoot" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConfigRemoved">
+      <MemberSignature Language="C#" Value="public event System.Configuration.Internal.InternalConfigEventHandler ConfigRemoved;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Configuration.Internal.InternalConfigEventHandler ConfigRemoved" />
+      <MemberSignature Language="DocId" Value="E:System.Configuration.Internal.IInternalConfigRoot.ConfigRemoved" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Internal.InternalConfigEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>処理するメソッドを表す、<see cref="E:System.Configuration.Internal.IInternalConfigRoot.ConfigRemoved" />のイベント、<see cref="T:System.Configuration.Internal.IInternalConfigRoot" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetConfigRecord">
+      <MemberSignature Language="C#" Value="public System.Configuration.Internal.IInternalConfigRecord GetConfigRecord (string configPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Configuration.Internal.IInternalConfigRecord GetConfigRecord(string configPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.IInternalConfigRoot.GetConfigRecord(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Internal.IInternalConfigRecord</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="configPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="configPath">構成ファイルへのパスを表す文字列。</param>
+        <summary>返します、<see cref="T:System.Configuration.Internal.IInternalConfigRecord" />構成パスで指定された構成を表すオブジェクト。</summary>
+        <returns><see cref="T:System.Configuration.Internal.IInternalConfigRecord" />で指定された構成を表すオブジェクト<paramref name="configPath" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSection">
+      <MemberSignature Language="C#" Value="public object GetSection (string section, string configPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetSection(string section, string configPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.IInternalConfigRoot.GetSection(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="section" Type="System.String" />
+        <Parameter Name="configPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="section">構成ファイルのセクションを表す文字列。</param>
+        <param name="configPath">構成ファイルへのパスを表す文字列。</param>
+        <summary>返します、<see cref="T:System.Object" />構成ファイルのセクションのデータを表すです。</summary>
+        <returns><see cref="T:System.Object" />構成ファイルのセクションのデータを表すです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUniqueConfigPath">
+      <MemberSignature Language="C#" Value="public string GetUniqueConfigPath (string configPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetUniqueConfigPath(string configPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.IInternalConfigRoot.GetUniqueConfigPath(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="configPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="configPath">構成ファイルのパス。</param>
+        <summary>構成データを持つ構成の最も近い先祖のファイル パスを表す値を返します。</summary>
+        <returns>構成データを持つ構成の最も近い先祖のファイル パスを表す文字列を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUniqueConfigRecord">
+      <MemberSignature Language="C#" Value="public System.Configuration.Internal.IInternalConfigRecord GetUniqueConfigRecord (string configPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Configuration.Internal.IInternalConfigRecord GetUniqueConfigRecord(string configPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.IInternalConfigRoot.GetUniqueConfigRecord(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Internal.IInternalConfigRecord</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="configPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="configPath">構成ファイルのパス。</param>
+        <summary>返します、<see cref="T:System.Configuration.Internal.IInternalConfigRecord" />指定された一意の構成のレコードを表すオブジェクトを構成パス。</summary>
+        <returns><see cref="T:System.Configuration.Internal.IInternalConfigRecord" />指定の構成パスの一意の構成のレコードを表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Init">
+      <MemberSignature Language="C#" Value="public void Init (System.Configuration.Internal.IInternalConfigHost host, bool isDesignTime);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Init(class System.Configuration.Internal.IInternalConfigHost host, bool isDesignTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.IInternalConfigRoot.Init(System.Configuration.Internal.IInternalConfigHost,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="host" Type="System.Configuration.Internal.IInternalConfigHost" />
+        <Parameter Name="isDesignTime" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="host"><see cref="T:System.Configuration.Internal.IInternalConfigHost" /> オブジェクト。</param>
+        <param name="isDesignTime">
+          <see langword="true" />場合はデザイン時です。<see langword="false" />ランタイムする場合。</param>
+        <summary>構成オブジェクトを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDesignTime">
+      <MemberSignature Language="C#" Value="public bool IsDesignTime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDesignTime" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.Internal.IInternalConfigRoot.IsDesignTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>構成がデザイン時構成するかどうかを示す値を返します。</summary>
+        <value>
+          <see langword="true" />構成が、デザイン時の構成の場合<see langword="false" />場合は、構成は、デザイン時構成ではありません。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveConfig">
+      <MemberSignature Language="C#" Value="public void RemoveConfig (string configPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveConfig(string configPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.IInternalConfigRoot.RemoveConfig(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="configPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="configPath">構成ファイルのパス。</param>
+        <summary>検索し、構成のレコードと指定した構成パスのすべての子を削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

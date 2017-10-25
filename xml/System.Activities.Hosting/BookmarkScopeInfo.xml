@@ -1,0 +1,86 @@
+<Type Name="BookmarkScopeInfo" FullName="System.Activities.Hosting.BookmarkScopeInfo">
+  <TypeSignature Language="C#" Value="public sealed class BookmarkScopeInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit BookmarkScopeInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Hosting.BookmarkScopeInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.Serialization.DataContract</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Activities.BookmarkScope" /> オブジェクトに関する識別情報および初期化情報を格納します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public Guid Id { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid Id" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Hosting.BookmarkScopeInfo.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Activities.BookmarkScope" /> の一意の識別子を取得します。</summary>
+        <value><see cref="T:System.Activities.BookmarkScope" /> の一意の識別子。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInitialized">
+      <MemberSignature Language="C#" Value="public bool IsInitialized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsInitialized" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Hosting.BookmarkScopeInfo.IsInitialized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Activities.BookmarkScope" /> が初期化されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Activities.BookmarkScope" />それ以外の初期化された<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TemporaryId">
+      <MemberSignature Language="C#" Value="public string TemporaryId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TemporaryId" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Hosting.BookmarkScopeInfo.TemporaryId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Activities.BookmarkScope" /> が初期化されていない状態のときに、<see cref="T:System.Activities.BookmarkScope" /> を一意に識別する値を取得します。</summary>
+        <value><see cref="T:System.Activities.BookmarkScope" /> が初期化されていない状態のときに、<see cref="T:System.Activities.BookmarkScope" /> を一意に識別する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Activities.BookmarkScope>が初期化されると、返される値は、`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,205 @@
+<Type Name="MessageHeaderAttribute" FullName="System.ServiceModel.MessageHeaderAttribute">
+  <TypeSignature Language="C#" Value="public class MessageHeaderAttribute : System.ServiceModel.MessageContractMemberAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MessageHeaderAttribute extends System.ServiceModel.MessageContractMemberAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.MessageHeaderAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.MessageContractMemberAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property | System.AttributeTargets.Field, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>データ メンバーが SOAP メッセージ ヘッダーであることを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.MessageHeaderAttribute> 属性を使用して、<xref:System.ServiceModel.MessageContractAttribute> 属性でマークされた型のフィールドとプロパティを SOAP メッセージ ヘッダーにマッピングできます。 フィールドまたはプロパティには、シリアル化できる単純型または複合型を使用できます。  
+  
+ 既定の SOAP エンベロープ自体を変更することがなく、SOAP 本体のコンテンツのシリアル化を制御する方法については、次を参照してください。 <xref:System.Runtime.Serialization.DataContractAttribute?displayProperty=nameWithType>、[サービス コントラクトのデータ転送を指定する](~/docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)、および[を使用してデータ コントラクト](~/docs/framework/wcf/feature-details/using-data-contracts.md)です。  
+  
+ メッセージ コントラクトの作成の詳細については、次を参照してください。[メッセージ コントラクトを使用して](~/docs/framework/wcf/feature-details/using-message-contracts.md)です。  
+  
+ SOAP 標準では、ヘッダーに設定できる次の属性を定義しています。  
+  
+-   `Actor` または `Role` (SOAP 1.1 では `Actor`、SOAP 1.2 では `Role`)  
+  
+-   `MustUnderstand`  
+  
+-   `Relay`  
+  
+ `Actor` 属性または `Role` 属性は、指定のヘッダーが対象とするノードの URI を指定します。 `MustUnderstand` 属性は、ヘッダーがノード処理を認識する必要があるかどうかを指定します。 `Relay` 属性は、ダウンストリーム ノードにヘッダーを中継する必要があるかどうかを指定します。 [!INCLUDE[indigo1](~/includes/indigo1-md.md)]以外の受信メッセージの場合、これらの属性の処理を実行しませんが、`MustUnderstand`属性。  
+  
+ ただし、これらの属性が既定により送信されない場合でも、それらを読み書きできます。 属性値は 2 つの方法で指定できます。 最初の方法では、<xref:System.ServiceModel.MessageHeaderAttribute.Actor%2A> の <xref:System.ServiceModel.MessageHeaderAttribute.MustUnderstand%2A>、<xref:System.ServiceModel.MessageHeaderAttribute.Relay%2A>、および <xref:System.ServiceModel.MessageHeaderAttribute> の各プロパティを変更できます  (`Role` プロパティはありません。SOAP 1.2 を使用する場合は、<xref:System.ServiceModel.MessageHeaderAttribute.Actor%2A> プロパティを設定すれば、`Role` が渡されます)。 例:  
+  
+  
+  
+ これらの属性を制御する 2 つ目の方法は、目的のヘッダーの型を <xref:System.ServiceModel.MessageHeader%601> クラスの型パラメーターとして設定し、作成された型を <xref:System.ServiceModel.MessageHeaderAttribute> と共に使用することです。 その後で、<xref:System.ServiceModel.MessageHeader%601> のプロパティをプログラムで使用して、SOAP 属性を設定します。 例:  
+  
+  
+  
+  
+  
+ 動的と静的の両方の制御メカニズムを使用している場合は、既定で静的な設定値が使用されますが、動的なメカニズムを使用してその値をオーバーライドできます。 例:  
+  
+  
+  
+  
+  
+ 動的な属性コントロールを持つ繰り返すヘッダーを作成できます。 例:  
+  
+```  
+[MessageHeaderArray] public MessageHeader<Person> documentApprovers[];  
+```  
+  
+ 受信側では、これらの SOAP 属性の読み取りは、ジェネリックな <xref:System.ServiceModel.MessageHeader%601> クラスが使用されている場合のみ実行できます。 受信メッセージの属性設定を調査するために、<xref:System.ServiceModel.MessageHeader%601.Actor%2A> 型のヘッダーの <xref:System.ServiceModel.MessageHeader%601.Relay%2A> プロパティ、<xref:System.ServiceModel.MessageHeader%601.MustUnderstand%2A> プロパティ、または <xref:System.ServiceModel.MessageHeader%601> プロパティを調べます。  
+  
+ メッセージの受信と返信が行われるとき、これらの SOAP 属性の設定は、<xref:System.ServiceModel.MessageHeader%601> 型のヘッダーとして往復するだけです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.ServiceModel.MessageHeaderAttribute> を使用することにより、このヘッダーに対して適切な値が設定された <xref:System.ServiceModel.MessageContractMemberAttribute.Name%2A> プロパティ、<xref:System.ServiceModel.MessageContractMemberAttribute.Namespace%2A> プロパティ、および <xref:System.ServiceModel.MessageHeaderAttribute.MustUnderstand%2A> プロパティを持つ応答メッセージの SOAP ヘッダーを作成しています。 このコード例の後、送信時のメッセージの例を示します。  
+  
+ [!code-csharp[MessageHeaderAttribute#4](~/samples/snippets/csharp/VS_Snippets_CFX/messageheaderattribute/cs/services.cs#4)]
+ [!code-vb[MessageHeaderAttribute#4](~/samples/snippets/visualbasic/VS_Snippets_CFX/messageheaderattribute/vb/services.vb#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MessageHeaderAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MessageHeaderAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.MessageHeaderAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Actor">
+      <MemberSignature Language="C#" Value="public string Actor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Actor" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MessageHeaderAttribute.Actor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このヘッダーが対象とするノードを示す URI を取得または設定します。 SOAP 1.2 が使用される場合は role 属性に、SOAP 1.1 が使用される場合は actor ヘッダー属性にマッピングされます。</summary>
+        <value>このヘッダーが対象とするノードを示す URI。 この URI は、SOAP 1.2 が使用されている場合は role 属性に、SOAP 1.1 が使用されている場合は actor ヘッダー属性にマッピングされます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、<xref:System.ServiceModel.MessageHeaderAttribute> の「解説」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MustUnderstand">
+      <MemberSignature Language="C#" Value="public bool MustUnderstand { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool MustUnderstand" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MessageHeaderAttribute.MustUnderstand" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.ServiceModel.MessageHeaderAttribute.Actor" /> ロールで動作するノードが、このヘッダーを認識する必要があるかどうかを指定します。 これは、<see langword="mustUnderstand" /> SOAP ヘッダー属性にマッピングされます。</summary>
+        <value>
+          <see langword="true" /> ロールで動作するノードがこのヘッダーを認識する必要がある場合は <see cref="P:System.ServiceModel.MessageHeaderAttribute.Actor" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、<xref:System.ServiceModel.MessageHeaderAttribute> の「解説」を参照してください。  
+  
+> [!IMPORTANT]
+>  送信されるメッセージの <xref:System.ServiceModel.MessageHeaderAttribute.MustUnderstand%2A> プロパティが `true` のときに、受信側のアプリケーションがヘッダーを認識しない場合はエラーが生成されることに注意してください。 逆に、`mustUnderstand` SOAP ヘッダー属性が `true` に設定されたヘッダーを[!INCLUDE[indigo1](~/includes/indigo1-md.md)] で受信する場合、そのヘッダーはメッセージ コントラクトの一部である必要があります (または、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] チャネルのいずれかで処理される必要があります)。それ以外の場合、ヘッダーは認識されず、例外がスローされます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.ServiceModel.MessageHeaderAttribute> を使用することにより、このヘッダーに対して適切な値が設定された <xref:System.ServiceModel.MessageContractMemberAttribute.Name%2A> プロパティ、<xref:System.ServiceModel.MessageContractMemberAttribute.Namespace%2A> プロパティ、および <xref:System.ServiceModel.MessageHeaderAttribute.MustUnderstand%2A> プロパティを持つ応答メッセージの SOAP ヘッダーを作成しています。 このコード例の後、送信時のメッセージの例を示します。  
+  
+ [!code-csharp[MessageHeaderAttribute#4](~/samples/snippets/csharp/VS_Snippets_CFX/messageheaderattribute/cs/services.cs#4)]
+ [!code-vb[MessageHeaderAttribute#4](~/samples/snippets/visualbasic/VS_Snippets_CFX/messageheaderattribute/vb/services.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Relay">
+      <MemberSignature Language="C#" Value="public bool Relay { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Relay" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MessageHeaderAttribute.Relay" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このヘッダーをダウンストリーム ノードに中継する必要があるかどうかを指定します。 これは、<see langword="relay" /> SOAP ヘッダー属性にマッピングされます。</summary>
+        <value>
+          このヘッダーをダウンストリーム ノードに中継する必要がある場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、SOAP 1.1 の使用時は無視されます。 詳細については、<xref:System.ServiceModel.MessageHeaderAttribute> の「解説」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

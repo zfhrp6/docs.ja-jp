@@ -1,0 +1,508 @@
+<Type Name="PeerName" FullName="System.Net.PeerToPeer.PeerName">
+  <TypeSignature Language="C#" Value="public class PeerName : IEquatable&lt;System.Net.PeerToPeer.PeerName&gt;, System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable PeerName extends System.Object implements class System.IEquatable`1&lt;class System.Net.PeerToPeer.PeerName&gt;, class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Net.PeerToPeer.PeerName" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IEquatable&lt;System.Net.PeerToPeer.PeerName&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>ピア ツー ピアを定義する値を指定<see cref="T:System.Net.PeerToPeer.PeerName" />オブジェクト。 ピア名は、通常、ピア リソースを識別する文字列です。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PeerName (string remotePeerName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string remotePeerName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.PeerName.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="remotePeerName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="remotePeerName">ピア名前としてエンコードを含む、<see cref="T:System.Net.PeerToPeer.PeerName" />インスタンス。</param>
+        <summary>型 <see cref="T:System.Net.PeerToPeer.PeerName" /> の新しいオブジェクトを、指定された完全修飾のピア名 <see cref="T:System.String" /> 値で初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.String" />指定が無効です<see cref="T:System.Net.PeerToPeer.PeerName" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="remotePeerName" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected PeerName (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.PeerName.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">このインスタンスの逆シリアル化に必要なデータを格納するオブジェクトへの参照。</param>
+        <param name="context">データを逆シリアル化するための手段を提供するコンテキスト。 シリアル化されたデータのソースとも呼ばれます。</param>
+        <summary><see cref="T:System.Runtime.Serialization.SerializationInfo" /> オブジェクトに、<see cref="T:System.Net.PeerToPeer.PeerName" /> をシリアル化するために必要なデータを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、この型の逆シリアル化に必要です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">1 つ以上のパラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PeerName (string classifier, System.Net.PeerToPeer.PeerNameType peerNameType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string classifier, valuetype System.Net.PeerToPeer.PeerNameType peerNameType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.PeerName.#ctor(System.String,System.Net.PeerToPeer.PeerNameType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="classifier" Type="System.String" />
+        <Parameter Name="peerNameType" Type="System.Net.PeerToPeer.PeerNameType" />
+      </Parameters>
+      <Docs>
+        <param name="classifier">
+          <see cref="T:System.Net.PeerToPeer.PeerName" /> としてエンコードするためのピア名を含む <see cref="T:System.String" />。</param>
+        <param name="peerNameType">
+          <see cref="T:System.Net.PeerToPeer.PeerNameType" />作成するピアの名前の種類を指定する列挙値。</param>
+        <summary><see cref="T:System.Net.PeerToPeer.PeerName" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターが型のオブジェクトを返します<xref:System.Net.PeerToPeer.PeerName>ピアの完全修飾名を格納しています。 また、ピア名がセキュリティで保護または保護されていないかどうかを指定します。  
+  
+ このインスタンスの現在のユーザーと指定された既定のピアの id を使用して<xref:System.Net.PeerToPeer.PeerName.Classifier%2A>ピア名を指定した分類子の種類と作成の種類だけでなくです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Net.PeerToPeer.PeerName.Classifier" /> 1 つまたは複数の無効な文字が含まれています。</exception>
+        <exception cref="T:System.ArgumentNullException">1 つ以上のパラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Net.PeerToPeer.PeerToPeerException">-   基礎として使用される既定の Id、<see cref="T:System.Net.PeerToPeer.PeerName" />を取得できませんでした。  
+  
+-   <see cref="T:System.Net.PeerToPeer.PeerName" /> は作成できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Authority">
+      <MemberSignature Language="C#" Value="public string Authority { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Authority" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.PeerName.Authority" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定した文字列を返します、<see cref="P:System.Net.PeerToPeer.PeerName.Authority" />で使用される<see cref="T:System.Net.PeerToPeer.PeerName" />オブジェクト。</summary>
+        <value>指定した認証の部分を含んでいる文字列<see cref="T:System.Net.PeerToPeer.PeerName" />です。 セキュリティで保護されたピア名には、このプロパティは、40 文字の 16 進数文字列としての公開キーを表します。 セキュリティ保護されていないピア名の場合は、このプロパティはゼロ (0) に設定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 所有者、またはピアのホストは、セキュリティで保護されたピア名を登録できます。 ピア名では、自己署名証明書によって保証されている場合をセキュリティで保護されたと見なされます。  
+  
+ ピア名が大文字小文字を区別、およびピア名の形式が:*区別*です。 たとえば、"0.MyPeerName"は、整形式のピア名です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="usage">
+          <para>セキュリティで保護されたピア名を使用しても、ネットワーク アプリケーションの全体的なセキュリティは保証されません。 アプリケーションのセキュリティは、実装によって異なります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Classifier">
+      <MemberSignature Language="C#" Value="public string Classifier { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Classifier" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.PeerName.Classifier" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ピア ツー ピアの分類子を含む文字列を返します<see cref="T:System.Net.PeerToPeer.PeerName" />です。</summary>
+        <value>に対するピア名を識別するために使用する分類子部分を含んでいる文字列<see cref="T:System.Net.PeerToPeer.PeerNameRegistration" />内、PNRP の解決方法または<see cref="T:System.Net.PeerToPeer.Cloud" />です。  
+  
+ すべてのプロパティの既定値は、明示的に指定しない限り、<see langword="null" />ゼロ (0) のプロパティの型の参照型で<see langword="int" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ピア名の形式:*区別*です。 ピア名*分類器*コンポーネントは 149 個以下の Unicode 文字を含む任意の文字列に設定することができます、 `null` (「\0」) の終端記号です。 ピア名の文字列は大文字小文字を区別します。  
+  
+ セキュリティで保護されたピア名の場合は、分類器と権限の後にドット (期間) は省略可能です。 セキュリティ保護されていないピア名の場合は、分類子は省略できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromPeerHostName">
+      <MemberSignature Language="C#" Value="public static System.Net.PeerToPeer.PeerName CreateFromPeerHostName (string peerHostName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Net.PeerToPeer.PeerName CreateFromPeerHostName(string peerHostName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.PeerName.CreateFromPeerHostName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.PeerName</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="peerHostName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="peerHostName">DNS で修飾されたホスト名を表す文字列。</param>
+        <summary>指定した新しいインスタンスを作成<see cref="P:System.Net.PeerToPeer.PeerName.PeerHostName" />指定したピアのホスト名を持つオブジェクト。</summary>
+        <returns>A<see cref="T:System.Net.PeerToPeer.PeerName" />を指定したピアのホスト名を表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ピア ツー ピア ホストが「シード ノード」ピア ツー ピア ネットワーク セッションを開始するためこの種類のネットワーク接続がチャット グループやゲーム セッションなどの通信に最も適しているアプリケーションに参加するようピアを招待します。  
+  
+ このメソッドは、作成に使用できる、<xref:System.Net.PeerToPeer.PeerName>オブジェクトに基づいて、<xref:System.Net.PeerToPeer.PeerName.PeerHostName%2A>プロパティです。 このピア名は、呼び出し元のノードの id に関連付けられていません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.String" />提供されたピアが有効なホスト名の文字列ではありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <see cref="P:System.Net.PeerToPeer.PeerName.PeerHostName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Net.PeerToPeer.PeerToPeerException">A<see cref="T:System.Net.PeerToPeer.PeerName" />を作成できませんでしたから、指定されました。<see cref="P:System.Net.PeerToPeer.PeerName.PeerHostName" /></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateRelativePeerName">
+      <MemberSignature Language="C#" Value="public static System.Net.PeerToPeer.PeerName CreateRelativePeerName (System.Net.PeerToPeer.PeerName peerName, string classifier);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Net.PeerToPeer.PeerName CreateRelativePeerName(class System.Net.PeerToPeer.PeerName peerName, string classifier) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.PeerName.CreateRelativePeerName(System.Net.PeerToPeer.PeerName,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.PeerName</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="peerName" Type="System.Net.PeerToPeer.PeerName" />
+        <Parameter Name="classifier" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="peerName"><see cref="T:System.Net.PeerToPeer.PeerName" />分類子の新しい文字列値を設定するオブジェクト。</param>
+        <param name="classifier"><see cref="P:System.Net.PeerToPeer.PeerName.Classifier" /> 、返されたに設定する<see cref="T:System.Net.PeerToPeer.PeerName" />です。</param>
+        <summary>新たに作成<see cref="T:System.Net.PeerToPeer.PeerName" />に置き換えることで、 <see cref="P:System.Net.PeerToPeer.PeerName.Classifier" /> 、指定されたで定義されているフィールド<see cref="T:System.Net.PeerToPeer.PeerName" />分類子の指定した文字列値を持つオブジェクト。</summary>
+        <returns>新しい<see cref="T:System.Net.PeerToPeer.PeerName" />更新の分類子を含むオブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.PeerToPeer.PeerName.Classifier%2A>既存に付加されます<xref:System.Net.PeerToPeer.PeerName.Authority%2A>の部分、<xref:System.Net.PeerToPeer.PeerName>です。 この文字列は 149 個の文字を含めて、`null`ターミネータです。 指定`null`id のピアの名前を返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.String" />提供される、有効なピア名の分類子ではありません。</exception>
+        <exception cref="T:System.ArgumentNullException">1 つ以上のパラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Net.PeerToPeer.PeerToPeerException">A<see cref="T:System.Net.PeerToPeer.PeerName" />を作成できませんでしたから、指定されました。<see cref="P:System.Net.PeerToPeer.PeerName.PeerHostName" /></exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Equals">
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>決定するかどうかのこのコンテンツ<see cref="T:System.Net.PeerToPeer.PeerName" />オブジェクトが別のオブジェクトの内容に相当します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Equals の実装が IEquatable によって定義されている\<T > です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Net.PeerToPeer.PeerName other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(class System.Net.PeerToPeer.PeerName other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.PeerName.Equals(System.Net.PeerToPeer.PeerName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Net.PeerToPeer.PeerName" />
+      </Parameters>
+      <Docs>
+        <param name="other">これと比較するピア名<see cref="T:System.Net.PeerToPeer.PeerName" />です。</param>
+        <summary>現在の小文字<see cref="T:System.Net.PeerToPeer.PeerName" />と指定したピアの名前。</summary>
+        <returns>返します<see langword="True" />場合、指定した<see cref="T:System.Net.PeerToPeer.PeerName" />が現在のピア名オブジェクトと同じリソースを識別それ以外の場合、このメソッドが戻る<see langword="False" />です。  
+  
+ このメソッドも返します<see langword="False" />場合<paramref name="other" />に設定されている<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つのピア名と見なされるのと同じ文字が含まれている場合、<xref:System.Net.PeerToPeer.PeerName.Authority%2A>と<xref:System.Net.PeerToPeer.PeerName.Classifier%2A>コンポーネントです。  
+  
+ 比較する前に、文字列の正規化は行われません。  すべての正規化する必要がありますが完了しながら、またはピア名オブジェクトを構築する前にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.PeerName.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在の <see cref="T:System.Object" /> と比較する <see cref="T:System.Net.PeerToPeer.PeerName" />。</param>
+        <summary>決定するかどうかのこのコンテンツ<see cref="T:System.Net.PeerToPeer.PeerName" />が別のオブジェクトのコンテンツと等しい。</summary>
+        <returns>
+          <see langword="True" />場合、<see cref="T:System.Net.PeerToPeer.PeerName" />および比較オブジェクトには、同じ情報が含まれます。 それ以外の場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、既定の署名とからの動作を継承<xref:System.Object>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.PeerName.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.Object.GetHashCode" /> メソッドをオーバーライドします。</summary>
+        <returns>現在のハッシュ コードを<see cref="T:System.Object" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つのオブジェクトは、このメソッドは、それらの両方に対して同じハッシュ コードを返した場合は、等しいと見なされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="protected virtual void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.PeerName.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info"><see cref="T:System.Net.PeerToPeer.PeerName" /> オブジェクトに関連付けられたシリアル化データを保持します。</param>
+        <param name="context"><see cref="T:System.Net.PeerToPeer.PeerName" /> オブジェクトに関連付けられたシリアル化ストリームの転送先を格納します。</param>
+        <summary>シリアル化情報オブジェクトを、<see cref="T:System.Net.PeerToPeer.PeerName" /> のシリアル化に必要なデータで事前設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生型が基本型を呼び出す必要があります<xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSecured">
+      <MemberSignature Language="C#" Value="public bool IsSecured { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSecured" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.PeerName.IsSecured" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これは、セキュリティで保護されたピア名であるかどうかを指定するブール値を取得します。</summary>
+        <value>場合<see langword="true" />、このピア名はでセキュリティ保護された秘密キーと公開キーのペア。 その名前には、そのピア コンピューターのユーザー証明書の公開キーのセキュリティで保護されたハッシュ アルゴリズム (SHA) ハッシュが含まれています。 それ以外の場合<see langword="false" />ピア名に関連付けられた id がありません。  
+  
+ すべてのプロパティの既定値は、明示的に指定しない限り、<see langword="null" />ゼロ (0) のプロパティの型の参照型で<see langword="int" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ピア名では、自己署名証明書によって保証されている場合をセキュリティで保護されたと見なされます。  
+  
+ 所有者だけでは、PNRP をセキュリティで保護されたピア名を登録できます。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="usage">
+          <para>セキュリティで保護されたピア名を使用しても、ネットワーク アプリケーションの全体的なセキュリティは保証されません。 アプリケーションのセキュリティは、実装によって異なります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="PeerHostName">
+      <MemberSignature Language="C#" Value="public string PeerHostName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PeerHostName" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.PeerName.PeerHostName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ピア ツー ピアのホストの名前を取得します。 これは DNS でエンコードされたバージョンの<see cref="T:System.Net.PeerToPeer.PeerName" />と等価である、<see cref="P:System.Net.PeerToPeer.PeerName.PeerHostName" />両方の識別子。  2 つの違いは、視覚的表現です。</summary>
+        <value>A<see cref="T:System.String" />ピア ツー ピアのホストの名前を指定する値。 すべてのプロパティの既定値は、明示的に指定しない限り、<see langword="null" />参照型の場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ピア ツー ピア ホストが「シード ノード」ピア ツー ピア ネットワーク セッションを開始するためこの種類のネットワーク接続がチャット グループやゲーム セッションなどの通信に最も適しているアプリケーションに参加するようピアを招待します。  
+  
+ <xref:System.Net.PeerToPeer.PeerName.PeerHostName%2A>プロパティは、ピア ツー ピア ネットワー キング セッションを作成して、セッションのホストと見なされますのピアの名前を指定します。  ピア ツー ピア ネットワー キング セッションのホストは 1 つ以上のピアを収集する場合があります<xref:System.Net.PeerToPeer.Cloud>です。 また、ピアであり、同時にピアの 1 つ以上のホストでホストする可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.ISerializable.GetObjectData">
+      <MemberSignature Language="C#" Value="void ISerializable.GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.Serialization.ISerializable.GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.PeerName.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info"><see cref="T:System.Net.PeerToPeer.PeerName" /> オブジェクトに関連付けられたシリアル化データを保持します。</param>
+        <param name="context"><see cref="T:System.Net.PeerToPeer.PeerName" /> オブジェクトに関連付けられたシリアル化ストリームの転送先を格納します。</param>
+        <summary><see cref="T:System.Runtime.Serialization.ISerializable" /> インターフェイスを実装し、<see cref="T:System.Net.PeerToPeer.PeerName" /> インスタンスをシリアル化するために必要なデータを返します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.PeerName.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の文字列表現を返します<see cref="T:System.Net.PeerToPeer.PeerName" />オブジェクト。</summary>
+        <returns>現在を表す文字列<see cref="T:System.Net.PeerToPeer.PeerName" />と、次の形式で指定した:*区別*です。 たとえば、"0.MyInternetPeer"とします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、既定の署名とからの動作を継承<xref:System.Object>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

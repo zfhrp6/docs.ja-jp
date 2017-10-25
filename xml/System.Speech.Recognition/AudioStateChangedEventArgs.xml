@@ -1,0 +1,83 @@
+<Type Name="AudioStateChangedEventArgs" FullName="System.Speech.Recognition.AudioStateChangedEventArgs">
+  <TypeSignature Language="C#" Value="public class AudioStateChangedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AudioStateChangedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Recognition.AudioStateChangedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see langword="AudioStateChanged" />のイベント、<see cref="T:System.Speech.Recognition.SpeechRecognizer" />または<see cref="T:System.Speech.Recognition.SpeechRecognitionEngine" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Recognition.AudioStateChangedEventArgs.AudioState%2A>プロパティの新しいインスタンスを取得する、<xref:System.Speech.Recognition.AudioState>列挙ときに、<xref:System.Speech.Recognition.SpeechRecognitionEngine.AudioStateChanged?displayProperty=nameWithType>または<xref:System.Speech.Recognition.SpeechRecognizer.AudioStateChanged?displayProperty=nameWithType>イベントが発生します。  
+  
+ 使用して入力オーディオの現在の状態を取得することができます、`AudioState`のプロパティ、<xref:System.Speech.Recognition.SpeechRecognizer>または<xref:System.Speech.Recognition.SpeechRecognitionEngine>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例では、音声認識エンジンの変化するオーディオ状態を処理するため、イベント ハンドラーを示します。  
+  
+```csharp  
+  
+private SpeechRecognitionEngine sre;  
+  
+// Initialize the SpeechRecognitionEngine object.   
+private void Initialize()  
+{  
+  sre = new SpeechRecognitionEngine();  
+  
+  // Add a handler for the AudioStateChanged event.  
+  sre.AudioStateChanged += new EventHandler<AudioStateChangedEventArgs>(sre_AudioStateChanged);  
+  
+  // Add other initialization code here.  
+}  
+  
+// Handle the AudioStateChanged event.   
+void sre_AudioStateChanged(object sender, AudioStateChangedEventArgs e)  
+{  
+  AudioState newState = e.AudioState;  
+  
+  // Handle event here.  
+}  
+  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AudioState">
+      <MemberSignature Language="C#" Value="public System.Speech.Recognition.AudioState AudioState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Speech.Recognition.AudioState AudioState" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.AudioStateChangedEventArgs.AudioState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.AudioState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認識エンジンにオーディオの入力の新しい状態を取得します。</summary>
+        <value>オーディオの入力後の状態、<see cref="E:System.Speech.Recognition.SpeechRecognitionEngine.AudioStateChanged" />または<see cref="E:System.Speech.Recognition.SpeechRecognizer.AudioStateChanged" />イベントが発生します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Recognition.AudioStateChangedEventArgs.AudioState%2A>から 3 つの値のいずれかのプロパティが含まれています、<xref:System.Speech.Recognition.AudioState>列挙します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

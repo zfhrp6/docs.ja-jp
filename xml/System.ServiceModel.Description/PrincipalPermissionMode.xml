@@ -1,0 +1,175 @@
+<Type Name="PrincipalPermissionMode" FullName="System.ServiceModel.Description.PrincipalPermissionMode">
+  <TypeSignature Language="C#" Value="public enum PrincipalPermissionMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed PrincipalPermissionMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Description.PrincipalPermissionMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary><see cref="T:System.Security.Permissions.PrincipalPermissionAttribute" /> を使用してメソッドへのアクセスを制御するときの承認チェックのモードを設定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドに <xref:System.Security.Permissions.PrincipalPermissionAttribute> を適用する場合、このモードによって、アクセスの承認時に使用するロールのセットが指定されます。 既定では、この属性は Windows グループ (`Administrator` または `Users` など) を使用して、ユーザーが属している必要があるロールを指定します。  
+  
+ プログラムでモードを設定するには、`ServiceHost` クラスのインスタンスを作成し、その動作のコレクションから <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior> を検索し、<xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.PrincipalPermissionMode%2A> を適切な列挙値に設定します。 次の例では、UseAspNetRoles にプロパティを設定します。  
+  
+ [!code-csharp[PrincipalPermissionMode#1](~/samples/snippets/csharp/VS_Snippets_CFX/principalpermissionmode/cs/source.cs#1)]
+ [!code-vb[PrincipalPermissionMode#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/principalpermissionmode/vb/source.vb#1)]  
+  
+ 追加することで、構成では、動作を設定することも、 [ &lt;serviceAuthorization&gt; ](~/docs/framework/configure-apps/file-schema/wcf/serviceauthorization-element.md)を[ &lt;serviceBehaviors&gt; ](~/docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md)の次のコードに示すように構成ファイル。  
+  
+ [!code-csharp[PrincipalPermissionMode#10](~/samples/snippets/csharp/VS_Snippets_CFX/principalpermissionmode/cs/source.cs#10)]
+ [!code-vb[PrincipalPermissionMode#10](~/samples/snippets/visualbasic/VS_Snippets_CFX/principalpermissionmode/vb/source.vb#10)]  
+  
+ この列挙値は、<xref:System.Security.Permissions.PrincipalPermissionAttribute> 属性がメソッドに適用されたときのユーザーの承認方法に影響します。 次の例では、この属性をメソッドに適用し、ユーザーがコンピューターの Users グループに属することを要求します。 このコードは、<xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.PrincipalPermissionMode%2A> が `UseWindowsGroup` (既定の設定) に設定されている場合にのみ機能します。  
+  
+ [!code-csharp[PrincipalPermissionMode#2](~/samples/snippets/csharp/VS_Snippets_CFX/principalpermissionmode/cs/source.cs#2)]
+ [!code-vb[PrincipalPermissionMode#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/principalpermissionmode/vb/source.vb#2)]  
+  
+## <a name="useaspnetroles"></a>UseAspNetRoles  
+ UseAspNetRoles 値は、すべての資格情報の種類に使用されます。 このモードを使用すると、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] では ASP.NET ロール プロバイダーを使用した承認決定を行うことができます。  
+  
+ サービスの資格情報が X.509 証明書の場合は、次の例に示すように、`Name` の <xref:System.Security.Permissions.PrincipalPermissionAttribute> プロパティを、"サブジェクト" フィールドと "サムプリント" フィールドを連結した値で構成される文字列に設定できます。  
+  
+ [!code-csharp[PrincipalPermissionMode#3](~/samples/snippets/csharp/VS_Snippets_CFX/principalpermissionmode/cs/source.cs#3)]
+ [!code-vb[PrincipalPermissionMode#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/principalpermissionmode/vb/source.vb#3)]  
+  
+ 連結された文字列は、セミコロンと空白で区切られたサブジェクト値とサムプリント値で構成されます。  
+  
+ 証明書の "サブジェクト" フィールドを null 文字列に設定することもできます。 この場合、次の例に示すように、`Name` プロパティをセミコロンの後に空白とサムプリントが続く値に設定できます。  
+  
+ [!code-csharp[PrincipalPermissionMode#4](~/samples/snippets/csharp/VS_Snippets_CFX/principalpermissionmode/cs/source.cs#4)]
+ [!code-vb[PrincipalPermissionMode#4](~/samples/snippets/visualbasic/VS_Snippets_CFX/principalpermissionmode/vb/source.vb#4)]  
+  
+ ASP.NET ロール プロバイダーが存在する場合は、<xref:System.Security.Permissions.PrincipalPermissionAttribute.Role%2A> プロパティをデータベースのロールに設定することもできます。 既定では、データベースは <xref:System.Web.Security.SqlRoleProvider> で表されます。 また、<xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.RoleProvider%2A> クラスの <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior> プロパティを使用してカスタム ロール プロバイダーを設定することもできます。 ロールを `Administrators` に設定するコードを次に示します  ロール プロバイダーによって、ユーザー アカウントが該当のロールにマップされる必要があります。  
+  
+ [!code-csharp[PrincipalPermissionMode#13](~/samples/snippets/csharp/VS_Snippets_CFX/principalpermissionmode/cs/source.cs#13)]
+ [!code-vb[PrincipalPermissionMode#13](~/samples/snippets/visualbasic/VS_Snippets_CFX/principalpermissionmode/vb/source.vb#13)]  
+  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]ASP.NET ロール プロバイダーを参照してください[How To: ASP.NET 2.0 のロール マネージャーを使用して](http://go.microsoft.com/fwlink/?LinkId=96692)です。  
+  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]使用して[!INCLUDE[indigo2](~/includes/indigo2-md.md)]とロール プロバイダーを参照してください[する方法: ASP.NET ロール プロバイダーを使用して、サービスと](~/docs/framework/wcf/feature-details/how-to-use-the-aspnet-role-provider-with-a-service.md)です。  
+  
+## <a name="custom"></a>カスタム  
+ プロパティが Custom に設定されている場合を実装するカスタム クラスも指定する必要があります、<xref:System.IdentityModel.Policy.IAuthorizationPolicy>クラスです。 このクラスは、`IPrincipal` コレクション内部の呼び出し元の <xref:System.IdentityModel.Policy.EvaluationContext.Properties%2A> 表現を提供します。 次の例に示すように、このクラスでは、"Principal" 文字列キーを使用して `IPrincipal` インスタンスをプロパティのコレクションに格納する必要があります。  
+  
+```  
+evaluationContext.Properties["Principal"]=new CustomPrincipal(identity);  
+```  
+  
+## <a name="background"></a>背景  
+ [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] のロール ベース セキュリティにより、アプリケーションではコードを使用して承認を指定できます。 <xref:System.Security.Permissions.PrincipalPermission> 要求を指定することにより、<xref:System.Threading.Thread.CurrentPrincipal%2A> は `PrincipalPermission` の要件を満たす必要があります。 たとえば、ユーザーが特定のロールまたはグループに属する必要があります。 それ以外の場合は、スレッドがコードの実行を承認されないため、例外が発生します。 [!INCLUDE[indigo2](~/includes/indigo2-md.md)] には、<xref:System.ServiceModel.Description.PrincipalPermissionMode> に基づいて <xref:System.Threading.Thread.CurrentPrincipal%2A> を指定するための <xref:System.Security.SecurityContext> の一連の選択肢が用意されています。  
+  
+   
+  
+## Examples  
+ 次の例では、UseAspNetRoles を指定する方法を示します。  
+  
+ [!code-csharp[PrincipalPermissionMode#7](~/samples/snippets/csharp/VS_Snippets_CFX/principalpermissionmode/cs/source.cs#7)]
+ [!code-vb[PrincipalPermissionMode#7](~/samples/snippets/visualbasic/VS_Snippets_CFX/principalpermissionmode/vb/source.vb#7)]  
+  
+ 次の例では、ユーザー設定を指定する方法を示します。  
+  
+ [!code-csharp[PrincipalPermissionMode#8](~/samples/snippets/csharp/VS_Snippets_CFX/principalpermissionmode/cs/source.cs#8)]
+ [!code-vb[PrincipalPermissionMode#8](~/samples/snippets/visualbasic/VS_Snippets_CFX/principalpermissionmode/vb/source.vb#8)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Always">
+      <MemberSignature Language="C#" Value="Always" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Description.PrincipalPermissionMode Always = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Description.PrincipalPermissionMode.Always" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.PrincipalPermissionMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>常に、ユーザーを指定できるように、<see cref="T:System.Security.Principal.IPrincipal" />クラス<see cref="P:System.Threading.Thread.CurrentPrincipal" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Custom">
+      <MemberSignature Language="C#" Value="Custom" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Description.PrincipalPermissionMode Custom = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Description.PrincipalPermissionMode.Custom" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.PrincipalPermissionMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Security.Principal.IPrincipal" />　 のカスタム <see cref="P:System.Threading.Thread.CurrentPrincipal" /> クラスを指定できるようにします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Description.PrincipalPermissionMode None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Description.PrincipalPermissionMode.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.PrincipalPermissionMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="P:System.Threading.Thread.CurrentPrincipal" /> が設定されていません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UseAspNetRoles">
+      <MemberSignature Language="C#" Value="UseAspNetRoles" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Description.PrincipalPermissionMode UseAspNetRoles = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Description.PrincipalPermissionMode.UseAspNetRoles" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.PrincipalPermissionMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="P:System.Threading.Thread.CurrentPrincipal" /> は、[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] ロール プロバイダー (<see cref="T:System.Web.Security.RoleProvider" />) に基づいて設定されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UseWindowsGroups">
+      <MemberSignature Language="C#" Value="UseWindowsGroups" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Description.PrincipalPermissionMode UseWindowsGroups = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Description.PrincipalPermissionMode.UseWindowsGroups" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.PrincipalPermissionMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="P:System.Threading.Thread.CurrentPrincipal" /> は、Windows (<see cref="T:System.Security.Principal.WindowsPrincipal" />) に基づいて設定されます。 ユーザー ID が Windows アカウントに関連付けられていない場合、匿名の Windows が使用されます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

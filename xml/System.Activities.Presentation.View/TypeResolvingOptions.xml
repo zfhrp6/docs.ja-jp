@@ -1,0 +1,89 @@
+<Type Name="TypeResolvingOptions" FullName="System.Activities.Presentation.View.TypeResolvingOptions">
+  <TypeSignature Language="C#" Value="public class TypeResolvingOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TypeResolvingOptions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Presentation.View.TypeResolvingOptions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities.Presentation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Activities.Presentation.View.TypePresenter" /> によって使用される型の解決に使用できるオプションを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TypeResolvingOptions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.TypeResolvingOptions.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Activities.Presentation.View.TypeResolvingOptions" /> クラスのインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TypeResolvingOptions (System.Collections.Generic.IEnumerable&lt;Type&gt; defaultTypes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class System.Type&gt; defaultTypes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.TypeResolvingOptions.#ctor(System.Collections.Generic.IEnumerable{System.Type})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="defaultTypes" Type="System.Collections.Generic.IEnumerable&lt;System.Type&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="defaultTypes">既定値の型で、<see cref="T:System.Activities.Presentation.View.TypePrensenter" />コントロール。</param>
+        <summary><see cref="T:System.Activities.Presentation.View.TypeResolvingOptions" /> クラスのインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BrowseTypeDirectly">
+      <MemberSignature Language="C#" Value="public bool BrowseTypeDirectly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool BrowseTypeDirectly" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.View.TypeResolvingOptions.BrowseTypeDirectly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが型の選択を試みたときに、<see cref="T:System.Activities.Presentation.View.TypePresenter" /> コントロールで型ブラウザーを直接表示するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Activities.Presentation.View.TypePrensenter" />を表示する、型ブラウザー直接ユーザー; の種類を選択しようとしました。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filter">
+      <MemberSignature Language="C#" Value="public Func&lt;Type,bool&gt; Filter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Func`2&lt;class System.Type, bool&gt; Filter" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.View.TypeResolvingOptions.Filter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Func&lt;System.Type,System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Activities.Presentation.View.TypePrensenter" /> コントロールで型をフィルター処理する場合に使用されるフィルターを取得または設定します。</summary>
+        <value><see cref="T:System.Activities.Presentation.View.TypePresenter" /> コントロールのフィルター。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

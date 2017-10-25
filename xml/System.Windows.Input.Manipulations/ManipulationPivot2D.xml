@@ -1,0 +1,133 @@
+<Type Name="ManipulationPivot2D" FullName="System.Windows.Input.Manipulations.ManipulationPivot2D">
+  <TypeSignature Language="C#" Value="public sealed class ManipulationPivot2D : System.Windows.Input.Manipulations.ManipulationParameters2D" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ManipulationPivot2D extends System.Windows.Input.Manipulations.ManipulationParameters2D" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.Manipulations.ManipulationPivot2D" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Input.Manipulations.ManipulationParameters2D</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ピボット単一マニピュレーターの回転の操作プロセッサによって使用される情報を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Input.Manipulations.ManipulationPivot2D>にオブジェクトが割り当てられた、<xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Pivot%2A>のプロパティ、<xref:System.Windows.Input.Manipulations.ManipulationProcessor2D>オブジェクトの要素が 1 つのマニピュレーターによって操作されているときに、操作プロセッサが要素を回転の変更を計算する方法に影響を与えます。 複数のマニピュレーター操作中に、要素に適用されて、Pivot プロパティは無視されます。  
+  
+ 単一マニピュレーターのシナリオでは、要素はできますがドラッグされているように回転させます。 <xref:System.Windows.Input.Manipulations.ManipulationPivot2D.X%2A>と<xref:System.Windows.Input.Manipulations.ManipulationPivot2D.Y%2A>のプロパティ、<xref:System.Windows.Input.Manipulations.ManipulationPivot2D>オブジェクトがどのような位置を要素中心に回転を特定し、<xref:System.Windows.Input.Manipulations.ManipulationPivot2D.Radius%2A>プロパティは、回転の変更の量を計算する操作プロセッサによって使用します。  
+  
+ たとえば、1 つのマニピュレーターが外側のエッジ ピボット ポイントの近くにある場合は、要素を回転の変更がドラッグされているようなります非常に大きな (要素のサイズによっては)。 マニピュレーターは、ピボット ポイントの中心近くには、(存在する場合) に非常に小さな回転が発生します。  
+  
+ 通常、<xref:System.Windows.Input.Manipulations.ManipulationPivot2D.X%2A>と<xref:System.Windows.Input.Manipulations.ManipulationPivot2D.Y%2A>プロパティは、操作する要素の中心を表す、<xref:System.Windows.Input.Manipulations.ManipulationPivot2D.Radius%2A>プロパティは、一番下の端に、要素の中心からの距離を表します。  
+  
+ 要素を移動すると、<xref:System.Windows.Input.Manipulations.ManipulationPivot2D.X%2A>と<xref:System.Windows.Input.Manipulations.ManipulationPivot2D.Y%2A>のプロパティ、<xref:System.Windows.Input.Manipulations.ManipulationPivot2D>オブジェクトの回転は引き続き適切なポイントを中心に発生するように更新が必要です。  
+  
+   
+  
+## Examples  
+ 次のコード例に示す方法、<xref:System.Windows.Input.Manipulations.ManipulationPivot2D.X%2A>と<xref:System.Windows.Input.Manipulations.ManipulationPivot2D.Y%2A>ピボット ポイントのプロパティが操作する要素の中心を一致するように更新されます。  
+  
+ [!code-csharp[ManipulationAPI#_ManipulationItem_ManipulationProcessor2D](~/samples/snippets/csharp/VS_Snippets_Misc/manipulationapi/cs/manipulationitem.xaml.cs#_manipulationitem_manipulationprocessor2d)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManipulationPivot2D ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Manipulations.ManipulationPivot2D.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Input.Manipulations.ManipulationPivot2D" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Radius">
+      <MemberSignature Language="C#" Value="public float Radius { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Radius" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Manipulations.ManipulationPivot2D.Radius" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または操作可能な領域の端にピボット ポイントからの距離を設定します。</summary>
+        <value>ピボット ポイントから、操作可能な領域の端までの距離。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.Manipulations.ManipulationPivot2D.Radius%2A>プロパティは、1.0 以上である正、有限値を指定する必要がありますまたは`NaN`です。 `NaN`制限がないことを示します。 既定値は `NaN` です。  
+  
+ 実際には、ピボット ポイントは通常、操作するオブジェクトの中心と<xref:System.Windows.Input.Manipulations.ManipulationPivot2D.Radius%2A>値は、オブジェクトの一番下の端にピボット ポイントからの距離。 内で発生するピボット処理、<xref:System.Windows.Input.Manipulations.ManipulationPivot2D.Radius%2A>距離を抑制します。 詳細については、「<xref:System.Windows.Input.Manipulations.ManipulationPivot2D>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="X">
+      <MemberSignature Language="C#" Value="public float X { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 X" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Manipulations.ManipulationPivot2D.X" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、ピボットの X 位置を設定します。</summary>
+        <value>ピボットの X 位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.Manipulations.ManipulationPivot2D.X%2A>プロパティが有限値を指定する必要がありますまたは`NaN`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Y">
+      <MemberSignature Language="C#" Value="public float Y { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Y" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Manipulations.ManipulationPivot2D.Y" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、ピボットの Y 位置を設定します。</summary>
+        <value>ピボットの Y 位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.Manipulations.ManipulationPivot2D.Y%2A>プロパティが有限値を指定する必要がありますまたは`NaN`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,380 @@
+<Type Name="MethodBody" FullName="System.Reflection.MethodBody">
+  <TypeSignature Language="C#" Value="public class MethodBody" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi beforefieldinit MethodBody extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Reflection.MethodBody" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>メソッドの本体のメタデータと MSIL へのアクセスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.MethodBody>クラスとメソッドの本体を構成する Microsoft intermediate language (MSIL) にローカル変数とメソッドの本体で例外処理句に関する情報へのアクセスを提供します。  
+  
+ など、トークンの解像度、モジュール、クラスのメソッドを使用することができます<xref:System.Reflection.Module.ResolveType%2A>、 <xref:System.Reflection.Module.ResolveMethod%2A>、および<xref:System.Reflection.Module.ResolveType%2A>にメソッド本体の中でトークンを解決するのには、<xref:System.Type>オブジェクト、<xref:System.Reflection.MethodInfo>オブジェクト、および<xref:System.Reflection.FieldInfo>型、メソッド、およびフィールド、メソッド本体で MSIL によりアクセスに関する詳細情報を提供するオブジェクト。  
+  
+> [!NOTE]
+>  メソッド本体を解析中には、メタデータと MSIL 命令の形式の確実な理解が必要です。 情報は、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」と「Partition III: CIL Instruction Set」にあります。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+ 取得する、<xref:System.Reflection.MethodBody>オブジェクトの特定のメソッドの最初に取得、<xref:System.Reflection.MethodInfo>オブジェクト、メソッドを呼び出して、<xref:System.Reflection.MethodInfo>オブジェクトの<xref:System.Reflection.MethodBase.GetMethodBody%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、という名前のテスト メソッドを定義`MethodBodyExample`そのローカル変数の情報と例外処理句が表示されます。 <xref:System.Reflection.MethodBase.GetMethodBody%2A?displayProperty=nameWithType>を取得するメソッドが使用される、<xref:System.Reflection.MethodBody>テスト メソッドのオブジェクト。  
+  
+ この例では、<xref:System.Reflection.MethodBody.LocalVariables%2A>プロパティの一覧の取得を<xref:System.Reflection.LocalVariableInfo>オブジェクトし、その型とインデックスの順序を表示します。 <xref:System.Reflection.MethodBody.ExceptionHandlingClauses%2A>例外処理句の一覧を取得するプロパティを使用します。  
+  
+> [!NOTE]
+>  すべてのコンピューター言語を生成できます<xref:System.Reflection.ExceptionHandlingClauseOptions?displayProperty=nameWithType>句。 Visual Basic の例は、Visual Basic を使用して、フィルター句を示しています。`When`式で、他の言語の例は省略します。  
+  
+ [!code-cpp[MethodBody#1](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#1)]
+ [!code-csharp[MethodBody#1](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#1)]
+ [!code-vb[MethodBody#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected MethodBody ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBody.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Reflection.MethodBody" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構築中にこのコンス トラクターが派生クラスによって呼び出された<xref:System.Reflection.MethodBody>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExceptionHandlingClauses">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IList&lt;System.Reflection.ExceptionHandlingClause&gt; ExceptionHandlingClauses { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;class System.Reflection.ExceptionHandlingClause&gt; ExceptionHandlingClauses" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBody.ExceptionHandlingClauses" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Reflection.ExceptionHandlingClause&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドの本体にあるすべての例外処理句を含むリストを取得します。</summary>
+        <value>メソッドの本体にある例外処理句を表す <see cref="T:System.Reflection.ExceptionHandlingClause" /> オブジェクトの <see cref="T:System.Collections.Generic.IList`1" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一覧には、メソッドの本体でのすべての try ブロックからのすべての句が含まれています。 各<xref:System.Reflection.ExceptionHandlingClause>オブジェクトが関連付けられている try ブロックを識別する情報が含まれています。  
+  
+> [!NOTE]
+>  例外処理句の使用には、メタデータと MSIL 命令の形式の確実な理解が必要です。 情報は、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」と「Partition III: CIL Instruction Set」にあります。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、という名前のテスト メソッドを定義`MethodBodyExample`例外処理句に関する情報を表示します。 <xref:System.Reflection.MethodBase.GetMethodBody%2A?displayProperty=nameWithType>を取得するメソッドが使用される、<xref:System.Reflection.MethodBody>テスト メソッドのオブジェクト。 <xref:System.Reflection.MethodBody.ExceptionHandlingClauses%2A>の一覧を取得するプロパティが使用される<xref:System.Reflection.ExceptionHandlingClause>オブジェクト。  
+  
+> [!NOTE]
+>  すべてのコンピューター言語を生成できます<xref:System.Reflection.ExceptionHandlingClauseOptions?displayProperty=nameWithType>句。 Visual Basic の例は、Visual Basic を使用して、フィルター句を示しています。`When`式で、他の言語の例は省略します。  
+  
+ このコード例に示されている例の一部である、<xref:System.Reflection.MethodBody>クラスです。  
+  
+ [!code-cpp[MethodBody#2](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#2)]
+ [!code-csharp[MethodBody#2](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#2)]
+ [!code-vb[MethodBody#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#2)]  
+[!code-cpp[MethodBody#4](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#4)]
+[!code-csharp[MethodBody#4](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#4)]
+[!code-vb[MethodBody#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#4)]  
+[!code-cpp[MethodBody#5](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#5)]
+[!code-csharp[MethodBody#5](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#5)]
+[!code-vb[MethodBody#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#5)]  
+[!code-cpp[MethodBody#7](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#7)]
+[!code-csharp[MethodBody#7](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#7)]
+[!code-vb[MethodBody#7](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetILAsByteArray">
+      <MemberSignature Language="C#" Value="public virtual byte[] GetILAsByteArray ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance unsigned int8[] GetILAsByteArray() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBody.GetILAsByteArray" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>バイト配列として、メソッドの本体の MSIL を返します。</summary>
+        <returns>型の配列<see cref="T:System.Byte" />メソッド本体の MSIL を格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ など、トークンの解像度、モジュール、クラスのメソッドを使用することができます<xref:System.Reflection.Module.ResolveType%2A>、 <xref:System.Reflection.Module.ResolveMethod%2A>、および<xref:System.Reflection.Module.ResolveMember%2A>にメソッド本体の中でトークンを解決するのには、<xref:System.Type>オブジェクト、<xref:System.Reflection.MethodInfo>オブジェクト、および<xref:System.Reflection.FieldInfo>型、メソッド、およびフィールド、メソッド本体で MSIL によりアクセスに関する詳細情報を提供するオブジェクト。  
+  
+> [!NOTE]
+>  メソッド本体を解析中には、メタデータと MSIL 命令の形式の確実な理解が必要です。 情報は、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」と「Partition III: CIL Instruction Set」にあります。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitLocals">
+      <MemberSignature Language="C#" Value="public virtual bool InitLocals { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool InitLocals" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBody.InitLocals" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドの本体でローカル変数がその型の既定値に初期化されるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />メソッドの本体がローカル変数を初期化するコードを含むかどうか<see langword="null" />参照型の場合、または、ゼロ初期化の値に値型です。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.MethodBody.InitLocals%2A>プロパティを参照変数を明示的に初期化されていません。 つまり、などの構文で宣言された変数は`int x;`(C#) または`Dim x As Integer`Visual Basic でします。  
+  
+ 参照変数に初期化される`null`既定です。 数値変数は、ゼロに初期化されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、という名前のテスト メソッドを定義`MethodBodyExample`そのローカル変数の情報と例外処理句が表示されます。 <xref:System.Reflection.MethodBase.GetMethodBody%2A?displayProperty=nameWithType>を取得するメソッドが使用される、<xref:System.Reflection.MethodBody>テスト メソッドのオブジェクト。 <xref:System.Reflection.MethodBody.MaxStackSize%2A>と<xref:System.Reflection.MethodBody.InitLocals%2A>プロパティが表示されます。  
+  
+ このコード例に示されている例の一部である、<xref:System.Reflection.MethodBody>クラスです。  
+  
+ [!code-cpp[MethodBody#2](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#2)]
+ [!code-csharp[MethodBody#2](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#2)]
+ [!code-vb[MethodBody#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#2)]  
+[!code-cpp[MethodBody#5](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#5)]
+[!code-csharp[MethodBody#5](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#5)]
+[!code-vb[MethodBody#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalSignatureMetadataToken">
+      <MemberSignature Language="C#" Value="public virtual int LocalSignatureMetadataToken { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 LocalSignatureMetadataToken" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBody.LocalSignatureMetadataToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メタデータ内のメソッドのローカル変数を示すシグネチャのメタデータ トークンを取得します。</summary>
+        <value>メタデータ トークンを表す整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Reflection.MethodBody.LocalVariables%2A>プロパティ、メソッドのローカル変数に関する情報を取得します。  
+  
+> [!NOTE]
+>  ローカル変数署名に関する情報は、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」にあります。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalVariables">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IList&lt;System.Reflection.LocalVariableInfo&gt; LocalVariables { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;class System.Reflection.LocalVariableInfo&gt; LocalVariables" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBody.LocalVariables" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Reflection.LocalVariableInfo&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドの本体で宣言されたローカル変数の一覧を取得します。</summary>
+        <value><see cref="T:System.Collections.Generic.IList`1" />の<see cref="T:System.Reflection.LocalVariableInfo" />メソッドの本体で宣言されたローカル変数を表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって提供される、ローカル変数シグネチャのメタデータ トークンを必要はありません、<xref:System.Reflection.MethodBody.LocalSignatureMetadataToken%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、という名前のテスト メソッドを定義`MethodBodyExample`し、そのローカル変数の情報を表示します。 <xref:System.Reflection.MethodBase.GetMethodBody%2A?displayProperty=nameWithType>を取得するメソッドが使用される、<xref:System.Reflection.MethodBody>テスト メソッドのオブジェクト。 <xref:System.Reflection.MethodBody.LocalVariables%2A>の一覧を取得するプロパティが使用される<xref:System.Reflection.LocalVariableInfo>オブジェクト。  
+  
+ このコード例に示されている例の一部である、<xref:System.Reflection.MethodBody>クラスです。  
+  
+ [!code-cpp[MethodBody#2](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#2)]
+ [!code-csharp[MethodBody#2](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#2)]
+ [!code-vb[MethodBody#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#2)]  
+[!code-cpp[MethodBody#3](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#3)]
+[!code-csharp[MethodBody#3](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#3)]
+[!code-vb[MethodBody#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#3)]  
+[!code-cpp[MethodBody#5](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#5)]
+[!code-csharp[MethodBody#5](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#5)]
+[!code-vb[MethodBody#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#5)]  
+[!code-cpp[MethodBody#6](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#6)]
+[!code-csharp[MethodBody#6](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#6)]
+[!code-vb[MethodBody#6](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxStackSize">
+      <MemberSignature Language="C#" Value="public virtual int MaxStackSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxStackSize" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBody.MaxStackSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドの実行時に、オペランド スタックの項目の最大数を取得します。</summary>
+        <value>メソッドを実行するときに、オペランド スタック上の項目の最大数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」と「Partition III: CIL Instruction Set」を参照してください。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、という名前のテスト メソッドを定義`MethodBodyExample`そのローカル変数の情報と例外処理句が表示されます。 <xref:System.Reflection.MethodBase.GetMethodBody%2A?displayProperty=nameWithType>を取得するメソッドが使用される、<xref:System.Reflection.MethodBody>テスト メソッドのオブジェクト。 <xref:System.Reflection.MethodBody.MaxStackSize%2A>と<xref:System.Reflection.MethodBody.InitLocals%2A>プロパティが表示されます。  
+  
+ このコード例に示されている例の一部である、<xref:System.Reflection.MethodBody>クラスです。  
+  
+ [!code-cpp[MethodBody#2](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#2)]
+ [!code-csharp[MethodBody#2](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#2)]
+ [!code-vb[MethodBody#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#2)]  
+[!code-cpp[MethodBody#5](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#5)]
+[!code-csharp[MethodBody#5](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#5)]
+[!code-vb[MethodBody#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

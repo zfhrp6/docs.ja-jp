@@ -1,0 +1,71 @@
+<Type Name="TransactionVote" FullName="System.EnterpriseServices.TransactionVote">
+  <TypeSignature Language="C#" Value="public enum TransactionVote" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed TransactionVote extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.TransactionVote" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>トランザクションの結果の判定に使用できる値を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙は、<xref:System.EnterpriseServices.ContextUtil> クラスで使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、この列挙体の使用を示します。  
+  
+ [!code-cpp[EnterpriseServices_Transaction#1](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServices_Transaction/CPP/transaction.cpp#1)]
+ [!code-csharp[EnterpriseServices_Transaction#1](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices_Transaction/CS/transaction.cs#1)]
+ [!code-vb[EnterpriseServices_Transaction#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServices_Transaction/VB/transaction.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Abort">
+      <MemberSignature Language="C#" Value="Abort" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.EnterpriseServices.TransactionVote Abort = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.EnterpriseServices.TransactionVote.Abort" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.TransactionVote</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のトランザクションを中止します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Commit">
+      <MemberSignature Language="C#" Value="Commit" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.EnterpriseServices.TransactionVote Commit = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.EnterpriseServices.TransactionVote.Commit" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.TransactionVote</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のトランザクションをコミットします。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,315 @@
+<Type Name="TrustSection" FullName="System.Web.Configuration.TrustSection">
+  <TypeSignature Language="C#" Value="public sealed class TrustSection : System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed TrustSection extends System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.TrustSection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アプリケーションに適用されるコード アクセス セキュリティ レベルを構成します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.TrustSection>クラスでは、プログラムからアクセスし、構成ファイルを変更できます。`<trust>`セクションです。 `<trust>`セクションは、特定のアプリケーションの実行に使用されるコード アクセス セキュリティのアクセス許可セットを構成します。 このセクションでは、コンピューター、サイト、およびアプリケーション レベルで宣言できます。  
+  
+   
+  
+## Examples  
+ このセクションでは、2 つのコード例を示します。 最初のいくつかのプロパティの値を宣言によって指定する方法を説明、<xref:System.Web.Configuration.TrustSection>クラスです。 2 つ目は、使用する方法を示します、<xref:System.Web.Configuration.TrustSection>型です。  
+  
+ 次の構成ファイルの例は、宣言のいくつかのプロパティの値を指定する方法を示しています、<xref:System.Web.Configuration.TrustSection>クラスです。  
+  
+```  
+<system.web>  
+  <trust level="Full" originUrl=""/>  
+</system.web>  
+```  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.TrustSection>型です。  
+  
+ [!code-csharp[System.Web.Configuration.TrustSection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.TrustSection/CS/trustsection.cs#1)]
+ [!code-vb[System.Web.Configuration.TrustSection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.TrustSection/VB/trustsection.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TrustSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.TrustSection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>既定の設定を使用して <see cref="T:System.Web.Configuration.TrustSection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.TrustSection.%23ctor%2A>コンス トラクターは、コードから直接使用するものではありません。 ASP.NET 構成システムによって呼び出されます。 インスタンスを取得する、<xref:System.Web.Configuration.TrustSection>クラスを使用して、<xref:System.Configuration.Configuration.GetSection%2A>メソッドです。  
+  
+ 次の表は、既定の設定に使用される、<xref:System.Web.Configuration.TrustSection.%23ctor%2A>コンス トラクターです。  
+  
+|設定|既定値|  
+|-------------|-------------------|  
+|<xref:System.Web.Configuration.TrustSection.Level%2A>|`Full`|  
+|<xref:System.Web.Configuration.TrustSection.OriginUrl%2A>|`""`|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HostSecurityPolicyResolverType">
+      <MemberSignature Language="C#" Value="public string HostSecurityPolicyResolverType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HostSecurityPolicyResolverType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.TrustSection.HostSecurityPolicyResolverType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("hostSecurityPolicyResolverType", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはカスタムのセキュリティ ポリシーの解決の種類を設定します。</summary>
+        <value>カスタムのセキュリティ ポリシーの解決の種類</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Web.Configuration.TrustSection.HostSecurityPolicyResolverType%2A>空の文字列は、アプリケーションでは、ASP.NET の既定のポリシーを使用して、アセンブリのアクセス許可を確認します。 アクセス許可を評価するための既定のポリシーは、グローバル アセンブリ キャッシュ (GAC) アセンブリとその他のアセンブリに部分信頼に完全な信頼を付与します。  
+  
+ この属性に設定することはできません、`null`値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LegacyCasModel">
+      <MemberSignature Language="C#" Value="public bool LegacyCasModel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool LegacyCasModel" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.TrustSection.LegacyCasModel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("legacyCasModel", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはレガシ コード アクセス セキュリティが有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />レガシ コード アクセス セキュリティが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ レガシ コード アクセス セキュリティを有効にすると、次のセキュリティ規則が適用されます。  
+  
+-   コンピューター ポリシーと、指定した ASP.NET 部分信頼ポリシー ファイルの組み合わせから、コード アクセス セキュリティ (CAS) ポリシーを確立します。  
+  
+-   部分信頼アプリケーション ドメインは、アプリケーション ドメイン レベルで完全な信頼に戻ります。  
+  
+-   ある CONFIG ディレクトリに、従来の部分的な信頼ファイル、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]インストール ディレクトリの同じディレクトリに配置されている新しい部分的な信頼の構成ファイルの代わりに使用されます。 従来のファイルを含めるメンバーシップ条件内で見つかった、[!INCLUDE[net_v11_long](~/includes/net-v11-long-md.md)]または[!INCLUDE[net_v20SP1_short](~/includes/net-v20sp1-short-md.md)]のバージョン、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。  
+  
+-   部分信頼で ASP.NET ファイルで定義されている、権限を評価する追加のメンバーシップの条件が適用されます。 付属している CONFIG ディレクトリ、[!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]リリースには、従来の部分的な信頼ポリシー ファイルが含まれています。 文字列「レガシ」が含まれており、これらのファイルの名前、[!INCLUDE[net_v20SP1_short](~/includes/net-v20sp1-short-md.md)]セクションです。 これらのセクションでは、アセンブリに対して CAS ポリシーを評価するために必要な空のメンバーシップ条件を含めます。  
+  
+-   ASP.NET アプリケーションは、既定の部分信頼の構成ファイルのいずれかに部分的に信頼とマップの信頼レベルのセキュリティ ポリシー ファイルで実行されて、ASP.NET は自動的に対応するレガシの構成ファイルを選択します。 たとえば、セキュリティ ポリシーが通常 Web_mediumtrust.config から読み込まれていると場合、レガシ モードでは ASP.NET 代わりにポリシーが読み込まれますセキュリティ Legacy.web_mediumtrust.config からです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Level">
+      <MemberSignature Language="C#" Value="public string Level { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Level" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.TrustSection.Level" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("level", DefaultValue=Mono.Cecil.CustomAttributeArgument, IsRequired=true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアプリケーションを実行するセキュリティ レベルの名前を設定します。</summary>
+        <value>信頼レベルの名前。 既定値は、<see langword="&quot;Full&quot;" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.TrustSection.Level%2A>プロパティをアプリケーション実行を制御するセキュリティ レベルを指定します。 既定値は、`"Full"` です。  
+  
+ 使用可能な信頼レベルは 5 です。  
+  
+-   完全  
+  
+-   High  
+  
+-   Medium  
+  
+-   Low  
+  
+-   Minimal  
+  
+ 名前付きレベルで定義されているセキュリティ レベルに対応して、`<trustLevel>`要素`<securityPolicy>`です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.TrustSection.Level%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.TrustSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.TrustSection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.TrustSection/CS/trustsection.cs#2)]
+ [!code-vb[System.Web.Configuration.TrustSection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.TrustSection/VB/trustsection.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OriginUrl">
+      <MemberSignature Language="C#" Value="public string OriginUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string OriginUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.TrustSection.OriginUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("originUrl", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションの発生元の URL を指定します。</summary>
+        <value>整形式の HTTP URL または空の文字列 ("") です。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.TrustSection.OriginUrl%2A>プロパティは、アプリケーションの発生元の URL を指定します。 関連付けられているなどの一部のアクセス許可の使用存在する場合、この、<xref:System.Net.WebRequest>クラスです。 これは、ようにを通じてアクセス許可の作成に使用される 1 つの URL を指定する、<xref:System.Net.WebPermission>インスタンス。 このアクセス許可は、部分的な信頼関係がある ASP.NET コードをその URL への HTTP 呼び出し (たとえば、Web サービス呼び出し) を作成する権限を付与します。 値は、整形式の HTTP URL にする必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.TrustSection.OriginUrl%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.TrustSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.TrustSection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.TrustSection/CS/trustsection.cs#3)]
+ [!code-vb[System.Web.Configuration.TrustSection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.TrustSection/VB/trustsection.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PermissionSetName">
+      <MemberSignature Language="C#" Value="public string PermissionSetName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PermissionSetName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.TrustSection.PermissionSetName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("permissionSetName", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアクセス許可セットの名前を設定します。</summary>
+        <value>アクセス許可セットの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.TrustSection.PermissionSetName%2A>プロパティでは、部分信頼の構成ファイルでアプリケーション ドメインの初期化中に使用される名前付き権限セットを定義することができます。  
+  
+ 既定では、<xref:System.Web.Configuration.TrustSection.PermissionSetName%2A>プロパティは、"ASP.Net"これは、アプリケーション ドメインを初期化するために使用されるアクセス許可セットの名前。  
+  
+ この属性は、空の文字列に設定することはできませんまたは`null`値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessRequestInApplicationTrust">
+      <MemberSignature Language="C#" Value="public bool ProcessRequestInApplicationTrust { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ProcessRequestInApplicationTrust" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.TrustSection.ProcessRequestInApplicationTrust" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("processRequestInApplicationTrust", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定ページを要求するかどうかを示す値が自動的に ASP.NET アプリケーションに適用されている信頼ポリシー ファイルで構成されているアクセス許可を制限します。</summary>
+        <value>
+          <see langword="true" />要求が、信頼ポリシー ファイルで構成されているアクセス許可を自動的に制限されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.TrustSection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

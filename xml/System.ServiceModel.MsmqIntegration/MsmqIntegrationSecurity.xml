@@ -1,0 +1,96 @@
+<Type Name="MsmqIntegrationSecurity" FullName="System.ServiceModel.MsmqIntegration.MsmqIntegrationSecurity">
+  <TypeSignature Language="C#" Value="public sealed class MsmqIntegrationSecurity" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MsmqIntegrationSecurity extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.MsmqIntegration.MsmqIntegrationSecurity" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.ServiceModel.MsmqIntegration.MsmqIntegrationSecurity" /> クラスは、メッセージ キュー (MSMQ) 統合チャネルのトランスポート セキュリティ設定をカプセル化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キュー統合チャネルを使用することで、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] アプリケーションは既存のメッセージ キュー アプリケーションと通信できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MsmqIntegrationSecurity ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MsmqIntegration.MsmqIntegrationSecurity.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.MsmqIntegration.MsmqIntegrationSecurity" /> の新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Mode">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.MsmqIntegration.MsmqIntegrationSecurityMode Mode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.MsmqIntegration.MsmqIntegrationSecurityMode Mode" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MsmqIntegration.MsmqIntegrationSecurity.Mode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.MsmqIntegration.MsmqIntegrationSecurityMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ キュー (MSMQ) 統合チャネルに関連付けられた <see cref="T:System.ServiceModel.MsmqIntegration.MsmqIntegrationSecurityMode" /> を取得または設定します。</summary>
+        <value>メッセージ キュー統合チャネルに関連付けられた <see cref="T:System.ServiceModel.MsmqIntegration.MsmqIntegrationSecurityMode" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationSecurityMode> は、<xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationSecurityMode.None> および <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationSecurityMode.Transport> が格納された列挙体です。 既定値は <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationSecurityMode.Transport> です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Transport">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.MsmqTransportSecurity Transport { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.MsmqTransportSecurity Transport" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MsmqIntegration.MsmqIntegrationSecurity.Transport" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.MsmqTransportSecurity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ キュー (MSMQ) 統合チャネルに関連付けられた <see cref="T:System.ServiceModel.MsmqTransportSecurity" /> を取得します。</summary>
+        <value>メッセージ キュー統合チャネルに関連付けられた <see cref="T:System.ServiceModel.MsmqTransportSecurity" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.MsmqTransportSecurity> は、メッセージ キュー統合トランスポートのセキュリティ設定をカプセル化したものです。 設定は、メッセージ キュー統合トランスポートとキューに置かれているトランスポートの両方で同じです。 <xref:System.ServiceModel.MsmqTransportSecurity> を使用すると、認証モード、暗号化アルゴリズム、セキュア ハッシュ アルゴリズム、および保護レベルを設定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

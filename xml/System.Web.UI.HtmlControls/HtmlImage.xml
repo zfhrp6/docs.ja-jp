@@ -1,0 +1,405 @@
+<Type Name="HtmlImage" FullName="System.Web.UI.HtmlControls.HtmlImage">
+  <TypeSignature Language="C#" Value="public class HtmlImage : System.Web.UI.HtmlControls.HtmlControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HtmlImage extends System.Web.UI.HtmlControls.HtmlControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.HtmlControls.HtmlImage" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.HtmlControls.HtmlControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.UI.ControlBuilder(typeof(System.Web.UI.HtmlControls.HtmlEmptyTagControlBuilder))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>HTML のプログラムによるアクセスを提供<see langword="&lt;img&gt;" />サーバー上の要素。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web ページのイメージを表示するのにには、このコントロールを使用します。 <xref:System.Web.UI.HtmlControls.HtmlImage>コントロールで表示されるイメージ、イメージのサイズと他のページ要素の基準としたイメージの配置を変更するプログラムで操作できます。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.Web.UI.HtmlControls.HtmlImage>を参照してください、<xref:System.Web.UI.HtmlControls.HtmlImage.%23ctor%2A>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、プログラムでのプロパティを変更する方法を示します、<xref:System.Web.UI.HtmlControls.HtmlImage>タイミングを制御、<xref:System.Web.UI.HtmlControls.HtmlButton>をクリックします。  
+  
+ [!code-aspx-csharp[Classic HtmlImage Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HtmlImage Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic HtmlImage Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HtmlImage Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HtmlImage ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlImage.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.HtmlControls.HtmlImage" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.HtmlControls.HtmlImage>クラスです。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.HtmlControls.HtmlImage>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.HtmlControls.HtmlControl.TagName%2A>|"Img"リテラル文字列です。|  
+  
+   
+  
+## Examples  
+ 次のコード例は、作成しの新しいインスタンスを初期化する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlImage>コントロール。  
+  
+ [!code-aspx-csharp[HtmlImageCtor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlImageCtor/CS/htmlimagectorcs.aspx#1)]
+ [!code-aspx-vb[HtmlImageCtor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlImageCtor/VB/htmlimagectorvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Align">
+      <MemberSignature Language="C#" Value="public string Align { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Align" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlImage.Align" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはその他の Web ページの要素を基準としたイメージの配置を設定します。</summary>
+        <value>その他の Web ページの要素を基準としたイメージの配置を指定する文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、Web ページ上の他の要素に対して、画像の配置を指定します。  
+  
+ 次の表では、使用可能な値を表します。  
+  
+|値|説明|  
+|-----------|-----------------|  
+|left|Web ページの左側にあるイメージを配置します。|  
+|センター|イメージは、Web ページの中央に揃えられます。|  
+|右|Web ページの右側にあるイメージを配置します。|  
+|[top]|Web ページの他の要素は、イメージの上位の端に揃えられます。|  
+|中間|Web ページの他の要素は、イメージの中央に揃えて配置されます。|  
+|下|Web ページの他の要素は、イメージの下端に揃えられます。|  
+  
+> [!NOTE]
+>  中央の値は、すべてのブラウザーで動かないことがあります。 画像を中央にラップ、<xref:System.Web.UI.HtmlControls.HtmlImage>が含まれている段落タグ内のコントロール、`align`属性に設定`"center"`(`<p align= "center">`)。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Web.UI.HtmlControls.HtmlImage.Align%2A> Web ページで、イメージの配置を指定するプロパティです。  
+  
+ [!code-aspx-csharp[Classic HtmlImage.Align Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HtmlImage.Align Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic HtmlImage.Align Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HtmlImage.Align Example/VB/sourcevb.aspx#1)]  
+  
+ 次のコード例では、ラップすることによって、Web ページ上の画像を中央揃え、<xref:System.Web.UI.HtmlControls.HtmlImage>段落タグ内のコントロール、`align`属性に設定`"center"`です。  
+  
+ [!code-aspx-csharp[Classic HtmlImage.Align Example#2](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HtmlImage.Align Example/CS/source2cs.aspx#2)]
+ [!code-aspx-vb[Classic HtmlImage.Align Example#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HtmlImage.Align Example/VB/source2vb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Alt">
+      <MemberSignature Language="C#" Value="public string Alt { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Alt" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlImage.Alt" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイメージが選択できず、またはダウンロード中、まだ終わっていない場合、ブラウザーが表示する代替のキャプションを設定します。</summary>
+        <value>イメージが利用できない場合に使用するブラウザーの代替のキャプションを表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを指定して、イメージが指定した場合に表示されるキャプションを使用して、<xref:System.Web.UI.HtmlControls.HtmlImage.Src%2A>プロパティは使用できません。 新しいバージョンのブラウザーでこのキャプションはツールヒントとしても表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlImage.Alt%2A>でイメージが指定されたときに表示されるキャプションを指定するプロパティ、<xref:System.Web.UI.HtmlControls.HtmlImage.Src%2A>プロパティは使用できません。  
+  
+ [!code-aspx-csharp[Classic HtmlImage.Border Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HtmlImage.Border Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic HtmlImage.Border Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HtmlImage.Border Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Border">
+      <MemberSignature Language="C#" Value="public int Border { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Border" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlImage.Border" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイメージのフレームの幅を設定します。</summary>
+        <value>イメージのフレームの幅をピクセル単位で。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用すると、画像のピクセル単位で指定した幅でフレームを作成できます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlImage.Border%2A>を 5 ピクセル幅でフレームを指定するプロパティ、<xref:System.Web.UI.HtmlControls.HtmlImage>コントロール。  
+  
+ [!code-aspx-csharp[Classic HtmlImage.Border Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HtmlImage.Border Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic HtmlImage.Border Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HtmlImage.Border Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Height">
+      <MemberSignature Language="C#" Value="public int Height { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Height" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlImage.Height" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(100)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または画像の高さを設定します。</summary>
+        <value>イメージの高さ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlImage.Height%2A>と<xref:System.Web.UI.HtmlControls.HtmlImage.Width%2A>プロパティには 2 つの方法を使用できます。 使用することができます、<xref:System.Web.UI.HtmlControls.HtmlImage.Height%2A>と<xref:System.Web.UI.HtmlControls.HtmlImage.Width%2A>イメージ サイズの仕様をブラウザーに送信するプロパティです。 これは、ページが表示されます、Web 高速化、ブラウザーがイメージを読み込むときに、ページ上の要素の位置を再計算する必要がないためです。  
+  
+ 使用することも、<xref:System.Web.UI.HtmlControls.HtmlImage.Height%2A>と<xref:System.Web.UI.HtmlControls.HtmlImage.Width%2A>イメージをスケーリングするプロパティです。 イメージの物理サイズと異なる値を使用する場合、イメージのサイズが適宜です。 ただし、ページの表示に時間がかかるため、イメージを拡張するためには、このメソッドは推奨されません。 代わりに、物理的に必要なサイズに画像のサイズ変更します。  
+  
+ 既定では、<xref:System.Web.UI.HtmlControls.HtmlImage.Height%2A>プロパティはピクセル単位で表されますが、ウィンドウのサイズに占める割合として表現することもできます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlImage.Height%2A>プロパティをプログラムによって表示されるイメージの高さを変更します。  
+  
+ [!code-aspx-csharp[Classic HtmlImage.Height Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HtmlImage.Height Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic HtmlImage.Height Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HtmlImage.Height Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderAttributes">
+      <MemberSignature Language="C#" Value="protected override void RenderAttributes (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void RenderAttributes(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlImage.RenderAttributes(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />クライアントで表示する出力ストリームを格納しています。</param>
+        <summary><see cref="T:System.Web.UI.HtmlControls.HtmlImage" /> コントロールの属性を指定した <see cref="T:System.Web.UI.HtmlTextWriter" /> オブジェクトにレンダリングします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合の値、<xref:System.Web.UI.HtmlControls.HtmlImage.Src%2A>プロパティが正しくない形式の URL、<xref:System.Web.UI.HtmlControls.HtmlImage.RenderAttributes%2A>メソッドがスローされます、<xref:System.Web.HttpException>例外。  
+  
+ <xref:System.Web.UI.HtmlControls.HtmlImage.RenderAttributes%2A>メソッドは、基本クラスの<xref:System.Web.UI.HtmlControls.HtmlImage.RenderAttributes%2A>書き込みます、 `src` 、レンダリングの属性<xref:System.Web.UI.HtmlControls.HtmlImage>コントロール。  
+  
+ <xref:System.Web.UI.HtmlControls.HtmlImage.RenderAttributes%2A>メソッドが、主の機能を拡張するコントロールの開発者によって使用される、<xref:System.Web.UI.HtmlControls.HtmlImage>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlImage.RenderAttributes%2A>と共に、ツールヒントとしてアクセスできるように、特定の代替テキストが表示されるようにカスタム サーバー内のメソッドが制御、<xref:System.Web.UI.HtmlControls.HtmlImage>コントロール。  
+  
+ [!code-aspx-csharp[CustomHtmlImageRenderAttributes#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomHtmlImageRenderAttributes/CS/custom_htmlimage_renderattributescs.aspx#1)]
+ [!code-aspx-vb[CustomHtmlImageRenderAttributes#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomHtmlImageRenderAttributes/VB/custom_htmlimage_renderattributesvb.aspx#1)]  
+  
+ [!code-csharp[CustomHtmlImageRenderAttributes#2](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomHtmlImageRenderAttributes/CS/custom_htmlimage_renderattributes.cs#2)]
+ [!code-vb[CustomHtmlImageRenderAttributes#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomHtmlImageRenderAttributes/VB/custom_htmlimage_renderattributes.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException"><see cref="P:System.Web.UI.HtmlControls.HtmlImage.Src" />プロパティには、間違った形式の URL が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Src">
+      <MemberSignature Language="C#" Value="public string Src { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Src" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlImage.Src" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または表示するイメージ ファイルのソースを設定します。</summary>
+        <value>表示するイメージ ファイルへのパスを含む文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用すると、表示するのにイメージ ファイルへのパスを指定できます。 イメージ ファイルがそれを使用する Web ページのソース ファイルと同じディレクトリ内にある場合は、単にファイル名を指定できます。 それ以外の場合、ファイルへのパスも含める必要があります。 パスは絶対パスまたは Web ページのソース ファイルが含まれるディレクトリに対して相対的にできます。 相対パスを使用することができます" `~/` "ページが配置されている現在の仮想ディレクトリを参照します。 値など、<xref:System.Web.UI.HtmlControls.HtmlImage.Src%2A>の`<img runat="server" src="~/abc/d.gif">`仮想ディレクトリは、ページ上で"XspTest"`<img src="/XspText/abc/d.gif">`です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Web.UI.HtmlControls.HtmlImage.Src%2A> Web ページのソース ファイルと同じディレクトリに表示するイメージ ファイルを指定するプロパティです。  
+  
+ [!code-aspx-csharp[Classic HtmlImage.Src Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HtmlImage.Src Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic HtmlImage.Src Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HtmlImage.Src Example/VB/sourcevb.aspx#1)]  
+  
+ 次のコード例を使用する方法を示しています、 <xref:System.Web.UI.HtmlControls.HtmlImage.Src%2A> Web ページのソース ファイルから別のディレクトリに表示するイメージ ファイルを指定するプロパティです。  
+  
+ [!code-aspx-csharp[Classic HtmlImage.Src Example#2](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HtmlImage.Src Example/CS/source2cs.aspx#2)]
+ [!code-aspx-vb[Classic HtmlImage.Src Example#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HtmlImage.Src Example/VB/source2vb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Width">
+      <MemberSignature Language="C#" Value="public int Width { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Width" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlImage.Width" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(100)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または画像の幅を設定します。</summary>
+        <value>イメージの幅。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlImage.Height%2A>と<xref:System.Web.UI.HtmlControls.HtmlImage.Width%2A>プロパティには 2 つの方法を使用できます。 使用することができます、<xref:System.Web.UI.HtmlControls.HtmlImage.Height%2A>と<xref:System.Web.UI.HtmlControls.HtmlImage.Width%2A>イメージのサイズの仕様をブラウザーに送信するプロパティです。 これは、ページが表示されます、Web 高速化、ブラウザーがイメージを読み込むときに、ページ上の要素の位置を再計算する必要がないためです。  
+  
+ 使用することも、<xref:System.Web.UI.HtmlControls.HtmlImage.Height%2A>と<xref:System.Web.UI.HtmlControls.HtmlImage.Width%2A>イメージをスケーリングするプロパティです。 イメージの物理サイズとは異なる値を使用する場合、イメージのサイズが適宜です。 ただし、ページの表示に時間がかかるため、イメージを拡張するためには、このメソッドは推奨されません。 代わりに、物理的に必要なサイズに画像のサイズ変更します。  
+  
+ 既定では、<xref:System.Web.UI.HtmlControls.HtmlImage.Width%2A>プロパティはピクセル単位で表されますが、ウィンドウ サイズに占める割合として表現することもできます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlImage.Width%2A>プロパティをプログラムによって表示されるイメージの幅を変更します。  
+  
+ [!code-aspx-csharp[Classic HtmlImage.Height Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HtmlImage.Height Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic HtmlImage.Height Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HtmlImage.Height Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

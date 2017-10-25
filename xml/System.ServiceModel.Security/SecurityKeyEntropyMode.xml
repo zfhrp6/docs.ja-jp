@@ -1,0 +1,73 @@
+<Type Name="SecurityKeyEntropyMode" FullName="System.ServiceModel.Security.SecurityKeyEntropyMode">
+  <TypeSignature Language="C#" Value="public enum SecurityKeyEntropyMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SecurityKeyEntropyMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Security.SecurityKeyEntropyMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>キーの生成に使用されるエントロピのソースを示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このモードは、クライアントとサーバーが、サーバーによって発行されるトークンに使用する共有対称キーを計算する方法を示します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ClientEntropy">
+      <MemberSignature Language="C#" Value="ClientEntropy" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Security.SecurityKeyEntropyMode ClientEntropy = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Security.SecurityKeyEntropyMode.ClientEntropy" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.SecurityKeyEntropyMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントが、発行されるトークンに使用されるキーを提供します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CombinedEntropy">
+      <MemberSignature Language="C#" Value="CombinedEntropy" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Security.SecurityKeyEntropyMode CombinedEntropy = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Security.SecurityKeyEntropyMode.CombinedEntropy" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.SecurityKeyEntropyMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントとサーバーの両方が、発行されるトークンのキーを派生させるための P-SHA1 関数を使用して組み合わせたエントロピを提供します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ServerEntropy">
+      <MemberSignature Language="C#" Value="ServerEntropy" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Security.SecurityKeyEntropyMode ServerEntropy = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Security.SecurityKeyEntropyMode.ServerEntropy" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.SecurityKeyEntropyMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーが、発行されるトークンのキーを提供します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

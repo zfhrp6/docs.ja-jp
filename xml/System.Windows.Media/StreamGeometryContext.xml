@@ -1,0 +1,439 @@
+<Type Name="StreamGeometryContext" FullName="System.Windows.Media.StreamGeometryContext">
+  <TypeSignature Language="C#" Value="public abstract class StreamGeometryContext : System.Windows.Threading.DispatcherObject, IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit StreamGeometryContext extends System.Windows.Threading.DispatcherObject implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.StreamGeometryContext" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Threading.DispatcherObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>描画コマンドを使用してジオメトリを記述します。 このクラスが使用されて、<see cref="T:System.Windows.Media.StreamGeometry" />データ バインディング、アニメーション、または変更をサポートしない軽量のジオメトリを作成するクラス。</summary>
+    <remarks>To be added.</remarks>
+    <exception cref="T:System.InvalidOperationException">呼び出して図を開始せずにセグメントを追加しようとしましたが、<see cref="M:System.Windows.Media.StreamGeometryContext.BeginFigure(System.Windows.Point,System.Boolean,System.Boolean)" />メソッドです。</exception>
+  </Docs>
+  <Members>
+    <Member MemberName="ArcTo">
+      <MemberSignature Language="C#" Value="public abstract void ArcTo (System.Windows.Point point, System.Windows.Size size, double rotationAngle, bool isLargeArc, System.Windows.Media.SweepDirection sweepDirection, bool isStroked, bool isSmoothJoin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ArcTo(valuetype System.Windows.Point point, valuetype System.Windows.Size size, float64 rotationAngle, bool isLargeArc, valuetype System.Windows.Media.SweepDirection sweepDirection, bool isStroked, bool isSmoothJoin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.StreamGeometryContext.ArcTo(System.Windows.Point,System.Windows.Size,System.Double,System.Boolean,System.Windows.Media.SweepDirection,System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Windows.Point" />
+        <Parameter Name="size" Type="System.Windows.Size" />
+        <Parameter Name="rotationAngle" Type="System.Double" />
+        <Parameter Name="isLargeArc" Type="System.Boolean" />
+        <Parameter Name="sweepDirection" Type="System.Windows.Media.SweepDirection" />
+        <Parameter Name="isStroked" Type="System.Boolean" />
+        <Parameter Name="isSmoothJoin" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="point">円弧の最後の終点。</param>
+        <param name="size">角度を描画するの境界が使用される楕円の半径 (半分の幅と高さの半分)。 楕円が非常にすべての方向に丸められた場合は、円弧は丸められます、ほぼフラットである場合は円弧になります。たとえばとなる若干曲率角度に非常に大きな楕円は、非常に大きな幅と高さには表現です。</param>
+        <param name="rotationAngle">楕円曲線を指定するの回転角度。 このパラメーターでは、円弧の曲率を回転することができます。</param>
+        <param name="isLargeArc">
+          <see langword="true" />180 度より大きい円弧を描画するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="sweepDirection">円弧が描画されるかどうかを示す値、<see cref="F:System.Windows.Media.SweepDirection.Clockwise" />または<see cref="F:System.Windows.Media.SweepDirection.Counterclockwise" />方向です。</param>
+        <param name="isStroked">
+          <see langword="true" />セグメントに描画時に、<see cref="T:System.Windows.Media.Pen" />がセグメントを表示するために使用されます。 それ以外の場合、<see langword="false" />です。</param>
+        <param name="isSmoothJoin">
+          <see langword="true" />このセグメントと前のセグメント間の結合と見なすコーナー線に適用したときに、 <see cref="T:System.Windows.Media.Pen" />、それ以外の<see langword="false" />します。</param>
+        <summary>指定したポイントに円弧を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、開始点として、前のセグメントの終了点を使用します。 指定された地点を使用してこれは、図の最初のセグメントである場合、<xref:System.Windows.Media.StreamGeometryContext.BeginFigure%2A>メソッドの開始ポイントとして。  
+  
+ A<xref:System.Windows.Media.StreamGeometry>が含まれている場合、シリアル化することはできません、<xref:System.Windows.Media.Transform>またはいずれかの非線またはセグメントを解除します。  
+  
+   
+  
+## Examples  
+ 次の例を使用して、円弧を描画する方法を示しています、<xref:System.Windows.Media.StreamGeometryContext.ArcTo%2A>メソッドです。  
+  
+ [!code-csharp[GeometriesMiscSnippets_procedural_snip#StreamGeometryArcToExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometriesMiscSnippets_procedural_snip/CSharp/StreamGeometryArcToExample.cs#streamgeometryarctoexamplewholepage)]
+ [!code-vb[GeometriesMiscSnippets_procedural_snip#StreamGeometryArcToExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GeometriesMiscSnippets_procedural_snip/visualbasic/streamgeometryarctoexample.vb#streamgeometryarctoexamplewholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginFigure">
+      <MemberSignature Language="C#" Value="public abstract void BeginFigure (System.Windows.Point startPoint, bool isFilled, bool isClosed);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void BeginFigure(valuetype System.Windows.Point startPoint, bool isFilled, bool isClosed) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.StreamGeometryContext.BeginFigure(System.Windows.Point,System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="startPoint" Type="System.Windows.Point" />
+        <Parameter Name="isFilled" Type="System.Boolean" />
+        <Parameter Name="isClosed" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="startPoint">図形が開始される <see cref="T:System.Windows.Point" />。</param>
+        <param name="isFilled">
+          <see langword="true" />この図形は、ヒット テスト、レンダリング、およびクリッピングに含まれる領域を使用するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="isClosed">
+          図形を閉じる場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 たとえば、次の 2 つの接続線が描画されると、および<c>isClosed</c>に設定されている<see langword="false" />、描画は 2 つの行が、単なる<c>isClosed</c>に設定されている<see langword="true" />、2 本の線が閉じて三角形を作成します。</param>
+        <summary>新しい図形の始点を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出して複数回、内で複数の図形 (自己完結型の幾何学図形) を作成することができます<xref:System.Windows.Media.StreamGeometryContext>です。  
+  
+ A<xref:System.Windows.Media.StreamGeometry>が含まれている場合、シリアル化することはできません、<xref:System.Windows.Media.Transform>またはいずれかの非線またはセグメントを解除します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BezierTo">
+      <MemberSignature Language="C#" Value="public abstract void BezierTo (System.Windows.Point point1, System.Windows.Point point2, System.Windows.Point point3, bool isStroked, bool isSmoothJoin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void BezierTo(valuetype System.Windows.Point point1, valuetype System.Windows.Point point2, valuetype System.Windows.Point point3, bool isStroked, bool isSmoothJoin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.StreamGeometryContext.BezierTo(System.Windows.Point,System.Windows.Point,System.Windows.Point,System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point1" Type="System.Windows.Point" />
+        <Parameter Name="point2" Type="System.Windows.Point" />
+        <Parameter Name="point3" Type="System.Windows.Point" />
+        <Parameter Name="isStroked" Type="System.Boolean" />
+        <Parameter Name="isSmoothJoin" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="point1">曲線の形状を指定するために使用する最初の制御点。</param>
+        <param name="point2">曲線の形状を指定するために使用する 2 番目の制御点。</param>
+        <param name="point3">曲線の終了の終点。</param>
+        <param name="isStroked">
+          <see langword="true" />セグメントに描画時に、<see cref="T:System.Windows.Media.Pen" />がセグメントを表示するために使用されます。 それ以外の場合、<see langword="false" />です。</param>
+        <param name="isSmoothJoin">
+          <see langword="true" />このセグメントと前のセグメント間の結合と見なすコーナー線に適用したときに、 <see cref="T:System.Windows.Media.Pen" />、それ以外の<see langword="false" />します。</param>
+        <summary>指定したポイントをベジエ曲線を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 3 次ベジエ曲線は、始点、終点、および 2 つの制御点によって定義されます。 最初の制御点は、セグメントの前半の曲率を決定し、2 番目の制御点は、セグメントの後半を 2 番目の曲率を決定します。  
+  
+ このメソッドは、開始点として、前のセグメントの終了点を使用します。 指定された地点を使用してこれは、図の最初のセグメントである場合、<xref:System.Windows.Media.StreamGeometryContext.BeginFigure%2A>メソッドの開始ポイントとして。  
+  
+ A<xref:System.Windows.Media.StreamGeometry>が含まれている場合、シリアル化することはできません、<xref:System.Windows.Media.Transform>またはいずれかの非線またはセグメントを解除します。  
+  
+   
+  
+## Examples  
+ 次の例を使用してベジエ曲線を描画する方法を示しています、<xref:System.Windows.Media.StreamGeometryContext.BezierTo%2A>メソッドです。  
+  
+ [!code-csharp[GeometriesMiscSnippets_procedural_snip#StreamGeometryBezierToExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometriesMiscSnippets_procedural_snip/CSharp/StreamGeometryBezierToExample.cs#streamgeometrybeziertoexamplewholepage)]
+ [!code-vb[GeometriesMiscSnippets_procedural_snip#StreamGeometryBezierToExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GeometriesMiscSnippets_procedural_snip/visualbasic/streamgeometrybeziertoexample.vb#streamgeometrybeziertoexamplewholepage)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">呼び出して図を開始せずにセグメントを追加しようとしましたが、<see cref="M:System.Windows.Media.StreamGeometryContext.BeginFigure(System.Windows.Point,System.Boolean,System.Boolean)" />メソッドです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public virtual void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.StreamGeometryContext.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このコンテキストを終了し、表示できるように、そのコンテンツをフラッシュします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 閉じられた後は、コンテキストを変更できません。 コンテキストは、その内容を表示する前に閉じる必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">このコンテキストは既に終了または破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LineTo">
+      <MemberSignature Language="C#" Value="public abstract void LineTo (System.Windows.Point point, bool isStroked, bool isSmoothJoin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void LineTo(valuetype System.Windows.Point point, bool isStroked, bool isSmoothJoin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.StreamGeometryContext.LineTo(System.Windows.Point,System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Windows.Point" />
+        <Parameter Name="isStroked" Type="System.Boolean" />
+        <Parameter Name="isSmoothJoin" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="point">行の最後の終点。</param>
+        <param name="isStroked">
+          <see langword="true" />セグメントに描画時に、<see cref="T:System.Windows.Media.Pen" />がセグメントを表示するために使用されます。 それ以外の場合、<see langword="false" />です。</param>
+        <param name="isSmoothJoin">
+          <see langword="true" />このセグメントと前のセグメント間の結合と見なすコーナー線に適用したときに、 <see cref="T:System.Windows.Media.Pen" />、それ以外の<see langword="false" />します。</param>
+        <summary>指定した直線を描画<see cref="T:System.Windows.Point" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、開始点として、前のセグメントの終了点を使用します。 指定された地点を使用してこれは、図の最初のセグメントである場合、<xref:System.Windows.Media.StreamGeometryContext.BeginFigure%2A>メソッドの開始ポイントとして。  
+  
+ A<xref:System.Windows.Media.StreamGeometry>が含まれている場合、シリアル化することはできません、<xref:System.Windows.Media.Transform>またはいずれかの非線またはセグメントを解除します。  
+  
+   
+  
+## Examples  
+ 次の例を使用して三角形を描画する方法を示しています、<xref:System.Windows.Media.StreamGeometryContext.LineTo%2A>メソッドです。  
+  
+ [!code-csharp[GeometriesMiscSnippets_procedural_snip#StreamGeometryTriangleExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometriesMiscSnippets_procedural_snip/CSharp/StreamGeometryTriangleExample.cs#streamgeometrytriangleexamplewholepage)]
+ [!code-vb[GeometriesMiscSnippets_procedural_snip#StreamGeometryTriangleExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GeometriesMiscSnippets_procedural_snip/visualbasic/streamgeometrytriangleexample.vb#streamgeometrytriangleexamplewholepage)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">呼び出して図を開始せずにセグメントを追加しようとしましたが、<see cref="M:System.Windows.Media.StreamGeometryContext.BeginFigure(System.Windows.Point,System.Boolean,System.Boolean)" />メソッドです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PolyBezierTo">
+      <MemberSignature Language="C#" Value="public abstract void PolyBezierTo (System.Collections.Generic.IList&lt;System.Windows.Point&gt; points, bool isStroked, bool isSmoothJoin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void PolyBezierTo(class System.Collections.Generic.IList`1&lt;valuetype System.Windows.Point&gt; points, bool isStroked, bool isSmoothJoin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.StreamGeometryContext.PolyBezierTo(System.Collections.Generic.IList{System.Windows.Point},System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="points" Type="System.Collections.Generic.IList&lt;System.Windows.Point&gt;" />
+        <Parameter Name="isStroked" Type="System.Boolean" />
+        <Parameter Name="isSmoothJoin" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="points">管理ポイントと 1 つまたは複数のベジエ曲線の終点を指定する点の一覧。 このリスト内のポイントの数は 3 つの倍数である必要があります。</param>
+        <param name="isStroked">
+          <see langword="true" />セグメントに描画時に、<see cref="T:System.Windows.Media.Pen" />がセグメントを表示するために使用されます。 それ以外の場合、<see langword="false" />です。</param>
+        <param name="isSmoothJoin">
+          <see langword="true" />このセグメントと前のセグメント間の結合と見なすコーナー線に適用したときに、 <see cref="T:System.Windows.Media.Pen" />、それ以外の<see langword="false" />します。</param>
+        <summary>ベジエ曲線の接続された 1 つまたは複数の描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最初のポイント`points`最初の制御点を指定します。 次は、2 番目の制御点を指定、3 番目のポイントを終了位置を指定します、次の点を次の曲線の最初の制御点を指定します。  
+  
+ このメソッドは、開始点として、前のセグメントの終了点を使用します。 指定された地点を使用してこれは、図の最初のセグメントである場合、<xref:System.Windows.Media.StreamGeometryContext.BeginFigure%2A>メソッドの開始ポイントとして。  
+  
+ A<xref:System.Windows.Media.StreamGeometry>が含まれている場合、シリアル化することはできません、<xref:System.Windows.Media.Transform>またはいずれかの非線またはセグメントを解除します。  
+  
+   
+  
+## Examples  
+ 次の例を使用して、接続されている複数のベジエ曲線を描画する方法を示しています、<xref:System.Windows.Media.StreamGeometryContext.PolyBezierTo%2A>メソッドです。  
+  
+ [!code-csharp[GeometriesMiscSnippets_procedural_snip#StreamGeometryPolyBezierToExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometriesMiscSnippets_procedural_snip/CSharp/StreamGeometryPolyBezierToExample.cs#streamgeometrypolybeziertoexamplewholepage)]
+ [!code-vb[GeometriesMiscSnippets_procedural_snip#StreamGeometryPolyBezierToExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GeometriesMiscSnippets_procedural_snip/visualbasic/streamgeometrypolybeziertoexample.vb#streamgeometrypolybeziertoexamplewholepage)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">呼び出して図を開始せずにセグメントを追加しようとしましたが、<see cref="M:System.Windows.Media.StreamGeometryContext.BeginFigure(System.Windows.Point,System.Boolean,System.Boolean)" />メソッドです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PolyLineTo">
+      <MemberSignature Language="C#" Value="public abstract void PolyLineTo (System.Collections.Generic.IList&lt;System.Windows.Point&gt; points, bool isStroked, bool isSmoothJoin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void PolyLineTo(class System.Collections.Generic.IList`1&lt;valuetype System.Windows.Point&gt; points, bool isStroked, bool isSmoothJoin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.StreamGeometryContext.PolyLineTo(System.Collections.Generic.IList{System.Windows.Point},System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="points" Type="System.Collections.Generic.IList&lt;System.Windows.Point&gt;" />
+        <Parameter Name="isStroked" Type="System.Boolean" />
+        <Parameter Name="isSmoothJoin" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="points">1 つまたは複数のターゲット ポイントを指定する点のコレクションでは、直線を接続します。</param>
+        <param name="isStroked">
+          <see langword="true" />セグメントに描画時に、<see cref="T:System.Windows.Media.Pen" />がセグメントを表示するために使用されます。 それ以外の場合、<see langword="false" />です。</param>
+        <param name="isSmoothJoin">
+          <see langword="true" />このセグメントと前のセグメント間の結合と見なすコーナー線に適用したときに、 <see cref="T:System.Windows.Media.Pen" />、それ以外の<see langword="false" />します。</param>
+        <summary>直線の接続された 1 つまたは複数の描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、開始点として、前のセグメントの終了点を使用します。 指定された地点を使用してこれは、図の最初のセグメントである場合、<xref:System.Windows.Media.StreamGeometryContext.BeginFigure%2A>メソッドの開始ポイントとして。  
+  
+ A<xref:System.Windows.Media.StreamGeometry>が含まれている場合、シリアル化することはできません、<xref:System.Windows.Media.Transform>またはいずれかの非線またはセグメントを解除します。  
+  
+   
+  
+## Examples  
+ 次の例を使用して三角形を描画する方法を示しています、<xref:System.Windows.Media.StreamGeometryContext.PolyLineTo%2A>メソッドです。  
+  
+ [!code-csharp[GeometriesMiscSnippets_procedural_snip#StreamGeometryPolyLineToExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometriesMiscSnippets_procedural_snip/CSharp/StreamGeometryPolyLineToExample.cs#streamgeometrypolylinetoexamplewholepage)]
+ [!code-vb[GeometriesMiscSnippets_procedural_snip#StreamGeometryPolyLineToExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GeometriesMiscSnippets_procedural_snip/visualbasic/streamgeometrypolylinetoexample.vb#streamgeometrypolylinetoexamplewholepage)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">呼び出して図を開始せずにセグメントを追加しようとしましたが、<see cref="M:System.Windows.Media.StreamGeometryContext.BeginFigure(System.Windows.Point,System.Boolean,System.Boolean)" />メソッドです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PolyQuadraticBezierTo">
+      <MemberSignature Language="C#" Value="public abstract void PolyQuadraticBezierTo (System.Collections.Generic.IList&lt;System.Windows.Point&gt; points, bool isStroked, bool isSmoothJoin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void PolyQuadraticBezierTo(class System.Collections.Generic.IList`1&lt;valuetype System.Windows.Point&gt; points, bool isStroked, bool isSmoothJoin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.StreamGeometryContext.PolyQuadraticBezierTo(System.Collections.Generic.IList{System.Windows.Point},System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="points" Type="System.Collections.Generic.IList&lt;System.Windows.Point&gt;" />
+        <Parameter Name="isStroked" Type="System.Boolean" />
+        <Parameter Name="isSmoothJoin" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="points">管理ポイントと 1 つまたは複数の 2 次ベジエ曲線の終点を指定する点のコレクションです。 一覧の最初のポイントを曲線の制御点を指定します、次の点をコピー先のポイントを指定します、次の点と、[次へ] の曲線コントロール ポイントを指定します。 一覧には、偶数個のポイントを含める必要があります。</param>
+        <param name="isStroked">
+          <see langword="true" />セグメントに描画時に、<see cref="T:System.Windows.Media.Pen" />がセグメントを表示するために使用されます。 それ以外の場合、<see langword="false" />です。</param>
+        <param name="isSmoothJoin">
+          <see langword="true" />このセグメントと前のセグメント間の結合と見なすコーナー線に適用したときに、 <see cref="T:System.Windows.Media.Pen" />、それ以外の<see langword="false" />します。</param>
+        <summary>1 つまたは複数の描画には、2 次ベジエ曲線が接続されています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、開始点として、前のセグメントの終了点を使用します。 指定された地点を使用してこれは、図の最初のセグメントである場合、<xref:System.Windows.Media.StreamGeometryContext.BeginFigure%2A>メソッドの開始ポイントとして。  
+  
+ A<xref:System.Windows.Media.StreamGeometry>が含まれている場合、シリアル化することはできません、<xref:System.Windows.Media.Transform>またはいずれかの非線またはセグメントを解除します。  
+  
+   
+  
+## Examples  
+ 次の例は、複数接続されている 2 次ベジエ曲線を使用して描画する方法を示しています、<xref:System.Windows.Media.StreamGeometryContext.PolyQuadraticBezierTo%2A>メソッドです。  
+  
+ [!code-csharp[GeometriesMiscSnippets_procedural_snip#StreamGeometryPolyQuadraticBezierToExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometriesMiscSnippets_procedural_snip/CSharp/StreamGeometryPolyQuadraticBezierToExample.cs#streamgeometrypolyquadraticbeziertoexamplewholepage)]
+ [!code-vb[GeometriesMiscSnippets_procedural_snip#StreamGeometryPolyQuadraticBezierToExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GeometriesMiscSnippets_procedural_snip/visualbasic/streamgeometrypolyquadraticbeziertoexample.vb#streamgeometrypolyquadraticbeziertoexamplewholepage)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">呼び出して図を開始せずにセグメントを追加しようとしましたが、<see cref="M:System.Windows.Media.StreamGeometryContext.BeginFigure(System.Windows.Point,System.Boolean,System.Boolean)" />メソッドです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="QuadraticBezierTo">
+      <MemberSignature Language="C#" Value="public abstract void QuadraticBezierTo (System.Windows.Point point1, System.Windows.Point point2, bool isStroked, bool isSmoothJoin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void QuadraticBezierTo(valuetype System.Windows.Point point1, valuetype System.Windows.Point point2, bool isStroked, bool isSmoothJoin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.StreamGeometryContext.QuadraticBezierTo(System.Windows.Point,System.Windows.Point,System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point1" Type="System.Windows.Point" />
+        <Parameter Name="point2" Type="System.Windows.Point" />
+        <Parameter Name="isStroked" Type="System.Boolean" />
+        <Parameter Name="isSmoothJoin" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="point1">曲線の形状を指定するために使用の制御点。</param>
+        <param name="point2">曲線の終了の終点。</param>
+        <param name="isStroked">
+          <see langword="true" />セグメントに描画時に、<see cref="T:System.Windows.Media.Pen" />がセグメントを表示するために使用されます。 それ以外の場合、<see langword="false" />です。</param>
+        <param name="isSmoothJoin">
+          <see langword="true" />このセグメントと前のセグメント間の結合と見なすコーナー線に適用したときに、 <see cref="T:System.Windows.Media.Pen" />、それ以外の<see langword="false" />します。</param>
+        <summary>2 次ベジエ曲線を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つのコントロール ポイントを使用して、3 次ベジエ曲線とは異なりは、2 次ベジエ曲線は、1 つのコントロール ポイントを使用します。  
+  
+ このメソッドは、開始点として、前のセグメントの終了点を使用します。 指定された地点を使用してこれは、図の最初のセグメントである場合、<xref:System.Windows.Media.StreamGeometryContext.BeginFigure%2A>メソッドの開始ポイントとして。  
+  
+ A<xref:System.Windows.Media.StreamGeometry>が含まれている場合、シリアル化することはできません、<xref:System.Windows.Media.Transform>またはいずれかの非線またはセグメントを解除します。  
+  
+   
+  
+## Examples  
+ 次の例は、2 次ベジエ曲線を使用して、描画する方法を示しています、<xref:System.Windows.Media.StreamGeometryContext.QuadraticBezierTo%2A>メソッドです。  
+  
+ [!code-csharp[GeometriesMiscSnippets_procedural_snip#StreamGeometryQuadraticBezierToExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometriesMiscSnippets_procedural_snip/CSharp/StreamGeometryQuadraticBezierToExample.cs#streamgeometryquadraticbeziertoexamplewholepage)]
+ [!code-vb[GeometriesMiscSnippets_procedural_snip#StreamGeometryQuadraticBezierToExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GeometriesMiscSnippets_procedural_snip/visualbasic/streamgeometryquadraticbeziertoexample.vb#streamgeometryquadraticbeziertoexamplewholepage)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">呼び出して図を開始せずにセグメントを追加しようとしましたが、<see cref="M:System.Windows.Media.StreamGeometryContext.BeginFigure(System.Windows.Point,System.Boolean,System.Boolean)" />メソッドです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IDisposable.Dispose">
+      <MemberSignature Language="C#" Value="void IDisposable.Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.IDisposable.Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.StreamGeometryContext.System#IDisposable#Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

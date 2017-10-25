@@ -1,0 +1,107 @@
+<Type Name="SendParametersContent" FullName="System.ServiceModel.Activities.SendParametersContent">
+  <TypeSignature Language="C#" Value="public sealed class SendParametersContent : System.ServiceModel.Activities.SendContent" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SendParametersContent extends System.ServiceModel.Activities.SendContent" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Activities.SendParametersContent" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Activities.SendContent</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Parameters")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ワークフロー サービスとの間でパラメーター形式のデータを送信できるようにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Activities.SendParametersContent> は、通常の [!INCLUDE[indigo2](~/includes/indigo2-md.md)] クライアントおよびサービスと相互運用できます。 <xref:System.ServiceModel.Activities.SendParametersContent>コレクションは c# メソッド シグネチャでの引数宣言に似ています。<xref:System.ServiceModel.Activities.SendParametersContent>コレクションは、メッセージ コントラクトである引数を含めることはできません、または型<xref:System.ServiceModel.Channels.Message>です。 これらのデータ型には、<xref:System.ServiceModel.Activities.SendMessageContent> を使用します。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Activities.SendParametersContent> クラスを使用する方法を示す例を次に示します。  
+  
+ [!code-csharp[SendReceiveParameters#2](~/samples/snippets/csharp/VS_Snippets_CFX/sendreceiveparameters/cs/echoworkflowservice/program.cs#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SendParametersContent ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activities.SendParametersContent.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Activities.SendParametersContent" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SendParametersContent (System.Collections.Generic.IDictionary&lt;string,System.Activities.InArgument&gt; parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IDictionary`2&lt;string, class System.Activities.InArgument&gt; parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activities.SendParametersContent.#ctor(System.Collections.Generic.IDictionary{System.String,System.Activities.InArgument})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="parameters" Type="System.Collections.Generic.IDictionary&lt;System.String,System.Activities.InArgument&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="parameters">パラメーター名を含むキーと引数を含む値で構成された、キーと値のペアのコレクション。</param>
+        <summary>指定したパラメーターを使用して、<see cref="T:System.ServiceModel.Activities.SendParametersContent" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、この <xref:System.ServiceModel.Activities.SendParametersContent> コンストラクターを使用する方法を示しています。  
+  
+ [!code-csharp[SendReceiveParameters#2](~/samples/snippets/csharp/VS_Snippets_CFX/sendreceiveparameters/cs/echoworkflowservice/program.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parameters">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,System.Activities.InArgument&gt; Parameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, class System.Activities.InArgument&gt; Parameters" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Activities.SendParametersContent.Parameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.Activities.InArgument&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー サービス操作のパラメーターを取得または設定します。</summary>
+        <value>パラメーター名を含むキーと引数を含む値で構成された、キーと値のペアの順序付けられたコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.ServiceModel.Activities.SendParametersContent.Parameters%2A> プロパティを設定する方法を次の例に示します。  
+  
+ [!code-csharp[SendReceiveParameters#2](~/samples/snippets/csharp/VS_Snippets_CFX/sendreceiveparameters/cs/echoworkflowservice/program.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

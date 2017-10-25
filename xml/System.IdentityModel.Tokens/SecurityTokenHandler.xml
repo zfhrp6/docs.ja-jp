@@ -1,0 +1,952 @@
+<Type Name="SecurityTokenHandler" FullName="System.IdentityModel.Tokens.SecurityTokenHandler">
+  <TypeSignature Language="C#" Value="public abstract class SecurityTokenHandler : System.IdentityModel.Configuration.ICustomIdentityConfiguration" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit SecurityTokenHandler extends System.Object implements class System.IdentityModel.Configuration.ICustomIdentityConfiguration" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.SecurityTokenHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IdentityModel.Configuration.ICustomIdentityConfiguration</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>セキュリティ トークン ハンドラーの抽象基本クラス。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SecurityTokenHandler>クラスは、すべてのセキュリティ トークン ハンドラーを派生させる基底クラスです。 セキュリティ トークン ハンドラーを。  
+  
+-   セキュリティ トークンを検証しています (<xref:System.IdentityModel.Tokens.SecurityToken>) プロセスとパッケージ化にトークンのクレームが含まれているものでは、型の<xref:System.Security.Claims.ClaimsIdentity>オブジェクト。  
+  
+-   シリアル化して、処理するものでは型のセキュリティ トークンを逆シリアル化します。  
+  
+-   シリアル化して、キー識別句を逆シリアル化 (<xref:System.IdentityModel.Tokens.SecurityKeyIdentifierClause>) との間に処理するものでは、型のトークンを参照する`<wsse:SecurityTokenReference>`要素。  
+  
+-   セキュリティ トークンの作成、<xref:System.IdentityModel.Tokens.SecurityTokenDescriptor>の実装によって渡されたオブジェクト、<xref:System.IdentityModel.SecurityTokenService>クラスです。  
+  
+-   実装のためのセキュリティ トークンからキー識別句を作成する、<xref:System.IdentityModel.SecurityTokenService>クラスです。  
+  
+ Windows Identity Foundation (WIF) では、すぐ次のセキュリティ トークン ハンドラーが付属します。  
+  
+-   <xref:System.IdentityModel.Tokens.EncryptedSecurityTokenHandler>  
+  
+-   <xref:System.IdentityModel.Tokens.KerberosSecurityTokenHandler>  
+  
+-   <xref:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler>  
+  
+-   <xref:System.IdentityModel.Services.Tokens.MembershipUserNameSecurityTokenHandler>  
+  
+-   <xref:System.IdentityModel.Tokens.RsaSecurityTokenHandler>  
+  
+-   <xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler>  
+  
+-   <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler>  
+  
+-   <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>  
+  
+-   <xref:System.IdentityModel.Tokens.UserNameSecurityTokenHandler>  
+  
+-   <xref:System.IdentityModel.Tokens.WindowsUserNameSecurityTokenHandler>  
+  
+-   <xref:System.IdentityModel.Tokens.X509SecurityTokenHandler>  
+  
+ これらのクラスのほとんどは、クラスがデザインされているトークンの処理に特有の機能を実装する追加のメンバーを公開します。 多くの場合で直接からではなく、これらのクラスのいずれかから派生する方がよい場合があります、<xref:System.IdentityModel.Tokens.SecurityTokenHandler>クラスです。  
+  
+ セキュリティ トークン ハンドラーを追加またはを指定して、トークン ハンドラー コレクションから削除することができます、 [&lt;追加&gt;](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/add.md)、 [&lt;削除&gt;](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/remove.md)、または[&lt;オフ&gt;](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/clear.md)の下の要素、 [ &lt;securityTokenHandlers&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlers.md)構成ファイル内の要素。 <xref:System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration>経由のハンドラー コレクションの構成設定を格納しているオブジェクトでアクセスできる、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.Configuration%2A>プロパティとメンバーであるトークン ハンドラーのハンドラー コレクションからアクセスできる、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.ContainingCollection%2A>プロパティです。 オーバーライドすることができます、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.LoadCustomConfiguration%2A>ハンドラーは、すべてのカスタム構成要素を処理するメソッド。  
+  
+ <xref:System.IdentityModel.Tokens.SecurityTokenHandler>クラスは他のいくつかのプロパティとメソッドを公開します。 実装する機能、に応じて、これらのメンバーの一部またはすべてを上書きする可能性があります。  
+  
+ オーバーライドする必要があります、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.TokenType%2A>プロパティおよび<xref:System.IdentityModel.Tokens.SecurityTokenHandler.GetTokenTypeIdentifiers%2A>を処理するクラスがセキュリティ トークンの種類に関する情報を WIF インフラストラクチャを提供するメソッドが設計されています。  
+  
+ 検証、シリアル化および逆シリアル化機能は、ハンドラーがまたは複数の機能を実装するメソッドと組み合わせて、特定の関数を実行できるかどうかを指定するプロパティまたはメソッドによって公開されます。 次の一覧は、プロパティまたはその機能を実装するメソッドでの機能を示すメソッドをペアします。  
+  
+-   <xref:System.IdentityModel.Tokens.SecurityTokenHandler.CanValidateToken%2A>プロパティおよび<xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken%2A>メソッド: トークンを検証し、パッケージ化にトークンに含まれる信頼性情報、<xref:System.Security.Claims.ClaimsIdentity>です。  
+  
+-   <xref:System.IdentityModel.Tokens.SecurityTokenHandler.CanWriteToken%2A>プロパティおよび<xref:System.IdentityModel.Tokens.SecurityTokenHandler.WriteToken%2A>メソッド: トークンのシリアル化します。  
+  
+-   <xref:System.IdentityModel.Tokens.SecurityTokenHandler.CanReadToken%2A>メソッドおよび<xref:System.IdentityModel.Tokens.SecurityTokenHandler.ReadToken%2A>メソッド: トークンの逆シリアル化します。  
+  
+-   <xref:System.IdentityModel.Tokens.SecurityTokenHandler.CanReadKeyIdentifierClause%2A>メソッドおよび<xref:System.IdentityModel.Tokens.SecurityTokenHandler.ReadKeyIdentifierClause%2A>メソッド: キー識別句を逆シリアル化します。  
+  
+-   <xref:System.IdentityModel.Tokens.SecurityTokenHandler.CanWriteKeyIdentifierClause%2A>メソッドおよび<xref:System.IdentityModel.Tokens.SecurityTokenHandler.WriteKeyIdentifierClause%2A>メソッド。 キー識別子句のシリアル化します。  
+  
+ <xref:System.IdentityModel.Tokens.SecurityTokenHandler.CreateToken%2A>と<xref:System.IdentityModel.Tokens.SecurityTokenHandler.CreateSecurityTokenReference%2A>の実装では、パイプラインからのメソッドが呼び出される、<xref:System.IdentityModel.SecurityTokenService>クラスです。  
+  
+ <xref:System.IdentityModel.Tokens.SecurityTokenHandler.DetectReplayedToken%2A>メソッドは、指定されたトークンが既に受信されているかどうかを決定する WIF インフラストラクチャによって呼び出されます。 既定ではこのメソッドが戻る`false`トークンが既に受信されていないことを示します。 メソッドをオーバーライドし、再生されたトークンを検出するためのロジックを提供することができます。  
+  
+   
+  
+## Examples  
+ すべてのコード例、<xref:System.IdentityModel.Tokens.SecurityTokenHandler>トピックがから取得した、`Custom Token`サンプルです。 このサンプルでは、Simple Web Token (SWT) の処理を有効にするカスタム クラスを提供します。 このサンプルと WIF およびそれらをダウンロードできる場所で利用できるその他のサンプルについては、次を参照してください。 [WIF コード サンプル インデックス](~/docs/framework/security/wif-code-sample-index.md)です。 次の XML では、トークン ハンドラー コレクションに、SWT トークン ハンドラーを追加する方法を示します。  
+  
+```xml  
+<system.identityModel>  
+  <identityConfiguration saveBootstrapContext="true">  
+    <issuerTokenResolver type="SimpleWebToken.CustomIssuerTokenResolver, SimpleWebToken">  
+      <AddAudienceKeyPair  symmetricKey="wAVkldQiFypTQ+kdNdGWCYCHRcee8XmXxOvgmak8vSY=" audience="http://localhost:19851/" />  
+    </issuerTokenResolver>  
+    <issuerNameRegistry type="RelyingParty.TrustedIssuerNameRegistry, RelyingParty"/>  
+    <audienceUris>  
+      <add value="http://localhost:19851/"/>  
+    </audienceUris>  
+    <securityTokenHandlers>  
+      <add type="SimpleWebToken.SimpleWebTokenHandler, SimpleWebToken" />  
+    </securityTokenHandlers>  
+  </identityConfiguration>  
+</system.identityModel>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected SecurityTokenHandler ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SecurityTokenHandler.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>初期化するために派生クラスのコンス トラクターから呼び出される、<see cref="T:System.IdentityModel.Tokens.SecurityTokenHandler" />クラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanReadKeyIdentifierClause">
+      <MemberSignature Language="C#" Value="public virtual bool CanReadKeyIdentifierClause (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanReadKeyIdentifierClause(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SecurityTokenHandler.CanReadKeyIdentifierClause(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">開始要素に配置されている XML リーダーです。 リーダーは、このメソッドでない高度な必要があります。</param>
+        <summary>指定した XML リーダーがこのインスタンスで逆シリアル化するキー識別子句で参照される XML 要素かどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="M:System.IdentityModel.Tokens.SecurityTokenHandler.ReadKeyIdentifierClause(System.Xml.XmlReader)" />メソッドは、要素を読み取ることができます。 それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装を返します`false`を示すキー識別子句を読み取ることができません。  
+  
+ 派生クラスでは、インスタンスがキー識別句を逆シリアル化できるかどうかを判断するため、リーダーが参照している要素を確認します。 呼び出すことによってこれは通常、<xref:System.Xml.XmlReader.IsStartElement%2A?displayProperty=nameWithType>メソッドを適切な要素と名前空間文字列を指定します。 オーバーライドする場合<xref:System.IdentityModel.Tokens.SecurityTokenHandler.CanReadKeyIdentifierClause%2A>、上書きすることも必要があります、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.ReadKeyIdentifierClause%2A>キー識別子句を逆シリアル化するためのロジックを提供するメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanReadToken">
+      <MemberSignature Language="C#" Value="public virtual bool CanReadToken (string tokenString);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanReadToken(string tokenString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SecurityTokenHandler.CanReadToken(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tokenString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="tokenString">読み取るトークン文字列。</param>
+        <summary>このインスタンスによって処理された種類のトークンとして、指定した文字列を逆シリアル化できるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="M:System.IdentityModel.Tokens.SecurityTokenHandler.ReadToken(System.String)" />メソッドは、要素を読み取ることができます。 それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装を常に返します`false`です。  
+  
+ オーバーライドもこのメソッドをオーバーライドする場合、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.ReadToken%2A?displayProperty=nameWithType>トークンを逆シリアル化するためのロジックを提供するメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanReadToken">
+      <MemberSignature Language="C#" Value="public virtual bool CanReadToken (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanReadToken(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SecurityTokenHandler.CanReadToken(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">開始要素に配置されている XML リーダーです。 リーダーは、このメソッドでない高度な必要があります。</param>
+        <summary>このインスタンスによって処理された種類のトークンとして指定された XML リーダーで参照される XML 要素を読み取ることができるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="M:System.IdentityModel.Tokens.SecurityTokenHandler.ReadToken(System.Xml.XmlReader)" />メソッドは、要素を読み取ることができます。 それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装を常に返します`false`です。  
+  
+ 派生クラスでは、インスタンスが、セキュリティ トークンを逆シリアル化できるかどうかを判断するため、リーダーが参照している要素を確認します。 呼び出すことによってこれは通常、<xref:System.Xml.XmlReader.IsStartElement%2A>メソッドを適切な要素と名前空間文字列を指定します。 オーバーライドする場合<xref:System.IdentityModel.Tokens.SecurityTokenHandler.CanReadKeyIdentifierClause%2A>、上書きすることも必要があります、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.ReadToken%2A?displayProperty=nameWithType>メソッドまたは<xref:System.IdentityModel.Tokens.SecurityTokenHandler.ReadToken%2A?displayProperty=nameWithType>キー識別子句を逆シリアル化するためのロジックを提供するメソッド。  
+  
+   
+  
+## Examples  
+ 次のコードがオーバーライドする方法を示します、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.CanReadToken%2A>トークン ハンドラーで読み取り可能かどうかを調べます。 コードがから取得した、`Custom Token`サンプルです。 このサンプルでは、Simple Web Token (SWT) の処理を有効にするカスタム クラスを提供します。 このサンプルと WIF およびそれらをダウンロードできる場所で利用できるその他のサンプルについては、次を参照してください。 [WIF コード サンプル インデックス](~/docs/framework/security/wif-code-sample-index.md)です。  
+  
+ [!code-csharp[WifRcCustomToken#1](~/samples/snippets/csharp/VS_Snippets_Misc/wifrccustomtoken/cs/simplewebtoken/simplewebtokenhandler.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanValidateToken">
+      <MemberSignature Language="C#" Value="public virtual bool CanValidateToken { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanValidateToken" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SecurityTokenHandler.CanValidateToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ハンドラーがセキュリティ トークンの検証をサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />クラスがセキュリティ トークンを検証できる場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返すには、このプロパティをオーバーライドに検証を実装する派生クラスで、`true`をオーバーライドし、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken%2A>検証ロジックを実装するメソッド。  
+  
+   
+  
+## Examples  
+ 次のコードがオーバーライドする方法を示します、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.CanValidateToken%2A>カスタム ハンドラーがトークンを検証できることを示すプロパティです。 コードがから取得した、`Custom Token`サンプルです。 このサンプルでは、Simple Web Token (SWT) の処理を有効にするカスタム クラスを提供します。 このサンプルと WIF およびそれらをダウンロードできる場所で利用できるその他のサンプルについては、次を参照してください。 [WIF コード サンプル インデックス](~/docs/framework/security/wif-code-sample-index.md)です。  
+  
+ [!code-csharp[WifRcCustomToken#2](~/samples/snippets/csharp/VS_Snippets_Misc/wifrccustomtoken/cs/simplewebtoken/simplewebtokenhandler.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanWriteKeyIdentifierClause">
+      <MemberSignature Language="C#" Value="public virtual bool CanWriteKeyIdentifierClause (System.IdentityModel.Tokens.SecurityKeyIdentifierClause securityKeyIdentifierClause);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanWriteKeyIdentifierClause(class System.IdentityModel.Tokens.SecurityKeyIdentifierClause securityKeyIdentifierClause) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SecurityTokenHandler.CanWriteKeyIdentifierClause(System.IdentityModel.Tokens.SecurityKeyIdentifierClause)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="securityKeyIdentifierClause" Type="System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />
+      </Parameters>
+      <Docs>
+        <param name="securityKeyIdentifierClause">チェックするキー識別句。</param>
+        <summary>このインスタンスで、指定したキー識別子句をシリアル化できるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />キー識別子句をシリアル化する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装を常に返します`false`です。  
+  
+ オーバーライドする場合は<xref:System.IdentityModel.Tokens.SecurityTokenHandler.CanWriteKeyIdentifierClause%2A>、上書きすることも必要があります、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.WriteKeyIdentifierClause%2A>キー識別子句をシリアル化するためのロジックを提供するメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanWriteToken">
+      <MemberSignature Language="C#" Value="public virtual bool CanWriteToken { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanWriteToken" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SecurityTokenHandler.CanWriteToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ハンドラーがセキュリティ トークンをシリアル化できるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />クラスはトークンをシリアル化できる場合それ以外の場合<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスでシリアル化を実装するには、このプロパティを返すをオーバーライド`true`をオーバーライドし、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.WriteToken%2A>をシリアル化ロジックを実装するメソッド。  
+  
+   
+  
+## Examples  
+ 次のコードがオーバーライドする方法を示します、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.CanWriteToken%2A>カスタム ハンドラーがトークンをシリアル化できることを示すプロパティです。 コードがから取得した、`Custom Token`サンプルです。 このサンプルでは、Simple Web Token (SWT) の処理を有効にするカスタム クラスを提供します。 このサンプルと WIF およびそれらをダウンロードできる場所で利用できるその他のサンプルについては、次を参照してください。 [WIF コード サンプル インデックス](~/docs/framework/security/wif-code-sample-index.md)です。  
+  
+ [!code-csharp[WifRcCustomToken#3](~/samples/snippets/csharp/VS_Snippets_Misc/wifrccustomtoken/cs/simplewebtoken/simplewebtokenhandler.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Configuration">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration Configuration { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration Configuration" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SecurityTokenHandler.Configuration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration" />現在のインスタンスの構成を提供するオブジェクト。</summary>
+        <value>現在のインスタンスに対する構成オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SecurityTokenHandler.Configuration%2A>プロパティは通常から構成インフラストラクチャによって設定される、 [ &lt;securityTokenHandlerConfiguration&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md)適用中に、構成ファイル内の要素を開始します。  
+  
+ 派生クラスで使用して、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.Configuration%2A>プロパティ アクセスの構成設定をたとえば、発行者名レジストリで使用する、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken%2A>メソッドからアクセスできる、<xref:System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration.IssuerNameRegistry%2A?displayProperty=nameWithType>構成オブジェクトのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainingCollection">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SecurityTokenHandlerCollection ContainingCollection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SecurityTokenHandlerCollection ContainingCollection" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SecurityTokenHandler.ContainingCollection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityTokenHandlerCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のインスタンスを含んだトークン ハンドラーのコレクションを取得します。</summary>
+        <value>現在のインスタンスを含むトークン ハンドラーのコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トークン ハンドラーを追加するときに、<xref:System.IdentityModel.Tokens.SecurityTokenHandlerCollection>インスタンスでは、このプロパティは自動的に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSecurityTokenReference">
+      <MemberSignature Language="C#" Value="public virtual System.IdentityModel.Tokens.SecurityKeyIdentifierClause CreateSecurityTokenReference (System.IdentityModel.Tokens.SecurityToken token, bool attached);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IdentityModel.Tokens.SecurityKeyIdentifierClause CreateSecurityTokenReference(class System.IdentityModel.Tokens.SecurityToken token, bool attached) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SecurityTokenHandler.CreateSecurityTokenReference(System.IdentityModel.Tokens.SecurityToken,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityKeyIdentifierClause</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="token" Type="System.IdentityModel.Tokens.SecurityToken" />
+        <Parameter Name="attached" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="token">対象の参照を作成するトークンです。</param>
+        <param name="attached">
+          <see langword="true" />アタッチされた参照を作成する場合<see langword="false" />結び付けられていない参照を作成する場合。</param>
+        <summary>派生クラスでオーバーライドされると、そのクラスによって処理されたトークンのセキュリティ トークンへの参照を作成します。 このメソッドは通常、セキュリティ トークン サービス (STS) によって呼び出されます。</summary>
+        <returns>指定したトークンを参照するキー識別句。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、このメソッドをスロー、<xref:System.NotImplementedException>例外。  
+  
+ 派生クラスをキー識別子句を返すには、このメソッドをオーバーライドする (<xref:System.IdentityModel.Tokens.SecurityKeyIdentifierClause>) の作成に使用できる、`<wsse:SecurityTokenReference>`指定したトークンの要素。  
+  
+ 実装から呼び出される、<xref:System.IdentityModel.SecurityTokenService>クラスです。  
+  
+ 通常、 <xref:System.IdentityModel.Tokens.SecurityKeyIdentifierClause> 、以外のときに使用される、カスタム セキュリティ トークン サービスが作成される必要はありません。 セキュリティ トークン サービスがセキュリティ トークンを返した場合、発行されたセキュリティ トークンには、結び付けられているセキュリティ トークンまたは結び付けられていないセキュリティ トークンへの参照が含まれます。 結び付けられている参照は、SOAP メッセージ トークンのセキュリティ ヘッダーに含まれるセキュリティ トークンを参照し、結び付けられていない参照は、SOAP メッセージのセキュリティ ヘッダーに含まれていないセキュリティ トークンを参照します。 これらの参照は、通常、発行されたセキュリティ トークンの信頼性を確認します。  
+  
+   
+  
+## Examples  
+ 次のコードがオーバーライドする方法を示します、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.CreateSecurityTokenReference%2A>メソッドを指定されたトークンからキー識別句を作成します。 コードがから取得した、`Custom Token`サンプルです。 このサンプルでは、Simple Web Token (SWT) の処理を有効にするカスタム クラスを提供します。 このサンプルと WIF およびそれらをダウンロードできる場所で利用できるその他のサンプルについては、次を参照してください。 [WIF コード サンプル インデックス](~/docs/framework/security/wif-code-sample-index.md)です。  
+  
+ [!code-csharp[WifRcCustomToken#5](~/samples/snippets/csharp/VS_Snippets_Misc/wifrccustomtoken/cs/simplewebtoken/simplewebtokenhandler.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateToken">
+      <MemberSignature Language="C#" Value="public virtual System.IdentityModel.Tokens.SecurityToken CreateToken (System.IdentityModel.Tokens.SecurityTokenDescriptor tokenDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IdentityModel.Tokens.SecurityToken CreateToken(class System.IdentityModel.Tokens.SecurityTokenDescriptor tokenDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SecurityTokenHandler.CreateToken(System.IdentityModel.Tokens.SecurityTokenDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tokenDescriptor" Type="System.IdentityModel.Tokens.SecurityTokenDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="tokenDescriptor">元のトークンを作成するセキュリティ トークン記述子。 このメソッドが呼び出される前に、トークンの記述子のプロパティが設定されます。</param>
+        <summary>派生クラスでオーバーライドされると、指定されたトークンの記述子を使用して、セキュリティ トークンを作成します。 このメソッドは、セキュリティ トークン サービス (STS) によって呼び出されます。</summary>
+        <returns>トークンの記述子のプロパティに一致するセキュリティ トークンです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、このメソッドをスロー、<xref:System.NotImplementedException>例外。  
+  
+ 実装から呼び出される、<xref:System.IdentityModel.SecurityTokenService>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコードがオーバーライドする方法を示します、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.CreateToken%2A>を作成してトークン記述子からトークンを返すメソッド。 コードがから取得した、`Custom Token`サンプルです。 このサンプルでは、Simple Web Token (SWT) の処理を有効にするカスタム クラスを提供します。 このサンプルと WIF およびそれらをダウンロードできる場所で利用できるその他のサンプルについては、次を参照してください。 [WIF コード サンプル インデックス](~/docs/framework/security/wif-code-sample-index.md)です。  
+  
+ [!code-csharp[WifRcCustomToken#4](~/samples/snippets/csharp/VS_Snippets_Misc/wifrccustomtoken/cs/simplewebtoken/simplewebtokenhandler.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DetectReplayedToken">
+      <MemberSignature Language="C#" Value="protected virtual void DetectReplayedToken (System.IdentityModel.Tokens.SecurityToken token);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void DetectReplayedToken(class System.IdentityModel.Tokens.SecurityToken token) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SecurityTokenHandler.DetectReplayedToken(System.IdentityModel.Tokens.SecurityToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="token" Type="System.IdentityModel.Tokens.SecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="token">再生をチェックするトークンです。</param>
+        <summary>派生クラスでオーバーライドされると、再生されると、指定されたトークンが検出された場合、例外をスローします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装では、何も行われません。  
+  
+ 派生クラスをスローする必要があります、<xref:System.IdentityModel.Tokens.SecurityTokenReplayDetectedException>トークンは既に使用されている場合。  
+  
+ Windows Identity Foundation (WIF) の提供、<xref:System.IdentityModel.Tokens.TokenReplayCache>キャッシュは派生クラスどの再生からクラスおよび[ &lt;tokenReplayCache&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/tokenreplaycache.md)を構成するために使用する構成要素、アプリケーションのトークン ハンドラーによって使用されるキャッシュを再生します。ただしの正確な実装、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.DetectReplayedToken%2A>メソッドは、デザイナー、派生クラスの責任です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTokenTypeIdentifiers">
+      <MemberSignature Language="C#" Value="public abstract string[] GetTokenTypeIdentifiers ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string[] GetTokenTypeIdentifiers() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SecurityTokenHandler.GetTokenTypeIdentifiers" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、派生クラスによって処理された種類のトークンを識別する要求で使用される Uri のセットを返します。</summary>
+        <returns>このハンドラーがサポート トークンの種類を識別する Uri のセット。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Type>の現在のインスタンスによって処理されたトークンを介してアクセスは、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.TokenType%2A>プロパティです。 <xref:System.IdentityModel.Tokens.SecurityTokenHandler.GetTokenTypeIdentifiers%2A>メソッドは、トークンの種類を参照してくださいへのメッセージで使用できる許容可能な識別子のセットを返します。 URI 値を使用するなど、`<wst:TokenType>`要素の下、`<wst:RequestSecurityToken>`特定の種類のトークンを要求する要素 (によって表される、<xref:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.TokenType%2A?displayProperty=nameWithType>オブジェクト モデルのプロパティ)。  
+  
+   
+  
+## Examples  
+ 次のコードがオーバーライドする方法を示します、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.GetTokenTypeIdentifiers%2A>カスタム トークン、トークンの種類の識別子を返します。 コードがから取得した、`Custom Token`サンプルです。 このサンプルでは、Simple Web Token (SWT) の処理を有効にするカスタム クラスを提供します。 このサンプルと WIF およびそれらをダウンロードできる場所で利用できるその他のサンプルについては、次を参照してください。 [WIF コード サンプル インデックス](~/docs/framework/security/wif-code-sample-index.md)です。  
+  
+ [!code-csharp[WifRcCustomToken#17](~/samples/snippets/csharp/VS_Snippets_Misc/wifrccustomtoken/cs/simplewebtoken/simplewebtokenhandler.cs#17)]  
+[!code-csharp[WifRcCustomToken#6](~/samples/snippets/csharp/VS_Snippets_Misc/wifrccustomtoken/cs/simplewebtoken/simplewebtokenhandler.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadCustomConfiguration">
+      <MemberSignature Language="C#" Value="public virtual void LoadCustomConfiguration (System.Xml.XmlNodeList nodelist);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void LoadCustomConfiguration(class System.Xml.XmlNodeList nodelist) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SecurityTokenHandler.LoadCustomConfiguration(System.Xml.XmlNodeList)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nodelist" Type="System.Xml.XmlNodeList" />
+      </Parameters>
+      <Docs>
+        <param name="nodelist">構成 XML 要素です。 型のリスト内の各ノードは、<see cref="T:System.Xml.XmlElement" />です。</param>
+        <summary>派生クラスでオーバーライドされると、XML からカスタム構成を読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SecurityTokenHandler.LoadCustomConfiguration%2A>メソッドは、構成のインフラストラクチャによって呼び出されます。 このメソッドが呼び出されたときに、`nodelist`トークン ハンドラーの最上位レベルの子要素が表示されます[&lt;追加&gt;](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/add.md)構成ファイルからの要素。 属性または派生クラスを定義する構成スキーマに応じて子要素これらの各に含めることがあります。  
+  
+ 既定の実装をスロー、<xref:System.NotImplementedException>です。 構成ファイルからセキュリティ トークン ハンドラーの初期化を有効にする、派生クラスでこのメソッドをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadKeyIdentifierClause">
+      <MemberSignature Language="C#" Value="public virtual System.IdentityModel.Tokens.SecurityKeyIdentifierClause ReadKeyIdentifierClause (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IdentityModel.Tokens.SecurityKeyIdentifierClause ReadKeyIdentifierClause(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SecurityTokenHandler.ReadKeyIdentifierClause(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityKeyIdentifierClause</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">キー識別句に逆シリアル化する XML の開始要素に配置されている XML リーダーです。</param>
+        <summary>派生クラスでオーバーライドされると、派生クラスによって処理されたトークンを参照するキー識別子句を指定した XML リーダーによって参照される XML に逆シリアル化します。</summary>
+        <returns>XML から逆シリアル化されたキー識別句。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、このメソッドをスロー、<xref:System.NotImplementedException>例外。  
+  
+ XML からのキー識別子句を逆シリアル化するためのロジックを提供するには、このメソッドをオーバーライドします。 またをオーバーライドする必要があるこのメソッドをオーバーライドする場合、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.CanReadKeyIdentifierClause%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadToken">
+      <MemberSignature Language="C#" Value="public virtual System.IdentityModel.Tokens.SecurityToken ReadToken (string tokenString);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IdentityModel.Tokens.SecurityToken ReadToken(string tokenString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SecurityTokenHandler.ReadToken(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tokenString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="tokenString">逆シリアル化する文字列。</param>
+        <summary>派生クラスでオーバーライドされると、派生クラスによって処理された種類のトークンに指定した文字列を逆シリアル化します。</summary>
+        <returns>指定した文字列から逆シリアル化されたセキュリティ トークンです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  信頼できないデータをこのメソッドを呼び出すと、セキュリティ上のリスクです。 このメソッドでは、信頼されたデータだけです。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](http://go.microsoft.com/fwlink/?LinkId=330378)です。  
+  
+ 既定では、このメソッドをスロー、<xref:System.NotImplementedException>例外。  
+  
+ 文字列からセキュリティ トークンを逆シリアル化できる機能を提供するには、このメソッドをオーバーライドします。 またをオーバーライドする必要がある、このメソッドをオーバーライドする場合、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.CanReadToken%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadToken">
+      <MemberSignature Language="C#" Value="public virtual System.IdentityModel.Tokens.SecurityToken ReadToken (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IdentityModel.Tokens.SecurityToken ReadToken(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SecurityTokenHandler.ReadToken(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">トークンの開始要素に配置されている XML リーダーです。</param>
+        <summary>派生クラスでオーバーライドされると、派生クラスによって処理された種類のトークンに指定された XML リーダーで参照されている XML を逆シリアル化します。</summary>
+        <returns>XML から逆シリアル化されたセキュリティ トークンです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  信頼できないデータをこのメソッドを呼び出すと、セキュリティ上のリスクです。 このメソッドでは、信頼されたデータだけです。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](http://go.microsoft.com/fwlink/?LinkId=330378)です。  
+  
+ 既定では、このメソッドをスロー、<xref:System.NotImplementedException>例外。  
+  
+ XML からセキュリティ トークンを逆シリアル化するためのロジックを提供するには、このメソッドをオーバーライドします。 またをオーバーライドする必要があるこのメソッドをオーバーライドする場合、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.CanReadToken%2A?displayProperty=nameWithType>メソッドです。 通常、派生クラスで場合、メソッドは参照先の XML からトークンを逆シリアル化できませんをスロー、<xref:System.Xml.XmlException>です。  
+  
+   
+  
+## Examples  
+ 次のコードがオーバーライドする方法を示します、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.ReadToken%2A>指定した XML リーダーからカスタム トークンを読み取ります。 コードがから取得した、`Custom Token`サンプルです。 このサンプルでは、Simple Web Token (SWT) の処理を有効にするカスタム クラスを提供します。 このサンプルと WIF およびそれらをダウンロードできる場所で利用できるその他のサンプルについては、次を参照してください。 [WIF コード サンプル インデックス](~/docs/framework/security/wif-code-sample-index.md)です。  
+  
+ [!code-csharp[WifRcCustomToken#7](~/samples/snippets/csharp/VS_Snippets_Misc/wifrccustomtoken/cs/simplewebtoken/simplewebtokenhandler.cs#7)]  
+[!code-csharp[WifRcCustomToken#8](~/samples/snippets/csharp/VS_Snippets_Misc/wifrccustomtoken/cs/simplewebtoken/simplewebtokenhandler.cs#8)]  
+[!code-csharp[WifRcCustomToken#14](~/samples/snippets/csharp/VS_Snippets_Misc/wifrccustomtoken/cs/simplewebtoken/simplewebtokenhandler.cs#14)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadToken">
+      <MemberSignature Language="C#" Value="public virtual System.IdentityModel.Tokens.SecurityToken ReadToken (System.Xml.XmlReader reader, System.IdentityModel.Selectors.SecurityTokenResolver tokenResolver);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IdentityModel.Tokens.SecurityToken ReadToken(class System.Xml.XmlReader reader, class System.IdentityModel.Selectors.SecurityTokenResolver tokenResolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SecurityTokenHandler.ReadToken(System.Xml.XmlReader,System.IdentityModel.Selectors.SecurityTokenResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+        <Parameter Name="tokenResolver" Type="System.IdentityModel.Selectors.SecurityTokenResolver" />
+      </Parameters>
+      <Docs>
+        <param name="reader">トークンの開始要素に配置されている XML リーダーです。</param>
+        <param name="tokenResolver">帯域外のおよびキャッシュされたトークンを含むトークン リゾルバー。</param>
+        <summary>派生クラスでオーバーライドされると、指定のトークン リゾルバーを使用して、派生クラスによって処理された種類のトークンに指定された XML リーダーで参照されている XML を逆シリアル化します。</summary>
+        <returns>XML から逆シリアル化されたセキュリティ トークンです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  信頼できないデータをこのメソッドを呼び出すと、セキュリティ上のリスクです。 このメソッドでは、信頼されたデータだけです。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](http://go.microsoft.com/fwlink/?LinkId=330378)です。  
+  
+ 既定の実装は無視されます、`tokenResolver`パラメーターに呼び出しを代行し、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.ReadToken%2A?displayProperty=nameWithType>メソッドです。  
+  
+ XML からセキュリティ トークンを逆シリアル化するためのロジックを提供するには、このメソッドをオーバーライドします。 またをオーバーライドする必要があるこのメソッドをオーバーライドする場合、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.CanReadToken%2A?displayProperty=nameWithType>メソッドです。 通常、派生クラスで場合、メソッドは参照先の XML からトークンを逆シリアル化できませんをスロー、<xref:System.Xml.XmlException>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TokenType">
+      <MemberSignature Language="C#" Value="public abstract Type TokenType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type TokenType" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SecurityTokenHandler.TokenType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、このインスタンスによって処理されるセキュリティ トークンの種類を取得します。</summary>
+        <value>このインスタンスによって処理されるセキュリティ トークンの種類。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスでは、このプロパティをオーバーライドし、返す必要があります、 <xref:System.Type> 、セキュリティ トークンの (<xref:System.IdentityModel.Tokens.SecurityToken>)、派生クラスによって処理されます。  
+  
+   
+  
+## Examples  
+ 次のコードがオーバーライドする方法を示します、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.TokenType%2A>返されるプロパティを<xref:System.Type>のカスタム ハンドラーによって処理されるセキュリティ トークン。 コードがから取得した、`Custom Token`サンプルです。 このサンプルでは、Simple Web Token (SWT) の処理を有効にするカスタム クラスを提供します。 このサンプルと WIF およびそれらをダウンロードできる場所で利用できるその他のサンプルについては、次を参照してください。 [WIF コード サンプル インデックス](~/docs/framework/security/wif-code-sample-index.md)です。  
+  
+ [!code-csharp[WifRcCustomToken#18](~/samples/snippets/csharp/VS_Snippets_Misc/wifrccustomtoken/cs/simplewebtoken/simplewebtokenhandler.cs#18)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceTokenValidationFailure">
+      <MemberSignature Language="C#" Value="protected void TraceTokenValidationFailure (System.IdentityModel.Tokens.SecurityToken token, string errorMessage);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void TraceTokenValidationFailure(class System.IdentityModel.Tokens.SecurityToken token, string errorMessage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SecurityTokenHandler.TraceTokenValidationFailure(System.IdentityModel.Tokens.SecurityToken,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="token" Type="System.IdentityModel.Tokens.SecurityToken" />
+        <Parameter Name="errorMessage" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="token">検証されているセキュリティ トークンです。</param>
+        <param name="errorMessage">トレースに書き込むメッセージ。</param>
+        <summary>トレースが有効な場合は、セキュリティ トークンの検証中にエラー イベントをトレースします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す必要があります、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken%2A>メソッドは、トークンの検証が失敗したとします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceTokenValidationSuccess">
+      <MemberSignature Language="C#" Value="protected void TraceTokenValidationSuccess (System.IdentityModel.Tokens.SecurityToken token);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void TraceTokenValidationSuccess(class System.IdentityModel.Tokens.SecurityToken token) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SecurityTokenHandler.TraceTokenValidationSuccess(System.IdentityModel.Tokens.SecurityToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="token" Type="System.IdentityModel.Tokens.SecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="token">検証されたトークンです。</param>
+        <summary>セキュリティ トークンのイベント トレースが有効な場合の検証が成功したをトレースします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す必要があります、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken%2A>メソッド トークンが正常に検証された後にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateToken">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Security.Claims.ClaimsIdentity&gt; ValidateToken (System.IdentityModel.Tokens.SecurityToken token);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Security.Claims.ClaimsIdentity&gt; ValidateToken(class System.IdentityModel.Tokens.SecurityToken token) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken(System.IdentityModel.Tokens.SecurityToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Security.Claims.ClaimsIdentity&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="token" Type="System.IdentityModel.Tokens.SecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="token">検証トークンです。</param>
+        <summary>派生クラスでオーバーライドされると、指定したセキュリティ トークンを検証します。 派生クラスによって処理された種類のトークンがあります。</summary>
+        <returns>トークンに含まれている識別情報。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、このメソッドをスロー、<xref:System.NotImplementedException>例外。  
+  
+ <xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken%2A>メソッドを検証し、逆シリアル化されたセキュリティ トークンからクレームを抽出するためのインフラストラクチャによって呼び出されます。 コレクションでこれらのクレームが返される<xref:System.Security.Claims.ClaimsIdentity>メソッドによって返されるオブジェクト。 一般的な場合は、このコレクションには単一の id が含まれます。  
+  
+ 派生クラスで検証通常で指定された Uri、対象ユーザーに対してトークンで指定された対象とするユーザーを検証する、<xref:System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration.AudienceRestriction%2A?displayProperty=nameWithType>で指定されたトークン ハンドラー構成オブジェクトのプロパティ、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.Configuration%2A>プロパティです。 これらの Uri が下にある構成ファイルで設定は通常、 [ &lt;Audienceuri&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/audienceuris.md)要素。 対象ユーザーを検証できない場合、<xref:System.IdentityModel.Tokens.AudienceUriValidationFailedException>例外をスローする必要があります。  
+  
+ 発行者がのいずれかに、発行者トークンを渡すことによって通常検証トークンを処理する際、<xref:System.IdentityModel.Tokens.IssuerNameRegistry.GetIssuerName%2A>のメソッド、<xref:System.IdentityModel.Tokens.IssuerNameRegistry>ハンドラーから構成されているオブジェクト、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.Configuration%2A>プロパティです。 発行者名レジストリの一般構成を通じて、 [ &lt;issuerNameRegistry&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/issuernameregistry.md)構成ファイル内の要素。 <xref:System.IdentityModel.Tokens.IssuerNameRegistry.GetIssuerName%2A>発行者の名前を返します。 この名前を設定するために使用する必要があります、<xref:System.Security.Claims.Claim.Issuer%2A?displayProperty=nameWithType>トークンに含まれる要求のプロパティです。 発行者名レジストリには、発行者トークンのエントリが含まれていない場合<xref:System.IdentityModel.Tokens.IssuerNameRegistry.GetIssuerName%2A>返します`null`です。 ここでは、<xref:System.IdentityModel.Tokens.SecurityTokenException>は通常、派生クラスでスローされますが、この動作をクラスのデザイナーまでです。  
+  
+   
+  
+## Examples  
+ 次のコードのオーバーライドを示しています、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken%2A>単純な web トークン (SWT) を処理するセキュリティ トークン ハンドラーのメソッドです。 コードがから取得した、`CustomToken`サンプルです。 このサンプルと WIF およびそれらをダウンロードできる場所で利用できるその他のサンプルについては、次を参照してください。 [WIF コード サンプル インデックス](~/docs/framework/security/wif-code-sample-index.md)です。  
+  
+ [!code-csharp[WifRcCustomToken#9](~/samples/snippets/csharp/VS_Snippets_Misc/wifrccustomtoken/cs/simplewebtoken/simplewebtokenhandler.cs#9)]  
+  
+ 次のコードは`CreateClaims`のオーバーライドから呼び出されるメソッド、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken%2A>前の例のメソッドです。 このメソッドが戻る、<xref:System.Security.Claims.ClaimsIdentity>トークンの要求から作成されるオブジェクトです。 コードがから取得した、`CustomToken`サンプルです。 このサンプルと WIF およびそれらをダウンロードできる場所で利用できるその他のサンプルについては、次を参照してください。 [WIF コード サンプル インデックス](~/docs/framework/security/wif-code-sample-index.md)です。  
+  
+ [!code-csharp[WifRcCustomToken#15](~/samples/snippets/csharp/VS_Snippets_Misc/wifrccustomtoken/cs/simplewebtoken/simplewebtokenhandler.cs#15)]  
+  
+ 次のコードは`ValidateSignature`のオーバーライドから呼び出されるメソッド、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken%2A>単純な web トークン ハンドラーのメソッドです。 このメソッドは、構成を使用して、トークンの署名を検証<xref:System.IdentityModel.Tokens.IssuerTokenResolver>です。 コードがから取得した、`CustomToken`サンプルです。 このサンプルと WIF およびそれらをダウンロードできる場所で利用できるその他のサンプルについては、次を参照してください。 [WIF コード サンプル インデックス](~/docs/framework/security/wif-code-sample-index.md)です。  
+  
+ [!code-csharp[WifRcCustomToken#12](~/samples/snippets/csharp/VS_Snippets_Misc/wifrccustomtoken/cs/simplewebtoken/simplewebtokenhandler.cs#12)]  
+[!code-csharp[WifRcCustomToken#11](~/samples/snippets/csharp/VS_Snippets_Misc/wifrccustomtoken/cs/simplewebtoken/simplewebtokenhandler.cs#11)]  
+  
+ 次のコードは`ValidateAudience`のオーバーライドから呼び出されるメソッド、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken%2A>単純な web トークン ハンドラーのメソッドです。 このメソッドは、対象の構成で指定された Uri に対してトークンに含まれている対象ユーザーを検証します。 コードがから取得した、`CustomToken`サンプルです。 このサンプルと WIF およびそれらをダウンロードできる場所で利用できるその他のサンプルについては、次を参照してください。 [WIF コード サンプル インデックス](~/docs/framework/security/wif-code-sample-index.md)です。  
+  
+ [!code-csharp[WifRcCustomToken#13](~/samples/snippets/csharp/VS_Snippets_Misc/wifrccustomtoken/cs/simplewebtoken/simplewebtokenhandler.cs#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteKeyIdentifierClause">
+      <MemberSignature Language="C#" Value="public virtual void WriteKeyIdentifierClause (System.Xml.XmlWriter writer, System.IdentityModel.Tokens.SecurityKeyIdentifierClause securityKeyIdentifierClause);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteKeyIdentifierClause(class System.Xml.XmlWriter writer, class System.IdentityModel.Tokens.SecurityKeyIdentifierClause securityKeyIdentifierClause) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SecurityTokenHandler.WriteKeyIdentifierClause(System.Xml.XmlWriter,System.IdentityModel.Tokens.SecurityKeyIdentifierClause)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="securityKeyIdentifierClause" Type="System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />
+      </Parameters>
+      <Docs>
+        <param name="writer">XML ライター。</param>
+        <param name="securityKeyIdentifierClause">シリアル化するキー識別句。</param>
+        <summary>派生クラスでオーバーライドされると、指定したキー識別子句を XML にシリアル化します。 キー識別子句は、派生クラスでサポートされる型でなければなりません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、このメソッドをスロー、<xref:System.NotImplementedException>例外。  
+  
+ キー識別子句で xml をシリアル化するためのロジックを提供するには、このメソッドをオーバーライドします。 またをオーバーライドする必要があるこのメソッドをオーバーライドする場合、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.CanWriteKeyIdentifierClause%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteToken">
+      <MemberSignature Language="C#" Value="public virtual string WriteToken (System.IdentityModel.Tokens.SecurityToken token);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string WriteToken(class System.IdentityModel.Tokens.SecurityToken token) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SecurityTokenHandler.WriteToken(System.IdentityModel.Tokens.SecurityToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="token" Type="System.IdentityModel.Tokens.SecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="token">シリアル化するトークンです。</param>
+        <summary>派生クラスでオーバーライドされると、指定したセキュリティ トークンを文字列にシリアル化します。 派生クラスによって処理された種類のトークンがあります。</summary>
+        <returns>シリアル化されたトークンです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、このメソッドをスロー、<xref:System.NotImplementedException>例外。  
+  
+ XML のセキュリティ トークンをシリアル化するためのロジックを提供するには、このメソッドをオーバーライドします。 またをオーバーライドする必要があるこのメソッドをオーバーライドする場合、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.CanWriteToken%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteToken">
+      <MemberSignature Language="C#" Value="public virtual void WriteToken (System.Xml.XmlWriter writer, System.IdentityModel.Tokens.SecurityToken token);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteToken(class System.Xml.XmlWriter writer, class System.IdentityModel.Tokens.SecurityToken token) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SecurityTokenHandler.WriteToken(System.Xml.XmlWriter,System.IdentityModel.Tokens.SecurityToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="token" Type="System.IdentityModel.Tokens.SecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="writer">XML ライター。</param>
+        <param name="token">シリアル化するトークンです。</param>
+        <summary>派生クラスでオーバーライドされると、指定したセキュリティ トークンを XML にシリアル化します。 派生クラスによって処理された種類のトークンがあります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、このメソッドをスロー、<xref:System.NotImplementedException>例外。  
+  
+ XML のセキュリティ トークンをシリアル化するためのロジックを提供するには、このメソッドをオーバーライドします。 またをオーバーライドする必要があるこのメソッドをオーバーライドする場合、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.CanWriteToken%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコードがオーバーライドする方法を示します、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.WriteToken%2A>カスタム トークンをシリアル化するメソッド。 コードがから取得した、`Custom Token`サンプルです。 このサンプルでは、Simple Web Token (SWT) の処理を有効にするカスタム クラスを提供します。 このサンプルと WIF およびそれらをダウンロードできる場所で利用できるその他のサンプルについては、次を参照してください。 [WIF コード サンプル インデックス](~/docs/framework/security/wif-code-sample-index.md)です。  
+  
+ [!code-csharp[WifRcCustomToken#10](~/samples/snippets/csharp/VS_Snippets_Misc/wifrccustomtoken/cs/simplewebtoken/simplewebtokenhandler.cs#10)]  
+[!code-csharp[WifRcCustomToken#11](~/samples/snippets/csharp/VS_Snippets_Misc/wifrccustomtoken/cs/simplewebtoken/simplewebtokenhandler.cs#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

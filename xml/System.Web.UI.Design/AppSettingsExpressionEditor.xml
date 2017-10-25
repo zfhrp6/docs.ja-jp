@@ -1,0 +1,151 @@
+<Type Name="AppSettingsExpressionEditor" FullName="System.Web.UI.Design.AppSettingsExpressionEditor">
+  <TypeSignature Language="C#" Value="public class AppSettingsExpressionEditor : System.Web.UI.Design.ExpressionEditor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AppSettingsExpressionEditor extends System.Web.UI.Design.ExpressionEditor" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.AppSettingsExpressionEditor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.ExpressionEditor</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>評価およびデザイン時に構成ファイル内のアプリケーション設定式を編集するためのプロパティとメソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.AppSettingsExpressionEditor>から派生したクラスは、<xref:System.Web.UI.Design.ExpressionEditor>クラスし、評価を行い、コントロール プロパティを持つデザイン時にアプリケーション設定への参照を関連付けの実装を提供します。 アプリケーション設定の式にコントロール プロパティの値をバインドするなど、`AppSettings:mySettingKeyName`を使用してコントロールのプロパティ値を設定することを示します、`mySettingKeyName`値で、 `appSettings` Web 構成ファイルのセクションです。  
+  
+ ビジュアルなデザイナー ホストなど[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]を使用して、<xref:System.Web.UI.Design.AppSettingsExpressionEditor>からアプリケーションの設定を選択するクラス、`appSettings`構成セクションをし、デザイン時のレンダリングについて、選択した式を評価します。  
+  
+ 参照すると、<xref:System.Web.UI.Design.HtmlControlDesigner.Expressions%2A>デザイン時のプロパティ グリッド内のコントロールのプロパティは、ビジュアル デザイナーで、コントロール プロパティの実行時の値を提供するセット式に、ダイアログ ボックスが表示されます。 式のプレフィックスのリストに基づく式の型を選択することができます。 選択した場合、 **AppSettings**ビジュアル デザイナー ホストの一覧から式のプレフィックスを使用して、関連付けられている<xref:System.Web.UI.Design.ExpressionEditorSheet>のデザイン時の編集機能を提供するオブジェクト`appSettings`使用して式<xref:System.Web.UI.Design.AppSettingsExpressionEditor>を評価し、式の文字列に変換する方法、アプリケーション設定式の構文に基づいています。 ビジュアル デザイナー ホストでは、評価された式の結果を使用して、コントロールのデザイン サーフェイスに表示されるプロパティの値を割り当てます。  
+  
+ <xref:System.Web.UI.Design.ExpressionEditor.ExpressionPrefix%2A>プロパティを<xref:System.Web.UI.Design.AppSettingsExpressionEditor>オブジェクトは、文字列を返します`AppSettings`です。 <xref:System.Web.Compilation.AppSettingsExpressionBuilder>クラスは、式のプレフィックスに関連付けられた`AppSettings`と<xref:System.Web.UI.Design.AppSettingsExpressionEditor>実装します。  
+  
+ <xref:System.Web.UI.Design.AppSettingsExpressionEditor.EvaluateExpression%2A>メソッドは入力アプリケーション設定式の文字列を評価します。 <xref:System.Web.UI.Design.ExpressionEditor.GetExpressionEditorSheet%2A>メソッドを返します、<xref:System.Web.UI.Design.ExpressionEditorSheet>実装を入力し、式をアプリケーション設定を編集するために使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、バインド、<xref:System.Web.UI.WebControls.HyperLink.NavigateUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.HyperLink>コントロール、アプリケーションの設定を使用して式を<xref:System.Web.UI.Design.AppSettingsExpressionEditor>オブジェクト。  
+  
+1.  Web フォーム プロジェクトでは、追加`MyHyperLinkSetting`を`<appSettings>`web.config ファイルのセクションです。  
+  
+     [!code-xml[ControlsUsingExpressions#5](~/samples/snippets/common/VS_Snippets_WebNet/ControlsUsingExpressions/Common/controlsusingexpressions.xml#5)]  
+  
+2.  Web フォーム ページを追加、<xref:System.Web.UI.WebControls.HyperLink>コントロール。  
+  
+3.  `Hyperlink`コントロール、プロパティをクリックして**式**、省略記号ボタンをクリックして (**.**).  
+  
+     `<Hyperlinkname>`**式** ダイアログ ボックスが表示されます。  
+  
+4.  **バインド可能なプロパティ**をクリックして**NavigateUrl**の**式の型**一覧で、をクリックして**AppSettings**下にあります。**式のプロパティ**で、 **AppSetting**ボックスに、入力**MyHyperLinkSetting**です。  
+  
+ ビジュアル デザイナーを使用して、<xref:System.Web.UI.Design.AppSettingsExpressionEditor>の式を割り当てる、`NavigateUrl`プロパティです。  
+  
+ 次の aspx ソースは、アプリケーション設定式を使用して設定したプロパティ値の例を示します。  
+  
+ [!code-aspx-csharp[ControlsUsingExpressions#2](~/samples/snippets/csharp/VS_Snippets_WebNet/ControlsUsingExpressions/CS/controlsusingexpressionscs.aspx#2)]
+ [!code-aspx-vb[ControlsUsingExpressions#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ControlsUsingExpressions/VB/controlsusingexpressionsvb.aspx#2)]
+ [!code-xml[ControlsUsingExpressions#2](~/samples/snippets/common/VS_Snippets_WebNet/ControlsUsingExpressions/Common/controlsusingexpressions.xml#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AppSettingsExpressionEditor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.AppSettingsExpressionEditor.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.AppSettingsExpressionEditor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンス、<xref:System.Web.UI.Design.AppSettingsExpressionEditor>と共に基底クラスによってクラスが構成されている、<xref:System.Web.UI.Design.ExpressionEditor.ExpressionPrefix%2A>プロパティに設定`AppSettings`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EvaluateExpression">
+      <MemberSignature Language="C#" Value="public override object EvaluateExpression (string expression, object parseTimeData, Type propertyType, IServiceProvider serviceProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object EvaluateExpression(string expression, object parseTimeData, class System.Type propertyType, class System.IServiceProvider serviceProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.AppSettingsExpressionEditor.EvaluateExpression(System.String,System.Object,System.Type,System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="expression" Type="System.String" />
+        <Parameter Name="parseTimeData" Type="System.Object" />
+        <Parameter Name="propertyType" Type="System.Type" />
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="expression">アプリケーション設定式の文字列を評価します。 <c>式</c>を含まない、<see langword="AppSettings" />式のプレフィックス。</param>
+        <param name="parseTimeData">評価するための追加の解析情報を含むオブジェクト<c>式</c>です。</param>
+        <param name="propertyType">コントロール プロパティの型。</param>
+        <param name="serviceProvider">追加のデザイン時サービスを取得するために使用、デザイナー ホストによって提供されるサービス プロバイダーの実装です。</param>
+        <summary>アプリケーション設定式の文字列を評価し、コントロールのプロパティのデザイン時の値を提供します。</summary>
+        <returns>によって参照されるオブジェクト<paramref name="expression" />式の評価が成功した場合、それ以外の場合、<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.AppSettingsExpressionEditor.EvaluateExpression%2A>メソッドで指定されているアプリケーションの設定を検索`expression`、アプリケーション設定の値を返します。  
+  
+ ビジュアル デザイナーを使用して、<xref:System.Web.UI.Design.AppSettingsExpressionEditor.EvaluateExpression%2A>メソッドをアプリケーション設定式を評価し、関連付けられているコントロールのデザイン時の値を提供します。 ビジュアル デザイナーの呼び出し、<xref:System.Web.UI.Design.AppSettingsExpressionEditor.EvaluateExpression%2A>評価された式の結果をコントロールにデザイン サーフェイスに表示されるプロパティの値を割り当てるには、式の文字列を持つメソッドです。  
+  
+ ページのパーサーを使用して、実行時に、<xref:System.Web.Compilation.AppSettingsExpressionBuilder.EvaluateExpression%2A>と<xref:System.Web.Compilation.AppSettingsExpressionBuilder.GetCodeExpression%2A>メソッドの対応する<xref:System.Web.Compilation.AppSettingsExpressionBuilder>式を評価し、関連するコントロール プロパティの実行時の値を提供する実装。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExpressionEditorSheet">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.Design.ExpressionEditorSheet GetExpressionEditorSheet (string expression, IServiceProvider serviceProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.UI.Design.ExpressionEditorSheet GetExpressionEditorSheet(string expression, class System.IServiceProvider serviceProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.AppSettingsExpressionEditor.GetExpressionEditorSheet(System.String,System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.ExpressionEditorSheet</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="expression" Type="System.String" />
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="expression">式エディターのシートを初期化するために使用される、コントロール プロパティを設定する式の文字列。 <c>式</c>を含まない、<see langword="AppSettings" />式のプレフィックス。</param>
+        <param name="serviceProvider">追加のデザイン時サービスを取得するために使用、デザイナー ホストによって提供されるサービス プロバイダーの実装です。</param>
+        <summary>アプリケーション設定式の式エディター シートを返します。</summary>
+        <returns><see cref="T:System.Web.UI.Design.ExpressionEditorSheet" />式プロパティには、アプリケーションの設定を定義する実装。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.AppSettingsExpressionEditor.GetExpressionEditorSheet%2A>メソッドはシートの実装を 1 つの入力文字列を使用して式を作成する単純なエディターを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,518 @@
+<Type Name="Ports" FullName="Microsoft.VisualBasic.Devices.Ports">
+  <TypeSignature Language="C#" Value="public class Ports" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi Ports extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Devices.Ports" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コンピューターのシリアル ポートにアクセスするためのプロパティとメソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Computer.Ports`オブジェクトにアクセスするため、簡単なエントリ ポイントを提供する、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]シリアル ポート クラス<xref:System.IO.Ports.SerialPort>です。  
+  
+ 次の表に、関連するタスクの例については、`My.Computer.Ports`オブジェクト。  
+  
+|目的|参照トピック|  
+|-|-|  
+|シリアル ポートに接続されたモデムをダイヤルします。|[方法 : シリアル ポートに接続されているモデムをダイヤルする](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-dial-modems-attached-to-serial-ports.md)|  
+|シリアル ポートに文字列を送信します。|[方法 : シリアル ポートに文字列を送信する](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)|  
+|シリアル ポートから文字列を受信します。|[方法 : シリアル ポートから文字列を受信する](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-receive-strings-from-serial-ports.md)|  
+|使用可能なシリアル ポートを表示します。|[方法 : 利用可能なシリアル ポートを表示する](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md)|  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例に、コンピューターの文字列を送信する方法を説明する`COM1`シリアル ポートです。  
+  
+ `Using` ブロックを使用すると、アプリケーションが例外を生成した場合でも、シリアル ポートを閉じることができます。 このブロック内で、またはシリアル ポートを操作するすべてのコードが表示されます、`Try...Catch...Finally`ブロックを使用する呼び出しを<xref:System.IO.Ports.SerialPort.Close%2A>メソッドです。  
+  
+ <xref:System.IO.Ports.SerialPort.WriteLine%2A> メソッドで、データをシリアル ポートに送信しています。  
+  
+ [!code-vb[VbVbalrMyComputer#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#33)]  
+  
+ 詳細については、次を参照してください。[する方法: シリアル ポートに文字列を送信](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Ports ();" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Ports.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.VisualBasic.Devices.Ports" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenSerialPort">
+      <MemberSignature Language="C#" Value="public System.IO.Ports.SerialPort OpenSerialPort (string portName);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance class System.IO.Ports.SerialPort OpenSerialPort(string portName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Ports.OpenSerialPort(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Ports.SerialPort</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="portName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="portName">
+          <see langword="String" />。 必ず指定します。 開くには、ポートの名前です。</param>
+        <summary>作成して開きます、<see cref="T:System.IO.Ports.SerialPort" />オブジェクト。</summary>
+        <returns>開いている<see cref="T:System.IO.Ports.SerialPort" />オブジェクト、指定された引数を使用して構成します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Computer.Ports.OpenSerialPort`メソッドを作成し、開く、<xref:System.IO.Ports.SerialPort>オブジェクト。 引数、`OpenSerialPort`メソッドの設定を決定する、<xref:System.IO.Ports.SerialPort>オブジェクト。  
+  
+ コードが閉じる必要があります、<xref:System.IO.Ports.SerialPort>オブジェクトが完了すると、オブジェクトを使用します。 使用することができます、<xref:System.IO.Ports.SerialPort.Close%2A>オブジェクトを明示的に終了するメソッド、または`Using`ステートメントを暗黙的に閉じます。 詳細については、このトピックの例を参照してください。  
+  
+ 次の表に、関連するタスクの例については、`My.Computer.Ports.OpenSerialPort`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|シリアル ポートに接続されたモデムをダイヤルします。|[方法 : シリアル ポートに接続されているモデムをダイヤルする](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-dial-modems-attached-to-serial-ports.md)|  
+|シリアル ポートに文字列を送信します。|[方法 : シリアル ポートに文字列を送信する](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)|  
+|シリアル ポートから文字列を受信します。|[方法 : シリアル ポートから文字列を受信する](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-receive-strings-from-serial-ports.md)|  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例に、コンピューターの文字列を送信する方法を説明する`COM1`シリアル ポートです。  
+  
+ `Using` ブロックを使用すると、アプリケーションが例外を生成した場合でも、シリアル ポートを閉じることができます。 このブロック内で、またはシリアル ポートを操作するすべてのコードが表示されます、`Try...Catch...Finally`ブロックを使用する呼び出しを<xref:System.IO.Ports.SerialPort.Close%2A>メソッドです。  
+  
+ <xref:System.IO.Ports.SerialPort.WriteLine%2A> メソッドで、データをシリアル ポートに送信しています。  
+  
+ [!code-vb[VbVbalrMyComputer#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#33)]  
+  
+ 詳細については、次を参照してください。[する方法: シリアル ポートに文字列を送信](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="portName" /> が <see langword="Nothing" /> または空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenSerialPort">
+      <MemberSignature Language="C#" Value="public System.IO.Ports.SerialPort OpenSerialPort (string portName, int baudRate);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance class System.IO.Ports.SerialPort OpenSerialPort(string portName, int32 baudRate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Ports.OpenSerialPort(System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Ports.SerialPort</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="portName" Type="System.String" />
+        <Parameter Name="baudRate" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="portName">
+          <see langword="String" />。 必ず指定します。 開くには、ポートの名前です。</param>
+        <param name="baudRate">
+          <see langword="Integer" />。 ポートのボー レートです。</param>
+        <summary>作成して開きます、<see cref="T:System.IO.Ports.SerialPort" />オブジェクト。</summary>
+        <returns>開いている<see cref="T:System.IO.Ports.SerialPort" />オブジェクト、指定された引数を使用して構成します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Computer.Ports.OpenSerialPort`メソッドを作成し、開く、<xref:System.IO.Ports.SerialPort>オブジェクト。 引数、`OpenSerialPort`メソッドの設定を決定する、<xref:System.IO.Ports.SerialPort>オブジェクト。  
+  
+ コードが閉じる必要があります、<xref:System.IO.Ports.SerialPort>オブジェクトが完了すると、オブジェクトを使用します。 使用することができます、<xref:System.IO.Ports.SerialPort.Close%2A>オブジェクトを明示的に終了するメソッド、または`Using`ステートメントを暗黙的に閉じます。 詳細については、このトピックの例を参照してください。  
+  
+ 次の表に、関連するタスクの例については、`My.Computer.Ports.OpenSerialPort`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|シリアル ポートに接続されたモデムをダイヤルします。|[方法 : シリアル ポートに接続されているモデムをダイヤルする](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-dial-modems-attached-to-serial-ports.md)|  
+|シリアル ポートに文字列を送信します。|[方法 : シリアル ポートに文字列を送信する](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)|  
+|シリアル ポートから文字列を受信します。|[方法 : シリアル ポートから文字列を受信する](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-receive-strings-from-serial-ports.md)|  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例に、コンピューターの文字列を送信する方法を説明する`COM1`シリアル ポートです。  
+  
+ `Using` ブロックを使用すると、アプリケーションが例外を生成した場合でも、シリアル ポートを閉じることができます。 このブロック内で、またはシリアル ポートを操作するすべてのコードが表示されます、`Try...Catch...Finally`ブロックを使用する呼び出しを<xref:System.IO.Ports.SerialPort.Close%2A>メソッドです。  
+  
+ <xref:System.IO.Ports.SerialPort.WriteLine%2A> メソッドで、データをシリアル ポートに送信しています。  
+  
+ [!code-vb[VbVbalrMyComputer#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#33)]  
+  
+ 詳細については、次を参照してください。[する方法: シリアル ポートに文字列を送信](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="portName" /> が <see langword="Nothing" /> または空の文字列です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="baudRate" /> が 0 以下です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenSerialPort">
+      <MemberSignature Language="C#" Value="public System.IO.Ports.SerialPort OpenSerialPort (string portName, int baudRate, System.IO.Ports.Parity parity);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance class System.IO.Ports.SerialPort OpenSerialPort(string portName, int32 baudRate, valuetype System.IO.Ports.Parity parity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Ports.OpenSerialPort(System.String,System.Int32,System.IO.Ports.Parity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Ports.SerialPort</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="portName" Type="System.String" />
+        <Parameter Name="baudRate" Type="System.Int32" />
+        <Parameter Name="parity" Type="System.IO.Ports.Parity" />
+      </Parameters>
+      <Docs>
+        <param name="portName">
+          <see langword="String" />。 必ず指定します。 開くには、ポートの名前です。</param>
+        <param name="baudRate">
+          <see langword="Integer" />。 ポートのボー レートです。</param>
+        <param name="parity">
+          <see cref="T:System.IO.Ports.Parity" />。 ポートのパリティします。</param>
+        <summary>作成して開きます、<see cref="T:System.IO.Ports.SerialPort" />オブジェクト。</summary>
+        <returns>開いている<see cref="T:System.IO.Ports.SerialPort" />オブジェクト、指定された引数を使用して構成します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Computer.Ports.OpenSerialPort`メソッドを作成し、開く、<xref:System.IO.Ports.SerialPort>オブジェクト。 引数、`OpenSerialPort`メソッドの設定を決定する、<xref:System.IO.Ports.SerialPort>オブジェクト。  
+  
+ コードが閉じる必要があります、<xref:System.IO.Ports.SerialPort>オブジェクトが完了すると、オブジェクトを使用します。 使用することができます、<xref:System.IO.Ports.SerialPort.Close%2A>オブジェクトを明示的に終了するメソッド、または`Using`ステートメントを暗黙的に閉じます。 詳細については、このトピックの例を参照してください。  
+  
+ 次の表に、関連するタスクの例については、`My.Computer.Ports.OpenSerialPort`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|シリアル ポートに接続されたモデムをダイヤルします。|[方法 : シリアル ポートに接続されているモデムをダイヤルする](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-dial-modems-attached-to-serial-ports.md)|  
+|シリアル ポートに文字列を送信します。|[方法 : シリアル ポートに文字列を送信する](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)|  
+|シリアル ポートから文字列を受信します。|[方法 : シリアル ポートから文字列を受信する](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-receive-strings-from-serial-ports.md)|  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例に、コンピューターの文字列を送信する方法を説明する`COM1`シリアル ポートです。  
+  
+ `Using` ブロックを使用すると、アプリケーションが例外を生成した場合でも、シリアル ポートを閉じることができます。 このブロック内で、またはシリアル ポートを操作するすべてのコードが表示されます、`Try...Catch...Finally`ブロックを使用する呼び出しを<xref:System.IO.Ports.SerialPort.Close%2A>メソッドです。  
+  
+ <xref:System.IO.Ports.SerialPort.WriteLine%2A> メソッドで、データをシリアル ポートに送信しています。  
+  
+ [!code-vb[VbVbalrMyComputer#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#33)]  
+  
+ 詳細については、次を参照してください。[する方法: シリアル ポートに文字列を送信](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="portName" /> が <see langword="Nothing" /> または空の文字列です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="baudRate" /> が 0 以下です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="parity" />いずれかではない、<see cref="T:System.IO.Ports.Parity" />列挙値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenSerialPort">
+      <MemberSignature Language="C#" Value="public System.IO.Ports.SerialPort OpenSerialPort (string portName, int baudRate, System.IO.Ports.Parity parity, int dataBits);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance class System.IO.Ports.SerialPort OpenSerialPort(string portName, int32 baudRate, valuetype System.IO.Ports.Parity parity, int32 dataBits) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Ports.OpenSerialPort(System.String,System.Int32,System.IO.Ports.Parity,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Ports.SerialPort</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="portName" Type="System.String" />
+        <Parameter Name="baudRate" Type="System.Int32" />
+        <Parameter Name="parity" Type="System.IO.Ports.Parity" />
+        <Parameter Name="dataBits" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="portName">
+          <see langword="String" />。 必ず指定します。 開くには、ポートの名前です。</param>
+        <param name="baudRate">
+          <see langword="Integer" />。 ポートのボー レートです。</param>
+        <param name="parity">
+          <see cref="T:System.IO.Ports.Parity" />。 ポートのパリティします。</param>
+        <param name="dataBits">
+          <see langword="Integer" />。 ポートのデータ ビット設定します。</param>
+        <summary>作成して開きます、<see cref="T:System.IO.Ports.SerialPort" />オブジェクト。</summary>
+        <returns>開いている<see cref="T:System.IO.Ports.SerialPort" />オブジェクト、指定された引数を使用して構成します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Computer.Ports.OpenSerialPort`メソッドを作成し、開く、<xref:System.IO.Ports.SerialPort>オブジェクト。 引数、`OpenSerialPort`メソッドの設定を決定する、<xref:System.IO.Ports.SerialPort>オブジェクト。  
+  
+ コードが閉じる必要があります、<xref:System.IO.Ports.SerialPort>オブジェクトが完了すると、オブジェクトを使用します。 使用することができます、<xref:System.IO.Ports.SerialPort.Close%2A>オブジェクトを明示的に終了するメソッド、または`Using`ステートメントを暗黙的に閉じます。 詳細については、このトピックの例を参照してください。  
+  
+ 次の表に、関連するタスクの例については、`My.Computer.Ports.OpenSerialPort`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|シリアル ポートに接続されたモデムをダイヤルします。|[方法 : シリアル ポートに接続されているモデムをダイヤルする](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-dial-modems-attached-to-serial-ports.md)|  
+|シリアル ポートに文字列を送信します。|[方法 : シリアル ポートに文字列を送信する](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)|  
+|シリアル ポートから文字列を受信します。|[方法 : シリアル ポートから文字列を受信する](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-receive-strings-from-serial-ports.md)|  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例に、コンピューターの文字列を送信する方法を説明する`COM1`シリアル ポートです。  
+  
+ `Using` ブロックを使用すると、アプリケーションが例外を生成した場合でも、シリアル ポートを閉じることができます。 このブロック内で、またはシリアル ポートを操作するすべてのコードが表示されます、`Try...Catch...Finally`ブロックを使用する呼び出しを<xref:System.IO.Ports.SerialPort.Close%2A>メソッドです。  
+  
+ <xref:System.IO.Ports.SerialPort.WriteLine%2A> メソッドで、データをシリアル ポートに送信しています。  
+  
+ [!code-vb[VbVbalrMyComputer#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#33)]  
+  
+ 詳細については、次を参照してください。[する方法: シリアル ポートに文字列を送信](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="portName" /> が <see langword="Nothing" /> または空の文字列です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="dataBits" /> が 0 以下です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="parity" />いずれかではない、<see cref="T:System.IO.Ports.Parity" />列挙値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenSerialPort">
+      <MemberSignature Language="C#" Value="public System.IO.Ports.SerialPort OpenSerialPort (string portName, int baudRate, System.IO.Ports.Parity parity, int dataBits, System.IO.Ports.StopBits stopBits);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance class System.IO.Ports.SerialPort OpenSerialPort(string portName, int32 baudRate, valuetype System.IO.Ports.Parity parity, int32 dataBits, valuetype System.IO.Ports.StopBits stopBits) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Ports.OpenSerialPort(System.String,System.Int32,System.IO.Ports.Parity,System.Int32,System.IO.Ports.StopBits)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Ports.SerialPort</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="portName" Type="System.String" />
+        <Parameter Name="baudRate" Type="System.Int32" />
+        <Parameter Name="parity" Type="System.IO.Ports.Parity" />
+        <Parameter Name="dataBits" Type="System.Int32" />
+        <Parameter Name="stopBits" Type="System.IO.Ports.StopBits" />
+      </Parameters>
+      <Docs>
+        <param name="portName">
+          <see langword="String" />。 必ず指定します。 開くには、ポートの名前です。</param>
+        <param name="baudRate">
+          <see langword="Integer" />。 ポートのボー レートです。</param>
+        <param name="parity">
+          <see cref="T:System.IO.Ports.Parity" />。 ポートのパリティします。</param>
+        <param name="dataBits">
+          <see langword="Integer" />。 ポートのデータ ビット設定します。</param>
+        <param name="stopBits">
+          <see cref="T:System.IO.Ports.StopBits" />。 ポートのストップ ビット設定します。</param>
+        <summary>作成して開きます、<see cref="T:System.IO.Ports.SerialPort" />オブジェクト。</summary>
+        <returns>開いている<see cref="T:System.IO.Ports.SerialPort" />オブジェクト、指定された引数を使用して構成します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Computer.Ports.OpenSerialPort`メソッドを作成し、開く、<xref:System.IO.Ports.SerialPort>オブジェクト。 引数、`OpenSerialPort`メソッドの設定を決定する、<xref:System.IO.Ports.SerialPort>オブジェクト。  
+  
+ コードが閉じる必要があります、<xref:System.IO.Ports.SerialPort>オブジェクトが完了すると、オブジェクトを使用します。 使用することができます、<xref:System.IO.Ports.SerialPort.Close%2A>オブジェクトを明示的に終了するメソッド、または`Using`ステートメントを暗黙的に閉じます。 詳細については、このトピックの例を参照してください。  
+  
+ 次の表に、関連するタスクの例については、`My.Computer.Ports.OpenSerialPort`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|シリアル ポートに接続されたモデムをダイヤルします。|[方法 : シリアル ポートに接続されているモデムをダイヤルする](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-dial-modems-attached-to-serial-ports.md)|  
+|シリアル ポートに文字列を送信します。|[方法 : シリアル ポートに文字列を送信する](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)|  
+|シリアル ポートから文字列を受信します。|[方法 : シリアル ポートから文字列を受信する](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-receive-strings-from-serial-ports.md)|  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例に、コンピューターの文字列を送信する方法を説明する`COM1`シリアル ポートです。  
+  
+ `Using` ブロックを使用すると、アプリケーションが例外を生成した場合でも、シリアル ポートを閉じることができます。 このブロック内で、またはシリアル ポートを操作するすべてのコードが表示されます、`Try...Catch...Finally`ブロックを使用する呼び出しを<xref:System.IO.Ports.SerialPort.Close%2A>メソッドです。  
+  
+ <xref:System.IO.Ports.SerialPort.WriteLine%2A> メソッドで、データをシリアル ポートに送信しています。  
+  
+ [!code-vb[VbVbalrMyComputer#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#33)]  
+  
+ 詳細については、次を参照してください。[する方法: シリアル ポートに文字列を送信](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="portName" /> が <see langword="Nothing" /> または空の文字列です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="dataBits" /> が 0 以下です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="stopBits" />いずれかではない、<see cref="T:System.IO.Ports.StopBits" />列挙値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SerialPortNames">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;string&gt; SerialPortNames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;string&gt; SerialPortNames" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Devices.Ports.SerialPortNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンピューターのシリアル ポートの名前のコレクションを取得します。</summary>
+        <value>コンピューターのシリアル ポートの名前のコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Computer.Ports.SerialPortNames`プロパティは、コンピューターのシリアル ポートの名前のコレクションを取得します。  
+  
+> [!NOTE]
+>  Windows 98 の実行時には、`My.Computer.Ports.SerialPortNames` が返すポート名が正しくない場合があります。 アプリケーション エラーを防ぐには、ポート名を使用してポートを開くときに、`Try...Catch...Finally` ステートメントや `Using` ステートメントなどの例外処理を使用します。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.Ports.SerialPortNames`プロパティです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|使用可能なシリアル ポートを表示します。|[方法 : 利用可能なシリアル ポートを表示する](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md)|  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ 次の例では、`My.Computer.Ports.SerialPortNames` プロパティが返す文字列のすべてについてループします。 これらの文字列は、コンピューターで利用可能なシリアル ポートの名前です。  
+  
+ 通常、利用可能なポートの一覧から、アプリケーションで使用するシリアル ポートをユーザーが選択します。 この例では、シリアル ポート名は <xref:System.Windows.Forms.ListBox> コントロールに格納されます。 詳細については、「[ListBox コントロール](~/docs/framework/winforms/controls/listbox-control-windows-forms.md)」を参照してください。  
+  
+ [!code-vb[VbVbalrMyComputer#45](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#45)]  
+  
+ この例で必要な要素は次のとおりです。  
+  
+-   <xref:System?displayProperty=nameWithType> 名前空間への参照  
+  
+-   `ListBox1` という名前の <xref:System.Windows.Forms.ListBox> コントロールを持つフォーム。  
+  
+ 詳細については、「[方法: 利用可能なシリアル ポートを表示する](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="None." />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

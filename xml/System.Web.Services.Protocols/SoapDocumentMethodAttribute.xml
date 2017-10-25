@@ -1,0 +1,376 @@
+<Type Name="SoapDocumentMethodAttribute" FullName="System.Web.Services.Protocols.SoapDocumentMethodAttribute">
+  <TypeSignature Language="C#" Value="public sealed class SoapDocumentMethodAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SoapDocumentMethodAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.SoapDocumentMethodAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method, Inherited=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>適用する、<see cref="T:System.Web.Services.Protocols.SoapDocumentMethodAttribute" />メソッドには、SOAP メッセージを送受信メソッドが使用するように指定<see langword="Document" />書式設定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web サービス記述言語 (WSDL) は、SOAP メッセージで、操作を呼び出すことと、XML Web サービス メソッドをフォーマットする方法の 2 つのスタイルを定義します。`RPC`と`Document`です。 `Document`XSD スキーマに基づいて XML Web サービス メソッドを書式設定を参照します。 `Document`スタイルと書式設定を指します、`Body`要素を次のメッセージ部分を 1 つまたは複数の系列として、`Body`要素。 正確に個別のメッセージ部分が決定する方法によって、<xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.Use%2A>と<xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.ParameterStyle%2A>プロパティです。 <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.Use%2A>プロパティは、パラメーターは書式設定するかどうかを決定`Encoded`または`Literal`です。 <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.ParameterStyle%2A>パラメーターが 1 つのメッセージ部分の次内にカプセル化するかどうかを判断、`Body`要素か、またはパラメーターごとに個々 のメッセージ部分です。  
+  
+ 詳細については、次を参照してください[&#91;\< 。topic://cpconCustomizingSOAPInASPNETWebServicesWebServiceClients > & #93 です。](http://msdn.microsoft.com/en-us/1d777288-c0d9-4e6a-b638-f010da031952)  
+  
+ この属性は、サーバー上の XML Web サービス メソッドと、クライアント上のプロキシ クラスのメソッドの両方に適用できます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、メッセージのスタイルを設定`Document`の`GetUserName`XML Web サービス メソッドです。 持つ XML 要素ではさらに、 `Body` SOAP 要求と SOAP 応答の要素に設定されて`GetUserNameRequest`と`GetUserNameResponse`、それぞれします。  
+  
+  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapDocumentMethodAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapDocumentMethodAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Protocols.SoapDocumentMethodAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapDocumentMethodAttribute (string action);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapDocumentMethodAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="action" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="action"><see langword="SOAPAction" /> SOAP 要求の HTTP ヘッダー フィールド。 <see cref="P:System.Web.Services.Protocols.SoapDocumentMethodAttribute.Action" /> プロパティを設定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Services.Protocols.SoapDocumentMethodAttribute" />クラス、設定、<see cref="P:System.Web.Services.Protocols.SoapDocumentMethodAttribute.Action" />プロパティの値を<paramref name="action" />パラメーター。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Action">
+      <MemberSignature Language="C#" Value="public string Action { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Action" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapDocumentMethodAttribute.Action" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、 <see langword="SOAPAction" /> SOAP 要求の HTTP ヘッダー フィールド。</summary>
+        <value><see langword="SOAPAction" /> SOAP 要求の HTTP ヘッダー フィールド。 既定値は http://tempuri.org/MethodName、MethodName は XML Web サービス メソッドの名前を指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、<xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.Action%2A>プロパティは、要求の目的を示す URI。 ただし、SOAP 仕様でないを配置の制限、URI の形式またはかどうかについて、規則、URI は解決します。 プレゼンスとコンテンツの<xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.Action%2A>プロパティは、HTTP で SOAP 要求メッセージを適切にフィルターをファイアウォールなどの Web サーバーで使用できます。  
+  
+ 既定では、.NET Framework version 1.1 の発行、<xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.Action%2A>プロパティに、`soapAction`の属性、`soap:operation`ごとに要素が XML Web サービスに対して生成される WSDL ドキュメント内の SOAP バインディングをサポートします。 SOAP 仕様の詳細については、W3C Web サイト (http://www.w3.org/TR/SOAP) を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.Action%2A>プロパティを`http://www.contoso.com/GetUserName`です。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Binding">
+      <MemberSignature Language="C#" Value="public string Binding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Binding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapDocumentMethodAttribute.Binding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または XML Web サービス メソッドが操作を実装するバインドを設定します。</summary>
+        <value>XML Web サービス メソッドが操作を実装するバインディング。 既定値は、"Soap"が追加されると、XML Web サービスの名前です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バインディング、Web サービス記述言語 (WSDL) で定義されているはインターフェイスのような具体的な一連の操作を定義するという点でです。 ASP.NET を使用して作成された XML Web サービス、に関しては、各 XML Web サービス メソッドは、バインディング内操作です。 XML Web サービス メソッドは、XML Web サービスの既定のバインディングまたは内で指定されたバインディングのいずれかのメンバー、 <xref:System.Web.Services.WebServiceBindingAttribute> XML Web サービスに適用します。 XML Web サービスは、複数のバインディングを実装できるとき複数<xref:System.Web.Services.WebServiceBindingAttribute>属性 XML Web サービスに適用されます。  
+  
+ 1 回に 1 つまたは複数<xref:System.Web.Services.WebServiceBindingAttribute>属性、XML Web サービスに適用されます、<xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute>または<xref:System.Web.Services.Protocols.SoapRpcMethodAttribute>XML Web サービスの特定のメソッドによって実装されるバインド操作を示すために個々 の XML Web サービス メソッドに適用できます。 設定、<xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.Binding%2A>のプロパティ<xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute>または<xref:System.Web.Services.Protocols.SoapRpcMethodAttribute>バインディングを指定する XML Web サービス メソッドの操作に実装しています。 1 つだけ<xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute>または<xref:System.Web.Services.Protocols.SoapRpcMethodAttribute>XML Web サービス メソッドに適用できます。 したがって、XML Web サービス メソッドは、バインディングの操作を 1 つにのみ実装できます。  
+  
+ WSDL 仕様の詳細については、W3C Web サイト (http://www.w3.org/TR/wsdl) を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OneWay">
+      <MemberSignature Language="C#" Value="public bool OneWay { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool OneWay" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapDocumentMethodAttribute.OneWay" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または XML Web サービス クライアントが Web サーバーから XML Web サービス メソッドの処理を完了を待つかどうかを設定します。</summary>
+        <value>
+          <see langword="true" />場合は、XML Web サービス クライアントは、Web サーバーが完全に XML Web サービス メソッドを処理するは待機しません。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML Web サービス メソッドの場合は、<xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.OneWay%2A>プロパティに設定`true`、XML Web サービス クライアントが Web サーバーが、XML Web サービス メソッドの処理を完了するまで待機する必要はありません。 Web サーバーが逆シリアル化するようになったら、 <xref:System.Web.Services.Protocols.SoapServerMessage>、XML Web サービス メソッドを呼び出す前に、サーバーには HTTP 202 ステータス コードが返されます。 HTTP 202 ステータス コードは、Web サーバーで、メッセージの処理が開始されたことをクライアントを示します。 したがって、XML Web サービス クライアントは、Web サーバーが正常にメッセージを処理する受信確認応答を受け取りません。  
+  
+ 一方向のメソッドには、戻り値または out パラメーターを持つことはできません。  
+  
+ どちらかである .NET Framework version 1.0 XML Web サービス メソッドを使用している場合、<xref:System.Web.Services.Protocols.SoapRpcMethodAttribute>または<xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute>でそれらに適用された属性、<xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.OneWay%2A>にセットのプロパティ`true`へのアクセスはありません、<xref:System.Web.HttpContext>静的<xref:System.Web.HttpContext.Current%2A>プロパティです。 アクセスする、<xref:System.Web.HttpContext>から XML Web サービス メソッドを実装するクラスを派生させる<xref:System.Web.Services.WebService>にアクセスし、<xref:System.Web.Services.WebService.Context%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、XML Web サービス メソッドが完了するまで待機するクライアントを必要としない XML Web サービス メソッドです。 したがって、サンプルの設定、<xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.OneWay%2A>プロパティを`true`です。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParameterStyle">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Protocols.SoapParameterStyle ParameterStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Services.Protocols.SoapParameterStyle ParameterStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapDocumentMethodAttribute.ParameterStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Protocols.SoapParameterStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の下に 1 つの XML 要素内のパラメーターをカプセル化するかどうか、 <see langword="Body" /> SOAP メッセージの XML 部分の要素。</summary>
+        <value><see cref="T:System.Web.Services.Protocols.SoapParameterStyle" />サービス メソッドの SOAP メッセージの XML Web 間で送受信します。 既定値は <see cref="F:System.Web.Services.Protocols.SoapParameterStyle.Wrapped" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例との間に、SOAP メッセージで送信されたパラメーターが送信されたことを指定します、 `PlaceOrder` XML Web サービス メソッドは、1 つの XML 要素内にカプセル化されません。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestElementName">
+      <MemberSignature Language="C#" Value="public string RequestElementName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RequestElementName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapDocumentMethodAttribute.RequestElementName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または操作としてサービスの説明で定義されている XML Web サービス メソッドの SOAP 要求に関連付けられている XML 要素を設定します。</summary>
+        <value>操作として、サービスの説明で定義されている XML Web サービス メソッドの SOAP 要求に関連付けられている XML 要素。 既定値は、XML Web サービス メソッドの名前です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.RequestElementName%2A>下にあるパラメーターをラップするために使用する XML 要素を定義、 `Body` SOAP の要素を要求時に<xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.ParameterStyle%2A>は<xref:System.Web.Services.Protocols.SoapParameterStyle.Wrapped>します。 これは、XML Web サービスのサービスの説明内の XML Web サービス メソッドへの SOAP 要求を表す XSD スキーマに反映されます。  
+  
+   
+  
+## Examples  
+ 次のコード例に、XML Web サービス メソッドへの SOAP 要求に関連付けられている XML 要素の名前を設定する`MyCustomElement`です。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestNamespace">
+      <MemberSignature Language="C#" Value="public string RequestNamespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RequestNamespace" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapDocumentMethodAttribute.RequestNamespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または XML Web サービス メソッドの SOAP 要求に関連付けられている名前空間を設定します。</summary>
+        <value>XML Web サービス メソッドの SOAP 要求に関連付けられている XML 名前空間。 既定値は http://tempuri.org/ です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.RequestNamespace%2A>そのサービスの説明内の XML Web サービス メソッドの XSD スキーマで使用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.RequestNamespace%2A>プロパティを`http://www.contoso.com`です。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResponseElementName">
+      <MemberSignature Language="C#" Value="public string ResponseElementName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ResponseElementName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapDocumentMethodAttribute.ResponseElementName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または XML Web サービス メソッドの SOAP 応答に関連付けられている XML 要素を設定します。</summary>
+        <value>XML Web サービス メソッドの SOAP 要求に関連付けられている XML 要素。 既定値は、WebServiceNameResult、WebServiceName は XML Web サービス メソッドの名前を指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.ResponseElementName%2A>下にあるパラメーターをラップするために使用する XML 要素を定義、 `Body` SOAP 応答の要素と<xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.ParameterStyle%2A>は<xref:System.Web.Services.Protocols.SoapParameterStyle.Wrapped>します。 これは、XML Web サービスの説明内の XML Web サービス メソッドへの SOAP 応答を表す XSD スキーマに反映されます。  
+  
+   
+  
+## Examples  
+ 次のコード例に、XML Web サービス メソッドへの SOAP 応答に関連付けられている XML 要素の名前を設定する`MyCustomResponseElement`です。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResponseNamespace">
+      <MemberSignature Language="C#" Value="public string ResponseNamespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ResponseNamespace" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapDocumentMethodAttribute.ResponseNamespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または XML Web サービス メソッドの SOAP 応答に関連付けられている XML 名前空間を設定します。</summary>
+        <value>XML Web サービス メソッドの SOAP 応答に関連付けられている XML 名前空間。 既定値は http://tempuri.org/ です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.ResponseNamespace%2A>プロパティはそのサービスの説明にある XML Web サービス メソッドに、XSD スキーマで使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.ResponseNamespace%2A>プロパティを`http://www.contoso.com`です。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Use">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.SoapBindingUse Use { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Services.Description.SoapBindingUse Use" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapDocumentMethodAttribute.Use" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.SoapBindingUse</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または書式設定、SOAP メッセージの XML 部分内で XML Web サービス メソッドのパラメーターを設定します。</summary>
+        <value><see cref="T:System.Web.Services.Description.SoapBindingUse" /> XML Web サービス メソッドにします。 既定値は、<see cref="F:System.Web.Services.Description.SoapBindingUse.Literal" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web サービス記述言語 (WSDL) は、パラメーターを書式設定するための 2 つのメソッドを定義します。<xref:System.Web.Services.Description.SoapBindingUse.Encoded>と<xref:System.Web.Services.Description.SoapBindingUse.Literal>です。 <xref:System.Web.Services.Description.SoapBindingUse.Encoded>SOAP 仕様のセクション 5 で説明したように、SOAP エンコーディングを使用してパラメーターを書式設定を参照します。 <xref:System.Web.Services.Description.SoapBindingUse.Literal>各パラメーターの定義済みの XSD スキーマを使用してパラメーターを書式設定を参照します。  
+  
+ 詳細については、次を参照してください[&#91;\< 。topic://cpconCustomizingSOAPInASPNETWebServicesWebServiceClients > & #93 です。](http://msdn.microsoft.com/en-us/1d777288-c0d9-4e6a-b638-f010da031952).  
+  
+   
+  
+## Examples  
+ 次のコード例を指定する`Document`  /  `Encoded`に SOAP メッセージを送信する必要があります、 `PlaceOrder` XML Web サービス メソッドです。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

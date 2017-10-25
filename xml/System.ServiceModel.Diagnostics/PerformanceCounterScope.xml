@@ -1,0 +1,89 @@
+<Type Name="PerformanceCounterScope" FullName="System.ServiceModel.Diagnostics.PerformanceCounterScope">
+  <TypeSignature Language="C#" Value="public enum PerformanceCounterScope" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed PerformanceCounterScope extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Diagnostics.PerformanceCounterScope" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>アセンブリのパフォーマンス カウンターが有効であるかどうかを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体は、パフォーマンス カウンターが診断用に有効かどうかを示すように <xref:System.ServiceModel.Configuration.DiagnosticSection.PerformanceCounters%2A> プロパティを構成するために使用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="All">
+      <MemberSignature Language="C#" Value="All" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Diagnostics.PerformanceCounterScope All = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Diagnostics.PerformanceCounterScope.All" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Diagnostics.PerformanceCounterScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パフォーマンス カウンターは実行時に表示できます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="Default" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Diagnostics.PerformanceCounterScope Default = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Diagnostics.PerformanceCounterScope.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Diagnostics.PerformanceCounterScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>単一のパフォーマンス カウンター インスタンス _WCF_Admin が作成されます。 このインスタンスは、インフラストラクチャで使用される SQM データのコレクションを有効にするために使用されます。 このインスタンスのカウンター値は更新されず、0 のままになります。 [!INCLUDE[indigo1](~/includes/indigo1-md.md)] の構成が存在しない場合は、これが既定値になります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Off">
+      <MemberSignature Language="C#" Value="Off" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Diagnostics.PerformanceCounterScope Off = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Diagnostics.PerformanceCounterScope.Off" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Diagnostics.PerformanceCounterScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パフォーマンス カウンターは無効です。 これが既定値です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceOnly">
+      <MemberSignature Language="C#" Value="ServiceOnly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Diagnostics.PerformanceCounterScope ServiceOnly = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Diagnostics.PerformanceCounterScope.ServiceOnly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Diagnostics.PerformanceCounterScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このサービスに関連するパフォーマンス カウンターだけが有効です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

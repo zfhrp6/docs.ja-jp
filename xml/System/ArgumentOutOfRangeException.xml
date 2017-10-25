@@ -1,0 +1,614 @@
+<Type Name="ArgumentOutOfRangeException" FullName="System.ArgumentOutOfRangeException">
+  <TypeSignature Language="C#" Value="public class ArgumentOutOfRangeException : ArgumentException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ArgumentOutOfRangeException extends System.ArgumentException implements class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.ArgumentOutOfRangeException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ArgumentException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>引数の値が、呼び出されたメソッドで定義されている許容範囲外である場合にスローされる例外。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ArgumentOutOfRangeException>メソッドが呼び出され、メソッドに渡された引数の少なくとも 1 つは例外がスローされます`null`引数に必要な値のセットのメンバーではない無効な値が含まれています。 <xref:System.ArgumentException.ParamName%2A>プロパティは、無効な引数を識別し、<xref:System.ArgumentOutOfRangeException.ActualValue%2A>プロパティに値が存在する場合は、無効な値を識別します。  
+  
+ 通常、<xref:System.ArgumentOutOfRangeException>開発者のエラーの結果します。 例外を処理する代わりに、 `try` / `catch`ブロックで例外の原因を排除する必要があります、または、引数は、メソッドの呼び出しによって返されるか、例外をスローするメソッドに渡される前にユーザーが入力、メソッドに渡される前に、の引数を検証する必要があります。  
+  
+ <xref:System.ArgumentOutOfRangeException>は広範囲に使用されます。  
+  
+-   内のクラス、<xref:System.Collections>と<xref:System.IO>名前空間。  
+  
+-   <xref:System.Array> クラス  
+  
+-   文字列操作メソッドに、<xref:System.String>クラスです。  
+  
+ これで、条件、<xref:System.ArgumentOutOfRangeException>例外がスローされます、次のとおりです。  
+  
+ インデックス番号でコレクションのメンバーを取得して、インデックス番号が無効です。  
+ これは、最も一般的な原因と、<xref:System.ArgumentOutOfRangeException>例外。   通常、インデックス番号を使用しない有効な 3 つの理由のいずれか。  
+  
+-   コレクションは、メンバーを持たないコードが行われていることを想定しています。 次の例は、要素を持たないコレクションの最初の要素の取得を試みます。  
+  
+     [!code-csharp[System.ArgumentOutOfRangeException#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.ArgumentOutOfRangeException/cs/NoElements.cs#4)]
+     [!code-vb[System.ArgumentOutOfRangeException#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.ArgumentOutOfRangeException/vb/NoElements.vb#4)]  
+  
+     例外を防ぐためには、確認するかどうか、コレクションの`Count`プロパティは任意のメンバーを取得する前に次のコード フラグメントは、0 より大きい値です。  
+  
+     [!code-csharp[System.ArgumentOutOfRangeException#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.ArgumentOutOfRangeException/cs/NoElements.cs#5)]
+     [!code-vb[System.ArgumentOutOfRangeException#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.ArgumentOutOfRangeException/vb/NoElements.vb#5)]  
+  
+     場合によっては、これが発生するなど、メソッドを呼び出すことではなく、存在しないインデックスを使用して、コレクションにメンバーを追加しようとしているため`Add`、この目的のために存在します。  次の例を呼び出すのではなく、存在しないインデックスを使用してコレクションに要素を追加しようとしました。、<xref:System.Collections.Generic.List%601.Add%2A?displayProperty=nameWithType>メソッドです。  
+  
+     [!code-csharp[System.ArgumentOutOfRangeException#13](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.ArgumentOutOfRangeException/cs/NoElements2.cs#13)]
+     [!code-vb[System.ArgumentOutOfRangeException#13](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.ArgumentOutOfRangeException/vb/NoElements2.vb#13)]  
+  
+     次のコード フラグメントには、このエラーが修正されています。  
+  
+     [!code-csharp[System.ArgumentOutOfRangeException#14](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.ArgumentOutOfRangeException/cs/NoElements2.cs#14)]
+     [!code-vb[System.ArgumentOutOfRangeException#14](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.ArgumentOutOfRangeException/vb/NoElements2.vb#14)]  
+  
+-   負のインデックスを持つ項目を取得しようとしています。 これは通常、特定の要素のインデックスのコレクションを検索したし、検索が成功したことを想定が誤ってするために発生します。 次の例への呼び出しで、<xref:System.Collections.Generic.List%601.FindIndex%28System.Predicate%7B%600%7D%29?displayProperty=nameWithType>メソッドは、文字列"Z"に等しいは-1 を返しますの検出に失敗します。 ただし、これは、無効なインデックス値です。  
+  
+     [!code-csharp[System.ArgumentOutOfRangeException#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.ArgumentOutOfRangeException/cs/BadSearch.cs#6)]
+     [!code-vb[System.ArgumentOutOfRangeException#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.ArgumentOutOfRangeException/vb/BadSearch.vb#6)]  
+  
+     例外を防ぐためには、返されるインデックスがより大きいまたはコレクションから項目を取得する前に 0 に等しい、次のコード フラグメントはことを確認することで、検索が成功したことを確認してください。  
+  
+     [!code-csharp[System.ArgumentOutOfRangeException#7](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.ArgumentOutOfRangeException/cs/BadSearch.cs#7)]
+     [!code-vb[System.ArgumentOutOfRangeException#7](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.ArgumentOutOfRangeException/vb/BadSearch.vb#7)]  
+  
+-   インデックスがコレクションの値と等しい要素を取得しようとしている`Count`プロパティ、次の例として示します。  
+  
+     [!code-csharp[System.ArgumentOutOfRangeException#8](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.ArgumentOutOfRangeException/cs/OOR2.cs#8)]
+     [!code-vb[System.ArgumentOutOfRangeException#8](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.ArgumentOutOfRangeException/vb/OOR2.vb#8)]  
+  
+     .NET Framework のコレクションでは、0 から始まるインデックスを使用する、コレクションの最初の要素はインデックス 0、および最後の要素がインデックス位置にあるため`Count`- 1。 インデックスにある最後の要素にアクセスすることを確認して、エラーを解決できる`Count`- 1、次のコードのようです。  
+  
+     [!code-csharp[System.ArgumentOutOfRangeException#9](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.ArgumentOutOfRangeException/cs/OOR2.cs#9)]
+     [!code-vb[System.ArgumentOutOfRangeException#9](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.ArgumentOutOfRangeException/vb/OOR2.vb#9)]  
+  
+ 文字列操作メソッドを呼び出すことによって、文字列操作を実行しようとしているし、文字列の開始インデックスが存在しません。  
+ などのようにメソッドのオーバー ロード<xref:System.String.Compare%2A?displayProperty=nameWithType>、 <xref:System.String.CompareOrdinal%2A?displayProperty=nameWithType>、 <xref:System.String.IndexOf%2A?displayProperty=nameWithType>、 <xref:System.String.IndexOfAny%2A>、 <xref:System.String.Insert%2A?displayProperty=nameWithType>、 <xref:System.String.LastIndexOf%2A?displayProperty=nameWithType>、 <xref:System.String.LastIndexOfAny%2A?displayProperty=nameWithType>、 <xref:System.String.Remove%2A>、または<xref:System.String.Substring%2A?displayProperty=nameWithType>を指定できる操作の開始インデックスは、インデックスは、文字列内の有効な位置にすることが必要です。 有効なインデックスの範囲は 0 ~ <xref:System.String.Length%2A?displayProperty=nameWithType> - 1。  
+  
+ この 4 つの一般的な原因がある<xref:System.ArgumentOutOfRangeException>例外。  
+  
+-   空の文字列です。 を使用しているか、<xref:System.String.Empty?displayProperty=nameWithType>です。 その<xref:System.String.Length%2A?displayProperty=nameWithType>プロパティは 0、しようとするインデックスをスローした操作を返します、<xref:System.ArgumentOutOfRangeException>例外。 次の例では、定義、`GetFirstCharacter`を文字列の最初の文字を返すメソッド。 渡される最終的な文字列として文字列が空の場合、メソッドは、メソッドをスロー、<xref:System.ArgumentOutOfRangeException>例外。  
+  
+     [!code-csharp[System.ArgumentOutOfRangeException#15](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.ArgumentOutOfRangeException/cs/EmptyString1.cs#15)]
+     [!code-vb[System.ArgumentOutOfRangeException#15](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.ArgumentOutOfRangeException/vb/EmptyString1.vb#15)]  
+  
+     テストで、例外を排除することができるかどうか、文字列の<xref:System.String.Length%2A?displayProperty=nameWithType>の呼び出しで 0 よりも大きい、<xref:System.String.IsNullOrEmpty%2A>文字列がないことを確認するメソッド`null`または空です。 次のコード フラグメントは、後者はします。 この場合、文字列は`null`空、または、`GetFirstCharacter`メソッドは u+0000 を返します。  
+  
+     [!code-csharp[System.ArgumentOutOfRangeException#16](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.ArgumentOutOfRangeException/cs/EmptyString1.cs#16)]
+     [!code-vb[System.ArgumentOutOfRangeException#16](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.ArgumentOutOfRangeException/vb/EmptyString1.vb#16)]  
+  
+-   その文字列内の部分文字列の位置に基づいて、文字列を操作して、部分文字列が実際に検出されたかどうかを決定に失敗しました。  
+  
+     次の例では、2 つの単語のフレーズの 2 番目の単語を抽出します。 スロー、<xref:System.ArgumentOutOfRangeException>という語句が 1 つだけの単語で構成に埋め込まれたスペース文字含まれていない場合は例外です。  これへの呼び出し、<xref:System.String.IndexOf%28System.String%29?displayProperty=nameWithType>メソッドを検索に失敗し、この無効な値に渡されますを示すために-1 を返します、<xref:System.String.Substring%28System.Int32%29?displayProperty=nameWithType>メソッドです。  
+  
+     [!code-csharp[System.ArgumentOutOfRangeException#17](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.ArgumentOutOfRangeException/cs/NoFind1.cs#17)]
+     [!code-vb[System.ArgumentOutOfRangeException#17](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.ArgumentOutOfRangeException/vb/NoFind1.vb#17)]  
+  
+     例外を回避するのには、文字列操作メソッドを呼び出す前に、文字列検索メソッドによって返される値を検証します。  
+  
+     [!code-csharp[System.ArgumentOutOfRangeException#18](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.ArgumentOutOfRangeException/cs/NoFind2.cs#18)]
+     [!code-vb[System.ArgumentOutOfRangeException#18](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.ArgumentOutOfRangeException/vb/NoFind2.vb#18)]  
+  
+-  
+  
+ 現在の文字列の範囲外にある部分文字列を抽出しようとしました。  
+ このメソッドは、部分文字列の部分文字列の文字数、文字列の末尾まで続行しない部分文字列の開始位置を指定することが必要なすべての部分文字列を抽出します。 これはありません、*インデックス*の部分文字列の最後の文字です。  
+  
+ <xref:System.ArgumentOutOfRangeException>通常例外はスローここでは、した正しく計算されないのでない部分文字列の文字の数。  ような検索メソッドを使用している場合<xref:System.String.IndexOf%2A?displayProperty=nameWithType>を開始および終了した部分文字列の位置を識別します。  
+  
+-   終了位置にある文字がによって返される場合<xref:System.String.IndexOf%2A?displayProperty=nameWithType>、部分文字列に含まれる部分文字列の終了位置が、数式で指定されました。  
+  
+    ```  
+    endIndex - startIndex + 1  
+    ```  
+  
+-   終了位置にある文字がによって返される場合<xref:System.String.IndexOf%2A?displayProperty=nameWithType>、部分文字列から除外するのには、数式で部分文字列の終了位置を指定しました。  
+  
+    ```  
+    endIndex - startIndex   
+    ```  
+  
+ 次の例では定義、`FindWords`で使用する方法、<xref:System.String.IndexOfAny%28System.Char%5B%5D%2CSystem.Int32%29?displayProperty=nameWithType>スペースおよび句読点を識別するメソッドは文字列でマークし、文字列内にある単語を含む配列を返します。  
+  
+ [!code-csharp[System.ArgumentOutOfRangeException#19](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.ArgumentOutOfRangeException/cs/FindWords1.cs#19)]
+ [!code-vb[System.ArgumentOutOfRangeException#19](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.ArgumentOutOfRangeException/vb/FindWords1.vb#19)]  
+  
+ 負の数は正の数値と 0 の場合のみ必要とする引数を持つメソッドに渡されたまたは負の数または正の数値だけを必要とする引数を持つメソッドに 0 のいずれかが成功します。  
+ たとえば、<xref:System.Array.CreateInstance%28System.Type%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%29?displayProperty=nameWithType>メソッドは、2 次元配列の各次元で要素の数を指定が必要です。 各ディメンションに有効な値は 0 ~ 範囲は<xref:System.Int32.MaxValue?displayProperty=nameWithType>します。 次の例では、次元の引数が負の値を持つためがスローされますが、<xref:System.ArgumentOutOfRangeException>例外。  
+  
+ [!code-csharp[System.ArgumentOutOfRangeException#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.ArgumentOutOfRangeException/cs/OOR1.cs#1)]
+ [!code-vb[System.ArgumentOutOfRangeException#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.ArgumentOutOfRangeException/vb/OOR1.vb#1)]  
+  
+ エラーを修正するには、無効な引数の値は、負でないことを確認します。 次のコード フラグメントはよう、有効な値を提供することによってこれを実行できます。  
+  
+ [!code-csharp[System.ArgumentOutOfRangeException#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.ArgumentOutOfRangeException/cs/OOR1.cs#2)]
+ [!code-vb[System.ArgumentOutOfRangeException#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.ArgumentOutOfRangeException/vb/OOR1.vb#2)]  
+  
+ また、入力を検証してが有効でない場合は、いくつかのアクションを実行できます。 次のコード フラグメントには、メソッドを呼び出す代わりに、エラー メッセージが表示されます。  
+  
+ [!code-csharp[System.ArgumentOutOfRangeException#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.ArgumentOutOfRangeException/cs/OOR1.cs#3)]
+ [!code-vb[System.ArgumentOutOfRangeException#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.ArgumentOutOfRangeException/vb/OOR1.vb#3)]  
+  
+ 競合状態は、マルチ スレッドを非同期的に実行して、配列またはコレクションを更新するタスクがあるアプリに存在します。  
+ 次の例では、<xref:System.Collections.Generic.List%601>オブジェクトのコレクションを設定する`Continent`オブジェクト。 スロー、<xref:System.ArgumentOutOfRangeException>例外の場合は、例は、コレクションが完全に設定する前に、コレクションにある 7 つのアイテムを表示しようとしています。  
+  
+ [!code-csharp[System.ArgumentOutOfRangeException#11](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.ArgumentOutOfRangeException/cs/Race1.cs#11)]
+ [!code-vb[System.ArgumentOutOfRangeException#11](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.ArgumentOutOfRangeException/vb/Race1.vb#11)]  
+  
+ この場合、2 つのリソースは複数のスレッドからアクセスします。  
+  
+-   `continents`コレクション。 その<xref:System.Collections.Generic.List%601.Add%2A?displayProperty=nameWithType>メソッドが複数のスレッドから呼び出されます。 さらに、メインまたはプライマリ スレッドでは、7 つの要素では、そのメンバーを反復処理時に、コレクションが設定完全前提としています。  
+  
+-   `msg`複数のスレッドから連結された文字列。  
+  
+ このエラーを修正するには、共有状態にアクセスすること、スレッド セーフな方法で次のようを確認します。  
+  
+-   アプリでは、配列またはコレクション オブジェクトを使用する場合は、型など、スレッド セーフなコレクション クラスを使用することを検討してください、<xref:System.Collections.Concurrent>名前空間または[System.Collections.Immutable](../Topic/System.Collections.Immutable.md)帯域外のリリースです。  
+  
+-   一度に 1 つのスレッドがあるリソースへの排他アクセスできるように、スレッド セーフな方法で共有状態 (つまり、複数のスレッドがアクセスできるリソース) にアクセスすることを確認します。 クラスの数が多いなど<xref:System.Threading.CountdownEvent>、 <xref:System.Threading.Interlocked>、 <xref:System.Threading.Monitor>、および<xref:System.Threading.Mutex>リソースへのアクセスを同期するために使用します。 詳細については、次を参照してください。[スレッド](http://msdn.microsoft.com/library/7b46a7d9-c6f1-46d1-a947-ae97471bba87)です。 さらに、言語はサポートしています、[ロック](~/docs/csharp/language-reference/keywords/lock-statement.md)(C#) ステートメント、および[SyncLock](~/docs/visual-basic/language-reference/statements/synclock-statement.md) Visual Basic で作成します。  
+  
+ 次の例のアドレス、<xref:System.ArgumentOutOfRangeException>例外と、前の例から、その他の問題です。 置き換えられます、<xref:System.Collections.Generic.List%601>オブジェクトを<xref:System.Collections.Concurrent.ConcurrentBag%601>オブジェクトを使用して、コレクションへのアクセスがスレッド セーフであることを確認して、<xref:System.Threading.CountdownEvent>他のスレッドが実行され、使用して、その 1 つのスレッドのロックにアクセスできる後にのみ、アプリケーション スレッドを続行することを確認するオブジェクト、`msg`一度に変数。  
+  
+ [!code-csharp[System.ArgumentOutOfRangeException#12](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.ArgumentOutOfRangeException/cs/Race2.cs#12)]
+ [!code-vb[System.ArgumentOutOfRangeException#12](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.ArgumentOutOfRangeException/vb/Race2.vb#12)]  
+  
+ <xref:System.ArgumentOutOfRangeException>値は 0x80131502 HRESULT COR_E_ARGUMENTOUTOFRANGE を使用します。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.ArgumentOutOfRangeException>を参照してください、<xref:System.ArgumentOutOfRangeException>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次の例では、招待されたゲストに関する情報を格納するクラスを定義します。 ゲストが、21 歳未満の場合、<xref:System.ArgumentOutOfRangeException>例外がスローされます。  
+  
+ [!code-csharp[ArgumentOutOfRangeException#1](~/samples/snippets/csharp/VS_Snippets_CLR/ArgumentOutOfRangeException/CS/program.cs#1)]
+ [!code-vb[ArgumentOutOfRangeException#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ArgumentOutOfRangeException/VB/program.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ArgumentOutOfRangeException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ArgumentOutOfRangeException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ArgumentOutOfRangeException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、 <xref:System.ArgumentException.Message%2A> 「負でないのために必要な数です」など、エラーを説明するシステム提供のメッセージの新しいインスタンスのプロパティ。 このメッセージには、現在のシステムのカルチャが考慮されます。  
+  
+ <xref:System.ArgumentOutOfRangeException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|null 参照 (Visual Basic の場合は `Nothing`)。|  
+|<xref:System.ArgumentOutOfRangeException.Message%2A>|ローカライズされたエラー メッセージ文字列。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ArgumentOutOfRangeException (string paramName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string paramName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ArgumentOutOfRangeException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="paramName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="paramName">この例外の原因となるパラメーターの名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ArgumentOutOfRangeException" />この例外の原因となるパラメーターの名前を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、 <xref:System.ArgumentException.Message%2A> 「負でないのために必要な数です」など、エラーを説明するシステム提供のメッセージの新しいインスタンスのプロパティ。 このメッセージには、現在のシステムのカルチャが考慮されます。  
+  
+ このコンストラクターは、新しいインスタンスの <xref:System.ArgumentException.ParamName%2A> プロパティを `paramName` パラメーターを使用して初期化します。 コンテンツ`paramName`ユーザーが理解するためのものです。  
+  
+ <xref:System.ArgumentOutOfRangeException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|null 参照 (Visual Basic の場合は `Nothing`)。|  
+|<xref:System.ArgumentOutOfRangeException.Message%2A>|空の文字列 ("") です。|  
+|<xref:System.ArgumentException.ParamName%2A>|パラメーター名の文字列。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ArgumentOutOfRangeException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ArgumentOutOfRangeException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">シリアル化されたオブジェクト データを保持するオブジェクト。</param>
+        <param name="context">シリアル化されたデータの転送元または転送先を記述するオブジェクト。</param>
+        <summary>シリアル化したデータを使用して、<see cref="T:System.ArgumentOutOfRangeException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、逆シリアル化中に、ストリームで送信された例外オブジェクトを再構築するために呼び出されます。 詳細については、次を参照してください。 [XML および SOAP シリアル化](~/docs/standard/serialization/xml-and-soap-serialization.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ArgumentOutOfRangeException (string message, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ArgumentOutOfRangeException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">この例外の原因を説明するエラー メッセージ。</param>
+        <param name="innerException">現在の例外の原因である例外。内部例外が指定されていない場合は null 参照 (Visual Basic では、<see langword="Nothing" />)。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ArgumentOutOfRangeException" />指定したエラー メッセージ、およびこの例外の原因となった例外を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ArgumentOutOfRangeException (string paramName, string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string paramName, string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ArgumentOutOfRangeException.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="paramName" Type="System.String" />
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="paramName">例外の原因となったパラメーターの名前。</param>
+        <param name="message">エラーを説明するメッセージ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ArgumentOutOfRangeException" />この例外と指定したエラー メッセージを原因となったパラメーターの名前を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、<xref:System.ArgumentOutOfRangeException.Message%2A>プロパティの値を使用して、新しいインスタンスの`message`パラメーター。 `message` パラメーターの内容は、ユーザーが理解できる内容にします。 このコンストラクターの呼び出し元は、この文字列が現在のシステムのカルチャに合わせてローカライズ済みであることを確認しておく必要があります。  
+  
+ このコンストラクターは、新しいインスタンスの <xref:System.ArgumentException.ParamName%2A> プロパティを `paramName` パラメーターを使用して初期化します。 コンテンツ`paramName`ユーザーが理解するためのものです。  
+  
+ <xref:System.ArgumentOutOfRangeException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|`null`。|  
+|<xref:System.ArgumentOutOfRangeException.Message%2A>|エラー メッセージ文字列。|  
+|<xref:System.ArgumentException.ParamName%2A>|パラメーター名の文字列。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ArgumentOutOfRangeException (string paramName, object actualValue, string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string paramName, object actualValue, string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ArgumentOutOfRangeException.#ctor(System.String,System.Object,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="paramName" Type="System.String" />
+        <Parameter Name="actualValue" Type="System.Object" />
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="paramName">例外の原因となったパラメーターの名前。</param>
+        <param name="actualValue">この例外の原因である引数の値。</param>
+        <param name="message">エラーを説明するメッセージ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ArgumentOutOfRangeException" />パラメーターと共にクラスの名前、引数、および指定したエラー メッセージの値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、<xref:System.ArgumentException.ParamName%2A>の新しいインスタンスを使用して、プロパティ、`paramName`パラメーター、<xref:System.ArgumentOutOfRangeException.ActualValue%2A>プロパティを使用して、`actualValue`パラメーター、および<xref:System.ArgumentException.Message%2A>プロパティを使用して、`message`パラメーター。 内容、`paramName`と`message`パラメーターをユーザーが理解できるものではします。 このコンス トラクターの呼び出し元は、これらの文字列が現在のシステムのカルチャにローカライズされていることを確認するために必要です。  
+  
+ `actualValue`パラメーターは、.NET Framework クラス ライブラリ内では使用されません。 ただし、<xref:System.ArgumentOutOfRangeException.ActualValue%2A>プロパティは、アプリケーションが使用可能な引数の値を使用できるように提供します。  
+  
+ `actualValue`パラメーターには、メソッドに渡され、スローされる例外の原因を無効な値が含まれています。 この値は、<xref:System.ArgumentOutOfRangeException.ActualValue%2A>プロパティとその文字列形式で保持されているメッセージ文字列に追加、<xref:System.ArgumentOutOfRangeException.Message%2A>プロパティです。  
+  
+ <xref:System.ArgumentOutOfRangeException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.ArgumentOutOfRangeException.ActualValue%2A>|引数の値。|  
+|<xref:System.Exception.InnerException%2A>|Null 参照 (`Nothing` Visual Basic で)。|  
+|<xref:System.ArgumentOutOfRangeException.Message%2A>|エラー メッセージ文字列。|  
+|<xref:System.ArgumentException.ParamName%2A>|パラメーター名の文字列。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActualValue">
+      <MemberSignature Language="C#" Value="public virtual object ActualValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object ActualValue" />
+      <MemberSignature Language="DocId" Value="P:System.ArgumentOutOfRangeException.ActualValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この例外を引き起こした引数の値を取得します。</summary>
+        <value><see langword="Object" /> 、現在の原因となったパラメーターの値を格納している<see cref="T:System.Exception" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 無効な引数を取得するのにには、このプロパティを使用します。  
+  
+ `ActualValue`プロパティは、コンス トラクターに渡されたものと同じ値を返しますまたは`null`値が指定されていない場合。  
+  
+ <xref:System.ArgumentOutOfRangeException.ActualValue%2A>プロパティにはオブジェクトの構築時に、値が割り当てられます。 場合、<xref:System.ArgumentOutOfRangeException.ActualValue%2A>プロパティの値が`null`、によって保持されているメッセージ文字列に、値の文字列形式を追加、<xref:System.ArgumentOutOfRangeException.Message%2A>プロパティです。  
+  
+ <xref:System.ArgumentOutOfRangeException.ActualValue%2A>プロパティは、.NET Framework クラス ライブラリ内では使用されません。 すべてのページで、null 値を持ち込むこと、<xref:System.ArgumentOutOfRangeException>オブジェクト、.NET Framework クラス ライブラリによってスローされます。 <xref:System.ArgumentOutOfRangeException.ActualValue%2A>プロパティは、アプリケーションが使用可能な引数の値を使用できるように提供します。  
+  
+ このプロパティは読み取り専用と、コンテンツまたは値の書式をカスタマイズするには、のみをオーバーライドする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public override void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ArgumentOutOfRangeException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">シリアル化されたオブジェクト データを保持するオブジェクト。</param>
+        <param name="context">シリアル化されたデータの転送元または転送先を記述するオブジェクト。</param>
+        <summary>セット、<see cref="T:System.Runtime.Serialization.SerializationInfo" />無効な引数の値と追加の例外情報を含むオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ArgumentOutOfRangeException.GetObjectData%2A>設定、<xref:System.Runtime.Serialization.SerializationInfo>シリアル化の対象となるすべての例外オブジェクト データを持つオブジェクト。 逆シリアル化中に例外オブジェクトを再構成、<xref:System.Runtime.Serialization.SerializationInfo>ストリームで転送します。  
+  
+ 詳細については、「<xref:System.Runtime.Serialization.SerializationInfo>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="info" />オブジェクトが<see langword="null" />です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">シリアル化サービスを提供します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" />セキュリティ アクション。<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" /></permission>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="public override string Message { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Message" />
+      <MemberSignature Language="DocId" Value="P:System.ArgumentOutOfRangeException.Message" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>引数の値が null の場合は、エラー メッセージ、および無効な引数の値、またはエラー メッセージのみの文字列形式を取得します。</summary>
+        <value>この例外のテキスト メッセージ。 このプロパティの値は、2 つの形式のいずれかのとおりです。  
+  
+ <list type="table"><listheader><term>条件  
+  
+ </term><description>値  
+  
+ </description></listheader><item><term><paramref name="actualValue" />は<see langword="null" />します。  
+  
+ </term><description><paramref name="message" />コンス トラクターに渡された文字列。  
+  
+ </description></item><item><term><paramref name="actualValue" />は<see langword="null" />します。  
+  
+ </term><description><paramref name="message" />文字列が無効な引数の値の文字列表記に追加します。  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティのオーバーライド<xref:System.ArgumentException.Message%2A>です。  
+  
+ エラー メッセージには、この例外の原因となるパラメーターの値を説明する必要があります。 エラー メッセージをローカライズする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

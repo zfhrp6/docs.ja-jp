@@ -1,0 +1,85 @@
+<Type Name="IRootGridEntry" FullName="System.Windows.Forms.PropertyGridInternal.IRootGridEntry">
+  <TypeSignature Language="C#" Value="public interface IRootGridEntry" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IRootGridEntry" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.PropertyGridInternal.IRootGridEntry" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>メソッドと、特定の属性のフィルター処理できるようにするプロパティを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.PropertyGridInternal.IRootGridEntry>内部で使用される、<xref:System.Windows.Forms.PropertyGrid>プロパティの値を表示するコントロール。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="BrowsableAttributes">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.AttributeCollection BrowsableAttributes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.AttributeCollection BrowsableAttributes" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PropertyGridInternal.IRootGridEntry.BrowsableAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.AttributeCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、プロパティ ブラウザがフィルター処理属性を設定します。</summary>
+        <value>プロパティ ブラウザーがフィルター処理する属性。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ResetBrowsableAttributes">
+      <MemberSignature Language="C#" Value="public void ResetBrowsableAttributes ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ResetBrowsableAttributes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.PropertyGridInternal.IRootGridEntry.ResetBrowsableAttributes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リセット、<see cref="P:System.Windows.Forms.PropertyGridInternal.IRootGridEntry.BrowsableAttributes" />プロパティを既定値にします。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ShowCategories">
+      <MemberSignature Language="C#" Value="public void ShowCategories (bool showCategories);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ShowCategories(bool showCategories) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.PropertyGridInternal.IRootGridEntry.ShowCategories(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="showCategories" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="showCategories">
+          <see langword="true" />プロパティをカテゴリ別にグループ化するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>プロパティ ブラウザー内のプロパティを並べ替えます。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

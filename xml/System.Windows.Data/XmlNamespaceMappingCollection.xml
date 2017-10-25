@@ -1,0 +1,389 @@
+<Type Name="XmlNamespaceMappingCollection" FullName="System.Windows.Data.XmlNamespaceMappingCollection">
+  <TypeSignature Language="C#" Value="public class XmlNamespaceMappingCollection : System.Xml.XmlNamespaceManager, System.Collections.Generic.ICollection&lt;System.Windows.Data.XmlNamespaceMapping&gt;, System.Collections.Generic.IEnumerable&lt;System.Windows.Data.XmlNamespaceMapping&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlNamespaceMappingCollection extends System.Xml.XmlNamespaceManager implements class System.Collections.Generic.ICollection`1&lt;class System.Windows.Data.XmlNamespaceMapping&gt;, class System.Collections.Generic.IEnumerable`1&lt;class System.Windows.Data.XmlNamespaceMapping&gt;, class System.Collections.IEnumerable, class System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Data.XmlNamespaceMappingCollection" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Xml.XmlNamespaceManager</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.ICollection&lt;System.Windows.Data.XmlNamespaceMapping&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;System.Windows.Data.XmlNamespaceMapping&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.NeverLocalize)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>
+          <see cref="T:System.Windows.Data.XmlNamespaceMapping" /> オブジェクトのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Data.XmlNamespaceMapping>クラスで指定された名前空間の間のマッピングを提供する、[!INCLUDE[TLA2#tla_xml](~/includes/tla2sharptla-xml-md.md)]バインディング ソースとで使用できることを指定したプレフィックス[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlNamespaceMappingCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.XmlNamespaceMappingCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Data.XmlNamespaceMappingCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Windows.Data.XmlNamespaceMapping mapping);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Add(class System.Windows.Data.XmlNamespaceMapping mapping) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.XmlNamespaceMappingCollection.Add(System.Windows.Data.XmlNamespaceMapping)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mapping" Type="System.Windows.Data.XmlNamespaceMapping" />
+      </Parameters>
+      <Docs>
+        <param name="mapping">追加する <see cref="T:System.Windows.Data.XmlNamespaceMapping" /> オブジェクト。 これは、ことはできません<see langword="null" />です。</param>
+        <summary><see cref="T:System.Windows.Data.XmlNamespaceMapping" /> オブジェクトをこのコレクションに追加します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="mapping" /> が <see langword="null" /> の場合。</exception>
+        <exception cref="T:System.ArgumentException">場合、<see cref="P:System.Windows.Data.XmlNamespaceMapping.Uri" />の<see cref="T:System.Windows.Data.XmlNamespaceMapping" />オブジェクトが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddChild">
+      <MemberSignature Language="C#" Value="protected virtual void AddChild (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void AddChild(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.XmlNamespaceMappingCollection.AddChild(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">追加する <see cref="T:System.Windows.Data.XmlNamespaceMapping" /> オブジェクト。 これは、ことはできません<see langword="null" />です。</param>
+        <summary><see cref="T:System.Windows.Data.XmlNamespaceMapping" /> オブジェクトをこのコレクションに追加します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="mapping" /> が <see langword="null" /> の場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddText">
+      <MemberSignature Language="C#" Value="protected virtual void AddText (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void AddText(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.XmlNamespaceMappingCollection.AddText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">子として追加するテキスト文字列。</param>
+        <summary>これの子としてテキスト文字列を追加<see cref="T:System.Windows.Data.XmlNamespaceMappingCollection" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="text" /> が <see langword="null" /> の場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.XmlNamespaceMappingCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべて削除<see cref="T:System.Windows.Data.XmlNamespaceMapping" />このコレクション内のオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、可能性のあるコストのかかる操作です。新しいを作成するだけを検討してください<xref:System.Windows.Data.XmlNamespaceMappingCollection>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Windows.Data.XmlNamespaceMapping mapping);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(class System.Windows.Data.XmlNamespaceMapping mapping) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.XmlNamespaceMappingCollection.Contains(System.Windows.Data.XmlNamespaceMapping)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mapping" Type="System.Windows.Data.XmlNamespaceMapping" />
+      </Parameters>
+      <Docs>
+        <param name="mapping"><see cref="T:System.Windows.Data.XmlNamespaceMapping" />関心のあるオブジェクト。 これは、ことはできません<see langword="null" />です。</param>
+        <summary>このコレクションを含む、指定したかどうかを示す値を返します<see cref="T:System.Windows.Data.XmlNamespaceMapping" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />このコレクションが含まれていますが、指定した場合<see cref="T:System.Windows.Data.XmlNamespaceMapping" />オブジェクト。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="mapping" /> が <see langword="null" /> の場合。</exception>
+        <exception cref="T:System.ArgumentException">場合、<see cref="P:System.Windows.Data.XmlNamespaceMapping.Uri" />の<see cref="T:System.Windows.Data.XmlNamespaceMapping" />オブジェクトが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Windows.Data.XmlNamespaceMapping[] array, int arrayIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Windows.Data.XmlNamespaceMapping[] array, int32 arrayIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.XmlNamespaceMappingCollection.CopyTo(System.Windows.Data.XmlNamespaceMapping[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Windows.Data.XmlNamespaceMapping[]" />
+        <Parameter Name="arrayIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">コレクションからコピーされた項目のコピー先の配列。</param>
+        <param name="arrayIndex">0 から始まるインデックス位置を示す配列のコピーを開始します。</param>
+        <summary>指定したインデックスを開始位置を指定した配列にコレクションの項目をコピーします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="array" /> が <see langword="null" /> の場合。</exception>
+        <exception cref="T:System.ArgumentException">項目の数を超える場合、配列の長さ。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.XmlNamespaceMappingCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数を取得<see cref="T:System.Windows.Data.XmlNamespaceMapping" />コレクション内のオブジェクト。</summary>
+        <value>数<see cref="T:System.Windows.Data.XmlNamespaceMapping" />コレクション内のオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public override System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.XmlNamespaceMappingCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Collections.IEnumerator" />オブジェクトをこのコレクション内の項目を列挙に使用します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />オブジェクトをこのコレクション内の項目を列挙に使用します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.XmlNamespaceMappingCollection.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコレクションは読み取り専用であるかどうかを示す値を取得します。</summary>
+        <value>返します。 常にこの<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProtectedGetEnumerator">
+      <MemberSignature Language="C#" Value="protected System.Collections.Generic.IEnumerator&lt;System.Windows.Data.XmlNamespaceMapping&gt; ProtectedGetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Collections.Generic.IEnumerator`1&lt;class System.Windows.Data.XmlNamespaceMapping&gt; ProtectedGetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.XmlNamespaceMappingCollection.ProtectedGetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.CompilerServices.IteratorStateMachine(typeof(System.Windows.Data.XmlNamespaceMappingCollection/&lt;ProtectedGetEnumerator&gt;d__16))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;System.Windows.Data.XmlNamespaceMapping&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ジェネリック型を返します<see cref="T:System.Collections.Generic.IEnumerator`1" />オブジェクト。</summary>
+        <returns>汎用的な<see cref="T:System.Collections.Generic.IEnumerator`1" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、保護されたメンバーが適用される<xref:System.Collections.Generic.IEnumerable%601>実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public bool Remove (System.Windows.Data.XmlNamespaceMapping mapping);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Remove(class System.Windows.Data.XmlNamespaceMapping mapping) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.XmlNamespaceMappingCollection.Remove(System.Windows.Data.XmlNamespaceMapping)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mapping" Type="System.Windows.Data.XmlNamespaceMapping" />
+      </Parameters>
+      <Docs>
+        <param name="mapping">削除する <see cref="T:System.Windows.Data.XmlNamespaceMapping" /> オブジェクト。 これは、ことはできません<see langword="null" />です。</param>
+        <summary>指定された削除<see cref="T:System.Windows.Data.XmlNamespaceMapping" />をこのコレクションからオブジェクト。</summary>
+        <returns>
+          <see langword="true" />場合、指定した<see cref="T:System.Windows.Data.XmlNamespaceMapping" />が正常に削除された、それ以外のオブジェクトが表示された<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="mapping" /> が <see langword="null" /> の場合。</exception>
+        <exception cref="T:System.ArgumentException">場合、<see cref="P:System.Windows.Data.XmlNamespaceMapping.Uri" />の<see cref="T:System.Windows.Data.XmlNamespaceMapping" />オブジェクトが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.Generic.IEnumerable&lt;System.Windows.Data.XmlNamespaceMapping&gt;.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.Generic.IEnumerator&lt;System.Windows.Data.XmlNamespaceMapping&gt; IEnumerable&lt;XmlNamespaceMapping&gt;.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.Generic.IEnumerator`1&lt;class System.Windows.Data.XmlNamespaceMapping&gt; System.Collections.Generic.IEnumerable&lt;System.Windows.Data.XmlNamespaceMapping&gt;.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.XmlNamespaceMappingCollection.System#Collections#Generic#IEnumerable&lt;System#Windows#Data#XmlNamespaceMapping&gt;#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;System.Windows.Data.XmlNamespaceMapping&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Collections.Generic.IEnumerable`1.GetEnumerator" />」をご覧ください。</summary>
+        <returns>コレクションを反復処理するために使用できる <see cref="T:System.Collections.Generic.IEnumerator`1" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Data.XmlNamespaceMappingCollection> のインスタンスが <xref:System.Collections.Generic.IEnumerable%601> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddChild">
+      <MemberSignature Language="C#" Value="void IAddChild.AddChild (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddChild(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.XmlNamespaceMappingCollection.System#Windows#Markup#IAddChild#AddChild(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">子<see cref="T:System.Object" />を追加します。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Windows.Markup.IAddChild.AddChild(System.Object)" />」をご覧ください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Data.XmlNamespaceMappingCollection> のインスタンスが <xref:System.Windows.Markup.IAddChild> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddText">
+      <MemberSignature Language="C#" Value="void IAddChild.AddText (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddText(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.XmlNamespaceMappingCollection.System#Windows#Markup#IAddChild#AddText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">追加するテキスト、<see cref="T:System.Object" />です。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Windows.Markup.IAddChild.AddText(System.String)" />」をご覧ください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Data.XmlNamespaceMappingCollection> のインスタンスが <xref:System.Windows.Markup.IAddChild> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

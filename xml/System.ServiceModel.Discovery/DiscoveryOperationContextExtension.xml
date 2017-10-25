@@ -1,0 +1,126 @@
+<Type Name="DiscoveryOperationContextExtension" FullName="System.ServiceModel.Discovery.DiscoveryOperationContextExtension">
+  <TypeSignature Language="C#" Value="public class DiscoveryOperationContextExtension : System.ServiceModel.IExtension&lt;System.ServiceModel.OperationContext&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DiscoveryOperationContextExtension extends System.Object implements class System.ServiceModel.IExtension`1&lt;class System.ServiceModel.OperationContext&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Discovery.DiscoveryOperationContextExtension" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.IExtension&lt;System.ServiceModel.OperationContext&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>探索ランタイムでさまざまな構成アイテムを使用できるようにするために使用される操作コンテキスト拡張。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DiscoveryMode">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Discovery.ServiceDiscoveryMode DiscoveryMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.Discovery.ServiceDiscoveryMode DiscoveryMode" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Discovery.DiscoveryOperationContextExtension.DiscoveryMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Discovery.ServiceDiscoveryMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Discovery.ServiceDiscoveryMode" /> を取得します。</summary>
+        <value><see cref="T:System.ServiceModel.Discovery.ServiceDiscoveryMode" /> 列挙値のいずれか。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DiscoveryVersion">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Discovery.DiscoveryVersion DiscoveryVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Discovery.DiscoveryVersion DiscoveryVersion" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Discovery.DiscoveryOperationContextExtension.DiscoveryVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Discovery.DiscoveryVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Discovery.DiscoveryVersion" /> を取得します。</summary>
+        <value>探索のバージョン。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxResponseDelay">
+      <MemberSignature Language="C#" Value="public TimeSpan MaxResponseDelay { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan MaxResponseDelay" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Discovery.DiscoveryOperationContextExtension.MaxResponseDelay" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>応答遅延の最大値を指定する <see cref="T:System.TimeSpan" /> を取得します。</summary>
+        <value>最大の応答遅延。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 操作のアドホック モードでは、探索クライアントは、検索または解決要求をマルチキャストします。 要求内で指定されている基準に基づいて、複数のサービスがクライアントに応答する場合があります。 すべての応答の同時受信によるクライアントの過負荷を回避するには、探索サービス ランタイムによる要求への応答の送信を 0 と  <xref:System.ServiceModel.Discovery.DiscoveryOperationContextExtension.MaxResponseDelay%2A> の値の間のランダムな期間内で遅延させます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.IExtension&lt;System.ServiceModel.OperationContext&gt;.Attach">
+      <MemberSignature Language="C#" Value="void IExtension&lt;OperationContext&gt;.Attach (System.ServiceModel.OperationContext owner);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.IExtension&lt;System.ServiceModel.OperationContext&gt;.Attach(class System.ServiceModel.OperationContext owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryOperationContextExtension.System#ServiceModel#IExtension&lt;System#ServiceModel#OperationContext&gt;#Attach(System.ServiceModel.OperationContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="System.ServiceModel.OperationContext" />
+      </Parameters>
+      <Docs>
+        <param name="owner">拡張をアタッチする操作コンテキスト。</param>
+        <summary><see cref="M:System.ServiceModel.IExtension`1.Attach(`0)" /> メソッドの実装。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.IExtension&lt;System.ServiceModel.OperationContext&gt;.Detach">
+      <MemberSignature Language="C#" Value="void IExtension&lt;OperationContext&gt;.Detach (System.ServiceModel.OperationContext owner);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.IExtension&lt;System.ServiceModel.OperationContext&gt;.Detach(class System.ServiceModel.OperationContext owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryOperationContextExtension.System#ServiceModel#IExtension&lt;System#ServiceModel#OperationContext&gt;#Detach(System.ServiceModel.OperationContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="System.ServiceModel.OperationContext" />
+      </Parameters>
+      <Docs>
+        <param name="owner">拡張をアタッチする操作コンテキスト。</param>
+        <summary><see cref="M:System.ServiceModel.Discovery.DiscoveryOperationContextExtension.System#ServiceModel#IExtension{System#ServiceModel#OperationContext}#Detach(System.ServiceModel.OperationContext)" /> メソッドの実装。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

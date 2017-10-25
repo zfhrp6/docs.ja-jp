@@ -1,0 +1,341 @@
+<Type Name="IWebPart" FullName="System.Web.UI.WebControls.WebParts.IWebPart">
+  <TypeSignature Language="C#" Value="public interface IWebPart" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IWebPart" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.IWebPart" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET で使用される共通のユーザー インターフェイス (UI) プロパティを定義<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.IWebPart>インターフェイスの操作のユーザー エクスペリエンスを強化する UI 指向プロパティをいくつかの提供<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 ベースから派生したコントロールを作成する場合<xref:System.Web.UI.WebControls.WebParts.WebPart>内のすべてのプロパティの実装を取得する、クラス、<xref:System.Web.UI.WebControls.WebParts.IWebPart>ため、インターフェイス、<xref:System.Web.UI.WebControls.WebParts.WebPart>基底クラスは、このインターフェイスを実装します。  
+  
+ 既存のユーザー コントロール、ASP.NET コントロール、またはカスタム サーバー コントロールから継承していないことを行うこともできます、 <xref:System.Web.UI.WebControls.WebParts.WebPart> Web パーツ アプリケーションの一部としてのクラスで宣言されたこれらの UI 指向プロパティを使用することができますも、<xref:System.Web.UI.WebControls.WebParts.IWebPart>インターフェイスです。 内の既存のサーバー コントロールを配置する場合、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>でラップされる実行時に、ゾーン、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>オブジェクト。 <xref:System.Web.UI.WebControls.WebParts.GenericWebPart>クラスから継承、<xref:System.Web.UI.WebControls.WebParts.WebPart>基底クラスは、これを有効に機能する既存のサーバー コントロールとして true<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールとそれにそれらのプロパティを追加、<xref:System.Web.UI.WebControls.WebParts.IWebPart>インターフェイスです。  
+  
+ ないサーバー コントロールを配置する場合<xref:System.Web.UI.WebControls.WebParts.WebPart>ゾーンでのコントロールを使用できる、<xref:System.Web.UI.WebControls.WebParts.IWebPart>にして、実行時のプロパティを宣言することもこれらのプロパティの値 (ページ永続形式) 内のページのマークアップ内のサーバー コントロールにします。 ただし、実行時にこれらのプロパティをサーバー コントロールで使用できるだけであるためデザイン時のコーディング機能など、IntelliSense を認識しない<xref:System.Web.UI.WebControls.WebParts.IWebPart>サーバー コントロールで宣言されるプロパティです。 これらのコントロールに宣言されたプロパティは、Microsoft Visual Studio は認識されませんプロパティとして有効なデザイン時に、ページを読み込むときに引き続き動作します。 追加する場合、<xref:System.Web.UI.WebControls.WebParts.IWebPart>既存のサーバーと、デザイン時のユーザー エクスペリエンスを強化するためにユーザー コントロールにプロパティを実装できます、<xref:System.Web.UI.WebControls.WebParts.IWebPart>サーバー コントロールのインターフェイスです。  
+  
+ 実装する主な理由ではおそらく、 <xref:System.Web.UI.WebControls.WebParts.IWebPart> expando (カスタム) プロパティの使用をサポートしないコントロールのインターフェイスは、します。 Expando プロパティは、追加できるクラスを動的にプロパティとしての文字列、<xref:System.Web.UI.IAttributeAccessor>インターフェイスです。 このインターフェイスを実装するコントロールを含む、<xref:System.Web.UI.WebControls.WebControl>クラスとその子 expando プロパティを使用できます。 そのため、すべての ASP.NET サーバー コントロール、カスタム コントロールを派生させて、Web ユーザー コントロールと<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールが expando プロパティの使用をサポートします。 基数から直接継承する、カスタム コントロール<xref:System.Web.UI.Control>クラスは expando プロパティをサポートしていません。 したがって、内でこれらのコントロールを宣言する場合、 <xref:System.Web.UI.WebControls.WebParts.WebPartZone>、共通の宣言することはできません<xref:System.Web.UI.WebControls.WebParts.IWebPart>などのプロパティ、コントロールのプロパティ<xref:System.Web.UI.WebControls.WebParts.IWebPart.Title%2A>と<xref:System.Web.UI.WebControls.WebParts.IWebPart.Description%2A>です。 このようなコントロールでこれらのプロパティを使用する場合は、実装する必要あります、<xref:System.Web.UI.WebControls.WebParts.IWebPart>インターフェイスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装する方法を示します、<xref:System.Web.UI.WebControls.WebParts.IWebPart>ユーザー コントロールのインターフェイスです。 これは、最小プロパティを実装する方法を説明する簡単な実装です。  
+  
+ このコード例の最初の部分では、ユーザー コントロールを示します。 ユーザー コントロールのすべてのプロパティを実装して、<xref:System.Web.UI.WebControls.WebParts.IWebPart>インターフェイス、および 2 つのパブリック プロパティ、コントロールにユーザー インターフェイスに関連付けられています。 します。 2 つのカスタム プロパティを使用して、`Personalizable`属性は、ブラウザー セッション間で保存されるこれらのプロパティの値を使用します。 ベースで<xref:System.Web.UI.WebControls.WebParts.WebPart>クラスの実装のすべてのプロパティ、<xref:System.Web.UI.WebControls.WebParts.IWebPart>インターフェイスが実装されたパーソナル化可能と同様に、このコード例ではありませんが。  
+  
+ [!code-aspx-csharp[WebParts_IWebPart_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IWebPart_Overview/CS/accountusercontrolcs.ascx#2)]
+ [!code-aspx-vb[WebParts_IWebPart_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IWebPart_Overview/VB/accountusercontrolvb.ascx#2)]  
+  
+ コード例の 2 番目の部分では、ユーザー コントロールをホストする Web ページを示します。 このページは、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>ユーザー コントロールが参照されている内では、制御します。 注意していくつかの<xref:System.Web.UI.WebControls.WebParts.IWebPart>インターフェイスのプロパティの値は、これにより、両方の動作と、表示のようなユーザー コントロールのマークアップで宣言によって設定されて、<xref:System.Web.UI.WebControls.WebParts.WebPart>デザイン時に制御し、実行時間。 ブラウザーでページを読み込む場合できます UI を使用する ページで、実装済みの値をプログラムで変更することを示すために<xref:System.Web.UI.WebControls.WebParts.IWebPart>実行時プロパティです。 変更が ページはされませんが、ページのソースでの表示プロパティの値の一部を変更すると (、<xref:System.Web.UI.WebControls.WebParts.IWebPart.TitleIconImageUrl%2A>プロパティ)、またはアプリケーションの状態のデータの格納 (、<xref:System.Web.UI.WebControls.WebParts.IWebPart.CatalogIconImageUrl%2A>プロパティ)。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[WebParts_IWebPart_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IWebPart_Overview/CS/accountuchostcs.aspx#1)]
+ [!code-aspx-vb[WebParts_IWebPart_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IWebPart_Overview/VB/accountuchostvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>通常を実装する必要はありません、<see cref="T:System.Web.UI.WebControls.WebParts.IWebPart" />インターフェイスのいずれかのカスタム<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロールまたはサーバー コントロール、ため、ベース<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />クラスは既にインターフェイスを実装します。 カスタム<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール、およびその他のサーバー コントロールに配置されている<see cref="T:System.Web.UI.WebControls.WebParts.WebPartZoneBase" />ゾーンの場合は、すべてを使用する、<see cref="T:System.Web.UI.WebControls.WebParts.IWebPart" />プロパティです。  
+  
+ 実装する主な理由、<see cref="T:System.Web.UI.WebControls.WebParts.IWebPart" />カスタムであるかどうかインターフェイスを自分で、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロールまたは別のサーバー コントロールは、既定の実装を変更する場合します。 たとえば、一部のプロパティの既定値を指定することができます。 ユーザーまたはサーバー コントロールのインターフェイスを実装する理由の 1 つが設定されてコントロールでこれらのプロパティを処理のデザイン時のエクスペリエンスが向上します。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="CatalogIconImageUrl">
+      <MemberSignature Language="C#" Value="public string CatalogIconImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CatalogIconImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.IWebPart.CatalogIconImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の URL を表すイメージ、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロールのカタログ内のコントロールです。</summary>
+        <value>カタログ内のコントロールを表すために使用されるイメージの URL を表す文字列。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 多くの場合、web パーツ アプリケーションは、ユーザーがページに追加できるコントロールのカタログ (または一覧) を提供します。 <xref:System.Web.UI.WebControls.WebParts.IWebPart.CatalogIconImageUrl%2A>コントロールのプロパティにコントロールを表すカタログで表示されるイメージの URL が含まれています。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますの宣言とプログラムを使用して、<xref:System.Web.UI.WebControls.WebParts.IWebPart.CatalogIconImageUrl%2A>プロパティです。 使用例」の例の完全なソース コードが検出された、<xref:System.Web.UI.WebControls.WebParts.IWebPart>クラスの概要です。  
+  
+ このコード例の最初の部分は、ユーザー コントロールを実装する方法を示しています、<xref:System.Web.UI.WebControls.WebParts.IWebPart.CatalogIconImageUrl%2A>プロパティです。  
+  
+ [!code-csharp[WebParts_IWebPart_Overview#8](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IWebPart_Overview/CS/accountusercontrolcs.ascx#8)]
+ [!code-vb[WebParts_IWebPart_Overview#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IWebPart_Overview/VB/accountusercontrolvb.ascx#8)]  
+  
+ コード例の 2 番目の部分をプログラムでの値を設定するユーザー コントロールのメソッドを示しています、<xref:System.Web.UI.WebControls.WebParts.IWebPart.CatalogIconImageUrl%2A>プロパティ ページで、オプション ボタンから、ユーザーが適切なプロパティ名を選択したときに、テキスト ボックスに新しい値を設定し、クリックして、**更新**ボタンをクリックします。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-csharp[WebParts_IWebPart_Overview#9](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IWebPart_Overview/CS/accountusercontrolcs.ascx#9)]
+ [!code-vb[WebParts_IWebPart_Overview#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IWebPart_Overview/VB/accountusercontrolvb.ascx#9)]  
+  
+ コード例の 3 番目の部分は、ユーザーが制御を実装する方法を示しています、<xref:System.Web.UI.WebControls.WebParts.IWebPart>でインターフェイスが参照されている、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>コントロール、方法、および<xref:System.Web.UI.WebControls.WebParts.IWebPart.CatalogIconImageUrl%2A>コントロールにプロパティを宣言して設定します。 この例で提供される Web パーツ コントロールのカタログがないためは、このプロパティの設定の実際の効果を確認することはできませんに注意してください。  
+  
+ [!code-aspx-csharp[WebParts_IWebPart_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IWebPart_Overview/CS/accountuchostcs.aspx#1)]
+ [!code-aspx-vb[WebParts_IWebPart_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IWebPart_Overview/VB/accountuchostvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public string Description { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.IWebPart.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のツールヒントやカタログで使用する、コントロールの動作をまとめた簡単な語句<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</summary>
+        <value>文字列には、コントロールの機能を簡単に説明をまとめたものです。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.IWebPart.Description%2A>の一覧を提供するカタログ内のコントロールのプロパティの値が通常使用を説明する文字列として<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、およびコントロールのタイトル バーのツールヒントとして。 プロパティのコンテンツは、ユーザーがコントロールのタイトル バーのタイトル テキストの上にマウス ポインターを置いたときに、ツールヒントに表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますの宣言とプログラムを使用して、<xref:System.Web.UI.WebControls.WebParts.IWebPart.Description%2A>プロパティです。 使用例」の例の完全なソース コードが検出された、<xref:System.Web.UI.WebControls.WebParts.IWebPart>クラスの概要です。  
+  
+ このコード例の最初の部分は、ユーザー コントロールを実装する方法を示しています、<xref:System.Web.UI.WebControls.WebParts.IWebPart.Description%2A>プロパティです。  
+  
+ [!code-csharp[WebParts_IWebPart_Overview#3](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IWebPart_Overview/CS/accountusercontrolcs.ascx#3)]
+ [!code-vb[WebParts_IWebPart_Overview#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IWebPart_Overview/VB/accountusercontrolvb.ascx#3)]  
+  
+ コード例の 2 番目の部分をプログラムでの値を設定するユーザー コントロールのメソッドを示しています、<xref:System.Web.UI.WebControls.WebParts.IWebPart.Description%2A>プロパティ ページで、オプション ボタンから、ユーザーが適切なプロパティ名を選択したときに、テキスト ボックスに新しい値を設定し、クリックして、**更新**ボタンをクリックします。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-csharp[WebParts_IWebPart_Overview#9](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IWebPart_Overview/CS/accountusercontrolcs.ascx#9)]
+ [!code-vb[WebParts_IWebPart_Overview#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IWebPart_Overview/VB/accountusercontrolvb.ascx#9)]  
+  
+ コード例の 3 番目の部分は、ユーザーが制御を実装する方法を示しています、<xref:System.Web.UI.WebControls.WebParts.IWebPart>でインターフェイスが参照されている、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>コントロール、方法、および<xref:System.Web.UI.WebControls.WebParts.IWebPart.Description%2A>コントロールにプロパティを宣言して設定します。 ブラウザーでページを読み込んだ後、コントロールのタイトル バーのタイトル テキストの上にマウス ポインターを配置し、このプロパティの値を確認できることに注意してください。 Web ページの読み込みとプロパティ値を変更する、指定されたユーザー インターフェイス (UI) を使用して、実行時にプロパティの値をプログラムで変更することもできます。  
+  
+ [!code-aspx-csharp[WebParts_IWebPart_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IWebPart_Overview/CS/accountuchostcs.aspx#1)]
+ [!code-aspx-vb[WebParts_IWebPart_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IWebPart_Overview/VB/accountuchostvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Subtitle">
+      <MemberSignature Language="C#" Value="public string Subtitle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Subtitle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.IWebPart.Subtitle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>連結した文字列を取得、<see cref="P:System.Web.UI.WebControls.WebParts.IWebPart.Title" />の完全なタイトルを形成するプロパティ値、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</summary>
+        <value>コントロールのサブタイトルとして機能する文字列。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.IWebPart.Subtitle%2A>の既定の字幕文字列を返すプロパティが使用される、<xref:System.Web.UI.WebControls.WebParts.WebPart>タイトル バーにコントロールのタイトルに追加されるコントロールです。  
+  
+ 既定値を提供する場合、<xref:System.Web.UI.WebControls.WebParts.IWebPart.Subtitle%2A>を実装するコントロールのプロパティ、<xref:System.Web.UI.WebControls.WebParts.IWebPart>インターフェイスを自動的に設定するコントロールの値に追加の Web パーツ、<xref:System.Web.UI.WebControls.WebParts.IWebPart.Title%2A>実行時にコントロールのプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますの宣言とプログラムを使用して、<xref:System.Web.UI.WebControls.WebParts.IWebPart.Subtitle%2A>プロパティです。 使用例」の例の完全なソース コードが検出された、<xref:System.Web.UI.WebControls.WebParts.IWebPart>クラスの概要です。  
+  
+ このコード例の最初の部分は、ユーザー コントロールを実装する方法を示しています、<xref:System.Web.UI.WebControls.WebParts.IWebPart.Subtitle%2A>プロパティです。 プロパティは読み取り専用とコントロールのメインのタイトルに追加される既定のサブタイトルを提供するために使用することを意図したことに注意してください。  
+  
+ [!code-csharp[WebParts_IWebPart_Overview#5](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IWebPart_Overview/CS/accountusercontrolcs.ascx#5)]
+ [!code-vb[WebParts_IWebPart_Overview#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IWebPart_Overview/VB/accountusercontrolvb.ascx#5)]  
+  
+ コード例の 2 番目の部分は、ユーザーが制御を実装する方法を示しています、<xref:System.Web.UI.WebControls.WebParts.IWebPart>でインターフェイスが参照されている、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>コントロール、およびその方法から書き込み可能なプロパティ<xref:System.Web.UI.WebControls.WebParts.IWebPart>コントロールで宣言によって設定されます。 ブラウザーでページを読み込むことに注意して、既定値の<xref:System.Web.UI.WebControls.WebParts.IWebPart.Subtitle%2A>コントロールのタイトル バーのタイトルにこれは、ユーザー コントロールの実装コードで設定された、プロパティが追加されます。  
+  
+ [!code-aspx-csharp[WebParts_IWebPart_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IWebPart_Overview/CS/accountuchostcs.aspx#1)]
+ [!code-aspx-vb[WebParts_IWebPart_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IWebPart_Overview/VB/accountuchostvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Title">
+      <MemberSignature Language="C#" Value="public string Title { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Title" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.IWebPart.Title" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のタイトル、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</summary>
+        <value>コントロールのタイトルを含む文字列です。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールのタイトル バーに表示されるタイトルのテキストが設定されて、<xref:System.Web.UI.WebControls.WebParts.IWebPart.Title%2A>プロパティです。  
+  
+ コントロールのタイトルを指定しない場合、Web パーツ コントロール セットを自動的には、タイトルとして使用する既定の文字列を計算します。 詳細については、「<xref:System.Web.UI.WebControls.WebParts.WebPart.DisplayTitle%2A>」を参照してください。 また、タイトル文字列に追加される既定のサブタイトルを指定することができます。 詳細については、「<xref:System.Web.UI.WebControls.WebParts.IWebPart.Subtitle%2A>」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますの宣言とプログラムを使用して、<xref:System.Web.UI.WebControls.WebParts.IWebPart.Title%2A>プロパティです。 使用例」の例の完全なソース コードが検出された、<xref:System.Web.UI.WebControls.WebParts.IWebPart>クラスの概要です。  
+  
+ このコード例の最初の部分は、ユーザー コントロールを実装する方法を示しています、<xref:System.Web.UI.WebControls.WebParts.IWebPart.Title%2A>プロパティです。  
+  
+ [!code-csharp[WebParts_IWebPart_Overview#4](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IWebPart_Overview/CS/accountusercontrolcs.ascx#4)]
+ [!code-vb[WebParts_IWebPart_Overview#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IWebPart_Overview/VB/accountusercontrolvb.ascx#4)]  
+  
+ コード例の 2 番目の部分をプログラムでの値を設定するユーザー コントロールのメソッドを示しています、<xref:System.Web.UI.WebControls.WebParts.IWebPart.Title%2A>プロパティ ページで、オプション ボタンから、ユーザーが適切なプロパティ名を選択したときに、テキスト ボックスに新しい値を設定し、クリックして、**更新**ボタンをクリックします。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-csharp[WebParts_IWebPart_Overview#9](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IWebPart_Overview/CS/accountusercontrolcs.ascx#9)]
+ [!code-vb[WebParts_IWebPart_Overview#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IWebPart_Overview/VB/accountusercontrolvb.ascx#9)]  
+  
+ コード例の 3 番目の部分は、ユーザーが制御を実装する方法を示しています、<xref:System.Web.UI.WebControls.WebParts.IWebPart>でインターフェイスが参照されている、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>コントロール、方法、および<xref:System.Web.UI.WebControls.WebParts.IWebPart.Title%2A>コントロールにプロパティを宣言して設定します。  
+  
+ [!code-aspx-csharp[WebParts_IWebPart_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IWebPart_Overview/CS/accountuchostcs.aspx#1)]
+ [!code-aspx-vb[WebParts_IWebPart_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IWebPart_Overview/VB/accountuchostvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TitleIconImageUrl">
+      <MemberSignature Language="C#" Value="public string TitleIconImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TitleIconImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.IWebPart.TitleIconImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールのタイトル バーに Web パーツ コントロールを表すために使用されるイメージの URL を設定します。</summary>
+        <value>イメージの URL を表す文字列。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.IWebPart.TitleIconImageUrl%2A>プロパティをアイコンに関連付ける方法を提供する、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 コントロールのタイトル バーにアイコンが表示されます。 テーマの一貫性を保つのため、アプリケーション開発者がこのアイコンを Web パーツ コントロールのカタログでコントロールを表す画像のようにする可能性があります (で参照されている画像、<xref:System.Web.UI.WebControls.WebParts.IWebPart.CatalogIconImageUrl%2A>プロパティ)。  
+  
+ Web パーツ コントロール セットに実装されている、<xref:System.Web.UI.WebControls.WebParts.IWebPart.TitleIconImageUrl%2A>プロパティは、イメージまたはコントロールのタイトル バーに表示されるアイコンを変更するのには、エンドユーザーがカスタマイズできます。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますの宣言とプログラムを使用して、<xref:System.Web.UI.WebControls.WebParts.IWebPart.TitleIconImageUrl%2A>プロパティです。 使用例」の例の完全なソース コードが検出された、<xref:System.Web.UI.WebControls.WebParts.IWebPart>クラスの概要です。  
+  
+ このコード例の最初の部分は、ユーザー コントロールを実装する方法を示しています、<xref:System.Web.UI.WebControls.WebParts.IWebPart.TitleIconImageUrl%2A>プロパティです。  
+  
+ [!code-csharp[WebParts_IWebPart_Overview#6](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IWebPart_Overview/CS/accountusercontrolcs.ascx#6)]
+ [!code-vb[WebParts_IWebPart_Overview#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IWebPart_Overview/VB/accountusercontrolvb.ascx#6)]  
+  
+ コード例の 2 番目の部分をプログラムでの値を設定するユーザー コントロールのメソッドを示しています、<xref:System.Web.UI.WebControls.WebParts.IWebPart.TitleIconImageUrl%2A>プロパティ ページで、オプション ボタンから、ユーザーが適切なプロパティ名を選択したときに、テキスト ボックスに新しい値を設定し、クリックして、**更新**ボタンをクリックします。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-csharp[WebParts_IWebPart_Overview#9](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IWebPart_Overview/CS/accountusercontrolcs.ascx#9)]
+ [!code-vb[WebParts_IWebPart_Overview#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IWebPart_Overview/VB/accountusercontrolvb.ascx#9)]  
+  
+ コード例の 3 番目の部分は、ユーザーが制御を実装する方法を示しています、<xref:System.Web.UI.WebControls.WebParts.IWebPart>でインターフェイスが参照されている、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>コントロール、方法、および<xref:System.Web.UI.WebControls.WebParts.IWebPart.TitleIconImageUrl%2A>コントロールにプロパティを宣言して設定します。 実際のイメージの URL を指定しない場合、アイコンのプレース ホルダーが表示されるタイトル バーに注意してください。  
+  
+ [!code-aspx-csharp[WebParts_IWebPart_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IWebPart_Overview/CS/accountuchostcs.aspx#1)]
+ [!code-aspx-vb[WebParts_IWebPart_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IWebPart_Overview/VB/accountuchostvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TitleUrl">
+      <MemberSignature Language="C#" Value="public string TitleUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TitleUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.IWebPart.TitleUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または補足情報への URL を設定、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</summary>
+        <value>についての詳細情報への URL を表す文字列、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ URL を割り当てると、<xref:System.Web.UI.WebControls.WebParts.IWebPart.TitleUrl%2A>プロパティ、コントロールのタイトルはリンクになります。 このプロパティの目的では、コントロールに関する追加情報にアクセスするエンドユーザーの便利な手段です。 詳細については、著作権データ、連絡先情報は、コントロールの作成者やコントロールの用途の概要の詳細を提供できます。  
+  
+> [!NOTE]
+>  通常、使用すべきでない、<xref:System.Web.UI.WebControls.WebParts.IWebPart.TitleUrl%2A>ヘルプ コンテンツにリンクするプロパティです。 コントロールが使用するには、ヘルプへのリンクを提供する最善の方法、<xref:System.Web.UI.WebControls.WebParts.WebPart.HelpUrl%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますの宣言とプログラムを使用して、<xref:System.Web.UI.WebControls.WebParts.IWebPart.TitleUrl%2A>プロパティです。 使用例」の例の完全なソース コードが検出された、<xref:System.Web.UI.WebControls.WebParts.IWebPart>クラスの概要です。  
+  
+ このコード例の最初の部分は、ユーザー コントロールを実装する方法を示しています、<xref:System.Web.UI.WebControls.WebParts.IWebPart.TitleUrl%2A>プロパティです。  
+  
+ [!code-csharp[WebParts_IWebPart_Overview#7](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IWebPart_Overview/CS/accountusercontrolcs.ascx#7)]
+ [!code-vb[WebParts_IWebPart_Overview#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IWebPart_Overview/VB/accountusercontrolvb.ascx#7)]  
+  
+ コード例の 2 番目の部分をプログラムでの値を設定するユーザー コントロールのメソッドを示しています、<xref:System.Web.UI.WebControls.WebParts.IWebPart.TitleUrl%2A>プロパティ ページで、オプション ボタンから、ユーザーが適切なプロパティ名を選択したときに、テキスト ボックスに新しい値を設定し、クリックして、**更新**ボタンをクリックします。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-csharp[WebParts_IWebPart_Overview#9](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IWebPart_Overview/CS/accountusercontrolcs.ascx#9)]
+ [!code-vb[WebParts_IWebPart_Overview#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IWebPart_Overview/VB/accountusercontrolvb.ascx#9)]  
+  
+ コード例の 3 番目の部分は、ユーザーが制御を実装する方法を示しています、<xref:System.Web.UI.WebControls.WebParts.IWebPart>でインターフェイスが参照されている、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>コントロール、方法、および<xref:System.Web.UI.WebControls.WebParts.IWebPart.TitleUrl%2A>コントロールにプロパティを宣言して設定します。 実際のページへの URL を指定しないと、ユーザーがタイトル バーのリンクをクリックし、エラー メッセージが表示されることに注意してください。  
+  
+ [!code-aspx-csharp[WebParts_IWebPart_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IWebPart_Overview/CS/accountuchostcs.aspx#1)]
+ [!code-aspx-vb[WebParts_IWebPart_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IWebPart_Overview/VB/accountuchostvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

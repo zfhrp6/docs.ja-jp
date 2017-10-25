@@ -1,0 +1,788 @@
+<Type Name="StringReader" FullName="System.IO.StringReader">
+  <TypeSignature Language="C#" Value="public class StringReader : System.IO.TextReader" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit StringReader extends System.IO.TextReader" />
+  <TypeSignature Language="DocId" Value="T:System.IO.StringReader" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IO.TextReader</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>実装して、<see cref="T:System.IO.TextReader" />文字列から読み取ることです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.StringReader>同期または非同期で文字列を読み取ることができます。 使用時に文字を読み取ることができます、<xref:System.IO.StringReader.Read%2A>または<xref:System.IO.StringReader.ReadAsync%2A>メソッドは、時間を使用して、一度に 1 行ずつ、<xref:System.IO.StringReader.ReadLine%2A>または<xref:System.IO.StringReader.ReadLineAsync%2A>メソッドと、文字列全体を使用して、<xref:System.IO.StringReader.ReadToEnd%2A>または<xref:System.IO.StringReader.ReadToEndAsync%2A>メソッドです。  
+  
+[!INCLUDE[note_unnecessary_dispose](~/includes/note-unnecessary-dispose.md)]
+  
+ 次の表は、その他の一般的なまたは関連する I/O タスクの例を示します。  
+  
+|目的|参照項目|  
+|-------------------|--------------------------------------|  
+|テキスト ファイルを作成します。|[方法: ファイルにテキストを書き込む](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
+|テキスト ファイルに書き込みます。|[方法: ファイルにテキストを書き込む](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
+|テキスト ファイルから読み取れません。|[方法: ファイルからテキストを読み取る](~/docs/standard/io/how-to-read-text-from-a-file.md)|  
+|ファイルにテキストを追加します。|[方法: ログ ファイルを開いて情報を追加する](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=nameWithType><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=nameWithType>|  
+|ファイルのサイズを取得します。|<xref:System.IO.FileInfo.Length%2A?displayProperty=nameWithType>|  
+|ファイルの属性を取得します。|<xref:System.IO.File.GetAttributes%2A?displayProperty=nameWithType>|  
+|ファイルの属性を設定します。|<xref:System.IO.File.SetAttributes%2A?displayProperty=nameWithType>|  
+|ファイルが存在するかどうかを決定します。|<xref:System.IO.File.Exists%2A?displayProperty=nameWithType>|  
+|バイナリ ファイルから読み取ります。|[方法: 新しく作成されたデータ ファイルに対して読み書きする](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
+|バイナリ ファイルに書き込みます。|[方法: 新しく作成されたデータ ファイルに対して読み書きする](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
+  
+   
+  
+## Examples  
+ 次の例では、文字列全体を非同期的に読み込む方法を示します。  
+  
+ [!code-csharp[System.IO.StringReader#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.stringreader/cs/example2.cs#2)]
+ [!code-vb[System.IO.StringReader#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.stringreader/vb/example2.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StringReader (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StringReader.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s">文字列、<see cref="T:System.IO.StringReader" />初期化する必要があります。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IO.StringReader" />クラスを指定した文字列から読み取る。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、その他の一般的なまたは関連する I/O タスクの例を示します。  
+  
+|目的|参照項目|  
+|-------------------|--------------------------------------|  
+|テキスト ファイルを作成します。|[方法: ファイルにテキストを書き込む](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
+|テキスト ファイルに書き込みます。|[方法: ファイルにテキストを書き込む](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
+|テキスト ファイルから読み取れません。|[方法: ファイルからテキストを読み取る](~/docs/standard/io/how-to-read-text-from-a-file.md)|  
+|ファイルにテキストを追加します。|[方法: ログ ファイルを開いて情報を追加する](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=nameWithType><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=nameWithType>|  
+|ファイルのサイズを取得します。|<xref:System.IO.FileInfo.Length%2A?displayProperty=nameWithType>|  
+|ファイルの属性を取得します。|<xref:System.IO.File.GetAttributes%2A?displayProperty=nameWithType>|  
+|ファイルの属性を設定します。|<xref:System.IO.File.SetAttributes%2A?displayProperty=nameWithType>|  
+|ファイルが存在するかどうかを決定します。|<xref:System.IO.File.Exists%2A?displayProperty=nameWithType>|  
+|バイナリ ファイルから読み取ります。|[方法: 新しく作成されたデータ ファイルに対して読み書きする](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
+|バイナリ ファイルに書き込みます。|[方法: 新しく作成されたデータ ファイルに対して読み書きする](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
+  
+   
+  
+## Examples  
+ このコード例に示されている例の一部である、<xref:System.IO.StringReader>クラスです。  
+  
+ [!code-cpp[System.IO.StringReaderWriter#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.StringReaderWriter/CPP/stringrw.cpp#2)]
+ [!code-csharp[System.IO.StringReaderWriter#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.StringReaderWriter/CS/stringrw.cs#2)]
+ [!code-vb[System.IO.StringReaderWriter#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.StringReaderWriter/VB/stringrw.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="s" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public override void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StringReader.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IO.StringReader" /> を閉じます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイルを作成し、テキスト ファイルへの書き込みの例は、次を参照してください。[する方法: テキスト ファイルを書き込む](~/docs/standard/io/how-to-write-text-to-a-file.md)です。 ファイルからテキストの読み取りの例は、次を参照してください。[する方法: テキスト ファイルからの読み取り](~/docs/standard/io/how-to-read-text-from-a-file.md)です。 読み取りと書き込み、バイナリ ファイルの例は、次を参照してください。[する方法: 新しく作成されたデータ ファイルに読み書き](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)です。  
+  
+ このメソッドは、<xref:System.IO.Stream.Close%2A?displayProperty=nameWithType>メソッドです。  
+  
+ この実装`Close`呼び出し、<xref:System.IO.StringReader.Dispose%2A>メソッド、`true`値。  
+  
+ 明示的に呼び出す場合を除き、ストリームのフラッシュは、基になるエンコーダー フラッシュされません`Close`です。 設定<xref:System.IO.StreamWriter.AutoFlush%2A>に`true`に、ストリーム バッファーからデータがフラッシュされますが、エンコーダーの状態はフラッシュされないことを意味します。 これにより、次の文字のブロックを正常にエンコードできるように (一部の文字) の状態を保持するエンコーダー。 このシナリオでは、UTF8、UTF7、特定の文字をエンコードするため、エンコーダーは、隣接する文字または文字列を受信した後に影響します。  
+  
+ 呼び出しに続く`Close`、他のメソッドが例外をスローします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StringReader.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.IO.StringReader" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `disposing` パラメーターが `true` の場合、このメソッドは、この <xref:System.IO.StringReader> が参照しているすべてのマネージ オブジェクトによって保持されているリソースをすべて解放します。 このメソッドは、参照される各オブジェクトの `Dispose` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see cref="M:System.IO.StringReader.Dispose(System.Boolean)" /> は、他のオブジェクトから複数回呼び出すことができます。 オーバーライドする場合<see cref="M:System.IO.StringReader.Dispose(System.Boolean)" />を以前の呼び出しで既に破棄されているオブジェクトを参照しないように注意、<see cref="M:System.IO.StringReader.Dispose(System.Boolean)" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Peek">
+      <MemberSignature Language="C#" Value="public override int Peek ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 Peek() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StringReader.Peek" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>使用可能な次の文字を返しますが、その文字は使用されません。</summary>
+        <returns>次の文字を表す整数を読み取り、または可能な文字がない場合は-1 またはストリームはいないシークをサポートします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.StringReader.Peek%2A>メソッドは、ファイル、または別のエラーの終了が発生したかどうかを確認するために整数値を返します。 これにより、ユーザーをまず確認かどうか、返される値は-1 にキャストする前に、<xref:System.Char>型です。  
+  
+ このメソッドは、<xref:System.IO.TextReader.Peek%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 現在の位置、`StringReader`この操作では変更されません。  
+  
+ 次の表は、その他の一般的なまたは関連する I/O タスクの例を示します。  
+  
+|目的|参照項目|  
+|-------------------|--------------------------------------|  
+|テキスト ファイルを作成します。|[方法: ファイルにテキストを書き込む](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
+|テキスト ファイルに書き込みます。|[方法: ファイルにテキストを書き込む](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
+|テキスト ファイルから読み取れません。|[方法: ファイルからテキストを読み取る](~/docs/standard/io/how-to-read-text-from-a-file.md)|  
+|ファイルのサイズを取得します。|<xref:System.IO.FileInfo.Length%2A?displayProperty=nameWithType>|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のリーダーは閉じています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public override int Read ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 Read() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StringReader.Read" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>入力文字列から次の文字を読み取りますを文字の位置を 1 つの文字に進めます。</summary>
+        <returns>次の文字、基になる文字列、または可能な文字がない場合は-1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.IO.TextReader.Read%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 次の表は、その他の一般的なまたは関連する I/O タスクの例を示します。  
+  
+|目的|参照項目|  
+|-------------------|--------------------------------------|  
+|テキスト ファイルを作成します。|[方法: ファイルにテキストを書き込む](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
+|テキスト ファイルに書き込みます。|[方法: ファイルにテキストを書き込む](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
+|テキスト ファイルから読み取れません。|[方法: ファイルからテキストを読み取る](~/docs/standard/io/how-to-read-text-from-a-file.md)|  
+|ファイルにテキストを追加します。|[方法: ログ ファイルを開いて情報を追加する](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=nameWithType><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=nameWithType>|  
+|ファイルのサイズを取得します。|<xref:System.IO.FileInfo.Length%2A?displayProperty=nameWithType>|  
+|ファイルの属性を取得します。|<xref:System.IO.File.GetAttributes%2A?displayProperty=nameWithType>|  
+|ファイルの属性を設定します。|<xref:System.IO.File.SetAttributes%2A?displayProperty=nameWithType>|  
+|ファイルが存在するかどうかを決定します。|<xref:System.IO.File.Exists%2A?displayProperty=nameWithType>|  
+|バイナリ ファイルから読み取ります。|[方法: 新しく作成されたデータ ファイルに対して読み書きする](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
+|バイナリ ファイルに書き込みます。|[方法: 新しく作成されたデータ ファイルに対して読み書きする](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
+  
+   
+  
+## Examples  
+ このコード例に示されている例の一部である、<xref:System.IO.StringReader>クラスです。  
+  
+ [!code-cpp[System.IO.StringReaderWriter#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.StringReaderWriter/CPP/stringrw.cpp#3)]
+ [!code-csharp[System.IO.StringReaderWriter#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.StringReaderWriter/CS/stringrw.cs#3)]
+ [!code-vb[System.IO.StringReaderWriter#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.StringReaderWriter/VB/stringrw.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のリーダーは閉じています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public override int Read (char[] buffer, int index, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 Read([out] char[] buffer, int32 index, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StringReader.Read(System.Char[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Char[]" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">このメソッドが戻るときまでの値が指定した文字配列が含まれています<c>インデックス</c>と (<c>インデックス</c> + <c>カウント</c>- 1) 文字に置き換え。現在のソースからの読み取り。</param>
+        <param name="index">バッファー内の開始インデックス。</param>
+        <param name="count">読み取る文字の数。</param>
+        <summary>入力文字列から文字のブロックを読み取りでの文字の位置を進めます<paramref name="count" />です。</summary>
+        <returns>バッファーに読み取られた合計文字数。 これは、文字数は要求を多くの文字は現在使用可能な場合は 0、基になる文字列の末尾に達しているより小さくなります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.IO.TextReader.Read%2A?displayProperty=nameWithType>します。  
+  
+ このメソッドはまで読み取る`count`の文字、<xref:System.IO.StringReader>に、`buffer`開始位置から文字配列`index`です。 実際の文字数の読み取り、または文字列の末尾に達するし、文字が読み取られません場合は 0 を返します。  
+  
+ 次の表は、その他の一般的なまたは関連する I/O タスクの例を示します。  
+  
+|目的|参照項目|  
+|-------------------|--------------------------------------|  
+|テキスト ファイルを作成します。|[方法: ファイルにテキストを書き込む](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
+|テキスト ファイルに書き込みます。|[方法: ファイルにテキストを書き込む](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
+|テキスト ファイルから読み取れません。|[方法: ファイルからテキストを読み取る](~/docs/standard/io/how-to-read-text-from-a-file.md)|  
+|ファイルにテキストを追加します。|[方法: ログ ファイルを開いて情報を追加する](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=nameWithType><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=nameWithType>|  
+|ファイルのサイズを取得します。|<xref:System.IO.FileInfo.Length%2A?displayProperty=nameWithType>|  
+|ファイルの属性を取得します。|<xref:System.IO.File.GetAttributes%2A?displayProperty=nameWithType>|  
+|ファイルの属性を設定します。|<xref:System.IO.File.SetAttributes%2A?displayProperty=nameWithType>|  
+|ファイルが存在するかどうかを決定します。|<xref:System.IO.File.Exists%2A?displayProperty=nameWithType>|  
+|バイナリ ファイルから読み取ります。|[方法: 新しく作成されたデータ ファイルに対して読み書きする](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
+|バイナリ ファイルに書き込みます。|[方法: 新しく作成されたデータ ファイルに対して読み書きする](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">バッファーの長さマイナス<paramref name="index" />はより小さい<paramref name="count" />です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> または <paramref name="count" /> が負の値です。</exception>
+        <exception cref="T:System.ObjectDisposedException">現在のリーダーは閉じています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task&lt;int&gt; ReadAsync (char[] buffer, int index, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task`1&lt;int32&gt; ReadAsync(char[] buffer, int32 index, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StringReader.ReadAsync(System.Char[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Char[]" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">このメソッドが戻るときまでの値が指定した文字配列が含まれています<c>インデックス</c>と (<c>インデックス</c> + <c>カウント</c>- 1) 文字に置き換え。現在のソースからの読み取り。</param>
+        <param name="index">内の位置<c>バッファー</c>書き込みを開始する位置を示すです。</param>
+        <param name="count">読み取り対象の最大文字数。 かどうか、指定された文字数をバッファーに書き込む前に、文字列の末尾に達すると、メソッドを返します。</param>
+        <summary>現在の文字列から、指定した最大文字数を非同期的に読み取りし、バッファーの指定したインデックス位置にデータを書き込みます。</summary>
+        <returns>非同期の読み取り操作を表すタスク。 <paramref name="TResult" /> パラメーターの値には、バッファーに読み込まれるバイトの合計数が含まれます。 結果の値は、現在使用できるバイト数が要求した数より小さいかどうか、または文字列の末尾に達している場合 0 (ゼロ) であることが要求したバイト数より小さくできます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タスクが完了した後にいずれかで指定された文字の数、`count`パラメーターが読み取りまたは文字列の末尾に到達します。  
+  
+   
+  
+## Examples  
+ 次の例では、文字列の最初の 23 の文字を非同期に読み取る方法を示します。  
+  
+ [!code-csharp[System.IO.StringReader#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.stringreader/cs/example1.cs#1)]
+ [!code-vb[System.IO.StringReader#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.stringreader/vb/example1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> または <paramref name="count" /> が負の値です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="index" /> と <paramref name="count" /> の合計が、バッファーの長さよりも大きくなっています。</exception>
+        <exception cref="T:System.ObjectDisposedException">文字列のリーダーは破棄されました。</exception>
+        <exception cref="T:System.InvalidOperationException">リーダーは、前の読み取り操作によって現在使用されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadBlockAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task&lt;int&gt; ReadBlockAsync (char[] buffer, int index, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task`1&lt;int32&gt; ReadBlockAsync(char[] buffer, int32 index, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StringReader.ReadBlockAsync(System.Char[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Char[]" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">このメソッドが戻るときまでの値が指定した文字配列が含まれています<c>インデックス</c>と (<c>インデックス</c> + <c>カウント</c>- 1) 文字に置き換え。現在のソースからの読み取り。</param>
+        <param name="index">内の位置<c>バッファー</c>書き込みを開始する位置を示すです。</param>
+        <param name="count">読み取り対象の最大文字数。 かどうか、指定された文字数をバッファーに書き込む前に、文字列の末尾に達すると、メソッドを返します。</param>
+        <summary>現在の文字列から、指定した最大文字数を非同期的に読み取りし、バッファーの指定したインデックス位置にデータを書き込みます。</summary>
+        <returns>非同期の読み取り操作を表すタスク。 <paramref name="TResult" /> パラメーターの値には、バッファーに読み込まれるバイトの合計数が含まれます。 結果の値は、現在使用できるバイト数が要求した数より小さいかどうか、または文字列の末尾に達している場合 0 (ゼロ) であることが要求したバイト数より小さくできます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タスクが完了しないかまでで指定された文字の数、`count`パラメーターが読み取られ、または文字列の末尾に達しています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> または <paramref name="count" /> が負の値です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="index" /> と <paramref name="count" /> の合計が、バッファーの長さよりも大きくなっています。</exception>
+        <exception cref="T:System.ObjectDisposedException">文字列のリーダーは破棄されました。</exception>
+        <exception cref="T:System.InvalidOperationException">リーダーは、前の読み取り操作によって現在使用されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadLine">
+      <MemberSignature Language="C#" Value="public override string ReadLine ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ReadLine() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StringReader.ReadLine" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の文字列から文字の行を読み取り、文字列としてデータを返します。</summary>
+        <returns>現在の文字列の次の行または<see langword="null" />文字列の末尾に達した場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.IO.TextReader.ReadLine%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 行は、一連の文字とライン フィード ("\n")、キャリッジ リターン ("\r")、または行の直後にキャリッジ リターンが ("\r\n") をフィードとして定義されます。 返される文字列には、末尾にキャリッジ リターンとライン フィードが含まれていません。 返される値は`null`文字列の末尾に達している場合。  
+  
+ 現在のメソッドがスローされた場合、 <xref:System.OutOfMemoryException>、文字がこのメソッドが、読み込むことが、内部に既に読み取られた文字の数によって、基になる文字列で、リーダーの位置が高度な<xref:System.IO.StringReader.ReadLine%2A>バッファーは破棄されます。 既に読み取られた文字が回復することはできませんし、再初期化してのみアクセスできる、文字列内のリーダーの位置を変更できないため、<xref:System.IO.StringReader>です。 このような状況を避けるためを使用して、<xref:System.IO.StringReader.Read%2A>読み取りが事前に割り当てられたバッファーの文字メソッドとストアです。  
+  
+ 次の表は、その他の一般的なまたは関連する I/O タスクの例を示します。  
+  
+|目的|参照項目|  
+|-------------------|--------------------------------------|  
+|テキスト ファイルを作成します。|[方法: ファイルにテキストを書き込む](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
+|テキスト ファイルに書き込みます。|[方法: ファイルにテキストを書き込む](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
+|テキスト ファイルから読み取れません。|[方法: ファイルからテキストを読み取る](~/docs/standard/io/how-to-read-text-from-a-file.md)|  
+|ファイルにテキストを追加します。|[方法: ログ ファイルを開いて情報を追加する](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=nameWithType><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=nameWithType>|  
+|ファイルのサイズを取得します。|<xref:System.IO.FileInfo.Length%2A?displayProperty=nameWithType>|  
+|ファイルの属性を取得します。|<xref:System.IO.File.GetAttributes%2A?displayProperty=nameWithType>|  
+|ファイルの属性を設定します。|<xref:System.IO.File.SetAttributes%2A?displayProperty=nameWithType>|  
+|ファイルが存在するかどうかを決定します。|<xref:System.IO.File.Exists%2A?displayProperty=nameWithType>|  
+|バイナリ ファイルから読み取ります。|[方法: 新しく作成されたデータ ファイルに対して読み書きする](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
+|バイナリ ファイルに書き込みます。|[方法: 新しく作成されたデータ ファイルに対して読み書きする](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
+  
+   
+  
+## Examples  
+ このコード例に示されている例の一部である、<xref:System.IO.StringReader>クラスです。  
+  
+ [!code-cpp[System.IO.StringReaderWriter#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.StringReaderWriter/CPP/stringrw.cpp#2)]
+ [!code-csharp[System.IO.StringReaderWriter#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.StringReaderWriter/CS/stringrw.cs#2)]
+ [!code-vb[System.IO.StringReaderWriter#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.StringReaderWriter/VB/stringrw.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のリーダーは閉じています。</exception>
+        <exception cref="T:System.OutOfMemoryException">返却された文字列にバッファーを割り当てるには、メモリが不足しています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadLineAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task&lt;string&gt; ReadLineAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task`1&lt;string&gt; ReadLineAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StringReader.ReadLineAsync" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の文字列から文字の行を非同期的に読み取りし、データを文字列として返します。</summary>
+        <returns>非同期の読み取り操作を表すタスク。 値、<paramref name="TResult" />パラメーター文字列リーダーから次の行が含まれていますかまたは<see langword="null" />すべての文字が読み取られた場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、非同期的に、文字列から一度に 1 行を読み取る方法を示します。  
+  
+ [!code-csharp[System.IO.StringReader#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.stringreader/cs/example3.cs#3)]
+ [!code-vb[System.IO.StringReader#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.stringreader/vb/example3.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">次の行の文字数がよりも大きい<see cref="F:System.Int32.MaxValue" />です。</exception>
+        <exception cref="T:System.ObjectDisposedException">文字列のリーダーは破棄されました。</exception>
+        <exception cref="T:System.InvalidOperationException">リーダーは、前の読み取り操作によって現在使用されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadToEnd">
+      <MemberSignature Language="C#" Value="public override string ReadToEnd ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ReadToEnd() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StringReader.ReadToEnd" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の位置から文字列の末尾まですべての文字を読み取りし、1 つの文字列として返します。</summary>
+        <returns>基になる文字列の末尾にコンテンツを現在の位置から。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.IO.TextReader.ReadToEnd%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 現在のメソッドがスローされた場合、 <xref:System.OutOfMemoryException>、文字がこのメソッドが、読み込むことが、内部に既に読み取られた文字の数によって、基になる文字列で、リーダーの位置が高度な<xref:System.IO.StringReader.ReadToEnd%2A>バッファーは破棄されます。 既に読み取られた文字が回復することはできませんし、再初期化してのみアクセスできる、文字列内のリーダーの位置を変更できないため、<xref:System.IO.StringReader>です。 このような状況を避けるためを使用して、<xref:System.IO.StringReader.Read%2A>読み取りが事前に割り当てられたバッファーの文字メソッドとストアです。  
+  
+ 次の表は、その他の一般的なまたは関連する I/O タスクの例を示します。  
+  
+|目的|参照項目|  
+|-------------------|--------------------------------------|  
+|テキスト ファイルを作成します。|[方法: ファイルにテキストを書き込む](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
+|テキスト ファイルに書き込みます。|[方法: ファイルにテキストを書き込む](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
+|テキスト ファイルから読み取れません。|[方法: ファイルからテキストを読み取る](~/docs/standard/io/how-to-read-text-from-a-file.md)|  
+|ファイルにテキストを追加します。|[方法: ログ ファイルを開いて情報を追加する](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=nameWithType><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=nameWithType>|  
+|ファイルのサイズを取得します。|<xref:System.IO.FileInfo.Length%2A?displayProperty=nameWithType>|  
+|ファイルの属性を取得します。|<xref:System.IO.File.GetAttributes%2A?displayProperty=nameWithType>|  
+|ファイルの属性を設定します。|<xref:System.IO.File.SetAttributes%2A?displayProperty=nameWithType>|  
+|ファイルが存在するかどうかを決定します。|<xref:System.IO.File.Exists%2A?displayProperty=nameWithType>|  
+|バイナリ ファイルから読み取ります。|[方法: 新しく作成されたデータ ファイルに対して読み書きする](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
+|バイナリ ファイルに書き込みます。|[方法: 新しく作成されたデータ ファイルに対して読み書きする](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
+  
+   
+  
+## Examples  
+ このコード例に示されている例の一部である、<xref:System.IO.TextReader>クラスです。  
+  
+ [!code-cpp[System.IO.TextReaderWriter#5](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.TextReaderWriter/CPP/textrw.cpp#5)]
+ [!code-csharp[System.IO.TextReaderWriter#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.TextReaderWriter/CS/textrw.cs#5)]
+ [!code-vb[System.IO.TextReaderWriter#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.TextReaderWriter/VB/textrw.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.OutOfMemoryException">返却された文字列にバッファーを割り当てるには、メモリが不足しています。</exception>
+        <exception cref="T:System.ObjectDisposedException">現在のリーダーは閉じています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadToEndAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task&lt;string&gt; ReadToEndAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task`1&lt;string&gt; ReadToEndAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StringReader.ReadToEndAsync" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>文字列の末尾に現在の位置からのすべての文字を非同期的に読み取りし、1 つの文字列として返します。</summary>
+        <returns>非同期の読み取り操作を表すタスク。 値、<paramref name="TResult" />パラメーターには、文字列の末尾に現在の位置から文字の文字列が含まれています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、文字列全体を非同期的に読み込む方法を示します。  
+  
+ [!code-csharp[System.IO.StringReader#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.stringreader/cs/example2.cs#2)]
+ [!code-vb[System.IO.StringReader#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.stringreader/vb/example2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">文字の数がよりも大きい<see cref="F:System.Int32.MaxValue" />です。</exception>
+        <exception cref="T:System.ObjectDisposedException">文字列のリーダーは破棄されました。</exception>
+        <exception cref="T:System.InvalidOperationException">リーダーは、前の読み取り操作によって現在使用されています。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,615 @@
+<Type Name="LocalServiceSecuritySettings" FullName="System.ServiceModel.Channels.LocalServiceSecuritySettings">
+  <TypeSignature Language="C#" Value="public sealed class LocalServiceSecuritySettings" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit LocalServiceSecuritySettings extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.LocalServiceSecuritySettings" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>設定できるローカル サービス セキュリティ プロパティを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスには、<xref:System.ServiceModel.Channels.SecurityBindingElement> がセキュリティ チャネルを作成するために使用するローカル セキュリティ設定が含まれます。 これらの設定はサービスにとってローカルであり、サービスのセキュリティ ポリシーでは表されません。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings> クラスを使用して <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.DetectReplays%2A> の設定を変更する方法を次の例に示します。  
+  
+ [!code-csharp[S_UELocalServiceSecuritySettings#17](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelocalservicesecuritysettings/cs/program.cs#17)]
+ [!code-vb[S_UELocalServiceSecuritySettings#17](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelocalservicesecuritysettings/vb/program.vb#17)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LocalServiceSecuritySettings ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.LocalServiceSecuritySettings.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Channels.LocalServiceSecuritySettings" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 既定のコンストラクターの使用方法を次の例に示します。  
+  
+ [!code-csharp[S_UELocalServiceSecuritySettings#1](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelocalservicesecuritysettings/cs/program.cs#1)]
+ [!code-vb[S_UELocalServiceSecuritySettings#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelocalservicesecuritysettings/vb/program.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.LocalServiceSecuritySettings Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Channels.LocalServiceSecuritySettings Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.LocalServiceSecuritySettings.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.LocalServiceSecuritySettings</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のインスタンスを使用して、このクラスの新しいインスタンスを作成します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.LocalServiceSecuritySettings" /> の新しいインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 現在のインスタンスからこのクラスの新しいインスタンスを作成する方法を次の例に示します。  
+  
+ [!code-csharp[S_UELocalServiceSecuritySettings#16](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelocalservicesecuritysettings/cs/program.cs#16)]
+ [!code-vb[S_UELocalServiceSecuritySettings#16](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelocalservicesecuritysettings/vb/program.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DetectReplays">
+      <MemberSignature Language="C#" Value="public bool DetectReplays { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DetectReplays" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.LocalServiceSecuritySettings.DetectReplays" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスでリプレイ検出が有効かどうかを示す値を取得または設定します。</summary>
+        <value>
+          サービスでリプレイ検出が有効になっている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、このプロパティの値を取得する方法を示します。  
+  
+ [!code-csharp[S_UELocalServiceSecuritySettings#2](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelocalservicesecuritysettings/cs/program.cs#2)]
+ [!code-vb[S_UELocalServiceSecuritySettings#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelocalservicesecuritysettings/vb/program.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InactivityTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan InactivityTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan InactivityTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.LocalServiceSecuritySettings.InactivityTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>非アクティブなチャネルを閉じるまで待機する時間を取得または設定します。</summary>
+        <value>非アクティブなクライアントが閉じられるまでセキュリティ セッションが待機する時間を表す <see cref="T:System.TimeSpan" />。 既定では 2 分です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セキュリティで保護されたメッセージ交換セッションでは、バインディングのこのプロパティと `ReceiveTimeout` プロパティの両方がセッション タイムアウトに影響します。 2 つのうち短い方が、タイムアウトが発生する時間を決定します。  
+  
+ 次の条件のいずれかが満たされる場合、このようなセッション設定が適用されます。  
+  
+-   <xref:System.ServiceModel.WSDualHttpBinding> および <xref:System.ServiceModel.NetTcpBinding> に関するすべてのクライアント資格情報の種類。  
+  
+-   場合[ \<reliableSession > 要素](http://msdn.microsoft.com/en-us/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b)を有効にします。  
+  
+-   場合[ \<reliableSession > 要素](http://msdn.microsoft.com/en-us/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b)が有効でない [<xref:System.ServiceModel.WSHttpBinding>で<xref:System.ServiceModel.Description.ClientCredentials.UserName%2A>  =  `true`または<xref:System.ServiceModel.Description.ClientCredentials.Windows%2A?displayProperty=nameWithType>  = `true`です。  
+  
+ 次の条件のいずれかが満たされる場合、このようなセッション設定は適用されません。  
+  
+-   <xref:System.ServiceModel.BasicHttpBinding> の場合。  
+  
+-   <xref:System.ServiceModel.NetNamedPipeBinding> の場合。  
+  
+-   場合[ \<reliableSession > 要素](http://msdn.microsoft.com/en-us/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b)が有効でない [<xref:System.ServiceModel.WSHttpBinding>で<xref:System.ServiceModel.Description.ClientCredentials.ClientCertificate%2A>  =  `true`またはのいずれも、<xref:System.ServiceModel.Description.ClientCredentials>プロパティに設定`true`です。  
+  
+   
+  
+## Examples  
+ `InactivityTimeout` 値を取得する方法を次の例に示します。  
+  
+ [!code-csharp[S_UELocalServiceSecuritySettings#3](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelocalservicesecuritysettings/cs/program.cs#3)]
+ [!code-vb[S_UELocalServiceSecuritySettings#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelocalservicesecuritysettings/vb/program.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">プロパティが 0 未満の値に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IssuedCookieLifetime">
+      <MemberSignature Language="C#" Value="public TimeSpan IssuedCookieLifetime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan IssuedCookieLifetime" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.LocalServiceSecuritySettings.IssuedCookieLifetime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスがクライアントに対して発行する <see cref="T:System.ServiceModel.Security.Tokens.SecurityContextSecurityToken" /> の有効期間を取得または設定します。</summary>
+        <value>新しいセキュリティ クッキーの有効期間を表す <see cref="T:System.TimeSpan" />。 既定値は 10 時間です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サービスがクライアントに対してセキュリティで保護された通信のクッキーのトークンを発行するときは、このプロパティの値でトークンの有効期間が決まります。  
+  
+   
+  
+## Examples  
+ 次の例では、`IssuedCookieLifetime` の値を取得する方法を示します。  
+  
+ [!code-csharp[S_UELocalServiceSecuritySettings#4](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelocalservicesecuritysettings/cs/program.cs#4)]
+ [!code-vb[S_UELocalServiceSecuritySettings#4](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelocalservicesecuritysettings/vb/program.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">プロパティが 0 未満の値に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxCachedCookies">
+      <MemberSignature Language="C#" Value="public int MaxCachedCookies { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxCachedCookies" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.LocalServiceSecuritySettings.MaxCachedCookies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスが一度にキャッシュできる <see cref="T:System.ServiceModel.Security.Tokens.SecurityContextSecurityToken" /> の最大数を取得または設定します。</summary>
+        <value>サービスがキャッシュできるセキュリティで保護された通信のクッキーの最大数。 この制限に達すると、サービスは、キャッシュされている最も古いセキュリティで保護された通信のクッキーを削除し、新しいセキュリティで保護された通信のクッキーを格納できるようにします。 既定値は 1000 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、`MaxCachedCookies` の値を取得する方法を示します。  
+  
+ [!code-csharp[S_UELocalServiceSecuritySettings#5](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelocalservicesecuritysettings/cs/program.cs#5)]
+ [!code-vb[S_UELocalServiceSecuritySettings#5](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelocalservicesecuritysettings/vb/program.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">プロパティが 0 未満の値に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxClockSkew">
+      <MemberSignature Language="C#" Value="public TimeSpan MaxClockSkew { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan MaxClockSkew" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.LocalServiceSecuritySettings.MaxClockSkew" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通信している双方のシステム クロック間で許容される時刻の最大のずれを取得または設定します。</summary>
+        <value>通信している双方のシステム クロックの許容される最大のずれを表す <see cref="T:System.TimeSpan" />。 既定値は、5 分です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定値は 5 分です。  
+  
+ 送信時間テストにパスしないメッセージは拒否されます。  
+  
+ このプロパティは、メッセージのタイムスタンプ検証および <xref:System.ServiceModel.Channels.LocalClientSecuritySettings.ReplayWindow%2A> プロパティと組み合わせて使用されます。  
+  
+   
+  
+## Examples  
+ 次の例では、`MaxClockSkew` の値を取得する方法を示します。  
+  
+ [!code-csharp[S_UELocalServiceSecuritySettings#6](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelocalservicesecuritysettings/cs/program.cs#6)]
+ [!code-vb[S_UELocalServiceSecuritySettings#6](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelocalservicesecuritysettings/vb/program.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">プロパティが 0 未満の値に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxPendingSessions">
+      <MemberSignature Language="C#" Value="public int MaxPendingSessions { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxPendingSessions" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.LocalServiceSecuritySettings.MaxPendingSessions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーで確立された同時セキュリティ セッションのうち、セッション トークンは発行されているが、セッション宛てにアプリケーション メッセージが送信されていないセッションの最大数を取得または設定します。</summary>
+        <value>同時セキュリティ セッションの最大数。 既定値は 128 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、`MaxPendingSessions` の値を取得する方法を示します。  
+  
+ [!code-csharp[S_UELocalServiceSecuritySettings#7](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelocalservicesecuritysettings/cs/program.cs#7)]
+ [!code-vb[S_UELocalServiceSecuritySettings#7](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelocalservicesecuritysettings/vb/program.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">プロパティが 0 未満の値に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxStatefulNegotiations">
+      <MemberSignature Language="C#" Value="public int MaxStatefulNegotiations { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxStatefulNegotiations" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.LocalServiceSecuritySettings.MaxStatefulNegotiations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスが参加できるクライアントとの同時セキュリティ ネゴシエーションの最大数を取得または設定します。</summary>
+        <value>サービスが参加できるクライアントとの同時セキュリティ ネゴシエーションの最大数。 既定値は 128 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この制限を超えるネゴシエーション セッションは拒否され、クライアントには SOAP エラーが送信されます。 通常、クライアントは、サービスの既存のネゴシエーションが完了するまでしばらく待機してから、再試行する必要があります。  
+  
+   
+  
+## Examples  
+ `MaxStatefulNegotiations` 値を設定する方法を次の例に示します。  
+  
+ [!code-csharp[S_UELocalServiceSecuritySettings#8](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelocalservicesecuritysettings/cs/program.cs#8)]
+ [!code-vb[S_UELocalServiceSecuritySettings#8](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelocalservicesecuritysettings/vb/program.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">プロパティが 0 未満の値に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NegotiationTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan NegotiationTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan NegotiationTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.LocalServiceSecuritySettings.NegotiationTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントとサービスの間のセキュリティ ネゴシエーション フェーズの最大期間を取得または設定します。</summary>
+        <value>クライアントとサービスの間のセキュリティ ネゴシエーション フェーズの最大期間を表す <see cref="T:System.TimeSpan" />。 サービスとのすべてのネゴシエーション (たとえば、メッセージ レベルの SPNego または SSL 認証の期間) は、この時間内に完了する必要があります。 既定値は 1 分です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この制限を超えた場合は、例外がスローされます。  
+  
+   
+  
+## Examples  
+ 次の例では、このプロパティの値を取得する方法を示します。  
+  
+ [!code-csharp[S_UELocalServiceSecuritySettings#9](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelocalservicesecuritysettings/cs/program.cs#9)]
+ [!code-vb[S_UELocalServiceSecuritySettings#9](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelocalservicesecuritysettings/vb/program.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">プロパティが 0 未満の値に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NonceCache">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.NonceCache NonceCache { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Security.NonceCache NonceCache" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.LocalServiceSecuritySettings.NonceCache" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.NonceCache</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはローカル サービスのセキュリティ設定に関する、キャッシュを設定します。</summary>
+        <value>ローカル サービスのセキュリティ設定をキャッシュします。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReconnectTransportOnFailure">
+      <MemberSignature Language="C#" Value="public bool ReconnectTransportOnFailure { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReconnectTransportOnFailure" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.LocalServiceSecuritySettings.ReconnectTransportOnFailure" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランスポート エラーの後でセキュリティ セッションが再接続を試みるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          トランスポートが失敗した後にセキュリティ セッションによって再接続が試行される場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフラグを `true` に設定すると、サービスは、クライアントに対し、単一のセキュリティ セッションに対応するメッセージを複数のトランスポート接続で送信することを許可します。 これはセキュリティで WS-ReliableMessaging を保護するのに便利です。クライアントが、一時的なトランスポートの失敗を許容することをセッションに要求するためです。  
+  
+   
+  
+## Examples  
+ 次の例では、このプロパティの値を取得する方法を示します。  
+  
+ [!code-csharp[S_UELocalServiceSecuritySettings#10](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelocalservicesecuritysettings/cs/program.cs#10)]
+ [!code-vb[S_UELocalServiceSecuritySettings#10](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelocalservicesecuritysettings/vb/program.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReplayCacheSize">
+      <MemberSignature Language="C#" Value="public int ReplayCacheSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ReplayCacheSize" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.LocalServiceSecuritySettings.ReplayCacheSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リプレイ検証で使用する nonce キャッシュのサイズを取得または設定します。</summary>
+        <value>リプレイ検証で使用する nonce キャッシュのサイズ。 既定値は、900,000 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ nonce は、"number used once" です。  
+  
+ nonce のカウントが超過すると、受信メッセージは拒否され、<xref:System.ServiceModel.Security.MessageSecurityException> がスローされます。 古い nonce は、適切なタイミングで削除されます。  
+  
+   
+  
+## Examples  
+ 次の例では、このプロパティの値を取得する方法を示します。  
+  
+ [!code-csharp[S_UELocalServiceSecuritySettings#11](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelocalservicesecuritysettings/cs/program.cs#11)]
+ [!code-vb[S_UELocalServiceSecuritySettings#11](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelocalservicesecuritysettings/vb/program.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReplayWindow">
+      <MemberSignature Language="C#" Value="public TimeSpan ReplayWindow { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan ReplayWindow" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.LocalServiceSecuritySettings.ReplayWindow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスがメッセージを受け入れるまでの最大時間を取得または設定します。</summary>
+        <value>サービスがメッセージを受け入れるまでの最大時間を表す <see cref="T:System.TimeSpan" />。 既定値は、5 分です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ nonce は、"number used once" です。  
+  
+ サービスは、<xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.ReplayWindow%2A> の期間より前に送信されたすべてのメッセージを拒否します。 `ReplayWindow` の期間内に到着したメッセージについては、nonce の一意性が検査されます。  
+  
+   
+  
+## Examples  
+ 次の例では、このプロパティの値を取得する方法を示します。  
+  
+ [!code-csharp[S_UELocalServiceSecuritySettings#12](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelocalservicesecuritysettings/cs/program.cs#12)]
+ [!code-vb[S_UELocalServiceSecuritySettings#12](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelocalservicesecuritysettings/vb/program.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">プロパティが 0 未満の値に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SessionKeyRenewalInterval">
+      <MemberSignature Language="C#" Value="public TimeSpan SessionKeyRenewalInterval { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan SessionKeyRenewalInterval" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.LocalServiceSecuritySettings.SessionKeyRenewalInterval" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ セッションで使用されるキーの有効期間を取得または設定します。 この期間が経過すると、キーは自動に更新されます。</summary>
+        <value>セキュリティ セッションに使用するキーの更新を、サービスがイニシエーターに要求するまでの期間。 この期間内にイニシエーターがキーを更新しないと、サービスはイニシエーターにエラーを返送します。 既定では 15 時間です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の条件のいずれかが満たされる場合、このようなセッション設定が適用されます。  
+  
+-   <xref:System.ServiceModel.WSDualHttpBinding> および <xref:System.ServiceModel.NetTcpBinding> に関するすべてのクライアント資格情報の種類。  
+  
+-   場合[ \<reliableSession > 要素](http://msdn.microsoft.com/en-us/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b)を有効にします。  
+  
+-   場合[ \<reliableSession > 要素](http://msdn.microsoft.com/en-us/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b)が有効でない [<xref:System.ServiceModel.WSHttpBinding>で<xref:System.ServiceModel.Description.ClientCredentials.UserName%2A>  =  `true`または<xref:System.ServiceModel.Description.ClientCredentials.Windows%2A?displayProperty=nameWithType>  = `true`です。  
+  
+ 次の条件のいずれかが満たされる場合、このようなセッション設定は適用されません。  
+  
+-   <xref:System.ServiceModel.BasicHttpBinding> の場合。  
+  
+-   <xref:System.ServiceModel.NetNamedPipeBinding> の場合。  
+  
+-   場合[ \<reliableSession > 要素](http://msdn.microsoft.com/en-us/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b)が有効でない [<xref:System.ServiceModel.WSHttpBinding>で<xref:System.ServiceModel.Description.ClientCredentials.ClientCertificate%2A>  =  `true`またはのいずれも、<xref:System.ServiceModel.Description.ClientCredentials>プロパティに設定`true`です。  
+  
+   
+  
+## Examples  
+ 次の例では、このプロパティの値を取得する方法を示します。  
+  
+ [!code-csharp[S_UELocalServiceSecuritySettings#13](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelocalservicesecuritysettings/cs/program.cs#13)]
+ [!code-vb[S_UELocalServiceSecuritySettings#13](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelocalservicesecuritysettings/vb/program.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">プロパティが 0 未満の値に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SessionKeyRolloverInterval">
+      <MemberSignature Language="C#" Value="public TimeSpan SessionKeyRolloverInterval { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan SessionKeyRolloverInterval" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.LocalServiceSecuritySettings.SessionKeyRolloverInterval" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーの更新中に、受信メッセージで前のセッション キーが有効である、キー更新からの時間を取得または設定します。</summary>
+        <value>キーの更新後に、受信メッセージで前のセッション キーが有効である期間。 既定値は、5 分です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キーの更新後は常に、クライアントとサーバーが、利用可能な最新のキーを使用してメッセージを送信する必要があります。 両者とも、ロールオーバー時間に達するまで、前のセッション キーで保護された受信メッセージを受け入れることができます。  
+  
+ 次の条件のいずれかが満たされる場合、このようなセッション設定が適用されます。  
+  
+-   <xref:System.ServiceModel.WSDualHttpBinding> および <xref:System.ServiceModel.NetTcpBinding> に関するすべてのクライアント資格情報の種類。  
+  
+-   場合[ \<reliableSession > 要素](http://msdn.microsoft.com/en-us/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b)を有効にします。  
+  
+-   場合[ \<reliableSession > 要素](http://msdn.microsoft.com/en-us/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b)が有効でない [<xref:System.ServiceModel.WSHttpBinding>で<xref:System.ServiceModel.Description.ClientCredentials.UserName%2A>  =  `true`または<xref:System.ServiceModel.Description.ClientCredentials.Windows%2A?displayProperty=nameWithType>  = `true`です。  
+  
+ 次の条件のいずれかが満たされる場合、このようなセッション設定は適用されません。  
+  
+-   <xref:System.ServiceModel.BasicHttpBinding> の場合。  
+  
+-   <xref:System.ServiceModel.NetNamedPipeBinding> の場合。  
+  
+-   場合[ \<reliableSession > 要素](http://msdn.microsoft.com/en-us/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b)が有効でない [<xref:System.ServiceModel.WSHttpBinding>で<xref:System.ServiceModel.Description.ClientCredentials.ClientCertificate%2A>  =  `true`またはのいずれも、<xref:System.ServiceModel.Description.ClientCredentials>プロパティに設定`true`です。  
+  
+   
+  
+## Examples  
+ `SessionKeyRolloverInterval` 値を取得する方法を次の例に示します。  
+  
+ [!code-csharp[S_UELocalServiceSecuritySettings#14](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelocalservicesecuritysettings/cs/program.cs#14)]
+ [!code-vb[S_UELocalServiceSecuritySettings#14](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelocalservicesecuritysettings/vb/program.vb#14)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">プロパティが 0 未満の値に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TimestampValidityDuration">
+      <MemberSignature Language="C#" Value="public TimeSpan TimestampValidityDuration { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan TimestampValidityDuration" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.LocalServiceSecuritySettings.TimestampValidityDuration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスがメッセージを送信するときに、メッセージが有効である最大期間を取得または設定します。 この期間が過ぎた後でクライアントがサービスのメッセージを受信した場合、クライアントはそのメッセージを破棄します。</summary>
+        <value>サービスがメッセージを送信するときに、メッセージが有効である最大期間。 既定値は、5 分です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、`TimestampValidityDuration` の値を取得する方法を示します。  
+  
+ [!code-csharp[S_UELocalServiceSecuritySettings#15](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelocalservicesecuritysettings/cs/program.cs#15)]
+ [!code-vb[S_UELocalServiceSecuritySettings#15](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelocalservicesecuritysettings/vb/program.vb#15)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">プロパティが 0 未満の値に設定されています。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

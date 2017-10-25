@@ -1,0 +1,324 @@
+<Type Name="X509CertificateValidator" FullName="System.IdentityModel.Selectors.X509CertificateValidator">
+  <TypeSignature Language="C#" Value="public abstract class X509CertificateValidator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract X509CertificateValidator extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Selectors.X509CertificateValidator" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+  </Interfaces>
+  <Docs>
+    <summary>X.509 証明書を検証します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.X509CertificateValidator> クラスを使用して、X.509 証明書の検証方法を指定します。 これを行うには、<xref:System.IdentityModel.Selectors.X509CertificateValidator> の派生クラスを作成し、<xref:System.IdentityModel.Selectors.X509CertificateValidator.Validate%2A> メソッドをオーバーライドします。  
+  
+   
+  
+## Examples  
+ [!code-csharp[c_X509CertificateValidator#1](~/samples/snippets/csharp/VS_Snippets_CFX/c_x509certificatevalidator/cs/source.cs#1)]
+ [!code-vb[c_X509CertificateValidator#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_x509certificatevalidator/vb/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected X509CertificateValidator ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.X509CertificateValidator.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Selectors.X509CertificateValidator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、このコンストラクターはプロパティを初期化しません。  
+  
+   
+  
+## Examples  
+ [!code-csharp[c_X509CertificateValidator#3](~/samples/snippets/csharp/VS_Snippets_CFX/c_x509certificatevalidator/cs/source.cs#3)]
+ [!code-vb[c_X509CertificateValidator#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_x509certificatevalidator/vb/source.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChainTrust">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Selectors.X509CertificateValidator ChainTrust { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.IdentityModel.Selectors.X509CertificateValidator ChainTrust" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Selectors.X509CertificateValidator.ChainTrust" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Selectors.X509CertificateValidator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>信頼チェーンを使用して X.509 証明書を検証するバリデーターを取得します。</summary>
+        <value>信頼チェーンを使用して X.509 証明書を検証する <see cref="T:System.IdentityModel.Selectors.X509CertificateValidator" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 証明書チェーンを使用して X.509 証明書を検証するバリデーターを取得します。  
+  
+ この静的プロパティの値は、<xref:System.IdentityModel.Selectors.X509SecurityTokenAuthenticator> クラスのコンストラクターへのパラメーターとして指定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateChainTrustValidator">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Selectors.X509CertificateValidator CreateChainTrustValidator (bool useMachineContext, System.Security.Cryptography.X509Certificates.X509ChainPolicy chainPolicy);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IdentityModel.Selectors.X509CertificateValidator CreateChainTrustValidator(bool useMachineContext, class System.Security.Cryptography.X509Certificates.X509ChainPolicy chainPolicy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.X509CertificateValidator.CreateChainTrustValidator(System.Boolean,System.Security.Cryptography.X509Certificates.X509ChainPolicy)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Selectors.X509CertificateValidator</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="useMachineContext" Type="System.Boolean" />
+        <Parameter Name="chainPolicy" Type="System.Security.Cryptography.X509Certificates.X509ChainPolicy" />
+      </Parameters>
+      <Docs>
+        <param name="useMachineContext">
+          コンピューターのコンテキストを使用する場合は <see langword="true" />。現在のユーザーのコンテキストを使用する場合は <see langword="false" />。</param>
+        <param name="chainPolicy">信頼チェーンの構築や検証で使用されるポリシーを指定する <see cref="T:System.Security.Cryptography.X509Certificates.X509ChainPolicy" />。</param>
+        <summary>信頼チェーンの構築や検証に使用するコンテキストおよびチェーン ポリシーを指定することで X.509 証明書を確認するバリデーターを取得します。</summary>
+        <returns>信頼チェーンを使用して X.509 証明書を検証する <see cref="T:System.IdentityModel.Selectors.X509CertificateValidator" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテキストを指定するかまたはチェーン ポリシーを設定する場合は、<xref:System.IdentityModel.Selectors.X509CertificateValidator.CreateChainTrustValidator%2A> プロパティではなく、<xref:System.IdentityModel.Selectors.X509CertificateValidator.ChainTrust%2A> メソッドを使用します。 チェーン ポリシーを使用して、チェーン検証の目的として拡張キー使用法 (EKU: Enhanced Key Usage) を指定したり、失効チェックを指定したりできます。  
+  
+ この静的メソッドの戻り値は、検証を取得する <xref:System.IdentityModel.Selectors.X509SecurityTokenAuthenticator> クラスのコンストラクターへのパラメーターとして指定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreatePeerOrChainTrustValidator">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Selectors.X509CertificateValidator CreatePeerOrChainTrustValidator (bool useMachineContext, System.Security.Cryptography.X509Certificates.X509ChainPolicy chainPolicy);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IdentityModel.Selectors.X509CertificateValidator CreatePeerOrChainTrustValidator(bool useMachineContext, class System.Security.Cryptography.X509Certificates.X509ChainPolicy chainPolicy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.X509CertificateValidator.CreatePeerOrChainTrustValidator(System.Boolean,System.Security.Cryptography.X509Certificates.X509ChainPolicy)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Selectors.X509CertificateValidator</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="useMachineContext" Type="System.Boolean" />
+        <Parameter Name="chainPolicy" Type="System.Security.Cryptography.X509Certificates.X509ChainPolicy" />
+      </Parameters>
+      <Docs>
+        <param name="useMachineContext">
+          コンピューターのコンテキストを使用する場合は <see langword="true" />。現在のユーザーのコンテキストを使用する場合は <see langword="false" />。</param>
+        <param name="chainPolicy">信頼チェーンの構築で使用されるポリシーを指定する <see cref="T:System.Security.Cryptography.X509Certificates.X509ChainPolicy" />。</param>
+        <summary>証明書信頼チェーンの構築に使用するコンテキストおよびチェーン ポリシーを指定することで 証明書が <see langword="TrustedPeople" /> 証明書ストアに存在することを確認するバリデーターを取得します。 検証方法のいずれかを渡すと、証明書が信頼されます。</summary>
+        <returns>証明書を確認する <see cref="T:System.IdentityModel.Selectors.X509CertificateValidator" /> は、<see langword="TrustedPeople" /> 証明書ストア内に存在するか、または証明書信頼チェーンの構築で存在します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテキストを指定するかまたはチェーン ポリシーを設定する場合は、<xref:System.IdentityModel.Selectors.X509CertificateValidator.CreatePeerOrChainTrustValidator%2A> プロパティではなく、<xref:System.IdentityModel.Selectors.X509CertificateValidator.PeerOrChainTrust%2A> メソッドを使用します。 チェーン ポリシーを使用して、チェーン検証の目的として拡張キー使用法 (EKU: Enhanced Key Usage) を指定したり、失効チェックを指定したりできます。  
+  
+ この静的プロパティの値は、<xref:System.IdentityModel.Selectors.X509SecurityTokenAuthenticator> クラスのコンストラクターへのパラメーターとして指定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadCustomConfiguration">
+      <MemberSignature Language="C#" Value="public virtual void LoadCustomConfiguration (System.Xml.XmlNodeList nodelist);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void LoadCustomConfiguration(class System.Xml.XmlNodeList nodelist) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.X509CertificateValidator.LoadCustomConfiguration(System.Xml.XmlNodeList)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nodelist" Type="System.Xml.XmlNodeList" />
+      </Parameters>
+      <Docs>
+        <param name="nodelist">カスタム構成要素。</param>
+        <summary>派生クラスでオーバーライドされると、XML からカスタム構成を読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、スロー、<xref:System.NotImplementedException>です。 派生クラスでの機能を提供するには、このメソッドをオーバーライドすることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Selectors.X509CertificateValidator None { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.IdentityModel.Selectors.X509CertificateValidator None" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Selectors.X509CertificateValidator.None" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Selectors.X509CertificateValidator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>X.509 証明書の検証を実行しないバリデーターを取得します。 その結果、X.509 証明書は常に有効と見なされます。</summary>
+        <value>X.509 証明書の検証を実行しない <see cref="T:System.IdentityModel.Selectors.X509CertificateValidator" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバリデーターは、X.509 証明書を Makecert.exe ユーティリティで生成する場合など、X.509 証明書のテストや開発に使用すると有効です。  
+  
+ この静的プロパティの値は、<xref:System.IdentityModel.Selectors.X509SecurityTokenAuthenticator> クラスのコンストラクターへのパラメーターとして指定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PeerOrChainTrust">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Selectors.X509CertificateValidator PeerOrChainTrust { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.IdentityModel.Selectors.X509CertificateValidator PeerOrChainTrust" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Selectors.X509CertificateValidator.PeerOrChainTrust" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Selectors.X509CertificateValidator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>証明書が <see langword="TrustedPeople" /> 証明書ストア内に存在するか、または証明書信頼チェーンの構築で存在することを確認するバリデーターを取得します。 検証方法のいずれかを渡すと、証明書が信頼されます。</summary>
+        <value>証明書を確認する <see cref="T:System.IdentityModel.Selectors.X509CertificateValidator" /> は、<see langword="TrustedPeople" /> 証明書ストア内に存在するか、または証明書信頼チェーンの構築で存在します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この静的プロパティの値は、<xref:System.IdentityModel.Selectors.X509SecurityTokenAuthenticator> クラスのコンストラクターへのパラメーターとして指定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PeerTrust">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Selectors.X509CertificateValidator PeerTrust { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.IdentityModel.Selectors.X509CertificateValidator PeerTrust" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Selectors.X509CertificateValidator.PeerTrust" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Selectors.X509CertificateValidator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>証明書が <see langword="TrustedPeople" /> 証明書ストア内に存在することを確認するバリデーターを取得します。</summary>
+        <value>証明書が <see cref="T:System.IdentityModel.Selectors.X509CertificateValidator" /> 証明書ストア内に存在することを確認する <see langword="TrustedPeople" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この静的プロパティの値は、<xref:System.IdentityModel.Selectors.X509SecurityTokenAuthenticator> クラスのコンストラクターへのパラメーターとして指定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Validate">
+      <MemberSignature Language="C#" Value="public abstract void Validate (System.Security.Cryptography.X509Certificates.X509Certificate2 certificate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Validate(class System.Security.Cryptography.X509Certificates.X509Certificate2 certificate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.X509CertificateValidator.Validate(System.Security.Cryptography.X509Certificates.X509Certificate2)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate2" />
+      </Parameters>
+      <Docs>
+        <param name="certificate">検証する X.509 証明書を表す <see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />。</param>
+        <summary>派生クラスによってオーバーライドされた場合、X.509 証明書を検証します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.X509CertificateValidator.Validate%2A> メソッドをオーバーライドして、X.509 証明書の検証方法を指定します。  
+  
+ X.509 証明書を `certificate` パラメーターに渡すと検証は失敗し、<xref:System.IdentityModel.Tokens.SecurityTokenValidationException> がスローされます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[c_X509CertificateValidator#2](~/samples/snippets/csharp/VS_Snippets_CFX/c_x509certificatevalidator/cs/source.cs#2)]
+ [!code-vb[c_X509CertificateValidator#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_x509certificatevalidator/vb/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

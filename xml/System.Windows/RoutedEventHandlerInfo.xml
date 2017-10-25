@@ -1,0 +1,186 @@
+<Type Name="RoutedEventHandlerInfo" FullName="System.Windows.RoutedEventHandlerInfo">
+  <TypeSignature Language="C#" Value="public struct RoutedEventHandlerInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit RoutedEventHandlerInfo extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.RoutedEventHandlerInfo" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>特定のハンドラーを呼び出す必要があるかどうかをイベント リスナーに通知するために特別な処理について説明します。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.RoutedEventHandlerInfo.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在と比較するオブジェクト<see cref="T:System.Windows.RoutedEventHandlerInfo" />です。</param>
+        <summary>指定したオブジェクトが現在のと同じかどうかを判断<see cref="T:System.Windows.RoutedEventHandlerInfo" />です。</summary>
+        <returns>
+          <see langword="true" />指定したオブジェクトが現在のと同じ場合<see cref="T:System.Windows.RoutedEventHandlerInfo" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Windows.RoutedEventHandlerInfo handlerInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Equals(valuetype System.Windows.RoutedEventHandlerInfo handlerInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.RoutedEventHandlerInfo.Equals(System.Windows.RoutedEventHandlerInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="handlerInfo" Type="System.Windows.RoutedEventHandlerInfo" />
+      </Parameters>
+      <Docs>
+        <param name="handlerInfo"><see cref="T:System.Windows.RoutedEventHandlerInfo" />現在と比較する<see cref="T:System.Windows.RoutedEventHandlerInfo" />です。</param>
+        <summary>決定するかどうか、指定した<see cref="T:System.Windows.RoutedEventHandlerInfo" />は現在と同じ<see cref="T:System.Windows.RoutedEventHandlerInfo" />です。</summary>
+        <returns>
+          <see langword="true" />場合、指定した<see cref="T:System.Windows.RoutedEventHandlerInfo" />は現在と同じ<see cref="T:System.Windows.RoutedEventHandlerInfo" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装は、値の等価性に依存している、 <xref:System.Windows.RoutedEventHandlerInfo.Handler%2A> <xref:System.Windows.RoutedEventHandlerInfo.InvokeHandledEventsToo%2A>プロパティです。 <xref:System.Windows.RoutedEventHandlerInfo.Handler%2A>プロパティは、デリゲートを参照します。 そのため、等価性は、同じハンドラーへの重複参照を意味します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.RoutedEventHandlerInfo.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Windows.RoutedEventHandlerInfo" /> のハッシュ コードを返します。</summary>
+        <returns>現在の <see cref="T:System.Windows.RoutedEventHandlerInfo" /> のハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Handler">
+      <MemberSignature Language="C#" Value="public Delegate Handler { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Delegate Handler" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.RoutedEventHandlerInfo.Handler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Delegate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベント ハンドラーを取得します。</summary>
+        <value>イベント ハンドラー。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeHandledEventsToo">
+      <MemberSignature Language="C#" Value="public bool InvokeHandledEventsToo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool InvokeHandledEventsToo" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.RoutedEventHandlerInfo.InvokeHandledEventsToo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルーティング イベントの処理が付いているときに、イベント ハンドラーが呼び出されるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ルーティング イベントが設定されているときに、イベント ハンドラーが呼び出された場合は、次の処理です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Windows.RoutedEventHandlerInfo handlerInfo1, System.Windows.RoutedEventHandlerInfo handlerInfo2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Windows.RoutedEventHandlerInfo handlerInfo1, valuetype System.Windows.RoutedEventHandlerInfo handlerInfo2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.RoutedEventHandlerInfo.op_Equality(System.Windows.RoutedEventHandlerInfo,System.Windows.RoutedEventHandlerInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="handlerInfo1" Type="System.Windows.RoutedEventHandlerInfo" />
+        <Parameter Name="handlerInfo2" Type="System.Windows.RoutedEventHandlerInfo" />
+      </Parameters>
+      <Docs>
+        <param name="handlerInfo1">比較する最初のオブジェクト。</param>
+        <param name="handlerInfo2">比較する 2 番目のオブジェクト。</param>
+        <summary>指定したオブジェクトが等しいかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />オブジェクトが等しい場合はそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Windows.RoutedEventHandlerInfo handlerInfo1, System.Windows.RoutedEventHandlerInfo handlerInfo2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Windows.RoutedEventHandlerInfo handlerInfo1, valuetype System.Windows.RoutedEventHandlerInfo handlerInfo2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.RoutedEventHandlerInfo.op_Inequality(System.Windows.RoutedEventHandlerInfo,System.Windows.RoutedEventHandlerInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="handlerInfo1" Type="System.Windows.RoutedEventHandlerInfo" />
+        <Parameter Name="handlerInfo2" Type="System.Windows.RoutedEventHandlerInfo" />
+      </Parameters>
+      <Docs>
+        <param name="handlerInfo1">比較する最初のオブジェクト。</param>
+        <param name="handlerInfo2">比較する 2 番目のオブジェクト。</param>
+        <summary>指定のオブジェクトが等しくないかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />オブジェクトが等しくない場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

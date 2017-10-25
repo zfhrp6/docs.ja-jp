@@ -1,0 +1,95 @@
+<Type Name="IHttpHandler" FullName="System.Web.IHttpHandler">
+  <TypeSignature Language="C#" Value="public interface IHttpHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IHttpHandler" />
+  <TypeSignature Language="DocId" Value="T:System.Web.IHttpHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET がカスタム HTTP ハンドラーを使用した HTTP Web 要求を同期的に処理するために実装するコントラクトを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 事前定義された、特定の種類の共通言語仕様 (CLS) 準拠の言語での HTTP 要求を処理するカスタム HTTP ハンドラーを記述することができます。 定義されている実行可能コード、`HttpHandler`これら特定の要求に応答を従来の ASP または ASP.NET Web ページではなく、クラス、します。 HTTP ハンドラーは、低レベルの要求と、IIS Web サーバーの応答サービスと対話する手段を提供し、プログラミング モデルがより単純ですが、ISAPI 拡張機能と同様に機能を提供します。  
+  
+ それを実装する必要があります、ハンドラーには、セッション状態の値がアクセスする場合、<xref:System.Web.SessionState.IRequiresSessionState>インターフェイス (マーカー インターフェイスにメソッドを持たない)。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="IsReusable">
+      <MemberSignature Language="C#" Value="public bool IsReusable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReusable" />
+      <MemberSignature Language="DocId" Value="P:System.Web.IHttpHandler.IsReusable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>別の要求が使用できるかどうかを示す値を取得、<see cref="T:System.Web.IHttpHandler" />インスタンス。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Web.IHttpHandler" />インスタンスが再利用可能なそれ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 明示的に設定する、<xref:System.Web.IHttpHandler.IsReusable%2A>プロパティを`true`または`false`をオーバーライドするコードを入力して、<xref:System.Web.IHttpHandler.IsReusable%2A>プロパティ アクセサー (get アクセス操作子) です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、handler.aspx をという名前のページのクライアント要求に応答の HTTP 出力ストリームに 4 つの行のテキストを書き込みます。 によって handler.aspx に対するすべての要求が処理されて、`MyHttpHandler`名前空間でクラス`HandlerExample`HandlerTest.dll アセンブリに含まれています。  
+  
+ [!code-csharp[Classic IHttpHandler.ProcessRequest Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic IHttpHandler.ProcessRequest Example/CS/source.cs#1)]
+ [!code-vb[Classic IHttpHandler.ProcessRequest Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic IHttpHandler.ProcessRequest Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessRequest">
+      <MemberSignature Language="C#" Value="public void ProcessRequest (System.Web.HttpContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ProcessRequest(class System.Web.HttpContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.Web.HttpContext" />組み込みサーバー オブジェクトへの参照を提供するオブジェクト (たとえば、 <see langword="Request" />、 <see langword="Response" />、 <see langword="Session" />、および<see langword="Server" />) HTTP 要求を処理するために使用します。</param>
+        <summary>カスタム HTTP Web 要求の処理を有効<see langword="HttpHandler" />を実装する、<see cref="T:System.Web.IHttpHandler" />インターフェイスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタムの配置`HttpHandler`内のコード、<xref:System.Web.IHttpHandler.ProcessRequest%2A>仮想メソッドは、次の例で示すようにします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、handler.aspx をという名前のページのクライアント要求に応答の HTTP 出力ストリームに 4 つの行のテキストを書き込みます。 によって handler.aspx に対するすべての要求が処理されて、`MyHttpHandler`名前空間でクラス`HandlerExample`HandlerTest.dll アセンブリに含まれています。  
+  
+ [!code-csharp[Classic IHttpHandler.ProcessRequest Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic IHttpHandler.ProcessRequest Example/CS/source.cs#1)]
+ [!code-vb[Classic IHttpHandler.ProcessRequest Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic IHttpHandler.ProcessRequest Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,477 @@
+<Type Name="ButtonColumn" FullName="System.Web.UI.WebControls.ButtonColumn">
+  <TypeSignature Language="C#" Value="public class ButtonColumn : System.Web.UI.WebControls.DataGridColumn" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ButtonColumn extends System.Web.UI.WebControls.DataGridColumn" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ButtonColumn" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.DataGridColumn</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>列の種類、<see cref="T:System.Web.UI.WebControls.DataGrid" />を含むユーザー定義のボタン コントロールです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ButtonColumn>クラス内で、<xref:System.Web.UI.WebControls.DataGrid>の各行に対応するボタンを作成するコントロールを<xref:System.Web.UI.WebControls.DataGrid>コントロール。 設定して、ボタンに表示されるキャプションを指定、<xref:System.Web.UI.WebControls.ButtonColumn.Text%2A>プロパティです。 設定した場合、<xref:System.Web.UI.WebControls.ButtonColumn.Text%2A>プロパティ、すべてのボタン、<xref:System.Web.UI.WebControls.ButtonColumn>オブジェクトが同じキャプションを共有します。 また、バインド、<xref:System.Web.UI.WebControls.ButtonColumn>データ ソースのフィールドのボタンです。 これにより、各ボタンの異なるキャプションを表示できます。 指定されたフィールドの値は、テキスト キャプションに使用されます。 設定、<xref:System.Web.UI.WebControls.ButtonColumn.DataTextField%2A>バインドするプロパティ、<xref:System.Web.UI.WebControls.ButtonColumn>データ ソースのフィールドにします。  
+  
+ 設定して、ボタンに表示されるキャプションの書式を設定することができます、<xref:System.Web.UI.WebControls.ButtonColumn.DataTextField%2A>書式指定文字列を持つプロパティです。  
+  
+ 内のボタンをクリックすると、<xref:System.Web.UI.WebControls.ButtonColumn>を生成、<xref:System.Web.UI.WebControls.DataGrid.ItemCommand>イベント。 イベント ハンドラーを提供することで、ボタンがクリックされたときに実行されるアクションをプログラムから制御することができます、<xref:System.Web.UI.WebControls.DataGrid.ItemCommand>イベント。  
+  
+ 既定では、ページの検証は実行されませんでボタン、<xref:System.Web.UI.WebControls.ButtonColumn>をクリックします。 ページの検証は、検証コントロールによって指定されている検証規則を合格すべて ページで、検証に関連付けられている入力コントロールを制御するかどうかを判断します。 ボタンがクリックされたときにページの検証を実行するには設定、<xref:System.Web.UI.WebControls.ButtonColumn.CausesValidation%2A>プロパティを`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、使用する方法を示します<xref:System.Web.UI.WebControls.ButtonColumn>クラス内で、<xref:System.Web.UI.WebControls.DataGrid>作成するコントロールを**追加**ボタン。  
+  
+ [!code-csharp[ButtonColumnButtonType#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ButtonColumnButtonType/CS/source.cs#1)]
+ [!code-vb[ButtonColumnButtonType#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ButtonColumnButtonType/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ButtonColumn ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ButtonColumn.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.ButtonColumn" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ButtonColumn.%23ctor%2A>作成しの新しいインスタンスを初期化するコンス トラクター、<xref:System.Web.UI.WebControls.ButtonColumn>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成しの新しいインスタンスを初期化する方法を示しています、<xref:System.Web.UI.WebControls.ButtonColumn>クラスに追加して、<xref:System.Web.UI.WebControls.DataGrid.Columns%2A>コレクション。  
+  
+ [!code-csharp[ButtonColumnButtonType#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ButtonColumnButtonType/CS/source.cs#1)]
+ [!code-vb[ButtonColumnButtonType#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ButtonColumnButtonType/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ButtonType">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.ButtonColumnType ButtonType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.ButtonColumnType ButtonType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ButtonColumn.ButtonType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ButtonColumnType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に表示するボタンの種類、<see cref="T:System.Web.UI.WebControls.ButtonColumn" />オブジェクト。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.ButtonColumnType" /> 値のいずれか。 既定値は、<see langword="LinkButton" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ButtonColumn.ButtonType%2A>プロパティを指定するかどうかのボタン、<xref:System.Web.UI.WebControls.ButtonColumn>オブジェクトがリンクまたはプッシュ ボタンとして表示されます。 次の表には、使用可能な設定が一覧表示します。  
+  
+|[ボタンの種類]|表示|  
+|-----------------|-------------|  
+|<xref:System.Web.UI.WebControls.ButtonColumnType.LinkButton>|リンクです。|  
+|<xref:System.Web.UI.WebControls.ButtonColumnType.PushButton>|ボタン コントロールです。|  
+  
+ 内のボタンをクリックすると、<xref:System.Web.UI.WebControls.ButtonColumn>を生成、<xref:System.Web.UI.WebControls.DataGrid.ItemCommand>イベント。 イベント ハンドラーを提供することで、ボタンがクリックされたときに実行されるアクションをプログラムから制御することができます、<xref:System.Web.UI.WebControls.DataGrid.ItemCommand>イベント。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例で使用方法、<xref:System.Web.UI.WebControls.ButtonColumn.ButtonType%2A>ことを指定するプロパティのボタン、<xref:System.Web.UI.WebControls.ButtonColumn>オブジェクトはプッシュ ボタンとして表示されます。  
+  
+ [!code-csharp[ButtonColumnButtonType#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ButtonColumnButtonType/CS/source.cs#1)]
+ [!code-vb[ButtonColumnButtonType#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ButtonColumnButtonType/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定された列のデータ型が、<see cref="T:System.Web.UI.WebControls.ButtonColumnType" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CausesValidation">
+      <MemberSignature Language="C#" Value="public virtual bool CausesValidation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CausesValidation" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ButtonColumn.CausesValidation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定時のボタンに検証を実行するかどうかを示す値、<see cref="T:System.Web.UI.WebControls.ButtonColumn" />オブジェクトをクリックします。</summary>
+        <value>
+          <see langword="true" />ときにボタンの検証を実行する場合、<see cref="T:System.Web.UI.WebControls.ButtonColumn" />がクリックされた場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、ページの検証は実行されませんでボタン、<xref:System.Web.UI.WebControls.ButtonColumn>オブジェクトをクリックします。 ページの検証は、検証コントロールによって指定されている検証規則を合格すべて ページで、検証に関連付けられている入力コントロールを制御するかどうかを判断します。 ページの検証時のボタンを実行する、<xref:System.Web.UI.WebControls.ButtonColumn>クリックすると、設定、<xref:System.Web.UI.WebControls.ButtonColumn.CausesValidation%2A>プロパティを`true`です。  
+  
+ ときの値、<xref:System.Web.UI.WebControls.ButtonColumn.CausesValidation%2A>プロパティは`true`、使用することも、<xref:System.Web.UI.WebControls.ButtonColumn.ValidationGroup%2A>プロパティを対象の検証グループの名前を指定する、<xref:System.Web.UI.WebControls.ButtonColumn>が原因で検証します。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandName">
+      <MemberSignature Language="C#" Value="public virtual string CommandName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CommandName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ButtonColumn.CommandName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定時のボタンを実行するコマンドを表す文字列、<see cref="T:System.Web.UI.WebControls.ButtonColumn" />オブジェクトをクリックします。</summary>
+        <value>ときにボタンを実行するコマンドを表す文字列、<see cref="T:System.Web.UI.WebControls.ButtonColumn" />をクリックします。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ButtonColumn.CommandName%2A>ように、コマンド名を関連付けるプロパティ`Add`または`Remove`ボタンを使用します。 設定することができます、<xref:System.Web.UI.WebControls.ButtonColumn.CommandName%2A>プロパティ内のボタンのときに実行するアクションを識別する任意の文字列を<xref:System.Web.UI.WebControls.ButtonColumn?displayProperty=nameWithType>オブジェクトをクリックします。 次を指定できますプログラムからのイベント ハンドラーで、コマンド名、<xref:System.Web.UI.WebControls.DataGrid.ItemCommand>イベントと適切なアクションを実行します。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ButtonColumn.CommandName%2A>にコマンド名をボタンに関連付けるプロパティ。 次に、クリックされたボタンのコマンド名はプログラムで決定のイベント ハンドラーで、<xref:System.Web.UI.WebControls.DataGrid.ItemCommand>イベントと、適切な操作を実行します。  
+  
+ [!code-aspx-csharp[ButtonColumnCommandName#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ButtonColumnCommandName/CS/ButtonColumnCommandNameCS.aspx#1)]
+ [!code-aspx-vb[ButtonColumnCommandName#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ButtonColumnCommandName/VB/ButtonColumnCommandNameVB.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataTextField">
+      <MemberSignature Language="C#" Value="public virtual string DataTextField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataTextField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ButtonColumn.DataTextField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、フィールド名にバインドするデータ ソース、<see cref="T:System.Web.UI.WebControls.ButtonColumn" />オブジェクト。</summary>
+        <value>バインドするフィールド名、<see cref="T:System.Web.UI.WebControls.ButtonColumn" />です。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ButtonColumn.DataTextField%2A>プロパティをバインドするデータ ソースからのフィールド名を指定する、<xref:System.Web.UI.WebControls.ButtonColumn.Text%2A>のボタンのプロパティ、<xref:System.Web.UI.WebControls.ButtonColumn>オブジェクト。  
+  
+ 列を直接設定する代わりにフィールドにバインド、<xref:System.Web.UI.WebControls.ButtonColumn.Text%2A>プロパティでは、ボタンの異なるキャプションを表示することができます、<xref:System.Web.UI.WebControls.ButtonColumn>によって指定されたフィールドの値を使用します。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ButtonColumn.DataTextField%2A>バインドするプロパティ、<xref:System.Web.UI.WebControls.ButtonColumn>オブジェクト データ ソースのフィールドにします。  
+  
+ [!code-aspx-csharp[ButtonColumnDataTextField#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ButtonColumnDataTextField/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[ButtonColumnDataTextField#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ButtonColumnDataTextField/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataTextFormatString">
+      <MemberSignature Language="C#" Value="public virtual string DataTextFormatString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataTextFormatString" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ButtonColumn.DataTextFormatString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の各ボタンのキャプションの表示形式を指定する文字列。</summary>
+        <value>各ボタンのキャプションの表示形式を指定する文字列。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ButtonColumn.DataTextFormatString%2A>のボタンのキャプションに対するカスタムの表示形式を提供するプロパティ、<xref:System.Web.UI.WebControls.ButtonColumn>オブジェクト。  
+  
+ データ形式の文字列形式で、コロンで区切られた 2 つの部分から成る`{A:Bxx}`です。 たとえば、書式設定文字列`{0:F2}`小数点以下 2 桁の番号、固定小数点を表示するセルの書式を設定します。  
+  
+> [!NOTE]
+>  文字列全体は、書式指定文字列とリテラル文字列ではなくであることを示すために中かっこで囲む必要があります。 かっこの外側の任意のテキストは、リテラル テキストとして表示されます。  
+  
+ コロンの前に値 (`A`一般的な例で) パラメーターの 0 から始まるリストのパラメーターのインデックスを指定します。  
+  
+> [!NOTE]
+>  各セルには 1 つだけの値がないために、この値を 0 に設定できます。  
+  
+ コロンの後に文字 (`B`一般的な例で)、値を表示する形式を指定します。 次の表は、一般的な形式を示します。  
+  
+|書式指定文字|数値の表示形式|  
+|----------------------|--------------------------------|  
+|`C`|通貨の形式。|  
+|`D`|10 進数形式です。|  
+|`E`|指数 (指数) 形式です。|  
+|`F`|固定形式です。|  
+|`G`|一般的な形式です。|  
+|`N`|数値書式。|  
+|`X`|16 進数形式です。|  
+  
+> [!NOTE]
+>  書式指定文字が大文字小文字を区別、以外の`X`、指定した場合、16 進文字が表示されます。  
+  
+ 書式指定文字の後の値 (`xx`一般的な例で) の有効桁数または小数点以下桁数を表示する数を指定します。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+ 書式指定文字列の詳細については、「[Formatting Types](~/docs/standard/base-types/formatting-types.md)」(型の書式設定) を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ButtonColumn.DataTextFormatString%2A>内の各ボタンのキャプションを表示するプロパティを<xref:System.Web.UI.WebControls.ButtonColumn>通貨形式のオブジェクト。  
+  
+ [!code-aspx-csharp[ButtonColumnDataTextField#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ButtonColumnDataTextField/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[ButtonColumnDataTextField#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ButtonColumnDataTextField/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatDataTextValue">
+      <MemberSignature Language="C#" Value="protected virtual string FormatDataTextValue (object dataTextValue);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string FormatDataTextValue(object dataTextValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ButtonColumn.FormatDataTextValue(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataTextValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="dataTextValue">書式を設定する値。</param>
+        <summary>指定した値で示される形式に変換、<see cref="P:System.Web.UI.WebControls.ButtonColumn.DataTextFormatString" />プロパティです。</summary>
+        <returns><paramref name="dataTextValue" />によって示される形式に変換された、<see cref="P:System.Web.UI.WebControls.ButtonColumn.DataTextFormatString" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ButtonColumn.FormatDataTextValue%2A>で示される形式を指定された値を変換する方法、<xref:System.Web.UI.WebControls.ButtonColumn.DataTextFormatString%2A>プロパティです。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.ButtonColumn.FormatDataTextValue%2A>メソッドは、文字列を返しますと等価の値の場合、<xref:System.Web.UI.WebControls.ButtonColumn.DataTextFormatString%2A>プロパティが設定されていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ButtonColumn.Initialize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リセット、<see cref="T:System.Web.UI.WebControls.ButtonColumn" />を初期状態のオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ButtonColumn.Initialize%2A>をリセットする方法、<xref:System.Web.UI.WebControls.ButtonColumn>を初期状態のオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeCell">
+      <MemberSignature Language="C#" Value="public override void InitializeCell (System.Web.UI.WebControls.TableCell cell, int columnIndex, System.Web.UI.WebControls.ListItemType itemType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void InitializeCell(class System.Web.UI.WebControls.TableCell cell, int32 columnIndex, valuetype System.Web.UI.WebControls.ListItemType itemType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ButtonColumn.InitializeCell(System.Web.UI.WebControls.TableCell,System.Int32,System.Web.UI.WebControls.ListItemType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cell" Type="System.Web.UI.WebControls.TableCell" />
+        <Parameter Name="columnIndex" Type="System.Int32" />
+        <Parameter Name="itemType" Type="System.Web.UI.WebControls.ListItemType" />
+      </Parameters>
+      <Docs>
+        <param name="cell">A<see cref="T:System.Web.UI.WebControls.TableCell" />をリセットするセルを表すです。</param>
+        <param name="columnIndex">セルが配置されている列の番号。</param>
+        <param name="itemType"><see cref="T:System.Web.UI.WebControls.ListItemType" /> 値のいずれか。</param>
+        <summary>内のセルのリセット、<see cref="T:System.Web.UI.WebControls.ButtonColumn" />を初期状態のオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ButtonColumn.InitializeCell%2A>メソッドで指定されたセルのリセット、<xref:System.Web.UI.WebControls.ButtonColumn>を初期状態のオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public virtual string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ButtonColumn.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のボタンに表示されるキャプション、<see cref="T:System.Web.UI.WebControls.ButtonColumn" />オブジェクト。</summary>
+        <value>ボタンに表示されるキャプション、<see cref="T:System.Web.UI.WebControls.ButtonColumn" />です。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ButtonColumn.Text%2A>プロパティを指定するかのボタンに表示されるキャプションを調べる、<xref:System.Web.UI.WebControls.ButtonColumn>オブジェクト。  
+  
+> [!NOTE]
+>  設定した場合、<xref:System.Web.UI.WebControls.ButtonColumn.Text%2A>プロパティ、すべてのボタン、<xref:System.Web.UI.WebControls.ButtonColumn>同じキャプションを共有します。  
+  
+ また、バインド、<xref:System.Web.UI.WebControls.ButtonColumn>データ ソースのフィールドにします。 これにより、指定したフィールドに値を使用して、列にボタンの異なるキャプションを表示できます。 設定、<xref:System.Web.UI.WebControls.ButtonColumn.DataTextField%2A>バインドするプロパティ、<xref:System.Web.UI.WebControls.ButtonColumn>データ ソースのフィールドにします。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ButtonColumn.Text%2A>のボタンのキャプションを指定するプロパティ、<xref:System.Web.UI.WebControls.ButtonColumn>オブジェクト。  
+  
+ [!code-aspx-csharp[Classic ButtonColumn.ButtonType Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic ButtonColumn.ButtonType Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic ButtonColumn.ButtonType Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic ButtonColumn.ButtonType Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidationGroup">
+      <MemberSignature Language="C#" Value="public virtual string ValidationGroup { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ValidationGroup" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ButtonColumn.ValidationGroup" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の検証コントロールのグループを<see cref="T:System.Web.UI.WebControls.ButtonColumn" />オブジェクトは、サーバーへのポストバック時に検証を実行します。</summary>
+        <value>検証のグループを対象の制御、<see cref="T:System.Web.UI.WebControls.ButtonColumn" />オブジェクトは、サーバーへのポストバック時に検証を実行します。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 検証グループを使用すると、ページ上の検証コントロールを特定のカテゴリに割り当てることができます。 各グループの検証は、ページ上の他の検証グループとは無関係に検証できます。 使用して、<xref:System.Web.UI.WebControls.ButtonColumn.ValidationGroup%2A>プロパティを対象の検証グループの名前を指定する、<xref:System.Web.UI.WebControls.ButtonColumn>オブジェクトは、サーバーへのポストバック時に検証を実行します。  
+  
+ <xref:System.Web.UI.WebControls.ButtonColumn.ValidationGroup%2A>プロパティは、有効される場合にのみの値、<xref:System.Web.UI.WebControls.ButtonColumn.CausesValidation%2A>プロパティに設定されている`true`です。 値を指定すると、<xref:System.Web.UI.WebControls.ButtonColumn.ValidationGroup%2A>プロパティ、指定されたグループの一部である検証コントロールだけは、検証、<xref:System.Web.UI.WebControls.ButtonColumn>投稿がサーバーにバックアップします。 値を指定しない場合、<xref:System.Web.UI.WebControls.ButtonColumn.ValidationGroup%2A>プロパティおよび<xref:System.Web.UI.WebControls.ButtonColumn.CausesValidation%2A>プロパティに設定されている`true`、検証グループに割り当てられていないページ上のすべての検証コントロールが検証されるときに、<xref:System.Web.UI.WebControls.ButtonColumn>投稿がサーバーにバックアップします。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

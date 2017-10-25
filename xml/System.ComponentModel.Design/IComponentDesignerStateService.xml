@@ -1,0 +1,77 @@
+<Type Name="IComponentDesignerStateService" FullName="System.ComponentModel.Design.IComponentDesignerStateService">
+  <TypeSignature Language="C#" Value="public interface IComponentDesignerStateService" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IComponentDesignerStateService" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.IComponentDesignerStateService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>によって、デザイナーを格納およびその状態を取得できます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナーの状態は、デザイナーが関連付けられているコンポーネントによってキー指定します。 Web フォームのデザイン画面はこのサービスおよびコンポーネントのデザイナーは、サービスを使用します。 これは、省略可能なホスト サービスであり、コントロールのデザイナーでは、常に提供されますは想定しないでください。  
+  
+ デザイナーの状態は、ディクショナリの形式での名前/値ペアのセットとして表されます。 ディクショナリに格納された値は、シリアル化する必要があります。 指定されたコンポーネントは、デザイナー内に配置する必要があり、空でない名前を付ける必要があります。  
+  
+> [!CAUTION]
+>  機密情報を格納しないでください、<xref:System.ComponentModel.Design.IComponentDesignerStateService>です。 機密情報には、パスワードおよび認証データ、または不適切なソースを公開したくないデータが含まれています。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetState">
+      <MemberSignature Language="C#" Value="public object GetState (System.ComponentModel.IComponent component, string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetState(class System.ComponentModel.IComponent component, string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IComponentDesignerStateService.GetState(System.ComponentModel.IComponent,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="component">デザイナーの状態の項目を取得する対象のコンポーネントです。</param>
+        <param name="key">デザイナーの状態の項目の名前です。</param>
+        <summary>特定のコンポーネントのキーで指定された状態の項目を取得します。</summary>
+        <returns>デザイナーの状態を<paramref name="component" />によって指定された<paramref name="key" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetState">
+      <MemberSignature Language="C#" Value="public void SetState (System.ComponentModel.IComponent component, string key, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetState(class System.ComponentModel.IComponent component, string key, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IComponentDesignerStateService.SetState(System.ComponentModel.IComponent,System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="component">デザイナーの状態の項目を設定する対象のコンポーネントです。</param>
+        <param name="key">デザイナーの状態の項目の名前です。</param>
+        <param name="value">デザイナーの状態項目<c>コンポーネント</c>です。</param>
+        <summary>特定のコンポーネントのキーで指定された状態の項目を設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

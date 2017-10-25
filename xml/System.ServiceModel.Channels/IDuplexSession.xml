@@ -1,0 +1,251 @@
+<Type Name="IDuplexSession" FullName="System.ServiceModel.Channels.IDuplexSession">
+  <TypeSignature Language="C#" Value="public interface IDuplexSession : System.ServiceModel.Channels.IInputSession, System.ServiceModel.Channels.IOutputSession" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDuplexSession implements class System.ServiceModel.Channels.IInputSession, class System.ServiceModel.Channels.IOutputSession, class System.ServiceModel.Channels.ISession" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.IDuplexSession" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Channels.IInputSession</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Channels.IOutputSession</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>メッセージング エンドポイント間の双方向通信の両側に実装されるセッションのインターフェイスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.IDuplexSession> インターフェイスは、<xref:System.ServiceModel.Channels.IInputSession> インターフェイスで定義されている受信セッションと、<xref:System.ServiceModel.Channels.IOutputSession> インターフェイスで定義されている送信セッションの結合です。 受信セッションと送信セッションは、どちらも、もう一方に関係なく終了できます。 送信セッションは、<xref:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession%2A> を呼び出して同期的に終了するか、または <xref:System.ServiceModel.Channels.IDuplexSession.BeginCloseOutputSession%2A> を呼び出して非同期的に終了することができます。  
+  
+ 受信セッションは、リモート操作で終了できます。 受信セッションに関連付けられた <xref:System.ServiceModel.Channels.IInputChannel.Receive%2A> は、そのセッションがシャットダウンすると、`null` を返すようになります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BeginCloseOutputSession">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginCloseOutputSession (AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginCloseOutputSession(class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.IDuplexSession.BeginCloseOutputSession(System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="callback"><see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="state">この要求の状態情報を格納する <see langword="object" />。</param>
+        <summary>送信セッションを終了する非同期操作を開始します。</summary>
+        <returns>非同期送信セッションの終了を参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 送信セッションを終了しても、受信セッションに影響はないため、入力チャネルに関連付けられているセッションでのメッセージ受信機能についてのステートメントはありません。 この操作は、既定の時間内に完了する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginCloseOutputSession">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginCloseOutputSession (TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginCloseOutputSession(valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.IDuplexSession.BeginCloseOutputSession(System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">操作完了の制限時間を指定する <see cref="T:System.TimeSpan" />。</param>
+        <param name="callback"><see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="state">この要求の状態情報を格納する <see langword="object" />。</param>
+        <summary>操作がその時間内に完了する必要があるタイムアウトを指定して、送信セッションを終了する非同期操作を開始します。</summary>
+        <returns>非同期送信セッションの終了を参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 送信セッションを終了しても、受信セッションに影響はないため、入力チャネルに関連付けられているセッションでのメッセージ受信機能についてのステートメントはありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloseOutputSession">
+      <MemberSignature Language="C#" Value="public void CloseOutputSession ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CloseOutputSession() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セッションに関連付けられたチャネルのエンドポイントから、これ以上メッセージが送信されないことを示している送信セッションを終了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession> を呼び出すと、セッションのもう一方の側に対して、`null` に対する保留中または以降の呼び出しからは <xref:System.ServiceModel.Channels.IInputChannel.Receive%2A> を返す必要があることが通知されます。 <xref:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession%2A> はべき等であるため、再度呼び出しても何も行われません。  
+  
+ 送信セッションを終了しても、受信セッションに影響はないため、入力チャネルに関連付けられているセッションでのメッセージ受信機能についてのステートメントはありません。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see cref="M:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession" /> は、セッションを所有する <see cref="T:System.ServiceModel.Channels.IDuplexSessionChannel" /> と対話できるセッション メソッドです。 具体的には、セッションの有効期間とチャネルの有効期間をまとめると、次のようになります (TCP および信頼性の高いセッションとセキュリティを想定した場合)。  
+  
+-   チャネルで <see cref="M:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession" /> が呼び出される前に <see cref="M:System.ServiceModel.ICommunicationObject.Close" /> が呼び出された場合は、<see cref="M:System.ServiceModel.ICommunicationObject.Close" /> は <see cref="M:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession" /> が終了するのを待つ必要があります。  
+  
+-   チャネルが <see cref="F:System.ServiceModel.CommunicationState.Created" /> 状態または <see cref="F:System.ServiceModel.CommunicationState.Opening" /> 状態の場合は、<see cref="M:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession" /> は <see cref="T:System.InvalidOperationException" /> をスローする必要があります。  
+  
+-   チャネルが <see cref="F:System.ServiceModel.CommunicationState.Faulted" /> 状態の場合は、<see cref="M:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession" /> は <see cref="T:System.ServiceModel.CommunicationObjectFaultedException" /> をスローする必要があります。  
+  
+-   <see cref="M:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession" /> がスローする場合、チャネルはエラーにする必要があります。  
+  
+-   チャネル上の <see cref="M:System.ServiceModel.ICommunicationObject.Close" /> の実装では、<see cref="M:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession" /> を呼び出し、<see cref="M:System.ServiceModel.Channels.IInputChannel.Receive" /> が <see langword="null" /> を返すことを確認する必要があります。これは、セッションのもう一方の側が <see cref="M:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession" /> を呼び出したことを示します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CloseOutputSession">
+      <MemberSignature Language="C#" Value="public void CloseOutputSession (TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CloseOutputSession(valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">操作完了の制限時間を指定する <see cref="T:System.TimeSpan" />。</param>
+        <summary>指定した時間内に、セッションに関連付けられたチャネルのエンドポイントから、これ以上メッセージが送信されないことを示している送信セッションを終了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession%28System.TimeSpan%29> を呼び出すと、セッションのもう一方の側に対して、`null` に対する保留中または以降の呼び出しからは <xref:System.ServiceModel.Channels.IInputChannel.Receive%2A> を返す必要があることが通知されます。 <xref:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession%2A> はべき等であるため、再度呼び出しても何も行われません。  
+  
+ 送信セッションを終了しても、受信セッションに影響はないため、入力チャネルに関連付けられているセッションでのメッセージ受信機能についてのステートメントはありません。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see cref="M:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession" /> は、セッションを所有する <see cref="T:System.ServiceModel.Channels.IDuplexSessionChannel" /> と対話できるセッション メソッドです。 具体的には、セッションの有効期間とチャネルの有効期間をまとめると、次のようになります (TCP および信頼性の高いセッションとセキュリティを想定した場合)。  
+  
+-   チャネルで <see cref="M:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession" /> が呼び出される前に <see cref="M:System.ServiceModel.ICommunicationObject.Close" /> が呼び出された場合は、<see cref="M:System.ServiceModel.ICommunicationObject.Close" /> は <see cref="M:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession" /> が終了するのを待つ必要があります。  
+  
+-   チャネルが <see cref="F:System.ServiceModel.CommunicationState.Created" /> 状態または <see cref="F:System.ServiceModel.CommunicationState.Opening" /> 状態の場合は、<see cref="M:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession" /> は <see cref="T:System.InvalidOperationException" /> をスローする必要があります。  
+  
+-   チャネルが <see cref="F:System.ServiceModel.CommunicationState.Faulted" /> 状態の場合は、<see cref="M:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession" /> は <see cref="T:System.ServiceModel.CommunicationObjectFaultedException" /> をスローする必要があります。  
+  
+-   <see cref="M:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession" /> がスローする場合、チャネルはエラーにする必要があります。  
+  
+-   チャネル上の <see cref="M:System.ServiceModel.ICommunicationObject.Close" /> の実装では、<see cref="M:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession" /> を呼び出し、<see cref="M:System.ServiceModel.Channels.IInputChannel.Receive" /> が <see langword="null" /> を返すことを確認する必要があります。これは、セッションのもう一方の側が <see cref="M:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession" /> を呼び出したことを示します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="EndCloseOutputSession">
+      <MemberSignature Language="C#" Value="public void EndCloseOutputSession (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndCloseOutputSession(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.IDuplexSession.EndCloseOutputSession(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">いずれかの <see cref="T:System.IAsyncResult" /> メソッドへの呼び出しで返された <see cref="Overload:System.ServiceModel.Channels.IDuplexSession.BeginCloseOutputSession" />。</param>
+        <summary>セッションに関連付けられたチャネルのエンドポイントから、これ以上メッセージが送信されないことを示している送信セッションに対して、セッションを終了する非同期操作を完了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 送信セッションを終了しても、受信セッションに影響はないため、入力チャネルに関連付けられているセッションでのメッセージ受信機能についてのステートメントはありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,117 @@
+<Type Name="VirtualStackFrame" FullName="System.Activities.Debugger.VirtualStackFrame">
+  <TypeSignature Language="C#" Value="public class VirtualStackFrame" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit VirtualStackFrame extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Debugger.VirtualStackFrame" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerNonUserCode</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>インタープリターに仮想呼び出しスタック フレームを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public VirtualStackFrame (System.Activities.Debugger.State state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Activities.Debugger.State state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Debugger.VirtualStackFrame.#ctor(System.Activities.Debugger.State)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="state" Type="System.Activities.Debugger.State" />
+      </Parameters>
+      <Docs>
+        <param name="state">この実装方法では、呼び出しスタックのフレームの仮想環境を定義するプロパティ セットを含むオブジェクト。</param>
+        <summary>指定した状態を使用して、<see cref="T:System.Activities.Debugger.VirtualStackFrame" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public VirtualStackFrame (System.Activities.Debugger.State state, System.Collections.Generic.IDictionary&lt;string,object&gt; locals);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Activities.Debugger.State state, class System.Collections.Generic.IDictionary`2&lt;string, object&gt; locals) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Debugger.VirtualStackFrame.#ctor(System.Activities.Debugger.State,System.Collections.Generic.IDictionary{System.String,System.Object})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="state" Type="System.Activities.Debugger.State" />
+        <Parameter Name="locals" Type="System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="state">この実装方法では、呼び出しスタックのフレームの仮想環境を定義するプロパティ セットを含むオブジェクト。</param>
+        <param name="locals">状態に関連付けられている、事前バインディングされた変数および遅延バインディングされた変数。</param>
+        <summary>指定した状態およびローカル変数を使用して、<see cref="T:System.Activities.Debugger.VirtualStackFrame" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Locals">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,object&gt; Locals { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, object&gt; Locals" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Debugger.VirtualStackFrame.Locals" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>呼び出しスタックのフレームに対するローカル変数を取得します。</summary>
+        <value>指定した状態に関連付けられている、事前バインディングされた変数および遅延バインディングされた変数を定義するキー/値ペアのコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="State">
+      <MemberSignature Language="C#" Value="public System.Activities.Debugger.State State { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Debugger.State State" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Debugger.VirtualStackFrame.State" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Debugger.State</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>呼び出しスタックのフレームの仮想環境を定義するプロパティを取得します。</summary>
+        <value>A<see langword="State" />指定した仮想環境を定義するプロパティを含むオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Debugger.VirtualStackFrame.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>状態情報の文字列インスタンス。</summary>
+        <returns>仮想環境の状態情報。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,617 @@
+<Type Name="SoapMessage" FullName="System.Web.Services.Protocols.SoapMessage">
+  <TypeSignature Language="C#" Value="public abstract class SoapMessage" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit SoapMessage extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.SoapMessage" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>SOAP 要求または特定の SOAP 応答にデータを表す<see cref="T:System.Web.Services.Protocols.SoapMessageStage" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 主な用途、<xref:System.Web.Services.Protocols.SoapMessage>クラスは、SOAP 要求または SOAP 応答にデータを表す SOAP 拡張機能です。 ときに、<xref:System.Web.Services.Protocols.SoapExtension.ProcessMessage%2A>メソッドが呼び出されると、<xref:System.Web.Services.Protocols.SoapExtension>を受け取る、<xref:System.Web.Services.Protocols.SoapMessage>各<xref:System.Web.Services.Protocols.SoapMessageStage>です。 特定の SOAP 拡張機能を処理する方法を選択するまでは、<xref:System.Web.Services.Protocols.SoapMessage>です。 一般的な SOAP 拡張機能には、暗号化と圧縮が含まれます。  
+  
+ ASP.NET または XML Web サービス クライアントを使用して、XML Web サービス メソッドの作成またはいずれかに SOAP 拡張機能を適用できます。 SOAP 拡張機能は、XML Web サービス メソッドに適用される場合、<xref:System.Web.Services.Protocols.SoapExtension.ProcessMessage%2A>メソッドのインスタンスを受け取り<xref:System.Web.Services.Protocols.SoapServerMessage>から派生した<xref:System.Web.Services.Protocols.SoapMessage>です。 同様に、SOAP 拡張機能が適用されたときに、XML Web サービス クライアント<xref:System.Web.Services.Protocols.SoapExtension.ProcessMessage%2A>のインスタンスを受け取り<xref:System.Web.Services.Protocols.SoapClientMessage>です。  
+  
+   
+  
+## Examples  
+ [!code-cpp[SoapMessage#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapMessage/CPP/SoapMessage.cpp#1)]
+ [!code-csharp[SoapMessage#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapMessage/CS/soapmessage.cs#1)]
+ [!code-vb[SoapMessage#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapMessage/VB/soapmessage.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Action">
+      <MemberSignature Language="C#" Value="public abstract string Action { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Action" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapMessage.Action" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされるは、SOAP 要求と SOAP 応答の SOAPAction HTTP 要求ヘッダー フィールドを取得します。</summary>
+        <value>SOAP 要求または SOAP 応答の SOAPAction HTTP 要求ヘッダー フィールド。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.SoapMessage.Action%2A>中にいずれかのプロパティにアクセスする<xref:System.Web.Services.Protocols.SoapMessageStage>です。  
+  
+   
+  
+## Examples  
+ [!code-cpp[SoapMessage#2](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapMessage/CPP/SoapMessage.cpp#2)]
+ [!code-csharp[SoapMessage#2](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapMessage/CS/soapmessage.cs#2)]
+ [!code-vb[SoapMessage#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapMessage/VB/soapmessage.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentEncoding">
+      <MemberSignature Language="C#" Value="public string ContentEncoding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContentEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapMessage.ContentEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の内容、 <see langword="Content-Encoding" /> HTTP ヘッダー。</summary>
+        <value>内容、 <see langword="Content-Encoding" /> HTTP ヘッダー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SOAP 拡張機能が設定できる、<xref:System.Web.Services.Protocols.SoapMessage.ContentEncoding%2A>プロパティで表されるメディアの種類を変更することがなく、SOAP メッセージのエンコーディングに関する補足情報を提供する、 `Content-Type` HTTP ヘッダー。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">現在<see cref="T:System.Web.Services.Protocols.SoapMessageStage" />は<see cref="F:System.Web.Services.Protocols.SoapMessageStage.AfterSerialize" />または<see cref="F:System.Web.Services.Protocols.SoapMessageStage.AfterDeserialize" />段階です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentType">
+      <MemberSignature Language="C#" Value="public string ContentType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContentType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapMessage.ContentType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、HTTP<see langword="Content-Type" />の SOAP 要求または SOAP 応答します。</summary>
+        <value>HTTP<see langword="Content-Type" />の SOAP 要求または SOAP 応答します。 既定値は、"テキスト/xml"です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.SoapMessage.ContentType%2A>プロパティでのみアクセスできる、<xref:System.Web.Services.Protocols.SoapMessageStage.BeforeSerialize>と<xref:System.Web.Services.Protocols.SoapMessageStage.BeforeDeserialize>ステージです。 それ以外の場合、<xref:System.InvalidOperationException>がスローされます。  
+  
+ 使用して、<xref:System.Web.Services.Protocols.SoapMessage.ContentEncoding%2A>プロパティの代わりに、 <xref:System.Web.Services.Protocols.SoapMessage.ContentType%2A> SOAP メッセージのエンコードに関する補足情報を提供するプロパティです。  
+  
+   
+  
+## Examples  
+ [!code-cpp[SoapMessage#3](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapMessage/CPP/SoapMessage.cpp#3)]
+ [!code-csharp[SoapMessage#3](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapMessage/CS/soapmessage.cs#3)]
+ [!code-vb[SoapMessage#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapMessage/VB/soapmessage.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.Web.Services.Protocols.SoapMessage.ContentType" />アクセスが<see cref="F:System.Web.Services.Protocols.SoapMessageStage.AfterSerialize" />または<see cref="F:System.Web.Services.Protocols.SoapMessageStage.AfterDeserialize" />段階です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnsureInStage">
+      <MemberSignature Language="C#" Value="protected abstract void EnsureInStage ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void EnsureInStage() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapMessage.EnsureInStage" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、アサートを現在<see cref="T:System.Web.Services.Protocols.SoapMessageStage" />パラメーターでは、ステージを利用できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アサートされたステージは、XML Web サービス クライアントと XML Web サービス メソッドで異なります。 SOAP 要求が逆シリアル化後に、XML Web サービス メソッドのパラメーターでは利用、<xref:System.Web.Services.Protocols.SoapMessageStage.AfterDeserialize>段階です。 XML Web サービス クライアントでは、in パラメーターは、プロセスの前に、SOAP 要求のシリアル化で使用可能な<xref:System.Web.Services.Protocols.SoapMessageStage.BeforeSerialize>段階です。  
+  
+ <xref:System.Web.Services.Protocols.SoapMessage.EnsureInStage%2A>いずれかの中に呼び出すことができる<xref:System.Web.Services.Protocols.SoapMessageStage>、ただし、<xref:System.InvalidOperationException>場合にスローされるパラメーターは使用できません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">パラメーターでは使用できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnsureOutStage">
+      <MemberSignature Language="C#" Value="protected abstract void EnsureOutStage ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void EnsureOutStage() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapMessage.EnsureOutStage" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、アサートを現在<see cref="T:System.Web.Services.Protocols.SoapMessageStage" />段階では、ステージは、out パラメーターを利用できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アサートされたステージは、XML Web サービス クライアントと XML Web サービス メソッドで異なります。 XML Web サービス メソッドの出力パラメーターは、プロセスの前に、SOAP 応答のシリアル化で使用可能な<xref:System.Web.Services.Protocols.SoapMessageStage.BeforeSerialize>段階です。 XML Web サービス クライアント、out パラメーターが使用可能な SOAP 応答の逆シリアル化プロセスの後に、<xref:System.Web.Services.Protocols.SoapMessageStage.AfterDeserialize>段階です。  
+  
+ <xref:System.Web.Services.Protocols.SoapMessage.EnsureOutStage%2A>いずれかの中に呼び出すことができる<xref:System.Web.Services.Protocols.SoapMessageStage>、ただし、<xref:System.InvalidOperationException>場合にスローされるパラメーターは使用できません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">Out パラメーターは使用できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnsureStage">
+      <MemberSignature Language="C#" Value="protected void EnsureStage (System.Web.Services.Protocols.SoapMessageStage stage);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void EnsureStage(valuetype System.Web.Services.Protocols.SoapMessageStage stage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapMessage.EnsureStage(System.Web.Services.Protocols.SoapMessageStage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stage" Type="System.Web.Services.Protocols.SoapMessageStage" />
+      </Parameters>
+      <Docs>
+        <param name="stage"><see cref="T:System.Web.Services.Protocols.SoapMessageStage" />アサートします。</param>
+        <summary>確実に、<see cref="T:System.Web.Services.Protocols.SoapMessageStage" />呼び出し、XML Web サービス メソッドがステージまたはのステージが渡されます。 現在の処理ステージが渡された段階のいずれかでない場合、例外がスローされます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数のインスタンスに対してビットごとの OR 演算を実行することによって、複数のステージをアサートすることができます、<xref:System.Web.Services.Protocols.SoapMessageStage>クラスです。  
+  
+ <xref:System.Web.Services.Protocols.SoapMessage.EnsureStage%2A>いずれかの中に呼び出すことができる<xref:System.Web.Services.Protocols.SoapMessageStage>です。  
+  
+   
+  
+## Examples  
+ 次の例をアサートする現在<xref:System.Web.Services.Protocols.SoapMessageStage>か<xref:System.Web.Services.Protocols.SoapMessageStage.BeforeSerialize>または<xref:System.Web.Services.Protocols.SoapMessageStage.BeforeDeserialize>以外の場合、それ以外は、例外がスローされます。  
+  
+ [!code-cpp[Classic SoapMessage.EnsureStage Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic SoapMessage.EnsureStage Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic SoapMessage.EnsureStage Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic SoapMessage.EnsureStage Example/CS/source.cs#1)]
+ [!code-vb[Classic SoapMessage.EnsureStage Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic SoapMessage.EnsureStage Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">現在<see cref="T:System.Web.Services.Protocols.SoapMessageStage" />アサートされたステージまたは段階ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Exception">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Protocols.SoapException Exception { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Protocols.SoapException Exception" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapMessage.Exception" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Protocols.SoapException</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="T:System.Web.Services.Protocols.SoapException" /> XML Web サービス メソッドへの呼び出しです。</summary>
+        <value><see cref="T:System.Web.Services.Protocols.SoapException" /> XML Web サービス メソッドへの呼び出しで発生しました。 <see langword="null" />ない場合は<see cref="T:System.Web.Services.Protocols.SoapException" />Web サービス メソッドへの呼び出し中に発生しました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.SoapMessage.Exception%2A>中にいずれかのプロパティにアクセスする<xref:System.Web.Services.Protocols.SoapMessageStage>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInParameterValue">
+      <MemberSignature Language="C#" Value="public object GetInParameterValue (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetInParameterValue(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapMessage.GetInParameterValue(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">パラメーターの配列内のパラメーターの 0 から始まるインデックス。</param>
+        <summary>指定したインデックスに XML Web サービス メソッドに渡されるパラメーターを取得します。</summary>
+        <returns><see cref="T:System.Object" />指定したインデックス位置にあるパラメーターを表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.SoapMessage.GetInParameterValue%2A>プロパティは、のみのパラメーターであるときにアクセスを利用できます。 ASP.NET はスロー<xref:System.InvalidOperationException>にアクセスするとき、<xref:System.Web.Services.Protocols.SoapMessage.GetInParameterValue%2A>パラメーターの場合のプロパティは使用できません。  
+  
+ <xref:System.Web.Services.Protocols.SoapClientMessage> In パラメーターで使用できる、 <xref:System.Web.Services.Protocols.SoapMessageStage.BeforeSerialize><xref:System.Web.Services.Protocols.SoapMessageStage>です。 <xref:System.Web.Services.Protocols.SoapServerMessage> In パラメーターで使用できる、 <xref:System.Web.Services.Protocols.SoapMessageStage.AfterDeserialize><xref:System.Web.Services.Protocols.SoapMessageStage>です。  
+  
+   
+  
+## Examples  
+ [!code-cpp[SoapMessage#6](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapMessage/CPP/SoapMessage.cpp#6)]
+ [!code-csharp[SoapMessage#6](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapMessage/CS/soapmessage.cs#6)]
+ [!code-vb[SoapMessage#6](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapMessage/VB/soapmessage.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException"><paramref name="index" />パラメーターが 0 未満か、パラメーター配列の長さを超えています。</exception>
+        <exception cref="T:System.InvalidOperationException">パラメーターでは、このプロパティへのアクセスは使用できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOutParameterValue">
+      <MemberSignature Language="C#" Value="public object GetOutParameterValue (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetOutParameterValue(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapMessage.GetOutParameterValue(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">パラメーターの配列内のパラメーターの 0 から始まるインデックス。</param>
+        <summary>指定したインデックスに XML Web サービス メソッドに渡された out パラメーターを取得します。</summary>
+        <returns><see cref="T:System.Object" />指定したインデックス位置にあるパラメーターを表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合に out パラメーターは使用できません、ASP.NET をスロー、<xref:System.InvalidOperationException>にアクセスするとき、<xref:System.Web.Services.Protocols.SoapMessage.GetOutParameterValue%2A>プロパティです。  
+  
+ <xref:System.Web.Services.Protocols.SoapClientMessage> Out パラメーターで使用できる、 <xref:System.Web.Services.Protocols.SoapMessageStage.AfterDeserialize><xref:System.Web.Services.Protocols.SoapMessageStage>です。 <xref:System.Web.Services.Protocols.SoapServerMessage> Out パラメーターで使用できる、<xref:System.Web.Services.Protocols.SoapMessageStage.BeforeSerialize>の<xref:System.Web.Services.Protocols.SoapMessageStage>です。  
+  
+   
+  
+## Examples  
+ [!code-cpp[SoapMessage#8](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapMessage/CPP/SoapMessage.cpp#8)]
+ [!code-csharp[SoapMessage#8](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapMessage/CS/soapmessage.cs#8)]
+ [!code-vb[SoapMessage#8](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapMessage/VB/soapmessage.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException"><paramref name="index" />パラメーターはパラメーター配列の長さを超えています。</exception>
+        <exception cref="T:System.InvalidOperationException">Out パラメーターのときにこのプロパティへのアクセスは使用できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetReturnValue">
+      <MemberSignature Language="C#" Value="public object GetReturnValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetReturnValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapMessage.GetReturnValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>XML Web サービス メソッドの戻り値を取得します。</summary>
+        <returns><see cref="T:System.Object" /> XML Web サービス メソッドの戻り値を表します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値が使用できない場合に、ASP.NET がスロー<xref:System.InvalidOperationException>にアクセスするとき、<xref:System.Web.Services.Protocols.SoapMessage.GetReturnValue%2A>プロパティです。  
+  
+ <xref:System.Web.Services.Protocols.SoapClientMessage>戻り値が使用可能な場合に、<xref:System.Web.Services.Protocols.SoapMessageStage>値は<xref:System.Web.Services.Protocols.SoapMessageStage.AfterDeserialize>します。 <xref:System.Web.Services.Protocols.SoapServerMessage>戻り値が使用可能な場合に<xref:System.Web.Services.Protocols.SoapMessageStage>値は<xref:System.Web.Services.Protocols.SoapMessageStage.BeforeSerialize>します。  
+  
+   
+  
+## Examples  
+ [!code-cpp[SoapMessage#9](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapMessage/CPP/SoapMessage.cpp#9)]
+ [!code-csharp[SoapMessage#9](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapMessage/CS/soapmessage.cs#9)]
+ [!code-vb[SoapMessage#9](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapMessage/VB/soapmessage.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">XML Web サービス メソッドには、戻り値はありません。  
+  
+ OR  
+  
+ 戻り値は使用できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Headers">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Protocols.SoapHeaderCollection Headers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Protocols.SoapHeaderCollection Headers" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapMessage.Headers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Protocols.SoapHeaderCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の SOAP 要求または SOAP 応答に適用される SOAP ヘッダーのコレクション。</summary>
+        <value>A<see cref="T:System.Web.Services.Protocols.SoapHeaderCollection" />の SOAP ヘッダーを現在の SOAP 要求または SOAP 応答に適用します。 <see langword="null" />、SOAP ヘッダーが存在しない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SOAP ヘッダーは、SOAP 要求と SOAP 応答のオプションの部分です。 ASP.NET およびそのクライアントを使用して作成された XML Web サービスで SOAP ヘッダーの使用の詳細については、次を参照してください。、<xref:System.Web.Services.Protocols.SoapHeader>クラスです。  
+  
+ ただし、<xref:System.Web.Services.Protocols.SoapMessage.Headers%2A>何らかの段階でプロパティにアクセスできる、SOAP ヘッダー情報でのみ設定されます、<xref:System.Web.Services.Protocols.SoapMessageStage.BeforeSerialize>と<xref:System.Web.Services.Protocols.SoapMessageStage.AfterDeserialize>段階です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MethodInfo">
+      <MemberSignature Language="C#" Value="public abstract System.Web.Services.Protocols.LogicalMethodInfo MethodInfo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Protocols.LogicalMethodInfo MethodInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapMessage.MethodInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Protocols.LogicalMethodInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされるは、SOAP 要求の対象となる XML Web サービス メソッドのメソッドのプロトタイプの表現を取得します。</summary>
+        <value>A <see cref="T:System.Web.Services.Protocols.LogicalMethodInfo" /> SOAP 要求の対象となる XML Web サービス メソッドを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.SoapMessage.MethodInfo%2A>いずれかの中にアクセスできる<xref:System.Web.Services.Protocols.SoapMessageStage>、中にデータのみが<xref:System.Web.Services.Protocols.SoapMessageStage.AfterDeserialize>と<xref:System.Web.Services.Protocols.SoapMessageStage.BeforeSerialize>です。  
+  
+   
+  
+## Examples  
+ [!code-cpp[SoapMessage#7](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapMessage/CPP/SoapMessage.cpp#7)]
+ [!code-csharp[SoapMessage#7](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapMessage/CS/soapmessage.cs#7)]
+ [!code-vb[SoapMessage#7](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapMessage/VB/soapmessage.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OneWay">
+      <MemberSignature Language="C#" Value="public abstract bool OneWay { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool OneWay" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapMessage.OneWay" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得、<see cref="P:System.Web.Services.Protocols.SoapDocumentMethodAttribute.OneWay" />いずれかのプロパティ、<see cref="T:System.Web.Services.Protocols.SoapDocumentMethodAttribute" />または<see cref="T:System.Web.Services.Protocols.SoapRpcMethodAttribute" />XML Web サービス メソッドに適用される属性です。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Web.Services.Protocols.SoapDocumentMethodAttribute.OneWay" />のプロパティ、<see cref="T:System.Web.Services.Protocols.SoapDocumentMethodAttribute" />または<see cref="T:System.Web.Services.Protocols.SoapRpcMethodAttribute" />XML Web サービス メソッドに適用される<see langword="true" />、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください、<xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.OneWay%2A?displayProperty=nameWithType>プロパティの<xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute>または<xref:System.Web.Services.Protocols.SoapRpcMethodAttribute>の一方向の XML Web サービス メソッドの詳細。  
+  
+ <xref:System.Web.Services.Protocols.SoapMessage.OneWay%2A>プロパティは、のすべての段階でアクセス<xref:System.Web.Services.Protocols.SoapMessageStage>です。  
+  
+   
+  
+## Examples  
+ [!code-cpp[SoapMessage#4](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapMessage/CPP/SoapMessage.cpp#4)]
+ [!code-csharp[SoapMessage#4](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapMessage/CS/soapmessage.cs#4)]
+ [!code-vb[SoapMessage#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapMessage/VB/soapmessage.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SoapVersion">
+      <MemberSignature Language="C#" Value="public virtual System.Web.Services.Protocols.SoapProtocolVersion SoapVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Services.Protocols.SoapProtocolVersion SoapVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapMessage.SoapVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Protocols.SoapProtocolVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML Web サービスとの通信に使用する SOAP プロトコルのバージョンを取得します。</summary>
+        <value><see cref="T:System.Web.Services.Protocols.SoapProtocolVersion" /> 値のいずれか。 既定値は、<see cref="F:System.Web.Services.Protocols.SoapProtocolVersion.Default" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.SoapServerMessage>、<xref:System.Web.Services.Protocols.SoapServerMessage.SoapVersion%2A>プロパティが無効にすることは保証、<xref:System.Web.Services.Protocols.SoapMessageStage.BeforeDeserialize>段階です。 <xref:System.Web.Services.Protocols.SoapMessageStage.BeforeDeserialize>プロパティが、使用可能な SOAP メッセージが完全に処理されていない、SOAP メッセージの内容を変える可能性がある SOAP 拡張機能を実行していない段階です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Stage">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Protocols.SoapMessageStage Stage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Services.Protocols.SoapMessageStage Stage" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapMessage.Stage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Protocols.SoapMessageStage</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Protocols.SoapMessageStage" /> の <see cref="T:System.Web.Services.Protocols.SoapMessage" /> を取得します。</summary>
+        <value><see cref="T:System.Web.Services.Protocols.SoapMessage" /> の <see cref="T:System.Web.Services.Protocols.SoapMessageStage" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.SoapMessage.Stage%2A>プロパティは、いずれかにアクセスできる<xref:System.Web.Services.Protocols.SoapMessageStage>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を確認する方法を示しています、<xref:System.Web.Services.Protocols.SoapMessageStage>内で、<xref:System.Web.Services.Protocols.SoapExtension.ProcessMessage%2A?displayProperty=nameWithType>メソッドです。  
+  
+ [!code-cpp[Classic SoapExtension.ProcessMessage Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic SoapExtension.ProcessMessage Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic SoapExtension.ProcessMessage Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic SoapExtension.ProcessMessage Example/CS/source.cs#1)]
+ [!code-vb[Classic SoapExtension.ProcessMessage Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic SoapExtension.ProcessMessage Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Stream">
+      <MemberSignature Language="C#" Value="public System.IO.Stream Stream { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IO.Stream Stream" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapMessage.Stream" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP 要求または SOAP 応答の形式で表すデータを取得、<see cref="T:System.IO.Stream" />です。</summary>
+        <value>インスタンスが読み取り専用、<see cref="T:System.IO.Stream" />クラスです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SOAP 要求または SOAP 拡張機能のログ記録などの SOAP 応答を表すデータを検査する SOAP 拡張機能を使用できる、`Stream`それぞれで、データを表示するプロパティ<xref:System.Web.Services.Protocols.SoapMessageStage>です。  
+  
+ SOAP 拡張機能の SOAP 要求または暗号化または圧縮の SOAP 拡張機能などの SOAP 応答を表すデータを変更する方がよいと、<xref:System.IO.Stream>に渡される、<xref:System.Web.Services.Protocols.SoapExtension.ChainStream%2A>メソッドの<xref:System.Web.Services.Protocols.SoapExtension>します。 <xref:System.Web.Services.Protocols.SoapMessage.Stream%2A>プロパティ<xref:System.Web.Services.Protocols.SoapMessage>に渡された<xref:System.Web.Services.Protocols.SoapExtension.ProcessMessage%2A>は読み取り専用です。  
+  
+ SOAP 要求または SOAP 応答を表すデータの変更の詳細については、次を参照してください。<xref:System.Web.Services.Protocols.SoapExtension.ChainStream%2A>です。  
+  
+   
+  
+## Examples  
+ [!code-cpp[SoapMessage_Headers#2](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapMessage_Headers/CPP/SoapMessage_Headers.cpp#2)]
+ [!code-csharp[SoapMessage_Headers#2](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapMessage_Headers/CS/soapmessage_headers.cs#2)]
+ [!code-vb[SoapMessage_Headers#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapMessage_Headers/VB/soapmessage_headers.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Url">
+      <MemberSignature Language="C#" Value="public abstract string Url { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Url" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapMessage.Url" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、XML Web サービスのベース URL を取得します。</summary>
+        <value>XML Web サービスのベース URL。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.SoapMessage.Url%2A>中にいずれかのプロパティにアクセスする<xref:System.Web.Services.Protocols.SoapMessageStage>です。  
+  
+   
+  
+## Examples  
+ [!code-cpp[SoapMessage#5](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapMessage/CPP/SoapMessage.cpp#5)]
+ [!code-csharp[SoapMessage#5](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapMessage/CS/soapmessage.cs#5)]
+ [!code-vb[SoapMessage#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapMessage/VB/soapmessage.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,33 @@
+<Type Name="DataSourceViewOperationCallback" FullName="System.Web.UI.DataSourceViewOperationCallback">
+  <TypeSignature Language="C#" Value="public delegate bool DataSourceViewOperationCallback(int affectedRecords, Exception ex);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DataSourceViewOperationCallback extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.DataSourceViewOperationCallback" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="affectedRecords" Type="System.Int32" />
+    <Parameter Name="ex" Type="System.Exception" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Boolean</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="affectedRecords">データ操作の影響を受けるレコードの数。</param>
+    <param name="ex"><see cref="T:System.Exception" />いずれかが処理中にデータの操作によってスローされた場合、します。</param>
+    <summary>非同期の insert、update、または削除の各操作のデータ ソース ビューにデータ バインド コントロールを提供する非同期コールバック メソッドを表します。</summary>
+    <returns>データの処理中にスローされた例外が処理されたかどうかを示す値。</returns>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、ASP.NET Web ページおよびコントロールの実行が同期されます。 ただし、データ ソース コントロールは、非同期のデータの取得とデータの操作をサポートするために拡張できます。 <xref:System.Web.UI.DataSourceView>オブジェクトのサポート、 <xref:System.Web.UI.DataSourceView.Insert%2A>、 <xref:System.Web.UI.DataSourceView.Update%2A>、および<xref:System.Web.UI.DataSourceView.Delete%2A>非同期のデータ処理のためのメソッドです。 <xref:System.Web.UI.DataSourceViewOperationCallback>デリゲートに渡されますデータ ソース ビューにデータ バインドされたコントロールによって、ビューが非同期処理が完了すると、このデリゲートを呼び出すし、操作の結果のデータ バインド コントロールに通知できるようにします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

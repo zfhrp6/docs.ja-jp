@@ -1,0 +1,51 @@
+<Type Name="InviteCompletedEventArgs" FullName="System.Net.PeerToPeer.Collaboration.InviteCompletedEventArgs">
+  <TypeSignature Language="C#" Value="public class InviteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit InviteCompletedEventArgs extends System.ComponentModel.AsyncCompletedEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Net.PeerToPeer.Collaboration.InviteCompletedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.AsyncCompletedEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>該当する情報をコールバック メソッドを提供時に、<see cref="E:System.Net.PeerToPeer.Collaboration.Peer.InviteCompleted" />イベントが発生します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.PeerToPeer.Collaboration.Peer.InviteCompleted>イベントは、リモートのピアがピアのホストまたはホスト アプリケーションとの共同作業するための招待に応答するときに発生します。 これは、招待状が完了したら、招待されたピアが共同作業をしているかどうかに関係なく発生します。 ピアの招待を管理するために使用するメソッドは、<xref:System.Net.PeerToPeer.Collaboration.PeerContact>と<xref:System.Net.PeerToPeer.Collaboration.PeerNearMe>サブクラスと<xref:System.Net.PeerToPeer.Collaboration.Peer>抽象クラスです。 コールバック メソッド、デリゲート、および: タイプ セーフな関数ポインターは、デリゲート メソッド用のシノニムです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="InviteResponse">
+      <MemberSignature Language="C#" Value="public System.Net.PeerToPeer.Collaboration.PeerInvitationResponse InviteResponse { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.PeerToPeer.Collaboration.PeerInvitationResponse InviteResponse" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.Collaboration.InviteCompletedEventArgs.InviteResponse" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.Collaboration.PeerInvitationResponse</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerInvitationResponse" />招待操作にします。</summary>
+        <value><see cref="T:System.Net.PeerToPeer.Collaboration.PeerInvitationResponse" />招待状にします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定値は、指定しない限り、`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

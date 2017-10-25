@@ -1,0 +1,76 @@
+<Type Name="AddInBaseAttribute" FullName="System.AddIn.Pipeline.AddInBaseAttribute">
+  <TypeSignature Language="C#" Value="public sealed class AddInBaseAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit AddInBaseAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.AddIn.Pipeline.AddInBaseAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.AddIn</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Interface)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>パイプラインのビューでは、追加のセグメントとしてオブジェクトを識別します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.AddIn.Hosting.AddInStore.Rebuild%2A>と<xref:System.AddIn.Hosting.AddInStore.Update%2A>メソッドで、利用可能なパイプライン セグメントに関する情報のストアを管理するには、この属性を使用して、追加のビューを識別します。  
+  
+ によって識別される、アドインのビューで、アドインから継承する型、パイプラインを構築するために、<xref:System.AddIn.Pipeline.AddInBaseAttribute>属性し、アドインをベースと呼びます。  
+  
+ この属性は、パイプラインのセグメントをアクティブ化する型のみで使用する必要があります。 ホストとアドインの間で渡されるオブジェクトを表す型では、この属性は必要ありません。  
+  
+   
+  
+## Examples  
+ 次の例では、ビューでは、追加のパイプライン セグメントのアドインの基底クラスを識別します。  
+  
+ [!code-csharp[AddInP1AddInViews#2](~/samples/snippets/csharp/VS_Snippets_CLR/AddInP1AddInViews/cs/Calc1AddInView.cs#2)]
+ [!code-vb[AddInP1AddInViews#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/AddInP1AddInViews/vb/Calc1AddInView.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AddInBaseAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Pipeline.AddInBaseAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.AddIn.Pipeline.AddInBaseAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActivatableAs">
+      <MemberSignature Language="C#" Value="public Type[] ActivatableAs { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type[] ActivatableAs" />
+      <MemberSignature Language="DocId" Value="P:System.AddIn.Pipeline.AddInBaseAttribute.ActivatableAs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または 1 つまたは複数アドインでは、基本型、パイプラインを構築するために使用できる 1 つの追加側アダプターを設定します。</summary>
+        <value>アドインでは、基本型の配列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

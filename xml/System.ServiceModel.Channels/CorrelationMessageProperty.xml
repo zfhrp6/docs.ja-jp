@@ -1,0 +1,188 @@
+<Type Name="CorrelationMessageProperty" FullName="System.ServiceModel.Channels.CorrelationMessageProperty">
+  <TypeSignature Language="C#" Value="public class CorrelationMessageProperty" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CorrelationMessageProperty extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.CorrelationMessageProperty" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.Serialization.DataContract</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>関連付け計算をメッセージに適用した後で関連付けインスタンス キーを格納するメッセージ プロパティを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CorrelationMessageProperty (System.Runtime.DurableInstancing.InstanceKey correlationKey, System.Collections.Generic.IEnumerable&lt;System.Runtime.DurableInstancing.InstanceKey&gt; additionalKeys);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Runtime.DurableInstancing.InstanceKey correlationKey, class System.Collections.Generic.IEnumerable`1&lt;class System.Runtime.DurableInstancing.InstanceKey&gt; additionalKeys) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CorrelationMessageProperty.#ctor(System.Runtime.DurableInstancing.InstanceKey,System.Collections.Generic.IEnumerable{System.Runtime.DurableInstancing.InstanceKey})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="correlationKey" Type="System.Runtime.DurableInstancing.InstanceKey" />
+        <Parameter Name="additionalKeys" Type="System.Collections.Generic.IEnumerable&lt;System.Runtime.DurableInstancing.InstanceKey&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="correlationKey">一次的な関連付けのインスタンス キー。</param>
+        <param name="additionalKeys">追加的な関連付けのインスタンス キー。</param>
+        <summary>指定した関連付けキーを使用して、<see cref="T:System.ServiceModel.Channels.CorrelationMessageProperty" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CorrelationMessageProperty (System.Runtime.DurableInstancing.InstanceKey correlationKey, System.Collections.Generic.IEnumerable&lt;System.Runtime.DurableInstancing.InstanceKey&gt; additionalKeys, System.Collections.Generic.IEnumerable&lt;System.Runtime.DurableInstancing.InstanceKey&gt; transientCorrelations);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Runtime.DurableInstancing.InstanceKey correlationKey, class System.Collections.Generic.IEnumerable`1&lt;class System.Runtime.DurableInstancing.InstanceKey&gt; additionalKeys, class System.Collections.Generic.IEnumerable`1&lt;class System.Runtime.DurableInstancing.InstanceKey&gt; transientCorrelations) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CorrelationMessageProperty.#ctor(System.Runtime.DurableInstancing.InstanceKey,System.Collections.Generic.IEnumerable{System.Runtime.DurableInstancing.InstanceKey},System.Collections.Generic.IEnumerable{System.Runtime.DurableInstancing.InstanceKey})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="correlationKey" Type="System.Runtime.DurableInstancing.InstanceKey" />
+        <Parameter Name="additionalKeys" Type="System.Collections.Generic.IEnumerable&lt;System.Runtime.DurableInstancing.InstanceKey&gt;" />
+        <Parameter Name="transientCorrelations" Type="System.Collections.Generic.IEnumerable&lt;System.Runtime.DurableInstancing.InstanceKey&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="correlationKey">相関関係キー。</param>
+        <param name="additionalKeys">追加のキー。</param>
+        <param name="transientCorrelations">一時的な相関関係。</param>
+        <summary><see cref="T:System.ServiceModel.Channels.CorrelationMessageProperty" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AdditionalKeys">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Runtime.DurableInstancing.InstanceKey&gt; AdditionalKeys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Runtime.DurableInstancing.InstanceKey&gt; AdditionalKeys" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.CorrelationMessageProperty.AdditionalKeys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Runtime.DurableInstancing.InstanceKey&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.ServiceModel.Channels.CorrelationMessageProperty" /> の追加的なインスタンス キーが格納されているコレクションを取得します。</summary>
+        <value>追加的なインスタンス キー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CorrelationKey">
+      <MemberSignature Language="C#" Value="public System.Runtime.DurableInstancing.InstanceKey CorrelationKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.DurableInstancing.InstanceKey CorrelationKey" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.CorrelationMessageProperty.CorrelationKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.DurableInstancing.InstanceKey</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.ServiceModel.Channels.CorrelationMessageProperty" /> の一次的な関連付けインスタンス キーを取得します。</summary>
+        <value>一次的な関連付けインスタンス キー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public static string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string Name" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.CorrelationMessageProperty.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.ServiceModel.Channels.CorrelationMessageProperty" /> の名前を取得します。</summary>
+        <value>文字列値<see cref="T:System.ServiceModel.Channels.CorrelationMessageProperty" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransientCorrelations">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Runtime.DurableInstancing.InstanceKey&gt; TransientCorrelations { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Runtime.DurableInstancing.InstanceKey&gt; TransientCorrelations" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.CorrelationMessageProperty.TransientCorrelations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Runtime.DurableInstancing.InstanceKey&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この一時的な相関関係インスタンス キーのコレクションを取得<see cref="T:System.ServiceModel.Channels.CorrelationMessageProperty" />です。</summary>
+        <value>一時的な相関関係インスタンス キーのコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGet">
+      <MemberSignature Language="C#" Value="public static bool TryGet (System.ServiceModel.Channels.Message message, out System.ServiceModel.Channels.CorrelationMessageProperty property);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryGet(class System.ServiceModel.Channels.Message message, [out] class System.ServiceModel.Channels.CorrelationMessageProperty&amp; property) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CorrelationMessageProperty.TryGet(System.ServiceModel.Channels.Message,System.ServiceModel.Channels.CorrelationMessageProperty@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="property" Type="System.ServiceModel.Channels.CorrelationMessageProperty&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="message">検査対象の <see cref="P:System.ServiceModel.Channels.Message.Properties" /> を格納するメッセージ。</param>
+        <param name="property">このメソッドが戻るとき、<see cref="T:System.ServiceModel.Channels.CorrelationMessageProperty" />指定されたメッセージの格納されている<see cref="P:System.ServiceModel.Channels.Message.Properties" />場合は 1 つが存在しない場合、<see langword="null" />です。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>指定されたメッセージの <see cref="T:System.ServiceModel.Channels.CorrelationMessageProperty" /> から <see cref="P:System.ServiceModel.Channels.Message.Properties" /> の取得を試みます。</summary>
+        <returns>
+          <see langword="true" />場合、メッセージの<see cref="P:System.ServiceModel.Channels.Message.Properties" />が含まれています、<see cref="T:System.ServiceModel.Channels.CorrelationMessageProperty" />以外の場合です。<see langword="false" />.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGet">
+      <MemberSignature Language="C#" Value="public static bool TryGet (System.ServiceModel.Channels.MessageProperties properties, out System.ServiceModel.Channels.CorrelationMessageProperty property);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryGet(class System.ServiceModel.Channels.MessageProperties properties, [out] class System.ServiceModel.Channels.CorrelationMessageProperty&amp; property) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CorrelationMessageProperty.TryGet(System.ServiceModel.Channels.MessageProperties,System.ServiceModel.Channels.CorrelationMessageProperty@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="properties" Type="System.ServiceModel.Channels.MessageProperties" />
+        <Parameter Name="property" Type="System.ServiceModel.Channels.CorrelationMessageProperty&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="properties">検査対象のメッセージ プロパティ。</param>
+        <param name="property">このメソッドが戻るとき、<see cref="T:System.ServiceModel.Channels.CorrelationMessageProperty" />指定されたメッセージ プロパティに含まれる場合は 1 つが存在しない場合、<see langword="null" />です。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>指定されたメッセージ プロパティから <see cref="T:System.ServiceModel.Channels.CorrelationMessageProperty" /> の取得を試みます。</summary>
+        <returns>
+          <see langword="true" />メッセージのプロパティが含まれている場合、 <see cref="T:System.ServiceModel.Channels.CorrelationMessageProperty" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

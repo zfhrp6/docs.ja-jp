@@ -1,0 +1,240 @@
+<Type Name="DataGridViewCellFormattingEventArgs" FullName="System.Windows.Forms.DataGridViewCellFormattingEventArgs">
+  <TypeSignature Language="C#" Value="public class DataGridViewCellFormattingEventArgs : System.Windows.Forms.ConvertEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridViewCellFormattingEventArgs extends System.Windows.Forms.ConvertEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewCellFormattingEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.ConvertEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Windows.Forms.DataGridView.CellFormatting" />のイベント、<see cref="T:System.Windows.Forms.DataGridView" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理、<xref:System.Windows.Forms.DataGridView.CellFormatting>セル値の表示に適切な形式への変換をカスタマイズする場合、または状態または値に応じてセルの外観をカスタマイズするイベントです。  
+  
+ <xref:System.Windows.Forms.DataGridView.CellFormatting>イベントは、各セルが描画、避ける必要がありますのでこのイベントを処理するときに処理時間がかかるたびに発生します。 このイベントにも発生時にセル<xref:System.Windows.Forms.DataGridViewCell.FormattedValue%2A>を取得またはその<xref:System.Windows.Forms.DataGridViewCell.GetFormattedValue%2A>メソッドが呼び出されます。  
+  
+ 処理するときに、<xref:System.Windows.Forms.DataGridView.CellFormatting>イベント、<xref:System.Windows.Forms.ConvertEventArgs.Value%2A?displayProperty=nameWithType>プロパティは、セルの値で初期化します。 セルの値から、表示値へのカスタム変換を指定する場合は、設定、<xref:System.Windows.Forms.ConvertEventArgs.Value%2A?displayProperty=nameWithType>プロパティ セルで指定された型の新しい値があることを確認、変換後の値を<xref:System.Windows.Forms.DataGridViewCell.FormattedValueType%2A>プロパティです。 さらに値の書式設定が必要ないことを示す、設定、<xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs.FormattingApplied%2A?displayProperty=nameWithType>プロパティを`true`です。  
+  
+ イベント ハンドラーの完了時場合、<xref:System.Windows.Forms.ConvertEventArgs.Value%2A?displayProperty=nameWithType>は`null`か、適切な型はありませんまたは<xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs.FormattingApplied%2A?displayProperty=nameWithType>プロパティは`false`、<xref:System.Windows.Forms.ConvertEventArgs.Value%2A>を使用して書式設定、 <xref:System.Windows.Forms.DataGridViewCellStyle.Format%2A>、 <xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>、<xref:System.Windows.Forms.DataGridViewCellStyle.DataSourceNullValue%2A>と<xref:System.Windows.Forms.DataGridViewCellStyle.FormatProvider%2A>によって返されるセルのスタイルのプロパティ、<xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs.CellStyle%2A?displayProperty=nameWithType>セルを使用して初期化されるプロパティ<xref:System.Windows.Forms.DataGridViewCell.InheritedStyle%2A>プロパティです。  
+  
+ 値に関係なく、<xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs.FormattingApplied%2A?displayProperty=nameWithType>プロパティ、によって返されるオブジェクトの表示プロパティ、<xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs.CellStyle%2A?displayProperty=nameWithType>プロパティは、セルを表示するために使用します。  
+  
+ 詳細については、カスタム書式設定を使用して、<xref:System.Windows.Forms.DataGridView.CellFormatting>イベントを参照してください[する方法: Windows フォーム DataGridView コントロールでデータの書式をカスタマイズする](~/docs/framework/winforms/controls/how-to-customize-data-formatting-in-the-windows-forms-datagridview-control.md)です。  
+  
+ パフォーマンスの低下を避けるためには、このイベントを処理するときに、セルにセルに直接アクセスするのではなく、イベント ハンドラーのパラメーターを使用してアクセスします。  
+  
+ ユーザーが指定した書式設定された値の実際のセル値への変換をカスタマイズするには、処理、<xref:System.Windows.Forms.DataGridView.CellParsing>イベント。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、処理する方法を示します<xref:System.Windows.Forms.DataGridView.CellFormatting>です。  
+  
+ [!code-cpp[System.Windows.Forms.GridViewUnbound#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.GridViewUnbound/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.GridViewUnbound#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.GridViewUnbound/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.GridViewUnbound#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.GridViewUnbound/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridViewCellFormattingEventArgs (int columnIndex, int rowIndex, object value, Type desiredType, System.Windows.Forms.DataGridViewCellStyle cellStyle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 columnIndex, int32 rowIndex, object value, class System.Type desiredType, class System.Windows.Forms.DataGridViewCellStyle cellStyle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCellFormattingEventArgs.#ctor(System.Int32,System.Int32,System.Object,System.Type,System.Windows.Forms.DataGridViewCellStyle)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="columnIndex" Type="System.Int32" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="desiredType" Type="System.Type" />
+        <Parameter Name="cellStyle" Type="System.Windows.Forms.DataGridViewCellStyle" />
+      </Parameters>
+      <Docs>
+        <param name="columnIndex">イベントが発生したセルの列インデックス。</param>
+        <param name="rowIndex">イベントが発生したセルの行インデックス。</param>
+        <param name="value">セルの内容。</param>
+        <param name="desiredType">変換後の型<c>値</c>にします。</param>
+        <param name="cellStyle">イベントが発生したセルのスタイルです。</param>
+        <summary><see cref="T:System.Windows.Forms.DataGridViewCellFormattingEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `desiredType`を表す型のパラメーターを`value`パラメーターに変換する必要がありますと`desiredType`セルが割り当てられている<xref:System.Windows.Forms.DataGridViewCell.FormattedValueType%2A>プロパティです。 たとえば、セルのビットマップとしての画像名は、書式設定`value`は、<xref:System.String>画像の名前を格納していると`desiredType`は、<xref:System.Type>を表す、<xref:System.Drawing.Bitmap>型です。  
+  
+ 場合、<xref:System.Windows.Forms.DataGridView.CellFormatting>イベント ハンドラーが設定されていない、<xref:System.Windows.Forms.ConvertEventArgs.Value%2A>プロパティをセルの内容は書式設定されますを使用してセルで表示可能な型、 <xref:System.Windows.Forms.DataGridViewCellStyle.Format%2A>、 <xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>、および<xref:System.Windows.Forms.DataGridViewCellStyle.FormatProvider%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs>です。  
+  
+ [!code-cpp[System.Windows.Forms.GridViewUnbound#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.GridViewUnbound/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.GridViewUnbound#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.GridViewUnbound/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.GridViewUnbound#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.GridViewUnbound/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="columnIndex" />-1 より小さい値には  
+  
+ または  
+  
+ <paramref name="rowIndex" />-1 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CellStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataGridViewCellStyle CellStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataGridViewCellStyle CellStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCellFormattingEventArgs.CellStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewCellStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または書式が設定されるセルのスタイルを設定します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataGridViewCellStyle" />書式が設定されるセルの表示スタイルを表すです。 既定のセルの値は<see cref="P:System.Windows.Forms.DataGridViewCell.InheritedStyle" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返されるオブジェクトのプロパティを設定、<xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs.CellStyle%2A>プロパティは、セルとその内容を表示する方法を変更します。 パフォーマンスの低下を避けるためには、このプロパティを使用して、セルに直接アクセスするのではなく、セルのスタイルを変更します。  
+  
+ セルのスタイルの詳細については、次を参照してください[Windows フォーム DataGridView コントロールのセル スタイル。](~/docs/framework/winforms/controls/cell-styles-in-the-windows-forms-datagridview-control.md)  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs.CellStyle%2A>プロパティを色文字列を含んでいるセルの背景に「ピンク」<xref:System.Drawing.Color.Pink%2A>です。  
+  
+ [!code-cpp[System.Windows.Forms.GridViewUnbound#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.GridViewUnbound/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.GridViewUnbound#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.GridViewUnbound/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.GridViewUnbound#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.GridViewUnbound/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnIndex">
+      <MemberSignature Language="C#" Value="public int ColumnIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ColumnIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCellFormattingEventArgs.ColumnIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>書式が設定されるセルの列インデックスを取得します。</summary>
+        <value>書式が設定されるセルの列インデックス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs.ColumnIndex%2A>へのインデックスを取得するプロパティ、<xref:System.Windows.Forms.DataGridView.Columns%2A>のプロパティ、<xref:System.Windows.Forms.DataGridView>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs.ColumnIndex%2A>列のプロパティを取得するプロパティです。  
+  
+ [!code-cpp[System.Windows.Forms.GridViewUnbound#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.GridViewUnbound/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.GridViewUnbound#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.GridViewUnbound/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.GridViewUnbound#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.GridViewUnbound/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormattingApplied">
+      <MemberSignature Language="C#" Value="public bool FormattingApplied { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool FormattingApplied" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCellFormattingEventArgs.FormattingApplied" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはセルの値が正常に設定されているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />セルの値の書式設定が処理された場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理するときに、<xref:System.Windows.Forms.DataGridView.CellFormatting>イベント、設定、<xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs.FormattingApplied%2A>プロパティを`true`設定した後、<xref:System.Windows.Forms.ConvertEventArgs.Value%2A>プロパティ値のさらに書式設定する必要がない場合。 場合、<xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs.FormattingApplied%2A>プロパティの値が`false`、イベント ハンドラーが終了すると、書式設定に適用されます、値によって示される、 <xref:System.Windows.Forms.DataGridViewCellStyle.Format%2A>、 <xref:System.Windows.Forms.DataGridViewCellStyle.FormatProvider%2A>、 <xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>、および<xref:System.Windows.Forms.DataGridViewCellStyle.DataSourceNullValue%2A>のプロパティ、<xref:System.Windows.Forms.DataGridViewCellStyle>によって返されるオブジェクト、<xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs.CellStyle%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs.FormattingApplied%2A>プロパティを`true`をこのセルの書式設定が完了したことを通知します。  
+  
+ [!code-cpp[System.Windows.Forms.GridViewUnbound#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.GridViewUnbound/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.GridViewUnbound#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.GridViewUnbound/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.GridViewUnbound#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.GridViewUnbound/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowIndex">
+      <MemberSignature Language="C#" Value="public int RowIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RowIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCellFormattingEventArgs.RowIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>書式が設定されるセルの行インデックスを取得します。</summary>
+        <value>書式が設定されるセルの行インデックス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs.RowIndex%2A>へのインデックスを取得するプロパティ、<xref:System.Windows.Forms.DataGridView.Rows%2A>のプロパティ、<xref:System.Windows.Forms.DataGridView>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs.RowIndex%2A>書式が設定されるセルを取得するプロパティです。 セル参照は、セルのツールヒント テキストを設定するが使用されます。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridViewCell.ToolTipText#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewCell.ToolTipText/cpp/datagridviewcell.tooltiptext.cpp#1)]
+ [!code-csharp[System.Windows.Forms.DataGridViewCell.ToolTipText#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewCell.ToolTipText/CS/datagridviewcell.tooltiptext.cs#1)]
+ [!code-vb[System.Windows.Forms.DataGridViewCell.ToolTipText#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewCell.ToolTipText/VB/datagridviewcell.tooltiptext.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

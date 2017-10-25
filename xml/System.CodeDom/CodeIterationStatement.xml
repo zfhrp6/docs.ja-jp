@@ -1,0 +1,211 @@
+<Type Name="CodeIterationStatement" FullName="System.CodeDom.CodeIterationStatement">
+  <TypeSignature Language="C#" Value="public class CodeIterationStatement : System.CodeDom.CodeStatement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CodeIterationStatement extends System.CodeDom.CodeStatement" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.CodeIterationStatement" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.CodeDom.CodeStatement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>表す、<see langword="for" />ステートメント、またはループを続行するのを条件としてテスト式を使用して、ステートメントのブロックをループ処理します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.CodeDom.CodeIterationStatement>表すことができます、`for`ループまたは`while`ループします。  
+  
+ <xref:System.CodeDom.CodeIterationStatement.InitStatement%2A>プロパティは、最初のループの反復処理する前に実行するステートメントを指定します。 <xref:System.CodeDom.CodeIterationStatement.TestExpression%2A>プロパティ式を指定、ループ継続、これに評価される必要があります`true`各ループ反復で別のイテレーションを開始するための最後にします。 <xref:System.CodeDom.CodeIterationStatement.IncrementStatement%2A>プロパティは、各ループの反復処理の最後に実行するステートメントを指定します。 <xref:System.CodeDom.CodeIterationStatement.Statements%2A>プロパティは、ループ内で実行するステートメントのコレクションを指定します。  
+  
+   
+  
+## Examples  
+ この例では、<xref:System.CodeDom.CodeIterationStatement>を表す、`for`ループします。  
+  
+ [!code-cpp[CodeIterationStatementExample#2](~/samples/snippets/cpp/VS_Snippets_CLR/CodeIterationStatementExample/CPP/codeiterationstatementexample.cpp#2)]
+ [!code-csharp[CodeIterationStatementExample#2](~/samples/snippets/csharp/VS_Snippets_CLR/CodeIterationStatementExample/CS/codeiterationstatementexample.cs#2)]
+ [!code-vb[CodeIterationStatementExample#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeIterationStatementExample/VB/codeiterationstatementexample.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeIterationStatement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeIterationStatement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.CodeDom.CodeIterationStatement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeIterationStatement (System.CodeDom.CodeStatement initStatement, System.CodeDom.CodeExpression testExpression, System.CodeDom.CodeStatement incrementStatement, params System.CodeDom.CodeStatement[] statements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeStatement initStatement, class System.CodeDom.CodeExpression testExpression, class System.CodeDom.CodeStatement incrementStatement, class System.CodeDom.CodeStatement[] statements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeIterationStatement.#ctor(System.CodeDom.CodeStatement,System.CodeDom.CodeExpression,System.CodeDom.CodeStatement,System.CodeDom.CodeStatement[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="initStatement" Type="System.CodeDom.CodeStatement" />
+        <Parameter Name="testExpression" Type="System.CodeDom.CodeExpression" />
+        <Parameter Name="incrementStatement" Type="System.CodeDom.CodeStatement" />
+        <Parameter Name="statements" Type="System.CodeDom.CodeStatement[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="initStatement">A<see cref="T:System.CodeDom.CodeStatement" />ループの初期化のステートメントを含むです。</param>
+        <param name="testExpression">A<see cref="T:System.CodeDom.CodeExpression" />の終了条件をテストする式を含むです。</param>
+        <param name="incrementStatement">A<see cref="T:System.CodeDom.CodeStatement" />サイクルあたり増分ステートメントを含むです。</param>
+        <param name="statements">型の配列<see cref="T:System.CodeDom.CodeStatement" />ループ内でステートメントを含むです。</param>
+        <summary>指定されたパラメーターを使用して、<see cref="T:System.CodeDom.CodeIterationStatement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncrementStatement">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeStatement IncrementStatement { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeStatement IncrementStatement" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeIterationStatement.IncrementStatement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeStatement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または各ループのサイクルの後に呼び出されるステートメントを設定します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeStatement" />を示す、サイクル インクリメント ステートメントごとです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このステートメントは、各反復処理後に呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitStatement">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeStatement InitStatement { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeStatement InitStatement" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeIterationStatement.InitStatement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeStatement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはループの初期化ステートメントを設定します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeStatement" />ループの初期化ステートメントを示すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定して、空の初期化ステートメントを指定できます、<xref:System.CodeDom.CodeExpressionStatement>を格納している、<xref:System.CodeDom.CodeSnippetExpression>空の文字列を格納しています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Statements">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeStatementCollection Statements { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeStatementCollection Statements" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeIterationStatement.Statements" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeStatementCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ループ内で実行されるステートメントのコレクションを取得します。</summary>
+        <value>型の配列<see cref="T:System.CodeDom.CodeStatement" />ループ内のステートメントを示すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TestExpression">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeExpression TestExpression { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeExpression TestExpression" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeIterationStatement.TestExpression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeExpression</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはループを続行する条件としてテストする式を設定します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeExpression" />をテストする式を示すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この式を解決する場合`true`ループが続行されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

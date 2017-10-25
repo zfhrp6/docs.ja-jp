@@ -1,0 +1,115 @@
+<Type Name="PointHitTestResult" FullName="System.Windows.Media.PointHitTestResult">
+  <TypeSignature Language="C#" Value="public class PointHitTestResult : System.Windows.Media.HitTestResult" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PointHitTestResult extends System.Windows.Media.HitTestResult" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.PointHitTestResult" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.HitTestResult</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>使用するヒット テストの結果を表す、<see cref="T:System.Windows.Point" />ヒットとしてパラメーターをテストします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用してビジュアル オブジェクトでヒット テストを実行することもできます、<xref:System.Windows.Media.Geometry>ヒットとしてテスト パラメーターと、その結果を返す、<xref:System.Windows.Media.GeometryHitTestResult>です。 詳細については、次を参照してください。[する方法: ヒット テストを使用してのジオメトリをパラメーターとして](~/docs/framework/wpf/graphics-multimedia/how-to-hit-test-using-geometry-as-a-parameter.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、取得する方法を示します、<xref:System.Windows.Media.PointHitTestResult>からの戻り値、<xref:System.Windows.Media.VisualTreeHelper.HitTest%2A>メソッドです。  
+  
+ [!code-csharp[HitTestingOverview#100](~/samples/snippets/csharp/VS_Snippets_Wpf/HitTestingOverview/CSharp/Window1.xaml.cs#100)]
+ [!code-vb[HitTestingOverview#100](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HitTestingOverview/visualbasic/window1.xaml.vb#100)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PointHitTestResult (System.Windows.Media.Visual visualHit, System.Windows.Point pointHit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Media.Visual visualHit, valuetype System.Windows.Point pointHit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.PointHitTestResult.#ctor(System.Windows.Media.Visual,System.Windows.Point)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="visualHit" Type="System.Windows.Media.Visual" />
+        <Parameter Name="pointHit" Type="System.Windows.Point" />
+      </Parameters>
+      <Docs>
+        <param name="visualHit"><see cref="T:System.Windows.Media.Visual" />ヒット テストの結果を表すオブジェクト。</param>
+        <param name="pointHit"><see cref="T:System.Windows.Point" />ヒット テストの結果を表すオブジェクト。</param>
+        <summary><see cref="T:System.Windows.Media.PointHitTestResult" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、既定値を上書きする方法を示しています。 ユーザー定義のビジュアル オブジェクトでのテストのサポートをヒットします。 この場合、新しい<xref:System.Windows.Media.PointHitTestResult>が作成され、オーバーライドしたメソッドから返されます。  
+  
+ [!code-csharp[HitTestingOverview#107](~/samples/snippets/csharp/VS_Snippets_Wpf/HitTestingOverview/CSharp/Window1.xaml.cs#107)]
+ [!code-vb[HitTestingOverview#107](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HitTestingOverview/visualbasic/window1.xaml.vb#107)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PointHit">
+      <MemberSignature Language="C#" Value="public System.Windows.Point PointHit { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Point PointHit" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.PointHitTestResult.PointHit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ヒット テストの結果から返されるポイントの値を取得します。</summary>
+        <value>A<see cref="T:System.Windows.Point" />ヒット テストの結果を表すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VisualHit">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Visual VisualHit { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Visual VisualHit" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.PointHitTestResult.VisualHit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Visual</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ヒット テストの結果から返されるビジュアル オブジェクトを取得します。</summary>
+        <value>A<see cref="T:System.Windows.Media.Visual" />ヒット テストの結果を表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.PointHitTestResult.VisualHit%2A>値は、1 つのヒット テスト中に複数のビジュアル オブジェクトを表す可能性のある可能性があります。 ヒット テストのコールバック メソッドは、ビジュアル ツリーの特定のビジュアル オブジェクトでヒット テストが識別されたときに、ユーザーが実行するアクションを定義します。 操作を実行した後に戻す、<xref:System.Windows.Media.HitTestResultBehavior>の他のビジュアル オブジェクトの列挙を続行するかどうかを決定する値。 返されるビジュアル オブジェクトの列挙体の順序は、レンダリング平面上に z オーダーでです。  
+  
+   
+  
+## Examples  
+ 次の例にアクセスする方法を示しています、<xref:System.Windows.Media.PointHitTestResult.VisualHit%2A>ヒット テストのプロパティのコールバック関数の結果します。  
+  
+ [!code-csharp[HitTestingOverview#102](~/samples/snippets/csharp/VS_Snippets_Wpf/HitTestingOverview/CSharp/Window1.xaml.cs#102)]
+ [!code-vb[HitTestingOverview#102](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HitTestingOverview/visualbasic/window1.xaml.vb#102)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

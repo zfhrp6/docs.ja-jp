@@ -1,0 +1,165 @@
+<Type Name="IDesignerOptionService" FullName="System.ComponentModel.Design.IDesignerOptionService">
+  <TypeSignature Language="C#" Value="public interface IDesignerOptionService" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDesignerOptionService" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.IDesignerOptionService" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>上にあるデザイナーのオプションにアクセスできるように、**ツール**下にあるメニュー、**オプション**Visual Studio 開発環境でコマンド。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.IDesignerOptionService>によって表示されるダイアログ ボックスで示すように Windows フォーム デザイナーのオプションの値を取得および更新に使用できるインターフェイスを提供、**オプション**のコマンド、**ツール**Visual Studio 開発環境のメニュー。 <xref:System.ComponentModel.Design.IDesignerOptionService.GetOptionValue%2A>メソッドは、指定したオプションの値を取得します。 <xref:System.ComponentModel.Design.IDesignerOptionService.SetOptionValue%2A>メソッドは、指定したオプションの指定した値を設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例へのアクセスを示しています、<xref:System.ComponentModel.Design.IDesignerOptionService>を標準オプションの現在の値を表示します。  
+  
+ [!code-cpp[IDesignerOptionServiceExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/IDesignerOptionServiceExample/CPP/idesigneroptionservicecontrol.cpp#1)]
+ [!code-csharp[IDesignerOptionServiceExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/IDesignerOptionServiceExample/CS/idesigneroptionservicecontrol.cs#1)]
+ [!code-vb[IDesignerOptionServiceExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IDesignerOptionServiceExample/VB/idesigneroptionservicecontrol.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetOptionValue">
+      <MemberSignature Language="C#" Value="public object GetOptionValue (string pageName, string valueName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetOptionValue(string pageName, string valueName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IDesignerOptionService.GetOptionValue(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pageName" Type="System.String" />
+        <Parameter Name="valueName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="pageName">オプションを定義するページの名前。</param>
+        <param name="valueName">オプションのプロパティの名前。</param>
+        <summary>指定した Windows フォーム デザイナー オプションの値を取得します。</summary>
+        <returns>指定したオプションの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `pageName`パラメーターがあります"WindowsFormsDesigner\\*CategoryName*"ここで、 *CategoryName*オプション カテゴリ名が空白文字です。 カテゴリ名は通常「全般」です。 そのため、英語版のページ名"WindowsFormsDesigner\General"に「全般」デザイナー オプションのカテゴリを表示できます。  
+  
+> [!NOTE]
+>  ページと値の名前は、常に英語版が必要です。 そのため、次の表は、必要なオプションにアクセスするために提供されます。  
+  
+ 次の表は、英語の値の名前、そのデータ形式、およびそれぞれの説明を示します。  
+  
+|値名|値の形式|説明|  
+|----------------|------------------|-----------------|  
+|GridSize|<xref:System.Drawing.Size>|各四角形グリッドのサイズ。|  
+|GridSize.Width|<xref:System.Int32>|各グリッド正方形の幅。 この入れ子になったプロパティとは、デザイナーのオプション サービスを通じてアクセスするときに読み取り専用です。|  
+|GridSize.Height|<xref:System.Int32>|各四角形グリッドの高さ。 この入れ子になったプロパティとは、デザイナーのオプション サービスを通じてアクセスするときに読み取り専用です。|  
+|ShowGrid|<xref:System.Boolean>|`true`グリッドが表示される場合`false`グリッドが表示されない場合。|  
+|Snaptogrid が指定|<xref:System.Boolean>|`true`コンポーネントの位置をグリッドに配置する場合`false`位置が揃っていない場合とは限りませんされます。|  
+|LayoutMode|`Microsoft.VisualStudio.Windows.Forms.LayoutMode`|`SnapLines`スナップ線を使用するか、`SnapToGrid`グリッドにコントロールを配置するには|  
+|ObjectBoundSmartTagAutoShow|<xref:System.Boolean>|`true`コンポーネントのスマート タグ パネルで; の作成時に自動的に開くことを許可するにはそれ以外の場合、`false`です。|  
+|AutoToolboxPopulate|<xref:System.Boolean>|`true`ソリューションのカスタム コントロールおよびコンポーネントを自動的に追加する、**ツールボックス**、それ以外の`false`します。|  
+|UseOptimizedCodeGeneration|<xref:System.Boolean>|`true`コンポーネントのキャッシュが有効である場合それ以外の場合、`false`です。|  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.ComponentModel.Design.IDesignerOptionService.GetOptionValue%2A>の値をクエリするメソッド、`GridSize`オプション。  
+  
+ [!code-cpp[IDesignerOptionServiceExample#2](~/samples/snippets/cpp/VS_Snippets_Winforms/IDesignerOptionServiceExample/CPP/idesigneroptionservicecontrol.cpp#2)]
+ [!code-csharp[IDesignerOptionServiceExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/IDesignerOptionServiceExample/CS/idesigneroptionservicecontrol.cs#2)]
+ [!code-vb[IDesignerOptionServiceExample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IDesignerOptionServiceExample/VB/idesigneroptionservicecontrol.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetOptionValue">
+      <MemberSignature Language="C#" Value="public void SetOptionValue (string pageName, string valueName, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetOptionValue(string pageName, string valueName, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IDesignerOptionService.SetOptionValue(System.String,System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pageName" Type="System.String" />
+        <Parameter Name="valueName" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="pageName">オプションを定義するページの名前。</param>
+        <param name="valueName">オプションのプロパティの名前。</param>
+        <param name="value">新しい値。</param>
+        <summary>指定した Windows フォーム デザイナー オプションの値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `pageName`パラメーターがあります"WindowsFormsDesigner\C*ategoryName*"ここで、 *CategoryName*オプション カテゴリ名が空白文字です。 カテゴリ名は通常「全般」です。 そのため、英語版のページ名"WindowsFormsDesigner\General"に「全般」デザイナー オプションのカテゴリを表示できます。  
+  
+> [!NOTE]
+>  ページと値の名前は、常に英語版が必要です。 そのため、次の表は、必要なオプションにアクセスするために提供されます。  
+  
+ 次の表は、英語の値の名前、そのデータ形式、およびそれぞれの説明を示します。  
+  
+|値名|値の形式|説明|  
+|----------------|------------------|-----------------|  
+|GridSize|<xref:System.Drawing.Size>|各四角形グリッドのサイズ。|  
+|GridSize.Width|<xref:System.Int32>|各グリッド正方形の幅。 この入れ子になったプロパティとは、デザイナーのオプション サービスを通じてアクセスするときに読み取り専用です。|  
+|GridSize.Height|<xref:System.Int32>|各四角形グリッドの高さ。 この入れ子になったプロパティとは、デザイナーのオプション サービスを通じてアクセスするときに読み取り専用です。|  
+|ShowGrid|<xref:System.Boolean>|`true`グリッドが表示される場合`false`グリッドが表示されない場合。|  
+|Snaptogrid が指定|<xref:System.Boolean>|`true`コンポーネントの位置をグリッドに配置する場合`false`位置が揃っていない場合とは限りませんされます。|  
+|LayoutMode|`Microsoft.VisualStudio.Windows.Forms.LayoutMode`|`SnapLines`スナップ線を使用するか、`SnapToGrid`グリッドにコントロールを配置するには|  
+|ObjectBoundSmartTagAutoShow|<xref:System.Boolean>|`true`コンポーネントのスマート タグ パネルで; の作成時に自動的に開くことを許可するにはそれ以外の場合、`false`です。|  
+|AutoToolboxPopulate|<xref:System.Boolean>|`true`ソリューションのカスタム コントロールおよびコンポーネントを自動的に追加する、**ツールボックス**、それ以外の`false`します。|  
+|UseOptimizedCodeGeneration|<xref:System.Boolean>|`true`コンポーネントのキャッシュが有効である場合それ以外の場合、`false`です。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

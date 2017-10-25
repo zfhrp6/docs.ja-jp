@@ -1,0 +1,75 @@
+<Type Name="FillMode" FullName="System.Drawing.Drawing2D.FillMode">
+  <TypeSignature Language="C#" Value="public enum FillMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed FillMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Drawing2D.FillMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>閉じた曲線の内部を塗りつぶす方法を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションが 2 つのフィル モードのいずれかを使用して、パスの内部を塗りつぶします。 代替またはワインディングです。 モードでは、クリップの閉じた図形の内部に格納する方法を決定します。  
+  
+ 既定のモードは、代替です。 代わりのモードで閉じた図形の内部を調べるには、するには、当然ながら、パスの外側のいずれかの時点に、パス内の任意の点から行を描画します。 行がパス セグメントの数が奇数を超える場合、開始点は閉じた領域の内側はで、fill またはのクリッピング領域の一部であるためです。 交差の数が偶数では、ポイントが入力またはクリップされる領域でないことを意味します。 開いた図が入力または図の最初のポイントに最後のポイントを接続する線を使用して、クリップします。  
+  
+ ワインディング モードでは、各交差部分にパス セグメントの方向と見なします。 時計回りに共通部分ごとに 1 を加算し、反時計回りに共通部分ごとに 1 を減算します。 結果が 0 以外の場合、ポイントが塗りつぶしまたはクリップ領域内と見なされます。 カウントが 0 では、ポイントが塗りつぶしまたはクリップ領域の外側にあることを意味します。  
+  
+ 図は時計回りまたは反時計回りに図のセグメントが描画される順序に基づいています。  
+  
+   
+  
+## Examples  
+ 次の例では、1 つ開いている図 (円弧) と 1 つ閉じた図形 (楕円) を持つパスを作成します。 FillPath メソッド Alternate.The は、既定の塗りつぶしモードに応じてパスを入力する次の図のコード例の出力を示しています。 開いた図が終了して直線の行の終了点を基盤にした場合と (代替) に従って、パスが塗りつぶされますことに注意してください。  
+  
+ ![ファイルを開くパス](~/add/media/fillopenpath.png "ファイルを開くパス")  
+  
+ 次の例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。  
+  
+ [!code-csharp[System.Drawing.ConstructingDrawingPaths#11](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ConstructingDrawingPaths/CS/Class1.cs#11)]
+ [!code-vb[System.Drawing.ConstructingDrawingPaths#11](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ConstructingDrawingPaths/VB/Class1.vb#11)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Alternate">
+      <MemberSignature Language="C#" Value="Alternate" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Drawing2D.FillMode Alternate = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Drawing2D.FillMode.Alternate" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.FillMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>代替の塗りつぶしモードを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Winding">
+      <MemberSignature Language="C#" Value="Winding" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Drawing2D.FillMode Winding = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Drawing2D.FillMode.Winding" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.FillMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>全域の塗りつぶしモードを指定します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

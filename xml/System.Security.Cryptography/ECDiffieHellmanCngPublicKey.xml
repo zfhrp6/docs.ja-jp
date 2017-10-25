@@ -1,0 +1,232 @@
+<Type Name="ECDiffieHellmanCngPublicKey" FullName="System.Security.Cryptography.ECDiffieHellmanCngPublicKey">
+  <TypeSignature Language="C#" Value="public sealed class ECDiffieHellmanCngPublicKey : System.Security.Cryptography.ECDiffieHellmanPublicKey" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit ECDiffieHellmanCngPublicKey extends System.Security.Cryptography.ECDiffieHellmanPublicKey" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.ECDiffieHellmanCngPublicKey" />
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Cryptography.ECDiffieHellmanPublicKey</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>使用するための Diffie-hellman ECDH (Elliptic Curve) 公開キーを指定します、<see cref="T:System.Security.Cryptography.ECDiffieHellmanCng" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.ECDiffieHellmanCngPublicKey>オブジェクトとキーの交換で使用される<xref:System.Security.Cryptography.ECDiffieHellmanCng>オブジェクト。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BlobFormat">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.CngKeyBlobFormat BlobFormat { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.CngKeyBlobFormat BlobFormat" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.ECDiffieHellmanCngPublicKey.BlobFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CngKeyBlobFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キー BLOB 形式を取得、<see cref="T:System.Security.Cryptography.ECDiffieHellmanCngPublicKey" />オブジェクト。</summary>
+        <value>キーの BLOB に示された形式です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.ECDiffieHellmanCngPublicKey.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExportExplicitParameters">
+      <MemberSignature Language="C#" Value="public override System.Security.Cryptography.ECParameters ExportExplicitParameters ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.Security.Cryptography.ECParameters ExportExplicitParameters() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.ECDiffieHellmanCngPublicKey.ExportExplicitParameters" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.ECParameters</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.ECCurve" /> オブジェクトによって使用されているキーと明示的な曲線パラメーターを <see cref="T:System.Security.Cryptography.ECParameters" /> オブジェクトにエクスポートします。</summary>
+        <returns><see cref="T:System.Security.Cryptography.ECCurve" /> オブジェクトによって使用されているキーと明示的な曲線パラメーター。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">メソッドは曲線の値を取得できません。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">明示的なエクスポートは、このプラットフォームではサポートされていません。 Windows 10 以降が必要です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExportParameters">
+      <MemberSignature Language="C#" Value="public override System.Security.Cryptography.ECParameters ExportParameters ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.Security.Cryptography.ECParameters ExportParameters() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.ECDiffieHellmanCngPublicKey.ExportParameters" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.ECParameters</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.ECCurve" /> オブジェクトが使用するキーを <see cref="T:System.Security.Cryptography.ECParameters" /> オブジェクトにエクスポートします。</summary>
+        <returns><see cref="T:System.Security.Cryptography.ECCurve" /> オブジェクトによって使用されているキーと名前付き曲線パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前付きの曲線として、キーが作成された場合、<xref:System.Security.Cryptography.ECParameters?displayProperty=nameWithType>フィールドには、名前付きの曲線のパラメーターが含まれています。         それ以外の場合、明示的なパラメーターが含まれています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">メソッドは曲線の値を取得できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FromByteArray">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.ECDiffieHellmanPublicKey FromByteArray (byte[] publicKeyBlob, System.Security.Cryptography.CngKeyBlobFormat format);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Cryptography.ECDiffieHellmanPublicKey FromByteArray(unsigned int8[] publicKeyBlob, class System.Security.Cryptography.CngKeyBlobFormat format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.ECDiffieHellmanCngPublicKey.FromByteArray(System.Byte[],System.Security.Cryptography.CngKeyBlobFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.ECDiffieHellmanPublicKey</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="publicKeyBlob" Type="System.Byte[]" />
+        <Parameter Name="format" Type="System.Security.Cryptography.CngKeyBlobFormat" />
+      </Parameters>
+      <Docs>
+        <param name="publicKeyBlob">Diffie-hellman ECDH (Elliptic Curve) 公開キーを含むバイト配列。</param>
+        <param name="format">キー BLOB の形式を指定するオブジェクト。</param>
+        <summary>公開キーを格納するバイト配列に変換、<see cref="T:System.Security.Cryptography.ECDiffieHellmanCngPublicKey" />指定した形式に従ってオブジェクト。</summary>
+        <returns>バイト配列にシリアル化された ECDH 公開キーを格納するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この静的メソッドは、すべての間で共有される<xref:System.Security.Cryptography.ECDiffieHellmanCngPublicKey>インスタンス。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="publicKeyBlob" /> パラメーターまたは <paramref name="format" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="publicKeyBlob" />パラメーターが含まれていない、<see cref="T:System.Security.Cryptography.ECDiffieHellman" />キー。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FromXmlString">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.ECDiffieHellmanCngPublicKey FromXmlString (string xml);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Cryptography.ECDiffieHellmanCngPublicKey FromXmlString(string xml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.ECDiffieHellmanCngPublicKey.FromXmlString(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.ECDiffieHellmanCngPublicKey</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xml" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="xml">Diffie-hellman ECDH (Elliptic Curve) キーを含む XML 文字列です。</param>
+        <summary>XML 文字列に変換して、<see cref="T:System.Security.Cryptography.ECDiffieHellmanCngPublicKey" />オブジェクト。</summary>
+        <returns>指定された XML で指定された ECDH 公開キーを格納するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この静的メソッドは、すべての間で共有される<xref:System.Security.Cryptography.ECDiffieHellmanCngPublicKey>インスタンス。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="xml" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="xml" />パラメーターが指定されていません、<see cref="T:System.Security.Cryptography.ECDiffieHellman" />キー。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Import">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.CngKey Import ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.Cryptography.CngKey Import() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.ECDiffieHellmanCngPublicKey.Import" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CngKey</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>変換、<see cref="T:System.Security.Cryptography.ECDiffieHellmanCngPublicKey" />オブジェクトを<see cref="T:System.Security.Cryptography.CngKey" />オブジェクト。</summary>
+        <returns>によって表されるキーを格納しているオブジェクト、<see cref="T:System.Security.Cryptography.ECDiffieHellmanCngPublicKey" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToXmlString">
+      <MemberSignature Language="C#" Value="public override string ToXmlString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToXmlString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.ECDiffieHellmanCngPublicKey.ToXmlString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>シリアル化、 <see cref="T:System.Security.Cryptography.ECDiffieHellmanCngPublicKey" /> RFC 4050 形式で XML 文字列に公開キー。</summary>
+        <returns>含む、シリアル化された XML 文字列<see cref="T:System.Security.Cryptography.ECDiffieHellmanCngPublicKey" />公開キー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください<xref:System.Security.Cryptography.ECKeyXmlFormat?displayProperty=nameWithType>については、このメソッドを使用する XML 形式です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

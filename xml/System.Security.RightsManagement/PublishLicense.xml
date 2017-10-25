@@ -1,0 +1,271 @@
+<Type Name="PublishLicense" FullName="System.Security.RightsManagement.PublishLicense">
+  <TypeSignature Language="C#" Value="public class PublishLicense" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PublishLicense extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.RightsManagement.PublishLicense" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Security.SecurityCritical(System.Security.SecurityCriticalScope.Everything)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>署名付き権限で管理される発行ライセンスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.RightsManagement.PublishLicense>権限、ユーザー、およびその他のセキュリティに関連する情報に関するセキュリティ データを定義します。  ライセンスは、特定のコンピューター上の特定のユーザーが指定された権限管理コンテンツを使用する方法を定義します。  
+  
+ 公開プロセスでは、ドキュメントの作成者の権利の情報を定義すると、<xref:System.Security.RightsManagement.UnsignedPublishLicense>です。  次に、作成者は、作成、署名付き<xref:System.Security.RightsManagement.PublishLicense>を呼び出して、<xref:System.Security.RightsManagement.UnsignedPublishLicense.Sign%2A>のメソッド、<xref:System.Security.RightsManagement.UnsignedPublishLicense>です。  シリアル化形式を符号付きの<xref:System.Security.RightsManagement.PublishLicense>し、使用して、取得しているエンドユーザーに提供できる、<xref:System.Security.RightsManagement.UseLicense>を呼び出して、<xref:System.Security.RightsManagement.PublishLicense.AcquireUseLicense%2A>のメソッド、<xref:System.Security.RightsManagement.PublishLicense>です。  返された<xref:System.Security.RightsManagement.UseLicense>がユーザーに付与されている権限を行使するクライアント アプリケーションを使用します。  
+  
+ その他の同様<xref:System.Security.RightsManagement>型、<xref:System.Security.RightsManagement.PublishLicense>は完全信頼アプリケーションで使用できるのみです。  
+  
+   
+  
+## Examples  
+ 次の例は、初期化する方法を示します、<xref:System.Security.RightsManagement.PublishLicense>を使用して、<xref:System.Security.RightsManagement.UnsignedPublishLicense.Sign%2A>メソッドです。  
+  
+ [!code-csharp[RightsManagedPackagePublish#RmPkgPubEncrypt](~/samples/snippets/csharp/VS_Snippets_Wpf/RightsManagedPackagePublish/CSharp/Window1.xaml.cs#rmpkgpubencrypt)]
+ [!code-vb[RightsManagedPackagePublish#RmPkgPubEncrypt](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RightsManagedPackagePublish/visualbasic/window1.xaml.vb#rmpkgpubencrypt)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PublishLicense (string signedPublishLicense);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string signedPublishLicense) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.RightsManagement.PublishLicense.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="signedPublishLicense" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="signedPublishLicense">署名され、シリアル化するライセンスを発行します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.RightsManagement.PublishLicense" />から、指定したクラスがシリアル化し、署名<see cref="T:System.Security.RightsManagement.PublishLicense" />です。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="signedPublishLicense" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.RightsManagement.RightsManagementException">ライセンスが正しくありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AcquireUseLicense">
+      <MemberSignature Language="C#" Value="public System.Security.RightsManagement.UseLicense AcquireUseLicense (System.Security.RightsManagement.SecureEnvironment secureEnvironment);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.RightsManagement.UseLicense AcquireUseLicense(class System.Security.RightsManagement.SecureEnvironment secureEnvironment) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.RightsManagement.PublishLicense.AcquireUseLicense(System.Security.RightsManagement.SecureEnvironment)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.RightsManagement.UseLicense</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="secureEnvironment" Type="System.Security.RightsManagement.SecureEnvironment" />
+      </Parameters>
+      <Docs>
+        <param name="secureEnvironment">ライセンスの有効化およびバインディングをセキュリティで保護された環境。</param>
+        <summary>取得を試みます、<see cref="T:System.Security.RightsManagement.UseLicense" />のユーザーまたはユーザー グループに、指定した<see cref="T:System.Security.RightsManagement.SecureEnvironment" />です。</summary>
+        <returns><see cref="T:System.Security.RightsManagement.UseLicense" />ユーザーまたは指定したユーザー グループの<paramref name="secureEnvironment" />します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="secureEnvironment" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.RightsManagement.RightsManagementException">認証に失敗しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AcquireUseLicenseNoUI">
+      <MemberSignature Language="C#" Value="public System.Security.RightsManagement.UseLicense AcquireUseLicenseNoUI (System.Security.RightsManagement.SecureEnvironment secureEnvironment);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.RightsManagement.UseLicense AcquireUseLicenseNoUI(class System.Security.RightsManagement.SecureEnvironment secureEnvironment) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.RightsManagement.PublishLicense.AcquireUseLicenseNoUI(System.Security.RightsManagement.SecureEnvironment)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.RightsManagement.UseLicense</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="secureEnvironment" Type="System.Security.RightsManagement.SecureEnvironment" />
+      </Parameters>
+      <Docs>
+        <param name="secureEnvironment">ライセンスの有効化およびバインディングをセキュリティで保護された環境。</param>
+        <summary>取得を試みます、<see cref="T:System.Security.RightsManagement.UseLicense" />のユーザーまたはユーザー グループに、指定した<see cref="T:System.Security.RightsManagement.SecureEnvironment" />です。</summary>
+        <returns><see cref="T:System.Security.RightsManagement.UseLicense" />ユーザーまたは指定したユーザー グループの<paramref name="secureEnvironment" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.RightsManagement.PublishLicense.AcquireUseLicenseNoUI%2A>メソッドは、Windows ネットワーク認証のダイアログ ボックスを表示しません。 ユーザーに、アクセス許可があるないために、ライセンスの要求が拒否された場合<xref:System.Security.RightsManagement.PublishLicense.AcquireUseLicenseNoUI%2A>ネットワーク認証 ダイアログ ボックスを表示されないようにします。 バック グラウンド タスクまたは紛らわしいダイアログ ボックスが表示される非ユーザー インターフェイスでのライセンスを取得するサイレント取得しようとするとを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="secureEnvironment" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.RightsManagement.RightsManagementException">認証に失敗しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentId">
+      <MemberSignature Language="C#" Value="public Guid ContentId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid ContentId" />
+      <MemberSignature Language="DocId" Value="P:System.Security.RightsManagement.PublishLicense.ContentId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発行者が作成したコンテンツ識別子を取得します。</summary>
+        <value>発行者が作成したコンテンツ識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パブリッシャーは、作成、<xref:System.Security.RightsManagement.UnsignedPublishLicense.ContentId%2A>を保護されたコンテンツを識別します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DecryptUnsignedPublishLicense">
+      <MemberSignature Language="C#" Value="public System.Security.RightsManagement.UnsignedPublishLicense DecryptUnsignedPublishLicense (System.Security.RightsManagement.CryptoProvider cryptoProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.RightsManagement.UnsignedPublishLicense DecryptUnsignedPublishLicense(class System.Security.RightsManagement.CryptoProvider cryptoProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.RightsManagement.PublishLicense.DecryptUnsignedPublishLicense(System.Security.RightsManagement.CryptoProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.RightsManagement.UnsignedPublishLicense</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cryptoProvider" Type="System.Security.RightsManagement.CryptoProvider" />
+      </Parameters>
+      <Docs>
+        <param name="cryptoProvider">ライセンスを復号化を使用する rights management サービスです。</param>
+        <summary>返します、復号化された<see cref="T:System.Security.RightsManagement.UnsignedPublishLicense" />署名版<see cref="T:System.Security.RightsManagement.PublishLicense" />です。</summary>
+        <returns>このライセンスの復号化された、署名されていないバージョンです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.RightsManagement.PublishLicense.DecryptUnsignedPublishLicense%2A>メソッドでは、ライセンス所有者とユーザーが付与されている<xref:System.Security.RightsManagement.ContentRight.ViewRightsData>が元の情報を抽出するときに暗号化されて、<xref:System.Security.RightsManagement.PublishLicense>が作成されました。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="cryptoProvider" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReferralInfoName">
+      <MemberSignature Language="C#" Value="public string ReferralInfoName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ReferralInfoName" />
+      <MemberSignature Language="DocId" Value="P:System.Security.RightsManagement.PublishLicense.ReferralInfoName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>作成者やコンテンツの発行元の連絡先名を取得します。</summary>
+        <value>作成者またはコンテンツの発行元の連絡先の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される文字列、<xref:System.Security.RightsManagement.PublishLicense.ReferralInfoName%2A>プロパティは暗号化されず、ユーザーがあるない場合でもアクセスできる、<xref:System.Security.RightsManagement.UseLicense>です。  返される文字列により、ユーザーが要求する発行者に問い合わせ、<xref:System.Security.RightsManagement.UseLicense>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReferralInfoUri">
+      <MemberSignature Language="C#" Value="public Uri ReferralInfoUri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri ReferralInfoUri" />
+      <MemberSignature Language="DocId" Value="P:System.Security.RightsManagement.PublishLicense.ReferralInfoUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>連絡先を取得[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]作成者またはコンテンツの発行元。</summary>
+        <value>連絡先[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]作成者またはコンテンツの発行元。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される文字列、<xref:System.Security.RightsManagement.PublishLicense.ReferralInfoUri%2A>プロパティは暗号化されず、ユーザーがあるない場合でもアクセスできる、<xref:System.Security.RightsManagement.UseLicense>です。  返される文字列により、ユーザーが要求する発行者に問い合わせ、<xref:System.Security.RightsManagement.UseLicense>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.RightsManagement.PublishLicense.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>シリアル[!INCLUDE[TLA2#tla_xrml](~/includes/tla2sharptla-xrml-md.md)]本ライセンスの作成に使用された文字列。</summary>
+        <returns>シリアル化された[!INCLUDE[TLA#tla_xrml](~/includes/tlasharptla-xrml-md.md)]本ライセンスの作成に使用された文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseLicenseAcquisitionUrl">
+      <MemberSignature Language="C#" Value="public Uri UseLicenseAcquisitionUrl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri UseLicenseAcquisitionUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Security.RightsManagement.PublishLicense.UseLicenseAcquisitionUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]を取得するために使用する、<see cref="T:System.Security.RightsManagement.UseLicense" />です。</summary>
+        <value>[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]を取得するために使用する、<see cref="T:System.Security.RightsManagement.UseLicense" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.RightsManagement.PublishLicense.UseLicenseAcquisitionUrl%2A>プロパティを使用、<xref:System.Security.RightsManagement.PublishLicense.AcquireUseLicense%2A>メソッド、ユーザーを取得するとき、<xref:System.Security.RightsManagement.UseLicense>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

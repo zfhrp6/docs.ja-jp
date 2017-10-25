@@ -1,0 +1,339 @@
+<Type Name="CreateParams" FullName="System.Windows.Forms.CreateParams">
+  <TypeSignature Language="C#" Value="public class CreateParams" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CreateParams extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.CreateParams" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コントロールを作成するときに必要な情報をカプセル化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内の情報、<xref:System.Windows.Forms.CreateParams>初期状態とコントロールの外観に関する情報を渡すために使用できます。 ほとんど<xref:System.Windows.Forms.Control>派生したコントロールの上書き、<xref:System.Windows.Forms.Control.CreateParams%2A>プロパティを適切な値で渡すまたはで情報を追加、<xref:System.Windows.Forms.CreateParams>です。  
+  
+ コントロールのパラメーターの作成の詳細については、次を参照してください。、`CreateWindow`と`CreateWindowEx`関数および`CREATESTRUCT`、MSDN ライブラリの Windows プラットフォーム SDK リファレンス内の構造体ドキュメントがあります。  
+  
+> [!NOTE]
+>  設定に使用される定数、 <xref:System.Windows.Forms.CreateParams.Style%2A>、 <xref:System.Windows.Forms.CreateParams.ExStyle%2A>、および<xref:System.Windows.Forms.CreateParams.ClassStyle%2A>プロパティ Winuser.h ヘッダー ファイルで定義されます。 このファイルは、プラットフォーム SDK または Visual Studio によってインストールされます。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Windows.Forms.Button>という名前のクラスを派生`MyIconButton`し、イメージではなくアイコンを表示するボタンに必要な実装を提供します。 <xref:System.Windows.Forms.Control.CreateParams%2A>プロパティの拡張に追加される値と、<xref:System.Windows.Forms.CreateParams.Style%2A>プロパティを表示するボタンの原因となる、<xref:System.Drawing.Icon>ではなく、<xref:System.Drawing.Image>です。  
+  
+ [!code-cpp[CreateParams#1](~/samples/snippets/cpp/VS_Snippets_Winforms/CreateParams/CPP/createparams.cpp#1)]
+ [!code-csharp[CreateParams#1](~/samples/snippets/csharp/VS_Snippets_Winforms/CreateParams/CS/createparams.cs#1)]
+ [!code-vb[CreateParams#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/CreateParams/VB/createparams.vb#1)]  
+  
+ 次のコード例は、標準のインスタンスを作成<xref:System.Windows.Forms.Button>コントロールと、派生したコントロールのインスタンス`MyIconButton`上記の例で作成された。 この例があることが必要です、<xref:System.Drawing.Icon>アプリケーションと同じ場所に Default.ico をという名前のファイルです。 アプリケーションの起動時、`Default`にアイコンが表示されます、`MyIconButton`ボタンをクリックします。 場合、`Default`アイコンが存在しない、ボタンの表面は空白です。 ときに、標準<xref:System.Windows.Forms.Button>がクリックされると、<xref:System.Windows.Forms.OpenFileDialog>ボックスが表示されるので、上に表示する新しいアイコンを選択することができます、`MyIconButton`です。  
+  
+ [!code-cpp[CreateParams#2](~/samples/snippets/cpp/VS_Snippets_Winforms/CreateParams/CPP/createparams.cpp#2)]
+ [!code-csharp[CreateParams#2](~/samples/snippets/csharp/VS_Snippets_Winforms/CreateParams/CS/createparams.cs#2)]
+ [!code-vb[CreateParams#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/CreateParams/VB/createparams.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CreateParams ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CreateParams.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.CreateParams" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Caption">
+      <MemberSignature Language="C#" Value="public string Caption { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Caption" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.CreateParams.Caption" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールの最初のテキストを設定します。</summary>
+        <value>コントロールの最初のテキスト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClassName">
+      <MemberSignature Language="C#" Value="public string ClassName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ClassName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.CreateParams.ClassName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールから派生するウィンドウ クラスの名前を設定します。</summary>
+        <value>コントロールを派生するウィンドウ クラスの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定値は`null`コントロールが既存のコントロール クラスから派生していないことを示すです。 既存のコントロール クラスから派生して、このプロパティでシステム クラス名を格納します。 たとえば、標準から派生する<xref:System.Windows.Forms.Button>制御は、このプロパティを"BUTTON"に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClassStyle">
+      <MemberSignature Language="C#" Value="public int ClassStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ClassStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.CreateParams.ClassStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはクラスのスタイル値のビットごとの組み合わせを設定します。</summary>
+        <value>クラスのスタイル値のビットごとの組み合わせ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.CreateParams.ClassStyle%2A>プロパティは、<xref:System.Windows.Forms.CreateParams.ClassName%2A>プロパティは使用されません`null`です。  
+  
+ コントロールのパラメーターの作成の詳細については、次を参照してください。、`CreateWindow`と`CreateWindowEx`関数および`CREATESTRUCT`、MSDN ライブラリの Windows プラットフォーム SDK リファレンス内の構造体ドキュメントがあります。  
+  
+> [!NOTE]
+>  設定に使用される定数、 <xref:System.Windows.Forms.CreateParams.Style%2A>、 <xref:System.Windows.Forms.CreateParams.ExStyle%2A>、および<xref:System.Windows.Forms.CreateParams.ClassStyle%2A>プロパティ Winuser.h ヘッダー ファイルで定義されます。 このファイルは、プラットフォーム SDK または Visual Studio によってインストールされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExStyle">
+      <MemberSignature Language="C#" Value="public int ExStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ExStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.CreateParams.ExStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または拡張ウィンドウ スタイル値のビットごとの組み合わせを設定します。</summary>
+        <value>拡張ウィンドウ スタイル値のビットごとの組み合わせ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.CreateParams.ExStyle%2A>プロパティには、拡張の外観とコントロールに適用する初期状態値がサポートしています。  
+  
+ コントロールのパラメーターの作成の詳細については、次を参照してください。、`CreateWindow`と`CreateWindowEx`関数および`CREATESTRUCT`、MSDN ライブラリの Windows プラットフォーム SDK リファレンス内の構造体ドキュメントがあります。  
+  
+> [!NOTE]
+>  設定に使用される定数、 <xref:System.Windows.Forms.CreateParams.Style%2A>、 <xref:System.Windows.Forms.CreateParams.ExStyle%2A>、および<xref:System.Windows.Forms.CreateParams.ClassStyle%2A>プロパティ Winuser.h ヘッダー ファイルで定義されます。 このファイルは、プラットフォーム SDK または Visual Studio によってインストールされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Height">
+      <MemberSignature Language="C#" Value="public int Height { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Height" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.CreateParams.Height" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールの初期の高さを設定します。</summary>
+        <value>コントロールの初期の高さを表す数値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Param">
+      <MemberSignature Language="C#" Value="public object Param { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Param" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.CreateParams.Param" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールの作成に必要な追加のパラメーター情報を設定します。</summary>
+        <value><see cref="T:System.Object" />コントロールを作成するために必要な追加のパラメーター情報を保持します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数のドキュメント インターフェイス (MDI) クライアント ウィンドウを作成する場合は、<xref:System.Windows.Forms.CreateParams.Param%2A>プロパティを参照する必要があります、`CLIENTCREATESTRUCT`構造体。  
+  
+ コントロールのパラメーターの作成の詳細については、次を参照してください。、`CreateWindow`と`CreateWindowEx`関数および`CLIENTCREATESTRUCT`、MSDN ライブラリの Windows プラットフォーム SDK リファレンス内の構造体ドキュメントがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parent">
+      <MemberSignature Language="C#" Value="public IntPtr Parent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance native int Parent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.CreateParams.Parent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールの親を設定します。</summary>
+        <value><see cref="T:System.IntPtr" />コントロールの親のウィンドウ ハンドルを格納しています。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Style">
+      <MemberSignature Language="C#" Value="public int Style { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Style" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.CreateParams.Style" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはウィンドウのスタイル値のビットごとの組み合わせを設定します。</summary>
+        <value>ウィンドウ スタイル値のビットごとの組み合わせ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.CreateParams.Style%2A>プロパティは、コントロールとその初期状態の外観を制御します。  
+  
+ コントロールのパラメーターの作成の詳細については、次を参照してください。、`CreateWindow`と`CreateWindowEx`関数および`CREATESTRUCT`、MSDN ライブラリの Windows プラットフォーム SDK リファレンス内の構造体ドキュメントがあります。  
+  
+> [!NOTE]
+>  設定に使用される定数、 <xref:System.Windows.Forms.CreateParams.Style%2A>、 <xref:System.Windows.Forms.CreateParams.ExStyle%2A>、および<xref:System.Windows.Forms.CreateParams.ClassStyle%2A>プロパティ Winuser.h ヘッダー ファイルで定義されます。 このファイルは、プラットフォーム SDK または Visual Studio によってインストールされます。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Windows.Forms.Button>という名前のクラスを派生`MyIconButton`し、イメージではなくアイコンを表示するボタンに必要な実装を提供します。 <xref:System.Windows.Forms.Control.CreateParams%2A>プロパティの拡張に追加される値と、<xref:System.Windows.Forms.CreateParams.Style%2A>プロパティを表示するボタンの原因となる、<xref:System.Drawing.Icon>ではなく、<xref:System.Drawing.Image>です。  
+  
+ [!code-cpp[CreateParams#1](~/samples/snippets/cpp/VS_Snippets_Winforms/CreateParams/CPP/createparams.cpp#1)]
+ [!code-csharp[CreateParams#1](~/samples/snippets/csharp/VS_Snippets_Winforms/CreateParams/CS/createparams.cs#1)]
+ [!code-vb[CreateParams#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/CreateParams/VB/createparams.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CreateParams.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のオブジェクトを表す文字列を返します。</summary>
+        <returns>現在のオブジェクトを表す文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Width">
+      <MemberSignature Language="C#" Value="public int Width { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Width" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.CreateParams.Width" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールの初期の幅を設定します。</summary>
+        <value>コントロールの初期の幅を表す数値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="X">
+      <MemberSignature Language="C#" Value="public int X { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 X" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.CreateParams.X" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールの左の初期位置を設定します。</summary>
+        <value>コントロールの左の初期位置を表す数値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Y">
+      <MemberSignature Language="C#" Value="public int Y { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Y" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.CreateParams.Y" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールの最初の場所の上端の位置を設定します。</summary>
+        <value>コントロールの最初の場所の上端の位置を表す数値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,957 @@
+<Type Name="DesignerSerializationManager" FullName="System.ComponentModel.Design.Serialization.DesignerSerializationManager">
+  <TypeSignature Language="C#" Value="public class DesignerSerializationManager : IServiceProvider, System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DesignerSerializationManager extends System.Object implements class System.ComponentModel.Design.Serialization.IDesignerSerializationManager, class System.IServiceProvider" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.Serialization.DesignerSerializationManager" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.Design.Serialization.IDesignerSerializationManager</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IServiceProvider</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary><see cref="T:System.ComponentModel.Design.Serialization.IDesignerSerializationManager" /> インターフェイスの実装を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager>インターフェイスがシリアル化を制御するオブジェクトに書式設定に依存しないインターフェイスを使用するように設計されています。 基本的に、コンテキストとサービスが実際には、逆シリアル化を実行するシリアライザーを提供します。 <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager>オブジェクトを追跡することによって逆シリアル化プロセスに役立ちます。 技法に似ています、<xref:System.ComponentModel.Design.IDesignerHost>インターフェイス: デザイナーが実際には、ユーザー インターフェイス (UI) を提供し、<xref:System.ComponentModel.Design.IDesignerHost>を連携して動作する別のデザイナーを使用する接着剤を提供します。  
+  
+ <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager> クラスは、<xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager> を実装しています。 同様に実行時のシリアライザーに類似した逆シリアル化の一般的なフォームを提供するものでは、<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>です。  
+  
+ <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager>クラスは、次の 3 つの目的を達成します。  
+  
+-   これは単純ですぐに使用できるオブジェクトのさまざまな形式を逆シリアル化するために使用できます。  
+  
+-   汎用的な特定の形式に結び付いていないをお勧めします。 マークアップの逆シリアル化と同様に CodeDOM シリアル化解除を均等に使用できます。  
+  
+-   拡張性があり、コピー/貼り付けと元に戻す/やり直しのシナリオで使用される別のシリアル化メソッドをサポートしています。  
+  
+ デザイン時シリアル化では、実行時のオブジェクトのシリアル化との相違点があります。  
+  
+-   シリアル化を実行するオブジェクト、通常とは別ランタイム オブジェクト コンポーネントからデザイン時のロジックを削除できるようにします。  
+  
+-   シリアル化方式は、オブジェクトを完全に初期化された作成は前提としています。 逆シリアル化中にプロパティとメソッドの呼び出しによって変更します。  
+  
+-   (プロパティは、既定値を含む) のオブジェクトに設定する値を持つオブジェクトのプロパティはシリアル化されません。 逆に、逆シリアル化ストリームには、セキュリティ ホールがあります。  
+  
+-   オブジェクトの完全なシリアル化ではなく、シリアル化ストリーム内のコンテンツの品質に強調します。 つまり、オブジェクトのシリアル化方法が定義されてない場合は、そのオブジェクトがスキップすることではなく例外をスローします。 シリアル化エンジンは、どのエラーを無視するかを決定するヒューリスティックされている回復可能な提供できます。  
+  
+-   シリアル化ストリームには、逆シリアル化に必要な量を超えるデータがあります。 たとえば、ソース コードのシリアル化には、オブジェクト グラフを逆シリアル化するために必要なコードと混合ユーザー コードがあります。 このユーザー コードは、逆シリアル化では無視され、シリアル化時に保持する必要があります。  
+  
+ これらの相違のため、別のシリアル化モデルは、デザイン時シリアル化に適用されます。 このモデルでは、シリアル化されるデータ型ごとに個別のシリアライザー オブジェクトを利用します。 各シリアライザーでは、全体として小さな問題に対するを提供します。 これらのシリアライザーは、一般的なシリアル化マネージャーを使用してすべて調整されます。 シリアル化マネージャーは、これらの異なるシリアライザー間の状態を維持するためです。 たとえば、次のクラスを考えてみます。  
+  
+ [!code-csharp[System.ComponentModel.Design.Serialization.DesignerSerializationManager.SampleObject#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.Design.Serialization.DesignerSerializationManager.SampleObject/CS/Program.cs#2)]
+ [!code-vb[System.ComponentModel.Design.Serialization.DesignerSerializationManager.SampleObject#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.Design.Serialization.DesignerSerializationManager.SampleObject/VB/Program.vb#2)]  
+  
+ このクラスのインスタンスは次の 3 つの異なるシリアライザーを利用して: のいずれかの`SampleObject`整数の文字列は、いずれかとします。 シリアライザーを`SampleObject`ためには、ルートのシリアライザーと呼ばれるは`SampleObject`シリアル化グラフのルートです。 複雑なオブジェクト グラフを作成することもできます。 たとえば、何が起こる場合`SampleObject`が次のように変更されました。  
+  
+ [!code-csharp[System.ComponentModel.Design.Serialization.DesignerSerializationManager.SampleObject#11](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.Design.Serialization.DesignerSerializationManager.SampleObject/CS/SampleObject.cs#11)]
+ [!code-vb[System.ComponentModel.Design.Serialization.DesignerSerializationManager.SampleObject#11](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.Design.Serialization.DesignerSerializationManager.SampleObject/VB/SampleObject.vb#11)]  
+  
+ これにより、`SampleObject`自体の別のインスタンスである子にします。 次のコードは、オブジェクト グラフを入力します。  
+  
+ [!code-csharp[System.ComponentModel.Design.Serialization.DesignerSerializationManager.SampleObject#12](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.Design.Serialization.DesignerSerializationManager.SampleObject/CS/SampleObject.cs#12)]
+ [!code-vb[System.ComponentModel.Design.Serialization.DesignerSerializationManager.SampleObject#12](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.Design.Serialization.DesignerSerializationManager.SampleObject/VB/SampleObject.vb#12)]  
+  
+ ときに`root`がシリアル化される使用される 4 つのシリアライザーがあります: 1 つのルート シリアライザー、子の 1 つのシリアライザー `SampleObject`、1 つのシリアライザーを`int`、および 1 つのシリアライザーを`string`です。 シリアライザーはキャッシュされるため、シリアライザーの各インスタンスを作成する必要はありません、型に基づく`SampleObject`です。  
+  
+ <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager>クラスはシリアル化セッションの概念に基づいています。 セッションは、さまざまなシリアライザーがアクセスできる状態を維持します。 セッションが破棄されると、この状態は破棄されます。 これにより、シリアライザーはほとんどの場合状態とは、シリアライザーをクリーンアップするために役立ちますが破損していることを確認します。 次の表では、およびセッション間での状態の管理方法について説明します。  
+  
+## <a name="global-state"></a>グローバル状態  
+ この状態は、シリアル化マネージャー オブジェクトが所有するは、現在のシリアル化セッションに依存しません。  
+  
+|オブジェクト|使用方法|  
+|------------|-----------|  
+|シリアル化プロバイダー|オブジェクトは、カスタムのシリアル化プロバイダーとして自分自身を追加できます。 これらのプロバイダーは、シリアライザーの検索に使用するため、シリアル化セッションよりも長きます。|  
+  
+## <a name="session-owned-state"></a>セッションが所有する状態  
+ この状態は、セッションが所有し、セッションが破棄されるときに破棄されます。 その結果、任意のプロパティまたはこの状態を操作するメソッドへのアクセスは例外をスロー、シリアル化マネージャーがアクティブなセッションでない場合。  
+  
+|オブジェクト|使用方法|  
+|------------|-----------|  
+|<xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.ResolveName> イベント|<xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.ResolveName>名の他の解決を提供するシリアライザーによってイベントが関連付けられています。 すべてのイベント ハンドラーは、セッションが終了するときにこのイベントからデタッチします。|  
+|<xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.SerializationComplete> イベント|<xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.SerializationComplete>セッションが破棄される直前にイベントが発生します。 次に、すべてのイベント ハンドラーはこのイベントからデタッチします。|  
+|名前テーブル|シリアル化マネージャーは、オブジェクトとその名前の間をマップするテーブルを保持します。 シリアライザーにオブジェクト名を識別しやすくなります。 セッションが終了するときに、この名前のテーブルがクリアされます。|  
+|シリアライザー キャッシュ|シリアル化マネージャーは、シリアライザーを指定するように指示されていますのキャッシュを保持します。 セッションが終了するときに、このキャッシュがクリアされます。 パブリック<xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.GetSerializer%2A>メソッドは、いつでも安全に呼び出すことができますが、セッション内から呼び出された場合にのみ、その値がキャッシュされます。|  
+|コンテキスト スタック|シリアル化マネージャーを使ってアクセスできる、コンテキスト スタックと呼ばれるオブジェクトを保持する、<xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.Context%2A>プロパティです。 シリアライザーは、このスタックを使用して、他のシリアライザーに提供される追加の情報を格納します。 たとえば、プロパティ値をシリアル化するシリアライザーできますスタックにプッシュ プロパティ名シリアル化をシリアル化する値を要求する前にします。 このスタックは、セッションが終了したときにクリアされます。|  
+|エラー一覧|シリアル化マネージャーは、シリアル化中に発生したエラーの一覧を保持します。 この一覧からアクセスできる、<xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.Errors%2A>セッションが終了した場合に、プロパティをオフにします。 アクセス、<xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.Errors%2A>セッション間でのプロパティは例外が発生します。|  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DesignerSerializationManager ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.Design.Serialization.DesignerSerializationManager" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを設定、<xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.PreserveNames%2A>と<xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.ValidateRecycledTypes%2A>プロパティ`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DesignerSerializationManager (IServiceProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IServiceProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.#ctor(System.IServiceProvider)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider"><see cref="T:System.IServiceProvider" />。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Design.Serialization.DesignerSerializationManager" />指定したサービス プロバイダーを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装がそれらの要求を転送するシリアライザーでは、シリアル化マネージャーによって満たすことができないサービスを要求している場合、`provider`パラメーター。  
+  
+ このコンス トラクターを設定、<xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.PreserveNames%2A>と<xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.ValidateRecycledTypes%2A>プロパティ`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="provider" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Container">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.IContainer Container { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.IContainer Container" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.Serialization.DesignerSerializationManager.Container" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.IContainer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのシリアル化マネージャーをコンテナーに設定します。</summary>
+        <value><see cref="T:System.ComponentModel.IContainer" />シリアル化マネージャーがコンポーネントを追加します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテナーが存在する場合は、シリアル化マネージャーによって作成されるすべてのコンポーネントは、コンテナーに追加されます。 このプロパティの既定の実装のサービス プロバイダーを検索、<xref:System.ComponentModel.Design.IDesignerHost>デザイナー ホストによって提供されるコンテナーを使用して、1 つ存在する必要があります。 このプロパティを返しますそれ以外の場合、`null`とコンテナーにコンポーネントが追加されなくなります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">シリアル化マネージャーには、アクティブなシリアル化セッションがあります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstance">
+      <MemberSignature Language="C#" Value="protected virtual object CreateInstance (Type type, System.Collections.ICollection arguments, string name, bool addToContainer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object CreateInstance(class System.Type type, class System.Collections.ICollection arguments, string name, bool addToContainer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance(System.Type,System.Collections.ICollection,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="arguments" Type="System.Collections.ICollection" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="addToContainer" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="type">インスタンスを作成する型。</param>
+        <param name="arguments">型のコンス トラクターのパラメーターです。 これは、<see langword="null" />または既定のコンス トラクターを呼び出すための空のコレクション。</param>
+        <param name="name">オブジェクトを指定する名前。 場合<see langword="null" />オブジェクトがない名前を指定する、オブジェクトがコンテナーに追加し、コンテナー、オブジェクトに名前を付与しない限り、します。</param>
+        <param name="addToContainer">
+          <see langword="true" />オブジェクトを実装する場合、コンテナーにオブジェクトを追加する<see cref="T:System.ComponentModel.IComponent" />、それ以外の<see langword="false" />します。</param>
+        <summary>型のインスタンスを作成します。</summary>
+        <returns>指定された型の新しいインスタンス<paramref name="type" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型のインスタンスの作成を試みたときに、シリアライザーでこのメソッドが呼び出されます。 既定の実装が、型の新しいインスタンスを作成するかの値に応じて、既存のインスタンスを返す可能性があります、<xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.PreserveNames%2A>と<xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.RecycleInstances%2A>プロパティです。 <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.CreateInstance%2A>メソッドは、リフレクションを使用してインスタンスを作成し、一般的なを実行<xref:System.IConvertible>一致するコンス トラクターを検索するパラメーターに変換します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">
+          <paramref name="type" />含まれているパラメーターを受け取るコンス トラクターがない<paramref name="arguments" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSession">
+      <MemberSignature Language="C#" Value="public IDisposable CreateSession ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IDisposable CreateSession() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateSession" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IDisposable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しいシリアル化セッションを作成します。</summary>
+        <returns><see cref="T:System.IDisposable" />を表す新しいシリアル化セッションです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シリアル化マネージャー内のほとんどのデータは、一時的なシリアル化セッションの有効期間だけ存在します。 セッションが破棄されると、シリアル化が完了すると見なされますされ、この一時的な状態がクリアされます。 これにより、複数のオブジェクト ツリーをシリアル化に使用するシリアル化マネージャーの 1 つのインスタンス。 、一部の状態など、サービス プロバイダーをシリアル化マネージャーに追加された任意のカスタムのシリアル化プロバイダー、セッションにわたって存続します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">シリアル化マネージャーは、セッション内で既にです。 このバージョンの<see cref="T:System.ComponentModel.Design.Serialization.DesignerSerializationManager" />同時セッションをサポートしません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Errors">
+      <MemberSignature Language="C#" Value="public System.Collections.IList Errors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IList Errors" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.Serialization.DesignerSerializationManager.Errors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シリアル化または逆シリアル化中に発生したエラーの一覧を取得します。</summary>
+        <value>シリアル化または逆シリアル化中に発生したエラーの一覧です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シリアル化セッションがアクティブな間にのみ、エラー一覧を読み取ることができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このプロパティは、シリアル化セッション外でアクセスされました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRuntimeType">
+      <MemberSignature Language="C#" Value="public Type GetRuntimeType (string typeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Type GetRuntimeType(string typeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.GetRuntimeType(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="typeName">取得する型の名前。</param>
+        <summary>指定された型名に対応する型を取得します。</summary>
+        <returns>指定された型。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSerializer">
+      <MemberSignature Language="C#" Value="public object GetSerializer (Type objectType, Type serializerType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetSerializer(class System.Type objectType, class System.Type serializerType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.GetSerializer(System.Type,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="objectType" Type="System.Type" />
+        <Parameter Name="serializerType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="objectType">シリアライザーを取得する対象のオブジェクトの型。</param>
+        <param name="serializerType">取得するシリアライザーの型。</param>
+        <summary>指定したオブジェクトの種類のシリアライザーを取得します。</summary>
+        <returns>シリアライザーを<paramref name="objectType" />、または<see langword="null" />場合は、見つかりませんでした。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ たいシリアライザーの型を要求することができます。 このメソッドが戻る`null`指定したオブジェクトの種類の要求された型のシリアライザーがない場合。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="objectType" /> または <paramref name="serializerType" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetService">
+      <MemberSignature Language="C#" Value="protected virtual object GetService (Type serviceType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object GetService(class System.Type serviceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.GetService(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="serviceType">取得するサービスの型。</param>
+        <summary>要求したサービスを取得します。</summary>
+        <returns>要求したサービスまたは<see langword="null" />場合は、サービスを解決することはできません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.GetService%2A>メソッドは、基になるコンテナーまたはコンス トラクターで設定されたサービス プロバイダーへのアクセスを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetType">
+      <MemberSignature Language="C#" Value="protected virtual Type GetType (string typeName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Type GetType(string typeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.GetType(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="typeName">取得する型の名前。</param>
+        <summary>要求された型を取得します。</summary>
+        <returns>要求された型または<see langword="null" />場合は、型を解決することはできません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.GetType%2A>のサービス プロバイダーを検索するメソッド、<xref:System.ComponentModel.Design.ITypeResolutionService>と、利用できる場合に型を解決するのには、そのサービスに委任されます。 場合、<xref:System.ComponentModel.Design.ITypeResolutionService>が使用できない<xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.GetType%2A>が呼び出す、<xref:System.Object.GetType%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnResolveName">
+      <MemberSignature Language="C#" Value="protected virtual void OnResolveName (System.ComponentModel.Design.Serialization.ResolveNameEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnResolveName(class System.ComponentModel.Design.Serialization.ResolveNameEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.OnResolveName(System.ComponentModel.Design.Serialization.ResolveNameEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.ComponentModel.Design.Serialization.ResolveNameEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.ComponentModel.Design.Serialization.ResolveNameEventArgs" />。</param>
+        <summary><see cref="E:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.ResolveName" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.OnResolveName%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.OnResolveName(System.ComponentModel.Design.Serialization.ResolveNameEventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.OnResolveName(System.ComponentModel.Design.Serialization.ResolveNameEventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSessionCreated">
+      <MemberSignature Language="C#" Value="protected virtual void OnSessionCreated (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnSessionCreated(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.OnSessionCreated(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.ComponentModel.Design.Serialization.DesignerSerializationManager.SessionCreated" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.OnSessionCreated%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.OnSessionCreated(System.EventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.OnSessionCreated(System.EventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSessionDisposed">
+      <MemberSignature Language="C#" Value="protected virtual void OnSessionDisposed (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnSessionDisposed(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.OnSessionDisposed(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.ComponentModel.Design.Serialization.DesignerSerializationManager.SessionDisposed" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.OnSessionDisposed%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.OnSessionDisposed(System.EventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.OnSessionDisposed(System.EventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="PreserveNames">
+      <MemberSignature Language="C#" Value="public bool PreserveNames { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PreserveNames" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.Serialization.DesignerSerializationManager.PreserveNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを示す値を設定するかどうか、<see cref="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance(System.Type,System.Collections.ICollection,System.String,System.Boolean)" />メソッドは、コンテナー内の指定された名前の有無を確認する必要があります。</summary>
+        <value>
+          <see langword="true" />場合<see cref="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance(System.Type,System.Collections.ICollection,System.String,System.Boolean)" />が指定されたコンポーネント名を渡す<see langword="false" />場合<see cref="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance(System.Type,System.Collections.ICollection,System.String,System.Boolean)" />コンテナー内の指定された名前の存在がチェックされます。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.PreserveNames%2A>プロパティの動作を決定する、<xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance%2A>メソッドです。 場合`true`、<xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance%2A>指定されたコンポーネント名を渡します。 場合`false`、<xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance%2A>コンテナー内の指定された名前の存在がチェックされます。 名前が、コンテナーに存在しない場合<xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance%2A>指定された名前を使用します。 場合は、名前が、コンテナーに存在<xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance%2A>は、新しい名前を指定し、コンテナーに追加する際、コンポーネントの名前として null 値を渡します。 この 2 番目のコマンドは、それらのオブジェクトが存在しないと仮定した場合のではなく、常に、オブジェクトを複製するシリアライザーを実装する場合に便利です。 貼り付けのコマンドは、多くの場合、この種類のシリアライザーを使用します。  
+  
+ このプロパティを変更できるは、シリアル化セッションにいない場合だけです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このプロパティは、シリアル化セッション内からを変更されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyProvider">
+      <MemberSignature Language="C#" Value="public object PropertyProvider { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object PropertyProvider" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.Serialization.DesignerSerializationManager.PropertyProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シリアル化マネージャーのプロパティを指定するために使用する必要があるオブジェクトを取得<see cref="P:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.Properties" />プロパティです。</summary>
+        <value>シリアル化マネージャーのプロパティを指定するために使用する必要がありますオブジェクト<see cref="P:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.Properties" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.PropertyProvider%2A>プロパティはシリアル化マネージャーのシリアライザーを使用してその動作について説明するプロパティをシリアル化のセットを提供する方法を提供します。  
+  
+ このオブジェクトのパブリック プロパティを検査およびシリアル化マネージャーのターゲット オブジェクトを持つ新しいプロパティ記述子にラップされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RecycleInstances">
+      <MemberSignature Language="C#" Value="public bool RecycleInstances { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RecycleInstances" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.Serialization.DesignerSerializationManager.RecycleInstances" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを示すフラグを設定するかどうか<see cref="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance(System.Type,System.Collections.ICollection,System.String,System.Boolean)" />は常に、型の新しいインスタンスを作成します。</summary>
+        <value>
+          <see langword="true" />場合<see cref="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance(System.Type,System.Collections.ICollection,System.String,System.Boolean)" />は既存のインスタンスを返します<see langword="false" />場合<see cref="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance(System.Type,System.Collections.ICollection,System.String,System.Boolean)" />型の新しいインスタンスを作成します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.RecycleInstances%2A>プロパティは`false`、<xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance%2A>メソッドは、型の新しいインスタンスを常に作成します。 場合<xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.RecycleInstances%2A>は`true`、<xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance%2A>名前テーブルと同じ名前のオブジェクトのコンテナーが最初に検索します。 このようなオブジェクトが存在し、同じ型では場合<xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance%2A>は既存のインスタンスを返します。 この 2 番目のコマンドは、常に新しいツリーを作成するのではなく、既存のオブジェクトのセットをシリアル化の状態を適用するシリアライザーを実装する場合に便利です。 **を元に戻す**コマンドが多くの場合、この種類のシリアライザーを使用します。  
+  
+ 場合で、<xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.RecycleInstances%2A>プロパティは`true`、<xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.ValidateRecycledTypes%2A>プロパティの動作を変更してさらに<xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance%2A>2 つのオブジェクトの種類に応じて。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">シリアル化マネージャーには、アクティブなシリアル化セッションがあります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SessionCreated">
+      <MemberSignature Language="C#" Value="public event EventHandler SessionCreated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler SessionCreated" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.Design.Serialization.DesignerSerializationManager.SessionCreated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セッションが作成されるときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SessionDisposed">
+      <MemberSignature Language="C#" Value="public event EventHandler SessionDisposed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler SessionDisposed" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.Design.Serialization.DesignerSerializationManager.SessionDisposed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セッションが破棄されるときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.Design.Serialization.IDesignerSerializationManager.AddSerializationProvider">
+      <MemberSignature Language="C#" Value="void IDesignerSerializationManager.AddSerializationProvider (System.ComponentModel.Design.Serialization.IDesignerSerializationProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ComponentModel.Design.Serialization.IDesignerSerializationManager.AddSerializationProvider(class System.ComponentModel.Design.Serialization.IDesignerSerializationProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.System#ComponentModel#Design#Serialization#IDesignerSerializationManager#AddSerializationProvider(System.ComponentModel.Design.Serialization.IDesignerSerializationProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.ComponentModel.Design.Serialization.IDesignerSerializationProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">追加するシリアル化プロバイダー。</param>
+        <summary>シリアル化マネージャーにカスタムのシリアル化プロバイダーを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.GetSerializer%2A>メソッドの使用をシリアル化プロバイダーを要求、シリアル化マネージャーは、最初に探して型のメタデータに適切なシリアライザー カスタム シリアル化プロバイダーを照会します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.Design.Serialization.IDesignerSerializationManager.Context">
+      <MemberSignature Language="C#" Value="System.ComponentModel.Design.Serialization.ContextStack System.ComponentModel.Design.Serialization.IDesignerSerializationManager.Context { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.Design.Serialization.ContextStack System.ComponentModel.Design.Serialization.IDesignerSerializationManager.Context" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.Serialization.DesignerSerializationManager.System#ComponentModel#Design#Serialization#IDesignerSerializationManager#Context" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.Serialization.ContextStack</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このシリアル化セッションのコンテキスト スタックを取得します。</summary>
+        <value>A<see cref="T:System.ComponentModel.Design.Serialization.ContextStack" />データを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテキスト スタックは、スタックとして実装されている、ユーザー定義の記憶域の領域を提供します。 この記憶域は、シリアライザー間で通信を提供する便利な方法はシリアル化は通常、階層的なプロセスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このプロパティは、シリアル化セッション外でアクセスされました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.Design.Serialization.IDesignerSerializationManager.CreateInstance">
+      <MemberSignature Language="C#" Value="object IDesignerSerializationManager.CreateInstance (Type type, System.Collections.ICollection arguments, string name, bool addToContainer);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.ComponentModel.Design.Serialization.IDesignerSerializationManager.CreateInstance(class System.Type type, class System.Collections.ICollection arguments, string name, bool addToContainer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.System#ComponentModel#Design#Serialization#IDesignerSerializationManager#CreateInstance(System.Type,System.Collections.ICollection,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="arguments" Type="System.Collections.ICollection" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="addToContainer" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="type">作成するデータ型。</param>
+        <param name="arguments">この型のコンス トラクターに渡す引数。</param>
+        <param name="name">オブジェクトの名前。 この名前は、<see cref="M:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.GetInstance(System.String)" /> を使用して後からオブジェクトにアクセスするときに使用できます。 場合<see langword="null" />が渡されると、オブジェクトは作成されますが、名前でアクセスすることはできません。</param>
+        <param name="addToContainer">
+          <see langword="true" />デザイン コンテナーには、このオブジェクトを追加します。 この値を有効にするには、オブジェクトが <see cref="T:System.ComponentModel.IComponent" /> を実装していることが必要です。</param>
+        <summary><see cref="M:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.CreateInstance(System.Type,System.Collections.ICollection,System.String,System.Boolean)" /> メソッドを実装します。</summary>
+        <returns>新しく作成したオブジェクト インスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.Design.Serialization.IDesignerSerializationManager.GetInstance">
+      <MemberSignature Language="C#" Value="object IDesignerSerializationManager.GetInstance (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.ComponentModel.Design.Serialization.IDesignerSerializationManager.GetInstance(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.System#ComponentModel#Design#Serialization#IDesignerSerializationManager#GetInstance(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">取得するオブジェクトの名前。</param>
+        <summary>指定した名前の作成されたオブジェクトのインスタンスを取得します。</summary>
+        <returns>指定された名前を持つオブジェクトのインスタンスまたは<see langword="null" />その名前のオブジェクトが見つからない場合。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティは、シリアル化セッション外でアクセスされました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.Design.Serialization.IDesignerSerializationManager.GetName">
+      <MemberSignature Language="C#" Value="string IDesignerSerializationManager.GetName (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance string System.ComponentModel.Design.Serialization.IDesignerSerializationManager.GetName(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.System#ComponentModel#Design#Serialization#IDesignerSerializationManager#GetName(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">名前を取得する対象のオブジェクト。</param>
+        <summary>指定したオブジェクトの名前を取得します。</summary>
+        <returns>オブジェクトの名前または<see langword="null" />場合は、オブジェクトは名前付きではありません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.System%23ComponentModel%23Design%23Serialization%23IDesignerSerializationManager%23GetName%2A>メソッドの対応する名前を見つけることができません、`value`を生成、パラメーター、<xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.ResolveName>イベントを返す前に`null`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティは、シリアル化セッション外でアクセスされました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.Design.Serialization.IDesignerSerializationManager.GetSerializer">
+      <MemberSignature Language="C#" Value="object IDesignerSerializationManager.GetSerializer (Type objectType, Type serializerType);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.ComponentModel.Design.Serialization.IDesignerSerializationManager.GetSerializer(class System.Type objectType, class System.Type serializerType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.System#ComponentModel#Design#Serialization#IDesignerSerializationManager#GetSerializer(System.Type,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="objectType" Type="System.Type" />
+        <Parameter Name="serializerType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="objectType">シリアライザーを取得するオブジェクトの型。</param>
+        <param name="serializerType">取得するシリアライザーの型。</param>
+        <summary>指定したオブジェクトの種類の要求された型のシリアライザーを取得します。</summary>
+        <returns>要求したシリアライザーのインスタンスまたは<see langword="null" />適切なシリアライザーが見つからない場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.Design.Serialization.IDesignerSerializationManager.GetType">
+      <MemberSignature Language="C#" Value="Type IDesignerSerializationManager.GetType (string typeName);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Type System.ComponentModel.Design.Serialization.IDesignerSerializationManager.GetType(string typeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.System#ComponentModel#Design#Serialization#IDesignerSerializationManager#GetType(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="typeName">読み込む型の完全修飾名。</param>
+        <summary>指定した名前の型を取得します。</summary>
+        <returns>型のインスタンスまたは<see langword="null" />場合は、型を読み込むことができません。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">このプロパティは、シリアル化セッション外でアクセスされました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.Design.Serialization.IDesignerSerializationManager.Properties">
+      <MemberSignature Language="C#" Value="System.ComponentModel.PropertyDescriptorCollection System.ComponentModel.Design.Serialization.IDesignerSerializationManager.Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.PropertyDescriptorCollection System.ComponentModel.Design.Serialization.IDesignerSerializationManager.Properties" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.Serialization.DesignerSerializationManager.System#ComponentModel#Design#Serialization#IDesignerSerializationManager#Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実装して、<see cref="P:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.Properties" />プロパティです。</summary>
+        <value>A<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />シリアル化するプロパティを格納します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.Design.Serialization.IDesignerSerializationManager.RemoveSerializationProvider">
+      <MemberSignature Language="C#" Value="void IDesignerSerializationManager.RemoveSerializationProvider (System.ComponentModel.Design.Serialization.IDesignerSerializationProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ComponentModel.Design.Serialization.IDesignerSerializationManager.RemoveSerializationProvider(class System.ComponentModel.Design.Serialization.IDesignerSerializationProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.System#ComponentModel#Design#Serialization#IDesignerSerializationManager#RemoveSerializationProvider(System.ComponentModel.Design.Serialization.IDesignerSerializationProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.ComponentModel.Design.Serialization.IDesignerSerializationProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">削除する <see cref="T:System.ComponentModel.Design.Serialization.IDesignerSerializationProvider" />。</param>
+        <summary>以前に追加されたシリアル化プロバイダーを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.System%23ComponentModel%23Design%23Serialization%23IDesignerSerializationManager%23RemoveSerializationProvider%2A>メソッドへの呼び出しによって既に追加されているカスタムのシリアル化プロバイダーを削除する、<xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.System%23ComponentModel%23Design%23Serialization%23IDesignerSerializationManager%23AddSerializationProvider%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.Design.Serialization.IDesignerSerializationManager.ReportError">
+      <MemberSignature Language="C#" Value="void IDesignerSerializationManager.ReportError (object errorInformation);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ComponentModel.Design.Serialization.IDesignerSerializationManager.ReportError(object errorInformation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.System#ComponentModel#Design#Serialization#IDesignerSerializationManager#ReportError(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="errorInformation" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="errorInformation">型の通常のエラー情報を含むオブジェクト<see cref="T:System.String" />または<see cref="T:System.Exception" />です。</param>
+        <summary>シリアル化に回復不可能なエラーを報告するために使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シリアライザーを呼び出すことによって回復可能なエラーを適切に処理を書き込むことが、<xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.System%23ComponentModel%23Design%23Serialization%23IDesignerSerializationManager%23ReportError%2A>エラー情報を持つメソッドです。 シリアル化マネージャーは、完了するか、またはこのメソッドから例外をスロー、シリアル化プロセスを中止可能性があります後、エラーの一覧のレポートをサポートできます。 シリアライザーは、この関数の呼び出し後に続行する必要があります。  
+  
+ <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.System%23ComponentModel%23Design%23Serialization%23IDesignerSerializationManager%23ReportError%2A>追加、`errorInformation`パラメーターを<xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.Errors%2A>コレクション。 場合`errorInformation`は`null`アクションは実行されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このプロパティは、シリアル化セッション外でアクセスされました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.Design.Serialization.IDesignerSerializationManager.SetName">
+      <MemberSignature Language="C#" Value="void IDesignerSerializationManager.SetName (object instance, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ComponentModel.Design.Serialization.IDesignerSerializationManager.SetName(object instance, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.System#ComponentModel#Design#Serialization#IDesignerSerializationManager#SetName(System.Object,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="instance">名前を設定するオブジェクト。</param>
+        <param name="name">A<see cref="T:System.String" />オブジェクトの名前として使用します。</param>
+        <summary>指定したオブジェクトの名前を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.System%23ComponentModel%23Design%23Serialization%23IDesignerSerializationManager%23SetName%2A>メソッドは、既存のオブジェクトの名前を設定する方法を提供します。 これによりを呼び出すことによって、オブジェクトのインスタンスの作成、<xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.System%23ComponentModel%23Design%23Serialization%23IDesignerSerializationManager%23GetInstance%2A>のオーバーヘッドを回避する方法、<xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">一方または両方のパラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">インスタンスによって既に指定されたオブジェクトが、名前、または<paramref name="name" />は既に別の名前付きオブジェクトによって使用されています。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティは、シリアル化セッション外でアクセスされました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IServiceProvider.GetService">
+      <MemberSignature Language="C#" Value="object IServiceProvider.GetService (Type serviceType);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.IServiceProvider.GetService(class System.Type serviceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.System#IServiceProvider#GetService(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="serviceType">取得対象となるサービスの型を指定するオブジェクト。</param>
+        <summary>このメンバーの説明については、<see cref="M:System.IServiceProvider.GetService(System.Type)" /> メソッドのトピックを参照してください。</summary>
+        <returns>型のサービス オブジェクト<paramref name="serviceType" />です。  
+  
+ または  
+  
+ <see langword="null" />型のサービス オブジェクトが存在しない場合<paramref name="serviceType" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager> のインスタンスが <xref:System.IServiceProvider> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateRecycledTypes">
+      <MemberSignature Language="C#" Value="public bool ValidateRecycledTypes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ValidateRecycledTypes" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.Serialization.DesignerSerializationManager.ValidateRecycledTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを示すフラグを設定するかどうか、<see cref="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance(System.Type,System.Collections.ICollection,System.String,System.Boolean)" />メソッドは一致する名前が同じ型を参照していることを確認します。</summary>
+        <value>
+          <see langword="true" />場合<see cref="M:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance(System.Type,System.Collections.ICollection,System.String,System.Boolean)" />型の検証、それ以外の<see langword="false" />そうでない場合。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.ValidateRecycledTypes%2A>プロパティの動作を変更して、<xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance%2A>メソッドときに、<xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.RecycleInstances%2A>プロパティは`true`、詳細は次の表に説明します。  
+  
+|`RecycleInstances`|`ValidateRecycledTypes`|動作`CreateInstance`|  
+|------------------------|-----------------------------|----------------------------------|  
+|`false`|`true` または `false`|常に、指定した型の新しいインスタンスを作成します。|  
+|`true`|`false`|一致するインスタンスが検出された場合は、その種類に関係なく|  
+|`true`|`true`|一致するインスタンスが見つかった場合、その型が同じメソッドの呼び出しで指定した場合にのみ返されます。|  
+  
+ <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.ValidateRecycledTypes%2A>同様のプロパティが共通の親またはインターフェイスを共有できませんを別のオブジェクトの 1 つの型の変換に役立ちます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">シリアル化マネージャーには、アクティブなシリアル化セッションがあります。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

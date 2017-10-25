@@ -1,0 +1,668 @@
+<Type Name="PageParserFilter" FullName="System.Web.UI.PageParserFilter">
+  <TypeSignature Language="C#" Value="public abstract class PageParserFilter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit PageParserFilter extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.PageParserFilter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>解析時では、ページの項目が使用できるかどうかを決定する ASP.NET パーサーによって使用されるページ パーサーのフィルターの抽象基本クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例から派生するクラスを作成する方法を示しています、 <xref:System.Web.UI.PageParserFilter> ASP.NET ページ パーサーの動作を制御するためにクラスです。 `CustomPageParserFilter`パーサーをフィルター処理を明示的には、ページ内のコードを拒否します。 これはオーバーライドすることで、<xref:System.Web.UI.PageParserFilter.AllowCode%2A>プロパティです。  
+  
+ [!code-csharp[System.Web.UI.PageParserFilter#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.PageParserFilter/CS/CustomPageParserFilter.cs#2)]
+ [!code-vb[System.Web.UI.PageParserFilter#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.PageParserFilter/VB/CustomPageParserFilter.vb#2)]  
+  
+ 使用する、`CustomPageParserFilter`サンプル、クラスを App_Code ディレクトリに配置します。 内のフィルターを使用する ASP.NET パーサーを構成する必要があります、`pages`サイトの Web.config 構成ファイルのセクションです。 次の構成ファイルの例は、の構成を示しています。`CustomPageParserFilter`です。 パーサー フィルターを使用するように構成、ページ内にコードを検出した場合、ASP.NET パーサーは、ビルド中に例外をスローします。  
+  
+ `<?xml version="1.0" ?>`  
+  
+ `<configuration xmlns="http://schemas.microsoft.com/.NetConfiguration/v2.0">`  
+  
+ `<system.web>`  
+  
+ `<pages`  
+  
+ `pageParserFilterType="Samples.AspNet.CS.CustomPageParserFilter">`  
+  
+ `</pages>`  
+  
+ `</system.web>`  
+  
+ `</configuration>`  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected PageParserFilter ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PageParserFilter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.PageParserFilter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddControl">
+      <MemberSignature Language="C#" Value="protected void AddControl (Type type, System.Collections.IDictionary attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void AddControl(class System.Type type, class System.Collections.IDictionary attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PageParserFilter.AddControl(System.Type,System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="attributes" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="type">コントロールの種類を<see cref="T:System.Web.UI.ControlBuilder" />を表します。</param>
+        <param name="attributes"><see cref="T:System.Collections.IDictionary" />指定したタグのすべての属性を保持するオブジェクト。</param>
+        <summary>追加、<see cref="T:System.Web.UI.ControlBuilder" />現在のページ パーサーの位置にあるページのコントロール ツリー内のオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PageParserFilter.AddControl%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowBaseType">
+      <MemberSignature Language="C#" Value="public virtual bool AllowBaseType (Type baseType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool AllowBaseType(class System.Type baseType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PageParserFilter.AllowBaseType(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="baseType">A<see cref="T:System.Type" />を表す現在のページの潜在的な基底クラスです。</param>
+        <summary>ページが派生できるかどうかを決定する指定された対象から<see cref="T:System.Type" />です。</summary>
+        <returns>
+          <see langword="true" />ページを指定した型から継承できる場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.TemplateParser>クラスは、基本型が許可されるかどうかを決定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowCode">
+      <MemberSignature Language="C#" Value="public virtual bool AllowCode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowCode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PageParserFilter.AllowCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET パーサー フィルターが、ページのコードを許可するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />パーサーのフィルターは、コードを許可している場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.TemplateParser>クラスが関連付けられているいずれかをチェック<xref:System.Web.UI.PageParserFilter>ページをコンパイルするコードを含めることができるかどうかを決定するインスタンス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowControl">
+      <MemberSignature Language="C#" Value="public virtual bool AllowControl (Type controlType, System.Web.UI.ControlBuilder builder);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool AllowControl(class System.Type controlType, class System.Web.UI.ControlBuilder builder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PageParserFilter.AllowControl(System.Type,System.Web.UI.ControlBuilder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="controlType" Type="System.Type" />
+        <Parameter Name="builder" Type="System.Web.UI.ControlBuilder" />
+      </Parameters>
+      <Docs>
+        <param name="controlType">A<see cref="T:System.Type" />を追加するコントロールの種類を表すです。</param>
+        <param name="builder">A<see cref="T:System.Web.UI.ControlBuilder" />コントロールの指定した型の構築に使用します。</param>
+        <summary>このページの指定したコントロールの種類は許可されているかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />現在のページで、コントロールを使用できる場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.TemplateParser>クラスの解析時にコントロールをページにできるかどうかを確認します。 上書き、<xref:System.Web.UI.PageParserFilter.AllowControl%2A>を拒否またはページの特定のコントロールを許可します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowServerSideInclude">
+      <MemberSignature Language="C#" Value="public virtual bool AllowServerSideInclude (string includeVirtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool AllowServerSideInclude(string includeVirtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PageParserFilter.AllowServerSideInclude(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="includeVirtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="includeVirtualPath">インクルードされるファイルへの仮想パス。</param>
+        <summary>パーサーで特定のサーバー側がページに含めるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />パーサーにより、特定のサーバー側が含まれます。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 上書き、<xref:System.Web.UI.PageParserFilter.AllowServerSideInclude%2A>をすべてを拒否するか、特定のサーバー側インクルードします。 詳細については、サーバー側には、構文が含まれているを参照してください。[含めるディレクティブの構文のサーバー側](http://msdn.microsoft.com/en-us/42a6925a-f68c-4690-a9c4-d710358886a9)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowVirtualReference">
+      <MemberSignature Language="C#" Value="public virtual bool AllowVirtualReference (string referenceVirtualPath, System.Web.UI.VirtualReferenceType referenceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool AllowVirtualReference(string referenceVirtualPath, valuetype System.Web.UI.VirtualReferenceType referenceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PageParserFilter.AllowVirtualReference(System.String,System.Web.UI.VirtualReferenceType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="referenceVirtualPath" Type="System.String" />
+        <Parameter Name="referenceType" Type="System.Web.UI.VirtualReferenceType" />
+      </Parameters>
+      <Docs>
+        <param name="referenceVirtualPath">マスター ページ、ASP.NET ページ、またはユーザー コントロールなどのリソースへの仮想パス。</param>
+        <param name="referenceType">A<see cref="T:System.Web.UI.VirtualReferenceType" />をリソースの種類を識別する値。</param>
+        <summary>パーサーがページに特定の種類のリソースへの仮想参照を許可するかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />パーサーは、特定の種類のリソースへの仮想参照を許可している場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.TemplateParser>クラスは、ページから特定の種類のリソースを参照できるかどうかを決定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CalledFromParseControl">
+      <MemberSignature Language="C#" Value="protected bool CalledFromParseControl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CalledFromParseControl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PageParserFilter.CalledFromParseControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パーサーのフィルターが、ページから呼び出されていたかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />パーサーのフィルターが、ページから呼び出された場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに設定`true`の実装時に、<xref:System.Web.UI.PageParserFilter>クラスが呼び出すことによって呼び出される、`ParseControl`のメソッド、<xref:System.Web.UI.Page>クラスまたは呼び出すことによって、`ParseControl`のメソッド、`TemplateControl`の参照、<xref:System.Web.UI.Page>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCompilationMode">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.CompilationMode GetCompilationMode (System.Web.UI.CompilationMode current);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Web.UI.CompilationMode GetCompilationMode(valuetype System.Web.UI.CompilationMode current) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PageParserFilter.GetCompilationMode(System.Web.UI.CompilationMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.CompilationMode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="current" Type="System.Web.UI.CompilationMode" />
+      </Parameters>
+      <Docs>
+        <param name="current">ページの現在のコンパイル モード。</param>
+        <summary>ページの現在のコンパイル モードを取得します。</summary>
+        <returns><see cref="T:System.Web.UI.CompilationMode" /> 値のいずれか。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.TemplateControlParser>クラスが関連付けられているいずれかをチェック<xref:System.Web.UI.PageParserFilter>を現在処理済みページをコンパイル モードを適用するインスタンス。 既定の実装、<xref:System.Web.UI.PageParserFilter.GetCompilationMode%2A>メソッドだけを返します、<xref:System.Web.UI.CompilationMode>現在のパラメーターに渡される値。 上書き、<xref:System.Web.UI.PageParserFilter.GetCompilationMode%2A>メソッド固有の仕様または別の使用を<xref:System.Web.UI.CompilationMode>値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNoCompileUserControlType">
+      <MemberSignature Language="C#" Value="public virtual Type GetNoCompileUserControlType ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Type GetNoCompileUserControlType() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PageParserFilter.GetNoCompileUserControlType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Type" />ページまたは動的にコンパイルされないコントロールを使用する必要があります。</summary>
+        <returns>戻り値<see cref="T:System.Type" />ページまたは動的にコンパイルされないコントロールを使用する必要があります。 既定値は、<see langword="null" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバーライドすることができます、<xref:System.Web.UI.PageParserFilter.GetNoCompileUserControlType%2A>ページまたは動的にコンパイルはされないかのように扱われるコントロールの戻り値の型を指定します。 既定値は、`null` です。  
+  
+ <xref:System.Web.UI.PageParserFilter.GetNoCompileUserControlType%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="protected virtual void Initialize ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Initialize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PageParserFilter.Initialize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ページを使用するフィルターを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PageParserFilter>クラスが適切に定義されたパブリック コンス トラクターを公開しないを使用しているページ パーサーによって初期化される、<xref:System.Web.UI.PageParserFilter.Initialize%2A>メソッドです。 上書き、<xref:System.Web.UI.PageParserFilter.Initialize%2A>手順のインスタンスを独自のカスタムの初期化を追加するメソッドを<xref:System.Web.UI.PageParserFilter>が作成され、ASP.NET で使用されます。 `virtualPath`に渡されたパラメーター、<xref:System.Web.UI.PageParserFilter.Initialize%2A>メソッドのセット、<xref:System.Web.UI.PageParserFilter.VirtualPath%2A>プロパティ、することはできませんと`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Line">
+      <MemberSignature Language="C#" Value="protected int Line { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Line" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PageParserFilter.Line" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在、ファイルの解析中の行番号を取得します。</summary>
+        <value>パーサーのフィルターは処理されているファイルの行を表す整数値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタム<xref:System.Web.UI.PageParserFilter>実装では、使用、<xref:System.Web.UI.PageParserFilter.Line%2A>プロパティを解析中にエラーが発生するレポートです。  
+  
+ <xref:System.Web.UI.PageParserFilter.Line%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NumberOfControlsAllowed">
+      <MemberSignature Language="C#" Value="public virtual int NumberOfControlsAllowed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 NumberOfControlsAllowed" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PageParserFilter.NumberOfControlsAllowed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 つのページのパーサーのフィルターを解析できるコントロールの最大数を取得します。</summary>
+        <value>パーサーのフィルターがページで解析できるコントロールの最大数。 既定値は、0 で、コントロールが解析ないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET ページのパーサーを解析し、番号が、によって設定された制限を超えています。 コントロールの追跡、<xref:System.Web.UI.PageParserFilter>インスタンス、がスロー、<xref:System.Web.HttpException>例外。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NumberOfDirectDependenciesAllowed">
+      <MemberSignature Language="C#" Value="public virtual int NumberOfDirectDependenciesAllowed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 NumberOfDirectDependenciesAllowed" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PageParserFilter.NumberOfDirectDependenciesAllowed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 つのページのページのパーサーを許可するファイルへの直接の依存関係の最大数を取得します。</summary>
+        <value>ページのパーサーがページで解析できるファイルに直接依存関係の最大数。 既定では 0 を示す依存関係は許可されていません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.TemplateParser>クラスには、直接の数の追跡し、での間接的なファイルの依存関係を解析し、番号が、制限を超えています。 設定、<xref:System.Web.UI.PageParserFilter>インスタンス、その例外をスローします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseComplete">
+      <MemberSignature Language="C#" Value="public virtual void ParseComplete (System.Web.UI.ControlBuilder rootBuilder);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ParseComplete(class System.Web.UI.ControlBuilder rootBuilder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PageParserFilter.ParseComplete(System.Web.UI.ControlBuilder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rootBuilder" Type="System.Web.UI.ControlBuilder" />
+      </Parameters>
+      <Docs>
+        <param name="rootBuilder"><see cref="T:System.Web.UI.ControlBuilder" />ページの解析に関連付けられています。</param>
+        <summary>ページの解析が完了すると、フィルターに通知する ASP.NET ページのパーサーによって呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreprocessDirective">
+      <MemberSignature Language="C#" Value="public virtual void PreprocessDirective (string directiveName, System.Collections.IDictionary attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void PreprocessDirective(string directiveName, class System.Collections.IDictionary attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PageParserFilter.PreprocessDirective(System.String,System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="directiveName" Type="System.String" />
+        <Parameter Name="attributes" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="directiveName">ページ ディレクティブ。</param>
+        <param name="attributes">ページから属性と値のコレクションを解析します。</param>
+        <summary>ページ ディレクティブを前処理するページ パーサーのフィルターを使用できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ページのパーサー呼び出し、<xref:System.Web.UI.PageParserFilter.PreprocessDirective%2A>の解析中に発生した各ディレクティブのメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessCodeConstruct">
+      <MemberSignature Language="C#" Value="public virtual bool ProcessCodeConstruct (System.Web.UI.CodeConstructType codeType, string code);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ProcessCodeConstruct(valuetype System.Web.UI.CodeConstructType codeType, string code) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PageParserFilter.ProcessCodeConstruct(System.Web.UI.CodeConstructType,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="codeType" Type="System.Web.UI.CodeConstructType" />
+        <Parameter Name="code" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="codeType">1 つ、<see cref="T:System.Web.UI.CodeConstructType" />コード コンス トラクターの型を識別する列挙値。</param>
+        <param name="code">コード コンス トラクター内のコードを含む文字列リテラル。</param>
+        <summary>後続のパーサー フィルターによってコード ブロックに処理されるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />パーサーでコード コンス トラクターですさらに処理する場合。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバーライドすることができます、<xref:System.Web.UI.PageParserFilter.ProcessCodeConstruct%2A>カスタムを実装するときに、コードの構造に含まれるコードを解析します<xref:System.Web.UI.PageParserFilter>です。 このメソッドが戻る、コードを処理した後に`true`場合は、パーサーは、それ以外のさらにコードを処理する必要がありますを返します`false`です。  
+  
+ 許可されているコード コンス トラクターの型は、<xref:System.Web.UI.CodeConstructType>列挙値。  
+  
+ <xref:System.Web.UI.PageParserFilter.ProcessCodeConstruct%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessDataBindingAttribute">
+      <MemberSignature Language="C#" Value="public virtual bool ProcessDataBindingAttribute (string controlId, string name, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ProcessDataBindingAttribute(string controlId, string name, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PageParserFilter.ProcessDataBindingAttribute(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="controlId" Type="System.String" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="controlId">データ バインド属性を含むコントロールの ID。</param>
+        <param name="name">データ バインディング式を持つ属性の名前。</param>
+        <param name="value">データ バインディング式です。</param>
+        <summary>パーサーのフィルターが属性内のデータ バインディング式を処理するかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />パーサーのフィルターは、データ バインディング属性を処理する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバーライドすることができます、<xref:System.Web.UI.PageParserFilter.ProcessDataBindingAttribute%2A>カスタムを実装する場合は、データ バインディング式を処理するパーサーのフィルターを許可するメソッド<xref:System.Web.UI.PageParserFilter>クラスです。 属性で使用されるデータ バインディング式の例は`<%# expression %>`します。  
+  
+ <xref:System.Web.UI.PageParserFilter.ProcessDataBindingAttribute%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessEventHookup">
+      <MemberSignature Language="C#" Value="public virtual bool ProcessEventHookup (string controlId, string eventName, string handlerName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ProcessEventHookup(string controlId, string eventName, string handlerName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PageParserFilter.ProcessEventHookup(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="controlId" Type="System.String" />
+        <Parameter Name="eventName" Type="System.String" />
+        <Parameter Name="handlerName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="controlId">イベントを処理するイベント ハンドラーには、コントロールの ID。</param>
+        <param name="eventName">イベント名、 <c>controlID</c>にフィルターを適用します。</param>
+        <param name="handlerName">ハンドラー、 <c>eventName</c>フィルターを適用する名前。</param>
+        <summary>イベント ハンドラーを処理するかどうかを示す値を返しますパーサー フィルターによって、さらにします。</summary>
+        <returns>
+          <see langword="true" />パーサーは、イベント ハンドラーを処理する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバーライドすることができます、<xref:System.Web.UI.PageParserFilter.ProcessEventHookup%2A>メソッドをカスタムを実装する場合は、イベント フックアップを処理するためにパーサー<xref:System.Web.UI.PageParserFilter>クラスです。 ハンドラーをイベント ハンドラーの例を提供する、<xref:System.Web.UI.WebControls.Button.Click>のイベント、<xref:System.Web.UI.WebControls.Button>コントロール。  
+  
+ <xref:System.Web.UI.PageParserFilter.ProcessEventHookup%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetPageProperty">
+      <MemberSignature Language="C#" Value="protected void SetPageProperty (string filter, string name, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void SetPageProperty(string filter, string name, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PageParserFilter.SetPageProperty(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filter" Type="System.String" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="filter">式のフィルターの値を含む文字列。 例については、「<see cref="T:System.Web.UI.PropertyEntry" />」を参照してください。</param>
+        <param name="name">値を設定するプロパティの名前です。</param>
+        <param name="value">設定するプロパティの値。</param>
+        <summary>派生したコントロールのプロパティを設定、<see cref="T:System.Web.UI.TemplateControl" />クラスが含まれる、 <see cref="T:System.Web.UI.Page" />、 <see cref="T:System.Web.UI.UserControl" />、および<see cref="T:System.Web.UI.MasterPage" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PageParserFilter.SetPageProperty%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TotalNumberOfDependenciesAllowed">
+      <MemberSignature Language="C#" Value="public virtual int TotalNumberOfDependenciesAllowed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 TotalNumberOfDependenciesAllowed" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PageParserFilter.TotalNumberOfDependenciesAllowed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 つのページのページ パーサーが許可するファイルの直接的および間接的な依存関係の最大数を取得します。</summary>
+        <value>直接的および間接的な最大数は、ページでページ パーサーが解析できる依存関係をファイルです。 既定では 0 で、依存関係を許可しないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.TemplateParser>クラスには、直接の数の追跡し、での間接的なファイルの依存関係を解析し、番号が、制限を超えています。 設定、<xref:System.Web.UI.PageParserFilter>インスタンス、その例外をスローします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VirtualPath">
+      <MemberSignature Language="C#" Value="protected string VirtualPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string VirtualPath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PageParserFilter.VirtualPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在解析されているページへの仮想パスを取得します。</summary>
+        <value>ASP.NET ページへの仮想パス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PageParserFilter.VirtualPath%2A>プロパティは使用しないで`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

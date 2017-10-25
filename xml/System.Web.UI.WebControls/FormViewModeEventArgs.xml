@@ -1,0 +1,154 @@
+<Type Name="FormViewModeEventArgs" FullName="System.Web.UI.WebControls.FormViewModeEventArgs">
+  <TypeSignature Language="C#" Value="public class FormViewModeEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FormViewModeEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.FormViewModeEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.UI.WebControls.FormView.ModeChanging" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.FormView.ModeChanging>イベントが発生したときに、<xref:System.Web.UI.WebControls.FormView>コントロールは、モードが実際に変更前に、編集、挿入、および読み取り専用モードの間の切り替えを試行します。 これにより、構成など、カスタムのルーチンを実行するイベント処理メソッドを提供する、<xref:System.Web.UI.WebControls.FormView>特定のモードを制御したり、このイベントが発生するたびにモードの変更をキャンセルします。  
+  
+ A<xref:System.Web.UI.WebControls.FormViewInsertEventArgs>するモードを決定することができるイベント処理メソッドにオブジェクトが渡される、<xref:System.Web.UI.WebControls.FormView>を決定する、コントロールを変更するかどうか、<xref:System.Web.UI.WebControls.FormView.ModeChanging>編集、または insert 操作を取り消すユーザーの結果として、またはモードの変更を取り消す必要があることを示すために、イベントが発生しました。 新しいモードを確認するには<xref:System.Web.UI.WebControls.FormViewModeEventArgs.NewMode%2A>プロパティです。 使用することも、<xref:System.Web.UI.WebControls.FormViewModeEventArgs.NewMode%2A>プログラムでモードを指定する、代替のいずれかに設定することによって変更するプロパティ、<xref:System.Web.UI.WebControls.FormViewMode>列挙値。 使用して、<xref:System.Web.UI.WebControls.FormViewModeEventArgs.CancelingEdit%2A>プロパティをユーザーの編集をキャンセルの結果としてこのイベントが発生したかどうかを確認または操作を挿入します。 モードの変更を取り消す場合に、設定、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>プロパティを`true`です。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ <xref:System.Web.UI.WebControls.FormViewModeEventArgs> クラスのインスタンスの初期プロパティ値一覧については、<xref:System.Web.UI.WebControls.FormViewModeEventArgs.%23ctor%2A> コンストラクターに関するトピックを参照してください。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.FormViewModeEventArgs>オブジェクトのイベント処理メソッドに渡される、<xref:System.Web.UI.WebControls.FormView.ModeChanging>行の場合に、ポケットベルを非表示にするイベント、<xref:System.Web.UI.WebControls.FormView>編集モードに切り替え効果を制御します。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[FormViewModeEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FormViewModeEventArgs/CS/formviewmodeeventargscs.aspx#1)]
+ [!code-aspx-vb[FormViewModeEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FormViewModeEventArgs/VB/formviewmodeeventargsvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FormViewModeEventArgs (System.Web.UI.WebControls.FormViewMode mode, bool cancelingEdit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Web.UI.WebControls.FormViewMode mode, bool cancelingEdit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FormViewModeEventArgs.#ctor(System.Web.UI.WebControls.FormViewMode,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="mode" Type="System.Web.UI.WebControls.FormViewMode" />
+        <Parameter Name="cancelingEdit" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="mode"><see cref="T:System.Web.UI.WebControls.FormViewMode" /> 列挙値のいずれか。</param>
+        <param name="cancelingEdit">
+          <see langword="true" />示すために、<see cref="E:System.Web.UI.WebControls.FormView.ModeChanging" />イベントが、それ以外のユーザーが取り消した編集操作の結果として発生<see langword="false" />です。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.FormViewModeEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.FormViewModeEventArgs>クラスです。  
+  
+ <xref:System.Web.UI.WebControls.FormViewModeEventArgs> クラスのインスタンスのプロパティの初期値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.FormViewModeEventArgs.CancelingEdit%2A>|`cancelingEdit` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.FormViewModeEventArgs.NewMode%2A>|`mode` パラメーターの値。|  
+  
+> [!NOTE]
+>  このコンス トラクターは、イベントを発生させる場合、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelingEdit">
+      <MemberSignature Language="C#" Value="public bool CancelingEdit { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CancelingEdit" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.FormViewModeEventArgs.CancelingEdit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="E:System.Web.UI.WebControls.FormView.ModeChanging" />編集操作を取り消すユーザーの結果としてイベントが発生しました。</summary>
+        <value>
+          <see langword="true" />示すために、<see cref="E:System.Web.UI.WebControls.FormView.ModeChanging" />イベントが、それ以外のユーザーが取り消した編集操作の結果として発生<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.FormView.ModeChanging>イベントが発生したときに、<xref:System.Web.UI.WebControls.FormView>コントロールは、モードが実際に変更前に、編集、挿入、および読み取り専用モードの間の切り替えを試行します。 使用して、<xref:System.Web.UI.WebControls.FormViewModeEventArgs.CancelingEdit%2A>プロパティを決定するかどうか、<xref:System.Web.UI.WebControls.FormView.ModeChanging>をユーザーが、編集、または insert 操作を取り消した結果イベントが発生しました。 リセットするなど、<xref:System.Web.UI.WebControls.FormView>編集操作をキャンセルするたびに制御します。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.FormViewModeEventArgs.CancelingEdit%2A>モードの変更をユーザーが取り消した編集操作の結果であるかどうかを決定するプロパティです。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[FormViewModeEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FormViewModeEventArgs/CS/formviewmodeeventargscs.aspx#1)]
+ [!code-aspx-vb[FormViewModeEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FormViewModeEventArgs/VB/formviewmodeeventargsvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewMode">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.FormViewMode NewMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.FormViewMode NewMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.FormViewModeEventArgs.NewMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.FormViewMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定モードを<see cref="T:System.Web.UI.WebControls.FormView" />コントロールを変更します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.FormViewMode" /> 列挙値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.FormViewModeEventArgs.NewMode%2A>するモードを決定するプロパティ、<xref:System.Web.UI.WebControls.FormView>コントロールを変更します。 構成するなど、<xref:System.Web.UI.WebControls.FormView>コントロール変更するモードに基づきます。 モードを指定する、このプロパティを使用することも、<xref:System.Web.UI.WebControls.FormView>コントロールのいずれかに設定することによって変更、<xref:System.Web.UI.WebControls.FormViewMode>列挙値。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.FormViewModeEventArgs.NewMode%2A>するモードを決定するプロパティ、<xref:System.Web.UI.WebControls.FormView>コントロールが遷移します。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[FormViewModeEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FormViewModeEventArgs/CS/formviewmodeeventargscs.aspx#1)]
+ [!code-aspx-vb[FormViewModeEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FormViewModeEventArgs/VB/formviewmodeeventargsvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

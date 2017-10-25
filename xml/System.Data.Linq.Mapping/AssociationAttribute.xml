@@ -1,0 +1,222 @@
+<Type Name="AssociationAttribute" FullName="System.Data.Linq.Mapping.AssociationAttribute">
+  <TypeSignature Language="C#" Value="public sealed class AssociationAttribute : System.Data.Linq.Mapping.DataAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit AssociationAttribute extends System.Data.Linq.Mapping.DataAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Linq.Mapping.AssociationAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Linq</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Linq.Mapping.DataAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property | System.AttributeTargets.Field, AllowMultiple=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>外部キー リレーションシップなど、データベースの関連付けを表すプロパティを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Foreign key 制約と主キー間のリレーションシップなど、データベース内の関連付けを表すためには、この属性を使用します。  
+  
+ 次の例で、`Order`クラスが含まれています、<xref:System.Data.Linq.Mapping.AssociationAttribute>に関連付けるには属性が顧客と注文します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Data.Linq.Mapping.AssociationAttribute#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Data.Linq.Mapping.AssociationAttribute/cs/northwind.cs#1)]
+ [!code-vb[System.Data.Linq.Mapping.AssociationAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Data.Linq.Mapping.AssociationAttribute/vb/northwind.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AssociationAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Mapping.AssociationAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Linq.Mapping.AssociationAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteOnNull">
+      <MemberSignature Language="C#" Value="public bool DeleteOnNull { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DeleteOnNull" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.AssociationAttribute.DeleteOnNull" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>外部キー メンバーがすべて null 非許容の 1 対 1 の関連付けに配置されると、関連付けが設定されている場合、オブジェクトを削除を null にします。</summary>
+        <value>設定を<see langword="True" />オブジェクトを削除します。 既定値は <see langword="False" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteRule">
+      <MemberSignature Language="C#" Value="public string DeleteRule { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DeleteRule" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.AssociationAttribute.DeleteRule" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定は、アソシエーションの動作を削除します。</summary>
+        <value>規則を表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ かどうかはセットを null に、削除の動作を追加します。 たとえば、"CASCADE"は、外部キー リレーションシップに"ON DELETE CASCADE"を追加します。  
+  
+ 次の例では、ルールは、アクションは実行しません。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Data.Linq.Mapping.AssociationAttribute#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Data.Linq.Mapping.AssociationAttribute/cs/northwind.cs#2)]
+ [!code-vb[System.Data.Linq.Mapping.AssociationAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Data.Linq.Mapping.AssociationAttribute/vb/northwind.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsForeignKey">
+      <MemberSignature Language="C#" Value="public bool IsForeignKey { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsForeignKey" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.AssociationAttribute.IsForeignKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータベースのリレーションシップを表す関連付けの外部キーとしてメンバーを設定します。</summary>
+        <value>既定値 =<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[System.Data.Linq.Mapping.AssociationAttribute#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Data.Linq.Mapping.AssociationAttribute/cs/northwind.cs#3)]
+ [!code-vb[System.Data.Linq.Mapping.AssociationAttribute#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Data.Linq.Mapping.AssociationAttribute/vb/northwind.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUnique">
+      <MemberSignature Language="C#" Value="public bool IsUnique { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsUnique" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.AssociationAttribute.IsUnique" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または外部キーの一意性制約を示す値を設定します。</summary>
+        <value>既定値 =<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ True の場合、このプロパティは true 1 対 1 の関係を示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OtherKey">
+      <MemberSignature Language="C#" Value="public string OtherKey { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string OtherKey" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.AssociationAttribute.OtherKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアソシエーションの他方のキー値として 1 つまたは複数のターゲット エンティティ クラスのメンバーを設定します。</summary>
+        <value>既定の関連するクラスの Id を = です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数のメンバーのコンマ区切りのリストを使用します。  
+  
+ キーが主キーまたは外部キーですがユーザー指定の基数と一致する必要はありません (0 ~ 1 の<xref:System.Data.Linq.EntityRef%601>または 0-n <xref:System.Data.Linq.EntitySet%601>) 場合は true と見なされます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Data.Linq.Mapping.AssociationAttribute#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Data.Linq.Mapping.AssociationAttribute/cs/northwind.cs#2)]
+ [!code-vb[System.Data.Linq.Mapping.AssociationAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Data.Linq.Mapping.AssociationAttribute/vb/northwind.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThisKey">
+      <MemberSignature Language="C#" Value="public string ThisKey { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ThisKey" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.AssociationAttribute.ThisKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または関連付けのこちら側のキーの値を表す、このエンティティ クラスのメンバーを設定します。</summary>
+        <value>既定値を含むクラスの Id を = です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数のメンバーのコンマ区切りのリストを使用します。  
+  
+ キーが主キーまたは外部キーですがユーザー指定の基数と一致する必要はありません (0 ~ 1 の<xref:System.Data.Linq.EntityRef%601>または 0-n <xref:System.Data.Linq.EntitySet%601>) 場合は true と見なされます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Data.Linq.Mapping.AssociationAttribute#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Data.Linq.Mapping.AssociationAttribute/cs/northwind.cs#3)]
+ [!code-vb[System.Data.Linq.Mapping.AssociationAttribute#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Data.Linq.Mapping.AssociationAttribute/vb/northwind.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

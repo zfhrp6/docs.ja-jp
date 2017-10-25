@@ -1,0 +1,343 @@
+<Type Name="StylusPointDescription" FullName="System.Windows.Input.StylusPointDescription">
+  <TypeSignature Language="C#" Value="public class StylusPointDescription" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StylusPointDescription extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.StylusPointDescription" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>含まれるプロパティを指定します、<see cref="T:System.Windows.Input.StylusPoint" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Input.StylusPointDescription>に関連付けられたプロパティを指定します、<xref:System.Windows.Input.StylusPoint>です。 各プロパティについて、 <xref:System.Windows.Input.StylusPoint>、<xref:System.Windows.Input.StylusPointDescription>が含まれています、<xref:System.Windows.Input.StylusPointPropertyInfo>プロパティの最小値と最大値などの制約を指定するオブジェクト。 使用して、<xref:System.Windows.Input.StylusPointDescription.HasProperty%2A>と<xref:System.Windows.Input.StylusPointDescription.GetPropertyInfo%2A>でこれらのプロパティを確認する方法、<xref:System.Windows.Input.StylusPointDescription>です。  
+  
+ すべて<xref:System.Windows.Input.StylusPoint>内のオブジェクト、<xref:System.Windows.Input.StylusPointCollection>同じを共有する必要があります<xref:System.Windows.Input.StylusPointDescription>です。 追加しようとする場合、<xref:System.Windows.Input.StylusPoint>を<xref:System.Windows.Input.StylusPointCollection>を持つ異なる<xref:System.Windows.Input.StylusPointDescription>例外がスローされます。  
+  
+   
+  
+## Examples  
+ 次の例の取得、<xref:System.Windows.Input.StylusPointDescription>の<xref:System.Windows.Input.StylusPointCollection>ごとに情報を取得して<xref:System.Windows.Input.StylusPointPropertyInfo>で、<xref:System.Windows.Input.StylusPointDescription>です。  
+  
+ [!code-csharp[PacketSpy#2](~/samples/snippets/csharp/VS_Snippets_Wpf/PacketSpy/CSharp/Window1.xaml.cs#2)]
+ [!code-vb[PacketSpy#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PacketSpy/VisualBasic/Window1.xaml.vb#2)]  
+[!code-csharp[PacketSpy#4](~/samples/snippets/csharp/VS_Snippets_Wpf/PacketSpy/CSharp/Window1.xaml.cs#4)]
+[!code-vb[PacketSpy#4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PacketSpy/VisualBasic/Window1.xaml.vb#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StylusPointDescription ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPointDescription.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Input.StylusPointDescription" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のコンス トラクターを作成、<xref:System.Windows.Input.StylusPointDescription>プロパティの情報を含む<xref:System.Windows.Input.StylusPointProperties.X>、 <xref:System.Windows.Input.StylusPointProperties.Y>、および<xref:System.Windows.Input.StylusPointProperties.NormalPressure>です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Input.StylusPointDescription>オブジェクトの作成を使用して、<xref:System.Windows.Input.StylusPoint>です。  
+  
+ [!code-csharp[PacketSpy#5](~/samples/snippets/csharp/VS_Snippets_Wpf/PacketSpy/CSharp/Window1.xaml.cs#5)]
+ [!code-vb[PacketSpy#5](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PacketSpy/VisualBasic/Window1.xaml.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StylusPointDescription (System.Collections.Generic.IEnumerable&lt;System.Windows.Input.StylusPointPropertyInfo&gt; stylusPointPropertyInfos);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class System.Windows.Input.StylusPointPropertyInfo&gt; stylusPointPropertyInfos) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPointDescription.#ctor(System.Collections.Generic.IEnumerable{System.Windows.Input.StylusPointPropertyInfo})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stylusPointPropertyInfos" Type="System.Collections.Generic.IEnumerable&lt;System.Windows.Input.StylusPointPropertyInfo&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="stylusPointPropertyInfos">型の汎用 IEnumerable<see cref="T:System.Windows.Input.StylusPointPropertyInfo" />でプロパティを指定する、<see cref="T:System.Windows.Input.StylusPointDescription" />です。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.Input.StylusPointDescription" /> 、指定したクラス<see cref="T:System.Windows.Input.StylusPointPropertyInfo" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 渡す必要があります<xref:System.Windows.Input.StylusPointPropertyInfo>オブジェクト、プロパティの<xref:System.Windows.Input.StylusPointProperties.X>、 <xref:System.Windows.Input.StylusPointProperties.Y>、および<xref:System.Windows.Input.StylusPointProperties.NormalPressure>です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Input.StylusPointDescription>オブジェクトの作成を使用して、<xref:System.Windows.Input.StylusPoint>です。  
+  
+ [!code-csharp[PacketSpy#5](~/samples/snippets/csharp/VS_Snippets_Wpf/PacketSpy/CSharp/Window1.xaml.cs#5)]
+ [!code-vb[PacketSpy#5](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PacketSpy/VisualBasic/Window1.xaml.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AreCompatible">
+      <MemberSignature Language="C#" Value="public static bool AreCompatible (System.Windows.Input.StylusPointDescription stylusPointDescription1, System.Windows.Input.StylusPointDescription stylusPointDescription2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool AreCompatible(class System.Windows.Input.StylusPointDescription stylusPointDescription1, class System.Windows.Input.StylusPointDescription stylusPointDescription2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPointDescription.AreCompatible(System.Windows.Input.StylusPointDescription,System.Windows.Input.StylusPointDescription)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stylusPointDescription1" Type="System.Windows.Input.StylusPointDescription" />
+        <Parameter Name="stylusPointDescription2" Type="System.Windows.Input.StylusPointDescription" />
+      </Parameters>
+      <Docs>
+        <param name="stylusPointDescription1">最初の<see cref="T:System.Windows.Input.StylusPointDescription" />を確認します。</param>
+        <param name="stylusPointDescription2">2 番目<see cref="T:System.Windows.Input.StylusPointDescription" />を確認します。</param>
+        <summary>示す値を返すかどうか、指定した<see cref="T:System.Windows.Input.StylusPointDescription" />オブジェクトが同じです。</summary>
+        <returns>
+          <see cref="T:System.Windows.Input.StylusPointDescription" /> オブジェクトが同じ場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ<xref:System.Windows.Input.StylusPointDescription>オブジェクトが含まれている場合、同じ互換性のある<xref:System.Windows.Input.StylusPointPropertyInfo>同じ順序でのオブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例は、次の 2 つあるかどうかを確認<xref:System.Windows.Input.StylusPointDescription>互換性があるオブジェクト。  
+  
+ [!code-csharp[PacketSpy#22](~/samples/snippets/csharp/VS_Snippets_Wpf/PacketSpy/CSharp/Window1.xaml.cs#22)]
+ [!code-vb[PacketSpy#22](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PacketSpy/VisualBasic/Window1.xaml.vb#22)]  
+[!code-csharp[PacketSpy#23](~/samples/snippets/csharp/VS_Snippets_Wpf/PacketSpy/CSharp/Window1.xaml.cs#23)]
+[!code-vb[PacketSpy#23](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PacketSpy/VisualBasic/Window1.xaml.vb#23)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCommonDescription">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.StylusPointDescription GetCommonDescription (System.Windows.Input.StylusPointDescription stylusPointDescription, System.Windows.Input.StylusPointDescription stylusPointDescriptionPreserveInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Input.StylusPointDescription GetCommonDescription(class System.Windows.Input.StylusPointDescription stylusPointDescription, class System.Windows.Input.StylusPointDescription stylusPointDescriptionPreserveInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPointDescription.GetCommonDescription(System.Windows.Input.StylusPointDescription,System.Windows.Input.StylusPointDescription)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.StylusPointDescription</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stylusPointDescription" Type="System.Windows.Input.StylusPointDescription" />
+        <Parameter Name="stylusPointDescriptionPreserveInfo" Type="System.Windows.Input.StylusPointDescription" />
+      </Parameters>
+      <Docs>
+        <param name="stylusPointDescription">交差する最初の <see cref="T:System.Windows.Input.StylusPointDescription" />。</param>
+        <param name="stylusPointDescriptionPreserveInfo">2 番目<see cref="T:System.Windows.Input.StylusPointDescription" />交差するようにします。</param>
+        <summary>指定された <see cref="T:System.Windows.Input.StylusPointDescription" /> オブジェクトの交差部分を返します。</summary>
+        <returns>指定した <see cref="T:System.Windows.Input.StylusPointDescription" /> オブジェクトの両方がある場合に存在するプロパティを含んでいる <see cref="T:System.Windows.Input.StylusPointDescription" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `StylusPointDescription1`および`stylusPointDescriptionPreserveInfo`、共通のプロパティでは、まだ、それぞれで指定された制約があります<xref:System.Windows.Input.StylusPointPropertyInfo>点は異なります。 制約が異なる場合、<xref:System.Windows.Input.StylusPointDescription.GetCommonDescription%2A>メソッドを使用、<xref:System.Windows.Input.StylusPointPropertyInfo>から`stylusPointDescriptionPreserveInfo`です。  
+  
+   
+  
+## Examples  
+ 次の例では、共通の検索方法<xref:System.Windows.Input.StylusPointDescription>から 2 つの異なる<xref:System.Windows.Input.StylusPointDescription>オブジェクト。  
+  
+ [!code-csharp[PacketSpy#26](~/samples/snippets/csharp/VS_Snippets_Wpf/PacketSpy/CSharp/Window1.xaml.cs#26)]
+ [!code-vb[PacketSpy#26](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PacketSpy/VisualBasic/Window1.xaml.vb#26)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertyInfo">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.StylusPointPropertyInfo GetPropertyInfo (System.Windows.Input.StylusPointProperty stylusPointProperty);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Input.StylusPointPropertyInfo GetPropertyInfo(class System.Windows.Input.StylusPointProperty stylusPointProperty) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPointDescription.GetPropertyInfo(System.Windows.Input.StylusPointProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.StylusPointPropertyInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stylusPointProperty" Type="System.Windows.Input.StylusPointProperty" />
+      </Parameters>
+      <Docs>
+        <param name="stylusPointProperty"><see cref="T:System.Windows.Input.StylusPointProperty" /> 、目的のプロパティを指定する<see cref="T:System.Windows.Input.StylusPointPropertyInfo" />です。</param>
+        <summary>取得、<see cref="T:System.Windows.Input.StylusPointPropertyInfo" />指定したプロパティ。</summary>
+        <returns>指定した <see cref="T:System.Windows.Input.StylusPointPropertyInfo" /> の <see cref="T:System.Windows.Input.StylusPointProperty" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例からのプロパティに関する情報を取得する方法を示します、<xref:System.Windows.Input.StylusPointDescription>です。 この例では、<xref:System.Windows.UIElement.StylusMove>イベントがイベント ハンドラーを次に接続されています。  
+  
+ [!code-csharp[PacketSpy#21](~/samples/snippets/csharp/VS_Snippets_Wpf/PacketSpy/CSharp/Window1.xaml.cs#21)]
+ [!code-vb[PacketSpy#21](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PacketSpy/VisualBasic/Window1.xaml.vb#21)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStylusPointProperties">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Input.StylusPointPropertyInfo&gt; GetStylusPointProperties ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Windows.Input.StylusPointPropertyInfo&gt; GetStylusPointProperties() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPointDescription.GetStylusPointProperties" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Input.StylusPointPropertyInfo&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてのプロパティを取得、<see cref="T:System.Windows.Input.StylusPointDescription" />です。</summary>
+        <returns>含むすべてのコレクション、<see cref="T:System.Windows.Input.StylusPointPropertyInfo" />内のオブジェクト、<see cref="T:System.Windows.Input.StylusPointDescription" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の取得、<xref:System.Windows.Input.StylusPointDescription>の<xref:System.Windows.Input.StylusPointCollection>各情報と共に<xref:System.Windows.Input.StylusPointPropertyInfo>で、<xref:System.Windows.Input.StylusPointDescription>です。  
+  
+ [!code-csharp[PacketSpy#2](~/samples/snippets/csharp/VS_Snippets_Wpf/PacketSpy/CSharp/Window1.xaml.cs#2)]
+ [!code-vb[PacketSpy#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PacketSpy/VisualBasic/Window1.xaml.vb#2)]  
+[!code-csharp[PacketSpy#4](~/samples/snippets/csharp/VS_Snippets_Wpf/PacketSpy/CSharp/Window1.xaml.cs#4)]
+[!code-vb[PacketSpy#4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PacketSpy/VisualBasic/Window1.xaml.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasProperty">
+      <MemberSignature Language="C#" Value="public bool HasProperty (System.Windows.Input.StylusPointProperty stylusPointProperty);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool HasProperty(class System.Windows.Input.StylusPointProperty stylusPointProperty) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPointDescription.HasProperty(System.Windows.Input.StylusPointProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stylusPointProperty" Type="System.Windows.Input.StylusPointProperty" />
+      </Parameters>
+      <Docs>
+        <param name="stylusPointProperty"><see cref="T:System.Windows.Input.StylusPointProperty" />で確認する、<see cref="T:System.Windows.Input.StylusPointDescription" />です。</param>
+        <summary>示す値を返すかどうか、現在<see cref="T:System.Windows.Input.StylusPointDescription" />は指定したプロパティがあります。</summary>
+        <returns>
+          <see langword="true" />場合、 <see cref="T:System.Windows.Input.StylusPointDescription" /> 、指定された<see cref="T:System.Windows.Input.StylusPointProperty" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例からのプロパティに関する情報を取得する方法を示します、<xref:System.Windows.Input.StylusPointDescription>です。 この例では、<xref:System.Windows.UIElement.StylusMove>イベントがイベント ハンドラーに接続されています。  
+  
+ [!code-csharp[PacketSpy#21](~/samples/snippets/csharp/VS_Snippets_Wpf/PacketSpy/CSharp/Window1.xaml.cs#21)]
+ [!code-vb[PacketSpy#21](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PacketSpy/VisualBasic/Window1.xaml.vb#21)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSubsetOf">
+      <MemberSignature Language="C#" Value="public bool IsSubsetOf (System.Windows.Input.StylusPointDescription stylusPointDescriptionSuperset);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsSubsetOf(class System.Windows.Input.StylusPointDescription stylusPointDescriptionSuperset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPointDescription.IsSubsetOf(System.Windows.Input.StylusPointDescription)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stylusPointDescriptionSuperset" Type="System.Windows.Input.StylusPointDescription" />
+      </Parameters>
+      <Docs>
+        <param name="stylusPointDescriptionSuperset"><see cref="T:System.Windows.Input.StylusPointDescription" />をチェックするかどうか、現在<see cref="T:System.Windows.Input.StylusPointDescription" />サブセットです。</param>
+        <summary>示す値を返すかどうか、現在<see cref="T:System.Windows.Input.StylusPointDescription" />の指定されたサブセットです<see cref="T:System.Windows.Input.StylusPointDescription" />です。</summary>
+        <returns>
+          <see langword="true" />場合、現在<see cref="T:System.Windows.Input.StylusPointDescription" />の指定されたサブセット<see cref="T:System.Windows.Input.StylusPointDescription" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例をチェックするかどうか`description2`のサブセットである`description1`です。  
+  
+ [!code-csharp[PacketSpy#22](~/samples/snippets/csharp/VS_Snippets_Wpf/PacketSpy/CSharp/Window1.xaml.cs#22)]
+ [!code-vb[PacketSpy#22](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PacketSpy/VisualBasic/Window1.xaml.vb#22)]  
+[!code-csharp[PacketSpy#24](~/samples/snippets/csharp/VS_Snippets_Wpf/PacketSpy/CSharp/Window1.xaml.cs#24)]
+[!code-vb[PacketSpy#24](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PacketSpy/VisualBasic/Window1.xaml.vb#24)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyCount">
+      <MemberSignature Language="C#" Value="public int PropertyCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PropertyCount" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.StylusPointDescription.PropertyCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティの数を取得、<see cref="T:System.Windows.Input.StylusPointDescription" />です。</summary>
+        <value>プロパティの数、<see cref="T:System.Windows.Input.StylusPointDescription" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、それぞれのプロパティを取得する方法を示します<xref:System.Windows.Input.StylusPoint>で、<xref:System.Windows.Input.StylusPointCollection>です。 この例では、<xref:System.Windows.Controls.TextBlock>と呼ばれる`packetOutput`です。  
+  
+ [!code-csharp[PacketSpy#3](~/samples/snippets/csharp/VS_Snippets_Wpf/PacketSpy/CSharp/Window1.xaml.cs#3)]
+ [!code-vb[PacketSpy#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PacketSpy/VisualBasic/Window1.xaml.vb#3)]  
+[!code-csharp[PacketSpy#4](~/samples/snippets/csharp/VS_Snippets_Wpf/PacketSpy/CSharp/Window1.xaml.cs#4)]
+[!code-vb[PacketSpy#4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PacketSpy/VisualBasic/Window1.xaml.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

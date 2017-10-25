@@ -1,0 +1,274 @@
+<Type Name="FormViewDeletedEventArgs" FullName="System.Web.UI.WebControls.FormViewDeletedEventArgs">
+  <TypeSignature Language="C#" Value="public class FormViewDeletedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FormViewDeletedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.FormViewDeletedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.UI.WebControls.FormView.ItemDeleted" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.FormView>制御を発生させます、<xref:System.Web.UI.WebControls.FormView.ItemDeleted>イベントと削除 ボタン (ボタンがその`CommandName`プロパティが"Delete"に設定) コントロール内でをクリックした後は、<xref:System.Web.UI.WebControls.FormView>コントロールには、レコードが削除されます。 これにより、このイベントが発生するたびに、削除操作の結果を確認するなど、カスタムのルーチンを実行するイベント処理メソッドを提供できます。  
+  
+ A<xref:System.Web.UI.WebControls.FormViewDeletedEventArgs>とが発生する例外の影響を受けたレコードの数を決定することができるイベント処理メソッドにオブジェクトが渡されます。 削除操作によって影響を受けたレコードの数を調べるを使用して、<xref:System.Web.UI.WebControls.FormViewDeletedEventArgs.AffectedRows%2A>プロパティです。 使用して、<xref:System.Web.UI.WebControls.FormViewDeletedEventArgs.Exception%2A>プロパティを任意の例外が発生したかどうかを判断します。 設定して、イベント処理メソッドで例外が処理されたかどうかを指定することも、<xref:System.Web.UI.WebControls.FormViewDeletedEventArgs.ExceptionHandled%2A>プロパティです。  
+  
+> [!NOTE]
+>  Delete 操作中に例外が発生した場合、<xref:System.Web.UI.WebControls.FormViewDeletedEventArgs.ExceptionHandled%2A>プロパティに設定されている`false`、<xref:System.Web.UI.WebControls.FormView>コントロールは、例外を再スローします。  
+  
+ キー フィールドと、削除したレコードの非キー フィールドの名前/値ペアにアクセスする場合を使用して、<xref:System.Web.UI.WebControls.FormViewDeletedEventArgs.Keys%2A>と<xref:System.Web.UI.WebControls.FormViewDeletedEventArgs.Values%2A>プロパティ、それぞれします。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.FormViewDeletedEventArgs>オブジェクトのイベント処理メソッドに渡される、 <xref:System.Web.UI.WebControls.FormView.ItemDeleted> delete 操作中に例外が発生したかどうかを決定するイベントです。  
+  
+ [!code-aspx-csharp[FormViewDeletedEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FormViewDeletedEventArgs/CS/formviewdeletedeventargscs.aspx#1)]
+ [!code-aspx-vb[FormViewDeletedEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FormViewDeletedEventArgs/VB/formviewdeletedeventargsvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FormViewDeletedEventArgs (int affectedRows, Exception e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 affectedRows, class System.Exception e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FormViewDeletedEventArgs.#ctor(System.Int32,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="affectedRows" Type="System.Int32" />
+        <Parameter Name="e" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="affectedRows">削除操作によって影響を受ける行の数。</param>
+        <param name="e"><see cref="T:System.Exception" />削除操作が実行されたときに発生する例外を表すです。 例外が発生しなかった場合を使用して<see langword="null" />このパラメーターにします。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.FormViewDeletedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.FormViewDeletedEventArgs>クラスです。  
+  
+ <xref:System.Web.UI.WebControls.FormViewDeletedEventArgs> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.FormViewDeletedEventArgs.AffectedRows%2A>|`affectedRows` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.FormViewDeletedEventArgs.Exception%2A>|<xref:System.Exception?displayProperty=nameWithType>に含まれているオブジェクト、`e`パラメーター。|  
+|<xref:System.Web.UI.WebControls.FormViewDeletedEventArgs.ExceptionHandled%2A>|初期化された`false`です。|  
+  
+> [!NOTE]
+>  このコンス トラクターは、イベントを発生させる場合、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AffectedRows">
+      <MemberSignature Language="C#" Value="public int AffectedRows { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 AffectedRows" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.FormViewDeletedEventArgs.AffectedRows" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>削除操作によって影響を受ける行の数を取得します。</summary>
+        <value>削除操作によって影響を受ける行の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.FormViewDeletedEventArgs.AffectedRows%2A>削除操作によって影響を受けたレコードの数を決定するプロパティです。 このプロパティは次の状況で、正しい数のレコードが削除されたことを確認します。  
+  
+-   単一のレコードだけが削除されたことを確認します。 場合があります、不適切に記述された delete ステートメントでは、複数のレコードを削除できます。  
+  
+-   例外を発生させない delete 操作中にエラーが発生したときに、レコードが削除されたことを確認します。  
+  
+-   データ ソース コントロールなどの競合の検出 (オプティミスティック同時実行) をサポートするときに、レコードが削除されたことを確認してください、<xref:System.Web.UI.WebControls.SqlDataSource>と<xref:System.Web.UI.WebControls.ObjectDataSource>制御は、その<xref:System.Web.UI.WebControls.SqlDataSource.ConflictDetection%2A>プロパティに設定、`ConflictOptions.CompareAllValues`列挙値。 この設定では同時に別のユーザーによって変更されたレコードが削除されない可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.FormViewDeletedEventArgs.AffectedRows%2A>プロパティをレコードが削除操作中に削除されたことを確認してください。  
+  
+ [!code-aspx-csharp[FormViewDeletedEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FormViewDeletedEventArgs/CS/formviewdeletedeventargscs.aspx#1)]
+ [!code-aspx-vb[FormViewDeletedEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FormViewDeletedEventArgs/VB/formviewdeletedeventargsvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Exception">
+      <MemberSignature Language="C#" Value="public Exception Exception { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Exception Exception" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.FormViewDeletedEventArgs.Exception" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>例外を取得します (存在する場合)、削除操作中に発生しました。</summary>
+        <value><see cref="T:System.Exception" />削除操作中に発生した例外を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、 <xref:System.Web.UI.WebControls.FormViewDeletedEventArgs.Exception%2A> (存在する場合)、例外を決定するプロパティが削除操作中に発生しました。 このプロパティを返しますのかどうかは例外が発生しなかった、`null`です。  
+  
+> [!NOTE]
+>  場合に例外が発生して、イベント ハンドラーで例外を処理するか、必ず設定する、<xref:System.Web.UI.WebControls.FormViewDeletedEventArgs.ExceptionHandled%2A>プロパティを`true`です。 それ以外の場合、<xref:System.Web.UI.WebControls.FormView>コントロールは、例外を再スローします。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、 <xref:System.Web.UI.WebControls.FormViewDeletedEventArgs.Exception%2A> delete 操作中に例外が発生したかどうかを決定するプロパティです。  
+  
+ [!code-aspx-csharp[FormViewDeletedEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FormViewDeletedEventArgs/CS/formviewdeletedeventargscs.aspx#1)]
+ [!code-aspx-vb[FormViewDeletedEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FormViewDeletedEventArgs/VB/formviewdeletedeventargsvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExceptionHandled">
+      <MemberSignature Language="C#" Value="public bool ExceptionHandled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ExceptionHandled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.FormViewDeletedEventArgs.ExceptionHandled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または削除操作中に発生した例外が、イベント ハンドラーで処理されたかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />例外が処理された場合、イベント ハンドラーです。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Delete 操作中に例外が発生した、ときに使用して、<xref:System.Web.UI.WebControls.FormViewDeletedEventArgs.ExceptionHandled%2A>例外が、イベント ハンドラーで処理されたかどうかを示すプロパティです。 このプロパティに設定するときに`true`例外は処理され、再スローするいないと見なされます。 このプロパティ設定されている場合`false`、<xref:System.Web.UI.WebControls.FormView>コントロールは、例外を再スローします。 発生した例外を確認するには<xref:System.Web.UI.WebControls.FormViewDeletedEventArgs.Exception%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.FormViewDeletedEventArgs.ExceptionHandled%2A>例外が、イベント ハンドラーで処理されたことを示すプロパティです。  
+  
+ [!code-aspx-csharp[FormViewDeletedEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FormViewDeletedEventArgs/CS/formviewdeletedeventargscs.aspx#1)]
+ [!code-aspx-vb[FormViewDeletedEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FormViewDeletedEventArgs/VB/formviewdeletedeventargsvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Keys">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.IOrderedDictionary Keys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.IOrderedDictionary Keys" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.FormViewDeletedEventArgs.Keys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.IOrderedDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>削除されたレコードのキー フィールドの名前/値ペアの順序付けられた辞書を取得します。</summary>
+        <value><see cref="T:System.Collections.Specialized.OrderedDictionary" />削除されたレコードのキー フィールドの名前/値ペアを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.FormViewDeletedEventArgs.Keys%2A>プロパティに記載されたキー フィールドの値を含む、<xref:System.Web.UI.WebControls.FormView.DataKeyNames%2A>のプロパティ、<xref:System.Web.UI.WebControls.FormView>コントロール。 使用して、<xref:System.Web.UI.WebControls.FormViewDeletedEventArgs.Keys%2A>キー フィールドの値にアクセスするプロパティ (の指定に従って、<xref:System.Web.UI.WebControls.FormView.DataKeyNames%2A>プロパティ)、削除されたレコードのです。 たとえば、これらの値を使用して、削除されたレコードのログを保持することができます。  
+  
+> [!NOTE]
+>  このプロパティにはで指定されたキー フィールドのみが含まれています、<xref:System.Web.UI.WebControls.FormView.DataKeyNames%2A>プロパティです。 非キー フィールドにアクセスするを使用して、<xref:System.Web.UI.WebControls.FormViewDeletedEventArgs.Values%2A>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.FormViewDeletedEventArgs.Keys%2A>プロパティから返される、<xref:System.Collections.Specialized.OrderedDictionary>を実装するオブジェクト、<xref:System.Collections.Specialized.IOrderedDictionary?displayProperty=nameWithType>インターフェイスです。 <xref:System.Collections.Specialized.OrderedDictionary>オブジェクトを含む<xref:System.Collections.DictionaryEntry?displayProperty=nameWithType>削除されたレコードのキー フィールドを表すオブジェクト。 フィールド名にアクセスするには、使用、<xref:System.Collections.Specialized.OrderedDictionary.Keys%2A>のプロパティ、<xref:System.Collections.Specialized.OrderedDictionary>オブジェクト。 同様を使用して、フィールドの値にアクセスすることができます、<xref:System.Collections.Specialized.OrderedDictionary.Values%2A>プロパティです。  
+  
+> [!NOTE]
+>  簡単な方法としてのインデクサーを使用することも、<xref:System.Collections.Specialized.OrderedDictionary>キー フィールドの値にアクセスするオブジェクト。 インデクサーを使用するメリットは、キー フィールドの値が直接返されることです。 データ ソースのフィールドの順序に依存するコントロール (など<xref:System.Web.UI.WebControls.AccessDataSource>) インデックスでのみキー フィールドの値にアクセスできます。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.FormViewDeletedEventArgs.Keys%2A>プロパティを削除したレコードのキー フィールドの値にアクセスします。  
+  
+ [!code-aspx-csharp[FormViewDeletedEventArgsKeys#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FormViewDeletedEventArgsKeys/CS/formviewdeletedeventargskeyscs.aspx#1)]
+ [!code-aspx-vb[FormViewDeletedEventArgsKeys#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FormViewDeletedEventArgsKeys/VB/formviewdeletedeventargskeysvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Values">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.IOrderedDictionary Values { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.IOrderedDictionary Values" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.FormViewDeletedEventArgs.Values" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.IOrderedDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>削除されたレコードのキー以外のフィールドの名前/値ペアのディクショナリを取得します。</summary>
+        <value><see cref="T:System.Collections.Specialized.OrderedDictionary" />削除されたレコードのキー以外のフィールドの名前/値ペアのディクショナリを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.FormViewDeletedEventArgs.Values%2A>削除されたレコードの非キー フィールドの値にアクセスするプロパティです。 たとえば、これらの値を使用して、削除されたレコードのログを保持することができます。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.FormViewDeletedEventArgs.Values%2A>プロパティが双方向のバインド式は、項目テンプレートで使用されている場合にのみ設定されます。 双方向のバインド式の詳細については、次を参照してください。[データベースへのバインド](http://msdn.microsoft.com/en-us/ab7b2846-975b-4057-a948-45527497c742)です。  
+  
+ <xref:System.Web.UI.WebControls.FormViewDeletedEventArgs.Values%2A>プロパティから返される、<xref:System.Collections.Specialized.OrderedDictionary>を実装するオブジェクト、<xref:System.Collections.Specialized.IOrderedDictionary?displayProperty=nameWithType>インターフェイスです。 <xref:System.Collections.Specialized.OrderedDictionary>オブジェクトを含む<xref:System.Collections.DictionaryEntry?displayProperty=nameWithType>削除されたレコードのキー以外のフィールドを表すオブジェクト。 フィールド名にアクセスするには、使用、<xref:System.Collections.Specialized.OrderedDictionary.Keys%2A>のプロパティ、<xref:System.Collections.Specialized.OrderedDictionary>オブジェクト。 同様を使用して、フィールドの値にアクセスすることができます、<xref:System.Collections.Specialized.OrderedDictionary.Values%2A>プロパティです。  
+  
+> [!NOTE]
+>  簡単な方法としてのインデクサーを使用することも、<xref:System.Collections.Specialized.OrderedDictionary>フィールド値にアクセスするオブジェクト。 インデクサーを使用するメリットは、フィールドの値が直接返されることです。 データ ソースのフィールドの順序に依存するコントロール (など<xref:System.Web.UI.WebControls.AccessDataSource>) フィールドの値をインデックスによってのみアクセスできます。  
+  
+ このプロパティにキー フィールドが含まれていません (で指定されたとおり、<xref:System.Web.UI.WebControls.FormView.DataKeyNames%2A>プロパティ)、削除したレコードをします。 キー フィールドにアクセスするには、使用、<xref:System.Web.UI.WebControls.FormViewDeletedEventArgs.Keys%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.FormViewDeletedEventArgs.Values%2A>削除されたレコードの非キー フィールドの値にアクセスするプロパティです。  
+  
+ [!code-aspx-csharp[FormViewDeletedEventArgsKeys#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FormViewDeletedEventArgsKeys/CS/formviewdeletedeventargskeyscs.aspx#1)]
+ [!code-aspx-vb[FormViewDeletedEventArgsKeys#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FormViewDeletedEventArgsKeys/VB/formviewdeletedeventargskeysvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

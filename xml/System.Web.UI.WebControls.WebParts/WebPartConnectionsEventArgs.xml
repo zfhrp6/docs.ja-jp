@@ -1,0 +1,233 @@
+<Type Name="WebPartConnectionsEventArgs" FullName="System.Web.UI.WebControls.WebParts.WebPartConnectionsEventArgs">
+  <TypeSignature Language="C#" Value="public class WebPartConnectionsEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebPartConnectionsEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.WebPartConnectionsEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>イベントのデータを提供、<see cref="E:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsConnected" />と<see cref="E:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsDisconnected" />のイベント、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web パーツ コントロール セットの機能を使用して、可能であれば、2 つの間の接続を作成する<xref:System.Web.UI.WebControls.WebParts.WebPart>またはとして、プロバイダー、およびデータのコンシューマーとして機能する 1 つのコントロールとその他のサーバー コントロールです。 接続を構成するには、2 つのコントロールがから継承するゾーンである必要があります、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>クラス (など、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>コントロール)、あり、共通のインターフェイスを使用してデータを共有する正しく設計する必要があります。 Web パーツの接続に関する詳細については、「<xref:System.Web.UI.WebControls.WebParts.WebPartConnection>と[Web パーツ接続の概要](http://msdn.microsoft.com/library/d98cfd0f-ebd6-4871-89d5-abbd2cdef67b)です。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartConnectionsEventArgs>クラスにイベント データを使用するメソッドを渡します、<xref:System.Web.UI.WebControls.WebParts.WebPartConnectionsEventHandler>イベントを処理するデリゲート。 2 つこのような接続に関連するメソッドを使用してイベントを発生させる、<xref:System.Web.UI.WebControls.WebParts.WebPartConnectionsEventArgs>イベント データを提供するクラス。 両方のメンバーである、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロール。 <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartsConnected%2A>メソッドを発生させます、 <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsConnected> 2 つのサーバー コントロールが正常に接続後、イベント、および<xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartsDisconnected%2A>メソッドを発生させます、 <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsDisconnected> 2 つのサーバー コントロールが切断された後のイベントです。  
+  
+ 開発者メソッドを作成できますカスタム イベント ハンドラーの<xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsConnected>と<xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsDisconnected>イベント、これらのメソッドを使用できる、<xref:System.Web.UI.WebControls.WebParts.WebPartConnectionsEventArgs>接続のアクセスの詳細をクラスです。 たとえば、開発者が宣言できます、`OnWebPartsConnected`属性を`<asp:webpartmanager>`要素は、イベントを処理するカスタム メソッド名を割り当てるとします。 カスタム ハンドラー メソッドで開発者を使用して、接続の詳細をアクセスできる、<xref:System.Web.UI.WebControls.WebParts.WebPartConnectionsEventArgs>をパラメーターとしてメソッドに渡されるオブジェクト。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartConnectionsEventArgs>クラスにコンス トラクターの 2 つのオーバー ロードがあります。 <xref:System.Web.UI.WebControls.WebParts.WebPartConnectionsEventArgs.%23ctor%28System.Web.UI.WebControls.WebParts.WebPart%2CSystem.Web.UI.WebControls.WebParts.ProviderConnectionPoint%2CSystem.Web.UI.WebControls.WebParts.WebPart%2CSystem.Web.UI.WebControls.WebParts.ConsumerConnectionPoint%29?displayProperty=nameWithType>コンス トラクターは、既定値以外の場合は、クラスのプロパティ値を初期化します。 <xref:System.Web.UI.WebControls.WebParts.WebPartConnectionsEventArgs.%23ctor%28System.Web.UI.WebControls.WebParts.WebPart%2CSystem.Web.UI.WebControls.WebParts.ProviderConnectionPoint%2CSystem.Web.UI.WebControls.WebParts.WebPart%2CSystem.Web.UI.WebControls.WebParts.ConsumerConnectionPoint%2CSystem.Web.UI.WebControls.WebParts.WebPartConnection%29?displayProperty=nameWithType>コンス トラクターを呼び出す既定のコンス トラクターともを初期化し、<xref:System.Web.UI.WebControls.WebParts.WebPartConnectionsEventArgs.Connection%2A>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartConnectionsEventArgs>クラスにはいくつかのプロパティをすべての Web パーツ接続の重要な側面を参照してください。 <xref:System.Web.UI.WebControls.WebParts.WebPartConnectionsEventArgs.Connection%2A>プロパティは、関連付けられている参照<xref:System.Web.UI.WebControls.WebParts.WebPartConnection>接続全体を表すオブジェクト。 <xref:System.Web.UI.WebControls.WebParts.WebPartConnectionsEventArgs.Provider%2A>プロパティ参照、<xref:System.Web.UI.WebControls.WebParts.WebPart>または接続のプロバイダーとして機能する他のサーバー コントロールと<xref:System.Web.UI.WebControls.WebParts.WebPartConnectionsEventArgs.Consumer%2A>プロパティ参照、<xref:System.Web.UI.WebControls.WebParts.WebPart>またはコンシューマーとして機能しているサーバー コントロールです。 <xref:System.Web.UI.WebControls.WebParts.WebPartConnectionsEventArgs.ProviderConnectionPoint%2A>プロパティを参照して、接続の<xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint>オブジェクト中、<xref:System.Web.UI.WebControls.WebParts.WebPartConnectionsEventArgs.ConsumerConnectionPoint%2A>プロパティ参照、<xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint>オブジェクト。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebPartConnectionsEventArgs (System.Web.UI.WebControls.WebParts.WebPart provider, System.Web.UI.WebControls.WebParts.ProviderConnectionPoint providerConnectionPoint, System.Web.UI.WebControls.WebParts.WebPart consumer, System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint consumerConnectionPoint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.WebParts.WebPart provider, class System.Web.UI.WebControls.WebParts.ProviderConnectionPoint providerConnectionPoint, class System.Web.UI.WebControls.WebParts.WebPart consumer, class System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint consumerConnectionPoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartConnectionsEventArgs.#ctor(System.Web.UI.WebControls.WebParts.WebPart,System.Web.UI.WebControls.WebParts.ProviderConnectionPoint,System.Web.UI.WebControls.WebParts.WebPart,System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="provider" Type="System.Web.UI.WebControls.WebParts.WebPart" />
+        <Parameter Name="providerConnectionPoint" Type="System.Web.UI.WebControls.WebParts.ProviderConnectionPoint" />
+        <Parameter Name="consumer" Type="System.Web.UI.WebControls.WebParts.WebPart" />
+        <Parameter Name="consumerConnectionPoint" Type="System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint" />
+      </Parameters>
+      <Docs>
+        <param name="provider">プロバイダーとして機能するコントロール。</param>
+        <param name="providerConnectionPoint">プロバイダー接続ポイント。</param>
+        <param name="consumer">コンシューマーとして機能するコントロール。</param>
+        <param name="consumerConnectionPoint">コンシューマー接続ポイント。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartConnectionsEventArgs" />クラスを必要とせず、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartConnection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、既定のコンス トラクターです。 必要ありません、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection>オブジェクト。 コンス トラクターは、それぞれの接続に関連するパラメーター オブジェクトの対応するプロパティに割り当てることによって、そのプロパティの値を初期化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebPartConnectionsEventArgs (System.Web.UI.WebControls.WebParts.WebPart provider, System.Web.UI.WebControls.WebParts.ProviderConnectionPoint providerConnectionPoint, System.Web.UI.WebControls.WebParts.WebPart consumer, System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint consumerConnectionPoint, System.Web.UI.WebControls.WebParts.WebPartConnection connection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.WebParts.WebPart provider, class System.Web.UI.WebControls.WebParts.ProviderConnectionPoint providerConnectionPoint, class System.Web.UI.WebControls.WebParts.WebPart consumer, class System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint consumerConnectionPoint, class System.Web.UI.WebControls.WebParts.WebPartConnection connection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartConnectionsEventArgs.#ctor(System.Web.UI.WebControls.WebParts.WebPart,System.Web.UI.WebControls.WebParts.ProviderConnectionPoint,System.Web.UI.WebControls.WebParts.WebPart,System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint,System.Web.UI.WebControls.WebParts.WebPartConnection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="provider" Type="System.Web.UI.WebControls.WebParts.WebPart" />
+        <Parameter Name="providerConnectionPoint" Type="System.Web.UI.WebControls.WebParts.ProviderConnectionPoint" />
+        <Parameter Name="consumer" Type="System.Web.UI.WebControls.WebParts.WebPart" />
+        <Parameter Name="consumerConnectionPoint" Type="System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint" />
+        <Parameter Name="connection" Type="System.Web.UI.WebControls.WebParts.WebPartConnection" />
+      </Parameters>
+      <Docs>
+        <param name="provider"><see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />またはサーバー コントロールのプロバイダーとして機能します。</param>
+        <param name="providerConnectionPoint"><see cref="T:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint" />接続します。</param>
+        <param name="consumer"><see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />またはコンシューマーとして機能しているサーバー コントロールです。</param>
+        <param name="consumerConnectionPoint"><see cref="T:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint" />接続します。</param>
+        <param name="connection"><see cref="T:System.Web.UI.WebControls.WebParts.WebPartConnection" /> オブジェクト。</param>
+        <summary>使用して、指定したクラスの新しいインスタンスを初期化<see cref="T:System.Web.UI.WebControls.WebParts.WebPartConnection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバージョンの<xref:System.Web.UI.WebControls.WebParts.WebPartConnectionsEventArgs.%23ctor%2A>コンス トラクターが使用されるときに、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection>オブジェクトは、使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Connection">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.WebPartConnection Connection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPartConnection Connection" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartConnectionsEventArgs.Connection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartConnection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartConnection" />現在の接続オブジェクトです。</summary>
+        <value>現在の <see cref="T:System.Web.UI.WebControls.WebParts.WebPartConnection" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartConnection>オブジェクトには、プロバイダーの管理、プロバイダーの接続ポイント、コンシューマー コントロールおよびコンシューマーのコネクション ポイントへの参照など、Web パーツ接続のすべての詳細が含まれています。  
+  
+ Web パーツの接続に関する詳細については、「 <xref:System.Web.UI.WebControls.WebParts.WebPartConnection>、 <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint>、および[Web パーツ接続の概要](http://msdn.microsoft.com/library/d98cfd0f-ebd6-4871-89d5-abbd2cdef67b)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Consumer">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.WebPart Consumer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPart Consumer" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartConnectionsEventArgs.Consumer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />制御されている接続のコンシューマーとして機能します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コンシューマーとして機能します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web パーツ ゾーン内のコントロール間の接続には、プロバイダーとコンシューマーとして機能するとして機能する 1 つのコントロールが必要です。 各コントロールには、接続ポイントが定義されている必要があります。コンシューマーの場合は、接続ポイントがある必要があります、<xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint>オブジェクト。  
+  
+ Web パーツの接続に関する詳細については、「 <xref:System.Web.UI.WebControls.WebParts.WebPartConnection>、 <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint>、および[Web パーツ接続の概要](http://msdn.microsoft.com/library/d98cfd0f-ebd6-4871-89d5-abbd2cdef67b)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConsumerConnectionPoint">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint ConsumerConnectionPoint { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint ConsumerConnectionPoint" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartConnectionsEventArgs.ConsumerConnectionPoint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint" />現在の接続オブジェクトです。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint" />現在の接続。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web パーツ ゾーン内のコントロール間の接続には、プロバイダーとコンシューマーとして機能するとして機能する 1 つのコントロールが必要です。 各コントロールには、接続ポイントが定義されている必要があります。コンシューマーの場合は、接続ポイントがある必要があります、<xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint>オブジェクト。  
+  
+ Web パーツの接続に関する詳細については、「 <xref:System.Web.UI.WebControls.WebParts.WebPartConnection>、 <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint>、および[Web パーツ接続の概要](http://msdn.microsoft.com/library/d98cfd0f-ebd6-4871-89d5-abbd2cdef67b)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Provider">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.WebPart Provider { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPart Provider" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartConnectionsEventArgs.Provider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />されている接続のプロバイダーとしての動作を制御します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />プロバイダーとして機能します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web パーツ ゾーン内のコントロール間の接続には、プロバイダーとコンシューマーとして機能するとして機能する 1 つのコントロールが必要です。 各コントロールには、接続ポイントが定義されている必要があります。プロバイダーの場合は、接続ポイントがある必要があります、<xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint>オブジェクト。  
+  
+ Web パーツの接続に関する詳細については、「 <xref:System.Web.UI.WebControls.WebParts.WebPartConnection>、 <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint>、および[Web パーツ接続の概要](http://msdn.microsoft.com/library/d98cfd0f-ebd6-4871-89d5-abbd2cdef67b)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderConnectionPoint">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.ProviderConnectionPoint ProviderConnectionPoint { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.ProviderConnectionPoint ProviderConnectionPoint" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartConnectionsEventArgs.ProviderConnectionPoint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.ProviderConnectionPoint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint" />現在の接続オブジェクトです。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint" />現在の接続。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web パーツ ゾーン内のコントロール間の接続には、プロバイダーとコンシューマーとして機能するとして機能する 1 つのコントロールが必要です。 各コントロールには、接続ポイントが定義されている必要があります。プロバイダーの場合は、接続ポイントがある必要があります、<xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint>オブジェクト。  
+  
+ Web パーツの接続に関する詳細については、「 <xref:System.Web.UI.WebControls.WebParts.WebPartConnection>、 <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint>、および[Web パーツ接続の概要](http://msdn.microsoft.com/library/d98cfd0f-ebd6-4871-89d5-abbd2cdef67b)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

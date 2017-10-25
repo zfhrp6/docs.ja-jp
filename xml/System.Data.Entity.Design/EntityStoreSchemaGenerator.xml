@@ -1,0 +1,265 @@
+<Type Name="EntityStoreSchemaGenerator" FullName="System.Data.Entity.Design.EntityStoreSchemaGenerator">
+  <TypeSignature Language="C#" Value="public sealed class EntityStoreSchemaGenerator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EntityStoreSchemaGenerator extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Entity.Design.EntityStoreSchemaGenerator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データベース スキーマ情報の読み込みを担当します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ここのコンテンツは更新されません。ここに資料を追加しないでください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EntityStoreSchemaGenerator (string providerInvariantName, string connectionString, string namespaceName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string providerInvariantName, string connectionString, string namespaceName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.EntityStoreSchemaGenerator.#ctor(System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="providerInvariantName" Type="System.String" />
+        <Parameter Name="connectionString" Type="System.String" />
+        <Parameter Name="namespaceName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="providerInvariantName">プロバイダーの不変名。</param>
+        <param name="connectionString">データベースを開くために使用される接続。</param>
+        <param name="namespaceName">ストア スキーマ定義言語 (SSDL) の名前空間の名前。</param>
+        <summary><see cref="T:System.Data.Entity.Design.EntityStoreSchemaGenerator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateStoreSchemaConnection">
+      <MemberSignature Language="C#" Value="public static System.Data.EntityClient.EntityConnection CreateStoreSchemaConnection (string providerInvariantName, string connectionString);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.EntityClient.EntityConnection CreateStoreSchemaConnection(string providerInvariantName, string connectionString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.EntityStoreSchemaGenerator.CreateStoreSchemaConnection(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.EntityClient.EntityConnection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="providerInvariantName" Type="System.String" />
+        <Parameter Name="connectionString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="providerInvariantName">プロバイダーの不変名。</param>
+        <param name="connectionString">プロバイダー接続の接続です。</param>
+        <summary>プロバイダー メタデータ ストアのスキーマを読み込む、EntityConnection を作成します。</summary>
+        <returns>プロバイダーの照会、ConceptualSchemaDefinition できる EntityConnection です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateStoreSchemaConnection">
+      <MemberSignature Language="C#" Value="public static System.Data.EntityClient.EntityConnection CreateStoreSchemaConnection (string providerInvariantName, string connectionString, Version targetEntityFrameworkVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.EntityClient.EntityConnection CreateStoreSchemaConnection(string providerInvariantName, string connectionString, class System.Version targetEntityFrameworkVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.EntityStoreSchemaGenerator.CreateStoreSchemaConnection(System.String,System.String,System.Version)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.EntityClient.EntityConnection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="providerInvariantName" Type="System.String" />
+        <Parameter Name="connectionString" Type="System.String" />
+        <Parameter Name="targetEntityFrameworkVersion" Type="System.Version" />
+      </Parameters>
+      <Docs>
+        <param name="providerInvariantName">プロバイダーの不変名。</param>
+        <param name="connectionString">プロバイダー接続の接続です。</param>
+        <param name="targetEntityFrameworkVersion">対象となっている、内部 Entity Framework バージョンです。</param>
+        <summary>プロバイダー メタデータ ストアのスキーマを読み込む、EntityConnection を作成します。 TargetEntityFrameworkVersion パラメーターを使用して内部 EntityFramework バージョン番号」の説明に従って、<see cref="T:System.Data.Entity.Design.EntityFrameworkVersions" />クラスです。</summary>
+        <returns>プロバイダーの照会、ConceptualSchemaDefinition できる EntityConnection です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EntityContainer">
+      <MemberSignature Language="C#" Value="public System.Data.Metadata.Edm.EntityContainer EntityContainer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Metadata.Edm.EntityContainer EntityContainer" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Entity.Design.EntityStoreSchemaGenerator.EntityContainer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.EntityContainer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ストレージ モデルが作成された EntityContainer を取得します。</summary>
+        <value>ストレージ モデルが作成された EntityContainer です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateForeignKeyProperties">
+      <MemberSignature Language="C#" Value="public bool GenerateForeignKeyProperties { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool GenerateForeignKeyProperties" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Entity.Design.EntityStoreSchemaGenerator.GenerateForeignKeyProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはストレージ モデルに外部キーのプロパティを生成するためのフラグを設定します。</summary>
+        <value>
+          <see langword="True" />ストレージ モデルの外部キー プロパティが生成される場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateStoreMetadata">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Data.Metadata.Edm.EdmSchemaError&gt; GenerateStoreMetadata ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IList`1&lt;class System.Data.Metadata.Edm.EdmSchemaError&gt; GenerateStoreMetadata() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.EntityStoreSchemaGenerator.GenerateStoreMetadata" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Data.Metadata.Edm.EdmSchemaError&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ストア メタデータを生成し、すべてのスキーマ エラーを返します。</summary>
+        <returns>エラーのスキーマ オブジェクトのコレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateStoreMetadata">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Data.Metadata.Edm.EdmSchemaError&gt; GenerateStoreMetadata (System.Collections.Generic.IEnumerable&lt;System.Data.Entity.Design.EntityStoreSchemaFilterEntry&gt; filters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IList`1&lt;class System.Data.Metadata.Edm.EdmSchemaError&gt; GenerateStoreMetadata(class System.Collections.Generic.IEnumerable`1&lt;class System.Data.Entity.Design.EntityStoreSchemaFilterEntry&gt; filters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.EntityStoreSchemaGenerator.GenerateStoreMetadata(System.Collections.Generic.IEnumerable{System.Data.Entity.Design.EntityStoreSchemaFilterEntry})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Data.Metadata.Edm.EdmSchemaError&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filters" Type="System.Collections.Generic.IEnumerable&lt;System.Data.Entity.Design.EntityStoreSchemaFilterEntry&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="filters">データベースを許可するか、生成中に除外するオブジェクトを指定する EntityStoreSchemaFilterEntry です。</param>
+        <summary>ストア メタデータを生成し、すべてのスキーマ エラーを返します。</summary>
+        <returns>エラーのスキーマ オブジェクトのコレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateStoreMetadata">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Data.Metadata.Edm.EdmSchemaError&gt; GenerateStoreMetadata (System.Collections.Generic.IEnumerable&lt;System.Data.Entity.Design.EntityStoreSchemaFilterEntry&gt; filters, Version targetEntityFrameworkVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IList`1&lt;class System.Data.Metadata.Edm.EdmSchemaError&gt; GenerateStoreMetadata(class System.Collections.Generic.IEnumerable`1&lt;class System.Data.Entity.Design.EntityStoreSchemaFilterEntry&gt; filters, class System.Version targetEntityFrameworkVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.EntityStoreSchemaGenerator.GenerateStoreMetadata(System.Collections.Generic.IEnumerable{System.Data.Entity.Design.EntityStoreSchemaFilterEntry},System.Version)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Data.Metadata.Edm.EdmSchemaError&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filters" Type="System.Collections.Generic.IEnumerable&lt;System.Data.Entity.Design.EntityStoreSchemaFilterEntry&gt;" />
+        <Parameter Name="targetEntityFrameworkVersion" Type="System.Version" />
+      </Parameters>
+      <Docs>
+        <param name="filters">データベースを許可するか、生成中に除外するオブジェクトを指定する EntityStoreSchemaFilterEntry です。</param>
+        <param name="targetEntityFrameworkVersion">Entity Framework の対象とするバージョンに対応する EntityFrameworkVersions のプロパティです。</param>
+        <summary>ストア スキーマ定義言語 (SSDL) を生成し、すべてのスキーマ エラーを返します。</summary>
+        <returns>エラーのスキーマ オブジェクトのコレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StoreItemCollection">
+      <MemberSignature Language="C#" Value="public System.Data.Metadata.Edm.StoreItemCollection StoreItemCollection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Metadata.Edm.StoreItemCollection StoreItemCollection" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Entity.Design.EntityStoreSchemaGenerator.StoreItemCollection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.StoreItemCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>作成された StoreItemCollection を取得します。</summary>
+        <value>作成された <see cref="T:System.Data.Metadata.Edm.StoreItemCollection" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteStoreSchema">
+      <MemberSignature Language="C#" Value="public void WriteStoreSchema (string outputFileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteStoreSchema(string outputFileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.EntityStoreSchemaGenerator.WriteStoreSchema(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="outputFileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="outputFileName">出力ファイルの名前。</param>
+        <summary>生成されたストア スキーマ定義言語 (SSDL) をファイルに書き込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteStoreSchema">
+      <MemberSignature Language="C#" Value="public void WriteStoreSchema (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteStoreSchema(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.EntityStoreSchemaGenerator.WriteStoreSchema(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">SSDL の書き込み先となる XmlWriter。</param>
+        <summary>XmlWriter オブジェクトを生成されたストア スキーマ定義言語 (SSDL) を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

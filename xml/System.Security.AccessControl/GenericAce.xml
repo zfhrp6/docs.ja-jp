@@ -1,0 +1,414 @@
+<Type Name="GenericAce" FullName="System.Security.AccessControl.GenericAce">
+  <TypeSignature Language="C#" Value="public abstract class GenericAce" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit GenericAce extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.AccessControl.GenericAce" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security.AccessControl</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アクセス制御エントリ (ACE) を表し、他のすべての ACE クラスの基本クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ACE には、ACE ヘッダーとバイナリの blob の両方が含まれています。 ヘッダーには、ACE、さまざまなフラグ、およびバイナリの blob のサイズの型に関する情報が含まれています。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AceFlags">
+      <MemberSignature Language="C#" Value="public System.Security.AccessControl.AceFlags AceFlags { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.AccessControl.AceFlags AceFlags" />
+      <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.GenericAce.AceFlags" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.AceFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Security.AccessControl.AceFlags" />これに関連付けられている<see cref="T:System.Security.AccessControl.GenericAce" />オブジェクト。</summary>
+        <value><see cref="T:System.Security.AccessControl.AceFlags" />これに関連付けられている<see cref="T:System.Security.AccessControl.GenericAce" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.AccessControl.AceFlags>オブジェクトの継承、継承の反映、に関する情報を指定するフラグを格納およびアクセス制御エントリ (ACE) の条件を監査します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AceType">
+      <MemberSignature Language="C#" Value="public System.Security.AccessControl.AceType AceType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.AccessControl.AceType AceType" />
+      <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.GenericAce.AceType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.AceType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアクセス制御エントリ (ACE) の型を取得します。</summary>
+        <value>この ACE の型。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuditFlags">
+      <MemberSignature Language="C#" Value="public System.Security.AccessControl.AuditFlags AuditFlags { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.AccessControl.AuditFlags AuditFlags" />
+      <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.GenericAce.AuditFlags" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.AuditFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアクセス制御エントリ (ACE) と関連付けられている監査情報を取得します。</summary>
+        <value>このアクセス制御エントリ (ACE) と関連付けられている監査情報。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BinaryLength">
+      <MemberSignature Language="C#" Value="public abstract int BinaryLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 BinaryLength" />
+      <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.GenericAce.BinaryLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.Security.AccessControl.GenericAce" /> オブジェクトのバイナリ表現の長さ (バイト単位) を取得します。 <see cref="M:System.Security.AccessControl.GenericAce.GetBinaryForm(System.Byte[],System.Int32)" /> メソッドを使用して ACL をバイナリ配列にマーシャリングする前に、この長さを使用する必要があります。</summary>
+        <value>現在の <see cref="T:System.Security.AccessControl.GenericAce" /> オブジェクトのバイナリ表現の長さ (バイト単位)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Copy">
+      <MemberSignature Language="C#" Value="public System.Security.AccessControl.GenericAce Copy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.AccessControl.GenericAce Copy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.GenericAce.Copy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.GenericAce</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このアクセス制御エントリ (ACE) の詳細コピーを作成します。</summary>
+        <returns>このメソッドが作成する <see cref="T:System.Security.AccessControl.GenericAce" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromBinaryForm">
+      <MemberSignature Language="C#" Value="public static System.Security.AccessControl.GenericAce CreateFromBinaryForm (byte[] binaryForm, int offset);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.AccessControl.GenericAce CreateFromBinaryForm(unsigned int8[] binaryForm, int32 offset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.GenericAce.CreateFromBinaryForm(System.Byte[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.GenericAce</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="binaryForm" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="binaryForm">新しい作成元のバイナリ データ<see cref="T:System.Security.AccessControl.GenericAce" />オブジェクト。</param>
+        <param name="offset">マーシャ リング解除を開始するオフセットです。</param>
+        <summary>作成、<see cref="T:System.Security.AccessControl.GenericAce" />指定されたバイナリ データからのオブジェクト。</summary>
+        <returns>このメソッドが作成する <see cref="T:System.Security.AccessControl.GenericAce" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override sealed bool Equals (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.GenericAce.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o"><see cref="T:System.Security.AccessControl.GenericAce" />現在と比較するオブジェクト<see cref="T:System.Security.AccessControl.GenericAce" />オブジェクト。</param>
+        <summary>決定するかどうか、指定した<see cref="T:System.Security.AccessControl.GenericAce" />オブジェクトが現在<see cref="T:System.Security.AccessControl.GenericAce" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />場合、指定した<see cref="T:System.Security.AccessControl.GenericAce" />オブジェクトが現在<see cref="T:System.Security.AccessControl.GenericAce" />オブジェクト。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBinaryForm">
+      <MemberSignature Language="C#" Value="public abstract void GetBinaryForm (byte[] binaryForm, int offset);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetBinaryForm(unsigned int8[] binaryForm, int32 offset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.GenericAce.GetBinaryForm(System.Byte[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="binaryForm" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="binaryForm"><see cref="T:System.Security.AccessControl.GenericAce" /> のコンテンツのマーシャリング先のバイト配列。</param>
+        <param name="offset">マーシャリングの開始位置を表すオフセット。</param>
+        <summary><see cref="T:System.Security.AccessControl.GenericAce" /> オブジェクトのコンテンツを、指定したオフセットを開始位置として、指定したバイト配列にマーシャリングします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="offset" /> は負の値であるか、または <see cref="T:System.Security.AccessControl.GenericAcl" /> 全体を <paramref name="array" /> にコピーするには大きすぎる値です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override sealed int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.GenericAce.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ハッシュ関数として機能、<see cref="T:System.Security.AccessControl.GenericAce" />クラスです。 <see cref="M:System.Security.AccessControl.GenericAce.GetHashCode" />メソッドは、ハッシュ、ハッシュ テーブルなどのアルゴリズムとデータ構造での使用に適しています。</summary>
+        <returns>現在の <see cref="T:System.Security.AccessControl.GenericAce" /> オブジェクトのハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InheritanceFlags">
+      <MemberSignature Language="C#" Value="public System.Security.AccessControl.InheritanceFlags InheritanceFlags { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.AccessControl.InheritanceFlags InheritanceFlags" />
+      <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.GenericAce.InheritanceFlags" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.InheritanceFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアクセス制御エントリ (ACE) の継承プロパティを指定するフラグを取得します。</summary>
+        <value>この ACE の継承プロパティを指定するフラグ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInherited">
+      <MemberSignature Language="C#" Value="public bool IsInherited { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsInherited" />
+      <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.GenericAce.IsInherited" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアクセス制御エントリ (ACE) が継承または明示的に設定されているかどうかを指定するブール値を取得します。</summary>
+        <value>
+          <see langword="true" />この ACE が継承されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Security.AccessControl.GenericAce left, System.Security.AccessControl.GenericAce right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(class System.Security.AccessControl.GenericAce left, class System.Security.AccessControl.GenericAce right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.GenericAce.op_Equality(System.Security.AccessControl.GenericAce,System.Security.AccessControl.GenericAce)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Security.AccessControl.GenericAce" />
+        <Parameter Name="right" Type="System.Security.AccessControl.GenericAce" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較する最初の <see cref="T:System.Security.AccessControl.GenericAce" /> オブジェクト。</param>
+        <param name="right">比較対象となる 2 番目の <see cref="T:System.Security.AccessControl.GenericAce" />。</param>
+        <summary>決定するかどうか、指定した<see cref="T:System.Security.AccessControl.GenericAce" />オブジェクトが等しいと見なされます。</summary>
+        <returns>
+          2 つの <see cref="T:System.Security.AccessControl.GenericAce" /> オブジェクトが等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は<xref:System.Security.AccessControl.GenericAce.Equals%2A?displayProperty=nameWithType>します。]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Security.AccessControl.GenericAce left, System.Security.AccessControl.GenericAce right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(class System.Security.AccessControl.GenericAce left, class System.Security.AccessControl.GenericAce right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.GenericAce.op_Inequality(System.Security.AccessControl.GenericAce,System.Security.AccessControl.GenericAce)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Security.AccessControl.GenericAce" />
+        <Parameter Name="right" Type="System.Security.AccessControl.GenericAce" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較する最初の <see cref="T:System.Security.AccessControl.GenericAce" /> オブジェクト。</param>
+        <param name="right">比較対象となる 2 番目の <see cref="T:System.Security.AccessControl.GenericAce" />。</param>
+        <summary>決定するかどうか、指定した<see cref="T:System.Security.AccessControl.GenericAce" />オブジェクトが等しくないと見なされます。</summary>
+        <returns>
+          <see langword="true" />場合、2 つ<see cref="T:System.Security.AccessControl.GenericAce" />オブジェクトが等しくない、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は<xref:System.Security.AccessControl.GenericAce.Equals%2A?displayProperty=nameWithType>します。]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropagationFlags">
+      <MemberSignature Language="C#" Value="public System.Security.AccessControl.PropagationFlags PropagationFlags { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.AccessControl.PropagationFlags PropagationFlags" />
+      <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.GenericAce.PropagationFlags" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.PropagationFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアクセス制御エントリ (ACE) の継承の反映プロパティを指定するフラグを取得します。</summary>
+        <value>この ACE の継承の反映プロパティを指定するフラグ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

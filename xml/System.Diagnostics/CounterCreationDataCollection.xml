@@ -1,0 +1,440 @@
+<Type Name="CounterCreationDataCollection" FullName="System.Diagnostics.CounterCreationDataCollection">
+  <TypeSignature Language="C#" Value="public class CounterCreationDataCollection : System.Collections.CollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CounterCreationDataCollection extends System.Collections.CollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.CounterCreationDataCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.CollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>厳密に型指定された <see cref="T:System.Diagnostics.CounterCreationData" /> オブジェクトのコレクションを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Diagnostics.CounterCreationDataCollection> クラスを使用する方法を次の例に示します。 例では、クラスの新しいインスタンスを作成使用して、いくつかの方法ステートメント、コレクションに追加、インデックスを返すと追加または特定のインデックス位置にある属性を削除します。  
+  
+ [!code-cpp[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/cpp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CPP/averagecount32.cpp#1)]
+ [!code-csharp[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/csharp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CS/averagecount32.cs#1)]
+ [!code-vb[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/VB/averagecount32.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CounterCreationDataCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CounterCreationDataCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>関連する <see cref="T:System.Diagnostics.CounterCreationData" /> インスタンスを指定せずに <see cref="T:System.Diagnostics.CounterCreationDataCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CounterCreationDataCollection (System.Diagnostics.CounterCreationData[] value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Diagnostics.CounterCreationData[] value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CounterCreationDataCollection.#ctor(System.Diagnostics.CounterCreationData[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Diagnostics.CounterCreationData[]" />
+      </Parameters>
+      <Docs>
+        <param name="value">配列<see cref="T:System.Diagnostics.CounterCreationData" />インスタンスをこのを初期化する<see cref="T:System.Diagnostics.CounterCreationDataCollection" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.CounterCreationDataCollection" />の指定した配列を使用してクラス<see cref="T:System.Diagnostics.CounterCreationData" />インスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で作成する方法、<xref:System.Diagnostics.CounterCreationDataCollection>オブジェクトを使用して、<xref:System.Diagnostics.CounterCreationData>配列。  
+  
+ [!code-cpp[CounterCreationDataCollection_CounterCreationData#1](~/samples/snippets/cpp/VS_Snippets_CLR/CounterCreationDataCollection_CounterCreationData/CPP/countercreationdatacollection_ctor.cpp#1)]
+ [!code-csharp[CounterCreationDataCollection_CounterCreationData#1](~/samples/snippets/csharp/VS_Snippets_CLR/CounterCreationDataCollection_CounterCreationData/CS/countercreationdatacollection_ctor.cs#1)]
+ [!code-vb[CounterCreationDataCollection_CounterCreationData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CounterCreationDataCollection_CounterCreationData/VB/countercreationdatacollection_ctor.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CounterCreationDataCollection (System.Diagnostics.CounterCreationDataCollection value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Diagnostics.CounterCreationDataCollection value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CounterCreationDataCollection.#ctor(System.Diagnostics.CounterCreationDataCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Diagnostics.CounterCreationDataCollection" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.Diagnostics.CounterCreationDataCollection" />を保持する<see cref="T:System.Diagnostics.CounterCreationData" />インスタンスをこのを初期化する<see cref="T:System.Diagnostics.CounterCreationDataCollection" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.CounterCreationDataCollection" />の指定したコレクションを使用してクラス<see cref="T:System.Diagnostics.CounterCreationData" />インスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で作成する方法、<xref:System.Diagnostics.CounterCreationDataCollection>オブジェクトを使用して<xref:System.Diagnostics.CounterCreationData>から別のオブジェクト<xref:System.Diagnostics.CounterCreationDataCollection>です。  
+  
+ [!code-cpp[CounterCreationDataCollection_CounterCreationDataCollection#1](~/samples/snippets/cpp/VS_Snippets_CLR/CounterCreationDataCollection_CounterCreationDataCollection/CPP/countercreationdatacollection_ctor.cpp#1)]
+ [!code-csharp[CounterCreationDataCollection_CounterCreationDataCollection#1](~/samples/snippets/csharp/VS_Snippets_CLR/CounterCreationDataCollection_CounterCreationDataCollection/CS/countercreationdatacollection_ctor_countercreationdatacollection.cs#1)]
+ [!code-vb[CounterCreationDataCollection_CounterCreationDataCollection#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CounterCreationDataCollection_CounterCreationDataCollection/VB/countercreationdatacollection_ctor.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (System.Diagnostics.CounterCreationData value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Add(class System.Diagnostics.CounterCreationData value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CounterCreationDataCollection.Add(System.Diagnostics.CounterCreationData)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Diagnostics.CounterCreationData" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.Diagnostics.CounterCreationData" />既存のコレクションに追加するオブジェクト。</param>
+        <summary>インスタンスを追加、<see cref="T:System.Diagnostics.CounterCreationData" />コレクション クラスです。</summary>
+        <returns>新しい <see cref="T:System.Diagnostics.CounterCreationData" /> オブジェクトのインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Diagnostics.CounterCreationDataCollection.Add%2A>を追加するメソッド、<xref:System.Diagnostics.CounterCreationData>オブジェクトを<xref:System.Diagnostics.CounterCreationDataCollection>です。  
+  
+ [!code-cpp[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/cpp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CPP/averagecount32.cpp#1)]
+ [!code-csharp[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/csharp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CS/averagecount32.cs#1)]
+ [!code-vb[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/VB/averagecount32.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="value" /> は <see cref="T:System.Diagnostics.CounterCreationData" /> オブジェクトではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (System.Diagnostics.CounterCreationData[] value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(class System.Diagnostics.CounterCreationData[] value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CounterCreationDataCollection.AddRange(System.Diagnostics.CounterCreationData[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Diagnostics.CounterCreationData[]" />
+      </Parameters>
+      <Docs>
+        <param name="value">配列<see cref="T:System.Diagnostics.CounterCreationData" />既存コレクションに追加するインスタンス。</param>
+        <summary>指定した配列を追加<see cref="T:System.Diagnostics.CounterCreationData" />コレクションへのインスタンス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (System.Diagnostics.CounterCreationDataCollection value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(class System.Diagnostics.CounterCreationDataCollection value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CounterCreationDataCollection.AddRange(System.Diagnostics.CounterCreationDataCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Diagnostics.CounterCreationDataCollection" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクション<see cref="T:System.Diagnostics.CounterCreationData" />既存コレクションに追加するインスタンス。</param>
+        <summary>指定されたコレクションの追加<see cref="T:System.Diagnostics.CounterCreationData" />コレクションへのインスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Diagnostics.CounterCreationDataCollection.AddRange%28System.Diagnostics.CounterCreationDataCollection%29>メソッドのオーバー ロードを追加する<xref:System.Diagnostics.CounterCreationData>から 1 つのオブジェクト<xref:System.Diagnostics.CounterCreationDataCollection>別<xref:System.Diagnostics.CounterCreationDataCollection>です。  
+  
+ [!code-cpp[CounterCreationDataCollection_AddRange#2](~/samples/snippets/cpp/VS_Snippets_CLR/CounterCreationDataCollection_AddRange/CPP/countercreationdatacollection_addrange.cpp#2)]
+ [!code-csharp[CounterCreationDataCollection_AddRange#2](~/samples/snippets/csharp/VS_Snippets_CLR/CounterCreationDataCollection_AddRange/CS/countercreationdatacollection_addrange.cs#2)]
+ [!code-vb[CounterCreationDataCollection_AddRange#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/CounterCreationDataCollection_AddRange/VB/countercreationdatacollection_addrange.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Diagnostics.CounterCreationData value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Diagnostics.CounterCreationData value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CounterCreationDataCollection.Contains(System.Diagnostics.CounterCreationData)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Diagnostics.CounterCreationData" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Diagnostics.CounterCreationData" />コレクションで検索するオブジェクト。</param>
+        <summary>決定するかどうか、<see cref="T:System.Diagnostics.CounterCreationData" />インスタンスがコレクション内に存在します。</summary>
+        <returns>
+          <see langword="true" />場合、指定した<see cref="T:System.Diagnostics.CounterCreationData" />オブジェクト コレクションに存在するそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Diagnostics.CounterCreationDataCollection.Contains%2A>を検索するメソッド、<xref:System.Diagnostics.CounterCreationData>内のオブジェクト、<xref:System.Diagnostics.CounterCreationDataCollection>です。  
+  
+ [!code-cpp[CounterCreationDataCollection_Contains#1](~/samples/snippets/cpp/VS_Snippets_CLR/CounterCreationDataCollection_Contains/CPP/countercreationdatacollection_contains.cpp#1)]
+ [!code-csharp[CounterCreationDataCollection_Contains#1](~/samples/snippets/csharp/VS_Snippets_CLR/CounterCreationDataCollection_Contains/CS/countercreationdatacollection_contains.cs#1)]
+ [!code-vb[CounterCreationDataCollection_Contains#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CounterCreationDataCollection_Contains/VB/countercreationdatacollection_contains.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Diagnostics.CounterCreationData[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Diagnostics.CounterCreationData[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CounterCreationDataCollection.CopyTo(System.Diagnostics.CounterCreationData[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Diagnostics.CounterCreationData[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">コレクションに追加する <see cref="T:System.Diagnostics.CounterCreationData" /> インスタンスの配列。</param>
+        <param name="index">新しいインスタンスを追加する位置。</param>
+        <summary>要素をコピー、<see cref="T:System.Diagnostics.CounterCreationData" />配列、配列の指定したインデックス位置。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">内の要素の数、<see cref="T:System.Diagnostics.CounterCreationDataCollection" />から使用可能な領域より大きくなって<paramref name="index" />コピー先の配列の末尾にします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Diagnostics.CounterCreationData value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Diagnostics.CounterCreationData value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CounterCreationDataCollection.IndexOf(System.Diagnostics.CounterCreationData)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Diagnostics.CounterCreationData" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Diagnostics.CounterCreationData" />コレクション内で検索するオブジェクト。</param>
+        <summary>インデックスを返します、<see cref="T:System.Diagnostics.CounterCreationData" />コレクション内のオブジェクト。</summary>
+        <returns>指定した 0 から始まるインデックス<see cref="T:System.Diagnostics.CounterCreationData" />見つかった場合は、コレクションに、それ以外の場合、-1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では取得<xref:System.Diagnostics.CounterCreationData>エントリから、<xref:System.Diagnostics.CounterCreationDataCollection>を使用して、<xref:System.Diagnostics.CounterCreationDataCollection.IndexOf%2A>し、名前とインデックスを表示するメソッド。  
+  
+ [!code-cpp[CounterCreationDataCollection_Insert_IndexOf#1](~/samples/snippets/cpp/VS_Snippets_CLR/CounterCreationDataCollection_Insert_IndexOf/CPP/countercreationdatacollection_insert_indexof.cpp#1)]
+ [!code-csharp[CounterCreationDataCollection_Insert_IndexOf#1](~/samples/snippets/csharp/VS_Snippets_CLR/CounterCreationDataCollection_Insert_IndexOf/CS/countercreationdatacollection_insert_indexof.cs#1)]
+ [!code-vb[CounterCreationDataCollection_Insert_IndexOf#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CounterCreationDataCollection_Insert_IndexOf/VB/countercreationdatacollection_insert_indexof.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.Diagnostics.CounterCreationData value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.Diagnostics.CounterCreationData value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CounterCreationDataCollection.Insert(System.Int32,System.Diagnostics.CounterCreationData)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Diagnostics.CounterCreationData" />
+      </Parameters>
+      <Docs>
+        <param name="index">位置の 0 から始まるインデックス、<see cref="T:System.Diagnostics.CounterCreationData" />を挿入します。</param>
+        <param name="value"><see cref="T:System.Diagnostics.CounterCreationData" />コレクションに挿入します。</param>
+        <summary>挿入、<see cref="T:System.Diagnostics.CounterCreationData" />オブジェクトを指定したインデックス位置のコレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Diagnostics.CounterCreationDataCollection.Insert%2A>を挿入する方法、<xref:System.Diagnostics.CounterCreationData>オブジェクトに、<xref:System.Diagnostics.CounterCreationDataCollection>です。  
+  
+ [!code-cpp[CounterCreationDataCollection_Insert_IndexOf#1](~/samples/snippets/cpp/VS_Snippets_CLR/CounterCreationDataCollection_Insert_IndexOf/CPP/countercreationdatacollection_insert_indexof.cpp#1)]
+ [!code-csharp[CounterCreationDataCollection_Insert_IndexOf#1](~/samples/snippets/csharp/VS_Snippets_CLR/CounterCreationDataCollection_Insert_IndexOf/CS/countercreationdatacollection_insert_indexof.cs#1)]
+ [!code-vb[CounterCreationDataCollection_Insert_IndexOf#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CounterCreationDataCollection_Insert_IndexOf/VB/countercreationdatacollection_insert_indexof.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="value" /> は <see cref="T:System.Diagnostics.CounterCreationData" /> オブジェクトではありません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="index" />コレクション内の項目の数を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Diagnostics.CounterCreationData this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Diagnostics.CounterCreationData Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.CounterCreationDataCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.CounterCreationData</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス、<see cref="T:System.Diagnostics.CounterCreationDataCollection" />です。</param>
+        <summary>インデックス、<see cref="T:System.Diagnostics.CounterCreationData" />コレクション。</summary>
+        <value>コレクションの個々 の要素へのアクセスに使用されるコレクションのインデックス。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="index" />コレクション内で項目の数以上になるとは、します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnValidate">
+      <MemberSignature Language="C#" Value="protected override void OnValidate (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnValidate(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CounterCreationDataCollection.OnValidate(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">検証されるオブジェクト。</param>
+        <summary>有効かどうかを指定したオブジェクトを調べます<see cref="T:System.Diagnostics.CounterCreationData" />型です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.CounterCreationDataCollection.OnValidate%2A>メソッドで指定されたオブジェクトであるかどうかを決定する、`value`パラメーターは、<xref:System.Diagnostics.CounterCreationData>インスタンス。 スローしない場合、<xref:System.ArgumentException>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="value" /> は <see cref="T:System.Diagnostics.CounterCreationData" /> オブジェクトではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public virtual void Remove (System.Diagnostics.CounterCreationData value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Remove(class System.Diagnostics.CounterCreationData value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CounterCreationDataCollection.Remove(System.Diagnostics.CounterCreationData)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Diagnostics.CounterCreationData" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクションから削除する <see cref="T:System.Diagnostics.CounterCreationData" />。</param>
+        <summary>削除、<see cref="T:System.Diagnostics.CounterCreationData" />オブジェクトをコレクションからです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Diagnostics.CounterCreationDataCollection.Remove%2A>を削除する方法、<xref:System.Diagnostics.CounterCreationData>オブジェクトから、<xref:System.Diagnostics.CounterCreationDataCollection>です。  
+  
+ [!code-cpp[CounterCreationDataCollection_Contains#2](~/samples/snippets/cpp/VS_Snippets_CLR/CounterCreationDataCollection_Contains/CPP/countercreationdatacollection_contains.cpp#2)]
+ [!code-csharp[CounterCreationDataCollection_Contains#2](~/samples/snippets/csharp/VS_Snippets_CLR/CounterCreationDataCollection_Contains/CS/countercreationdatacollection_contains.cs#2)]
+ [!code-vb[CounterCreationDataCollection_Contains#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/CounterCreationDataCollection_Contains/VB/countercreationdatacollection_contains.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="value" /> は <see cref="T:System.Diagnostics.CounterCreationData" /> オブジェクトではありません。  
+  
+ または  
+  
+ <paramref name="value" />コレクションに存在しません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

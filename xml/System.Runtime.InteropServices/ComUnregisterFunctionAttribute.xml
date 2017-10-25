@@ -1,0 +1,80 @@
+<Type Name="ComUnregisterFunctionAttribute" FullName="System.Runtime.InteropServices.ComUnregisterFunctionAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ComUnregisterFunctionAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ComUnregisterFunctionAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.ComUnregisterFunctionAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Com で使用するアセンブリの登録を解除するときに呼び出すメソッドを指定しますこれにより、登録解除処理中にユーザーが作成したコードの実行。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドには、この属性を適用することができます。  
+  
+ <xref:System.Runtime.InteropServices.ComUnregisterFunctionAttribute>登録の方法で実行される操作を反転するコードを追加できます。 適用する場合、<xref:System.Runtime.InteropServices.ComRegisterFunctionAttribute>登録メソッドを提供するには、登録の方法で行う操作を取り消すの登録解除メソッドもに提供する必要があります。 クラスの 1 つだけの登録解除メソッドを持つことができます。  
+  
+ 共通言語ランタイムは、含んでいるアセンブリが登録解除 (直接または間接的に) 使用時にこの属性を持つメソッドを呼び出します、 [Regasm.exe (アセンブリ登録ツール)](~/docs/framework/tools/regasm-exe-assembly-registration-tool.md)により、または、 <xref:System.Runtime.InteropServices.RegistrationServices.UnregisterAssembly%2A?displayProperty=nameWithType> API メソッドです。 この属性を持つメソッドがある必要があります (パブリック、プライベート、およびなど)、ですが、可視性を持つことができます`static`し、1 つを実行する必要があります<xref:System.Type>のパラメーター、<xref:System.Type>の登録を解除します。  
+  
+   
+  
+## Examples  
+ 次の例では、適用することを示します<xref:System.Runtime.InteropServices.ComRegisterFunctionAttribute>と<xref:System.Runtime.InteropServices.ComUnregisterFunctionAttribute>適切なシグネチャを持つメソッドにします。  
+  
+ [!code-cpp[Classic ComRegisterFunctionAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic ComRegisterFunctionAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ComRegisterFunctionAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic ComRegisterFunctionAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic ComRegisterFunctionAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic ComRegisterFunctionAttribute Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ComUnregisterFunctionAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ComUnregisterFunctionAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.InteropServices.ComUnregisterFunctionAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

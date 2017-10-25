@@ -1,0 +1,218 @@
+<Type Name="RuleValidation" FullName="System.Workflow.Activities.Rules.RuleValidation">
+  <TypeSignature Language="C#" Value="public class RuleValidation" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RuleValidation extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Activities.Rules.RuleValidation" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>式の条件が、意味のある適切なものであるかどうかを検証します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードでは、評価しようとしても結果が得られない、無効な条件を作成しています。 これを検証するとエラーが表示されます。  
+  
+```csharp  
+// Create an invalid condition ("abc" < true).  
+CodeBinaryOperatorExpression invalidCompare = new CodeBinaryOperatorExpression();  
+invalidCompare.Left = new CodePrimitiveExpression("abc");  
+invalidCompare.Operator = CodeBinaryOperatorType.LessThan;  
+invalidCompare.Right = new CodePrimitiveExpression(true);  
+RuleExpressionCondition condition = new RuleExpressionCondition();  
+condition.Expression = invalidCompare;  
+  
+// Create a validator for this condition.  
+// We are not using "this" in the condition, so the type is not used.  
+RuleValidation validation = new RuleValidation(this.GetType(), null);  
+  
+// See whether the condition validates.  
+if (!condition.Validate(validation))  
+{  
+    // There were errors, so display them.  
+    foreach (ValidationError error in validation.Errors)  
+    {  
+        Console.WriteLine(error.ErrorText);  
+    }  
+}  
+  
+```  
+  
+ このコードを実行すると、次のエラーが発生します。  
+  
+```  
+Relational operator "LessThan" cannot be used on operands of types "string" and "bool".  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RuleValidation (Type thisType, System.Workflow.ComponentModel.Compiler.ITypeProvider typeProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type thisType, class System.Workflow.ComponentModel.Compiler.ITypeProvider typeProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.RuleValidation.#ctor(System.Type,System.Workflow.ComponentModel.Compiler.ITypeProvider)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="thisType" Type="System.Type" />
+        <Parameter Name="typeProvider" Type="System.Workflow.ComponentModel.Compiler.ITypeProvider" />
+      </Parameters>
+      <Docs>
+        <param name="thisType">この <see cref="T:System.Workflow.Activities.Rules.RuleCondition" /> または <see cref="T:System.Workflow.Activities.Rules.RuleSet" /> が実行の対象とするオブジェクトの型。 通常はワークフローですが、有効な型であればこれ以外でもかまいません。</param>
+        <param name="typeProvider">この条件で使用可能な <see cref="T:System.Workflow.ComponentModel.Compiler.ITypeProvider" /> を判定するための省略可能な <see cref="T:System.Type" /> の実装。 省略すると、このアクティビティによって指定されたアセンブリ内の型と、その型が参照するアセンブリだけが使用可能になります。</param>
+        <summary><see cref="T:System.Workflow.Activities.Rules.RuleValidation" /> クラスの新しいインスタンスを初期化します。<see cref="T:System.Type" /> の <see cref="T:System.Workflow.Activities.Rules.Rule" /> を引数として渡します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="thisType" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RuleValidation (System.Workflow.ComponentModel.Activity activity, System.Workflow.ComponentModel.Compiler.ITypeProvider typeProvider, bool checkStaticType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Workflow.ComponentModel.Activity activity, class System.Workflow.ComponentModel.Compiler.ITypeProvider typeProvider, bool checkStaticType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.RuleValidation.#ctor(System.Workflow.ComponentModel.Activity,System.Workflow.ComponentModel.Compiler.ITypeProvider,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="activity" Type="System.Workflow.ComponentModel.Activity" />
+        <Parameter Name="typeProvider" Type="System.Workflow.ComponentModel.Compiler.ITypeProvider" />
+        <Parameter Name="checkStaticType" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="activity"><see cref="T:System.Workflow.ComponentModel.Activity" /> または <see cref="T:System.Workflow.Activities.Rules.RuleCondition" /> の実行コンテキストを表す <see cref="T:System.Workflow.Activities.Rules.RuleSet" />。 ほとんどの場合、ワークフロー オブジェクトです。</param>
+        <param name="typeProvider">この条件で使用可能な <see cref="T:System.Workflow.ComponentModel.Compiler.ITypeProvider" /> を判定するための省略可能な <see cref="T:System.Type" /> の実装。 省略すると、このアクティビティによって指定されたアセンブリ内の型と、その型が参照するアセンブリだけが使用可能になります。</param>
+        <param name="checkStaticType"><see langword="true" /> であれば、このオブジェクトで検証する <see cref="T:System.Workflow.Activities.Rules.RuleCondition" /> または <see cref="T:System.Workflow.Activities.Rules.RuleSet" /> で使う型は、所定のリストに載っているものに限られます。</param>
+        <summary><see cref="T:System.Workflow.Activities.Rules.RuleValidation" /> クラスの新しいインスタンスを初期化します。<see cref="T:System.Workflow.ComponentModel.Activity" /> と型プロバイダーを引数として渡します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、デザイン時にだけ使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="activity" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Errors">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.Compiler.ValidationErrorCollection Errors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.ComponentModel.Compiler.ValidationErrorCollection Errors" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.Rules.RuleValidation.Errors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Compiler.ValidationErrorCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.Activities.Rules.RuleValidation" /> に関連付けられているエラーを取得します。</summary>
+        <value>ルールの検証過程で作成された <see cref="T:System.Workflow.ComponentModel.Compiler.ValidationErrorCollection" /> オブジェクトを格納する <see cref="T:System.Workflow.ComponentModel.Compiler.ValidationError" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpressionInfo">
+      <MemberSignature Language="C#" Value="public System.Workflow.Activities.Rules.RuleExpressionInfo ExpressionInfo (System.CodeDom.CodeExpression expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Workflow.Activities.Rules.RuleExpressionInfo ExpressionInfo(class System.CodeDom.CodeExpression expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.RuleValidation.ExpressionInfo(System.CodeDom.CodeExpression)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Activities.Rules.RuleExpressionInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="expression" Type="System.CodeDom.CodeExpression" />
+      </Parameters>
+      <Docs>
+        <param name="expression">評価する <see cref="T:System.CodeDom.CodeExpression" />。</param>
+        <summary>コード式の型を調べます。</summary>
+        <returns>オブジェクトの <see cref="T:System.Workflow.Activities.Rules.RuleExpressionInfo" /> オブジェクト (コード式) の型情報が格納されています。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PopParentExpression">
+      <MemberSignature Language="C#" Value="public void PopParentExpression ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void PopParentExpression() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.RuleValidation.PopParentExpression" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Collections.Stack" /> から最上位にある親式を降ろして返します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PushParentExpression">
+      <MemberSignature Language="C#" Value="public bool PushParentExpression (System.CodeDom.CodeExpression newParent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool PushParentExpression(class System.CodeDom.CodeExpression newParent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.RuleValidation.PushParentExpression(System.CodeDom.CodeExpression)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newParent" Type="System.CodeDom.CodeExpression" />
+      </Parameters>
+      <Docs>
+        <param name="newParent"><see cref="T:System.CodeDom.CodeExpression" /> に追加する <see cref="T:System.Collections.Stack" />。</param>
+        <summary><see cref="T:System.Collections.Stack" /> の先頭にオブジェクトを挿入します。</summary>
+        <returns>
+          <see langword="true" /> がスタックに追加された場合は <paramref name="newParent" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `newParent` が既に親 <xref:System.CodeDom.CodeExpression> オブジェクトの一部として含まれていれば、<xref:System.Workflow.ComponentModel.Compiler.ValidationError> が発生します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="newParent" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ThisType">
+      <MemberSignature Language="C#" Value="public Type ThisType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ThisType" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.Rules.RuleValidation.ThisType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトの型を取得します。</summary>
+        <value>オブジェクトの <see cref="T:System.Type" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

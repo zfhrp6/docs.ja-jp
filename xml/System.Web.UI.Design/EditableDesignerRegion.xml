@@ -1,0 +1,160 @@
+<Type Name="EditableDesignerRegion" FullName="System.Web.UI.Design.EditableDesignerRegion">
+  <TypeSignature Language="C#" Value="public class EditableDesignerRegion : System.Web.UI.Design.DesignerRegion" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EditableDesignerRegion extends System.Web.UI.Design.DesignerRegion" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.EditableDesignerRegion" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.DesignerRegion</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>関連付けられたコントロールのデザイン時のマークアップ内で編集可能なコンテンツ領域を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.Design.EditableDesignerRegion>デザイン時テンプレートの管理を支援するクラス。 A<xref:System.Web.UI.Design.ControlDesigner>でこのクラスのインスタンスを使用して、その<xref:System.Web.UI.Design.ControlDesigner.GetEditableDesignerRegionContent%2A>領域のコンテンツの HTML マークアップを生成する方法です。  
+  
+   
+  
+## Examples  
+ この例は、2 つのクリック可能な領域を持つコントロールを作成する方法を示しています。 および<xref:System.Web.UI.Design.EditableDesignerRegion>2 つのビュー、またはテンプレートを持つオブジェクト。 プロジェクトをコンパイル、ページをビジュアル デザイナーで開くと、デザイン (WYSIWYG) ビューに切り替えます。 2 つのクリック可能なビューがある**View1**と**View2**です。 をクリックして**View1**をドラッグし、<xref:System.Web.UI.WebControls.CheckBox>クリック可能な領域のすぐ下の空のデザイナー領域に、ページの下の部分からのコントロールです。 をクリックして**View2**をドラッグし、<xref:System.Web.UI.WebControls.RadioButton>デザイナーの空の領域にコントロールをします。 をクリックして**View1**もう一度、および領域を<xref:System.Web.UI.WebControls.CheckBox>が再表示されます。 をクリックして**View2**と、領域、<xref:System.Web.UI.WebControls.RadioButton>が再表示されます。 HTML マークアップの変更を保存する方法を表示するソース ビューに戻る  
+  
+> [!NOTE]
+>  プロジェクトは、System.Design.dll アセンブリへの参照が必要です。  
+  
+ [!code-csharp[SimpleMultiRegionControlDesigner#1](~/samples/snippets/csharp/VS_Snippets_WebNet/SimpleMultiRegionControlDesigner/CS/SimpleMultiRegionControlDesigner.cs#1)]
+ [!code-vb[SimpleMultiRegionControlDesigner#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/SimpleMultiRegionControlDesigner/VB/SimpleMultiRegionControlDesigner.vb#1)]  
+[!code-aspx-csharp[SimpleMultiRegionControlDesigner#8](~/samples/snippets/csharp/VS_Snippets_WebNet/SimpleMultiRegionControlDesigner/CS/SimpleMultiRegionControlDesigner.aspx#8)]
+[!code-aspx-vb[SimpleMultiRegionControlDesigner#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/SimpleMultiRegionControlDesigner/VB/SimpleMultiRegionControlDesigner.aspx#8)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EditableDesignerRegion (System.Web.UI.Design.ControlDesigner owner, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.Design.ControlDesigner owner, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.EditableDesignerRegion.#ctor(System.Web.UI.Design.ControlDesigner,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Web.UI.Design.ControlDesigner" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="owner">A<see cref="T:System.Web.UI.Design.ControlDesigner" />オブジェクト、またはから派生したデザイナー<see cref="T:System.Web.UI.Design.ControlDesigner" />です。</param>
+        <param name="name">領域の名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.Design.EditableDesignerRegion" />クラス、指定したオーナーと名前を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EditableDesignerRegion (System.Web.UI.Design.ControlDesigner owner, string name, bool serverControlsOnly);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.Design.ControlDesigner owner, string name, bool serverControlsOnly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.EditableDesignerRegion.#ctor(System.Web.UI.Design.ControlDesigner,System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Web.UI.Design.ControlDesigner" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="serverControlsOnly" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="owner">A<see cref="T:System.Web.UI.Design.ControlDesigner" />オブジェクト、またはから派生したデザイナー<see cref="T:System.Web.UI.Design.ControlDesigner" />です。</param>
+        <param name="name">領域の名前。</param>
+        <param name="serverControlsOnly">
+          <see langword="true" />コンテンツの Web サーバー コントロールのみを受け入れる地域それ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Web.UI.Design.EditableDesignerRegion" />クラスの指定したオーナーと名前との初期値を使用して、<see cref="P:System.Web.UI.Design.EditableDesignerRegion.ServerControlsOnly" />プロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Content">
+      <MemberSignature Language="C#" Value="public virtual string Content { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Content" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.EditableDesignerRegion.Content" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または領域のコンテンツの HTML マークアップを設定します。</summary>
+        <value>内容を表す HTML マークアップ、<see cref="T:System.Web.UI.Design.EditableDesignerRegion" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChildViewRendering">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.Design.ViewRendering GetChildViewRendering (System.Web.UI.Control control);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.UI.Design.ViewRendering GetChildViewRendering(class System.Web.UI.Control control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.EditableDesignerRegion.GetChildViewRendering(System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.ViewRendering</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="control">取得する対象のコントロール、<see cref="T:System.Web.UI.Design.ViewRendering" />領域を現在のオブジェクト。</param>
+        <summary>返します、<see cref="T:System.Web.UI.Design.ViewRendering" />指定されたコントロールのデザイン時 HTML マークアップを含むオブジェクト。</summary>
+        <returns><see cref="T:System.Web.UI.Design.ViewRendering" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServerControlsOnly">
+      <MemberSignature Language="C#" Value="public bool ServerControlsOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ServerControlsOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.EditableDesignerRegion.ServerControlsOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または地域が Web サーバー コントロールのみを受け入れるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、領域は、Web サーバー コントロールのみを含めることができます。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsDataBinding">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsDataBinding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsDataBinding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.EditableDesignerRegion.SupportsDataBinding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、領域をデータ ソースにバインドできるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Web.UI.Design.EditableDesignerRegion" />コンテンツは、データ ソースにバインドをサポートしています。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

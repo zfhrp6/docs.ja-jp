@@ -1,0 +1,998 @@
+<Type Name="StringPrototype" FullName="Microsoft.JScript.StringPrototype">
+  <TypeSignature Language="C#" Value="public class StringPrototype : Microsoft.JScript.StringObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StringPrototype extends Microsoft.JScript.StringObject" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.JScript.StringPrototype" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.JScript</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.JScript.StringObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>静的メソッドとプロパティを提供<see cref="T:Microsoft.JScript.StringObject" />オブジェクト。 このクラスのすべてのメソッドは、メソッドへのアクセスを要求しているオブジェクトへの参照を渡すことによって呼び出されます。 このクラスは、組み込みのオブジェクト モデルのカテゴリに属しています。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="anchor">
+      <MemberSignature Language="C#" Value="public static string anchor (object thisob, object anchorName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string anchor(object thisob, object anchorName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StringPrototype.anchor(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.String_anchor)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+        <Parameter Name="anchorName" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <param name="anchorName">アンカー要素の name 属性です。</param>
+        <summary>アンカー タグで囲まれたテキスト、指定したオブジェクトを変換し、指定した名前の属性のアンカー要素を提供します。</summary>
+        <returns>文字列形式に<c>"&lt;名前 =\""+</c><paramref name="anchorName" /><c>+"\"&gt;"+</c><paramref name="thisob" /><c>+"&lt;/A&gt;"</c>.</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="big">
+      <MemberSignature Language="C#" Value="public static string big (object thisob);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string big(object thisob) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StringPrototype.big(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.String_big)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <summary>指定したオブジェクトをより大きなテキスト マークアップ タグで囲まれたテキストに変換します。</summary>
+        <returns>文字列形式に<c>"&lt;BIG&gt;"+</c><paramref name="thisob" /><c>+"&lt;大きな/&gt;"</c>です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="blink">
+      <MemberSignature Language="C#" Value="public static string blink (object thisob);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string blink(object thisob) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StringPrototype.blink(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.String_blink)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <summary>囲まれたテキストを指定したオブジェクトに変換は、マークアップ タグを点滅します。</summary>
+        <returns>文字列形式に<c>"&lt;点滅&gt;"+</c><paramref name="thisob" /><c>+"&lt;点滅/&gt;"</c>です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="bold">
+      <MemberSignature Language="C#" Value="public static string bold (object thisob);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string bold(object thisob) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StringPrototype.bold(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.String_bold)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <summary>指定したオブジェクトを太字のテキスト マークアップ タグで囲まれたテキストに変換します。</summary>
+        <returns>文字列形式に<c>"&lt;B&gt;"+</c><paramref name="thisob" /><c>+"&lt;/B&gt;"</c>です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="charAt">
+      <MemberSignature Language="C#" Value="public static string charAt (object thisob, double pos);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string charAt(object thisob, float64 pos) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StringPrototype.charAt(System.Object,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.String_charAt)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+        <Parameter Name="pos" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <param name="pos">返される文字の位置。</param>
+        <summary>指定したオブジェクトで指定した位置にある文字を返します。</summary>
+        <returns>ある文字<paramref name="pos" />いずれかを使用する必要がある場合、します。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="charCodeAt">
+      <MemberSignature Language="C#" Value="public static object charCodeAt (object thisob, double pos);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object charCodeAt(object thisob, float64 pos) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StringPrototype.charCodeAt(System.Object,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.String_charCodeAt)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+        <Parameter Name="pos" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <param name="pos">取得するコードを持つ文字の位置。</param>
+        <summary>指定したオブジェクトで指定した位置にある文字の ASCII コードを返します。</summary>
+        <returns>ある文字のコード<paramref name="pos" />いずれかを使用する必要がある場合、します。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="concat">
+      <MemberSignature Language="C#" Value="public static string concat (object thisob, params object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string concat(object thisob, object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StringPrototype.concat(System.Object,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject | Microsoft.JScript.JSFunctionAttributeEnum.HasVarArgs, Microsoft.JScript.JSBuiltin.String_concat)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+        <Parameter Name="args" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <param name="args">追加する引数<c>thisob</c>です。</param>
+        <summary>指定したオブジェクトを指定された引数を追加します。</summary>
+        <returns>文字列表現<paramref name="thisob" />で<paramref name="args" />追加されます。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="constructor">
+      <MemberSignature Language="C#" Value="public static Microsoft.JScript.StringConstructor constructor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class Microsoft.JScript.StringConstructor constructor" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.JScript.StringPrototype.constructor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.JScript.StringConstructor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロトタイプを使用しているプロトタイプ ベースのオブジェクトへの参照を取得します。</summary>
+        <value>プロトタイプ ベースのオブジェクトへの参照。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="fixed">
+      <MemberSignature Language="C#" Value="public static string fixed (object thisob);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string fixed(object thisob) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StringPrototype.fixed(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.String_fixed)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <summary>指定したオブジェクトを固定幅テキスト マークアップ タグで囲まれたテキストに変換します。</summary>
+        <returns>文字列形式に<c>"&lt;TT&gt;"+</c><paramref name="thisob" /><c>+"&lt;/TT&gt;"</c>です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="fontcolor">
+      <MemberSignature Language="C#" Value="public static string fontcolor (object thisob, object colorName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string fontcolor(object thisob, object colorName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StringPrototype.fontcolor(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.String_fontcolor)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+        <Parameter Name="colorName" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <param name="colorName">Font 要素の色の属性です。</param>
+        <summary>フォント タグで囲まれた文字列に指定したオブジェクトを変換し、その要素を指定した色の属性です。</summary>
+        <returns>文字列形式に<c>"&lt;FONT COLOR =\""+</c><paramref name="colorName" /><c>+"\"&gt;"+</c><paramref name="thisob" /><c>+"&lt;/フォント&gt;"</c>です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="fontsize">
+      <MemberSignature Language="C#" Value="public static string fontsize (object thisob, object fontSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string fontsize(object thisob, object fontSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StringPrototype.fontsize(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.String_fontsize)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+        <Parameter Name="fontSize" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <param name="fontSize">Font 要素のサイズの属性です。</param>
+        <summary>指定したオブジェクトのフォントのタグで囲まれたテキストに変換し、その要素、指定したサイズ属性です。</summary>
+        <returns>文字列形式に<c>"&lt;FONT SIZE =\""+</c><paramref name="fontSize" /><c>+"\"&gt;"+</c><paramref name="thisob" /><c>+"&lt;/フォント&gt;"</c>です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="indexOf">
+      <MemberSignature Language="C#" Value="public static int indexOf (object thisob, object searchString, double position);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 indexOf(object thisob, object searchString, float64 position) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StringPrototype.indexOf(System.Object,System.Object,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.String_indexOf)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+        <Parameter Name="searchString" Type="System.Object" />
+        <Parameter Name="position" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <param name="searchString">検索対象の文字列。</param>
+        <param name="position">検索を開始する位置。</param>
+        <summary>指定した文字位置から指定したオブジェクトで指定した文字列の最初に見つかった位置を検索します。</summary>
+        <returns>最初に見つかった位置の位置<paramref name="searchString" />見つかった場合は、します。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="italics">
+      <MemberSignature Language="C#" Value="public static string italics (object thisob);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string italics(object thisob) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StringPrototype.italics(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.String_italics)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <summary>指定したオブジェクトを斜体のテキスト マークアップ タグで囲まれたテキストに変換します。</summary>
+        <returns>文字列形式に<c>"&lt;すれば&gt;"+</c><paramref name="thisob" /><c>+"&lt;/I&gt;"</c>です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="lastIndexOf">
+      <MemberSignature Language="C#" Value="public static int lastIndexOf (object thisob, object searchString, double position);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 lastIndexOf(object thisob, object searchString, float64 position) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StringPrototype.lastIndexOf(System.Object,System.Object,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.String_lastIndexOf)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+        <Parameter Name="searchString" Type="System.Object" />
+        <Parameter Name="position" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <param name="searchString">検索対象の文字列。</param>
+        <param name="position">検索を開始する位置。</param>
+        <summary>指定した文字位置から指定したオブジェクトで指定した文字列の最後に見つかった位置を検索します。</summary>
+        <returns>最後に見つかった位置<paramref name="searchString" />見つかった場合は、します。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="link">
+      <MemberSignature Language="C#" Value="public static string link (object thisob, object linkRef);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string link(object thisob, object linkRef) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StringPrototype.link(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.String_link)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+        <Parameter Name="linkRef" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <param name="linkRef">アンカー要素のターゲット属性です。</param>
+        <summary>アンカー タグで囲まれたテキスト、指定したオブジェクトを変換し、アンカー要素が指定されているリンク対象の属性を提供します。</summary>
+        <returns>文字列形式に<c>"&lt;A HREF =\""+</c><paramref name="linkRef" /><c>+"\"&gt;"+</c><paramref name="thisob" /><c>+"&lt;/A&gt;"</c>.</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="localeCompare">
+      <MemberSignature Language="C#" Value="public static int localeCompare (object thisob, object thatob);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 localeCompare(object thisob, object thatob) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StringPrototype.localeCompare(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.String_localeCompare)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+        <Parameter Name="thatob" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <param name="thatob">比較する文字列<c>thisob</c>です。</param>
+        <summary>2 つの指定した文字列を比較し、それらの間の構文上の関係を示す整数を返します。</summary>
+        <returns>ときの値、負の値<paramref name="thisob" />はより小さい<paramref name="thatob" />; 0 <paramref name="thisob" /> equals<paramref name="thatob" />です。 正のときの値<paramref name="thisob" />がより大きい<paramref name="thatob" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="match">
+      <MemberSignature Language="C#" Value="public static object match (object thisob, Microsoft.JScript.Vsa.VsaEngine engine, object regExp);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object match(object thisob, class Microsoft.JScript.Vsa.VsaEngine engine, object regExp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StringPrototype.match(System.Object,Microsoft.JScript.Vsa.VsaEngine,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject | Microsoft.JScript.JSFunctionAttributeEnum.HasEngine, Microsoft.JScript.JSBuiltin.String_match)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+        <Parameter Name="engine" Type="Microsoft.JScript.Vsa.VsaEngine" />
+        <Parameter Name="regExp" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <param name="engine">スクリプト エンジンへの参照。</param>
+        <param name="regExp">検索する正規表現パターンです。</param>
+        <summary>指定したオブジェクトで指定した正規表現パターンの検索を実行します。</summary>
+        <returns>正規表現パターンの検索の結果。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="replace">
+      <MemberSignature Language="C#" Value="public static string replace (object thisob, object regExp, object replacement);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string replace(object thisob, object regExp, object replacement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StringPrototype.replace(System.Object,System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.String_replace)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+        <Parameter Name="regExp" Type="System.Object" />
+        <Parameter Name="replacement" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <param name="regExp">検索する正規表現パターンです。</param>
+        <param name="replacement">一致した文字列を置換します。</param>
+        <summary>最初の指定したオブジェクトで指定した正規表現パターンの検索を実行し、一致した結果を 3 番目の指定したオブジェクトに置き換えます。</summary>
+        <returns>新しい文字列置換を行った後。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="search">
+      <MemberSignature Language="C#" Value="public static int search (object thisob, Microsoft.JScript.Vsa.VsaEngine engine, object regExp);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 search(object thisob, class Microsoft.JScript.Vsa.VsaEngine engine, object regExp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StringPrototype.search(System.Object,Microsoft.JScript.Vsa.VsaEngine,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject | Microsoft.JScript.JSFunctionAttributeEnum.HasEngine, Microsoft.JScript.JSBuiltin.String_search)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+        <Parameter Name="engine" Type="Microsoft.JScript.Vsa.VsaEngine" />
+        <Parameter Name="regExp" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <param name="engine">スクリプト エンジンへの参照。</param>
+        <param name="regExp">検索する正規表現パターンです。</param>
+        <summary>指定したオブジェクトで指定した正規表現パターンの検索を実行します。</summary>
+        <returns>検索が成功した場合、一致した文字のインデックスそれ以外の場合、-1 を返します。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="slice">
+      <MemberSignature Language="C#" Value="public static string slice (object thisob, double start, object end);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string slice(object thisob, float64 start, object end) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StringPrototype.slice(System.Object,System.Double,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.String_slice)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+        <Parameter Name="start" Type="System.Double" />
+        <Parameter Name="end" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <param name="start">取得する最初の連続する文字。</param>
+        <param name="end">取得する最後の連続する文字。</param>
+        <summary>指定した文字列から指定された連続した文字を含む新しい文字列を作成します。</summary>
+        <returns>間の連続した文字を含む新しい文字列<paramref name="start" />と<paramref name="end" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="small">
+      <MemberSignature Language="C#" Value="public static string small (object thisob);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string small(object thisob) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StringPrototype.small(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.String_small)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <summary>指定したオブジェクトをより小さなテキスト マークアップ タグで囲まれたテキストに変換します。</summary>
+        <returns>文字列形式に<c>"&lt;小さな&gt;"+</c><paramref name="thisob" /><c>+"&lt;小さな/&gt;"</c>です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="split">
+      <MemberSignature Language="C#" Value="public static Microsoft.JScript.ArrayObject split (object thisob, Microsoft.JScript.Vsa.VsaEngine engine, object separator, object limit);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.JScript.ArrayObject split(object thisob, class Microsoft.JScript.Vsa.VsaEngine engine, object separator, object limit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StringPrototype.split(System.Object,Microsoft.JScript.Vsa.VsaEngine,System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject | Microsoft.JScript.JSFunctionAttributeEnum.HasEngine, Microsoft.JScript.JSBuiltin.String_split)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.JScript.ArrayObject</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+        <Parameter Name="engine" Type="Microsoft.JScript.Vsa.VsaEngine" />
+        <Parameter Name="separator" Type="System.Object" />
+        <Parameter Name="limit" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <param name="engine">スクリプト エンジンへの参照。</param>
+        <param name="separator">内の部分文字列を区切る文字<c>thisob</c>です。</param>
+        <param name="limit">返される最大の部分文字列数。</param>
+        <summary>指定された文字で区切られた、指定したオブジェクトでサブスト リングを含む配列を返します。 配列内の部分文字列の数は、指定された上限によって制限されます。</summary>
+        <returns>内の部分文字列を格納する配列<paramref name="thisob" />で区切られたを<paramref name="separator" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="strike">
+      <MemberSignature Language="C#" Value="public static string strike (object thisob);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string strike(object thisob) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StringPrototype.strike(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.String_strike)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <summary>指定したオブジェクトを取り消し線付きマークアップ タグで囲まれたテキストに変換します。</summary>
+        <returns>文字列形式に<c>"&lt;STRIKE&gt;"+</c><paramref name="thisob" /><c>+"&lt;STRIKE/&gt;"</c>です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="sub">
+      <MemberSignature Language="C#" Value="public static string sub (object thisob);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string sub(object thisob) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StringPrototype.sub(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.String_sub)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <summary>添字マークアップ タグで囲まれたテキストは、指定したオブジェクトに変換します。</summary>
+        <returns>文字列形式に<c>"&lt;SUB&gt;"+</c><paramref name="thisob" /><c>+"&lt;SUB/&gt;"</c>です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="substr">
+      <MemberSignature Language="C#" Value="public static string substr (object thisob, double start, object count);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string substr(object thisob, float64 start, object count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StringPrototype.substr(System.Object,System.Double,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.String_substr)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.NotRecommended("substr")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+        <Parameter Name="start" Type="System.Double" />
+        <Parameter Name="count" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <param name="start">取得する最初の連続する文字。</param>
+        <param name="count">取得する文字数。</param>
+        <summary>指定された数の指定した文字位置から指定した文字列の連続する文字を含む新しい文字列を作成します。 使用して<see cref="M:Microsoft.JScript.StringPrototype.substring(System.Object,System.Double,System.Object)" />代わりに、可能な場合です。</summary>
+        <returns>新しい文字列を含む<paramref name="count" />開始位置として、連続する文字<paramref name="start" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="substring">
+      <MemberSignature Language="C#" Value="public static string substring (object thisob, double start, object end);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string substring(object thisob, float64 start, object end) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StringPrototype.substring(System.Object,System.Double,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.String_substring)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+        <Parameter Name="start" Type="System.Double" />
+        <Parameter Name="end" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <param name="start">取得する最初の連続する文字。</param>
+        <param name="end">取得する最後の連続する文字。</param>
+        <summary>指定した文字列から指定された連続した文字を含む新しい文字列を作成します。</summary>
+        <returns>間の連続した文字を含む新しい文字列<paramref name="start" />と<paramref name="end" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="sup">
+      <MemberSignature Language="C#" Value="public static string sup (object thisob);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string sup(object thisob) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StringPrototype.sup(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.String_sup)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <summary>指定したオブジェクトを上付きマークアップ タグで囲まれたテキストに変換します。</summary>
+        <returns>文字列形式に<c>"&lt;SUP&gt;"+</c><paramref name="thisob" /><c>+"&lt;/sup&gt;"</c>です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="toLocaleLowerCase">
+      <MemberSignature Language="C#" Value="public static string toLocaleLowerCase (object thisob);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string toLocaleLowerCase(object thisob) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StringPrototype.toLocaleLowerCase(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.String_toLocaleLowerCase)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <summary>指定した文字列に変換のコピーを返します小文字、大文字と小文字の規則に基づいて<see cref="P:System.Globalization.CultureInfo.CurrentUICulture" />です。</summary>
+        <returns>小文字の文字列。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="toLocaleUpperCase">
+      <MemberSignature Language="C#" Value="public static string toLocaleUpperCase (object thisob);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string toLocaleUpperCase(object thisob) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StringPrototype.toLocaleUpperCase(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.String_toLocaleUpperCase)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <summary>指定した文字列に変換のコピーを返しますの大文字小文字の規則に基づいて、大文字<see cref="P:System.Globalization.CultureInfo.CurrentUICulture" />です。</summary>
+        <returns>大文字の文字列。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="toLowerCase">
+      <MemberSignature Language="C#" Value="public static string toLowerCase (object thisob);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string toLowerCase(object thisob) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StringPrototype.toLowerCase(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.String_toLowerCase)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <summary>指定した文字列に変換のコピーを返します小文字、大文字と小文字の規則に基づいて<see cref="P:System.Globalization.CultureInfo.InvariantCulture" />です。</summary>
+        <returns>小文字の文字列。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="toString">
+      <MemberSignature Language="C#" Value="public static string toString (object thisob);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string toString(object thisob) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StringPrototype.toString(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.String_toString)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <summary>指定したオブジェクトの文字列表現を作成します。</summary>
+        <returns>文字列表現<paramref name="thisob" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="toUpperCase">
+      <MemberSignature Language="C#" Value="public static string toUpperCase (object thisob);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string toUpperCase(object thisob) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StringPrototype.toUpperCase(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.String_toUpperCase)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <summary>指定した文字列に変換のコピーを返しますの大文字小文字の規則に基づいて、大文字<see cref="P:System.Globalization.CultureInfo.InvariantCulture" />です。</summary>
+        <returns>大文字の文字列。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="valueOf">
+      <MemberSignature Language="C#" Value="public static object valueOf (object thisob);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object valueOf(object thisob) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.StringPrototype.valueOf(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.String_valueOf)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <summary>指定したオブジェクトの値を返します。</summary>
+        <returns><paramref name="thisob" /> の値。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

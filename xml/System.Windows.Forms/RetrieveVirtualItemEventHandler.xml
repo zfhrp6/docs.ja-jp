@@ -1,0 +1,33 @@
+<Type Name="RetrieveVirtualItemEventHandler" FullName="System.Windows.Forms.RetrieveVirtualItemEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void RetrieveVirtualItemEventHandler(object sender, RetrieveVirtualItemEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed RetrieveVirtualItemEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.RetrieveVirtualItemEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.Forms.RetrieveVirtualItemEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.RetrieveVirtualItemEventArgs" />。</param>
+    <summary><see cref="E:System.Windows.Forms.ListView.RetrieveVirtualItem" /> の <see cref="T:System.Windows.Forms.ListView" /> イベントを処理するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.RetrieveVirtualItemEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ ]]></format>
+    </remarks>
+    <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.RetrieveVirtualItemEventArgs.Item" />プロパティが項目に設定されていないときに、<see cref="E:System.Windows.Forms.ListView.RetrieveVirtualItem" />イベントを処理します。</exception>
+  </Docs>
+</Type>

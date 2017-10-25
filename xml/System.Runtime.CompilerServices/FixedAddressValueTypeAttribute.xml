@@ -1,0 +1,84 @@
+<Type Name="FixedAddressValueTypeAttribute" FullName="System.Runtime.CompilerServices.FixedAddressValueTypeAttribute">
+  <TypeSignature Language="C#" Value="public sealed class FixedAddressValueTypeAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit FixedAddressValueTypeAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.CompilerServices.FixedAddressValueTypeAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Field)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>その有効期間全体にわたって静的な値型フィールドのアドレスを修正します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Runtime.CompilerServices.FixedAddressValueTypeAttribute>作成時に固定されている静的な値をマークする属性の型します。  
+  
+ この属性は、Microsoft Visual C コンパイラで使用されます。  
+  
+ 静的な値型フィールドは、ボックス化されたオブジェクトとして作成されます。 これは、ガベージ コレクションが行われるたびに、アドレスを変更できることを意味します。 静的な値の型にこの属性を適用する場合、その有効期間中にそのアドレスが一定にします。  
+  
+   
+  
+## Examples  
+ 次の例では、使用、<xref:System.Runtime.CompilerServices.FixedAddressValueTypeAttribute>をメモリ内の静的フィールドをピン留めする属性。 定義する、`Age`構造し、型の静的フィールドを持つ 2 つのクラスを初期化します`Age`です。 2 番目のクラスが適用される<xref:System.Runtime.CompilerServices.FixedAddressValueTypeAttribute>にフィールドのアドレスをピン留めします。 メモリ割り当ての数は、前に、これら 2 つのオブジェクトがインスタンス化し、ガベージ コレクターが呼び出された後に行われます。 例の出力ことを示していますが、最初のアドレス`Age`フィールドが、ガベージ コレクションするフィールドのアドレスの後に変更された<xref:System.Runtime.CompilerServices.FixedAddressValueTypeAttribute>が適用されていません。  
+  
+ [!code-csharp[System.Runtime.CompilerServices.FixedAddressValueTypeAttribute#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.compilerservices.fixedaddressvaluetypeattribute/cs/example1.cs#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FixedAddressValueTypeAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.FixedAddressValueTypeAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.CompilerServices.FixedAddressValueTypeAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、使用、<xref:System.Runtime.CompilerServices.FixedAddressValueTypeAttribute>をメモリ内の静的フィールドをピン留めする属性。 定義する、`Age`構造し、型の静的フィールドを持つ 2 つのクラスを初期化します`Age`です。 2 番目のクラスが適用される<xref:System.Runtime.CompilerServices.FixedAddressValueTypeAttribute>にフィールドのアドレスをピン留めします。 メモリ割り当ての数は、前に、これら 2 つのオブジェクトがインスタンス化し、ガベージ コレクターが呼び出された後に行われます。 例の出力ことを示していますが、最初のアドレス`Age`フィールドが、ガベージ コレクションするフィールドのアドレスの後に変更された<xref:System.Runtime.CompilerServices.FixedAddressValueTypeAttribute>が適用されていません。  
+  
+ [!code-csharp[System.Runtime.CompilerServices.FixedAddressValueTypeAttribute#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.compilerservices.fixedaddressvaluetypeattribute/cs/example1.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,210 @@
+<Type Name="LifetimeContext" FullName="System.Composition.Hosting.Core.LifetimeContext">
+  <TypeSignature Language="C#" Value="public sealed class LifetimeContext : System.Composition.CompositionContext, IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit LifetimeContext extends System.Composition.CompositionContext implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Composition.Hosting.Core.LifetimeContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.Composition.Hosting</AssemblyName>
+    <AssemblyVersion>1.0.31.0</AssemblyVersion>
+    <AssemblyVersion>1.0.32.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Composition.CompositionContext</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>ライフタイム ツリー内の 1 つのノードを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+<xref:System.Composition.Hosting.Core.LifetimeContext>オブジェクトが共有の共有部分の単位。 これにより、バインドされたパーツの破棄を制御し、既存のコンポジション操作の一環として、または新しいコンポジション操作の基礎としてインスタンスを取得するために使用できます。 特定の共有境界によって制限されている部分を格納する、個々 の有効期間のコンテキストを設定できます。
+
+このオブジェクトには、2 つ個別に保護された共有状態にはが含まれています: パーツ インスタンスを共有し、パーツ インスタンスをバインドします。 共有部分はインスタンス ロック制御不要、読み取り可能なは、発生するわけで問題が破棄処理中に追加する場合。 ロックされている自体によって保護されます。 アクティブ化ロジックは、このロックの状況で呼び出されます避けられません。 バインドのパーツ インスタンスをロックすることで常に保護<see langword="this" />、され破棄後に書き込まれるはことはありません。 バインドのパーツ インスタンスに設定されている<see langword="null" />でロックの状況で、<xref:System.Composition.Hosting.Core.LifetimeContext.Dispose>メソッドです。 書き込みが許可された場合バインドのパーツ インスタンスを破棄した後、解放されない破棄可能な部分になります。 バインドされた一部の dispose メソッドは、ロックの外部で呼び出されます。 
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddBoundInstance">
+      <MemberSignature Language="C#" Value="public void AddBoundInstance (IDisposable instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddBoundInstance(class System.IDisposable instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Composition.Hosting.Core.LifetimeContext.AddBoundInstance(System.IDisposable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Hosting</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.IDisposable" />
+      </Parameters>
+      <Docs>
+        <param name="instance">部分です。</param>
+        <summary>この有効期間のコンテキストを破棄可能なパートの有効期間をバインドします。</summary>
+        <remarks>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">操作は、破棄されたオブジェクトに対して実行されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AllocateSharingId">
+      <MemberSignature Language="C#" Value="public static int AllocateSharingId ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 AllocateSharingId() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Composition.Hosting.Core.LifetimeContext.AllocateSharingId" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Hosting</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>共有部分はインスタンスを見つけるために使用できる識別子を生成します。</summary>
+        <returns>新しい一意の識別子。</returns>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Composition.Hosting.Core.LifetimeContext.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Hosting</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>有効期間のコンテキストとバインドされているパーツのインスタンスを解放します。</summary>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindContextWithin">
+      <MemberSignature Language="C#" Value="public System.Composition.Hosting.Core.LifetimeContext FindContextWithin (string sharingBoundary);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Composition.Hosting.Core.LifetimeContext FindContextWithin(string sharingBoundary) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Composition.Hosting.Core.LifetimeContext.FindContextWithin(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Hosting</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Composition.Hosting.Core.LifetimeContext</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sharingBoundary" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sharingBoundary">有効期間内でコンテキストを検索する共有境界です。</param>
+        <summary>すべての指定した共有境界内で最も広範な有効期間コンテキストを検索します。</summary>
+        <returns>すべての指定した共有境界内で最も広範な有効期間コンテキスト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現時点では、ルートは、境界をすることはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOrCreate">
+      <MemberSignature Language="C#" Value="public object GetOrCreate (int sharingId, System.Composition.Hosting.Core.CompositionOperation operation, System.Composition.Hosting.Core.CompositeActivator creator);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetOrCreate(int32 sharingId, class System.Composition.Hosting.Core.CompositionOperation operation, class System.Composition.Hosting.Core.CompositeActivator creator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Composition.Hosting.Core.LifetimeContext.GetOrCreate(System.Int32,System.Composition.Hosting.Core.CompositionOperation,System.Composition.Hosting.Core.CompositeActivator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Hosting</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sharingId" Type="System.Int32" />
+        <Parameter Name="operation" Type="System.Composition.Hosting.Core.CompositionOperation" />
+        <Parameter Name="creator" Type="System.Composition.Hosting.Core.CompositeActivator" />
+      </Parameters>
+      <Docs>
+        <param name="sharingId">共有部分は、の ID。</param>
+        <param name="operation">必要な場合に、パーツを作成する操作です。</param>
+        <param name="creator">必要に応じて、新しいパーツ インスタンスをアクティブにできるアクティベーター。</param>
+        <summary>指定した ID を持つ共有部分はインスタンスを取得または、パーツ インスタンスが見つからないことができる場合を作成し、指定された操作内で指定された creator を使用して一部のインスタンスを共有します。</summary>
+        <returns>新しいまたは取得された部分です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パーツ インスタンスが既に存在する場合のロック制御不要です。 パーツ インスタンスを作成する必要があります、ロックが表示されますをこのメソッド (同時読み取りは引き続き安全にロック制御不要にする) を使用して他の書き込みではシリアル化します。 重要ですコンポジション、およびためロックの取得は、厳密にリーフ-root ライフタイム ツリー内です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Composition.Hosting.Core.LifetimeContext.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Hosting</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Composition.Hosting.Core.LifetimeContext" /> オブジェクトの文字列表現を返します。</summary>
+        <returns>この <see cref="T:System.Composition.Hosting.Core.LifetimeContext" /> オブジェクトの文字列表現。</returns>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetExport">
+      <MemberSignature Language="C#" Value="public override bool TryGetExport (System.Composition.Hosting.Core.CompositionContract contract, out object export);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool TryGetExport(class System.Composition.Hosting.Core.CompositionContract contract, [out] object&amp; export) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Composition.Hosting.Core.LifetimeContext.TryGetExport(System.Composition.Hosting.Core.CompositionContract,System.Object@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Hosting</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contract" Type="System.Composition.Hosting.Core.CompositionContract" />
+        <Parameter Name="export" Type="System.Object&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="contract">コントラクト。</param>
+        <param name="export">このメソッドが返されると、使用可能な場合は、コントラクト インスタンスが含まれています。それ以外の場合、<see langword="null" />です。</param>
+        <summary>コンポジション コンテキストからコントラクトのインスタンスを取得します。</summary>
+        <returns>
+          <see langword="true" />インスタンスが取得された場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

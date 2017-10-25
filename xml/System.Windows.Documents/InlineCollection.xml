@@ -1,0 +1,123 @@
+<Type Name="InlineCollection" FullName="System.Windows.Documents.InlineCollection">
+  <TypeSignature Language="C#" Value="public class InlineCollection : System.Windows.Documents.TextElementCollection&lt;System.Windows.Documents.Inline&gt;, System.Collections.IList" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit InlineCollection extends System.Windows.Documents.TextElementCollection`1&lt;class System.Windows.Documents.Inline&gt; implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Collections.IList" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Documents.InlineCollection" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Documents.TextElementCollection&lt;System.Windows.Documents.Inline&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="TextElementType">System.Windows.Documents.Inline</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IList</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentWrapper(typeof(System.Windows.Documents.Run))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentWrapper(typeof(System.Windows.Documents.InlineUIContainer))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.WhitespaceSignificantCollection</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Windows.Documents.Inline" /> 要素のコレクションを表します。 <see cref="T:System.Windows.Documents.InlineCollection" />許容される子コンテンツを定義、 <see cref="T:System.Windows.Documents.Paragraph" />、 <see cref="T:System.Windows.Documents.Span" />、および<see cref="T:System.Windows.Controls.TextBlock" />要素。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.InlineCollection>所有する要素内の作成が許可されているだけ、 <xref:System.Windows.Documents.InlineCollection>、ように、<xref:System.Windows.Controls.TextBlock>または<xref:System.Windows.Documents.Paragraph>です。 そのため、<xref:System.Windows.Documents.InlineCollection>直接インスタンス化することはできませんし、既定値がないかコンス トラクターはオーバー ロードします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.InlineCollection.Add(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">テキストの設定として、<see cref="P:System.Windows.Documents.Run.Text" />暗黙のプロパティを<see cref="T:System.Windows.Documents.Run" />です。</param>
+        <summary>暗黙的な追加<see cref="T:System.Windows.Documents.Run" />要素として指定された、指定されたテキスト、<see cref="T:System.String" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Windows.UIElement uiElement);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Windows.UIElement uiElement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.InlineCollection.Add(System.Windows.UIElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uiElement" Type="System.Windows.UIElement" />
+      </Parameters>
+      <Docs>
+        <param name="uiElement">
+          <see cref="T:System.Windows.UIElement" />として設定、<see cref="P:System.Windows.Documents.InlineUIContainer.Child" />暗黙のプロパティを<see cref="T:System.Windows.Documents.InlineUIContainer" />です。</param>
+        <summary>暗黙的な追加<see cref="T:System.Windows.Documents.InlineUIContainer" />指定<see cref="T:System.Windows.UIElement" />既にです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FirstInline">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.Inline FirstInline { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.Inline FirstInline" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.InlineCollection.FirstInline" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.Inline</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最初に取得<see cref="T:System.Windows.Documents.Inline" />のこのインスタンス内の要素<see cref="T:System.Windows.Documents.InlineCollection" />です。</summary>
+        <value>最初の<see cref="T:System.Windows.Documents.Inline" />のこのインスタンス内の要素<see cref="T:System.Windows.Documents.InlineCollection" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastInline">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.Inline LastInline { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.Inline LastInline" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.InlineCollection.LastInline" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.Inline</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最後に取得<see cref="T:System.Windows.Documents.Inline" />のこのインスタンス内の要素<see cref="T:System.Windows.Documents.InlineCollection" />です。</summary>
+        <value>最後の<see cref="T:System.Windows.Documents.Inline" />のこのインスタンス内の要素<see cref="T:System.Windows.Documents.InlineCollection" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

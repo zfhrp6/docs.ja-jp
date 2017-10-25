@@ -1,0 +1,504 @@
+<Type Name="DataPagerFieldCollection" FullName="System.Web.UI.WebControls.DataPagerFieldCollection">
+  <TypeSignature Language="C#" Value="public class DataPagerFieldCollection : System.Web.UI.StateManagedCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataPagerFieldCollection extends System.Web.UI.StateManagedCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.DataPagerFieldCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.StateManagedCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Web.UI.WebControls.DataPager" /> コントロールによって使用される <see cref="T:System.Web.UI.WebControls.DataPagerField" /> オブジェクトのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Web.UI.WebControls.DataPagerFieldCollection>をプログラムでのセットを管理するクラス<xref:System.Web.UI.WebControls.DataPagerField>オブジェクト。 プログラムではなく宣言によってこれらのフィールドを定義した方が一般的であることを注意してください。  
+  
+ メソッドとプロパティにアクセスすることができます、<xref:System.Web.UI.WebControls.DataPagerFieldCollection>クラスを通じて、<xref:System.Web.UI.WebControls.DataPager.Fields%2A?displayProperty=nameWithType>プロパティです。 追加、insert、および削除<xref:System.Web.UI.WebControls.DataPagerField>の適切なメソッドを使用して、オブジェクト、<xref:System.Web.UI.WebControls.DataPagerFieldCollection>クラスです。 プログラムで取得する<xref:System.Web.UI.WebControls.DataPagerField>オブジェクトをコレクションからは、次のいずれかの操作します。  
+  
+-   1 つを取得するインデクサーを使用して<xref:System.Web.UI.WebControls.DataPagerField>オブジェクトをコレクションからです。  
+  
+-   使用して、<xref:System.Web.UI.StateManagedCollection.GetEnumerator%2A>メソッドを実装するオブジェクトを作成する<xref:System.Collections.IEnumerator?displayProperty=nameWithType>、コレクションからアイテムを取得し使用することができます。  
+  
+ <xref:System.Web.UI.StateManagedCollection.Count%2A>プロパティがコレクション内のアイテムの合計数を取得します。 コレクションの上限を確認することは通常使用されます。 項目の追加し、を使用して、コレクションに項目を削除することができます、 <xref:System.Web.UI.WebControls.DataPagerFieldCollection.Add%2A>、 <xref:System.Web.UI.WebControls.DataPagerFieldCollection.Insert%2A>、 <xref:System.Web.UI.WebControls.DataPagerFieldCollection.Remove%2A>、および<xref:System.Web.UI.WebControls.DataPagerFieldCollection.RemoveAt%2A>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataPagerFieldCollection (System.Web.UI.WebControls.DataPager dataPager);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.DataPager dataPager) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPagerFieldCollection.#ctor(System.Web.UI.WebControls.DataPager)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="dataPager" Type="System.Web.UI.WebControls.DataPager" />
+      </Parameters>
+      <Docs>
+        <param name="dataPager">コレクションを格納するコントロール。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.DataPagerFieldCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、主に、コントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Web.UI.WebControls.DataPagerField field);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Web.UI.WebControls.DataPagerField field) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPagerFieldCollection.Add(System.Web.UI.WebControls.DataPagerField)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="field" Type="System.Web.UI.WebControls.DataPagerField" />
+      </Parameters>
+      <Docs>
+        <param name="field">コレクションに追加するオブジェクト。</param>
+        <summary>指定した追加<see cref="T:System.Web.UI.WebControls.DataPagerField" />オブジェクトをコレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataPagerField>オブジェクトがコレクションの末尾に追加します。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataPagerFieldCollection.Add%2A>を追加するメソッド、<xref:System.Web.UI.WebControls.NextPreviousPagerField>オブジェクトを<xref:System.Web.UI.WebControls.DataPager>コントロール。  
+  
+ [!code-csharp[System.Web.UI.WebControls.NextPreviousPagerField.Ctor#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.NextPreviousPagerField.Ctor/CS/NextPreviousPagerFieldCtorCS.aspx#2)]
+ [!code-vb[System.Web.UI.WebControls.NextPreviousPagerField.Ctor#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.NextPreviousPagerField.Ctor/VB/NextPreviousPagerFieldCtorVB.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneFields">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.DataPagerFieldCollection CloneFields (System.Web.UI.WebControls.DataPager pager);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.UI.WebControls.DataPagerFieldCollection CloneFields(class System.Web.UI.WebControls.DataPager pager) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPagerFieldCollection.CloneFields(System.Web.UI.WebControls.DataPager)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataPagerFieldCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pager" Type="System.Web.UI.WebControls.DataPager" />
+      </Parameters>
+      <Docs>
+        <param name="pager">コレクションを格納するオブジェクト。</param>
+        <summary>現在のコレクションのコピーを作成します。</summary>
+        <returns>それぞれのコピーを格納しているオブジェクト<see cref="T:System.Web.UI.WebControls.DataPagerField" />現在のコレクション内のオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは動作を実装するロールバック操作が取り消されたときにデザイン時のダイアログ ボックスで、主に使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Web.UI.WebControls.DataPagerField field);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Web.UI.WebControls.DataPagerField field) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPagerFieldCollection.Contains(System.Web.UI.WebControls.DataPagerField)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="field" Type="System.Web.UI.WebControls.DataPagerField" />
+      </Parameters>
+      <Docs>
+        <param name="field">内で検索するオブジェクト、<see cref="T:System.Web.UI.WebControls.DataControlFieldCollection" />コレクション。</param>
+        <summary>指定するかどうか、<see cref="T:System.Web.UI.WebControls.DataPagerFieldCollection" />コレクションが含まれていますが、指定した<see cref="T:System.Web.UI.WebControls.DataPagerField" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Web.UI.WebControls.DataPagerFieldCollection" />コレクションが含まれていますが、指定されたフィールドです。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Web.UI.WebControls.DataPagerField[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Web.UI.WebControls.DataPagerField[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPagerFieldCollection.CopyTo(System.Web.UI.WebControls.DataPagerField[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Web.UI.WebControls.DataPagerField[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">コピーされた要素のコピー先である 1 次元配列<see cref="T:System.Web.UI.WebControls.DataPagerFieldCollection" />コレクション。 配列オブジェクトは、0 から始まるインデックスを使用する必要があります。</param>
+        <param name="index">内の 0 から始まるインデックス<c>配列</c>どのコピーの開始位置。</param>
+        <summary>完全なコピー<see cref="T:System.Web.UI.WebControls.DataPagerFieldCollection" />コレクションを 1 次元<see cref="T:System.Array" />オブジェクトを対象となる配列の指定したインデックスから始まります。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateKnownType">
+      <MemberSignature Language="C#" Value="protected override object CreateKnownType (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object CreateKnownType(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPagerFieldCollection.CreateKnownType(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス、<see cref="T:System.Web.UI.WebControls.DataPagerField" />によって返される型の順序付きリストから作成する型、<see cref="M:System.Web.UI.WebControls.DataPagerFieldCollection.GetKnownTypes" />メソッドです。</param>
+        <summary>既定のインスタンスを作成、<see cref="T:System.Web.UI.WebControls.DataPagerField" />指定されたインデックスによって識別される型。</summary>
+        <returns>派生したクラスのインスタンスを表すオブジェクト、<see cref="T:System.Web.UI.WebControls.DataPagerField" />クラスは、指定されたインデックスに従ってします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataPagerFieldCollection.CreateKnownType%2A>メソッドがによって内部的には、<xref:System.Web.UI.WebControls.DataPagerFieldCollection>の実装でのコレクション、<xref:System.Web.UI.StateManagedCollection.System%23Web%23UI%23IStateManager%23LoadViewState%2A>メソッドです。 <xref:System.Web.UI.WebControls.DataPagerFieldCollection.CreateKnownType%2A>メソッドは、指定したで識別される型を使用して、オブジェクトのインスタンスを作成`index`、によって返される型のいずれかに対応する、<xref:System.Web.UI.WebControls.DataPagerFieldCollection.GetKnownTypes%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定したインデックスは、認識されている範囲内ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FieldsChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler FieldsChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler FieldsChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.DataPagerFieldCollection.FieldsChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときのフィールド、<see cref="T:System.Web.UI.WebControls.DataPagerFieldCollection" />コレクションの変更。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataPagerFieldCollection.FieldsChanged>イベントは、通常の呼び出しの結果として、 <xref:System.Web.UI.StateManagedCollection.Clear%2A>、 <xref:System.Web.UI.WebControls.DataPagerFieldCollection.Insert%2A>、 <xref:System.Web.UI.WebControls.DataPagerFieldCollection.Remove%2A>、または<xref:System.Web.UI.WebControls.DataPagerFieldCollection.RemoveAt%2A>メソッドです。  
+  
+ イベントを処理する方法の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetKnownTypes">
+      <MemberSignature Language="C#" Value="protected override Type[] GetKnownTypes ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Type[] GetKnownTypes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPagerFieldCollection.GetKnownTypes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>配列を取得<see cref="T:System.Web.UI.WebControls.DataPagerField" />の種類を<see cref="T:System.Web.UI.WebControls.DataPagerFieldCollection" />コレクションを含めることができます。</summary>
+        <returns>種類を識別する type オブジェクトの配列<see cref="T:System.Web.UI.WebControls.DataPagerField" />コレクションに格納できるオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Web.UI.WebControls.DataPagerField field);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Web.UI.WebControls.DataPagerField field) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPagerFieldCollection.IndexOf(System.Web.UI.WebControls.DataPagerField)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="field" Type="System.Web.UI.WebControls.DataPagerField" />
+      </Parameters>
+      <Docs>
+        <param name="field">コレクション内で検索するオブジェクト。</param>
+        <summary>特定のインデックスを取得<see cref="T:System.Web.UI.WebControls.DataPagerField" />コレクション内のオブジェクト。</summary>
+        <returns>インデックス、<paramref name="field" />パラメーター コレクション内に見つかった以外の場合、それ以外の場合は-1。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.Web.UI.WebControls.DataPagerField field);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.Web.UI.WebControls.DataPagerField field) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPagerFieldCollection.Insert(System.Int32,System.Web.UI.WebControls.DataPagerField)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="field" Type="System.Web.UI.WebControls.DataPagerField" />
+      </Parameters>
+      <Docs>
+        <param name="index">位置の 0 から始まるインデックス、<see cref="T:System.Web.UI.WebControls.DataPagerField" />オブジェクトが挿入されます。</param>
+        <param name="field">挿入するオブジェクト。</param>
+        <summary>指定した挿入<see cref="T:System.Web.UI.WebControls.DataPagerField" />オブジェクトに、<see cref="T:System.Web.UI.WebControls.DataPagerFieldCollection" />コレクション内の指定したインデックス位置。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.DataPagerField this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.DataPagerField Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataPagerFieldCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataPagerField</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">0 から始まるインデックス、<see cref="T:System.Web.UI.WebControls.DataPagerField" />コレクションから取得するオブジェクト。</param>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.DataPagerField" />コレクション内で指定したインデックス位置にあるオブジェクト。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.DataPagerField" />コレクション内で指定したインデックス位置にあるオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClearComplete">
+      <MemberSignature Language="C#" Value="protected override void OnClearComplete ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnClearComplete() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPagerFieldCollection.OnClearComplete" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべての項目がコレクションから削除された後、追加の処理を実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Web.UI.StateManagedCollection.Clear%2A>コレクションからすべての項目が削除された後、追加の処理を実行するメソッド。 このメソッドを発生させる、<xref:System.Web.UI.WebControls.DataPagerFieldCollection.FieldsChanged>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInsertComplete">
+      <MemberSignature Language="C#" Value="protected override void OnInsertComplete (int index, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnInsertComplete(int32 index, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPagerFieldCollection.OnInsertComplete(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクション内のインデックスを<see cref="T:System.Web.UI.WebControls.DataPagerField" />にオブジェクトが挿入されました。</param>
+        <param name="value">挿入されたオブジェクト、<see cref="T:System.Web.UI.WebControls.DataPagerFieldCollection" />コレクション。</param>
+        <summary>項目がコレクションに追加された後、追加の処理を実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Web.UI.WebControls.DataPagerFieldCollection.Insert%2A>項目がコレクションに追加された後、追加の処理を実行するメソッド。 このメソッドを発生させる、<xref:System.Web.UI.WebControls.DataPagerFieldCollection.FieldsChanged>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRemoveComplete">
+      <MemberSignature Language="C#" Value="protected override void OnRemoveComplete (int index, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnRemoveComplete(int32 index, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPagerFieldCollection.OnRemoveComplete(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクション内のインデックスを<see cref="T:System.Web.UI.WebControls.DataPagerField" />オブジェクトから削除されました。</param>
+        <param name="value">削除されたオブジェクト、<see cref="T:System.Web.UI.WebControls.DataPagerFieldCollection" />コレクション。</param>
+        <summary>コレクションから項目を削除した後、追加の処理を実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Web.UI.WebControls.DataPagerFieldCollection.Remove%2A>または<xref:System.Web.UI.WebControls.DataPagerFieldCollection.RemoveAt%2A>コレクションから項目を削除した後、追加の処理を実行するメソッド。 このメソッドを発生させる、<xref:System.Web.UI.WebControls.DataPagerFieldCollection.FieldsChanged>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnValidate">
+      <MemberSignature Language="C#" Value="protected override void OnValidate (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnValidate(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPagerFieldCollection.OnValidate(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">検証対象のオブジェクト。</param>
+        <summary>指定したオブジェクトがあることを確認、<see cref="T:System.Web.UI.WebControls.DataPagerField" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは内部での要素を検証する、<xref:System.Web.UI.WebControls.DataPagerFieldCollection>コレクション。 このメソッドは、型チェックを実行しにオブジェクトが指定されていることを確認、`o`パラメーターではありません`null`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="o" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="o" />インスタンスではない、<see cref="T:System.Web.UI.WebControls.DataPagerField" />クラスまたはその派生クラスのいずれか。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Web.UI.WebControls.DataPagerField field);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Web.UI.WebControls.DataPagerField field) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPagerFieldCollection.Remove(System.Web.UI.WebControls.DataPagerField)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="field" Type="System.Web.UI.WebControls.DataPagerField" />
+      </Parameters>
+      <Docs>
+        <param name="field">削除するオブジェクト、<see cref="T:System.Web.UI.WebControls.DataPagerFieldCollection" />コレクション。</param>
+        <summary>指定された削除<see cref="T:System.Web.UI.WebControls.DataPagerField" />オブジェクトから、<see cref="T:System.Web.UI.WebControls.DataPagerFieldCollection" />コレクション。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPagerFieldCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス、<see cref="T:System.Web.UI.WebControls.DataPagerField" />削除するオブジェクト。</param>
+        <summary>削除、<see cref="T:System.Web.UI.WebControls.DataPagerField" />から指定したインデックス位置にオブジェクト、<see cref="T:System.Web.UI.WebControls.DataPagerFieldCollection" />コレクション。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDirtyObject">
+      <MemberSignature Language="C#" Value="protected override void SetDirtyObject (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetDirtyObject(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPagerFieldCollection.SetDirtyObject(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">前回の状態を表示した後に変更としてマークするオブジェクトの読み込みまたは保存します。</param>
+        <summary>指定した指示<see cref="T:System.Web.UI.WebControls.DataPagerField" />オブジェクトのみを記録するのではなく、状態を表示する状態を完全に記録する情報を変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは主に、コントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

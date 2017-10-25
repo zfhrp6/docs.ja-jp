@@ -1,0 +1,105 @@
+<Type Name="VisualStateChangedEventArgs" FullName="System.Windows.VisualStateChangedEventArgs">
+  <TypeSignature Language="C#" Value="public sealed class VisualStateChangedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit VisualStateChangedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.VisualStateChangedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.VisualStateGroup.CurrentStateChanging" /> イベントおよび <see cref="E:System.Windows.VisualStateGroup.CurrentStateChanged" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.VisualStateGroup>ことが発生し、イベントが設定で、 <xref:System.Windows.Controls.ControlTemplate> 、コントロールの<xref:System.Windows.VisualStateChangedEventArgs.Control%2A>プロパティは、コントロールを所有している、<xref:System.Windows.Controls.ControlTemplate>です。 ときに、<xref:System.Windows.VisualStateGroup>に設定されている、<xref:System.Windows.FrameworkElement>に含まれていない、 <xref:System.Windows.Controls.ControlTemplate>、<xref:System.Windows.VisualStateChangedEventArgs.Control%2A>プロパティは`null`必要がありますを使用して、<xref:System.Windows.VisualStateChangedEventArgs.StateGroupsRoot%2A>プロパティです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Control">
+      <MemberSignature Language="C#" Value="public System.Windows.FrameworkElement Control { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.FrameworkElement Control" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.VisualStateChangedEventArgs.Control" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FrameworkElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>状態が遷移する要素を取得します。</summary>
+        <value>場合、状態を遷移は、要素、<see cref="T:System.Windows.VisualStateGroup" />では、 <see cref="T:System.Windows.Controls.ControlTemplate" />、それ以外の<see langword="null" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.VisualStateGroup>に設定されている、<xref:System.Windows.FrameworkElement>に含まれていない、 <xref:System.Windows.Controls.ControlTemplate>、<xref:System.Windows.VisualStateChangedEventArgs.Control%2A>プロパティは`null`必要がありますを使用して、<xref:System.Windows.VisualStateChangedEventArgs.StateGroupsRoot%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewState">
+      <MemberSignature Language="C#" Value="public System.Windows.VisualState NewState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.VisualState NewState" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.VisualStateChangedEventArgs.NewState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.VisualState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素への移行がまたはに遷移の状態を取得します。</summary>
+        <value>要素が遷移するかに遷移しました状態です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OldState">
+      <MemberSignature Language="C#" Value="public System.Windows.VisualState OldState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.VisualState OldState" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.VisualStateChangedEventArgs.OldState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.VisualState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素が遷移するかからが遷移した状態を取得します。</summary>
+        <value>要素が遷移するかからが遷移した状態です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StateGroupsRoot">
+      <MemberSignature Language="C#" Value="public System.Windows.FrameworkElement StateGroupsRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.FrameworkElement StateGroupsRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.VisualStateChangedEventArgs.StateGroupsRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FrameworkElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>含むルート要素を取得、<see cref="T:System.Windows.VisualStateManager" />です。</summary>
+        <value>ルート要素を含む、<see cref="T:System.Windows.VisualStateManager" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

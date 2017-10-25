@@ -1,0 +1,179 @@
+<Type Name="MultiBindingExpression" FullName="System.Windows.Data.MultiBindingExpression">
+  <TypeSignature Language="C#" Value="public sealed class MultiBindingExpression : System.Windows.Data.BindingExpressionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MultiBindingExpression extends System.Windows.Data.BindingExpressionBase" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Data.MultiBindingExpression" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Data.BindingExpressionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>1 つのインスタンスに関するインスタンス情報が含まれています、<see cref="T:System.Windows.Data.MultiBinding" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Data.MultiBindingExpression>1 つの実行時インスタンスの説明、<xref:System.Windows.Data.MultiBinding>です。 コレクションを記述するため、<xref:System.Windows.Data.BindingExpression>オブジェクトは、1 つのバインド ターゲット プロパティにアタッチします。  
+  
+ バインディング式については、バインディングと BindingExpression のセクションを参照して、[データ バインディングの概要](~/docs/framework/wpf/data/data-binding-overview.md)です。  
+  
+ プロパティの値コンバーターの使用で、<xref:System.Windows.Data.BindingExpression>内のオブジェクト、<xref:System.Windows.Data.MultiBindingExpression>ターゲット プロパティの最終的な値を生成します。 フィードバックする値のセットに変換はターゲット プロパティの値は逆方向で、<xref:System.Windows.Data.BindingExpression>オブジェクト。 詳細については、「<xref:System.Windows.Data.MultiBinding>」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BindingExpressions">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Data.BindingExpressionBase&gt; BindingExpressions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Windows.Data.BindingExpressionBase&gt; BindingExpressions" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.MultiBindingExpression.BindingExpressions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Data.BindingExpressionBase&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Windows.Data.BindingExpression" />のこのインスタンス内のオブジェクト<see cref="T:System.Windows.Data.MultiBindingExpression" />です。</summary>
+        <value>読み取り専用のコレクション、<see cref="T:System.Windows.Data.BindingExpression" />オブジェクト。 戻り値の型のコレクションも<see cref="T:System.Windows.Data.BindingExpressionBase" />オブジェクトを返されるコレクションはのみを含める<see cref="T:System.Windows.Data.BindingExpression" />オブジェクト、<see cref="T:System.Windows.Data.MultiBinding" />クラスのみがサポートでは現在<see cref="T:System.Windows.Data.Binding" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasError">
+      <MemberSignature Language="C#" Value="public override bool HasError { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasError" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.MultiBindingExpression.HasError" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を返すかどうか、内部のいずれかの<see cref="T:System.Windows.Data.Binding" />オブジェクトまたは<see cref="T:System.Windows.Data.MultiBinding" />それ自体を持つ、障害が発生した検証規則。</summary>
+        <value>
+          <see langword="true" />場合に、少なくとも 1 つ、内部の<see cref="T:System.Windows.Data.Binding" />オブジェクトまたは<see cref="T:System.Windows.Data.MultiBinding" />それ自体を持つ障害が発生した検証ルールです。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 両方の検証規則を設定することができます、<xref:System.Windows.Data.MultiBinding>オブジェクトと、個人<xref:System.Windows.Data.Binding>内のオブジェクト、<xref:System.Windows.Data.MultiBinding>オブジェクト。 バインディング エンジン、<xref:System.Windows.Data.MultiBinding.ValidationRules%2A>上、<xref:System.Windows.Data.MultiBinding>オブジェクトの値にするバインディング ターゲット プロパティから移動すると、<xref:System.Windows.Data.IMultiValueConverter>オブジェクト (複数の値コンバーターの場合)。 その後、値が個別のバインディングのバインディング ソース プロパティへのコンバーターから離れるときにバインディング エンジンは、評価、<xref:System.Windows.Data.Binding.ValidationRules%2A>を<xref:System.Windows.Data.Binding>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasValidationError">
+      <MemberSignature Language="C#" Value="public override bool HasValidationError { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasValidationError" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.MultiBindingExpression.HasValidationError" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>親のバインドが失敗した検証規則を持つかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は親のバインドがある失敗した検証規則です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 同じで、このプロパティは、<xref:System.Windows.Data.MultiBindingExpression.HasError%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParentMultiBinding">
+      <MemberSignature Language="C#" Value="public System.Windows.Data.MultiBinding ParentMultiBinding { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Data.MultiBinding ParentMultiBinding" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.MultiBindingExpression.ParentMultiBinding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Data.MultiBinding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Data.MultiBinding" />オブジェクトからこの<see cref="T:System.Windows.Data.MultiBindingExpression" />を作成します。</summary>
+        <value><see cref="T:System.Windows.Data.MultiBinding" />オブジェクトからこの<see cref="T:System.Windows.Data.MultiBindingExpression" />を作成します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateSource">
+      <MemberSignature Language="C#" Value="public override void UpdateSource ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void UpdateSource() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.MultiBindingExpression.UpdateSource" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>バインディング ソースのプロパティを現在のバインディング ターゲットの値を送信<see cref="F:System.Windows.Data.BindingMode.TwoWay" />または<see cref="F:System.Windows.Data.BindingMode.OneWayToSource" />バインドします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateTarget">
+      <MemberSignature Language="C#" Value="public override void UpdateTarget ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void UpdateTarget() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.MultiBindingExpression.UpdateTarget" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>バインディング ソース プロパティからバインディング ターゲット プロパティへのデータ転送を強制的に実行します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidationError">
+      <MemberSignature Language="C#" Value="public override System.Windows.Controls.ValidationError ValidationError { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.ValidationError ValidationError" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.MultiBindingExpression.ValidationError" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.ValidationError</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Controls.ValidationError" />オブジェクトのこのインスタンスの原因となった<see cref="T:System.Windows.Data.MultiBindingExpression" />無効にします。</summary>
+        <value><see cref="T:System.Windows.Controls.ValidationError" />オブジェクトのこのインスタンスの原因となった<see cref="T:System.Windows.Data.MultiBindingExpression" />無効にします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 両方の検証規則を設定することができます、<xref:System.Windows.Data.MultiBinding>オブジェクトと、個人<xref:System.Windows.Data.Binding>内のオブジェクト、<xref:System.Windows.Data.MultiBinding>オブジェクト。 バインディング エンジン、<xref:System.Windows.Data.MultiBinding.ValidationRules%2A>上、<xref:System.Windows.Data.MultiBinding>オブジェクトの値にするバインディング ターゲット プロパティから移動すると、<xref:System.Windows.Data.IMultiValueConverter>オブジェクト (複数の値コンバーターの場合)。 その後、値が個別のバインディングのバインディング ソース プロパティへのコンバーターから離れるときにバインディング エンジンは、評価、<xref:System.Windows.Data.Binding.ValidationRules%2A>を<xref:System.Windows.Data.Binding>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

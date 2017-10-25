@@ -1,0 +1,853 @@
+<Type Name="ActivityDesignerTheme" FullName="System.Workflow.ComponentModel.Design.ActivityDesignerTheme">
+  <TypeSignature Language="C#" Value="public class ActivityDesignerTheme : System.Workflow.ComponentModel.Design.DesignerTheme" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ActivityDesignerTheme extends System.Workflow.ComponentModel.Design.DesignerTheme" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Design.ActivityDesignerTheme" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.ComponentModel.Design.DesignerTheme</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>デザイン時環境でのデザイナーの外観プロパティの設定を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ デザイナー テーマは、デザイナーの外観を定義します。 これには、デザイナーに定義される背景スタイル、前景スタイル、フォント、およびアイコンが含まれます。  
+  
+ デザイナーに固有のプロパティを構成できるようにするには、カスタム デザイナー テーマを作成します。 カスタム デザイナーのデザイナー テーマを指定しない場合は、基本クラスのテーマが使用されます。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme> クラスを派生させて新しいテーマに適したプロパティを設定することによってカスタム <xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme> を作成する方法の例を、次に示します。  
+  
+ [!code-csharp[WF_Samples#80](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#80)]
+ [!code-vb[WF_Samples#80](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#80)]  
+  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesigner> でテーマを使用するには、<xref:System.Workflow.ComponentModel.Design.ActivityDesignerThemeAttribute> クラスに <xref:System.Workflow.ComponentModel.Design.ActivityDesigner> を適用します。  
+  
+ [!code-csharp[WF_Samples#79](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#79)]
+ [!code-vb[WF_Samples#79](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#79)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivityDesignerTheme (System.Workflow.ComponentModel.Design.WorkflowTheme theme);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Workflow.ComponentModel.Design.WorkflowTheme theme) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.#ctor(System.Workflow.ComponentModel.Design.WorkflowTheme)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="theme" Type="System.Workflow.ComponentModel.Design.WorkflowTheme" />
+      </Parameters>
+      <Docs>
+        <param name="theme"><see cref="T:System.Workflow.ComponentModel.Design.WorkflowTheme" /> のテーマ情報を格納している <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerTheme" /> のインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackColorEnd">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Color BackColorEnd { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color BackColorEnd" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.BackColorEnd" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor(typeof(System.Workflow.ComponentModel.Design.ColorPickerEditor), typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Workflow.ComponentModel.Design.ColorPickerConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(6)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>背景色に色のグラデーションを使用するときに終わりの <see cref="T:System.Drawing.Color" /> を取得または設定します。</summary>
+        <value>背景の終わりの <see cref="T:System.Drawing.Color" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.BackColorEnd%2A> は、背景グラデーションの終了色を示します。 背景にグラデーション カラーを使用するには、<xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.BackColorStart%2A> プロパティおよび <xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.BackColorEnd%2A> プロパティを設定します。 背景色が開始色から終了色まで徐々に変化します。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme> クラスを派生させて新しいテーマに適したプロパティを設定することによってカスタム <xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme> を作成する方法の例を、次に示します。  
+  
+ [!code-csharp[WF_Samples#80](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#80)]
+ [!code-vb[WF_Samples#80](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#80)]  
+  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesigner> でテーマを使用するには、<xref:System.Workflow.ComponentModel.Design.ActivityDesignerThemeAttribute> クラスに <xref:System.Workflow.ComponentModel.Design.ActivityDesigner> を適用します。  
+  
+ [!code-csharp[WF_Samples#79](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#79)]
+ [!code-vb[WF_Samples#79](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#79)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackColorStart">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Color BackColorStart { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color BackColorStart" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.BackColorStart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor(typeof(System.Workflow.ComponentModel.Design.ColorPickerEditor), typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Workflow.ComponentModel.Design.ColorPickerConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(5)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>背景色に色のグラデーションを使用するときに背景の開始色を取得または設定します。</summary>
+        <value>背景の始まりの <see cref="T:System.Drawing.Color" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.BackColorStart%2A> は、背景色または背景グラデーションの開始色を示します。 背景にグラデーション カラーを使用するには、<xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.BackColorStart%2A> プロパティおよび <xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.BackColorEnd%2A> プロパティを設定します。 背景色が開始色から終了色まで徐々に変化します。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme> クラスを派生させて新しいテーマに適したプロパティを設定することによってカスタム <xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme> を作成する方法の例を、次に示します。  
+  
+ [!code-csharp[WF_Samples#80](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#80)]
+ [!code-vb[WF_Samples#80](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#80)]  
+  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesigner> でテーマを使用するには、<xref:System.Workflow.ComponentModel.Design.ActivityDesignerThemeAttribute> クラスに <xref:System.Workflow.ComponentModel.Design.ActivityDesigner> を適用します。  
+  
+ [!code-csharp[WF_Samples#79](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#79)]
+ [!code-vb[WF_Samples#79](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#79)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundStyle">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Drawing2D.LinearGradientMode BackgroundStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Drawing2D.LinearGradientMode BackgroundStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.BackgroundStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(7)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.LinearGradientMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>背景スタイルを取得または設定します。</summary>
+        <value>背景スタイルを示す <see cref="T:System.Drawing.Drawing2D.LinearGradientMode" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 背景色の表示方法を取得または設定するには、<xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.BackgroundStyle%2A> を使用します。 <xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.BackgroundStyle%2A> は、次の 4 つのモードのいずれかに設定できます。  
+  
+ `BackwardDiagonal`  
+ 右上から左下へのグラデーションを指定します。  
+  
+ `ForwardDiagonal`  
+ 左上から右下へのグラデーションを指定します。  
+  
+ `Horizontal`  
+ 左から右へのグラデーションを指定します。  
+  
+ `Vertical`  
+ 上から下へのグラデーションを指定します。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme> クラスを派生させて新しいテーマに適したプロパティを設定することによってカスタム <xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme> を作成する方法の例を、次に示します。  
+  
+ [!code-csharp[WF_Samples#80](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#80)]
+ [!code-vb[WF_Samples#80](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#80)]  
+  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesigner> でテーマを使用するには、<xref:System.Workflow.ComponentModel.Design.ActivityDesignerThemeAttribute> クラスに <xref:System.Workflow.ComponentModel.Design.ActivityDesigner> を適用します。  
+  
+ [!code-csharp[WF_Samples#79](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#79)]
+ [!code-vb[WF_Samples#79](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#79)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BoldFont">
+      <MemberSignature Language="C#" Value="public System.Drawing.Font BoldFont { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Font BoldFont" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.BoldFont" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Font</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーマのフォントを取得します。</summary>
+        <value>テーマの <see cref="T:System.Drawing.Font" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.BoldFont%2A> は、テーマで強調表示テキストに使用するフォントを表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderColor">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Color BorderColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color BorderColor" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.BorderColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor(typeof(System.Workflow.ComponentModel.Design.ColorPickerEditor), typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Workflow.ComponentModel.Design.ColorPickerConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(3)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーマの <see cref="P:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.BorderColor" /> を取得または設定します。</summary>
+        <value>テーマの <see cref="T:System.Drawing.Color" /> を表す <see cref="P:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.BorderColor" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.BorderColor%2A> は、形状の境界線の描画に使用される色です。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme> クラスを派生させて新しいテーマに適したプロパティを設定することによってカスタム <xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme> を作成する方法の例を、次に示します。  
+  
+ [!code-csharp[WF_Samples#80](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#80)]
+ [!code-vb[WF_Samples#80](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#80)]  
+  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesigner> でテーマを使用するには、<xref:System.Workflow.ComponentModel.Design.ActivityDesignerThemeAttribute> クラスに <xref:System.Workflow.ComponentModel.Design.ActivityDesigner> を適用します。  
+  
+ [!code-csharp[WF_Samples#79](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#79)]
+ [!code-vb[WF_Samples#79](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#79)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderPen">
+      <MemberSignature Language="C#" Value="public System.Drawing.Pen BorderPen { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Pen BorderPen" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.BorderPen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Pen</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーマの BorderPen を取得します。</summary>
+        <value>テーマの <see cref="T:System.Drawing.Pen" /> を表す <see cref="P:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.BorderPen" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.BorderPen%2A> は、形状の境界線の描画に使用されるペンです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderStyle">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Drawing2D.DashStyle BorderStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Drawing2D.DashStyle BorderStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.BorderStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Workflow.ComponentModel.Design.FilteredEnumConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(4)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.DashStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>境界線に使用されるスタイルを取得または設定します。</summary>
+        <value>境界線に使用されるスタイルを表す <see cref="T:System.Drawing.Drawing2D.DashStyle" /> 列挙体。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.BorderStyle%2A> は、形状の境界を描画する線のスタイルです。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme> クラスを派生させて新しいテーマに適したプロパティを設定することによってカスタム <xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme> を作成する方法の例を、次に示します。  
+  
+ [!code-csharp[WF_Samples#80](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#80)]
+ [!code-vb[WF_Samples#80](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#80)]  
+  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesigner> でテーマを使用するには、<xref:System.Workflow.ComponentModel.Design.ActivityDesignerThemeAttribute> クラスに <xref:System.Workflow.ComponentModel.Design.ActivityDesigner> を適用します。  
+  
+ [!code-csharp[WF_Samples#79](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#79)]
+ [!code-vb[WF_Samples#79](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#79)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderWidth">
+      <MemberSignature Language="C#" Value="public int BorderWidth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 BorderWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.BorderWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>境界線の幅 (ピクセル単位) を取得します。</summary>
+        <value>境界線の幅 (ピクセル単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.BorderWidth%2A> は、形状の境界線の幅 (ピクセル単位) です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesignerGeometry">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.Design.DesignerGeometry DesignerGeometry { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Workflow.ComponentModel.Design.DesignerGeometry DesignerGeometry" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.DesignerGeometry" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.DesignerGeometry</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーのジオメトリを取得します。</summary>
+        <value>デザイナーのジオメトリを示す列挙体。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.DesignerGeometry%2A> は、テーマでの形状の既定のジオメトリを表します。  
+  
+ `Rectangle`  
+ 角が直角の形状を描画します。  
+  
+ `RoundedRectangle`  
+ 角が丸い形状を描画します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesignerImage">
+      <MemberSignature Language="C#" Value="public System.Drawing.Image DesignerImage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Image DesignerImage" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.DesignerImage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Image</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーに関連付けられたイメージを取得します。</summary>
+        <value>デザイナーに表示される <see cref="T:System.Drawing.Image" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.DesignerImage%2A> は、デザイナーに表示される既定のイメージです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesignerImagePath">
+      <MemberSignature Language="C#" Value="public virtual string DesignerImagePath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DesignerImagePath" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.DesignerImagePath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor(typeof(System.Workflow.ComponentModel.Design.ImageBrowserEditor), typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナー用のイメージのパスを取得または設定します。</summary>
+        <value>デザイナー用のイメージのパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.DesignerImagePath%2A> は、デザイナーに表示される既定のイメージとして使用するイメージ ファイルへのパスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerTheme" /> で使用されているアンマネージ リソースを解放します。オプションでマネージ リソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `disposing` が `true` の場合、このメソッドは <xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme> から参照されるすべてのマネージ オブジェクトが保持しているリソースをすべて解放します。 このメソッドは、参照される各オブジェクトの `Dispose` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Font">
+      <MemberSignature Language="C#" Value="public System.Drawing.Font Font { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Font Font" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.Font" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Font</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーマで使用されるテキストのフォントを取得します。</summary>
+        <value>デザイナー テーマのフォント。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Font` は、デザイナーでのテキスト表示に使用されます。 `Font` プロパティは、デザイナーに表示される通常のテキストに使用するフォントを決定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForeColor">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Color ForeColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color ForeColor" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.ForeColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor(typeof(System.Workflow.ComponentModel.Design.ColorPickerEditor), typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Workflow.ComponentModel.Design.ColorPickerConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(2)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>前景色を取得または設定します。</summary>
+        <value>テーマの前景色を表す <see cref="T:System.Drawing.Color" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テーマの前景色を指定するには、<xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.ForeColor%2A> プロパティを使用します。 通常、前景色はテキストの色を表します。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme> クラスを派生させて新しいテーマに適したプロパティを設定することによってカスタム <xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme> を作成する方法の例を、次に示します。  
+  
+ [!code-csharp[WF_Samples#80](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#80)]
+ [!code-vb[WF_Samples#80](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#80)]  
+  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesigner> でテーマを使用するには、<xref:System.Workflow.ComponentModel.Design.ActivityDesignerThemeAttribute> クラスに <xref:System.Workflow.ComponentModel.Design.ActivityDesigner> を適用します。  
+  
+ [!code-csharp[WF_Samples#79](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#79)]
+ [!code-vb[WF_Samples#79](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#79)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForegroundBrush">
+      <MemberSignature Language="C#" Value="public System.Drawing.Brush ForegroundBrush { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Brush ForegroundBrush" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.ForegroundBrush" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーマに関連付けられている <see cref="T:System.Drawing.Brush" /> オブジェクトを取得します。</summary>
+        <value>テーマに関連付けられている <see cref="T:System.Drawing.Brush" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを割り当てると、塗りつぶされた直線と曲線の描画には、テーマに関連付けられたブラシが使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForegroundPen">
+      <MemberSignature Language="C#" Value="public System.Drawing.Pen ForegroundPen { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Pen ForegroundPen" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.ForegroundPen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Pen</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーマの前景の描画に使用される <see cref="T:System.Drawing.Pen" /> を取得します。</summary>
+        <value>テーマの前景の描画に使用される <see cref="T:System.Drawing.Pen" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した幅とスタイルの線の描画には、<xref:System.Drawing.Pen> が使用されます。 `Pen` オブジェクトで描画した直線は、純色、テクスチャなど、さまざまな塗りつぶしスタイルで塗りつぶすことができます。 塗りつぶしスタイルは、塗りつぶしオブジェクトとして使用されるブラシまたはテクスチャによって異なります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBackgroundBrush">
+      <MemberSignature Language="C#" Value="public System.Drawing.Brush GetBackgroundBrush (System.Drawing.Rectangle rectangle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Drawing.Brush GetBackgroundBrush(valuetype System.Drawing.Rectangle rectangle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.GetBackgroundBrush(System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rectangle" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="rectangle">背景上の領域の位置とサイズを指定する <see cref="T:System.Drawing.Rectangle" />。</param>
+        <summary>渡された四角形によって指定された領域を描画するのに使用されるブラシを取得します。</summary>
+        <returns>四角形、楕円、扇形、多角形、パスなどのグラフィカル形状の内部を塗りつぶすために使用される <see cref="T:System.Drawing.Brush" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナーの背景の内部を塗りつぶすには、背景ブラシが使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageSize">
+      <MemberSignature Language="C#" Value="public System.Drawing.Size ImageSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size ImageSize" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.ImageSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーマのイメージのサイズを取得します。</summary>
+        <value>イメージのサイズを表す <see cref="T:System.Drawing.Size" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.ImageSize%2A> は、デザイナーのテーマで使用される既定イメージの <xref:System.Drawing.Size> です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.Initialize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイナー テーマを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme> をアンビエント テーマで初期化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnAmbientPropertyChanged">
+      <MemberSignature Language="C#" Value="public override void OnAmbientPropertyChanged (System.Workflow.ComponentModel.Design.AmbientProperty ambientProperty);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void OnAmbientPropertyChanged(valuetype System.Workflow.ComponentModel.Design.AmbientProperty ambientProperty) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.OnAmbientPropertyChanged(System.Workflow.ComponentModel.Design.AmbientProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ambientProperty" Type="System.Workflow.ComponentModel.Design.AmbientProperty" />
+      </Parameters>
+      <Docs>
+        <param name="ambientProperty">変更されたプロパティ。</param>
+        <summary>アンビエント設定の変更をシグナル通知するために呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.OnAmbientPropertyChanged%2A> は、アンビエント プロパティに変更が加えられたことをテーマに通知するのに使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Size">
+      <MemberSignature Language="C#" Value="public System.Drawing.Size Size { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size Size" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.Size" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーのサイズを取得します。</summary>
+        <value>デザイナーのサイズを表す <see cref="T:System.Drawing.Size" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サイズ プロパティは、デザイナーの <xref:System.Drawing.Size> を表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

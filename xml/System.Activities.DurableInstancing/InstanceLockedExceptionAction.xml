@@ -1,0 +1,66 @@
+<Type Name="InstanceLockedExceptionAction" FullName="System.Activities.DurableInstancing.InstanceLockedExceptionAction">
+  <TypeSignature Language="C#" Value="public enum InstanceLockedExceptionAction" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed InstanceLockedExceptionAction extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.DurableInstancing.InstanceLockedExceptionAction" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities.DurableInstancing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>インスタンスをロックしようとして例外を受け取ったとき、SQL 永続化プロバイダーが実行するアクションのオプションを格納します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AggressiveRetry">
+      <MemberSignature Language="C#" Value="AggressiveRetry" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Activities.DurableInstancing.InstanceLockedExceptionAction AggressiveRetry = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.DurableInstancing.InstanceLockedExceptionAction.AggressiveRetry" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.DurableInstancing.InstanceLockedExceptionAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>永続化プロバイダーがインスタンスのロックを再試行します。その際、再試行を繰り返すたびに待ち時間が指数関数的に長くなります。 永続化プロバイダーは、シーケンスの最後 (あらかじめ定義された再試行回数の後) に、呼び出し元に <see cref="T:System.Runtime.Persistence.InstanceLockedException" /> を渡します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="BasicRetry">
+      <MemberSignature Language="C#" Value="BasicRetry" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Activities.DurableInstancing.InstanceLockedExceptionAction BasicRetry = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.DurableInstancing.InstanceLockedExceptionAction.BasicRetry" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.DurableInstancing.InstanceLockedExceptionAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>永続化プロバイダーが一定の時間間隔でインスタンスのロックを再試行します。 永続化プロバイダーは、シーケンスの最後 (あらかじめ定義された再試行回数の後) に、呼び出し元に <see cref="T:System.Runtime.Persistence.InstanceLockedException" /> を渡します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NoRetry">
+      <MemberSignature Language="C#" Value="NoRetry" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Activities.DurableInstancing.InstanceLockedExceptionAction NoRetry = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.DurableInstancing.InstanceLockedExceptionAction.NoRetry" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.DurableInstancing.InstanceLockedExceptionAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスが他のホストによって既にロックされている場合、永続化プロバイダーはそのインスタンスのロックを再試行しません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

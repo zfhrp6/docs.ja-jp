@@ -1,0 +1,89 @@
+<Type Name="UnicodeDecodingConformance" FullName="System.Net.Configuration.UnicodeDecodingConformance">
+  <TypeSignature Language="C#" Value="public enum UnicodeDecodingConformance" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed UnicodeDecodingConformance extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Configuration.UnicodeDecodingConformance" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>Unicode 文字の解釈方法を制御、<see cref="Overload:System.Net.WebUtility.HtmlDecode" />メソッドです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Unicode 文字の本来の方法の詳細については HTML でエンコードするを参照してください[および CSS のマークアップでのエスケープ文字を使用して](http://go.microsoft.com/fwlink/?LinkId=256607)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Auto">
+      <MemberSignature Language="C#" Value="Auto" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Configuration.UnicodeDecodingConformance Auto = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Configuration.UnicodeDecodingConformance.Auto" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Configuration.UnicodeDecodingConformance</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>自動動作を使用します。 デコードの動作は、現在のアプリケーションのターゲット フレームワークによって決定されます。 [!INCLUDE[net_v45](~/includes/net-v45-md.md)] 、後で、Unicode エンコーディングのデコードが厳密すぎるとします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Compat">
+      <MemberSignature Language="C#" Value="Compat" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Configuration.UnicodeDecodingConformance Compat = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Configuration.UnicodeDecodingConformance.Compat" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Configuration.UnicodeDecodingConformance</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>互換性のある動作を使用します。 受信データがデコードされる前にチェックの有効性されませんを指定します。 たとえば、入力文字列の"&amp;amp; #xD84C"U + D84C 対になっていないサロゲートであるとしてデコードとします。 さらに、デコーダーによって認識されないコード ポイント SMP に HTML エンコードされたサロゲート、としてためそれら表現している場合を除き、inputstring"&amp;#144308;"、出力文字列になる"&amp;#144308;"です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Loose">
+      <MemberSignature Language="C#" Value="Loose" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Configuration.UnicodeDecodingConformance Loose = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Configuration.UnicodeDecodingConformance.Loose" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Configuration.UnicodeDecodingConformance</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>厳密でない動作を使用します。 ような<see cref="F:System.Net.Configuration.UnicodeDecodingConformance.Compat" />妥当性検査はありませんが、デコーダーでは、コード ポイントも認識することです。 入力文字列"&amp;#144308;"は、文字 U + 233B4 に正しくデコードします。 このスイッチは、デコーダーは、エンコードされた文字列を生成するプロバイダーを使用してどの形式を認識しないときに最大の相互運用性を提供するものです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Strict">
+      <MemberSignature Language="C#" Value="Strict" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Configuration.UnicodeDecodingConformance Strict = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Configuration.UnicodeDecodingConformance.Strict" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Configuration.UnicodeDecodingConformance</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>厳密な動作を使用します。 デコードする前に、受信のエンコードされたデータが有効かどうかチェックを指定します。 たとえば、という入力文字列"&amp;#144308;"は U +0 233B4、という入力文字列とデコード"&amp;#xD84C;&amp;#xDFB4;"が正しくデコードに失敗します。 文字列内の既にデコードされたデータは、有効かどうかはチェックされません。 たとえば、"\ud800"という入力文字列になります"\ud800"の出力文字列はペアになっていない場合でも、デコード中に、既にデコード サロゲートがスキップされました。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

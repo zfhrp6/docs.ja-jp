@@ -1,0 +1,489 @@
+<Type Name="TextDecoration" FullName="System.Windows.TextDecoration">
+  <TypeSignature Language="C#" Value="public sealed class TextDecoration : System.Windows.Media.Animation.Animatable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed TextDecoration extends System.Windows.Media.Animation.Animatable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.TextDecoration" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Animation.Animatable</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>文字の装飾を表すを visual 飾り (下線) などのテキストに追加されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字の装飾の 4 つの種類があります: 下線、基準、取り消し線、および上線。 次の例は、文字の装飾のテキストに対する相対位置を示します。  
+  
+ ![テキスト装飾位置のダイアグラム](~/add/media/textdecoration01.gif "テキスト装飾位置のダイアグラム")  
+テキスト装飾の種類の例  
+  
+ 次の例では、線形グラデーション ブラシとペンの破線スタイルが設定されているテキスト装飾を示します。  
+  
+ ![線形グラデーション下線付き文字飾り](~/add/media/textdecoration02.png "線形グラデーション下線付き文字飾り")  
+線形グラデーションのスタイルの下線の例ブラシ、ペンの破線  
+  
+ 注意して<xref:System.Windows.TextDecoration>から派生した<xref:System.Windows.Media.Animation.Animatable>です。 使用して、装飾要素にアニメーション効果を適用できるようになります、<xref:System.Windows.Media.Animation.DoubleAnimation>の<xref:System.Windows.TextDecoration.PenOffset%2A>と<xref:System.Windows.Media.Animation.ThicknessAnimation>の<xref:System.Windows.TextDecoration.Pen%2A>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TextDecoration ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.TextDecoration.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.TextDecoration" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値、<xref:System.Windows.TextDecoration.Location%2A>プロパティは<xref:System.Windows.TextDecorationLocation.Underline>します。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Windows.TextDecoration>既定コンス トラクターを使用します。  
+  
+ [!code-csharp[TextDecorationSnippets#TextDecorationSnippets2](~/samples/snippets/csharp/VS_Snippets_Wpf/TextDecorationSnippets/CSharp/Window1.xaml.cs#textdecorationsnippets2)]
+ [!code-vb[TextDecorationSnippets#TextDecorationSnippets2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextDecorationSnippets/visualbasic/window1.xaml.vb#textdecorationsnippets2)]
+ [!code-xaml[TextDecorationSnippets#TextDecorationSnippets2](~/samples/snippets/csharp/VS_Snippets_Wpf/TextDecorationSnippets/CSharp/Window1.xaml#textdecorationsnippets2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TextDecoration (System.Windows.TextDecorationLocation location, System.Windows.Media.Pen pen, double penOffset, System.Windows.TextDecorationUnit penOffsetUnit, System.Windows.TextDecorationUnit penThicknessUnit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.TextDecorationLocation location, class System.Windows.Media.Pen pen, float64 penOffset, valuetype System.Windows.TextDecorationUnit penOffsetUnit, valuetype System.Windows.TextDecorationUnit penThicknessUnit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.TextDecoration.#ctor(System.Windows.TextDecorationLocation,System.Windows.Media.Pen,System.Double,System.Windows.TextDecorationUnit,System.Windows.TextDecorationUnit)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="location" Type="System.Windows.TextDecorationLocation" />
+        <Parameter Name="pen" Type="System.Windows.Media.Pen" />
+        <Parameter Name="penOffset" Type="System.Double" />
+        <Parameter Name="penOffsetUnit" Type="System.Windows.TextDecorationUnit" />
+        <Parameter Name="penThicknessUnit" Type="System.Windows.TextDecorationUnit" />
+      </Parameters>
+      <Docs>
+        <param name="location">文字飾りの場所です。</param>
+        <param name="pen"><see cref="T:System.Windows.Media.Pen" />文字飾りを描画するために使用します。 場合は、この値は<see langword="null" />テキスト装飾の色に一致するテキストの色を適用する、および文字飾りの太さに設定されているフォントの推奨の太さ。</param>
+        <param name="penOffset">文字飾りの場所から垂直方向のディスプレイスメント。 負の値は、正の値以上の装飾の移動中に、下の装飾を移動します。</param>
+        <param name="penOffsetUnit">値の解釈に使用する単位<c>penOffset</c>です。</param>
+        <param name="penThicknessUnit">値の解釈に使用する単位、<see cref="P:System.Windows.Media.Pen.Thickness" />の<c>ペン</c>です。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.TextDecoration" /> 、指定したクラス<see cref="P:System.Windows.TextDecoration.Location" />、 <see cref="P:System.Windows.TextDecoration.Pen" />、 <see cref="P:System.Windows.TextDecoration.PenOffset" />、 <see cref="P:System.Windows.TextDecoration.PenOffsetUnit" />、および<see cref="P:System.Windows.TextDecoration.PenThicknessUnit" />値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Windows.TextDecoration>を使用して、 `location`、 `pen`、 `penOffset`、 `penOffsetUnit`、および`penThicknessUnit`パラメーター。  
+  
+ [!code-csharp[TextDecorationSnippets#TextDecorationSnippets6](~/samples/snippets/csharp/VS_Snippets_Wpf/TextDecorationSnippets/CSharp/Window1.xaml.cs#textdecorationsnippets6)]
+ [!code-vb[TextDecorationSnippets#TextDecorationSnippets6](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextDecorationSnippets/visualbasic/window1.xaml.vb#textdecorationsnippets6)]
+ [!code-xaml[TextDecorationSnippets#TextDecorationSnippets6](~/samples/snippets/csharp/VS_Snippets_Wpf/TextDecorationSnippets/CSharp/Window1.xaml#textdecorationsnippets6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.TextDecoration Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.TextDecoration Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.TextDecoration.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.TextDecoration</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.TextDecoration" /> の変更可能な複製を作成し、このオブジェクトの値の詳細コピーを作成します。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティが <see langword="true." /> である場合でも、<see langword="false" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.Clone%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ このメソッドは、依存関係プロパティをコピーするときにリソース参照とデータ バインディングをコピーしますが (ただし、これらは解決されなくなる場合があります)、アニメーションやその現在の値はコピーしません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCurrentValue">
+      <MemberSignature Language="C#" Value="public System.Windows.TextDecoration CloneCurrentValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.TextDecoration CloneCurrentValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.TextDecoration.CloneCurrentValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.TextDecoration</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.TextDecoration" /> オブジェクトの変更可能な複製を作成し、このオブジェクトの現在値の詳細コピーを作成します。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの<see cref="P:System.Windows.Freezable.IsFrozen" />プロパティの値が<see langword="false" />場合でも、ソースの<see cref="P:System.Windows.Freezable.IsFrozen" />プロパティの値が<see langword="true" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.CloneCurrentValue%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ リソース参照、データ バインディング、アニメーションはコピーされませんが、それらの現在値はコピーされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.TextDecoration.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Location">
+      <MemberSignature Language="C#" Value="public System.Windows.TextDecorationLocation Location { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.TextDecorationLocation Location" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.TextDecoration.Location" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.TextDecorationLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または文字飾りが描画される垂直方向の位置を設定します。</summary>
+        <value>文字飾りが描画される垂直方向の位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の例は、文字の装飾のテキストに対する相対位置を示します。  
+  
+ ![テキスト装飾位置のダイアグラム](~/add/media/textdecoration01.gif "テキスト装飾位置のダイアグラム")  
+テキスト装飾の種類の例  
+  
+ <xref:System.Windows.TextDecoration.PenOffset%2A>プロパティでは、指定された対象から文字飾りをオフセットできます。<xref:System.Windows.TextDecoration.Location%2A>です。  
+  
+<a name="dependencyPropertyInfo_Location"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.TextDecoration.LocationProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次のコード例では、純色のブラシ、ペンを使用した取り消し線テキスト装飾が作成されます。 <xref:System.Windows.TextDecoration.Location%2A> プロパティが <xref:System.Windows.TextDecorationLocation.Strikethrough> に設定されている。  
+  
+ [!code-csharp[textdecorationsnippets#TextDecorationSnippets1](~/samples/snippets/csharp/VS_Snippets_Wpf/TextDecorationSnippets/CSharp/Window1.xaml.cs#textdecorationsnippets1)]
+ [!code-vb[textdecorationsnippets#TextDecorationSnippets1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextDecorationSnippets/visualbasic/window1.xaml.vb#textdecorationsnippets1)]
+ [!code-xaml[textdecorationsnippets#TextDecorationSnippets1](~/samples/snippets/csharp/VS_Snippets_Wpf/TextDecorationSnippets/CSharp/Window1.xaml#textdecorationsnippets1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocationProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty LocationProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty LocationProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.TextDecoration.LocationProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.TextDecoration.Location" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pen">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Pen Pen { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Pen Pen" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.TextDecoration.Pen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Pen</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.Pen" />文字飾りを描画するために使用します。</summary>
+        <value><see cref="T:System.Windows.Media.Pen" />文字飾りを描画するために使用します。 この値が場合<c>null</c>装飾の色を適用する文字列と一致して、装飾の太さに設定されているフォントの推奨される、太さです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の例では、線形グラデーション ブラシとペンの破線スタイルが設定されているテキスト装飾を示します。  
+  
+ ![線形グラデーション下線付き文字飾り](~/add/media/textdecoration02.png "線形グラデーション下線付き文字飾り")  
+線形グラデーションのスタイルの下線の例ブラシ、ペンの破線  
+  
+<a name="dependencyPropertyInfo_Pen"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.TextDecoration.PenProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次のコード例では、下線の文字装飾を破線のペンの線形グラデーション ブラシを使用して作成されます。  
+  
+ [!code-csharp[textdecorationsnippets#TextDecorationSnippets3](~/samples/snippets/csharp/VS_Snippets_Wpf/TextDecorationSnippets/CSharp/Window1.xaml.cs#textdecorationsnippets3)]
+ [!code-vb[textdecorationsnippets#TextDecorationSnippets3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextDecorationSnippets/visualbasic/window1.xaml.vb#textdecorationsnippets3)]
+ [!code-xaml[textdecorationsnippets#TextDecorationSnippets3](~/samples/snippets/csharp/VS_Snippets_Wpf/TextDecorationSnippets/CSharp/Window1.xaml#textdecorationsnippets3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PenOffset">
+      <MemberSignature Language="C#" Value="public double PenOffset { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 PenOffset" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.TextDecoration.PenOffset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文字飾りのオフセットを取得または設定、<see cref="P:System.Windows.TextDecoration.Location" />です。</summary>
+        <value>文字飾りのオフセット、<see cref="P:System.Windows.TextDecoration.Location" />です。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 負の値は、正の値が低い文字飾りを移動中に、以降では、文字飾りを移動します。 使用して、<xref:System.Windows.TextDecoration.PenOffsetUnit%2A>プロパティをこの値の単位を解釈する方法を指定します。  
+  
+<a name="dependencyPropertyInfo_PenOffset"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.TextDecoration.PenOffsetProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.TextDecoration.PenOffset%2A> プロパティを設定する方法を次のコード例に示します。  
+  
+ [!code-csharp[TextDecorationSnippets#TextDecorationSnippets7](~/samples/snippets/csharp/VS_Snippets_Wpf/TextDecorationSnippets/CSharp/Window1.xaml.cs#textdecorationsnippets7)]
+ [!code-vb[TextDecorationSnippets#TextDecorationSnippets7](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextDecorationSnippets/visualbasic/window1.xaml.vb#textdecorationsnippets7)]
+ [!code-xaml[TextDecorationSnippets#TextDecorationSnippets7](~/samples/snippets/csharp/VS_Snippets_Wpf/TextDecorationSnippets/CSharp/Window1.xaml#textdecorationsnippets7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PenOffsetProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PenOffsetProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PenOffsetProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.TextDecoration.PenOffsetProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.TextDecoration.PenOffset" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PenOffsetUnit">
+      <MemberSignature Language="C#" Value="public System.Windows.TextDecorationUnit PenOffsetUnit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.TextDecorationUnit PenOffsetUnit" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.TextDecoration.PenOffsetUnit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.TextDecorationUnit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>単位を取得、<see cref="P:System.Windows.TextDecoration.PenOffset" />値が表されます。</summary>
+        <value>単位、<see cref="P:System.Windows.TextDecoration.PenOffset" />値が表されます。 既定値は、<see cref="F:System.Windows.TextDecorationUnit.FontRecommended" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_PenOffsetUnit"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.TextDecoration.PenOffsetUnitProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.TextDecoration.PenOffsetUnit%2A> プロパティを設定する方法を次のコード例に示します。  
+  
+ [!code-csharp[TextDecorationSnippets#TextDecorationSnippets7](~/samples/snippets/csharp/VS_Snippets_Wpf/TextDecorationSnippets/CSharp/Window1.xaml.cs#textdecorationsnippets7)]
+ [!code-vb[TextDecorationSnippets#TextDecorationSnippets7](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextDecorationSnippets/visualbasic/window1.xaml.vb#textdecorationsnippets7)]
+ [!code-xaml[TextDecorationSnippets#TextDecorationSnippets7](~/samples/snippets/csharp/VS_Snippets_Wpf/TextDecorationSnippets/CSharp/Window1.xaml#textdecorationsnippets7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PenOffsetUnitProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PenOffsetUnitProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PenOffsetUnitProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.TextDecoration.PenOffsetUnitProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.TextDecoration.PenOffsetUnit" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PenProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PenProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PenProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.TextDecoration.PenProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.TextDecoration.Pen" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PenThicknessUnit">
+      <MemberSignature Language="C#" Value="public System.Windows.TextDecorationUnit PenThicknessUnit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.TextDecorationUnit PenThicknessUnit" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.TextDecoration.PenThicknessUnit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.TextDecorationUnit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>単位を取得、<see cref="P:System.Windows.Media.Pen.Thickness" />の文字飾りの<see cref="P:System.Windows.TextDecoration.Pen" />表されます。</summary>
+        <value>単位、<see cref="P:System.Windows.Media.Pen.Thickness" />の文字飾りの<see cref="P:System.Windows.TextDecoration.Pen" />表されます。 既定値は、<see cref="F:System.Windows.TextDecorationUnit.FontRecommended" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_PenThicknessUnit"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.TextDecoration.PenThicknessUnitProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.TextDecoration.PenThicknessUnit%2A> プロパティを設定する方法を次のコード例に示します。  
+  
+ [!code-csharp[TextDecorationSnippets#TextDecorationSnippets7](~/samples/snippets/csharp/VS_Snippets_Wpf/TextDecorationSnippets/CSharp/Window1.xaml.cs#textdecorationsnippets7)]
+ [!code-vb[TextDecorationSnippets#TextDecorationSnippets7](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextDecorationSnippets/visualbasic/window1.xaml.vb#textdecorationsnippets7)]
+ [!code-xaml[TextDecorationSnippets#TextDecorationSnippets7](~/samples/snippets/csharp/VS_Snippets_Wpf/TextDecorationSnippets/CSharp/Window1.xaml#textdecorationsnippets7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PenThicknessUnitProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PenThicknessUnitProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PenThicknessUnitProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.TextDecoration.PenThicknessUnitProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.TextDecoration.PenThicknessUnit" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,502 @@
+<Type Name="ExtendedProtectionPolicy" FullName="System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy">
+  <TypeSignature Language="C#" Value="public class ExtendedProtectionPolicy : System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ExtendedProtectionPolicy extends System.Object implements class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Security</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicyTypeConverter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.MonoTODO</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" />クラスは、受信クライアント接続を検証する、サーバーによって使用される拡張保護ポリシーを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 公開する任意のクラス、<xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy>クラスが null のポリシーの設定を許可しないで、既定のポリシーを指定する必要がありますまたは、明示的なポリシーの作成され、アプリケーション開発者または管理者によって設定する必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExtendedProtectionPolicy (System.Security.Authentication.ExtendedProtection.PolicyEnforcement policyEnforcement);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Authentication.ExtendedProtection.PolicyEnforcement policyEnforcement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.#ctor(System.Security.Authentication.ExtendedProtection.PolicyEnforcement)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("Not implemented.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="policyEnforcement" Type="System.Security.Authentication.ExtendedProtection.PolicyEnforcement" />
+      </Parameters>
+      <Docs>
+        <param name="policyEnforcement">拡張保護ポリシーを適用するタイミングを示す <see cref="T:System.Security.Authentication.ExtendedProtection.PolicyEnforcement" /> 値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" />拡張保護ポリシーを適用するかを指定するクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用する場合、<xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy>クラス、<xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.PolicyEnforcement%2A>プロパティに設定されている、`policyEnforcement`パラメーターおよび<xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.ProtectionScenario%2A>プロパティに設定されている<xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario.TransportSelected>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ExtendedProtectionPolicy (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">新しい <see cref="T:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" /> インスタンスをシリアル化するために必要な情報を格納する <see cref="T:System.Runtime.Serialization.SerializationInfo" /> インスタンス。</param>
+        <param name="context">新しい <see cref="T:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" /> インスタンスに関連付けられているシリアル化ストリームの転送元を格納している <see cref="T:System.Runtime.Serialization.StreamingContext" />。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" />クラス、<see cref="T:System.Runtime.Serialization.SerializationInfo" />に設定する必要なデータを格納しているオブジェクト、<see cref="T:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを実装して、<xref:System.Runtime.Serialization.ISerializable?displayProperty=nameWithType>のためのインターフェイス、<xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy>クラスです。  
+  
+ <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.System%23Runtime%23Serialization%23ISerializable%23GetObjectData%2A>メソッドは、シリアル化を使用することができます、<xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy>オブジェクト。 このシリアル化されたオブジェクトで使用できます<xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.%23ctor%28System.Runtime.Serialization.SerializationInfo%2CSystem.Runtime.Serialization.StreamingContext%29>新しい構築するために<xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExtendedProtectionPolicy (System.Security.Authentication.ExtendedProtection.PolicyEnforcement policyEnforcement, System.Security.Authentication.ExtendedProtection.ChannelBinding customChannelBinding);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Authentication.ExtendedProtection.PolicyEnforcement policyEnforcement, class System.Security.Authentication.ExtendedProtection.ChannelBinding customChannelBinding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.#ctor(System.Security.Authentication.ExtendedProtection.PolicyEnforcement,System.Security.Authentication.ExtendedProtection.ChannelBinding)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="policyEnforcement" Type="System.Security.Authentication.ExtendedProtection.PolicyEnforcement" />
+        <Parameter Name="customChannelBinding" Type="System.Security.Authentication.ExtendedProtection.ChannelBinding" />
+      </Parameters>
+      <Docs>
+        <param name="policyEnforcement">拡張保護ポリシーを適用するタイミングを示す <see cref="T:System.Security.Authentication.ExtendedProtection.PolicyEnforcement" /> 値。</param>
+        <param name="customChannelBinding">A<see cref="T:System.Security.Authentication.ExtendedProtection.ChannelBinding" />検証に使用するカスタム チャネル バインディングを格納しています。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" />拡張保護ポリシーを適用するかを指定するクラスとチャネル バインド トークン (CBT) を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用する場合、<xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy>クラス、<xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.PolicyEnforcement%2A>プロパティに設定されている、`policyEnforcement`パラメーター、<xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.CustomChannelBinding%2A>プロパティに設定されている、`customChannelBinding`パラメーター、および<xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.ProtectionScenario%2A>プロパティに設定されている<xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario.TransportSelected>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="policyEnforcement" /> は <see cref="F:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Never" /> として指定されます。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="customChannelBinding" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExtendedProtectionPolicy (System.Security.Authentication.ExtendedProtection.PolicyEnforcement policyEnforcement, System.Security.Authentication.ExtendedProtection.ProtectionScenario protectionScenario, System.Collections.ICollection customServiceNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Authentication.ExtendedProtection.PolicyEnforcement policyEnforcement, valuetype System.Security.Authentication.ExtendedProtection.ProtectionScenario protectionScenario, class System.Collections.ICollection customServiceNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.#ctor(System.Security.Authentication.ExtendedProtection.PolicyEnforcement,System.Security.Authentication.ExtendedProtection.ProtectionScenario,System.Collections.ICollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="policyEnforcement" Type="System.Security.Authentication.ExtendedProtection.PolicyEnforcement" />
+        <Parameter Name="protectionScenario" Type="System.Security.Authentication.ExtendedProtection.ProtectionScenario" />
+        <Parameter Name="customServiceNames" Type="System.Collections.ICollection" />
+      </Parameters>
+      <Docs>
+        <param name="policyEnforcement">拡張保護ポリシーを適用するタイミングを示す <see cref="T:System.Security.Authentication.ExtendedProtection.PolicyEnforcement" /> 値。</param>
+        <param name="protectionScenario">A<see cref="T:System.Security.Authentication.ExtendedProtection.ProtectionScenario" />ポリシーによって適用される保護の種類を示す値。</param>
+        <param name="customServiceNames">A<see cref="T:System.Collections.ICollection" />クライアントの SPN と照合するために使用されるカスタムの SPN のリストを格納しています。</param>
+        <summary>拡張保護ポリシーを適用するタイミング、ポリシーによって適用される保護の種類、およびクライアントのサービス プロバイダー名 (SPN) との照合に使用されるカスタム SPN 一覧を指定する <see cref="T:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用する場合、<xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy>クラス、<xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.PolicyEnforcement%2A>プロパティに設定されている、`policyEnforcement`パラメーター、<xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.ProtectionScenario%2A>プロパティに設定されている、`protectionScenario`パラメーター、および<xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.CustomServiceNames%2A>プロパティに設定されている、`customServiceNames`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="policyEnforcement" /> は <see cref="F:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Never" /> として指定されます。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="customServiceNames" /><see langword="null" />または空のリスト。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExtendedProtectionPolicy (System.Security.Authentication.ExtendedProtection.PolicyEnforcement policyEnforcement, System.Security.Authentication.ExtendedProtection.ProtectionScenario protectionScenario, System.Security.Authentication.ExtendedProtection.ServiceNameCollection customServiceNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Authentication.ExtendedProtection.PolicyEnforcement policyEnforcement, valuetype System.Security.Authentication.ExtendedProtection.ProtectionScenario protectionScenario, class System.Security.Authentication.ExtendedProtection.ServiceNameCollection customServiceNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.#ctor(System.Security.Authentication.ExtendedProtection.PolicyEnforcement,System.Security.Authentication.ExtendedProtection.ProtectionScenario,System.Security.Authentication.ExtendedProtection.ServiceNameCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="policyEnforcement" Type="System.Security.Authentication.ExtendedProtection.PolicyEnforcement" />
+        <Parameter Name="protectionScenario" Type="System.Security.Authentication.ExtendedProtection.ProtectionScenario" />
+        <Parameter Name="customServiceNames" Type="System.Security.Authentication.ExtendedProtection.ServiceNameCollection" />
+      </Parameters>
+      <Docs>
+        <param name="policyEnforcement">拡張保護ポリシーを適用するタイミングを示す <see cref="T:System.Security.Authentication.ExtendedProtection.PolicyEnforcement" /> 値。</param>
+        <param name="protectionScenario">A<see cref="T:System.Security.Authentication.ExtendedProtection.ProtectionScenario" />ポリシーによって適用される保護の種類を示す値。</param>
+        <param name="customServiceNames">A<see cref="T:System.Security.Authentication.ExtendedProtection.ServiceNameCollection" />クライアントの SPN と照合するために使用されるカスタムの SPN のリストを格納しています。</param>
+        <summary>拡張保護ポリシーを適用するタイミング、ポリシーによって適用される保護の種類、およびクライアントのサービス プロバイダー名 (SPN) との照合に使用されるカスタム SPN 一覧を指定する <see cref="T:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用する場合、<xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy>クラス、<xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.PolicyEnforcement%2A>プロパティに設定されている、`policyEnforcement`パラメーター、<xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.ProtectionScenario%2A>プロパティに設定されている、`protectionScenario`パラメーター、および<xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.CustomServiceNames%2A>プロパティに設定されている、`customServiceNames`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="policyEnforcement" /> は <see cref="F:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Never" /> として指定されます。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="customServiceNames" /><see langword="null" />または空のリスト。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomChannelBinding">
+      <MemberSignature Language="C#" Value="public System.Security.Authentication.ExtendedProtection.ChannelBinding CustomChannelBinding { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Authentication.ExtendedProtection.ChannelBinding CustomChannelBinding" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.CustomChannelBinding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Authentication.ExtendedProtection.ChannelBinding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検証に使用するカスタム チャネル バインディング トークン (CBT) を取得します。</summary>
+        <value>A<see cref="T:System.Security.Authentication.ExtendedProtection.ChannelBinding" />検証に使用するカスタム チャネル バインディングを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この読み取り専用プロパティでは、検証に使用するカスタム チャネル バインディング トークンを表します。 CBT は、カスタムの外部チャネルによって提供されるときに高度なシナリオで使用されます。 シナリオの例は、このプロパティを使用すると組み合わせることがあります<xref:System.Net.Security.SslStream>と<xref:System.Net.Security.NegotiateStream>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomServiceNames">
+      <MemberSignature Language="C#" Value="public System.Security.Authentication.ExtendedProtection.ServiceNameCollection CustomServiceNames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Authentication.ExtendedProtection.ServiceNameCollection CustomServiceNames" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.CustomServiceNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Authentication.ExtendedProtection.ServiceNameCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カスタム サービス プロバイダー名 (SPN) クライアントの SPN と照合するために使用 ボックスの一覧を取得します。</summary>
+        <value>A<see cref="T:System.Security.Authentication.ExtendedProtection.ServiceNameCollection" />クライアントの SPN と照合するために使用されるカスタムの SPN のリストを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この読み取り専用プロパティでは、クライアントの SPN と照合するために使用されるカスタムの SPN のリストを示します。 既定では、サーバーは、登録されているエンドポイントに従って既定 SPN の一覧を決定します。 SPN の確認を必要とするシナリオでは、クライアントの SPN の照合に使用される既定のリストを上書きするコンス トラクターを使用して、使用してこのプロパティを指定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OSSupportsExtendedProtection">
+      <MemberSignature Language="C#" Value="public static bool OSSupportsExtendedProtection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool OSSupportsExtendedProtection" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.OSSupportsExtendedProtection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オペレーティング システムが拡張保護付き統合 windows 認証をサポートするかどうかを示します。</summary>
+        <value>
+          <see langword="true" />オペレーティング システムがそれ以外の場合拡張保護付き統合 windows 認証をサポートするかどうかは<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 拡張保護をサポートするために変更は、現在 Windows 7 および Windows Server 2008 R2 上のアプリケーションで使用されます。 拡張保護機能になりますの更新プログラムとして使用可能な Windows Vista と Windows Server 2008 用です。 拡張保護機能は、Windows の以前のバージョンではご利用いただけません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PolicyEnforcement">
+      <MemberSignature Language="C#" Value="public System.Security.Authentication.ExtendedProtection.PolicyEnforcement PolicyEnforcement { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Authentication.ExtendedProtection.PolicyEnforcement PolicyEnforcement" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.PolicyEnforcement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Authentication.ExtendedProtection.PolicyEnforcement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>拡張保護ポリシーを適用するかを取得します。</summary>
+        <value>拡張保護ポリシーを適用するタイミングを示す <see cref="T:System.Security.Authentication.ExtendedProtection.PolicyEnforcement" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この読み取り専用プロパティは、(クライアント、または never をサポート) の場合、常に拡張保護ポリシーを適用する場合を示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProtectionScenario">
+      <MemberSignature Language="C#" Value="public System.Security.Authentication.ExtendedProtection.ProtectionScenario ProtectionScenario { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Authentication.ExtendedProtection.ProtectionScenario ProtectionScenario" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.ProtectionScenario" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Authentication.ExtendedProtection.ProtectionScenario</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>拡張保護ポリシーによって適用される保護の種類を取得します。</summary>
+        <value>A<see cref="T:System.Security.Authentication.ExtendedProtection.ProtectionScenario" />ポリシーによって適用される保護の種類を示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この読み取り専用プロパティは、ポリシーによって適用される保護の種類を示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.ISerializable.GetObjectData">
+      <MemberSignature Language="C#" Value="void ISerializable.GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.Serialization.ISerializable.GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">A<see cref="T:System.Runtime.Serialization.SerializationInfo" />のシリアル化されたデータを保持するオブジェクト、<see cref="T:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" />オブジェクト。</param>
+        <param name="context">新しい <see cref="T:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" /> に関連付けられているシリアル化ストリームの転送先を格納している <see cref="T:System.Runtime.Serialization.StreamingContext" />。</param>
+        <summary>追加、<see cref="T:System.Runtime.Serialization.SerializationInfo" />オブジェクトのシリアル化に必要なデータを<see cref="T:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.System%23Runtime%23Serialization%23ISerializable%23GetObjectData%2A>メソッドは、シリアル化を使用することができます、<xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy>オブジェクト。 このシリアル化されたオブジェクトで使用できます<xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.%23ctor%28System.Runtime.Serialization.SerializationInfo%2CSystem.Runtime.Serialization.StreamingContext%29>新しい構築するために<xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>拡張保護ポリシー インスタンスの文字列形式を取得します。</summary>
+        <returns>A<see cref="T:System.String" />インスタンスの表現を含む、<see cref="T:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" />インスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

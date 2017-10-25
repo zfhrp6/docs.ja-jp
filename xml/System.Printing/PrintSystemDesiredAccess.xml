@@ -1,0 +1,125 @@
+<Type Name="PrintSystemDesiredAccess" FullName="System.Printing.PrintSystemDesiredAccess">
+  <TypeSignature Language="C#" Value="public enum PrintSystemDesiredAccess" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PrintSystemDesiredAccess extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Printing.PrintSystemDesiredAccess" />
+  <AssemblyInfo>
+    <AssemblyName>System.Printing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>印刷のオブジェクトのさまざまなアクセス権 (またはレベルのアクセス) を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクセスの各レベルで使用できるアクセス権は、次によって異なります。  
+  
+-   かどうか、プリント サーバーは、コンピューター、またはプリント サーバー アプライアンスです。  
+  
+-   使用されるオペレーティング システム。  
+  
+-   セキュリティ更新プログラムはインストールされています。  
+  
+-   サポートされているセキュリティ ポリシー。  
+  
+ このため、アクセス権の説明「メンバー」セクションでは、それぞれのアクセス レベルに対応する権限の典型的なが表示されているアクセス レベルは特定のシステム上またはより少ない権限を提供する可能性があります。  
+  
+ これらの値は、主にパラメーターとして使用<xref:System.Printing.PrintServer>と<xref:System.Printing.PrintQueue>コンス トラクターです。 別の種類のオブジェクトにのみ適用可能な値を使用する場合、コンス トラクターは例外をスローします。 AdministratePrinter を渡さないでくださいなど、<xref:System.Printing.PrintServer>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次の例では、この列挙体を使用して、場所、ポート、および共有の状態のみで既存のプリンターとそのプロパティに異なる 2 つ目のプリンターをインストールする方法を示します。  
+  
+ [!code-csharp[ClonePrinter#ClonePrinter](~/samples/snippets/csharp/VS_Snippets_Wpf/ClonePrinter/CSharp/Program.cs#cloneprinter)]
+ [!code-vb[ClonePrinter#ClonePrinter](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ClonePrinter/visualbasic/program.vb#cloneprinter)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AdministratePrinter">
+      <MemberSignature Language="C#" Value="AdministratePrinter" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Printing.PrintSystemDesiredAccess AdministratePrinter = int32(983052)" />
+      <MemberSignature Language="DocId" Value="F:System.Printing.PrintSystemDesiredAccess.AdministratePrinter" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintSystemDesiredAccess</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一時停止して、印刷ジョブを再開する権限を含めて、印刷キューのすべての管理タスクを実行する権限キューからすべてのジョブを削除する権限です。 このアクセス レベルは、下にあるすべての権限も含まれています。<see cref="F:System.Printing.PrintSystemDesiredAccess.UsePrinter" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AdministrateServer">
+      <MemberSignature Language="C#" Value="AdministrateServer" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Printing.PrintSystemDesiredAccess AdministrateServer = int32(983041)" />
+      <MemberSignature Language="DocId" Value="F:System.Printing.PrintSystemDesiredAccess.AdministrateServer" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintSystemDesiredAccess</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プリント サーバーのすべての管理タスクを実行する権限。 このアクセス レベルには*いない*含める<see cref="F:System.Printing.PrintSystemDesiredAccess.AdministratePrinter" />サーバーによってホストされている印刷キューの権限です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="EnumerateServer">
+      <MemberSignature Language="C#" Value="EnumerateServer" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Printing.PrintSystemDesiredAccess EnumerateServer = int32(131074)" />
+      <MemberSignature Language="DocId" Value="F:System.Printing.PrintSystemDesiredAccess.EnumerateServer" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintSystemDesiredAccess</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プリント サーバーのキューを一覧表示する権限。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Printing.PrintSystemDesiredAccess None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Printing.PrintSystemDesiredAccess.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintSystemDesiredAccess</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセスがありません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UsePrinter">
+      <MemberSignature Language="C#" Value="UsePrinter" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Printing.PrintSystemDesiredAccess UsePrinter = int32(131080)" />
+      <MemberSignature Language="DocId" Value="F:System.Printing.PrintSystemDesiredAccess.UsePrinter" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintSystemDesiredAccess</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>印刷ジョブをキューに追加および削除し、独自のジョブを列挙する権限。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

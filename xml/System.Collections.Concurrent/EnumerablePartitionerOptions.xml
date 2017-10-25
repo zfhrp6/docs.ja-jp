@@ -1,0 +1,95 @@
+<Type Name="EnumerablePartitionerOptions" FullName="System.Collections.Concurrent.EnumerablePartitionerOptions">
+  <TypeSignature Language="C#" Value="public enum EnumerablePartitionerOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed EnumerablePartitionerOptions extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.Concurrent.EnumerablePartitionerOptions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Collections.Concurrent</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.14.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>パーティショナーのバッファリングの動作を制御するオプションを指定します</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一連の既定の動作を伴う、すぐに使用できるパーティショナーが作成されます。 たとえば、既定では、いくつかの形のバッファリングとチャンキングが使用、一般的なシナリオで最適なパフォーマンスを実現するためにここで、<xref:System.Collections.Generic.IEnumerable%601>の実装が高速で非ブロッキングです。 使用してこの列挙体によってこれらの動作をオーバーライドすることができます、<xref:System.Collections.Concurrent.Partitioner.Create%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="NoBuffering">
+      <MemberSignature Language="C#" Value="NoBuffering" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Collections.Concurrent.EnumerablePartitionerOptions NoBuffering = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Collections.Concurrent.EnumerablePartitionerOptions.NoBuffering" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Concurrent</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.14.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Concurrent.EnumerablePartitionerOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列挙可能な 1 つずつソースからの項目を取得し、複数のスレッドによってより効率的にアクセスできる中間ストレージを使用しないパーティショナーを作成します。 このオプションは、低待機時間が (項目には、ソースから利用されるとすぐに処理されます) のサポートを提供し、アイテム間の依存関係の部分的なサポートを提供 (スレッドできませんデッドロック スレッド自体を処理する役割があるアイテムを待機しています)。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Collections.Concurrent.EnumerablePartitionerOptions None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Collections.Concurrent.EnumerablePartitionerOptions.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Concurrent</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.14.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Concurrent.EnumerablePartitionerOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最適なパフォーマンスを実現するためにバッファリングを使用する既定の動作を使用します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

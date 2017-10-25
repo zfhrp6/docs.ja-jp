@@ -1,0 +1,322 @@
+<Type Name="RowDefinition" FullName="System.Windows.Controls.RowDefinition">
+  <TypeSignature Language="C#" Value="public class RowDefinition : System.Windows.Controls.DefinitionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RowDefinition extends System.Windows.Controls.DefinitionBase" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.RowDefinition" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.DefinitionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>適用される行固有のプロパティを定義<see cref="T:System.Windows.Controls.Grid" />要素。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定する必要があります、<xref:System.Windows.Controls.RowDefinition>の各行について、<xref:System.Windows.Controls.Grid>です。 特定の行を設定すると<xref:System.Windows.Controls.RowDefinition>、行ごとに一意のサイズ変更プロパティを割り当てます。  
+  
+ グループを設定する<xref:System.Windows.Controls.RowDefinition>コードを使用して要素を追加、<xref:System.Windows.Controls.RowDefinition>を<xref:System.Windows.Controls.RowDefinitionCollection>です。  
+  
+ <xref:System.Windows.Controls.RowDefinition>クラス高さプロパティのみを公開します。 幅のプロパティで設定する、<xref:System.Windows.Controls.Grid>のインスタンスを作成する<xref:System.Windows.Controls.ColumnDefinition>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RowDefinition ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.RowDefinition.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.RowDefinition" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActualHeight">
+      <MemberSignature Language="C#" Value="public double ActualHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 ActualHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.RowDefinition.ActualHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>計算された高さを表す値を取得、<see cref="T:System.Windows.Controls.RowDefinition" />です。</summary>
+        <value>A<see cref="T:System.Double" />デバイス非依存ピクセル単位で計算された高さを表すです。 既定値は 0.0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 同じのコード例では、これらの値を使用すると、<xref:System.Windows.Controls.RowDefinition.MinHeight%2A>値よりも優先、<xref:System.Windows.Controls.RowDefinition.MaxHeight%2A>値で、さらによりも優先、<xref:System.Windows.Controls.RowDefinition.Height%2A>値。  
+  
+ 追加または行または列を削除する場合、<xref:System.Windows.Controls.ColumnDefinition.ActualWidth%2A>すべて<xref:System.Windows.Controls.ColumnDefinition>要素および<xref:System.Windows.Controls.RowDefinition.ActualHeight%2A>すべての<xref:System.Windows.Controls.RowDefinition>要素までのゼロになります<xref:System.Windows.UIElement.Measure%2A>と呼びます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Height">
+      <MemberSignature Language="C#" Value="public System.Windows.GridLength Height { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.GridLength Height" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.RowDefinition.Height" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.GridLength</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>計算された高さを取得、<see cref="T:System.Windows.Controls.RowDefinition" />要素、またはセット、<see cref="T:System.Windows.GridLength" />で定義されている行の値、<see cref="T:System.Windows.Controls.RowDefinition" />です。</summary>
+        <value><see cref="T:System.Windows.GridLength" />行の高さを表すです。 既定値は 1.0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値 <xref:System.Windows.GridUnitType> は <xref:System.Windows.GridUnitType.Star> です。  
+  
+ 同じのコード例では、これらの値を使用すると、<xref:System.Windows.Controls.RowDefinition.MinHeight%2A>値よりも優先、<xref:System.Windows.Controls.RowDefinition.MaxHeight%2A>値で、さらによりも優先、<xref:System.Windows.Controls.RowDefinition.Height%2A>値。  
+  
+ 追加または行または列を削除する場合、<xref:System.Windows.Controls.ColumnDefinition.ActualWidth%2A>すべて<xref:System.Windows.Controls.ColumnDefinition>要素および<xref:System.Windows.Controls.RowDefinition.ActualHeight%2A>すべての<xref:System.Windows.Controls.RowDefinition>要素までのゼロになります<xref:System.Windows.UIElement.Measure%2A>と呼びます。  
+  
+<a name="dependencyPropertyInfo_Height"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.RowDefinition.HeightProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeightProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HeightProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HeightProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.RowDefinition.HeightProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.RowDefinition.Height" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxHeight">
+      <MemberSignature Language="C#" Value="public double MaxHeight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 MaxHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.RowDefinition.MaxHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.LengthConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の最大の高さを表す値、<see cref="T:System.Windows.Controls.RowDefinition" />です。</summary>
+        <value>A<see cref="T:System.Double" />最大の高さを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 同じのコード例では、これらの値を使用すると、<xref:System.Windows.Controls.RowDefinition.MinHeight%2A>値よりも優先、<xref:System.Windows.Controls.RowDefinition.MaxHeight%2A>値で、さらによりも優先、<xref:System.Windows.Controls.RowDefinition.Height%2A>値。  
+  
+ 追加または行または列を削除する場合、<xref:System.Windows.Controls.ColumnDefinition.ActualWidth%2A>すべて<xref:System.Windows.Controls.ColumnDefinition>要素および<xref:System.Windows.Controls.RowDefinition.ActualHeight%2A>すべての<xref:System.Windows.Controls.RowDefinition>要素までのゼロになります<xref:System.Windows.UIElement.Measure%2A>と呼びます。  
+  
+<a name="xamlAttributeUsage_MaxHeight"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object MaxHeight="double"/>  
+- or -  
+<object MaxHeight="qualifiedDouble"/>  
+```  
+  
+<a name="xamlValues_MaxHeight"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *double*  
+ <xref:System.Double>  
+  
+ 文字列表現を<xref:System.Double>値以上になると`0.0034`がよりを以下になる`160000`です。 修飾されていない値は、デバイス非依存ピクセル単位で計測されます。 明示的に、文字列では、小数点を含める必要がありますされません。  
+  
+ *qualifiedDouble*  
+ A*二重*、上記で説明したように値 (ドキュメントを除く`Auto`) 後に、次の単位指定子の 1 つ: `px`、 `in`、 `cm`、`pt`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ `cm`センチメートル; は、します。1cm==(96/2.54) px  
+  
+ `pt`ポイントです。1pt==(96/72) px  
+  
+<a name="dependencyPropertyInfo_MaxHeight"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.RowDefinition.MaxHeightProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxHeightProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty MaxHeightProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty MaxHeightProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.RowDefinition.MaxHeightProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Windows.LengthConverter, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, Custom=null")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.RowDefinition.MaxHeight" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinHeight">
+      <MemberSignature Language="C#" Value="public double MinHeight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 MinHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.RowDefinition.MinHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.LengthConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、最小の高さを表す値を設定、<see cref="T:System.Windows.Controls.RowDefinition" />です。</summary>
+        <value>A<see cref="T:System.Double" />最小の高さを表すです。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 同じのコード例では、これらの値を使用すると、<xref:System.Windows.Controls.RowDefinition.MinHeight%2A>値よりも優先、<xref:System.Windows.Controls.RowDefinition.MaxHeight%2A>値で、さらによりも優先、<xref:System.Windows.Controls.RowDefinition.Height%2A>値。  
+  
+ 追加または行または列を削除する場合、<xref:System.Windows.Controls.ColumnDefinition.ActualWidth%2A>すべて<xref:System.Windows.Controls.ColumnDefinition>要素および<xref:System.Windows.Controls.RowDefinition.ActualHeight%2A>すべての<xref:System.Windows.Controls.RowDefinition>要素までのゼロになります<xref:System.Windows.UIElement.Measure%2A>と呼びます。  
+  
+<a name="xamlAttributeUsage_MinHeight"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object MinHeight="double"/>  
+- or -  
+<object MinHeight="qualifiedDouble"/>  
+```  
+  
+<a name="xamlValues_MinHeight"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *double*  
+ <xref:System.Double>  
+  
+ 文字列表現を<xref:System.Double>値以上になると`0.0034`がよりを以下になる`160000`です。 修飾されていない値は、デバイス非依存ピクセル単位で計測されます。 明示的に、文字列では、小数点を含める必要がありますされません。  
+  
+ *qualifiedDouble*  
+ A*二重*、上記で説明したように値 (ドキュメントを除く`Auto`) 後に、次の単位指定子の 1 つ: `px`、 `in`、 `cm`、`pt`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ `cm`センチメートル; は、します。1cm==(96/2.54) px  
+  
+ `pt`ポイントです。1pt==(96/72) px  
+  
+<a name="dependencyPropertyInfo_MinHeight"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.RowDefinition.MinHeightProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinHeightProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty MinHeightProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty MinHeightProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.RowDefinition.MinHeightProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Windows.LengthConverter, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, Custom=null")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.RowDefinition.MinHeight" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Offset">
+      <MemberSignature Language="C#" Value="public double Offset { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Offset" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.RowDefinition.Offset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このオフセット値を表す値を取得<see cref="T:System.Windows.Controls.RowDefinition" />です。</summary>
+        <value>A<see cref="T:System.Double" />行のオフセットを表すです。 既定値は 0.0 です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

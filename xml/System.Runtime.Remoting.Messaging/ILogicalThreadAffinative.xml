@@ -1,0 +1,37 @@
+<Type Name="ILogicalThreadAffinative" FullName="System.Runtime.Remoting.Messaging.ILogicalThreadAffinative">
+  <TypeSignature Language="C#" Value="public interface ILogicalThreadAffinative" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ILogicalThreadAffinative" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Messaging.ILogicalThreadAffinative" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>外部伝達できるオブジェクトをマークする<see cref="T:System.AppDomain" />で、<see cref="T:System.Runtime.Remoting.Messaging.LogicalCallContext" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 別のオブジェクトにリモート メソッド呼び出しが行われたときに<xref:System.AppDomain>、現在<xref:System.Runtime.Remoting.Messaging.CallContext>クラスが生成されます、<xref:System.Runtime.Remoting.Messaging.LogicalCallContext>リモートの場所への呼び出しと共に移動します。 オブジェクトのみが公開する、<xref:System.Runtime.Remoting.Messaging.ILogicalThreadAffinative>インターフェイスし、に保存される、<xref:System.Runtime.Remoting.Messaging.CallContext>の外部伝達、<xref:System.AppDomain>です。 このインターフェイスをサポートしないオブジェクトが転送されない<xref:System.Runtime.Remoting.Messaging.LogicalCallContext>リモート メソッド呼び出しを含んだインスタンス。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Runtime.Remoting.Messaging.ILogicalThreadAffinative>を送信するインターフェイス[プリンシパル オブジェクトと Id オブジェクト](~/docs/standard/security/principal-and-identity-objects.md)をリモートの場所を識別します。 コードを表示する、`HelloServiceClass`サンプルで使用されるクラスの例を参照してください、<xref:System.Runtime.Remoting.Messaging.CallContext.GetData%2A>メソッドです。 このサンプルで使用されるサーバー クラスのコードを表示するには、例を参照してください。、<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedServiceType%2A>クラスです。 このサンプルで使用されるクライアント クラスのコードを表示するには、例を参照してください。、<xref:System.Runtime.Remoting.Messaging.CallContext>クラスです。  
+  
+ [!code-cpp[CallContext#2](~/samples/snippets/cpp/VS_Snippets_Remoting/CallContext/CPP/service.cpp#2)]
+ [!code-csharp[CallContext#2](~/samples/snippets/csharp/VS_Snippets_Remoting/CallContext/CS/service.cs#2)]
+ [!code-vb[CallContext#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/CallContext/VB/service.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members />
+</Type>

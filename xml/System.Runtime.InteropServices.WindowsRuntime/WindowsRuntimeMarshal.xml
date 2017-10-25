@@ -1,0 +1,284 @@
+<Type Name="WindowsRuntimeMarshal" FullName="System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeMarshal">
+  <TypeSignature Language="C#" Value="public static class WindowsRuntimeMarshal" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit WindowsRuntimeMarshal extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeMarshal" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices.WindowsRuntime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>.NET Framework と Windows ランタイム間のデータをマーシャ リング用にヘルパー メソッドを提供します。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="AddEventHandler&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static void AddEventHandler&lt;T&gt; (Func&lt;T,System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken&gt; addMethod, Action&lt;System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken&gt; removeMethod, T handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddEventHandler&lt;T&gt;(class System.Func`2&lt;!!T, valuetype System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken&gt; addMethod, class System.Action`1&lt;valuetype System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken&gt; removeMethod, !!T handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeMarshal.AddEventHandler``1(System.Func{``0,System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken},System.Action{System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken},``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices.WindowsRuntime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="addMethod" Type="System.Func&lt;T,System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken&gt;" />
+        <Parameter Name="removeMethod" Type="System.Action&lt;System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken&gt;" />
+        <Parameter Name="handler" Type="T" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">イベント ハンドラーを表すデリゲートの型。</typeparam>
+        <param name="addMethod">イベント ハンドラーを追加するメソッドを表すデリゲート、[!INCLUDE[wrt](~/includes/wrt-md.md)]イベント。</param>
+        <param name="removeMethod">イベント ハンドラーを削除するメソッドを表すデリゲート、[!INCLUDE[wrt](~/includes/wrt-md.md)]イベント。</param>
+        <param name="handler">A 委任には、イベント ハンドラーに追加します。</param>
+        <summary>指定されたイベント ハンドラーを追加、[!INCLUDE[wrt](~/includes/wrt-md.md)]イベント。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="addMethod" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="removeMethod" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="FreeHString">
+      <MemberSignature Language="C#" Value="public static void FreeHString (IntPtr ptr);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void FreeHString(native int ptr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeMarshal.FreeHString(System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices.WindowsRuntime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ptr" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="ptr">アドレス、 [HSTRING](http://go.microsoft.com/fwlink/p/?LinkId=246451)を解放します。</param>
+        <summary>指定した解放[!INCLUDE[wrt](~/includes/wrt-md.md)] [HSTRING](http://go.microsoft.com/fwlink/p/?LinkId=246451)です。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.PlatformNotSupportedException">[!INCLUDE[wrt](~/includes/wrt-md.md)] は、現在のバージョンのオペレーティング システムではサポートされていません。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetActivationFactory">
+      <MemberSignature Language="C#" Value="public static System.Runtime.InteropServices.WindowsRuntime.IActivationFactory GetActivationFactory (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.InteropServices.WindowsRuntime.IActivationFactory GetActivationFactory(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeMarshal.GetActivationFactory(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices.WindowsRuntime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.WindowsRuntime.IActivationFactory</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">[!INCLUDE[wrt](~/includes/wrt-md.md)]のアクティブ化ファクトリ インターフェイスを取得する型。</param>
+        <summary>指定されたアクティベーション ファクトリ インターフェイスを実装するオブジェクトを返します[!INCLUDE[wrt](~/includes/wrt-md.md)]型です。</summary>
+        <returns>アクティブ化ファクトリ インターフェイスを実装するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セクションでは、例外、例外に加え、`HRESULT`以外の`S_OK`返される基になるファクトリでメソッドが例外としてマーシャ リングします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="type" />表さない、[!INCLUDE[wrt](~/includes/wrt-md.md)]型 (には、属している、[!INCLUDE[wrt](~/includes/wrt-md.md)]自体で定義されているか、[!INCLUDE[wrt](~/includes/wrt-md.md)]コンポーネント)。  
+  
+ または  
+  
+ 指定されたオブジェクト<paramref name="type" />が共通言語ランタイムの型システムによって指定されていません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.TypeLoadException">指定した[!INCLUDE[wrt](~/includes/wrt-md.md)]クラスが正しく登録されていません。 などの .winmd ファイルは見つかりましたが、[!INCLUDE[wrt](~/includes/wrt-md.md)]実装が見つかりませんでした。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="PtrToStringHString">
+      <MemberSignature Language="C#" Value="public static string PtrToStringHString (IntPtr ptr);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string PtrToStringHString(native int ptr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeMarshal.PtrToStringHString(System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices.WindowsRuntime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ptr" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="ptr">アンマネージ ポインター、 [HSTRING](http://go.microsoft.com/fwlink/p/?LinkId=246451)をコピーします。</param>
+        <summary>指定されたのコピーを格納するマネージ文字列を返します[!INCLUDE[wrt](~/includes/wrt-md.md)] [HSTRING](http://go.microsoft.com/fwlink/p/?LinkId=246451)です。</summary>
+        <returns>コピーを格納するマネージ文字列、 [HSTRING](http://go.microsoft.com/fwlink/p/?LinkId=246451)場合<paramref name="ptr" />は<see cref="F:System.IntPtr.Zero" />、それ以外の<see cref="F:System.String.Empty" />します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.PlatformNotSupportedException">[!INCLUDE[wrt](~/includes/wrt-md.md)] は、現在のバージョンのオペレーティング システムではサポートされていません。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAllEventHandlers">
+      <MemberSignature Language="C#" Value="public static void RemoveAllEventHandlers (Action&lt;System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken&gt; removeMethod);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveAllEventHandlers(class System.Action`1&lt;valuetype System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken&gt; removeMethod) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeMarshal.RemoveAllEventHandlers(System.Action{System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices.WindowsRuntime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="removeMethod" Type="System.Action&lt;System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="removeMethod">イベント ハンドラーを削除するメソッドを表すデリゲート、[!INCLUDE[wrt](~/includes/wrt-md.md)]イベント。</param>
+        <summary>指定されたメソッドを使用して削除できるすべてのイベント ハンドラーを削除します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="removeMethod" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveEventHandler&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static void RemoveEventHandler&lt;T&gt; (Action&lt;System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken&gt; removeMethod, T handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveEventHandler&lt;T&gt;(class System.Action`1&lt;valuetype System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken&gt; removeMethod, !!T handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeMarshal.RemoveEventHandler``1(System.Action{System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken},``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices.WindowsRuntime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="removeMethod" Type="System.Action&lt;System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken&gt;" />
+        <Parameter Name="handler" Type="T" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">イベント ハンドラーを表すデリゲートの型。</typeparam>
+        <param name="removeMethod">イベント ハンドラーを削除するメソッドを表すデリゲート、[!INCLUDE[wrt](~/includes/wrt-md.md)]イベント。</param>
+        <param name="handler">削除されるイベント ハンドラー。</param>
+        <summary>指定されたイベント ハンドラーを削除、[!INCLUDE[wrt](~/includes/wrt-md.md)]イベント。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="removeMethod" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="StringToHString">
+      <MemberSignature Language="C#" Value="public static IntPtr StringToHString (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig native int StringToHString(string s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeMarshal.StringToHString(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices.WindowsRuntime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s">コピーするマネージ文字列。</param>
+        <summary>割り当てます、 [!INCLUDE[wrt](~/includes/wrt-md.md)] [HSTRING](http://go.microsoft.com/fwlink/p/?LinkId=246451)し、指定した管理対象の文字列をコピーします。</summary>
+        <returns>アンマネージ ポインターを新しい[HSTRING](http://go.microsoft.com/fwlink/p/?LinkId=246451)、または<see cref="F:System.IntPtr.Zero" />場合<paramref name="s" />は<see cref="F:System.String.Empty" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeMarshal.FreeHString%2A>を解放するメソッド、 [HSTRING](http://go.microsoft.com/fwlink/p/?LinkId=246451)したらを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.PlatformNotSupportedException">[!INCLUDE[wrt](~/includes/wrt-md.md)] は、現在のバージョンのオペレーティング システムではサポートされていません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="s" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

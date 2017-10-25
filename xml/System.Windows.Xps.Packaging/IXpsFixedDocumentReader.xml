@@ -1,0 +1,277 @@
+<Type Name="IXpsFixedDocumentReader" FullName="System.Windows.Xps.Packaging.IXpsFixedDocumentReader">
+  <TypeSignature Language="C#" Value="public interface IXpsFixedDocumentReader : System.Windows.Xps.Packaging.IDocumentStructureProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IXpsFixedDocumentReader implements class System.Windows.Xps.Packaging.IDocumentStructureProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Xps.Packaging.IXpsFixedDocumentReader" />
+  <AssemblyInfo>
+    <AssemblyName>ReachFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Xps.Packaging.IDocumentStructureProvider</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>各部分を読み取るためのメソッドを定義、<see cref="T:System.Windows.Documents.FixedDocument" />またのドキュメントへの書き込みの種類を制限します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、このインターフェイスを実装するオブジェクトへの参照を取得する方法を示します。  
+  
+ [!code-csharp[XpsReadWriteSign#SignatureDefinitionCommandHandler](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsReadWriteSign/CSharp/SignatureDialog.xaml.cs#signaturedefinitioncommandhandler)]
+ [!code-vb[XpsReadWriteSign#SignatureDefinitionCommandHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsReadWriteSign/visualbasic/signaturedialog.xaml.vb#signaturedefinitioncommandhandler)]  
+  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Xps.Packaging.IXpsFixedDocumentReader>を取得する、<xref:System.Windows.Xps.Packaging.IXpsFixedDocumentReader>コレクション内の各ページにアクセスするために、<xref:System.Windows.Documents.FixedDocument>です。  
+  
+ [!code-csharp[DocumentStructure#DocStrucFixedDoc](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentStructure/CSharp/Window1.xaml.cs#docstrucfixeddoc)]
+ [!code-vb[DocumentStructure#DocStrucFixedDoc](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DocumentStructure/visualbasic/window1.xaml.vb#docstrucfixeddoc)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddSignatureDefinition">
+      <MemberSignature Language="C#" Value="public void AddSignatureDefinition (System.Windows.Xps.Packaging.XpsSignatureDefinition signatureDefinition);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddSignatureDefinition(class System.Windows.Xps.Packaging.XpsSignatureDefinition signatureDefinition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.IXpsFixedDocumentReader.AddSignatureDefinition(System.Windows.Xps.Packaging.XpsSignatureDefinition)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="signatureDefinition" Type="System.Windows.Xps.Packaging.XpsSignatureDefinition" />
+      </Parameters>
+      <Docs>
+        <param name="signatureDefinition">追加される定義です。</param>
+        <summary>指定した追加<see cref="T:System.Windows.Xps.Packaging.XpsSignatureDefinition" />を<see cref="T:System.Windows.Documents.FixedDocument" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommitSignatureDefinition">
+      <MemberSignature Language="C#" Value="public void CommitSignatureDefinition ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CommitSignatureDefinition() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.IXpsFixedDocumentReader.CommitSignatureDefinition" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>パッケージをフラッシュ<see cref="T:System.IO.Stream" />もコミットされると、<see cref="T:System.Windows.Xps.Packaging.XpsSignatureDefinition" />パッケージにします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DocumentNumber">
+      <MemberSignature Language="C#" Value="public int DocumentNumber { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DocumentNumber" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.IXpsFixedDocumentReader.DocumentNumber" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドキュメントの 0 から始まる位置を取得、<see cref="T:System.Windows.Documents.FixedDocumentSequence" />です。</summary>
+        <value><see cref="T:System.Int32" />シーケンス内のドキュメントの場所を表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DocumentStructure">
+      <MemberSignature Language="C#" Value="public System.Windows.Xps.Packaging.XpsStructure DocumentStructure { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Xps.Packaging.XpsStructure DocumentStructure" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.IXpsFixedDocumentReader.DocumentStructure" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.XpsStructure</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see langword="DocumentStructure" />パート、1 つが存在する場合の<see cref="T:System.Windows.Documents.FixedDocument" />です。</summary>
+        <value><see cref="T:System.Windows.Xps.Packaging.XpsStructure" />を表す、<see langword="DocumentStructure" />要素、1 つ存在する場合、およびその子要素です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]ドキュメントは、ドキュメントの構造を保持する必要はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FixedPages">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Xps.Packaging.IXpsFixedPageReader&gt; FixedPages { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Windows.Xps.Packaging.IXpsFixedPageReader&gt; FixedPages" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.IXpsFixedDocumentReader.FixedPages" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Xps.Packaging.IXpsFixedPageReader&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Windows.Documents.FixedPage" />リーダーの各ページに対して 1 つのリーダー、<see cref="T:System.Windows.Documents.FixedDocument" />です。</summary>
+        <value>固定ページ リーダーの各ページに対して 1 つのリーダーのコレクション、<see cref="T:System.Windows.Documents.FixedDocument" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Xps.Packaging.IXpsFixedDocumentReader.FixedPages%2A>を取得するプロパティ、<xref:System.Windows.Xps.Packaging.IXpsFixedDocumentReader>で個々 のページにアクセスするためにコレクション、<xref:System.Windows.Documents.FixedDocument>です。  
+  
+ [!code-csharp[DocumentStructure#DocStrucFixedDoc](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentStructure/CSharp/Window1.xaml.cs#docstrucfixeddoc)]
+ [!code-vb[DocumentStructure#DocStrucFixedDoc](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DocumentStructure/visualbasic/window1.xaml.vb#docstrucfixeddoc)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFixedPage">
+      <MemberSignature Language="C#" Value="public System.Windows.Xps.Packaging.IXpsFixedPageReader GetFixedPage (Uri pageSource);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Xps.Packaging.IXpsFixedPageReader GetFixedPage(class System.Uri pageSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.IXpsFixedDocumentReader.GetFixedPage(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.IXpsFixedPageReader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pageSource" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="pageSource">[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]ページ。</param>
+        <summary>用のリーダーを取得、 <see cref="T:System.Windows.Documents.FixedPage" /> 、指定した[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]です。</summary>
+        <returns><see cref="T:System.Windows.Xps.Packaging.IXpsFixedPageReader" />ページ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrintTicket">
+      <MemberSignature Language="C#" Value="public System.Printing.PrintTicket PrintTicket { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Printing.PrintTicket PrintTicket" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.IXpsFixedDocumentReader.PrintTicket" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintTicket</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="T:System.Printing.PrintTicket" />、いずれかが存在する場合、関連付けられている、<see cref="T:System.Windows.Documents.FixedDocument" />です。</summary>
+        <value>A <see cref="T:System.Printing.PrintTicket" /> ; ドキュメントの既定の印刷オプションを格納しているか、<see langword="null" />ドキュメントの印刷チケットが存在しない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、<xref:System.Printing.PrintTicket>の一部、[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]ドキュメントの第 2 章を参照してください、[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]で入手可能仕様[XPS: 仕様とライセンスのダウンロード](http://www.microsoft.com/whdc/xps/downloads.mspx)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveSignatureDefinition">
+      <MemberSignature Language="C#" Value="public void RemoveSignatureDefinition (System.Windows.Xps.Packaging.XpsSignatureDefinition signatureDefinition);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveSignatureDefinition(class System.Windows.Xps.Packaging.XpsSignatureDefinition signatureDefinition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.IXpsFixedDocumentReader.RemoveSignatureDefinition(System.Windows.Xps.Packaging.XpsSignatureDefinition)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="signatureDefinition" Type="System.Windows.Xps.Packaging.XpsSignatureDefinition" />
+      </Parameters>
+      <Docs>
+        <param name="signatureDefinition">削除される定義します。</param>
+        <summary>指定した <see cref="T:System.Windows.Xps.Packaging.XpsSignatureDefinition" /> を <see cref="T:System.Windows.Documents.FixedDocument" /> から削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignatureDefinitions">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;System.Windows.Xps.Packaging.XpsSignatureDefinition&gt; SignatureDefinitions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;class System.Windows.Xps.Packaging.XpsSignatureDefinition&gt; SignatureDefinitions" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.IXpsFixedDocumentReader.SignatureDefinitions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.Windows.Xps.Packaging.XpsSignatureDefinition&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられているすべてのシグネチャ定義のコレクションを取得、<see cref="T:System.Windows.Documents.FixedDocument" />です。</summary>
+        <value><see cref="T:System.Collections.Generic.ICollection`1" />のシグネチャ定義は、符号付きまたはドキュメントに署名したすべての人に通常 1 つです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Thumbnail">
+      <MemberSignature Language="C#" Value="public System.Windows.Xps.Packaging.XpsThumbnail Thumbnail { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Xps.Packaging.XpsThumbnail Thumbnail" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.IXpsFixedDocumentReader.Thumbnail" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.XpsThumbnail</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サムネイルが存在する場合、関連付けられている、サムネイル画像を取得、<see cref="T:System.Windows.Documents.FixedDocument" />です。</summary>
+        <value><see cref="T:System.Windows.Xps.Packaging.XpsThumbnail" />イメージを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Uri">
+      <MemberSignature Language="C#" Value="public Uri Uri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Uri" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.IXpsFixedDocumentReader.Uri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)] の <see cref="T:System.Windows.Documents.FixedDocument" /> を取得します。</summary>
+        <value>A<see cref="T:System.Uri" />を表す、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]ドキュメントにします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Windows.Xps.Packaging.IXpsFixedDocumentReader.Uri%2A> プロパティを使用する方法を次の例に示します。  
+  
+ [!code-csharp[XpsReadWriteSign#IterateXpsPackageParts](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsReadWriteSign/CSharp/ReadingAndWritingXps.cs#iteratexpspackageparts)]
+ [!code-vb[XpsReadWriteSign#IterateXpsPackageParts](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsReadWriteSign/visualbasic/readingandwritingxps.vb#iteratexpspackageparts)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

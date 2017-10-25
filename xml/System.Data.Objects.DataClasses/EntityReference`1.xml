@@ -1,0 +1,283 @@
+<Type Name="EntityReference&lt;TEntity&gt;" FullName="System.Data.Objects.DataClasses.EntityReference&lt;TEntity&gt;">
+  <TypeSignature Language="C#" Value="public sealed class EntityReference&lt;TEntity&gt; : System.Data.Objects.DataClasses.EntityReference where TEntity : class" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit EntityReference`1&lt;class TEntity&gt; extends System.Data.Objects.DataClasses.EntityReference" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Objects.DataClasses.EntityReference`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TEntity">
+      <Constraints>
+        <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+      </Constraints>
+    </TypeParameter>
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Data.Objects.DataClasses.EntityReference</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.Serialization.DataContract</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <typeparam name="TEntity">参照のエンティティ型。</typeparam>
+    <summary>複数要素の接続性が 0 または 1 であるアソシエーションの関連 End を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.DataClasses.EntityReference%601> オブジェクトは、関連 End の複数要素の接続性が 0 または 1 の場合にナビゲーション プロパティによって返されます。 詳細については、次を参照してください。 [NavigationProperty 要素 (CSDL)](http://msdn.microsoft.com/en-us/5829a238-a50e-4c81-901d-7b54fc00f27e)です。  
+  
+ <xref:System.Data.Objects.DataClasses.EntityReference%601> オブジェクトには、リレーションシップの他方の End に、対応する <xref:System.Data.Objects.DataClasses.EntityCollection%601> (一対多のリレーションシップ) または <xref:System.Data.Objects.DataClasses.EntityReference%601> (一対一のリレーションシップ) がある場合があります。 <xref:System.Data.Objects.DataClasses.EntityReference%601> と <xref:System.Data.Objects.DataClasses.EntityCollection%601> が同じリレーションシップの両 End をモデル化している場合、そのリレーションシップの整合性がオブジェクト レベルで維持されます。  
+  
+ このクラスは継承できません。  
+  
+   
+  
+## Examples  
+ この例では、<xref:System.Data.Objects.DataClasses.EntityReference%601> オブジェクトを使用して、`SalesOrderHeader` オブジェクトと、関連付けられている注文の出荷先住所を表す `Address` オブジェクトとのリレーションシップを変更する方法を示します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#ChangeObjectRelationship](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#changeobjectrelationship)]
+ [!code-vb[DP ObjectServices Concepts#ChangeObjectRelationship](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#changeobjectrelationship)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EntityReference ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.EntityReference`1.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Objects.DataClasses.EntityReference`1" /> の新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Attach">
+      <MemberSignature Language="C#" Value="public void Attach (TEntity entity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Attach(!TEntity entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.EntityReference`1.Attach(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="TEntity" />
+      </Parameters>
+      <Docs>
+        <param name="entity">アタッチされるオブジェクト。</param>
+        <summary>オブジェクト コンテキストで 2 つのオブジェクト間の多対一または一対一のリレーションシップを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.DataClasses.EntityReference%601.Attach%2A> メソッドは、オブジェクトと関連オブジェクトの両方が既にオブジェクト コンテキストにアタッチされている場合にそれらのオブジェクト間のリレーションシップを定義するために使用されます。 関連オブジェクトがまだオブジェクト コンテキストにアタッチされていない場合は、<xref:System.Data.Objects.DataClasses.EntityReference%601.Value%2A> プロパティに関連オブジェクトを設定します。 また、両方のオブジェクトがデタッチされている場合は、<xref:System.Data.Objects.DataClasses.EntityReference%601.Value%2A> プロパティに関連オブジェクトを設定した後に、オブジェクト グラフのルート オブジェクトをアタッチしてリレーションシップを定義することもできます。 詳細については、次を参照してください。[のアタッチとデタッチ オブジェクト](http://msdn.microsoft.com/en-us/41d5c1ef-1b78-4502-aa10-7e1438d62d23)です。  
+  
+ この <xref:System.Data.Objects.DataClasses.EntityReference%601> に関連付けられたオブジェクトおよびそれにアタッチされているすべてのオブジェクトは、状態が <xref:System.Data.EntityState.Unchanged> または <xref:System.Data.EntityState.Modified> である必要があります。  
+  
+ <xref:System.Data.EntityState.Deleted> 状態のオブジェクトは、<xref:System.Data.Objects.ObjectStateManager> で既にリレーションシップ インスタンスが追跡されている場合にのみアタッチできます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">ときに、<paramref name="entity" />は<see langword="null" />します。</exception>
+        <exception cref="T:System.InvalidOperationException">ときに、<paramref name="entity" />現在関連 end に関連することはできません。 これは、概念スキーマのアソシエーションで 2 つの型の間のリレーションシップがサポートされていない場合に発生する可能性があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSourceQuery">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectQuery&lt;TEntity&gt; CreateSourceQuery ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectQuery`1&lt;!TEntity&gt; CreateSourceQuery() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.EntityReference`1.CreateSourceQuery" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.ObjectQuery&lt;TEntity&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>関連オブジェクトを返す同等のオブジェクト クエリを作成します。</summary>
+        <returns>関連オブジェクトを返す <see cref="T:System.Data.Objects.ObjectQuery`1" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、実行時に関連オブジェクトを返す <xref:System.Data.Objects.ObjectQuery%601> の新しいインスタンスを取得するために使用されます。 これは、より複雑な結合クエリ、和集合クエリ、またはフィルター選択されたクエリの開始点として使用したり、<xref:System.Data.Objects.MergeOption.NoTracking> オプションを使用してデタッチ済み状態の参照オブジェクトを返す場合に使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オブジェクトの状態が <see cref="F:System.Data.EntityState.Added" /> の場合。  
+  
+ または  
+  
+ オブジェクトの状態が <see cref="F:System.Data.EntityState.Detached" /> で、<see cref="P:System.Data.Objects.ObjectQuery.MergeOption" /> が <see cref="F:System.Data.Objects.MergeOption.NoTracking" /> 以外の場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public override void Load (System.Data.Objects.MergeOption mergeOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Load(valuetype System.Data.Objects.MergeOption mergeOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.EntityReference`1.Load(System.Data.Objects.MergeOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mergeOption" Type="System.Data.Objects.MergeOption" />
+      </Parameters>
+      <Docs>
+        <param name="mergeOption">オブジェクトが既に <see cref="T:System.Data.Objects.ObjectContext" /> に存在する場合にオブジェクトを返す方法を指定します。</param>
+        <summary>指定されたマージ オプションを使用してこの <see cref="T:System.Data.Objects.DataClasses.EntityReference`1" /> の関連オブジェクトを読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、関連オブジェクトを読み込むために使用されます。  
+  
+ 読み込まれた関連オブジェクトには、<xref:System.Data.Objects.DataClasses.EntityReference%601.Value%2A> プロパティからアクセスします。  
+  
+ 関連オブジェクトを明示的に読み込むには、ナビゲーション プロパティによって返される関連 End に対して `Load` メソッドを呼び出す必要があります。 一対多のリレーションシップの場合は、<xref:System.Data.Objects.DataClasses.EntityCollection%601.Load%2A> に対して <xref:System.Data.Objects.DataClasses.EntityCollection%601> メソッドを呼び出します。一対一のリレーションシップの場合は、<xref:System.Data.Objects.DataClasses.EntityReference%601.Load%2A> に対して <xref:System.Data.Objects.DataClasses.EntityReference%601> を呼び出します。 これにより、関連オブジェクト データがオブジェクト コンテキストに読み込まれます。 使用してオブジェクトのコレクションを列挙することができます、クエリ結果を返すときに、`foreach`ループ (`For Each...Next` Visual Basic で) 条件付きで呼び出すと、`Load`メソッド<xref:System.Data.Objects.DataClasses.EntityReference%601>と<xref:System.Data.Objects.DataClasses.EntityCollection%601>結果内の各エンティティのプロパティです。  
+  
+ <xref:System.Data.Objects.DataClasses.EntityReference%601.Load%2A>メソッドの関連するオブジェクトからデータ ソースからのかどうか読み込みます<xref:System.Data.Objects.DataClasses.RelatedEnd.IsLoaded%2A>は`true`します。  
+  
+> [!NOTE]
+>  <xref:System.Data.Objects.DataClasses.EntityReference%601.Load%2A> (C#) または `foreach` (Visual Basic) 列挙で、`For Each` メソッドを呼び出すと、Object Services は新たにデータ リーダーを開こうとします。 この操作は、接続文字列で `multipleactiveresultsets=true` を指定して複数のアクティブな結果セットを有効にしていない限り失敗します。 クエリの結果は、<xref:System.Collections.Generic.List%601> コレクションに読み込むこともできます。 この場合、データ リーダーが閉じ、コレクションを列挙して参照オブジェクトを読み込むことができます。  
+ 
+このメソッドは、内部`RelatedEnd.ValidateLoad`メソッドへの呼び出しを検証する、関連するオブジェクトを読み込む前に<xref:System.Data.Objects.DataClasses.RelatedEnd.Load%2A>に正しい条件があります。 `RelatedEnd.ValidateLoad`メソッドでは、ことを確認します。
+
+* 有効な<xref:System.Data.Objects.ObjectContext>が存在します。
+* エンティティはではありません、<xref:System.Data.EntityState.Deleted>状態です。
+* <xref:System.Data.Objects.MergeOption><xref:System.Data.Objects.DataClasses.RelatedEnd.Load%2A>する必要があります<xref:System.Data.Objects.MergeOption.NoTracking>ソース エンティティが場合にのみ<xref:System.Data.Objects.MergeOption.NoTracking>です。 その他のソース エンティティが取得された場合<xref:System.Data.Objects.MergeOption>、 <xref:System.Data.Objects.DataClasses.RelatedEnd.Load%2A> <xref:System.Data.Objects.MergeOption>以外は、 <xref:System.Data.Objects.MergeOption.NoTracking> (など、エンティティが読み込まれていると<xref:System.Data.Objects.MergeOption.OverwriteChanges>と<xref:System.Data.Objects.DataClasses.RelatedEnd.Load%2A>オプションは、<xref:System.Data.Objects.MergeOption.AppendOnly>).
+* 場合`mergeOption`は<xref:System.Data.Objects.MergeOption.NoTracking>、<xref:System.Data.Objects.DataClasses.RelatedEnd.Load%2A>既に読み込まれたエンティティと呼ばれるされていないと<xref:System.Data.Objects.DataClasses.RelatedEnd.Load%2A>空でない、not 追跡で呼び出されていない<xref:System.Data.Objects.DataClasses.RelatedEnd>です。
+
+ 関連オブジェクトが既に読み込まれるときに、 <xref:System.Data.Objects.ObjectContext>、<xref:System.Data.Objects.DataClasses.EntityReference%601.Load%2A>メソッドの適用、<xref:System.Data.Objects.MergeOption>によって指定された、`mergeOption`パラメーター。 詳細については、次を参照してください。 [Id 解決、状態管理、および変更の追跡](http://msdn.microsoft.com/en-us/3bd49311-0e72-4ea4-8355-38fe57036ba0)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ソース、<see cref="T:System.Data.Objects.DataClasses.EntityReference`1" />は<see langword="null" />します。  
+  
+ または  
+  
+ クエリから複数の関連 End が返されました。  
+  
+ または  
+  
+ クエリから関連 End が返されませんでした。1 つの関連 End が必要です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRefDeserialized">
+      <MemberSignature Language="C#" Value="public void OnRefDeserialized (System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void OnRefDeserialized(valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.EntityReference`1.OnRefDeserialized(System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.Serialization.OnDeserialized</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">シリアル化されたストリーム。</param>
+        <summary>このメソッドは、関連エンティティ オブジェクトのシリアル化に内部的に使用されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSerializing">
+      <MemberSignature Language="C#" Value="public void OnSerializing (System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void OnSerializing(valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.EntityReference`1.OnSerializing(System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.Serialization.OnSerializing</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">シリアル化されたストリーム。</param>
+        <summary>このメソッドは、関連エンティティ オブジェクトのシリアル化に内部的に使用されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public TEntity Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance !TEntity Value" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.DataClasses.EntityReference`1.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.SoapIgnore</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlIgnore</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>TEntity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Data.Objects.DataClasses.EntityReference`1" /> によって返される関連オブジェクトを取得または設定します。</summary>
+        <value>この <see cref="T:System.Data.Objects.DataClasses.EntityReference`1" /> によって返されるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定されている値が現在の値と同じである場合は、値は割り当てられません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

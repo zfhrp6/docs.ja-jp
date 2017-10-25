@@ -1,0 +1,234 @@
+<Type Name="IHierarchicalDataSourceDesigner" FullName="System.Web.UI.Design.IHierarchicalDataSourceDesigner">
+  <TypeSignature Language="C#" Value="public interface IHierarchicalDataSourceDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IHierarchicalDataSourceDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.IHierarchicalDataSourceDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>派生したクラスをビジュアル デザイナーでデザイン時サポートを提供、<see cref="T:System.Web.UI.HierarchicalDataSourceControl" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、階層データと付随するデザイナーの新しいデータ ソース クラスを作成するときに、継承する、<xref:System.Web.UI.Design.HierarchicalDataSourceDesigner>を実装するのではなく、クラス、<xref:System.Web.UI.Design.IHierarchicalDataSourceDesigner>インターフェイスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CanConfigure">
+      <MemberSignature Language="C#" Value="public bool CanConfigure { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanConfigure" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.IHierarchicalDataSourceDesigner.CanConfigure" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.Configure" />メソッドを呼び出すことができます。</summary>
+        <value>
+          <see langword="true" />構成ウィザードを起動できるかどうか、基になるデータ ソースには<see cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.Configure" />、それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.IHierarchicalDataSourceDesigner.CanConfigure%2A>プロパティは、ホストによって使用される、デザインなど[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]、表示するかどうかを決定する、**構成**デザイン時にコマンド。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>実装する場合、<see cref="T:System.Web.UI.Design.IHierarchicalDataSourceDesigner" />インターフェイスの独自のデータ ソースを作成および構成機能を指定しない、<see cref="P:System.Web.UI.Design.IHierarchicalDataSourceDesigner.CanConfigure" />プロパティは常に返す必要があります<see langword="false" />と<see cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.Configure" />メソッドを発生させる、<see cref="T:System.NotSupportedException" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRefreshSchema">
+      <MemberSignature Language="C#" Value="public bool CanRefreshSchema { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRefreshSchema" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.IHierarchicalDataSourceDesigner.CanRefreshSchema" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.RefreshSchema(System.Boolean)" />メソッドを呼び出すことができます。</summary>
+        <value>
+          <see langword="true" />場合<see cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.RefreshSchema(System.Boolean)" />と呼ばれる、それ以外は、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.IHierarchicalDataSourceDesigner.CanRefreshSchema%2A>プロパティは、ホストによって使用される、デザインなど[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]、表示するかどうかを決定する、**スキーマの更新**デザイン時にコマンド。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>実装する場合、<see cref="T:System.Web.UI.Design.IHierarchicalDataSourceDesigner" />独自のデータ ソース スキーマとスキーマを作成するインターフェイスは決して変化しない、<see cref="P:System.Web.UI.Design.IHierarchicalDataSourceDesigner.CanRefreshSchema" />プロパティは常に返す必要があります<see langword="false" />と<see cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.RefreshSchema(System.Boolean)" />メソッドを発生させる、<see cref="T:System.NotSupportedException" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Configure">
+      <MemberSignature Language="C#" Value="public void Configure ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Configure() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.Configure" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>基になるデータ ソースの構成ウィザードを起動します。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>実装する場合、<see cref="T:System.Web.UI.Design.IHierarchicalDataSourceDesigner" />インターフェイスの独自のデータ ソースを作成および構成機能を指定しない、<see cref="P:System.Web.UI.Design.IHierarchicalDataSourceDesigner.CanConfigure" />プロパティは常に返す必要があります<see langword="false" />と<see cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.Configure" />メソッドを発生させる、<see cref="T:System.NotSupportedException" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSourceChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler DataSourceChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler DataSourceChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.Design.IHierarchicalDataSourceDesigner.DataSourceChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ソース コントロールがデータ バインド コントロールに影響を与えるいくつかの方法で変更されたときに発生します。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>通常、実装、 <see cref="T:System.Web.UI.Design.IHierarchicalDataSourceDesigner" /> 、インターフェイス、<see cref="E:System.Web.UI.Design.IHierarchicalDataSourceDesigner.DataSourceChanged" />イベント ハンドラーの呼び出し、<see cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.RefreshSchema(System.Boolean)" />メソッドです。 場合、<see cref="P:System.Web.UI.Design.IHierarchicalDataSourceDesigner.CanRefreshSchema" />プロパティは<see langword="true" />、すべてのサンプル データを再作成し、しのマークアップを更新するには、各データ バインド コントロールを許可するには、再度イベントを発生させます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetView">
+      <MemberSignature Language="C#" Value="public System.Web.UI.Design.DesignerHierarchicalDataSourceView GetView (string viewPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.UI.Design.DesignerHierarchicalDataSourceView GetView(string viewPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.GetView(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.DesignerHierarchicalDataSourceView</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="viewPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="viewPath">XPath をデータ ソースの一部を取得します。</param>
+        <summary>データ ソース コントロールに関連付けられている名前付きのデータ ソース ビューを取得します。</summary>
+        <returns>データに関連付けられている名前付きのデータ ソース ビューはソース コントロールです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RefreshSchema">
+      <MemberSignature Language="C#" Value="public void RefreshSchema (bool preferSilent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RefreshSchema(bool preferSilent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.RefreshSchema(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="preferSilent" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="preferSilent">
+          <see langword="true" />スキーマの更新中に発生するイベントを抑制するにはそれ以外の場合<see langword="false" />です。</param>
+        <summary>基になるデータ ソースのスキーマを更新します。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>実装する場合、<see cref="T:System.Web.UI.Design.IHierarchicalDataSourceDesigner" />独自のデータ ソース スキーマとスキーマを作成するインターフェイスは決して変化しない、<see cref="P:System.Web.UI.Design.IHierarchicalDataSourceDesigner.CanRefreshSchema" />プロパティは常に返す必要があります<see langword="false" />と<see cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.RefreshSchema(System.Boolean)" />メソッドを発生させる、<see cref="T:System.NotSupportedException" />です。  
+  
+ 通常場合、<see cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.RefreshSchema(System.Boolean)" />ユーザー アクションの結果としてデザイン ホストによって呼び出される、<paramref name="preferSilent" />パラメーターになります<see langword="false" />ユーザーがスキーマの更新の問題はすべての通知を受信することがあるため、します。 スキーマが場合は、呼び出しの後に、暗黙的になど、更新、<see cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.Configure" />メソッド、または更新するプロセスでは、さまざまな手順については場合、<paramref name="preferSilent" />に設定する必要があります<see langword="true" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ResumeDataSourceEvents">
+      <MemberSignature Language="C#" Value="public void ResumeDataSourceEvents ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ResumeDataSourceEvents() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.ResumeDataSourceEvents" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>イベントを呼び出した後に復元、<see cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.SuppressDataSourceEvents" />メソッドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SchemaRefreshed">
+      <MemberSignature Language="C#" Value="public event EventHandler SchemaRefreshed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler SchemaRefreshed" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.Design.IHierarchicalDataSourceDesigner.SchemaRefreshed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィールドまたは基になるデータ ソースのデータが変更されたときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SuppressDataSourceEvents">
+      <MemberSignature Language="C#" Value="public void SuppressDataSourceEvents ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SuppressDataSourceEvents() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.SuppressDataSourceEvents" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ ソース コントロール内のイベントをオフにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 持つイベントを戻すことができます、<xref:System.Web.UI.Design.IHierarchicalDataSourceDesigner.ResumeDataSourceEvents%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>呼び出すは通常、<see cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.SuppressDataSourceEvents" />メソッドになど、ダイアログ ボックスを開くときに、<see cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.Configure" />メソッド、またはへの呼び出し中に、<see cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.RefreshSchema(System.Boolean)" />メソッド、複数のプロセスをスキーマの構築が必要な場合の例外を作成します。 処理が完了したらを呼び出す、<see cref="M:System.Web.UI.Design.IHierarchicalDataSourceDesigner.ResumeDataSourceEvents" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

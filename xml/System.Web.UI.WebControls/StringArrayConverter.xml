@@ -1,0 +1,162 @@
+<Type Name="StringArrayConverter" FullName="System.Web.UI.WebControls.StringArrayConverter">
+  <TypeSignature Language="C#" Value="public class StringArrayConverter : System.ComponentModel.TypeConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StringArrayConverter extends System.ComponentModel.TypeConverter" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.StringArrayConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.TypeConverter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>文字列の配列から値をコンマ区切りの文字列の変換を行う型コンバーターを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.StringArrayConverter>クラスは、文字列の配列との間にコンマ区切り値の文字列を変換します。 このクラスは、<xref:System.Web.UI.WebControls.StringArrayConverter.ConvertTo%2A>と<xref:System.Web.UI.WebControls.StringArrayConverter.ConvertFrom%2A>型変換を実行するメソッド。  
+  
+ デザイン時環境では、この型コンバーターを使用して、指定した型のプロパティ グリッド コントロールでの表示の値を指定します。  
+  
+> [!NOTE]
+>  実行する型コンバーターに直接アクセスする必要がありますしません。 代わりに、適切なコンバーターを使用して、<xref:System.ComponentModel.TypeDescriptor?displayProperty=nameWithType>クラスです。 詳細については、例を参照してください、<xref:System.ComponentModel.TypeConverter>基本クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StringArrayConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.StringArrayConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.StringArrayConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  実行する型コンバーターに直接アクセスする必要がありますしません。 代わりに、適切なコンバーターを使用して、<xref:System.ComponentModel.TypeDescriptor>オブジェクト。 詳細については、例を参照してください。<xref:System.ComponentModel.TypeConverter>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertFrom">
+      <MemberSignature Language="C#" Value="public override bool CanConvertFrom (System.ComponentModel.ITypeDescriptorContext context, Type sourceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanConvertFrom(class System.ComponentModel.ITypeDescriptorContext context, class System.Type sourceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.StringArrayConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="sourceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />コンバーターが呼び出される環境に関する追加情報を抽出するために使用する書式指定コンテキストを提供するオブジェクト。 このパラメーターまたはこのパラメーターのプロパティを指定できます<see langword="null" />です。</param>
+        <param name="sourceType">変換対象の <see cref="T:System.Type" />。</param>
+        <summary>指定するかどうか、<see cref="T:System.Web.UI.WebControls.StringArrayConverter" />文字列の配列を指定したソースの種類を変換できます。</summary>
+        <returns>
+          <see langword="true" />コンバーターが、操作を実行できる場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.StringArrayConverter.CanConvertFrom%2A>メソッドを判断するかどうか、<xref:System.Web.UI.WebControls.StringArrayConverter>で指定されたオブジェクトに変換できる`sourceType`文字列の配列にします。 呼び出しの前にこのメソッドを使用して、<xref:System.Web.UI.WebControls.StringArrayConverter.ConvertFrom%2A>変換を実行するメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertFrom">
+      <MemberSignature Language="C#" Value="public override object ConvertFrom (System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertFrom(class System.ComponentModel.ITypeDescriptorContext context, class System.Globalization.CultureInfo culture, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.StringArrayConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />コンバーターが呼び出される環境に関する追加情報を抽出するために使用する書式指定コンテキストを提供するオブジェクト。 このパラメーターまたはこのパラメーターのプロパティを指定できます<see langword="null" />です。</param>
+        <param name="culture"><see cref="T:System.Globalization.CultureInfo" /> オブジェクト。 場合<see langword="null" />、現在のカルチャが使用されます。</param>
+        <param name="value">変換対象の <see cref="T:System.Object" />。</param>
+        <summary>指定したコンマ区切り文字列を文字列の配列に変換します。</summary>
+        <returns><see cref="T:System.Object" />を表す、変換された<paramref name="value" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.StringArrayConverter.ConvertFrom%2A>メソッドは文字列の配列をコンマ区切りの文字列を表すオブジェクトを解析します。 このメソッドを呼び出す前に呼び出すことができます、<xref:System.Web.UI.WebControls.StringArrayConverter.CanConvertFrom%2A>メソッドによって、オブジェクトが指定されているかどうかを決定する`value`文字列の配列に変換できます。  
+  
+ 文字列の配列をコンマ区切りの文字列に変換するには、<xref:System.Web.UI.WebControls.StringArrayConverter.ConvertTo%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="M:System.ComponentModel.TypeConverter.GetConvertFromException(System.Object)">変換を実行できない<paramref name="value" />文字列ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertTo">
+      <MemberSignature Language="C#" Value="public override object ConvertTo (System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, Type destinationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertTo(class System.ComponentModel.ITypeDescriptorContext context, class System.Globalization.CultureInfo culture, object value, class System.Type destinationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.StringArrayConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="destinationType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />コンバーターが呼び出される環境に関する追加情報を抽出するために使用する書式指定コンテキストを提供するオブジェクト。 このパラメーターまたはこのパラメーターのプロパティを指定できます<see langword="null" />です。</param>
+        <param name="culture"><see cref="T:System.Globalization.CultureInfo" /> オブジェクト。 場合<see langword="null" />、現在のカルチャが使用されます。</param>
+        <param name="value">変換対象の <see cref="T:System.Object" />。</param>
+        <param name="destinationType"><see cref="T:System.Type" />に変換する<c>値</c>にします。</param>
+        <summary>文字列の配列をコンマで区切られた値の文字列に変換します。</summary>
+        <returns><see cref="T:System.Object" /> 、変換を表すインスタンス<paramref name="value" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.StringArrayConverter.ConvertTo%2A>メソッドは文字列の配列をコンマ区切りの文字列に変換します。  
+  
+ 文字列の配列をコンマ区切りの文字列に変換する、<xref:System.Web.UI.WebControls.StringArrayConverter.ConvertFrom%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="M:System.ComponentModel.TypeConverter.GetConvertToException(System.Object,System.Type)">
+          <paramref name="destinationType" /> が <see cref="T:System.String" /> 型ではありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

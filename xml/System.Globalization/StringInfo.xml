@@ -1,0 +1,712 @@
+<Type Name="StringInfo" FullName="System.Globalization.StringInfo">
+  <TypeSignature Language="C#" Value="public class StringInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit StringInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Globalization.StringInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Globalization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>文字列をテキスト要素に分割し、そのテキスト要素を反復処理する機能を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework では、単一の文字、つまり、書記素として表示されるテキストの単位としてテキスト要素を定義します。 テキストの要素は、基本文字、サロゲート ペア、または組み合わせ文字シーケンスです。 [Unicode 標準](http://go.microsoft.com/fwlink/?linkid=37123)、場所のペアの最初の単位が上位サロゲート、2 番目の下位サロゲートの 2 つのコード単位のシーケンスで構成される 1 つの抽象文字のコード化文字表現として、サロゲート ペアを定義します。 Unicode 標準定義組み合わせ文字のシーケンスとして基本文字と 1 つまたは複数の結合文字の組み合わせ。 サロゲート ペアは、基本文字または組み合わせ文字を表すことができます。  
+  
+ <xref:System.Globalization.StringInfo>クラスでは、個人ではなく、テキスト要素の系列として文字列を使用することができます<xref:System.Char>オブジェクト。  
+  
+ インスタンスを作成、<xref:System.Globalization.StringInfo>を指定した文字列を表すオブジェクト、次のいずれかを行うことができます。  
+  
+-   呼び出す、<xref:System.Globalization.StringInfo.%23ctor%28System.String%29>コンス トラクター、文字列を渡すとする、<xref:System.Globalization.StringInfo>オブジェクトは、引数として表すことです。  
+  
+-   既定値を呼び出す<xref:System.Globalization.StringInfo.%23ctor>コンス トラクター、文字列を割り当てると、<xref:System.Globalization.StringInfo>を表すオブジェクトを<xref:System.Globalization.StringInfo.String%2A>プロパティです。  
+  
+ 2 つの方法で文字列内の個々 のテキスト要素を使用することができます。  
+  
+-   で、それぞれのテキスト要素を列挙しています。 これを行うを呼び出す、<xref:System.Globalization.StringInfo.GetTextElementEnumerator%2A>メソッドを繰り返し呼び出しと、<xref:System.Globalization.TextElementEnumerator.MoveNext%2A>メソッドで返された<xref:System.Globalization.TextElementEnumerator>オブジェクトのメソッドが戻るまで`false`です。  
+  
+-   呼び出して、<xref:System.Globalization.StringInfo.ParseCombiningCharacters%2A>をそれぞれのテキスト要素の開始インデックスを含む配列を取得します。 これらのインデックスを渡すことによって、個々 のテキスト要素を取得することができますし、<xref:System.Globalization.StringInfo.SubstringByTextElements%2A>メソッドです。  
+  
+ 次の例では、文字列内のテキスト要素の操作の両方の方法を示します。 これには、2 つの文字列を作成します。  
+  
+-   `strCombining`、複数の 3 つのテキスト要素を含むアラビア語の文字の文字列である<xref:System.Char>オブジェクト。 テキストの最初の要素は、基本文字アラビア語文字 ALEF (U +0-627) アラビア語 HAMZA 下続けて (U +0-655) およびアラビア語 KASRA (U +0 0650)。 2 つ目のテキスト要素は、アラビア語の文字も (U +0 0647) アラビア語 FATHA 続けて (U +0-64E)。 3 番目のテキスト要素は、アラビア語の LETTTER BEH (U +0 0628) アラビア語 DAMMATAN (U +0 064 C) が続きます。  
+  
+-   `strSurrogates`、次の 3 つのサロゲート ペアを含む文字列である: ギリシャ語 ACROPHONIC 5 才能 (U +0 10148) 補助多言語面 U +0、補助表意文字平面とプライベート ユーザー領域から U + F1001 から 20026 からです。 各文字の utf-16 エンコーディングは、サロゲート ペアの下位サロゲート続けて上位サロゲートで構成されます。  
+  
+ 1 回によって各文字列が解析、<xref:System.Globalization.StringInfo.ParseCombiningCharacters%2A>メソッドしてから、<xref:System.Globalization.StringInfo.GetTextElementEnumerator%2A>メソッドです。 正しく、どちらの方法は 2 つの文字列内のテキスト要素を解析し、解析操作の結果を表示します。  
+  
+ [!code-csharp[System.Globalization.StringInfo.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.stringinfo.class/cs/indexing1.cs#1)]
+ [!code-vb[System.Globalization.StringInfo.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.stringinfo.class/vb/indexing1.vb#1)]  
+  
+   
+  
+## Examples  
+ この例を使用する方法を示しています、<xref:System.Globalization.StringInfo.GetTextElementEnumerator%2A>と<xref:System.Globalization.StringInfo.ParseCombiningCharacters%2A>のメソッド、<xref:System.Globalization.StringInfo>サロゲートと組み合わせ文字を含む文字列を操作するクラス。  
+  
+ [!code-cpp[stringinfo#1](~/samples/snippets/cpp/VS_Snippets_CLR/StringInfo/cpp/StringInfo.cpp#1)]
+ [!code-csharp[stringinfo#1](~/samples/snippets/csharp/VS_Snippets_CLR/StringInfo/CS/StringInfo.cs#1)]
+ [!code-vb[stringinfo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/StringInfo/vb/stringinfo.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="usage">
+      <para>内部では、メソッド、<see cref="T:System.Globalization.StringInfo" />クラスのメソッドを呼び出す、<see cref="T:System.Globalization.CharUnicodeInfo" />文字のカテゴリを決めるクラスをします。 以降で、 [!INCLUDE[net_v462](~/includes/net-v462-md.md)]、文字の分類がに基づいて[、Unicode Standard, Version 8.0.0](http://unicode.org/versions/Unicode8.0.0)です。 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]を通じて、 [!INCLUDE[net_v461](~/includes/net-v461-md.md)]、基にして[、Unicode Standard, Version 6.3.0](http://www.unicode.org/versions/Unicode6.3.0/)です。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StringInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.StringInfo.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Globalization.StringInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しい値<xref:System.Globalization.StringInfo>オブジェクトは、空の文字列に初期化 ("") です。 使用してそれを別の文字列を割り当てることができます、<xref:System.Globalization.StringInfo.String%2A>プロパティです。  インスタンス化することも、<xref:System.Globalization.StringInfo>を呼び出すことによって、1 つの手順で指定した文字列を表すオブジェクト、<xref:System.Globalization.StringInfo.%23ctor%28System.String%29>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StringInfo (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.StringInfo.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">これを初期化するために文字列<see cref="T:System.Globalization.StringInfo" />オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Globalization.StringInfo" />クラスを指定した文字列。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、オブジェクトの値の引数を割り当てます<xref:System.Globalization.StringInfo.String%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.StringInfo.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">オブジェクト。</param>
+        <summary>現在の <see cref="T:System.Globalization.StringInfo" /> オブジェクトが指定されたオブジェクトと等しいかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />場合、<paramref name="value" />パラメーターは、<see cref="T:System.Globalization.StringInfo" />オブジェクトとその<see cref="P:System.Globalization.StringInfo.String" />プロパティ =、<see cref="P:System.Globalization.StringInfo.String" />このプロパティ<see cref="T:System.Globalization.StringInfo" />オブジェクト。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.StringInfo.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の値のハッシュ コードを計算<see cref="T:System.Globalization.StringInfo" />オブジェクト。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード、文字列の値に基づいてこの<see cref="T:System.Globalization.StringInfo" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 動作<xref:System.Globalization.StringInfo.GetHashCode%2A>はその実装は、共通言語ランタイムの 1 つのバージョン別に異なる可能性がありますに依存します。 パフォーマンスを向上させるためにこのエラーが発生<xref:System.Globalization.StringInfo.GetHashCode%2A>です。 動作をさせる<xref:System.Globalization.StringInfo.GetHashCode%2A>定数、アプリケーションはランタイムの実装をオーバーライドする必要があります<xref:System.Globalization.StringInfo.GetHashCode%2A>決して変更に既知の実装を持つ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNextTextElement">
+      <MemberSignature Language="C#" Value="public static string GetNextTextElement (string str);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetNextTextElement(string str) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.StringInfo.GetNextTextElement(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="str" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="str">対象の文字列をテキスト要素を取得します。</param>
+        <summary>指定した文字列の最初のテキスト要素を取得します。</summary>
+        <returns>指定した文字列の最初のテキスト要素を含む文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework では、単一の文字、つまり、書記素として表示されるテキストの単位としてテキスト要素を定義します。 テキストの要素は、基本文字、サロゲート ペア、または組み合わせ文字シーケンスです。 [Unicode 標準](http://go.microsoft.com/fwlink/?linkid=37123)、場所のペアの最初の単位が上位サロゲート、2 番目の下位サロゲートの 2 つのコード単位のシーケンスで構成される 1 つの抽象文字のコード化文字表現として、サロゲート ペアを定義します。 [Unicode 標準](http://go.microsoft.com/fwlink/?linkid=37123)組み合わせを定義する基本文字と 1 つまたは複数の結合文字の組み合わせとしてシーケンスを文字です。 サロゲート ペアは、基本文字または組み合わせ文字を表すことができます。  
+  
+ このメソッドには、最初のテキスト要素のみを返します。 文字列のテキスト要素を反復処理にアプリケーションを使用する必要があります、<xref:System.Globalization.TextElementEnumerator>によって生成されたオブジェクト、<xref:System.Globalization.StringInfo.GetTextElementEnumerator%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="str" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNextTextElement">
+      <MemberSignature Language="C#" Value="public static string GetNextTextElement (string str, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetNextTextElement(string str, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.StringInfo.GetNextTextElement(System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="str" Type="System.String" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="str">対象の文字列をテキスト要素を取得します。</param>
+        <param name="index">テキスト要素を開始する 0 から始まるインデックス。</param>
+        <summary>指定した文字列の指定したインデックス位置には、テキスト要素を取得します。</summary>
+        <returns>指定した文字列の指定したインデックスにあるテキスト要素を含む文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework では、単一の文字、つまり、書記素として表示されるテキストの単位としてテキスト要素を定義します。 テキストの要素は、基本文字、サロゲート ペア、または組み合わせ文字シーケンスです。 [Unicode 標準](http://go.microsoft.com/fwlink/?linkid=37123)、場所のペアの最初の単位が上位サロゲート、2 番目の下位サロゲートの 2 つのコード単位のシーケンスで構成される 1 つの抽象文字のコード化文字表現として、サロゲート ペアを定義します。 Unicode 標準定義組み合わせ文字のシーケンスとして基本文字と 1 つまたは複数の結合文字の組み合わせ。 サロゲート ペアは、基本文字または組み合わせ文字を表すことができます。  
+  
+ このメソッドには、指定したインデックスから始まる部分文字列の最初のテキスト要素のみを返します。 文字列のテキスト要素を反復処理にアプリケーションを使用する必要があります、<xref:System.Globalization.TextElementEnumerator>によって生成された、<xref:System.Globalization.StringInfo.GetTextElementEnumerator%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="str" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> は <paramref name="str" /> の有効なインデックスの範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTextElementEnumerator">
+      <MemberSignature Language="C#" Value="public static System.Globalization.TextElementEnumerator GetTextElementEnumerator (string str);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Globalization.TextElementEnumerator GetTextElementEnumerator(string str) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.StringInfo.GetTextElementEnumerator(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.TextElementEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="str" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="str">反復処理する文字列。</param>
+        <summary>文字列全体のテキスト要素を反復処理する列挙子を返します。</summary>
+        <returns>A<see cref="T:System.Globalization.TextElementEnumerator" />文字列全体にします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework では、単一の文字、つまり、書記素として表示されるテキストの単位としてテキスト要素を定義します。 テキストの要素は、基本文字、サロゲート ペア、または組み合わせ文字シーケンスです。 [Unicode 標準](http://go.microsoft.com/fwlink/?linkid=37123)、場所のペアの最初の単位が上位サロゲート、2 番目の下位サロゲートの 2 つのコード単位のシーケンスで構成される 1 つの抽象文字のコード化文字表現として、サロゲート ペアを定義します。 Unicode 標準定義組み合わせ文字のシーケンスとして基本文字と 1 つまたは複数の結合文字の組み合わせ。 サロゲート ペアは、基本文字または組み合わせ文字を表すことができます。  
+  
+ テキスト要素の列挙子は、文字列内のデータを読み取る場合にのみ使用します。基になる文字列を変更できません。 列挙子には、文字列への排他アクセスがありません。  
+  
+ 列挙子は無効な状態では要素の前に、最初のテキスト文字列または文字列の最後のテキスト要素の後に配置されている場合です。 列挙子は、状態が無効ですが、呼び出す<xref:System.Globalization.TextElementEnumerator.Current%2A>例外をスローします。  
+  
+ 最初に、列挙子は、文字列の最初のテキスト要素の前に位置付けられます。 <xref:System.Globalization.TextElementEnumerator.Reset%2A> を実行した場合も、列挙子はこの位置に戻されます。 そのため、列挙子を作成した後、または後<xref:System.Globalization.TextElementEnumerator.Reset%2A>が呼び出されると、<xref:System.Globalization.TextElementEnumerator.MoveNext%2A>の値を読み取る前に、文字列の最初のテキスト要素に列挙子を進めるに呼び出す必要があります<xref:System.Globalization.TextElementEnumerator.Current%2A>です。  
+  
+ <xref:System.Globalization.TextElementEnumerator.Current%2A> は、<xref:System.Globalization.TextElementEnumerator.MoveNext%2A> または <xref:System.Globalization.TextElementEnumerator.Reset%2A> が呼び出されるまでは同じオブジェクトを返します。  
+  
+ 列挙子が無効な状態および呼び出し元はもう一度、文字列の末尾が渡されると、<xref:System.Globalization.TextElementEnumerator.MoveNext%2A>返します`false`です。 呼び出す<xref:System.Globalization.TextElementEnumerator.Current%2A>最後の呼び出しは例外をスロー<xref:System.Globalization.TextElementEnumerator.MoveNext%2A>返される`false`です。  
+  
+   
+  
+## Examples  
+ 次のコード例を呼び出すことを示しています、<xref:System.Globalization.StringInfo.GetTextElementEnumerator%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Globalization.StringInfo>クラスです。  
+  
+ [!code-cpp[stringinfo#1](~/samples/snippets/cpp/VS_Snippets_CLR/StringInfo/cpp/StringInfo.cpp#1)]
+ [!code-csharp[stringinfo#1](~/samples/snippets/csharp/VS_Snippets_CLR/StringInfo/CS/StringInfo.cs#1)]
+ [!code-vb[stringinfo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/StringInfo/vb/stringinfo.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="str" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTextElementEnumerator">
+      <MemberSignature Language="C#" Value="public static System.Globalization.TextElementEnumerator GetTextElementEnumerator (string str, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Globalization.TextElementEnumerator GetTextElementEnumerator(string str, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.StringInfo.GetTextElementEnumerator(System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.TextElementEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="str" Type="System.String" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="str">反復処理する文字列。</param>
+        <param name="index">反復処理を開始する位置を示す 0 から始まるインデックス。</param>
+        <summary>指定したインデックスから始まる、文字列のテキスト要素を反復処理する列挙子を返します。</summary>
+        <returns>A<see cref="T:System.Globalization.TextElementEnumerator" />開始位置として、文字列の<paramref name="index" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework では、単一の文字、つまり、書記素として表示されるテキストの単位としてテキスト要素を定義します。 テキストの要素は、基本文字、サロゲート ペア、または組み合わせ文字シーケンスです。 [Unicode 標準](http://go.microsoft.com/fwlink/?linkid=37123)、場所のペアの最初の単位が上位サロゲート、2 番目の下位サロゲートの 2 つのコード単位のシーケンスで構成される 1 つの抽象文字のコード化文字表現として、サロゲート ペアを定義します。 Unicode 標準定義組み合わせ文字のシーケンスとして基本文字と 1 つまたは複数の結合文字の組み合わせ。 サロゲート ペアは、基本文字または組み合わせ文字を表すことができます。  
+  
+ テキスト要素の列挙子は、文字列内のデータを読み取る場合にのみ使用します。基になる文字列を変更できません。 列挙子には、文字列への排他アクセスがありません。  
+  
+ 列挙子は無効な状態では要素の前に、最初のテキスト文字列または文字列の最後のテキスト要素の後に配置されている場合です。 列挙子は、状態が無効ですが、呼び出す<xref:System.Globalization.TextElementEnumerator.Current%2A>例外をスローします。  
+  
+ 最初に、列挙子は、文字列の最初のテキスト要素の前に位置付けられます。 <xref:System.Globalization.TextElementEnumerator.Reset%2A> を実行した場合も、列挙子はこの位置に戻されます。 そのため、列挙子を作成した後、または後<xref:System.Globalization.TextElementEnumerator.Reset%2A>が呼び出されると、<xref:System.Globalization.TextElementEnumerator.MoveNext%2A>の値を読み取る前に、文字列の最初のテキスト要素に列挙子を進めるに呼び出す必要があります<xref:System.Globalization.TextElementEnumerator.Current%2A>です。  
+  
+ <xref:System.Globalization.TextElementEnumerator.Current%2A> は、<xref:System.Globalization.TextElementEnumerator.MoveNext%2A> または <xref:System.Globalization.TextElementEnumerator.Reset%2A> が呼び出されるまでは同じオブジェクトを返します。  
+  
+ 列挙子が無効な状態および呼び出し元はもう一度、文字列の末尾が渡されると、<xref:System.Globalization.TextElementEnumerator.MoveNext%2A>返します`false`です。 呼び出す<xref:System.Globalization.TextElementEnumerator.Current%2A>最後の呼び出しは例外をスロー<xref:System.Globalization.TextElementEnumerator.MoveNext%2A>返される`false`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="str" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> は <paramref name="str" /> の有効なインデックスの範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LengthInTextElements">
+      <MemberSignature Language="C#" Value="public int LengthInTextElements { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 LengthInTextElements" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.StringInfo.LengthInTextElements" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.Globalization.StringInfo" /> オブジェクト内のテキスト要素数を取得します。</summary>
+        <value>この <see cref="T:System.Globalization.StringInfo" /> オブジェクトの、基本文字、サロゲート ペア、結合文字シーケンスの数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseCombiningCharacters">
+      <MemberSignature Language="C#" Value="public static int[] ParseCombiningCharacters (string str);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32[] ParseCombiningCharacters(string str) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.StringInfo.ParseCombiningCharacters(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="str" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="str">検索対象の文字列。</param>
+        <summary>各基本文字、上位サロゲート、または指定した文字列内の制御文字のインデックスを返します。</summary>
+        <returns>各基本文字、上位サロゲート、または指定した文字列内の制御文字の 0 から始まるインデックスを含む整数の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [Unicode 標準](http://go.microsoft.com/fwlink/?linkid=37123)、場所のペアの最初の単位が上位サロゲート、2 番目の下位サロゲートの 2 つのコード単位のシーケンスで構成される 1 つの抽象文字のコード化文字表現として、サロゲート ペアを定義します。 上位サロゲートが u+d800 から U+DBFF の範囲の Unicode コード ポイントと、下位サロゲートが u+dc00 から U+DFFF までの範囲内での Unicode コード ポイント。  
+  
+ 制御文字は、Unicode 値は U +0 007F または u+0000 を通じて U +0 001 f または u+0080 U +0 009 f からの範囲内で文字です。  
+  
+ .NET Framework では、単一の文字、つまり、書記素として表示されるテキストの単位としてテキスト要素を定義します。 テキストの要素は、基本文字、サロゲート ペア、または組み合わせ文字シーケンスです。 [Unicode 標準](http://go.microsoft.com/fwlink/?linkid=37123)組み合わせを定義する基本文字と 1 つまたは複数の結合文字の組み合わせとしてシーケンスを文字です。 サロゲート ペアは、基本文字または組み合わせ文字を表すことができます。  
+  
+ 場合、組み合わせ文字シーケンスが有効でないそのシーケンスのすべての組み合わせ文字も返されます。  
+  
+ 結果の配列内の各インデックスは、テキストの要素、つまり、基本文字または上位サロゲートのインデックスの先頭です。  
+  
+ 各要素の長さは、簡単に連続するインデックス間の差として計算します。 配列の長さ以下に、文字列の長さは常になります。 このメソッドはたとえば、文字列"\u4f00\u302a\ud800\udc00\u4f01"を指定するには、インデックス 0、2、および 4 を返します。  
+  
+## <a name="equivalent-members"></a>同等のメンバー  
+ .NET Framework version 2.0 以降、<xref:System.Globalization.StringInfo.SubstringByTextElements%2A>メソッドおよび<xref:System.Globalization.StringInfo.LengthInTextElements%2A>プロパティによって提供される機能の使いやすい実装を提供する、<xref:System.Globalization.StringInfo.ParseCombiningCharacters%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を呼び出すことを示しています、<xref:System.Globalization.StringInfo.ParseCombiningCharacters%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Globalization.StringInfo>クラスです。  
+  
+ [!code-cpp[stringinfo#1](~/samples/snippets/cpp/VS_Snippets_CLR/StringInfo/cpp/StringInfo.cpp#1)]
+ [!code-csharp[stringinfo#1](~/samples/snippets/csharp/VS_Snippets_CLR/StringInfo/CS/StringInfo.cs#1)]
+ [!code-vb[stringinfo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/StringInfo/vb/stringinfo.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="str" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="String">
+      <MemberSignature Language="C#" Value="public string String { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string String" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.StringInfo.String" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の値の設定を取得または<see cref="T:System.Globalization.StringInfo" />オブジェクト。</summary>
+        <value>現在の値である文字列<see cref="T:System.Globalization.StringInfo" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Globalization.StringInfo>オブジェクトをインスタンス化すると、その<xref:System.Globalization.StringInfo.String%2A>プロパティは、次の値のいずれかに設定します。  
+  
+-   <xref:System.String?displayProperty=nameWithType>場合、既定<xref:System.Globalization.StringInfo.%23ctor>と呼びます。 使用して、<xref:System.Globalization.StringInfo.String%2A>文字列を割り当てるプロパティをこの<xref:System.Globalization.StringInfo>rperesents のオブジェクトします。  
+  
+-   として文字列が指定された、`value`への引数、<xref:System.Globalization.StringInfo.%23ctor%28System.String%29>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">セット操作の値は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SubstringByTextElements">
+      <MemberSignature Language="C#" Value="public string SubstringByTextElements (int startingTextElement);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string SubstringByTextElements(int32 startingTextElement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.StringInfo.SubstringByTextElements(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="startingTextElement" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="startingTextElement">このテキスト要素の 0 から始まるインデックス<see cref="T:System.Globalization.StringInfo" />オブジェクト。</param>
+        <summary>現在のテキスト要素の部分文字列を取得<see cref="T:System.Globalization.StringInfo" />オブジェクトの指定したテキストの要素から開始し、テキストの最後の要素までです。</summary>
+        <returns>このテキスト要素のサブ文字列<see cref="T:System.Globalization.StringInfo" />で指定されたテキスト要素のインデックスから始まる、オブジェクト、<paramref name="startingTextElement" />パラメーターは、このオブジェクトの最後のテキスト要素を続行します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インデックス 0 ~ 4 から 5 つのテキスト要素で構成される文字列を検討してください。 場合、`startingTextElement`パラメーターが 1 の<xref:System.Globalization.StringInfo.SubstringByTextElements%2A>メソッドは、インデックスは 1、2、3、および 4 のテキスト要素で構成される部分文字列を返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="startingTextElement" /> が 0 未満です。  
+  
+ または  
+  
+ 現在の値である文字列<see cref="T:System.Globalization.StringInfo" />オブジェクトが空の文字列 ("") です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SubstringByTextElements">
+      <MemberSignature Language="C#" Value="public string SubstringByTextElements (int startingTextElement, int lengthInTextElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string SubstringByTextElements(int32 startingTextElement, int32 lengthInTextElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.StringInfo.SubstringByTextElements(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="startingTextElement" Type="System.Int32" />
+        <Parameter Name="lengthInTextElements" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="startingTextElement">このテキスト要素の 0 から始まるインデックス<see cref="T:System.Globalization.StringInfo" />オブジェクト。</param>
+        <param name="lengthInTextElements">取得するテキスト要素の数。</param>
+        <summary>現在のテキスト要素の部分文字列を取得<see cref="T:System.Globalization.StringInfo" />オブジェクトの指定したテキストの要素から開始し、指定したテキストの要素数までです。</summary>
+        <returns>このテキスト要素のサブ文字列<see cref="T:System.Globalization.StringInfo" />オブジェクト。 部分文字列で指定されたテキスト要素の数から成る、<paramref name="lengthInTextElements" />パラメーターとで指定されたテキスト要素のインデックスから始まります、<paramref name="startingTextElement" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インデックス 0 ~ 4 から 5 つのテキスト要素で構成される文字列を検討してください。 場合、`startingTextElement`パラメーターが 1 と`lengthInTextElements`パラメーターは、3、<xref:System.Globalization.StringInfo.SubstringByTextElements%2A>メソッドは、インデックスは 1、2、および 3 をテキスト要素で構成される部分文字列を返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="startingTextElement" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="startingTextElement" />現在の値である文字列の長さ以上<see cref="T:System.Globalization.StringInfo" />オブジェクト。  
+  
+ または  
+  
+ <paramref name="lengthInTextElements" /> が 0 未満です。  
+  
+ または  
+  
+ 現在の値である文字列<see cref="T:System.Globalization.StringInfo" />オブジェクトが空の文字列 ("") です。  
+  
+ または  
+  
+ <paramref name="startingTextElement" /> + <paramref name="lengthInTextElements" />このテキスト要素の数より大きくなるインデックスを指定<see cref="T:System.Globalization.StringInfo" />オブジェクト。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

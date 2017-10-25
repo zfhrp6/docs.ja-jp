@@ -1,0 +1,89 @@
+<Type Name="HostSecurityPolicyResults" FullName="System.Web.Hosting.HostSecurityPolicyResults">
+  <TypeSignature Language="C#" Value="public enum HostSecurityPolicyResults" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed HostSecurityPolicyResults extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Hosting.HostSecurityPolicyResults" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>アセンブリに適用するセキュリティ ポリシーの種類を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.HostSecurityPolicyResults>の戻り値を提供するクラスが使用されます、<xref:System.Web.Hosting.HostSecurityPolicyResolver.ResolvePolicy%2A>メソッドです。 ASP.NET コード アクセス セキュリティ ポリシーをオーバーライドする ASP.NET ランタイムの動作をカスタマイズする場合は、このメソッドを使用します。 メソッドによって返される列挙値では、使用するセキュリティ ポリシーの種類を示します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AppDomainTrust">
+      <MemberSignature Language="C#" Value="AppDomainTrust" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Hosting.HostSecurityPolicyResults AppDomainTrust = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Hosting.HostSecurityPolicyResults.AppDomainTrust" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Hosting.HostSecurityPolicyResults</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定されているアクセス許可に関連付けられていることを示す、<see cref="T:System.AppDomain" />インスタンスは、指定したアセンブリに適用する必要があります。 つまり、ユーザー アセンブリは部分的に信頼された ASP.NET に読み込まれると、アセンブリを扱うこと<see cref="T:System.AppDomain" />インスタンス。 さらに、アセンブリに割り当てられた権限セットを持つ必要があります、<see cref="T:System.AppDomain" />インスタンスの初期化にします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultPolicy">
+      <MemberSignature Language="C#" Value="DefaultPolicy" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Hosting.HostSecurityPolicyResults DefaultPolicy = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Hosting.HostSecurityPolicyResults.DefaultPolicy" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Hosting.HostSecurityPolicyResults</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET が適切なアクセス許可が指定されたアセンブリの設定を決定する既定のロジックを使用することを示します。 返す必要があります、<see cref="F:System.Web.Hosting.HostSecurityPolicyResults.DefaultPolicy" />アセンブリの権限セットを決定する値を持っていない場合。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="FullTrust">
+      <MemberSignature Language="C#" Value="FullTrust" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Hosting.HostSecurityPolicyResults FullTrust = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Hosting.HostSecurityPolicyResults.FullTrust" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Hosting.HostSecurityPolicyResults</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定したアセンブリが完全信頼許可されることを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Nothing">
+      <MemberSignature Language="C#" Value="Nothing" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Hosting.HostSecurityPolicyResults Nothing = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Hosting.HostSecurityPolicyResults.Nothing" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Hosting.HostSecurityPolicyResults</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定したアセンブリの権限セットが設定されていることを示す空にします。 空のアクセス許可セットはの新しいインスタンス、<see cref="T:System.Security.PermissionSet" />のパラメーター値を持つクラス、<see cref="F:System.Security.Permissions.PermissionState.None" />コンス トラクターに渡されます。 ASP.NET 部分信頼アプリケーション ドメインでは、空のアクセス許可セットに関連付けられているアセンブリは読み込まれません。 したがって、使用することができます、<see cref="F:System.Web.Hosting.HostSecurityPolicyResults.Nothing" />フィールド、部分信頼の ASP.NET アプリケーション ドメインに読み込むからアセンブリを防ぐためにします。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

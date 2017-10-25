@@ -1,0 +1,1506 @@
+<Type Name="PersonalizationAdministration" FullName="System.Web.UI.WebControls.WebParts.PersonalizationAdministration">
+  <TypeSignature Language="C#" Value="public static class PersonalizationAdministration" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit PersonalizationAdministration extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.PersonalizationAdministration" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>実装して管理および Web パーツのパーソナル化の管理機能。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、いくつかの静的メソッドと Web パーツのパーソナル化の管理機能を公開するプロパティを提供します。 これらの方法で構成されている既定のパーソナル化プロバイダーに適用されます、 <xref:System.Web.UI.WebControls.WebParts.WebPartManager> Web パーツ コントロールのコントロールです。 パーソナル化プロバイダーとして機能しているいくつかのデータ ストアを管理する場合は、個々 のパーソナル化プロバイダーのクラスでのメソッドを直接使用する必要があります。 コレクションにパーソナル化プロバイダーが構成されていることに注意してください、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールがから利用可能な<xref:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.Providers%2A>静的プロパティです。  
+  
+ Web アプリケーションが実行されない場合に既定の信頼レベルのパーソナル化が失敗することに注意する重要な<xref:System.Web.AspNetHostingPermissionLevel.Medium>以上 (を使用して Web.config ファイルでカスタムの信頼レベルを設定することができます、`<trust level="" />`要素)。 <xref:System.Web.UI.WebControls.WebParts.PersonalizationAdministration>と<xref:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider>の信頼レベルの両方のクラスが確認<xref:System.Web.AspNetHostingPermissionLevel.Low>初期化される場合。 レベルの信頼で実行するアプリケーションを構成する場合<xref:System.Web.AspNetHostingPermissionLevel.Low>、既定値を使用して<xref:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider>パーソナル化データにアクセスしようとするアプリケーション、ために失敗することは、アプリケーションでは、初めてのパーソナル化データを管理するにはプロバイダーで実行されている ASP.NET ワーカー プロセス<xref:System.Web.AspNetHostingPermissionLevel.Low>信頼には、さまざまなクラスへの呼び出しに必要な権限はありません、<xref:System.Data.SqlClient>名前空間。  
+  
+   
+  
+## Examples  
+ 次のコード例をいくつかのメソッドを使用する方法を示しています、<xref:System.Web.UI.WebControls.WebParts.PersonalizationAdministration>クラスです。 この例はという名前の Web パーツのユーザー コントロールを参照する .aspx ページ`Persadmin.ascx`です。 次のコードでは、たとえば、.aspx ファイルを提供します。  
+  
+ [!code-aspx-csharp[WebParts_PersAdmin#7](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_PersAdmin/CS/defaultcs.aspx#7)]  
+  
+ このコードを提供、`Persadmin.ascx`コントロール。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[WebParts_PersAdmin#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_PersAdmin/CS/PersAdmin.ascx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ApplicationName">
+      <MemberSignature Language="C#" Value="public static string ApplicationName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property string ApplicationName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.ApplicationName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロバイダーによって指定されたアプリケーションの名前を設定します。</summary>
+        <value>アプリケーション名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション名は、データ取得のパーソナル化プロバイダーによって保存され、同じアプリケーション名を設定してデータを共有するか、または別のアプリケーション名を指定することによって、同じデータベース内のデータをパーティション分割する複数のアプリケーションを影響します。 アプリケーション名は、パーソナル化プロバイダー ファイルのセクションで、Web.config または System.config が見つかりました。  
+  
+> [!CAUTION]
+>  処理されたすべての要求の 1 つの既定のプロファイル プロバイダーのインスタンスが使用されるため、<xref:System.Web.HttpApplication>オブジェクトを同時に実行して、設定しようとしています。 複数の要求を持つことができます、<xref:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.ApplicationName%2A>プロパティの値。 <xref:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.ApplicationName%2A>プロパティはスレッド セーフである複数の書き込みでは、変更して、<xref:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.ApplicationName%2A>プロパティの値は、アプリケーションの複数のユーザーに対して予期しない動作になります。 ユーザー設定できるようにするためのコードを避けることをお勧めしますが、<xref:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.ApplicationName%2A>プロパティに必要な場合を除き、します。 アプリケーションの例の設定で、<xref:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.ApplicationName%2A>プロパティが必要になる複数のアプリケーションのプロファイル データを管理する管理アプリケーションは、します。 このようなアプリケーションは、シングル ユーザー アプリケーションと Web アプリケーションではなくにする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">構成でパーソナル化プロバイダーに対して定義されたプロバイダーの種類が正しくありません。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成されたパーソナル化プロバイダーのインスタンスを作成し、初期化しようとした際に、構成の例外が発生しました。  
+  
+ \- または  
+  
+ 構成で定義された既定のパーソナル化プロバイダーが見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindInactiveUserState">
+      <MemberSignature Language="C#" Value="public static System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection FindInactiveUserState (string pathToMatch, string usernameToMatch, DateTime userInactiveSinceDate);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection FindInactiveUserState(string pathToMatch, string usernameToMatch, valuetype System.DateTime userInactiveSinceDate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.FindInactiveUserState(System.String,System.String,System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pathToMatch" Type="System.String" />
+        <Parameter Name="usernameToMatch" Type="System.String" />
+        <Parameter Name="userInactiveSinceDate" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="pathToMatch">一致するように、ページのパス。</param>
+        <param name="usernameToMatch">ページに関連付けられたパーソナル化データを持つユーザーに一致する名前。</param>
+        <param name="userInactiveSinceDate">最後の日付、ユーザーのパーソナル化情報にアクセスされました。</param>
+        <summary>指定したパラメーターに基づいて、非アクティブなユーザーのユーザーごとのパーソナル化状態情報のコレクションを返します。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection" />ユーザーごとの個人用設定の状態情報を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのコレクションを返します<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo>インスタンスのユーザーごとの個人用設定の状態情報をここで、`pathToMatch`パラメーターの値が、ページのパスに一致する`usernameToMatch`一致ページ、およびそのユーザーに関連付けられたパーソナル化データを持っているユーザー名は非アクティブと見なされます。 つまり、について返される各記録して、ユーザーの<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.LastActivityDate%2A>プロパティの値より小さいかに等しい`userInactiveSinceDate`です。 返されるコレクションにのみが含まれています<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo>インスタンス。  
+  
+ このメソッドは、基になるデータ ストアにクエリでワイルドカード文字を渡します。 ワイルドカード文字のサポートは、各プロバイダーが、アスタリスク (*)、パーセント記号 (%)、またはアンダー スコア (_) などの文字を処理する方法に依存します。  
+  
+ 通常、SQL 準拠のデータ ストアで実行できるワイルドカード検索部分パスでワイルドカード文字が先頭、末尾、または検索文字列のテキストの中央に表示される、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A>プロパティです。 たとえば、"~/vdir"で始まるすべてのパスを検索するため、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A>プロパティを"~/vdir%"に設定するとします。  
+  
+ 同様に、部分的なユーザー名にワイルドカード検索が表示のテキスト文字列のどの時点でも、ワイルドカード文字を持つ可能性があります、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UsernameToMatch%2A>プロパティです。 たとえば、"John"で始まるすべてのユーザー名を検索するため、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UsernameToMatch%2A>プロパティは「John %」のようになります。  
+  
+ 既定のパーソナル化プロバイダーを使用して、 <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo>-派生オブジェクトをアルファベット順に返され、を組み合わせたパスとユーザーの名前の昇順で並べ替えられます。 コレクション内のオブジェクトの順序は、プロバイダーによって決まります。  
+  
+ 場合`userInactiveSinceDate`は<xref:System.DateTime.MaxValue>、このメソッドから返される値に相当し、<xref:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.FindUserState%2A>です。  
+  
+ 両方`pathToMatch`と`usernameToMatch`できます`null`です。 `usernameToMatch` 、Microsoft SQL Server を実行しているものなど、一部のデータ ストアがワイルドカード文字としてコンマを許可するため、パラメーターはコンマ (,) を含めることができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="pathToMatch" />または<paramref name="usernameToMatch" />前に、または後のトリミングは空の文字列 ("") です。  
+  
+ \- または  
+  
+ 構成でパーソナル化プロバイダーに対して定義されたプロバイダーの種類が正しくありません。  
+  
+ \- または  
+  
+ いずれかのパラメーターの文字列の長さが 256 文字を超えています。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成されたパーソナル化プロバイダーのインスタンスを作成し、初期化しようとした際に、構成の例外が発生しました。  
+  
+ \- または  
+  
+ 構成で定義された既定のパーソナル化プロバイダーが見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindInactiveUserState">
+      <MemberSignature Language="C#" Value="public static System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection FindInactiveUserState (string pathToMatch, string usernameToMatch, DateTime userInactiveSinceDate, int pageIndex, int pageSize, out int totalRecords);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection FindInactiveUserState(string pathToMatch, string usernameToMatch, valuetype System.DateTime userInactiveSinceDate, int32 pageIndex, int32 pageSize, [out] int32&amp; totalRecords) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.FindInactiveUserState(System.String,System.String,System.DateTime,System.Int32,System.Int32,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pathToMatch" Type="System.String" />
+        <Parameter Name="usernameToMatch" Type="System.String" />
+        <Parameter Name="userInactiveSinceDate" Type="System.DateTime" />
+        <Parameter Name="pageIndex" Type="System.Int32" />
+        <Parameter Name="pageSize" Type="System.Int32" />
+        <Parameter Name="totalRecords" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="pathToMatch">一致するように、ページのパス。</param>
+        <param name="usernameToMatch">ページに関連付けられたパーソナル化データを持つユーザーに一致する名前。</param>
+        <param name="userInactiveSinceDate">最後の日付パーソナル化情報にアクセスされました。</param>
+        <param name="pageIndex">返される結果ページの 0 から始まるインデックス。</param>
+        <param name="pageSize">返されるレコードの数です。</param>
+        <param name="totalRecords">使用できるレコードの合計数。</param>
+        <summary>指定したパラメーターに基づいて、非アクティブなユーザーのユーザーごとのパーソナル化状態情報のコレクションを返します。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection" />ユーザーごとの個人用設定の状態情報を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのコレクションを返します<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo>インスタンスのユーザーごとの個人用設定の状態情報をここで、`pathToMatch`パラメーターの値が、ページのパスに一致する`usernameToMatch`一致ページ、およびそのユーザーに関連付けられたパーソナル化データを持っているユーザー名は非アクティブと見なされます。 つまり、について返される各記録して、ユーザーの<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.LastActivityDate%2A>プロパティの値より小さいかに等しい`userInactiveSinceDate`です。 コレクションにのみ含まれて<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo>インスタンス。  
+  
+ このメソッドは、基になるのパーソナル化プロバイダーをパラメーターにワイルドカード文字を渡します、プロバイダーが、アスタリスク (*)、パーセント記号 (%)、またはアンダー スコア (_) などの文字でどのように処理する方法の依存データ ストアがどのようにこれらの文字を処理します。  
+  
+ 通常、SQL 準拠のデータ ストアで実行できるワイルドカード検索部分パスでワイルドカード文字が先頭、末尾、または検索文字列のテキストの中央に表示される、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A>プロパティです。 たとえば、"~/vdir"で始まるすべてのパスを検索するため、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A>プロパティを"~/vdir%"に設定するとします。  
+  
+ 同様に、部分的なユーザー名にワイルドカード検索が表示のテキスト文字列のどの時点でも、ワイルドカード文字を持つ可能性があります、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UsernameToMatch%2A>プロパティです。 たとえば、"John"で始まるすべてのユーザー名を検索するため、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UsernameToMatch%2A>プロパティは「John %」のようになります。  
+  
+ 既定のパーソナル化プロバイダーを使用して、 <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo>-派生オブジェクトをアルファベット順に返され、を組み合わせたパスとユーザーの名前の昇順で並べ替えられます。 コレクション内のオブジェクトの順序は、プロバイダーによって決まります。  
+  
+ 場合`userInactiveSinceDate`は<xref:System.DateTime.MaxValue>、このメソッドから返される値に相当し、<xref:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.FindUserState%2A>です。  
+  
+ 両方`pathToMatch`と`usernameToMatch`できます`null`です。 `usernameToMatch` 、Microsoft SQL Server を実行しているものなど、一部のデータ ストアがワイルドカード文字としてコンマを許可するため、パラメーターはコンマ (,) を持つことができます。  
+  
+ によって返されるデータが制約される`pageIndex`と`pageSize`ここで、`pageIndex`どのレコードを返すを制御および`pageSize`返されるレコードの数を制御します。 たとえば場合、 `pageIndex` 0 に設定されたと`pageSize`を 25 に設定された、最初の 25 個のエントリが返されるデータになります。 場合`pageIndex`1 に設定されたと`pageSize`を 25 に設定された、26 ~ 50 のエントリが返されるデータになります。 `totalRecords`パラメーターが使用可能なレコードの合計数を返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="pathToMatch" />または<paramref name="usernameToMatch" />前に、または後のトリミングは空の文字列 ("") です。  
+  
+ \- または  
+  
+ <paramref name="pageIndex" />0 より小さい  
+  
+ \- または  
+  
+ <paramref name="pageSize" /> が 0 以下です。  
+  
+ \- または  
+  
+ 組み合わせ<paramref name="pageIndex" />と<paramref name="pageSize" />を超える<see cref="F:System.Int32.MaxValue" />です。  
+  
+ \- または  
+  
+ 構成でパーソナル化プロバイダーに対して定義されたプロバイダーの種類が正しくありません。  
+  
+ \- または  
+  
+ いずれかのパラメーターの文字列の長さが 256 文字を超えています。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成されたパーソナル化プロバイダーのインスタンスを作成し、初期化しようとした際に、構成の例外が発生しました。  
+  
+ \- または  
+  
+ 構成で定義された既定のパーソナル化プロバイダーが見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindSharedState">
+      <MemberSignature Language="C#" Value="public static System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection FindSharedState (string pathToMatch);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection FindSharedState(string pathToMatch) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.FindSharedState(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pathToMatch" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="pathToMatch">一致するように、ページのパス。</param>
+        <summary>指定されたパスに基づく共有パーソナル化状態情報のコレクションを返します。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection" />共有パーソナル化状態情報を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのコレクションを返します<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo>where をインスタンス化、`pathToMatch`値が共有パーソナル化状態データがページのパスと一致します。 コレクションにのみ含まれて<xref:System.Web.UI.WebControls.WebParts.SharedPersonalizationStateInfo>インスタンス。  
+  
+ このメソッドは、基になるのパーソナル化プロバイダーをパラメーターにワイルドカード文字を渡します、プロバイダーが、アスタリスク (*)、パーセント記号 (%)、またはアンダー スコア (_) などの文字でどのように処理する方法の依存データ ストアがどのようにこれらの文字を処理します。  
+  
+ 通常、SQL 準拠のデータ ストアで実行できるワイルドカード検索部分パスでワイルドカード文字が先頭、末尾、または検索文字列のテキストの中央に表示される、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A>プロパティです。 たとえば、"~/vdir"で始まるすべてのパスを検索するため、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A>プロパティを"~/vdir%"に設定するとします。  
+  
+ 既定のパーソナル化プロバイダーを使用して、 <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo>-派生オブジェクトをアルファベット順に返され、を組み合わせたパスとユーザーの名前の昇順で並べ替えられます。 コレクション内のオブジェクトの順序は、プロバイダーによって決定されます。  
+  
+ `pathToMatch`パラメーターを指定できます`null`です。 場合設定`null`クエリを実行するときに、パラメーターは無視されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="pathToMatch" />空の文字列 ("") の前に、または後のトリミングします。  
+  
+ \- または  
+  
+ 構成でパーソナル化プロバイダーに対して定義されたプロバイダーの種類が正しくありません。  
+  
+ \- または  
+  
+ いずれかのパラメーターの文字列の長さが 256 文字を超えています。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成されたパーソナル化プロバイダーのインスタンスを作成し、初期化しようとした際に、構成の例外が発生しました。  
+  
+ \- または  
+  
+ 構成で定義された既定のパーソナル化プロバイダーが見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindSharedState">
+      <MemberSignature Language="C#" Value="public static System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection FindSharedState (string pathToMatch, int pageIndex, int pageSize, out int totalRecords);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection FindSharedState(string pathToMatch, int32 pageIndex, int32 pageSize, [out] int32&amp; totalRecords) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.FindSharedState(System.String,System.Int32,System.Int32,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pathToMatch" Type="System.String" />
+        <Parameter Name="pageIndex" Type="System.Int32" />
+        <Parameter Name="pageSize" Type="System.Int32" />
+        <Parameter Name="totalRecords" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="pathToMatch">一致するように、ページのパス。</param>
+        <param name="pageIndex">返される結果ページの 0 から始まるインデックス。</param>
+        <param name="pageSize">返されるレコードの数です。</param>
+        <param name="totalRecords">使用できるレコードの合計数。</param>
+        <summary>指定したパラメーターに基づいて共有パーソナル化状態情報のコレクションを返します。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection" />共有パーソナル化状態情報を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのコレクションを返します<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo>where をインスタンス化、`pathToMatch`値が共有パーソナル化状態データがページのパスと一致します。 コレクションにのみ含まれて<xref:System.Web.UI.WebControls.WebParts.SharedPersonalizationStateInfo>インスタンス。  
+  
+ このメソッドは、基になるのパーソナル化プロバイダーをパラメーターにワイルドカード文字を渡します、プロバイダーが、アスタリスク (*)、パーセント記号 (%)、またはアンダー スコア (_) などの文字でどのように処理する方法の依存データ ストアがどのようにこれらの文字を処理します。  
+  
+ 通常、SQL 準拠のデータ ストアで実行できるワイルドカード検索部分パスでワイルドカード文字が先頭、末尾、または検索文字列のテキストの中央に表示される、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A>プロパティです。 たとえば、"~/vdir"で始まるすべてのパスを検索するため、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A>プロパティを"~/vdir%"に設定するとします。  
+  
+ 既定のパーソナル化プロバイダーを使用して、 <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo>-派生オブジェクトをアルファベット順に返され、を組み合わせたパスとユーザーの名前の昇順で並べ替えられます。 コレクション内のオブジェクトの順序は、プロバイダーによって決まります。  
+  
+ `pathToMatch`パラメーターを指定できます`null`です。 場合設定`null`クエリを実行するときに、パラメーターは無視されます。  
+  
+ によって返されるデータが制約される`pageIndex`と`pageSize`ここで、`pageIndex`どのレコードを返すを制御および`pageSize`返されるレコードの数を制御します。 たとえば場合、 `pageIndex` 0 に設定されたと`pageSize`を 25 に設定された、最初の 25 個のエントリが返されるデータになります。 場合`pageIndex`1 に設定されたと`pageSize`を 25 に設定された、26 ~ 50 のエントリが返されるデータになります。 `totalRecords`パラメーターが使用可能なレコードの合計数を返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="pathToMatch" />前に、または後のトリミングは空の文字列 ("") です。  
+  
+ \- または  
+  
+ <paramref name="pageIndex" /> が 0 未満です。  
+  
+ \- または  
+  
+ <paramref name="pageSize" /> が 0 以下です。  
+  
+ \- または  
+  
+ 組み合わせ<paramref name="pageIndex" />と<paramref name="pageSize" />を超える<see cref="F:System.Int32.MaxValue" />です。  
+  
+ \- または  
+  
+ 構成でパーソナル化プロバイダーに対して定義されたプロバイダーの種類が正しくありません。  
+  
+ \- または  
+  
+ いずれかのパラメーターの文字列の長さが 256 文字を超えています。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成されたパーソナル化プロバイダーのインスタンスを作成し、初期化しようとした際に、構成の例外が発生しました。  
+  
+ \- または  
+  
+ 構成で定義された既定のパーソナル化プロバイダーが見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindUserState">
+      <MemberSignature Language="C#" Value="public static System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection FindUserState (string pathToMatch, string usernameToMatch);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection FindUserState(string pathToMatch, string usernameToMatch) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.FindUserState(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pathToMatch" Type="System.String" />
+        <Parameter Name="usernameToMatch" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="pathToMatch">一致するように、ページのパス。</param>
+        <param name="usernameToMatch">ページに関連付けられたパーソナル化データを持つユーザーに一致する名前。</param>
+        <summary>ユーザー名とページのパスに基づくユーザーごとのパーソナル化状態情報のコレクションを返します。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection" />ユーザーごとの個人用設定の状態情報を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのコレクションを返します<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo>where をインスタンス化、`pathToMatch`パラメーターの値が、ページのパスに一致して`usernameToMatch`をそのページに関連付けられたパーソナル化データを持つユーザー名と一致します。 コレクションにのみ含まれて<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo>インスタンス。  
+  
+ このメソッドは、基になるのパーソナル化プロバイダーをパラメーターにワイルドカード文字を渡します、プロバイダーが、アスタリスク (*)、パーセント記号 (%)、またはアンダー スコア (_) などの文字でどのように処理する方法の依存データ ストアがどのようにこれらの文字を処理します。  
+  
+ 通常、SQL 準拠のデータ ストアで実行できるワイルドカード検索部分パスでワイルドカード文字が先頭、末尾、または検索文字列のテキストの中央に表示される、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A>プロパティです。 たとえば、"~/vdir"で始まるすべてのパスを検索するため、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A>プロパティを"~/vdir%"に設定するとします。  
+  
+ 同様に、部分的なユーザー名にワイルドカード検索が表示のテキスト文字列のどの時点でも、ワイルドカード文字を持つ可能性があります、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UsernameToMatch%2A>プロパティです。 たとえば、"John"で始まるすべてのユーザー名を検索するため、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UsernameToMatch%2A>プロパティは「John %」のようになります。  
+  
+ 既定のパーソナル化プロバイダーを使用して、 <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo>-派生オブジェクトをアルファベット順に返され、を組み合わせたパスとユーザーの名前の昇順で並べ替えられます。 コレクション内のオブジェクトの順序は、プロバイダーによって決定されます。  
+  
+ 両方`pathToMatch`と`usernameToMatch`できます`null`です。 `usernameToMatch` 、Microsoft SQL Server を実行しているものなど、一部のデータ ストアがワイルドカード文字としてコンマを許可するため、パラメーターはコンマ (,) を持つことができます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.FindUserState%2A> メソッドの使用方法を示します。 完全な例は含まれて、<xref:System.Web.UI.WebControls.WebParts.PersonalizationAdministration>クラスの概要に関するトピック。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-csharp[WebParts_PersAdmin#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_PersAdmin/CS/PersAdmin.ascx#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="pathToMatch" />または<paramref name="usernameToMatch" />前に、または後のトリミングは空の文字列 ("") です。  
+  
+ \- または  
+  
+ 構成でパーソナル化プロバイダーに対して定義されたプロバイダーの種類が正しくありません。  
+  
+ \- または  
+  
+ いずれかのパラメーターの文字列の長さが 256 文字を超えています。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成されたパーソナル化プロバイダーのインスタンスを作成し、初期化しようとした際に、構成の例外が発生しました。  
+  
+ \- または  
+  
+ 構成で定義された既定のパーソナル化プロバイダーが見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindUserState">
+      <MemberSignature Language="C#" Value="public static System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection FindUserState (string pathToMatch, string usernameToMatch, int pageIndex, int pageSize, out int totalRecords);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection FindUserState(string pathToMatch, string usernameToMatch, int32 pageIndex, int32 pageSize, [out] int32&amp; totalRecords) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.FindUserState(System.String,System.String,System.Int32,System.Int32,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pathToMatch" Type="System.String" />
+        <Parameter Name="usernameToMatch" Type="System.String" />
+        <Parameter Name="pageIndex" Type="System.Int32" />
+        <Parameter Name="pageSize" Type="System.Int32" />
+        <Parameter Name="totalRecords" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="pathToMatch">一致するように、ページのパス。</param>
+        <param name="usernameToMatch">ページに関連付けられたパーソナル化データを持つユーザーに一致する名前。</param>
+        <param name="pageIndex">返される結果ページの 0 から始まるインデックス。</param>
+        <param name="pageSize">返されるレコードの数です。</param>
+        <param name="totalRecords">使用可能なレコードまたは合計数。</param>
+        <summary>指定したパラメーターに基づくユーザーごとのパーソナル化状態情報のコレクションを返します。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection" />ユーザーごとの個人用設定の状態情報を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのコレクションを返します<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo>where をインスタンス化、`pathToMatch`パラメーターの値には、ページのパスが一致して`usernameToMatch`をそのページに関連付けられたパーソナル化データを持つユーザー名と一致します。 コレクションにのみ含まれて<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo>インスタンス。  
+  
+ このメソッドは、基になるのパーソナル化プロバイダーをパラメーターにワイルドカード文字を渡します、プロバイダーが、アスタリスク (*)、パーセント記号 (%)、またはアンダー スコア (_) 文字を処理する方法に依存してデータ ストアがどのようにこれらの文字を処理します。  
+  
+ 通常、SQL 準拠のデータ ストアで実行できるワイルドカード検索部分パスでワイルドカード文字が先頭、末尾、または検索文字列のテキストの中央に表示される、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A>プロパティです。 たとえば、"~/vdir"で始まるすべてのパスを検索するため、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A>プロパティを"~/vdir%"に設定するとします。  
+  
+ 同様に、部分的なユーザー名にワイルドカード検索が表示のテキスト文字列のどの時点でも、ワイルドカード文字を持つ可能性があります、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UsernameToMatch%2A>プロパティです。 たとえば、"John"で始まるすべてのユーザー名を検索するため、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UsernameToMatch%2A>プロパティは「John %」のようになります。  
+  
+ 既定のパーソナル化プロバイダーを使用して、 <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo>-派生オブジェクトをアルファベット順に返され、を組み合わせたパスとユーザーの名前の昇順で並べ替えられます。 コレクション内のオブジェクトの順序は、プロバイダーによって決まります。  
+  
+ 両方`pathToMatch`と`usernameToMatch`できます`null`です。 `usernameToMatch` 、Microsoft SQL Server を実行しているものなど、一部のデータ ストアがワイルドカード文字としてコンマを許可するため、パラメーターはコンマ (,) を持つことができます。  
+  
+ によって返されるデータが制約される`pageIndex`と`pageSize`ここで、`pageIndex`どのレコードを返すを制御および`pageSize`返されるレコードの数を制御します。 たとえば場合、 `pageIndex` 0 に設定されたと`pageSize`を 25 に設定された、最初の 25 個のエントリが返されるデータになります。 場合`pageIndex`1 に設定されたと`pageSize`を 25 に設定された、26 ~ 50 のエントリが返されるデータになります。 `totalRecords`パラメーターが使用可能なレコードの合計数を返します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.FindUserState%2A> メソッドの使用方法を示します。 完全な例は含まれて、<xref:System.Web.UI.WebControls.WebParts.PersonalizationAdministration>クラスの概要に関するトピック。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-csharp[WebParts_PersAdmin#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_PersAdmin/CS/PersAdmin.ascx#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="pathToMatch" />または<paramref name="usernameToMatch" />前に、または後のトリミングは空の文字列 ("") です。  
+  
+ \- または  
+  
+ <paramref name="pageIndex" /> が 0 未満です。  
+  
+ \- または  
+  
+ <paramref name="pageSize" /> が 0 以下です。  
+  
+ または  
+  
+ 組み合わせ<paramref name="pageIndex" />と<paramref name="pageSize" />を超える<see cref="F:System.Int32.MaxValue" />です。  
+  
+ \- または  
+  
+ 構成でパーソナル化プロバイダーに対して定義されたプロバイダーの種類が正しくありません。  
+  
+ \- または  
+  
+ いずれかのパラメーターの文字列の長さが 256 文字を超えています。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成されたパーソナル化プロバイダーのインスタンスを作成し、初期化しようとした際に、構成の例外が発生しました。  
+  
+ \- または  
+  
+ 構成で定義された既定のパーソナル化プロバイダーが見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllInactiveUserState">
+      <MemberSignature Language="C#" Value="public static System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection GetAllInactiveUserState (DateTime userInactiveSinceDate);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection GetAllInactiveUserState(valuetype System.DateTime userInactiveSinceDate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.GetAllInactiveUserState(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userInactiveSinceDate" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="userInactiveSinceDate">最後の日付、ユーザーのパーソナル化情報にアクセスされました。</param>
+        <summary>指定した日付に基づき、非アクティブなユーザーに関連付けられているすべてのユーザーごとのパーソナル化状態情報のコレクションを返します。</summary>
+        <returns><see cref="T:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo" /> インスタンスのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されるコレクションにのみが含まれています<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo>インスタンス。 既定のパーソナル化プロバイダーを使用して、 <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo>-派生オブジェクトをアルファベット順に返され、を組み合わせたパスとユーザーの名前の昇順で並べ替えられます。 コレクション内のオブジェクトの順序は、プロバイダーによって決まります。  
+  
+ このメソッドは、項目を返します場所、ユーザーの<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.LastActivityDate%2A>プロパティの値が以下に、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate%2A>プロパティの値。 場合<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate%2A>は<xref:System.DateTime.MaxValue>、実質的に、このメソッドは、基になるデータ ストアのすべてのユーザーごとのデータを返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">構成でパーソナル化プロバイダーに対して定義されたプロバイダーの種類が正しくありません。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成されたパーソナル化プロバイダーのインスタンスを作成し、初期化しようとした際に、構成の例外が発生しました。  
+  
+ \- または  
+  
+ 構成で定義された既定のパーソナル化プロバイダーが見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllInactiveUserState">
+      <MemberSignature Language="C#" Value="public static System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection GetAllInactiveUserState (DateTime userInactiveSinceDate, int pageIndex, int pageSize, out int totalRecords);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection GetAllInactiveUserState(valuetype System.DateTime userInactiveSinceDate, int32 pageIndex, int32 pageSize, [out] int32&amp; totalRecords) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.GetAllInactiveUserState(System.DateTime,System.Int32,System.Int32,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userInactiveSinceDate" Type="System.DateTime" />
+        <Parameter Name="pageIndex" Type="System.Int32" />
+        <Parameter Name="pageSize" Type="System.Int32" />
+        <Parameter Name="totalRecords" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="userInactiveSinceDate">最後の日付、ユーザーのパーソナル化情報にアクセスされました。</param>
+        <param name="pageIndex">返される結果ページの 0 から始まるインデックス。</param>
+        <param name="pageSize">返されるレコードの数です。</param>
+        <param name="totalRecords">使用できるレコードの合計数。</param>
+        <summary>指定したパラメーターに基づいて、非アクティブなユーザーに関連付けられているすべてのユーザーごとのパーソナル化状態情報のサブセットを返します。</summary>
+        <returns><see cref="T:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo" /> インスタンスのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されるコレクションにのみが含まれています<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo>インスタンス。 既定のパーソナル化プロバイダーを使用して、 <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo>-派生オブジェクトをアルファベット順に返され、を組み合わせたパスとユーザーの名前の昇順で並べ替えられます。 コレクション内のオブジェクトの順序は、プロバイダーによって決まります。  
+  
+ このメソッドは、項目を返します場所、ユーザーの<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.LastActivityDate%2A>プロパティの値が以下に、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate%2A>プロパティの値。 場合<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate%2A>は<xref:System.DateTime.MaxValue>、実質的に、このメソッドは、基になるデータ ストアのすべてのユーザーごとのデータを返します。  
+  
+ によって、戻り値が制約を`pageIndex`と`pageSize`パラメーター、場所`pageIndex`どのレコードを返すを制御および`pageSize`返されるレコードの数を制御します。 たとえば場合、 `pageIndex` 0 に設定されたと`pageSize`を 25 に設定された、最初の 25 個のエントリが返されるデータになります。 場合`pageIndex`1 に設定されたと`pageSize`を 25 に設定された、26 ~ 50 のエントリが返されるデータになります。 `totalRecords`パラメーターが使用可能なレコードの合計数を返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="pageIndex" /> が 0 未満です。  
+  
+ \- または  
+  
+ <paramref name="pageSize" /> が 0 以下です。  
+  
+ \- または  
+  
+ 組み合わせ<paramref name="pageIndex" />と<paramref name="pageSize" />を超える<see cref="F:System.Int32.MaxValue" />です。  
+  
+ \- または  
+  
+ 構成でパーソナル化プロバイダーに対して定義されたプロバイダーの種類が正しくありません。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成されたパーソナル化プロバイダーのインスタンスを作成し、初期化しようとした際に、構成の例外が発生しました。  
+  
+ \- または  
+  
+ 構成で定義された既定のパーソナル化プロバイダーが見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllState">
+      <MemberSignature Language="C#" Value="public static System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection GetAllState (System.Web.UI.WebControls.WebParts.PersonalizationScope scope);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection GetAllState(valuetype System.Web.UI.WebControls.WebParts.PersonalizationScope scope) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.GetAllState(System.Web.UI.WebControls.WebParts.PersonalizationScope)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="System.Web.UI.WebControls.WebParts.PersonalizationScope" />
+      </Parameters>
+      <Docs>
+        <param name="scope">パーソナル化情報を取得するスコープです。</param>
+        <summary>要求されたパーソナル化スコープの基になるデータ ストアからすべてのパーソナル化状態情報のコレクションを返します。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection" />指定されたスコープの状態情報を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されるコレクションのみを含む注<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo>-派生クラスのいずれかの型のオブジェクト<xref:System.Web.UI.WebControls.WebParts.SharedPersonalizationStateInfo>または型<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo>です。 既定のパーソナル化プロバイダーを使用して、 <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo>-派生オブジェクトをアルファベット順に返され、を組み合わせたパスとユーザーの名前の昇順で並べ替えられます。 コレクション内のオブジェクトの順序は、プロバイダーによって決まります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">構成でパーソナル化プロバイダーに対して定義されたプロバイダーの種類が正しくありません。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成されたパーソナル化プロバイダーのインスタンスを作成し、初期化しようとした際に、構成の例外が発生しました。  
+  
+ \- または  
+  
+ 構成で定義された既定のパーソナル化プロバイダーが見つかりません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="scope" />有効なメンバーではない、<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" />列挙します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllState">
+      <MemberSignature Language="C#" Value="public static System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection GetAllState (System.Web.UI.WebControls.WebParts.PersonalizationScope scope, int pageIndex, int pageSize, out int totalRecords);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection GetAllState(valuetype System.Web.UI.WebControls.WebParts.PersonalizationScope scope, int32 pageIndex, int32 pageSize, [out] int32&amp; totalRecords) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.GetAllState(System.Web.UI.WebControls.WebParts.PersonalizationScope,System.Int32,System.Int32,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="System.Web.UI.WebControls.WebParts.PersonalizationScope" />
+        <Parameter Name="pageIndex" Type="System.Int32" />
+        <Parameter Name="pageSize" Type="System.Int32" />
+        <Parameter Name="totalRecords" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="scope">パーソナル化情報を取得するスコープです。</param>
+        <param name="pageIndex">返される結果ページの 0 から始まるインデックス。</param>
+        <param name="pageSize">返されるレコードの数です。</param>
+        <param name="totalRecords">使用できるレコードの合計数。</param>
+        <summary>指定したパラメーターに基づいて、基になるデータ ストアからすべてのパーソナル化状態情報のサブセットを返します。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection" />指定したスコープとパラメーターの状態情報を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されるコレクション内の項目は、主にスコープに基づいて、およびそのスコープに対応するレコードがサブセットに基づくにさらに小さくなりますし、`pageIndex`と`pageSize`パラメーター。 返されるコレクションには、いずれかが含まれています<xref:System.Web.UI.WebControls.WebParts.SharedPersonalizationStateInfo>インスタンスのみ、または<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo>インスタンスのみです。  
+  
+ によって返される項目が制約を`pageIndex`と`pageSize`パラメーター、場所`pageIndex`どのレコードを返すを制御および`pageSize`返されたレコードの数を制御します。 たとえば場合、 `pageIndex` 0 に設定されたと`pageSize`を 25 に設定された、最初の 25 個のエントリが返されるデータになります。 場合`pageIndex`1 に設定されたと`pageSize`を 25 に設定された、26 ~ 50 のエントリが返されるデータになります。 `totalRecords`パラメーターが使用可能なレコードの合計数を返します。  
+  
+ 既定のパーソナル化プロバイダーを使用して、 <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo>-派生オブジェクトをアルファベット順に返され、を組み合わせたパスとユーザーの名前の昇順で並べ替えられます。 コレクション内のオブジェクトの順序は、プロバイダーによって決まります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="pageIndex" /> が 0 未満です。  
+  
+ \- または  
+  
+ <paramref name="pageSize" /> が 0 以下です。  
+  
+ \- または  
+  
+ 構成でパーソナル化プロバイダーに対して定義されたプロバイダーの種類が正しくありません。  
+  
+ \- または  
+  
+ 組み合わせ<paramref name="pageIndex" />と<paramref name="pageSize" />を超える<see cref="F:System.Int32.MaxValue" />です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="scope" />有効なメンバーではない、<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" />列挙します。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成されたパーソナル化プロバイダーのインスタンスを作成し、初期化しようとした際に、構成の例外が発生しました。  
+  
+ \- または  
+  
+ 構成で定義された既定のパーソナル化プロバイダーが見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCountOfInactiveUserState">
+      <MemberSignature Language="C#" Value="public static int GetCountOfInactiveUserState (DateTime userInactiveSinceDate);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 GetCountOfInactiveUserState(valuetype System.DateTime userInactiveSinceDate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.GetCountOfInactiveUserState(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userInactiveSinceDate" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="userInactiveSinceDate">最後の日付、ユーザーのパーソナル化情報にアクセスされました。</param>
+        <summary>指定されたパラメーターに基づいて、非アクティブなユーザーの基になるデータ ストア内のユーザーの数の個人用設定項目を返します。</summary>
+        <returns>非アクティブなユーザーのパーソナル化項目の数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、レコードを返します場所、ユーザーの<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.LastActivityDate%2A>プロパティの値が以下に、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate%2A>プロパティの値。 場合<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate%2A>に設定されている<xref:System.DateTime.MaxValue>、すべてのユーザーの個人用設定の情報の数が返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">構成でパーソナル化プロバイダーに対して定義されたプロバイダーの種類が正しくありません。  
+  
+ \- または  
+  
+ いずれかのパラメーターの文字列の長さが 256 文字を超えています。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成されたパーソナル化プロバイダーのインスタンスを作成し、初期化しようとした際に、構成の例外が発生しました。  
+  
+ \- または  
+  
+ 構成で定義された既定のパーソナル化プロバイダーが見つかりません。</exception>
+        <exception cref="T:System.Web.HttpException">既定のプロバイダーには、カウントの負の数が返されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCountOfInactiveUserState">
+      <MemberSignature Language="C#" Value="public static int GetCountOfInactiveUserState (string pathToMatch, DateTime userInactiveSinceDate);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 GetCountOfInactiveUserState(string pathToMatch, valuetype System.DateTime userInactiveSinceDate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.GetCountOfInactiveUserState(System.String,System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pathToMatch" Type="System.String" />
+        <Parameter Name="userInactiveSinceDate" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="pathToMatch">パーソナル化状態の項目を取得すると、ページへのパス。</param>
+        <param name="userInactiveSinceDate">最後の日付、ユーザーのパーソナル化情報にアクセスされました。</param>
+        <summary>指定したパラメーターに基づいて、非アクティブなユーザーの基になるデータ ストア内のユーザーの数の個人用設定項目を返します。</summary>
+        <returns>非アクティブなユーザーの基になるデータ ストア内のユーザーごとの個人用設定項目の数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ページと一致する、指定されたレコードを返します`pathtoMatch`パラメーターと、ユーザーの<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.LastActivityDate%2A>プロパティの値が以下に、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate%2A>プロパティの値。 場合<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate%2A>に設定されている<xref:System.DateTime.MaxValue>、すべてのユーザーの個人用設定の情報の数が返されます。  
+  
+ なお、`pathToMatch`パラメーターは、ワイルドカード文字を含めることができます。 メソッドは、基になるデータ ストアにワイルドカード文字を渡します。 ワイルドカード文字のサポートは、各プロバイダーが、アスタリスク (*)、パーセント記号 (%)、またはアンダー スコア (_) などの文字を処理する方法に依存します。  
+  
+ 通常、SQL 準拠のデータ ストアで実行できるワイルドカード検索部分パスでワイルドカード文字が先頭、末尾、または検索文字列のテキストの中央に表示される、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A>プロパティです。 たとえば、"~/vdir"で始まるすべてのパスを検索するため、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A>プロパティを"~/vdir%"に設定するとします。  
+  
+ `pathToMatch`パラメーターを指定できます`null`です。 場合設定`null`クエリを実行するときに、パラメーターは無視されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="pathToMatch" />、トリミング後は、空の文字列 ("") です。  
+  
+ \- または  
+  
+ 構成でパーソナル化プロバイダーに対して定義されたプロバイダーの種類が正しくありません。  
+  
+ \- または  
+  
+ いずれかのパラメーターの文字列の長さが 256 文字を超えています。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成されたパーソナル化プロバイダーのインスタンスを作成し、初期化しようとした際に、構成の例外が発生しました。  
+  
+ \- または  
+  
+ 構成で定義された既定のパーソナル化プロバイダーが見つかりません。</exception>
+        <exception cref="T:System.Web.HttpException">既定のプロバイダーには、カウントの負の数が返されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCountOfState">
+      <MemberSignature Language="C#" Value="public static int GetCountOfState (System.Web.UI.WebControls.WebParts.PersonalizationScope scope);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 GetCountOfState(valuetype System.Web.UI.WebControls.WebParts.PersonalizationScope scope) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.GetCountOfState(System.Web.UI.WebControls.WebParts.PersonalizationScope)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="System.Web.UI.WebControls.WebParts.PersonalizationScope" />
+      </Parameters>
+      <Docs>
+        <param name="scope">取得するパーソナル化状態の項目のスコープです。</param>
+        <summary>指定されたスコープに存在している、基になるデータ ストア内のパーソナル化の数の状態の項目を返します。</summary>
+        <returns>指定されたスコープのパーソナル化状態の項目の数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、指定されたスコープの基になるデータ ストア内のパーソナル化状態の項目の数を決定します。 使用して、<xref:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.GetCountOfState%2A>に特定のページ数を絞り込む方法です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.GetCountOfState%2A> メソッドの使用方法を示します。 完全な例は含まれて、<xref:System.Web.UI.WebControls.WebParts.PersonalizationAdministration>クラスの概要に関するトピック。  
+  
+ [!code-csharp[WebParts_PersAdmin#5](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_PersAdmin/CS/PersAdmin.ascx#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="scope" />有効なメンバーではない、<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" />列挙します。</exception>
+        <exception cref="T:System.ArgumentException">構成でパーソナル化プロバイダーに対して定義されたプロバイダーの種類が正しくありません。  
+  
+ \- または  
+  
+ いずれかのパラメーターの文字列の長さが 256 文字を超えています。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成されたパーソナル化プロバイダーのインスタンスを作成し、初期化しようとした際に、構成の例外が発生しました。  
+  
+ \- または  
+  
+ 構成で定義された既定のパーソナル化プロバイダーが見つかりません。</exception>
+        <exception cref="T:System.Web.HttpException">既定のプロバイダーには、カウントの負の数が返されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCountOfState">
+      <MemberSignature Language="C#" Value="public static int GetCountOfState (System.Web.UI.WebControls.WebParts.PersonalizationScope scope, string pathToMatch);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 GetCountOfState(valuetype System.Web.UI.WebControls.WebParts.PersonalizationScope scope, string pathToMatch) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.GetCountOfState(System.Web.UI.WebControls.WebParts.PersonalizationScope,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="System.Web.UI.WebControls.WebParts.PersonalizationScope" />
+        <Parameter Name="pathToMatch" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="scope">取得するパーソナル化状態の項目のスコープです。</param>
+        <param name="pathToMatch">パーソナル化状態の項目を取得すると、ページへのパス。</param>
+        <summary>指定されたパラメーターの存在を基になるデータ ストア内のパーソナル化の数の状態の項目を返します。</summary>
+        <returns>指定されたスコープのパーソナル化状態の項目の数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、指定されたスコープとパスの基になるデータ ストアにパーソナル化状態の項目の数を決定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">構成でパーソナル化プロバイダーに対して定義されたプロバイダーの種類が正しくありません。  
+  
+ \- または  
+  
+ <paramref name="pathToMatch" />、トリミング後は、空の文字列 ("") です。  
+  
+ \- または  
+  
+ いずれかのパラメーターの文字列の長さが 256 文字を超えています。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成されたパーソナル化プロバイダーのインスタンスを作成し、初期化しようとした際に、構成の例外が発生しました。  
+  
+ \- または  
+  
+ 構成で定義された既定のパーソナル化プロバイダーが見つかりません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="scope" />有効なメンバーではない、<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" />列挙します。</exception>
+        <exception cref="T:System.Web.HttpException">既定のプロバイダーには、カウントの負の数が返されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCountOfUserState">
+      <MemberSignature Language="C#" Value="public static int GetCountOfUserState (string usernameToMatch);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 GetCountOfUserState(string usernameToMatch) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.GetCountOfUserState(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="usernameToMatch" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="usernameToMatch">パーソナル化状態情報の取得に関連付けられているユーザー名。</param>
+        <summary>指定したユーザーの存在を基になるデータ ストア内のパーソナル化の数の状態の項目を返します。</summary>
+        <returns>指定したユーザーのパーソナル化状態の項目の数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、基になるデータ ストアに存在しているで、ユーザー単位の数のカウントにパーソナル化項目を返します、指定された`usernameToMatch`です。  
+  
+ なお、`usernameToMatch`パラメーターは、ワイルドカード文字を含めることができます。 このメソッドは、基になるデータ ストアにワイルドカード文字を渡します。 ワイルドカード文字のサポートは、各プロバイダーが、アスタリスク (*)、パーセント記号 (%)、またはアンダー スコア (_) などの文字を処理する方法に依存します。  
+  
+ 通常、SQL 準拠のデータ ストアの部分的なユーザー名にワイルドカード検索ことができますが、ワイルドカード文字のテキスト文字列のどの時点でも表示、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UsernameToMatch%2A>プロパティです。 たとえば、"John"で始まるすべてのユーザー名を検索するため、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UsernameToMatch%2A>パラメーターは「John %」のようになります。  
+  
+ `usernameToMatch`パラメーターを指定できます`null`です。 場合設定`null`クエリを実行するときに、パラメーターは無視されます。 `usernameToMatch`パラメーターは、コンマ (,)、Microsoft SQL Server を実行しているものなど、一部のデータ ストアがワイルドカード文字としてコンマを許可するために使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="usernameToMatch" />空の文字列 ("") のトリミング後です。  
+  
+ \- または  
+  
+ 構成でパーソナル化プロバイダーに対して定義されたプロバイダーの種類が正しくありません。  
+  
+ \- または  
+  
+ いずれかのパラメーターの文字列の長さが 256 文字を超えています。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成されたパーソナル化プロバイダーのインスタンスを作成し、初期化しようとした際に、構成の例外が発生しました。  
+  
+ \- または  
+  
+ 構成で定義された既定のパーソナル化プロバイダーが見つかりません。</exception>
+        <exception cref="T:System.Web.HttpException">既定のプロバイダーには、カウントの負の数が返されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Provider">
+      <MemberSignature Language="C#" Value="public static System.Web.UI.WebControls.WebParts.PersonalizationProvider Provider { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Web.UI.WebControls.WebParts.PersonalizationProvider Provider" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.Provider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PersonalizationProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定のパーソナル化プロバイダーのインスタンスを返します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationProvider" />の既定のプロバイダー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、既定のパーソナル化プロバイダーのインスタンスを取得します。 これは、Web.config または Machine.config ファイルのパーソナル化プロバイダーのセクションで指定されたプロバイダーです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.Provider%2A>プロパティです。  
+  
+ [!code-csharp[WebParts_PersAdmin#4](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_PersAdmin/CS/PersAdmin.ascx#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">構成でパーソナル化プロバイダーに対して定義されたプロバイダーの種類が正しくありません。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成されたパーソナル化プロバイダーのインスタンスを作成し、初期化しようとした際に、構成の例外が発生しました。  
+  
+ \- または  
+  
+ 構成で定義された既定のパーソナル化プロバイダーが見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Providers">
+      <MemberSignature Language="C#" Value="public static System.Web.UI.WebControls.WebParts.PersonalizationProviderCollection Providers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Web.UI.WebControls.WebParts.PersonalizationProviderCollection Providers" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.Providers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PersonalizationProviderCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>名前によってインデックス付けされたパーソナル化プロバイダーのコレクションを返します。</summary>
+        <value>読み取り専用<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationProviderCollection" />アプリケーションに使用可能なパーソナル化プロバイダーを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、パーソナル化プロバイダーのコレクションを返します。 コレクションは、アプリケーションの初期化で作成される、名前によってインデックス付けされたプロバイダー オブジェクトへの参照が含まれています。 既定のプロバイダーは、Web.config ファイルまたは Machine.config 構成ファイルで指定された名前でインデックスを作成します。  
+  
+ 返されるコレクションは読み取り専用です。 ことに注意してください。呼び出す`Remove`、 `Add`、または`Clear`例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">構成でパーソナル化プロバイダーに対して定義されたプロバイダーの種類が正しくありません。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成されたパーソナル化プロバイダーのインスタンスを作成し、初期化しようとした際に、構成の例外が発生しました。  
+  
+ \- または  
+  
+ 構成で定義された既定のパーソナル化プロバイダーが見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetAllState">
+      <MemberSignature Language="C#" Value="public static int ResetAllState (System.Web.UI.WebControls.WebParts.PersonalizationScope scope);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 ResetAllState(valuetype System.Web.UI.WebControls.WebParts.PersonalizationScope scope) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.ResetAllState(System.Web.UI.WebControls.WebParts.PersonalizationScope)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="System.Web.UI.WebControls.WebParts.PersonalizationScope" />
+      </Parameters>
+      <Docs>
+        <param name="scope">削除するパーソナル化データに関連付けられているスコープです。</param>
+        <summary>指定されたスコープに関連付けられているすべての行を削除することによって、基になるデータ ストア内のすべてのパーソナル化データをリセットします。</summary>
+        <returns>リセットされた項目の数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定されたパーソナル化スコープに関連付けられている基になるデータ ストア内のすべての行を削除します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="scope" />有効なメンバーではない、<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" />列挙します。</exception>
+        <exception cref="T:System.ArgumentException">構成でパーソナル化プロバイダーに対して定義されたプロバイダーの種類が正しくありません。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成されたパーソナル化プロバイダーのインスタンスを作成し、初期化しようとした際に、構成の例外が発生しました。  
+  
+ \- または  
+  
+ 構成で定義された既定のパーソナル化プロバイダーが見つかりません。</exception>
+        <exception cref="T:System.Web.HttpException">既定のプロバイダーには、影響を受けた行の数に負の値が返されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetInactiveUserState">
+      <MemberSignature Language="C#" Value="public static int ResetInactiveUserState (DateTime userInactiveSinceDate);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 ResetInactiveUserState(valuetype System.DateTime userInactiveSinceDate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.ResetInactiveUserState(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userInactiveSinceDate" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="userInactiveSinceDate">最後の日付、ユーザーのパーソナル化情報にアクセスされました。</param>
+        <summary>すべてユーザーごとのパーソナル化状態情報、基になるデータ ストア内の指定されたパラメーターをリセットします。</summary>
+        <returns>リセットされた基になるデータ ストア内の行の数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、基になるデータ ストア内のすべてのユーザーごとの状態情報をリセット、ユーザーの<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.LastActivityDate%2A>プロパティの値が以下に、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate%2A>値。  
+  
+ 場合<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate%2A>に設定されている<xref:System.DateTime.MaxValue>、このメソッドは、基になるデータ ストア内のすべてのユーザーごとのデータをリセットします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">構成でパーソナル化プロバイダーに対して定義されたプロバイダーの種類が正しくありません。  
+  
+ \- または  
+  
+ いずれかのパラメーターの文字列の長さが 256 文字を超えています。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成されたパーソナル化プロバイダーのインスタンスを作成し、初期化しようとした際に、構成の例外が発生しました。  
+  
+ \- または  
+  
+ 構成で定義された既定のパーソナル化プロバイダーが見つかりません。</exception>
+        <exception cref="T:System.Web.HttpException">既定のプロバイダーには、カウントの負の数が返されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetInactiveUserState">
+      <MemberSignature Language="C#" Value="public static int ResetInactiveUserState (string path, DateTime userInactiveSinceDate);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 ResetInactiveUserState(string path, valuetype System.DateTime userInactiveSinceDate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.ResetInactiveUserState(System.String,System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="userInactiveSinceDate" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="path">リセットするパーソナル化状態情報に関連付けられているページへのパス。</param>
+        <param name="userInactiveSinceDate">ユーザー状態の個人用設定項目のリセットで使用する最後のアクティブな日付。</param>
+        <summary>指定したパラメーターに基づいて、非アクティブなユーザーの基になるデータ ストア内のすべてのユーザーごとの状態情報をリセットします。</summary>
+        <returns>リセットされた基になるデータ ストア内の行の数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定したパスに関連付けられている基になるデータ ストア内のすべてのユーザーごとの状態をリセット、ユーザーの<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.LastActivityDate%2A>プロパティの値が以下に、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate%2A>プロパティの値。  
+  
+ データ ストアは、ページ、または、パーソナル化状態を格納するデータの 1 つ以上の行を必要とする、ユーザー名とページの組み合わせのリセット行の数は、パーソナル化状態の数と異なる場合があります。 基になるプロバイダーでは、トランザクションに対応するデータ ストアからのデータを公開する場合、このメソッドは、単一のトランザクションで、操作を実行します。  
+  
+ 存在しない共有状態をリセットしようとすると、エラーではありません。  
+  
+ 場合<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate%2A>は<xref:System.DateTime.MaxValue>、このメソッドは、指定されたパスの基になるデータ ストア内のすべてのユーザーごとのデータを効果的にリセットします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />空の文字列 ("") のトリミング後です。  
+  
+ \- または  
+  
+ 構成でパーソナル化プロバイダーに対して定義されたプロバイダーの種類が正しくありません。  
+  
+ \- または  
+  
+ いずれかのパラメーターの文字列の長さが 256 文字を超えています。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成されたパーソナル化プロバイダーのインスタンスを作成し、初期化しようとした際に、構成の例外が発生しました。  
+  
+ \- または  
+  
+ 構成で定義された既定のパーソナル化プロバイダーが見つかりません。</exception>
+        <exception cref="T:System.Web.HttpException">既定のプロバイダーには、カウントの負の数が返されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetSharedState">
+      <MemberSignature Language="C#" Value="public static bool ResetSharedState (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool ResetSharedState(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.ResetSharedState(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">リセットするパーソナル化状態情報に関連付けられているページへのパス。</param>
+        <summary>共有の指定したパスの基になるデータ ストア内の状態をリセットします。</summary>
+        <returns>
+          <see langword="true" />パーソナル化状態を共有する場合はリセットされました。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 存在しない共有状態をリセットしようとすると、エラーではありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />空の文字列 ("") のトリミング後です。  
+  
+ \- または  
+  
+ 構成でパーソナル化プロバイダーに対して定義されたプロバイダーの種類が正しくありません。  
+  
+ \- または  
+  
+ いずれかのパラメーターの文字列の長さが 256 文字を超えています。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成されたパーソナル化プロバイダーのインスタンスを作成し、初期化しようとした際に、構成の例外が発生しました。  
+  
+ \- または  
+  
+ 構成で定義された既定のパーソナル化プロバイダーが見つかりません。</exception>
+        <exception cref="T:System.Web.HttpException">既定のプロバイダーには、削除された行の数が負の数または 1 より大きいことが示されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetSharedState">
+      <MemberSignature Language="C#" Value="public static int ResetSharedState (string[] paths);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 ResetSharedState(string[] paths) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.ResetSharedState(System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="paths" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="paths">リセットするパーソナル化状態情報に関連付けられているページへのパス。</param>
+        <summary>共有の指定したパスの基になるデータ ストアに状態をリセットします。</summary>
+        <returns>リセットされた行の数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、リセットされた行の数のカウントを返します。 存在しない共有状態をリセットしようとすると、エラーではありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="paths" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="paths" /> は長さゼロの配列です。  
+  
+ \- または  
+  
+ メンバー<paramref name="paths" />か<see langword="null" />または空の文字列 ("") のトリミング後です。  
+  
+ \- または  
+  
+ 構成でパーソナル化プロバイダーに対して定義されたプロバイダーの種類が正しくありません。  
+  
+ \- または  
+  
+ いずれかのパラメーターの文字列の長さが 256 文字を超えています。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成されたパーソナル化プロバイダーのインスタンスを作成し、初期化しようとした際に、構成の例外が発生しました。  
+  
+ \- または  
+  
+ 構成で定義された既定のパーソナル化プロバイダーが見つかりません。</exception>
+        <exception cref="T:System.Web.HttpException">既定のプロバイダーには、削除された行の数が負の数であることが示されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetState">
+      <MemberSignature Language="C#" Value="public static int ResetState (System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection data);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 ResetState(class System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.ResetState(System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection" />
+      </Parameters>
+      <Docs>
+        <param name="data">リセットするデータを示す <see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo" /> オブジェクトのコレクション。</param>
+        <summary>コレクションに格納された項目に基づいて、元になるデータ ストア内の個人用設定データをリセットします。</summary>
+        <returns>リセットされた行の数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはに基づいて、基になるデータ ストア内の個人用設定データ、リセット、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo>コレクションに含まれるオブジェクト。 組み合わせを選択的に削除するこのメソッドを使用するコレクションの内容に基づいて、ユーザーごとのデータと共有します。 <xref:System.Web.UI.WebControls.WebParts.SharedPersonalizationStateInfo>オブジェクトを示すことは、ページの共有のデータがリセットされます。<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo>オブジェクトは、特定のページをリセットするのにそのユーザーごとのデータを示しています。  
+  
+> [!NOTE]
+>  このメソッドでは、コレクションは、パーソナル化データのランダムなセットを指しているため、単一のトランザクション内ですべてのリセットが発生することは保証されません。  
+  
+ 存在しないデータを参照するオブジェクトを格納するコレクションのエラーではありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="data" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="data" /> は空のコレクションです。  
+  
+ または  
+  
+ コレクションの要素は <see langword="null" /> です。  
+  
+ または  
+  
+ コレクション内の <see cref="T:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo" /> インスタンスのパス値は、<see langword="null" /> または空の文字列 ("") です。  
+  
+ または  
+  
+ コレクション内の <see cref="T:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo" /> インスタンスの <paramref name="user" /> の値は <see langword="null" /> か空の文字列、またはコンマを含んでいます。  
+  
+ または  
+  
+ 構成でパーソナル化プロバイダーに対して定義されたプロバイダーの種類が正しくありません。  
+  
+ または  
+  
+ いずれかのパラメーターの文字列の長さが 256 文字を超えています。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成されたパーソナル化プロバイダーのインスタンスを作成し、初期化しようとした際に、構成の例外が発生しました。  
+  
+ または  
+  
+ 構成で定義された既定のパーソナル化プロバイダーが見つかりません。</exception>
+        <exception cref="T:System.Web.HttpException">既定のプロバイダーには、削除された行の数が負の数であることが示されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetUserState">
+      <MemberSignature Language="C#" Value="public static int ResetUserState (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 ResetUserState(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.ResetUserState(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">リセットするパーソナル化状態情報に関連付けられているページへのパス。</param>
+        <summary>指定されたパスの基になるデータ ストア内のすべてのユーザーごとの状態をリセットします。</summary>
+        <returns>リセットされた行の数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、リセットされた行の数のカウントを返します。 存在しない共有状態をリセットしようとすると、エラーではありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> が空の文字列 ("") です。  
+  
+ \- または  
+  
+ 構成でパーソナル化プロバイダーに対して定義されたプロバイダーの種類が正しくありません。  
+  
+ \- または  
+  
+ いずれかのパラメーターの文字列の長さが 256 文字を超えています。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成されたパーソナル化プロバイダーのインスタンスを作成し、初期化しようとした際に、構成の例外が発生しました。  
+  
+ \- または  
+  
+ 構成で定義された既定のパーソナル化プロバイダーが見つかりません。</exception>
+        <exception cref="T:System.Web.HttpException">既定のプロバイダーには、削除された行の数が負の数であることが示されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetUserState">
+      <MemberSignature Language="C#" Value="public static int ResetUserState (string[] usernames);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 ResetUserState(string[] usernames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.ResetUserState(System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="usernames" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="usernames">ユーザーごとのデータを含むをリセットするか、ユーザー名の配列。</param>
+        <summary>指定したパスの基になるデータ ストア内のすべてのユーザーごとの状態をリセットします。</summary>
+        <returns>リセットされた行の数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドに含まれるユーザーに関連付けられている基になるデータ ストア内のすべてのユーザーごとの状態をリセット、`usernames`パラメーター、リセットされた行の数のカウントを返します。  
+  
+ 存在しない共有状態をリセットしようとすると、エラーではありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="usernames" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="usernames" /> は長さゼロの配列です。  
+  
+ \- または  
+  
+ メンバー<paramref name="usernames" />か<see langword="null" />コンマが含まれています、または空の文字列 ("") トリミング後です。  
+  
+ \- または  
+  
+ 構成でパーソナル化プロバイダーに対して定義されたプロバイダーの種類が正しくありません。  
+  
+ \- または  
+  
+ いずれかのパラメーターの文字列の長さが 256 文字を超えています。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成されたパーソナル化プロバイダーのインスタンスを作成し、初期化しようとした際に、構成の例外が発生しました。  
+  
+ \- または  
+  
+ 構成で定義された既定のパーソナル化プロバイダーが見つかりません。</exception>
+        <exception cref="T:System.Web.HttpException">既定のプロバイダーには、削除された行の数が負の数であることが示されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetUserState">
+      <MemberSignature Language="C#" Value="public static bool ResetUserState (string path, string username);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool ResetUserState(string path, string username) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.ResetUserState(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="username" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">リセットするパーソナル化状態情報に関連付けられているページへのパス。</param>
+        <param name="username">リセットするパーソナル化データに関連付けられているユーザー名。</param>
+        <summary>指定したユーザー名とパスの組み合わせの基になるデータ ストアでユーザーごとの状態をリセットします。</summary>
+        <returns>リセットされた行の数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 存在しないユーザー状態をリセットしようとすると、エラーではありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> または <paramref name="username" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />または<paramref name="username" />空の文字列 ("") のトリミング後です。  
+  
+ \- または  
+  
+ <paramref name="username" />コンマが含まれています。  
+  
+ \- または  
+  
+ 構成でパーソナル化プロバイダーに対して定義されたプロバイダーの種類が正しくありません。  
+  
+ \- または  
+  
+ いずれかのパラメーターの文字列の長さが 256 文字を超えています。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成されたパーソナル化プロバイダーのインスタンスを作成し、初期化しようとした際に、構成の例外が発生しました。  
+  
+ \- または  
+  
+ 構成で定義された既定のパーソナル化プロバイダーが見つかりません。</exception>
+        <exception cref="T:System.Web.HttpException">既定のプロバイダーには、削除された行の数が負の数であることが示されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetUserState">
+      <MemberSignature Language="C#" Value="public static int ResetUserState (string path, string[] usernames);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 ResetUserState(string path, string[] usernames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.ResetUserState(System.String,System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="usernames" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="path">リセットするパーソナル化状態情報に関連付けられているページへのパス。</param>
+        <param name="usernames">パーソナル化データをリセットすると関連付けられたユーザー名。</param>
+        <summary>ページおよび指定されたユーザーの基になるデータ ストア内のユーザーごとの状態をリセットします。</summary>
+        <returns>リセットされた行の数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドに含まれている各ユーザーに関連付けられている基になるデータ ストア内のユーザーごとの状態をリセット、`usernames`パラメーターによって指定されたページを`path.`  
+  
+ 存在しないユーザー状態をリセットしようとすると、エラーではありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> または <paramref name="usernames" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />空の文字列 ("") のトリミング後です。  
+  
+ \- または  
+  
+ メンバー<paramref name="usernames" />は<see langword="null" />空のトリミング後の文字列またはコンマが含まれています。  
+  
+ \- または  
+  
+ <paramref name="usernames" /> は長さゼロの配列です。  
+  
+ \- または  
+  
+ 構成でパーソナル化プロバイダーに対して定義されたプロバイダーの種類が正しくありません。  
+  
+ \- または  
+  
+ いずれかのパラメーターの文字列の長さが 256 文字を超えています。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成されたパーソナル化プロバイダーのインスタンスを作成し、初期化しようとした際に、構成の例外が発生しました。  
+  
+ \- または  
+  
+ 構成で定義された既定のパーソナル化プロバイダーが見つかりません。</exception>
+        <exception cref="T:System.Web.HttpException">既定のプロバイダーには、削除された行の数が負の数であることが示されます。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

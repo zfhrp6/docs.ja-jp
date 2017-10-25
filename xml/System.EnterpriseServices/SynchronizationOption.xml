@@ -1,0 +1,109 @@
+<Type Name="SynchronizationOption" FullName="System.EnterpriseServices.SynchronizationOption">
+  <TypeSignature Language="C#" Value="public enum SynchronizationOption" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed SynchronizationOption extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.SynchronizationOption" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>コンポーネントに必要な自動同期の種類を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.EnterpriseServices.SynchronizationOption>型です。  
+  
+ [!code-cpp[EnterpriseServicesSynchronizationOption#0](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServicesSynchronizationOption/cpp/class1.cpp#0)]
+ [!code-csharp[EnterpriseServicesSynchronizationOption#0](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServicesSynchronizationOption/CS/class1.cs#0)]
+ [!code-vb[EnterpriseServicesSynchronizationOption#0](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServicesSynchronizationOption/VB/class1.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Disabled">
+      <MemberSignature Language="C#" Value="Disabled" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.EnterpriseServices.SynchronizationOption Disabled = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.EnterpriseServices.SynchronizationOption.Disabled" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.SynchronizationOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>COM + オブジェクトのコンテキストを決定するときに、コンポーネントの同期要件を無視します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NotSupported">
+      <MemberSignature Language="C#" Value="NotSupported" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.EnterpriseServices.SynchronizationOption NotSupported = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.EnterpriseServices.SynchronizationOption.NotSupported" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.SynchronizationOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この値を持つオブジェクトは、呼び出し元の状態に関係なく、同期に関与しません。 この設定では、非トランザクションは、ジャスト イン タイム (JIT) のアクティベーションを使用しないコンポーネントの使用のみ。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Required">
+      <MemberSignature Language="C#" Value="Required" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.EnterpriseServices.SynchronizationOption Required = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.EnterpriseServices.SynchronizationOption.Required" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.SynchronizationOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンポーネントから作成されたすべてのオブジェクトが同期されていることを確認します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresNew">
+      <MemberSignature Language="C#" Value="RequiresNew" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.EnterpriseServices.SynchronizationOption RequiresNew = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.EnterpriseServices.SynchronizationOption.RequiresNew" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.SynchronizationOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この値を持つオブジェクトは、ここで COM + 管理コンテキストおよびアパートメントの呼び出しに関連するすべてのコンポーネントの代わり新しい同期に含める必要があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Supported">
+      <MemberSignature Language="C#" Value="Supported" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.EnterpriseServices.SynchronizationOption Supported = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.EnterpriseServices.SynchronizationOption.Supported" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.SynchronizationOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この値を持つオブジェクトは、存在する場合、同期に参加します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

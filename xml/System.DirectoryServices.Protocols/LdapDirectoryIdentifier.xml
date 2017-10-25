@@ -1,0 +1,248 @@
+<Type Name="LdapDirectoryIdentifier" FullName="System.DirectoryServices.Protocols.LdapDirectoryIdentifier">
+  <TypeSignature Language="C#" Value="public class LdapDirectoryIdentifier : System.DirectoryServices.Protocols.DirectoryIdentifier" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LdapDirectoryIdentifier extends System.DirectoryServices.Protocols.DirectoryIdentifier" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.Protocols.LdapDirectoryIdentifier" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.DirectoryServices.Protocols.DirectoryIdentifier</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.Protocols.LdapDirectoryIdentifier" />クラスは 1 つ以上の LDAP サーバーのディレクトリ識別子を作成します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LdapDirectoryIdentifier (string server);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string server) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.LdapDirectoryIdentifier.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="server" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="server">サーバーの id。 ドメイン名、LDAP サーバー名または LDAP サーバーの IP アドレスを表すドット区切りの文字列を指定できるサーバーを指定する文字列または<see langword="null" />です。 場合<see langword="null" />、コンピューター アカウントに関連付けられているドメイン内の任意のドメイン コント ローラーの id を表します。  
+  
+ 必要に応じて、このパラメーターには、ID 自体からコロン (:) で区切ってポート番号を含めることもできます。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.LdapDirectoryIdentifier.#ctor(System.String)" /> コンストラクターは、指定されたサーバーを使用して <see cref="T:System.DirectoryServices.Protocols.LdapDirectoryIdentifier" /> クラスのインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="server" /> にスペースがある場合にスローされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LdapDirectoryIdentifier (string server, int portNumber);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string server, int32 portNumber) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.LdapDirectoryIdentifier.#ctor(System.String,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="server" Type="System.String" />
+        <Parameter Name="portNumber" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="server">サーバーの id。 ドメイン名、LDAP サーバー名または LDAP サーバーの IP アドレスを表すドット区切りの文字列を指定できるサーバーを指定する文字列。 必要に応じて、このパラメーターには、ID 自体からコロン (:) で区切ってポート番号を含めることもできます。</param>
+        <param name="portNumber">サーバーへの接続に使用するポート番号。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.LdapDirectoryIdentifier.#ctor(System.String,System.Int32)" /> コンストラクターは、指定されたサーバーとプロパティを使用して <see cref="T:System.DirectoryServices.Protocols.LdapDirectoryIdentifier" /> クラスのインスタンスを作成します。  このコンス トラクターでは、LDAP サーバーのセットを表す識別子を作成します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="server" /> にスペースがある場合にスローされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LdapDirectoryIdentifier (string server, bool fullyQualifiedDnsHostName, bool connectionless);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string server, bool fullyQualifiedDnsHostName, bool connectionless) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.LdapDirectoryIdentifier.#ctor(System.String,System.Boolean,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="server" Type="System.String" />
+        <Parameter Name="fullyQualifiedDnsHostName" Type="System.Boolean" />
+        <Parameter Name="connectionless" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="server">サーバーの id。 ドメイン名、LDAP サーバー名または LDAP サーバーの IP アドレスを表すドット区切りの文字列を指定できるサーバーを指定する文字列。 必要に応じて、このパラメーターには、ID 自体からコロン (:) で区切ってポート番号を含めることもできます。</param>
+        <param name="fullyQualifiedDnsHostName">
+          <see langword="true" />サーバー内の各要素は、完全修飾 DNS ホスト名です。 場合、 場合<see langword="false" />、要素は、IP を指定できますアドレス、DNS ドメインまたはホスト名、または<see langword="null" />です。 場合<see langword="null" />、コンピューター アカウントに関連付けられているドメイン内の任意のドメイン コント ローラーの id を表します。</param>
+        <param name="connectionless">
+          接続が UDP の場合は <see langword="true" />。接続に TCP/IP を使用する場合は <see langword="false" />。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.LdapDirectoryIdentifier.#ctor(System.String,System.Boolean,System.Boolean)" /> コンストラクターは、指定されたサーバーとプロパティを使用して <see cref="T:System.DirectoryServices.Protocols.LdapDirectoryIdentifier" /> クラスのインスタンスを作成します。  このコンス トラクターでは、LDAP サーバーのセットを表す識別子を作成します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="server" /> に空白のみが含まれる場合にスローされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LdapDirectoryIdentifier (string[] servers, bool fullyQualifiedDnsHostName, bool connectionless);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string[] servers, bool fullyQualifiedDnsHostName, bool connectionless) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.LdapDirectoryIdentifier.#ctor(System.String[],System.Boolean,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="servers" Type="System.String[]" />
+        <Parameter Name="fullyQualifiedDnsHostName" Type="System.Boolean" />
+        <Parameter Name="connectionless" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="servers">サーバーの id。 ドメイン名、LDAP サーバー名または LDAP サーバーの IP アドレスを表すドット区切りの文字列を指定できるサーバーを指定する文字列。 必要に応じて、このパラメーターには、ID 自体からコロン (:) で区切ってポート番号を含めることもできます。</param>
+        <param name="fullyQualifiedDnsHostName">
+          <see langword="true" />サーバー内の各要素は、完全修飾 DNS ホスト名です。 場合、 場合<see langword="false" />要素は、IP アドレス、DNS ドメインまたはホスト名、または null を指定できます。 Null の場合、コンピューター アカウントに関連付けられているドメイン内の任意のドメイン コント ローラーの id を表します。</param>
+        <param name="connectionless">
+          接続が UDP の場合は <see langword="true" />。接続に TCP/IP を使用する場合は <see langword="false" />。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.LdapDirectoryIdentifier.#ctor(System.String,System.Boolean,System.Boolean)" /> コンストラクターは、指定されたサーバーとプロパティを使用して <see cref="T:System.DirectoryServices.Protocols.LdapDirectoryIdentifier" /> クラスのインスタンスを作成します。  このコンス トラクターでは、LDAP サーバーのセットを表す識別子を作成します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="server" /> にスペースがある場合にスローされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LdapDirectoryIdentifier (string server, int portNumber, bool fullyQualifiedDnsHostName, bool connectionless);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string server, int32 portNumber, bool fullyQualifiedDnsHostName, bool connectionless) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.LdapDirectoryIdentifier.#ctor(System.String,System.Int32,System.Boolean,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="server" Type="System.String" />
+        <Parameter Name="portNumber" Type="System.Int32" />
+        <Parameter Name="fullyQualifiedDnsHostName" Type="System.Boolean" />
+        <Parameter Name="connectionless" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="server">サーバーの id。 ドメイン名、LDAP サーバー名または LDAP サーバーの IP アドレスを表すドット区切りの文字列を指定できるサーバーを指定する文字列。 必要に応じて、このパラメーターには、ID 自体からコロン (:) で区切ってポート番号を含めることもできます。</param>
+        <param name="portNumber">サーバーへの接続に使用するポート番号。</param>
+        <param name="fullyQualifiedDnsHostName">
+          <see langword="true" />サーバー内の各要素は、完全修飾 DNS ホスト名です。 場合、 場合<see langword="false" />要素は、IP アドレス、DNS ドメインまたはホスト名、または null を指定できます。 Null の場合、コンピューター アカウントに関連付けられているドメイン内の任意のドメイン コント ローラーの id を表します。</param>
+        <param name="connectionless">
+          接続が UDP の場合は <see langword="true" />。接続に TCP/IP を使用する場合は <see langword="false" />。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.LdapDirectoryIdentifier.#ctor(System.String,System.Int32,System.Boolean,System.Boolean)" /> コンストラクターは、指定されたサーバーとプロパティを使用して <see cref="T:System.DirectoryServices.Protocols.LdapDirectoryIdentifier" /> クラスのインスタンスを作成します。  このコンス トラクターでは、LDAP サーバーのセットを表す識別子を作成します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="server" /> にスペースがある場合にスローされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LdapDirectoryIdentifier (string[] servers, int portNumber, bool fullyQualifiedDnsHostName, bool connectionless);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string[] servers, int32 portNumber, bool fullyQualifiedDnsHostName, bool connectionless) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.LdapDirectoryIdentifier.#ctor(System.String[],System.Int32,System.Boolean,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="servers" Type="System.String[]" />
+        <Parameter Name="portNumber" Type="System.Int32" />
+        <Parameter Name="fullyQualifiedDnsHostName" Type="System.Boolean" />
+        <Parameter Name="connectionless" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="servers">サーバーの id。 ドメイン名、LDAP サーバー名または LDAP サーバーの IP アドレスを表すドット区切りの文字列を指定できるサーバーを指定する文字列。 必要に応じて、このパラメーターには、ID 自体からコロン (:) で区切ってポート番号を含めることもできます。</param>
+        <param name="portNumber">サーバーへの接続に使用するポート番号。</param>
+        <param name="fullyQualifiedDnsHostName">
+          <see langword="true" />サーバー内の各要素は、完全修飾 DNS ホスト名です。 場合、 場合<see langword="false" />要素は、IP アドレス、DNS ドメインまたはホスト名、または null を指定できます。 Null の場合、コンピューター アカウントに関連付けられているドメイン内の任意のドメイン コント ローラーの id を表します。</param>
+        <param name="connectionless">
+          接続が UDP の場合は <see langword="true" />。接続に TCP/IP を使用する場合は <see langword="false" />。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.LdapDirectoryIdentifier.#ctor(System.String[],System.Int32,System.Boolean,System.Boolean)" /> コンストラクターは、指定されたサーバーとプロパティを使用して <see cref="T:System.DirectoryServices.Protocols.LdapDirectoryIdentifier" /> クラスのインスタンスを作成します。  このコンス トラクターでは、LDAP サーバーのセットを表す識別子を作成します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="server" /> にスペースがある場合にスローされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Connectionless">
+      <MemberSignature Language="C#" Value="public bool Connectionless { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Connectionless" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.LdapDirectoryIdentifier.Connectionless" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.LdapDirectoryIdentifier.Connectionless" />プロパティは、接続がユーザー データグラム プロトコル (UDP) であることを指定します。</summary>
+        <value>このプロパティは<see langword="true" />接続が UDP 場合。 このプロパティは<see langword="false" />TCP/IP を介して LDAP 接続される場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FullyQualifiedDnsHostName">
+      <MemberSignature Language="C#" Value="public bool FullyQualifiedDnsHostName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool FullyQualifiedDnsHostName" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.LdapDirectoryIdentifier.FullyQualifiedDnsHostName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.LdapDirectoryIdentifier.FullyQualifiedDnsHostName" />プロパティは、サーバー名が完全修飾 DNS ホスト名を指定します。</summary>
+        <value>このプロパティは<see langword="true" />サーバー名が完全修飾 DNS ホスト名である場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PortNumber">
+      <MemberSignature Language="C#" Value="public int PortNumber { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PortNumber" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.LdapDirectoryIdentifier.PortNumber" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.LdapDirectoryIdentifier.PortNumber" />プロパティには、サーバーへの接続に使用するポート番号が含まれています。</summary>
+        <value>ポート番号を表す整数を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Servers">
+      <MemberSignature Language="C#" Value="public string[] Servers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] Servers" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.LdapDirectoryIdentifier.Servers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.LdapDirectoryIdentifier.Servers" />プロパティには、このオブジェクトを識別するサーバーのセットが含まれています。</summary>
+        <value>このオブジェクトを識別するサーバーのセット。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,117 @@
+<Type Name="AtomPub10ServiceDocumentFormatter&lt;TServiceDocument&gt;" FullName="System.ServiceModel.Syndication.AtomPub10ServiceDocumentFormatter&lt;TServiceDocument&gt;">
+  <TypeSignature Language="C#" Value="public class AtomPub10ServiceDocumentFormatter&lt;TServiceDocument&gt; : System.ServiceModel.Syndication.AtomPub10ServiceDocumentFormatter where TServiceDocument : ServiceDocumentnew()" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AtomPub10ServiceDocumentFormatter`1&lt;.ctor (class System.ServiceModel.Syndication.ServiceDocument) TServiceDocument&gt; extends System.ServiceModel.Syndication.AtomPub10ServiceDocumentFormatter" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Syndication.AtomPub10ServiceDocumentFormatter`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TServiceDocument">
+      <Constraints>
+        <ParameterAttribute>DefaultConstructorConstraint</ParameterAttribute>
+        <BaseTypeName>System.ServiceModel.Syndication.ServiceDocument</BaseTypeName>
+      </Constraints>
+    </TypeParameter>
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Syndication.AtomPub10ServiceDocumentFormatter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Xml.Serialization.XmlRoot("service", Namespace="http://www.w3.org/2007/app")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <typeparam name="TServiceDocument">Atom 1.0 形式を使用して XML にシリアル化または XML から逆シリアル化する <see cref="T:System.ServiceModel.Syndication.ServiceDocument" /> インスタンスから派生したクラス。</typeparam>
+    <summary>Atom 1.0 形式を使用して XML との間で <see cref="T:System.ServiceModel.Syndication.ServiceDocument" /> インスタンスから派生したクラスをシリアル化するフォーマッタ。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Syndication.ServiceDocument> のインスタンスから派生したオブジェクトではなく、<xref:System.ServiceModel.Syndication.ServiceDocument> インスタンスをシリアル化または逆シリアル化するには、代わりに <xref:System.ServiceModel.Syndication.AtomPub10ServiceDocumentFormatter> フォーマッタを使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AtomPub10ServiceDocumentFormatter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.AtomPub10ServiceDocumentFormatter`1.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Syndication.ServiceDocumentFormatter" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AtomPub10ServiceDocumentFormatter (TServiceDocument documentToWrite);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(!TServiceDocument documentToWrite) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.AtomPub10ServiceDocumentFormatter`1.#ctor(`0)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="documentToWrite" Type="TServiceDocument" />
+      </Parameters>
+      <Docs>
+        <param name="documentToWrite">Atom 1.0 フォーマッタに関連付けられた <see cref="T:System.ServiceModel.Syndication.ServiceDocument" />。</param>
+        <summary>Atom 1.0 に基づいた <see cref="T:System.ServiceModel.Syndication.ServiceDocumentFormatter" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Atom 1.0 形式を使用したフォーマッタで `documentToWrite` を XML 表現にシリアル化したり、XML 表現から逆シリアル化したりできます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="documentToWrite" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDocumentInstance">
+      <MemberSignature Language="C#" Value="protected override System.ServiceModel.Syndication.ServiceDocument CreateDocumentInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.ServiceModel.Syndication.ServiceDocument CreateDocumentInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.AtomPub10ServiceDocumentFormatter`1.CreateDocumentInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Syndication.ServiceDocument</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Atom 1.0 フォーマッタに関連付けられた新しい <see cref="T:System.ServiceModel.Syndication.ServiceDocument" /> インスタンスを作成します。</summary>
+        <returns><see cref="T:System.ServiceModel.Syndication.ServiceDocument" /> のインスタンスを返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

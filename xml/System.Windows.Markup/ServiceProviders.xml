@@ -1,0 +1,105 @@
+<Type Name="ServiceProviders" FullName="System.Windows.Markup.ServiceProviders">
+  <TypeSignature Language="C#" Value="public class ServiceProviders : IServiceProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ServiceProviders extends System.Object implements class System.IServiceProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.ServiceProviders" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IServiceProvider</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>実装を提供、<see cref="T:System.IServiceProvider" />インターフェイスを追加するサービスを有効にするメソッドを使用します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、コンテンツをシリアル化するときに使用するためのユーティリティ クラスです。 クラスは、基本的に、そのサービスの種類を実装するキーとサービスを格納するためのディクショナリ専用<xref:System.IServiceProvider>同じディクショナリから後で取得します。 辞書を使用するには、繰り返し同じサービスの照会で回避できます。 このクラスは、基本クラスの<xref:System.Windows.Markup.XamlDesignerSerializationManager>、これは、サービスを利用`ShouldSerialize`WPF の他の部分メソッドの実装です。  
+  
+ このクラスを使用する場合は、WPF アセンブリを参照する必要があります、.NET Framework XAML サービスの一般的なシナリオのものではありません。 ここでのシナリオは、シリアル化中に集約型のサービス機能の WPF の内部実装などを処理するとき、`ShouldSerialize`特定の型の実装です。 このシナリオに関係する実際のクラスは、派生クラス<xref:System.Windows.Markup.XamlDesignerSerializationManager>です。  
+  
+<a name="xamlTextUsage_ServiceProviders"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceProviders ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.ServiceProviders.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Markup.ServiceProviders" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddService">
+      <MemberSignature Language="C#" Value="public void AddService (Type serviceType, object service);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddService(class System.Type serviceType, object service) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.ServiceProviders.AddService(System.Type,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+        <Parameter Name="service" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="serviceType">新しいサービスのサービスの種類。</param>
+        <param name="service">サービス実装クラス。</param>
+        <summary>一覧にサービスを追加します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="serviceType" /> または <paramref name="service" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">ディクショナリ内に既に存在するサービスを追加しようとしています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetService">
+      <MemberSignature Language="C#" Value="public object GetService (Type serviceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetService(class System.Type serviceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.ServiceProviders.GetService(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="serviceType">取得するサービス オブジェクトの型。</param>
+        <summary>指定した型のサービス オブジェクトを取得します。</summary>
+        <returns>型のサービス実装<paramref name="serviceType" />です。 あります<see langword="null" />かどうかは、格納されている型のサービスはありません<paramref name="serviceType" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

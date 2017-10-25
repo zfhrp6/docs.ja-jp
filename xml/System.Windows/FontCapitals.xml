@@ -1,0 +1,161 @@
+<Type Name="FontCapitals" FullName="System.Windows.FontCapitals">
+  <TypeSignature Language="C#" Value="public enum FontCapitals" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed FontCapitals extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.FontCapitals" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>キャップのスタイルをについて説明します、<see cref="T:System.Windows.Documents.Typography" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 大文字は、大文字スタイルのグリフでテキストをレンダリングするタイポグラフィ形式のセットです。 通常、テキストをすべて大文字で表示すると、文字間隔が狭すぎるように見え、文字の印象と縦横比が重すぎるように感じられます。 OpenType は、英大文字、小型英大文字を含め、超小型英大文字、タイトル、および大文字スペーシングのスタイル書式の数をサポートします。 これらのスタイル形式を使用して、英大文字の外観を変えることができます。  
+  
+ 次のテキストは、Pescadero フォントの標準の大文字と、その後に "SmallCaps" および "AllSmallCaps" のスタイルをあてた文字を示したものです。 この場合、同じフォント サイズは 3 つすべての単語の使用します。  
+  
+ ![OpenType の大文字を使用してテキストを](~/add/media/opentypefont11.gif "OpenType の大文字を使用するテキスト")  
+大文字の例  
+  
+ タイトル用大文字は、重みと縦横比が軽く、標準の大文字よりも洗練された印象を与えるように設計されています。 タイトル用大文字は、見出しとしてフォント サイズを大きくに用いられます。 次のテキストには、Pescadero フォントの通常の動作とタイトル用大文字が表示されます。 2 番目の行のテキストの幅の狭い縦線の幅に注意してください。  
+  
+ ![OpenType のタイトル大文字を使用してテキストを](~/add/media/opentypefont20.gif "OpenType のタイトル大文字を使用するテキスト")  
+標準およびタイトル用大文字の例  
+  
+> [!NOTE]
+>  ほとんどの OpenType フォントでは、使用可能な合計 OpenType 機能のサブセットのみを公開します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、英大文字のプロパティを使用して、Pescadero フォントを定義する方法を示します、<xref:System.Windows.Documents.Typography>オブジェクト。 "SmallCaps" 形式を使用する場合は、先頭の大文字は無視されます。  
+  
+ [!code-xaml[OpenTypeFontSamples#9](~/samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#9)]   
+  
+ 次のコード例は、タイトル用大文字のプロパティを使用して、Pescadero フォントを定義する方法を示します、<xref:System.Windows.Documents.Typography>オブジェクト。  
+  
+ [!code-xaml[OpenTypeFontSamples#OpenTypeFontSnippet17](~/samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#opentypefontsnippet17)]   
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AllPetiteCaps">
+      <MemberSignature Language="C#" Value="AllPetiteCaps" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.FontCapitals AllPetiteCaps = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FontCapitals.AllPetiteCaps" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontCapitals</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>大文字と小文字の両方が同じのおおよその高さを持つ大文字のグリフの形に置き換えられます。 超小型英大文字は小型英大文字より小さくなります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AllSmallCaps">
+      <MemberSignature Language="C#" Value="AllSmallCaps" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.FontCapitals AllSmallCaps = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FontCapitals.AllSmallCaps" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontCapitals</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>大文字と小文字の両方が同じのおおよその高さを持つ大文字のグリフの形に置き換えられます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Normal">
+      <MemberSignature Language="C#" Value="Normal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.FontCapitals Normal = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FontCapitals.Normal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontCapitals</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>大文字は通常どおりにレンダリングします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PetiteCaps">
+      <MemberSignature Language="C#" Value="PetiteCaps" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.FontCapitals PetiteCaps = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FontCapitals.PetiteCaps" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontCapitals</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>小文字の使用は、同じのおおよその高さを持つ大文字のグリフの形に置き換えられます。 超小型英大文字は小型英大文字より小さくなります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SmallCaps">
+      <MemberSignature Language="C#" Value="SmallCaps" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.FontCapitals SmallCaps = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FontCapitals.SmallCaps" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontCapitals</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>小文字の使用は、同じのおおよその高さを持つ大文字のグリフの形に置き換えられます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Titling">
+      <MemberSignature Language="C#" Value="Titling" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.FontCapitals Titling = int32(6)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FontCapitals.Titling" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontCapitals</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グリフのフォームは、タイトル用に設計された傍点を文字形式に置き換えられます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Unicase">
+      <MemberSignature Language="C#" Value="Unicase" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.FontCapitals Unicase = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FontCapitals.Unicase" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontCapitals</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>大文字ユニケースで表示されます。 ユニケース フォントは、型デザイナーによって決定されたグリフの大文字と小文字の組み合わせで大文字と小文字の両方の文字を表示します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

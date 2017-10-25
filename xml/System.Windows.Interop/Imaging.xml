@@ -1,0 +1,130 @@
+<Type Name="Imaging" FullName="System.Windows.Interop.Imaging">
+  <TypeSignature Language="C#" Value="public static class Imaging" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Imaging extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Interop.Imaging" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>イメージ オブジェクトを作成するためには、マネージとアンマネージの相互運用性サポートを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、プライマリ ビットマップ内のクラスをイメージング用に作成メカニズムを提供[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]、<xref:System.Windows.Media.Imaging.BitmapSource>です。 これを作成するメソッドが含まれます、<xref:System.Windows.Media.Imaging.BitmapSource>に基づいて[!INCLUDE[TLA#tla_gdi](~/includes/tlasharptla-gdi-md.md)]オブジェクト、およびメモリのセクションでします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateBitmapSourceFromHBitmap">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapSource CreateBitmapSourceFromHBitmap (IntPtr bitmap, IntPtr palette, System.Windows.Int32Rect sourceRect, System.Windows.Media.Imaging.BitmapSizeOptions sizeOptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.Imaging.BitmapSource CreateBitmapSourceFromHBitmap(native int bitmap, native int palette, valuetype System.Windows.Int32Rect sourceRect, class System.Windows.Media.Imaging.BitmapSizeOptions sizeOptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(System.IntPtr,System.IntPtr,System.Windows.Int32Rect,System.Windows.Media.Imaging.BitmapSizeOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapSource</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bitmap" Type="System.IntPtr" />
+        <Parameter Name="palette" Type="System.IntPtr" />
+        <Parameter Name="sourceRect" Type="System.Windows.Int32Rect" />
+        <Parameter Name="sizeOptions" Type="System.Windows.Media.Imaging.BitmapSizeOptions" />
+      </Parameters>
+      <Docs>
+        <param name="bitmap">アンマネージ ビットマップへのポインター。</param>
+        <param name="palette">ビットマップのパレット マップへのポインター。</param>
+        <param name="sourceRect">ソース イメージのサイズ。</param>
+        <param name="sizeOptions">変換を処理する方法を指定する列挙体の値です。</param>
+        <summary>マネージ返します<see cref="T:System.Windows.Media.Imaging.BitmapSource" />提供された情報へのポインターをアンマネージ ビットマップとパレットに基づきます。</summary>
+        <returns>作成された <see cref="T:System.Windows.Media.Imaging.BitmapSource" />。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">このメソッドからオブジェクトを返します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateBitmapSourceFromHIcon">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapSource CreateBitmapSourceFromHIcon (IntPtr icon, System.Windows.Int32Rect sourceRect, System.Windows.Media.Imaging.BitmapSizeOptions sizeOptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.Imaging.BitmapSource CreateBitmapSourceFromHIcon(native int icon, valuetype System.Windows.Int32Rect sourceRect, class System.Windows.Media.Imaging.BitmapSizeOptions sizeOptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.Imaging.CreateBitmapSourceFromHIcon(System.IntPtr,System.Windows.Int32Rect,System.Windows.Media.Imaging.BitmapSizeOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapSource</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="icon" Type="System.IntPtr" />
+        <Parameter Name="sourceRect" Type="System.Windows.Int32Rect" />
+        <Parameter Name="sizeOptions" Type="System.Windows.Media.Imaging.BitmapSizeOptions" />
+      </Parameters>
+      <Docs>
+        <param name="icon">アンマネージ アイコン ソースへのポインター。</param>
+        <param name="sourceRect">ソース イメージのサイズ。</param>
+        <param name="sizeOptions">変換を処理する方法を指定する列挙体の値です。</param>
+        <summary>マネージ返します<see cref="T:System.Windows.Media.Imaging.BitmapSource" />アンマネージ アイコン イメージを指定されたポインターに基づきます。</summary>
+        <returns>作成された <see cref="T:System.Windows.Media.Imaging.BitmapSource" />。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">このメソッドからオブジェクトを返します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateBitmapSourceFromMemorySection">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapSource CreateBitmapSourceFromMemorySection (IntPtr section, int pixelWidth, int pixelHeight, System.Windows.Media.PixelFormat format, int stride, int offset);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.Imaging.BitmapSource CreateBitmapSourceFromMemorySection(native int section, int32 pixelWidth, int32 pixelHeight, valuetype System.Windows.Media.PixelFormat format, int32 stride, int32 offset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.Imaging.CreateBitmapSourceFromMemorySection(System.IntPtr,System.Int32,System.Int32,System.Windows.Media.PixelFormat,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapSource</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="section" Type="System.IntPtr" />
+        <Parameter Name="pixelWidth" Type="System.Int32" />
+        <Parameter Name="pixelHeight" Type="System.Int32" />
+        <Parameter Name="format" Type="System.Windows.Media.PixelFormat" />
+        <Parameter Name="stride" Type="System.Int32" />
+        <Parameter Name="offset" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="section">メモリのセクションへのポインター。</param>
+        <param name="pixelWidth">ビットマップのピクセル単位の幅を指定する整数。</param>
+        <param name="pixelHeight">ビットマップのピクセル単位の高さを指定する整数。</param>
+        <param name="format">列挙体の値。</param>
+        <param name="stride">ビットマップのストライド。</param>
+        <param name="offset">イメージが起動メモリ ストリームへのバイト オフセット。</param>
+        <summary>マネージ返します<see cref="T:System.Windows.Media.Imaging.BitmapSource" />指定したアンマネージ メモリ位置に基づいて、します。</summary>
+        <returns>作成された <see cref="T:System.Windows.Media.Imaging.BitmapSource" />。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">このメソッドからオブジェクトを返します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

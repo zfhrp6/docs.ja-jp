@@ -1,0 +1,133 @@
+<Type Name="MidpointRounding" FullName="System.MidpointRounding">
+  <TypeSignature Language="C#" Value="public enum MidpointRounding" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed MidpointRounding extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.MidpointRounding" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>数値の丸め処理を行うメソッドで、2 つの数値の中間に位置する数値を処理する方法を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.MidpointRounding>の適切なオーバー ロードを持つ<xref:System.Math.Round%2A?displayProperty=nameWithType>丸め処理の詳細に制御を提供します。  
+  
+ 丸め操作は、暗黙的または指定された有効桁数を持つ;、元の数を受け取ります有効桁数に 1 を加えた; にある次の桁を調べます元の番号として同じ有効桁数を持つ最も近い数を返します。 、正の数値の場合は 0 ~ 4 では、次の桁に最も近いを負の無限大方向です。 次の桁が 6 ~ 9 の場合は、最も近い値は正の無限大方向です。 負の数値の場合は 0 ~ 4 では、次の桁に最も近い数を正の無限大に向かってです。 次の桁が 6 ~ 9 の場合は、最も近い数値が負の無限大方向です。  
+  
+ 以前の場合、<xref:System.MidpointRounding>列挙型では、丸め処理の結果には影響しません。 ただし場合は、[次へ] が 5、2 つの起こり得る結果の中間にあるすべての残りの桁がゼロまたは残りの数字がない、最も近い値があいまいです。 ここで、<xref:System.MidpointRounding>列挙体を使用すると、丸め処理がゼロまたは最も近い偶数から最も近い値を返すかどうかを指定します。  
+  
+ 次の表の値と組み合わせて、いくつか負または正の数値を丸めた結果を示して<xref:System.MidpointRounding>です。 数値を丸めるに使用される精度とは 0 で、整数部の桁数に影響を与える、丸め処理後の数を意味します。 たとえば、数値-2.5 の場合、小数点後の数字は 5 です。 その数字に中間点があるために、使用できます、<xref:System.MidpointRounding>丸め処理の結果を決定する値。 AwayFromZero が指定されている場合、最も近い有効桁数がゼロから遠い方の数 0 になっているために、-3 が返されます。 ToEven が指定されている場合は、最も近い偶数の有効桁数が 0 になっているため-2 が返されます。  
+  
+|元の番号|AwayFromZero|ToEven|  
+|---------------------|------------------|------------|  
+|3.5|4|4|  
+|2.8|3|3|  
+|2.5|3|2|  
+|2.1|2|2|  
+|-2.1|-2|-2|  
+|-2.5|-3|-2|  
+|-2.8|-3|-3|  
+|-3.5|-4|-4|  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.Math.Round%2A>メソッドと組み合わせて、<xref:System.MidpointRounding.ToEven>列挙します。  
+  
+ [!code-cpp[math.midpointrounding#1](~/samples/snippets/cpp/VS_Snippets_CLR/math.midpointrounding/cpp/mpr.cpp#1)]
+ [!code-csharp[math.midpointrounding#1](~/samples/snippets/csharp/VS_Snippets_CLR/math.midpointrounding/CS/mpr.cs#1)]
+ [!code-vb[math.midpointrounding#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/math.midpointrounding/VB/mpr.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AwayFromZero">
+      <MemberSignature Language="C#" Value="AwayFromZero" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.MidpointRounding AwayFromZero = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.MidpointRounding.AwayFromZero" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.MidpointRounding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数値が 2 つの数値の中間に位置するときに、ゼロから遠い方の近似値に丸められます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ToEven">
+      <MemberSignature Language="C#" Value="ToEven" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.MidpointRounding ToEven = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.MidpointRounding.ToEven" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.MidpointRounding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数値が 2 つの数値の中間に位置するときに、最も近い偶数方向に丸められます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

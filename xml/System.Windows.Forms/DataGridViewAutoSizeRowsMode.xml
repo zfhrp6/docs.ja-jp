@@ -1,0 +1,152 @@
+<Type Name="DataGridViewAutoSizeRowsMode" FullName="System.Windows.Forms.DataGridViewAutoSizeRowsMode">
+  <TypeSignature Language="C#" Value="public enum DataGridViewAutoSizeRowsMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DataGridViewAutoSizeRowsMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewAutoSizeRowsMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>行の高さを調整する方法を指定する値を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridView>コントロールには、各行の適切な高さに基づいてその行がサイズを変更できます。 優先される行の高さは、その行のセルの最大値を表示するために必要な高さの最小値です。 サイズの異なるモードでは、(ヘッダー セルまたはそれ以外のセル) は、新しい高さを計算するどのセルを使用し、すべての行または現在表示されている行だけのサイズを変更するかどうかを指定できます。 行のサブセットをサイズ変更は、多くのデータ行を操作するときに、パフォーマンスの低下を避けるために便利です。  
+  
+ コンテンツ ベースの自動サイズ変更すると、ユーザーがマウスを使用して行の高さを調整するできなくなります。  
+  
+ この列挙体を使って、<xref:System.Windows.Forms.DataGridView>コントロール<xref:System.Windows.Forms.DataGridView.AutoSizeRowsMode%2A>プロパティおよび<xref:System.Windows.Forms.DataGridView.AutoResizeRows%2A>メソッド。  
+  
+ サイズ変更モードの詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールのサイズ変更オプション](~/docs/framework/winforms/controls/sizing-options-in-the-windows-forms-datagridview-control.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、高さをセルの内容を変更するたびに、自動的にサイズを変更する行を設定します。 新しい行の高さは、すべての行と列の内容から決定されます。 このコード例に示されている例の一部である[する方法: 自動的にサイズを変更するセルと内容の変更、Windows フォーム DataGridView コントロール](~/docs/framework/winforms/controls/automatically-resize-cells-when-content-changes-in-the-datagrid.md)です。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridView.AutoSizing#9](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.AutoSizing/CPP/autosizing.cpp#9)]
+ [!code-csharp[System.Windows.Forms.DataGridView.AutoSizing#9](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.AutoSizing/CS/autosizing.cs#9)]
+ [!code-vb[System.Windows.Forms.DataGridView.AutoSizing#9](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.AutoSizing/VB/autosizing.vb#9)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AllCells">
+      <MemberSignature Language="C#" Value="AllCells" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGridViewAutoSizeRowsMode AllCells = int32(7)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewAutoSizeRowsMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行の高さは、行内のヘッダー セルを含む、すべてのセルの内容に合わせて調整します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AllCellsExceptHeaders">
+      <MemberSignature Language="C#" Value="AllCellsExceptHeaders" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGridViewAutoSizeRowsMode AllCellsExceptHeaders = int32(6)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewAutoSizeRowsMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行の高さは、行内のヘッダー セルを除く、すべてのセルの内容に合わせて調整します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AllHeaders">
+      <MemberSignature Language="C#" Value="AllHeaders" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGridViewAutoSizeRowsMode AllHeaders = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewAutoSizeRowsMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行の高さは、行ヘッダーの内容に合わせて調整します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayedCells">
+      <MemberSignature Language="C#" Value="DisplayedCells" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGridViewAutoSizeRowsMode DisplayedCells = int32(11)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewAutoSizeRowsMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行の高さは、現在表示されている行など、画面上のヘッダー セル内のすべてのセルの内容に合わせて調整します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayedCellsExceptHeaders">
+      <MemberSignature Language="C#" Value="DisplayedCellsExceptHeaders" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGridViewAutoSizeRowsMode DisplayedCellsExceptHeaders = int32(10)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewAutoSizeRowsMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行の高さは、すべてのセルに表示されている行の画面に表示される、除外のヘッダー セルの内容に合わせて調整します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayedHeaders">
+      <MemberSignature Language="C#" Value="DisplayedHeaders" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGridViewAutoSizeRowsMode DisplayedHeaders = int32(9)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewAutoSizeRowsMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在表示されている行ヘッダーの内容に合わせて行の高さを調整する画面に表示されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGridViewAutoSizeRowsMode None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGridViewAutoSizeRowsMode.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewAutoSizeRowsMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行の高さは自動的に調整しません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

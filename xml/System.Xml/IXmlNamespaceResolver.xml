@@ -1,0 +1,181 @@
+<Type Name="IXmlNamespaceResolver" FullName="System.Xml.IXmlNamespaceResolver">
+  <TypeSignature Language="C#" Value="public interface IXmlNamespaceResolver" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IXmlNamespaceResolver" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.IXmlNamespaceResolver" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>プレフィックスと名前空間のマッピングのセットに対する読み取り専用アクセスを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetNamespacesInScope">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,string&gt; GetNamespacesInScope (System.Xml.XmlNamespaceScope scope);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IDictionary`2&lt;string, string&gt; GetNamespacesInScope(valuetype System.Xml.XmlNamespaceScope scope) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.IXmlNamespaceResolver.GetNamespacesInScope(System.Xml.XmlNamespaceScope)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="System.Xml.XmlNamespaceScope" />
+      </Parameters>
+      <Docs>
+        <param name="scope">返される名前空間ノードの種類を指定する <see cref="T:System.Xml.XmlNamespaceScope" /> 値。</param>
+        <summary>現在スコープ内に定義されたプレフィックスと名前空間マッピングのコレクションを取得します。</summary>
+        <returns>現在のスコープ内にある名前空間が格納された <see cref="T:System.Collections.IDictionary" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションは、プレフィックスによってキー指定され、現在スコープ内の名前空間を列挙するために使用できます。 コレクションは、現在の名前空間の一覧の切断されたコピーです。  
+  
+ 次の表、<xref:System.Xml.XmlNamespaceScope>既定と組み込みの名前空間がによって返される値とその影響、かどうか、<xref:System.Xml.IXmlNamespaceResolver.GetNamespacesInScope%2A>メソッドです。  
+  
+|XmlNamespaceScope 値|xmlns:xml|xmlns:xmlns|xmlns =""|  
+|-----------------------------|---------------|-----------------|---------------|  
+|<xref:System.Xml.XmlNamespaceScope.All>|可|no|no|  
+|<xref:System.Xml.XmlNamespaceScope.ExcludeXml>|no|no|no|  
+|<xref:System.Xml.XmlNamespaceScope.Local>|no|no|可|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupNamespace">
+      <MemberSignature Language="C#" Value="public string LookupNamespace (string prefix);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string LookupNamespace(string prefix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.IXmlNamespaceResolver.LookupNamespace(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prefix" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="prefix">検索対象の名前空間 URI を持つプレフィックス。</param>
+        <summary>URI が指定したプレフィックスにマップされている名前空間を取得します。</summary>
+        <returns>プレフィックスに割り当てられている名前空間 URI。このプレフィックスに名前空間 URI が割り当てられていない場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  Namespace URI プレフィックスのマッピングは、XML ドキュメント内ノードからノードを変更できます。 次の 1 つのノードから一貫している参照の結果に依存することはできません。  
+  
+ 次の表での組み込みの既定および名前空間の処理方法について説明します、<xref:System.Xml.IXmlNamespaceResolver.LookupNamespace%2A>メソッドです。  
+  
+|プレフィックス|戻り値|  
+|------------|------------------|  
+|xml|http://www.w3.org/XML/1998/namespace|  
+|xmlns|http://www.w3.org/2000/xmlns/|  
+|`String.Empty`(既定の名前空間が割り当てられて)。|現在割り当てられている既定の名前空間。|  
+|`String.Empty`(既定の名前空間が割り当てられていない明示的に)。|`String.Empty`(空のプレフィックスは、任意の名前空間に含まれていない要素に関連付けられます。)|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupPrefix">
+      <MemberSignature Language="C#" Value="public string LookupPrefix (string namespaceName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string LookupPrefix(string namespaceName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.IXmlNamespaceResolver.LookupPrefix(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="namespaceName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="namespaceName">検索対象のプレフィックスを持つ名前空間 URI。</param>
+        <summary>指定した名前空間 URI にマップされているプレフィックスを取得します。</summary>
+        <returns>名前空間 URI に割り当てられているプレフィックス。この名前空間 URI にプレフィックスが割り当てられていない場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前空間 URI を複数のプレフィックスにマップすることができます。 プレフィックスが予測可能な方法でマップされていないため、名前空間 URI が 1 つ以上のプレフィックスにマップされているときに特定のプレフィックスを取得するのに依存する必要があります。  
+  
+> [!NOTE]
+>  Namespace URI とプレフィックスのマッピングは、XML ドキュメント内ノードからノードを変更できます。 次の 1 つのノードから一貫している参照の結果に依存することはできません。  
+  
+ 次の表での組み込みの既定および名前空間の処理方法について説明します、<xref:System.Xml.IXmlNamespaceResolver.LookupPrefix%2A>メソッドです。  
+  
+|名前空間|戻り値|  
+|---------------|------------------|  
+|http://www.w3.org/XML/1998/namespace|xml|  
+|http://www.w3.org/2000/xmlns/|xmlns|  
+|空の名前空間。|既定の名前空間が定義されていません。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

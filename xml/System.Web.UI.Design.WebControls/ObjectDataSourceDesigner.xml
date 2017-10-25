@@ -1,0 +1,335 @@
+<Type Name="ObjectDataSourceDesigner" FullName="System.Web.UI.Design.WebControls.ObjectDataSourceDesigner">
+  <TypeSignature Language="C#" Value="public class ObjectDataSourceDesigner : System.Web.UI.Design.DataSourceDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ObjectDataSourceDesigner extends System.Web.UI.Design.DataSourceDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.DataSourceDesigner</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Web.UI.WebControls.ObjectDataSource" /> Web サーバー コントロールに、ビジュアル デザイナーでのデザイン時サポートを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ObjectDataSource>コントロールは、Delete、Insert、Select、および更新プログラムのデータベース操作を実行するためにビジネス オブジェクトのメソッドを呼び出してデータ ソースを表します。  
+  
+ ビジュアル デザイナーでソースからデザイン ビューに切り替えたときに、マークアップのソース コードを説明する、<xref:System.Web.UI.WebControls.ObjectDataSource>コントロールは解析され、デザイン画面でコントロールのデザイン時バージョンを作成します。 ソース ビューに切り替えるには、デザイン時コントロールがマークアップのソース コードを永続化し、Web ページのマークアップに編集します。 <xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner>クラスは、デザイン時サポートを提供、<xref:System.Web.UI.WebControls.ObjectDataSource>ビジュアル デザイナーで制御します。  
+  
+ <xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner>クラス メンバーは、次の機能を提供します。  
+  
+-   <xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.CanConfigure%2A>プロパティは、データ ソース構成ウィザードを表示できるかどうかを示します。 <xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.CanRefreshSchema%2A>プロパティを示すかどうか、関連するスキーマ<xref:System.Web.UI.WebControls.ObjectDataSource>コントロールをデザイン時に更新することができます。  
+  
+-   <xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.SelectMethod%2A>プロパティ選択機能を実行する方法を指定します。 <xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.TypeName%2A>プロパティは、関連付けられたコントロールのデータを提供するビジネス オブジェクトの種類を指定します。  
+  
+-   <xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.GetView%2A>メソッドは、指定した名前のデータ ソース ビューを返します。 <xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.GetViewNames%2A>メソッドが関連付けられているデータ ソース ビュー名の一覧を返します<xref:System.Web.UI.WebControls.ObjectDataSource>コントロール。 <xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.RefreshSchema%2A>メソッドは、関連するビジネス オブジェクトから Select メソッドのメタデータを抽出します。  
+  
+-   <xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.Configure%2A>メソッドにより、データ ソースの構成ウィザードをビジュアルなデザイナー画面に表示します。 <xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.PreFilterProperties%2A>メソッドからプロパティを削除のプロパティを追加または関連付けられたコントロールのプロパティをシャドウします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、拡張する方法を示します、<xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner>クラスから派生したコントロールの動作と外観を変更する、<xref:System.Web.UI.WebControls.ObjectDataSource>コントロールをデザイン時です。  
+  
+ 例では、`MyObjectDataSource`から制御、<xref:System.Web.UI.WebControls.ObjectDataSource>です。 `MyObjectDataSource`のコピーである、<xref:System.Web.UI.WebControls.ObjectDataSource>コントロール。 例ではまた、`MyObjectDataSourceDesigner`からクラス、<xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner>し、適用、<xref:System.ComponentModel.DesignerAttribute>属性を`MyObjectDataSourceDesigner`上、`MyObjectDataSource`コントロール。  
+  
+ `MyObjectDataSourceDesigner`よりも優先、<xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.PreFilterProperties%2A>を作成するメソッド、<xref:System.Web.UI.Control.NamingContainer%2A>プロパティに表示される、**プロパティ**デザイン時にグリッドです。  
+  
+ `MyObjectDataSourceDesigner`よりも優先、<xref:System.Web.UI.Design.DataSourceDesigner.GetDesignTimeHtml%2A>を表示する方法、<xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.TypeName%2A>と<xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.SelectMethod%2A>コントロール型と ID だけでなく、プレース ホルダーのプロパティ  
+  
+ [!code-csharp[System.Web.UI.Design.WebControls.ObjectDataSourceDesigner#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.ObjectDataSourceDesigner/CS/ObjectDataSourceDesigner.cs#1)]
+ [!code-vb[System.Web.UI.Design.WebControls.ObjectDataSourceDesigner#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.ObjectDataSourceDesigner/VB/ObjectDataSourceDesigner.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ObjectDataSourceDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework は、内部での新しいインスタンスを作成、<xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner>クラスの関連付けの作成時に<xref:System.Web.UI.WebControls.ObjectDataSource>コントロールまたはそのコントロールのビジュアルなデザイナー画面上のコピー。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConfigure">
+      <MemberSignature Language="C#" Value="public override bool CanConfigure { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanConfigure" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.CanConfigure" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="M:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.Configure" />メソッドを呼び出すことができます。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="M:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.Configure" />メソッドを呼び出すことができます。<see langword="false" />それ以外の場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.Configure%2A>メソッドを呼び出すことができる、および<xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.CanConfigure%2A>プロパティは`true`場合は、 <xref:System.ComponentModel.Component.Site%2A> 、関連するプロパティ<xref:System.Web.UI.WebControls.ObjectDataSource>コントロールを実装するか、<xref:System.ComponentModel.Design.ITypeResolutionService>または<xref:System.ComponentModel.Design.ITypeDiscoveryService>インターフェイスです。  
+  
+ 場合、<xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.CanConfigure%2A>は`true`、**データ ソースの構成**に表示されるメニュー項目、 **ObjectDataSource の一般的なタスク**ビジュアルなデザイナー画面に関連付けられたコントロールのコンテキスト メニュー。 データ ソース構成ウィザードは、このメニュー項目が選択されているときに呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRefreshSchema">
+      <MemberSignature Language="C#" Value="public override bool CanRefreshSchema { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRefreshSchema" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.CanRefreshSchema" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="M:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.RefreshSchema(System.Boolean)" />メソッドを呼び出すことができます。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="M:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.RefreshSchema(System.Boolean)" />と呼ばれる、それ以外は、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.RefreshSchema%2A>メソッドを呼び出すことができる、および<xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.CanRefreshSchema%2A>プロパティは`true`場合は、 <xref:System.ComponentModel.Component.Site%2A> 、関連するプロパティ<xref:System.Web.UI.WebControls.ObjectDataSource>コントロールでは、いずれかを実装する、<xref:System.ComponentModel.Design.ITypeResolutionService>または<xref:System.ComponentModel.Design.ITypeDiscoveryService>インターフェイス、および<xref:System.Web.UI.WebControls.ObjectDataSource.TypeName%2A>と<xref:System.Web.UI.WebControls.ObjectDataSource.SelectMethod%2A>プロパティ両方にはに値が含まれて。  
+  
+ 場合、<xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.CanRefreshSchema%2A>は`true`、**スキーマの更新**に表示されるメニュー項目、 **ObjectDataSource の一般的なタスク**ビジュアルなデザイナー画面に関連付けられたコントロールのコンテキスト メニュー。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Configure">
+      <MemberSignature Language="C#" Value="public override void Configure ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Configure() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.Configure" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ビジュアルなデザイナー画面上のデータ ソース構成ウィザードを表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.Configure%2A>メソッドは、ビジュアル デザイナー画面に表示されるデータ ソース構成ウィザードを原因となったトランザクションを開始します。  
+  
+ <xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.Configure%2A>メソッドを選択するときに呼び出されますが、**データ ソースの構成**のメニュー項目、 **ObjectDataSource の一般的なタスク**、関連するコンテキスト メニュー<xref:System.Web.UI.WebControls.ObjectDataSource>コントロール。 **データ ソースの構成**コンテキスト メニューにメニュー項目が表示されるときに、<xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.CanConfigure%2A>プロパティは`true`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetView">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.Design.DesignerDataSourceView GetView (string viewName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.UI.Design.DesignerDataSourceView GetView(string viewName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.GetView(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.DesignerDataSourceView</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="viewName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="viewName">名前を含む文字列、<see cref="T:System.Web.UI.Design.WebControls.ObjectDesignerDataSourceView" />です。</param>
+        <summary>指定した名前のデータ ソース ビューを返します。</summary>
+        <returns><see cref="T:System.Web.UI.Design.WebControls.ObjectDesignerDataSourceView" />で指定された名前を持つ<paramref name="viewName" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.GetView%2A>メソッドを返します、<xref:System.Web.UI.Design.WebControls.ObjectDesignerDataSourceView>指定の名前を持つオブジェクト。 場合`viewName`は`null`または空の文字列 ("")、によって返される名前の配列内の最初のビュー名<xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.GetViewNames%2A>は指定された名前として使用します。 ビュー名が返されない場合、 <xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.GetViewNames%2A>、<xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.GetView%2A>名前のない生成<xref:System.Web.UI.Design.WebControls.ObjectDesignerDataSourceView>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetViewNames">
+      <MemberSignature Language="C#" Value="public override string[] GetViewNames ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string[] GetViewNames() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.GetViewNames" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>関連付けられたコントロールのデータ ソース ビュー名の一覧を返します。</summary>
+        <returns>名前を含む文字列の配列、<see cref="T:System.Web.UI.Design.WebControls.ObjectDesignerDataSourceView" />関連付けられているオブジェクト<see cref="T:System.Web.UI.WebControls.ObjectDataSource" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.GetViewNames%2A>メソッド名を取得、ビュー、スキーマの名前から関連付けられたコントロールのデータ テーブルです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreFilterProperties">
+      <MemberSignature Language="C#" Value="protected override void PreFilterProperties (System.Collections.IDictionary properties);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void PreFilterProperties(class System.Collections.IDictionary properties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.PreFilterProperties(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="properties" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="properties">追加されたプロパティおよびシャドウ プロパティの <see cref="T:System.Collections.IDictionary" /> を実装するコレクション。</param>
+        <summary>プロパティを削除するかに表示する追加のプロパティを追加する、デザイナーによって使用される、**プロパティ**グリッドまたは関連付けられたコントロールのプロパティをシャドウします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロール デザイナーから派生したメソッドを使用して、<xref:System.ComponentModel.Design.ComponentDesigner.PreFilterProperties%2A?displayProperty=nameWithType>デザイナーを実装して、対応するデザイン時のプロパティにさまざまなコントロールのプロパティをシャドウおよびからプロパティをプロパティを追加または削除する方法、**プロパティ**グリッドです。  
+  
+ <xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.PreFilterProperties%2A>メソッドをシャドウするデザイン時のプロパティを作成、<xref:System.Web.UI.WebControls.ObjectDataSource.TypeName%2A>と<xref:System.Web.UI.WebControls.ObjectDataSource.SelectMethod%2A>、関連するプロパティ<xref:System.Web.UI.WebControls.ObjectDataSource>コントロールに表示されていること、**プロパティ**ビジュアル デザイナーのグリッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.PreFilterProperties%2A>から継承されるクラスのメソッド、<xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner>を変更するクラス、**プロパティ**から派生したコントロールのグリッド、<xref:System.Web.UI.WebControls.ObjectDataSource>デザイン時のクラス時間です。 例は、<xref:System.Web.UI.Control.NamingContainer%2A>プロパティに表示される、**プロパティ**グリッドです。  
+  
+ [!code-csharp[System.Web.UI.Design.WebControls.ObjectDataSourceDesigner#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.ObjectDataSourceDesigner/CS/ObjectDataSourceDesigner.cs#4)]
+ [!code-vb[System.Web.UI.Design.WebControls.ObjectDataSourceDesigner#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.ObjectDataSourceDesigner/VB/ObjectDataSourceDesigner.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>上書き、<see cref="M:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.PreFilterProperties(System.Collections.IDictionary)" />プロパティの追加や、デザイン時のプロパティ コレクション内のプロパティの属性を変更する方法です。 必ず、<see cref="M:System.Web.UI.Design.ControlDesigner.PreFilterProperties(System.Collections.IDictionary)" />他の処理を実行する前にメソッドの基本します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RefreshSchema">
+      <MemberSignature Language="C#" Value="public override void RefreshSchema (bool preferSilent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void RefreshSchema(bool preferSilent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.RefreshSchema(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="preferSilent" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="preferSilent">場合<see langword="true" />は処理中に例外が発生する際に、エラー メッセージを表示できません。 それ以外の場合、例外メッセージが表示されます。</param>
+        <summary>コントロールに関連付けられた指定されているビジネス オブジェクトから Select メソッドのメタデータを抽出します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.RefreshSchema%2A>メソッドによって指定されるメソッドのメタデータを抽出し、<xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.SelectMethod%2A>プロパティから、<xref:System.Type>によって指定されるオブジェクト、<xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.TypeName%2A>プロパティと関連付けられているデータを提供するビジネス オブジェクトの種類は<xref:System.Web.UI.WebControls.ObjectDataSource>コントロール。 メタデータを保存、<xref:System.Data.DataTable>配列し、、<xref:System.Web.UI.Design.ControlDesigner.DesignerState%2A>デザイナーの配列。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectMethod">
+      <MemberSignature Language="C#" Value="public string SelectMethod { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SelectMethod" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.SelectMethod" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するときに実行するメソッドの名前、<see cref="M:System.Web.UI.WebControls.ObjectDataSource.Select" />関連付けられたコントロールのメソッドが呼び出されます。</summary>
+        <value>ときに実行するメソッドの名前を含む文字列、<see cref="M:System.Web.UI.WebControls.ObjectDataSource.Select" />と呼びます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.SelectMethod%2A>プロパティ shadows、<xref:System.Web.UI.WebControls.ObjectDataSource.SelectMethod%2A>関連付けられたコントロールのプロパティです。  
+  
+ ときの値、<xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.SelectMethod%2A>プロパティが変更された、デザイン時のマークアップを関連付けられている<xref:System.Web.UI.WebControls.ObjectDataSource>コントロールを更新します。 <xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.RefreshSchema%2A>メソッドを呼び出す場合、<xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.CanRefreshSchema%2A>プロパティは true、それ以外の<xref:System.Web.UI.Design.DataSourceDesigner.DataSourceChanged>イベントが発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeName">
+      <MemberSignature Language="C#" Value="public string TypeName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TypeName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.TypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または関連付けられたコントロールで指定されているメソッドを含む型の名前を設定します。</summary>
+        <value>削除を実行するメソッドを含む型の名前を含む文字列、Insert、Select、および Update データベースに関連付けられている指定された操作<see cref="T:System.Web.UI.WebControls.ObjectDataSource" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.TypeName%2A>プロパティ shadows、<xref:System.Web.UI.WebControls.ObjectDataSource.TypeName%2A>関連付けられたコントロールのプロパティです。  
+  
+ ときの値、<xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.TypeName%2A>プロパティが変更された、デザイン時のマークアップを関連付けられている<xref:System.Web.UI.WebControls.ObjectDataSource>コントロールを更新します。 <xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.RefreshSchema%2A>メソッドを呼び出す場合、<xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner.CanRefreshSchema%2A>プロパティは true、それ以外の<xref:System.Web.UI.Design.DataSourceDesigner.DataSourceChanged>イベントが発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

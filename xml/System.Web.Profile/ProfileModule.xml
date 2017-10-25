@@ -1,0 +1,282 @@
+<Type Name="ProfileModule" FullName="System.Web.Profile.ProfileModule">
+  <TypeSignature Language="C#" Value="public sealed class ProfileModule : System.Web.IHttpModule" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ProfileModule extends System.Object implements class System.Web.IHttpModule" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Profile.ProfileModule" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.IHttpModule</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>ユーザー プロファイルとプロファイル イベントの作成を管理します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET を使用して、ユーザー プロファイルが有効にすると、<xref:System.Web.Profile.ProfileModule>にユーザー プロファイルを作成し、保存、 <xref:System.Web.HttpContext.Profile%2A> 、現在のプロパティ<xref:System.Web.HttpContext>です。  
+  
+ <xref:System.Web.Profile.ProfileModule>次に、アプリケーションで認証を構成することができますを処理するイベントを公開します。  
+  
+-   <xref:System.Web.Profile.ProfileModule.MigrateAnonymous>イベントには匿名ユーザーとしてログインするときは、認証済みのプロファイルに匿名プロファイルのプロファイル設定を移行します。  
+  
+-   <xref:System.Web.Profile.ProfileModule.Personalize>イベント、ユーザー プロファイルを作成する方法をカスタマイズします。  
+  
+-   <xref:System.Web.Profile.ProfileModule.ProfileAutoSaving>イベント、ユーザー プロファイルを保存時にする方法を制御する、<xref:System.Web.Profile.ProfileManager.AutomaticSaveEnabled%2A>プロパティに設定されている`true`です。  
+  
+ ユーザー プロファイルを有効にする方法については、次を参照してください。 [profile 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/ccb9bf3a-a044-464d-b89b-5cb5a3d389dd)です。  
+  
+   
+  
+## Examples  
+ 次の例では、匿名 id と匿名ユーザーをサポートするプロファイルのプロパティを有効する Web.config ファイルを示します。  
+  
+```  
+<configuration>  
+  <system.web>  
+    <authentication mode="Forms" >  
+      <forms loginUrl="login.aspx" name=".ASPXFORMSAUTH" />  
+    </authentication>  
+  
+    <anonymousIdentification enabled="true" />  
+  
+    <profile enabled="true" defaultProvider="AspNetSqlProvider">  
+      <properties>  
+        <add name="ZipCode" allowAnonymous="true" />  
+        <add name="CityAndState" allowAnonymous="true" />  
+        <add name="StockSymbols" type="System.Collections.ArrayList" allowAnonymous="true" />  
+      </properties>  
+    </profile>  
+  </system.web>  
+</configuration>  
+```  
+  
+ 次のコード例は、 <xref:System.Web.Profile.ProfileModule.MigrateAnonymous> ASP.NET アプリケーションの Global.asax ファイルに含まれるイベント。 <xref:System.Web.Profile.ProfileModule.MigrateAnonymous>イベントは、匿名プロファイルからプロファイル プロパティの値を現在のユーザーのプロファイルにコピーします。  
+  
+ [!code-csharp[System.Web.Profile.ProfileManager#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/CS/global.asax#1)]
+ [!code-vb[System.Web.Profile.ProfileManager#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/VB/global.asax#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProfileModule ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileModule.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Profile.ProfileModule" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、アプリケーション コードから呼び出されるものではありません。  
+  
+ <xref:System.Web.HttpApplication>は ASP.NET アプリケーションが開始されたときに作成します。 <xref:System.Web.HttpApplication>呼び出し、<xref:System.Web.Profile.ProfileModule>コンス トラクターを作成する、<xref:System.Web.Profile.ProfileModule>アプリケーションです。 <xref:System.Web.Profile.ProfileModule>はアプリケーションの構成で指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileModule.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Web.Profile.ProfileModule" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アプリケーション コードから呼び出されるものではありません。  
+  
+ <xref:System.Web.HttpApplication>は ASP.NET アプリケーションが開始されたときに作成します。 <xref:System.Web.HttpApplication>を作成して初期化、<xref:System.Web.Profile.ProfileModule>アプリケーションおよび呼び出し、<xref:System.Web.Profile.ProfileModule.Dispose%2A>メソッド、オブジェクトが離されるとします。 <xref:System.Web.Profile.ProfileModule>はアプリケーションの構成で指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Init">
+      <MemberSignature Language="C#" Value="public void Init (System.Web.HttpApplication app);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Init(class System.Web.HttpApplication app) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileModule.Init(System.Web.HttpApplication)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="app" Type="System.Web.HttpApplication" />
+      </Parameters>
+      <Docs>
+        <param name="app">現在のアプリケーション。</param>
+        <summary>初期化を呼び出すときにコードを<see cref="T:System.Web.Profile.ProfileModule" />オブジェクトを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アプリケーション コードから呼び出されるものではありません。  
+  
+ <xref:System.Web.HttpApplication>は ASP.NET アプリケーションが開始されたときに作成します。 <xref:System.Web.HttpApplication>呼び出し、<xref:System.Web.Profile.ProfileModule.Init%2A>メソッドの作成時に、<xref:System.Web.Profile.ProfileModule>アプリケーションです。 <xref:System.Web.Profile.ProfileModule>はアプリケーションの構成で指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MigrateAnonymous">
+      <MemberSignature Language="C#" Value="public event System.Web.Profile.ProfileMigrateEventHandler MigrateAnonymous;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.Profile.ProfileMigrateEventHandler MigrateAnonymous" />
+      <MemberSignature Language="DocId" Value="E:System.Web.Profile.ProfileModule.MigrateAnonymous" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Profile.ProfileMigrateEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロファイルの匿名ユーザーがログインするときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクセスすることができます、<xref:System.Web.Profile.ProfileModule.MigrateAnonymous>のイベント、<xref:System.Web.Profile.ProfileModule>を使用して ASP.NET アプリケーションの Global.asax ファイル内のクラス、`Profile_MigrateAnonymous`グローバル イベントをこのトピックの例に示すようにします。  
+  
+ 使用することができます、<xref:System.Web.Profile.ProfileModule.MigrateAnonymous>プロファイル プロパティをコピーするイベント値の匿名プロファイルの認証済みのプロファイルに、アプリケーションが匿名でを使用したユーザーがログインするとします。  
+  
+ ASP.NET が型の新しいクラスを作成して有効になっているユーザー プロファイルを持つアプリケーションが開始されると、`ProfileCommon`から継承される、<xref:System.Web.Profile.ProfileBase>クラスです。 厳密に型指定されたアクセサーを追加、`ProfileCommon`構成セクションで定義されている各プロパティのクラスです。 A`GetProfile`メソッドでは、取得することができます、`ProfileCommon`オブジェクトは、ユーザー名に基づいています。 使用することができます、`GetProfile`匿名プロファイルのプロパティ値を取得する現在の認証済みのプロファイルのメソッドです。 匿名プロパティの値は、認証されたユーザーの現在のプロファイルにコピーできます。  
+  
+   
+  
+## Examples  
+ 次の例では、匿名 id と匿名ユーザーをサポートするプロファイルのプロパティを有効する Web.config ファイルを示します。  
+  
+```  
+<configuration>  
+  <system.web>  
+    <authentication mode="Forms" >  
+      <forms loginUrl="login.aspx" name=".ASPXFORMSAUTH" />  
+    </authentication>  
+  
+    <anonymousIdentification enabled="true" />  
+  
+    <profile enabled="true" defaultProvider="AspNetSqlProvider">  
+      <properties>  
+        <add name="ZipCode" allowAnonymous="true" />  
+        <add name="CityAndState" allowAnonymous="true" />  
+        <add name="StockSymbols" type="System.Collections.ArrayList" allowAnonymous="true" />  
+      </properties>  
+    </profile>  
+  </system.web>  
+</configuration>  
+```  
+  
+ 次のコード例は、 <xref:System.Web.Profile.ProfileModule.MigrateAnonymous> ASP.NET アプリケーションの Global.asax ファイルに含まれるイベント。 <xref:System.Web.Profile.ProfileModule.MigrateAnonymous>イベントは、匿名プロファイルからプロファイル プロパティの値を現在のユーザーのプロファイルにコピーします。  
+  
+ [!code-csharp[System.Web.Profile.ProfileManager#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/CS/global.asax#1)]
+ [!code-vb[System.Web.Profile.ProfileManager#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/VB/global.asax#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Personalize">
+      <MemberSignature Language="C#" Value="public event System.Web.Profile.ProfileEventHandler Personalize;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.Profile.ProfileEventHandler Personalize" />
+      <MemberSignature Language="DocId" Value="E:System.Web.Profile.ProfileModule.Personalize" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Profile.ProfileEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー プロファイルを作成する前に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileModule.Personalize>中にイベントが発生した、<xref:System.Web.HttpApplication.AcquireRequestState?displayProperty=nameWithType>イベント。 アクセスすることができます、<xref:System.Web.Profile.ProfileModule.Personalize>のイベント、<xref:System.Web.Profile.ProfileModule>使用して ASP.NET アプリケーションの Global.asax ファイル内のクラス、`Profile_Personalize`このトピックの例に示すようにグローバル イベント。  
+  
+ 使用することができます、<xref:System.Web.Profile.ProfileModule.Personalize>カスタム ユーザー プロファイルを指定するイベントです。 場合、<xref:System.Web.Profile.ProfileEventArgs.Profile%2A?displayProperty=nameWithType>に指定されたプロパティ値、<xref:System.Web.Profile.ProfileEventHandler>のイベント ハンドラー、<xref:System.Web.Profile.ProfileModule.Personalize>イベントではない値に設定`null`ときに、<xref:System.Web.Profile.ProfileModule.Personalize>イベントの終了時刻、<xref:System.Web.Profile.ProfileModule>の指定した値が使用されます、<xref:System.Web.Profile.ProfileEventArgs.Profile%2A?displayProperty=nameWithType>プロパティの値として、 <xref:System.Web.HttpContext.Profile%2A> 、現在のプロパティ<xref:System.Web.HttpContext>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Profile.ProfileModule.Personalize>イベント、アプリケーションの Global.asax ファイルで宣言されています。 イベントのコードでは、ロールのメンバーシップに基づくユーザーのユーザー プロファイルを読み込みます。  
+  
+ [!code-csharp[System.Web.Profile.ProfileManager.Personalize#12](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileManager.Personalize/CS/global.asax#12)]
+ [!code-vb[System.Web.Profile.ProfileManager.Personalize#12](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileManager.Personalize/VB/global.asax#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProfileAutoSaving">
+      <MemberSignature Language="C#" Value="public event System.Web.Profile.ProfileAutoSaveEventHandler ProfileAutoSaving;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.Profile.ProfileAutoSaveEventHandler ProfileAutoSaving" />
+      <MemberSignature Language="DocId" Value="E:System.Web.Profile.ProfileModule.ProfileAutoSaving" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Profile.ProfileAutoSaveEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロファイルの自動保存が有効になっている場合は、ページの実行の最後に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileModule.ProfileAutoSaving>イベントは、ページの実行の最後、<xref:System.Web.Profile.ProfileManager.AutomaticSaveEnabled%2A?displayProperty=nameWithType>プロパティは`true`します。 アクセスすることができます、<xref:System.Web.Profile.ProfileModule.ProfileAutoSaving>のイベント、<xref:System.Web.Profile.ProfileModule>使用して ASP.NET アプリケーションの Global.asax ファイル内のクラス、`Profile_ProfileAutoSaving`グローバル イベントをこのトピックの例に示すようにします。  
+  
+ <xref:System.Configuration.SettingsBase.Save%2A?displayProperty=nameWithType>メソッド チェック、<xref:System.Configuration.SettingsPropertyValue.IsDirty%2A>の各プロパティの値<xref:System.Configuration.SettingsPropertyValue>かどうかについてのプロパティをユーザー プロファイルにプリミティブ型、文字列の構成または<xref:System.DateTime>オブジェクトが変更されました。 <xref:System.Configuration.SettingsBase.Save%2A>メソッドが、カスタム クラスが変更されたかどうかを判定できません明示的にします。 使用することができます、<xref:System.Web.Profile.ProfileModule.ProfileAutoSaving>カスタム オブジェクトが変更され、変更したオブジェクトの保存、自動を続行するかどうかを決定する場合、またはオブジェクトが変更されていない場合は、自動保存をキャンセルするイベントです。  
+  
+ プロファイルの自動保存の操作をキャンセルする、<xref:System.Web.Profile.ProfileAutoSaveEventArgs.ContinueWithProfileAutoSave%2A>プロパティを`false`で、<xref:System.Web.Profile.ProfileModule.ProfileAutoSaving>イベントです。 それ以外の場合、設定、<xref:System.Web.Profile.ProfileAutoSaveEventArgs.ContinueWithProfileAutoSave%2A>プロパティを`true`です。  
+  
+ 複数のサブスクライバーがある可能性があります、<xref:System.Web.Profile.ProfileModule.ProfileAutoSaving>イベント。 <xref:System.Web.Profile.ProfileModule>が使用する最後の値を<xref:System.Web.Profile.ProfileAutoSaveEventArgs.ContinueWithProfileAutoSave%2A>プロパティに設定します。 その結果、お勧めする明示的に設定する、<xref:System.Web.Profile.ProfileAutoSaveEventArgs.ContinueWithProfileAutoSave%2A>プロパティに、<xref:System.Web.Profile.ProfileModule.ProfileAutoSaving>イベントを取り消すまたは自動を続行するかどうかを付けて、以前のサブスクライバーによって設定された値を上書きする必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、 <xref:System.Web.Profile.ProfileModule.ProfileAutoSaving> ASP.NET アプリケーションの Global.asax ファイルに含まれるイベント。  
+  
+ [!code-csharp[System.Web.Profile.ProfileManager.ProfileAutoSaving#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileManager.ProfileAutoSaving/CS/global.asax#11)]
+ [!code-vb[System.Web.Profile.ProfileManager.ProfileAutoSaving#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileManager.ProfileAutoSaving/VB/global.asax#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

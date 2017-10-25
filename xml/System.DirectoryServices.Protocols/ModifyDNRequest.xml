@@ -1,0 +1,157 @@
+<Type Name="ModifyDNRequest" FullName="System.DirectoryServices.Protocols.ModifyDNRequest">
+  <TypeSignature Language="C#" Value="public class ModifyDNRequest : System.DirectoryServices.Protocols.DirectoryRequest" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ModifyDNRequest extends System.DirectoryServices.Protocols.DirectoryRequest" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.Protocols.ModifyDNRequest" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.DirectoryServices.Protocols.DirectoryRequest</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.Protocols.ModifyDNRequest" />クラスは、オブジェクトの識別名を変更します。 このクラスの新しい親にオブジェクトの移動やオブジェクトの名前を変更します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ModifyDNRequest ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.ModifyDNRequest.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.DirectoryServices.Protocols.ModifyDNRequest.#ctor" />コンス トラクターのインスタンスを作成する、<see cref="T:System.DirectoryServices.Protocols.ModifyDNRequest" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ModifyDNRequest (string distinguishedName, string newParentDistinguishedName, string newName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string distinguishedName, string newParentDistinguishedName, string newName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.ModifyDNRequest.#ctor(System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="distinguishedName" Type="System.String" />
+        <Parameter Name="newParentDistinguishedName" Type="System.String" />
+        <Parameter Name="newName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="distinguishedName">オブジェクトの現在の識別名。</param>
+        <param name="newParentDistinguishedName">新しい親オブジェクトの識別名。</param>
+        <param name="newName">オブジェクトの新しい識別名。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.ModifyDNRequest.#ctor(System.String,System.String,System.String)" />コンス トラクターのインスタンスを作成する、<see cref="T:System.DirectoryServices.Protocols.ModifyDNRequest" />オブジェクトの指定したオブジェクトの名前、親の名前、および新しいオブジェクト名を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteOldRdn">
+      <MemberSignature Language="C#" Value="public bool DeleteOldRdn { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DeleteOldRdn" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.ModifyDNRequest.DeleteOldRdn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.ModifyDNRequest.DeleteOldRdn" />プロパティでは、オブジェクトの古い相対識別名 (RDN) を削除するかどうかを指定します。</summary>
+        <value>このプロパティは<see langword="true" />RDN を削除する必要がある場合または<see langword="false" />削除する必要がありますいない場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DistinguishedName">
+      <MemberSignature Language="C#" Value="public string DistinguishedName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DistinguishedName" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.ModifyDNRequest.DistinguishedName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.ModifyDNRequest.DistinguishedName" />プロパティには、オブジェクトの識別名が含まれています。</summary>
+        <value>オブジェクトの識別名。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewName">
+      <MemberSignature Language="C#" Value="public string NewName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NewName" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.ModifyDNRequest.NewName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.ModifyDNRequest.NewName" />プロパティには、新しいオブジェクト名が含まれています。</summary>
+        <value>新しいオブジェクト名。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewParentDistinguishedName">
+      <MemberSignature Language="C#" Value="public string NewParentDistinguishedName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NewParentDistinguishedName" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.ModifyDNRequest.NewParentDistinguishedName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.ModifyDNRequest.NewParentDistinguishedName" />プロパティには、新しいオブジェクトの親オブジェクトの識別名が含まれています。</summary>
+        <value>新しい親オブジェクトの識別名。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToXmlNode">
+      <MemberSignature Language="C#" Value="protected override System.Xml.XmlElement ToXmlNode (System.Xml.XmlDocument doc);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Xml.XmlElement ToXmlNode(class System.Xml.XmlDocument doc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.ModifyDNRequest.ToXmlNode(System.Xml.XmlDocument)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="doc" Type="System.Xml.XmlDocument" />
+      </Parameters>
+      <Docs>
+        <param name="doc"><see cref="T:System.Xml.XmlDocument" /> オブジェクト。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.ModifyDNRequest.ToXmlNode(System.Xml.XmlDocument)" />メソッドから、指定された XML ノードを作成する<see cref="T:System.Xml.XmlDocument" />オブジェクト。</summary>
+        <returns>結果として得られる <see cref="T:System.Xml.XmlElement" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

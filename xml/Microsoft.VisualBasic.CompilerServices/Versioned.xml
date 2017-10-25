@@ -1,0 +1,161 @@
+<Type Name="Versioned" FullName="Microsoft.VisualBasic.CompilerServices.Versioned">
+  <TypeSignature Language="C#" Value="public sealed class Versioned" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed Versioned extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.CompilerServices.Versioned" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:Microsoft.VisualBasic.CompilerServices.Versioned" />モジュールには、オブジェクト、アプリケーション、およびシステムと対話するための手順が含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このモジュールは、Visual Basic 言語キーワードおよびその他のプログラムを実行、メソッドまたはプロパティの呼び出し、コンピューターのビープ音、コマンドライン文字列の入力、COM オブジェクトを操作およびダイアログ ボックスの制御、ランタイム ライブラリ メンバーをサポートします。  
+  
+ このクラスは、Visual Basic 2005 の更新されたバージョンの<xref:Microsoft.VisualBasic.Interaction>クラス (Visual Basic 2003 で使用されていた) をします。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="CallByName">
+      <MemberSignature Language="C#" Value="public static object CallByName (object Instance, string MethodName, Microsoft.VisualBasic.CallType UseCallType, params object[] Arguments);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object CallByName(object Instance, string MethodName, valuetype Microsoft.VisualBasic.CallType UseCallType, object[] Arguments) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Versioned.CallByName(System.Object,System.String,Microsoft.VisualBasic.CallType,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Instance" Type="System.Object" />
+        <Parameter Name="MethodName" Type="System.String" />
+        <Parameter Name="UseCallType" Type="Microsoft.VisualBasic.CallType" />
+        <Parameter Name="Arguments" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="Instance">必須です。 <see langword="Object" />。 プロパティまたはメソッドを公開しているオブジェクトへのポインター。</param>
+        <param name="MethodName">必須です。 <see langword="String" />。 プロパティまたはオブジェクトのメソッドの名前を含む文字列式です。</param>
+        <param name="UseCallType">必須です。 型の列挙体のメンバー<see cref="T:Microsoft.VisualBasic.CallType" />呼び出されるプロシージャの種類を表すです。 値<see langword="CallType" />できます<see langword="Method" />、 <see langword="Get" />、または<see langword="Set" />です。</param>
+        <param name="Arguments">省略可能です。 <see langword="ParamArray" />。 プロパティまたは呼び出されるメソッドに渡される引数を含むパラメーター配列を返します。</param>
+        <summary>オブジェクトに対してメソッドを実行またはまたは設定オブジェクトのプロパティを返します。</summary>
+        <returns>オブジェクトに対してメソッドを実行またはまたは設定オブジェクトのプロパティを返します。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsNumeric">
+      <MemberSignature Language="C#" Value="public static bool IsNumeric (object Expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static bool IsNumeric(object Expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Versioned.IsNumeric(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Expression">必須です。 <see langword="Object" />式。</param>
+        <summary>式を数値として評価できるかどうかを示すブール値を返します。</summary>
+        <returns>式を数値として評価できるかどうかを示すブール値を返します。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SystemTypeName">
+      <MemberSignature Language="C#" Value="public static string SystemTypeName (string VbName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string SystemTypeName(string VbName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Versioned.SystemTypeName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="VbName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="VbName">必須です。 Visual Basic の型名を含む文字列変数です。</param>
+        <summary>変数のシステム データ型名を含む文字列値を返します。</summary>
+        <returns>変数のシステム データ型名を含む文字列値を返します。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="TypeName">
+      <MemberSignature Language="C#" Value="public static string TypeName (object Expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string TypeName(object Expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Versioned.TypeName(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Expression">必須です。 <see langword="Object" />変数。 場合<see langword="Option Strict" />は<see langword="Off" />、構造体を除く任意のデータ型の変数を渡すことができます。</param>
+        <summary>変数に関するデータ型情報を含む文字列値を返します。</summary>
+        <returns>変数に関するデータ型情報を含む文字列値を返します。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="VbTypeName">
+      <MemberSignature Language="C#" Value="public static string VbTypeName (string SystemName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string VbTypeName(string SystemName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Versioned.VbTypeName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="SystemName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="SystemName">必須です。 共通言語ランタイムによって使用される型名を含む文字列変数です。</param>
+        <summary>変数の Visual Basic データ型の名前を含む文字列値を返します。</summary>
+        <returns>変数の Visual Basic データ型の名前を含む文字列値を返します。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

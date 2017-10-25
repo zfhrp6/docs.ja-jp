@@ -1,0 +1,496 @@
+<Type Name="TaskContinuationOptions" FullName="System.Threading.Tasks.TaskContinuationOptions">
+  <TypeSignature Language="C#" Value="public enum TaskContinuationOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed TaskContinuationOptions extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.Tasks.TaskContinuationOptions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading.Tasks</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="M:System.Threading.Tasks.Task.ContinueWith(System.Action{System.Threading.Tasks.Task},System.Threading.CancellationToken,System.Threading.Tasks.TaskContinuationOptions,System.Threading.Tasks.TaskScheduler)" /> メソッドまたは <see cref="M:System.Threading.Tasks.Task`1.ContinueWith(System.Action{System.Threading.Tasks.Task{`0}},System.Threading.Tasks.TaskContinuationOptions)" /> メソッドを使用して作成されるタスクの動作を指定します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AttachedToParent">
+      <MemberSignature Language="C#" Value="AttachedToParent" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.Tasks.TaskContinuationOptions AttachedToParent = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.Tasks.TaskContinuationOptions.AttachedToParent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.TaskContinuationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>継続が子タスクの場合は、タスク階層内の親にアタッチするように指定します。 継続元も子タスクである場合にのみ、継続は子タスクになれます。 既定では、子タスク (外側のタスクによって作成される内側のタスク) は、親と独立して実行されます。 <see cref="F:System.Threading.Tasks.TaskContinuationOptions.AttachedToParent" /> オプションを使用して、親タスクと子タスクを同期させることもできます。  
+  
+ 親タスクが <see cref="F:System.Threading.Tasks.TaskCreationOptions.DenyChildAttach" /> オプションを指定して構成されている場合、子タスクの <see cref="F:System.Threading.Tasks.TaskCreationOptions.AttachedToParent" /> オプションは無効で、その子タスクはデタッチされた子タスクとして実行されることに注意してください。  
+  
+ 詳細については、「[アタッチされた子タスクとデタッチされた子タスク](~/docs/standard/parallel-programming/attached-and-detached-child-tasks.md)」を参照してください。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DenyChildAttach">
+      <MemberSignature Language="C#" Value="DenyChildAttach" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.Tasks.TaskContinuationOptions DenyChildAttach = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.Tasks.TaskContinuationOptions.DenyChildAttach" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.TaskContinuationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="F:System.Threading.Tasks.TaskCreationOptions.AttachedToParent" /> オプションを指定して作成され、アタッチされた子タスクとして実行されることを試行する子タスク (この継続によって作成される入れ子になった内側のタスク) は、親タスクにアタッチされることはできないため、デタッチされた子タスクとして実行されます。 詳細については、「[アタッチされた子タスクとデタッチされた子タスク](~/docs/standard/parallel-programming/attached-and-detached-child-tasks.md)」を参照してください。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteSynchronously">
+      <MemberSignature Language="C#" Value="ExecuteSynchronously" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.Tasks.TaskContinuationOptions ExecuteSynchronously = int32(524288)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.Tasks.TaskContinuationOptions.ExecuteSynchronously" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.TaskContinuationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>継続タスクを同期的に実行するように指定します。 このオプションを指定すると、継続は、前のタスクを最終状態に遷移させた同じスレッドで実行されます。 継続の作成時に継続元が既に完了している場合、継続はその継続を作成したスレッドで実行されます。 継続元の <see cref="T:System.Threading.CancellationTokenSource" /> が <see langword="finally" /> ブロック (Visual Basic では <see langword="Finally" />) で破棄された場合、このオプションを指定した継続がその <see langword="finally" /> ブロックで実行されます。 同期的に実行するのは、非常に短時間で完了する継続タスクのみでなければなりません。  
+  
+ タスクは同期的に実行されるため、<see cref="M:System.Threading.Tasks.Task.Wait" /> などのメソッドを呼び出して、呼び出しスレッドがタスクの完了を待機する必要はありません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="HideScheduler">
+      <MemberSignature Language="C#" Value="HideScheduler" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.Tasks.TaskContinuationOptions HideScheduler = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.Tasks.TaskContinuationOptions.HideScheduler" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.TaskContinuationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>などのメソッドを呼び出すことで、そのタスクが継続によって作成されたことを示す<see cref="M:System.Threading.Tasks.Task.Run(System.Action)" />または<see cref="M:System.Threading.Tasks.Task.ContinueWith(System.Action{System.Threading.Tasks.Task})" />、既定のスケジューラを参照してください (<see cref="P:System.Threading.Tasks.TaskScheduler.Default" />) 現在のスケジューラとしてこの継続が実行されているスケジューラではなくです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="LazyCancellation">
+      <MemberSignature Language="C#" Value="LazyCancellation" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.Tasks.TaskContinuationOptions LazyCancellation = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.Tasks.TaskContinuationOptions.LazyCancellation" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.TaskContinuationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>継続取り消しの場合は、継続元が完了するまで、継続が完了しないようにします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="LongRunning">
+      <MemberSignature Language="C#" Value="LongRunning" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.Tasks.TaskContinuationOptions LongRunning = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.Tasks.TaskContinuationOptions.LongRunning" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.TaskContinuationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>継続が、実行に時間のかかる、細分化されていない操作であることを示します。 これは、<see cref="T:System.Threading.Tasks.TaskScheduler" /> に対し、オーバーサブスクリプションを許可してもよいことを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.Tasks.TaskContinuationOptions None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.Tasks.TaskContinuationOptions.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.TaskContinuationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>継続のオプションが指定されていない場合は、継続を実行するときに既定の動作を使用する必要があることを指定します。 継続元タスクが完了したら、継続元の最終的な <see cref="P:System.Threading.Tasks.Task.Status" /> プロパティ値に関係なく、継続を非同期的に実行します。 継続が子タスクである場合は、デタッチされた入れ子のタスクとして作成されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NotOnCanceled">
+      <MemberSignature Language="C#" Value="NotOnCanceled" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.Tasks.TaskContinuationOptions NotOnCanceled = int32(262144)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.Tasks.TaskContinuationOptions.NotOnCanceled" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.TaskContinuationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>前のタスクが取り消された場合は継続タスクをスケジュールしないように指定します。 完了時に継続元の <see cref="P:System.Threading.Tasks.Task.Status" /> プロパティが <see cref="F:System.Threading.Tasks.TaskStatus.Canceled" /> である場合、継続元は取り消されます。 このオプションは、マルチタスクの継続タスクに対しては無効です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NotOnFaulted">
+      <MemberSignature Language="C#" Value="NotOnFaulted" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.Tasks.TaskContinuationOptions NotOnFaulted = int32(131072)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.Tasks.TaskContinuationOptions.NotOnFaulted" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.TaskContinuationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>前のタスクで処理されない例外がスローされた場合は継続タスクをスケジュールしないように指定します。 完了時に継続元の <see cref="P:System.Threading.Tasks.Task.Status" /> プロパティが <see cref="F:System.Threading.Tasks.TaskStatus.Faulted" /> である場合、継続元はハンドルされない例外をスローします。 このオプションは、マルチタスクの継続タスクに対しては無効です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NotOnRanToCompletion">
+      <MemberSignature Language="C#" Value="NotOnRanToCompletion" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.Tasks.TaskContinuationOptions NotOnRanToCompletion = int32(65536)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.Tasks.TaskContinuationOptions.NotOnRanToCompletion" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.TaskContinuationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>前のタスクが完了まで実行された場合は、継続タスクをスケジュールしないように指定します。 完了時に継続元の <see cref="P:System.Threading.Tasks.Task.Status" /> プロパティが <see cref="F:System.Threading.Tasks.TaskStatus.RanToCompletion" /> である場合、継続元は完了まで実行されます。 このオプションは、マルチタスクの継続タスクに対しては無効です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OnlyOnCanceled">
+      <MemberSignature Language="C#" Value="OnlyOnCanceled" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.Tasks.TaskContinuationOptions OnlyOnCanceled = int32(196608)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.Tasks.TaskContinuationOptions.OnlyOnCanceled" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.TaskContinuationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>継続元が取り消された場合にのみ継続をスケジュールするように指定します。  完了時に継続元の <see cref="P:System.Threading.Tasks.Task.Status" /> プロパティが <see cref="F:System.Threading.Tasks.TaskStatus.Canceled" /> である場合、継続元は取り消されます。 このオプションは、マルチタスクの継続タスクに対しては無効です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OnlyOnFaulted">
+      <MemberSignature Language="C#" Value="OnlyOnFaulted" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.Tasks.TaskContinuationOptions OnlyOnFaulted = int32(327680)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.Tasks.TaskContinuationOptions.OnlyOnFaulted" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.TaskContinuationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>前のタスクで処理されない例外がスローされた場合にのみ継続タスクをスケジュールするように指定します。 完了時に継続元の <see cref="P:System.Threading.Tasks.Task.Status" /> プロパティが <see cref="F:System.Threading.Tasks.TaskStatus.Faulted" /> である場合、継続元はハンドルされない例外をスローします。  
+  
+ <see cref="F:System.Threading.Tasks.TaskContinuationOptions.OnlyOnFaulted" />オプションを設定する、 <see cref="P:System.Threading.Tasks.Task.Exception" /> 、継続元のプロパティは使用されません<see langword="null" />です。 このプロパティを使用すると、例外をキャッチして、タスクの違反の原因となった例外を確認できます。 <see cref="P:System.Threading.Tasks.Task.Exception" /> プロパティにアクセスしない場合、例外はハンドルされません。 また、取り消されたタスクまたはエラーが発生したタスクの <see cref="P:System.Threading.Tasks.Task`1.Result" /> プロパティにアクセスしようとする場合も、新しい例外がスローされます。  
+  
+ このオプションは、マルチタスクの継続タスクに対しては無効です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OnlyOnRanToCompletion">
+      <MemberSignature Language="C#" Value="OnlyOnRanToCompletion" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.Tasks.TaskContinuationOptions OnlyOnRanToCompletion = int32(393216)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.Tasks.TaskContinuationOptions.OnlyOnRanToCompletion" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.TaskContinuationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>継続元が完了まで実行された場合にのみ継続をスケジュールするように指定します。 完了時に継続元の <see cref="P:System.Threading.Tasks.Task.Status" /> プロパティが <see cref="F:System.Threading.Tasks.TaskStatus.RanToCompletion" /> である場合、継続元は完了まで実行されます。 このオプションは、マルチタスクの継続タスクに対しては無効です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PreferFairness">
+      <MemberSignature Language="C#" Value="PreferFairness" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.Tasks.TaskContinuationOptions PreferFairness = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.Tasks.TaskContinuationOptions.PreferFairness" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.TaskContinuationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Threading.Tasks.TaskScheduler" /> に対するヒントはスケジュールされた順序でタスクをスケジュールするため、先にスケジュールされたタスクは先に実行される可能性が高く、後からスケジュールされたタスクは後で実行される可能性が高くなります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RunContinuationsAsynchronously">
+      <MemberSignature Language="C#" Value="RunContinuationsAsynchronously" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.Tasks.TaskContinuationOptions RunContinuationsAsynchronously = int32(64)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.Tasks.TaskContinuationOptions.RunContinuationsAsynchronously" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.TaskContinuationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>継続タスクを非同期的に実行するように指定します。  このオプションは <see cref="F:System.Threading.Tasks.TaskContinuationOptions.ExecuteSynchronously" /> より優先されます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

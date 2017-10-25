@@ -1,0 +1,90 @@
+<Type Name="StylusButtonEventArgs" FullName="System.Windows.Input.StylusButtonEventArgs">
+  <TypeSignature Language="C#" Value="public class StylusButtonEventArgs : System.Windows.Input.StylusEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StylusButtonEventArgs extends System.Windows.Input.StylusEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.StylusButtonEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Input.StylusEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+          <see cref="E:System.Windows.UIElement.StylusButtonDown" /> イベントおよび <see cref="E:System.Windows.UIElement.StylusButtonUp" /> イベントのデータを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StylusButtonEventArgs (System.Windows.Input.StylusDevice stylusDevice, int timestamp, System.Windows.Input.StylusButton button);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Input.StylusDevice stylusDevice, int32 timestamp, class System.Windows.Input.StylusButton button) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusButtonEventArgs.#ctor(System.Windows.Input.StylusDevice,System.Int32,System.Windows.Input.StylusButton)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stylusDevice" Type="System.Windows.Input.StylusDevice" />
+        <Parameter Name="timestamp" Type="System.Int32" />
+        <Parameter Name="button" Type="System.Windows.Input.StylusButton" />
+      </Parameters>
+      <Docs>
+        <param name="stylusDevice"><see cref="T:System.Windows.Input.StylusDevice" />このイベントに関連付けます。</param>
+        <param name="timestamp">イベントが発生した時刻。</param>
+        <param name="button">イベントの発生元の <see cref="T:System.Windows.Input.StylusButton" />。</param>
+        <summary><see cref="T:System.Windows.Input.StylusButtonEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeEventHandler">
+      <MemberSignature Language="C#" Value="protected override void InvokeEventHandler (Delegate genericHandler, object genericTarget);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InvokeEventHandler(class System.Delegate genericHandler, object genericTarget) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusButtonEventArgs.InvokeEventHandler(System.Delegate,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="genericHandler" Type="System.Delegate" />
+        <Parameter Name="genericTarget" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="genericHandler">型固有の方法で呼び出すジェネリック ハンドラー。</param>
+        <param name="genericTarget">ハンドラーを呼び出すターゲット。</param>
+        <summary>イベントのシステムの効率を高めることができます、型固有の方法でイベント ハンドラーを呼び出します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装は、ジェネリック ハンドラーをキャスト、<xref:System.Windows.Input.StylusButtonEventHandler>してそれを呼び出します。 この実装パターンとその理由の詳細については、次を参照してください。<xref:System.Windows.RoutedEventArgs.InvokeEventHandler%2A>と[ルーティング イベントの概要](~/docs/framework/wpf/advanced/routed-events-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylusButton">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.StylusButton StylusButton { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.StylusButton StylusButton" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.StylusButtonEventArgs.StylusButton" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.StylusButton</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Input.StylusButton" />このイベントを発生させます。</summary>
+        <value><see cref="T:System.Windows.Input.StylusButton" />このイベントを発生させます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

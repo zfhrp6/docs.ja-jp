@@ -1,0 +1,161 @@
+<Type Name="IErrorPage" FullName="System.Windows.Interop.IErrorPage">
+  <TypeSignature Language="C#" Value="public interface IErrorPage" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IErrorPage" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Interop.IErrorPage" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>相互運用のコンテンツをホストしているし、Windows Presentation Foundation (WPF) の実行可能ファイルと、ホストの指定したエラー ページによって解釈される Windows Presentation Foundation (WPF) アプリケーション間の相互作用を定義します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DeploymentPath">
+      <MemberSignature Language="C#" Value="public Uri DeploymentPath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri DeploymentPath" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.IErrorPage.DeploymentPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアプリケーションの配置マニフェストへのパスを設定します。</summary>
+        <value>アプリケーションの配置マニフェストへのパス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ErrorFlag">
+      <MemberSignature Language="C#" Value="public bool ErrorFlag { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ErrorFlag" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.IErrorPage.ErrorFlag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはエラーや警告など他のいくつかの条件を表すこのかどうかを示す値を設定します。 <see langword="true" />エラーを表します。</summary>
+        <value>
+          <see langword="true" />エラーを表します<see langword="false" />警告などの別の条件を表します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ErrorText">
+      <MemberSignature Language="C#" Value="public string ErrorText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ErrorText" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.IErrorPage.ErrorText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはエラーの詳細な説明を設定します。</summary>
+        <value>エラーの説明です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ErrorTitle">
+      <MemberSignature Language="C#" Value="public string ErrorTitle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ErrorTitle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.IErrorPage.ErrorTitle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはエラー ページのタイトルの文字列を設定します。</summary>
+        <value>エラー ページの文字列のタイトルです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetWinFxCallback">
+      <MemberSignature Language="C#" Value="public System.Windows.Threading.DispatcherOperationCallback GetWinFxCallback { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Threading.DispatcherOperationCallback GetWinFxCallback" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.IErrorPage.GetWinFxCallback" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherOperationCallback</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の参照、<see cref="T:System.Windows.Threading.DispatcherOperationCallback" />ハンドラーの要求を処理できる[!INCLUDE[TLA#tla_winfx](~/includes/tlasharptla-winfx-md.md)]ランタイムをダウンロードします。</summary>
+        <value>A<see cref="T:System.Windows.Threading.DispatcherOperationCallback" />ハンドラー</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogFilePath">
+      <MemberSignature Language="C#" Value="public string LogFilePath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LogFilePath" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.IErrorPage.LogFilePath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または存在する場合に、エラーのログ ファイルに文字列のパスを設定します。</summary>
+        <value>関連するエラー ファイルへのパス。 空の文字列があります。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RefreshCallback">
+      <MemberSignature Language="C#" Value="public System.Windows.Threading.DispatcherOperationCallback RefreshCallback { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Threading.DispatcherOperationCallback RefreshCallback" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.IErrorPage.RefreshCallback" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherOperationCallback</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の参照、<see cref="T:System.Windows.Threading.DispatcherOperationCallback" />ハンドラーのエラー ページの更新を処理することができます。</summary>
+        <value>A<see cref="T:System.Windows.Threading.DispatcherOperationCallback" />エラー ページの更新を処理するハンドラー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportUri">
+      <MemberSignature Language="C#" Value="public Uri SupportUri { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri SupportUri" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.IErrorPage.SupportUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]サポート情報については、エラーに関連付けられています。</summary>
+        <value>サポート情報のリンク。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

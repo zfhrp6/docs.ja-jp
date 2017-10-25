@@ -1,0 +1,82 @@
+<Type Name="RepeatDirection" FullName="System.Web.UI.WebControls.RepeatDirection">
+  <TypeSignature Language="C#" Value="public enum RepeatDirection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed RepeatDirection extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.RepeatDirection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>一覧の項目には、コントロールが表示される方向を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.RepeatDirection>列挙体のリスト コントロールの項目が表示されることが異なる方向を表します。  
+  
+> [!NOTE]
+>  によって表示される列の数が決まります常に、`RepeatColumns`リスト コントロールのプロパティです。  
+  
+ 水平方向では、すべてのアイテムがレンダリングされるまでに、左から右、次に上から下に向かってに読み込まれた行のリスト コントロールの項目が表示されることを指定します。 たとえば場合、`RepeatColumns`リスト コントロールのプロパティが 3 に設定されて、リスト コントロールの項目は、次の 3 つの列に表示されます。  
+  
+||||  
+|-|-|-|  
+|1|2|3|  
+|4|5|6|  
+|7|8||  
+  
+ 垂直方向では、すべてのアイテムがレンダリングされるまで下、左から右、上から読み込まれた列のリスト コントロールの項目が表示されることを指定します。 たとえば場合、`RepeatColumns`リスト コントロールのプロパティが 3 に設定されて、リスト コントロールの項目は、3 つの項目の行に表示されます。  
+  
+||||  
+|-|-|-|  
+|1|4|7|  
+|2|5|9|  
+|3|6||  
+  
+   
+  
+## Examples  
+ [!code-aspx-csharp[DataListLayout#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListLayout/CS/datalistlayoutcs.aspx#1)]
+ [!code-aspx-vb[DataListLayout#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListLayout/VB/datalistlayoutvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Horizontal">
+      <MemberSignature Language="C#" Value="Horizontal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.RepeatDirection Horizontal = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.RepeatDirection.Horizontal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.RepeatDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リストの項目では、すべてのアイテムがレンダリングされるまでに行行が左から右、次に上から下に向かってが水平方向に表示されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Vertical">
+      <MemberSignature Language="C#" Value="Vertical" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.RepeatDirection Vertical = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.RepeatDirection.Vertical" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.RepeatDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リストの項目では、上から下の列で垂直方向に表示され、左から右に、すべてのアイテムがレンダリングされるまでです。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

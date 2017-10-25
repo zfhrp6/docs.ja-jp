@@ -1,0 +1,398 @@
+<Type Name="SyndicationElementExtension" FullName="System.ServiceModel.Syndication.SyndicationElementExtension">
+  <TypeSignature Language="C#" Value="public class SyndicationElementExtension" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SyndicationElementExtension extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Syndication.SyndicationElementExtension" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>配信要素拡張を表すクラス。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ RSS と Atom は、どちらも追加の名前空間に修飾された要素によるプロトコルの拡張機能をサポートします。 RSS または Atom 仕様で特に定義されていない XML 要素は、その要素の名前空間が外側のフィードのルート名前空間と一致しない限り、フィード レベルまたは項目レベルで表すことができます。 要素拡張は、以下のようなさまざまなクラスに追加できます。  
+  
+-   <xref:System.ServiceModel.Syndication.SyndicationFeed>  
+  
+-   <xref:System.ServiceModel.Syndication.SyndicationItem>  
+  
+-   <xref:System.ServiceModel.Syndication.SyndicationCategory>  
+  
+-   <xref:System.ServiceModel.Syndication.SyndicationPerson>  
+  
+-   <xref:System.ServiceModel.Syndication.SyndicationLink>  
+  
+ 配信オブジェクト モデルは、<xref:System.ServiceModel.Syndication.SyndicationElementExtension> を使用することでこの拡張機能を容易にします。これは、<xref:System.ServiceModel.Syndication.SyndicationElementExtensionCollection> に配置することができます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SyndicationElementExtension (object dataContractExtension);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object dataContractExtension) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.SyndicationElementExtension.#ctor(System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="dataContractExtension" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="dataContractExtension">拡張を初期化するために使用されるデータ コントラクト オブジェクト。</param>
+        <summary>指定されたオブジェクトで <see cref="T:System.ServiceModel.Syndication.SyndicationElementExtension" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SyndicationElementExtension (System.Xml.XmlReader xmlReader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlReader xmlReader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.SyndicationElementExtension.#ctor(System.Xml.XmlReader)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="xmlReader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="xmlReader">新しい <see cref="T:System.Xml.XmlReader" /> の内容を格納している <see cref="T:System.ServiceModel.Syndication.SyndicationElementExtension" />。</param>
+        <summary><see cref="T:System.ServiceModel.Syndication.SyndicationElementExtension" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SyndicationElementExtension (object dataContractExtension, System.Runtime.Serialization.XmlObjectSerializer dataContractSerializer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object dataContractExtension, class System.Runtime.Serialization.XmlObjectSerializer dataContractSerializer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.SyndicationElementExtension.#ctor(System.Object,System.Runtime.Serialization.XmlObjectSerializer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="dataContractExtension" Type="System.Object" />
+        <Parameter Name="dataContractSerializer" Type="System.Runtime.Serialization.XmlObjectSerializer" />
+      </Parameters>
+      <Docs>
+        <param name="dataContractExtension">拡張を初期化するために使用されるデータ コントラクト オブジェクト。</param>
+        <param name="dataContractSerializer">使用するデータ コントラクト シリアライザー。</param>
+        <summary>指定されたオブジェクトおよびデータ コントラクトで、<see cref="T:System.ServiceModel.Syndication.SyndicationElementExtension" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SyndicationElementExtension (object xmlSerializerExtension, System.Xml.Serialization.XmlSerializer serializer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object xmlSerializerExtension, class System.Xml.Serialization.XmlSerializer serializer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.SyndicationElementExtension.#ctor(System.Object,System.Xml.Serialization.XmlSerializer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="xmlSerializerExtension" Type="System.Object" />
+        <Parameter Name="serializer" Type="System.Xml.Serialization.XmlSerializer" />
+      </Parameters>
+      <Docs>
+        <param name="xmlSerializerExtension">拡張を初期化するために使用されるオブジェクト。</param>
+        <param name="serializer">使用する XML シリアライザー。</param>
+        <summary>指定されたオブジェクトと XML シリアライザーで、<see cref="T:System.ServiceModel.Syndication.SyndicationElementExtension" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SyndicationElementExtension (string outerName, string outerNamespace, object dataContractExtension);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string outerName, string outerNamespace, object dataContractExtension) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.SyndicationElementExtension.#ctor(System.String,System.String,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="outerName" Type="System.String" />
+        <Parameter Name="outerNamespace" Type="System.String" />
+        <Parameter Name="dataContractExtension" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="outerName">外部 XML 要素の名前。</param>
+        <param name="outerNamespace">外部 XML 要素の名前空間。</param>
+        <param name="dataContractExtension">拡張を初期化するために使用されるオブジェクト。</param>
+        <summary>指定された外部名、外部名前空間、およびオブジェクトで、<see cref="T:System.ServiceModel.Syndication.SyndicationElementExtension" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SyndicationElementExtension (string outerName, string outerNamespace, object dataContractExtension, System.Runtime.Serialization.XmlObjectSerializer dataContractSerializer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string outerName, string outerNamespace, object dataContractExtension, class System.Runtime.Serialization.XmlObjectSerializer dataContractSerializer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.SyndicationElementExtension.#ctor(System.String,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="outerName" Type="System.String" />
+        <Parameter Name="outerNamespace" Type="System.String" />
+        <Parameter Name="dataContractExtension" Type="System.Object" />
+        <Parameter Name="dataContractSerializer" Type="System.Runtime.Serialization.XmlObjectSerializer" />
+      </Parameters>
+      <Docs>
+        <param name="outerName">外部 XML 要素の名前。</param>
+        <param name="outerNamespace">外部 XML 要素の名前空間。</param>
+        <param name="dataContractExtension">拡張を初期化するために使用されるオブジェクト。</param>
+        <param name="dataContractSerializer">使用するデータ コントラクト シリアライザー。</param>
+        <summary>指定された外部名、外部名前空間、オブジェクト、およびデータ コントラクト シリアライザーで、<see cref="T:System.ServiceModel.Syndication.SyndicationElementExtension" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObject&lt;TExtension&gt;">
+      <MemberSignature Language="C#" Value="public TExtension GetObject&lt;TExtension&gt; ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !!TExtension GetObject&lt;TExtension&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.SyndicationElementExtension.GetObject``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TExtension</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TExtension" />
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="TExtension">取得する拡張の型。</typeparam>
+        <summary>要素拡張を表すオブジェクトを取得します。</summary>
+        <returns>要素拡張を含む指定した型のオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">この型は、有効なデータ コントラクトではありません。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">入力 XML は要求された型に逆シリアル化できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObject&lt;TExtension&gt;">
+      <MemberSignature Language="C#" Value="public TExtension GetObject&lt;TExtension&gt; (System.Runtime.Serialization.XmlObjectSerializer serializer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !!TExtension GetObject&lt;TExtension&gt;(class System.Runtime.Serialization.XmlObjectSerializer serializer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.SyndicationElementExtension.GetObject``1(System.Runtime.Serialization.XmlObjectSerializer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TExtension</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TExtension" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="serializer" Type="System.Runtime.Serialization.XmlObjectSerializer" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TExtension">取得する拡張の型。</typeparam>
+        <param name="serializer">使用する <see cref="T:System.Runtime.Serialization.XmlObjectSerializer" />。</param>
+        <summary>要素拡張を表すオブジェクトを取得します。</summary>
+        <returns>要素拡張を含む指定した型のオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">この型は、有効なデータ コントラクトではありません。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">入力 XML は要求された型に逆シリアル化できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObject&lt;TExtension&gt;">
+      <MemberSignature Language="C#" Value="public TExtension GetObject&lt;TExtension&gt; (System.Xml.Serialization.XmlSerializer serializer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !!TExtension GetObject&lt;TExtension&gt;(class System.Xml.Serialization.XmlSerializer serializer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.SyndicationElementExtension.GetObject``1(System.Xml.Serialization.XmlSerializer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TExtension</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TExtension" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="serializer" Type="System.Xml.Serialization.XmlSerializer" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TExtension">取得する拡張の型。</typeparam>
+        <param name="serializer">使用する <see cref="T:System.Xml.Serialization.XmlSerializer" />。</param>
+        <summary>要素拡張を表すオブジェクトを取得します。</summary>
+        <returns>要素拡張を含む指定した型のオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">入力 XML は要求された型に逆シリアル化できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetReader">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlReader GetReader ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XmlReader GetReader() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.SyndicationElementExtension.GetReader" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlReader</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.XmlReader" /> に関連付けられている <see cref="T:System.ServiceModel.Syndication.SyndicationElementExtension" /> を取得します。</summary>
+        <returns><see cref="T:System.Xml.XmlReader" /> に関連付けられている <see cref="T:System.ServiceModel.Syndication.SyndicationElementExtension" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OuterName">
+      <MemberSignature Language="C#" Value="public string OuterName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string OuterName" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Syndication.SyndicationElementExtension.OuterName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素拡張の外部名を取得します。</summary>
+        <value>要素拡張の外部名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の要素拡張の外部名は `custom` です。  
+  
+```  
+<feed xmlns:mg="http://contoso.com">  
+....<mg:custom> some text </mg:custom>  
+</feed>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OuterNamespace">
+      <MemberSignature Language="C#" Value="public string OuterNamespace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string OuterNamespace" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Syndication.SyndicationElementExtension.OuterNamespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素拡張の外部名前空間を取得します。</summary>
+        <value>要素拡張の外部名前空間。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次のカスタム要素の外部名前空間は `mg` です。  
+  
+```  
+<feed xmlns:mg="http://contoso.com">  
+    <mg:custom> some text </mg:custom>  
+</feed>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteTo">
+      <MemberSignature Language="C#" Value="public void WriteTo (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteTo(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.SyndicationElementExtension.WriteTo(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">書き込み先の <see cref="T:System.Xml.XmlWriter" />。</param>
+        <summary>現在の拡張を、指定された <see cref="T:System.Xml.XmlWriter" /> に書き込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

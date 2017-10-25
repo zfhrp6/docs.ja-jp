@@ -1,0 +1,480 @@
+<Type Name="PeerEndPoint" FullName="System.Net.PeerToPeer.Collaboration.PeerEndPoint">
+  <TypeSignature Language="C#" Value="public class PeerEndPoint : IDisposable, IEquatable&lt;System.Net.PeerToPeer.Collaboration.PeerEndPoint&gt;, System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit PeerEndPoint extends System.Object implements class System.IDisposable, class System.IEquatable`1&lt;class System.Net.PeerToPeer.Collaboration.PeerEndPoint&gt;, class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IEquatable&lt;System.Net.PeerToPeer.Collaboration.PeerEndPoint&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>位置を表す、 <see cref="T:System.Net.PeerToPeer.Collaboration.PeerNearMe" />、または<see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" />の現在のインスタンスを記述することで、一意のネットワーク アドレスの構成で指定されたインスタンス、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" />または<see cref="T:System.Net.PeerToPeer.Collaboration.PeerNearMe" />ピア ツー ピア コラボレーション インフラストラクチャ内で。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ピア「エンドポイント」連絡先のプレゼンスの場所の説明: ピア コラボレーション ネットワーク内の連絡先の現在使用可能なインスタンスを表す一意のネットワーク アドレスの構成。 1 つの連絡先は、ピア コラボレーション ネットワーク内の複数のエンドポイントで使用できることができます。  
+  
+ 連絡先をウォッチ ピアは、特定のピアが存在する、アプリケーション、またはオブジェクトの更新のためには、その連絡先に関連付けられているエンドポイントのいずれかのクエリを実行できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>新しいインスタンスを生成、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 開発者の IP アドレスを既に知っている場合に、このコンス トラクターが提供される、<xref:System.Net.PeerToPeer.Collaboration.PeerEndPoint>連絡いただくことができます。  
+  
+ このコンス トラクターを明示的な生成を利用して<xref:System.Net.PeerToPeer.Collaboration.PeerEndPoint>インスタンスの作成を容易に、<xref:System.Net.PeerToPeer.Collaboration.Peer>ピア コラボレーション インフラストラクチャを使用して、IP アドレスによって識別されるピアとの対話をさらに使用できるクラス インスタンス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PeerEndPoint ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.PeerEndPoint.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを生成、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />クラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PeerEndPoint (System.Net.IPEndPoint endPoint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Net.IPEndPoint endPoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.PeerEndPoint.#ctor(System.Net.IPEndPoint)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="endPoint" Type="System.Net.IPEndPoint" />
+      </Parameters>
+      <Docs>
+        <param name="endPoint">ピアに関連付けられているエンドポイントです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />に含まれるピアに関連付けられているエンドポイントを持つクラス<see cref="T:System.Net.IPEndPoint" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PeerEndPoint (System.Net.IPEndPoint endPoint, string endPointName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Net.IPEndPoint endPoint, string endPointName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.PeerEndPoint.#ctor(System.Net.IPEndPoint,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="endPoint" Type="System.Net.IPEndPoint" />
+        <Parameter Name="endPointName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="endPoint">ピアに関連付けられているエンドポイントです。</param>
+        <param name="endPointName">関連付けられている名前を指定します、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />に含まれるピアに関連付けられているエンドポイントを持つクラス<see cref="T:System.Net.IPEndPoint" />を指定する文字列と<paramref name="endPointName" />です。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="endPoint" />引数を指定<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="endPoint" />指定された有効な IPv6 エンドポイントではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected PeerEndPoint (System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo serializationInfo, valuetype System.Runtime.Serialization.StreamingContext streamingContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.PeerEndPoint.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="serializationInfo" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="streamingContext" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="serializationInfo"><see cref="T:System.Runtime.Serialization.SerializationInfo" /> に関連付けられている <see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />。</param>
+        <param name="streamingContext"><see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" /> に関連付けられているシリアル化の転送先。</param>
+        <summary>新しい初期化<see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />シリアル化に必要な関連付けられているパラメーターを持つインスタンス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.PeerEndPoint.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" /> オブジェクトによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.PeerEndPoint.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" /> に設定し、アンマネージ リソースだけを解放する場合は <see langword="false" /> に設定します。</param>
+        <summary><see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" /> オブジェクトによって使用されているアンマネージ リソースを解放します。オプションでマネージ リソースも解放できます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndPoint">
+      <MemberSignature Language="C#" Value="public System.Net.IPEndPoint EndPoint { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.IPEndPoint EndPoint" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.Collaboration.PeerEndPoint.EndPoint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.IPEndPoint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Net.IPEndPoint" />に関連付けられている IP アドレスを格納している、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />インスタンス。</summary>
+        <value>関連付けられている IP アドレス、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスの状態が破損を避けるためには、呼び出し元が変わらないようにする、<xref:System.Net.PeerToPeer.Collaboration.PeerEndPoint.EndPoint%2A>のインスタンスがから取得された場合は値<xref:System.Net.PeerToPeer.Collaboration.PeerNearMe>または<xref:System.Net.PeerToPeer.Collaboration.PeerContact>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.PeerToPeer.PeerToPeerException">指定した<see cref="P:System.Net.PeerToPeer.Collaboration.PeerEndPoint.EndPoint" />エンドポイントが有効な IPv6 エンドポイントではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Net.PeerToPeer.Collaboration.PeerEndPoint other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(class System.Net.PeerToPeer.Collaboration.PeerEndPoint other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.PeerEndPoint.Equals(System.Net.PeerToPeer.Collaboration.PeerEndPoint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Net.PeerToPeer.Collaboration.PeerEndPoint" />
+      </Parameters>
+      <Docs>
+        <param name="other"><see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />インスタンスが等しいかどうかをテストします。</param>
+        <summary>比較、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />を指定した<see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />インスタンス。</summary>
+        <returns>返します<see langword="true" />場合、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />指定されたインスタンスが一致するデータ、else<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">この <see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" /> オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.PeerEndPoint.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj"><see cref="T:System.Object" />等価性をテストします。</param>
+        <summary>比較、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />を指定した<see cref="T:System.Object" />です。</summary>
+        <returns>返します<see langword="true" />場合、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />が他に、指定したオブジェクト インスタンスと等しい<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public static bool Equals (object objA, object objB);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Equals(object objA, object objB) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.PeerEndPoint.Equals(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="objA" Type="System.Object" />
+        <Parameter Name="objB" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="objA">比較対象となる最初の <see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />。</param>
+        <param name="objB">比較対象となる 2 番目の <see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />。</param>
+        <summary>決定するかどうか、指定した<see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />オブジェクトが等しいと見なされます。</summary>
+        <returns>返します<see langword="true" />場合、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />提供するインスタンスには他のデータを対応する<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.PeerEndPoint.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ハッシュ コードを返します、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />インスタンス。</summary>
+        <returns>32 ビットには、この型のインスタンスを比較に使用される整数ハッシュ コードが署名されています。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="protected virtual void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.PeerEndPoint.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">データの読み込み先となる <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">シリアル化先。</param>
+        <summary><see cref="T:System.Runtime.Serialization.SerializationInfo" /> クラス インスタンスを、指定した <see cref="T:System.Net.PeerToPeer.Collaboration.PeerObject" /> インスタンスをシリアル化するのに必要なデータで、事前設定します。 派生型が基本型を呼び出す必要があります<see cref="M:System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />メソッドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.Collaboration.PeerEndPoint.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.String" />の表示名を表す、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />インスタンス。</summary>
+        <value>
+          <see cref="T:System.String" />表示名を表す、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスの状態が破損を避けるためには、呼び出し元が変わらないようにする、<xref:System.Net.PeerToPeer.Collaboration.PeerEndPoint.EndPoint%2A>のインスタンスがから取得された場合は値<xref:System.Net.PeerToPeer.Collaboration.PeerNearMe>または<xref:System.Net.PeerToPeer.Collaboration.PeerContact>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NameChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Net.PeerToPeer.Collaboration.NameChangedEventArgs&gt; NameChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Net.PeerToPeer.Collaboration.NameChangedEventArgs&gt; NameChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Net.PeerToPeer.Collaboration.PeerEndPoint.NameChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>add: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>remove: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Net.PeerToPeer.Collaboration.NameChangedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>名前に関連付けられているときに通知する<see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />オブジェクトに対する変更。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnNameChanged">
+      <MemberSignature Language="C#" Value="protected void OnNameChanged (System.Net.PeerToPeer.Collaboration.NameChangedEventArgs nameChangedArgs);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void OnNameChanged(class System.Net.PeerToPeer.Collaboration.NameChangedEventArgs nameChangedArgs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.PeerEndPoint.OnNameChanged(System.Net.PeerToPeer.Collaboration.NameChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nameChangedArgs" Type="System.Net.PeerToPeer.Collaboration.NameChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="nameChangedArgs">発生した変更の種類を指定、 <c>PeerName</c>です。</param>
+        <summary>変更が発生したときに呼び出されます、<paramref name="PeerName" />によって指定された、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" />に関連付けられている、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />インスタンス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SynchronizingObject">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.ISynchronizeInvoke SynchronizingObject { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.ISynchronizeInvoke SynchronizingObject" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.Collaboration.PeerEndPoint.SynchronizingObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Description("SynchronizingObject")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.ISynchronizeInvoke</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのイベントを非同期操作の結果としては起動しませんが、固有の仕様を作成したスレッドでコールバック関連付けられているイベント ハンドラーがこのプロパティの値が設定されている場合<see cref="P:System.Net.PeerToPeer.Collaboration.PeerEndPoint.SynchronizingObject" />です。</summary>
+        <value>実装するオブジェクト、<see cref="T:System.ComponentModel.ISynchronizeInvoke" />インターフェイスし、この型のインスタンスによって作成されたスレッドでイベント ハンドラーの同期に使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定の設定値は`null`システムのスレッド プールのスレッドですべてのイベント ハンドラーを呼び出すことを知らせます。  
+  
+ このプロパティは通常に設定する UI 要素など、<xref:System.Windows.Forms.Form>インスタンス。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">呼び出し元のオブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.ISerializable.GetObjectData">
+      <MemberSignature Language="C#" Value="void ISerializable.GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.Serialization.ISerializable.GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.PeerEndPoint.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">データの読み込み先となる <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">シリアル化先。</param>
+        <summary>現在の設定<see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />シリアル化されたソースから取得したデータを持つインスタンス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.PeerEndPoint.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" /> インスタンスを表す <see cref="T:System.String" /> を返します。</summary>
+        <returns>
+          <see cref="T:System.String" />表す、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,39 @@
+<Type Name="HitTestResultCallback" FullName="System.Windows.Media.HitTestResultCallback">
+  <TypeSignature Language="C#" Value="public delegate System.Windows.Media.HitTestResultBehavior HitTestResultCallback(HitTestResult result);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed HitTestResultCallback extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.HitTestResultCallback" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="result" Type="System.Windows.Media.HitTestResult" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Windows.Media.HitTestResultBehavior</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="result">ヒット テストから返されるビジュアル オブジェクトを表す <see cref="T:System.Windows.Media.HitTestResult" /> 値。</param>
+    <summary>ヒット テストのカスタマイズに使用されるコールバックを表します。 WPF を呼び出す、<see cref="T:System.Windows.Media.HitTestResultCallback" />をユーザーにヒット テストの交差部分を報告します。</summary>
+    <returns>ヒット テストの結果のアクションを表す <see cref="T:System.Windows.Media.HitTestFilterBehavior" />。</returns>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ヒット テストのコールバック メソッドは、ヒット テストがビジュアル ツリー内の特定のビジュアル オブジェクトで識別されたときに実行するアクションを定義します。 返すコールバックを想定の操作を実行した後、<xref:System.Windows.Media.HitTestResultBehavior>他のビジュアル オブジェクトのビジュアル ツリーを反復処理を続行するかどうかを決定する値。  
+  
+   
+  
+## Examples  
+ 次の例を呼び出す方法を示しています。<xref:System.Windows.Media.VisualTreeHelper.HitTest%2A>を使用して、<xref:System.Windows.Media.HitTestResultCallback>値。 対応するヒット テストのコールバック メソッドも定義されています。  
+  
+ [!code-csharp[DrawingVisualSample#103](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingVisualSample/CSharp/Window1.xaml.cs#103)]
+ [!code-vb[DrawingVisualSample#103](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DrawingVisualSample/visualbasic/window1.xaml.vb#103)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

@@ -1,0 +1,223 @@
+<Type Name="StarLayoutInfo" FullName="System.Windows.Controls.Ribbon.Primitives.StarLayoutInfo">
+  <TypeSignature Language="C#" Value="public class StarLayoutInfo : System.Windows.DependencyObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StarLayoutInfo extends System.Windows.DependencyObject" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.Ribbon.Primitives.StarLayoutInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.DependencyObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>特定の星型のレイアウトに関する情報が含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、リボンのレイアウトされるパネルを使用して*スター サイズ変更*が使用可能な領域に収まる最大の可能なコントロール バリエーションを表示します。 スター サイズ変更は、使用可能な領域が均等に領域を占有する必要がある要素の間に分割され、規則です。 名前に由来 XAML でアスタリスク (*) を使用して、スター サイズ変更を指定することです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StarLayoutInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.Primitives.StarLayoutInfo.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Ribbon.Primitives.StarLayoutInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllocatedStarWidth">
+      <MemberSignature Language="C#" Value="public double AllocatedStarWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 AllocatedStarWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.Primitives.StarLayoutInfo.AllocatedStarWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>割り当て済みの幅を取得します。</summary>
+        <value>割り当て済みの幅。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllocatedStarWidthProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty AllocatedStarWidthProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty AllocatedStarWidthProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.Primitives.StarLayoutInfo.AllocatedStarWidthProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.Primitives.StarLayoutInfo.AllocatedStarWidth" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestedStarMaxWidth">
+      <MemberSignature Language="C#" Value="public double RequestedStarMaxWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 RequestedStarMaxWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.Primitives.StarLayoutInfo.RequestedStarMaxWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または要求された幅の最大値を設定します。</summary>
+        <value>要求された最大の幅。 登録済みの既定値は <see cref="F:System.Double.PositiveInfinity" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_RequestedStarMaxWidth"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.Primitives.StarLayoutInfo.RequestedStarMaxWidthProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestedStarMaxWidthProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty RequestedStarMaxWidthProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty RequestedStarMaxWidthProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.Primitives.StarLayoutInfo.RequestedStarMaxWidthProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.Primitives.StarLayoutInfo.RequestedStarMaxWidth" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestedStarMinWidth">
+      <MemberSignature Language="C#" Value="public double RequestedStarMinWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 RequestedStarMinWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.Primitives.StarLayoutInfo.RequestedStarMinWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または要求された幅の最小値を設定します。</summary>
+        <value>要求された最小の幅。 登録済みの既定値は 0.0 です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_RequestedStarMinWidth"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.Primitives.StarLayoutInfo.RequestedStarMinWidthProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestedStarMinWidthProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty RequestedStarMinWidthProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty RequestedStarMinWidthProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.Primitives.StarLayoutInfo.RequestedStarMinWidthProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.Primitives.StarLayoutInfo.RequestedStarMinWidth" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestedStarWeight">
+      <MemberSignature Language="C#" Value="public double RequestedStarWeight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 RequestedStarWeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.Primitives.StarLayoutInfo.RequestedStarWeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または要求された重みを設定します。</summary>
+        <value>要求された重み。 登録済みの既定値は 0.0 です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_RequestedStarWeight"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.Primitives.StarLayoutInfo.RequestedStarWeightProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestedStarWeightProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty RequestedStarWeightProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty RequestedStarWeightProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.Primitives.StarLayoutInfo.RequestedStarWeightProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.Primitives.StarLayoutInfo.RequestedStarWeight" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,159 @@
+<Type Name="OperationContextScope" FullName="System.ServiceModel.OperationContextScope">
+  <TypeSignature Language="C#" Value="public sealed class OperationContextScope : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OperationContextScope extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.OperationContextScope" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>スコープに <see cref="T:System.ServiceModel.OperationContext" /> オブジェクトが含まれるブロックを作成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.OperationContextScope> クラスを使用して、指定した <xref:System.ServiceModel.OperationContext> オブジェクトを使用する特定の <xref:System.ServiceModel.OperationContext> オブジェクトまたは新しい<xref:System.ServiceModel.IContextChannel> オブジェクトのスコープを作成します。 <xref:System.ServiceModel.OperationContextScope> は、[!INCLUDE[indigo1](~/includes/indigo1-md.md)]サービスまたは [!INCLUDE[indigo2](~/includes/indigo2-md.md)] クライアント アプリケーションの中で使用できます。  
+  
+ <xref:System.ServiceModel.OperationContextScope> オブジェクトが現在の操作コンテキストを確立した後は、<xref:System.ServiceModel.OperationContext> を使用して、次の操作を実行できます。  
+  
+-   受信メッセージと送信メッセージのヘッダーと他のプロパティにアクセスして変更します。  
+  
+-   ディスパッチャー、ホスト、チャネル、および拡張を含むランタイムにアクセスします。  
+  
+-   セキュリティ、インスタンス、および要求コンテキストなどの他の種類のコンテキストにアクセスします。  
+  
+-   <xref:System.ServiceModel.OperationContext> オブジェクトに関連付けられたチャネルにアクセスします。チャネルが <xref:System.ServiceModel.Channels.ISession?displayProperty=nameWithType> を実装する場合は、関連付けられたチャネルのセッション ID にアクセスします。  
+  
+ <xref:System.ServiceModel.OperationContextScope> が作成されると、現在の <xref:System.ServiceModel.OperationContext> は保存され、新しい <xref:System.ServiceModel.OperationContext> が <xref:System.ServiceModel.OperationContext.Current%2A> プロパティによって返される値になります。 <xref:System.ServiceModel.OperationContextScope> が破棄されると、元の <xref:System.ServiceModel.OperationContext> が復元されます。  
+  
+> [!WARNING]
+>  OperationContextScope ブロック内で"await"の非同期パターンを使用しません。 継続が発生しては別のスレッドで実行され OperationContextScope はスレッドを特定します。 非同期呼び出しの場合は"await"を呼び出す必要がある場合は、OperationContextScope ブロックの外側で使用します。  
+  
+   
+  
+## Examples  
+ 次の例では、送信メッセージにカスタム ヘッダーを追加するために、<xref:System.ServiceModel.OperationContextScope> を使用してクライアント アプリケーションに新しいコンテキストを作成する方法を示しています。  
+  
+ [!code-csharp[OperationContextScope#3](~/samples/snippets/csharp/VS_Snippets_CFX/operationcontextscope/cs/client.cs#3)]
+ [!code-vb[OperationContextScope#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/operationcontextscope/vb/client.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OperationContextScope (System.ServiceModel.IContextChannel channel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.IContextChannel channel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.OperationContextScope.#ctor(System.ServiceModel.IContextChannel)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="channel" Type="System.ServiceModel.IContextChannel" />
+      </Parameters>
+      <Docs>
+        <param name="channel">新しい <see cref="T:System.ServiceModel.OperationContext" /> のスコープを作成するときに使用するチャネル。</param>
+        <summary>指定した <see cref="T:System.ServiceModel.OperationContextScope" /> を使用して新しい <see cref="T:System.ServiceModel.IContextChannel" /> のスコープを作成する<see cref="T:System.ServiceModel.OperationContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.OperationContextScope.%23ctor%2A> コンストラクターを使用して、送信メッセージ ヘッダーの追加または変更、受信メッセージ ヘッダーの読み取り、または <xref:System.ServiceModel.OperationContext> のその他の実行時プロパティにアクセスできる、クライアント チャネルの新しい <xref:System.ServiceModel.OperationContext> を作成します。  
+  
+ 新しく作成された <xref:System.ServiceModel.OperationContext.IncomingMessageHeaders%2A?displayProperty=nameWithType> の <xref:System.ServiceModel.OperationContext> プロパティに追加されるヘッダーは、<xref:System.ServiceModel.OperationContextScope.%23ctor%2A> コンストラクターに渡されたチャネルに対してのみ適用されます。 ユーザーがスコープ内で新しいチャネルを作成しても、その新しいチャネルで送信されるメッセージにはヘッダーは適用されません。  
+  
+   
+  
+## Examples  
+ 次の例では、送信メッセージにカスタム ヘッダーを追加するために、<xref:System.ServiceModel.OperationContextScope> を使用してクライアント アプリケーションに新しいコンテキストを作成しています。  
+  
+ [!code-csharp[OperationContextScope#4](~/samples/snippets/csharp/VS_Snippets_CFX/operationcontextscope/cs/client.cs#4)]
+ [!code-vb[OperationContextScope#4](~/samples/snippets/visualbasic/VS_Snippets_CFX/operationcontextscope/vb/client.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OperationContextScope (System.ServiceModel.OperationContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.OperationContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.OperationContextScope.#ctor(System.ServiceModel.OperationContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.OperationContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">作成されたスコープのアクティブな <see cref="T:System.ServiceModel.OperationContext" />。</param>
+        <summary>指定した <see cref="T:System.ServiceModel.OperationContextScope" /> オブジェクトのスコープを作成する <see cref="T:System.ServiceModel.OperationContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.OperationContextScope.%23ctor%2A> コンストラクターを使用して、指定した <xref:System.ServiceModel.OperationContextScope> オブジェクトが現在のスコープであるコード ブロックを作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.OperationContextScope.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>元の <see cref="T:System.ServiceModel.OperationContext" /> をアクティブなコンテキストに復元し、<see cref="T:System.ServiceModel.OperationContextScope" /> オブジェクトをリサイクルします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

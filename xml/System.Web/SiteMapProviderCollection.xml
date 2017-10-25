@@ -1,0 +1,210 @@
+<Type Name="SiteMapProviderCollection" FullName="System.Web.SiteMapProviderCollection">
+  <TypeSignature Language="C#" Value="public sealed class SiteMapProviderCollection : System.Configuration.Provider.ProviderCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SiteMapProviderCollection extends System.Configuration.Provider.ProviderCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.SiteMapProviderCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.Provider.ProviderCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>によって使用される、<see cref="T:System.Web.SiteMap" />クラスのセットを追跡する<see cref="T:System.Web.SiteMapProvider" />に使用可能なオブジェクト、<see cref="T:System.Web.SiteMap" />サイト マップの初期化中にします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SiteMapProviderCollection>クラスは厳密に型指定された<xref:System.Collections.Hashtable>のコレクション<xref:System.Web.SiteMapProvider>オブジェクト。 2 つに加えて追加のメソッド、<xref:System.Web.SiteMapProviderCollection.Add%28System.Configuration.Provider.ProviderBase%29>と<xref:System.Web.SiteMapProviderCollection.Add%28System.Web.SiteMapProvider%29>、<xref:System.Web.SiteMapProviderCollection>クラスでサポート、<xref:System.Web.SiteMapProviderCollection.AddArray%2A>型の配列を追加するメソッドを<xref:System.Web.SiteMapProvider>です。  
+  
+ <xref:System.Web.SiteMapProviderCollection>によって使用される、<xref:System.Web.SiteMap>クラスのセットを追跡する<xref:System.Web.SiteMapProvider>に使用可能なオブジェクト、<xref:System.Web.SiteMap>サイト マップの初期化中にします。 ただしの存在、<xref:System.Web.SiteMapProvider>プロバイダーのコレクションが必ずしもによって使用されている、<xref:System.Web.SiteMap>オブジェクト、使用可能であることだけです。  
+  
+ ときに、<xref:System.Web.SiteMapProvider>に格納されて、 <xref:System.Web.SiteMapProviderCollection>、<xref:System.Configuration.Provider.ProviderBase.Name%2A>プロパティは、キーとして使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Web.SiteMapProviderCollection>オブジェクトから、<xref:System.Web.SiteMap>オブジェクトし、それを反復処理します。  
+  
+ サイト用に構成された既定のプロバイダーだけがある場合は、表示されている各プロバイダーが表示されます。 サンプルを使用している場合など、`AccessSiteMapProvider`で見つかった、<xref:System.Web.SiteMapProvider>クラスの概要については、次の出力が表示されます。  
+  
+```  
+XmlSiteMapProvider   System.Web.XmlSiteMapProvider  
+AccessSiteMapProvider   Samples.AspNet.Controls.AccessSiteMapProvider  
+```  
+  
+ [!code-aspx-csharp[System.Web.SiteMap_2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SiteMap_2/CS/catalog2cs.aspx#1)]
+ [!code-aspx-vb[System.Web.SiteMap_2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SiteMap_2/VB/catalog2vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SiteMapProviderCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapProviderCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.SiteMapProviderCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SiteMapProviderCollection.%23ctor%2A>既定のコンス トラクターが既定値にフィールドを初期化します  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public override void Add (System.Configuration.Provider.ProviderBase provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Add(class System.Configuration.Provider.ProviderBase provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapProviderCollection.Add(System.Configuration.Provider.ProviderBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.Configuration.Provider.ProviderBase" />
+      </Parameters>
+      <Docs>
+        <param name="provider">追加する <see cref="T:System.Web.SiteMapProvider" />。</param>
+        <summary>追加、<see cref="T:System.Web.SiteMapProvider" />プロバイダーのコレクションを使用する、<see cref="P:System.Configuration.Provider.ProviderBase.Name" />プロパティをキーとして。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SiteMapProviderCollection>によって返されるオブジェクト、<xref:System.Web.SiteMap.Providers%2A>プロパティは読み取り専用です。 このため、使用することはできません、<xref:System.Web.SiteMapProviderCollection.Add%2A>と<xref:System.Web.SiteMapProviderCollection.AddArray%2A>にプログラムで追加のプロバイダーを追加するメソッドを実行します。 したがって、<xref:System.Web.SiteMapProviderCollection.Add%2A>と<xref:System.Web.SiteMapProviderCollection.AddArray%2A>メソッドを手動でサイト マップ プロバイダー オブジェクトを作成および管理するそれらのインスタンスのシナリオでのみ使用される、<xref:System.Web.SiteMapProviderCollection>クラスです。 <xref:System.Web.SiteMapProviderCollection.Add%28System.Configuration.Provider.ProviderBase%29>メソッドは、指定されたプロバイダーの種類をチェックしを呼び出して、<xref:System.Web.SiteMapProviderCollection.Add%28System.Web.SiteMapProvider%29>をコレクションに追加するメソッド。  
+  
+ <xref:System.Web.SiteMap>クラスはすべて静的、<xref:System.Web.SiteMapProvider>に含まれているその<xref:System.Web.SiteMap.Providers%2A>コレクションは、Web アプリケーションの有効期間がします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="P:System.Configuration.Provider.ProviderBase.Name" />の<see cref="T:System.Web.SiteMapProvider" />は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="provider" />インスタンスではない、<see cref="T:System.Web.SiteMapProvider" />クラスです。  
+  
+ \- または  
+  
+ A<see cref="T:System.Web.SiteMapProvider" />と同じ名前は既に、<see cref="T:System.Web.SiteMapProviderCollection" />です。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Web.SiteMapProviderCollection" /> は読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Web.SiteMapProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Web.SiteMapProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapProviderCollection.Add(System.Web.SiteMapProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.Web.SiteMapProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">追加する <see cref="T:System.Web.SiteMapProvider" />。</param>
+        <summary>追加、 <see cref="T:System.Web.SiteMapProvider" /> 、プロバイダーを使用してコレクションにオブジェクト、<see cref="P:System.Configuration.Provider.ProviderBase.Name" />プロパティをキーとして。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SiteMapProviderCollection>によって返されるオブジェクト、<xref:System.Web.SiteMap.Providers%2A>プロパティは読み取り専用です。 このため、使用することはできません、<xref:System.Web.SiteMapProviderCollection.Add%2A>と<xref:System.Web.SiteMapProviderCollection.AddArray%2A>をプログラムで追加のプロバイダーを追加する方法、<xref:System.Web.SiteMap>実行時にします。 したがって、<xref:System.Web.SiteMapProviderCollection.Add%2A>と<xref:System.Web.SiteMapProviderCollection.AddArray%2A>メソッドを手動でサイト マップ プロバイダー オブジェクトを作成および管理するそれらのインスタンスのシナリオでのみ使用される、<xref:System.Web.SiteMapProviderCollection>クラスです。 使用して、<xref:System.Web.SiteMapProviderCollection.Add%2A>メソッドを 1 つを追加するときに<xref:System.Web.SiteMapProvider>を<xref:System.Web.SiteMapProviderCollection>です。  
+  
+ <xref:System.Web.SiteMap>クラスはすべて静的、<xref:System.Web.SiteMapProvider>に含まれているその<xref:System.Web.SiteMap.Providers%2A>コレクションは、Web アプリケーションの有効期間がします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="provider" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Web.SiteMapProviderCollection" /> は読み取り専用です。</exception>
+        <exception cref="T:System.ArgumentException">A<see cref="T:System.Web.SiteMapProvider" />と同じ名前は既に、<see cref="T:System.Web.SiteMapProviderCollection" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddArray">
+      <MemberSignature Language="C#" Value="public void AddArray (System.Web.SiteMapProvider[] providerArray);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddArray(class System.Web.SiteMapProvider[] providerArray) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapProviderCollection.AddArray(System.Web.SiteMapProvider[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="providerArray" Type="System.Web.SiteMapProvider[]" />
+      </Parameters>
+      <Docs>
+        <param name="providerArray">配列<see cref="T:System.Web.SiteMapProvider" />を追加するオブジェクト。</param>
+        <summary>配列を追加<see cref="T:System.Web.SiteMapProvider" />、プロバイダーを使用してコレクションにオブジェクト、<see cref="P:System.Configuration.Provider.ProviderBase.Name" />プロパティをキーとして。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SiteMapProviderCollection>によって返される、<xref:System.Web.SiteMap.Providers%2A>プロパティは読み取り専用です。 このため、使用することはできません、<xref:System.Web.SiteMapProviderCollection.Add%2A>と<xref:System.Web.SiteMapProviderCollection.AddArray%2A>にプログラムで追加のプロバイダーを追加するメソッドを実行します。 したがって、<xref:System.Web.SiteMapProviderCollection.Add%2A>と<xref:System.Web.SiteMapProviderCollection.AddArray%2A>メソッドを手動でサイト マップ プロバイダー オブジェクトを作成および管理するそれらのインスタンスのシナリオでのみ使用、<xref:System.Web.SiteMapProviderCollection>クラスです。  
+  
+ <xref:System.Web.SiteMap>クラスはすべて静的、<xref:System.Web.SiteMapProvider>に含まれているその<xref:System.Web.SiteMap.Providers%2A>コレクションは、Web アプリケーションの有効期間がします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">A<see cref="T:System.Web.SiteMapProvider" />と同じ名前は既に、<see cref="T:System.Web.SiteMapProviderCollection" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="providerArray" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Web.SiteMapProviderCollection" /> は読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.SiteMapProvider this[string name] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.SiteMapProvider Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapProviderCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.SiteMapProvider</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Web.SiteMapProvider" />を検索します。</param>
+        <summary>取得、<see cref="T:System.Web.SiteMapProvider" />プロバイダーのコレクションから特定の名前を持つオブジェクト。</summary>
+        <value>A<see cref="T:System.Web.SiteMapProvider" />を表す、<see cref="T:System.Web.SiteMapProviderCollection" />要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内容を繰り返し処理するインデクサーを使用することができます、<xref:System.Web.SiteMapProviderCollection>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Web.SiteMapProviderCollection.Item%2A> ASP.NET 既定値を取得するプロパティを<xref:System.Web.SiteMapProvider>オブジェクトから、<xref:System.Web.SiteMapProviderCollection>ときに返されるオブジェクト、<xref:System.Web.SiteMap.Providers%2A>コレクションにアクセスします。  
+  
+ [!code-csharp[System.Web.SiteMapProviderCollection_2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SiteMapProviderCollection_2/CS/sitemapprov2cs.aspx#1)]
+ [!code-vb[System.Web.SiteMapProviderCollection_2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SiteMapProviderCollection_2/VB/sitemapprov2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

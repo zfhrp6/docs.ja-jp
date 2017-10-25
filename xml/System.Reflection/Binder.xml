@@ -1,0 +1,429 @@
+<Type Name="Binder" FullName="System.Reflection.Binder">
+  <TypeSignature Language="C#" Value="public abstract class Binder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit Binder extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Reflection.Binder" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDual)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>候補の一覧からメンバーを選択し、実引数の型から仮引数型への型変換を実行します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装、<xref:System.Reflection.Binder>クラスがなどのメソッドによって使用される<xref:System.Type.InvokeMember%2A?displayProperty=nameWithType>パラメーターの型と引数値のセットに基づいて実行するには可能なメンバーのセットから選択を<xref:System.Type.GetMethod%2A?displayProperty=nameWithType>メソッドとパラメーターの型に基づいて選択されます。  
+  
+ 既定の実装、<xref:System.Reflection.Binder>によってクラスが提供される、<xref:System.Type.DefaultBinder%2A?displayProperty=nameWithType>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例を実装しのすべてのメンバーを示しています、`Binder`クラスです。 プライベート メソッド`CanConvertFrom`指定された型の互換性のある型を検索します。  
+  
+ [!code-cpp[Binder_1#1](~/samples/snippets/cpp/VS_Snippets_CLR/Binder_1/CPP/binder.cpp#1)]
+ [!code-csharp[Binder_1#1](~/samples/snippets/csharp/VS_Snippets_CLR/Binder_1/CS/binder.cs#1)]
+ [!code-vb[Binder_1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Binder_1/VB/binder.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>継承する場合<see cref="T:System.Reflection.Binder" />、次のメンバーをオーバーライドする必要があります: <see cref="M:System.Reflection.Binder.BindToMethod(System.Reflection.BindingFlags,System.Reflection.MethodBase[],System.Object[]@,System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[],System.Object@)" />、 <see cref="M:System.Reflection.Binder.BindToField(System.Reflection.BindingFlags,System.Reflection.FieldInfo[],System.Object,System.Globalization.CultureInfo)" />、 <see cref="M:System.Reflection.Binder.ReorderArgumentArray(System.Object[]@,System.Object)" />、 <see cref="M:System.Reflection.Binder.SelectMethod(System.Reflection.BindingFlags,System.Reflection.MethodBase[],System.Type[],System.Reflection.ParameterModifier[])" />、 <see cref="M:System.Reflection.Binder.SelectProperty(System.Reflection.BindingFlags,System.Reflection.PropertyInfo[],System.Type,System.Type[],System.Reflection.ParameterModifier[])" />、および<see cref="M:System.Reflection.Binder.ChangeType(System.Object,System.Type,System.Globalization.CultureInfo)" />です。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Binder ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Binder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Reflection.Binder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、この型の状態を初期化するために、派生クラスのコンス トラクターによって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BindToField">
+      <MemberSignature Language="C#" Value="public abstract System.Reflection.FieldInfo BindToField (System.Reflection.BindingFlags bindingAttr, System.Reflection.FieldInfo[] match, object value, System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.FieldInfo BindToField(valuetype System.Reflection.BindingFlags bindingAttr, class System.Reflection.FieldInfo[] match, object value, class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Binder.BindToField(System.Reflection.BindingFlags,System.Reflection.FieldInfo[],System.Object,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.FieldInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="match" Type="System.Reflection.FieldInfo[]" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="bindingAttr">ビットごとの組み合わせ<see cref="T:System.Reflection.BindingFlags" />値。</param>
+        <param name="match">照合の対象となるフィールドのセット。 たとえば、<see cref="T:System.Reflection.Binder" />でオブジェクトを使用して<see cref="Overload:System.Type.InvokeMember" />、このパラメーターの指定を可能にするリフレクションと判断したフィールドのセットと一致する、通常、適切なメンバー名があるためです。 既定の実装によって提供される<see cref="P:System.Type.DefaultBinder" />この配列の順序を変更します。</param>
+        <param name="value">フィールドの値が一致するフィールドを検索するために使用します。</param>
+        <param name="culture">インスタンス<see cref="T:System.Globalization.CultureInfo" />型の強制バインダーの実装でのデータ型の強制変換を制御に使用されます。 場合<c>カルチャ</c>は<see langword="null" />、<see cref="T:System.Globalization.CultureInfo" />現在のスレッドが使用されます。  
+  
+ 注の例では、バインダーの実装により、文字列の値を数値型の強制変換このパラメーターは変換するために必要な<see langword="String" />1000 を表す、<see langword="Double" />値、別のカルチャによって 1000 が異なる方法で表されているためです。 既定のバインダーは、このような文字列の強制型変換を行いません。</param>
+        <summary>指定した条件に基づいて、フィールドの指定したセットからフィールドを選択します。</summary>
+        <returns>一致するフィールドです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`bindingAttr`は含まれません<xref:System.Reflection.BindingFlags?displayProperty=nameWithType>、によって提供される既定のバインダー実装<xref:System.Type.DefaultBinder%2A?displayProperty=nameWithType>の最初の要素を単純に返します`match`です。 選択は実行されません。  
+  
+ このメソッドによって提供されるバインディングの制御<xref:System.Type.InvokeMember%2A?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Reflection.AmbiguousMatchException">既定のバインダー<paramref name="bindingAttr" />が含まれています<see cref="F:System.Reflection.BindingFlags.SetField" />、および<paramref name="match" />一致では均等に複数のフィールドが含まれています<paramref name="value" />です。 たとえば、<paramref name="value" />が含まれています、 <c>MyClass</c>を実装するオブジェクト、<c>されており</c>インターフェイス、および<paramref name="match" />型のフィールドが含まれています<c>MyClass</c>および型のフィールド<c>されており</c>です。</exception>
+        <exception cref="T:System.MissingFieldException">既定のバインダー<paramref name="bindingAttr" />が含まれています<see cref="F:System.Reflection.BindingFlags.SetField" />、および<paramref name="match" />受け入れることができるフィールドが含まれていない<paramref name="value" />です。</exception>
+        <exception cref="T:System.NullReferenceException">既定のバインダー<paramref name="bindingAttr" />が含まれています<see cref="F:System.Reflection.BindingFlags.SetField" />、および<paramref name="match" />は<see langword="null" />または空の配列。  
+  
+ または  
+  
+ <paramref name="bindingAttr" />含む<see cref="F:System.Reflection.BindingFlags.SetField" />、および<paramref name="value" />は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BindToMethod">
+      <MemberSignature Language="C#" Value="public abstract System.Reflection.MethodBase BindToMethod (System.Reflection.BindingFlags bindingAttr, System.Reflection.MethodBase[] match, ref object[] args, System.Reflection.ParameterModifier[] modifiers, System.Globalization.CultureInfo culture, string[] names, out object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.MethodBase BindToMethod(valuetype System.Reflection.BindingFlags bindingAttr, class System.Reflection.MethodBase[] match, object[]&amp; args, valuetype System.Reflection.ParameterModifier[] modifiers, class System.Globalization.CultureInfo culture, string[] names, [out] object&amp; state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Binder.BindToMethod(System.Reflection.BindingFlags,System.Reflection.MethodBase[],System.Object[]@,System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[],System.Object@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodBase</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="match" Type="System.Reflection.MethodBase[]" />
+        <Parameter Name="args" Type="System.Object[]&amp;" RefType="ref" />
+        <Parameter Name="modifiers" Type="System.Reflection.ParameterModifier[]" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="names" Type="System.String[]" />
+        <Parameter Name="state" Type="System.Object&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="bindingAttr">ビットごとの組み合わせ<see cref="T:System.Reflection.BindingFlags" />値。</param>
+        <param name="match">照合の対象となるメソッドのセット。 たとえば、ときに、<see cref="T:System.Reflection.Binder" />でオブジェクトを使用して<see cref="Overload:System.Type.InvokeMember" />、このパラメーターの指定を可能にするリフレクションと判断したメソッドのセットと一致する、通常、適切なメンバー名があるためです。 既定の実装によって提供される<see cref="P:System.Type.DefaultBinder" />この配列の順序を変更します。</param>
+        <param name="args">渡される引数。 バインダーがこの配列内の引数の順序を変更できます。既定のバインダーが引数の順序を変更する場合など、<c>名</c>パラメーターを使用して、位置指定の順序以外の順序を指定します。 場合バインダーの実装では、引数の型を変換、型と引数の値を変更できるとします。</param>
+        <param name="modifiers">種類が変更されているパラメーター シグネチャを使用するバインディングを有効にするパラメーター修飾子の配列。 既定のバインダー実装では、このパラメーターは使用しません。</param>
+        <param name="culture">インスタンス<see cref="T:System.Globalization.CultureInfo" />型の強制バインダーの実装でのデータ型の強制変換を制御に使用されます。 場合<c>カルチャ</c>は<see langword="null" />、<see cref="T:System.Globalization.CultureInfo" />現在のスレッドが使用されます。  
+  
+ 注の例では、バインダーの実装により、文字列の値を数値型の強制変換このパラメーターは変換するために必要な<see langword="String" />1000 を表す、<see langword="Double" />値、別のカルチャによって 1000 が異なる方法で表されているためです。 既定のバインダーは、このような文字列の強制型変換を行いません。</param>
+        <param name="names">パラメーター名では、照合するときに考慮する場合、パラメーター名または<see langword="null" />引数がパラメーターで扱われる場合。 たとえば、引数が位置指定の順序で指定されていない場合は、パラメーター名を使用する必要があります。</param>
+        <param name="state">このメソッドから制御が戻た後<c>状態</c>バインダー指定のオブジェクトで、引数の順序変更の追跡が含まれています。 バインダーがこのオブジェクトを作成し、バインダーがこのオブジェクトの唯一のコンシューマーです。 場合<c>状態</c>は<see langword="null" />とき<see langword="BindToMethod" />を返します、渡す必要があります<c>状態</c>を<see cref="M:System.Reflection.Binder.ReorderArgumentArray(System.Object[]@,System.Object)" />メソッドを復元する場合<c>args</c>元値を取得できるようにするなど、注文<see langword="ref" />パラメーター (<see langword="ByRef" /> Visual Basic でのパラメーター)。</param>
+        <summary>指定された引数に基づいて、メソッドの指定したセットから呼び出すメソッドを選択します。</summary>
+        <returns>一致するメソッド。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のバインダーでは、値を持つパラメーターの両方を考慮に入れますと`params`配列 (`ParamArray` Visual Basic の配列)。 したがって、可能であれば一致を見つける場合を`args`と`match`同じ数要素にはが含まれていません。  
+  
+ バインダーにより、クライアントは、引数の配列がによって操作されている場合、元の形式への引数の配列のマッピングを<xref:System.Reflection.Binder.BindToMethod%2A>です。 このような引数が存在する場合は、参照渡しの引数を戻るには、この再割り当て機能を使用します。 名前で引数を渡した場合、バインダーは、引数の配列を並べ替えます。 `state`パラメーターの追跡の並べ替え、ため、バインダーの引数<xref:System.Reflection.Binder.ReorderArgumentArray%2A>を元の形式に引数の配列を並べ替えるにはメソッドです。  
+  
+ <xref:System.Reflection.Binder.BindToMethod%2A>メソッドを使って、<xref:System.Type.InvokeMember%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Reflection.AmbiguousMatchException">既定のバインダー<paramref name="match" />一致では均等に複数のメソッドが含まれます<paramref name="args" />です。 たとえば、<paramref name="args" />が含まれています、 <c>MyClass</c>を実装するオブジェクト、<c>されており</c>インターフェイス、および<paramref name="match" />を受け取るメソッドを含む<c>MyClass</c>受け取るメソッド<c>されており</c>です。</exception>
+        <exception cref="T:System.MissingMethodException">既定のバインダー<paramref name="match" />で指定された引数を受け入れることができるメソッドが含まれていない<paramref name="args" />です。</exception>
+        <exception cref="T:System.ArgumentException">既定のバインダー<paramref name="match" />は<see langword="null" />または空の配列。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanChangeType">
+      <MemberSignature Language="C#" Value="public virtual bool CanChangeType (object value, Type type, System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanChangeType(object value, class System.Type type, class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Binder.CanChangeType(System.Object,System.Type,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="value">To be added.</param>
+        <param name="type">To be added.</param>
+        <param name="culture">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangeType">
+      <MemberSignature Language="C#" Value="public abstract object ChangeType (object value, Type type, System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object ChangeType(object value, class System.Type type, class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Binder.ChangeType(System.Object,System.Type,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="value">新しい変更するのには、オブジェクト<see langword="Type" />です。</param>
+        <param name="type">新しい<see langword="Type" />を<c>値</c>になります。</param>
+        <param name="culture">インスタンス<see cref="T:System.Globalization.CultureInfo" />データ型の強制変換を制御に使用されます。 場合<c>カルチャ</c>は<see langword="null" />、<see cref="T:System.Globalization.CultureInfo" />現在のスレッドが使用されます。  
+  
+ 注の例では、このパラメーターは変換する必要が、 <see langword="String" /> 1000 を表す、<see langword="Double" />値、別のカルチャによって 1000 が異なる方法で表されているためです。</param>
+        <summary>型を変更する、指定された<see langword="Object" />を指定された<see langword="Type" />です。</summary>
+        <returns>新しい種類として指定された値を格納するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リフレクションには、共通型システムのアクセシビリティ規則がモデル化します。 たとえば、呼び出し元が、同じアセンブリ内にある場合は、呼び出し元は、必要はありません特殊なアクセス許可内部メンバーの。 それ以外の場合、呼び出し元が必要な<xref:System.Security.Permissions.ReflectionPermission>します。 これは、保護されているメンバーの参照と一貫性のある、プライベート、およびなどです。  
+  
+ 一般的な方針は`ChangeType`拡大変換で、データが失われることのみを実行する必要があります。 拡大型の強制の例には、64 ビット符号付き整数である値を 32 ビット符号付き整数の値が強制変換します。 これは、データが失われる可能性があります縮小強制変換と区別されます。 縮小強制変換の例の強制型変換は 32 ビット符号付き整数に 64 ビット符号付き整数。  
+  
+ 次の表に、既定では、実行の強制型変換`ChangeType`です。  
+  
+|変換元の型|変換後の型|  
+|-----------------|-----------------|  
+|任意の型|その基本型です。|  
+|任意の型|実装するインターフェイスです。|  
+|Char|UInt16、UInt32、Int32、UInt64、Int64、Single、Double|  
+|Byte|Char、UInt16、Int16、UInt32、Int32、UInt64、Int64、Single、Double|  
+|SByte|Int16、Int32、Int64、Single、Double|  
+|UInt16|UInt32、Int32、UInt64、Int64、Single、Double|  
+|Int16|Int32、Int64、Single、Double|  
+|UInt32|UInt64、Int64、Single、Double|  
+|Int32|Int64、Single、Double|  
+|UInt64|Single、Double|  
+|Int64|Single、Double|  
+|Single|倍精度浮動小数点型|  
+|非参照|参照渡しされます。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReorderArgumentArray">
+      <MemberSignature Language="C#" Value="public abstract void ReorderArgumentArray (ref object[] args, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ReorderArgumentArray(object[]&amp; args, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Binder.ReorderArgumentArray(System.Object[]@,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="args" Type="System.Object[]&amp;" RefType="ref" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="args">渡される実際の引数。 型と引数の値の両方を変更することができます。</param>
+        <param name="state">引数の順序変更の追跡をバインダー指定のオブジェクト。</param>
+        <summary>戻ったときに<see cref="M:System.Reflection.Binder.BindToMethod(System.Reflection.BindingFlags,System.Reflection.MethodBase[],System.Object[]@,System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[],System.Object@)" />、復元、<paramref name="args" />からの送信時に渡す引数<see langword="BindToMethod" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、共通言語ランタイムはこのメソッドを呼び出して`state`は`null`から戻った後`BindToMethod`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectMethod">
+      <MemberSignature Language="C#" Value="public abstract System.Reflection.MethodBase SelectMethod (System.Reflection.BindingFlags bindingAttr, System.Reflection.MethodBase[] match, Type[] types, System.Reflection.ParameterModifier[] modifiers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.MethodBase SelectMethod(valuetype System.Reflection.BindingFlags bindingAttr, class System.Reflection.MethodBase[] match, class System.Type[] types, valuetype System.Reflection.ParameterModifier[] modifiers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Binder.SelectMethod(System.Reflection.BindingFlags,System.Reflection.MethodBase[],System.Type[],System.Reflection.ParameterModifier[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodBase</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="match" Type="System.Reflection.MethodBase[]" />
+        <Parameter Name="types" Type="System.Type[]" />
+        <Parameter Name="modifiers" Type="System.Reflection.ParameterModifier[]" />
+      </Parameters>
+      <Docs>
+        <param name="bindingAttr">ビットごとの組み合わせ<see cref="T:System.Reflection.BindingFlags" />値。</param>
+        <param name="match">照合の対象となるメソッドのセット。 たとえば、ときに、<see cref="T:System.Reflection.Binder" />でオブジェクトを使用して<see cref="Overload:System.Type.InvokeMember" />、このパラメーターの指定を可能にするリフレクションと判断したメソッドのセットと一致する、通常、適切なメンバー名があるためです。 既定の実装によって提供される<see cref="P:System.Type.DefaultBinder" />この配列の順序を変更します。</param>
+        <param name="types">パラメーターの型が一致するメソッドを検索するために使用します。</param>
+        <param name="modifiers">種類が変更されているパラメーター シグネチャを使用するバインディングを有効にするパラメーター修飾子の配列。</param>
+        <summary>指定した引数の型に基づいて、メソッドのセットからメソッドを選択します。</summary>
+        <returns>場合、一致メソッドが見つかりました。それ以外の場合、<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが返す`null`条件に一致するメソッドがない場合。 このメソッドによって提供される選択を制御する、`GetConstructor`と`GetMethod`メソッド`Type`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Reflection.AmbiguousMatchException">既定のバインダー<paramref name="match" />で説明されているパラメーターの型に一致する同等である複数のメソッドを含む<paramref name="types" />です。 配列など、<paramref name="types" />が含まれています、<see cref="T:System.Type" />オブジェクトに対する<c>MyClass</c>とに配列<paramref name="match" />の基本クラスを受け取るメソッドが含まれています<c>MyClass</c>とを受け取るメソッドインターフェイスを<c>MyClass</c>を実装します。</exception>
+        <exception cref="T:System.ArgumentException">既定のバインダー<paramref name="match" />は<see langword="null" />または空の配列。  
+  
+ または  
+  
+ 要素<paramref name="types" />から派生した<see cref="T:System.Type" />の型はありませんが、<see langword="RuntimeType" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectProperty">
+      <MemberSignature Language="C#" Value="public abstract System.Reflection.PropertyInfo SelectProperty (System.Reflection.BindingFlags bindingAttr, System.Reflection.PropertyInfo[] match, Type returnType, Type[] indexes, System.Reflection.ParameterModifier[] modifiers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.PropertyInfo SelectProperty(valuetype System.Reflection.BindingFlags bindingAttr, class System.Reflection.PropertyInfo[] match, class System.Type returnType, class System.Type[] indexes, valuetype System.Reflection.ParameterModifier[] modifiers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Binder.SelectProperty(System.Reflection.BindingFlags,System.Reflection.PropertyInfo[],System.Type,System.Type[],System.Reflection.ParameterModifier[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.PropertyInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="match" Type="System.Reflection.PropertyInfo[]" />
+        <Parameter Name="returnType" Type="System.Type" />
+        <Parameter Name="indexes" Type="System.Type[]" />
+        <Parameter Name="modifiers" Type="System.Reflection.ParameterModifier[]" />
+      </Parameters>
+      <Docs>
+        <param name="bindingAttr">ビットごとの組み合わせ<see cref="T:System.Reflection.BindingFlags" />値。</param>
+        <param name="match">照合の対象となるプロパティのセット。 たとえば、ときに、<see cref="T:System.Reflection.Binder" />でオブジェクトを使用して<see cref="Overload:System.Type.InvokeMember" />、このパラメーターの指定を可能にするリフレクションと判断したプロパティのセットと一致する、通常、適切なメンバー名があるためです。 既定の実装によって提供される<see cref="P:System.Type.DefaultBinder" />この配列の順序を変更します。</param>
+        <param name="returnType">戻り値に一致するプロパティが必要です。</param>
+        <param name="indexes">検索対象のプロパティのインデックスの種類。 クラスのインデクサーなどのインデックスのプロパティに使用されます。</param>
+        <param name="modifiers">種類が変更されているパラメーター シグネチャを使用するバインディングを有効にするパラメーター修飾子の配列。</param>
+        <summary>指定した条件に基づいて、プロパティの指定したセットからプロパティを選択します。</summary>
+        <returns>一致するプロパティです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによって提供される選択を制御する、`GetProperty`メソッド`Type`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Reflection.AmbiguousMatchException">既定のバインダー<paramref name="match" />一致では均等に複数のプロパティが含まれます<paramref name="returnType" />と<paramref name="indexes" />です。</exception>
+        <exception cref="T:System.ArgumentException">既定のバインダー<paramref name="match" />は<see langword="null" />または空の配列。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

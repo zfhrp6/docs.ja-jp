@@ -1,0 +1,299 @@
+<Type Name="XmlTypeAttribute" FullName="System.Xml.Serialization.XmlTypeAttribute">
+  <TypeSignature Language="C#" Value="public class XmlTypeAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlTypeAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.XmlTypeAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Struct | System.AttributeTargets.Enum | System.AttributeTargets.Interface)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>によって属性ターゲットがシリアル化時に生成される XML スキーマを制御、<see cref="T:System.Xml.Serialization.XmlSerializer" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.XmlTypeAttribute>を制御する属性のファミリに属するどの<xref:System.Xml.Serialization.XmlSerializer>オブジェクトを逆シリアル化またはシリアル化します。 類似する属性の一覧については、次を参照してください。[コントロール XML シリアル化する属性](~/docs/standard/serialization/attributes-that-control-xml-serialization.md)です。  
+  
+ 適用することができます、<xref:System.Xml.Serialization.XmlTypeAttribute>クラス、構造体、列挙型、またはインターフェイスの宣言にします。  
+  
+ 適用、 <xref:System.Xml.Serialization.XmlTypeAttribute> XML 型の名前空間、XML 型の名前と型を XML スキーマ ドキュメントに含めるかどうかを指定するためにクラスです。 プロパティの設定の結果を表示する、<xref:System.Xml.Serialization.XmlTypeAttribute>クラス、実行可能ファイルまたは DLL としてアプリケーションをコンパイルする結果として得られるファイルを渡すと、 [XML スキーマ定義ツール (Xsd.exe)](~/docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md)です。 このツールは、型定義を含む、スキーマを書き込みます。  
+  
+> [!NOTE]
+>  設定した場合、<xref:System.Xml.Serialization.XmlTypeAttribute.IncludeInSchema%2A>プロパティを`false`、 [XML スキーマ定義ツール (Xsd.exe)](~/docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md)スキーマの種類は含まれません。 既定では、パブリック クラスごとに、XSD ツールが生成されます、`complexType`とその型の要素。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](http://msdn.microsoft.com/library/30386922-1e00-4602-9ebf-526b271a8b87)です。  
+  
+> [!NOTE]
+>  語を使用できます`XmlType`時間が長いではなく、コードで<xref:System.Xml.Serialization.XmlTypeAttribute>です。  
+  
+   
+  
+## Examples  
+ 次の例では、次の 2 つのクラス、<xref:System.Xml.Serialization.XmlTypeAttribute>適用されています。  
+  
+ [!code-cpp[Classic XmlTypeAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlTypeAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlTypeAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlTypeAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlTypeAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlTypeAttribute Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlTypeAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlTypeAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.Serialization.XmlTypeAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、2 つのインスタンスを作成、 <xref:System.Xml.Serialization.XmlTypeAttribute> 2 つのクラスのシリアル化のオーバーライドに使用されるクラスです。  
+  
+ [!code-cpp[XMLTypeAttribute1_2#2](~/samples/snippets/cpp/VS_Snippets_Remoting/XMLTypeAttribute1_2/CPP/xmltypeattribute1_2.cpp#2)]
+ [!code-csharp[XMLTypeAttribute1_2#2](~/samples/snippets/csharp/VS_Snippets_Remoting/XMLTypeAttribute1_2/CS/xmltypeattribute1_2.cs#2)]
+ [!code-vb[XMLTypeAttribute1_2#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/XMLTypeAttribute1_2/VB/xmltypeattribute1_2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlTypeAttribute (string typeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string typeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlTypeAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="typeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="typeName">XML の名前を入力する、<see cref="T:System.Xml.Serialization.XmlSerializer" />クラスのインスタンスをシリアル化 (およびが認識、クラスのインスタンスを逆シリアル化する) 場合に生成します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Serialization.XmlTypeAttribute" />クラスし、XML 型の名前を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 適用、 <xref:System.Xml.Serialization.XmlTypeAttribute> XML 型の名前空間、XML 型の名前と型を XML スキーマ ドキュメントに含めるかどうかを指定するためにクラスです。 プロパティの設定の結果を表示する、<xref:System.Xml.Serialization.XmlTypeAttribute>クラス、実行可能ファイルまたは DLL としてアプリケーションをコンパイルする結果として得られるファイルを渡すと、 [XML スキーマ定義ツール (Xsd.exe)](~/docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md)です。 このツールは、型定義を含む、スキーマを書き込みます。  
+  
+   
+  
+## Examples  
+ 次の例は、2 つのインスタンスを作成、 <xref:System.Xml.Serialization.XmlTypeAttribute> 2 つのクラスのシリアル化のオーバーライドに使用されるクラスです。  
+  
+ [!code-cpp[XMLTypeAttribute1_2#2](~/samples/snippets/cpp/VS_Snippets_Remoting/XMLTypeAttribute1_2/CPP/xmltypeattribute1_2.cpp#2)]
+ [!code-csharp[XMLTypeAttribute1_2#2](~/samples/snippets/csharp/VS_Snippets_Remoting/XMLTypeAttribute1_2/CS/xmltypeattribute1_2.cs#2)]
+ [!code-vb[XMLTypeAttribute1_2#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/XMLTypeAttribute1_2/VB/xmltypeattribute1_2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AnonymousType">
+      <MemberSignature Language="C#" Value="public bool AnonymousType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AnonymousType" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlTypeAttribute.AnonymousType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または結果のスキーマ型が、XSD の匿名型かどうかを決定する値を設定します。</summary>
+        <value>
+          <see langword="true" />、結果のスキーマ型が、XSD 匿名型の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncludeInSchema">
+      <MemberSignature Language="C#" Value="public bool IncludeInSchema { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IncludeInSchema" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlTypeAttribute.IncludeInSchema" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または XML スキーマ ドキュメントの種類を含めるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />XML スキーマ ドキュメント; で型を含めるそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 適用、 <xref:System.Xml.Serialization.XmlTypeAttribute> XML 型の名前空間、XML 型の名前と型を XML スキーマ ドキュメントに含めるかどうかを指定するためにクラスです。 プロパティの設定の結果を表示する、<xref:System.Xml.Serialization.XmlTypeAttribute>クラス、実行可能ファイルまたは DLL として、アプリケーションをコンパイルおよび XML スキーマ定義ツール (XSD.exe) を生成されたファイルを渡します。 このツールは、型定義を含む、スキーマを書き込みます。  
+  
+   
+  
+## Examples  
+ 次の例に適用されます、<xref:System.Xml.Serialization.XmlTypeAttribute>を`ExtraneousInfo`クラス、設定、<xref:System.Xml.Serialization.XmlTypeAttribute.IncludeInSchema%2A>プロパティを`false`です。  
+  
+ [!code-cpp[Classic XmlTypeAttribute.IncludeInSchema Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlTypeAttribute.IncludeInSchema Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlTypeAttribute.IncludeInSchema Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlTypeAttribute.IncludeInSchema Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlTypeAttribute.IncludeInSchema Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlTypeAttribute.IncludeInSchema Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public string Namespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Namespace" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlTypeAttribute.Namespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または XML 型の名前空間を設定します。</summary>
+        <value>XML 型の名前空間です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例に適用されます、<xref:System.Xml.Serialization.XmlTypeAttribute>クラスの設定中に、<xref:System.Xml.Serialization.XmlTypeAttribute.Namespace%2A>プロパティです。  
+  
+ [!code-cpp[Classic XmlTypeAttribute.Namespace Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlTypeAttribute.Namespace Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlTypeAttribute.Namespace Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlTypeAttribute.Namespace Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlTypeAttribute.Namespace Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlTypeAttribute.Namespace Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeName">
+      <MemberSignature Language="C#" Value="public string TypeName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TypeName" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlTypeAttribute.TypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または XML 型の名前を設定します。</summary>
+        <value>XML 型の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 適用、 <xref:System.Xml.Serialization.XmlTypeAttribute> XML 型の名前空間、XML 型の名前と型を XML スキーマ ドキュメントに含めるかどうかを指定するためにクラスです。 プロパティの設定の結果を表示する、<xref:System.Xml.Serialization.XmlTypeAttribute>クラス、実行可能ファイルまたは DLL としてアプリケーションをコンパイルする結果として得られるファイルを渡すと、 [XML スキーマ定義ツール (Xsd.exe)](~/docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md)です。 このツールは、型定義を含む、スキーマを書き込みます。  
+  
+   
+  
+## Examples  
+ 次の例に適用されます、<xref:System.Xml.Serialization.XmlTypeAttribute>を`Person`と`Job`クラスです。 クラスをコンパイルして作成された実行可能ファイルを XML スキーマ定義ツールに渡す場合は、スキーマが、出力セクションに表示されます。  
+  
+ [!code-cpp[Classic XmlTypeAttribute.TypeName Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlTypeAttribute.TypeName Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlTypeAttribute.TypeName Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlTypeAttribute.TypeName Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlTypeAttribute.TypeName Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlTypeAttribute.TypeName Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

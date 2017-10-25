@@ -1,0 +1,94 @@
+<Type Name="IDynamicPropertyTypeProvider" FullName="System.Workflow.ComponentModel.IDynamicPropertyTypeProvider">
+  <TypeSignature Language="C#" Value="public interface IDynamicPropertyTypeProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDynamicPropertyTypeProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.IDynamicPropertyTypeProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>バインド インフラストラクチャに、可変型プロパティの実際の型を知らせます。 可変型プロパティを持つアクティビティに実装するもので、実際の型は他のアクティビティ設定に依存して変わります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ 親アクティビティはこのインターフェイスを使うことにより、ある可変型プロパティとその実際の型を表すプロパティとを関連付け、バインド インフラストラクチャがバインドを検証する際に、実際の型を知らせることができます。 たとえば、`TypeProperty` および `ValueProperty` という 2 つのプロパティを持つアクティビティがあるとします。ここで `TypeProperty` は、`ValueProperty` に設定された値の、実際の型を表します。 このような場合、親アクティビティは <xref:System.Workflow.ComponentModel.IDynamicPropertyTypeProvider> インターフェイスを実装します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetAccessType">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.Compiler.AccessTypes GetAccessType (IServiceProvider serviceProvider, string propertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Workflow.ComponentModel.Compiler.AccessTypes GetAccessType(class System.IServiceProvider serviceProvider, string propertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.IDynamicPropertyTypeProvider.GetAccessType(System.IServiceProvider,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Compiler.AccessTypes</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="serviceProvider"><see cref="T:System.IServiceProvider" /> を実装して、必要に応じてデザイン時のサービスへのアクセスを提供するオブジェクト。</param>
+        <param name="propertyName">プロパティの名前。</param>
+        <summary>指定されたプロパティに関するアクセスの種類を返します。</summary>
+        <returns>プロパティのアクセス レベルを示す <see cref="T:System.Workflow.ComponentModel.Compiler.AccessTypes" /> 列挙値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンパイル時に、プロパティが相互に正しくバインディングされているかどうかを検証するために使用されます。 このインターフェイスがない場合、この情報はプロパティの getter/setter から直接推測されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertyType">
+      <MemberSignature Language="C#" Value="public Type GetPropertyType (IServiceProvider serviceProvider, string propertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Type GetPropertyType(class System.IServiceProvider serviceProvider, string propertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.IDynamicPropertyTypeProvider.GetPropertyType(System.IServiceProvider,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="serviceProvider"><see cref="T:System.IServiceProvider" /> を実装して、必要に応じてデザイン時のサービスへのアクセスを提供するオブジェクト。</param>
+        <param name="propertyName">プロパティの名前。</param>
+        <summary>指定したプロパティの <see cref="T:System.Type" /> を返します。</summary>
+        <returns><see cref="T:System.Type" />として名前が渡されるプロパティの<paramref name="propertyName" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンパイル時に、プロパティが相互に正しくバインディングされているかどうかを検証するために使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

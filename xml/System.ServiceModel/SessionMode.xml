@@ -1,0 +1,115 @@
+<Type Name="SessionMode" FullName="System.ServiceModel.SessionMode">
+  <TypeSignature Language="C#" Value="public enum SessionMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SessionMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.SessionMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>コントラクトが要求する、またはサポートする、信頼できるセッションのサポートを示すために使用できる値を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.SessionMode> 列挙体と <xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A?displayProperty=nameWithType> プロパティを使用して、サービス コントラクトに接続する、またはサービス コントラクトをサポートするエンドポイント間でバイディングがセッションをどのように使用するか (セッションの使用を要求する、許可する、または禁止する) を設定します。 セッションとは、2 つ以上のエンドポイント間で交換される一連のメッセージを相互に関連付ける方法のことです。 セッションの詳細については、次を参照してください。[セッションを使用した](~/docs/framework/wcf/using-sessions.md)です。  
+  
+ サービスがセッションをサポートする場合は、<xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> プロパティを使用して、サービス コントラクトの実装とチャネル セッションのインスタンス間の関係を指定できます。  
+  
+ たとえば場合、<xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A>許可済みに設定されてと<xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType>プロパティに設定されている<xref:System.ServiceModel.InstanceContextMode?displayProperty=nameWithType>クライアントが同一のサービス オブジェクトを繰り返し呼び出すを信頼できるセッションをサポートするバインディングを使用できます。  
+  
+ セッションはアプリケーション モデルで使用するチャネル レベルの概念であるので、チャネルと特定サービス オブジェクト間の関連性を制御する <xref:System.ServiceModel.SessionMode> プロパティと、コントラクト内の <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> 列挙との間には相互に影響があります。  
+  
+ <xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A?displayProperty=nameWithType> プロパティと <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> プロパティの値のサービスの組み合わせが指定されているという条件で、信頼できるセッションをサポートしている受信チャネルまたはサポートしていない受信チャネルの結果を次の表に示します。  
+  
+|InstanceContextMode 値|必須|Allowed|NotAllowed|  
+|-------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|  
+|PerCall|のセッションフル チャネルで動作: セッションと<xref:System.ServiceModel.InstanceContext?displayProperty=nameWithType>呼び出しごとにします。<br />のセッションレス チャネルで動作: 例外がスローされます。|のセッションフル チャネルで動作: セッションと<xref:System.ServiceModel.InstanceContext?displayProperty=nameWithType>呼び出しごとにします。<br />のセッションレス チャネルで動作:<xref:System.ServiceModel.InstanceContext?displayProperty=nameWithType>呼び出しごとにします。|のセッションフル チャネルで動作: 例外がスローされます。<br />のセッションレス チャネルで動作:<xref:System.ServiceModel.InstanceContext?displayProperty=nameWithType>呼び出しごとにします。|  
+|PerSession|のセッションフル チャネルで動作: セッションと<xref:System.ServiceModel.InstanceContext?displayProperty=nameWithType>チャネルごとにします。<br />のセッションレス チャネルで動作: 例外がスローされます。|のセッションフル チャネルで動作: セッションと<xref:System.ServiceModel.InstanceContext?displayProperty=nameWithType>チャネルごとにします。<br />のセッションレス チャネルで動作:<xref:System.ServiceModel.InstanceContext?displayProperty=nameWithType>呼び出しごとにします。|のセッションフル チャネルで動作: 例外がスローされます。<br />のセッションレス チャネルで動作:<xref:System.ServiceModel.InstanceContext?displayProperty=nameWithType>呼び出しごとにします。|  
+|Single|のセッションフル チャネルで動作: 1 つのセッションと 1 つ<xref:System.ServiceModel.InstanceContext?displayProperty=nameWithType>すべての呼び出しにします。<br />のセッションレス チャネルで動作: 例外がスローされます。|のセッションフル チャネルで動作: セッションと<xref:System.ServiceModel.InstanceContext?displayProperty=nameWithType>各作成したシングルトンまたはユーザー指定のシングルトンです。<br />のセッションレス チャネルで動作:<xref:System.ServiceModel.InstanceContext?displayProperty=nameWithType>各作成したシングルトンまたはユーザー指定のシングルトンです。|のセッションフル チャネルで動作: 例外がスローされます。<br />のセッションレス チャネルで動作:<xref:System.ServiceModel.InstanceContext?displayProperty=nameWithType>各作成したシングルトンまたはユーザー指定のシングルトンです。|  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A>のプロパティ、<xref:System.ServiceModel.ServiceContractAttribute>ことを指定する、`IMyService`サービス コントラクトには、セッション状態をサポートするバインドが必要です。  
+  
+ [!code-csharp[SCA.Session#1](~/samples/snippets/csharp/VS_Snippets_CFX/sca.session/cs/services.cs#1)]
+ [!code-vb[SCA.Session#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/sca.session/vb/services.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Allowed">
+      <MemberSignature Language="C#" Value="Allowed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.SessionMode Allowed = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.SessionMode.Allowed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.SessionMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>受信したバインドがセッションをサポートする場合は、コントラクトがセッションをサポートするように指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NotAllowed">
+      <MemberSignature Language="C#" Value="NotAllowed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.SessionMode NotAllowed = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.SessionMode.NotAllowed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.SessionMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントラクトがセッションを開始するバインドをサポートしないように指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Required">
+      <MemberSignature Language="C#" Value="Required" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.SessionMode Required = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.SessionMode.Required" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.SessionMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントラクトがセッションフル バインドを必要とすることを指定します。 バインドがセッションをサポートするように構成されていない場合は例外がスローされます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

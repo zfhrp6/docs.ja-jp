@@ -1,0 +1,261 @@
+<Type Name="ModelValidationNode" FullName="System.Web.ModelBinding.ModelValidationNode">
+  <TypeSignature Language="C#" Value="public sealed class ModelValidationNode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ModelValidationNode extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.ModelBinding.ModelValidationNode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>モデル検証情報のコンテナーを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ModelValidationNode (System.Web.ModelBinding.ModelMetadata modelMetadata, string modelStateKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.ModelBinding.ModelMetadata modelMetadata, string modelStateKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ModelBinding.ModelValidationNode.#ctor(System.Web.ModelBinding.ModelMetadata,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="modelMetadata" Type="System.Web.ModelBinding.ModelMetadata" />
+        <Parameter Name="modelStateKey" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="modelMetadata">モデル メタデータ。</param>
+        <param name="modelStateKey">モデル状態キー。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.ModelBinding.ModelValidationNode" />クラス、モデル メタデータと状態キーを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ModelValidationNode (System.Web.ModelBinding.ModelMetadata modelMetadata, string modelStateKey, System.Collections.Generic.IEnumerable&lt;System.Web.ModelBinding.ModelValidationNode&gt; childNodes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.ModelBinding.ModelMetadata modelMetadata, string modelStateKey, class System.Collections.Generic.IEnumerable`1&lt;class System.Web.ModelBinding.ModelValidationNode&gt; childNodes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ModelBinding.ModelValidationNode.#ctor(System.Web.ModelBinding.ModelMetadata,System.String,System.Collections.Generic.IEnumerable{System.Web.ModelBinding.ModelValidationNode})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="modelMetadata" Type="System.Web.ModelBinding.ModelMetadata" />
+        <Parameter Name="modelStateKey" Type="System.String" />
+        <Parameter Name="childNodes" Type="System.Collections.Generic.IEnumerable&lt;System.Web.ModelBinding.ModelValidationNode&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="modelMetadata">モデル メタデータ。</param>
+        <param name="modelStateKey">モデル状態キー。</param>
+        <param name="childNodes">モデルの子ノードです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.ModelBinding.ModelValidationNode" />クラス、モデル メタデータ、モデル状態キー、および子モデル検証ノードを使用します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="modelMetadata" /> パラメーターまたは <paramref name="modelStateKey" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ChildNodes">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;System.Web.ModelBinding.ModelValidationNode&gt; ChildNodes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;class System.Web.ModelBinding.ModelValidationNode&gt; ChildNodes" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelValidationNode.ChildNodes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.Web.ModelBinding.ModelValidationNode&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>子ノードを取得します。</summary>
+        <value>子ノード。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CombineWith">
+      <MemberSignature Language="C#" Value="public void CombineWith (System.Web.ModelBinding.ModelValidationNode otherNode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CombineWith(class System.Web.ModelBinding.ModelValidationNode otherNode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ModelBinding.ModelValidationNode.CombineWith(System.Web.ModelBinding.ModelValidationNode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="otherNode" Type="System.Web.ModelBinding.ModelValidationNode" />
+      </Parameters>
+      <Docs>
+        <param name="otherNode">現在のインスタンスとを組み合わせるモデル検証ノード。</param>
+        <summary>現在の結合<see cref="T:System.Web.ModelBinding.ModelValidationNode" />と指定したインスタンス<see cref="T:System.Web.ModelBinding.ModelValidationNode" />インスタンス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ModelMetadata">
+      <MemberSignature Language="C#" Value="public System.Web.ModelBinding.ModelMetadata ModelMetadata { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.ModelBinding.ModelMetadata ModelMetadata" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelValidationNode.ModelMetadata" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ModelBinding.ModelMetadata</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モデル メタデータを取得します。</summary>
+        <value>モデル メタデータ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ModelStateKey">
+      <MemberSignature Language="C#" Value="public string ModelStateKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ModelStateKey" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelValidationNode.ModelStateKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モデル状態キーを取得します。</summary>
+        <value>モデル状態キー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SuppressValidation">
+      <MemberSignature Language="C#" Value="public bool SuppressValidation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SuppressValidation" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelValidationNode.SuppressValidation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または検証を抑制する必要があるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />検証を抑制する必要があります。 場合、それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Validate">
+      <MemberSignature Language="C#" Value="public void Validate (System.Web.ModelBinding.ModelBindingExecutionContext modelBindingExecutionContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Validate(class System.Web.ModelBinding.ModelBindingExecutionContext modelBindingExecutionContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ModelBinding.ModelValidationNode.Validate(System.Web.ModelBinding.ModelBindingExecutionContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="modelBindingExecutionContext" Type="System.Web.ModelBinding.ModelBindingExecutionContext" />
+      </Parameters>
+      <Docs>
+        <param name="modelBindingExecutionContext">実行コンテキスト。</param>
+        <summary>指定された実行コンテキストを使用して、モデルを検証します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.ModelBinding.ModelValidationNode.SuppressValidation%2A>プロパティは`true`、このメソッドは、何も行われません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="modelBindingExecutionContext" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Validate">
+      <MemberSignature Language="C#" Value="public void Validate (System.Web.ModelBinding.ModelBindingExecutionContext modelBindingExecutionContext, System.Web.ModelBinding.ModelValidationNode parentNode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Validate(class System.Web.ModelBinding.ModelBindingExecutionContext modelBindingExecutionContext, class System.Web.ModelBinding.ModelValidationNode parentNode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ModelBinding.ModelValidationNode.Validate(System.Web.ModelBinding.ModelBindingExecutionContext,System.Web.ModelBinding.ModelValidationNode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="modelBindingExecutionContext" Type="System.Web.ModelBinding.ModelBindingExecutionContext" />
+        <Parameter Name="parentNode" Type="System.Web.ModelBinding.ModelValidationNode" />
+      </Parameters>
+      <Docs>
+        <param name="modelBindingExecutionContext">実行コンテキスト。</param>
+        <param name="parentNode">親ノードです。</param>
+        <summary>指定された実行コンテキストと親ノードを使用して、モデルを検証します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateAllProperties">
+      <MemberSignature Language="C#" Value="public bool ValidateAllProperties { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ValidateAllProperties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelValidationNode.ValidateAllProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはモデルのすべてのプロパティを検証する必要があるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、モデルのすべてのプロパティを検証するか、または<see langword="false" />検証をスキップする必要がある場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Validated">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Web.ModelBinding.ModelValidatedEventArgs&gt; Validated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Web.ModelBinding.ModelValidatedEventArgs&gt; Validated" />
+      <MemberSignature Language="DocId" Value="E:System.Web.ModelBinding.ModelValidationNode.Validated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Web.ModelBinding.ModelValidatedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モデルの検証時に発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Validating">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Web.ModelBinding.ModelValidatingEventArgs&gt; Validating;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Web.ModelBinding.ModelValidatingEventArgs&gt; Validating" />
+      <MemberSignature Language="DocId" Value="E:System.Web.ModelBinding.ModelValidationNode.Validating" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Web.ModelBinding.ModelValidatingEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モデルの検証中に発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

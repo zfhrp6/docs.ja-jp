@@ -1,0 +1,628 @@
+<Type Name="MetadataResolver" FullName="System.ServiceModel.Description.MetadataResolver">
+  <TypeSignature Language="C#" Value="public static class MetadataResolver" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit MetadataResolver extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Description.MetadataResolver" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>メタデータを取得し、<see cref="T:System.ServiceModel.Description.ServiceEndpoint" /> オブジェクトとしてインポートします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.MetadataResolver> クラスを使用して、メタデータからサービスのエンドポイントをすばやくインポートします。 このクラスはメタデータをダウンロードし、<xref:System.ServiceModel.Description.ServiceEndpoint> オブジェクトに変換します。 メタデータをダウンロードしてその情報を <xref:System.ServiceModel.Description.MetadataSet?displayProperty=nameWithType> として処理する方法については、<xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> を参照してください。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Description.MetadataResolver> クラスを使用して、サービス インスタンスに接続するために使用される <xref:System.ServiceModel.Description.ServiceEndpoint> オブジェクトのコレクションとしてメタデータを返す方法を、次のコード例に示します。  
+  
+ [!code-csharp[MetadataResolver#1](~/samples/snippets/csharp/VS_Snippets_CFX/metadataresolver/cs/client.cs#1)]  
+  
+ WS-Transfer ではなく HTTP GET 要求で、メタデータをダウンロードし、それを <xref:System.ServiceModel.Description.MetadataResolver> オブジェクトのコレクションとして返す <xref:System.ServiceModel.Description.ServiceEndpoint> の使用方法を次のコード例に示します。  
+  
+ [!code-csharp[MetadataResolver#2](~/samples/snippets/csharp/VS_Snippets_CFX/metadataresolver/cs/client.cs#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName="BeginResolve">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>メタデータ アドレスをそのサービスの <see cref="T:System.ServiceModel.Description.ServiceEndpoint" /> オブジェクトのコレクションに解決する非同期呼び出しを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これらのメソッドは、非同期バージョンの <xref:System.ServiceModel.Description.MetadataResolver.Resolve%2A> メソッドを開始します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="BeginResolve">
+      <MemberSignature Language="C#" Value="public static IAsyncResult BeginResolve (System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.ContractDescription&gt; contracts, System.ServiceModel.EndpointAddress address, AsyncCallback callback, object asyncState);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IAsyncResult BeginResolve(class System.Collections.Generic.IEnumerable`1&lt;class System.ServiceModel.Description.ContractDescription&gt; contracts, class System.ServiceModel.EndpointAddress address, class System.AsyncCallback callback, object asyncState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataResolver.BeginResolve(System.Collections.Generic.IEnumerable{System.ServiceModel.Description.ContractDescription},System.ServiceModel.EndpointAddress,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contracts" Type="System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.ContractDescription&gt;" />
+        <Parameter Name="address" Type="System.ServiceModel.EndpointAddress" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="asyncState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="contracts">メタデータのダウンロードおよび解決が行われるコントラクト。</param>
+        <param name="address">メタデータ アドレス。</param>
+        <param name="callback">呼び出しが完了したときに呼び出される非同期コールバック デリゲート。</param>
+        <param name="asyncState">非同期呼び出しに関連付けられている状態。</param>
+        <summary>指定したアドレス、非同期状態、および非同期デリゲートを使用して、指定したコントラクトのメタデータ アドレスをそのコントラクトの <see cref="T:System.ServiceModel.Description.ServiceEndpoint" /> オブジェクトに解決する非同期呼び出しを開始します。</summary>
+        <returns>非同期解決操作を参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> の既定の設定はメタデータの取得に使用されます。また、既定の <xref:System.ServiceModel.Description.MetadataExchangeClientMode?displayProperty=nameWithType> は <xref:System.ServiceModel.Description.MetadataExchangeClientMode?displayProperty=nameWithType> です。  
+  
+ メタデータのダウンロードだけを行い、その情報を複数の <xref:System.ServiceModel.Description.ServiceEndpoint> オブジェクトに分割しない場合は、<xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> を直接使用します。  
+  
+> [!NOTE]
+>  エンドポイントがインポートされなかった場合や、コントラクトに一致するエンドポイントが存在しない場合、空のコレクションが返されます。 空のコレクションが返される場合は、警告トレースが出力されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">アドレス、コントラクト、またはコールバックが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="contracts" /> が空か、<paramref name="contracts" /> の 1 つ以上のメンバーが <see langword="null" /> か、または <paramref name="contracts" /> に同じ名前と名前空間のコントラクトが複数含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginResolve">
+      <MemberSignature Language="C#" Value="public static IAsyncResult BeginResolve (Type contract, System.ServiceModel.EndpointAddress address, AsyncCallback callback, object asyncState);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IAsyncResult BeginResolve(class System.Type contract, class System.ServiceModel.EndpointAddress address, class System.AsyncCallback callback, object asyncState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataResolver.BeginResolve(System.Type,System.ServiceModel.EndpointAddress,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contract" Type="System.Type" />
+        <Parameter Name="address" Type="System.ServiceModel.EndpointAddress" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="asyncState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="contract">メタデータのダウンロードおよび解決が行われるコントラクト。</param>
+        <param name="address">メタデータ アドレス。</param>
+        <param name="callback">呼び出しが完了したときに呼び出される非同期コールバック デリゲート。</param>
+        <param name="asyncState">非同期呼び出しに関連付けられている状態。</param>
+        <summary>指定したアドレス、非同期状態、および非同期デリゲートを使用して、指定したコントラクトのメタデータ アドレスをそのコントラクトの <see cref="T:System.ServiceModel.Description.ServiceEndpoint" /> オブジェクトに解決する非同期呼び出しを開始します。</summary>
+        <returns>非同期解決操作を参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> の既定の設定はメタデータの取得に使用されます。また、既定の <xref:System.ServiceModel.Description.MetadataExchangeClientMode?displayProperty=nameWithType> は <xref:System.ServiceModel.Description.MetadataExchangeClientMode?displayProperty=nameWithType> です。  
+  
+ メタデータのダウンロードだけを行い、その情報を複数の <xref:System.ServiceModel.Description.ServiceEndpoint> オブジェクトに分割しない場合は、<xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> を直接使用します。  
+  
+> [!NOTE]
+>  エンドポイントがインポートされなかった場合や、コントラクトに一致するエンドポイントが存在しない場合、空のコレクションが返されます。 空のコレクションが返される場合は、警告トレースが出力されます。  
+  
+ このメソッドでは、コントラクトの型を指定する必要があります。 コントラクトを指定するには、クライアント コードでサービス インターフェイスを宣言するか、Svcutil.exe によって生成される [!INCLUDE[indigo2](~/includes/indigo2-md.md)] クライアントを使用します。 インターフェイスの変更 (新しい操作の追加など) があると、クライアント コードのインターフェイスを更新するか、新しい [!INCLUDE[indigo2](~/includes/indigo2-md.md)] クライアントを生成する必要があります。 いずれの操作も実行しない場合は、例外がスローされます。 たとえば、Add()、Sub()、Mult()、および Div() を定義した ICalculator というサービス コントラクトを実装しているサービスがあるとします。 クライアント アプリケーションを作成し、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] クライアントを生成します。 次に、Echo() というメソッドを ICalculator に追加します。 次に、新しい <xref:System.ServiceModel.Description.MetadataResolver.Resolve%28System.Type%2CSystem.ServiceModel.EndpointAddress%29> クライアントを生成せずに [!INCLUDE[indigo2](~/includes/indigo2-md.md)] を呼び出すアプリケーションを作成した場合、次の例外が発生します。  
+  
+ `Unhandled Exception: System.ServiceModel.Description.WsdlImporter+WsdlImportException: Cannot locate operation Echo in Contract ICalculator`。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">アドレス、コントラクト、またはコールバックが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginResolve">
+      <MemberSignature Language="C#" Value="public static IAsyncResult BeginResolve (System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.ContractDescription&gt; contracts, System.ServiceModel.EndpointAddress address, System.ServiceModel.Description.MetadataExchangeClient client, AsyncCallback callback, object asyncState);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IAsyncResult BeginResolve(class System.Collections.Generic.IEnumerable`1&lt;class System.ServiceModel.Description.ContractDescription&gt; contracts, class System.ServiceModel.EndpointAddress address, class System.ServiceModel.Description.MetadataExchangeClient client, class System.AsyncCallback callback, object asyncState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataResolver.BeginResolve(System.Collections.Generic.IEnumerable{System.ServiceModel.Description.ContractDescription},System.ServiceModel.EndpointAddress,System.ServiceModel.Description.MetadataExchangeClient,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contracts" Type="System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.ContractDescription&gt;" />
+        <Parameter Name="address" Type="System.ServiceModel.EndpointAddress" />
+        <Parameter Name="client" Type="System.ServiceModel.Description.MetadataExchangeClient" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="asyncState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="contracts">メタデータのダウンロードおよび解決が行われるコントラクト。</param>
+        <param name="address">メタデータ アドレス。</param>
+        <param name="client">メタデータの取得に使用される <see cref="T:System.ServiceModel.Description.MetadataExchangeClient" />。</param>
+        <param name="callback">呼び出しが完了したときに呼び出される非同期コールバック デリゲート。</param>
+        <param name="asyncState">非同期呼び出しに関連付けられている状態。</param>
+        <summary>指定したアドレス、<see cref="T:System.ServiceModel.Description.ServiceEndpoint" />、非同期状態、および非同期デリゲートを使用して、指定したコントラクトのメタデータ アドレスをそのコントラクトの <see cref="T:System.ServiceModel.Description.MetadataExchangeClient" /> オブジェクトに解決する非同期呼び出しを開始します。</summary>
+        <returns>非同期解決操作を参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値 <xref:System.ServiceModel.Description.MetadataExchangeClientMode?displayProperty=nameWithType> は <xref:System.ServiceModel.Description.MetadataExchangeClientMode?displayProperty=nameWithType> です。  
+  
+ メタデータのダウンロードだけを行い、その情報を複数の <xref:System.ServiceModel.Description.ServiceEndpoint> オブジェクトに分割しない場合は、<xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> を直接使用します。  
+  
+> [!NOTE]
+>  エンドポイントがインポートされなかった場合や、コントラクトに一致するエンドポイントが存在しない場合、空のコレクションが返されます。 空のコレクションが返される場合は、警告トレースが出力されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">アドレス、コントラクト、クライアント、またはコールバックが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="contracts" /> が空か、<paramref name="contracts" /> の 1 つ以上のメンバーが null か、または <paramref name="contracts" /> に同じ名前と名前空間のコントラクトが複数含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginResolve">
+      <MemberSignature Language="C#" Value="public static IAsyncResult BeginResolve (System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.ContractDescription&gt; contracts, Uri address, System.ServiceModel.Description.MetadataExchangeClientMode mode, AsyncCallback callback, object asyncState);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IAsyncResult BeginResolve(class System.Collections.Generic.IEnumerable`1&lt;class System.ServiceModel.Description.ContractDescription&gt; contracts, class System.Uri address, valuetype System.ServiceModel.Description.MetadataExchangeClientMode mode, class System.AsyncCallback callback, object asyncState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataResolver.BeginResolve(System.Collections.Generic.IEnumerable{System.ServiceModel.Description.ContractDescription},System.Uri,System.ServiceModel.Description.MetadataExchangeClientMode,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contracts" Type="System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.ContractDescription&gt;" />
+        <Parameter Name="address" Type="System.Uri" />
+        <Parameter Name="mode" Type="System.ServiceModel.Description.MetadataExchangeClientMode" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="asyncState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="contracts">メタデータのダウンロードおよび解決が行われるコントラクト。</param>
+        <param name="address">メタデータ アドレス。</param>
+        <param name="mode">取得のモード。</param>
+        <param name="callback">呼び出しが完了したときに呼び出される非同期コールバック デリゲート。</param>
+        <param name="asyncState">非同期呼び出しに関連付けられている状態。</param>
+        <summary>指定したアドレス、<see cref="T:System.ServiceModel.Description.ServiceEndpoint" /> 値、非同期状態、および非同期デリゲートを使用して、指定したコントラクトのメタデータ アドレスをそのコントラクトの <see cref="T:System.ServiceModel.Description.MetadataExchangeClientMode" /> オブジェクトに解決する非同期呼び出しを開始します。</summary>
+        <returns>非同期解決操作を参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> の既定の設定は、メタデータの取得に使用されます。  
+  
+ メタデータのダウンロードだけを行い、その情報を複数の <xref:System.ServiceModel.Description.ServiceEndpoint> オブジェクトに分割しない場合は、<xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> を直接使用します。  
+  
+> [!NOTE]
+>  エンドポイントがインポートされなかった場合や、コントラクトに一致するエンドポイントが存在しない場合、空のコレクションが返されます。 空のコレクションが返される場合は、警告トレースが出力されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">アドレス、コントラクト、またはコールバックが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="contracts" /> が空か、<paramref name="contracts" /> の 1 つ以上のメンバーが null か、または <paramref name="contracts" /> に同じ名前と名前空間のコントラクトが複数含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginResolve">
+      <MemberSignature Language="C#" Value="public static IAsyncResult BeginResolve (Type contract, Uri address, System.ServiceModel.Description.MetadataExchangeClientMode mode, AsyncCallback callback, object asyncState);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IAsyncResult BeginResolve(class System.Type contract, class System.Uri address, valuetype System.ServiceModel.Description.MetadataExchangeClientMode mode, class System.AsyncCallback callback, object asyncState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataResolver.BeginResolve(System.Type,System.Uri,System.ServiceModel.Description.MetadataExchangeClientMode,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contract" Type="System.Type" />
+        <Parameter Name="address" Type="System.Uri" />
+        <Parameter Name="mode" Type="System.ServiceModel.Description.MetadataExchangeClientMode" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="asyncState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="contract">メタデータのダウンロードおよび解決が行われるコントラクト。</param>
+        <param name="address">メタデータ アドレス。</param>
+        <param name="mode">取得のモード。</param>
+        <param name="callback">呼び出しが完了したときに呼び出される非同期コールバック デリゲート。</param>
+        <param name="asyncState">非同期呼び出しに関連付けられている状態。</param>
+        <summary>指定したアドレス、<see cref="T:System.ServiceModel.Description.ServiceEndpoint" />、非同期状態、および非同期デリゲートを使用して、指定したコントラクトのメタデータ アドレスをそのコントラクトの <see cref="T:System.ServiceModel.Description.MetadataExchangeClientMode" /> オブジェクトに解決する非同期呼び出しを開始します。</summary>
+        <returns>非同期解決操作を参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> の既定の設定は、メタデータの取得に使用されます。  
+  
+ メタデータのダウンロードだけを行い、その情報を複数の <xref:System.ServiceModel.Description.ServiceEndpoint> オブジェクトに分割しない場合は、<xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> を直接使用します。  
+  
+> [!NOTE]
+>  エンドポイントがインポートされなかった場合や、コントラクトに一致するエンドポイントが存在しない場合、空のコレクションが返されます。 空のコレクションが返される場合は、警告トレースが出力されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">アドレス、コントラクト、またはコールバックが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginResolve">
+      <MemberSignature Language="C#" Value="public static IAsyncResult BeginResolve (System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.ContractDescription&gt; contracts, Uri address, System.ServiceModel.Description.MetadataExchangeClientMode mode, System.ServiceModel.Description.MetadataExchangeClient client, AsyncCallback callback, object asyncState);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IAsyncResult BeginResolve(class System.Collections.Generic.IEnumerable`1&lt;class System.ServiceModel.Description.ContractDescription&gt; contracts, class System.Uri address, valuetype System.ServiceModel.Description.MetadataExchangeClientMode mode, class System.ServiceModel.Description.MetadataExchangeClient client, class System.AsyncCallback callback, object asyncState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataResolver.BeginResolve(System.Collections.Generic.IEnumerable{System.ServiceModel.Description.ContractDescription},System.Uri,System.ServiceModel.Description.MetadataExchangeClientMode,System.ServiceModel.Description.MetadataExchangeClient,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contracts" Type="System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.ContractDescription&gt;" />
+        <Parameter Name="address" Type="System.Uri" />
+        <Parameter Name="mode" Type="System.ServiceModel.Description.MetadataExchangeClientMode" />
+        <Parameter Name="client" Type="System.ServiceModel.Description.MetadataExchangeClient" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="asyncState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="contracts">メタデータのダウンロードおよび解決が行われるコントラクト。</param>
+        <param name="address">メタデータ アドレス。</param>
+        <param name="mode">取得のモード。</param>
+        <param name="client">メタデータの取得に使用される <see cref="T:System.ServiceModel.Description.MetadataExchangeClient" />。</param>
+        <param name="callback">呼び出しが完了したときに呼び出される非同期コールバック デリゲート。</param>
+        <param name="asyncState">非同期呼び出しに関連付けられている状態。</param>
+        <summary>指定したアドレス、<see cref="T:System.ServiceModel.Description.ServiceEndpoint" />、<see cref="T:System.ServiceModel.Description.MetadataExchangeClient" />、非同期状態、およびデリゲートを使用して、指定したコントラクトのメタデータ アドレスをそのコントラクトの <see cref="T:System.ServiceModel.Description.MetadataExchangeClientMode" /> オブジェクトに解決する非同期呼び出しを開始します。</summary>
+        <returns>非同期解決操作を参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メタデータのダウンロードだけを行い、その情報を複数の <xref:System.ServiceModel.Description.ServiceEndpoint> オブジェクトに分割しない場合は、<xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> を直接使用します。  
+  
+> [!NOTE]
+>  エンドポイントがインポートされなかった場合や、コントラクトに一致するエンドポイントが存在しない場合、空のコレクションが返されます。 空のコレクションが返される場合は、警告トレースが出力されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">アドレス、コントラクト、またはコールバックが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="contracts" /> が空か、<paramref name="contracts" /> の 1 つ以上のメンバーが null か、または <paramref name="contracts" /> に同じ名前と名前空間のコントラクトが複数含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EndResolve">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Description.ServiceEndpointCollection EndResolve (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Description.ServiceEndpointCollection EndResolve(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataResolver.EndResolve(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceEndpointCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result"><see cref="T:System.IAsyncResult" /> メソッドの呼び出しで受け取った <see cref="Overload:System.ServiceModel.Description.MetadataResolver.BeginResolve" /> オブジェクト。</param>
+        <summary>メタデータをエンドポイントのコレクションに解決する非同期呼び出しを完了します。</summary>
+        <returns>メタデータに含まれるエンドポイントの <see cref="T:System.ServiceModel.Description.ServiceEndpoint" /> オブジェクトのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いずれかの <xref:System.ServiceModel.Description.MetadataResolver.BeginResolve%2A> メソッドの非同期呼び出しを終了します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Resolve">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>メタデータ アドレスをダウンロードし、そのサービスの <see cref="T:System.ServiceModel.Description.ServiceEndpoint" /> オブジェクトに解決します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メタデータのダウンロードだけを行い、その情報を複数の <xref:System.ServiceModel.Description.ServiceEndpoint> オブジェクトに分割しない場合は、<xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> を直接使用します。  
+  
+ 同期および非同期のすべての `Resolve` メソッドでは、エンドポイントがインポートされなかった場合や、コントラクトに一致するエンドポイントが存在しない場合、空のコレクションが返されます。 空のコレクションが返される場合は、警告トレースが出力されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Resolve">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Description.ServiceEndpointCollection Resolve (System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.ContractDescription&gt; contracts, System.ServiceModel.EndpointAddress address);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Description.ServiceEndpointCollection Resolve(class System.Collections.Generic.IEnumerable`1&lt;class System.ServiceModel.Description.ContractDescription&gt; contracts, class System.ServiceModel.EndpointAddress address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataResolver.Resolve(System.Collections.Generic.IEnumerable{System.ServiceModel.Description.ContractDescription},System.ServiceModel.EndpointAddress)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceEndpointCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contracts" Type="System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.ContractDescription&gt;" />
+        <Parameter Name="address" Type="System.ServiceModel.EndpointAddress" />
+      </Parameters>
+      <Docs>
+        <param name="contracts">メタデータのダウンロードおよび解決が行われるコントラクト。</param>
+        <param name="address">メタデータ アドレス。</param>
+        <summary>指定したメタデータ アドレスを使用して、指定したコントラクトのメタデータ アドレスをそのコントラクトの <see cref="T:System.ServiceModel.Description.ServiceEndpoint" /> オブジェクトに解決します。</summary>
+        <returns>指定したコントラクト用の <see cref="T:System.ServiceModel.Description.ServiceEndpoint" /> オブジェクトのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> の既定の設定はメタデータの取得に使用されます。また、既定の <xref:System.ServiceModel.Description.MetadataExchangeClientMode?displayProperty=nameWithType> は <xref:System.ServiceModel.Description.MetadataExchangeClientMode?displayProperty=nameWithType> です。  
+  
+ メタデータのダウンロードだけを行い、その情報を複数の <xref:System.ServiceModel.Description.ServiceEndpoint> オブジェクトに分割しない場合は、<xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> を直接使用します。  
+  
+> [!NOTE]
+>  エンドポイントがインポートされなかった場合や、コントラクトに一致するエンドポイントが存在しない場合、空のコレクションが返されます。 空のコレクションが返される場合は、警告トレースが出力されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">アドレスまたはコントラクトのコレクションが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="contracts" /> が空か、<paramref name="contracts" /> の 1 つ以上のメンバーが null か、または <paramref name="contracts" /> に同じ名前と名前空間のコントラクトが複数含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Resolve">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Description.ServiceEndpointCollection Resolve (Type contract, System.ServiceModel.EndpointAddress address);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Description.ServiceEndpointCollection Resolve(class System.Type contract, class System.ServiceModel.EndpointAddress address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataResolver.Resolve(System.Type,System.ServiceModel.EndpointAddress)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceEndpointCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contract" Type="System.Type" />
+        <Parameter Name="address" Type="System.ServiceModel.EndpointAddress" />
+      </Parameters>
+      <Docs>
+        <param name="contract">メタデータのダウンロードおよび解決が行われるコントラクト。</param>
+        <param name="address">メタデータ アドレス。</param>
+        <summary>指定したアドレスを使用して、指定したコントラクトのメタデータ アドレスをダウンロードし、そのコントラクトの <see cref="T:System.ServiceModel.Description.ServiceEndpoint" /> オブジェクトのコレクションに解決します。</summary>
+        <returns>指定したコントラクト用の <see cref="T:System.ServiceModel.Description.ServiceEndpoint" /> オブジェクトのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.MetadataResolver.Resolve%2A> メソッドを使用して、メタデータをダウンロードして解決するときに使用するコントラクトとメタデータ アドレスを指定します。  
+  
+ <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> の既定の設定はメタデータの取得に使用されます。また、既定の <xref:System.ServiceModel.Description.MetadataExchangeClientMode?displayProperty=nameWithType> は <xref:System.ServiceModel.Description.MetadataExchangeClientMode?displayProperty=nameWithType> です。  
+  
+ メタデータのダウンロードだけを行い、その情報を複数の <xref:System.ServiceModel.Description.ServiceEndpoint> オブジェクトに分割しない場合は、<xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> を直接使用します。  
+  
+> [!NOTE]
+>  エンドポイントがインポートされなかった場合や、コントラクトに一致するエンドポイントが存在しない場合、空のコレクションが返されます。 空のコレクションが返される場合は、警告トレースが出力されます。  
+  
+ このメソッドでは、コントラクトの型を指定する必要があります。 コントラクトを指定するには、クライアント コードでサービス インターフェイスを宣言するか、Svcutil.exe によって生成される [!INCLUDE[indigo2](~/includes/indigo2-md.md)] クライアントを使用します。 インターフェイスの変更 (新しい操作の追加など) があると、クライアント コードのインターフェイスを更新するか、新しい [!INCLUDE[indigo2](~/includes/indigo2-md.md)] クライアントを生成する必要があります。 いずれの操作も実行しない場合は、例外がスローされます。 たとえば、Add()、Sub()、Mult()、および Div() を定義した ICalculator というサービス コントラクトを実装しているサービスがあるとします。 クライアント アプリケーションを作成し、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] クライアントを生成します。 次に、Echo() というメソッドを ICalculator に追加します。 次に、新しい <xref:System.ServiceModel.Description.MetadataResolver.Resolve%28System.Type%2CSystem.ServiceModel.EndpointAddress%29> クライアントを生成せずに [!INCLUDE[indigo2](~/includes/indigo2-md.md)] を呼び出すアプリケーションを作成した場合、次の例外が発生します。  
+  
+ `Unhandled Exception: System.ServiceModel.Description.WsdlImporter+WsdlImportException: Cannot locate operation Echo in Contract ICalculator`。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Description.MetadataResolver> クラスを使用して、サービス インスタンスに接続するために使用される <xref:System.ServiceModel.Description.ServiceEndpoint> オブジェクトのコレクションとしてメタデータを返す方法を、次のコード例に示します。  
+  
+ [!code-csharp[MetadataResolver#1](~/samples/snippets/csharp/VS_Snippets_CFX/metadataresolver/cs/client.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">アドレスまたはコントラクトが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Resolve">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Description.ServiceEndpointCollection Resolve (System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.ContractDescription&gt; contracts, System.ServiceModel.EndpointAddress address, System.ServiceModel.Description.MetadataExchangeClient client);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Description.ServiceEndpointCollection Resolve(class System.Collections.Generic.IEnumerable`1&lt;class System.ServiceModel.Description.ContractDescription&gt; contracts, class System.ServiceModel.EndpointAddress address, class System.ServiceModel.Description.MetadataExchangeClient client) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataResolver.Resolve(System.Collections.Generic.IEnumerable{System.ServiceModel.Description.ContractDescription},System.ServiceModel.EndpointAddress,System.ServiceModel.Description.MetadataExchangeClient)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceEndpointCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contracts" Type="System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.ContractDescription&gt;" />
+        <Parameter Name="address" Type="System.ServiceModel.EndpointAddress" />
+        <Parameter Name="client" Type="System.ServiceModel.Description.MetadataExchangeClient" />
+      </Parameters>
+      <Docs>
+        <param name="contracts">メタデータのダウンロードおよび解決が行われるコントラクト。</param>
+        <param name="address">メタデータ アドレス。</param>
+        <param name="client">メタデータの取得に使用される <see cref="T:System.ServiceModel.Description.MetadataExchangeClient" />。</param>
+        <summary>指定したメタデータ アドレスと <see cref="T:System.ServiceModel.Description.ServiceEndpoint" /> を使用して、指定したコントラクトのメタデータ アドレスをそのコントラクトの <see cref="T:System.ServiceModel.Description.MetadataExchangeClient" /> オブジェクトに解決します。</summary>
+        <returns>指定したコントラクト用の <see cref="T:System.ServiceModel.Description.ServiceEndpoint" /> オブジェクトのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値 <xref:System.ServiceModel.Description.MetadataExchangeClientMode?displayProperty=nameWithType> は <xref:System.ServiceModel.Description.MetadataExchangeClientMode?displayProperty=nameWithType> です。  
+  
+ メタデータのダウンロードだけを行い、その情報を複数の <xref:System.ServiceModel.Description.ServiceEndpoint> オブジェクトに分割しない場合は、<xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> を直接使用します。  
+  
+> [!NOTE]
+>  エンドポイントがインポートされなかった場合や、コントラクトに一致するエンドポイントが存在しない場合、空のコレクションが返されます。 空のコレクションが返される場合は、警告トレースが出力されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">アドレス、コントラクトのコレクション、またはクライアントが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="contracts" /> が空か、<paramref name="contracts" /> の 1 つ以上のメンバーが null か、または <paramref name="contracts" /> に同じ名前と名前空間のコントラクトが複数含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Resolve">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Description.ServiceEndpointCollection Resolve (System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.ContractDescription&gt; contracts, Uri address, System.ServiceModel.Description.MetadataExchangeClientMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Description.ServiceEndpointCollection Resolve(class System.Collections.Generic.IEnumerable`1&lt;class System.ServiceModel.Description.ContractDescription&gt; contracts, class System.Uri address, valuetype System.ServiceModel.Description.MetadataExchangeClientMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataResolver.Resolve(System.Collections.Generic.IEnumerable{System.ServiceModel.Description.ContractDescription},System.Uri,System.ServiceModel.Description.MetadataExchangeClientMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceEndpointCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contracts" Type="System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.ContractDescription&gt;" />
+        <Parameter Name="address" Type="System.Uri" />
+        <Parameter Name="mode" Type="System.ServiceModel.Description.MetadataExchangeClientMode" />
+      </Parameters>
+      <Docs>
+        <param name="contracts">メタデータのダウンロードおよび解決が行われるコントラクト。</param>
+        <param name="address">メタデータ アドレス。</param>
+        <param name="mode">取得のモード。</param>
+        <summary>指定したアドレスと転送モードを使用して、指定したコントラクトのメタデータ アドレスをそのコントラクトの <see cref="T:System.ServiceModel.Description.ServiceEndpoint" /> オブジェクトに解決します。</summary>
+        <returns>指定したコントラクト用の <see cref="T:System.ServiceModel.Description.ServiceEndpoint" /> オブジェクトのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> の既定の設定は、メタデータの取得に使用されます。  
+  
+ メタデータのダウンロードだけを行い、その情報を複数の <xref:System.ServiceModel.Description.ServiceEndpoint> オブジェクトに分割しない場合は、<xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> を直接使用します。  
+  
+> [!NOTE]
+>  エンドポイントがインポートされなかった場合や、コントラクトに一致するエンドポイントが存在しない場合、空のコレクションが返されます。 空のコレクションが返される場合は、警告トレースが出力されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">アドレスまたはコントラクトのコレクションが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="contracts" /> が空か、<paramref name="contracts" /> の 1 つ以上のメンバーが null か、または <paramref name="contracts" /> に同じ名前と名前空間のコントラクトが複数含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Resolve">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Description.ServiceEndpointCollection Resolve (Type contract, Uri address, System.ServiceModel.Description.MetadataExchangeClientMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Description.ServiceEndpointCollection Resolve(class System.Type contract, class System.Uri address, valuetype System.ServiceModel.Description.MetadataExchangeClientMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataResolver.Resolve(System.Type,System.Uri,System.ServiceModel.Description.MetadataExchangeClientMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceEndpointCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contract" Type="System.Type" />
+        <Parameter Name="address" Type="System.Uri" />
+        <Parameter Name="mode" Type="System.ServiceModel.Description.MetadataExchangeClientMode" />
+      </Parameters>
+      <Docs>
+        <param name="contract">メタデータのダウンロードおよび解決が行われるコントラクト。</param>
+        <param name="address">メタデータ アドレス。</param>
+        <param name="mode">取得のモード。</param>
+        <summary>指定したアドレスと転送モードを使用して、指定したコントラクトのメタデータ アドレスをそのコントラクトの <see cref="T:System.ServiceModel.Description.ServiceEndpoint" /> オブジェクトに解決します。</summary>
+        <returns>指定したコントラクト用の <see cref="T:System.ServiceModel.Description.ServiceEndpoint" /> オブジェクトのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.MetadataResolver.Resolve%2A> メソッドを使用して、使用するコントラクト、アドレス、およびダウンロード メカニズムを指定します。  
+  
+ <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> の既定の設定は、メタデータの取得に使用されます。  
+  
+ メタデータのダウンロードだけを行い、その情報を複数の <xref:System.ServiceModel.Description.ServiceEndpoint> オブジェクトに分割しない場合は、<xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> を直接使用します。  
+  
+> [!NOTE]
+>  エンドポイントがインポートされなかった場合や、コントラクトに一致するエンドポイントが存在しない場合、空のコレクションが返されます。 空のコレクションが返される場合は、警告トレースが出力されます。  
+  
+   
+  
+## Examples  
+ WS-Transfer ではなく HTTP GET 要求で、メタデータをダウンロードし、それを <xref:System.ServiceModel.Description.MetadataResolver> オブジェクトのコレクションとして返す <xref:System.ServiceModel.Description.ServiceEndpoint> の使用方法を次のコード例に示します。  
+  
+ [!code-csharp[MetadataResolver#2](~/samples/snippets/csharp/VS_Snippets_CFX/metadataresolver/cs/client.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">アドレスまたはコントラクトが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Resolve">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Description.ServiceEndpointCollection Resolve (System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.ContractDescription&gt; contracts, Uri address, System.ServiceModel.Description.MetadataExchangeClientMode mode, System.ServiceModel.Description.MetadataExchangeClient client);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Description.ServiceEndpointCollection Resolve(class System.Collections.Generic.IEnumerable`1&lt;class System.ServiceModel.Description.ContractDescription&gt; contracts, class System.Uri address, valuetype System.ServiceModel.Description.MetadataExchangeClientMode mode, class System.ServiceModel.Description.MetadataExchangeClient client) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataResolver.Resolve(System.Collections.Generic.IEnumerable{System.ServiceModel.Description.ContractDescription},System.Uri,System.ServiceModel.Description.MetadataExchangeClientMode,System.ServiceModel.Description.MetadataExchangeClient)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceEndpointCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contracts" Type="System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.ContractDescription&gt;" />
+        <Parameter Name="address" Type="System.Uri" />
+        <Parameter Name="mode" Type="System.ServiceModel.Description.MetadataExchangeClientMode" />
+        <Parameter Name="client" Type="System.ServiceModel.Description.MetadataExchangeClient" />
+      </Parameters>
+      <Docs>
+        <param name="contracts">メタデータのダウンロードおよび解決が行われるコントラクト。</param>
+        <param name="address">メタデータ アドレス。</param>
+        <param name="mode">取得のモード。</param>
+        <param name="client">メタデータの取得に使用される <see cref="T:System.ServiceModel.Description.MetadataExchangeClient" />。</param>
+        <summary>指定したアドレス、転送モード、および転送クライアントを使用して、指定したコントラクトのメタデータ アドレスをそのコントラクトの <see cref="T:System.ServiceModel.Description.ServiceEndpoint" /> オブジェクトに解決します。</summary>
+        <returns>指定したコントラクト用の <see cref="T:System.ServiceModel.Description.ServiceEndpoint" /> オブジェクトのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メタデータのダウンロードだけを行い、その情報を複数の <xref:System.ServiceModel.Description.ServiceEndpoint> オブジェクトに分割しない場合は、<xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> を直接使用します。  
+  
+> [!NOTE]
+>  エンドポイントがインポートされなかった場合や、コントラクトに一致するエンドポイントが存在しない場合、空のコレクションが返されます。 空のコレクションが返される場合は、警告トレースが出力されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">アドレス、コントラクトのコレクション、またはクライアントが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="contracts" /> が空か、<paramref name="contracts" /> の 1 つ以上のメンバーが null か、または <paramref name="contracts" /> に同じ名前と名前空間のコントラクトが複数含まれています。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

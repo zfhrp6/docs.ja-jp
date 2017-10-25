@@ -1,0 +1,81 @@
+<Type Name="RelatedImageListAttribute" FullName="System.Windows.Forms.RelatedImageListAttribute">
+  <TypeSignature Language="C#" Value="public sealed class RelatedImageListAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit RelatedImageListAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.RelatedImageListAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property, AllowMultiple=false, Inherited=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>示します。<see cref="T:System.Windows.Forms.ImageList" />に関連するプロパティです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RelatedImageListAttribute (string relatedImageList);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string relatedImageList) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RelatedImageListAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="relatedImageList" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="relatedImageList">名前、<see cref="T:System.Windows.Forms.ImageList" />プロパティに関連します。</param>
+        <summary><see cref="T:System.Windows.Forms.RelatedImageListAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `relatedImageList`パラメーターは、現在のオブジェクトのプロパティまたは現在のオブジェクトのプロパティのプロパティを参照できます。 ある場合など、<xref:System.Windows.Forms.ListViewItem>オブジェクトを<xref:System.Windows.Forms.ListViewItem.ListView%2A>プロパティを格納するへ設定<xref:System.Windows.Forms.ListView>オブジェクト、および含まれている<xref:System.Windows.Forms.ListView>オブジェクトには、<xref:System.Windows.Forms.ListView.SmallImageList%2A>に渡すことが、プロパティ`"ListView.SmallImageList"`として、`relatedImageList`値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RelatedImageList">
+      <MemberSignature Language="C#" Value="public string RelatedImageList { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RelatedImageList" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RelatedImageListAttribute.RelatedImageList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連する名前を取得します。<see cref="T:System.Windows.Forms.ImageList" /></summary>
+        <value>関連の名前<see cref="T:System.Windows.Forms.ImageList" /></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.RelatedImageListAttribute.RelatedImageList%2A>プロパティは、現在のオブジェクトのプロパティまたは現在のオブジェクトのプロパティのプロパティを参照できます。 ある場合など、<xref:System.Windows.Forms.ListViewItem>オブジェクトを<xref:System.Windows.Forms.ListViewItem.ListView%2A>プロパティを含むに設定する<xref:System.Windows.Forms.ListView>オブジェクト、および含まれている<xref:System.Windows.Forms.ListView>オブジェクトには、<xref:System.Windows.Forms.ListView.SmallImageList%2A>プロパティ、<xref:System.Windows.Forms.RelatedImageListAttribute.RelatedImageList%2A>プロパティに設定する`"ListView.SmallImageList"`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

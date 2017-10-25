@@ -1,0 +1,26 @@
+<Type Name="DereferenceConnectionCallback" FullName="System.DirectoryServices.Protocols.DereferenceConnectionCallback">
+  <TypeSignature Language="C#" Value="public delegate void DereferenceConnectionCallback(LdapConnection primaryConnection, LdapConnection connectionToDereference);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DereferenceConnectionCallback extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.Protocols.DereferenceConnectionCallback" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="primaryConnection" Type="System.DirectoryServices.Protocols.LdapConnection" />
+    <Parameter Name="connectionToDereference" Type="System.DirectoryServices.Protocols.LdapConnection" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="primaryConnection"><see cref="T:System.DirectoryServices.Protocols.LdapConnection" />プライマリ接続を指定するオブジェクト。</param>
+    <param name="connectionToDereference"><see cref="T:System.DirectoryServices.Protocols.LdapConnection" />オブジェクトを逆参照する接続を指定します。</param>
+    <summary><see cref="T:System.DirectoryServices.Protocols.DereferenceConnectionCallback" />デリゲートには必要なくなりましたの接続が逆参照します。 正常に呼び出すことによって接続が確立された可能性があります、<see cref="T:System.DirectoryServices.Protocols.QueryForConnectionCallback" />または<see cref="T:System.DirectoryServices.Protocols.NotifyOfNewConnectionCallback" />を委任します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+</Type>

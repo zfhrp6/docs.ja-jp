@@ -1,0 +1,455 @@
+<Type Name="ListControlDesigner" FullName="System.Web.UI.Design.WebControls.ListControlDesigner">
+  <TypeSignature Language="C#" Value="public class ListControlDesigner : System.Web.UI.Design.WebControls.DataBoundControlDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ListControlDesigner extends System.Web.UI.Design.WebControls.DataBoundControlDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.ListControlDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.WebControls.DataBoundControlDesigner</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.UI.Design.SupportsPreviewControl(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>派生したコントロールにビジュアル Web デザイナーでデザイン時サポートを提供するデザイナーの基底クラスとして機能、<see cref="T:System.Web.UI.WebControls.ListControl" />抽象クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビジュアル Web デザイナーで、ユーザーがソースからデザイン ビューに切り替えたときにコントロールを表すマークアップのソース コードから派生した、<xref:System.Web.UI.WebControls.ListControl>クラスは解析され、デザイン画面でコントロールのデザイン時バージョンを作成します。 ユーザーは、ソース ビューに切り替える、デザイン時コントロールがマークアップのソース コードを永続化し、Web ページのマークアップに編集します。 <xref:System.Web.UI.Design.WebControls.ListControlDesigner>から派生したコントロールにビジュアル Web デザイナーでデザイン時サポートを提供する、デザイナーのクラスは基底クラスとして機能、<xref:System.Web.UI.WebControls.ListControl>です。  
+  
+ <xref:System.Web.UI.Design.WebControls.ListControlDesigner>クラスのプロパティは、次の機能を提供します。  
+  
+-   <xref:System.Web.UI.Design.WebControls.ListControlDesigner.ActionLists%2A>プロパティから返される、<xref:System.ComponentModel.Design.DesignerActionListCollection>通常から派生したオブジェクトを含むオブジェクトを<xref:System.ComponentModel.Design.DesignerActionList>デザイナーの継承ツリーの各レベルのオブジェクト。  
+  
+-   <xref:System.Web.UI.Design.WebControls.ListControlDesigner.DataTextField%2A>と<xref:System.Web.UI.Design.WebControls.ListControlDesigner.DataValueField%2A>プロパティから派生したコントロールの対応するプロパティへのアクセスを提供する、<xref:System.Web.UI.WebControls.ListControl>クラスです。 <xref:System.Web.UI.Design.WebControls.ListControlDesigner.DataTextField%2A>と<xref:System.Web.UI.Design.WebControls.ListControlDesigner.DataValueField%2A>フィールド、データ ソースのテキストを指定して、リスト項目の内容をそれぞれ値を指定します。  
+  
+ <xref:System.Web.UI.Design.WebControls.ListControlDesigner>クラスのメソッドは、次の機能を提供します。  
+  
+-   <xref:System.Web.UI.Design.WebControls.ListControlDesigner.DataBind%2A>メソッドから派生した関連付けられたコントロールのバインド、<xref:System.Web.UI.WebControls.ListControl>デザイン時のデータ ソースにします。  
+  
+-   <xref:System.Web.UI.Design.WebControls.ListControlDesigner.GetDesignTimeHtml%2A>メソッドは、デザイン時に関連付けられたコントロールを表示するために使用するマークアップを返します。  
+  
+-   <xref:System.Web.UI.Design.WebControls.ListControlDesigner.GetSelectedDataSource%2A>メソッドは、デザイン時を返します<xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.DataSource%2A>関連付けられたコントロールのコンテナーのコンポーネントです。  
+  
+-   <xref:System.Web.UI.Design.WebControls.ListControlDesigner.GetResolvedSelectedDataSource%2A>メソッドを返します、<xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.DataSource%2A>デザイン時に解決される、コントロール コンテナーから<xref:System.Web.UI.Design.WebControls.DataBoundControlDesigner.DataMember%2A>コントロールのプロパティです。  
+  
+-   <xref:System.Web.UI.Design.WebControls.ListControlDesigner.Initialize%2A>メソッドは、デザイナーを表示およびから派生した関連付けられたコントロールを設計、準備、<xref:System.Web.UI.WebControls.ListControl>です。  
+  
+-   <xref:System.Web.UI.Design.WebControls.ListControlDesigner.OnDataSourceChanged%2A>メソッドが呼び出されます、<xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.DataSource%2A>が関連付けられたコントロールを変更します。  
+  
+-   <xref:System.Web.UI.Design.WebControls.ListControlDesigner.PreFilterProperties%2A>から追加のプロパティを削除、追加のプロパティを追加またはから派生した関連付けられたコントロールのプロパティをシャドウするメソッドが使用される、<xref:System.Web.UI.WebControls.ListControl>です。  
+  
+   
+  
+## Examples  
+ このセクションでは、2 つのコード例を示します。 1 つ目では、カスタム コントロールのデザイナーを派生させる方法を示します。  2 つ目では、派生したコントロールをデザイナーに関連付ける方法を示します。  
+  
+ 次のコード例は、という名前のクラスを作成する方法を示しています。`SimpleRadioButtonListDesigner`から継承する、<xref:System.Web.UI.Design.WebControls.ListControlDesigner>クラスです。 `SimpleRadioButtonListDesigner`クラスのオーバーライド、 <xref:System.Web.UI.Design.WebControls.ListControlDesigner.GetDesignTimeHtml%2A>、 <xref:System.Web.UI.Design.WebControls.ListControlDesigner.Initialize%2A>、および<xref:System.Web.UI.Design.WebControls.ListControlDesigner.OnDataSourceChanged%2A>メソッドです。 `SimpleRadioButtonListDesigner`クラスの表示、`SimpleRadioButtonList`デザイン サーフェイス上のコントロールです。  
+  
+ [!code-csharp[ListControlDesigner_Samples#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlDesigner_Samples/CS/SimpleRadioButtonListDesigner.cs#1)]
+ [!code-vb[ListControlDesigner_Samples#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlDesigner_Samples/VB/simpleradiobuttonlistdesigner.vb#1)]  
+  
+ 次のコード例では、`SimpleRadioButtonList`から制御、<xref:System.Web.UI.WebControls.RadioButtonList>制御、および使用する方法を示しています、<xref:System.ComponentModel.DesignerAttribute>クラスに関連付けるには、`SimpleRadioButtonList`そのデザイナーを持つコントロール、`SimpleRadioButtonListDesigner`クラスです。  
+  
+ [!code-csharp[ListControlDesigner_Samples#5](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlDesigner_Samples/CS/SimpleRadioButtonList.cs#5)]
+ [!code-vb[ListControlDesigner_Samples#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlDesigner_Samples/VB/simpleradiobuttonlist.vb#5)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListControlDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.ListControlDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.ListControlDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework は、内部での新しいインスタンスを作成、<xref:System.Web.UI.Design.WebControls.ListControlDesigner>クラスから派生した関連付けられたコントロールの作成時に、<xref:System.Web.UI.WebControls.ListControl>デザイン サーフェイス上のクラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActionLists">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.Design.DesignerActionListCollection ActionLists { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.Design.DesignerActionListCollection ActionLists" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.ListControlDesigner.ActionLists" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignerActionListCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーのデザイナー アクション リスト コレクションを取得します。</summary>
+        <value>デザイナーに関連付けられた <see cref="T:System.ComponentModel.Design.DesignerActionListCollection" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataBind">
+      <MemberSignature Language="C#" Value="protected override void DataBind (System.Web.UI.WebControls.BaseDataBoundControl dataBoundControl);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void DataBind(class System.Web.UI.WebControls.BaseDataBoundControl dataBoundControl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.ListControlDesigner.DataBind(System.Web.UI.WebControls.BaseDataBoundControl)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataBoundControl" Type="System.Web.UI.WebControls.BaseDataBoundControl" />
+      </Parameters>
+      <Docs>
+        <param name="dataBoundControl">関連付けられたコントロールから派生した、 <see cref="T:System.Web.UI.WebControls.ListControl" />、またはそのコントロールのコピー。</param>
+        <summary>指定したコントロールをデザイン時のデータ ソースにバインドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.DataBoundControlDesigner>基底クラス、<xref:System.Web.UI.Design.WebControls.DataBoundControlDesigner.DataBind%2A>メソッドのセット、<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSource%2A>と<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSourceID%2A>のプロパティ、<xref:System.Web.UI.WebControls.DataBoundControl>し、デザイン時のデータ ソースを参照するオブジェクトを呼び出して、<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataBind%2A?displayProperty=nameWithType>メソッド、および、復元、<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSource%2A>と<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSourceID%2A>元の値にプロパティです。  
+  
+ <xref:System.Web.UI.Design.WebControls.ListControlDesigner>クラス、ただし、<xref:System.Web.UI.Design.WebControls.ListControlDesigner.DataBind%2A>メソッドには、機能がないため<xref:System.Web.UI.WebControls.ListItem>オブジェクトに追加された、<xref:System.Web.UI.WebControls.ListControl.Items%2A>コレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataTextField">
+      <MemberSignature Language="C#" Value="public string DataTextField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataTextField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.ListControlDesigner.DataTextField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールのデータ テキスト フィールドを設定します。</summary>
+        <value><see cref="P:System.Web.UI.WebControls.ListControl.DataTextField" />リスト コントロールのです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.ListControlDesigner.DataTextField%2A>プロパティを設定または実行時にコントロールのデザイン時の表示に使用するマークアップを取得します。 これにより、デザイナーを使用してアクセスできる、<xref:System.Web.UI.WebControls.ListControl.DataTextField%2A>リスト項目のテキスト コンテンツを提供するデータ ソースのフィールドに対応する、関連付けられたコントロールのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataValueField">
+      <MemberSignature Language="C#" Value="public string DataValueField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataValueField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.ListControlDesigner.DataValueField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールのデータ値フィールドを設定します。</summary>
+        <value><see cref="P:System.Web.UI.WebControls.ListControl.DataValueField" />リスト コントロールのです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.ListControlDesigner.DataValueField%2A>プロパティを使用するデザイナーを使用してアクセス、<xref:System.Web.UI.WebControls.ListControl.DataValueField%2A>リスト項目の値の内容を提供するデータ ソースのフィールドを示します、関連付けられたコントロールのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeHtml">
+      <MemberSignature Language="C#" Value="public override string GetDesignTimeHtml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetDesignTimeHtml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.ListControlDesigner.GetDesignTimeHtml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイン時にコントロールを表すために使用される HTML を取得します。</summary>
+        <returns>A<see cref="T:System.String" />から派生したコントロールを表示するために使用するマークアップを含む、<see cref="T:System.Web.UI.WebControls.ListControl" />デザイン時にします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 関連付けられたコントロールから派生した場合、<xref:System.Web.UI.WebControls.ListControl>オブジェクトは、データ連結、<xref:System.Web.UI.Design.WebControls.ListControlDesigner.GetDesignTimeHtml%2A>メソッドをクリア、<xref:System.Web.UI.WebControls.ListControl.Items%2A>コレクションに追加し、<xref:System.String>コントロールがデータ バインドであることを示すメッセージ。 関連付けられたコントロールがデータにバインドされていません場合、<xref:System.Web.UI.WebControls.ListControl.Items%2A>コレクションは空では、<xref:System.Web.UI.Design.WebControls.ListControlDesigner.GetDesignTimeHtml%2A>を追加、<xref:System.String>コントロールのバインドがないことを示すメッセージ。 次に、<xref:System.Web.UI.Design.WebControls.ListControlDesigner.GetDesignTimeHtml%2A>マークアップを生成するその基本メソッドを呼び出します。  
+  
+   
+  
+## Examples  
+ 次のコード例の上書き、<xref:System.Web.UI.Design.WebControls.ListControlDesigner.GetDesignTimeHtml%2A>デザイン サーフェイスに関連付けられたコントロールに対して表示されるマークアップをカスタマイズするメソッド。 場合、<xref:System.Web.UI.WebControls.WebControl.BackColor%2A>関連付けられたコントロールのプロパティが定義されていないに設定されている`Gainsboro`コントロールがその背景色で表示されます。 これは、基本実装後、<xref:System.Web.UI.Design.WebControls.ListControlDesigner.GetDesignTimeHtml%2A>メソッドが呼び出されます。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.UI.Design.WebControls.ListControlDesigner>クラスです。  
+  
+ [!code-csharp[ListControlDesigner_Samples#2](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlDesigner_Samples/CS/SimpleRadioButtonListDesigner.cs#2)]
+ [!code-vb[ListControlDesigner_Samples#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlDesigner_Samples/VB/simpleradiobuttonlistdesigner.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetResolvedSelectedDataSource">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerable GetResolvedSelectedDataSource ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.IEnumerable GetResolvedSelectedDataSource() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.ListControlDesigner.GetResolvedSelectedDataSource" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>特定のデータ メンバーに解決される、関連付けられたコントロールのコンテナーからデータ ソース コンポーネントを取得します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerable" />デザイン時刻を含む<see cref="P:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.DataSource" />に解決される、<see cref="P:System.Web.UI.Design.WebControls.DataBoundControlDesigner.DataMember" />関連付けられたコントロールのです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.ListControlDesigner.GetSelectedDataSource%2A>メソッドを返します。`null`場合、<xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.DataSource%2A>プロパティが見つからない場合は、<xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.DataSource%2A>と同じ名前がありません。  
+  
+ 場合、<xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.DataSource%2A>に解決することはできません、<xref:System.Web.UI.Design.WebControls.DataBoundControlDesigner.DataMember%2A>関連付けられたコントロールのプロパティ、<xref:System.Web.UI.Design.WebControls.ListControlDesigner.GetResolvedSelectedDataSource%2A>を返します、<xref:System.Collections.IEnumerable>インターフェイスのデザイン時を含む<xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.DataSource%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSelectedDataSource">
+      <MemberSignature Language="C#" Value="public object GetSelectedDataSource ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetSelectedDataSource() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.ListControlDesigner.GetSelectedDataSource" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>関連付けられたコントロールのコンテナーからデータ ソース コンポーネントを取得します。</summary>
+        <returns>実装するオブジェクト、<see cref="T:System.Collections.IEnumerable" />インターフェイスと、デザイン時を含む<see cref="P:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.DataSource" />関連付けられたコントロールのです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.ListControlDesigner.GetSelectedDataSource%2A>メソッドを返します。`null`場合、<xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.DataSource%2A>プロパティが見つからない場合は、<xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.DataSource%2A>と同じ名前がありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (System.ComponentModel.IComponent component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(class System.ComponentModel.IComponent component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.ListControlDesigner.Initialize(System.ComponentModel.IComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="component">派生したコントロール、<see cref="T:System.Web.UI.WebControls.ListControl" />を実装する、<see cref="T:System.ComponentModel.IComponent" />です。</param>
+        <summary>関連付けられたコントロールをデザイナーで表示、編集、デザインできるように準備します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナー ホストの呼び出し、<xref:System.Web.UI.Design.WebControls.ListControlDesigner.Initialize%2A>メソッドから派生したコントロールを表示するために、デザイナーを使用する準備ができたときに、<xref:System.Web.UI.WebControls.ListControl>クラスです。 <xref:System.Web.UI.Design.WebControls.ListControlDesigner.Initialize%2A>メソッドとその基本メソッドのプロパティを構成し、デザイナーの操作のために必要なイベントに接続します。  
+  
+ `component`パラメーターがから派生した、コントロール、<xref:System.Web.UI.WebControls.ListControl>がこのデザイナーと関連付けられているか、そのコントロールのコピーであります。  
+  
+   
+  
+## Examples  
+ 次のコード例の上書き、<xref:System.Web.UI.Design.WebControls.ListControlDesigner.Initialize%2A>から派生したデザイナーで、<xref:System.Web.UI.Design.WebControls.ListControlDesigner>コントロール クラスのインスタンスのみが名前付けられるようにするクラス`SimpleRadioButtonList`カスタム デザイナーによって使用されます。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.UI.Design.WebControls.ListControlDesigner>クラスです。  
+  
+ [!code-csharp[ListControlDesigner_Samples#3](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlDesigner_Samples/CS/SimpleRadioButtonListDesigner.cs#3)]
+ [!code-vb[ListControlDesigner_Samples#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlDesigner_Samples/VB/simpleradiobuttonlistdesigner.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDataSourceChanged">
+      <MemberSignature Language="C#" Value="public virtual void OnDataSourceChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnDataSourceChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.ListControlDesigner.OnDataSourceChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>関連付けられたコントロールのデータ ソースが変更されたときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.OnDataSourceChanged%2A>基本メソッドから派生した関連付けられたコントロールの接続、<xref:System.Web.UI.WebControls.ListControl>現在のデータ ソースにオブジェクトとは異なるデータ ソース コントロールが接続されていた場合は、デザイン時のマークアップを更新します。 <xref:System.Web.UI.Design.WebControls.ListControlDesigner.OnDataSourceChanged%2A>メソッドは、現在のデータ ソースに接続した後、デザイン時のマークアップを更新します。  
+  
+   
+  
+## Examples  
+ 次のコード例の上書き、<xref:System.Web.UI.Design.WebControls.ListControlDesigner.OnDataSourceChanged%2A>から継承するクラスのメソッド、<xref:System.Web.UI.Design.WebControls.ListControlDesigner>クラスです。 デザイナー クラスの変更に関連付けられているデータ ソースがある、<xref:System.Web.UI.Design.WebControls.ListControlDesigner.OnDataSourceChanged%2A>メソッドが呼び出され、このコードは、という名前の変数を設定します。`changedDataSource`に`true`です。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.UI.Design.WebControls.ListControlDesigner>クラスです。  
+  
+ [!code-csharp[ListControlDesigner_Samples#4](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlDesigner_Samples/CS/SimpleRadioButtonListDesigner.cs#4)]
+ [!code-vb[ListControlDesigner_Samples#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlDesigner_Samples/VB/simpleradiobuttonlistdesigner.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDataSourceChanged">
+      <MemberSignature Language="C#" Value="protected override void OnDataSourceChanged (bool forceUpdateView);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnDataSourceChanged(bool forceUpdateView) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.ListControlDesigner.OnDataSourceChanged(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="forceUpdateView" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="forceUpdateView">A<see cref="T:System.Boolean" />デザイン時のマークアップが無条件で更新するかどうかを示すです。 このパラメーターは無視されます。</param>
+        <summary>関連付けられたコントロールのデータ ソースが変更されたときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.OnDataSourceChanged%2A>基本メソッドから派生した関連付けられたコントロールの接続、<xref:System.Web.UI.WebControls.ListControl>現在のデータ ソースにクラスとは異なるデータ ソース コントロールが接続されていた場合は、デザイン時のマークアップを更新します。 <xref:System.Web.UI.Design.WebControls.ListControlDesigner.OnDataSourceChanged%2A>デザイナーのメソッドでは、現在のデータ ソースに接続した後、デザイン時のマークアップを無条件に更新します。 値`forceUpdateView`は無視されます。  
+  
+   
+  
+## Examples  
+ 次のコード例の上書き、<xref:System.Web.UI.Design.WebControls.ListControlDesigner.OnDataSourceChanged%2A>から継承するクラスのメソッド、<xref:System.Web.UI.Design.WebControls.ListControlDesigner>クラスです。 デザイナー クラスの変更に関連付けられているデータ ソースがある、<xref:System.Web.UI.Design.WebControls.ListControlDesigner.OnDataSourceChanged%2A>が呼び出されたこのコードは、という名前の変数を設定および`changedDataSource`に`true`です。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.UI.Design.WebControls.ListControlDesigner>クラスです。  
+  
+ [!code-csharp[ListControlDesigner_Samples#4](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlDesigner_Samples/CS/SimpleRadioButtonListDesigner.cs#4)]
+ [!code-vb[ListControlDesigner_Samples#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlDesigner_Samples/VB/simpleradiobuttonlistdesigner.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="usage">
+          <para>呼び出し元は、パブリックに使用する必要があります<see cref="M:System.Web.UI.Design.WebControls.ListControlDesigner.OnDataSourceChanged" />をオーバーライドします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="PreFilterProperties">
+      <MemberSignature Language="C#" Value="protected override void PreFilterProperties (System.Collections.IDictionary properties);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void PreFilterProperties(class System.Collections.IDictionary properties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.ListControlDesigner.PreFilterProperties(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="properties" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="properties">実装するコレクション、<see cref="T:System.Collections.IDictionary" />の追加またはシャドウ公開するプロパティを関連付けられたコントロールのデザイン時にします。</param>
+        <summary>追加のプロパティを削除するか、プロパティの表示を追加する、デザイナーによって使用される、**プロパティ**グリッドまたは関連付けられたコントロールのプロパティをシャドウします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロール デザイナーから派生したメソッドを使用して、<xref:System.ComponentModel.Design.ComponentDesigner.PreFilterProperties%2A?displayProperty=nameWithType>デザイナーを実装して、対応するデザイン時のプロパティにさまざまなコントロールのプロパティをシャドウおよびからプロパティをプロパティを追加または削除する方法、**プロパティ**グリッドです。  
+  
+ 派生したコントロールの<xref:System.Web.UI.WebControls.ListControl>オブジェクト、<xref:System.Web.UI.Design.WebControls.ListControlDesigner.PreFilterProperties%2A>を追加、<xref:System.Web.UI.Design.DataFieldConverter>属性を<xref:System.Web.UI.WebControls.ListControl.DataTextField%2A>と<xref:System.Web.UI.WebControls.ListControl.DataValueField%2A>関連付けられたコントロールのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>上書き、<see cref="M:System.Web.UI.Design.WebControls.DetailsViewDesigner.PreFilterProperties(System.Collections.IDictionary)" />プロパティの追加や、デザイン時のプロパティ コレクション内のプロパティの属性を変更する方法です。 他の処理を実行する前に、基本メソッドを呼び出すことを確認します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="UseDataSourcePickerActionList">
+      <MemberSignature Language="C#" Value="protected override bool UseDataSourcePickerActionList { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseDataSourcePickerActionList" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.ListControlDesigner.UseDataSourcePickerActionList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられたコントロールが既定のアクション リストをレンダリングするかどうかを示す値を取得します。</summary>
+        <value>常に <see langword="false" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.ListControlDesigner.UseDataSourcePickerActionList%2A>プロパティから返される`false`でデータ ソースのドロップダウン リストが表示されないように、**データ ソースの選択**のメニュー項目、**一般的なタスク**コンテキスト メニュー。 代わりに、このメニュー項目が表示されます、**データ ソースの選択** ダイアログ ボックスを選択することができます、<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSource%2A>と<xref:System.Web.UI.WebControls.ListControl.DataTextField%2A>と<xref:System.Web.UI.WebControls.ListControl.DataValueField%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>上書き、<see cref="P:System.Web.UI.Design.WebControls.ListControlDesigner.UseDataSourcePickerActionList" />を返すプロパティ<see langword="true" />から派生したコントロールの場合、<see cref="T:System.Web.UI.WebControls.ListControl" />でのデータ ソースのドロップダウン リストを表示するクラス、**データ ソースの選択**のメニュー項目、 **一般的なタスク**デザイン時にコンテキスト メニュー。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

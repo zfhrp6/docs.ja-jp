@@ -1,0 +1,389 @@
+<Type Name="ClaimsPrincipalPermission" FullName="System.IdentityModel.Services.ClaimsPrincipalPermission">
+  <TypeSignature Language="C#" Value="public sealed class ClaimsPrincipalPermission : System.Security.IPermission, System.Security.Permissions.IUnrestrictedPermission" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit ClaimsPrincipalPermission extends System.Object implements class System.Security.IPermission, class System.Security.ISecurityEncodable, class System.Security.Permissions.IUnrestrictedPermission" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Services.ClaimsPrincipalPermission" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Security.IPermission</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Security.Permissions.IUnrestrictedPermission</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>使用するアクセス許可を表す、<see cref="T:System.Security.Claims.ClaimsAuthorizationManager" />リソースへのアクセスをアクティブなプリンシパルに付与する必要があるかどうかを判断する実装。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Services.ClaimsPrincipalPermission>クラスを使用して強制アクセス チェックを実行する機能を提供する、<xref:System.Security.Claims.ClaimsAuthorizationManager>アプリケーションに対して構成されています。 呼び出すことによって、<xref:System.IdentityModel.Services.ClaimsPrincipalPermission.Demand%2A>メソッドまたは静的<xref:System.IdentityModel.Services.ClaimsPrincipalPermission.CheckAccess%2A>メソッド、信頼性情報、認証マネージャーで定義された承認ポリシーに従って、コードの実行パス内からのリソースへの保護を提供できます。 宣言型のアクセス チェックを使用して実行することができます、<xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute>クラスです。  
+  
+> [!IMPORTANT]
+>  <xref:System.IdentityModel.Services.ClaimsPrincipalPermission>クラスで構成されている要求の承認マネージャーを使用して、<xref:System.IdentityModel.Configuration.IdentityConfiguration>で設定されている、<xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType>プロパティです。 これは、Ws-federation が使用されていない; シナリオにおいても、すべてのケースに当てはまりますたとえば、アクティブな (WCF) Web アプリケーションおよびコンソール アプリケーションです。 要求承認マネージャーの構成で、またはプログラムによって指定できます。 要求承認マネージャーを構成ファイルを指定する設定、 [ &lt;claimsAuthorizationManager&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthorizationmanager.md)要素の下、 [ &lt;identityConfiguration&gt;](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)要素でこの id の構成が参照されていることを確認し、 [ &lt;federationConfiguration&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md)要素は、ランタイムによって読み込まれる (たとえばを設定、`identityConfigurationName`属性)。 要求承認マネージャーをプログラムで設定するにはハンドラーを作成して、<xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfigurationCreated?displayProperty=nameWithType>イベント。  
+  
+ 1 つのレベルでは、によって提供される機能<xref:System.IdentityModel.Services.ClaimsPrincipalPermission>によって提供されるロールベースのアクセス チェック (RBAC) に似ていますが、<xref:System.Security.Permissions.PrincipalPermission>クラスです。 ただし、、<xref:System.Security.Claims.ClaimsAuthorizationManager>クラスは、アクティブなプリンシパルによって提示されるクレームに基づくチェックを実行します。 これによりより多くの粒度よりも多くのアクセス許可は通常の収集場所 1 つのロールの下では、純粋な RBAC できます。 おそらく、さらに、クレーム ベースの承認のビジネス ロジックおよび承認ポリシーの分離を強化しが使用できるため、コード内のリソースに対する特定のアクションのアクセス許可が要求されることし、バック エンド ポリシーは、要求を満たすために、プレゼンテーション用のエンティティを処理する必要する要求の構成を使用することができます。 などのでは、RBAC <xref:System.IdentityModel.Services.ClaimsPrincipalPermission> 、ユーザーに基づくアクセス チェックを実行から派生したクラスによって実装されるコード アクセス セキュリティとは異なり、<xref:System.Security.CodeAccessPermission>クラスを使用して、スタック ウォークをアクセス許可がコードのすべての呼び出し元に付与されていることを確認<xref:System.IdentityModel.Services.ClaimsPrincipalPermission>は現在のプリンシパルにのみ、チェックを実行します。  
+  
+ 静的な<xref:System.IdentityModel.Services.ClaimsPrincipalPermission.CheckAccess%2A>メソッドは、指定したリソースに対して指定されたアクションへのアクセスをチェックします。 リソースとアクション両方の文字列、通常は Uri です。 インスタンスを初期化することもできます。<xref:System.IdentityModel.Services.ClaimsPrincipalPermission>アクションとリソース呼び出しと、<xref:System.IdentityModel.Services.ClaimsPrincipalPermission.Demand%2A>メソッドです。 コンス トラクターは、1 つのリソースと操作にのみかかりますが<xref:System.IdentityModel.Services.ClaimsPrincipalPermission>を通じてオブジェクトを組み合わせることができます、<xref:System.IdentityModel.Services.ClaimsPrincipalPermission.Union%2A>と<xref:System.IdentityModel.Services.ClaimsPrincipalPermission.Intersect%2A>メソッドです。 これらのメソッドを使用して作成されたアクセス許可には、複数のリソース操作のペアが含まれます。  
+  
+ 両方のメソッドを呼び出すことによってアクセスを決定する、<xref:System.Security.Claims.ClaimsAuthorizationManager.CheckAccess%2A?displayProperty=nameWithType>で構成されている要求の承認マネージャーのメソッド、 <xref:System.Security.Claims.AuthorizationContext> 、アクティブなプリンシパルで構成されます (<xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType>)、リソース、およびアクション。 スロー、 <xref:System.Security.SecurityException> ; リソースの操作を実行する現在のプリンシパルが許可されていない場合それ以外の場合、次に実行されます。  
+  
+ 場合、<xref:System.IdentityModel.Services.ClaimsPrincipalPermission>複数のリソース操作ペアを格納する、<xref:System.Security.Claims.ClaimsAuthorizationManager.CheckAccess%2A?displayProperty=nameWithType>アクセス許可に含まれるリソース操作ペアの各メソッドが呼び出されます。  呼び出しの<xref:System.IdentityModel.Services.ClaimsPrincipalPermission.Demand%2A>、成功をアクティブなプリンシパルは、アクセス許可に含まれるリソース操作のペアのすべての承認が必要です。  
+  
+   
+  
+## Examples  
+ 次の例を使用してリソースを保護する方法を示しています、 <xref:System.IdentityModel.Services.ClaimsPrincipalPermission.Demand%2A> 、メソッド、<xref:System.IdentityModel.Services.ClaimsPrincipalPermission.CheckAccess%2A>メソッド、または<xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute>宣言します。 構成された、各ケースで<xref:System.Security.Claims.ClaimsAuthorizationManager>が呼び出され、指定されたリソースと操作に対する現在のプリンシパルを評価します。 現在のプリンシパルが、指定したリソースで指定されたアクションの権限がない場合、<xref:System.Security.SecurityException>がスローされた場合に実行されます。  
+  
+ [!code-csharp[WifCppWithCam#1](~/samples/snippets/csharp/VS_Snippets_Misc/wifcppwithcam/cs/wifcppwithcam/program.cs#1)]  
+  
+ 次の XML は、カスタム クレーム承認を使用するために必要な最小構成マネージャーが、<xref:System.IdentityModel.Services.ClaimsPrincipalPermission>クラスです。 宣言する必要あります、少なくとも、両方、`system.identityModel`と`system.identityModel.services`セクション、`<configSection>`要素で、承認マネージャーを指定し、 [ &lt;claimsAuthorizationManager&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthorizationmanager.md)[既定の id 構成要素。 既定のフェデレーション構成から、承認マネージャーが参照されているようになります。 またで、承認マネージャーを指定する id の構成の名前を指定することができます、`identityConfigurationName`の属性、 [ &lt;federationConfiguration&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md)要素。  
+  
+```xml  
+<?xml version="1.0" encoding="utf-8" ?>  
+<configuration>  
+  <configSections>  
+    <!-- WIF configuration sections -->  
+    <section name="system.identityModel" type="System.IdentityModel.Configuration.SystemIdentityModelSection, System.IdentityModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089"/>  
+    <section name="system.identityModel.services" type="System.IdentityModel.Services.Configuration.SystemIdentityModelServicesSection, System.IdentityModel.Services, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089"/>  
+  </configSections>  
+  
+  <startup>  
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" />  
+  </startup>  
+  
+  <system.identityModel>  
+    <identityConfiguration>  
+      <claimsAuthorizationManager type ="MyClaimsAuthorizationManager.MyClaimsAuthorizationManager, MyClaimsAuthorizationManager"/>  
+    </identityConfiguration>  
+  </system.identityModel>  
+  
+</configuration>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ClaimsPrincipalPermission (string resource, string action);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string resource, string action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.ClaimsPrincipalPermission.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="resource" Type="System.String" />
+        <Parameter Name="action" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="resource">プリンシパルの権限をリソースです。</param>
+        <param name="action">プリンシパルの権限を操作します。</param>
+        <summary><see cref="T:System.IdentityModel.Services.ClaimsPrincipalPermission" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Services.ClaimsPrincipalPermission>オブジェクトは、指定したリソース操作のペアで初期化します。 呼び出すことができます、<xref:System.IdentityModel.Services.ClaimsPrincipalPermission.Demand%2A>アクセス チェックを実行するメソッド。  
+  
+ コンス トラクターは、1 つのリソースと操作にのみかかりますが<xref:System.IdentityModel.Services.ClaimsPrincipalPermission>を通じてオブジェクトを組み合わせることができます、<xref:System.IdentityModel.Services.ClaimsPrincipalPermission.Union%2A>と<xref:System.IdentityModel.Services.ClaimsPrincipalPermission.Intersect%2A>メソッドです。 これらの方法を介して作成されたアクセス許可には、複数のリソース操作のペアが含まれます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="resource" /> が <see langword="null" /> または空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="action" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckAccess">
+      <MemberSignature Language="C#" Value="public static void CheckAccess (string resource, string action);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void CheckAccess(string resource, string action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.ClaimsPrincipalPermission.CheckAccess(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2103:ReviewImperativeSecurity", Justification="It is expected that the runtime’s behavior would rely on changing data")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resource" Type="System.String" />
+        <Parameter Name="action" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="resource">プリンシパルの権限をリソースです。</param>
+        <param name="action">プリンシパルの権限を操作します。</param>
+        <summary>現在のプリンシパルが指定したリソースに対して指定されたアクションを実行する権限がかどうかを確認します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プリンシパルは、指定されたリソースで指定されたアクションの承認が必要、または<xref:System.Security.SecurityException>例外がスローされます。  
+  
+ <xref:System.Security.Claims.ClaimsAuthorizationManager.CheckAccess%2A?displayProperty=nameWithType>で構成されている要求の承認マネージャーのメソッドが呼び出される、 <xref:System.Security.Claims.AuthorizationContext> 、アクティブなプリンシパルで構成されます (<xref:System.Threading.Thread.CurrentPrincipal%2A>)、リソース、およびアクション。  
+  
+   
+  
+## Examples  
+ 次の例を使用してリソースを保護する方法を示しています、<xref:System.IdentityModel.Services.ClaimsPrincipalPermission.CheckAccess%2A>メソッドです。 指定されたリソースと操作に対する現在のプリンシパルを評価する構成済みの要求の承認マネージャーが呼び出されます。 現在のプリンシパルが、指定したリソースで指定されたアクションの権限がない場合、<xref:System.Security.SecurityException>がスローされた場合に実行されます。  
+  
+ [!code-csharp[WifCppWithCam#2](~/samples/snippets/csharp/VS_Snippets_Misc/wifcppwithcam/cs/wifcppwithcam/program.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">現在のプリンシパルがから割り当てることはない<see cref="T:System.Security.Claims.ClaimsPrincipal" />です。  
+  
+ または  
+  
+ ない<see cref="T:System.Security.Claims.ClaimsAuthorizationManager" />ように構成します。</exception>
+        <exception cref="T:System.Security.SecurityException">承認チェックが失敗しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Copy">
+      <MemberSignature Language="C#" Value="public System.Security.IPermission Copy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.IPermission Copy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.ClaimsPrincipalPermission.Copy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2103:ReviewImperativeSecurity", Justification="It is expected that the runtime’s behavior would rely on changing data")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のコピーを返します<see cref="T:System.IdentityModel.Services.ClaimsPrincipalPermission" />インスタンス。</summary>
+        <returns>A<see cref="T:System.IdentityModel.Services.ClaimsPrincipalPermission" />現在のインスタンスからコピーします。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Demand">
+      <MemberSignature Language="C#" Value="public void Demand ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Demand() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.ClaimsPrincipalPermission.Demand" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>かどうか、現在のプリンシパルは、現在のインスタンスに関連付けられているリソース操作のペアの承認を確認します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のプリンシパルは、このインスタンスに関連付けられているリソース操作のペアのすべての承認が必要、または<xref:System.Security.SecurityException>例外がスローされます。  
+  
+ コンス トラクターは、1 つのリソースと操作にのみかかりますが<xref:System.IdentityModel.Services.ClaimsPrincipalPermission>を通じてオブジェクトを組み合わせることができます、<xref:System.IdentityModel.Services.ClaimsPrincipalPermission.Union%2A>と<xref:System.IdentityModel.Services.ClaimsPrincipalPermission.Intersect%2A>メソッドです。 これらの方法を介して作成されたアクセス許可には、複数のリソース操作のペアが含まれます。  
+  
+ <xref:System.IdentityModel.Services.ClaimsPrincipalPermission.Demand%2A>メソッドを呼び出して、<xref:System.Security.Claims.ClaimsAuthorizationManager.CheckAccess%2A?displayProperty=nameWithType>で構成されている要求の承認マネージャーのメソッド、 <xref:System.Security.Claims.AuthorizationContext> 、アクティブなプリンシパルで構成されます (<xref:System.Threading.Thread.CurrentPrincipal%2A>)、リソース、およびアクセス許可に含まれるリソース操作ペアの各アクション。 <xref:System.IdentityModel.Services.ClaimsPrincipalPermission.Demand%2A>を成功させる、アクティブなプリンシパルは、アクセス許可に含まれるリソース操作のペアのすべての承認が必要です。  
+  
+   
+  
+## Examples  
+ 次の例を使用してリソースを保護する方法を示しています、<xref:System.IdentityModel.Services.ClaimsPrincipalPermission.Demand%2A>メソッドです。 指定されたリソースと操作に対する現在のプリンシパルを評価する構成済みの要求の承認マネージャーが呼び出されます。 現在のプリンシパルが、指定したリソースで指定されたアクションの権限がない場合、<xref:System.Security.SecurityException>がスローされた場合に実行されます。  
+  
+ [!code-csharp[WifCppWithCam#3](~/samples/snippets/csharp/VS_Snippets_Misc/wifcppwithcam/cs/wifcppwithcam/program.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">現在のプリンシパルがから割り当てることはない<see cref="T:System.Security.Claims.ClaimsPrincipal" />です。  
+  
+ または  
+  
+ ない<see cref="T:System.Security.Claims.ClaimsAuthorizationManager" />ように構成します。</exception>
+        <exception cref="T:System.Security.SecurityException">承認チェックが失敗しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FromXml">
+      <MemberSignature Language="C#" Value="public void FromXml (System.Security.SecurityElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void FromXml(class System.Security.SecurityElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.ClaimsPrincipalPermission.FromXml(System.Security.SecurityElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Security.SecurityElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">アクセス許可の再構築に使用する XML エンコード。</param>
+        <summary>現在のアクセス許可と指定された XML エンコードからの状態を再構築します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しによって作成された XML エンコードからのアクセス許可を再構築、<xref:System.IdentityModel.Services.ClaimsPrincipalPermission.ToXml%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">エンコーディングには、認識されない要素または属性形式の正しくない XML が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Intersect">
+      <MemberSignature Language="C#" Value="public System.Security.IPermission Intersect (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.IPermission Intersect(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.ClaimsPrincipalPermission.Intersect(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">現在のアクセス許可と交差するアクセス許可。 インスタンスを指定する必要があります<see cref="T:System.IdentityModel.Services.ClaimsPrincipalPermission" />です。</param>
+        <summary>現在のアクセス許可と指定したアクセス許可の積集合であるアクセス許可を返します。</summary>
+        <returns>新しい<see cref="T:System.IdentityModel.Services.ClaimsPrincipalPermission" />を現在のアクセス許可と指定した権限の積集合を表すまたは<see langword="null" />場合<paramref name="target" />は<paramref name="null" />のインスタンスではない、または<see cref="T:System.IdentityModel.Services.ClaimsPrincipalPermission" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されるアクセス許可は、現在のアクセス許可と、指定した権限の両方に存在していたリソース操作のペアのみをいます。 アクセス許可のどちらか 1 つだけに存在していたリソース操作のペアは含まれません。 <xref:System.IdentityModel.Services.ClaimsPrincipalPermission.Demand%2A>成功すると、新しいアクセス許可で、現在のプリンシパルのみ必要がありますが現在のアクセス許可と、指定した権限に共通するリソース操作のペアの承認されるようにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSubsetOf">
+      <MemberSignature Language="C#" Value="public bool IsSubsetOf (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsSubsetOf(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.ClaimsPrincipalPermission.IsSubsetOf(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">サブセットの関係をテストするアクセス許可。 インスタンスを指定する必要があります<see cref="T:System.IdentityModel.Services.ClaimsPrincipalPermission" />です。</param>
+        <summary>現在のアクセス許可が指定したアクセス許可のサブセットであるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />現在のアクセス許可が指定した権限のサブセットの場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のアクセス許可は、すべての現在のアクセス許可に含まれるリソース アクション ペアもがある場合、指定した権限の指定したアクセス許可のサブセットです。 場合`target`は`null`のインスタンスではない、または<xref:System.IdentityModel.Services.ClaimsPrincipalPermission>、<xref:System.IdentityModel.Services.ClaimsPrincipalPermission.IsSubsetOf%2A>返します`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUnrestricted">
+      <MemberSignature Language="C#" Value="public bool IsUnrestricted ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsUnrestricted() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.ClaimsPrincipalPermission.IsUnrestricted" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アクセス許可が無制限かどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />アクセス許可が無制限ではない場合それ以外の場合、<see langword="false" />です。 アクセス許可が制限されていることを示す <see langword="true" /> を常に返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToXml">
+      <MemberSignature Language="C#" Value="public System.Security.SecurityElement ToXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.SecurityElement ToXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.ClaimsPrincipalPermission.ToXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.SecurityElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のアクセス許可とその状態の XML にエンコードされたフォームを返します。</summary>
+        <returns>現在のアクセス許可とその状態の XML にエンコードされたフォーム。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プリンシパルを再構築できますでエンコードされた XML 形式から呼び出すことによって、<xref:System.IdentityModel.Services.ClaimsPrincipalPermission.FromXml%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Union">
+      <MemberSignature Language="C#" Value="public System.Security.IPermission Union (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.IPermission Union(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.ClaimsPrincipalPermission.Union(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">現在のアクセス許可と結合するアクセス許可。 <see cref="T:System.IdentityModel.Services.ClaimsPrincipalPermission" /> 型でなければなりません。</param>
+        <summary>現在のアクセス許可と、指定した権限の和集合を表す新しいアクセス許可を返します。 <see cref="T:System.IdentityModel.Services.ClaimsPrincipalPermission" />すべての現在のインスタンスと対象インスタンスに存在するリソース操作のペアを持つオブジェクトです。</summary>
+        <returns>新しい<see cref="T:System.IdentityModel.Services.ClaimsPrincipalPermission" />を現在のアクセス許可と指定した権限の和集合を表すまたは<see langword="null" />場合<paramref name="target" />は<paramref name="null" />のインスタンスではない、または<see cref="T:System.IdentityModel.Services.ClaimsPrincipalPermission" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される権限にはすべての現在のアクセス許可に存在するリソース操作ペアと、指定した権限を表示できるリソース操作ペアのすべてです。 <xref:System.IdentityModel.Services.ClaimsPrincipalPermission.Demand%2A>成功すると、新しいアクセス許可には、すべての現在のアクセス許可に存在していたリソース アクション ペアと、指定した権限に存在していたリソース操作のペアのすべての現在のプリンシパルが承認される必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

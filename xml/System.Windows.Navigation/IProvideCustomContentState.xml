@@ -1,0 +1,77 @@
+<Type Name="IProvideCustomContentState" FullName="System.Windows.Navigation.IProvideCustomContentState">
+  <TypeSignature Language="C#" Value="public interface IProvideCustomContentState" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IProvideCustomContentState" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Navigation.IProvideCustomContentState" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>コンテンツを移動する前に、カスタムの状態をコンテンツのナビゲーション履歴のエントリを追加する必要があるクラスによって実装されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Navigation.IProvideCustomContentState>カスタムとして実装されたカスタムの状態の一部を関連付けることができます<xref:System.Windows.Navigation.CustomContentState>クラスからの切り替えが移動されているコンテンツのナビゲーション履歴のエントリ。  
+  
+ カスタム状態は、次を使用してこの方法でも関連付けることができます。  
+  
+-   呼び出す**ため**:  
+  
+    -   <xref:System.Windows.Navigation.NavigationService.AddBackEntry%2A?displayProperty=nameWithType>  
+  
+    -   <xref:System.Windows.Navigation.NavigationWindow.AddBackEntry%2A?displayProperty=nameWithType>  
+  
+    -   <xref:System.Windows.Controls.Frame.AddBackEntry%2A?displayProperty=nameWithType>。  
+  
+-   設定<xref:System.Windows.Navigation.NavigatingCancelEventArgs.Content%2A?displayProperty=nameWithType>する次のイベントのいずれかが発生した場合。  
+  
+    -   <xref:System.Windows.Navigation.NavigationService.Navigating?displayProperty=nameWithType>  
+  
+    -   <xref:System.Windows.Navigation.NavigationWindow.Navigating?displayProperty=nameWithType>  
+  
+    -   <xref:System.Windows.Controls.Frame.Navigating?displayProperty=nameWithType>  
+  
+    -   <xref:System.Windows.Navigation.NavigationWindow.Navigating?displayProperty=nameWithType>  
+  
+ 実装する必要があります<xref:System.Windows.Navigation.IProvideCustomContentState>に追加するとカスタム状態ナビゲーション履歴を呼び出して**ため**、それ以外の場合ナビゲーション履歴が正常に機能しない以外の場合は、次の手順を検討してください。  
+  
+1.  **ため**カスタム状態を現在のコンテンツに関連付けるために呼び出されます。  
+  
+2.  ナビゲーション履歴のエントリを移動して、<xref:System.Windows.Navigation.CustomContentState.Replay%2A>カスタム状態のメソッドが呼び出され、状態は、コンテンツに適用します。  
+  
+3.  以前のコンテンツは、"進む"ナビゲーション履歴に移動します。  
+  
+4.  ナビゲーション履歴のエントリを移動するが、前回に関連付けられたナビゲーション履歴のエントリが移動した後、カスタムの状態が保持されていません。  
+  
+ これは、ナビゲーション履歴に追加された後にカスタム状態に最初に記録されている状態が変わる可能性がありますので、既定の動作です。 カスタム状態オブジェクトに移動すると、その状態が適用される、状態の変更に関するいくつかの側面の前に、ナビゲーション履歴にエントリを移動する前に状態の変更できませんオブジェクトに反映、カスタム状態です。 さらに、<xref:System.Windows.Navigation.NavigationService.AddBackEntry%2A>状態変更が反映された新しいカスタム状態オブジェクトを追加する明示的に呼び出すことができません。 その結果、現在のことを確認する特定のナビゲーションの状態は常にナビゲーション履歴に格納、<xref:System.Windows.Navigation.IProvideCustomContentState.GetContentState%2A>と呼びます。  
+  
+> [!IMPORTANT]
+>  カスタム コンテンツの状態の情報を格納するときに対象の状態を記憶する ページのインスタンスへの参照を格納することはできません。 これにより、[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]を既定のナビゲーション履歴の動作の目的は、ページのインスタンスと損なわを解放します。 これを行う必要がある場合、は、使用を検討する可能性があります<xref:System.Windows.Controls.Page.KeepAlive%2A>代わりにします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetContentState">
+      <MemberSignature Language="C#" Value="public System.Windows.Navigation.CustomContentState GetContentState ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Navigation.CustomContentState GetContentState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.IProvideCustomContentState.GetContentState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.CustomContentState</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンテンツ ナビゲーション履歴に関連付けられるカスタム状態クラスのインスタンスを返します。</summary>
+        <returns>カスタムのインスタンス<see cref="T:System.Windows.Navigation.CustomContentState" />移動履歴内のコンテンツに関連するクラス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,86 @@
+<Type Name="PersonalizationScope" FullName="System.Web.UI.WebControls.WebParts.PersonalizationScope">
+  <TypeSignature Language="C#" Value="public enum PersonalizationScope" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed PersonalizationScope extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>パーソナル化スコープを示す、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />オブジェクトまたは Web パーツ コントロールのプロパティに適用されるパーソナル化スコープ。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パーソナル化スコープは、Web パーツのパーソナル化の重要な概念とスコープを含む、他の設定と緊密に統合されているページして、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>制御で実行されている以外のコントロールであると、ページに追加したコントロールの方法では、各プロパティに関連付けられたスコープ。 パーソナル化スコープの詳細については、次を参照してください。 [Web パーツのパーソナル化の概要](http://msdn.microsoft.com/library/7dc34f74-52aa-4082-b98d-2bcf9e07e320)です。  
+  
+ パーソナル化スコープは、パーソナル化データはユーザーのセットに適用する方法を参照します。 パーソナル化データの一部は、特定のユーザーと、ページ上のコントロールだけに適用されます。 その他のパーソナル化データは、サイトを表示するすべてのユーザーに適用されます。 パーソナル化スコープの使用は、パーソナル化のさまざまな領域内をデータのセットを取得して表示する必要がありますを示します。  
+  
+ ページが共有パーソナル化スコープで実行されている場合、コントロールを表示するすべてのユーザーに適用できる特定のコントロールのパーソナル化データのみを読み込むことを示します。 現在実行しているユーザーの権限によってこの幅広く適用データことができますもするを変更して、データ ストアに保存します。 ページは、ユーザーのパーソナル化スコープで実行中は、コントロールのパーソナル化データを保存して読み込む必要がありますが、現在実行中のユーザーに基づいていることを示します。 通常、つまり、ユーザー固有のデータの読み込みし、広範に該当するデータ (または共有データ) のみ表示できるコントロールの中に、コントロールに保存できます。  
+  
+ A<xref:System.Web.UI.WebControls.WebParts.WebPartManager>パーソナル化の高度なライフ サイクルを管理するには、コントロールが 2 つのパーソナル化スコープのいずれかで実行します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User>列挙します。  
+  
+ [!code-csharp[WebParts_PersAdmin#6](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_PersAdmin/CS/PersAdmin.ascx#6)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Shared">
+      <MemberSignature Language="C#" Value="Shared" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.WebParts.PersonalizationScope Shared = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PersonalizationScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スコープを参照するとき、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />コントロール、<see langword="Shared" />スコープにすると、個人用設定データはページ上のすべてのパーソナル化可能なコントロールのすべてのユーザーに適用されますも、ページ上の保存に使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web パーツ コントロールのプロパティに関連付けられたスコープを参照するときに`Shared`スコープには、ことを示しますプロパティ通常のみのすべてのユーザーに関連付けられているデータの読み込みと保存を許可します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="User">
+      <MemberSignature Language="C#" Value="User" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.WebParts.PersonalizationScope User = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.User" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PersonalizationScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スコープを参照するとき、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />コントロール、<see langword="User" />スコープは、ページ上のすべてのパーソナル化可能なコントロールは、ユーザーに固有では、パーソナル化データだけでなく、すべてのユーザーに適用されるパーソナル化データが読み込まれることを意味します。 ページでは、ユーザー固有のパーソナル化データだけを保存できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web パーツ コントロールのプロパティに関連付けられたスコープを参照するときに`User`スコープでは、プロパティがのみにできることを示しますの読み込みし、ページ上で実行されている場合、すべてのユーザーに適切なデータを格納`Shared`スコープ。 ページで、プロパティのコントロールが実行されている場合、`User`スコープ プロパティのユーザーごとのすべてのユーザー データが読み込まれ、トピックとマージします。 この場合、ただし、ユーザーごとのデータのみ保存されますで実行されているページ`User`スコープ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

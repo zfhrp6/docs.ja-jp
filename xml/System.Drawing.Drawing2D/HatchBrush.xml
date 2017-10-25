@@ -1,0 +1,177 @@
+<Type Name="HatchBrush" FullName="System.Drawing.Drawing2D.HatchBrush">
+  <TypeSignature Language="C#" Value="public sealed class HatchBrush : System.Drawing.Brush" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HatchBrush extends System.Drawing.Brush" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Drawing2D.HatchBrush" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Drawing.Brush</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>陰影のスタイル、前景の色、背景色と四角形のブラシを定義します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つの色からハッチ パターンが行われます: によって定義された 1 つ、 <xref:System.Drawing.Drawing2D.HatchBrush.BackgroundColor%2A>、背景とによって定義される背景の上、パターンを形成する、行のいずれかの値を格納する、<xref:System.Drawing.Drawing2D.HatchBrush.ForegroundColor%2A>プロパティです。 <xref:System.Drawing.Drawing2D.HatchBrush.HatchStyle%2A>プロパティ定義パターンの種類、ブラシができ、任意の値を<xref:System.Drawing.Drawing2D.HatchStyle>列挙します。 50 以上の要素がある、<xref:System.Drawing.Drawing2D.HatchStyle>列挙します。  
+  
+ 次の図は、水平方向の陰影パターンで塗りつぶさ楕円を描画します。  
+  
+ ![ハッチ パターン](~/add/media/hatch1.png "ハッチ パターン")  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Drawing.Drawing2D.HatchBrush>前の図に示すようにします。  
+  
+ [!code-csharp[System.Drawing.UsingABrush#41](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingABrush/CS/Class1.cs#41)]
+ [!code-vb[System.Drawing.UsingABrush#41](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingABrush/VB/Class1.vb#41)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HatchBrush (System.Drawing.Drawing2D.HatchStyle hatchstyle, System.Drawing.Color foreColor);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Drawing.Drawing2D.HatchStyle hatchstyle, valuetype System.Drawing.Color foreColor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.HatchBrush.#ctor(System.Drawing.Drawing2D.HatchStyle,System.Drawing.Color)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="hatchstyle" Type="System.Drawing.Drawing2D.HatchStyle" />
+        <Parameter Name="foreColor" Type="System.Drawing.Color" />
+      </Parameters>
+      <Docs>
+        <param name="hatchstyle">1 つ、<see cref="T:System.Drawing.Drawing2D.HatchStyle" />これによって描画されたパターンを表す値<see cref="T:System.Drawing.Drawing2D.HatchBrush" />です。</param>
+        <param name="foreColor"><see cref="T:System.Drawing.Color" />これによって描画される線の色を表す構造<see cref="T:System.Drawing.Drawing2D.HatchBrush" />です。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Drawing.Drawing2D.HatchBrush" /> 、指定したクラス<see cref="T:System.Drawing.Drawing2D.HatchStyle" />列挙体に、前景色。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 背景色が黒に初期化されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HatchBrush (System.Drawing.Drawing2D.HatchStyle hatchstyle, System.Drawing.Color foreColor, System.Drawing.Color backColor);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Drawing.Drawing2D.HatchStyle hatchstyle, valuetype System.Drawing.Color foreColor, valuetype System.Drawing.Color backColor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.HatchBrush.#ctor(System.Drawing.Drawing2D.HatchStyle,System.Drawing.Color,System.Drawing.Color)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="hatchstyle" Type="System.Drawing.Drawing2D.HatchStyle" />
+        <Parameter Name="foreColor" Type="System.Drawing.Color" />
+        <Parameter Name="backColor" Type="System.Drawing.Color" />
+      </Parameters>
+      <Docs>
+        <param name="hatchstyle">1 つ、<see cref="T:System.Drawing.Drawing2D.HatchStyle" />これによって描画されたパターンを表す値<see cref="T:System.Drawing.Drawing2D.HatchBrush" />です。</param>
+        <param name="foreColor"><see cref="T:System.Drawing.Color" />これによって描画される線の色を表す構造<see cref="T:System.Drawing.Drawing2D.HatchBrush" />です。</param>
+        <param name="backColor"><see cref="T:System.Drawing.Color" />これによって描画される線の間のスペースの色を表す構造<see cref="T:System.Drawing.Drawing2D.HatchBrush" />です。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Drawing.Drawing2D.HatchBrush" /> 、指定したクラス<see cref="T:System.Drawing.Drawing2D.HatchStyle" />列挙型、前景色および背景色。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の図は、水平方向の陰影パターンで塗りつぶさ楕円を描画します。  
+  
+ ![ハッチ パターン](~/add/media/hatch1.png "ハッチ パターン")  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Drawing.Drawing2D.HatchBrush.%23ctor%2A>を作成する、<xref:System.Drawing.Drawing2D.HatchBrush>前の図に示すようにします。  
+  
+ [!code-csharp[System.Drawing.UsingABrush#41](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingABrush/CS/Class1.cs#41)]
+ [!code-vb[System.Drawing.UsingABrush#41](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingABrush/VB/Class1.vb#41)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color BackgroundColor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color BackgroundColor" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Drawing2D.HatchBrush.BackgroundColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これによって描画される陰影の線の間のスペースの色を取得<see cref="T:System.Drawing.Drawing2D.HatchBrush" />オブジェクト。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />これの背景色を表す構造<see cref="T:System.Drawing.Drawing2D.HatchBrush" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public override object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.HatchBrush.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Drawing2D.HatchBrush" /> オブジェクトの同一コピーを作成します。</summary>
+        <returns><see cref="T:System.Drawing.Drawing2D.HatchBrush" />オブジェクトとしてキャスト、このメソッドを作成します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForegroundColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color ForegroundColor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color ForegroundColor" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Drawing2D.HatchBrush.ForegroundColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このハッチの線の色を取得<see cref="T:System.Drawing.Drawing2D.HatchBrush" />オブジェクト。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />これの前景色を表す構造<see cref="T:System.Drawing.Drawing2D.HatchBrush" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HatchStyle">
+      <MemberSignature Language="C#" Value="public System.Drawing.Drawing2D.HatchStyle HatchStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Drawing2D.HatchStyle HatchStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Drawing2D.HatchBrush.HatchStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.HatchStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これの陰影のスタイルを取得<see cref="T:System.Drawing.Drawing2D.HatchBrush" />オブジェクト。</summary>
+        <value>1 つ、<see cref="T:System.Drawing.Drawing2D.HatchStyle" />このパターンを表す値<see cref="T:System.Drawing.Drawing2D.HatchBrush" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

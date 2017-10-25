@@ -1,0 +1,108 @@
+<Type Name="IConfigSystem" FullName="System.Configuration.Internal.IConfigSystem">
+  <TypeSignature Language="C#" Value="public interface IConfigSystem" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IConfigSystem" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.Internal.IConfigSystem" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>構成プロパティの初期化をサポートするために、.NET Framework で使用されるインターフェイスを定義します。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="Host">
+      <MemberSignature Language="C#" Value="public System.Configuration.Internal.IInternalConfigHost Host { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.Internal.IInternalConfigHost Host" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.Internal.IConfigSystem.Host" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Internal.IInternalConfigHost</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>構成のホストを取得します。</summary>
+        <value><see cref="T:System.Configuration.Internal.IInternalConfigHost" />アプリケーション構成のプロパティを初期化するために、.NET Framework で使用されるオブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Init">
+      <MemberSignature Language="C#" Value="public void Init (Type typeConfigHost, params object[] hostInitParams);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Init(class System.Type typeConfigHost, object[] hostInitParams) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.IConfigSystem.Init(System.Type,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeConfigHost" Type="System.Type" />
+        <Parameter Name="hostInitParams" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="typeConfigHost">構成のホストの種類。</param>
+        <param name="hostInitParams">ホストの構成パラメーターの配列。</param>
+        <summary>構成オブジェクトを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Root">
+      <MemberSignature Language="C#" Value="public System.Configuration.Internal.IInternalConfigRoot Root { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.Internal.IInternalConfigRoot Root" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.Internal.IConfigSystem.Root" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Internal.IInternalConfigRoot</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>構成階層のルートを取得します。</summary>
+        <value><see cref="T:System.Configuration.Internal.IInternalConfigRoot" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.Internal.IInternalConfigRoot>オブジェクトは、スレッド セーフな方法で作成、削除、および構成レコードの検索の管理を支援します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,86 @@
+<Type Name="TreeViewDrawMode" FullName="System.Windows.Forms.TreeViewDrawMode">
+  <TypeSignature Language="C#" Value="public enum TreeViewDrawMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed TreeViewDrawMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.TreeViewDrawMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>定数を表す方法を定義、<see cref="T:System.Windows.Forms.TreeView" />描画ことができます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙を使用、<xref:System.Windows.Forms.TreeView.DrawMode%2A?displayProperty=nameWithType>かを示すプロパティかどうかのノードまたはノードのラベルの<xref:System.Windows.Forms.TreeView>オーナー描画します。 詳細については、<xref:System.Windows.Forms.TreeView.DrawNode?displayProperty=nameWithType> イベントを参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例をカスタマイズする方法を示しています、<xref:System.Windows.Forms.TreeView>のオーナー描画機能を使用して制御します。 <xref:System.Windows.Forms.TreeView>例ではコントロールは、[標準] ノードのラベルの横の省略可能なノードのタグを表示します。 使用してノードのタグが指定されて、<xref:System.Windows.Forms.TreeNode.Tag%2A?displayProperty=nameWithType>プロパティです。 <xref:System.Windows.Forms.TreeView>コントロールも、カスタムの強調表示色を含む、カスタムの色を使用します。  
+  
+ ほとんどをカスタマイズすることができます、<xref:System.Windows.Forms.TreeView>色の設定でカラー プロパティしますが、選択範囲の強調表示色はプロパティとしてではありません。 さらに、既定の選択の強調表示の四角形は、ノードのラベルの周りにのみ拡張します。 ノード タグを描画して、ノード タグを含めるのに十分な大きさ強調表示のカスタマイズされた四角形を描く、オーナー描画を使用する必要があります。  
+  
+ 完全な例については、<xref:System.Windows.Forms.TreeView.DrawNode?displayProperty=nameWithType>リファレンス トピックを参照します。  
+  
+ [!code-cpp[TreeViewOwnerDraw#2](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeViewOwnerDraw/CPP/treeviewownerdraw.cpp#2)]
+ [!code-csharp[TreeViewOwnerDraw#2](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeViewOwnerDraw/CS/treeviewownerdraw.cs#2)]
+ [!code-vb[TreeViewOwnerDraw#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeViewOwnerDraw/VB/treeviewownerdraw.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Normal">
+      <MemberSignature Language="C#" Value="Normal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.TreeViewDrawMode Normal = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.TreeViewDrawMode.Normal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.TreeViewDrawMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.TreeView" />は、オペレーティング システムで描画します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OwnerDrawAll">
+      <MemberSignature Language="C#" Value="OwnerDrawAll" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.TreeViewDrawMode OwnerDrawAll = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.TreeViewDrawMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべての要素、<see cref="T:System.Windows.Forms.TreeView" />ノードはアイコン、プラスとマイナス記号 ($) とノードを接続する線のチェック ボックスなど、手動で描画されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OwnerDrawText">
+      <MemberSignature Language="C#" Value="OwnerDrawText" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.TreeViewDrawMode OwnerDrawText = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.TreeViewDrawMode.OwnerDrawText" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.TreeViewDrawMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ラベル部分、<see cref="T:System.Windows.Forms.TreeView" />ノードが手動で描画されます。 その他のノードの要素は、アイコン、プラスとマイナス記号 ($) とノードを接続する線のチェック ボックスなど、オペレーティング システムによって描画されます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

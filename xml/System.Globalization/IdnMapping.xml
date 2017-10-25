@@ -1,0 +1,692 @@
+<Type Name="IdnMapping" FullName="System.Globalization.IdnMapping">
+  <TypeSignature Language="C#" Value="public sealed class IdnMapping" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit IdnMapping extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Globalization.IdnMapping" />
+  <AssemblyInfo>
+    <AssemblyName>System.Globalization.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>インターネット ドメイン名の非 ASCII 文字の使用をサポートします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インターネット ドメイン名は、ラベルの区切り記号で区切られた、ドメイン名ラベルと呼ばれる、1 つまたは複数の部分で構成されます。 たとえば、ドメイン名"www.proseware.com"は、ラベル、"www"、「して」および"com"、ピリオドで区切られたで構成されます。 標準のドメイン名は、US ASCII (または基本ラテン) 文字の範囲内で、U +0 0021 U +0 007E に指定された文字で構成されます。 は、US-ASCII 文字セットの国際化ドメイン名でアプリケーション IDNA () を使用してカルチャでのインターネット使用状況を容易にするためには 2003 では、US-ASCII 文字の範囲の Unicode 文字を含めることをサポートするために標準が採用しました。 ただし、名前のサーバーとドメイン名の解決引き続き、US-ASCII 文字の範囲内の文字に依存します。  
+  
+ IDNA メカニズムでは、Punycode を使用して、ドメイン ネーム システムでサポートされる、US-ASCII 文字の範囲を US-ASCII 文字の範囲の Unicode 文字が含まれている国際化ドメイン名をマップします。 IDNA メカニズムを使用して、インターネット経由で転送されるデータはドメイン名を変換できます。  
+  
+> [!IMPORTANT]
+>  [!INCLUDE[net_v45](~/includes/net-v45-md.md)]、<xref:System.Globalization.IdnMapping>クラスは使用中のオペレーティング システムに応じて、IDNA 標準のさまざまなバージョンをサポートします。  
+>   
+>  -   実行すると[!INCLUDE[win8](~/includes/win8-md.md)]で概説されている IDNA 規格の 2008年バージョンがサポートしている[RFC 5891: アプリケーション (IDNA) Internationalized Domain Names: プロトコル](http://go.microsoft.com/fwlink/?LinkId=231875)です。  
+> -   概説されている標準の 2003年バージョンをサポートしていることを以前のバージョンの Windows オペレーティング システムで実行時に[RFC 3490: 国際化ドメイン名のアプリケーション (IDNA)](http://go.microsoft.com/fwlink/?LinkId=158110)です。  
+>   
+>  参照してください[Unicode 技術標準 #46: IDNA 互換性処理](http://go.microsoft.com/fwlink/?LinkId=232459)方法に違いのこれらの標準が特定のセットの文字を処理します。  
+  
+ <xref:System.Globalization.IdnMapping.GetAscii%2A?displayProperty=nameWithType>メソッドは、各ラベルにドメイン名、表示可能な Unicode で構成される形式に正規化された名前は、US ASCII コード ポイント範囲 (U +0 0020 に U +0 007E)、内の文字およびを ASCII 互換エンコーディング (ACE) プレフィックス ("xn--") を先頭変換を正規化します。 <xref:System.Globalization.IdnMapping.GetUnicode%2A?displayProperty=nameWithType>メソッドによって変換されたドメイン名ラベル、<xref:System.Globalization.IdnMapping.GetAscii%2A>メソッドです。  
+  
+ 変換対象の文字列には、ラベルの区切り文字が含まれている場合は、表意文字の完全停止を文字 (U +0 3002)、全角完全停止 (U + FF0E)、および完全停止 (U + FF61)、全角半角、<xref:System.Globalization.IdnMapping.GetAscii%2A>メソッド完全停止 (期間、002E) ラベルの区切り文字に変換します。 <xref:System.Globalization.IdnMapping.GetUnicode%2A>メソッド、ただし、復元されません、元のラベルの区切り記号文字。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Globalization.IdnMapping.GetAscii%28System.String%2CSystem.Int32%2CSystem.Int32%29>国際化ドメイン名と Punycode の配列に変換します。 <xref:System.Globalization.IdnMapping.GetUnicode%2A>メソッドは、元のドメインの名前に戻し、Punycode ドメイン名を変換しますが、元のラベルの区切り記号を標準的なラベルの区切り文字に置き換えます。  
+  
+ [!code-csharp[System.Globalization.IdnMapping.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.idnmapping.class/cs/conversion1.cs#1)]
+ [!code-vb[System.Globalization.IdnMapping.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.idnmapping.class/vb/conversion1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IdnMapping ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.IdnMapping.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Globalization.IdnMapping" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.IdnMapping.AllowUnassigned%2A?displayProperty=nameWithType>と<xref:System.Globalization.IdnMapping.UseStd3AsciiRules%2A?displayProperty=nameWithType>にプロパティが初期化されます`false`です。 ASCII 文字 A ~ Z、0 ~ 9、ハイフン (-) 以外の小さなサブセット (U+002D) の文字しピリオド (.) 文字で使用できるドメイン名が未使用の Unicode コード ポイント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowUnassigned">
+      <MemberSignature Language="C#" Value="public bool AllowUnassigned { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowUnassigned" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.IdnMapping.AllowUnassigned" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>未割り当ての Unicode コード ポイントは、現在のメンバーによって実行される操作で使用されているかどうかを示す値を取得または<see cref="T:System.Globalization.IdnMapping" />オブジェクト。</summary>
+        <value>
+          <see langword="true" />操作内で割り当てられていないコード ポイントが使用されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 登録済みドメイン名には、割り当てられていないコード ポイントを含めることはできません。 したがって、既定値である、<xref:System.Globalization.IdnMapping.AllowUnassigned%2A>プロパティは`false`します。 IDNA 仕様により、対応する文字列のクエリでのみ割り当てられていないコード ポイント (つまり、ドメイン名の検索で)。 ドメイン名に割り当てられていないコード ポイントの使用に関する詳細については、次を参照してください。 [RFC 3454、"国際化された文字列 (stringprep) の準備"](http://go.microsoft.com/fwlink/?LinkId=231873)と[RFC 5891、"国際化ドメイン名でアプリケーション IDNA ():: プロトコル"](http://go.microsoft.com/fwlink/?LinkId=231875)です。  
+  
+> [!IMPORTANT]
+>  場合、<xref:System.Globalization.IdnMapping.AllowUnassigned%2A>プロパティは`false`プロパティに関連付けられている動作は、基になるオペレーティング システムによって異なります。 [!INCLUDE[win8](~/includes/win8-md.md)]、 <xref:System.Globalization.IdnMapping> IDNA 2008 では、Unicode 6.0 標準に基づくに準拠しているクラスです。 以前のバージョンの Windows で、<xref:System.Globalization.IdnMapping>クラスに基づきます IDNA 2003 では、Unicode 3 に基づいています*。x*. でした。 IDNA 2003 で割り当てられた一部のコード ポイントは、文字が割り当てられているし、IDNA 2008 でサポートされます。 たとえば、U +0 0221 は、Unicode 4.0 で導入されました。 [!INCLUDE[win8](~/includes/win8-md.md)]、としてエンコードされる"xn — 6la"です。 以前のバージョンの Windows では、スロー、<xref:System.ArgumentException>例外。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.IdnMapping.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在のオブジェクトと比較するオブジェクト。</param>
+        <summary>示すかどうか、指定したオブジェクトと現在<see cref="T:System.Globalization.IdnMapping" />オブジェクトが等しい。</summary>
+        <returns>
+          <see langword="true" />によって、オブジェクトが指定されている場合、<paramref name="obj" />からパラメーターを派生<see cref="T:System.Globalization.IdnMapping" />とその<see cref="P:System.Globalization.IdnMapping.AllowUnassigned" />と<see cref="P:System.Globalization.IdnMapping.UseStd3AsciiRules" />プロパティが等しい。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAscii">
+      <MemberSignature Language="C#" Value="public string GetAscii (string unicode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetAscii(string unicode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.IdnMapping.GetAscii(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="unicode" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="unicode">ラベル区切り記号で区切られた 1 つまたは複数のドメイン名ラベルで構成される、変換する文字列。</param>
+        <summary>US-ASCII 文字の範囲内で表示可能な Unicode 文字の文字列に Unicode 文字で構成されるドメイン名ラベルの文字列をエンコードします。 文字列は、標準の IDNA に従ってフォーマットされます。</summary>
+        <returns>指定された文字列と同等、<paramref name="unicode" />パラメーターを US-ASCII で表示可能な Unicode 文字の文字範囲 (U +0 0020 に U +0 007E) と IDNA 標準に従って書式設定します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `unicode`パラメーターの有効な Unicode 文字で構成される 1 つまたは複数のラベルの文字列を指定します。 ラベルは、ラベルの区切り記号で区切られます。 `unicode`パラメーターは、ラベルの区切り記号で始めることはできませんが含まれて、必要に応じて末尾に区切り記号を使用します。 ラベルの区切り記号は完全に停止 (期間、002E)、表意文字の完全停止 (U +0 3002)、全角完全停止 (U + FF0E) と半角表意文字完全停止 (U + FF61)。 たとえば、ドメイン名"www.adatum.com"は、ラベル、"www"、"adatum"および"com"、ピリオドで区切られたで構成されます。  
+  
+ ラベルは、次の文字を含めることはできません。  
+  
+-   U + U +0 001 f、および U +0 007F を通じて西暦 1 年から Unicode 制御文字。  
+  
+-   Unicode 文字を割り当てられていない場合の値、<xref:System.Globalization.IdnMapping.AllowUnassigned%2A>プロパティは`false`します。  
+  
+-   US-ASCII で非標準の文字は文字、スペースなどの範囲 (u+0020)、感嘆符 (U +0 0021) をマークして場合、改行 (U +0 005F) 文字を低の値、<xref:System.Globalization.IdnMapping.UseStd3AsciiRules%2A>プロパティは`true`します。  
+  
+-   特定のバージョンの IDNA 標準で禁止されている文字。 禁止された文字の詳細については、次を参照してください。 [RFC 3454: 準備の国際化の文字列 ("stringprep")](http://go.microsoft.com/fwlink/?LinkId=231873) IDNA 2003 と[RFC 5982:、Unicode コード ポイントとアプリケーションの国際化ドメイン名](http://go.microsoft.com/fwlink/?LinkId=231877)IDNA 2008 用です。  
+  
+ <xref:System.Globalization.IdnMapping.GetAscii%2A>メソッドは、すべてのラベルの区切り記号を完全に停止 (期間、002E) に変換します。  
+  
+ 場合`unicode`US ASCII 以外の文字が含まれていない文字の範囲と、US-ASCII 文字の範囲内で文字を含まないが禁止されている場合、メソッドが返されます`unicode`変更されません。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Globalization.IdnMapping.GetAscii%28System.String%29>の配列を変換する方法の国際化ドメイン名と Punycode、これは、US-ASCII 文字の範囲内の文字で構成されているエンコード相当します。 <xref:System.Globalization.IdnMapping.GetUnicode%28System.String%29>メソッドし、元のドメイン名に戻す、Punycode ドメイン名を変換しますが、元のラベルの区切り記号を標準的なラベルの区切り文字に置き換えます。  
+  
+ [!code-csharp[System.Globalization.IdnMapping.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.idnmapping.class/cs/conversion1.cs#1)]
+ [!code-vb[System.Globalization.IdnMapping.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.idnmapping.class/vb/conversion1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="unicode" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="unicode" />無効なに基づいて、<see cref="P:System.Globalization.IdnMapping.AllowUnassigned" />と<see cref="P:System.Globalization.IdnMapping.UseStd3AsciiRules" />プロパティ、および標準の IDNA です。</exception>
+        <block subset="none" type="usage">
+          <para>[!INCLUDE[net_v45](~/includes/net-v45-md.md)]、<see cref="T:System.Globalization.IdnMapping" />クラスは使用中のオペレーティング システムに応じて、IDNA 標準のさまざまなバージョンをサポートします。  
+  
+-   実行すると[!INCLUDE[win8](~/includes/win8-md.md)]で概説されている IDNA 規格の 2008年バージョンがサポートしている[RFC 5891: アプリケーション (IDNA) Internationalized Domain Names: プロトコル](http://go.microsoft.com/fwlink/?LinkId=231875)です。  
+  
+-   概説されている標準の 2003年バージョンをサポートしていることを以前のバージョンの Windows オペレーティング システムで実行時に[RFC 3490: 国際化ドメイン名のアプリケーション (IDNA)](http://go.microsoft.com/fwlink/?LinkId=158110)です。  
+  
+ 参照してください[Unicode 技術標準 #46: IDNA 互換性処理](http://go.microsoft.com/fwlink/?LinkId=232459)方法に違いのこれらの標準が特定のセットの文字を処理します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAscii">
+      <MemberSignature Language="C#" Value="public string GetAscii (string unicode, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetAscii(string unicode, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.IdnMapping.GetAscii(System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="unicode" Type="System.String" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="unicode">ラベル区切り記号で区切られた 1 つまたは複数のドメイン名ラベルで構成される、変換する文字列。</param>
+        <param name="index">0 から始まるオフセット<c>unicode</c>に変換する部分文字列の先頭を指定します。 末尾にも変換操作を続行、 <c>unicode</c>文字列。</param>
+        <summary>ドメイン名ラベルを含む、US-ASCII 文字の範囲の Unicode 文字の部分文字列をエンコードします。 部分文字列は、US-ASCII 文字の範囲内で表示可能な Unicode 文字の文字列に変換し、IDNA 標準に従って書式設定します。</summary>
+        <returns>指定された部分文字列と同等、<paramref name="unicode" />と<paramref name="index" />パラメーター、US-ASCII で表示可能な Unicode 文字の文字範囲 (U +0 0020 に U +0 007E) および IDNA 標準に従って書式設定します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `unicode`と`index`パラメーターは有効な Unicode 文字で構成される 1 つまたは複数のラベルが付いた部分文字列を定義します。 ラベルは、ラベルの区切り記号で区切られます。 部分文字列の最初の文字がラベルの区切り文字で始めることはできませんが含まれてし、必要に応じて、区切り記号で終わることができます。 ラベルの区切り記号は完全に停止 (期間、002E)、表意文字の完全停止 (U +0 3002)、全角完全停止 (U + FF0E) と半角表意文字完全停止 (U + FF61)。 たとえば、ドメイン名"www.adatum.com"は、ラベル、"www"、"adatum"および"com"、ピリオドで区切られたで構成されます。  
+  
+ ラベルは、次の文字を含めることはできません。  
+  
+-   U + U +0 001 f、および U +0 007F を通じて西暦 1 年から Unicode 制御文字。  
+  
+-   値に応じて、Unicode 文字を割り当てられていない、<xref:System.Globalization.IdnMapping.AllowUnassigned%2A>プロパティです。  
+  
+-   US-ASCII で非標準の文字は文字、スペースなどの範囲 (u+0020)、感嘆符マーク (U +0 0021)、しの値に応じて、低い行 (U +0 005F) 文字、<xref:System.Globalization.IdnMapping.UseStd3AsciiRules%2A>プロパティです。  
+  
+-   特定のバージョンの IDNA 標準で禁止されている文字。 禁止された文字の詳細については、次を参照してください。 [RFC 3454: 準備の国際化の文字列 ("stringprep")](http://go.microsoft.com/fwlink/?LinkId=231873) IDNA 2003 と[RFC 5982:、Unicode コード ポイントとアプリケーションの国際化ドメイン名](http://go.microsoft.com/fwlink/?LinkId=231877)IDNA 2008 用です。  
+  
+ <xref:System.Globalization.IdnMapping.GetAscii%2A>メソッドは、すべてのラベルの区切り記号を完全に停止 (期間、002E) に変換します。  
+  
+ 場合`unicode`US ASCII 以外の文字が含まれていない文字の範囲と、US-ASCII 文字の範囲内で文字を含まないが禁止されている場合、メソッドが返されます`unicode`変更されません。  
+  
+   
+  
+## Examples  
+ 次の例では、ローカル部分を削除して、電子メール アドレス、およびパスから文字 @ する結果として得られるドメイン名を<xref:System.Globalization.IdnMapping.GetAscii%28System.String%2CSystem.Int32%29>でエンコードされたそれと同等の文字、US-ASCII で構成されるは、Punycode ドメイン名を作成する方法文字の範囲です。 <xref:System.Globalization.IdnMapping.GetUnicode%28System.String%2CSystem.Int32%2CSystem.Int32%29>メソッドし、元のドメイン名に戻す、Punycode ドメイン名を変換しますが、元のラベルの区切り記号を標準的なラベルの区切り文字に置き換えます。  
+  
+ [!code-csharp[System.Globalization.IdnMapping.GetAscii#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.idnmapping.getascii/cs/conversion1a.cs#2)]
+ [!code-vb[System.Globalization.IdnMapping.GetAscii#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.idnmapping.getascii/vb/conversion1a.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="unicode" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="index" />長さより大きい<paramref name="unicode" />です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="unicode" />無効なに基づいて、<see cref="P:System.Globalization.IdnMapping.AllowUnassigned" />と<see cref="P:System.Globalization.IdnMapping.UseStd3AsciiRules" />プロパティ、および標準の IDNA です。</exception>
+        <block subset="none" type="usage">
+          <para>[!INCLUDE[net_v45](~/includes/net-v45-md.md)]、<see cref="T:System.Globalization.IdnMapping" />クラスは使用中のオペレーティング システムに応じて、IDNA 標準のさまざまなバージョンをサポートします。  
+  
+-   実行すると[!INCLUDE[win8](~/includes/win8-md.md)]で概説されている IDNA 規格の 2008年バージョンがサポートしている[RFC 5891: アプリケーション (IDNA) Internationalized Domain Names: プロトコル](http://go.microsoft.com/fwlink/?LinkId=231875)です。  
+  
+-   概説されている標準の 2003年バージョンをサポートしていることを以前のバージョンの Windows オペレーティング システムで実行時に[RFC 3490: 国際化ドメイン名のアプリケーション (IDNA)](http://go.microsoft.com/fwlink/?LinkId=158110)です。  
+  
+ 参照してください[Unicode 技術標準 #46: IDNA 互換性処理](http://go.microsoft.com/fwlink/?LinkId=232459)方法に違いのこれらの標準が特定のセットの文字を処理します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAscii">
+      <MemberSignature Language="C#" Value="public string GetAscii (string unicode, int index, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetAscii(string unicode, int32 index, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.IdnMapping.GetAscii(System.String,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="unicode" Type="System.String" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="unicode">ラベル区切り記号で区切られた 1 つまたは複数のドメイン名ラベルで構成される、変換する文字列。</param>
+        <param name="index">0 から始まるオフセット<c>unicode</c>部分文字列の先頭を指定します。</param>
+        <param name="count">指定された位置から開始する部分文字列に変換する文字数<c>インデックス</c>で、 <c>unicode</c>文字列。</param>
+        <summary>指定された、US-ASCII 文字の範囲の Unicode 文字が含まれているドメイン名ラベルの部分文字列の文字数をエンコードします。 部分文字列は、US-ASCII 文字の範囲内で表示可能な Unicode 文字の文字列に変換し、IDNA 標準に従って書式設定します。</summary>
+        <returns>指定された部分文字列の該当するショートカットは、 <paramref name="unicode" />、 <paramref name="index" />、および<paramref name="count" />パラメーター、US-ASCII で表示可能な Unicode 文字の文字範囲 (U +0 0020 に U +0 007E) および IDNA 標準に従って書式設定します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Unicode`、 `index`、および`count`パラメーターは有効な Unicode 文字で構成される 1 つまたは複数のラベルが付いた部分文字列を定義します。 ラベルは、ラベルの区切り記号で区切られます。 部分文字列の最初の文字がラベルの区切り文字で始めることはできませんが含まれてし、必要に応じて、区切り記号で終わることができます。 ラベルの区切り記号は完全に停止 (期間、002E)、表意文字の完全停止 (U +0 3002)、全角完全停止 (U + FF0E) と半角表意文字完全停止 (U + FF61)。 たとえば、ドメイン名"www.adatum.com"は、ラベル、"www"、"adatum"および"com"、ピリオドで区切られたで構成されます。  
+  
+ ラベルは、次の文字を含めることはできません。  
+  
+-   U + U +0 001 f、および U +0 007F を通じて西暦 1 年から Unicode 制御文字。  
+  
+-   値に応じて、Unicode 文字を割り当てられていない、<xref:System.Globalization.IdnMapping.AllowUnassigned%2A>プロパティです。  
+  
+-   US-ASCII で非標準の文字は文字、スペースなどの範囲 (u+0020)、感嘆符マーク (U +0 0021)、しの値に応じて、低い行 (U +0 005F) 文字、<xref:System.Globalization.IdnMapping.UseStd3AsciiRules%2A>プロパティです。  
+  
+-   特定のバージョンの IDNA 標準で禁止されている文字。 禁止された文字の詳細については、次を参照してください。 [RFC 3454: 準備の国際化の文字列 ("stringprep")](http://go.microsoft.com/fwlink/?LinkId=231873) IDNA 2003 と[RFC 5982:、Unicode コード ポイントとアプリケーションの国際化ドメイン名](http://go.microsoft.com/fwlink/?LinkId=231877)IDNA 2008 用です。  
+  
+ <xref:System.Globalization.IdnMapping.GetAscii%2A>メソッドは、すべてのラベルの区切り記号を完全に停止 (期間、002E) に変換します。 部分文字列に、US-ASCII 文字の範囲の文字が含まれていないと、US-ASCII 文字の範囲内の文字は使用できません、このメソッドは変更されていない部分文字列を返します。  
+  
+   
+  
+## Examples  
+ 次の例では、 <xref:System.Globalization.IdnMapping.GetAscii%28System.String%2CSystem.Int32%2CSystem.Int32%29> IDNA 標準に準拠しているドメイン名に国際化ドメイン名に変換します。 <xref:System.Globalization.IdnMapping.GetUnicode%28System.String%2CSystem.Int32%2CSystem.Int32%29>メソッドは、元のドメイン名に標準化されたドメイン名を変換が、元のラベルの区切り記号を標準的なラベルの区切り文字に置き換えます。  
+  
+ [!code-csharp[IdnMapping.GetX#1](~/samples/snippets/csharp/VS_Snippets_CLR/IdnMapping.GetX/CS/getx.cs#1)]
+ [!code-vb[IdnMapping.GetX#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/IdnMapping.GetX/VB/getx.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="unicode" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> または <paramref name="count" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="index" />長さより大きい<paramref name="unicode" />です。  
+  
+ または  
+  
+ <paramref name="index" />長さより大きい<paramref name="unicode" />マイナス<paramref name="count" />です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="unicode" />無効なに基づいて、<see cref="P:System.Globalization.IdnMapping.AllowUnassigned" />と<see cref="P:System.Globalization.IdnMapping.UseStd3AsciiRules" />プロパティ、および標準の IDNA です。</exception>
+        <block subset="none" type="usage">
+          <para>[!INCLUDE[net_v45](~/includes/net-v45-md.md)]、<see cref="T:System.Globalization.IdnMapping" />クラスは使用中のオペレーティング システムに応じて、IDNA 標準のさまざまなバージョンをサポートします。  
+  
+-   実行すると[!INCLUDE[win8](~/includes/win8-md.md)]で概説されている IDNA 規格の 2008年バージョンがサポートしている[RFC 5891: アプリケーション (IDNA) Internationalized Domain Names: プロトコル](http://go.microsoft.com/fwlink/?LinkId=231875)です。  
+  
+-   概説されている標準の 2003年バージョンをサポートしていることを以前のバージョンの Windows オペレーティング システムで実行時に[RFC 3490: 国際化ドメイン名のアプリケーション (IDNA)](http://go.microsoft.com/fwlink/?LinkId=158110)です。  
+  
+ 参照してください[Unicode 技術標準 #46: IDNA 互換性処理](http://go.microsoft.com/fwlink/?LinkId=232459)方法に違いのこれらの標準が特定のセットの文字を処理します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.IdnMapping.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このハッシュ コードを返します<see cref="T:System.Globalization.IdnMapping" />オブジェクト。</summary>
+        <returns>プロパティから派生した次の 4 つの 32 ビット符号付き定数のいずれか、<see cref="T:System.Globalization.IdnMapping" />オブジェクト。  戻り値は、特別な意味を持たないし、ハッシュ コードのアルゴリズムで使用するには適していません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 上書き、<xref:System.Globalization.IdnMapping.GetHashCode%2A>メソッドの場合は、アプリケーションは、意味のあるハッシュを実装する必要があります。  
+  
+   
+  
+## Examples  
+ 次の例では、1 つの文字列がスペースで区切られた複数の電子メール アドレスに含めることができると仮定します。 ローカル部分を削除し、各電子メール アドレス、およびパスから文字を @ 結果として得られる、ドメイン名を<xref:System.Globalization.IdnMapping.GetAscii%28System.String%2CSystem.Int32%29>または<xref:System.Globalization.IdnMapping.GetAscii%28System.String%2CSystem.Int32%2CSystem.Int32%29>Punycode ドメイン名を作成するメソッド。 <xref:System.Globalization.IdnMapping.GetUnicode%28System.String%2CSystem.Int32%2CSystem.Int32%29>メソッドは、元のドメイン名に、Punycode ドメイン名を変換します。  
+  
+ [!code-csharp[System.Globalization.IdnMapping.GetAscii#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.idnmapping.getascii/cs/conversion1b.cs#3)]
+ [!code-vb[System.Globalization.IdnMapping.GetAscii#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.idnmapping.getascii/vb/conversion1b.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUnicode">
+      <MemberSignature Language="C#" Value="public string GetUnicode (string ascii);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetUnicode(string ascii) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.IdnMapping.GetUnicode(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ascii" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="ascii">IDNA 標準に従ってエンコード、US-ASCII 文字範囲 (U +0 0020 に U +0 007E) 内の 1 つまたは複数のラベルで構成される、デコードする文字列。</param>
+        <summary>1 つまたは複数のドメイン名ラベルの IDNA 標準では、Unicode 文字の文字列をエンコードされた文字列をデコードします。</summary>
+        <returns>指定された IDNA 部分文字列と等価の Unicode、<paramref name="ascii" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ドメイン名、ラベル、およびラベルの区切り記号の詳細については、「解説」を参照してください、<xref:System.Globalization.IdnMapping.GetAscii%28System.String%2CSystem.Int32%2CSystem.Int32%29?displayProperty=nameWithType>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Globalization.IdnMapping.GetAscii%28System.String%29>国際化ドメイン名と Punycode の配列に変換します。 <xref:System.Globalization.IdnMapping.GetUnicode%28System.String%29>メソッドし、元のドメイン名に戻す、Punycode ドメイン名を変換しますが、元のラベルの区切り記号を標準的なラベルの区切り文字に置き換えます。  
+  
+ [!code-csharp[System.Globalization.IdnMapping.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.idnmapping.class/cs/conversion1.cs#1)]
+ [!code-vb[System.Globalization.IdnMapping.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.idnmapping.class/vb/conversion1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="ascii" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="ascii" />無効なに基づいて、<see cref="P:System.Globalization.IdnMapping.AllowUnassigned" />と<see cref="P:System.Globalization.IdnMapping.UseStd3AsciiRules" />プロパティ、および標準の IDNA です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUnicode">
+      <MemberSignature Language="C#" Value="public string GetUnicode (string ascii, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetUnicode(string ascii, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.IdnMapping.GetUnicode(System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ascii" Type="System.String" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ascii">IDNA 標準に従ってエンコード、US-ASCII 文字範囲 (U +0 0020 に U +0 007E) 内の 1 つまたは複数のラベルで構成される、デコードする文字列。</param>
+        <param name="index">0 から始まるオフセット<c>ascii</c>をデコードするサブスト リングの開始を指定します。 デコード操作の最後まで継続、 <c>ascii</c>文字列。</param>
+        <summary>1 つまたは複数のドメイン名ラベルの IDNA 標準では、Unicode 文字の文字列をエンコードされた部分文字列をデコードします。</summary>
+        <returns>指定された IDNA 部分文字列と等価の Unicode、<paramref name="ascii" />と<paramref name="index" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ドメイン名、ラベル、およびラベルの区切り記号の詳細については、「解説」を参照してください、<xref:System.Globalization.IdnMapping.GetAscii%28System.String%2CSystem.Int32%2CSystem.Int32%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="ascii" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="index" />長さより大きい<paramref name="ascii" />です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="ascii" />無効なに基づいて、<see cref="P:System.Globalization.IdnMapping.AllowUnassigned" />と<see cref="P:System.Globalization.IdnMapping.UseStd3AsciiRules" />プロパティ、および標準の IDNA です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUnicode">
+      <MemberSignature Language="C#" Value="public string GetUnicode (string ascii, int index, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetUnicode(string ascii, int32 index, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.IdnMapping.GetUnicode(System.String,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ascii" Type="System.String" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ascii">IDNA 標準に従ってエンコード、US-ASCII 文字範囲 (U +0 0020 に U +0 007E) 内の 1 つまたは複数のラベルで構成される、デコードする文字列。</param>
+        <param name="index">0 から始まるオフセット<c>ascii</c>部分文字列の先頭を指定します。</param>
+        <param name="count">指定された位置から開始する部分文字列に変換する文字数<c>インデックス</c>で、 <c>ascii</c>文字列。</param>
+        <summary>ラベルを含む 1 つまたは複数のドメイン名、IDNA 標準では、Unicode 文字の文字列をエンコードされた指定した長さの部分文字列をデコードします。</summary>
+        <returns>指定された IDNA 部分文字列と等価の Unicode、 <paramref name="ascii" />、 <paramref name="index" />、および<paramref name="count" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ドメイン名、ラベル、およびラベルの区切り記号の詳細については、「解説」を参照してください、<xref:System.Globalization.IdnMapping.GetAscii%28System.String%2CSystem.Int32%2CSystem.Int32%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="ascii" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> または <paramref name="count" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="index" />長さより大きい<paramref name="ascii" />です。  
+  
+ または  
+  
+ <paramref name="index" />長さより大きい<paramref name="ascii" />マイナス<paramref name="count" />です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="ascii" />無効なに基づいて、<see cref="P:System.Globalization.IdnMapping.AllowUnassigned" />と<see cref="P:System.Globalization.IdnMapping.UseStd3AsciiRules" />プロパティ、および標準の IDNA です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UseStd3AsciiRules">
+      <MemberSignature Language="C#" Value="public bool UseStd3AsciiRules { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseStd3AsciiRules" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.IdnMapping.UseStd3AsciiRules" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>標準または厳密でない名前付け規則は、現在のメンバーによって実行される操作で使用されているかどうかを示す値を取得または<see cref="T:System.Globalization.IdnMapping" />オブジェクト。</summary>
+        <value>
+          <see langword="true" />操作内で標準的な名前付け規則が使用されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 標準の名前付け規則に従っているドメイン名は、US-ASCII 文字の範囲内の文字の特定のサブセットで構成されます。 文字は、A ~ Z、0 ~ 9 の数字、ハイフン (-) 文字 (U+002D)、およびピリオド (.) 文字の文字がします。 文字の大文字と小文字は大きくありません。 厳密でない名前付け規則より広い範囲の ASCII の使用を許可する文字、スペースを含む文字 (u+0020)、感嘆符文字 (U +0 0021)、および (U +0 005F) の文字、および設定が可能です。 場合<xref:System.Globalization.IdnMapping.UseStd3AsciiRules%2A>は`true`、によって返されるラベルに標準文字のみを含めることができます、<xref:System.Globalization.IdnMapping.GetAscii%2A>メソッドです。  
+  
+ 既定では、値、<xref:System.Globalization.IdnMapping.UseStd3AsciiRules%2A>プロパティは`false`、拡張 ASCII 文字のサブセットがラベルで許可されているとします。  
+  
+> [!NOTE]
+>  <xref:System.Globalization.IdnMapping>クラスには U +0 001 f、を介して表示できない文字 u+0000 の使用が禁止されていて、U +0 007F ドメイン名のラベルの設定に関係なく、<xref:System.Globalization.IdnMapping.UseStd3AsciiRules%2A>プロパティです。 この規則は、名前の悪用などのセキュリティ攻撃のリスクを軽減します。  
+  
+   
+  
+## Examples  
+ 次の例は U +0 007F ~ u+0000 から ASCII の範囲内で文字を含む Url を生成し、コマンドを渡し、 <xref:System.Globalization.IdnMapping.GetAscii%28System.String%29> 2 つのメソッド<xref:System.Globalization.IdnMapping>オブジェクト。 1 つのオブジェクトがその<xref:System.Globalization.IdnMapping.UseStd3AsciiRules%2A>プロパティに設定`true`とその他のオブジェクトに設定`false`です。 出力を表示、無効な文字がない場合に、<xref:System.Globalization.IdnMapping.UseStd3AsciiRules%2A>プロパティは`true`されるのかが有効な`false`します。  
+  
+ [!code-csharp[System.Globalization.IdnMapping.UseStd3AsciiRules#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.idnmapping.usestd3asciirules/cs/usestd3asciirules1.cs#1)]
+ [!code-vb[System.Globalization.IdnMapping.UseStd3AsciiRules#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.idnmapping.usestd3asciirules/vb/usestd3asciirules1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

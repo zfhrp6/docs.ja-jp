@@ -1,0 +1,108 @@
+<Type Name="CloudCollection" FullName="System.Net.PeerToPeer.CloudCollection">
+  <TypeSignature Language="C#" Value="public class CloudCollection : System.Collections.ObjectModel.Collection&lt;System.Net.PeerToPeer.Cloud&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CloudCollection extends System.Collections.ObjectModel.Collection`1&lt;class System.Net.PeerToPeer.Cloud&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Net.PeerToPeer.CloudCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.ObjectModel.Collection&lt;System.Net.PeerToPeer.Cloud&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="!0">System.Net.PeerToPeer.Cloud</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コンテナーを表す<see cref="T:System.Net.PeerToPeer.CloudCollection" />要素。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クラスのすべてのメンバーは、コレクションから継承\<T > クラスです。  オーバーライドされるメソッドは次のとおりです。このコレクションのインスタンスを保持する、<xref:System.Net.PeerToPeer.Cloud>要素は、ピア ツー ピア ネットワークのピア情報が含まれています。  
+  
+ この型の参照がによって返される、<xref:System.Net.PeerToPeer.Cloud.GetCloudByName%2A>と<xref:System.Net.PeerToPeer.Cloud.GetAvailableClouds%2A>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CloudCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.CloudCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.PeerToPeer.CloudCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertItem">
+      <MemberSignature Language="C#" Value="protected override void InsertItem (int index, System.Net.PeerToPeer.Cloud item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InsertItem(int32 index, class System.Net.PeerToPeer.Cloud item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.CloudCollection.InsertItem(System.Int32,System.Net.PeerToPeer.Cloud)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="item" Type="System.Net.PeerToPeer.Cloud" />
+      </Parameters>
+      <Docs>
+        <param name="index">置き換える要素の 0 から始まるインデックス番号。</param>
+        <param name="item">指定したインデックス位置にある新しい要素の値です。</param>
+        <summary><see cref="T:System.Net.PeerToPeer.Cloud" /> を <see cref="T:System.Net.PeerToPeer.CloudCollection" /> 内の指定されたインデックス位置に挿入します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Null`項目は、コレクションに挿入できません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">提供された <see cref="T:System.Net.PeerToPeer.Cloud" /> が <see langword="null." /> になることはできません</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetItem">
+      <MemberSignature Language="C#" Value="protected override void SetItem (int index, System.Net.PeerToPeer.Cloud item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetItem(int32 index, class System.Net.PeerToPeer.Cloud item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.CloudCollection.SetItem(System.Int32,System.Net.PeerToPeer.Cloud)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="item" Type="System.Net.PeerToPeer.Cloud" />
+      </Parameters>
+      <Docs>
+        <param name="index">置き換える要素の 0 から始まるインデックス番号。</param>
+        <param name="item">置き換えられる要素の新しい値。</param>
+        <summary>指定したインデックス位置にある <see cref="T:System.Net.PeerToPeer.Cloud" /> を置き換えます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Null`項目を指定することはできません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Net.PeerToPeer.Cloud" />提供することはできません<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

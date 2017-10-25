@@ -1,0 +1,241 @@
+<Type Name="ServiceDescriptionBaseCollection" FullName="System.Web.Services.Description.ServiceDescriptionBaseCollection">
+  <TypeSignature Language="C#" Value="public abstract class ServiceDescriptionBaseCollection : System.Collections.CollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ServiceDescriptionBaseCollection extends System.Collections.CollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Description.ServiceDescriptionBaseCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.CollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>メンバーである厳密に型指定されたコレクションの基礎を形成、<see cref="N:System.Web.Services.Description" />名前空間。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[ServiceDescriptionBaseCollection#1](~/samples/snippets/cpp/VS_Snippets_Remoting/ServiceDescriptionBaseCollection/CPP/servicedescriptionbasecollection.cpp#1)]
+ [!code-csharp[ServiceDescriptionBaseCollection#1](~/samples/snippets/csharp/VS_Snippets_Remoting/ServiceDescriptionBaseCollection/CS/servicedescriptionbasecollection.cs#1)]
+ [!code-vb[ServiceDescriptionBaseCollection#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ServiceDescriptionBaseCollection/VB/servicedescriptionbasecollection.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetKey">
+      <MemberSignature Language="C#" Value="protected virtual string GetKey (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string GetKey(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionBaseCollection.GetKey(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">キーの名前を取得するオブジェクト。</param>
+        <summary>参照によって渡された値に関連付けられているキーの名前を返します。</summary>
+        <returns>null 参照。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの既定の実装のためのものに関連付けられているキーの名前を返すために、派生クラスによってオーバーライドされるように、`value`パラメーター。 既定の実装が null を返します (`Nothing` Visual Basic で)。 この保護されたメソッドは、このクラスまたは派生クラスによってのみアクセスできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClear">
+      <MemberSignature Language="C#" Value="protected override void OnClear ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnClear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionBaseCollection.OnClear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Description.ServiceDescriptionBaseCollection" /> インスタンスの内容を消去します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、派生コレクションの内容を消去するときに、その他のプロセスを実行するためにオーバーライドします。 この保護されたメソッドは、このクラスまたは派生クラスによってのみアクセスできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInsertComplete">
+      <MemberSignature Language="C#" Value="protected override void OnInsertComplete (int index, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnInsertComplete(int32 index, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionBaseCollection.OnInsertComplete(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">挿入する位置の 0 から始まるインデックス、<c>値</c>パラメーター。</param>
+        <param name="value">コレクションに挿入する要素。</param>
+        <summary>新しい要素を挿入した後に追加のカスタム処理を実行、<see cref="T:System.Web.Services.Description.ServiceDescriptionBaseCollection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの既定の実装は、指定した要素が挿入されたときに何らかのアクションを実行する派生クラスでオーバーライドされることを目的としています。 たとえば、派生クラスでは、追加の検証を必要があります。  
+  
+ この保護されたメソッドは、このクラスまたは派生クラスによってのみアクセスできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRemove">
+      <MemberSignature Language="C#" Value="protected override void OnRemove (int index, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnRemove(int32 index, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionBaseCollection.OnRemove(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">0 から始まるインデックス、<c>値</c>パラメーターを削除します。</param>
+        <param name="value">コレクションから削除する要素。</param>
+        <summary>要素を削除、<see cref="T:System.Web.Services.Description.ServiceDescriptionBaseCollection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、要素がコレクションから削除されたときに、検証など、追加の処理を実行するためにオーバーライドします。  
+  
+ この保護されたメソッドは、このクラスまたは派生クラスによってのみアクセスできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSet">
+      <MemberSignature Language="C#" Value="protected override void OnSet (int index, object oldValue, object newValue);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnSet(int32 index, object oldValue, object newValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionBaseCollection.OnSet(System.Int32,System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="oldValue" Type="System.Object" />
+        <Parameter Name="newValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">0 から始まるインデックス位置、 <c>oldValue</c>パラメーターが検出することができます。</param>
+        <param name="oldValue">オブジェクトに置き換えて、 <c>newValue</c>パラメーター。</param>
+        <param name="newValue">オブジェクトを置き換える、 <c>oldValue</c>パラメーター。</param>
+        <summary>1 つの値を置き換えます内の別、<see cref="T:System.Web.Services.Description.ServiceDescriptionBaseCollection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの既定の実装がコレクション内の要素の値を設定するときに、検証など、追加の処理を実行するためにオーバーライドしようとしています。 この保護されたメソッドは、このクラスまたは派生クラスによってのみアクセスできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetParent">
+      <MemberSignature Language="C#" Value="protected virtual void SetParent (object value, object parent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void SetParent(object value, object parent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionBaseCollection.SetParent(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="parent" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">親オブジェクトを設定する対象のオブジェクト。</param>
+        <param name="parent">親として設定するオブジェクト。</param>
+        <summary>親オブジェクトを設定、<see cref="T:System.Web.Services.Description.ServiceDescriptionBaseCollection" />インスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの既定の実装は、Web サービス記述言語 (WSDL) 仕様に基づく、適切なクラスの親を設定する派生クラスでオーバーライドされることを目的としています。 既定の実装には、操作は実行されません。 この保護されたメソッドは、このクラスまたは派生クラスによってのみアクセスできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Table">
+      <MemberSignature Language="C#" Value="protected virtual System.Collections.IDictionary Table { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IDictionary Table" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.ServiceDescriptionBaseCollection.Table" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>値をキーの関連付けを実装するインターフェイスを取得、<see cref="T:System.Web.Services.Description.ServiceDescriptionBaseCollection" />です。</summary>
+        <value>値をキーの関連付けを実装するインターフェイス、<see cref="T:System.Web.Services.Description.ServiceDescriptionBaseCollection" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装を返します、<xref:System.Collections.Hashtable>をキーと値を関連付けます。 この保護されたメソッドは、このクラスまたは派生クラスによってのみアクセスできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

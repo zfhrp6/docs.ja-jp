@@ -1,0 +1,386 @@
+<Type Name="XamlObjectWriterSettings" FullName="System.Xaml.XamlObjectWriterSettings">
+  <TypeSignature Language="C#" Value="public class XamlObjectWriterSettings : System.Xaml.XamlWriterSettings" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XamlObjectWriterSettings extends System.Xaml.XamlWriterSettings" />
+  <TypeSignature Language="DocId" Value="T:System.Xaml.XamlObjectWriterSettings" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Xaml.XamlWriterSettings</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>特定の XAML ライターの設定を提供<see cref="T:System.Xaml.XamlObjectWriter" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Xaml.XamlObjectWriter>できます関数内で指定された<xref:System.Xaml.XamlObjectWriterSettings>です。 設定が指定されていない場合、インスタンスの<xref:System.Xaml.XamlObjectWriterSettings>存在の構築された既定値を持つ<xref:System.Xaml.XamlObjectWriter>、派生クラスのこのインスタンスの設定のマージに使用できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlObjectWriterSettings ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlObjectWriterSettings.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xaml.XamlObjectWriterSettings" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlObjectWriterSettings (System.Xaml.XamlObjectWriterSettings settings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xaml.XamlObjectWriterSettings settings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlObjectWriterSettings.#ctor(System.Xaml.XamlObjectWriterSettings)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="settings" Type="System.Xaml.XamlObjectWriterSettings" />
+      </Parameters>
+      <Docs>
+        <param name="settings">コピーする設定のインスタンス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xaml.XamlObjectWriterSettings" />既存のインスタンスのコピーに基づいているクラスです。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="settings" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AccessLevel">
+      <MemberSignature Language="C#" Value="public System.Xaml.Permissions.XamlAccessLevel AccessLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xaml.Permissions.XamlAccessLevel AccessLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlObjectWriterSettings.AccessLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.Permissions.XamlAccessLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定<see cref="T:System.Xaml.Permissions.XamlAccessLevel" />XAML ライターが確認するためのアクセス許可。</summary>
+        <value><see cref="T:System.Xaml.Permissions.XamlAccessLevel" />アクセス許可。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、部分的に信頼されたトレラント ランタイムを通じて部分的な信頼でアクセスされる非パブリック メンバーの場合、期待されるアクセス レベルを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AfterBeginInitHandler">
+      <MemberSignature Language="C#" Value="public EventHandler&lt;System.Xaml.XamlObjectEventArgs&gt; AfterBeginInitHandler { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.EventHandler`1&lt;class System.Xaml.XamlObjectEventArgs&gt; AfterBeginInitHandler" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlObjectWriterSettings.AfterBeginInitHandler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Xaml.XamlObjectEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に XAML ライターによって呼び出されるコールバックへの参照、<see cref="M:System.ComponentModel.ISupportInitialize.BeginInit" />作成した各オブジェクトについてオブジェクトの有効期間のフェーズです。</summary>
+        <value>XAML ライターによって呼び出されるコールバック、<see cref="M:System.ComponentModel.ISupportInitialize.BeginInit" />オブジェクトの有効期間のフェーズです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AfterEndInitHandler">
+      <MemberSignature Language="C#" Value="public EventHandler&lt;System.Xaml.XamlObjectEventArgs&gt; AfterEndInitHandler { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.EventHandler`1&lt;class System.Xaml.XamlObjectEventArgs&gt; AfterEndInitHandler" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlObjectWriterSettings.AfterEndInitHandler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Xaml.XamlObjectEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に XAML ライターによって呼び出されるコールバックへの参照、<see cref="M:System.ComponentModel.ISupportInitialize.EndInit" />作成した各オブジェクトについてオブジェクトの有効期間のフェーズです。</summary>
+        <value>XAML ライターによって呼び出されるコールバック、<see cref="M:System.ComponentModel.ISupportInitialize.EndInit" />オブジェクトの有効期間のフェーズです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AfterPropertiesHandler">
+      <MemberSignature Language="C#" Value="public EventHandler&lt;System.Xaml.XamlObjectEventArgs&gt; AfterPropertiesHandler { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.EventHandler`1&lt;class System.Xaml.XamlObjectEventArgs&gt; AfterPropertiesHandler" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlObjectWriterSettings.AfterPropertiesHandler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Xaml.XamlObjectEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または作成した各オブジェクトについてオブジェクトの有効期間の member 書き込み段階で、XAML ライターによって呼び出されるコールバックへの参照を設定します。</summary>
+        <value>オブジェクトの有効期間の member 書き込み段階で、XAML ライターによって呼び出されるコールバック。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeforePropertiesHandler">
+      <MemberSignature Language="C#" Value="public EventHandler&lt;System.Xaml.XamlObjectEventArgs&gt; BeforePropertiesHandler { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.EventHandler`1&lt;class System.Xaml.XamlObjectEventArgs&gt; BeforePropertiesHandler" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlObjectWriterSettings.BeforePropertiesHandler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Xaml.XamlObjectEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または作成した各オブジェクトについてオブジェクトの有効期間の member 書き込み前のフェーズで XAML ライターによって呼び出されるコールバックへの参照を設定します。</summary>
+        <value>オブジェクトの有効期間の member 書き込み前のフェーズで XAML ライターによって呼び出されるコールバック。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExternalNameScope">
+      <MemberSignature Language="C#" Value="public System.Windows.Markup.INameScope ExternalNameScope { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Markup.INameScope ExternalNameScope" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlObjectWriterSettings.ExternalNameScope" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Markup.INameScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の場合は、XAML ライターの名前を登録するのに使用する XAML 名前スコープ<see cref="P:System.Xaml.XamlObjectWriterSettings.RegisterNamesOnExternalNamescope" />は<see langword="true" />します。</summary>
+        <value>名前を登録するのに使用する XAML 名前スコープ。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 特定のコンテキスト、<xref:System.Xaml.XamlObjectWriter>外部の XAML 名前スコープを使用する場合があります。  
+  
+## <a name="wpf-usage-notes"></a>WPF の使用上の注意  
+ 実装では、XAML の WPF XAML ライターの操作によって開始された<xref:System.Windows.FrameworkTemplate>別の XAML 名前スコープを指定します。 この WPF シナリオでテンプレートは、それを定義する XAML ページのルートと XAML 名前スコープを共有する必要があります。 代わりに、別の指定された XAML 名前スコープに処理する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreCanConvert">
+      <MemberSignature Language="C#" Value="public bool IgnoreCanConvert { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IgnoreCanConvert" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlObjectWriterSettings.IgnoreCanConvert" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XAML ライターが (呼び出しではない) を無視するかどうかを指定する値の設定を取得または<see cref="M:System.ComponentModel.TypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)" />の実装、<see cref="T:System.ComponentModel.TypeConverter" />型コンバーターの場合。</summary>
+        <value>
+          <see langword="true" />XAML ライターを無視する場合<see cref="M:System.ComponentModel.TypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)" />の実装です。 それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.TypeConverter>クラスとその<xref:System.ComponentModel.TypeConverter.CanConvertFrom%2A>メソッドの CLR の型変換、総合的な設計の一部であります。 XAML のシステムでは、通常、型コンバーターの入力および入力のため、XAML リーダーによって識別されることは、文字列は、常にことを想定することができます。 このプロパティを設定する場合`true`、XAML オブジェクト ライターの動作でこの想定を記述する、モードを有効にします。  
+  
+ このモードでは、WPF XAML の以前のバージョンの互換性の要件をサポートします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreferUnconvertedDictionaryKeys">
+      <MemberSignature Language="C#" Value="public bool PreferUnconvertedDictionaryKeys { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PreferUnconvertedDictionaryKeys" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlObjectWriterSettings.PreferUnconvertedDictionaryKeys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定値を無効にするかどうかを決定する値の設定を取得または<see cref="T:System.Xaml.XamlObjectWriter" />機能で実行する型変換を<paramref name="K" />コンポーネント、<see cref="T:System.Collections.Generic.Dictionary`2" />オブジェクト グラフ表現を記述する前にします。</summary>
+        <value>
+          <see langword="true" />場合<paramref name="K" />の変換の入力、<see cref="T:System.Collections.Generic.Dictionary`2" />オブジェクトが無効にする必要があります。 <see langword="false" />実行する場合<paramref name="K" />の変換の入力、<see cref="T:System.Collections.Generic.Dictionary`2" />オブジェクトに適用されます。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、`K`変換機能を入力では、「解説」を参照してください<xref:System.Xaml.XamlObjectWriter>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterNamesOnExternalNamescope">
+      <MemberSignature Language="C#" Value="public bool RegisterNamesOnExternalNamescope { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RegisterNamesOnExternalNamescope" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlObjectWriterSettings.RegisterNamesOnExternalNamescope" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定された名前の登録を実行するかどうかを決定する値の設定を取得または<see cref="P:System.Xaml.XamlObjectWriterSettings.ExternalNameScope" />です。</summary>
+        <value>
+          <see langword="true" />に対して名前の登録が発生した場合、<see cref="P:System.Xaml.XamlObjectWriterSettings.ExternalNameScope" />です。<see langword="false" />親の XAML 名前スコープに名前の登録を実行する場合。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RootObjectInstance">
+      <MemberSignature Language="C#" Value="public object RootObjectInstance { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object RootObjectInstance" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlObjectWriterSettings.RootObjectInstance" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の既存のルート オブジェクト<see cref="T:System.Xaml.XamlObjectWriter" />操作します。</summary>
+        <value>既存のルート オブジェクト<see cref="T:System.Xaml.XamlObjectWriter" />操作します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値を設定する場合、ルート オブジェクトのインスタンスが暗黙として使用<xref:System.Xaml.XamlObjectWriter.WriteStartObject%2A>(リーダーからのものではなく直接オブジェクトの入力) を使用して呼び出し、最初の明示的なノード書き込み呼び出しの直前まで、<xref:System.Xaml.XamlObjectWriter>です。 暗黙的になるまでに遅延が、指定されたルート オブジェクトの XAML 型の検証などの任意のエラー チェック、<xref:System.Xaml.XamlObjectWriter.WriteStartObject%2A>呼び出し、この設定のプロパティを設定するときにチェックされる代わりにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SkipDuplicatePropertyCheck">
+      <MemberSignature Language="C#" Value="public bool SkipDuplicatePropertyCheck { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SkipDuplicatePropertyCheck" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlObjectWriterSettings.SkipDuplicatePropertyCheck" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または重複するプロパティをチェックするコード パスを確認する XAML ライターを省略するかどうかを決定する値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、重複したプロパティのチェックを省略する必要があります。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したコード パスでは、現在割り当てられているプロパティをチェックし、名前付きのアンビエント プロパティの重複したプロパティ セットが実行されると、例外をスローします。 詳細については、「<xref:System.Xaml.IAmbientProvider>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SkipProvideValueOnRoot">
+      <MemberSignature Language="C#" Value="public bool SkipProvideValueOnRoot { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SkipProvideValueOnRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlObjectWriterSettings.SkipProvideValueOnRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="T:System.Xaml.XamlObjectWriter" />呼び出しを省略する必要があります<see langword="ProvideValue" />マークアップ拡張機能では、これは関連するマークアップ拡張機能は、オブジェクト グラフのルートを表すときにします。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Xaml.XamlObjectWriter" />呼び出しを省略する必要があります<see langword="ProvideValue" />マークアップ拡張機能です。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この設定が使用されるときに、<xref:System.Xaml.XamlObjectWriter>ルート ノードを処理 (<xref:System.Xaml.XamlObjectWriter.WriteEndObject%2A>、またはルート ノード内のメンバー)。 このプロパティは、テンプレートと遅延読み込みのシナリオに関連します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceBamlUri">
+      <MemberSignature Language="C#" Value="public Uri SourceBamlUri { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri SourceBamlUri" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlObjectWriterSettings.SourceBamlUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用される、 <see langword="BeginInitHandler" /> 、実際の代わりに<see langword="BaseUri" />です。</summary>
+        <value>A <see cref="T:System.Uri" /> 、実際の代わりに使用される<see langword="BaseUri" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実行時の動作の完全な互換性を維持しながら、ハンドラーで適切な情報を提供するには、内部的に使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XamlSetValueHandler">
+      <MemberSignature Language="C#" Value="public EventHandler&lt;System.Windows.Markup.XamlSetValueEventArgs&gt; XamlSetValueHandler { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.EventHandler`1&lt;class System.Windows.Markup.XamlSetValueEventArgs&gt; XamlSetValueHandler" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlObjectWriterSettings.XamlSetValueHandler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Windows.Markup.XamlSetValueEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定オブジェクト ライターは、呼び出したときに CLR 実装を使用するハンドラー<see langword="SetValue" />の依存関係プロパティです。</summary>
+        <value>このケースを処理するハンドラーの実装です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント ハンドラーは、ジェネリックに基づきます<xref:System.EventHandler%601>デリゲートを使用する、<xref:System.Windows.Markup.XamlSetValueEventArgs>イベント データ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,159 @@
+<Type Name="IEditableObject" FullName="System.ComponentModel.IEditableObject">
+  <TypeSignature Language="C#" Value="public interface IEditableObject" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IEditableObject" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.IEditableObject" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>コミットの機能またはデータ ソースとして使用されているオブジェクトへの変更をロールバックを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは通常のキャプチャに使用、 <xref:System.ComponentModel.IEditableObject.BeginEdit%2A>、 <xref:System.ComponentModel.IEditableObject.EndEdit%2A>、および<xref:System.ComponentModel.IEditableObject.CancelEdit%2A>のセマンティクス、<xref:System.Data.DataRowView>です。  
+  
+   
+  
+## Examples  
+ 次の例の簡単な実装を提供する、<xref:System.ComponentModel.IEditableObject>インターフェイスです。 `Customer`クラス店舗顧客情報と顧客データベースのコレクションとして使用できます。 このサンプルを使用している前提としています、`CustomerList`のサンプルに含まれているクラス、<xref:System.ComponentModel.IBindingList>クラスです。  
+  
+ [!code-cpp[Binding_Editable#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Binding_Editable/CPP/binding_editable.cpp#1)]
+ [!code-csharp[Binding_Editable#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Binding_Editable/CS/binding_editable.cs#1)]
+ [!code-vb[Binding_Editable#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Binding_Editable/VB/binding_editable.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BeginEdit">
+      <MemberSignature Language="C#" Value="public void BeginEdit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void BeginEdit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.IEditableObject.BeginEdit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトの編集を開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは通常のキャプチャに使用、<xref:System.ComponentModel.IEditableObject.BeginEdit%2A>のセマンティクス、<xref:System.Data.DataRowView>です。  
+  
+ 場合<xref:System.ComponentModel.IEditableObject.BeginEdit%2A>が呼び出された既に編集されているオブジェクトに対して 2 回目以降の呼び出しは無視されます。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>このインターフェイスを実装するオブジェクトは、後の更新プログラムを保存する必要がある<see cref="M:System.ComponentModel.IEditableObject.BeginEdit" />破棄できるように場合<see cref="M:System.ComponentModel.IEditableObject.CancelEdit" />と呼びます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelEdit">
+      <MemberSignature Language="C#" Value="public void CancelEdit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CancelEdit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.IEditableObject.CancelEdit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>最後の変更を破棄<see cref="M:System.ComponentModel.IEditableObject.BeginEdit" />呼び出します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは通常のキャプチャに使用、<xref:System.ComponentModel.IEditableObject.CancelEdit%2A>のセマンティクス、<xref:System.Data.DataRowView>です。  
+  
+ 編集中でないオブジェクトで呼び出された場合、このメソッドは無視されます。  
+  
+> [!NOTE]
+>  所有元のリストを実装する場合<xref:System.ComponentModel.IBindingList>、呼び出し元<xref:System.ComponentModel.IEditableObject.CancelEdit%2A>を使用して作成されたオブジェクトで<xref:System.ComponentModel.IBindingList.AddNew%2A?displayProperty=nameWithType>オブジェクトを破棄します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndEdit">
+      <MemberSignature Language="C#" Value="public void EndEdit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndEdit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.IEditableObject.EndEdit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>最後の変更をプッシュ<see cref="M:System.ComponentModel.IEditableObject.BeginEdit" />または<see cref="M:System.ComponentModel.IBindingList.AddNew" />基になるオブジェクトへの呼び出しです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは通常のキャプチャに使用、<xref:System.ComponentModel.IEditableObject.EndEdit%2A>のセマンティクス、<xref:System.Data.DataRowView>です。  
+  
+ 編集中でないオブジェクトで呼び出された場合、このメソッドは無視されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

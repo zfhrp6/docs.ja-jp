@@ -1,0 +1,188 @@
+<Type Name="ReadOnlyMetadataCollection&lt;T&gt;" FullName="System.Data.Metadata.Edm.ReadOnlyMetadataCollection&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public class ReadOnlyMetadataCollection&lt;T&gt; : System.Collections.ObjectModel.ReadOnlyCollection&lt;T&gt; where T : MetadataItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ReadOnlyMetadataCollection`1&lt;(class System.Data.Metadata.Edm.MetadataItem) T&gt; extends System.Collections.ObjectModel.ReadOnlyCollection`1&lt;!T&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Metadata.Edm.ReadOnlyMetadataCollection`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T">
+      <Constraints>
+        <BaseTypeName>System.Data.Metadata.Edm.MetadataItem</BaseTypeName>
+      </Constraints>
+    </TypeParameter>
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Collections.ObjectModel.ReadOnlyCollection&lt;T&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="!0">T</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <typeparam name="T">コレクション内の要素の型。</typeparam>
+    <summary>高度なルックアップ機能を備えた読み取り専用コレクションを提供することによって、ADO.NET メタデータ階層のメンバーのコレクションを表します。 このクラスは、<see cref="T:System.Collections.ObjectModel.ReadOnlyCollection" /> クラスから派生しています。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public virtual bool Contains (string identity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(string identity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.ReadOnlyMetadataCollection`1.Contains(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="identity" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="identity">項目の ID。</param>
+        <summary>指定された ID の項目がコレクションに存在するかどうかを調べます。</summary>
+        <returns>
+          <see langword="true" />を検索する項目がコレクションに含まれている場合それ以外の場合、<see langword="false" />です。 既定値は false です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Data.Metadata.Edm.ReadOnlyMetadataCollection&lt;T&gt;.Enumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Data.Metadata.Edm.ReadOnlyMetadataCollection`1/Enumerator&lt;!T&gt; GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.ReadOnlyMetadataCollection`1.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.ReadOnlyMetadataCollection&lt;T&gt;+Enumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このコレクションを反復処理できる列挙子を返します。</summary>
+        <returns>この <see cref="T:System.Data.Metadata.Edm.ReadOnlyMetadataCollection`1.Enumerator" /> の反復処理に使用できる <see cref="T:System.Data.Metadata.Edm.ReadOnlyMetadataCollection" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="public virtual T GetValue (string identity, bool ignoreCase);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance !T GetValue(string identity, bool ignoreCase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.ReadOnlyMetadataCollection`1.GetValue(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="identity" Type="System.String" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="identity">検索対象となる項目の ID。</param>
+        <param name="ignoreCase">
+          <see langword="true" />大文字と小文字の検索を実行するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>指定された ID を使用して、このコレクションから項目を取得します。</summary>
+        <returns>このコレクションから取得された項目。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public virtual int IndexOf (T value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 IndexOf(!T value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.ReadOnlyMetadataCollection`1.IndexOf(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="value">検索する値。</param>
+        <summary>このコレクション内の指定された値のインデックスを返します。</summary>
+        <returns>このコレクション内の指定された値のインデックス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Metadata.Edm.ReadOnlyMetadataCollection`1.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコレクションが読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />このコレクションが読み取り専用の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public virtual T this[string identity] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance !T Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Metadata.Edm.ReadOnlyMetadataCollection`1.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="identity" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="identity">検索対象となる項目の ID。</param>
+        <summary>指定された ID を使用して、このコレクションから項目を取得します。</summary>
+        <value>このコレクションから取得された項目。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetValue">
+      <MemberSignature Language="C#" Value="public virtual bool TryGetValue (string identity, bool ignoreCase, out T item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TryGetValue(string identity, bool ignoreCase, [out] !T&amp; item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.ReadOnlyMetadataCollection`1.TryGetValue(System.String,System.Boolean,`0@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="identity" Type="System.String" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+        <Parameter Name="item" Type="T&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="identity">検索対象となる項目の ID。</param>
+        <param name="ignoreCase">
+          <see langword="true" />大文字と小文字の検索を実行するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="item">このメソッドから制御が戻った時点で、この出力パラメーターにはコレクションから取得された項目が格納されます。 一致する項目が存在しない場合、この出力パラメーターには NULL が格納されます。</param>
+        <summary>指定された ID を使用して、このコレクションから項目を取得します。</summary>
+        <returns>
+          <see langword="true" />検索条件に一致する項目がある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

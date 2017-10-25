@@ -1,0 +1,959 @@
+<Type Name="TextInfo" FullName="System.Globalization.TextInfo">
+  <TypeSignature Language="C#" Value="public class TextInfo : ICloneable, System.Runtime.Serialization.IDeserializationCallback" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit TextInfo extends System.Object implements class System.ICloneable, class System.Runtime.Serialization.IDeserializationCallback" />
+  <TypeSignature Language="DocId" Value="T:System.Globalization.TextInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Globalization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.IDeserializationCallback</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>大文字と小文字を区別するかどうかなど、書記体系に固有のテキストのプロパティと動作を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 書記体系は、スクリプトやテキストとしての言語を表すために必要正投影の規則のコレクションです。 <xref:System.Globalization.TextInfo>クラスは、書記体系を表します。  
+  
+ アプリケーションを使用する必要があります、<xref:System.Globalization.CultureInfo.TextInfo%2A?displayProperty=nameWithType>を取得するプロパティ、 <xref:System.Globalization.TextInfo> 、特定のオブジェクト<xref:System.Globalization.CultureInfo>オブジェクト。 セキュリティ上の決定は、文字列の比較またはケース変更操作に依存する場合、アプリケーションを使用する必要があります、<xref:System.Globalization.CultureInfo.TextInfo%2A?displayProperty=nameWithType>によって返されるオブジェクトのプロパティ、<xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>プロパティをオペレーティング システムのカルチャ設定に関係なく一貫した操作の動作であることを確認します。  
+  
+## <a name="overrides"></a>[オーバーライド]  
+ ユーザーは、コントロール パネルの地域と言語のオプション部分を使用して、Windows の現在のカルチャに関連付けられている値を上書きする可能性があります。 たとえば、ユーザーは、別の形式で日付を表示するか、カルチャの既定値とは異なる通貨を使用することもできます。 場合、<xref:System.Globalization.CultureInfo.UseUserOverride%2A?displayProperty=nameWithType>プロパティに設定されている`true`、によって返されるオブジェクトのプロパティ値、 <xref:System.Globalization.CultureInfo.DateTimeFormat%2A?displayProperty=nameWithType>、 <xref:System.Globalization.CultureInfo.NumberFormat%2A?displayProperty=nameWithType>、および<xref:System.Globalization.CultureInfo.TextInfo%2A?displayProperty=nameWithType>プロパティは、ユーザーの設定からも取得されます。 ユーザーの設定が、カルチャに関連付けられていると互換性がないかどうか、<xref:System.Globalization.CultureInfo>など、選択したカレンダーは、のいずれかでがない場合、<xref:System.Globalization.CultureInfo.OptionalCalendars%2A>メソッドの結果と、プロパティの値が定義されていません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ANSICodePage">
+      <MemberSignature Language="C#" Value="public virtual int ANSICodePage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ANSICodePage" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.TextInfo.ANSICodePage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在によって表される書記体系で使用される American National Standards Institute (ANSI) コード ページを取得<see cref="T:System.Globalization.TextInfo" />です。</summary>
+        <value>現在によって表される書記体系で使用される、ANSI コード ページ<see cref="T:System.Globalization.TextInfo" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public virtual object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.TextInfo.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のコピーである新しいオブジェクトを作成<see cref="T:System.Globalization.TextInfo" />オブジェクト。</summary>
+        <returns>新しいインスタンスを<see cref="T:System.Object" />、現在のメンバーごとのクローンは<see cref="T:System.Globalization.TextInfo" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいメンバーごとのクローンは読み取り専用ではありません。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.Globalization.TextInfo.Clone%2A>と<xref:System.Globalization.TextInfo.ReadOnly%2A>メソッドです。  
+  
+ [!code-csharp[sys.glob.textinfo.clone#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.textinfo.clone/cs/ro.cs#1)]
+ [!code-vb[sys.glob.textinfo.clone#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.textinfo.clone/vb/ro.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CultureName">
+      <MemberSignature Language="C#" Value="public string CultureName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CultureName" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.TextInfo.CultureName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在関連付けられているカルチャの名前を取得<see cref="T:System.Globalization.TextInfo" />オブジェクト。</summary>
+        <value>カルチャの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Globalization.TextInfo>特定のカルチャからオブジェクトを作成し、<xref:System.Globalization.TextInfo.CultureName%2A>プロパティはそのカルチャの名前を返します。  
+  
+ <xref:System.Globalization.TextInfo.CultureName%2A>プロパティは、ニュートラル カルチャではなく、特定のカルチャに常に反映されます。 場合<xref:System.Globalization.CultureInfo.Name%2A?displayProperty=nameWithType>としてその値、対応するニュートラル カルチャを持つ<xref:System.Globalization.TextInfo.CultureName%2A>その値と同じ言語を使用して任意の特定のカルチャを持ちます。 たとえば、<xref:System.Globalization.CultureInfo.Name%2A>プロパティは、英語版のニュートラル カルチャが、対応する"en"を返します<xref:System.Globalization.TextInfo.CultureName%2A>プロパティは、英語 (米国) カルチャの"EN-US"を返す場合があります。 場合、<xref:System.Globalization.TextInfo>オブジェクトは、ニュートラル カルチャの値ではなく、特定のカルチャに関連付けられたその<xref:System.Globalization.TextInfo.CultureName%2A>プロパティは常に同じ、<xref:System.Globalization.CultureInfo.Name%2A>のそれに関連するプロパティの値<xref:System.Globalization.CultureInfo>オブジェクト。  
+  
+ 同様に、<xref:System.Globalization.TextInfo.CultureName%2A>プロパティには、特定の並べ替えことはありませんが反映されます。 これは、常に、既定の並べ替え順序に対応します。 たとえば、スペイン語 (スペイン) の既定の並べ替え順序は、国際対応の並べ替え順序です。 場合<xref:System.Globalization.CultureInfo.Name%2A?displayProperty=nameWithType>は es-es_tradnl (従来の並べ替え順序とスペイン語) し、対応する<xref:System.Globalization.TextInfo.CultureName%2A>ES-ES (スペイン語の既定の国際対応の並べ替え順序) は、します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EBCDICCodePage">
+      <MemberSignature Language="C#" Value="public virtual int EBCDICCodePage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 EBCDICCodePage" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.TextInfo.EBCDICCodePage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在によって表される書記体系で使用される拡張 Binary Coded Decimal Interchange コード (EBCDIC) コード ページを取得<see cref="T:System.Globalization.TextInfo" />です。</summary>
+        <value>現在によって表される書記体系で使用される EBCDIC コード ページ<see cref="T:System.Globalization.TextInfo" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.TextInfo.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在の <see cref="T:System.Globalization.TextInfo" /> と比較するオブジェクト。</param>
+        <summary>指定したオブジェクトが現在同じ書記体系を表すかどうかを判断<see cref="T:System.Globalization.TextInfo" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="obj" />現在として同じ書記体系を表す<see cref="T:System.Globalization.TextInfo" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Object.Equals%2A?displayProperty=nameWithType>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.TextInfo.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Globalization.TextInfo" /> のハッシュ関数として機能します。ハッシュ アルゴリズムや、ハッシュ テーブルのようなデータ構造での使用に適しています。</summary>
+        <returns>現在の <see cref="T:System.Globalization.TextInfo" /> のハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>します。  
+  
+ このメソッドは、<xref:System.Globalization.TextInfo.Equals%2A> メソッドによって等しいと評価された 2 つのオブジェクトに対して同じハッシュ コードを生成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.TextInfo.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、現在<see cref="T:System.Globalization.TextInfo" />オブジェクトは読み取り専用です。</summary>
+        <value>
+          <see langword="true" />場合、現在<see cref="T:System.Globalization.TextInfo" />オブジェクトは読み取り専用です。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Globalization.TextInfo.IsReadOnly%2A>プロパティは`true`、アプリケーションの現在のプロパティを変更することはできません<xref:System.Globalization.TextInfo>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsRightToLeft">
+      <MemberSignature Language="C#" Value="public bool IsRightToLeft { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsRightToLeft" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.TextInfo.IsRightToLeft" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、現在<see cref="T:System.Globalization.TextInfo" />オブジェクトは、書記体系のテキストが右から左にフローする場所を表します。</summary>
+        <value>
+          <see langword="true" />テキストが右から左にフローする場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.TextInfo.IsRightToLeft%2A>プロパティが記述されたテキストの主要な方向およびボタンとスクロール バーなどのユーザー インターフェイス要素の相対位置を示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LCID">
+      <MemberSignature Language="C#" Value="public int LCID { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 LCID" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.TextInfo.LCID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在関連付けられているカルチャのカルチャ識別子を取得<see cref="T:System.Globalization.TextInfo" />オブジェクト。</summary>
+        <value>元のカルチャを識別する番号現在<see cref="T:System.Globalization.TextInfo" />オブジェクトが作成されました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 定義済みの特定のカルチャの名前と識別子は、この and の他のクラスで使用される、<xref:System.Globalization?displayProperty=nameWithType>名前空間、Windows API とします。 詳細なカルチャ情報がで定義されている、 [Go Global Developer Center にある各国語言語サポート (NLS) API リファレンス トピック](http://msdn.microsoft.com/goglobal/bb896001.aspx)です。  
+  
+ <xref:System.Globalization.TextInfo.LCID%2A>プロパティは常に、ニュートラル カルチャ識別子ではなく、特定のカルチャ識別子を表します。 場合<xref:System.Globalization.CultureInfo.LCID%2A?displayProperty=nameWithType>、対応する、ニュートラル カルチャ識別子に設定されている<xref:System.Globalization.TextInfo.LCID%2A>その値と同じ言語を使用する任意の特定のカルチャ識別子を持ちます。 たとえば、 <xref:System.Globalization.CultureInfo.LCID%2A?displayProperty=nameWithType> 0x0009"en"という名前の英語ニュートラル カルチャを返します。 ただし、対応する<xref:System.Globalization.TextInfo.LCID%2A>プロパティは、EN-US という名前の英語 (米国) カルチャの 0x0409 を返す場合があります。  
+  
+ 同様に、<xref:System.Globalization.TextInfo.LCID%2A>プロパティは常に既定の並べ替え順序に対応し、しない特定の並べ替え順序を反映します。 たとえば、スペイン語 (スペイン) の既定の並べ替え順序は、国際対応の並べ替え順序です。 場合<xref:System.Globalization.CultureInfo.LCID%2A?displayProperty=nameWithType>に設定されている"0x040A"(従来の並べ替え順序でのスペイン語)、対応する<xref:System.Globalization.TextInfo.LCID%2A>値は"0x0C0A"(既定の国際対応の並べ替え順序とスペイン語)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ListSeparator">
+      <MemberSignature Language="C#" Value="public virtual string ListSeparator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ListSeparator" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.TextInfo.ListSeparator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リスト内の項目を区切る文字列を取得または設定します。</summary>
+        <value>リスト内の項目を区切る文字列。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">セット操作の値は null です。</exception>
+        <exception cref="T:System.InvalidOperationException">現在の設定操作で<see cref="T:System.Globalization.TextInfo" />オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MacCodePage">
+      <MemberSignature Language="C#" Value="public virtual int MacCodePage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MacCodePage" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.TextInfo.MacCodePage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在によって表される書記体系で使用される Macintosh コード ページを取得<see cref="T:System.Globalization.TextInfo" />です。</summary>
+        <value>現在によって表される書記体系で使用される Macintosh コード ページ<see cref="T:System.Globalization.TextInfo" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OEMCodePage">
+      <MemberSignature Language="C#" Value="public virtual int OEMCodePage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 OEMCodePage" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.TextInfo.OEMCodePage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在によって表される書記体系で使用される、相手先ブランド供給業者 (OEM) コード ページを取得<see cref="T:System.Globalization.TextInfo" />です。</summary>
+        <value>現在によって表される書記体系で使用される OEM コード ページ<see cref="T:System.Globalization.TextInfo" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadOnly">
+      <MemberSignature Language="C#" Value="public static System.Globalization.TextInfo ReadOnly (System.Globalization.TextInfo textInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Globalization.TextInfo ReadOnly(class System.Globalization.TextInfo textInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.TextInfo.ReadOnly(System.Globalization.TextInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Globalization.TextInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textInfo" Type="System.Globalization.TextInfo" />
+      </Parameters>
+      <Docs>
+        <param name="textInfo"><see cref="T:System.Globalization.TextInfo" /> オブジェクト。</param>
+        <summary>指定された読み取り専用バージョンを返します<see cref="T:System.Globalization.TextInfo" />オブジェクト。</summary>
+        <returns><see cref="T:System.Globalization.TextInfo" />で指定されたオブジェクト、<paramref name="textInfo" />パラメーター場合<paramref name="textInfo" />は読み取り専用です。  
+  
+ または  
+  
+ 読み取り専用メンバーごとの複製、<see cref="T:System.Globalization.TextInfo" />で指定されたオブジェクト<paramref name="textInfo" />場合は、<paramref name="textInfo" />は読み取り専用ではありません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.Globalization.TextInfo.Clone%2A>と<xref:System.Globalization.TextInfo.ReadOnly%2A>メソッドです。  
+  
+ [!code-csharp[sys.glob.textinfo.clone#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.textinfo.clone/cs/ro.cs#1)]
+ [!code-vb[sys.glob.textinfo.clone#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.textinfo.clone/vb/ro.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="textInfo" /> が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.IDeserializationCallback.OnDeserialization">
+      <MemberSignature Language="C#" Value="void IDeserializationCallback.OnDeserialization (object sender);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.Serialization.IDeserializationCallback.OnDeserialization(object sender) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.TextInfo.System#Runtime#Serialization#IDeserializationCallback#OnDeserialization(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="sender">逆シリアル化イベントのソース。</param>
+        <summary>逆シリアル化が完了したときに逆シリアル化イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToLower">
+      <MemberSignature Language="C#" Value="public virtual char ToLower (char c);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance char ToLower(char c) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.TextInfo.ToLower(System.Char)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Char</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="c" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="c">小文字に変換する文字。</param>
+        <summary>指定した文字を小文字に変換します。</summary>
+        <returns>小文字に変換するために指定する文字。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 大文字と小文字のセマンティクスは、使用するカルチャに依存します。 インバリアント カルチャの大文字と小文字のセマンティクスはカルチャが区別されません。 特定のカルチャの大文字小文字の区別セマンティクスは、そのカルチャに機密性の高い。  
+  
+ セキュリティ上の決定は、文字列の比較またはケース変更操作に依存する場合、アプリケーションを使用する必要があります、<xref:System.Globalization.CultureInfo.InvariantCulture%2A>動作が、システムのカルチャ設定に関係なく一貫したことを確認します。 ただし、インバリアント カルチャは、システム サービスなど、カルチャに依存しない結果が必要な処理でのみ使用する必要があります。 それ以外の場合、言語またはカルチャに不適切な可能性のある結果を生成します。  
+  
+ カルチャの詳細については、次を参照してください。<xref:System.Globalization.CultureInfo>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、カルチャ名 EN-US を英語 (米国) カルチャに基づいて、文字列の大文字と小文字を変更します。  
+  
+ [!code-cpp[System.Globalization.TextInfo_casing#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.TextInfo_casing/CPP/textinfo_casing.cpp#1)]
+ [!code-csharp[System.Globalization.TextInfo_casing#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.TextInfo_casing/CS/textinfo_casing.cs#1)]
+ [!code-vb[System.Globalization.TextInfo_casing#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.TextInfo_casing/VB/textinfo_casing.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToLower">
+      <MemberSignature Language="C#" Value="public virtual string ToLower (string str);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string ToLower(string str) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.TextInfo.ToLower(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="str" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="str">小文字に変換する文字列。</param>
+        <summary>指定した文字列を小文字に変換します。</summary>
+        <returns>小文字に変換するために指定する文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される文字列の入力文字列からの長さが異なる場合があります。 大文字と小文字の詳細については、Unicode テクニカル レポート # 21 個の空白「の大文字小文字マップ、」Unicode コンソーシアム (http://www.unicode.org) によって発行されたを参照してください。 現在の実装には、文字列の長さが保持されます。 ただし、この動作は保証はありませんし、将来的に実装を変更できません。  
+  
+ 大文字と小文字のセマンティクスは、使用するカルチャに依存します。 インバリアント カルチャの大文字と小文字のセマンティクスはカルチャが区別されません。 特定のカルチャの大文字小文字の区別セマンティクスは、そのカルチャに機密性の高い。  
+  
+ セキュリティ上の決定は、文字列の比較またはケース変更操作に依存する場合、アプリケーションを使用する必要があります、<xref:System.Globalization.CultureInfo.InvariantCulture%2A>動作が、システムのカルチャ設定に関係なく一貫したことを確認します。 ただし、インバリアント カルチャは、システム サービスなど、カルチャに依存しない結果が必要な処理でのみ使用する必要があります。 それ以外の場合、言語またはカルチャに不適切な可能性のある結果を生成します。  
+  
+ カルチャの詳細については、次を参照してください。<xref:System.Globalization.CultureInfo>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、カルチャ名 EN-US を英語 (米国) カルチャに基づいて、文字列の大文字と小文字を変更します。  
+  
+ [!code-cpp[System.Globalization.TextInfo_casing#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.TextInfo_casing/CPP/textinfo_casing.cpp#1)]
+ [!code-csharp[System.Globalization.TextInfo_casing#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.TextInfo_casing/CS/textinfo_casing.cs#1)]
+ [!code-vb[System.Globalization.TextInfo_casing#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.TextInfo_casing/VB/textinfo_casing.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="str" /> が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.TextInfo.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Globalization.TextInfo" /> を表す文字列を返します。</summary>
+        <returns>現在の <see cref="T:System.Globalization.TextInfo" /> を表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Object.ToString%2A?displayProperty=nameWithType>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToTitleCase">
+      <MemberSignature Language="C#" Value="public string ToTitleCase (string str);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ToTitleCase(string str) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.TextInfo.ToTitleCase(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="str" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="str">単語の先頭文字を大文字に変換する文字列。</param>
+        <summary>指定した文字列を (頭字語と見なされる、すべてが大文字で記載された単語を除き)、英語見出しと同じ大文字/小文字の組み合わせに変換します。</summary>
+        <returns>指定した文字列内の単語の先頭文字が大文字に変換された文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一般に、タイトルの大文字と小文字を大文字の単語の最初の文字と、残りの文字を小文字に変換します。 ただし、この方法は頭字語など、すべて大文字になっている単語を変換する適切な大文字と小文字を現在提供されません。 次の表は、メソッドの方法がいくつかの文字列を表示します。  
+  
+|入力|言語|予期される結果|実際の結果|  
+|-----------|--------------|---------------------|-------------------|  
+|戦争と平和|英語|戦争と平和|戦争と平和|  
+|Anhalter durch 使い物 Galaxis ごと|ドイツ語|Anhalter durch 使い物 Galaxis ごと|Anhalter Durch 使い物 Galaxis ごと|  
+|les naufragés d'ythaq|フランス語|Les Naufragés d'Ythaq|Les Naufragés D'ythaq|  
+  
+ 上記に示すように、<xref:System.Globalization.TextInfo.ToTitleCase%2A>メソッドは必ずしも言語的に正しいではない任意の大文字と小文字の動作を提供します。 言語的に正しいソリューション追加の規則が必要になり、現在のアルゴリズムが多少簡単かつ高速化します。 今後この API の低速のための権限が予約されています。  
+  
+ 現在の実装、<xref:System.Globalization.TextInfo.ToTitleCase%2A>メソッドは、入力文字列と同じ長さである出力文字列を生成します。 ただし、この動作は保証はありませんし、将来の実装で変更する可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例では、カルチャ名 EN-US を英語 (米国) カルチャに基づいて、文字列の大文字と小文字を変更します。  
+  
+ [!code-cpp[System.Globalization.TextInfo_casing#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.TextInfo_casing/CPP/textinfo_casing.cpp#1)]
+ [!code-csharp[System.Globalization.TextInfo_casing#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.TextInfo_casing/CS/textinfo_casing.cs#1)]
+ [!code-vb[System.Globalization.TextInfo_casing#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.TextInfo_casing/VB/textinfo_casing.vb#1)]  
+  
+ 次の例は、配列内の各文字列を <xref:System.Globalization.TextInfo.ToTitleCase%2A> メソッドに渡します。 文字列には、適切なタイトルの文字列と頭字語が含まれています。 文字列は、EN-US カルチャの規則を使用して、先頭文字が大文字に変換されます。  
+  
+ [!code-csharp[System.Globalization.TextInfo.ToTitleCase#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.textinfo.totitlecase/cs/totitlecase2.cs#1)]
+ [!code-vb[System.Globalization.TextInfo.ToTitleCase#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.textinfo.totitlecase/vb/totitlecase2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="str" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToUpper">
+      <MemberSignature Language="C#" Value="public virtual char ToUpper (char c);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance char ToUpper(char c) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.TextInfo.ToUpper(System.Char)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Char</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="c" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="c">大文字に変換する文字。</param>
+        <summary>指定した文字を大文字に変換します。</summary>
+        <returns>大文字に変換するために指定する文字。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 大文字と小文字のセマンティクスは、使用するカルチャに依存します。 インバリアント カルチャの大文字と小文字のセマンティクスはカルチャが区別されません。 特定のカルチャの大文字小文字の区別セマンティクスは、そのカルチャに機密性の高い。  
+  
+ セキュリティ上の決定は、文字列の比較またはケース変更操作に依存する場合、アプリケーションを使用する必要があります、<xref:System.Globalization.CultureInfo.InvariantCulture%2A>動作が、システムのカルチャ設定に関係なく一貫したことを確認します。 ただし、インバリアント カルチャは、システム サービスなど、カルチャに依存しない結果が必要な処理でのみ使用する必要があります。 それ以外の場合、言語またはカルチャに不適切な可能性のある結果を生成します。  
+  
+ カルチャの詳細については、次を参照してください。<xref:System.Globalization.CultureInfo>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、カルチャ名 EN-US を英語 (米国) カルチャに基づいて、文字列の大文字と小文字を変更します。  
+  
+ [!code-cpp[System.Globalization.TextInfo_casing#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.TextInfo_casing/CPP/textinfo_casing.cpp#1)]
+ [!code-csharp[System.Globalization.TextInfo_casing#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.TextInfo_casing/CS/textinfo_casing.cs#1)]
+ [!code-vb[System.Globalization.TextInfo_casing#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.TextInfo_casing/VB/textinfo_casing.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToUpper">
+      <MemberSignature Language="C#" Value="public virtual string ToUpper (string str);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string ToUpper(string str) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.TextInfo.ToUpper(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="str" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="str">大文字に変換する文字列。</param>
+        <summary>指定した文字列を大文字に変換します。</summary>
+        <returns>大文字に変換するために指定する文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される文字列の入力文字列からの長さが異なる場合があります。 大文字と小文字の詳細については、Unicode テクニカル レポート # 21 個の空白「の大文字小文字マップ、」Unicode コンソーシアム (http://www.unicode.org) によって発行されたを参照してください。 現在の実装には、文字列の長さが保持されます。 ただし、この動作は保証はありませんし、将来的に実装を変更できません。  
+  
+ 大文字と小文字のセマンティクスは、使用するカルチャに依存します。 インバリアント カルチャの大文字と小文字のセマンティクスはカルチャが区別されません。 特定のカルチャの大文字小文字の区別セマンティクスは、そのカルチャに機密性の高い。  
+  
+ セキュリティ上の決定は、文字列の比較またはケース変更操作に依存する場合、アプリケーションを使用する必要があります、<xref:System.Globalization.CultureInfo.InvariantCulture%2A>動作が、システムのカルチャ設定に関係なく一貫したことを確認します。 ただし、インバリアント カルチャは、システム サービスなど、カルチャに依存しない結果が必要な処理でのみ使用する必要があります。 それ以外の場合、言語またはカルチャに不適切な可能性のある結果を生成します。  
+  
+ カルチャの詳細については、次を参照してください。<xref:System.Globalization.CultureInfo>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、カルチャ名 EN-US を英語 (米国) カルチャに基づいて、文字列の大文字と小文字を変更します。  
+  
+ [!code-cpp[System.Globalization.TextInfo_casing#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.TextInfo_casing/CPP/textinfo_casing.cpp#1)]
+ [!code-csharp[System.Globalization.TextInfo_casing#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.TextInfo_casing/CS/textinfo_casing.cs#1)]
+ [!code-vb[System.Globalization.TextInfo_casing#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.TextInfo_casing/VB/textinfo_casing.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="str" /> が null です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

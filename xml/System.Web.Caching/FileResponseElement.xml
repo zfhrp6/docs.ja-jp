@@ -1,0 +1,127 @@
+<Type Name="FileResponseElement" FullName="System.Web.Caching.FileResponseElement">
+  <TypeSignature Language="C#" Value="public class FileResponseElement : System.Web.Caching.ResponseElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit FileResponseElement extends System.Web.Caching.ResponseElement" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Caching.FileResponseElement" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Caching.ResponseElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ファイルとして格納されている、出力キャッシュ エントリの一部を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Caching.FileResponseElement>クラスは出力キャッシュのエントリの本文部分 (ヘッダー) ではなくを表します。 データ、<xref:System.Web.Caching.FileResponseElement>オブジェクトは、一部またはすべてのファイルとして保存できます。 ASP.NET とカスタム出力キャッシュ プロバイダーの両方が応答を返す複数の部分の任意の組み合わせを使用して<xref:System.Web.Caching.FileResponseElement>オブジェクト。 たとえば、プロバイダー返すことができます応答は、分割を 3 つに異なる<xref:System.Web.Caching.FileResponseElement>オブジェクト、および各オブジェクトは別の物理ファイルのオフセットから取得できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileResponseElement (string path, long offset, long length);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, int64 offset, int64 length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.FileResponseElement.#ctor(System.String,System.Int64,System.Int64)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="offset" Type="System.Int64" />
+        <Parameter Name="length" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="path">ファイルの完全修飾パス。</param>
+        <param name="offset">文字列を開始するファイル内の位置。</param>
+        <param name="length">データの長さ、ファイルに出力キャッシュ データを表すオフセットから始まるによって定義された<c>パス</c>です。</param>
+        <summary><see cref="T:System.Web.Caching.FileResponseElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 出力キャッシュ応答を全体が 1 つのファイルに含まれている場合、プロバイダーを初期化します、 <xref:System.Web.Caching.FileResponseElement> 0 の場合と、ファイル全体のサイズに等しい長さのオフセットを使用して、クラスです。 応答をキャッシュする完全な出力がファイルの一部のみに含まれている場合、プロバイダーを初期化します、<xref:System.Web.Caching.FileResponseElement>クラスを出力はキャッシュ応答を開始するファイルとそのファイルに格納されている出力キャッシュの応答のサイズに等しい長さのオフセットを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="length" /> が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Length">
+      <MemberSignature Language="C#" Value="public long Length { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 Length" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Caching.FileResponseElement.Length" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データを含む、オフセットで開始、データのサイズを取得、<see cref="T:System.Web.Caching.FileResponseElement" />インスタンス。</summary>
+        <value>データのサイズ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 出力キャッシュ応答を全体が 1 つのファイルに含まれている場合、出力キャッシュ プロバイダーを初期化します、<xref:System.Web.Caching.FileResponseElement>ファイル全体のサイズの長さを使用して、クラスです。 応答をキャッシュする完全な出力がファイルの一部のみに含まれている場合、プロバイダーを初期化します、<xref:System.Web.Caching.FileResponseElement>そのファイルに格納されている出力キャッシュ応答のサイズの長さを使用して、クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Offset">
+      <MemberSignature Language="C#" Value="public long Offset { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 Offset" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Caching.FileResponseElement.Offset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイル内の位置を取得からのデータ、<see cref="T:System.Web.Caching.FileResponseElement" />インスタンスが起動します。</summary>
+        <value>ファイル内のデータの開始点です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 出力キャッシュ応答を全体が 1 つのファイルに含まれている場合、プロバイダーを初期化します、<xref:System.Web.Caching.FileResponseElement>ファイルの一部だけに完全な出力応答をキャッシュする場合は、オフセット 0 を使用して、クラスが含まれている、プロバイダーの初期化、<xref:System.Web.Caching.FileResponseElement>出力はキャッシュ応答を開始するファイルのオフセットを使用してクラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public string Path { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Path" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Caching.FileResponseElement.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データを含むファイルの場所を取得、<see cref="T:System.Web.Caching.FileResponseElement" />インスタンス。</summary>
+        <value>ファイルの完全修飾パス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

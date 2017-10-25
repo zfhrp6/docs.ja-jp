@@ -1,0 +1,819 @@
+<Type Name="DefaultPropertiesToSend" FullName="System.Messaging.DefaultPropertiesToSend">
+  <TypeSignature Language="C#" Value="public class DefaultPropertiesToSend" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DefaultPropertiesToSend extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Messaging.DefaultPropertiesToSend" />
+  <AssemblyInfo>
+    <AssemblyName>System.Messaging</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.ExpandableObjectConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>以外のオブジェクトを送信するときに使用される既定のプロパティ値を指定<see cref="T:System.Messaging.Message" />メッセージ キューのインスタンス。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 送信されるメッセージの選択したプロパティの既定値を設定することができます、<xref:System.Messaging.MessageQueue>です。 <xref:System.Messaging.DefaultPropertiesToSend>既定のプロパティ値の指定に使用される以外の場合に送信されるメッセージ オブジェクト<xref:System.Messaging.Message>インスタンスは、キューに送信されるに渡される文字列の引数のなど、<xref:System.Messaging.MessageQueue.Send%2A>メソッドのコード片で`myMessageQueue.Send("hello")`です。 <xref:System.Messaging.Message>クラスには同じ名前のプロパティでは、対応する<xref:System.Messaging.DefaultPropertiesToSend>を送信するときに、値を提供する、<xref:System.Messaging.Message>具体的にはインスタンス化します。 指定した場合でも<xref:System.Messaging.MessageQueue.DefaultPropertiesToSend%2A?displayProperty=nameWithType>、キューの送信、<xref:System.Messaging.Message>そのキューへのオブジェクトと同じ名前の値、<xref:System.Messaging.Message>キューをオーバーライドするプロパティ<xref:System.Messaging.MessageQueue.DefaultPropertiesToSend%2A>値。  
+  
+ 明示的に設定しないプロパティは、既定では、コンス トラクターで指定された値<xref:System.Messaging.DefaultPropertiesToSend.%23ctor%2A>です。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.Messaging.DefaultPropertiesToSend>を参照してください、<xref:System.Messaging.DefaultPropertiesToSend>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、メッセージの優先順位を使用して、メッセージを送信する既定のプロパティを決定します。  
+  
+ [!code-cpp[MessageQueue.DefaultPropertiesToSend#1](~/samples/snippets/cpp/VS_Snippets_Remoting/MessageQueue.DefaultPropertiesToSend/CPP/mqdefaultpropertiestosend.cpp#1)]
+ [!code-csharp[MessageQueue.DefaultPropertiesToSend#1](~/samples/snippets/csharp/VS_Snippets_Remoting/MessageQueue.DefaultPropertiesToSend/CS/mqdefaultpropertiestosend.cs#1)]
+ [!code-vb[MessageQueue.DefaultPropertiesToSend#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MessageQueue.DefaultPropertiesToSend/VB/mqdefaultpropertiestosend.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DefaultPropertiesToSend ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.DefaultPropertiesToSend.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Messaging.DefaultPropertiesToSend" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを作成する<xref:System.Messaging.DefaultPropertiesToSend>に関連付けるキューに送られていないオブジェクト型の既定のプロパティ値を定義する<xref:System.Messaging.Message>です。 使用するときに<xref:System.Messaging.MessageQueue>、オブジェクト、<xref:System.Messaging.DefaultPropertiesToSend>インスタンスが自動的に作成され、関連付け、<xref:System.Messaging.MessageQueue.DefaultPropertiesToSend%2A?displayProperty=nameWithType>のメンバー、<xref:System.Messaging.MessageQueue>です。  
+  
+ 次の c# コードに示すように送信する場合、キューの既定のプロパティを定義する 2 つの方法ができます。 このインスタンスの値を設定できます<xref:System.Messaging.DefaultPropertiesToSend>と関連付けるキューの<xref:System.Messaging.MessageQueue.DefaultPropertiesToSend%2A?displayProperty=nameWithType>プロパティ。  
+  
+```  
+DefaultPropertiesToSend myDefaultProperties = new DefaultPropertiesToSend();  
+  // Set default values for the properties.  
+  myDefaultProperties.Label = "myLabel";  
+  myDefaultProperties.Recoverable = false;  
+ ...  
+  myMessageQueue.DefaultPropertiesToSend = myDefaultProperties;  
+  myMessageQueue.Send("hello");  
+```  
+  
+ または、値を個別に割り当てることができます、<xref:System.Messaging.MessageQueue>インスタンスの<xref:System.Messaging.MessageQueue.DefaultPropertiesToSend%2A>直接プロパティ。  
+  
+```  
+myMessageQueue.DefaultPropertiesToSend.Label = "myLabel";  
+  myMessageQueue.DefaultPropertiesToSend.Recoverable = false;  
+...  
+  myMessageQueue.Send("hello");  
+```  
+  
+ 2 番目のこれらのオプションを選択した場合を呼び出す必要はありません、<xref:System.Messaging.DefaultPropertiesToSend.%23ctor%2A>コンス トラクターに明示的にします。 インスタンスを作成する場合があります<xref:System.Messaging.DefaultPropertiesToSend>などかどうか、プロパティの既定値は、送信されるメッセージのいくつかの条件に依存します。 複数作成できます<xref:System.Messaging.DefaultPropertiesToSend>インスタンスし、キューのアカウントを割り当てます<xref:System.Messaging.MessageQueue.DefaultPropertiesToSend%2A?displayProperty=nameWithType>プロパティはキューにメッセージを送信する前にします。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Messaging.DefaultPropertiesToSend>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Messaging.DefaultPropertiesToSend.AcknowledgeType%2A>|`AcknowledgeTypes.None`|  
+|<xref:System.Messaging.DefaultPropertiesToSend.AdministrationQueue%2A>|`null`|  
+|<xref:System.Messaging.DefaultPropertiesToSend.AppSpecific%2A>|0|  
+|<xref:System.Messaging.DefaultPropertiesToSend.AttachSenderId%2A>|`true`|  
+|<xref:System.Messaging.DefaultPropertiesToSend.EncryptionAlgorithm%2A>|`EncryptionAlgorithm.RC2`|  
+|<xref:System.Messaging.DefaultPropertiesToSend.Extension%2A>|バイトの長さ 0 の配列|  
+|<xref:System.Messaging.DefaultPropertiesToSend.HashAlgorithm%2A>|`HashAlgorithm.MD5`|  
+|<xref:System.Messaging.DefaultPropertiesToSend.Label%2A>|空の文字列 ("")|  
+|<xref:System.Messaging.DefaultPropertiesToSend.Priority%2A>|`MessagePriority.Normal`|  
+|<xref:System.Messaging.DefaultPropertiesToSend.Recoverable%2A>|`false`|  
+|<xref:System.Messaging.DefaultPropertiesToSend.ResponseQueue%2A>|`null`|  
+|<xref:System.Messaging.DefaultPropertiesToSend.TimeToBeReceived%2A>|`Message.InfiniteTimeout`|  
+|<xref:System.Messaging.DefaultPropertiesToSend.TimeToReachQueue%2A>|`Message.InfiniteTimeout`|  
+|<xref:System.Messaging.DefaultPropertiesToSend.TransactionStatusQueue%2A>|`null`|  
+|<xref:System.Messaging.DefaultPropertiesToSend.UseAuthentication%2A>|`false`|  
+|<xref:System.Messaging.DefaultPropertiesToSend.UseDeadLetterQueue%2A>|`false`|  
+|<xref:System.Messaging.DefaultPropertiesToSend.UseEncryption%2A>|`false`|  
+|<xref:System.Messaging.DefaultPropertiesToSend.UseJournalQueue%2A>|`false`|  
+|<xref:System.Messaging.DefaultPropertiesToSend.UseTracing%2A>|`false`|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AcknowledgeType">
+      <MemberSignature Language="C#" Value="public System.Messaging.AcknowledgeTypes AcknowledgeType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Messaging.AcknowledgeTypes AcknowledgeType" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.AcknowledgeType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgAcknowledgeType")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Messaging.AcknowledgeTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または送信アプリケーションに返される受信確認メッセージの種類を設定します。</summary>
+        <value><see cref="T:System.Messaging.AcknowledgeTypes" /> 列挙値のいずれか。 この値は、システムは post が管理キューにし、受信確認が送信元アプリケーションに返されるときに受信確認メッセージの種類を判断に使用されます。 既定値は、<see langword="AcknowledgeTypes.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.DefaultPropertiesToSend.AcknowledgeType%2A>プロパティが送信アプリケーションに返す受信確認メッセージの種類を指定します。 たとえば、設定、<xref:System.Messaging.DefaultPropertiesToSend.AcknowledgeType%2A>プロパティ通知を要求するメッセージが取得されるとき、変換先に達すると、またはタイムアウトするかどうかが発生しました、メッセージに到達するか、送信先キューから取得されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AdministrationQueue">
+      <MemberSignature Language="C#" Value="public System.Messaging.MessageQueue AdministrationQueue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Messaging.MessageQueue AdministrationQueue" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.AdministrationQueue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgAdministrationQueue")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメッセージ キューによって生成された受信確認メッセージを受信するキューを設定します。</summary>
+        <value><see cref="T:System.Messaging.MessageQueue" />システムによって生成された受信確認メッセージで使用される管理キューを指定します。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定されたキュー、<xref:System.Messaging.DefaultPropertiesToSend.AdministrationQueue%2A>プロパティは、任意の非トランザクション キューを使用できます。 管理キューに送信される受信確認メッセージは、元のメッセージが、送信先キューに到達したかどうかが、キューから削除されたかどうかを示すことができます。  
+  
+ ときに、<xref:System.Messaging.DefaultPropertiesToSend.AcknowledgeType%2A>プロパティ以外の任意の値を持つ`None`、送信元アプリケーションは、管理キューとして使用するキューを指定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppSpecific">
+      <MemberSignature Language="C#" Value="public int AppSpecific { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 AppSpecific" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.AppSpecific" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgAppSpecific")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または追加、アプリケーション固有の情報を設定します。</summary>
+        <value>アプリケーションに固有の情報です。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.DefaultPropertiesToSend.AppSpecific%2A>プロパティはアプリケーション固有のインデックスを使用して、たとえば、メッセージのさまざまな種類の編成に使用できる、追加のアプリケーション固有の情報を格納します。 解釈は、アプリケーションの責任である<xref:System.Messaging.DefaultPropertiesToSend.AppSpecific%2A>情報。  
+  
+ メッセージ データではなく、メッセージの本文に含めるか、可能な限り、<xref:System.Messaging.DefaultPropertiesToSend.AppSpecific%2A>プロパティです。  
+  
+ 外部のキューを使用するときに使用して、<xref:System.Messaging.DefaultPropertiesToSend.Extension%2A>非メッセージ キューのメッセージ プロパティを指定するプロパティです。 同様に<xref:System.Messaging.DefaultPropertiesToSend.AppSpecific%2A>のコンテンツを理解するアプリケーションの役割です、<xref:System.Messaging.DefaultPropertiesToSend.Extension%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AttachSenderId">
+      <MemberSignature Language="C#" Value="public bool AttachSenderId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AttachSenderId" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.AttachSenderId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgAttachSenderId")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または送信側 ID をメッセージに添付する必要があるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />メッセージに送信者の ID を関連付ける場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 送信者の ID は、送信元ユーザーの識別子を表すバイトの配列です。 送信者 ID はメッセージ キューによって設定されているし、は、受信側キュー マネージャーによって使用送信者が、キューへのアクセス権を持つかどうかを確認します。 送信者 ID では、信頼できるは、メッセージが送信先キューに達したときに認証された場合のみです。  
+  
+ 送信者の ID は、メッセージにアタッチされていない、ときに、送信元アプリケーションはことメッセージ キュー必要がありますいないを検証を示すメッセージの送信者メッセージが送信先キューに送信されるときにします。 送信先のキューは、認証されたメッセージは、そのいずれかにのみ受け入れる場合<xref:System.Messaging.DefaultPropertiesToSend.UseAuthentication%2A>または<xref:System.Messaging.DefaultPropertiesToSend.AttachSenderId%2A>は`false`キューになったときに、メッセージは拒否されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EncryptionAlgorithm">
+      <MemberSignature Language="C#" Value="public System.Messaging.EncryptionAlgorithm EncryptionAlgorithm { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Messaging.EncryptionAlgorithm EncryptionAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.EncryptionAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgEncryptionAlgorithm")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Messaging.EncryptionAlgorithm</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプライベート メッセージの本文を暗号化するために使用する暗号化アルゴリズムを設定します。</summary>
+        <value><see cref="T:System.Messaging.EncryptionAlgorithm" /> 列挙値のいずれか。 既定値は、<see langword="RC2" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージがプライベートの場合は、送信して、受信されるときに暗号化が解除する前に暗号化されます。 <xref:System.Messaging.DefaultPropertiesToSend.EncryptionAlgorithm%2A>プロパティは、プライベート メッセージのメッセージ本文を暗号化するためのアルゴリズムを指定します。  
+  
+ キューは、その受信を要求できますメッセージを暗号化します。 暗号化されていない (非プライベート) メッセージがプライベート メッセージだけを受け取るキューに送信された場合、またはプライベート メッセージが非プライベート メッセージのみを受け入れるキューに送信される場合は、メッセージはキューによって拒否されます。 送信元アプリケーションは、メッセージが拒否された場合、否定受信確認メッセージが送信元アプリケーションに返される要求できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Extension">
+      <MemberSignature Language="C#" Value="public byte[] Extension { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] Extension" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.Extension" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.ComponentModel.Design.ArrayEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgExtension")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメッセージに関連付けられている追加の情報を設定します。</summary>
+        <value>メッセージに関連付けられているアプリケーション定義の追加情報を提供するバイト配列。 既定では長さ 0 の配列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.DefaultPropertiesToSend.Extension%2A>プロパティは、ラージ バイナリ オブジェクトなど、メッセージに関連付けられているアプリケーション定義の追加情報を提供します。 受信側アプリケーションの内容を解釈するの機能により、<xref:System.Messaging.DefaultPropertiesToSend.Extension%2A>です。  
+  
+ 可能であれば、メッセージ データは、拡張機能ではなく、メッセージの本文に含める必要があります。  
+  
+ 外部のキューを使用するときに使用して、<xref:System.Messaging.DefaultPropertiesToSend.Extension%2A>非メッセージ キューのメッセージ プロパティを指定するプロパティです。  
+  
+ 外部のキューは、Microsoft メッセージ キュー以外のキュー システムに存在します。 Microsoft メッセージ キューは、コネクタ アプリケーションを使用してこのようなキューと通信します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HashAlgorithm">
+      <MemberSignature Language="C#" Value="public System.Messaging.HashAlgorithm HashAlgorithm { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Messaging.HashAlgorithm HashAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.HashAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgHashAlgorithm")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Messaging.HashAlgorithm</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、ハッシュ アルゴリズムがメッセージを認証するときに使用メッセージのデジタル署名を作成します。</summary>
+        <value><see cref="T:System.Messaging.HashAlgorithm" /> 列挙値のいずれか。 既定値は、<see langword="MD5" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.DefaultPropertiesToSend.HashAlgorithm%2A>プロパティは、メッセージ キューがメッセージを認証するときに、またはメッセージのデジタル署名を作成するときに使用するハッシュ アルゴリズムを識別します。  
+  
+ ソース コンピューターのメッセージ キューは、メッセージのデジタル署名を作成するときに、ハッシュ アルゴリズムを使用します。 ターゲット キュー マネージャーは、同じハッシュ アルゴリズムを使用して、受信されるときにメッセージを認証します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Label">
+      <MemberSignature Language="C#" Value="public string Label { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Label" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.Label" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgLabel")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメッセージを記述するアプリケーション定義の文字列を設定します。</summary>
+        <value>メッセージのラベルです。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ たとえば、または選択的にメッセージを処理するラベルの値に基づいて、表示目的で、メッセージ ラベルを使用できます。 メッセージ ラベルの最大長は、249 の Unicode 文字です。 ラベルは、メッセージで一意である必要はありません。  
+  
+ メッセージ キューとメッセージ ラベルは、人間が判読できる用語では、キューやメッセージを識別するのに役立つアプリケーション定義の値を表します。 ラベルの内容を解釈するアプリケーションの役割です。メッセージ キュー アプリケーションに特別な意味をあるありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Priority">
+      <MemberSignature Language="C#" Value="public System.Messaging.MessagePriority Priority { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Messaging.MessagePriority Priority" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.Priority" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgPriority")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessagePriority</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメッセージをキューに配置する場所を決定するために使用されるメッセージの優先度を設定します。</summary>
+        <value>1 つ、<see cref="T:System.Messaging.MessagePriority" />非トランザクション メッセージの優先度レベルを表す列挙値。 既定値は、<see langword="Normal" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.DefaultPropertiesToSend.Priority%2A>途中である間、メッセージを処理するメッセージ キュー方法だけでなく、先に着いたときに、メッセージがキューに配置され、プロパティに影響します。 高い優先度のメッセージは優先的にルーティングし、キューの先頭近くに挿入します。 優先順位の同じメッセージは、到達時刻に応じてキュー内に配置されます。  
+  
+ メッセージの優先度は、非トランザクション メッセージの意味のみ設定できます。 トランザクション メッセージの優先度に設定が自動的に`Lowest`、それが原因でトランザクション メッセージの優先度が無視されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Recoverable">
+      <MemberSignature Language="C#" Value="public bool Recoverable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Recoverable" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.Recoverable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgRecoverable")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコンピューターの障害やネットワークの問題が発生した場合に配信されるメッセージが保証されるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />機内; ディスクに保存することによって、メッセージに配信が保証される場合<see langword="false" />配信が保証されていない場合。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.DefaultPropertiesToSend.Recoverable%2A>プロパティは、メッセージが送信先キューへ向かっている間も、コンピューターがクラッシュした場合でもメッセージの配信が保証されているかどうかを示します。  
+  
+ メッセージの配信が保証される場合メッセージは格納ローカル ルート上のすべてのステップで、メッセージは次のコンピューターに正常に転送されるまでです。 設定<xref:System.Messaging.DefaultPropertiesToSend.Recoverable%2A>に`true`で<xref:System.Messaging.DefaultPropertiesToSend>スループットに影響を与える可能性があります。  
+  
+ メッセージがトランザクションの場合は、メッセージ キューとして自動的に処理メッセージかどうかに関係なく、回復可能な<xref:System.Messaging.DefaultPropertiesToSend.Recoverable%2A>に設定されている`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResponseQueue">
+      <MemberSignature Language="C#" Value="public System.Messaging.MessageQueue ResponseQueue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Messaging.MessageQueue ResponseQueue" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.ResponseQueue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgResponseQueue")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションによって生成される応答メッセージを受け取るキューを取得または設定します。</summary>
+        <value><see cref="T:System.Messaging.MessageQueue" />するアプリケーションによって生成される応答メッセージが返されます。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.DefaultPropertiesToSend.ResponseQueue%2A>プロパティは、受信側アプリケーションで送信元アプリケーションに返されるアプリケーションによって生成される応答メッセージを受信するキューを識別します。 応答キューは、アプリケーションがそのメッセージを送信するときに、送信元アプリケーションによって指定されます。 使用できる任意のキューを応答キューとして指定できます。  
+  
+ 応答キューに対して返されるメッセージは、アプリケーション固有です。 アプリケーションがメッセージには、新機能を定義する必要がありますの内容と、メッセージが受信したときに実行します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TimeToBeReceived">
+      <MemberSignature Language="C#" Value="public TimeSpan TimeToBeReceived { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan TimeToBeReceived" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.TimeToBeReceived" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Messaging.TimeoutConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgTimeToBeReceived")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメッセージが送信先キューから取得されるまでの時間制限を設定します。</summary>
+        <value>送信されたメッセージが送信先キューから受信されるまでの秒単位で合計時間。 既定値は、<see cref="F:System.Messaging.Message.InfiniteTimeout" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.DefaultPropertiesToSend.TimeToBeReceived%2A>プロパティが送信されたメッセージが送信先キューから受信されるまでの秒単位で時間の合計を指定します。 この制限時間には、送信先キューに費やされた時間が含まれています。 さらに、メッセージがアプリケーションによって取得される前に、キューで待機しているが費やした時間。  
+  
+> [!CAUTION]
+>  依存型クライアント コンピューターを使用する場合は、メッセージ キューを実行するサーバーのクロックとクライアント コンピューターの時計を同期します。 2 つのクロックが同期していない場合は、メッセージを送信すると、予期しない動作が参照して可能性があります<xref:System.Messaging.DefaultPropertiesToSend.TimeToBeReceived%2A>は<xref:System.Messaging.Message.InfiniteTimeout>します。  
+  
+ 場合、<xref:System.Messaging.DefaultPropertiesToSend.TimeToBeReceived%2A>キューからメッセージを削除する前に、間隔に達すると、メッセージ キュー アプリケーションはメッセージを破棄します。 メッセージは配信不能キューに送信されるいずれかの場合、メッセージの<xref:System.Messaging.DefaultPropertiesToSend.UseDeadLetterQueue%2A>プロパティに設定されている`true`、または無視されます、<xref:System.Messaging.DefaultPropertiesToSend.UseDeadLetterQueue%2A>は`false`します。 場合<xref:System.Messaging.DefaultPropertiesToSend.TimeToBeReceived%2A>はより小さい<xref:System.Messaging.DefaultPropertiesToSend.TimeToReachQueue%2A>、<xref:System.Messaging.DefaultPropertiesToSend.TimeToBeReceived%2A>が優先されます。  
+  
+ メッセージの<xref:System.Messaging.DefaultPropertiesToSend.AcknowledgeType%2A>プロパティを要求するメッセージ キュー メッセージが送信される、否定受信確認、送信元アプリケーションに戻す、タイマーの有効期限が切れる前に、メッセージが取得されない場合に設定することができます。  
+  
+> [!CAUTION]
+>  表示されるように指定した場合<xref:System.Messaging.DefaultPropertiesToSend.TimeToReachQueue%2A>否定受信確認応答を受け取らない場合にときの値<xref:System.Messaging.DefaultPropertiesToSend.TimeToBeReceived%2A>がの値より小さい<xref:System.Messaging.DefaultPropertiesToSend.TimeToReachQueue%2A>です。  
+  
+ トランザクションで複数のメッセージが送信されると、メッセージ キューの最初のメッセージの値が使用<xref:System.Messaging.DefaultPropertiesToSend.TimeToBeReceived%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TimeToReachQueue">
+      <MemberSignature Language="C#" Value="public TimeSpan TimeToReachQueue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan TimeToReachQueue" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.TimeToReachQueue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Messaging.TimeoutConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgTimeToReachQueue")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメッセージ キューに到達するまでの時間制限を設定します。</summary>
+        <value>メッセージを時間から、送信先のキューに到達するまでの秒単位の時間制限が送信されます。 既定値は、<see cref="F:System.Messaging.Message.InfiniteTimeout" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Messaging.DefaultPropertiesToSend.TimeToReachQueue%2A>メッセージが宛先に到達する前に、間隔に達すると、メッセージ キュー アプリケーションはメッセージを破棄します。 メッセージは配信不能キューに送信されるいずれかの場合、メッセージの<xref:System.Messaging.DefaultPropertiesToSend.UseDeadLetterQueue%2A>プロパティに設定されている`true`、または無視されます、<xref:System.Messaging.DefaultPropertiesToSend.UseDeadLetterQueue%2A>は`false`します。 場合<xref:System.Messaging.DefaultPropertiesToSend.TimeToReachQueue%2A>がより大きい<xref:System.Messaging.DefaultPropertiesToSend.TimeToBeReceived%2A>、<xref:System.Messaging.DefaultPropertiesToSend.TimeToBeReceived%2A>が優先されます。  
+  
+ メッセージの<xref:System.Messaging.DefaultPropertiesToSend.AcknowledgeType%2A>プロパティを要求するメッセージ キュー メッセージが送信される、否定受信確認、送信元アプリケーションに戻す、タイマーの有効期限が切れる前に、メッセージが到着しない場合に設定することができます。  
+  
+ 場合<xref:System.Messaging.DefaultPropertiesToSend.TimeToReachQueue%2A>0 秒は、メッセージ キューは 1 回、キューがメッセージを待機している場合、その送信先にメッセージを送信します。 キューがローカルの場合は、メッセージが常にキューに到達しました。  
+  
+ トランザクションで複数のメッセージが送信されると、メッセージ キューの最初のメッセージの値が使用<xref:System.Messaging.DefaultPropertiesToSend.TimeToReachQueue%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransactionStatusQueue">
+      <MemberSignature Language="C#" Value="public System.Messaging.MessageQueue TransactionStatusQueue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Messaging.MessageQueue TransactionStatusQueue" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.TransactionStatusQueue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgTransactionStatusQueue")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>移行元コンピューターには、トランザクション状態キューを取得します。</summary>
+        <value>トランザクション状態キュー、ソース コンピューターで、受信確認メッセージを送信元アプリケーションに送信するために使用されます。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.DefaultPropertiesToSend.TransactionStatusQueue%2A>プロパティは、移行元コンピューターのトランザクション状態キューを識別します。 プロパティは、メッセージ キューが設定されているし、外部キューに送信されるトランザクション メッセージを取得するときに、コネクタ アプリケーションによって使用します。  
+  
+ 外部のキューは、Microsoft メッセージ キュー以外のキュー システムに存在します。 Microsoft メッセージ キューは、コネクタ アプリケーションを使用してこのようなキューと通信します。  
+  
+ コネクタ アプリケーションは、トランザクション状態キューを使用して、受信確認メッセージを送信元アプリケーションに送信することができます。 トランザクション状態キューは、送信元アプリケーションが別の受信確認を要求していない場合でも、これらの確認を受信する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseAuthentication">
+      <MemberSignature Language="C#" Value="public bool UseAuthentication { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseAuthentication" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.UseAuthentication" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgUseAuthentication")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または送信される前に、メッセージを認証する必要があるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />送信元アプリケーションがメッセージの認証を要求した場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.DefaultPropertiesToSend.UseAuthentication%2A>プロパティは、メッセージを認証する必要があるかどうかを指定します。 送信元アプリケーションは、認証を要求している場合はメッセージ キュー、デジタル署名を作成しが送信されるメッセージに署名し、メッセージの認証を受信したときにそれを使用します。  
+  
+ 場合、キューに達すると、認証済みメッセージのみを受け入れるをキューにメッセージを送信する場合、メッセージは拒否されます<xref:System.Messaging.DefaultPropertiesToSend.UseAuthentication%2A>に設定されている`false`です。  
+  
+ メッセージのプロパティを調べて、メッセージが認証に失敗したかどうかを判断することはできません。 認証に失敗したメッセージは破棄され、キューに配信されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseDeadLetterQueue">
+      <MemberSignature Language="C#" Value="public bool UseDeadLetterQueue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseDeadLetterQueue" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.UseDeadLetterQueue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgUseDeadLetterQueue")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または配信不能キューに配信できなかったメッセージのコピーを送信するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合、メッセージの配信エラーが配信不能キューに送信されるメッセージのコピーになりますそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.DefaultPropertiesToSend.UseJournalQueue%2A>および<xref:System.Messaging.DefaultPropertiesToSend.UseDeadLetterQueue%2A>方法、メッセージを追跡メッセージ キューを指定します。 場合<xref:System.Messaging.DefaultPropertiesToSend.UseDeadLetterQueue%2A>は`true`の非トランザクション メッセージ配信エラーが発生した場合、メッセージは (たとえば、メッセージ タイマの有効期限) 場合は、メッセージを配信できなかったコンピューターの非トランザクション配信不能キューに送信されます。  
+  
+ トランザクション メッセージの配信失敗した場合、メッセージはすべて負の値と、状態が不明の場合、移行元コンピューター トランザクション配信不能キューに送信します。  
+  
+ 配信不能キューにメッセージを格納する場合は、不要になったメッセージを削除するには、定期的にキューを空です。 キューが存在するコンピューターのサイズ クォータに対して配信不能キューに格納されたメッセージ。 コンピューターのクォータは、管理者によって設定されており、メッセージを格納する 1 つのキューではなく、コンピューター上に割り当てられた合計サイズを示します。  
+  
+ ジャーナルや配信不能キューを作成しません。 これらは、メッセージ キューによって生成される両方のシステム キューです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseEncryption">
+      <MemberSignature Language="C#" Value="public bool UseEncryption { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseEncryption" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.UseEncryption" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgUseEncryption")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメッセージをプライベートにするかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />メッセージ キュー メッセージの暗号化を必要とするにはそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージがプライベートの場合は、送信して、受信されるときに暗号化が解除する前に、本文は暗号化されます。 その暗号化を使用するプライベート メッセージを送信する送信元のアプリケーションを指定する必要があり、必要に応じて、暗号化アルゴリズムを適用します。  
+  
+ プライベート メッセージを送信するときに、アプリケーションがメッセージの暗号化を実行する必要はありません。 メッセージ キューは、アプリケーションが Microsoft Windows 2000 エンタープライズ内のメッセージを送信するときのメッセージ本文を暗号化できますが、ディレクトリ サービスにアクセスします。 プライベート メッセージを受信するときに、メッセージ本文を復号化する受信側キュー マネージャーでは常にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseJournalQueue">
+      <MemberSignature Language="C#" Value="public bool UseJournalQueue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseJournalQueue" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.UseJournalQueue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgUseJournalQueue")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または送信元のコンピューターのジャーナル メッセージのコピーを保持する必要があるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />後に、メッセージのコピーを元のコンピューターの履歴に保持されることを要求するが正常に送信された元のコンピューターから次の手順にそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.DefaultPropertiesToSend.UseJournalQueue%2A>および<xref:System.Messaging.DefaultPropertiesToSend.UseDeadLetterQueue%2A>方法、メッセージを追跡メッセージ キューを指定します。 場合<xref:System.Messaging.DefaultPropertiesToSend.UseJournalQueue%2A>は`true`、送信元のコンピューターはコンピューター ジャーナルにメッセージを送信する各ステップで、コピーが保持しています。  
+  
+ 送信先キューがリモート コンピューター上にある場合、送信されたメッセージはジャーナル キューにコピーのみです。 メッセージがキューに直接送信される先がローカル コンピューター上にある場合は、履歴を必要とする中間の手順はありません。  
+  
+ ジャーナル キューにメッセージを格納する場合は、不要になったメッセージを削除するには、定期的にキューを空です。 キューが存在するコンピューターのクォータに照らし合わせてジャーナル キューに格納されているメッセージ (コンピューターのクォータは、管理者によって設定されます)。  
+  
+ ジャーナルや配信不能キューを作成しません。 これらは、メッセージ キューによって生成される両方のシステム キューです。  
+  
+ ジャーナルは、メッセージとキューの両方で指定できます。 ときに<xref:System.Messaging.DefaultPropertiesToSend.UseJournalQueue%2A?displayProperty=nameWithType>は`true`、送信されるときに、メッセージが履歴。 ときに<xref:System.Messaging.MessageQueue.UseJournalQueue%2A?displayProperty=nameWithType>は`true`が受信されると、メッセージが履歴。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseTracing">
+      <MemberSignature Language="C#" Value="public bool UseTracing { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseTracing" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.UseTracing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgUseTracing")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または送信先キューに移動するときにメッセージをトレースするかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />送信先キューに元のメッセージを途中で行われた各中間のステップが、システムのレポート キューに送信されるレポートを生成する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.DefaultPropertiesToSend.UseTracing%2A>プロパティでは、送信先キューに移動するときに、メッセージの経路を追跡するかどうかを指定します。 場合`true`、メッセージ キューによって生成されるレポート メッセージは、メッセージがメッセージ キューのルーティング サーバーを通過するたびにレポート キューに送信します。 レポート キューは、送信元キュー マネージャーによって指定されます。 レポート キューがメッセージをメッセージ キューによって生成されたレポートだけではありません。 レポート キューにもに、アプリケーションによって生成されたメッセージを送信できます。  
+  
+ トレースを使用するには、Active Directory を設定して、メッセージ キュー エンタープライズ レポート キューを指定することが含まれます。 これらの設定は、管理者によって構成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,98 @@
+<Type Name="ListItemControlBuilder" FullName="System.Web.UI.WebControls.ListItemControlBuilder">
+  <TypeSignature Language="C#" Value="public class ListItemControlBuilder : System.Web.UI.ControlBuilder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ListItemControlBuilder extends System.Web.UI.ControlBuilder" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ListItemControlBuilder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.ControlBuilder</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>構築するためにパーサーの対話、<see cref="T:System.Web.UI.WebControls.ListItem" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、主にコントロールの開発者に使用されます。 カスタム コントロールのビルダーを作成する、<xref:System.Web.UI.WebControls.ListItem>派生コントロール、このクラスから継承する必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListItemControlBuilder ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListItemControlBuilder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.ListItemControlBuilder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowWhitespaceLiterals">
+      <MemberSignature Language="C#" Value="public override bool AllowWhitespaceLiterals ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool AllowWhitespaceLiterals() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListItemControlBuilder.AllowWhitespaceLiterals" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テキスト内の空白文字に関連付けられているかどうかを判断、<see cref="T:System.Web.UI.WebControls.ListItem" />によって表される<see cref="T:System.Web.UI.LiteralControl" />オブジェクト。</summary>
+        <returns>
+          <see langword="false" />すべてのケース。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、継承した実装、<xref:System.Web.UI.ControlBuilder.AllowWhitespaceLiterals%2A?displayProperty=nameWithType>を常にテキストに空白文字に関連付けられていることを示す、<xref:System.Web.UI.WebControls.ListItem>コントロールでは表されない<xref:System.Web.UI.LiteralControl?displayProperty=nameWithType>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HtmlDecodeLiterals">
+      <MemberSignature Language="C#" Value="public override bool HtmlDecodeLiterals ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool HtmlDecodeLiterals() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListItemControlBuilder.HtmlDecodeLiterals" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テキストに HTML エンティティに関連付けられているかどうかを判断、<see cref="T:System.Web.UI.WebControls.ListItem" />テキストの解析時、同等の文字に変換されます。</summary>
+        <returns>
+          <see langword="true" />すべてのケース。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ListItemControlBuilder.HtmlDecodeLiterals%2A>テキストに HTML エンティティに関連付けられているかどうかを決定するメソッドが使用される、<xref:System.Web.UI.WebControls.ListItem>テキストの解析時、同等の文字に変換されます。 このメソッドは、継承した実装、<xref:System.Web.UI.ControlBuilder.HtmlDecodeLiterals%2A?displayProperty=nameWithType>メソッドを常に返す`true`です。 これは、テキストに HTML エンティティに関連付けられていることを示します、<xref:System.Web.UI.WebControls.ListItem>コントロールは、それと同等のプレーン テキストの文字を常に自動的に変換されます。  
+  
+> [!NOTE]
+>  関連付けられたテキスト、<xref:System.Web.UI.WebControls.ListItem>の属性としてレンダリングされますが、 `<option>` HTML 要素です。 クライアントでは、属性が表示される、特殊文字は、対応する HTML エンティティに自動的に変換されます。 小なり (<) 文字を変換するなど、`&lt;`です。 属性が解析されたときに、HTML エンティティは、それと同等のプレーン テキストの文字に自動的に変換します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

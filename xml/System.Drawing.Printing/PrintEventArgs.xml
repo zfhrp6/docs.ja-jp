@@ -1,0 +1,67 @@
+<Type Name="PrintEventArgs" FullName="System.Drawing.Printing.PrintEventArgs">
+  <TypeSignature Language="C#" Value="public class PrintEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PrintEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Printing.PrintEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Drawing.Printing.PrintDocument.BeginPrint" /> イベントおよび <see cref="E:System.Drawing.Printing.PrintDocument.EndPrint" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 印刷の詳細については、次を参照してください。、<xref:System.Drawing.Printing>名前空間の概要です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrintEventArgs ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.PrintEventArgs.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Drawing.Printing.PrintEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrintAction">
+      <MemberSignature Language="C#" Value="public System.Drawing.Printing.PrintAction PrintAction { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Printing.PrintAction PrintAction" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Printing.PrintEventArgs.PrintAction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Printing.PrintAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>常に <see cref="F:System.Drawing.Printing.PrintAction.PrintToFile" /> を返します。</summary>
+        <value>
+          常に <see cref="F:System.Drawing.Printing.PrintAction.PrintToFile" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Printing.PrintEventArgs.PrintAction%2A>印刷操作が発生した場合の種類が確実を示していませんし、返します<xref:System.Drawing.Printing.PrintAction.PrintToFile>常にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,134 @@
+<Type Name="DataGridCellEditEndingEventArgs" FullName="System.Windows.Controls.DataGridCellEditEndingEventArgs">
+  <TypeSignature Language="C#" Value="public class DataGridCellEditEndingEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridCellEditEndingEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.DataGridCellEditEndingEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Controls.DataGrid.CellEditEnding" /> イベントのデータを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridCellEditEndingEventArgs (System.Windows.Controls.DataGridColumn column, System.Windows.Controls.DataGridRow row, System.Windows.FrameworkElement editingElement, System.Windows.Controls.DataGridEditAction editAction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Controls.DataGridColumn column, class System.Windows.Controls.DataGridRow row, class System.Windows.FrameworkElement editingElement, valuetype System.Windows.Controls.DataGridEditAction editAction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataGridCellEditEndingEventArgs.#ctor(System.Windows.Controls.DataGridColumn,System.Windows.Controls.DataGridRow,System.Windows.FrameworkElement,System.Windows.Controls.DataGridEditAction)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="column" Type="System.Windows.Controls.DataGridColumn" />
+        <Parameter Name="row" Type="System.Windows.Controls.DataGridRow" />
+        <Parameter Name="editingElement" Type="System.Windows.FrameworkElement" />
+        <Parameter Name="editAction" Type="System.Windows.Controls.DataGridEditAction" />
+      </Parameters>
+      <Docs>
+        <param name="column">イベントが発生したセルを含む列。</param>
+        <param name="row">イベントが発生したセルを含む行です。</param>
+        <param name="editingElement">この要素は、セルが編集モードで表示されます。</param>
+        <param name="editAction">編集がキャンセルまたはコミットするかどうかを示す値。</param>
+        <summary><see cref="T:System.Windows.Controls.DataGridCellEditEndingEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cancel">
+      <MemberSignature Language="C#" Value="public bool Cancel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Cancel" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridCellEditEndingEventArgs.Cancel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイベントを取り消す必要があるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />イベントをキャンセルする場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Column">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.DataGridColumn Column { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.DataGridColumn Column" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridCellEditEndingEventArgs.Column" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.DataGridColumn</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントが発生したセルを含む列を取得します。</summary>
+        <value>イベントが発生したセルを含む列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditAction">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.DataGridEditAction EditAction { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.DataGridEditAction EditAction" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridCellEditEndingEventArgs.EditAction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.DataGridEditAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>編集がキャンセルまたはコミットするかどうかを示す値を取得します。</summary>
+        <value>編集がキャンセルまたはコミットするかどうかを示す値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditingElement">
+      <MemberSignature Language="C#" Value="public System.Windows.FrameworkElement EditingElement { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.FrameworkElement EditingElement" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridCellEditEndingEventArgs.EditingElement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FrameworkElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>編集モードのセルに表示する要素を取得します。</summary>
+        <value>この要素は、セルが編集モードで表示されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Row">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.DataGridRow Row { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.DataGridRow Row" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridCellEditEndingEventArgs.Row" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.DataGridRow</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントが発生したセルを含む行を取得します。</summary>
+        <value>イベントが発生したセルを含む行です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,85 @@
+<Type Name="WindowClosedEventArgs" FullName="System.Windows.Automation.WindowClosedEventArgs">
+  <TypeSignature Language="C#" Value="public sealed class WindowClosedEventArgs : System.Windows.Automation.AutomationEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WindowClosedEventArgs extends System.Windows.Automation.AutomationEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.WindowClosedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationTypes</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Automation.AutomationEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ウィンドウが閉じられるときに発生するイベントに関する情報が含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ウィンドウを閉じるイベントをサブスクライブする<xref:System.Windows.Automation.Automation.AddAutomationEventHandler%2A>を指定して、<xref:System.Windows.Automation.WindowPattern.WindowClosedEvent>で、`eventId`パラメーターを渡すと、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]受け取るイベント ハンドラー、<xref:System.Windows.Automation.WindowClosedEventArgs>パラメーター。  
+  
+ アプリケーションは、ウィンドウを閉じるイベントを受信すると、`sender`ためにが閉じ、ウィンドウに関する情報を取得するイベント ハンドラーのパラメーターを使用できません、対応する[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]要素は無効になりました。  
+  
+   
+  
+## Examples  
+ コード例については、「<xref:System.Windows.Automation.WindowClosedEventArgs.GetRuntimeId%2A>」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WindowClosedEventArgs (int[] runtimeId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32[] runtimeId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.WindowClosedEventArgs.#ctor(System.Int32[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="runtimeId" Type="System.Int32[]" />
+      </Parameters>
+      <Docs>
+        <param name="runtimeId">閉じ、ウィンドウのランタイム識別子です。</param>
+        <summary><see cref="T:System.Windows.Automation.WindowClosedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRuntimeId">
+      <MemberSignature Language="C#" Value="public int[] GetRuntimeId ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32[] GetRuntimeId() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.WindowClosedEventArgs.GetRuntimeId" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]ランタイム[!INCLUDE[TLA#tla_id](~/includes/tlasharptla-id-md.md)]このイベントに関連付けられています。</summary>
+        <returns>[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]ランタイム[!INCLUDE[TLA2#tla_id](~/includes/tla2sharptla-id-md.md)]イベントが発生した、ウィンドウのです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションは、ウィンドウを閉じるイベントを受信すると、`sender`ためにが閉じ、ウィンドウに関する情報を取得するイベント ハンドラーのパラメーターを使用できません、対応する[!INCLUDE[TLA#tla_uiautomation](~/includes/tlasharptla-uiautomation-md.md)]要素は無効になりました。 使用して<xref:System.Windows.Automation.WindowClosedEventArgs.GetRuntimeId%2A>既知の識別子を持つウィンドウを一致するようにします。  
+  
+   
+  
+## Examples  
+ 次の例では、ウィンドウを閉じるイベントのハンドラーは、かどうか、ランタイムの ID 閉じたウィンドウが開いているウィンドウの Id の一覧で突きとめます。 します。 実行時の ID が存在する場合は、一覧から削除されます。  
+  
+ [!code-csharp[UIAFocusTracker_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAFocusTracker_snip/CSharp/FocusTracker.cs#101)]
+ [!code-vb[UIAFocusTracker_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAFocusTracker_snip/VisualBasic/FocusTracker.vb#101)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

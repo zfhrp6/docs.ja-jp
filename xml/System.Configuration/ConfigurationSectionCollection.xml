@@ -1,0 +1,529 @@
+<Type Name="ConfigurationSectionCollection" FullName="System.Configuration.ConfigurationSectionCollection">
+  <TypeSignature Language="C#" Value="public sealed class ConfigurationSectionCollection : System.Collections.Specialized.NameObjectCollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit ConfigurationSectionCollection extends System.Collections.Specialized.NameObjectCollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.ConfigurationSectionCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.Specialized.NameObjectCollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>構成ファイル内の関連セクションのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Configuration.ConfigurationSectionCollection>のコレクションを反復処理するクラス<xref:System.Configuration.ConfigurationSection>オブジェクト。 使用してオブジェクトのこのコレクションにアクセスすることができます、<xref:System.Configuration.Configuration.Sections%2A>プロパティまたは<xref:System.Configuration.ConfigurationSectionGroup.Sections%2A>プロパティです。  
+  
+ <xref:System.Configuration.ConfigurationSectionCollection>を拡張するカスタム型の作成時にクラスを使用しても、<xref:System.Configuration.ConfigurationSection>クラスです。  
+  
+   
+  
+## Examples  
+ <xref:System.Configuration.ConfigurationSectionCollection> クラスを使用するコード例を次に示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationSectionCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionCollection/CS/ConfigurationSectionCollection.cs#1)]
+ [!code-vb[System.Configuration.ConfigurationSectionCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionCollection/VB/ConfigurationSectionCollection.vb#1)]  
+  
+ 次の例は、前の例で使用される構成ファイルの抜粋です。  
+  
+```  
+<?xml version="1.0" encoding="utf-8"?>  
+<configuration>  
+  <configSections>  
+  
+    <section name="CustomSection"   
+      type="Samples.AspNet.Configuration.CustomSection, ConfigurationSectionCollection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" allowDefinition="Everywhere" allowExeDefinition="MachineToApplication" restartOnExternalChanges="true" />  
+  
+  </configSections>  
+  
+  <CustomSection fileName="default.txt" maxUsers="1000"   
+    maxIdleTime="00:05:00" />  
+  
+</configuration>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (string name, System.Configuration.ConfigurationSection section);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(string name, class System.Configuration.ConfigurationSection section) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationSectionCollection.Add(System.String,System.Configuration.ConfigurationSection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="section" Type="System.Configuration.ConfigurationSection" />
+      </Parameters>
+      <Docs>
+        <param name="name">追加するのには、セクションの名前。</param>
+        <param name="section">追加するのには、セクションです。</param>
+        <summary><see cref="T:System.Configuration.ConfigurationSectionCollection" /> オブジェクトに <see cref="T:System.Configuration.ConfigurationSection" /> オブジェクトを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、このメソッドは、指定した追加<xref:System.Configuration.ConfigurationSection>オブジェクトのかどうかは、既に含まれていないコレクションです。  
+  
+   
+  
+## Examples  
+ <xref:System.Configuration.ConfigurationSectionCollection.Add%2A> メソッドを使用する方法の例を次に示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationSectionCollection#10](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionCollection/CS/ConfigurationSectionCollection.cs#10)]
+ [!code-vb[System.Configuration.ConfigurationSectionCollection#10](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionCollection/VB/ConfigurationSectionCollection.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationSectionCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>これを消去<see cref="T:System.Configuration.ConfigurationSectionCollection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Configuration.ConfigurationSectionCollection.Clear%2A> メソッドを使用するコード例を次に示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationSectionCollection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionCollection/CS/ConfigurationSectionCollection.cs#3)]
+ [!code-vb[System.Configuration.ConfigurationSectionCollection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionCollection/VB/ConfigurationSectionCollection.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Configuration.ConfigurationSection[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Configuration.ConfigurationSection[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationSectionCollection.CopyTo(System.Configuration.ConfigurationSection[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Configuration.ConfigurationSection[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Configuration.ConfigurationSectionCollection" /> オブジェクトのコピー先の配列。</param>
+        <param name="index">コピーを開始するインデックスの位置。</param>
+        <summary>これをコピー<see cref="T:System.Configuration.ConfigurationSectionCollection" />オブジェクトを配列にします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">長さ<paramref name="array" />がの値より小さい<see cref="P:System.Configuration.ConfigurationSectionCollection.Count" />plus<paramref name="index" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public override int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationSectionCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このセクションの数を取得<see cref="T:System.Configuration.ConfigurationSectionCollection" />オブジェクト。</summary>
+        <value>コレクション内のセクションの数を表す整数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Get">
+      <MemberSignature Language="C#" Value="public System.Configuration.ConfigurationSection Get (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Configuration.ConfigurationSection Get(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationSectionCollection.Get(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationSection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス、<see cref="T:System.Configuration.ConfigurationSection" />返されるオブジェクト。</param>
+        <summary>指定された取得<see cref="T:System.Configuration.ConfigurationSection" />これに含まれるオブジェクト<see cref="T:System.Configuration.ConfigurationSectionCollection" />オブジェクト。</summary>
+        <returns>指定したインデックス位置にある <see cref="T:System.Configuration.ConfigurationSection" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Get">
+      <MemberSignature Language="C#" Value="public System.Configuration.ConfigurationSection Get (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Configuration.ConfigurationSection Get(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationSectionCollection.Get(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationSection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Configuration.ConfigurationSection" />返されるオブジェクト。</param>
+        <summary>指定された取得<see cref="T:System.Configuration.ConfigurationSection" />これに含まれるオブジェクト<see cref="T:System.Configuration.ConfigurationSectionCollection" />オブジェクト。</summary>
+        <returns><see cref="T:System.Configuration.ConfigurationSection" />指定の名前を持つオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Configuration.ConfigurationSectionCollection.Get%2A> の使用方法を示しています。  
+  
+ [!code-csharp[System.Configuration.ConfigurationSectionCollection#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionCollection/CS/ConfigurationSectionCollection.cs#4)]
+ [!code-vb[System.Configuration.ConfigurationSectionCollection#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionCollection/VB/ConfigurationSectionCollection.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" />null または空の文字列 ("") です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public override System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationSectionCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>これを反復処理できる列挙子を取得<see cref="T:System.Configuration.ConfigurationSectionCollection" />オブジェクト。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />この反復処理に使用できる<see cref="T:System.Configuration.ConfigurationSectionCollection" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Configuration.ConfigurationSectionCollection.GetEnumerator%2A> の使用方法を示しています。  
+  
+ [!code-csharp[System.Configuration.ConfigurationSectionCollection#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionCollection/CS/ConfigurationSectionCollection.cs#5)]
+ [!code-vb[System.Configuration.ConfigurationSectionCollection#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionCollection/VB/ConfigurationSectionCollection.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetKey">
+      <MemberSignature Language="C#" Value="public string GetKey (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetKey(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationSectionCollection.GetKey(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス、<see cref="T:System.Configuration.ConfigurationSection" />キーを持つが返されるオブジェクト。</param>
+        <summary>指定したキーを取得<see cref="T:System.Configuration.ConfigurationSection" />これに含まれるオブジェクト<see cref="T:System.Configuration.ConfigurationSectionCollection" />オブジェクト。</summary>
+        <returns>キー、<see cref="T:System.Configuration.ConfigurationSection" />指定したインデックスにあるオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Configuration.ConfigurationSectionCollection.GetKey%2A> の使用方法を示しています。  
+  
+ [!code-csharp[System.Configuration.ConfigurationSectionCollection#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionCollection/CS/ConfigurationSectionCollection.cs#6)]
+ [!code-vb[System.Configuration.ConfigurationSectionCollection#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionCollection/VB/ConfigurationSectionCollection.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public override void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationSectionCollection.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">該当する<see cref="T:System.Runtime.Serialization.SerializationInfo" />オブジェクト。</param>
+        <param name="context">該当する<see cref="T:System.Runtime.Serialization.StreamingContext" />オブジェクト。</param>
+        <summary>シリアル化中に、システムによって使用されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationSectionCollection.GetObjectData%2A>メソッドはシリアル化中に使用されます。 構成ファイルに構成データを永続化する、時にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Configuration.ConfigurationSection this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationSection Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationSectionCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationSection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス、<see cref="T:System.Configuration.ConfigurationSection" />返されるオブジェクト。</param>
+        <summary>指定された取得<see cref="T:System.Configuration.ConfigurationSection" />オブジェクト。</summary>
+        <value>指定したインデックス位置にある <see cref="T:System.Configuration.ConfigurationSection" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの指定したエントリの取得、<xref:System.Configuration.ConfigurationSectionCollection>オブジェクト。  
+  
+ C# では、このプロパティは <xref:System.Configuration.ConfigurationSectionCollection> クラスのインデクサーです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Configuration.ConfigurationSectionCollection.Item%2A> の使用方法を示しています。  
+  
+ [!code-csharp[System.Configuration.ConfigurationSectionCollection#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionCollection/CS/ConfigurationSectionCollection.cs#8)]
+ [!code-vb[System.Configuration.ConfigurationSectionCollection#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionCollection/VB/ConfigurationSectionCollection.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Configuration.ConfigurationSection this[string name] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationSection Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationSectionCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationSection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Configuration.ConfigurationSection" />返されるオブジェクト。</param>
+        <summary>指定された取得<see cref="T:System.Configuration.ConfigurationSection" />オブジェクト。</summary>
+        <value><see cref="T:System.Configuration.ConfigurationSection" />指定の名前を持つオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの指定したエントリの取得、<xref:System.Configuration.ConfigurationSectionCollection>オブジェクト。  
+  
+ C# では、このプロパティは <xref:System.Configuration.ConfigurationSectionCollection> クラスのインデクサーです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Configuration.ConfigurationSectionCollection.Item%2A> の使用方法を示しています。  
+  
+ [!code-csharp[System.Configuration.ConfigurationSectionCollection#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionCollection/CS/ConfigurationSectionCollection.cs#8)]
+ [!code-vb[System.Configuration.ConfigurationSectionCollection#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionCollection/VB/ConfigurationSectionCollection.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Keys">
+      <MemberSignature Language="C#" Value="public override System.Collections.Specialized.NameObjectCollectionBase.KeysCollection Keys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.NameObjectCollectionBase/KeysCollection Keys" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationSectionCollection.Keys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.NameObjectCollectionBase+KeysCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのキーを取得<see cref="T:System.Configuration.ConfigurationSection" />これに含まれるオブジェクト<see cref="T:System.Configuration.ConfigurationSectionCollection" />オブジェクト。</summary>
+        <value>A<see cref="T:System.Collections.Specialized.NameObjectCollectionBase.KeysCollection" />をこのコレクション内のすべてのセクションのキーを含むオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Configuration.ConfigurationSectionCollection.Keys%2A> プロパティを使用する方法を次の例に示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationSectionCollection#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionCollection/CS/ConfigurationSectionCollection.cs#7)]
+ [!code-vb[System.Configuration.ConfigurationSectionCollection#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionCollection/VB/ConfigurationSectionCollection.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationSectionCollection.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">削除するのには、セクションの名前。</param>
+        <summary>指定された削除<see cref="T:System.Configuration.ConfigurationSection" />オブジェクトからこの<see cref="T:System.Configuration.ConfigurationSectionCollection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Configuration.ConfigurationSectionCollection.Remove%2A> メソッドを使用する方法の例を次に示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationSectionCollection#9](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionCollection/CS/ConfigurationSectionCollection.cs#9)]
+ [!code-vb[System.Configuration.ConfigurationSectionCollection#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationSectionCollection/VB/ConfigurationSectionCollection.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationSectionCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除するのには、セクションのインデックス。</param>
+        <summary>指定された削除<see cref="T:System.Configuration.ConfigurationSection" />オブジェクトからこの<see cref="T:System.Configuration.ConfigurationSectionCollection" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

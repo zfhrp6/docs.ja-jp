@@ -1,0 +1,52 @@
+<Type Name="IEndpointIdentityProvider" FullName="System.ServiceModel.Security.IEndpointIdentityProvider">
+  <TypeSignature Language="C#" Value="public interface IEndpointIdentityProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IEndpointIdentityProvider" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Security.IEndpointIdentityProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>エンドポイントの ID を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、サービス エンドポイントの既定の `SecurityTokenManagers` (DNS ID など) を提供するために <xref:System.ServiceModel.EndpointIdentity> が実装できる拡張ポイントです。 この <xref:System.ServiceModel.EndpointIdentity> は、サービス エンドポイントの WSDL の一部として公開されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetIdentityOfSelf">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.EndpointIdentity GetIdentityOfSelf (System.IdentityModel.Selectors.SecurityTokenRequirement tokenRequirement);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.EndpointIdentity GetIdentityOfSelf(class System.IdentityModel.Selectors.SecurityTokenRequirement tokenRequirement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.IEndpointIdentityProvider.GetIdentityOfSelf(System.IdentityModel.Selectors.SecurityTokenRequirement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.EndpointIdentity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tokenRequirement" Type="System.IdentityModel.Selectors.SecurityTokenRequirement" />
+      </Parameters>
+      <Docs>
+        <param name="tokenRequirement">セキュリティ トークン要件を記述する <see cref="T:System.IdentityModel.Selectors.SecurityTokenRequirement" />。</param>
+        <summary>渡されたセキュリティ トークン要件に基づいて、現在のエンドポイントの ID を取得します。</summary>
+        <returns>現在のエンドポイントの <see cref="T:System.ServiceModel.EndpointIdentity" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `tokenRequirement` パラメーターには、エンドポイントのバインディング情報が含まれます。通常は、この情報を使用してエンドポイントの <xref:System.ServiceModel.EndpointIdentity> が決定されます。 たとえば、バインディングが Kerberos ベースの認証を実行するように構成されている場合、返される既定の ID は `ServicePrincipalName` (SPN) または `UserPrincipalName` (UPN) です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

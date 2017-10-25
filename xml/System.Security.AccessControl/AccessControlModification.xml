@@ -1,0 +1,156 @@
+<Type Name="AccessControlModification" FullName="System.Security.AccessControl.AccessControlModification">
+  <TypeSignature Language="C#" Value="public enum AccessControlModification" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed AccessControlModification extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Security.AccessControl.AccessControlModification" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security.AccessControl</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>実行するアクセス制御の変更の種類を指定します。 この列挙体がのメソッドで使用される、<see cref="T:System.Security.AccessControl.ObjectSecurity" />クラスとその子孫です。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="Add" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.AccessControl.AccessControlModification Add = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.AccessControl.AccessControlModification.Add" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.AccessControlModification</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセス制御リスト (ACL) に指定した承認規則を追加します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="Remove" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.AccessControl.AccessControlModification Remove = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.AccessControl.AccessControlModification.Remove" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.AccessControlModification</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ACL から指定した承認規則と同じセキュリティ識別子 (SID) とアクセス マスクを含む承認規則を削除します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAll">
+      <MemberSignature Language="C#" Value="RemoveAll" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.AccessControl.AccessControlModification RemoveAll = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.AccessControl.AccessControlModification.RemoveAll" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.AccessControlModification</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ACL から指定した承認規則と同じ SID を含む承認規則を削除します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveSpecific">
+      <MemberSignature Language="C#" Value="RemoveSpecific" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.AccessControl.AccessControlModification RemoveSpecific = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.AccessControl.AccessControlModification.RemoveSpecific" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.AccessControlModification</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ACL から指定した承認規則と正確に一致する承認規則を削除します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="Reset" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.AccessControl.AccessControlModification Reset = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.AccessControl.AccessControlModification.Reset" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.AccessControlModification</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ACL から指定した承認規則と同じ SID を含む承認規則を削除して、ACL に指定した承認規則を追加します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Set">
+      <MemberSignature Language="C#" Value="Set" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.AccessControl.AccessControlModification Set = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.AccessControl.AccessControlModification.Set" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.AccessControlModification</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ACL からすべての承認規則を削除してから、ACL に指定した承認規則を追加します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,340 @@
+<Type Name="Comparer&lt;T&gt;" FullName="System.Collections.Generic.Comparer&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public abstract class Comparer&lt;T&gt; : System.Collections.Generic.IComparer&lt;T&gt;, System.Collections.IComparer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit Comparer`1&lt;T&gt; extends System.Object implements class System.Collections.Generic.IComparer`1&lt;!T&gt;, class System.Collections.IComparer" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.Generic.Comparer`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Collections</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IComparer&lt;T&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Collections.IComparer</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <typeparam name="T">比較するオブジェクトの型。</typeparam>
+    <summary>基本クラスの実装を提供、<see cref="T:System.Collections.Generic.IComparer`1" />ジェネリック インターフェイス。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタム実装を提供するには、このクラスから派生して、<xref:System.Collections.Generic.IComparer%601>インターフェイスのコレクション クラスで使用するよう、<xref:System.Collections.Generic.SortedList%602>と<xref:System.Collections.Generic.SortedDictionary%602>ジェネリック クラスです。  
+  
+ 派生することの違い、<xref:System.Collections.Generic.Comparer%601>クラスと実装、<xref:System.IComparable?displayProperty=nameWithType>インターフェイスは、次のようにします。  
+  
+-   指定する方法、既定では、2 つのオブジェクトを比較する必要があります、実装、<xref:System.IComparable?displayProperty=nameWithType>クラスのインターフェイスです。 これにより、並べ替え操作が指定されている既定の比較コードを使用します。  
+  
+-   派生して既定の比較子の代わりに使用する比較子を定義する、<xref:System.Collections.Generic.Comparer%601>クラスです。 パラメーターとしての比較子を受け取る並べ替え操作で、この比較演算子を使用できます。  
+  
+ によって返されるオブジェクト、<xref:System.Collections.Generic.Comparer%601.Default%2A>プロパティの使用、<xref:System.IComparable%601?displayProperty=nameWithType>ジェネリック インターフェイス (`IComparable<T>` 、C# の場合は、 `IComparable(Of T)` Visual Basic で) を 2 つのオブジェクトを比較します。 場合型`T`を実装しません、 <xref:System.IComparable%601?displayProperty=nameWithType> 、ジェネリック インターフェイス、<xref:System.Collections.Generic.Comparer%601.Default%2A>プロパティから返される、<xref:System.Collections.Generic.Comparer%601>を使用して、<xref:System.IComparable?displayProperty=nameWithType>インターフェイスです。  
+  
+   
+  
+## Examples  
+ 次の例は、クラスを派生`BoxLengthFirst`から、<xref:System.Collections.Generic.Comparer%601>クラスです。 この比較演算子は、型の 2 つのオブジェクトを比較`Box`です。 並べ替えて最初の長さ、し、高さで順で幅。 `Box`クラスが実装する、<xref:System.IComparable%601>を 2 つの既定の比較を制御するインターフェイス`Box`オブジェクト。 この既定の実装は、高さ、によって、長さ、リング幅ではまずに並べ替えられます。 例では、一覧を並べ替えることで、次の 2 つの比較の違いを示しています`Box`最初を使用してオブジェクト、`BoxLengthFirst`比較演算子と、既定の比較子を使用しています。  
+  
+ [!code-csharp[System.Collections.Generic.BoxCompare#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.collections.generic.boxcompare/cs/program.cs#1)]
+ [!code-vb[System.Collections.Generic.BoxCompare#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.collections.generic.boxcompare/vb/program.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>
+        <see cref="M:System.Collections.Generic.Comparer`1.Compare(`0,`0)" />および<see cref="M:System.Collections.Generic.EqualityComparer`1.Equals(`0,`0)" />カルチャの区別および大文字小文字の区別に関して動作が異なる場合があります。  
+  
+ 文字列比較のため、<see cref="T:System.StringComparer" />経由でクラスをお勧め<c>比較子&lt;文字列&gt;</c>です。  プロパティ、<see cref="T:System.StringComparer" />クラスは、カルチャの区別および大文字小文字の区別のさまざまな組み合わせで文字列比較を実行する定義済みのインスタンスを返します。  大文字小文字の区別とカルチャの区別は、同じメンバーの間で一貫性のある<see cref="T:System.StringComparer" />インスタンス。  
+  
+ カルチャ固有の比較の詳細については、次を参照してください。、<see cref="N:System.Globalization" />名前空間と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/9a59696b-d89b-45bd-946d-c75da4732d02)です。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Comparer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.Comparer`1.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Collections.Generic.Comparer`1" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Compare">
+      <MemberSignature Language="C#" Value="public abstract int Compare (T x, T y);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 Compare(!T x, !T y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.Comparer`1.Compare(`0,`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="T" />
+        <Parameter Name="y" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="x">比較する最初のオブジェクト。</param>
+        <param name="y">比較する 2 番目のオブジェクト。</param>
+        <summary>派生クラスでオーバーライドされると、同じ型の 2 つのオブジェクトの比較を実行し、1 つのオブジェクトが同じか、または他のより大きいよりも小さいかどうかを示す値を返します。</summary>
+        <returns>
+            <paramref name="x" /> と <paramref name="y" /> の相対値を示す符号付き整数。次の表を参照してください。  
+ 
+  <list type="table"><listheader><term>値  
+ 
+  </term><description>意味  
+ 
+  </description></listheader><item><term>0 より小さい値  
+ 
+  </term><description><paramref name="x" /> は <paramref name="y" /> より小さい値です。  
+ 
+  </description></item><item><term>0  
+ 
+  </term><description><paramref name="x" /> と <paramref name="y" /> は等しい。  
+ 
+  </description></item><item><term>0 より大きい値  
+ 
+  </term><description><paramref name="x" /> が <paramref name="y" /> より大きくなっています。  
+ 
+</description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタマイズするのには、このメソッドを実装する型の比較で順序を並べ替える`T`です。  
+  
+   
+  
+## Examples  
+ 次の例の比較子を定義する`Box`既定の比較子の代わりに使用できるオブジェクト。 この例に示されている例の一部である、<xref:System.Collections.Generic.Comparer%601>クラスです。  
+  
+ [!code-csharp[System.Collections.Generic.BoxCompare#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.collections.generic.boxcompare/cs/program.cs#5)]
+ [!code-vb[System.Collections.Generic.BoxCompare#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.collections.generic.boxcompare/vb/program.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">型<paramref name="T" />はいずれかを実装しません、<see cref="T:System.IComparable`1" />ジェネリック インターフェイスまたは<see cref="T:System.IComparable" />インターフェイスです。</exception>
+        <block subset="none" type="overrides">
+          <para>比較する<see langword="null" />任意の参照を持つ型が許可され、例外を生成しません。 Null 参照が null でない未満である任意の参照であると見なされます。  
+  
+ カルチャ固有の比較については、次を参照してください。、<see cref="N:System.Globalization" />名前空間と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/9a59696b-d89b-45bd-946d-c75da4732d02)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.Comparer&lt;T&gt; Create (Comparison&lt;T&gt; comparison);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.Comparer`1&lt;!T&gt; Create(class System.Comparison`1&lt;!T&gt; comparison) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.Comparer`1.Create(System.Comparison{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.Comparer&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="comparison" Type="System.Comparison&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="comparison">使用する比較します。</param>
+        <summary>指定した比較を使用して、比較子を作成します。</summary>
+        <returns>新しい比較子。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.Comparer&lt;T&gt; Default { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Collections.Generic.Comparer`1&lt;!T&gt; Default" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Generic.Comparer`1.Default" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.Comparer&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定値を返しますでは、汎用引数で指定された型の順序比較子を並べ替えます。</summary>
+        <value>継承されるオブジェクト<see cref="T:System.Collections.Generic.Comparer`1" />型の並べ替え順序比較子として機能し、<paramref name="T" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Generic.Comparer%601>このプロパティによって返されるを使用して、<xref:System.IComparable%601?displayProperty=nameWithType>ジェネリック インターフェイス (`IComparable<T>` 、C# の場合は、 `IComparable(Of T)` Visual Basic で) を 2 つのオブジェクトを比較します。 場合型`T`を実装しません、<xref:System.IComparable%601?displayProperty=nameWithType>ジェネリック インターフェイスは、このプロパティを返します、<xref:System.Collections.Generic.Comparer%601>を使用して、<xref:System.IComparable?displayProperty=nameWithType>インターフェイスです。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Collections.Generic.Comparer%601.Default%2A>は既定の比較を実行するオブジェクトを取得するプロパティです。 この例に示されている例の一部である、<xref:System.Collections.Generic.Comparer%601>クラスです。  
+  
+ [!code-csharp[System.Collections.Generic.BoxCompare#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.collections.generic.boxcompare/cs/program.cs#3)]
+ [!code-vb[System.Collections.Generic.BoxCompare#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.collections.generic.boxcompare/vb/program.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="usage">
+          <para>文字列比較のため、<see cref="T:System.StringComparer" />経由でクラスをお勧め<c>比較子&lt;文字列&gt;</c> (<c>(文字列の) の比較子</c>Visual Basic で)。  プロパティ、<see cref="T:System.StringComparer" />クラスは、カルチャの区別および大文字小文字の区別のさまざまな組み合わせで文字列比較を実行する定義済みのインスタンスを返します。  大文字小文字の区別とカルチャの区別は、同じメンバーの間で一貫性のある<see cref="T:System.StringComparer" />インスタンス。  
+  
+ カルチャ固有の比較の詳細については、次を参照してください。、<see cref="N:System.Globalization" />名前空間と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/9a59696b-d89b-45bd-946d-c75da4732d02)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IComparer.Compare">
+      <MemberSignature Language="C#" Value="int IComparer.Compare (object x, object y);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IComparer.Compare(object x, object y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.Comparer`1.System#Collections#IComparer#Compare(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Object" />
+        <Parameter Name="y" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="x">比較する最初のオブジェクト。</param>
+        <param name="y">比較する 2 番目のオブジェクト。</param>
+        <summary>2 つのオブジェクトを比較して、一方が他方より小さいか、同じか、または大きいかを示す値を返します。</summary>
+        <returns>
+            <paramref name="x" /> と <paramref name="y" /> の相対値を示す符号付き整数。次の表を参照してください。  
+ 
+  <list type="table"><listheader><term>値  
+ 
+  </term><description>意味  
+ 
+  </description></listheader><item><term>0 より小さい値  
+ 
+  </term><description><paramref name="x" /> は <paramref name="y" /> より小さい値です。  
+ 
+  </description></item><item><term>0  
+ 
+  </term><description><paramref name="x" /> と <paramref name="y" /> は等しい。  
+ 
+  </description></item><item><term>0 より大きい値  
+ 
+  </term><description><paramref name="x" /> が <paramref name="y" /> より大きくなっています。  
+ 
+</description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、用のラッパー、<xref:System.Collections.Generic.Comparer%601.Compare%28%600%2C%600%29>メソッドのため、`obj`汎用引数で指定された型にキャストする必要があります`T`現在のインスタンス。 キャストできない場合`T`、<xref:System.ArgumentException>がスローされます。  
+  
+ 比較する`null`任意の参照を持つ型が許可され、例外を生成しません。 ソート時`null`未満であるその他のオブジェクトと見なされます。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、 <xref:System.Collections.Generic.Comparer%601.System%23Collections%23IComparer%23Compare%2A> 2 つのオブジェクトを比較するメソッド。 この例に示されている例の一部である、<xref:System.Collections.Generic.Comparer%601>クラスです。  
+  
+ [!code-csharp[System.Collections.Generic.BoxCompare#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.collections.generic.boxcompare/cs/program.cs#4)]
+ [!code-vb[System.Collections.Generic.BoxCompare#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.collections.generic.boxcompare/vb/program.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="x" />または<paramref name="y" />型にキャストすることはできません型の<paramref name="T" />です。  
+  
+ または  
+  
+ <paramref name="x" />および<paramref name="y" />を実装していないか、<see cref="T:System.IComparable`1" />ジェネリック インターフェイスまたは<see cref="T:System.IComparable" />インターフェイスです。</exception>
+        <block subset="none" type="usage">
+          <para>
+            <see cref="M:System.Collections.Generic.Comparer`1.Compare(`0,`0)" />および<see cref="M:System.Collections.Generic.EqualityComparer`1.Equals(`0,`0)" />カルチャの区別および大文字小文字の区別に関して動作が異なる。  
+  
+ 文字列比較のため、<see cref="T:System.StringComparer" />経由でクラスをお勧め<c>比較子&lt;文字列&gt;</c>です。  プロパティ、<see cref="T:System.StringComparer" />クラスは、カルチャの区別および大文字小文字の区別のさまざまな組み合わせで文字列比較を実行する定義済みのインスタンスを返します。  大文字小文字の区別とカルチャの区別は、同じメンバーの間で一貫性のある<see cref="T:System.StringComparer" />インスタンス。  
+  
+ カルチャ固有の比較の詳細については、次を参照してください。、<see cref="N:System.Globalization" />名前空間と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/9a59696b-d89b-45bd-946d-c75da4732d02)です。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

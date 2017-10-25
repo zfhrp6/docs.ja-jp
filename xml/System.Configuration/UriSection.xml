@@ -1,0 +1,206 @@
+<Type Name="UriSection" FullName="System.Configuration.UriSection">
+  <TypeSignature Language="C#" Value="public sealed class UriSection : System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed UriSection extends System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.UriSection" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>構成ファイル内の Uri のセクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既存の<xref:System.Uri?displayProperty=nameWithType>国際リソース識別子 (IRI) および国際化ドメイン名のサポートを提供するクラスが拡張されています。 現在のユーザーでは、IDN を明確にする場合を除き、.NET Framework 2.0 の動作から変更は表示されません。 これにより、.NET Framework の以前のバージョンとのアプリケーションの互換性を保証します。  
+  
+ 使用して IRI と IDN 構成設定を取得することができます、<xref:System.Configuration.UriSection>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UriSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.UriSection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Configuration.UriSection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既存の<xref:System.Uri?displayProperty=nameWithType>国際リソース識別子 (IRI) および国際化ドメイン名のサポートを提供するクラスが拡張されています。 現在のユーザーでは、IDN を明確にする場合を除き、.NET Framework 2.0 の動作から変更は表示されません。 これにより、.NET Framework の以前のバージョンとのアプリケーションの互換性を保証します。  
+  
+ 使用して IRI と IDN 構成設定を取得することができます、<xref:System.Configuration.UriSection>クラスです。  
+  
+ IRI サポートの詳細については、「解説」セクションを参照して、<xref:System.Uri?displayProperty=nameWithType>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Idn">
+      <MemberSignature Language="C#" Value="public System.Configuration.IdnElement Idn { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.IdnElement Idn" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.UriSection.Idn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("idn")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Configuration.IdnElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Configuration.IdnElement" />の国際化ドメイン名 (IDN) の処理の構成設定を格納しているオブジェクト、<see cref="T:System.Uri" />クラスです。</summary>
+        <value>構成設定の国際化ドメイン名 (IDN) の処理、<see cref="T:System.Uri" />クラスです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既存の<xref:System.Uri?displayProperty=nameWithType>国際リソース識別子 (IRI) および国際化ドメイン名のサポートを提供するクラスが拡張されています。 現在のユーザーでは、IDN を明確にする場合を除き、.NET Framework 2.0 の動作から変更は表示されません。 これにより、.NET Framework の以前のバージョンとのアプリケーションの互換性を保証します。  
+  
+ 使用して IRI と IDN 構成設定を取得することができます、<xref:System.Configuration.UriSection>クラスです。 <xref:System.Configuration.UriSection.Idn%2A>プロパティを返しますの IDN 構成設定での処理、<xref:System.Uri?displayProperty=nameWithType>クラスです。  
+  
+ IDN 処理を可能にするためには、IRI 処理を有効にする必要があります。 IRI 処理が無効になっている場合、IDN 処理は既定の設定に設定されます。既定の設定では、互換性のために .NET Framework 2.0 の動作が使用され、IDN 名は使用されません。  
+  
+ 国際化ドメイン名 (IDN) の属性は、IDN 処理だけを制御します。 その他のすべての IRI 処理 (文字の正規化の例) は、既定で実行されます。  
+  
+ 構成の設定、<xref:System.Configuration.IdnElement>が読み取られる 1 回と最初<xref:System.Uri?displayProperty=nameWithType>クラスを構築します。 それ以降の構成設定の変更は無視されます。  
+  
+ IRI サポートの詳細については、「解説」セクションを参照して、<xref:System.Uri?displayProperty=nameWithType>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IriParsing">
+      <MemberSignature Language="C#" Value="public System.Configuration.IriParsingElement IriParsing { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.IriParsingElement IriParsing" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.UriSection.IriParsing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("iriParsing")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Configuration.IriParsingElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Configuration.IriParsingElement" />国際リソース識別子 (IRI) 解析するための構成設定を格納しているオブジェクト、<see cref="T:System.Uri" />クラスです。</summary>
+        <value>国際リソース識別子 (IRI) 解析するための構成設定、<see cref="T:System.Uri" />クラスです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既存の<xref:System.Uri?displayProperty=nameWithType>国際リソース識別子 (IRI) および国際化ドメイン名のサポートを提供するクラスが拡張されています。 現在のユーザーでは、IDN を明確にする場合を除き、.NET Framework 2.0 の動作から変更は表示されません。 これにより、.NET Framework の以前のバージョンとのアプリケーションの互換性を保証します。  
+  
+ 使用して IRI と IDN 構成設定を取得することができます、<xref:System.Configuration.UriSection>クラスです。 <xref:System.Configuration.UriSection.IriParsing%2A> IRI 解析するための構成設定を返します、<xref:System.Uri?displayProperty=nameWithType>クラスです。  
+  
+ IDN 処理を可能にするためには、IRI 処理を有効にする必要があります。 IRI 処理が無効になっている場合、IDN 処理は既定の設定に設定されます。既定の設定では、互換性のために .NET Framework 2.0 の動作が使用され、IDN 名は使用されません。  
+  
+ 国際化ドメイン名 (IDN) の属性は、IDN 処理だけを制御します。 その他のすべての IRI 処理 (文字の正規化の例) は、既定で実行されます。  
+  
+ 構成の設定、<xref:System.Configuration.IriParsingElement>が読み取られる 1 回と最初<xref:System.Uri?displayProperty=nameWithType>クラスを構築します。 それ以降の構成設定の変更は無視されます。  
+  
+ IRI サポートの詳細については、「解説」セクションを参照して、<xref:System.Uri?displayProperty=nameWithType>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.UriSection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SchemeSettings">
+      <MemberSignature Language="C#" Value="public System.Configuration.SchemeSettingElementCollection SchemeSettings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.SchemeSettingElementCollection SchemeSettings" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.UriSection.SchemeSettings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("schemeSettings")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Configuration.SchemeSettingElementCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Configuration.SchemeSettingElementCollection" />スキームでの解析の構成設定を格納しているオブジェクト、<see cref="T:System.Uri" />クラスです。</summary>
+        <value>解析スキームの構成設定、<see cref="T:System.Uri" />クラス</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.UriSection.SchemeSettings%2A>プロパティはジェネリックではありません。 GenericUriParserOptions のみ HTTP および HTTPS スキームがサポートされているは、"DontUnescapePathDotsAndSlashes"構成設定を = です。 その他のすべての設定は無視されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

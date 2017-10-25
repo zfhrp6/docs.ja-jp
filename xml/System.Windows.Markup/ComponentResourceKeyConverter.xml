@@ -1,0 +1,191 @@
+<Type Name="ComponentResourceKeyConverter" FullName="System.Windows.Markup.ComponentResourceKeyConverter">
+  <TypeSignature Language="C#" Value="public class ComponentResourceKeyConverter : System.Windows.ExpressionConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ComponentResourceKeyConverter extends System.Windows.ExpressionConverter" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.ComponentResourceKeyConverter" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.ExpressionConverter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>型コンバーターを実装して<see cref="T:System.Windows.ComponentResourceKey" />オブジェクト、型変換の経路が意図的にありません。 型コンバーターは、強制し、その動作を報告します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.ComponentResourceKey>型が値に変換する型コンバーターの経路を使用しないでください。 代わりに、マークアップ拡張機能を使用する必要があります。 このため、<xref:System.Windows.Markup.ComponentResourceKeyConverter.CanConvertFrom%28System.ComponentModel.ITypeDescriptorContext%2CSystem.Type%29>と<xref:System.Windows.Markup.ComponentResourceKeyConverter.CanConvertTo%28System.ComponentModel.ITypeDescriptorContext%2CSystem.Type%29>メソッドは常に返します`false`です。 <xref:System.Windows.Markup.ComponentResourceKeyConverter.ConvertFrom%28System.ComponentModel.ITypeDescriptorContext%2CSystem.Globalization.CultureInfo%2CSystem.Object%29>と<xref:System.Windows.Markup.ComponentResourceKeyConverter.ConvertTo%28System.ComponentModel.ITypeDescriptorContext%2CSystem.Globalization.CultureInfo%2CSystem.Object%2CSystem.Type%29>メソッドは常に例外をスローします。 おそらく無効な入力は、レポートも可能性があります、例外が有効と見なされる入力<xref:System.NotSupportedException>です。  
+  
+<a name="xamlTextUsage_ComponentResourceKeyConverter"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ComponentResourceKeyConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.ComponentResourceKeyConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Markup.ComponentResourceKeyConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertFrom">
+      <MemberSignature Language="C#" Value="public override bool CanConvertFrom (System.ComponentModel.ITypeDescriptorContext context, Type sourceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanConvertFrom(class System.ComponentModel.ITypeDescriptorContext context, class System.Type sourceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.ComponentResourceKeyConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="sourceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context">このコンバーターの呼び出される環境に関する情報を提供する書式指定コンテキスト。</param>
+        <param name="sourceType">変換の評価対象の型。</param>
+        <summary>インスタンスに指定した型のオブジェクトを変換できるかどうかを判断<see cref="T:System.Windows.ComponentResourceKey" />、指定したコンテキストを使用します。 常に <see langword="false" /> を返します。</summary>
+        <returns>
+          常に <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.ComponentResourceKey>型 (使用すべきマークアップ拡張機能の代わりに) 値を変換する型コンバーターの経路を使用しないでください。 このため、<xref:System.Windows.Markup.ComponentResourceKeyConverter.CanConvertFrom%28System.ComponentModel.ITypeDescriptorContext%2CSystem.Type%29>と<xref:System.Windows.Markup.ComponentResourceKeyConverter.CanConvertTo%28System.ComponentModel.ITypeDescriptorContext%2CSystem.Type%29>メソッドは常に返します`false`です。 <xref:System.Windows.Markup.ComponentResourceKeyConverter.ConvertFrom%28System.ComponentModel.ITypeDescriptorContext%2CSystem.Globalization.CultureInfo%2CSystem.Object%29>と<xref:System.Windows.Markup.ComponentResourceKeyConverter.ConvertTo%28System.ComponentModel.ITypeDescriptorContext%2CSystem.Globalization.CultureInfo%2CSystem.Object%2CSystem.Type%29>メソッドは常に例外をスローします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="sourceType" /> は <see langword="null" /> です。</exception>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertTo">
+      <MemberSignature Language="C#" Value="public override bool CanConvertTo (System.ComponentModel.ITypeDescriptorContext context, Type destinationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanConvertTo(class System.ComponentModel.ITypeDescriptorContext context, class System.Type destinationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.ComponentResourceKeyConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="destinationType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context">このコンバーターの呼び出される環境に関する情報を提供する書式指定コンテキスト。</param>
+        <param name="destinationType">変換の評価対象の型。</param>
+        <summary>インスタンスかどうかを決定<see cref="T:System.Windows.ComponentResourceKey" />指定したコンテキストを使用して、指定された型に変換することができます。 常に <see langword="false" /> を返します。</summary>
+        <returns>
+          常に <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.ComponentResourceKey>型 (使用すべきマークアップ拡張機能の代わりに) 値を変換する型コンバーターの経路を使用しないでください。 このため、<xref:System.Windows.Markup.ComponentResourceKeyConverter.CanConvertFrom%28System.ComponentModel.ITypeDescriptorContext%2CSystem.Type%29>と<xref:System.Windows.Markup.ComponentResourceKeyConverter.CanConvertTo%28System.ComponentModel.ITypeDescriptorContext%2CSystem.Type%29>メソッドは常に返します`false`です。 <xref:System.Windows.Markup.ComponentResourceKeyConverter.ConvertFrom%28System.ComponentModel.ITypeDescriptorContext%2CSystem.Globalization.CultureInfo%2CSystem.Object%29>と<xref:System.Windows.Markup.ComponentResourceKeyConverter.ConvertTo%28System.ComponentModel.ITypeDescriptorContext%2CSystem.Globalization.CultureInfo%2CSystem.Object%2CSystem.Type%29>メソッドは常に例外をスローします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="destinationType" /> は <see langword="null" /> です。</exception>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertFrom">
+      <MemberSignature Language="C#" Value="public override object ConvertFrom (System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertFrom(class System.ComponentModel.ITypeDescriptorContext context, class System.Globalization.CultureInfo culture, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.ComponentResourceKeyConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context">このコンバーターの呼び出される環境に関する情報を提供する書式指定コンテキスト。</param>
+        <param name="culture">カルチャ固有の情報です。</param>
+        <param name="value">変換対象のオブジェクト。</param>
+        <summary>指定したオブジェクトを変換しようとしています、 <see cref="T:System.Windows.ComponentResourceKey" />、指定のコンテキストを使用します。 すべてのケースでは、例外をスローします。</summary>
+        <returns>すべてのケースでは、例外をスローします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.ComponentResourceKey>型 (使用すべきマークアップ拡張機能の代わりに) 値を変換する型コンバーターの経路を使用しないでください。 このため、<xref:System.Windows.Markup.ComponentResourceKeyConverter.CanConvertFrom%28System.ComponentModel.ITypeDescriptorContext%2CSystem.Type%29>と<xref:System.Windows.Markup.ComponentResourceKeyConverter.CanConvertTo%28System.ComponentModel.ITypeDescriptorContext%2CSystem.Type%29>メソッドは常に返します`false`です。 <xref:System.Windows.Markup.ComponentResourceKeyConverter.ConvertFrom%28System.ComponentModel.ITypeDescriptorContext%2CSystem.Globalization.CultureInfo%2CSystem.Object%29>と<xref:System.Windows.Markup.ComponentResourceKeyConverter.ConvertTo%28System.ComponentModel.ITypeDescriptorContext%2CSystem.Globalization.CultureInfo%2CSystem.Object%2CSystem.Type%29>メソッドは常に例外をスローします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">変換を実行することはできません。</exception>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertTo">
+      <MemberSignature Language="C#" Value="public override object ConvertTo (System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, Type destinationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertTo(class System.ComponentModel.ITypeDescriptorContext context, class System.Globalization.CultureInfo culture, object value, class System.Type destinationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.ComponentResourceKeyConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="destinationType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context">このコンバーターの呼び出される環境に関する情報を提供する書式指定コンテキスト。</param>
+        <param name="culture">カルチャ固有の情報です。</param>
+        <param name="value">変換対象のオブジェクト。</param>
+        <param name="destinationType">オブジェクトの変換後の型。</param>
+        <summary>変換を試みます、<see cref="T:System.Windows.ComponentResourceKey" />指定された型に指定されたコンテキストを使用します。 すべてのケースでは、例外をスローします。</summary>
+        <returns>すべてのケースでは、例外をスローします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.ComponentResourceKey>型が値に変換する型コンバーターの経路を使用しないでください。 代わりに、マークアップ拡張機能を使用する必要があります。 このため、<xref:System.Windows.Markup.ComponentResourceKeyConverter.CanConvertFrom%28System.ComponentModel.ITypeDescriptorContext%2CSystem.Type%29>と<xref:System.Windows.Markup.ComponentResourceKeyConverter.CanConvertTo%28System.ComponentModel.ITypeDescriptorContext%2CSystem.Type%29>メソッドは常に返します`false`です。 <xref:System.Windows.Markup.ComponentResourceKeyConverter.ConvertFrom%28System.ComponentModel.ITypeDescriptorContext%2CSystem.Globalization.CultureInfo%2CSystem.Object%29>と<xref:System.Windows.Markup.ComponentResourceKeyConverter.ConvertTo%28System.ComponentModel.ITypeDescriptorContext%2CSystem.Globalization.CultureInfo%2CSystem.Object%2CSystem.Type%29>メソッドは常に例外をスローします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">変換を実行することはできません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="value" />型ではない<see cref="T:System.Windows.ComponentResourceKey" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="destinationType" /> は <see langword="null" /> です。</exception>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

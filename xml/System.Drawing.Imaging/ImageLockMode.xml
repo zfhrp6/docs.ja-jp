@@ -1,0 +1,93 @@
+<Type Name="ImageLockMode" FullName="System.Drawing.Imaging.ImageLockMode">
+  <TypeSignature Language="C#" Value="public enum ImageLockMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ImageLockMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Imaging.ImageLockMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>フラグ パラメーターに渡されたフラグを指定します、<see cref="Overload:System.Drawing.Bitmap.LockBits" />メソッドです。 <see cref="Overload:System.Drawing.Bitmap.LockBits" />ピクセル データを読み書きするように、メソッドは、イメージの一部をロックします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Drawing.Image.PixelFormat%2A>、 <xref:System.Drawing.Image.Height%2A>、 <xref:System.Drawing.Image.Width%2A>、および<xref:System.Drawing.Imaging.BitmapData.Scan0%2A>プロパティ以外の場合は、<xref:System.Drawing.Bitmap.LockBits%2A>と<xref:System.Drawing.Bitmap.UnlockBits%2A>メソッドおよび<xref:System.Drawing.Imaging.ImageLockMode>列挙します。 この例は、Windows フォームで使用するよう設計されています。 この例を実行するフォームに貼り付けるし、フォームの処理<xref:System.Windows.Forms.Control.Paint>イベントを呼び出すことによって、`LockUnlockBitsExample`渡してメソッド`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.BitmapMembers#5](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.BitmapMembers/CPP/form1.cpp#5)]
+ [!code-csharp[System.Drawing.BitmapMembers#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.BitmapMembers/CS/form1.cs#5)]
+ [!code-vb[System.Drawing.BitmapMembers#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.BitmapMembers/VB/form1.vb#5)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ReadOnly">
+      <MemberSignature Language="C#" Value="ReadOnly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.ImageLockMode ReadOnly = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.ImageLockMode.ReadOnly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.ImageLockMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>読み取り用のイメージの部分がロックされていることを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadWrite">
+      <MemberSignature Language="C#" Value="ReadWrite" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.ImageLockMode ReadWrite = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.ImageLockMode.ReadWrite" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.ImageLockMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イメージの一部が読み取りや書き込みに対してロックされていることを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UserInputBuffer">
+      <MemberSignature Language="C#" Value="UserInputBuffer" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.ImageLockMode UserInputBuffer = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.ImageLockMode.UserInputBuffer" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.ImageLockMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが読み取りまたは書き込みをピクセル データに使用するバッファーに割り当てられることを指定します。 このフラグが設定されている場合、<paramref name="flags" />のパラメーター、<see cref="Overload:System.Drawing.Bitmap.LockBits" />メソッドは、入力パラメーターとして (および場合によってに出力パラメーターとして) は機能します。 このフラグがオフの場合、<paramref name="flags" />パラメーターは出力パラメーターとしてのみ機能します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteOnly">
+      <MemberSignature Language="C#" Value="WriteOnly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.ImageLockMode WriteOnly = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.ImageLockMode.WriteOnly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.ImageLockMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>書き込み用のイメージの部分がロックされていることを指定します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

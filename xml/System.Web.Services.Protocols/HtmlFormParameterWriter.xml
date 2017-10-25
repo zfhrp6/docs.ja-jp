@@ -1,0 +1,129 @@
+<Type Name="HtmlFormParameterWriter" FullName="System.Web.Services.Protocols.HtmlFormParameterWriter">
+  <TypeSignature Language="C#" Value="public class HtmlFormParameterWriter : System.Web.Services.Protocols.UrlEncodedParameterWriter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HtmlFormParameterWriter extends System.Web.Services.Protocols.UrlEncodedParameterWriter" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.HtmlFormParameterWriter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Services.Protocols.UrlEncodedParameterWriter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>名前と値のペアの HTTP を使用して実装されている Web サービスの出力方向の要求パラメーターは、SOAP メッセージではなく HTML 形式のようにエンコードされたを書き込みます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.HtmlFormParameterWriter>その他のクラスの<xref:System.Web.Services.Protocols>名前空間は、HTTP GET 要求および HTTP POST 操作で Web サービスの .NET Framework の実装をサポートします。 Web サービスのライター、リーダー シリアル化および逆、それぞれ、パラメーターまたは Web メソッドの戻り値のオブジェクトと、HTTP 要求または応答のストリームの間です。 Web サービスのライター、リーダーは、HTTP トランスポートを使用しますが、SOAP 標準を使用してメッセージを交換しません。クライアント側<xref:System.Web.Services.Protocols.HtmlFormParameterWriter>クラスは、HTTP の本文にパラメーター名と値のペアを記述するメソッドが要求の MIME の種類は提供`application/x-www-form-urlencoded`です。  
+  
+ 通常必要はありませんを使用する<xref:System.Web.Services.Protocols.HtmlFormParameterWriter>直接です。 適用される、Wsdl.exe ツールは、HTTP POST の実装に応じて、クライアント プロキシ コードを生成するとき、<xref:System.Web.Services.Protocols.HttpMethodAttribute>各 Web メソッドに属性の設定と<xref:System.Web.Services.Protocols.HttpMethodAttribute.ParameterFormatter%2A>プロパティを<xref:System.Web.Services.Protocols.HtmlFormParameterWriter>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HtmlFormParameterWriter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.HtmlFormParameterWriter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Protocols.HtmlFormParameterWriter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeRequest">
+      <MemberSignature Language="C#" Value="public override void InitializeRequest (System.Net.WebRequest request, object[] values);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void InitializeRequest(class System.Net.WebRequest request, object[] values) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.HtmlFormParameterWriter.InitializeRequest(System.Net.WebRequest,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="System.Net.WebRequest" />
+        <Parameter Name="values" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="request">出力方向の要求です。</param>
+        <param name="values">Web メソッドのパラメーター値。</param>
+        <summary>送信 HTTP 要求を初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 出力方向の要求は、HTTP およびその他のトランスポート プロトコルを許可します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UsesWriteRequest">
+      <MemberSignature Language="C#" Value="public override bool UsesWriteRequest { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UsesWriteRequest" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.HtmlFormParameterWriter.UsesWriteRequest" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web メソッドのパラメーター値が出力方向の HTTP 要求本文にシリアル化するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />Web メソッドのパラメーターがシリアル化されることを示しています。 このプロパティは常に <see langword="true" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.HtmlFormParameterWriter.UsesWriteRequest%2A>プロパティを決定するかどうか、<xref:System.Web.Services.Protocols.HtmlFormParameterWriter.WriteRequest%2A>メソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteRequest">
+      <MemberSignature Language="C#" Value="public override void WriteRequest (System.IO.Stream requestStream, object[] values);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteRequest(class System.IO.Stream requestStream, object[] values) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.HtmlFormParameterWriter.WriteRequest(System.IO.Stream,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="requestStream" Type="System.IO.Stream" />
+        <Parameter Name="values" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="requestStream">送信 HTTP 要求の本文の入力ストリーム。</param>
+        <param name="values">Web メソッドのパラメーター値。</param>
+        <summary>Web メソッドのパラメーター値を出力方向の HTTP 要求本体を表すストリームにシリアル化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.HtmlFormParameterWriter.WriteRequest%2A>メソッドの呼び出し、<xref:System.Web.Services.Protocols.UrlEncodedParameterWriter.Encode%2A>ライター、オブジェクトの値) ですか? qualifyHint = True & autoUpgrade = True メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

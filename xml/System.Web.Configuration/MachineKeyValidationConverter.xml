@@ -1,0 +1,115 @@
+<Type Name="MachineKeyValidationConverter" FullName="System.Web.Configuration.MachineKeyValidationConverter">
+  <TypeSignature Language="C#" Value="public sealed class MachineKeyValidationConverter : System.Configuration.ConfigurationConverterBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MachineKeyValidationConverter extends System.Configuration.ConfigurationConverterBase" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.MachineKeyValidationConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationConverterBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>変換するためのメソッドを提供<see cref="T:System.Web.Configuration.MachineKeyValidation" />オブジェクトを文字列との間です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このクラスに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値:<xref:System.Security.Permissions.HostProtectionResource.MayLeakOnAbort>です。 <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MachineKeyValidationConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.MachineKeyValidationConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.MachineKeyValidationConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertFrom">
+      <MemberSignature Language="C#" Value="public override object ConvertFrom (System.ComponentModel.ITypeDescriptorContext ctx, System.Globalization.CultureInfo ci, object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertFrom(class System.ComponentModel.ITypeDescriptorContext ctx, class System.Globalization.CultureInfo ci, object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.MachineKeyValidationConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ctx" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="ci" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="ctx">このパラメーターは使用されません。</param>
+        <param name="ci">このパラメーターは使用されません。</param>
+        <param name="data">変換する文字列。</param>
+        <summary>文字列と同じを<see cref="T:System.Web.Configuration.MachineKeyValidation" />値。</summary>
+        <returns>該当するショートカットは、<see cref="T:System.Web.Configuration.MachineKeyValidation" />値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはスロー、<xref:System.ArgumentException>例外場合、`data`パラメーターは、次の文字列のいずれかを参照していません。  
+  
+-   SHA1  
+  
+-   MD5  
+  
+-   3 DES  
+  
+-   AES  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">データは、期待される文字列のいずれかではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertTo">
+      <MemberSignature Language="C#" Value="public override object ConvertTo (System.ComponentModel.ITypeDescriptorContext ctx, System.Globalization.CultureInfo ci, object value, Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertTo(class System.ComponentModel.ITypeDescriptorContext ctx, class System.Globalization.CultureInfo ci, object value, class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.MachineKeyValidationConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ctx" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="ci" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="ctx">このパラメーターは使用されません。</param>
+        <param name="ci">このパラメーターは使用されません。</param>
+        <param name="value">変換される <see cref="T:System.Web.Configuration.MachineKeyValidation" />。</param>
+        <param name="type">このパラメーターは使用されません。</param>
+        <summary>変換、<see cref="T:System.Web.Configuration.MachineKeyValidation" />値をその値の文字列形式。</summary>
+        <returns>表す文字列、<see cref="T:System.Web.Configuration.MachineKeyValidation" />値。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="value" />パラメーターは、期待された列挙値のいずれかではありません。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="value" />パラメーターではありません、<see cref="T:System.Web.Configuration.MachineKeyValidation" />オブジェクト。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

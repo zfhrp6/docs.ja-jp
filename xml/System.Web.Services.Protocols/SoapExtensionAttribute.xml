@@ -1,0 +1,115 @@
+<Type Name="SoapExtensionAttribute" FullName="System.Web.Services.Protocols.SoapExtensionAttribute">
+  <TypeSignature Language="C#" Value="public abstract class SoapExtensionAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit SoapExtensionAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.SoapExtensionAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>派生クラスでオーバーライドされると、SOAP 拡張機能は、XML Web サービス メソッドを使用して実行する必要がありますを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET を使用して作成した XML Web サービス メソッドは、SOAP 拡張機能を使用して、XML Web サービス メソッドに属性を適用する実行するように構成できます。 XML Web サービス メソッドまたはクライアント プロキシ クラスのメソッドにカスタム拡張機能属性を追加する場合、ASP.NET は適切なタイミングで関連付けられている拡張機能を呼び出します。 拡張機能属性から派生したカスタム属性クラスは、<xref:System.Web.Services.Protocols.SoapExtensionAttribute>です。 派生属性をオーバーライドする必要があります、<xref:System.Web.Services.Protocols.SoapExtensionAttribute.ExtensionType%2A>属性に関連付けられている拡張機能の種類を取得するプロパティです。  
+  
+   
+  
+## Examples  
+ 次`TraceExtensionAttribute`クラスから派生<xref:System.Web.Services.Protocols.SoapExtensionAttribute>XML Web サービス メソッドまたは XML Web サービス クライアント プロキシ クラスのメソッドに属性を適用することをサポートするためにします。 、いずれかに適用されるときに、`TraceExtension`メソッドを使用して SOAP 拡張機能が実行されます。  
+  
+ [!code-cpp[Classic SoapExtensionAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic SoapExtensionAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic SoapExtensionAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic SoapExtensionAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic SoapExtensionAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic SoapExtensionAttribute Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected SoapExtensionAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapExtensionAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Protocols.SoapExtensionAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtensionType">
+      <MemberSignature Language="C#" Value="public abstract Type ExtensionType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ExtensionType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapExtensionAttribute.ExtensionType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、取得、<see cref="T:System.Type" />の SOAP 拡張機能です。</summary>
+        <value><see cref="T:System.Type" />の SOAP 拡張機能です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスでオーバーライドする必要があります、 <xref:System.Web.Services.Protocols.SoapExtensionAttribute.ExtensionType%2A> SOAP 拡張機能の種類を取得するプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の一般的な実装、<xref:System.Web.Services.Protocols.SoapExtensionAttribute.ExtensionType%2A>プロパティです。  
+  
+ [!code-cpp[SoapExtensionAttribute#2](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapExtensionAttribute/CPP/SoapExtensionAttribute.cpp#2)]
+ [!code-csharp[SoapExtensionAttribute#2](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapExtensionAttribute/CS/soapextensionattribute.cs#2)]
+ [!code-vb[SoapExtensionAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapExtensionAttribute/VB/soapextensionattribute.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Priority">
+      <MemberSignature Language="C#" Value="public abstract int Priority { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Priority" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapExtensionAttribute.Priority" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オーバーライドされた場合、派生クラスを取得または SOAP 拡張機能の優先順位を設定します。</summary>
+        <value>SOAP 拡張機能の優先順位。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、の一般的な実装、<xref:System.Web.Services.Protocols.SoapExtensionAttribute.Priority%2A>プロパティです。  
+  
+ SoapExtensionAttribute #3  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,169 @@
+<Type Name="DesignerDataTableBase" FullName="System.ComponentModel.Design.Data.DesignerDataTableBase">
+  <TypeSignature Language="C#" Value="public abstract class DesignerDataTableBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DesignerDataTableBase extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.Data.DesignerDataTableBase" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プロパティとデータ ストアのテーブルとビューのデータ ストア間で共有メソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Data.DesignerDataTableBase>クラスは、デザイン時のデータ ストアのスキーマを表すいくつかの型のいずれか。 デザイナーの実装でこれらのスキーマの項目がコントロールに利用可能な<xref:System.ComponentModel.Design.Data.IDataEnvironment>インターフェイスです。 呼び出してスキーマ オブジェクトのアクセスを制御、<xref:System.ComponentModel.Design.Data.IDataEnvironment.GetConnectionSchema%2A>インターフェイスのメソッドです。  
+  
+ <xref:System.ComponentModel.Design.Data.DesignerDataTableBase>クラスは、プロパティとメソッドがデータの間でデータ ストアとそれらのデータ テーブルで定義されたビュー内のテーブルを共有します。  
+  
+ 継承する場合、<xref:System.ComponentModel.Design.Data.DesignerDataTableBase>オーバーライドする必要があります、クラス、<xref:System.ComponentModel.Design.Data.DesignerDataTableBase.CreateColumns%2A>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DesignerDataTableBase (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Data.DesignerDataTableBase.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">テーブルまたはビューの名前。</param>
+        <summary><see cref="T:System.ComponentModel.Design.Data.DesignerDataTableBase" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 継承クラス インスタンスによって使用されるクラスを初期化します。 このコンス トラクターは、継承クラスによってのみ呼び出すことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DesignerDataTableBase (string name, string owner);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(string name, string owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Data.DesignerDataTableBase.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="owner" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">テーブルまたはビューの名前。</param>
+        <param name="owner">テーブルまたはビューのデータ ストアの所有者です。</param>
+        <summary><see cref="T:System.ComponentModel.Design.Data.DesignerDataTableBase" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 継承クラス インスタンスによって使用されるクラスを初期化します。 このコンス トラクターは、継承クラスによってのみ呼び出すことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Columns">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection Columns { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection Columns" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.Data.DesignerDataTableBase.Columns" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーブルまたはビューに対して定義されている列のコレクションを取得します。</summary>
+        <value>テーブルまたはビューに対して定義されている列のコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Data.DesignerDataTableBase.Columns%2A>によってプロパティが設定されます、<xref:System.ComponentModel.Design.Data.DesignerDataTableBase.CreateColumns%2A>メソッドの最初の時間、<xref:System.ComponentModel.Design.Data.DesignerDataTableBase.Columns%2A>プロパティにアクセスします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateColumns">
+      <MemberSignature Language="C#" Value="protected abstract System.Collections.ICollection CreateColumns ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Collections.ICollection CreateColumns() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Data.DesignerDataTableBase.CreateColumns" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、データ ストアの列オブジェクトのコレクションを返します。</summary>
+        <returns><see cref="T:System.ComponentModel.Design.Data.DesignerDataColumn" /> オブジェクトのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Data.DesignerDataTableBase.CreateColumns%2A>メソッドは、初めて、<xref:System.ComponentModel.Design.Data.DesignerDataTableBase.Columns%2A>プロパティへのアクセス、データ ストアの列のコレクションを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.Data.DesignerDataTableBase.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ストアのテーブルまたはビューの名前を取得します。</summary>
+        <value>データ ストアのテーブルまたはビューの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Owner">
+      <MemberSignature Language="C#" Value="public string Owner { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Owner" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.Data.DesignerDataTableBase.Owner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ストアのテーブルまたはビューの所有者を取得します。</summary>
+        <value>データ ストアのテーブルまたはビューの所有者です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

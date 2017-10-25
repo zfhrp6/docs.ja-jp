@@ -1,0 +1,641 @@
+<Type Name="Publish" FullName="System.EnterpriseServices.Internal.Publish">
+  <TypeSignature Language="C#" Value="public class Publish : System.EnterpriseServices.Internal.IComSoapPublisher" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Publish extends System.Object implements class System.EnterpriseServices.Internal.IComSoapPublisher" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.Internal.Publish" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.EnterpriseServices.Internal.IComSoapPublisher</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("d8013eef-730b-45e2-ba24-874b7242c425")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>SOAP 対応の COM + アプリケーションの COM インターフェイスを公開します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.Internal.Publish>.NET Framework によって内部的に使用されます。 コード内で直接使用する必要はありません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Publish ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.Publish.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.EnterpriseServices.Internal.Publish" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateMailBox">
+      <MemberSignature Language="C#" Value="public void CreateMailBox (string RootMailServer, string MailBox, out string SmtpName, out string Domain, out string PhysicalPath, out string Error);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CreateMailBox(string RootMailServer, string MailBox, [out] string&amp; SmtpName, [out] string&amp; Domain, [out] string&amp; PhysicalPath, [out] string&amp; Error) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.Publish.CreateMailBox(System.String,System.String,System.String@,System.String@,System.String@,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="RootMailServer" Type="System.String" />
+        <Parameter Name="MailBox" Type="System.String" />
+        <Parameter Name="SmtpName" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="Domain" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="PhysicalPath" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="Error" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="RootMailServer">ルートのメール サーバーの URL です。</param>
+        <param name="MailBox">メールボックスを作成します。</param>
+        <param name="SmtpName">このメソッドが戻るとき、このパラメーターには、メールボックスを含む、簡易メール転送プロトコル (SMTP) サーバーの名前が含まれています。</param>
+        <param name="Domain">このメソッドが戻るとき、このパラメーターには、SMTP サーバーのドメインが含まれています。</param>
+        <param name="PhysicalPath">このメソッドが戻るとき、このパラメーターには、メールボックスのファイル システム パスが含まれています。</param>
+        <param name="Error">このメソッドが戻るときにこのパラメーターには、問題が発生した場合に、エラー メッセージが含まれています。</param>
+        <summary>指定した URL に SOAP 対応の COM + アプリケーションのメールボックスを作成します。 完全に実装されていません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 完全に実装します。メールボックスは作成されません。 "COM + SOAP services SMTP パブリケーションはサポートされていません"というエラー メッセージを返します  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出しチェーン内の呼び出し元には、アンマネージ コードへのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードへのアクセスに必要なアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateVirtualRoot">
+      <MemberSignature Language="C#" Value="public void CreateVirtualRoot (string Operation, string FullUrl, out string BaseUrl, out string VirtualRoot, out string PhysicalPath, out string Error);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CreateVirtualRoot(string Operation, string FullUrl, [out] string&amp; BaseUrl, [out] string&amp; VirtualRoot, [out] string&amp; PhysicalPath, [out] string&amp; Error) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.Publish.CreateVirtualRoot(System.String,System.String,System.String@,System.String@,System.String@,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Operation" Type="System.String" />
+        <Parameter Name="FullUrl" Type="System.String" />
+        <Parameter Name="BaseUrl" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="VirtualRoot" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="PhysicalPath" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="Error" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="Operation">実行する操作です。</param>
+        <param name="FullUrl">仮想ルートの完全な URL アドレス。</param>
+        <param name="BaseUrl">このメソッドが戻るとき、このパラメーターには、URL のベース アドレスが含まれています。</param>
+        <param name="VirtualRoot">このメソッドが戻るとき、このパラメーターには、仮想ルートの名前が含まれています。</param>
+        <param name="PhysicalPath">このメソッドが戻るとき、このパラメーターには、仮想ルートからのファイル パスが含まれています。</param>
+        <param name="Error">このメソッドが戻るときにこのパラメーターには、問題が発生した場合に、エラー メッセージが含まれています。</param>
+        <summary>SOAP 対応の COM + アプリケーション仮想ルートを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 推奨<xref:System.EnterpriseServices.Internal.SoapServerVRoot.CreateVirtualRootEx%2A>の代わりに使用する<xref:System.EnterpriseServices.Internal.Publish.CreateVirtualRoot%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出しチェーン内の呼び出し元には、アンマネージ コードへのアクセス許可がありません。  
+  
+ または  
+  
+ 呼び出し元には、DNS 情報にアクセスする権限がありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="FullUrl" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">ローカル ホスト名を解決するときに、エラーが発生しました。</exception>
+        <exception cref="T:System.UriFormatException">
+          <paramref name="FullUrl" /> が空です。  
+  
+ または  
+  
+ 指定されたスキーム<paramref name="FullUrl" />が無効です。  
+  
+ または  
+  
+ <paramref name="FullUrl" />連続する 3 つ以上のスラッシュが含まれています。  
+  
+ または  
+  
+ 指定されたパスワード<paramref name="FullUrl" />が無効です。  
+  
+ または  
+  
+ 指定されたホスト名<paramref name="FullUrl" />が無効です。  
+  
+ または  
+  
+ 指定されたファイル名<paramref name="FullUrl" />が無効です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteMailBox">
+      <MemberSignature Language="C#" Value="public void DeleteMailBox (string RootMailServer, string MailBox, out string Error);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DeleteMailBox(string RootMailServer, string MailBox, [out] string&amp; Error) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.Publish.DeleteMailBox(System.String,System.String,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="RootMailServer" Type="System.String" />
+        <Parameter Name="MailBox" Type="System.String" />
+        <Parameter Name="Error" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="RootMailServer">ルートのメール サーバーの URL です。</param>
+        <param name="MailBox">削除対象のメールボックスです。</param>
+        <param name="Error">このメソッドが戻るときにこのパラメーターには、問題が発生した場合に、エラー メッセージが含まれています。</param>
+        <summary>SOAP 対応の COM + アプリケーション メールボックスを指定された URL を削除します。 完全に実装されていません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 完全に実装されている、メールボックスは削除されません。 "COM + SOAP services SMTP パブリケーションはサポートされていません"というエラー メッセージを返します  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出しチェーン内の呼び出し元には、アンマネージ コードへのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードへのアクセスに必要なアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteVirtualRoot">
+      <MemberSignature Language="C#" Value="public void DeleteVirtualRoot (string RootWebServer, string FullUrl, out string Error);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DeleteVirtualRoot(string RootWebServer, string FullUrl, [out] string&amp; Error) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.Publish.DeleteVirtualRoot(System.String,System.String,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="RootWebServer" Type="System.String" />
+        <Parameter Name="FullUrl" Type="System.String" />
+        <Parameter Name="Error" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="RootWebServer">ルート Web サーバー。</param>
+        <param name="FullUrl">仮想ルートの完全な URL アドレス。</param>
+        <param name="Error">このメソッドが戻るときにこのパラメーターには、問題が発生した場合に、エラー メッセージが含まれています。</param>
+        <summary>SOAP 対応の COM + アプリケーション仮想ルートを削除します。 完全に実装されていません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 機能は、<xref:System.EnterpriseServices.Internal.Publish.DeleteVirtualRoot%2A>はまだありません。  
+  
+> [!CAUTION]
+>  現在、このメソッドは、エラーがなかったを返しますが、仮想ルートは削除されません。  
+  
+ 機能が使用可能になるときに、推奨される方法になります<xref:System.EnterpriseServices.Internal.SoapServerVRoot.DeleteVirtualRootEx%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出しチェーン内の呼び出し元には、アンマネージ コードへのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードへのアクセスに必要なアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GacInstall">
+      <MemberSignature Language="C#" Value="public void GacInstall (string AssemblyPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GacInstall(string AssemblyPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.Publish.GacInstall(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="AssemblyPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="AssemblyPath">アセンブリのファイル システム パス。</param>
+        <summary>グローバル アセンブリ キャッシュにアセンブリをインストールします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出しチェーン内の呼び出し元には、アンマネージ コードへのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードへのアクセスに必要なアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GacRemove">
+      <MemberSignature Language="C#" Value="public void GacRemove (string AssemblyPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GacRemove(string AssemblyPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.Publish.GacRemove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="AssemblyPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="AssemblyPath">アセンブリのファイル システム パス。</param>
+        <summary>グローバル アセンブリ キャッシュからアセンブリを削除します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出しチェーン内の呼び出し元には、アンマネージ コードへのアクセス許可がありません。  
+  
+ または  
+  
+ 呼び出し元に、パス検索アクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="AssemblyPath" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="AssemblyPath" /> が空です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+          <paramref name="AssemblyPath" /> が見つかりません。</exception>
+        <exception cref="T:System.IO.FileLoadException">アセンブリまたはモジュールが、2 つの異なる証拠を使用して 2 回読み込まれました。</exception>
+        <exception cref="T:System.BadImageFormatException">
+          <paramref name="AssemblyPath" /> は正しいアセンブリではありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードへのアクセスに必要なアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAssemblyNameForCache">
+      <MemberSignature Language="C#" Value="public void GetAssemblyNameForCache (string TypeLibPath, out string CachePath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetAssemblyNameForCache(string TypeLibPath, [out] string&amp; CachePath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.Publish.GetAssemblyNameForCache(System.String,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="TypeLibPath" Type="System.String" />
+        <Parameter Name="CachePath" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="TypeLibPath">タイプ ライブラリを格納しているファイルのパス。</param>
+        <param name="CachePath">このメソッドが戻るとき、このパラメーターには、SoapCache ディレクトリの名前が含まれています。</param>
+        <summary>厳密な名前を持つ符号付き生成されたアセンブリの SoapCache ディレクトリ内には、完全なパスを返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アンマネージ COM + コンポーネントの SOAP エンドポイントとして .NET リモート処理を介して公開する、プロキシは、アンマネージ コンポーネントを .NET Framework を使用できるようにに生成する必要があります。 これは、プログラムでタイプ ライブラリ インポーター (Tlbimp.exe) と同じ手順を実行することで、[!INCLUDE[winsdklong](~/includes/winsdklong-md.md)]プロキシ メタデータ アセンブリにアンマネージ COM + のタイプ ライブラリを変換するために使用するツールです。 クライアントが成功する SOAP 経由でライセンス認証、ただし、クライアントとサーバーのマシン必要があります共有同じ厳密な名前の署名済みメタデータ プロキシ。 このため、アンマネージの COM + コンポーネント、管理対象のプロキシ アセンブリが生成されたときに、厳密な名前のキーが生成し、プロキシ アセンブリに署名するために使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="TypeLibPath" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentException">ファイル名は空で、空白のみで構成されているか、正しくない文字を含んでいます。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">アクセスを<paramref name="TypeLibPath" />が拒否されました。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満でなければなりません。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="TypeLibPath" />文字列の途中にコロン (:) が含まれています。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルを読み取る。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetClientPhysicalPath">
+      <MemberSignature Language="C#" Value="public static string GetClientPhysicalPath (bool CreateDir);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetClientPhysicalPath(bool CreateDir) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.Publish.GetClientPhysicalPath(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="CreateDir" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="CreateDir">設定<see langword="true" />、ディレクトリを作成または<see langword="false" />へのパスを返しますが、ディレクトリを作成できません。</param>
+        <summary>クライアント構成ファイルを保存するディレクトリのパスを返します。</summary>
+        <returns>構成ファイルを格納するディレクトリのパス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ディレクトリを作成"\com\SOAPAssembly\\"システム ディレクトリの下。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTypeNameFromProgId">
+      <MemberSignature Language="C#" Value="public string GetTypeNameFromProgId (string AssemblyPath, string ProgId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetTypeNameFromProgId(string AssemblyPath, string ProgId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.Publish.GetTypeNameFromProgId(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="AssemblyPath" Type="System.String" />
+        <Parameter Name="ProgId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="AssemblyPath">アセンブリのファイル システム パス。</param>
+        <param name="ProgId">クラスのプログラム id。</param>
+        <summary>アセンブリを反映し、ProgID に一致する型名を返します。</summary>
+        <returns>ProgID に一致する型名。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出しチェーン内の呼び出し元には、アンマネージ コードへのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードへのアクセスに必要なアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseUrl">
+      <MemberSignature Language="C#" Value="public static void ParseUrl (string FullUrl, out string BaseUrl, out string VirtualRoot);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ParseUrl(string FullUrl, [out] string&amp; BaseUrl, [out] string&amp; VirtualRoot) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.Publish.ParseUrl(System.String,System.String@,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="FullUrl" Type="System.String" />
+        <Parameter Name="BaseUrl" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="VirtualRoot" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="FullUrl">仮想ルートの完全な URL アドレス。</param>
+        <param name="BaseUrl">このメソッドが戻るとき、このパラメーターには、URL のベース アドレスが含まれています。</param>
+        <param name="VirtualRoot">このメソッドが戻るとき、このパラメーターには、仮想ルートの名前が含まれています。</param>
+        <summary>URL を解析し、ベース URL と仮想ルート部分を返します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="FullUrl" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">ローカル ホスト名を解決するときに、エラーが発生しました。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元には、DNS 情報にアクセスする権限がありません。</exception>
+        <exception cref="T:System.UriFormatException">
+          <paramref name="FullUrl" /> が空です。  
+  
+ または  
+  
+ 指定されたスキーム<paramref name="FullUrl" />が無効です。  
+  
+ または  
+  
+ <paramref name="FullUrl" />スラッシュが多すぎますが含まれています。  
+  
+ または  
+  
+ 指定されたパスワード<paramref name="FullUrl" />が無効です。  
+  
+ または  
+  
+ 指定されたホスト名<paramref name="FullUrl" />が無効です。  
+  
+ または  
+  
+ 指定されたファイル名<paramref name="FullUrl" />が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessClientTlb">
+      <MemberSignature Language="C#" Value="public void ProcessClientTlb (string ProgId, string SrcTlbPath, string PhysicalPath, string VRoot, string BaseUrl, string Mode, string Transport, out string AssemblyName, out string TypeName, out string Error);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ProcessClientTlb(string ProgId, string SrcTlbPath, string PhysicalPath, string VRoot, string BaseUrl, string Mode, string Transport, [out] string&amp; AssemblyName, [out] string&amp; TypeName, [out] string&amp; Error) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.Publish.ProcessClientTlb(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String@,System.String@,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ProgId" Type="System.String" />
+        <Parameter Name="SrcTlbPath" Type="System.String" />
+        <Parameter Name="PhysicalPath" Type="System.String" />
+        <Parameter Name="VRoot" Type="System.String" />
+        <Parameter Name="BaseUrl" Type="System.String" />
+        <Parameter Name="Mode" Type="System.String" />
+        <Parameter Name="Transport" Type="System.String" />
+        <Parameter Name="AssemblyName" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="TypeName" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="Error" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="ProgId">クラスのプログラム id。</param>
+        <param name="SrcTlbPath">タイプ ライブラリを格納しているファイルのパス。</param>
+        <param name="PhysicalPath">Web アプリケーションのディレクトリ。</param>
+        <param name="VRoot">仮想ルートの名前。</param>
+        <param name="BaseUrl">仮想ルートを含む基本 URL です。</param>
+        <param name="Mode">ライセンス認証のモード。</param>
+        <param name="Transport">使用しません。 指定<see langword="null" />このパラメーターにします。</param>
+        <param name="AssemblyName">このメソッドが戻るとき、このパラメーターには、アセンブリの表示名が含まれています。</param>
+        <param name="TypeName">このメソッドが戻るとき、このパラメーターには、アセンブリの完全修飾型名が含まれています。</param>
+        <param name="Error">このメソッドが戻るときにこのパラメーターには、問題が発生した場合に、エラー メッセージが含まれています。</param>
+        <summary>クライアントの構成ファイルの作成、クライアントのタイプ ライブラリを処理します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、リモート処理構成ファイルを生成するクライアント プロキシのインポート時に使用されます。  
+  
+ 場合、`Mode`パラメーターが"wellknownobject"または空の文字列 ("")、既知のオブジェクトが想定されます。それ以外の場合、クライアントのライセンス認証が使用されます。  
+  
+ 推奨<xref:System.EnterpriseServices.Internal.SoapClientImport.ProcessClientTlbEx%2A>の代わりに使用する<xref:System.EnterpriseServices.Internal.Publish.ProcessClientTlb%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出しチェーン内の呼び出し元には、アンマネージ コードへのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードへのアクセスに必要なアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessServerTlb">
+      <MemberSignature Language="C#" Value="public void ProcessServerTlb (string ProgId, string SrcTlbPath, string PhysicalPath, string Operation, out string strAssemblyName, out string TypeName, out string Error);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ProcessServerTlb(string ProgId, string SrcTlbPath, string PhysicalPath, string Operation, [out] string&amp; strAssemblyName, [out] string&amp; TypeName, [out] string&amp; Error) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.Publish.ProcessServerTlb(System.String,System.String,System.String,System.String,System.String@,System.String@,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ProgId" Type="System.String" />
+        <Parameter Name="SrcTlbPath" Type="System.String" />
+        <Parameter Name="PhysicalPath" Type="System.String" />
+        <Parameter Name="Operation" Type="System.String" />
+        <Parameter Name="strAssemblyName" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="TypeName" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="Error" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="ProgId">クラスのプログラム id。</param>
+        <param name="SrcTlbPath">タイプ ライブラリを格納しているファイルのパス。</param>
+        <param name="PhysicalPath">Web アプリケーションのディレクトリ。</param>
+        <param name="Operation">実行する操作です。</param>
+        <param name="strAssemblyName">このメソッドが戻るとき、このパラメーターには、アセンブリの表示名が含まれています。</param>
+        <param name="TypeName">このメソッドが戻るとき、このパラメーターには、アセンブリの完全修飾型名が含まれています。</param>
+        <param name="Error">このメソッドが戻るときにこのパラメーターには、問題が発生した場合に、エラー メッセージが含まれています。</param>
+        <summary>追加するか、または web.config ファイルと値のファイルにコンポーネントのエントリを削除すると、サーバーのタイプ ライブラリを処理します。 必要な場合は、プロキシを生成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.Internal.Publish.ProcessServerTlb%2A>探索ファイルと、タイプ ライブラリ内のコンポーネントの web.config ファイルにエントリを追加し、またはアンマネージ コンポーネントの bin ディレクトリにコピーし、プロキシが生成されます。 場合`Operation`equals"、"し、削除、Web.config ファイルと値ファイルからコンポーネントのエントリが削除されます。  
+  
+ 推奨<xref:System.EnterpriseServices.Internal.SoapServerTlb.AddServerTlb%2A>と<xref:System.EnterpriseServices.Internal.SoapServerTlb.DeleteServerTlb%2A>の代わりに使用する<xref:System.EnterpriseServices.Internal.Publish.ProcessServerTlb%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出しチェーン内の呼び出し元には、アンマネージ コードへのアクセス許可がありません。</exception>
+        <exception cref="T:System.EnterpriseServices.ServicedComponentException"><paramref name="SrcTlbPath" />パラメーター参照 scrobj.dll; そのため、スクリプト コンポーネントの SOAP パブリケーションがサポートされていません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードへのアクセスに必要なアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterAssembly">
+      <MemberSignature Language="C#" Value="public void RegisterAssembly (string AssemblyPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RegisterAssembly(string AssemblyPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.Publish.RegisterAssembly(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="AssemblyPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="AssemblyPath">アセンブリのファイル システム パス。</param>
+        <summary>COM 相互運用機能アセンブリを登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.Internal.Publish.RegisterAssembly%2A>アセンブリ登録ツール (Regasm.exe) を使用して、作成可能なクラスをアセンブリに登録します。 詳細については、次を参照してください。 [Regasm.exe (アセンブリ登録ツール)](~/docs/framework/tools/regasm-exe-assembly-registration-tool.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.EnterpriseServices.RegistrationException">入力アセンブリに厳密な名前がありません。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出しチェーン内の呼び出し元には、アンマネージ コードへのアクセス許可がありません。  
+  
+ または  
+  
+ File:// で始まっていないコードベースが指定されて、必要なせず<see cref="T:System.Net.WebPermission" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="AssemblyPath" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+          <paramref name="AssemblyPath" />見つからないか、ファイル名拡張子が指定されていません。</exception>
+        <exception cref="T:System.BadImageFormatException">
+          <paramref name="AssemblyPath" /> は正しいアセンブリではありません。</exception>
+        <exception cref="T:System.IO.FileLoadException">アセンブリまたはモジュールが 2 回読み込まれ、2 つの異なる証拠が出されました。あるいは、アセンブリ名が MAX_PATH の文字数を超えています。</exception>
+        <exception cref="T:System.InvalidOperationException">マークされたメソッド<see cref="T:System.Runtime.InteropServices.ComUnregisterFunctionAttribute" />は<see langword="static" />します。  
+  
+ または  
+  
+ マークされた 1 つ以上のメソッドがある<see cref="T:System.Runtime.InteropServices.ComUnregisterFunctionAttribute" />階層の特定のレベルです。  
+  
+ または  
+  
+ マークされたメソッドのシグネチャ<see cref="T:System.Runtime.InteropServices.ComUnregisterFunctionAttribute" />が無効です。</exception>
+        <permission cref="T:System.Security.Permissions.RegistryPermission">レジストリにアクセスする権限です。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">現在のディレクトリを決定します。 関連する列挙。<see cref="F:System.Security.Permissions.EnvironmentPermissionAccess.AllAccess" /></permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">file:// で始まる URI を読み取る。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+        <permission cref="T:System.Net.WebPermission">file:// で始まらないする URI を読み取る。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UnRegisterAssembly">
+      <MemberSignature Language="C#" Value="public void UnRegisterAssembly (string AssemblyPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void UnRegisterAssembly(string AssemblyPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.Publish.UnRegisterAssembly(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="AssemblyPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="AssemblyPath">アセンブリのファイル システム パス。</param>
+        <summary>COM 相互運用機能アセンブリの登録を解除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.Internal.Publish.UnRegisterAssembly%2A>Regasm.exe を使用して、アセンブリの作成可能なクラスの登録を解除します。 詳細については、次を参照してください。 [Regasm.exe (アセンブリ登録ツール)](~/docs/framework/tools/regasm-exe-assembly-registration-tool.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出しチェーン内の呼び出し元には、アンマネージ コードへのアクセス許可がありません。  
+  
+ または  
+  
+ File:// で始まっていないコードベースが指定されて、必要なせず<see cref="T:System.Net.WebPermission" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="AssemblyPath" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+          <paramref name="AssemblyPath" />見つからないか、ファイル名拡張子が指定されていません。</exception>
+        <exception cref="T:System.BadImageFormatException">
+          <paramref name="AssemblyPath" /> は正しいアセンブリではありません。</exception>
+        <exception cref="T:System.IO.FileLoadException">アセンブリまたはモジュールが 2 回読み込まれ、2 つの異なる証拠が出されました。あるいは、アセンブリ名が MAX_PATH の文字数を超えています。</exception>
+        <exception cref="T:System.InvalidOperationException">マークされたメソッド<see cref="T:System.Runtime.InteropServices.ComUnregisterFunctionAttribute" />は<see langword="static" />します。  
+  
+ または  
+  
+ マークされた 1 つ以上のメソッドがある<see cref="T:System.Runtime.InteropServices.ComUnregisterFunctionAttribute" />階層の特定のレベルです。  
+  
+ または  
+  
+ マークされたメソッドのシグネチャ<see cref="T:System.Runtime.InteropServices.ComUnregisterFunctionAttribute" />が無効です。</exception>
+        <permission cref="T:System.Security.Permissions.RegistryPermission">レジストリにアクセスする権限です。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">現在のディレクトリを決定します。 関連する列挙。<see cref="F:System.Security.Permissions.EnvironmentPermissionAccess.AllAccess" /></permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">file:// で始まる URI を読み取る。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+        <permission cref="T:System.Net.WebPermission">file:// で始まらないする URI を読み取る。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

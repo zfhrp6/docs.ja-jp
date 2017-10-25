@@ -1,0 +1,751 @@
+<Type Name="Claim" FullName="System.IdentityModel.Claims.Claim">
+  <TypeSignature Language="C#" Value="public class Claim" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Claim extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Claims.Claim" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.Serialization.DataContract(Namespace="http://schemas.xmlsoap.org/ws/2005/05/identity")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>エンティティに関連付けられたクレームを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ID モデルはクレームに基づく承認システムです。 クレームは、システム内の何らかのエンティティ (多くの場合システムのユーザー) に関連する機能について記述します。 指定のエンティティに関連するクレームのセットをキーと考えることができます。 キーの形状は特定のクレームにより定義されます。このしくみは、ドアを開けるための物理的なキーとよく似ています。 このようにして、クレームは、リソースへのアクセスを取得するために使用されます。 保護された任意のリソースへのアクセスの可否は、そのリソースにアクセスするために必要なクレームと、アクセスを試みるエンティティに関連付けられたクレームを比較することにより特定されます。  
+  
+ クレームは、特定の値に関連付けられる権限の表現です。 権限には、読み取り、書き込み、所有があります。 値には、データベース、ファイル、メールボックス、またはプロパティが使用できます。 クレームはまた、特定のクレームの種類に属します。 クレームの種類と権限の組み合わせにより、値に基づいて機能が指定されるしくみが提供されます。 たとえば、種類が `file` で権限が `read` である値 `biography.doc` に対するクレームは、このようなクレームを持つエンティティが、ファイル biography.doc に対して読み取りアクセスを実行できることを示します。値 <xref:System.IdentityModel.Claims.Rights.PossessProperty%2A> に対する、種類が名前で権限が `Martin` であるクレームは、このクレームを持つエンティティが、値 `Name` を持つ `Martin` プロパティを所有していることを示します。  
+  
+ さまざまなクレームの種類および権限が ID モデルの一部として定義されていますが、システムは拡張可能です。 ID モデル インフラストラクチャを基にして構築されているさまざまなシステムでは、必要に応じてクレームの種類と権限を定義できます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[c_Claim#1](~/samples/snippets/csharp/VS_Snippets_CFX/c_claim/cs/source.cs#1)]
+ [!code-vb[c_Claim#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_claim/vb/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Claim (string claimType, object resource, string right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string claimType, object resource, string right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Claims.Claim.#ctor(System.String,System.Object,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="claimType" Type="System.String" />
+        <Parameter Name="resource" Type="System.Object" />
+        <Parameter Name="right" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="claimType">クレームの種類を表す URI (Uniform Resource Identifier)。</param>
+        <param name="resource">新しいクレームを関連付けるオブジェクト。</param>
+        <param name="right">クレームと関連付ける権限の URI。</param>
+        <summary>種類、リソース、および権限を指定して、<see cref="T:System.IdentityModel.Claims.Claim" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[vsindigo](~/includes/vsindigo-md.md)] には、<xref:System.IdentityModel.Claims.ClaimTypes> クラスおよび <xref:System.IdentityModel.Claims.Rights> クラスのメンバーとして表された、定義済みのクレームの種類と権限が用意されています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="claimType" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="right" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="claimType" /> の長さがゼロです。  
+  
+ または  
+  
+ <paramref name="right" /> の長さがゼロです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ClaimType">
+      <MemberSignature Language="C#" Value="public string ClaimType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ClaimType" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Claims.Claim.ClaimType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クレームの種類を取得します。</summary>
+        <value>クレームの種類を表す URI。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Claims.Claim.ClaimType%2A> プロパティは、<xref:System.IdentityModel.Claims.ClaimTypes> クラスの静的プロパティによって表される定義済みのクレームの種類のいずれかです。  
+  
+ クレームの種類は、電子メール アドレスなどの、アサートされているクレームの種類を指定します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[c_Claim#2](~/samples/snippets/csharp/VS_Snippets_CFX/c_claim/cs/source.cs#2)]
+ [!code-vb[c_Claim#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_claim/vb/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDenyOnlyWindowsSidClaim">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Claims.Claim CreateDenyOnlyWindowsSidClaim (System.Security.Principal.SecurityIdentifier identifier);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IdentityModel.Claims.Claim CreateDenyOnlyWindowsSidClaim(class System.Security.Principal.SecurityIdentifier identifier) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Claims.Claim.CreateDenyOnlyWindowsSidClaim(System.Security.Principal.SecurityIdentifier)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Claims.Claim</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sid" Type="System.Security.Principal.SecurityIdentifier" />
+      </Parameters>
+      <Docs>
+        <param name="identifier">To be added.</param>
+        <summary>指定した拒否専用のセキュリティ ID (SID) を表す <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクトを作成します。</summary>
+        <returns><see cref="T:System.IdentityModel.Claims.Claim" /> パラメーターに指定された SID を表す <paramref name="identifier" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 拒否専用 SID の SID_AND_ATTRIBUTES 構造体では、SE_GROUP_USE_FOR_SENY_ONLY フラグが設定されています。  
+  
+ このメソッドが作成する <xref:System.IdentityModel.Claims.Claim> オブジェクトのプロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.IdentityModel.Claims.Claim.ClaimType%2A>|<xref:System.IdentityModel.Claims.ClaimTypes.DenyOnlySid%2A>|  
+|<xref:System.IdentityModel.Claims.Claim.Resource%2A>|`sid` パラメーターの値。|  
+|<xref:System.IdentityModel.Claims.Claim.Right%2A>|<xref:System.IdentityModel.Claims.Rights.PossessProperty%2A>。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="identifier" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDnsClaim">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Claims.Claim CreateDnsClaim (string dns);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IdentityModel.Claims.Claim CreateDnsClaim(string dns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Claims.Claim.CreateDnsClaim(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Claims.Claim</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dns" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dns">クレームと関連するエンティティの DNS 名。 このパラメーターは <see langword="null" /> にすることはできません。 このパラメーターが <see langword="null" /> の場合、このメソッドは <see cref="T:System.ArgumentNullException" /> 例外をスローします。</param>
+        <summary>指定したドメイン ネーム システム (DNS) 名を表す <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクトを作成します。</summary>
+        <returns>このメソッドが作成する <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが作成する <xref:System.IdentityModel.Claims.Claim> オブジェクトのプロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.IdentityModel.Claims.Claim.ClaimType%2A>|<xref:System.IdentityModel.Claims.ClaimTypes.Dns%2A>|  
+|<xref:System.IdentityModel.Claims.Claim.Resource%2A>|`dns` パラメーターの値。|  
+|<xref:System.IdentityModel.Claims.Claim.Right%2A>|<xref:System.IdentityModel.Claims.Rights.PossessProperty%2A>|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="dns" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateHashClaim">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Claims.Claim CreateHashClaim (byte[] hash);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IdentityModel.Claims.Claim CreateHashClaim(unsigned int8[] hash) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Claims.Claim.CreateHashClaim(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Claims.Claim</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hash" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="hash">ハッシュ値を指定するバイト値の配列。 このパラメーターは <see langword="null" /> にすることはできません。 このパラメーターが <see langword="null" /> の場合、このメソッドは <see cref="T:System.ArgumentNullException" /> 例外をスローします。</param>
+        <summary>指定したハッシュ値を表す <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクトを作成します。</summary>
+        <returns>このメソッドが作成する <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが作成する <xref:System.IdentityModel.Claims.Claim> オブジェクトのプロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.IdentityModel.Claims.Claim.ClaimType%2A>|<xref:System.IdentityModel.Claims.ClaimTypes.Hash%2A>|  
+|<xref:System.IdentityModel.Claims.Claim.Resource%2A>|`hash` パラメーターの値。|  
+|<xref:System.IdentityModel.Claims.Claim.Right%2A>|<xref:System.IdentityModel.Claims.Rights.PossessProperty%2A>。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="hash" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateMailAddressClaim">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Claims.Claim CreateMailAddressClaim (System.Net.Mail.MailAddress mailAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IdentityModel.Claims.Claim CreateMailAddressClaim(class System.Net.Mail.MailAddress mailAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Claims.Claim.CreateMailAddressClaim(System.Net.Mail.MailAddress)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Claims.Claim</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mailAddress" Type="System.Net.Mail.MailAddress" />
+      </Parameters>
+      <Docs>
+        <param name="mailAddress">このクレームが表す電子メール アドレスを指定する <see cref="T:System.Net.Mail.MailAddress" />。 このパラメーターは <see langword="null" /> にすることはできません。 このパラメーターが <see langword="null" /> の場合、このメソッドは <see cref="T:System.ArgumentNullException" /> 例外をスローします。</param>
+        <summary>指定した電子メール アドレスを表す <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクトを作成します。</summary>
+        <returns>このメソッドが作成する <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが作成する <xref:System.IdentityModel.Claims.Claim> オブジェクトのプロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.IdentityModel.Claims.Claim.ClaimType%2A>|<xref:System.IdentityModel.Claims.ClaimTypes.Email%2A>|  
+|<xref:System.IdentityModel.Claims.Claim.Resource%2A>|`mailAddress` パラメーターの値。|  
+|<xref:System.IdentityModel.Claims.Claim.Right%2A>|<xref:System.IdentityModel.Claims.Rights.PossessProperty%2A>。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="mailAddress" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateNameClaim">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Claims.Claim CreateNameClaim (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IdentityModel.Claims.Claim CreateNameClaim(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Claims.Claim.CreateNameClaim(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Claims.Claim</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">クレームと関連するエンティティの名前。 このパラメーターは <see langword="null" /> にすることはできません。 このパラメーターが <see langword="null" /> の場合、このメソッドは <see cref="T:System.ArgumentNullException" /> 例外をスローします。</param>
+        <summary>指定した名前を表す <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクトを作成します。</summary>
+        <returns>このメソッドが作成する <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが作成する <xref:System.IdentityModel.Claims.Claim> オブジェクトのプロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.IdentityModel.Claims.Claim.ClaimType%2A>|<xref:System.IdentityModel.Claims.ClaimTypes.Name%2A>|  
+|<xref:System.IdentityModel.Claims.Claim.Resource%2A>|`name` パラメーターの値。|  
+|<xref:System.IdentityModel.Claims.Claim.Right%2A>|<xref:System.IdentityModel.Claims.Rights.PossessProperty%2A>。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateRsaClaim">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Claims.Claim CreateRsaClaim (System.Security.Cryptography.RSA rsa);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IdentityModel.Claims.Claim CreateRsaClaim(class System.Security.Cryptography.RSA rsa) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Claims.Claim.CreateRsaClaim(System.Security.Cryptography.RSA)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Claims.Claim</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rsa" Type="System.Security.Cryptography.RSA" />
+      </Parameters>
+      <Docs>
+        <param name="rsa">RSA 暗号化キーを表す <see cref="T:System.Security.Cryptography.RSA" /> オブジェクト。 このパラメーターは <see langword="null" /> にすることはできません。 このパラメーターが <see langword="null" /> の場合、このメソッドは <see cref="T:System.ArgumentNullException" /> 例外をスローします。</param>
+        <summary>指定した RSA キーを表す <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクトを作成します。</summary>
+        <returns>このメソッドが作成する <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが作成する <xref:System.IdentityModel.Claims.Claim> オブジェクトのプロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.IdentityModel.Claims.Claim.ClaimType%2A>|<xref:System.IdentityModel.Claims.ClaimTypes.Rsa%2A>|  
+|<xref:System.IdentityModel.Claims.Claim.Resource%2A>|`rsa` パラメーターの値。|  
+|<xref:System.IdentityModel.Claims.Claim.Right%2A>|<xref:System.IdentityModel.Claims.Rights.PossessProperty%2A>。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="rsa" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSpnClaim">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Claims.Claim CreateSpnClaim (string spn);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IdentityModel.Claims.Claim CreateSpnClaim(string spn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Claims.Claim.CreateSpnClaim(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Claims.Claim</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="spn" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="spn">このクレームに関連するエンティティの SPN。 このパラメーターは <see langword="null" /> にすることはできません。 このパラメーターが <see langword="null" /> の場合、このメソッドは <see cref="T:System.ArgumentNullException" /> 例外をスローします。</param>
+        <summary>指定したサービス プリンシパル名 (SPN) を表す <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクトを作成します。</summary>
+        <returns>このメソッドが作成する <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが作成する <xref:System.IdentityModel.Claims.Claim> オブジェクトのプロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.IdentityModel.Claims.Claim.ClaimType%2A>|<xref:System.IdentityModel.Claims.ClaimTypes.Spn%2A>|  
+|<xref:System.IdentityModel.Claims.Claim.Resource%2A>|`spn` パラメーターの値。|  
+|<xref:System.IdentityModel.Claims.Claim.Right%2A>|<xref:System.IdentityModel.Claims.Rights.PossessProperty%2A>。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="spn" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateThumbprintClaim">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Claims.Claim CreateThumbprintClaim (byte[] thumbprint);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IdentityModel.Claims.Claim CreateThumbprintClaim(unsigned int8[] thumbprint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Claims.Claim.CreateThumbprintClaim(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Claims.Claim</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thumbprint" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="thumbprint">クレームに関連するエンティティの拇印を指定するバイト値の配列。 このパラメーターは <see langword="null" /> にすることはできません。 このパラメーターが <see langword="null" /> の場合、このメソッドは <see cref="T:System.ArgumentNullException" /> 例外をスローします。</param>
+        <summary>指定した拇印を表す <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクトを作成します。</summary>
+        <returns>このメソッドが作成する <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが作成する <xref:System.IdentityModel.Claims.Claim> オブジェクトのプロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.IdentityModel.Claims.Claim.ClaimType%2A>|<xref:System.IdentityModel.Claims.ClaimTypes.Thumbprint%2A>|  
+|<xref:System.IdentityModel.Claims.Claim.Resource%2A>|`thumbprint` パラメーターの値。|  
+|<xref:System.IdentityModel.Claims.Claim.Right%2A>|<xref:System.IdentityModel.Claims.Rights.PossessProperty%2A>。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="thumbprint" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateUpnClaim">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Claims.Claim CreateUpnClaim (string upn);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IdentityModel.Claims.Claim CreateUpnClaim(string upn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Claims.Claim.CreateUpnClaim(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Claims.Claim</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="upn" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="upn">このクレームに関連するエンティティの UPN。 このパラメーターは <see langword="null" /> にすることはできません。 このパラメーターが <see langword="null" /> の場合、このメソッドは <see cref="T:System.ArgumentNullException" /> 例外をスローします。</param>
+        <summary>指定したユニバーサル プリンシパル名 (UPN) を表す <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクトを作成します。</summary>
+        <returns>このメソッドが作成する <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが作成する <xref:System.IdentityModel.Claims.Claim> オブジェクトのプロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.IdentityModel.Claims.Claim.ClaimType%2A>|<xref:System.IdentityModel.Claims.ClaimTypes.Upn%2A>|  
+|<xref:System.IdentityModel.Claims.Claim.Resource%2A>|`upn` パラメーターの値。|  
+|<xref:System.IdentityModel.Claims.Claim.Right%2A>|<xref:System.IdentityModel.Claims.Rights.PossessProperty%2A>。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="upn" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateUriClaim">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Claims.Claim CreateUriClaim (Uri uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IdentityModel.Claims.Claim CreateUriClaim(class System.Uri uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Claims.Claim.CreateUriClaim(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Claims.Claim</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="uri">このクレームに関連するエンティティの URL を表す <see cref="T:System.Uri" />。 このパラメーターは <see langword="null" /> にすることはできません。 このパラメーターが <see langword="null" /> の場合、このメソッドは <see cref="T:System.ArgumentNullException" /> 例外をスローします。</param>
+        <summary>指定した URL (Uniform Resource Locator) を表す <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクトを作成します。</summary>
+        <returns>このメソッドが作成する <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが作成する <xref:System.IdentityModel.Claims.Claim> オブジェクトのプロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.IdentityModel.Claims.Claim.ClaimType%2A>|<xref:System.IdentityModel.Claims.ClaimTypes.Uri%2A>|  
+|<xref:System.IdentityModel.Claims.Claim.Resource%2A>|`uri` パラメーターの値。|  
+|<xref:System.IdentityModel.Claims.Claim.Right%2A>|<xref:System.IdentityModel.Claims.Rights.PossessProperty%2A>。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="uri" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateWindowsSidClaim">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Claims.Claim CreateWindowsSidClaim (System.Security.Principal.SecurityIdentifier sid);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IdentityModel.Claims.Claim CreateWindowsSidClaim(class System.Security.Principal.SecurityIdentifier sid) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Claims.Claim.CreateWindowsSidClaim(System.Security.Principal.SecurityIdentifier)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Claims.Claim</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sid" Type="System.Security.Principal.SecurityIdentifier" />
+      </Parameters>
+      <Docs>
+        <param name="sid">A <see cref="T:System.Security.Principal.SecurityIdentifier" /> SID を表すです。</param>
+        <summary>指定したセキュリティ ID (SID) を表す <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクトを作成します。</summary>
+        <returns><see cref="T:System.IdentityModel.Claims.Claim" /> パラメーターに指定された SID を表す <paramref name="sid" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが作成する <xref:System.IdentityModel.Claims.Claim> オブジェクトのプロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.IdentityModel.Claims.Claim.ClaimType%2A>|<xref:System.IdentityModel.Claims.ClaimTypes.Sid%2A>|  
+|<xref:System.IdentityModel.Claims.Claim.Resource%2A>|`sid` パラメーターの値。|  
+|<xref:System.IdentityModel.Claims.Claim.Right%2A>|<xref:System.IdentityModel.Claims.Rights.PossessProperty%2A>。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="sid" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateX500DistinguishedNameClaim">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Claims.Claim CreateX500DistinguishedNameClaim (System.Security.Cryptography.X509Certificates.X500DistinguishedName x500DistinguishedName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IdentityModel.Claims.Claim CreateX500DistinguishedNameClaim(class System.Security.Cryptography.X509Certificates.X500DistinguishedName x500DistinguishedName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Claims.Claim.CreateX500DistinguishedNameClaim(System.Security.Cryptography.X509Certificates.X500DistinguishedName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Claims.Claim</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x500DistinguishedName" Type="System.Security.Cryptography.X509Certificates.X500DistinguishedName" />
+      </Parameters>
+      <Docs>
+        <param name="x500DistinguishedName">クレームに関連するエンティティの X.500 識別名を指定する <see cref="T:System.Security.Cryptography.X509Certificates.X500DistinguishedName" />。 このパラメーターは <see langword="null" /> にすることはできません。 このパラメーターが <see langword="null" /> の場合、このメソッドは <see cref="T:System.ArgumentNullException" /> 例外をスローします。</param>
+        <summary>指定した X.500 識別名を表す <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクトを作成します。</summary>
+        <returns>このメソッドが作成する <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが作成する <xref:System.IdentityModel.Claims.Claim> オブジェクトのプロパティ値を次の表に示します。  
+  
+ <xref:System.IdentityModel.Claims.Claim.ClaimType%2A>  
+ <xref:System.IdentityModel.Claims.ClaimTypes.X500DistinguishedName%2A>  
+  
+ <xref:System.IdentityModel.Claims.Claim.Resource%2A>  
+ `x500DistinguishedName` パラメーターの値。  
+  
+ <xref:System.IdentityModel.Claims.Claim.Right%2A>  
+ <xref:System.IdentityModel.Claims.Rights.PossessProperty%2A>。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="x500DistinguishedName" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultComparer">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEqualityComparer&lt;System.IdentityModel.Claims.Claim&gt; DefaultComparer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Collections.Generic.IEqualityComparer`1&lt;class System.IdentityModel.Claims.Claim&gt; DefaultComparer" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Claims.Claim.DefaultComparer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEqualityComparer&lt;System.IdentityModel.Claims.Claim&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>2 つの <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクトが等しいかどうかを比較できるオブジェクトを取得します。</summary>
+        <value>2 つの <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> オブジェクトを比較する <see cref="T:System.IdentityModel.Claims.Claim" /> インターフェイスの実装。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 定義済みのクレームの種類と照合するには、<xref:System.IdentityModel.Claims.Claim.DefaultComparer%2A> プロパティの値を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Claims.Claim.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在の <see cref="T:System.IdentityModel.Claims.Claim" /> と比較するオブジェクト。</param>
+        <summary>指定したオブジェクトが現在の <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクトと同じクレームを表すかどうかを調べます。</summary>
+        <returns>
+          <see langword="true" /> が現在の <paramref name="obj" /> と同じクレームを表す場合は <see cref="T:System.IdentityModel.Claims.Claim" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Object.Equals%2A> オブジェクトに対する等値比較を提供するために、<xref:System.IdentityModel.Claims.Claim> メソッドをオーバーライドします。 比較は、<xref:System.IdentityModel.Claims.Claim.Right%2A>、<xref:System.IdentityModel.Claims.Claim.ClaimType%2A>、および <xref:System.IdentityModel.Claims.Claim.Resource%2A> という 3 つのプロパティの値の比較で構成されます。 <xref:System.IdentityModel.Claims.Claim.Resource%2A> プロパティに対して使用される比較アルゴリズムは、<xref:System.IdentityModel.Claims.Claim.ClaimType%2A> プロパティの値によって決まります。 次の表は、指定したクレームの種類に対して使用される比較アルゴリズムの詳細です。  
+  
+|クレームの種類|条件式|  
+|----------------|----------------|  
+|<xref:System.IdentityModel.Claims.ClaimTypes.Dns%2A>|リソースの、大文字と小文字を区別しない文字列比較。|  
+|<xref:System.IdentityModel.Claims.ClaimTypes.Hash%2A>|バイトごとの比較。|  
+|<xref:System.IdentityModel.Claims.ClaimTypes.Rsa%2A>|アルゴリズムの剰余部分と指数部分に対するバイトごとの比較。|  
+|<xref:System.IdentityModel.Claims.ClaimTypes.Thumbprint%2A>|バイトごとの比較。|  
+|<xref:System.IdentityModel.Claims.ClaimTypes.Upn%2A>|SID の比較。|  
+|<xref:System.IdentityModel.Claims.ClaimTypes.X500DistinguishedName%2A>|正規化された X.500 未処理データの比較。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Claims.Claim.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のクレームのハッシュ コードを返します。</summary>
+        <returns>クレームのハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.IdentityModel.Claims.Claim.Equals%2A> メソッドによって等しいと評価された 2 つのオブジェクトに対して同じハッシュ コードを生成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Resource">
+      <MemberSignature Language="C#" Value="public object Resource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Resource" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Claims.Claim.Resource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクトが関連するリソースを取得します。</summary>
+        <value>この <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクトが関連するリソース。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[c_Claim#2](~/samples/snippets/csharp/VS_Snippets_CFX/c_claim/cs/source.cs#2)]
+ [!code-vb[c_Claim#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_claim/vb/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Right">
+      <MemberSignature Language="C#" Value="public string Right { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Right" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Claims.Claim.Right" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクトと関連する権限を指定する URI (Uniform Resource Identifier) の文字列表現。 定義済みの権限は、<see cref="T:System.IdentityModel.Claims.Rights" /> クラスの静的なプロパティとして使用できます。</summary>
+        <value>この <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクトと関連する権限を指定する URI。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 定義済みの値を含める<xref:System.IdentityModel.Claims.Rights.Identity%2A>と<xref:System.IdentityModel.Claims.Rights.PossessProperty%2A>です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[c_Claim#2](~/samples/snippets/csharp/VS_Snippets_CFX/c_claim/cs/source.cs#2)]
+ [!code-vb[c_Claim#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_claim/vb/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Claims.Claim System { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.IdentityModel.Claims.Claim System" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Claims.Claim.System" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Claims.Claim</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システム エンティティを表す定義済みのクレーム。</summary>
+        <value>システム エンティティを表す <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクト。 この <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクトのプロパティ値を次の表に示します。  
+  
+ <list type="table"><listheader><term>プロパティ  
+  
+ </term><description>値  
+  
+ </description></listheader><item><term><see cref="P:System.IdentityModel.Claims.Claim.ClaimType" /></term><description><see cref="P:System.IdentityModel.Claims.ClaimTypes.System" /></description></item><item><term><see cref="P:System.IdentityModel.Claims.Claim.Resource" /></term><description><see langword="System" /></description></item><item><term><see cref="P:System.IdentityModel.Claims.Claim.Right" /></term><description><see cref="P:System.IdentityModel.Claims.Rights.Identity" /></description></item></list></value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Claims.Claim.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクトの文字列表現を返します。</summary>
+        <returns>この <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される文字列には、<xref:System.IdentityModel.Claims.Claim.Right%2A> プロパティと <xref:System.IdentityModel.Claims.Claim.ClaimType%2A> プロパティの値が含まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,99 @@
+<Type Name="ClientRemotingConfig" FullName="System.EnterpriseServices.Internal.ClientRemotingConfig">
+  <TypeSignature Language="C#" Value="public class ClientRemotingConfig" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ClientRemotingConfig extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.Internal.ClientRemotingConfig" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>静的な定義<see cref="M:System.EnterpriseServices.Internal.ClientRemotingConfig.Write(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)" />クライアント タイプ ライブラリのクライアントのリモート処理構成ファイルを作成するメソッド。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.Internal.ClientRemotingConfig.Write%2A>メソッドを使って、 <xref:System.EnterpriseServices.Internal.Publish> (拡張子 .tlb) クライアントのタイプ ライブラリからの COM インターフェイスの生成中にクラスです。 <xref:System.EnterpriseServices.Internal.Publish>クラスは、SOAP 対応の COM + アプリケーションの COM インターフェイスを公開します。 メソッドのパラメーターの 1 つは、共通言語ランタイム (CLR) メタデータを格納するアセンブリの名前を<xref:System.EnterpriseServices.Internal.Publish>が既にクライアントのタイプ ライブラリを生成します。  
+  
+ <xref:System.EnterpriseServices.Internal.ClientRemotingConfig.Write%2A>直接呼び出す必要はありません。 代わりに、<xref:System.EnterpriseServices.Internal.Publish.ProcessClientTlb%2A> クラスの <xref:System.EnterpriseServices.Internal.Publish> メソッドを呼び出します。  
+  
+ <xref:System.EnterpriseServices.Internal.ClientRemotingConfig>.NET Framework によって内部的に使用されます。 コード内で直接、クラスを使用する必要はありません。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+    <altmember cref="T:System.EnterpriseServices.Internal.Publish" />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ClientRemotingConfig ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.ClientRemotingConfig.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.EnterpriseServices.Internal.ClientRemotingConfig" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public static bool Write (string DestinationDirectory, string VRoot, string BaseUrl, string AssemblyName, string TypeName, string ProgId, string Mode, string Transport);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Write(string DestinationDirectory, string VRoot, string BaseUrl, string AssemblyName, string TypeName, string ProgId, string Mode, string Transport) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.ClientRemotingConfig.Write(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="DestinationDirectory" Type="System.String" />
+        <Parameter Name="VRoot" Type="System.String" />
+        <Parameter Name="BaseUrl" Type="System.String" />
+        <Parameter Name="AssemblyName" Type="System.String" />
+        <Parameter Name="TypeName" Type="System.String" />
+        <Parameter Name="ProgId" Type="System.String" />
+        <Parameter Name="Mode" Type="System.String" />
+        <Parameter Name="Transport" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="DestinationDirectory">構成ファイルを作成するためのフォルダーです。</param>
+        <param name="VRoot">仮想ルートの名前。</param>
+        <param name="BaseUrl">仮想ルートを含む基本 URL です。</param>
+        <param name="AssemblyName">タイプ ライブラリに対応する共通言語ランタイム (CLR) メタデータを含むアセンブリの表示名。</param>
+        <param name="TypeName">タイプ ライブラリに対応する CLR メタデータを含むアセンブリの完全修飾名。</param>
+        <param name="ProgId">クラスのプログラム id。</param>
+        <param name="Mode">ライセンス認証のモード。</param>
+        <param name="Transport">使用しません。 指定<see langword="null" />このパラメーターにします。</param>
+        <summary>SOAP 対応の COM + アプリケーションでは、クライアントのタイプ ライブラリのクライアントのリモート処理構成ファイルを作成します。</summary>
+        <returns>
+          <see langword="true" />クライアントのリモート処理構成ファイルが正常に作成された場合それ以外の場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 静的な<xref:System.EnterpriseServices.Internal.ClientRemotingConfig.Write%2A>メソッドによって呼び出されます、 <xref:System.EnterpriseServices.Internal.Publish> (拡張子 .tlb) クライアントのタイプ ライブラリからの COM インターフェイスの生成中にクラスです。 <xref:System.EnterpriseServices.Internal.Publish>クラスは、SOAP 対応の COM + アプリケーションの COM インターフェイスを公開します。  
+  
+ <xref:System.EnterpriseServices.Internal.ClientRemotingConfig.Write%2A>直接呼び出す必要はありません。 代わりに、<xref:System.EnterpriseServices.Internal.Publish.ProcessClientTlb%2A> クラスの <xref:System.EnterpriseServices.Internal.Publish> メソッドを呼び出します。  
+  
+ `BaseUrl`と`VRoot`クライアント要素をフォームに (をパス区切りに、必要な場合) パラメーターの値が連結された`URL`属性の値。  
+  
+ `AssemblyName`パラメーターは、CLR メタデータを含むアセンブリを識別する<xref:System.EnterpriseServices.Internal.Publish>を使用して、<xref:System.EnterpriseServices.Internal.GenerateMetadata>クラスでは、既にクライアントのタイプ ライブラリを生成します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

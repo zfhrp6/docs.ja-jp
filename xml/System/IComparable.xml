@@ -1,0 +1,153 @@
+<Type Name="IComparable" FullName="System.IComparable">
+  <TypeSignature Language="C#" Value="public interface IComparable" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IComparable" />
+  <TypeSignature Language="DocId" Value="T:System.IComparable" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>値型またはクラスで実装する、インスタンスの並べ替えを目的とする型固有の汎用比較メソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、値を持つ順序付けしたり並べ替えの種類によって実装されます。 実装する型が 1 つのメソッドを定義することが必要です<xref:System.IComparable.CompareTo%28System.Object%29>がかどうか、現在のインスタンスの位置を並べ替え順序で前に、その後、同じ型の 2 番目のオブジェクトと同じかを示すです。 インスタンスの<xref:System.IComparable>実装が自動的にメソッドによって呼び出されますなど<xref:System.Array.Sort%2A?displayProperty=nameWithType>と<xref:System.Collections.ArrayList.Sort%2A?displayProperty=nameWithType>です。  
+  
+ 実装、<xref:System.IComparable.CompareTo%28System.Object%29>メソッドが返す必要があります、<xref:System.Int32>が 3 つの値のいずれかの次の表に示すようにします。  
+  
+|値|説明|  
+|-----------|-------------|  
+|0 より小さい値|現在のインスタンスで指定されたオブジェクトの前に、<xref:System.IComparable.CompareTo%2A>並べ替え順序のメソッドです。|  
+|0|この現在のインスタンスが並べ替え順序内で指定されたオブジェクトとしての同じ位置で発生する、<xref:System.IComparable.CompareTo%2A>メソッドです。|  
+|0 より大きい値|この現在のインスタンスで指定されたオブジェクトに依存して、<xref:System.IComparable.CompareTo%2A>並べ替え順序のメソッドです。|  
+  
+ すべての数値型 (など<xref:System.Int32>と<xref:System.Double>) 実装<xref:System.IComparable>と同様、 <xref:System.String>、 <xref:System.Char>、および<xref:System.DateTime>です。 カスタム型は、独自の実装も提供する必要があります<xref:System.IComparable>オブジェクトのインスタンスを並べ替える、または並べ替えを有効にします。  
+  
+   
+  
+## Examples  
+ 次の例は、の実装を示しています。<xref:System.IComparable>と必要な<xref:System.IComparable.CompareTo%2A>メソッドです。  
+  
+ [!code-cpp[IComparable Example#1](~/samples/snippets/cpp/VS_Snippets_CLR/IComparable Example/CPP/source.cpp#1)]
+ [!code-csharp[IComparable Example#1](~/samples/snippets/csharp/VS_Snippets_CLR/IComparable Example/CS/source.cs#1)]
+ [!code-vb[IComparable Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/IComparable Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CompareTo">
+      <MemberSignature Language="C#" Value="public int CompareTo (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 CompareTo(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IComparable.CompareTo(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">このインスタンスと比較するオブジェクト。</param>
+        <summary>現在のインスタンスを同じ型の別のオブジェクトと比較し、現在のインスタンスの並べ替え順序での位置が、比較対象のオブジェクトと比べて前か、後か、または同じかを示す整数を返します。</summary>
+        <returns>比較対象オブジェクトの相対順序を示す値。 戻り値の意味は次のとおりです。  
+  
+ <list type="table"><listheader><term>値  
+  
+ </term><description>意味  
+  
+ </description></listheader><item><term>0 より小さい値  
+  
+ </term><description>このインスタンスの前に<paramref name="obj" />並べ替え順序で。  
+  
+ </description></item><item><term>0  
+  
+ </term><description>このインスタンスが、並べ替え順序内の同じ位置で発生する<paramref name="obj" />です。  
+  
+ </description></item><item><term>0 より大きい値  
+  
+ </term><description>このインスタンスに依存して<paramref name="obj" />並べ替え順序で。  
+  
+ </description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IComparable.CompareTo%2A>メソッドは値を持つ順序付けしたり並べ替えの種類によって実装されます。 メソッドによって呼び出されます自動的に、非ジェネリック コレクション オブジェクトのメソッドなど<xref:System.Array.Sort%2A?displayProperty=nameWithType>配列の各メンバーの並べ替えにします。 カスタムのクラスまたは構造体を実装しない場合<xref:System.IComparable>そのメンバーを並べ替えることができず、および並べ替え操作を生成する可能性、<xref:System.InvalidOperationException>です。  
+  
+ このメソッドは定義のみであるため、効果が特定のクラスまたは値の型によって実装する必要があります。 (「の前に」、「と同じ位置で発生する」および「後」) のセクションでは、特定の実装によって異なります。 戻り値で指定された比較の意味です。  
+  
+ 定義では、任意のオブジェクトよりも大きい値を比較して (または後) `null`、互いに等しい 2 つの null 参照を比較します。  
+  
+ パラメーター、 `obj`、する必要があります、クラスと同じ型であるまたは値の型です。 このインターフェイスを実装するそれ以外の場合、<xref:System.ArgumentException>がスローされます。  
+  
+   
+  
+## Examples  
+ 次の例は、の使用を示しています。<xref:System.IComparable.CompareTo%2A>を比較する、`Temperature`オブジェクトを実装する<xref:System.IComparable>に別のオブジェクト。 `Temperature`オブジェクトを実装して<xref:System.IComparable.CompareTo%2A>への呼び出しをラップするだけで、<xref:System.Int32.CompareTo%2A?displayProperty=nameWithType>メソッドです。  
+  
+ [!code-cpp[IComparable Example#1](~/samples/snippets/cpp/VS_Snippets_CLR/IComparable Example/CPP/source.cpp#1)]
+ [!code-csharp[IComparable Example#1](~/samples/snippets/csharp/VS_Snippets_CLR/IComparable Example/CS/source.cs#1)]
+ [!code-vb[IComparable Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/IComparable Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="obj" />このインスタンスと同じ型ではありません。</exception>
+        <block subset="none" type="overrides">
+          <para>オブジェクト A、B、C、次が満たす必要があります。  
+  
+ <c>A.CompareTo(A)</c>ゼロを返す必要があります。  
+  
+ 場合<c>A.CompareTo(B)</c> 0 が返されます、し<c>B.CompareTo(A)</c>ゼロを返す必要があります。  
+  
+ 場合<c>A.CompareTo(B)</c>は 0 を返しますと<c>B.CompareTo(C)</c> 0 が返されます、し<c>A.CompareTo(C)</c>ゼロを返す必要があります。  
+  
+ 場合<c>A.CompareTo(B)</c>し、0 以外の値を返します<c>B.CompareTo(A)</c>逆の符号の値を返す必要があります。  
+  
+ 場合<c>A.CompareTo(B)</c>値を返します<paramref name="x" />には、0 と等しくないと<c>B.CompareTo(C)</c>値を返します<paramref name="y" />と同じ符号の<paramref name="x" />、し<c>A.CompareTo(C)</c>と同じ符号の値を返す必要があります<paramref name="x" />と<paramref name="y" />です。</para>
+        </block>
+        <block subset="none" type="usage">
+          <para>使用して、<see cref="M:System.IComparable.CompareTo(System.Object)" />メソッド、クラスのインスタンスの構成を決定します。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

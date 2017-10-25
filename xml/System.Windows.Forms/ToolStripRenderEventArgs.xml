@@ -1,0 +1,227 @@
+<Type Name="ToolStripRenderEventArgs" FullName="System.Windows.Forms.ToolStripRenderEventArgs">
+  <TypeSignature Language="C#" Value="public class ToolStripRenderEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ToolStripRenderEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ToolStripRenderEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、 <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderImageMargin(System.Windows.Forms.ToolStripRenderEventArgs)" />、 <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripBorder(System.Windows.Forms.ToolStripRenderEventArgs)" />、および<see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripBackground(System.Windows.Forms.ToolStripRenderEventArgs)" />メソッドです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ToolStripRenderEventArgs>クラスは、のデータも用意されています。、 <xref:System.Windows.Forms.ToolStripRenderer.DrawImageMargin%2A>、 <xref:System.Windows.Forms.ToolStripRenderer.DrawToolStripBorder%2A>、および<xref:System.Windows.Forms.ToolStripRenderer.DrawToolStripBackground%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripBorder%2A>カスタム境界線を描画するメソッド、<xref:System.Windows.Forms.ToolStrip>コントロール。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.ToolStripRenderer>クラスです。  
+  
+ [!code-csharp[System.Windows.Forms.ToolStrip.GridStrip#12](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.GridStrip/CS/GridStrip.cs#12)]
+ [!code-vb[System.Windows.Forms.ToolStrip.GridStrip#12](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.GridStrip/VB/GridStrip.vb#12)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ToolStripRenderEventArgs (System.Drawing.Graphics g, System.Windows.Forms.ToolStrip toolStrip);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Graphics g, class System.Windows.Forms.ToolStrip toolStrip) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderEventArgs.#ctor(System.Drawing.Graphics,System.Windows.Forms.ToolStrip)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="toolStrip" Type="System.Windows.Forms.ToolStrip" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />描画に使用します。</param>
+        <param name="toolStrip"><see cref="T:System.Windows.Forms.ToolStrip" />を描画します。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.Forms.ToolStripRenderEventArgs" /> 、指定されたクラス<see cref="T:System.Windows.Forms.ToolStrip" />指定して、<see cref="T:System.Drawing.Graphics" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ToolStripRenderEventArgs (System.Drawing.Graphics g, System.Windows.Forms.ToolStrip toolStrip, System.Drawing.Rectangle affectedBounds, System.Drawing.Color backColor);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Graphics g, class System.Windows.Forms.ToolStrip toolStrip, valuetype System.Drawing.Rectangle affectedBounds, valuetype System.Drawing.Color backColor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderEventArgs.#ctor(System.Drawing.Graphics,System.Windows.Forms.ToolStrip,System.Drawing.Rectangle,System.Drawing.Color)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="toolStrip" Type="System.Windows.Forms.ToolStrip" />
+        <Parameter Name="affectedBounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="backColor" Type="System.Drawing.Color" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />描画に使用します。</param>
+        <param name="toolStrip"><see cref="T:System.Windows.Forms.ToolStrip" />を描画します。</param>
+        <param name="affectedBounds"><see cref="T:System.Drawing.Rectangle" />描画する領域の境界を表すです。</param>
+        <param name="backColor"><see cref="T:System.Drawing.Color" />の背景、<see cref="T:System.Windows.Forms.ToolStrip" />で塗りつぶされます。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.Forms.ToolStripRenderEventArgs" /> 、指定されたクラス<see cref="T:System.Windows.Forms.ToolStrip" />を指定して<see cref="T:System.Drawing.Graphics" />を指定して、指定した境界を描画する<see cref="T:System.Drawing.Color" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AffectedBounds">
+      <MemberSignature Language="C#" Value="public System.Drawing.Rectangle AffectedBounds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Rectangle AffectedBounds" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ToolStripRenderEventArgs.AffectedBounds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Drawing.Rectangle" />描画する領域の境界を表すです。</summary>
+        <value><see cref="T:System.Drawing.Rectangle" />描画する領域の境界を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripBorder%2A>カスタム境界線を描画するメソッド、<xref:System.Windows.Forms.ToolStrip>コントロール。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.ToolStripRenderer>クラスです。  
+  
+ [!code-csharp[System.Windows.Forms.ToolStrip.GridStrip#12](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.GridStrip/CS/GridStrip.cs#12)]
+ [!code-vb[System.Windows.Forms.ToolStrip.GridStrip#12](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.GridStrip/VB/GridStrip.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color BackColor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color BackColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ToolStripRenderEventArgs.BackColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Drawing.Color" />の背景、<see cref="T:System.Windows.Forms.ToolStrip" />で塗りつぶされます。</summary>
+        <value><see cref="T:System.Drawing.Color" />の背景、<see cref="T:System.Windows.Forms.ToolStrip" />で塗りつぶされます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolStripRenderer.RenderToolStripBackground?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolStripRenderer>、ように、<xref:System.Windows.Forms.ToolStripSystemRenderer>または<xref:System.Windows.Forms.ToolStripProfessionalRenderer>です。 インスタンスを名前`ToolStripRenderer1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolStripRenderer.RenderToolStripBackground?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#584](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#584)]
+ [!code-vb[System.Windows.Forms.EventExamples#584](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#584)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectedArea">
+      <MemberSignature Language="C#" Value="public System.Drawing.Rectangle ConnectedArea { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Rectangle ConnectedArea" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ToolStripRenderEventArgs.ConnectedArea" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Drawing.Rectangle" />の間の重複部分を表す、<see cref="T:System.Windows.Forms.ToolStripDropDown" />とその<see cref="P:System.Windows.Forms.ToolStripDropDown.OwnerItem" />です。</summary>
+        <value><see cref="T:System.Drawing.Rectangle" />の間の重複部分を表す、<see cref="T:System.Windows.Forms.ToolStripDropDown" />とその<see cref="P:System.Windows.Forms.ToolStripDropDown.OwnerItem" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Forms.ToolStrip>されませんが、<xref:System.Windows.Forms.ToolStripDropDown>または<xref:System.Windows.Forms.ToolStripDropDown.OwnerItem%2A?displayProperty=nameWithType>は`null`、<xref:System.Windows.Forms.ToolStripRenderEventArgs.ConnectedArea%2A>プロパティが空白を返します<xref:System.Drawing.Rectangle>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolStripRenderer.RenderToolStripBackground?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolStripRenderer>、ように、<xref:System.Windows.Forms.ToolStripSystemRenderer>または<xref:System.Windows.Forms.ToolStripProfessionalRenderer>です。 インスタンスを名前`ToolStripRenderer1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolStripRenderer.RenderToolStripBackground?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#584](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#584)]
+ [!code-vb[System.Windows.Forms.EventExamples#584](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#584)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Graphics">
+      <MemberSignature Language="C#" Value="public System.Drawing.Graphics Graphics { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Graphics Graphics" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ToolStripRenderEventArgs.Graphics" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Graphics</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Drawing.Graphics" />の描画に使用します。</summary>
+        <value><see cref="T:System.Drawing.Graphics" />の描画に使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripBorder%2A>カスタム境界線を描画するメソッド、<xref:System.Windows.Forms.ToolStrip>コントロール。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.ToolStripRenderer>クラスです。  
+  
+ [!code-csharp[System.Windows.Forms.ToolStrip.GridStrip#12](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.GridStrip/CS/GridStrip.cs#12)]
+ [!code-vb[System.Windows.Forms.ToolStrip.GridStrip#12](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.GridStrip/VB/GridStrip.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolStrip">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ToolStrip ToolStrip { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ToolStrip ToolStrip" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ToolStripRenderEventArgs.ToolStrip" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStrip</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.ToolStrip" />描画します。</summary>
+        <value><see cref="T:System.Windows.Forms.ToolStrip" />描画します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripBackground%2A>の背景のグラデーションを描画する方法、<xref:System.Windows.Forms.ToolStrip>コントロール。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.ToolStripRenderer>クラスです。  
+  
+ [!code-csharp[System.Windows.Forms.ToolStrip.GridStrip#13](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.GridStrip/CS/GridStrip.cs#13)]
+ [!code-vb[System.Windows.Forms.ToolStrip.GridStrip#13](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.GridStrip/VB/GridStrip.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

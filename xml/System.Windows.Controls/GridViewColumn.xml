@@ -1,0 +1,935 @@
+<Type Name="GridViewColumn" FullName="System.Windows.Controls.GridViewColumn">
+  <TypeSignature Language="C#" Value="public class GridViewColumn : System.Windows.DependencyObject, System.ComponentModel.INotifyPropertyChanged" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GridViewColumn extends System.Windows.DependencyObject implements class System.ComponentModel.INotifyPropertyChanged" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.GridViewColumn" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.DependencyObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.INotifyPropertyChanged</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None, Readability=System.Windows.Readability.Unreadable)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Header")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.StyleTypedProperty(Property="HeaderContainerStyle", StyleTargetType=typeof(System.Windows.Controls.GridViewColumnHeader))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>データを表示する列を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Controls.GridViewColumn>によって使用される、<xref:System.Windows.Controls.GridView>データの列を表示する表示モード。 <xref:System.Windows.Controls.ListView>を実装する、<xref:System.Windows.Controls.GridView>表示モードでは、列のデータを提供します。 データ バインドを使用してデータを指定する、<xref:System.Windows.Controls.GridViewColumn>です。  
+  
+ 使用することができます、<xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A>列に表示するデータを定義するプロパティです。 一部としてデータを定義することも、<xref:System.Windows.DataTemplate>で指定された、<xref:System.Windows.Controls.GridViewColumn.CellTemplate%2A>プロパティです。 別のセルがある異なる場合<xref:System.Windows.DataTemplate>、オブジェクト、<xref:System.Windows.Controls.GridViewColumn.CellTemplateSelector%2A>プロパティを指定できます、<xref:System.Windows.Controls.DataTemplateSelector>です。 次の一覧は、順位の高いを最も低い優先順位の高いものからここでは、前述のプロパティを示しています。  
+  
+-   <xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A>  
+  
+-   <xref:System.Windows.Controls.GridViewColumn.CellTemplate%2A>  
+  
+-   <xref:System.Windows.Controls.GridViewColumn.CellTemplateSelector%2A>  
+  
+ <xref:System.Windows.Controls.GridViewColumn>クラスには、定義し、列の列ヘッダーのカスタマイズに使用できるプロパティも含まれています。 <xref:System.Windows.Controls.GridViewColumn.Header%2A>プロパティは、列ヘッダーの内容を定義できます。 などの他のプロパティ<xref:System.Windows.Controls.GridViewColumn.HeaderTemplate%2A>と<xref:System.Windows.Controls.GridViewColumn.HeaderContainerStyle%2A>コンテンツとの列ヘッダーのスタイルも指定できます。 これらのプロパティの一部も上にある他のクラスなど、<xref:System.Windows.Controls.GridViewColumnHeader>クラスです。 スタイルおよび列ヘッダー、およびこれらのプロパティの優先順位の順序に関する情報について、テンプレート定義に使用されるプロパティの詳細については、次を参照してください。 [GridView 列ヘッダーのスタイルとテンプレートの概要](~/docs/framework/wpf/controls/gridview-column-header-styles-and-templates-overview.md)です。  
+  
+ <xref:System.Windows.Controls.GridViewColumn> クラスは、<xref:System.ComponentModel.INotifyPropertyChanged> インターフェイスを実装します。 このインターフェイスには、プロパティの値に変更がなどが発生したときに発生するイベントをサブスクライブする機能が用意されています、<xref:System.Windows.Controls.GridViewColumn.ActualWidth%2A>プロパティの値。  
+  
+   
+  
+## Examples  
+ 次の例は、定義する方法を示しています。<xref:System.Windows.Controls.GridViewColumn>オブジェクトに対する、<xref:System.Windows.Controls.GridView>です。  
+  
+ [!code-xaml[ListViewSnips#GridViewColumnContent](~/samples/snippets/csharp/VS_Snippets_Wpf/ListViewSnips/CSharp/Window1.xaml#gridviewcolumncontent)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GridViewColumn ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.GridViewColumn.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.GridViewColumn" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActualWidth">
+      <MemberSignature Language="C#" Value="public double ActualWidth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 ActualWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.GridViewColumn.ActualWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.GridViewColumn" /> の実際の幅を取得します。</summary>
+        <value>列の現在の幅です。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用しての現在の幅を取得することができます、<xref:System.Windows.Controls.GridViewColumn>ときに、<xref:System.Windows.Controls.GridViewColumn.Width%2A>プロパティに設定されている<xref:System.Double.NaN?displayProperty=nameWithType>です。 値<xref:System.Double.NaN?displayProperty=nameWithType>の<xref:System.Windows.Controls.GridViewColumn.Width%2A>プロパティは、列のサイズが最大に列ヘッダーが表示される項目に対応できることを指定します。  
+  
+ 異なり<xref:System.Windows.FrameworkElement.ActualWidth%2A?displayProperty=nameWithType>、<xref:System.Windows.Controls.GridViewColumn.ActualWidth%2A?displayProperty=nameWithType>依存関係プロパティではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CellTemplate">
+      <MemberSignature Language="C#" Value="public System.Windows.DataTemplate CellTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.DataTemplate CellTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.GridViewColumn.CellTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DataTemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または使用して列のセルの内容を表示するテンプレートを設定します。</summary>
+        <value>A<see cref="T:System.Windows.DataTemplate" />列のセルの書式を設定するために使用されます。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次のプロパティはすべてにバインド列のセルの内容の表示し、順位の高い優先順位の高いものから、以下に示します。  
+  
+-   <xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A>  
+  
+-   <xref:System.Windows.Controls.GridViewColumn.CellTemplate%2A>  
+  
+-   <xref:System.Windows.Controls.GridViewColumn.CellTemplateSelector%2A>  
+  
+<a name="xamlAttributeUsage_CellTemplate"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object CellTemplate="{ResourceExtension TemplateResourceKey}"/>  
+```  
+  
+<a name="xamlPropertyElementUsage_CellTemplate"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+<a name="xamlValues_CellTemplate"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *ResourceExtension*  
+ 次のいずれかの: `StaticResource`、または`DynamicResource`です。 参照してください[XAML リソース](~/docs/framework/wpf/advanced/xaml-resources.md)です。  
+  
+ *TemplateResourceKey*  
+ 要求されているテンプレートを識別するキー。 このキーは既存のリソースを<xref:System.Windows.ResourceDictionary>です。  
+  
+> [!NOTE]
+>  プロパティ要素構文は、技術的に可能ですが、推奨されません。 参照してください[インライン スタイルとテンプレート](~/docs/framework/wpf/advanced/inline-styles-and-templates.md)です。 バインディングを使用して参照かも可能ですが、一般的でないです。  
+  
+<a name="dependencyPropertyInfo_CellTemplate"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.GridViewColumn.CellTemplateProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例を指定する方法を示しています、<xref:System.Windows.DataTemplate>表示に使用する、<xref:System.Windows.Controls.GridViewColumn>です。  
+  
+ [!code-xaml[ListViewTemplate#GridViewCellTemplate](~/samples/snippets/csharp/VS_Snippets_Wpf/ListViewTemplate/CS/window1.xaml#gridviewcelltemplate)]  
+  
+ [!code-xaml[ListViewTemplate#CellTemplateProperty](~/samples/snippets/csharp/VS_Snippets_Wpf/ListViewTemplate/CS/window1.xaml#celltemplateproperty)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CellTemplateProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CellTemplateProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CellTemplateProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.GridViewColumn.CellTemplateProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.GridViewColumn.CellTemplate" /> 依存関係プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.GridViewColumn.CellTemplate%2A> 依存関係プロパティの識別子。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CellTemplateSelector">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.DataTemplateSelector CellTemplateSelector { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.DataTemplateSelector CellTemplateSelector" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.GridViewColumn.CellTemplateSelector" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.DataTemplateSelector</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Controls.DataTemplateSelector" />テンプレートを使用して、列のセルを表示するかを決定します。</summary>
+        <value>A<see cref="T:System.Windows.Controls.DataTemplateSelector" />を提供する<see cref="T:System.Windows.DataTemplate" />列のセルを選択します。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次のプロパティはすべてにバインド列のセルの内容の表示し、順位の高い優先順位の高いものから、以下に示します。  
+  
+-   <xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A>  
+  
+-   <xref:System.Windows.Controls.GridViewColumn.CellTemplate%2A>  
+  
+-   <xref:System.Windows.Controls.GridViewColumn.CellTemplateSelector%2A>  
+  
+<a name="xamlAttributeUsage_CellTemplateSelector"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object CellTemplateSelector="{ResourceExtension DataTemplateSelectorClassKey}"/>  
+```  
+  
+<a name="xamlPropertyElementUsage_CellTemplateSelector"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  <object.CellTemplateSelector>  
+    <MyDataTemplateSelectorImplementation .../>  
+  </object.CellTemplateSelector>  
+</object>  
+```  
+  
+<a name="xamlValues_CellTemplateSelector"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *MyDataTemplateSelectorImplementation*  
+ 派生したクラス<xref:System.Windows.Controls.DataTemplateSelector>実用的を実装する<xref:System.Windows.Controls.DataTemplateSelector.SelectTemplate%2A>をオーバーライドします。 カスタム クラスをマップする方法については、次を参照してください。 [XAML 名前空間と WPF XAML のマッピングの Namespace](~/docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)です。  
+  
+ *ResourceExtension*  
+ 次のいずれかの: `StaticResource`、または`DynamicResource`です。 参照してください[XAML リソース](~/docs/framework/wpf/advanced/xaml-resources.md)です。  
+  
+ *DataTemplateSelectorClassKey*  
+ 要求されているセレクターの実装を識別するキー。 このキーは、実際に実装する派生クラス<xref:System.Windows.Controls.DataTemplateSelector.SelectTemplate%2A>をオーバーライドします。 カスタム クラスをマップする方法については、次を参照してください。 [XAML 名前空間と WPF XAML のマッピングの Namespace](~/docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)です。 インスタンスを追加することができますもプログラムによって、<xref:System.Windows.Controls.DataTemplateSelector>リソース ディクショナリへのリソースとしてのクラスです。  
+  
+<a name="dependencyPropertyInfo_CellTemplateSelector"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.GridViewColumn.CellTemplateSelectorProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Controls.GridViewColumn.CellTemplateSelector%2A> プロパティを設定する方法を次の例に示します。  
+  
+ [!code-xaml[ListViewSnips#GridViewColumnContent](~/samples/snippets/csharp/VS_Snippets_Wpf/ListViewSnips/CSharp/Window1.xaml#gridviewcolumncontent)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CellTemplateSelectorProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CellTemplateSelectorProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CellTemplateSelectorProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.GridViewColumn.CellTemplateSelectorProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.GridViewColumn.CellTemplateSelector" /> 依存関係プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.GridViewColumn.CellTemplateSelector%2A> 依存関係プロパティの識別子。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayMemberBinding">
+      <MemberSignature Language="C#" Value="public System.Windows.Data.BindingBase DisplayMemberBinding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Data.BindingBase DisplayMemberBinding" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.GridViewColumn.DisplayMemberBinding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Data.BindingBase</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこの列にバインドするデータ項目を設定します。</summary>
+        <value>列に表示される、指定されたデータ項目の種類。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A>プロパティは、列がその型の値のセットが表示されるようにデータ ソースからデータを列の種類を関連付けます。 データ ソース オブジェクトの例として、<xref:System.Windows.Data.XmlDataProvider>オブジェクトおよび<xref:System.Windows.Data.ObjectDataProvider>オブジェクト。  
+  
+ 次のプロパティは、コンテンツと列のセルのスタイルの定義に使用し、順位の高い優先順位の高いものから、以下に示します。  
+  
+-   <xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A>  
+  
+-   <xref:System.Windows.Controls.GridViewColumn.CellTemplate%2A>  
+  
+-   <xref:System.Windows.Controls.GridViewColumn.CellTemplateSelector%2A>  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A> プロパティを設定する方法を次の例に示します。  
+  
+ [!code-csharp[ListViewCode#GridViewColumnProperties](~/samples/snippets/csharp/VS_Snippets_Wpf/ListViewCode/CSharp/Window1.xaml.cs#gridviewcolumnproperties)]
+ [!code-vb[ListViewCode#GridViewColumnProperties](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ListViewCode/visualbasic/window1.xaml.vb#gridviewcolumnproperties)]
+ [!code-xaml[ListViewCode#GridViewColumnProperties](~/samples/snippets/csharp/VS_Snippets_Wpf/ListViewCode/CSharp/Window1.xaml#gridviewcolumnproperties)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Header">
+      <MemberSignature Language="C#" Value="public object Header { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Header" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.GridViewColumn.Header" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のヘッダーの内容、<see cref="T:System.Windows.Controls.GridViewColumn" />です。</summary>
+        <value>列ヘッダーを使用するオブジェクト。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.GridViewColumn.Header%2A>だけであるオブジェクトにプロパティを設定できます、 `string`、またはオブジェクトのように複雑である、<xref:System.Windows.Controls.StackPanel>コンテンツが埋め込まれています。 既定の列ヘッダーを<xref:System.Windows.Controls.GridView>表示モードから派生したボタンのスタイルが<xref:System.Windows.Controls.Primitives.ButtonBase>のコンテンツを持つ、<xref:System.Windows.Controls.GridViewColumn.Header%2A>プロパティの子として。 列ヘッダーのテンプレートを指定するを参照してください。、<xref:System.Windows.Controls.GridViewColumn.HeaderTemplate%2A>または<xref:System.Windows.Controls.GridViewColumn.HeaderTemplateSelector%2A>プロパティの説明。  
+  
+ 多くの関連クラスの内容、レイアウト、および列ヘッダーのスタイルを定義するプロパティが検出され、または同一の次のような機能があるこれらのプロパティの一部です。 詳細については、[GridView の列ヘッダーのスタイルとテンプレートの概要](~/docs/framework/wpf/controls/gridview-column-header-styles-and-templates-overview.md)を参照してください。  
+  
+<a name="dependencyPropertyInfo_Header"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.GridViewColumn.HeaderProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+<a name="xamlAttributeUsage_Header"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object Header="string"/>  
+```  
+  
+<a name="xamlPropertyElementUsage_Header"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  <HeaderContentObject.../>  
+</object>  
+```  
+  
+<a name="xamlValues_Header"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ \<*HeaderContentObject*.../>  
+ 1 つの要素。 場合、この要素は子要素を持つことができます、 *HeaderContentObject*コンテンツ モデルでは、それらを使用します。  
+  
+## <a name="example"></a>例  
+ <xref:System.Windows.Controls.GridViewColumn.Header%2A> プロパティを設定する方法を次の例に示します。  
+  
+ [!code-csharp[ListViewCode#GridViewColumnProperties](~/samples/snippets/csharp/VS_Snippets_Wpf/ListViewCode/CSharp/Window1.xaml.cs#gridviewcolumnproperties)]
+ [!code-vb[ListViewCode#GridViewColumnProperties](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ListViewCode/visualbasic/window1.xaml.vb#gridviewcolumnproperties)]
+ [!code-xaml[ListViewCode#GridViewColumnProperties](~/samples/snippets/csharp/VS_Snippets_Wpf/ListViewCode/CSharp/Window1.xaml#gridviewcolumnproperties)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderContainerStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Style HeaderContainerStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Style HeaderContainerStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.GridViewColumn.HeaderContainerStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Style</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.GridViewColumn" /> のヘッダーに使用するスタイルを取得または設定します。</summary>
+        <value>列ヘッダーの表示プロパティを定義する <see cref="T:System.Windows.Style" />。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.GridViewColumn.HeaderContainerStyle%2A>プロパティおよび<xref:System.Windows.Controls.GridViewColumn.HeaderTemplate%2A>プロパティは、プロパティ値、および列ヘッダーの内容のビジュアル ツリーにまとめてを定義できます。 <xref:System.Windows.Controls.GridViewColumn.HeaderContainerStyle%2A>プロパティが、定義することによってビジュアル ツリーを指定できますも、<xref:System.Windows.Controls.ControlTemplate>です。  
+  
+ 多くの関連するクラスで、内容、レイアウト、および列ヘッダーのスタイルを定義するプロパティが検出され、または同一の次のような機能があるこれらのプロパティの一部です。 詳細については、[GridView の列ヘッダーのスタイルとテンプレートの概要](~/docs/framework/wpf/controls/gridview-column-header-styles-and-templates-overview.md)を参照してください。  
+  
+ スタイルを設定すると、いくつかの制限が適用されます。 詳細については、次を参照してください。、[スタイルとテンプレート](~/docs/framework/wpf/controls/styling-and-templating.md)です。  
+  
+<a name="xamlAttributeUsage_HeaderContainerStyle"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object HeaderContainerStyle="{ResourceExtension StyleResourceKey}"/>  
+```  
+  
+<a name="xamlPropertyElementUsage_HeaderContainerStyle"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+<a name="xamlValues_HeaderContainerStyle"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *ResourceExtension*  
+ 次のいずれかの: `StaticResource`、または`DynamicResource`です。 参照してください[XAML リソース](~/docs/framework/wpf/advanced/xaml-resources.md)です。  
+  
+ *StyleResourceKey*  
+ 要求されているスタイルを識別するキー。 このキーは既存のリソースを<xref:System.Windows.ResourceDictionary>です。  
+  
+> [!NOTE]
+>  プロパティ要素構文は、技術的に可能ですが、推奨されません。 参照してください[インライン スタイルとテンプレート](~/docs/framework/wpf/advanced/inline-styles-and-templates.md)です。 バインディングを使用して参照かも可能ですが、一般的でないです。  
+  
+<a name="dependencyPropertyInfo_HeaderContainerStyle"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.GridViewColumn.HeaderContainerStyleProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例は、定義する方法を示します、<xref:System.Windows.Controls.GridViewColumn.HeaderContainerStyle%2A>列ヘッダーの表示プロパティを指定します。  
+  
+ [!code-xaml[ListViewTemplate#GridViewHeaderStyle](~/samples/snippets/csharp/VS_Snippets_Wpf/ListViewTemplate/CS/window1.xaml#gridviewheaderstyle)]  
+  
+ [!code-xaml[ListViewTemplate#GridViewColumnTemplate](~/samples/snippets/csharp/VS_Snippets_Wpf/ListViewTemplate/CS/window1.xaml#gridviewcolumntemplate)]  
+  
+ 次の例は、定義する方法を示します、<xref:System.Windows.Controls.GridViewColumn.HeaderContainerStyle%2A>を使用して画面のプロパティを定義する、<xref:System.Windows.Controls.ControlTemplate>です。  
+  
+ [!code-xaml[ListViewTemplate#GridViewColumnHCTwithControlTemplatePart1](~/samples/snippets/csharp/VS_Snippets_Wpf/ListViewTemplate/CS/window1.xaml#gridviewcolumnhctwithcontroltemplatepart1)]  
+  
+ [!code-xaml[ListViewTemplate#GridViewColumnHCTwithControlTemplatePart2](~/samples/snippets/csharp/VS_Snippets_Wpf/ListViewTemplate/CS/window1.xaml#gridviewcolumnhctwithcontroltemplatepart2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderContainerStyleProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HeaderContainerStyleProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HeaderContainerStyleProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.GridViewColumn.HeaderContainerStyleProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.GridViewColumn.HeaderContainerStyle" /> 依存関係プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.GridViewColumn.HeaderContainerStyle%2A> 依存関係プロパティの識別子。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HeaderProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HeaderProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.GridViewColumn.HeaderProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.GridViewColumn.Header" /> 依存関係プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.GridViewColumn.Header%2A> 依存関係プロパティの識別子。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderStringFormat">
+      <MemberSignature Language="C#" Value="public string HeaderStringFormat { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HeaderStringFormat" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.GridViewColumn.HeaderStringFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または書式設定する方法を指定する複合文字列を設定、<see cref="P:System.Windows.Controls.GridViewColumn.Header" />プロパティを文字列として表示されている場合。</summary>
+        <value>書式設定する方法を指定する複合文字列、<see cref="P:System.Windows.Controls.GridViewColumn.Header" />プロパティを文字列として表示されている場合。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、 <xref:System.Windows.Controls.GridView.ColumnHeaderTemplate%2A?displayProperty=nameWithType>、 <xref:System.Windows.Controls.GridViewColumn.HeaderTemplate%2A?displayProperty=nameWithType>、または<xref:System.Windows.Controls.GridViewHeaderRowPresenter.ColumnHeaderTemplate%2A?displayProperty=nameWithType>プロパティが設定されて、このプロパティは無視されます。  
+  
+ いくつかのプロパティを使用すると、列ヘッダーの形式を指定します。  1 つ以上のプロパティが設定されている場合、列ヘッダーを最高の優先順位を持つプロパティの値が設定されます。 列の形式は、いくつかの種類を設定できます。 次の一覧を優先順位の低いものから順番、列ヘッダーを書式設定に使用できるプロパティを示しています。  
+  
+-   <xref:System.Windows.Controls.GridView.ColumnHeaderStringFormat%2A?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.Controls.GridViewHeaderRowPresenter.ColumnHeaderStringFormat%2A?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.Controls.GridViewColumn.HeaderStringFormat%2A?displayProperty=nameWithType>  
+  
+<a name="dependencyPropertyInfo_HeaderStringFormat"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.GridViewColumn.HeaderStringFormatProperty>|  
+|メタデータ プロパティに設定**は true。**|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderStringFormatProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HeaderStringFormatProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HeaderStringFormatProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.GridViewColumn.HeaderStringFormatProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.GridViewColumn.HeaderStringFormat" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderTemplate">
+      <MemberSignature Language="C#" Value="public System.Windows.DataTemplate HeaderTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.DataTemplate HeaderTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.GridViewColumn.HeaderTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DataTemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列ヘッダーの内容の表示に使用するテンプレートを取得または設定します。</summary>
+        <value>A<see cref="T:System.Windows.DataTemplate" />を使用して、列ヘッダーを表示します。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 両方の<xref:System.Windows.Controls.GridViewColumn.HeaderTemplateSelector%2A>プロパティおよび<xref:System.Windows.Controls.GridViewColumn.HeaderTemplate%2A>プロパティが設定されている、<xref:System.Windows.Controls.GridViewColumn.HeaderTemplate%2A>プロパティが優先されます。  
+  
+ 後に、<xref:System.Windows.Controls.GridViewColumn.HeaderTemplate%2A>または<xref:System.Windows.Controls.GridView.ColumnHeaderTemplate%2A>が指定されて、 <xref:System.Windows.Controls.GridViewColumn>、変更することはできません。  
+  
+ 指定して、列ヘッダーの表示を定義することも、<xref:System.Windows.Controls.ControlTemplate>の一部として、<xref:System.Windows.Controls.GridViewColumn.HeaderContainerStyle%2A?displayProperty=nameWithType>です。  
+  
+ 多くの関連クラスの内容、レイアウト、および列ヘッダーのスタイルを定義するプロパティが検出され、または同一の次のような機能があるこれらのプロパティの一部です。 詳細については、[GridView の列ヘッダーのスタイルとテンプレートの概要](~/docs/framework/wpf/controls/gridview-column-header-styles-and-templates-overview.md)を参照してください。  
+  
+<a name="xamlAttributeUsage_HeaderTemplate"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object HeaderTemplate="{ResourceExtension TemplateResourceKey}"/>  
+```  
+  
+<a name="xamlPropertyElementUsage_HeaderTemplate"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+<a name="xamlValues_HeaderTemplate"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *ResourceExtension*  
+ 次のいずれかの: `StaticResource`、または`DynamicResource`です。 参照してください[XAML リソース](~/docs/framework/wpf/advanced/xaml-resources.md)です。  
+  
+ *TemplateResourceKey*  
+ 要求されているテンプレートを識別するキー。 このキーは既存のリソースを<xref:System.Windows.ResourceDictionary>です。  
+  
+> [!NOTE]
+>  プロパティ要素構文は、技術的に可能ですが、推奨されません。 参照してください[インライン スタイルとテンプレート](~/docs/framework/wpf/advanced/inline-styles-and-templates.md)です。 バインディングを使用して参照かも可能ですが、一般的でないです。  
+  
+<a name="dependencyPropertyInfo_HeaderTemplate"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.GridViewColumn.HeaderTemplateProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例のヘッダーの表示に使用するテンプレートを指定する方法を示しています、<xref:System.Windows.Controls.GridViewColumn>です。  
+  
+ [!code-xaml[ListViewTemplate#GridViewHeaderTemplate](~/samples/snippets/csharp/VS_Snippets_Wpf/ListViewTemplate/CS/window1.xaml#gridviewheadertemplate)]  
+  
+ [!code-xaml[ListViewTemplate#GridViewColumnTemplate](~/samples/snippets/csharp/VS_Snippets_Wpf/ListViewTemplate/CS/window1.xaml#gridviewcolumntemplate)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderTemplateProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HeaderTemplateProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HeaderTemplateProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.GridViewColumn.HeaderTemplateProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.GridViewColumn.HeaderTemplate" /> 依存関係プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.GridViewColumn.HeaderTemplate%2A> 依存関係プロパティの識別子。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderTemplateSelector">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.DataTemplateSelector HeaderTemplateSelector { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.DataTemplateSelector HeaderTemplateSelector" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.GridViewColumn.HeaderTemplateSelector" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.DataTemplateSelector</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Controls.DataTemplateSelector" />列ヘッダーの表示に使用するテンプレートを選択するためのロジックを提供します。</summary>
+        <value><see cref="T:System.Windows.Controls.DataTemplateSelector" />ごとのデータ テンプレートの選択を提供するオブジェクト<see cref="T:System.Windows.Controls.GridViewColumn" />です。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 両方の<xref:System.Windows.Controls.GridViewColumn.HeaderTemplateSelector%2A>プロパティおよび<xref:System.Windows.Controls.GridViewColumn.HeaderTemplate%2A>プロパティが設定されている、<xref:System.Windows.Controls.GridViewColumn.HeaderTemplate%2A>プロパティが優先されます。  
+  
+ 多くの関連クラスの内容、レイアウト、および列ヘッダーのスタイルを定義するプロパティが検出され、または同一の次のような機能があるこれらのプロパティの一部です。 詳細については、[GridView の列ヘッダーのスタイルとテンプレートの概要](~/docs/framework/wpf/controls/gridview-column-header-styles-and-templates-overview.md)を参照してください。  
+  
+<a name="xamlAttributeUsage_HeaderTemplateSelector"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object HeaderTemplateSelector="{ResourceExtension DataTemplateSelectorClassKey}"/>  
+```  
+  
+<a name="xamlPropertyElementUsage_HeaderTemplateSelector"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  <object.HeaderTemplateSelector>  
+    <MyDataTemplateSelectorImplementation .../>  
+  </object.HeaderTemplateSelector>  
+</object>  
+```  
+  
+<a name="xamlValues_HeaderTemplateSelector"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *ResourceExtension*  
+ 次のいずれかの: `StaticResource`、または`DynamicResource`です。 参照してください[XAML リソース](~/docs/framework/wpf/advanced/xaml-resources.md)です。  
+  
+ *DataTemplateSelectorClassKey*  
+ 要求されているセレクターの実装を識別するキー。 このキーは、実際に実装する派生クラス<xref:System.Windows.Controls.DataTemplateSelector.SelectTemplate%2A>をオーバーライドします。 カスタム クラスをマップする方法については、次を参照してください。 [XAML 名前空間と WPF XAML のマッピングの Namespace](~/docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)です。 インスタンスを追加することができますもプログラムによって、<xref:System.Windows.Controls.DataTemplateSelector>リソース ディクショナリへのリソースとしてのクラスです。  
+  
+ *MyDataTemplateSelectorImplementation*  
+ 派生したクラス<xref:System.Windows.Controls.DataTemplateSelector>実用的を実装する<xref:System.Windows.Controls.DataTemplateSelector.SelectTemplate%2A>をオーバーライドします。 カスタム クラスをマップする方法については、次を参照してください。 [XAML 名前空間と WPF XAML のマッピングの Namespace](~/docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)です。  
+  
+<a name="dependencyPropertyInfo_HeaderTemplateSelector"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.GridViewColumn.HeaderTemplateSelectorProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderTemplateSelectorProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HeaderTemplateSelectorProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HeaderTemplateSelectorProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.GridViewColumn.HeaderTemplateSelectorProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.GridViewColumn.HeaderTemplateSelector" /> 依存関係プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.GridViewColumn.HeaderTemplateSelector%2A> 依存関係プロパティの識別子。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnHeaderStringFormatChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnHeaderStringFormatChanged (string oldHeaderStringFormat, string newHeaderStringFormat);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnHeaderStringFormatChanged(string oldHeaderStringFormat, string newHeaderStringFormat) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.GridViewColumn.OnHeaderStringFormatChanged(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldHeaderStringFormat" Type="System.String" />
+        <Parameter Name="newHeaderStringFormat" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="oldHeaderStringFormat"><see cref="P:System.Windows.Controls.GridViewColumn.HeaderStringFormat" /> プロパティの変更前の値。</param>
+        <param name="newHeaderStringFormat"><see cref="P:System.Windows.Controls.GridViewColumn.HeaderStringFormat" /> プロパティの新しい値。</param>
+        <summary><see cref="P:System.Windows.Controls.GridViewColumn.HeaderStringFormat" /> プロパティが変更されたときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPropertyChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnPropertyChanged (System.ComponentModel.PropertyChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnPropertyChanged(class System.ComponentModel.PropertyChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.GridViewColumn.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.ComponentModel.PropertyChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.Windows.Controls.GridViewColumn.System#ComponentModel#INotifyPropertyChanged#PropertyChanged" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.GridViewColumn.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>文字列表現を作成、<see cref="T:System.Windows.Controls.GridViewColumn" />です。</summary>
+        <returns>オブジェクトを識別する文字列、<see cref="T:System.Windows.Controls.GridViewColumn" />オブジェクトし、の値を表示、<see cref="P:System.Windows.Controls.GridViewColumn.Header" />プロパティです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Width">
+      <MemberSignature Language="C#" Value="public double Width { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Width" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.GridViewColumn.Width" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.LengthConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列の幅を取得または設定します。</summary>
+        <value>列の幅。 既定値は<see cref="F:System.Double.NaN" />する、自動的に列の最大サイズ項目は、列ヘッダーではありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティ設定されている場合は、正確な幅を取得<xref:System.Double?displayProperty=nameWithType>を使用して、<xref:System.Windows.Controls.GridViewColumn.ActualWidth%2A>プロパティです。  
+  
+<a name="xamlAttributeUsage_Width"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object Width="double"/>  
+- or –  
+<object Width="qualifiedDouble"/>  
+- or -  
+<object Width="Auto"/>  
+```  
+  
+<a name="xamlValues_Width"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *double*  
+ <xref:System.Double>  
+  
+ 文字列表現を<xref:System.Double>値。 これは、[!INCLUDE[TLA#tla_dipixel](~/includes/tlasharptla-dipixel-md.md)]測定します。 明示的に、文字列では、小数点を含める必要がありますされません。 値のインスタンス`1`は許容されます。  
+  
+ *qualifiedDouble*  
+ A*二重*値、上記と続けて次の単位の宣言文字列のいずれかの: `px`、 `in`、 `cm`、`pt`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ `cm`センチメートル; は、します。1cm==(96/2.54) px  
+  
+ `pt`ポイントです。1pt==(96/72) px  
+  
+ `Auto`  
+ 自動サイズ変更を有効にします。 「解説」を参照してください。  
+  
+<a name="dependencyPropertyInfo_Width"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.GridViewColumn.WidthProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Controls.GridViewColumn.Width%2A> プロパティを設定する方法を次の例に示します。  
+  
+ [!code-csharp[ListViewCode#GridViewColumnProperties](~/samples/snippets/csharp/VS_Snippets_Wpf/ListViewCode/CSharp/Window1.xaml.cs#gridviewcolumnproperties)]
+ [!code-vb[ListViewCode#GridViewColumnProperties](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ListViewCode/visualbasic/window1.xaml.vb#gridviewcolumnproperties)]
+ [!code-xaml[ListViewCode#GridViewColumnProperties](~/samples/snippets/csharp/VS_Snippets_Wpf/ListViewCode/CSharp/Window1.xaml#gridviewcolumnproperties)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WidthProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty WidthProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty WidthProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.GridViewColumn.WidthProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.GridViewColumn.Width" /> 依存関係プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.GridViewColumn.Width%2A> 依存関係プロパティの識別子。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

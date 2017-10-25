@@ -1,0 +1,150 @@
+<Type Name="XmlSerializableServices" FullName="System.Runtime.Serialization.XmlSerializableServices">
+  <TypeSignature Language="C#" Value="public static class XmlSerializableServices" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit XmlSerializableServices extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Serialization.XmlSerializableServices" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+    <AssemblyVersion>4.1.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XML の読み取りと書き込みを行うメソッドを含みます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[indigo1](~/includes/indigo1-md.md)] を使用して、データ コントラクトを表す CLR 型を XML スキーマから生成できます。 これを行ったときに、スキーマの一部がデータ コントラクトとして表されない場合があります。 この場合は、<xref:System.Runtime.Serialization.ImportOptions.ImportXmlType%2A> クラスの <xref:System.Runtime.Serialization.ImportOptions> プロパティを使用できます。  このプロパティを `true` に設定すると、これらの型が <xref:System.Xml.Serialization.IXmlSerializable> インターフェイスを実装する XML 型としてインポートされます。 この処理では、生成された型に任意のデータを格納できますが、それらはシリアライザーによって XML として読み書きされます。  
+  
+ <xref:System.Runtime.Serialization.XmlSerializableServices> は抽象ヘルパー クラスであり、生成された <xref:System.Xml.Serialization.IXmlSerializable> 型が XML を読み書きするために使用するコードを含みます。 また、生成された型のスキーマを生成するためのコードも含みます。 スキーマの詳細は格納されないことに注意してください。 生成された型には、名前だけが格納されます。 このクラスは、XML スキーマの型 `anyType` を表し、コントラクト名として適切なスキーマの型名を持つ既定のスキーマを生成します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddDefaultSchema">
+      <MemberSignature Language="C#" Value="public static void AddDefaultSchema (System.Xml.Schema.XmlSchemaSet schemas, System.Xml.XmlQualifiedName typeQName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddDefaultSchema(class System.Xml.Schema.XmlSchemaSet schemas, class System.Xml.XmlQualifiedName typeQName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XmlSerializableServices.AddDefaultSchema(System.Xml.Schema.XmlSchemaSet,System.Xml.XmlQualifiedName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="schemas" Type="System.Xml.Schema.XmlSchemaSet" />
+        <Parameter Name="typeQName" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="schemas">生成されたスキーマの型を追加する <see cref="T:System.Xml.Schema.XmlSchemaSet" />。</param>
+        <param name="typeQName">スキーマに割り当てる型名を指定する <see cref="T:System.Xml.XmlQualifiedName" />。</param>
+        <summary>指定した型名を使用して既定のスキーマの型を生成し、それを指定したスキーマ セットに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定した型名を持つデータ コントラクトのスキーマの型を生成するためのコードを含みます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="schemas" /> または <paramref name="typeQName" /> 引数が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadNodes">
+      <MemberSignature Language="C#" Value="public static System.Xml.XmlNode[] ReadNodes (System.Xml.XmlReader xmlReader);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.XmlNode[] ReadNodes(class System.Xml.XmlReader xmlReader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XmlSerializableServices.ReadNodes(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNode[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xmlReader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="xmlReader">読み取るために使用する <see cref="T:System.Xml.XmlReader" />。</param>
+        <summary>指定したリーダーから XML ノードのセットを読み取り、結果を返します。</summary>
+        <returns><see cref="T:System.Xml.XmlNode" /> 型の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、この呼び出しが行われたときにリーダーが配置されているノードに含まれているすべての XML を読み取ります。 これにより、すべての XML を読み取り、<xref:System.Xml.XmlNode> オブジェクトの配列として格納できます。 これは、<xref:System.Xml.Serialization.IXmlSerializable> を実装し、<xref:System.Xml.Serialization.IXmlSerializable.ReadXml%2A> メソッドを使用する型によって使用されるヘルパー メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="xmlReader" /> 引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">読み取り中に、<see langword="null" /> のノードが見つかりました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteNodes">
+      <MemberSignature Language="C#" Value="public static void WriteNodes (System.Xml.XmlWriter xmlWriter, System.Xml.XmlNode[] nodes);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteNodes(class System.Xml.XmlWriter xmlWriter, class System.Xml.XmlNode[] nodes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XmlSerializableServices.WriteNodes(System.Xml.XmlWriter,System.Xml.XmlNode[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xmlWriter" Type="System.Xml.XmlWriter" />
+        <Parameter Name="nodes" Type="System.Xml.XmlNode[]" />
+      </Parameters>
+      <Docs>
+        <param name="xmlWriter">書き込むために使用する <see cref="T:System.Xml.XmlWriter" />。</param>
+        <param name="nodes">書き込む <see cref="T:System.Xml.XmlNode" /> 型の配列。</param>
+        <summary>指定したライターを使用して、指定したノードを書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="xmlWriter" /> 引数が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

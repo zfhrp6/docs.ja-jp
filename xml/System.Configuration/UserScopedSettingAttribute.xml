@@ -1,0 +1,74 @@
+<Type Name="UserScopedSettingAttribute" FullName="System.Configuration.UserScopedSettingAttribute">
+  <TypeSignature Language="C#" Value="public sealed class UserScopedSettingAttribute : System.Configuration.SettingAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit UserScopedSettingAttribute extends System.Configuration.SettingAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.UserScopedSettingAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.SettingAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アプリケーション設定のグループまたはプロパティに、アプリケーションのユーザーごとに個別の値が含まれているを指定します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション設定のプロパティは、アプリケーションまたはユーザー レベルに基づいているスコープを設定します。 カテゴリに示すものでは、アプリケーション スコープのプロパティは、アプリケーションのすべてのユーザーに同じ値を提供しますが、ユーザー スコープのプロパティが、アプリケーションのユーザーごとに値を個別をします。  
+  
+ <xref:System.Configuration.UserScopedSettingAttribute>ことプロパティ見なす必要があるユーザー レベルの設定と記憶域の適切な意思決定がそれに応じて行われることを示す設定プロバイダー。  
+  
+ スコープ属性は、各アプリケーション設定のプロパティに必要です。 プロパティがいずれかで適用されていない場合、<xref:System.Configuration.ApplicationScopedSettingAttribute>または<xref:System.Configuration.UserScopedSettingAttribute>プロパティは設定プロバイダーによって無視されます: シリアル化されていません。 ただし、同じ設定プロパティを両方の属性を適用することはできません。 このようなしようとすると、<xref:System.Configuration.ConfigurationErrorsException>がスローされます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Configuration.UserScopedSettingAttribute>の 4 つすべてのプロパティに適用される、`FormSettings`から派生するラッパー クラス、<xref:System.Configuration.ApplicationSettingsBase>クラスです。 このクラスは、場所、サイズ、背景色、およびフォームのテキストを保持する使用されます。 完全なコード例が記載されて、<xref:System.Configuration.ApplicationSettingsBase>クラスの概要です。  
+  
+ [!code-cpp[AppSettingsSample#9](~/samples/snippets/cpp/VS_Snippets_Winforms/AppSettingsSample/cpp/AppSettingsSample.cpp#9)]
+ [!code-csharp[AppSettingsSample#9](~/samples/snippets/csharp/VS_Snippets_Winforms/AppSettingsSample/CS/AppSettingsSample.cs#9)]
+ [!code-vb[AppSettingsSample#9](~/samples/snippets/visualbasic/VS_Snippets_Winforms/AppSettingsSample/VB/Form1.vb#9)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UserScopedSettingAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.UserScopedSettingAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Configuration.UserScopedSettingAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各アプリケーション設定のプロパティを認識し、設定プロバイダーによってシリアル化するためにスコープを 1 つの属性を持つ適用しなければなりません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

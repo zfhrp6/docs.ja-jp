@@ -1,0 +1,124 @@
+<Type Name="AuthenticationLevel" FullName="System.Net.Security.AuthenticationLevel">
+  <TypeSignature Language="C#" Value="public enum AuthenticationLevel" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed AuthenticationLevel extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Security.AuthenticationLevel" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Primitives</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>使用する場合は、認証および権限借用のクライアントの要件を指定、<see cref="T:System.Net.WebRequest" />クラスと派生クラス リソースを要求します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体の値を使用して設定して、<xref:System.Net.WebRequest.AuthenticationLevel%2A>プロパティです。  
+  
+> [!NOTE]
+>  MutualAuthRequired と MutualAuthRequested 値は、Kerberos 認証に関連します。 Kerberos 認証は、直接サポートすることも、Negotiate セキュリティ プロトコルを使用して実際のセキュリティ プロトコルを選択する場合に使用することもできます。 認証プロトコルの詳細については、次を参照してください。[インターネット認証](~/docs/framework/network-programming/internet-authentication.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、要求の認証フラグの設定を示しています。  
+  
+ [!code-cpp[NCLCredPolicy#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLCredPolicy/CPP/NCLCredPolicy.cpp#1)]
+ [!code-csharp[NCLCredPolicy#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLCredPolicy/CS/websample.cs#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="MutualAuthRequested">
+      <MemberSignature Language="C#" Value="MutualAuthRequested" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Security.AuthenticationLevel MutualAuthRequested = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Security.AuthenticationLevel.MutualAuthRequested" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Security.AuthenticationLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントとサーバーを認証する必要があります。 サーバーが認証されていない場合、要求は失敗しません。 相互認証が発生したかどうかを確認の値を確認、<see cref="P:System.Net.WebResponse.IsMutuallyAuthenticated" />プロパティです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MutualAuthRequired">
+      <MemberSignature Language="C#" Value="MutualAuthRequired" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Security.AuthenticationLevel MutualAuthRequired = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Security.AuthenticationLevel.MutualAuthRequired" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Security.AuthenticationLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントとサーバーを認証する必要があります。 サーバーが認証されていない場合、アプリケーションが表示されます、<see cref="T:System.IO.IOException" />で、<see cref="T:System.Net.ProtocolViolationException" />内部例外を示すその相互認証に失敗しました</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Security.AuthenticationLevel None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Security.AuthenticationLevel.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Security.AuthenticationLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントとサーバーの認証は不要です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

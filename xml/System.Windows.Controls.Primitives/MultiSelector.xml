@@ -1,0 +1,272 @@
+<Type Name="MultiSelector" FullName="System.Windows.Controls.Primitives.MultiSelector">
+  <TypeSignature Language="C#" Value="public abstract class MultiSelector : System.Windows.Controls.Primitives.Selector" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit MultiSelector extends System.Windows.Controls.Primitives.Selector" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.Primitives.MultiSelector" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.Primitives.Selector</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>複数の項目を選択できるようにするコントロールの抽象クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クラスを継承する場合、<xref:System.Windows.Controls.Primitives.MultiSelector>クラスは、設定、<xref:System.Windows.Controls.Primitives.MultiSelector.CanSelectMultipleItems%2A>プロパティを`true`コントロールでの複数選択を許可します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected MultiSelector ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.MultiSelector.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Primitives.MultiSelector" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Primitives.MultiSelector>抽象クラスは、直接インスタンス化することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginUpdateSelectedItems">
+      <MemberSignature Language="C#" Value="protected void BeginUpdateSelectedItems ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void BeginUpdateSelectedItems() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.MultiSelector.BeginUpdateSelectedItems" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>選択範囲の新しいトランザクションを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Primitives.MultiSelector.BeginUpdateSelectedItems%2A>メソッドのセット<xref:System.Windows.Controls.Primitives.MultiSelector.IsUpdatingSelectedItems%2A>に`true`です。 <xref:System.Windows.Controls.Primitives.MultiSelector.EndUpdateSelectedItems%2A>メソッドのセット<xref:System.Windows.Controls.Primitives.MultiSelector.IsUpdatingSelectedItems%2A>に`false`です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Controls.Primitives.MultiSelector.BeginUpdateSelectedItems%2A>から派生したクラスのメソッド<xref:System.Windows.Controls.Primitives.MultiSelector>です。  
+  
+ [!code-csharp[System.Windows.Controls.MultiSelectorEx#2](~/samples/snippets/csharp/VS_Snippets_Wpf/System.Windows.Controls.MultiSelectorEx/CS/MyMultiSelector.xaml.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.Windows.Controls.Primitives.MultiSelector.IsUpdatingSelectedItems" /><see langword="true" />このメソッドが呼び出されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanSelectMultipleItems">
+      <MemberSignature Language="C#" Value="protected bool CanSelectMultipleItems { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanSelectMultipleItems" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.MultiSelector.CanSelectMultipleItems" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の複数の項目かどうかを示す値、<see cref="T:System.Windows.Controls.Primitives.MultiSelector" />一度に選択できます。</summary>
+        <value>
+          <see langword="true" />複数の項目がある場合、 <see cref="T:System.Windows.Controls.Primitives.MultiSelector" /> 、それ以外の一度に選択<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Windows.Controls.Primitives.MultiSelector.CanSelectMultipleItems%2A>プロパティを`true`そのクラスの複数の選択を許可する派生クラスでします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、派生クラスでこのプロパティを設定する方法を示します。  
+  
+ [!code-csharp[System.Windows.Controls.MultiSelectorEx#1](~/samples/snippets/csharp/VS_Snippets_Wpf/System.Windows.Controls.MultiSelectorEx/CS/MyMultiSelector.xaml.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndUpdateSelectedItems">
+      <MemberSignature Language="C#" Value="protected void EndUpdateSelectedItems ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void EndUpdateSelectedItems() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.MultiSelector.EndUpdateSelectedItems" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>選択した項目をコミット、<see cref="T:System.Windows.Controls.Primitives.MultiSelector" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは設定<xref:System.Windows.Controls.Primitives.MultiSelector.IsUpdatingSelectedItems%2A>に`false`し、更新、<xref:System.Windows.Controls.Primitives.MultiSelector.SelectedItems%2A>コレクション。  
+  
+ <xref:System.Windows.Controls.Primitives.MultiSelector.BeginUpdateSelectedItems%2A>メソッドのセット<xref:System.Windows.Controls.Primitives.MultiSelector.IsUpdatingSelectedItems%2A>に`true`です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Controls.Primitives.MultiSelector.EndUpdateSelectedItems%2A>から派生したクラスのメソッド<xref:System.Windows.Controls.Primitives.MultiSelector>です。  
+  
+ [!code-csharp[System.Windows.Controls.MultiSelectorEx#2](~/samples/snippets/csharp/VS_Snippets_Wpf/System.Windows.Controls.MultiSelectorEx/CS/MyMultiSelector.xaml.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.Windows.Controls.Primitives.MultiSelector.IsUpdatingSelectedItems" /><see langword="false" />このメソッドが呼び出されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUpdatingSelectedItems">
+      <MemberSignature Language="C#" Value="protected bool IsUpdatingSelectedItems { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsUpdatingSelectedItems" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.MultiSelector.IsUpdatingSelectedItems" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.Controls.Primitives.MultiSelector" />に一括更新が実行中、<see cref="P:System.Windows.Controls.Primitives.MultiSelector.SelectedItems" />コレクション。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Windows.Controls.Primitives.MultiSelector" />に一括更新が実行中、<see cref="P:System.Windows.Controls.Primitives.MultiSelector.SelectedItems" />コレクションです。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Primitives.MultiSelector.BeginUpdateSelectedItems%2A>メソッドのセット<xref:System.Windows.Controls.Primitives.MultiSelector.IsUpdatingSelectedItems%2A>に`true`です。 <xref:System.Windows.Controls.Primitives.MultiSelector.EndUpdateSelectedItems%2A>メソッドのセット<xref:System.Windows.Controls.Primitives.MultiSelector.IsUpdatingSelectedItems%2A>に`false`です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Controls.Primitives.MultiSelector.IsUpdatingSelectedItems%2A>から派生したクラスのプロパティは<xref:System.Windows.Controls.Primitives.MultiSelector>します。  
+  
+ [!code-csharp[System.Windows.Controls.MultiSelectorEx#2](~/samples/snippets/csharp/VS_Snippets_Wpf/System.Windows.Controls.MultiSelectorEx/CS/MyMultiSelector.xaml.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectAll">
+      <MemberSignature Language="C#" Value="public void SelectAll ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SelectAll() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.MultiSelector.SelectAll" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべての項目の選択、<see cref="T:System.Windows.Controls.Primitives.MultiSelector" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合にのみ、このメソッドを使用する<xref:System.Windows.Controls.Primitives.MultiSelector.CanSelectMultipleItems%2A>は`true`します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.Windows.Controls.Primitives.MultiSelector.CanSelectMultipleItems" /> は <see langword="false" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedItems">
+      <MemberSignature Language="C#" Value="public System.Collections.IList SelectedItems { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IList SelectedItems" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.MultiSelector.SelectedItems" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目を取得、<see cref="T:System.Windows.Controls.Primitives.MultiSelector" />が選択されています。</summary>
+        <value>内の項目、<see cref="T:System.Windows.Controls.Primitives.MultiSelector" />が選択されています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Windows.Controls.Primitives.MultiSelector.CanSelectMultipleItems%2A>は`false`、する 1 つ以上の項目を追加することはできません、<xref:System.Windows.Controls.Primitives.MultiSelector.SelectedItems%2A>コレクション。 操作を行うためには、例外が発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnselectAll">
+      <MemberSignature Language="C#" Value="public void UnselectAll ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UnselectAll() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.MultiSelector.UnselectAll" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべての項目の選択を解除、<see cref="T:System.Windows.Controls.Primitives.MultiSelector" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ かどうかに関係なく、このメソッドを使用する<xref:System.Windows.Controls.Primitives.MultiSelector.CanSelectMultipleItems%2A>は`true`または`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

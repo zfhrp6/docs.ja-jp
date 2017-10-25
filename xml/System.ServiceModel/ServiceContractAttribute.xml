@@ -1,0 +1,415 @@
+<Type Name="ServiceContractAttribute" FullName="System.ServiceModel.ServiceContractAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ServiceContractAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ServiceContractAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.ServiceContractAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Interface, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>インターフェイスまたはクラスを Windows Communication Foundation (WCF) アプリケーションでサービス コントラクトを定義することを示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インターフェイス (またはクラス) に対して <xref:System.ServiceModel.ServiceContractAttribute> 属性を使用して、サービス コントラクトを定義します。 その後、1 つ以上のクラス (またはインターフェイス) のメソッドに対して <xref:System.ServiceModel.OperationContractAttribute> 属性を使用して、コントラクトのサービス操作を定義します。 サービス コントラクトを実装およびと組み合わせて使用すると、[バインド](~/docs/framework/wcf/bindings.md)と<xref:System.ServiceModel.EndpointAddress>オブジェクト、サービス コントラクトが使用するクライアントによって公開されます。 単純な例を使用して、プロセスの概要については、次を参照してください。[チュートリアル入門](~/docs/framework/wcf/getting-started-tutorial.md)です。 サービス コントラクトの作成の詳細については、次を参照してください。 [Services の実装を設計および](~/docs/framework/wcf/designing-and-implementing-services.md)です。  
+  
+ <xref:System.ServiceModel.ServiceContractAttribute> とそのインターフェイスで表現される情報は、Web サービス記述言語 (WSDL) の `<portType>` 要素に大まかに関連しています。 サービス コントラクトはサーバー側で、サービスのエンドポイントが呼び出し元に対して何を公開するかを指定するために使用されます。 サービス コントラクトはクライアント側でも使用され、クライアントが通信を行うエンドポイントのコントラクトを指定します。双方向コントラクトの場合は、クライアントが双方向のメッセージ交換を行うために実装する必要があるコールバック コントラクトを (<xref:System.ServiceModel.ServiceContractAttribute.CallbackContract%2A> プロパティを使用して) 指定します。  
+  
+> [!NOTE]
+>  さらに、<xref:System.ServiceModel.ServiceContractAttribute> で修飾したインターフェイスまたはクラスがなんらかの機能を公開するには、<xref:System.ServiceModel.OperationContractAttribute> 属性でマークされた、少なくとも 1 つのメソッドを持つ必要があります。 この 2 つの属性を使用してサービスの定義と実装を行う最も単純な方法のコード例については、「使用例」のセクションを参照してください。  
+  
+ サービス コントラクトを変更するには、<xref:System.ServiceModel.ServiceContractAttribute> プロパティを使用します。  
+  
+-   <xref:System.ServiceModel.ServiceContractAttribute.ConfigurationName%2A> プロパティは、使用する構成ファイル内のサービス要素の名前を指定します。  
+  
+-   <xref:System.ServiceModel.ServiceContractAttribute.Name%2A> プロパティと <xref:System.ServiceModel.ServiceContractAttribute.Namespace%2A> プロパティは、WSDL の`<portType>` 要素内のコントラクトの名前と名前空間を制御します。  
+  
+-   <xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A> プロパティは、コントラクトがセッションをサポートするバインディングを必要とするかどうかを指定します。  
+  
+-   <xref:System.ServiceModel.ServiceContractAttribute.CallbackContract%2A> プロパティは、双方向 (二重) 通信で使用されるリターン コントラクトを指定します。  
+  
+-   <xref:System.ServiceModel.ServiceContractAttribute.HasProtectionLevel%2A> プロパティと <xref:System.ServiceModel.ServiceContractAttribute.ProtectionLevel%2A> プロパティは、このコントラクトをサポートするすべてのメッセージに明示的な <xref:System.ServiceModel.ServiceContractAttribute.ProtectionLevel%2A> 値が設定されているかどうかを示し、設定されている場合はそのレベルを示します。  
+  
+ サービスはサービス コントラクトを実装します。サービス コントラクトは、サービスの種類がサポートするデータ交換を表します。 サービス クラスは、<xref:System.ServiceModel.ServiceContractAttribute> でマークされたメソッドを持つ <xref:System.ServiceModel.OperationContractAttribute> でマークされたインターフェイスを実装することで、サービス コントラクトを実装できます。または、<xref:System.ServiceModel.ServiceContractAttribute> でマークし、<xref:System.ServiceModel.OperationContractAttribute> 属性を独自のメソッドに適用できます。 (クラスが、<xref:System.ServiceModel.ServiceContractAttribute> でマークされたインターフェイスを実装する場合は、クラス自身を <xref:System.ServiceModel.ServiceContractAttribute> でマークすることはできません)。サービスの種類の <xref:System.ServiceModel.OperationContractAttribute> でマークされたメソッドは、サービスの種類自体によって指定される既定のサービス コントラクトの一部として処理されます。 サービス操作の詳細については、<xref:System.ServiceModel.OperationContractAttribute> を参照してください。  
+  
+ 既定では、<xref:System.ServiceModel.ServiceContractAttribute.Name%2A> プロパティと <xref:System.ServiceModel.ServiceContractAttribute.Namespace%2A> プロパティは、それぞれコントラクトの種類と`http://tempuri.org` であり、<xref:System.ServiceModel.ServiceContractAttribute.ProtectionLevel%2A> は <xref:System.Net.Security.ProtectionLevel?displayProperty=nameWithType> です。 サービス コントラクトでは、名前、名前空間、および保護レベルを、これらのプロパティを使用して明示的に設定することをお勧めします。 この作業により、次の 2 つの目標が達成されます。 第 1 に、マネージ型情報に直接接続されないコントラクトを構築し、コントラクトを WSDL で表現するときに、コントラクトを壊さずにマネージ コードと名前空間をリファクタリングできます。 第 2 に、コントラクト自体の保護レベルを明示的に要求することによって、ランタイムがバインド構成でそのレベルのセキュリティがサポートされているかどうかを検証でき、それによって、機密情報を漏洩する不良な構成を回避できます。 保護レベルの詳細については、次を参照してください。[について保護レベル](~/docs/framework/wcf/understanding-protection-level.md)です。  
+  
+ クライアント アプリケーションで使用するためにサービスを公開するには、サービス エンドポイントを [!INCLUDE[indigo1](~/includes/indigo1-md.md)] に登録するホスト アプリケーションを作成します。 Windows アクティベーション サービス (WAS) を使用する [!INCLUDE[indigo2](~/includes/indigo2-md.md)] サービスは、コンソール アプリケーション、Windows サービス アプリケーション、ASP.NET アプリケーション、Windows フォーム アプリケーション、またはその他の種類のアプリケーション ドメインでホストできます。  
+  
+ WAS でのホスティングは、ASP.NET アプリケーションの作成とほとんど同じです。 詳細については、「[する方法: IIS で WCF サービスをホスト](~/docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md)です。  
+  
+ クライアントは、サービス コントラクト インターフェイス (<xref:System.ServiceModel.ServiceContractAttribute> でマークされたインターフェイス) を使用してサービスへのチャネルを作成するか、またはクライアント オブジェクト (サービス コントラクト インターフェイスの型情報と <xref:System.ServiceModel.ClientBase%601> クラスの組み合わせ) を使用してサービスと通信します。 サービスへのクライアント チャネルの詳細については、「、<xref:System.ServiceModel.ChannelFactory%601>クラスと[WCF クライアントの概要](~/docs/framework/wcf/wcf-client-overview.md)です。  
+  
+ <xref:System.ServiceModel.ServiceContractAttribute> クラスまたはインターフェイスを使用して別の <xref:System.ServiceModel.ServiceContractAttribute> クラスまたはインターフェイスから継承すると、親コントラクトが拡張されます。 たとえば、`IChildContract` インターフェイスが <xref:System.ServiceModel.ServiceContractAttribute> でマークされ、別のサービス コントラクト インターフェイスである `IParentContract` から継承された場合、`IChildContract` サービス コントラクトには、`IParentContract` と `IChildContract` の両方のメソッドが含まれます。 コントラクト (クラスまたはインターフェイス) の拡張は、マネージ クラスとマネージ インターフェイスの拡張とほとんど同じです。  
+  
+ サービスを作成する最も柔軟な方法は、最初にサービス コントラクト インターフェイスを定義し、その後、サービス クラスでそのインターフェイスを実装することです。 (これは、定義済みのサービス コントラクトを実装する必要がある場合に、サービスを構築するための最も簡単な方法でもあります)。クラスを <xref:System.ServiceModel.ServiceContractAttribute> でマークし、メソッドを <xref:System.ServiceModel.OperationContractAttribute> でマークすることで直接サービスを構築する方法は、サービスが 1 つのコントラクトを公開する場合に適しています (ただし、そのコントラクトは、複数のエンドポイントによって公開できます)。  
+  
+ 使用して、<xref:System.ServiceModel.ServiceContractAttribute.CallbackContract%2A>を元のサービス コントラクトとバインドされている場合を定義するフローであることができましていない 2 つの方法で独立してメッセージ交換は、別のサービス コントラクトを示すプロパティです。 詳細については、「<xref:System.ServiceModel.ServiceContractAttribute.CallbackContract%2A>」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.ServiceModel.ServiceContractAttribute> をインターフェイスに適用し、<xref:System.ServiceModel.OperationContractAttribute> によって示される 1 つのサービス メソッドを持つサービス コントラクトを定義する方法を示しています。 この場合、すべてのメッセージのバインドで要求される保護レベルは <xref:System.Net.Security.ProtectionLevel?displayProperty=nameWithType> です。  
+  
+ その後、このコード例では、定義したコントラクトを `SampleService` クラスで実装します。  
+  
+ [!code-csharp[ServiceContractAttribute#1](~/samples/snippets/csharp/VS_Snippets_CFX/servicecontractattribute/cs/services.cs#1)]
+ [!code-vb[ServiceContractAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/servicecontractattribute/vb/services.vb#1)]  
+  
+ 次のコード例は、上のサービス用の 1 つのエンドポイントを作成する単純な構成ファイルを示しています。  
+  
+ [!code-xml[ServiceContractAttribute#2](~/samples/snippets/csharp/VS_Snippets_CFX/servicecontractattribute/cs/hostapplication.exe.config#2)]   
+  
+ 次のコード例は、上の `SampleService` を呼び出す単純なクライアントを示しています。  
+  
+ [!code-csharp[ServiceContractAttribute#3](~/samples/snippets/csharp/VS_Snippets_CFX/servicecontractattribute/cs/client.cs#3)]
+ [!code-vb[ServiceContractAttribute#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/servicecontractattribute/vb/client.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceContractAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceContractAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.ServiceContractAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、セッション要件もコールバック コントラクトもない、既定の名前と名前空間を使用する属性を持つインスタンスを作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CallbackContract">
+      <MemberSignature Language="C#" Value="public Type CallbackContract { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type CallbackContract" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceContractAttribute.CallbackContract" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントラクトが双方向コントラクトの場合のコールバック コントラクトの型を取得または設定します。</summary>
+        <value>コールバック コントラクトを示す <see cref="T:System.Type" />。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 双方向 (二重) メッセージ交換に必要な逆のコントラクトを表すインターフェイスを、<xref:System.ServiceModel.ServiceContractAttribute.CallbackContract%2A> プロパティに指定します。 これにより、クライアント アプリケーションは、サーバー側のサービス アプリケーションがクライアントのアクティビティとは無関係に送信できる受信操作呼び出しをリッスンできます。 一方向操作を持つコールバック コントラクトは、クライアントが処理できるサービスからの呼び出しを表します。  
+  
+> [!NOTE]
+>  <xref:System.ServiceModel.ServiceContractAttribute> 属性は、コールバック コントラクトでは無視されます。 コールバック オブジェクトのランタイム動作を構成するには、<xref:System.ServiceModel.CallbackBehaviorAttribute?displayProperty=nameWithType> を使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、`IDuplexHello` 型のサービスには `IHelloCallbackContract` 型のサービスを実装する相手が必要であることを示すコールバック コントラクトを指定するサービスを示しています。 さらに、`IHelloCallbackContract` は、一方向のコールバック メソッドを実装します。これにより、サービスは、クライアントからの応答を待たずにクライアントを呼び出すことができ、分散型でイベント駆動型のクライアントをサポートすることができます。  
+  
+ [!code-csharp[SCA.CallbackContract#1](~/samples/snippets/csharp/VS_Snippets_CFX/sca.callbackcontract/cs/services.cs#1)]
+ [!code-vb[SCA.CallbackContract#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/sca.callbackcontract/vb/services.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConfigurationName">
+      <MemberSignature Language="C#" Value="public string ConfigurationName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConfigurationName" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceContractAttribute.ConfigurationName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーション構成ファイル内でサービスを検索するために使用される名前を取得または設定します。</summary>
+        <value>アプリケーション構成ファイル内でサービス要素を検索するために使用される名前。 既定の名前は、サービス実装クラスの名前です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構成システムがそれを使用して構成ファイル内でコントラクト値を検索する値を設定する場合は、<xref:System.ServiceModel.ServiceBehaviorAttribute.ConfigurationName%2A> を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">値が null です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HasProtectionLevel">
+      <MemberSignature Language="C#" Value="public bool HasProtectionLevel { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasProtectionLevel" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceContractAttribute.HasProtectionLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メンバーに保護レベルが割り当てられているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" /> プロパティが <see cref="P:System.ServiceModel.ServiceContractAttribute.ProtectionLevel" /> 以外の場合は <see cref="F:System.Net.Security.ProtectionLevel.None" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.ServiceContractAttribute.HasProtectionLevel%2A> プロパティは、`false` 以外の値がコントラクトに設定されているかどうかを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceContractAttribute.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web サービス記述言語 (WSDL) での <see langword="&lt;portType&gt;" /> 要素の名前を取得または設定します。</summary>
+        <value>既定値は <see cref="T:System.ServiceModel.ServiceContractAttribute" /> が適用されたクラスまたはインターフェイスの名前です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.ServiceContractAttribute.Name%2A> プロパティと <xref:System.ServiceModel.ServiceContractAttribute.Namespace%2A> プロパティを使用して、WSDL での `<portType>` 要素の名前と名前空間を制御します。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.ServiceContractAttribute.Name%2A> の <xref:System.ServiceModel.ServiceContractAttribute.Namespace%2A> と <xref:System.ServiceModel.ServiceContractAttribute> のプロパティを使用して、WSDL の対応する値を設定する方法のコード例を次に示します。  
+  
+ [!code-csharp[SCA.Names#1](~/samples/snippets/csharp/VS_Snippets_CFX/sca.names/cs/services.cs#1)]
+ [!code-vb[SCA.Names#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/sca.names/vb/services.vb#1)]  
+  
+ 次のコード例は、 [!INCLUDE[indigo1](~/includes/indigo1-md.md)] WSDL を使用してインポートした前のサービス用のクライアント、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](~/docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)です。 このクライアントは、(「`HelloWorldProxy`」の「使用例」のセクションにあるサンプルと同様に) `SampleServiceProxy` クライアントではなく <xref:System.ServiceModel.ServiceContractAttribute> クライアントを使用します。  
+  
+ [!code-csharp[SCA.Names#3](~/samples/snippets/csharp/VS_Snippets_CFX/sca.names/cs/client.cs#3)]
+ [!code-vb[SCA.Names#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/sca.names/vb/client.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">値が null です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public string Namespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Namespace" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceContractAttribute.Namespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web サービス記述言語 (WSDL) での <see langword="&lt;portType&gt;" /> 要素の名前空間を取得または設定します。</summary>
+        <value><see langword="&lt;portType&gt;" /> 要素の WSDL 名前空間。 既定値は "http://tempuri.org/" です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.ServiceModel.ServiceContractAttribute.Name%2A> の <xref:System.ServiceModel.ServiceContractAttribute.Namespace%2A> と <xref:System.ServiceModel.ServiceContractAttribute> のプロパティを使用して、WSDL の対応する値を設定する方法のコード例を次に示します。  
+  
+ [!code-csharp[SCA.Names#1](~/samples/snippets/csharp/VS_Snippets_CFX/sca.names/cs/services.cs#1)]
+ [!code-vb[SCA.Names#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/sca.names/vb/services.vb#1)]  
+  
+ 次のコード例は、 [!INCLUDE[indigo1](~/includes/indigo1-md.md)] WSDL を使用してインポートした前のサービス用のクライアント、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](~/docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)です。 このクライアントは、(「`HelloWorldClient`」の「使用例」のセクションにあるサンプルと同様に) `SampleServiceClient` クライアントではなく <xref:System.ServiceModel.ServiceContractAttribute> クライアントを使用します。  
+  
+ [!code-csharp[SCA.Names#3](~/samples/snippets/csharp/VS_Snippets_CFX/sca.names/cs/client.cs#3)]
+ [!code-vb[SCA.Names#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/sca.names/vb/client.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProtectionLevel">
+      <MemberSignature Language="C#" Value="public System.Net.Security.ProtectionLevel ProtectionLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.Security.ProtectionLevel ProtectionLevel" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceContractAttribute.ProtectionLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Security.ProtectionLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントラクトのバインディングで、<see cref="P:System.ServiceModel.ServiceContractAttribute.ProtectionLevel" /> プロパティの値をサポートする必要があるかどうかを指定します。</summary>
+        <value><see cref="T:System.Net.Security.ProtectionLevel" /> 値のいずれか。 既定値は、<see cref="F:System.Net.Security.ProtectionLevel.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.ServiceContractAttribute.ProtectionLevel%2A> プロパティを使用して、コントラクトを公開するエンドポイントに対して暗号化、デジタル署名、またはその両方がコントラクトのバインドで必要とされる程度を指定します。 ここで設定する値は、エラーを含むすべての操作メッセージの既定値となります。  
+  
+ ランタイムでの保護動作は、次のプロパティで設定された保護レベル値の組み合わせであることに注意してください。 こうしたプロパティは、階層構造を持ちます。 最も外側の値を設定すると、それより狭いスコープで異なる値を明示的に設定していなければ、より狭いスコープでその既定の設定が定まります。 この場合、外側の値は特に設定された値を除いて、それより狭いすべてのスコープで既定の設定として残ります。  
+  
+ たとえば、<xref:System.ServiceModel.ServiceContractAttribute.ProtectionLevel%2A?displayProperty=nameWithType> が <xref:System.Net.Security.ProtectionLevel?displayProperty=nameWithType> に設定され、他のより狭いスコープに保護レベル設定が存在しない場合、操作コントラクト内のすべてのメッセージが暗号化および署名されます。 ただし、こうした操作の 1 つで <xref:System.ServiceModel.OperationContractAttribute> が <xref:System.Net.Security.ProtectionLevel?displayProperty=nameWithType> に設定されている場合、その操作のメッセージは署名されますが、コントラクト内の他のすべてのメッセージは暗号化および署名されます。  
+  
+ 保護レベル、前提条件、およびスコープに関する詳細については、「[について保護レベル](~/docs/framework/wcf/understanding-protection-level.md)です。  
+  
+ こうした値が設定されるスコープは次のとおりです。  
+  
+ <xref:System.ServiceModel.ServiceContractAttribute.ProtectionLevel%2A?displayProperty=nameWithType>  
+  
+ <xref:System.ServiceModel.OperationContractAttribute.ProtectionLevel%2A?displayProperty=nameWithType>  
+  
+ <xref:System.ServiceModel.FaultContractAttribute.ProtectionLevel%2A?displayProperty=nameWithType>  
+  
+ <xref:System.ServiceModel.MessageContractAttribute.ProtectionLevel%2A?displayProperty=nameWithType>  
+  
+ <xref:System.ServiceModel.MessageContractMemberAttribute.ProtectionLevel%2A?displayProperty=nameWithType> の <xref:System.ServiceModel.MessageHeaderAttribute?displayProperty=nameWithType> プロパティ。  
+  
+ <xref:System.ServiceModel.MessageContractMemberAttribute.ProtectionLevel%2A?displayProperty=nameWithType> の <xref:System.ServiceModel.MessageBodyMemberAttribute?displayProperty=nameWithType> プロパティ。  
+  
+ コントラクト上で明示的に指定された保護レベルが存在せず、基になるバインドで (トランスポート レベルまたはメッセージ レベルを問わず) セキュリティをサポートする場合、コントラクト全体の有効な保護レベルは <xref:System.Net.Security.ProtectionLevel?displayProperty=nameWithType> です。 バインドで (<xref:System.ServiceModel.BasicHttpBinding> などの) セキュリティをサポートしない場合、コントラクト全体の有効な <xref:System.Net.Security.ProtectionLevel?displayProperty=nameWithType> は <xref:System.Net.Security.ProtectionLevel?displayProperty=nameWithType> です。 したがって、コントラクトで <xref:System.Net.Security.ProtectionLevel?displayProperty=nameWithType> を指定している場合でも、エンドポイント バインドによってはクライアントが要求するメッセージ レベルまたはトランスポート レベルのセキュリティ保護が異なる場合があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が、<see cref="T:System.Net.Security.ProtectionLevel" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SessionMode">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.SessionMode SessionMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.SessionMode SessionMode" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceContractAttribute.SessionMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.SessionMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セッションが許可されるか、許可されないか、または必要であるかを示す値を取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.SessionMode" /> は、セッションが許可されるか、許可されないか、または必要であるかを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A> プロパティを使用して、バインドでエンドポイント間のセッションをサポートすることを要求します。 セッションとは、2 つ以上のエンドポイント間で交換される一連のメッセージを相互に関連付ける方法のことです。 サービスがチャネル セッションをサポートする場合は、<xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> プロパティを使用して、サービス コントラクトが実装するインスタンスとチャネルセッションの関係を指定できます。 バインドがセッションをサポートしない場合は、例外がスローされます。  
+  
+ たとえば、<xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A> プロパティを <xref:System.ServiceModel.SessionMode?displayProperty=nameWithType>、<xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> プロパティを <xref:System.ServiceModel.InstanceContextMode.PerSession> に設定した場合、クライアントは、同じ接続を使用して同じサービス オブジェクトを繰り返し呼び出すことができます。  
+  
+ セッションとサービス インスタンスの詳細については、次を参照してください。[セッションを使用した](~/docs/framework/wcf/using-sessions.md)と[セッション、インスタンス化、および同時実行](~/docs/framework/wcf/feature-details/sessions-instancing-and-concurrency.md)です。  
+  
+> [!NOTE]
+>  セッションをサポートするチャネルは、特定のセッションとのサービス インスタンスの既定の関連付けをサポートします。 ただし、セッションの実装が異なれば、セッション ベースのインスタンス作成の制御に加えてサポートされる機能も異なります。 [!INCLUDE[indigo2](~/includes/indigo2-md.md)] には、セッションフル アプリケーション動作を実現するために使用できる 4 種類のセッションが用意されており、それぞれのセッションは、そのセッションの種類に固有の追加動作を提供します。  
+  
+1.  <xref:System.ServiceModel.Channels.SecurityBindingElement?displayProperty=nameWithType> は セキュリティ セッションをサポートします。このセッションでは、通信の両側が暗号化またはデジタル署名、あるいはその両方の処理を行うことに合意し、すべてのメッセージはセキュリティで保護されたメッセージ交換に関連付けられます。 詳細については、次を参照してください。 [Services のセキュリティ保護](~/docs/framework/wcf/securing-services.md)です。 たとえば、セキュリティ セッションと信頼できるセッションの両方のサポートを含む <xref:System.ServiceModel.WSHttpBinding?displayProperty=nameWithType> は、既定では、メッセージを暗号化してデジタル署名を行うセキュリティで保護されたセッションのみを使用します。  
+  
+2.  <xref:System.ServiceModel.NetTcpBinding?displayProperty=nameWithType> は、TCP/IP 接続によって公開されるセッションをサポートし、接続セッションにより、すべてのメッセージがソケット レベルで関連付けられるようにします。  
+  
+3.  WS-ReliableMessaging 仕様を実装する <xref:System.ServiceModel.Channels.ReliableSessionBindingElement?displayProperty=nameWithType> は、メッセージが順に 1 回だけ配信される、信頼できるセッションをサポートしているため、メッセージがその交換時に複数のノードを通過するときでも信頼性を実現します。 詳細については、次を参照してください。[信頼できるセッション](~/docs/framework/wcf/feature-details/reliable-sessions.md)です。  
+  
+4.  <xref:System.ServiceModel.NetMsmqBinding?displayProperty=nameWithType> は、MSMQ データグラム セッションを提供します。 詳細については、次を参照してください。 [WCF のキュー](~/docs/framework/wcf/feature-details/queues-in-wcf.md)です。  
+  
+ <xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A> プロパティを設定すると、コントラクトが必要とするセッションの種類は指定されず、コントラクトがセッションを必要とすることだけが指定されることに注意してください。  
+  
+   
+  
+## Examples  
+ 次のサービス コントラクトは、`SampleDuplexHello` サービス実装とメッセージ交換するときに、構成されたバインドでセッションを使用することを要求します。  
+  
+ [!code-csharp[SCA.Session#1](~/samples/snippets/csharp/VS_Snippets_CFX/sca.session/cs/services.cs#1)]
+ [!code-vb[SCA.Session#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/sca.session/vb/services.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が、<see cref="T:System.ServiceModel.SessionMode" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

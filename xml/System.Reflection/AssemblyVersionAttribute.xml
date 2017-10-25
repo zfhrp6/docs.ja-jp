@@ -1,0 +1,165 @@
+<Type Name="AssemblyVersionAttribute" FullName="System.Reflection.AssemblyVersionAttribute">
+  <TypeSignature Language="C#" Value="public sealed class AssemblyVersionAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit AssemblyVersionAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Reflection.AssemblyVersionAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>属性を付けるアセンブリのバージョンを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.AssemblyVersionAttribute>属性は、アセンブリにバージョン番号を割り当てに使用します。 アセンブリのメタデータでは、そのバージョン番号が格納されます。  
+  
+ アセンブリのバージョン番号は、アセンブリの id の一部であるし、アセンブリへのバインディング、およびバージョン ポリシーは、重要な部分を再生します。 ランタイムの既定のバージョン ポリシーは、構成ファイル (アプリケーション構成ファイル、発行者ポリシー ファイル、コンピューター管理者の構成ファイル) に指定した明示的なバージョン ポリシーでオーバーライドされない限り、アプリケーションが作成およびテストされた時点のバージョンの場合にだけそのアプリケーションを実行します。 参照してください[共通言語ランタイムのアセンブリ](~/docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)詳細についてはします。  
+  
+> [!NOTE]
+>  バージョンのチェックは、厳密な名前付きのアセンブリに対してだけ実行されます。  
+  
+ バージョン番号では、4 つの部分は次のようにがあります。  
+  
+ \<メジャー バージョン > です。\<マイナー バージョン > です。\<ビルド番号 >。\<リビジョン >  
+  
+> [!IMPORTANT]
+>  バージョンのすべてのコンポーネントは、0 以上の整数である必要があります。 メタデータによって、メジャー、マイナー、ビルド、および最大値はアセンブリのリビジョン コンポーネント<xref:System.UInt16.MaxValue?displayProperty=nameWithType>- 1。 コンポーネントは、この値を超えている場合、コンパイル エラーが発生します。  
+  
+ すべての値を指定するか、既定のビルド番号、リビジョン番号、またはその両方にアスタリスク (*) を使用して、同意することができます。 たとえば、`[assembly:AssemblyVersion("2.3.25.1")]`メジャー バージョン 2、マイナー バージョン 3、25 はビルド番号およびリビジョン番号として 1 を示します。 バージョン番号など、`[assembly:AssemblyVersion("1.2.*")]`メジャー バージョン、マイナーのバージョン 2 として 1 を指定し、既定のビルドとリビジョン番号を受け入れます。 バージョン番号など、`[assembly:AssemblyVersion("1.2.15.*")]`メジャー バージョン、マイナーのバージョンでは、ビルド番号として 15 として 2 として 1 を指定し、既定のリビジョン番号を受け入れます。 既定のビルド番号は、毎日をインクリメントします。 既定のリビジョン番号は、ローカル時間の深夜から (を考慮して夏時間のタイム ゾーン調整をアカウント)、なし 2 で割った値の秒数です。  
+  
+> [!NOTE]
+>  ビルド番号に対してアスタリスクを指定する場合、リビジョン番号を指定することはできません。  
+  
+ アセンブリのメジャーおよびマイナー バージョンは、アセンブリをエクスポートするときにタイプ ライブラリのバージョン番号として使用されます。 一部の COM ホストは、0.0 バージョン番号を持つタイプ ライブラリを使用することはできません。 したがって、COM クライアントにアセンブリを公開する場合は、アセンブリのバージョンに明示的に 1.0 に設定で、`AssemblyVersionAttribute`ページ プロジェクトの外部で作成された[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]なしで`AssemblyVersionAttribute`指定します。 アセンブリのバージョンが 0.0 の場合でも、この操作を行います。 作成されたすべてのプロジェクト[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]1.0 の既定のアセンブリ バージョンがある。 * です。  
+  
+ 読み込んだアセンブリの名前を取得する<xref:System.Reflection.Assembly.GetName%2A>を取得するアセンブリ、 <xref:System.Reflection.AssemblyName>、し、取得、<xref:System.Reflection.AssemblyName.Version%2A>プロパティです。 いないアセンブリの名前を取得する<xref:System.Reflection.AssemblyName.GetAssemblyName%2A>アプリケーションが使用するアセンブリのバージョンを確認するクライアント アプリケーションからです。  
+  
+ <xref:System.Reflection.AssemblyVersionAttribute>属性は、1 回のみ適用できます。 一部の Visual Studio プロジェクト テンプレートには、属性が既に含まれています。 それらのプロジェクトでは、コードで属性を追加すると、コンパイラ エラーが発生します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Reflection.AssemblyVersionAttribute>属性をアセンブリにバージョン番号を割り当てます。 コンパイル時に、このバージョンの詳細については、アセンブリのメタデータと一緒に格納されます。 値を取得する例では、実行時に、<xref:System.Type.Assembly%2A?displayProperty=nameWithType>型のプロパティには、実行中のアセンブリへの参照を取得するアセンブリ内で見つかったし、アセンブリのバージョン情報を取得、<xref:System.Reflection.AssemblyName.Version%2A>のプロパティ、 <xref:System.Reflection.AssemblyName>によって返されるオブジェクト、<xref:System.Reflection.Assembly.GetName%2A?displayProperty=nameWithType>メソッドです。  
+  
+ [!code-csharp[System.Version.Class#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Version.Class/cs/example1.cs#6)]
+ [!code-vb[System.Version.Class#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Version.Class/vb/example1.vb#6)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AssemblyVersionAttribute (string version);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.AssemblyVersionAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="version" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="version">属性付きアセンブリのバージョン番号。</param>
+        <summary>属性を付けるアセンブリのバージョン番号を指定して、<see langword="AssemblyVersionAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 形式、`version`文字列:`major`です。 `minor`。 `build`。 `revision`。  
+  
+ バージョンを指定する場合に、少なくとも指定する必要が`major`です。 指定する場合`major`と`minor`、アスタリスク (*) に指定できる`build`です。 これにより、 `build` 2000 年 1 月 1 日から経過した日数と等しくなります現地時刻、および`revision`ローカル時間の深夜から (を考慮して夏時間のタイム ゾーン調整をアカウント)、なし 2 で割った値の秒数と等しくなります。  
+  
+ `major`、`minor`、および `build` を指定する場合、`revision` に対してアスタリスクを指定できます。 これにより、 `revision` 2 で割った、午前 0 時のローカル時刻以降の経過秒数と等しくなります。  
+  
+ 有効なバージョン文字列の例は次のとおりです。  
+  
+ 1  
+  
+ 1.1  
+  
+ 1.1.*  
+  
+ 1.1.1  
+  
+ 1.1.1.*  
+  
+ 1.1.1.1  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public string Version { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Version" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.AssemblyVersionAttribute.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>属性付きアセンブリのバージョン番号を取得します。</summary>
+        <value>アセンブリのバージョン番号を格納している文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

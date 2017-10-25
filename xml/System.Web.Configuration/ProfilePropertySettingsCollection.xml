@@ -1,0 +1,535 @@
+<Type Name="ProfilePropertySettingsCollection" FullName="System.Web.Configuration.ProfilePropertySettingsCollection">
+  <TypeSignature Language="C#" Value="public class ProfilePropertySettingsCollection : System.Configuration.ConfigurationElementCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi ProfilePropertySettingsCollection extends System.Configuration.ConfigurationElementCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.ProfilePropertySettingsCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElementCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Configuration.ConfigurationCollection(typeof(System.Web.Configuration.ProfilePropertySettings))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>セットを含む<see cref="T:System.Web.Configuration.ProfilePropertySettingsCollection" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `profile`構成ファイルのセクションは、ユーザー プロファイル用にスキーマを指定します。 ASP.NET コンパイル システムを実行時にで指定された情報を使用して、`profile`と呼ばれるクラスを生成するセクション`ProfileCommon`から派生した<xref:System.Web.Profile.ProfileBase>です。 `ProfileCommon`クラス定義がで定義されたプロパティに基づいて、`properties`のサブセクション、`profile`構成ファイルのセクションです。 ユーザー プロファイルごとに、このクラスのインスタンスが作成され、個々 のプロファイルの値を使用して、コードでアクセスできることができます、<xref:System.Web.HttpContext.Profile%2A>プロパティです。 プロファイルのプロパティの詳細については、次を参照してください。 [ASP.NET プロファイル プロパティの概要](http://msdn.microsoft.com/library/89439440-92ea-48c3-a4bd-dea40307899d)です。 プロファイル機能の詳細についてに追加の[!INCLUDE[vstecasplong](~/includes/vstecasplong-md.md)]を参照してください[ASP.NET プロファイル プロパティの概要](http://msdn.microsoft.com/library/89439440-92ea-48c3-a4bd-dea40307899d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.ProfileGroupSettings.PropertySettings%2A>インスタンスであるプロパティの<xref:System.Web.Configuration.ProfilePropertySettingsCollection>クラスです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.ProfileSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.ProfileSection#12](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/CS/profilesection.cs#12)]
+ [!code-vb[System.Web.Configuration.ProfileSection#12](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/VB/profilesection.vb#12)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProfilePropertySettingsCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ProfilePropertySettingsCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.ProfilePropertySettingsCollection" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Web.Configuration.ProfilePropertySettings propertySettings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Web.Configuration.ProfilePropertySettings propertySettings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ProfilePropertySettingsCollection.Add(System.Web.Configuration.ProfilePropertySettings)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertySettings" Type="System.Web.Configuration.ProfilePropertySettings" />
+      </Parameters>
+      <Docs>
+        <param name="propertySettings">コレクションに追加する <see cref="T:System.Web.Configuration.ProfilePropertySettings" /> オブジェクト。</param>
+        <summary><see cref="T:System.Web.Configuration.ProfilePropertySettings" /> オブジェクトをコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションが既に含める必要がありますいないを<xref:System.Web.Configuration.ProfilePropertySettings>と同じ名前のオブジェクト。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.ProfilePropertySettingsCollection.Add%2A> メソッドを使用するコード例を次に示します。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.ProfileSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.ProfileSection#22](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/CS/profilesection.cs#22)]
+ [!code-vb[System.Web.Configuration.ProfileSection#22](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/VB/profilesection.vb#22)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationException"><see cref="T:System.Web.Configuration.ProfilePropertySettings" />コレクションに既に追加するオブジェクトが存在するか、コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AllKeys">
+      <MemberSignature Language="C#" Value="public string[] AllKeys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] AllKeys" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProfilePropertySettingsCollection.AllKeys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべての名前を含む配列を返します、<see cref="T:System.Web.Configuration.ProfileSection" />コレクションに含まれるオブジェクト。</summary>
+        <value>すべての名前を含む配列、<see cref="T:System.Web.Configuration.ProfileSection" />コレクションが空の場合、コレクションまたは空の配列に含まれているオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowClear">
+      <MemberSignature Language="C#" Value="protected virtual bool AllowClear { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowClear" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProfilePropertySettingsCollection.AllowClear" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、&lt;オフ&gt;要素として有効では、<see cref="T:System.Web.Configuration.ProfilePropertySettings" />オブジェクト。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ProfilePropertySettingsCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションからすべての <see cref="T:System.Web.Configuration.ProfilePropertySettings" /> オブジェクトを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは挿入、`clear`ディレクティブを適切なファイルのセクションに、構成、上位の構成ファイルで定義されている要素へのすべての参照をクリアします。 現在の構成ファイルの適切なセクションで定義されたすべての要素が削除されます。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.ProfilePropertySettingsCollection.Clear%2A> メソッドを使用するコード例を次に示します。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.ProfileSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.ProfileSection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/CS/profilesection.cs#2)]
+ [!code-vb[System.Web.Configuration.ProfileSection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/VB/profilesection.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateNewElement">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationElement CreateNewElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Configuration.ConfigurationElement CreateNewElement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ProfilePropertySettingsCollection.CreateNewElement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、新しい <see cref="T:System.Configuration.ConfigurationElement" /> を作成します。</summary>
+        <returns>新しい <see cref="T:System.Configuration.ConfigurationElement" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Get">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.ProfilePropertySettings Get (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.Configuration.ProfilePropertySettings Get(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ProfilePropertySettingsCollection.Get(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.ProfilePropertySettings</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス、<see cref="T:System.Web.Configuration.ProfileSection" />を取得します。</param>
+        <summary>返します、<see cref="T:System.Web.Configuration.ProfileSection" />指定したインデックスにあるオブジェクト。</summary>
+        <returns><see cref="T:System.Web.Configuration.ProfileSection" />指定したインデックス位置のオブジェクトまたは<see langword="null" />インデックスにあるオブジェクトが存在しない場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Get">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.ProfilePropertySettings Get (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.Configuration.ProfilePropertySettings Get(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ProfilePropertySettingsCollection.Get(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.ProfilePropertySettings</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Web.Configuration.ProfileSection" />を取得します。</param>
+        <summary>返します、<see cref="T:System.Web.Configuration.ProfileSection" />指定の名前を持つオブジェクト。</summary>
+        <returns><see cref="T:System.Web.Configuration.ProfileSection" /> 、指定した名前を持つオブジェクトまたは<see langword="null" />名前が存在しない場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetElementKey">
+      <MemberSignature Language="C#" Value="protected override object GetElementKey (System.Configuration.ConfigurationElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object GetElementKey(class System.Configuration.ConfigurationElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ProfilePropertySettingsCollection.GetElementKey(System.Configuration.ConfigurationElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Configuration.ConfigurationElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">A<see cref="T:System.Configuration.ConfigurationElement" />コレクション内で。</param>
+        <summary>指定した構成要素のキーを取得します。</summary>
+        <returns>要素の名前。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetKey">
+      <MemberSignature Language="C#" Value="public string GetKey (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetKey(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ProfilePropertySettingsCollection.GetKey(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス、<see cref="T:System.Web.Configuration.ProfilePropertySettings" />コレクション内で。</param>
+        <summary>名前を取得、<see cref="T:System.Web.Configuration.ProfilePropertySettings" />指定したインデックス位置にあります。</summary>
+        <returns>名前、<see cref="T:System.Web.Configuration.ProfilePropertySettings" />指定したインデックス位置にあります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インデックスにあるオブジェクトは、コレクションに存在する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Web.Configuration.ProfilePropertySettings propertySettings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Web.Configuration.ProfilePropertySettings propertySettings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ProfilePropertySettingsCollection.IndexOf(System.Web.Configuration.ProfilePropertySettings)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertySettings" Type="System.Web.Configuration.ProfilePropertySettings" />
+      </Parameters>
+      <Docs>
+        <param name="propertySettings">A<see cref="T:System.Web.Configuration.ProfilePropertySettings" />コレクション内のオブジェクト。</param>
+        <summary>指定したインデックスを返します<see cref="T:System.Web.Configuration.ProfilePropertySettings" />オブジェクト。</summary>
+        <returns>指定したインデックス<see cref="T:System.Web.Configuration.ProfilePropertySettings" />オブジェクト、またはオブジェクトがコレクション内で見つからない場合は-1。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.ProfilePropertySettings this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.ProfilePropertySettings Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProfilePropertySettingsCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.ProfilePropertySettings</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス、<see cref="T:System.Web.Configuration.ProfilePropertySettings" />コレクション内のオブジェクト。</param>
+        <summary>取得または設定、<see cref="T:System.Web.Configuration.ProfilePropertySettings" />指定したインデックス位置にあるオブジェクト。</summary>
+        <value><see cref="T:System.Web.Configuration.ProfilePropertySettings" />指定したインデックス位置にあるオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.ProfilePropertySettings this[string name] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.ProfilePropertySettings Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProfilePropertySettingsCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.ProfilePropertySettings</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Web.Configuration.ProfilePropertySettings" />コレクション内のオブジェクト。</param>
+        <summary>取得または設定、<see cref="T:System.Web.Configuration.ProfilePropertySettings" />指定の名前を持つオブジェクト。</summary>
+        <value><see cref="T:System.Web.Configuration.ProfilePropertySettings" />指定の名前を持つオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDeserializeUnrecognizedElement">
+      <MemberSignature Language="C#" Value="protected override bool OnDeserializeUnrecognizedElement (string elementName, System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool OnDeserializeUnrecognizedElement(string elementName, class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ProfilePropertySettingsCollection.OnDeserializeUnrecognizedElement(System.String,System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="elementName" Type="System.String" />
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="elementName">認識されない要素の名前。</param>
+        <param name="reader">構成ファイルから XML を読み取る入力ストリーム。</param>
+        <summary>構成ファイルから認識できない構成要素の読み取りを処理し、構成システムが、要素を処理できない場合に例外をスローします。</summary>
+        <returns>
+          <see langword="true" />認識されない要素が正常に逆シリアル化する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装<xref:System.Web.Configuration.ProfilePropertySettingsCollection.OnDeserializeUnrecognizedElement%2A>要素名が「クリア」または「グループ」のいずれかである場合は、特殊なエラーをスローします。  これらのチェックし、条件、メソッドの基本実装を明示的に呼び出す後、<xref:System.Configuration.ConfigurationElementCollection.OnDeserializeUnrecognizedElement%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">
+          <paramref name="elementName" />equals「オフ」  
+  
+ \- または  
+  
+ <paramref name="elementName" />equals"group"です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProfilePropertySettingsCollection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>構成プロパティのコレクションを取得します。</summary>
+        <value>構成プロパティのコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ProfilePropertySettingsCollection.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Web.Configuration.ProfilePropertySettings" />コレクションから削除するオブジェクト。</param>
+        <summary>削除、<see cref="T:System.Web.Configuration.ProfilePropertySettings" />オブジェクトをコレクションからです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは挿入、`remove`要素を上位の構成ファイルで定義されているいずれかの要素の構成ファイルの該当セクションにします。 要素が現在の構成ファイルの該当セクションに定義されている場合、対応するエントリは、構成ファイルから削除します。 削除するオブジェクトは、コレクションに存在する必要があります。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.ProfilePropertySettingsCollection.Remove%2A> メソッドを使用するコード例を次に示します。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.ProfileSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.ProfileSection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/CS/profilesection.cs#1)]
+ [!code-vb[System.Web.Configuration.ProfileSection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/VB/profilesection.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationException">ない<see cref="T:System.Web.Configuration.ProfilePropertySettings" />コレクション内で指定したキーを持つオブジェクト。  
+  
+ \- または  
+  
+ 要素は既に削除されています。  
+  
+ \- または  
+  
+ コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ProfilePropertySettingsCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス、<see cref="T:System.Web.Configuration.ProfilePropertySettings" />コレクション内のオブジェクト。</param>
+        <summary>削除、<see cref="T:System.Web.Configuration.ProfilePropertySettings" />コレクションから指定したインデックス位置にあるオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは挿入、`remove`要素を上位の構成ファイルで定義されているいずれかの要素の構成ファイルの該当セクションにします。 要素が現在の構成ファイルの該当セクションに定義されている場合、対応するエントリは、構成ファイルから削除します。 削除するオブジェクトは、コレクションに存在する必要があります。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.ProfilePropertySettingsCollection.RemoveAt%2A> メソッドを使用するコード例を次に示します。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.ProfileSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.ProfileSection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/CS/profilesection.cs#1)]
+ [!code-vb[System.Web.Configuration.ProfileSection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/VB/profilesection.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException">ない<see cref="T:System.Web.Configuration.ProfilePropertySettings" />オブジェクト、コレクション内の指定したインデックス位置。  
+  
+ \- または  
+  
+ 要素は既に削除されています。  
+  
+ \- または  
+  
+ コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Set">
+      <MemberSignature Language="C#" Value="public void Set (System.Web.Configuration.ProfilePropertySettings propertySettings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Set(class System.Web.Configuration.ProfilePropertySettings propertySettings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ProfilePropertySettingsCollection.Set(System.Web.Configuration.ProfilePropertySettings)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertySettings" Type="System.Web.Configuration.ProfilePropertySettings" />
+      </Parameters>
+      <Docs>
+        <param name="propertySettings"><see cref="T:System.Web.Configuration.ProfilePropertySettings" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.Web.Configuration.ProfilePropertySettings" /> オブジェクトをコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出すと同じ効果を呼び出すことと、<xref:System.Web.Configuration.ProfilePropertySettingsCollection.Add%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationException"><see cref="T:System.Web.Configuration.ProfilePropertySettings" />コレクションに既に追加するオブジェクトが存在するか、コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ThrowOnDuplicate">
+      <MemberSignature Language="C#" Value="protected override bool ThrowOnDuplicate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ThrowOnDuplicate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProfilePropertySettingsCollection.ThrowOnDuplicate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトの複製を作成する試行が行われた場合、エラーをスローするかどうかを示す値を取得します。</summary>
+        <value>
+          常に <see langword="true" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

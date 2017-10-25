@@ -1,0 +1,144 @@
+<Type Name="OutputCache" FullName="System.Web.Caching.OutputCache">
+  <TypeSignature Language="C#" Value="public static class OutputCache" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit OutputCache extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Caching.OutputCache" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Web サイトの構成ファイルで指定されている出力キャッシュ プロバイダーをプログラムでアクセスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 出力キャッシュ メモリのページ、コントロール、および HTTP 応答の生成された出力を格納します。 出力キャッシュには、異なるバージョンの文字列によっては、クエリおよびフォーム ポスト パラメーターをページに、ブラウザーの種類、またはユーザーの言語でコンテンツをキャッシュすることができます。 特定の期間の出力キャッシュのエントリをキャッシュする ASP.NET を構成できます。 キャッシュが依存しているデータベースの変更などの外部イベントに基づいて、自動的にキャッシュ エントリを削除する ASP.NET を構成することもできます。  
+  
+ <xref:System.Web.Caching.OutputCache>クラスでは、出力キャッシュを拡張することができます。 たとえば、1 つまたは複数カスタム出力キャッシュ プロバイダーをローカルまたはリモートのディスク、データベース、クラウドの記憶域、および分散キャッシュ エンジンなどの他の記憶域デバイスを対象とするを構成することができます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DefaultProviderName">
+      <MemberSignature Language="C#" Value="public static string DefaultProviderName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string DefaultProviderName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Caching.OutputCache.DefaultProviderName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>出力キャッシュ用に構成されている既定のプロバイダーの名前を取得します。</summary>
+        <value>既定のプロバイダーの名前です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、すべての HTTP 応答では、表示するページ、およびコントロールを使用して`AspNetInternalProvider`メモリ内の出力キャッシュ プロバイダー。 別のプロバイダーを使用する設定、`defaultProvider`属性を別のプロバイダーの名前にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Deserialize">
+      <MemberSignature Language="C#" Value="public static object Deserialize (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Deserialize(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.OutputCache.Deserialize(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream">逆シリアル化するデータ。</param>
+        <summary>出力キャッシュ データには、バイナリ オブジェクトを逆シリアル化します。</summary>
+        <returns>逆シリアル化されたデータを格納するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、部分信頼で動作している出力キャッシュ プロバイダーによって使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">メソッドによって返される逆シリアル化されたオブジェクトは、出力キャッシュの有効な型ではありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stream" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Providers">
+      <MemberSignature Language="C#" Value="public static System.Web.Caching.OutputCacheProviderCollection Providers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Web.Caching.OutputCacheProviderCollection Providers" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Caching.OutputCache.Providers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Caching.OutputCacheProviderCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web サイトの構成ファイルで指定されている出力キャッシュ プロバイダーのコレクションを取得します。</summary>
+        <value>構成済みのプロバイダーのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つまたは複数カスタム出力キャッシュ プロバイダーをローカルまたはリモートのディスク、データベース、クラウドの記憶域、および分散キャッシュ エンジンなどの他の記憶域デバイスを対象とするを構成します。 によって表されるコレクションにプロバイダーを追加するカスタム出力キャッシュ プロバイダーを構成するのには<xref:System.Web.Caching.OutputCache.Providers%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Serialize">
+      <MemberSignature Language="C#" Value="public static void Serialize (System.IO.Stream stream, object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Serialize(class System.IO.Stream stream, object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.OutputCache.Serialize(System.IO.Stream,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="stream">シリアル化されたバイナリ データを格納するオブジェクト。</param>
+        <param name="data">シリアル化する出力キャッシュ データ。</param>
+        <summary>出力キャッシュ データをバイナリ データにシリアル化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、部分信頼で動作している出力キャッシュ プロバイダーによって使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="data" />指定された出力キャッシュの種類のいずれかです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="data" /> が <see langword="null" /> または <paramref name="stream" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

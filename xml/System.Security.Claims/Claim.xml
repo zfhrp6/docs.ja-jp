@@ -1,0 +1,872 @@
+<Type Name="Claim" FullName="System.Security.Claims.Claim">
+  <TypeSignature Language="C#" Value="public class Claim" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit Claim extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Claims.Claim" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Claims</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>クレームを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クレームは、発行者によって作成されたサブジェクトに関するステートメントを示します。 クレームは、認証と承認の操作のコンテキスト内で使用されるサブジェクトの属性を表します。 サブジェクトと発行者は、id シナリオの一部である両方のエンティティです。 件名の典型的な例を示します。 ユーザー、アプリケーションまたはサービス、デバイス、またはコンピューター。 発行者の典型的な例を示します: オペレーティング システム、アプリケーションです。 サービス、ロール プロバイダー、id プロバイダー、またはフェデレーション プロバイダー。 発行者は、通常を通じて、セキュリティ トークン サービス (STS) のセキュリティ トークンを発行することで、信頼性情報を提供します。 (、WIF でから派生することによって、STS をビルドすることができます、<xref:System.IdentityModel.SecurityTokenService>クラスです)。場合によっては、発行者から受信した要求のコレクションは、リソースに直接格納されている件名属性によって拡張できます。 クレームは、データへのアクセス権を決定する評価できるその他の承認のプロセス中にリソースをセキュリティで保護し、ことか、サブジェクトに関する認証決定を express も使用できます。  
+  
+ .NET 4.5 以降では、クレーム ベース id を実装するには、Windows Identity Foundation (WIF) のクラスが完全に統合されて、.NET Framework。 クレームの概念はによって実装される、<xref:System.Security.Claims.Claim>クラスです。  
+  
+ 次の重要なプロパティの説明、<xref:System.Security.Claims.Claim>クラス。  
+  
+-   <xref:System.Security.Claims.Claim.Type%2A>プロパティは、クレームのセマンティクス情報を含む文字列 (通常は URI) 以外の場合は、要求の値の意味を示します。 たとえば、要求の種類の要求<xref:System.Security.Claims.ClaimTypes.GivenName>("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname") は、ユーザーの名前を表します。 値、<xref:System.Security.Claims.Claim.Type%2A>プロパティで定義されている既知のクレームの種類のいずれかを指定できます、<xref:System.Security.Claims.ClaimTypes>クラス、することもできます任意の URI、発行者で定義されています。 たとえば、"urn: spendinglimit"のクレームの種類は、発行者のビジネス コンテキストで意味のあるユーザーの属性を表す場合があります。  
+  
+-   <xref:System.Security.Claims.Claim.Value%2A>プロパティには、要求の値が含まれています。 依存関係を減らすし、WIF での管理を簡素化するために、要求の値は文字列として表されます。 複雑な値の型、値にシリアル化するためのものであり、文字列から逆シリアル化方法を示すためには、標準の XML スキーマ型を使用することをお勧めします。  
+  
+-   <xref:System.Security.Claims.Claim.ValueType%2A>プロパティには値の型情報を識別する文字列が含まれています。 値の形式を理解し、逆シリアル化する方法に関する情報を提供する、このプロパティを使用する必要があります。 ソリューションは、複雑な値の型を必要とする場合は、標準 XML スキーマの種類を使用することをお勧め、<xref:System.Security.Claims.Claim.ValueType%2A>を示すプロパティをどのように<xref:System.Security.Claims.Claim.Value%2A>プロパティにシリアル化するためのものであり、文字列から逆シリアル化します。  
+  
+-   <xref:System.Security.Claims.Claim.Subject%2A>プロパティは、<xref:System.Security.Claims.ClaimsIdentity>クレームのサブジェクトを表すオブジェクト。 クレームのサブジェクトは、に関するクレームがアサートされるエンティティ (通常、リソースへのアクセスを要求しているユーザー) です。 <xref:System.Security.Claims.ClaimsIdentity>が含まれている間、そのプロパティでプロパティを記述するクレームのコレクションと 1 つまたは複数の発行元によってに attested とサブジェクトの属性です。  
+  
+-   <xref:System.Security.Claims.Claim.Issuer%2A>プロパティには、要求を発行したエンティティの名前が含まれています。 要求の発行者は、WIF の発行者名レジストリによって保持されている既知の発行者の一覧から取得した名前を表す文字列で表されます。 発行者名レジストリから派生したクラスのインスタンスである、<xref:System.IdentityModel.Tokens.IssuerNameRegistry>クラスです。 発行者名レジストリは、ニーモニックの名前を対応する発行元によって生成されるトークンの署名を確認するために必要な暗号化マテリアルを関連付けます。 たとえば、<xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry>クラス、.NET 4.5 ですぐに使用できますが、対応する X.509 証明書にニーモニック各発行者の名前を関連付けます。 よく知られている発行者の一覧は、通常、発行者名レジストリによってスタートアップ時に作成されます。 によって使用されるリスト、<xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry>は、アプリケーション構成ファイルで指定します。  
+  
+-   <xref:System.Security.Claims.Claim.OriginalIssuer%2A>プロパティには、最初に要求を発行したエンティティの名前が含まれています。 このプロパティは、クレーム可能性がありますが通過複数の発行者を RP アプリケーションのクライアントによって表されたシナリオを容易にするために設計されていますフェデレーション シナリオなど。 調べることができます、<xref:System.Security.Claims.Claim.OriginalIssuer%2A>プロパティを最初に要求を発行したエンティティを特定します。 発行者名レジストリの場合などで管理されている、よく知られている発行者の一覧から、名前を取得、<xref:System.Security.Claims.Claim.Issuer%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、HTTP 要求を実行する認証済みユーザーに関連付けられているクレームを抽出し、それらを HTTP 応答に書き込みます。 現在のユーザーがから読み取られる、<xref:System.Web.HttpContext>として、<xref:System.Security.Claims.ClaimsPrincipal>し、要求の読み取りをします。 書き込まれますが、信頼性情報、<xref:System.Web.HttpResponse>オブジェクト。  
+  
+```csharp  
+ClaimsPrincipal principal = HttpContext.Current.User as ClaimsPrincipal;  
+if (null != principal)  
+{  
+   foreach (Claim claim in principal.Claims)  
+   {  
+      Response.Write("CLAIM TYPE: " + claim.Type + "; CLAIM VALUE: " + claim.Value + "</br>");  
+   }  
+  
+}  
+  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Claim (System.IO.BinaryReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.BinaryReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Claims.Claim.#ctor(System.IO.BinaryReader)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="reader" Type="System.IO.BinaryReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">A<see cref="T:System.IO.BinaryReader" />を指す、<see cref="T:System.Security.Claims.Claim" />です。</param>
+        <summary>インスタンスを初期化<see cref="T:System.Security.Claims.Claim" />、指定した<see cref="T:System.IO.BinaryReader" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されたバイトからリーダーを作成する通常、<xref:System.Security.Claims.Claim.WriteTo%2A>です。 
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Claim (System.Security.Claims.Claim other);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Security.Claims.Claim other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Claims.Claim.#ctor(System.Security.Claims.Claim)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="other" Type="System.Security.Claims.Claim" />
+      </Parameters>
+      <Docs>
+        <param name="other">セキュリティ要求。</param>
+        <summary><see cref="T:System.Security.Claims.Claim" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Claim (System.IO.BinaryReader reader, System.Security.Claims.ClaimsIdentity subject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.BinaryReader reader, class System.Security.Claims.ClaimsIdentity subject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Claims.Claim.#ctor(System.IO.BinaryReader,System.Security.Claims.ClaimsIdentity)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="reader" Type="System.IO.BinaryReader" />
+        <Parameter Name="subject" Type="System.Security.Claims.ClaimsIdentity" />
+      </Parameters>
+      <Docs>
+        <param name="reader">バイナリ リーダー。</param>
+        <param name="subject">この要求を記述するサブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Claims.Claim" />指定したリーダーとサブジェクトを持つクラス。</summary>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Claim (System.Security.Claims.Claim other, System.Security.Claims.ClaimsIdentity subject);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Security.Claims.Claim other, class System.Security.Claims.ClaimsIdentity subject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Claims.Claim.#ctor(System.Security.Claims.Claim,System.Security.Claims.ClaimsIdentity)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="other" Type="System.Security.Claims.Claim" />
+        <Parameter Name="subject" Type="System.Security.Claims.ClaimsIdentity" />
+      </Parameters>
+      <Docs>
+        <param name="other">セキュリティ要求。</param>
+        <param name="subject">この要求を記述するサブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Claims.Claim" />指定されたセキュリティ クレームとサブジェクトを持つクラス。</summary>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Claim (string type, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string type, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Claims.Claim.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type">クレームの種類。</param>
+        <param name="value">要求の値。</param>
+        <summary>指定した要求の種類および値を使用して、<see cref="T:System.Security.Claims.Claim" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Claims.Claim.Subject%2A> プロパティが `null` に設定されている。 <xref:System.Security.Claims.Claim.Issuer%2A> プロパティと <xref:System.Security.Claims.Claim.OriginalIssuer%2A> プロパティを <xref:System.Security.Claims.ClaimsIdentity.DefaultIssuer> に設定します。 <xref:System.Security.Claims.Claim.ValueType%2A> プロパティが <xref:System.Security.Claims.ClaimValueTypes.String?displayProperty=nameWithType> に設定されている。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> または <paramref name="value" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Claim (string type, string value, string valueType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string type, string value, string valueType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Claims.Claim.#ctor(System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="valueType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type">クレームの種類。</param>
+        <param name="value">要求の値。</param>
+        <param name="valueType">要求の値の型。 このパラメーターは、する場合<see langword="null" />、し<see cref="F:System.Security.Claims.ClaimValueTypes.String" />を使用します。</param>
+        <summary>指定した要求の種類、値、および値の型を使用して、<see cref="T:System.Security.Claims.Claim" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Claims.Claim.Subject%2A> プロパティが `null` に設定されている。 <xref:System.Security.Claims.Claim.Issuer%2A> プロパティと <xref:System.Security.Claims.Claim.OriginalIssuer%2A> プロパティを <xref:System.Security.Claims.ClaimsIdentity.DefaultIssuer> に設定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> または <paramref name="value" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Claim (string type, string value, string valueType, string issuer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string type, string value, string valueType, string issuer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Claims.Claim.#ctor(System.String,System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="valueType" Type="System.String" />
+        <Parameter Name="issuer" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type">クレームの種類。</param>
+        <param name="value">要求の値。</param>
+        <param name="valueType">要求の値の型。 このパラメーターは、する場合<see langword="null" />、し<see cref="F:System.Security.Claims.ClaimValueTypes.String" />を使用します。</param>
+        <param name="issuer">要求の発行者。 このパラメーターが空の場合、または<see langword="null" />、し<see cref="F:System.Security.Claims.ClaimsIdentity.DefaultIssuer" />を使用します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Claims.Claim" />指定された要求の種類、値、値型、および発行者を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Claims.Claim.Subject%2A> プロパティが `null` に設定されている。 <xref:System.Security.Claims.Claim.OriginalIssuer%2A>プロパティの値に基づいて、`issuer`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> または <paramref name="value" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Claim (string type, string value, string valueType, string issuer, string originalIssuer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string type, string value, string valueType, string issuer, string originalIssuer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Claims.Claim.#ctor(System.String,System.String,System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="valueType" Type="System.String" />
+        <Parameter Name="issuer" Type="System.String" />
+        <Parameter Name="originalIssuer" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type">クレームの種類。</param>
+        <param name="value">要求の値。</param>
+        <param name="valueType">要求の値の型。 このパラメーターは、する場合<see langword="null" />、し<see cref="F:System.Security.Claims.ClaimValueTypes.String" />を使用します。</param>
+        <param name="issuer">要求の発行者。 このパラメーターが空の場合、または<see langword="null" />、し<see cref="F:System.Security.Claims.ClaimsIdentity.DefaultIssuer" />を使用します。</param>
+        <param name="originalIssuer">要求の発行元。 このパラメーターが空の場合または<see langword="null" />、続いて、<see cref="P:System.Security.Claims.Claim.OriginalIssuer" />の値に設定されて、<see cref="P:System.Security.Claims.Claim.Issuer" />プロパティです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Claims.Claim" />指定された要求の種類、値、値型、発行者、および発行元を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Claims.Claim.Subject%2A> プロパティが `null` に設定されている。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> または <paramref name="value" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Claim (string type, string value, string valueType, string issuer, string originalIssuer, System.Security.Claims.ClaimsIdentity subject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string type, string value, string valueType, string issuer, string originalIssuer, class System.Security.Claims.ClaimsIdentity subject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Claims.Claim.#ctor(System.String,System.String,System.String,System.String,System.String,System.Security.Claims.ClaimsIdentity)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="valueType" Type="System.String" />
+        <Parameter Name="issuer" Type="System.String" />
+        <Parameter Name="originalIssuer" Type="System.String" />
+        <Parameter Name="subject" Type="System.Security.Claims.ClaimsIdentity" />
+      </Parameters>
+      <Docs>
+        <param name="type">クレームの種類。</param>
+        <param name="value">要求の値。</param>
+        <param name="valueType">要求の値の型。 このパラメーターは、する場合<see langword="null" />、し<see cref="F:System.Security.Claims.ClaimValueTypes.String" />を使用します。</param>
+        <param name="issuer">要求の発行者。 このパラメーターが空の場合、または<see langword="null" />、し<see cref="F:System.Security.Claims.ClaimsIdentity.DefaultIssuer" />を使用します。</param>
+        <param name="originalIssuer">要求の発行元。 このパラメーターが空の場合または<see langword="null" />、続いて、<see cref="P:System.Security.Claims.Claim.OriginalIssuer" />の値に設定されて、<see cref="P:System.Security.Claims.Claim.Issuer" />プロパティです。</param>
+        <param name="subject">この要求を記述するサブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Claims.Claim" />指定された要求の種類、値、値型、発行者、発行元とサブジェクトを持つクラス。</summary>
+        <remarks>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> または <paramref name="value" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public virtual System.Security.Claims.Claim Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.Claims.Claim Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Claims.Claim.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Claims.Claim</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このオブジェクトからコピーされた新しい <see cref="T:System.Security.Claims.Claim" /> オブジェクトを返します。 新しい要求に件名がありません。</summary>
+        <returns>新しい要求オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、シャロー コピー操作です。 <xref:System.Security.Claims.Claim.Subject%2A>新しいプロパティ<xref:System.Security.Claims.Claim>にオブジェクトが設定されている`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public virtual System.Security.Claims.Claim Clone (System.Security.Claims.ClaimsIdentity identity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.Claims.Claim Clone(class System.Security.Claims.ClaimsIdentity identity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Claims.Claim.Clone(System.Security.Claims.ClaimsIdentity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Claims.Claim</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="identity" Type="System.Security.Claims.ClaimsIdentity" />
+      </Parameters>
+      <Docs>
+        <param name="identity">新しい要求の目的のサブジェクト。</param>
+        <summary>このオブジェクトからコピーされた新しい <see cref="T:System.Security.Claims.Claim" /> オブジェクトを返します。 新しい要求のサブジェクトは、指定した ClaimsIdentity に設定されます。</summary>
+        <returns>新しい要求オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、シャロー コピー操作です。 <xref:System.Security.Claims.Claim.Subject%2A>新しいプロパティ<xref:System.Security.Claims.Claim>オブジェクトがの値に設定されている、`identity`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomSerializationData">
+      <MemberSignature Language="C#" Value="protected virtual byte[] CustomSerializationData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] CustomSerializationData" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Claims.Claim.CustomSerializationData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生型によって提供されるその他のデータが含まれています。</summary>
+        <value>A<see cref="T:System.Byte" />シリアル化されたデータの追加を表す配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+ <xref:System.Security.Claims.Claim.CustomSerializationData%2A>を呼び出すときに通常プロパティは設定<xref:System.Security.Claims.ClaimsIdentity.WriteTo(System.IO.BinaryWriter,System.Byte[])>です。
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Issuer">
+      <MemberSignature Language="C#" Value="public string Issuer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Issuer" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Claims.Claim.Issuer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求の発行元を取得します。</summary>
+        <value>要求の発行元を参照する名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Security.Claims.Claim.Issuer%2A>プロパティは、発行者名レジストリで保持されている、よく知られている発行者の一覧から使用されている名前です。 発行者名レジストリから派生したクラスのインスタンスである、<xref:System.IdentityModel.Tokens.IssuerNameRegistry>クラスです。 発行者名レジストリ ニーモニック名 (発行者名) です。 発行元によって生成されるトークンの署名を確認するために必要な暗号化マテリアルとを関連付けますたとえば、X.509 証明書です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OriginalIssuer">
+      <MemberSignature Language="C#" Value="public string OriginalIssuer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string OriginalIssuer" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Claims.Claim.OriginalIssuer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求の発行元を取得します。</summary>
+        <value>要求の発行元を指す名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最初に要求を発行したエンティティの名前が含まれています。 このプロパティは、クレーム可能性がありますが通過複数の発行者を RP アプリケーションのクライアントによって表されたシナリオを容易にするために設計されていますフェデレーション シナリオなど。  
+  
+ 値、<xref:System.Security.Claims.Claim.OriginalIssuer%2A>プロパティは、発行者名レジストリで保持されている、よく知られている発行者の一覧から使用されている名前です。 発行者名レジストリから派生したクラスのインスタンスである、<xref:System.IdentityModel.Tokens.IssuerNameRegistry>クラスです。 発行者名レジストリ ニーモニック名 (発行者名) です。 発行元によって生成されるトークンの署名を確認するために必要な暗号化マテリアルとを関連付けますたとえば、X.509 証明書です。  
+  
+ 委任とフェデレーションのシナリオを除く、<xref:System.Security.Claims.Claim.Issuer%2A>プロパティおよび<xref:System.Security.Claims.Claim.OriginalIssuer%2A>プロパティは、同じ値が通常します。 場合の値、<xref:System.Security.Claims.Claim.OriginalIssuer%2A>プロパティの値と異なる、<xref:System.Security.Claims.Claim.Issuer%2A>プロパティ、クレームは、最初の発行者によって発行された最初および再発行者によって発行された後です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,string&gt; Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, string&gt; Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Claims.Claim.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要求に関連付けられている追加のプロパティを格納するディクショナリを取得します。</summary>
+        <value>この要求に関連付けられている追加のプロパティを格納するディクショナリ。 プロパティは、名前と値の組として表されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Claims.Claim.Properties%2A>プロパティがメタデータまたはその他の情報に関連付けられている要求を許可する名前と値のペアのディクショナリを提供します。 このディクショナリ SAML トークンから生成された信頼性情報、内の定数で指定されたキーを含めることがあります、<xref:System.Security.Claims.ClaimProperties>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Subject">
+      <MemberSignature Language="C#" Value="public System.Security.Claims.ClaimsIdentity Subject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Claims.ClaimsIdentity Subject" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Claims.Claim.Subject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Claims.ClaimsIdentity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クレームの件名を取得します。</summary>
+        <value>クレームの件名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サブジェクトは、どの要求がアサートされるエンティティです。 一般的な例としては、ユーザー、アプリケーションまたはサービス、デバイス、またはコンピューターです。 サブジェクトがによって表される、 <xref:System.Security.Claims.ClaimsIdentity>、それを表すクレームのコレクションを含むです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Claims.Claim.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Security.Claims.Claim" /> オブジェクトの文字列表現を返します。</summary>
+        <returns>この <see cref="T:System.Security.Claims.Claim" /> オブジェクトの文字列表現。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される文字列には値が含まれています、<xref:System.Security.Claims.Claim.Type%2A>と<xref:System.Security.Claims.Claim.Value%2A>次の形式でのプロパティ:."型: 値"です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public string Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Type" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Claims.Claim.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求の種類を取得します。</summary>
+        <value>クレームの種類。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Claims.Claim.Type%2A>プロパティは、クレームのセマンティックのコンテンツを提供、クレームがについては、状態です。 たとえば、要求の種類の要求<xref:System.Security.Claims.ClaimTypes.GivenName>("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname") は、ユーザーの名前を表します。 要求の種類は、通常は URI です。ただし、限定されない、特定の形式に以外の値を文字列として表現できるとあります。 のみの一般的な要件として、要求の発行者および要求コンシューマーは、要求の意味に関する同意する必要があります。 Windows Identity Foundation (WIF) によって使用される既知のクレームの種類の定数は、を通じて利用、<xref:System.Security.Claims.ClaimTypes>クラスです。 要求の値がによって提供される、<xref:System.Security.Claims.Claim.Value%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public string Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Value" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Claims.Claim.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求の値を取得します。</summary>
+        <value>要求の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求の値は、文字列として表されます。 複雑な値の型、値がシリアル化して、文字列から逆シリアル化することを意図した方法を示すためには、標準の XML スキーマ型を使用することをお勧めします。  
+  
+ <xref:System.Security.Claims.Claim.ValueType%2A>プロパティが値の基になる構文の型情報を提供します。 <xref:System.Security.Claims.Claim.Type%2A>プロパティ値のセマンティクス情報を提供する、。 これは、値の意味は、要求コンシューマーこれを解釈する方法について説明します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValueType">
+      <MemberSignature Language="C#" Value="public string ValueType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ValueType" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Claims.Claim.ValueType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求の値の型を取得します。</summary>
+        <value>要求の値の型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Claims.Claim.ValueType%2A>プロパティには値の型情報を識別する文字列が含まれています。 値の形式を理解し、および値を逆シリアル化する方法に関する情報を提供する、このプロパティを使用できます。 ソリューションは、複雑な値の型を必要とする場合は、標準 XML スキーマの種類を使用することをお勧めしますが、<xref:System.Security.Claims.Claim.ValueType%2A>かを示すプロパティ方法、<xref:System.Security.Claims.Claim.Value%2A>プロパティがシリアル化および文字列から逆シリアル化に意図したものです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteTo">
+      <MemberSignature Language="C#" Value="public virtual void WriteTo (System.IO.BinaryWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteTo(class System.IO.BinaryWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Claims.Claim.WriteTo(System.IO.BinaryWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.IO.BinaryWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">データ記憶域に使用するライター。</param>
+        <summary>これを書き込みます<see cref="T:System.Security.Claims.Claim" />ライターに出力します。</summary>
+        <remarks>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteTo">
+      <MemberSignature Language="C#" Value="protected virtual void WriteTo (System.IO.BinaryWriter writer, byte[] userData);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteTo(class System.IO.BinaryWriter writer, unsigned int8[] userData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Claims.Claim.WriteTo(System.IO.BinaryWriter,System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.IO.BinaryWriter" />
+        <Parameter Name="userData" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="writer">この要求を書き込むライター。</param>
+        <param name="userData">要求するユーザー データ。</param>
+        <summary>これを書き込みます<see cref="T:System.Security.Claims.Claim" />ライターに出力します。</summary>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

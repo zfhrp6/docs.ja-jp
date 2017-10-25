@@ -1,0 +1,521 @@
+<Type Name="RSAEncryptionPadding" FullName="System.Security.Cryptography.RSAEncryptionPadding">
+  <TypeSignature Language="C#" Value="public sealed class RSAEncryptionPadding : IEquatable&lt;System.Security.Cryptography.RSAEncryptionPadding&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit RSAEncryptionPadding extends System.Object implements class System.IEquatable`1&lt;class System.Security.Cryptography.RSAEncryptionPadding&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.RSAEncryptionPadding" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+    <AssemblyVersion>4.3.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IEquatable&lt;System.Security.Cryptography.RSAEncryptionPadding&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>RSA 暗号化または復号化の操作で使用されるパディング モードおよびパラメーターを指定します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateOaep">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.RSAEncryptionPadding CreateOaep (System.Security.Cryptography.HashAlgorithmName hashAlgorithm);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Cryptography.RSAEncryptionPadding CreateOaep(valuetype System.Security.Cryptography.HashAlgorithmName hashAlgorithm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RSAEncryptionPadding.CreateOaep(System.Security.Cryptography.HashAlgorithmName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.RSAEncryptionPadding</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hashAlgorithm" Type="System.Security.Cryptography.HashAlgorithmName" />
+      </Parameters>
+      <Docs>
+        <param name="hashAlgorithm">ハッシュアルゴリズム。</param>
+        <summary><see cref="P:System.Security.Cryptography.RSAEncryptionPadding.Mode" /> が指定されたハッシュ アルゴリズムで <see cref="F:System.Security.Cryptography.RSAEncryptionPaddingMode.Oaep" /> された、新しい <see cref="T:System.Security.Cryptography.RSAEncryptionPadding" /> インスタンスを作成します。</summary>
+        <returns>モードが <see cref="P:System.Security.Cryptography.RSAEncryptionPadding.Mode" /> であるオブジェクトは、<paramref name="hashAlgorithm" /> によって指定されたハッシュ アルゴリズムで <see cref="F:System.Security.Cryptography.RSAEncryptionPaddingMode.Oaep" /> されます。 .</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="hashAlgorithm" /> の <see cref="P:System.Security.Cryptography.HashAlgorithmName.Name" /> プロパティは <see langword="null" /> または <see cref="F:System.String.Empty" /> のいずれかです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RSAEncryptionPadding.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">比較対象のオブジェクト。</param>
+        <summary>現在のインスタンスが、指定したオブジェクトと等しいかどうかを判断します。</summary>
+        <returns>
+          <paramref name="obj" /> が現在のインスタンスと等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `obj`ある場合は、現在のインスタンスと同じ、<xref:System.Security.Cryptography.RSAEncryptionPadding>オブジェクトと 2 つのオブジェクトである同一<xref:System.Security.Cryptography.RSAEncryptionPadding.Mode%2A>と<xref:System.Security.Cryptography.RSAEncryptionPadding.OaepHashAlgorithm%2A>プロパティの値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Security.Cryptography.RSAEncryptionPadding other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(class System.Security.Cryptography.RSAEncryptionPadding other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RSAEncryptionPadding.Equals(System.Security.Cryptography.RSAEncryptionPadding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Security.Cryptography.RSAEncryptionPadding" />
+      </Parameters>
+      <Docs>
+        <param name="other">比較対象のオブジェクト。</param>
+        <summary>現在のインスタンスが、指定した <see cref="T:System.Security.Cryptography.RSAEncryptionPadding" /> オブジェクトと等しいかどうかを判断します。</summary>
+        <returns>
+          <paramref name="other" /> が現在のインスタンスと等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `instance`現在のインスタンスが同一である場合は等しいと<xref:System.Security.Cryptography.RSAEncryptionPadding.Mode%2A>と<xref:System.Security.Cryptography.RSAEncryptionPadding.OaepHashAlgorithm%2A>プロパティの値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RSAEncryptionPadding.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Security.Cryptography.RSAEncryptionPadding" /> オブジェクトのハッシュ コードを返します。</summary>
+        <returns>このインスタンスのハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Mode">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.RSAEncryptionPaddingMode Mode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Cryptography.RSAEncryptionPaddingMode Mode" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.RSAEncryptionPadding.Mode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.RSAEncryptionPaddingMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Security.Cryptography.RSAEncryptionPadding" /> インスタンスで表されているパディング モードを取得します。</summary>
+        <value>パディング モード。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OaepHashAlgorithm">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.HashAlgorithmName OaepHashAlgorithm { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Cryptography.HashAlgorithmName OaepHashAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.RSAEncryptionPadding.OaepHashAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.HashAlgorithmName</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="F:System.Security.Cryptography.RSAEncryptionPaddingMode.Oaep" /> パディング モードと組み合わせて使用するハッシュ アルゴリズムを取得します。 <see cref="P:System.Security.Cryptography.RSAEncryptionPadding.Mode" /> プロパティの値が <see cref="F:System.Security.Cryptography.RSAEncryptionPaddingMode.Oaep" /> でない場合、<see cref="P:System.Security.Cryptography.HashAlgorithmName.Name" /> は <see langword="null" /> です。</summary>
+        <value>ハッシュアルゴリズム。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OaepSHA1">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.RSAEncryptionPadding OaepSHA1 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Security.Cryptography.RSAEncryptionPadding OaepSHA1" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.RSAEncryptionPadding.OaepSHA1" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.RSAEncryptionPadding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SHA1 ハッシュ アルゴリズムを含む OAEP (Optimal Asymmetric Encryption Padding) 暗号化標準を表すオブジェクトを取得します。</summary>
+        <value>SHA1 ハッシュ アルゴリズムを含む OAEP 暗号化標準を表すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OaepSHA256">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.RSAEncryptionPadding OaepSHA256 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Security.Cryptography.RSAEncryptionPadding OaepSHA256" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.RSAEncryptionPadding.OaepSHA256" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.RSAEncryptionPadding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SHA256 ハッシュ アルゴリズムを含む OAEP (Optimal Asymmetric Encryption Padding) 暗号化標準を表すオブジェクトを取得します。</summary>
+        <value>SHA256 ハッシュ アルゴリズムを含む OAEP 暗号化標準を表すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OaepSHA384">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.RSAEncryptionPadding OaepSHA384 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Security.Cryptography.RSAEncryptionPadding OaepSHA384" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.RSAEncryptionPadding.OaepSHA384" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.RSAEncryptionPadding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SHA-384 ハッシュ アルゴリズムを含む OAEP (Optimal Asymmetric Encryption Padding) 暗号化標準を表すオブジェクトを取得します。</summary>
+        <value>SHA384 ハッシュ アルゴリズムを含む OAEP 暗号化標準を表すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OaepSHA512">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.RSAEncryptionPadding OaepSHA512 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Security.Cryptography.RSAEncryptionPadding OaepSHA512" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.RSAEncryptionPadding.OaepSHA512" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.RSAEncryptionPadding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SHA512 ハッシュ アルゴリズムを含む OAEP (Optimal Asymmetric Encryption Padding) 暗号化標準を表すオブジェクトを取得します。</summary>
+        <value>SHA512 ハッシュ アルゴリズムを含む OAEP 暗号化標準を表すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Security.Cryptography.RSAEncryptionPadding left, System.Security.Cryptography.RSAEncryptionPadding right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(class System.Security.Cryptography.RSAEncryptionPadding left, class System.Security.Cryptography.RSAEncryptionPadding right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RSAEncryptionPadding.op_Equality(System.Security.Cryptography.RSAEncryptionPadding,System.Security.Cryptography.RSAEncryptionPadding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Security.Cryptography.RSAEncryptionPadding" />
+        <Parameter Name="right" Type="System.Security.Cryptography.RSAEncryptionPadding" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較する最初のオブジェクト。</param>
+        <param name="right">比較する 2 番目のオブジェクト。</param>
+        <summary>指定した 2 つの <see cref="T:System.Security.Cryptography.RSAEncryptionPadding" /> オブジェクトが等しいかどうかを示します。</summary>
+        <returns>
+          <see langword="true" /> と <see langword="left" /> が等しい場合は <see langword="right" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ<xref:System.Security.Cryptography.RSAEncryptionPadding>オブジェクトが等しい場合は、<xref:System.Security.Cryptography.RSAEncryptionPadding.Mode%2A>と<xref:System.Security.Cryptography.RSAEncryptionPadding.OaepHashAlgorithm%2A>プロパティの値が等しい。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Security.Cryptography.RSAEncryptionPadding left, System.Security.Cryptography.RSAEncryptionPadding right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(class System.Security.Cryptography.RSAEncryptionPadding left, class System.Security.Cryptography.RSAEncryptionPadding right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RSAEncryptionPadding.op_Inequality(System.Security.Cryptography.RSAEncryptionPadding,System.Security.Cryptography.RSAEncryptionPadding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Security.Cryptography.RSAEncryptionPadding" />
+        <Parameter Name="right" Type="System.Security.Cryptography.RSAEncryptionPadding" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較する最初のオブジェクト。</param>
+        <param name="right">比較する 2 番目のオブジェクト。</param>
+        <summary>指定した 2 つの <see cref="T:System.Security.Cryptography.RSAEncryptionPadding" /> オブジェクトが等しくないかどうかを示します。</summary>
+        <returns>
+          <see langword="left" /> と <see langword="right" /> が等しくない場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ<xref:System.Security.Cryptography.RSAEncryptionPadding>オブジェクトが等しくない場合、<xref:System.Security.Cryptography.RSAEncryptionPadding.Mode%2A>と<xref:System.Security.Cryptography.RSAEncryptionPadding.OaepHashAlgorithm%2A>プロパティの値が等しくないです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pkcs1">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.RSAEncryptionPadding Pkcs1 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Security.Cryptography.RSAEncryptionPadding Pkcs1" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.RSAEncryptionPadding.Pkcs1" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.RSAEncryptionPadding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>PKCS #1 暗号化標準を表すオブジェクトを取得します。</summary>
+        <value>PKCS #1 暗号化標準を表すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RSAEncryptionPadding.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Security.Cryptography.RSAEncryptionPadding" /> インスタンスの文字列表現を返します。</summary>
+        <returns>現在のオブジェクトの文字列形式。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列形式を<xref:System.Security.Cryptography.RSAEncryptionPadding>オブジェクトの連結は、その<xref:System.Security.Cryptography.RSAEncryptionPadding.Mode%2A>と`OaepHashAlgorithm.Name`プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

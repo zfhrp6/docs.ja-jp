@@ -1,0 +1,157 @@
+<Type Name="RefreshEventArgs" FullName="System.ComponentModel.RefreshEventArgs">
+  <TypeSignature Language="C#" Value="public class RefreshEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RefreshEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.RefreshEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.ComponentModel.TypeDescriptor.Refreshed" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、コンポーネントの詳細については、プロセスの有効期間は変更されません。 設計時に、ただし、変更、コンポーネントのプロパティまたはイベント。 結果として、コンポーネントの情報で<xref:System.ComponentModel.TypeDescriptor>が最新でないと<xref:System.ComponentModel.TypeDescriptor.Refreshed>イベントが発生します。 A<xref:System.ComponentModel.TypeDescriptor.Refreshed>もイベントは、いつ発生するか、<xref:System.Type>がデザイン時に変更します。  
+  
+ A<xref:System.ComponentModel.RefreshEventArgs>オブジェクトに関連付けられているデータを指定する、<xref:System.ComponentModel.TypeDescriptor.Refreshed>イベント以外の場合は、コンポーネントと、コンポーネントの種類を変更します。  
+  
+ <xref:System.ComponentModel.RefreshEventArgs>クラスを提供<xref:System.ComponentModel.RefreshEventArgs.ComponentChanged%2A>と<xref:System.ComponentModel.RefreshEventArgs.TypeChanged%2A>プロパティを取得するコンポーネントかされる型がイベントを発生します。  
+  
+   
+  
+## Examples  
+ 例については、<xref:System.ComponentModel.RefreshEventArgs>クラスのサンプル コードを参照してください、<xref:System.ComponentModel.RefreshEventHandler>を委任します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RefreshEventArgs (object componentChanged);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object componentChanged) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.RefreshEventArgs.#ctor(System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="componentChanged" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="componentChanged">変更されたコンポーネント。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.RefreshEventArgs" />が変更されたコンポーネントを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RefreshEventArgs (Type typeChanged);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type typeChanged) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.RefreshEventArgs.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="typeChanged" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="typeChanged"><see cref="T:System.Type" />に変更します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.RefreshEventArgs" />が変更されたコンポーネントの型を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComponentChanged">
+      <MemberSignature Language="C#" Value="public object ComponentChanged { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object ComponentChanged" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.RefreshEventArgs.ComponentChanged" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティ、イベント、またはエクステンダーを変更するコンポーネントを取得します。</summary>
+        <value>変更されたプロパティ、イベント、またはエクステンダー、コンポーネントまたは<see langword="null" />同じ種類のすべてのコンポーネントが変更された場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeChanged">
+      <MemberSignature Language="C#" Value="public Type TypeChanged { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type TypeChanged" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.RefreshEventArgs.TypeChanged" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Type" />プロパティまたはイベントに変更します。</summary>
+        <value><see cref="T:System.Type" />プロパティまたはイベントに変更します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

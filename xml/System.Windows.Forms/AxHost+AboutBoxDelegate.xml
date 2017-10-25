@@ -1,0 +1,36 @@
+<Type Name="AxHost+AboutBoxDelegate" FullName="System.Windows.Forms.AxHost+AboutBoxDelegate">
+  <TypeSignature Language="C#" Value="protected delegate void AxHost.AboutBoxDelegate();" />
+  <TypeSignature Language="ILAsm" Value=".class nested protected auto ansi sealed AxHost/AboutBoxDelegate extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.AxHost.AboutBoxDelegate" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters />
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <summary>ActiveX コントロールの [バージョン情報] ダイアログ ボックスを表示するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.AxHost.AboutBoxDelegate> ActiveX コントロールの約ボックスを表示するときに通知する機能を提供します。 バージョン情報ボックスが表示される前に、デリゲート メソッドを追加したコードが実行されます。  
+  
+ 作成するときに、<xref:System.Windows.Forms.AxHost.AboutBoxDelegate>デリゲート、いずれかがある場合は、ActiveX コントロールのダイアログ ボックスの詳細の表示を処理するメソッドを指定します。 ハンドラー メソッドに関連付ける、メソッドに、デリゲートのインスタンスを追加します。 デリゲートを削除しない限り、メソッドが呼び出されるたびに、ハンドラーが呼び出されます。 デリゲートの詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次の例は、コンス トラクターをオーバーライドし、<xref:System.Windows.Forms.AxHost.SetAboutBoxDelegate%2A>と<xref:System.Windows.Forms.AxHost.AttachInterfaces%2A>のメソッド、 <xref:System.Windows.Forms.AxHost> Microsoft マスク エディット ActiveX コントロールをラップするクラスを派生します。 このコードは、使用して、MSMask32.ocx ファイルで AxImp.exe を実行して、生成されたソース コードを作成した前提としています。、`/source`スイッチを編集するラッパー クラスを生成します。 このコードは、つまりとして c# 構文でのみ表示、AxImp.exe でのみ言語の出力。  
+  
+ [!code-csharp[AxHost_Wrap_MaskEdit#1](~/samples/snippets/csharp/VS_Snippets_Winforms/AxHost_Wrap_MaskEdit/CS/axmsmask.cs#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

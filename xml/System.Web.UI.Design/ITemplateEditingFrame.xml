@@ -1,0 +1,354 @@
+<Type Name="ITemplateEditingFrame" FullName="System.Web.UI.Design.ITemplateEditingFrame">
+  <TypeSignature Language="C#" Value="public interface ITemplateEditingFrame : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITemplateEditingFrame implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.ITemplateEditingFrame" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("Use of this type is not recommended because template editing is handled in ControlDesigner. To support template editing expose template data in the TemplateGroups property and call SetViewFlags(ViewFlags.TemplateEditing, true). http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>テンプレート編集領域を管理するユーザー インターフェイスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.ITemplateEditingFrame>インターフェイスは今後使用しません。 使用して、<xref:System.Web.UI.Design.ControlDesigner.TemplateGroups%2A>テンプレート グループ、およびコントロール デザイナーのテンプレート グループ内のテンプレート定義にアクセスするプロパティです。  
+  
+ テンプレート編集フレームは、テンプレートのエディターで、テンプレート コントロール デザイナーの UI を表します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public void Close (bool saveChanges);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Close(bool saveChanges) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ITemplateEditingFrame.Close(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="saveChanges" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="saveChanges">
+          <see langword="true" />ドキュメントへの変更を保存する場合それ以外の場合、<see langword="false" />です。</param>
+        <summary>コントロールを閉じ、必要に応じて変更を保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.ITemplateEditingFrame>インターフェイスは今後使用しません。 使用して、<xref:System.Web.UI.Design.TemplateGroup.GroupStyle%2A>プロパティ内の各テンプレート グループ要素を<xref:System.Web.UI.Design.ControlDesigner.TemplateGroups%2A>コントロール デザイナーのコレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ControlStyle">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.Style ControlStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.Style ControlStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ITemplateEditingFrame.ControlStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Style</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>編集フレームのスタイルを取得します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.Style" />編集フレームの Web サーバー コントロールのスタイル属性を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.ITemplateEditingFrame>インターフェイスは今後使用しません。 使用して、<xref:System.Web.UI.Design.TemplateGroup.GroupStyle%2A>プロパティ内の各テンプレート グループ要素を<xref:System.Web.UI.Design.ControlDesigner.TemplateGroups%2A>コントロール デザイナーのコレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitialHeight">
+      <MemberSignature Language="C#" Value="public int InitialHeight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 InitialHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ITemplateEditingFrame.InitialHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールの初期の高さを設定します。</summary>
+        <value>コントロールの初期の高さ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.ITemplateEditingFrame>インターフェイスは今後使用しません。 使用して、<xref:System.Web.UI.WebControls.Style.Height%2A>プロパティに、<xref:System.Web.UI.Design.TemplateGroup.GroupStyle%2A>内の各テンプレート グループ要素のプロパティ、<xref:System.Web.UI.Design.ControlDesigner.TemplateGroups%2A>コントロール デザイナーのコレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitialWidth">
+      <MemberSignature Language="C#" Value="public int InitialWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 InitialWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ITemplateEditingFrame.InitialWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールの初期の幅を設定します。</summary>
+        <value>コントロールの初期の幅。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.ITemplateEditingFrame>インターフェイスは今後使用しません。 使用して、<xref:System.Web.UI.WebControls.Style.Width%2A>プロパティに、<xref:System.Web.UI.Design.TemplateGroup.GroupStyle%2A>内の各テンプレート グループ要素のプロパティ、<xref:System.Web.UI.Design.ControlDesigner.TemplateGroups%2A>コントロール デザイナーのコレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ITemplateEditingFrame.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>編集フレームの名前を取得します。</summary>
+        <value>編集フレームの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.ITemplateEditingFrame>インターフェイスは今後使用しません。 テンプレート グループ名が提供される、<xref:System.Web.UI.Design.TemplateGroup.GroupName%2A>内の各テンプレート グループ要素のプロパティ、<xref:System.Web.UI.Design.ControlDesigner.TemplateGroups%2A>コントロール デザイナーのコレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Open">
+      <MemberSignature Language="C#" Value="public void Open ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Open() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ITemplateEditingFrame.Open" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>開き、コントロールを表示します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Resize">
+      <MemberSignature Language="C#" Value="public void Resize (int width, int height);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Resize(int32 width, int32 height) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ITemplateEditingFrame.Resize(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="width" Type="System.Int32" />
+        <Parameter Name="height" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="width">新しいコントロールの幅。</param>
+        <param name="height">コントロールの新しい高さ。</param>
+        <summary>指定された幅と高さにコントロールのサイズを変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.ITemplateEditingFrame>インターフェイスは今後使用しません。 使用して、<xref:System.Web.UI.Design.TemplateGroup.GroupStyle%2A>プロパティ内の各テンプレート グループ要素を<xref:System.Web.UI.Design.ControlDesigner.TemplateGroups%2A>コントロール デザイナーのコレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public void Save ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Save() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ITemplateEditingFrame.Save" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ドキュメントには、すべての変更を保存します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TemplateNames">
+      <MemberSignature Language="C#" Value="public string[] TemplateNames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] TemplateNames" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ITemplateEditingFrame.TemplateNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用するテンプレートの名前のセットを取得します。</summary>
+        <value>テンプレート名の配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.ITemplateEditingFrame>インターフェイスは今後使用しません。 テンプレート名は、によって提供される、<xref:System.Web.UI.Design.DesignerObject.Name%2A>のプロパティ、<xref:System.Web.UI.Design.TemplateDefinition>オブジェクト。 使用してテンプレートの定義のコレクションを列挙、<xref:System.Web.UI.Design.TemplateGroup.Templates%2A>の各プロパティ<xref:System.Web.UI.Design.TemplateGroup>内の要素、<xref:System.Web.UI.Design.ControlDesigner.TemplateGroups%2A>コントロール デザイナーのコレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TemplateStyles">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.Style[] TemplateStyles { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.Style[] TemplateStyles" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ITemplateEditingFrame.TemplateStyles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Style[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールのテンプレートのスタイルを取得します。</summary>
+        <value>配列<see cref="T:System.Web.UI.WebControls.Style" />コントロールのテンプレートのスタイルを表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.ITemplateEditingFrame>インターフェイスは今後使用しません。 テンプレート スタイルがを介して提供される、<xref:System.Web.UI.Design.TemplateDefinition.Style%2A>のプロパティ、<xref:System.Web.UI.Design.TemplateDefinition>オブジェクト。 使用してテンプレートの定義のコレクションを列挙、<xref:System.Web.UI.Design.TemplateGroup.Templates%2A>の各プロパティ<xref:System.Web.UI.Design.TemplateGroup>内の要素、<xref:System.Web.UI.Design.ControlDesigner.TemplateGroups%2A>コントロール デザイナーのコレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateControlName">
+      <MemberSignature Language="C#" Value="public void UpdateControlName (string newName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void UpdateControlName(string newName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ITemplateEditingFrame.UpdateControlName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="newName">コントロールの新しい名前。</param>
+        <summary>コントロールの名前を指定した名前に変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.ITemplateEditingFrame>インターフェイスは今後使用しません。 使用して、<xref:System.Web.UI.Design.TemplateGroup.GroupStyle%2A>プロパティ内の各テンプレート グループ要素を<xref:System.Web.UI.Design.ControlDesigner.TemplateGroups%2A>コントロール デザイナーのコレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Verb">
+      <MemberSignature Language="C#" Value="public System.Web.UI.Design.TemplateEditingVerb Verb { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Design.TemplateEditingVerb Verb" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ITemplateEditingFrame.Verb" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.TemplateEditingVerb</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはテンプレートを呼び出すの動詞を設定します。</summary>
+        <value>A<see cref="T:System.Web.UI.Design.TemplateEditingVerb" />あり、テンプレートを呼び出します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.ITemplateEditingFrame>インターフェイスは今後使用しません。 使用して、<xref:System.Web.UI.Design.TemplateGroup.GroupName%2A>内の各テンプレート グループのプロパティ、<xref:System.Web.UI.Design.ControlDesigner.TemplateGroups%2A>コントロール デザイナーのコレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

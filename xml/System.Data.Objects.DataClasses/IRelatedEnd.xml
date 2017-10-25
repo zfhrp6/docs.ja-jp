@@ -1,0 +1,487 @@
+<Type Name="IRelatedEnd" FullName="System.Data.Objects.DataClasses.IRelatedEnd">
+  <TypeSignature Language="C#" Value="public interface IRelatedEnd" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IRelatedEnd" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Objects.DataClasses.IRelatedEnd" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>リレーションシップの End を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.DataClasses.IRelatedEnd> は、アソシエーションの End を表すオブジェクトの要件を定義します。 このインターフェイスは、<xref:System.Data.Objects.DataClasses.RelatedEnd>クラスです。 <xref:System.Data.Objects.DataClasses.RelatedEnd>基本クラスには、<xref:System.Data.Objects.DataClasses.EntityCollection%601>と<xref:System.Data.Objects.DataClasses.EntityReference%601>クラスです。  
+  
+   
+  
+## Examples  
+ このトピックの例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)で生成された、 [Entity Data Model ウィザード](http://msdn.microsoft.com/en-us/423ec9a7-5464-43b7-a7ef-9f5f000848b5)です。  
+  
+ 次の例が新規追加`SalesOrderHeader`エンティティ、`Contact`エンティティです。 すべての関連 end を取得し、`Contact`エンティティと表示のリレーションシップの名前、ソース ロール名、および各関連 end のターゲット ロール名。  
+  
+ [!code-csharp[DP ObjectServices Concepts#IRelatedEnd](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#irelatedend)]
+ [!code-vb[DP ObjectServices Concepts#IRelatedEnd](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#irelatedend)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Data.Objects.DataClasses.IEntityWithRelationships entity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Add(class System.Data.Objects.DataClasses.IEntityWithRelationships entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.IRelatedEnd.Add(System.Data.Objects.DataClasses.IEntityWithRelationships)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Data.Objects.DataClasses.IEntityWithRelationships" />
+      </Parameters>
+      <Docs>
+        <param name="entity">コレクションに追加するオブジェクト。 <c>エンティティ</c>実装する必要があります<see cref="T:System.Data.Objects.DataClasses.IEntityWithRelationships" />です。</param>
+        <summary>関連 End にオブジェクトを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.DataClasses.IRelatedEnd.Add%2A> メソッドは、関連 End にオブジェクトを追加します。 関連 End は <xref:System.Data.Objects.DataClasses.EntityCollection%601> である必要があります。  
+  
+ ソース オブジェクトを実装すると<xref:System.Data.Objects.DataClasses.IEntityWithRelationships>で追跡されていると、 <xref:System.Data.Objects.ObjectStateManager>、追加されるオブジェクトが追跡されます。  
+  
+ <xref:System.Data.Objects.DataClasses.RelatedEnd> クラスは、<xref:System.Data.Objects.DataClasses.IRelatedEnd.Add%2A> メソッドを明示的に実装します。 <xref:System.Data.Objects.DataClasses.EntityCollection%601> クラスは、この実装を使用します。 詳細については、「<xref:System.Data.Objects.DataClasses.EntityCollection%601.Add%2A>」を参照してください。  
+  
+ 関連 end がある場合、<xref:System.Data.Objects.DataClasses.EntityReference%601>と<xref:System.Data.Objects.DataClasses.EntityReference%601.Value%2A>参照のプロパティは使用されません`null`、このメソッドが例外をスローします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (object entity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Add(object entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.IRelatedEnd.Add(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="entity">コレクションに追加するオブジェクト。</param>
+        <summary>関連 End にオブジェクトを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのオーバー ロードを使用してエンティティ クラスを実装しない<xref:System.Data.Objects.DataClasses.IEntityWithRelationships>です。 使用して、<xref:System.Data.Objects.DataClasses.IRelatedEnd.Add%2A>メソッドを実装してエンティティ クラス<xref:System.Data.Objects.DataClasses.IEntityWithRelationships>です。  
+  
+ <xref:System.Data.Objects.DataClasses.IRelatedEnd.Add%2A> メソッドは、関連 End にオブジェクトを追加します。 関連 End は <xref:System.Data.Objects.DataClasses.EntityCollection%601> である必要があります。  
+  
+ <xref:System.Data.Objects.DataClasses.RelatedEnd> クラスは、<xref:System.Data.Objects.DataClasses.IRelatedEnd.Add%2A> メソッドを明示的に実装します。 <xref:System.Data.Objects.DataClasses.EntityCollection%601> クラスは、この実装を使用します。 詳細については、「<xref:System.Data.Objects.DataClasses.EntityCollection%601.Add%2A>」を参照してください。  
+  
+ 関連 end がある場合、<xref:System.Data.Objects.DataClasses.EntityReference%601>と<xref:System.Data.Objects.DataClasses.EntityReference%601.Value%2A>参照のプロパティは使用されません`null`、このメソッドが例外をスローします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Attach">
+      <MemberSignature Language="C#" Value="public void Attach (System.Data.Objects.DataClasses.IEntityWithRelationships entity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Attach(class System.Data.Objects.DataClasses.IEntityWithRelationships entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.IRelatedEnd.Attach(System.Data.Objects.DataClasses.IEntityWithRelationships)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Data.Objects.DataClasses.IEntityWithRelationships" />
+      </Parameters>
+      <Docs>
+        <param name="entity">アタッチされるオブジェクト。 <c>エンティティ</c>実装する必要があります<see cref="T:System.Data.Objects.DataClasses.IEntityWithRelationships" />です。</param>
+        <summary>アタッチされた 2 つのオブジェクト間のリレーションシップを定義します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.DataClasses.IRelatedEnd.Attach%2A> メソッドは、どちらも同じ <xref:System.Data.Objects.ObjectContext> インスタンスにアタッチされている 2 つのオブジェクト間のリレーションシップを定義するために使用されます。  
+  
+ <xref:System.Data.Objects.DataClasses.RelatedEnd> クラスは、<xref:System.Data.Objects.DataClasses.IRelatedEnd.Attach%2A> メソッドを明示的に実装します。 <xref:System.Data.Objects.DataClasses.EntityCollection%601> クラスは、この実装を使用して、アタッチされたソース オブジェクトと、コレクションにアタッチされたオブジェクトの間のリレーションシップを定義します。 詳細については、次を参照してください。[のアタッチとデタッチ オブジェクト](http://msdn.microsoft.com/en-us/41d5c1ef-1b78-4502-aa10-7e1438d62d23)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Attach">
+      <MemberSignature Language="C#" Value="public void Attach (object entity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Attach(object entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.IRelatedEnd.Attach(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="entity">アタッチされるオブジェクト。</param>
+        <summary>アタッチされた 2 つのオブジェクト間のリレーションシップを定義します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのオーバー ロードを使用してエンティティ クラスを実装しない<xref:System.Data.Objects.DataClasses.IEntityWithRelationships>です。 使用して、<xref:System.Data.Objects.DataClasses.IRelatedEnd.Attach%2A>メソッドを実装してエンティティ クラス<xref:System.Data.Objects.DataClasses.IEntityWithRelationships>です。  
+  
+ <xref:System.Data.Objects.DataClasses.IRelatedEnd.Attach%2A> メソッドは、どちらも同じ <xref:System.Data.Objects.ObjectContext> インスタンスにアタッチされている 2 つのオブジェクト間のリレーションシップを定義するために使用されます。  
+  
+ <xref:System.Data.Objects.DataClasses.RelatedEnd> クラスは、<xref:System.Data.Objects.DataClasses.IRelatedEnd.Attach%2A> メソッドを明示的に実装します。 <xref:System.Data.Objects.DataClasses.EntityCollection%601> クラスは、この実装を使用して、アタッチされたソース オブジェクトと、コレクションにアタッチされたオブジェクトの間のリレーションシップを定義します。 詳細については、次を参照してください。[のアタッチとデタッチ オブジェクト](http://msdn.microsoft.com/en-us/41d5c1ef-1b78-4502-aa10-7e1438d62d23)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSourceQuery">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerable CreateSourceQuery ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerable CreateSourceQuery() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.IRelatedEnd.CreateSourceQuery" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>関連 End に属するオブジェクトを表す <see cref="T:System.Collections.IEnumerable" /> を返します。</summary>
+        <returns>関連 End に属するオブジェクトを表す <see cref="T:System.Collections.IEnumerable" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.DataClasses.IRelatedEnd.CreateSourceQuery%2A> メソッドは、<xref:System.Data.Objects.DataClasses.RelatedEnd> クラスによって明示的に実装されます。  <xref:System.Data.Objects.DataClasses.EntityCollection%601> クラスと <xref:System.Data.Objects.DataClasses.EntityReference%601> クラスは、どちらも <xref:System.Data.Objects.DataClasses.RelatedEnd.System%23Data%23Objects%23DataClasses%23IRelatedEnd%23CreateSourceQuery%2A> メソッドをオーバーライドして、実行時に関連 End に属する同じオブジェクトのセットを返す <xref:System.Data.Objects.ObjectQuery%601> を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.IRelatedEnd.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>関連オブジェクトのコレクションを反復処理する <see cref="T:System.Collections.IEnumerator" /> を返します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />関連オブジェクトのコレクションを反復処理します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLoaded">
+      <MemberSignature Language="C#" Value="public bool IsLoaded { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsLoaded" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.DataClasses.IRelatedEnd.IsLoaded" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべての関連オブジェクトが読み込まれているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />関連 end には、データベースからのすべての関連するエンティティが含まれている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.DataClasses.RelatedEnd> クラスは、<xref:System.Data.Objects.DataClasses.IRelatedEnd.IsLoaded%2A> の <xref:System.Data.Objects.DataClasses.IRelatedEnd> メソッドを実装します。 詳細については、「<xref:System.Data.Objects.DataClasses.RelatedEnd.IsLoaded%2A>」を参照してください。  
+  
+ <xref:System.Data.Objects.DataClasses.EntityCollection%601> クラスおよび <xref:System.Data.Objects.DataClasses.EntityReference%601> クラスは、<xref:System.Data.Objects.DataClasses.RelatedEnd> を継承しています。  
+  
+   
+  
+## Examples  
+ [定義との関係の管理](http://msdn.microsoft.com/en-us/2c92c097-56bd-4145-989e-16d92475ecda)  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Load">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>この関連 End に関連オブジェクトを読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Load`ナビゲーション プロパティによって公開されている関連 end から関連オブジェクトを明示的に読み込むために呼び出されます。 詳細については、次を参照してください。[関連オブジェクトの読み込み](http://msdn.microsoft.com/en-us/452347d2-7b3b-44cd-9001-231299a28cb1)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public void Load ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Load() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.IRelatedEnd.Load" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>既定のマージ オプションを使用してこの関連 End に関連オブジェクトを読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.DataClasses.RelatedEnd> クラスは、<xref:System.Data.Objects.DataClasses.IRelatedEnd.Load%2A> の <xref:System.Data.Objects.DataClasses.IRelatedEnd> メソッドを実装します。 詳細については、「<xref:System.Data.Objects.DataClasses.RelatedEnd.Load%2A>」を参照してください。  
+  
+ <xref:System.Data.Objects.DataClasses.RelatedEnd.Load%2A>ナビゲーション プロパティによって公開されている関連 end から関連するオブジェクトを明示的に読み込むために呼び出されます。 詳細については、次を参照してください。[関連オブジェクトの読み込み](http://msdn.microsoft.com/en-us/452347d2-7b3b-44cd-9001-231299a28cb1)です。  
+  
+ <xref:System.Data.Objects.DataClasses.RelatedEnd.Load%2A>メソッドの関連するオブジェクトからデータ ソースからのかどうか読み込みます<xref:System.Data.Objects.DataClasses.RelatedEnd.IsLoaded%2A>は`true`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public void Load (System.Data.Objects.MergeOption mergeOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Load(valuetype System.Data.Objects.MergeOption mergeOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.IRelatedEnd.Load(System.Data.Objects.MergeOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mergeOption" Type="System.Data.Objects.MergeOption" />
+      </Parameters>
+      <Docs>
+        <param name="mergeOption">オブジェクトを既存の <see cref="T:System.Data.Objects.MergeOption" /> にマージする場合に使用する <see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" />。</param>
+        <summary>指定されたマージ オプションを使用して関連 End に関連オブジェクトを読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.DataClasses.RelatedEnd> クラスは、<xref:System.Data.Objects.DataClasses.IRelatedEnd.Load%2A> メソッドを実装します。 <xref:System.Data.Objects.DataClasses.EntityCollection%601> クラスと <xref:System.Data.Objects.DataClasses.EntityReference%601> クラスは、どちらもこの実装をオーバーライドします。  
+  
+ `Load`ナビゲーション プロパティによって公開されている関連 end から関連オブジェクトを明示的に読み込むために呼び出されます。 詳細については、次を参照してください。[関連オブジェクトの読み込み](http://msdn.microsoft.com/en-us/452347d2-7b3b-44cd-9001-231299a28cb1)です。  
+  
+ <xref:System.Data.Objects.DataClasses.IRelatedEnd.Load%2A>メソッドの関連するオブジェクトからデータ ソースからのかどうか読み込みます<xref:System.Data.Objects.DataClasses.RelatedEnd.IsLoaded%2A>は`true`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RelationshipName">
+      <MemberSignature Language="C#" Value="public string RelationshipName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RelationshipName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.DataClasses.IRelatedEnd.RelationshipName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この関連 End が参加するリレーションシップの名前を取得します。</summary>
+        <value>この <see cref="T:System.Data.Objects.DataClasses.IRelatedEnd" /> が参加しているリレーションシップの名前。 リレーションシップ名は、名前空間で修飾された名前ではありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ このトピックの例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)で生成された、 [Entity Data Model ウィザード](http://msdn.microsoft.com/en-us/423ec9a7-5464-43b7-a7ef-9f5f000848b5)です。  
+  
+ 次の例が新規追加`SalesOrderHeader`エンティティ、`Contact`エンティティです。 すべての関連 end を取得し、`Contact`エンティティとリレーションシップの名前、ソース ロール名、およびターゲット ロールの名前はそれぞれ関連する end が表示されます。  
+  
+ [!code-csharp[DP ObjectServices Concepts#IRelatedEnd](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#irelatedend)]
+ [!code-vb[DP ObjectServices Concepts#IRelatedEnd](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#irelatedend)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RelationshipSet">
+      <MemberSignature Language="C#" Value="public System.Data.Metadata.Edm.RelationshipSet RelationshipSet { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Metadata.Edm.RelationshipSet RelationshipSet" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.DataClasses.IRelatedEnd.RelationshipSet" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.RelationshipSet</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連 End のメタデータへの参照を返します。</summary>
+        <value>リレーションシップの End のメタデータを含む <see cref="T:System.Data.Metadata.Edm.RelationshipSet" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public bool Remove (System.Data.Objects.DataClasses.IEntityWithRelationships entity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Remove(class System.Data.Objects.DataClasses.IEntityWithRelationships entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.IRelatedEnd.Remove(System.Data.Objects.DataClasses.IEntityWithRelationships)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Data.Objects.DataClasses.IEntityWithRelationships" />
+      </Parameters>
+      <Docs>
+        <param name="entity">コレクションから削除するオブジェクト。 <c>エンティティ</c>実装する必要があります<see cref="T:System.Data.Objects.DataClasses.IEntityWithRelationships" />です。</param>
+        <summary>関連 End のオブジェクトのコレクションからオブジェクトを削除します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="entity" />正常に削除された<see langword="false" />場合<paramref name="entity" />がの一部ではなく、<see cref="T:System.Data.Objects.DataClasses.IRelatedEnd" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.DataClasses.IRelatedEnd.Remove%2A> メソッドは、関連 End からオブジェクトを削除します。 関連 End は <xref:System.Data.Objects.DataClasses.EntityCollection%601> である必要があります。  
+  
+ <xref:System.Data.Objects.DataClasses.RelatedEnd> クラスは、<xref:System.Data.Objects.DataClasses.IRelatedEnd.Remove%2A> メソッドを明示的に実装します。 <xref:System.Data.Objects.DataClasses.EntityCollection%601> クラスは、この実装を使用します。 詳細については、「<xref:System.Data.Objects.DataClasses.EntityCollection%601.Remove%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public bool Remove (object entity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Remove(object entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.IRelatedEnd.Remove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="entity">コレクションから削除するオブジェクト。</param>
+        <summary>関連 End のオブジェクトのコレクションからオブジェクトを削除します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="entity" />; 正常に削除されました<see langword="false" />場合<paramref name="entity" />がの一部ではなく、<see cref="T:System.Data.Objects.DataClasses.IRelatedEnd" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのオーバー ロードを使用してエンティティ クラスを実装しない<xref:System.Data.Objects.DataClasses.IEntityWithRelationships>です。 使用して、<xref:System.Data.Objects.DataClasses.IRelatedEnd.Remove%2A>メソッドを実装してエンティティ クラス<xref:System.Data.Objects.DataClasses.IEntityWithRelationships>です。  
+  
+ <xref:System.Data.Objects.DataClasses.IRelatedEnd.Remove%2A> メソッドは、関連 End からオブジェクトを削除します。 関連 End は <xref:System.Data.Objects.DataClasses.EntityCollection%601> である必要があります。  
+  
+ <xref:System.Data.Objects.DataClasses.RelatedEnd> クラスは、<xref:System.Data.Objects.DataClasses.IRelatedEnd.Remove%2A> メソッドを明示的に実装します。 <xref:System.Data.Objects.DataClasses.EntityCollection%601> クラスは、この実装を使用します。 詳細については、「<xref:System.Data.Objects.DataClasses.EntityCollection%601.Remove%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceRoleName">
+      <MemberSignature Language="C#" Value="public string SourceRoleName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SourceRoleName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.DataClasses.IRelatedEnd.SourceRoleName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リレーションシップのソース End のロール名を取得します。</summary>
+        <value>リレーションシップのソース end のロール名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.DataClasses.RelatedEnd>クラスが実装する、<xref:System.Data.Objects.DataClasses.IRelatedEnd.SourceRoleName%2A>プロパティです。 詳細については、「<xref:System.Data.Objects.DataClasses.RelatedEnd.SourceRoleName%2A>」を参照してください。  
+  
+ 指定されたロールの名前、`Role`の属性、`End`概念モデルでこのリレーションシップを定義するアソシエーション内の要素。 詳細については、次を参照してください。 [Association 要素 (CSDL)](http://msdn.microsoft.com/en-us/c305169a-8af7-432f-9ba7-800a163aed41)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetRoleName">
+      <MemberSignature Language="C#" Value="public string TargetRoleName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TargetRoleName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.DataClasses.IRelatedEnd.TargetRoleName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リレーションシップのターゲット End のロール名を取得します。</summary>
+        <value>リレーションシップのターゲットの end のロール名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.DataClasses.RelatedEnd> クラスは、<xref:System.Data.Objects.DataClasses.IRelatedEnd.TargetRoleName%2A> プロパティを実装します。 詳細については、「<xref:System.Data.Objects.DataClasses.RelatedEnd.TargetRoleName%2A>」を参照してください。  
+  
+ 指定されたロールの名前、`Role`の属性、`End`概念モデルでこのリレーションシップを定義するアソシエーション内の要素。 詳細については、次を参照してください。 [Association 要素 (CSDL)](http://msdn.microsoft.com/en-us/c305169a-8af7-432f-9ba7-800a163aed41)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

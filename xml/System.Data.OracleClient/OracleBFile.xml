@@ -1,0 +1,762 @@
+<Type Name="OracleBFile" FullName="System.Data.OracleClient.OracleBFile">
+  <TypeSignature Language="C#" Value="public sealed class OracleBFile : System.IO.Stream, ICloneable, System.Data.SqlTypes.INullable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OracleBFile extends System.IO.Stream implements class System.Data.SqlTypes.INullable, class System.ICloneable, class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Data.OracleClient.OracleBFile" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.OracleClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IO.Stream</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Data.SqlTypes.INullable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>マネージ表す<see cref="T:System.Data.OracleClient.OracleBFile" />オブジェクトで、Oracle を使用するように設計<see langword="BFILE" />データ型。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Oracle`BFILE`データ型は、Oracle`LOB`を 4 ギガバイト単位の最大サイズのバイナリ データへの参照を含むデータ型。 Oracle`BFILE`他の Oracle とは異なります`LOB`データ型の代わりに、オペレーティング システムで、サーバー上の物理ファイルにそのデータを格納します。 なお、`BFILE`データ型は、データへの読み取り専用のアクセスを提供します。 そのため、書き込み指向のメソッドが継承、<xref:System.IO.Stream>クラスはサポートされていません。  
+  
+ 他の特性、`BFILE`から区別するためのデータ型、`LOB`データ型はできることです。  
+  
+-   非構造化データの保持。  
+  
+-   サーバー側チャンキングのサポート。  
+  
+-   参照コピーのセマンティクスの使用。 コピー操作を実行する場合など、 `BFILE`、のみ、`BFILE`ロケーター (ファイルへの参照は、) をコピーします。 ファイル内のデータはコピーされません。  
+  
+ `BFILE`データ型を参照するために使用する必要があります`LOB`s、大きいサイズであるため、データベースに格納するには実用的ではないです。 使用するためのクライアント、サーバー、および通信のオーバーヘッドが、`BFILE`データ型と比較して、`LOB`データ型。 アクセスする方が効率的である、`BFILE`のみ少量のデータを取得する必要がある場合。 Access データベースに常駐する方が効率的である`LOB`s 全体のオブジェクトを取得する必要がある場合。  
+  
+ 各 NULL<xref:System.Data.OracleClient.OracleBFile>オブジェクトが、基になる物理ファイルの場所を定義する 2 つのエンティティと関連付けられています。  
+  
+-   Oracle DIRECTORY オブジェクト。ファイル システムのディレクトリに対するデータベースのエイリアスです。  
+  
+-   基になる物理ファイルのファイル名。このファイルは、DIRECTORY オブジェクトに関連付けられたディレクトリに配置されています。  
+  
+ 後に、`BFILE`が作成されるの形式でそのロケーターを取得することができます、<xref:System.Data.OracleClient.OracleBFile>オブジェクトを使用して、<xref:System.Data.OracleClient.OracleCommand.ExecuteReader%2A>または<xref:System.Data.OracleClient.OracleCommand.ExecuteScalar%2A>メソッドです。  
+  
+ 取得する、<xref:System.Data.OracleClient.OracleBFile>オブジェクトを呼び出し、<xref:System.Data.OracleClient.OracleDataReader.GetOracleBFile%2A>メソッドです。  
+  
+ 物理ファイルを<xref:System.Data.OracleClient.OracleBFile>オブジェクトが関連付けられているとする必要はありません、アクセスしようとするまで存在します。 アプリケーションをバインドする<xref:System.Data.OracleClient.OracleBFile>、存在しないファイルに必要な場所に物理ファイルを作成し、<xref:System.Data.OracleClient.OracleBFile.Read%2A>です。  
+  
+ アクセス、閉じられた試行<xref:System.Data.OracleClient.OracleBFile>を使用して、<xref:System.Data.OracleClient.OracleBFile.Read%2A>または<xref:System.Data.OracleClient.OracleBFile.Seek%2A>メソッド再度、<xref:System.Data.OracleClient.OracleBFile>自動的にストリーム配信します。  
+  
+ 次の c# の例では、作成する方法を示しています、 `BFILE` Oracle のテーブル、およびそれの形式で読み込む、<xref:System.Data.OracleClient.OracleBFile>オブジェクト。 使用、例を示します、<xref:System.Data.OracleClient.OracleDataReader>オブジェクトおよび<xref:System.Data.OracleClient.OracleBFile><xref:System.Data.OracleClient.OracleBFile.Seek%2A>と<xref:System.Data.OracleClient.OracleBFile.Read%2A>メソッドです。  
+  
+ [!code-csharp[DataWorks OracleClient.BFile#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks OracleClient.BFile/CS/source.cs#1)]  
+  
+ 作成して、Oracle の使用の詳細については`BFILE`、適切な Oracle のマニュアルを参照してください。  
+  
+> [!NOTE]
+>  `BeginWrite`、 `EndWrite`、および`WriteByte`から継承するメソッドを`System.IO.Stream`クラス、ためにサポートされていません、`BFILE`データ型は読み取り専用です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CanRead">
+      <MemberSignature Language="C#" Value="public override bool CanRead { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRead" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleBFile.CanRead" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see langword="BFILE" />ストリームを読み取ることができます。</summary>
+        <value>
+          <see langword="false" />場合、<see langword="BFILE" />終了または破棄。 それ以外の場合は、<see langword="true" />です。 常に<see langword="true" />の<see cref="F:System.Data.OracleClient.OracleBFile.Null" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanSeek">
+      <MemberSignature Language="C#" Value="public override bool CanSeek { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanSeek" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleBFile.CanSeek" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>前方シークおよび旧バージョンとシーク操作かどうかを示す値を取得を実行できます。</summary>
+        <value>
+          <see langword="false" />場合、<see langword="BFILE" />終了または破棄。 それ以外の場合は、<see langword="true" />です。 常に<see langword="true" />の<see cref="F:System.Data.OracleClient.OracleBFile.Null" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanWrite">
+      <MemberSignature Language="C#" Value="public override bool CanWrite { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanWrite" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleBFile.CanWrite" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトが書き込みをサポートするかどうかを示す値を取得します。</summary>
+        <value>常に返します<see langword="false" />ため、Oracle<see langword="BFILE" />データ型は読み取り専用です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBFile.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このコピーを作成<see cref="T:System.Data.OracleClient.OracleBFile" />元と同じ物理ファイルに関連付けられているオブジェクト。</summary>
+        <returns>新しい<see cref="T:System.Data.OracleClient.OracleBFile" />元と同じ物理ファイルに関連付けられたオブジェクト<see langword="OracleBFile" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいプロパティ<xref:System.Data.OracleClient.OracleBFile>オブジェクトが最初に元のオブジェクトと同じ値を持ちます。 ただし後、<xref:System.Data.OracleClient.OracleBFile.Clone%2A>が完了したら、各<xref:System.Data.OracleClient.OracleBFile>オブジェクトは、他から独立しています。 値を変更するなど、<xref:System.Data.OracleClient.OracleBFile.Position%2A>元のプロパティ<xref:System.Data.OracleClient.OracleBFile>の値は変わりません<xref:System.Data.OracleClient.OracleBFile.Position%2A>コピーにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Connection">
+      <MemberSignature Language="C#" Value="public System.Data.OracleClient.OracleConnection Connection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.OracleClient.OracleConnection Connection" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleBFile.Connection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleConnection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Data.OracleClient.OracleConnection" />のこのインスタンスによって使用される、<see cref="T:System.Data.OracleClient.OracleBFile" />です。</summary>
+        <value>データ ソースへの接続。 既定は null 値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public long CopyTo (System.Data.OracleClient.OracleLob destination);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int64 CopyTo(class System.Data.OracleClient.OracleLob destination) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBFile.CopyTo(System.Data.OracleClient.OracleLob)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="destination" Type="System.Data.OracleClient.OracleLob" />
+      </Parameters>
+      <Docs>
+        <param name="destination">変換先<see cref="T:System.Data.OracleClient.OracleLob" /></param>
+        <summary>これの内容全体をコピー<see cref="T:System.Data.OracleClient.OracleBFile" />の保存先の先頭に<see cref="T:System.Data.OracleClient.OracleLob" />です。</summary>
+        <returns>コピーされたバイト数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ソースの基になるデータ型<xref:System.Data.OracleClient.OracleBFile>と変換先<xref:System.Data.OracleClient.OracleLob>互換性のある必要があります。 たとえば、先にバイナリ データをコピーすることはできません<xref:System.Data.OracleClient.OracleLob>文字データ型を持ちます。  
+  
+ 変換先に書き込みアクセス権が必要<xref:System.Data.OracleClient.OracleLob>の<xref:System.Data.OracleClient.OracleBFile.CopyTo%2A>操作が正常に実行します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">転送先<see langword="OracleLob" />null オブジェクト参照です。</exception>
+        <exception cref="T:System.InvalidOperationException">マップ先は、null<see langword="OracleLob" />です。  
+  
+ または  
+  
+ この接続<see langword="OracleBFile" />が関連付けられているが閉じられます。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see langword="OracleBFile" />オブジェクトが終了または破棄します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public long CopyTo (System.Data.OracleClient.OracleLob destination, long destinationOffset);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int64 CopyTo(class System.Data.OracleClient.OracleLob destination, int64 destinationOffset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBFile.CopyTo(System.Data.OracleClient.OracleLob,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="destination" Type="System.Data.OracleClient.OracleLob" />
+        <Parameter Name="destinationOffset" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="destination">コピー先 <see cref="T:System.Data.OracleClient.OracleLob" />。</param>
+        <param name="destinationOffset">コピー先にオフセットします。</param>
+        <summary>これの内容全体をコピー<see cref="T:System.Data.OracleClient.OracleBFile" />変換先に<see cref="T:System.Data.OracleClient.OracleLob" />指定したオフセット。</summary>
+        <returns>コピーされたバイト数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ソースの基になるデータ型<xref:System.Data.OracleClient.OracleBFile>と変換先<xref:System.Data.OracleClient.OracleLob>互換性のある必要があります。 たとえば、先にバイナリ データをコピーすることはできません<xref:System.Data.OracleClient.OracleLob>文字データ型を持ちます。  
+  
+ 変換先に書き込みアクセス権が必要<xref:System.Data.OracleClient.OracleLob>の<xref:System.Data.OracleClient.OracleBFile.CopyTo%2A>操作が正常に実行します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">転送先<see langword="OracleLob" />null オブジェクト参照です。</exception>
+        <exception cref="T:System.InvalidOperationException">マップ先は、null<see langword="OracleLob" />です。  
+  
+ または  
+  
+ この接続<see langword="OracleBFile" />が関連付けられているが閉じられます。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see langword="OracleBFile" />オブジェクトが終了または破棄します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public long CopyTo (long sourceOffset, System.Data.OracleClient.OracleLob destination, long destinationOffset, long amount);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int64 CopyTo(int64 sourceOffset, class System.Data.OracleClient.OracleLob destination, int64 destinationOffset, int64 amount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBFile.CopyTo(System.Int64,System.Data.OracleClient.OracleLob,System.Int64,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceOffset" Type="System.Int64" />
+        <Parameter Name="destination" Type="System.Data.OracleClient.OracleLob" />
+        <Parameter Name="destinationOffset" Type="System.Int64" />
+        <Parameter Name="amount" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="sourceOffset">コピー先からのオフセット。</param>
+        <param name="destination">コピー先 <see cref="T:System.Data.OracleClient.OracleLob" />。</param>
+        <param name="destinationOffset">コピー先にオフセットします。</param>
+        <param name="amount">(バイト単位) をコピーする、データの量。</param>
+        <summary>これをコピーします。<see cref="T:System.Data.OracleClient.OracleBFile" />先<see cref="T:System.Data.OracleClient.OracleLob" />、指定されたデータ量、ソースのオフセットとコピー先のオフセットとします。</summary>
+        <returns>コピーされたバイト数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ソースの基になるデータ型<xref:System.Data.OracleClient.OracleBFile>と変換先<xref:System.Data.OracleClient.OracleLob>互換性のある必要があります。 たとえば、先にバイナリ データをコピーすることはできません<xref:System.Data.OracleClient.OracleLob>文字データ型を持ちます。  
+  
+ 変換先に書き込みアクセス権が必要<xref:System.Data.OracleClient.OracleLob>の<xref:System.Data.OracleClient.OracleBFile.CopyTo%2A>操作が正常に実行します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">容量パラメーターの値は、ゼロ未満か 4 ギガバイトより大きいです。</exception>
+        <exception cref="T:System.ArgumentNullException">転送先<see langword="OracleLob" />null オブジェクト参照です。</exception>
+        <exception cref="T:System.InvalidOperationException">マップ先は、null<see langword="OracleLob" />です。  
+  
+ または  
+  
+ この接続<see langword="OracleBFile" />が関連付けられているが閉じられます。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see langword="OracleBFile" />オブジェクトが終了または破棄します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DirectoryName">
+      <MemberSignature Language="C#" Value="public string DirectoryName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DirectoryName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleBFile.DirectoryName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これで、ディレクトリ オブジェクトの名前を取得、<see cref="T:System.Data.OracleClient.OracleBFile" />オブジェクトが関連付けられます。</summary>
+        <value>ディレクトリ オブジェクトの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各 NULL<xref:System.Data.OracleClient.OracleBFile>オブジェクトが基になる物理ファイルの場所を定義する 2 つのエンティティと関連付けられています。  
+  
+-   Oracle DIRECTORY オブジェクト。ファイル システムのディレクトリに対するデータベースのエイリアスです。  
+  
+-   基になる物理ファイルのファイル名。このファイルは、DIRECTORY オブジェクトに関連付けられたディレクトリに配置されています。  
+  
+ <xref:System.Data.OracleClient.OracleBFile.DirectoryName%2A>プロパティは、Oracle データベースからディレクトリ オブジェクトの名前を返します。  
+  
+ 作成して、Oracle の使用の詳細については`BFILE`、適切な Oracle のマニュアルを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">呼び出そうとしました<see langword="DirectoryName" />、閉じられたのか、破棄される<see langword="OracleBFile" />オブジェクト。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBFile.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FileExists">
+      <MemberSignature Language="C#" Value="public bool FileExists { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool FileExists" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleBFile.FileExists" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>物理ファイルを含んでいるかどうかを示す値を取得<see langword="BFILE" />データ、オペレーティング システム内に存在します。</summary>
+        <value>
+          <see langword="true" />物理ファイルを含む場合<see langword="BFILE" />データが存在します。 それ以外の場合<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Data.OracleClient.OracleBFile" />オブジェクトが終了または破棄します。</exception>
+        <exception cref="T:System.InvalidOperationException">使用する接続、<see langword="BFILE" />が関連付けられているが閉じられます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FileName">
+      <MemberSignature Language="C#" Value="public string FileName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FileName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleBFile.FileName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>名前を取得、<see langword="BFILE" />パスを含まない。</summary>
+        <value>BFILE の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OracleClient.OracleBFile.Null>、空の文字列が返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Data.OracleClient.OracleBFile" />オブジェクトが終了または破棄します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Flush">
+      <MemberSignature Language="C#" Value="public override void Flush ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Flush() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBFile.Flush" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在サポートされていません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNull">
+      <MemberSignature Language="C#" Value="public bool IsNull { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNull" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleBFile.IsNull" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Data.OracleClient.OracleBFile" />は、<see cref="F:System.Data.OracleClient.OracleBFile.Null" />ストリーム。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Data.OracleClient.OracleBFile" />は、<see cref="F:System.Data.OracleClient.OracleBFile.Null" />ストリームです。 それ以外の場合<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Length">
+      <MemberSignature Language="C#" Value="public override long Length { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 Length" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleBFile.Length" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用する物理ファイルのバイト単位の長さを返す値を取得、<see cref="T:System.Data.OracleClient.OracleBFile" />オブジェクトが関連付けられます。</summary>
+        <value>物理ファイルのバイトの長さを表す long 値。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">メソッドは、ストリームの終了または破棄された後に呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Null">
+      <MemberSignature Language="C#" Value="public static readonly System.Data.OracleClient.OracleBFile Null;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Data.OracleClient.OracleBFile Null" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OracleClient.OracleBFile.Null" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBFile</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Null 値を表す<see cref="T:System.Data.OracleClient.OracleBFile" />物理ファイルにバインドされていないオブジェクトです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OracleClient.OracleBFile.Null>比較操作を実行するときに役に立ちます、<xref:System.Data.OracleClient.OracleBFile>を null 値許容属性を決定します。  
+  
+ に対して読み取り操作を実行しようとすると、<xref:System.Data.OracleClient.OracleBFile.Null>オブジェクトは成功しますが、任意のデータは返されません。 書き込み操作を実行するしようとすると、<xref:System.Data.OracleClient.OracleBFile.Null>オブジェクトには、例外が生成されます。 選択すると、 `BFILE` null 値を含む列を返します<xref:System.Data.OracleClient.OracleBFile.Null>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Position">
+      <MemberSignature Language="C#" Value="public override long Position { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 Position" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleBFile.Position" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内の位置を読み取り、現在の取得、<see cref="T:System.Data.OracleClient.OracleBFile" />ストリーム。</summary>
+        <value>内の現在位置、<see cref="T:System.Data.OracleClient.OracleBFile" />ストリーム。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ストリームの長さを超えた位置にシークすることはサポートされていません。  
+  
+ `Position`プロパティがないの追跡が消費されている、スキップ、ストリーム、またはその両方からのバイト数。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">負の値またはストリームの長さより大きい値の位置を設定しようとしました。</exception>
+        <exception cref="T:System.ObjectDisposedException">メソッドは、ストリームの終了または破棄された後に呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public override int Read (byte[] buffer, int offset, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 Read(unsigned int8[] buffer, int32 offset, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBFile.Read(System.Byte[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">バイト配列。 指定したバイト配列の値を持つが、バッファーに含まれているこのメソッドが戻るとき<c>オフセット</c>と (<c>オフセット</c> + <c>カウント</c>) バイトに置き換えられます現在のソースからの読み取り。</param>
+        <param name="offset">内の 0 から始まるバイト オフセット<c>バッファー</c>開始位置を示す現在のストリームから読み取ったデータの格納します。</param>
+        <param name="count">現在のストリームから読み取る最大バイト数。</param>
+        <summary>現在のバイトのシーケンスを読み取り<see cref="T:System.Data.OracleClient.OracleBFile" />バイト数だけストリーム内の位置が読み取るストリーム。</summary>
+        <returns>バッファーに読み取られた合計バイト数。 バイト数は要求より小さくバイト数が、現在ご利用いただけませんまたはゼロの場合、ファイルの末尾に達していることがあります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OracleClient.OracleBFile.Read%2A>メソッドは、最大を読み取る`count`現在からのバイト ストリームし、で格納`buffer`始点`offset`です。 読み取りバイト数だけストリーム内の現在位置が高度なただし、例外が発生する場合、ストリーム内の現在の位置は変更されません。 <xref:System.Data.OracleClient.OracleBFile.Read%2A>読み取られたバイト数を返します。 ストリームの末尾には、位置は現在場合にのみ、戻り値は 0 です。 <xref:System.Data.OracleClient.OracleBFile.Read%2A>少なくとも 1 バイトのデータを読み取ることができるまでデータがないこと、ブロックされます。 <xref:System.Data.OracleClient.OracleBFile.Read%2A>ファイルの末尾に達している場合にのみ、0 を返します。 <xref:System.Data.OracleClient.OracleBFile.Read%2A>ストリームの末尾に達していない場合でも、要求されたより少ないバイト数を返すことができます。  
+  
+ アクセス、閉じられた試行<xref:System.Data.OracleClient.OracleBFile>を使用して、<xref:System.Data.OracleClient.OracleBFile.Read%2A>または<xref:System.Data.OracleClient.OracleBFile.Seek%2A>メソッド再度、<xref:System.Data.OracleClient.OracleBFile>自動的にストリーム配信します。  
+  
+ 次の c# の例では、Oracle テーブルには、このスキーマが前提とします。  
+  
+```  
+(col1 number, col2 BFILE)  
+```  
+  
+ この例では、使用方法を示します、<xref:System.Data.OracleClient.OracleBFile.Read%2A>と<xref:System.Data.OracleClient.OracleBFile.Seek%2A>メソッドにアクセスする、<xref:System.Data.OracleClient.OracleBFile>オブジェクト。  
+  
+```  
+byte[] buffer = new byte[100];  
+OracleDataReader dataReader = command.ExecuteReader();  
+using (dataReader) {  
+    if (dataReader.Read()) {  
+            OracleBFile BFile = dataReader.GetOracleBFile(1);  
+        using (BFile) {  
+            BFile.Seek(0, SeekOrigin.Begin);  
+            BFile.Read(buffer, 0, 100);  
+        }  
+    }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="offset" /> と <paramref name="count" /> の合計が、バッファーの長さよりも大きくなっています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="offset" /> または <paramref name="count" /> が負の値です。</exception>
+        <exception cref="T:System.InvalidOperationException">使用する接続、<see langword="BFILE" />が関連付けられているが閉じられます。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生しました。</exception>
+        <exception cref="T:System.ObjectDisposedException">メソッドは、ストリームの終了または破棄された後に呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Seek">
+      <MemberSignature Language="C#" Value="public override long Seek (long offset, System.IO.SeekOrigin origin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int64 Seek(int64 offset, valuetype System.IO.SeekOrigin origin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBFile.Seek(System.Int64,System.IO.SeekOrigin)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="offset" Type="System.Int64" />
+        <Parameter Name="origin" Type="System.IO.SeekOrigin" />
+      </Parameters>
+      <Docs>
+        <param name="offset">原点からのバイト オフセット。 場合<c>オフセット</c>は負の場合、新しい位置は前に指定で指定した位置<c>原点</c>で指定したバイト数だけ<c>オフセット</c>です。 場合<c>オフセット</c>0 の場合は、新しい位置で指定した位置になります<c>原点</c>です。 場合<c>オフセット</c>が正の値であり、新しい位置がで指定した位置に従う<c>原点</c>で指定したバイト数だけ<c>オフセット</c>です。</param>
+        <param name="origin">新しい位置を取得するために使用する参照ポイントを示す <see langword="System.IO.SeekOrigin" /> 型の値。</param>
+        <summary>現在の位置を設定<see cref="T:System.Data.OracleClient.OracleBFile" />ストリーム。</summary>
+        <returns>現在のストリーム内の新しい位置。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`offset`は負の場合、新しい位置が必要で指定した位置の前に`origin`で指定したバイト数だけ`offset`です。 場合`offset`0 の場合は、新しい位置に指定した位置である必要は`origin`します。 場合`offset`が正の値であり、新しい位置は指定した位置に従う必要`origin`で指定したバイト数だけ`offset`です。  
+  
+ ストリームの長さを超えた位置にシークすることはサポートされていません。  
+  
+ アクセス、閉じられた試行<xref:System.Data.OracleClient.OracleBFile>を使用して、<xref:System.Data.OracleClient.OracleBFile.Read%2A>または<xref:System.Data.OracleClient.OracleBFile.Seek%2A>メソッド再度、<xref:System.Data.OracleClient.OracleBFile>自動的にストリーム配信します。  
+  
+ 次の c# の例では、Oracle テーブルには、このスキーマが前提とします。  
+  
+```  
+(col1 number, col2 BFILE)  
+```  
+  
+ この例では、使用方法を示します、<xref:System.Data.OracleClient.OracleBFile.Read%2A>と<xref:System.Data.OracleClient.OracleBFile.Seek%2A>メソッドにアクセスする、<xref:System.Data.OracleClient.OracleBFile>オブジェクト。  
+  
+```  
+byte[] buffer = new byte[100];  
+OracleDataReader dataReader = command.ExecuteReader();  
+using (dataReader) {  
+    if (dataReader.Read()) {  
+            OracleBFile BFile = dataReader.GetOracleBFile(1);  
+        using (BFile) {  
+            BFile.Seek(0, SeekOrigin.Begin);  
+            BFile.Read(buffer, 0, 100);  
+        }  
+    }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">負の値またはストリームの長さより大きい値の位置を設定しようとしました。</exception>
+        <exception cref="T:System.ObjectDisposedException">メソッドは、ストリームの終了または破棄された後に呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFileName">
+      <MemberSignature Language="C#" Value="public void SetFileName (string directory, string file);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetFileName(string directory, string file) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBFile.SetFileName(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="directory" Type="System.String" />
+        <Parameter Name="file" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="directory">物理ファイルを格納しているディレクトリ オブジェクトの別名です。</param>
+        <param name="file">オペレーティング システムでファイルの名前。</param>
+        <summary>バインド、<see cref="T:System.Data.OracleClient.OracleBFile" />オペレーティング システムで別のファイル オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OracleClient.OracleBFile.SetFileName%2A>操作が成功するトランザクション内である必要があります。 だけを呼び出す<xref:System.Data.OracleClient.OracleBFile.SetFileName%2A>上、`BFILE`関連付けます、<xref:System.Data.OracleClient.OracleBFile>別のファイルを持つオブジェクトは Oracle のテーブルは更新されません。 呼び出した後に、Oracle テーブルを更新する<xref:System.Data.OracleClient.OracleBFile.SetFileName%2A>、呼び出す必要があります、`Update`のメソッド、<xref:System.Data.OracleClient.OracleDataAdapter>し、トランザクションをコミットします。  
+  
+ 取得した後、<xref:System.Data.OracleClient.OracleBFile.DirectoryName%2A>または<xref:System.Data.OracleClient.OracleBFile.FileName%2A>にキャッシュされるプロパティを<xref:System.Data.OracleClient.OracleBFile>オブジェクトし、いずれかの複製による影響を受けません<xref:System.Data.OracleClient.OracleBFile>へのオブジェクトの呼び出し<xref:System.Data.OracleClient.OracleBFile.SetFileName%2A>、またはを変更して、`BFILE`データベースにします。 つまり、他の実際の値を表すことがない、`BFILE`サーバー内のオブジェクト。  
+  
+ さらに、いずれかのプロパティの取得 (<xref:System.Data.OracleClient.OracleBFile.DirectoryName%2A>または<xref:System.Data.OracleClient.OracleBFile.FileName%2A>) により、サーバーから取得され、キャッシュの両方のプロパティ値、<xref:System.Data.OracleClient.OracleBFile>オブジェクト。  
+  
+ 次の c# の例では、Oracle テーブルには、このスキーマが前提とします。  
+  
+```  
+(col1 number, col2 BFILE)  
+```  
+  
+ この例では、使用方法を示します、 <xref:System.Data.OracleClient.OracleBFile.SetFileName%2A>、<xref:System.Data.OracleClient.OracleBFile.Read%2A>と<xref:System.Data.OracleClient.OracleBFile.Seek%2A>メソッドにアクセスする、<xref:System.Data.OracleClient.OracleBFile>オブジェクト。  
+  
+```  
+byte[] buffer = new byte[100];  
+OracleDataReader dataReader = command.ExecuteReader();  
+using (dataReader) {  
+    if (dataReader.Read()) {  
+        OracleBFile BFile = dataReader.GetOracleBFile(1);  
+        using (BFile) {  
+            BFile.Seek(0, SeekOrigin.Begin);  
+            BFile.Read(buffer, 0, 100);  
+            command.Transaction = connection.BeginTransaction();  
+            BFile.SetFileName("TESTDIR", "File1.jpg");  
+            BFile.Read(buffer, 0, 100);  
+        }  
+    }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">操作は、トランザクション内でなければなりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetLength">
+      <MemberSignature Language="C#" Value="public override void SetLength (long value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void SetLength(int64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBFile.SetLength(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="value">現在サポートされていません。</param>
+        <summary>現在サポートされていません。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">呼び出されたメソッドがサポートされていない場合、または呼び出された機能をサポートしないストリームに対して読み取り、シーク、または書き込みを行おうとした場合にスローされる例外。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public object Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Value" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleBFile.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Array" />型の<see cref="T:System.Byte" />を格納している、<see cref="T:System.Data.OracleClient.OracleBFile" />データ。</summary>
+        <value><see cref="T:System.Array" />型の<see cref="T:System.Byte" />を格納している、<see cref="T:System.Data.OracleClient.OracleBFile" />データ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OracleClient.OracleBFile.Value%2A>プロパティには、全体が読み込まれる`BFILE`一度に 1 つです。  
+  
+> [!NOTE]
+>  使用する利点`BFILE`大量のクライアント側のチャンク単位でデータを取得することができます。 ただし、使用<xref:System.Data.OracleClient.OracleBFile.Value%2A>アプリケーションのオーバーヘッドを大幅に向上する可能性が 1 つの連続したチャンクとして BFILE 列のすべてのデータを取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public override void Write (byte[] buffer, int offset, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(unsigned int8[] buffer, int32 offset, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBFile.Write(System.Byte[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">現在サポートされていません。</param>
+        <param name="offset">現在サポートされていません。</param>
+        <param name="count">現在サポートされていません。</param>
+        <summary>現在サポートされていません。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">呼び出されたメソッドがサポートされていない場合、または呼び出された機能をサポートしないストリームに対して読み取り、シーク、または書き込みを行おうとした場合にスローされる例外。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,170 @@
+<Type Name="PropertyFilterAttribute" FullName="System.ComponentModel.PropertyFilterAttribute">
+  <TypeSignature Language="C#" Value="public sealed class PropertyFilterAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PropertyFilterAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.PropertyFilterAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method | System.AttributeTargets.Property)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プロパティを具体的には型記述子で報告するかを指定します、<see cref="M:System.ComponentModel.TypeDescriptor.GetProperties(System.Object)" />メソッドです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.PropertyFilterAttribute> [!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]カスタムによって返される型のプロパティの数を制限する内部の機構をサポートしている<xref:System.Windows.DependencyObject>記述子を入力します。 場合、[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]が見つかると、型記述子が返されるプロパティのスコープを絞り込みます。 <xref:System.ComponentModel.PropertyFilterAttribute>通常と異なる[!INCLUDE[TLA#tla_netframewkattr#plural](~/includes/tlasharptla-netframewkattrsharpplural-md.md)]のためメタデータとしてクラスに適用することはできません。 フィルター メカニズムの動作の代わりに静的なメタデータからのコードを使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PropertyFilterAttribute (System.ComponentModel.PropertyFilterOptions filter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.ComponentModel.PropertyFilterOptions filter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyFilterAttribute.#ctor(System.ComponentModel.PropertyFilterOptions)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="filter" Type="System.ComponentModel.PropertyFilterOptions" />
+      </Parameters>
+      <Docs>
+        <param name="filter">このプロパティ フィルターを記述するオプションです。</param>
+        <summary><see cref="T:System.ComponentModel.PropertyFilterAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static readonly System.ComponentModel.PropertyFilterAttribute Default;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.ComponentModel.PropertyFilterAttribute Default" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.PropertyFilterAttribute.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyFilterAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーは、[!INCLUDE[TLA#tla_netframewk](~/includes/tlasharptla-netframewk-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyFilterAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">これと比較するオブジェクト<see cref="T:System.ComponentModel.PropertyFilterAttribute" />です。</param>
+        <summary>示す値を返すかどうか、現在<see cref="T:System.ComponentModel.PropertyFilterAttribute" />[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]が指定したオブジェクトと等しい。</summary>
+        <returns>
+          指定した <see langword="true" /> が現在の <see cref="T:System.ComponentModel.PropertyFilterAttribute" /> と等しい場合は <see cref="T:System.ComponentModel.PropertyFilterAttribute" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装の比較、<xref:System.ComponentModel.PropertyFilterOptions>ごとに値<xref:System.ComponentModel.PropertyFilterAttribute>値の等価性。 場合、<xref:System.ComponentModel.PropertyFilterOptions>同じ場合は、次の 2 つを<xref:System.ComponentModel.PropertyFilterAttribute>インスタンスが等しい。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filter">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.PropertyFilterOptions Filter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ComponentModel.PropertyFilterOptions Filter" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.PropertyFilterAttribute.Filter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyFilterOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このフィルター オプションを取得<see cref="T:System.ComponentModel.PropertyFilterAttribute" />[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]です。</summary>
+        <value>プロパティのフィルター オプション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値<xref:System.ComponentModel.PropertyFilterAttribute.Filter%2A>に提供されているように同じ値は、`filter`コンス トラクター引数ときにこの<xref:System.ComponentModel.PropertyFilterAttribute>が構築されました。 設定の他の手段がない、<xref:System.ComponentModel.PropertyFilterAttribute.Filter%2A>値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyFilterAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のハッシュ コードを返します<see cref="T:System.ComponentModel.PropertyFilterAttribute" />[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]です。</summary>
+        <returns>符号付き 32 ビット整数値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Match">
+      <MemberSignature Language="C#" Value="public override bool Match (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Match(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.PropertyFilterAttribute.Match(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">比較対象のオブジェクト。 このオブジェクトができると予想される、<see cref="T:System.ComponentModel.PropertyFilterAttribute" />です。</param>
+        <summary>示す値を返すプロパティが、現在のオプションをフィルター処理するかどうか<see cref="T:System.ComponentModel.PropertyFilterAttribute" />[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]指定されたオブジェクトのプロパティのフィルター オプションに一致します。</summary>
+        <returns>
+          <see langword="true" />一致するものが存在する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 属性のフラグを格納する場合は true に設定<xref:System.ComponentModel.PropertyFilterAttribute>、<xref:System.ComponentModel.PropertyFilterAttribute.Match%2A>結果が異なる場合があります、<xref:System.ComponentModel.PropertyFilterAttribute.Equals%2A>結果。 フィルターなど、<xref:System.ComponentModel.PropertyFilterOptions.SetValues>のフィルターに一致する<xref:System.ComponentModel.PropertyFilterOptions.All>ので、<xref:System.ComponentModel.PropertyFilterOptions.All>は、すべてのフィルター値を結合します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

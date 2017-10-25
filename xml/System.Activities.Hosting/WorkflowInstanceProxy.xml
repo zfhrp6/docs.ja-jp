@@ -1,0 +1,156 @@
+<Type Name="WorkflowInstanceProxy" FullName="System.Activities.Hosting.WorkflowInstanceProxy">
+  <TypeSignature Language="C#" Value="public sealed class WorkflowInstanceProxy" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WorkflowInstanceProxy extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Hosting.WorkflowInstanceProxy" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Activities.Hosting.IWorkflowInstanceExtensions" /> 拡張機能がワークフロー サービス ホストへアクセスできるようにするためのクラス。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BeginResumeBookmark">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginResumeBookmark (System.Activities.Bookmark bookmark, object value, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginResumeBookmark(class System.Activities.Bookmark bookmark, object value, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Hosting.WorkflowInstanceProxy.BeginResumeBookmark(System.Activities.Bookmark,System.Object,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bookmark" Type="System.Activities.Bookmark" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="bookmark">ブックマーク。</param>
+        <param name="value">ブックマークを作成したアクティビティに渡されるデータ。</param>
+        <param name="callback">非同期の再開操作が完了したときに呼び出されるメソッド。</param>
+        <param name="state">非同期操作についての情報を格納するオプションのアプリケーション固有オブジェクト。</param>
+        <summary>指定したブックマーク、値、コールバック メソッド、およびユーザー指定の状態データを使用して、ワークフローをブックマークから非同期で再開します。</summary>
+        <returns>非同期操作への参照。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 再開操作が成功したかどうかを確認するには、<xref:System.Activities.Hosting.WorkflowInstanceProxy.EndResumeBookmark%2A> を呼び出します。 コールバック メソッドの内部または外部から <xref:System.Activities.Hosting.WorkflowInstanceProxy.EndResumeBookmark%2A> を呼び出すこともできます。 <xref:System.Activities.Hosting.WorkflowInstanceProxy.EndResumeBookmark%2A> は、呼び出されたときに再開操作が完了していなかった場合、再開操作が完了するまでブロックします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginResumeBookmark">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginResumeBookmark (System.Activities.Bookmark bookmark, object value, TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginResumeBookmark(class System.Activities.Bookmark bookmark, object value, valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Hosting.WorkflowInstanceProxy.BeginResumeBookmark(System.Activities.Bookmark,System.Object,System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bookmark" Type="System.Activities.Bookmark" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="bookmark">ブックマーク。</param>
+        <param name="value">ブックマークを作成したアクティビティに渡されるデータ。</param>
+        <param name="timeout">再開操作が取り消されて <see cref="T:System.TimeoutException" /> がスローされるまでに、操作が完了する必要がある間隔。</param>
+        <param name="callback">再開操作が完了した時点で呼び出すメソッド。</param>
+        <param name="state">非同期操作についての情報を格納するオプションのアプリケーション固有オブジェクト。</param>
+        <summary>指定されたブックマーク、値、タイムアウト間隔、コールバック メソッド、およびユーザー指定の状態データを使用して、ワークフローをブックマークから非同期で再開します。</summary>
+        <returns>非同期操作への参照。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 再開操作が成功したかどうかを確認するには、<xref:System.Activities.Hosting.WorkflowInstanceProxy.EndResumeBookmark%2A> を呼び出します。 コールバック メソッドの内部または外部から <xref:System.Activities.Hosting.WorkflowInstanceProxy.EndResumeBookmark%2A> を呼び出すこともできます。 <xref:System.Activities.Hosting.WorkflowInstanceProxy.EndResumeBookmark%2A> は、呼び出されたときに再開操作が完了していなかった場合、再開操作が完了するまでブロックします。 既定では、再開操作は 30 秒以内に完了する必要があります。完了しない場合、<xref:System.TimeoutException> から <xref:System.Activities.Hosting.WorkflowInstanceProxy.EndResumeBookmark%2A> がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndResumeBookmark">
+      <MemberSignature Language="C#" Value="public System.Activities.BookmarkResumptionResult EndResumeBookmark (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Activities.BookmarkResumptionResult EndResumeBookmark(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Hosting.WorkflowInstanceProxy.EndResumeBookmark(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.BookmarkResumptionResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">再開操作を参照する <see cref="T:System.IAsyncResult" />。</param>
+        <summary>保留中の非同期 <see cref="Overload:System.Activities.Hosting.WorkflowInstanceProxy.BeginResumeBookmark" /> が完了するまで待機します。</summary>
+        <returns><see cref="T:System.Activities.BookmarkResumptionResult" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出して、<xref:System.Activities.Hosting.WorkflowInstanceProxy.BeginResumeBookmark%2A> 操作が成功したかどうかを判断できます。 呼び出されたときに再開操作が完了していなかった場合、再開操作が完了するまでブロックします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public Guid Id { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid Id" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Hosting.WorkflowInstanceProxy.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー インスタンス ID を取得します。</summary>
+        <value>ワークフロー インスタンス ID。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkflowDefinition">
+      <MemberSignature Language="C#" Value="public System.Activities.Activity WorkflowDefinition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Activity WorkflowDefinition" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Hosting.WorkflowInstanceProxy.WorkflowDefinition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Activity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー定義を取得します。</summary>
+        <value>ワークフロー定義。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

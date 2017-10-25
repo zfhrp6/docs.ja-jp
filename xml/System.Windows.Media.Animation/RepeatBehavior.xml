@@ -1,0 +1,462 @@
+<Type Name="RepeatBehavior" FullName="System.Windows.Media.Animation.RepeatBehavior">
+  <TypeSignature Language="C#" Value="public struct RepeatBehavior : IFormattable" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit RepeatBehavior extends System.ValueType implements class System.IFormattable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.RepeatBehavior" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IFormattable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Media.Animation.RepeatBehaviorConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>について説明する方法、<see cref="T:System.Windows.Media.Animation.Timeline" />一定時間の再生が繰り返されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の 3 種類がある<xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A>動作。  
+  
+-   **反復カウント**-回数の単純な期間を指定、<xref:System.Windows.Media.Animation.Timeline>を再生します。 既定のイテレーションの数が 1.0 と意味、<xref:System.Windows.Media.Animation.Timeline>がアクティブでは、単純な期間の 1 つだけです。 0.5 のカウントは、2 の数を指定、タイムラインに、単純な期間を 2 回繰り返されるときに、タイムラインが、単純な期間の半分はアクティブであるを指定します。 詳細については、<xref:System.Windows.Media.Animation.RepeatBehavior.Count%2A> プロパティを参照してください。  
+  
+-   **期間**-の長さを示す、<xref:System.Windows.Media.Animation.Timeline>オブジェクトのアクティブな期間。 たとえば、<xref:System.Windows.Media.Animation.Timeline>シンプルな<xref:System.Windows.Media.Animation.Timeline.Duration%2A>1 秒の値と<xref:System.Windows.Media.Animation.RepeatBehavior.Duration%2A?displayProperty=nameWithType>2.5 秒の値が 2.5 の繰り返しに対して実行されます。  
+  
+-   **無限**-<xref:System.Windows.Media.Animation.Timeline>無限に繰り返されます。  
+  
+<a name="xamlAttributeUsage_RepeatBehavior"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+ \<*オブジェクト**プロパティ*="*iterationCount*x"/>  
+  
+ \- または  
+  
+ \<*object* *property*="[*days*.]*hours*:*minutes*:*seconds*[.*fractionalSeconds*]"/>  
+  
+ \- または  
+  
+ \<*object* *property*="[*days*.]*hours*:*minutes*"/>  
+  
+ \- または  
+  
+ \<*object* *property*="*days*"/>  
+  
+ \- または  
+  
+ \<*object* *property*="<xref:System.Windows.Media.Animation.RepeatBehavior.Forever%2A>"/>  
+  
+-  
+  
+<a name="xamlValues_RepeatBehavior"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ 角かっこ内の項目 (`[`と`]`) は省略可能です。  
+  
+ *iterationCount*  
+ <xref:System.Double?displayProperty=nameWithType>  
+  
+ 値より大きいか、回数を指定する 0 タイムラインを再生します。 詳細については、<xref:System.Windows.Media.Animation.RepeatBehavior.Count%2A> プロパティを参照してください。  
+  
+ *日数*  
+ <xref:System.Int32?displayProperty=nameWithType>  
+  
+ 大きいかを指定の日数を指定する 0 に等しい値、<xref:System.Windows.Media.Animation.Timeline>オブジェクトのアクティブな期間。 詳細については、<xref:System.Windows.Media.Animation.RepeatBehavior.Duration%2A> プロパティを参照してください。  
+  
+ *時間*  
+ <xref:System.Int32?displayProperty=nameWithType>  
+  
+ 0 ~ 23 時間の数を指定する値、<xref:System.Windows.Media.Animation.Timeline>オブジェクトのアクティブな期間。 詳細については、<xref:System.Windows.Media.Animation.RepeatBehavior.Duration%2A> プロパティを参照してください。  
+  
+ *(分)*  
+ <xref:System.Int32?displayProperty=nameWithType>  
+  
+ 0 ~ 59 の分単位の数を指定する値、<xref:System.Windows.Media.Animation.Timeline>オブジェクトのアクティブな期間。 詳細については、<xref:System.Windows.Media.Animation.RepeatBehavior.Duration%2A> プロパティを参照してください。  
+  
+ *(秒)*  
+ <xref:System.Double?displayProperty=nameWithType>  
+  
+ 0 ~ 59 の秒数を指定する値、<xref:System.Windows.Media.Animation.Timeline>オブジェクトのアクティブな期間。 詳細については、<xref:System.Windows.Media.Animation.RepeatBehavior.Duration%2A> プロパティを参照してください。  
+  
+ *fractionalSeconds*  
+ <xref:System.Int32?displayProperty=nameWithType>  
+  
+ 秒の小数部を表す 1 ~ 7 桁の数字で構成される値。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RepeatBehavior (double count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.RepeatBehavior.#ctor(System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="count" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="count">反復する回数を指定する 0 以上の数です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.Animation.RepeatBehavior" />指定されたイテレーション数を含む構造体。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="count" />無限大の場合、数値ではありませんかが負の値を値に評価されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RepeatBehavior (TimeSpan duration);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.TimeSpan duration) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.RepeatBehavior.#ctor(System.TimeSpan)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="duration" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="duration">長さの合計時間を<see cref="T:System.Windows.Media.Animation.Timeline" />(そのアクティブ期間) を再生する必要があります。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.Animation.RepeatBehavior" />指定された繰り返し期間を含む構造体。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="duration" />負の数値に評価されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public double Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.RepeatBehavior.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>時間の数を取得、<see cref="T:System.Windows.Media.Animation.Timeline" />繰り返す必要があります。</summary>
+        <value>繰り返し表示するイテレーションの数を表す数値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティにアクセスするときに例外がスローされないようにを使用して、<xref:System.Windows.Media.Animation.RepeatBehavior.HasCount%2A>ことを確認するには、最初のプロパティ、<xref:System.Windows.Media.Animation.RepeatBehavior>イテレーションを表す数が、繰り返し期間ではありません。  
+  
+ タイムラインの繰り返しの作成に関する詳細については、次を参照してください。、<xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">これは、<see cref="T:System.Windows.Media.Animation.RepeatBehavior" />繰り返し期間、反復カウントではないについて説明します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Duration">
+      <MemberSignature Language="C#" Value="public TimeSpan Duration { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan Duration" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.RepeatBehavior.Duration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>時間の合計の長さを取得、<see cref="T:System.Windows.Media.Animation.Timeline" />再生する必要があります。</summary>
+        <value>タイムラインを再生時間の合計の長さ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティにアクセスするときに例外がスローされないようにを使用して、<xref:System.Windows.Media.Animation.RepeatBehavior.HasDuration%2A>ことを確認するには、最初のプロパティ、<xref:System.Windows.Media.Animation.RepeatBehavior>繰り返し期間を表します。  
+  
+ タイムラインの繰り返しの作成に関する詳細については、次を参照してください。、<xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">これは、<see cref="T:System.Windows.Media.Animation.RepeatBehavior" />が繰り返し期間については説明しません、反復カウントがについて説明します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.RepeatBehavior.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">このインスタンスと比較するオブジェクト。</param>
+        <summary>このインスタンスが、指定したオブジェクトと等しいかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="value" />は、 <see cref="T:System.Windows.Media.Animation.RepeatBehavior" /> ; このインスタンスと同一の繰り返し動作を表す場合は、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Windows.Media.Animation.RepeatBehavior repeatBehavior);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Equals(valuetype System.Windows.Media.Animation.RepeatBehavior repeatBehavior) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.RepeatBehavior.Equals(System.Windows.Media.Animation.RepeatBehavior)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="repeatBehavior" Type="System.Windows.Media.Animation.RepeatBehavior" />
+      </Parameters>
+      <Docs>
+        <param name="repeatBehavior">このインスタンスと比較する値。</param>
+        <summary>このインスタンスが、指定したのと同じかどうかを示す値を返します<see cref="T:System.Windows.Media.Animation.RepeatBehavior" />です。</summary>
+        <returns>
+          <see langword="true" />場合、型との繰り返し動作<paramref name="repeatBehavior" />が、それ以外のこのインスタンスと等しい<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public static bool Equals (System.Windows.Media.Animation.RepeatBehavior repeatBehavior1, System.Windows.Media.Animation.RepeatBehavior repeatBehavior2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Equals(valuetype System.Windows.Media.Animation.RepeatBehavior repeatBehavior1, valuetype System.Windows.Media.Animation.RepeatBehavior repeatBehavior2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.RepeatBehavior.Equals(System.Windows.Media.Animation.RepeatBehavior,System.Windows.Media.Animation.RepeatBehavior)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="repeatBehavior1" Type="System.Windows.Media.Animation.RepeatBehavior" />
+        <Parameter Name="repeatBehavior2" Type="System.Windows.Media.Animation.RepeatBehavior" />
+      </Parameters>
+      <Docs>
+        <param name="repeatBehavior1">比較する最初の値です。</param>
+        <param name="repeatBehavior2">比較する 2 番目の値です。</param>
+        <summary>2 つを指定するかどうかを示す<see cref="T:System.Windows.Media.Animation.RepeatBehavior" />構造体が等しい。</summary>
+        <returns>
+          <see langword="true" />場合、型との繰り返し動作<paramref name="repeatBehavior1" />のものに等しく<paramref name="repeatBehavior2" />、それ以外の<see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Forever">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Animation.RepeatBehavior Forever { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.Media.Animation.RepeatBehavior Forever" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.RepeatBehavior.Forever" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.RepeatBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Media.Animation.RepeatBehavior" />無限回の繰り返しを指定します。</summary>
+        <value>A<see cref="T:System.Windows.Media.Animation.RepeatBehavior" />無限回の繰り返しを指定します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.RepeatBehavior.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasCount">
+      <MemberSignature Language="C#" Value="public bool HasCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasCount" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.RepeatBehavior.HasCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>繰り返しの動作が指定されたイテレーション数を持つかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />指定された型が反復カウントを意味する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasDuration">
+      <MemberSignature Language="C#" Value="public bool HasDuration { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasDuration" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.RepeatBehavior.HasDuration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>繰り返しの動作が、指定された繰り返し期間を持つかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />指定された型が繰り返し期間を意味する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Windows.Media.Animation.RepeatBehavior repeatBehavior1, System.Windows.Media.Animation.RepeatBehavior repeatBehavior2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Windows.Media.Animation.RepeatBehavior repeatBehavior1, valuetype System.Windows.Media.Animation.RepeatBehavior repeatBehavior2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.RepeatBehavior.op_Equality(System.Windows.Media.Animation.RepeatBehavior,System.Windows.Media.Animation.RepeatBehavior)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="repeatBehavior1" Type="System.Windows.Media.Animation.RepeatBehavior" />
+        <Parameter Name="repeatBehavior2" Type="System.Windows.Media.Animation.RepeatBehavior" />
+      </Parameters>
+      <Docs>
+        <param name="repeatBehavior1">比較する最初の値です。</param>
+        <param name="repeatBehavior2">比較する 2 番目の値です。</param>
+        <summary>2 つを指定するかどうかを示す<see cref="T:System.Windows.Media.Animation.RepeatBehavior" />インスタンスが等しい。</summary>
+        <returns>
+          <see langword="true" />場合、型との繰り返し動作<paramref name="repeatBehavior1" />のものに等しく<paramref name="repeatBehavior2" />、それ以外の<see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Windows.Media.Animation.RepeatBehavior repeatBehavior1, System.Windows.Media.Animation.RepeatBehavior repeatBehavior2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Windows.Media.Animation.RepeatBehavior repeatBehavior1, valuetype System.Windows.Media.Animation.RepeatBehavior repeatBehavior2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.RepeatBehavior.op_Inequality(System.Windows.Media.Animation.RepeatBehavior,System.Windows.Media.Animation.RepeatBehavior)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="repeatBehavior1" Type="System.Windows.Media.Animation.RepeatBehavior" />
+        <Parameter Name="repeatBehavior2" Type="System.Windows.Media.Animation.RepeatBehavior" />
+      </Parameters>
+      <Docs>
+        <param name="repeatBehavior1">比較する最初の値です。</param>
+        <param name="repeatBehavior2">比較する 2 番目の値です。</param>
+        <summary>示すかどうか、2 つ<see cref="T:System.Windows.Media.Animation.RepeatBehavior" />インスタンスが等しくないです。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="repeatBehavior1" />と<paramref name="repeatBehavior2" />さまざまな種類は、繰り返し動作プロパティが等しくない。 それ以外の場合、または<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IFormattable.ToString">
+      <MemberSignature Language="C#" Value="string IFormattable.ToString (string format, IFormatProvider formatProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance string System.IFormattable.ToString(string format, class System.IFormatProvider formatProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.RepeatBehavior.System#IFormattable#ToString(System.String,System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="formatProvider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="format">使用する書式。  
+  
+ または  
+  
+ Null 参照 (<see langword="Nothing" /> Visual Basic で) の種類に対して定義されている既定の形式を使用する、<see cref="T:System.IFormattable" />実装します。</param>
+        <param name="formatProvider">値を書式設定するために使用するプロバイダー。  
+  
+ または  
+  
+ Null 参照 (<see langword="Nothing" /> Visual Basic で) オペレーティング システムの現在のロケール設定から数値書式指定情報を取得します。</param>
+        <summary>指定された書式を使用して現在のインスタンスの値を書式設定します。</summary>
+        <returns>指定された書式の現在のインスタンスの値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.RepeatBehavior.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この文字列表現を返します<see cref="T:System.Windows.Media.Animation.RepeatBehavior" />インスタンス。</summary>
+        <returns>このインスタンスの文字列形式。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString (IFormatProvider formatProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ToString(class System.IFormatProvider formatProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.RepeatBehavior.ToString(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formatProvider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="formatProvider">戻り値を構築するために使用する形式。</param>
+        <summary>この文字列表現を返します<see cref="T:System.Windows.Media.Animation.RepeatBehavior" />指定した形式でインスタンス。</summary>
+        <returns>このインスタンスの文字列形式。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

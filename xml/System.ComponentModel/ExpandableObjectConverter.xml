@@ -1,0 +1,169 @@
+<Type Name="ExpandableObjectConverter" FullName="System.ComponentModel.ExpandableObjectConverter">
+  <TypeSignature Language="C#" Value="public class ExpandableObjectConverter : System.ComponentModel.TypeConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ExpandableObjectConverter extends System.ComponentModel.TypeConverter" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.ExpandableObjectConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.TypeConverter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>さまざまな表現で展開可能なオブジェクトを変換する型コンバーターを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、メソッドとプロパティが提供するオブジェクトのプロパティのサポートを追加<xref:System.ComponentModel.TypeConverter>です。 プロパティの型で展開できるようにする、 <xref:System.Windows.Forms.PropertyGrid>、これを指定<xref:System.ComponentModel.TypeConverter>の標準実装の<xref:System.ComponentModel.ExpandableObjectConverter.GetPropertiesSupported%2A>と<xref:System.ComponentModel.ExpandableObjectConverter.GetProperties%2A>です。 子のプロパティ、<xref:System.ComponentModel.NotifyParentPropertyAttribute>で適切な動作を確認する、<xref:System.Windows.Forms.PropertyGrid>コントロール。  
+  
+> [!NOTE]
+>  実行する型コンバーターに直接アクセスする必要がありますしません。 代わりに、適切なコンバーターを使用して<xref:System.ComponentModel.TypeDescriptor>です。 詳細については、例を参照してください、<xref:System.ComponentModel.TypeConverter>基本クラスです。  
+  
+ 型コンバーターの詳細については、次を参照してください。、<xref:System.ComponentModel.TypeConverter>基底クラスと[する方法: 実行する型コンバーターを実装する](http://msdn.microsoft.com/library/90373a3f-d8c8-492d-841c-945d62393c56)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、型の変数を変換<xref:System.Drawing.Printing.Margins>文字列変数にします。  
+  
+ [!code-cpp[Converters#26](~/samples/snippets/cpp/VS_Snippets_Winforms/Converters/CPP/converters.cpp#26)]
+ [!code-csharp[Converters#26](~/samples/snippets/csharp/VS_Snippets_Winforms/Converters/CS/converters.cs#26)]
+ [!code-vb[Converters#26](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Converters/VB/converters.vb#26)]  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.ComponentModel.NotifyParentPropertyAttribute>と<xref:System.ComponentModel.ExpandableObjectConverter>カスタム コントロールで展開可能なプロパティを作成するクラス。 このコード例に示されている例の一部である、<xref:System.ComponentModel.NotifyParentPropertyAttribute>クラスです。  
+  
+ [!code-csharp[System.ComponentModel.ExpandableObjectConverter#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.ExpandableObjectConverter/CS/DemoControl.cs#3)]
+ [!code-vb[System.ComponentModel.ExpandableObjectConverter#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.ExpandableObjectConverter/VB/DemoControl.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExpandableObjectConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.ExpandableObjectConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.ExpandableObjectConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperties">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.PropertyDescriptorCollection GetProperties (System.ComponentModel.ITypeDescriptorContext context, object value, Attribute[] attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ComponentModel.PropertyDescriptorCollection GetProperties(class System.ComponentModel.ITypeDescriptorContext context, object value, class System.Attribute[] attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.ExpandableObjectConverter.GetProperties(System.ComponentModel.ITypeDescriptorContext,System.Object,System.Attribute[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="attributes" Type="System.Attribute[]" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />形式コンテキストを提供します。</param>
+        <param name="value"><see cref="T:System.Object" />プロパティを取得するオブジェクトの種類を指定します。</param>
+        <param name="attributes">型の配列<see cref="T:System.Attribute" />フィルターとして使用されます。</param>
+        <summary>値パラメーターで指定されたオブジェクトの種類のプロパティのコレクションを取得します。</summary>
+        <returns>A <see cref="T:System.ComponentModel.PropertyDescriptorCollection" /> 、コンポーネントで公開されているプロパティを持つまたは<see langword="null" />プロパティがない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `context` パラメーターを使用すると、このコンバーターが呼び出されている環境についての追加情報を抽出できます。 これは、 `null`、ので、常に確認します。 また、コンテキスト オブジェクトのプロパティを返す`null`です。  
+  
+ `attributes`配列は配列をフィルター処理に使用されます。 `attributes`が混在していることができます<xref:System.Type>と<xref:System.Attribute>オブジェクト。 フィルター処理は、次のルールによって定義されます。  
+  
+-   A<xref:System.Type>オブジェクトは、ワイルドカードとして扱われます以外の場合は、一致があるプロパティ、<xref:System.Type>属性のセットにします。  
+  
+-   プロパティがない場合、<xref:System.Attribute>同じクラスのプロパティは含まれません、返された配列。  
+  
+-   属性がのインスタンスの場合<xref:System.Attribute>プロパティは完全に一致する必要があります、または返された配列されません。  
+  
+-   場合、<xref:System.Attribute>インスタンスが指定されてと既定のプロパティは、のインスタンスがない場合でもには、返される配列に含められますが、<xref:System.Attribute>プロパティにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertiesSupported">
+      <MemberSignature Language="C#" Value="public override bool GetPropertiesSupported (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool GetPropertiesSupported(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.ExpandableObjectConverter.GetPropertiesSupported(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />形式コンテキストを提供します。</param>
+        <summary>このオブジェクトが指定したコンテキストを使用してプロパティをサポートしているかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" /><see cref="M:System.ComponentModel.TypeConverter.GetProperties(System.Object)" />このオブジェクトのプロパティを呼び出す必要があります。 このメソッドが戻ることはありません<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `context` パラメーターを使用すると、このコンバーターが呼び出されている環境についての追加情報を抽出できます。 これは、 `null`、ので、常に確認します。 また、コンテキスト オブジェクトのプロパティを返す`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

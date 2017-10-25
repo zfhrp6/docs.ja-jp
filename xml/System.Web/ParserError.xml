@@ -1,0 +1,190 @@
+<Type Name="ParserError" FullName="System.Web.ParserError">
+  <TypeSignature Language="C#" Value="public sealed class ParserError" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit ParserError extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.ParserError" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>パーサー エラーまたは警告を表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.ParserError>オブジェクトの場合は、作成されるエラーを表します、<xref:System.Web.HttpParseException>例外がスローされます。 パーサー エラー オブジェクトには、エラー メッセージ テキスト、エラーが発生したファイルへの仮想パスとファイルでエラーの後続の行番号を含めることができます。 1 つ以上のパーサー エラーが発生したかを使用して、一元的に複数のパーサー エラーを格納する場合、<xref:System.Web.ParserErrorCollection>オブジェクト。  
+  
+ パーサー エラーの種類が<xref:System.Web.HttpException>です。 例外とその対処方法の詳細についてを参照してください[MSDN ライブラリ](http://go.microsoft.com/fwlink/?linkid=37118)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、新しいパーサー エラーを追加する方法を示します、<xref:System.Web.ParserErrorCollection>オブジェクト。  
+  
+ [!code-csharp[System.Web.ParserErrorCollection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.ParserErrorCollection/CS/ParserErrorCollection_CS.aspx#3)]
+ [!code-vb[System.Web.ParserErrorCollection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.ParserErrorCollection/VB/ParserErrorCollection_VB.aspx#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ParserError ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ParserError.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.ParserError" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、空のインスタンスを初期化する方法を示します、<xref:System.Web.ParserError>クラスとそのプロパティを使用する方法です。  
+  
+ [!code-csharp[System.Web.ParserError#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.ParserError/CS/parsererror_cs.aspx#1)]
+ [!code-vb[System.Web.ParserError#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.ParserError/VB/parsererror_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ParserError (string errorText, string virtualPath, int line);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string errorText, string virtualPath, int32 line) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ParserError.#ctor(System.String,System.String,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="errorText" Type="System.String" />
+        <Parameter Name="virtualPath" Type="System.String" />
+        <Parameter Name="line" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="errorText">エラー メッセージ テキスト。</param>
+        <param name="virtualPath">エラーが発生したときに解析されているファイルの仮想パス。</param>
+        <param name="line">エラーの発生元の行番号。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.ParserError" />クラスを指定したエラーのテキスト、仮想パスは、ソースの行番号を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.ParserError.%23ctor%2A>を初期化するコンス トラクター、<xref:System.Web.ParserError>カスタム設定を持つオブジェクト。 <xref:System.Web.ParserError.%23ctor%2A>コンス トラクターには、次のプロパティ。  
+  
+-   <xref:System.Web.ParserError.ErrorText%2A>文字列であるプロパティ パーサー エラーに関連するエラー メッセージを含むです。  
+  
+-   <xref:System.Web.ParserError.VirtualPath%2A>パーサー エラーを含むファイルの仮想パスを指定する読み取り専用文字列であるプロパティ。  
+  
+-   <xref:System.Web.ParserError.Line%2A>でこのファイル内で、プロパティで、広範な行番号<xref:System.Web.ParserError>オブジェクトがスローされました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ErrorText">
+      <MemberSignature Language="C#" Value="public string ErrorText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ErrorText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ParserError.ErrorText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のエラーを表す文字列、<see cref="T:System.Web.ParserError" />オブジェクト。</summary>
+        <value>エラー メッセージを含む文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.ParserError.ErrorText%2A>パーサー エラーで表示するプログラマが定義したエラー メッセージを提供するプロパティ、<xref:System.Web.ParserError>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Web.ParserError.ErrorText%2A>プロパティを<xref:System.Web.ParserError>オブジェクト。  
+  
+ [!code-csharp[System.Web.ParserError#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.ParserError/CS/parsererror_cs.aspx#3)]
+ [!code-vb[System.Web.ParserError#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.ParserError/VB/parsererror_vb.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Line">
+      <MemberSignature Language="C#" Value="public int Line { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Line" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ParserError.Line" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはエラーが発生したソースの行番号を設定します。</summary>
+        <value>ソースの行番号は、パーサーにエラーが発生しました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.ParserError.Line%2A>ならば、行の番号でこのファイル内で<xref:System.Web.ParserError>オブジェクトがスローされました。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Web.ParserError.Line%2A>プロパティを<xref:System.Web.ParserError>オブジェクト。  
+  
+ [!code-csharp[System.Web.ParserError#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.ParserError/CS/parsererror_cs.aspx#4)]
+ [!code-vb[System.Web.ParserError#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.ParserError/VB/parsererror_vb.aspx#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VirtualPath">
+      <MemberSignature Language="C#" Value="public string VirtualPath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string VirtualPath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ParserError.VirtualPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定エラーが発生したときに解析されたファイルの仮想パス。</summary>
+        <value>パーサー エラーを格納しているファイルの仮想パスを指定する文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Web.ParserError.VirtualPath%2A>プロパティを<xref:System.Web.ParserError>オブジェクト。  
+  
+ [!code-csharp[System.Web.ParserError#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.ParserError/CS/parsererror_cs.aspx#5)]
+ [!code-vb[System.Web.ParserError#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.ParserError/VB/parsererror_vb.aspx#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

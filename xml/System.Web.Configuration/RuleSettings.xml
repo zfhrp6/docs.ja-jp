@@ -1,0 +1,564 @@
+<Type Name="RuleSettings" FullName="System.Web.Configuration.RuleSettings">
+  <TypeSignature Language="C#" Value="public sealed class RuleSettings : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed RuleSettings extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.RuleSettings" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET イベント ルールを構成します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント ルールは、プロバイダーにどのプロファイルを使用して、どのイベントが発生したを決定します。  
+  
+   
+  
+## Examples  
+ 次の構成ファイルの抜粋は、宣言のプロパティを指定する方法を示します、<xref:System.Web.Configuration.RuleSettings>クラスです。  
+  
+```  
+<healthMonitoring>  
+    <rules>  
+        <add name="All Errors Default"  
+            eventName="All Errors"  
+            provider="EventLogProvider"  
+            profile="Default"  
+            minInterval="00:01:00"   
+        />  
+        <add name="All Audits Default"  
+            eventName="All Audits"  
+            provider="SqlWebEventProvider"  
+            profile="Default"  
+            minInterval="00:00:30"   
+        />  
+        <add name="Failure Audits Default"  
+            eventName="Failure Audits"  
+            provider="WmiWebEventProvider"  
+            profile="Critical"  
+            minInterval="00:00:30"   
+        />  
+        <add name="Request Processing Errors"  
+            eventName="Request Processing Errors"  
+            provider="CriticalMailEventProvider"  
+            profile="Default"  
+        />  
+        <add name="Infrastructure Notifications"  
+            eventName="Infrastructure Errors"  
+            provider="CriticalMailEventProvider"  
+            profile="Critical"  
+        />  
+   </rules>  
+</healthMonitoring>  
+```  
+  
+ 次のコード例を作成しの値を設定する方法を示しています、<xref:System.Web.Configuration.RuleSettings>型です。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#73](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#73)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#73](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#73)]  
+  
+ 次のコード例は、取得しの値を表示する方法を示しています、<xref:System.Web.Configuration.RuleSettings>型です。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#78](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#78)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#78](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#78)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RuleSettings (string name, string eventName, string provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, string eventName, string provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.RuleSettings.#ctor(System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="eventName" Type="System.String" />
+        <Parameter Name="provider" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Web.Configuration.RuleSettings" />オブジェクトを作成します。</param>
+        <param name="eventName">名前、<see cref="T:System.Web.Configuration.EventMappingSettings" />この規則が適用されます。</param>
+        <param name="provider">名前、<see cref="T:System.Configuration.ProviderSettings" />この規則が適用されます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Configuration.RuleSettings" />既定の設定を使用するクラスです。 ただし、名前、イベント名、およびプロバイダーを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、このコンス トラクターに使用される既定の設定を示します。  
+  
+|プロパティ|既定値|  
+|--------------|-------------------|  
+|<xref:System.Web.Configuration.RuleSettings.Custom%2A>|空の文字列 ("")。|  
+|<xref:System.Web.Configuration.RuleSettings.MaxLimit%2A>|<xref:System.Int32.MaxValue>。|  
+|<xref:System.Web.Configuration.RuleSettings.MinInstances%2A>|1.|  
+|<xref:System.Web.Configuration.RuleSettings.MinInterval%2A>|0 ティック数です。|  
+|<xref:System.Web.Configuration.RuleSettings.Profile%2A>|空の文字列 ("")。|  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.RuleSettings.%23ctor%2A>コンス トラクターです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#74](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#74)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#74](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#74)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RuleSettings (string name, string eventName, string provider, string profile, int minInstances, int maxLimit, TimeSpan minInterval);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, string eventName, string provider, string profile, int32 minInstances, int32 maxLimit, valuetype System.TimeSpan minInterval) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.RuleSettings.#ctor(System.String,System.String,System.String,System.String,System.Int32,System.Int32,System.TimeSpan)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="eventName" Type="System.String" />
+        <Parameter Name="provider" Type="System.String" />
+        <Parameter Name="profile" Type="System.String" />
+        <Parameter Name="minInstances" Type="System.Int32" />
+        <Parameter Name="maxLimit" Type="System.Int32" />
+        <Parameter Name="minInterval" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Web.Configuration.RuleSettings" />オブジェクトを作成します。</param>
+        <param name="eventName">名前、<see cref="T:System.Web.Configuration.EventMappingSettings" />この規則が適用されます。</param>
+        <param name="provider">名前、<see cref="T:System.Configuration.ProviderSettings" />この規則が適用されます。</param>
+        <param name="profile">名前、<see cref="T:System.Web.Configuration.ProfileSettings" />この規則が適用されます。</param>
+        <param name="minInstances">同じ種類のイベントの前に発生するイベントの発生の最小数は、プロバイダーに発生します。</param>
+        <param name="maxLimit">同じ種類のイベントが発生する最大回数。</param>
+        <param name="minInterval">同じ型の 2 つのイベント間の最小の時間間隔。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Configuration.RuleSettings" />場所のすべての値を除くのクラス、<see cref="P:System.Web.Configuration.RuleSettings.Custom" />クラスを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、このコンス トラクターに使用される既定の設定を示します。  
+  
+|プロパティ|既定値|  
+|--------------|-------------------|  
+|<xref:System.Web.Configuration.RuleSettings.Custom%2A>|空の文字列 ("")。|  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.RuleSettings.%23ctor%2A>コンス トラクターです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#75](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#75)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#75](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#75)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RuleSettings (string name, string eventName, string provider, string profile, int minInstances, int maxLimit, TimeSpan minInterval, string custom);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, string eventName, string provider, string profile, int32 minInstances, int32 maxLimit, valuetype System.TimeSpan minInterval, string custom) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.RuleSettings.#ctor(System.String,System.String,System.String,System.String,System.Int32,System.Int32,System.TimeSpan,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="eventName" Type="System.String" />
+        <Parameter Name="provider" Type="System.String" />
+        <Parameter Name="profile" Type="System.String" />
+        <Parameter Name="minInstances" Type="System.Int32" />
+        <Parameter Name="maxLimit" Type="System.Int32" />
+        <Parameter Name="minInterval" Type="System.TimeSpan" />
+        <Parameter Name="custom" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Web.Configuration.RuleSettings" />オブジェクトを作成します。</param>
+        <param name="eventName">名前、<see cref="T:System.Web.Configuration.EventMappingSettings" />この規則が適用されます。</param>
+        <param name="provider">名前、<see cref="T:System.Configuration.ProviderSettings" />この規則が適用されます。</param>
+        <param name="profile">名前、<see cref="T:System.Web.Configuration.ProfileSettings" />この規則が適用されます。</param>
+        <param name="minInstances">プロバイダーにイベントが発生する前に、同じ種類のイベントの発生回数の最小数。</param>
+        <param name="maxLimit">同じ種類のイベントが発生した回数の最大数。</param>
+        <param name="minInterval">同じ型の 2 つのイベント間の最小の時間間隔。</param>
+        <param name="custom">実装するカスタム クラスの完全修飾型<see cref="T:System.Web.Management.IWebEventCustomEvaluator" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Configuration.BufferModeSettings" />クラスのすべての値が指定されています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターのすべての設定を指定する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.RuleSettings.%23ctor%2A>コンス トラクターです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#76](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#76)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#76](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#76)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Custom">
+      <MemberSignature Language="C#" Value="public string Custom { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Custom" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.RuleSettings.Custom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("custom", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を実装するカスタム クラスの完全修飾型<see cref="T:System.Web.Management.IWebEventCustomEvaluator" />です。</summary>
+        <value>実装するカスタム クラスの完全修飾型<see cref="T:System.Web.Management.IWebEventCustomEvaluator" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型参照は次の形式 (角かっこ内の項目は必要ありません): *Namespace*.*Typename*、 *Assemblyname*[、] [バージョン = x] [カルチャ = y] [PublicKeyToken = z] です。 たとえば、"ExampleNameSpace.ExampleType、Example.Assembly、バージョン ASSEMBLY_VERSION %、Culture = neutral, PublicKeyToken = MICROSOFT_PUBLICKEY % ="  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.RuleSettings.Custom%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#92](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#92)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#92](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#92)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventName">
+      <MemberSignature Language="C#" Value="public string EventName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EventName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.RuleSettings.EventName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("eventName", DefaultValue=Mono.Cecil.CustomAttributeArgument, IsRequired=true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の名前、<see cref="T:System.Web.Configuration.EventMappingSettings" />この規則が適用されます。</summary>
+        <value>名前、<see cref="T:System.Web.Configuration.EventMappingSettings" />この規則が適用されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.EventMappingSettings>同じによってこのプロパティによって参照されるオブジェクトを含める必要があります<xref:System.Web.Configuration.HealthMonitoringSection>も含まれているオブジェクト<xref:System.Web.Configuration.RuleSettings>  
+  
+ オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.RuleSettings.EventName%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#86](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#86)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#86](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#86)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxLimit">
+      <MemberSignature Language="C#" Value="public int MaxLimit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxLimit" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.RuleSettings.MaxLimit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Configuration.InfiniteIntConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("maxLimit", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.IntegerValidator(MinValue=0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または同じ種類のイベントが発生する最大回数を設定します。</summary>
+        <value>同じ種類のイベントが発生する最大回数。 既定値は <see cref="F:System.Int32.MaxValue" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、0 より大きい値が必要です。 無効な値には、構成セクションを保存するときにスローされる例外が発生します。  
+  
+ これは、同じ種類のイベントが発生する最大回数を表します。 たとえば、値が`10`イベントが 10 回発生したされ、その後は無視されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.RuleSettings.MaxLimit%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#89](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#89)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#89](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#89)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinInstances">
+      <MemberSignature Language="C#" Value="public int MinInstances { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MinInstances" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.RuleSettings.MinInstances" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("minInstances", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.IntegerValidator(MinValue=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または同じ種類のプロバイダーでイベントが発生するイベントの発生の最小数を設定します。</summary>
+        <value>同じ種類のイベントの前にイベントの発生の最小数は、プロバイダーに発生します。 既定値は 1 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、0 より大きい値が必要です。 無効な値には、構成セクションを保存するときにスローされる例外が発生します。  
+  
+ これは、プロバイダーに発生するイベントが発生するまでのイベントの最小数を表します。 たとえば、戻り値は`5`イベントの 5 番目のインスタンスが発生するまで、ASP.NET はプロバイダーにイベントを生成しませんが、します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.RuleSettings.MinInstances%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#90](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#90)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#90](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#90)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinInterval">
+      <MemberSignature Language="C#" Value="public TimeSpan MinInterval { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan MinInterval" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.RuleSettings.MinInterval" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Configuration.InfiniteTimeSpanConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("minInterval", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または同じ型の 2 つのイベント間の最小の時間間隔を設定します。</summary>
+        <value>同じ型の 2 つのイベント間の最小の時間間隔。 既定値は、0 ティックです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値にできる無限設定することによって<xref:System.Int32.MaxValue>です。 無効な値には、構成セクションを保存するときにスローされる例外が発生します。  
+  
+ 値が 0 の場合は、最小間隔がありません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.RuleSettings.MinInterval%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#91](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#91)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#91](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#91)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.RuleSettings.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("name", DefaultValue=Mono.Cecil.CustomAttributeArgument, IsKey=true, IsRequired=true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.RuleSettings" /> オブジェクトの名前を取得または設定します。</summary>
+        <value><see cref="T:System.Web.Configuration.RuleSettings" /> オブジェクトの名前。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一意の名前が必要です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.RuleSettings.Name%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#85](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#85)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#85](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#85)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Profile">
+      <MemberSignature Language="C#" Value="public string Profile { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Profile" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.RuleSettings.Profile" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("profile", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の名前、<see cref="T:System.Web.Configuration.ProfileSettings" />この規則が適用されます。</summary>
+        <value>名前、<see cref="T:System.Web.Configuration.ProfileSettings" />この規則が適用されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.ProfileSettings>同じによってこのプロパティによって参照されるオブジェクトを含める必要があります<xref:System.Web.Configuration.HealthMonitoringSection>も含まれているオブジェクト<xref:System.Web.Configuration.RuleSettings>  
+  
+ オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.RuleSettings.Profile%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#88](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#88)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#88](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#88)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.RuleSettings.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Provider">
+      <MemberSignature Language="C#" Value="public string Provider { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Provider" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.RuleSettings.Provider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("provider", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の名前、<see cref="T:System.Configuration.ProviderSettings" />この規則が適用されます。</summary>
+        <value>名前、<see cref="T:System.Configuration.ProviderSettings" />この規則が適用されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ProviderSettings>同じによってこのプロパティによって参照されるオブジェクトを含める必要があります<xref:System.Web.Configuration.HealthMonitoringSection>も含まれているオブジェクト<xref:System.Web.Configuration.RuleSettings>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.RuleSettings.Provider%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#87](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#87)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#87](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#87)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

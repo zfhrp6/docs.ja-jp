@@ -1,0 +1,199 @@
+<Type Name="ComCompatibleVersionAttribute" FullName="System.Runtime.InteropServices.ComCompatibleVersionAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ComCompatibleVersionAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ComCompatibleVersionAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.ComCompatibleVersionAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>COM クライアントに、現在のバージョンのアセンブリのすべてのクラスが以前のバージョンのアセンブリ内のクラスと互換性があることを示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性は、アセンブリに適用できます。  
+  
+ 既定では、 [Tlbexp.exe (タイプ ライブラリ エクスポーター)](~/docs/framework/tools/tlbexp-exe-type-library-exporter.md)アセンブリのバージョン番号を使用して、クラス識別子 (Clsid) を計算します。 すべてのパブリック、COM 参照可能クラスが表示される新しい Clsid たびに新しいバージョンのアセンブリをエクスポートします。  
+  
+ 適用することができます、`ComCompatibleVersionAttribute`を強制的に以前のバージョンのアセンブリ内のクラスの Clsid と同じであるアセンブリの現在のバージョンでのクラスの Clsid はすべての属性です。 Clsid の同じ残っている限り、従来の COM アプリケーションは、元のアセンブリをアンインストールした後に互換性のあるアセンブリの以降のバージョンを使用できます。 適用する場合、 <xref:System.Runtime.InteropServices.GuidAttribute?displayProperty=nameWithType> 、CLSID を明示的に設定するためにクラス、`ComCompatibleVersionAttribute`も何も起こりません。  
+  
+ この属性のプロパティは、アセンブリのバージョンの 4 つの部分を結合します。 常に、現在のアセンブリにとの下位互換性があるため、そのバージョンを使用して、アセンブリ内のすべての Clsid が計算される最小バージョンを指定します。  
+  
+   
+  
+## Examples  
+ 次の例では、アセンブリのバージョン 1.0.0.0 をより高いバージョン番号を持つアセンブリを指定する方法を示します。 アセンブリの新しいバージョンに関係なく、現在のアセンブリ バージョンを使用する代わりにバージョン 1.0.0.0 を使用してアセンブリ内のすべての Clsid が生成されます。  
+  
+ [!code-cpp[System.Runtime.InteropServices.ComCompatibleVersionAttribute#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.runtime.interopservices.comcompatibleversionattribute/cpp/source.cpp#1)]
+ [!code-csharp[System.Runtime.InteropServices.ComCompatibleVersionAttribute#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.interopservices.comcompatibleversionattribute/cs/source.cs#1)]
+ [!code-vb[System.Runtime.InteropServices.ComCompatibleVersionAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.runtime.interopservices.comcompatibleversionattribute/vb/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ComCompatibleVersionAttribute (int major, int minor, int build, int revision);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 major, int32 minor, int32 build, int32 revision) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ComCompatibleVersionAttribute.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="major" Type="System.Int32" />
+        <Parameter Name="minor" Type="System.Int32" />
+        <Parameter Name="build" Type="System.Int32" />
+        <Parameter Name="revision" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="major">アセンブリのメジャー バージョン番号。</param>
+        <param name="minor">アセンブリのマイナー バージョン番号。</param>
+        <param name="build">アセンブリのビルド番号。</param>
+        <param name="revision">アセンブリのリビジョン番号。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.InteropServices.ComCompatibleVersionAttribute" />メジャー バージョン、マイナー、ビルド、およびアセンブリのリビジョン番号を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildNumber">
+      <MemberSignature Language="C#" Value="public int BuildNumber { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 BuildNumber" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.ComCompatibleVersionAttribute.BuildNumber" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アセンブリのビルド番号を取得します。</summary>
+        <value>アセンブリのビルド番号。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MajorVersion">
+      <MemberSignature Language="C#" Value="public int MajorVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MajorVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.ComCompatibleVersionAttribute.MajorVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アセンブリのメジャー バージョン番号を取得します。</summary>
+        <value>アセンブリのメジャー バージョン番号。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinorVersion">
+      <MemberSignature Language="C#" Value="public int MinorVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MinorVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.ComCompatibleVersionAttribute.MinorVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アセンブリのマイナー バージョン番号を取得します。</summary>
+        <value>アセンブリのマイナー バージョン番号。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RevisionNumber">
+      <MemberSignature Language="C#" Value="public int RevisionNumber { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RevisionNumber" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.ComCompatibleVersionAttribute.RevisionNumber" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アセンブリのリビジョン番号を取得します。</summary>
+        <value>アセンブリのリビジョン番号。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

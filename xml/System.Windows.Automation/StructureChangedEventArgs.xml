@@ -1,0 +1,112 @@
+<Type Name="StructureChangedEventArgs" FullName="System.Windows.Automation.StructureChangedEventArgs">
+  <TypeSignature Language="C#" Value="public sealed class StructureChangedEventArgs : System.Windows.Automation.AutomationEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit StructureChangedEventArgs extends System.Windows.Automation.AutomationEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.StructureChangedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationTypes</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Automation.AutomationEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>UI オートメーション ツリー構造が変更されたときに発生するイベントに関する情報が含まれています。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StructureChangedEventArgs (System.Windows.Automation.StructureChangeType structureChangeType, int[] runtimeId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Automation.StructureChangeType structureChangeType, int32[] runtimeId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.StructureChangedEventArgs.#ctor(System.Windows.Automation.StructureChangeType,System.Int32[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="structureChangeType" Type="System.Windows.Automation.StructureChangeType" />
+        <Parameter Name="runtimeId" Type="System.Int32[]" />
+      </Parameters>
+      <Docs>
+        <param name="structureChangeType">変更の種類を指定する単一の値。</param>
+        <param name="runtimeId">ランタイム[!INCLUDE[TLA#tla_id](~/includes/tlasharptla-id-md.md)]の[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]構造が変更された要素。</param>
+        <summary>新しいインスタンスを初期化、<see cref="P:System.Windows.Automation.StructureChangedEventArgs.StructureChangeType" />クラス、変更の種類を指定して、[!INCLUDE[TLA#tla_id](~/includes/tlasharptla-id-md.md)]構造が変更された要素のです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される値`structureChangeType`UI オートメーション プロバイダーの実装に依存します。 たとえば、ときに項目が追加または削除から、[!INCLUDE[TLA2#tla_win32](~/includes/tla2sharptla-win32-md.md)]ことを指定できます、プロバイダーが追加または削除された項目の数を決定できる場合は、リスト ボックス、<xref:System.Windows.Automation.StructureChangeType.ChildrenInvalidated>および not<xref:System.Windows.Automation.StructureChangeType.ChildAdded>または<xref:System.Windows.Automation.StructureChangeType.ChildRemoved>です。  
+  
+ 次の表の情報が受信したイベントで、<xref:System.Windows.Automation.StructureChangedEventHandler>の別の構造を変更します。  
+  
+|`structureChangeType`|イベント ソース|`runtimeId`|  
+|---------------------------|------------------|-----------------|  
+|<xref:System.Windows.Automation.StructureChangeType.ChildAdded>|この子が追加されました。|この子が追加されました。|  
+|<xref:System.Windows.Automation.StructureChangeType.ChildRemoved>|削除された子の親です。|削除された子。|  
+|<xref:System.Windows.Automation.StructureChangeType.ChildrenBulkAdded>|追加された子の親です。|追加された子の親です。|  
+|<xref:System.Windows.Automation.StructureChangeType.ChildrenBulkRemoved>|削除された子の親です。|削除された子の親です。|  
+|<xref:System.Windows.Automation.StructureChangeType.ChildrenInvalidated>|無効化された子の親です。|無効化された子の親|  
+  
+ カスタム コントロールは、意味のある値で提供できない可能性があります`runtimeId`です。 詳細については、「<xref:System.Windows.Automation.Provider.AutomationInteropProvider.RaiseStructureChangedEvent%2A>」を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例では、構築してに子を追加するときにイベントを発生させる方法を示しています。 または、カスタム リスト ボックスから削除します。  
+  
+ [!code-csharp[FragmentProvider#101](~/samples/snippets/csharp/VS_Snippets_Wpf/FragmentProvider/CSharp/ListFragment.cs#101)]
+ [!code-vb[FragmentProvider#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FragmentProvider/VisualBasic/ListFragment.vb#101)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRuntimeId">
+      <MemberSignature Language="C#" Value="public int[] GetRuntimeId ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32[] GetRuntimeId() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.StructureChangedEventArgs.GetRuntimeId" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]ランタイム[!INCLUDE[TLA#tla_id](~/includes/tlasharptla-id-md.md)]の[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]構造が変更された要素。</summary>
+        <returns>ランタイム[!INCLUDE[TLA2#tla_id](~/includes/tla2sharptla-id-md.md)]の[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]構造が変更された要素。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値には、追加、削除、または、親の識別子を無効にされている識別子を追加または削除された子の多数の子の場合があります。 詳細については、「<xref:System.Windows.Automation.StructureChangedEventArgs.%23ctor%2A>」を参照してください。  
+  
+ カスタム コントロールは、有効なランタイム識別子を指定しない場合があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StructureChangeType">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.StructureChangeType StructureChangeType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Automation.StructureChangeType StructureChangeType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.StructureChangedEventArgs.StructureChangeType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.StructureChangeType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生した変更の種類を示す値を取得、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]ツリー構造。</summary>
+        <value>型は変更が発生しました。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

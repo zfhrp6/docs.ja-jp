@@ -1,0 +1,148 @@
+<Type Name="IChannelReceiverHook" FullName="System.Runtime.Remoting.Channels.IChannelReceiverHook">
+  <TypeSignature Language="C#" Value="public interface IChannelReceiverHook" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IChannelReceiverHook" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Channels.IChannelReceiverHook" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>実装するチャネルは、外部のリスナー サービスにフックする必要があることを示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[IChannelReceiverHook_ChannelScheme#1](~/samples/snippets/cpp/VS_Snippets_Remoting/IChannelReceiverHook_ChannelScheme/CPP/ichannelreceiverhook_channelscheme.cpp#1)]
+ [!code-csharp[IChannelReceiverHook_ChannelScheme#1](~/samples/snippets/csharp/VS_Snippets_Remoting/IChannelReceiverHook_ChannelScheme/CS/ichannelreceiverhook_channelscheme.cs#1)]
+ [!code-vb[IChannelReceiverHook_ChannelScheme#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/IChannelReceiverHook_ChannelScheme/VB/ichannelreceiverhook_channelscheme.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddHookChannelUri">
+      <MemberSignature Language="C#" Value="public void AddHookChannelUri (string channelUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddHookChannelUri(string channelUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.IChannelReceiverHook.AddHookChannelUri(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="channelUri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="channelUri">チャネル フックがリッスンする URI。</param>
+        <summary>チャネル フックがリッスンする URI を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアント コードでは、このメソッドを直接呼び出さないでください。  
+  
+   
+  
+## Examples  
+ [!code-cpp[HttpChannel.AddHookChannelUri#1](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpChannel.AddHookChannelUri/CPP/class1.cpp#1)]
+ [!code-csharp[HttpChannel.AddHookChannelUri#1](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpChannel.AddHookChannelUri/CS/class1.cs#1)]
+ [!code-vb[HttpChannel.AddHookChannelUri#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpChannel.AddHookChannelUri/VB/class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ChannelScheme">
+      <MemberSignature Language="C#" Value="public string ChannelScheme { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ChannelScheme" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.IChannelReceiverHook.ChannelScheme" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フックするリスナーの種類を取得します。</summary>
+        <value>(たとえば、"http") にフックするリスナーの種類。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は区別されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ChannelSinkChain">
+      <MemberSignature Language="C#" Value="public System.Runtime.Remoting.Channels.IServerChannelSink ChannelSinkChain { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Remoting.Channels.IServerChannelSink ChannelSinkChain" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.IChannelReceiverHook.ChannelSinkChain" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Channels.IServerChannelSink</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のチャネルを使用しているチャネル シンク チェーンを取得します。</summary>
+        <value>現在のチャネルを使用しているチャネル シンク チェーン。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[HttpChannel.ChannelSinkChain#1](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpChannel.ChannelSinkChain/CPP/class1.cpp#1)]
+ [!code-csharp[HttpChannel.ChannelSinkChain#1](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpChannel.ChannelSinkChain/CS/class1.cs#1)]
+ [!code-vb[HttpChannel.ChannelSinkChain#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpChannel.ChannelSinkChain/VB/class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="WantsToListen">
+      <MemberSignature Language="C#" Value="public bool WantsToListen { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool WantsToListen" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.IChannelReceiverHook.WantsToListen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示すブール値を取得するかどうか<see cref="T:System.Runtime.Remoting.Channels.IChannelReceiverHook" />外部リスナー サービスにフックする必要があります。</summary>
+        <value>ブール値を示すかどうか<see cref="T:System.Runtime.Remoting.Channels.IChannelReceiverHook" />外部リスナー サービスにフックする必要があります。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

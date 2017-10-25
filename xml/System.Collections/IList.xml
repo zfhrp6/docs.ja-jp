@@ -1,0 +1,578 @@
+<Type Name="IList" FullName="System.Collections.IList">
+  <TypeSignature Language="C#" Value="public interface IList : System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IList implements class System.Collections.ICollection, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.IList" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>インデックスによって個別にアクセスできるオブジェクトの非ジェネリック コレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.IList>子孫である、<xref:System.Collections.ICollection>インターフェイスし、すべての非ジェネリック リストの基本インターフェイスです。 <xref:System.Collections.IList>実装は 3 つのカテゴリに分類されます。 読み取り専用、固定サイズ、および変数のサイズ。 読み取り専用<xref:System.Collections.IList>は変更できません。 固定サイズ<xref:System.Collections.IList>加算または要素の削除はできませんが、既存の要素は変更できます。 可変サイズ<xref:System.Collections.IList>追加、削除、および要素の変更を許可します。  
+  
+ このインターフェイスのジェネリック バージョンは、<xref:System.Collections.Generic.IList%601?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次の例での実装、<xref:System.Collections.IList>単純なリスト、固定サイズのリストを作成するインターフェイスです。  
+  
+ [!code-csharp[System.Collections.IList_Implementation#01](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.IList_Implementation/cs/Program.cs#01)]
+ [!code-vb[System.Collections.IList_Implementation#01](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.IList_Implementation/vb/Program.vb#01)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 Add(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.IList.Add(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Collections.IList" /> に追加するオブジェクト。</param>
+        <summary><see cref="T:System.Collections.IList" /> に項目を追加します。</summary>
+        <returns>新しい要素が挿入された位置、または項目がコレクションに挿入されなかったことを示す -1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例での実装、<xref:System.Collections.IList>単純で固定サイズのリストを作成するインターフェイスです。 このコードの例の一部である、<xref:System.Collections.IList>インターフェイスです。  
+  
+ [!code-csharp[System.Collections.IList_Implementation#02](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.IList_Implementation/cs/Program.cs#02)]
+ [!code-vb[System.Collections.IList_Implementation#02](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.IList_Implementation/vb/Program.vb#02)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.IList" /> は読み取り専用です。  
+  
+ -または-  
+  
+ <see cref="T:System.Collections.IList" /> は固定サイズです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.IList.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Collections.IList" /> からすべての項目を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの実装の処理方法によって異なります、<xref:System.Collections.ICollection.Count%2A?displayProperty=nameWithType>とコレクションの容量。 通常、カウントがゼロに設定し、コレクションの要素から他のオブジェクトへの参照も解放します。 容量はゼロまたは、既定値に設定することができます、または unchanged に残すことができます。  
+  
+   
+  
+## Examples  
+ 次の例での実装、<xref:System.Collections.IList>単純なリスト、固定サイズのリストを作成するインターフェイスです。 このコードの例の一部である、<xref:System.Collections.IList>インターフェイスです。  
+  
+ [!code-csharp[System.Collections.IList_Implementation#02](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.IList_Implementation/cs/Program.cs#02)]
+ [!code-vb[System.Collections.IList_Implementation#02](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.IList_Implementation/vb/Program.vb#02)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.IList" /> は読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.IList.Contains(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Collections.IList" /> 内で検索するオブジェクト。</param>
+        <summary><see cref="T:System.Collections.IList" /> に特定の値が格納されているかどうかを判断します。</summary>
+        <returns>
+          <see cref="T:System.Object" /> が <see cref="T:System.Collections.IList" /> に存在する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 以降、.NET Framework 2.0 では、このメソッドを使用して、コレクションのオブジェクトの<xref:System.Object.Equals%2A>と<xref:System.IComparable.CompareTo%2A>メソッド`item`項目が存在するかどうかを確認します。 .NET Framework の以前のバージョンでは、この決定を使用して行われた、<xref:System.Object.Equals%2A>と<xref:System.IComparable.CompareTo%2A>のメソッド、`item`パラメーター コレクション内のオブジェクトにします。  
+  
+   
+  
+## Examples  
+ 次の例での実装、<xref:System.Collections.IList>単純なリスト、固定サイズのリストを作成するインターフェイスです。 このコードの例の一部である、<xref:System.Collections.IList>インターフェイスです。  
+  
+ [!code-csharp[System.Collections.IList_Implementation#02](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.IList_Implementation/cs/Program.cs#02)]
+ [!code-vb[System.Collections.IList_Implementation#02](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.IList_Implementation/vb/Program.vb#02)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 IndexOf(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.IList.IndexOf(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Collections.IList" /> 内で検索するオブジェクト。</param>
+        <summary><see cref="T:System.Collections.IList" /> 内の特定の項目のインデックスを確認します。</summary>
+        <returns>リストに存在する場合は <paramref name="value" /> のインデックス。それ以外の場合は -1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 以降、.NET Framework 2.0 では、このメソッドを使用して、コレクションのオブジェクトの<xref:System.Object.Equals%2A>と<xref:System.IComparable.CompareTo%2A>メソッド`item`項目が存在するかどうかを確認します。 .NET Framework の以前のバージョンでは、この決定を使用して行われた、<xref:System.Object.Equals%2A>と<xref:System.IComparable.CompareTo%2A>のメソッド、`item`パラメーター コレクション内のオブジェクトにします。  
+  
+   
+  
+## Examples  
+ 次の例での実装、<xref:System.Collections.IList>単純なリスト、固定サイズのリストを作成するインターフェイスです。 このコードの例の一部である、<xref:System.Collections.IList>インターフェイスです。  
+  
+ [!code-csharp[System.Collections.IList_Implementation#02](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.IList_Implementation/cs/Program.cs#02)]
+ [!code-vb[System.Collections.IList_Implementation#02](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.IList_Implementation/vb/Program.vb#02)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Insert(int32 index, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.IList.Insert(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">位置の 0 から始まるインデックス<c>値</c>挿入する必要があります。</param>
+        <param name="value"><see cref="T:System.Collections.IList" /> に挿入するオブジェクト。</param>
+        <summary>指定したインデックスの <see cref="T:System.Collections.IList" /> に項目を挿入します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `index` が <xref:System.Collections.IList> 内の項目数に等しければ、`value` が末尾に追加されます。  
+  
+ リストなどの連続する要素のコレクションでは、新しい要素を挿入するために、挿入位置より後にある要素の位置が繰り下げられます。 コレクションにインデックスがある場合、移動した要素のインデックスも更新されます。 この動作は、要素が概念的にバケットにグループ化されているハッシュ テーブルなどのコレクションには適用されません。  
+  
+   
+  
+## Examples  
+ 次の例での実装、<xref:System.Collections.IList>単純なリスト、固定サイズのリストを作成するインターフェイスです。 このコードの例の一部である、<xref:System.Collections.IList>インターフェイスです。  
+  
+ [!code-csharp[System.Collections.IList_Implementation#02](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.IList_Implementation/cs/Program.cs#02)]
+ [!code-vb[System.Collections.IList_Implementation#02](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.IList_Implementation/vb/Program.vb#02)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が <see cref="T:System.Collections.IList" /> の有効なインデックスではありません。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.IList" /> は読み取り専用です。  
+  
+ -または-  
+  
+ <see cref="T:System.Collections.IList" /> は固定サイズです。</exception>
+        <exception cref="T:System.NullReferenceException">
+          <paramref name="value" />内の null 参照には、<see cref="T:System.Collections.IList" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFixedSize">
+      <MemberSignature Language="C#" Value="public bool IsFixedSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFixedSize" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.IList.IsFixedSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.IList" /> が固定サイズかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" /> が固定サイズの場合は <see cref="T:System.Collections.IList" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 固定サイズのコレクションでは、コレクションの作成後に要素の追加または削除はできませんが、既存の要素の変更はできます。  
+  
+   
+  
+## Examples  
+ 次の例での実装、<xref:System.Collections.IList>単純なリスト、固定サイズのリストを作成するインターフェイスです。 このコードの例の一部である、<xref:System.Collections.IList>インターフェイスです。  
+  
+ [!code-csharp[System.Collections.IList_Implementation#02](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.IList_Implementation/cs/Program.cs#02)]
+ [!code-vb[System.Collections.IList_Implementation#02](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.IList_Implementation/vb/Program.vb#02)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.IList.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.IList" /> が読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          <see cref="T:System.Collections.IList" /> が読み取り専用である場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り専用のコレクションでは、コレクション作成後に要素の追加、削除、または変更はできません。  
+  
+   
+  
+## Examples  
+ 次の例での実装、<xref:System.Collections.IList>単純なリスト、固定サイズのリストを作成するインターフェイスです。 このコードの例の一部である、<xref:System.Collections.IList>インターフェイスです。  
+  
+ [!code-csharp[System.Collections.IList_Implementation#02](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.IList_Implementation/cs/Program.cs#02)]
+ [!code-vb[System.Collections.IList_Implementation#02](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.IList_Implementation/vb/Program.vb#02)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.IList.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得または設定する要素の、0 から始まるインデックス番号。</param>
+        <summary>指定したインデックスにある要素を取得または設定します。</summary>
+        <value>指定したインデックス位置にある要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、`myCollection[index]` という構文を使用して、コレクション内の特定の要素にアクセスできます。  
+  
+ C# 言語キーワードを使用して実装する代わりに、インデクサーの定義、<xref:System.Collections.IList.Item%2A>プロパティです。 Visual Basic は、<xref:System.Collections.IList.Item%2A> を既定のプロパティとして実装しており、同様のインデックス機能を提供します。  
+  
+   
+  
+## Examples  
+ 次の例での実装、<xref:System.Collections.IList>単純なリスト、固定サイズのリストを作成するインターフェイスです。 このコードの例の一部である、<xref:System.Collections.IList>インターフェイスです。  
+  
+ [!code-csharp[System.Collections.IList_Implementation#02](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.IList_Implementation/cs/Program.cs#02)]
+ [!code-vb[System.Collections.IList_Implementation#02](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.IList_Implementation/vb/Program.vb#02)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が <see cref="T:System.Collections.IList" /> の有効なインデックスではありません。</exception>
+        <exception cref="T:System.NotSupportedException">このプロパティが設定されていますが、<see cref="T:System.Collections.IList" /> が読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Remove(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.IList.Remove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Collections.IList" /> から削除するオブジェクト。</param>
+        <summary>特定のオブジェクトが <see cref="T:System.Collections.IList" /> 内にあるときに、最初に出現したものを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リストなどの連続する要素のコレクションでは、空白になった位置を埋めるために、削除された要素の後にある要素の位置が繰り上げられます。 コレクションにインデックスがある場合、移動した要素のインデックスも更新されます。 この動作は、要素が概念的にバケットにグループ化されているハッシュ テーブルなどのコレクションには適用されません。 `value` が <xref:System.Collections.IList> オブジェクト内に存在しない場合、<xref:System.Collections.IList> オブジェクトは変更されず、例外はスローされません。  
+  
+   
+  
+## Examples  
+ 次の例での実装、<xref:System.Collections.IList>単純なリスト、固定サイズのリストを作成するインターフェイスです。 このコードの例の一部である、<xref:System.Collections.IList>インターフェイスです。  
+  
+ [!code-csharp[System.Collections.IList_Implementation#02](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.IList_Implementation/cs/Program.cs#02)]
+ [!code-vb[System.Collections.IList_Implementation#02](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.IList_Implementation/vb/Program.vb#02)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.IList" /> は読み取り専用です。  
+  
+ -または-  
+  
+ <see cref="T:System.Collections.IList" /> は固定サイズです。</exception>
+        <block subset="none" type="overrides">
+          <para>場合<paramref name="value" />、一覧に含まれない、<see cref="M:System.Collections.IList.Remove(System.Object)" />メソッドには、何もしない必要があります。 具体的には、例外はスローする必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.IList.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除する項目の 0 から始まるインデックス。</param>
+        <summary>指定したインデックスにある <see cref="T:System.Collections.IList" /> 項目を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リストなどの連続する要素のコレクションでは、空白になった位置を埋めるために、削除された要素の後にある要素の位置が繰り上げられます。 コレクションにインデックスがある場合、移動した要素のインデックスも更新されます。 この動作は、要素が概念的にバケットにグループ化されているハッシュ テーブルなどのコレクションには適用されません。  
+  
+   
+  
+## Examples  
+ 次の例での実装、<xref:System.Collections.IList>単純なリスト、固定サイズのリストを作成するインターフェイスです。 このコードの例の一部である、<xref:System.Collections.IList>インターフェイスです。  
+  
+ [!code-csharp[System.Collections.IList_Implementation#02](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.IList_Implementation/cs/Program.cs#02)]
+ [!code-vb[System.Collections.IList_Implementation#02](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.IList_Implementation/vb/Program.vb#02)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が <see cref="T:System.Collections.IList" /> の有効なインデックスではありません。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.IList" /> は読み取り専用です。  
+  
+ -または-  
+  
+ <see cref="T:System.Collections.IList" /> は固定サイズです。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,199 @@
+<Type Name="DataBinding" FullName="System.Web.UI.DataBinding">
+  <TypeSignature Language="C#" Value="public sealed class DataBinding" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DataBinding extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.DataBinding" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>(RAD) デザイナー、デザイン時にデータ バインディング式を作成する、Microsoft Visual Studio などの迅速なアプリケーションの開発を使用する ASP.NET サーバー コントロールに 1 つのデータ バインディング式について説明します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サーバー コントロール内の各データ バインディング式がデザイン時のインスタンスによって表される、<xref:System.Web.UI.DataBinding>クラスです。 1 つまたは複数のデータ バインディング式が含まれるすべてのサーバー コントロールが、<xref:System.Web.UI.DataBindingCollection>オブジェクトを含む、<xref:System.Web.UI.DataBinding>オブジェクト。 このコレクションは経由でアクセスできる、<xref:System.Web.UI.Control>クラスを実装する、<xref:System.Web.UI.IDataBindingsAccessor>インターフェイスです。 カスタム RAD デザイナーを作成するときに、その実装を使用して、コレクションにアクセスします。 どの<xref:System.Web.UI.DataBinding>または<xref:System.Web.UI.DataBindingCollection>サーバー コントロールに関連付けられたオブジェクトがデザイン時にのみ存在します。 実行時に存在しないし、そのためしていないアクセス可能な実行時にします。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Web.UI.DataBinding>オブジェクトと、コントロールの既存のオブジェクトと等しいセット<xref:System.Web.UI.DataBindingCollection>を持つコレクション、`propertyName`パラメーターの値を持つ`Text`します。 コレクションが含まれている場合、<xref:System.Web.UI.DataBinding>オブジェクトを`propertyName`値`Text`、このコード オブジェクトの値を返す<xref:System.Web.UI.DataBinding.Expression%2A>プロパティです。 このようなオブジェクトが存在しない場合、空の文字列を返します ("") です。  
+  
+ [!code-csharp[DataBinding_Sample1#2](~/samples/snippets/csharp/VS_Snippets_WebNet/DataBinding_Sample1/CS/databinding_samp1.cs#2)]
+ [!code-vb[DataBinding_Sample1#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataBinding_Sample1/VB/databinding_samp1.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataBinding (string propertyName, Type propertyType, string expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string propertyName, class System.Type propertyType, string expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBinding.#ctor(System.String,System.Type,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="propertyType" Type="System.Type" />
+        <Parameter Name="expression" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">データをバインドするプロパティ。</param>
+        <param name="propertyType">データをバインドするプロパティの .NET Framework の型。</param>
+        <param name="expression">評価されるようにデータ バインディング式。</param>
+        <summary><see cref="T:System.Web.UI.DataBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Web.UI.DataBinding>オブジェクトと、コントロールの既存のオブジェクトと等しいセット<xref:System.Web.UI.DataBindingCollection>を持つコレクション、`propertyName`パラメーターの値を持つ`Text`します。 コレクションが含まれている場合、<xref:System.Web.UI.DataBinding>オブジェクトを`propertyName`値`Text`、このコード オブジェクトの値を返す<xref:System.Web.UI.DataBinding.Expression%2A>プロパティです。 このようなオブジェクトが存在しない場合、空の文字列を返します ("") です。  
+  
+ [!code-csharp[DataBinding_Sample1#3](~/samples/snippets/csharp/VS_Snippets_WebNet/DataBinding_Sample1/CS/databinding_samp1.cs#3)]
+ [!code-vb[DataBinding_Sample1#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataBinding_Sample1/VB/databinding_samp1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBinding.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在と比較するオブジェクト<see cref="T:System.Web.UI.DataBinding" />です。</param>
+        <summary>指定したオブジェクトがの同じインスタンスであるかどうかを判断、<see cref="T:System.Web.UI.DataBinding" />クラスとして、現在のオブジェクト。</summary>
+        <returns>
+          <see langword="true" />データ バインディング プロパティの名前が一致する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Expression">
+      <MemberSignature Language="C#" Value="public string Expression { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Expression" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataBinding.Expression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または評価されるようにデータ バインディング式を設定します。</summary>
+        <value>評価されるようにデータ バインディング式。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Web.UI.DataBinding>オブジェクトと、コントロールの既存のオブジェクトと等しいセット<xref:System.Web.UI.DataBindingCollection>を持つコレクション、`propertyName`パラメーターの値を持つ`Text`します。 コレクションが含まれている場合、<xref:System.Web.UI.DataBinding>オブジェクトを`propertyName`値`Text`、このコード オブジェクトの値を返す<xref:System.Web.UI.DataBinding.Expression%2A>プロパティです。 このようなオブジェクトが存在しない場合、空の文字列を返します ("") です。  
+  
+ [!code-csharp[DataBinding_Sample1#3](~/samples/snippets/csharp/VS_Snippets_WebNet/DataBinding_Sample1/CS/databinding_samp1.cs#3)]
+ [!code-vb[DataBinding_Sample1#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataBinding_Sample1/VB/databinding_samp1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBinding.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>インスタンスのハッシュ コードを取得、<see cref="T:System.Web.UI.DataBinding" />オブジェクト。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataBinding>オブジェクトを配置している、<xref:System.Web.UI.DataBindingCollection>オブジェクト、デザイン時にのみアクセスできます。 コレクションは、コントロールのバインディングを表すハッシュ テーブルです。 しか存在できません、プロパティごとに 1 つのバインディング、ハッシュ コードの計算が一致するよう、<xref:System.Web.UI.DataBinding.Equals%2A?displayProperty=nameWithType>実装とのみが、プロパティ名のアカウントにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyName">
+      <MemberSignature Language="C#" Value="public string PropertyName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PropertyName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataBinding.PropertyName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データをバインドする ASP.NET サーバー コントロールのプロパティの名前を取得します。</summary>
+        <value>データをバインドするプロパティ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、3 つの変数を宣言して`dataBindingOutput1`、 `dataBindingOutput2`、および`dataBindingOutput3`の異なるプロパティにアクセスする、<xref:System.Web.UI.DataBinding>オブジェクト、`myDataBinding2`です。 これは、後の値を割り当てます、<xref:System.Web.UI.DataBinding.PropertyName%2A>プロパティを`dataBindingOutput1`、「プロパティの名前が」で、文字列を連結し、ファイルに値を書き込みます。  
+  
+ [!code-csharp[DataBinding_Sample1#6](~/samples/snippets/csharp/VS_Snippets_WebNet/DataBinding_Sample1/CS/databinding_samp1.cs#6)]
+ [!code-vb[DataBinding_Sample1#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataBinding_Sample1/VB/databinding_samp1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyType">
+      <MemberSignature Language="C#" Value="public Type PropertyType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type PropertyType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataBinding.PropertyType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ バインド ASP.NET サーバー コントロールのプロパティの .NET Framework の型を取得します。</summary>
+        <value>データ バインド プロパティの .NET Framework の型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、3 つの変数を宣言して`dataBindingOutput1`、 `dataBindingOutput2`、および`dataBindingOutput3`の異なるプロパティにアクセスする、<xref:System.Web.UI.DataBinding>オブジェクト、`myDataBinding2`です。 <xref:System.Web.UI.DataBinding.PropertyType%2A>にプロパティの値が割り当てられた`dataBindingOutput2`と「プロパティの型が」、文字列連結し、ファイルに値を書き込みます。  
+  
+ [!code-csharp[DataBinding_Sample1#6](~/samples/snippets/csharp/VS_Snippets_WebNet/DataBinding_Sample1/CS/databinding_samp1.cs#6)]
+ [!code-vb[DataBinding_Sample1#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataBinding_Sample1/VB/databinding_samp1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

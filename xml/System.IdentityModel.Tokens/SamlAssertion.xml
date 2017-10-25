@@ -1,0 +1,600 @@
+<Type Name="SamlAssertion" FullName="System.IdentityModel.Tokens.SamlAssertion">
+  <TypeSignature Language="C#" Value="public class SamlAssertion" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SamlAssertion extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.SamlAssertion" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>セキュリティ アサーション マークアップ言語 1.1 (SAML 1.1) のアサーションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAssertion> クラスは、OASIS SAML 1.1 仕様で定義されている `<saml:Assertion>` XML 要素に対応します。  
+  
+ <xref:System.IdentityModel.Tokens.SamlSecurityToken> セキュリティ トークンのクレームは、<xref:System.IdentityModel.Tokens.SamlAssertion> に格納されます。 <xref:System.IdentityModel.Tokens.SamlAssertion> には、拡張性のある一連のクレームがあります。これは、SAML ステートメントと呼ばれ、<xref:System.IdentityModel.Tokens.SamlAssertion.Statements%2A> プロパティで表されます。 SAML アサーションを発行した SAML 証明機関は、<xref:System.IdentityModel.Tokens.SamlAssertion.Issuer%2A> プロパティで指定されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SamlAssertion ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAssertion.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Tokens.SamlAssertion" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SamlAssertion (string assertionId, string issuer, DateTime issueInstant, System.IdentityModel.Tokens.SamlConditions conditions, System.IdentityModel.Tokens.SamlAdvice advice, System.Collections.Generic.IEnumerable&lt;System.IdentityModel.Tokens.SamlStatement&gt; statements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string assertionId, string issuer, valuetype System.DateTime issueInstant, class System.IdentityModel.Tokens.SamlConditions conditions, class System.IdentityModel.Tokens.SamlAdvice advice, class System.Collections.Generic.IEnumerable`1&lt;class System.IdentityModel.Tokens.SamlStatement&gt; statements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAssertion.#ctor(System.String,System.String,System.DateTime,System.IdentityModel.Tokens.SamlConditions,System.IdentityModel.Tokens.SamlAdvice,System.Collections.Generic.IEnumerable{System.IdentityModel.Tokens.SamlStatement})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="assertionId" Type="System.String" />
+        <Parameter Name="issuer" Type="System.String" />
+        <Parameter Name="issueInstant" Type="System.DateTime" />
+        <Parameter Name="samlConditions" Type="System.IdentityModel.Tokens.SamlConditions" />
+        <Parameter Name="samlAdvice" Type="System.IdentityModel.Tokens.SamlAdvice" />
+        <Parameter Name="samlStatements" Type="System.Collections.Generic.IEnumerable&lt;System.IdentityModel.Tokens.SamlStatement&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="assertionId">アサーションの識別子。</param>
+        <param name="issuer">この SAML アサーションを発行した SAML 証明機関。</param>
+        <param name="issueInstant">SAML アサーションが発行された時間を指定する <see cref="T:System.DateTime" />。</param>
+        <param name="conditions">To be added.</param>
+        <param name="advice">To be added.</param>
+        <param name="statements">To be added.</param>
+        <summary>指定した SAML アサーション識別子、アサーションの発行者、アサーションの発行日時、一連の処理条件、追加情報、および SAML ステートメントのコレクションを使用して、<see cref="T:System.IdentityModel.Tokens.SamlAssertion" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `assertionId` は、文字または文字 "_" で始まる必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="assertionId" /> は <see langword="null" /> です  
+  
+ または  
+  
+ <paramref name="assertionId" /> は <see cref="F:System.String.Empty" /> です  
+  
+ または  
+  
+ <paramref name="assertionId" /> の先頭が、文字または文字 "_" ではありません。  
+  
+ または  
+  
+ <paramref name="issuer" /> は <see langword="null" /> です  
+  
+ または  
+  
+ <paramref name="issuer" /> は <see cref="F:System.String.Empty" /> です  
+  
+ または  
+  
+ <paramref name="samlStatements" /> は <see langword="null" /> です  
+  
+ または  
+  
+ <paramref name="samlStatements" /> に要素が含まれていません。  
+  
+ または  
+  
+ <paramref name="samlStatements" /> に <see langword="null" /> 要素が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Advice">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SamlAdvice Advice { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SamlAdvice Advice" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlAssertion.Advice" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SamlAdvice</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SAML 証明機関によって供給され、SAML アサーションの処理を支援できる <see cref="T:System.IdentityModel.Tokens.SamlSecurityToken" /> に関連する追加情報を取得または設定します。</summary>
+        <value>SAML 証明機関によって供給され、SAML アサーションの処理を支援できる追加情報を指定する <see cref="T:System.IdentityModel.Tokens.SamlAdvice" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAssertion.Advice%2A> プロパティは、OASIS SAML 仕様のアサーションおよびプロトコルで定義されている `<saml:Advice>` 要素に対応します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.IdentityModel.Tokens.SamlAssertion.Advice" />プロパティが設定され、<see cref="P:System.IdentityModel.Tokens.SamlAssertion.IsReadOnly" />プロパティは<see langword="true" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AssertionId">
+      <MemberSignature Language="C#" Value="public string AssertionId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AssertionId" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlAssertion.AssertionId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアサーションの識別子を取得または設定します。</summary>
+        <value>このアサーションの識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAssertion.AssertionId%2A> プロパティは、OASIS SAML 1.1 仕様で定義されている `AssertionID` 要素の `<saml:Assertion>` 属性に対応します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.IdentityModel.Tokens.SamlAssertion.IsReadOnly" /> プロパティの値が <see langword="true" /> のときに、<see cref="P:System.IdentityModel.Tokens.SamlAssertion.AssertionId" /> プロパティを設定しようとしました。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.IdentityModel.Tokens.SamlAssertion.AssertionId" /> を <see langword="null" /> または空の文字列に設定しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanWriteSourceData">
+      <MemberSignature Language="C#" Value="public virtual bool CanWriteSourceData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanWriteSourceData" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlAssertion.CanWriteSourceData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアサーションが XML のソースから逆シリアル化されたこと、および XML データに変更を再生成できるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />このアサーションが再変更されませんでした。 XML ソース データを出力する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装を使用して読み取るときにソース データを保存し、<xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler.ReadAssertion%2A>メソッドと同じくらいの元のデータを再生成でき、<xref:System.IdentityModel.Tokens.Saml.SamlAssertion.AssertionId%2A>プロパティは、アサーションが読み取られた時刻からは変更されません。  
+  
+> [!IMPORTANT]
+>  異なるデータを持つ SAML アサーションが別の Id を持つことが非常に重要です。 アサーション"template"が読み込まれ、データの特定のビットに読み込まれるというパターンを実装する場合、Id を変更する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Conditions">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SamlConditions Conditions { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SamlConditions Conditions" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlAssertion.Conditions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SamlConditions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SAML アサーションの有効性の評価時に考慮できる一連の条件を取得または設定します。</summary>
+        <value>SAML アサーションの有効性の評価時に考慮できる一連の条件を指定する <see cref="T:System.IdentityModel.Tokens.SamlConditions" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAssertion.Conditions%2A> プロパティは、OASIS SAML 1.1 仕様で定義されている `<saml:Conditions>` 要素に対応します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.IdentityModel.Tokens.SamlAssertion.IsReadOnly" />プロパティは<see langword="true" />設定が試行され、<see cref="P:System.IdentityModel.Tokens.SamlAssertion.Conditions" />プロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlAssertion.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスのプロパティが読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          このインスタンスのプロパティが読み取り専用の場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAssertion> クラスのこのインスタンスを読み取り専用にするために、<xref:System.IdentityModel.Tokens.SamlAssertion.MakeReadOnly%2A> メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IssueInstant">
+      <MemberSignature Language="C#" Value="public DateTime IssueInstant { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime IssueInstant" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlAssertion.IssueInstant" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SAML アサーションが発行された日時を取得または設定します。</summary>
+        <value>SAML アサーションの発行日時を指定する、協定世界時刻で表現された <see cref="T:System.DateTime" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAssertion.IssueInstant%2A> プロパティは、OASIS SAML 1.1 仕様で定義されている `IssueInstant` 要素の `<saml:Assertion>` 属性に対応します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.IdentityModel.Tokens.SamlAssertion.IsReadOnly" />プロパティは<see langword="true" />設定が試行され、<see cref="P:System.IdentityModel.Tokens.SamlAssertion.IssueInstant" />プロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Issuer">
+      <MemberSignature Language="C#" Value="public string Issuer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Issuer" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlAssertion.Issuer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この SAML アサーションを発行した SAML 証明機関の名前を取得または設定します。</summary>
+        <value>この SAML アサーションを発行した SAML 証明機関。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAssertion.Issuer%2A> プロパティは、OASIS SAML 1.1 仕様で定義されている `Issuer` 要素の `<saml:Assertion>` 属性に対応します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.IdentityModel.Tokens.SamlAssertion.IsReadOnly" />プロパティは<see langword="true" />設定が試行され、<see cref="P:System.IdentityModel.Tokens.SamlAssertion.Issuer" />プロパティです。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.IdentityModel.Tokens.SamlAssertion.Issuer" /> を <see langword="null" /> または空の文字列に設定しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MajorVersion">
+      <MemberSignature Language="C#" Value="public int MajorVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MajorVersion" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlAssertion.MajorVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この SAML アサーションが準拠する SAML 仕様のメジャー バージョンを取得します。</summary>
+        <value>この SAML アサーションが準拠する SAML 仕様のメジャー バージョン。 既定値は <see cref="P:System.IdentityModel.Tokens.SamlConstants.MajorVersionValue" /> プロパティの値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAssertion.MajorVersion%2A> プロパティは、OASIS SAML 仕様のアサーションおよびプロトコルで定義されている `MajorVersion` 要素の `<saml:Assertion>` 属性に対応します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MakeReadOnly">
+      <MemberSignature Language="C#" Value="public void MakeReadOnly ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MakeReadOnly() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAssertion.MakeReadOnly" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスを読み取り専用にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAssertion.MakeReadOnly%2A> メソッドが呼び出されると、<xref:System.IdentityModel.Tokens.SamlAssertion.IsReadOnly%2A> プロパティが `true` に設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinorVersion">
+      <MemberSignature Language="C#" Value="public int MinorVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MinorVersion" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlAssertion.MinorVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この SAML アサーションが準拠する SAML 仕様のマイナー バージョンを取得します。</summary>
+        <value>この SAML アサーションが準拠する SAML 仕様のマイナー バージョン。 既定値は <see cref="P:System.IdentityModel.Tokens.SamlConstants.MinorVersionValue" /> プロパティの値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAssertion.MinorVersion%2A> プロパティは、OASIS SAML 仕様のアサーションおよびプロトコルで定義されている `MinorVersion` 要素の `<saml:Assertion>` 属性に対応します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadSignature">
+      <MemberSignature Language="C#" Value="protected void ReadSignature (System.Xml.XmlDictionaryReader reader, System.IdentityModel.Selectors.SecurityTokenSerializer keyInfoTokenSerializer, System.IdentityModel.Selectors.SecurityTokenResolver outOfBandTokenResolver, System.IdentityModel.Tokens.SamlSerializer samlSerializer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void ReadSignature(class System.Xml.XmlDictionaryReader reader, class System.IdentityModel.Selectors.SecurityTokenSerializer keyInfoTokenSerializer, class System.IdentityModel.Selectors.SecurityTokenResolver outOfBandTokenResolver, class System.IdentityModel.Tokens.SamlSerializer samlSerializer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAssertion.ReadSignature(System.Xml.XmlDictionaryReader,System.IdentityModel.Selectors.SecurityTokenSerializer,System.IdentityModel.Selectors.SecurityTokenResolver,System.IdentityModel.Tokens.SamlSerializer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlDictionaryReader" />
+        <Parameter Name="keyInfoSerializer" Type="System.IdentityModel.Selectors.SecurityTokenSerializer" />
+        <Parameter Name="outOfBandTokenResolver" Type="System.IdentityModel.Selectors.SecurityTokenResolver" />
+        <Parameter Name="samlSerializer" Type="System.IdentityModel.Tokens.SamlSerializer" />
+      </Parameters>
+      <Docs>
+        <param name="reader">デジタル署名を読み取る <see cref="T:System.Xml.XmlDictionaryReader" />。</param>
+        <param name="keyInfoTokenSerializer">To be added.</param>
+        <param name="outOfBandTokenResolver">デジタル署名を作成したセキュリティ トークンを調べる <see cref="T:System.IdentityModel.Selectors.SecurityTokenResolver" />。</param>
+        <param name="samlSerializer">SAML 仕様で定義されている XML 要素の読み取りができる <see cref="T:System.IdentityModel.Tokens.SamlSerializer" />。</param>
+        <summary>SAML アサーションのデジタル署名を XML リーダーから読み取ります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAssertion.ReadSignature%2A> メソッドが呼び出された場合は、<xref:System.IdentityModel.Tokens.SamlAssertion.SigningToken%2A> プロパティが設定されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です  
+  
+ または  
+  
+ <paramref name="samlSerializer" /> は <see langword="null" /> です  
+  
+ または  
+  
+ デジタル署名は、SAML アサーションからまだ読み取られていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadXml">
+      <MemberSignature Language="C#" Value="public virtual void ReadXml (System.Xml.XmlDictionaryReader reader, System.IdentityModel.Tokens.SamlSerializer samlSerializer, System.IdentityModel.Selectors.SecurityTokenSerializer keyInfoTokenSerializer, System.IdentityModel.Selectors.SecurityTokenResolver outOfBandTokenResolver);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ReadXml(class System.Xml.XmlDictionaryReader reader, class System.IdentityModel.Tokens.SamlSerializer samlSerializer, class System.IdentityModel.Selectors.SecurityTokenSerializer keyInfoTokenSerializer, class System.IdentityModel.Selectors.SecurityTokenResolver outOfBandTokenResolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAssertion.ReadXml(System.Xml.XmlDictionaryReader,System.IdentityModel.Tokens.SamlSerializer,System.IdentityModel.Selectors.SecurityTokenSerializer,System.IdentityModel.Selectors.SecurityTokenResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlDictionaryReader" />
+        <Parameter Name="samlSerializer" Type="System.IdentityModel.Tokens.SamlSerializer" />
+        <Parameter Name="keyInfoSerializer" Type="System.IdentityModel.Selectors.SecurityTokenSerializer" />
+        <Parameter Name="outOfBandTokenResolver" Type="System.IdentityModel.Selectors.SecurityTokenResolver" />
+      </Parameters>
+      <Docs>
+        <param name="reader">SAML アサーションを読み取るための <see cref="T:System.Xml.XmlDictionaryReader" />。</param>
+        <param name="samlSerializer">SAML 仕様で定義されている SAML アサーション内の XML 要素の読み取りができる <see cref="T:System.IdentityModel.Tokens.SamlSerializer" />。</param>
+        <param name="keyInfoTokenSerializer">To be added.</param>
+        <param name="outOfBandTokenResolver">デジタル署名を作成したセキュリティ トークンを調べる <see cref="T:System.IdentityModel.Selectors.SecurityTokenResolver" />。</param>
+        <summary>指定した XML リーダーから SAML アサーションを読み取ります。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です  
+  
+ または  
+  
+ <paramref name="samlSerializer" /> は <see langword="null" /> です</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.IdentityModel.Tokens.SamlAssertion.ReadXml(System.Xml.XmlDictionaryReader,System.IdentityModel.Tokens.SamlSerializer,System.IdentityModel.Selectors.SecurityTokenSerializer,System.IdentityModel.Selectors.SecurityTokenResolver)" /> メソッドが以前に呼び出されており、SAML アサーションがデジタル署名されています。</exception>
+        <exception cref="T:System.IdentityModel.Tokens.SecurityTokenException">
+          <paramref name="reader" /> が、SAML 1.1 仕様に準拠した SAML アサーションを参照していません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SigningCredentials">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SigningCredentials SigningCredentials { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SigningCredentials SigningCredentials" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlAssertion.SigningCredentials" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SigningCredentials</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SAML アサーションにデジタル署名するために使用されるセキュリティ資格情報を取得または設定します。</summary>
+        <value>SAML アサーションにデジタル署名するために使用する <see cref="T:System.IdentityModel.Tokens.SigningCredentials" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAssertion.SigningCredentials%2A> プロパティは、SAML アサーションが XML にシリアル化されるときに、SAML アサーションに署名するために使用される資格情報を表します。 同様に、<xref:System.IdentityModel.Tokens.SamlAssertion.SigningToken%2A> プロパティは、受信 SOAP メッセージの SAML トークンに署名したセキュリティ トークンを表します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.IdentityModel.Tokens.SamlAssertion.IsReadOnly" />プロパティは<see langword="true" />設定が試行され、<see cref="P:System.IdentityModel.Tokens.SamlAssertion.SigningCredentials" />プロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SigningToken">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SecurityToken SigningToken { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SecurityToken SigningToken" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlAssertion.SigningToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityToken</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デジタル署名された SAML アサーションに格納されているか、またはそのアサーションから参照されているセキュリティ トークンを取得します。</summary>
+        <value>デジタル署名された SAML アサーションに格納されているか、またはそのアサーションから参照されている <see cref="T:System.IdentityModel.Tokens.SecurityToken" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAssertion.ReadXml%2A> メソッドが呼び出され、SAML アサーションがデジタル署名されている場合は、デジタル署名が <xref:System.IdentityModel.Tokens.SamlAssertion.SigningCredentials%2A> プロパティに設定されます。 SAML アサーションがデジタル署名されていない場合、<xref:System.IdentityModel.Tokens.SamlAssertion.SigningCredentials%2A> プロパティの値は `null` になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Statements">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.IdentityModel.Tokens.SamlStatement&gt; Statements { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;class System.IdentityModel.Tokens.SamlStatement&gt; Statements" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlAssertion.Statements" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.IdentityModel.Tokens.SamlStatement&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SAML アサーションに関連する SAML ステートメントのセットを取得します。</summary>
+        <value>SAML アサーションに関連付けられた SAML ステートメントを含む <see cref="T:System.Collections.Generic.IList`1" /> 型の <see cref="T:System.IdentityModel.Tokens.SamlStatement" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAssertion.%23ctor%2A> を使用して、SAML アサーションに関連する SAML ステートメントを設定します。または、<xref:System.IdentityModel.Tokens.SamlAssertion.IsReadOnly%2A> プロパティが `false` の場合は、このプロパティによって返されたコレクションに直接追加します。  
+  
+ OASIS SAML 仕様のアサーションとプロトコルに定義されている SAML ステートメントの 3 つの種類とそれぞれに対応する型を次の表に示します。  
+  
+|ステートメントの種類|CLR 型|  
+|--------------------|--------------|  
+|認証|<xref:System.IdentityModel.Tokens.SamlAuthenticationStatement>|  
+|属性|<xref:System.IdentityModel.Tokens.SamlAttributeStatement>|  
+|承認決定|<xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement>|  
+|拡張スキーマで定義されたステートメント|<xref:System.IdentityModel.Tokens.SamlStatement>|  
+|拡張スキーマで定義されたサブジェクト ステートメント|<xref:System.IdentityModel.Tokens.SamlSubjectStatement>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteSourceData">
+      <MemberSignature Language="C#" Value="public virtual void WriteSourceData (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteSourceData(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAssertion.WriteSourceData(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">ソース データの書き込みに使用する XML ライター。</param>
+        <summary>使用可能な場合は、ソース データを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装を使用して読み取るときにソース データを保存し、<xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler.ReadAssertion%2A>メソッドと同じくらいの元のデータを再生成でき、<xref:System.IdentityModel.Tokens.Saml.SamlAssertion.AssertionId%2A>プロパティは、アサーションが読み取られた時刻からは変更されません。  
+  
+> [!IMPORTANT]
+>  異なるデータを持つ SAML アサーションが別の Id を持つことが非常に重要です。 アサーション"template"が読み込まれ、データの特定のビットに読み込まれるというパターンを実装する場合、Id を変更する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ソース データがないです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteXml">
+      <MemberSignature Language="C#" Value="public virtual void WriteXml (System.Xml.XmlDictionaryWriter writer, System.IdentityModel.Tokens.SamlSerializer samlSerializer, System.IdentityModel.Selectors.SecurityTokenSerializer keyInfoTokenSerializer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteXml(class System.Xml.XmlDictionaryWriter writer, class System.IdentityModel.Tokens.SamlSerializer samlSerializer, class System.IdentityModel.Selectors.SecurityTokenSerializer keyInfoTokenSerializer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAssertion.WriteXml(System.Xml.XmlDictionaryWriter,System.IdentityModel.Tokens.SamlSerializer,System.IdentityModel.Selectors.SecurityTokenSerializer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlDictionaryWriter" />
+        <Parameter Name="samlSerializer" Type="System.IdentityModel.Tokens.SamlSerializer" />
+        <Parameter Name="keyInfoSerializer" Type="System.IdentityModel.Selectors.SecurityTokenSerializer" />
+      </Parameters>
+      <Docs>
+        <param name="writer">SAML アサーションを書き込む <see cref="T:System.Xml.XmlDictionaryWriter" />。</param>
+        <param name="samlSerializer"><see cref="T:System.IdentityModel.Tokens.SamlSerializer" /> 内のオブジェクトを XML に書き込むことができる <see cref="T:System.IdentityModel.Tokens.SamlAssertion" />。</param>
+        <param name="keyInfoTokenSerializer">To be added.</param>
+        <summary>SAML アサーションを指定した XML に <see langword="&lt;saml:Assertion&gt;" /> 要素として書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です  
+  
+ または  
+  
+ <paramref name="samlSerializer" /> は <see langword="null" /> です</exception>
+        <exception cref="T:System.IdentityModel.Tokens.SecurityTokenException"><see cref="T:System.IdentityModel.Tokens.SamlAssertion" /> SAML v1.1 仕様に準拠していない結果 XML にシリアル化するように構成します。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

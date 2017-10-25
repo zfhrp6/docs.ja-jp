@@ -1,0 +1,49 @@
+<Type Name="ExitEventArgs" FullName="System.Windows.ExitEventArgs">
+  <TypeSignature Language="C#" Value="public class ExitEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ExitEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.ExitEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Application.Exit" /> イベントのイベント引数。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ApplicationExitCode">
+      <MemberSignature Language="C#" Value="public int ApplicationExitCode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ApplicationExitCode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.ExitEventArgs.ApplicationExitCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアプリケーションの終了時に、アプリケーションが、オペレーティング システムに返す終了コードを設定します。</summary>
+        <value>アプリケーションの終了時に、アプリケーションが、オペレーティング システムに返す終了コード。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、アプリケーションは、アプリケーションが正常に終了したかどうかを示すために、オペレーティング システムに終了コードを返します。 アプリケーション終了コード値**0** (既定) では、成功を示すために使用が一般的です。 ただしは自由に、アプリケーションに適切な終了コード値を返します。  
+  
+ 処理することにより、終了コードを指定できます、<xref:System.Windows.Application.Exit>イベントと設定<xref:System.Windows.ExitEventArgs.ApplicationExitCode%2A>適切な値です。  
+  
+> [!NOTE]
+>  呼び出して、終了コードを指定することも<xref:System.Windows.Application.Shutdown%2A>メソッドです。 この場合の値<xref:System.Windows.ExitEventArgs.ApplicationExitCode%2A>の終了コードに渡す値は、<xref:System.Windows.Application.Shutdown%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

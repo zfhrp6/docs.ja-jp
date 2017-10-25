@@ -1,0 +1,959 @@
+<Type Name="RemotingConfiguration" FullName="System.Runtime.Remoting.RemotingConfiguration">
+  <TypeSignature Language="C#" Value="public static class RemotingConfiguration" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit RemotingConfiguration extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.RemotingConfiguration" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>リモート処理インフラストラクチャを構成するためのさまざまな静的メソッドを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ApplicationId">
+      <MemberSignature Language="C#" Value="public static string ApplicationId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string ApplicationId" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.RemotingConfiguration.ApplicationId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在実行中のアプリケーションの ID を取得します。</summary>
+        <value>A<see cref="T:System.String" />現在実行中のアプリケーションの ID を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション ID の先頭は、現在実行中のアプリケーションによって作成されたオブジェクトの URI に追加されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationName">
+      <MemberSignature Language="C#" Value="public static string ApplicationName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property string ApplicationName" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.RemotingConfiguration.ApplicationName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリモート処理アプリケーションの名前を設定します。</summary>
+        <value>リモート処理アプリケーションの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション名は、現在のプロパティまたは構成ファイルのいずれか 1 回だけ設定できます。 インターネット インフォメーション サービス (IIS) など、ホストされた環境内のアプリケーションが実行されている場合は、(通常、仮想ディレクトリ) にこの値が設定されて既に可能性がありますがします。 現在のプロパティが返す`null`アプリケーション名が設定されていない場合。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Runtime.Remoting.RemotingConfiguration.ApplicationName%2A>をリモート処理アプリケーションの名前を示すプロパティです。 完全なサンプル コードの例を参照して、<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterWellKnownClientType%2A>と<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterWellKnownServiceType%2A>メソッドです。  
+  
+ [!code-cpp[RemotingConfiguration.ServerActivation1#2](~/samples/snippets/cpp/VS_Snippets_Remoting/RemotingConfiguration.ServerActivation1/CPP/server.cpp#2)]
+ [!code-csharp[RemotingConfiguration.ServerActivation1#2](~/samples/snippets/csharp/VS_Snippets_Remoting/RemotingConfiguration.ServerActivation1/CS/server.cs#2)]
+ [!code-vb[RemotingConfiguration.ServerActivation1#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/RemotingConfiguration.ServerActivation1/VB/server.vb#2)]  
+  
+ 次のコード例では、名前付きアプリケーションからリモート オブジェクトにアクセスする方法を示します。  
+  
+ [!code-cpp[RemotingConfiguration.ServerActivation1#6](~/samples/snippets/cpp/VS_Snippets_Remoting/RemotingConfiguration.ServerActivation1/CPP/client.cpp#6)]
+ [!code-csharp[RemotingConfiguration.ServerActivation1#6](~/samples/snippets/csharp/VS_Snippets_Remoting/RemotingConfiguration.ServerActivation1/CS/client.cs#6)]
+ [!code-vb[RemotingConfiguration.ServerActivation1#6](~/samples/snippets/visualbasic/VS_Snippets_Remoting/RemotingConfiguration.ServerActivation1/VB/client.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">コール スタックの上位の呼び出し元の少なくとも 1 つに、リモート処理の型とチャネルを構成するアクセス許可がありません。 プロパティの値を設定するときにのみ、この例外がスローされます。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Configure">
+      <MemberSignature Language="C#" Value="public static void Configure (string filename);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Configure(string filename) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingConfiguration.Configure(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use Configure(String,Boolean)")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filename" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="filename">リモート処理構成ファイルの名前。 指定できます<see langword="null" />です。</param>
+        <summary>構成ファイルを読み込んで、リモート処理インフラストラクチャを構成します。 <see cref="M:System.Runtime.Remoting.RemotingConfiguration.Configure(System.String)" /> は互換性のために残されています。 代わりに、<see cref="M:System.Runtime.Remoting.RemotingConfiguration.Configure(System.String,System.Boolean)" /> を使用してください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Runtime.Remoting.RemotingConfiguration.Configure%28System.String%29> は互換性のために残されています。 代わりに、<xref:System.Runtime.Remoting.RemotingConfiguration.Configure%28System.String%2CSystem.Boolean%29> を使用してください。  
+  
+ 渡す`null`として、`filename`パラメーターの構成ファイルの存在を必要とせずの既定のリモート処理の初期化が発生します。  
+  
+ 構成ファイルの構文を参照してください。[リモート処理設定スキーマ](http://msdn.microsoft.com/en-us/dc2d1e62-9af7-4ca1-99fd-98b93bb4db9e)です。  
+  
+> [!NOTE]
+>  参照渡しのマーシャ リング オブジェクト (Mbr) に存在しないメモリ永久にします。 代わりに、型がオーバーライドしない限り<xref:System.MarshalByRefObject.InitializeLifetimeService%2A?displayProperty=nameWithType>を独自の有効期間ポリシーを制御するには、各 MBR が有限の存続期間、.NET Framework リモート処理システムは、削除して、メモリを再利用のプロセスを開始する前にします。 詳細については、次を参照してください。[有効期間リース](http://msdn.microsoft.com/en-us/c72d561c-1266-4c8b-b258-2c168c08da9a)です。  
+  
+   
+  
+## Examples  
+ [!code-cpp[RemotingConfiguration_Configure_Client#1](~/samples/snippets/cpp/VS_Snippets_Remoting/RemotingConfiguration_Configure_Client/CPP/remotingconfiguration_configure_server.cpp#1)]
+ [!code-csharp[RemotingConfiguration_Configure_Client#1](~/samples/snippets/csharp/VS_Snippets_Remoting/RemotingConfiguration_Configure_Client/CS/remotingconfiguration_configure_server.cs#1)]
+ [!code-vb[RemotingConfiguration_Configure_Client#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/RemotingConfiguration_Configure_Client/VB/remotingconfiguration_configure_server.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">コール スタックの上位の呼び出し元の少なくとも 1 つに、リモート処理の型とチャネルを構成するアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Configure">
+      <MemberSignature Language="C#" Value="public static void Configure (string filename, bool ensureSecurity);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Configure(string filename, bool ensureSecurity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingConfiguration.Configure(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filename" Type="System.String" />
+        <Parameter Name="ensureSecurity" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="filename">リモート処理構成ファイルの名前。 指定できます<see langword="null" />です。</param>
+        <param name="ensureSecurity">場合設定<see langword="true" />セキュリティが必要です。 場合に設定<see langword="false" />セキュリティは必要ありませんが、引き続き使用することがあります。</param>
+        <summary>構成ファイルを読み込んで、リモート処理インフラストラクチャを構成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 渡す`null`として、`filename`パラメーターの構成ファイルの存在を必要とせずの既定のリモート処理の初期化が発生します。 リモート処理とセキュリティの詳細については、次を参照してください。[リモート処理でのセキュリティ。](http://msdn.microsoft.com/en-us/9574262c-d4b1-41c5-8600-24ff147c0add)  
+  
+ 構成ファイルの構文を参照してください。[リモート処理設定スキーマ](http://msdn.microsoft.com/en-us/dc2d1e62-9af7-4ca1-99fd-98b93bb4db9e)です。  
+  
+> [!NOTE]
+>  参照渡しのマーシャ リング オブジェクト (Mbr) に存在しないメモリ永久にします。 代わりに、型がオーバーライドしない限り<xref:System.MarshalByRefObject.InitializeLifetimeService%2A?displayProperty=nameWithType>を独自の有効期間ポリシーを制御するには、各 MBR が有限の存続期間、.NET Framework リモート処理システムは、削除して、メモリを再利用のプロセスを開始する前にします。 詳細については、次を参照してください。[有効期間リース](http://msdn.microsoft.com/en-us/c72d561c-1266-4c8b-b258-2c168c08da9a)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">コール スタックの上位の呼び出し元の少なくとも 1 つに、リモート処理の型とチャネルを構成するアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomErrorsEnabled">
+      <MemberSignature Language="C#" Value="public static bool CustomErrorsEnabled (bool isLocalRequest);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool CustomErrorsEnabled(bool isLocalRequest) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingConfiguration.CustomErrorsEnabled(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="isLocalRequest" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="isLocalRequest">
+          <see langword="true" />ローカルの呼び出し元を指定するには<see langword="false" />をリモートの呼び出し元を指定します。</param>
+        <summary>このアプリケーション ドメインのサーバー チャネルによって、ローカルまたはリモートの呼び出し元に対して、フィルター処理した例外情報を返すか、またはすべての例外情報を返すかを指定します。</summary>
+        <returns>
+          <see langword="true" />例外情報をフィルター処理されただけの場合で指定したとおり、ローカルまたはリモート呼び出し元に返される、<paramref name="isLocalRequest" />パラメーターです。<see langword="false" />場合は、完全な例外情報が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 完全な例外情報には、厳密なサーバー例外とサーバー スタック トレースが含まれます。 フィルター処理された情報には、標準リモート処理例外が含まれますが、サーバー スタック トレースは含まれません。  
+  
+ `CustomErrorsEnabled`メソッド内で指定された構成設定を反映して、`mode`の属性、`<customErrors>`アプリケーション構成ファイルの要素。 構成オプションの詳細については、次を参照してください[&#91;\< 。topic://cpconconfiguration > & #93 です。](http://msdn.microsoft.com/en-us/92c0c097-d984-4315-835b-7490ecdf1097).  
+  
+ 次の表は、3 つのサーバー チャネルに呼び出し元が例外情報を受信し、受信した情報の種類を指定するプロパティ値を示します。  
+  
+|値|説明|  
+|-----------|-----------------|  
+|`off`|すべての呼び出し元は、完全な例外情報を受け取ります。|  
+|`on`|すべての呼び出し元は、フィルター処理された例外情報を受け取ります。|  
+|`remoteOnly`|ローカルの呼び出し元は完全な例外情報を受け取り、リモートの呼び出し元はフィルター処理された例外情報を受け取ります。|  
+  
+ 次の表の相互作用を示しています、`isLocalRequest`パラメーターと、サーバー チャネル プロパティです。  
+  
+|値|isLocalRequest|戻り値|説明|  
+|-----------|--------------------|------------------|-----------------|  
+|`on`|`true`|`true`|ローカルの呼び出し元は、フィルター処理された例外情報を受け取ります。|  
+|`on`|`false`|`true`|リモートの呼び出し元は、フィルター処理された例外情報を受け取ります。|  
+|`off`|`true`|`false`|ローカルの呼び出し元は、完全な例外情報を受信します。|  
+|`off`|`false`|`false`|リモートの呼び出し元は、完全な例外情報を受信します。|  
+|`remoteOnly`|`true`|`false`|ローカルの呼び出し元は、完全な例外情報を受信します。|  
+|`remoteOnly`|`false`|`true`|リモートの呼び出し元は、フィルター処理された例外情報を受け取ります。|  
+  
+ アプリケーション構成ファイルを使用して、呼び出し元の例外情報の戻り値を制御する方法については、次を参照してください。、`<customErrors>`要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomErrorsMode">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.CustomErrorsModes CustomErrorsMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Runtime.Remoting.CustomErrorsModes CustomErrorsMode" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.RemotingConfiguration.CustomErrorsMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.CustomErrorsModes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定をどのようにカスタム エラーを示す値を取得または処理されます。</summary>
+        <value>メンバー、<see cref="T:System.Runtime.Remoting.CustomErrorsModes" />をどのようにカスタム エラーを示す列挙体が処理されます。</value>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRegisteredActivatedClientTypes">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.ActivatedClientTypeEntry[] GetRegisteredActivatedClientTypes ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.ActivatedClientTypeEntry[] GetRegisteredActivatedClientTypes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingConfiguration.GetRegisteredActivatedClientTypes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.ActivatedClientTypeEntry[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リモートでアクティブになる型としてクライアントに登録されているオブジェクトの種類の配列を取得します。</summary>
+        <returns>オブジェクトの種類の配列は、クライアントがリモートでアクティブになる型として登録されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアントでアクティブ化されるオブジェクトの詳細については、次を参照してください[&#91;\< 。topic://cpconClientActivation > & #93 です。](http://msdn.microsoft.com/en-us/4a791494-c18a-4711-a5c1-4ab0e49a8f1a).  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">コール スタックの上位の呼び出し元の少なくとも 1 つに、リモート処理の型とチャネルを構成するアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRegisteredActivatedServiceTypes">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.ActivatedServiceTypeEntry[] GetRegisteredActivatedServiceTypes ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.ActivatedServiceTypeEntry[] GetRegisteredActivatedServiceTypes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingConfiguration.GetRegisteredActivatedServiceTypes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.ActivatedServiceTypeEntry[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クライアントからの要求に基づいてアクティブ化可能なサービス側で登録されているオブジェクト型の配列を取得します。</summary>
+        <returns>オブジェクトの種類の配列は、クライアントからの要求に基づいてアクティブ化可能なサービス側で登録します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアントでアクティブ化されるオブジェクトの詳細については、次を参照してください[&#91;\< 。topic://cpconClientActivation > & #93 です。](http://msdn.microsoft.com/en-us/4a791494-c18a-4711-a5c1-4ab0e49a8f1a).  
+  
+   
+  
+## Examples  
+ [!code-cpp[RemotingConfiguration_GetRegisteredActivatedServer_Client#2](~/samples/snippets/cpp/VS_Snippets_Remoting/RemotingConfiguration_GetRegisteredActivatedServer_Client/CPP/RemotingConfiguration_GetRegisteredActivatedService_server.cpp#2)]
+ [!code-csharp[RemotingConfiguration_GetRegisteredActivatedServer_Client#2](~/samples/snippets/csharp/VS_Snippets_Remoting/RemotingConfiguration_GetRegisteredActivatedServer_Client/CS/remotingconfiguration_getregisteredactivatedservice_server.cs#2)]
+ [!code-vb[RemotingConfiguration_GetRegisteredActivatedServer_Client#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/RemotingConfiguration_GetRegisteredActivatedServer_Client/VB/remotingconfiguration_getregisteredactivatedservice_server.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">コール スタックの上位の呼び出し元の少なくとも 1 つに、リモート処理の型とチャネルを構成するアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRegisteredWellKnownClientTypes">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.WellKnownClientTypeEntry[] GetRegisteredWellKnownClientTypes ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.WellKnownClientTypeEntry[] GetRegisteredWellKnownClientTypes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingConfiguration.GetRegisteredWellKnownClientTypes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.WellKnownClientTypeEntry[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>既知の型としてクライアント エンドで登録されているオブジェクト型の配列を取得します。</summary>
+        <returns>オブジェクトの種類の配列は、クライアント エンドで既知の型として登録されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既知のオブジェクトの種類には、1 回の呼び出しまたは単一のいずれかを指定できます。 オブジェクトの種類が 1 回の呼び出しの場合は、新しいインスタンスがたびにでは、クライアントからの呼び出しを作成します。 シングルトン オブジェクトのすべての呼び出しは、そのオブジェクトの 1 つのインスタンスによって処理されます。  
+  
+ 既知のオブジェクトの詳細については、次を参照してください[&#91;\< 。topic://cpconServerActivation > & #93 です。](http://msdn.microsoft.com/en-us/77ded6e2-4ca8-448b-acf2-562d27fd4396).  
+  
+   
+  
+## Examples  
+ [!code-cpp[RemotingConfiguration_GetRegisteredWellKnownClient_Client#1](~/samples/snippets/cpp/VS_Snippets_Remoting/RemotingConfiguration_GetRegisteredWellKnownClient_Client/CPP/remotingconfiguration_getregisteredwellknownclient_client.cpp#1)]
+ [!code-csharp[RemotingConfiguration_GetRegisteredWellKnownClient_Client#1](~/samples/snippets/csharp/VS_Snippets_Remoting/RemotingConfiguration_GetRegisteredWellKnownClient_Client/CS/remotingconfiguration_getregisteredwellknownclient_client.cs#1)]
+ [!code-vb[RemotingConfiguration_GetRegisteredWellKnownClient_Client#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/RemotingConfiguration_GetRegisteredWellKnownClient_Client/VB/remotingconfiguration_getregisteredwellknownclient_client.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">コール スタックの上位の呼び出し元の少なくとも 1 つに、リモート処理の型とチャネルを構成するアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRegisteredWellKnownServiceTypes">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.WellKnownServiceTypeEntry[] GetRegisteredWellKnownServiceTypes ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.WellKnownServiceTypeEntry[] GetRegisteredWellKnownServiceTypes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingConfiguration.GetRegisteredWellKnownServiceTypes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.WellKnownServiceTypeEntry[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>既知の型として、サービス側で登録されているオブジェクト型の配列を取得します。</summary>
+        <returns>既知の型として、サービス側で登録されているオブジェクトの種類の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既知のオブジェクトの種類には、1 回の呼び出しまたは単一のいずれかを指定できます。 オブジェクトの種類が 1 回の呼び出しの場合は、新しいインスタンスがたびにでは、クライアントからの呼び出しを作成します。 シングルトン オブジェクトのすべての呼び出しは、そのオブジェクトの 1 つのインスタンスによって処理されます。  
+  
+ 既知のオブジェクトの詳細については、次を参照してください[&#91;\< 。topic://cpconServerActivation > & #93 です。](http://msdn.microsoft.com/en-us/77ded6e2-4ca8-448b-acf2-562d27fd4396).  
+  
+   
+  
+## Examples  
+ [!code-cpp[RemotingConfiguration_Configure_Client#2](~/samples/snippets/cpp/VS_Snippets_Remoting/RemotingConfiguration_Configure_Client/CPP/remotingconfiguration_configure_server.cpp#2)]
+ [!code-csharp[RemotingConfiguration_Configure_Client#2](~/samples/snippets/csharp/VS_Snippets_Remoting/RemotingConfiguration_Configure_Client/CS/remotingconfiguration_configure_server.cs#2)]
+ [!code-vb[RemotingConfiguration_Configure_Client#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/RemotingConfiguration_Configure_Client/VB/remotingconfiguration_configure_server.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">コール スタックの上位の呼び出し元の少なくとも 1 つに、リモート処理の型とチャネルを構成するアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsActivationAllowed">
+      <MemberSignature Language="C#" Value="public static bool IsActivationAllowed (Type svrType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsActivationAllowed(class System.Type svrType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingConfiguration.IsActivationAllowed(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="svrType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="svrType">オブジェクト<see cref="T:System.Type" />を確認します。</param>
+        <summary>示すブール値を返すかどうか、指定した<see cref="T:System.Type" />を許容するクライアントのアクティブ化します。</summary>
+        <returns>
+          <see langword="true" />場合、指定した<see cref="T:System.Type" />、それ以外のクライアントがアクティブにできる<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サーバー側のオブジェクトのアクティブ化するかどうかを決定する、現在のメソッドが使用される<xref:System.Type>がサーバーによって明示的に許可します。  
+  
+   
+  
+## Examples  
+ [!code-cpp[RemotingConfiguration_GetRegisteredActivatedServer_Client#1](~/samples/snippets/cpp/VS_Snippets_Remoting/RemotingConfiguration_GetRegisteredActivatedServer_Client/CPP/RemotingConfiguration_GetRegisteredActivatedService_server.cpp#1)]
+ [!code-csharp[RemotingConfiguration_GetRegisteredActivatedServer_Client#1](~/samples/snippets/csharp/VS_Snippets_Remoting/RemotingConfiguration_GetRegisteredActivatedServer_Client/CS/remotingconfiguration_getregisteredactivatedservice_server.cs#1)]
+ [!code-vb[RemotingConfiguration_GetRegisteredActivatedServer_Client#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/RemotingConfiguration_GetRegisteredActivatedServer_Client/VB/remotingconfiguration_getregisteredactivatedservice_server.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">コール スタックの上位の呼び出し元の少なくとも 1 つに、リモート処理の型とチャネルを構成するアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsRemotelyActivatedClientType">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.ActivatedClientTypeEntry IsRemotelyActivatedClientType (Type svrType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.ActivatedClientTypeEntry IsRemotelyActivatedClientType(class System.Type svrType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingConfiguration.IsRemotelyActivatedClientType(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.ActivatedClientTypeEntry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="svrType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="svrType">オブジェクトの種類を確認します。</param>
+        <summary>チェックするかどうか、指定したオブジェクト<see cref="T:System.Type" />リモート アクティブ化クライアントの種類として登録します。</summary>
+        <returns><see cref="T:System.Runtime.Remoting.ActivatedClientTypeEntry" />指定したオブジェクトの種類に対応します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[RemotingConfiguration_IsRemotelyActivatedClientType1_Client#1](~/samples/snippets/cpp/VS_Snippets_Remoting/RemotingConfiguration_IsRemotelyActivatedClientType1_Client/CPP/remotingconfiguration_isremotelyactivatedclienttype1_client.cpp#1)]
+ [!code-csharp[RemotingConfiguration_IsRemotelyActivatedClientType1_Client#1](~/samples/snippets/csharp/VS_Snippets_Remoting/RemotingConfiguration_IsRemotelyActivatedClientType1_Client/CS/remotingconfiguration_isremotelyactivatedclienttype1_client.cs#1)]
+ [!code-vb[RemotingConfiguration_IsRemotelyActivatedClientType1_Client#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/RemotingConfiguration_IsRemotelyActivatedClientType1_Client/VB/remotingconfiguration_isremotelyactivatedclienttype1_client.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">コール スタックの上位の呼び出し元の少なくとも 1 つに、リモート処理の型とチャネルを構成するアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsRemotelyActivatedClientType">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.ActivatedClientTypeEntry IsRemotelyActivatedClientType (string typeName, string assemblyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.ActivatedClientTypeEntry IsRemotelyActivatedClientType(string typeName, string assemblyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingConfiguration.IsRemotelyActivatedClientType(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.ActivatedClientTypeEntry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="assemblyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="typeName">確認するオブジェクトの型名。</param>
+        <param name="assemblyName">確認するオブジェクトのアセンブリ名。</param>
+        <summary>型名とアセンブリ名で指定されたオブジェクトが、リモートでアクティブ化されたクライアントの種類として登録されているかどうかを確認します。</summary>
+        <returns><see cref="T:System.Runtime.Remoting.ActivatedClientTypeEntry" />指定したオブジェクトの種類に対応します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[RemotingConfiguration_IsRemotelyActivatedClientType2_Client#1](~/samples/snippets/cpp/VS_Snippets_Remoting/RemotingConfiguration_IsRemotelyActivatedClientType2_Client/CPP/remotingconfiguration_isremotelyactivatedclienttype2_client.cpp#1)]
+ [!code-csharp[RemotingConfiguration_IsRemotelyActivatedClientType2_Client#1](~/samples/snippets/csharp/VS_Snippets_Remoting/RemotingConfiguration_IsRemotelyActivatedClientType2_Client/CS/remotingconfiguration_isremotelyactivatedclienttype2_client.cs#1)]
+ [!code-vb[RemotingConfiguration_IsRemotelyActivatedClientType2_Client#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/RemotingConfiguration_IsRemotelyActivatedClientType2_Client/VB/remotingconfiguration_isremotelyactivatedclienttype2_client.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">コール スタックの上位の呼び出し元の少なくとも 1 つに、リモート処理の型とチャネルを構成するアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsWellKnownClientType">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.WellKnownClientTypeEntry IsWellKnownClientType (Type svrType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.WellKnownClientTypeEntry IsWellKnownClientType(class System.Type svrType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingConfiguration.IsWellKnownClientType(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.WellKnownClientTypeEntry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="svrType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="svrType">オブジェクト<see cref="T:System.Type" />を確認します。</param>
+        <summary>確認するかどうか、指定したオブジェクト<see cref="T:System.Type" />既知のクライアントの種類として登録します。</summary>
+        <returns><see cref="T:System.Runtime.Remoting.WellKnownClientTypeEntry" />指定したオブジェクトの種類に対応します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[RemotingConfiguration_IsWellKnownClientType1_Client#1](~/samples/snippets/cpp/VS_Snippets_Remoting/RemotingConfiguration_IsWellKnownClientType1_Client/CPP/remotingconfiguration_iswellknownclienttype1_client.cpp#1)]
+ [!code-csharp[RemotingConfiguration_IsWellKnownClientType1_Client#1](~/samples/snippets/csharp/VS_Snippets_Remoting/RemotingConfiguration_IsWellKnownClientType1_Client/CS/remotingconfiguration_iswellknownclienttype1_client.cs#1)]
+ [!code-vb[RemotingConfiguration_IsWellKnownClientType1_Client#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/RemotingConfiguration_IsWellKnownClientType1_Client/VB/remotingconfiguration_iswellknownclienttype1_client.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">コール スタックの上位の呼び出し元の少なくとも 1 つに、リモート処理の型とチャネルを構成するアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsWellKnownClientType">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.WellKnownClientTypeEntry IsWellKnownClientType (string typeName, string assemblyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.WellKnownClientTypeEntry IsWellKnownClientType(string typeName, string assemblyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingConfiguration.IsWellKnownClientType(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.WellKnownClientTypeEntry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="assemblyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="typeName">確認するオブジェクトの型名。</param>
+        <param name="assemblyName">確認するオブジェクトのアセンブリ名。</param>
+        <summary>型名とアセンブリ名で指定されたオブジェクトが、よく知られているクライアントの種類として登録されているかどうかを確認します。</summary>
+        <returns><see cref="T:System.Runtime.Remoting.WellKnownClientTypeEntry" />指定したオブジェクトの種類に対応します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[RemotingConfiguration_IsWellKnownClientType2_Client#1](~/samples/snippets/cpp/VS_Snippets_Remoting/RemotingConfiguration_IsWellKnownClientType2_Client/CPP/remotingconfiguration_iswellknownclienttype2_client.cpp#1)]
+ [!code-csharp[RemotingConfiguration_IsWellKnownClientType2_Client#1](~/samples/snippets/csharp/VS_Snippets_Remoting/RemotingConfiguration_IsWellKnownClientType2_Client/CS/remotingconfiguration_iswellknownclienttype2_client.cs#1)]
+ [!code-vb[RemotingConfiguration_IsWellKnownClientType2_Client#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/RemotingConfiguration_IsWellKnownClientType2_Client/VB/remotingconfiguration_iswellknownclienttype2_client.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">コール スタックの上位の呼び出し元の少なくとも 1 つに、リモート処理の型とチャネルを構成するアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessId">
+      <MemberSignature Language="C#" Value="public static string ProcessId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string ProcessId" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.RemotingConfiguration.ProcessId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在実行中のプロセスの ID を取得します。</summary>
+        <value>A<see cref="T:System.String" />現在実行中のプロセスの ID を格納します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterActivatedClientType">
+      <MemberSignature Language="C#" Value="public static void RegisterActivatedClientType (System.Runtime.Remoting.ActivatedClientTypeEntry entry);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterActivatedClientType(class System.Runtime.Remoting.ActivatedClientTypeEntry entry) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedClientType(System.Runtime.Remoting.ActivatedClientTypeEntry)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entry" Type="System.Runtime.Remoting.ActivatedClientTypeEntry" />
+      </Parameters>
+      <Docs>
+        <param name="entry">クライアントのライセンスの種類の構成設定です。</param>
+        <summary>オブジェクトを登録<see cref="T:System.Type" />を指定した記録<see cref="T:System.Runtime.Remoting.ActivatedClientTypeEntry" />サーバーでアクティブ化できる型としてクライアント エンドでします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サーバー上のクライアントでアクティブ化されるオブジェクトのインスタンスを作成する必要がありますがわかってその<xref:System.Type>しを使用してサーバー エンドで登録する必要があります、<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedServiceType%2A>メソッドです。 プロキシをクライアントでアクティブ化されるオブジェクトの新しいインスタンスを取得するには、クライアント登録する必要があります最初のチャネルが<xref:System.Runtime.Remoting.Channels.ChannelServices>を呼び出して、オブジェクトをアクティブ化して`new`です。  
+  
+ クライアントでアクティブ化されるオブジェクトの型をアクティブ化する、`new`キーワード、まず、クライアントを使用してエンドでオブジェクト型を登録する必要があります、<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedClientType%2A>メソッドです。 呼び出す、<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedClientType%2A>メソッドにより、リモート処理インフラストラクチャ、リモート アプリケーションの場所で`new`作成を試みます。 その一方を使用する場合は、<xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType>メソッドは、クライアントでアクティブ化されるオブジェクトの新しいインスタンスを作成するためクライアント エンドで、事前に登録する必要はありません、リモート アプリケーションの URL をパラメーターとして指定する必要があります。 指定する、<xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType>メソッドをオブジェクトを作成するサーバーの URL、URL のインスタンスにカプセル化する必要があります、<xref:System.Runtime.Remoting.Activation.UrlAttribute>クラスです。  
+  
+ クライアントでアクティブ化されるオブジェクトの詳細については、次を参照してください[&#91;\< 。topic://cpconClientActivation > & #93 です。](http://msdn.microsoft.com/en-us/4a791494-c18a-4711-a5c1-4ab0e49a8f1a).  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">コール スタックの上位の呼び出し元の少なくとも 1 つに、リモート処理の型とチャネルを構成するアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterActivatedClientType">
+      <MemberSignature Language="C#" Value="public static void RegisterActivatedClientType (Type type, string appUrl);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterActivatedClientType(class System.Type type, string appUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedClientType(System.Type,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="appUrl" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type">オブジェクト<see cref="T:System.Type" />です。</param>
+        <param name="appUrl">この型がアクティブ化されたアプリケーションの URL です。</param>
+        <summary>オブジェクトを登録<see cref="T:System.Type" />側では、クライアント、サーバーでアクティブ化できる型として、パラメーターを使用して、特定の新しいインスタンスを初期化するために、<see cref="T:System.Runtime.Remoting.ActivatedClientTypeEntry" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サーバー上のクライアントでアクティブ化されるオブジェクトのインスタンスを作成する必要がありますがわかってその<xref:System.Type>しを使用してサーバー エンドで登録する必要があります、<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedServiceType%2A>メソッドです。 プロキシをクライアントでアクティブ化されるオブジェクトの新しいインスタンスを取得するには、クライアント登録する必要があります最初のチャネルが<xref:System.Runtime.Remoting.Channels.ChannelServices>を呼び出して、オブジェクトをアクティブ化して`new`です。  
+  
+ クライアントでアクティブ化されるオブジェクトの型をアクティブ化する、`new`キーワード、まず、クライアントを使用してエンドでオブジェクト型を登録する必要があります、<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedClientType%2A>メソッドです。 呼び出す、<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedClientType%2A>メソッドにより、リモート処理インフラストラクチャ、リモート アプリケーションの場所で`new`作成を試みます。 その一方を使用する場合は、<xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType>メソッドは、クライアントでアクティブ化されるオブジェクトの新しいインスタンスを作成するためクライアント エンドで、事前に登録する必要はありません、リモート アプリケーションの URL をパラメーターとして指定する必要があります。 指定する、<xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType>メソッドをオブジェクトを作成するサーバーの URL、URL のインスタンスにカプセル化する必要があります、<xref:System.Runtime.Remoting.Activation.UrlAttribute>クラスです。  
+  
+ クライアントでアクティブ化されるオブジェクトの詳細については、次を参照してください[&#91;\< 。topic://cpconClientActivation > & #93 です。](http://msdn.microsoft.com/en-us/4a791494-c18a-4711-a5c1-4ab0e49a8f1a)  
+  
+   
+  
+## Examples  
+ 次のコード例では、サーバーのアクティブ化できる型としてクライアント エンドでオブジェクトの種類の登録を示します。 提示されたクライアント コードに対応する、サーバー コードの例を参照してください、<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedServiceType%2A>メソッドです。  
+  
+ [!code-cpp[RemotingConfiguration.ClientActivation#1](~/samples/snippets/cpp/VS_Snippets_Remoting/RemotingConfiguration.ClientActivation/CPP/client.cpp#1)]
+ [!code-csharp[RemotingConfiguration.ClientActivation#1](~/samples/snippets/csharp/VS_Snippets_Remoting/RemotingConfiguration.ClientActivation/CS/client.cs#1)]
+ [!code-vb[RemotingConfiguration.ClientActivation#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/RemotingConfiguration.ClientActivation/VB/client.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="typeName" /> パラメーターまたは <paramref name="URI" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">コール スタックの上位の呼び出し元の少なくとも 1 つに、リモート処理の型とチャネルを構成するアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterActivatedServiceType">
+      <MemberSignature Language="C#" Value="public static void RegisterActivatedServiceType (System.Runtime.Remoting.ActivatedServiceTypeEntry entry);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterActivatedServiceType(class System.Runtime.Remoting.ActivatedServiceTypeEntry entry) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedServiceType(System.Runtime.Remoting.ActivatedServiceTypeEntry)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entry" Type="System.Runtime.Remoting.ActivatedServiceTypeEntry" />
+      </Parameters>
+      <Docs>
+        <param name="entry">クライアントのライセンスの種類の構成設定です。</param>
+        <summary>指定したオブジェクトの種類が記録されるレジスタ<see cref="T:System.Runtime.Remoting.ActivatedServiceTypeEntry" />クライアントからの要求に基づいてアクティブ化可能な 1 つとして、サービス側でします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サーバー上のクライアントでアクティブ化されるオブジェクトのインスタンスを作成する必要がありますがわかってその<xref:System.Type>しを使用してサーバー エンドで登録する必要があります、<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedServiceType%2A>メソッドです。 プロキシをクライアントでアクティブ化されるオブジェクトの新しいインスタンスを取得するには、クライアント登録する必要があります最初のチャネルが<xref:System.Runtime.Remoting.Channels.ChannelServices>を呼び出して、オブジェクトをアクティブ化して`new`または<xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType>です。  
+  
+ クライアントでアクティブ化されるオブジェクトの型をアクティブ化する、`new`キーワード、まず、クライアントを使用してエンドでオブジェクト型を登録する必要があります、<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedClientType%2A>メソッドです。 呼び出す、<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedClientType%2A>メソッドにより、リモート処理インフラストラクチャ、リモート アプリケーションの場所で`new`作成を試みます。 その一方を使用する場合は、<xref:System.Activator.CreateInstance%2A>メソッドは、クライアントでアクティブ化されるオブジェクトの新しいインスタンスを作成するためクライアント エンドで、事前に登録する必要はありません、リモート アプリケーションの URL をパラメーターとして指定する必要があります。 指定する、<xref:System.Activator.CreateInstance%2A>メソッドをオブジェクトを作成するサーバーの URL、URL のインスタンスにカプセル化する必要があります、<xref:System.Runtime.Remoting.Activation.UrlAttribute>クラスです。  
+  
+ クライアントでアクティブ化されるオブジェクトの詳細については、次を参照してください[&#91;\< 。topic://cpconClientActivation > & #93 です。](http://msdn.microsoft.com/en-us/4a791494-c18a-4711-a5c1-4ab0e49a8f1a).  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">コール スタックの上位の呼び出し元の少なくとも 1 つに、リモート処理の型とチャネルを構成するアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterActivatedServiceType">
+      <MemberSignature Language="C#" Value="public static void RegisterActivatedServiceType (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterActivatedServiceType(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedServiceType(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Type" />を登録するオブジェクト。</param>
+        <summary>クライアントからの要求に基づいてアクティブ化できる型として、サービス側で指定したオブジェクトの種類を登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サーバー上のクライアントでアクティブ化されるオブジェクトのインスタンスを作成する必要がありますがわかってその<xref:System.Type>しを使用してサーバー エンドで登録する必要があります、<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedServiceType%2A>メソッドです。 プロキシをクライアントでアクティブ化されるオブジェクトの新しいインスタンスを取得するには、クライアント登録する必要があります最初のチャネルが<xref:System.Runtime.Remoting.Channels.ChannelServices>を呼び出して、オブジェクトをアクティブ化して`new`または<xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType>です。  
+  
+ クライアントでアクティブ化されるオブジェクトの型をアクティブ化する、`new`キーワード、まず、クライアントを使用してエンドでオブジェクト型を登録する必要があります、<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedClientType%2A>メソッドです。 呼び出す、<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedClientType%2A>メソッドにより、リモート処理インフラストラクチャ、リモート アプリケーションの場所で`new`作成を試みます。 その一方を使用する場合は、<xref:System.Activator.CreateInstance%2A>メソッドは、クライアントでアクティブ化されるオブジェクトの新しいインスタンスを作成するためクライアント エンドで、事前に登録する必要はありません、リモート アプリケーションの URL をパラメーターとして指定する必要があります。 指定する、<xref:System.Activator.CreateInstance%2A>メソッドをオブジェクトを作成するサーバーの URL、URL のインスタンスにカプセル化する必要があります、<xref:System.Runtime.Remoting.Activation.UrlAttribute>クラスです。  
+  
+ クライアントでアクティブ化されるオブジェクトの詳細については、次を参照してください[&#91;\< 。topic://cpconClientActivation > & #93 です。](http://msdn.microsoft.com/en-us/4a791494-c18a-4711-a5c1-4ab0e49a8f1a).  
+  
+   
+  
+## Examples  
+ 次のコード例では、クライアントでアクティブ化できる型として、サーバー上のオブジェクトの種類の登録を示します。 提示されたサーバーのコードに対応するクライアント コードでは、例を参照してください、<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedClientType%2A>メソッドです。  
+  
+ [!code-cpp[RemotingConfiguration.ClientActivation#2](~/samples/snippets/cpp/VS_Snippets_Remoting/RemotingConfiguration.ClientActivation/CPP/server.cpp#2)]
+ [!code-csharp[RemotingConfiguration.ClientActivation#2](~/samples/snippets/csharp/VS_Snippets_Remoting/RemotingConfiguration.ClientActivation/CS/server.cs#2)]
+ [!code-vb[RemotingConfiguration.ClientActivation#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/RemotingConfiguration.ClientActivation/VB/server.vb#2)]  
+  
+ 次のコード例では、上記のサンプル コードで登録されているサービス オブジェクトを示します。  
+  
+ [!code-cpp[RemotingConfiguration.ClientActivation#3](~/samples/snippets/cpp/VS_Snippets_Remoting/RemotingConfiguration.ClientActivation/CPP/service.cpp#3)]
+ [!code-csharp[RemotingConfiguration.ClientActivation#3](~/samples/snippets/csharp/VS_Snippets_Remoting/RemotingConfiguration.ClientActivation/CS/service.cs#3)]
+ [!code-vb[RemotingConfiguration.ClientActivation#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/RemotingConfiguration.ClientActivation/VB/service.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">コール スタックの上位の呼び出し元の少なくとも 1 つに、リモート処理の型とチャネルを構成するアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterWellKnownClientType">
+      <MemberSignature Language="C#" Value="public static void RegisterWellKnownClientType (System.Runtime.Remoting.WellKnownClientTypeEntry entry);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterWellKnownClientType(class System.Runtime.Remoting.WellKnownClientTypeEntry entry) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingConfiguration.RegisterWellKnownClientType(System.Runtime.Remoting.WellKnownClientTypeEntry)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entry" Type="System.Runtime.Remoting.WellKnownClientTypeEntry" />
+      </Parameters>
+      <Docs>
+        <param name="entry">既知の型の構成設定。</param>
+        <summary>オブジェクトを登録<see cref="T:System.Type" />を指定した記録<see cref="T:System.Runtime.Remoting.WellKnownClientTypeEntry" />サーバーでアクティブ化可能な既知の型としてクライアント エンドでします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 登録済みのよく知られているオブジェクトの URI を知っているすべてのクライアントが優先的に使用するチャネルを登録することによって、オブジェクトのプロキシを取得できます<xref:System.Runtime.Remoting.Channels.ChannelServices>、呼び出すことによって、オブジェクトをアクティブ化と`new`または<xref:System.Activator.GetObject%2A?displayProperty=nameWithType>です。 使用して、よく知られているオブジェクトをアクティブ化する`new`を使って、クライアントのよく知られているオブジェクトの種類を登録する必要があります最初、<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterWellKnownClientType%2A>メソッドです。 呼び出す、<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterWellKnownClientType%2A>メソッドにより、リモート処理インフラストラクチャにより、リモート オブジェクトの場所、`new`キーワードを作成します。 その一方を使用した場合、<xref:System.Activator.GetObject%2A?displayProperty=nameWithType>既知のオブジェクトをアクティブ化するメソッドする必要がありますが、オブジェクトの URL を使用して、引数として指定、ためクライアント エンドで、事前に登録する必要はありません。  
+  
+ 既知のオブジェクトの詳細については、次を参照してください[&#91;\< 。topic://cpconServerActivation > & #93 です。](http://msdn.microsoft.com/en-us/77ded6e2-4ca8-448b-acf2-562d27fd4396).  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">コール スタックの上位の呼び出し元の少なくとも 1 つに、リモート処理の型とチャネルを構成するアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterWellKnownClientType">
+      <MemberSignature Language="C#" Value="public static void RegisterWellKnownClientType (Type type, string objectUrl);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterWellKnownClientType(class System.Type type, string objectUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingConfiguration.RegisterWellKnownClientType(System.Type,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="objectUrl" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type">オブジェクト<see cref="T:System.Type" />です。</param>
+        <param name="objectUrl">既知のクライアント オブジェクトの URL です。</param>
+        <summary>オブジェクトを登録<see cref="T:System.Type" />側では、クライアント、サーバーでアクティブ化可能な既知の型として、パラメーターを使用して、特定の新しいインスタンスを初期化するために、<see cref="T:System.Runtime.Remoting.WellKnownClientTypeEntry" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 登録済みのよく知られているオブジェクトの URI を知っているすべてのクライアントが優先的に使用するチャネルを登録することによって、オブジェクトのプロキシを取得できます<xref:System.Runtime.Remoting.Channels.ChannelServices>、呼び出すことによって、オブジェクトをアクティブ化と`new`または<xref:System.Activator.GetObject%2A?displayProperty=nameWithType>です。 使用して、よく知られているオブジェクトをアクティブ化する`new`を使って、クライアントのよく知られているオブジェクトの種類を登録する必要があります最初、<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterWellKnownClientType%2A>メソッドです。 呼び出す、<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterWellKnownClientType%2A>メソッドにより、リモート処理インフラストラクチャにより、リモート オブジェクトの場所、`new`キーワードを作成します。 その一方を使用した場合、<xref:System.Activator.GetObject%2A?displayProperty=nameWithType>既知のオブジェクトをアクティブ化するメソッドする必要がありますが、オブジェクトの URL を使用して、引数として指定、ためクライアント エンドで、事前に登録する必要はありません。  
+  
+ 既知のオブジェクトの詳細については、次を参照してください[&#91;\< 。topic://cpconServerActivation > & #93 です。](http://msdn.microsoft.com/en-us/77ded6e2-4ca8-448b-acf2-562d27fd4396).  
+  
+   
+  
+## Examples  
+ 次のコード例では、既知の型としてクライアント エンドでオブジェクトの種類の登録を示します。 提示されたクライアント コードに対応する、サーバー コードの例を参照してください、<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterWellKnownServiceType%2A>メソッドです。  
+  
+ [!code-cpp[RemotingConfiguration.ServerActivation1#5](~/samples/snippets/cpp/VS_Snippets_Remoting/RemotingConfiguration.ServerActivation1/CPP/client.cpp#5)]
+ [!code-csharp[RemotingConfiguration.ServerActivation1#5](~/samples/snippets/csharp/VS_Snippets_Remoting/RemotingConfiguration.ServerActivation1/CS/client.cs#5)]
+ [!code-vb[RemotingConfiguration.ServerActivation1#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/RemotingConfiguration.ServerActivation1/VB/client.vb#5)]  
+[!code-cpp[RemotingConfiguration.ServerActivation1#6](~/samples/snippets/cpp/VS_Snippets_Remoting/RemotingConfiguration.ServerActivation1/CPP/client.cpp#6)]
+[!code-csharp[RemotingConfiguration.ServerActivation1#6](~/samples/snippets/csharp/VS_Snippets_Remoting/RemotingConfiguration.ServerActivation1/CS/client.cs#6)]
+[!code-vb[RemotingConfiguration.ServerActivation1#6](~/samples/snippets/visualbasic/VS_Snippets_Remoting/RemotingConfiguration.ServerActivation1/VB/client.vb#6)]  
+[!code-cpp[RemotingConfiguration.ServerActivation1#7](~/samples/snippets/cpp/VS_Snippets_Remoting/RemotingConfiguration.ServerActivation1/CPP/client.cpp#7)]
+[!code-csharp[RemotingConfiguration.ServerActivation1#7](~/samples/snippets/csharp/VS_Snippets_Remoting/RemotingConfiguration.ServerActivation1/CS/client.cs#7)]
+[!code-vb[RemotingConfiguration.ServerActivation1#7](~/samples/snippets/visualbasic/VS_Snippets_Remoting/RemotingConfiguration.ServerActivation1/VB/client.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">コール スタックの上位の呼び出し元の少なくとも 1 つに、リモート処理の型とチャネルを構成するアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterWellKnownServiceType">
+      <MemberSignature Language="C#" Value="public static void RegisterWellKnownServiceType (System.Runtime.Remoting.WellKnownServiceTypeEntry entry);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterWellKnownServiceType(class System.Runtime.Remoting.WellKnownServiceTypeEntry entry) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingConfiguration.RegisterWellKnownServiceType(System.Runtime.Remoting.WellKnownServiceTypeEntry)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entry" Type="System.Runtime.Remoting.WellKnownServiceTypeEntry" />
+      </Parameters>
+      <Docs>
+        <param name="entry">既知の型の構成設定。</param>
+        <summary>オブジェクトを登録<see cref="T:System.Type" />を指定した記録<see cref="T:System.Runtime.Remoting.WellKnownServiceTypeEntry" />既知の型としてサービス側でします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 登録済みのよく知られているオブジェクトの URI を知っているすべてのクライアントが優先的に使用するチャネルを登録することによって、オブジェクトのプロキシを取得できます<xref:System.Runtime.Remoting.Channels.ChannelServices>、呼び出すことによって、オブジェクトをアクティブ化と`new`または<xref:System.Activator.GetObject%2A?displayProperty=nameWithType>メソッドです。 使用して、よく知られているオブジェクトをアクティブ化する`new`を使って、クライアントのよく知られているオブジェクトの種類を登録する必要があります最初、<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterWellKnownClientType%2A>メソッドです。 呼び出す、<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterWellKnownClientType%2A>メソッドにより、リモート処理インフラストラクチャにより、リモート オブジェクトの場所、`new`キーワードを作成します。 その一方を使用した場合、<xref:System.Activator.GetObject%2A?displayProperty=nameWithType>既知のオブジェクトをアクティブ化するメソッドする必要がありますが、オブジェクトの URL を使用して、引数として指定、ためクライアント エンドで、事前に登録する必要はありません。  
+  
+ サーバーに到着すると、呼び出し、.NET Framework は URI がメッセージから抽出、URI に一致し、必要な場合は、オブジェクトをインスタンス化するオブジェクトの参照を検索するリモート テーブルをチェック オブジェクトのメソッド呼び出しを転送します。 オブジェクトとして登録されている場合<xref:System.Runtime.Remoting.WellKnownObjectMode.SingleCall>メソッドの呼び出しが完了した後は破棄します。 呼び出される各メソッドは、オブジェクトの新しいインスタンスが作成されます。 唯一の違い<xref:System.Activator.GetObject%2A?displayProperty=nameWithType>と`new`以前では、パラメーターとして URL を指定することができますし、後者の構成から URL を取得します。  
+  
+ 登録プロセスでは、リモート オブジェクト自体がインスタンス化できません。 これのみ、クライアントが、オブジェクトのメソッドを呼び出すしようとしたときの動作またはクライアント側からオブジェクトをアクティブにします。  
+  
+ 既知のオブジェクトの詳細については、次を参照してください[&#91;\< 。topic://cpconServerActivation > & #93 です。](http://msdn.microsoft.com/en-us/77ded6e2-4ca8-448b-acf2-562d27fd4396).  
+  
+   
+  
+## Examples  
+ [!code-cpp[CreateObjRef2#2](~/samples/snippets/cpp/VS_Snippets_Remoting/CreateObjRef2/CPP/example.cpp#2)]
+ [!code-csharp[CreateObjRef2#2](~/samples/snippets/csharp/VS_Snippets_Remoting/CreateObjRef2/CS/example.cs#2)]
+ [!code-vb[CreateObjRef2#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/CreateObjRef2/VB/example.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">コール スタックの上位の呼び出し元の少なくとも 1 つに、リモート処理の型とチャネルを構成するアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterWellKnownServiceType">
+      <MemberSignature Language="C#" Value="public static void RegisterWellKnownServiceType (Type type, string objectUri, System.Runtime.Remoting.WellKnownObjectMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterWellKnownServiceType(class System.Type type, string objectUri, valuetype System.Runtime.Remoting.WellKnownObjectMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingConfiguration.RegisterWellKnownServiceType(System.Type,System.String,System.Runtime.Remoting.WellKnownObjectMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="objectUri" Type="System.String" />
+        <Parameter Name="mode" Type="System.Runtime.Remoting.WellKnownObjectMode" />
+      </Parameters>
+      <Docs>
+        <param name="type">オブジェクト<see cref="T:System.Type" />です。</param>
+        <param name="objectUri">URI のオブジェクト。</param>
+        <param name="mode">登録されている既知のオブジェクト型のライセンス認証モード。 (「<see cref="T:System.Runtime.Remoting.WellKnownObjectMode" />」を参照)。</param>
+        <summary>オブジェクトを登録<see cref="T:System.Type" />既知の型としてサービス側では、パラメーターを使用して、特定の新しいインスタンスを初期化するために<see cref="T:System.Runtime.Remoting.WellKnownServiceTypeEntry" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 登録済みのよく知られているオブジェクトの URI を知っているすべてのクライアントが優先的に使用するチャネルを登録することによって、オブジェクトのプロキシを取得できます<xref:System.Runtime.Remoting.Channels.ChannelServices>、呼び出すことによって、オブジェクトをアクティブ化と`new`または<xref:System.Activator.GetObject%2A?displayProperty=nameWithType>メソッドです。 使用して、よく知られているオブジェクトをアクティブ化する`new`を使って、クライアントのよく知られているオブジェクトの種類を登録する必要があります最初、<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterWellKnownClientType%2A>メソッドです。 呼び出す、<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterWellKnownClientType%2A>メソッドにより、リモート処理インフラストラクチャにより、リモート オブジェクトの場所、`new`キーワードを作成します。 その一方を使用した場合、<xref:System.Activator.GetObject%2A?displayProperty=nameWithType>既知のオブジェクトをアクティブ化するメソッドする必要がありますが、オブジェクトの URL を使用して、引数として指定、ためクライアント エンドで、事前に登録する必要はありません。  
+  
+ サーバーに到着すると、呼び出し、.NET Framework は URI がメッセージから抽出、URI に一致し、必要な場合は、オブジェクトをインスタンス化するオブジェクトの参照を検索するリモート テーブルをチェック オブジェクトのメソッド呼び出しを転送します。 オブジェクトとして登録されている場合<xref:System.Runtime.Remoting.WellKnownObjectMode.SingleCall>メソッドの呼び出しが完了した後は破棄します。 呼び出される各メソッドは、オブジェクトの新しいインスタンスが作成されます。 唯一の違い<xref:System.Activator.GetObject%2A?displayProperty=nameWithType>と`new`以前では、パラメーターとして URL を指定することができますし、後者の構成から URL を取得します。  
+  
+ 登録プロセスでは、リモート オブジェクト自体がインスタンス化できません。 これのみ、クライアントが、オブジェクトのメソッドを呼び出すしようとしたときの動作またはクライアント側からオブジェクトをアクティブにします。  
+  
+ 既知のオブジェクトの詳細については、次を参照してください[&#91;\< 。topic://cpconServerActivation > & #93 です。](http://msdn.microsoft.com/en-us/77ded6e2-4ca8-448b-acf2-562d27fd4396).  
+  
+   
+  
+## Examples  
+ 次のコード例では、よく知られているオブジェクトの種類として、サーバー上のオブジェクトの種類の登録を示します。 提示されたサーバーのコードに対応するクライアント コードでは、例を参照してください、<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterWellKnownClientType%2A>メソッドです。  
+  
+ [!code-cpp[RemotingConfiguration.ServerActivation1#1](~/samples/snippets/cpp/VS_Snippets_Remoting/RemotingConfiguration.ServerActivation1/CPP/server.cpp#1)]
+ [!code-csharp[RemotingConfiguration.ServerActivation1#1](~/samples/snippets/csharp/VS_Snippets_Remoting/RemotingConfiguration.ServerActivation1/CS/server.cs#1)]
+ [!code-vb[RemotingConfiguration.ServerActivation1#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/RemotingConfiguration.ServerActivation1/VB/server.vb#1)]  
+[!code-cpp[RemotingConfiguration.ServerActivation1#2](~/samples/snippets/cpp/VS_Snippets_Remoting/RemotingConfiguration.ServerActivation1/CPP/server.cpp#2)]
+[!code-csharp[RemotingConfiguration.ServerActivation1#2](~/samples/snippets/csharp/VS_Snippets_Remoting/RemotingConfiguration.ServerActivation1/CS/server.cs#2)]
+[!code-vb[RemotingConfiguration.ServerActivation1#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/RemotingConfiguration.ServerActivation1/VB/server.vb#2)]  
+[!code-cpp[RemotingConfiguration.ServerActivation1#3](~/samples/snippets/cpp/VS_Snippets_Remoting/RemotingConfiguration.ServerActivation1/CPP/server.cpp#3)]
+[!code-csharp[RemotingConfiguration.ServerActivation1#3](~/samples/snippets/csharp/VS_Snippets_Remoting/RemotingConfiguration.ServerActivation1/CS/server.cs#3)]
+[!code-vb[RemotingConfiguration.ServerActivation1#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/RemotingConfiguration.ServerActivation1/VB/server.vb#3)]  
+  
+ 次のコード例では、上記のサンプル コードで登録されているサービス オブジェクトを示します。  
+  
+ [!code-cpp[RemotingConfiguration.ServerActivation1#4](~/samples/snippets/cpp/VS_Snippets_Remoting/RemotingConfiguration.ServerActivation1/CPP/service.cpp#4)]
+ [!code-csharp[RemotingConfiguration.ServerActivation1#4](~/samples/snippets/csharp/VS_Snippets_Remoting/RemotingConfiguration.ServerActivation1/CS/service.cs#4)]
+ [!code-vb[RemotingConfiguration.ServerActivation1#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/RemotingConfiguration.ServerActivation1/VB/service.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">コール スタックの上位の呼び出し元の少なくとも 1 つに、リモート処理の型とチャネルを構成するアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

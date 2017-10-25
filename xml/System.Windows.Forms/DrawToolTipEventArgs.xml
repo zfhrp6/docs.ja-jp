@@ -1,0 +1,433 @@
+<Type Name="DrawToolTipEventArgs" FullName="System.Windows.Forms.DrawToolTipEventArgs">
+  <TypeSignature Language="C#" Value="public class DrawToolTipEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DrawToolTipEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DrawToolTipEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Forms.ToolTip.Draw" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ToolTip.Draw?displayProperty=nameWithType>によってイベントが発生した、<xref:System.Windows.Forms.ToolTip>場合にクラス、<xref:System.Windows.Forms.ToolTip>が描画されると、<xref:System.Windows.Forms.ToolTip.OwnerDraw%2A?displayProperty=nameWithType>プロパティの値が`true`です。 このイベントのハンドラーが型のパラメーターを受け取る<xref:System.Windows.Forms.DrawToolTipEventArgs>です。 <xref:System.Windows.Forms.DrawToolTipEventArgs>クラスには、描画に必要なすべての情報が含まれています、<xref:System.Windows.Forms.ToolTip>など、 <xref:System.Windows.Forms.ToolTip> 、テキスト、 <xref:System.Drawing.Rectangle>、および<xref:System.Drawing.Graphics>描画を行う必要が上のオブジェクトします。 ツールヒントの外観をカスタマイズするを使用して、 <xref:System.Drawing.Rectangle> 、ツールヒントの境界を決定して、<xref:System.Drawing.Graphics>カスタマイズされた描画を実行するオブジェクト。 境界を増やすことができます、<xref:System.Windows.Forms.ToolTip>処理によって表示される前に、<xref:System.Windows.Forms.ToolTip.Popup>イベント。  
+  
+ <xref:System.Windows.Forms.DrawToolTipEventArgs>部分的なカスタマイズをサポートしています、 <xref:System.Windows.Forms.DrawToolTipEventArgs.DrawBackground%2A>、<xref:System.Windows.Forms.DrawToolTipEventArgs.DrawText%2A>と<xref:System.Windows.Forms.DrawToolTipEventArgs.DrawBorder%2A>メソッドです。 これらのメソッドを使って、他の部分は標準的な方法で描画中にツールヒントのオーナー描画の部分を実行します。  
+  
+   
+  
+## Examples  
+ 次のコード例で描画をカスタマイズする方法、<xref:System.Windows.Forms.ToolTip>です。 例は、作成、<xref:System.Windows.Forms.ToolTip>し、3 つに関連付けます<xref:System.Windows.Forms.Button>上にあるコントロール、<xref:System.Windows.Forms.Form>です。 例のセット、<xref:System.Windows.Forms.ToolTip.OwnerDraw%2A>プロパティを true とハンドル、<xref:System.Windows.Forms.ToolTip.Draw>イベント。 <xref:System.Windows.Forms.ToolTip.Draw> 、イベント ハンドラー、<xref:System.Windows.Forms.ToolTip>がカスタム ボタンの動作に応じて異なる方法で描画された、<xref:System.Windows.Forms.ToolTip>によって示されるが表示される、<xref:System.Windows.Forms.DrawToolTipEventArgs.AssociatedControl%2A?displayProperty=nameWithType>プロパティです。  
+  
+ [!code-cpp[System.Windows.Forms.ToolTip.OwnerDraw#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ToolTip.OwnerDraw/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ToolTip.OwnerDraw#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolTip.OwnerDraw/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ToolTip.OwnerDraw#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolTip.OwnerDraw/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DrawToolTipEventArgs (System.Drawing.Graphics graphics, System.Windows.Forms.IWin32Window associatedWindow, System.Windows.Forms.Control associatedControl, System.Drawing.Rectangle bounds, string toolTipText, System.Drawing.Color backColor, System.Drawing.Color foreColor, System.Drawing.Font font);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Graphics graphics, class System.Windows.Forms.IWin32Window associatedWindow, class System.Windows.Forms.Control associatedControl, valuetype System.Drawing.Rectangle bounds, string toolTipText, valuetype System.Drawing.Color backColor, valuetype System.Drawing.Color foreColor, class System.Drawing.Font font) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DrawToolTipEventArgs.#ctor(System.Drawing.Graphics,System.Windows.Forms.IWin32Window,System.Windows.Forms.Control,System.Drawing.Rectangle,System.String,System.Drawing.Color,System.Drawing.Color,System.Drawing.Font)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="associatedWindow" Type="System.Windows.Forms.IWin32Window" />
+        <Parameter Name="associatedControl" Type="System.Windows.Forms.Control" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="toolTipText" Type="System.String" />
+        <Parameter Name="backColor" Type="System.Drawing.Color" />
+        <Parameter Name="foreColor" Type="System.Drawing.Color" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />ツールヒントの描画に使用されるコンテキスト。</param>
+        <param name="associatedWindow"><see cref="T:System.Windows.Forms.IWin32Window" />にツールヒントがバインドされています。</param>
+        <param name="associatedControl"><see cref="T:System.Windows.Forms.Control" />のツールヒントが作成されます。</param>
+        <param name="bounds">A<see cref="T:System.Drawing.Rectangle" />ツールヒントが表示される領域の概要を説明します。</param>
+        <param name="toolTipText">A<see cref="T:System.String" />ツールヒントのテキストを格納します。</param>
+        <param name="backColor"><see cref="T:System.Drawing.Color" />ツールヒントの背景。</param>
+        <param name="foreColor"><see cref="T:System.Drawing.Color" />のツールヒント テキスト。</param>
+        <param name="font"><see cref="T:System.Drawing.Font" />ツールヒント テキストを描画するために使用します。</param>
+        <summary><see cref="T:System.Windows.Forms.DrawToolTipEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DrawToolTipEventArgs.%23ctor%2A>コンス トラクターを使用して、 `graphics`、 `associatedControl`、 `associatedWindow`、 `bounds`、`font`と`toolTipText`同様に名前付きプロパティのパラメーターを対応するを初期化します。 `backColor`と`foreColor`パラメーターを使用して、<xref:System.Windows.Forms.DrawToolTipEventArgs.DrawBackground%2A>と<xref:System.Windows.Forms.DrawToolTipEventArgs.DrawText%2A>メソッド、それぞれします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AssociatedControl">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Control AssociatedControl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.Control AssociatedControl" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DrawToolTipEventArgs.AssociatedControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Control</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>対象のコントロールを取得、<see cref="T:System.Windows.Forms.ToolTip" />が描画されます。</summary>
+        <value><see cref="T:System.Windows.Forms.Control" />と関連付けられている、<see cref="T:System.Windows.Forms.ToolTip" />ときに、<see cref="E:System.Windows.Forms.ToolTip.Draw" />イベントが発生します。 戻り値になります<see langword="null" />ツールヒントは、コントロールに関連付けられていない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ToolTip>を通じて複数のコントロールに関連付けることができます、 <xref:System.Windows.Forms.ToolTip.SetToolTip%2A?displayProperty=nameWithType> 、メソッド、<xref:System.Windows.Forms.DrawToolTipEventArgs.AssociatedControl%2A>するコントロールを確認するプロパティを使用することができます、<xref:System.Windows.Forms.ToolTip.Draw>イベントに関連付けられています。 これは、関連付けられたコントロールに基づく別のツールヒントのカスタマイズを実行する場合に便利です。  
+  
+   
+  
+## Examples  
+ 次のコード例で描画をカスタマイズする方法、<xref:System.Windows.Forms.ToolTip>です。 例は、作成、<xref:System.Windows.Forms.ToolTip>し、3 つに関連付けます<xref:System.Windows.Forms.Button>上にあるコントロール、<xref:System.Windows.Forms.Form>です。 例のセット、<xref:System.Windows.Forms.ToolTip.OwnerDraw%2A>プロパティを`true`し、処理、<xref:System.Windows.Forms.ToolTip.Draw>イベント。 <xref:System.Windows.Forms.ToolTip.Draw> 、イベント ハンドラー、<xref:System.Windows.Forms.ToolTip>がカスタム ボタンの動作に応じて異なる方法で描画された、<xref:System.Windows.Forms.ToolTip>によって示されるが表示される、<xref:System.Windows.Forms.DrawToolTipEventArgs.AssociatedControl%2A?displayProperty=nameWithType>プロパティです。  
+  
+ 次のコード例を使用する方法の例を示します、<xref:System.Windows.Forms.DrawToolTipEventArgs.AssociatedControl%2A>プロパティです。 参照してください、<xref:System.Windows.Forms.DrawToolTipEventArgs>の完全なコード例がクラスの概要です。  
+  
+ [!code-cpp[System.Windows.Forms.ToolTip.OwnerDraw#5](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ToolTip.OwnerDraw/CPP/form1.cpp#5)]
+ [!code-csharp[System.Windows.Forms.ToolTip.OwnerDraw#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolTip.OwnerDraw/CS/form1.cs#5)]
+ [!code-vb[System.Windows.Forms.ToolTip.OwnerDraw#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolTip.OwnerDraw/VB/form1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AssociatedWindow">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.IWin32Window AssociatedWindow { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.IWin32Window AssociatedWindow" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DrawToolTipEventArgs.AssociatedWindow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.IWin32Window</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このウィンドウを取得<see cref="T:System.Windows.Forms.ToolTip" />がバインドされています。</summary>
+        <value>所有するウィンドウ、<see cref="T:System.Windows.Forms.ToolTip" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ウィンドウには、別のウィンドウが所有して、所有されているウィンドウが最小化され、オーナー ウィンドウに閉じます。 所有しているウィンドウはその所有者のフォームの背後に表示もされません。 ここでツールヒントはウィンドウが所有する、ネイティブ Win32 によって表される、<xref:System.Windows.Forms.DrawToolTipEventArgs.AssociatedWindow%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolTip.Draw?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolTip>という`ToolTip1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolTip.Draw?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#618](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#618)]
+ [!code-vb[System.Windows.Forms.EventExamples#618](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#618)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bounds">
+      <MemberSignature Language="C#" Value="public System.Drawing.Rectangle Bounds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Rectangle Bounds" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DrawToolTipEventArgs.Bounds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>位置とサイズを取得、<see cref="T:System.Windows.Forms.ToolTip" />を描画します。</summary>
+        <value>A<see cref="T:System.Drawing.Rectangle" />の境界を表す、<see cref="T:System.Windows.Forms.ToolTip" />を描画します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、システムの設定に基づくオペレーティング システムによって境界が設定され、<xref:System.Windows.Forms.ToolTip>テキスト。 境界を増やすことができます、<xref:System.Windows.Forms.ToolTip>処理によって表示される前に、 <xref:System.Windows.Forms.ToolTip.Popup> <xref:System.Windows.Forms.ToolTip.Popup>のイベント、<xref:System.Windows.Forms.ToolTip>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例で描画をカスタマイズする方法、<xref:System.Windows.Forms.ToolTip>です。 例は、作成、<xref:System.Windows.Forms.ToolTip>し、3 つに関連付けます<xref:System.Windows.Forms.Button>上にあるコントロール、<xref:System.Windows.Forms.Form>です。 例のセット、<xref:System.Windows.Forms.ToolTip.OwnerDraw%2A>プロパティを true とハンドル、<xref:System.Windows.Forms.ToolTip.Draw>イベント。 <xref:System.Windows.Forms.ToolTip.Draw> 、イベント ハンドラー、<xref:System.Windows.Forms.ToolTip>がカスタム ボタンの動作に応じて異なる方法で描画された、<xref:System.Windows.Forms.ToolTip>によって示されるが表示される、<xref:System.Windows.Forms.DrawToolTipEventArgs.AssociatedControl%2A?displayProperty=nameWithType>プロパティです。  
+  
+ 次に示すコードでは、使用方法を示します、<xref:System.Windows.Forms.DrawToolTipEventArgs.DrawBorder%2A>メソッドを使用して、 <xref:System.Windows.Forms.DrawToolTipEventArgs.Bounds%2A>、 <xref:System.Windows.Forms.DrawToolTipEventArgs.ToolTipText%2A>、および<xref:System.Windows.Forms.DrawToolTipEventArgs.Graphics%2A>プロパティです。 参照してください、<xref:System.Windows.Forms.DrawToolTipEventArgs>の完全なコード例がクラスの概要です。  
+  
+ [!code-cpp[System.Windows.Forms.ToolTip.OwnerDraw#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ToolTip.OwnerDraw/CPP/form1.cpp#3)]
+ [!code-csharp[System.Windows.Forms.ToolTip.OwnerDraw#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolTip.OwnerDraw/CS/form1.cs#3)]
+ [!code-vb[System.Windows.Forms.ToolTip.OwnerDraw#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolTip.OwnerDraw/VB/form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawBackground">
+      <MemberSignature Language="C#" Value="public void DrawBackground ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawBackground() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DrawToolTipEventArgs.DrawBackground" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>背景を描画、<see cref="T:System.Windows.Forms.ToolTip" />システム背景色を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 特定の外観をカスタマイズするときにこのメソッドを使用して、<xref:System.Windows.Forms.ToolTip>の現在の値を使用しているに描画される標準的なツールヒントの背景をしますが、<xref:System.Drawing.SystemColors.Info%2A?displayProperty=nameWithType>です。 指定された領域に合わせて、背景が描画される、<xref:System.Windows.Forms.DrawToolTipEventArgs.Bounds%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例で描画をカスタマイズする方法、<xref:System.Windows.Forms.ToolTip>です。 例は、作成、<xref:System.Windows.Forms.ToolTip>し、3 つに関連付けます<xref:System.Windows.Forms.Button>上にあるコントロール、<xref:System.Windows.Forms.Form>です。 例のセット、<xref:System.Windows.Forms.ToolTip.OwnerDraw%2A>プロパティを true とハンドル、<xref:System.Windows.Forms.ToolTip.Draw>イベント。 <xref:System.Windows.Forms.ToolTip.Draw> 、イベント ハンドラー、<xref:System.Windows.Forms.ToolTip>がカスタム ボタンの動作に応じて異なる方法で描画された、<xref:System.Windows.Forms.ToolTip>によって示されるが表示される、<xref:System.Windows.Forms.DrawToolTipEventArgs.AssociatedControl%2A?displayProperty=nameWithType>プロパティです。  
+  
+ 次に示すコードでは、使用方法を示します、 <xref:System.Windows.Forms.DrawToolTipEventArgs.DrawBorder%2A>、 <xref:System.Windows.Forms.DrawToolTipEventArgs.DrawBackground%2A>、および<xref:System.Windows.Forms.DrawToolTipEventArgs.DrawText%2A>メソッドです。 参照してください、<xref:System.Windows.Forms.DrawToolTipEventArgs>の完全なコード例がクラスの概要です。  
+  
+ [!code-cpp[System.Windows.Forms.ToolTip.OwnerDraw#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ToolTip.OwnerDraw/CPP/form1.cpp#4)]
+ [!code-csharp[System.Windows.Forms.ToolTip.OwnerDraw#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolTip.OwnerDraw/CS/form1.cs#4)]
+ [!code-vb[System.Windows.Forms.ToolTip.OwnerDraw#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolTip.OwnerDraw/VB/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawBorder">
+      <MemberSignature Language="C#" Value="public void DrawBorder ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawBorder() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DrawToolTipEventArgs.DrawBorder" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>境界線を描画、<see cref="T:System.Windows.Forms.ToolTip" />システム境界線の色を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 特定の外観をカスタマイズするときにこのメソッドを使用して、<xref:System.Windows.Forms.ToolTip>の現在の値を使用しているに描画される標準的なツールヒントの境界線をしますが、<xref:System.Drawing.SystemColors.WindowFrame%2A?displayProperty=nameWithType>です。 指定されたサイズに境界線が描画される、<xref:System.Windows.Forms.DrawToolTipEventArgs.Bounds%2A>プロパティです。 境界を増やすことができます、<xref:System.Windows.Forms.ToolTip>処理によって表示される前に、<xref:System.Windows.Forms.ToolTip.Popup>イベント。  
+  
+   
+  
+## Examples  
+ 次のコード例で描画をカスタマイズする方法、<xref:System.Windows.Forms.ToolTip>です。 例は、作成、<xref:System.Windows.Forms.ToolTip>し、3 つに関連付けます<xref:System.Windows.Forms.Button>上にあるコントロール、<xref:System.Windows.Forms.Form>です。 例のセット、<xref:System.Windows.Forms.ToolTip.OwnerDraw%2A>プロパティを true とハンドル、<xref:System.Windows.Forms.ToolTip.Draw>イベント。 <xref:System.Windows.Forms.ToolTip.Draw> 、イベント ハンドラー、<xref:System.Windows.Forms.ToolTip>がカスタム ボタンの動作に応じて異なる方法で描画された、<xref:System.Windows.Forms.ToolTip>によって示されるが表示される、<xref:System.Windows.Forms.DrawToolTipEventArgs.AssociatedControl%2A?displayProperty=nameWithType>プロパティです。  
+  
+ 次に示すコードでは、使用方法を示します、 <xref:System.Windows.Forms.DrawToolTipEventArgs.DrawBorder%2A>、 <xref:System.Windows.Forms.DrawToolTipEventArgs.DrawBackground%2A>、および<xref:System.Windows.Forms.DrawToolTipEventArgs.DrawText%2A>メソッドです。 参照してください、<xref:System.Windows.Forms.DrawToolTipEventArgs>の完全なコード例がクラスの概要です。  
+  
+ [!code-cpp[System.Windows.Forms.ToolTip.OwnerDraw#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ToolTip.OwnerDraw/CPP/form1.cpp#4)]
+ [!code-csharp[System.Windows.Forms.ToolTip.OwnerDraw#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolTip.OwnerDraw/CS/form1.cs#4)]
+ [!code-vb[System.Windows.Forms.ToolTip.OwnerDraw#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolTip.OwnerDraw/VB/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawText">
+      <MemberSignature Language="C#" Value="public void DrawText ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawText() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DrawToolTipEventArgs.DrawText" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テキストの描画、<see cref="T:System.Windows.Forms.ToolTip" />システム テキストの色とフォントを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DrawToolTipEventArgs.DrawText>メソッドを表示する既定のメソッドを表す、<xref:System.Windows.Forms.ToolTip>です。 このメソッドは、システム指定のフォントとの現在の値を使用して<xref:System.Drawing.SystemColors.InfoText%2A?displayProperty=nameWithType>のフォントの色。 によって指定される四角形内で水平方向および垂直方向を中央揃えの単一行として、テキストの描画、<xref:System.Windows.Forms.DrawToolTipEventArgs.Bounds%2A>プロパティですこれは、次の呼び出しのオーバー ロードされたバージョンに相当<xref:System.Windows.Forms.DrawToolTipEventArgs.DrawText%28System.Windows.Forms.TextFormatFlags%29>:。  
+  
+ `DrawText(TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter | TextFormatFlags.SingleLine | TextFormatFlags.HidePrefix)`  
+  
+   
+  
+## Examples  
+ 次のコード例で描画をカスタマイズする方法、<xref:System.Windows.Forms.ToolTip>です。 例は、作成、<xref:System.Windows.Forms.ToolTip>し、3 つに関連付けます<xref:System.Windows.Forms.Button>上にあるコントロール、<xref:System.Windows.Forms.Form>です。 例のセット、<xref:System.Windows.Forms.ToolTip.OwnerDraw%2A>プロパティを true とハンドル、<xref:System.Windows.Forms.ToolTip.Draw>イベント。 <xref:System.Windows.Forms.ToolTip.Draw> 、イベント ハンドラー、<xref:System.Windows.Forms.ToolTip>がカスタム ボタンの動作に応じて異なる方法で描画された、<xref:System.Windows.Forms.ToolTip>によって示されるが表示される、<xref:System.Windows.Forms.DrawToolTipEventArgs.AssociatedControl%2A?displayProperty=nameWithType>プロパティです。  
+  
+ 次に示すコードでは、使用方法を示します、 <xref:System.Windows.Forms.DrawToolTipEventArgs.DrawBorder%2A>、 <xref:System.Windows.Forms.DrawToolTipEventArgs.DrawBackground%2A>、および<xref:System.Windows.Forms.DrawToolTipEventArgs.DrawText%2A>メソッドです。 参照してください、<xref:System.Windows.Forms.DrawToolTipEventArgs>の完全なコード例がクラスの概要です。  
+  
+ [!code-cpp[System.Windows.Forms.ToolTip.OwnerDraw#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ToolTip.OwnerDraw/CPP/form1.cpp#4)]
+ [!code-csharp[System.Windows.Forms.ToolTip.OwnerDraw#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolTip.OwnerDraw/CS/form1.cs#4)]
+ [!code-vb[System.Windows.Forms.ToolTip.OwnerDraw#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolTip.OwnerDraw/VB/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawText">
+      <MemberSignature Language="C#" Value="public void DrawText (System.Windows.Forms.TextFormatFlags flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawText(valuetype System.Windows.Forms.TextFormatFlags flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DrawToolTipEventArgs.DrawText(System.Windows.Forms.TextFormatFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="flags" Type="System.Windows.Forms.TextFormatFlags" />
+      </Parameters>
+      <Docs>
+        <param name="flags">A<see cref="T:System.Windows.Forms.TextFormatFlags" />表示およびレイアウトを指定する値のビットごとの組み合わせを含む、<see cref="P:System.Windows.Forms.DrawToolTipEventArgs.ToolTipText" />です。</param>
+        <summary>テキストの描画、<see cref="T:System.Windows.Forms.ToolTip" />システム テキストの色とフォント、および指定したテキストのレイアウトを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DrawToolTipEventArgs.DrawText%28System.Windows.Forms.TextFormatFlags%29>メソッドを使用して、特定の外観をカスタマイズ、<xref:System.Windows.Forms.ToolTip>ツールヒントのテキストのレイアウトを含むです。 このメソッドは、システム指定のフォントとの現在の値を使用して<xref:System.Drawing.SystemColors.InfoText%2A?displayProperty=nameWithType>のフォントの色。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Font">
+      <MemberSignature Language="C#" Value="public System.Drawing.Font Font { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Font Font" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DrawToolTipEventArgs.Font" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Font</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>描画に使用するフォントを取得、<see cref="T:System.Windows.Forms.ToolTip" />です。</summary>
+        <value><see cref="T:System.Drawing.Font" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.DrawToolTipEventArgs.Font%2A>プロパティはカスタム描画、 <xref:System.Windows.Forms.ToolTip> Windows の既定のフォントを使用する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例で描画をカスタマイズする方法、<xref:System.Windows.Forms.ToolTip>です。 例は、作成、<xref:System.Windows.Forms.ToolTip>し、3 つに関連付けます<xref:System.Windows.Forms.Button>上にあるコントロール、<xref:System.Windows.Forms.Form>です。 例のセット、<xref:System.Windows.Forms.ToolTip.OwnerDraw%2A>プロパティを true とハンドル、<xref:System.Windows.Forms.ToolTip.Draw>イベント。 <xref:System.Windows.Forms.ToolTip.Draw> 、イベント ハンドラー、<xref:System.Windows.Forms.ToolTip>がカスタム ボタンの動作に応じて異なる方法で描画された、<xref:System.Windows.Forms.ToolTip>によって示されるが表示される、<xref:System.Windows.Forms.DrawToolTipEventArgs.AssociatedControl%2A?displayProperty=nameWithType>プロパティです。  
+  
+ 次に示すコードでは、使用方法を示します、 <xref:System.Windows.Forms.DrawToolTipEventArgs.DrawBorder%2A>、 <xref:System.Windows.Forms.DrawToolTipEventArgs.DrawBackground%2A>、および<xref:System.Windows.Forms.DrawToolTipEventArgs.DrawText%2A>メソッドです。 参照してください、<xref:System.Windows.Forms.DrawToolTipEventArgs>の完全なコード例がクラスの概要です。  
+  
+ [!code-cpp[System.Windows.Forms.ToolTip.OwnerDraw#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ToolTip.OwnerDraw/CPP/form1.cpp#4)]
+ [!code-csharp[System.Windows.Forms.ToolTip.OwnerDraw#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolTip.OwnerDraw/CS/form1.cs#4)]
+ [!code-vb[System.Windows.Forms.ToolTip.OwnerDraw#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolTip.OwnerDraw/VB/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Graphics">
+      <MemberSignature Language="C#" Value="public System.Drawing.Graphics Graphics { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Graphics Graphics" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DrawToolTipEventArgs.Graphics" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Graphics</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>描画に使用するグラフィックスの表面の取得、<see cref="T:System.Windows.Forms.ToolTip" />です。</summary>
+        <value><see cref="T:System.Drawing.Graphics" />を描画する、<see cref="T:System.Windows.Forms.ToolTip" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、<xref:System.Drawing.Graphics>オブジェクトの特定のビジュアル要素の描画をカスタマイズする、<xref:System.Windows.Forms.ToolTip>です。 使用して、独自のツールヒントの背景を描画するなど、<xref:System.Drawing.Graphics.FillRectangle%2A?displayProperty=nameWithType>メソッドです。  
+  
+ によって指定される四角形の外部で任意のカスタム描画するときは、<xref:System.Windows.Forms.DrawToolTipEventArgs.Bounds%2A>プロパティは表示されません。 境界を増やすことができます、<xref:System.Windows.Forms.ToolTip>処理によって表示される前に、`ToolTip.Popup`イベント。  
+  
+ <xref:System.Windows.Forms.DrawToolTipEventArgs>クラスも用意されています、 <xref:System.Windows.Forms.DrawToolTipEventArgs.DrawBackground%2A>、<xref:System.Windows.Forms.DrawToolTipEventArgs.DrawText%2A>と<xref:System.Windows.Forms.DrawToolTipEventArgs.DrawBorder%2A>の個々 の部分を描画する方法、<xref:System.Windows.Forms.ToolTip>オペレーティング システムで使用される標準的な方法でします。 と共にこれらのメソッドを使用することができます、<xref:System.Drawing.Graphics>オブジェクトのメソッドは、他の部分をカスタマイズするときに、standard、ツール ヒントの一部を確認します。  
+  
+   
+  
+## Examples  
+ 次のコード例で描画をカスタマイズする方法、<xref:System.Windows.Forms.ToolTip>です。 例は、作成、<xref:System.Windows.Forms.ToolTip>し、3 つに関連付けます<xref:System.Windows.Forms.Button>上にあるコントロール、<xref:System.Windows.Forms.Form>です。 例のセット、<xref:System.Windows.Forms.ToolTip.OwnerDraw%2A>プロパティを true とハンドル、<xref:System.Windows.Forms.ToolTip.Draw>イベント。 <xref:System.Windows.Forms.ToolTip.Draw> 、イベント ハンドラー、<xref:System.Windows.Forms.ToolTip>がカスタム ボタンの動作に応じて異なる方法で描画された、<xref:System.Windows.Forms.ToolTip>によって示されるが表示される、<xref:System.Windows.Forms.DrawToolTipEventArgs.AssociatedControl%2A?displayProperty=nameWithType>プロパティです。  
+  
+ 次に示すコードでは、使用方法を示します、<xref:System.Windows.Forms.DrawToolTipEventArgs.DrawText%2A>と<xref:System.Windows.Forms.DrawToolTipEventArgs.DrawBackground%2A>メソッドを使用して、<xref:System.Windows.Forms.DrawToolTipEventArgs.Graphics%2A>プロパティです。 参照してください、<xref:System.Windows.Forms.DrawToolTipEventArgs>の完全なコード例がクラスの概要です。  
+  
+ [!code-cpp[System.Windows.Forms.ToolTip.OwnerDraw#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ToolTip.OwnerDraw/CPP/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.ToolTip.OwnerDraw#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolTip.OwnerDraw/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.ToolTip.OwnerDraw#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolTip.OwnerDraw/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolTipText">
+      <MemberSignature Language="C#" Value="public string ToolTipText { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ToolTipText" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DrawToolTipEventArgs.ToolTipText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキストを取得します、<see cref="T:System.Windows.Forms.ToolTip" />を描画します。</summary>
+        <value>関連付けられているテキスト、<see cref="T:System.Windows.Forms.ToolTip" />ときに、<see cref="E:System.Windows.Forms.ToolTip.Draw" />イベントが発生します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常使用すると、<xref:System.Windows.Forms.DrawToolTipEventArgs.ToolTipText%2A>カスタム ツールヒントを描画するときにするツールヒント テキストを決定するプロパティ。 使用することができます、<xref:System.Drawing.Graphics.DrawString%2A?displayProperty=nameWithType>ツールヒントのテキストの描画をカスタマイズする方法です。 ツールヒントのテキストに指定されたシステムを使用して描画スタイルを使用する場合、<xref:System.Windows.Forms.DrawToolTipEventArgs.DrawText%2A>メソッドです。 値はテキストに渡される値から取得、<xref:System.Windows.Forms.ToolTip.SetToolTip%2A>のメソッド、<xref:System.Windows.Forms.ToolTip>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例で描画をカスタマイズする方法、<xref:System.Windows.Forms.ToolTip>です。 例は、作成、<xref:System.Windows.Forms.ToolTip>し、3 つに関連付けます<xref:System.Windows.Forms.Button>上にあるコントロール、<xref:System.Windows.Forms.Form>です。 例のセット、<xref:System.Windows.Forms.ToolTip.OwnerDraw%2A>プロパティを true とハンドル、<xref:System.Windows.Forms.ToolTip.Draw>イベント。 <xref:System.Windows.Forms.ToolTip.Draw> 、イベント ハンドラー、<xref:System.Windows.Forms.ToolTip>がカスタム ボタンの動作に応じて異なる方法で描画された、<xref:System.Windows.Forms.ToolTip>によって示されるが表示される、<xref:System.Windows.Forms.DrawToolTipEventArgs.AssociatedControl%2A?displayProperty=nameWithType>プロパティです。  
+  
+ 次に示すコードでは、使用方法を示します、<xref:System.Windows.Forms.DrawToolTipEventArgs.DrawBorder%2A>メソッドを使用して、 <xref:System.Windows.Forms.DrawToolTipEventArgs.Bounds%2A>、 <xref:System.Windows.Forms.DrawToolTipEventArgs.ToolTipText%2A>、および<xref:System.Windows.Forms.DrawToolTipEventArgs.Graphics%2A>プロパティです。 参照してください、<xref:System.Windows.Forms.DrawToolTipEventArgs>の完全なコード例がクラスの概要です。  
+  
+ [!code-cpp[System.Windows.Forms.ToolTip.OwnerDraw#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ToolTip.OwnerDraw/CPP/form1.cpp#3)]
+ [!code-csharp[System.Windows.Forms.ToolTip.OwnerDraw#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolTip.OwnerDraw/CS/form1.cs#3)]
+ [!code-vb[System.Windows.Forms.ToolTip.OwnerDraw#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolTip.OwnerDraw/VB/form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

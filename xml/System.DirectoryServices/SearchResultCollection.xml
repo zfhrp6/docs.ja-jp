@@ -1,0 +1,472 @@
+<Type Name="SearchResultCollection" FullName="System.DirectoryServices.SearchResultCollection">
+  <TypeSignature Language="C#" Value="public class SearchResultCollection : MarshalByRefObject, IDisposable, System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SearchResultCollection extends System.MarshalByRefObject implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.SearchResultCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.MarshalByRefObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.SearchResultCollection" /> クラスは、<see cref="T:System.DirectoryServices.DirectorySearcher" /> クエリの実行中に Active Directory 階層から返された <see cref="T:System.DirectoryServices.SearchResult" /> インスタンスを格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装の制限により、<xref:System.DirectoryServices.SearchResultCollection>クラスをリリースできませんのすべてのアンマネージ リソースのガベージ コレクションがあるときにします。 メモリ リークを防ぐためには、呼び出す必要があります、<xref:System.DirectoryServices.SearchResultCollection.Dispose%2A>メソッドと、<xref:System.DirectoryServices.SearchResultCollection>オブジェクトが不要です。  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">
+      <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />
+    </permission>
+  </Docs>
+  <Members>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.DirectoryServices.SearchResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.DirectoryServices.SearchResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.SearchResultCollection.Contains(System.DirectoryServices.SearchResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.DirectoryServices.SearchResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">検索する <see cref="T:System.DirectoryServices.SearchResult" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.DirectoryServices.SearchResult" /> オブジェクトがこのコレクション内にあるかどうかを確認します。</summary>
+        <returns>
+          指定したプロパティがこのコレクションに属している場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.DirectoryServices.SearchResult[] results, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.DirectoryServices.SearchResult[] results, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.SearchResultCollection.CopyTo(System.DirectoryServices.SearchResult[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="results" Type="System.DirectoryServices.SearchResult[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="results">このコレクションの要素を受け取る <see cref="T:System.DirectoryServices.SearchResult" /> オブジェクトの配列。</param>
+        <param name="index">内の 0 から始まるインデックス<c>結果</c>このメソッドがこのコレクションのコピーを開始します。</param>
+        <summary>このコレクション内のすべての <see cref="T:System.DirectoryServices.SearchResult" /> オブジェクトを、特定の配列にコピーします。コピー先の配列の指定したインデックスからコピーが開始されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.SearchResultCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコレクション内の <see cref="T:System.DirectoryServices.SearchResult" /> オブジェクトの数を取得します。</summary>
+        <value>このコレクション内の <see cref="T:System.DirectoryServices.SearchResult" /> オブジェクトの数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.SearchResultCollection.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.DirectoryServices.SearchResultCollection" /> オブジェクトで使用されるすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.DirectoryServices.SearchResultCollection.Dispose%2A>によって使用されているリソースをにより、<xref:System.DirectoryServices.SearchResultCollection>を他の目的に再割り当てされます。 詳細については<xref:System.DirectoryServices.SearchResultCollection.Dispose%2A>を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)です。  
+  
+ ガベージ コレクターにメモリを解放していない、<xref:System.DirectoryServices.SearchResultCollection>オブジェクト。 したがって、アプリケーションを呼び出す必要があります、<xref:System.DirectoryServices.SearchResultCollection.Dispose%2A>メソッドをメモリ リークを防ぐために明示的にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.SearchResultCollection.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.DirectoryServices.SearchResultCollection" /> オブジェクトによって使用されているアンマネージ リソースを解放します。オプションでマネージ リソースも解放できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック<xref:System.DirectoryServices.SearchResultCollection.Dispose%2A>メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 <xref:System.DirectoryServices.SearchResultCollection.Dispose%2A>プロテクト呼び出します<xref:System.DirectoryServices.SearchResultCollection.Dispose%2A>メソッドを`disposing`パラメーターに設定`true`です。 <xref:System.Object.Finalize%2A>呼び出す<xref:System.DirectoryServices.SearchResultCollection.Dispose%2A>で、`disposing`パラメーターに設定`false`です。  
+  
+ ときに、`disposing`パラメーターは`true`、このメソッドは、すべてのマネージ オブジェクトによって保持されているすべてのリソースを解放します。 この<xref:System.DirectoryServices.SearchResultCollection>参照します。  
+  
+ ガベージ コレクターにメモリを解放していない、<xref:System.DirectoryServices.SearchResultCollection>オブジェクト。 そのため、呼び出す必要があります、<xref:System.DirectoryServices.SearchResultCollection.Dispose%2A>メソッドをメモリ リークを防ぐために明示的にします。  
+  
+ このメソッドを呼び出して、<xref:System.DirectoryServices.SearchResultCollection.Dispose%2A>コレクション内の各オブジェクトのメソッドです。  
+  
+ 詳細については<xref:System.DirectoryServices.SearchResultCollection.Dispose>と<xref:System.Object.Finalize%2A>を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para><see cref="M:System.DirectoryServices.SearchResultCollection.Dispose" />メソッドは、他のオブジェクトから複数回呼び出すことができますされます。 オーバーライドする場合、<see cref="M:System.DirectoryServices.SearchResultCollection.Dispose(System.Boolean)" />メソッドは既に破棄されているを以前の呼び出しでオブジェクトを参照しないように注意する、<see cref="M:System.DirectoryServices.SearchResultCollection.Dispose" />メソッドです。 実装する方法の詳細についての<see cref="M:System.DirectoryServices.SearchResultCollection.Dispose" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~SearchResultCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.SearchResultCollection.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.Object.Finalize" /> メソッドをオーバーライドします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.SearchResultCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このコレクションを反復処理するために使用できる列挙子を返します。</summary>
+        <returns>このコレクションを反復処理するために使用できる <see cref="T:System.Collections.IEnumerator" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Handle">
+      <MemberSignature Language="C#" Value="public IntPtr Handle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance native int Handle" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.SearchResultCollection.Handle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によって返されるハンドルを取得、 [IDirectorySearch::ExecuteSearch](http://msdn.microsoft.com/library/default.asp?url=/library/adsi/adsi/idirectorysearch_executesearch.asp)実際の検索を実行するメソッド。 詳細については、次を参照してください。、 [IDirectorySearch::ExecuteSearch](http://msdn.microsoft.com/library/default.asp?url=/library/adsi/adsi/idirectorysearch_executesearch.asp)に MSDN ライブラリの「 [http://msdn.microsoft.com/library](http://msdn.microsoft.com/library)です。</summary>
+        <value>このコレクションが使用する ADS_SEARCH_HANDLE 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.DirectoryServices.DirectorySearcher>このコレクションを作成する呼び出し、 [IDirectorySearch::ExecuteSearch](http://msdn.microsoft.com/library/default.asp?url=/library/adsi/adsi/idirectorysearch_executesearch.asp)メソッドで、クエリの結果をそのオブジェクトを使用できるようにします。 詳細については、次を参照してください。、 [IDirectorySearch::ExecuteSearch](http://msdn.microsoft.com/library/default.asp?url=/library/adsi/adsi/idirectorysearch_executesearch.asp)に MSDN ライブラリの「 [http://msdn.microsoft.com/library](http://msdn.microsoft.com/library)です。  
+  
+ クエリを実行するたびに、そのクエリの結果のハンドルに関連付けられているその<xref:System.DirectoryServices.SearchResultCollection>オブジェクト。 このハンドルは、adsi エディターの検索のハンドルに対応します。 このハンドルは、呼び出されるまでが引き続き発生する、<xref:System.DirectoryServices.SearchResultCollection.Dispose>メソッドを<xref:System.DirectoryServices.SearchResultCollection>オブジェクトを呼び出す必要がありますので<xref:System.DirectoryServices.SearchResultCollection.Dispose>メモリ リークを防ぐためにします。 ガベージ コレクターは、この特定のオブジェクトのメモリを解放しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.DirectoryServices.SearchResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.DirectoryServices.SearchResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.SearchResultCollection.IndexOf(System.DirectoryServices.SearchResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.DirectoryServices.SearchResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">このコレクション内で検索する <see cref="T:System.DirectoryServices.SearchResult" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.DirectoryServices.SearchResult" /> オブジェクトがこのコレクション内で最初に見つかった位置のインデックスを返します。</summary>
+        <returns>最初に一致するオブジェクトの 0 から始まるインデックス。 このコレクションに <see cref="T:System.DirectoryServices.SearchResult" /> オブジェクトと同じメンバーが存在しない場合は、-1 を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.SearchResult this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.SearchResult Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.SearchResultCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.SearchResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得する <see cref="T:System.DirectoryServices.SearchResult" /> オブジェクトの 0 から始まるインデックス番号。</param>
+        <summary>このコレクションの指定したインデックスにある <see cref="T:System.DirectoryServices.SearchResult" /> オブジェクトを取得します。</summary>
+        <value>指定したインデックスにある <see cref="T:System.DirectoryServices.SearchResult" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ C# では、このプロパティは <xref:System.DirectoryServices.SearchResultCollection> クラスのインデクサーです。  
+  
+ JScript では、型によって定義された既定のインデックス付きプロパティを使用することができますが明示的に、自分を定義できません。 ただし、クラスに expando 属性は、既定値を自動的に提供を指定するインデックス付きプロパティの型がオブジェクトのインデックスの種類を使用して<xref:System.String>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertiesLoaded">
+      <MemberSignature Language="C#" Value="public string[] PropertiesLoaded { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] PropertiesLoaded" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.SearchResultCollection.PropertiesLoaded" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検索を実行する前に指定された <see cref="T:System.DirectoryServices.DirectorySearcher" /> プロパティを取得します。</summary>
+        <value>検索を実行する前に <see cref="P:System.DirectoryServices.DirectorySearcher.PropertiesToLoad" /> プロパティのコレクションで指定されたプロパティを含む <see cref="T:System.String" /> 型の配列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.CopyTo">
+      <MemberSignature Language="C#" Value="void ICollection.CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.ICollection.CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.SearchResultCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Array" /> から要素がコピーされる 1 次元の <see cref="T:System.Collections.ICollection" />。 <see cref="T:System.Array" /> には、0 から始まるインデックス番号が必要です。</param>
+        <param name="index">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary><see cref="T:System.Collections.ICollection" /> の要素を <see cref="T:System.Array" /> にコピーします。<see cref="T:System.Array" /> の特定のインデックスからコピーが開始されます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="array" /> が多次元です。  
+  
+ または  
+  
+ コピー元の <see cref="T:System.Collections.ICollection" /> の要素数が、コピー先 <paramref name="array" /> の <paramref name="index" /> から最後までの使用可能領域を超えています。</exception>
+        <exception cref="T:System.InvalidCastException">コピー元の <see cref="T:System.Collections.ICollection" /> の型をコピー先の <paramref name="array" /> の型に自動的にキャストすることはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.IsSynchronized">
+      <MemberSignature Language="C#" Value="bool System.Collections.ICollection.IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.ICollection.IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.SearchResultCollection.System#Collections#ICollection#IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.ICollection" /> へのアクセスが同期されている (スレッド セーフである) かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" /> へのアクセスが同期されている (スレッド セーフである) 場合は <see cref="T:System.Collections.ICollection" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.ICollection.SyncRoot%2A> は、<xref:System.Collections.ICollection> へのアクセスを同期するために使用できるオブジェクトを返します。  
+  
+ 内のほとんどのコレクション クラス、<xref:System.Collections?displayProperty=nameWithType>名前空間も、基になるコレクションをラップする同期されたラッパーを提供する同期メソッドを実装します。  
+  
+ コレクションの列挙は本質的にスレッド セーフな方法です。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。  
+  
+ [Visual Basic、C# の場合]  
+  
+ 次のコード例を使用してコレクションをロックする方法を示しています、<xref:System.Collections.ICollection.SyncRoot%2A>列挙中に。  
+  
+```csharp  
+ICollection myCollection = new ICollection();  
+  lock(myCollection.SyncRoot) {  
+  foreach (Object item in myCollection) {  
+  // Insert your code here.  
+  }  
+ }  
+```  
+  
+```vb  
+Dim myCollection As New ICollection()  
+ Dim item As Object  
+ SyncLock myCollection.SyncRoot  
+  For Each item In myCollection  
+  ' Insert your code here.  
+  Next item  
+ End SyncLock  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.SyncRoot">
+      <MemberSignature Language="C#" Value="object System.Collections.ICollection.SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.ICollection.SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.SearchResultCollection.System#Collections#ICollection#SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.ICollection" /> へのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value><see cref="T:System.Collections.ICollection" /> へのアクセスを同期するために使用できるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基になっているストアがパブリックではないコレクションの場合、現在のインスタンスを返す実装が要求されます。 現在のインスタンスへのポインターできないことがあります。 その他のコレクションをラップするコレクションには十分に注意してください。基になるコレクションを返す必要があります、`SyncRoot`プロパティです。  
+  
+ <xref:System.Collections?displayProperty=nameWithType> 名前空間内のほとんどのコレクション クラスは、`Synchronized` メソッドも実装しています。このメソッドは、基になるコレクションをラップする同期されたラッパーを提供します。 ただし、派生クラスは <xref:System.Collections.ICollection.SyncRoot%2A> プロパティを使って、コレクションの同期されたバージョンを独自に提供できます。 同期されたコードで操作を実行する必要があります、<xref:System.Collections.ICollection.SyncRoot%2A>コレクションの操作は、コレクションのです。 これにより、他のオブジェクトから派生したコレクションを適切に操作できるようになります。 特に、コレクション インスタンスを同時に変更する可能性がある別スレッドとの間で、正常な同期を維持します。  
+  
+ ない場合、`Synchronized`メソッドの使用状況、必要なコレクションを<xref:System.Collections.ICollection.SyncRoot%2A>次に示します。  
+  
+```csharp  
+ICollection MyCollection =...  
+ lock(MyCollection.SyncRoot) {  
+  // Some operation on the collection, which is now thread safe.  
+ }  
+```  
+  
+```vb  
+Dim myCollection as New ICollection()  
+ SyncLock myCollection.SyncRoot  
+  ' Some operation on the collection, which is now thread safe.  
+ End SyncLock  
+```  
+  
+ コレクションの列挙は本質的にスレッド セーフな方法です。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。  
+  
+ [Visual Basic、C# の場合]  
+  
+ 次のコード例を使用してコレクションをロックする方法を示しています、<xref:System.Collections.ICollection.SyncRoot%2A>列挙中に。  
+  
+```csharp  
+ICollection myCollection = new ICollection();  
+ lock(myCollection.SyncRoot) {  
+  foreach (Object item in myCollection) {  
+  // Insert your code here.  
+  }  
+ }  
+```  
+  
+```vb  
+Dim myCollection As New ICollection()  
+ Dim item As Object  
+ SyncLock myCollection.SyncRoot  
+  For Each item In myCollection  
+  ' Insert your code here.  
+  Next item  
+ End SyncLock  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

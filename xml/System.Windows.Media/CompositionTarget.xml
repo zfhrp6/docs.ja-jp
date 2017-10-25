@@ -1,0 +1,148 @@
+<Type Name="CompositionTarget" FullName="System.Windows.Media.CompositionTarget">
+  <TypeSignature Language="C#" Value="public abstract class CompositionTarget : System.Windows.Threading.DispatcherObject, IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit CompositionTarget extends System.Windows.Threading.DispatcherObject implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.CompositionTarget" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Threading.DispatcherObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>アプリケーションの表示サーフェイスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.CompositionTarget>アプリケーションが描画される画面の表面を表すクラスです。 [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] のアニメーション エンジンには、フレームベースのアニメーションを作成するためのさまざまな機能が用意されています。 ただし、これにはフレーム ベースの描画を制御することが必要となるアプリケーションのシナリオがあります。 <xref:System.Windows.Media.CompositionTarget>オブジェクトは、フレームごとのコールバックに基づくカスタム アニメーションを作成する機能を提供します。  
+  
+> [!NOTE]
+>  完全なコード サンプルを使用して、<xref:System.Windows.Media.CompositionTarget>を参照してください[CompositionTarget サンプルを使用して](http://go.microsoft.com/fwlink/?LinkID=160045)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public virtual void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.CompositionTarget.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>破棄<see cref="T:System.Windows.Media.CompositionTarget" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rendering">
+      <MemberSignature Language="C#" Value="public static event EventHandler Rendering;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Rendering" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Media.CompositionTarget.Rendering" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>構成ツリーのオブジェクトがレンダリングされる直前に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.CompositionTarget.Rendering>構成ツリーがアニメーションとレイアウトを適用した後は、イベントを指定されたイベント ハンドラーにルーティングします。  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Media.CompositionTarget.Rendering>中にイベントが発生した、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]レンダリング処理します。 次の例は、登録する方法を示しています、 <xref:System.EventHandler> 、静的なデリゲート<xref:System.Windows.Media.CompositionTarget.Rendering>メソッド<xref:System.Windows.Media.CompositionTarget>です。  
+  
+ [!code-csharp[CompositionTargetSample#CompositionTarget1](~/samples/snippets/csharp/VS_Snippets_Wpf/CompositionTargetSample/CSharp/Window1.xaml.cs#compositiontarget1)]
+ [!code-vb[CompositionTargetSample#CompositionTarget1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CompositionTargetSample/visualbasic/window1.xaml.vb#compositiontarget1)]  
+  
+ 描画イベント ハンドラーを使用すると、カスタムの描画コンテンツを作成します。 このイベント ハンドラーは、フレームごとに 1 回呼び出されます。 ごとに[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]マーシャ リング コンポジション ツリーで、イベント ハンドラーに間でのビジュアル ツリー内の永続化された描画データと呼びます。 さらに、更新の強制実行構成ツリーがビジュアル ツリーの変更、されても、イベント ハンドラーが呼び出されます。 レイアウトの計算した後、イベント ハンドラーが呼び出されることに注意してください。 ただし、そのレイアウトを表示する前にもう一度計算されますが、イベント ハンドラーでレイアウトを変更することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RootVisual">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Media.Visual RootVisual { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Visual RootVisual" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.CompositionTarget.RootVisual" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Visual</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、ルートのビジュアル、<see cref="T:System.Windows.Media.CompositionTarget" />です。</summary>
+        <value>ルート visual、<see cref="T:System.Windows.Media.CompositionTarget" />です。</value>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">ルートを設定するためのビジュアル、<see cref="T:System.Windows.Media.CompositionTarget" />です。 関連付けられた列挙は:<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="TransformFromDevice">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.Media.Matrix TransformFromDevice { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.Matrix TransformFromDevice" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.CompositionTarget.TransformFromDevice" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Matrix</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このターゲットを表示先のデバイスからの座標に変換するために使用する行列を取得します。</summary>
+        <value>変換行列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransformToDevice">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.Media.Matrix TransformToDevice { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.Matrix TransformToDevice" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.CompositionTarget.TransformToDevice" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Matrix</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>レンダリング先デバイスには、このターゲットからの座標に変換するために使用できる行列を取得します。</summary>
+        <value>変換行列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

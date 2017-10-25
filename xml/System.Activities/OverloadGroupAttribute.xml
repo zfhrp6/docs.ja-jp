@@ -1,0 +1,106 @@
+<Type Name="OverloadGroupAttribute" FullName="System.Activities.OverloadGroupAttribute">
+  <TypeSignature Language="C#" Value="public sealed class OverloadGroupAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OverloadGroupAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.OverloadGroupAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property, AllowMultiple=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>あるアクティビティ内で有効である引数の組み合わせを示すメソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数の引数をグループ化して、有効なオーバーロード グループを形成できます。 オーバーロード グループを別のオーバーロード グループのサブセットまたは等価セットにすることはできません。 このルールの唯一の例外は、<xref:System.Activities.RuntimeArgument.IsRequired%2A> が `false` である引数だけを格納しているサブセットです。 複数のオーバーロード グループが重なることはできます。しかし、一方か両方のオーバーロード グループの必須引数すべてがグループの積集合に含まれると、エラーになります。  
+  
+ オーバーロード グループ内の <xref:System.Activities.RuntimeArgument.IsRequired%2A> 引数すべてがバインドされている場合、そのグループはバインドされていると見なされます。 グループに <xref:System.Activities.RuntimeArgument.IsRequired%2A> 引数がなく、1 つ以上の引数がバインドされている場合、そのグループはバインドされていると見なされます。 複数あるグループのうち、1 つもバインドされていない場合は、エラーになります。ただし、1 つのオーバーロード グループに <xref:System.Activities.RuntimeArgument.IsRequired%2A> 引数が 1 つもない場合を除きます。 複数のオーバーロード グループの <xref:System.Activities.RuntimeArgument.IsRequired%2A> 引数をバインドすることはできません。 複数のオーバーロード グループをバインドすることはできません。つまり、1 つのオーバーロード グループの必須引数すべてをバインドしているのに加えて、別のオーバーロード グループのいずれかの引数もバインドしている場合は、エラーになります。  
+  
+ これまで説明したルールのいずれかに違反する場合、格納する側のアクティビティが実行に向けて準備されると、<xref:System.Activities.InvalidWorkflowException> がスローされます。  
+  
+ <xref:System.Activities.RuntimeArgument.IsRequired%2A?displayProperty=nameWithType>に設定されている`true`場合、<xref:System.Activities.RequiredArgumentAttribute?displayProperty=nameWithType>引数に適用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OverloadGroupAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.OverloadGroupAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Activities.OverloadGroupAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OverloadGroupAttribute (string groupName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string groupName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.OverloadGroupAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="groupName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="groupName">引数グループの名前。</param>
+        <summary><see cref="T:System.Activities.OverloadGroupAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GroupName">
+      <MemberSignature Language="C#" Value="public string GroupName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string GroupName" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.OverloadGroupAttribute.GroupName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Activities.OverloadGroupAttribute" /> の名前を取得します。</summary>
+        <value>関連する引数グループの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeId">
+      <MemberSignature Language="C#" Value="public override object TypeId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object TypeId" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.OverloadGroupAttribute.TypeId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この属性の一意の識別子を取得します。</summary>
+        <value>この属性の一意の識別子。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,90 @@
+<Type Name="StringFreezingAttribute" FullName="System.Runtime.CompilerServices.StringFreezingAttribute">
+  <TypeSignature Language="C#" Value="public sealed class StringFreezingAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit StringFreezingAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.CompilerServices.StringFreezingAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>使用しないでください。 フリーズする文字列リテラルとを使用してネイティブ イメージを作成、 [Ngen.exe (ネイティブ イメージ ジェネレーター)](~/docs/framework/tools/ngen-exe-native-image-generator.md)です。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Runtime.CompilerServices.StringFreezingAttribute>クラスは、.NET Framework version 3.5 で廃止されて Service Pack 1 (SP1) およびそれ以降のバージョン。  
+  
+ 固定された文字列は、マネージ ヒープと互換性がしてによるネイティブ イメージにシリアル化されたを文字列リテラル オブジェクト、 [Ngen.exe (ネイティブ イメージ ジェネレーター)](~/docs/framework/tools/ngen-exe-native-image-generator.md)です。  <xref:System.Runtime.CompilerServices.StringFreezingAttribute>属性では、実行時ではなく、ネイティブ イメージの生成中に、文字列リテラルを事前に割り当てることによって、コードを最適化することができます。  文字列リテラルが固定された後、ネイティブ イメージからアドレスを使用して、文字列を参照してください単にコードことができます。  
+  
+ <xref:System.Runtime.CompilerServices.StringFreezingAttribute>アセンブリ レベルで適用する必要があります。  
+  
+ 共通言語ランタイム (CLR) が、ヒープ内のオブジェクトが固定された文字列を参照してくださいため固定文字列を持つ任意のネイティブ イメージをアンロードできませんに注意してください。  したがって、使用する必要があります、<xref:System.Runtime.CompilerServices.StringFreezingAttribute>固定文字列を含むネイティブ イメージが高い共有されている場合にのみクラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例を適用する方法を示しています、<xref:System.Runtime.CompilerServices.StringFreezingAttribute>アセンブリにします。  
+  
+ [!code-csharp[Runtime.CompilerServices.StringFreezingAttribute#1](~/samples/snippets/csharp/VS_Snippets_CLR/Runtime.CompilerServices.StringFreezingAttribute/cs/example.cs#1)]
+ [!code-vb[Runtime.CompilerServices.StringFreezingAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Runtime.CompilerServices.StringFreezingAttribute/vb/example.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StringFreezingAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.StringFreezingAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.CompilerServices.StringFreezingAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を適用する方法を示しています、<xref:System.Runtime.CompilerServices.StringFreezingAttribute>アセンブリにします。  
+  
+ [!code-csharp[Runtime.CompilerServices.StringFreezingAttribute#1](~/samples/snippets/csharp/VS_Snippets_CLR/Runtime.CompilerServices.StringFreezingAttribute/cs/example.cs#1)]
+ [!code-vb[Runtime.CompilerServices.StringFreezingAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Runtime.CompilerServices.StringFreezingAttribute/vb/example.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

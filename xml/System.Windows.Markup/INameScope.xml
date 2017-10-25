@@ -1,0 +1,125 @@
+<Type Name="INameScope" FullName="System.Windows.Markup.INameScope">
+  <TypeSignature Language="C#" Value="public interface INameScope" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract INameScope" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.INameScope" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>特定の XAML 名前スコープ内で要素の名前にアクセスする方法、およびその XAML 名前スコープ内で名前の一意性を確保する方法のコントラクトを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、テンプレートを使って再利用するか、比喩を延期するものでは子要素を持つクラスで実装されます。 テンプレート、ファクトリと類似したコンストラクトには、主要なオブジェクト グラフから切り離し、XAML のルートを一意の XAML 名前スコープがある場合があります。 ここでの原則は、ことはないはずの名前の衝突の DOM 操作および名前の識別子に依存する XAML の参照方法は、各 XAML 名前スコープの名前の一意性に依存できるように、それらの子要素から作成されたオブジェクトは、アプリケーションのオブジェクト グラフを導入するときにします。  
+  
+ .NET Framework の以前のバージョンでは、このインターフェイスは、WPF 固有の WindowsBase アセンブリに存在します。 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、<xref:System.Windows.Markup.INameScope>は System.Xaml アセンブリにします。 詳細については、次を参照してください。 [WPF から System.Xaml に移行した型](~/docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)です。  
+  
+## <a name="wpf-usage-notes"></a>WPF の使用上の注意  
+ このインターフェイスは、WPF クラスによって実装<xref:System.Windows.NameScope>です。 ほとんどの XAML 名前スコープ操作で[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]を使用して動作<xref:System.Windows.NameScope>情報は、インスタンスがときどき伝えられた内部的を使用して<xref:System.Windows.Markup.INameScope>参照します。  
+  
+ ファクトリを使用してまたは XAML 表現と組み合わせる比喩を延期する WPF クラスの例としては<xref:System.Windows.Style>と<xref:System.Windows.FrameworkTemplate>です。 これらの実装は、通常から使用可能なインターフェイス メソッドの明示的なバージョンに依存、<xref:System.Windows.NameScope>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="FindName">
+      <MemberSignature Language="C#" Value="public object FindName (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object FindName(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.INameScope.FindName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">要求されたオブジェクトの名前の識別子。</param>
+        <summary>指定された識別名を持つオブジェクトを返します。</summary>
+        <returns>見つかった場合はオブジェクト。 返します<see langword="null" />その名前のオブジェクトが見つからなかった場合です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XAML マークアップで有効な名前の文字列に記載されている要件に一致する必要があります[XamlName の文法](~/docs/framework/xaml-services/xamlname-grammar.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterName">
+      <MemberSignature Language="C#" Value="public void RegisterName (string name, object scopedElement);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RegisterName(string name, object scopedElement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.INameScope.RegisterName(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="scopedElement" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="name">登録する名前。</param>
+        <param name="scopedElement">特定の要素を指定した<c>名前</c>を指します。</param>
+        <summary>現在の XAML 名前スコープに指定された名前を登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XAML 名前スコープで重複する名前を指定することはできません。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>重複する名前の登録を許可されていません。 場合、入力<paramref name="name" />XAML 名前スコープのコレクションの内部表現内の既存の要素に既に割り当てられている (と同じである場合でも<paramref name="scopedElement" />)、例外をスローします。  
+  
+ 指定された名前は準拠していない場合、例外がスローも検討[XamlName の文法](~/docs/framework/xaml-services/xamlname-grammar.md)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="UnregisterName">
+      <MemberSignature Language="C#" Value="public void UnregisterName (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void UnregisterName(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.INameScope.UnregisterName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">登録解除する名前。</param>
+        <summary>指定された名前を現在の XAML 名前スコープから登録解除します。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>入力名が存在しない場合は、例外をスローします。  
+  
+ 今後、同じ名前をもう一度登録できるように、名前と XAML 名前スコープのコレクションの表現を参照している登録済みの要素を削除する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

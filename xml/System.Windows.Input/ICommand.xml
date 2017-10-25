@@ -1,0 +1,180 @@
+<Type Name="ICommand" FullName="System.Windows.Input.ICommand">
+  <TypeSignature Language="C#" Value="public interface ICommand" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ICommand" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.ICommand" />
+  <AssemblyInfo>
+    <AssemblyName>System.ObjectModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コマンドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.RoutedCommand>および<xref:System.Windows.Input.RoutedUICommand>の 2 つの実装には、<xref:System.Windows.Input.ICommand>インターフェイスで[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]です。  
+  
+## <a name="icommand-in-windows-runtime-apps"></a>ICommand で Windows ランタイム アプリ  
+ <xref:System.Windows.Input.ICommand>インターフェイスは、Windows ランタイムに関する .NET アプリで記述されているコマンドのコード コントラクト。 これらのコマンドは、Windows ランタイム XAML などの UI 要素のコマンド実行の動作を提供`Button`と具体的には、`AppBarButton`です。 Windows ランタイム アプリ用のコマンドを定義している場合を使用する基本的には、.NET アプリ用のコマンドを定義するのに使用すると同じ手法です。 実装するクラスを定義することで、コマンドを実装する<xref:System.Windows.Input.ICommand>および実装では具体的には、<xref:System.Windows.Input.ICommand.Execute%2A>メソッドです。  
+  
+ Windows ランタイムの XAML をサポートしない x`:Static`を使用しようとしていないため、 `x:Static` Windows ランタイムの XAML からコマンドを使用する場合、マークアップ拡張機能です。 また、XAML 構文を次に示すはインターフェイスを実装して Windows ランタイムの使用状況のコマンドを定義している場合、実際に適用されませんので、Windows ランタイムには定義済みのコマンドのすべてのライブラリはありません。  
+  
+<a name="xamlTextUsage_ICommand"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+ \<*オブジェクト プロパティ*="*predefinedCommandName*"/>  
+  
+ \- または  
+  
+ \<*オブジェクト プロパティ*="*predefinedCommandName.predefinedCommandName*"/>  
+  
+ \- または  
+  
+ \<*オブジェクト プロパティ*="{ *customClassName.customCommandName*}"/>  
+  
+<a name="xamlValues_ICommand"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *predefinedClassName*  
+ 定義済みのコマンド クラスの 1 つ。  
+  
+ *predefinedCommandName*  
+ 定義済みのコマンドのいずれか。  
+  
+ *customClassName*  
+ カスタム コマンドが含まれたカスタム クラス。 カスタム クラスは一般的に必要な`xlmns`プレフィックスのマッピングは、参照してください[XAML 名前空間と WPF XAML 向け Namespace マッピング](~/docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)です。  
+  
+ *customCommandName*  
+ カスタム コマンド。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CanExecute">
+      <MemberSignature Language="C#" Value="public bool CanExecute (object parameter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanExecute(object parameter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.ICommand.CanExecute(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameter" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="parameter">コマンドにより使用されるデータです。  コマンドにデータを渡す必要がない場合は、このオブジェクトを <see langword="null" /> に設定できます。</param>
+        <summary>現在の状態でコマンドが実行可能かどうかを決定するメソッドを定義します。</summary>
+        <returns>
+          このコマンドを実行できる場合は、<see langword="true" />。それ以外の場合は、<see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コマンド ソースが通常は、呼び出し、<xref:System.Windows.Input.ICommand.CanExecute%2A>メソッドと、<xref:System.Windows.Input.ICommand.CanExecuteChanged>イベントが発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanExecuteChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler CanExecuteChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler CanExecuteChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Input.ICommand.CanExecuteChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンドを実行するかどうかに影響するような変更があった場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常は、コマンド ソースが呼び出す<xref:System.Windows.Input.ICommand.CanExecute%2A>でこのイベントが発生したときにコマンド。  
+  
+ 通常は、コマンドを実行できない場合コマンド ソース無効になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="public void Execute (object parameter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Execute(object parameter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.ICommand.Execute(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameter" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="parameter">コマンドにより使用されるデータです。  コマンドにデータを渡す必要がない場合は、このオブジェクトを <see langword="null" /> に設定できます。</param>
+        <summary>コマンドが起動される際に呼び出すメソッドを定義します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

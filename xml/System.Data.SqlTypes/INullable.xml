@@ -1,0 +1,91 @@
+<Type Name="INullable" FullName="System.Data.SqlTypes.INullable">
+  <TypeSignature Language="C#" Value="public interface INullable" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract INullable" />
+  <TypeSignature Language="DocId" Value="T:System.Data.SqlTypes.INullable" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.SqlClient</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>すべての<see cref="N:System.Data.SqlTypes" />オブジェクトおよび構造体の実装、<see langword="INullable" />インターフェイスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `SqlTypes`null 値が含まれてし、null 値を評価するためにデータベース セマンティクスを使用できます。 Null 値は、データベースで、不明または不足している値を示すために使用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="IsNull">
+      <MemberSignature Language="C#" Value="public bool IsNull { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNull" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlTypes.INullable.IsNull" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>構造体が null かどうかを示します。 このプロパティは読み取り専用です。</summary>
+        <value>
+          <see cref="T:System.Data.SqlTypes.SqlBoolean" />
+          <see langword="true" />このオブジェクトの値が null の場合は。 それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 任意の <xref:System.Data.SqlTypes> インスタンスの既定値は NULL です。 使用して<xref:System.Data.SqlTypes.INullable.IsNull%2A>プロパティを null 値をテストします。  
+  
+   
+  
+## Examples  
+ 次のコード サンプルでは、<xref:System.Data.DataTable> および <xref:System.Data.SqlTypes.SqlInt32> として定義される 2 つの列を持つ <xref:System.Data.SqlTypes.SqlString> が作成されます。 このコードでは既知の値の行が 1 行、NULL 値の行が 1 行追加され、<xref:System.Data.DataTable> を通じて反復処理されます。これにより値が変数に割り当てられ、コンソール ウィンドウに出力が表示されます。  
+  
+ [!code-csharp[DataWorks SqlTypes.IsNull#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlTypes.IsNull/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlTypes.IsNull#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlTypes.IsNull/VB/source.vb#1)]  
+  
+ この例を実行すると、次の結果が表示されます。  
+  
+```  
+isColumnNull=False, ID=123, Description=Side Mirror  
+isColumnNull=True, ID=Null, Description=Null  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,149 @@
+<Type Name="EnterpriseServicesHelper" FullName="System.Runtime.Remoting.Services.EnterpriseServicesHelper">
+  <TypeSignature Language="C#" Value="public sealed class EnterpriseServicesHelper" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EnterpriseServicesHelper extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Services.EnterpriseServicesHelper" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>通信および外部のアンマネージ クラスを操作に必要な Api を提供、<see cref="T:System.AppDomain" />です。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  このクラスは、リンク確認要求を使用します。 SecurityException は直前の呼び出し元がインフラストラクチャのアクセス許可を持たない場合にスローされます。 参照してください[リンク確認要求](~/docs/framework/misc/link-demands.md)詳細についてはします。  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EnterpriseServicesHelper ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Services.EnterpriseServicesHelper.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Runtime.Remoting.Services.EnterpriseServicesHelper" /> のインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateConstructionReturnMessage">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.Activation.IConstructionReturnMessage CreateConstructionReturnMessage (System.Runtime.Remoting.Activation.IConstructionCallMessage ctorMsg, MarshalByRefObject retObj);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.Activation.IConstructionReturnMessage CreateConstructionReturnMessage(class System.Runtime.Remoting.Activation.IConstructionCallMessage ctorMsg, class System.MarshalByRefObject retObj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Services.EnterpriseServicesHelper.CreateConstructionReturnMessage(System.Runtime.Remoting.Activation.IConstructionCallMessage,System.MarshalByRefObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Activation.IConstructionReturnMessage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ctorMsg" Type="System.Runtime.Remoting.Activation.IConstructionCallMessage" />
+        <Parameter Name="retObj" Type="System.MarshalByRefObject" />
+      </Parameters>
+      <Docs>
+        <param name="ctorMsg">元のオブジェクトを構築呼び出し、新しい<see cref="T:System.Runtime.Remoting.Messaging.ReturnMessage" />インスタンスが返されています。</param>
+        <param name="retObj">A<see cref="T:System.Runtime.Remoting.ObjRef" />でコンストラクション呼び出しで構築されたオブジェクトを表す<c>ctorMsg</c>です。</param>
+        <summary>構築、<see cref="T:System.Runtime.Remoting.Messaging.ReturnMessage" />から、指定した<see cref="T:System.Runtime.Remoting.Activation.IConstructionCallMessage" />です。</summary>
+        <returns>A<see cref="T:System.Runtime.Remoting.Activation.IConstructionReturnMessage" />で指定されているコンストラクション呼び出しから返される、<paramref name="ctorMsg" />パラメーター。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SwitchWrappers">
+      <MemberSignature Language="C#" Value="public static void SwitchWrappers (System.Runtime.Remoting.Proxies.RealProxy oldcp, System.Runtime.Remoting.Proxies.RealProxy newcp);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SwitchWrappers(class System.Runtime.Remoting.Proxies.RealProxy oldcp, class System.Runtime.Remoting.Proxies.RealProxy newcp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Services.EnterpriseServicesHelper.SwitchWrappers(System.Runtime.Remoting.Proxies.RealProxy,System.Runtime.Remoting.Proxies.RealProxy)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldcp" Type="System.Runtime.Remoting.Proxies.RealProxy" />
+        <Parameter Name="newcp" Type="System.Runtime.Remoting.Proxies.RealProxy" />
+      </Parameters>
+      <Docs>
+        <param name="oldcp">CCW によって参照されるクラスの古いインスタンスを表すプロキシ。</param>
+        <param name="newcp">CCW が参照されているクラスの新しいインスタンスを表すプロキシ。</param>
+        <summary>スイッチ、 [COM 呼び出し可能ラッパー](~/docs/framework/interop/com-callable-wrapper.md) (CCW)、同じクラスの別のインスタンスにクラスの 1 つのインスタンスから。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!CAUTION]
+>  このメソッドは、望ましくない動作を起こすことができます。 これを呼び出す前に、ユーザー必要がありますを確認、スレッド セーフである操作であることを呼び出しできませんされているが行われる、CCW クラスのインスタンスのいずれかに。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">即時呼び出し元には、UnmanagedCode アクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す必要なアクセス許可。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="WrapIUnknownWithComObject">
+      <MemberSignature Language="C#" Value="public static object WrapIUnknownWithComObject (IntPtr punk);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object WrapIUnknownWithComObject(native int punk) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Services.EnterpriseServicesHelper.WrapIUnknownWithComObject(System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="punk" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="punk">ポインター、<see langword="IUnknown" />をラップする COM インターフェイスです。</param>
+        <summary>指定したラップ<see langword="IUnknown" />の COM インターフェイスが、[ランタイム呼び出し可能ラッパー](~/docs/framework/interop/runtime-callable-wrapper.md) (RCW)。</summary>
+        <returns>RCW を指定した<see langword="IUnknown" />ラップされます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Remoting.Services.EnterpriseServicesHelper.WrapIUnknownWithComObject%2A>メソッドがに似ていますが、<xref:System.Runtime.InteropServices.Marshal.GetObjectForIUnknown%2A?displayProperty=nameWithType>メソッド、アンマネージ オブジェクトの id を維持するためには行われませんが、します。 同じ 2 つの呼び出しなど、 `IUnknown` 、現在のメソッドに次の 2 つの異なる Rcw が 2 つの呼び出しを返す、<xref:System.Runtime.InteropServices.Marshal.GetObjectForIUnknown%2A>を同じメソッド`IUnknown`同じ RCW を返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">即時呼び出し元には、UnmanagedCode アクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す必要なアクセス許可。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

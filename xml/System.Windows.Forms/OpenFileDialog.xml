@@ -1,0 +1,323 @@
+<Type Name="OpenFileDialog" FullName="System.Windows.Forms.OpenFileDialog">
+  <TypeSignature Language="C#" Value="public sealed class OpenFileDialog : System.Windows.Forms.FileDialog" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OpenFileDialog extends System.Windows.Forms.FileDialog" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.OpenFileDialog" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.FileDialog</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ユーザーにファイルを開けるように指示するダイアログ ボックスを表示します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスを使用すると、ファイルが存在するかどうかを確認しを開きます。 <xref:System.Windows.Forms.OpenFileDialog.ShowReadOnly%2A>プロパティは読み取り専用チェック ボックスを表示 ダイアログ ボックスであるかどうかを決定します。 <xref:System.Windows.Forms.OpenFileDialog.ReadOnlyChecked%2A>プロパティは読み取り専用 チェック ボックスをオンになっているかどうかを示します。  
+  
+ このクラスでのコア機能のほとんどの<xref:System.Windows.Forms.FileDialog>クラスです。  
+  
+ ユーザー ファイルの代わりにフォルダーを選択して、使用する機能を提供する場合<xref:System.Windows.Forms.FolderBrowserDialog>代わりにします。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Windows.Forms.OpenFileDialog>ファイル拡張子フィルターとダイアログ動作を定義するいくつかのプロパティを設定、およびダイアログ ボックスを使用して、表示、<xref:System.Windows.Forms.CommonDialog.ShowDialog%2A?displayProperty=nameWithType>メソッドです。 フォームでは、<xref:System.Windows.Forms.Button>への参照で、<xref:System.IO>名前空間を追加します。  
+  
+ [!code-cpp[Classic OpenFileDialog Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic OpenFileDialog Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic OpenFileDialog Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic OpenFileDialog Example/CS/source.cs#1)]
+ [!code-vb[Classic OpenFileDialog Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic OpenFileDialog Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OpenFileDialog ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.OpenFileDialog.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Windows.Forms.OpenFileDialog" /> クラスのインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、既定のコンス トラクターをコンパイラが指定した、<xref:System.Windows.Forms.OpenFileDialog>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckFileExists">
+      <MemberSignature Language="C#" Value="public override bool CheckFileExists { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CheckFileExists" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.OpenFileDialog.CheckFileExists" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>存在しないファイルの名前をユーザーが指定した場合に、ダイアログ ボックスが警告を表示するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          存在しないファイルの名前をユーザーが指定した場合にダイアログ ボックスが警告を表示する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は <see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Multiselect">
+      <MemberSignature Language="C#" Value="public bool Multiselect { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Multiselect" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.OpenFileDialog.Multiselect" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ダイアログ ボックスで複数のファイルを選択できるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          ダイアログ ボックスで複数のファイルを同時に選択できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.FileDialog.FileNames%2A>プロパティの完全な一覧にアクセスするには、ファイル名が選択されています。  
+  
+   
+  
+## Examples  
+ 次のコード例には、イメージの数を選択し、表示でそれらをできます<xref:System.Windows.Forms.PictureBox>フォーム上のコントロールです。 初期化を示しています、 <xref:System.Windows.Forms.OpenFileDialog>、設定、<xref:System.Windows.Forms.FileDialog.Title%2A>と<xref:System.Windows.Forms.FileDialog.Filter%2A>プロパティ、およびユーザーが設定して複数のファイルを選択できるように、<xref:System.Windows.Forms.OpenFileDialog.Multiselect%2A>プロパティを true にします。 このコード例では、フォームが既に持っている、<xref:System.Windows.Forms.OpenFileDialog>という名前のコントロール`openFileDialog1`、<xref:System.Windows.Forms.Button>という名前`SelectFileButton`、および<xref:System.Windows.Forms.FlowLayoutPanel>という`flowLayoutPanel1`です。  
+  
+ [!code-csharp[System.Windows.Forms.OpenFileDialog.MultiSelect#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.OpenFileDialog.MultiSelect/CS/Form1.cs#1)]
+ [!code-vb[System.Windows.Forms.OpenFileDialog.MultiSelect#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.OpenFileDialog.MultiSelect/VB/Form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenFile">
+      <MemberSignature Language="C#" Value="public System.IO.Stream OpenFile ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Stream OpenFile() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.OpenFileDialog.OpenFile" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ユーザーが選択したファイルを読み取り専用で開きます。 このファイルは、<see cref="P:System.Windows.Forms.FileDialog.FileName" /> プロパティで指定されます。</summary>
+        <returns>ユーザーが選択した読み取り専用ファイルを指定する <see cref="T:System.IO.Stream" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A>メソッドを使用してすばやくファイルを開く ダイアログ ボックスからの機能を提供します。 セキュリティの目的での読み取り専用モードで、ファイルが開きます。 読み取り/書き込みモードでファイルを開く場合に行う必要があります、別の方法など、<xref:System.IO.FileStream>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> メソッドの使用方法を示します。  
+  
+ [!code-cpp[Classic OpenFileDialog Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic OpenFileDialog Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic OpenFileDialog Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic OpenFileDialog Example/CS/source.cs#1)]
+ [!code-vb[Classic OpenFileDialog Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic OpenFileDialog Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">ファイル名が<see langword="null" />です。</exception>
+        <permission cref="T:System.Security.Permissions.FileDialogPermission">ファイルを開きます。 関連する列挙値:<see cref="F:System.Security.Permissions.FileDialogPermissionAccess.Open" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadOnlyChecked">
+      <MemberSignature Language="C#" Value="public bool ReadOnlyChecked { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReadOnlyChecked" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.OpenFileDialog.ReadOnlyChecked" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>読み取り専用チェック ボックスがオンかオフかを示す値を取得または設定します。</summary>
+        <value>
+          読み取り専用チェック ボックスがオンの場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.OpenFileDialog.ReadOnlyChecked%2A>状態では、読み取り/書き込みモードには影響しませんを<xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A?displayProperty=nameWithType>を使用して、ダイアログ ボックスで選択されたファイルを開きます。 <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A>読み取り専用モードで、ファイルが常に開きます。  
+  
+ <xref:System.Windows.Forms.OpenFileDialog.ShowReadOnly%2A>読み取り専用 チェック ボックス ダイアログ ボックスに表示される順序で前にプロパティを設定する必要があります。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Windows.Forms.OpenFileDialog.ReadOnlyChecked%2A>プロパティです。 この例は、<xref:System.Windows.Forms.OpenFileDialog>ボックスに、<xref:System.Windows.Forms.OpenFileDialog.ShowReadOnly%2A>プロパティに設定`true`です。 ユーザーが読み取り専用モードでファイルを開くためのオプションをクリックすると、<xref:System.Windows.Forms.OpenFileDialog.ReadOnlyChecked%2A>にプロパティが評価される`true`、および<xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A>メソッドを使用してファイルを開きます。 それ以外の場合、<xref:System.IO.FileStream>クラスは、ファイルを開く、読み取り/書き込みモードで使用します。  
+  
+ [!code-cpp[DlgOpenFileReadOnly#1](~/samples/snippets/cpp/VS_Snippets_Winforms/DlgOpenFileReadOnly/CPP/form1.cpp#1)]
+ [!code-csharp[DlgOpenFileReadOnly#1](~/samples/snippets/csharp/VS_Snippets_Winforms/DlgOpenFileReadOnly/CS/form1.cs#1)]
+ [!code-vb[DlgOpenFileReadOnly#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/DlgOpenFileReadOnly/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public override void Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.OpenFileDialog.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてのプロパティを既定値にリセットします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SafeFileName">
+      <MemberSignature Language="C#" Value="public string SafeFileName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SafeFileName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.OpenFileDialog.SafeFileName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ダイアログ ボックスで選択されたファイルのファイル名と拡張子を取得します。 ファイル名にはパスは含まれません。</summary>
+        <value>ダイアログ ボックスで選択されたファイルのファイル名と拡張子。 ファイル名にはパスは含まれません。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ (ファイル名とパスを持たない拡張機能のみ) は、安全なファイル名は、パス情報が公開しないために、アプリケーションのセキュリティを向上させるために使用できます。 このプロパティは、限定的な信頼で実行されるコードにアクセスできる必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SafeFileNames">
+      <MemberSignature Language="C#" Value="public string[] SafeFileNames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] SafeFileNames" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.OpenFileDialog.SafeFileNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ダイアログ ボックスで選択されたすべてのファイルのファイル名と拡張子の配列を取得します。 ファイル名にはパスは含まれません。</summary>
+        <value>ダイアログ ボックスで選択されたすべてのファイルのファイル名と拡張子の配列。 ファイル名にはパスは含まれません。 ファイルが 1 つも選択されていない場合は、空の配列が返されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ (ファイル名とパスを持たない拡張機能のみ) は、安全なファイル名は、パス情報が公開しないために、アプリケーションのセキュリティを向上させるために使用できます。 このプロパティは、限定的な信頼で実行されるコードにアクセスできる必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowReadOnly">
+      <MemberSignature Language="C#" Value="public bool ShowReadOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.OpenFileDialog.ShowReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ダイアログ ボックスに読み取り専用チェック ボックスが表示されているかどうかを示す値を取得または設定します。</summary>
+        <value>
+          ダイアログ ボックスに読み取り専用チェック ボックスが表示されている場合は <see langword="true" />。それ以外の場合は<see langword="false" />。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Windows.Forms.OpenFileDialog.ShowReadOnly%2A>プロパティです。 この例は、<xref:System.Windows.Forms.OpenFileDialog>ボックスに、<xref:System.Windows.Forms.OpenFileDialog.ShowReadOnly%2A>プロパティに設定`true`です。 ユーザーが読み取り専用モードでファイルを開くためのオプションをクリックすると、<xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A>メソッドを使用してファイルを開きます。 それ以外の場合、<xref:System.IO.FileStream>クラスは、ファイルを開く、読み取り/書き込みモードで使用します。  
+  
+ [!code-cpp[DlgOpenFileReadOnly#1](~/samples/snippets/cpp/VS_Snippets_Winforms/DlgOpenFileReadOnly/CPP/form1.cpp#1)]
+ [!code-csharp[DlgOpenFileReadOnly#1](~/samples/snippets/csharp/VS_Snippets_Winforms/DlgOpenFileReadOnly/CS/form1.cs#1)]
+ [!code-vb[DlgOpenFileReadOnly#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/DlgOpenFileReadOnly/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

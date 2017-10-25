@@ -1,0 +1,175 @@
+<Type Name="UserTrackPoint" FullName="System.Workflow.Runtime.Tracking.UserTrackPoint">
+  <TypeSignature Language="C#" Value="public sealed class UserTrackPoint" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit UserTrackPoint extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.Tracking.UserTrackPoint" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ルート ワークフロー インスタンスの実行パス内で追跡対象となる、ユーザー イベントに関連付けられたポイントを定義します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ アクティビティ デザイナーまたはワークフロー デザイナーは、ワークフローを使ってデータをユーザー イベントとしてランタイム追跡インフラストラクチャに送出するために、オーバーロードされた <xref:System.Workflow.ComponentModel.Activity.TrackData%2A?displayProperty=nameWithType> メソッドおよび <xref:System.Workflow.ComponentModel.ActivityExecutionContext.TrackData%2A?displayProperty=nameWithType> メソッドを使用する場合があります。 送出されたデータはユーザー データとして参照されます。 アクティビティ ステータス イベントやワークフロー ステータス イベントはステータスが変わった場合にのみ発生しますが、ユーザー イベントはワークフロー内のどの場所でも発生する可能性があります。 ワークフローを使用してユーザー イベントを送出する理由は多数あります。 たとえば、ワークフロー デザイナーがワークフローの進行状況についての論理的な状態情報を伝達する場合や、アクティビティ デザイナーがアクティビティ ステータスの変化以外の時点でアクティビティ メンバーに機会を与える場合があります。  
+  
+ <xref:System.Workflow.Runtime.Tracking.UserTrackPoint> は、ユーザー イベントに関連したルート ワークフロー インスタンスの実行パスにおける、追跡対象のポイントを定義します。 <xref:System.Workflow.Runtime.Tracking.UserTrackPoint> には、照合に含める場所、照合から除外する場所、および追跡ポイントの照合時にワークフロー インスタンスから抽出する追加データが格納されています。 <xref:System.Workflow.Runtime.Tracking.UserTrackPoint> を <xref:System.Workflow.Runtime.Tracking.TrackingProfile.UserTrackPoints%2A?displayProperty=nameWithType> に追加すると、ランタイム追跡インフラストラクチャは追跡ポイントを照合するときに <xref:System.Workflow.Runtime.Tracking.UserTrackingRecord> を追跡サービスに送信します。 ユーザー データは、<xref:System.Workflow.Runtime.Tracking.UserTrackingRecord.UserData%2A?displayProperty=nameWithType> で返されます。 単一の <xref:System.Workflow.Runtime.Tracking.UserTrackPoint> は、ワークフロー インスタンスの複数のポイントで照合できます。  
+  
+ <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> には、ワークフロー インスタンスの実行パスにおけるユーザー イベントに関連した場所についての一致条件が格納されます。 <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> オブジェクトを <xref:System.Workflow.Runtime.Tracking.UserTrackPoint.MatchingLocations%2A> に追加して、追跡ポイントの照合に含める場所を定義できます。 同様に、<xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> オブジェクトを <xref:System.Workflow.Runtime.Tracking.UserTrackPoint.ExcludedLocations%2A> に追加して、追跡ポイントの照合から除外する場所を定義できます。  
+  
+ <xref:System.Workflow.Runtime.Tracking.ActivityDataTrackingExtract> オブジェクトと <xref:System.Workflow.Runtime.Tracking.WorkflowDataTrackingExtract> オブジェクトを <xref:System.Workflow.Runtime.Tracking.UserTrackPoint.Extracts%2A> に追加して、追跡ポイントと一致するときにワークフロー インスタンスから抽出するデータを指定します。 抽出されたデータは <xref:System.Workflow.Runtime.Tracking.UserTrackingRecord.Body%2A?displayProperty=nameWithType> で返されます。  
+  
+ <xref:System.Workflow.Runtime.Tracking.UserTrackPoint.Annotations%2A> に追加することによって、追跡ポイントに関連付ける追加情報を指定できます。 これらの注釈は <xref:System.Workflow.Runtime.Tracking.UserTrackPoint.Annotations%2A?displayProperty=nameWithType> で返されます。  
+  
+ このクラスを使用する方法の例は、次を参照してください。、[追跡を使用したユーザー追跡ポイント サンプル](http://msdn.microsoft.com/en-us/d894a18a-a4c6-467e-9a42-8be025ecd4d5)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UserTrackPoint ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.UserTrackPoint.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.Tracking.UserTrackPoint" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のコンストラクターは、空の追跡ポイントを初期化します。 一致する場所、除外する場所、データの抽出、または注釈は指定されません。 1 つ以上の <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> を <xref:System.Workflow.Runtime.Tracking.UserTrackPoint.MatchingLocations%2A> に追加して、追跡ポイントを構成する必要があります。 さらに、オプションで、適切なオブジェクトを <xref:System.Workflow.Runtime.Tracking.UserTrackPoint.ExcludedLocations%2A>、<xref:System.Workflow.Runtime.Tracking.UserTrackPoint.Extracts%2A> および <xref:System.Workflow.Runtime.Tracking.UserTrackPoint.Annotations%2A> に追加することもできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Annotations">
+      <MemberSignature Language="C#" Value="public System.Workflow.Runtime.Tracking.TrackingAnnotationCollection Annotations { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.Runtime.Tracking.TrackingAnnotationCollection Annotations" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.UserTrackPoint.Annotations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.Tracking.TrackingAnnotationCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>追跡ポイントに関連付けられている注釈のコレクションを取得します。</summary>
+        <value><see cref="T:System.Workflow.Runtime.Tracking.TrackingAnnotationCollection" /> 既定値は空のコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.UserTrackPoint.Annotations%2A> に追加することによって、追跡ポイントの照合時に <xref:System.Workflow.Runtime.Tracking.UserTrackPoint.Annotations%2A?displayProperty=nameWithType> で返す注釈を指定できます。 <xref:System.Workflow.Runtime.Tracking.UserTrackPoint.Annotations%2A> が空の場合は、追跡ポイントに注釈が関連付けられていません。  
+  
+ 注釈は、追跡ポイントに関連付けられている情報が含まれているユーザー定義の `strings` です。 たとえば、注釈には、この追跡ポイントからのワークフローの実行パスに関する情報を含めたり、ユーザー インターフェイスに表示する情報を含めたりできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExcludedLocations">
+      <MemberSignature Language="C#" Value="public System.Workflow.Runtime.Tracking.UserTrackingLocationCollection ExcludedLocations { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.Runtime.Tracking.UserTrackingLocationCollection ExcludedLocations" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.UserTrackPoint.ExcludedLocations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.Tracking.UserTrackingLocationCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ランタイム追跡インフラストラクチャによる追跡ポイントに含めない場所のコレクションを取得します。</summary>
+        <value>追跡ポイントに含めるべきでない場所を指定する <see cref="T:System.Workflow.Runtime.Tracking.UserTrackingLocationCollection" />。 既定値は空のコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> 内のいずれかの <xref:System.Workflow.Runtime.Tracking.UserTrackPoint.ExcludedLocations%2A> オブジェクトが特定のユーザー イベントに関して照合される場合、追跡ポイントは照合されず、<xref:System.Workflow.Runtime.Tracking.UserTrackingRecord> は追跡サービスに送られません。 <xref:System.Workflow.Runtime.Tracking.UserTrackPoint.ExcludedLocations%2A> が空の場合は、除外された場所はありません。  
+  
+ ランタイム追跡インフラストラクチャによる追跡に含めない特定の場所を指定するために、<xref:System.Workflow.Runtime.Tracking.UserTrackPoint.ExcludedLocations%2A> を使用できます。 たとえば、追跡ポイントによって追跡される場所をより正確に選定するために、<xref:System.Workflow.Runtime.Tracking.UserTrackPoint.MatchingLocations%2A> で指定された場所のサブセットを除外することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Extracts">
+      <MemberSignature Language="C#" Value="public System.Workflow.Runtime.Tracking.ExtractCollection Extracts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.Runtime.Tracking.ExtractCollection Extracts" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.UserTrackPoint.Extracts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.Tracking.ExtractCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー インスタンスから抽出して追跡サービスに送る対象のデータを指定するコレクションを取得します。</summary>
+        <value>抽出されて追跡サービスに送られるデータを指定する <see cref="T:System.Workflow.Runtime.Tracking.ExtractCollection" />。 既定値は空のコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追跡ポイントが照合されるとき、ランタイム追跡インフラストラクチャは <xref:System.Workflow.Runtime.Tracking.UserTrackingRecord> を追跡サービスに送ります。 ユーザー データは、<xref:System.Workflow.Runtime.Tracking.UserTrackingRecord.UserData%2A?displayProperty=nameWithType> で返されます。 また、ランタイム追跡インフラストラクチャは、<xref:System.Workflow.Runtime.Tracking.UserTrackPoint.Extracts%2A> に指定されたデータをワークフロー インスタンスから抽出して、それを <xref:System.Workflow.Runtime.Tracking.UserTrackingRecord> で送ることもできます。 抽出されたデータは <xref:System.Workflow.Runtime.Tracking.TrackingDataItem> レコード内にカプセル化され、<xref:System.Workflow.Runtime.Tracking.UserTrackingRecord.Body%2A?displayProperty=nameWithType> で返されます。  
+  
+ ユーザー イベントに関連したアクティビティから抽出されるメンバー データを指定するために、<xref:System.Workflow.Runtime.Tracking.ActivityDataTrackingExtract> オブジェクトを <xref:System.Workflow.Runtime.Tracking.UserTrackPoint.Extracts%2A> に追加できます。また、ワークフローのルート アクティビティから抽出されるメンバー データを指定するために、<xref:System.Workflow.Runtime.Tracking.WorkflowDataTrackingExtract> オブジェクトを <xref:System.Workflow.Runtime.Tracking.UserTrackPoint.Extracts%2A> に追加できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MatchingLocations">
+      <MemberSignature Language="C#" Value="public System.Workflow.Runtime.Tracking.UserTrackingLocationCollection MatchingLocations { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.Runtime.Tracking.UserTrackingLocationCollection MatchingLocations" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.UserTrackPoint.MatchingLocations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.Tracking.UserTrackingLocationCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ランタイム追跡インフラストラクチャによる追跡ポイントの照合に含めるべき場所のコレクションを取得します。</summary>
+        <value>追跡ポイントの照合の対象となる場所を指定する <see cref="T:System.Workflow.Runtime.Tracking.UserTrackingLocationCollection" />。 既定値は空のコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.UserTrackPoint.MatchingLocations%2A> が空の場合は、ランタイム追跡インフラストラクチャで追跡ポイントを照合できません。 <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> を一致させるには、1 つ以上の <xref:System.Workflow.Runtime.Tracking.UserTrackPoint.MatchingLocations%2A> を <xref:System.Workflow.Runtime.Tracking.UserTrackPoint> に追加する必要があります。  
+  
+ 追跡ポイントが照合されるのは、<xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> 内のいずれかの <xref:System.Workflow.Runtime.Tracking.UserTrackPoint.MatchingLocations%2A> オブジェクトが照合され、しかも <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> 内の <xref:System.Workflow.Runtime.Tracking.UserTrackPoint.ExcludedLocations%2A> オブジェクトが 1 つも照合されない場合です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

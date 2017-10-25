@@ -1,0 +1,96 @@
+<Type Name="MTAThreadAttribute" FullName="System.MTAThreadAttribute">
+  <TypeSignature Language="C#" Value="public sealed class MTAThreadAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MTAThreadAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.MTAThreadAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アプリケーションの COM スレッド モデルがマルチスレッド アパートメント (MTA) であることを示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性のエントリ ポイント メソッドに適用 (、 `Main()` c# および Visual Basic でのメソッド)。 他の方法に影響を与えません。 コードで開始するスレッドのアパートメント状態を設定するには、使用、<xref:System.Threading.Thread.SetApartmentState%2A?displayProperty=nameWithType>または<xref:System.Threading.Thread.TrySetApartmentState%2A?displayProperty=nameWithType>スレッドを開始する前にメソッドです。  
+  
+> [!NOTE]
+>  COM スレッド モデルの概要については、次を参照してください。 [COM スレッド モデルを使用すると理解](http://msdn.microsoft.com/library/ms809971.aspx)です。  
+  
+ COM スレッド モデルは、COM 相互運用機能を使用するアプリケーションにのみ適用されます。 COM スレッド モデルは、シングル スレッド アパートメントまたはマルチ スレッド アパートメントを設定できます。 スレッドが実際には、COM コンポーネントへの呼び出しを行う場合、アプリケーション スレッドは COM 相互運用機能の初期化だけです。 COM 相互運用機能を使用しないかどうかは、スレッドが初期化されていないと、<xref:System.MTAThreadAttribute>属性に、それが存在する場合も何も起こりません。  
+  
+ 以降、.NET Framework version 2.0 では、スレッド COM 相互運用のモデルの既定値は、次の表に示すようにアプリケーションを開発している言語に依存します。  
+  
+|言語|COM アパートメント モデル|  
+|--------------|-------------------------|  
+|C#|マルチ スレッド アパートメント|  
+|C++|マルチ スレッド アパートメント|  
+|Visual Basic|シングル スレッド アパートメント|  
+  
+ 使用するこれらの既定値を変更するには<xref:System.MTAThreadAttribute>アプリケーション、または呼び出しのスレッド モデルを設定する属性を<xref:System.Threading.Thread.SetApartmentState%2A?displayProperty=nameWithType>または<xref:System.Threading.Thread.TrySetApartmentState%2A?displayProperty=nameWithType>メソッドを特定のスレッドのスレッド モデルを設定するスレッドを開始する前にします。 C++ では、使用することも、 [/CLRTHREADATTRIBUTE (CLR スレッド属性を設定)](http://msdn.microsoft.com/library/4907e9ef-5031-446c-aecf-0a0b32fae1e8)リンカー オプションをアパートメント モデルを指定します。  
+  
+ 使用する場合も、<xref:System.MTAThreadAttribute>をマルチ スレッドのアパートメント スレッド モデルを明示的に設定する属性を次のとおりです。  
+  
+-   COM 相互運用機能に依存し、c# ライブラリへの呼び出しを Visual Basic アプリを開発します。 マルチ スレッド アパートメント モデルは、C# の場合の既定値であるために変更してください、アプリのスレッド モデル マルチ スレッドを使用して、<xref:System.MTAThreadAttribute>属性。  
+  
+-   アプリケーションは、マルチ スレッド アパートメント モデルを使用する COM コンポーネントを呼び出します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MTAThreadAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.MTAThreadAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.MTAThreadAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

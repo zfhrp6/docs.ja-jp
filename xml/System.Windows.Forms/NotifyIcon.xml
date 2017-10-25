@@ -1,0 +1,905 @@
+<Type Name="NotifyIcon" FullName="System.Windows.Forms.NotifyIcon">
+  <TypeSignature Language="C#" Value="public sealed class NotifyIcon : System.ComponentModel.Component" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit NotifyIcon extends System.ComponentModel.Component" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.NotifyIcon" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Component</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("MouseDoubleClick")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Text")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Windows.Forms.Design.NotifyIconDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItemFilter("System.Windows.Forms")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>通知領域にアイコンを作成するコンポーネントを指定します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通知領域にアイコンとは、ウイルス対策プログラム、またはボリューム コントロールなど、コンピューターのバック グラウンドで実行されているプロセスへのショートカットです。 これらのプロセスが自分のユーザー インターフェイスが付属していません。 <xref:System.Windows.Forms.NotifyIcon>クラスは、この機能にプログラムする方法を提供します。 <xref:System.Windows.Forms.NotifyIcon.Icon%2A>プロパティは、通知領域に表示されるアイコンを定義します。 ポップアップ メニューのアイコンがでアドレス指定、<xref:System.Windows.Forms.NotifyIcon.ContextMenu%2A>プロパティです。 <xref:System.Windows.Forms.NotifyIcon.Text%2A>プロパティには、ツールヒントのテキストが割り当てられます。 通知領域に表示するアイコンの順序で、<xref:System.Windows.Forms.NotifyIcon.Visible%2A>プロパティに設定する必要があります`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Windows.Forms.NotifyIcon>通知領域に、アプリケーション用のアイコンを表示するクラス。 設定の例を示します、 <xref:System.Windows.Forms.NotifyIcon.Icon%2A>、 <xref:System.Windows.Forms.NotifyIcon.ContextMenu%2A>、 <xref:System.Windows.Forms.NotifyIcon.Text%2A>、および<xref:System.Windows.Forms.NotifyIcon.Visible%2A>プロパティと処理、<xref:System.Windows.Forms.NotifyIcon.DoubleClick>イベント。 A<xref:System.Windows.Forms.ContextMenu>で、**終了**に項目が割り当て、<xref:System.Windows.Forms.NotifyIcon.ContextMenu%2A?displayProperty=nameWithType>プロパティで、アプリケーションを終了することができます。 ときに、<xref:System.Windows.Forms.NotifyIcon.DoubleClick>呼び出すことによって、アプリケーション フォームがアクティブ化イベントが発生した、<xref:System.Windows.Forms.Form.Activate%2A?displayProperty=nameWithType>メソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.NotifyIcon#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.NotifyIcon/CPP/source.cpp#1)]
+ [!code-csharp[System.Windows.Forms.NotifyIcon#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.NotifyIcon/CS/source.cs#1)]
+ [!code-vb[System.Windows.Forms.NotifyIcon#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.NotifyIcon/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.Permissions.UIPermission">作成する、<see cref="T:System.Windows.Forms.NotifyIcon" />コンポーネントです。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NotifyIcon ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.NotifyIcon.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.NotifyIcon" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しい<xref:System.Windows.Forms.NotifyIcon>が作成される、<xref:System.Windows.Forms.NotifyIcon.Visible%2A>プロパティに設定されている`false`です。 設定する必要があります、<xref:System.Windows.Forms.NotifyIcon.Visible%2A>プロパティを`true`を使用するために、<xref:System.Windows.Forms.NotifyIcon>を作成します。 このインスタンスは、そのコンテナーがガベージ コレクションを解放するまでは存在します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NotifyIcon (System.ComponentModel.IContainer container);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ComponentModel.IContainer container) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.NotifyIcon.#ctor(System.ComponentModel.IContainer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="container" Type="System.ComponentModel.IContainer" />
+      </Parameters>
+      <Docs>
+        <param name="container"><see cref="T:System.ComponentModel.IContainer" />のコンテナーを表す、<see cref="T:System.Windows.Forms.NotifyIcon" />コントロール。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.NotifyIcon" />指定したコンテナー クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しい<xref:System.Windows.Forms.NotifyIcon>が作成される、<xref:System.Windows.Forms.NotifyIcon.Visible%2A>プロパティに設定されている`false`です。 設定する必要があります、<xref:System.Windows.Forms.NotifyIcon.Visible%2A>プロパティを`true`を使用するために、<xref:System.Windows.Forms.NotifyIcon>を作成します。 このインスタンスは、そのコンテナーがガベージ コレクションを解放するまでは存在します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Windows.Forms.NotifyIcon>通知領域に、アプリケーション用のアイコンを表示するクラス。 設定の例を示します、 <xref:System.Windows.Forms.NotifyIcon.Icon%2A>、 <xref:System.Windows.Forms.NotifyIcon.ContextMenu%2A>、 <xref:System.Windows.Forms.NotifyIcon.Text%2A>、および<xref:System.Windows.Forms.NotifyIcon.Visible%2A>プロパティと処理、<xref:System.Windows.Forms.NotifyIcon.DoubleClick>イベント。 A<xref:System.Windows.Forms.ContextMenu>で、**終了**に項目が割り当て、<xref:System.Windows.Forms.NotifyIcon.ContextMenu%2A?displayProperty=nameWithType>プロパティで、アプリケーションを終了することができます。 ときに、<xref:System.Windows.Forms.NotifyIcon.DoubleClick>呼び出すことによって、アプリケーション フォームがアクティブ化イベントが発生した、<xref:System.Windows.Forms.Form.Activate%2A?displayProperty=nameWithType>メソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.NotifyIcon#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.NotifyIcon/CPP/source.cpp#1)]
+ [!code-csharp[System.Windows.Forms.NotifyIcon#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.NotifyIcon/CS/source.cs#1)]
+ [!code-vb[System.Windows.Forms.NotifyIcon#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.NotifyIcon/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BalloonTipClicked">
+      <MemberSignature Language="C#" Value="public event EventHandler BalloonTipClicked;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler BalloonTipClicked" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.NotifyIcon.BalloonTipClicked" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バルーン ヒントがクリックされると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.NotifyIcon.BalloonTipClicked>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.NotifyIcon>という`NotifyIcon1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.NotifyIcon.BalloonTipClicked>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#505](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#505)]
+ [!code-vb[System.Windows.Forms.EventExamples#505](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#505)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BalloonTipClosed">
+      <MemberSignature Language="C#" Value="public event EventHandler BalloonTipClosed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler BalloonTipClosed" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.NotifyIcon.BalloonTipClosed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがバルーン ヒントを閉じると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、処理する方法を示します、<xref:System.Windows.Forms.NotifyIcon.BalloonTipClosed>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.NotifyIconBalloonTip#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.NotifyIconBalloonTip/CS/Form1.cs#4)]
+ [!code-vb[System.Windows.Forms.NotifyIconBalloonTip#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.NotifyIconBalloonTip/VB/Form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BalloonTipIcon">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ToolTipIcon BalloonTipIcon { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.ToolTipIcon BalloonTipIcon" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.NotifyIcon.BalloonTipIcon" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolTipIcon</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に関連付けられているバルーン ヒントに表示するアイコン、<see cref="T:System.Windows.Forms.NotifyIcon" />です。</summary>
+        <value><see cref="T:System.Windows.Forms.ToolTipIcon" />に関連付けられているバルーン ヒントに表示する、<see cref="T:System.Windows.Forms.NotifyIcon" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Windows.Forms.NotifyIcon.BalloonTipTitle%2A>、 <xref:System.Windows.Forms.NotifyIcon.BalloonTipText%2A>、および<xref:System.Windows.Forms.NotifyIcon.BalloonTipIcon%2A>プロパティです。 この例を実行するコードを貼り付けます、例を含む Windows フォーム、<xref:System.Windows.Forms.NotifyIcon>という`notifyIcon1`です。 呼び出す`SetBalloonTip`フォームのコンス トラクターからまたは<xref:System.Windows.Forms.Form.Load>イベント処理メソッドです。  
+  
+ [!code-csharp[System.Windows.Forms.NotifyIconBalloonTip#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.NotifyIconBalloonTip/CS/Form1.cs#2)]
+ [!code-vb[System.Windows.Forms.NotifyIconBalloonTip#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.NotifyIconBalloonTip/VB/Form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">指定した値はありませんが、<see cref="T:System.Windows.Forms.ToolTipIcon" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BalloonTipShown">
+      <MemberSignature Language="C#" Value="public event EventHandler BalloonTipShown;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler BalloonTipShown" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.NotifyIcon.BalloonTipShown" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バルーン ヒントが画面に表示されるときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.NotifyIcon.BalloonTipShown>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.NotifyIcon>という`NotifyIcon1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.NotifyIcon.BalloonTipShown>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#507](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#507)]
+ [!code-vb[System.Windows.Forms.EventExamples#507](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#507)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BalloonTipText">
+      <MemberSignature Language="C#" Value="public string BalloonTipText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BalloonTipText" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.NotifyIcon.BalloonTipText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.ComponentModel.Design.MultilineStringEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に関連付けられているバルーン ヒントに表示されるテキストを<see cref="T:System.Windows.Forms.NotifyIcon" />です。</summary>
+        <value>関連付けられているバルーン ヒントに表示されるテキストを<see cref="T:System.Windows.Forms.NotifyIcon" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Windows.Forms.NotifyIcon.BalloonTipTitle%2A>、 <xref:System.Windows.Forms.NotifyIcon.BalloonTipText%2A>、および<xref:System.Windows.Forms.NotifyIcon.BalloonTipIcon%2A>プロパティです。 この例を実行するコードを貼り付けます、例を含む Windows フォーム、<xref:System.Windows.Forms.NotifyIcon>という`notifyIcon1`です。 呼び出す`SetBalloonTip`フォームのコンス トラクターからまたは<xref:System.Windows.Forms.Form.Load>イベント処理メソッドです。  
+  
+ [!code-csharp[System.Windows.Forms.NotifyIconBalloonTip#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.NotifyIconBalloonTip/CS/Form1.cs#2)]
+ [!code-vb[System.Windows.Forms.NotifyIconBalloonTip#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.NotifyIconBalloonTip/VB/Form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BalloonTipTitle">
+      <MemberSignature Language="C#" Value="public string BalloonTipTitle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BalloonTipTitle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.NotifyIcon.BalloonTipTitle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に表示されるバルーン ヒントのタイトル、<see cref="T:System.Windows.Forms.NotifyIcon" />です。</summary>
+        <value>バルーン ヒントのタイトルとして表示するテキスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タイトルのテキストは、バルーンの上部にある太字のフォントで表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Windows.Forms.NotifyIcon.BalloonTipTitle%2A>、 <xref:System.Windows.Forms.NotifyIcon.BalloonTipText%2A>、および<xref:System.Windows.Forms.NotifyIcon.BalloonTipIcon%2A>プロパティです。 この例を実行するコードを貼り付けます、例を含む Windows フォーム、<xref:System.Windows.Forms.NotifyIcon>という`notifyIcon1`です。 呼び出す`SetBalloonTip`フォームのコンス トラクターからまたは<xref:System.Windows.Forms.Form.Load>イベント処理メソッドです。  
+  
+ [!code-csharp[System.Windows.Forms.NotifyIconBalloonTip#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.NotifyIconBalloonTip/CS/Form1.cs#2)]
+ [!code-vb[System.Windows.Forms.NotifyIconBalloonTip#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.NotifyIconBalloonTip/VB/Form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Click">
+      <MemberSignature Language="C#" Value="public event EventHandler Click;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Click" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.NotifyIcon.Click" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが通知領域のアイコンをクリックした時点で発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、処理を示します、<xref:System.Windows.Forms.NotifyIcon.Click>イベント。 この例では、追加されていること、コードを含むフォームを前提としています、<xref:System.Windows.Forms.NotifyIcon>という名前のオブジェクト`NotifyIcon1`です。  
+  
+ [!code-cpp[System.Windows.Forms.NotifyIconExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.NotifyIconExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.NotifyIconExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.NotifyIconExample/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.NotifyIconExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.NotifyIconExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextMenu">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ContextMenu ContextMenu { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ContextMenu ContextMenu" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.NotifyIcon.ContextMenu" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ContextMenu</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アイコンのショートカット メニューを取得または設定します。</summary>
+        <value>アイコンの <see cref="T:System.Windows.Forms.ContextMenu" /> です。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーがタスクバーの通知領域のアイコンを右クリックしたときに、メニューが表示されます。 ショートカット メニューは、ポップアップ メニューとも呼ばれます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Windows.Forms.NotifyIcon>通知領域に、アプリケーション用のアイコンを表示するクラス。 設定の例を示します、 <xref:System.Windows.Forms.NotifyIcon.Icon%2A>、 <xref:System.Windows.Forms.NotifyIcon.ContextMenu%2A>、 <xref:System.Windows.Forms.NotifyIcon.Text%2A>、および<xref:System.Windows.Forms.NotifyIcon.Visible%2A>プロパティと処理、<xref:System.Windows.Forms.NotifyIcon.DoubleClick>イベント。 A<xref:System.Windows.Forms.ContextMenu>で、**終了**に項目が割り当て、<xref:System.Windows.Forms.NotifyIcon.ContextMenu%2A?displayProperty=nameWithType>プロパティで、アプリケーションを終了することができます。 ときに、<xref:System.Windows.Forms.NotifyIcon.DoubleClick>呼び出すことによって、アプリケーション フォームがアクティブ化イベントが発生した、<xref:System.Windows.Forms.Form.Activate%2A?displayProperty=nameWithType>メソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.NotifyIcon#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.NotifyIcon/CPP/source.cpp#1)]
+ [!code-csharp[System.Windows.Forms.NotifyIcon#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.NotifyIcon/CS/source.cs#1)]
+ [!code-vb[System.Windows.Forms.NotifyIcon#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.NotifyIcon/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextMenuStrip">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ContextMenuStrip ContextMenuStrip { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ContextMenuStrip ContextMenuStrip" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.NotifyIcon.ContextMenuStrip" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ContextMenuStrip</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に関連付けられているショートカット メニュー、<see cref="T:System.Windows.Forms.NotifyIcon" />です。</summary>
+        <value><see cref="T:System.Windows.Forms.ContextMenuStrip" />に関連付けられている、<see cref="T:System.Windows.Forms.NotifyIcon" /></value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.NotifyIcon.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DoubleClick">
+      <MemberSignature Language="C#" Value="public event EventHandler DoubleClick;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler DoubleClick" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.NotifyIcon.DoubleClick" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがタスクバーの通知のアイコンをダブルクリックすると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Windows.Forms.NotifyIcon>通知領域に、アプリケーション用のアイコンを表示するクラス。 設定の例を示します、 <xref:System.Windows.Forms.NotifyIcon.Icon%2A>、 <xref:System.Windows.Forms.NotifyIcon.ContextMenu%2A>、 <xref:System.Windows.Forms.NotifyIcon.Text%2A>、および<xref:System.Windows.Forms.NotifyIcon.Visible%2A>プロパティと処理、<xref:System.Windows.Forms.NotifyIcon.DoubleClick>イベント。 A<xref:System.Windows.Forms.ContextMenu>で、**終了**に項目が割り当て、<xref:System.Windows.Forms.NotifyIcon.ContextMenu%2A?displayProperty=nameWithType>プロパティで、アプリケーションを終了することができます。 ときに、<xref:System.Windows.Forms.NotifyIcon.DoubleClick>呼び出すことによって、アプリケーション フォームがアクティブ化イベントが発生した、<xref:System.Windows.Forms.Form.Activate%2A?displayProperty=nameWithType>メソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.NotifyIcon#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.NotifyIcon/CPP/source.cpp#1)]
+ [!code-csharp[System.Windows.Forms.NotifyIcon#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.NotifyIcon/CS/source.cs#1)]
+ [!code-vb[System.Windows.Forms.NotifyIcon#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.NotifyIcon/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Icon">
+      <MemberSignature Language="C#" Value="public System.Drawing.Icon Icon { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Icon Icon" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.NotifyIcon.Icon" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Icon</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>作業中のアイコンを取得または設定します。</summary>
+        <value><see cref="T:System.Drawing.Icon" />によって表示される、<see cref="T:System.Windows.Forms.NotifyIcon" />コンポーネントです。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Windows.Forms.NotifyIcon>通知領域に、アプリケーション用のアイコンを表示するクラス。 設定の例を示します、 <xref:System.Windows.Forms.NotifyIcon.Icon%2A>、 <xref:System.Windows.Forms.NotifyIcon.ContextMenu%2A>、 <xref:System.Windows.Forms.NotifyIcon.Text%2A>、および<xref:System.Windows.Forms.NotifyIcon.Visible%2A>プロパティと処理、<xref:System.Windows.Forms.NotifyIcon.DoubleClick>イベント。 A<xref:System.Windows.Forms.ContextMenu>で、**終了**に項目が割り当て、<xref:System.Windows.Forms.NotifyIcon.ContextMenu%2A?displayProperty=nameWithType>プロパティで、アプリケーションを終了することができます。 ときに、<xref:System.Windows.Forms.NotifyIcon.DoubleClick>呼び出すことによって、アプリケーション フォームがアクティブ化イベントが発生した、<xref:System.Windows.Forms.Form.Activate%2A?displayProperty=nameWithType>メソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.NotifyIcon#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.NotifyIcon/CPP/source.cpp#1)]
+ [!code-csharp[System.Windows.Forms.NotifyIcon#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.NotifyIcon/CS/source.cs#1)]
+ [!code-vb[System.Windows.Forms.NotifyIcon#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.NotifyIcon/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseClick">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.MouseEventHandler MouseClick;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.MouseEventHandler MouseClick" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.NotifyIcon.MouseClick" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MouseEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがクリックしたときに発生、<see cref="T:System.Windows.Forms.NotifyIcon" />マウスを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.NotifyIcon.MouseClick>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.NotifyIcon>という`NotifyIcon1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.NotifyIcon.MouseClick>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#510](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#510)]
+ [!code-vb[System.Windows.Forms.EventExamples#510](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#510)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseDoubleClick">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.MouseEventHandler MouseDoubleClick;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.MouseEventHandler MouseDoubleClick" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.NotifyIcon.MouseDoubleClick" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MouseEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがダブルクリックしたときに発生、<see cref="T:System.Windows.Forms.NotifyIcon" />マウスを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.NotifyIcon.MouseDoubleClick>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.NotifyIcon>という`NotifyIcon1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.NotifyIcon.MouseDoubleClick>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#511](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#511)]
+ [!code-vb[System.Windows.Forms.EventExamples#511](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#511)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseDown">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.MouseEventHandler MouseDown;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.MouseEventHandler MouseDown" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.NotifyIcon.MouseDown" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MouseEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ポインターがタスクバーの通知領域内のアイコンの上にある場合に、ユーザーがマウス ボタンを押すと発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.NotifyIcon.MouseDown>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.NotifyIcon>という`NotifyIcon1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.NotifyIcon.MouseDown>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#512](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#512)]
+ [!code-vb[System.Windows.Forms.EventExamples#512](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#512)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseMove">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.MouseEventHandler MouseMove;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.MouseEventHandler MouseMove" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.NotifyIcon.MouseMove" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MouseEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ポインターがタスクバーの通知領域内のアイコンの上にあるときに、ユーザーがマウスを動かすと発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.NotifyIcon.MouseMove>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.NotifyIcon>という`NotifyIcon1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.NotifyIcon.MouseMove>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#513](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#513)]
+ [!code-vb[System.Windows.Forms.EventExamples#513](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#513)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseUp">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.MouseEventHandler MouseUp;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.MouseEventHandler MouseUp" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.NotifyIcon.MouseUp" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MouseEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ポインターがタスクバーの通知領域内のアイコンの上にあるときに、ユーザーがマウス ボタンを離すと発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.NotifyIcon.MouseUp>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.NotifyIcon>という`NotifyIcon1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.NotifyIcon.MouseUp>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#514](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#514)]
+ [!code-vb[System.Windows.Forms.EventExamples#514](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#514)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowBalloonTip">
+      <MemberSignature Language="C#" Value="public void ShowBalloonTip (int timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ShowBalloonTip(int32 timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.NotifyIcon.ShowBalloonTip(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">バルーン ヒントを表示する時間 (ミリ秒単位)。  
+  
+ <block subset="none" type="note"><para>  
+ Windows Vista の時点では、このパラメーターは推奨されていません。 通知の表示時間は、システムのユーザー補助の設定に基づいていますようになりました。  
+  
+</para></block></param>
+        <summary>指定した期間、タスクバーにバルーン ヒントを表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最小値と最大タイムアウト値は、オペレーティング システムで適用される、通常 10 ~ 30 秒、それぞれが、これは、オペレーティング システムによって異なります。 タイムアウト値が大きすぎるか小さすぎますが、適切な最小値または最大値に調整されます。 さらに、(キーボードまたはマウスのイベントが発生していない) コンピューターを使用するのには、ユーザーが表示されない場合、システムはカウントされませんこの時間がタイムアウトにします。  
+  
+ タスク バーで、一度に 1 つだけのバルーン ヒントを表示できます。 1 つは、タスク バーが原因で表示されているときにバルーン ヒントを表示する際、`timeout`値が無視されます。 動作は、オペレーティング システムと、別のバルーン ヒントがかどうかによって多少異なりますか、同じ場合は、アプリケーションです。 値に関係なく、2 番目に表示される前に 2 つ目のバルーン ヒントは、別のアプリケーションからはと、最初のバルーン ヒントが最小タイムアウト値に表示されます`timeout`です。 ほとんどの場合、ヒントは、最初のバルーン ヒントをすぐに、同じアプリケーションからバルーンを閉じた場合別呼び出す場合に、<xref:System.Windows.Forms.NotifyIcon.ShowBalloonTip%2A>メソッドが行われます。 場合によっては、最初のバルーンの上に 2 番目のバルーンが開きます。  
+  
+ タイトルのテキストは、バルーンの上部にある太字のフォントで表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Windows.Forms.NotifyIcon.ShowBalloonTip%2A> メソッドの使用方法を示します。 この例を実行するコードを貼り付けます、例を含む Windows フォーム、<xref:System.Windows.Forms.NotifyIcon>という`notifyIcon1`です。 呼び出す`SetBalloonTip`フォームのコンス トラクターからまたは<xref:System.Windows.Forms.Form.Load>イベント処理メソッドです。  
+  
+ [!code-csharp[System.Windows.Forms.NotifyIconBalloonTip#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.NotifyIconBalloonTip/CS/Form1.cs#2)]
+ [!code-vb[System.Windows.Forms.NotifyIconBalloonTip#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.NotifyIconBalloonTip/VB/Form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="timeout" /> が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowBalloonTip">
+      <MemberSignature Language="C#" Value="public void ShowBalloonTip (int timeout, string tipTitle, string tipText, System.Windows.Forms.ToolTipIcon tipIcon);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ShowBalloonTip(int32 timeout, string tipTitle, string tipText, valuetype System.Windows.Forms.ToolTipIcon tipIcon) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.NotifyIcon.ShowBalloonTip(System.Int32,System.String,System.String,System.Windows.Forms.ToolTipIcon)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.Int32" />
+        <Parameter Name="tipTitle" Type="System.String" />
+        <Parameter Name="tipText" Type="System.String" />
+        <Parameter Name="tipIcon" Type="System.Windows.Forms.ToolTipIcon" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">バルーン ヒントを表示する時間 (ミリ秒単位)。  
+  
+ <block subset="none" type="note"><para>  
+ Windows Vista の時点では、このパラメーターは推奨されていません。 通知の表示時間は、システムのユーザー補助の設定に基づいていますようになりました。  
+  
+</para></block></param>
+        <param name="tipTitle">バルーン ヒントに表示するタイトル。</param>
+        <param name="tipText">バルーン ヒントに表示するテキスト。</param>
+        <param name="tipIcon"><see cref="T:System.Windows.Forms.ToolTipIcon" /> 値のいずれか。</param>
+        <summary>指定したタイトル、テキスト、およびアイコンのバルーン ヒントが、指定した時間、タスクバーに表示されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最小値と最大タイムアウト値は、オペレーティング システムで適用される、通常 10 ~ 30 秒、それぞれが、これは、オペレーティング システムによって異なります。 タイムアウト値が大きすぎるか小さすぎますが、適切な最小値または最大値に調整されます。 さらに、(キーボードまたはマウスのイベントが発生していない) コンピューターを使用するのには、ユーザーが表示されない場合、システムはカウントされませんこの時間がタイムアウトにします。  
+  
+ タスク バーで、一度に 1 つだけのバルーン ヒントを表示できます。 1 つは、タスク バーが原因で表示されているときにバルーン ヒントを表示する際、`timeout`値が無視されます。 動作は、オペレーティング システムと、別のバルーン ヒントがかどうかによって多少異なりますか、同じ場合は、アプリケーションです。 値に関係なく、2 番目に表示される前に 2 つ目のバルーン ヒントは、別のアプリケーションからはと、最初のバルーン ヒントが最小タイムアウト値に表示されます`timeout`です。 ほとんどの場合、ヒントは、最初のバルーン ヒントをすぐに、同じアプリケーションからバルーンを閉じた場合別呼び出す場合に、<xref:System.Windows.Forms.NotifyIcon.ShowBalloonTip%2A>メソッドが行われます。 場合によっては、最初のバルーンの上に 2 番目のバルーンが開きます。  
+  
+ タイトルのテキストは、バルーンの上部にある太字のフォントで表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Windows.Forms.NotifyIcon.ShowBalloonTip%2A> メソッドの使用方法を示します。 この例を実行するコードを貼り付けます、例を含む Windows フォーム、<xref:System.Windows.Forms.NotifyIcon>という`notifyIcon1`です。 関連付ける、`Form1_DoubleClick`フォームのでは、この例ではメソッド<xref:System.Windows.Forms.Control.DoubleClick>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.NotifyIconBalloonTip#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.NotifyIconBalloonTip/CS/Form1.cs#1)]
+ [!code-vb[System.Windows.Forms.NotifyIconBalloonTip#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.NotifyIconBalloonTip/VB/Form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="timeout" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="tipText" /> が <see langword="null" /> または空の文字列です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="tipIcon" />メンバーではない<see cref="T:System.Windows.Forms.ToolTipIcon" />です。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">windows アプリケーションにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Tag">
+      <MemberSignature Language="C#" Value="public object Tag { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Tag" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.NotifyIcon.Tag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.StringConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に関するデータを格納するオブジェクト、<see cref="T:System.Windows.Forms.NotifyIcon" />です。</summary>
+        <value><see cref="T:System.Object" />に関するデータを格納、<see cref="T:System.Windows.Forms.NotifyIcon" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.NotifyIcon.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.ComponentModel.Design.MultilineStringEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通知領域アイコンにマウス ポインターを合わせると表示されるツールヒント テキストを取得または設定します。</summary>
+        <value>通知領域アイコンにマウス ポインターを合わせると表示されるツールヒント テキスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テキストがある場合`null`ツールヒントは表示されません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Windows.Forms.NotifyIcon>通知領域に、アプリケーション用のアイコンを表示するクラス。 設定の例を示します、 <xref:System.Windows.Forms.NotifyIcon.Icon%2A>、 <xref:System.Windows.Forms.NotifyIcon.ContextMenu%2A>、 <xref:System.Windows.Forms.NotifyIcon.Text%2A>、および<xref:System.Windows.Forms.NotifyIcon.Visible%2A>プロパティと処理、<xref:System.Windows.Forms.NotifyIcon.DoubleClick>イベント。 A<xref:System.Windows.Forms.ContextMenu>で、**終了**に項目が割り当て、<xref:System.Windows.Forms.NotifyIcon.ContextMenu%2A?displayProperty=nameWithType>プロパティで、アプリケーションを終了することができます。 ときに、<xref:System.Windows.Forms.NotifyIcon.DoubleClick>呼び出すことによって、アプリケーション フォームがアクティブ化イベントが発生した、<xref:System.Windows.Forms.Form.Activate%2A?displayProperty=nameWithType>メソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.NotifyIcon#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.NotifyIcon/CPP/source.cpp#1)]
+ [!code-csharp[System.Windows.Forms.NotifyIcon#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.NotifyIcon/CS/source.cs#1)]
+ [!code-vb[System.Windows.Forms.NotifyIcon#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.NotifyIcon/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">ツールヒント テキストの長さが、63 文字を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Visible">
+      <MemberSignature Language="C#" Value="public bool Visible { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Visible" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.NotifyIcon.Visible" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アイコンをタスクバーの通知領域に表示するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />通知領域にアイコンが表示されている場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値はため`false`、通知領域に表示するアイコンのために設定する必要があります、<xref:System.Windows.Forms.NotifyIcon.Visible%2A>プロパティを`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Windows.Forms.NotifyIcon>通知領域に、アプリケーション用のアイコンを表示するクラス。 設定の例を示します、 <xref:System.Windows.Forms.NotifyIcon.Icon%2A>、 <xref:System.Windows.Forms.NotifyIcon.ContextMenu%2A>、 <xref:System.Windows.Forms.NotifyIcon.Text%2A>、および<xref:System.Windows.Forms.NotifyIcon.Visible%2A>プロパティと処理、<xref:System.Windows.Forms.NotifyIcon.DoubleClick>イベント。 A<xref:System.Windows.Forms.ContextMenu>で、**終了**に項目が割り当て、<xref:System.Windows.Forms.NotifyIcon.ContextMenu%2A?displayProperty=nameWithType>プロパティで、アプリケーションを終了することができます。 ときに、<xref:System.Windows.Forms.NotifyIcon.DoubleClick>呼び出すことによって、アプリケーション フォームがアクティブ化イベントが発生した、<xref:System.Windows.Forms.Form.Activate%2A?displayProperty=nameWithType>メソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.NotifyIcon#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.NotifyIcon/CPP/source.cpp#1)]
+ [!code-csharp[System.Windows.Forms.NotifyIcon#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.NotifyIcon/CS/source.cs#1)]
+ [!code-vb[System.Windows.Forms.NotifyIcon#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.NotifyIcon/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

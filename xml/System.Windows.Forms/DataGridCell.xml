@@ -1,0 +1,226 @@
+<Type Name="DataGridCell" FullName="System.Windows.Forms.DataGridCell">
+  <TypeSignature Language="C#" Value="public struct DataGridCell" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit DataGridCell extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridCell" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>グリッド内のセルを識別します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridCell>と組み合わせて使用することができます、<xref:System.Windows.Forms.DataGrid?displayProperty=nameWithType>コントロールの<xref:System.Windows.Forms.DataGrid.CurrentCell%2A>プロパティを取得または任意のセルの値を設定します。 設定、<xref:System.Windows.Forms.DataGrid?displayProperty=nameWithType>コントロールの<xref:System.Windows.Forms.DataGrid.CurrentCell%2A>プロパティを<xref:System.Windows.Forms.DataGridCell>フォーカスがで指定されたセルに移動する、<xref:System.Windows.Forms.DataGridCell>です。  
+  
+   
+  
+## Examples  
+ 次の例、<xref:System.Windows.Forms.DataGridCell>を<xref:System.Windows.Forms.DataGrid.CurrentCell%2A>の<xref:System.Windows.Forms.DataGrid?displayProperty=nameWithType>選択したセルの列と行の数を返します。 格納された値、<xref:System.Data.DataTable>を使用しても印刷は、<xref:System.Windows.Forms.DataGridCell>オブジェクトの<xref:System.Windows.Forms.DataGridCell.RowNumber%2A>と<xref:System.Windows.Forms.DataGridCell.ColumnNumber%2A>です。  
+  
+ [!code-cpp[Classic DataGridCell Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataGridCell Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataGridCell Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataGridCell Example/CS/source.cs#1)]
+ [!code-vb[Classic DataGridCell Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataGridCell Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridCell (int r, int c);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 r, int32 c) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridCell.#ctor(System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="r" Type="System.Int32" />
+        <Parameter Name="c" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="r">内の行の数、<see cref="T:System.Windows.Forms.DataGrid" />です。</param>
+        <param name="c">内の列の数、<see cref="T:System.Windows.Forms.DataGrid" />です。</param>
+        <summary><see cref="T:System.Windows.Forms.DataGridCell" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Forms.DataGridCell>新しいインスタンスを設定し、<xref:System.Windows.Forms.DataGrid.CurrentCell%2A>の<xref:System.Windows.Forms.DataGrid?displayProperty=nameWithType>コントロール。  
+  
+ [!code-cpp[Classic DataGridCell.DataGridCell Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataGridCell.DataGridCell Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataGridCell.DataGridCell Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataGridCell.DataGridCell Example/CS/source.cs#1)]
+ [!code-vb[Classic DataGridCell.DataGridCell Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataGridCell.DataGridCell Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnNumber">
+      <MemberSignature Language="C#" Value="public int ColumnNumber { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ColumnNumber" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridCell.ColumnNumber" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定内の列の数、<see cref="T:System.Windows.Forms.DataGrid" />コントロール。</summary>
+        <value>列の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Windows.Forms.DataGridCell.ColumnNumber%2A>指定する値、<xref:System.Data.DataColumn>で、<xref:System.Data.DataTable>に関連付けられている、<xref:System.Windows.Forms.DataGrid?displayProperty=nameWithType>コントロール。  
+  
+   
+  
+## Examples  
+ 次の例、<xref:System.Windows.Forms.DataGrid.CurrentCell%2A>のプロパティ、<xref:System.Windows.Forms.DataGrid?displayProperty=nameWithType>を<xref:System.Windows.Forms.DataGridCell>です。 格納された値、<xref:System.Data.DataTable>を指定することによって返される<xref:System.Data.DataRow>と<xref:System.Data.DataColumn>オブジェクトを介して、<xref:System.Windows.Forms.DataGridCell.RowNumber%2A>と<xref:System.Windows.Forms.DataGridCell.ColumnNumber%2A>プロパティです。  
+  
+ [!code-cpp[Classic DataGridCell.ColumnNumber Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataGridCell.ColumnNumber Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataGridCell.ColumnNumber Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataGridCell.ColumnNumber Example/CS/source.cs#1)]
+ [!code-vb[Classic DataGridCell.ColumnNumber Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataGridCell.ColumnNumber Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridCell.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">オブジェクトを比較するとしています。</param>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.Forms.DataGridCell" />は 2 つ目と同じ<see cref="T:System.Windows.Forms.DataGridCell" />です。</summary>
+        <returns>
+          <see langword="true" />2 番目のオブジェクトが最初の; と同じ場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、2 つを比較して<xref:System.Windows.Forms.DataGridCell>オブジェクト。  
+  
+ [!code-vb[Classic DataGridCell.Equals Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataGridCell.Equals Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridCell.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>追加することができますをハッシュ値を取得、<see cref="T:System.Collections.Hashtable" />です。</summary>
+        <returns>一意に識別する数値、<see cref="T:System.Windows.Forms.DataGridCell" />で、<see cref="T:System.Collections.Hashtable" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、選択したセル内のハッシュ値を追加、<xref:System.Windows.Forms.DataGrid?displayProperty=nameWithType>コントロールを<xref:System.Collections.Hashtable>です。  
+  
+ [!code-cpp[Classic DataGridCell.GetHashCode Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataGridCell.GetHashCode Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataGridCell.GetHashCode Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataGridCell.GetHashCode Example/CS/source.cs#1)]
+ [!code-vb[Classic DataGridCell.GetHashCode Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataGridCell.GetHashCode Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowNumber">
+      <MemberSignature Language="C#" Value="public int RowNumber { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RowNumber" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridCell.RowNumber" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定内の行の数、<see cref="T:System.Windows.Forms.DataGrid" />コントロール。</summary>
+        <value>行の番号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Windows.Forms.DataGridCell.RowNumber%2A>指定する値、<xref:System.Data.DataRow>で、<xref:System.Data.DataTable>に関連付けられている、<xref:System.Windows.Forms.DataGrid?displayProperty=nameWithType>コントロール。  
+  
+   
+  
+## Examples  
+ 次の例、<xref:System.Windows.Forms.DataGrid.CurrentCell%2A>のプロパティ、<xref:System.Windows.Forms.DataGrid?displayProperty=nameWithType>を<xref:System.Windows.Forms.DataGridCell>に格納されている値を返します、<xref:System.Data.DataTable>オブジェクトの<xref:System.Windows.Forms.DataGridCell.RowNumber%2A>と<xref:System.Windows.Forms.DataGridCell.ColumnNumber%2A>プロパティです。  
+  
+ [!code-cpp[Classic DataGridCell.ColumnNumber Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataGridCell.ColumnNumber Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataGridCell.ColumnNumber Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataGridCell.ColumnNumber Example/CS/source.cs#1)]
+ [!code-vb[Classic DataGridCell.ColumnNumber Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataGridCell.ColumnNumber Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridCell.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セルの列数と行番号を取得します。</summary>
+        <returns>行番号および列番号を含む文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、行の数を返します、<xref:System.Windows.Forms.DataGrid?displayProperty=nameWithType>コントロールの<xref:System.Windows.Forms.DataGrid.CurrentCell%2A>を使用して、<xref:System.Windows.Forms.DataGridCell>オブジェクトの<xref:System.Windows.Forms.DataGridCell.ToString%2A>メソッドです。  
+  
+ [!code-cpp[Classic DataGridCell.ToString Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataGridCell.ToString Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataGridCell.ToString Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataGridCell.ToString Example/CS/source.cs#1)]
+ [!code-vb[Classic DataGridCell.ToString Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataGridCell.ToString Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

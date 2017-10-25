@@ -1,0 +1,223 @@
+<Type Name="EntityClassGenerator" FullName="System.Data.Services.Design.EntityClassGenerator">
+  <TypeSignature Language="C#" Value="public sealed class EntityClassGenerator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EntityClassGenerator extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Services.Design.EntityClassGenerator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Services.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データ サービスと通信するための厳密に型指定されたクライアント側オブジェクトを生成するために、Visual Studio のコード生成コマンド ライン ツールによって使用されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、一般的な使用を想定していません。データ サービスと通信するための厳密に型指定されたクライアント側オブジェクトを生成するために、Visual Studio のコード生成コマンド ライン ツールによって使用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EntityClassGenerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Design.EntityClassGenerator.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Services.Design.EntityClassGenerator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EntityClassGenerator (System.Data.Services.Design.LanguageOption languageOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Data.Services.Design.LanguageOption languageOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Design.EntityClassGenerator.#ctor(System.Data.Services.Design.LanguageOption)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="languageOption" Type="System.Data.Services.Design.LanguageOption" />
+      </Parameters>
+      <Docs>
+        <param name="languageOption">プログラミング言語を選択します。</param>
+        <summary><see cref="T:System.Data.Services.Design.EntityClassGenerator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EdmToObjectNamespaceMap">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Design.EdmToObjectNamespaceMap EdmToObjectNamespaceMap { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Services.Design.EdmToObjectNamespaceMap EdmToObjectNamespaceMap" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Design.EntityClassGenerator.EdmToObjectNamespaceMap" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Design.EdmToObjectNamespaceMap</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see langword="EdmToObjectNamespaceMap" />エンティティ クラスの生成に使用されるオブジェクト。</summary>
+        <value>
+          <see langword="EdmToObjectNamespaceMap" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateCode">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Data.Metadata.Edm.EdmSchemaError&gt; GenerateCode (System.Xml.XmlReader sourceReader, string targetFilePath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IList`1&lt;class System.Data.Metadata.Edm.EdmSchemaError&gt; GenerateCode(class System.Xml.XmlReader sourceReader, string targetFilePath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Design.EntityClassGenerator.GenerateCode(System.Xml.XmlReader,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Data.Metadata.Edm.EdmSchemaError&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceReader" Type="System.Xml.XmlReader" />
+        <Parameter Name="targetFilePath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceReader">XML リーダー オブジェクト。</param>
+        <param name="targetFilePath">ターゲット ファイルのパスを含む文字列。</param>
+        <summary>オブジェクト モデルのコードを生成します。</summary>
+        <returns>生成中に発生したスキーマ エラーの一覧。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateCode">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Data.Metadata.Edm.EdmSchemaError&gt; GenerateCode (System.Xml.XmlReader sourceReader, System.IO.TextWriter targetWriter, string namespacePrefix);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IList`1&lt;class System.Data.Metadata.Edm.EdmSchemaError&gt; GenerateCode(class System.Xml.XmlReader sourceReader, class System.IO.TextWriter targetWriter, string namespacePrefix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Design.EntityClassGenerator.GenerateCode(System.Xml.XmlReader,System.IO.TextWriter,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Data.Metadata.Edm.EdmSchemaError&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceReader" Type="System.Xml.XmlReader" />
+        <Parameter Name="targetWriter" Type="System.IO.TextWriter" />
+        <Parameter Name="namespacePrefix" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceReader">XML リーダー オブジェクト。</param>
+        <param name="targetWriter">テキスト ライター オブジェクト。</param>
+        <param name="namespacePrefix">名前空間のプレフィックスを含む文字列。</param>
+        <summary>パラメーターで識別されるスイッチからデータ モデルのコードを生成します。</summary>
+        <returns>生成中に発生したスキーマ エラーの一覧。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `namespacePrefix` は、既定のコンテナーと同じ名前空間の型の名前空間としてのみ使用され、その他の場合は、サーバー指定の名前空間のプレフィックスとして使用されます。 場合`namespacePrefix`は`null`サーバーに用意されている名前空間では、すべての種類が使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LanguageOption">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Design.LanguageOption LanguageOption { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.Services.Design.LanguageOption LanguageOption" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Design.EntityClassGenerator.LanguageOption" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Design.LanguageOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ モデルの生成に使用される言語のオプションを取得します。</summary>
+        <value>言語のオプション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPropertyGenerated">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Data.Services.Design.PropertyGeneratedEventArgs&gt; OnPropertyGenerated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Data.Services.Design.PropertyGeneratedEventArgs&gt; OnPropertyGenerated" />
+      <MemberSignature Language="DocId" Value="E:System.Data.Services.Design.EntityClassGenerator.OnPropertyGenerated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Data.Services.Design.PropertyGeneratedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティが生成されると発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnTypeGenerated">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Data.Services.Design.TypeGeneratedEventArgs&gt; OnTypeGenerated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Data.Services.Design.TypeGeneratedEventArgs&gt; OnTypeGenerated" />
+      <MemberSignature Language="DocId" Value="E:System.Data.Services.Design.EntityClassGenerator.OnTypeGenerated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Data.Services.Design.TypeGeneratedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型が生成されると発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseDataServiceCollection">
+      <MemberSignature Language="C#" Value="public bool UseDataServiceCollection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseDataServiceCollection" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Design.EntityClassGenerator.UseDataServiceCollection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ バインディングをサポートするのに必要なコードをコード生成に含める必要があるかどうかを取得または設定します。</summary>
+        <value>A<see cref="T:System.Boolean" />値が<see langword="true" />データ バインド コードがそれ以外の場合<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Design.DataServiceCodeVersion Version { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.Services.Design.DataServiceCodeVersion Version" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Design.EntityClassGenerator.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Design.DataServiceCodeVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コード ターゲットを生成した [!INCLUDE[ssAstoria](~/includes/ssastoria-md.md)] のバージョンを取得および設定します。</summary>
+        <value>生成されたコードのバージョンを示す <see cref="T:System.Data.Services.Design.DataServiceCodeVersion" /> 値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

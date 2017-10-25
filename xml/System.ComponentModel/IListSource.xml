@@ -1,0 +1,148 @@
+<Type Name="IListSource" FullName="System.ComponentModel.IListSource">
+  <TypeSignature Language="C#" Value="public interface IListSource" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IListSource" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.IListSource" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataSourceListEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter("System.Windows.Forms.Design.DataSourceConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>データ ソースにバインドできるリストを返しますオブジェクトへの機能を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装しないオブジェクトからデータ ソースにバインドできるリストを返すためこのインターフェイスを使用する通常<xref:System.Collections.IList>自体です。  
+  
+ データへのバインディングは、デザイナーで、またはいずれかの実行時に発生する可能性しますが、それぞれの規則があります。 実行時に、次のいずれかのデータにバインドできます。  
+  
+-   <xref:System.Array>  
+  
+-   実行者<xref:System.Collections.IList>、実装者がある厳密に型指定された、<xref:System.Collections.IList.Item%2A>プロパティ (つまり、<xref:System.Type>以外は<xref:System.Object>)。 これを行うの既定の実装をすることにより<xref:System.Collections.IList.Item%2A>プライベートです。 作成する場合、<xref:System.Collections.IList>厳密に型指定されたコレクションの規則に従っているから派生する必要があります<xref:System.Collections.CollectionBase>です。  
+  
+-   実行者<xref:System.ComponentModel.ITypedList>です。  
+  
+ デザイナーでは、バインディングを初期化できます<xref:System.ComponentModel.Component>オブジェクトを同じ規則に従います。  
+  
+> [!NOTE]
+>  実装側<xref:System.ComponentModel.IListSource>返すことができます、<xref:System.Collections.IList>のコレクションを含む<xref:System.Collections.IList>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装する方法を示します、<xref:System.ComponentModel.IListSource>インターフェイスです。 という名前のコンポーネント`EmployeeListSource`公開、<xref:System.Collections.IList>を実装してデータ バインディング、<xref:System.ComponentModel.IListSource.GetList%2A>メソッドです。 完全なコードの一覧については、次を参照してください。[する方法: IListSource インターフェイスを実装して](~/docs/framework/winforms/how-to-implement-the-ilistsource-interface.md)です。  
+  
+ [!code-csharp[System.ComponentModel.IListSource#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.IListSource/CS/EmployeeListSource.cs#1)]
+ [!code-vb[System.ComponentModel.IListSource#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.IListSource/VB/EmployeeListSource.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ContainsListCollection">
+      <MemberSignature Language="C#" Value="public bool ContainsListCollection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ContainsListCollection" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.IListSource.ContainsListCollection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションがのコレクションであるかどうかを示す値を取得<see cref="T:System.Collections.IList" />オブジェクト。</summary>
+        <value>
+          <see langword="true" />場合は、コレクションは、コレクションの<see cref="T:System.Collections.IList" />オブジェクト。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して<xref:System.Data.DataSet>返します`true`ため、<xref:System.Data.DataSet>クラスには、コレクションのコレクションが含まれています。 このプロパティを使用して<xref:System.Data.DataTable>返します`false`ため、<xref:System.Data.DataTable>クラスには、オブジェクトのコレクションが含まれています。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装する方法を示します、<xref:System.ComponentModel.IListSource>インターフェイスです。 という名前のコンポーネント`EmployeeListSource`ことがないことを示します、<xref:System.Collections.IList>を返すことによって、データ バインディングの`false`から、<xref:System.ComponentModel.IListSource.ContainsListCollection%2A>メソッドです。 完全なコードの一覧については、次を参照してください。[する方法: IListSource インターフェイスを実装して](~/docs/framework/winforms/how-to-implement-the-ilistsource-interface.md)です。  
+  
+ [!code-csharp[System.ComponentModel.IListSource#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.IListSource/CS/EmployeeListSource.cs#3)]
+ [!code-vb[System.ComponentModel.IListSource#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.IListSource/VB/EmployeeListSource.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetList">
+      <MemberSignature Language="C#" Value="public System.Collections.IList GetList ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IList GetList() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.IListSource.GetList" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Collections.IList" />を実装しないオブジェクトからデータ ソースに連結できる、<see cref="T:System.Collections.IList" />自体です。</summary>
+        <returns><see cref="T:System.Collections.IList" />をオブジェクトからデータ ソースにバインドできます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、実装する方法を示します、<xref:System.ComponentModel.IListSource>インターフェイスです。 という名前のコンポーネント`EmployeeListSource`公開、<xref:System.Collections.IList>を実装してデータ バインディング、<xref:System.ComponentModel.IListSource.GetList%2A>メソッドです。 完全なコードの一覧については、次を参照してください。[する方法: IListSource インターフェイスを実装して](~/docs/framework/winforms/how-to-implement-the-ilistsource-interface.md)です。  
+  
+ [!code-csharp[System.ComponentModel.IListSource#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.IListSource/CS/EmployeeListSource.cs#4)]
+ [!code-vb[System.ComponentModel.IListSource#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.IListSource/VB/EmployeeListSource.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

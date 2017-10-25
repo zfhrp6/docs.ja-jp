@@ -1,0 +1,231 @@
+<Type Name="IntegerValidator" FullName="System.Configuration.IntegerValidator">
+  <TypeSignature Language="C#" Value="public class IntegerValidator : System.Configuration.ConfigurationValidatorBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit IntegerValidator extends System.Configuration.ConfigurationValidatorBase" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.IntegerValidator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationValidatorBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>検証を提供する<see cref="T:System.Int32" />値。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.IntegerValidator>整数が特定の条件を満たしていることを確認するクラスを使用します。 インスタンスの検証条件を確立、<xref:System.Configuration.IntegerValidator>クラスを作成します。 <xref:System.Configuration.IntegerValidator.%23ctor%2A> 2 つのパラメーターを持つコンス トラクター検証されている整数値が最小と最大値の両方に準拠していることを確認します。 <xref:System.Configuration.IntegerValidator.%23ctor%2A> 3 つのパラメーターを持つコンス トラクターは、最小値と最大の両方をチェック<xref:System.Int32>検証に使用する値が指定した範囲内かどうかだけでなく、値します。 <xref:System.Configuration.IntegerValidator.%23ctor%2A> 4 つのパラメーターを持つコンス トラクターは、確認前の 3 つのパラメーターともチェックするかどうか、<xref:System.Int32>値は特定の解像度にします。  
+  
+ <xref:System.Configuration.IntegerValidator.CanValidate%2A>メソッドでは、オブジェクトの種類の検証中に、予期された型が一致するかどうかを判断します。 検証されるオブジェクトのパラメーターとして渡されます、<xref:System.Configuration.IntegerValidator.Validate%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.IntegerValidator>型です。  
+  
+ [!code-csharp[System.Configuration.IntegerValidator#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.IntegerValidator/CS/IntegerValidator.cs#1)]
+ [!code-vb[System.Configuration.IntegerValidator#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.IntegerValidator/VB/IntegerValidator.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IntegerValidator (int minValue, int maxValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 minValue, int32 maxValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.IntegerValidator.#ctor(System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="minValue" Type="System.Int32" />
+        <Parameter Name="maxValue" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="minValue"><see cref="T:System.Int32" />最小値を指定するオブジェクト。</param>
+        <param name="maxValue"><see cref="T:System.Int32" />最大値を指定するオブジェクト。</param>
+        <summary><see cref="T:System.Configuration.IntegerValidator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、<xref:System.Configuration.IntegerValidator.%23ctor%2A>コンス トラクターの整数が検証されているが、最小および最大長の両方に準拠していることを確認します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IntegerValidator (int minValue, int maxValue, bool rangeIsExclusive);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 minValue, int32 maxValue, bool rangeIsExclusive) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.IntegerValidator.#ctor(System.Int32,System.Int32,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="minValue" Type="System.Int32" />
+        <Parameter Name="maxValue" Type="System.Int32" />
+        <Parameter Name="rangeIsExclusive" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="minValue"><see cref="T:System.Int32" />最小値を指定するオブジェクト。</param>
+        <param name="maxValue"><see cref="T:System.Int32" />最大値を指定するオブジェクト。</param>
+        <param name="rangeIsExclusive">
+          <see langword="true" />検証範囲が排他的であるを指定します。 検証に使用する包括的な手段、値が指定された範囲内にする必要があります。最小値を下回る、または最大値より大きい必要がある排他的な手段です。</param>
+        <summary><see cref="T:System.Configuration.IntegerValidator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスを作成するときに、<xref:System.Configuration.IntegerValidator>クラスでこの<xref:System.Configuration.IntegerValidator.%23ctor%2A>コンス トラクターは、最小値と最大の両方をチェック<xref:System.Int32>検証範囲が排他的かどうかだけでなく、値します。 ときに、`rangeIsExclusive`にパラメーターが設定されている`true`、<xref:System.Int32>間の値にはできません、`minValue`と`maxValue`パラメーターの値。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.IntegerValidator.%23ctor%2A>コンス トラクターです。 このコード例に示されている例の一部である、<xref:System.Configuration.IntegerValidator>クラスです。  
+  
+ [!code-csharp[System.Configuration.IntegerValidator#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.IntegerValidator/CS/IntegerValidator.cs#2)]
+ [!code-vb[System.Configuration.IntegerValidator#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.IntegerValidator/VB/IntegerValidator.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IntegerValidator (int minValue, int maxValue, bool rangeIsExclusive, int resolution);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 minValue, int32 maxValue, bool rangeIsExclusive, int32 resolution) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.IntegerValidator.#ctor(System.Int32,System.Int32,System.Boolean,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="minValue" Type="System.Int32" />
+        <Parameter Name="maxValue" Type="System.Int32" />
+        <Parameter Name="rangeIsExclusive" Type="System.Boolean" />
+        <Parameter Name="resolution" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="minValue"><see cref="T:System.Int32" />整数値の最小の長さを指定するオブジェクト。</param>
+        <param name="maxValue"><see cref="T:System.Int32" />整数値の最大長を指定するオブジェクト。</param>
+        <param name="rangeIsExclusive">A<see cref="T:System.Boolean" />検証範囲が排他的かどうかを指定する値。</param>
+        <param name="resolution"><see cref="T:System.Int32" />一致する必要がある値を指定するオブジェクト。</param>
+        <summary><see cref="T:System.Configuration.IntegerValidator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Int32>検証されている値でなければなりません、`resolution`検証に合格するために値。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="resolution" /> は <see langword="0" /> より小さい値です。  
+  
+ \- または  
+  
+ <paramref name="minValue" /> が <paramref name="maxValue" /> より大きくなっています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanValidate">
+      <MemberSignature Language="C#" Value="public override bool CanValidate (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanValidate(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.IntegerValidator.CanValidate(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">オブジェクトの型。</param>
+        <summary>オブジェクトの型を検証できるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合、<paramref name="type" />パラメーターと一致する、<see cref="T:System.Int32" />値。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Configuration.IntegerValidator.CanValidate%2A> メソッドの使用方法を示します。 このコード例に示されている例の一部である、<xref:System.Configuration.IntegerValidator>クラスです。  
+  
+ [!code-csharp[System.Configuration.IntegerValidator#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.IntegerValidator/CS/IntegerValidator.cs#3)]
+ [!code-vb[System.Configuration.IntegerValidator#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.IntegerValidator/VB/IntegerValidator.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Validate">
+      <MemberSignature Language="C#" Value="public override void Validate (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Validate(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.IntegerValidator.Validate(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">検証する値。</param>
+        <summary>オブジェクトの値が有効かどうかを判断します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.IntegerValidator>オブジェクトには、整数のオブジェクトを検証するために必要なルールが含まれています。 インスタンスに、規則が確立される、<xref:System.Configuration.IntegerValidator>クラスを作成します。 検証する整数値オブジェクトのパラメーターとして渡されます、<xref:System.Configuration.IntegerValidator.Validate%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Configuration.IntegerValidator.Validate%2A> メソッドの使用方法を示します。 このコード例に示されている例の一部である、<xref:System.Configuration.IntegerValidator>クラスです。  
+  
+ [!code-csharp[System.Configuration.IntegerValidator#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.IntegerValidator/CS/IntegerValidator.cs#4)]
+ [!code-vb[System.Configuration.IntegerValidator#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.IntegerValidator/VB/IntegerValidator.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

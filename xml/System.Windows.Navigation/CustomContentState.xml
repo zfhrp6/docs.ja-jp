@@ -1,0 +1,151 @@
+<Type Name="CustomContentState" FullName="System.Windows.Navigation.CustomContentState">
+  <TypeSignature Language="C#" Value="public abstract class CustomContentState" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit CustomContentState extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Navigation.CustomContentState" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+      <see cref="T:System.Windows.Navigation.CustomContentState" />以降の各操作のソース コンテンツを再読み込みを行わず、1 つのソース コンテンツのさまざまな状態間を移動する機能を有効にします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.Windows.Navigation.NavigationService>ナビゲーション履歴には、コンテンツ オブジェクトのインスタンスは格納されません。 代わりに、<xref:System.Windows.Navigation.NavigationService>ナビゲーション履歴を使用して、移動するたびに、コンテンツ オブジェクトの新しいインスタンスを作成します。 この動作は数値が大きいとコンテンツの大きなデータは移動先ときに、過度なメモリ消費を避けるために設計されています。 その結果、次に、コンテンツの状態は 1 つのナビゲーションからに記憶されません。 ただし、[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]カスタム状態の一部のコンテンツのナビゲーション履歴のエントリに関連付ける機能を提供します。  
+  
+ ナビゲーション履歴のエントリに関連付けられているカスタムの状態から派生したクラスでなければなりません<xref:System.Windows.Navigation.CustomContentState>です。 関連付ける、<xref:System.Windows.Navigation.CustomContentState>次の手法のいずれかを使用して、ナビゲーション履歴のエントリを持つオブジェクト。  
+  
+-   呼び出す**ため**:  
+  
+    -   <xref:System.Windows.Navigation.NavigationService.AddBackEntry%2A?displayProperty=nameWithType>  
+  
+    -   <xref:System.Windows.Navigation.NavigationWindow.AddBackEntry%2A?displayProperty=nameWithType>  
+  
+    -   <xref:System.Windows.Controls.Frame.AddBackEntry%2A?displayProperty=nameWithType>。  
+  
+-   設定<xref:System.Windows.Navigation.NavigatingCancelEventArgs.Content%2A?displayProperty=nameWithType>する次のイベントのいずれかが発生した場合。  
+  
+    -   <xref:System.Windows.Navigation.NavigationService.Navigating?displayProperty=nameWithType>  
+  
+    -   <xref:System.Windows.Navigation.NavigationWindow.Navigating?displayProperty=nameWithType>  
+  
+    -   <xref:System.Windows.Controls.Frame.Navigating?displayProperty=nameWithType>  
+  
+    -   <xref:System.Windows.Navigation.NavigationWindow.Navigating?displayProperty=nameWithType>  
+  
+-   実装することによって<xref:System.Windows.Navigation.IProvideCustomContentState>クラスがそれに関連するカスタムの状態にします。  
+  
+> [!NOTE]
+>  呼び出す場合は、**ため**メソッドを処理する必要がある、 **Navigating**イベントまたは実装<xref:System.Windows.Navigation.IProvideCustomContentState>です。  
+  
+ ナビゲーション履歴のエントリに移動したとき[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]は、カスタム<xref:System.Windows.Navigation.CustomContentState>オブジェクトに関連付けられています。 そのため、アプリケーションが呼び出した場合<xref:System.Windows.Navigation.CustomContentState.Replay%2A>カスタムを許可する<xref:System.Windows.Navigation.CustomContentState>ナビゲーションから、以前の記憶に状態を適用するオブジェクト。  
+  
+ カスタム<xref:System.Windows.Navigation.CustomContentState>クラスをオーバーライドできます<xref:System.Windows.Navigation.CustomContentState.JournalEntryName%2A>をナビゲーション履歴のエントリに対して表示される名前を変更する、<xref:System.Windows.Navigation.CustomContentState>オブジェクトが関連付けられます。 値を<xref:System.Windows.Navigation.CustomContentState.JournalEntryName%2A>がのナビゲーションから、表示されている値を取得[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]のさまざまなナビゲーターの ([!INCLUDE[TLA2#tla_ie7](~/includes/tla2sharptla-ie7-md.md)]、 <xref:System.Windows.Navigation.NavigationWindow>、 <xref:System.Windows.Controls.Frame>)。  
+  
+ 派生したクラス<xref:System.Windows.Navigation.CustomContentState>する必要があります、シリアル化可能な意味を強化する必要がありますには、少なくとも<xref:System.SerializableAttribute>、必要に応じて、実装と<xref:System.Runtime.Serialization.ISerializable>です。  
+  
+> [!IMPORTANT]
+>  カスタム コンテンツの状態の情報を格納するときに、いずれかを格納できません対象の場合、状態を記憶する ページのインスタンスへの参照がメモリに保持されるコンテンツをしたくないです。 これにより、[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]を既定のナビゲーション履歴の動作の目的は、ページのインスタンスと損なわを解放します。 これを行う必要がある場合、は、使用を検討して<xref:System.Windows.Controls.Page.KeepAlive%2A>代わりにします。  
+  
+   
+  
+## Examples  
+ 次の例に示します、<xref:System.Windows.Navigation.CustomContentState>実装をオーバーライドする<xref:System.Windows.Navigation.CustomContentState.JournalEntryName%2A>です。  
+  
+ [!code-csharp[CustomContentStateSnippets#MyCustomContentStateCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/CustomContentStateSnippets/CSharp/MyCustomContentState.cs#mycustomcontentstatecode)]
+ [!code-vb[CustomContentStateSnippets#MyCustomContentStateCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CustomContentStateSnippets/visualbasic/mycustomcontentstate.vb#mycustomcontentstatecode)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected CustomContentState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.CustomContentState.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Navigation.CustomContentState" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="JournalEntryName">
+      <MemberSignature Language="C#" Value="public virtual string JournalEntryName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string JournalEntryName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.CustomContentState.JournalEntryName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ナビゲーション履歴に格納されているコンテンツの名前です。 値<see cref="P:System.Windows.Navigation.CustomContentState.JournalEntryName" />から表示<see cref="T:System.Windows.Navigation.NavigationWindow" />、 <see cref="T:System.Windows.Controls.Frame" />、および[!INCLUDE[TLA#tla_ie7](~/includes/tlasharptla-ie7-md.md)]ナビゲーション[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]です。</summary>
+        <value><see cref="T:System.String" />ナビゲーション履歴に格納されているコンテンツの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [戻る] と [進むナビゲーション履歴に格納されているエントリは通常戻る] ボタンと進むナビゲーションには、上のナビゲーション ボタン ドロップダウンから[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]など、ホスト ナビゲーターの<xref:System.Windows.Navigation.NavigationWindow>、 <xref:System.Windows.Controls.Frame>、または[!INCLUDE[TLA#tla_ie7](~/includes/tlasharptla-ie7-md.md)]です。  
+  
+ <xref:System.Windows.Navigation.CustomContentState.JournalEntryName%2A><xref:System.String>ナビゲーション履歴ドロップ ダウン リストに表示される値。  
+  
+ <xref:System.Windows.Navigation.CustomContentState.JournalEntryName%2A>オーバーライドできる必要はありません。ない場合は、次のどのデータの優先順位で、ナビゲーションの履歴エントリ名を自動的に構築するために使用します。  
+  
+-   <xref:System.Windows.Controls.Page.Title%2A>。  
+  
+-   <xref:System.Windows.Controls.Page.WindowTitle%2A>および[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]現在のページ  
+  
+-   [!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]現在のページです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Replay">
+      <MemberSignature Language="C#" Value="public abstract void Replay (System.Windows.Navigation.NavigationService navigationService, System.Windows.Navigation.NavigationMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Replay(class System.Windows.Navigation.NavigationService navigationService, valuetype System.Windows.Navigation.NavigationMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.CustomContentState.Replay(System.Windows.Navigation.NavigationService,System.Windows.Navigation.NavigationMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="navigationService" Type="System.Windows.Navigation.NavigationService" />
+        <Parameter Name="mode" Type="System.Windows.Navigation.NavigationMode" />
+      </Parameters>
+      <Docs>
+        <param name="navigationService"><see cref="T:System.Windows.Navigation.NavigationService" />先である、コンテンツを担当のナビゲーターが所有する<see cref="T:System.Windows.Navigation.CustomContentState" />が適用されています。</param>
+        <param name="mode">A<see cref="T:System.Windows.Navigation.NavigationMode" />を指定する方法、コンテンツを<see cref="T:System.Windows.Navigation.CustomContentState" />が適用される移動先。</param>
+        <summary>ナビゲーションが発生したときに、コンテンツに状態を再適用するには、呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Navigation.CustomContentState.Replay%2A>項目のときに呼び出されますが、関連付けられているナビゲーション履歴に<xref:System.Windows.Navigation.CustomContentState>にオブジェクトを移動します。  
+  
+ 抽象から派生している場合<xref:System.Windows.Navigation.CustomContentState>クラス、<xref:System.Windows.Navigation.CustomContentState.Replay%2A>オーバーライドの実装は、ベースのみを呼び出す必要がありますが、オーバーライドする必要があります<xref:System.Windows.Navigation.CustomContentState.Replay%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

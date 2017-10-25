@@ -1,0 +1,115 @@
+<Type Name="PhotoPrintingIntent" FullName="System.Printing.PhotoPrintingIntent">
+  <TypeSignature Language="C#" Value="public enum PhotoPrintingIntent" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed PhotoPrintingIntent extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Printing.PhotoPrintingIntent" />
+  <AssemblyInfo>
+    <AssemblyName>ReachFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>写真を印刷するときは、出力の品質を指定します。 プリンター ドライバーは、変換、<see cref="T:System.Printing.PhotoPrintingIntent" />解像度およびその他の品質要因の数量の値にします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この型の値は、目的のための主に使用されます。  
+  
+-   メンバーとして、<xref:System.Printing.PrintCapabilities.PhotoPrintingIntentCapability%2A>プロパティには、コレクションの<xref:System.Printing.PrintCapabilities>プリンターをサポートしている品質レベルを指定します。  
+  
+-   として、<xref:System.Printing.PrintTicket.PhotoPrintingIntent%2A>プロパティの値の<xref:System.Printing.PrintTicket>、特定の品質を使用するプリンターに指示します。  
+  
+ プロパティで不明な値が使われていない<xref:System.Printing.PrintCapabilities>オブジェクト。  
+  
+ 設定する必要がありますしない、 <xref:System.Printing.PrintTicket> "不明"にプロパティです。 その他の場合<xref:System.Printing.PrintTicket>アプリケーションを生成すると、PrintTicket ドキュメント、写真の印刷インテント機能を認識できないオプションに設定するが作成 (で定義されていない、オプションは、[印刷スキーマ](http://go.microsoft.com/fwlink/?LinkId=186397))、<xref:System.Printing.PrintTicket>そのドキュメントに作成されますが、アプリケーションのオブジェクトの値としての不明なが、<xref:System.Printing.PrintTicket.PhotoPrintingIntent%2A>プロパティです。  
+  
+ <xref:System.Printing.PrintTicket>と<xref:System.Printing.PrintCapabilities>クラスは継承できません、拡張することができます、[印刷スキーマ](http://go.microsoft.com/fwlink/?LinkId=186397)では考慮されません印刷デバイスの機能を認識するように、<xref:System.Printing.PrintTicket.PhotoPrintingIntent%2A>または<xref:System.Printing.PrintCapabilities>クラスです。 詳細については、次を参照してください。[ビルド内にありません: 方法: 印刷スキーマと新しい印刷システム クラスを作成する拡張](http://msdn.microsoft.com/en-us/a3600218-1ea5-478a-9853-6560464f2885)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Printing.PhotoPrintingIntent None = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Printing.PhotoPrintingIntent.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PhotoPrintingIntent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>写真印刷目的のなし。 ユーザーは、特定の量的なプロパティを設定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PhotoBest">
+      <MemberSignature Language="C#" Value="PhotoBest" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Printing.PhotoPrintingIntent PhotoBest = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Printing.PhotoPrintingIntent.PhotoBest" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PhotoPrintingIntent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最適な品質の写真印刷します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PhotoDraft">
+      <MemberSignature Language="C#" Value="PhotoDraft" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Printing.PhotoPrintingIntent PhotoDraft = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Printing.PhotoPrintingIntent.PhotoDraft" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PhotoPrintingIntent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>下書き品質の写真印刷します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PhotoStandard">
+      <MemberSignature Language="C#" Value="PhotoStandard" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Printing.PhotoPrintingIntent PhotoStandard = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Printing.PhotoPrintingIntent.PhotoStandard" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PhotoPrintingIntent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>標準的な品質の写真印刷します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Unknown">
+      <MemberSignature Language="C#" Value="Unknown" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Printing.PhotoPrintingIntent Unknown = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Printing.PhotoPrintingIntent.Unknown" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PhotoPrintingIntent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>機能 (オプションはこの列挙体によって表されます) がで定義されていないオプションに設定されている、[印刷スキーマ](http://go.microsoft.com/fwlink/?LinkId=186397)です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

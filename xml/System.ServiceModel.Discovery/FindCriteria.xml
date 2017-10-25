@@ -1,0 +1,367 @@
+<Type Name="FindCriteria" FullName="System.ServiceModel.Discovery.FindCriteria">
+  <TypeSignature Language="C#" Value="public class FindCriteria" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FindCriteria extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Discovery.FindCriteria" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>サービスの検索時に使用する基準を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]使用して<xref:System.ServiceModel.Discovery.FindCriteria>と表示、検索操作[探索の検索と FindCriteria](~/docs/framework/wcf/feature-details/discovery-find-and-findcriteria.md)  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FindCriteria ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.FindCriteria.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.ServiceModel.Discovery.FindCriteria" /> の新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FindCriteria (Type contractType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type contractType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.FindCriteria.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contractType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="contractType">検索するコントラクト型の名前。</param>
+        <summary>指定されたコントラクト型の名前を使用して <see cref="T:System.ServiceModel.Discovery.FindCriteria" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContractTypeNames">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.Xml.XmlQualifiedName&gt; ContractTypeNames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.Xml.XmlQualifiedName&gt; ContractTypeNames" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Discovery.FindCriteria.ContractTypeNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.Xml.XmlQualifiedName&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検索するコントラクト型名のコレクションを取得します。</summary>
+        <value>検索するコントラクト型名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数のコントラクト名が指定されると、すべてのコントラクトに一致するサービス エンドポイントのみが適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateMetadataExchangeEndpointCriteria">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Discovery.FindCriteria CreateMetadataExchangeEndpointCriteria ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Discovery.FindCriteria CreateMetadataExchangeEndpointCriteria() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.FindCriteria.CreateMetadataExchangeEndpointCriteria" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Discovery.FindCriteria</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>サービスの検索時に使用するメタデータ交換エンドポイント基準を作成します。</summary>
+        <returns>検索サービスに使用するエンドポイント基準。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateMetadataExchangeEndpointCriteria">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Discovery.FindCriteria CreateMetadataExchangeEndpointCriteria (System.Collections.Generic.IEnumerable&lt;System.Xml.XmlQualifiedName&gt; contractTypeNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Discovery.FindCriteria CreateMetadataExchangeEndpointCriteria(class System.Collections.Generic.IEnumerable`1&lt;class System.Xml.XmlQualifiedName&gt; contractTypeNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.FindCriteria.CreateMetadataExchangeEndpointCriteria(System.Collections.Generic.IEnumerable{System.Xml.XmlQualifiedName})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Discovery.FindCriteria</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contractTypeNames" Type="System.Collections.Generic.IEnumerable&lt;System.Xml.XmlQualifiedName&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="contractTypeNames">コントラクト型名を表現する列挙値のコレクション。</param>
+        <summary>XML 修飾名の指定されたコレクションから派生するメタデータ交換エンドポイント基準を含むオブジェクトを作成します。</summary>
+        <returns>検索サービスに使用するエンドポイント基準。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.XmlQualifiedName>名前空間で修飾されたローカル名の形式では、`namespace:localname`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateMetadataExchangeEndpointCriteria">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Discovery.FindCriteria CreateMetadataExchangeEndpointCriteria (Type contractType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Discovery.FindCriteria CreateMetadataExchangeEndpointCriteria(class System.Type contractType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.FindCriteria.CreateMetadataExchangeEndpointCriteria(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Discovery.FindCriteria</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contractType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="contractType">サービス コントラクトの型。</param>
+        <summary>指定されたコントラクト型から派生するメタデータ交換エンドポイント基準を含むオブジェクトを作成します。</summary>
+        <returns>検索サービスに使用するエンドポイント基準。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Discovery.FindCriteria> 情報は、サービスを検索できるエンドポイントを作成するために使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Duration">
+      <MemberSignature Language="C#" Value="public TimeSpan Duration { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan Duration" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Discovery.FindCriteria.Duration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検索操作のタイムアウト期間を指定する <see cref="T:System.TimeSpan" /> を取得または設定します。</summary>
+        <value>検索操作のタイムアウト期間。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Extensions">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.Xml.Linq.XElement&gt; Extensions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.Xml.Linq.XElement&gt; Extensions" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Discovery.FindCriteria.Extensions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.Xml.Linq.XElement&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Discovery.FindCriteria" /> インスタンスにある拡張のコレクションを取得します。</summary>
+        <value>XML 拡張。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMatch">
+      <MemberSignature Language="C#" Value="public bool IsMatch (System.ServiceModel.Discovery.EndpointDiscoveryMetadata endpointDiscoveryMetadata);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsMatch(class System.ServiceModel.Discovery.EndpointDiscoveryMetadata endpointDiscoveryMetadata) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.FindCriteria.IsMatch(System.ServiceModel.Discovery.EndpointDiscoveryMetadata)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="endpointDiscoveryMetadata" Type="System.ServiceModel.Discovery.EndpointDiscoveryMetadata" />
+      </Parameters>
+      <Docs>
+        <param name="endpointDiscoveryMetadata">問題のサービスを説明するエンドポイント探索メタデータ。</param>
+        <summary>基準のセットが、指定された <see cref="T:System.ServiceModel.Discovery.EndpointDiscoveryMetadata" /> インスタンスによって説明されているサービスに一致するかどうかを判定します。</summary>
+        <returns>
+          <see langword="true" />それ以外の場合、サービスに、条件が一致すると場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxResults">
+      <MemberSignature Language="C#" Value="public int MaxResults { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxResults" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Discovery.FindCriteria.MaxResults" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検索操作から必要な応答の最大数を取得または設定します。</summary>
+        <value>検索操作から必要な応答の最大数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScopeMatchBy">
+      <MemberSignature Language="C#" Value="public Uri ScopeMatchBy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri ScopeMatchBy" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Discovery.FindCriteria.ScopeMatchBy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スコープの一致方法を指定する URI を取得または設定します。</summary>
+        <value>スコープの一致方法を指定する URI。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScopeMatchByExact">
+      <MemberSignature Language="C#" Value="public static readonly Uri ScopeMatchByExact;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Uri ScopeMatchByExact" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByExact" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スコープがで定義されている大文字小文字の比較 (http://schemas.xmlsoap.org/ws/2004/10/discovery/strcmp0) を使用して、一致するように指定、 [Ws-discovery 仕様](http://go.microsoft.com/fwlink/?LinkId=122347)です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScopeMatchByLdap">
+      <MemberSignature Language="C#" Value="public static readonly Uri ScopeMatchByLdap;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Uri ScopeMatchByLdap" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByLdap" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドを使用して LDAP (http://schemas.xmlsoap.org/ws/2004/10/discovery/ldap) で定義されているスコープを一致するように指定、 [Ws-discovery 仕様](http://go.microsoft.com/fwlink/?LinkId=122347)です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScopeMatchByNone">
+      <MemberSignature Language="C#" Value="public static readonly Uri ScopeMatchByNone;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Uri ScopeMatchByNone" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByNone" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>定義されているスコープが無視されることを指定します、 [Ws-discovery 仕様](http://go.microsoft.com/fwlink/?LinkId=122347)です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScopeMatchByPrefix">
+      <MemberSignature Language="C#" Value="public static readonly Uri ScopeMatchByPrefix;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Uri ScopeMatchByPrefix" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByPrefix" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>定義されているプレフィックス メソッド (http://schemas.xmlsoap.org/ws/2004/10/discovery/rfc2396) を使用してスコープを照合することを指定します、 [Ws-discovery 仕様](http://go.microsoft.com/fwlink/?LinkId=122347)です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScopeMatchByUuid">
+      <MemberSignature Language="C#" Value="public static readonly Uri ScopeMatchByUuid;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Uri ScopeMatchByUuid" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByUuid" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドを使用して UUID (http://schemas.xmlsoap.org/ws/2004/10/discovery/uuid) で定義されているスコープを一致するように指定、 [Ws-discovery 仕様](http://go.microsoft.com/fwlink/?LinkId=122347)です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scopes">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;Uri&gt; Scopes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.Uri&gt; Scopes" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Discovery.FindCriteria.Scopes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.Uri&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス検索に使用されるスコープを表現する絶対 URI のコレクションを取得します。</summary>
+        <value>サービス検索に使用される絶対 URI のコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数のスコープが指定されると、すべてのスコープに一致するサービス エンドポイントのみが応答します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

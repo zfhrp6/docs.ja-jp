@@ -1,0 +1,221 @@
+<Type Name="DataGridViewColumnDesignTimeVisibleAttribute" FullName="System.Windows.Forms.DataGridViewColumnDesignTimeVisibleAttribute">
+  <TypeSignature Language="C#" Value="public sealed class DataGridViewColumnDesignTimeVisibleAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DataGridViewColumnDesignTimeVisibleAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewColumnDesignTimeVisibleAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>列の型がで表示されるかどうかを指定、<see cref="T:System.Windows.Forms.DataGridView" />デザイナー。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定から派生した型<xref:System.Windows.Forms.DataGridViewColumn>に表示される<xref:System.Windows.Forms.DataGridView>、Visual Studio デザイナーのコントロールに固有の部分を継承、<xref:System.ComponentModel.DesignTimeVisibleAttribute>の<xref:System.ComponentModel.DesignTimeVisibleAttribute.No>デザイナーの他の部分が表示されないようにします。 これは、必要なため、<xref:System.Windows.Forms.DataGridViewColumn>型を実装して、<xref:System.ComponentModel.IComponent>インターフェイスで、デザイナーで表示される、型のインスタンスは通常、します。  
+  
+ 防ぐためにこの属性を使用して、<xref:System.Windows.Forms.DataGridViewColumn>型に表示されない、<xref:System.Windows.Forms.DataGridView>コントロールに固有のデザイナー。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridViewColumnDesignTimeVisibleAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumnDesignTimeVisibleAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.DataGridViewColumnDesignTimeVisibleAttribute" />クラスの既定値を使用して<see cref="P:System.Windows.Forms.DataGridViewColumnDesignTimeVisibleAttribute.Visible" />のプロパティの値<see langword="true" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridViewColumnDesignTimeVisibleAttribute (bool visible);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool visible) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumnDesignTimeVisibleAttribute.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="visible" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="visible"><see cref="P:System.Windows.Forms.DataGridViewColumnDesignTimeVisibleAttribute.Visible" /> プロパティの値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.DataGridViewColumnDesignTimeVisibleAttribute" />クラスの初期化するために、指定された値を使用して、<see cref="P:System.Windows.Forms.DataGridViewColumnDesignTimeVisibleAttribute.Visible" />プロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Forms.DataGridViewColumnDesignTimeVisibleAttribute Default;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Forms.DataGridViewColumnDesignTimeVisibleAttribute Default" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGridViewColumnDesignTimeVisibleAttribute.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewColumnDesignTimeVisibleAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定値<see cref="T:System.Windows.Forms.DataGridViewColumnDesignTimeVisibleAttribute" />である値<see cref="F:System.Windows.Forms.DataGridViewColumnDesignTimeVisibleAttribute.Yes" />、列がで表示されることを示す、<see cref="T:System.Windows.Forms.DataGridView" />デザイナー。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性のインスタンスが、<xref:System.Windows.Forms.DataGridViewColumnDesignTimeVisibleAttribute.Visible%2A>のプロパティの値`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumnDesignTimeVisibleAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在の <see cref="T:System.Object" /> と比較する <see cref="T:System.Object" />。</param>
+        <summary>このオブジェクトは、指定したオブジェクトに等しいかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />指定したオブジェクトがあることを示す、<see cref="T:System.Windows.Forms.DataGridViewColumnDesignTimeVisibleAttribute" />を同じインスタンス<see cref="P:System.Windows.Forms.DataGridViewColumnDesignTimeVisibleAttribute.Visible" />プロパティの値です。 このインスタンスとそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumnDesignTimeVisibleAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefaultAttribute">
+      <MemberSignature Language="C#" Value="public override bool IsDefaultAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsDefaultAttribute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumnDesignTimeVisibleAttribute.IsDefaultAttribute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この属性のインスタンスが等しいかどうかを示す値を取得、<see cref="F:System.Windows.Forms.DataGridViewColumnDesignTimeVisibleAttribute.Default" />属性の値。</summary>
+        <returns>
+          <see langword="true" />このインスタンスが等しいことを示す、<see cref="F:System.Windows.Forms.DataGridViewColumnDesignTimeVisibleAttribute.Default" />インスタンス。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="No">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Forms.DataGridViewColumnDesignTimeVisibleAttribute No;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Forms.DataGridViewColumnDesignTimeVisibleAttribute No" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGridViewColumnDesignTimeVisibleAttribute.No" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewColumnDesignTimeVisibleAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>A<see cref="T:System.Windows.Forms.DataGridViewColumnDesignTimeVisibleAttribute" />列がで表示されないことを示す値、<see cref="T:System.Windows.Forms.DataGridView" />デザイナー。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性のインスタンスが、<xref:System.Windows.Forms.DataGridViewColumnDesignTimeVisibleAttribute.Visible%2A>のプロパティの値`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Visible">
+      <MemberSignature Language="C#" Value="public bool Visible { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Visible" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewColumnDesignTimeVisibleAttribute.Visible" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列のデータ型がで表示されるかどうかを示す値を取得、<see cref="T:System.Windows.Forms.DataGridView" />デザイナー。</summary>
+        <value>
+          <see langword="true" />列のデータ型がで表示されていることを示す、<see cref="T:System.Windows.Forms.DataGridView" />デザイナー、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Yes">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Forms.DataGridViewColumnDesignTimeVisibleAttribute Yes;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Forms.DataGridViewColumnDesignTimeVisibleAttribute Yes" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGridViewColumnDesignTimeVisibleAttribute.Yes" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewColumnDesignTimeVisibleAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>A<see cref="T:System.Windows.Forms.DataGridViewColumnDesignTimeVisibleAttribute" />列がで表示されることを示す値、<see cref="T:System.Windows.Forms.DataGridView" />デザイナー。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性のインスタンスが、<xref:System.Windows.Forms.DataGridViewColumnDesignTimeVisibleAttribute.Visible%2A>のプロパティの値`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,124 @@
+<Type Name="DesignTimeTemplateParser" FullName="System.Web.UI.DesignTimeTemplateParser">
+  <TypeSignature Language="C#" Value="public static class DesignTimeTemplateParser" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit DesignTimeTemplateParser extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.DesignTimeTemplateParser" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>デザイン時に解析を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DesignTimeTemplateParser>クラスものでは、デザイナー内でのみ使用します。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="ParseControl">
+      <MemberSignature Language="C#" Value="public static System.Web.UI.Control ParseControl (System.Web.UI.DesignTimeParseData data);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.Control ParseControl(class System.Web.UI.DesignTimeParseData data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DesignTimeTemplateParser.ParseControl(System.Web.UI.DesignTimeParseData)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Control</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Web.UI.DesignTimeParseData" />
+      </Parameters>
+      <Docs>
+        <param name="data">パーサーの作成に使用する情報。</param>
+        <summary>解析し、デザイン時に 1 つのコントロールを作成します。</summary>
+        <returns>組み込み<see cref="T:System.Web.UI.Control" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ParseControls">
+      <MemberSignature Language="C#" Value="public static System.Web.UI.Control[] ParseControls (System.Web.UI.DesignTimeParseData data);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.Control[] ParseControls(class System.Web.UI.DesignTimeParseData data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DesignTimeTemplateParser.ParseControls(System.Web.UI.DesignTimeParseData)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Control[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Web.UI.DesignTimeParseData" />
+      </Parameters>
+      <Docs>
+        <param name="data">パーサーの作成に使用する情報。</param>
+        <summary>解析し、デザイン時に 1 つまたは複数のコントロールを作成します。</summary>
+        <returns>配列が構築された<see cref="T:System.Web.UI.Control" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ParseTemplate">
+      <MemberSignature Language="C#" Value="public static System.Web.UI.ITemplate ParseTemplate (System.Web.UI.DesignTimeParseData data);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.ITemplate ParseTemplate(class System.Web.UI.DesignTimeParseData data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DesignTimeTemplateParser.ParseTemplate(System.Web.UI.DesignTimeParseData)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Web.UI.DesignTimeParseData" />
+      </Parameters>
+      <Docs>
+        <param name="data">パーサーの作成に使用する情報。</param>
+        <summary>デザイン時テンプレートを解析します。</summary>
+        <returns><see cref="T:System.Web.UI.RootBuilder" />テンプレートを解析するパーサーから。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ParseTheme">
+      <MemberSignature Language="C#" Value="public static System.Web.UI.ControlBuilder ParseTheme (System.ComponentModel.Design.IDesignerHost host, string theme, string themePath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.ControlBuilder ParseTheme(class System.ComponentModel.Design.IDesignerHost host, string theme, string themePath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DesignTimeTemplateParser.ParseTheme(System.ComponentModel.Design.IDesignerHost,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ControlBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
+        <Parameter Name="theme" Type="System.String" />
+        <Parameter Name="themePath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="host">デザイナーのコンポーネントを管理します。</param>
+        <param name="theme">解析するコンテンツ。</param>
+        <param name="themePath">パーサーの作成に使用されるテーマへのパス。</param>
+        <summary>デザイン時のテーマを解析します。</summary>
+        <returns><see cref="T:System.Web.UI.RootBuilder" />テーマを解析するパーサーから。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Exception">テーマの解析中にエラーが発生しました。</exception>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

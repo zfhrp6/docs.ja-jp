@@ -1,0 +1,90 @@
+<Type Name="IRemoteMethodInfoContract" FullName="System.AddIn.Contract.Automation.IRemoteMethodInfoContract">
+  <TypeSignature Language="C#" Value="public interface IRemoteMethodInfoContract : System.AddIn.Contract.IContract" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IRemoteMethodInfoContract implements class System.AddIn.Contract.IContract" />
+  <TypeSignature Language="DocId" Value="T:System.AddIn.Contract.Automation.IRemoteMethodInfoContract" />
+  <AssemblyInfo>
+    <AssemblyName>System.AddIn.Contract</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.AddIn.Contract.IContract</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>コンポーネントがアプリケーション ドメインとプロセス境界を越えてメソッドに関する情報にアクセスする際に使用するコントラクトを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.AddIn.Contract.Automation.IRemoteMethodInfoContract>を実装するリモート オブジェクトのメソッドを表す、<xref:System.AddIn.Contract.Automation.IRemoteObjectContract>インターフェイスです。  
+  
+ リモート オブジェクトの 1 つまたは複数のメソッドにアクセスするには、使用、<xref:System.AddIn.Contract.Automation.IRemoteObjectContract.GetRemoteType%2A>取得するメソッド、<xref:System.AddIn.Contract.Automation.IRemoteTypeContract>リモート オブジェクトの型を表すです。 次に、呼び出し、<xref:System.AddIn.Contract.Automation.IRemoteTypeContract.GetMethod%2A>または<xref:System.AddIn.Contract.Automation.IRemoteTypeContract.GetMethods%2A>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetMethodData">
+      <MemberSignature Language="C#" Value="public System.AddIn.Contract.Automation.RemoteMethodData GetMethodData ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.AddIn.Contract.Automation.RemoteMethodData GetMethodData() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Automation.IRemoteMethodInfoContract.GetMethodData" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.Automation.RemoteMethodData</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>メソッドに関する情報を返しますこれ<see cref="T:System.AddIn.Contract.Automation.IRemoteMethodInfoContract" />を識別します。</summary>
+        <returns>A<see cref="T:System.AddIn.Contract.Automation.RemoteMethodData" />メソッドに関する情報を提供するこの<see cref="T:System.AddIn.Contract.Automation.IRemoteMethodInfoContract" />を識別します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって提供される情報、<xref:System.AddIn.Contract.Automation.RemoteMethodData>構造体には、メソッドの戻り値とパラメーターの型が含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke">
+      <MemberSignature Language="C#" Value="public System.AddIn.Contract.RemoteArgument Invoke (System.AddIn.Contract.Automation.IRemoteObjectContract target, System.Reflection.BindingFlags bindingFlags, System.AddIn.Contract.Collections.IRemoteArgumentArrayContract parameters, int localeId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.AddIn.Contract.RemoteArgument Invoke(class System.AddIn.Contract.Automation.IRemoteObjectContract target, valuetype System.Reflection.BindingFlags bindingFlags, class System.AddIn.Contract.Collections.IRemoteArgumentArrayContract parameters, int32 localeId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Automation.IRemoteMethodInfoContract.Invoke(System.AddIn.Contract.Automation.IRemoteObjectContract,System.Reflection.BindingFlags,System.AddIn.Contract.Collections.IRemoteArgumentArrayContract,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.RemoteArgument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.AddIn.Contract.Automation.IRemoteObjectContract" />
+        <Parameter Name="bindingFlags" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="parameters" Type="System.AddIn.Contract.Collections.IRemoteArgumentArrayContract" />
+        <Parameter Name="localeId" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="target"><see cref="T:System.AddIn.Contract.Automation.IRemoteObjectContract" />に呼び出すメソッドを格納しているオブジェクトを識別します。</param>
+        <param name="bindingFlags">ビットごとの組み合わせ、<see cref="T:System.Reflection.BindingFlags" />メソッドを呼び出す方法を指定する値。</param>
+        <param name="parameters"><see cref="T:System.AddIn.Contract.Collections.IRemoteArgumentArrayContract" /> ; メソッドのパラメーターを指定します。<see langword="null" />メソッドが任意のパラメーターを持っていない場合。</param>
+        <param name="localeId">ロケール固有のメソッドを使用するロケール ID は、引数の変換の入力または戻り値。</param>
+        <summary>メソッドを呼び出すこの<see cref="T:System.AddIn.Contract.Automation.IRemoteMethodInfoContract" />を識別します。</summary>
+        <returns>A<see cref="T:System.AddIn.Contract.RemoteArgument" />呼び出されたメソッドの戻り値を指定します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出されたメソッドが戻り値を持たない場合 (たとえば、メソッドは、コンス トラクター)、 <xref:System.AddIn.Contract.Automation.IRemoteMethodInfoContract.Invoke%2A> 、既定値を返します<xref:System.AddIn.Contract.RemoteArgument>を<xref:System.AddIn.Contract.RemoteArgument.RemoteArgumentKind%2A>プロパティが値に設定<xref:System.AddIn.Contract.RemoteArgumentKind?displayProperty=nameWithType>と<xref:System.AddIn.Contract.RemoteArgument.TypeCode%2A>プロパティが値に設定<xref:System.TypeCode?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,595 @@
+<Type Name="PeerNameRegistration" FullName="System.Net.PeerToPeer.PeerNameRegistration">
+  <TypeSignature Language="C#" Value="public class PeerNameRegistration : IDisposable, System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable PeerNameRegistration extends System.Object implements class System.IDisposable, class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Net.PeerToPeer.PeerNameRegistration" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>登録、<see cref="P:System.Net.PeerToPeer.PeerNameRegistration.PeerName" />で、<see cref="T:System.Net.PeerToPeer.Cloud" />またはクラウドのセット。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 登録を作成 (または更新) に関連付けられているすべての情報、<xref:System.Net.PeerToPeer.PeerName>ピア クラウドまたはクラウドでします。  
+  
+ 複数を設定することは<xref:System.Net.PeerToPeer.PeerNameRegistration>ピア同名のオブジェクト。 このような場合は、ピア名がセキュリティ保護されている場合は、各インスタンスを表す<xref:System.Net.PeerToPeer.PeerNameRegistration>別のクラウドでします。 ただし、ピア名が保護されていない場合登録できます同じクラウドに、複数回各登録とは異なるプロセスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PeerNameRegistration ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.PeerNameRegistration.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Net.PeerToPeer.PeerNameRegistration" /> クラスの新しい既定のインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型の新しい既定のインスタンスを返します<xref:System.Net.PeerToPeer.PeerNameRegistration>です。 構築時に、ピア名の登録を行うことはできません。  
+  
+ このコンス トラクターを持つオブジェクトをインスタンス化した後、呼び出し元が呼び出しの前に、インスタンス内の該当フィールドを設定する必要があります<xref:System.Net.PeerToPeer.PeerNameRegistration.Start%2A>または<xref:System.Net.PeerToPeer.PeerNameRegistration.Stop%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PeerNameRegistration (System.Net.PeerToPeer.PeerName name, int port);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Net.PeerToPeer.PeerName name, int32 port) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.PeerNameRegistration.#ctor(System.Net.PeerToPeer.PeerName,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.Net.PeerToPeer.PeerName" />
+        <Parameter Name="port" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="name">登録する <see cref="T:System.Net.PeerToPeer.PeerName" /> オブジェクト。</param>
+        <param name="port">登録するポート番号を指定する整数値。</param>
+        <summary>指定した名前とポート番号を使用して、<see cref="T:System.Net.PeerToPeer.PeerNameRegistration" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのソース アドレス (ipv6 と IPv4 の両方) を登録するために使用するインスタンスを作成するこのコンス トラクターを呼び出すと、ピアが現在参加しているすべてのクラウドの指定されたポートです。  オブジェクトが正常に構築される場合、指定した<xref:System.Net.PeerToPeer.PeerNameRegistration.PeerName%2A>と<xref:System.Net.PeerToPeer.PeerNameRegistration.Port%2A>が生成されます。  
+  
+ ピア名はセキュリティで保護しで以前に登録されたかどうか、<xref:System.Net.PeerToPeer.PeerNameRegistration.Cloud%2A>ピアに現在参加している、<xref:System.Net.PeerToPeer.PeerToPeerException>がスローされます。  
+  
+ このコンス トラクターを作成するだけ、<xref:System.Net.PeerToPeer.PeerNameRegistration>インスタンスです。 登録は行いません。 このコンス トラクターで登録オブジェクトをインスタンス化すると、そのフィールドを設定する、アプリケーションを呼び出す必要があります<xref:System.Net.PeerToPeer.PeerNameRegistration.Start%2A>を実際の登録を実行します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターとして <see langword="null" /> を使用することはできません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定したポート番号が 0 未満です。  ポート番号は、0 以上 65535 (0 xffff) 未満にする必要があります。</exception>
+        <exception cref="T:System.Net.PeerToPeer.PeerToPeerException">-   <see cref="T:System.Net.PeerToPeer.PeerName" />指定は、このホストから既に登録されています。  
+  
+-   リモート ピアには、指定した <see cref="T:System.Net.PeerToPeer.PeerName" /> オブジェクトに対する <see cref="P:System.Net.PeerToPeer.PeerName.Authority" /> がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected PeerNameRegistration (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.PeerNameRegistration.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">このインスタンスの逆シリアル化に必要なデータを格納するオブジェクトへの参照。</param>
+        <param name="context">データを逆シリアル化するための手段を提供するコンテキスト。 シリアル化されたデータのソースとも呼ばれます。</param>
+        <summary>新しくシリアル化可能な <see cref="T:System.Net.PeerToPeer.PeerNameRegistration" /> オブジェクトを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PeerNameRegistration (System.Net.PeerToPeer.PeerName name, int port, System.Net.PeerToPeer.Cloud cloud);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Net.PeerToPeer.PeerName name, int32 port, class System.Net.PeerToPeer.Cloud cloud) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.PeerNameRegistration.#ctor(System.Net.PeerToPeer.PeerName,System.Int32,System.Net.PeerToPeer.Cloud)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.Net.PeerToPeer.PeerName" />
+        <Parameter Name="port" Type="System.Int32" />
+        <Parameter Name="cloud" Type="System.Net.PeerToPeer.Cloud" />
+      </Parameters>
+      <Docs>
+        <param name="name">登録する <see cref="T:System.Net.PeerToPeer.PeerName" /> オブジェクト。</param>
+        <param name="port">登録するポート番号を指定する整数値。</param>
+        <param name="cloud">
+          ピア名を登録する <see cref="T:System.Net.PeerToPeer.Cloud" />。</param>
+        <summary>指定したピア名、ポート番号、<see cref="T:System.Net.PeerToPeer.Cloud" /> を使用して、<see cref="T:System.Net.PeerToPeer.PeerNameRegistration" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのソース アドレス (IPv6 と IPv4 の両方)、指定されたポート、および指定した登録に使用されるインスタンスを作成するこのコンス トラクターを呼び出して<xref:System.Net.PeerToPeer.PeerNameRegistration.Cloud%2A>です。  プロパティを設定するオブジェクトが正常に構築される場合に、指定した<xref:System.Net.PeerToPeer.PeerNameRegistration.PeerName%2A>、<xref:System.Net.PeerToPeer.PeerNameRegistration.Port%2A>と<xref:System.Net.PeerToPeer.PeerNameRegistration.Cloud%2A>です。  
+  
+ クラウド パラメーターがある場合`null`を使用して名前を登録、<xref:System.Net.PeerToPeer.Cloud.Available>ショートカットの既定値を初期化、 <xref:System.Net.PeerToPeer.Cloud.Name%2A>、 <xref:System.Net.PeerToPeer.Cloud.Scope%2A>、および<xref:System.Net.PeerToPeer.Cloud.ScopeId%2A>です。  
+  
+ 、インスタンス化した後、<xref:System.Net.PeerToPeer.PeerNameRegistration.Start%2A>を登録するメソッドを呼び出す必要があります、<xref:System.Net.PeerToPeer.PeerName>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターとして <see langword="null" /> を使用することはできません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定したポート番号が 0 未満です。  ポート番号は、0 以上 65535 (0 xffff) 未満にする必要があります。</exception>
+        <exception cref="T:System.Net.PeerToPeer.PeerToPeerException">-   <see cref="T:System.Net.PeerToPeer.PeerName" />指定は、このホストから既に登録されています。  
+  
+-   リモート ピアには、指定した <see cref="T:System.Net.PeerToPeer.PeerName" /> オブジェクトに対する <see cref="P:System.Net.PeerToPeer.PeerName.Authority" /> がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Cloud">
+      <MemberSignature Language="C#" Value="public System.Net.PeerToPeer.Cloud Cloud { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.PeerToPeer.Cloud Cloud" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.PeerNameRegistration.Cloud" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.Cloud</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>情報取得または設定、<see cref="P:System.Net.PeerToPeer.PeerNameRegistration.Cloud" />にこの<see cref="P:System.Net.PeerToPeer.PeerNameRecord.PeerName" />オブジェクトが登録されます。</summary>
+        <value>型のオブジェクト<see cref="T:System.Net.PeerToPeer.Cloud" />この登録が定義されているピア クラウドを指定します。 このプロパティに設定<see langword="null" />既定です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Comment">
+      <MemberSignature Language="C#" Value="public string Comment { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Comment" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.PeerNameRegistration.Comment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または追加情報を設定、<see cref="T:System.Net.PeerToPeer.PeerName" />に登録されるオブジェクト、<see cref="T:System.Net.PeerToPeer.Cloud" />です。</summary>
+        <value>追加情報について説明するコメント、<see cref="T:System.Net.PeerToPeer.PeerName" />に関連付ける、<see cref="T:System.Net.PeerToPeer.Cloud" />です。 このプロパティに設定<see langword="null" />既定です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Net.PeerToPeer.PeerToPeerException">指定した文字列値は、Unicode で 39 文字を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Data">
+      <MemberSignature Language="C#" Value="public byte[] Data { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] Data" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.PeerNameRegistration.Data" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定用のアプリケーション定義のバイナリ データ、<see cref="T:System.Net.PeerToPeer.PeerNameRegistration" />オブジェクト。</summary>
+        <value>エントリに関連付けられているバイナリ データを保持するバイト配列。 このプロパティに設定<see langword="null" />既定です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最大量<xref:System.Net.PeerToPeer.PeerNameRegistration.Data%2A>を指定することは 4,096 バイトです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定した<see cref="P:System.Net.PeerToPeer.PeerNameRegistration.Data" />が 4096 バイトを超えています。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Dispose">
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Net.PeerToPeer.PeerNameRegistration" /> オブジェクトによって使用されているリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ピアのままにすると、 <xref:System.Net.PeerToPeer.Cloud>、必要なくなると、クラウド、<xref:System.Net.PeerToPeer.PeerNameRegistration>ピアに関連付けられているオブジェクト。  登録オブジェクトを停止しているか破棄するかどうかは、クラウドがこのピアまたは別のピアを登録するオブジェクトを再利用するかどうかによって異なります。 停止するか、このオブジェクトの破棄する前に、通信するために使用するピアのホストが期待どおりの登録オブジェクト内で他の任意のエンドポイントがある場合が発生する可能性、クラウド内のそれらのエンドポイントを登録する必要があります。  
+  
+ クラウドが複数のピアを登録する場合、<xref:System.Net.PeerToPeer.PeerNameRegistration.Stop%2A>方法はお勧めです。 クラウドには、メモリが必要がなくなり、ときに経由でオペレーティング システムに返される必要があります、<xref:System.Net.PeerToPeer.PeerNameRegistration.Dispose%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.PeerNameRegistration.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Net.PeerToPeer.PeerNameRegistration" /> オブジェクトによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="usage">
+          <para>lways が破棄する前に Dispose メソッドを呼び出す、<see cref="T:System.Net.PeerToPeer.PeerNameRegistration" />オブジェクト。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.PeerNameRegistration.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="True" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary>アンマネージ リソースを解放します。オプションで <see cref="T:System.Net.PeerToPeer.PeerNameRegistration" /> オブジェクトによって使用されているマネージ リソースも解放できます。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="usage">
+          <para>に対する最後の参照を解放する前に常に Dispose メソッドを呼び出す、<see cref="T:System.Net.PeerToPeer.PeerNameRegistration" />オブジェクト。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="EndPointCollection">
+      <MemberSignature Language="C#" Value="public System.Net.IPEndPointCollection EndPointCollection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.IPEndPointCollection EndPointCollection" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.PeerNameRegistration.EndPointCollection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.IPEndPointCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられているピア名が登録されているネットワーク エンドポイントのコレクションを取得します。</summary>
+        <value><see cref="P:System.Net.PeerToPeer.PeerNameRecord.EndPointCollection" />関連付けられているピア名が登録されているネットワーク エンドポイントを含むオブジェクト。 すべてのプロパティの既定値は、明示的に指定しない限り、<see langword="null" />参照型の場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net>名前空間、 <xref:System.Net.IPEndPoint> IP アドレスとポート番号としてネットワーク エンドポイントを表します。  PNRP では、各エンドポイントの IP アドレスとポート値を指定する必要があります。  指定できるエンドポイントの最大数は、10 個です。 このパラメーターは、ときに、アドレスの自動選択が使用される`null`です。  
+  
+ 登録するアドレスを自動的に選択される登録方法を使用する場合、ピア名が登録されているアドレスを確認する方法はありません。  つまり、<xref:System.Net.PeerToPeer.PeerNameRegistration.EndPointCollection%2A>プロパティは、アドレスを選択を反映するように更新されません。  
+  
+ 複数のノードのピア名が登録されているときに各<xref:System.Net.PeerToPeer.PeerNameRegistration>が一意と<xref:System.Net.PeerToPeer.PeerNameRegistration.EndPointCollection%2A>異なる各登録インスタンスで定義されたプロパティになります。 ときに、<xref:System.Net.PeerToPeer.PeerNameRegistration.PeerName%2A>が 1 つ以上登録されている<xref:System.Net.PeerToPeer.PeerNameRegistration.Cloud%2A>、各登録が個別になり、エンドポイントのコレクションは通常インスタンスごとに異なる。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="usage">
+          <para>このピアが通信するエンドポイントの一覧は、異なる方法で格納されている、このピア名がわかっている場合のエンドポイントの一覧と同じではありません。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="protected virtual void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.PeerNameRegistration.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info"><see cref="T:System.Net.PeerToPeer.PeerNameRegistration" /> オブジェクトに関連付けられたシリアル化データを保持します。</param>
+        <param name="context"><see cref="T:System.Net.PeerToPeer.PeerNameRegistration" /> オブジェクトに関連付けられたシリアル化ストリームの転送先を格納します。</param>
+        <summary>シリアル化情報オブジェクトを、<see cref="T:System.Net.PeerToPeer.PeerNameRegistration" /> インスタンスのシリアル化に必要なデータで事前設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsRegistered">
+      <MemberSignature Language="C#" Value="public bool IsRegistered ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsRegistered() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.PeerNameRegistration.IsRegistered" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得または設定でピア名が指定されているかどうか、<see cref="P:System.Net.PeerToPeer.PeerNameRegistration.PeerName" />プロパティは、特定の登録<see cref="T:System.Net.PeerToPeer.Cloud" />ホスト上でします。</summary>
+        <returns>場合<see langword="true" />でピア名を登録、<see cref="P:System.Net.PeerToPeer.PeerNameRegistration.Cloud" />ピア ホストします。 場合<see langword="false" />で、登録プロセスを開始することができます<see cref="M:System.Net.PeerToPeer.PeerNameRegistration.Start" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">既に破棄されているオブジェクトを登録することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PeerName">
+      <MemberSignature Language="C#" Value="public System.Net.PeerToPeer.PeerName PeerName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.PeerToPeer.PeerName PeerName" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.PeerNameRegistration.PeerName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.PeerName</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはピア クラウドに登録するピアの名前を設定します。</summary>
+        <value>型のオブジェクト<see cref="T:System.Net.PeerToPeer.PeerName" />これに関連付けられている値を含む<see cref="T:System.Net.PeerToPeer.PeerNameRegistration" />オブジェクト。 すべてのプロパティの既定値は、明示的に指定しない限り、<see langword="null" />参照型の場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ピア名は、複数のノードに登録できます。各<xref:System.Net.PeerToPeer.PeerNameRegistration>インスタンスは異なります。 <xref:System.Net.PeerToPeer.PeerNameRegistration.EndPointCollection%2A>プロパティに対応する関連付けられている<xref:System.Net.PeerToPeer.PeerName>インスタンスが異なる。 また、可能であれば、ノードが; に接続されている 1 つ以上のクラウドのピア名を登録するにはこれらの登録の各は別です。 ピア名の<xref:System.Net.IPEndPointCollection>これらのインスタンスそれぞれで異なります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Port">
+      <MemberSignature Language="C#" Value="public int Port { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Port" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.PeerNameRegistration.Port" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、 [TCP/IP](http://go.microsoft.com/fwlink?LinkID=98458)ポート番号に登録されているピアで使用される、<see cref="T:System.Net.PeerToPeer.PeerNameRegistration" />オブジェクト。</summary>
+        <value>TCP を示す整数値のポート番号、<see cref="T:System.Net.IPEndPoint" />です。 明示的に指定しない限り、このプロパティの既定値はゼロ (0) にします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のポートが使用される、<xref:System.Net.PeerToPeer.PeerNameRegistration.Start%2A>メソッド エンドポイントが指定されていない場合にのみです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定したポートの値が 0 未満です。  ポート番号は、0 以上 65535 (0 xffff) 未満にする必要があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Start">
+      <MemberSignature Language="C#" Value="public void Start ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Start() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.PeerNameRegistration.Start" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.Net.PeerToPeer.PeerNameRegistration.PeerName" /> を <see cref="P:System.Net.PeerToPeer.PeerNameRegistration.Cloud" /> に登録します。 <see cref="P:System.Net.PeerToPeer.PeerNameRegistration.EndPointCollection" /> がまったく指定されないと、<see cref="P:System.Net.PeerToPeer.PeerNameRegistration.Port" /> プロパティで指定したポート値を使用して、自動アドレス選択が使用されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドで指定されたピア名の登録、<xref:System.Net.PeerToPeer.PeerNameRegistration.PeerName%2A>ソースのすべてのアドレスを持つプロパティと<xref:System.Net.PeerToPeer.PeerNameRegistration.Port%2A>コンス トラクターで指定します。 エンドポイントが指定されていない場合にのみ、このメソッドが、既定のポートが使用されます。  
+  
+ 場合、<xref:System.Net.PeerToPeer.PeerNameRegistration.Cloud%2A>プロパティは`null`、このメソッドで指定されたピア名の登録、<xref:System.Net.PeerToPeer.PeerNameRecord.PeerName%2A>プロパティを使用して、<xref:System.Net.PeerToPeer.Cloud.Available>の既定値を初期化するフィールド、 <xref:System.Net.PeerToPeer.Cloud.Name%2A>、 <xref:System.Net.PeerToPeer.Cloud.Scope%2A>、および<xref:System.Net.PeerToPeer.Cloud.ScopeId%2A>です。  
+  
+ 後に、<xref:System.Net.PeerToPeer.PeerNameRegistration>オブジェクトが開始されて、<xref:System.Net.PeerToPeer.PeerNameRegistration.Stop%2A>これを停止するメソッドを使用します。  
+  
+ 登録を更新する、<xref:System.Net.PeerToPeer.PeerNameRegistration.Update%2A>メソッドを使用する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Net.PeerToPeer.PeerName>し、指定されたメタデータと共に登録します。  
+  
+ [!code-csharp[NCLPNRPRegisterPeerName#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLPNRPRegisterPeerName/CS/RegisterPeerName.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="P:System.Net.PeerToPeer.PeerNameRegistration.PeerName" /> プロパティが <see langword="null" /> に設定されている。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトでは、Dispose() が既に呼び出されました。</exception>
+        <exception cref="T:System.Net.PeerToPeer.PeerToPeerException">-   <see cref="T:System.Net.PeerToPeer.PeerName" />指定は既に登録されています。 <see cref="M:System.Net.PeerToPeer.PeerNameRegistration.Update" />メソッドは、登録の更新を使用する必要があります。  
+  
+-   リモートのピアが所有していない、<see cref="P:System.Net.PeerToPeer.PeerName.Authority" />の<see cref="T:System.Net.PeerToPeer.PeerName" />指定します。  
+  
+-   いずれか、<see cref="T:System.Net.PeerToPeer.PeerName" />または<see cref="P:System.Net.PeerToPeer.PeerNameRecord.Data" />が指定されていません。 少なくとも 1 つを指定する必要があります。  
+  
+-   メッセージまたはデータ要素が無効です。 または、<see cref="P:System.Net.PeerToPeer.PeerNameRegistration.UseAutoEndPointSelection" /> が設定されておらず、データ BLOB または <see cref="T:System.Net.IPEndPoint" /> が指定されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Stop">
+      <MemberSignature Language="C#" Value="public void Stop ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Stop() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.PeerNameRegistration.Stop" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.Net.PeerToPeer.PeerNameRegistration.PeerName" /> プロパティで指定されたピア名の登録を、登録されていたすべてのクラウドから解除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 登録プロセスを停止すると後、登録オブジェクトの状態は、状態と同じに既定のコンス トラクターによって構築された後に直接です。 この状態で、値が設定されていないすべてのプロパティと見なされます。 <xref:System.Net.PeerToPeer.PeerNameRegistration.Start%2A>メソッドは、再起動を使用することがあります。  
+  
+ 同じピア名に対して複数の登録オブジェクトを設定することができます。  このような場合は、ピア名が保護されて、各インスタンスがそのさまざまな PNRP 集団内の登録を表します。  ただし、ピア名が保護されていない場合それで登録できます、同じクラウド複数回です。  
+  
+ このインスタンスは既に停止されている場合は、このメソッドを呼び出しても効果はありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Net.PeerToPeer.PeerNameRegistration.PeerName" /> プロパティは登録されていません。 これが発生したときに、<see cref="T:System.Net.PeerToPeer.PeerNameRegistration" />空のコンス トラクターを使用してオブジェクトを構築します。 <see cref="P:System.Net.PeerToPeer.PeerNameRegistration.PeerName" />呼び出しの前にこのインスタンスでプロパティを入力する必要があります<see cref="M:System.Net.PeerToPeer.PeerNameRegistration.Start" />です。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトでは、Dispose() が既に呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.ISerializable.GetObjectData">
+      <MemberSignature Language="C#" Value="void ISerializable.GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.Serialization.ISerializable.GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.PeerNameRegistration.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">関連付けられているシリアル化されたデータを保持、<see cref="T:System.Net.PeerToPeer.PeerNameRegistration" />インスタンス。</param>
+        <param name="context">関連付けられているシリアル化ストリームの転送先を格納、<see cref="T:System.Net.PeerToPeer.PeerNameRegistration" />インスタンス。</param>
+        <summary><see cref="T:System.Runtime.Serialization.ISerializable" /> インターフェイスを実装し、<see cref="T:System.Net.PeerToPeer.PeerNameRegistration" /> インスタンスをシリアル化するために必要なデータを返します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Update">
+      <MemberSignature Language="C#" Value="public void Update ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Update() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.PeerNameRegistration.Update" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>特定の <see cref="T:System.Net.PeerToPeer.Cloud" /> に登録されたノードの <see cref="T:System.Net.PeerToPeer.PeerNameRegistration" /> を更新します。 プロパティで指定された情報を使用して更新が実行されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラウド内のすべての情報が登録されている<xref:System.Net.PeerToPeer.PeerName>呼び出しの前に完全に破棄されます。  新しいデータは既存の登録と組み合わされていません。  更新する、 <xref:System.Net.PeerToPeer.PeerNameRegistration>、まずこのインスタンスのプロパティを更新してこのメソッドを呼び出します。  
+  
+ 後に、<xref:System.Net.PeerToPeer.PeerNameRecord>が登録されている、<xref:System.Net.PeerToPeer.PeerNameRecord.PeerName%2A>プロパティを更新することはできません。  レコード内の他のすべてのフィールドを更新することがあります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Net.PeerToPeer.PeerNameRegistration.PeerName" /> プロパティが <see langword="null" /> に設定されている。</exception>
+        <exception cref="T:System.ObjectDisposedException">-   <see cref="P:System.Net.PeerToPeer.PeerNameRegistration.PeerName" /> プロパティは登録されていません。 <see cref="M:System.Net.PeerToPeer.PeerNameRegistration.Update" />でピア名が指定されるまで、メソッドを呼び出すことはできません、<see cref="P:System.Net.PeerToPeer.PeerNameRegistration.PeerName" />プロパティが 1 つまたは複数のクラウドに登録します。  
+  
+-   指定されたピア名、<see cref="P:System.Net.PeerToPeer.PeerNameRegistration.PeerName" />以降、対応するプロパティが変更された<see cref="T:System.Net.PeerToPeer.PeerNameRecord" />登録されました。</exception>
+        <exception cref="T:System.Net.PeerToPeer.PeerToPeerException">破棄されたオブジェクトを登録することはできません。</exception>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Net.PeerToPeer.PeerNameRecord" /> プロパティが <see langword="null" /> に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UseAutoEndPointSelection">
+      <MemberSignature Language="C#" Value="public bool UseAutoEndPointSelection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseAutoEndPointSelection" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.PeerNameRegistration.UseAutoEndPointSelection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはピア メッシュを走査する場合は、エンドポイントの自動選択を使用するかどうかを示す値を設定または<see cref="P:System.Net.PeerToPeer.PeerNameRegistration.Cloud" />です。</summary>
+        <value>
+          <see langword="True" />エンドポイントの自動選択するために使用する場合は<see langword="false" />でエンドポイントを決定するその他の方法を使用する場合。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 自動エンドポイントの選択を使用する場合 (このプロパティに設定`true`) エンドポイント情報が指定の開始前に、<xref:System.Net.PeerToPeer.PeerNameRegistration>システムは、個々 のエンドポイントを選択し、使用可能なすべてのクラウドに関連付けられているピア名が発行されます。  自動選択が 0 としてを選択したポートが指定されていない場合、<xref:System.Net.PeerToPeer.PeerNameRegistration.Port%2A>です。  
+  
+ 設定すると`false`、前述のように自動選択は実行されません。  これにより、データ blob と共にピア名を公開する登録プロセス (で指定されたとおり、<xref:System.Net.PeerToPeer.PeerNameRecord.Data%2A>プロパティ)。 エンドポイントの名前に関連付けがありません。  
+  
+ どのような解決を判断するメソッドがない登録メソッドを使用した場合に自動的に登録するアドレスを選択する、<xref:System.Net.PeerToPeer.PeerName>オブジェクトが登録されました。  つまり、<xref:System.Net.PeerToPeer.PeerNameRegistration.EndPointCollection%2A>プロパティは、アドレスを選択を反映するように更新されません。  
+  
+ ピア名の登録が開始した後、このプロパティを更新しても効果はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

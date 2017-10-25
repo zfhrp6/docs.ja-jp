@@ -1,0 +1,171 @@
+<Type Name="MouseGestureConverter" FullName="System.Windows.Input.MouseGestureConverter">
+  <TypeSignature Language="C#" Value="public class MouseGestureConverter : System.ComponentModel.TypeConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MouseGestureConverter extends System.ComponentModel.TypeConverter" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.MouseGestureConverter" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.TypeConverter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>変換、<see cref="T:System.Windows.Input.MouseGesture" />オブジェクトとその他の種類の間です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.MouseGestureConverter>クラスは、のインスタンスのみに変換します。<xref:System.Windows.Input.MouseGesture>との間、<xref:System.String>です。  
+  
+ <xref:System.Windows.Input.MouseGestureConverter>とを変換、<xref:System.String>修飾子キーとマウス操作の間の区切り記号として「+」文字を使用します。  たとえば、文字列`Control+RightClick`に変換されます、<xref:System.Windows.Input.MouseGesture>で、<xref:System.Windows.Input.MouseGesture.Modifiers%2A>プロパティを等しく<xref:System.Windows.Input.ModifierKeys.Control>と<xref:System.Windows.Input.MouseGesture.MouseAction%2A>プロパティを等しく<xref:System.Windows.Input.MouseAction.RightClick>です。  
+  
+<a name="xamlTextUsage_MouseGestureConverter"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MouseGestureConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.MouseGestureConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Input.MouseGestureConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertFrom">
+      <MemberSignature Language="C#" Value="public override bool CanConvertFrom (System.ComponentModel.ITypeDescriptorContext context, Type sourceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanConvertFrom(class System.ComponentModel.ITypeDescriptorContext context, class System.Type sourceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.MouseGestureConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="sourceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context">このコンバーターの呼び出される環境に関する情報を提供する書式指定コンテキスト。</param>
+        <param name="sourceType">変換の評価対象の型。</param>
+        <summary>インスタンスに指定した型のオブジェクトを変換できるかどうかを判断<see cref="T:System.Windows.Input.MouseGesture" />、指定したコンテキストを使用します。</summary>
+        <returns>
+          <see langword="true" /> の型が <paramref name="sourceType" /> の場合は <see cref="T:System.String" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertTo">
+      <MemberSignature Language="C#" Value="public override bool CanConvertTo (System.ComponentModel.ITypeDescriptorContext context, Type destinationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanConvertTo(class System.ComponentModel.ITypeDescriptorContext context, class System.Type destinationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.MouseGestureConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="destinationType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context">このコンバーターの呼び出される環境に関する情報を提供する書式指定コンテキスト。</param>
+        <param name="destinationType">変換の評価対象の型。</param>
+        <summary>インスタンスかどうかを決定<see cref="T:System.Windows.Input.MouseGesture" />指定したコンテキストを使用して、指定された型に変換することができます。</summary>
+        <returns>
+          <see langword="true" /> の型が <paramref name="destinationType" /> の場合は <see cref="T:System.String" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertFrom">
+      <MemberSignature Language="C#" Value="public override object ConvertFrom (System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object source);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertFrom(class System.ComponentModel.ITypeDescriptorContext context, class System.Globalization.CultureInfo culture, object source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.MouseGestureConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="source" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context">このコンバーターの呼び出される環境に関する情報を提供する書式指定コンテキスト。</param>
+        <param name="culture">カルチャ固有の情報です。</param>
+        <param name="source">変換対象のオブジェクト。</param>
+        <summary>指定したオブジェクトを変換しようとしています、 <see cref="T:System.Windows.Input.MouseGesture" />、指定のコンテキストを使用します。</summary>
+        <returns>変換後のオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.MouseGestureConverter>とを変換、<xref:System.String>修飾子キーとマウス操作の間の区切り記号として「+」キーを使用します。  たとえば、文字列`Control+RightClick`に変換されます、<xref:System.Windows.Input.MouseGesture>で、<xref:System.Windows.Input.MouseGesture.Modifiers%2A>プロパティを等しく<xref:System.Windows.Input.ModifierKeys.Control>と<xref:System.Windows.Input.MouseGesture.MouseAction%2A>プロパティを等しく<xref:System.Windows.Input.MouseAction.RightClick>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="source" />コンバーターをすることはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertTo">
+      <MemberSignature Language="C#" Value="public override object ConvertTo (System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, Type destinationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertTo(class System.ComponentModel.ITypeDescriptorContext context, class System.Globalization.CultureInfo culture, object value, class System.Type destinationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.MouseGestureConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="destinationType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context">このコンバーターの呼び出される環境に関する情報を提供する書式指定コンテキスト。</param>
+        <param name="culture">このコンバーターの呼び出される環境に関する情報を提供する書式指定コンテキスト。</param>
+        <param name="value">変換対象のオブジェクト。</param>
+        <param name="destinationType">オブジェクトの変換後の型。</param>
+        <summary>変換を試みます、<see cref="T:System.Windows.Input.MouseGesture" />指定された型に指定されたコンテキストを使用します。</summary>
+        <returns>変換後のオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `destinationType`必要があります<xref:System.String>です。  
+  
+ <xref:System.Windows.Input.MouseGestureConverter>とを変換、<xref:System.String>修飾子キーとマウス操作の間の区切り記号として「+」キーを使用します。  たとえば、<xref:System.Windows.Input.MouseGesture>で、<xref:System.Windows.Input.MouseGesture.Modifiers%2A>プロパティを等しく<xref:System.Windows.Input.ModifierKeys.Control>と<xref:System.Windows.Input.MouseGesture.MouseAction%2A>プロパティを等しく<xref:System.Windows.Input.MouseAction.RightClick>、文字列に変換します`Control+RightClick`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="destinationType" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="value" /> を変換できません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

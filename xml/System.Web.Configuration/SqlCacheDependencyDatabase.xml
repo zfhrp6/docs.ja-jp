@@ -1,0 +1,258 @@
+<Type Name="SqlCacheDependencyDatabase" FullName="System.Web.Configuration.SqlCacheDependencyDatabase">
+  <TypeSignature Language="C#" Value="public sealed class SqlCacheDependencyDatabase : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SqlCacheDependencyDatabase extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.SqlCacheDependencyDatabase" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET アプリケーションの SQL キャッシュ依存関係のデータベースを構成します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.SqlCacheDependencyDatabase>プログラムからアクセスし、変更することができます、`databases`の要素、`sqlCacheDependency`内のノード、`caching`構成セクション。  
+  
+ SQL キャッシュ依存関係により、元のソースと同期するキャッシュされたデータです。 ASP.NET アプリケーションのキャッシュと SQL Server データベース、特定のテーブルのインスタンスに格納されている項目間のリレーションシップを構成した後、<xref:System.Web.Caching.SqlCacheDependency>クラスは、テーブルの考えられる変更を監視します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Web.Configuration.SqlCacheDependencyDatabase>既存の Web アプリケーションの構成ファイルからのオブジェクト。  
+  
+ [!code-csharp[System.Web.Configuration.SqlCacheDependencyDatabase#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.SqlCacheDependencyDatabase/CS/sqlcachedependencydatabase.cs#1)]
+ [!code-vb[System.Web.Configuration.SqlCacheDependencyDatabase#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.SqlCacheDependencyDatabase/VB/sqlcachedependencydatabase.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlCacheDependencyDatabase (string name, string connectionStringName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, string connectionStringName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.SqlCacheDependencyDatabase.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="connectionStringName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">によって使用される名前を指定する文字列<see cref="T:System.Web.Configuration.SqlCacheDependencyDatabase" />のデータベースを識別します。</param>
+        <param name="connectionStringName">内の接続文字列の名前を指定する文字列、<see langword="connectionStrings" />セクションを使用してこのデータベースに接続します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Configuration.SqlCacheDependencyDatabase" />渡されたパラメーターを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、このコンストラクターを使用する方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.SqlCacheDependencyDatabase#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.SqlCacheDependencyDatabase/CS/sqlcachedependencydatabase.cs#6)]
+ [!code-vb[System.Web.Configuration.SqlCacheDependencyDatabase#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.SqlCacheDependencyDatabase/VB/sqlcachedependencydatabase.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlCacheDependencyDatabase (string name, string connectionStringName, int pollTime);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, string connectionStringName, int32 pollTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.SqlCacheDependencyDatabase.#ctor(System.String,System.String,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="connectionStringName" Type="System.String" />
+        <Parameter Name="pollTime" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="name">によって使用される名前を指定する文字列<see cref="T:System.Web.Configuration.SqlCacheDependencyDatabase" />のデータベースを識別します。</param>
+        <param name="connectionStringName">内の接続文字列の名前を指定する文字列、<see langword="connectionStrings" />セクションを使用してこのデータベースに接続します。</param>
+        <param name="pollTime">データベースのポーリング間隔 (ミリ秒単位)。</param>
+        <summary><see cref="T:System.Web.Configuration.SqlCacheDependencyDatabase" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、このコンストラクターを使用する方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.SqlCacheDependencyDatabase#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.SqlCacheDependencyDatabase/CS/sqlcachedependencydatabase.cs#5)]
+ [!code-vb[System.Web.Configuration.SqlCacheDependencyDatabase#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.SqlCacheDependencyDatabase/VB/sqlcachedependencydatabase.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionStringName">
+      <MemberSignature Language="C#" Value="public string ConnectionStringName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConnectionStringName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.SqlCacheDependencyDatabase.ConnectionStringName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("connectionStringName", IsRequired=true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータベースの接続名を設定します。</summary>
+        <value>データベース接続文字列内での名前を指定する文字列、<see langword="connectionStrings" />構成セクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.SqlCacheDependencyDatabase.ConnectionStringName%2A>プロパティでは、プログラムでアクセスして変更することができます、`connectionName`の属性、`add`の要素、`databases`構成ファイル内のノードです。 接続の名前で要素を識別する、`connectionStrings`データベース接続文字列を含むセクションです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.SqlCacheDependencyDatabase.ConnectionStringName%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.SqlCacheDependencyDatabase#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.SqlCacheDependencyDatabase/CS/sqlcachedependencydatabase.cs#4)]
+ [!code-vb[System.Web.Configuration.SqlCacheDependencyDatabase#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.SqlCacheDependencyDatabase/VB/sqlcachedependencydatabase.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ElementProperty">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationElementProperty ElementProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationElementProperty ElementProperty" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.SqlCacheDependencyDatabase.ElementProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationElementProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.SqlCacheDependencyDatabase.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("name", IsKey=true, IsRequired=true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータベースの名前を設定します。</summary>
+        <value>によって使用される名前を指定する文字列<see cref="T:System.Web.Configuration.SqlCacheDependencyDatabase" />のデータベースを識別します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.SqlCacheDependencyDatabase.Name%2A>プロパティでは、プログラムでアクセスして変更することができます、`name`の属性、`add`の要素、`databases`構成ファイル内のノードです。  
+  
+ `name`属性のテーブルが含まれるが使用されるデータベースの識別、<xref:System.Web.Caching.SqlCacheDependency>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.SqlCacheDependencyDatabase.Name%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.SqlCacheDependencyDatabase#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.SqlCacheDependencyDatabase/CS/sqlcachedependencydatabase.cs#3)]
+ [!code-vb[System.Web.Configuration.SqlCacheDependencyDatabase#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.SqlCacheDependencyDatabase/VB/sqlcachedependencydatabase.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PollTime">
+      <MemberSignature Language="C#" Value="public int PollTime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PollTime" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.SqlCacheDependencyDatabase.PollTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("pollTime", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の頻度を指定します、<see cref="T:System.Web.Caching.SqlCacheDependency" />データベース テーブルの変更をポーリングします。</summary>
+        <value>データベースのポーリング間隔 (ミリ秒単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.SqlCacheDependencyDatabase.PollTime%2A>プロパティでは、プログラムでアクセスして変更することができます、`pollTime`の属性、`add`の要素、`databases`構成ファイル内のノードです。  
+  
+ ASP.NET アプリケーションのキャッシュと SQL Server データベース、特定のテーブルのインスタンスに格納されている項目間のリレーションシップを構成した後、<xref:System.Web.Caching.SqlCacheDependency>クラスは、テーブルを監視するため、ときにテーブルの変更のアイテム、アイテムが自動的に更新でまたはキャッシュから削除します。 指定された頻度での動作の監視、<xref:System.Web.Configuration.SqlCacheDependencyDatabase.PollTime%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.SqlCacheDependencyDatabase.PollTime%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.SqlCacheDependencyDatabase#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.SqlCacheDependencyDatabase/CS/sqlcachedependencydatabase.cs#2)]
+ [!code-vb[System.Web.Configuration.SqlCacheDependencyDatabase#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.SqlCacheDependencyDatabase/VB/sqlcachedependencydatabase.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.SqlCacheDependencyDatabase.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

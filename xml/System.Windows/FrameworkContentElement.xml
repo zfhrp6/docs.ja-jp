@@ -1,0 +1,2734 @@
+<Type Name="FrameworkContentElement" FullName="System.Windows.FrameworkContentElement">
+  <TypeSignature Language="C#" Value="public class FrameworkContentElement : System.Windows.ContentElement, System.ComponentModel.ISupportInitialize, System.Windows.IFrameworkInputElement, System.Windows.Markup.IQueryAmbient" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi FrameworkContentElement extends System.Windows.ContentElement implements class System.ComponentModel.ISupportInitialize, class System.Windows.IFrameworkInputElement, class System.Windows.IInputElement, class System.Windows.Markup.IQueryAmbient" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.FrameworkContentElement" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.ContentElement</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.ISupportInitialize</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Windows.IFrameworkInputElement</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.IQueryAmbient</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.RuntimeNameProperty("Name")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.UsableDuringInitialization(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.XmlLangProperty("Language")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.StyleTypedProperty(Property="FocusVisualStyle", StyleTargetType=typeof(System.Windows.Controls.Control))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>
+      <see cref="T:System.Windows.FrameworkContentElement" />WPF フレームワーク レベルの実装との拡張、<see cref="T:System.Windows.ContentElement" />基本クラスです。 <see cref="T:System.Windows.FrameworkContentElement" />追加の入力 Api (ツールヒントやコンテキスト メニューなど)、ストーリー ボード、データ バインディング、スタイルのサポート、および論理ツリーのヘルパー Api のデータ コンテキストのサポートを追加します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.FrameworkContentElement>独自のレンダリング動作です。 定義されていません実際のインスタンス化<xref:System.Windows.FrameworkContentElement>コードまたはマークアップ内のクラス インスタンスは可能ですで何も表示、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]アプリケーション[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]です。 受け取るクラスによって提供される必要がありますレンダリング ロジック<xref:System.Windows.FrameworkContentElement>子要素、または、コンテンツ モデルの一部として<xref:System.Windows.FrameworkContentElement>クラスを派生します。  
+  
+ <xref:System.Windows.FrameworkContentElement>意図的に同一の多くは対応している[!INCLUDE[TLA2#tla_api#plural](~/includes/tla2sharptla-apisharpplural-md.md)]として<xref:System.Windows.FrameworkElement>です。 特定の注[!INCLUDE[TLA2#tla_api#plural](~/includes/tla2sharptla-apisharpplural-md.md)]で見つかった<xref:System.Windows.FrameworkElement>必要はありません、<xref:System.Windows.FrameworkContentElement>と等価です。 いくつかの<xref:System.Windows.FrameworkElement>[!INCLUDE[TLA2#tla_api#plural](~/includes/tla2sharptla-apisharpplural-md.md)]は geometry 形式またはレイアウトなどの機能では無関係な<xref:System.Windows.FrameworkContentElement>します。  
+  
+ 既存のマジョリティ<xref:System.Windows.FrameworkContentElement>派生クラスが含まれて、<xref:System.Windows.Documents>名前空間。 これらの派生クラスの多くは、フロー ドキュメント モデルの要素を実装します。 などの特定の派生クラス<xref:System.Windows.Documents.Hyperlink>をいくつかのコントロールのような機能がありますから派生した<xref:System.Windows.FrameworkContentElement>コントロールのような要素が、フロー ドキュメント モデルに参加できるまだようにします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FrameworkContentElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkContentElement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.FrameworkContentElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddLogicalChild">
+      <MemberSignature Language="C#" Value="protected void AddLogicalChild (object child);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void AddLogicalChild(object child) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkContentElement.AddLogicalChild(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="child" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="child">追加される子要素。</param>
+        <summary>指定した要素をこの要素の子として追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 別のプロセスによって、論理ツリーが反復処理されているときに呼び出された場合、このメソッドは例外をスローできます。  
+  
+ ほとんど<xref:System.Windows.FrameworkContentElement>派生クラスの包含を担当する専用のコレクションを公開する (たとえば、<xref:System.Windows.Documents.Span.Inlines%2A>上、<xref:System.Windows.Documents.Span>クラスです。<xref:System.Windows.Documents.Section.Blocks%2A>上、<xref:System.Windows.Documents.Section>クラス)。 通常、代わりにこれらのクラスから派生した場合に、論理ツリーを直接操作する必要をしないようにすることができます。 コンテンツの要素の論理ツリーの操作は必要がある特殊なパーサーや、特殊な高度なシナリオ<xref:System.Windows.FrameworkElement>親の表示要素 (コンテンツ ホスト) として機能します。  
+  
+ 使用する方法の詳細についての<xref:System.Windows.FrameworkContentElement.LogicalChildren%2A>と<xref:System.Windows.FrameworkContentElement.AddLogicalChild%2A>を参照してください[wpf ツリー](~/docs/framework/wpf/advanced/trees-in-wpf.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginInit">
+      <MemberSignature Language="C#" Value="public virtual void BeginInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void BeginInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkContentElement.BeginInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>要素が初期化される前に呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>要素の読み込みプロセス中に、要素が初期化される前に発生する特別な処理を提供するには、このメソッドをオーバーライドします。  
+  
+ (既定値) の基本実装では、初期化を追跡するためのいくつかの内部フラグを設定するため、実装には基底の実装を呼び出す必要があります。  
+  
+ 基底の実装は例外をスロー<see cref="M:System.Windows.FrameworkContentElement.BeginInit" />に到達する前に同じ要素に対して 1 つ以上の時間と呼びます<see cref="M:System.Windows.FrameworkContentElement.EndInit" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginStoryboard">
+      <MemberSignature Language="C#" Value="public void BeginStoryboard (System.Windows.Media.Animation.Storyboard storyboard);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void BeginStoryboard(class System.Windows.Media.Animation.Storyboard storyboard) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkContentElement.BeginStoryboard(System.Windows.Media.Animation.Storyboard)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="storyboard" Type="System.Windows.Media.Animation.Storyboard" />
+      </Parameters>
+      <Docs>
+        <param name="storyboard">開始するストーリー ボードです。</param>
+        <summary>指定したストーリー ボードに含まれているアクションのシーケンスを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 署名を使用しない、 `isControllable`、パラメーター、そのパラメーターが指定されている場合または`false`、「保留」の期間に達するとすぐに、アニメーションに関連付けられているタイムライン クロックは削除されます。 したがって、アニメーションは、1 回実行されている後に再起動することはできません。 アニメーションを制御するも必要であるストーリー ボードを名前付きまたはコード内のインスタンスとしてアクセスできるようにすることに注意してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginStoryboard">
+      <MemberSignature Language="C#" Value="public void BeginStoryboard (System.Windows.Media.Animation.Storyboard storyboard, System.Windows.Media.Animation.HandoffBehavior handoffBehavior);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void BeginStoryboard(class System.Windows.Media.Animation.Storyboard storyboard, valuetype System.Windows.Media.Animation.HandoffBehavior handoffBehavior) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkContentElement.BeginStoryboard(System.Windows.Media.Animation.Storyboard,System.Windows.Media.Animation.HandoffBehavior)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="storyboard" Type="System.Windows.Media.Animation.Storyboard" />
+        <Parameter Name="handoffBehavior" Type="System.Windows.Media.Animation.HandoffBehavior" />
+      </Parameters>
+      <Docs>
+        <param name="storyboard">開始するストーリー ボードです。</param>
+        <param name="handoffBehavior">ストーリー ボードで記述されたプロパティが既にアニメーション化されている場合に使用する動作を表す列挙体の値です。</param>
+        <summary>プロパティが既にアニメーション化されている場合に発生する必要がありますを指定するオプションで指定したストーリー ボードに含まれているアクションのシーケンスを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 署名を使用しない、 `isControllable`、パラメーター、そのパラメーターが指定されている場合または`false`、「保留」の期間に達するとすぐに、アニメーションに関連付けられているタイムライン クロックは削除されます。 したがって、アニメーションは、1 回実行されている後に再起動することはできません。 アニメーションを制御するも必要であるストーリー ボードを名前付きまたはコード内のインスタンスとしてアクセスできるようにすることに注意してください。  
+  
+## <a name="using-the-compose-handoffbehavior"></a>使用して、HandoffBehavior の作成  
+ 適用すると、 <xref:System.Windows.Media.Animation.Storyboard>、 <xref:System.Windows.Media.Animation.AnimationTimeline>、または<xref:System.Windows.Media.Animation.AnimationClock>を使用してプロパティを<xref:System.Windows.Media.Animation.HandoffBehavior.Compose> <xref:System.Windows.Media.Animation.HandoffBehavior>、any<xref:System.Windows.Media.Animation.Clock>以前そのプロパティに関連付けられているオブジェクトがシステム リソースを消費引き続き; タイミング システムは、時計を自動的に削除されません。  
+  
+ 使用して多数の時計を適用するときに、パフォーマンスの問題を回避する<xref:System.Windows.Media.Animation.HandoffBehavior.Compose>、完了した後、アニメーションのプロパティから作成クロックを削除する必要があります。 クロックを削除するいくつかの方法があります。  
+  
+-   プロパティからすべてのクロックを削除するには、使用、<xref:System.Windows.Media.Animation.Animatable.ApplyAnimationClock%28System.Windows.DependencyProperty%2CSystem.Windows.Media.Animation.AnimationClock%29>または<xref:System.Windows.Media.Animation.Animatable.BeginAnimation%28System.Windows.DependencyProperty%2CSystem.Windows.Media.Animation.AnimationTimeline%29>アニメーション オブジェクトのメソッドです。 最初のパラメーターとしてアニメーション化されているプロパティを指定し、 `null` 2 つ目として。 これにより、すべてのアニメーション クロックが、プロパティから削除します。  
+  
+-   固有の仕様を削除する<xref:System.Windows.Media.Animation.AnimationClock>にクロックのリストを使用して、<xref:System.Windows.Media.Animation.Clock.Controller%2A>のプロパティ、<xref:System.Windows.Media.Animation.AnimationClock>を取得する、<xref:System.Windows.Media.Animation.ClockController>を呼び出す、<xref:System.Windows.Media.Animation.ClockController.Remove%2A>のメソッド、<xref:System.Windows.Media.Animation.ClockController>です。 これは、通常、<xref:System.Windows.Media.Animation.Clock.Completed>クロックのイベント ハンドラー。 唯一のルート クロックできますで制御されることに注意してください、 <xref:System.Windows.Media.Animation.ClockController>;<xref:System.Windows.Media.Animation.Clock.Controller%2A>子クロックのプロパティを返します`null`です。 なお、<xref:System.Windows.Media.Animation.Clock.Completed>クロックの有効期間が forever の場合、イベントは発生しません。  その場合は、ユーザーを決定する必要がありますを呼び出すときに<xref:System.Windows.Media.Animation.ClockController.Remove%2A>です。  
+  
+ これは主に、有効期間が長いオブジェクトでのアニメーションの問題です。  オブジェクトがガベージ コレクションである場合は、そのクロックが切断されても、ガベージ コレクションします。  
+  
+ クロック オブジェクトに関する詳細については、次を参照してください。[アニメーションおよびタイミング システムの概要](~/docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginStoryboard">
+      <MemberSignature Language="C#" Value="public void BeginStoryboard (System.Windows.Media.Animation.Storyboard storyboard, System.Windows.Media.Animation.HandoffBehavior handoffBehavior, bool isControllable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void BeginStoryboard(class System.Windows.Media.Animation.Storyboard storyboard, valuetype System.Windows.Media.Animation.HandoffBehavior handoffBehavior, bool isControllable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkContentElement.BeginStoryboard(System.Windows.Media.Animation.Storyboard,System.Windows.Media.Animation.HandoffBehavior,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="storyboard" Type="System.Windows.Media.Animation.Storyboard" />
+        <Parameter Name="handoffBehavior" Type="System.Windows.Media.Animation.HandoffBehavior" />
+        <Parameter Name="isControllable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="storyboard">開始するストーリー ボードです。</param>
+        <param name="handoffBehavior">ストーリー ボードで記述されたプロパティが既にアニメーション化されている場合に使用する動作を表す列挙体の値です。</param>
+        <param name="isControllable">アニメーションが制御可能かどうかを宣言 (一時停止できる) の開始後にします。</param>
+        <summary>アニメーションの開始後のコントロールの状態を指定して、指定されたストーリー ボードに含まれているアクションのシーケンスを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 署名を使用しない、 `isControllable`、パラメーター、そのパラメーターが指定されている場合または`false`、「保留」の期間に達するとすぐに、アニメーションに関連付けられているタイムライン クロックは削除されます。 したがって、アニメーションは、1 回実行されている後に再起動することはできません。 アニメーションを制御するも必要であるストーリー ボードを名前付きまたはコード内のインスタンスとしてアクセスできるようにすることに注意してください。  
+  
+## <a name="using-the-compose-handoffbehavior"></a>使用して、HandoffBehavior の作成  
+ 適用すると、 <xref:System.Windows.Media.Animation.Storyboard>、 <xref:System.Windows.Media.Animation.AnimationTimeline>、または<xref:System.Windows.Media.Animation.AnimationClock>を使用してプロパティを<xref:System.Windows.Media.Animation.HandoffBehavior.Compose> <xref:System.Windows.Media.Animation.HandoffBehavior>、any<xref:System.Windows.Media.Animation.Clock>以前そのプロパティに関連付けられているオブジェクトがシステム リソースを消費引き続き; タイミング システムがこれらの時計を自動的に削除されません。  
+  
+ 使用して多数の時計を適用するときに、パフォーマンスの問題を回避する<xref:System.Windows.Media.Animation.HandoffBehavior.Compose>、完了した後、アニメーションのプロパティから作成クロックを削除する必要があります。 クロックを削除するいくつかの方法があります。  
+  
+-   プロパティからすべてのクロックを削除するには、使用、<xref:System.Windows.Media.Animation.Animatable.ApplyAnimationClock%28System.Windows.DependencyProperty%2CSystem.Windows.Media.Animation.AnimationClock%29>または<xref:System.Windows.Media.Animation.Animatable.BeginAnimation%28System.Windows.DependencyProperty%2CSystem.Windows.Media.Animation.AnimationTimeline%29>アニメーション オブジェクトのメソッドです。 最初のパラメーターとしてアニメーション化されているプロパティを指定し、 `null` 2 つ目として。 これにより、すべてのアニメーション クロックが、プロパティから削除します。  
+  
+-   固有の仕様を削除する<xref:System.Windows.Media.Animation.AnimationClock>にクロックのリストを使用して、<xref:System.Windows.Media.Animation.Clock.Controller%2A>のプロパティ、<xref:System.Windows.Media.Animation.AnimationClock>を取得する、<xref:System.Windows.Media.Animation.ClockController>を呼び出す、<xref:System.Windows.Media.Animation.ClockController.Remove%2A>のメソッド、<xref:System.Windows.Media.Animation.ClockController>です。 これは、通常、<xref:System.Windows.Media.Animation.Clock.Completed>クロックのイベント ハンドラー。 唯一のルート クロックできますで制御されることに注意してください、 <xref:System.Windows.Media.Animation.ClockController>;<xref:System.Windows.Media.Animation.Clock.Controller%2A>子クロックのプロパティを返します`null`です。 なお、<xref:System.Windows.Media.Animation.Clock.Completed>クロックの有効期間が forever の場合、イベントは発生しません。  その場合は、ユーザーを決定する必要がありますを呼び出すときに<xref:System.Windows.Media.Animation.ClockController.Remove%2A>です。  
+  
+ これは主に、有効期間が長いオブジェクトでのアニメーションの問題です。  オブジェクトがガベージ コレクションである場合は、そのクロックが切断されても、ガベージ コレクションします。  
+  
+ クロック オブジェクトに関する詳細については、次を参照してください。[アニメーションおよびタイミング システムの概要](~/docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BindingGroup">
+      <MemberSignature Language="C#" Value="public System.Windows.Data.BindingGroup BindingGroup { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Data.BindingGroup BindingGroup" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkContentElement.BindingGroup" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.NeverLocalize)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Data.BindingGroup</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Data.BindingGroup" />要素に使用されます。</summary>
+        <value><see cref="T:System.Windows.Data.BindingGroup" />要素に使用されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Data.BindingGroup>オブジェクトの複数のプロパティの値を検証するために使用できます。 たとえば、アプリケーションがアドレスを入力するように求めるし、その型のオブジェクトが設定されます`Address`、プロパティを持つ`Street`、 `City`、 `ZipCode`、および`Country`ユーザーが指定した値を持つ。 アプリケーションが 4 つを含むパネル<xref:System.Windows.Controls.TextBox>コントロール、それぞれは、オブジェクトのプロパティのいずれかにバインドします。 使用することができます、<xref:System.Windows.Controls.ValidationRule>で、<xref:System.Windows.Data.BindingGroup>を検証する、`Address`オブジェクト。 たとえば、<xref:System.Windows.Controls.ValidationRule>郵便番号が有効、住所の国であることを確認できます。  
+  
+ 子要素を継承、<xref:System.Windows.Data.BindingGroup>だけで、他の継承可能なプロパティと同様に、親要素からです。  
+  
+<a name="dependencyPropertyInfo_BindingGroup"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.FrameworkContentElement.BindingGroupProperty>|  
+|メタデータ プロパティに設定**は true。**|<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BindingGroupProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty BindingGroupProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty BindingGroupProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FrameworkContentElement.BindingGroupProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.FrameworkContentElement.BindingGroup" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BringIntoView">
+      <MemberSignature Language="C#" Value="public void BringIntoView ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void BringIntoView() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkContentElement.BringIntoView" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>含まれているスクロール可能な領域内に、この要素を表示しようとしています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出して、実質的には呼び出す<xref:System.Windows.Controls.ScrollContentPresenter.MakeVisible%2A>要素を含む親スクロール可能な領域を (親があります明確、<xref:System.Windows.FrameworkElement>ではなく、 <xref:System.Windows.FrameworkContentElement>)。 スクロール可能領域には、この要素が含まれていない場合、は、イベントは引き続きがなければ効果。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextMenu">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.ContextMenu ContextMenu { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.ContextMenu ContextMenu" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkContentElement.ContextMenu" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.ContextMenu</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を通じて、コンテキスト メニューが要求されるたびに表示されるコンテキスト メニュー要素[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]からこの要素内で。</summary>
+        <value>この要素を使用して、コンテキスト メニュー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_ContextMenu"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.FrameworkContentElement.ContextMenuProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例の場所、<xref:System.Windows.Controls.ContextMenu>上、<xref:System.Windows.Documents.Paragraph>です。  
+  
+ [!code-xaml[ContentElementsSmorgasbord#ContextMenu](~/samples/snippets/csharp/VS_Snippets_Wpf/ContentElementsSmorgasbord/CSharp/page1.xaml#contextmenu)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextMenuClosing">
+      <MemberSignature Language="C#" Value="public event System.Windows.Controls.ContextMenuEventHandler ContextMenuClosing;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Controls.ContextMenuEventHandler ContextMenuClosing" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.FrameworkContentElement.ContextMenuClosing" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.ContextMenuEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素のコンテキスト メニューが閉じられる直前に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 閉じないようにするには、コンテキスト メニュー、イベントのハンドラーは、処理済みとしてマークします。  
+  
+ このイベントを使用する、<xref:System.Windows.EventTrigger>スタイルでは、基になるサービスのイベントの識別子を参照する必要があります。  
+  
+ [!code-xaml[CorePseudocode#FEContextMenuClosing](~/samples/snippets/csharp/VS_Snippets_Wpf/CorePseudocode/CSharp/pseudocode.xaml#fecontextmenuclosing)]  
+  
+ (ために、この使用法が必要でイベントの実装<xref:System.Windows.FrameworkContentElement>こと公開サービス イベントの基になる正しくマップされない、<xref:System.Windows.FrameworkContentElement.ContextMenuClosing>トリガーで使用するための識別子)。  
+  
+<a name="routedEventInfo_ContextMenuClosing"></a>   
+## <a name="routed-event-information"></a>ルーティングされたイベント情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.FrameworkContentElement.ContextMenuClosingEvent>|  
+|ルーティング方法|バブル|  
+|Delegate|<xref:System.Windows.Controls.ContextMenuEventHandler>|  
+  
+   
+  
+## Examples  
+ 次の例は、名前付き領域にカーソルを変更するハンドラーを実装`DisplayArea`(表示されません)。 コメントのヒントに、<xref:System.Windows.UIElement>使用状況、実際にこのサンプルは同じですが、場合`DisplayArea`された、<xref:System.Windows.FrameworkContentElement>です。  
+  
+ [!code-csharp[cursors#ChangeCursorsSample](~/samples/snippets/csharp/VS_Snippets_Wpf/cursors/CSharp/Window1.xaml.cs#changecursorssample)]
+ [!code-vb[cursors#ChangeCursorsSample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/cursors/VisualBasic/Window1.xaml.vb#changecursorssample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextMenuClosingEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent ContextMenuClosingEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent ContextMenuClosingEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FrameworkContentElement.ContextMenuClosingEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、 <see cref="E:System.Windows.FrameworkContentElement.ContextMenuClosing" /> [ルーティング イベントの概要](~/docs/framework/wpf/advanced/routed-events-overview.md)です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルーティング イベントが登録されているときに、イベントの識別子のオブジェクトは作成されます (を参照してください<xref:System.Windows.EventManager.RegisterRoutedEvent%2A>) クラス ハンドラーを追加するために使用する (を参照してください<xref:System.Windows.EventManager.RegisterClassHandler%2A>)。 識別子のオブジェクトには、識別名、所有者型、ハンドラーの型、ルーティング方法、およびイベントの所有者を追加するためのユーティリティ メソッドが含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextMenuOpening">
+      <MemberSignature Language="C#" Value="public event System.Windows.Controls.ContextMenuEventHandler ContextMenuOpening;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Controls.ContextMenuEventHandler ContextMenuOpening" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.FrameworkContentElement.ContextMenuOpening" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.ContextMenuEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素のコンテキスト メニューを開いたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテキスト メニューを手動で開く、処理済みとして、イベントのハンドラーは、関連するイベントをマークする必要があります。 それ以外の場合の既存の値、<xref:System.Windows.FrameworkContentElement.ContextMenu%2A>プロパティが自動的にコンテキスト メニューを開き、使用されます。 既定のアクションを効果的に取り消し処理イベントをマークすることとの値にリセットすることにより、<xref:System.Windows.FrameworkContentElement.ContextMenu%2A>プロパティを開き、新しい<xref:System.Windows.Controls.ContextMenu>です。 ただしはタイミングの問題を認識する必要があります。 コンテキスト メニューを完全に置き換えるために、<xref:System.Windows.FrameworkContentElement.ContextMenuOpening>ハンドラー、初期のコンテキスト メニューにはできません null/空です。 また、イベントを処理し、新しいコンテキスト メニューを手動で開く必要があります。 詳細については、「[する方法: ContextMenuOpening イベントを処理](~/docs/framework/wpf/advanced/how-to-handle-the-contextmenuopening-event.md)です。  
+  
+ このイベントを使用する、<xref:System.Windows.EventTrigger>スタイルでは、基になるサービスのイベントの識別子を参照する必要があります。  
+  
+ [!code-xaml[CorePseudocode#FEContextMenuOpening](~/samples/snippets/csharp/VS_Snippets_Wpf/CorePseudocode/CSharp/pseudocode.xaml#fecontextmenuopening)]  
+  
+ (ために、この使用法が必要でイベントの実装<xref:System.Windows.FrameworkContentElement>こと公開サービス イベントの基になる正しくマップされない、<xref:System.Windows.FrameworkContentElement.ContextMenuOpening>トリガーで使用するための識別子)。  
+  
+<a name="routedEventInfo_ContextMenuOpening"></a>   
+## <a name="routed-event-information"></a>ルーティングされたイベント情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.FrameworkContentElement.ContextMenuOpeningEvent>|  
+|ルーティング方法|バブル|  
+|Delegate|<xref:System.Windows.Controls.ContextMenuEventHandler>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextMenuOpeningEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent ContextMenuOpeningEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent ContextMenuOpeningEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FrameworkContentElement.ContextMenuOpeningEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、 <see cref="E:System.Windows.FrameworkContentElement.ContextMenuOpening" /> [ルーティング イベントの概要](~/docs/framework/wpf/advanced/routed-events-overview.md)です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルーティング イベントが登録されているときに、イベントの識別子のオブジェクトは作成されます (を参照してください<xref:System.Windows.EventManager.RegisterRoutedEvent%2A>) クラス ハンドラーを追加するために使用する (を参照してください<xref:System.Windows.EventManager.RegisterClassHandler%2A>)。 識別子のオブジェクトには、識別名、所有者型、ハンドラーの型、ルーティング方法、およびイベントの所有者を追加するためのユーティリティ メソッドが含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextMenuProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ContextMenuProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ContextMenuProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FrameworkContentElement.ContextMenuProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.FrameworkContentElement.ContextMenu" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cursor">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.Cursor Cursor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.Cursor Cursor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkContentElement.Cursor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.Cursor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素上にマウス ポインターが置かれたときに表示されるカーソルを取得または設定します。</summary>
+        <value>表示対象のカーソル。 既定値として定義<see langword="null" />この依存関係プロパティごとです。 ただし、実行時における実用的な既定値は、さまざまな要因から取得されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定すると[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]プロセッサがの型の変換に依存しています、<xref:System.Windows.Input.Cursor>クラス文字列を評価します。 指定された文字列に評価される必要があります、<xref:System.Windows.Input.CursorType>値。 詳細については、「<xref:System.Windows.Input.Cursor>」を参照してください。  
+  
+ このプロパティによって設定されるカーソルは、マウス ポインターがこの要素上に表示されないかどうかの値に依存しても、<xref:System.Windows.FrameworkContentElement.ForceCursor%2A>プロパティです。 また、アクティブなドラッグ、マウスのキャプチャ、テキスト コントロール、および、内のモードの編集など、イベント関連の考慮事項も影響を与えますカーソル、このプロパティで指定した値よりも優先順位の高い。  
+  
+ 最終的な既定値にこのプロパティの設定の動作を戻すには、設定`null`もう一度です。  
+  
+ `null`既定を意味実際的なカーソルの値の決定がここでは遅延し、別の場所から入手してください。 経由でプログラムによる値のない既定のカーソルの任意のソースから提示された場合、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]アプリケーションは矢印になります。  
+  
+ 上にあるマウスが移動するたび、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]アプリケーションが発生し、<xref:System.Windows.ContentElement.QueryCursor>イベント。 イベント バブルと経路上の任意の要素、イベントを処理し、このイベントの引数を使用して、カーソルの値を設定する機会があります。 その場合は、イベントが処理され、引数に変更された値を持つファクトよりも優先の値、<xref:System.Windows.FrameworkContentElement.Cursor%2A>任意のレベルでは、プロパティしない限り、<xref:System.Windows.FrameworkContentElement.ForceCursor%2A>設定されています。  
+  
+ 場合は、カスタムのカーソルを作成しないこと、通常このプロパティを設定するの静的プロパティの値、<xref:System.Windows.Input.Cursors>クラスです。  
+  
+ 設定、<xref:System.Windows.Input.Cursor>にカスタム値が有効でない部分的に信頼します。 カスタム カーソルの詳細については、次を参照してください。[入力概要](~/docs/framework/wpf/advanced/input-overview.md)です。  
+  
+<a name="dependencyPropertyInfo_Cursor"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.FrameworkContentElement.CursorProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例では、カスタム値をカーソルを設定します。  
+  
+ [!code-csharp[cursors#ChangeCursorsSample](~/samples/snippets/csharp/VS_Snippets_Wpf/cursors/CSharp/Window1.xaml.cs#changecursorssample)]
+ [!code-vb[cursors#ChangeCursorsSample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/cursors/VisualBasic/Window1.xaml.vb#changecursorssample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CursorProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CursorProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CursorProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FrameworkContentElement.CursorProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.FrameworkContentElement.Cursor" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataContext">
+      <MemberSignature Language="C#" Value="public object DataContext { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DataContext" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkContentElement.DataContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.NeverLocalize)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素がデータ バインディングに含まれている場合に、その要素のデータ コンテキストを取得または設定します。</summary>
+        <value>データ コンテキストとして使用するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *データ コンテキスト*概念により、バインディング、だけでなく、バインド パスなどの他の特性のために使用されるバインド ソースは、親要素から情報を継承する要素です。  
+  
+ 直接データ コンテキストを設定することができます、[!INCLUDE[TLA#tla_clr](~/includes/tlasharptla-clr-md.md)]オブジェクト、そのオブジェクトのプロパティを評価する、バインディングを使用します。 または、データ コンテキストを設定、<xref:System.Windows.Data.DataSourceProvider>オブジェクト。  
+  
+ この依存関係プロパティでは、プロパティの値を継承します。 その他の値を持たない子要素があるかどうかは<xref:System.Windows.FrameworkContentElement.DataContext%2A>ローカル値またはスタイルを介して確立されると、プロパティのシステム値が設定されますを<xref:System.Windows.FrameworkContentElement.DataContext%2A>割り当てられているこの値を持つ最も近い親要素の値。  
+  
+ 次のプロパティのいずれかを使用する代わりに、<xref:System.Windows.Data.Binding>クラスをバインディング ソースを明示的に指定する: <xref:System.Windows.Data.Binding.ElementName%2A>、 <xref:System.Windows.Data.Binding.Source%2A>、または<xref:System.Windows.Data.Binding.RelativeSource%2A>です。 詳細については、次を参照してください。[する方法: バインド ソースを指定して](~/docs/framework/wpf/data/how-to-specify-the-binding-source.md)です。  
+  
+ [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]、<xref:System.Windows.FrameworkContentElement.DataContext%2A>として最も一般的に設定されて、<xref:System.Windows.Data.Binding>宣言します。 プロパティ要素構文または属性の構文のいずれかを使用することができます。 属性構文は、このページの例に示しています。 設定することも<xref:System.Windows.FrameworkContentElement.DataContext%2A>のコードにします。  
+  
+<a name="xamlPropertyElementUsage_DataContext"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  <object.DataContext>  
+    <dataContextObject />  
+  </object.DataContext>  
+</object>  
+```  
+  
+<a name="xamlAttributeUsage_DataContext"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object DataContext="bindingUsage"/>  
+- or -  
+<object DataContext="{resourceExtension contextResourceKey}"/>  
+```  
+  
+<a name="xamlValues_DataContext"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *dataContextObject*  
+ 親要素内のすべてのバインディングのデータ コンテキストとして機能する直接埋め込まれたオブジェクト。 通常、このオブジェクトは、<xref:System.Windows.Data.Binding>別または<xref:System.Windows.Data.BindingBase>サブクラスです。 または、いずれかの生データ[!INCLUDE[TLA2#tla_clr](~/includes/tla2sharptla-clr-md.md)]オブジェクトの種類のバインディングは、後で定義されている実際のバインディングをここでは、配置することも対象としています。  
+  
+ *bindingUsage*  
+ 適切なデータ コンテキストに評価されるバインディングの使用方法です。 詳細については、「[バインディングのマークアップ拡張機能](~/docs/framework/wpf/advanced/binding-markup-extension.md)」を参照してください。  
+  
+ *resourceExtension*  
+ 次のいずれかの: `StaticResource`、または`DynamicResource`です。 この使用法は、リソース内のオブジェクトとして定義されている、生データを参照するときに使用されます。 参照してください[XAML リソース](~/docs/framework/wpf/advanced/xaml-resources.md)です。  
+  
+ *contextResourceKey*  
+ 内から要求されたオブジェクトのキー識別子、<xref:System.Windows.ResourceDictionary>です。  
+  
+<a name="dependencyPropertyInfo_DataContext"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.FrameworkContentElement.DataContextProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、上のバインディングを設定、<xref:System.Windows.Documents.Paragraph>としては、そのオブジェクトを確立する、新しいカスタム データ オブジェクトを作成することで、要素<xref:System.Windows.FrameworkContentElement.DataContext%2A>、およびその中のプロパティをバインド パスを設定します。  
+  
+ [!code-csharp[ContentElementsSmorgasbord#DataContext](~/samples/snippets/csharp/VS_Snippets_Wpf/ContentElementsSmorgasbord/CSharp/page1.xaml.cs#datacontext)]
+ [!code-vb[ContentElementsSmorgasbord#DataContext](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ContentElementsSmorgasbord/visualbasic/page1.xaml.vb#datacontext)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataContextChanged">
+      <MemberSignature Language="C#" Value="public event System.Windows.DependencyPropertyChangedEventHandler DataContextChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.DependencyPropertyChangedEventHandler DataContextChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.FrameworkContentElement.DataContextChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyPropertyChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素のデータ コンテキストが変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ コンテキストおよびデータ バインディングの詳細については、次を参照してください。[データ バインディングの概要](~/docs/framework/wpf/data/data-binding-overview.md)です。  
+  
+> [!IMPORTANT]
+>  要素のときに<xref:System.Windows.FrameworkContentElement.DataContext%2A>この要素上のすべてのデータ バインドされたプロパティの変更が影響を受ける可能性があります。 これは、データ コンテキストを継承するには、現在の要素の子孫の要素である任意の要素も、現在の要素自体に適用されます。 このようなすべてのバインドを再解釈新しい<xref:System.Windows.FrameworkContentElement.DataContext%2A>のバインディングで新しい値を反映するようにします。 これらの変更の発生に対して相対的順序に関する保証はありません、<xref:System.Windows.FrameworkContentElement.DataContextChanged>イベント。  イベントの後、または任意の組み合わせで、変更は、イベントの前に発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataContextProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty DataContextProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty DataContextProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FrameworkContentElement.DataContextProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.FrameworkContentElement.DataContext" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultStyleKey">
+      <MemberSignature Language="C#" Value="protected object DefaultStyleKey { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DefaultStyleKey" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkContentElement.DefaultStyleKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を使用してテーマでは、このコントロールのスタイル テンプレートを検索するキー。</summary>
+        <value>スタイルのキー。 テーマ スタイル参照の一部として正常に機能するこの値は必要であるが、<see cref="T:System.Type" />のスタイルを設定する要素。 <see langword="null" />特定のケースの許容される値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、通常は、直接の setter のを通じて設定されません。 代わりに、新しいサブクラスを作成するたびに、この依存関係プロパティの型に固有のメタデータをオーバーライドします。 ときにサブクラス化する、呼び出し、<xref:System.Windows.DependencyProperty.OverrideMetadata%2A>メソッドに対して、<xref:System.Windows.FrameworkContentElement.DefaultStyleKeyProperty>コントロールのサブクラスの静的コンス トラクター内の識別子。  
+  
+ など、インライン クラスのインスタンス、<xref:System.Windows.Documents.Bold>実際には、ほとんどの実装をオーバーライドする以外、<xref:System.Windows.FrameworkContentElement.DefaultStyleKey%2A>で静的コンス トラクターといくつかのインスタンス コンス トラクターを公開するメタデータ。 囲まれている要素のファクト、<xref:System.Windows.Documents.Bold>ゲインをタグ付け、<xref:System.Windows.Documents.TextElement.FontWeight%2A>プロパティの<xref:System.Windows.FontWeights.Bold%2A>の既定値の設定によって参照されているテーマ スタイル内で実装された<xref:System.Windows.FrameworkContentElement.DefaultStyleKey%2A>に`typeof(Bold)`です。  
+  
+ 要素またはコントロールは意図的にテーマのスタイルを使用する場合は、設定、<xref:System.Windows.FrameworkContentElement.OverridesDefaultStyle%2A>プロパティを`true`です。  
+  
+<a name="dependencyPropertyInfo_DefaultStyleKey"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.FrameworkContentElement.DefaultStyleKeyProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultStyleKeyProperty">
+      <MemberSignature Language="C#" Value="protected static readonly System.Windows.DependencyProperty DefaultStyleKeyProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field familyorassembly static initonly class System.Windows.DependencyProperty DefaultStyleKeyProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FrameworkContentElement.DefaultStyleKeyProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.FrameworkContentElement.DefaultStyleKey" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndInit">
+      <MemberSignature Language="C#" Value="public virtual void EndInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkContentElement.EndInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>要素が初期化された直後に呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素の読み込みプロセス中に、要素が初期化されたときに発生する特別な処理を提供するには、このメソッドを実装します。  
+  
+ (既定値) の基本実装では、初期化を追跡するためのいくつかの内部フラグを設定するため、実装には基底の実装を呼び出す必要があります。  
+  
+ 場合<xref:System.Windows.FrameworkContentElement.BeginInit%2A>が既に呼び出されて、基本実装を発生させる、<xref:System.Windows.FrameworkContentElement.Initialized>イベント。 それ以外の場合<xref:System.Windows.FrameworkContentElement.BeginInit%2A>も呼び出されなかったかではない可能性があるかどうかを特定<xref:System.Windows.FrameworkContentElement.BeginInit%2A>が呼び出されると、イベントは発生しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindName">
+      <MemberSignature Language="C#" Value="public object FindName (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object FindName(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkContentElement.FindName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">検索する要素の名前です。</param>
+        <summary>指定した識別名を持つ要素を検索します。</summary>
+        <returns>要求された要素。 あります<see langword="null" />一致する要素が見つからなかった場合です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この要素に子要素がある場合は、要求された名前を持つ要素を再帰的には、すべて検索は、これらの子要素です。  
+  
+   
+  
+## Examples  
+ 次の例では、参照内で名前によって検出された要素のプロパティを設定<xref:System.Windows.Documents.FlowDocument>ページにします。  
+  
+ [!code-csharp[ContentElementsSmorgasbord#FindName](~/samples/snippets/csharp/VS_Snippets_Wpf/ContentElementsSmorgasbord/CSharp/page1.xaml.cs#findname)]
+ [!code-vb[ContentElementsSmorgasbord#FindName](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ContentElementsSmorgasbord/visualbasic/page1.xaml.vb#findname)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindResource">
+      <MemberSignature Language="C#" Value="public object FindResource (object resourceKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object FindResource(object resourceKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkContentElement.FindResource(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resourceKey" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="resourceKey">検索するリソースのキー識別子。</param>
+        <summary>指定されたキーを使用してリソースを検索し、要求されたリソースが見つからない場合は例外をスローします。</summary>
+        <returns>見つかったリソースまたは<see langword="null" />一致するリソースが見つからなかった場合 (も例外をスローする場合は<see langword="null" />)。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  見つからないキーのこのメソッドを呼び出すと、例外がスローされます。 この場合の例外を処理しない場合は、呼び出す必要は代わりに<xref:System.Windows.FrameworkContentElement.TryFindResource%2A>です。 <xref:System.Windows.FrameworkContentElement.TryFindResource%2A>返します`null`と該当するリソースが検出され、例外をスローしません。  
+  
+ 呼び出し元の要素で、リソースが見つからない場合は、論理ツリーを使用して、親のツリーを検索、ツリーになる同じ方法で検索すると、リソースが実行時に、キーにより要求されました。  
+  
+ 通常返されたリソース値に設定しようとしているプロパティの型を戻り値をキャストするとすぐにします。  
+  
+   
+  
+## Examples  
+ 次の例では、マークアップで定義されているリソースを検索し、ルーティングされたイベントに応答内の要素の特定のプロパティに適用されます。  
+  
+ [!code-csharp[ContentElementsSmorgasbord#FindResource](~/samples/snippets/csharp/VS_Snippets_Wpf/ContentElementsSmorgasbord/CSharp/page1.xaml.cs#findresource)]
+ [!code-vb[ContentElementsSmorgasbord#FindResource](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ContentElementsSmorgasbord/visualbasic/page1.xaml.vb#findresource)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Windows.ResourceReferenceKeyNotFoundException">要求されたリソース キーは見つかりませんでした。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="resourceKey" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FocusVisualStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Style FocusVisualStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Style FocusVisualStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkContentElement.FocusVisualStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Style</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素がキーボード フォーカスを受け取ったときに適用される外観、効果、またはその他のスタイル特性のカスタマイズを可能にするオブジェクトを取得または設定します。</summary>
+        <value>フォーカスに適用する目的のスタイル。 依存関係プロパティで宣言されている既定値は、空の静的<see cref="T:System.Windows.Style" />です。 ただし、実行時の有効値は、多くの場合、コントロールのテーマ サポートによって提供されたスタイルです (ただし、常にそうであるとは限りません)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定すると[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]スタイルは要素としてインラインではなく、リソースとして定義ほとんどの場合、およびとして参照されているリソースは、通常、<xref:System.Windows.StaticResourceExtension>です。  
+  
+ このプロパティは外観に影響がメタデータにように報告されないことに注意してください。 これは、視覚的な外観の変更イベント ドリブンなすべての時刻に適用されるおよびしたがっては限らないメタデータに、visual またはレイアウトの情報です。  
+  
+ 概念的には、コントロールに適用されたフォーカスの視覚的な動作は、要素間で一貫している必要があります。 一貫性を実現するための最もわかりやすい方法では、全体のテーマを作成している場合にのみフォーカス visual スタイルを変更します。 個々 のスタイルとテーマの一部ではなくこのプロパティを設定キーボード フォーカスに関するユーザー エクスペリエンスに混乱をこれは、このプロパティの使用目的はありません。 要素に固有の動作は意図的に一貫したテーマにする場合は、はるかに優れた方法を使用してトリガーのスタイルでの個々 の入力状態プロパティなど<xref:System.Windows.UIElement.IsFocused%2A>または<xref:System.Windows.UIElement.IsKeyboardFocusWithin%2A>が既存のフォーカス visual スタイルに視覚的に干渉しないようにするためです。 目的で設計の詳細については<xref:System.Windows.FrameworkContentElement.FocusVisualStyle%2A>と代替プロパティの焦点は、「[コントロール、および FocusVisualStyle でフォーカスのスタイルは](~/docs/framework/wpf/advanced/styling-for-focus-in-controls-and-focusvisualstyle.md)します。  
+  
+<a name="xamlAttributeUsage_FocusVisualStyle"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object FocusVisualStyle="{resourceExtension styleResourceKey}"/>  
+```  
+  
+<a name="xamlPropertyElementUsage_FocusVisualStyle"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+<a name="xamlValues_FocusVisualStyle"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *resourceExtension*  
+ 次のいずれかの: または。 参照してください[XAML リソース](~/docs/framework/wpf/advanced/xaml-resources.md)です。  
+  
+ *styleResourceKey*  
+ 要求されているスタイルを識別するキー。 このキーは既存のリソースを<xref:System.Windows.ResourceDictionary>です。  
+  
+> [!NOTE]
+>  プロパティ要素構文は、技術的に可能ですが、推奨されません。 参照してください[インライン スタイルとテンプレート](~/docs/framework/wpf/advanced/inline-styles-and-templates.md)です。  バインドの参照を使用して、または<xref:System.Windows.Data.Binding>も可能ですが、一般的ではないです。  
+  
+<a name="dependencyPropertyInfo_FocusVisualStyle"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.FrameworkContentElement.FocusVisualStyleProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FocusVisualStyleProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FocusVisualStyleProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FocusVisualStyleProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FrameworkContentElement.FocusVisualStyleProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.FrameworkContentElement.FocusVisualStyle" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForceCursor">
+      <MemberSignature Language="C#" Value="public bool ForceCursor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ForceCursor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkContentElement.ForceCursor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうかこの<see cref="T:System.Windows.FrameworkContentElement" />強制する必要があります、[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]とこのインスタンスのによって宣言されたカーソルを描画する<see cref="P:System.Windows.FrameworkContentElement.Cursor" />プロパティです。</summary>
+        <value>
+          <see langword="true" />このインスタンスを使用するには、この要素上にカーソルの表示を強制する (すべての子要素を含む); カーソルについての設定します。それ以外の場合<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定`true`子要素で設定されているカーソルの設定が上書きされます。 そのため、一般にアプリケーション[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]子要素は、カーソルを指定しようとしている場合は特に、ユーザーの混乱する可能性があります。 設定<xref:System.Windows.FrameworkElement.ForceCursor%2A>の方がコントロールのサブクラス化または複合のシナリオに適しています。  
+  
+<a name="dependencyPropertyInfo_ForceCursor"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.FrameworkContentElement.ForceCursorProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例は、要素上でカーソルを強制します。  
+  
+ [!code-xaml[ForceCursor#ForceCursor](~/samples/snippets/csharp/VS_Snippets_Wpf/ForceCursor/CS/default.xaml#forcecursor)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForceCursorProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ForceCursorProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ForceCursorProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FrameworkContentElement.ForceCursorProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.FrameworkContentElement.ForceCursor" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBindingExpression">
+      <MemberSignature Language="C#" Value="public System.Windows.Data.BindingExpression GetBindingExpression (System.Windows.DependencyProperty dp);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Data.BindingExpression GetBindingExpression(class System.Windows.DependencyProperty dp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkContentElement.GetBindingExpression(System.Windows.DependencyProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Data.BindingExpression</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
+      </Parameters>
+      <Docs>
+        <param name="dp">ターゲット<see cref="T:System.Windows.DependencyProperty" />元となると、バインディングを取得します。</param>
+        <summary>取得、<see cref="T:System.Windows.Data.BindingExpression" />指定したプロパティのバインドにします。</summary>
+        <returns>返します、<see cref="T:System.Windows.Data.BindingExpression" />ターゲットがデータ バインド; 場合、それ以外の場合、<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、プロパティを照会して、バインディングを取得します。  
+  
+ [!code-csharp[ContentElementsSmorgasbord#GetBindingExpression](~/samples/snippets/csharp/VS_Snippets_Wpf/ContentElementsSmorgasbord/CSharp/page1.xaml.cs#getbindingexpression)]
+ [!code-vb[ContentElementsSmorgasbord#GetBindingExpression](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ContentElementsSmorgasbord/visualbasic/page1.xaml.vb#getbindingexpression)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUIParentCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.DependencyObject GetUIParentCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance class System.Windows.DependencyObject GetUIParentCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkContentElement.GetUIParentCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyObject</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ビジュアル親が存在しない場合に、この要素に対する代替の論理上の親を返します。 ここで、<see cref="T:System.Windows.FrameworkContentElement" />親が同じ値では常に、<see cref="P:System.Windows.FrameworkContentElement.Parent" />プロパティです。</summary>
+        <returns>以外の値を返します<see langword="null" />このメソッドの WPF フレームワーク レベルの実装が非ビジュアルの親接続を持つ場合です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装では、予想される 1 つのビジュアル親を返します。 カスタム実装は、別の親リレーションシップを返す場合があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialized">
+      <MemberSignature Language="C#" Value="public event EventHandler Initialized;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Initialized" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.FrameworkContentElement.Initialized" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときにこの<see cref="T:System.Windows.FrameworkContentElement" />が初期化されています。 同時場所の値、<see cref="P:System.Windows.FrameworkContentElement.IsInitialized" />からプロパティが変更された<see langword="false" />(または未定義) を<see langword="true" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントになります発生するたびに、<xref:System.Windows.FrameworkContentElement.EndInit%2A>または<xref:System.Windows.FrameworkContentElement.OnInitialized%2A>メソッドが呼び出されます。 これらのメソッドへの呼び出しが行われた意図的なコード、または、[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]読み込みプロセスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InputScope">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.InputScope InputScope { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.InputScope InputScope" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkContentElement.InputScope" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.InputScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これで使用される入力のコンテキストを設定を取得または<see cref="T:System.Windows.FrameworkContentElement" />です。</summary>
+        <value>代替の入力メソッドからの入力を解釈する方法を変更する入力スコープ。 既定値は<see langword="null" />(結果はコマンドの既定の処理)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この依存関係プロパティでは、プロパティの値を継承します。 その他の値を持たない子要素があるかどうかは<xref:System.Windows.FrameworkElement.InputScope%2A>ローカル値またはスタイルを介して確立されると、プロパティのシステム値が設定されますを<xref:System.Windows.FrameworkElement.InputScope%2A>割り当てられているこの値を持つ最も近い親要素の値。  
+  
+ ただし、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]構文の使用状況が表示されているし、は構文的に許可されているのこのプロパティを設定[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]一般的ではありません。  
+  
+<a name="dependencyPropertyInfo_InputScope"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.FrameworkContentElement.InputScopeProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InputScopeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty InputScopeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty InputScopeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FrameworkContentElement.InputScopeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.FrameworkContentElement.InputScope" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInitialized">
+      <MemberSignature Language="C#" Value="public bool IsInitialized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsInitialized" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkContentElement.IsInitialized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>いずれかで読み込まれると、この要素が初期化されたかどうかを示す値を取得[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]、または明示的に用意することによってその<see cref="M:System.Windows.FrameworkContentElement.EndInit" />メソッドが呼び出されます。</summary>
+        <value>
+          <see langword="true" />場合は、要素が初期化される前に示した読み込みまたはメソッドの呼び出しです。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティがありますも`true`新しい親要素を持つし、そのために再読み込みされたことになるように、この要素が、要素ツリー内で移動されたかどうか。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLoaded">
+      <MemberSignature Language="C#" Value="public bool IsLoaded { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsLoaded" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkContentElement.IsLoaded" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プレゼンテーションについては、この要素が読み込まれているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />現在の要素は、要素ツリーにアタッチされておよび描画されている場合<see langword="false" />要素が読み込まれた要素ツリーにアタッチされていない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しく構築されたインスタンスからこのプロパティは、まず`false`、開いたまま`true`に設定されていると`true`コードによって、後で削除された場合でも、します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用して<xref:System.Windows.FrameworkContentElement.IsLoaded%2A>関数を確保するための条件の確認として`displayData`(非表示) が有効な要素読み込んだページのオンデマンドでハンドラーの一部として、に対して機能します。 イベント ハンドラーとして同じロジックが実行される<xref:System.Windows.FrameworkContentElement.Loaded>です。  
+  
+ [!code-csharp[ContentElementsSmorgasbord#IsLoaded](~/samples/snippets/csharp/VS_Snippets_Wpf/ContentElementsSmorgasbord/CSharp/page1.xaml.cs#isloaded)]
+ [!code-vb[ContentElementsSmorgasbord#IsLoaded](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ContentElementsSmorgasbord/visualbasic/page1.xaml.vb#isloaded)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Language">
+      <MemberSignature Language="C#" Value="public System.Windows.Markup.XmlLanguage Language { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Markup.XmlLanguage Language" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkContentElement.Language" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Markup.XmlLanguage</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>個々の要素に適用されるローカリゼーション/グローバリゼーション言語情報を取得または設定します。</summary>
+        <value>この要素のカルチャ情報。 既定値は、<see cref="T:System.Windows.Markup.XmlLanguage" />インスタンスをその<see cref="P:System.Windows.Markup.XmlLanguage.IetfLanguageTag" />値、文字列"EN-US"に設定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列の形式では、RFC 3066 標準に従います。 たとえば、米国"EN-US"は英語です。 参照してください<xref:System.Windows.Markup.XmlLanguage>詳細については、値と形式です。  
+  
+ この依存関係プロパティでは、プロパティの値を継承します。 その他の値を持たない子要素があるかどうかは<xref:System.Windows.FrameworkElement.Language%2A>ローカル値またはスタイルを介して確立されると、プロパティのシステム値が設定されますを<xref:System.Windows.FrameworkElement.Language%2A>割り当てられているこの値を持つ最も近い親要素の値。  
+  
+<a name="dependencyPropertyInfo_CultureInfo"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.FrameworkContentElement.LanguageProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LanguageProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty LanguageProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty LanguageProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FrameworkContentElement.LanguageProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.FrameworkContentElement.Language" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Loaded">
+      <MemberSignature Language="C#" Value="public event System.Windows.RoutedEventHandler Loaded;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.RoutedEventHandler Loaded" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.FrameworkContentElement.Loaded" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素のレイアウトやレンダリングが完了し、操作を受け入れる準備が整ったときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルーティング イベントを直接ルートに従っていない、発生したが、同じ要素内でのみ処理されます。 ルーティング イベントがその他のルーティング イベントの動作をサポートして直接: アクセスできるハンドラーのコレクションをサポートし、として使用できる、<xref:System.Windows.EventTrigger>スタイルでします。  
+  
+<a name="routedEventInfo_Loaded"></a>   
+## <a name="routed-event-information"></a>ルーティングされたイベント情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.FrameworkContentElement.LoadedEvent>|  
+|ルーティング方法|直接|  
+|Delegate|<xref:System.Windows.RoutedEventHandler>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadedEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent LoadedEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent LoadedEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FrameworkContentElement.LoadedEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、 <see cref="E:System.Windows.FrameworkContentElement.Loaded" /> [ルーティング イベントの概要](~/docs/framework/wpf/advanced/routed-events-overview.md)です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルーティング イベントが登録されているときに、イベントの識別子のオブジェクトは作成されます (を参照してください<xref:System.Windows.EventManager.RegisterRoutedEvent%2A>) クラス ハンドラーを追加するために使用する (を参照してください<xref:System.Windows.EventManager.RegisterClassHandler%2A>)。 識別子のオブジェクトには、識別名、所有者型、ハンドラーの型、ルーティング方法、およびイベントの所有者を追加するためのユーティリティ メソッドが含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogicalChildren">
+      <MemberSignature Language="C#" Value="protected virtual System.Collections.IEnumerator LogicalChildren { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerator LogicalChildren" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkContentElement.LogicalChildren" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素の要素の論理子列挙子を取得します。</summary>
+        <value>この要素の論理上の子要素に対する列挙子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する方法の詳細についての<xref:System.Windows.FrameworkContentElement.LogicalChildren%2A>と<xref:System.Windows.FrameworkContentElement.AddLogicalChild%2A>を参照してください[wpf ツリー](~/docs/framework/wpf/advanced/trees-in-wpf.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveFocus">
+      <MemberSignature Language="C#" Value="public override sealed bool MoveFocus (System.Windows.Input.TraversalRequest request);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool MoveFocus(class System.Windows.Input.TraversalRequest request) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkContentElement.MoveFocus(System.Windows.Input.TraversalRequest)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="System.Windows.Input.TraversalRequest" />
+      </Parameters>
+      <Docs>
+        <param name="request">フォーカスが列挙体の値として、移動するのには方向です。</param>
+        <summary>この要素から別の要素にキーボード フォーカスを移動します。</summary>
+        <returns>返します<see langword="true" />フォーカスが正常に移動された場合<see langword="false" />と方向にターゲット要素が存在しませんを指定する場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkContentElement.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.NeverLocalize)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素の識別名を取得または設定します。 解析中に構築された要素をプログラムで分離コード、イベント ハンドラー コードなどが参照できるように、この名前はインスタンス参照を提供[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。</summary>
+        <value>要素の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの最も一般的な使用法は指定するときに、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]マークアップ内の要素名。  
+  
+ このプロパティでは、WPF フレームワーク レベルの便利なプロパティを設定する基本的にでは、 [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)] [X:name ディレクティブ](~/docs/framework/xaml-services/x-name-directive.md)です。  
+  
+ 取得する、<xref:System.Windows.FrameworkContentElement.Name%2A>コードからは一般的では、既に適切な参照をコードにある場合だけメソッドを呼び出すことができます、要素のプロパティを参照しないようにして通常必要、<xref:System.Windows.FrameworkContentElement.Name%2A>です。 例外は、オーバー ロードされたに意味があるかどうかは文字列内でその名前を表示すると便利である場合[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]です。 設定、<xref:System.Windows.FrameworkContentElement.Name%2A>コードから場合、元の<xref:System.Windows.FrameworkContentElement.Name%2A>がマークアップから設定が推奨もされません。 また、プロパティを変更しても、オブジェクト参照は変更されません。 基になる名前スコープは、中に明示的に作成された場合にのみ、このようなオブジェクト参照が作成された[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]読み込みします。  
+  
+ 具体的に呼び出す必要があります<xref:System.Windows.FrameworkContentElement.RegisterName%2A>効果的な変更を行うには<xref:System.Windows.FrameworkContentElement.Name%2A>既に読み込まれた要素のプロパティです。  
+  
+ 1 つの重要な場合は設定、<xref:System.Windows.FrameworkContentElement.Name%2A>コードから重要では ストーリー ボードは名前付けの要素の実行に対しては、します。 名前を登録することができます、前にも必要になるをインスタンス化し、割り当てます、<xref:System.Windows.NameScope>インスタンス。 使用例」を参照してください。 または[ストーリー ボードの概要](~/docs/framework/wpf/graphics-multimedia/storyboards-overview.md)です。  
+  
+ 設定<xref:System.Windows.FrameworkContentElement.Name%2A>からコードには、アプリケーションが制限されていますが、ここで、アプリケーションにページが再読み込みされ、必ずしもその対応するページの分離コードが実行時コードではありませんは、ナビゲーション モデルを採用している場合に特により一般的には名前で要素を検索します。 ユーティリティ メソッド<xref:System.Windows.FrameworkContentElement.FindName%2A>、これは、<xref:System.Windows.FrameworkContentElement>で要素を検索できます<xref:System.Windows.FrameworkContentElement.Name%2A>その要素の論理ツリーを再帰的にします。 使用することができます、<xref:System.Windows.LogicalTreeHelper.FindLogicalNode%2A>の静的メソッド<xref:System.Windows.LogicalTreeHelper>もを取り、<xref:System.Windows.FrameworkContentElement.Name%2A>文字列を引数として。  
+  
+ よく使用されるルート要素 (<xref:System.Windows.Window>、<xref:System.Windows.Controls.Page>たとえば) インターフェイスを実装して<xref:System.Windows.Markup.INameScope>です。 名前をそのスコープ内で明確にすることを強制するには、このインターフェイスの実装が予想されます。  
+  
+<a name="dependencyPropertyInfo_Name"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.FrameworkContentElement.NameProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.UIPropertyMetadata.IsAnimationProhibited%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NameProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty NameProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty NameProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FrameworkContentElement.NameProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.FrameworkContentElement.Name" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnContextMenuClosing">
+      <MemberSignature Language="C#" Value="protected virtual void OnContextMenuClosing (System.Windows.Controls.ContextMenuEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnContextMenuClosing(class System.Windows.Controls.ContextMenuEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkContentElement.OnContextMenuClosing(System.Windows.Controls.ContextMenuEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Controls.ContextMenuEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントに関するデータを提供します。</param>
+        <summary>呼び出されるたびに、<see cref="E:System.Windows.FrameworkContentElement.ContextMenuClosing" />ルーティング イベントがそのルート上で、このクラスに到達します。 このイベントに対するクラス処理を追加するには、このメソッドを実装します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドには、既定の実装ではありません。 継承の中間クラスがこのメソッドを実装している場合は、基本実装を呼び出す必要があります。  
+  
+ このメソッドの目的は、類似した[!INCLUDE[TLA#tla_clr](~/includes/tlasharptla-clr-md.md)]でのイベント パターン * メソッド: インスタンス ハンドラーではなく、クラス ハンドラーを持つ派生クラスから一致するイベントを処理するための手段を提供します。 ここでは、照合イベントは、ルーティングされたイベントです。 On のメソッドの実装パターンではルーティング イベントの異なるルーティング イベントを子要素、必ずしも要素でハンドラーを呼び出すことによって発生する可能性があります。 そのため、実装、イベント引数のソースのプロパティを考慮に入れる必要が (および再ほとんどの場合、イベントを発生させる必要がありますいないを再試行してください)。 サブクラス<xref:System.Windows.FrameworkContentElement>経路イベントが受信したときに、プライベート クラス ハンドラー メソッドを呼び出すにこともできます。 イベントの引数を受け取り、経路を短縮する処理済みとして意図的にイベントをマークする 1 つの潜在的なシナリオです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnContextMenuOpening">
+      <MemberSignature Language="C#" Value="protected virtual void OnContextMenuOpening (System.Windows.Controls.ContextMenuEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnContextMenuOpening(class System.Windows.Controls.ContextMenuEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkContentElement.OnContextMenuOpening(System.Windows.Controls.ContextMenuEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Controls.ContextMenuEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのイベント データ。</param>
+        <summary>呼び出されるたびに、<see cref="E:System.Windows.FrameworkContentElement.ContextMenuOpening" />ルーティング イベントがそのルート上で、このクラスに到達します。 このイベントに対するクラス処理を追加するには、このメソッドを実装します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドには、既定の実装ではありません。 継承の中間クラスがこのメソッドを実装している場合は、base() を呼び出す必要があります。  
+  
+ このメソッドの目的は、類似した[!INCLUDE[TLA#tla_clr](~/includes/tlasharptla-clr-md.md)]でのイベント パターン * メソッド: インスタンス ハンドラーではなく、クラス ハンドラーを持つ派生クラスから一致するイベントを処理するための手段を提供します。 ここでは、照合イベントは、ルーティングされたイベントです。 On のメソッドの実装パターンではルーティング イベントの異なるルーティング イベントを子要素、必ずしも要素であるため、実装は、イベント引数のソースのプロパティを考慮に入れる必要があるハンドラーを呼び出す (ほとんどの場合にイベントを再生成する必要がありますいないを再試行してください) で発生する可能性があります。 サブクラス<xref:System.Windows.FrameworkContentElement>経路イベントが受信したときに、プライベート クラス ハンドラー メソッドを呼び出すにこともできます。 イベントの引数を受け取り、経路を短縮する処理済みとして意図的にイベントをマークする 1 つの潜在的なシナリオです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnGotFocus">
+      <MemberSignature Language="C#" Value="protected override void OnGotFocus (System.Windows.RoutedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnGotFocus(class System.Windows.RoutedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkContentElement.OnGotFocus(System.Windows.RoutedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.RoutedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのイベント データ。</param>
+        <summary>クラスのハンドラーを<see cref="E:System.Windows.ContentElement.GotFocus" />イベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスのハンドラーは、イベントがこの要素から作成された場合は、この要素の適切なフォーカスの動作を設定します。 イベントのソースが、ツリー内の別の要素の場合は、ハンドラーは、何も実行します。  
+  
+ これらの既定の動作を要素にフォーカスを変更するのには、このメソッドをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInitialized">
+      <MemberSignature Language="C#" Value="protected virtual void OnInitialized (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnInitialized(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkContentElement.OnInitialized(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのイベント データ。</param>
+        <summary><see cref="E:System.Windows.FrameworkContentElement.Initialized" /> イベントを発生させます。 このメソッドが呼び出されるたびに<see cref="P:System.Windows.FrameworkContentElement.IsInitialized" />に設定されている<see langword="true" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この仮想メソッドの既定の実装は、このトピックで前述したように、イベントを発生させます。 上書きは、この動作を保持する base() を呼び出す必要があります。  
+  
+ なお、<xref:System.Windows.FrameworkContentElement.IsInitialized%2A>プロパティは読み取り専用です。 したがって、その動作を強制的に初期化する方法を設定することはできません。 初期化 設定でのみ実行するためのもので、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]フレームワークです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPropertyChanged">
+      <MemberSignature Language="C#" Value="protected override void OnPropertyChanged (System.Windows.DependencyPropertyChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnPropertyChanged(valuetype System.Windows.DependencyPropertyChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkContentElement.OnPropertyChanged(System.Windows.DependencyPropertyChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.DependencyPropertyChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">変更されたプロパティ (古い値と新しい値を含む) を示すイベント データ。</param>
+        <summary>ときに呼び出されるこの依存関係プロパティの有効な値<see cref="T:System.Windows.FrameworkContentElement" />が更新されました。 変更が発生した特定の依存関係プロパティが引数パラメーターで報告されます。 オーバーライド<see cref="M:System.Windows.DependencyObject.OnPropertyChanged(System.Windows.DependencyPropertyChangedEventArgs)" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、通常、プロパティの変更または無効化を検出するものではありません。 代わりに目的が、一般的な無効化パターンの変更があったプロパティの広範な分類に関する特定の情報がわかっている場合。  
+  
+ このメソッドでは、オブジェクトの有効期間中に何度もを呼び出す可能性があります。 したがって、特定のプロパティのメタデータをオーバーライドし、適用するを使用するパフォーマンスが向上を実現できます<xref:System.Windows.CoerceValueCallback>または<xref:System.Windows.PropertyChangedCallback>個々 のプロパティです。 場合にこのメソッドを使用すると、<xref:System.Windows.FrameworkContentElement>多数の値と相互に依存関係プロパティを含む動作をレンダリングする必要がありますを再実行関連のプロパティの無効化のケースのいくつかのようにロジックが含まれている場合またはします。  
+  
+ ある同じ名前に注意してください`OnPropertyChanged`異なるシグネチャを持つメソッド (パラメーターの型が<xref:System.ComponentModel.PropertyChangedEventArgs>) に多数のクラスに表示されることができます。 ある`OnPropertyChanged`のコントラクトの一部であり、データ オブジェクトの通知に使用<xref:System.ComponentModel.INotifyPropertyChanged>です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>常に、実装では、最初の操作として基底の実装を呼び出します。 これを行うにはエラーには、全体が無効になりますが大幅に[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]プロパティ システムは、これにより、正しくない値が報告されます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStyleChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnStyleChanged (System.Windows.Style oldStyle, System.Windows.Style newStyle);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void OnStyleChanged(class System.Windows.Style oldStyle, class System.Windows.Style newStyle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkContentElement.OnStyleChanged(System.Windows.Style,System.Windows.Style)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldStyle" Type="System.Windows.Style" />
+        <Parameter Name="newStyle" Type="System.Windows.Style" />
+      </Parameters>
+      <Docs>
+        <param name="oldStyle">古いスタイルです。</param>
+        <param name="newStyle">新しいスタイルです。</param>
+        <summary>この要素の変更で使用されているスタイルと呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドには、スタイルが変更された状態を示す内部フラグを設定する既定の実装があります。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>常に基底の実装を呼び出し、それ以外の場合、スタイルを適用することはできません。 このメソッドをオーバーライドするためのシナリオは、派生クラスは、専用のスタイル セレクターまたはスタイルの値をキャッシュする場合などがあります。 テーマの変更はこのメソッドを呼び出す可能性があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnToolTipClosing">
+      <MemberSignature Language="C#" Value="protected virtual void OnToolTipClosing (System.Windows.Controls.ToolTipEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnToolTipClosing(class System.Windows.Controls.ToolTipEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkContentElement.OnToolTipClosing(System.Windows.Controls.ToolTipEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Controls.ToolTipEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントに関するデータを提供します。</param>
+        <summary>呼び出されるたびに、<see cref="E:System.Windows.FrameworkContentElement.ToolTipClosing" />ルーティング イベントがそのルート上で、このクラスに到達します。 このイベントに対するクラス処理を追加するには、このメソッドを実装します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドには、既定の実装ではありません。 継承の中間クラスがこのメソッドを実装している場合は、base() を呼び出す必要があります。  
+  
+ このメソッドの目的は、類似した[!INCLUDE[TLA#tla_clr](~/includes/tlasharptla-clr-md.md)]でのイベント パターン * メソッド: インスタンス ハンドラーではなく、クラス ハンドラーを持つ派生クラスから一致するイベントを処理するための手段を提供します。 ここでは、照合イベントは、ルーティングされたイベントです。 On のメソッドの実装パターンではルーティング イベントの異なるルーティング イベントを子要素、必ずしも要素であるため、実装は、イベント引数のソースのプロパティを考慮に入れる必要があるハンドラーを呼び出す (ほとんどの場合にイベントを再生成する必要がありますいないを再試行してください) で発生する可能性があります。 サブクラス<xref:System.Windows.FrameworkContentElement>経路イベントが受信したときに、プライベート クラス ハンドラー メソッドを呼び出すにこともできます。 イベントの引数を受け取り、経路を短縮する処理済みとして意図的にイベントをマークする 1 つの潜在的なシナリオです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnToolTipOpening">
+      <MemberSignature Language="C#" Value="protected virtual void OnToolTipOpening (System.Windows.Controls.ToolTipEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnToolTipOpening(class System.Windows.Controls.ToolTipEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkContentElement.OnToolTipOpening(System.Windows.Controls.ToolTipEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Controls.ToolTipEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントに関するデータを提供します。</param>
+        <summary>呼び出されるたびに、<see cref="E:System.Windows.FrameworkContentElement.ToolTipOpening" />ルーティング イベントがそのルート上で、このクラスに到達します。 このイベントに対するクラス処理を追加するには、このメソッドを実装します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドには、既定の実装ではありません。 継承の中間クラスがこのメソッドを実装している場合は、base() を呼び出す必要があります。  
+  
+ このメソッドの目的は、類似した[!INCLUDE[TLA#tla_clr](~/includes/tlasharptla-clr-md.md)]でのイベント パターン * メソッド: インスタンス ハンドラーではなく、クラス ハンドラーを持つ派生クラスから一致するイベントを処理するための手段を提供します。 ここでは、照合イベントは、ルーティングされたイベントです。 On のメソッドの実装パターンではルーティング イベントの異なるルーティング イベントを子要素、必ずしも要素であるハンドラーを呼び出す (ほとんどの場合にイベントを再生成する必要がありますいないを再試行してください) で発生する可能性があります。 サブクラス<xref:System.Windows.FrameworkContentElement>経路イベントが受信したときに、プライベート クラス ハンドラー メソッドを呼び出すにこともできます。 イベントの引数を受け取り、経路を短縮する処理済みとして意図的にイベントをマークする 1 つの潜在的なシナリオです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OverridesDefaultStyle">
+      <MemberSignature Language="C#" Value="public bool OverridesDefaultStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool OverridesDefaultStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkContentElement.OverridesDefaultStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはテーマ スタイルのスタイル プロパティがこの要素に組み込むかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />この要素は、テーマのスタイル プロパティを使用していない場合すべての元のスタイル プロパティはローカル アプリケーションのスタイルから取り出され、テーマのスタイル プロパティは適用されません。 <see langword="false" />場合はアプリケーション スタイルが最初に、適用し、アプリケーションのスタイルで具体的には設定されていないプロパティのテーマ スタイルを適用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの最も一般的な使用法は、テーマとスタイルを提供しているスタイルのセッター内の間接的な使用率です。  
+  
+<a name="dependencyPropertyInfo_OverridesDefaultStyle"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.FrameworkContentElement.OverridesDefaultStyleProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OverridesDefaultStyleProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty OverridesDefaultStyleProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty OverridesDefaultStyleProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FrameworkContentElement.OverridesDefaultStyleProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.FrameworkContentElement.OverridesDefaultStyle" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parent">
+      <MemberSignature Language="C#" Value="public System.Windows.DependencyObject Parent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.DependencyObject Parent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkContentElement.Parent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyObject</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素の論理ツリー内での親を取得します。</summary>
+        <value>この要素の論理上の親。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素の論理上の親が、アプリケーションの機能に応じて変わることが可能性のある、このプロパティの値を維持するその変更は反映されないことに注意してください。 通常必要があります値を取得する必要がある直前です。  
+  
+ 参照してください[wpf ツリー](~/docs/framework/wpf/advanced/trees-in-wpf.md)詳細については、要素を検索には、この方法は適切な論理ツリー、およびシナリオを走査します。  
+  
+ プロパティのシステムは可能性があると再計算要素のすべてのプロパティ値が親を再指定、いくつかのプロパティは、論理ツリーを使用して値を継承するため。 <xref:System.Windows.FrameworkContentElement.DataContext%2A>にバインドできますも変更を適用します。  
+  
+ 要素の親の変更は通常によってのみ行われますコレクションの操作、dedicated を使用して追加または削除メソッド、または、要素のコンテンツのプロパティを設定します。  
+  
+ 使用するための最も一般的なシナリオ、<xref:System.Windows.FrameworkContentElement.Parent%2A>プロパティ、参照を取得し、さまざまな<xref:System.Windows.FrameworkContentElement>親からのプロパティ値。 テンプレートの場合、<xref:System.Windows.FrameworkContentElement.Parent%2A>テンプレートの最終的になります`null`です。 この時点以降をテンプレートが実際に適用されている論理ツリーに拡張を使用して<xref:System.Windows.FrameworkContentElement.TemplatedParent%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例の確認を表示するかどうか、<xref:System.Windows.FrameworkContentElement.Parent%2A>の<xref:System.Windows.Documents.TextPointer>は、特定の型。  
+  
+ [!code-csharp[TextPointer_snippets#FCEParent](~/samples/snippets/csharp/VS_Snippets_Wpf/TextPointer_Snippets/CSharp/Window1.xaml.cs#fceparent)]
+ [!code-vb[TextPointer_snippets#FCEParent](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextPointer_Snippets/visualbasic/window1.xaml.vb#fceparent)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PredictFocus">
+      <MemberSignature Language="C#" Value="public override sealed System.Windows.DependencyObject PredictFocus (System.Windows.Input.FocusNavigationDirection direction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Windows.DependencyObject PredictFocus(valuetype System.Windows.Input.FocusNavigationDirection direction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkContentElement.PredictFocus(System.Windows.Input.FocusNavigationDirection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyObject</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="direction" Type="System.Windows.Input.FocusNavigationDirection" />
+      </Parameters>
+      <Docs>
+        <param name="direction">使用予定のフォーカスの変更を決定する必要があります方向です。</param>
+        <summary>指定したフォーカスの移動方向をこの要素に相対的なフォーカスを受け取るが、実際には、フォーカスを移動できない次の要素を決定します。 このメソッドは封印されており、オーバーライドできません。</summary>
+        <returns>対象にした次の要素は、フォーカスが実際に走査された場合に移動します。 返す可能性があります<see langword="null" />フォーカスをこの要素に相対的な指定した方向に移動できない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.FrameworkContentElement.MoveFocus%2A>実際には、フォーカスを移動するが関連する方法です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">次の手順のいずれかを指定、 <see cref="T:System.Windows.Input.TraversalRequest" />: <see cref="F:System.Windows.Input.FocusNavigationDirection.Next" />、 <see cref="F:System.Windows.Input.FocusNavigationDirection.Previous" />、 <see cref="F:System.Windows.Input.FocusNavigationDirection.First" />、<see cref="F:System.Windows.Input.FocusNavigationDirection.Last" />です。 次の手順はできません<see cref="M:System.Windows.FrameworkContentElement.PredictFocus(System.Windows.Input.FocusNavigationDirection)" />(の法律が<see cref="M:System.Windows.FrameworkContentElement.MoveFocus(System.Windows.Input.TraversalRequest)" />)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterName">
+      <MemberSignature Language="C#" Value="public void RegisterName (string name, object scopedElement);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterName(string name, object scopedElement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkContentElement.RegisterName(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="scopedElement" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="name">指定した名前とオブジェクトのマッピングに使用する名前です。</param>
+        <param name="scopedElement">マッピングのオブジェクトです。</param>
+        <summary>アクセスを簡素化するアクセサーを提供、<see cref="T:System.Windows.NameScope" />登録方法です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、便利なメソッドを呼び出す<xref:System.Windows.NameScope.RegisterName%2A>です。 実装は、該当するが見つかるまで、連続する親要素は確認<xref:System.Windows.NameScope>実装を実装する要素の検索で見つかった<xref:System.Windows.Markup.INameScope>です。 名前スコープの詳細については、次を参照してください。 [WPF XAML 名前スコープ](~/docs/framework/wpf/advanced/wpf-xaml-namescopes.md)です。  
+  
+ 呼び出す<xref:System.Windows.FrameworkContentElement.RegisterName%2A>が正しくコードで作成されたときに、アプリケーションのアニメーションのストーリー ボードをフックするために必要です。 これは、プロパティ、キーのいずれかのストーリー ボード作成ため<xref:System.Windows.Media.Animation.Storyboard.TargetName%2A>、ターゲット要素への参照を実行することではなく実行時の名前検索を使用します。 これは、その要素が、コードから参照渡しでアクセス可能な場合でも当てはまります。 ストーリー ボードのターゲットの名前を登録する必要がある理由の詳細については、次を参照してください。[ストーリー ボードの概要](~/docs/framework/wpf/graphics-multimedia/storyboards-overview.md)です。 コンテンツ要素のアニメーションは、コントロールのアニメーションよりもあまり一般的で、[ストーリー ボードの概要](~/docs/framework/wpf/graphics-multimedia/storyboards-overview.md)制御シナリオに重点を置いています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveLogicalChild">
+      <MemberSignature Language="C#" Value="protected void RemoveLogicalChild (object child);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void RemoveLogicalChild(object child) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkContentElement.RemoveLogicalChild(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="child" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="child">削除する要素。</param>
+        <summary>この要素の論理ツリーから、指定した要素を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、[!INCLUDE[TLA#tla_api](~/includes/tlasharptla-api-md.md)]が子コレクション サポートを追加するときに、シナリオを派生するクラスを主に関連します。  
+  
+ ほとんど<xref:System.Windows.FrameworkContentElement>派生クラスの包含を担当する専用のコレクションを公開する (たとえば、<xref:System.Windows.Documents.Span.Inlines%2A>上、<xref:System.Windows.Documents.Span>クラスです。<xref:System.Windows.Documents.Section.Blocks%2A>上、<xref:System.Windows.Documents.Section>クラス)。 通常、このようなクラスから派生すると、論理ツリーを直接操作する必要を回避できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Resources">
+      <MemberSignature Language="C#" Value="public System.Windows.ResourceDictionary Resources { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.ResourceDictionary Resources" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkContentElement.Resources" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.Markup.Ambient</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.ResourceDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在のローカルに定義されたリソース ディクショナリを設定します。</summary>
+        <value>現在のローカルに定義されたリソース。 これは、キーがディクショナリ内のリソースをアクセスする場所、リソースのディクショナリです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 完全または部分的に定義できるリソース ディクショナリ[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]は、通常、プロパティ要素として作成し、個々 のページまたはアプリケーションのルート要素には、通常します。 このレベルでリソース ディクショナリを配置すると、ページ内の個々 の子要素 (または任意のページでは、アプリケーションの場合に、) を検索しやすきます。 ほとんどのアプリケーション シナリオでは、ことをお勧めスタイルが、リソース ディクショナリ内のオブジェクト要素として定義されているスタイル リソース全体を自己完結型できるように、外部リソースとして定義するか (このアプローチは、分担デザイナーと開発者の責任を編集することが必要な物理ファイルを分離することにより、役立ちます)。  
+  
+ このプロパティをリソース ディクショナリだけがその要素内で直接宣言を返すことに注意してください。 これは、実際のリソース ルックアップ プロセスの子要素がアクセスできる場所の検索方向を再帰的に、各親要素で定義されているリソースとは異なるです。  
+  
+ リソースは、コレクション内からコードで参照することもできますでリソースが作成されたことに注意してください[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]確実アクセスできなくなりますまで後<xref:System.Windows.FrameworkContentElement.Loaded>ディクショナリを宣言する要素で発生します。 実際には、リソースは、非同期的に解析され、であっても、<xref:System.Windows.FrameworkContentElement.Loaded>イベントが参照できるように保証、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]リソースを定義します。 このため、通常のみにアクセスする[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]またはその他の実行時のコードの一部としてリソースを定義[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]スタイルや属性の値をリソース拡張機能の参照などの手法です。 コードによって、リソースにアクセスするときに基本的と等価であるから行われます。 参照に[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+ 基になる<xref:System.Windows.ResourceDictionary>を追加、削除、またはコードを使用してから、コレクション内のリソースを照会するために必要なメソッドをサポートします。 <xref:System.Windows.FrameworkContentElement.Resources%2A>プロパティは、要素を新規または別のリソースのコレクションを完全に置き換えるのシナリオをサポートする設定<xref:System.Windows.ResourceDictionary>です。  
+  
+ 注意して、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]に示す構文の要素を含まない、<xref:System.Windows.ResourceDictionary>です。 これは、暗黙の型のコレクション構文の例コレクションの要素を表すタグを省略できます。 代わりに、コレクションに項目として追加される要素を指定します。 暗黙の型のコレクションの詳細については、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]を参照してください[XAML 構文の詳細](~/docs/framework/wpf/advanced/xaml-syntax-in-detail.md)です。 1 つのケースで、<xref:System.Windows.ResourceDictionary>要素がマージされたディクショナリを導入する場合ではありません通常その子要素として明示的に指定がまだ<xref:System.Windows.ResourceDictionary>します。 詳細については、「[リソース ディクショナリのトピックとマージ](~/docs/framework/wpf/advanced/merged-resource-dictionaries.md)です。  
+  
+<a name="xamlPropertyElementUsage_Resources"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  <object.Resources>  
+    oneOrMoreResourceElements  
+  </object.Resources>  
+</object>  
+```  
+  
+<a name="xamlValues_Resources"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *oneOrMoreResourceElements*  
+ 1 つまたは複数のオブジェクト要素定義されているリソース。 各リソースのプロパティ要素内で各<xref:System.Windows.ResourceDictionary>に一意の値を持つ必要があります、 [X:key ディレクティブ](~/docs/framework/xaml-services/x-key-directive.md)、値がから取得されたときに、一意のキーとして機能する、<xref:System.Windows.ResourceDictionary>です。  
+  
+   
+  
+## Examples  
+ 次の例では確立、<xref:System.Windows.FrameworkContentElement.Resources%2A>コレクションに、<xref:System.Windows.Documents.FlowDocument>ルート要素です。 <xref:System.Windows.Documents.FlowDocument>一般的な選択肢は、いくつかのいずれかであるため<xref:System.Windows.FrameworkContentElement>ページのルート、またはアプリケーションのようにこのようなさらに高いレベルでは、ルート要素では、およびリソースとして意味のあるクラスが一般的に格納します。  
+  
+ [!code-xaml[ContentElementsSmorgasbord#FCEResources](~/samples/snippets/csharp/VS_Snippets_Wpf/ContentElementsSmorgasbord/CSharp/page2.xaml#fceresources)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetBinding">
+      <MemberSignature Language="C#" Value="public System.Windows.Data.BindingExpression SetBinding (System.Windows.DependencyProperty dp, string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Data.BindingExpression SetBinding(class System.Windows.DependencyProperty dp, string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkContentElement.SetBinding(System.Windows.DependencyProperty,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Data.BindingExpression</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dp">バインドされたプロパティを識別します。</param>
+        <param name="path">ソースのプロパティ名、または、バインディングの使用プロパティへのパス。</param>
+        <summary>データ ソースへのパスの修飾として指定されたソースのプロパティ名に基づく、この要素にバインドをアタッチします。</summary>
+        <returns>バインドの条件を記録します。 この戻り値は、エラーをチェックするために役立ちます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、便利なメソッドを呼び出す<xref:System.Windows.Data.BindingOperations.SetBinding%2A?displayProperty=nameWithType>、として現在のインスタンスを渡しますが、 <xref:System.Windows.DependencyObject>、新たに作成および<xref:System.Windows.Data.Binding>に基づいて、指定した`path`パラメーター。 この署名は、単純な既定のバインディングを確立する場合に便利です。 既定以外の条件へのバインディング プロパティを指定するか、使用する必要がある場合、<xref:System.Windows.Data.MultiBinding>または<xref:System.Windows.Data.PriorityBinding>、使用する必要があります、<xref:System.Windows.FrameworkContentElement.SetBinding%28System.Windows.DependencyProperty%2CSystem.Windows.Data.BindingBase%29>署名します。  
+  
+   
+  
+## Examples  
+ 次の例は、上のバインディングを設定、<xref:System.Windows.Documents.Paragraph>としては、そのオブジェクトを確立する、新しいカスタム データ オブジェクトを作成することで、要素<xref:System.Windows.FrameworkContentElement.DataContext%2A>、およびその中のプロパティをバインド パスを設定します。  
+  
+ [!code-csharp[ContentElementsSmorgasbord#DataContext](~/samples/snippets/csharp/VS_Snippets_Wpf/ContentElementsSmorgasbord/CSharp/page1.xaml.cs#datacontext)]
+ [!code-vb[ContentElementsSmorgasbord#DataContext](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ContentElementsSmorgasbord/visualbasic/page1.xaml.vb#datacontext)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetBinding">
+      <MemberSignature Language="C#" Value="public System.Windows.Data.BindingExpressionBase SetBinding (System.Windows.DependencyProperty dp, System.Windows.Data.BindingBase binding);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Data.BindingExpressionBase SetBinding(class System.Windows.DependencyProperty dp, class System.Windows.Data.BindingBase binding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkContentElement.SetBinding(System.Windows.DependencyProperty,System.Windows.Data.BindingBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Data.BindingExpressionBase</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
+        <Parameter Name="binding" Type="System.Windows.Data.BindingBase" />
+      </Parameters>
+      <Docs>
+        <param name="dp">バインドされたプロパティを識別します。</param>
+        <param name="binding">データ バインディングを表します。</param>
+        <summary>指定したバインディング オブジェクトに基づいて、この要素にバインドをアタッチします。</summary>
+        <returns>バインドの条件を記録します。 この戻り値は、エラーをチェックするために役立ちます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、便利なメソッドを呼び出す<xref:System.Windows.Data.BindingOperations.SetBinding%2A?displayProperty=nameWithType>、現在のインスタンスに渡されます<xref:System.Windows.DependencyObject>です。  
+  
+   
+  
+## Examples  
+ 次の例は、上のバインディングを設定、<xref:System.Windows.Documents.Paragraph>要素を新たに作成する<xref:System.Windows.Data.Binding>新たに構築するソースの設定と`DateTime`オブジェクト。  
+  
+ [!code-csharp[ContentElementsSmorgasbord#SetBinding](~/samples/snippets/csharp/VS_Snippets_Wpf/ContentElementsSmorgasbord/CSharp/page1.xaml.cs#setbinding)]
+ [!code-vb[ContentElementsSmorgasbord#SetBinding](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ContentElementsSmorgasbord/visualbasic/page1.xaml.vb#setbinding)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetResourceReference">
+      <MemberSignature Language="C#" Value="public void SetResourceReference (System.Windows.DependencyProperty dp, object name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetResourceReference(class System.Windows.DependencyProperty dp, object name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkContentElement.SetResourceReference(System.Windows.DependencyProperty,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
+        <Parameter Name="name" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="dp">リソースがバインドされているプロパティです。</param>
+        <param name="name">リソースの名前。</param>
+        <summary>指定した名前のリソースを検索しへのリソース参照を指定したプロパティを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リソースの参照の使用に似ていますが、 [DynamicResource マークアップ拡張機能](~/docs/framework/wpf/advanced/dynamicresource-markup-extension.md)マークアップでします。 リソース参照では、実行時の遅延単位で指定したプロパティの値を提供する内部式を作成します。 式は、現在の要素が親を再指定する場合や、リソース ディクショナリが内部のイベントによって変更された値が示すされるたびに再評価されます (親の変更は、ディクショナリの検索パスを変更は)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeResources">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeResources ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeResources() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkContentElement.ShouldSerializeResources" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>シリアル化プロセスでの内容をシリアル化する必要かどうかを返します、<see cref="P:System.Windows.FrameworkContentElement.Resources" />このクラスのインスタンスのプロパティです。</summary>
+        <returns>
+          <see langword="true" /> プロパティ値をシリアル化する必要がある場合は <see cref="P:System.Windows.FrameworkContentElement.Resources" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、戻り値は`true`、ローカルの少なくとも 1 つのキーを持つリソースがある限り、<xref:System.Windows.FrameworkContentElement.Resources%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeStyle">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeStyle ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeStyle() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkContentElement.ShouldSerializeStyle" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>シリアル化プロセスでの内容をシリアル化する必要かどうかを返します、<see cref="P:System.Windows.FrameworkContentElement.Style" />このクラスのインスタンスのプロパティです。</summary>
+        <returns>
+          <see langword="true" /> プロパティ値をシリアル化する必要がある場合は <see cref="P:System.Windows.FrameworkContentElement.Style" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されます`true`場合、<xref:System.Windows.Style>ローカルに設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceUpdated">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Windows.Data.DataTransferEventArgs&gt; SourceUpdated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Windows.Data.DataTransferEventArgs&gt; SourceUpdated" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.FrameworkContentElement.SourceUpdated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Windows.Data.DataTransferEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連するデータ ソースのバインド要素をこの変更に参加しているときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントの画面、<xref:System.Windows.Data.Binding.SourceUpdated>いずれかが発生するイベントを<xref:System.Windows.Data.Binding>この要素に関連付けられています。  
+  
+<a name="xamlAttributeUsage_SourceUpdated"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object SourceUpdated="EventHandler"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Style">
+      <MemberSignature Language="C#" Value="public System.Windows.Style Style { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Style Style" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkContentElement.Style" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Style</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素が使用するスタイルを取得または設定します。</summary>
+        <value>要素に適用される既定以外のスタイル (存在する場合)。 それ以外の場合は <see langword="null" />。 既定で構築された既定<see cref="T:System.Windows.FrameworkContentElement" />は<see langword="null" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のスタイルは、テーマとは通常ページまたはアプリケーション レベル (暗黙的なスタイル) リソースによって、その型のオブジェクトに適用するスタイルから既定のスタイルによって提供される多くの場合。 このプロパティは既定の設定したり返したり (テーマ) のスタイルが、暗黙的なスタイルまたは明示的なスタイルを返します。 暗黙的または明示的なスタイルの場合、スタイルをリソースとしてアクセスまたはローカルに定義されているかどうかは関係ありません。  
+  
+ スタイルの設定の制限があります。 全体をリセットする<xref:System.Windows.FrameworkContentElement.Style%2A>プロパティを新しい<xref:System.Windows.Style>、いつでもレイアウト再構成を強制します。 ただし、そのスタイルが使用中で読み込まれた要素で配置されるとすぐとして、<xref:System.Windows.Style>と見なすべきシールします。 使用するスタイルの個々 のプロパティを変更しようとしています (などのコレクション内のすべて<xref:System.Windows.Style.Setters%2A>) 例外がスローされます。 マークアップで定義されているスタイルは、(リソース) のリソース ディクショナリから読み込まれるか (インライン スタイル) に含まれているページが読み込まれるとすぐに使用すると見なされます。  
+  
+ <xref:System.Windows.FrameworkContentElement.Style%2A>特殊な優先順位を持つ依存関係プロパティです。 ローカルに設定スタイルが通常プロパティ システムに最高の優先順位で動作します。 場合、<xref:System.Windows.FrameworkContentElement.Style%2A>プロパティ システムがそのタイプが指定された定義済みのリソースとしての暗黙的なスタイルのチェックの読み込み中にこの時点では、null がします。 この手順の後にスタイルがも null し、スタイルは、既定の (テーマ) スタイルをから取得します、に既定のスタイルが返されない場合、<xref:System.Windows.FrameworkContentElement.Style%2A>プロパティの値。 参照してください[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。  
+  
+<a name="xamlAttributeUsage_Style"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object Style="{resourceExtension StyleResourceKey}"/>  
+```  
+  
+<a name="xamlValues_Style"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *resourceExtension*  
+ 次のいずれかの: または。 参照してください[XAML リソース](~/docs/framework/wpf/advanced/xaml-resources.md)です。  
+  
+ *styleResourceKey*  
+ 要求されているスタイルを識別するキー。 このキーは既存のリソースを<xref:System.Windows.ResourceDictionary>です。  
+  
+> [!NOTE]
+>  プロパティ要素構文は、技術的に可能ですが、推奨されません。 参照してください[インライン スタイルとテンプレート](~/docs/framework/wpf/advanced/inline-styles-and-templates.md)です。  バインドの参照を使用して、または<xref:System.Windows.Data.Binding>も可能ですが、一般的ではないです。  
+  
+<a name="dependencyPropertyInfo_Style"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.FrameworkContentElement.StyleProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+   
+  
+## Examples  
+ 次の例では確立、<xref:System.Windows.FrameworkContentElement.Resources%2A>コレクションに、<xref:System.Windows.Documents.FlowDocument>ルート要素として特定のスタイルをリソースとして参照し、<xref:System.Windows.Documents.Paragraph>です。  
+  
+ [!code-xaml[ContentElementsSmorgasbord#FCEResources](~/samples/snippets/csharp/VS_Snippets_Wpf/ContentElementsSmorgasbord/CSharp/page2.xaml#fceresources)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StyleProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty StyleProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty StyleProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FrameworkContentElement.StyleProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.FrameworkContentElement.Style" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IQueryAmbient.IsAmbientPropertyAvailable">
+      <MemberSignature Language="C#" Value="bool IQueryAmbient.IsAmbientPropertyAvailable (string propertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Windows.Markup.IQueryAmbient.IsAmbientPropertyAvailable(string propertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkContentElement.System#Windows#Markup#IQueryAmbient#IsAmbientPropertyAvailable(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">要求されたアンビエント プロパティの名前。</param>
+        <summary>このメンバーの説明については、<see cref="M:System.Windows.Markup.IQueryAmbient.IsAmbientPropertyAvailable(System.String)" /> メソッドのトピックを参照してください。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="propertyName" />、それ以外の使用可能な<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.FrameworkContentElement> のインスタンスが <xref:System.Windows.Markup.IQueryAmbient> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Tag">
+      <MemberSignature Language="C#" Value="public object Tag { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Tag" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkContentElement.Tag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこの要素のカスタム情報を格納するために使用する任意のオブジェクトの値を設定します。</summary>
+        <value>任意の値。 このプロパティには既定値はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、他のタグのプロパティに似た[!INCLUDE[TLA#tla_ms](~/includes/tlasharptla-ms-md.md)]などのプログラミング モデル[!INCLUDE[TLA#tla_vba](~/includes/tlasharptla-vba-md.md)]または[!INCLUDE[TLA#tla_winforms](~/includes/tlasharptla-winforms-md.md)]です。 アプリケーション開発者にサブクラス化を強制することがなく任意の要素に関する基本的なカスタム情報を格納する既存の場所を提供しています。  
+  
+<a name="xamlValues_Tag"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ このプロパティは、オブジェクトを受け取り、ためには、プロパティ要素の使用を設定するために使用する必要があります、<xref:System.Windows.FrameworkContentElement.Tag%2A>プロパティに[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]文字列などの組み込みの既知の型コンバーターを使用したオブジェクト以外のすべてにします。 この方法で使用されるオブジェクトが、通常、標準[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]名前空間として導入するためを外部の名前空間を名前空間のマッピングに要する場合がありますので[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]要素。  
+  
+<a name="dependencyPropertyInfo_Tag"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.FrameworkContentElement.TagProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TagProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TagProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TagProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FrameworkContentElement.TagProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.FrameworkContentElement.Tag" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetUpdated">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Windows.Data.DataTransferEventArgs&gt; TargetUpdated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Windows.Data.DataTransferEventArgs&gt; TargetUpdated" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.FrameworkContentElement.TargetUpdated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Windows.Data.DataTransferEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素のバインドに関連する対象プロパティが変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントの画面、<xref:System.Windows.Data.Binding.TargetUpdated>いずれかが発生するイベントを<xref:System.Windows.Data.Binding>この要素に関連付けられています。 これは通常、問題のバインドが双方向のバインドであること、およびバインドされた依存関係プロパティに前のプロパティ値の検証またはプロパティをサポートするキャッシュのスキームあたりの無効が確認されたことに意味します。  
+  
+ このイベントのイベントの引数が変更されたプロパティをバインドするお手伝いします。  
+  
+<a name="xamlAttributeUsage_TargetUpdated"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object TargetUpdated="EventHandler"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TemplatedParent">
+      <MemberSignature Language="C#" Value="public System.Windows.DependencyObject TemplatedParent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.DependencyObject TemplatedParent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkContentElement.TemplatedParent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyObject</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素の親テンプレートへの参照を取得します。 このプロパティは、要素がテンプレートによって作成されていない場合は無効です。</summary>
+        <value>要素が<see cref="T:System.Windows.FrameworkTemplate" /><see cref="P:System.Windows.FrameworkTemplate.VisualTree" />を作成するには、この要素を発生します。 この値は、頻繁に<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テンプレートは、実際には共有オブジェクト、テンプレートの内容が 1 回だけ作成される場所です。 そのため、テンプレートから得られた要素へのオブジェクト参照を取得する場合があります、見かけ上の論理ツリーは、ページのルートには到達できません。 このようなテンプレートへの参照をページの論理ツリーを接続するために取得する必要があります、<xref:System.Windows.FrameworkContentElement.TemplatedParent%2A>値し、必要に応じて、その要素ツリーのナビゲーションを続行します。  
+  
+ <xref:System.Windows.FrameworkContentElement.TemplatedParent%2A>一般に`null`、共通オブジェクト用の一般的な手段を使用してアプリケーションのページからのオブジェクト参照を取得した場合は、その要素可能性がありますが作成されなかったため、テンプレートからです。 あるケース<xref:System.Windows.FrameworkContentElement.TemplatedParent%2A>できない可能性があります`null`特定低レベルの入力イベントの処理やテンプレートから得られた要素から返された列挙子は、扱うヒット テスト、イベントなどの操作が含まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolTip">
+      <MemberSignature Language="C#" Value="public object ToolTip { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object ToolTip" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkContentElement.ToolTip" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定でこの要素に対して表示されるツールヒント オブジェクト、[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]です。</summary>
+        <value>ツールヒントのオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値が型の場合<xref:System.Windows.Controls.ToolTip>で使用されるツール ヒントをそれが、[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]です。  値は、他の任意の型のかどうかは、その値として使用されます、*コンテンツ*の<xref:System.Windows.Controls.ToolTip>提供システムによって (作成) します。 詳細については、「<xref:System.Windows.Controls.ToolTipService>」を参照してください。 サービス クラスでは、ツール ヒントをさらにカスタマイズするために使用する添付プロパティを提供します。  
+  
+<a name="xamlAttributeUsage_ToolTip"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object ToolTip="toolTipContent"/>  
+```  
+  
+<a name="xamlPropertyElementUsage_ToolTip"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  <object.ToolTip>  
+    <ToolTip .../>  
+  </object.ToolTip>  
+</object>  
+- or -  
+<object>  
+  <object.ToolTip>  
+    toolTipObjectContent  
+  </object.ToolTip>  
+</object>  
+```  
+  
+<a name="xamlValues_ToolTip"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *toolTipContent*  
+ 文字列の表示テキストになる、<xref:System.Windows.FrameworkContentElement.ToolTip%2A>です。  
+  
+ *方法*  
+ コンテンツとして使用されるオブジェクト要素の形式で提供される一部のオブジェクト、<xref:System.Windows.FrameworkContentElement>です。 通常、<xref:System.Windows.FrameworkElement>またはその他の要素のレイアウトの合成を作成する、 <xref:System.Windows.FrameworkContentElement.ToolTip%2A>、最終的に、合成内のテキスト コンテンツを格納します。 この使用率、<xref:System.Windows.Controls.ToolTip>要素が作成、解析されたから暗黙的に[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]、および*方法*としてコンテンツを設定その<xref:System.Windows.Controls.ContentControl.Content%2A?displayProperty=nameWithType>プロパティです。  
+  
+ <`ToolTip` .../>  
+ 「<xref:System.Windows.Controls.ToolTip>」を参照してください。  
+  
+<a name="dependencyPropertyInfo_ToolTip"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.FrameworkContentElement.ToolTipProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例の値の設定、<xref:System.Windows.FrameworkElement.ToolTip%2A>プロパティ文字列を直接です。  
+  
+ [!code-csharp[TableSnippets2#_Table_RowGroups_ManipRows](~/samples/snippets/csharp/VS_Snippets_Wpf/TableSnippets2/CSharp/Window1.xaml.cs#_table_rowgroups_maniprows)]
+ [!code-vb[TableSnippets2#_Table_RowGroups_ManipRows](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TableSnippets2/visualbasic/window1.xaml.vb#_table_rowgroups_maniprows)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolTipClosing">
+      <MemberSignature Language="C#" Value="public event System.Windows.Controls.ToolTipEventHandler ToolTipClosing;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Controls.ToolTipEventHandler ToolTipClosing" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.FrameworkContentElement.ToolTipClosing" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.ToolTipEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素のツールヒントが閉じられる直前に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ツールヒントが閉じないように、イベントのハンドラー必要があります、処理済みとしてマークします。  
+  
+ このイベントをすることはできません、<xref:System.Windows.EventTrigger>スタイルでします。 これは、このイベントの識別子フィールドが、サービスからのイベントを追加/削除メソッドを公開しない実装を再使用するためです。  
+  
+<a name="routedEventInfo_ToolTipClosing"></a>   
+## <a name="routed-event-information"></a>ルーティングされたイベント情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.FrameworkContentElement.ToolTipClosingEvent>|  
+|ルーティング方法|直接|  
+|Delegate|<xref:System.Windows.Controls.ToolTipEventHandler>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolTipClosingEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent ToolTipClosingEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent ToolTipClosingEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FrameworkContentElement.ToolTipClosingEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、 <see cref="E:System.Windows.FrameworkContentElement.ToolTipClosing" /> [ルーティング イベントの概要](~/docs/framework/wpf/advanced/routed-events-overview.md)です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルーティング イベントが登録されているときに、イベントの識別子のオブジェクトは作成されます (を参照してください<xref:System.Windows.EventManager.RegisterRoutedEvent%2A>) クラス ハンドラーを追加するために使用する (を参照してください<xref:System.Windows.EventManager.RegisterClassHandler%2A>)。 識別子のオブジェクトには、識別名、所有者型、ハンドラーの型、ルーティング方法、およびイベントの所有者を追加するためのユーティリティ メソッドが含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolTipOpening">
+      <MemberSignature Language="C#" Value="public event System.Windows.Controls.ToolTipEventHandler ToolTipOpening;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Controls.ToolTipEventHandler ToolTipOpening" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.FrameworkContentElement.ToolTipOpening" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.ToolTipEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素のツールヒントが開かれたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ツール ヒントを手動で開く、処理済みとして、イベントのハンドラーは、関連するイベントをマークする必要があります。 それ以外の場合の値、<xref:System.Windows.FrameworkContentElement.ToolTip%2A>プロパティが自動的にコンテキスト メニューを開き、使用されます。 既定のアクションを効果的に取り消し処理イベントをマークすることとの値にリセットすることにより、<xref:System.Windows.FrameworkContentElement.ToolTip%2A>プロパティを開き、新しい<xref:System.Windows.Controls.ContextMenu>です。 このイベントは発生しません。 場合に注意してください<xref:System.Windows.FrameworkContentElement.ToolTip%2A>null 参照またはそれ以外の場合設定を解除します。  
+  
+ このイベントをすることはできません、<xref:System.Windows.EventTrigger>スタイルでします。 これは、このイベントの識別子フィールドが、サービスからのイベントを追加/削除メソッドを公開しない実装を再使用するためです。  
+  
+<a name="routedEventInfo_ToolTipOpening"></a>   
+## <a name="routed-event-information"></a>ルーティングされたイベント情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.FrameworkContentElement.ToolTipOpeningEvent>|  
+|ルーティング方法|直接|  
+|Delegate|<xref:System.Windows.Controls.ToolTipEventHandler>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolTipOpeningEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent ToolTipOpeningEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent ToolTipOpeningEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FrameworkContentElement.ToolTipOpeningEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、 <see cref="E:System.Windows.FrameworkContentElement.ToolTipOpening" /> [ルーティング イベントの概要](~/docs/framework/wpf/advanced/routed-events-overview.md)です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルーティング イベントが登録されているときに、イベントの識別子のオブジェクトは作成されます (を参照してください<xref:System.Windows.EventManager.RegisterRoutedEvent%2A>) クラス ハンドラーを追加するために使用する (を参照してください<xref:System.Windows.EventManager.RegisterClassHandler%2A>)。 識別子のオブジェクトには、識別名、所有者型、ハンドラーの型、ルーティング方法、およびイベントの所有者を追加するためのユーティリティ メソッドが含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolTipProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ToolTipProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ToolTipProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FrameworkContentElement.ToolTipProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.FrameworkContentElement.ToolTip" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryFindResource">
+      <MemberSignature Language="C#" Value="public object TryFindResource (object resourceKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object TryFindResource(object resourceKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkContentElement.TryFindResource(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resourceKey" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="resourceKey">検索するリソースのキー識別子。</param>
+        <summary>指定されたキーを使用してリソースを検索し、見つかった場合はそのリソースを返します。</summary>
+        <returns>見つかったリソース。 リソースが見つからなかった場合<see langword="null" />が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ツリーになると同様に、論理ツリーを使用して親ツリーを検索する場合は、リソースが呼び出し元の要素で見つからなかった、動的なリソースの参照は、実行時にキーによって要求された場合を検索します。  
+  
+ 通常返されたリソース値に設定しようとしているプロパティの型を戻り値をキャストするとすぐにします。  
+  
+ <xref:System.Windows.FrameworkContentElement.FindResource%2A>ことを除き、指定されたキーを使用してリソースを検出していない場合は例外がスローされますが、メソッドは同様の動作です。  
+  
+   
+  
+## Examples  
+ 次の例では、マークアップで定義されているリソースを検索し、ルーティングされたイベントに応答内の要素の特定のプロパティに適用されます。  
+  
+ [!code-csharp[ContentElementsSmorgasbord#TryFindResource](~/samples/snippets/csharp/VS_Snippets_Wpf/ContentElementsSmorgasbord/CSharp/page1.xaml.cs#tryfindresource)]
+ [!code-vb[ContentElementsSmorgasbord#TryFindResource](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ContentElementsSmorgasbord/visualbasic/page1.xaml.vb#tryfindresource)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Unloaded">
+      <MemberSignature Language="C#" Value="public event System.Windows.RoutedEventHandler Unloaded;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.RoutedEventHandler Unloaded" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.FrameworkContentElement.Unloaded" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素が読み込まれた要素の要素ツリーから削除されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルーティング イベントを直接ルートに従っていない、発生したが、同じ要素内でのみ処理されます。 ルーティング イベントがその他のルーティング イベントの動作をサポートして直接: アクセスできるハンドラーのコレクションをサポートし、として使用できる、<xref:System.Windows.EventTrigger>スタイルでします。  
+  
+<a name="routedEventInfo_Unloaded"></a>   
+## <a name="routed-event-information"></a>ルーティングされたイベント情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.FrameworkContentElement.UnloadedEvent>|  
+|ルーティング方法|直接|  
+|Delegate|<xref:System.Windows.RoutedEventHandler>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnloadedEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent UnloadedEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent UnloadedEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FrameworkContentElement.UnloadedEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、 <see cref="E:System.Windows.FrameworkContentElement.Unloaded" /> [ルーティング イベントの概要](~/docs/framework/wpf/advanced/routed-events-overview.md)です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルーティング イベントが登録されているときに、イベントの識別子のオブジェクトは作成されます (を参照してください<xref:System.Windows.EventManager.RegisterRoutedEvent%2A>) クラス ハンドラーを追加するために使用する (を参照してください<xref:System.Windows.EventManager.RegisterClassHandler%2A>)。 識別子のオブジェクトには、識別名、所有者型、ハンドラーの型、ルーティング方法、およびイベントの所有者を追加するためのユーティリティ メソッドが含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnregisterName">
+      <MemberSignature Language="C#" Value="public void UnregisterName (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UnregisterName(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkContentElement.UnregisterName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">現在のスコープから削除する名前とオブジェクトのペアの名前です。</param>
+        <summary>アクセスを簡素化、<see cref="T:System.Windows.NameScope" />メソッドの登録を解除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ だけで済みます名の登録解除に同じ名前の別の要素を再登録する場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateDefaultStyle">
+      <MemberSignature Language="C#" Value="public void UpdateDefaultStyle ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UpdateDefaultStyle() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkContentElement.UpdateDefaultStyle" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の既定のスタイルを再適用<see cref="T:System.Windows.FrameworkContentElement" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

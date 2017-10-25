@@ -1,0 +1,80 @@
+<Type Name="DiscoveryMessageSequenceGenerator" FullName="System.ServiceModel.Discovery.DiscoveryMessageSequenceGenerator">
+  <TypeSignature Language="C#" Value="public class DiscoveryMessageSequenceGenerator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DiscoveryMessageSequenceGenerator extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Discovery.DiscoveryMessageSequenceGenerator" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.ServiceModel.Discovery.DiscoveryMessageSequence" /> インスタンスを作成するヘルパー クラス。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Discovery.DiscoveryMessageSequenceGenerator> がいったん作成されると、その後に作成される各 <xref:System.ServiceModel.Discovery.DiscoveryMessageSequence> インスタンスに対して、新しい <xref:System.ServiceModel.Discovery.DiscoveryMessageSequence.InstanceId%2A> インスタンスの作成、<xref:System.ServiceModel.Discovery.DiscoveryMessageSequence.SequenceId%2A>、<xref:System.ServiceModel.Discovery.DiscoveryMessageSequence.MessageNumber%2A> の設定、<xref:System.ServiceModel.Discovery.DiscoveryMessageSequence> の増加を実行します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DiscoveryMessageSequenceGenerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryMessageSequenceGenerator.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Discovery.DiscoveryMessageSequenceGenerator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DiscoveryMessageSequenceGenerator (long instanceId, Uri sequenceId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int64 instanceId, class System.Uri sequenceId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryMessageSequenceGenerator.#ctor(System.Int64,System.Uri)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="instanceId" Type="System.Int64" />
+        <Parameter Name="sequenceId" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="instanceId">インスタンス ID。</param>
+        <param name="sequenceId">シーケンス ID。</param>
+        <summary>指定されたインスタンス ID とシーケンス ID を使用して <see cref="T:System.ServiceModel.Discovery.DiscoveryMessageSequenceGenerator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Next">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Discovery.DiscoveryMessageSequence Next ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Discovery.DiscoveryMessageSequence Next() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryMessageSequenceGenerator.Next" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Discovery.DiscoveryMessageSequence</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>次の <see cref="T:System.ServiceModel.Discovery.DiscoveryMessageSequence" /> オブジェクトを作成します。</summary>
+        <returns>次の <see cref="T:System.ServiceModel.Discovery.DiscoveryMessageSequence" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

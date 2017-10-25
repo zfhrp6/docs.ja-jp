@@ -1,0 +1,48 @@
+<Type Name="IAuthorizationComponent" FullName="System.IdentityModel.Policy.IAuthorizationComponent">
+  <TypeSignature Language="C#" Value="public interface IAuthorizationComponent" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IAuthorizationComponent" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Policy.IAuthorizationComponent" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>ユーザーの承認に使用されるコンポーネントを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 承認ポリシーは <xref:System.IdentityModel.Policy.IAuthorizationPolicy> インターフェイスを実装し、承認コンテキストは <xref:System.IdentityModel.Policy.AuthorizationContext> クラスから継承し、いずれも <xref:System.IdentityModel.Policy.IAuthorizationComponent> インターフェイスを実装します。 <xref:System.IdentityModel.Policy.IAuthorizationComponent> インターフェイスでは、<xref:System.IdentityModel.Policy.IAuthorizationComponent.Id%2A> プロパティで承認コンポーネントに対する一意の識別子が定義されており、通常は監査のために使用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public string Id { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Id" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Policy.IAuthorizationComponent.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この承認コンポーネントを示す文字列を取得します。</summary>
+        <value>この承認コンポーネントを示す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Policy.IAuthorizationComponent.Id%2A> プロパティの値は、ID モデル内のすべてのオブジェクトについて一意でなければなりません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

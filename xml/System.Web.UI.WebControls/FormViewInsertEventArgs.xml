@@ -1,0 +1,140 @@
+<Type Name="FormViewInsertEventArgs" FullName="System.Web.UI.WebControls.FormViewInsertEventArgs">
+  <TypeSignature Language="C#" Value="public class FormViewInsertEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FormViewInsertEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.FormViewInsertEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.UI.WebControls.FormView.ItemInserting" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.FormView>制御を発生させます、<xref:System.Web.UI.WebControls.FormView.ItemInserting>挿入ボタンをクリックしたときにイベント (ボタンがその`CommandName`プロパティを"Insert"に設定) コントロール内でクリックすると、その前に、<xref:System.Web.UI.WebControls.FormView>コントロールは、レコードを挿入します。 これにより、HTML エンコーディングや、このイベントが発生するたびに、データ ソースに挿入する前に、レコードの値を検証するなど、カスタムのルーチンを実行するイベント処理メソッドを提供できます。  
+  
+ A<xref:System.Web.UI.WebControls.FormViewInsertEventArgs>オブジェクトが、省略可能なコマンドに渡す引数の値を決定することができるイベント処理メソッドに渡される、<xref:System.Web.UI.WebControls.FormView>コントロールと挿入操作を取り消す必要があることを指定します。 コマンド引数の値を確認するには<xref:System.Web.UI.WebControls.FormViewInsertEventArgs.CommandArgument%2A>プロパティです。 挿入操作をキャンセルするには設定、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>プロパティを`true`です。 読み取りまたはを使用して、新しいレコードのフィールド値を変更することができますも、<xref:System.Web.UI.WebControls.FormViewInsertEventArgs.Values%2A>プロパティです。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ <xref:System.Web.UI.WebControls.FormViewInsertEventArgs> クラスのインスタンスの初期プロパティ値一覧については、<xref:System.Web.UI.WebControls.FormViewInsertEventArgs.%23ctor%2A> コンストラクターに関するトピックを参照してください。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.FormViewInsertEventArgs>オブジェクトのイベント処理メソッドに渡される、<xref:System.Web.UI.WebControls.FormView.ItemInserting>ユーザーがフィールドを空のままにしたときに、挿入操作をキャンセルするイベントです。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[FormViewInsertEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FormViewInsertEventArgs/CS/formviewinserteventargscs.aspx#1)]
+ [!code-aspx-vb[FormViewInsertEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FormViewInsertEventArgs/VB/formviewinserteventargsvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FormViewInsertEventArgs (object commandArgument);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object commandArgument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FormViewInsertEventArgs.#ctor(System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="commandArgument" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="commandArgument">渡される省略可能なコマンド引数、<see cref="T:System.Web.UI.WebControls.FormView" />コントロール。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.FormViewInsertEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.FormViewInsertEventArgs>クラスです。  
+  
+ 次の表のインスタンスの初期プロパティ値、<xref:System.Web.UI.WebControls.FormViewInsertEventArgs>クラスです。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.FormViewInsertEventArgs.CommandArgument%2A>|`commandArgument` パラメーターの値。|  
+  
+> [!NOTE]
+>  このコンス トラクターは、イベントを発生させる場合、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandArgument">
+      <MemberSignature Language="C#" Value="public object CommandArgument { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object CommandArgument" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.FormViewInsertEventArgs.CommandArgument" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>渡される挿入操作のコマンド引数を取得、<see cref="T:System.Web.UI.WebControls.FormView" />コントロール。</summary>
+        <value>渡される挿入操作のためのコマンド引数、<see cref="T:System.Web.UI.WebControls.FormView" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このテンプレートのいずれかの挿入 ボタンを作成する場合、<xref:System.Web.UI.WebControls.FormView>コントロール、必要に応じてを使用して、ボタンのコマンド引数を指定することができます、<xref:System.Web.UI.WebControls.IButtonControl.CommandArgument%2A>プロパティです。 通常、コマンド引数には、キー フィールドの値など、insert コマンドに渡す追加情報が含まれます。 <xref:System.Web.UI.WebControls.FormViewInsertEventArgs.CommandArgument%2A>プロパティは、[挿入] ボタンのコマンドの引数の値を決定する便利な手段として提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Values">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.IOrderedDictionary Values { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.IOrderedDictionary Values" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.FormViewInsertEventArgs.Values" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.IOrderedDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>挿入するレコードのフィールドの名前/値ペアを含むディクショナリを取得します。</summary>
+        <value><see cref="T:System.Collections.Specialized.IOrderedDictionary" />を挿入するレコードのキー フィールドの名前/値ペアのディクショナリを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.FormViewInsertEventArgs.Values%2A>プロパティを挿入するレコードのフィールドの値にアクセスします。 たとえば、HTML を実行できます。 エンコード、またはデータ ソースに挿入する前に、レコードの値を検証します。  
+  
+ <xref:System.Web.UI.WebControls.FormViewInsertEventArgs.Values%2A>プロパティから返される、<xref:System.Collections.Specialized.OrderedDictionary>を実装するオブジェクト、<xref:System.Collections.Specialized.IOrderedDictionary?displayProperty=nameWithType>インターフェイスです。 <xref:System.Collections.Specialized.OrderedDictionary>オブジェクトを含む<xref:System.Collections.DictionaryEntry?displayProperty=nameWithType>レコードのフィールドを表すオブジェクト。 フィールド名にアクセスするには、使用、<xref:System.Collections.Specialized.OrderedDictionary.Keys%2A>のプロパティ、<xref:System.Collections.Specialized.OrderedDictionary>オブジェクト。 同様を使用して、フィールドの値にアクセスすることができます、<xref:System.Collections.Specialized.OrderedDictionary.Values%2A>プロパティです。  
+  
+> [!NOTE]
+>  簡単な方法としてのインデクサーを使用することも、<xref:System.Collections.Specialized.OrderedDictionary>値を直接フィールドにアクセスするオブジェクト。 インデクサーを使用するメリットは、フィールドの値が直接返されることです。 データ ソースのフィールドの順序に依存するコントロール (など<xref:System.Web.UI.WebControls.AccessDataSource>) フィールドの値をインデックスによってのみアクセスできます。  
+  
+   
+  
+## Examples  
+ 次の例を反復処理する方法を示します、<xref:System.Web.UI.WebControls.FormViewInsertEventArgs.Values%2A>コレクション。  
+  
+ [!code-aspx-csharp[FormViewInsertEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FormViewInsertEventArgs/CS/formviewinserteventargscs.aspx#1)]
+ [!code-aspx-vb[FormViewInsertEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FormViewInsertEventArgs/VB/formviewinserteventargsvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

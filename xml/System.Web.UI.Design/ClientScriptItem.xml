@@ -1,0 +1,209 @@
+<Type Name="ClientScriptItem" FullName="System.Web.UI.Design.ClientScriptItem">
+  <TypeSignature Language="C#" Value="public sealed class ClientScriptItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ClientScriptItem extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.ClientScriptItem" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>デザイン時に Web フォームまたはユーザー コントロール内のクライアント スクリプト要素を表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ClientScriptItem>クラスを表します、`script`デザイン時に、Web ドキュメント内に含まれる要素です。 カスタム コントロールのデザイナーの実装を使用できる、 <xref:System.Web.UI.Design.ClientScriptItem> Web フォームまたはユーザー コントロールをクライアント スクリプト要素を追加するオブジェクト。  
+  
+ デザイン時に、使用、<xref:System.Web.UI.Design.WebFormsRootDesigner>クラスを設定または Web フォームや Web サーバー コントロール、コンテンツ ページでは、デザイン サーフェイス上のマスター ページなど、ドキュメントに含まれているクライアント スクリプト要素を確認します。 使用して、Web ドキュメント内に含まれるクライアント スクリプト要素のコレクションを取得、<xref:System.Web.UI.Design.WebFormsRootDesigner.GetClientScriptsInDocument%2A>メソッドです。 使用して Web ドキュメントへのクライアント スクリプト要素を追加、<xref:System.Web.UI.Design.WebFormsRootDesigner.AddClientScriptToDocument%2A>メソッドです。  
+  
+ 通常、`script`要素スクリプト ステートメントを含む、またはスクリプト ステートメントの外部の場所を指定します。 `script`要素は、スクリプト ステートメントの言語オプションで定義できます。 使用して、<xref:System.Web.UI.Design.ClientScriptItem.%23ctor%2A>コンス トラクターを新しいスクリプト オブジェクトのプロパティを初期化します。 使用して、<xref:System.Web.UI.Design.ClientScriptItem>プロパティを調べて、`script`属性および内容をオブジェクトします。 <xref:System.Web.UI.Design.ClientScriptItem.Language%2A>プロパティを表す、`language`の属性、`script`要素。 <xref:System.Web.UI.Design.ClientScriptItem.Source%2A>プロパティを表す、`src`属性。 <xref:System.Web.UI.Design.ClientScriptItem.Text%2A>プロパティに含まれているクライアントで実行されるスクリプト ステートメントを表す、`script`要素。  
+  
+ 使用して、<xref:System.Web.UI.Design.ClientScriptItem>がデザイン時に実行されるスクリプトを管理するクラス。  
+  
+ 要素を管理するクライアント スクリプト実行時に、使用、<xref:System.Web.UI.ClientScriptManager>クラスです。 詳細については、実行時にクライアント スクリプトを使用して、次を参照してください。 [ASP.NET Web Pages でのクライアント スクリプト](http://msdn.microsoft.com/library/13edb6b9-2dea-43c6-b8c1-a47207de19aa)です。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.ClientScriptItem>クラスを表します`script`最終的に解析され、クライアント ブラウザーで実行されているデザイン時にある要素。 `script`に対して生成される要素、<xref:System.Web.UI.Design.ClientScriptItem>オブジェクトは、サーバーでは実行は、要素を含まない、`runat="server"`属性。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ClientScriptItem (string text, string source, string language, string type, string id);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text, string source, string language, string type, string id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ClientScriptItem.#ctor(System.String,System.String,System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="source" Type="System.String" />
+        <Parameter Name="language" Type="System.String" />
+        <Parameter Name="type" Type="System.String" />
+        <Parameter Name="id" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">内容、<see langword="script" />要素以外のクライアントで実行されるスクリプト ステートメントの文字列を指定します。</param>
+        <param name="source"><see langword="src" />属性の値を<see langword="script" />クライアント スクリプトの内容の外部ソースの場所を指定する要素。</param>
+        <param name="language"><see langword="language" />属性の値を<see langword="script" />スクリプト ステートメントの言語を指定する要素。</param>
+        <param name="type">型の属性値、<see langword="script" />関連付けられているスクリプト エンジンの MIME の種類を示す要素。</param>
+        <param name="id">ID、<see langword="script" />要素。 デザイン ホストでこの引数が必要な (たとえば、 [!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)])。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.Design.ClientScriptItem" />クラスに指定されたパラメーターを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ステートメントの初期化、<xref:System.Web.UI.Design.ClientScriptItem>オブジェクトを使用して、`text`または`source`パラメーター (両方ではなく)。 使用して`text`ステートメントを含む入力文字列を使用して、スクリプトを初期化します。 代わりに、使用`source`スクリプト ステートメントを含むパスを使用してスクリプトを初期化します。  
+  
+ 入力パラメーターとしてのいずれかを指定できます`null`または空の文字列 ("") です。入力の値を使用して、対応するプロパティを設定し、`script`そのプロパティを持たない要素を生成します。 使用して`null`または空の文字列 ("") で、次の結果が生成されます。  
+  
+-   `text`、対応する`script`要素にスクリプト ステートメントが含まれていません。  
+  
+-   `source`、`src`属性設定されていない、`script`要素。  
+  
+-   `language`、`language`属性設定されていない、`script`要素。  
+  
+     クライアント スクリプト ブロックでは、スクリプト言語を指定しない場合、クライアントのブラウザーは、言語を決定します。  
+  
+-   `type`、 `type` Script 要素の属性が設定されていません。  
+  
+     クライアント スクリプト ブロックではスクリプトの種類を指定しない場合、クライアントのブラウザーは、型を決定します。  
+  
+-   `id`、デザイン ホスト (たとえば、 [!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]) がスローされます、<xref:System.ArgumentNullException>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="id" />null (デザイン ホストでスローされます) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public string Id { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Id" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ClientScriptItem.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see langword="ID" />クライアント スクリプト要素の値の属性です。</summary>
+        <value><see langword="ID" />の値、<see langword="script" />要素。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Language">
+      <MemberSignature Language="C#" Value="public string Language { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Language" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ClientScriptItem.Language" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see langword="language" />クライアント スクリプト要素の値の属性です。</summary>
+        <value>指定された言語の名前、<see langword="language" />属性、<see langword="script" />要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ClientScriptItem.Language%2A>プロパティは、スクリプトのステートメントを記述する言語を表します。 場合、<xref:System.Web.UI.Design.ClientScriptItem.Language%2A>プロパティは`null`または空の文字列 ("") では、`language`属性設定されていない、`script`要素。 クライアント スクリプト ブロックでは、スクリプト言語を指定しない場合、クライアントのブラウザーは、言語を決定します。  
+  
+ <xref:System.Web.UI.Design.ClientScriptItem.Language%2A>によってプロパティが初期化されて、<xref:System.Web.UI.Design.ClientScriptItem.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Source">
+      <MemberSignature Language="C#" Value="public string Source { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Source" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ClientScriptItem.Source" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see langword="src" />クライアント スクリプト要素の値の属性です。</summary>
+        <value>指定されたソース ファイルへのパス、<see langword="src" />属性、<see langword="script" />要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ClientScriptItem.Source%2A>プロパティは、クライアント スクリプトの内容の外部ソースの場所を指定します。 スクリプト ステートメントでは、通常、`script`を使用していずれかの要素が指定されて、<xref:System.Web.UI.Design.ClientScriptItem.Text%2A>または<xref:System.Web.UI.Design.ClientScriptItem.Source%2A>プロパティです。  
+  
+ 場合、<xref:System.Web.UI.Design.ClientScriptItem.Source%2A>プロパティは`null`または空の文字列 ("") では、`src`属性設定されていない、`script`要素。  
+  
+ <xref:System.Web.UI.Design.ClientScriptItem.Source%2A>によってプロパティが初期化されて、<xref:System.Web.UI.Design.ClientScriptItem.%23ctor%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ClientScriptItem.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアント スクリプト要素に含まれているスクリプト ステートメントを取得します。</summary>
+        <value>含まれているスクリプト ステートメント、<see langword="script" />要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ClientScriptItem.Text%2A>プロパティに含まれているステートメントを表す、`script`要素。 スクリプト ステートメントでは、通常、`script`を使用していずれかの要素が指定されて、<xref:System.Web.UI.Design.ClientScriptItem.Text%2A>または<xref:System.Web.UI.Design.ClientScriptItem.Source%2A>プロパティです。  
+  
+ 場合、<xref:System.Web.UI.Design.ClientScriptItem.Text%2A>プロパティは`null`または空の文字列 ("") では、`script`要素がすべてのスクリプト ステートメントが含まれません。  
+  
+ <xref:System.Web.UI.Design.ClientScriptItem.Source%2A>によってプロパティが初期化されて、<xref:System.Web.UI.Design.ClientScriptItem.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public string Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Type" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ClientScriptItem.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see langword="type" />クライアント スクリプト要素の値の属性です。</summary>
+        <value>MIME の種類の名前に関連付けられている、<see langword="script" />要素。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

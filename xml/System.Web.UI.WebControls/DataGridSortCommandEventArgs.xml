@@ -1,0 +1,141 @@
+<Type Name="DataGridSortCommandEventArgs" FullName="System.Web.UI.WebControls.DataGridSortCommandEventArgs">
+  <TypeSignature Language="C#" Value="public class DataGridSortCommandEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridSortCommandEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.DataGridSortCommandEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Web.UI.WebControls.DataGrid.SortCommand" />のイベント、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定して並べ替えが有効になっている場合、<xref:System.Web.UI.WebControls.DataGrid.AllowSorting%2A>のプロパティ、<xref:System.Web.UI.WebControls.DataGrid>に制御を`true`、<xref:System.Web.UI.WebControls.LinkButton>コントロールは、各列のヘッダーで表示されます、<xref:System.Web.UI.WebControls.DataGridColumn.SortExpression%2A>プロパティ セットです。 (自動的に生成された列の場合、<xref:System.Web.UI.WebControls.DataGridColumn.SortExpression%2A>プロパティには、データ フィールドと同じ値が含まれています)。これらのリンクを使用すると、並べ替え、<xref:System.Web.UI.WebControls.DataGrid>選択した列を制御します。 <xref:System.Web.UI.WebControls.DataGrid.SortCommand>イベントが発生したときに、<xref:System.Web.UI.WebControls.LinkButton>コントロールがクリックされました。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.Web.UI.WebControls.DataGridSortCommandEventArgs>を参照してください、<xref:System.Web.UI.WebControls.DataGridSortCommandEventArgs.%23ctor%2A>コンス トラクターです。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.DataGrid.SortCommand>イベントを並べ替える、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ [!code-aspx-csharp[DataGridAllowSorting#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridAllowSorting/CS/datagridallowsortingcs.aspx#1)]
+ [!code-aspx-vb[DataGridAllowSorting#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridAllowSorting/VB/datagridallowsortingvb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridSortCommand#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridSortCommand/CS/datagridsortcommandcs.aspx#1)]
+ [!code-aspx-vb[DataGridSortCommand#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridSortCommand/VB/datagridsortcommandvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridSortCommandEventArgs (object commandSource, System.Web.UI.WebControls.DataGridCommandEventArgs dce);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object commandSource, class System.Web.UI.WebControls.DataGridCommandEventArgs dce) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGridSortCommandEventArgs.#ctor(System.Object,System.Web.UI.WebControls.DataGridCommandEventArgs)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="commandSource" Type="System.Object" />
+        <Parameter Name="dce" Type="System.Web.UI.WebControls.DataGridCommandEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="commandSource">コマンドのソース。</param>
+        <param name="dce">イベント データを格納している <see cref="T:System.Web.UI.WebControls.DataGridCommandEventArgs" />。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.DataGridSortCommandEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.DataGridSortCommandEventArgs>クラスです。  
+  
+ インスタンス<xref:System.Web.UI.WebControls.DataGridSortCommandEventArgs>作成は、このコンス トラクターを呼び出し、次のプロパティが指定された値に初期化されます。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.DataGridSortCommandEventArgs.CommandSource%2A>|`commandSource` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.DataGridSortCommandEventArgs.SortExpression%2A>|`dce.CommandArgument` パラメーターの値。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandSource">
+      <MemberSignature Language="C#" Value="public object CommandSource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object CommandSource" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGridSortCommandEventArgs.CommandSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンドのソースを取得します。</summary>
+        <value>コマンドのソース。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGridSortCommandEventArgs.CommandSource%2A>を発生させるコマンド ソースを取得するプロパティ、<xref:System.Web.UI.WebControls.DataGrid.SortCommand>イベント。 ヘッダー内のリンクがクリックされたときにのみ、このイベントが発生したため、<xref:System.Web.UI.WebControls.DataGrid>コントロール、返されるソースは、<xref:System.Web.UI.WebControls.DataGridItem>ヘッダーを表すオブジェクト。 このプロパティは、ヘッダーをプログラムから制御を使用できます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGridSortCommandEventArgs.CommandSource%2A>プロパティのヘッダーをプログラムで制御する、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ [!code-aspx-csharp[DataGridAllowSorting#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridAllowSorting/CS/datagridallowsortingcs.aspx#1)]
+ [!code-aspx-vb[DataGridAllowSorting#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridAllowSorting/VB/datagridallowsortingvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SortExpression">
+      <MemberSignature Language="C#" Value="public string SortExpression { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SortExpression" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGridSortCommandEventArgs.SortExpression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>並べ替えに使用される式を取得、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</summary>
+        <value>並べ替えに使用する式、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGridSortCommandEventArgs.SortExpression%2A>の並べ替えに、ユーザーが選択した列を決定するプロパティ、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGridSortCommandEventArgs.SortExpression%2A>の並べ替えに、ユーザーが選択した列を決定するプロパティ、<xref:System.Web.UI.WebControls.DataGrid>によって制御します。  
+  
+ [!code-aspx-csharp[DataGridAllowSorting#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridAllowSorting/CS/datagridallowsortingcs.aspx#1)]
+ [!code-aspx-vb[DataGridAllowSorting#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridAllowSorting/VB/datagridallowsortingvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,486 @@
+<Type Name="FormatterServices" FullName="System.Runtime.Serialization.FormatterServices">
+  <TypeSignature Language="C#" Value="public static class FormatterServices" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed FormatterServices extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Serialization.FormatterServices" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>実装を支援するための静的メソッドを提供する<see cref="T:System.Runtime.Serialization.Formatter" />シリアル化します。 このクラスは継承できません。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CheckTypeSecurity">
+      <MemberSignature Language="C#" Value="public static void CheckTypeSecurity (Type t, System.Runtime.Serialization.Formatters.TypeFilterLevel securityLevel);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void CheckTypeSecurity(class System.Type t, valuetype System.Runtime.Serialization.Formatters.TypeFilterLevel securityLevel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.FormatterServices.CheckTypeSecurity(System.Type,System.Runtime.Serialization.Formatters.TypeFilterLevel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="t" Type="System.Type" />
+        <Parameter Name="securityLevel" Type="System.Runtime.Serialization.Formatters.TypeFilterLevel" />
+      </Parameters>
+      <Docs>
+        <param name="t"><see cref="T:System.Type" />を逆シリアル化する機能を確認します。</param>
+        <param name="securityLevel"><see cref="T:System.Runtime.Serialization.Formatters.TypeFilterLevel" /> プロパティ値。</param>
+        <summary>決定するかどうか、指定した<see cref="T:System.Type" />と逆シリアル化することができます、<see cref="T:System.Runtime.Serialization.Formatters.TypeFilterLevel" />プロパティに設定<see langword="Low" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用できるかどうか、指定した型逆シリアル化されたタイミングを決定する、<xref:System.Runtime.Serialization.Formatters.TypeFilterLevel>プロパティに設定されている`Low`です。  
+  
+ .NET framework リモート処理が自動の逆シリアル化の 2 つのレベルを提供<xref:System.Runtime.Serialization.Formatters.TypeFilterLevel.Low>と<xref:System.Runtime.Serialization.Formatters.TypeFilterLevel.Full>です。 <xref:System.Runtime.Serialization.Formatters.TypeFilterLevel.Low>最も基本的なリモート処理機能に関連付けられている型のみを逆シリアル化して逆シリアル化の攻撃から保護するのに役立ちます。 <xref:System.Runtime.Serialization.Formatters.TypeFilterLevel.Full> レベルは、リモート処理が各種の状況でサポートするすべての型の自動逆シリアル化をサポートします。 .Net Framework の詳細についてはリモート処理の種類を<xref:System.Runtime.Serialization.Formatters.TypeFilterLevel.Low>と<xref:System.Runtime.Serialization.Formatters.TypeFilterLevel.Full>サポートを参照してください[&#91;\<topic://cpconAutomaticDeserializationInNETRemoting > & #93 です。](http://msdn.microsoft.com/en-us/313a0e88-5b2b-4a17-8391-0ddf9f7a787b).  
+  
+   
+  
+## Examples  
+ この例を使用する方法を示しています、<xref:System.Runtime.Serialization.FormatterServices>基底クラスが実装していないオブジェクトを逆シリアル化または逆シリアル化するクラス<xref:System.Runtime.Serialization.ISerializable>が派生クラスではします。  
+  
+ [!code-cpp[FormatterServices#1](~/samples/snippets/cpp/VS_Snippets_Remoting/FormatterServices/cpp/FormatterServices.cpp#1)]
+ [!code-csharp[FormatterServices#1](~/samples/snippets/csharp/VS_Snippets_Remoting/FormatterServices/CS/FormatterServices.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException"><paramref name="t" />パラメーターは高度な型であり、逆シリアル化できないときに、<see cref="T:System.Runtime.Serialization.Formatters.TypeFilterLevel" />プロパティに設定されている<see langword="Low" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public static object[] GetObjectData (object obj, System.Reflection.MemberInfo[] members);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object[] GetObjectData(object obj, class System.Reflection.MemberInfo[] members) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.FormatterServices.GetObjectData(System.Object,System.Reflection.MemberInfo[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="members" Type="System.Reflection.MemberInfo[]" />
+      </Parameters>
+      <Docs>
+        <param name="obj">フォーマッタに書き込むオブジェクト。</param>
+        <param name="members">オブジェクトから抽出するメンバー。</param>
+        <summary>指定したオブジェクトからデータを抽出し、オブジェクトの配列として返します。</summary>
+        <returns>配列<see cref="T:System.Object" />に格納されたデータを格納している<paramref name="members" />に関連付けられていると<paramref name="obj" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された各メンバーに対して、`members`配列、<xref:System.Runtime.Serialization.FormatterServices.GetObjectData%2A>メソッドに関連付けられている値を抽出し、`obj`オブジェクト、およびそれを返します。 返される配列の長さがの長さと同じ、`members`配列。  
+  
+   
+  
+## Examples  
+ 次の例では、Book クラスのインスタンスを作成し、インスタンスのフィールドの値を設定します。 コードでは、型を使用して情報を取得します、<xref:System.Runtime.Serialization.FormatterServices.GetSerializableMembers%2A>メソッドです。 コード オブジェクトの配列を使用して、インスタンス データがコピー、<xref:System.Runtime.Serialization.FormatterServices.GetObjectData%2A>メソッドです。 使用して、クラスの新しい初期化されていないインスタンスを作成、<xref:System.Runtime.Serialization.FormatterServices.GetSafeUninitializedObject%2A>メソッドです。 使用して 2 つ目のインスタンスに最初のインスタンスからデータをコピーする最後に、<xref:System.Runtime.Serialization.FormatterServices.PopulateObjectMembers%2A>メソッドです。  
+  
+ [!code-csharp[FormatterServices_PopulateObjects#1](~/samples/snippets/csharp/VS_Snippets_Remoting/FormatterServices_PopulateObjects/cs/Populate.cs#1)]
+ [!code-vb[FormatterServices_PopulateObjects#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/FormatterServices_PopulateObjects/vb/Populate.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="obj" /> パラメーターまたは <paramref name="members" /> パラメーターが <see langword="null" /> です。  
+  
+ <paramref name="members" /> の要素は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">要素<paramref name="members" />フィールドを表していません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">シリアル化サービスを提供します。 関連する列挙値: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" />、<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSafeUninitializedObject">
+      <MemberSignature Language="C#" Value="public static object GetSafeUninitializedObject (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetSafeUninitializedObject(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.FormatterServices.GetSafeUninitializedObject(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">作成するオブジェクトの型。</param>
+        <summary>指定したオブジェクトの種類の新しいインスタンスを作成します。</summary>
+        <returns>指定した型のゼロ オブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトの新しいインスタンスが 0 に初期化されるため、コンス トラクターは実行されません、オブジェクトがそのオブジェクトが有効と見なされる状態を表さない可能性があります。 <xref:System.Runtime.Serialization.FormatterServices.GetSafeUninitializedObject%2A>必要がある場合にのみ使用逆シリアル化に、ユーザーはすぐにすべてのフィールドを設定しようとしています。 変更不可の型の空のインスタンスを作成しても無効なため、初期化されていない文字列では作成されません。  
+  
+ <xref:System.Runtime.Serialization.FormatterServices.GetSafeUninitializedObject%2A>クラスのすべてのレベルに変換します[リンク確認要求](~/docs/framework/misc/link-demands.md)に[要求](http://msdn.microsoft.com/en-us/e5283e28-2366-4519-b27d-ef5c1ddc1f48)にすべての直接的および間接的な呼び出し元の要求を指定するためのアクセス許可でいることを確認します。 使用して<xref:System.Runtime.Serialization.FormatterServices.GetSafeUninitializedObject%2A>部分的に信頼されたソースから逆シリアル化時に、レベルのセキュリティを向上させるためです。 完全な信頼のシナリオでパフォーマンスを向上させる使用<xref:System.Runtime.Serialization.FormatterServices.GetUninitializedObject%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="type" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException"><paramref name="type" />パラメーターが有効な共通言語ランタイム型ではありません。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">シリアル化サービスを提供します。 関連する列挙: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" />、<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSerializableMembers">
+      <MemberSignature Language="C#" Value="public static System.Reflection.MemberInfo[] GetSerializableMembers (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Reflection.MemberInfo[] GetSerializableMembers(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.FormatterServices.GetSerializableMembers(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MemberInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">シリアル化する型。</param>
+        <summary>指定したクラスのシリアル化可能なすべてのメンバーを取得<see cref="T:System.Type" />です。</summary>
+        <returns>型の配列<see cref="T:System.Reflection.MemberInfo" />一時的でない、非静的メンバーのです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一般に、クラスのシリアル化可能なメンバーは、一時的でない、非静的メンバーのフィールドやプロパティなどです。 含まれる、プロパティは、getter と setter の両方が必要です。 実装するクラス、<xref:System.Runtime.Serialization.ISerializable>インターフェイスまたはシリアル化サロゲートは、これらすべてのメンバーをシリアル化する必要はありませんまたは追加のメンバーをシリアル化できます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、実装することを示しています、<xref:System.Runtime.Serialization.FormatterServices.GetSerializableMembers%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Runtime.Serialization.FormatterServices>クラスです。  
+  
+ [!code-cpp[FormatterServices#2](~/samples/snippets/cpp/VS_Snippets_Remoting/FormatterServices/cpp/FormatterServices.cpp#2)]
+ [!code-csharp[FormatterServices#2](~/samples/snippets/csharp/VS_Snippets_Remoting/FormatterServices/CS/FormatterServices.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="type" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">シリアル化サービスを提供します。 関連する列挙値: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" />、<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSerializableMembers">
+      <MemberSignature Language="C#" Value="public static System.Reflection.MemberInfo[] GetSerializableMembers (Type type, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Reflection.MemberInfo[] GetSerializableMembers(class System.Type type, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.FormatterServices.GetSerializableMembers(System.Type,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MemberInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="type">シリアル化または複製されている型。</param>
+        <param name="context">シリアル化が行われるコンテキストです。</param>
+        <summary>指定したクラスのシリアル化可能なすべてのメンバーを取得<see cref="T:System.Type" />とを指定した<see cref="T:System.Runtime.Serialization.StreamingContext" />です。</summary>
+        <returns>型の配列<see cref="T:System.Reflection.MemberInfo" />一時的でない、非静的メンバーのです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一般に、クラスのシリアル化可能なメンバーは、一時的でない、非静的メンバーのフィールドやプロパティなどです。 含まれる、プロパティは、getter と setter の両方が必要です。 実装するクラス<xref:System.Runtime.Serialization.ISerializable>か、シリアル化サロゲートは、これらすべてのメンバーをシリアル化する必要はありませんまたは追加のメンバーをシリアル化できます。  
+  
+ 現在、しない限り、特に何も実行する必要はありません`context`が、<xref:System.Runtime.Serialization.StreamingContextStates>値<xref:System.Runtime.Serialization.StreamingContextStates.Clone>を設定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="type" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">シリアル化サービスを提供します。 関連する列挙値: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" />、<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSurrogateForCyclicalReference">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Serialization.ISerializationSurrogate GetSurrogateForCyclicalReference (System.Runtime.Serialization.ISerializationSurrogate innerSurrogate);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Serialization.ISerializationSurrogate GetSurrogateForCyclicalReference(class System.Runtime.Serialization.ISerializationSurrogate innerSurrogate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.FormatterServices.GetSurrogateForCyclicalReference(System.Runtime.Serialization.ISerializationSurrogate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.ISerializationSurrogate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="innerSurrogate" Type="System.Runtime.Serialization.ISerializationSurrogate" />
+      </Parameters>
+      <Docs>
+        <param name="innerSurrogate">指定したサロゲート。</param>
+        <summary>指定したシリアル化サロゲートを返します<see cref="T:System.Runtime.Serialization.ISerializationSurrogate" />です。</summary>
+        <returns><see cref="T:System.Runtime.Serialization.ISerializationSurrogate" /> 、指定された<paramref name="innerSurrogate" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTypeFromAssembly">
+      <MemberSignature Language="C#" Value="public static Type GetTypeFromAssembly (System.Reflection.Assembly assem, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Type GetTypeFromAssembly(class System.Reflection.Assembly assem, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.FormatterServices.GetTypeFromAssembly(System.Reflection.Assembly,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assem" Type="System.Reflection.Assembly" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="assem">オブジェクトを検索するアセンブリ。</param>
+        <param name="name">オブジェクトの名前。</param>
+        <summary>検索、<see cref="T:System.Type" />を指定した指定したオブジェクトの<see cref="T:System.Reflection.Assembly" />します。</summary>
+        <returns><see cref="T:System.Type" />の名前付きオブジェクトです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="assem" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">シリアル化サービスを提供します。 関連する列挙値: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" />、<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。</permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">表示されていない型のメンバーに対するリフレクション情報を抽出します。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.TypeInformation" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUninitializedObject">
+      <MemberSignature Language="C#" Value="public static object GetUninitializedObject (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetUninitializedObject(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.FormatterServices.GetUninitializedObject(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">作成するオブジェクトの型。</param>
+        <summary>指定したオブジェクトの種類の新しいインスタンスを作成します。</summary>
+        <returns>指定した型のゼロ オブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトの新しいインスタンスが 0 に初期化されるため、コンス トラクターは実行されません、オブジェクトがそのオブジェクトが有効と見なされる状態を表さない可能性があります。 ユーザーが、すぐにすべてのフィールドを設定しようとしています。 ときに、現在のメソッドを逆シリアル化に使用のみ必要があります。 変更不可の型の空のインスタンスを作成しても無効なため、初期化されていない文字列では作成されません。  
+  
+> [!NOTE]
+>  使用することはできません、<xref:System.Runtime.Serialization.FormatterServices.GetUninitializedObject%2A>から派生した型のインスタンスを作成する方法、<xref:System.ContextBoundObject>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="type" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">シリアル化サービスを提供します。 関連する列挙値: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" />、<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="PopulateObjectMembers">
+      <MemberSignature Language="C#" Value="public static object PopulateObjectMembers (object obj, System.Reflection.MemberInfo[] members, object[] data);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object PopulateObjectMembers(object obj, class System.Reflection.MemberInfo[] members, object[] data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.FormatterServices.PopulateObjectMembers(System.Object,System.Reflection.MemberInfo[],System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="members" Type="System.Reflection.MemberInfo[]" />
+        <Parameter Name="data" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="obj">設定されるオブジェクト。</param>
+        <param name="members">配列<see cref="T:System.Reflection.MemberInfo" />フィールドとプロパティを設定することについて説明します。</param>
+        <param name="data">配列<see cref="T:System.Object" />各フィールドおよびプロパティの値を設定することを指定します。</param>
+        <summary>オブジェクトのデータの配列から抽出された各フィールドの値が指定したオブジェクトを追加します。</summary>
+        <returns>新しく作成されたオブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合内の要素`data`は`null`、<xref:System.Runtime.Serialization.FormatterServices.PopulateObjectMembers%2A>が、そのフィールドに何も書き込まれません。  
+  
+   
+  
+## Examples  
+ 次の例では、Book クラスのインスタンスを作成し、インスタンスのフィールドの値を設定します。 コードでは、型を使用して情報を取得します、<xref:System.Runtime.Serialization.FormatterServices.GetSerializableMembers%2A>メソッドです。 コード オブジェクトの配列を使用して、インスタンス データがコピー、<xref:System.Runtime.Serialization.FormatterServices.GetObjectData%2A>メソッドです。 使用して、クラスの新しい初期化されていないインスタンスを作成、<xref:System.Runtime.Serialization.FormatterServices.GetSafeUninitializedObject%2A>メソッドです。 使用して 2 つ目のインスタンスに最初のインスタンスからデータをコピーする最後に、<xref:System.Runtime.Serialization.FormatterServices.PopulateObjectMembers%2A>メソッドです。  
+  
+ [!code-csharp[FormatterServices_PopulateObjects#1](~/samples/snippets/csharp/VS_Snippets_Remoting/FormatterServices_PopulateObjects/cs/Populate.cs#1)]
+ [!code-vb[FormatterServices_PopulateObjects#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/FormatterServices_PopulateObjects/vb/Populate.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="obj" />、 <paramref name="members" />、または<paramref name="data" />パラメーターは<see langword="null" />します。  
+  
+ <paramref name="members" /> の要素は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">長さ<paramref name="members" />の長さと一致しません<paramref name="data" />です。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">要素<paramref name="members" />のインスタンスではない<see cref="T:System.Reflection.FieldInfo" />です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">シリアル化サービスを提供します。 関連する列挙値: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" />、<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

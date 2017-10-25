@@ -1,0 +1,303 @@
+<Type Name="WSFederationHttpBinding" FullName="System.ServiceModel.WSFederationHttpBinding">
+  <TypeSignature Language="C#" Value="public class WSFederationHttpBinding : System.ServiceModel.WSHttpBindingBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WSFederationHttpBinding extends System.ServiceModel.WSHttpBindingBase" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.WSFederationHttpBinding" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.WSHttpBindingBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>フェデレーション セキュリティをサポートする安全で相互運用可能なバインドです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フェデレーションは、複数のシステム間で認証と承認用の ID を共有する機能です。 これらの ID は、ユーザーまたはコンピューターを参照できます。 フェデレーション HTTP は、SOAP セキュリティと混合モード セキュリティをサポートしますが、トランスポート セキュリティの単独使用はサポートしません。 このバインドは、WS-Federation プロトコルに対して [!INCLUDE[indigo1](~/includes/indigo1-md.md)] サポートを提供します。 このバインディングで構成されたサービスは、HTTP トランスポートを使用する必要があります。  
+  
+ バインドは、バインド要素のスタックで構成されます。 <xref:System.ServiceModel.WSFederationHttpBinding> が <xref:System.ServiceModel.WSHttpBinding> の既定値に設定されている場合、<xref:System.ServiceModel.WSHttpBinding.Security%2A> 内のバインド要素のスタックは、<xref:System.ServiceModel.WSFederationHttpSecurityMode.Message> に格納されているバインド要素のスタックと同じです。  
+  
+ <xref:System.ServiceModel.WSFederationHttpBinding> は、メッセージのセキュリティ設定の詳細を制御します。設定値は、<xref:System.ServiceModel.FederatedMessageSecurityOverHttp> プロパティによって返される <xref:System.ServiceModel.WSFederationHttpSecurity.Message%2A> のインスタンスから入手できます。  
+  
+ <xref:System.ServiceModel.WSFederationHttpBinding> は、プライバシーに関する声明の場所を示す URI の設定と取得を行う <xref:System.ServiceModel.WSFederationHttpBinding.PrivacyNoticeAt%2A> プロパティも提供します。  
+  
+> [!NOTE]
+>  呼び出すときに、[!INCLUDE[indigo2](~/includes/indigo2-md.md)]でビルドされたサービス[!INCLUDE[netfx40_short](~/includes/netfx40-short-md.md)]でビルドされた WCF クライアント アプリケーションから[!INCLUDE[netfx35_short](~/includes/netfx35-short-md.md)]生成された構成ファイルの前、または svcutil.exe またはからのサービス参照を追加することによって[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]が含まれています、`establishSecurityContext`バインディングの構成の属性です。 この属性は、[!INCLUDE[netfx35_short](~/includes/netfx35-short-md.md)] ランタイムによって認識されないため、アプリケーションでは <xref:System.Configuration.ConfigurationErrorsException> がスローされ、"認識されない属性 establishSecurityContext" のメッセージが表示されます。 回避策をこの問題を削除、`establishSecurityContext`バインド構成からの属性です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WSFederationHttpBinding ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WSFederationHttpBinding.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.WSFederationHttpBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ こうした設定の詳細は、<xref:System.ServiceModel.FederatedMessageSecurityOverHttp> プロパティにより返される <xref:System.ServiceModel.WSFederationHttpSecurity.Message%2A> インスタンスから取得できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WSFederationHttpBinding (System.ServiceModel.WSFederationHttpSecurityMode securityMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.ServiceModel.WSFederationHttpSecurityMode securityMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WSFederationHttpBinding.#ctor(System.ServiceModel.WSFederationHttpSecurityMode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="securityMode" Type="System.ServiceModel.WSFederationHttpSecurityMode" />
+      </Parameters>
+      <Docs>
+        <param name="securityMode">SOAP メッセージと共に、およびクライアントに対して使用されるセキュリティの種類を指定する <see cref="T:System.ServiceModel.WSFederationHttpSecurityMode" /> の値。</param>
+        <summary>バインドで使用されるセキュリティの種類を指定して、<see cref="T:System.ServiceModel.WSFederationHttpBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.WSFederationHttpSecurityMode> の既定値は <xref:System.ServiceModel.WSFederationHttpSecurityMode.Message> であり、これは、整合性、機密性、およびサーバーとクライアントの認証は SOAP メッセージ セキュリティを使用して提供されることを指定します。 こうした設定の詳細は、<xref:System.ServiceModel.FederatedMessageSecurityOverHttp> プロパティにより返される <xref:System.ServiceModel.WSFederationHttpSecurity.Message%2A> インスタンスから取得できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WSFederationHttpBinding (string configName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string configName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WSFederationHttpBinding.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="configName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="configName"><see cref="T:System.ServiceModel.Configuration.WSHttpBindingElement" /> のバインディング構成の名前。</param>
+        <summary>構成名で指定されたバインディングを使用して、<see cref="T:System.ServiceModel.WSFederationHttpBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">名前 <paramref name="configurationName" /> を持つバインディング要素が見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WSFederationHttpBinding (System.ServiceModel.WSFederationHttpSecurityMode securityMode, bool reliableSessionEnabled);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.ServiceModel.WSFederationHttpSecurityMode securityMode, bool reliableSessionEnabled) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WSFederationHttpBinding.#ctor(System.ServiceModel.WSFederationHttpSecurityMode,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="securityMode" Type="System.ServiceModel.WSFederationHttpSecurityMode" />
+        <Parameter Name="reliableSessionEnabled" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="securityMode">SOAP メッセージと共に、およびクライアントに対して使用されるセキュリティの種類を指定する <see cref="T:System.ServiceModel.WSFederationHttpSecurityMode" /> の値。</param>
+        <param name="reliableSessionEnabled">
+          信頼できるセッションが有効な場合は <see langword="true" /> を返します。それ以外の場合は <see langword="false" /> を返します。</param>
+        <summary>バインドで使用するセキュリティの種類と、信頼できるセッションを有効にするかどうかを示す値を指定して、<see cref="T:System.ServiceModel.WSFederationHttpBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateBindingElements">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Channels.BindingElementCollection CreateBindingElements ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Channels.BindingElementCollection CreateBindingElements() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WSFederationHttpBinding.CreateBindingElements" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.BindingElementCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>バインド用のバインド要素でコレクションを作成します。</summary>
+        <returns>バインドを構成する <see cref="T:System.Collections.Generic.ICollection`1" /> 型の <see cref="T:System.ServiceModel.Channels.BindingElement" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バインド要素のスタックは、<xref:System.ServiceModel.WSFederationHttpSecurityMode> セットの値に依存します。  
+  
+ <xref:System.ServiceModel.WSFederationHttpBinding> が <xref:System.ServiceModel.WSHttpBinding> の既定値に設定されている場合、<xref:System.ServiceModel.WSHttpBinding.Security%2A> 内のバインド要素のスタックは、<xref:System.ServiceModel.WSFederationHttpSecurityMode.Message> に格納されているバインド要素のスタックと同じです。  
+  
+1.  <xref:System.ServiceModel.Channels.TransactionFlowBindingElement>  
+  
+2.  <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>  
+  
+3.  <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>  
+  
+4.  <xref:System.ServiceModel.Channels.HttpTransportBindingElement>  
+  
+ ただし、<xref:System.ServiceModel.WSFederationHttpSecurityMode> を <xref:System.ServiceModel.WSFederationHttpSecurityMode.TransportWithMessageCredential> に設定すると、結果は <xref:System.ServiceModel.WSHttpBinding> バインドと <xref:System.ServiceModel.BasicHttpBinding> バインドを混成したスタックになります。  
+  
+1.  <xref:System.ServiceModel.Channels.TransactionFlowBindingElement>  
+  
+2.  <xref:System.ServiceModel.Channels.TransportSecurityBindingElement>  
+  
+3.  <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>  
+  
+4.  <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>  
+  
+ 最後に、MTOM エンコーダーの使用結果は、<xref:System.ServiceModel.WSHttpBinding> とまったく同じように見えます。  
+  
+1.  <xref:System.ServiceModel.Channels.TransactionFlowBindingElement>  
+  
+2.  <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>  
+  
+3.  <xref:System.ServiceModel.Channels.HttpTransportBindingElement>  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateMessageSecurity">
+      <MemberSignature Language="C#" Value="protected override System.ServiceModel.Channels.SecurityBindingElement CreateMessageSecurity ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.ServiceModel.Channels.SecurityBindingElement CreateMessageSecurity() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WSFederationHttpBinding.CreateMessageSecurity" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.SecurityBindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>信頼できるセッションを有効にした <see cref="T:System.ServiceModel.Channels.SecurityBindingElement" /> を作成します。</summary>
+        <returns>信頼できるセッションを有効にした <see cref="T:System.ServiceModel.Channels.SecurityBindingElement" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTransport">
+      <MemberSignature Language="C#" Value="protected override System.ServiceModel.Channels.TransportBindingElement GetTransport ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.ServiceModel.Channels.TransportBindingElement GetTransport() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WSFederationHttpBinding.GetTransport" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.TransportBindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のバインドからトランスポート バインド要素を返します。</summary>
+        <returns>現在のバインドからの <see cref="T:System.ServiceModel.Channels.TransportBindingElement" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrivacyNoticeAt">
+      <MemberSignature Language="C#" Value="public Uri PrivacyNoticeAt { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri PrivacyNoticeAt" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSFederationHttpBinding.PrivacyNoticeAt" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プライバシーに関する声明が存在する場所の URI を取得または設定します。</summary>
+        <value>プライバシーに関する声明の場所を示す <see cref="T:System.Uri" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrivacyNoticeVersion">
+      <MemberSignature Language="C#" Value="public int PrivacyNoticeVersion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PrivacyNoticeVersion" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSFederationHttpBinding.PrivacyNoticeVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインドに対するプライバシーに関する声明のバージョン番号を取得または設定します。</summary>
+        <value>プライバシーに関する声明のバージョン番号。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Security">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.WSFederationHttpSecurity Security { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.WSFederationHttpSecurity Security" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSFederationHttpBinding.Security" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.WSFederationHttpSecurity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインドで使用するセキュリティの種類を取得または設定します。</summary>
+        <value>このバインディングで使用されるセキュリティのモードを指定する <see cref="T:System.ServiceModel.WSFederationHttpSecurity" />。 このバインディングの <see cref="T:System.ServiceModel.WSFederationHttpSecurityMode" /> の既定値は <see cref="F:System.ServiceModel.WSFederationHttpSecurityMode.Message" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeSecurity">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeSecurity ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeSecurity() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WSFederationHttpBinding.ShouldSerializeSecurity" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.ServiceModel.WSFederationHttpBinding.Security" /> プロパティが既定値から変更されたためにシリアル化する必要があるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> プロパティ値をシリアル化する必要がある場合は <see cref="P:System.ServiceModel.WSFederationHttpBinding.Security" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

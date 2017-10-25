@@ -1,0 +1,825 @@
+<Type Name="Mutex" FullName="System.Threading.Mutex">
+  <TypeSignature Language="C#" Value="public sealed class Mutex : System.Threading.WaitHandle" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Mutex extends System.Threading.WaitHandle" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.Mutex" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Threading.WaitHandle</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>同期プリミティブは、プロセス間の同期にも使用できます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  この型の .NET Framework ソース コードを表示するを参照してください。、[参照ソース](http://referencesource.microsoft.com/#mscorlib/system/threading/mutex.cs#29b92e0e2832a8d6)です。 ソース コードをオンラインで参照、オフラインで表示、リファレンスをダウンロードおよび; デバッグ中にソース (パッチや更新を含む) をステップ参照してください[指示](http://referencesource.microsoft.com/)です。  
+  
+ 2 つまたは複数のスレッドは、同時に共有リソースにアクセスする必要がある場合、システムは、一度に 1 つのスレッドが、リソースを使用することを確認する同期メカニズムが必要です。 <xref:System.Threading.Mutex>同期は 1 つのスレッドを共有リソースへの排他アクセスを付与するプリミティブです。 スレッドがミュー テックス、最初のスレッドがミュー テックスを解放するまで、ミュー テックスを取得する 2 番目のスレッドが中断されます。  
+  
+> [!IMPORTANT]
+>  この型は、<xref:System.IDisposable>インターフェイスです。 型を使用してが完了したらを直接的または間接的にその破棄する必要があります。 型の直接 dispose を呼び出す、<xref:System.IDisposable.Dispose%2A>メソッドで、 `try` / `catch`ブロックします。 直接ことのない破棄する場合など、言語コンストラクトを使用して`using`(C# の場合) または`Using`(Visual Basic で)。 詳細についてを参照してください"を使用して、オブジェクトを実装する IDisposable"、<xref:System.IDisposable>インターフェイスに関するトピック。  
+  
+ 使用することができます、<xref:System.Threading.WaitHandle.WaitOne%2A?displayProperty=nameWithType>ミュー テックスの所有権を要求するメソッド。 呼び出しスレッドはブロック、次のいずれかが発生するまで:  
+  
+-   所有されていないことを示すためにミュー テックスが通知されます。 この場合、<xref:System.Threading.WaitHandle.WaitOne%2A>メソッドを返します。 `true`、呼び出し元のスレッドがミュー テックスの所有権と、ミュー テックスで保護されているリソースにアクセスするとします。 これには、リソースへのアクセスが完了したら、スレッドを呼び出す必要があります、<xref:System.Threading.Mutex.ReleaseMutex%2A>ミュー テックスの所有権を解放します。 「例」最初の例では、このパターンをを示します。  
+  
+-   呼び出しで指定したタイムアウト間隔、<xref:System.Threading.WaitHandle.WaitOne%2A>メソッドが、`millisecondsTimeout`または`timeout`パラメーターが経過しました。 この場合、<xref:System.Threading.WaitHandle.WaitOne%2A>メソッドを返します。 `false`、であり、呼び出し元スレッドはミュー テックスの所有権取得を試行します。 この場合、コードの構造は、呼び出し元のスレッドにミュー テックスで保護されているリソースへのアクセスを拒否できるようにする必要があります。 呼び出す必要がありますいないため、スレッドがミュー テックスの所有権を取得することはありません、<xref:System.Threading.Mutex.ReleaseMutex%2A>メソッドです。 2 番目の例」のセクションの例では、このパターンを示します。  
+  
+ <xref:System.Threading.Mutex>クラスは、取得したスレッドでのみ、ミュー テックスを解放できるように、スレッド id を強制します。 これに対し、<xref:System.Threading.Semaphore>クラスは、スレッド id を適用しません。 ミュー テックスは、アプリケーション ドメインの境界を越えて渡すこともできます。  
+  
+ ミュー テックスを所有するスレッドは、繰り返しの呼び出しで同じミュー テックスを要求できる<xref:System.Threading.WaitHandle.WaitOne%2A>実行をブロックせずします。 ただし、スレッドを呼び出す必要があります、<xref:System.Threading.Mutex.ReleaseMutex%2A>メソッド、同じ回数、ミュー テックスの所有権を解放します。  
+  
+ <xref:System.Threading.Mutex>クラスから継承<xref:System.Threading.WaitHandle>、静的なを呼び出すこともできます<xref:System.Threading.WaitHandle.WaitAll%2A?displayProperty=nameWithType>と<xref:System.Threading.WaitHandle.WaitAny%2A?displayProperty=nameWithType>保護されたリソースへのアクセスを同期する方法です。  
+  
+ スレッドがミュー テックスを所有しているときに終了と、ミュー テックスを破棄すると呼ばれます。 ミュー テックスの状態は、シグナル状態に設定し、[次へ] の待機中のスレッドが所有権を取得します。 .NET Framework のバージョン 2.0 以降で、<xref:System.Threading.AbandonedMutexException>が放棄されたミュー テックスを取得する次のスレッドでスローされます。 .NET Framework version 2.0 の前に例外がスローされなかった。  
+  
+> [!CAUTION]
+>  放棄されたミュー テックスは、多くの場合、コードで重大なエラーを示します。 ミュー テックスを解放せずに、スレッドが終了したときにミュー テックスで保護されているデータ構造体できない可能性があります一貫した状態にします。 ミュー テックスの所有権を要求する次のスレッドでは、この例外を処理でき、データ構造の整合性を検証できる場合、続行することができます。  
+  
+ システム全体でミューテックスが有効な場合にミューテックスが破棄されたときは、アプリケーションが強制終了されたことを示している可能性があります (たとえば、Windows タスク マネージャを使用した終了)。  
+  
+ ミュー テックスは次の 2 つの種類: と、名前付きシステム ミュー テックスをローカル ミュー テックスです。 ローカル ミューテックスは、現在のプロセス内にのみ存在します。 参照を含むプロセス内の任意のスレッドで使用できます、<xref:System.Threading.Mutex>ミュー テックスを表すオブジェクト。 名前のない各<xref:System.Threading.Mutex>オブジェクトが別のローカル ミュー テックスを表します。  
+  
+ 名前付きシステム ミュー テックスは、オペレーティング システム全体から参照でき、プロセスの動作を同期するために使用できます。 作成することができます、<xref:System.Threading.Mutex>名前を受け取るコンス トラクターを使用して、名前付きシステム ミュー テックスを表すオブジェクト。 オペレーティング システム オブジェクトを同時に作成できるかを作成する前に存在する可能性が、<xref:System.Threading.Mutex>オブジェクト。 複数作成できます<xref:System.Threading.Mutex>名前付きシステム ミュー テックスを同じを表すオブジェクトと、使用することができます、<xref:System.Threading.Mutex.OpenExisting%2A>を開くには、既存のメソッドに名前付きシステム ミュー テックスです。  
+  
+> [!NOTE]
+>  ターミナル サービスを実行するサーバーで名前付きシステム ミュー テックスは 2 レベルの可視性を持つことができます。 その名前がプレフィックスで始まる場合"グローバル\\"、ミュー テックスはすべてのターミナル サーバー セッションで表示します。 その名前がプレフィックスで始まる場合"ローカル\\"、ミュー テックスは作成元のターミナル サーバー セッションでのみ表示されます。 その場合は、同じ名前の別のミュー テックスは、それぞれのサーバー上の他のターミナル サーバー セッションに存在できます。 名前付きミュー テックスを作成するときに、プレフィックスを指定しないと、プレフィックスになります"ローカル\\"です。 ターミナル サーバー セッション内で名前のプレフィックスのみが異なる 2 つのミュー テックスが別個のミュー テックスにされ、両方は、ターミナル サーバー セッションですべてのプロセスに表示されます。 プレフィックス名は、"グローバル\\"と"ローカル\\"ミュー テックスの名前のターミナル サーバー セッションに対して相対的ではなくプロセスのスコープについて説明します。  
+  
+   
+  
+## Examples  
+ この方法を示しますローカル<xref:System.Threading.Mutex>オブジェクトは、保護されたリソースへのアクセスを同期するために使用します。 各呼び出し元のスレッドがブロックされるため、ミュー テックスの所有権を取得するまで、呼び出す必要があります、<xref:System.Threading.Mutex.ReleaseMutex%2A>スレッドの所有権を解放します。  
+  
+ [!code-csharp[System.Threading.Mutex.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.mutex.class/cs/example1.cs#1)]
+ [!code-vb[System.Threading.Mutex.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.mutex.class/vb/example1.vb#1)]  
+  
+ 次の例では、各スレッドの呼び出し、<xref:System.Threading.WaitHandle.WaitOne%28System.Int32%29>メソッド ミュー テックスを取得します。 かどうか、タイムアウト期間を過ぎると、メソッドが返されます`false`スレッドでミュー テックスを取得も、ミュー テックスを保護するリソースにアクセスするとします。 <xref:System.Threading.Mutex.ReleaseMutex%2A>メソッドはミュー テックスを取得したスレッドによってのみ呼び出されます。  
+  
+ [!code-csharp[System.Threading.Mutex.Class#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.mutex.class/cs/example2.cs#2)]
+ [!code-vb[System.Threading.Mutex.Class#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.mutex.class/vb/example2.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>この型はスレッド セーフです。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Mutex ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Mutex.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.MayFail)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Threading.Mutex" /> クラスの新しいインスタンスを、既定のプロパティを使用して初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター オーバー ロードを呼び出すことは、呼び出し元と同じ、<xref:System.Threading.Mutex.%23ctor%28System.Boolean%29>コンス トラクター オーバー ロードを指定して`false`ミュー テックスの初期所有権をします。 つまり、呼び出し元のスレッドはミュー テックスを所有していません。  
+  
+   
+  
+## Examples  
+ 次のコード例に示す方法ローカル<xref:System.Threading.Mutex>オブジェクトは、保護されたリソースへのアクセスを同期するために使用します。 ミュー テックスを作成するスレッドが所有していない、最初にします。  
+  
+ [!code-cpp[System.Threading.Mutex Default Ctor Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.Mutex Default Ctor Example/CPP/class1.cpp#1)]
+ [!code-csharp[System.Threading.Mutex Default Ctor Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.Mutex Default Ctor Example/CS/class1.cs#1)]
+ [!code-vb[System.Threading.Mutex Default Ctor Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.Mutex Default Ctor Example/VB/class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Mutex (bool initiallyOwned);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool initiallyOwned) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Mutex.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.MayFail)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="initiallyOwned" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="initiallyOwned">
+          呼び出し元スレッドにミューテックスの初期所有権を与える場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>呼び出し元のスレッドにミューテックスの初期所有権があるかどうかを示すブール値を使用して、<see cref="T:System.Threading.Mutex" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例に示す方法ローカル<xref:System.Threading.Mutex>オブジェクトは、保護されたリソースへのアクセスを同期するために使用します。 作成したスレッド、<xref:System.Threading.Mutex>最初に所有されています。  
+  
+ [!code-cpp[System.Threading.Mutex 1Arg Ctor Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.Mutex 1Arg Ctor Example/CPP/class1.cpp#1)]
+ [!code-csharp[System.Threading.Mutex 1Arg Ctor Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.Mutex 1Arg Ctor Example/CS/class1.cs#1)]
+ [!code-vb[System.Threading.Mutex 1Arg Ctor Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.Mutex 1Arg Ctor Example/VB/class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Mutex (bool initiallyOwned, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool initiallyOwned, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Mutex.#ctor(System.Boolean,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.MayFail)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="initiallyOwned" Type="System.Boolean" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="initiallyOwned">
+          この呼び出しの結果として名前付きシステム ミューテックスが作成された場合に、呼び出し元スレッドに名前付きシステム ミューテックスの初期所有権を付与する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <param name="name"><see cref="T:System.Threading.Mutex" /> の名前。 値が <see langword="null" /> の場合、<see cref="T:System.Threading.Mutex" /> は無名になります。</param>
+        <summary>呼び出し元のスレッドにミューテックスの初期所有権があるかどうかを示すブール値と、ミューテックスの名前を表す文字列を使用して、<see cref="T:System.Threading.Mutex" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`name`は`null`と`initiallyOwned`は`true`、この呼び出しの結果として名前付きシステム ミュー テックスが作成された場合にのみ、呼び出し元のスレッドがミュー テックスを所有します。 指定することをお勧め、名前付きシステム ミュー テックスが作成されたかどうかを決定するためのメカニズムがないため、`false`の`initiallyOwned`このコンス トラクター オーバー ロードを呼び出すときにします。 使用することができます、<xref:System.Threading.Mutex.%23ctor%28System.Boolean%2CSystem.String%2CSystem.Boolean%40%29>コンス トラクターの初期所有権を決定する必要がある場合。  
+  
+ このコンス トラクター、<xref:System.Threading.Mutex>を名前付きシステム ミュー テックスを表すオブジェクト。 複数作成できます<xref:System.Threading.Mutex>名前付きシステム ミュー テックスを同じを表すオブジェクト。  
+  
+ 名前付きミュー テックスは、アクセス制御セキュリティを既に作成されているし、呼び出し元を持たない場合<xref:System.Security.AccessControl.MutexRights?displayProperty=nameWithType>例外がスローされます。 既存のスレッドの活動を同期するために必要な権限のみを持つ名前付きミュー テックスを開きを参照してください、<xref:System.Threading.Mutex.OpenExisting%2A>メソッドです。  
+  
+ 指定した場合`null`または空の文字列の`name`、呼び出したいた場合と、ローカル ミュー テックスが作成された、<xref:System.Threading.Mutex.%23ctor%28System.Boolean%29>コンス トラクターです。 この場合、`createdNew`は常に`true`です。  
+  
+ これらは、システム全体であるために、プロセス境界をまたいでリソースの使用を調整する名前付きミュー テックスを使用できます。  
+  
+> [!NOTE]
+>  ターミナル サービスを実行するサーバーで名前付きシステム ミュー テックスは 2 レベルの可視性を持つことができます。 その名前がプレフィックスで始まる場合"グローバル\\"、ミュー テックスはすべてのターミナル サーバー セッションで表示します。 その名前がプレフィックスで始まる場合"ローカル\\"、ミュー テックスは作成元のターミナル サーバー セッションでのみ表示されます。 その場合は、同じ名前の別のミュー テックスは、それぞれのサーバー上の他のターミナル サーバー セッションに存在できます。 名前付きミュー テックスを作成するときに、プレフィックスを指定しないと、プレフィックスになります"ローカル\\"です。 ターミナル サーバー セッション内で名前のプレフィックスのみが異なる 2 つのミュー テックスが別個のミュー テックスにされ、両方は、ターミナル サーバー セッションですべてのプロセスに表示されます。 プレフィックス名は、"グローバル\\"と"ローカル\\"ミュー テックスの名前のターミナル サーバー セッションに対して相対的ではなくプロセスのスコープについて説明します。  
+  
+   
+  
+## Examples  
+ 次の例では、名前付きミュー テックスを使用して 2 つの異なるプロセスで実行中のスレッド間で通知する方法を示します。  
+  
+ 2 つ以上のコマンド ウィンドウからこのプログラムを実行します。 各プロセスの作成、<xref:System.Threading.Mutex>名前付きミュー テックスを表す`MyMutex`です。 名前付きミュー テックスがシステム オブジェクトの有効期間の有効期間に制限されます、<xref:System.Threading.Mutex>を表すオブジェクト。 最初にプロセスを作成するときに、名前付きミュー テックスが作成されたその<xref:System.Threading.Mutex>オブジェクトです。 この例では、名前付きミュー テックスがプログラムを実行する最初のプロセスによって所有されています。 名前付きミュー テックスが破棄されるときにすべて、<xref:System.Threading.Mutex>リリースされたことを表すオブジェクト。  
+  
+ この例で使用するコンス トラクター オーバー ロードは、名前付きミュー テックスの初期所有権が付与されたかどうかを呼び出し元のスレッドに判断できません。 スレッドが名前付きミュー テックスを作成することを確認できる場合を除き、初期所有権を要求をこのコンス トラクターを使用する必要があります。  
+  
+ [!code-cpp[System.Threading.Mutex 2Arg Ctor Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.Mutex 2Arg Ctor Example/CPP/class1.cpp#1)]
+ [!code-csharp[System.Threading.Mutex 2Arg Ctor Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.Mutex 2Arg Ctor Example/CS/class1.cs#1)]
+ [!code-vb[System.Threading.Mutex 2Arg Ctor Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.Mutex 2Arg Ctor Example/VB/class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UnauthorizedAccessException">ユーザーはありませんが、名前付きミュー テックスが存在し、アクセス制御セキュリティを<see cref="F:System.Security.AccessControl.MutexRights.FullControl" />です。</exception>
+        <exception cref="T:System.IO.IOException">Win32 エラーが発生しました。</exception>
+        <exception cref="T:System.Threading.WaitHandleCannotBeOpenedException">名前付きミューテックスを作成できません。原因として、別の型の待機ハンドルに同じ名前が付けられていることが考えられます。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> が 260 文字を超えています。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Mutex (bool initiallyOwned, string name, out bool createdNew);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool initiallyOwned, string name, [out] bool&amp; createdNew) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Mutex.#ctor(System.Boolean,System.String,System.Boolean@)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.MayFail)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="initiallyOwned" Type="System.Boolean" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="createdNew" Type="System.Boolean&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="initiallyOwned">
+          この呼び出しの結果として名前付きシステム ミューテックスが作成された場合に、呼び出し元スレッドに名前付きシステム ミューテックスの初期所有権を付与する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <param name="name"><see cref="T:System.Threading.Mutex" /> の名前。 値が <see langword="null" /> の場合、<see cref="T:System.Threading.Mutex" /> は無名になります。</param>
+        <param name="createdNew">このメソッドが戻るとき、ブール値が含まれています<see langword="true" />ローカル ミュー テックスが作成された場合 (場合は、<c>名前</c>は<see langword="null" />または空の文字列)、または指定した名前付きシステム ミュー テックスが作成された場合。<see langword="false" />場合は、指定した名前付きシステム ミュー テックスが既に存在します。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>呼び出し元のスレッドにミューテックスの初期所有権があるかどうかを示すブール値、ミューテックスの名前を表す文字列、およびメソッドから戻るときにミューテックスの初期所有権が呼び出し元のスレッドに付与されたかどうかを示すブール値を指定して、<see cref="T:System.Threading.Mutex" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`name`は`null`と`initiallyOwned`は`true`、呼び出し元のスレッドに所有する場合にのみ、名前付きミュー テックス`createdNew`は`true`呼び出しの後です。 呼び出すことによって、スレッドがミュー テックスを要求するそれ以外の場合、<xref:System.Threading.WaitHandle.WaitOne%2A>メソッドです。  
+  
+ このコンス トラクター、<xref:System.Threading.Mutex>を名前付きシステム ミュー テックスを表すオブジェクト。 複数作成できます<xref:System.Threading.Mutex>名前付きシステム ミュー テックスを同じを表すオブジェクト。  
+  
+ 名前付きミュー テックスは、アクセス制御セキュリティを既に作成されているし、呼び出し元を持たない場合<xref:System.Security.AccessControl.MutexRights?displayProperty=nameWithType>権限、例外がスローされます。 既存のスレッドの活動を同期するために必要な権限のみを持つ名前付きミュー テックスを開きを参照してください、<xref:System.Threading.Mutex.OpenExisting%2A>メソッドです。  
+  
+ 指定した場合`null`または空の文字列の`name`、呼び出したいた場合と、ローカル ミュー テックスが作成された、<xref:System.Threading.Mutex.%23ctor%28System.Boolean%29>コンス トラクターです。 この場合、`createdNew`は常に`true`です。  
+  
+ これらは、システム全体であるために、プロセス境界をまたいでリソースの使用を調整する名前付きミュー テックスを使用できます。  
+  
+> [!NOTE]
+>  ターミナル サービスを実行するサーバーで名前付きシステム ミュー テックスは 2 レベルの可視性を持つことができます。 その名前がプレフィックスで始まる場合"グローバル\\"、ミュー テックスはすべてのターミナル サーバー セッションで表示します。 その名前がプレフィックスで始まる場合"ローカル\\"、ミュー テックスは作成元のターミナル サーバー セッションでのみ表示されます。 その場合は、同じ名前の別のミュー テックスは、それぞれのサーバー上の他のターミナル サーバー セッションに存在できます。 名前付きミュー テックスを作成するときに、プレフィックスを指定しないと、プレフィックスになります"ローカル\\"です。 ターミナル サーバー セッション内で名前のプレフィックスのみが異なる 2 つのミュー テックスが別個のミュー テックスにされ、両方は、ターミナル サーバー セッションですべてのプロセスに表示されます。 プレフィックス名は、"グローバル\\"と"ローカル\\"ミュー テックスの名前のターミナル サーバー セッションに対して相対的ではなくプロセスのスコープについて説明します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、名前付きミュー テックスを使用してプロセスまたはスレッド間で通知する方法を示します。 2 つ以上のコマンド ウィンドウからこのプログラムを実行します。 各プロセスの作成、<xref:System.Threading.Mutex>を名前付きミュー テックス「で」を表すオブジェクト。 名前付きミュー テックスは、システム オブジェクトです。 この例ではその有効期間の有効期間によって制限されます、<xref:System.Threading.Mutex>を表すオブジェクト。 最初のプロセスが、ローカルを作成するときに、名前付きミュー テックスが作成された<xref:System.Threading.Mutex>オブジェクト、および破棄されるときにすべて、<xref:System.Threading.Mutex>リリースされたことを表すオブジェクト。 名前付きミュー テックスは最初のプロセスによって所有されている最初にします。 2 番目のプロセスおよび後続のプロセス以前のプロセス、名前付きミュー テックスを解放するを待ちます。  
+  
+ [!code-cpp[System.Threading.Mutex 3Arg Ctor Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.Mutex 3Arg Ctor Example/CPP/class1.cpp#1)]
+ [!code-csharp[System.Threading.Mutex 3Arg Ctor Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.Mutex 3Arg Ctor Example/CS/class1.cs#1)]
+ [!code-vb[System.Threading.Mutex 3Arg Ctor Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.Mutex 3Arg Ctor Example/VB/class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UnauthorizedAccessException">ユーザーはありませんが、名前付きミュー テックスが存在し、アクセス制御セキュリティを<see cref="F:System.Security.AccessControl.MutexRights.FullControl" />です。</exception>
+        <exception cref="T:System.IO.IOException">Win32 エラーが発生しました。</exception>
+        <exception cref="T:System.Threading.WaitHandleCannotBeOpenedException">名前付きミューテックスを作成できません。原因として、別の型の待機ハンドルに同じ名前が付けられていることが考えられます。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> が 260 文字を超えています。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Mutex (bool initiallyOwned, string name, out bool createdNew, System.Security.AccessControl.MutexSecurity mutexSecurity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool initiallyOwned, string name, [out] bool&amp; createdNew, class System.Security.AccessControl.MutexSecurity mutexSecurity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Mutex.#ctor(System.Boolean,System.String,System.Boolean@,System.Security.AccessControl.MutexSecurity)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.MayFail)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="initiallyOwned" Type="System.Boolean" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="createdNew" Type="System.Boolean&amp;" RefType="out" />
+        <Parameter Name="mutexSecurity" Type="System.Security.AccessControl.MutexSecurity" />
+      </Parameters>
+      <Docs>
+        <param name="initiallyOwned">
+          この呼び出しの結果として名前付きシステム ミューテックスが作成された場合に、呼び出し元スレッドに名前付きシステム ミューテックスの初期所有権を付与する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <param name="name">システム ミューテックスの名前。 値が <see langword="null" /> の場合、<see cref="T:System.Threading.Mutex" /> は無名になります。</param>
+        <param name="createdNew">このメソッドが戻るとき、ブール値が含まれています<see langword="true" />ローカル ミュー テックスが作成された場合 (場合は、<c>名前</c>は<see langword="null" />または空の文字列)、または指定した名前付きシステム ミュー テックスが作成された場合。<see langword="false" />場合は、指定した名前付きシステム ミュー テックスが既に存在します。 このパラメーターは初期化せずに渡されます。</param>
+        <param name="mutexSecurity">A<see cref="T:System.Security.AccessControl.MutexSecurity" />を名前付きシステム ミュー テックスに適用するアクセス制御セキュリティを表すオブジェクト。</param>
+        <summary>呼び出し元のスレッドにミューテックスの初期所有権があるかどうかを示すブール値、ミューテックスの名前を表す文字列、メソッドが戻るときにミューテックスの初期所有権が呼び出し元のスレッドに付与されたかどうかを示すブール値変数、および名前付きミューテックスに適用するアクセス制御セキュリティを指定して、<see cref="T:System.Threading.Mutex" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`name`は`null`と`initiallyOwned`は`true`、呼び出し元のスレッドに所有する場合にのみ、名前付きミュー テックス`createdNew`は`true`呼び出しの後です。 呼び出すことによって、スレッドがミュー テックスを要求するそれ以外の場合、<xref:System.Threading.WaitHandle.WaitOne%2A>メソッドです。  
+  
+ このコンス トラクターを使用すると、それが作成されるとき、その他のコードがミュー テックスを制御するを妨げて、アクセス制御セキュリティを名前付きシステム ミュー テックスに適用できます。  
+  
+ このコンス トラクター、<xref:System.Threading.Mutex>を名前付きシステム ミュー テックスを表すオブジェクト。 複数作成できます<xref:System.Threading.Mutex>名前付きシステム ミュー テックスを同じを表すオブジェクト。  
+  
+ 名前付きシステム ミュー テックスが存在しない場合は、指定したアクセス制御セキュリティで作成されます。 名前付きミュー テックスが存在する場合、指定したアクセス制御セキュリティは無視されます。  
+  
+> [!NOTE]
+>  呼び出し元が新しく作成されたに対するフル コントロール<xref:System.Threading.Mutex>オブジェクト場合であっても`mutexSecurity`拒否するか、現在のユーザーには、いくつかのアクセス権限を付与が失敗します。 ただし、現在のユーザーが別の取得を試みると<xref:System.Threading.Mutex>オブジェクトを表す、同じ名前付きミュー テックス、いずれかを使用して、コンス トラクターまたは<xref:System.Threading.Mutex.OpenExisting%2A>メソッド、Windows アクセス制御セキュリティを適用します。  
+  
+ 名前付きミュー テックスは、アクセス制御セキュリティを既に作成されているし、呼び出し元を持たない場合<xref:System.Security.AccessControl.MutexRights?displayProperty=nameWithType>例外がスローされます。 既存のスレッドの活動を同期するために必要な権限のみを持つ名前付きミュー テックスを開きを参照してください、<xref:System.Threading.Mutex.OpenExisting%2A>メソッドです。  
+  
+ 指定した場合`null`または空の文字列の`name`、呼び出したいた場合と、ローカル ミュー テックスが作成された、<xref:System.Threading.Mutex.%23ctor%28System.Boolean%29>コンス トラクターです。 この場合、`createdNew`は常に`true`です。  
+  
+ これらは、システム全体であるために、プロセス境界をまたいでリソースの使用を調整する名前付きミュー テックスを使用できます。  
+  
+> [!NOTE]
+>  ターミナル サービスを実行するサーバーで名前付きシステム ミュー テックスは 2 レベルの可視性を持つことができます。 その名前がプレフィックスで始まる場合"グローバル\\"、ミュー テックスはすべてのターミナル サーバー セッションで表示します。 その名前がプレフィックスで始まる場合"ローカル\\"、ミュー テックスは作成元のターミナル サーバー セッションでのみ表示されます。 その場合は、同じ名前の別のミュー テックスは、それぞれのサーバー上の他のターミナル サーバー セッションに存在できます。 名前付きミュー テックスを作成するときに、プレフィックスを指定しないと、プレフィックスになります"ローカル\\"です。 ターミナル サーバー セッション内で名前のプレフィックスのみが異なる 2 つのミュー テックスが別個のミュー テックスにされ、両方は、ターミナル サーバー セッションですべてのプロセスに表示されます。 プレフィックス名は、"グローバル\\"と"ローカル\\"ミュー テックスの名前のターミナル サーバー セッションに対して相対的ではなくプロセスのスコープについて説明します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、アクセス制御セキュリティを名前付きミュー テックスのプロセス間の動作を示します。 この例では、<xref:System.Threading.Mutex.OpenExisting%28System.String%29>メソッドのオーバー ロードを名前付きミュー テックスの存在をテストします。  
+  
+ ミュー テックスが存在しない場合は、初期所有権と現在のユーザー、ミュー テックスを使用する権限を拒否しますが、読み取りし、ミュー テックスのアクセス許可を変更する権限を付与するアクセス制御セキュリティで作成されます。  
+  
+ 2 つのコマンド ウィンドウからコンパイル済みの例を実行する場合、2 番目のコピーへの呼び出しでアクセス違反例外がスローされます<xref:System.Threading.Mutex.OpenExisting%28System.String%29>です。 例外をキャッチし、この例では、<xref:System.Threading.Mutex.OpenExisting%28System.String%2CSystem.Security.AccessControl.MutexRights%29>メソッドのオーバー ロードを読み取るし、アクセス許可を変更するために必要な権限を持つ、ミュー テックスを開きます。  
+  
+ アクセス許可を変更すると、ミュー テックスが入力し、解放に必要な権限で開かれます。 3 番目のコマンド ウィンドウからコンパイル済みの例を実行する場合は、新しいアクセス許可を使用して実行されます。  
+  
+ [!code-cpp[System.Threading.Mutex.ctor named 4#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.Mutex.ctor named 4/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.Mutex.ctor named 4#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.Mutex.ctor named 4/CS/source.cs#1)]
+ [!code-vb[System.Threading.Mutex.ctor named 4#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.Mutex.ctor named 4/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">Win32 エラーが発生しました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">ユーザーはありませんが、名前付きミュー テックスが存在し、アクセス制御セキュリティを<see cref="F:System.Security.AccessControl.MutexRights.FullControl" />です。</exception>
+        <exception cref="T:System.Threading.WaitHandleCannotBeOpenedException">名前付きミューテックスを作成できません。原因として、別の型の待機ハンドルに同じ名前が付けられていることが考えられます。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> が 260 文字を超えています。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAccessControl">
+      <MemberSignature Language="C#" Value="public System.Security.AccessControl.MutexSecurity GetAccessControl ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.AccessControl.MutexSecurity GetAccessControl() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Mutex.GetAccessControl" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.MutexSecurity</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>名前付きミューテックスのアクセス制御セキュリティを表す <see cref="T:System.Security.AccessControl.MutexSecurity" /> オブジェクトを取得します。</summary>
+        <returns>名前付きミューテックスのアクセス制御セキュリティを表す <see cref="T:System.Security.AccessControl.MutexSecurity" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Threading.Mutex.GetAccessControl%2A>メソッドは、次のフラグ (ビットごとの OR 演算を使用して結合) の組み合わせを使用してアクセス許可を検索する: <xref:System.Security.AccessControl.AccessControlSections?displayProperty=nameWithType>、 <xref:System.Security.AccessControl.AccessControlSections?displayProperty=nameWithType>、および<xref:System.Security.AccessControl.AccessControlSections?displayProperty=nameWithType>です。  
+  
+ ユーザーがいる必要があります<xref:System.Security.AccessControl.MutexRights?displayProperty=nameWithType>をこのメソッドと、ミュー テックスを呼び出す必要がありますがで開かれた<xref:System.Security.AccessControl.MutexRights?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、アクセス制御セキュリティを名前付きミュー テックスのプロセス間の動作を示します。 この例では、<xref:System.Threading.Mutex.OpenExisting%28System.String%29>メソッドのオーバー ロードを名前付きミュー テックスの存在をテストします。  
+  
+ ミュー テックスが存在しない場合は、初期所有権と現在のユーザー、ミュー テックスを使用する権限を拒否しますが、読み取りし、ミュー テックスのアクセス許可を変更する権限を付与するアクセス制御セキュリティで作成されます。  
+  
+ 2 つのコマンド ウィンドウからコンパイル済みの例を実行する場合、2 番目のコピーへの呼び出しでアクセス違反例外がスローされます<xref:System.Threading.Mutex.OpenExisting%28System.String%29>です。 例外をキャッチし、この例では、<xref:System.Threading.Mutex.OpenExisting%28System.String%2CSystem.Security.AccessControl.MutexRights%29>メソッドのオーバー ロードは、読み取りを使用して、アクセス許可を変更するために必要な権限を持つ、ミュー テックスを開き、<xref:System.Threading.Mutex.GetAccessControl%2A>と<xref:System.Threading.Mutex.SetAccessControl%2A>メソッドです。  
+  
+ アクセス許可を変更すると、ミュー テックスが入力し、解放に必要な権限で開かれます。 3 番目のコマンド ウィンドウからコンパイル済みの例を実行する場合は、新しいアクセス許可を使用して実行されます。  
+  
+ [!code-cpp[System.Threading.Mutex.ctor named 4#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.Mutex.ctor named 4/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.Mutex.ctor named 4#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.Mutex.ctor named 4/CS/source.cs#1)]
+ [!code-vb[System.Threading.Mutex.ctor named 4#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.Mutex.ctor named 4/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UnauthorizedAccessException">現在<see cref="T:System.Threading.Mutex" />オブジェクトは、名前付きシステム ミュー テックスを表しますが、ユーザーにありません<see cref="F:System.Security.AccessControl.MutexRights.ReadPermissions" />です。  
+  
+ または  
+  
+ 現在<see cref="T:System.Threading.Mutex" />オブジェクトは、名前付きシステム ミュー テックスを表しで開かれませんでした<see cref="F:System.Security.AccessControl.MutexRights.ReadPermissions" />です。</exception>
+        <exception cref="T:System.NotSupportedException">Windows 98 または Windows Millennium Edition はサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenExisting">
+      <MemberSignature Language="C#" Value="public static System.Threading.Mutex OpenExisting (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Mutex OpenExisting(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Mutex.OpenExisting(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Mutex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">開くシステム ミューテックスの名前。</param>
+        <summary>既に存在する場合は、指定した名前付きミューテックスを開きます。</summary>
+        <returns>名前付きシステム ミューテックスを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Threading.Mutex.OpenExisting%2A>メソッド開こうとすると、指定した名前付きシステム ミュー テックスです。 システムのミュー テックスが存在しない場合、このメソッドは、システム オブジェクトを作成する代わりに例外をスローします。 既に存在しない場合は、システム ミュー テックスを作成のいずれかを使用して、<xref:System.Threading.Mutex.%23ctor%2A>コンス トラクターを持つ、`name`パラメーター。  
+  
+ このメソッドに対して同じ値を使用する複数の呼び出し`name`必ずしも返さない同じ<xref:System.Threading.Mutex>オブジェクトの場合でも、返されるオブジェクトは、同じ名前付きシステム ミュー テックスを表します。  
+  
+ このメソッドはオーバー ロードを呼び出すことと同等、<xref:System.Threading.Mutex.OpenExisting%28System.String%2CSystem.Security.AccessControl.MutexRights%29>メソッドのオーバー ロードを指定して<xref:System.Security.AccessControl.MutexRights?displayProperty=nameWithType>と<xref:System.Security.AccessControl.MutexRights?displayProperty=nameWithType>権限、ビットごとの OR 演算を使用して結合します。  
+  
+ 指定する、<xref:System.Security.AccessControl.MutexRights?displayProperty=nameWithType>フラグにより、ミュー テックスを待機するスレッドを指定して、<xref:System.Security.AccessControl.MutexRights?displayProperty=nameWithType>フラグによって、スレッドを呼び出す、<xref:System.Threading.Mutex.ReleaseMutex%2A>メソッドです。  
+  
+ このメソッドはミュー テックスの所有権を要求しません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、アクセス制御セキュリティを名前付きミュー テックスのプロセス間の動作を示します。 この例では、<xref:System.Threading.Mutex.OpenExisting%28System.String%29>メソッドのオーバー ロードを名前付きミュー テックスの存在をテストします。  
+  
+ ミュー テックスが存在しない場合は、初期所有権と現在のユーザー、ミュー テックスを使用する権限を拒否しますが、読み取りし、ミュー テックスのアクセス許可を変更する権限を付与するアクセス制御セキュリティで作成されます。  
+  
+ 2 つのコマンド ウィンドウからコンパイル済みの例を実行する場合、2 番目のコピーへの呼び出しでアクセス違反例外がスローされます<xref:System.Threading.Mutex.OpenExisting%28System.String%29>です。 例外をキャッチし、この例では、<xref:System.Threading.Mutex.OpenExisting%28System.String%2CSystem.Security.AccessControl.MutexRights%29>メソッドのオーバー ロードを読み取るし、アクセス許可を変更するために必要な権限を持つ、ミュー テックスを開きます。  
+  
+ アクセス許可を変更すると、ミュー テックスが入力し、解放に必要な権限で開かれます。 3 番目のコマンド ウィンドウからコンパイル済みの例を実行する場合は、新しいアクセス許可を使用して実行されます。  
+  
+ [!code-cpp[System.Threading.Mutex.ctor named 4#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.Mutex.ctor named 4/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.Mutex.ctor named 4#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.Mutex.ctor named 4/CS/source.cs#1)]
+ [!code-vb[System.Threading.Mutex.ctor named 4#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.Mutex.ctor named 4/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> が空の文字列です。  
+  
+ または  
+  
+ <paramref name="name" /> が 260 文字を超えています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Threading.WaitHandleCannotBeOpenedException">名前付きミュー テックスが存在しません。</exception>
+        <exception cref="T:System.IO.IOException">Win32 エラーが発生しました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">名前付きミュー テックスが存在するが、ユーザーがそれを使用するために必要なセキュリティ アクセス権がありません。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenExisting">
+      <MemberSignature Language="C#" Value="public static System.Threading.Mutex OpenExisting (string name, System.Security.AccessControl.MutexRights rights);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Mutex OpenExisting(string name, valuetype System.Security.AccessControl.MutexRights rights) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Mutex.OpenExisting(System.String,System.Security.AccessControl.MutexRights)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Mutex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="rights" Type="System.Security.AccessControl.MutexRights" />
+      </Parameters>
+      <Docs>
+        <param name="name">開くシステム ミューテックスの名前。</param>
+        <param name="rights">必要なセキュリティ アクセス権を表す列挙値のビットごとの組み合わせ。</param>
+        <summary>既に存在する場合は、必要なセキュリティ アクセスで指定した名前付きミューテックスを開きます。</summary>
+        <returns>名前付きシステム ミューテックスを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `rights`パラメーターを含める必要があります、<xref:System.Security.AccessControl.MutexRights?displayProperty=nameWithType>をミュー テックスを待機するスレッドを許可するフラグと<xref:System.Security.AccessControl.MutexRights?displayProperty=nameWithType>を呼び出すスレッドを許可するフラグ、<xref:System.Threading.Mutex.ReleaseMutex%2A>メソッドです。  
+  
+ <xref:System.Threading.Mutex.OpenExisting%2A>メソッドは、既存の名前付きミュー テックスを開こうとします。 システムのミュー テックスが存在しない場合、このメソッドは、システム オブジェクトを作成する代わりに例外をスローします。 既に存在しない場合は、システム ミュー テックスを作成のいずれかを使用して、<xref:System.Threading.Mutex.%23ctor%2A>コンス トラクターを持つ、`name`パラメーター。  
+  
+ このメソッドに対して同じ値を使用する複数の呼び出し`name`必ずしも返さない同じ<xref:System.Threading.Mutex>オブジェクトの場合でも、返されるオブジェクトは、同じ名前付きシステム ミュー テックスを表します。  
+  
+ このメソッドはミュー テックスの所有権を要求しません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、アクセス制御セキュリティを名前付きミュー テックスのプロセス間の動作を示します。 この例では、<xref:System.Threading.Mutex.OpenExisting%28System.String%29>メソッドのオーバー ロードを名前付きミュー テックスの存在をテストします。  
+  
+ ミュー テックスが存在しない場合は、初期所有権と現在のユーザー、ミュー テックスを使用する権限を拒否しますが、読み取りし、ミュー テックスのアクセス許可を変更する権限を付与するアクセス制御セキュリティで作成されます。  
+  
+ 2 つのコマンド ウィンドウからコンパイル済みの例を実行する場合、2 番目のコピーへの呼び出しでアクセス違反例外がスローされます<xref:System.Threading.Mutex.OpenExisting%28System.String%29>です。 例外をキャッチし、この例では、<xref:System.Threading.Mutex.OpenExisting%28System.String%2CSystem.Security.AccessControl.MutexRights%29>メソッドのオーバー ロードを読み取るし、アクセス許可を変更するために必要な権限を持つ、ミュー テックスを開きます。  
+  
+ アクセス許可を変更すると、ミュー テックスが入力し、解放に必要な権限で開かれます。 3 番目のコマンド ウィンドウからコンパイル済みの例を実行する場合は、新しいアクセス許可を使用して実行されます。  
+  
+ [!code-cpp[System.Threading.Mutex.ctor named 4#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.Mutex.ctor named 4/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.Mutex.ctor named 4#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.Mutex.ctor named 4/CS/source.cs#1)]
+ [!code-vb[System.Threading.Mutex.ctor named 4#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.Mutex.ctor named 4/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> が空の文字列です。  
+  
+ または  
+  
+ <paramref name="name" /> が 260 文字を超えています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Threading.WaitHandleCannotBeOpenedException">名前付きミュー テックスが存在しません。</exception>
+        <exception cref="T:System.IO.IOException">Win32 エラーが発生しました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">名前付きミュー テックスが存在するが、ユーザーが必要なセキュリティ アクセスがありません。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ReleaseMutex">
+      <MemberSignature Language="C#" Value="public void ReleaseMutex ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ReleaseMutex() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Mutex.ReleaseMutex" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.MayFail)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Threading.Mutex" /> を一度解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スレッドがミュー テックスを取得するたびに (などを呼び出してその<xref:System.Threading.WaitHandle.WaitOne%2A>メソッド)、後で呼び出す必要があります<xref:System.Threading.Mutex.ReleaseMutex%2A>ミュー テックスの所有権を放棄して、ミュー テックスの所有権を獲得しようとしている他のスレッドのブロックを解除します。 ミュー テックスの所有権の取得に失敗したが失敗したかどうか (への呼び出し時などに、<xref:System.Threading.WaitHandle.WaitOne%2A>メソッドを`millisecondsTimeout`または`timeout`パラメーターを返します`false`要求がタイムアウトになるため)、スレッドを呼び出すべきではありません<xref:System.Threading.Mutex.ReleaseMutex%2A>、ここでは、スレッドもことはできません次の例のように、ミュー テックスで保護されているリソースにアクセスします。  
+  
+ [!code-csharp[System.Threading.Mutex.Class#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.mutex.class/cs/example2.cs#2)]
+ [!code-vb[System.Threading.Mutex.Class#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.mutex.class/vb/example2.vb#2)]  
+  
+ ミュー テックスを所有するスレッドは、その実行をブロックすることがなく、繰り返される関数呼び出しで同じミュー テックスを指定できます。 呼び出しの数は、共通言語ランタイムによって保持されます。 スレッドを呼び出す必要があります<xref:System.Threading.Mutex.ReleaseMutex%2A>同じ回数、ミュー テックスの所有権を解放します。  
+  
+ スレッドがミュー テックスを所有しているときに終了と、ミュー テックスを破棄すると呼ばれます。 ミュー テックスの状態がシグナル状態に設定し、[次へ] の待機中のスレッドが所有権を取得します。 ミュー テックスを所有していない場合は、ミュー テックスの状態が通知されます。 .NET Framework のバージョン 2.0 以降で、<xref:System.Threading.AbandonedMutexException>ミュー テックスを取得する次のスレッドでスローされます。 .NET Framework のバージョン 2.0 より前の例外がスローされなかった。  
+  
+> [!CAUTION]
+>  放棄されたミュー テックスは、多くの場合、コードで重大なエラーを示します。 ミュー テックスを解放せずに、スレッドが終了したときにミュー テックスで保護されているデータ構造体できない可能性があります一貫した状態にします。 ミュー テックスの所有権を要求する次のスレッドでは、この例外を処理でき、データ構造の整合性を検証できる場合、続行することができます。  
+  
+ システム全体でミューテックスが有効な場合にミューテックスが破棄されたときは、アプリケーションが強制終了されたことを示している可能性があります (たとえば、Windows タスク マネージャを使用した終了)。  
+  
+   
+  
+## Examples  
+ 次の例は、どのローカル<xref:System.Threading.Mutex>オブジェクトは、保護されたリソースへのアクセスを同期するために使用します。 ミュー テックスを作成するスレッドが所有していない、最初にします。 <xref:System.Threading.Mutex.ReleaseMutex%2A>不要になったときにミュー テックスを解放するメソッドを使用します。  
+  
+ [!code-cpp[System.Threading.Mutex Default Ctor Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.Mutex Default Ctor Example/CPP/class1.cpp#1)]
+ [!code-csharp[System.Threading.Mutex Default Ctor Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.Mutex Default Ctor Example/CS/class1.cs#1)]
+ [!code-vb[System.Threading.Mutex Default Ctor Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.Mutex Default Ctor Example/VB/class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ApplicationException">呼び出しスレッドに独自のミューテックスがありません。</exception>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは既に破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAccessControl">
+      <MemberSignature Language="C#" Value="public void SetAccessControl (System.Security.AccessControl.MutexSecurity mutexSecurity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetAccessControl(class System.Security.AccessControl.MutexSecurity mutexSecurity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Mutex.SetAccessControl(System.Security.AccessControl.MutexSecurity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mutexSecurity" Type="System.Security.AccessControl.MutexSecurity" />
+      </Parameters>
+      <Docs>
+        <param name="mutexSecurity">A<see cref="T:System.Security.AccessControl.MutexSecurity" />を名前付きシステム ミュー テックスに適用するアクセス制御セキュリティを表すオブジェクト。</param>
+        <summary>名前付きシステム ミューテックスのアクセス制御セキュリティを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーがいる必要があります<xref:System.Security.AccessControl.MutexRights?displayProperty=nameWithType>で権限を呼び出し、このメソッドと、ミュー テックスが開かれている必要があります<xref:System.Security.AccessControl.MutexRights?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、アクセス制御セキュリティを名前付きミュー テックスのプロセス間の動作を示します。 この例では、<xref:System.Threading.Mutex.OpenExisting%28System.String%29>メソッドのオーバー ロードを名前付きミュー テックスの存在をテストします。  
+  
+ ミュー テックスが存在しない場合は、初期所有権と現在のユーザー、ミュー テックスを使用する権限を拒否しますが、読み取りし、ミュー テックスのアクセス許可を変更する権限を付与するアクセス制御セキュリティで作成されます。  
+  
+ 2 つのコマンド ウィンドウからコンパイル済みの例を実行する場合、2 番目のコピーへの呼び出しでアクセス違反例外がスローされます<xref:System.Threading.Mutex.OpenExisting%28System.String%29>です。 例外をキャッチし、この例では、<xref:System.Threading.Mutex.OpenExisting%28System.String%2CSystem.Security.AccessControl.MutexRights%29>メソッドのオーバー ロードは、読み取りを使用して、アクセス許可を変更するために必要な権限を持つ、ミュー テックスを開き、<xref:System.Threading.Mutex.GetAccessControl%2A>と<xref:System.Threading.Mutex.SetAccessControl%2A>メソッドです。  
+  
+ アクセス許可を変更すると、ミュー テックスが入力し、解放に必要な権限で開かれます。 3 番目のコマンド ウィンドウからコンパイル済みの例を実行する場合は、新しいアクセス許可を使用して実行されます。  
+  
+ [!code-cpp[System.Threading.Mutex.ctor named 4#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.Mutex.ctor named 4/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.Mutex.ctor named 4#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.Mutex.ctor named 4/CS/source.cs#1)]
+ [!code-vb[System.Threading.Mutex.ctor named 4#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.Mutex.ctor named 4/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="mutexSecurity" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">ユーザーがいない<see cref="F:System.Security.AccessControl.MutexRights.ChangePermissions" />です。  
+  
+ または  
+  
+ ミュー テックスは開かれませんでした<see cref="F:System.Security.AccessControl.MutexRights.ChangePermissions" />です。</exception>
+        <exception cref="T:System.SystemException">現在<see cref="T:System.Threading.Mutex" />オブジェクトは名前付きシステム ミュー テックスを表していません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryOpenExisting">
+      <MemberSignature Language="C#" Value="public static bool TryOpenExisting (string name, out System.Threading.Mutex result);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryOpenExisting(string name, [out] class System.Threading.Mutex&amp; result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Mutex.TryOpenExisting(System.String,System.Threading.Mutex@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="result" Type="System.Threading.Mutex&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="name">開くシステム ミューテックスの名前。</param>
+        <param name="result">このメソッドから戻るときに、呼び出しに成功した場合は名前付きミューテックスを表す <see cref="T:System.Threading.Mutex" /> オブジェクトが格納されます。呼び出しに失敗した場合は <see langword="null" /> が格納されます。 このパラメーターは初期化前として処理されます。</param>
+        <summary>既に存在する場合は、指定した名前付きミューテックスを開き操作が成功したかどうかを示す値を返します。</summary>
+        <returns>
+          名前付きミューテックスが正常に開かれた場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前付きミュー テックスが存在しない場合、このメソッドが作成していません。 既に存在しない場合は、システム ミュー テックスを作成のいずれかを使用して、<xref:System.Threading.Mutex.%23ctor%2A>コンス トラクターを持つ、`name`パラメーター。  
+  
+ 名前付きミュー テックスが存在するかどうかが不明な場合は、代わりにこのメソッドのオーバー ロードを使用して、<xref:System.Threading.Mutex.OpenExisting%28System.String%29>メソッドのオーバー ロードをミュー テックスが存在しない場合に例外をスローします。  
+  
+ このメソッドに対して同じ値を使用する複数の呼び出し`name`必ずしも返さない同じ<xref:System.Threading.Mutex>オブジェクトの場合でも、返されるオブジェクトは、同じ名前付きシステム ミュー テックスを表します。  
+  
+ このメソッドはオーバー ロードを呼び出すことと同等、<xref:System.Threading.Mutex.TryOpenExisting%28System.String%2CSystem.Security.AccessControl.MutexRights%2CSystem.Threading.Mutex%40%29>メソッドのオーバー ロードを指定して<xref:System.Security.AccessControl.MutexRights?displayProperty=nameWithType>と<xref:System.Security.AccessControl.MutexRights?displayProperty=nameWithType>権限、ビットごとの OR 演算を使用して結合します。 指定する、<xref:System.Security.AccessControl.MutexRights?displayProperty=nameWithType>フラグにより、ミュー テックスを待機するスレッドを指定して、<xref:System.Security.AccessControl.MutexRights?displayProperty=nameWithType>フラグによって、スレッドを呼び出す、<xref:System.Threading.Mutex.ReleaseMutex%2A>メソッドです。  
+  
+ このメソッドはミュー テックスの所有権を要求しません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> が空の文字列です。  
+  
+ または  
+  
+ <paramref name="name" /> が 260 文字を超えています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.IOException">Win32 エラーが発生しました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">名前付きミュー テックスが存在するが、ユーザーがそれを使用するために必要なセキュリティ アクセス権がありません。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="TryOpenExisting">
+      <MemberSignature Language="C#" Value="public static bool TryOpenExisting (string name, System.Security.AccessControl.MutexRights rights, out System.Threading.Mutex result);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryOpenExisting(string name, valuetype System.Security.AccessControl.MutexRights rights, [out] class System.Threading.Mutex&amp; result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Mutex.TryOpenExisting(System.String,System.Security.AccessControl.MutexRights,System.Threading.Mutex@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="rights" Type="System.Security.AccessControl.MutexRights" />
+        <Parameter Name="result" Type="System.Threading.Mutex&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="name">開くシステム ミューテックスの名前。</param>
+        <param name="rights">必要なセキュリティ アクセス権を表す列挙値のビットごとの組み合わせ。</param>
+        <param name="result">このメソッドから戻るときに、呼び出しに成功した場合は名前付きミューテックスを表す <see cref="T:System.Threading.Mutex" /> オブジェクトが格納されます。呼び出しに失敗した場合は <see langword="null" /> が格納されます。 このパラメーターは初期化前として処理されます。</param>
+        <summary>既に存在する場合は、必要なセキュリティ アクセスを使用して指定した名前付きミューテックスを開き、操作が成功したかどうかを示す値を返します。</summary>
+        <returns>
+          名前付きミューテックスが正常に開かれた場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前付きミュー テックスが存在しない場合、このメソッドが作成していません。 既に存在しない場合は、システム ミュー テックスを作成のいずれかを使用して、<xref:System.Threading.Mutex.%23ctor%2A>コンス トラクターを持つ、`name`パラメーター。  
+  
+ 名前付きミュー テックスが存在するかどうかが不明な場合は、代わりにこのメソッドのオーバー ロードを使用して、<xref:System.Threading.Mutex.OpenExisting%28System.String%2CSystem.Security.AccessControl.MutexRights%29>メソッドのオーバー ロードをミュー テックスが存在しない場合に例外をスローします。  
+  
+ `rights`パラメーターを含める必要があります、<xref:System.Security.AccessControl.MutexRights?displayProperty=nameWithType>をミュー テックスを待機するスレッドを許可するフラグと<xref:System.Security.AccessControl.MutexRights?displayProperty=nameWithType>を呼び出すスレッドを許可するフラグ、<xref:System.Threading.Mutex.ReleaseMutex%2A>メソッドです。  
+  
+ このメソッドに対して同じ値を使用する複数の呼び出し`name`必ずしも返さない同じ<xref:System.Threading.Mutex>オブジェクトの場合でも、返されるオブジェクトは、同じ名前付きシステム ミュー テックスを表します。  
+  
+ このメソッドはミュー テックスの所有権を要求しません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> が空の文字列です。  
+  
+ または  
+  
+ <paramref name="name" /> が 260 文字を超えています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.IOException">Win32 エラーが発生しました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">名前付きミュー テックスが存在するが、ユーザーがそれを使用するために必要なセキュリティ アクセス権がありません。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,323 @@
+<Type Name="UnvalidatedRequestValuesWrapper" FullName="System.Web.UnvalidatedRequestValuesWrapper">
+  <TypeSignature Language="C#" Value="public class UnvalidatedRequestValuesWrapper : System.Web.UnvalidatedRequestValuesBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UnvalidatedRequestValuesWrapper extends System.Web.UnvalidatedRequestValuesBase" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UnvalidatedRequestValuesWrapper" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UnvalidatedRequestValuesBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ラッパー クラスを提供、<see cref="T:System.Web.UnvalidatedRequestValuesBase" />クラス、および ASP.NET 要求の検証をトリガーしない HTTP 要求値へのアクセスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求の検証方法については、次を参照してください。<xref:System.Web.UnvalidatedRequestValues>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UnvalidatedRequestValuesWrapper (System.Web.UnvalidatedRequestValues requestValues);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UnvalidatedRequestValues requestValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UnvalidatedRequestValuesWrapper.#ctor(System.Web.UnvalidatedRequestValues)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="requestValues" Type="System.Web.UnvalidatedRequestValues" />
+      </Parameters>
+      <Docs>
+        <param name="requestValues">クラスを初期化するコンス トラクターに渡されるオブジェクト。</param>
+        <summary><see cref="T:System.Web.UnvalidatedRequestValuesWrapper" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="requestValues" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Cookies">
+      <MemberSignature Language="C#" Value="public override System.Web.HttpCookieCollection Cookies { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpCookieCollection Cookies" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UnvalidatedRequestValuesWrapper.Cookies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpCookieCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET 要求の検証をトリガーすることがなく、クライアントが送信されたクッキーのコレクションを取得します。</summary>
+        <value>HTTP 要求の cookie。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  このプロパティを使用する場合は、潜在的なクロスサイト スクリプティング攻撃のデータを手動でチェックする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Files">
+      <MemberSignature Language="C#" Value="public override System.Web.HttpFileCollectionBase Files { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpFileCollectionBase Files" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UnvalidatedRequestValuesWrapper.Files" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpFileCollectionBase</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET 要求の検証をトリガーすることがなく、クライアントがアップロードしたファイルのコレクションを取得します。</summary>
+        <value>HTTP 要求のファイル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  このプロパティを使用する場合は、潜在的なクロスサイト スクリプティング攻撃のデータを手動でチェックする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Form">
+      <MemberSignature Language="C#" Value="public override System.Collections.Specialized.NameValueCollection Form { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.NameValueCollection Form" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UnvalidatedRequestValuesWrapper.Form" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.NameValueCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET 要求の検証をトリガーすることがなく、クライアントが送信されたフォーム変数のコレクションを取得します。</summary>
+        <value>HTTP 要求からフォーム変数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  このプロパティを使用する場合は、潜在的なクロスサイト スクリプティング攻撃のデータを手動でチェックする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Headers">
+      <MemberSignature Language="C#" Value="public override System.Collections.Specialized.NameValueCollection Headers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.NameValueCollection Headers" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UnvalidatedRequestValuesWrapper.Headers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.NameValueCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET 要求の検証をトリガーすることがなく、クライアントが送信される HTTP ヘッダーのコレクションを取得します。</summary>
+        <value>HTTP 要求からヘッダー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  このプロパティを使用する場合は、潜在的なクロスサイト スクリプティング攻撃のデータを手動でチェックする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public override string this[string field] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UnvalidatedRequestValuesWrapper.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="field" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="field">取得するオブジェクトのキー。</param>
+        <summary>指定したオブジェクトを取得、 <see cref="P:System.Web.HttpRequest.Form" />、 <see cref="P:System.Web.HttpRequest.Cookies" />、 <see cref="P:System.Web.HttpRequest.QueryString" />、または<see cref="P:System.Web.HttpRequest.ServerVariables" />ASP.NET 要求の検証をトリガーすることがなく、コレクション。</summary>
+        <value>要求されたオブジェクトまたは<see langword="null" />オブジェクトが見つからない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  このプロパティを使用する場合は、潜在的なクロスサイト スクリプティング攻撃のデータを手動でチェックする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public override string Path { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Path" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UnvalidatedRequestValuesWrapper.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET 要求の検証をトリガーすることがなく、要求されたリソースの仮想パスを取得します。</summary>
+        <value>仮想パス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  このプロパティを使用する場合は、潜在的なクロスサイト スクリプティング攻撃のデータを手動でチェックする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PathInfo">
+      <MemberSignature Language="C#" Value="public override string PathInfo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PathInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UnvalidatedRequestValuesWrapper.PathInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET 要求の検証をトリガーすることがなく、URL 拡張子を持つリソースの追加パス情報を取得します。</summary>
+        <value>リソースの追加パス情報を含む文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  このプロパティを使用する場合は、潜在的なクロスサイト スクリプティング攻撃のデータを手動で確認する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QueryString">
+      <MemberSignature Language="C#" Value="public override System.Collections.Specialized.NameValueCollection QueryString { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.NameValueCollection QueryString" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UnvalidatedRequestValuesWrapper.QueryString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.NameValueCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTTP クエリのコレクションに、ASP.NET 要求の検証をトリガーすることがなく、クライアントが送信される文字列変数を取得します。</summary>
+        <value>クライアントによって送信されるクエリ文字列変数のコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  このプロパティを使用する場合は、潜在的なクロスサイト スクリプティング攻撃のデータを手動でチェックする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RawUrl">
+      <MemberSignature Language="C#" Value="public override string RawUrl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RawUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UnvalidatedRequestValuesWrapper.RawUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET 要求の検証をトリガーすることがなく、web サイト名に続く要求された URL の一部を取得します。</summary>
+        <value>Web サイト名に続く、URL の一部です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  このプロパティを使用する場合は、潜在的なクロスサイト スクリプティング攻撃のデータを手動でチェックする必要があります。  
+  
+ 完全な要求の URL が場合`http://www.contoso.com/default.aspx?id=44`の値<xref:System.Web.UnvalidatedRequestValuesWrapper.RawUrl%2A>は`/default.aspx?id=44`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Url">
+      <MemberSignature Language="C#" Value="public override Uri Url { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Url" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UnvalidatedRequestValuesWrapper.Url" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET 要求の検証をトリガーすることがなく、要求の URL のデータを取得します。</summary>
+        <value>要求の URL のデータを格納するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  このプロパティを使用する場合は、潜在的なクロスサイト スクリプティング攻撃のデータを手動でチェックする必要があります。  
+  
+ ポート番号、ホスト名、パス情報、およびからユーザーに関するデータなどの URL のデータを取得することができます、<xref:System.Uri>このプロパティを表すオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,166 @@
+<Type Name="AddRequest" FullName="System.DirectoryServices.Protocols.AddRequest">
+  <TypeSignature Language="C#" Value="public class AddRequest : System.DirectoryServices.Protocols.DirectoryRequest" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AddRequest extends System.DirectoryServices.Protocols.DirectoryRequest" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.Protocols.AddRequest" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.DirectoryServices.Protocols.DirectoryRequest</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.Protocols.AddRequest" />クラスは、ディレクトリにエントリを追加します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求に追加できる、<xref:System.DirectoryServices.Protocols.DsmlRequestDocument>またはのパラメーターとして使用できます<xref:System.DirectoryServices.Protocols.DirectoryConnection.SendRequest%2A>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AddRequest ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.AddRequest.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.DirectoryServices.Protocols.AddRequest.#ctor" /> コンストラクターは、<see cref="T:System.DirectoryServices.Protocols.AddRequest" /> クラスのインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AddRequest (string distinguishedName, params System.DirectoryServices.Protocols.DirectoryAttribute[] attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string distinguishedName, class System.DirectoryServices.Protocols.DirectoryAttribute[] attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.AddRequest.#ctor(System.String,System.DirectoryServices.Protocols.DirectoryAttribute[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="distinguishedName" Type="System.String" />
+        <Parameter Name="attributes" Type="System.DirectoryServices.Protocols.DirectoryAttribute[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="distinguishedName"><c>DistinguishedName</c>のディレクトリに新しいオブジェクト。</param>
+        <param name="attributes">配列の<see cref="T:System.DirectoryServices.Protocols.DirectoryAttribute" />オブジェクトは、このオブジェクトの属性を格納します。 このパラメーターがあります<see langword="null" />です。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.AddRequest.#ctor(System.String,System.DirectoryServices.Protocols.DirectoryAttribute[])" />コンス トラクターのインスタンスを作成する、<see cref="T:System.DirectoryServices.Protocols.AddRequest" />クラスの指定された識別名と属性を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AddRequest (string distinguishedName, string objectClass);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string distinguishedName, string objectClass) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.AddRequest.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="distinguishedName" Type="System.String" />
+        <Parameter Name="objectClass" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="distinguishedName"><c>DistinguishedName</c>のディレクトリに新しいオブジェクト。</param>
+        <param name="objectClass">このオブジェクトのオブジェクト クラス。 このパラメーターが場合<see langword="null" />例外がスローされます。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.AddRequest.#ctor(System.String,System.String)" />コンス トラクターのインスタンスを作成する、<see cref="T:System.DirectoryServices.Protocols.AddRequest" />クラス<paramref name="distinguishedName" />とオブジェクトのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された値、`objectClass`にパラメーターが追加、<xref:System.DirectoryServices.Protocols.AddRequest.Attributes%2A>プロパティです。 このコンス トラクターが呼び出された後、この値を変更できるようにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="objectClass" />パラメーターに null 参照が含まれています (<see langword="Nothing" /> Visual Basic で)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Attributes">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.Protocols.DirectoryAttributeCollection Attributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.Protocols.DirectoryAttributeCollection Attributes" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.AddRequest.Attributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.Protocols.DirectoryAttributeCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.AddRequest.Attributes" />プロパティが含まれています、<see cref="T:System.DirectoryServices.Protocols.DirectoryAttributeCollection" />のオブジェクトの属性値のペア。</summary>
+        <value>A<see cref="T:System.DirectoryServices.Protocols.DirectoryAttributeCollection" />のオブジェクトの属性値のペア。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DistinguishedName">
+      <MemberSignature Language="C#" Value="public string DistinguishedName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DistinguishedName" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.AddRequest.DistinguishedName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.AddRequest.DistinguishedName" />プロパティには、オブジェクトの識別名が含まれています。</summary>
+        <value>オブジェクトの識別名。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToXmlNode">
+      <MemberSignature Language="C#" Value="protected override System.Xml.XmlElement ToXmlNode (System.Xml.XmlDocument doc);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Xml.XmlElement ToXmlNode(class System.Xml.XmlDocument doc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.AddRequest.ToXmlNode(System.Xml.XmlDocument)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="doc" Type="System.Xml.XmlDocument" />
+      </Parameters>
+      <Docs>
+        <param name="doc"><see cref="T:System.Xml.XmlDocument" /> オブジェクト。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.AddRequest.ToXmlNode(System.Xml.XmlDocument)" /> メソッドは、指定した <see cref="T:System.Xml.XmlDocument" /> オブジェクトから XML ノードを作成します。</summary>
+        <returns>結果として得られる <see cref="T:System.Xml.XmlElement" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

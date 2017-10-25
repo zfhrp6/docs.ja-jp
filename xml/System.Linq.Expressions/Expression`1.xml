@@ -1,0 +1,243 @@
+<Type Name="Expression&lt;TDelegate&gt;" FullName="System.Linq.Expressions.Expression&lt;TDelegate&gt;">
+  <TypeSignature Language="C#" Value="public sealed class Expression&lt;TDelegate&gt; : System.Linq.Expressions.LambdaExpression" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Expression`1&lt;TDelegate&gt; extends System.Linq.Expressions.LambdaExpression" />
+  <TypeSignature Language="DocId" Value="T:System.Linq.Expressions.Expression`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Linq.Expressions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TDelegate" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Linq.Expressions.LambdaExpression</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <typeparam name="TDelegate">デリゲートの型を<see cref="T:System.Linq.Expressions.Expression`1" />を表します。</typeparam>
+    <summary>厳密に型指定されたラムダ式を、式ツリー形式のデータ構造体として表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変数、フィールド、または型を持つパラメーターに、ラムダ式が割り当てられるとき<xref:System.Linq.Expressions.Expression%601>コンパイラは、式ツリーを構築する手順。  
+  
+> [!NOTE]
+>  入力する、ラムダ式から変換`Expression<D>`(`Expression(Of D)` Visual Basic で) 場合は、ラムダ式から型のデリゲートへの変換が存在する`D`が存在します。 ただし、変換が失敗するなどの場合は、ラムダ式の本体は、ブロックします。 これは、デリゲートと式ツリーがオーバー ロードの解決に関して同様に動作することを意味します。  
+  
+ 式ツリーは、ラムダ式のメモリ内データ表現です。 式ツリーは、透過的と明示的なラムダ式の構造をします。 他のすべてのデータ構造と同様、式ツリー内のデータと対話できます。  
+  
+ データ構造体として式を処理する機能は、検査、変換、およびカスタムの方法で処理されることができる形式でユーザー コードを受信するための Api を使用できます。 たとえば、[!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]データ アクセスの実装では、この機能を使用して、TRANSACT-SQL ステートメントをデータベースによって評価される式ツリーに変換します。  
+  
+ 多くの標準クエリ演算子で定義されている、<xref:System.Linq.Queryable>クラスは、型の 1 つまたは複数のパラメーターを持つ<xref:System.Linq.Expressions.Expression%601>します。  
+  
+ <xref:System.Linq.Expressions.Expression.NodeType%2A>の<xref:System.Linq.Expressions.Expression%601>は<xref:System.Linq.Expressions.ExpressionType.Lambda>します。  
+  
+ 使用して、<xref:System.Linq.Expressions.Expression.Lambda%60%601%28System.Linq.Expressions.Expression%2CSystem.Collections.Generic.IEnumerable%7BSystem.Linq.Expressions.ParameterExpression%7D%29>または<xref:System.Linq.Expressions.Expression.Lambda%60%601%28System.Linq.Expressions.Expression%2CSystem.Linq.Expressions.ParameterExpression%5B%5D%29>メソッドを作成、<xref:System.Linq.Expressions.Expression%601>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例では、デリゲートの形式で実行可能コードと、式ツリーの形式でデータの両方のラムダ式を表す方法を示します。 使用して実行可能コードに戻る、式ツリーを変換する方法も示します、<xref:System.Linq.Expressions.Expression%601.Compile%2A>メソッドです。  
+  
+ [!code-csharp[System.Linq.Expressions.ExpressionT#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Linq.Expressions.ExpressionT/CS/ExpressionT.cs#1)]
+ [!code-vb[System.Linq.Expressions.ExpressionT#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Linq.Expressions.ExpressionT/VB/ExpressionT.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Accept">
+      <MemberSignature Language="C#" Value="protected override System.Linq.Expressions.Expression Accept (System.Linq.Expressions.ExpressionVisitor visitor);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance class System.Linq.Expressions.Expression Accept(class System.Linq.Expressions.ExpressionVisitor visitor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.Expressions.Expression`1.Accept(System.Linq.Expressions.ExpressionVisitor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Linq.Expressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.Expressions.Expression</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="visitor" Type="System.Linq.Expressions.ExpressionVisitor" />
+      </Parameters>
+      <Docs>
+        <param name="visitor">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Compile">
+      <MemberSignature Language="C#" Value="public TDelegate Compile ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !TDelegate Compile() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.Expressions.Expression`1.Compile" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Linq.Expressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TDelegate</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>実行可能コードに、式ツリーで説明されているラムダ式をコンパイルし、ラムダ式を表すデリゲートを生成します。</summary>
+        <returns>型のデリゲート<paramref name="TDelegate" />によって記述されたコンパイル済みのラムダ式を表す、<see cref="T:System.Linq.Expressions.Expression`1" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Linq.Expressions.Expression%601.Compile%2A>メソッド型のデリゲートを生成する`TDelegate`実行時にします。 セマンティクスで説明した動作がそのデリゲートを実行すると、<xref:System.Linq.Expressions.Expression%601>です。  
+  
+ <xref:System.Linq.Expressions.Expression%601.Compile%2A>任意の式ツリーの値を取得するメソッドを使用できます。 最初を使用して、本文として式を持つラムダ式を作成、<xref:System.Linq.Expressions.Expression.Lambda%2A>メソッドです。 呼び出す<xref:System.Linq.Expressions.Expression%601.Compile%2A>デリゲートを取得し、式の値を取得するデリゲートを実行します。  
+  
+   
+  
+## Examples  
+ 次のコード例でどのように<xref:System.Linq.Expressions.Expression%601.Compile%2A>式ツリーを実行するために使用します。  
+  
+ [!code-csharp[System.Linq.Expressions.ExpressionT#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Linq.Expressions.ExpressionT/CS/ExpressionT.cs#2)]
+ [!code-vb[System.Linq.Expressions.ExpressionT#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Linq.Expressions.ExpressionT/VB/ExpressionT.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Compile">
+      <MemberSignature Language="C#" Value="public TDelegate Compile (bool preferInterpretation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !TDelegate Compile(bool preferInterpretation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.Expressions.Expression`1.Compile(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Linq.Expressions</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TDelegate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="preferInterpretation" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="preferInterpretation">その式を解釈された形式にコンパイルすべきことを示す <see langword="true" /> (存在する場合)、それ以外の場合 <see langword="false" />。</param>
+        <summary>式ツリーで記述されたラムダ式を、解釈されたまたはコンパイル済みコードにコンパイルし、そのラムダ式を表すデリゲートを生成します。</summary>
+        <returns><see cref="T:System.Linq.Expressions.Expression`1" /> により記述されたコンパイル済みのラムダ式を表すデリゲート。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Compile">
+      <MemberSignature Language="C#" Value="public TDelegate Compile (System.Runtime.CompilerServices.DebugInfoGenerator debugInfoGenerator);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !TDelegate Compile(class System.Runtime.CompilerServices.DebugInfoGenerator debugInfoGenerator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.Expressions.Expression`1.Compile(System.Runtime.CompilerServices.DebugInfoGenerator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Linq.Expressions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TDelegate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="debugInfoGenerator" Type="System.Runtime.CompilerServices.DebugInfoGenerator" />
+      </Parameters>
+      <Docs>
+        <param name="debugInfoGenerator">シーケンス ポイントをマークし、ローカル変数に注釈を付ける、コンパイラで使用される情報のジェネレーターをデバッグします。</param>
+        <summary>ラムダ式を表すデリゲートを作成します。</summary>
+        <returns>ラムダのコンパイル済みのバージョンを含むデリゲート。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Update">
+      <MemberSignature Language="C#" Value="public System.Linq.Expressions.Expression&lt;TDelegate&gt; Update (System.Linq.Expressions.Expression body, System.Collections.Generic.IEnumerable&lt;System.Linq.Expressions.ParameterExpression&gt; parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Linq.Expressions.Expression`1&lt;!TDelegate&gt; Update(class System.Linq.Expressions.Expression body, class System.Collections.Generic.IEnumerable`1&lt;class System.Linq.Expressions.ParameterExpression&gt; parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.Expressions.Expression`1.Update(System.Linq.Expressions.Expression,System.Collections.Generic.IEnumerable{System.Linq.Expressions.ParameterExpression})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Linq.Expressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.Expressions.Expression&lt;TDelegate&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="body" Type="System.Linq.Expressions.Expression" />
+        <Parameter Name="parameters" Type="System.Collections.Generic.IEnumerable&lt;System.Linq.Expressions.ParameterExpression&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="body"><see cref="P:System.Linq.Expressions.LambdaExpression.Body" />結果のプロパティです。</param>
+        <param name="parameters"><see cref="P:System.Linq.Expressions.LambdaExpression.Parameters" />結果のプロパティです。</param>
+        <summary>これに似た式ですが、指定された子を使用する、新しい式を作成します。 すべての子が同じである場合、この式を返します。</summary>
+        <returns>子が変更されていない場合はこの式。あるいは、更新された子を持つ式。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,206 @@
+<Type Name="EditingContext" FullName="System.Activities.Presentation.EditingContext">
+  <TypeSignature Language="C#" Value="public class EditingContext : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EditingContext extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Presentation.EditingContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities.Presentation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary><see cref="T:System.Activities.Presentation.WorkflowDesigner" /> など、デザイナーのコンテキスト状態情報を格納します。 これにはデザイナーで実行されているサービスの一覧などの永続的状態情報が含まれます。 また、現在選択されているオブジェクトのセットなどのコンテキスト項目、およびデザイン画面でオブジェクトの操作に使用する編集ツールから構成される一時的状態も含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Activities.Presentation.EditingContext> はホスト アプリケーションと [!INCLUDE[wfd1](~/includes/wfd1-md.md)] との間で共有される通信境界を表します。 使いやすくするため、<xref:System.Activities.Presentation.EditingContext> が具象クラスとして実装されました。 <xref:System.Activities.Presentation.EditingContext.CreateServiceManager%2A> と <xref:System.Activities.Presentation.EditingContext.CreateContextItemManager%2A> をオーバーライドして、<xref:System.Activities.Presentation.ServiceManager> と <xref:System.Activities.Presentation.ContextItemManager> から派生した、カスタマイズされたマネージャーを使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EditingContext ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.EditingContext.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Activities.Presentation.EditingContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateContextItemManager">
+      <MemberSignature Language="C#" Value="protected virtual System.Activities.Presentation.ContextItemManager CreateContextItemManager ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Activities.Presentation.ContextItemManager CreateContextItemManager() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.EditingContext.CreateContextItemManager" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.ContextItemManager</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.Activities.Presentation.EditingContext.Items" /> プロパティによって返されるコンテキスト項目マネージャーのインスタンスを作成します。</summary>
+        <returns>
+          <see cref="T:System.Activites.Design.ContextItemManager" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装では、デザイン エディター マネージャーの <xref:System.Activities.Presentation.ContextItemManager> 属性を宣言することで、デザイン エディター マネージャーの遅延アクティブ化をサポートする <xref:System.Activities.Presentation.SubscribeContextCallback> が作成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateServiceManager">
+      <MemberSignature Language="C#" Value="protected virtual System.Activities.Presentation.ServiceManager CreateServiceManager ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Activities.Presentation.ServiceManager CreateServiceManager() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.EditingContext.CreateServiceManager" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.ServiceManager</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.Activities.Presentation.EditingContext.Services" /> プロパティから返されるサービス マネージャーのインスタンスを作成します。</summary>
+        <returns><see cref="T:System.Activities.Presentation.ServiceManager" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装では、デザイン エディター マネージャーの <xref:System.Activities.Presentation.ServiceManager> 属性を宣言することで、デザイン エディター マネージャーの遅延アクティブ化をサポートする <xref:System.Activities.Presentation.SubscribeContextCallback> が作成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.EditingContext.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトで使用されているアンマネージ リソースを直ちにすべて解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.EditingContext.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          <see langword="true" />。 このオブジェクトが破棄される場合<see langword="false" />場合は、オブジェクトが終了しています。</param>
+        <summary>現在の <see cref="T:System.Activities.Presentation.EditingContext" /> オブジェクトで使用されているアンマネージ リソースを直ちに解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Disposing">
+      <MemberSignature Language="C#" Value="public event EventHandler Disposing;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Disposing" />
+      <MemberSignature Language="DocId" Value="E:System.Activities.Presentation.EditingContext.Disposing" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="M:System.IDisposable.Dispose" /> メソッドが呼び出されたとき、または <see cref="T:System.Activities.Presentation.EditingContext" /> オブジェクトが終了し、Microsoft .NET 共通言語ランタイムのガベージ コレクターによって収集されたときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Items">
+      <MemberSignature Language="C#" Value="public System.Activities.Presentation.ContextItemManager Items { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Presentation.ContextItemManager Items" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.EditingContext.Items" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.ContextItemManager</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の編集コンテキストに格納されているコンテキスト項目のローカル コレクションを返します。</summary>
+        <value>この編集コンテキストで使用される <see cref="T:System.Activities.Presentation.ContextItemManager" /> オブジェクトの <see cref="T:System.Activities.Presentation.ContextItem" /> コレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Activities.Presentation.EditingContext.Items%2A> コレクションは、ホストとデザイナーの間で共有されるデータ用です。  このデータは、サブスクリプションと変更通知内にフックする必要のあるメカニズムを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Services">
+      <MemberSignature Language="C#" Value="public System.Activities.Presentation.ServiceManager Services { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Presentation.ServiceManager Services" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.EditingContext.Services" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.ServiceManager</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の編集コンテキストで使用されるサービス マネージャーを返します。</summary>
+        <value>この編集コンテキストで使用される <see cref="T:System.Activities.Presentation.ServiceManager" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Activities.Presentation.EditingContext.Services%2A> は、デザイナーで使用するためにホストによって提供される機能、またはエディター内のすべてのデザイナーで機能を使用できるようにするためにデザイナーで使用される機能を表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

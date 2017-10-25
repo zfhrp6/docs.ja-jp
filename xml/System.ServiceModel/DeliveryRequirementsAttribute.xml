@@ -1,0 +1,277 @@
+<Type Name="DeliveryRequirementsAttribute" FullName="System.ServiceModel.DeliveryRequirementsAttribute">
+  <TypeSignature Language="C#" Value="public sealed class DeliveryRequirementsAttribute : Attribute, System.ServiceModel.Description.IContractBehavior, System.ServiceModel.Description.IContractBehaviorAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DeliveryRequirementsAttribute extends System.Attribute implements class System.ServiceModel.Description.IContractBehavior, class System.ServiceModel.Description.IContractBehaviorAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.DeliveryRequirementsAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Description.IContractBehavior</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Description.IContractBehaviorAttribute</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Interface, AllowMultiple=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>バインディングがサービスまたはクライアントの実装に対して提供する必要がある機能要件を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.DeliveryRequirementsAttribute> を使用して、サービスまたはクライアントの実装で必要とされる機能がバインドによって提供されていることを確認するように [!INCLUDE[indigo1](~/includes/indigo1-md.md)] に指示します。 サービスの説明がアプリケーション構成ファイルから読み込まれる、またはプログラム コードによって構築されるときに、<xref:System.ServiceModel.DeliveryRequirementsAttribute> 属性が検出された場合、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] は、構成されるバインドを検証し、属性が指定するすべての機能をサポートします。 たとえば、サービスでバインドにキューをサポートするように要求できます。 <xref:System.ServiceModel.DeliveryRequirementsAttribute> を使用すると、次の要件を満たしているかどうかを [!INCLUDE[indigo2](~/includes/indigo2-md.md)] で確認することができます。  
+  
+-   <xref:System.ServiceModel.DeliveryRequirementsAttribute.QueuedDeliveryRequirements%2A> プロパティは、バインドが満たす必要のあるキューの要件を指定します。  
+  
+-   <xref:System.ServiceModel.DeliveryRequirementsAttribute.RequireOrderedDelivery%2A> プロパティは、バインドが順序付けられたメッセージをサポートする必要があるかどうかを示します。  
+  
+-   <xref:System.ServiceModel.DeliveryRequirementsAttribute.TargetContract%2A> プロパティは、要件を適用する型を示します。  
+  
+ <xref:System.ServiceModel.DeliveryRequirementsAttribute> 属性はクラスに適用され、任意の数のサービス コントラクト インターフェイスを実装できます。 <xref:System.ServiceModel.DeliveryRequirementsAttribute> は、クラスが実装するコントラクトのすべて、または 1 つだけに適用できます。 この属性は、クラスに対して複数回適用できます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UEDeliveryRequirementsAttribute#1](~/samples/snippets/csharp/VS_Snippets_CFX/uedeliveryrequirementsattribute/cs/snippet1.cs#1)]
+ [!code-vb[UEDeliveryRequirementsAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/uedeliveryrequirementsattribute/vb/snippet1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DeliveryRequirementsAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.DeliveryRequirementsAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.DeliveryRequirementsAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の設定は次のとおりです。  
+  
+-   <xref:System.ServiceModel.DeliveryRequirementsAttribute.QueuedDeliveryRequirements%2A> プロパティが <xref:System.ServiceModel.QueuedDeliveryRequirementsMode.Allowed> に設定されている。  
+  
+-   <xref:System.ServiceModel.DeliveryRequirementsAttribute.RequireOrderedDelivery%2A> プロパティが `false` に設定されている。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QueuedDeliveryRequirements">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.QueuedDeliveryRequirementsMode QueuedDeliveryRequirements { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.QueuedDeliveryRequirementsMode QueuedDeliveryRequirements" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.DeliveryRequirementsAttribute.QueuedDeliveryRequirements" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.QueuedDeliveryRequirementsMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスのバインディングでキュー付きのコントラクトをサポートする必要があるかどうかを指定します。</summary>
+        <value><see cref="T:System.ServiceModel.QueuedDeliveryRequirementsMode" /> 値の 1 つ。既定値は <see cref="F:System.ServiceModel.QueuedDeliveryRequirementsMode.Allowed" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.QueuedDeliveryRequirementsMode.Required> は、バインドでキュー付きの配信がサポートされていることを確認するように [!INCLUDE[indigo2](~/includes/indigo2-md.md)] に指示します。 <xref:System.ServiceModel.QueuedDeliveryRequirementsMode.NotAllowed> 値は、バインドでキュー付きの配信がサポートされていないことを確認するように [!INCLUDE[indigo2](~/includes/indigo2-md.md)] に指示します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.ServiceModel.DeliveryRequirementsAttribute> 属性を使用して、実際のバインドでキュー付きのコントラクトをサポートしていないこと、ただし順序付けられたメッセージをサポートしていることをランタイムで確認するように [!INCLUDE[indigo2](~/includes/indigo2-md.md)] に指示しています。  
+  
+ [!code-csharp[UEDeliveryRequirementsAttribute#1](~/samples/snippets/csharp/VS_Snippets_CFX/uedeliveryrequirementsattribute/cs/snippet1.cs#1)]
+ [!code-vb[UEDeliveryRequirementsAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/uedeliveryrequirementsattribute/vb/snippet1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">値が、<see cref="T:System.ServiceModel.QueuedDeliveryRequirementsMode" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RequireOrderedDelivery">
+      <MemberSignature Language="C#" Value="public bool RequireOrderedDelivery { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequireOrderedDelivery" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.DeliveryRequirementsAttribute.RequireOrderedDelivery" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインディングで順序付きメッセージをサポートする必要があるかどうかを指定します。</summary>
+        <value>
+          <see langword="true" /> 値は、バインディングが順序付きメッセージをサポートしていることを確認するように [!INCLUDE[indigo1](~/includes/indigo1-md.md)] に指示します。それ以外は <see langword="false" /> です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.DeliveryRequirementsAttribute.RequireOrderedDelivery%2A> プロパティへの `false` の設定は、検証を実行しないように [!INCLUDE[indigo2](~/includes/indigo2-md.md)] に指示します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.ServiceModel.DeliveryRequirementsAttribute> 属性を使用して、実際のバインディングで順序付きメッセージをサポートしていることをランタイムで確認するように [!INCLUDE[indigo2](~/includes/indigo2-md.md)] に指示しています。  
+  
+ [!code-csharp[UEDeliveryRequirementsAttribute#1](~/samples/snippets/csharp/VS_Snippets_CFX/uedeliveryrequirementsattribute/cs/snippet1.cs#1)]
+ [!code-vb[UEDeliveryRequirementsAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/uedeliveryrequirementsattribute/vb/snippet1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IContractBehavior.AddBindingParameters">
+      <MemberSignature Language="C#" Value="void IContractBehavior.AddBindingParameters (System.ServiceModel.Description.ContractDescription description, System.ServiceModel.Description.ServiceEndpoint endpoint, System.ServiceModel.Channels.BindingParameterCollection parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IContractBehavior.AddBindingParameters(class System.ServiceModel.Description.ContractDescription description, class System.ServiceModel.Description.ServiceEndpoint endpoint, class System.ServiceModel.Channels.BindingParameterCollection parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.DeliveryRequirementsAttribute.System#ServiceModel#Description#IContractBehavior#AddBindingParameters(System.ServiceModel.Description.ContractDescription,System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Channels.BindingParameterCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="description" Type="System.ServiceModel.Description.ContractDescription" />
+        <Parameter Name="endpoint" Type="System.ServiceModel.Description.ServiceEndpoint" />
+        <Parameter Name="parameters" Type="System.ServiceModel.Channels.BindingParameterCollection" />
+      </Parameters>
+      <Docs>
+        <param name="description">コントラクトの記述。</param>
+        <param name="endpoint">コントラクトのサービス エンドポイント。</param>
+        <param name="parameters">バインディング パラメーター。</param>
+        <summary><see cref="M:System.ServiceModel.DeliveryRequirementsAttribute.System#ServiceModel#Description#IContractBehavior#AddBindingParameters(System.ServiceModel.Description.ContractDescription,System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Channels.BindingParameterCollection)" /> メソッドを実装して、バインド パラメーターを適切にアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IContractBehavior.ApplyClientBehavior">
+      <MemberSignature Language="C#" Value="void IContractBehavior.ApplyClientBehavior (System.ServiceModel.Description.ContractDescription description, System.ServiceModel.Description.ServiceEndpoint endpoint, System.ServiceModel.Dispatcher.ClientRuntime proxy);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IContractBehavior.ApplyClientBehavior(class System.ServiceModel.Description.ContractDescription description, class System.ServiceModel.Description.ServiceEndpoint endpoint, class System.ServiceModel.Dispatcher.ClientRuntime proxy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.DeliveryRequirementsAttribute.System#ServiceModel#Description#IContractBehavior#ApplyClientBehavior(System.ServiceModel.Description.ContractDescription,System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.ClientRuntime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="description" Type="System.ServiceModel.Description.ContractDescription" />
+        <Parameter Name="endpoint" Type="System.ServiceModel.Description.ServiceEndpoint" />
+        <Parameter Name="proxy" Type="System.ServiceModel.Dispatcher.ClientRuntime" />
+      </Parameters>
+      <Docs>
+        <param name="description">動作が関連付けられたコントラクトの記述。</param>
+        <param name="endpoint">コントラクトのエンドポイント。</param>
+        <param name="proxy">動作が実行されるクライアント ランタイム。</param>
+        <summary>クライアントをサポートするための <see cref="M:System.ServiceModel.DeliveryRequirementsAttribute.System#ServiceModel#Description#IContractBehavior#ApplyClientBehavior(System.ServiceModel.Description.ContractDescription,System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.ClientRuntime)" /> メソッドの実装です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IContractBehavior.ApplyDispatchBehavior">
+      <MemberSignature Language="C#" Value="void IContractBehavior.ApplyDispatchBehavior (System.ServiceModel.Description.ContractDescription description, System.ServiceModel.Description.ServiceEndpoint endpoint, System.ServiceModel.Dispatcher.DispatchRuntime dispatch);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IContractBehavior.ApplyDispatchBehavior(class System.ServiceModel.Description.ContractDescription description, class System.ServiceModel.Description.ServiceEndpoint endpoint, class System.ServiceModel.Dispatcher.DispatchRuntime dispatch) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.DeliveryRequirementsAttribute.System#ServiceModel#Description#IContractBehavior#ApplyDispatchBehavior(System.ServiceModel.Description.ContractDescription,System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.DispatchRuntime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="description" Type="System.ServiceModel.Description.ContractDescription" />
+        <Parameter Name="endpoint" Type="System.ServiceModel.Description.ServiceEndpoint" />
+        <Parameter Name="dispatch" Type="System.ServiceModel.Dispatcher.DispatchRuntime" />
+      </Parameters>
+      <Docs>
+        <param name="description">動作が関連付けられたコントラクトの記述。</param>
+        <param name="endpoint">コントラクトのエンドポイント。</param>
+        <param name="dispatch">エンドポイントをサポートするディスパッチ ランタイム。</param>
+        <summary>サービスのサポートを有効にする <see cref="M:System.ServiceModel.Description.IContractBehavior.ApplyDispatchBehavior(System.ServiceModel.Description.ContractDescription,System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.DispatchRuntime)" /> メソッドの実装です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IContractBehavior.Validate">
+      <MemberSignature Language="C#" Value="void IContractBehavior.Validate (System.ServiceModel.Description.ContractDescription description, System.ServiceModel.Description.ServiceEndpoint endpoint);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IContractBehavior.Validate(class System.ServiceModel.Description.ContractDescription description, class System.ServiceModel.Description.ServiceEndpoint endpoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.DeliveryRequirementsAttribute.System#ServiceModel#Description#IContractBehavior#Validate(System.ServiceModel.Description.ContractDescription,System.ServiceModel.Description.ServiceEndpoint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="description" Type="System.ServiceModel.Description.ContractDescription" />
+        <Parameter Name="endpoint" Type="System.ServiceModel.Description.ServiceEndpoint" />
+      </Parameters>
+      <Docs>
+        <param name="description">コントラクトの記述。</param>
+        <param name="endpoint">検証されるエンドポイント。</param>
+        <summary><see cref="M:System.ServiceModel.DeliveryRequirementsAttribute.System#ServiceModel#Description#IContractBehavior#Validate(System.ServiceModel.Description.ContractDescription,System.ServiceModel.Description.ServiceEndpoint)" /> メソッドを実装して、検証のサポートを有効にします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetContract">
+      <MemberSignature Language="C#" Value="public Type TargetContract { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type TargetContract" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.DeliveryRequirementsAttribute.TargetContract" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型の適用先を取得または設定します。</summary>
+        <value>属性を適用する <see cref="T:System.Type" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サービス クラスは、任意の数のサービス コントラクト インターフェイスを実装できます。 <xref:System.ServiceModel.DeliveryRequirementsAttribute.TargetContract%2A> プロパティを使用して、<xref:System.ServiceModel.DeliveryRequirementsAttribute.TargetContract%2A> が設定されたエンドポイントに、要件をサポートしているバインドがあることを検証します。 この属性は、同じクラスに対して任意の回数だけ使用できます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.ServiceModel.DeliveryRequirementsAttribute> 属性を使用して、実際のバインドでキュー付きのコントラクトをサポートしていないこと、ただし順序付けられたメッセージをサポートしていることをランタイムで確認するように [!INCLUDE[indigo2](~/includes/indigo2-md.md)] に指示しています。 さらに、この制約を適用するターゲット コントラクトも指定しています。  
+  
+ [!code-csharp[UEDeliveryRequirementsAttribute#2](~/samples/snippets/csharp/VS_Snippets_CFX/uedeliveryrequirementsattribute/cs/snippet2.cs#2)]
+ [!code-vb[UEDeliveryRequirementsAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/uedeliveryrequirementsattribute/vb/snippet2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,1089 @@
+<Type Name="RadioButtonList" FullName="System.Web.UI.WebControls.RadioButtonList">
+  <TypeSignature Language="C#" Value="public class RadioButtonList : System.Web.UI.WebControls.ListControl, System.Web.UI.INamingContainer, System.Web.UI.IPostBackDataHandler, System.Web.UI.WebControls.IRepeatInfoUser" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RadioButtonList extends System.Web.UI.WebControls.ListControl implements class System.Web.UI.INamingContainer, class System.Web.UI.IPostBackDataHandler, class System.Web.UI.WebControls.IRepeatInfoUser" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.RadioButtonList" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.ListControl</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.INamingContainer</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.UI.IPostBackDataHandler</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.UI.WebControls.IRepeatInfoUser</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.UI.SupportsEventValidation</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ValidationProperty("SelectedItem")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>オプション ボタン コントロールのグループをカプセル化するリスト コントロールを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このトピックの内容  
+  
+-   [はじめに](#introduction)  
+  
+-   [リストのレイアウトを指定します。](#specifying_list_layout)  
+  
+-   [ユーザー補助](#accessibility)  
+  
+-   [宣言型の構文](#declarative_syntax)  
+  
+<a name="introduction"></a>   
+## <a name="introduction"></a>はじめに  
+ <xref:System.Web.UI.WebControls.RadioButtonList>コントロールがページを開発者にデータ バインディングを動的に生成できる単一選択のラジオ ボタン グループを提供します。 含まれている、<xref:System.Web.UI.WebControls.ListControl.Items%2A>リストに個々 の項目に対応するメンバーを含むコレクション。 選択されている項目を特定するのには、テスト、<xref:System.Web.UI.WebControls.ListControl.SelectedItem%2A>リストのプロパティです。  
+  
+<a name="specifying_list_layout"></a>   
+## <a name="specifying-list-layout"></a>リストのレイアウトを指定します。  
+ 設定をボックスの一覧を表示する方法を指定することができます、<xref:System.Web.UI.WebControls.RadioButtonList.RepeatLayout%2A>と<xref:System.Web.UI.WebControls.RadioButtonList.RepeatDirection%2A>プロパティです。 レイアウト オプションについては、次を参照してください。、<xref:System.Web.UI.WebControls.RepeatLayout>列挙します。  
+  
+ 既定では、<xref:System.Web.UI.WebControls.RadioButtonList.RepeatDirection%2A> は `RepeatDirection.Vertical` に設定されています。 このプロパティを設定`RepeatDirection.Horizontal`コントロールを水平方向に一覧を表示します。 いくつか<xref:System.Web.UI.WebControls.RadioButtonList.RepeatLayout%2A>設定は水平方向のレイアウトを許可していません。 詳細については、<xref:System.Web.UI.WebControls.RepeatLayout> 列挙型のページをご覧ください。  
+  
+> [!CAUTION]
+>  このコントロールは、悪意のあるクライアント スクリプトが含まれる可能性があります、ユーザー入力を表示する使用できます。 スクリプトの実行可能ファイル、SQL ステートメント、またはその他のコードをアプリケーションに表示する前に、クライアントから送信される情報を確認します。 入力テキストを表示する前にユーザー入力を検証する検証コントロールを使用することができます、<xref:System.Web.UI.WebControls.RadioButtonList>コントロール。 ASP.NET は、入力要求の検証機能があり、ユーザー入力の中のスクリプトのブロックと HTML を提供します。 詳細については、次を参照してください。[標準コントロールのセキュリティで保護する](http://msdn.microsoft.com/library/f3e7718f-63d0-44a3-bd5f-48cc2059c2a8)、[する方法: 保護に対してスクリプトによる攻略の文字列を HTML エンコードを適用することによって、Web アプリケーションで](http://msdn.microsoft.com/library/6f67973f-dda0-45a1-ba9d-e88532d7dc5b)、および[ASP.NET Web Pages でのユーザー入力の検証](http://msdn.microsoft.com/library/4ad3dacb-89e0-4cee-89ac-40a3f2a85461)です。  
+  
+<a name="accessibility"></a>   
+## <a name="accessibility"></a>ユーザー補助  
+ ユーザー補助の標準に準拠するマークアップを生成するように、このコントロールを構成する方法については、次を参照してください。 [Visual Studio と ASP.NET のユーザー補助機能](http://msdn.microsoft.com/library/7e3ce9c4-6b7d-4fb1-94b5-72cf2a44fe13)と[ASP.NET コントロールやアクセシビリティ](http://msdn.microsoft.com/library/847a37e3-ce20-41da-b0d3-7dfb0fdae9a0)です。  
+  
+<a name="declarative_syntax"></a>   
+## <a name="declarative-syntax"></a>宣言型の構文  
+  
+```  
+<asp:RadioButtonList  
+    AccessKey="string"  
+    AppendDataBoundItems="True|False"  
+    AutoPostBack="True|False"  
+    BackColor="color name|#dddddd"  
+    BorderColor="color name|#dddddd"  
+    BorderStyle="NotSet|None|Dotted|Dashed|Solid|Double|Groove|Ridge|  
+        Inset|Outset"  
+    BorderWidth="size"  
+    CausesValidation="True|False"  
+    CellPadding="integer"  
+    CellSpacing="integer"  
+    CssClass="string"  
+    DataMember="string"  
+    DataSource="string"  
+    DataSourceID="string"  
+    DataTextField="string"  
+    DataTextFormatString="string"  
+    DataValueField="string"  
+    Enabled="True|False"  
+    EnableTheming="True|False"  
+    EnableViewState="True|False"  
+    Font-Bold="True|False"  
+    Font-Italic="True|False"  
+    Font-Names="string"  
+    Font-Overline="True|False"  
+    Font-Size="string|Smaller|Larger|XX-Small|X-Small|Small|Medium|  
+        Large|X-Large|XX-Large"  
+    Font-Strikeout="True|False"  
+    Font-Underline="True|False"  
+    ForeColor="color name|#dddddd"  
+    Height="size"  
+    ID="string"  
+    OnDataBinding="DataBinding event handler"  
+    OnDataBound="DataBound event handler"  
+    OnDisposed="Disposed event handler"  
+    OnInit="Init event handler"  
+    OnLoad="Load event handler"  
+    OnPreRender="PreRender event handler"  
+    OnSelectedIndexChanged="SelectedIndexChanged event handler"  
+    OnTextChanged="TextChanged event handler"  
+    OnUnload="Unload event handler"  
+    RepeatColumns="integer"  
+    RepeatDirection="Horizontal|Vertical"  
+    RepeatLayout="Table|Flow|OrderedList|UnorderedList"  
+    runat="server"  
+    SelectedIndex="integer"  
+    SelectedValue="string"  
+    SkinID="string"  
+    Style="string"  
+    TabIndex="integer"  
+    TextAlign="Left|Right"  
+    ToolTip="string"  
+    ValidationGroup="string"  
+    Visible="True|False"  
+    Width="size"  
+>  
+            <asp:ListItem  
+                Enabled="True|False"  
+                Selected="True|False"  
+                Text="string"  
+                Value="string"  
+            />  
+</asp:RadioButtonList>  
+```  
+  
+   
+  
+## Examples  
+ 次のコード例は、プログラムでの表示を変更する方法を示します、<xref:System.Web.UI.WebControls.RadioButtonList>コントロール。  
+  
+> [!NOTE]
+>  次のコード例では、単一ファイルのコード モデルを使用しが正しく動作しない場合は、分離コード ファイルに直接コピーします。 このコード例は、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[Classic RadioButtonList Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic RadioButtonList Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic RadioButtonList Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic RadioButtonList Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RadioButtonList ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RadioButtonList.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.RadioButtonList" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.RadioButtonList>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CellPadding">
+      <MemberSignature Language="C#" Value="public virtual int CellPadding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CellPadding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RadioButtonList.CellPadding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(-1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーブル セルの境界と内容との間隔 (ピクセル単位) を取得または設定します。</summary>
+        <value>テーブル セルの境界と内容との間隔 (ピクセル単位)。 既定値は -1 です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、<xref:System.Web.UI.WebControls.RadioButtonList.RepeatLayout%2A> プロパティが `RepeatLayout.Table` に設定されている場合にのみ適用されます。  
+  
+ このプロパティを使用して、セルの内容と、セルの境界線の間の余白を制御します。  
+  
+ 指定されたパディングの量は、セルの 4 つすべての側面に追加されます。 テーブルの行内のセルの高さと最も幅の広いテーブルのセルの幅を使用します。 結果として得られるセルのサイズは、テーブルのすべてのセルに一様に適用されます。 個々 のセルのサイズを指定することはできません。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.RadioButtonList.CellPadding%2A>のセルの余白を埋めるためのプロパティ、 <xref:System.Web.UI.WebControls.RadioButtonList> 10 ピクセルを制御します。  
+  
+ [!code-aspx-csharp[Classic RadioButtonList.CellPadding Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic RadioButtonList.CellPadding Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic RadioButtonList.CellPadding Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic RadioButtonList.CellPadding Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CellSpacing">
+      <MemberSignature Language="C#" Value="public virtual int CellSpacing { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CellSpacing" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RadioButtonList.CellSpacing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(-1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>隣接するテーブル セル間の間隔 (ピクセル単位) を取得または設定します。</summary>
+        <value>隣接するテーブル セル間の間隔 (ピクセル単位)。 既定値は -1 です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、<xref:System.Web.UI.WebControls.RadioButtonList.RepeatLayout%2A> プロパティが `RepeatLayout.Table` に設定されている場合にのみ適用されます。  
+  
+ このプロパティを使用すると、テーブルの個々 のセルの間隔を制御できます。 このプロパティは、垂直および水平方向の両方が適用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.RadioButtonList.CellSpacing%2A>プロパティ領域のセルを<xref:System.Web.UI.WebControls.RadioButtonList>コントロールの間隔を 10 ピクセルです。  
+  
+ [!code-aspx-csharp[Classic RadioButtonList.CellSpacing Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic RadioButtonList.CellSpacing Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic RadioButtonList.CellSpacing Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic RadioButtonList.CellSpacing Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateControlStyle">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.WebControls.Style CreateControlStyle ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.WebControls.Style CreateControlStyle() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RadioButtonList.CreateControlStyle" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Style</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてのスタイル関連プロパティを実装するために <see cref="T:System.Web.UI.WebControls.RadioButtonList" /> コントロールが内部で使用するスタイル オブジェクトを作成します。</summary>
+        <returns>コントロールのスタイルのプロパティを格納する <see cref="T:System.Web.UI.WebControls.Style" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.RadioButtonList.CreateControlStyle%2A>から派生するカスタム コントロールのコントロールの開発者によって、主にメソッドが使用される、<xref:System.Web.UI.WebControls.RadioButtonList>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Web.UI.WebControls.RadioButtonList.CreateControlStyle%2A>常空ようにカスタム サーバー内のメソッドが制御<xref:System.Web.UI.WebControls.TableStyle>オブジェクトに対して、<xref:System.Web.UI.WebControls.RadioButtonList>コントロール。  
+  
+ [!code-aspx-csharp[CustomRadioButtonListCreateControlStyle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomRadioButtonListCreateControlStyle/CS/custom_radiobuttonlist_createcontrolstylecs.aspx#1)]
+ [!code-aspx-vb[CustomRadioButtonListCreateControlStyle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomRadioButtonListCreateControlStyle/VB/custom_radiobuttonlist_createcontrolstylevb.aspx#1)]  
+[!code-csharp[CustomRadioButtonListCreateControlStyle#2](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomRadioButtonListCreateControlStyle/CS/custom_radiobuttonlist_createcontrolstyle.cs#2)]
+[!code-vb[CustomRadioButtonListCreateControlStyle#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomRadioButtonListCreateControlStyle/VB/custom_radiobuttonlist_createcontrolstyle.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindControl">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.Control FindControl (string id, int pathOffset);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.Control FindControl(string id, int32 pathOffset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RadioButtonList.FindControl(System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Control</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.String" />
+        <Parameter Name="pathOffset" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="id">検索するコントロールの識別子。</param>
+        <param name="pathOffset">名前付けコンテナーに到達するために必要なページ コントロール階層までのコントロールの数。</param>
+        <summary>指定した ID とパスのオフセットを使用して、サーバー コントロールの現在の名前付けコンテナーを検索します。 <see cref="M:System.Web.UI.WebControls.RadioButtonList.FindControl(System.String,System.Int32)" /> メソッドは、常に <see cref="T:System.Web.UI.WebControls.RadioButtonList" /> オブジェクトを返します。</summary>
+        <returns>現在の <see cref="T:System.Web.UI.WebControls.RadioButtonList" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.RadioButtonList.FindControl%2A>から派生するカスタム コントロールへのコントロールの開発者によって、主にメソッドが使用される、<xref:System.Web.UI.WebControls.RadioButtonList>クラスです。  
+  
+ <xref:System.Web.UI.WebControls.RadioButtonList.FindControl%2A>メソッドのオーバーライド、<xref:System.Web.UI.Control.FindControl%2A?displayProperty=nameWithType>メソッド ベースの<xref:System.Web.UI.Control>クラスです。 このバージョンを無効にする必要があります、<xref:System.Web.UI.Control.FindControl%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetItemStyle">
+      <MemberSignature Language="C#" Value="protected virtual System.Web.UI.WebControls.Style GetItemStyle (System.Web.UI.WebControls.ListItemType itemType, int repeatIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Web.UI.WebControls.Style GetItemStyle(valuetype System.Web.UI.WebControls.ListItemType itemType, int32 repeatIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RadioButtonList.GetItemStyle(System.Web.UI.WebControls.ListItemType,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Style</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="itemType" Type="System.Web.UI.WebControls.ListItemType" />
+        <Parameter Name="repeatIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="itemType"><see cref="T:System.Web.UI.WebControls.ListItemType" /> 列挙値のいずれか。</param>
+        <param name="repeatIndex">リスト コントロールの項目の位置を指定する序数インデックス。</param>
+        <summary>リスト コントロール内の指定したインデックス位置にある指定した項目の型のスタイルを取得します。</summary>
+        <returns>
+          <see langword="null" />。<see cref="T:System.Web.UI.WebControls.RadioButtonList" /> コントロールの個々のリスト項目でスタイル属性が設定されていないことを示します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.RadioButtonList.GetItemStyle%2A>から派生するカスタム コントロールへのコントロールの開発者によって、主にメソッドが使用される、<xref:System.Web.UI.WebControls.RadioButtonList>クラスです。  
+  
+ スタイル属性を<xref:System.Web.UI.WebControls.RadioButtonList>コントロールがコントロールに含まれるすべてのリスト項目に適用されます。 使用して、<xref:System.Web.UI.WebControls.Style>のプロパティ、<xref:System.Web.UI.WebControls.RadioButtonList>を調べるか、コントロールとそのリスト項目のスタイル属性を設定するコントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasFooter">
+      <MemberSignature Language="C#" Value="protected virtual bool HasFooter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasFooter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RadioButtonList.HasFooter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.RadioButtonList" /> コントロールにフッター セクションが格納されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="false" />。<see cref="T:System.Web.UI.WebControls.RadioButtonList" /> にフッター セクションが格納されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.RadioButtonList.HasFooter%2A>プロパティは、主にから派生するカスタム コントロールへのコントロールの開発者によって使用、<xref:System.Web.UI.WebControls.RadioButtonList>クラスです。 フッターがありませんがサポートされているときに、<xref:System.Web.UI.WebControls.RadioButtonList.RepeatLayout%2A>プロパティに設定されている<xref:System.Web.UI.WebControls.RepeatLayout.UnorderedList>または<xref:System.Web.UI.WebControls.RepeatLayout.OrderedList>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasHeader">
+      <MemberSignature Language="C#" Value="protected virtual bool HasHeader { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasHeader" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RadioButtonList.HasHeader" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.RadioButtonList" /> コントロールに見出しセクションが格納されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="false" />。<see cref="T:System.Web.UI.WebControls.RadioButtonList" /> コントロールに見出しセクションが格納されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.RadioButtonList.HasHeader%2A>プロパティは、主にから派生するカスタム コントロールへのコントロールの開発者によって使用、<xref:System.Web.UI.WebControls.RadioButtonList>クラスです。 ヘッダーが非サポートされているときに、<xref:System.Web.UI.WebControls.RadioButtonList.RepeatLayout%2A>プロパティに設定されている<xref:System.Web.UI.WebControls.RepeatLayout.UnorderedList>または<xref:System.Web.UI.WebControls.RepeatLayout.OrderedList>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasSeparators">
+      <MemberSignature Language="C#" Value="protected virtual bool HasSeparators { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasSeparators" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RadioButtonList.HasSeparators" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.RadioButtonList" /> コントロールにリストの項目間の区切り記号が格納されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="false" />。<see cref="T:System.Web.UI.WebControls.RadioButtonList" /> コントロールに区切り記号が格納されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.RadioButtonList.HasSeparators%2A>プロパティは、主にから派生するカスタム コントロールへのコントロールの開発者によって使用、<xref:System.Web.UI.WebControls.RadioButtonList>クラスです。 区切り記号がない場合にサポートされている、<xref:System.Web.UI.WebControls.RadioButtonList.RepeatLayout%2A>プロパティに設定されている<xref:System.Web.UI.WebControls.RepeatLayout.UnorderedList>または<xref:System.Web.UI.WebControls.RepeatLayout.OrderedList>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadPostData">
+      <MemberSignature Language="C#" Value="protected virtual bool LoadPostData (string postDataKey, System.Collections.Specialized.NameValueCollection postCollection);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool LoadPostData(string postDataKey, class System.Collections.Specialized.NameValueCollection postCollection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RadioButtonList.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="postDataKey" Type="System.String" />
+        <Parameter Name="postCollection" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="postDataKey">使用される、コントロールのキー識別子をインデックスに、 <c>postCollection</c>です。</param>
+        <param name="postCollection">コントロール ID によってインデックス化された値の情報を格納している <see cref="T:System.Collections.Specialized.NameValueCollection" />。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.RadioButtonList" /> コントロールのポストされたデータを処理します。</summary>
+        <returns>
+          <see cref="T:System.Web.UI.WebControls.RadioButtonList" /> の状態が前回ポストされた内容と異なる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.RadioButtonList.LoadPostData%2A>から派生するカスタム コントロールへのコントロールの開発者によって、主にメソッドが使用される、<xref:System.Web.UI.WebControls.RadioButtonList>クラスです。  
+  
+ <xref:System.Web.UI.WebControls.RadioButtonList.LoadPostData%2A>メソッドを示すかどうかの状態、<xref:System.Web.UI.WebControls.RadioButtonList>コントロールが変更されました。 つまり、コントロールで選択した項目が前回ポストされた値と同じかどうかを判断します。 コントロールの変更で選択した項目を変更するユーザー、<xref:System.Web.UI.WebControls.ListControl.SelectedIndex%2A>値を<xref:System.Web.UI.WebControls.RadioButtonList>コントロール。 コントロールでは、同じリスト項目が選択されている場合、または場合、<xref:System.Web.UI.WebControls.RadioButtonList>コントロールが無効になっている<xref:System.Web.UI.WebControls.RadioButtonList.LoadPostData%2A>返します`false`です。  
+  
+ ときに、<xref:System.Web.UI.WebControls.RadioButtonList.LoadPostData%2A>メソッドを返します。`true`コントロール、ASP.NET ページ フレームワーク呼び出し、<xref:System.Web.UI.WebControls.RadioButtonList.RaisePostDataChangedEvent%2A>コントロールのメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInit">
+      <MemberSignature Language="C#" Value="protected override void OnInit (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnInit(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RadioButtonList.OnInit(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.Web.UI.Control.Init" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RaisePostDataChangedEvent">
+      <MemberSignature Language="C#" Value="protected virtual void RaisePostDataChangedEvent ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void RaisePostDataChangedEvent() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RadioButtonList.RaisePostDataChangedEvent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.RadioButtonList" /> コントロールの状態が変化したことを ASP.NET アプリケーションに通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.RadioButtonList.RaisePostDataChangedEvent%2A>から派生するカスタム コントロールへのコントロールの開発者によって、主にメソッドが使用される、<xref:System.Web.UI.WebControls.RadioButtonList>クラスです。  
+  
+ ASP.NET ページ フレームワークによって、<xref:System.Web.UI.WebControls.RadioButtonList.RaisePostDataChangedEvent%2A>メソッドを<xref:System.Web.UI.WebControls.RadioButtonList>タイミングを制御、<xref:System.Web.UI.WebControls.RadioButtonList.LoadPostData%2A>メソッドは、リスト項目の状態が変更されたことを示しますで、<xref:System.Web.UI.WebControls.RadioButtonList>コントロール。 <xref:System.Web.UI.WebControls.RadioButtonList.RaisePostDataChangedEvent%2A>メソッドの呼び出し、<xref:System.Web.UI.WebControls.ListControl.OnSelectedIndexChanged%2A>させる方法、<xref:System.Web.UI.WebControls.ListControl.SelectedIndexChanged>イベント。 コントロール開発者、<xref:System.Web.UI.WebControls.ListControl.OnSelectedIndexChanged%2A>ユーザーがコントロールで選択した項目を変更すると、カスタム処理を実行するメソッド。  
+  
+ `RaisePostBackEvent`メソッドは、発生させる前に検証を実行できます必要に応じて、<xref:System.Web.UI.WebControls.ListControl.SelectedIndexChanged>コントロールのイベントです。 内のリスト項目にしたときに、ページ上のコントロールのグループを検証する、<xref:System.Web.UI.WebControls.RadioButtonList>コントロールが選択されている場合、設定、<xref:System.Web.UI.WebControls.ListControl.AutoPostBack%2A>と<xref:System.Web.UI.WebControls.ListControl.CausesValidation%2A>プロパティを`true`で検証するコントロールのグループを指定し、<xref:System.Web.UI.WebControls.ListControl.ValidationGroup%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="protected override void Render (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Render(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RadioButtonList.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">クライアントに表示する出力ストリームを格納する <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary>クライアントに <see cref="T:System.Web.UI.WebControls.RadioButtonList" /> コントロールを表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、主にから派生するカスタム コントロールへのコントロールの開発者によって使用、<xref:System.Web.UI.WebControls.RadioButtonList>クラスです。  
+  
+ <xref:System.Web.UI.WebControls.RadioButtonList.Render%2A>のメソッドの実装、<xref:System.Web.UI.WebControls.RadioButtonList>初期化を制御、<xref:System.Web.UI.WebControls.RepeatInfo>一覧、および呼び出しオブジェクト、<xref:System.Web.UI.WebControls.RepeatInfo.RenderRepeater%2A>メソッドで、順番に使用して、<xref:System.Web.UI.WebControls.RadioButtonList.RenderItem%2A>個々 に表示するためにメソッドのラジオ ボタン リスト項目。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.WebControls.RadioButtonList.Render%2A>カスタム サーバー コントロールできるように、<xref:System.Web.UI.WebControls.RadioButtonList>コントロールが常にわかりやすいテキストで表示されます。  
+  
+ [!code-aspx-csharp[CustomRadioButtonListRender#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomRadioButtonListRender/CS/custom_radiobuttonlist_rendercs.aspx#1)]
+ [!code-aspx-vb[CustomRadioButtonListRender#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomRadioButtonListRender/VB/custom_radiobuttonlist_rendervb.aspx#1)]  
+[!code-csharp[CustomRadioButtonListRender#2](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomRadioButtonListRender/CS/custom_radiobuttonlist_render.cs#2)]
+[!code-vb[CustomRadioButtonListRender#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomRadioButtonListRender/VB/custom_radiobuttonlist_render.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderItem">
+      <MemberSignature Language="C#" Value="protected virtual void RenderItem (System.Web.UI.WebControls.ListItemType itemType, int repeatIndex, System.Web.UI.WebControls.RepeatInfo repeatInfo, System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void RenderItem(valuetype System.Web.UI.WebControls.ListItemType itemType, int32 repeatIndex, class System.Web.UI.WebControls.RepeatInfo repeatInfo, class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RadioButtonList.RenderItem(System.Web.UI.WebControls.ListItemType,System.Int32,System.Web.UI.WebControls.RepeatInfo,System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="itemType" Type="System.Web.UI.WebControls.ListItemType" />
+        <Parameter Name="repeatIndex" Type="System.Int32" />
+        <Parameter Name="repeatInfo" Type="System.Web.UI.WebControls.RepeatInfo" />
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="itemType"><see cref="T:System.Web.UI.WebControls.ListItemType" /> 列挙値のいずれか。</param>
+        <param name="repeatIndex">リスト コントロールの項目の位置を指定する序数インデックス。</param>
+        <param name="repeatInfo">リストの項目を表示するために使用する情報を表す <see cref="T:System.Web.UI.WebControls.RepeatInfo" />。</param>
+        <param name="writer">HTML コンテンツをクライアントに表示する出力ストリームを表す <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.RadioButtonList" /> コントロール内のリスト項目を表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、主にから派生するカスタム コントロールへのコントロールの開発者によって使用、<xref:System.Web.UI.WebControls.RadioButtonList>クラスです。  
+  
+ <xref:System.Web.UI.WebControls.RadioButtonList.Render%2A>のメソッドの実装、<xref:System.Web.UI.WebControls.RadioButtonList>初期化を制御、<xref:System.Web.UI.WebControls.RepeatInfo>一覧、および呼び出しオブジェクト、<xref:System.Web.UI.WebControls.RepeatInfo.RenderRepeater%2A>メソッドで、順番に使用して、<xref:System.Web.UI.WebControls.RadioButtonList.RenderItem%2A>個々 のラジオ ボタンの一覧の項目を表示するためにメソッドです。  
+  
+ <xref:System.Web.UI.WebControls.RadioButtonList.RenderItem%2A>のメソッド、<xref:System.Web.UI.WebControls.RadioButtonList>コントロールは無視されます、`itemType`と`repeatInfo`パラメーター。 `repeatIndex`でオプション ボタン ボックスの一覧の項目を選択するパラメーターの値が使用される、<xref:System.Web.UI.WebControls.ListControl.Items%2A>コレクション、および選択した項目は、出力ストリームにレンダリングされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderWhenDataEmpty">
+      <MemberSignature Language="C#" Value="public virtual bool RenderWhenDataEmpty { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RenderWhenDataEmpty" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RadioButtonList.RenderWhenDataEmpty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ソースにデータがない場合や、コントロールがデータ バインドされていない場合にコントロールを表示するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          データ ソースにデータがない場合や、コントロールがデータ バインドされていない場合にコントロールを表示する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RepeatColumns">
+      <MemberSignature Language="C#" Value="public virtual int RepeatColumns { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RepeatColumns" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RadioButtonList.RepeatColumns" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.RadioButtonList" /> コントロールに表示する列数を取得または設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.RadioButtonList" /> に表示する列数。 既定値は 0 です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.RadioButtonList.RepeatLayout%2A>プロパティに設定されている<xref:System.Web.UI.WebControls.RepeatLayout.Table>、内の項目を表示する列の数を指定するこのプロパティを使用することができます、<xref:System.Web.UI.WebControls.RadioButtonList>コントロール。 このプロパティが設定されていない場合、<xref:System.Web.UI.WebControls.RadioButtonList>コントロールはすべての項目を 1 つの列に一覧表示します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.RadioButtonList.RepeatColumns%2A>の項目を表示するプロパティ、 <xref:System.Web.UI.WebControls.RadioButtonList> 2 つの列内のコントロールです。  
+  
+ [!code-aspx-csharp[Classic RadioButtonList.RepeatColumns Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic RadioButtonList.RepeatColumns Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic RadioButtonList.RepeatColumns Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic RadioButtonList.RepeatColumns Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">列の数は負の値に設定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RepeatDirection">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.RepeatDirection RepeatDirection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.RepeatDirection RepeatDirection" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RadioButtonList.RepeatDirection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.RepeatDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グループのオプション ボタンを表示する方向を取得または設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.RepeatDirection" /> 値のいずれか。 既定値は、<see langword="Vertical" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの表示方向を指定を使用して、<xref:System.Web.UI.WebControls.RadioButtonList>コントロール。  
+  
+> [!NOTE]
+>  表示される列の数がによって決まります常に、<xref:System.Web.UI.WebControls.RadioButtonList.RepeatColumns%2A>プロパティです。  
+  
+ このプロパティ設定されている場合`RepeatDirection.Vertical`場合に、<xref:System.Web.UI.WebControls.RadioButtonList.RepeatLayout%2A>プロパティに設定されている<xref:System.Web.UI.WebControls.RepeatLayout.Table>、上から下に、次の列にすべてのアイテムがレンダリングされるまで、最初の列を入力します。 たとえば場合、<xref:System.Web.UI.WebControls.RadioButtonList.RepeatColumns%2A>の項目 3 に設定されている、<xref:System.Web.UI.WebControls.RadioButtonList>コントロールが 3 つの列に表示されます。 9 項目のリストは次のようです。  
+  
+||||  
+|-|-|-|  
+|1|4|7|  
+|2|5|9|  
+|3|6|9|  
+  
+ このプロパティ設定されている場合`RepeatDirection.Horizontal`場合に、<xref:System.Web.UI.WebControls.RadioButtonList.RepeatLayout%2A>プロパティに設定されている<xref:System.Web.UI.WebControls.RepeatLayout.Table>上から下、すべてのアイテムがレンダリングされるまで、リスト内の項目が右側に左読み込まれた行に表示されます。 たとえば場合、<xref:System.Web.UI.WebControls.RadioButtonList.RepeatColumns%2A>の項目 3 に設定されている、<xref:System.Web.UI.WebControls.RadioButtonList>コントロールが 3 つの項目の行に表示されます。 9 項目のリストは次のようです。  
+  
+||||  
+|-|-|-|  
+|1|2|3|  
+|4|5|6|  
+|7|9|9|  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.RadioButtonList.RepeatDirection%2A>の項目を表示するプロパティ、<xref:System.Web.UI.WebControls.RadioButtonList>上下から、左から右に列内のコントロールです。  
+  
+ [!code-aspx-csharp[Classic RadioButtonList.RepeatDirection Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic RadioButtonList.RepeatDirection Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic RadioButtonList.RepeatDirection Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic RadioButtonList.RepeatDirection Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">一覧の表示方向が、<see cref="T:System.Web.UI.WebControls.RepeatDirection" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RepeatedItemCount">
+      <MemberSignature Language="C#" Value="protected virtual int RepeatedItemCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RepeatedItemCount" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RadioButtonList.RepeatedItemCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.RadioButtonList" /> コントロールのリスト項目の数を取得します。</summary>
+        <value>リスト コントロールの項目の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.RadioButtonList.RepeatedItemCount%2A>プロパティは、主にから派生するカスタム コントロールへのコントロールの開発者によって使用、<xref:System.Web.UI.WebControls.RadioButtonList>クラスです。  
+  
+ 項目が設定されていないがある場合、<xref:System.Web.UI.WebControls.RadioButtonList>コントロール、<xref:System.Web.UI.WebControls.RadioButtonList.RepeatedItemCount%2A>プロパティが 0 です。 項目では設定がある場合、<xref:System.Web.UI.WebControls.RadioButtonList>コントロール、<xref:System.Web.UI.WebControls.RadioButtonList.RepeatedItemCount%2A>プロパティと同じ、<xref:System.Web.UI.WebControls.ListItemCollection.Count%2A?displayProperty=nameWithType>プロパティを<xref:System.Web.UI.WebControls.ListControl.Items%2A>コレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RepeatLayout">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.RepeatLayout RepeatLayout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.RepeatLayout RepeatLayout" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RadioButtonList.RepeatLayout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.RepeatLayout</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="table" /> 要素、<see langword="ul" /> 要素、<see langword="ol" /> 要素、<see langword="span" /> 要素のいずれを使用してリストを出力するかを指定する値を取得または設定します。</summary>
+        <value><see langword="table" /> 要素、<see langword="ul" /> 要素、<see langword="ol" /> 要素、<see langword="span" /> 要素のいずれを使用してリストを出力するかを指定する値。 既定値は、<see cref="F:System.Web.UI.WebControls.RepeatLayout.Table" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用可能なオプションについては、次を参照してください。、<xref:System.Web.UI.WebControls.RepeatLayout>列挙します。  
+  
+> [!NOTE]
+>  2 つのオプションは、ASP.NET 4 の時点で新しい:<xref:System.Web.UI.WebControls.RepeatLayout.OrderedList>と<xref:System.Web.UI.WebControls.RepeatLayout.UnorderedList>です。  
+  
+ いくつか<xref:System.Web.UI.WebControls.RadioButtonList.RepeatLayout%2A>設定は水平方向のレイアウトを許可していません。 詳細については、<xref:System.Web.UI.WebControls.RepeatLayout> 列挙型のページをご覧ください。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.RadioButtonList.RepeatLayout%2A>の項目を表示するプロパティ、<xref:System.Web.UI.WebControls.RadioButtonList>テーブルのコントロールです。  
+  
+ [!code-aspx-csharp[Classic RadioButtonList.RepeatLayout Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic RadioButtonList.RepeatLayout Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic RadioButtonList.RepeatLayout Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic RadioButtonList.RepeatLayout Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">ラジオ ボタンのレイアウトは、のいずれかではない、<see cref="T:System.Web.UI.WebControls.RepeatLayout" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IPostBackDataHandler.LoadPostData">
+      <MemberSignature Language="C#" Value="bool IPostBackDataHandler.LoadPostData (string postDataKey, System.Collections.Specialized.NameValueCollection postCollection);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Web.UI.IPostBackDataHandler.LoadPostData(string postDataKey, class System.Collections.Specialized.NameValueCollection postCollection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RadioButtonList.System#Web#UI#IPostBackDataHandler#LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="postDataKey" Type="System.String" />
+        <Parameter Name="postCollection" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="postDataKey">使用される、コントロールのキー識別子をインデックスに、 <c>postCollection</c>です。</param>
+        <param name="postCollection">コントロール ID によってインデックス化された値の情報を格納している <see cref="T:System.Collections.Specialized.NameValueCollection" />。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.RadioButtonList" /> コントロールのポストされたデータを処理します。</summary>
+        <returns>
+          ポストバックの結果、サーバー コントロールの状態が変化した場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、使用する必要があります、<xref:System.Web.UI.WebControls.RadioButtonList.LoadPostData%2A?displayProperty=nameWithType>メソッドのプロセスにポストされたデータを<xref:System.Web.UI.WebControls.RadioButtonList>コントロール。  
+  
+ <xref:System.Web.UI.IPostBackDataHandler.LoadPostData%2A?displayProperty=nameWithType>メソッドは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.WebControls.RadioButtonList> のインスタンスが <xref:System.Web.UI.IPostBackDataHandler> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>ポストされたデータを処理するためのカスタム実装を定義する、<see cref="T:System.Web.UI.WebControls.RadioButtonList" />コントロールをオーバーライド、<see cref="M:System.Web.UI.WebControls.RadioButtonList.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)" />メソッドです。 明示的なインターフェイス実装の呼び出し、<see cref="M:System.Web.UI.WebControls.RadioButtonList.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)" />コントロールのポストされたデータを処理するメソッド。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IPostBackDataHandler.RaisePostDataChangedEvent">
+      <MemberSignature Language="C#" Value="void IPostBackDataHandler.RaisePostDataChangedEvent ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IPostBackDataHandler.RaisePostDataChangedEvent() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RadioButtonList.System#Web#UI#IPostBackDataHandler#RaisePostDataChangedEvent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールのポストされたデータが変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、使用する必要があります、<xref:System.Web.UI.WebControls.RadioButtonList.RaisePostDataChangedEvent%2A?displayProperty=nameWithType>イベントを発生させるメソッド時にポストされたデータを<xref:System.Web.UI.WebControls.RadioButtonList>変更を制御します。  
+  
+ <xref:System.Web.UI.WebControls.RadioButtonList.System%23Web%23UI%23IPostBackDataHandler%23RaisePostDataChangedEvent%2A>メソッドは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.WebControls.RadioButtonList> のインスタンスが <xref:System.Web.UI.IPostBackDataHandler> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>イベントを発生させるためのカスタム実装を定義する、<see cref="T:System.Web.UI.WebControls.RadioButtonList" />コントロールをオーバーライド、<see cref="M:System.Web.UI.WebControls.RadioButtonList.RaisePostDataChangedEvent" />メソッドです。 明示的なインターフェイス実装の呼び出し、<see cref="M:System.Web.UI.WebControls.RadioButtonList.RaisePostDataChangedEvent" />コントロールのポストされたデータが変更されたときにイベントを発生させる方法です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.WebControls.IRepeatInfoUser.GetItemStyle">
+      <MemberSignature Language="C#" Value="System.Web.UI.WebControls.Style IRepeatInfoUser.GetItemStyle (System.Web.UI.WebControls.ListItemType itemType, int repeatIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Web.UI.WebControls.Style System.Web.UI.WebControls.IRepeatInfoUser.GetItemStyle(valuetype System.Web.UI.WebControls.ListItemType itemType, int32 repeatIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RadioButtonList.System#Web#UI#WebControls#IRepeatInfoUser#GetItemStyle(System.Web.UI.WebControls.ListItemType,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Style</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="itemType" Type="System.Web.UI.WebControls.ListItemType" />
+        <Parameter Name="repeatIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="itemType"><see cref="T:System.Web.UI.WebControls.ListItemType" /> 列挙値のいずれか。</param>
+        <param name="repeatIndex">リスト内での項目の位置を指定する序数インデックス。</param>
+        <summary>リスト コントロール内の指定したインデックス位置にある指定した項目の型のスタイルを取得します。</summary>
+        <returns>リスト コントロール内の指定したインデックス位置にある指定した項目の型のスタイルを表す <see cref="T:System.Web.UI.WebControls.Style" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、使用する必要があります、<xref:System.Web.UI.WebControls.RadioButtonList.GetItemStyle%2A?displayProperty=nameWithType>内のアイテムのスタイルを取得する方法を<xref:System.Web.UI.WebControls.RadioButtonList>コントロール。  
+  
+ <xref:System.Web.UI.WebControls.RadioButtonList.System%23Web%23UI%23WebControls%23IRepeatInfoUser%23GetItemStyle%2A>メソッドは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.WebControls.RadioButtonList> のインスタンスが <xref:System.Web.UI.WebControls.IRepeatInfoUser> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>内のアイテムのスタイルを取得するためのカスタム実装を定義する、<see cref="T:System.Web.UI.WebControls.RadioButtonList" />コントロールをオーバーライド、<see cref="M:System.Web.UI.WebControls.RadioButtonList.GetItemStyle(System.Web.UI.WebControls.ListItemType,System.Int32)" />メソッドです。 明示的なインターフェイス実装の呼び出し、<see cref="M:System.Web.UI.WebControls.RadioButtonList.GetItemStyle(System.Web.UI.WebControls.ListItemType,System.Int32)" />アイテムのスタイルを取得します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.WebControls.IRepeatInfoUser.HasFooter">
+      <MemberSignature Language="C#" Value="bool System.Web.UI.WebControls.IRepeatInfoUser.HasFooter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Web.UI.WebControls.IRepeatInfoUser.HasFooter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RadioButtonList.System#Web#UI#WebControls#IRepeatInfoUser#HasFooter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リスト コントロールにフッター セクションが格納されているかどうかを示す値を取得します。</summary>
+        <value>
+          リスト コントロールにフッター セクションが格納されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、明示的なインターフェイス メンバーの実装です。 使用する場合にのみ、<xref:System.Web.UI.WebControls.RadioButtonList>にインスタンスをキャスト、<xref:System.Web.UI.WebControls.IRepeatInfoUser>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>カスタム実装を定義する、<see cref="P:System.Web.UI.WebControls.RadioButtonList.System#Web#UI#WebControls#IRepeatInfoUser#HasFooter" />プロパティに、<see cref="T:System.Web.UI.WebControls.RadioButtonList" />コントロールをオーバーライド、<see cref="P:System.Web.UI.WebControls.RadioButtonList.HasFooter" />プロパティです。 明示的なインターフェイス実装を使用して、<see cref="P:System.Web.UI.WebControls.RadioButtonList.HasFooter" />プロパティです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.WebControls.IRepeatInfoUser.HasHeader">
+      <MemberSignature Language="C#" Value="bool System.Web.UI.WebControls.IRepeatInfoUser.HasHeader { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Web.UI.WebControls.IRepeatInfoUser.HasHeader" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RadioButtonList.System#Web#UI#WebControls#IRepeatInfoUser#HasHeader" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リスト コントロールに見出しセクションが格納されているかどうかを示す値を取得します。</summary>
+        <value>
+          リスト コントロールに見出しセクションが格納されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、明示的なインターフェイス メンバーの実装です。 使用する場合にのみ、<xref:System.Web.UI.WebControls.RadioButtonList>にインスタンスをキャスト、<xref:System.Web.UI.WebControls.IRepeatInfoUser>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>カスタム実装を定義する、<see cref="P:System.Web.UI.WebControls.RadioButtonList.System#Web#UI#WebControls#IRepeatInfoUser#HasHeader" />プロパティに、<see cref="T:System.Web.UI.WebControls.RadioButtonList" />コントロールをオーバーライド、<see cref="P:System.Web.UI.WebControls.RadioButtonList.HasHeader" />プロパティです。 明示的なインターフェイス実装を使用して、<see cref="P:System.Web.UI.WebControls.RadioButtonList.HasHeader" />プロパティです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.WebControls.IRepeatInfoUser.HasSeparators">
+      <MemberSignature Language="C#" Value="bool System.Web.UI.WebControls.IRepeatInfoUser.HasSeparators { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Web.UI.WebControls.IRepeatInfoUser.HasSeparators" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RadioButtonList.System#Web#UI#WebControls#IRepeatInfoUser#HasSeparators" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リスト コントロールにリストの項目間の区切り記号が格納されているかどうかを示す値を取得します。</summary>
+        <value>
+          リスト コントロールに区切り記号が格納されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、明示的なインターフェイス メンバーの実装です。 使用する場合にのみ、<xref:System.Web.UI.WebControls.RadioButtonList>にインスタンスをキャスト、<xref:System.Web.UI.WebControls.IRepeatInfoUser>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>カスタム実装を定義する、<see cref="P:System.Web.UI.WebControls.RadioButtonList.System#Web#UI#WebControls#IRepeatInfoUser#HasSeparators" />プロパティに、<see cref="T:System.Web.UI.WebControls.RadioButtonList" />コントロールをオーバーライド、<see cref="P:System.Web.UI.WebControls.RadioButtonList.HasSeparators" />プロパティです。 明示的なインターフェイス実装を使用して、<see cref="P:System.Web.UI.WebControls.RadioButtonList.HasSeparators" />プロパティです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.WebControls.IRepeatInfoUser.RenderItem">
+      <MemberSignature Language="C#" Value="void IRepeatInfoUser.RenderItem (System.Web.UI.WebControls.ListItemType itemType, int repeatIndex, System.Web.UI.WebControls.RepeatInfo repeatInfo, System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.WebControls.IRepeatInfoUser.RenderItem(valuetype System.Web.UI.WebControls.ListItemType itemType, int32 repeatIndex, class System.Web.UI.WebControls.RepeatInfo repeatInfo, class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RadioButtonList.System#Web#UI#WebControls#IRepeatInfoUser#RenderItem(System.Web.UI.WebControls.ListItemType,System.Int32,System.Web.UI.WebControls.RepeatInfo,System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="itemType" Type="System.Web.UI.WebControls.ListItemType" />
+        <Parameter Name="repeatIndex" Type="System.Int32" />
+        <Parameter Name="repeatInfo" Type="System.Web.UI.WebControls.RepeatInfo" />
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="itemType"><see cref="T:System.Web.UI.WebControls.ListItemType" /> 列挙値のいずれか。</param>
+        <param name="repeatIndex">リスト内での項目の位置を指定する序数インデックス。</param>
+        <param name="repeatInfo">リストの項目を表示するために使用する情報を表す <see cref="T:System.Web.UI.WebControls.RepeatInfo" />。</param>
+        <param name="writer">HTML コンテンツをクライアントに表示する出力ストリームを表す <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary>指定した情報を使用してリストの項目を表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、使用する必要があります、<xref:System.Web.UI.WebControls.RadioButtonList.RenderItem%2A?displayProperty=nameWithType>メソッド内の項目を表示するために、<xref:System.Web.UI.WebControls.RadioButtonList>コントロール。  
+  
+ <xref:System.Web.UI.WebControls.RadioButtonList.System%23Web%23UI%23WebControls%23IRepeatInfoUser%23RenderItem%2A>メソッドは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.WebControls.RadioButtonList> のインスタンスが <xref:System.Web.UI.WebControls.IRepeatInfoUser> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>アイテムのレンダリングのカスタム実装を定義する、<see cref="T:System.Web.UI.WebControls.RadioButtonList" />コントロールをオーバーライド、<see cref="M:System.Web.UI.WebControls.RadioButtonList.RenderItem(System.Web.UI.WebControls.ListItemType,System.Int32,System.Web.UI.WebControls.RepeatInfo,System.Web.UI.HtmlTextWriter)" />メソッドです。 明示的なインターフェイス実装の呼び出し、<see cref="M:System.Web.UI.WebControls.RadioButtonList.RenderItem(System.Web.UI.WebControls.ListItemType,System.Int32,System.Web.UI.WebControls.RepeatInfo,System.Web.UI.HtmlTextWriter)" />コントロール内のアイテムを表示するメソッド。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.WebControls.IRepeatInfoUser.RepeatedItemCount">
+      <MemberSignature Language="C#" Value="int System.Web.UI.WebControls.IRepeatInfoUser.RepeatedItemCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 System.Web.UI.WebControls.IRepeatInfoUser.RepeatedItemCount" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RadioButtonList.System#Web#UI#WebControls#IRepeatInfoUser#RepeatedItemCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リスト コントロールの項目の数を取得します。</summary>
+        <value>コントロール内の項目数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、明示的なインターフェイス メンバーの実装です。 使用する場合にのみ、<xref:System.Web.UI.WebControls.RadioButtonList>にインスタンスをキャスト、<xref:System.Web.UI.WebControls.IRepeatInfoUser>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>カスタム実装を定義する、<see cref="P:System.Web.UI.WebControls.RadioButtonList.System#Web#UI#WebControls#IRepeatInfoUser#RepeatedItemCount" />プロパティに、<see cref="T:System.Web.UI.WebControls.RadioButtonList" />コントロールをオーバーライド、<see cref="P:System.Web.UI.WebControls.RadioButtonList.RepeatedItemCount" />プロパティです。 明示的なインターフェイス実装を使用して、<see cref="P:System.Web.UI.WebControls.RadioButtonList.RepeatedItemCount" />プロパティです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="TextAlign">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.TextAlign TextAlign { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.TextAlign TextAlign" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RadioButtonList.TextAlign" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TextAlign</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グループ内のオプション ボタンのテキストの配置を取得または設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.TextAlign" /> 値のいずれか。 既定値は、<see langword="Right" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、オプション ボタンに関連付けられているテキストが左または右に表示するかを指定します。 このプロパティ設定されている場合`TextAlign.Right`、ラジオ ボタンの右側にテキストが表示されます。 このプロパティ設定されている場合`TextAlign.Left`、ラジオ ボタンの左側にテキストが表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.RadioButtonList.TextAlign%2A>の左側にあるオプション ボタンに関連付けられているテキストを表示するプロパティ、<xref:System.Web.UI.WebControls.RadioButtonList>コントロール。  
+  
+ [!code-aspx-csharp[Classic RadioButtonList.TextAlign Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic RadioButtonList.TextAlign Example/CS/sourcecs.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">オプション ボタンに関連付けられているラベルのテキストの配置が、<see cref="T:System.Web.UI.WebControls.TextAlign" />値。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

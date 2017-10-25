@@ -1,0 +1,116 @@
+<Type Name="ContractHelper" FullName="System.Diagnostics.Contracts.Internal.ContractHelper">
+  <TypeSignature Language="C#" Value="public static class ContractHelper" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ContractHelper extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.Contracts.Internal.ContractHelper" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("Use the ContractHelper class in the System.Runtime.CompilerServices namespace instead.")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>バイナリ リライターがコントラクト エラーの処理に使用するメソッドを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="RaiseContractFailedEvent">
+      <MemberSignature Language="C#" Value="public static string RaiseContractFailedEvent (System.Diagnostics.Contracts.ContractFailureKind failureKind, string userMessage, string conditionText, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string RaiseContractFailedEvent(valuetype System.Diagnostics.Contracts.ContractFailureKind failureKind, string userMessage, string conditionText, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Contracts.Internal.ContractHelper.RaiseContractFailedEvent(System.Diagnostics.Contracts.ContractFailureKind,System.String,System.String,System.Exception)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerNonUserCode</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.MayFail)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="failureKind" Type="System.Diagnostics.Contracts.ContractFailureKind" />
+        <Parameter Name="userMessage" Type="System.String" />
+        <Parameter Name="conditionText" Type="System.String" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="failureKind">エラーの種類。</param>
+        <param name="userMessage">追加のユーザー情報。</param>
+        <param name="conditionText">エラーの原因となった状態の説明。</param>
+        <param name="innerException">現在の例外を発生させた内部例外。</param>
+        <summary>バイナリ リライターが既定のエラー動作をアクティブ化するために使用します。</summary>
+        <returns>Null 参照 (<see langword="Nothing" /> Visual Basic で) 場合は、イベントが処理されていて障害; をトリガーする必要がありますが、ローカライズされたエラー メッセージをそれ以外の場合を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バイナリ リライターがコントラクト エラー リスナーに通知するには、このメソッドを呼び出します。 <xref:System.Diagnostics.Contracts.Internal.ContractHelper.RaiseContractFailedEvent%2A>メソッドがエラー時の動作 (アサートまたは throw) を実行していない自体です。 メソッドを返しますのかどうか、エラーは、リスナーによって処理、`null`です。 リスナーによって、エラーが処理されない場合は、ローカライズされたエラー メッセージが返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="failureKind" /> は有効な <see cref="T:System.Diagnostics.Contracts.ContractFailureKind" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TriggerFailure">
+      <MemberSignature Language="C#" Value="public static void TriggerFailure (System.Diagnostics.Contracts.ContractFailureKind kind, string displayMessage, string userMessage, string conditionText, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void TriggerFailure(valuetype System.Diagnostics.Contracts.ContractFailureKind kind, string displayMessage, string userMessage, string conditionText, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Contracts.Internal.ContractHelper.TriggerFailure(System.Diagnostics.Contracts.ContractFailureKind,System.String,System.String,System.String,System.Exception)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerNonUserCode</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="kind" Type="System.Diagnostics.Contracts.ContractFailureKind" />
+        <Parameter Name="displayMessage" Type="System.String" />
+        <Parameter Name="userMessage" Type="System.String" />
+        <Parameter Name="conditionText" Type="System.String" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="kind">エラーの種類。</param>
+        <param name="displayMessage">表示するメッセージ。</param>
+        <param name="userMessage">追加のユーザー情報。</param>
+        <param name="conditionText">エラーの原因となった状態の説明。</param>
+        <param name="innerException">現在の例外を発生させた内部例外。</param>
+        <summary>既定のエラー動作をトリガーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のエラー動作をさせるは、 <xref:System.Diagnostics.Debug.Assert%2A>、これにより、 **Assert**  ダイアログ ボックスを表示します。 スローするには、その動作を変更することができます、 <xref:System.Exception>  ダイアログ ボックスを表示する代わりにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

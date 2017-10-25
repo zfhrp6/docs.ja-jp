@@ -1,0 +1,87 @@
+<Type Name="WorkflowApplicationEventArgs" FullName="System.Activities.WorkflowApplicationEventArgs">
+  <TypeSignature Language="C#" Value="public class WorkflowApplicationEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WorkflowApplicationEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.WorkflowApplicationEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Activities.WorkflowApplication" /> に関連付けられたイベントの基本クラス。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Activities.WorkflowApplicationEventArgs> は、<xref:System.Activities.WorkflowApplication.Unloaded%2A> インスタンスの <xref:System.Activities.WorkflowApplication> ハンドラーでも使用されます。  
+  
+   
+  
+## Examples  
+ <xref:System.Activities.WorkflowApplicationEventArgs> インスタンスの <xref:System.Activities.WorkflowApplication.Unloaded%2A> ハンドラーに渡される <xref:System.Activities.WorkflowApplication> を調べ、アンロードされたワークフローの <xref:System.Activities.WorkflowApplicationEventArgs.InstanceId%2A> を表示するコード サンプルを次に示します。  
+  
+ [!code-csharp[CFX_WorkflowApplicationExample#3](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetInstanceExtensions&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;T&gt; GetInstanceExtensions&lt;T&gt; () where T : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;!!T&gt; GetInstanceExtensions&lt;class T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowApplicationEventArgs.GetInstanceExtensions``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">拡張機能の型。</typeparam>
+        <summary>指定された型の拡張機能のコレクションを取得します。</summary>
+        <returns>拡張機能のコレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceId">
+      <MemberSignature Language="C#" Value="public Guid InstanceId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid InstanceId" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.WorkflowApplicationEventArgs.InstanceId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー インスタンスの一意の識別子。</summary>
+        <value>一意の識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Activities.WorkflowApplicationEventArgs> インスタンスの <xref:System.Activities.WorkflowApplication.Unloaded%2A> ハンドラーに渡される <xref:System.Activities.WorkflowApplication> を調べ、アンロードされたワークフローの <xref:System.Activities.WorkflowApplicationEventArgs.InstanceId%2A> を表示するコード サンプルを次に示します。  
+  
+ [!code-csharp[CFX_WorkflowApplicationExample#3](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

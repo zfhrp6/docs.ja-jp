@@ -1,0 +1,187 @@
+<Type Name="SettingChangingEventArgs" FullName="System.Configuration.SettingChangingEventArgs">
+  <TypeSignature Language="C#" Value="public class SettingChangingEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SettingChangingEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.SettingChangingEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Configuration.ApplicationSettingsBase.SettingChanging" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.SettingChangingEventArgs>クラスのデータを提供、<xref:System.Configuration.ApplicationSettingsBase.SettingChanging>アプリケーション設定プロパティの値を変更することを通知するイベントです。 このイベントの最も一般的なソースは、`get`のアクセサー、<xref:System.Configuration.ApplicationSettingsBase.Item%2A>メソッドで、<xref:System.Configuration.ApplicationSettingsBase>クラスです。  
+  
+ <xref:System.Configuration.SettingChangingEventArgs>から派生した<xref:System.ComponentModel.CancelEventArgs>ハンドラーの書き込み操作の取り消しオプションがあります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SettingChangingEventArgs (string settingName, string settingClass, string settingKey, object newValue, bool cancel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string settingName, string settingClass, string settingKey, object newValue, bool cancel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.SettingChangingEventArgs.#ctor(System.String,System.String,System.String,System.Object,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="settingName" Type="System.String" />
+        <Parameter Name="settingClass" Type="System.String" />
+        <Parameter Name="settingKey" Type="System.String" />
+        <Parameter Name="newValue" Type="System.Object" />
+        <Parameter Name="cancel" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="settingName">A<see cref="T:System.String" />アプリケーション設定の名前を含むです。</param>
+        <param name="settingClass">A<see cref="T:System.String" />設定のカテゴリの説明を格納します。 多くの場合、このパラメーターはアプリケーション設定のグループ名に設定されます。</param>
+        <param name="settingKey">A<see cref="T:System.String" />アプリケーション設定キーを格納します。</param>
+        <param name="newValue"><see cref="T:System.Object" />アプリケーション設定のプロパティに割り当てられる新しい値を格納します。</param>
+        <param name="cancel">
+          <see langword="true" />イベントをキャンセルするにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>
+          <see cref="T:System.Configuration.SettingChangingEventArgs" /> クラスのインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.SettingChangingEventArgs.%23ctor%2A>コンス トラクターは、パラメーターの値を対応するプロパティにだけ割り当てます、<xref:System.Configuration.SettingChangingEventArgs>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewValue">
+      <MemberSignature Language="C#" Value="public object NewValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object NewValue" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SettingChangingEventArgs.NewValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーション設定のプロパティに割り当てられる新しい値を取得します。</summary>
+        <value><see cref="T:System.Object" />アプリケーション設定のプロパティに割り当てられる新しい値を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実際の型、<xref:System.Configuration.SettingChangingEventArgs.NewValue%2A>プロパティが設定されている設定のプロパティと互換性があります。 後者は、<xref:System.Configuration.SettingsProperty.PropertyType%2A>のプロパティ、<xref:System.Configuration.SettingsProperty>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SettingClass">
+      <MemberSignature Language="C#" Value="public string SettingClass { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SettingClass" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SettingChangingEventArgs.SettingClass" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーション設定のプロパティのカテゴリを取得します。</summary>
+        <value>A<see cref="T:System.String" />設定のカテゴリの説明を格納します。 通常、このパラメーターはアプリケーション設定のグループ名に設定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのアプリケーション設定は、アプリケーションの設定グループに属しています。 グループ名は、クラスによって明示的に指定できます、 <xref:System.Configuration.SettingsGroupNameAttribute>、それ以外の設定のラッパー クラスの名前を使用して 1 つ生成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SettingKey">
+      <MemberSignature Language="C#" Value="public string SettingKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SettingKey" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SettingChangingEventArgs.SettingKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティに関連付けられているアプリケーションの設定キーを取得します。</summary>
+        <value>A<see cref="T:System.String" />アプリケーション設定キーを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生した各設定のラッパー クラス<xref:System.Configuration.ApplicationSettingsBase>、単一のアプリケーションで同じラッパーの異なるインスタンスのあいまいさを解消する文字列である、関連する設定キーが含まれています。 各ラッパー クラスは、アプリケーションの設定を表すプロパティのセットを定義するため設定キー同様に役立つそれらを使用するあいまいさを解消します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SettingName">
+      <MemberSignature Language="C#" Value="public string SettingName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SettingName" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SettingChangingEventArgs.SettingName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーション設定のプロパティに関連付けられているアプリケーション設定の名前を取得します。</summary>
+        <value>A<see cref="T:System.String" />アプリケーション設定の名前を含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生した設定のラッパー クラス通常<xref:System.Configuration.ApplicationSettingsBase>、アプリケーション設定のプロパティの名前は、その関連付けられたアプリケーションの設定と同じになりますようにが構築されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

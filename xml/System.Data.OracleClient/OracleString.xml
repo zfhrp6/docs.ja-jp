@@ -1,0 +1,727 @@
+<Type Name="OracleString" FullName="System.Data.OracleClient.OracleString">
+  <TypeSignature Language="C#" Value="public struct OracleString : IComparable, System.Data.SqlTypes.INullable" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit OracleString extends System.ValueType implements class System.Data.SqlTypes.INullable, class System.IComparable" />
+  <TypeSignature Language="DocId" Value="T:System.Data.OracleClient.OracleString" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.OracleClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Data.SqlTypes.INullable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IComparable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>格納されているか、データベースから取得する文字の可変長のストリームを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得する、<xref:System.Data.OracleClient.OracleString>オブジェクトを呼び出し、<xref:System.Data.OracleClient.OracleDataReader.GetOracleString%2A>メソッドです。  
+  
+   
+  
+## Examples  
+  
+```  
+using System;  
+using System.Data.OracleClient;  
+public class Class1 {  
+   public static void Main() {  
+      OracleString oraclestring1 = new OracleString("MyOracleString1");  
+      OracleString oraclestring2 = new OracleString("MyOracleString2");  
+      OracleString oraclestring3 = new OracleString("MyOracleString1");  
+  
+      // Type: System.Data.OracleClient.OracleString  
+      Console.WriteLine("Type: " + oraclestring1.GetType());  
+  
+      // Length: 15  
+      Console.WriteLine("Length: " + oraclestring1.Length);  
+  
+      // False  
+      Console.WriteLine(oraclestring1.IsNull);  
+  
+      // -1  
+      Console.WriteLine(oraclestring1.CompareTo(oraclestring2));  
+  
+      // 0  
+      Console.WriteLine(oraclestring1.CompareTo(oraclestring3));  
+  
+      // 1  
+      Console.WriteLine(oraclestring2.CompareTo(oraclestring3));  
+  
+      // False  
+      Console.WriteLine(oraclestring1.Equals(oraclestring2));  
+  
+      // True  
+      Console.WriteLine(oraclestring1.Equals(oraclestring3));  
+  
+      // MyOracleString1  
+      Console.WriteLine(oraclestring1.Value);  
+  
+      // MyOracleString2  
+      Console.WriteLine(oraclestring2.ToString());  
+   }  
+}  
+  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OracleString (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleString.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s">格納する文字列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.OracleClient.OracleString" />クラスおよび格納する文字列を指定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompareTo">
+      <MemberSignature Language="C#" Value="public int CompareTo (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 CompareTo(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleString.CompareTo(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">比較されるオブジェクト。</param>
+        <summary>このインスタンスと比較<see cref="T:System.Data.OracleClient.OracleString" />が指定したオブジェクトにこれらの相対値を示す値を返します。</summary>
+        <returns>インスタンスとオブジェクトの相対値を示す符号付き数値。  
+  
+ <list type="table"><listheader><term>戻り値  
+  
+ </term><description>条件  
+  
+ </description></listheader><item><term>0 より小さい値  
+  
+ </term><description>このインスタンスは、オブジェクトより小さいです。  
+  
+ </description></item><item><term>0  
+  
+ </term><description>このインスタンスは、オブジェクトと同じです。  
+  
+ </description></item><item><term>0 より大きい値  
+  
+ </term><description>このインスタンスがオブジェクトより大きい  
+  
+ または  
+  
+ オブジェクトは null 参照 (<see langword="Nothing" />)  
+  
+ </description></item></list></returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Concat">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleString Concat (System.Data.OracleClient.OracleString x, System.Data.OracleClient.OracleString y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Data.OracleClient.OracleString Concat(valuetype System.Data.OracleClient.OracleString x, valuetype System.Data.OracleClient.OracleString y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleString.Concat(System.Data.OracleClient.OracleString,System.Data.OracleClient.OracleString)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleString</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleString" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleString" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <summary>指定された 2 つを連結<see cref="T:System.Data.OracleClient.OracleString" />構造体。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleString" /> 、2 つの内容を表す新しく連結された値を含む<see cref="T:System.Data.OracleClient.OracleString" />パラメーター。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Empty">
+      <MemberSignature Language="C#" Value="public static readonly System.Data.OracleClient.OracleString Empty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Data.OracleClient.OracleString Empty" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OracleClient.OracleString.Empty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleString</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>割り当てることが空の文字列を表す、<see cref="P:System.Data.OracleClient.OracleString.Value" />のインスタンスのプロパティ、<see cref="T:System.Data.OracleClient.OracleString" />構造体。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleString.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">比較されるオブジェクト。</param>
+        <summary>指定したオブジェクトのパラメーターを<see cref="P:System.Data.OracleClient.OracleString.Value" />のプロパティ、<see cref="T:System.Data.OracleClient.OracleString" />オブジェクト。</summary>
+        <returns>Equals を返します<see langword="true" />場合は、オブジェクトのインスタンスでは<see cref="T:System.Data.OracleClient.OracleString" />、それ以外の 2 つ<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean Equals (System.Data.OracleClient.OracleString x, System.Data.OracleClient.OracleString y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Data.OracleClient.OracleBoolean Equals(valuetype System.Data.OracleClient.OracleString x, valuetype System.Data.OracleClient.OracleString y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleString.Equals(System.Data.OracleClient.OracleString,System.Data.OracleClient.OracleString)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleString" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleString" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <summary>2 つの論理比較を実行<see cref="T:System.Data.OracleClient.OracleString" />オペランドは、それらが等しいかを判断します。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />つまり<see cref="F:System.Data.OracleClient.OracleBoolean.True" />2 つのインスタンスが等しい場合、または<see cref="F:System.Data.OracleClient.OracleBoolean.False" />2 つのインスタンスが等しくない場合。 場合のいずれかのインスタンス<see cref="T:System.Data.OracleClient.OracleString" />が null で、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />なります<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleString.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>インスタンスのハッシュ コードを取得します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GreaterThan">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean GreaterThan (System.Data.OracleClient.OracleString x, System.Data.OracleClient.OracleString y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Data.OracleClient.OracleBoolean GreaterThan(valuetype System.Data.OracleClient.OracleString x, valuetype System.Data.OracleClient.OracleString y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleString.GreaterThan(System.Data.OracleClient.OracleString,System.Data.OracleClient.OracleString)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleString" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleString" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <summary>2 つの論理比較を実行<see cref="T:System.Data.OracleClient.OracleString" />のオペランドは、最初の 2 番目より大きいかを判断します。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />つまり<see cref="F:System.Data.OracleClient.OracleBoolean.True" />かどうか、最初のインスタンスは 2 番目のインスタンスよりも大きいそれ以外の場合<see cref="F:System.Data.OracleClient.OracleBoolean.False" />です。 場合のいずれかのインスタンス<see cref="T:System.Data.OracleClient.OracleString" />が null で、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />なります<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GreaterThanOrEqual">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean GreaterThanOrEqual (System.Data.OracleClient.OracleString x, System.Data.OracleClient.OracleString y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Data.OracleClient.OracleBoolean GreaterThanOrEqual(valuetype System.Data.OracleClient.OracleString x, valuetype System.Data.OracleClient.OracleString y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleString.GreaterThanOrEqual(System.Data.OracleClient.OracleString,System.Data.OracleClient.OracleString)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleString" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleString" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <summary>2 つの論理比較を実行<see cref="T:System.Data.OracleClient.OracleString" />がかどうか 1 つ以上の値が 2 番目のオペランド。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />つまり<see cref="F:System.Data.OracleClient.OracleBoolean.True" />かどうか、最初のインスタンスがより大きいか等しい 2 番目のインスタンスでは、それ以外の場合<see cref="F:System.Data.OracleClient.OracleBoolean.False" />です。 場合のいずれかのインスタンス<see cref="T:System.Data.OracleClient.OracleString" />が null で、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />なります<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNull">
+      <MemberSignature Language="C#" Value="public bool IsNull { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNull" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleString.IsNull" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示すかどうか、<see cref="P:System.Data.OracleClient.OracleString.Value" />の<see cref="T:System.Data.OracleClient.OracleString" />は<see cref="F:System.Data.OracleClient.OracleString.Null" />します。</summary>
+        <value>
+          <see langword="true" />場合<see cref="P:System.Data.OracleClient.OracleString.Value" />は<see cref="F:System.Data.OracleClient.OracleString.Null" />それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public char this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance char Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleString.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Char</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得するバイトの位置。</param>
+        <summary>1 バイトを取得、<see langword="Value" />整数パラメーターで示される位置にあるプロパティ<paramref name="index" />です。</summary>
+        <value>整数パラメーターで示される位置にあるバイト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`index`位置を示す、バイト配列の末尾を越える例外が発生します。  
+  
+ 例外の発生を避けるためには、常に確認して、<xref:System.Data.OracleClient.OracleString.IsNull%2A>プロパティおよび`Length`プロパティを読み取る前に`this`です。  
+  
+ このプロパティは読み取り専用です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Length">
+      <MemberSignature Language="C#" Value="public int Length { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Length" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleString.Length" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これに格納されている文字列の長さを取得<see cref="T:System.Data.OracleClient.OracleString" />構造体。</summary>
+        <value>格納されている文字列の長さ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LessThan">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean LessThan (System.Data.OracleClient.OracleString x, System.Data.OracleClient.OracleString y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Data.OracleClient.OracleBoolean LessThan(valuetype System.Data.OracleClient.OracleString x, valuetype System.Data.OracleClient.OracleString y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleString.LessThan(System.Data.OracleClient.OracleString,System.Data.OracleClient.OracleString)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleString" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleString" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <summary>2 つの論理比較を実行<see cref="T:System.Data.OracleClient.OracleString" />最初が少ないかどうかを判断するオペランド 2 番目よりです。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />つまり<see cref="F:System.Data.OracleClient.OracleBoolean.True" />場合は、最初のインスタンスは、2 つ目のインスタンスより小さい、それ以外の場合<see cref="F:System.Data.OracleClient.OracleBoolean.False" />です。 場合のいずれかのインスタンス<see cref="T:System.Data.OracleClient.OracleString" />が null で、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />なります<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LessThanOrEqual">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean LessThanOrEqual (System.Data.OracleClient.OracleString x, System.Data.OracleClient.OracleString y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Data.OracleClient.OracleBoolean LessThanOrEqual(valuetype System.Data.OracleClient.OracleString x, valuetype System.Data.OracleClient.OracleString y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleString.LessThanOrEqual(System.Data.OracleClient.OracleString,System.Data.OracleClient.OracleString)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleString" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleString" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <summary>2 つの論理比較を実行<see cref="T:System.Data.OracleClient.OracleString" />がかどうか、最初以下が 2 番目のオペランド。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />つまり<see cref="F:System.Data.OracleClient.OracleBoolean.True" />かどうか、最初のインスタンスは、2 番目のインスタンスでは、小さいそれ以外の場合<see cref="F:System.Data.OracleClient.OracleBoolean.False" />です。 場合のいずれかのインスタンス<see cref="T:System.Data.OracleClient.OracleString" />が null で、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />なります<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NotEquals">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean NotEquals (System.Data.OracleClient.OracleString x, System.Data.OracleClient.OracleString y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Data.OracleClient.OracleBoolean NotEquals(valuetype System.Data.OracleClient.OracleString x, valuetype System.Data.OracleClient.OracleString y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleString.NotEquals(System.Data.OracleClient.OracleString,System.Data.OracleClient.OracleString)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleString" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleString" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <summary>2 つの論理比較を実行<see cref="T:System.Data.OracleClient.OracleString" />のオペランドは両者が等しくないかどうかを判断します。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />つまり<see cref="F:System.Data.OracleClient.OracleBoolean.True" />2 つのインスタンスが等しくない場合または<see cref="F:System.Data.OracleClient.OracleBoolean.False" />2 つのインスタンスが等しい場合。 場合のいずれかのインスタンス<see cref="T:System.Data.OracleClient.OracleString" />が null で、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />なります<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Null">
+      <MemberSignature Language="C#" Value="public static readonly System.Data.OracleClient.OracleString Null;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Data.OracleClient.OracleString Null" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OracleClient.OracleString.Null" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleString</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>割り当てることが null 値を表す、<see cref="P:System.Data.OracleClient.OracleString.Value" />のインスタンスのプロパティ、<see cref="T:System.Data.OracleClient.OracleString" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Null`関数の定数として、`OracleString`構造体。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Addition">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleString operator + (System.Data.OracleClient.OracleString x, System.Data.OracleClient.OracleString y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Data.OracleClient.OracleString op_Addition(valuetype System.Data.OracleClient.OracleString x, valuetype System.Data.OracleClient.OracleString y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleString.op_Addition(System.Data.OracleClient.OracleString,System.Data.OracleClient.OracleString)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleString</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleString" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleString" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <summary>指定された 2 つを連結<see cref="T:System.Data.OracleClient.OracleString" />構造体。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleString" /> 、2 つの内容を表す新しく連結された値を含む<see cref="T:System.Data.OracleClient.OracleString" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Data.OracleClient.OracleString.Concat%28System.Data.OracleClient.OracleString%2CSystem.Data.OracleClient.OracleString%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean operator == (System.Data.OracleClient.OracleString x, System.Data.OracleClient.OracleString y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Data.OracleClient.OracleBoolean op_Equality(valuetype System.Data.OracleClient.OracleString x, valuetype System.Data.OracleClient.OracleString y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleString.op_Equality(System.Data.OracleClient.OracleString,System.Data.OracleClient.OracleString)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleString" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleString" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <summary>2 つの論理比較を実行<see cref="T:System.Data.OracleClient.OracleString" />オペランドは、それらが等しいかを判断します。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />つまり<see cref="F:System.Data.OracleClient.OracleBoolean.True" />2 つのインスタンスが等しい場合、または<see cref="F:System.Data.OracleClient.OracleBoolean.False" />2 つのインスタンスが等しくない場合。 場合のいずれかのインスタンス<see cref="T:System.Data.OracleClient.OracleString" />が null で、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />なります<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Data.OracleClient.OracleString.Equals%28System.Object%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator string (System.Data.OracleClient.OracleString x);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname string op_Explicit(valuetype System.Data.OracleClient.OracleString x) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleString.op_Explicit(System.Data.OracleClient.OracleString)~System.String" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleString" />
+      </Parameters>
+      <Docs>
+        <param name="x">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_GreaterThan">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean operator &gt; (System.Data.OracleClient.OracleString x, System.Data.OracleClient.OracleString y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Data.OracleClient.OracleBoolean op_GreaterThan(valuetype System.Data.OracleClient.OracleString x, valuetype System.Data.OracleClient.OracleString y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleString.op_GreaterThan(System.Data.OracleClient.OracleString,System.Data.OracleClient.OracleString)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleString" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleString" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <summary>2 つの論理比較を実行<see cref="T:System.Data.OracleClient.OracleString" />のオペランドは、最初の 2 番目より大きいかを判断します。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />つまり<see cref="F:System.Data.OracleClient.OracleBoolean.True" />かどうか、最初のインスタンスは 2 番目のインスタンスよりも大きいそれ以外の場合<see cref="F:System.Data.OracleClient.OracleBoolean.False" />です。 場合のいずれかのインスタンス<see cref="T:System.Data.OracleClient.OracleString" />が null で、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />なります<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Data.OracleClient.OracleString.GreaterThan%28System.Data.OracleClient.OracleString%2CSystem.Data.OracleClient.OracleString%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_GreaterThanOrEqual">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean operator &gt;= (System.Data.OracleClient.OracleString x, System.Data.OracleClient.OracleString y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Data.OracleClient.OracleBoolean op_GreaterThanOrEqual(valuetype System.Data.OracleClient.OracleString x, valuetype System.Data.OracleClient.OracleString y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleString.op_GreaterThanOrEqual(System.Data.OracleClient.OracleString,System.Data.OracleClient.OracleString)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleString" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleString" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <summary>2 つの論理比較を実行<see cref="T:System.Data.OracleClient.OracleString" />がかどうか 1 つ以上の値が 2 番目のオペランド。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />つまり<see cref="F:System.Data.OracleClient.OracleBoolean.True" />かどうか、最初のインスタンスがより大きいか等しい 2 番目のインスタンスでは、それ以外の場合<see cref="F:System.Data.OracleClient.OracleBoolean.False" />です。 場合のいずれかのインスタンス<see cref="T:System.Data.OracleClient.OracleString" />が null で、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />なります<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Data.OracleClient.OracleString.GreaterThanOrEqual%28System.Data.OracleClient.OracleString%2CSystem.Data.OracleClient.OracleString%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Implicit">
+      <MemberSignature Language="C#" Value="public static implicit operator System.Data.OracleClient.OracleString (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Data.OracleClient.OracleString op_Implicit(string s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleString.op_Implicit(System.String)~System.Data.OracleClient.OracleString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleString</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean operator != (System.Data.OracleClient.OracleString x, System.Data.OracleClient.OracleString y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Data.OracleClient.OracleBoolean op_Inequality(valuetype System.Data.OracleClient.OracleString x, valuetype System.Data.OracleClient.OracleString y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleString.op_Inequality(System.Data.OracleClient.OracleString,System.Data.OracleClient.OracleString)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleString" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleString" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <summary>2 つの論理比較を実行<see cref="T:System.Data.OracleClient.OracleString" />オペランドは、それらが等しいかを判断します。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />つまり<see cref="F:System.Data.OracleClient.OracleBoolean.True" />2 つのインスタンスが等しくない場合または<see cref="F:System.Data.OracleClient.OracleBoolean.False" />2 つのインスタンスが等しい場合。 場合のいずれかのインスタンス<see cref="T:System.Data.OracleClient.OracleString" />が null で、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />なります<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Data.OracleClient.OracleString.NotEquals%28System.Data.OracleClient.OracleString%2CSystem.Data.OracleClient.OracleString%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_LessThan">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean operator &lt; (System.Data.OracleClient.OracleString x, System.Data.OracleClient.OracleString y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Data.OracleClient.OracleBoolean op_LessThan(valuetype System.Data.OracleClient.OracleString x, valuetype System.Data.OracleClient.OracleString y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleString.op_LessThan(System.Data.OracleClient.OracleString,System.Data.OracleClient.OracleString)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleString" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleString" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <summary>2 つの論理比較を実行<see cref="T:System.Data.OracleClient.OracleString" />最初が少ないかどうかを判断するオペランド 2 番目よりです。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />つまり<see cref="F:System.Data.OracleClient.OracleBoolean.True" />場合は、最初のインスタンスは、2 つ目のインスタンスより小さい、それ以外の場合<see cref="F:System.Data.OracleClient.OracleBoolean.False" />です。 場合のいずれかのインスタンス<see cref="T:System.Data.OracleClient.OracleString" />が null で、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />なります<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Data.OracleClient.OracleString.LessThan%28System.Data.OracleClient.OracleString%2CSystem.Data.OracleClient.OracleString%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_LessThanOrEqual">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean operator &lt;= (System.Data.OracleClient.OracleString x, System.Data.OracleClient.OracleString y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Data.OracleClient.OracleBoolean op_LessThanOrEqual(valuetype System.Data.OracleClient.OracleString x, valuetype System.Data.OracleClient.OracleString y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleString.op_LessThanOrEqual(System.Data.OracleClient.OracleString,System.Data.OracleClient.OracleString)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleString" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleString" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleString" />。</param>
+        <summary>2 つの論理比較を実行<see cref="T:System.Data.OracleClient.OracleString" />がかどうか、最初以下が 2 番目のオペランド。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />つまり<see cref="F:System.Data.OracleClient.OracleBoolean.True" />かどうか、最初のインスタンスは、2 番目のインスタンスでは、小さいそれ以外の場合<see cref="F:System.Data.OracleClient.OracleBoolean.False" />です。 場合のいずれかのインスタンス<see cref="T:System.Data.OracleClient.OracleString" />が null で、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />なります<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Data.OracleClient.OracleString.LessThanOrEqual%28System.Data.OracleClient.OracleString%2CSystem.Data.OracleClient.OracleString%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleString.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>変換、<see langword="OracleString" />オブジェクトを<see langword="String" />です。</summary>
+        <returns>A<see langword="String" />これと同じ値を持つ<see langword="OracleString" />構造体。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public string Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Value" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleString.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>格納されている文字列を取得、<see cref="T:System.Data.OracleClient.OracleString" />構造体。</summary>
+        <value>格納されている文字列。  
+  
+ このプロパティは読み取り専用です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

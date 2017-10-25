@@ -1,0 +1,292 @@
+<Type Name="PerformanceCounterInstaller" FullName="System.Diagnostics.PerformanceCounterInstaller">
+  <TypeSignature Language="C#" Value="public class PerformanceCounterInstaller : System.Configuration.Install.ComponentInstaller" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PerformanceCounterInstaller extends System.Configuration.Install.ComponentInstaller" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.PerformanceCounterInstaller" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.Install</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.Install.ComponentInstaller</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>用のインストーラーを指定します、<see cref="T:System.Diagnostics.PerformanceCounter" />コンポーネントです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の情報は、パフォーマンスが向上をアプリケーションの起動時のパフォーマンス カウンターをインストールするときに役立つ可能性があります。 .NET Framework version 2.0 にインストールされているパフォーマンス カウンター カテゴリは、独自のメモリを持つ各パフォーマンス カウンター カテゴリ別の共有メモリを使用します。 別の共有メモリのサイズを指定するには、レジストリ キー hkey_local_machine \system\currentcontrolset\services に FileMappingSize をという名前の DWORD を作成することで\\*\<カテゴリ名 >*\Performance です。 FileMappingSize 値は、カテゴリの共有メモリのサイズに設定されます。 既定のサイズは、10 進 131, 072 です。 FileMappingSize 値が存在しない場合、`fileMappingSize`属性の値を`performanceCounters`Machine.config ファイルで指定された要素を使用すると、構成ファイルの処理に追加のオーバーヘッドを発生させます。 レジストリでファイルの割り当てサイズを設定して、アプリケーションの起動時のパフォーマンスの向上を実感できます。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Diagnostics.PerformanceCounterInstaller>オブジェクトを追加して、<xref:System.Configuration.Install.InstallerCollection>です。  
+  
+ [!code-cpp[PerformanceCounterInstaller#1](~/samples/snippets/cpp/VS_Snippets_CLR/PerformanceCounterInstaller/CPP/performancecounterinstaller.cpp#1)]
+ [!code-csharp[PerformanceCounterInstaller#1](~/samples/snippets/csharp/VS_Snippets_CLR/PerformanceCounterInstaller/CS/performancecounterinstaller.cs#1)]
+ [!code-vb[PerformanceCounterInstaller#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/PerformanceCounterInstaller/VB/performancecounterinstaller.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PerformanceCounterInstaller ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounterInstaller.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Diagnostics.PerformanceCounterInstaller" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CategoryHelp">
+      <MemberSignature Language="C#" Value="public string CategoryHelp { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CategoryHelp" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.PerformanceCounterInstaller.CategoryHelp" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはパフォーマンス カウンタのわかりやすいメッセージを設定します。</summary>
+        <value>パフォーマンス カウンターの説明メッセージ。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">値が <see langword="null" /> に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CategoryName">
+      <MemberSignature Language="C#" Value="public string CategoryName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CategoryName" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.PerformanceCounterInstaller.CategoryName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Diagnostics.Design.StringValueConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはパフォーマンス カウンターのパフォーマンス カテゴリ名を設定します。</summary>
+        <value>パフォーマンス カウンターのパフォーマンス カテゴリの名前。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">値が <see langword="null" /> に設定されています。</exception>
+        <exception cref="T:System.ArgumentException">値は、有効なカテゴリ名ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CategoryType">
+      <MemberSignature Language="C#" Value="public System.Diagnostics.PerformanceCounterCategoryType CategoryType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Diagnostics.PerformanceCounterCategoryType CategoryType" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.PerformanceCounterInstaller.CategoryType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceCounterCategoryType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはパフォーマンス カウンター カテゴリの種類を設定します。</summary>
+        <value><see cref="T:System.Diagnostics.PerformanceCounterCategoryType" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.PerformanceCounterInstaller.CategoryType%2A>プロパティは、パフォーマンス カウンター カテゴリが複数のインスタンスを設定できるかどうかを指定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">値は、<see cref="T:System.Diagnostics.PerformanceCounterCategoryType" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyFromComponent">
+      <MemberSignature Language="C#" Value="public override void CopyFromComponent (System.ComponentModel.IComponent component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void CopyFromComponent(class System.ComponentModel.IComponent component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounterInstaller.CopyFromComponent(System.ComponentModel.IComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="component">コピー元コンポーネントです。</param>
+        <summary>コピーに必要な指定されたコンポーネントからのすべてのプロパティは、時間のパフォーマンス カウンターをインストールします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.PerformanceCounterInstaller>同じカテゴリには複数のカウンターにのみインストールできます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定したコンポーネントではない、<see cref="T:System.Diagnostics.PerformanceCounter" />です。  
+  
+ または  
+  
+ 指定した<see cref="T:System.Diagnostics.PerformanceCounter" />が完了していません。  
+  
+ または  
+  
+ 別のカテゴリで複数のカウンターをインストールしようとしています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Counters">
+      <MemberSignature Language="C#" Value="public System.Diagnostics.CounterCreationDataCollection Counters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Diagnostics.CounterCreationDataCollection Counters" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.PerformanceCounterInstaller.Counters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.CounterCreationDataCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インストールするカウンターに関連するデータのコレクションを取得します。</summary>
+        <value>A<see cref="T:System.Diagnostics.CounterCreationDataCollection" />をインストールするには、名前、ヘルプのメッセージ、およびカウンターの種類を格納しています。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Install">
+      <MemberSignature Language="C#" Value="public override void Install (System.Collections.IDictionary stateSaver);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Install(class System.Collections.IDictionary stateSaver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounterInstaller.Install(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stateSaver" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="stateSaver"><see cref="T:System.Collections.IDictionary" />コミットを実行するために必要な情報の保存に使用されるロールバック、またはアンインストール操作します。</param>
+        <summary>インストールを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  同じ名前のサービスとパフォーマンス カウンターの両方をインストールするときに、パフォーマンス カウンターをインストールする前に、サービスをインストールします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rollback">
+      <MemberSignature Language="C#" Value="public override void Rollback (System.Collections.IDictionary savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Rollback(class System.Collections.IDictionary savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounterInstaller.Rollback(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="savedState">インストール前のコンピューターの状態を格納している <see cref="T:System.Collections.IDictionary" />。</param>
+        <summary>インストール前に、の状態にコンピューターを復元します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Uninstall">
+      <MemberSignature Language="C#" Value="public override void Uninstall (System.Collections.IDictionary savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Uninstall(class System.Collections.IDictionary savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounterInstaller.Uninstall(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="savedState"><see cref="T:System.Collections.IDictionary" />コンピューターのインストール後の状態を格納しています。</param>
+        <summary>インストールを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UninstallAction">
+      <MemberSignature Language="C#" Value="public System.Configuration.Install.UninstallAction UninstallAction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Configuration.Install.UninstallAction UninstallAction" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.PerformanceCounterInstaller.UninstallAction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Install.UninstallAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アンインストールするときにパフォーマンス カウンターを削除するかどうかを示す値を取得します。</summary>
+        <value><see cref="T:System.Configuration.Install.UninstallAction" /> 値のいずれか。 既定値は、<see langword="Remove" /> です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">値は、<see cref="T:System.Configuration.Install.UninstallAction" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,194 @@
+<Type Name="RegistryHive" FullName="Microsoft.Win32.RegistryHive">
+  <TypeSignature Language="C#" Value="public enum RegistryHive" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed RegistryHive extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Win32.RegistryHive" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>外部コンピューター上の最上位ノードの有効な値を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `RegistryHive`値が使用されますが、<xref:Microsoft.Win32.RegistryKey.OpenRemoteBaseKey%2A>外部 (リモート) コンピューター上に要求されたキーの最上位ノードを表すためのメソッドです。 OpenRemoteBaseKey メソッドを使用して開くことができるノードは、最上位のいずれかを指定する必要があります`RegistryKeys`です。 識別されたノードのサブキーにアクセスすることは内のメソッドを使用して<xref:Microsoft.Win32.RegistryKey>限り、ユーザーが適切なアクセス許可を持っています。  
+  
+   
+  
+## Examples  
+ 次のコード例では、リモート コンピューター上のレジストリ キーを開き、キーの値を列挙する方法を示します。 リモート コンピューターでは、リモート レジストリ サービスが実行されている必要があります。 プログラムを呼び出すときは、リモート コンピューターの名前、コマンドライン引数を指定します。  
+  
+ [!code-cpp[Microsoft.Win32.RegistryKey.OpenRemoteBaseKey#1](~/samples/snippets/cpp/VS_Snippets_CLR/Microsoft.Win32.RegistryKey.OpenRemoteBaseKey/CPP/source.cpp#1)]
+ [!code-csharp[Microsoft.Win32.RegistryKey.OpenRemoteBaseKey#1](~/samples/snippets/csharp/VS_Snippets_CLR/Microsoft.Win32.RegistryKey.OpenRemoteBaseKey/CS/source.cs#1)]
+ [!code-vb[Microsoft.Win32.RegistryKey.OpenRemoteBaseKey#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Microsoft.Win32.RegistryKey.OpenRemoteBaseKey/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ClassesRoot">
+      <MemberSignature Language="C#" Value="ClassesRoot" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Win32.RegistryHive ClassesRoot = int32(-2147483648)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Win32.RegistryHive.ClassesRoot" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.RegistryHive</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>別のコンピューターで HKEY_CLASSES_ROOT 基本キーを表します。 この値を渡すことが、<see cref="M:Microsoft.Win32.RegistryKey.OpenRemoteBaseKey(Microsoft.Win32.RegistryHive,System.String)" />メソッドをリモートでこのノードを開きます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentConfig">
+      <MemberSignature Language="C#" Value="CurrentConfig" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Win32.RegistryHive CurrentConfig = int32(-2147483643)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Win32.RegistryHive.CurrentConfig" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.RegistryHive</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>別のコンピューターで HKEY_CURRENT_CONFIG 基本キーを表します。 この値を渡すことが、<see cref="M:Microsoft.Win32.RegistryKey.OpenRemoteBaseKey(Microsoft.Win32.RegistryHive,System.String)" />メソッドをリモートでこのノードを開きます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentUser">
+      <MemberSignature Language="C#" Value="CurrentUser" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Win32.RegistryHive CurrentUser = int32(-2147483647)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Win32.RegistryHive.CurrentUser" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.RegistryHive</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>別のコンピューターでは、HKEY_CURRENT_USER 基本キーを表します。 この値を渡すことが、<see cref="M:Microsoft.Win32.RegistryKey.OpenRemoteBaseKey(Microsoft.Win32.RegistryHive,System.String)" />メソッドをリモートでこのノードを開きます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DynData">
+      <MemberSignature Language="C#" Value="DynData" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Win32.RegistryHive DynData = int32(-2147483642)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Win32.RegistryHive.DynData" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.RegistryHive</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>別のコンピューターと基本キーを表します。 この値を渡すことが、<see cref="M:Microsoft.Win32.RegistryKey.OpenRemoteBaseKey(Microsoft.Win32.RegistryHive,System.String)" />メソッドをリモートでこのノードを開きます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalMachine">
+      <MemberSignature Language="C#" Value="LocalMachine" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Win32.RegistryHive LocalMachine = int32(-2147483646)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Win32.RegistryHive.LocalMachine" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.RegistryHive</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>別のコンピューターで、HKEY_LOCAL_MACHINE 基本キーを表します。 この値を渡すことが、<see cref="M:Microsoft.Win32.RegistryKey.OpenRemoteBaseKey(Microsoft.Win32.RegistryHive,System.String)" />メソッドをリモートでこのノードを開きます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PerformanceData">
+      <MemberSignature Language="C#" Value="PerformanceData" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Win32.RegistryHive PerformanceData = int32(-2147483644)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Win32.RegistryHive.PerformanceData" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.RegistryHive</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>別のコンピューターで HKEY_PERFORMANCE_DATA 基本キーを表します。 この値を渡すことが、<see cref="M:Microsoft.Win32.RegistryKey.OpenRemoteBaseKey(Microsoft.Win32.RegistryHive,System.String)" />メソッドをリモートでこのノードを開きます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Users">
+      <MemberSignature Language="C#" Value="Users" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Win32.RegistryHive Users = int32(-2147483645)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Win32.RegistryHive.Users" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.RegistryHive</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>別のコンピューターで HKEY_USERS 基本キーを表します。 この値を渡すことが、<see cref="M:Microsoft.Win32.RegistryKey.OpenRemoteBaseKey(Microsoft.Win32.RegistryHive,System.String)" />メソッドをリモートでこのノードを開きます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

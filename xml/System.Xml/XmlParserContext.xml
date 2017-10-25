@@ -1,0 +1,595 @@
+<Type Name="XmlParserContext" FullName="System.Xml.XmlParserContext">
+  <TypeSignature Language="C#" Value="public class XmlParserContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlParserContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.XmlParserContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>必要なすべてのコンテキスト情報を提供、<see cref="T:System.Xml.XmlReader" />を XML フラグメントを解析します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Xml.XmlReader>を XML フラグメントを読み込むオブジェクト。  
+  
+ [!code-csharp[XmlReader.Create#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlReader.Create/CS/XmlReader_Create.cs#1)]
+ [!code-vb[XmlReader.Create#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlReader.Create/VB/XmlReader_Create.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlParserContext (System.Xml.XmlNameTable nt, System.Xml.XmlNamespaceManager nsMgr, string xmlLang, System.Xml.XmlSpace xmlSpace);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlNameTable nt, class System.Xml.XmlNamespaceManager nsMgr, string xmlLang, valuetype System.Xml.XmlSpace xmlSpace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlParserContext.#ctor(System.Xml.XmlNameTable,System.Xml.XmlNamespaceManager,System.String,System.Xml.XmlSpace)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="nt" Type="System.Xml.XmlNameTable" />
+        <Parameter Name="nsMgr" Type="System.Xml.XmlNamespaceManager" />
+        <Parameter Name="xmlLang" Type="System.String" />
+        <Parameter Name="xmlSpace" Type="System.Xml.XmlSpace" />
+      </Parameters>
+      <Docs>
+        <param name="nt"><see cref="T:System.Xml.XmlNameTable" />を使用して文字列を細分化します。 これは、する場合<see langword="null" />、構築するために使用される名前のテーブル、 <c>nsMgr</c>代わりに使用されます。 アトミック化された文字列の詳細については、次を参照してください。<see cref="T:System.Xml.XmlNameTable" />です。</param>
+        <param name="nsMgr"><see cref="T:System.Xml.XmlNamespaceManager" />名前空間の情報を検索するために使用するか、<see langword="null" />です。</param>
+        <param name="xmlLang"><see langword="xml:lang" />スコープ。</param>
+        <param name="xmlSpace"><see cref="T:System.Xml.XmlSpace" />を示す値、<see langword="xml:space" />スコープ。</param>
+        <summary>新しいインスタンスを初期化、 <see langword="XmlParserContext" /> 、指定したクラス<see cref="T:System.Xml.XmlNameTable" />、 <see cref="T:System.Xml.XmlNamespaceManager" />、 <see langword="xml:lang" />、および<see langword="xml:space" />値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、XML フラグメントを読み取ります。 使用して、`XmlParserContext`とその`XmlNamespaceManager`を名前空間の一致を処理します。  
+  
+ [!code-csharp[Classic WebData XmlParserContext.XmlParserContext Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlParserContext.XmlParserContext Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlParserContext.XmlParserContext Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlParserContext.XmlParserContext Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.XmlException">
+          <paramref name="nt" />同じでない<see langword="XmlNameTable" />構築に使用される<paramref name="nsMgr" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlParserContext (System.Xml.XmlNameTable nt, System.Xml.XmlNamespaceManager nsMgr, string xmlLang, System.Xml.XmlSpace xmlSpace, System.Text.Encoding enc);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlNameTable nt, class System.Xml.XmlNamespaceManager nsMgr, string xmlLang, valuetype System.Xml.XmlSpace xmlSpace, class System.Text.Encoding enc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlParserContext.#ctor(System.Xml.XmlNameTable,System.Xml.XmlNamespaceManager,System.String,System.Xml.XmlSpace,System.Text.Encoding)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="nt" Type="System.Xml.XmlNameTable" />
+        <Parameter Name="nsMgr" Type="System.Xml.XmlNamespaceManager" />
+        <Parameter Name="xmlLang" Type="System.String" />
+        <Parameter Name="xmlSpace" Type="System.Xml.XmlSpace" />
+        <Parameter Name="enc" Type="System.Text.Encoding" />
+      </Parameters>
+      <Docs>
+        <param name="nt"><see cref="T:System.Xml.XmlNameTable" />を使用して文字列を細分化します。 これは、する場合<see langword="null" />、構築するために使用される名前のテーブル、 <c>nsMgr</c>代わりに使用されます。 アトミック化された文字列の詳細については、次を参照してください。<see cref="T:System.Xml.XmlNameTable" />です。</param>
+        <param name="nsMgr"><see cref="T:System.Xml.XmlNamespaceManager" />名前空間の情報を検索するために使用するか、<see langword="null" />です。</param>
+        <param name="xmlLang"><see langword="xml:lang" />スコープ。</param>
+        <param name="xmlSpace"><see cref="T:System.Xml.XmlSpace" />を示す値、<see langword="xml:space" />スコープ。</param>
+        <param name="enc"><see cref="T:System.Text.Encoding" />エンコードの設定を示すオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、 <see langword="XmlParserContext" /> 、指定したクラス<see cref="T:System.Xml.XmlNameTable" />、 <see cref="T:System.Xml.XmlNamespaceManager" />、 <see langword="xml:lang" />、 <see langword="xml:space" />、およびエンコードします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Xml.XmlException">
+          <paramref name="nt" />同じでない<see langword="XmlNameTable" />構築に使用される<paramref name="nsMgr" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlParserContext (System.Xml.XmlNameTable nt, System.Xml.XmlNamespaceManager nsMgr, string docTypeName, string pubId, string sysId, string internalSubset, string baseURI, string xmlLang, System.Xml.XmlSpace xmlSpace);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlNameTable nt, class System.Xml.XmlNamespaceManager nsMgr, string docTypeName, string pubId, string sysId, string internalSubset, string baseURI, string xmlLang, valuetype System.Xml.XmlSpace xmlSpace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlParserContext.#ctor(System.Xml.XmlNameTable,System.Xml.XmlNamespaceManager,System.String,System.String,System.String,System.String,System.String,System.String,System.Xml.XmlSpace)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="nt" Type="System.Xml.XmlNameTable" />
+        <Parameter Name="nsMgr" Type="System.Xml.XmlNamespaceManager" />
+        <Parameter Name="docTypeName" Type="System.String" />
+        <Parameter Name="pubId" Type="System.String" />
+        <Parameter Name="sysId" Type="System.String" />
+        <Parameter Name="internalSubset" Type="System.String" />
+        <Parameter Name="baseURI" Type="System.String" />
+        <Parameter Name="xmlLang" Type="System.String" />
+        <Parameter Name="xmlSpace" Type="System.Xml.XmlSpace" />
+      </Parameters>
+      <Docs>
+        <param name="nt"><see cref="T:System.Xml.XmlNameTable" />を使用して文字列を細分化します。 これは、する場合<see langword="null" />、構築するために使用される名前のテーブル、 <c>nsMgr</c>代わりに使用されます。 アトミック化された文字列の詳細については、次を参照してください。<see cref="T:System.Xml.XmlNameTable" />です。</param>
+        <param name="nsMgr"><see cref="T:System.Xml.XmlNamespaceManager" />名前空間の情報を検索するために使用するか、<see langword="null" />です。</param>
+        <param name="docTypeName">ドキュメント型宣言の名前。</param>
+        <param name="pubId">パブリック識別子です。</param>
+        <param name="sysId">システム識別子。</param>
+        <param name="internalSubset">内部の DTD サブセット。 DTD サブセットは、ドキュメントの検証は、エンティティの解決に使用されます。</param>
+        <param name="baseURI">ベース URI を XML フラグメントを (フラグメントの読み込み元の場所)。</param>
+        <param name="xmlLang"><see langword="xml:lang" />スコープ。</param>
+        <param name="xmlSpace"><see cref="T:System.Xml.XmlSpace" />を示す値、<see langword="xml:space" />スコープ。</param>
+        <summary>新しいインスタンスを初期化、 <see langword="XmlParserContext" /> 、指定したクラス<see cref="T:System.Xml.XmlNameTable" />、 <see cref="T:System.Xml.XmlNamespaceManager" />、ベース URI、 <see langword="xml:lang" />、 <see langword="xml:space" />、およびドキュメントの値を入力します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを提供すべて`DocumentType`で必要な情報<xref:System.Xml.XmlValidatingReader>です。 この場合`XmlParserContext`に渡される、 <xref:System.Xml.XmlTextReader>、すべての DTD 情報は無視されます。  
+  
+ として、DTD を渡した場合、 `internalSubset`DTD はドキュメントの検証は、エンティティの解決に使用します。  
+  
+   
+  
+## Examples  
+ 次の例では、 `XmlParserContext` XML フラグメントを読み取れません。  
+  
+ [!code-csharp[Classic WebData XmlParserContext.XmlParserContext1 Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlParserContext.XmlParserContext1 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlParserContext.XmlParserContext1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlParserContext.XmlParserContext1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.XmlException">
+          <paramref name="nt" />同じでない<see langword="XmlNameTable" />構築に使用される<paramref name="nsMgr" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlParserContext (System.Xml.XmlNameTable nt, System.Xml.XmlNamespaceManager nsMgr, string docTypeName, string pubId, string sysId, string internalSubset, string baseURI, string xmlLang, System.Xml.XmlSpace xmlSpace, System.Text.Encoding enc);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlNameTable nt, class System.Xml.XmlNamespaceManager nsMgr, string docTypeName, string pubId, string sysId, string internalSubset, string baseURI, string xmlLang, valuetype System.Xml.XmlSpace xmlSpace, class System.Text.Encoding enc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlParserContext.#ctor(System.Xml.XmlNameTable,System.Xml.XmlNamespaceManager,System.String,System.String,System.String,System.String,System.String,System.String,System.Xml.XmlSpace,System.Text.Encoding)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="nt" Type="System.Xml.XmlNameTable" />
+        <Parameter Name="nsMgr" Type="System.Xml.XmlNamespaceManager" />
+        <Parameter Name="docTypeName" Type="System.String" />
+        <Parameter Name="pubId" Type="System.String" />
+        <Parameter Name="sysId" Type="System.String" />
+        <Parameter Name="internalSubset" Type="System.String" />
+        <Parameter Name="baseURI" Type="System.String" />
+        <Parameter Name="xmlLang" Type="System.String" />
+        <Parameter Name="xmlSpace" Type="System.Xml.XmlSpace" />
+        <Parameter Name="enc" Type="System.Text.Encoding" />
+      </Parameters>
+      <Docs>
+        <param name="nt"><see cref="T:System.Xml.XmlNameTable" />を使用して文字列を細分化します。 これは、する場合<see langword="null" />、構築するために使用される名前のテーブル、 <c>nsMgr</c>代わりに使用されます。 アトミック化された文字列の詳細については、次を参照してください。<see cref="T:System.Xml.XmlNameTable" />です。</param>
+        <param name="nsMgr"><see cref="T:System.Xml.XmlNamespaceManager" />名前空間の情報を検索するために使用するか、<see langword="null" />です。</param>
+        <param name="docTypeName">ドキュメント型宣言の名前。</param>
+        <param name="pubId">パブリック識別子です。</param>
+        <param name="sysId">システム識別子。</param>
+        <param name="internalSubset">内部の DTD サブセット。 DTD はドキュメントの検証は、エンティティの解決に使用されます。</param>
+        <param name="baseURI">ベース URI を XML フラグメントを (フラグメントの読み込み元の場所)。</param>
+        <param name="xmlLang"><see langword="xml:lang" />スコープ。</param>
+        <param name="xmlSpace"><see cref="T:System.Xml.XmlSpace" />を示す値、<see langword="xml:space" />スコープ。</param>
+        <param name="enc"><see cref="T:System.Text.Encoding" />エンコードの設定を示すオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、 <see langword="XmlParserContext" /> 、指定したクラス<see cref="T:System.Xml.XmlNameTable" />、 <see cref="T:System.Xml.XmlNamespaceManager" />、ベース URI、 <see langword="xml:lang" />、 <see langword="xml:space" />、エンコード、およびドキュメントの種類の値。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Xml.XmlException">
+          <paramref name="nt" />同じでない<see langword="XmlNameTable" />構築に使用される<paramref name="nsMgr" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseURI">
+      <MemberSignature Language="C#" Value="public string BaseURI { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BaseURI" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlParserContext.BaseURI" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはベース URI を設定します。</summary>
+        <value>DTD ファイルの解決に使用するベース URI。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ネットワークに接続された XML ドキュメントでは、さまざまな W3C 標準包含メカニズムを使用して集計データのチャンクで構成され、そのため、異なる場所ノードが含まれる場合があります。 `BaseURI`これらのノードが発生した場所を示しています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DocTypeName">
+      <MemberSignature Language="C#" Value="public string DocTypeName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DocTypeName" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlParserContext.DocTypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはドキュメント型宣言の名前を設定します。</summary>
+        <value>ドキュメント型宣言の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、と共に<xref:System.Xml.XmlParserContext.PublicId%2A>、 <xref:System.Xml.XmlParserContext.SystemId%2A>、および<xref:System.Xml.XmlParserContext.InternalSubset%2A>ドキュメント型宣言のすべての情報を提供します。 検索して、すべての既定の属性と DTD 内で定義されているエンティティを取得することは、DTD に必要な情報を読み込むのために使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Encoding">
+      <MemberSignature Language="C#" Value="public System.Text.Encoding Encoding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Text.Encoding Encoding" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlParserContext.Encoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Encoding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはエンコードの種類を設定します。</summary>
+        <value><see cref="T:System.Text.Encoding" />エンコードの種類を示すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InternalSubset">
+      <MemberSignature Language="C#" Value="public string InternalSubset { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string InternalSubset" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlParserContext.InternalSubset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または内部の DTD サブセットを設定します。</summary>
+        <value>内部の DTD サブセット。 たとえば、このプロパティを返しますすべて角かっこで囲まれた<c> &lt;!DOCTYPE doc [...]&gt;</c>.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、と共に<xref:System.Xml.XmlParserContext.DocTypeName%2A>、 <xref:System.Xml.XmlParserContext.PublicId%2A>、および<xref:System.Xml.XmlParserContext.SystemId%2A>ドキュメント型宣言のすべての情報を提供します。 検索して、すべての既定の属性と DTD 内で定義されているエンティティを取得することは、DTD に必要な情報を読み込むのために使用されます。  
+  
+ DTD はドキュメントの検証は、エンティティの解決に使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NamespaceManager">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlNamespaceManager NamespaceManager { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlNamespaceManager NamespaceManager" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlParserContext.NamespaceManager" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNamespaceManager</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Xml.XmlNamespaceManager" /> を取得または設定します。</summary>
+        <value><see langword="XmlNamespaceManager" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `NamespaceManager`現在の名前空間スコープを定義し、名前空間の情報を検索するためのメソッドを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NameTable">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlNameTable NameTable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlNameTable NameTable" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlParserContext.NameTable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNameTable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xml.XmlNameTable" />を文字列に分解するために使用します。 アトミック化された文字列の詳細については、次を参照してください。<see cref="T:System.Xml.XmlNameTable" />です。</summary>
+        <value><see langword="XmlNameTable" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PublicId">
+      <MemberSignature Language="C#" Value="public string PublicId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PublicId" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlParserContext.PublicId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはパブリック識別子を設定します。</summary>
+        <value>パブリック識別子です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、と共に<xref:System.Xml.XmlParserContext.DocTypeName%2A>、 <xref:System.Xml.XmlParserContext.SystemId%2A>、および<xref:System.Xml.XmlParserContext.InternalSubset%2A>ドキュメント型宣言のすべての情報を提供します。 検索して、すべての既定の属性と DTD 内で定義されているエンティティを取得することは、必要な DTD 情報を読み込むために使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemId">
+      <MemberSignature Language="C#" Value="public string SystemId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SystemId" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlParserContext.SystemId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはシステム識別子を設定します。</summary>
+        <value>システム識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、と共に<xref:System.Xml.XmlParserContext.DocTypeName%2A>、 <xref:System.Xml.XmlParserContext.PublicId%2A>、および<xref:System.Xml.XmlParserContext.InternalSubset%2A>ドキュメント型宣言のすべての情報を提供します。 検索して、すべての既定の属性と DTD 内で定義されているエンティティを取得することは、DTD に必要な情報を読み込むのために使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlLang">
+      <MemberSignature Language="C#" Value="public string XmlLang { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string XmlLang" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlParserContext.XmlLang" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の設定を取得または<see langword="xml:lang" />スコープ。</summary>
+        <value>現在の <see langword="xml:lang" /> スコープ。 ある場合ありません<see langword="xml:lang" />スコープで<see langword="String.Empty" />が返されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については有効な `xml:lang`値は、2.12、W3C 拡張マークアップ言語 (XML) 1.0 』 勧告のセクションを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlSpace">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlSpace XmlSpace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.XmlSpace XmlSpace" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlParserContext.XmlSpace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlSpace</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の設定を取得または<see langword="xml:space" />スコープ。</summary>
+        <value><see cref="T:System.Xml.XmlSpace" />を示す値、<see langword="xml:space" />スコープ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

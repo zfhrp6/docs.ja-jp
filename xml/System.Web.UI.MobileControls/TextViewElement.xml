@@ -1,0 +1,159 @@
+<Type Name="TextViewElement" FullName="System.Web.UI.MobileControls.TextViewElement">
+  <TypeSignature Language="C#" Value="public class TextViewElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TextViewElement extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.MobileControls.TextViewElement" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Mobile</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Web.Mobile.dll assembly has been deprecated and should no longer be used. For information about how to develop ASP.NET mobile applications, see http://go.microsoft.com/fwlink/?LinkId=157231.")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>テキストを提供する<see cref="T:System.Web.UI.MobileControls.TextView" />オブジェクト。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.MobileControls.TextViewElement>クラスでサポート、<xref:System.Web.UI.MobileControls.TextView>の text プロパティを分割して、<xref:System.Web.UI.MobileControls.TextView>論理要素オブジェクト。 各要素がの改ページ調整メカニズムを使用して、<xref:System.Web.UI.MobileControls.TextView>オブジェクト。 このクラスは、<xref:System.Web.UI.MobileControls.TextView>モバイル コントロールはそれを使用して、改ページがリンクまたはいないページ間で分割するかその他の要素の中で発生しないことを確認します。  
+  
+ 派生する場合、<xref:System.Web.UI.MobileControls.TextView>モバイル コントロール、または新しいアダプターを作成するには、おそらくことができます変更しなくても、このクラスを使用します。  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Web.AspNetHostingPermission">ホスト環境で動作しています。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。アクセス許可の値:<see cref="F:System.Web.AspNetHostingPermissionLevel.Minimal" />です。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName="BreakAfter">
+      <MemberSignature Language="C#" Value="public bool BreakAfter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool BreakAfter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.MobileControls.TextViewElement.BreakAfter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定またはコントロールの後ろに追加の後続の改行をレンダリングするかどうかを決定するプロパティを返します。 この区切りにより、それ以降のコンテンツは次の行で開始します。 既定値は、<see langword="true" /> です。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <value>
+          コントロールの後ろに追加の後続の改行がレンダリングされる場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、後続の改行が適切ないないコントロールを無視します。 次の表に、サポートするコントロール、<xref:System.Web.UI.MobileControls.MobileControl.BreakAfter%2A>デバイスの特定の種類のプロパティです。  
+  
+|コントロール|HTML ブラウザーとデバイス|WML ブラウザーを備えたデバイス|デバイスを WML/ブラウザーを|  
+|-------------|------------------------------|-----------------------------|---------------------------------|  
+|AdRotator||||  
+|予定表|Y|||  
+|コマンド|Y|Y||  
+|イメージ|Y|Y|Y|  
+|ラベル|Y|Y|Y|  
+|Link|Y|Y||  
+|リスト||||  
+|ObjectList|Y (限り、デバイスのブラウザーでは、テーブルを処理できる)|||  
+|パネル (既定値は false)|Y|Y|Y|  
+|PhoneCall|Y|Y||  
+|SelectionList|Y (ブラウザーでは、テーブルを処理できる) しない限り、|Y||  
+|TextBox|Y|Y||  
+|TextView|Y|Y||  
+|TextViewElement|Y|Y||  
+|検証コントロール|Y|Y|Y|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBold">
+      <MemberSignature Language="C#" Value="public bool IsBold { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsBold" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.MobileControls.TextViewElement.IsBold" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>返します<see langword="true" />テキストが太字の場合。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <value>
+          <see langword="true" />テキストが太字以外の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsItalic">
+      <MemberSignature Language="C#" Value="public bool IsItalic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsItalic" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.MobileControls.TextViewElement.IsItalic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>返します<see langword="true" />テキストが斜体の場合。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <value>
+          <see langword="true" />テキストが斜体の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.MobileControls.TextViewElement.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定またはコントロールのテキストを返します。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <value>コントロールのテキストです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.MobileControls.TextViewElement.Text%2A>を使用してプロパティを指定することができます、`Text`属性、または内部のテキストとして。 場合、<xref:System.Web.UI.MobileControls.TextViewElement.Text%2A>プロパティが両方の方法で指定した場合、その内部テキ ストは常に優先します。 ただし場合、<xref:System.Web.UI.MobileControls.TextViewElement.Text%2A>プロパティがプログラムで設定されている、その内部テキ ストが自動的に削除され、新しく設定プロパティが優先されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Url">
+      <MemberSignature Language="C#" Value="public string Url { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Url" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.MobileControls.TextViewElement.Url" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキストの URL を返します。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <value>テキストの URL です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

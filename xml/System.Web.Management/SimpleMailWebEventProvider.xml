@@ -1,0 +1,138 @@
+<Type Name="SimpleMailWebEventProvider" FullName="System.Web.Management.SimpleMailWebEventProvider">
+  <TypeSignature Language="C#" Value="public sealed class SimpleMailWebEventProvider : System.Web.Management.MailWebEventProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SimpleMailWebEventProvider extends System.Web.Management.MailWebEventProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Management.SimpleMailWebEventProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Management.MailWebEventProvider</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>イベント通知の電子メールを送信するイベント プロバイダーを実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配置済みの Web アプリケーションの管理を運用環境と運用スタッフは、ASP.NET の状態監視できます。 <xref:System.Web.Management>名前空間には、アプリケーションの正常性状態のデータおよびプロバイダーの種類は、このデータ処理をパッケージ化する正常性イベントの種類が含まれています。 正常性イベントの管理を支援するサポート型も含まれています。  
+  
+ このクラスは、コードから使用するものではありません。 作成は、構成されている ASP.NET の稼働状況の監視システムでイベント通知を電子メールで送信するために使用します。 このトピックのセクションの例に示すように、構成ファイルにイベント プロバイダーを定義できます。  
+  
+ このプロバイダーは、包括的な一連の動作方法のカスタマイズに使用できる構成属性を備えています。  
+  
+   
+  
+## Examples  
+ 次の構成ファイルの抜粋は、型プロバイダーを指定する方法を示します<xref:System.Web.Management.SimpleMailWebEventProvider>で、`healthMonitoring`セクションです。 `add`内の要素、`rules`セクションでは、プロバイダーが要求処理エラーとインフラストラクチャ エラーを処理することを指定します。  
+  
+```  
+<healthMonitoring  
+    enabled="true"  
+    heartBeatInterval="0">  
+    <bufferModes>  
+        <add name="Critical Notification"  
+            maxBufferSize="100"  
+            maxFlushSize="20"  
+            urgentFlushThreshold="1"  
+            regularFlushInterval="Infinite"  
+            urgentFlushInterval="00:01:00"  
+            maxBufferThreads="1"  
+        />  
+    </bufferModes>  
+    <providers>  
+        <add name="CriticalMailEventProvider"  
+            type="System.Web.Management.SimpleMailWebEventProvider,   
+              System.Web, Version=%ASSEMBLY_VERSION%, Culture=neutral,   
+              PublicKeyToken=%MICROSOFT_PUBLICKEY%"  
+            from="sender address"  
+            to="someone@example.com"   
+            cc="someone@example.com  
+            bcc="someone@example.com"  
+            priority="High"  
+            bodyHeader="Warning!"  
+            bodyFooter="Please investigate ASAP."  
+            subjectPrefix="Action required."  
+            buffer="true"  
+            bufferMode="Critical Notification"  
+            maxEventLength="4096"  
+            maxSize="4096"  
+            maxMessagesPerNotification="1"  
+        />  
+    </providers>  
+    <eventMappings>  
+        <add name="Request Processing Events"  
+            type="System.Web.Management.WebRequestEvent, System.Web,   
+              Version=%ASSEMBLY_VERSION%, Culture=neutral,   
+              PublicKeyToken=%MICROSOFT_PUBLICKEY%"   
+        />  
+        <add name="Infrastructure Errors"  
+            type="System.Web.Management.WebErrorEvent, System.Web,   
+              Version=%ASSEMBLY_VERSION%, Culture=neutral,   
+              PublicKeyToken=%MICROSOFT_PUBLICKEY%"   
+        />  
+    </eventMappings>  
+    <profiles>  
+        <add name="Default"  
+            minInstances="1"  
+            maxLimit="Infinite"  
+            minInterval="00:10:00"  
+        />  
+        <add name="Critical"  
+            minInstances="1"  
+            maxLimit="1024"  
+            minInterval="00:00:00"  
+        />  
+    </profiles>  
+    <rules>  
+        <add name="Request Processing Errors"  
+            eventName="Request Processing Errors"  
+            provider="CriticalMailEventProvider"  
+            profile="Default"  
+        />  
+        <add name="Infrastructure Notifications"  
+            eventName="Infrastructure Errors"  
+            provider="CriticalMailEventProvider"  
+            profile="Critical"  
+        />  
+   </rules>  
+</healthMonitoring>   
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (string name, System.Collections.Specialized.NameValueCollection config);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(string name, class System.Collections.Specialized.NameValueCollection config) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.SimpleMailWebEventProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="config" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="name">このイベント プロバイダーの名前。</param>
+        <param name="config">A<see cref="T:System.Collections.Specialized.NameValueCollection" />イベント プロバイダーの構成設定を指定します。</param>
+        <summary>このオブジェクトの初期値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはコードから直接使用するためのものではありません。 ASP.NET の稼働状況の監視システムによって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

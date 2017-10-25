@@ -1,0 +1,189 @@
+<Type Name="SourceChangedEventArgs" FullName="System.Windows.SourceChangedEventArgs">
+  <TypeSignature Language="C#" Value="public sealed class SourceChangedEventArgs : System.Windows.RoutedEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SourceChangedEventArgs extends System.Windows.RoutedEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.SourceChangedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.RoutedEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>相互運用のために使用される、SourceChanged イベントのデータを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SourceChanged イベントは、イベント識別子はパブリックに公開されていないルーティングされたイベントです。 これは、このイベントの相互運用で重大な役割を果たしますおよびを既知の内部実装よりも、他のソースでは許可されておらずため<xref:System.Windows.PresentationSource>サブクラス (このようなだけのクラスは、現在のところ、 <xref:System.Windows.Interop.HwndSource>)。 相互運用のソリューションを実装する場合、アタッチまたはイベントのハンドラーを削除することができます (を呼び出して<xref:System.Windows.PresentationSource.AddSourceChangedHandler%2A>と<xref:System.Windows.PresentationSource.RemoveSourceChangedHandler%2A>、それぞれ) は通常、クラス処理、所有者を追加、または、任意の要素のソースからイベントを発生させるなどのルーティング イベントを使用できるその他の操作を実行できません。  
+  
+ このクラスは、オーバーライド、<xref:System.Windows.RoutedEventArgs>仮想メソッド<xref:System.Windows.RoutedEventArgs.InvokeEventHandler%2A?displayProperty=nameWithType>イベント システムによって要求されたときに型固有のハンドラーを返すために、します。 これは、<xref:System.Windows.SourceChangedEventArgs>オーバーライドがこのクラスのメンバー テーブルに表示されない[!INCLUDE[TLA2#tla_sdk](~/includes/tla2sharptla-sdk-md.md)]ドキュメント シール クラスで実装されたプロテクト メンバーになっているためです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SourceChangedEventArgs (System.Windows.PresentationSource oldSource, System.Windows.PresentationSource newSource);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.PresentationSource oldSource, class System.Windows.PresentationSource newSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.SourceChangedEventArgs.#ctor(System.Windows.PresentationSource,System.Windows.PresentationSource)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="oldSource" Type="System.Windows.PresentationSource" />
+        <Parameter Name="newSource" Type="System.Windows.PresentationSource" />
+      </Parameters>
+      <Docs>
+        <param name="oldSource">古い<see cref="T:System.Windows.PresentationSource" />このハンドラーに通知されることです。</param>
+        <param name="newSource">新しい<see cref="T:System.Windows.PresentationSource" />このハンドラーに通知されることです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.SourceChangedEventArgs" />クラス、新旧のソースの指定された情報を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SourceChangedEventArgs (System.Windows.PresentationSource oldSource, System.Windows.PresentationSource newSource, System.Windows.IInputElement element, System.Windows.IInputElement oldParent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.PresentationSource oldSource, class System.Windows.PresentationSource newSource, class System.Windows.IInputElement element, class System.Windows.IInputElement oldParent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.SourceChangedEventArgs.#ctor(System.Windows.PresentationSource,System.Windows.PresentationSource,System.Windows.IInputElement,System.Windows.IInputElement)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="oldSource" Type="System.Windows.PresentationSource" />
+        <Parameter Name="newSource" Type="System.Windows.PresentationSource" />
+        <Parameter Name="element" Type="System.Windows.IInputElement" />
+        <Parameter Name="oldParent" Type="System.Windows.IInputElement" />
+      </Parameters>
+      <Docs>
+        <param name="oldSource">古い<see cref="T:System.Windows.PresentationSource" />このハンドラーに通知されることです。</param>
+        <param name="newSource">新しい<see cref="T:System.Windows.PresentationSource" />このハンドラーに通知されることです。</param>
+        <param name="element">親の変更によって、ソースを変更する要素。</param>
+        <param name="oldParent">親の変更によって、ソースを変更する要素の古い親です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.SourceChangedEventArgs" />クラス、指定された情報、古いマスター_キーと新しいソースの場合、要素をこの変更の効果をその要素の親を以前に報告を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Element">
+      <MemberSignature Language="C#" Value="public System.Windows.IInputElement Element { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.IInputElement Element" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.SourceChangedEventArgs.Element" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.IInputElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素が親の変更によって変更するプレゼンテーション ソース情報を取得します。</summary>
+        <value>変更を報告する要素。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeEventHandler">
+      <MemberSignature Language="C#" Value="protected override void InvokeEventHandler (Delegate genericHandler, object genericTarget);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InvokeEventHandler(class System.Delegate genericHandler, object genericTarget) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.SourceChangedEventArgs.InvokeEventHandler(System.Delegate,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="genericHandler" Type="System.Delegate" />
+        <Parameter Name="genericTarget" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="genericHandler">To be added.</param>
+        <param name="genericTarget">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewSource">
+      <MemberSignature Language="C#" Value="public System.Windows.PresentationSource NewSource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.PresentationSource NewSource" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.SourceChangedEventArgs.NewSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.PresentationSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このソースの変更に関係する、新しいソースを取得します。</summary>
+        <value>新しい <see cref="T:System.Windows.PresentationSource" />。</value>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">この値を取得します。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="OldParent">
+      <MemberSignature Language="C#" Value="public System.Windows.IInputElement OldParent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.IInputElement OldParent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.SourceChangedEventArgs.OldParent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.IInputElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素の以前の親が親の変更によって変更するプレゼンテーション ソース情報を取得します。</summary>
+        <value>以前の親要素のソース。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OldSource">
+      <MemberSignature Language="C#" Value="public System.Windows.PresentationSource OldSource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.PresentationSource OldSource" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.SourceChangedEventArgs.OldSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.PresentationSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このソースの変更に関連する古いソースを取得します。</summary>
+        <value>古い<see cref="T:System.Windows.PresentationSource" />です。</value>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">この値を取得します。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

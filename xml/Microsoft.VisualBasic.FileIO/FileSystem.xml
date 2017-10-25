@@ -1,0 +1,3212 @@
+<Type Name="FileSystem" FullName="Microsoft.VisualBasic.FileIO.FileSystem">
+  <TypeSignature Language="C#" Value="public class FileSystem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FileSystem extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.FileIO.FileSystem" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ドライブ、ファイル、ディレクトリを操作するためのプロパティとメソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表に、関連するタスクの例については、`My.Computer.FileSystem`オブジェクト。  
+  
+|目的|参照トピック|  
+|-|-|  
+|テキスト ファイルからの読み取り|[方法: テキスト ファイルからデータを読み取る](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files.md)|  
+|区切られたテキスト ファイルからの読み取り|[方法: コンマ区切りのテキスト ファイルを読み取る](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-comma-delimited-text-files.md)|  
+|固定幅テキスト ファイルからの読み取り|[方法: 固定幅のテキスト ファイルを読み取る](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-fixed-width-text-files.md)|  
+|複数の形式を持つテキスト ファイルからの読み取り|[方法: 複数の書式を持つテキスト ファイルを読み取る](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files-with-multiple-formats.md)|  
+|バイナリ ファイルからの読み取り|[方法: バイナリ ファイルを読み取る](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-binary-files.md)|  
+|持つテキスト ファイルから読み取られた、<xref:System.IO.StreamReader>|[方法: StreamReader を使用してファイルからテキストを読み取る](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-read-text-from-files-with-a-streamreader.md)|  
+|テキスト ファイルへの書き込み|[方法: ファイルにテキストを書き込む](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-write-text-to-files.md)|  
+|テキスト ファイルを追加します。|[方法: テキスト ファイルに追記する](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-append-to-text-files.md)|  
+|バイナリ ファイルへの書き込み|[方法: バイナリ ファイルに書き込む](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-write-to-binary-files.md)|  
+|テキスト ファイルに書き込み、**マイ ドキュメント**ディレクトリ|[方法: My Documents ディレクトリのファイルにテキストを書き込む](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-write-text-to-files-in-the-my-documents-directory.md)|  
+|持つテキスト ファイルに書き込み、`StreamWriter`|[方法: StreamWriter を使用してファイルにテキストを書き込む](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-write-text-to-files-with-a-streamwriter.md)|  
+|特定のパターンを持つファイルをコピーします。|[方法: 特定のパターンを持つファイルをディレクトリにコピーする](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-copy-files-with-a-specific-pattern-to-a-directory.md)|  
+|同じディレクトリにファイルをコピーします。|[方法: ファイルのコピーを同じディレクトリに作成する](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-the-same-directory.md)|  
+|別のディレクトリにファイルをコピーします。|[方法: ファイルのコピーを別のディレクトリに作成する](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-a-different-directory.md)|  
+|ファイルを作成します。|[方法: ファイルを作成する](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-file.md)|  
+|ファイルの削除|[方法: ファイルを削除する](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-delete-a-file.md)|  
+|特定のパターンを持つファイルを検索します。|[方法: 特定のパターンに一致するファイルを検索する](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-find-files-with-a-specific-pattern.md)|  
+|ファイルを移動します。|[方法: ファイルを移動する](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-move-a-file.md)|  
+|ファイル名の変更します。|[方法: ファイルの名前を変更する](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-rename-a-file.md)|  
+|ディレクトリを別のディレクトリにコピーします。|[方法: ディレクトリを別のディレクトリにコピーする](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-copy-a-directory-to-another-directory.md)|  
+|ディレクトリの作成|[方法: ディレクトリを作成する](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-directory.md)|  
+|特定のパターンを持つサブディレクトリを検索します。|[方法: 特定のパターンに一致するサブディレクトリを検索する](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-find-subdirectories-with-a-specific-pattern.md)|  
+|ディレクトリ内のファイルのコレクションを取得します。|[方法: ディレクトリにあるファイルのコレクションを取得する](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-get-the-collection-of-files-in-a-directory.md)|  
+|読み取り、**マイ ドキュメント**ディレクトリ|[方法: My Documents ディレクトリの内容を取得する](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-retrieve-the-contents-of-the-my-documents-directory.md)|  
+|ファイル パスを解析します。|[方法: ファイル パスを解析する](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)|  
+  
+   
+  
+## Examples  
+ この例のチェックを決定するかどうかフォルダー`C:\backup\logs`が存在し、そのプロパティをチェックします。  
+  
+ [!code-vb[VbVbcnMyFileSystem#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#23)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileSystem ();" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.VisualBasic.FileIO.FileSystem" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [オブジェクト (Visual Basic)](http://msdn.microsoft.com/library/651c73e4-dca8-402b-9c6b-e3902b3a3f4b)  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CombinePath">
+      <MemberSignature Language="C#" Value="public static string CombinePath (string baseDirectory, string relativePath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string CombinePath(string baseDirectory, string relativePath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.CombinePath(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseDirectory" Type="System.String" />
+        <Parameter Name="relativePath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="baseDirectory">
+          <see langword="String" />。 最初のパスを結合します。</param>
+        <param name="relativePath">
+          <see langword="String" />。 2 番目のパスを結合します。</param>
+        <summary>2 つのパスを結合し、正しく書式設定されたパスを返します。</summary>
+        <returns>指定したパスの組み合わせ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、正しく書式設定されたパスを作成する余分なスラッシュ (/) 文字をトリムします。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.FileSystem.CombinePath`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ディレクトリ パスとファイル名を結合します。|[方法: Visual Basic でファイル パスの解析](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)|  
+  
+   
+  
+## Examples  
+ この例では、正しく書式設定されたパスを作成するディレクトリ パスとファイル名を結合します。  
+  
+ [!code-vb[VbRefFile#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#3)]  
+  
+ この例では、正しく書式設定されたパスを作成する 2 つのパスを結合します。  
+  
+ [!code-vb[VbRefFile#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#4)]  
+  
+ この例を返します`C:\Dir1\Dir2\Dir4\Dir5\File.txt`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="baseDirectory" />または<paramref name="relativePath" />パスが正しくありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyDirectory">
+      <MemberSignature Language="C#" Value="public static void CopyDirectory (string sourceDirectoryName, string destinationDirectoryName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void CopyDirectory(string sourceDirectoryName, string destinationDirectoryName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.CopyDirectory(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceDirectoryName" Type="System.String" />
+        <Parameter Name="destinationDirectoryName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceDirectoryName">コピーされるディレクトリです。</param>
+        <param name="destinationDirectoryName">ディレクトリの内容のコピー先となる場所です。</param>
+        <summary>ディレクトリの内容を別のディレクトリにコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ターゲット ディレクトリにソース ディレクトリの内容をコピーします。 ターゲット ディレクトリが存在しない場合は作成されます。 ターゲットの場所に同じ名前のディレクトリが存在する場合は、2 つのディレクトリの内容がマージされます。 操作中に、ディレクトリに新しい名前を指定できます。  
+  
+ ディレクトリ内のファイルをコピーするときに例外スローされる可能性が引き起こされる、特定のファイルでします。 このような例外がスローされると、それらに統合されます。 1 つの例外が`Data`プロパティの形式でエントリを保持する、<xref:System.Collections.IDictionary>をファイルまたはディレクトリのパスは、キーであり、特定の例外メッセージが、対応する値に含まれています。 使用して`For…Each`エントリを列挙します。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.FileSystem.CopyDirectory`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ディレクトリのコピー|[方法: Visual Basic での別のディレクトリにディレクトリをコピー](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-copy-a-directory-to-another-directory.md)|  
+  
+   
+  
+## Examples  
+ 次の例は、ディレクトリの内容をコピー`TestDirectory1`に`TestDirectory2`、既存のファイルを上書きします。  
+  
+ [!code-vb[VbVbcnMyFileSystem#49](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#49)]  
+  
+ 置換`C:\TestDirectory1`と`C:\TestDirectory2`パスとコピーするディレクトリとそれをコピーする場所の名前を使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">パスが正しくない、次の理由のいずれかの: は長さ 0 の文字列です。空白のみが含まれています無効な文字が含まれていますデバイス パスであるか (で始まる\\ \\.\\)。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="destinationDirectoryName" />または<paramref name="sourceDirectoryName" />は<see langword="Nothing" />または空の文字列。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">ソース ディレクトリが存在しません。</exception>
+        <exception cref="T:System.IO.IOException">ソース パスとターゲット パスは、同じです。</exception>
+        <exception cref="T:System.InvalidOperationException">操作は循環使用します。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.NotSupportedException">パスにフォルダー名は、コロン (:) が含まれています。 または形式が無効です。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、パスを表示するために必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">コピー先ファイルが存在しますが、アクセスできません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyDirectory">
+      <MemberSignature Language="C#" Value="public static void CopyDirectory (string sourceDirectoryName, string destinationDirectoryName, Microsoft.VisualBasic.FileIO.UIOption showUI);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void CopyDirectory(string sourceDirectoryName, string destinationDirectoryName, valuetype Microsoft.VisualBasic.FileIO.UIOption showUI) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.CopyDirectory(System.String,System.String,Microsoft.VisualBasic.FileIO.UIOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceDirectoryName" Type="System.String" />
+        <Parameter Name="destinationDirectoryName" Type="System.String" />
+        <Parameter Name="showUI" Type="Microsoft.VisualBasic.FileIO.UIOption" />
+      </Parameters>
+      <Docs>
+        <param name="sourceDirectoryName">コピーされるディレクトリです。</param>
+        <param name="destinationDirectoryName">ディレクトリの内容のコピー先となる場所です。</param>
+        <param name="showUI">操作の進行状況を視覚的に追跡するかどうか。 既定値は <see langword="UIOption.OnlyErrorDialogs" /> です。</param>
+        <summary>ディレクトリの内容を別のディレクトリにコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ターゲット ディレクトリにソース ディレクトリの内容をコピーします。 ターゲット ディレクトリが存在しない場合は作成されます。 ターゲットの場所に同じ名前のディレクトリが存在する場合は、2 つのディレクトリの内容がマージされます。 操作中に、ディレクトリに新しい名前を指定できます。  
+  
+ ディレクトリ内のファイルをコピーするときに例外スローされる可能性が引き起こされる、特定のファイルでします。 このような例外がスローされると、それらに統合されます。 1 つの例外が`Data`プロパティの形式でエントリを保持する、<xref:System.Collections.IDictionary>をファイルまたはディレクトリのパスは、キーであり、特定の例外メッセージが、対応する値に含まれています。 使用して`For…Each`エントリを列挙します。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.FileSystem.CopyDirectory`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ディレクトリのコピー|[方法: Visual Basic での別のディレクトリにディレクトリをコピー](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-copy-a-directory-to-another-directory.md)|  
+  
+   
+  
+## Examples  
+ 次の例は、ディレクトリの内容をコピー`TestDirectory1`に`TestDirectory2`、既存のファイルを上書きします。  
+  
+ [!code-vb[VbVbcnMyFileSystem#49](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#49)]  
+  
+ 置換`C:\TestDirectory1`と`C:\TestDirectory2`パスとコピーするディレクトリとそれをコピーする場所の名前を使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">パスが正しくない、次の理由のいずれかの: は長さ 0 の文字列です。空白のみが含まれています無効な文字が含まれていますデバイス パスであるか (で始まる\\ \\.\\)。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="destinationDirectoryName" />または<paramref name="sourceDirectoryName" />は<see langword="Nothing" />または空の文字列。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">ソース ディレクトリが存在しません。</exception>
+        <exception cref="T:System.IO.IOException">ソース パスとターゲット パスは、同じです。</exception>
+        <exception cref="T:System.InvalidOperationException">操作は循環使用します。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.NotSupportedException">パスにフォルダー名は、コロン (:) が含まれています。 または形式が無効です。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、パスを表示するために必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">コピー先ファイルが存在しますが、アクセスできません。</exception>
+        <exception cref="T:System.OperationCanceledException">
+          <paramref name="ShowUI" />設定されている<see langword="UIOption.AllDialogs" />と、ユーザーが、操作をキャンセルまたはディレクトリ内の 1 つまたは複数のファイルをコピーすることはできません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.UIPermission">ユーザー インターフェイスとクリップボードに関連するアクセス許可を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyDirectory">
+      <MemberSignature Language="C#" Value="public static void CopyDirectory (string sourceDirectoryName, string destinationDirectoryName, bool overwrite);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void CopyDirectory(string sourceDirectoryName, string destinationDirectoryName, bool overwrite) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.CopyDirectory(System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceDirectoryName" Type="System.String" />
+        <Parameter Name="destinationDirectoryName" Type="System.String" />
+        <Parameter Name="overwrite" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="sourceDirectoryName">コピーされるディレクトリです。</param>
+        <param name="destinationDirectoryName">ディレクトリの内容のコピー先となる場所です。</param>
+        <param name="overwrite">
+          <see langword="True" />既存のファイルを上書きするにはそれ以外の場合<see langword="False" />です。 既定値は <see langword="False" /> です。</param>
+        <summary>ディレクトリの内容を別のディレクトリにコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ターゲット ディレクトリにソース ディレクトリの内容をコピーします。 ターゲット ディレクトリが存在しない場合は作成されます。 ターゲットの場所に同じ名前のディレクトリが存在する場合は、2 つのディレクトリの内容がマージされます。 操作中に、ディレクトリに新しい名前を指定できます。  
+  
+ ディレクトリ内のファイルをコピーするときに例外スローされる可能性が引き起こされる中にマージ中に既存のファイルなど、特定のファイルで`overwrite`に設定されている`False`です。 このような例外がスローされると、それらに統合されます。 1 つの例外が`Data`プロパティの形式でエントリを保持する、<xref:System.Collections.IDictionary>をファイルまたはディレクトリのパスは、キーであり、特定の例外メッセージが、対応する値に含まれています。 使用して`For…Each`エントリを列挙します。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.FileSystem.CopyDirectory`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ディレクトリのコピー|[方法: Visual Basic での別のディレクトリにディレクトリをコピー](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-copy-a-directory-to-another-directory.md)|  
+  
+   
+  
+## Examples  
+ 次の例は、ディレクトリの内容をコピー`TestDirectory1`に`TestDirectory2`、既存のファイルを上書きします。  
+  
+ [!code-vb[VbVbcnMyFileSystem#49](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#49)]  
+  
+ 置換`C:\TestDirectory1`と`C:\TestDirectory2`パスとコピーするディレクトリとそれをコピーする場所の名前を使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">パスが正しくない、次の理由のいずれかの: は長さ 0 の文字列です。空白のみが含まれています無効な文字が含まれていますデバイス パスであるか (で始まる\\ \\.\\)。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="destinationDirectoryName" />または<paramref name="sourceDirectoryName" />は<see langword="Nothing" />または空の文字列。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">ソース ディレクトリが存在しません。</exception>
+        <exception cref="T:System.IO.IOException">ソース パスとターゲット パスは、同じです。</exception>
+        <exception cref="T:System.InvalidOperationException">操作は循環使用します。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.NotSupportedException">パスにフォルダー名は、コロン (:) が含まれています。 または形式が無効です。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、パスを表示するために必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">コピー先ファイルが存在しますが、アクセスできません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyDirectory">
+      <MemberSignature Language="C#" Value="public static void CopyDirectory (string sourceDirectoryName, string destinationDirectoryName, Microsoft.VisualBasic.FileIO.UIOption showUI, Microsoft.VisualBasic.FileIO.UICancelOption onUserCancel);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void CopyDirectory(string sourceDirectoryName, string destinationDirectoryName, valuetype Microsoft.VisualBasic.FileIO.UIOption showUI, valuetype Microsoft.VisualBasic.FileIO.UICancelOption onUserCancel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.CopyDirectory(System.String,System.String,Microsoft.VisualBasic.FileIO.UIOption,Microsoft.VisualBasic.FileIO.UICancelOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceDirectoryName" Type="System.String" />
+        <Parameter Name="destinationDirectoryName" Type="System.String" />
+        <Parameter Name="showUI" Type="Microsoft.VisualBasic.FileIO.UIOption" />
+        <Parameter Name="onUserCancel" Type="Microsoft.VisualBasic.FileIO.UICancelOption" />
+      </Parameters>
+      <Docs>
+        <param name="sourceDirectoryName">コピーされるディレクトリです。</param>
+        <param name="destinationDirectoryName">ディレクトリの内容のコピー先となる場所です。</param>
+        <param name="showUI">操作の進行状況を視覚的に追跡するかどうか。 既定値は <see langword="UIOption.OnlyErrorDialogs" /> です。</param>
+        <param name="onUserCancel">どのくらいにする必要がありますを指定します、ユーザーがクリックした場合は実行**キャンセル**操作中にします。 既定値は <see cref="F:Microsoft.VisualBasic.FileIO.UICancelOption.ThrowException" /> です。</param>
+        <summary>ディレクトリの内容を別のディレクトリにコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ターゲット ディレクトリにソース ディレクトリの内容をコピーします。 ターゲット ディレクトリが存在しない場合は作成されます。 ターゲットの場所に同じ名前のディレクトリが存在する場合は、2 つのディレクトリの内容がマージされます。 操作中に、ディレクトリに新しい名前を指定できます。  
+  
+ ディレクトリ内のファイルをコピーするときに例外スローされる可能性が引き起こされる、特定のファイルでします。 このような例外がスローされると、それらに統合されます。 1 つの例外が`Data`プロパティの形式でエントリを保持する、<xref:System.Collections.IDictionary>をファイルまたはディレクトリのパスは、キーであり、特定の例外メッセージが、対応する値に含まれています。 使用して`For…Each`エントリを列挙します。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.FileSystem.CopyDirectory`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ディレクトリのコピー|[方法: Visual Basic での別のディレクトリにディレクトリをコピー](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-copy-a-directory-to-another-directory.md)|  
+  
+   
+  
+## Examples  
+ 次の例は、ディレクトリの内容をコピー`TestDirectory1`に`TestDirectory2`、既存のファイルを上書きします。  
+  
+ [!code-vb[VbVbcnMyFileSystem#49](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#49)]  
+  
+ 置換`C:\TestDirectory1`と`C:\TestDirectory2`パスとコピーするディレクトリとそれをコピーする場所の名前を使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">パスが正しくない、次の理由のいずれかの: は長さ 0 の文字列です。空白のみが含まれています無効な文字が含まれていますデバイス パスであるか (で始まる\\ \\.\\)。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="destinationDirectoryName" />または<paramref name="sourceDirectoryName" />は<see langword="Nothing" />または空の文字列。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">ソース ディレクトリが存在しません。</exception>
+        <exception cref="T:System.IO.IOException">ソース パスとターゲット パスは、同じです。</exception>
+        <exception cref="T:System.InvalidOperationException">操作は循環使用します。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.NotSupportedException">パスにフォルダー名は、コロン (:) が含まれています。 または形式が無効です。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、パスを表示するために必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">コピー先ファイルが存在しますが、アクセスできません。</exception>
+        <exception cref="T:System.OperationCanceledException">
+          <paramref name="ShowUI" />設定されている<see langword="UIOption.AllDialogs" />と、ユーザーが、操作をキャンセルまたはディレクトリ内の 1 つまたは複数のファイルをコピーすることはできません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.UIPermission">ユーザー インターフェイスとクリップボードに関連するアクセス許可を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyFile">
+      <MemberSignature Language="C#" Value="public static void CopyFile (string sourceFileName, string destinationFileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void CopyFile(string sourceFileName, string destinationFileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.CopyFile(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFileName" Type="System.String" />
+        <Parameter Name="destinationFileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFileName">コピーするファイルです。</param>
+        <param name="destinationFileName">ファイルのコピー先となる場所です。</param>
+        <summary>新しい場所にファイルをコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `CopyFile`Ace (アクセス制御エントリ) は保持されません。 新しく作成されたファイルは、作成されているディレクトリから既定の Ace を継承します。  
+  
+ 次の表に、関連するタスクの例については、`My.Computer.FileSystem.CopyFile`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|同じディレクトリにファイルをコピーします。|[方法: Visual Basic でディレクトリにファイルのコピーを作成します。](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-the-same-directory.md)|  
+|別のディレクトリにファイルをコピーします。|[方法: Visual Basic での別のディレクトリにファイルのコピーを作成します。](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-a-different-directory.md)|  
+  
+   
+  
+## Examples  
+ この例は、ファイルをコピー`Test.txt`ディレクトリに`TestFiles2`既存のファイルを上書きすることがなくです。  
+  
+ [!code-vb[VbRefFile#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#15)]  
+  
+ ファイルのパスをコードで使用するパスに置き換えます。  
+  
+ この例は、ファイルをコピー`Test.txt`ディレクトリに`TestFiles2`名前を変更して、`NewFile.txt`です。  
+  
+ [!code-vb[VbRefFile#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#16)]  
+  
+ ファイルのパスをコードで使用するパスに置き換えます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="destinationFileName" />パス情報が含まれています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="destinationFileName" />または<paramref name="sourceFileName" />は<see langword="Nothing" />または空の文字列。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ソース ファイルは、正しくないか、存在しません。</exception>
+        <exception cref="T:System.IO.IOException">同じ名前のターゲット ディレクトリ内のファイルは、使用中です。</exception>
+        <exception cref="T:System.NotSupportedException">パスのファイルまたはディレクトリ名は、コロン (:) が含まれています。 または形式が無効です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">ユーザーには、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、パスを表示するために必要なアクセス許可が不足しています。</exception>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">すべての環境変数へのアクセスを制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.RegistryPermission">レジストリ変数へのアクセスを制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyFile">
+      <MemberSignature Language="C#" Value="public static void CopyFile (string sourceFileName, string destinationFileName, Microsoft.VisualBasic.FileIO.UIOption showUI);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void CopyFile(string sourceFileName, string destinationFileName, valuetype Microsoft.VisualBasic.FileIO.UIOption showUI) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.CopyFile(System.String,System.String,Microsoft.VisualBasic.FileIO.UIOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFileName" Type="System.String" />
+        <Parameter Name="destinationFileName" Type="System.String" />
+        <Parameter Name="showUI" Type="Microsoft.VisualBasic.FileIO.UIOption" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFileName">コピーするファイルです。</param>
+        <param name="destinationFileName">ファイルのコピー先となる場所です。</param>
+        <param name="showUI">操作の進行状況を視覚的に追跡するかどうか。 既定値は <see langword="UIOption.OnlyErrorDialogs" /> です。</param>
+        <summary>新しい場所にファイルをコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `CopyFile`Ace (アクセス制御エントリ) は保持されません。 新しく作成されたファイルは、作成されているディレクトリから既定の Ace を継承します。  
+  
+ 次の表に、関連するタスクの例については、`My.Computer.FileSystem.CopyFile`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|同じディレクトリにファイルをコピーします。|[方法: Visual Basic でディレクトリにファイルのコピーを作成します。](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-the-same-directory.md)|  
+|別のディレクトリにファイルをコピーします。|[方法: Visual Basic での別のディレクトリにファイルのコピーを作成します。](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-a-different-directory.md)|  
+  
+   
+  
+## Examples  
+ この例は、ファイルをコピー`Test.txt`ディレクトリに`TestFiles2`既存のファイルを上書きすることがなくです。  
+  
+ [!code-vb[VbRefFile#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#15)]  
+  
+ ファイルのパスをコードで使用するパスに置き換えます。  
+  
+ この例は、ファイルをコピー`Test.txt`ディレクトリに`TestFiles2`名前を変更して、`NewFile.txt`です。  
+  
+ [!code-vb[VbRefFile#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#16)]  
+  
+ ファイルのパスをコードで使用するパスに置き換えます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="destinationFileName" />パス情報が含まれています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="destinationFileName" />または<paramref name="sourceFileName" />は<see langword="Nothing" />または空の文字列。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ソース ファイルは、正しくないか、存在しません。</exception>
+        <exception cref="T:System.IO.IOException">変換先ファイルが存在し、<paramref name="overwrite" />に設定されている<see langword="False" />です。</exception>
+        <exception cref="T:System.NotSupportedException">パスのファイルまたはディレクトリ名は、コロン (:) が含まれています。 または形式が無効です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">ユーザーには、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、パスを表示するために必要なアクセス許可が不足しています。</exception>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">すべての環境変数へのアクセスを制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.RegistryPermission">レジストリ変数へのアクセスを制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.UIPermission">ユーザー インターフェイスとクリップボードに関連するアクセス許可を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyFile">
+      <MemberSignature Language="C#" Value="public static void CopyFile (string sourceFileName, string destinationFileName, bool overwrite);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void CopyFile(string sourceFileName, string destinationFileName, bool overwrite) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.CopyFile(System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFileName" Type="System.String" />
+        <Parameter Name="destinationFileName" Type="System.String" />
+        <Parameter Name="overwrite" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFileName">コピーするファイルです。</param>
+        <param name="destinationFileName">ファイルのコピー先となる場所です。</param>
+        <param name="overwrite">
+          <see langword="True" />既存のファイルを上書きする場合それ以外の場合<see langword="False" />です。 既定値は <see langword="False" /> です。</param>
+        <summary>新しい場所にファイルをコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `CopyFile`Ace (アクセス制御エントリ) は保持されません。 新しく作成されたファイルは、作成されているディレクトリから既定の Ace を継承します。  
+  
+ 次の表に、関連するタスクの例については、`My.Computer.FileSystem.CopyFile`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|同じディレクトリにファイルをコピーします。|[方法: Visual Basic でディレクトリにファイルのコピーを作成します。](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-the-same-directory.md)|  
+|別のディレクトリにファイルをコピーします。|[方法: Visual Basic での別のディレクトリにファイルのコピーを作成します。](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-a-different-directory.md)|  
+  
+   
+  
+## Examples  
+ この例は、ファイルをコピー`Test.txt`ディレクトリに`TestFiles2`既存のファイルを上書きすることがなくです。  
+  
+ [!code-vb[VbRefFile#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#15)]  
+  
+ ファイルのパスをコードで使用するパスに置き換えます。  
+  
+ この例は、ファイルをコピー`Test.txt`ディレクトリに`TestFiles2`名前を変更して、`NewFile.txt`です。  
+  
+ [!code-vb[VbRefFile#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#16)]  
+  
+ ファイルのパスをコードで使用するパスに置き換えます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="destinationFileName" />パス情報が含まれています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="destinationFileName" />または<paramref name="sourceFileName" />は<see langword="Nothing" />または空の文字列。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ソース ファイルは、正しくないか、存在しません。</exception>
+        <exception cref="T:System.IO.IOException">変換先ファイルが存在し、<paramref name="overwrite" />に設定されている<see langword="False" />です。</exception>
+        <exception cref="T:System.NotSupportedException">パスのファイルまたはディレクトリ名は、コロン (:) が含まれています。 または形式が無効です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">ユーザーには、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、パスを表示するために必要なアクセス許可が不足しています。</exception>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">すべての環境変数へのアクセスを制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.RegistryPermission">レジストリ変数へのアクセスを制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyFile">
+      <MemberSignature Language="C#" Value="public static void CopyFile (string sourceFileName, string destinationFileName, Microsoft.VisualBasic.FileIO.UIOption showUI, Microsoft.VisualBasic.FileIO.UICancelOption onUserCancel);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void CopyFile(string sourceFileName, string destinationFileName, valuetype Microsoft.VisualBasic.FileIO.UIOption showUI, valuetype Microsoft.VisualBasic.FileIO.UICancelOption onUserCancel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.CopyFile(System.String,System.String,Microsoft.VisualBasic.FileIO.UIOption,Microsoft.VisualBasic.FileIO.UICancelOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFileName" Type="System.String" />
+        <Parameter Name="destinationFileName" Type="System.String" />
+        <Parameter Name="showUI" Type="Microsoft.VisualBasic.FileIO.UIOption" />
+        <Parameter Name="onUserCancel" Type="Microsoft.VisualBasic.FileIO.UICancelOption" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFileName">コピーするファイルです。</param>
+        <param name="destinationFileName">ファイルのコピー先となる場所です。</param>
+        <param name="showUI">操作の進行状況を視覚的に追跡するかどうか。 既定値は <see langword="UIOption.OnlyErrorDialogs" /> です。</param>
+        <param name="onUserCancel">どのくらいにする必要がありますを指定します、ユーザーがクリックした場合は実行**キャンセル**操作中にします。 既定値は <see cref="F:Microsoft.VisualBasic.FileIO.UICancelOption.ThrowException" /> です。</param>
+        <summary>新しい場所にファイルをコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `CopyFile`Ace (アクセス制御エントリ) は保持されません。 新しく作成されたファイルは、作成されているディレクトリから既定の Ace を継承します。  
+  
+ 次の表に、関連するタスクの例については、`My.Computer.FileSystem.CopyFile`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|同じディレクトリにファイルをコピーします。|[方法: Visual Basic でディレクトリにファイルのコピーを作成します。](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-the-same-directory.md)|  
+|別のディレクトリにファイルをコピーします。|[方法: Visual Basic での別のディレクトリにファイルのコピーを作成します。](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-a-different-directory.md)|  
+  
+   
+  
+## Examples  
+ この例は、ファイルをコピー`Test.txt`ディレクトリに`TestFiles2`既存のファイルを上書きすることがなくです。  
+  
+ [!code-vb[VbRefFile#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#15)]  
+  
+ ファイルのパスをコードで使用するパスに置き換えます。  
+  
+ この例は、ファイルをコピー`Test.txt`ディレクトリに`TestFiles2`名前を変更して、`NewFile.txt`です。  
+  
+ [!code-vb[VbRefFile#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#16)]  
+  
+ ファイルのパスをコードで使用するパスに置き換えます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="destinationFileName" />パス情報が含まれています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="destinationFileName" />または<paramref name="sourceFileName" />は<see langword="Nothing" />または空の文字列。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ソース ファイルは、正しくないか、存在しません。</exception>
+        <exception cref="T:System.IO.IOException">変換先ファイルが存在し、<paramref name="overwrite" />に設定されている<see langword="False" />です。</exception>
+        <exception cref="T:System.NotSupportedException">パスのファイルまたはディレクトリ名は、コロン (:) が含まれています。 または形式が無効です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">ユーザーには、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、パスを表示するために必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.OperationCanceledException">
+          <paramref name="UICancelOption" />設定されている<see langword="ThrowException" />、およびユーザーが操作の取り消しまたは未指定の I/O エラーが発生します。</exception>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">すべての環境変数へのアクセスを制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.RegistryPermission">レジストリ変数へのアクセスを制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.UIPermission">ユーザー インターフェイスとクリップボードに関連するアクセス許可を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDirectory">
+      <MemberSignature Language="C#" Value="public static void CreateDirectory (string directory);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void CreateDirectory(string directory) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.CreateDirectory(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="directory" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="directory">名前とディレクトリの場所。</param>
+        <summary>ディレクトリを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ディレクトリが既にある場合、例外はスローされません。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.FileSystem.CreateDirectory`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ディレクトリの作成|[方法: Visual Basic でディレクトリを作成します。](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-directory.md)|  
+  
+   
+  
+## Examples  
+ この例は、ディレクトリを作成`NewDirectory`の`C:\Documents and Settings\All Users\Documents`します。  
+  
+ [!code-vb[VbVbcnMyFileSystem#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#17)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">ディレクトリ名が不正な場合。 たとえば、無効な文字が含まれていますかは、空白のみです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="directory" /> が <see langword="Nothing" /> または空の文字列です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">ディレクトリ名が長すぎます。</exception>
+        <exception cref="T:System.NotSupportedException">ディレクトリ名は、コロン (:) だけです。</exception>
+        <exception cref="T:System.IO.IOException">作成するディレクトリの親ディレクトリは読み取り専用</exception>
+        <exception cref="T:System.UnauthorizedAccessException">ユーザーには、ディレクトリを作成する権限がありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentDirectory">
+      <MemberSignature Language="C#" Value="public static string CurrentDirectory { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property string CurrentDirectory" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.FileIO.FileSystem.CurrentDirectory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在のディレクトリを設定します。</summary>
+        <value>ファイル I/O 操作の現在のディレクトリ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `CurrentDirectory`システム全体の環境変数です。  
+  
+   
+  
+## Examples  
+ この例では、現在のディレクトリを取得し、メッセージ ボックスに表示されます。  
+  
+ [!code-vb[VbVbcnMyFileSystem#18](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#18)]  
+  
+ この例では、現在のディレクトリを設定`C:\TestDirectory`です。  
+  
+ [!code-vb[VbVbcnMyFileSystem#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#19)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.DirectoryNotFoundException">パスが正しくありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">ユーザーには、必要なアクセス許可が不足しています。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteDirectory">
+      <MemberSignature Language="C#" Value="public static void DeleteDirectory (string directory, Microsoft.VisualBasic.FileIO.DeleteDirectoryOption onDirectoryNotEmpty);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void DeleteDirectory(string directory, valuetype Microsoft.VisualBasic.FileIO.DeleteDirectoryOption onDirectoryNotEmpty) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.DeleteDirectory(System.String,Microsoft.VisualBasic.FileIO.DeleteDirectoryOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="directory" Type="System.String" />
+        <Parameter Name="onDirectoryNotEmpty" Type="Microsoft.VisualBasic.FileIO.DeleteDirectoryOption" />
+      </Parameters>
+      <Docs>
+        <param name="directory">削除するディレクトリ。</param>
+        <param name="onDirectoryNotEmpty">削除するのには、ディレクトリには、ファイルまたはディレクトリが含まれている場合に実行する内容を指定します。 既定値は <see langword="DeleteDirectoryOption.DeleteAllContents" /> です。</param>
+        <summary>ディレクトリを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例では、ディレクトリを削除する`OldDirectory`が空の場合のみです。  
+  
+ [!code-vb[VbVbcnMyFileSystem#56](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#56)]  
+  
+ この例は、ディレクトリを削除`OldDirectory`とそのすべての内容。  
+  
+ [!code-vb[VbVbcnMyFileSystem#57](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#57)]  
+  
+ この例は、ディレクトリを削除`OldDirectory`すべて、その内容の確認、削除の確認をユーザーがウィンドウの内容を送信しませんし、**ごみ箱**です。  
+  
+ [!code-vb[VbVbcnMyFileSystem#58](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#58)]  
+  
+ この例は、ディレクトリを削除`OldDirectory`とに送信する、その内容をすべて、**ごみ箱**は、操作の進行状況を表示しません。  
+  
+ [!code-vb[VbVbcnMyFileSystem#59](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#59)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">パスは、長さ 0 の文字列は、形式が正しくありません化か、空白のみが含まれています (ワイルドカード文字を含む) の無効な文字が含まれています。 パスでは、デバイス (で始まる\\ \\.\\)。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="directory" /> が <see langword="Nothing" /> または空の文字列です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">ディレクトリが存在しないか、ファイルは、します。</exception>
+        <exception cref="T:System.IO.IOException">ディレクトリまたはサブディレクトリ内のファイルは、使用中です。</exception>
+        <exception cref="T:System.NotSupportedException">ディレクトリ名には、コロン (:) が含まれています。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.OperationCanceledException">ユーザーが操作をキャンセルまたはディレクトリを削除することはできません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteDirectory">
+      <MemberSignature Language="C#" Value="public static void DeleteDirectory (string directory, Microsoft.VisualBasic.FileIO.UIOption showUI, Microsoft.VisualBasic.FileIO.RecycleOption recycle);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void DeleteDirectory(string directory, valuetype Microsoft.VisualBasic.FileIO.UIOption showUI, valuetype Microsoft.VisualBasic.FileIO.RecycleOption recycle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.DeleteDirectory(System.String,Microsoft.VisualBasic.FileIO.UIOption,Microsoft.VisualBasic.FileIO.RecycleOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="directory" Type="System.String" />
+        <Parameter Name="showUI" Type="Microsoft.VisualBasic.FileIO.UIOption" />
+        <Parameter Name="recycle" Type="Microsoft.VisualBasic.FileIO.RecycleOption" />
+      </Parameters>
+      <Docs>
+        <param name="directory">削除するディレクトリ。</param>
+        <param name="showUI">操作の進行状況を視覚的に追跡するかどうかを指定します。 既定値は <see langword="UIOption.OnlyErrorDialogs" /> です。</param>
+        <param name="recycle">削除されたファイルに送信されるかどうかを指定、**ごみ箱**です。 既定値は <see langword="RecycleOption.DeletePermanently" /> です。</param>
+        <summary>ディレクトリを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `showUI`と`recycle`パラメーターは、ユーザーの Windows サービスなど、対話型ではないアプリケーションでサポートされていません。  
+  
+   
+  
+## Examples  
+ 例では、ディレクトリを削除する`OldDirectory`が空の場合のみです。  
+  
+ [!code-vb[VbVbcnMyFileSystem#56](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#56)]  
+  
+ この例は、ディレクトリを削除`OldDirectory`とそのすべての内容。  
+  
+ [!code-vb[VbVbcnMyFileSystem#57](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#57)]  
+  
+ この例は、ディレクトリを削除`OldDirectory`すべて、その内容の確認、削除の確認をユーザーがウィンドウの内容を送信しませんし、**ごみ箱**です。  
+  
+ [!code-vb[VbVbcnMyFileSystem#58](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#58)]  
+  
+ この例は、ディレクトリを削除`OldDirectory`とに送信する、その内容をすべて、**ごみ箱**は、操作の進行状況を表示しません。  
+  
+ [!code-vb[VbVbcnMyFileSystem#59](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#59)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">パスは、長さ 0 の文字列は、形式が正しくありません化か、空白のみが含まれています (ワイルドカード文字を含む) の無効な文字が含まれています。 パスでは、デバイス (で始まる\\ \\.\\)。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="directory" /> が <see langword="Nothing" /> または空の文字列です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">ディレクトリが存在しないか、ファイルは、します。</exception>
+        <exception cref="T:System.IO.IOException">ディレクトリまたはサブディレクトリ内のファイルは、使用中です。</exception>
+        <exception cref="T:System.NotSupportedException">ディレクトリ名には、コロン (:) が含まれています。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.OperationCanceledException">ユーザーが操作をキャンセルまたはディレクトリを削除することはできません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.UIPermission">ユーザー インターフェイスとクリップボードに関連するアクセス許可を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteDirectory">
+      <MemberSignature Language="C#" Value="public static void DeleteDirectory (string directory, Microsoft.VisualBasic.FileIO.UIOption showUI, Microsoft.VisualBasic.FileIO.RecycleOption recycle, Microsoft.VisualBasic.FileIO.UICancelOption onUserCancel);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void DeleteDirectory(string directory, valuetype Microsoft.VisualBasic.FileIO.UIOption showUI, valuetype Microsoft.VisualBasic.FileIO.RecycleOption recycle, valuetype Microsoft.VisualBasic.FileIO.UICancelOption onUserCancel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.DeleteDirectory(System.String,Microsoft.VisualBasic.FileIO.UIOption,Microsoft.VisualBasic.FileIO.RecycleOption,Microsoft.VisualBasic.FileIO.UICancelOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="directory" Type="System.String" />
+        <Parameter Name="showUI" Type="Microsoft.VisualBasic.FileIO.UIOption" />
+        <Parameter Name="recycle" Type="Microsoft.VisualBasic.FileIO.RecycleOption" />
+        <Parameter Name="onUserCancel" Type="Microsoft.VisualBasic.FileIO.UICancelOption" />
+      </Parameters>
+      <Docs>
+        <param name="directory">削除するディレクトリ。</param>
+        <param name="showUI">操作の進行状況を視覚的に追跡するかどうかを指定します。 既定値は <see langword="UIOption.OnlyErrorDialogs" /> です。</param>
+        <param name="recycle">削除されたファイルに送信されるかどうかを指定、**ごみ箱**です。 既定値は <see langword="RecycleOption.DeletePermanently" /> です。</param>
+        <param name="onUserCancel">ユーザーがクリックした場合に例外をスローするかどうかを示す**キャンセル**です。</param>
+        <summary>ディレクトリを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `showUI`、 `recycle`、および`onUserCancel`パラメーターは、ユーザーの Windows サービスなど、対話型ではないアプリケーションでサポートされていません。  
+  
+   
+  
+## Examples  
+ 例では、ディレクトリを削除する`OldDirectory`が空の場合のみです。  
+  
+ [!code-vb[VbVbcnMyFileSystem#56](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#56)]  
+  
+ この例は、ディレクトリを削除`OldDirectory`とそのすべての内容。  
+  
+ [!code-vb[VbVbcnMyFileSystem#57](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#57)]  
+  
+ この例は、ディレクトリを削除`OldDirectory`すべて、その内容の確認、削除の確認をユーザーがウィンドウの内容を送信しませんし、**ごみ箱**です。  
+  
+ [!code-vb[VbVbcnMyFileSystem#58](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#58)]  
+  
+ この例は、ディレクトリを削除`OldDirectory`とに送信する、その内容をすべて、**ごみ箱**は、操作の進行状況を表示しません。  
+  
+ [!code-vb[VbVbcnMyFileSystem#59](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#59)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">パスは、長さ 0 の文字列は、形式が正しくありません化か、空白のみが含まれています (ワイルドカード文字を含む) の無効な文字が含まれています。 パスでは、デバイス (で始まる\\ \\.\\)。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="directory" /> が <see langword="Nothing" /> または空の文字列です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">ディレクトリが存在しないか、ファイルは、します。</exception>
+        <exception cref="T:System.IO.IOException">ディレクトリまたはサブディレクトリ内のファイルは、使用中です。</exception>
+        <exception cref="T:System.NotSupportedException">ディレクトリ名には、コロン (:) が含まれています。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.OperationCanceledException">ユーザーが操作をキャンセルまたはディレクトリを削除することはできません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.UIPermission">ユーザー インターフェイスとクリップボードに関連するアクセス許可を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteFile">
+      <MemberSignature Language="C#" Value="public static void DeleteFile (string file);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void DeleteFile(string file) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.DeleteFile(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="file" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="file">削除するファイルのパスと名前。</param>
+        <summary>ファイルを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表に、関連するタスクの例、`My.Computer.FileSystem.DeleteFile`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ファイルを削除するには|[方法: Visual Basic でファイルを削除](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-delete-a-file.md)|  
+  
+   
+  
+## Examples  
+ この例は、ファイルを削除`Test.txt`です。  
+  
+ [!code-vb[VbVbcnMyFileSystem#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#3)]  
+  
+ この例は、ファイルを削除`Test.txt`でき、ユーザーに、ファイルは削除されることを確認します。  
+  
+ [!code-vb[VbVbcnMyFileSystem#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#4)]  
+  
+ この例は、ファイルを削除`Test.txt`に送信し、**ごみ箱**です。  
+  
+ [!code-vb[VbVbcnMyFileSystem#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">パスが正しくない、次の理由のいずれかの: は長さ 0 の文字列です。空白のみが含まれています無効な文字が含まれていますここでファイルを指定する必要があります。 末尾にスラッシュをがデバイス パスであるか (で始まる\\ \\.\\)。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="file" /> が <see langword="Nothing" /> または空の文字列です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.NotSupportedException">パスのファイルまたはディレクトリ名は、コロン (:) が含まれています。 または形式が無効です。</exception>
+        <exception cref="T:System.IO.IOException">ファイルが使用されています。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、パスを表示するために必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが存在しません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">ユーザーにファイルを削除するアクセス許可がないか、ファイルは読み取り専用です。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteFile">
+      <MemberSignature Language="C#" Value="public static void DeleteFile (string file, Microsoft.VisualBasic.FileIO.UIOption showUI, Microsoft.VisualBasic.FileIO.RecycleOption recycle);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void DeleteFile(string file, valuetype Microsoft.VisualBasic.FileIO.UIOption showUI, valuetype Microsoft.VisualBasic.FileIO.RecycleOption recycle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.DeleteFile(System.String,Microsoft.VisualBasic.FileIO.UIOption,Microsoft.VisualBasic.FileIO.RecycleOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="file" Type="System.String" />
+        <Parameter Name="showUI" Type="Microsoft.VisualBasic.FileIO.UIOption" />
+        <Parameter Name="recycle" Type="Microsoft.VisualBasic.FileIO.RecycleOption" />
+      </Parameters>
+      <Docs>
+        <param name="file">削除するファイルのパスと名前。</param>
+        <param name="showUI">操作の進行状況を視覚的に追跡するかどうか。 既定値は <see langword="UIOption.OnlyErrorDialogs" /> です。</param>
+        <param name="recycle">削除されたファイルを送信するかどうか、**ごみ箱**です。 既定値は <see langword="RecycleOption.DeletePermanently" /> です。</param>
+        <summary>ファイルを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `showUI`と`recycle`パラメーターは、ユーザーの Windows サービスなど、対話型ではないアプリケーションでサポートされていません。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.FileSystem.DeleteFile`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ファイルを削除するには|[方法: Visual Basic でファイルを削除](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-delete-a-file.md)|  
+  
+   
+  
+## Examples  
+ この例は、ファイルを削除`Test.txt`です。  
+  
+ [!code-vb[VbVbcnMyFileSystem#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#3)]  
+  
+ この例は、ファイルを削除`Test.txt`でき、ユーザーに、ファイルは削除されることを確認します。  
+  
+ [!code-vb[VbVbcnMyFileSystem#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#4)]  
+  
+ この例は、ファイルを削除`Test.txt`に送信し、**ごみ箱**です。  
+  
+ [!code-vb[VbVbcnMyFileSystem#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">パスが正しくない、次の理由のいずれかの: は長さ 0 の文字列です。空白のみが含まれています無効な文字が含まれていますここでファイルを指定する必要があります。 末尾にスラッシュをがデバイス パスであるか (で始まる\\ \\.\\)。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="file" /> が <see langword="Nothing" /> または空の文字列です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.NotSupportedException">パスのファイルまたはディレクトリ名は、コロン (:) が含まれています。 または形式が無効です。</exception>
+        <exception cref="T:System.IO.IOException">ファイルが使用されています。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、パスを表示するために必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが存在しません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">ユーザーにファイルを削除するアクセス許可がないか、ファイルは読み取り専用です。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.UIPermission">ユーザー インターフェイスとクリップボードに関連するアクセス許可を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteFile">
+      <MemberSignature Language="C#" Value="public static void DeleteFile (string file, Microsoft.VisualBasic.FileIO.UIOption showUI, Microsoft.VisualBasic.FileIO.RecycleOption recycle, Microsoft.VisualBasic.FileIO.UICancelOption onUserCancel);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void DeleteFile(string file, valuetype Microsoft.VisualBasic.FileIO.UIOption showUI, valuetype Microsoft.VisualBasic.FileIO.RecycleOption recycle, valuetype Microsoft.VisualBasic.FileIO.UICancelOption onUserCancel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.DeleteFile(System.String,Microsoft.VisualBasic.FileIO.UIOption,Microsoft.VisualBasic.FileIO.RecycleOption,Microsoft.VisualBasic.FileIO.UICancelOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="file" Type="System.String" />
+        <Parameter Name="showUI" Type="Microsoft.VisualBasic.FileIO.UIOption" />
+        <Parameter Name="recycle" Type="Microsoft.VisualBasic.FileIO.RecycleOption" />
+        <Parameter Name="onUserCancel" Type="Microsoft.VisualBasic.FileIO.UICancelOption" />
+      </Parameters>
+      <Docs>
+        <param name="file">削除するファイルのパスと名前。</param>
+        <param name="showUI">操作の進行状況を視覚的に追跡するかどうか。 既定値は <see langword="UIOption.OnlyErrorDialogs" /> です。</param>
+        <param name="recycle">削除されたファイルを送信するかどうか、**ごみ箱**です。 既定値は <see langword="RecycleOption.DeletePermanently" /> です。</param>
+        <param name="onUserCancel">ユーザーが、操作をキャンセルすると、例外はスローかどうかを指定します。 既定値は <see langword="UICancelOption.ThrowException" /> です。</param>
+        <summary>ファイルを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `showUI`、 `recycle`、および`onUserCancel`パラメーターは、ユーザーの Windows サービスなど、対話型ではないアプリケーションでサポートされていません。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.FileSystem.DeleteFile`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ファイルを削除するには|[方法: Visual Basic でファイルを削除](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-delete-a-file.md)|  
+  
+   
+  
+## Examples  
+ この例は、ファイルを削除`Test.txt`です。  
+  
+ [!code-vb[VbVbcnMyFileSystem#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#3)]  
+  
+ この例は、ファイルを削除`Test.txt`でき、ユーザーに、ファイルは削除されることを確認します。  
+  
+ [!code-vb[VbVbcnMyFileSystem#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#4)]  
+  
+ この例は、ファイルを削除`Test.txt`に送信し、**ごみ箱**です。  
+  
+ [!code-vb[VbVbcnMyFileSystem#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">パスが正しくない、次の理由のいずれかの: は長さ 0 の文字列です。空白のみが含まれています無効な文字が含まれていますここでファイルを指定する必要があります。 末尾にスラッシュをがデバイス パスであるか (で始まる\\ \\.\\)。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="file" /> が <see langword="Nothing" /> または空の文字列です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.NotSupportedException">パスのファイルまたはディレクトリ名は、コロン (:) が含まれています。 または形式が無効です。</exception>
+        <exception cref="T:System.IO.IOException">ファイルが使用されています。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、パスを表示するために必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが存在しません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">ユーザーにファイルを削除するアクセス許可がないか、ファイルは読み取り専用です。</exception>
+        <exception cref="T:System.OperationCanceledException">ユーザーが操作をキャンセルし、<paramref name="onUserCancel" />に設定されている<see cref="F:Microsoft.VisualBasic.FileIO.UICancelOption.ThrowException" />です。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.UIPermission">ユーザー インターフェイスとクリップボードに関連するアクセス許可を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DirectoryExists">
+      <MemberSignature Language="C#" Value="public static bool DirectoryExists (string directory);" />
+      <MemberSignature Language="ILAsm" Value=".method public static bool DirectoryExists(string directory) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.DirectoryExists(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="directory" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="directory">ディレクトリのパス。</param>
+        <summary>返します<see langword="True" />指定されたディレクトリが存在する場合。</summary>
+        <returns>
+          <see langword="True" />ディレクトリが存在する場合それ以外の場合<see langword="False" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ この例を決定するかどうか、ディレクトリ`C:\backup\logs`が存在し、そのプロパティをチェックします。  
+  
+ [!code-vb[VbRefFile#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Drives">
+      <MemberSignature Language="C#" Value="public static System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IO.DriveInfo&gt; Drives { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.IO.DriveInfo&gt; Drives" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.FileIO.FileSystem.Drives" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IO.DriveInfo&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべての利用可能なドライブ名の読み取り専用コレクションを返します。</summary>
+        <value>すべての利用可能なドライブとしての読み取り専用コレクション<see cref="T:System.IO.DriveInfo" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、すべての論理ドライブを返します。  
+  
+   
+  
+## Examples  
+ この例では、メッセージ ボックスに、利用可能なドライブ名を表示します。  
+  
+ [!code-vb[VbRefFile#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#19)]  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="None" />
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="FileExists">
+      <MemberSignature Language="C#" Value="public static bool FileExists (string file);" />
+      <MemberSignature Language="ILAsm" Value=".method public static bool FileExists(string file) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.FileExists(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="file" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="file">ファイルのパスと名前。</param>
+        <summary>返します<see langword="True" />指定したファイルが存在する場合。</summary>
+        <returns>返します<see langword="True" />ファイルが存在する場合は、それ以外の場合このメソッドが戻る<see langword="False" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションが指定のファイルを読み取るための十分なアクセス許可を持っていない場合、`FileExists`メソッドを返します。 `False`、パスの有無にかかわらず、メソッドは例外をスローしません。  
+  
+   
+  
+## Examples  
+ この例は、表示するかどうかファイル`Check.txt`が存在し、メッセージ ボックスに情報を提供します。  
+  
+ [!code-vb[VbRefFile#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">バック スラッシュで終わるファイルの名前 (\\)。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="FindInFiles">
+      <MemberSignature Language="C#" Value="public static System.Collections.ObjectModel.ReadOnlyCollection&lt;string&gt; FindInFiles (string directory, string containsText, bool ignoreCase, Microsoft.VisualBasic.FileIO.SearchOption searchType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;string&gt; FindInFiles(string directory, string containsText, bool ignoreCase, valuetype Microsoft.VisualBasic.FileIO.SearchOption searchType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.FindInFiles(System.String,System.String,System.Boolean,Microsoft.VisualBasic.FileIO.SearchOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="directory" Type="System.String" />
+        <Parameter Name="containsText" Type="System.String" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+        <Parameter Name="searchType" Type="Microsoft.VisualBasic.FileIO.SearchOption" />
+      </Parameters>
+      <Docs>
+        <param name="directory">検索するディレクトリ。</param>
+        <param name="containsText">検索するテキスト。</param>
+        <param name="ignoreCase">
+          <see langword="True" />検索を区別する必要がある場合それ以外の場合<see langword="False" />です。 既定値は <see langword="True" /> です。</param>
+        <param name="searchType">サブフォルダーを含めるかどうか。 既定値は <see langword="SearchOption.SearchTopLevelOnly" /> です。</param>
+        <summary>指定したテキストを含むファイルの名前を表す文字列の読み取り専用コレクションを返します。</summary>
+        <returns>指定したテキストを含むファイルの名前の読み取り専用コレクション.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したパターンに一致するファイルがない場合は、空のコレクションが返されます。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.FileSystem.FindInFiles`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ディレクトリの特定の文字列を含むファイルを検索します。|[チュートリアル: Visual Basic によるファイルとディレクトリの操作](~/docs/visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)|  
+  
+   
+  
+## Examples  
+ この例で、ディレクトリ検索`C:\TestDir`文字列を含むすべてのファイルについて`"sample string"`に結果を表示および`ListBox1`です。  
+  
+ [!code-vb[VbRefFile#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#12)]  
+  
+ 作業をするために、プロジェクトを含める必要があります、`ListBox`という`ListBox1`です。  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="None." />
+        <exception cref="T:System.ArgumentException">パスが正しくない、次の理由のいずれかの: は長さ 0 の文字列です。空白のみが含まれています無効な文字が含まれていますデバイス パスであるか (で始まる<c> \\.\</c &gt;)。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="directory" /> が <see langword="Nothing" /> または空の文字列です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定したディレクトリは存在しません。</exception>
+        <exception cref="T:System.IO.IOException">指定したディレクトリは、既存のファイルを指します。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.NotSupportedException">指定したディレクトリ パスでは、コロン (:) が含まれていますか、無効な形式です。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、パスを表示するために必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">ユーザーには、必要なアクセス許可が不足しています。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="FindInFiles">
+      <MemberSignature Language="C#" Value="public static System.Collections.ObjectModel.ReadOnlyCollection&lt;string&gt; FindInFiles (string directory, string containsText, bool ignoreCase, Microsoft.VisualBasic.FileIO.SearchOption searchType, params string[] fileWildcards);" />
+      <MemberSignature Language="ILAsm" Value=".method public static class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;string&gt; FindInFiles(string directory, string containsText, bool ignoreCase, valuetype Microsoft.VisualBasic.FileIO.SearchOption searchType, string[] fileWildcards) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.FindInFiles(System.String,System.String,System.Boolean,Microsoft.VisualBasic.FileIO.SearchOption,System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="directory" Type="System.String" />
+        <Parameter Name="containsText" Type="System.String" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+        <Parameter Name="searchType" Type="Microsoft.VisualBasic.FileIO.SearchOption" />
+        <Parameter Name="fileWildcards" Type="System.String[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="directory">検索するディレクトリ。</param>
+        <param name="containsText">検索するテキスト。</param>
+        <param name="ignoreCase">
+          <see langword="True" />検索を区別する必要がある場合それ以外の場合<see langword="False" />です。 既定値は <see langword="True" /> です。</param>
+        <param name="searchType">サブフォルダーを含めるかどうか。 既定値は <see langword="SearchOption.SearchTopLevelOnly" /> です。</param>
+        <param name="fileWildcards">照合するパターン。</param>
+        <summary>指定したテキストを含むファイルの名前を表す文字列の読み取り専用コレクションを返します。</summary>
+        <returns>指定したテキストを含むファイルの名前の読み取り専用コレクション.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したパターンに一致するファイルがない場合は、空のコレクションが返されます。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.FileSystem.FindInFiles`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ディレクトリの特定の文字列を含むファイルを検索します。|[チュートリアル: Visual Basic によるファイルとディレクトリの操作](~/docs/visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)|  
+  
+   
+  
+## Examples  
+ この例で、ディレクトリ検索`C:\TestDir`文字列を含むすべてのファイルについて`"sample string"`に結果を表示および`ListBox1`です。  
+  
+ [!code-vb[VbRefFile#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#12)]  
+  
+ 作業をするために、プロジェクトを含める必要があります、`ListBox`という`ListBox1`です。  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="None." />
+        <exception cref="T:System.ArgumentException">パスが正しくない、次の理由のいずれかの: は長さ 0 の文字列です。空白のみが含まれています無効な文字が含まれていますデバイス パスであるか (で始まる<c> \\.\</c &gt;)。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="directory" /> が <see langword="Nothing" /> または空の文字列です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定したディレクトリは存在しません。</exception>
+        <exception cref="T:System.IO.IOException">指定したディレクトリは、既存のファイルを指します。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.NotSupportedException">指定したディレクトリ パスでは、コロン (:) が含まれていますか、無効な形式です。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、パスを表示するために必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">ユーザーには、必要なアクセス許可が不足しています。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDirectories">
+      <MemberSignature Language="C#" Value="public static System.Collections.ObjectModel.ReadOnlyCollection&lt;string&gt; GetDirectories (string directory);" />
+      <MemberSignature Language="ILAsm" Value=".method public static class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;string&gt; GetDirectories(string directory) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.GetDirectories(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="directory" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="directory">ディレクトリのパスと名前。</param>
+        <summary>ディレクトリ内のサブディレクトリのパス名を表す文字列のコレクションを返します。</summary>
+        <returns>指定したディレクトリのサブディレクトリのパス名の読み取り専用コレクション.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表に、関連するタスクの例、`My.Computer.FileSystem.GetDirectories`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|特定のパターンを持つサブディレクトリを検索|[方法: Visual Basic で特定のパターンを持つサブディレクトリを検索します。](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-find-subdirectories-with-a-specific-pattern.md)|  
+  
+   
+  
+## Examples  
+ 次の例では、すべてのディレクトリを返しますという単語を含むディレクトリ構造で`Logs`、名前に追加して`ListBox1`です。  
+  
+ [!code-vb[VbRefFile#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#10)]  
+  
+ この例では、ある必要があります、`ListBox`という`ListBox1`フォーム上でします。  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="None." />
+        <exception cref="T:System.ArgumentException">パスが正しくない、次の理由のいずれかの: は長さ 0 の文字列です。空白のみが含まれています無効な文字が含まれていますデバイス パスであるか (で始まる\\ \\.\\)。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="directory" /> が <see langword="Nothing" /> または空の文字列です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定したディレクトリは存在しません。</exception>
+        <exception cref="T:System.IO.IOException">指定したディレクトリは、既存のファイルを指します。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.NotSupportedException">パスのファイルまたはディレクトリ名は、コロン (:) が含まれています。 または形式が無効です。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、パスを表示するために必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">ユーザーには、必要なアクセス許可が不足しています。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDirectories">
+      <MemberSignature Language="C#" Value="public static System.Collections.ObjectModel.ReadOnlyCollection&lt;string&gt; GetDirectories (string directory, Microsoft.VisualBasic.FileIO.SearchOption searchType, params string[] wildcards);" />
+      <MemberSignature Language="ILAsm" Value=".method public static class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;string&gt; GetDirectories(string directory, valuetype Microsoft.VisualBasic.FileIO.SearchOption searchType, string[] wildcards) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.GetDirectories(System.String,Microsoft.VisualBasic.FileIO.SearchOption,System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="directory" Type="System.String" />
+        <Parameter Name="searchType" Type="Microsoft.VisualBasic.FileIO.SearchOption" />
+        <Parameter Name="wildcards" Type="System.String[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="directory">ディレクトリのパスと名前。</param>
+        <param name="searchType">サブフォルダーを含めるかどうか。 既定値は <see langword="SearchOption.SearchTopLevelOnly" /> です。</param>
+        <param name="wildcards">名前と一致するパターン。</param>
+        <summary>ディレクトリ内のサブディレクトリのパス名を表す文字列のコレクションを返します。</summary>
+        <returns>指定したディレクトリのサブディレクトリのパス名の読み取り専用のコレクションです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `wildcards` パラメーターを使用して、特定のパターンを指定できます。 サブディレクトリの内容を検索対象に含めるには、`searchType` パラメーターを `SearchAllSubDirectories` に設定します。  
+  
+ 指定したパターンに一致するディレクトリが見つからなかった場合は、空のコレクションが返されます。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.FileSystem.GetDirectories`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|特定のパターンを持つサブディレクトリを検索|[方法: Visual Basic で特定のパターンを持つサブディレクトリを検索します。](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-find-subdirectories-with-a-specific-pattern.md)|  
+  
+   
+  
+## Examples  
+ 次の例では、すべてのディレクトリを返しますという単語を含むディレクトリ構造で`Logs`、名前に追加して`ListBox1`です。  
+  
+ [!code-vb[VbRefFile#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#10)]  
+  
+ この例では、ある必要があります、`ListBox`という`ListBox1`フォーム上でします。  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="None." />
+        <exception cref="T:System.ArgumentException">パスが正しくない、次の理由のいずれかの: は長さ 0 の文字列です。空白のみが含まれています無効な文字が含まれていますデバイス パスであるか (で始まる\\ \\.\\)。</exception>
+        <exception cref="T:System.ArgumentNullException">指定したワイルドカード文字の 1 つ以上が<see langword="Nothing" />、空の文字列またはスペースのみが含まれています。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定したディレクトリは存在しません。</exception>
+        <exception cref="T:System.IO.IOException">指定したディレクトリは、既存のファイルを指します。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.NotSupportedException">パスのファイルまたはディレクトリ名は、コロン (:) が含まれています。 または形式が無効です。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、パスを表示するために必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">ユーザーには、必要なアクセス許可が不足しています。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDirectoryInfo">
+      <MemberSignature Language="C#" Value="public static System.IO.DirectoryInfo GetDirectoryInfo (string directory);" />
+      <MemberSignature Language="ILAsm" Value=".method public static class System.IO.DirectoryInfo GetDirectoryInfo(string directory) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.GetDirectoryInfo(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.DirectoryInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="directory" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="directory">
+          <see langword="String" />。 ディレクトリのパス。</param>
+        <summary>返します、<see cref="T:System.IO.DirectoryInfo" />指定されたパスのオブジェクト。</summary>
+        <returns>
+          <see cref="T:System.IO.DirectoryInfo" />指定されたパスのオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ディレクトリが存在しない場合、例外はスローされません、初めてまでプロパティ、<xref:System.IO.DirectoryInfo>オブジェクトにアクセスします。  
+  
+   
+  
+## Examples  
+ この例では取得、<xref:System.IO.DirectoryInfo>ディレクトリ オブジェクト`C:\Documents and Settings`とディレクトリの作成時刻、最終アクセス時刻、および最終書き込み日時が表示されます。  
+  
+ [!code-vb[VbRefFile#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">パスが正しくない、次の理由のいずれかの: は長さ 0 の文字列です。空白のみが含まれています無効な文字が含まれていますデバイス パスであるか (で始まる\\ \\.\\)。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="directory" /> が <see langword="Nothing" /> または空の文字列です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.NotSupportedException">ディレクトリ パスは、コロン (:) が含まれていますか、形式が無効です。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーは、パスを表示するために必要なアクセス許可を持っていません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDriveInfo">
+      <MemberSignature Language="C#" Value="public static System.IO.DriveInfo GetDriveInfo (string drive);" />
+      <MemberSignature Language="ILAsm" Value=".method public static class System.IO.DriveInfo GetDriveInfo(string drive) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.GetDriveInfo(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.DriveInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="drive" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="drive">調査するドライブです。</param>
+        <summary>返します、<see cref="T:System.IO.DriveInfo" />指定されたドライブのオブジェクト。</summary>
+        <returns>
+          <see cref="T:System.IO.DriveInfo" />指定されたドライブのオブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.DriveInfo>クラスは、ドライブをモデル化し、ドライブ情報を照会するメソッドとプロパティを提供します。 使用して<xref:System.IO.DriveInfo>をドライブの種類が使用可能なとドライブの種類を決定します。 容量と、ドライブの空き容量を決定するプロパティをクエリすることもできます。  
+  
+   
+  
+## Examples  
+ この例では取得、 <xref:System.IO.DriveInfo> C ドライブのオブジェクトおよびドライブに関する情報を表示する使用します。  
+  
+ [!code-vb[VbRefFile#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#11)]  
+  
+ 別のドライブの種類については、次を参照してください。<xref:System.IO.DriveType>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">パスが正しくない、次の理由のいずれかの: は長さ 0 の文字列です。空白のみが含まれています無効な文字が含まれていますデバイス パスであるか (で始まる\\ \\.\\)。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="drive" /> が <see langword="Nothing" /> または空の文字列です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーは、パスを表示するために必要なアクセス許可を持っていません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFileInfo">
+      <MemberSignature Language="C#" Value="public static System.IO.FileInfo GetFileInfo (string file);" />
+      <MemberSignature Language="ILAsm" Value=".method public static class System.IO.FileInfo GetFileInfo(string file) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.GetFileInfo(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.FileInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="file" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="file">ファイルのパスと名前。</param>
+        <summary>返します、<see cref="T:System.IO.FileInfo" />指定したファイルのオブジェクト。</summary>
+        <returns>
+          <see cref="T:System.IO.FileInfo" />指定したファイルのオブジェクト</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイルが存在しません。 例外はスローされません。代わりに、スローされる初めてオブジェクトのプロパティにアクセスします。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.FileSystem.GetFileInfo`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ファイルの名前とパスを決定します。|[方法: Visual Basic でファイル パスの解析](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)|  
+  
+   
+  
+## Examples  
+ この例では、<xref:System.IO.FileInfo?displayProperty=nameWithType>ファイルのオブジェクト`MyLogFile.log`レポート ファイルの完全な名前、最終アクセス時刻、および長さを使用しています。  
+  
+ [!code-vb[VbRefFile#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">パス名が不適切である場合。 たとえば、無効な文字が含まれていますかは、空白のみです。 ファイル名には末尾のスラッシュ記号。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="file" /> が <see langword="Nothing" /> または空の文字列です。</exception>
+        <exception cref="T:System.NotSupportedException">パスには、文字列の途中にコロンが含まれています。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスが長すぎます。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">ユーザーは、ACL (アクセス制御リスト) ファイルのアクセス権がありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFiles">
+      <MemberSignature Language="C#" Value="public static System.Collections.ObjectModel.ReadOnlyCollection&lt;string&gt; GetFiles (string directory);" />
+      <MemberSignature Language="ILAsm" Value=".method public static class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;string&gt; GetFiles(string directory) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="directory" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="directory">検索するディレクトリ。</param>
+        <summary>ディレクトリ内のファイルの名前を表す文字列の読み取り専用コレクションを返します。</summary>
+        <returns>指定したディレクトリからファイル名の読み取り専用のコレクションです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したパターンに一致するファイルがない場合は、空のコレクションが返されます。  
+  
+ 次の表に、関連するタスクの例については、`My.Computer.FileSystem.GetFiles`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ディレクトリ内のファイルのコレクションを取得します。|[方法: Visual Basic でディレクトリ内のファイルのコレクションを取得](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-get-the-collection-of-files-in-a-directory.md)|  
+|ディレクトリに特定のパターンを持つファイルを検索します。|[方法: Visual Basic で特定のパターンを持つファイルを検索します。](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-find-files-with-a-specific-pattern.md)|  
+  
+   
+  
+## Examples  
+ 次の例では、ディレクトリ内のすべてのファイルが返され、`ListBox1` に追加されます。  
+  
+ [!code-vb[VbRefFile#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#5)]  
+  
+ この例では、ある必要があります、`ListBox`という`ListBox1`フォーム上でします。  
+  
+ この例では、すべてのファイルを返し、拡張機能を使用してディレクトリに`.txt`追加して`ListBox1`です。  
+  
+ [!code-vb[VbRefFile#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#6)]  
+  
+ この例では、ある必要があります、`ListBox`という`ListBox1`フォーム上でします。  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="None." />
+        <exception cref="T:System.ArgumentException">パスが正しくない、次の理由のいずれかの: は長さ 0 の文字列です。空白のみが含まれています無効な文字が含まれていますデバイス パスであるか (で始まる\\ \\.\\)。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="directory" /> は <see langword="Nothing" /> です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">検索するディレクトリが存在しません。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="directory" />既存のファイルへのポインター。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.NotSupportedException">パスのファイルまたはディレクトリ名は、コロン (:) が含まれています。 または形式が無効です。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、パスを表示するために必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">ユーザーには、必要なアクセス許可が不足しています。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFiles">
+      <MemberSignature Language="C#" Value="public static System.Collections.ObjectModel.ReadOnlyCollection&lt;string&gt; GetFiles (string directory, Microsoft.VisualBasic.FileIO.SearchOption searchType, params string[] wildcards);" />
+      <MemberSignature Language="ILAsm" Value=".method public static class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;string&gt; GetFiles(string directory, valuetype Microsoft.VisualBasic.FileIO.SearchOption searchType, string[] wildcards) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles(System.String,Microsoft.VisualBasic.FileIO.SearchOption,System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="directory" Type="System.String" />
+        <Parameter Name="searchType" Type="Microsoft.VisualBasic.FileIO.SearchOption" />
+        <Parameter Name="wildcards" Type="System.String[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="directory">検索するディレクトリ。</param>
+        <param name="searchType">サブフォルダーを含めるかどうか。 既定値は <see langword="SearchOption.SearchTopLevelOnly" /> です。</param>
+        <param name="wildcards">照合するパターン。</param>
+        <summary>ディレクトリ内のファイルの名前を表す文字列の読み取り専用コレクションを返します。</summary>
+        <returns>指定したディレクトリからファイル名の読み取り専用のコレクションです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したパターンに一致するファイルがない場合は、空のコレクションが返されます。  
+  
+ 次の表に、関連するタスクの例については、`My.Computer.FileSystem.GetFiles`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ディレクトリ内のファイルのコレクションを取得します。|[方法: Visual Basic でディレクトリ内のファイルのコレクションを取得](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-get-the-collection-of-files-in-a-directory.md)|  
+|ディレクトリに特定のパターンを持つファイルを検索します。|[方法: Visual Basic で特定のパターンを持つファイルを検索します。](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-find-files-with-a-specific-pattern.md)|  
+  
+   
+  
+## Examples  
+ 次の例では、ディレクトリ内のすべてのファイルが返され、`ListBox1` に追加されます。  
+  
+ [!code-vb[VbRefFile#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#5)]  
+  
+ この例では、ある必要があります、`ListBox`という`ListBox1`フォーム上でします。  
+  
+ この例では、すべてのファイルを返し、拡張機能を使用してディレクトリに`.txt`追加して`ListBox1`です。  
+  
+ [!code-vb[VbRefFile#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#6)]  
+  
+ この例では、ある必要があります、`ListBox`という`ListBox1`フォーム上でします。  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="None." />
+        <exception cref="T:System.ArgumentException">パスが正しくない、次の理由のいずれかの: は長さ 0 の文字列です。空白のみが含まれています無効な文字が含まれていますデバイス パスであるか (で始まる\\ \\.\\)。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="directory" /> は <see langword="Nothing" /> です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">検索するディレクトリが存在しません。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="directory" />既存のファイルへのポインター。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.NotSupportedException">パスのファイルまたはディレクトリ名は、コロン (:) が含まれています。 または形式が無効です。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、パスを表示するために必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">ユーザーには、必要なアクセス許可が不足しています。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetName">
+      <MemberSignature Language="C#" Value="public static string GetName (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string GetName(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.GetName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">必須です。 解析するパス。 <see langword="String" />。</param>
+        <summary>指定されたパスからファイル名を解析します。</summary>
+        <returns>指定されたパスからファイル名。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、文字列操作です。`FileSystem`は説明しません。  
+  
+ `GetName`メソッドは、パスの末尾にスラッシュ (/) を無視します。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.FileSystem.GetFileName`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ファイル パスを解析します。|[方法: Visual Basic でファイル パスの解析](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)|  
+  
+   
+  
+## Examples  
+ 次の例では、ファイルのパスを解析し、ファイルの名前を返します。  
+  
+ [!code-vb[VbVbcnMyFileSystem#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#21)]  
+  
+ パスに置き換えます`C:\Testdirectory\Testfile`を解析するパス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParentPath">
+      <MemberSignature Language="C#" Value="public static string GetParentPath (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string GetParentPath(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.GetParentPath(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">調査するパス。</param>
+        <summary>指定されたパスの親パスを返します。</summary>
+        <returns>指定されたパスの親パスです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、文字列操作です。ファイル システムはチェックされません。  
+  
+   
+  
+## Examples  
+ この例の親パスを取得する`C:\Backups\Tmp\Test`です。  
+  
+ [!code-vb[VbRefFile#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#17)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">ルートのパスであるために、パスは、親パスがありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="Nothing" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.NotSupportedException">パスのファイルまたはディレクトリ名は、コロン (:) が含まれています。 または形式が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTempFileName">
+      <MemberSignature Language="C#" Value="public static string GetTempFileName ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static string GetTempFileName() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.GetTempFileName" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ディスクに一意の名前付き 0 バイトの一時ファイルを作成してそのファイルの完全なパスを返します。</summary>
+        <returns>
+          <see langword="String" />一時ファイルの完全なパスを含むです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、一時ファイルの作成に使用できます。  
+  
+   
+  
+## Examples  
+ この例では、一時ファイルを作成し、そのパスを返します。  
+  
+ [!code-vb[VbVbcnMyFileSystem#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveDirectory">
+      <MemberSignature Language="C#" Value="public static void MoveDirectory (string sourceDirectoryName, string destinationDirectoryName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void MoveDirectory(string sourceDirectoryName, string destinationDirectoryName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.MoveDirectory(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceDirectoryName" Type="System.String" />
+        <Parameter Name="destinationDirectoryName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceDirectoryName">移動するディレクトリのパス。</param>
+        <param name="destinationDirectoryName">ソース ディレクトリの移動先ディレクトリのパス。</param>
+        <summary>1 つの場所から別のディレクトリに移動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ディレクトリが存在しないディレクトリ内を移動しようとすると、対象の構造が作成されます。  
+  
+   
+  
+## Examples  
+ この例では移動`Directory1`内`Directory2`です。  
+  
+ [!code-vb[VbVbcnMyFileSystem#81](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#81)]  
+  
+ この例では移動`Directory1`内`Directory2`、既に存在する場合、ディレクトリを上書きします。  
+  
+ [!code-vb[VbVbcnMyFileSystem#82](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#82)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">パスが正しくない、次の理由のいずれかの: は長さ 0 の文字列です。空白のみが含まれています無効な文字が含まれていますデバイス パスであるか (で始まる\\ \\.\\)。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="sourceDirectoryName" />または<paramref name="destinationDirectoryName" />は<see langword="Nothing" />または空の文字列。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">ディレクトリが存在しません。</exception>
+        <exception cref="T:System.IO.IOException">ソースがルート ディレクトリまたはソース パスと、対象のパスが同じです。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.InvalidOperationException">操作は循環使用します。</exception>
+        <exception cref="T:System.NotSupportedException">パスのファイルまたはディレクトリ名は、コロン (:) が含まれています。 または形式が無効です。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、パスを表示するために必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">ユーザーには、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveDirectory">
+      <MemberSignature Language="C#" Value="public static void MoveDirectory (string sourceDirectoryName, string destinationDirectoryName, Microsoft.VisualBasic.FileIO.UIOption showUI);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void MoveDirectory(string sourceDirectoryName, string destinationDirectoryName, valuetype Microsoft.VisualBasic.FileIO.UIOption showUI) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.MoveDirectory(System.String,System.String,Microsoft.VisualBasic.FileIO.UIOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceDirectoryName" Type="System.String" />
+        <Parameter Name="destinationDirectoryName" Type="System.String" />
+        <Parameter Name="showUI" Type="Microsoft.VisualBasic.FileIO.UIOption" />
+      </Parameters>
+      <Docs>
+        <param name="sourceDirectoryName">移動するディレクトリのパス。</param>
+        <param name="destinationDirectoryName">ソース ディレクトリの移動先ディレクトリのパス。</param>
+        <param name="showUI">操作の進行状況を視覚的に追跡するかどうかを指定します。 既定値は <see langword="UIOption.OnlyErrorDialogs" /> です。</param>
+        <summary>1 つの場所から別のディレクトリに移動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ディレクトリが存在しないディレクトリ内を移動しようとすると、対象の構造が作成されます。  
+  
+   
+  
+## Examples  
+ この例では移動`Directory1`内`Directory2`です。  
+  
+ [!code-vb[VbVbcnMyFileSystem#81](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#81)]  
+  
+ この例では移動`Directory1`内`Directory2`、既に存在する場合、ディレクトリを上書きします。  
+  
+ [!code-vb[VbVbcnMyFileSystem#82](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#82)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">パスが正しくない、次の理由のいずれかの: は長さ 0 の文字列です。空白のみが含まれています無効な文字が含まれていますデバイス パスであるか (で始まる\\ \\.\\)。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="sourceDirectoryName" />または<paramref name="destinationDirectoryName" />は<see langword="Nothing" />または空の文字列。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">ディレクトリが存在しません。</exception>
+        <exception cref="T:System.IO.IOException">ターゲット ディレクトリが既に存在し、<paramref name="overwrite" />に設定されている<see langword="False" />です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.InvalidOperationException">操作は循環使用します。</exception>
+        <exception cref="T:System.NotSupportedException">パスのファイルまたはディレクトリ名は、コロン (:) が含まれています。 または形式が無効です。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、パスを表示するために必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">ユーザーには、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.UIPermission">ユーザー インターフェイスとクリップボードに関連するアクセス許可を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveDirectory">
+      <MemberSignature Language="C#" Value="public static void MoveDirectory (string sourceDirectoryName, string destinationDirectoryName, bool overwrite);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void MoveDirectory(string sourceDirectoryName, string destinationDirectoryName, bool overwrite) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.MoveDirectory(System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceDirectoryName" Type="System.String" />
+        <Parameter Name="destinationDirectoryName" Type="System.String" />
+        <Parameter Name="overwrite" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="sourceDirectoryName">移動するディレクトリのパス。</param>
+        <param name="destinationDirectoryName">ソース ディレクトリの移動先ディレクトリのパス。</param>
+        <param name="overwrite">
+          <see langword="True" />既存のディレクトリを上書きする場合それ以外の場合<see langword="False" />です。 既定値は <see langword="False" /> です。</param>
+        <summary>1 つの場所から別のディレクトリに移動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ディレクトリが存在しないディレクトリ内を移動しようとすると、対象の構造が作成されます。  
+  
+   
+  
+## Examples  
+ この例では移動`Directory1`内`Directory2`です。  
+  
+ [!code-vb[VbVbcnMyFileSystem#81](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#81)]  
+  
+ この例では移動`Directory1`内`Directory2`、既に存在する場合、ディレクトリを上書きします。  
+  
+ [!code-vb[VbVbcnMyFileSystem#82](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#82)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">パスが正しくない、次の理由のいずれかの: は長さ 0 の文字列です。空白のみが含まれています無効な文字が含まれていますデバイス パスであるか (で始まる\\ \\.\\)。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="sourceDirectoryName" />または<paramref name="destinationDirectoryName" />は<see langword="Nothing" />または空の文字列。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">ディレクトリが存在しません。</exception>
+        <exception cref="T:System.IO.IOException">ターゲット ディレクトリが既に存在し、<paramref name="overwrite" />に設定されている<see langword="False" />です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.InvalidOperationException">操作は循環使用します。</exception>
+        <exception cref="T:System.NotSupportedException">パスのファイルまたはディレクトリ名は、コロン (:) が含まれています。 または形式が無効です。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、パスを表示するために必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">ユーザーには、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveDirectory">
+      <MemberSignature Language="C#" Value="public static void MoveDirectory (string sourceDirectoryName, string destinationDirectoryName, Microsoft.VisualBasic.FileIO.UIOption showUI, Microsoft.VisualBasic.FileIO.UICancelOption onUserCancel);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void MoveDirectory(string sourceDirectoryName, string destinationDirectoryName, valuetype Microsoft.VisualBasic.FileIO.UIOption showUI, valuetype Microsoft.VisualBasic.FileIO.UICancelOption onUserCancel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.MoveDirectory(System.String,System.String,Microsoft.VisualBasic.FileIO.UIOption,Microsoft.VisualBasic.FileIO.UICancelOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceDirectoryName" Type="System.String" />
+        <Parameter Name="destinationDirectoryName" Type="System.String" />
+        <Parameter Name="showUI" Type="Microsoft.VisualBasic.FileIO.UIOption" />
+        <Parameter Name="onUserCancel" Type="Microsoft.VisualBasic.FileIO.UICancelOption" />
+      </Parameters>
+      <Docs>
+        <param name="sourceDirectoryName">移動するディレクトリのパス。</param>
+        <param name="destinationDirectoryName">ソース ディレクトリの移動先ディレクトリのパス。</param>
+        <param name="showUI">操作の進行状況を視覚的に追跡するかどうかを指定します。 既定値は <see langword="UIOption.OnlyErrorDialogs" /> です。</param>
+        <param name="onUserCancel">ユーザーが、操作をキャンセルすると、例外はスローかどうかを指定します。 既定値は <see langword="UICancelOption.ThrowException" /> です。</param>
+        <summary>1 つの場所から別のディレクトリに移動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ディレクトリが存在しないディレクトリ内を移動しようとすると、対象の構造が作成されます。  
+  
+   
+  
+## Examples  
+ この例では移動`Directory1`内`Directory2`です。  
+  
+ [!code-vb[VbVbcnMyFileSystem#81](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#81)]  
+  
+ この例では移動`Directory1`内`Directory2`、既に存在する場合、ディレクトリを上書きします。  
+  
+ [!code-vb[VbVbcnMyFileSystem#82](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#82)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">パスが正しくない、次の理由のいずれかの: は長さ 0 の文字列です。空白のみが含まれています無効な文字が含まれていますデバイス パスであるか (で始まる\\ \\.\\)。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="sourceDirectoryName" />または<paramref name="destinationDirectoryName" />は<see langword="Nothing" />または空の文字列。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">ディレクトリが存在しません。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="onUserCancel" />設定されている<see langword="ThrowException" />ファイルのサブディレクトリをコピーすることはできません。</exception>
+        <exception cref="T:System.OperationCanceledException">
+          <paramref name="onUserCancel" />設定されている<see langword="ThrowException" />ユーザーが、操作を取り消すし、操作を完了できません。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、パスを表示するために必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.InvalidOperationException">操作は循環使用します。</exception>
+        <exception cref="T:System.NotSupportedException">パスのファイルまたはディレクトリ名は、コロン (:) が含まれています。 または形式が無効です。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">ユーザーには、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.UIPermission">ユーザー インターフェイスとクリップボードに関連するアクセス許可を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveFile">
+      <MemberSignature Language="C#" Value="public static void MoveFile (string sourceFileName, string destinationFileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void MoveFile(string sourceFileName, string destinationFileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.MoveFile(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFileName" Type="System.String" />
+        <Parameter Name="destinationFileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFileName">移動するファイルのパス。</param>
+        <param name="destinationFileName">ファイルの移動先となるディレクトリのパス。</param>
+        <summary>ファイルを新しい場所に移動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ターゲット構造が存在しない場合は作成されます。  
+  
+ `MoveFile`メソッドのみが同じボリューム内でのファイルを移動するとき (アクセス制御エントリ) の Ace が保持されます。 これには、継承された Ace には、直接の Ace (直接 Ace が優先継承された Ace) を移動したときになりますが含まれます。 ボリューム間でファイルを移動すると、Ace はコピーされません。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.FileSystem.MoveFile`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ファイルを移動します。|[方法: Visual Basic でファイルを移動](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-move-a-file.md)|  
+  
+   
+  
+## Examples  
+ この例で、ファイルは移動`Test.txt`から`TestDir1`に`TestDir2`です。  
+  
+ [!code-vb[VbVbcnMyFileSystem#86](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#86)]  
+  
+ この例で、ファイルは移動`Test.txt`から`TestDir1`に`TestDir2`名前を変更して、`Test2.txt`です。  
+  
+ [!code-vb[VbVbcnMyFileSystem#87](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#87)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">パスが正しくない、次の理由のいずれかの: は長さ 0 の文字列です。空白のみが含まれています無効な文字が含まれていますデバイス パスであるか (で始まる\\ \\.\\); 末尾のスラッシュを終了します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="destinationFileName" /> が <see langword="Nothing" /> または空の文字列です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ソース ファイルは、正しくないか、存在しません。</exception>
+        <exception cref="T:System.IO.IOException">ファイルは別のプロセスによって使用されています。 または、I/O エラーが発生します。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.NotSupportedException">パスのファイルまたはディレクトリ名は、コロン (:) が含まれています。 または形式が無効です。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、パスを表示するために必要なアクセス許可が不足しています。</exception>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">すべての環境変数へのアクセスを制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.RegistryPermission">レジストリ変数へのアクセスを制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveFile">
+      <MemberSignature Language="C#" Value="public static void MoveFile (string sourceFileName, string destinationFileName, Microsoft.VisualBasic.FileIO.UIOption showUI);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void MoveFile(string sourceFileName, string destinationFileName, valuetype Microsoft.VisualBasic.FileIO.UIOption showUI) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.MoveFile(System.String,System.String,Microsoft.VisualBasic.FileIO.UIOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFileName" Type="System.String" />
+        <Parameter Name="destinationFileName" Type="System.String" />
+        <Parameter Name="showUI" Type="Microsoft.VisualBasic.FileIO.UIOption" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFileName">移動するファイルのパス。</param>
+        <param name="destinationFileName">ファイルの移動先となるディレクトリのパス。</param>
+        <param name="showUI">操作の進行状況を視覚的に追跡するかどうかを指定します。 既定値は <see langword="UIOption.OnlyErrorDialogs" /> です。</param>
+        <summary>ファイルを新しい場所に移動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ターゲット構造が存在しない場合は作成されます。  
+  
+ `MoveFile`メソッドのみが同じボリューム内でのファイルを移動するとき (アクセス制御エントリ) の Ace が保持されます。 これには、継承された Ace には、直接の Ace (直接 Ace が優先継承された Ace) を移動したときになりますが含まれます。 ボリューム間でファイルを移動すると、Ace はコピーされません。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.FileSystem.MoveFile`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ファイルを移動します。|[方法: Visual Basic でファイルを移動](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-move-a-file.md)|  
+  
+   
+  
+## Examples  
+ この例で、ファイルは移動`Test.txt`から`TestDir1`に`TestDir2`です。  
+  
+ [!code-vb[VbVbcnMyFileSystem#86](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#86)]  
+  
+ この例で、ファイルは移動`Test.txt`から`TestDir1`に`TestDir2`名前を変更して、`Test2.txt`です。  
+  
+ [!code-vb[VbVbcnMyFileSystem#87](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#87)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">パスが正しくない、次の理由のいずれかの: は長さ 0 の文字列です。空白のみが含まれています無効な文字が含まれていますデバイス パスであるか (で始まる\\ \\.\\); 末尾のスラッシュを終了します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="destinationFileName" /> が <see langword="Nothing" /> または空の文字列です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ソース ファイルは、正しくないか、存在しません。</exception>
+        <exception cref="T:System.IO.IOException">ファイルは別のプロセスによって使用されています。 または、I/O エラーが発生します。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.NotSupportedException">パスのファイルまたはディレクトリ名は、コロン (:) が含まれています。 または形式が無効です。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、パスを表示するために必要なアクセス許可が不足しています。</exception>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">すべての環境変数へのアクセスを制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.RegistryPermission">レジストリ変数へのアクセスを制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.UIPermission">ユーザー インターフェイスとクリップボードに関連するアクセス許可を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveFile">
+      <MemberSignature Language="C#" Value="public static void MoveFile (string sourceFileName, string destinationFileName, bool overwrite);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void MoveFile(string sourceFileName, string destinationFileName, bool overwrite) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.MoveFile(System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFileName" Type="System.String" />
+        <Parameter Name="destinationFileName" Type="System.String" />
+        <Parameter Name="overwrite" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFileName">移動するファイルのパス。</param>
+        <param name="destinationFileName">ファイルの移動先となるディレクトリのパス。</param>
+        <param name="overwrite">
+          <see langword="True" />既存のファイルを上書きするにはそれ以外の場合<see langword="False" />です。 既定値は <see langword="False" /> です。</param>
+        <summary>ファイルを新しい場所に移動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ターゲット構造が存在しない場合は作成されます。  
+  
+ `MoveFile`メソッドのみが同じボリューム内でのファイルを移動するとき (アクセス制御エントリ) の Ace が保持されます。 これには、継承された Ace には、直接の Ace (直接 Ace が優先継承された Ace) を移動したときになりますが含まれます。 ボリューム間でファイルを移動すると、Ace はコピーされません。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.FileSystem.MoveFile`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ファイルを移動します。|[方法: Visual Basic でファイルを移動](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-move-a-file.md)|  
+  
+   
+  
+## Examples  
+ この例で、ファイルは移動`Test.txt`から`TestDir1`に`TestDir2`です。  
+  
+ [!code-vb[VbVbcnMyFileSystem#86](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#86)]  
+  
+ この例で、ファイルは移動`Test.txt`から`TestDir1`に`TestDir2`名前を変更して、`Test2.txt`です。  
+  
+ [!code-vb[VbVbcnMyFileSystem#87](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#87)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">パスが正しくない、次の理由のいずれかの: は長さ 0 の文字列です。空白のみが含まれています無効な文字が含まれていますデバイス パスであるか (で始まる\\ \\.\\); 末尾のスラッシュを終了します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="destinationFileName" /> が <see langword="Nothing" /> または空の文字列です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ソース ファイルは、正しくないか、存在しません。</exception>
+        <exception cref="T:System.IO.IOException">ファイルは別のプロセスによって使用されています。 または、I/O エラーが発生します。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.NotSupportedException">パスのファイルまたはディレクトリ名は、コロン (:) が含まれています。 または形式が無効です。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、パスを表示するために必要なアクセス許可が不足しています。</exception>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">すべての環境変数へのアクセスを制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.RegistryPermission">レジストリ変数へのアクセスを制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveFile">
+      <MemberSignature Language="C#" Value="public static void MoveFile (string sourceFileName, string destinationFileName, Microsoft.VisualBasic.FileIO.UIOption showUI, Microsoft.VisualBasic.FileIO.UICancelOption onUserCancel);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void MoveFile(string sourceFileName, string destinationFileName, valuetype Microsoft.VisualBasic.FileIO.UIOption showUI, valuetype Microsoft.VisualBasic.FileIO.UICancelOption onUserCancel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.MoveFile(System.String,System.String,Microsoft.VisualBasic.FileIO.UIOption,Microsoft.VisualBasic.FileIO.UICancelOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFileName" Type="System.String" />
+        <Parameter Name="destinationFileName" Type="System.String" />
+        <Parameter Name="showUI" Type="Microsoft.VisualBasic.FileIO.UIOption" />
+        <Parameter Name="onUserCancel" Type="Microsoft.VisualBasic.FileIO.UICancelOption" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFileName">移動するファイルのパス。</param>
+        <param name="destinationFileName">ファイルの移動先となるディレクトリのパス。</param>
+        <param name="showUI">操作の進行状況を視覚的に追跡するかどうかを指定します。 既定値は <see langword="UIOption.OnlyErrorDialogs" /> です。</param>
+        <param name="onUserCancel">ユーザーが、操作をキャンセルすると、例外はスローかどうかを指定します。 既定値は <see langword="UICancelOption.ThrowException" /> です。</param>
+        <summary>ファイルを新しい場所に移動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ターゲット構造が存在しない場合は作成されます。  
+  
+ `MoveFile`メソッドのみが同じボリューム内でのファイルを移動するとき (アクセス制御エントリ) の Ace が保持されます。 これには、継承された Ace には、直接の Ace (直接 Ace が優先継承された Ace) を移動したときになりますが含まれます。 ボリューム間でファイルを移動すると、Ace はコピーされません。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.FileSystem.MoveFile`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ファイルを移動します。|[方法: Visual Basic でファイルを移動](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-move-a-file.md)|  
+  
+   
+  
+## Examples  
+ この例で、ファイルは移動`Test.txt`から`TestDir1`に`TestDir2`です。  
+  
+ [!code-vb[VbVbcnMyFileSystem#86](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#86)]  
+  
+ この例で、ファイルは移動`Test.txt`から`TestDir1`に`TestDir2`名前を変更して、`Test2.txt`です。  
+  
+ [!code-vb[VbVbcnMyFileSystem#87](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#87)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">パスが正しくない、次の理由のいずれかの: は長さ 0 の文字列です。空白のみが含まれています無効な文字が含まれていますデバイス パスであるか (で始まる\\ \\.\\); 末尾のスラッシュを終了します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="destinationFileName" /> が <see langword="Nothing" /> または空の文字列です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ソース ファイルは、正しくないか、存在しません。</exception>
+        <exception cref="T:System.IO.IOException">ファイルは別のプロセスによって使用されています。 または、I/O エラーが発生します。</exception>
+        <exception cref="T:System.OperationCanceledException">
+          <paramref name="onUserCancel" />設定されている<see langword="ThrowException" />、いずれかと、ユーザーが操作をキャンセルまたは未指定の I/O エラーが発生します。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.NotSupportedException">パスのファイルまたはディレクトリ名は、コロン (:) が含まれています。 または形式が無効です。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、パスを表示するために必要なアクセス許可が不足しています。</exception>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">すべての環境変数へのアクセスを制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.RegistryPermission">レジストリ変数へのアクセスを制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.UIPermission">ユーザー インターフェイスとクリップボードに関連するアクセス許可を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenTextFieldParser">
+      <MemberSignature Language="C#" Value="public static Microsoft.VisualBasic.FileIO.TextFieldParser OpenTextFieldParser (string file);" />
+      <MemberSignature Language="ILAsm" Value=".method public static class Microsoft.VisualBasic.FileIO.TextFieldParser OpenTextFieldParser(string file) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFieldParser(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.FileIO.TextFieldParser</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="file" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="file">で開かれるファイル、<see langword="TextFieldParser" />です。</param>
+        <summary><see langword="OpenTextFieldParser" />メソッドでは、作成することができます、<see cref="T:Microsoft.VisualBasic.FileIO.TextFieldParser" />オブジェクトで、簡単かつ効率的には、ログなどの構造化テキスト ファイルを解析する方法を提供します。 <see langword="TextFieldParser" />区切りと固定幅の両方のファイルを読み取るオブジェクトを使用できます。</summary>
+        <returns>
+          <see cref="T:Microsoft.VisualBasic.FileIO.TextFieldParser" />指定したファイルを読み取れません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表に、関連するタスクの例については、`My.Computer.FileSystem.OpenTextFieldParser`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|区切られたテキスト ファイルからの読み取り|[方法: Visual Basic でコンマ区切りのテキスト ファイルからの読み取り](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-comma-delimited-text-files.md)|  
+|固定幅テキスト ファイルからの読み取り|[方法: Visual Basic で固定幅テキスト ファイルを読み取る](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-fixed-width-text-files.md)|  
+|複数の形式を持つテキスト ファイルからの読み取り|[方法: Visual Basic での複数の形式を持つテキスト ファイルからの読み取り](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files-with-multiple-formats.md)|  
+  
+   
+  
+## Examples  
+ この例を開いて、`TextFieldParser.reader`からの読み取りを使用して`C:\TestFolder1\Test1.txt`です。  
+  
+ [!code-vb[VbRefFile#18](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#18)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">パスが正しくない、次の理由のいずれかの: は長さ 0 の文字列です。空白のみが含まれています無効な文字が含まれていますデバイス パスであるか (で始まる\\ \\.\\); 末尾のスラッシュを終了します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="file" /> は <see langword="Nothing" /> です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが存在しません。</exception>
+        <exception cref="T:System.IO.IOException">ファイルは別のプロセスによって使用されています。 または、I/O エラーが発生します。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.NotSupportedException">パスのファイルまたはディレクトリ名は、コロン (:) が含まれています。 または形式が無効です。</exception>
+        <exception cref="T:Microsoft.VisualBasic.FileIO.MalformedLineException">指定された形式を使用して行を解析できません。 例外の原因となった行が例外メッセージで報告され、その行に含まれているテキストには <see cref="P:Microsoft.VisualBasic.FileIO.TextFieldParser.ErrorLine" /> プロパティが代入されます。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、パスを表示するために必要なアクセス許可が不足しています。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">コードに適用されるセキュリティのアクセス許可のセットについて説明します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlEvidence" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenTextFieldParser">
+      <MemberSignature Language="C#" Value="public static Microsoft.VisualBasic.FileIO.TextFieldParser OpenTextFieldParser (string file, params int[] fieldWidths);" />
+      <MemberSignature Language="ILAsm" Value=".method public static class Microsoft.VisualBasic.FileIO.TextFieldParser OpenTextFieldParser(string file, int32[] fieldWidths) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFieldParser(System.String,System.Int32[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.FileIO.TextFieldParser</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="file" Type="System.String" />
+        <Parameter Name="fieldWidths" Type="System.Int32[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="file">で開かれるファイル、<see langword="TextFieldParser" />です。</param>
+        <param name="fieldWidths">フィールドの幅。</param>
+        <summary><see langword="OpenTextFieldParser" />メソッドでは、作成することができます、<see cref="T:Microsoft.VisualBasic.FileIO.TextFieldParser" />オブジェクトで、簡単かつ効率的には、ログなどの構造化テキスト ファイルを解析する方法を提供します。 <see langword="TextFieldParser" />区切りと固定幅の両方のファイルを読み取るオブジェクトを使用できます。</summary>
+        <returns>
+          <see cref="T:Microsoft.VisualBasic.FileIO.TextFieldParser" />指定したファイルを読み取れません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表に、関連するタスクの例については、`My.Computer.FileSystem.OpenTextFieldParser`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|区切られたテキスト ファイルからの読み取り|[方法: Visual Basic でコンマ区切りのテキスト ファイルからの読み取り](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-comma-delimited-text-files.md)|  
+|固定幅テキスト ファイルからの読み取り|[方法: Visual Basic で固定幅テキスト ファイルを読み取る](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-fixed-width-text-files.md)|  
+|複数の形式を持つテキスト ファイルからの読み取り|[方法: Visual Basic での複数の形式を持つテキスト ファイルからの読み取り](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files-with-multiple-formats.md)|  
+  
+   
+  
+## Examples  
+ この例を開いて、`TextFieldParser.reader`からの読み取りを使用して`C:\TestFolder1\Test1.txt`です。  
+  
+ [!code-vb[VbRefFile#18](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#18)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">パスが正しくない、次の理由のいずれかの: は長さ 0 の文字列です。空白のみが含まれています無効な文字が含まれていますデバイス パスであるか (で始まる\\ \\.\\); 末尾のスラッシュを終了します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="file" /> は <see langword="Nothing" /> です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが存在しません。</exception>
+        <exception cref="T:System.IO.IOException">ファイルは別のプロセスによって使用されています。 または、I/O エラーが発生します。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.NotSupportedException">パスのファイルまたはディレクトリ名は、コロン (:) が含まれています。 または形式が無効です。</exception>
+        <exception cref="T:Microsoft.VisualBasic.FileIO.MalformedLineException">指定された形式を使用して行を解析できません。 例外の原因となった行が例外メッセージで報告され、その行に含まれているテキストには <see cref="P:Microsoft.VisualBasic.FileIO.TextFieldParser.ErrorLine" /> プロパティが代入されます。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、パスを表示するために必要なアクセス許可が不足しています。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">コードに適用されるセキュリティのアクセス許可のセットについて説明します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlEvidence" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenTextFieldParser">
+      <MemberSignature Language="C#" Value="public static Microsoft.VisualBasic.FileIO.TextFieldParser OpenTextFieldParser (string file, params string[] delimiters);" />
+      <MemberSignature Language="ILAsm" Value=".method public static class Microsoft.VisualBasic.FileIO.TextFieldParser OpenTextFieldParser(string file, string[] delimiters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFieldParser(System.String,System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.FileIO.TextFieldParser</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="file" Type="System.String" />
+        <Parameter Name="delimiters" Type="System.String[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="file">で開かれるファイル、<see langword="TextFieldParser" />です。</param>
+        <param name="delimiters">フィールドの区切り記号。</param>
+        <summary><see langword="OpenTextFieldParser" />メソッドでは、作成することができます、<see cref="T:Microsoft.VisualBasic.FileIO.TextFieldParser" />オブジェクトで、簡単かつ効率的には、ログなどの構造化テキスト ファイルを解析する方法を提供します。 <see langword="TextFieldParser" />区切りと固定幅の両方のファイルを読み取るオブジェクトを使用できます。</summary>
+        <returns>
+          <see cref="T:Microsoft.VisualBasic.FileIO.TextFieldParser" />指定したファイルを読み取れません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表に、関連するタスクの例については、`My.Computer.FileSystem.OpenTextFieldParser`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|区切られたテキスト ファイルからの読み取り|[方法: Visual Basic でコンマ区切りのテキスト ファイルからの読み取り](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-comma-delimited-text-files.md)|  
+|固定幅テキスト ファイルからの読み取り|[方法: Visual Basic で固定幅テキスト ファイルを読み取る](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-fixed-width-text-files.md)|  
+|複数の形式を持つテキスト ファイルからの読み取り|[方法: Visual Basic での複数の形式を持つテキスト ファイルからの読み取り](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files-with-multiple-formats.md)|  
+  
+   
+  
+## Examples  
+ この例を開いて、`TextFieldParser.reader`からの読み取りを使用して`C:\TestFolder1\Test1.txt`です。  
+  
+ [!code-vb[VbRefFile#18](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#18)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">パスが正しくない、次の理由のいずれかの: は長さ 0 の文字列です。空白のみが含まれています無効な文字が含まれていますデバイス パスであるか (で始まる\\ \\.\\); 末尾のスラッシュを終了します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="file" /> は <see langword="Nothing" /> です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが存在しません。</exception>
+        <exception cref="T:System.IO.IOException">ファイルは別のプロセスによって使用されています。 または、I/O エラーが発生します。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.NotSupportedException">パスのファイルまたはディレクトリ名は、コロン (:) が含まれています。 または形式が無効です。</exception>
+        <exception cref="T:Microsoft.VisualBasic.FileIO.MalformedLineException">指定された形式を使用して行を解析できません。 例外の原因となった行が例外メッセージで報告され、その行に含まれているテキストには <see cref="P:Microsoft.VisualBasic.FileIO.TextFieldParser.ErrorLine" /> プロパティが代入されます。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、パスを表示するために必要なアクセス許可が不足しています。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">コードに適用されるセキュリティのアクセス許可のセットについて説明します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlEvidence" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenTextFileReader">
+      <MemberSignature Language="C#" Value="public static System.IO.StreamReader OpenTextFileReader (string file);" />
+      <MemberSignature Language="ILAsm" Value=".method public static class System.IO.StreamReader OpenTextFileReader(string file) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFileReader(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.StreamReader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="file" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="file">読み取るファイルです。</param>
+        <summary>開く、<see cref="T:System.IO.StreamReader" />ファイルから読み取るオブジェクト。</summary>
+        <returns>
+          <see cref="T:System.IO.StreamReader" />ファイルから読み取るオブジェクト</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テキスト ファイルだけを読み取ることができます、<xref:System.IO.StreamReader>です。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.FileSystem.OpenTextFileReader`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|持つファイルを開き、<xref:System.IO.StreamReader>|[方法: StreamReader (Visual Basic) でファイルからテキストを読み取る](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-read-text-from-files-with-a-streamreader.md)|  
+  
+   
+  
+## Examples  
+ この例は、ファイルを開いて`Testfile.txt`から行を読み込み、および内の行が表示されます、`MessageBox`です。  
+  
+ [!code-vb[VbRefFile#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">ファイル名が円記号で終わる (\\)。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">指定したファイルが見つかりません。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、ファイルからの読み取りに必要な権限が不足しています。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenTextFileReader">
+      <MemberSignature Language="C#" Value="public static System.IO.StreamReader OpenTextFileReader (string file, System.Text.Encoding encoding);" />
+      <MemberSignature Language="ILAsm" Value=".method public static class System.IO.StreamReader OpenTextFileReader(string file, class System.Text.Encoding encoding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFileReader(System.String,System.Text.Encoding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.StreamReader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="file" Type="System.String" />
+        <Parameter Name="encoding" Type="System.Text.Encoding" />
+      </Parameters>
+      <Docs>
+        <param name="file">読み取るファイルです。</param>
+        <param name="encoding">ファイルの内容を使用するエンコーディング。 既定値は ASCII です。</param>
+        <summary>開く、<see cref="T:System.IO.StreamReader" />ファイルから読み取るオブジェクト。</summary>
+        <returns>
+          <see cref="T:System.IO.StreamReader" />ファイルから読み取るオブジェクト</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テキスト ファイルだけを読み取ることができます、<xref:System.IO.StreamReader>です。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.FileSystem.OpenTextFileReader`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|持つファイルを開き、<xref:System.IO.StreamReader>|[方法: StreamReader (Visual Basic) でファイルからテキストを読み取る](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-read-text-from-files-with-a-streamreader.md)|  
+  
+   
+  
+## Examples  
+ この例は、ファイルを開いて`Testfile.txt`から行を読み込み、および内の行が表示されます、`MessageBox`です。  
+  
+ [!code-vb[VbRefFile#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">ファイル名が円記号で終わる (\\)。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">指定したファイルが見つかりません。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、ファイルからの読み取りに必要な権限が不足しています。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenTextFileWriter">
+      <MemberSignature Language="C#" Value="public static System.IO.StreamWriter OpenTextFileWriter (string file, bool append);" />
+      <MemberSignature Language="ILAsm" Value=".method public static class System.IO.StreamWriter OpenTextFileWriter(string file, bool append) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFileWriter(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.StreamWriter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="file" Type="System.String" />
+        <Parameter Name="append" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="file">書き込まれるファイルです。</param>
+        <param name="append">
+          <see langword="True" />ファイルの内容に追加するには<see langword="False" />ファイルの内容を上書きします。 既定値は <see langword="False" /> です。</param>
+        <summary>開く、<see cref="T:System.IO.StreamWriter" />指定したファイルに書き込むオブジェクト。</summary>
+        <returns>
+          <see cref="T:System.IO.StreamWriter" />指定したファイルに書き込むオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `OpenTextFileWriter`メソッドと、ファイルのストリームを初期化を開きを返します、<xref:System.IO.StreamWriter>ストリームにオブジェクト。 必要な数だけストリームに書き込むしが完了したら、閉じますことができます。  
+  
+> [!NOTE]
+>  呼び出す必要があります、<xref:System.IO.StreamWriter.Close%2A>メソッドを<xref:System.IO.StreamWriter>オブジェクトをすべてのデータが、基になるストリームを不適切に記述されたことを確認してください。  
+  
+ ファイルをいくつかの文字列のみを記述することが考えられます使いやすく、<xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A>メソッドです。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.FileSystem.OpenTextFileWriter`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|テキスト ファイルを書き込むには`StreamWriter`|[方法: Visual Basic で StreamWriter を持つファイルにテキストを書き込む](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-write-text-to-files-with-a-streamwriter.md)|  
+  
+   
+  
+## Examples  
+ この例が表示されます、<xref:System.IO.StreamWriter>で、`My.Computer.FileSystem.OpenTextFileWriter`メソッドされ、文字列を含むテキスト ファイルを書き込むために使用、`WriteLine`のメソッド、`StreamWriter`クラスです。  
+  
+ [!code-vb[VbRefFile#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#14)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">ファイル名は、末尾のスラッシュで終わります。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenTextFileWriter">
+      <MemberSignature Language="C#" Value="public static System.IO.StreamWriter OpenTextFileWriter (string file, bool append, System.Text.Encoding encoding);" />
+      <MemberSignature Language="ILAsm" Value=".method public static class System.IO.StreamWriter OpenTextFileWriter(string file, bool append, class System.Text.Encoding encoding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFileWriter(System.String,System.Boolean,System.Text.Encoding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.StreamWriter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="file" Type="System.String" />
+        <Parameter Name="append" Type="System.Boolean" />
+        <Parameter Name="encoding" Type="System.Text.Encoding" />
+      </Parameters>
+      <Docs>
+        <param name="file">書き込まれるファイルです。</param>
+        <param name="append">
+          <see langword="True" />ファイルの内容に追加するには<see langword="False" />ファイルの内容を上書きします。 既定値は <see langword="False" /> です。</param>
+        <param name="encoding">ファイルへの書き込みに使用されるエンコーディング。 既定値は ASCII です。</param>
+        <summary>開きます、<see cref="T:System.IO.StreamWriter" />指定したファイルに書き込めません。</summary>
+        <returns>
+          <see cref="T:System.IO.StreamWriter" />指定したファイルに書き込むオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `OpenTextFileWriter`メソッドと、ファイルのストリームを初期化を開きを返します、<xref:System.IO.StreamWriter>ストリームにオブジェクト。 必要な数だけストリームに書き込むしが完了したら、閉じますことができます。  
+  
+> [!NOTE]
+>  呼び出す必要があります、<xref:System.IO.StreamWriter.Close%2A>メソッドを<xref:System.IO.StreamWriter>オブジェクトをすべてのデータが、基になるストリームを不適切に記述されたことを確認してください。  
+  
+ ファイルをいくつかの文字列のみを記述することが考えられます使いやすく、<xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A>メソッドです。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.FileSystem.OpenTextFileWriter`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|テキスト ファイルを書き込むには`StreamWriter`|[方法: Visual Basic で StreamWriter を持つファイルにテキストを書き込む](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-write-text-to-files-with-a-streamwriter.md)|  
+  
+   
+  
+## Examples  
+ この例が表示されます、<xref:System.IO.StreamWriter>で、`My.Computer.FileSystem.OpenTextFileWriter`メソッドされ、文字列を含むテキスト ファイルを書き込むために使用、`WriteLine`のメソッド、`StreamWriter`クラスです。  
+  
+ [!code-vb[VbRefFile#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#14)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">ファイル名は、末尾のスラッシュで終わります。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadAllBytes">
+      <MemberSignature Language="C#" Value="public static byte[] ReadAllBytes (string file);" />
+      <MemberSignature Language="ILAsm" Value=".method public static unsigned int8[] ReadAllBytes(string file) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.ReadAllBytes(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="file" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="file">読み取るファイルです。</param>
+        <summary>ファイルの内容をバイト配列として返します。</summary>
+        <returns>
+          <see langword="Byte" />ファイルの内容を含む配列です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `ReadAllBytes`のメソッド、`My.Computer.FileSystem`オブジェクトでは、バイナリ ファイルを読み取ることができます。 ファイルの内容は、バイト配列として返されます。  
+  
+ ファイル名からファイルの内容を判断しないでください。 たとえば、Form1.vb というファイルは Visual Basic のソース ファイルではない可能性もあります。 アプリケーションでデータを使用する前に、入力をすべて検証してください。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.FileSystem.ReadAllBytes`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|バイナリ ファイルからの読み取り|[方法: Visual Basic でバイナリ ファイルを読み取る](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-binary-files.md)|  
+  
+   
+  
+## Examples  
+ この例は、ファイルから読み取ります`C:/Documents and Settings/selfportrait.jpg.`  
+  
+ [!code-vb[VbVbcnMyFileSystem#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#33)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">パスが正しくない、次の理由のいずれかの: は長さ 0 の文字列です。空白のみが含まれています無効な文字が含まれていますデバイス パスであるか (で始まる\\ \\.\\); 末尾のスラッシュを終了します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="file" /> は <see langword="Nothing" /> です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが存在しません。</exception>
+        <exception cref="T:System.IO.IOException">ファイルは別のプロセスによって使用されています。 または、I/O エラーが発生します。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.NotSupportedException">パスのファイルまたはディレクトリ名は、コロン (:) が含まれています。 または形式が無効です。</exception>
+        <exception cref="T:System.OutOfMemoryException">文字列をバッファーに書き込むのに十分なメモリがありません。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、パスを表示するために必要なアクセス許可が不足しています。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadAllText">
+      <MemberSignature Language="C#" Value="public static string ReadAllText (string file);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string ReadAllText(string file) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.ReadAllText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="file" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="file">読み取るファイルのパスと名前。</param>
+        <summary>テキスト ファイルとしての内容を返します、<see langword="String" />です。</summary>
+        <returns>
+          <see langword="String" />ファイルの内容を含むです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `ReadAllText` オブジェクトの `My.Computer.FileSystem` メソッドを使用すると、テキスト ファイルを読み取ることができます。 ファイルの内容は、文字列として返されます。  
+  
+ ファイルのエンコーディングを指定できるかどうか、ファイルの内容は ASCII または utf-8 などのエンコーディングを指定します。 拡張文字を含むファイルから読み込む場合の別のオーバー ロードを使用してファイルのエンコードを指定する必要があります、<xref:Microsoft.VisualBasic.FileIO.FileSystem.ReadAllText%2A>メソッドです。  
+  
+ ファイル名からファイルの内容を判断しないでください。 たとえば、Form1.vb というファイルは Visual Basic のソース ファイルではない可能性もあります。 アプリケーションでデータを使用する前に、入力をすべて検証してください。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.FileSystem.ReadAllText`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|テキスト ファイルからの読み取り|[方法: Visual Basic でのテキスト ファイルを読み取る](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files.md)|  
+  
+   
+  
+## Examples  
+ この例の内容の読み取り`Test.txt`を文字列にし、メッセージ ボックスに表示します。  
+  
+ [!code-vb[VbRefFile#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#8)]  
+  
+ この例は、ASCII ファイルの内容を読み取ります`Test.txt`を文字列にし、メッセージ ボックスに表示します。  
+  
+ [!code-vb[VbRefFile#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">パスが正しくない、次の理由のいずれかの: は長さ 0 の文字列です。空白のみが含まれています無効な文字が含まれていますデバイス パスであるか (で始まる\\ \\.\\); 末尾のスラッシュを終了します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="file" /> は <see langword="Nothing" /> です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが存在しません。</exception>
+        <exception cref="T:System.IO.IOException">ファイルは別のプロセスによって使用されています。 または、I/O エラーが発生します。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.NotSupportedException">パスのファイルまたはディレクトリ名は、コロン (:) が含まれています。 または形式が無効です。</exception>
+        <exception cref="T:System.OutOfMemoryException">文字列をバッファーに書き込むのに十分なメモリがありません。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、パスを表示するために必要なアクセス許可が不足しています。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadAllText">
+      <MemberSignature Language="C#" Value="public static string ReadAllText (string file, System.Text.Encoding encoding);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string ReadAllText(string file, class System.Text.Encoding encoding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.ReadAllText(System.String,System.Text.Encoding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="file" Type="System.String" />
+        <Parameter Name="encoding" Type="System.Text.Encoding" />
+      </Parameters>
+      <Docs>
+        <param name="file">読み取るファイルのパスと名前。</param>
+        <param name="encoding">ファイルの読み取りに使用する文字エンコーディングします。 既定値は utf-8 です。</param>
+        <summary>テキスト ファイルとしての内容を返します、<see langword="String" />です。</summary>
+        <returns>
+          <see langword="String" />ファイルの内容を含むです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `ReadAllText` オブジェクトの `My.Computer.FileSystem` メソッドを使用すると、テキスト ファイルを読み取ることができます。 ファイルの内容は、文字列として返されます。  
+  
+ ファイルのエンコーディングを指定できるかどうか、ファイルの内容は ASCII または utf-8 などのエンコーディングを指定します。 拡張文字を含むファイルから読み込む場合は、ファイルのエンコーディングを指定する必要があります。  
+  
+ ファイル名からファイルの内容を判断しないでください。 たとえば、Form1.vb というファイルは Visual Basic のソース ファイルではない可能性もあります。 アプリケーションでデータを使用する前に、入力をすべて検証してください。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.FileSystem.ReadAllText`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|テキスト ファイルからの読み取り|[方法: Visual Basic でのテキスト ファイルを読み取る](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files.md)|  
+  
+   
+  
+## Examples  
+ この例の内容の読み取り`Test.txt`を文字列にし、メッセージ ボックスに表示します。  
+  
+ [!code-vb[VbRefFile#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#8)]  
+  
+ この例は、ASCII ファイルの内容を読み取ります`Test.txt`を文字列にし、メッセージ ボックスに表示します。  
+  
+ [!code-vb[VbRefFile#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">パスが正しくない、次の理由のいずれかの: は長さ 0 の文字列です。空白のみが含まれています無効な文字が含まれていますデバイス パスであるか (で始まる\\ \\.\\); 末尾のスラッシュを終了します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="file" /> は <see langword="Nothing" /> です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが存在しません。</exception>
+        <exception cref="T:System.IO.IOException">ファイルは別のプロセスによって使用されています。 または、I/O エラーが発生します。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.NotSupportedException">パスのファイルまたはディレクトリ名は、コロン (:) が含まれています。 または形式が無効です。</exception>
+        <exception cref="T:System.OutOfMemoryException">文字列をバッファーに書き込むのに十分なメモリがありません。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、パスを表示するために必要なアクセス許可が不足しています。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RenameDirectory">
+      <MemberSignature Language="C#" Value="public static void RenameDirectory (string directory, string newName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void RenameDirectory(string directory, string newName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.RenameDirectory(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="directory" Type="System.String" />
+        <Parameter Name="newName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="directory">パスと名前を変更するディレクトリの名前。</param>
+        <param name="newName">ディレクトリの新しい名前。</param>
+        <summary>ディレクトリの名前を変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ディレクトリを移動を使用することはできません。使用して、`MoveDirectory`メソッドに移動し、ディレクトリの名前を変更します。  
+  
+   
+  
+## Examples  
+ この例の名前を変更、`Test`ディレクトリを`SecondTest`です。  
+  
+ [!code-vb[VbVbcnMyFileSystem#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="newName" />パス情報が含まれています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="directory" /> は <see langword="Nothing" /> です。  
+  
+ または  
+  
+ <paramref name="newName" /> が <see langword="Nothing" /> または空の文字列です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">ディレクトリが存在しません。</exception>
+        <exception cref="T:System.IO.IOException">既存のファイルまたはで指定された名前のディレクトリがある<paramref name="newName" />です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは 248 文字を超えています。</exception>
+        <exception cref="T:System.NotSupportedException">パスのファイルまたはディレクトリ名は、コロン (:) が含まれています。 または形式が無効です。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、パスを表示するために必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">ユーザーには、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RenameFile">
+      <MemberSignature Language="C#" Value="public static void RenameFile (string file, string newName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void RenameFile(string file, string newName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.RenameFile(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="file" Type="System.String" />
+        <Parameter Name="newName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="file">名前を変更するファイルです。</param>
+        <param name="newName">ファイルの新しい名前。</param>
+        <summary>ファイルの名前を変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ファイルを移動する目的には使用できません。ファイルを移動して名前を変更するには、<xref:Microsoft.VisualBasic.FileIO.FileSystem.MoveFile%2A> メソッドを使用してください。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.FileSystem.RenameFile`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ファイル名の変更します。|[方法: Visual Basic でファイルの名前を変更](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-rename-a-file.md)|  
+  
+   
+  
+## Examples  
+ この例の名前が変更`Test.txt`に`SecondTest.txt`です。  
+  
+ [!code-vb[VbVbcnMyFileSystem#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#1)]  
+  
+ 変更"`C:\Test.txt`"の名前を変更するファイルのパスとファイル名にします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="newName" />パス情報を格納またはバック スラッシュで終わる (\\)。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="file" /> は <see langword="Nothing" /> です。  
+  
+ または  
+  
+ <paramref name="newName" /> が <see langword="Nothing" /> または空の文字列です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ディレクトリが存在しません。</exception>
+        <exception cref="T:System.IO.IOException">既存のファイルまたはで指定された名前のディレクトリがある<paramref name="newName" />です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.NotSupportedException">パスのファイルまたはディレクトリ名は、コロン (:) が含まれています。 または形式が無効です。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、パスを表示するために必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">ユーザーには、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAllBytes">
+      <MemberSignature Language="C#" Value="public static void WriteAllBytes (string file, byte[] data, bool append);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void WriteAllBytes(string file, unsigned int8[] data, bool append) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllBytes(System.String,System.Byte[],System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="file" Type="System.String" />
+        <Parameter Name="data" Type="System.Byte[]" />
+        <Parameter Name="append" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="file">パスと名前に書き込まれるファイル。</param>
+        <param name="data">ファイルに書き込まれるデータ。</param>
+        <param name="append">
+          <see langword="True" />ファイルの内容に追加するには<see langword="False" />ファイルの内容を上書きします。 既定値は <see langword="False" /> です。</param>
+        <summary>バイナリ ファイルにデータを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイル名を除く、指定されたパスが有効でない場合、<xref:System.IO.DirectoryNotFoundException>例外がスローされます。 パスが有効では、ファイルが存在しない場合、ファイルが作成されます。  
+  
+> [!NOTE]
+>  `WriteAllBytes`メソッドは、ファイルを開き、による書き込みが、それを閉じます。 使用するコード、`WriteAllBytes`メソッドにコードを使用するよりも簡単です、<xref:System.IO.BinaryWriter>オブジェクト。 ただし、ループを使用してファイルにデータを追加する場合、<xref:System.IO.BinaryWriter>のみファイルを 1 回開閉する必要があるために、オブジェクトは優れたパフォーマンスを実現できます。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.FileSystem.WriteAllBytes`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|バイナリ ファイルへの書き込み|[方法: Visual Basic でバイナリ ファイルへの書き込み](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-write-to-binary-files.md)|  
+  
+   
+  
+## Examples  
+ 次の例は、データの配列を追加`CustomerData`ファイルに`CollectedData`です。  
+  
+ [!code-vb[VbVbcnMyFileSystem#50](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#50)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">パスが正しくない、次の理由のいずれかの: は長さ 0 の文字列です。空白のみが含まれています無効な文字が含まれていますデバイス パスであるか (で始まる\\ \\.\\); 末尾のスラッシュを終了します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="file" /> は <see langword="Nothing" /> です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが存在しません。</exception>
+        <exception cref="T:System.IO.IOException">ファイルは別のプロセスによって使用されています。 または、I/O エラーが発生します。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.NotSupportedException">パスのファイルまたはディレクトリ名は、コロン (:) が含まれています。 または形式が無効です。</exception>
+        <exception cref="T:System.OutOfMemoryException">文字列をバッファーに書き込むのに十分なメモリがありません。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、パスを表示するために必要なアクセス許可が不足しています。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAllText">
+      <MemberSignature Language="C#" Value="public static void WriteAllText (string file, string text, bool append);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void WriteAllText(string file, string text, bool append) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText(System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="file" Type="System.String" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="append" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="file">書き込まれるファイルです。</param>
+        <param name="text">ファイルに書き込まれるテキストです。</param>
+        <param name="append">
+          <see langword="True" />ファイルの内容に追加するには<see langword="False" />ファイルの内容を上書きします。</param>
+        <summary>テキストをファイルに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Utf-8 エンコードは、ファイルへの書き込みに使用されます。 別のエンコードを指定するには、異なるオーバー ロードを使用して、<xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A>メソッドです。  
+  
+ 指定したファイルが存在しない場合は、作成されます。  
+  
+ 指定したエンコーディングが一致しない場合、ファイルの既存のエンコーディングを指定したコードは無視されます。  
+  
+> [!NOTE]
+>  `WriteAllText`メソッドは、ファイルを開き、による書き込みが、それを閉じます。 使用するコード、`WriteAllText`メソッドにコードを使用するよりも簡単です、<xref:System.IO.StreamWriter>オブジェクト。 ただし、ループを使用して文字列をファイルに追加する場合、<xref:System.IO.StreamWriter>を開いたり閉じたり、ファイルに 1 回だけで済むために、オブジェクトは優れたパフォーマンスを実現できます。 詳細については、<xref:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFileWriter%2A> メソッドを参照してください。  
+  
+ 次の表に、関連するタスクの例については、`My.Computer.FileSystem.WriteAllText`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|テキストのファイルへの書き込み|[方法: Visual Basic でファイルにテキストを書き込む](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-write-text-to-files.md)|  
+|ファイルへのテキストの追加|[方法: Visual Basic でのテキスト ファイルに追記します。](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-append-to-text-files.md)|  
+  
+   
+  
+## Examples  
+ この例は、行を書き込みます`"This is new text to be added."`ファイルに`Test.txt`、既存のファイル内のテキストを上書きします。  
+  
+ [!code-vb[VbRefFile#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#21)]  
+  
+ この例は、内のファイルの名前を書き込みます、`Documents and Settings`フォルダー `FileList.txt`、読みやすくするための各間を返す、復帰文字を挿入します。  
+  
+ [!code-vb[VbRefFile#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#22)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">パスが正しくない、次の理由のいずれかの: は長さ 0 の文字列です。空白のみが含まれています無効な文字が含まれていますデバイス パスであるか (で始まる\\ \\.\\); 末尾のスラッシュを終了します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="file" /> は <see langword="Nothing" /> です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが存在しません。</exception>
+        <exception cref="T:System.IO.IOException">ファイルは別のプロセスによって使用されています。 または、I/O エラーが発生します。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.NotSupportedException">パスのファイルまたはディレクトリ名は、コロン (:) が含まれています。 または形式が無効です。</exception>
+        <exception cref="T:System.OutOfMemoryException">文字列をバッファーに書き込むのに十分なメモリがありません。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、パスを表示するために必要なアクセス許可が不足しています。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAllText">
+      <MemberSignature Language="C#" Value="public static void WriteAllText (string file, string text, bool append, System.Text.Encoding encoding);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void WriteAllText(string file, string text, bool append, class System.Text.Encoding encoding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText(System.String,System.String,System.Boolean,System.Text.Encoding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="file" Type="System.String" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="append" Type="System.Boolean" />
+        <Parameter Name="encoding" Type="System.Text.Encoding" />
+      </Parameters>
+      <Docs>
+        <param name="file">書き込まれるファイルです。</param>
+        <param name="text">ファイルに書き込まれるテキストです。</param>
+        <param name="append">
+          <see langword="True" />ファイルの内容に追加するには<see langword="False" />ファイルの内容を上書きします。</param>
+        <param name="encoding">ファイルへの書き込み時に使用するエンコーディングします。</param>
+        <summary>テキストをファイルに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したファイルが存在しない場合は、作成されます。  
+  
+ 指定したエンコーディングが一致しない場合、ファイルの既存のエンコーディングを指定したコードは無視されます。  
+  
+> [!NOTE]
+>  `WriteAllText`メソッドは、ファイルを開き、による書き込みが、それを閉じます。 使用するコード、`WriteAllText`メソッドにコードを使用するよりも簡単です、<xref:System.IO.StreamWriter>オブジェクト。 ただし、ループを使用して文字列をファイルに追加する場合、<xref:System.IO.StreamWriter>を開いたり閉じたり、ファイルに 1 回だけで済むために、オブジェクトは優れたパフォーマンスを実現できます。 詳細については、<xref:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFileWriter%2A> メソッドを参照してください。  
+  
+ 次の表に、関連するタスクの例については、`My.Computer.FileSystem.WriteAllText`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|テキストのファイルへの書き込み|[方法: Visual Basic でファイルにテキストを書き込む](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-write-text-to-files.md)|  
+|ファイルへのテキストの追加|[方法: Visual Basic でのテキスト ファイルに追記します。](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-append-to-text-files.md)|  
+  
+   
+  
+## Examples  
+ この例は、行を書き込みます`"This is new text to be added."`ファイルに`Test.txt`、既存のファイル内のテキストを上書きします。  
+  
+ [!code-vb[VbRefFile#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#21)]  
+  
+ この例は、内のファイルの名前を書き込みます、`Documents and Settings`フォルダー `FileList.txt`、読みやすくするための各間を返す、復帰文字を挿入します。  
+  
+ [!code-vb[VbRefFile#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefFile/VB/Class1.vb#22)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">パスが正しくない、次の理由のいずれかの: は長さ 0 の文字列です。空白のみが含まれています無効な文字が含まれていますデバイス パスであるか (で始まる\\ \\.\\); 末尾のスラッシュを終了します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="file" /> は <see langword="Nothing" /> です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが存在しません。</exception>
+        <exception cref="T:System.IO.IOException">ファイルは別のプロセスによって使用されています。 または、I/O エラーが発生します。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パスは、システム定義の最大長を超えています。</exception>
+        <exception cref="T:System.NotSupportedException">パスのファイルまたはディレクトリ名は、コロン (:) が含まれています。 または形式が無効です。</exception>
+        <exception cref="T:System.OutOfMemoryException">文字列をバッファーに書き込むのに十分なメモリがありません。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、パスを表示するために必要なアクセス許可が不足しています。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

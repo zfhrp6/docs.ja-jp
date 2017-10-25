@@ -1,0 +1,355 @@
+<Type Name="OperationFaultCollection" FullName="System.Web.Services.Description.OperationFaultCollection">
+  <TypeSignature Language="C#" Value="public sealed class OperationFaultCollection : System.Web.Services.Description.ServiceDescriptionBaseCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OperationFaultCollection extends System.Web.Services.Description.ServiceDescriptionBaseCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Description.OperationFaultCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Services.Description.ServiceDescriptionBaseCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>インスタンスのコレクションを表す、<see cref="T:System.Web.Services.Description.OperationFault" />クラスです。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Description.OperationFault>クラスが Web サービス記述言語 (WSDL) に対応しています`<fault>`要素で囲ま、`<operation>`要素で囲まれた順番、`<portType>`要素。 WSDL の詳細については、http://www.w3.org/TR/wsdl/ の仕様を参照してください。  
+  
+   
+  
+## Examples  
+ [!code-cpp[OperationFaultCollection_7#1](~/samples/snippets/cpp/VS_Snippets_Remoting/OperationFaultCollection_7/CPP/operationfaultcollection_7.cpp#1)]
+ [!code-csharp[OperationFaultCollection_7#1](~/samples/snippets/csharp/VS_Snippets_Remoting/OperationFaultCollection_7/CS/operationfaultcollection_7.cs#1)]
+ [!code-vb[OperationFaultCollection_7#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/OperationFaultCollection_7/VB/operationfaultcollection_7.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (System.Web.Services.Description.OperationFault operationFaultMessage);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Add(class System.Web.Services.Description.OperationFault operationFaultMessage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.OperationFaultCollection.Add(System.Web.Services.Description.OperationFault)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="operationFaultMessage" Type="System.Web.Services.Description.OperationFault" />
+      </Parameters>
+      <Docs>
+        <param name="operationFaultMessage">コレクションに追加する <see cref="T:System.Web.Services.Description.OperationFault" />。</param>
+        <summary>指定した追加<see cref="T:System.Web.Services.Description.OperationFault" />の末尾に、<see cref="T:System.Web.Services.Description.OperationFaultCollection" />です。</summary>
+        <returns>0 から始まるインデックス位置、<paramref name="operationFaultMessage" />パラメーターが追加されました。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[OperationFaultCollection_Add#1](~/samples/snippets/cpp/VS_Snippets_Remoting/OperationFaultCollection_Add/CPP/operationfaultcollection_add.cpp#1)]
+ [!code-csharp[OperationFaultCollection_Add#1](~/samples/snippets/csharp/VS_Snippets_Remoting/OperationFaultCollection_Add/CS/operationfaultcollection_add.cs#1)]
+ [!code-vb[OperationFaultCollection_Add#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/OperationFaultCollection_Add/VB/operationfaultcollection_add.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Web.Services.Description.OperationFault operationFaultMessage);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Web.Services.Description.OperationFault operationFaultMessage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.OperationFaultCollection.Contains(System.Web.Services.Description.OperationFault)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="operationFaultMessage" Type="System.Web.Services.Description.OperationFault" />
+      </Parameters>
+      <Docs>
+        <param name="operationFaultMessage"><see cref="T:System.Web.Services.Description.OperationFault" />コレクションのメンバーシップをチェックします。</param>
+        <summary>示す値を返すかどうか、指定した<see cref="T:System.Web.Services.Description.OperationFault" />のメンバーである、<see cref="T:System.Web.Services.Description.OperationFaultCollection" />です。</summary>
+        <returns>
+          <see langword="true" />場合、<paramref name="operationFaultMessage" />パラメーターのメンバーである、 <see cref="T:System.Web.Services.Description.OperationFaultCollection" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[OperationFaultCollection_7#2](~/samples/snippets/cpp/VS_Snippets_Remoting/OperationFaultCollection_7/CPP/operationfaultcollection_7.cpp#2)]
+ [!code-csharp[OperationFaultCollection_7#2](~/samples/snippets/csharp/VS_Snippets_Remoting/OperationFaultCollection_7/CS/operationfaultcollection_7.cs#2)]
+ [!code-vb[OperationFaultCollection_7#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/OperationFaultCollection_7/VB/operationfaultcollection_7.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Web.Services.Description.OperationFault[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Web.Services.Description.OperationFault[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.OperationFaultCollection.CopyTo(System.Web.Services.Description.OperationFault[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Web.Services.Description.OperationFault[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">型の配列<see cref="T:System.Web.Services.Description.OperationFault" />コピー操作のコピー先として機能します。</param>
+        <param name="index">コピーされたコレクションの配置を開始する位置を示す 0 から始まるインデックス。</param>
+        <summary>全体をコピー<see cref="T:System.Web.Services.Description.OperationFaultCollection" />型の場合は、互換性のある 1 次元配列に<see cref="T:System.Web.Services.Description.OperationFault" />対象となる配列の指定した 0 から始まるインデックスで開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[OperationFaultCollection_7#3](~/samples/snippets/cpp/VS_Snippets_Remoting/OperationFaultCollection_7/CPP/operationfaultcollection_7.cpp#3)]
+ [!code-csharp[OperationFaultCollection_7#3](~/samples/snippets/csharp/VS_Snippets_Remoting/OperationFaultCollection_7/CS/operationfaultcollection_7.cs#3)]
+ [!code-vb[OperationFaultCollection_7#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/OperationFaultCollection_7/VB/operationfaultcollection_7.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetKey">
+      <MemberSignature Language="C#" Value="protected override string GetKey (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetKey(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.OperationFaultCollection.GetKey(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Web.Services.Description.OperationFault operationFaultMessage);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Web.Services.Description.OperationFault operationFaultMessage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.OperationFaultCollection.IndexOf(System.Web.Services.Description.OperationFault)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="operationFaultMessage" Type="System.Web.Services.Description.OperationFault" />
+      </Parameters>
+      <Docs>
+        <param name="operationFaultMessage"><see cref="T:System.Web.Services.Description.OperationFault" />コレクション内で検索します。</param>
+        <summary>指定された検索<see cref="T:System.Web.Services.Description.OperationFault" />し、コレクション内で最初に見つかった位置の 0 から始まるインデックスを返します。</summary>
+        <returns>32 ビット符号付き整数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[OperationFaultCollection_7#4](~/samples/snippets/cpp/VS_Snippets_Remoting/OperationFaultCollection_7/CPP/operationfaultcollection_7.cpp#4)]
+ [!code-csharp[OperationFaultCollection_7#4](~/samples/snippets/csharp/VS_Snippets_Remoting/OperationFaultCollection_7/CS/operationfaultcollection_7.cs#4)]
+ [!code-vb[OperationFaultCollection_7#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/OperationFaultCollection_7/VB/operationfaultcollection_7.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.Web.Services.Description.OperationFault operationFaultMessage);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.Web.Services.Description.OperationFault operationFaultMessage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.OperationFaultCollection.Insert(System.Int32,System.Web.Services.Description.OperationFault)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="operationFaultMessage" Type="System.Web.Services.Description.OperationFault" />
+      </Parameters>
+      <Docs>
+        <param name="index">挿入する位置の 0 から始まるインデックス、 <c>operationFaultMessage</c>パラメーター。</param>
+        <param name="operationFaultMessage">コレクションに追加する <see cref="T:System.Web.Services.Description.OperationFault" />。</param>
+        <summary>指定した追加<see cref="T:System.Web.Services.Description.OperationFault" />を<see cref="T:System.Web.Services.Description.OperationFaultCollection" />指定した 0 から始まるインデックス位置。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既にコレクション内の項目の数が等しい場合、コレクションの容量は、新しい要素が挿入される前に、内部の配列を自動的に再割り当てすることによって、容量が倍になります。  
+  
+ 場合、`index`パラメーターと等しい<xref:System.Collections.CollectionBase.Count%2A>、`bindingOperationFault`パラメーターは、コレクションの末尾に追加します。  
+  
+ 挿入位置より後に要素が新しい要素のために下に移動します。  
+  
+   
+  
+## Examples  
+ [!code-cpp[OperationFaultCollection_7#5](~/samples/snippets/cpp/VS_Snippets_Remoting/OperationFaultCollection_7/CPP/operationfaultcollection_7.cpp#5)]
+ [!code-csharp[OperationFaultCollection_7#5](~/samples/snippets/csharp/VS_Snippets_Remoting/OperationFaultCollection_7/CS/operationfaultcollection_7.cs#5)]
+ [!code-vb[OperationFaultCollection_7#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/OperationFaultCollection_7/VB/operationfaultcollection_7.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.OperationFault this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.OperationFault Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.OperationFaultCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.OperationFault</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">0 から始まるインデックス、<see cref="T:System.Web.Services.Description.OperationFault" />値が変更または返されます。</param>
+        <summary>取得または設定の値、<see cref="T:System.Web.Services.Description.OperationFault" />指定した 0 から始まるインデックス位置。</summary>
+        <value><see langword="OperationFault" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[OperationFaultCollection_7#6](~/samples/snippets/cpp/VS_Snippets_Remoting/OperationFaultCollection_7/CPP/operationfaultcollection_7.cpp#6)]
+ [!code-csharp[OperationFaultCollection_7#6](~/samples/snippets/csharp/VS_Snippets_Remoting/OperationFaultCollection_7/CS/operationfaultcollection_7.cs#6)]
+ [!code-vb[OperationFaultCollection_7#6](~/samples/snippets/visualbasic/VS_Snippets_Remoting/OperationFaultCollection_7/VB/operationfaultcollection_7.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.OperationFault this[string name] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.OperationFault Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.OperationFaultCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.OperationFault</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Web.Services.Description.OperationFault" />が返されます。</param>
+        <summary>取得、<see cref="T:System.Web.Services.Description.OperationFault" />名前を使用しています。</summary>
+        <value><see langword="OperationFault" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[OperationFaultCollection_Item#1](~/samples/snippets/cpp/VS_Snippets_Remoting/OperationFaultCollection_Item/CPP/operationfaultcollection_item.cpp#1)]
+ [!code-csharp[OperationFaultCollection_Item#1](~/samples/snippets/csharp/VS_Snippets_Remoting/OperationFaultCollection_Item/CS/operationfaultcollection_item.cs#1)]
+ [!code-vb[OperationFaultCollection_Item#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/OperationFaultCollection_Item/VB/operationfaultcollection_item.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Web.Services.Description.OperationFault operationFaultMessage);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Web.Services.Description.OperationFault operationFaultMessage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.OperationFaultCollection.Remove(System.Web.Services.Description.OperationFault)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="operationFaultMessage" Type="System.Web.Services.Description.OperationFault" />
+      </Parameters>
+      <Docs>
+        <param name="operationFaultMessage">コレクションから削除する <see cref="T:System.Web.Services.Description.OperationFault" />。</param>
+        <summary>最初に出現する指定した削除<see cref="T:System.Web.Services.Description.OperationFault" />から、<see cref="T:System.Web.Services.Description.OperationFaultCollection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、一方向の検索を実行します。したがって、平均実行時間に比例して<xref:System.Collections.CollectionBase.Count%2A>です。  
+  
+ 削除された後にある要素<xref:System.Web.Services.Description.OperationFault>繰りを上へ移動します。  
+  
+   
+  
+## Examples  
+ [!code-cpp[OperationFaultCollection_7#7](~/samples/snippets/cpp/VS_Snippets_Remoting/OperationFaultCollection_7/CPP/operationfaultcollection_7.cpp#7)]
+ [!code-csharp[OperationFaultCollection_7#7](~/samples/snippets/csharp/VS_Snippets_Remoting/OperationFaultCollection_7/CS/operationfaultcollection_7.cs#7)]
+ [!code-vb[OperationFaultCollection_7#7](~/samples/snippets/visualbasic/VS_Snippets_Remoting/OperationFaultCollection_7/VB/operationfaultcollection_7.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetParent">
+      <MemberSignature Language="C#" Value="protected override void SetParent (object value, object parent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetParent(object value, object parent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.OperationFaultCollection.SetParent(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="parent" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">To be added.</param>
+        <param name="parent">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

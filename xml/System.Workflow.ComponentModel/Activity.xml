@@ -1,0 +1,1617 @@
+<Type Name="Activity" FullName="System.Workflow.ComponentModel.Activity">
+  <TypeSignature Language="C#" Value="public class Activity : System.Workflow.ComponentModel.DependencyObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi Activity extends System.Workflow.ComponentModel.DependencyObject" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Activity" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.ComponentModel.DependencyObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Design.Serialization.DesignerSerializer(typeof(System.Workflow.ComponentModel.Serialization.ActivityMarkupSerializer), typeof(System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Design.Serialization.DesignerSerializer(typeof(System.Workflow.ComponentModel.Serialization.ActivityCodeDomSerializer), typeof(System.ComponentModel.Design.Serialization.CodeDomSerializer))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Design.Serialization.DesignerSerializer(typeof(System.Workflow.ComponentModel.Serialization.ActivityTypeCodeDomSerializer), typeof(System.ComponentModel.Design.Serialization.TypeCodeDomSerializer))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer(typeof(System.Workflow.ComponentModel.Design.ActivityDesigner), typeof(System.ComponentModel.Design.IDesigner))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer(typeof(System.Workflow.ComponentModel.Design.ActivityDesigner), typeof(System.ComponentModel.Design.IRootDesigner))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DesignerCategory("Component")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(typeof(System.Workflow.ComponentModel.Design.ActivityToolboxItem))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItemFilter("Microsoft.Workflow.VSDesigner", System.ComponentModel.ToolboxItemFilterType.Require)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItemFilter("System.Workflow.ComponentModel.Design.ActivitySet", System.ComponentModel.ToolboxItemFilterType.Allow)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Drawing.ToolboxBitmap(typeof(System.Workflow.ComponentModel.Activity), "Design.Resources.Activity.png")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Workflow.ComponentModel.Compiler.ActivityCodeGenerator(typeof(System.Workflow.ComponentModel.Compiler.ActivityCodeGenerator))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Workflow.ComponentModel.Compiler.ActivityValidator(typeof(System.Workflow.ComponentModel.Compiler.ActivityValidator))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Workflow.ComponentModel.Serialization.RuntimeNameProperty("Name")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ワークフローに不可欠な構成要素を表します。 <see cref="T:System.Workflow.ComponentModel.Activity" /> はあらゆるアクティビティの基本クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.ComponentModel.Activity> はワークフロー構築の基礎となるブロックです。 <xref:System.Workflow.ComponentModel.Activity> には、クラスなど一連のプロパティやイベント、およびアクティビティの動作を規定する実行ロジックが定義されています。 各種の追加コンポーネントを <xref:System.Workflow.ComponentModel.Activity> に関連付けることができます。 具体的には、バリデーター、コード ジェネレーター、独自のシリアライザー、デザイナー、その他があります。  
+  
+ 基本クラスである <xref:System.Workflow.ComponentModel.Activity> で定義されたプロパティは、どのアクティビティでも使用できます。  <xref:System.Workflow.ComponentModel.Activity> から派生した各クラスでは、必要に応じて独自のプロパティを追加できます。  <xref:System.Workflow.ComponentModel.Activity> 自身は <xref:System.Workflow.ComponentModel.DependencyObject> の派生クラスなので、各プロパティは、標準 CLR プロパティとしても、依存関係プロパティとしても定義可能です。  
+  
+ <xref:System.Workflow.ComponentModel.Activity> の実行ロジックは、当該 <xref:System.Workflow.ComponentModel.Activity> とワークフロー ランタイムが連携して動作するようになっています。 <xref:System.Workflow.ComponentModel.Activity> の派生クラスでは、ワークフロー開発者がこの <xref:System.Workflow.ComponentModel.Activity> の動作を理解できるよう、外部から見た機能としての観点から実行ロジックを文書化する必要があります。 実行ロジックそのものを、このアクティビティをワークフローに組み込んで使う開発者に公開する必要はありません。これは、ワークフロー ランタイムと <xref:System.Workflow.ComponentModel.Activity> がどのように連携して機能を実現しているか、という実装詳細にすぎないからです。  
+  
+   
+  
+## Examples  
+ 電子メールを送信するというアクティビティを定義した例を以下に示します。 `Subject` というプロパティを定義していますが、これは依存関係プロパティです。 他のプロパティも同様にして定義できます。 `Execute` メソッドをオーバーライドして、実際に電子メールを送信する処理を組み込んでいます。 完全な例では、次を参照してください。、[電子メール送信アクティビティのサンプル](http://msdn.microsoft.com/en-us/bfb5939e-60a9-4037-af4e-2cea9e654669)です。  
+  
+```csharp  
+public class SendEmail : Activity  
+{  
+    public static readonly DependencyProperty SubjectProperty =  
+        DependencyProperty.Register("Subject", typeof(string), typeof(SendEmail));  
+  
+    public string Subject  
+    {  
+        get { return base.GetValue(SubjectProperty) as string; }  
+        set { base.SetValue(SubjectProperty, value); }  
+    }  
+  
+    // Define other properties...  
+  
+    protected override ActivityExecutionStatus Execute(ActivityExecutionContext executionContext)  
+    {  
+        // Logic to send the e-mail goes here...  
+        return ActivityExecutionStatus.Closed;  
+    }  
+}  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Activity ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Activity.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Activity" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ アクティビティを作成し、複合アクティビティに子として追加するコード例を以下に示します。  
+  
+ このコード例は、ThrowWorkFlow.cs ファイルから抜粋したスローの SDK サンプルの一部です。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][サンプルをスロー](http://msdn.microsoft.com/en-us/aa5b9546-ec95-4e43-8337-20e26f8d71cc)です。  
+  
+ [!code-csharp[WF_Samples#179](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets11.cs#179)]
+ [!code-vb[WF_Samples#179](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets11.vb#179)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Activity (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Activity.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">このインスタンスに関連付ける名前。 この名前は、ワークフロー プロジェクトの作成に使用されたプログラミング言語の変数の名前付け規則に準拠し、ワークフローで一意である必要があります。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Activity" /> クラスの新しいインスタンスを初期化します。その際、<see cref="P:System.Workflow.ComponentModel.Activity.Name" /> も初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ActivityContextGuidProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Workflow.ComponentModel.DependencyProperty ActivityContextGuidProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Workflow.ComponentModel.DependencyProperty ActivityContextGuidProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.ComponentModel.Activity.ActivityContextGuidProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> に関連付けられた <see cref="T:System.Guid" /> の <see cref="T:System.Workflow.ComponentModel.ActivityExecutionContext" /> を表す <see cref="T:System.Workflow.ComponentModel.Activity" />。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[DependencyPropertyRemark](~/includes/dependencypropertyremark-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cancel">
+      <MemberSignature Language="C#" Value="protected virtual System.Workflow.ComponentModel.ActivityExecutionStatus Cancel (System.Workflow.ComponentModel.ActivityExecutionContext executionContext);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance valuetype System.Workflow.ComponentModel.ActivityExecutionStatus Cancel(class System.Workflow.ComponentModel.ActivityExecutionContext executionContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Activity.Cancel(System.Workflow.ComponentModel.ActivityExecutionContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.ActivityExecutionStatus</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="executionContext" Type="System.Workflow.ComponentModel.ActivityExecutionContext" />
+      </Parameters>
+      <Docs>
+        <param name="executionContext">取り消そうとするインスタンスを収容する <see cref="T:System.Workflow.ComponentModel.ActivityExecutionContext" />。</param>
+        <summary>実行中のアクティビティを取り消すために、ワークフロー ランタイムから呼び出されます。</summary>
+        <returns>操作終了時の状態。アクティビティをキャンセル状態のまま残すか、クローズド状態に遷移させるかを表します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Canceling">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Workflow.ComponentModel.ActivityExecutionStatusChangedEventArgs&gt; Canceling;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Workflow.ComponentModel.ActivityExecutionStatusChangedEventArgs&gt; Canceling" />
+      <MemberSignature Language="DocId" Value="E:System.Workflow.ComponentModel.Activity.Canceling" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Workflow.ComponentModel.ActivityExecutionStatusChangedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティビティ実行が取り消された場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Workflow.ComponentModel.Activity.Cancel%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  [!INCLUDE[crabout](~/includes/crabout-md.md)]イベントを処理するを参照してください[NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="E:System.Workflow.ComponentModel.Activity.Canceling" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Workflow.ComponentModel.Activity.Cancel(System.Workflow.ComponentModel.ActivityExecutionContext)" /> メソッドを必ず呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelingEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Workflow.ComponentModel.DependencyProperty CancelingEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Workflow.ComponentModel.DependencyProperty CancelingEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.ComponentModel.Activity.CancelingEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> イベントをターゲットとする <see cref="E:System.Workflow.ComponentModel.Activity.Canceling" /> を表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この型の各パブリック プロパティとイベントには、対応する依存プロパティの解決によって間接的にアクセスします。 この依存プロパティは、`XProperty` または `XEvent` という名前のパブリックな静的フィールドです。X は対応するプロパティです。  
+  
+ [!INCLUDE[DependencyPropertyRemark](~/includes/dependencypropertyremark-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.Activity Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Workflow.ComponentModel.Activity Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Activity.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Activity</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Activity" /> の詳細コピーを作成します。</summary>
+        <returns><see cref="T:System.Workflow.ComponentModel.Activity" /> の詳細コピー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.MemoryStream> を使ってアクティビティをコピーし、この <xref:System.IO.MemoryStream> から逆シリアル化することにより、新しいアクティビティを作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Closed">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Workflow.ComponentModel.ActivityExecutionStatusChangedEventArgs&gt; Closed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Workflow.ComponentModel.ActivityExecutionStatusChangedEventArgs&gt; Closed" />
+      <MemberSignature Language="DocId" Value="E:System.Workflow.ComponentModel.Activity.Closed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Workflow.ComponentModel.ActivityExecutionStatusChangedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="T:System.Workflow.ComponentModel.Activity" /> の実行終了時に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Workflow.ComponentModel.Activity.Closed> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="E:System.Workflow.ComponentModel.Activity.Closed" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="E:System.Workflow.ComponentModel.Activity.Closed" /> メソッドを必ず呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ClosedEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Workflow.ComponentModel.DependencyProperty ClosedEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Workflow.ComponentModel.DependencyProperty ClosedEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.ComponentModel.Activity.ClosedEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> イベントをターゲットとする <see cref="E:System.Workflow.ComponentModel.Activity.Closed" /> を表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この型の各パブリック プロパティとイベントには、対応する依存プロパティの解決によって間接的にアクセスします。 この依存プロパティは、`XProperty` または `XEvent` という名前のパブリックな静的フィールドです。X は対応するプロパティです。  
+  
+ [!INCLUDE[DependencyPropertyRemark](~/includes/dependencypropertyremark-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Compensating">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Workflow.ComponentModel.ActivityExecutionStatusChangedEventArgs&gt; Compensating;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Workflow.ComponentModel.ActivityExecutionStatusChangedEventArgs&gt; Compensating" />
+      <MemberSignature Language="DocId" Value="E:System.Workflow.ComponentModel.Activity.Compensating" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Workflow.ComponentModel.ActivityExecutionStatusChangedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Activity" /> 上で補正メソッドが起動されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Workflow.ComponentModel.Activity.Compensating> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="E:System.Workflow.ComponentModel.Activity.Compensating" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="E:System.Workflow.ComponentModel.Activity.Compensating" /> メソッドを必ず呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CompensatingEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Workflow.ComponentModel.DependencyProperty CompensatingEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Workflow.ComponentModel.DependencyProperty CompensatingEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.ComponentModel.Activity.CompensatingEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> イベントをターゲットとする <see cref="E:System.Workflow.ComponentModel.Activity.Compensating" /> を表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この型の各パブリック プロパティとイベントには、対応する依存プロパティの解決によって間接的にアクセスします。 この依存プロパティは、`XProperty` または `XEvent` という名前のパブリックな静的フィールドです。X は対応するプロパティです。  
+  
+ [!INCLUDE[DependencyPropertyRemark](~/includes/dependencypropertyremark-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public string Description { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Activity.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor(typeof(System.ComponentModel.Design.MultilineStringEditor), typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Activity" /> の、ユーザーが定義した説明を取得または設定します。</summary>
+        <value><see cref="T:System.Workflow.ComponentModel.Activity" /> の説明テキスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティはメタ プロパティです。つまり、実行時には変更できません。 メタ プロパティは、実行時にプロパティ インスタンスが作成された後は変更されません。そのため、デザイン時にプロパティをリテラル値に設定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Activity.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスの実行と検証が可能かどうかを示す値を取得または設定します。</summary>
+        <value>
+          実行と検証が有効であれば <see langword="true" />、それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `false` の場合、子アクティビティもすべて、この値が `false` であるものとして扱われます。  
+  
+ このプロパティはメタ プロパティです。つまり、実行時には変更できません。 メタ プロパティは、実行時にプロパティ インスタンスが作成された後は変更されません。そのため、デザイン時にプロパティをリテラル値に設定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="protected virtual System.Workflow.ComponentModel.ActivityExecutionStatus Execute (System.Workflow.ComponentModel.ActivityExecutionContext executionContext);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance valuetype System.Workflow.ComponentModel.ActivityExecutionStatus Execute(class System.Workflow.ComponentModel.ActivityExecutionContext executionContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Activity.Execute(System.Workflow.ComponentModel.ActivityExecutionContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.ActivityExecutionStatus</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="executionContext" Type="System.Workflow.ComponentModel.ActivityExecutionContext" />
+      </Parameters>
+      <Docs>
+        <param name="executionContext">この <see cref="T:System.Workflow.ComponentModel.ActivityExecutionContext" /> を実行するための <see cref="T:System.Workflow.ComponentModel.Activity" />。</param>
+        <summary>アクティビティを実行するために、ワークフロー ランタイムが呼び出します。</summary>
+        <returns>実行タスクの <see cref="T:System.Workflow.ComponentModel.ActivityExecutionStatus" />。アクティビティを実行状態のまま残すか、クローズド状態に遷移させるかを表します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.ActivityExecutionContext> は、現在実行中のアクティビティやワークフローに関する情報を取得し、ランタイム環境からサービスを得るために使います。  
+  
+ これは同期的に実行され、アクティビティの終了時、あるいは中間状態になったときに、呼び出し元に制御が戻ります。  
+  
+   
+  
+## Examples  
+ `Execute` メソッドを実装する方法を次のコード例に示します。 ここでは Outlook 電子メール メッセージを構築し、送信しています。 これは Outlook ワークフロー ウィザード SDK サンプルから抜粋したものです。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][Outlook ワークフロー ウィザード サンプル](http://msdn.microsoft.com/en-us/7b2ba92b-8456-43f3-87fc-184ffdec4408)です。  
+  
+ [!code-csharp[WF_Samples#98](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#98)]
+ [!code-vb[WF_Samples#98](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#98)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Executing">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Workflow.ComponentModel.ActivityExecutionStatusChangedEventArgs&gt; Executing;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Workflow.ComponentModel.ActivityExecutionStatusChangedEventArgs&gt; Executing" />
+      <MemberSignature Language="DocId" Value="E:System.Workflow.ComponentModel.Activity.Executing" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Workflow.ComponentModel.ActivityExecutionStatusChangedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Activity" /> の実行時に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Workflow.ComponentModel.Activity.Executing> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="E:System.Workflow.ComponentModel.Activity.Executing" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="E:System.Workflow.ComponentModel.Activity.Executing" /> メソッドを必ず呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecutingEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Workflow.ComponentModel.DependencyProperty ExecutingEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Workflow.ComponentModel.DependencyProperty ExecutingEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.ComponentModel.Activity.ExecutingEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティビティの実行時に発生する、<see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> イベントを対象とする <see cref="E:System.Workflow.ComponentModel.Activity.Executing" /> を表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この型の各パブリック プロパティとイベントには、対応する依存プロパティの解決によって間接的にアクセスします。 この依存プロパティは、`XProperty` または `XEvent` という名前のパブリックな静的フィールドです。X は対応するプロパティです。  
+  
+ [!INCLUDE[DependencyPropertyRemark](~/includes/dependencypropertyremark-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecutionResult">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.ActivityExecutionResult ExecutionResult { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Workflow.ComponentModel.ActivityExecutionResult ExecutionResult" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Activity.ExecutionResult" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.ActivityExecutionResult</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスを最後に実行した際の <see cref="T:System.Workflow.ComponentModel.ActivityExecutionResult" /> を取得します。</summary>
+        <value>このインスタンスを最後に実行した際の <see cref="T:System.Workflow.ComponentModel.ActivityExecutionResult" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、ワークフロー インスタンスが実行されている場合のみ使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecutionStatus">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.ActivityExecutionStatus ExecutionStatus { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Workflow.ComponentModel.ActivityExecutionStatus ExecutionStatus" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Activity.ExecutionStatus" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.ActivityExecutionStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスの、現在の <see cref="T:System.Workflow.ComponentModel.ActivityExecutionStatus" /> を取得します。</summary>
+        <value>このインスタンスの、現在の <see cref="T:System.Workflow.ComponentModel.ActivityExecutionStatus" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、ワークフロー インスタンスが実行されている場合のみ使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Faulting">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Workflow.ComponentModel.ActivityExecutionStatusChangedEventArgs&gt; Faulting;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Workflow.ComponentModel.ActivityExecutionStatusChangedEventArgs&gt; Faulting" />
+      <MemberSignature Language="DocId" Value="E:System.Workflow.ComponentModel.Activity.Faulting" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Workflow.ComponentModel.ActivityExecutionStatusChangedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスの実行中、例外が発生したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]イベントを処理するを参照してください[NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FaultingEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Workflow.ComponentModel.DependencyProperty FaultingEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Workflow.ComponentModel.DependencyProperty FaultingEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.ComponentModel.Activity.FaultingEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> イベントを表す <see cref="E:System.Workflow.ComponentModel.Activity.Faulting" />。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この型の各パブリック プロパティとイベントには、対応する依存プロパティの解決によって間接的にアクセスします。 この依存プロパティは、`XProperty` または `XEvent` という名前のパブリックな静的フィールドです。X は対応するプロパティです。  
+  
+ [!INCLUDE[DependencyPropertyRemark](~/includes/dependencypropertyremark-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetActivityByName">
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定された名前の <see cref="T:System.Workflow.ComponentModel.Activity" /> インスタンスを検索して返します。検索範囲は、このインスタンスのルート アクティビティ内、つまりワークフロー内で、現在動作中のアクティビティ全体です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタム アクティビティのコンストラクター内からの `GetActivityByName` 呼び出しはサポートされていません。予期しない結果が生じる場合があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetActivityByName">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.Activity GetActivityByName (string activityQualifiedName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Workflow.ComponentModel.Activity GetActivityByName(string activityQualifiedName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Activity.GetActivityByName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Activity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activityQualifiedName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="activityQualifiedName">検索の対象となる <see cref="T:System.Workflow.ComponentModel.Activity" /> の名前。</param>
+        <summary>指定された名前の <see cref="T:System.Workflow.ComponentModel.Activity" /> インスタンスを検索して返します。検索範囲は、このインスタンスのルート アクティビティ内、つまりワークフロー内で、現在動作中のアクティビティ全体です。</summary>
+        <returns>指定された名前の <see cref="T:System.Workflow.ComponentModel.Activity" /> インスタンス。検索範囲は、このインスタンスのルート アクティビティ内で、現在動作中のアクティビティ全体です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタム アクティビティのコンストラクター内からの `GetActivityByName` 呼び出しはサポートされていません。予期しない結果が生じる場合があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="activityQualifiedID" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetActivityByName">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.Activity GetActivityByName (string activityQualifiedName, bool withinThisActivityOnly);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Workflow.ComponentModel.Activity GetActivityByName(string activityQualifiedName, bool withinThisActivityOnly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Activity.GetActivityByName(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Activity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activityQualifiedName" Type="System.String" />
+        <Parameter Name="withinThisActivityOnly" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="activityQualifiedName">検索の対象となる <see cref="T:System.Workflow.ComponentModel.Activity" /> の名前。</param>
+        <param name="withinThisActivityOnly">検索範囲をこのインスタンス内のアクティビティに限定するかどうかを表す値。</param>
+        <summary>指定された名前の <see cref="T:System.Workflow.ComponentModel.Activity" /> インスタンスを検索して返します。検索範囲は、第 2 パラメーターが <see cref="T:System.Workflow.ComponentModel.Activity" /> ならばこのインスタンスの <see langword="false" /> のルート アクティビティ内、<see cref="T:System.Workflow.ComponentModel.Activity" /> ならばこの <see langword="true" /> 内で、現在動作中のアクティビティ全体です。</summary>
+        <returns>指定された名前の <see cref="T:System.Workflow.ComponentModel.Activity" /> インスタンス。検索範囲は、第 2 パラメーターが <see cref="T:System.Workflow.ComponentModel.Activity" /> ならばこのインスタンスのルート <see langword="false" /> 内、<see cref="T:System.Workflow.ComponentModel.Activity" /> ならばこの <see langword="true" /> 内です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された名前の <xref:System.Workflow.ComponentModel.Activity> インスタンスを検索して返します。検索範囲は、第 2 パラメーターが <xref:System.Workflow.ComponentModel.Activity> ならばこのインスタンスの `false` のルート アクティビティ内、<xref:System.Workflow.ComponentModel.Activity> ならばこの `true` 内で、現在動作中のアクティビティ全体です。  
+  
+ カスタム アクティビティのコンストラクター内からの `GetActivityByName` 呼び出しはサポートされていません。予期しない結果が生じる場合があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="activityQualifiedID" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HandleFault">
+      <MemberSignature Language="C#" Value="protected virtual System.Workflow.ComponentModel.ActivityExecutionStatus HandleFault (System.Workflow.ComponentModel.ActivityExecutionContext executionContext, Exception exception);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance valuetype System.Workflow.ComponentModel.ActivityExecutionStatus HandleFault(class System.Workflow.ComponentModel.ActivityExecutionContext executionContext, class System.Exception exception) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Activity.HandleFault(System.Workflow.ComponentModel.ActivityExecutionContext,System.Exception)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.ActivityExecutionStatus</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="executionContext" Type="System.Workflow.ComponentModel.ActivityExecutionContext" />
+        <Parameter Name="exception" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="executionContext">このインスタンスの <see cref="T:System.Workflow.ComponentModel.ActivityExecutionContext" />。</param>
+        <param name="exception">このエラーの原因となった <see cref="T:System.Exception" />。</param>
+        <summary>このインスタンスの実行のコンテキスト内で例外が発生したときに呼び出されます。</summary>
+        <returns>このインスタンスをキャンセルしようとした結果生成された <see cref="T:System.Workflow.ComponentModel.ActivityExecutionStatus" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドをオーバーライドしなければ、<xref:System.Workflow.ComponentModel.Activity.Cancel%2A> メソッドを呼び出してその結果を返す、という動作になります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="exception" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="protected virtual void Initialize (IServiceProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void Initialize(class System.IServiceProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Activity.Initialize(System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">初期化サービスを提供する <see cref="T:System.IServiceProvider" />。</param>
+        <summary>新しいワークフロー インスタンスを構築する際、アクティビティを初期化するために、ワークフロー ランタイムが呼び出します。 このメソッドは、動的に <see cref="T:System.Workflow.ComponentModel.ActivityExecutionContext" /> を構築する際に呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="provider" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke&lt;T&gt;">
+      <MemberSignature Language="C#" Value="protected void Invoke&lt;T&gt; (EventHandler&lt;T&gt; handler, T e) where T : EventArgs;" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void Invoke&lt;(class System.EventArgs) T&gt;(class System.EventHandler`1&lt;!!T&gt; handler, !!T e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Activity.Invoke``1(System.EventHandler{``0},``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <BaseTypeName>System.EventArgs</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="handler" Type="System.EventHandler&lt;T&gt;" />
+        <Parameter Name="e" Type="T" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">指定された型。</typeparam>
+        <param name="handler">呼び出す <see cref="T:System.EventHandler" />。</param>
+        <param name="e">このイベントに関連付ける <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="T:System.EventHandler" /> を定期受信し、そのデリゲートを呼び出します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke&lt;T&gt;">
+      <MemberSignature Language="C#" Value="protected void Invoke&lt;T&gt; (System.Workflow.ComponentModel.IActivityEventListener&lt;T&gt; eventListener, T e) where T : EventArgs;" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void Invoke&lt;(class System.EventArgs) T&gt;(class System.Workflow.ComponentModel.IActivityEventListener`1&lt;!!T&gt; eventListener, !!T e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Activity.Invoke``1(System.Workflow.ComponentModel.IActivityEventListener{``0},``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <BaseTypeName>System.EventArgs</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="eventListener" Type="System.Workflow.ComponentModel.IActivityEventListener&lt;T&gt;" />
+        <Parameter Name="e" Type="T" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">指定された型。</typeparam>
+        <param name="eventListener">呼び出す <see cref="T:System.Workflow.ComponentModel.IActivityEventListener`1" />。</param>
+        <param name="e">このイベントに関連付ける <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.IActivityEventListener`1" /> を定期受信し、そのデリゲートを呼び出します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDynamicActivity">
+      <MemberSignature Language="C#" Value="public bool IsDynamicActivity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDynamicActivity" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Activity.IsDynamicActivity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティビティがワークフロー インスタンスの既定の <see cref="T:System.Workflow.ComponentModel.ActivityExecutionContext" /> で実行されているかどうかに関する情報を取得します。</summary>
+        <value>アクティビティがワークフロー インスタンスの既定の <see langword="false" /> で実行されていれば <see cref="T:System.Workflow.ComponentModel.ActivityExecutionContext" />、そうでなければ <see langword="true" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Load">
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Activity" /> から <see cref="T:System.IO.Stream" /> のインスタンスを読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  信頼できないデータをこのメソッドを呼び出すと、セキュリティ上のリスクです。 このメソッドでは、信頼されたデータだけです。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](http://go.microsoft.com/fwlink/?LinkId=330378)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public static System.Workflow.ComponentModel.Activity Load (System.IO.Stream stream, System.Workflow.ComponentModel.Activity outerActivity);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Workflow.ComponentModel.Activity Load(class System.IO.Stream stream, class System.Workflow.ComponentModel.Activity outerActivity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Activity.Load(System.IO.Stream,System.Workflow.ComponentModel.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Activity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="outerActivity" Type="System.Workflow.ComponentModel.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="stream">読み込み元の <see cref="T:System.IO.Stream" />。</param>
+        <param name="outerActivity">逆シリアル化された <see cref="T:System.Workflow.ComponentModel.Activity" /> のコンテキストを保持している <see cref="T:System.Workflow.ComponentModel.Activity" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Activity" /> から <see cref="T:System.IO.Stream" /> のインスタンスを読み込みます。</summary>
+        <returns><see cref="T:System.Workflow.ComponentModel.Activity" /> の <see cref="T:System.IO.Stream" /> のインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  信頼できないデータをこのメソッドを呼び出すと、セキュリティ上のリスクです。 このメソッドでは、信頼されたデータだけです。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](http://go.microsoft.com/fwlink/?LinkId=330378)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stream" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public static System.Workflow.ComponentModel.Activity Load (System.IO.Stream stream, System.Workflow.ComponentModel.Activity outerActivity, System.Runtime.Serialization.IFormatter formatter);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Workflow.ComponentModel.Activity Load(class System.IO.Stream stream, class System.Workflow.ComponentModel.Activity outerActivity, class System.Runtime.Serialization.IFormatter formatter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Activity.Load(System.IO.Stream,System.Workflow.ComponentModel.Activity,System.Runtime.Serialization.IFormatter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Activity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="outerActivity" Type="System.Workflow.ComponentModel.Activity" />
+        <Parameter Name="formatter" Type="System.Runtime.Serialization.IFormatter" />
+      </Parameters>
+      <Docs>
+        <param name="stream">読み込み元の <see cref="T:System.IO.Stream" />。</param>
+        <param name="outerActivity">逆シリアル化された <see cref="T:System.Workflow.ComponentModel.Activity" /> のコンテキストを保持している <see cref="T:System.Workflow.ComponentModel.Activity" />。</param>
+        <param name="formatter"><see cref="T:System.Runtime.Serialization.IFormatter" /> からストリームを読み込むために使う <see cref="T:System.IO.Stream" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Activity" /> のインスタンスを <see cref="T:System.IO.Stream" /> から読み込みます。逆シリアル化の機能を提供する独自の <see cref="T:System.Runtime.Serialization.IFormatter" /> を使います。</summary>
+        <returns><see cref="T:System.Workflow.ComponentModel.Activity" /> の <see cref="T:System.IO.Stream" /> のインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  信頼できないデータをこのメソッドを呼び出すと、セキュリティ上のリスクです。 このメソッドでは、信頼されたデータだけです。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](http://go.microsoft.com/fwlink/?LinkId=330378)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="formatter" /> が null 参照 (<see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Activity.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.ParenthesizePropertyName(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスの名前を取得または設定します。 この名前は、ワークフロー プロジェクトの作成に使用されたプログラミング言語の変数の名前付け規則に準拠している必要があります。</summary>
+        <value>このインスタンスの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は空文字列です。  
+  
+ このプロパティはメタ プロパティです。つまり、実行時には変更できません。 メタ プロパティは、実行時にプロパティ インスタンスが作成された後は変更されません。そのため、デザイン時にプロパティをリテラル値に設定する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコードは、アクティビティを作成し、これを子として複合アクティビティに追加し、<xref:System.Workflow.ComponentModel.Activity.Name%2A> を設定する方法を示しています。  
+  
+ このコード例は、ThrowWorkFlow.cs ファイルから抜粋したスローの SDK サンプルの一部です。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][サンプルをスロー](http://msdn.microsoft.com/en-us/aa5b9546-ec95-4e43-8337-20e26f8d71cc)です。  
+  
+ [!code-csharp[WF_Samples#179](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets11.cs#179)]
+ [!code-vb[WF_Samples#179](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets11.vb#179)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnActivityExecutionContextLoad">
+      <MemberSignature Language="C#" Value="protected virtual void OnActivityExecutionContextLoad (IServiceProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void OnActivityExecutionContextLoad(class System.IServiceProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Activity.OnActivityExecutionContextLoad(System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">サービスを提供する <see cref="T:System.IServiceProvider" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.ActivityExecutionContext" /> を読み込む都度、ワークフロー ランタイムが呼び出します。 <see cref="T:System.Workflow.ComponentModel.ActivityExecutionContext" /> の作成時ばかりでなく、永続ストレージからワークフロー インスタンスを読み込んで <see cref="T:System.Workflow.ComponentModel.ActivityExecutionContext" /> を復元したときにも呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnActivityExecutionContextUnload">
+      <MemberSignature Language="C#" Value="protected virtual void OnActivityExecutionContextUnload (IServiceProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void OnActivityExecutionContextUnload(class System.IServiceProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Activity.OnActivityExecutionContextUnload(System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">サービスを提供する <see cref="T:System.IServiceProvider" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.ActivityExecutionContext" /> をアンロードする都度、ワークフロー ランタイムが呼び出します。 <see cref="T:System.Workflow.ComponentModel.ActivityExecutionContext" /> の終了時ばかりでなく、ワークフロー インスタンスを永続ストレージに保存して <see cref="T:System.Workflow.ComponentModel.ActivityExecutionContext" /> をアンロードしたときにも呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClosed">
+      <MemberSignature Language="C#" Value="protected virtual void OnClosed (IServiceProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnClosed(class System.IServiceProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Activity.OnClosed(System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">サービスを提供する <see cref="T:System.IServiceProvider" />。</param>
+        <summary>アクティビティをクローズド状態に遷移する過程で、ワークフロー ランタイムが呼び出します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、アクティビティは実行中に利用されたリソースをクリーンアップできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parent">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.CompositeActivity Parent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.ComponentModel.CompositeActivity Parent" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Activity.Parent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.CompositeActivity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Workflow.ComponentModel.CompositeActivity" /> を格納している <see cref="T:System.Workflow.ComponentModel.Activity" /> を取得します。</summary>
+        <value>この <see cref="T:System.Workflow.ComponentModel.Activity" /> の親である <see cref="T:System.Workflow.ComponentModel.Activity" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Null 参照を返します。 (`Nothing` Visual Basic で) 場合<xref:System.Workflow.ComponentModel.Activity>がワークフローまたはルート<xref:System.Workflow.ComponentModel.Activity>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QualifiedName">
+      <MemberSignature Language="C#" Value="public string QualifiedName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string QualifiedName" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Activity.QualifiedName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティビティの限定名を取得します。 限定アクティビティ名は、ワークフロー インスタンス内で一意です。</summary>
+        <value>インスタンスの修飾名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 修飾名とは、インスタンス名の前に、このインスタンスが属するカスタム アプリケーションの名前を付加したものです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RaiseEvent">
+      <MemberSignature Language="C#" Value="protected void RaiseEvent (System.Workflow.ComponentModel.DependencyProperty dependencyEvent, object sender, EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void RaiseEvent(class System.Workflow.ComponentModel.DependencyProperty dependencyEvent, object sender, class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Activity.RaiseEvent(System.Workflow.ComponentModel.DependencyProperty,System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dependencyEvent" Type="System.Workflow.ComponentModel.DependencyProperty" />
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="dependencyEvent">この <see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> に関連付けられている <see cref="F:System.Reflection.MemberTypes.Event" />。</param>
+        <param name="sender"><see cref="T:System.Object" /> の <see cref="F:System.Reflection.MemberTypes.Event" /> ソース。</param>
+        <param name="e"><see cref="T:System.EventArgs" /> に関連付けられている <see cref="F:System.Reflection.MemberTypes.Event" />。</param>
+        <summary>指定された依存関係プロパティに関連付けられた <see cref="F:System.Reflection.MemberTypes.Event" /> を発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ このメソッドを起動して、先に <xref:System.Workflow.ComponentModel.DependencyProperty> として定義したイベントを発生させるコード例を以下に示します。  
+  
+ このコード例は、SendEmailActivity.cs ファイルから抜粋した電子メール送信アクティビティのサンプルの一部です。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][電子メール アクティビティのサンプルを送信](http://msdn.microsoft.com/en-us/bfb5939e-60a9-4037-af4e-2cea9e654669)  
+  
+ [!code-csharp[WF_Samples#233](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#233)]
+ [!code-vb[WF_Samples#233](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#233)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RaiseGenericEvent&lt;T&gt;">
+      <MemberSignature Language="C#" Value="protected void RaiseGenericEvent&lt;T&gt; (System.Workflow.ComponentModel.DependencyProperty dependencyEvent, object sender, T e) where T : EventArgs;" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void RaiseGenericEvent&lt;(class System.EventArgs) T&gt;(class System.Workflow.ComponentModel.DependencyProperty dependencyEvent, object sender, !!T e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Activity.RaiseGenericEvent``1(System.Workflow.ComponentModel.DependencyProperty,System.Object,``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <BaseTypeName>System.EventArgs</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="dependencyEvent" Type="System.Workflow.ComponentModel.DependencyProperty" />
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="T" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">指定された型。</typeparam>
+        <param name="dependencyEvent">この <see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> に関連付けられている <see cref="F:System.Reflection.MemberTypes.Event" />。</param>
+        <param name="sender">イベントのソースである <see cref="T:System.Object" />。</param>
+        <param name="e"><see cref="T:System.EventArgs" /> に関連付けられている <see cref="F:System.Reflection.MemberTypes.Event" />。</param>
+        <summary>指定された <see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> に関連付けられたイベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterForStatusChange">
+      <MemberSignature Language="C#" Value="public void RegisterForStatusChange (System.Workflow.ComponentModel.DependencyProperty dependencyProp, System.Workflow.ComponentModel.IActivityEventListener&lt;System.Workflow.ComponentModel.ActivityExecutionStatusChangedEventArgs&gt; activityStatusChangeListener);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterForStatusChange(class System.Workflow.ComponentModel.DependencyProperty dependencyProp, class System.Workflow.ComponentModel.IActivityEventListener`1&lt;class System.Workflow.ComponentModel.ActivityExecutionStatusChangedEventArgs&gt; activityStatusChangeListener) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Activity.RegisterForStatusChange(System.Workflow.ComponentModel.DependencyProperty,System.Workflow.ComponentModel.IActivityEventListener{System.Workflow.ComponentModel.ActivityExecutionStatusChangedEventArgs})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dependencyProp" Type="System.Workflow.ComponentModel.DependencyProperty" />
+        <Parameter Name="activityStatusChangeListener" Type="System.Workflow.ComponentModel.IActivityEventListener&lt;System.Workflow.ComponentModel.ActivityExecutionStatusChangedEventArgs&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="dependencyProp">登録する <see cref="T:System.Workflow.ComponentModel.DependencyProperty" />。</param>
+        <param name="activityStatusChangeListener">この登録のイベント リスナー インターフェイスを実装しているオブジェクト。</param>
+        <summary>指定された <see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> を状態変更イベントに登録します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="dependencyProp" /> が次のいずれでもありません。  
+  
+-   <see cref="F:System.Workflow.ComponentModel.Activity.ExecutingEvent" />  
+  
+-   <see cref="F:System.Workflow.ComponentModel.Activity.CancelingEvent" />  
+  
+-   <see cref="F:System.Workflow.ComponentModel.Activity.ClosedEvent" />  
+  
+-   <see cref="F:System.Workflow.ComponentModel.Activity.CompensatingEvent" />  
+  
+-   <see cref="F:System.Workflow.ComponentModel.Activity.FaultingEvent" />  
+  
+-   <see cref="F:System.Workflow.ComponentModel.Activity.StatusChangedEvent" /></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public void Save (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Activity.Save(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream"><see cref="T:System.IO.Stream" /> の保存先となる <see cref="T:System.Workflow.ComponentModel.Activity" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Activity" /> を <see cref="T:System.IO.Stream" /> に書き込んで永続化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stream" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public void Save (System.IO.Stream stream, System.Runtime.Serialization.IFormatter formatter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(class System.IO.Stream stream, class System.Runtime.Serialization.IFormatter formatter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Activity.Save(System.IO.Stream,System.Runtime.Serialization.IFormatter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="formatter" Type="System.Runtime.Serialization.IFormatter" />
+      </Parameters>
+      <Docs>
+        <param name="stream">保存操作の対象となる <see cref="T:System.IO.Stream" />。</param>
+        <param name="formatter">シリアル化に使用するバイナリまたはカスタム <see cref="T:System.Runtime.Serialization.IFormatter" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Activity" /> を <see cref="T:System.IO.Stream" /> に書き込んで永続化します。シリアル化の機能を提供する独自の <see cref="T:System.Runtime.Serialization.IFormatter" /> を使います。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SOAP フォーマッタは、Windows Workflow Foundation ではサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="formatter" /> が null 参照 (<see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.InvalidOperationException">このインスタンスはデザイン モードです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StatusChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Workflow.ComponentModel.ActivityExecutionStatusChangedEventArgs&gt; StatusChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Workflow.ComponentModel.ActivityExecutionStatusChangedEventArgs&gt; StatusChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Workflow.ComponentModel.Activity.StatusChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Workflow.ComponentModel.ActivityExecutionStatusChangedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実行中の <see cref="T:System.Workflow.ComponentModel.ActivityExecutionStatus" /> の <see cref="T:System.Workflow.ComponentModel.Activity" /> が変更された場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Workflow.ComponentModel.Activity.StatusChanged> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+> [!NOTE]
+>  アクティビティ (アクティビティ A) が別のアクティビティ (アクティビティ B) の `StatusChanged` イベントを定期受信した場合、関連付けられた `Activity` の <xref:System.Workflow.ComponentModel.ActivityExecutionStatusChangedEventArgs> プロパティは、定期受信先の アクティビティ (アクティビティ B) を参照し、関連付けられた `Sender` オブジェクトは、定期受信元のアクティビティ (アクティビティ A) の実行コンテキストを参照します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="E:System.Workflow.ComponentModel.Activity.StatusChanged" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="E:System.Workflow.ComponentModel.Activity.StatusChanged" /> メソッドを必ず呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="StatusChangedEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Workflow.ComponentModel.DependencyProperty StatusChangedEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Workflow.ComponentModel.DependencyProperty StatusChangedEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.ComponentModel.Activity.StatusChangedEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> イベントをターゲットとする <see cref="E:System.Workflow.ComponentModel.Activity.StatusChanged" /> を表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この型の各パブリック プロパティとイベントには、対応する依存プロパティの解決によって間接的にアクセスします。 この依存プロパティは、`XProperty` または `XEvent` という名前のパブリックな静的フィールドです。X は対応するプロパティです。  
+  
+ [!INCLUDE[DependencyPropertyRemark](~/includes/dependencypropertyremark-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Activity.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスを表す文字列を返します。</summary>
+        <returns>このインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Activity.QualifiedName%2A> に、このインスタンスの型の <xref:System.Type.FullName%2A> を連結した文字列を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrackData">
+      <MemberSignature Language="C#" Value="protected void TrackData (object userData);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void TrackData(object userData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Activity.TrackData(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userData" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="userData">
+          追跡情報を格納している <see cref="T:System.Object" />。</param>
+        <summary>ランタイム追跡インフラストラクチャに保留の追跡情報を通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、`TrackData` メソッドの呼び出しを示しています。 この例は、終了追跡サービスの SDK サンプルです。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][終了追跡サービスのサンプル](http://msdn.microsoft.com/en-us/29b7c0d7-cece-4bb9-96d0-c5b6c6e14439)です。  
+  
+ [!code-csharp[WF_Samples#118](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#118)]
+ [!code-vb[WF_Samples#118](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#118)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="userData" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TrackData">
+      <MemberSignature Language="C#" Value="protected void TrackData (string userDataKey, object userData);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void TrackData(string userDataKey, object userData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Activity.TrackData(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userDataKey" Type="System.String" />
+        <Parameter Name="userData" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="userDataKey">変更したユーザー データへのキー。</param>
+        <param name="userData">
+          追跡情報を格納している <see cref="T:System.Object" />。</param>
+        <summary>ランタイム追跡インフラストラクチャに保留の追跡情報を通知します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="userData" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Uninitialize">
+      <MemberSignature Language="C#" Value="protected virtual void Uninitialize (IServiceProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void Uninitialize(class System.IServiceProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Activity.Uninitialize(System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">サービスを提供する <see cref="T:System.IServiceProvider" />。</param>
+        <summary>サービス プロバイダーがアクティビティの初期化を解除するメソッドとして、派生クラスでオーバーライドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクティビティが、初期化の際に割り当てられたリソースを解放するために呼び出します。  
+  
+ <xref:System.Workflow.ComponentModel.Activity.Uninitialize%2A> は、アクティビティ インスタンスを今後実行することはない、という段階で呼び出されます。 <xref:System.Workflow.ComponentModel.ICompensatableActivity> を実装していないアクティビティでは、アクティビティを閉じた直後、またはワークフローが終了し、以後このアクティビティが実行されることはなくなったときに呼び出されます。 <xref:System.Workflow.ComponentModel.ICompensatableActivity> アクティビティでは、補正の後、またはワークフローの終了時に呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnregisterForStatusChange">
+      <MemberSignature Language="C#" Value="public void UnregisterForStatusChange (System.Workflow.ComponentModel.DependencyProperty dependencyProp, System.Workflow.ComponentModel.IActivityEventListener&lt;System.Workflow.ComponentModel.ActivityExecutionStatusChangedEventArgs&gt; activityStatusChangeListener);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UnregisterForStatusChange(class System.Workflow.ComponentModel.DependencyProperty dependencyProp, class System.Workflow.ComponentModel.IActivityEventListener`1&lt;class System.Workflow.ComponentModel.ActivityExecutionStatusChangedEventArgs&gt; activityStatusChangeListener) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Activity.UnregisterForStatusChange(System.Workflow.ComponentModel.DependencyProperty,System.Workflow.ComponentModel.IActivityEventListener{System.Workflow.ComponentModel.ActivityExecutionStatusChangedEventArgs})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dependencyProp" Type="System.Workflow.ComponentModel.DependencyProperty" />
+        <Parameter Name="activityStatusChangeListener" Type="System.Workflow.ComponentModel.IActivityEventListener&lt;System.Workflow.ComponentModel.ActivityExecutionStatusChangedEventArgs&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="dependencyProp">登録解除する <see cref="T:System.Workflow.ComponentModel.DependencyProperty" />。</param>
+        <param name="activityStatusChangeListener">この登録のイベント リスナー インターフェイスを実装しているオブジェクト。</param>
+        <summary>状態変更イベントから指定された <see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> の登録を解除します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="dependencyProp" /> が次のいずれでもありません。  
+  
+-   <see cref="F:System.Workflow.ComponentModel.Activity.ExecutingEvent" />  
+  
+-   <see cref="F:System.Workflow.ComponentModel.Activity.CancelingEvent" />  
+  
+-   <see cref="F:System.Workflow.ComponentModel.Activity.ClosedEvent" />  
+  
+-   <see cref="F:System.Workflow.ComponentModel.Activity.CompensatingEvent" />  
+  
+-   <see cref="F:System.Workflow.ComponentModel.Activity.FaultingEvent" />  
+  
+-   <see cref="F:System.Workflow.ComponentModel.Activity.StatusChangedEvent" /></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkflowInstanceId">
+      <MemberSignature Language="C#" Value="protected Guid WorkflowInstanceId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid WorkflowInstanceId" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Activity.WorkflowInstanceId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスに関連付けられた <see cref="T:System.Guid" /> を取得します。</summary>
+        <value>インスタンスに関連付けられた <see cref="T:System.Guid" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

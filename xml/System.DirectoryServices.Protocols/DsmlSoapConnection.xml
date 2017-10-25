@@ -1,0 +1,151 @@
+<Type Name="DsmlSoapConnection" FullName="System.DirectoryServices.Protocols.DsmlSoapConnection">
+  <TypeSignature Language="C#" Value="public abstract class DsmlSoapConnection : System.DirectoryServices.Protocols.DirectoryConnection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DsmlSoapConnection extends System.DirectoryServices.Protocols.DirectoryConnection" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.Protocols.DsmlSoapConnection" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.DirectoryServices.Protocols.DirectoryConnection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.Protocols.DsmlSoapConnection" />クラスは抽象クラスをインスタンス化することはできません。 ステートレスおよびステートフルなプロトコル セッション指向の機能を提供することで同様に処理を可能になります。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DsmlSoapConnection ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.DsmlSoapConnection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.DirectoryServices.Protocols.DsmlSoapConnection.#ctor" />コンス トラクターの新しいインスタンスを初期化します、<see cref="T:System.DirectoryServices.Protocols.DsmlSoapConnection" />クラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginSession">
+      <MemberSignature Language="C#" Value="public abstract void BeginSession ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void BeginSession() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.DsmlSoapConnection.BeginSession" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.DirectoryServices.Protocols.DsmlSoapConnection.BeginSession" />メソッド新しいセッションを開始する DSML サーバーに指示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドは、DSML サーバーからの応答を待機中をブロックしによるとタイムアウトとなります、<xref:System.DirectoryServices.Protocols.DirectoryConnection.Timeout%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">セッションを既に接続で開いている場合にスローされます。</exception>
+        <exception cref="T:System.DirectoryServices.Protocols.DsmlInvalidDocumentException">BeginSession への応答でサーバーから返された XML が整形式でない場合にスローされます。</exception>
+        <exception cref="T:System.Net.WebException">DSML サーバーとの通信障害が発生した場合にスローされます。</exception>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">
+          <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />
+        </permission>
+      </Docs>
+    </Member>
+    <Member MemberName="EndSession">
+      <MemberSignature Language="C#" Value="public abstract void EndSession ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndSession() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.DsmlSoapConnection.EndSession" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.DirectoryServices.Protocols.DsmlSoapConnection.EndSession" />メソッドは、DSML サーバーとのセッションを終了し、クリア、<see cref="P:System.DirectoryServices.Protocols.DsmlSoapConnection.SessionId" />プロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドは、DSML サーバーからの応答を待機中をブロックしによるとタイムアウトとなります、<xref:System.DirectoryServices.Protocols.DirectoryConnection.Timeout%2A>プロパティです。  
+  
+ DSML サーバーには、セッションが終了した場合、<xref:System.Net.WebException>  
+  
+ スローされます。 場合<xref:System.DirectoryServices.Protocols.DsmlSoapConnection.SessionId%2A>は例外がスローされた後は、要求がサーバーに到達しません、接続が有効と見なされますが、現在も有効です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.WebException">DSML サーバーとの通信障害が発生した場合にスローされます。</exception>
+        <exception cref="T:System.InvalidOperationException">開いているセッションがない場合にスローされます。</exception>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">
+          <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />
+        </permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SessionId">
+      <MemberSignature Language="C#" Value="public abstract string SessionId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SessionId" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.DsmlSoapConnection.SessionId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.DsmlSoapConnection.SessionId" />プロパティには、アクティブなセッション ID が含まれています。</summary>
+        <value>アクティブなセッション id。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Null 値は、アクティブなセッションがないことを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SoapRequestHeader">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlNode SoapRequestHeader { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlNode SoapRequestHeader" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.DsmlSoapConnection.SoapRequestHeader" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.DsmlSoapConnection.SoapRequestHeader" />プロパティには、送信要求にアタッチされている SOAP ヘッダーが含まれています。</summary>
+        <value>SOAP ヘッダーが送信される要求にアタッチされます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ API によって使用される<xref:System.DirectoryServices.Protocols.DsmlSoapConnection.BeginSession%2A>と<xref:System.DirectoryServices.Protocols.DsmlSoapConnection.EndSession%2A>セッションの有効期間を追跡するためにします。  
+  
+ **注意**EndSession ヘッダーを添付する、<xref:System.DirectoryServices.Protocols.DsmlSoapConnection.SoapRequestHeader%2A>により、API 接続に整合性が失われると、避ける必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,75 @@
+<Type Name="IWebSocketCloseDetails" FullName="System.ServiceModel.Channels.IWebSocketCloseDetails">
+  <TypeSignature Language="C#" Value="public interface IWebSocketCloseDetails" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IWebSocketCloseDetails" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.IWebSocketCloseDetails" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>Web ソケット接続の終了状態の詳細を表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="InputCloseStatus">
+      <MemberSignature Language="C#" Value="public Nullable&lt;System.Net.WebSockets.WebSocketCloseStatus&gt; InputCloseStatus { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.Net.WebSockets.WebSocketCloseStatus&gt; InputCloseStatus" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.IWebSocketCloseDetails.InputCloseStatus" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Net.WebSockets.WebSocketCloseStatus&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>入力の詳細を閉じるの状態を取得します。</summary>
+        <value>入力の状態は、詳細を閉じます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InputCloseStatusDescription">
+      <MemberSignature Language="C#" Value="public string InputCloseStatusDescription { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string InputCloseStatusDescription" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.IWebSocketCloseDetails.InputCloseStatusDescription" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>詳細情報を閉じるのステータスの説明を取得します。</summary>
+        <value>詳細情報を閉じるのステータスの説明。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetOutputCloseStatus">
+      <MemberSignature Language="C#" Value="public void SetOutputCloseStatus (System.Net.WebSockets.WebSocketCloseStatus closeStatus, string closeStatusDescription);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetOutputCloseStatus(valuetype System.Net.WebSockets.WebSocketCloseStatus closeStatus, string closeStatusDescription) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.IWebSocketCloseDetails.SetOutputCloseStatus(System.Net.WebSockets.WebSocketCloseStatus,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="closeStatus" Type="System.Net.WebSockets.WebSocketCloseStatus" />
+        <Parameter Name="closeStatusDescription" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="closeStatus">出力のステータスは、詳細を閉じます。</param>
+        <param name="closeStatusDescription">出力のステータスの説明は、詳細を閉じます。</param>
+        <summary>出力の状態と、web ソケットの詳細情報を閉じるの説明を設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

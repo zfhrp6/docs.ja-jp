@@ -1,0 +1,1245 @@
+<Type Name="ImmutableArrayExtensions" FullName="System.Linq.ImmutableArrayExtensions">
+  <TypeSignature Language="C#" Value="public static class ImmutableArrayExtensions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ImmutableArrayExtensions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Linq.ImmutableArrayExtensions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Collections.Immutable</AssemblyName>
+    <AssemblyVersion>1.2.0.0</AssemblyVersion>
+    <AssemblyVersion>1.2.1.0</AssemblyVersion>
+    <AssemblyVersion>1.2.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>  
+  
+ 標準的な LINQ メソッドよりも <see cref="T:System.Collections.Immutable.ImmutableArray`1" /> に対する効率が高い、LINQ 拡張メソッドのオーバーライド  
+  
+ [!INCLUDE[immutable_nuget_short](~/includes/immutable-nuget-short-md.md)]</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Aggregate&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T Aggregate&lt;T&gt; (this System.Collections.Immutable.ImmutableArray&lt;T&gt; immutableArray, Func&lt;T,T,T&gt; func);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T Aggregate&lt;T&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; immutableArray, class System.Func`3&lt;!!T, !!T, !!T&gt; func) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.ImmutableArrayExtensions.Aggregate``1(System.Collections.Immutable.ImmutableArray{``0},System.Func{``0,``0,``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="immutableArray" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;" RefType="this" />
+        <Parameter Name="func" Type="System.Func&lt;T,T,T&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">コレクションに含まれる要素の型。</typeparam>
+        <param name="immutableArray">関数の適用先のコレクション。</param>
+        <param name="func">累積的に各要素で呼び出される関数。</param>
+        <summary>  
+  
+ 累積的に要素のシーケンスに関数を適用します。</summary>
+        <returns>関数がすべての要素に適用された後の最終的な値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Linq.ImmutableArrayExtensions.Aggregate%2A>メソッドを簡単に一連の値に対して計算を実行します。 このメソッドを呼び出すことによって動作`func`ソース内の各要素の 1 つの時間。 毎回`func`が呼び出されると、 <xref:System.Linq.ImmutableArrayExtensions.Aggregate%2A> (func の第 1 引数) として、シーケンスおよび集計値から、両方の要素を渡します。 値、`seed`パラメーターは、最初の集計値として使用します。 結果`func`以前の集計値が置き換えられます。 <xref:System.Linq.ImmutableArrayExtensions.Aggregate%2A>最終的な結果を返します`func`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Aggregate&lt;TAccumulate,T&gt;">
+      <MemberSignature Language="C#" Value="public static TAccumulate Aggregate&lt;TAccumulate,T&gt; (this System.Collections.Immutable.ImmutableArray&lt;T&gt; immutableArray, TAccumulate seed, Func&lt;TAccumulate,T,TAccumulate&gt; func);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!TAccumulate Aggregate&lt;TAccumulate, T&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; immutableArray, !!TAccumulate seed, class System.Func`3&lt;!!TAccumulate, !!T, !!TAccumulate&gt; func) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.ImmutableArrayExtensions.Aggregate``2(System.Collections.Immutable.ImmutableArray{``1},``0,System.Func{``0,``1,``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TAccumulate</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TAccumulate" />
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="immutableArray" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;" RefType="this" />
+        <Parameter Name="seed" Type="TAccumulate" />
+        <Parameter Name="func" Type="System.Func&lt;TAccumulate,T,TAccumulate&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TAccumulate">累積値の型。</typeparam>
+        <typeparam name="T">コレクションに含まれる要素の型。</typeparam>
+        <param name="immutableArray">関数の適用先のコレクション。</param>
+        <param name="seed">最初のアキュムレータ値。</param>
+        <param name="func">累積的に各要素で呼び出される関数。</param>
+        <summary>  
+  
+ 累積的に要素のシーケンスに関数を適用します。</summary>
+        <returns>最終的なアキュムレータ値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Linq.ImmutableArrayExtensions.Aggregate%2A>メソッドを簡単に一連の値に対して計算を実行します。 このメソッドを呼び出すことによって動作`func`ソース内の各要素の 1 つの時間。 毎回`func`が呼び出されると、 <xref:System.Linq.ImmutableArrayExtensions.Aggregate%2A> (func の第 1 引数) として、シーケンスおよび集計値から、両方の要素を渡します。 値、`seed`パラメーターは、最初の集計値として使用します。 結果`func`以前の集計値が置き換えられます。 <xref:System.Linq.ImmutableArrayExtensions.Aggregate%2A>最終的な結果を返します`func`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Aggregate&lt;TAccumulate,TResult,T&gt;">
+      <MemberSignature Language="C#" Value="public static TResult Aggregate&lt;TAccumulate,TResult,T&gt; (this System.Collections.Immutable.ImmutableArray&lt;T&gt; immutableArray, TAccumulate seed, Func&lt;TAccumulate,T,TAccumulate&gt; func, Func&lt;TAccumulate,TResult&gt; resultSelector);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!TResult Aggregate&lt;TAccumulate, TResult, T&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; immutableArray, !!TAccumulate seed, class System.Func`3&lt;!!TAccumulate, !!T, !!TAccumulate&gt; func, class System.Func`2&lt;!!TAccumulate, !!TResult&gt; resultSelector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.ImmutableArrayExtensions.Aggregate``3(System.Collections.Immutable.ImmutableArray{``2},``0,System.Func{``0,``2,``0},System.Func{``0,``1})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TResult</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TAccumulate" />
+        <TypeParameter Name="TResult" />
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="immutableArray" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;" RefType="this" />
+        <Parameter Name="seed" Type="TAccumulate" />
+        <Parameter Name="func" Type="System.Func&lt;TAccumulate,T,TAccumulate&gt;" />
+        <Parameter Name="resultSelector" Type="System.Func&lt;TAccumulate,TResult&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TAccumulate">累積値の型。</typeparam>
+        <typeparam name="TResult">結果のセレクターによって返される結果の型。</typeparam>
+        <typeparam name="T">コレクションに含まれる要素の型。</typeparam>
+        <param name="immutableArray">関数の適用先のコレクション。</param>
+        <param name="seed">最初のアキュムレータ値。</param>
+        <param name="func">累積的に各要素で呼び出される関数。</param>
+        <param name="resultSelector">To be added.</param>
+        <summary>  
+  
+ 累積的に要素のシーケンスに関数を適用します。</summary>
+        <returns>最終的なアキュムレータ値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Linq.ImmutableArrayExtensions.Aggregate%2A>メソッドを簡単に一連の値に対して計算を実行します。 このメソッドを呼び出すことによって動作`func`ソース内の各要素の 1 つの時間。 毎回`func`が呼び出されると、 <xref:System.Linq.ImmutableArrayExtensions.Aggregate%2A> (func の第 1 引数) として、シーケンスおよび集計値から、両方の要素を渡します。 値、`seed`パラメーターは、最初の集計値として使用します。 結果`func`以前の集計値が置き換えられます。 <xref:System.Linq.ImmutableArrayExtensions.Aggregate%2A>最終的な結果を返します`func`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="All&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static bool All&lt;T&gt; (this System.Collections.Immutable.ImmutableArray&lt;T&gt; immutableArray, Func&lt;T,bool&gt; predicate);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool All&lt;T&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; immutableArray, class System.Func`2&lt;!!T, bool&gt; predicate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.ImmutableArrayExtensions.All``1(System.Collections.Immutable.ImmutableArray{``0},System.Func{``0,System.Boolean})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="immutableArray" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;" RefType="this" />
+        <Parameter Name="predicate" Type="System.Func&lt;T,System.Boolean&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">コレクションに含まれる要素の型。</typeparam>
+        <param name="immutableArray">一致するかどうかを確認する配列。</param>
+        <param name="predicate">述語。</param>
+        <summary>  
+  
+ この配列内のすべての要素が特定の条件に一致するかどうかを示す値を取得します。</summary>
+        <returns>
+          指定された述語でソース シーケンスの各要素がテストに合格する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Any&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static bool Any&lt;T&gt; (this System.Collections.Immutable.ImmutableArray&lt;T&gt; immutableArray);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Any&lt;T&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; immutableArray) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.ImmutableArrayExtensions.Any``1(System.Collections.Immutable.ImmutableArray{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="immutableArray" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;" RefType="this" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">コレクションに含まれる要素の型。</typeparam>
+        <param name="immutableArray">要素について確認する配列。</param>
+        <summary>  
+  
+ 配列に要素が格納されているかどうかを示す値を取得します。</summary>
+        <returns>
+          配列に要素が含まれている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Any&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static bool Any&lt;T&gt; (this System.Collections.Immutable.ImmutableArray&lt;T&gt;.Builder builder);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Any&lt;T&gt;(class System.Collections.Immutable.ImmutableArray`1/Builder&lt;!!T&gt; builder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.ImmutableArrayExtensions.Any``1(System.Collections.Immutable.ImmutableArray`1.Builder{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="builder" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;+Builder" RefType="this" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">配列内の要素の型。</typeparam>
+        <param name="builder">一致するかどうかを確認するビルダー。</param>
+        <summary>  
+  
+ このコレクションに要素が格納されているかどうかを示す値を返します。</summary>
+        <returns>
+          配列ビルダーに要素が格納されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Any&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static bool Any&lt;T&gt; (this System.Collections.Immutable.ImmutableArray&lt;T&gt; immutableArray, Func&lt;T,bool&gt; predicate);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Any&lt;T&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; immutableArray, class System.Func`2&lt;!!T, bool&gt; predicate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.ImmutableArrayExtensions.Any``1(System.Collections.Immutable.ImmutableArray{``0},System.Func{``0,System.Boolean})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="immutableArray" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;" RefType="this" />
+        <Parameter Name="predicate" Type="System.Func&lt;T,System.Boolean&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">コレクションに含まれる要素の型。</typeparam>
+        <param name="immutableArray">要素について確認する配列。</param>
+        <param name="predicate">要素と一致する条件を定義するデリゲート。</param>
+        <summary>  
+  
+ 指定された条件に一致する要素が配列に格納されているかどうかを示す値を取得します。</summary>
+        <returns>
+          指定した条件と要素が一致する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ElementAt&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T ElementAt&lt;T&gt; (this System.Collections.Immutable.ImmutableArray&lt;T&gt; immutableArray, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T ElementAt&lt;T&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; immutableArray, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.ImmutableArrayExtensions.ElementAt``1(System.Collections.Immutable.ImmutableArray{``0},System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="immutableArray" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;" RefType="this" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">コレクションに含まれる要素の型。</typeparam>
+        <param name="immutableArray">要素の検索対象となる配列。</param>
+        <param name="index">取得する要素のインデックス。</param>
+        <summary>  
+  
+ 配列内の指定されたインデックス位置にある要素を返します。</summary>
+        <returns>指定したインデックスにある項目。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ElementAtOrDefault&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T ElementAtOrDefault&lt;T&gt; (this System.Collections.Immutable.ImmutableArray&lt;T&gt; immutableArray, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T ElementAtOrDefault&lt;T&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; immutableArray, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.ImmutableArrayExtensions.ElementAtOrDefault``1(System.Collections.Immutable.ImmutableArray{``0},System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="immutableArray" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;" RefType="this" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">コレクションに含まれる要素の型。</typeparam>
+        <param name="immutableArray">要素の検索対象となる配列。</param>
+        <param name="index">取得する要素のインデックス。</param>
+        <summary>  
+  
+ シーケンス内の指定したインデックス位置にある要素を返します。インデックスが範囲外の場合は既定値を返します。</summary>
+        <returns>指定したインデックス位置にある項目。インデックスが見つからない場合は既定値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="First&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T First&lt;T&gt; (this System.Collections.Immutable.ImmutableArray&lt;T&gt; immutableArray);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T First&lt;T&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; immutableArray) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.ImmutableArrayExtensions.First``1(System.Collections.Immutable.ImmutableArray{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="immutableArray" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;" RefType="this" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">コレクションに含まれる要素の型。</typeparam>
+        <param name="immutableArray">取得する項目が格納されている配列。</param>
+        <summary>  
+  
+ 配列内の最初の要素を返します。</summary>
+        <returns>配列内の最初の項目。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">配列が空の場合は。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="First&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T First&lt;T&gt; (this System.Collections.Immutable.ImmutableArray&lt;T&gt;.Builder builder);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T First&lt;T&gt;(class System.Collections.Immutable.ImmutableArray`1/Builder&lt;!!T&gt; builder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.ImmutableArrayExtensions.First``1(System.Collections.Immutable.ImmutableArray`1.Builder{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="builder" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;+Builder" RefType="this" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">配列内の項目の型。</typeparam>
+        <param name="builder">取得する項目が含まれているビルダー。</param>
+        <summary>  
+  
+ コレクション内の最初の要素を返します。</summary>
+        <returns>リスト内の最初の項目。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">配列が空の場合は。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="First&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T First&lt;T&gt; (this System.Collections.Immutable.ImmutableArray&lt;T&gt; immutableArray, Func&lt;T,bool&gt; predicate);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T First&lt;T&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; immutableArray, class System.Func`2&lt;!!T, bool&gt; predicate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.ImmutableArrayExtensions.First``1(System.Collections.Immutable.ImmutableArray{``0},System.Func{``0,System.Boolean})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="immutableArray" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;" RefType="this" />
+        <Parameter Name="predicate" Type="System.Func&lt;T,System.Boolean&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">コレクションに含まれる要素の型。</typeparam>
+        <param name="immutableArray">取得する項目が格納されている配列。</param>
+        <param name="predicate">検索する要素の条件を定義するデリゲート。</param>
+        <summary>  
+  
+ 指定された条件を満たす、シーケンスの最初の要素を返します。</summary>
+        <returns><paramref name="predicate" /> で指定された条件を満たしている場合は、リスト内の最初の項目。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">配列が空の場合は。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FirstOrDefault&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T FirstOrDefault&lt;T&gt; (this System.Collections.Immutable.ImmutableArray&lt;T&gt; immutableArray);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T FirstOrDefault&lt;T&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; immutableArray) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.ImmutableArrayExtensions.FirstOrDefault``1(System.Collections.Immutable.ImmutableArray{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="immutableArray" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;" RefType="this" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">コレクションに含まれる要素の型。</typeparam>
+        <param name="immutableArray">取得する項目が格納されている配列。</param>
+        <summary>  
+  
+ シーケンスの最初の要素を返します。シーケンスに要素が含まれていない場合は既定値を返します。</summary>
+        <returns>見つかった場合はリスト内の最初の項目。それ以外の場合はその項目の型の既定値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FirstOrDefault&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T FirstOrDefault&lt;T&gt; (this System.Collections.Immutable.ImmutableArray&lt;T&gt;.Builder builder);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T FirstOrDefault&lt;T&gt;(class System.Collections.Immutable.ImmutableArray`1/Builder&lt;!!T&gt; builder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.ImmutableArrayExtensions.FirstOrDefault``1(System.Collections.Immutable.ImmutableArray`1.Builder{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="builder" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;+Builder" RefType="this" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">ビルダー内の項目の型。</typeparam>
+        <param name="builder">取得する要素が含まれているビルダー。</param>
+        <summary>  
+  
+ コレクション内の最初の要素を返します。コレクションが空の場合は既定値を返します。</summary>
+        <returns>見つかった場合はリスト内の最初の項目。それ以外の場合はその項目の型の既定値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FirstOrDefault&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T FirstOrDefault&lt;T&gt; (this System.Collections.Immutable.ImmutableArray&lt;T&gt; immutableArray, Func&lt;T,bool&gt; predicate);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T FirstOrDefault&lt;T&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; immutableArray, class System.Func`2&lt;!!T, bool&gt; predicate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.ImmutableArrayExtensions.FirstOrDefault``1(System.Collections.Immutable.ImmutableArray{``0},System.Func{``0,System.Boolean})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="immutableArray" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;" RefType="this" />
+        <Parameter Name="predicate" Type="System.Func&lt;T,System.Boolean&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">  
+  
+ コレクションに含まれる要素の型。</typeparam>
+        <param name="immutableArray">取得する要素が格納されている配列。</param>
+        <param name="predicate">検索する要素の条件を定義するデリゲート。</param>
+        <summary>  
+  
+ 条件を満たす、シーケンスの最初の要素を返します。このような要素が見つからない場合は既定値を返します。</summary>
+        <returns>見つかった場合はリスト内の最初の項目。それ以外の場合はその項目の型の既定値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Last&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T Last&lt;T&gt; (this System.Collections.Immutable.ImmutableArray&lt;T&gt; immutableArray);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T Last&lt;T&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; immutableArray) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.ImmutableArrayExtensions.Last``1(System.Collections.Immutable.ImmutableArray{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="immutableArray" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;" RefType="this" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">配列に含まれる要素の型。</typeparam>
+        <param name="immutableArray">取得する項目が格納されている配列。</param>
+        <summary>  
+  
+ 配列の最後の要素を返します。</summary>
+        <returns>配列内の最後の要素。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">コレクションが空の場合にスローされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Last&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T Last&lt;T&gt; (this System.Collections.Immutable.ImmutableArray&lt;T&gt;.Builder builder);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T Last&lt;T&gt;(class System.Collections.Immutable.ImmutableArray`1/Builder&lt;!!T&gt; builder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.ImmutableArrayExtensions.Last``1(System.Collections.Immutable.ImmutableArray`1.Builder{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="builder" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;+Builder" RefType="this" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">ビルダー内の項目の型。</typeparam>
+        <param name="builder">取得する要素が含まれているビルダー。</param>
+        <summary>コレクション内の最後の要素を返します。</summary>
+        <returns>ビルダー内の最後の要素。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">コレクションが空の場合にスローされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Last&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T Last&lt;T&gt; (this System.Collections.Immutable.ImmutableArray&lt;T&gt; immutableArray, Func&lt;T,bool&gt; predicate);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T Last&lt;T&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; immutableArray, class System.Func`2&lt;!!T, bool&gt; predicate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.ImmutableArrayExtensions.Last``1(System.Collections.Immutable.ImmutableArray{``0},System.Func{``0,System.Boolean})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="immutableArray" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;" RefType="this" />
+        <Parameter Name="predicate" Type="System.Func&lt;T,System.Boolean&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">コレクションに含まれる要素の型。</typeparam>
+        <param name="immutableArray">取得する要素が格納されている配列。</param>
+        <param name="predicate">取得する要素の条件を定義するデリゲート。</param>
+        <summary>指定された条件を満たす、シーケンスの最後の要素を返します。</summary>
+        <returns><paramref name="predicate" /> 条件を満たす、配列の最後の要素。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">コレクションが空の場合にスローされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LastOrDefault&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T LastOrDefault&lt;T&gt; (this System.Collections.Immutable.ImmutableArray&lt;T&gt; immutableArray);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T LastOrDefault&lt;T&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; immutableArray) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.ImmutableArrayExtensions.LastOrDefault``1(System.Collections.Immutable.ImmutableArray{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="immutableArray" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;" RefType="this" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">コレクションに含まれる要素の型。</typeparam>
+        <param name="immutableArray">取得する項目が格納されている配列。</param>
+        <summary>  
+  
+ シーケンスの最後の要素を返します。シーケンスに要素が含まれていない場合は既定値を返します。</summary>
+        <returns>シーケンスの最後の要素。シーケンスに要素が含まれていない場合は既定値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastOrDefault&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T LastOrDefault&lt;T&gt; (this System.Collections.Immutable.ImmutableArray&lt;T&gt;.Builder builder);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T LastOrDefault&lt;T&gt;(class System.Collections.Immutable.ImmutableArray`1/Builder&lt;!!T&gt; builder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.ImmutableArrayExtensions.LastOrDefault``1(System.Collections.Immutable.ImmutableArray`1.Builder{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="builder" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;+Builder" RefType="this" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">ビルダー内の項目の型。</typeparam>
+        <param name="builder">取得する要素が含まれているビルダー。</param>
+        <summary>  
+  
+ コレクション内の最後の要素を返します。コレクションが空の場合は既定値を返します。</summary>
+        <returns>シーケンスの最後の要素。シーケンスに要素が含まれていない場合は既定値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastOrDefault&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T LastOrDefault&lt;T&gt; (this System.Collections.Immutable.ImmutableArray&lt;T&gt; immutableArray, Func&lt;T,bool&gt; predicate);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T LastOrDefault&lt;T&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; immutableArray, class System.Func`2&lt;!!T, bool&gt; predicate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.ImmutableArrayExtensions.LastOrDefault``1(System.Collections.Immutable.ImmutableArray{``0},System.Func{``0,System.Boolean})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="immutableArray" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;" RefType="this" />
+        <Parameter Name="predicate" Type="System.Func&lt;T,System.Boolean&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">コレクションに含まれる要素の型。</typeparam>
+        <param name="immutableArray">取得する要素が格納されている配列。</param>
+        <param name="predicate">検索する要素の条件を定義するデリゲート。</param>
+        <summary>  
+  
+ 条件を満たす、シーケンスの最後の要素を返します。このような要素が見つからない場合は既定値を返します。</summary>
+        <returns>シーケンスの最後の要素。シーケンスに要素が含まれていない場合は既定値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Select&lt;T,TResult&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEnumerable&lt;TResult&gt; Select&lt;T,TResult&gt; (this System.Collections.Immutable.ImmutableArray&lt;T&gt; immutableArray, Func&lt;T,TResult&gt; selector);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IEnumerable`1&lt;!!TResult&gt; Select&lt;T, TResult&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; immutableArray, class System.Func`2&lt;!!T, !!TResult&gt; selector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.ImmutableArrayExtensions.Select``2(System.Collections.Immutable.ImmutableArray{``0},System.Func{``0,``1})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="immutableArray" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;" RefType="this" />
+        <Parameter Name="selector" Type="System.Func&lt;T,TResult&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">コレクションに含まれる要素の型。</typeparam>
+        <typeparam name="TResult">結果の要素の型。</typeparam>
+        <param name="immutableArray">選択する項目が格納されている変更できない配列。</param>
+        <param name="selector">各要素に適用する変換関数。</param>
+        <summary>  
+  
+ シーケンスの各要素を新しいフォームに射影します。</summary>
+        <returns>ソースの各要素に対して変換関数を呼び出した結果として得られる要素を格納している <see cref="T:System.Collections.Generic.IEnumerable`1" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectMany&lt;TSource,TCollection,TResult&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEnumerable&lt;TResult&gt; SelectMany&lt;TSource,TCollection,TResult&gt; (this System.Collections.Immutable.ImmutableArray&lt;TSource&gt; immutableArray, Func&lt;TSource,System.Collections.Generic.IEnumerable&lt;TCollection&gt;&gt; collectionSelector, Func&lt;TSource,TCollection,TResult&gt; resultSelector);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IEnumerable`1&lt;!!TResult&gt; SelectMany&lt;TSource, TCollection, TResult&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!TSource&gt; immutableArray, class System.Func`2&lt;!!TSource, class System.Collections.Generic.IEnumerable`1&lt;!!TCollection&gt;&gt; collectionSelector, class System.Func`3&lt;!!TSource, !!TCollection, !!TResult&gt; resultSelector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.ImmutableArrayExtensions.SelectMany``3(System.Collections.Immutable.ImmutableArray{``0},System.Func{``0,System.Collections.Generic.IEnumerable{``1}},System.Func{``0,``1,``2})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TSource" />
+        <TypeParameter Name="TCollection" />
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="immutableArray" Type="System.Collections.Immutable.ImmutableArray&lt;TSource&gt;" RefType="this" />
+        <Parameter Name="collectionSelector" Type="System.Func&lt;TSource,System.Collections.Generic.IEnumerable&lt;TCollection&gt;&gt;" />
+        <Parameter Name="resultSelector" Type="System.Func&lt;TSource,TCollection,TResult&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TSource">要素の型<c>immutablearray を</c>です。</typeparam>
+        <typeparam name="TCollection">中間の要素の型がによって収集された<c>collectionSelector</c>です。</typeparam>
+        <typeparam name="TResult">結果のシーケンスの要素の型。</typeparam>
+        <param name="immutableArray">変更できない配列。</param>
+        <param name="collectionSelector">入力シーケンスの各要素に適用する変換関数。</param>
+        <param name="resultSelector">中間のシーケンスの各要素に適用する変換関数。</param>
+        <summary>シーケンスの各要素、 <see cref="T:System.Collections.Generic.IEnumerable`1" />、結果のシーケンスに 1 つのシーケンスを平坦化して、そこに各要素に対して結果セレクター関数を呼び出します。</summary>
+        <returns><see cref="T:System.Collections.Generic.IEnumerable`1" />要素は、一対多の変換関数を呼び出した結果<paramref name="collectionSelector" />の各要素に対して<paramref name="immutableArray" />re をマッピングするの各シーケンス要素とその対応するソース要素sult 要素です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SequenceEqual&lt;TDerived,TBase&gt;">
+      <MemberSignature Language="C#" Value="public static bool SequenceEqual&lt;TDerived,TBase&gt; (this System.Collections.Immutable.ImmutableArray&lt;TBase&gt; immutableArray, System.Collections.Generic.IEnumerable&lt;TDerived&gt; items, System.Collections.Generic.IEqualityComparer&lt;TBase&gt; comparer = null) where TDerived : TBase;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool SequenceEqual&lt;(!!TBase) TDerived, TBase&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!TBase&gt; immutableArray, class System.Collections.Generic.IEnumerable`1&lt;!!TDerived&gt; items, class System.Collections.Generic.IEqualityComparer`1&lt;!!TBase&gt; comparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.ImmutableArrayExtensions.SequenceEqual``2(System.Collections.Immutable.ImmutableArray{``1},System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``1})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TDerived">
+          <Constraints>
+            <BaseTypeName>TBase</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+        <TypeParameter Name="TBase" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="immutableArray" Type="System.Collections.Immutable.ImmutableArray&lt;TBase&gt;" RefType="this" />
+        <Parameter Name="items" Type="System.Collections.Generic.IEnumerable&lt;TDerived&gt;" />
+        <Parameter Name="comparer" Type="System.Collections.Generic.IEqualityComparer&lt;TBase&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TDerived">比較対象の配列内の要素の型。</typeparam>
+        <typeparam name="TBase">コレクションに含まれる要素の型。</typeparam>
+        <param name="immutableArray">比較に使用する配列。</param>
+        <param name="items">比較に使用する項目。</param>
+        <param name="comparer">等しいかどうかを確認するために使用する比較子。</param>
+        <summary>  
+  
+ 等値比較子に従って 2 つのシーケンスが等しいかどうかを判断します。</summary>
+        <returns>
+          シーケンスが等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SequenceEqual&lt;TDerived,TBase&gt;">
+      <MemberSignature Language="C#" Value="public static bool SequenceEqual&lt;TDerived,TBase&gt; (this System.Collections.Immutable.ImmutableArray&lt;TBase&gt; immutableArray, System.Collections.Immutable.ImmutableArray&lt;TDerived&gt; items, System.Collections.Generic.IEqualityComparer&lt;TBase&gt; comparer = null) where TDerived : TBase;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool SequenceEqual&lt;(!!TBase) TDerived, TBase&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!TBase&gt; immutableArray, valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!TDerived&gt; items, class System.Collections.Generic.IEqualityComparer`1&lt;!!TBase&gt; comparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.ImmutableArrayExtensions.SequenceEqual``2(System.Collections.Immutable.ImmutableArray{``1},System.Collections.Immutable.ImmutableArray{``0},System.Collections.Generic.IEqualityComparer{``1})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TDerived">
+          <Constraints>
+            <BaseTypeName>TBase</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+        <TypeParameter Name="TBase" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="immutableArray" Type="System.Collections.Immutable.ImmutableArray&lt;TBase&gt;" RefType="this" />
+        <Parameter Name="items" Type="System.Collections.Immutable.ImmutableArray&lt;TDerived&gt;" />
+        <Parameter Name="comparer" Type="System.Collections.Generic.IEqualityComparer&lt;TBase&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TDerived">比較対象の配列内の要素の型。</typeparam>
+        <typeparam name="TBase">コレクションに含まれる要素の型。</typeparam>
+        <param name="immutableArray">比較に使用する配列。</param>
+        <param name="items">比較に使用する項目。</param>
+        <param name="comparer">等しいかどうかを確認するために使用する比較子。</param>
+        <summary>  
+  
+ 等値比較子に従って 2 つのシーケンスが等しいかどうかを判断します。</summary>
+        <returns>
+          シーケンスが等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SequenceEqual&lt;TDerived,TBase&gt;">
+      <MemberSignature Language="C#" Value="public static bool SequenceEqual&lt;TDerived,TBase&gt; (this System.Collections.Immutable.ImmutableArray&lt;TBase&gt; immutableArray, System.Collections.Immutable.ImmutableArray&lt;TDerived&gt; items, Func&lt;TBase,TBase,bool&gt; predicate) where TDerived : TBase;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool SequenceEqual&lt;(!!TBase) TDerived, TBase&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!TBase&gt; immutableArray, valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!TDerived&gt; items, class System.Func`3&lt;!!TBase, !!TBase, bool&gt; predicate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.ImmutableArrayExtensions.SequenceEqual``2(System.Collections.Immutable.ImmutableArray{``1},System.Collections.Immutable.ImmutableArray{``0},System.Func{``1,``1,System.Boolean})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TDerived">
+          <Constraints>
+            <BaseTypeName>TBase</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+        <TypeParameter Name="TBase" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="immutableArray" Type="System.Collections.Immutable.ImmutableArray&lt;TBase&gt;" RefType="this" />
+        <Parameter Name="items" Type="System.Collections.Immutable.ImmutableArray&lt;TDerived&gt;" />
+        <Parameter Name="predicate" Type="System.Func&lt;TBase,TBase,System.Boolean&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TDerived">比較対象の配列内の要素の型。</typeparam>
+        <typeparam name="TBase">コレクションに含まれる要素の型。</typeparam>
+        <param name="immutableArray">比較に使用する配列。</param>
+        <param name="items">比較に使用する項目。</param>
+        <param name="predicate">等しいかどうかを確認するために使用する比較子。</param>
+        <summary>  
+  
+ 等値比較子に従って 2 つのシーケンスが等しいかどうかを判断します。</summary>
+        <returns>
+          シーケンスが等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Single&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T Single&lt;T&gt; (this System.Collections.Immutable.ImmutableArray&lt;T&gt; immutableArray);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T Single&lt;T&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; immutableArray) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.ImmutableArrayExtensions.Single``1(System.Collections.Immutable.ImmutableArray{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="immutableArray" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;" RefType="this" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">コレクションに含まれる要素の型。</typeparam>
+        <param name="immutableArray">取得する要素が格納されている配列。</param>
+        <summary>  
+  
+ シーケンスの唯一の要素を返し、シーケンス内の要素が 1 つだけでない場合は例外をスローします。</summary>
+        <returns>シーケンス内の要素。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Single&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T Single&lt;T&gt; (this System.Collections.Immutable.ImmutableArray&lt;T&gt; immutableArray, Func&lt;T,bool&gt; predicate);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T Single&lt;T&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; immutableArray, class System.Func`2&lt;!!T, bool&gt; predicate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.ImmutableArrayExtensions.Single``1(System.Collections.Immutable.ImmutableArray{``0},System.Func{``0,System.Boolean})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="immutableArray" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;" RefType="this" />
+        <Parameter Name="predicate" Type="System.Func&lt;T,System.Boolean&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">コレクションに含まれる要素の型。</typeparam>
+        <param name="immutableArray">To be added.</param>
+        <param name="predicate">To be added.</param>
+        <summary>  
+  
+ 指定された条件を満たす、シーケンスの唯一の要素を返し、そのような要素が複数存在する場合は例外をスローします。</summary>
+        <returns><see cref="T:System.Boolean" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SingleOrDefault&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T SingleOrDefault&lt;T&gt; (this System.Collections.Immutable.ImmutableArray&lt;T&gt; immutableArray);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T SingleOrDefault&lt;T&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; immutableArray) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.ImmutableArrayExtensions.SingleOrDefault``1(System.Collections.Immutable.ImmutableArray{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="immutableArray" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;" RefType="this" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">コレクションに含まれる要素の型。</typeparam>
+        <param name="immutableArray">To be added.</param>
+        <summary>  
+  
+ 配列の唯一の要素、またはシーケンスが空の場合は既定値を返します。このメソッドは、シーケンス内に要素が複数ある場合に例外をスローします。</summary>
+        <returns>配列内の要素、または配列が空の場合は既定値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SingleOrDefault&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T SingleOrDefault&lt;T&gt; (this System.Collections.Immutable.ImmutableArray&lt;T&gt; immutableArray, Func&lt;T,bool&gt; predicate);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T SingleOrDefault&lt;T&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; immutableArray, class System.Func`2&lt;!!T, bool&gt; predicate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.ImmutableArrayExtensions.SingleOrDefault``1(System.Collections.Immutable.ImmutableArray{``0},System.Func{``0,System.Boolean})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="immutableArray" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;" RefType="this" />
+        <Parameter Name="predicate" Type="System.Func&lt;T,System.Boolean&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">コレクションに含まれる要素の型。</typeparam>
+        <param name="immutableArray">要素を取得する配列。</param>
+        <param name="predicate">要素が満たす必要がある条件。</param>
+        <summary>  
+  
+ 指定された条件を満たすシーケンスの唯一の要素、またはそのような要素がない場合は既定値を返します。このメソッドは、複数の要素が条件を満たす場合に例外をスローします。</summary>
+        <returns>指定された条件を満たしている場合はその要素。それ以外の場合は既定の要素。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToArray&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T[] ToArray&lt;T&gt; (this System.Collections.Immutable.ImmutableArray&lt;T&gt; immutableArray);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T[] ToArray&lt;T&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; immutableArray) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.ImmutableArrayExtensions.ToArray``1(System.Collections.Immutable.ImmutableArray{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T[]</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="immutableArray" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;" RefType="this" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">コレクションに含まれる要素の型。</typeparam>
+        <param name="immutableArray">To be added.</param>
+        <summary>  
+  
+ この配列の内容を可変配列にコピーします。</summary>
+        <returns>新しくインスタンス化された配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToDictionary&lt;TKey,T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.Dictionary&lt;TKey,T&gt; ToDictionary&lt;TKey,T&gt; (this System.Collections.Immutable.ImmutableArray&lt;T&gt; immutableArray, Func&lt;T,TKey&gt; keySelector);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.Dictionary`2&lt;!!TKey, !!T&gt; ToDictionary&lt;TKey, T&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; immutableArray, class System.Func`2&lt;!!T, !!TKey&gt; keySelector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.ImmutableArrayExtensions.ToDictionary``2(System.Collections.Immutable.ImmutableArray{``1},System.Func{``1,``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.Dictionary&lt;TKey,T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TKey" />
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="immutableArray" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;" RefType="this" />
+        <Parameter Name="keySelector" Type="System.Func&lt;T,TKey&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TKey">キーの型。</typeparam>
+        <typeparam name="T">コレクションに含まれる要素の型。</typeparam>
+        <param name="immutableArray">ディクショナリの作成元となる配列。</param>
+        <param name="keySelector">キー セレクター。</param>
+        <summary>  
+  
+ この配列の内容に基づいてディクショナリを作成します。</summary>
+        <returns>新しく初期化されたディクショナリ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToDictionary&lt;TKey,T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.Dictionary&lt;TKey,T&gt; ToDictionary&lt;TKey,T&gt; (this System.Collections.Immutable.ImmutableArray&lt;T&gt; immutableArray, Func&lt;T,TKey&gt; keySelector, System.Collections.Generic.IEqualityComparer&lt;TKey&gt; comparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.Dictionary`2&lt;!!TKey, !!T&gt; ToDictionary&lt;TKey, T&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; immutableArray, class System.Func`2&lt;!!T, !!TKey&gt; keySelector, class System.Collections.Generic.IEqualityComparer`1&lt;!!TKey&gt; comparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.ImmutableArrayExtensions.ToDictionary``2(System.Collections.Immutable.ImmutableArray{``1},System.Func{``1,``0},System.Collections.Generic.IEqualityComparer{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.Dictionary&lt;TKey,T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TKey" />
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="immutableArray" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;" RefType="this" />
+        <Parameter Name="keySelector" Type="System.Func&lt;T,TKey&gt;" />
+        <Parameter Name="comparer" Type="System.Collections.Generic.IEqualityComparer&lt;TKey&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TKey">キーの型。</typeparam>
+        <typeparam name="T">コレクションに含まれる要素の型。</typeparam>
+        <param name="immutableArray">ディクショナリの作成元となる配列。</param>
+        <param name="keySelector">キー セレクター。</param>
+        <param name="comparer">ディクショナリの初期化に使用する比較子。</param>
+        <summary>  
+  
+ この配列の内容に基づいてディクショナリを作成します。</summary>
+        <returns>新しく初期化されたディクショナリ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToDictionary&lt;TKey,TElement,T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.Dictionary&lt;TKey,TElement&gt; ToDictionary&lt;TKey,TElement,T&gt; (this System.Collections.Immutable.ImmutableArray&lt;T&gt; immutableArray, Func&lt;T,TKey&gt; keySelector, Func&lt;T,TElement&gt; elementSelector);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.Dictionary`2&lt;!!TKey, !!TElement&gt; ToDictionary&lt;TKey, TElement, T&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; immutableArray, class System.Func`2&lt;!!T, !!TKey&gt; keySelector, class System.Func`2&lt;!!T, !!TElement&gt; elementSelector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.ImmutableArrayExtensions.ToDictionary``3(System.Collections.Immutable.ImmutableArray{``2},System.Func{``2,``0},System.Func{``2,``1})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.Dictionary&lt;TKey,TElement&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TKey" />
+        <TypeParameter Name="TElement" />
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="immutableArray" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;" RefType="this" />
+        <Parameter Name="keySelector" Type="System.Func&lt;T,TKey&gt;" />
+        <Parameter Name="elementSelector" Type="System.Func&lt;T,TElement&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TKey">キーの型。</typeparam>
+        <typeparam name="TElement">要素の型。</typeparam>
+        <typeparam name="T">コレクションに含まれる要素の型。</typeparam>
+        <param name="immutableArray">ディクショナリの作成元となる配列。</param>
+        <param name="keySelector">キー セレクター。</param>
+        <param name="elementSelector">要素セレクター。</param>
+        <summary>  
+  
+ この配列の内容に基づいてディクショナリを作成します。</summary>
+        <returns>新しく初期化されたディクショナリ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToDictionary&lt;TKey,TElement,T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.Dictionary&lt;TKey,TElement&gt; ToDictionary&lt;TKey,TElement,T&gt; (this System.Collections.Immutable.ImmutableArray&lt;T&gt; immutableArray, Func&lt;T,TKey&gt; keySelector, Func&lt;T,TElement&gt; elementSelector, System.Collections.Generic.IEqualityComparer&lt;TKey&gt; comparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.Dictionary`2&lt;!!TKey, !!TElement&gt; ToDictionary&lt;TKey, TElement, T&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; immutableArray, class System.Func`2&lt;!!T, !!TKey&gt; keySelector, class System.Func`2&lt;!!T, !!TElement&gt; elementSelector, class System.Collections.Generic.IEqualityComparer`1&lt;!!TKey&gt; comparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.ImmutableArrayExtensions.ToDictionary``3(System.Collections.Immutable.ImmutableArray{``2},System.Func{``2,``0},System.Func{``2,``1},System.Collections.Generic.IEqualityComparer{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.Dictionary&lt;TKey,TElement&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TKey" />
+        <TypeParameter Name="TElement" />
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="immutableArray" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;" RefType="this" />
+        <Parameter Name="keySelector" Type="System.Func&lt;T,TKey&gt;" />
+        <Parameter Name="elementSelector" Type="System.Func&lt;T,TElement&gt;" />
+        <Parameter Name="comparer" Type="System.Collections.Generic.IEqualityComparer&lt;TKey&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TKey">キーの型。</typeparam>
+        <typeparam name="TElement">要素の型。</typeparam>
+        <typeparam name="T">コレクションに含まれる要素の型。</typeparam>
+        <param name="immutableArray">ディクショナリの作成元となる配列。</param>
+        <param name="keySelector">キー セレクター。</param>
+        <param name="elementSelector">要素セレクター。</param>
+        <param name="comparer">ディクショナリの初期化に使用する比較子。</param>
+        <summary>  
+  
+ この配列の内容に基づいてディクショナリを作成します。</summary>
+        <returns>新しく初期化されたディクショナリ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Where&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEnumerable&lt;T&gt; Where&lt;T&gt; (this System.Collections.Immutable.ImmutableArray&lt;T&gt; immutableArray, Func&lt;T,bool&gt; predicate);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IEnumerable`1&lt;!!T&gt; Where&lt;T&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; immutableArray, class System.Func`2&lt;!!T, bool&gt; predicate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.ImmutableArrayExtensions.Where``1(System.Collections.Immutable.ImmutableArray{``0},System.Func{``0,System.Boolean})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="immutableArray" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;" RefType="this" />
+        <Parameter Name="predicate" Type="System.Func&lt;T,System.Boolean&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">コレクションに含まれる要素の型。</typeparam>
+        <param name="immutableArray">フィルター処理する配列。</param>
+        <param name="predicate">配列の内容をフィルター処理するために使用する条件。</param>
+        <summary>  
+  
+ 述語に基づいて値のシーケンスをフィルター処理します。</summary>
+        <returns>条件を満たす要素を格納する <see cref="T:System.Collections.Generic.IEnumerable`1" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

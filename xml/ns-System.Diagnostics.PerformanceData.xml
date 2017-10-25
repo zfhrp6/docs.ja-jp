@@ -1,0 +1,243 @@
+<Namespace Name="System.Diagnostics.PerformanceData">
+  <Docs>
+    <summary>この名前空間のクラスを使用すると、カウンター データを提供します。 カウンターは、パフォーマンス モニターなどのコンシューマーにパフォーマンス メトリックを公開に使用されます。 名前空間には、カウンター データを使用するためのクラスは含まれません。 パフォーマンス カウンター アーキテクチャの詳細については、次を参照してください。<see href="https://msdn.microsoft.com/en-us/library/windows/desktop/aa373083\(v=vs.85\">パフォーマンス カウンター</see>.aspx)。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この名前空間のクラスは、Windows Vista で導入されたパフォーマンス カウンターの新しいアーキテクチャ (version 2.0) をサポートします。 新しいアーキテクチャでは、プロバイダーは、直接、コンシューマーの要求に応答しなくが、代わりに、カウンター データを保持するだけにします。 システムでは、プロバイダーは、カウンター セットのインスタンスを作成するときに、プロバイダーのプロセスにスレッドを挿入します。スレッドは、コンシューマーの要求を処理します。  
+  
+ 次の手順では、カウンターのプロバイダーを作成する手順を示します。  
+  
+1.  プロバイダーが提供するカウンターは、XML ベースのマニフェストで定義されます。 カウンターは、カウンター セットを論理的にグループ化されます。 カウンター セット内のカウンターは、カウンター セット内で一意の数値識別子によって識別されます。 プロバイダーは、1 つまたは複数のカウンター セットを定義できます。 カウンター セットは、プロバイダーに一意の Guid によって識別されます。 場合は、プロバイダーを作成するこれらのクラスを使用することに注意してください。  
+  
+    -   プロバイダー要素のコールバック属性は無視されます。  
+  
+    -   参照 counterAttribute 要素の name 属性の値は無視されます。  
+  
+     マニフェストの作成方法の詳細については、「[パフォーマンス カウンター スキーマ](https://msdn.microsoft.com/en-us/library/windows/desktop/aa373092\(v=vs.85\).aspx)です。  
+  
+2.  使用して、マニフェストを作成した後、 [CTRPP](https://msdn.microsoft.com/en-us/library/windows/desktop/aa372128\(v=vs.85\).aspx)マニフェスト (ctrpp provider.man) をコンパイルするツールです。 このツールは、4 つのファイルを生成: .h、.c、.rc、および * _r.h です。 .H および .c ファイルを無視することができます。 .Rc ファイルには、マニフェストで定義されているローカライズされた文字列が含まれています。 .Rc、*_r.h ファイルを使用するには、プロジェクトに含めることのコンパイル済みのリソース ファイル (.res) を作成します。 次の呼び出しは、リソース ファイルをコンパイルする方法を示しています。  
+  
+    ```  
+    rc /r /i "c:\Program Files\Microsoft SDKs\Windows\v6.0\Include" provider.rc  
+    ```  
+  
+     Sal.h を参照するエラーが発生した場合は、Microsoft Visual Studio から sal.h ファイルをコピー、Visual C のインクルード ディレクトリ/i スイッチを指定するディレクトリをします。  
+  
+     プロジェクトのアプリケーションのプロパティ ページには、コンパイル済みのリソース ファイル (.res) へのパスを追加します。  
+  
+3.  プロバイダーを記述します。 次の手順では、プロバイダーによって行われた呼び出しを示しています。  
+  
+    1.  呼び出す、<xref:System.Diagnostics.PerformanceData.CounterSet.%23ctor%2A?displayProperty=nameWithType>コンス トラクターをカウンター セットを定義します。 マニフェストで定義されている各カウンターには、このメソッドを呼び出します。  
+  
+    2.  各カウンター セットのいずれかを呼び出して、<xref:System.Diagnostics.PerformanceData.CounterSet.AddCounter%2A?displayProperty=nameWithType>セットにカウンターを追加する方法です。 カウンター セットで定義されている各カウンターには、このメソッドを呼び出します。  
+  
+    3.  呼び出す、<xref:System.Diagnostics.PerformanceData.CounterSet.CreateCounterSetInstance%2A?displayProperty=nameWithType>メソッド (インスタンスには、カウンター データが含まれています)、カウンター セットのインスタンスを作成します。 1 つのインスタンスのカウンター セットは、1 回このメソッドを呼び出します。 複数のインスタンスのカウンター セットの対象のカウンター データ (各インスタンスの一意の名前を使用) を提供する必要があります。 各インスタンスに対して、このメソッドを呼び出します。  
+  
+    4.  使用して、<xref:System.Diagnostics.PerformanceData.CounterSetInstance.Counters%2A?displayProperty=nameWithType>プロパティにアクセスして、カウンターのカウンター データを設定します。  
+  
+4.  完了したら、プロバイダーは、コンピューターのカウンターを登録するのに LodCtr ツールを使用します。 次に例を示します。  
+  
+    ```  
+    lodctr /m:provider.man  
+    ```  
+  
+     この例では、マニフェストと実行可能ファイルは、現在のディレクトリにします。 使用して、LodCtr 完全な詳細については、「 [Microsoft Technet](Http://Go.Microsoft.Com/FWLink/?LinkId=84000)です。  
+  
+ Windows Vista およびそれ以降のオペレーティング システムを実行するコンピューターでこの名前空間のクラスを使用することができます。  
+  
+   
+  
+## Examples  
+ 単純なマニフェストを次に示します。  
+  
+```  
+<!-- <?xml version="1.0" encoding="UTF-16"?> -->  
+<instrumentationManifest xsi:schemaLocation="http://schemas.microsoft.com/win/2004/08/events eventman.xsd"   
+     xmlns:win="http://manifests.microsoft.com/win/2004/08/windows/events"   
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
+     xmlns:xs="http://www.w3.org/2001/XMLSchema"   
+     xmlns:trace=http://schemas.microsoft.com/win/2004/08/events/trace>  
+  
+    <instrumentation>  
+  
+        <counters xmlns=http://schemas.microsoft.com/win/2005/12/counters>  
+  
+            <provider  
+              applicationIdentity = "provider1.exe"  
+              providerType = "userMode"  
+              providerGuid = "{51D1685C-35ED-45be-99FE-17261A4F27F3}">  
+  
+               <counterSet guid = "{582803C9-AACD-45e5-8C30-571141A22092}"  
+                  uri = "Microsoft.Windows.System.PerfCounters.Typing"  
+                  name = "$(string.CounterSet1.Name)"   
+                  description = "$(string.CounterSet1.Description)"   
+                  instances = "single">  
+  
+                    <counter id = "1"  
+                      uri = "Microsoft.Windows.System.PerfCounters.Typing.TotalWords"  
+                      name = "$(string.CS1.Counter1.Name)"  
+                      description = "$(string.CS1.Counter1.Description)"  
+                      type = "perf_counter_rawcount"  
+                      detailLevel = "standard"/>  
+  
+                    <counter id = "2"  
+                      uri = "Microsoft.Windows.System.PerfCounters.Typing.WordsInInterval"  
+                      name = "$(string.CS1.Counter2.Name)"  
+                      description = "$(string.CS1.Counter2.Description)"  
+                      type = "perf_counter_delta"  
+                      detailLevel = "standard"/>  
+  
+                    <counter id = "3"  
+                      uri = "Microsoft.Windows.System.PerfCounters.Typing.LetterAPressed"  
+                      name = "$(string.CS1.Counter3.Name)"  
+                      description = "$(string.CS1.Counter3.Description)"  
+                      type = "perf_counter_rawcount"  
+                      detailLevel = "standard"/>  
+  
+                    <counter id = "4"  
+                      uri = "Microsoft.Windows.System.PerfCounters.Typing.WordsContainingLetterA"  
+                      name = "$(string.CS1.Counter4.Name)"   
+                      description = "$(string.CS1.Counter4.Description)"   
+                      type = "perf_counter_rawcount"  
+                      detailLevel = "standard"/>  
+  
+                    <counter id = "5"  
+                      uri = "Microsoft.Windows.System.PerfCounters.Typing.PercentOfWordsContainingLetterA"  
+                      name = "$(string.CS1.Counter5.Name)"   
+                      description = "$(string.CS1.Counter5.Description)"   
+                      type = "perf_sample_fraction"  
+                      baseID = "6"  
+                      detailLevel = "standard">  
+                      <counterAttributes>  
+                          <counterAttribute name = "displayAsReal" />  
+                      </counterAttributes>  
+                    </counter>  
+  
+                    <counter id = "6"  
+                      uri = "Microsoft.Windows.System.PerfCounters.Typing.PercentBase"  
+                      type = "perf_sample_base"  
+                      detailLevel = "standard">  
+                      <counterAttributes>  
+                          <counterAttribute name = "noDisplay" />  
+                      </counterAttributes>  
+                    </counter>  
+  
+                </counterSet>  
+            </provider>  
+        </counters>  
+    </instrumentation>  
+  
+    <localization>  
+        <resources culture="en-US">  
+            <stringTable>  
+  
+                <string id="CounterSet1.Name" value="Typing"/>  
+                <string id="CounterSet1.Description" value="Captures simple typing metrics."/>  
+                <string id="CS1.Counter1.Name" value="Total Words Typed"/>   
+                <string id="CS1.Counter1.Description" value="The total number of words typed."/>  
+                <string id="CS1.Counter2.Name" value="Words Typed In Interval"/>   
+                <string id="CS1.Counter2.Description" value="The total number of words typed in the interval."/>  
+                <string id="CS1.Counter3.Name" value="Letter A Pressed"/>   
+                <string id="CS1.Counter3.Description" value="The number of times that the letter A is pressed."/>  
+                <string id="CS1.Counter4.Name" value="Words Containing A"/>   
+                <string id="CS1.Counter4.Description" value="The number of words that contain the letter A."/>  
+                <string id="CS1.Counter5.Name" value="Percent of Words Containing A"/>   
+                <string id="CS1.Counter5.Description" value="The percent of words that contain the letter A in the last interval."/>  
+  
+            </stringTable>  
+        </resources>  
+    </localization>  
+</instrumentationManifest>  
+```  
+  
+ マニフェストの簡単なプロバイダーの実装を次に示します。  
+  
+```  
+using System.Diagnostics.PerformanceData;  
+  
+        private static Guid providerId = new Guid("{51D1685C-35ED-45be-99FE-17261A4F27F3}");  
+        private static Guid typingCounterSetId = new Guid("{582803C9-AACD-45e5-8C30-571141A22092}");  
+  
+        private static CounterSet typingCounterSet;         // Defines the counter set  
+        private static CounterSetInstance typingCsInstance; // Instance of the counter set  
+  
+        private static int numberOfLetterAInWord = 0;  
+  
+        . . .  
+  
+            // Create the 'Typing' counter set.  
+            typingCounterSet = new CounterSet(providerId, typingCounterSetId, CounterSetInstanceType.Single);  
+  
+            // Add the counters to the counter set definition.  
+            typingCounterSet.AddCounter(1, CounterType.RawData32, "Total Word Count");  
+            typingCounterSet.AddCounter(2, CounterType.Delta32, "Words Typed In Interval");  
+            typingCounterSet.AddCounter(3, CounterType.RawData32, "A Key Pressed");  
+            typingCounterSet.AddCounter(4, CounterType.RawData32, "Words Containing A");  
+            typingCounterSet.AddCounter(5, CounterType.SampleFraction, "Percent of Words Containg A");  
+            typingCounterSet.AddCounter(6, CounterType.SampleBase, "Percent Base");  
+  
+            // Create an instance of the counter set (contains the counter data).  
+            typingCsInstance = typingCounterSet.CreateCounterSetInstance("Typing Instance");  
+            typingCsInstance.Counters[1].Value = 0;  
+            typingCsInstance.Counters[2].Value = 0;  
+            typingCsInstance.Counters[3].Value = 0;  
+            typingCsInstance.Counters[4].Value = 0;  
+            typingCsInstance.Counters[5].Value = 0;  
+            typingCsInstance.Counters[6].Value = 0;  
+  
+        . . .  
+  
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)  
+        {  
+            typingCounterSet.Dispose();  
+        }  
+  
+        // Simple effort to capture letter A key press and words typed.  
+        private void textInput_KeyDown(object sender, KeyEventArgs e)  
+        {  
+            Keys keyData = e.KeyData;  
+  
+            switch (e.KeyData)  
+            {  
+                case Keys.A :  
+                    // In the .NET 3.5 Framework, you had to use the  
+                    // Value property to set and increment the counter   
+                    // value. Beginning with the .NET 4.0 Framework,   
+                    // the Value property is safe to use in a multi-  
+                    // threaded application.  
+                    typingCsInstance.Counters["A Key Pressed"].Value++;  
+                    numberOfLetterAInWord++;  
+  
+                    break;  
+  
+                case Keys.Enter:  
+                case Keys.Space:  
+                case Keys.Tab:  
+  
+                    if (numberOfLetterAInWord > 0)  
+                    {  
+                        // Beginning with the .NET 4.0 Framework, you   
+                        // can use the Increment method to increment   
+                        // the counter value by 1. The Increment method   
+                        // is safe to use in a multi-threaded   
+                        // application.  
+                        typingCsInstance.Counters["Words Containing A"].Increment();  
+                        typingCsInstance.Counters["Percent of Words Containg A"].Increment();  
+                        numberOfLetterAInWord = 0;  
+                    }  
+  
+                    typingCsInstance.Counters["Percent Base"].Increment();  
+                    typingCsInstance.Counters["Total Word Count"].Increment();  
+                    typingCsInstance.Counters["Words Typed In Interval"].Increment();  
+  
+                    break;  
+            }  
+        }  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Namespace>

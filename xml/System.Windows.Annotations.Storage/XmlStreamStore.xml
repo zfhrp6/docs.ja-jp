@@ -1,0 +1,458 @@
+<Type Name="XmlStreamStore" FullName="System.Windows.Annotations.Storage.XmlStreamStore">
+  <TypeSignature Language="C#" Value="public sealed class XmlStreamStore : System.Windows.Annotations.Storage.AnnotationStore" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed XmlStreamStore extends System.Windows.Annotations.Storage.AnnotationStore" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Annotations.Storage.XmlStreamStore" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Annotations.Storage.AnnotationStore</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ユーザーの注釈を読み書きの XML データ ストアを表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlStreamStore (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.Storage.XmlStreamStore.#ctor(System.IO.Stream)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream">ユーザーの注釈を読み書きする I/O ストリーム。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Annotations.Storage.XmlStreamStore" />クラスの指定された I/O<see cref="T:System.IO.Stream" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `stream`有効な XML では、形式に準拠している必要があります、[!INCLUDE[TLA#tla_caf](~/includes/tlasharptla-caf-md.md)]スキーマです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlStreamStore (System.IO.Stream stream, System.Collections.Generic.IDictionary&lt;Uri,System.Collections.Generic.IList&lt;Uri&gt;&gt; knownNamespaces);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream, class System.Collections.Generic.IDictionary`2&lt;class System.Uri, class System.Collections.Generic.IList`1&lt;class System.Uri&gt;&gt; knownNamespaces) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.Storage.XmlStreamStore.#ctor(System.IO.Stream,System.Collections.Generic.IDictionary{System.Uri,System.Collections.Generic.IList{System.Uri}})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="knownNamespaces" Type="System.Collections.Generic.IDictionary&lt;System.Uri,System.Collections.Generic.IList&lt;System.Uri&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="stream">ユーザーの注釈を読み書きする I/O ストリーム。</param>
+        <param name="knownNamespaces">既知の互換性のある名前空間の一覧を含むディクショナリ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Annotations.Storage.XmlStreamStore" />クラスの指定された I/O<see cref="T:System.IO.Stream" />と既知の互換性のある名前空間のディクショナリ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、<xref:System.Windows.Annotations.Storage.XmlStreamStore.%23ctor%2A>コンス トラクターは、アプリケーション固有の既知の名前空間の登録を有効にします。  
+  
+ `knownNamespace`ディクショナリは、注釈の一部としてカスタム コンテンツを保存するときに使用されるアプリケーションの名前空間を定義します。  ディクショナリのキーは、アプリケーション プログラムを既知のプライマリ名前空間です。  名前空間キーは、値は「キー」名前空間と互換性がある古い名前空間のリストに関連付けられます。  注釈にはこの一覧からすべての名前空間が読み込まれるときに「キー」名前空間で置き換えられます。  
+  
+ `stream`有効な XML では、形式に準拠している必要があります、[注釈スキーマ](~/docs/framework/wpf/advanced/annotations-schema.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stream" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Xml.XmlException">
+          <paramref name="stream" />無効な XML が含まれています。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="knownNamespaces" />辞書には、重複する名前空間が含まれています。  
+  
+ または  
+  
+ <paramref name="knownNamespaces" />ディクショナリには持つ要素が含まれています、<see langword="null" />キー。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAnnotation">
+      <MemberSignature Language="C#" Value="public override void AddAnnotation (System.Windows.Annotations.Annotation newAnnotation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void AddAnnotation(class System.Windows.Annotations.Annotation newAnnotation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.Storage.XmlStreamStore.AddAnnotation(System.Windows.Annotations.Annotation)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newAnnotation" Type="System.Windows.Annotations.Annotation" />
+      </Parameters>
+      <Docs>
+        <param name="newAnnotation">ストアに追加する注釈。</param>
+        <summary>新しい <see cref="T:System.Windows.Annotations.Annotation" /> をストアに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Windows.Annotations.Storage.XmlStreamStore.AddAnnotation%2A>が呼び出されたが、<xref:System.Windows.Annotations.Annotation.Id%2A>の<xref:System.Windows.Annotations.Annotation>かがチェックするかどうか、<xref:System.Windows.Annotations.Annotation>既にストアに追加されています。  場合、<xref:System.Windows.Annotations.Annotation>既にが追加されており、ストアでは、<xref:System.ArgumentException>エラーがスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="newAnnotation" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.Windows.Annotations.Annotation" />同じ<see cref="P:System.Windows.Annotations.Annotation.Id" />ストアに既に存在します。</exception>
+        <exception cref="T:System.InvalidOperationException">I/O<see cref="T:System.IO.Stream" />ストアが設定されていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">
+          <see cref="Overload:System.Windows.Annotations.Storage.AnnotationStore.Dispose" /> はストアに呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoFlush">
+      <MemberSignature Language="C#" Value="public override bool AutoFlush { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoFlush" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Annotations.Storage.XmlStreamStore.AutoFlush" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>注釈バッファー内のデータが物理データ ストアにすぐに書き込まれるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          注釈バッファー内のデータを操作のたびに、すぐに物理データ ストアに書き込む場合は <see langword="true" />。アプリケーションが明示的に <see cref="M:System.Windows.Annotations.Storage.XmlStreamStore.Flush" /> を呼び出したときに注釈バッファー内のデータを書き込む場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteAnnotation">
+      <MemberSignature Language="C#" Value="public override System.Windows.Annotations.Annotation DeleteAnnotation (Guid annotationId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Windows.Annotations.Annotation DeleteAnnotation(valuetype System.Guid annotationId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.Storage.XmlStreamStore.DeleteAnnotation(System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Annotations.Annotation</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="annotationId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="annotationId">[!INCLUDE[TLA#tla_guid](~/includes/tlasharptla-guid-md.md)] <see cref="P:System.Windows.Annotations.Annotation.Id" />削除する注釈のプロパティです。</param>
+        <summary>指定された <see cref="P:System.Windows.Annotations.Annotation.Id" /> を持つ注釈をストアから削除します。</summary>
+        <returns>削除された注釈。指定した <paramref name="annotationId" /> を持つ注釈がストア内で見つからなかった場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、使用、<xref:System.Windows.Annotations.Storage.XmlStreamStore.DeleteAnnotation%2A>と<xref:System.Windows.Annotations.Storage.XmlStreamStore.Flush%2A>メソッドです。  
+  
+ [!code-csharp[DocumentSerialize#DocSerDelete](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docserdelete)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">
+          <see cref="Overload:System.Windows.Annotations.Storage.AnnotationStore.Dispose" /> はストアに呼び出されました。</exception>
+        <exception cref="T:System.InvalidOperationException">I/O<see cref="T:System.IO.Stream" />ストアが設定されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.Storage.XmlStreamStore.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Flush">
+      <MemberSignature Language="C#" Value="public override void Flush ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Flush() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.Storage.XmlStreamStore.Flush" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>内部バッファーで保持されている注釈データが、強制的に基になるストレージ デバイスに書き込まれるようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Annotations.Storage.XmlStreamStore.Flush%2A>メソッドは、アプリケーションを閉じると、<xref:System.Windows.Annotations.AnnotationService>です。  
+  
+ [!code-csharp[DocViewerAnnotationsXps#StopAnnotations](~/samples/snippets/csharp/VS_Snippets_Wpf/DocViewerAnnotationsXps/CSharp/AnnotationsHelperXps.cs#stopannotations)]
+ [!code-vb[DocViewerAnnotationsXps#StopAnnotations](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DocViewerAnnotationsXps/visualbasic/annotationshelperxps.vb#stopannotations)]  
+  
+ 次の例では、使用、<xref:System.Windows.Annotations.Storage.XmlStreamStore.DeleteAnnotation%2A>と<xref:System.Windows.Annotations.Storage.XmlStreamStore.Flush%2A>メソッドです。  
+  
+ [!code-csharp[DocumentSerialize#DocSerDelete](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docserdelete)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">
+          <see cref="Overload:System.Windows.Annotations.Storage.AnnotationStore.Dispose" /> はストアに呼び出されました。</exception>
+        <exception cref="T:System.InvalidOperationException">I/O<see cref="T:System.IO.Stream" />ストアが設定されていません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">ストア I/O<see cref="T:System.IO.Stream" />は読み取り専用と出力ではアクセスできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAnnotation">
+      <MemberSignature Language="C#" Value="public override System.Windows.Annotations.Annotation GetAnnotation (Guid annotationId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Windows.Annotations.Annotation GetAnnotation(valuetype System.Guid annotationId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.Storage.XmlStreamStore.GetAnnotation(System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Annotations.Annotation</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="annotationId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="annotationId">[!INCLUDE[TLA#tla_guid](~/includes/tlasharptla-guid-md.md)] <see cref="P:System.Windows.Annotations.Annotation.Id" />返される注釈のプロパティです。</param>
+        <summary>指定された <see cref="P:System.Windows.Annotations.Annotation.Id" /> を持つ注釈をストアから返します。</summary>
+        <returns>注釈を指定された<paramref name="annotationId" />、それ以外の<see langword="null" />場合に、指定した注釈<paramref name="annotationId" />がストアで見つかりませんでした。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">
+          <see cref="Overload:System.Windows.Annotations.Storage.AnnotationStore.Dispose" /> はストアに呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetAnnotations">
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>ストア内のすべての注釈の一覧を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Annotations.Storage.XmlStreamStore.GetAnnotations%2A>ストアに格納されているすべての注釈があるかどうかを調べます。  
+  
+ [!code-csharp[DocumentSerialize#DocSerCloseFile](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docserclosefile)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetAnnotations">
+      <MemberSignature Language="C#" Value="public override System.Collections.Generic.IList&lt;System.Windows.Annotations.Annotation&gt; GetAnnotations ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.Generic.IList`1&lt;class System.Windows.Annotations.Annotation&gt; GetAnnotations() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.Storage.XmlStreamStore.GetAnnotations" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Windows.Annotations.Annotation&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ストア内のすべての注釈の一覧を返します。</summary>
+        <returns>現在、ストア内にあるすべての注釈の一覧。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Annotations.Storage.XmlStreamStore.GetAnnotations%2A>メソッドは返されません`null`; が、一覧をストアに注釈が含まれていない場合は空にすることがあります。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Annotations.Storage.XmlStreamStore.GetAnnotations%2A>ストア内の任意の注釈があるかどうかを調べます。  
+  
+ [!code-csharp[DocumentSerialize#DocSerCloseFile](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docserclosefile)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">
+          <see cref="Overload:System.Windows.Annotations.Storage.AnnotationStore.Dispose" /> はストアに呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAnnotations">
+      <MemberSignature Language="C#" Value="public override System.Collections.Generic.IList&lt;System.Windows.Annotations.Annotation&gt; GetAnnotations (System.Windows.Annotations.ContentLocator anchorLocator);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.Generic.IList`1&lt;class System.Windows.Annotations.Annotation&gt; GetAnnotations(class System.Windows.Annotations.ContentLocator anchorLocator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.Storage.XmlStreamStore.GetAnnotations(System.Windows.Annotations.ContentLocator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Windows.Annotations.Annotation&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="anchorLocator" Type="System.Windows.Annotations.ContentLocator" />
+      </Parameters>
+      <Docs>
+        <param name="anchorLocator">一致する注釈を返す、先頭の <see cref="T:System.Windows.Annotations.ContentLocatorPart" /> のシーケンス。</param>
+        <summary>一致する <see cref="T:System.Windows.Annotations.ContentLocatorPart" /> シーケンスで開始するロケーターを含む <see cref="P:System.Windows.Annotations.Annotation.Anchors" /> を持つ注釈の一覧を返します。</summary>
+        <returns>指定した <paramref name="anchorLocator" /> で始まり、かつ一致するロケーターを含む <see cref="P:System.Windows.Annotations.Annotation.Anchors" /> を持つ注釈の一覧。一致する注釈が見つからなかった場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、<xref:System.Windows.Annotations.Storage.XmlStreamStore.GetAnnotations%2A>メソッドは内部的に使用して、<xref:System.Windows.Annotations.ContentLocator.StartsWith%2A>のメソッド、<xref:System.Windows.Annotations.ContentLocator>クラスを検索し、返される注釈と一致します。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Annotations.Storage.XmlStreamStore.GetAnnotations%2A>ストア内の任意の注釈があるかどうかを調べます。  
+  
+ [!code-csharp[DocumentSerialize#DocSerCloseFile](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docserclosefile)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetWellKnownCompatibleNamespaces">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IList&lt;Uri&gt; GetWellKnownCompatibleNamespaces (Uri name);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IList`1&lt;class System.Uri&gt; GetWellKnownCompatibleNamespaces(class System.Uri name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.Storage.XmlStreamStore.GetWellKnownCompatibleNamespaces(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Uri&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前空間の一覧を返す URI の開始シーケンス。</param>
+        <summary>入力の名前空間と互換性のある名前空間の一覧を返します。</summary>
+        <returns>一致する互換性のある名前空間の一覧<paramref name="name" />、それ以外の<see langword="null" />互換性のある名前空間がないかどうか。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `name`パラメーターは、定義済みに対してのみは機能[!INCLUDE[TLA#tla_caf](~/includes/tlasharptla-caf-md.md)]名前空間。  指定された別の名前空間の`name`パラメーター<xref:System.Windows.Annotations.Storage.XmlStreamStore.GetWellKnownCompatibleNamespaces%2A>戻ります`null`、を介して登録されたでもそれらの名前空間、`knownNamespaces`のパラメーター、<xref:System.Windows.Annotations.Storage.XmlStreamStore.%23ctor%2A>コンス トラクター。  
+  
+ 名前空間で定義済みの[!INCLUDE[TLA2#tla_caf](~/includes/tla2sharptla-caf-md.md)]次のとおりです。  
+  
+-   http://schemas.microsoft.com/windows/annotations/2003/11/core  
+  
+-   http://schemas.microsoft.com/windows/annotations/2003/11/base  
+  
+-   http://schemas.microsoft.com/winfx/2006/xaml/presentation  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoredNamespaces">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;Uri&gt; IgnoredNamespaces { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;class System.Uri&gt; IgnoredNamespaces" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Annotations.Storage.XmlStreamStore.IgnoredNamespaces" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Uri&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML ストリームの読み込み時に無視された名前空間の一覧を取得します。</summary>
+        <value>XML ストリームの読み込み時に無視された名前空間の一覧。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Annotations.Storage.XmlStreamStore.IgnoredNamespaces%2A>プロパティは返されません`null`、返された一覧を名前空間が無視されることはない場合は空にすることができます。  
+  
+ <xref:System.Windows.Annotations.Storage.XmlStreamStore.IgnoredNamespaces%2A>XML マークアップの互換性、プログラムの別のバージョンで作成された注釈のコンテンツを読み取るときに役立ちます、[!INCLUDE[TLA#tla_caf](~/includes/tlasharptla-caf-md.md)]です。  古いアプリケーションでの新しいバージョンを使用して作成された注釈のコンテンツを指定するときに、 [!INCLUDE[TLA2#tla_caf](~/includes/tla2sharptla-caf-md.md)]、<xref:System.Windows.Annotations.Storage.XmlStreamStore.IgnoredNamespaces%2A>要素と属性で認識されないため、古いフレームワーク用の XML 名前空間の一覧を返します。  注釈のコンテンツが読み取られ、以前のバージョンのアプリケーションによって逆シリアル化時に不明な XML 要素と新しい名前空間に関連付けられた属性は無視されます。  詳細については、次を参照してください。、 *XML マークアップ互換性仕様*いただけます[http://go.microsoft.com/fwlink/?LinkId=73824](http://go.microsoft.com/fwlink/?LinkId=73824)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStoreContentChanged">
+      <MemberSignature Language="C#" Value="protected override void OnStoreContentChanged (System.Windows.Annotations.Storage.StoreContentChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnStoreContentChanged(class System.Windows.Annotations.Storage.StoreContentChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.Storage.XmlStreamStore.OnStoreContentChanged(System.Windows.Annotations.Storage.StoreContentChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Annotations.Storage.StoreContentChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WellKnownNamespaces">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IList&lt;Uri&gt; WellKnownNamespaces { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Collections.Generic.IList`1&lt;class System.Uri&gt; WellKnownNamespaces" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Annotations.Storage.XmlStreamStore.WellKnownNamespaces" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Uri&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によって定義されているすべての名前空間の一覧を取得、[!INCLUDE[TLA2#tla_caf](~/includes/tla2sharptla-caf-md.md)]です。</summary>
+        <value>によって定義されている名前空間の一覧、[!INCLUDE[TLA#tla_caf](~/includes/tlasharptla-caf-md.md)]です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前空間で定義済みの[!INCLUDE[TLA2#tla_caf](~/includes/tla2sharptla-caf-md.md)]次のとおりです。  
+  
+-   http://schemas.microsoft.com/windows/annotations/2003/11/core  
+  
+-   http://schemas.microsoft.com/windows/annotations/2003/11/base  
+  
+-   http://schemas.microsoft.com/winfx/2006/xaml/presentation  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

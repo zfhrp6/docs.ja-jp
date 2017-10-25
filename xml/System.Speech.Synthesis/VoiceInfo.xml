@@ -1,0 +1,323 @@
+<Type Name="VoiceInfo" FullName="System.Speech.Synthesis.VoiceInfo">
+  <TypeSignature Language="C#" Value="public class VoiceInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit VoiceInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Synthesis.VoiceInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("{(_name != null ? "'" + _name + "' " : "") +  (_culture != null ? " '" + _culture.ToString () + "' " : "") + (_gender != VoiceGender.NotSet ? " '" + _gender.ToString () + "' " : "") + (_age != VoiceAge.NotSet ? " '" + _age.ToString () + "' " : "") + (_variant &gt; 0 ? " " + _variant.ToString () : "")}")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>インストールされている音声合成エンジンを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 音声は、音声合成エンジンまたは音声合成エンジンとも呼びますがインストールされている音声合成エンジンです。 <xref:System.Speech.Synthesis.SpeechSynthesizer>オブジェクトでは、音声を使用して、テキストから音声を生成します。 プロパティ、<xref:System.Speech.Synthesis.VoiceInfo>オブジェクトが、音声を特定し、その特性を説明します。 音声の最も定義特性がその<xref:System.Speech.Synthesis.VoiceInfo.Culture%2A>声で話すことができ、1 つの言語を定義します。  
+  
+ <xref:System.Speech.Synthesis.SpeechSynthesizer.Voice%2A>プロパティから返される、<xref:System.Speech.Synthesis.VoiceInfo>オブジェクトで使用中の現在の音声に関する情報を含む、<xref:System.Speech.Synthesis.SpeechSynthesizer>です。 使用することも、<xref:System.Speech.Synthesis.VoiceInfo>によって返されるように、システムにインストールされている音声のいずれかに関する情報を取得するオブジェクト、<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices>メソッドです。 詳細については、「<xref:System.Speech.Synthesis.InstalledVoice>」を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例を初期化するコンソール アプリケーションの一部である、<xref:System.Speech.Synthesis.SpeechSynthesizer>オブジェクトおよびインストールされている音声 (音声合成エンジン) の一覧をコンソールに出力を各音声で利用可能な情報を示します。  
+  
+```csharp  
+using System;  
+using System.Speech.Synthesis;  
+using System.Speech.AudioFormat;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      using (SpeechSynthesizer synth = new SpeechSynthesizer())  
+      {  
+  
+        // Output information about all of the installed voices.   
+        Console.WriteLine("Installed voices -");  
+        foreach (InstalledVoice voice in synth.GetInstalledVoices())  
+        {  
+          VoiceInfo info = voice.VoiceInfo;  
+          string AudioFormats = "";  
+          foreach (SpeechAudioFormatInfo fmt in info.SupportedAudioFormats)  
+          {  
+            AudioFormats += String.Format("{0}\n",  
+            fmt.EncodingFormat.ToString());  
+          }  
+  
+          Console.WriteLine(" Name:          " + info.Name);  
+          Console.WriteLine(" Culture:       " + info.Culture);  
+          Console.WriteLine(" Age:           " + info.Age);  
+          Console.WriteLine(" Gender:        " + info.Gender);  
+          Console.WriteLine(" Description:   " + info.Description);  
+          Console.WriteLine(" ID:            " + info.Id);  
+          Console.WriteLine(" Enabled:       " + voice.Enabled);  
+          if (info.SupportedAudioFormats.Count != 0)  
+          {  
+            Console.WriteLine( " Audio formats: " + AudioFormats);  
+          }  
+          else  
+          {  
+            Console.WriteLine(" No supported audio formats found");  
+          }  
+  
+          string AdditionalInfo = "";  
+          foreach (string key in info.AdditionalInfo.Keys)  
+          {  
+            AdditionalInfo += String.Format("  {0}: {1}\n", key, info.AdditionalInfo[key]);  
+          }  
+  
+          Console.WriteLine(" Additional Info - " + AdditionalInfo);  
+          Console.WriteLine();  
+        }  
+      }  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AdditionalInfo">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,string&gt; AdditionalInfo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, string&gt; AdditionalInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Synthesis.VoiceInfo.AdditionalInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>音声に関する追加情報を取得します。</summary>
+        <value>説明および音声を識別する名前/値ペアのコレクションを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Age">
+      <MemberSignature Language="C#" Value="public System.Speech.Synthesis.VoiceAge Age { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Speech.Synthesis.VoiceAge Age" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Synthesis.VoiceInfo.Age" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.VoiceAge</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>音声の年齢を取得します。</summary>
+        <value>音声の年齢を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Synthesis.VoiceInfo.Age%2A>プロパティのメンバーの取得、<xref:System.Speech.Synthesis.VoiceAge>を音声の年齢を示す列挙体です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Culture">
+      <MemberSignature Language="C#" Value="public System.Globalization.CultureInfo Culture { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.CultureInfo Culture" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Synthesis.VoiceInfo.Culture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>音声のカルチャを取得します。</summary>
+        <value>返します、<see cref="T:System.Globalization.CultureInfo" />日付形式や文字列の並べ替え方法と、カルチャ、書記体系、使用する暦、名などの特定のカルチャに関する情報を提供するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.CultureInfo>クラスはカルチャごとに一意の名前を指定します。 名前は、言語に関連付けられている ISO 639 2 文字の小文字のカルチャ コードと、ISO 3166 2 文字大文字となり、国または地域に関連付けられているの組み合わせです。 カルチャ名の例にはで話さ"FR-CA"、米国、カナダで話さフランス語の場合、スペイン語の「es 英語 (米国)」が含まれます。 2 桁の数字の小文字の言語コードのみを使用して、ニュートラル カルチャを指定できます。 たとえば、"fr"、フランス語のニュートラル カルチャを指定し、"de"は、ドイツ語のニュートラル カルチャを指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public string Description { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Synthesis.VoiceInfo.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>音声の説明を取得します。</summary>
+        <value>音声の説明を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.VoiceInfo.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">指定した<see cref="T:System.Speech.Synthesis.VoiceInfo" />オブジェクト。</param>
+        <summary>指定した音声のフィールドを比較し<see cref="T:System.Speech.Synthesis.VoiceInfo" />オブジェクトを同じ値を含んでいるかどうかを判断します。</summary>
+        <returns>返します<see langword="True" />場合、2 つのフィールド<see cref="T:System.Speech.Synthesis.VoiceInfo" />オブジェクトが等しいそれ以外を返します<see langword="False" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Synthesis.VoiceInfo.Equals%2A>メソッドは、<xref:System.Object>パラメーターとして型です。 そのオブジェクトがない場合、<xref:System.Speech.Synthesis.VoiceInfo>型、メソッドを返します`False`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Gender">
+      <MemberSignature Language="C#" Value="public System.Speech.Synthesis.VoiceGender Gender { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Speech.Synthesis.VoiceGender Gender" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Synthesis.VoiceInfo.Gender" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.VoiceGender</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>音声の性別を取得します。</summary>
+        <value>音声の性別を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Synthesis.VoiceInfo.Gender%2A>プロパティのメンバーの取得、<xref:System.Speech.Synthesis.VoiceGender>を音声の性別を示す列挙体です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.VoiceInfo.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ハッシュ コードを提供する<c>VoiceInfo</c>オブジェクト。</summary>
+        <returns>現在の <see cref="T:System.Speech.Synthesis.VoiceInfo" /> オブジェクトのハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public string Id { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Id" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Synthesis.VoiceInfo.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>音声の ID を取得します。</summary>
+        <value>音声の識別子を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Synthesis.VoiceInfo.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>音声の名前を取得します。</summary>
+        <value>音声の名前を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportedAudioFormats">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Speech.AudioFormat.SpeechAudioFormatInfo&gt; SupportedAudioFormats { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Speech.AudioFormat.SpeechAudioFormatInfo&gt; SupportedAudioFormats" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Synthesis.VoiceInfo.SupportedAudioFormats" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Speech.AudioFormat.SpeechAudioFormatInfo&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>音声をサポートするオーディオ形式のコレクションを取得します。</summary>
+        <value>音声をサポートするオーディオ形式のコレクションを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

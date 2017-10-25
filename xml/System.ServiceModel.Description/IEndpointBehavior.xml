@@ -1,0 +1,257 @@
+<Type Name="IEndpointBehavior" FullName="System.ServiceModel.Description.IEndpointBehavior">
+  <TypeSignature Language="C#" Value="public interface IEndpointBehavior" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IEndpointBehavior" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Description.IEndpointBehavior" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>サービスまたはクライアント アプリケーションでエンドポイントのランタイム動作を拡張するために使用できるメソッドを実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアントまたはサービス アプリケーションのいずれかで、エンドポイント全体にわたる実行の一部の側面をアプリケーション レベルで変更、確認、または拡張するには、<xref:System.ServiceModel.Description.IEndpointBehavior> インターフェイスを実装します。  
+  
+-   <xref:System.ServiceModel.Description.IEndpointBehavior.AddBindingParameters%2A> メソッドを使用して、実行時にカスタム データを渡して、バインディングがカスタム動作をサポートできるようにします。  
+  
+-   <xref:System.ServiceModel.Description.IEndpointBehavior.ApplyClientBehavior%2A> メソッドを使用して、クライアント アプリケーションでエンドポイントを変更または確認したり、エンドポイントに拡張機能を挿入したりできます。  
+  
+-   <xref:System.ServiceModel.Description.IEndpointBehavior.ApplyDispatchBehavior%2A> メソッドを使用して、サービス アプリケーションでエンドポイント全体にわたる実行を変更または確認し、エンドポイント全体にわたる実行に拡張機能を挿入できます。  
+  
+-   <xref:System.ServiceModel.Description.IEndpointBehavior.Validate%2A> メソッドを使用して、<xref:System.ServiceModel.Description.ServiceEndpoint> が特定の要件を満たしていることを確認します。 このメソッドを使用して、エンドポイントで特定の構成設定が有効になっているかどうか、エンドポイントが特定の機能をサポートしているかどうかなどの要件を確認できます。  
+  
+ <xref:System.ServiceModel.Description.IEndpointBehavior> オブジェクトは、これらのメソッドをどれでも使用できますが、通常は、重要なメソッドは 1 つだけです。この場合、使用されないメソッドは、アクションを実行せずに戻ることができます。  
+  
+> [!NOTE]
+>  すべての <xref:System.ServiceModel.Description.IEndpointBehavior> メソッドは <xref:System.ServiceModel.Description.ServiceEndpoint> オブジェクトをパラメーターとして渡します。 このパラメーターは、検査にのみ使用されます。<xref:System.ServiceModel.Description.ServiceEndpoint> オブジェクトを変更した場合、実行の動作は未定義になります。  
+  
+ <xref:System.ServiceModel.Description.IEndpointBehavior> オブジェクトは通常、サービス アプリケーションの <xref:System.ServiceModel.Dispatcher.DispatchRuntime?displayProperty=nameWithType>、<xref:System.ServiceModel.Dispatcher.DispatchOperation?displayProperty=nameWithType>、<xref:System.ServiceModel.Dispatcher.EndpointDispatcher?displayProperty=nameWithType>、<xref:System.ServiceModel.Dispatcher.ChannelDispatcher?displayProperty=nameWithType> の各オブジェクト、および、クライアント アプリケーションの <xref:System.ServiceModel.Dispatcher.ClientRuntime?displayProperty=nameWithType> と <xref:System.ServiceModel.Dispatcher.ClientOperation?displayProperty=nameWithType> のさまざまなプロパティにアクセスするために使用します。 また、<xref:System.ServiceModel.Dispatcher.ClientRuntime.CallbackDispatchRuntime%2A?displayProperty=nameWithType> プロパティと <xref:System.ServiceModel.Dispatcher.DispatchRuntime.CallbackClientRuntime%2A?displayProperty=nameWithType> プロパティをそれぞれ使用して、双方向クライアントと双方向サービスのプロパティにアクセスすることもできます。  
+  
+ さまざまなプロパティおよび設定できるカスタマイズについては、次を参照してください。 [ServiceHost を拡張すると、サービス モデル レイヤー](~/docs/framework/wcf/extending/extending-servicehost-and-the-service-model-layer.md)です。  
+  
+ カスタマイズを設定して必要なカスタマイズ インターフェイスを実装し、<xref:System.ServiceModel.Description.IEndpointBehavior> が適切なスコープのカスタマイズであることを確認したら、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] ランタイムにカスタマイズを挿入する必要があります。これは、<xref:System.ServiceModel.Description.IEndpointBehavior> を実装し、ランタイムにエンドポイントの動作を追加することによって行います。  
+  
+ ランタイムに動作を追加するには、2 つの方法があります。  
+  
+-   サービス ホスト (サービス アプリケーションの場合) またはチャネル ファクトリ (クライアント アプリケーションの場合) を開く前に、プログラムを使用して、<xref:System.ServiceModel.Description.ServiceEndpoint.Behaviors%2A> プロパティにエンドポイントのカスタム動作を追加します。  
+  
+-   アプリケーション構成ファイルを使用して動作を構成します。 詳細については、「 [ &lt;behaviorExtensions&gt;](~/docs/framework/configure-apps/file-schema/wcf/behaviorextensions.md)です。  
+  
+ 想定されているサービス カスタマイズ タスクを実行するには、<xref:System.ServiceModel.Description.IEndpointBehavior> メソッドが <xref:System.ServiceModel.Description.ServiceEndpoint.Behaviors%2A?displayProperty=nameWithType> で呼び出されるときに行われるサービス ランタイムの構築の前に、<xref:System.ServiceModel.ICommunicationObject.Open%2A?displayProperty=nameWithType> オブジェクトを <xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType> プロパティに追加しておく必要があります。 クライアント カスタマイズ タスクを実行するには、<xref:System.ServiceModel.Description.IEndpointBehavior> で <xref:System.ServiceModel.Description.ServiceEndpoint.Behaviors%2A?displayProperty=nameWithType> メソッドまたは <xref:System.ServiceModel.ChannelFactory%601.CreateChannel%2A?displayProperty=nameWithType> メソッドを呼び出す前に、<xref:System.ServiceModel.ICommunicationObject.Open%2A?displayProperty=nameWithType> オブジェクトを <xref:System.ServiceModel.ChannelFactory%601> プロパティに追加しておく必要があります。  
+  
+   
+  
+## Examples  
+ サービス アプリケーションで <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector?displayProperty=nameWithType> オブジェクトを追加するエンドポイント動作の実装を次のコード例に示します。 この場合、`EndpointBehaviorMessageInspector` クラスは、受信および送信メッセージを調べるための <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector?displayProperty=nameWithType>、動作が適用されるすべてのエンドポイントの検査システムにインスペクター クラスを挿入するための <xref:System.ServiceModel.Description.IEndpointBehavior> インターフェイス、およびアプリケーション構成ファイルを使用してメッセージ インスペクターの動作ができるようにするための <xref:System.ServiceModel.Configuration.BehaviorExtensionElement?displayProperty=nameWithType> を実装します。  
+  
+ 最初にメッセージ インスペクターを実装します。  
+  
+ [!code-csharp[IEndpointBehavior#2](~/samples/snippets/csharp/VS_Snippets_CFX/iendpointbehavior/cs/iendpointbehaviormessageinspector.cs#2)]  
+  
+ メッセージ インスペクターを <xref:System.ServiceModel.Description.IEndpointBehavior.ApplyDispatchBehavior%2A> プロパティに追加する <xref:System.ServiceModel.Dispatcher.DispatchRuntime.MessageInspectors%2A?displayProperty=nameWithType> メソッドの使用法を次のコード例に示します。  
+  
+ [!code-csharp[IEndpointBehavior#4](~/samples/snippets/csharp/VS_Snippets_CFX/iendpointbehavior/cs/iendpointbehaviormessageinspector.cs#4)]  
+  
+ 構成ファイルからメッセージ インスペクター動作を使用できるようにするための <xref:System.ServiceModel.Configuration.BehaviorExtensionElement?displayProperty=nameWithType> の実装を次のコード例に示します。  
+  
+ [!code-csharp[IEndpointBehavior#3](~/samples/snippets/csharp/VS_Snippets_CFX/iendpointbehavior/cs/iendpointbehaviormessageinspector.cs#3)]  
+  
+ 最後に、前の例を構成から使用できるようにする方法を次の構成ファイルに示します。  
+  
+ [!code-xml[IEndpointBehavior#5](~/samples/snippets/csharp/VS_Snippets_CFX/iendpointbehavior/cs/hostapplication.exe.config#5)]   
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddBindingParameters">
+      <MemberSignature Language="C#" Value="public void AddBindingParameters (System.ServiceModel.Description.ServiceEndpoint endpoint, System.ServiceModel.Channels.BindingParameterCollection bindingParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddBindingParameters(class System.ServiceModel.Description.ServiceEndpoint endpoint, class System.ServiceModel.Channels.BindingParameterCollection bindingParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.IEndpointBehavior.AddBindingParameters(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Channels.BindingParameterCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="endpoint" Type="System.ServiceModel.Description.ServiceEndpoint" />
+        <Parameter Name="bindingParameters" Type="System.ServiceModel.Channels.BindingParameterCollection" />
+      </Parameters>
+      <Docs>
+        <param name="endpoint">変更するエンドポイント。</param>
+        <param name="bindingParameters">動作をサポートするためにバインド要素が要求するオブジェクト。</param>
+        <summary>実行時にバインディングにデータを渡して、バインディングがカスタム動作をサポートできるようにするために実装します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エンドポイントの動作をサポートするために必要な追加のオブジェクトをバインディング要素に提供するには、<xref:System.ServiceModel.Description.IEndpointBehavior.AddBindingParameters%2A> メソッドを実装します。 これによってバインディング パラメーターが追加されると、チャネル リスナーまたはチャネル ファクトリが作成された場合に、バインディングがこれらのオブジェクトを検索できます。 <xref:System.ServiceModel.Description.IEndpointBehavior.AddBindingParameters%2A> メソッドは通常、サポートするチャネルを正しく作成できるように、カスタム バインディング要素にエンドポイントに関する情報を渡すために実装します。 変更の必要がない場合は、値を返しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyClientBehavior">
+      <MemberSignature Language="C#" Value="public void ApplyClientBehavior (System.ServiceModel.Description.ServiceEndpoint endpoint, System.ServiceModel.Dispatcher.ClientRuntime clientRuntime);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ApplyClientBehavior(class System.ServiceModel.Description.ServiceEndpoint endpoint, class System.ServiceModel.Dispatcher.ClientRuntime clientRuntime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.IEndpointBehavior.ApplyClientBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.ClientRuntime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="endpoint" Type="System.ServiceModel.Description.ServiceEndpoint" />
+        <Parameter Name="clientRuntime" Type="System.ServiceModel.Dispatcher.ClientRuntime" />
+      </Parameters>
+      <Docs>
+        <param name="endpoint">カスタマイズ対象のエンドポイント。</param>
+        <param name="clientRuntime">カスタマイズ対象のクライアント ランタイム。</param>
+        <summary>エンドポイント全体にわたってクライアントの変更または拡張を実装します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エンドポイントで使用されるすべてのメッセージまたは特定の操作について、クライアント ランタイムを表示または変更したり、クライアント ランタイムにカスタム拡張機能を追加したりするには、<xref:System.ServiceModel.Description.IEndpointBehavior.ApplyClientBehavior%2A> メソッドを実装します。 クライアントのランタイム オブジェクトで実行できるカスタマイズの詳細については、<xref:System.ServiceModel.Dispatcher.ClientRuntime> および <xref:System.ServiceModel.Dispatcher.ClientOperation> を参照してください。  
+  
+ 動作をサービス アプリケーションでのみ使用する場合は、<xref:System.ServiceModel.Description.IEndpointBehavior.ApplyClientBehavior%2A> メソッドで <xref:System.NotImplementedException> をスローさせることをお勧めします。  
+  
+ 既に他の動作によって一部の操作が追加されるか、ランタイムから削除されている可能性があるので、<xref:System.ServiceModel.Dispatcher.DispatchOperation> プロパティにある <xref:System.ServiceModel.Dispatcher.DispatchRuntime.Operations%2A> オブジェクトと同じ数の操作が説明に存在するという保証はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyDispatchBehavior">
+      <MemberSignature Language="C#" Value="public void ApplyDispatchBehavior (System.ServiceModel.Description.ServiceEndpoint endpoint, System.ServiceModel.Dispatcher.EndpointDispatcher endpointDispatcher);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ApplyDispatchBehavior(class System.ServiceModel.Description.ServiceEndpoint endpoint, class System.ServiceModel.Dispatcher.EndpointDispatcher endpointDispatcher) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.IEndpointBehavior.ApplyDispatchBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.EndpointDispatcher)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="endpoint" Type="System.ServiceModel.Description.ServiceEndpoint" />
+        <Parameter Name="endpointDispatcher" Type="System.ServiceModel.Dispatcher.EndpointDispatcher" />
+      </Parameters>
+      <Docs>
+        <param name="endpoint">コントラクトを公開するエンドポイント。</param>
+        <param name="endpointDispatcher">変更または拡張対象のエンドポイント ディスパッチャー。</param>
+        <summary>エンドポイント全体にわたってサービスの変更または拡張を実装します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エンドポイントのすべてのメッセージまたは特定の操作について、サービス ランタイムを表示、変更、または拡張するには、<xref:System.ServiceModel.Description.IEndpointBehavior.ApplyDispatchBehavior%2A> メソッドを実装します。 サービス アプリケーションで実行できるカスタマイズの詳細については、<xref:System.ServiceModel.Dispatcher.DispatchRuntime?displayProperty=nameWithType> および <xref:System.ServiceModel.Dispatcher.DispatchOperation?displayProperty=nameWithType> を参照してください。  
+  
+ 動作をクライアント アプリケーションでのみ使用する場合は、<xref:System.ServiceModel.Description.IEndpointBehavior.ApplyDispatchBehavior%2A> メソッドで <xref:System.NotImplementedException> 例外をスローさせることをお勧めします。  
+  
+ コールバック コントラクト (各方向に 1 つずつの操作) を使用するときは、説明に同じ名前の操作が 2 つ存在する場合がありますので注意してください。 操作の反復が必要な場合は、エンドポイント <xref:System.ServiceModel.Dispatcher.DispatchRuntime?displayProperty=nameWithType> と、<xref:System.ServiceModel.Dispatcher.DispatchRuntime.CallbackClientRuntime%2A?displayProperty=nameWithType> プロパティによって返されるエンドポイント間で、メッセージの方向を関連付ける必要があります。  
+  
+ また、既に他の動作によって一部の操作が追加されるか、ランタイムから削除されている可能性があるので、<xref:System.ServiceModel.Dispatcher.DispatchOperation?displayProperty=nameWithType> プロパティにある <xref:System.ServiceModel.Dispatcher.DispatchRuntime.Operations%2A?displayProperty=nameWithType> オブジェクトと同じ数の操作が説明に存在するという保証はありません。  
+  
+   
+  
+## Examples  
+ サービス アプリケーションで <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector?displayProperty=nameWithType> オブジェクトを追加するエンドポイント動作の実装を次のコード例に示します。 この場合、`EndpointBehaviorMessageInspector` クラスは、受信および送信メッセージを調べるための <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector?displayProperty=nameWithType>、動作が適用されるすべてのエンドポイントの検査システムにインスペクター クラスを挿入するための <xref:System.ServiceModel.Description.IEndpointBehavior> インターフェイス、およびアプリケーション構成ファイルを使用してメッセージ インスペクターの動作ができるようにするための <xref:System.ServiceModel.Configuration.BehaviorExtensionElement?displayProperty=nameWithType> を実装します。  
+  
+ 最初にメッセージ インスペクターを実装します。  
+  
+ [!code-csharp[IEndpointBehavior#2](~/samples/snippets/csharp/VS_Snippets_CFX/iendpointbehavior/cs/iendpointbehaviormessageinspector.cs#2)]  
+  
+ メッセージ インスペクターを <xref:System.ServiceModel.Description.IEndpointBehavior.ApplyDispatchBehavior%2A> プロパティに追加する <xref:System.ServiceModel.Dispatcher.DispatchRuntime.MessageInspectors%2A?displayProperty=nameWithType> メソッドの使用法を次のコード例に示します。  
+  
+ [!code-csharp[IEndpointBehavior#4](~/samples/snippets/csharp/VS_Snippets_CFX/iendpointbehavior/cs/iendpointbehaviormessageinspector.cs#4)]  
+  
+ 構成ファイルからメッセージ インスペクター動作を使用できるようにするための <xref:System.ServiceModel.Configuration.BehaviorExtensionElement?displayProperty=nameWithType> の実装を次のコード例に示します。  
+  
+ [!code-csharp[IEndpointBehavior#3](~/samples/snippets/csharp/VS_Snippets_CFX/iendpointbehavior/cs/iendpointbehaviormessageinspector.cs#3)]  
+  
+ 最後に、前の例を構成から使用できるようにする方法を次の構成ファイルに示します。  
+  
+ [!code-xml[IEndpointBehavior#5](~/samples/snippets/csharp/VS_Snippets_CFX/iendpointbehavior/cs/hostapplication.exe.config#5)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Validate">
+      <MemberSignature Language="C#" Value="public void Validate (System.ServiceModel.Description.ServiceEndpoint endpoint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Validate(class System.ServiceModel.Description.ServiceEndpoint endpoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.IEndpointBehavior.Validate(System.ServiceModel.Description.ServiceEndpoint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="endpoint" Type="System.ServiceModel.Description.ServiceEndpoint" />
+      </Parameters>
+      <Docs>
+        <param name="endpoint">検証対象のエンドポイント。</param>
+        <summary>エンドポイントが指定した基準を満たしていることを確認するために実装します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構造を調べて基準の設定を確認するために、<xref:System.ServiceModel.Description.IEndpointBehavior.Validate%2A> メソッドを実装します。 このメソッドを使用するために <xref:System.ServiceModel.Description.IEndpointBehavior.ApplyClientBehavior%2A>、または <xref:System.ServiceModel.Description.IEndpointBehavior.ApplyDispatchBehavior%2A> でカスタマイズを行う必要はありません。 エンドポイントが検証にパスした場合は値を返します。それ以外の場合は、例外をスローします。  
+  
+ たとえば、<xref:System.ServiceModel.Description.IEndpointBehavior.Validate%2A> メソッドを使用して、すべてのエンドポイントに承認された共通のバインディングが使用されているかどうかを確認できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

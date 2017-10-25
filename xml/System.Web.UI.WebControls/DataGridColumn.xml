@@ -1,0 +1,794 @@
+<Type Name="DataGridColumn" FullName="System.Web.UI.WebControls.DataGridColumn">
+  <TypeSignature Language="C#" Value="public abstract class DataGridColumn : System.Web.UI.IStateManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DataGridColumn extends System.Object implements class System.Web.UI.IStateManager" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.DataGridColumn" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.IStateManager</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.ExpandableObjectConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Web.UI.WebControls.DataGrid" /> コントロールのさまざまな列型の基底クラスとして機能します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataGridColumn>クラスは、すべての列の型の基本クラス、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 プロパティとすべての列の型に共通するメソッドを定義します。 インスタンス、<xref:System.Web.UI.WebControls.DataGridColumn>クラスは直接作成されません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DataGridColumn ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGridColumn.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.DataGridColumn" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しのインスタンスを初期化、<xref:System.Web.UI.WebControls.DataGridColumn>クラスです。  
+  
+> [!NOTE]
+>  このクラスのインスタンスは通常直接作成されません。 列型のすべてのクラスに共通するメソッドとプロパティを定義する基本クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesignMode">
+      <MemberSignature Language="C#" Value="protected bool DesignMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DesignMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGridColumn.DesignMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列がデザイン モードであるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />列がデザイン モードである場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGridColumn.DesignMode%2A>プロパティをプログラムで列がデザイン モードであるかどうかを判断します。  
+  
+ デザイン モードの詳細については、次を参照してください。<xref:System.ComponentModel.ISite.DesignMode%2A?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FooterStyle">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.TableItemStyle FooterStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.TableItemStyle FooterStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGridColumn.FooterStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TableItemStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列のフッター セクションのスタイル プロパティを取得します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.TableItemStyle" />列のフッター セクションのスタイル プロパティを格納しています。 既定値は、空<see cref="T:System.Web.UI.WebControls.TableItemStyle" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、列のフッター セクションのカスタム スタイルを指定します。 前景の色、背景色、フォント、およびセル内のコンテンツの配置を調整できる共通のスタイル属性が含まれます。 内の列の外観を向上とは異なるスタイルを提供する、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGridColumn.FooterStyle%2A>プロパティを列のフッター セクションのスタイル プロパティを設定します。  
+  
+ [!code-aspx-csharp[DataGridColumnFooterStyle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridColumnFooterStyle/CS/datagridcolumnfooterstylecs.aspx#1)]
+ [!code-aspx-vb[DataGridColumnFooterStyle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridColumnFooterStyle/VB/datagridcolumnfooterstylevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FooterText">
+      <MemberSignature Language="C#" Value="public virtual string FooterText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FooterText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGridColumn.FooterText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列のフッター セクションに表示されるテキストを設定します。</summary>
+        <value>列のフッター セクションに表示されるテキストです。 既定値は <see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGridColumn.FooterText%2A>プロパティを指定または列のフッター セクションに表示されるテキストを確認します。  
+  
+> [!CAUTION]
+>  テキストは、列のフッター セクションに表示される前に HTML エンコードされません。 これにより、テキストに HTML タグ内のスクリプトを埋め込むことが可能です。 このプロパティは、ユーザー入力を使用して動的に設定されている場合は、セキュリティの脆弱性を削減する値を検証することを確認します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGridColumn.FooterText%2A>プロパティ列のフッター セクションに表示されるテキストを指定します。  
+  
+ [!code-aspx-csharp[DataGridColumnFooterText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridColumnFooterText/CS/datagridcolumnfootertextcs.aspx#1)]
+ [!code-aspx-vb[DataGridColumnFooterText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridColumnFooterText/VB/datagridcolumnfootertextvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderImageUrl">
+      <MemberSignature Language="C#" Value="public virtual string HeaderImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HeaderImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGridColumn.HeaderImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列のヘッダー セクションに表示するイメージの場所を設定します。</summary>
+        <value>列のヘッダー セクションに表示するイメージの場所です。 既定値は <see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGridColumn.HeaderImageUrl%2A>プロパティ列のヘッダー セクションに表示するイメージの URL を指定します。 相対パスまたは絶対 URL を使用することができます。 相対 URL では、サーバーで、完全なパスを指定せず、Web ページの場所にイメージの場所を関連付けます。 Web ページの場所への相対パスでは。 これにより、コード内のイメージへのパスを更新することがなく別のディレクトリに、サーバー上のサイト全体を移動しやすくします。 絶対 URL は、サイトを別のディレクトリに移動する場合は、コードを更新する必要がありますので、完全なパスを提供します。  
+  
+> [!NOTE]
+>  列のヘッダー セクションで、イメージの代わりにテキストを表示する場合は、設定、<xref:System.Web.UI.WebControls.DataGridColumn.HeaderText%2A>このプロパティではなくプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGridColumn.HeaderImageUrl%2A>プロパティ列のヘッダー セクションに表示されるイメージを指定します。  
+  
+ [!code-aspx-csharp[DataGridColumnHeaderImageUrl#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridColumnHeaderImageUrl/CS/datagridcolumnheaderimageurlcs.aspx#1)]
+ [!code-aspx-vb[DataGridColumnHeaderImageUrl#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridColumnHeaderImageUrl/VB/datagridcolumnheaderimageurlvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderStyle">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.TableItemStyle HeaderStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.TableItemStyle HeaderStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGridColumn.HeaderStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TableItemStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列のヘッダー セクションのスタイル プロパティを取得します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.TableItemStyle" />列のヘッダー セクションのスタイル プロパティを格納しています。 既定値は、空<see cref="T:System.Web.UI.WebControls.TableItemStyle" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、列のヘッダー セクションのカスタム スタイルを指定します。 前景の色、背景色、フォント、およびセル内のコンテンツの配置を調整できる共通のスタイル属性が含まれます。 内の列の外観を向上とは異なるスタイルを提供する、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGridColumn.HeaderStyle%2A>列のヘッダー セクションのスタイル プロパティを取得するプロパティです。  
+  
+ [!code-aspx-csharp[DataGridColumnFooterStyle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridColumnFooterStyle/CS/datagridcolumnfooterstylecs.aspx#1)]
+ [!code-aspx-vb[DataGridColumnFooterStyle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridColumnFooterStyle/VB/datagridcolumnfooterstylevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderText">
+      <MemberSignature Language="C#" Value="public virtual string HeaderText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HeaderText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGridColumn.HeaderText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列のヘッダー セクションに表示されるテキストを設定します。</summary>
+        <value>列のヘッダー セクションに表示されるテキストです。 既定値は <see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGridColumn.HeaderText%2A>プロパティを指定または列のヘッダー セクションに表示されるテキストを確認します。 列のヘッダー セクションのテキストではなく、画像を表示する場合は、設定、<xref:System.Web.UI.WebControls.DataGridColumn.HeaderImageUrl%2A>このプロパティではなくプロパティです。  
+  
+> [!CAUTION]
+>  テキストは、列のヘッダー セクションに表示される前に HTML エンコードされません。 これにより、テキストに HTML タグ内のスクリプトを埋め込むことが可能です。 このプロパティは、ユーザー入力を使用して動的に設定されている場合は、セキュリティの脆弱性を削減する値を検証することを確認します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGridColumn.HeaderText%2A>プロパティを列のヘッダー セクションのテキストを指定します。  
+  
+ [!code-aspx-csharp[DataGridColumnFooterText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridColumnFooterText/CS/datagridcolumnfootertextcs.aspx#1)]
+ [!code-aspx-vb[DataGridColumnFooterText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridColumnFooterText/VB/datagridcolumnfootertextvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public virtual void Initialize ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Initialize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGridColumn.Initialize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生した列をリセットする基本実装を提供、<see cref="T:System.Web.UI.WebControls.DataGridColumn" />クラスを初期状態にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataGridColumn.Initialize%2A>メソッドから派生した列をリセットする基本実装を提供する、<xref:System.Web.UI.WebControls.DataGridColumn>クラスを初期状態にします。 このメソッドは直接には呼び出されません。 代わりに、このメソッドは、派生型の列をリセットするために使用する、派生列のクラスによって継承されます。 必要に応じて、カスタムの初期化ルーチンを提供する派生クラスでこのメソッドをオーバーライドできます。 この基本の実装、<xref:System.Web.UI.WebControls.DataGridColumn.Initialize%2A>から派生したすべての列型に共通するプロパティをリセットするオーバーライド メソッドからメソッドを呼び出した多くの場合、<xref:System.Web.UI.WebControls.DataGridColumn>クラスです。 <xref:System.Web.UI.WebControls.DataGridColumn.Initialize%2A>通常メソッドは前にバインドされている最初の行のデータ バインド時に呼び出されます。  
+  
+ ときに、<xref:System.Web.UI.WebControls.DataGridColumn.Initialize%2A>メソッドを使用して、列のデザイン モードに設定されて`true`です。  
+  
+> [!NOTE]
+>  このメソッドは通常、コントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeCell">
+      <MemberSignature Language="C#" Value="public virtual void InitializeCell (System.Web.UI.WebControls.TableCell cell, int columnIndex, System.Web.UI.WebControls.ListItemType itemType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void InitializeCell(class System.Web.UI.WebControls.TableCell cell, int32 columnIndex, valuetype System.Web.UI.WebControls.ListItemType itemType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGridColumn.InitializeCell(System.Web.UI.WebControls.TableCell,System.Int32,System.Web.UI.WebControls.ListItemType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cell" Type="System.Web.UI.WebControls.TableCell" />
+        <Parameter Name="columnIndex" Type="System.Int32" />
+        <Parameter Name="itemType" Type="System.Web.UI.WebControls.ListItemType" />
+      </Parameters>
+      <Docs>
+        <param name="cell">A<see cref="T:System.Web.UI.WebControls.TableCell" />をリセットするセルを表すです。</param>
+        <param name="columnIndex">セルが配置されている列の番号。</param>
+        <param name="itemType"><see cref="T:System.Web.UI.WebControls.ListItemType" /> 値のいずれか。</param>
+        <summary>派生した列から指定されたセルをリセットする基本実装を提供、<see cref="T:System.Web.UI.WebControls.DataGridColumn" />クラスを初期状態にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataGridColumn.InitializeCell%2A>メソッドから派生した列から指定されたセルをリセットする基本実装を提供する、<xref:System.Web.UI.WebControls.DataGridColumn>クラスを初期状態にします。 このメソッドは直接には呼び出されません。 代わりに、このメソッドは、派生型の列のセルをリセットするために使用する、派生列のクラスによって継承されます。 必要に応じて、カスタムの初期化ルーチンを提供する派生クラスでこのメソッドをオーバーライドできます。 この基本の実装、<xref:System.Web.UI.WebControls.DataGridColumn.InitializeCell%2A>から派生した列のすべてのセルに共通するプロパティをリセットするオーバーライド メソッドからメソッドを呼び出した多くの場合、<xref:System.Web.UI.WebControls.DataGridColumn>クラスです。  
+  
+ この実装では、<xref:System.Web.UI.WebControls.DataGridColumn.InitializeCell%2A>メソッドのみ、ヘッダーとページ フッターのセルをリセットします。 その他の種類のセルは、このメソッドの影響を受けません。  
+  
+ 並べ替えが有効な場合 (設定して、<xref:System.Web.UI.WebControls.DataGrid.AllowSorting%2A>プロパティを`true`)、<xref:System.Web.UI.WebControls.LinkButton>コントロールが既定ではヘッダー セルに追加します。 これにより、列を並べ替えるときに、<xref:System.Web.UI.WebControls.LinkButton>コントロールがクリックされました。 ヘッダー セルのイメージを指定する場合 (設定して、<xref:System.Web.UI.WebControls.DataGridColumn.HeaderImageUrl%2A>プロパティ)、<xref:System.Web.UI.WebControls.ImageButton>コントロールが作成されます。  
+  
+ 並べ替えが無効にすると、によって指定されたテキスト、<xref:System.Web.UI.WebControls.DataGridColumn.HeaderText%2A>ヘッダー セルでプロパティを表示します。 ヘッダー セルのイメージを指定する場合 (設定して、<xref:System.Web.UI.WebControls.DataGridColumn.HeaderImageUrl%2A>プロパティ)、<xref:System.Web.UI.WebControls.Image>コントロールがヘッダー セルに追加します。  
+  
+ ヘッダー セル内の画像が表示されていない場合は、ブラウザーに空のセルは表示されないため、<xref:System.Web.UI.WebControls.DataGridColumn.HeaderText%2A>プロパティが設定されていない、HTML エンティティの非区切りスペース (`&nbsp;`) ヘッダー セルに表示されます。 同様に、ページ フッターのセルにはコンテンツがあるない場合 (場合、<xref:System.Web.UI.WebControls.DataGridColumn.FooterText%2A>プロパティが設定されていない)、HTML エンティティの非区切りスペースは、フッター セルに表示されます。  
+  
+> [!NOTE]
+>  このメソッドは通常、コントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTrackingViewState">
+      <MemberSignature Language="C#" Value="protected bool IsTrackingViewState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsTrackingViewState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGridColumn.IsTrackingViewState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>決定する値を取得するかどうか、<see cref="T:System.Web.UI.WebControls.DataGridColumn" />の状態を保存するオブジェクトをマークします。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Web.UI.WebControls.DataGridColumn" />がマークされている、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemStyle">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.TableItemStyle ItemStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.TableItemStyle ItemStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGridColumn.ItemStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TableItemStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列の項目のセルのスタイル プロパティを取得します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.TableItemStyle" />列の項目のセルのスタイル プロパティを格納しています。 既定値は、空<see cref="T:System.Web.UI.WebControls.TableItemStyle" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、列の項目のセルのカスタム スタイルを指定します。 前景の色、背景色、フォント、およびセル内のコンテンツの配置を調整できる共通のスタイル属性が含まれます。 内の列の外観を向上とは異なるスタイルを提供する、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGridColumn.ItemStyle%2A>列内の項目のセルのスタイル プロパティを取得するプロパティです。  
+  
+ [!code-aspx-csharp[DataGridColumnItemStyle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridColumnItemStyle/CS/datagridcolumnitemstylecs.aspx#1)]
+ [!code-aspx-vb[DataGridColumnItemStyle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridColumnItemStyle/VB/datagridcolumnitemstylevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadViewState">
+      <MemberSignature Language="C#" Value="protected virtual void LoadViewState (object savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void LoadViewState(object savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGridColumn.LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="savedState"><see cref="T:System.Object" />の保存された状態を格納している、<see cref="T:System.Web.UI.WebControls.DataGridColumn" />です。</param>
+        <summary>状態を読み込み、<see cref="T:System.Web.UI.WebControls.DataGridColumn" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、主に、.NET Framework インフラストラクチャによって使用され、コードから直接使用するものではありません。  ただし、コントロールの開発者は、カスタム サーバー コントロールがそのビューステートを復元する方法を指定するには、このメソッドをオーバーライドすることができます。 詳細については、次を参照してください。 [ASP.NET 状態管理の概要](http://msdn.microsoft.com/library/0218d965-5d30-445b-b6a6-8870e70e63ce)です。  
+  
+ 使用して、<xref:System.Web.UI.WebControls.DataGridColumn.LoadViewState%2A>の状態を読み込むためのメソッド、<xref:System.Web.UI.WebControls.DataGridColumn>オブジェクト。 これにより、カスタムの表示状態管理を実行する列。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnColumnChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnColumnChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnColumnChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGridColumn.OnColumnChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>呼び出し、<see cref="M:System.Web.UI.Design.WebControls.DataGridDesigner.OnColumnsChanged" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列のプロパティがから派生する場合、<xref:System.Web.UI.WebControls.DataGridColumn>クラスの変更、<xref:System.Web.UI.Design.WebControls.DataGridDesigner.OnColumnsChanged%2A?displayProperty=nameWithType>メソッドを呼び出す必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Owner">
+      <MemberSignature Language="C#" Value="protected System.Web.UI.WebControls.DataGrid Owner { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.DataGrid Owner" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGridColumn.Owner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataGrid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.DataGrid" />のメンバーである列を制御します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.DataGrid" />のメンバーである列を制御します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGridColumn.Owner%2A>プロパティをプログラムで、<xref:System.Web.UI.WebControls.DataGrid>コントロールのメンバーである列です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveViewState">
+      <MemberSignature Language="C#" Value="protected virtual object SaveViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object SaveViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGridColumn.SaveViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の状態を保存、<see cref="T:System.Web.UI.WebControls.DataGridColumn" />オブジェクト。</summary>
+        <returns><see cref="T:System.Object" />の保存された状態を格納している、<see cref="T:System.Web.UI.WebControls.DataGridColumn" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGridColumn.SaveViewState%2A>の状態を保存する方法、<xref:System.Web.UI.WebControls.DataGridColumn>オブジェクト。 これにより、カスタムの表示状態管理を実行する列。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SortExpression">
+      <MemberSignature Language="C#" Value="public virtual string SortExpression { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SortExpression" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGridColumn.SortExpression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するフィールドまたは式を渡すための名前、<see cref="M:System.Web.UI.WebControls.DataGrid.OnSortCommand(System.Web.UI.WebControls.DataGridSortCommandEventArgs)" />メソッドの並べ替え列を選択するとします。</summary>
+        <value>渡すフィールドの名前<see cref="M:System.Web.UI.WebControls.DataGrid.OnSortCommand(System.Web.UI.WebControls.DataGridSortCommandEventArgs)" />並べ替え列を選択するとします。 既定値は <see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGridColumn.SortExpression%2A>プロパティに渡すフィールドの名前を指定、<xref:System.Web.UI.WebControls.DataGrid.OnSortCommand%2A>メソッドの並べ替え列を選択するとします。  
+  
+> [!NOTE]
+>  このプロパティは、データ ソースのフィールドに、列をバインドできません。 フィールドに列をバインドするには、特定の列型のドキュメントを参照してください。  
+  
+ 並べ替えを有効にすると、<xref:System.Web.UI.WebControls.LinkButton>コントロールは各列のヘッダー セクションにレンダリングされます場所、<xref:System.Web.UI.WebControls.DataGridColumn.SortExpression%2A>プロパティを設定します。  
+  
+> [!NOTE]
+>  ときに、<xref:System.Web.UI.WebControls.DataGrid.AutoGenerateColumns%2A>プロパティに設定されている`true`、<xref:System.Web.UI.WebControls.DataGridColumn.SortExpression%2A>内の各列のプロパティ、<xref:System.Web.UI.WebControls.DataGrid>データ バインディングをサポートするコントロールは、列にバインドされたフィールド名に自動的に設定します。 場合、<xref:System.Web.UI.WebControls.DataGrid.AutoGenerateColumns%2A>プロパティに設定されている`false`、手動で設定する必要があります、<xref:System.Web.UI.WebControls.DataGridColumn.SortExpression%2A>フィールド名を持つプロパティの並べ替えを有効にする各列の列にバインドします。  
+  
+ これら<xref:System.Web.UI.WebControls.LinkButton>コントロールを使用すると、並べ替え、<xref:System.Web.UI.WebControls.DataGrid>選択した列を制御します。 ときに、<xref:System.Web.UI.WebControls.LinkButton>用の列をクリックすると、変更、<xref:System.Web.UI.WebControls.DataGrid.SortCommand>イベントが発生します。 値、<xref:System.Web.UI.WebControls.DataGridColumn.SortExpression%2A>に選択した列のプロパティが渡される、<xref:System.Web.UI.WebControls.DataGrid.OnSortCommand%2A>イベント ハンドラーの一部として、<xref:System.Web.UI.WebControls.DataGridSortCommandEventArgs>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGridColumn.SortExpression%2A>並べ替えに使用するフィールド名を指定するプロパティです。  
+  
+ [!code-aspx-csharp[DataGridColumnSortExpression#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridColumnSortExpression/CS/datagridcolumnsortexpressioncs.aspx#1)]
+ [!code-aspx-vb[DataGridColumnSortExpression#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridColumnSortExpression/VB/datagridcolumnsortexpressionvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.IsTrackingViewState">
+      <MemberSignature Language="C#" Value="bool System.Web.UI.IStateManager.IsTrackingViewState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Web.UI.IStateManager.IsTrackingViewState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGridColumn.System#Web#UI#IStateManager#IsTrackingViewState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列がビュー ステートの変化を追跡しているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Web.UI.WebControls.DataGridColumn" />ビュー ステートの変更を追跡しているオブジェクト。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataGridColumn.IsTrackingViewState%2A>からカスタムの実装を派生している場合、主にコントロールの開発者によってメンバーが使用される、<xref:System.Web.UI.WebControls.DataGridColumn>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.LoadViewState">
+      <MemberSignature Language="C#" Value="void IStateManager.LoadViewState (object state);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IStateManager.LoadViewState(object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGridColumn.System#Web#UI#IStateManager#LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="state"><see cref="T:System.Object" />を表す、<see cref="T:System.Web.UI.WebControls.DataGridColumn" />オブジェクトを復元します。</param>
+        <summary>以前に保存された状態を読み込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.SaveViewState">
+      <MemberSignature Language="C#" Value="object IStateManager.SaveViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.Web.UI.IStateManager.SaveViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGridColumn.System#Web#UI#IStateManager#SaveViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>状態の変更を含むオブジェクトを返します。</summary>
+        <returns>ビュー ステートの変化を格納している <see cref="T:System.Object" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.TrackViewState">
+      <MemberSignature Language="C#" Value="void IStateManager.TrackViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IStateManager.TrackViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGridColumn.System#Web#UI#IStateManager#TrackViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>状態変化の追跡を開始します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGridColumn.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>列の文字列表現を返します。</summary>
+        <returns><see cref="F:System.String.Empty" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGridColumn.ToString%2A>列の文字列表記を取得します。  
+  
+> [!NOTE]
+>  このメソッドの継承元、<xref:System.Object?displayProperty=nameWithType>クラスし、は適用されません、<xref:System.Web.UI.WebControls.DataGridColumn>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrackViewState">
+      <MemberSignature Language="C#" Value="protected virtual void TrackViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void TrackViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGridColumn.TrackViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>サーバー コントロールにビュー ステートの変更の追跡すると、サーバー コントロールの保存できるため<see cref="T:System.Web.UI.StateBag" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、 <xref:System.Web.UI.WebControls.DataGridColumn.TrackViewState%2A> 、サーバー コントロールの保存できるように、サーバー コントロールのビューステートの変更を追跡するためにメソッド<xref:System.Web.UI.StateBag?displayProperty=nameWithType>オブジェクト。 これにより、カスタムの表示状態管理を実行する列。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewState">
+      <MemberSignature Language="C#" Value="protected System.Web.UI.StateBag ViewState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.StateBag ViewState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGridColumn.ViewState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.StateBag</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.StateBag" />から派生した列は、オブジェクト、<see cref="T:System.Web.UI.WebControls.DataGridColumn" />をそのプロパティを格納するクラス。</summary>
+        <value><see cref="T:System.Web.UI.StateBag" /> の <see cref="T:System.Web.UI.WebControls.DataGridColumn" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGridColumn.ViewState%2A>取得するプロパティを<xref:System.Web.UI.StateBag?displayProperty=nameWithType>から派生した列は、オブジェクト、<xref:System.Web.UI.WebControls.DataGridColumn>をそのプロパティを格納するクラス。 各プロパティの状態が自動的に管理します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Visible">
+      <MemberSignature Language="C#" Value="public bool Visible { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Visible" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGridColumn.Visible" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列をで表示するかどうかを示す値を設定、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</summary>
+        <value>
+          <see langword="true" />列に表示される場合、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。 それ以外の場合、<see langword="false" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGridColumn.Visible%2A>プログラムで列をで表示するかどうかを制御するプロパティ、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGridColumn.Visible%2A>列が表示されているかどうかを示すプロパティです。  
+  
+ [!code-aspx-csharp[DataGridColumnVisible#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridColumnVisible/CS/datagridcolumnvisiblecs.aspx#1)]
+ [!code-aspx-vb[DataGridColumnVisible#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridColumnVisible/VB/datagridcolumnvisiblevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

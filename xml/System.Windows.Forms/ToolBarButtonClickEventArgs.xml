@@ -1,0 +1,94 @@
+<Type Name="ToolBarButtonClickEventArgs" FullName="System.Windows.Forms.ToolBarButtonClickEventArgs">
+  <TypeSignature Language="C#" Value="public class ToolBarButtonClickEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ToolBarButtonClickEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ToolBarButtonClickEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Forms.ToolBar.ButtonClick" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーがボタンの上でクリックするたびにイベントが発生した、<xref:System.Windows.Forms.ToolBar>コントロール。 <xref:System.Windows.Forms.ToolBarButtonClickEventArgs.Button%2A>プロパティが含まれています、 <xref:System.Windows.Forms.ToolBarButton> wiith クリックしてされたボタンに関する情報。  
+  
+   
+  
+## Examples  
+ 次の例のインスタンスを作成、 <xref:System.Windows.Forms.ToolBar> 3<xref:System.Windows.Forms.ToolBarButton>コントロール。 ツールバーのボタンがボタンのコレクションに割り当てられているコレクションは、ツールバーに割り当てられて、ツールバーは、フォームに追加します。 <xref:System.Windows.Forms.ToolBar.ButtonClick> 、ツールバーのイベント、<xref:System.Windows.Forms.ToolBarButtonClickEventArgs.Button%2A>のプロパティ、<xref:System.Windows.Forms.ToolBarButtonClickEventArgs>が評価され、適切なダイアログを開くとします。 このコードでは、 <xref:System.Windows.Forms.Form>、 <xref:System.Windows.Forms.OpenFileDialog>、 <xref:System.Windows.Forms.SaveFileDialog>、および<xref:System.Windows.Forms.PrintDialog>インスタンス化されました。  
+  
+ [!code-cpp[Classic ToolBar.ToolBar Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ToolBar.ToolBar Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ToolBar.ToolBar Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ToolBar.ToolBar Example/CS/source.cs#1)]
+ [!code-vb[Classic ToolBar.ToolBar Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ToolBar.ToolBar Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ToolBarButtonClickEventArgs (System.Windows.Forms.ToolBarButton button);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.ToolBarButton button) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolBarButtonClickEventArgs.#ctor(System.Windows.Forms.ToolBarButton)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="button" Type="System.Windows.Forms.ToolBarButton" />
+      </Parameters>
+      <Docs>
+        <param name="button"><see cref="T:System.Windows.Forms.ToolBarButton" />がクリックしてされました。</param>
+        <summary><see cref="T:System.Windows.Forms.ToolBarButtonClickEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ToolBarButtonClickEventArgs.Button%2A>プロパティに設定して、`button`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Button">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ToolBarButton Button { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ToolBarButton Button" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ToolBarButtonClickEventArgs.Button" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolBarButton</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Forms.ToolBarButton" />がクリックしてされました。</summary>
+        <value><see cref="T:System.Windows.Forms.ToolBarButton" />がクリックしてされました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ToolBarButtonClickEventArgs.Button%2A>プロパティは、最初に設定して、`button`のパラメーター、<xref:System.Windows.Forms.ToolBarButtonClickEventArgs.%23ctor%2A>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次の例のインスタンスを作成、 <xref:System.Windows.Forms.ToolBar> 3<xref:System.Windows.Forms.ToolBarButton>コントロール。 ツールバーのボタンがボタンのコレクションに割り当てられているコレクションは、ツールバーに割り当てられて、ツールバーは、フォームに追加します。 <xref:System.Windows.Forms.ToolBar.ButtonClick> 、ツールバーのイベント、<xref:System.Windows.Forms.ToolBarButtonClickEventArgs.Button%2A>のプロパティ、<xref:System.Windows.Forms.ToolBarButtonClickEventArgs>が評価され、適切なダイアログを開くとします。 このコードでは、 <xref:System.Windows.Forms.Form>、 <xref:System.Windows.Forms.OpenFileDialog>、 <xref:System.Windows.Forms.SaveFileDialog>、および<xref:System.Windows.Forms.PrintDialog>インスタンス化されました。  
+  
+ [!code-cpp[Classic ToolBar.ToolBar Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ToolBar.ToolBar Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ToolBar.ToolBar Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ToolBar.ToolBar Example/CS/source.cs#1)]
+ [!code-vb[Classic ToolBar.ToolBar Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ToolBar.ToolBar Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

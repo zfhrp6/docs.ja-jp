@@ -1,0 +1,420 @@
+<Type Name="ElementPosition" FullName="System.Windows.Forms.DataVisualization.Charting.ElementPosition">
+  <TypeSignature Language="C#" Value="public class ElementPosition : System.Windows.Forms.DataVisualization.Charting.ChartElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ElementPosition extends System.Windows.Forms.DataVisualization.Charting.ChartElement" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataVisualization.Charting.ElementPosition" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.DataVisualization.Charting.ChartElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Data")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>グラフの凡例、タイトル、およびグラフ領域などの多くのビジュアル要素の基本クラスを表します。 相対座標は、(0, 0) から (100, 100) の範囲内のグラフ要素の位置を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataVisualization.Charting.ElementPosition>クラスは、グラフ要素の位置を定義するために使用され、1 つの四角形を使用してを表します、 <xref:System.Windows.Forms.DataVisualization.Charting.ElementPosition.X%2A>、 <xref:System.Windows.Forms.DataVisualization.Charting.ElementPosition.Y%2A>、<xref:System.Windows.Forms.DataVisualization.Charting.ElementPosition.Width%2A>と<xref:System.Windows.Forms.DataVisualization.Charting.ElementPosition.Height%2A>プロパティです。  
+  
+ <xref:System.Windows.Forms.DataVisualization.Charting.ElementPosition>クラスは常として公開されている、`Position`プロパティなど<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea.Position%2A>、<xref:System.Windows.Forms.DataVisualization.Charting.Legend.Position%2A>などのようにします。 内で公開されても、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.PrePaint>と<xref:System.Windows.Forms.DataVisualization.Charting.Chart.PostPaint>のイベント、<xref:System.Windows.Forms.DataVisualization.Charting.Chart>コントロールのプロパティとして、<xref:System.Windows.Forms.DataVisualization.Charting.ChartPaintEventArgs>オブジェクト。  
+  
+ 適用可能なグラフ要素の位置は、設定によって自動的に設定されることができます、<xref:System.Windows.Forms.DataVisualization.Charting.ElementPosition.Auto%2A>プロパティを`true`; グラフの要素は、デザイン ビューでのデザイン時にも配置できます。  
+  
+ このクラスの 2 つの主な違いがあると<xref:System.Drawing.RectangleF>構造体。  
+  
+-   このクラスは、自動配置を使用できます。  
+  
+-   このクラスでは、0 から 100 までの座標のみが使用、それ以外の場合、例外がスローされます。  
+  
+ グラフ要素の位置は座標 (0, 0) の要素の左上隅および右下隅の座標 (100, 100) の要素を相対座標を使用して説明します。  
+  
+ グラフ領域内で描画される要素は、グラフ領域の外側にある要素は、グラフ イメージを基準とする座標を使用して、グラフ領域に対する相対座標を使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ElementPosition ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.ElementPosition.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DataVisualization.Charting.ElementPosition" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ElementPosition (float x, float y, float width, float height);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float32 x, float32 y, float32 width, float32 height) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.ElementPosition.#ctor(System.Single,System.Single,System.Single,System.Single)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="x" Type="System.Single" />
+        <Parameter Name="y" Type="System.Single" />
+        <Parameter Name="width" Type="System.Single" />
+        <Parameter Name="height" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="x">グラフ コントロールの左上隅の X 位置。</param>
+        <param name="y">グラフ コントロールの左上隅の Y 位置。</param>
+        <param name="width">グラフ要素の幅。</param>
+        <param name="height">グラフ要素の高さ。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.Forms.DataVisualization.Charting.ElementPosition" /> 、指定したクラス<paramref name="x" />、 <paramref name="y" />、<paramref name="width" />と<paramref name="height" />パラメーター。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Auto">
+      <MemberSignature Language="C#" Value="public bool Auto { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Auto" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.ElementPosition.Auto" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を適用可能なグラフ要素がによって自動的に配置するかどうかを示す値、<see cref="T:System.Windows.Forms.DataVisualization.Charting.Chart" />コントロール。</summary>
+        <value>
+          <see langword="true" />適用可能なグラフ要素は、グラフ コントロールによって自動的に配置する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、グラフ要素を自動的に配置します。 たとえば、凡例の位置を自動的には、次のように設定します。、<xref:System.Windows.Forms.DataVisualization.Charting.Legend.Position%2A>プロパティを<xref:System.Windows.Forms.DataVisualization.Charting.ElementPosition.Auto%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bottom">
+      <MemberSignature Language="C#" Value="public float Bottom { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Bottom" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.ElementPosition.Bottom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>相対座標で、グラフ要素の最下部の位置を取得します。</summary>
+        <value>A<see langword="float" />グラフ要素の下の相対的な位置を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ グラフ要素の下部にあるは常に相対座標で表すし、を基準とするか、<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea>オブジェクトのプロットされている場合、グラフ領域内で、またはグラフ イメージ全体の基準とした場合は、グラフ領域要素の外側に描画します。  
+  
+ グラフは、右下隅の左上、および (100, 100) の使用 (0, 0) を調整します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromRectangleF">
+      <MemberSignature Language="C#" Value="public void FromRectangleF (System.Drawing.RectangleF rect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void FromRectangleF(valuetype System.Drawing.RectangleF rect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.ElementPosition.FromRectangleF(System.Drawing.RectangleF)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Drawing.RectangleF" />
+      </Parameters>
+      <Docs>
+        <param name="rect">A<see cref="T:System.Drawing.RectangleF" />構造体の要素の位置のオブジェクトを初期化するために使用します。</param>
+        <summary>初期化、<see cref="T:System.Windows.Forms.DataVisualization.Charting.ElementPosition" />オブジェクトから、<see cref="T:System.Drawing.RectangleF" />構造体。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Height">
+      <MemberSignature Language="C#" Value="public float Height { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Height" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.ElementPosition.Height" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはグラフ要素の高さを設定します。</summary>
+        <value>A<see langword="float" />グラフ要素の高さを表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 常に相対座標を使用します。 0 ~ 100 外の値を設定するかどうかは、ピクセルの範囲、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Right">
+      <MemberSignature Language="C#" Value="public float Right { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Right" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.ElementPosition.Right" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>相対座標内のグラフ要素の右側の位置を取得します。</summary>
+        <value>A<see langword="float" />グラフ要素の右側の相対的な位置を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 適用可能なグラフ要素の右側の相対的な位置を表す値を返します。  
+  
+ 右側にある位置は常に相対座標で表すし、を基準とするか、<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea>オブジェクトのプロットされている場合、グラフ領域内で、またはグラフ イメージ全体の基準とした場合は、グラフ領域要素の外側に描画します。  
+  
+ グラフは、右下隅の左上、および (100, 100) の使用 (0, 0) を調整します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Size">
+      <MemberSignature Language="C#" Value="public System.Drawing.SizeF Size { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.SizeF Size" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.ElementPosition.Size" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.SizeF</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グラフ要素のサイズを取得します。</summary>
+        <value>A<see cref="T:System.Drawing.SizeF" />グラフ要素のサイズを表す値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToRectangleF">
+      <MemberSignature Language="C#" Value="public System.Drawing.RectangleF ToRectangleF ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.RectangleF ToRectangleF() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.ElementPosition.ToRectangleF" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.RectangleF</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Drawing.RectangleF" />の座標を使用するオブジェクト、<see cref="T:System.Windows.Forms.DataVisualization.Charting.ElementPosition" />オブジェクト。</summary>
+        <returns>A<see cref="T:System.Drawing.RectangleF" />要素の位置オブジェクトの座標を表す構造です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは変換先の要素の位置、<xref:System.Drawing.RectangleF>構造体。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Width">
+      <MemberSignature Language="C#" Value="public float Width { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Width" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.ElementPosition.Width" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはグラフ要素の幅を設定します。</summary>
+        <value>A<see langword="float" />グラフ要素の幅を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは常に相対座標を使用します。0 ~ 100 外の値を設定するかどうかは、ピクセルの範囲、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="X">
+      <MemberSignature Language="C#" Value="public float X { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 X" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.ElementPosition.X" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の適用可能なグラフ要素の左上隅の相対的な X 座標。</summary>
+        <value>A<see langword="float" />適用可能なグラフ要素の左上隅の X 座標を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataVisualization.Charting.ElementPosition.X%2A>プロパティは常に相対座標で表すし、を基準とするか、<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea>オブジェクトのプロットされている場合、グラフ領域内で、またはグラフ イメージ全体の基準とした場合は、グラフ領域要素の外側に描画します。  
+  
+ このプロパティは常に相対座標を使用します。0 ~ 100 外の値を設定するかどうかは、ピクセルの範囲、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Y">
+      <MemberSignature Language="C#" Value="public float Y { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Y" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.ElementPosition.Y" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または相対で適用可能なグラフ要素の左上隅の Y 座標を設定します。</summary>
+        <value>A<see langword="float" />適用可能なグラフ要素の左上隅の Y 座標を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataVisualization.Charting.ElementPosition.Y%2A>プロパティは常に相対座標で表すし、を基準とするか、<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea>オブジェクトのプロットされている場合、グラフ領域内で、またはグラフ イメージ全体の基準とした場合は、グラフ領域要素の外側に描画します。  
+  
+ このプロパティは常に相対座標を使用します。0 ~ 100 外の値を設定するかどうかは、ピクセルの範囲、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

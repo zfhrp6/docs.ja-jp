@@ -1,0 +1,142 @@
+<Type Name="IServerChannelSinkProvider" FullName="System.Runtime.Remoting.Channels.IServerChannelSinkProvider">
+  <TypeSignature Language="C#" Value="public interface IServerChannelSinkProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IServerChannelSinkProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Channels.IServerChannelSinkProvider" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>サーバーのリモート処理経由のメッセージ フロー サーバー チャネルのチャネル シンクを作成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装を通じてサーバー チャネルにチャネル シンクが接続されている、<xref:System.Runtime.Remoting.Channels.IServerChannelSinkProvider>インターフェイスです。 すべてのリモート処理サーバー チャネルを受け取るコンス トラクターを提供する、<xref:System.Runtime.Remoting.Channels.IServerChannelSinkProvider>をパラメーターとして。  
+  
+ チャネル シンク プロバイダーは、チェーンに格納され、ユーザーが、外側の 1 つチャネル コンス トラクターを渡す前にすべてのチャネル シンク プロバイダーの連結を担当します。 <xref:System.Runtime.Remoting.Channels.IServerChannelSinkProvider>という名前のプロパティを提供<xref:System.Runtime.Remoting.Channels.IServerChannelSinkProvider.Next%2A>この目的のためです。  
+  
+ 構成ファイルでは、複数のチャネル シンク プロバイダーが指定されているときに、リモート処理インフラストラクチャはそれらをチェイン構成ファイルに出現する順序で。 チャネル シンク プロバイダーが中に、チャネルと同時に作成された、<xref:System.Runtime.Remoting.RemotingConfiguration.Configure%2A?displayProperty=nameWithType>呼び出します。  
+  
+ 後に、<xref:System.Runtime.Remoting.Messaging.IMethodCallMessage>が生成され、.NET Framework は、呼び出しを処理できるものを検索する登録済みのチャネルのリストを検索します。 チャネル シンクが、チャネルから取得した適切なチャネルが見つかった後、および<xref:System.Runtime.Remoting.Messaging.IMethodCallMessage>処理のため、シンクに転送されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、このインターフェイスの実装を示しています。  
+  
+ [!code-cpp[Remoting_Sinks#70](~/samples/snippets/cpp/VS_Snippets_Remoting/Remoting_Sinks/CPP/serversink.cpp#70)]
+ [!code-csharp[Remoting_Sinks#70](~/samples/snippets/csharp/VS_Snippets_Remoting/Remoting_Sinks/CS/serversink.cs#70)]  
+  
+ 参照してください、<xref:System.Runtime.Remoting.Channels.IServerChannelSink>対応するサーバー シンクの実装の例についてはドキュメントのインターフェイスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateSink">
+      <MemberSignature Language="C#" Value="public System.Runtime.Remoting.Channels.IServerChannelSink CreateSink (System.Runtime.Remoting.Channels.IChannelReceiver channel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Runtime.Remoting.Channels.IServerChannelSink CreateSink(class System.Runtime.Remoting.Channels.IChannelReceiver channel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.IServerChannelSinkProvider.CreateSink(System.Runtime.Remoting.Channels.IChannelReceiver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Channels.IServerChannelSink</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="channel" Type="System.Runtime.Remoting.Channels.IChannelReceiver" />
+      </Parameters>
+      <Docs>
+        <param name="channel">チャネル シンク チェーンを作成するチャネル。</param>
+        <summary>シンク チェーンを作成します。</summary>
+        <returns>新しく作成されたチャネル シンク チェーンの最初のシンクまたは<see langword="null" />、このプロバイダーは表示されませんか、このエンドポイントの接続を提供できないことを示します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[SoapClientFormatterSinkProvider_Next_Create#3](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapClientFormatterSinkProvider_Next_Create/CPP/soapclientformattersinkprovider_customprovider.cpp#3)]
+ [!code-csharp[SoapClientFormatterSinkProvider_Next_Create#3](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapClientFormatterSinkProvider_Next_Create/CS/soapclientformattersinkprovider_customprovider.cs#3)]
+ [!code-vb[SoapClientFormatterSinkProvider_Next_Create#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapClientFormatterSinkProvider_Next_Create/VB/soapclientformattersinkprovider_customprovider.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChannelData">
+      <MemberSignature Language="C#" Value="public void GetChannelData (System.Runtime.Remoting.Channels.IChannelDataStore channelData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetChannelData(class System.Runtime.Remoting.Channels.IChannelDataStore channelData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.IServerChannelSinkProvider.GetChannelData(System.Runtime.Remoting.Channels.IChannelDataStore)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="channelData" Type="System.Runtime.Remoting.Channels.IChannelDataStore" />
+      </Parameters>
+      <Docs>
+        <param name="channelData">A<see cref="T:System.Runtime.Remoting.Channels.IChannelDataStore" />チャネル データが返されるオブジェクト。</param>
+        <summary>現在のシンクが関連付けられているチャネルのチャネルのデータを返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[IServerChannelSinkProvider_CreateSink#2](~/samples/snippets/cpp/VS_Snippets_Remoting/IServerChannelSinkProvider_CreateSink/CPP/iserverchannelsinkprovider_3.cpp#2)]
+ [!code-csharp[IServerChannelSinkProvider_CreateSink#2](~/samples/snippets/csharp/VS_Snippets_Remoting/IServerChannelSinkProvider_CreateSink/CS/iserverchannelsinkprovider_3.cs#2)]
+ [!code-vb[IServerChannelSinkProvider_CreateSink#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/IServerChannelSinkProvider_CreateSink/VB/iserverchannelsinkprovider_3.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Next">
+      <MemberSignature Language="C#" Value="public System.Runtime.Remoting.Channels.IServerChannelSinkProvider Next { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Remoting.Channels.IServerChannelSinkProvider Next" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.IServerChannelSinkProvider.Next" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Channels.IServerChannelSinkProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはチャネル シンク プロバイダー チェーン内の次のシンク プロバイダーを設定します。</summary>
+        <value>チャネル シンク プロバイダー チェーン内の次のシンク プロバイダー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[SinkProviders#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SinkProviders/CPP/source.cpp#1)]
+ [!code-csharp[SinkProviders#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SinkProviders/CS/source.cs#1)]
+ [!code-vb[SinkProviders#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SinkProviders/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

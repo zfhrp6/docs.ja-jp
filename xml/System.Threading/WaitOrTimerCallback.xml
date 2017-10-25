@@ -1,0 +1,75 @@
+<Type Name="WaitOrTimerCallback" FullName="System.Threading.WaitOrTimerCallback">
+  <TypeSignature Language="C#" Value="public delegate void WaitOrTimerCallback(object state, bool timedOut);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed WaitOrTimerCallback extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.WaitOrTimerCallback" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading.ThreadPool</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Parameters>
+    <Parameter Name="state" Type="System.Object" />
+    <Parameter Name="timedOut" Type="System.Boolean" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="state">実行するたびに、コールバック メソッドで使用する情報を含むオブジェクトです。</param>
+    <param name="timedOut">
+      <see langword="true" />場合、<see cref="T:System.Threading.WaitHandle" />タイムアウトしました。<see langword="false" />がタイムアウトした場合。</param>
+    <summary>ときに呼び出されるメソッドを表します、<see cref="T:System.Threading.WaitHandle" />がシグナルを受け取るか、タイムアウトします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Threading.WaitOrTimerCallback>登録された待機ハンドルがタイムアウトになるか、通知されるときに実行するコールバック メソッドを表します。 コールバック メソッドを渡すことによって、デリゲートを作成、<xref:System.Threading.WaitOrTimerCallback>コンス トラクターです。 メソッドには、次に示す署名が必要です。  
+  
+ 登録された待機ハンドルを渡すことによって作成、<xref:System.Threading.WaitOrTimerCallback>委任と<xref:System.Threading.WaitHandle>に<xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A?displayProperty=nameWithType>です。 コールバック メソッドを実行するたびに、<xref:System.Threading.WaitHandle>タイムアウトになるかが通知されます。  
+  
+  
+> [!NOTE]
+>  Visual Basic の場合は省略できます、<xref:System.Threading.WaitOrTimerCallback>コンス トラクター、および使用するだけで、`AddressOf`演算子にコールバック メソッドを渡すときに<xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A>です。 Visual Basic では、適切なデリゲート コンス トラクターは、自動的に呼び出します。  
+  
+ コールバック メソッドに情報を渡す場合は、必要な情報を格納しているオブジェクトを作成しに渡すこと<xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A>登録された待機ハンドルを作成する場合。 コールバック メソッドが実行されるたびに、`state`パラメーターには、このオブジェクトが含まれています。  
+  
+ 詳細については、スレッド プールのスレッドを同期するためにコールバック メソッドを使用して、次を参照してください。 [、マネージ スレッド プール](~/docs/standard/threading/the-managed-thread-pool.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Threading.WaitOrTimerCallback>待機ハンドルがシグナルを受け取るときに実行されるコールバック メソッドを表すデリゲート。  
+  
+ 使用する方法も示します、<xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A>メソッドを指定した待機ハンドルがシグナルを受け取ると、指定されたコールバック メソッドを実行します。 この例では、コールバック メソッドは`WaitProc`し、待機ハンドルは、<xref:System.Threading.AutoResetEvent>です。  
+  
+ 例では、定義、`TaskInfo`に実行すると、コールバックに渡される情報を保持するクラス。 例は、作成、`TaskInfo`オブジェクトを文字列データを割り当てます。 <xref:System.Threading.RegisteredWaitHandle>によって返される、<xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A>に割り当てられているメソッド、`Handle`のフィールド、`TaskInfo`オブジェクトをコールバック メソッドにアクセスできるように、<xref:System.Threading.RegisteredWaitHandle>です。  
+  
+ 加え、`TaskInfo`オブジェクトへの呼び出し、<xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A>メソッドを指定します、 <xref:System.Threading.AutoResetEvent> 、タスクは、待機、<xref:System.Threading.WaitOrTimerCallback>を表すデリゲート、`WaitProc`コールバック メソッド、1 秒のタイムアウト間隔、および複数のコールバック.  
+  
+ メイン スレッドに通知すると、<xref:System.Threading.AutoResetEvent>を呼び出してその<xref:System.Threading.EventWaitHandle.Set%2A>メソッド、<xref:System.Threading.WaitOrTimerCallback>デリゲートが呼び出されます。 `WaitProc`メソッド テスト<xref:System.Threading.RegisteredWaitHandle>にタイムアウトが発生したかどうかを確認します。 待機ハンドルがシグナルため、コールバックが呼び出された場合、`WaitProc`メソッドの登録を解除、<xref:System.Threading.RegisteredWaitHandle>コールバックを停止します。 タイムアウトの場合は、タスクは、待機を続けます。 `WaitProc`メソッドは、コンソールにメッセージを出力することによって終了します。  
+  
+ [!code-cpp[System.Threading.ThreadPool RegisterWaitForSingleObject0#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.ThreadPool RegisterWaitForSingleObject0/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.ThreadPool RegisterWaitForSingleObject0#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ThreadPool RegisterWaitForSingleObject0/CS/source.cs#1)]
+ [!code-vb[System.Threading.ThreadPool RegisterWaitForSingleObject0#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ThreadPool RegisterWaitForSingleObject0/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

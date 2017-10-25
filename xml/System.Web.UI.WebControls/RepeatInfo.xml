@@ -1,0 +1,285 @@
+<Type Name="RepeatInfo" FullName="System.Web.UI.WebControls.RepeatInfo">
+  <TypeSignature Language="C#" Value="public sealed class RepeatInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit RepeatInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.RepeatInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>項目の一覧を繰り返し表示されるリスト コントロールを表示するために使用される情報をカプセル化します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.RepeatInfo>クラスなど、項目のリストを繰り返し表示されるリスト コントロールを表示するために使用される情報をカプセル化<xref:System.Web.UI.WebControls.CheckBoxList>、 <xref:System.Web.UI.WebControls.DataList>、および<xref:System.Web.UI.WebControls.RadioButtonList>です。 これは主に、コントロールの開発者によって使用されます。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.Web.UI.WebControls.RepeatInfo>を参照してください、<xref:System.Web.UI.WebControls.RepeatInfo.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RepeatInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RepeatInfo.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.RepeatInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.RepeatInfo>クラスの既定値を使用します。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.WebControls.RepeatInfo>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|OuterTableImplied|`false`|  
+|RepeatColumns|`0`|  
+|RepeatDirection|<xref:System.Web.UI.WebControls.RepeatDirection.Vertical>|  
+|RepeatLayout|<xref:System.Web.UI.WebControls.RepeatLayout.Table>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Caption">
+      <MemberSignature Language="C#" Value="public string Caption { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Caption" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RepeatInfo.Caption" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="P:System.Web.UI.WebControls.Table.Caption" />プロパティとして、コントロールが表示される場合、<see cref="T:System.Web.UI.WebControls.Table" />です。</summary>
+        <value>指定する文字列、<see cref="T:System.Web.UI.WebControls.Table" />キャプション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CaptionAlign">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.TableCaptionAlign CaptionAlign { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.TableCaptionAlign CaptionAlign" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RepeatInfo.CaptionAlign" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TableCaptionAlign</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキャプションの配置を設定する場合、<see cref="T:System.Web.UI.WebControls.RepeatInfo" />としてレンダリングされますが、<see cref="T:System.Web.UI.WebControls.Table" />です。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.TableCaptionAlign" />表示されたテーブルの値。 既定値は <see cref="F:System.Web.UI.WebControls.TableCaptionAlign.NotSet" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定、<xref:System.Web.UI.WebControls.Table.CaptionAlign%2A>プロパティの表示の<xref:System.Web.UI.WebControls.Table>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">選択した値は、のいずれかではありません、<see cref="T:System.Web.UI.WebControls.TableCaptionAlign" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OuterTableImplied">
+      <MemberSignature Language="C#" Value="public bool OuterTableImplied { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool OuterTableImplied" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RepeatInfo.OuterTableImplied" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはテーブルに含まれているかのように項目を表示するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、テーブルに含まれているかのように項目を表示するかそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.RepeatInfo.OuterTableImplied%2A>プロパティ テーブルに含まれているかのように項目を表示するかどうかを指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderRepeater">
+      <MemberSignature Language="C#" Value="public void RenderRepeater (System.Web.UI.HtmlTextWriter writer, System.Web.UI.WebControls.IRepeatInfoUser user, System.Web.UI.WebControls.Style controlStyle, System.Web.UI.WebControls.WebControl baseControl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RenderRepeater(class System.Web.UI.HtmlTextWriter writer, class System.Web.UI.WebControls.IRepeatInfoUser user, class System.Web.UI.WebControls.Style controlStyle, class System.Web.UI.WebControls.WebControl baseControl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RepeatInfo.RenderRepeater(System.Web.UI.HtmlTextWriter,System.Web.UI.WebControls.IRepeatInfoUser,System.Web.UI.WebControls.Style,System.Web.UI.WebControls.WebControl)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+        <Parameter Name="user" Type="System.Web.UI.WebControls.IRepeatInfoUser" />
+        <Parameter Name="controlStyle" Type="System.Web.UI.WebControls.Style" />
+        <Parameter Name="baseControl" Type="System.Web.UI.WebControls.WebControl" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" /> HTML クライアントでコンテンツを表示するために使用する出力ストリームを表すです。</param>
+        <param name="user"><see cref="T:System.Web.UI.WebControls.IRepeatInfoUser" />を表示するためにコントロールを表すオブジェクトを実装します。</param>
+        <param name="controlStyle">A<see cref="T:System.Web.UI.WebControls.Style" />項目を表示するためのスタイルを表すです。</param>
+        <param name="baseControl">基本属性をコピー元のコントロールです。</param>
+        <summary>指定した情報を使用して、項目の一覧を繰り返し表示されるリスト コントロールをレンダリングします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.RepeatInfo.RenderRepeater%2A>メソッドを指定した情報を使用して、項目の一覧を繰り返し表示されるリスト コントロールを表示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RepeatColumns">
+      <MemberSignature Language="C#" Value="public int RepeatColumns { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RepeatColumns" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RepeatInfo.RepeatColumns" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または表示する列の数を設定します。</summary>
+        <value>表示する列の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.RepeatInfo.RepeatColumns%2A>プロパティをコントロールに表示する列の数を指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RepeatDirection">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.RepeatDirection RepeatDirection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.RepeatDirection RepeatDirection" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RepeatInfo.RepeatDirection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.RepeatDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または垂直方向または水平方向に、項目が表示されるかどうかを指定する値を設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.RepeatDirection" /> 列挙値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.RepeatInfo.RepeatDirection%2A>アイテムがレンダリングされる方向を指定するプロパティです。  
+  
+> [!NOTE]
+>  によって表示される列の数が決まります常に、<xref:System.Web.UI.WebControls.RepeatInfo.RepeatColumns%2A>プロパティです。  
+  
+ このプロパティ設定されている場合`RepeatDirection.Vertical`リスト内の項目は列の読み込まれた上下からに表示し、すべてのアイテムがレンダリングされるまでは、左から右、します。 たとえば場合、<xref:System.Web.UI.WebControls.RepeatInfo.RepeatColumns%2A>プロパティに設定されている`3`項目が次の表のように、3 つの列に表示されます。  
+  
+||||  
+|-|-|-|  
+|1|4|7|  
+|2|5|9|  
+|3|6|9|  
+  
+ このプロパティ設定されている場合`RepeatDirection.Horizontal`上から下、すべてのアイテムがレンダリングされるまで、リスト内の項目が右側に左読み込まれた行に表示されます。 たとえば場合、<xref:System.Web.UI.WebControls.RepeatInfo.RepeatColumns%2A>プロパティに設定されている`3`、項目が次の表に、3 つの項目が、それぞれの行に表示されます。  
+  
+||||  
+|-|-|-|  
+|1|2|3|  
+|4|5|6|  
+|7|9|9|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定した方向が、<see cref="T:System.Web.UI.WebControls.RepeatDirection" />列挙値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RepeatLayout">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.RepeatLayout RepeatLayout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.RepeatLayout RepeatLayout" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RepeatInfo.RepeatLayout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.RepeatLayout</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または項目が、テーブルに表示されるかどうかを指定する値を設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.RepeatLayout" /> 列挙値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.RepeatInfo.RepeatLayout%2A>プロパティ テーブルで、項目が表示されるかどうかを指定します。 このプロパティ設定されている場合<xref:System.Web.UI.WebControls.RepeatLayout.Table>リスト内のアイテムがテーブルに表示されます。 このプロパティ設定されている場合<xref:System.Web.UI.WebControls.RepeatLayout.Flow>テーブルの構造なし、リスト内の項目が表示されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定したレイアウトは、のいずれかではありません、<see cref="T:System.Web.UI.WebControls.RepeatLayout" />列挙値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UseAccessibleHeader">
+      <MemberSignature Language="C#" Value="public bool UseAccessibleHeader { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseAccessibleHeader" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RepeatInfo.UseAccessibleHeader" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または追加するかどうかを示す値を設定、<see cref="P:System.Web.UI.WebControls.TableHeaderCell.Scope" />属性として、コントロールが表示される場合、<see cref="T:System.Web.UI.WebControls.Table" />です。</summary>
+        <value>
+          <see langword="true" />"scope"属性を追加するには、それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`true`としてコントロールをレンダリングされ、 <xref:System.Web.UI.WebControls.Table>、値「列」と"scope"属性が追加およびテーブルのヘッダー セル (\<th >) は表のセルの代わりに表示されます (\<td >) ヘッダーのセルの場合に、<xref:System.Web.UI.WebControls.Table>が表示されます。 この属性は、スクリーン リーダーによって使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

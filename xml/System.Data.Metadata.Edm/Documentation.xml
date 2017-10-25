@@ -1,0 +1,118 @@
+<Type Name="Documentation" FullName="System.Data.Metadata.Edm.Documentation">
+  <TypeSignature Language="C#" Value="public sealed class Documentation : System.Data.Metadata.Edm.MetadataItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Documentation extends System.Data.Metadata.Edm.MetadataItem" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Metadata.Edm.Documentation" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Metadata.Edm.MetadataItem</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>概念モデルの構成要素に関連付けられているドキュメントを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Metadata.Edm.Documentation> クラスのインスタンスは、概念スキーマ定義言語 (CSDL) ファイルおよびストア スキーマ定義言語 (SSDL) ファイルで定義されている Documentation タグの内容を表します。 など、概念モデルのコンス トラクターに対して documentation タグを定義することができます、 <xref:System.Data.Metadata.Edm.EntityContainer>、 <xref:System.Data.Metadata.Edm.EntityType>、 <xref:System.Data.Metadata.Edm.ComplexType>、<xref:System.Data.Metadata.Edm.AssociationType>のようにします。 詳細については、次を参照してください。[ドキュメント要素 (CSDL)](http://msdn.microsoft.com/en-us/d49e7bb9-a6a1-4017-9c7e-7836bf3bef48)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BuiltInTypeKind">
+      <MemberSignature Language="C#" Value="public override System.Data.Metadata.Edm.BuiltInTypeKind BuiltInTypeKind { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.Metadata.Edm.BuiltInTypeKind BuiltInTypeKind" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Metadata.Edm.Documentation.BuiltInTypeKind" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.BuiltInTypeKind</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Data.Metadata.Edm.Documentation" /> の組み込み型種別を取得します。</summary>
+        <value>この <see cref="T:System.Data.Metadata.Edm.BuiltInTypeKind" /> の組み込み型種別を表す <see cref="T:System.Data.Metadata.Edm.Documentation" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEmpty">
+      <MemberSignature Language="C#" Value="public bool IsEmpty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEmpty" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Metadata.Edm.Documentation.IsEmpty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Data.Metadata.Edm.Documentation" /> オブジェクトの内容が NULL または空の <see cref="P:System.Data.Metadata.Edm.Documentation.Summary" /> および <see cref="P:System.Data.Metadata.Edm.Documentation.Longdescription" /> であるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />この場合<see cref="T:System.Data.Metadata.Edm.Documentation" />が null または空にオブジェクトが含まれます<see cref="P:System.Data.Metadata.Edm.Documentation.Summary" />と<see cref="P:System.Data.Metadata.Edm.Documentation.LongDescription" />、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LongDescription">
+      <MemberSignature Language="C#" Value="public string LongDescription { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LongDescription" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Metadata.Edm.Documentation.LongDescription" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Data.Metadata.Edm.Documentation" /> の長い説明を取得します。</summary>
+        <value>この <see cref="T:System.Data.Metadata.Edm.Documentation" /> の長い説明。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Summary">
+      <MemberSignature Language="C#" Value="public string Summary { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Summary" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Metadata.Edm.Documentation.Summary" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Data.Metadata.Edm.Documentation" /> の概要を取得します。</summary>
+        <value>この <see cref="T:System.Data.Metadata.Edm.Documentation" /> の概要。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.Documentation.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Data.Metadata.Edm.Documentation" /> の概要を返します。</summary>
+        <returns>この <see cref="T:System.Data.Metadata.Edm.Documentation" /> の概要。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,230 @@
+<Type Name="FileMode" FullName="System.IO.FileMode">
+  <TypeSignature Language="C#" Value="public enum FileMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed FileMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.IO.FileMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.FileSystem.Primitives</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>オペレーティング システムがファイルを開く方法を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイルを作成し、テキスト ファイルへの書き込みの例は、次を参照してください。[する方法: テキスト ファイルを書き込む](~/docs/standard/io/how-to-write-text-to-a-file.md)です。 ファイルからテキストの読み取りの例は、次を参照してください。[する方法: テキスト ファイルからの読み取り](~/docs/standard/io/how-to-read-text-from-a-file.md)です。 読み取りと書き込み、バイナリ ファイルの例は、次を参照してください。[する方法: 新しく作成されたデータ ファイルに読み書き](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)です。  
+  
+ A`FileMode`多くのコンス トラクターのパラメーターが指定されて<xref:System.IO.FileStream>、 <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>、し、、`Open`のメソッド<xref:System.IO.File>と<xref:System.IO.FileInfo>ファイルを開く方法を制御します。  
+  
+ `FileMode`パラメーター コントロール、ファイルを上書きすると、作成するかどうかを開く、またはその組み合わせです。 使用して`Open`を既存のファイルを開きます。 ファイルへの追加を使用して`Append`です。 ファイルの切り捨てが存在しない場合、ファイルの作成を使用してまたは`Create`です。  
+  
+   
+  
+## Examples  
+ 次`FileStream`コンス トラクターは、既存のファイルを開きます (`FileMode.Open`)。  
+  
+ [!code-cpp[Classic FileAccess Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileAccess Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FileAccess Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileAccess Example/CS/source.cs#1)]
+ [!code-vb[Classic FileAccess Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileAccess Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Append">
+      <MemberSignature Language="C#" Value="Append" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.FileMode Append = int32(6)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.FileMode.Append" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.FileMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>存在して、ファイルの末尾にシークまたは新しいファイルを作成する場合は、ファイルを開きます。 これは、必要があります<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Append" />権限です。 <see langword="FileMode.Append" />組み合わせてのみ使用できます<see langword="FileAccess.Write" />です。 ファイルがスローされますが終わる前に位置をシークしようとして、<see cref="T:System.IO.IOException" />例外、および読み取りが失敗してスローするあらゆる試み、<see cref="T:System.NotSupportedException" />例外。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="Create" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.FileMode Create = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.FileMode.Create" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.FileMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オペレーティング システムが新しいファイルを作成する必要がありますを指定します。 ファイルが既に存在する場合は上書きされます。 これは、必要があります<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />権限です。 <see langword="FileMode.Create" />ファイルが存在しない場合と使用を要求すると等価<see cref="F:System.IO.FileMode.CreateNew" />以外の場合、使用<see cref="F:System.IO.FileMode.Truncate" />です。 ファイルは既に存在しますが、隠しファイルである場合、<see cref="T:System.UnauthorizedAccessException" />例外がスローされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateNew">
+      <MemberSignature Language="C#" Value="CreateNew" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.FileMode CreateNew = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.FileMode.CreateNew" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.FileMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オペレーティング システムが新しいファイルを作成する必要がありますを指定します。 これは、必要があります<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />権限です。 ファイルが既に存在する場合、<see cref="T:System.IO.IOException" />例外がスローされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Open">
+      <MemberSignature Language="C#" Value="Open" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.FileMode Open = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.FileMode.Open" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.FileMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オペレーティング システムが、既存のファイルを開く必要がありますを指定します。 ファイルを開くことがで指定された値に依存する、<see cref="T:System.IO.FileAccess" />列挙します。 A<see cref="T:System.IO.FileNotFoundException" />ファイルが存在しない場合、例外がスローされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenOrCreate">
+      <MemberSignature Language="C#" Value="OpenOrCreate" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.FileMode OpenOrCreate = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.FileMode.OpenOrCreate" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.FileMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>存在する場合、オペレーティング システムがファイルを開くことを指定しますそれ以外の場合、新しいファイルを作成する必要があります。 ファイルが開かれている場合<see langword="FileAccess.Read" />、<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />権限が必要です。 ファイルへのアクセス場合<see langword="FileAccess.Write" />、<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />権限が必要です。 ファイルが開かれている場合<see langword="FileAccess.ReadWrite" />の両方を<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />と<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />アクセス許可が必要です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Truncate">
+      <MemberSignature Language="C#" Value="Truncate" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.FileMode Truncate = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.FileMode.Truncate" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.FileMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オペレーティング システムが、既存のファイルを開く必要がありますを指定します。 ファイルが開かれたときに、サイズがゼロ バイトように切り捨てる必要があります。 これは、必要があります<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />権限です。 ファイルからの読み取りに使用して開いた<see langword="FileMode.Truncate" />が発生する、<see cref="T:System.ArgumentException" />例外。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

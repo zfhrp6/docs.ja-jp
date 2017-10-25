@@ -1,0 +1,618 @@
+<Type Name="Panel" FullName="System.Web.UI.WebControls.Panel">
+  <TypeSignature Language="C#" Value="public class Panel : System.Web.UI.WebControls.WebControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Panel extends System.Web.UI.WebControls.WebControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.Panel" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.WebControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.PanelContainerDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ParseChildren(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.PersistChildren(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>他のコントロールのコンテナーとして機能するコントロールを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このトピックの内容  
+  
+-   [はじめに](#introduction)  
+  
+-   [宣言型の構文](#declarative_syntax)  
+  
+<a name="introduction"></a>   
+## <a name="introduction"></a>はじめに  
+ <xref:System.Web.UI.WebControls.Panel>コントロールは、その他のコントロールのコンテナーです。 これは、コントロールをプログラムによって生成、表示/非表示のコントロールのグループまたはコントロールのグループをローカライズするときに特に役立ちます。  
+  
+ <xref:System.Web.UI.WebControls.Panel.Direction%2A>プロパティはローカライズするのに便利な<xref:System.Web.UI.WebControls.Panel>右から左、アラビア語やヘブライ語などに記述されている言語のテキストを表示するコントロールのコンテンツ。  
+  
+ <xref:System.Web.UI.WebControls.Panel>コントロールの動作とその内容の表示をカスタマイズすることはいくつかのプロパティを提供します。 使用して、<xref:System.Web.UI.WebControls.Panel.BackImageUrl%2A>のカスタム イメージを表示するプロパティを<xref:System.Web.UI.WebControls.Panel>コントロール。 使用して、<xref:System.Web.UI.WebControls.Panel.ScrollBars%2A>プロパティ、コントロールのスクロール バーを指定します。  
+  
+<a name="declarative_syntax"></a>   
+## <a name="declarative-syntax"></a>宣言型の構文  
+  
+```  
+<asp:Panel  
+    AccessKey="string"  
+    BackColor="color name|#dddddd"  
+    BackImageUrl="uri"  
+    BorderColor="color name|#dddddd"  
+    BorderStyle="NotSet|None|Dotted|Dashed|Solid|Double|Groove|Ridge|  
+        Inset|Outset"  
+    BorderWidth="size"  
+    CssClass="string"  
+    DefaultButton="string"  
+    Direction="NotSet|LeftToRight|RightToLeft"  
+    Enabled="True|False"  
+    EnableTheming="True|False"  
+    EnableViewState="True|False"  
+    Font-Bold="True|False"  
+    Font-Italic="True|False"  
+    Font-Names="string"  
+    Font-Overline="True|False"  
+    Font-Size="string|Smaller|Larger|XX-Small|X-Small|Small|Medium|  
+        Large|X-Large|XX-Large"  
+    Font-Strikeout="True|False"  
+    Font-Underline="True|False"  
+    ForeColor="color name|#dddddd"  
+    GroupingText="string"  
+    Height="size"  
+    HorizontalAlign="NotSet|Left|Center|Right|Justify"  
+    ID="string"  
+    OnDataBinding="DataBinding event handler"  
+    OnDisposed="Disposed event handler"  
+    OnInit="Init event handler"  
+    OnLoad="Load event handler"  
+    OnPreRender="PreRender event handler"  
+    OnUnload="Unload event handler"  
+    runat="server"  
+    ScrollBars="None|Horizontal|Vertical|Both|Auto"  
+    SkinID="string"  
+    Style="string"  
+    TabIndex="integer"  
+    ToolTip="string"  
+    Visible="True|False"  
+    Width="size"  
+    Wrap="True|False"  
+/>  
+```  
+  
+   
+  
+## Examples  
+ 次の例では、使用、<xref:System.Web.UI.WebControls.Panel>コントロールをプログラムによってコントロールを生成し、コントロールのグループの表示/非表示にします。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[Classic Panel Example 2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic Panel Example 2/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic Panel Example 2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic Panel Example 2/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Panel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Panel.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.Panel" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、の新しいインスタンスを作成する方法を示しています、<xref:System.Web.UI.WebControls.Panel>コントロールを含む、<xref:System.Web.UI.WebControls.Label>が右揃えにするコントロール。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[Classic Panel.Panel Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic Panel.Panel Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic Panel.Panel Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic Panel.Panel Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAttributesToRender">
+      <MemberSignature Language="C#" Value="protected override void AddAttributesToRender (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AddAttributesToRender(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Panel.AddAttributesToRender(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">クライアントに HTML コンテンツを表示する出力ストリームを表す <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary>背景イメージ、配置、ラップ、および方向は情報を表示する属性の一覧に追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Panel.AddAttributesToRender%2A>メソッドは、主にコントロールの開発者によって使用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Web.UI.WebControls.Panel.AddAttributesToRender%2A>カスタム サーバー コントロールできるように、<xref:System.Web.UI.WebControls.Panel>常にテキストが太字で表示されます。  
+  
+ [!code-aspx-csharp[CustomPanelAddAttributesToRender#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomPanelAddAttributesToRender/CS/custom_panel_addattributestorendercs.aspx#1)]
+ [!code-aspx-vb[CustomPanelAddAttributesToRender#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomPanelAddAttributesToRender/VB/custom_panel_addattributestorendervb.aspx#1)]  
+  
+ [!code-csharp[CustomPanelAddAttributesToRender#2](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomPanelAddAttributesToRender/CS/custom_panel_addattributestorender.cs#2)]
+ [!code-vb[CustomPanelAddAttributesToRender#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomPanelAddAttributesToRender/VB/custom_panel_addattributestorender.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Web.UI.WebControls.Panel.DefaultButton" />のプロパティ、<see cref="T:System.Web.UI.WebControls.Panel" />コントロール型のコントロールの ID でなければなりません<see cref="T:System.Web.UI.WebControls.IButtonControl" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BackImageUrl">
+      <MemberSignature Language="C#" Value="public virtual string BackImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BackImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Panel.BackImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.ImageUrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または panel コントロールの背景画像の URL を設定します。</summary>
+        <value>Panel コントロールの背景画像の URL です。 既定値は、<see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティのカスタム イメージの表示を使用して、<xref:System.Web.UI.WebControls.Panel>コントロール。  
+  
+ イメージがより小さい場合、 <xref:System.Web.UI.WebControls.Panel>、並べて表示を埋めるためには、<xref:System.Web.UI.WebControls.Panel>です。  
+  
+> [!NOTE]
+>  このプロパティは、HTML 4.0 をサポートするブラウザーでのみサポートされているまたはそれ以降です。  
+  
+   
+  
+## Examples  
+ 次の例は、プログラムで設定する方法を示しています、<xref:System.Web.UI.WebControls.Panel.BackImageUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.Panel>です。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[Classic Panel.BackImageUrl Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic Panel.BackImageUrl Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic Panel.BackImageUrl Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic Panel.BackImageUrl Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateControlStyle">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.WebControls.Style CreateControlStyle ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.WebControls.Style CreateControlStyle() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Panel.CreateControlStyle" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Style</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてのスタイル関連プロパティを実装するために <see cref="T:System.Web.UI.WebControls.Panel" /> コントロールが内部で使用するスタイル オブジェクトを作成します。</summary>
+        <returns>コントロールのスタイルのプロパティを格納する <see cref="T:System.Web.UI.WebControls.PanelStyle" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Panel.CreateControlStyle%2A>メソッドは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultButton">
+      <MemberSignature Language="C#" Value="public virtual string DefaultButton { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultButton" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Panel.DefaultButton" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に含まれている既定のボタンの識別子、<see cref="T:System.Web.UI.WebControls.Panel" />コントロール。</summary>
+        <value>対応する文字列値、<see cref="P:System.Web.UI.Control.ID" />に含まれているボタン コントロールの<see cref="T:System.Web.UI.WebControls.Panel" />です。 既定値は空の文字列を示す、<see cref="T:System.Web.UI.WebControls.Panel" />既定のボタンはありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.Panel.DefaultButton%2A>ときに取得、クリックするボタンを示すプロパティを<xref:System.Web.UI.WebControls.Panel>ENTER キーを押すし、コントロールにフォーカスがあります。 <xref:System.Web.UI.WebControls.Panel.DefaultButton%2A>の識別子を設定することができます、<xref:System.Web.UI.WebControls.Button>コントロールまたは任意のコントロールを実装する、<xref:System.Web.UI.WebControls.IButtonControl>インターフェイスを除く、<xref:System.Web.UI.WebControls.LinkButton>コントロール。  
+  
+ 場合、<xref:System.Web.UI.WebControls.Panel.DefaultButton%2A>を実装しないコントロールに設定されている、<xref:System.Web.UI.WebControls.IButtonControl>インターフェイス、またはコントロールに含まれていないを<xref:System.Web.UI.WebControls.Panel>コントロール、<xref:System.Web.UI.WebControls.Panel>コントロールが描画中に例外をスローします。  
+  
+ 設定、<xref:System.Web.UI.WebControls.Panel.DefaultButton%2A>プロパティは、次のシナリオはサポートされていません。  
+  
+-   パネルの入力コントロールの外部でのフォーカスを設定して、ENTER キーを押します。 既定のポストバック アクションは、トリガーには保証されません。  
+  
+-   複数行テキスト ボックス内でフォーカスで ENTER キーを押します。 複数行テキスト ボックス、ENTER キーを押すと、予期しない動作であるテキスト ボックスに新しい行が作成する必要があります。 ブラウザーで、キーを押してポストバックが発生する、複数行のテキスト ボックス内で ENTER キーの場合、ENTER キーを新しい行を作成する代わりに割り当てることができます JavaScript 関数の入力コントロールにします。 スクリプトは、ENTER キーをキャプチャし、ポストバックを停止する必要があります。 たとえば、使用することができます、<xref:System.Web.UI.WebControls.WebControl.Attributes%2A>用のクライアント スクリプトを追加するプロパティのコレクション、`onKeyPress`イベント。  
+  
+-   既定のボタンを参照する、<xref:System.Web.UI.WebControls.LinkButton>コントロール。 のみ<xref:System.Web.UI.WebControls.Button>と<xref:System.Web.UI.WebControls.ImageButton>コントロールがサポートされています。  
+  
+-   変更、<xref:System.Web.UI.WebControls.Panel.DefaultButton%2A>プログラムで非同期の post 中にバックアップするときに、<xref:System.Web.UI.WebControls.Panel>コントロールの内部ではありません、<xref:System.Web.UI.UpdatePanel>コントロール。 非同期の post バックアップは、1 つまたは複数を追加することで、ページで有効にする<xref:System.Web.UI.UpdatePanel>ページへのコントロールです。 <xref:System.Web.UI.UpdatePanel>コントロールはポストバック時にページ全体が更新ではなく、ページの選択した領域の更新に使用できます。 詳細については、次を参照してください。 [UpdatePanel コントロールの概要](http://msdn.microsoft.com/library/29a2265d-9674-4c19-b70e-e5560ee9689a)と[部分ページ レンダリング概要](http://msdn.microsoft.com/library/5c12736d-d9e9-464a-9388-3fe0f9f49e49)です。  
+  
+-   テーマまたはスタイル シート テーマによっては、このプロパティを設定します。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Direction">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.ContentDirection Direction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.ContentDirection Direction" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Panel.Direction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ContentDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定内のテキストが含まれるコントロールを表示するための方向、<see cref="T:System.Web.UI.WebControls.Panel" />コントロール。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.ContentDirection" /> 列挙値のいずれか。 既定値は、<see langword="NotSet" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.Panel.Direction%2A>内のテキストが含まれるコントロールの表示方向を指定するプロパティ、<xref:System.Web.UI.WebControls.Panel>コントロール。 このプロパティのいずれかを使用して、<xref:System.Web.UI.WebControls.ContentDirection>列挙値。 次の表は、使用可能な値を一覧表示します。  
+  
+|値|説明|  
+|-----------|-----------------|  
+|`NotSet`|内容の方向が設定されていません。|  
+|`LeftToRight`|内容の方向を左から右にします。|  
+|`RightToLeft`|内容の方向が右から左です。|  
+  
+ 指定した場合`LeftToRight`テキストが含まれる子コントロールが左から右に表示します。 指定した場合`RightToLeft`テキストが含まれる子コントロールが右から左へを表示します。 使用して`RightToLeft`を右から左、アラビア語やヘブライ語などに記述されている言語のテキストを表示します。  
+  
+> [!NOTE]
+>  このプロパティは、HTML 4.0 をサポートするブラウザーでのみサポートされているまたはそれ以降です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、プログラムで設定する方法を示します、<xref:System.Web.UI.WebControls.Panel.Direction%2A>プロパティです。 A<xref:System.Web.UI.WebControls.ListBox>コントロールの設定が、<xref:System.Web.UI.WebControls.ContentDirection>列挙値。 ユーザーがリスト ボックスから選択する値に基づいて、パネル内のラベルおよびラジオ ボタンの表示方向。 この例は英語のテキストを使用することに注意してください。 したがって、ときに、`RightToLeft`値が選択されている場合の右側にあるテキストの位置揃え、<xref:System.Web.UI.WebControls.Panel>コントロールですが、英語テキストの左から右への順序は維持されます。 実際のアプリケーションではない設定、<xref:System.Web.UI.WebControls.Panel.Direction%2A>プロパティを`RightToLeft`左から右への言語のテキストを表示していた場合。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-vb[Panel.Direction#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Panel.Direction/VB/panel.directionvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GroupingText">
+      <MemberSignature Language="C#" Value="public virtual string GroupingText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string GroupingText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Panel.GroupingText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはパネル コントロール内に含まれているコントロールのグループのキャプションを設定します。</summary>
+        <value>Panel コントロールに含まれる子コントロールのキャプション テキストです。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.Panel.GroupingText%2A>フレームとのグループに含まれているコントロールのキャプションを表示するプロパティを<xref:System.Web.UI.WebControls.Panel>コントロール。  
+  
+ <xref:System.Web.UI.WebControls.Panel.GroupingText%2A>の値、 <xref:System.Web.UI.WebControls.Panel> HTML 4.0 仕様で導入された FIELDSET、LEGEND 要素を使用してコントロールを表示します。 クライアントのブラウザーが HTML 3.2 を使用している場合、<xref:System.Web.UI.WebControls.Panel.GroupingText%2A>値はレンダリングされません。 FIELDSET、LEGEND 要素の表示方法の詳細については、クライアント ブラウザーのマニュアルを参照してください。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[ASP.NET のグローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalAlign">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.HorizontalAlign HorizontalAlign { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.HorizontalAlign HorizontalAlign" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Panel.HorizontalAlign" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.HorizontalAlign</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはパネル内の内容の水平方向の配置を設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.HorizontalAlign" /> 値のいずれか。 既定値は、<see langword="NotSet" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内の要素の配置を指定するこのプロパティを使用して、<xref:System.Web.UI.WebControls.Panel>です。  
+  
+   
+  
+## Examples  
+ 次の例は、右揃えまたは左揃え内で制御する方法を示しています。、<xref:System.Web.UI.WebControls.Panel>です。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[Classic Panel.HorizontalAlign Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic Panel.HorizontalAlign Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic Panel.HorizontalAlign Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic Panel.HorizontalAlign Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">水平方向の配置は、のいずれかではない、<see cref="T:System.Web.UI.WebControls.HorizontalAlign" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderBeginTag">
+      <MemberSignature Language="C#" Value="public override void RenderBeginTag (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void RenderBeginTag(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Panel.RenderBeginTag(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">クライアントに HTML コンテンツを表示する出力ストリームを表す <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary>Html のタグを開始、<see cref="T:System.Web.UI.WebControls.Panel" />を指定されたライターにコントロールできます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Panel.RenderBeginTag%2A>メソッドは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderEndTag">
+      <MemberSignature Language="C#" Value="public override void RenderEndTag (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void RenderEndTag(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Panel.RenderEndTag(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">クライアントに HTML コンテンツを表示する出力ストリームを表す <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary>Html のタグを終了、<see cref="T:System.Web.UI.WebControls.Panel" />指定されたライターにコントロールをします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Panel.RenderEndTag%2A>メソッドは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollBars">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.ScrollBars ScrollBars { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.ScrollBars ScrollBars" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Panel.ScrollBars" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ScrollBars</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>可視性とのスクロール バーの位置を取得または設定、<see cref="T:System.Web.UI.WebControls.Panel" />コントロール。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.ScrollBars" /> 列挙値のいずれか。 既定値は、<see langword="None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.Panel.ScrollBars%2A>でバーの可視性とスクロールの位置を指定するプロパティ、<xref:System.Web.UI.WebControls.Panel>コントロール。 このプロパティのいずれかを使用して、<xref:System.Web.UI.WebControls.ScrollBars>列挙値。 次の表は、使用可能な値を一覧表示します。  
+  
+|値|説明|  
+|-----------|-----------------|  
+|`None`|スクロール バーは表示されません。|  
+|`Horizontal`|水平スクロール バーのみが表示されます。|  
+|`Vertical`|垂直スクロール バーのみが表示されます。|  
+|`Both`|両方の水平方向および垂直のスクロール バーが表示されます。|  
+|`Auto`|必要に応じて、水平、垂直、または両方のスクロール バーが表示されます。 それ以外の場合、スクロール バーは表示されません。|  
+  
+ 指定した場合`Auto`の<xref:System.Web.UI.WebControls.Panel.ScrollBars%2A>プロパティ、スクロール バーが自動的に時に表示内のコンテンツのサイズ、<xref:System.Web.UI.WebControls.Panel>コントロールのサイズを超えています、<xref:System.Web.UI.WebControls.Panel>自体を制御します。 たとえば場合、<xref:System.Web.UI.WebControls.Panel>コントロールには、テーブルが含まれていると、パネルは、テーブル内のすべての行を表示するのに十分な幅、垂直スクロール バーが表示されます。 テーブルのサイズは、パネルの幅と高さを超えている場合は、両方の垂直および水平方向のスクロール バーが表示されます。  
+  
+> [!NOTE]
+>  このプロパティは、HTML 4.0 をサポートするブラウザーでのみサポートされているまたはそれ以降です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、宣言によって設定する方法を示します、<xref:System.Web.UI.WebControls.Panel.ScrollBars%2A>プロパティを`Auto`です。 パネルには、全体の内容は、パネルのサイズを超えるテーブルが含まれています。 これにより、パネルが表示される場合に自動的に表示される垂直および水平方向のスクロール バーの両方です。 ユーザーはスクロールして、テーブル内のすべてのデータを表示します。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[Panel.Scrollbars#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Panel.Scrollbars/CS/panel.scrollbarscs.aspx#1)]
+ [!code-aspx-vb[Panel.Scrollbars#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Panel.Scrollbars/VB/panel.scrollbarsvb.aspx#1)]  
+  
+ 次のコード例は、プログラムで設定する方法を示します、<xref:System.Web.UI.WebControls.Panel.ScrollBars%2A>プロパティです。 A<xref:System.Web.UI.WebControls.ListBox>コントロールの設定が、<xref:System.Web.UI.WebControls.ScrollBars>列挙値。 スクロール バーは、ユーザーが、リスト ボックスから選択する値に基づいて、パネル内に表示されます。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[Panel.Scrollbars2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Panel.Scrollbars2/CS/panel.scrollbars2cs.aspx#1)]
+ [!code-aspx-vb[Panel.Scrollbars2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Panel.Scrollbars2/VB/panel.scrollbars2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsDisabledAttribute">
+      <MemberSignature Language="C#" Value="public override bool SupportsDisabledAttribute { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsDisabledAttribute" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Panel.SupportsDisabledAttribute" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの <see cref="P:System.Web.UI.WebControls.WebControl.IsEnabled" /> プロパティが <see langword="false" /> の場合、レンダリングされた HTML 要素の <see langword="disabled" /> 属性を "無効" に設定するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Web.UI.Control.RenderingCompatibility" />プロパティがより低い ASP.NET のバージョンを示す<c>4.0</c>、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、コントロールが無効になっているときに ASP.NET がそのコントロールの HTML をどのように描画するかを示します。 場合は、このプロパティは`true`、ASP.NET は表示、`disabled`属性のコントロールを無効にします。 場合は、このプロパティは`false`、ASP.NET は表示、`class`属性のコントロールを無効にします。 詳細については、「<xref:System.Web.UI.WebControls.WebControl.SupportsDisabledAttribute%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Wrap">
+      <MemberSignature Language="C#" Value="public virtual bool Wrap { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Wrap" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Panel.Wrap" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはパネルの内容をラップするかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />パネルのコンテンツをラップする場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内容をラップするこのプロパティを使用して、<xref:System.Web.UI.WebControls.Panel>です。  
+  
+   
+  
+## Examples  
+ 次の例は、プログラムで設定する方法を示しています、<xref:System.Web.UI.WebControls.Panel.Wrap%2A>のプロパティ、<xref:System.Web.UI.WebControls.Panel>コントロール。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[Classic Panel.Wrap Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic Panel.Wrap Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic Panel.Wrap Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic Panel.Wrap Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

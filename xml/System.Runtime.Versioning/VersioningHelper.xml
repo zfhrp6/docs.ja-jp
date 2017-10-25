@@ -1,0 +1,132 @@
+<Type Name="VersioningHelper" FullName="System.Runtime.Versioning.VersioningHelper">
+  <TypeSignature Language="C#" Value="public static class VersioningHelper" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit VersioningHelper extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Versioning.VersioningHelper" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>バージョン セーフ コードの記述を支援するメソッドを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスの使用を容易にするためのもの、<xref:System.Runtime.Versioning.ResourceConsumptionAttribute>と<xref:System.Runtime.Versioning.ResourceExposureAttribute>クラスです。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="MakeVersionSafeName">
+      <MemberSignature Language="C#" Value="public static string MakeVersionSafeName (string name, System.Runtime.Versioning.ResourceScope from, System.Runtime.Versioning.ResourceScope to);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string MakeVersionSafeName(string name, valuetype System.Runtime.Versioning.ResourceScope from, valuetype System.Runtime.Versioning.ResourceScope to) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Versioning.VersioningHelper.MakeVersionSafeName(System.String,System.Runtime.Versioning.ResourceScope,System.Runtime.Versioning.ResourceScope)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="from" Type="System.Runtime.Versioning.ResourceScope" />
+        <Parameter Name="to" Type="System.Runtime.Versioning.ResourceScope" />
+      </Parameters>
+      <Docs>
+        <param name="name">リソースの名前。</param>
+        <param name="from">リソースのスコープです。</param>
+        <param name="to">目的のリソース消費のスコープ。</param>
+        <summary>指定したリソース名と、対象とするリソースの消費量のソースに基づくバージョン セーフ名を返します。</summary>
+        <returns>バージョン セーフ名前です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 元の名前には、スコープの関連サフィックスが返されます。 サフィックスが、現在のプロセス id を含めることが<xref:System.AppDomain>id、またはその両方です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="MakeVersionSafeName">
+      <MemberSignature Language="C#" Value="public static string MakeVersionSafeName (string name, System.Runtime.Versioning.ResourceScope from, System.Runtime.Versioning.ResourceScope to, Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string MakeVersionSafeName(string name, valuetype System.Runtime.Versioning.ResourceScope from, valuetype System.Runtime.Versioning.ResourceScope to, class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Versioning.VersioningHelper.MakeVersionSafeName(System.String,System.Runtime.Versioning.ResourceScope,System.Runtime.Versioning.ResourceScope,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="from" Type="System.Runtime.Versioning.ResourceScope" />
+        <Parameter Name="to" Type="System.Runtime.Versioning.ResourceScope" />
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="name">リソースの名前。</param>
+        <param name="from">スコープの範囲の先頭。</param>
+        <param name="to">スコープの範囲の終了。</param>
+        <param name="type"><see cref="T:System.Type" />リソースのです。</param>
+        <summary>指定したリソース名、対象とするリソースの消費スコープ、およびリソースを使用して、型に基づくバージョン セーフ名を返します。</summary>
+        <returns>バージョン セーフ名前です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 元の名前には、スコープの関連サフィックスが返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">値は、<paramref name="from" />と<paramref name="to" />が無効です。 リソースの種類、<see cref="T:System.Runtime.Versioning.ResourceScope" />列挙がより一般的なリソース型へのより制限の厳しいリソースの種類から移動します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> は <see langword="null" /> です。</exception>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,455 @@
+<Type Name="DataServiceCollection&lt;T&gt;" FullName="System.Data.Services.Client.DataServiceCollection&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public class DataServiceCollection&lt;T&gt; : System.Collections.ObjectModel.ObservableCollection&lt;T&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataServiceCollection`1&lt;T&gt; extends System.Collections.ObjectModel.ObservableCollection`1&lt;!T&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Services.Client.DataServiceCollection`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Services.Client</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Collections.ObjectModel.ObservableCollection&lt;T&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="!0">T</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <typeparam name="T">エンティティ型。</typeparam>
+    <summary>項目が追加または削除されたとき、あるいはリストが更新されたときに通知を提供する動的なエンティティ コレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[ssAstoria](~/includes/ssastoria-md.md)]提供、<xref:System.Data.Services.Client.DataServiceCollection%601>クライアント アプリケーションでのコントロールへのデータ バインディングをサポートするクラス。 このクラスから継承、<xref:System.Collections.ObjectModel.ObservableCollection%601>クラスを実装する、<xref:System.Collections.Specialized.INotifyCollectionChanged>インターフェイスし、は、Windows Presentation Foundation (WPF) および Silverlight ベースのアプリケーションのプライマリ データ バインディング機構です。  
+  
+ <xref:System.Collections.ObjectModel.ObservableCollection%601> インターフェイスを実装する任意のコレクションを使用して、<xref:System.Collections.Generic.IEnumerable%601> バインディング コレクションを読み込むことができます。 バインディング コレクションに読み込まれた項目は、<xref:System.ComponentModel.INotifyPropertyChanged> インターフェイスを実装する必要があります。 詳細については、次を参照してください。[コントロールへのデータ バインディング](~/docs/framework/data/wcf/binding-data-to-controls-wcf-data-services.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、WPF で `SalesOrders` ウィンドウを定義する XAML (Extensible Application Markup Language) の分離コード ページからの抜粋です。 ウィンドウが読み込まれると、国別にフィルターされた顧客を関連オブジェクトと共に返すクエリの結果に基づいて <xref:System.Data.Services.Client.DataServiceCollection%601> が作成されます。 この結果は、WPF ウィンドウのルート レイアウト コントロールである <xref:System.Windows.FrameworkElement.DataContext%2A> の <xref:System.Windows.Controls.StackPanel> プロパティにバインドされます。  
+  
+ [!code-csharp[Astoria Northwind Client#WpfDataBinding](~/samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/customerorderswpf.xaml.cs#wpfdatabinding)]
+ [!code-vb[Astoria Northwind Client#WpfDataBinding](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/customerorderswpf.xaml.vb#wpfdatabinding)]  
+  
+ 次の XAML では、前の例の WPF の `SalesOrders` ウィンドウを定義します。  
+  
+ [!code-xaml[Astoria Northwind Client#WpfDataBindingXaml](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/customerorderswpf.xaml#wpfdatabindingxaml)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataServiceCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceCollection`1.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Services.Client.DataServiceCollection`1" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.Data.Services.Client.DataServiceCollection%601> に対して自動変更追跡が有効になっています。 <xref:System.Data.Services.Client.DataServiceCollection%601> に <xref:System.Data.Services.Client.TrackingMode.None> の値を指定できるようにするコンストラクターを使用してインスタンスを作成するときに、手動変更追跡を使用する <xref:System.Data.Services.Client.TrackingMode> のインスタンスを作成できます。 手動追跡を使用するときは、<xref:System.ComponentModel.INotifyPropertyChanged> および <xref:System.Collections.Specialized.INotifyCollectionChanged> を実装し、発生イベントを処理して、手動で変更を <xref:System.Data.Services.Client.DataServiceContext> に報告する必要があります。  
+  
+ 項目がコレクションに読み込まれた後、自動変更追跡を開始します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataServiceCollection (System.Collections.Generic.IEnumerable&lt;T&gt; items);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;!T&gt; items) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceCollection`1.#ctor(System.Collections.Generic.IEnumerable{`0})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="items" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="items">コレクションの初期化に使用されるオブジェクトの <see cref="T:System.Data.Services.Client.DataServiceQuery`1" /> コレクションを返す <see cref="T:System.Collections.Generic.IEnumerable`1" /> または LINQ クエリ。</param>
+        <summary>クエリの実行に基づいて <see cref="T:System.Data.Services.Client.DataServiceCollection`1" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Generic.IEnumerable%601> に指定されたオブジェクトの `items` コレクションは、通常、コレクション内の項目を返すクエリです。 ただし、正しい型の <xref:System.Collections.Generic.IEnumerable%601> コレクションはすべて指定できます。  
+  
+ 既定では、<xref:System.Data.Services.Client.DataServiceCollection%601> に対して自動変更追跡が有効になっています。 <xref:System.Data.Services.Client.DataServiceCollection%601> に <xref:System.Data.Services.Client.TrackingMode.None> の値を指定できるようにするコンストラクターを使用してインスタンスを作成するときに、手動変更追跡を使用する <xref:System.Data.Services.Client.TrackingMode> のインスタンスを作成できます。 手動追跡を使用するときは、<xref:System.ComponentModel.INotifyPropertyChanged> および <xref:System.Collections.Specialized.INotifyCollectionChanged> を実装し、発生イベントを処理して、手動で変更を <xref:System.Data.Services.Client.DataServiceContext> に報告する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataServiceCollection (System.Data.Services.Client.DataServiceContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.Services.Client.DataServiceContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceCollection`1.#ctor(System.Data.Services.Client.DataServiceContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="context" Type="System.Data.Services.Client.DataServiceContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">コレクション内のオブジェクトへの変更を追跡するために使用される <see cref="T:System.Data.Services.Client.DataServiceContext" />。</param>
+        <summary>指定した <see cref="T:System.Data.Services.Client.DataServiceCollection`1" /> を使用して、<see cref="T:System.Data.Services.Client.DataServiceContext" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターを使用して、サービスに対してクエリを実行しない場合または <xref:System.Data.Services.Client.DataServiceCollection%601> が使用できない場合にエンティティ オブジェクトを追加できる空の <xref:System.Collections.Generic.IEnumerable%601> を作成します。  
+  
+ 既定では、<xref:System.Data.Services.Client.DataServiceCollection%601> に対して自動変更追跡が有効になっています。 <xref:System.Data.Services.Client.DataServiceCollection%601> に <xref:System.Data.Services.Client.TrackingMode.None> の値を指定できるようにするコンストラクターを使用してインスタンスを作成するときに、手動変更追跡を使用する <xref:System.Data.Services.Client.TrackingMode> のインスタンスを作成できます。 手動追跡を使用するときは、<xref:System.ComponentModel.INotifyPropertyChanged> および <xref:System.Collections.Specialized.INotifyCollectionChanged> を実装し、発生イベントを処理して、手動で変更を <xref:System.Data.Services.Client.DataServiceContext> に報告する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataServiceCollection (System.Collections.Generic.IEnumerable&lt;T&gt; items, System.Data.Services.Client.TrackingMode trackingMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;!T&gt; items, valuetype System.Data.Services.Client.TrackingMode trackingMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceCollection`1.#ctor(System.Collections.Generic.IEnumerable{`0},System.Data.Services.Client.TrackingMode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="items" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" />
+        <Parameter Name="trackingMode" Type="System.Data.Services.Client.TrackingMode" />
+      </Parameters>
+      <Docs>
+        <param name="items">A<see cref="T:System.Data.Services.Client.DataServiceQuery`1" />または LINQ クエリを返す、<see cref="T:System.Collections.Generic.IEnumerable`1" />コレクションを初期化するために使用されるオブジェクトのコレクション。</param>
+        <param name="trackingMode">コレクション内の項目に加えられた変更が自動的に追跡されるかどうかを示す <see cref="T:System.Data.Services.Client.TrackingMode" /> 値。</param>
+        <summary>クエリの実行に基づき、指定された追跡モードを使用して、<see cref="T:System.Data.Services.Client.DataServiceCollection`1" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.Data.Services.Client.DataServiceCollection%601> に対して自動変更追跡が有効になっています。 このクラス コンストラクターを使用し、<xref:System.Data.Services.Client.TrackingMode.None> の値を `trackingMode` に指定して、手動変更追跡を使用する <xref:System.Data.Services.Client.DataServiceCollection%601> のインスタンスを作成します。 手動追跡を使用するときは、<xref:System.ComponentModel.INotifyPropertyChanged> および <xref:System.Collections.Specialized.INotifyCollectionChanged> を実装し、発生イベントを処理して、手動で変更を <xref:System.Data.Services.Client.DataServiceContext> に報告する必要があります。  
+  
+ <xref:System.Collections.Generic.IEnumerable%601> に指定されたオブジェクトの `items` コレクションは、通常、コレクション内の項目を返すクエリです。 ただし、正しい型の <xref:System.Collections.Generic.IEnumerable%601> コレクションはすべて指定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataServiceCollection (System.Data.Services.Client.DataServiceContext context, string entitySetName, Func&lt;System.Data.Services.Client.EntityChangedParams,bool&gt; entityChangedCallback, Func&lt;System.Data.Services.Client.EntityCollectionChangedParams,bool&gt; collectionChangedCallback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.Services.Client.DataServiceContext context, string entitySetName, class System.Func`2&lt;class System.Data.Services.Client.EntityChangedParams, bool&gt; entityChangedCallback, class System.Func`2&lt;class System.Data.Services.Client.EntityCollectionChangedParams, bool&gt; collectionChangedCallback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceCollection`1.#ctor(System.Data.Services.Client.DataServiceContext,System.String,System.Func{System.Data.Services.Client.EntityChangedParams,System.Boolean},System.Func{System.Data.Services.Client.EntityCollectionChangedParams,System.Boolean})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="context" Type="System.Data.Services.Client.DataServiceContext" />
+        <Parameter Name="entitySetName" Type="System.String" />
+        <Parameter Name="entityChangedCallback" Type="System.Func&lt;System.Data.Services.Client.EntityChangedParams,System.Boolean&gt;" />
+        <Parameter Name="collectionChangedCallback" Type="System.Func&lt;System.Data.Services.Client.EntityCollectionChangedParams,System.Boolean&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="context">コレクション内の項目を追跡するために使用される <see cref="T:System.Data.Services.Client.DataServiceContext" />。</param>
+        <param name="entitySetName">コレクション内のオブジェクトのエンティティ セット。</param>
+        <param name="entityChangedCallback">エンティティが変更されたときに呼び出されるメソッドをカプセル化するデリゲート。</param>
+        <param name="collectionChangedCallback">エンティティのコレクションが変更されたときに呼び出されるメソッドをカプセル化するデリゲート。</param>
+        <summary>指定された変更メソッドのデリゲートを使用して、指定された <see cref="T:System.Data.Services.Client.DataServiceCollection`1" /> を使用する <see cref="T:System.Data.Services.Client.DataServiceContext" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターを使用して、サービスに対してクエリを実行しない場合または <xref:System.Data.Services.Client.DataServiceCollection%601> が使用できない場合にエンティティ オブジェクトを追加できる空の <xref:System.Collections.Generic.IEnumerable%601> を作成します。  
+  
+ 既定では、<xref:System.Data.Services.Client.DataServiceCollection%601> に対して自動変更追跡が有効になっています。 <xref:System.Data.Services.Client.DataServiceCollection%601> に <xref:System.Data.Services.Client.TrackingMode.None> の値を指定できるようにするコンストラクターを使用してインスタンスを作成するときに、手動変更追跡を使用する <xref:System.Data.Services.Client.TrackingMode> のインスタンスを作成できます。 手動追跡を使用するときは、<xref:System.ComponentModel.INotifyPropertyChanged> および <xref:System.Collections.Specialized.INotifyCollectionChanged> を実装し、発生イベントを処理して、手動で変更を <xref:System.Data.Services.Client.DataServiceContext> に報告する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataServiceCollection (System.Collections.Generic.IEnumerable&lt;T&gt; items, System.Data.Services.Client.TrackingMode trackingMode, string entitySetName, Func&lt;System.Data.Services.Client.EntityChangedParams,bool&gt; entityChangedCallback, Func&lt;System.Data.Services.Client.EntityCollectionChangedParams,bool&gt; collectionChangedCallback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;!T&gt; items, valuetype System.Data.Services.Client.TrackingMode trackingMode, string entitySetName, class System.Func`2&lt;class System.Data.Services.Client.EntityChangedParams, bool&gt; entityChangedCallback, class System.Func`2&lt;class System.Data.Services.Client.EntityCollectionChangedParams, bool&gt; collectionChangedCallback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceCollection`1.#ctor(System.Collections.Generic.IEnumerable{`0},System.Data.Services.Client.TrackingMode,System.String,System.Func{System.Data.Services.Client.EntityChangedParams,System.Boolean},System.Func{System.Data.Services.Client.EntityCollectionChangedParams,System.Boolean})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="items" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" />
+        <Parameter Name="trackingMode" Type="System.Data.Services.Client.TrackingMode" />
+        <Parameter Name="entitySetName" Type="System.String" />
+        <Parameter Name="entityChangedCallback" Type="System.Func&lt;System.Data.Services.Client.EntityChangedParams,System.Boolean&gt;" />
+        <Parameter Name="collectionChangedCallback" Type="System.Func&lt;System.Data.Services.Client.EntityCollectionChangedParams,System.Boolean&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="items">A<see cref="T:System.Data.Services.Client.DataServiceQuery`1" />または LINQ クエリを返す、<see cref="T:System.Collections.Generic.IEnumerable`1" />コレクションを初期化するために使用されるオブジェクトのコレクション。</param>
+        <param name="trackingMode">コレクション内の項目に加えられた変更が自動的に追跡されるかどうかを示す <see cref="T:System.Data.Services.Client.TrackingMode" /> 値。</param>
+        <param name="entitySetName">コレクション内のオブジェクトのエンティティ セット。</param>
+        <param name="entityChangedCallback">エンティティが変更されたときに呼び出されるメソッドをカプセル化するデリゲート。</param>
+        <param name="collectionChangedCallback">エンティティのコレクションが変更されたときに呼び出されるメソッドをカプセル化するデリゲート。</param>
+        <summary>クエリの実行に基づき、指定された変更メソッドのデリゲートを使用して、<see cref="T:System.Data.Services.Client.DataServiceCollection`1" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `entityChanged` 関数および `collectionChanged` 関数は、それぞれ <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> イベントおよび <xref:System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged> イベントによって呼び出されます。 `entityChanged` メソッドは <xref:System.Data.Services.Client.EntityCollectionChangedParams> 値を受け取り、`collectionChanged` メソッドは <xref:System.Data.Services.Client.EntityChangedParams> 値を受け取ります。 両方のメソッドは、イベントが関数によって処理されたかどうかを示すブール値を返す必要があります。 メソッドを返す場合`true`既定の動作が引き続き発生します。  
+  
+ 既定では、<xref:System.Data.Services.Client.DataServiceCollection%601> に対して自動変更追跡が有効になっています。 <xref:System.Data.Services.Client.DataServiceCollection%601> に <xref:System.Data.Services.Client.TrackingMode.None> の値を指定できるようにするコンストラクターを使用してインスタンスを作成するときに、手動変更追跡を使用する <xref:System.Data.Services.Client.TrackingMode> のインスタンスを作成できます。 手動追跡を使用するときは、<xref:System.ComponentModel.INotifyPropertyChanged> および <xref:System.Collections.Specialized.INotifyCollectionChanged> を実装し、発生イベントを処理して、手動で変更を <xref:System.Data.Services.Client.DataServiceContext> に報告する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataServiceCollection (System.Data.Services.Client.DataServiceContext context, System.Collections.Generic.IEnumerable&lt;T&gt; items, System.Data.Services.Client.TrackingMode trackingMode, string entitySetName, Func&lt;System.Data.Services.Client.EntityChangedParams,bool&gt; entityChangedCallback, Func&lt;System.Data.Services.Client.EntityCollectionChangedParams,bool&gt; collectionChangedCallback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.Services.Client.DataServiceContext context, class System.Collections.Generic.IEnumerable`1&lt;!T&gt; items, valuetype System.Data.Services.Client.TrackingMode trackingMode, string entitySetName, class System.Func`2&lt;class System.Data.Services.Client.EntityChangedParams, bool&gt; entityChangedCallback, class System.Func`2&lt;class System.Data.Services.Client.EntityCollectionChangedParams, bool&gt; collectionChangedCallback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceCollection`1.#ctor(System.Data.Services.Client.DataServiceContext,System.Collections.Generic.IEnumerable{`0},System.Data.Services.Client.TrackingMode,System.String,System.Func{System.Data.Services.Client.EntityChangedParams,System.Boolean},System.Func{System.Data.Services.Client.EntityCollectionChangedParams,System.Boolean})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="context" Type="System.Data.Services.Client.DataServiceContext" />
+        <Parameter Name="items" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" />
+        <Parameter Name="trackingMode" Type="System.Data.Services.Client.TrackingMode" />
+        <Parameter Name="entitySetName" Type="System.String" />
+        <Parameter Name="entityChangedCallback" Type="System.Func&lt;System.Data.Services.Client.EntityChangedParams,System.Boolean&gt;" />
+        <Parameter Name="collectionChangedCallback" Type="System.Func&lt;System.Data.Services.Client.EntityCollectionChangedParams,System.Boolean&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="context">コレクション内の項目を追跡するために使用される <see cref="T:System.Data.Services.Client.DataServiceContext" />。</param>
+        <param name="items">A<see cref="T:System.Data.Services.Client.DataServiceQuery`1" />または LINQ クエリを返す、<see cref="T:System.Collections.Generic.IEnumerable`1" />コレクションを初期化するために使用されるオブジェクトのコレクション。</param>
+        <param name="trackingMode">コレクション内の項目に加えられた変更が自動的に追跡されるかどうかを示す <see cref="T:System.Data.Services.Client.TrackingMode" /> 値。</param>
+        <param name="entitySetName">コレクション内のオブジェクトのエンティティ セット。</param>
+        <param name="entityChangedCallback">エンティティが変更されたときに呼び出されるメソッドをカプセル化するデリゲート。</param>
+        <param name="collectionChangedCallback">エンティティのコレクションが変更されたときに呼び出されるメソッドをカプセル化するデリゲート。</param>
+        <summary>クエリの実行に基づき、指定された変更メソッドのデリゲートを使用して、指定された <see cref="T:System.Data.Services.Client.DataServiceCollection`1" /> を使用する <see cref="T:System.Data.Services.Client.DataServiceContext" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.Data.Services.Client.DataServiceCollection%601> に対して自動変更追跡が有効になっています。 このクラス コンストラクターを使用し、<xref:System.Data.Services.Client.TrackingMode.None> に `trackingMode` の値を指定して、手動の変更追跡を使用する <xref:System.Data.Services.Client.DataServiceCollection%601> のインスタンスを作成します。 手動追跡を使用するときは、<xref:System.ComponentModel.INotifyPropertyChanged> および <xref:System.Collections.Specialized.INotifyCollectionChanged> を実装し、発生イベントを処理して、手動で変更を <xref:System.Data.Services.Client.DataServiceContext> に報告する必要があります。  
+  
+ <xref:System.Data.Services.Client.DataServiceContext> が `items` インスタンスへの参照を含む <xref:System.Data.Services.Client.DataServiceQuery%601> または <xref:System.Data.Services.Client.QueryOperationResponse%601> でない場合、<xref:System.Data.Services.Client.DataServiceContext> を指定する必要があります。  
+  
+ `entityChanged` 関数および `collectionChanged` 関数は、それぞれ <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> イベントおよび <xref:System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged> イベントによって呼び出されます。 `entityChanged` メソッドは <xref:System.Data.Services.Client.EntityCollectionChangedParams> 値を受け取り、`collectionChanged` メソッドは <xref:System.Data.Services.Client.EntityChangedParams> 値を受け取ります。 両方のメソッドは、イベントが関数によって処理されたかどうかを示すブール値を返す必要があります。 メソッドを返す場合`true`既定の動作が発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear (bool stopTracking);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear(bool stopTracking) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceCollection`1.Clear(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stopTracking" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="stopTracking">ときに<see langword="true" />からのすべての項目をデタッチ、<see cref="T:System.Data.Services.Client.DataServiceContext" />です。</param>
+        <summary>コレクションからすべての項目を削除し、必要に応じて <see cref="T:System.Data.Services.Client.DataServiceContext" /> からすべての項目をデタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 項目がデタッチされると、データ グラフ内のすべての関連オブジェクトも <xref:System.Data.Services.Client.DataServiceContext> からデタッチされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Continuation">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Client.DataServiceQueryContinuation&lt;T&gt; Continuation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Services.Client.DataServiceQueryContinuation`1&lt;!T&gt; Continuation" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.DataServiceCollection`1.Continuation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Client.DataServiceQueryContinuation&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページングされた結果の次のセットを返すために使用される連結オブジェクトを取得します。</summary>
+        <value>ページングされた結果の次のセットを返す URI を含む <see cref="T:System.Data.Services.Client.DataServiceQueryContinuation`1" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Client.DataServiceCollection%601.Continuation%2A> プロパティでは、データ サービスでページングが有効な場合、ページングされた結果の次のセットへのアクセスに使用されるリンクを返します。 詳細については、次を参照してください。[データ サービスの構成](~/docs/framework/data/wcf/configuring-the-data-service-wcf-data-services.md)です。  
+  
+ ページングされた結果を <xref:System.Data.Services.Client.DataServiceCollection%601> に読み込むときに、<xref:System.Data.Services.Client.DataServiceCollection%601.Load%28System.Collections.Generic.IEnumerable%7B%600%7D%29> プロパティから取得された URI の実行の結果を渡して、<xref:System.Data.Services.Client.DataServiceCollection%601> で <xref:System.Data.Services.Client.DataServiceCollection%601.Continuation%2A> メソッドを呼び出すことにより、ページを明示的に読み込む必要があります。  
+  
+   
+  
+## Examples  
+ 次の例は、WPF で `SalesOrders` ウィンドウを定義する XAML (Extensible Application Markup Language) の分離コード ページからの抜粋です。 ウィンドウが読み込まれると、国別にフィルターされた顧客を返すクエリの結果に基づいて <xref:System.Data.Services.Client.DataServiceCollection%601> が作成されます。 このページングされた結果のすべてのページが関連する注文と一緒に読み込まれ、WPF ウィンドウのルート レイアウト コントロールである <xref:System.Windows.FrameworkElement.DataContext%2A> の <xref:System.Windows.Controls.StackPanel> プロパティにバインドされます。 詳細については、次を参照してください。[する方法: Windows Presentation Foundation 要素へのデータのバインド](~/docs/framework/data/wcf/bind-data-to-wpf-elements-wcf-data-services.md)です。  
+  
+ [!code-csharp[Astoria Northwind Client#BindPagedData](~/samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/customerorderswpf3.xaml.cs#bindpageddata)]
+ [!code-vb[Astoria Northwind Client#BindPagedData](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/customerorderswpf3.xaml.vb#bindpageddata)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Detach">
+      <MemberSignature Language="C#" Value="public void Detach ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Detach() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceCollection`1.Detach" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Services.Client.DataServiceContext" /> によるコレクション内のすべての項目の追跡を無効にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Client.DataServiceCollection%601.Detach%2A> メソッドは、<xref:System.Data.Services.Client.DataServiceCollection%601> がルート コレクションである場合にのみ呼び出すことができます。  
+  
+ ルート コレクションであるコレクションで <xref:System.Data.Services.Client.DataServiceCollection%601.Detach%2A> メソッドが呼び出されると、データ グラフ内にあるすべての関連オブジェクトの追跡も停止されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertItem">
+      <MemberSignature Language="C#" Value="protected override void InsertItem (int index, T item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InsertItem(int32 index, !T item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceCollection`1.InsertItem(System.Int32,`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="item" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="index">項目を追加するインデックス位置。</param>
+        <param name="item">追加する項目。</param>
+        <summary>指定された項目を、コレクション内の指定されたインデックスの位置に追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションへの変更を手動で追跡する場合は、<xref:System.Data.Services.Client.DataServiceCollection%601.InsertItem%2A> メソッドをオーバーライドして、項目が自動的にコレクションに追加されないようにする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public void Load (System.Collections.Generic.IEnumerable&lt;T&gt; items);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Load(class System.Collections.Generic.IEnumerable`1&lt;!T&gt; items) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceCollection`1.Load(System.Collections.Generic.IEnumerable{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="items" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="items"><see cref="T:System.Data.Services.Client.DataServiceCollection`1" /> に追加するエンティティ オブジェクトのコレクション。</param>
+        <summary>エンティティ オブジェクトのコレクションをコレクションに読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Client.DataServiceCollection%601.Load%2A> に関連付けられている <xref:System.Data.Services.Client.DataServiceContext> にまだアタッチされていない場合、<xref:System.Data.Services.Client.DataServiceCollection%601> メソッドを呼び出すと、コレクション内のすべてのオブジェクトがアタッチされます。  
+  
+ <xref:System.Data.Services.Client.DataServiceCollection%601.Load%2A> メソッドを使用してオブジェクトがアタッチされると、すべての関連オブジェクトもアタッチされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public void Load (T item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Load(!T item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceCollection`1.Load(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="item">追加されるエンティティ オブジェクト。</param>
+        <summary>1 つのエンティティ オブジェクトをコレクションに読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Client.DataServiceCollection%601.Load%2A> に関連付けられている <xref:System.Data.Services.Client.DataServiceContext> にまだアタッチされていない場合、<xref:System.Data.Services.Client.DataServiceCollection%601> メソッドを呼び出すと、オブジェクトがアタッチされます。  
+  
+ <xref:System.Data.Services.Client.DataServiceCollection%601.Load%2A> メソッドを使用してオブジェクトがアタッチされると、すべての関連オブジェクトもアタッチされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,76 @@
+<Type Name="IDesignerGlyphProvider" FullName="System.Workflow.ComponentModel.Design.IDesignerGlyphProvider">
+  <TypeSignature Language="C#" Value="public interface IDesignerGlyphProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDesignerGlyphProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Design.IDesignerGlyphProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アクティビティ デザイナーに表示するグリフの配列を生成するのにグリフ プロバイダー クラスが使用するメソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ このインターフェイスは、実装クラスがアクティビティ デザイナーに <xref:System.Workflow.ComponentModel.Design.DesignerGlyph> オブジェクトの適切なセットを提供するために使用する必要があるメソッドを定義します。 実装クラスは <xref:System.Workflow.ComponentModel.Design.DesignerGlyph> オブジェクトに <xref:System.Workflow.ComponentModel.Design.ActivityDesigner> オブジェクトもレンダリングする必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Workflow.ComponentModel.Design.IDesignerGlyphProvider> インターフェイスを実装する方法を示しています。 ここでは、<xref:System.Workflow.ComponentModel.Design.IDesignerGlyphProvider.GetGlyphs%2A> メソッドを実装してアクティビティ デザイナー画面にカスタム グリフ オブジェクトを描画する方法を示しています。  
+  
+ このコード例は、DesignerGlyphProvider.cs ファイルに含まれている、ワークフロー モニターの SDK サンプルの一部です。 詳細については、次を参照してください。[ワークフロー モニター](http://msdn.microsoft.com/en-us/4f70c1c5-f82d-4d5f-8b7d-943b9f99f8e2)です。  
+  
+ [!code-csharp[WF_Samples#130](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#130)]
+ [!code-vb[WF_Samples#130](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#130)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetGlyphs">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.Design.ActivityDesignerGlyphCollection GetGlyphs (System.Workflow.ComponentModel.Design.ActivityDesigner activityDesigner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Workflow.ComponentModel.Design.ActivityDesignerGlyphCollection GetGlyphs(class System.Workflow.ComponentModel.Design.ActivityDesigner activityDesigner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.IDesignerGlyphProvider.GetGlyphs(System.Workflow.ComponentModel.Design.ActivityDesigner)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.ActivityDesignerGlyphCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activityDesigner" Type="System.Workflow.ComponentModel.Design.ActivityDesigner" />
+      </Parameters>
+      <Docs>
+        <param name="activityDesigner">グリフを取得する対象の <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" /> オブジェクト。</param>
+        <summary>指定したアクティビティ デザイナーに関連付けられたグリフの配列を返します。</summary>
+        <returns>アクティビティ デザイナーにレンダリングされる <see cref="T:System.Workflow.ComponentModel.Design.DesignerGlyph" /> オブジェクトの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.IDesignerGlyphProvider.GetGlyphs%2A> メソッドを実装してアクティビティ デザイナー画面にカスタム グリフ オブジェクトを描画する方法を、次のコード例に示します。  
+  
+ このコード例は、DesignerGlyphProvider.cs ファイルに含まれている、ワークフロー モニターの SDK サンプルの一部です。 詳細については、次を参照してください。[ワークフロー モニター](http://msdn.microsoft.com/en-us/4f70c1c5-f82d-4d5f-8b7d-943b9f99f8e2)です。  
+  
+ [!code-csharp[WF_Samples#130](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#130)]
+ [!code-vb[WF_Samples#130](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#130)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

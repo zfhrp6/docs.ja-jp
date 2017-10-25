@@ -1,0 +1,69 @@
+<Type Name="ContextBoundObject" FullName="System.ContextBoundObject">
+  <TypeSignature Language="C#" Value="public abstract class ContextBoundObject : MarshalByRefObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit ContextBoundObject extends System.MarshalByRefObject" />
+  <TypeSignature Language="DocId" Value="T:System.ContextBoundObject" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.MarshalByRefObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>すべてのコンテキスト バインド クラスの基本クラスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテキスト内に存在し、コンテキスト ルールにバインドされているオブジェクトには、コンテキスト バインド オブジェクトが呼び出されます。 コンテキストは、プロパティまたはオブジェクトのコレクションが存在する環境を定義するための使用に関する規則のセットです。 オブジェクトが入力するか、コンテキストを離れるときに、規則が適用されます。 いないコンテキスト バインドされたオブジェクトには、アジャイル オブジェクトが呼び出されます。  
+  
+ コンテキストは、オブジェクトのアクティブ化時に作成されます。 新しいオブジェクトは、既存のコンテキスト、または型のメタデータに含まれる属性を使用して作成された新しいコンテキストに配置されます。 コンテキスト バインド クラスが付いて、<xref:System.Runtime.Remoting.Contexts.ContextAttribute>使用状況規則を提供します。 追加できるコンテキスト プロパティには、同期、トランザクションに関連するポリシーが含まれます。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>共通言語ランタイムの現在のバージョンをジェネリックにすることはできません<see cref="T:System.ContextBoundObject" />型または非ジェネリック<see cref="T:System.ContextBoundObject" />ジェネリック メソッドを持つ型。 原因がこのような型のインスタンスを作成しようとして、<see cref="T:System.TypeLoadException" />です。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ContextBoundObject ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ContextBoundObject.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ContextBoundObject" /> クラスのインスタンスをインスタンス化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

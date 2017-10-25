@@ -1,0 +1,118 @@
+<Type Name="DataTemplateSelector" FullName="System.Windows.Controls.DataTemplateSelector">
+  <TypeSignature Language="C#" Value="public class DataTemplateSelector" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataTemplateSelector extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.DataTemplateSelector" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データ オブジェクトとデータ バインド要素に基づいて <see cref="T:System.Windows.DataTemplate" /> を選択する方法を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、作成、 <xref:System.Windows.Controls.DataTemplateSelector> 1 つ以上ある場合<xref:System.Windows.DataTemplate>オブジェクトの同じ型を選択する、独自のロジックを指定する、<xref:System.Windows.DataTemplate>各データ オブジェクトのプロパティに基づいて適用します。 別のオブジェクトがある場合の種類を設定、<xref:System.Windows.DataTemplate.DataType%2A>プロパティを<xref:System.Windows.DataTemplate>です。 実行するかどうかは、作成する必要はありません、<xref:System.Windows.Controls.DataTemplateSelector>です。 さらに、さまざまなプロパティを持つ同じ型のオブジェクトがある場合は、することができますも検討を使用して、<xref:System.Windows.DataTrigger>またはデータ コンバーター。 詳しくは「 [データ テンプレートの概要](~/docs/framework/wpf/data/data-templating-overview.md)」をご覧ください。  
+  
+ テンプレート セレクターを作成するから継承するクラスを作成<xref:System.Windows.Controls.DataTemplateSelector>をオーバーライドし、<xref:System.Windows.Controls.DataTemplateSelector.SelectTemplate%2A>メソッドです。 クラスが定義される要素のテンプレート セレクター プロパティに、クラスのインスタンスを割り当てることができます。  
+  
+   
+  
+## Examples  
+ この例では、バインディング ソースは、一連の`Task`オブジェクト。 プロパティの 1 つ、`Task`オブジェクトが`Priority`です。 定義されている、2 つのデータ テンプレートが`myTaskTemplate`と`importantTaskTemplate`です。  
+  
+ 選択するためのロジックを提供する<xref:System.Windows.DataTemplate>に基づいて、使用するのには、`Priority`値のデータ オブジェクトのサブクラスを作成<xref:System.Windows.Controls.DataTemplateSelector>をオーバーライドし、<xref:System.Windows.Controls.DataTemplateSelector.SelectTemplate%2A>メソッドです。 次の例で、<xref:System.Windows.Controls.DataTemplateSelector.SelectTemplate%2A>メソッドの値に基づいて、適切なテンプレートを返すロジックの提供、`Priority`プロパティです。 エンベロープのリソースに返されるテンプレートが見つかった<xref:System.Windows.Window>要素。  
+  
+ [!code-csharp[DataTemplatingIntro_snip#DTSClass](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/TaskListDataTemplateSelector.cs#dtsclass)]
+ [!code-vb[DataTemplatingIntro_snip#DTSClass](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DataTemplatingIntro_snip/visualbasic/tasklistdatatemplateselector.vb#dtsclass)]  
+  
+ その後、リソースとして `TaskListDataTemplateSelector` を宣言できます。  
+  
+ [!code-xaml[DataTemplatingIntro_snip#R1](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#r1)]  
+[!code-xaml[DataTemplatingIntro_snip#DTS](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#dts)]  
+[!code-xaml[DataTemplatingIntro_snip#R2](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#r2)]  
+  
+ テンプレート セレクター リソースを使用するには、それを割り当てる、<xref:System.Windows.Controls.ItemsControl.ItemTemplateSelector%2A>のプロパティ、<xref:System.Windows.Controls.ListBox>です。 <xref:System.Windows.Controls.ListBox>呼び出し、<xref:System.Windows.Controls.DataTemplateSelector.SelectTemplate%2A>のメソッド、`TaskListDataTemplateSelector`基になるコレクション内の項目の各します。 呼び出しでは、項目パラメーターとしてデータ オブジェクトを渡します。 <xref:System.Windows.DataTemplate>によって返される、メソッドはそのデータ オブジェクトに適用されます。  
+  
+ [!code-xaml[DataTemplatingIntro_snip#ItemTemplateSelector](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#itemtemplateselector)]  
+  
+ 完全なサンプルについては、「[Introduction to Data Templating Sample](http://go.microsoft.com/fwlink/?LinkID=160009)」(データ テンプレート サンプルの概要) をご覧ください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataTemplateSelector ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataTemplateSelector.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.DataTemplateSelector" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectTemplate">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.DataTemplate SelectTemplate (object item, System.Windows.DependencyObject container);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.DataTemplate SelectTemplate(object item, class System.Windows.DependencyObject container) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataTemplateSelector.SelectTemplate(System.Object,System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DataTemplate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+        <Parameter Name="container" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="item">テンプレートを選択する対象となるデータ オブジェクト。</param>
+        <param name="container">データ バインドされたオブジェクト。</param>
+        <summary>派生クラスでオーバーライドされると、<see cref="T:System.Windows.DataTemplate" />カスタム ロジックに基づいたです。</summary>
+        <returns><see cref="T:System.Windows.DataTemplate" /> または <see langword="null" /> を返します。 既定値は <see langword="null" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、同じ種類のオブジェクトに対して定義されている 1 つ以上のデータ テンプレートがある場合は、テンプレート セレクターを使用します。 たとえば、バインディング ソースがリスト student オブジェクトの一覧場合パートタイム受講者に、特定のテンプレートを適用します。 継承するクラスを作成することでこれを行う<xref:System.Windows.Controls.DataTemplateSelector>をオーバーライドして、<xref:System.Windows.Controls.DataTemplateSelector.SelectTemplate%2A>メソッドです。 クラスが定義される要素のテンプレート セレクター プロパティに、クラスのインスタンスを割り当てることができます。  
+  
+   
+  
+## Examples  
+ この例では、バインディング ソースは、一連の`Task`オブジェクト。 プロパティの 1 つ、`Task`オブジェクトが`Priority`です。 定義されている、2 つのデータ テンプレートが`myTaskTemplate`と`importantTaskTemplate`です。  
+  
+ 選択するためのロジックを提供する<xref:System.Windows.DataTemplate>に基づいて、使用するのには、`Priority`値のデータ オブジェクトのサブクラスを作成<xref:System.Windows.Controls.DataTemplateSelector>をオーバーライドし、<xref:System.Windows.Controls.DataTemplateSelector.SelectTemplate%2A>メソッドです。 次の例で、<xref:System.Windows.Controls.DataTemplateSelector.SelectTemplate%2A>メソッドの値に基づいて、適切なテンプレートを返すロジックの提供、`Priority`プロパティです。 エンベロープのリソースに返されるテンプレートが見つかった<xref:System.Windows.Window>要素。  
+  
+ [!code-csharp[DataTemplatingIntro_snip#DTSClass](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/TaskListDataTemplateSelector.cs#dtsclass)]
+ [!code-vb[DataTemplatingIntro_snip#DTSClass](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DataTemplatingIntro_snip/visualbasic/tasklistdatatemplateselector.vb#dtsclass)]  
+  
+ その後、リソースとして `TaskListDataTemplateSelector` を宣言できます。  
+  
+ [!code-xaml[DataTemplatingIntro_snip#R1](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#r1)]  
+[!code-xaml[DataTemplatingIntro_snip#DTS](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#dts)]  
+[!code-xaml[DataTemplatingIntro_snip#R2](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#r2)]  
+  
+ テンプレート セレクター リソースを使用するには、それを割り当てる、<xref:System.Windows.Controls.ItemsControl.ItemTemplateSelector%2A>のプロパティ、<xref:System.Windows.Controls.ListBox>です。 <xref:System.Windows.Controls.ListBox>呼び出し、<xref:System.Windows.Controls.DataTemplateSelector.SelectTemplate%2A>のメソッド、`TaskListDataTemplateSelector`基になるコレクション内の項目の各します。 呼び出しでは、項目パラメーターとしてデータ オブジェクトを渡します。 <xref:System.Windows.DataTemplate>によって返される、メソッドはそのデータ オブジェクトに適用されます。  
+  
+ [!code-xaml[DataTemplatingIntro_snip#ItemTemplateSelector](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#itemtemplateselector)]  
+  
+ 完全なサンプルについては、「[Introduction to Data Templating Sample](http://go.microsoft.com/fwlink/?LinkID=160009)」(データ テンプレート サンプルの概要) をご覧ください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

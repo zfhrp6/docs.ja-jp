@@ -1,0 +1,117 @@
+<Type Name="RuleAnalysis" FullName="System.Workflow.Activities.Rules.RuleAnalysis">
+  <TypeSignature Language="C#" Value="public class RuleAnalysis" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RuleAnalysis extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Activities.Rules.RuleAnalysis" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>条件を評価するために参照したり、アクションの実行に伴い書き込んだりした、フィールドやプロパティを格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Activities.Rules.RuleAnalysis> に格納された情報は、同じルール セットに属する他のルールとの依存関係や副作用を調べる上で、重要な役割を果たします。 依存関係や副作用には、ある動作の効果を連鎖的に波及させる働きがあります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RuleAnalysis (System.Workflow.Activities.Rules.RuleValidation validation, bool forWrites);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Workflow.Activities.Rules.RuleValidation validation, bool forWrites) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.RuleAnalysis.#ctor(System.Workflow.Activities.Rules.RuleValidation,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="validation" Type="System.Workflow.Activities.Rules.RuleValidation" />
+        <Parameter Name="forWrites" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="validation">検証プロセスを管理する <see cref="T:System.Workflow.Activities.Rules.RuleValidation" />。</param>
+        <param name="forWrites">書き込みのための分析 (<see langword="Boolean" /> オブジェクトの場合) か、読み込みのための分析 (<see cref="T:System.Workflow.Activities.Rules.RuleAction" /> オブジェクトの場合) かを表す <see cref="T:System.Workflow.Activities.Rules.RuleCondition" /> 値。</param>
+        <summary><see cref="T:System.Workflow.Activities.Rules.RuleAnalysis" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddSymbol">
+      <MemberSignature Language="C#" Value="public void AddSymbol (string symbol);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddSymbol(string symbol) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.RuleAnalysis.AddSymbol(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="symbol" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="symbol">フィールドまたはプロパティのパスを表す文字列。</param>
+        <summary>式に使われているフィールドやプロパティを、シンボルとして <see cref="T:System.Workflow.Activities.Rules.RuleAnalysis" /> インスタンスに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Activities.Rules.RuleAnalysis.AddSymbol%2A> メソッドは、式に使われているフィールドやプロパティを、<xref:System.Workflow.Activities.Rules.RuleAnalysis> インスタンスのシンボル リストに追加します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForWrites">
+      <MemberSignature Language="C#" Value="public bool ForWrites { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ForWrites" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.Rules.RuleAnalysis.ForWrites" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>読み込みのための分析か書き込みのための分析かを表す値を取得します。</summary>
+        <value>
+          書き込みのための分析 (<see langword="true" /> オブジェクトの場合) ならば <see cref="T:System.Workflow.Activities.Rules.RuleAction" />、読み込みのための分析 (<see langword="false" /> オブジェクトの場合) ならば <see cref="T:System.Workflow.Activities.Rules.RuleCondition" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSymbols">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;string&gt; GetSymbols ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.ICollection`1&lt;string&gt; GetSymbols() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.RuleAnalysis.GetSymbols" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Activities.Rules.RuleAnalysis" /> インスタンスからシンボルのリストを取得して返します。</summary>
+        <returns><see cref="T:System.Workflow.Activities.Rules.RuleAnalysis" /> インスタンスから取得したシンボルのリスト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

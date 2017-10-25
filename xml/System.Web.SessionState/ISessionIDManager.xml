@@ -1,0 +1,299 @@
+<Type Name="ISessionIDManager" FullName="System.Web.SessionState.ISessionIDManager">
+  <TypeSignature Language="C#" Value="public interface ISessionIDManager" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ISessionIDManager" />
+  <TypeSignature Language="DocId" Value="T:System.Web.SessionState.ISessionIDManager" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>カスタム セッション状態識別子マネージャーを実装する必要があるコントラクトを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SessionState.ISessionIDManager>インターフェイスをカスタム マネージャー セッション識別子の値を作成するために実装する必要がありますメソッドを識別します。 <xref:System.Web.SessionState.ISessionIDManager>インターフェイスの実装を作成、セッション id 値を検証して HTTP 要求から HTTP 応答でセッション識別子の記憶域だけでなく、セッション識別子の値の取得を管理します。 使用して、カスタムのセッション ID マネージャーを有効にする、`sessionIDManagerType`の属性、 [sessionState 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/bda6fb8c-0076-43e3-9ce2-8cf1f8bdaa7d)構成要素。  
+  
+ 場合、<xref:System.Web.SessionState.ISessionIDManager>インターフェイスの実装が cookie なしのセッション識別子をサポートする、送信および ISAPI フィルターなど、URL 内のセッション id を取得するためのソリューションを実装する必要があります。  
+  
+ ASP.NET セッション状態で使用するカスタムのセッション id 値を指定する場合は、継承するクラスを作成することができます、<xref:System.Web.SessionState.SessionIDManager>クラスのみさせ、<xref:System.Web.SessionState.SessionIDManager.CreateSessionID%2A>と<xref:System.Web.SessionState.SessionIDManager.Validate%2A>独自のカスタム実装を持つメソッドです。 これにより、ベースの証明書利用者の中に、独自のセッション id 値を入力する<xref:System.Web.SessionState.SessionIDManager>クラスを HTTP 応答への値を格納および HTTP 要求から値を取得します。 オーバーライドする例については、<xref:System.Web.SessionState.SessionIDManager>クラスし、これらのメソッドを実装する方法についてを参照してください、<xref:System.Web.SessionState.SessionIDManager.CreateSessionID%2A>のメソッド、<xref:System.Web.SessionState.SessionIDManager>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、マネージャー、クッキー ベースのセッション ID を実装するクラスを示します。  
+  
+ [!code-csharp[System.Web.SessionState.ISessionIDModule#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SessionState.ISessionIDModule/CS/isessionidmodulesnippets.cs#1)]
+ [!code-vb[System.Web.SessionState.ISessionIDModule#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SessionState.ISessionIDModule/VB/isessionidmodulesnippets.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateSessionID">
+      <MemberSignature Language="C#" Value="public string CreateSessionID (System.Web.HttpContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string CreateSessionID(class System.Web.HttpContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SessionState.ISessionIDManager.CreateSessionID(System.Web.HttpContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">現在<see cref="T:System.Web.HttpContext" />HTTP 要求を処理するサーバー オブジェクトを参照するオブジェクトを使用 (たとえば、<see cref="P:System.Web.HttpContext.Request" />と<see cref="P:System.Web.HttpContext.Response" />プロパティ)。</param>
+        <summary>一意のセッション識別子を作成します。</summary>
+        <returns>一意のセッション識別子です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SessionState.ISessionIDManager.CreateSessionID%2A>一意のセッション識別子を生成するメソッドを使用する、<xref:System.Web.SessionState.SessionStateModule>新しいセッションを識別するオブジェクトが使用されます。 によって返される値<xref:System.Web.SessionState.ISessionIDManager.CreateSessionID%2A>一意である必要があるあり、HTTP 応答と要求に格納できる有効な文字を含める必要があります。 値がによって返される可能性がある場合、<xref:System.Web.SessionState.ISessionIDManager.CreateSessionID%2A>実装には、HTTP 応答または要求に無効な文字が含まれています、使用する必要があります、<xref:System.Web.HttpUtility.UrlEncode%2A>でセッション id 値をエンコードする方法、<xref:System.Web.SessionState.ISessionIDManager.SaveSessionID%2A>メソッドの実装と<xref:System.Web.HttpUtility.UrlDecode%2A>でセッション id 値をデコードする方法、<xref:System.Web.SessionState.ISessionIDManager.GetSessionID%2A>メソッドの実装です。  
+  
+   
+  
+## Examples  
+ 次のコード例を実装して、<xref:System.Web.SessionState.ISessionIDManager.CreateSessionID%2A>メソッドです。 メソッドが新たに作成<xref:System.Guid>セッション識別子として使用します。  
+  
+ [!code-csharp[System.Web.SessionState.ISessionIDModule#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SessionState.ISessionIDModule/CS/isessionidmodulesnippets.cs#3)]
+ [!code-vb[System.Web.SessionState.ISessionIDModule#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SessionState.ISessionIDModule/VB/isessionidmodulesnippets.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSessionID">
+      <MemberSignature Language="C#" Value="public string GetSessionID (System.Web.HttpContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetSessionID(class System.Web.HttpContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SessionState.ISessionIDManager.GetSessionID(System.Web.HttpContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">現在<see cref="T:System.Web.HttpContext" />HTTP 要求を処理するサーバー オブジェクトを参照するオブジェクトを使用 (たとえば、<see cref="P:System.Web.HttpContext.Request" />と<see cref="P:System.Web.HttpContext.Response" />プロパティ)。</param>
+        <summary>現在の HTTP 要求のコンテキストからのセッション識別子を取得します。</summary>
+        <returns>HTTP 要求と一緒に送信の現在のセッション識別子です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SessionState.ISessionIDManager.GetSessionID%2A>メソッドによって呼び出されます、<xref:System.Web.SessionState.SessionStateModule>中に、<xref:System.Web.HttpApplication.AcquireRequestState?displayProperty=nameWithType>と<xref:System.Web.HttpApplication.EndRequest?displayProperty=nameWithType>イベント。 場合は、HTTP 要求から有効なセッション識別子を取得することはできません、返す`null`です。 場合、<xref:System.Web.SessionState.SessionStateModule>受信`null`から、<xref:System.Web.SessionState.ISessionIDManager.GetSessionID%2A>メソッドが呼び出されます、<xref:System.Web.SessionState.ISessionIDManager.CreateSessionID%2A>新しいセッションのため、新しいセッション識別子を取得します。  
+  
+ 値がによって返される可能性がある場合、<xref:System.Web.SessionState.ISessionIDManager.CreateSessionID%2A>実装には、HTTP 応答または要求に無効な文字が含まれています、使用する必要があります、<xref:System.Web.HttpUtility.UrlEncode%2A>でセッション id 値をエンコードする方法、<xref:System.Web.SessionState.ISessionIDManager.SaveSessionID%2A>メソッドの実装と<xref:System.Web.HttpUtility.UrlDecode%2A>でセッション id 値をデコードする方法、<xref:System.Web.SessionState.ISessionIDManager.GetSessionID%2A>メソッドの実装です。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、部分的に実装した<xref:System.Web.SessionState.ISessionIDManager.GetSessionID%2A>メソッドです。 カスタムのセッション ID マネージャーが cookie なしのセッション識別子をサポートする場合は、送信および ISAPI フィルターなど、URL 内のセッション id を取得するためのソリューションを実装する必要があります。  
+  
+ [!code-csharp[System.Web.SessionState.ISessionIDModule#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SessionState.ISessionIDModule/CS/isessionidmodulesnippets.cs#2)]
+ [!code-vb[System.Web.SessionState.ISessionIDModule#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SessionState.ISessionIDModule/VB/isessionidmodulesnippets.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public void Initialize ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Initialize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SessionState.ISessionIDManager.Initialize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>初期化、<see cref="T:System.Web.SessionState.SessionIDManager" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.SessionState.ISessionIDManager.Initialize%2A>初期化するメソッドを<xref:System.Web.SessionState.ISessionIDManager>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeRequest">
+      <MemberSignature Language="C#" Value="public bool InitializeRequest (System.Web.HttpContext context, bool suppressAutoDetectRedirect, out bool supportSessionIDReissue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool InitializeRequest(class System.Web.HttpContext context, bool suppressAutoDetectRedirect, [out] bool&amp; supportSessionIDReissue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SessionState.ISessionIDManager.InitializeRequest(System.Web.HttpContext,System.Boolean,System.Boolean@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="suppressAutoDetectRedirect" Type="System.Boolean" />
+        <Parameter Name="supportSessionIDReissue" Type="System.Boolean&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.Web.HttpContext" />現在の要求に関する情報を含むオブジェクト。</param>
+        <param name="suppressAutoDetectRedirect">
+          <see langword="true" />場合は、セッション ID マネージャーが cookie のサポートを確認するリダイレクトする必要があります。それ以外の場合、<see langword="false" />クッキー サポートの決定に自動リダイレクトを抑制します。</param>
+        <param name="supportSessionIDReissue">このメソッドが戻るときを示すブール値を格納するかどうか、<see cref="T:System.Web.SessionState.ISessionIDManager" />オブジェクトは、元の ID が古い場合に、発行元の新しいセッション Id をサポートしています。 このパラメーターは初期化せずに渡されます。  
+  
+ セッション状態の ID が URL でエンコードされたおよび共有または電子メールで送信する url が存在する可能性があるセッション ID の再利用が適しています。  
+  
+ 仮想パスを使用してカスタム セッション状態の実装のパーティション cookie をセッションの状態もサポートされる必要があります。</param>
+        <summary>要求ごとの初期化を実行、<see cref="T:System.Web.SessionState.SessionIDManager" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />初期化が、リダイレクトを実行することを示すためにそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SessionState.ISessionIDManager.InitializeRequest%2A>で処理される各要求のメソッドは、<xref:System.Web.SessionState.ISessionIDManager>オブジェクト。 使用して、<xref:System.Web.SessionState.ISessionIDManager.InitializeRequest%2A>要求ごとのデータを初期化するメソッド、<xref:System.Web.SessionState.SessionIDManager>オブジェクト。  
+  
+ ときに、`suppressAutoDetectRedirect`パラメーターは`true`、<xref:System.Web.SessionState.ISessionIDManager>オブジェクトでは、ブラウザーが cookie をサポートしているかどうかを決定するリダイレクトを使用しないでください。  
+  
+ `supportSessionIDReissue`パラメーターを返す必要がある`false`セッション id です。 cookie が使用される場合を返しますそれ以外の場合、`true`場合、<xref:System.Web.SessionState.ISessionIDManager>実装は、再度発行元のセッション Id をサポートしています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveSessionID">
+      <MemberSignature Language="C#" Value="public void RemoveSessionID (System.Web.HttpContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveSessionID(class System.Web.HttpContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SessionState.ISessionIDManager.RemoveSessionID(System.Web.HttpContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">現在<see cref="T:System.Web.HttpContext" />HTTP 要求を処理するサーバー オブジェクトを参照するオブジェクトを使用 (たとえば、<see cref="P:System.Web.HttpContext.Request" />と<see cref="P:System.Web.HttpContext.Response" />プロパティ)。</param>
+        <summary>Cookie とは、URL からセッションの識別子を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SessionState.SessionStateModule>呼び出し、<xref:System.Web.SessionState.SessionIDManager.RemoveSessionID%2A>メソッド中に、<xref:System.Web.HttpApplication.ReleaseRequestState?displayProperty=nameWithType>からのセッション識別子を削除するイベント、<xref:System.Web.HttpResponse.Cookies%2A?displayProperty=nameWithType>コレクションの場合は、新しいセッションが作成されましたが、使用されませんでした。  
+  
+   
+  
+## Examples  
+ 次のコード例を実装して、<xref:System.Web.SessionState.ISessionIDManager.RemoveSessionID%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.SessionState.ISessionIDModule#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SessionState.ISessionIDModule/CS/isessionidmodulesnippets.cs#4)]
+ [!code-vb[System.Web.SessionState.ISessionIDModule#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SessionState.ISessionIDModule/VB/isessionidmodulesnippets.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveSessionID">
+      <MemberSignature Language="C#" Value="public void SaveSessionID (System.Web.HttpContext context, string id, out bool redirected, out bool cookieAdded);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SaveSessionID(class System.Web.HttpContext context, string id, [out] bool&amp; redirected, [out] bool&amp; cookieAdded) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SessionState.ISessionIDManager.SaveSessionID(System.Web.HttpContext,System.String,System.Boolean@,System.Boolean@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="id" Type="System.String" />
+        <Parameter Name="redirected" Type="System.Boolean&amp;" RefType="out" />
+        <Parameter Name="cookieAdded" Type="System.Boolean&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="context">現在<see cref="T:System.Web.HttpContext" />HTTP 要求を処理するサーバー オブジェクトを参照するオブジェクトを使用 (たとえば、<see cref="P:System.Web.HttpContext.Request" />と<see cref="P:System.Web.HttpContext.Response" />プロパティ)。</param>
+        <param name="id">セッション識別子。</param>
+        <param name="redirected">このメソッドが戻るときに、ブール値が含まれています<see langword="true" />応答が、URL に追加したセッション識別子を持つ現在の URL にリダイレクトされる、それ以外の場合<see langword="false" />です。</param>
+        <param name="cookieAdded">このメソッドが戻るときに、ブール値が含まれています<see langword="true" />HTTP 応答に追加されます。 それ以外の場合、cookie があった場合<see langword="false" />です。</param>
+        <summary>HTTP 応答には、新しく作成されたセッション識別子を保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SessionState.ISessionIDManager.SaveSessionID%2A>メソッドによって呼び出されます、<xref:System.Web.SessionState.SessionStateModule>オブジェクトの中に、<xref:System.Web.HttpApplication.AcquireRequestState?displayProperty=nameWithType>イベント。 <xref:System.Web.SessionState.ISessionIDManager.SaveSessionID%2A> (Cookie なしのセッション状態が使用される) ときの URL または期限切れのないセッションの cookie では、メソッドはセッション識別子を格納します。  
+  
+ 値を返す可能性がある場合、<xref:System.Web.SessionState.ISessionIDManager.CreateSessionID%2A>実装には、HTTP 応答または要求に無効な文字が含まれています、使用する必要があります、<xref:System.Web.HttpUtility.UrlEncode%2A>でセッション id 値をエンコードする方法、<xref:System.Web.SessionState.ISessionIDManager.SaveSessionID%2A>メソッドの実装と<xref:System.Web.HttpUtility.UrlDecode%2A>でセッション id 値をデコードする方法、<xref:System.Web.SessionState.ISessionIDManager.GetSessionID%2A>メソッドの実装です。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、部分的に実装した<xref:System.Web.SessionState.ISessionIDManager.GetSessionID%2A>メソッドです。 カスタムのセッション ID マネージャーが cookie なしのセッション識別子をサポートする場合は、送信および ISAPI フィルターなど、URL 内のセッション id を取得するためのソリューションを実装する必要があります。  
+  
+ [!code-csharp[System.Web.SessionState.ISessionIDModule#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SessionState.ISessionIDModule/CS/isessionidmodulesnippets.cs#5)]
+ [!code-vb[System.Web.SessionState.ISessionIDModule#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SessionState.ISessionIDModule/VB/isessionidmodulesnippets.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Validate">
+      <MemberSignature Language="C#" Value="public bool Validate (string id);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Validate(string id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SessionState.ISessionIDManager.Validate(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="id">検証するセッション識別子。</param>
+        <summary>指定したセッション識別子が有効であることを確認します。</summary>
+        <returns>
+          <see langword="true" />セッション識別子が無効である場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SessionState.ISessionIDManager.Validate%2A>メソッドであることを確認、指定された`id`有効なセッション識別子を指定します。  
+  
+ <xref:System.Web.SessionState.ISessionIDManager>実装を呼び出す必要があります、<xref:System.Web.SessionState.ISessionIDManager.Validate%2A>メソッドから、<xref:System.Web.SessionState.ISessionIDManager.GetSessionID%2A>メソッド提供されているセッション識別子が正しくフォーマットされていることを確認する HTTP 要求からのセッション識別子を取得するときにします。  
+  
+   
+  
+## Examples  
+ 次のコード例を実装して、<xref:System.Web.SessionState.ISessionIDManager.Validate%2A>メソッド セッション識別子の値が有効なことを確認および<xref:System.Guid>です。  
+  
+ [!code-csharp[System.Web.SessionState.ISessionIDModule#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SessionState.ISessionIDModule/CS/isessionidmodulesnippets.cs#6)]
+ [!code-vb[System.Web.SessionState.ISessionIDModule#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SessionState.ISessionIDModule/VB/isessionidmodulesnippets.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,147 @@
+<Type Name="DefaultSettingsSection" FullName="System.Transactions.Configuration.DefaultSettingsSection">
+  <TypeSignature Language="C#" Value="public class DefaultSettingsSection : System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DefaultSettingsSection extends System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="DocId" Value="T:System.Transactions.Configuration.DefaultSettingsSection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Transactions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>トランザクションの既定値を格納している構成ファイルの XML セクションを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ トランザクション アプリケーションで使用される構成ファイルの例を次のように、指定できます。  
+  
+ `<configuration>`  
+  
+ `<system.transactions>`  
+  
+ `<defaultSettings distributedTransactionManagerName="F04M25" timeout="02:00:00"/>`  
+  
+ `<machineSettings maxTimeout="02:00:00"/>`  
+  
+ `</system.transactions>`  
+  
+ `</configuration>`  
+  
+ この例では、トランザクションの既定値を指定します。 具体的には、設定は、分散トランザクション コーディネーター (MSDTC) を行うため、ローカルで開始されたすべての分散トランザクションを調整し、トランザクションがタイムアウトするまで既定の時間のコンピューター名。さらに、トランザクションがタイムアウトするまで、最長時間であるコンピューター レベルでのみ変更可能な設定が許可されることを指定します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DefaultSettingsSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Transactions.Configuration.DefaultSettingsSection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Transactions.Configuration.DefaultSettingsSection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DistributedTransactionManagerName">
+      <MemberSignature Language="C#" Value="public string DistributedTransactionManagerName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DistributedTransactionManagerName" />
+      <MemberSignature Language="DocId" Value="P:System.Transactions.Configuration.DefaultSettingsSection.DistributedTransactionManagerName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("distributedTransactionManagerName", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランザクション マネージャーの名前を取得します。</summary>
+        <value>トランザクション マネージャーの名前。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティには、Microsoft 分散トランザクション コーディネーター (MSDTC) を実行しているし、は、ローカルで開始されるすべての分散トランザクションをコーディネートを担当するコンピューターの名前が含まれています。  
+  
+ リモートのトランザクション マネージャーを有効にするには、このプロパティの値を設定することができます<xref:System.Transactions>です。 場合は、このプロパティは`null`または空の文字列が含まれているローカル トランザクション マネージャーは、リモート トランザクション マネージャーとして使用します。 このプロパティを既定の空の文字列以外の値を設定する場合は、Windows Server 2003 Service Pack 1 をインストールする必要があります。 トランザクション操作は、それ以外の場合、<xref:System.NotSupportedException>です。 トランザクションは MSDTC によって管理されるエスカレートはローカルの MSDTC は使用されませんが、代わりにこのプロパティによって指定されたコンピューターで 1 つを使用します。 そのトランザクション マネージャーが使用できないなんらかの理由で例外がスローされます。  
+  
+ このプロパティは、大文字小文字を区別は、コンピューターの短い名前のみを含める必要があります。  完全修飾ドメイン名、localhost、または IP アドレスは受け入れられません。 このプロパティに無効なリモート コンピューター名が含まれている場合、「構成情報を読み取れません。」例外がスローされます。  
+  
+ リモートの MSDTC を使用する適切なセキュリティ アクセス許可が必要です。 DTC セキュリティ設定を構成する方法の詳細についてを参照してください、 [MSDTC の構成のセキュリティ プロパティ](http://msdn.microsoft.com/library/cossdk/html/2627a956-60b3-4d26-bc04-e0676ec97786.asp?frame=true)トピックです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">完全修飾ドメイン名または IP アドレスにこのプロパティを設定しようとしました。</exception>
+        <exception cref="T:System.Transactions.TransactionAbortedException">このプロパティを localhost に設定しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Transactions.Configuration.DefaultSettingsSection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Timeout">
+      <MemberSignature Language="C#" Value="public TimeSpan Timeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan Timeout" />
+      <MemberSignature Language="DocId" Value="P:System.Transactions.Configuration.DefaultSettingsSection.Timeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("timeout", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.TimeSpanValidator(MaxValueString="10675199.02:48:05.4775807", MinValueString="00:00:00")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランザクションがタイムアウトする既定の時間を取得または設定します。</summary>
+        <value><see cref="T:System.TimeSpan" /> オブジェクト。 既定のプロパティは 00:01:00 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、構成ファイルに既定のタイムアウト値からその値を取得します。 によって自動的に調整、<xref:System.Transactions.Configuration.MachineSettingsSection.MaxTimeout%2A>実行時に値。  
+  
+ 00時 00分: 00 (またはゼロ) の値は、無限大として解釈されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">このプロパティを負の値に設定しようとしました。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,157 @@
+<Type Name="FileRegion" FullName="System.IO.Log.FileRegion">
+  <TypeSignature Language="C#" Value="public sealed class FileRegion" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit FileRegion extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IO.Log.FileRegion" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.Log</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アーカイブするファイルの領域を表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Log.LogArchiveSnapshot> オブジェクトは、<xref:System.IO.Log.LogStore> 内のデータの一貫したバックアップを生成するために必要な情報を格納しています。 実際のデータは、<xref:System.IO.Log.FileRegion> プロパティにより返される <xref:System.IO.Log.LogArchiveSnapshot.ArchiveRegions%2A> オブジェクトの列挙可能なコレクションに格納されています。 各 <xref:System.IO.Log.FileRegion> インスタンスは、アーカイブする必要があるファイル内のバイト シーケンスを表します。  
+  
+   
+  
+## Examples  
+ <xref:System.IO.Log.LogStore> クラスおよび <xref:System.IO.Log.FileRegion> クラスを使用してログ ストアを XML にアーカイブする方法を次の例に示します。  
+  
+ [!code-csharp[FileRegion#0](~/samples/snippets/csharp/VS_Snippets_CFX/fileregion/cs/fileregion.cs#0)]
+ [!code-vb[FileRegion#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/fileregion/vb/fileregion.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="FileLength">
+      <MemberSignature Language="C#" Value="public long FileLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 FileLength" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.FileRegion.FileLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルの長さをバイト単位で取得します。</summary>
+        <value>ファイルの長さをバイト単位で返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティで返されるのは、ファイル内の 1 つの領域の長さではなく、ファイル全体の長さです。 ファイル内の領域の長さを調べるには、<xref:System.IO.Log.LogStore.Length%2A> メソッドで返されるストリームの <xref:System.IO.Log.FileRegion.GetStream%2A> プロパティを確認してください。  
+  
+   
+  
+## Examples  
+ <xref:System.IO.Log.LogStore> クラスおよび <xref:System.IO.Log.FileRegion> クラスを使用してログ ストアを XML にアーカイブする方法を次の例に示します。  
+  
+ [!code-csharp[FileRegion#0](~/samples/snippets/csharp/VS_Snippets_CFX/fileregion/cs/fileregion.cs#0)]
+ [!code-vb[FileRegion#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/fileregion/vb/fileregion.vb#0)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStream">
+      <MemberSignature Language="C#" Value="public System.IO.Stream GetStream ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Stream GetStream() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.FileRegion.GetStream" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アーカイブするデータの読み取りに使用するストリームを返します。</summary>
+        <returns>アーカイブするデータを格納しているストリーム。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.IO.Log.LogStore> クラスおよび <xref:System.IO.Log.FileRegion> クラスを使用してログ ストアを XML にアーカイブする方法を次の例に示します。  
+  
+ [!code-csharp[FileRegion#0](~/samples/snippets/csharp/VS_Snippets_CFX/fileregion/cs/fileregion.cs#0)]
+ [!code-vb[FileRegion#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/fileregion/vb/fileregion.vb#0)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">予期しない I/O 例外のため、要求は実行されませんでした。</exception>
+        <exception cref="T:System.NotSupportedException">操作はサポートされていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ ストアへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Offset">
+      <MemberSignature Language="C#" Value="public long Offset { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 Offset" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.FileRegion.Offset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイル内のデータ開始位置のオフセットを取得します。</summary>
+        <value>ファイル内のデータ開始位置のオフセット。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.IO.Log.LogStore> クラスおよび <xref:System.IO.Log.FileRegion> クラスを使用してログ ストアを XML にアーカイブする方法を次の例に示します。  
+  
+ [!code-csharp[FileRegion#0](~/samples/snippets/csharp/VS_Snippets_CFX/fileregion/cs/fileregion.cs#0)]
+ [!code-vb[FileRegion#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/fileregion/vb/fileregion.vb#0)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public string Path { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Path" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.FileRegion.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この領域を含むファイルの完全修飾された場所を取得します。</summary>
+        <value>この領域を含むファイルの完全修飾された場所。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.IO.Log.LogStore> クラスおよび <xref:System.IO.Log.FileRegion> クラスを使用してログ ストアを XML にアーカイブする方法を次の例に示します。  
+  
+ [!code-csharp[FileRegion#0](~/samples/snippets/csharp/VS_Snippets_CFX/fileregion/cs/fileregion.cs#0)]
+ [!code-vb[FileRegion#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/fileregion/vb/fileregion.vb#0)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

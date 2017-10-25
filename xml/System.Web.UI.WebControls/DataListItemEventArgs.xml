@@ -1,0 +1,117 @@
+<Type Name="DataListItemEventArgs" FullName="System.Web.UI.WebControls.DataListItemEventArgs">
+  <TypeSignature Language="C#" Value="public class DataListItemEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataListItemEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.DataListItemEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Web.UI.WebControls.DataList.ItemCreated" />と<see cref="E:System.Web.UI.WebControls.DataList.ItemDataBound" />のイベント、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataList.ItemCreated>イベントは内の項目、<xref:System.Web.UI.WebControls.DataList>コントロールを作成します。  
+  
+ <xref:System.Web.UI.WebControls.DataList.ItemDataBound>イベントは内の項目、<xref:System.Web.UI.WebControls.DataList>コントロールがデータ ソースにバインドします。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.Web.UI.WebControls.DataListItemEventArgs>を参照してください、<xref:System.Web.UI.WebControls.DataListItemEventArgs.%23ctor%2A>コンス トラクターです。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次の例では、ハンドラーを定義する方法、<xref:System.Web.UI.WebControls.DataList.ItemDataBound>イベント。 ハンドラーのコード内の項目の価格を計算する、<xref:System.Web.UI.WebControls.DataList>コントロール。 この例を示す、イベント ハンドラー宣言によってのイベント ハンドラーを設定、<xref:System.Web.UI.WebControls.DataList.OnItemDataBound%2A>の属性、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+ [!code-aspx-csharp[DataListItemDataBound#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListItemDataBound/CS/datalistitemdataboundcs.aspx#1)]
+ [!code-aspx-vb[DataListItemDataBound#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListItemDataBound/VB/datalistitemdataboundvb.aspx#1)]  
+  
+ 次の例では、イベント ハンドラーを指定し、プログラムに追加する方法、<xref:System.Web.UI.WebControls.DataList.ItemDataBound>内のイベント、`Page_Load`メソッドです。  
+  
+ [!code-aspx-csharp[DataListItemDataBound2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListItemDataBound2/CS/datalistitemdatabound2cs.aspx#1)]
+ [!code-aspx-vb[DataListItemDataBound2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListItemDataBound2/VB/datalistitemdatabound2vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataListItemEventArgs (System.Web.UI.WebControls.DataListItem item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.DataListItem item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataListItemEventArgs.#ctor(System.Web.UI.WebControls.DataListItem)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="item" Type="System.Web.UI.WebControls.DataListItem" />
+      </Parameters>
+      <Docs>
+        <param name="item">A<see cref="T:System.Web.UI.WebControls.DataListItem" />内の項目を表すオブジェクト、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.DataListItemEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.DataListItemEventArgs>クラスです。  
+  
+ インスタンス<xref:System.Web.UI.WebControls.DataListItemEventArgs>作成は、このコンス トラクターを呼び出し、次のプロパティは、指定された値に初期化します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|アイテム|`item` パラメーターの値。|  
+  
+   
+  
+## Examples  
+ 次の例で作成しの新しいインスタンスを初期化する方法、<xref:System.Web.UI.WebControls.DataListItemEventArgs>クラスです。  
+  
+ [!code-csharp[Classic DataListItemEventArgs.DataListItemEventArgs Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataListItemEventArgs.DataListItemEventArgs Example/CS/source.cs#1)]
+ [!code-vb[Classic DataListItemEventArgs.DataListItemEventArgs Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataListItemEventArgs.DataListItemEventArgs Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.DataListItem Item { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.DataListItem Item" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataListItemEventArgs.Item" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataListItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照されている項目を取得、<see cref="T:System.Web.UI.WebControls.DataList" />イベントが発生したときを制御します。</summary>
+        <value>参照されているアイテム、<see cref="T:System.Web.UI.WebControls.DataList" />イベントが発生したときを制御します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内の項目、<xref:System.Web.UI.WebControls.DataList>コントロールが各項目を作成またはコントロールにバインドされているように参照されています。 このプロパティで参照されているアイテムをプログラムでアクセスを使用して、<xref:System.Web.UI.WebControls.DataList>タイミングを制御、<xref:System.Web.UI.WebControls.DataList.ItemCreated>または<xref:System.Web.UI.WebControls.DataList.ItemDataBound>イベントが発生します。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.DataListItemEventArgs.Item%2A>で項目が作成される順序を表示するプロパティを<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+ [!code-aspx-csharp[DataListItemDataBound#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListItemDataBound/CS/datalistitemdataboundcs.aspx#1)]
+ [!code-aspx-vb[DataListItemDataBound#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListItemDataBound/VB/datalistitemdataboundvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

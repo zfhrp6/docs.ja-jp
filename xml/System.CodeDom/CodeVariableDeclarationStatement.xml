@@ -1,0 +1,287 @@
+<Type Name="CodeVariableDeclarationStatement" FullName="System.CodeDom.CodeVariableDeclarationStatement">
+  <TypeSignature Language="C#" Value="public class CodeVariableDeclarationStatement : System.CodeDom.CodeStatement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CodeVariableDeclarationStatement extends System.CodeDom.CodeStatement" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.CodeVariableDeclarationStatement" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.CodeDom.CodeStatement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>変数の宣言を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.CodeVariableDeclarationStatement>変数を宣言するコードを表すために使用できます。  
+  
+ <xref:System.CodeDom.CodeVariableDeclarationStatement.Type%2A>プロパティを宣言する変数の種類を指定します。 <xref:System.CodeDom.CodeVariableDeclarationStatement.Name%2A>プロパティを宣言する変数の名前を指定します。 <xref:System.CodeDom.CodeVariableDeclarationStatement.InitExpression%2A>プロパティがオプションであり、作成した後、変数に代入する初期化式を指定します。  
+  
+> [!NOTE]
+>  一部の言語では、変数の宣言の後に別の代入ステートメントをすることで、省略可能な変数の初期化式を実装できます。  
+  
+   
+  
+## Examples  
+ この例では、<xref:System.CodeDom.CodeVariableDeclarationStatement>変数を宣言します。  
+  
+ [!code-cpp[CodeVariableDeclarationStatementExample#2](~/samples/snippets/cpp/VS_Snippets_CLR/CodeVariableDeclarationStatementExample/CPP/codevariabledeclarationstatementexample.cpp#2)]
+ [!code-csharp[CodeVariableDeclarationStatementExample#2](~/samples/snippets/csharp/VS_Snippets_CLR/CodeVariableDeclarationStatementExample/CS/codevariabledeclarationstatementexample.cs#2)]
+ [!code-vb[CodeVariableDeclarationStatementExample#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeVariableDeclarationStatementExample/VB/codevariabledeclarationstatementexample.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeVariableDeclarationStatement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeVariableDeclarationStatement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.CodeDom.CodeVariableDeclarationStatement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeVariableDeclarationStatement (System.CodeDom.CodeTypeReference type, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeTypeReference type, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeVariableDeclarationStatement.#ctor(System.CodeDom.CodeTypeReference,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.CodeDom.CodeTypeReference" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type">A<see cref="T:System.CodeDom.CodeTypeReference" />変数のデータ型を示すです。</param>
+        <param name="name">変数の名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeVariableDeclarationStatement" />クラス名と指定された型を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeVariableDeclarationStatement (string type, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string type, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeVariableDeclarationStatement.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.String" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type">変数のデータ型の名前。</param>
+        <param name="name">変数の名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeVariableDeclarationStatement" />クラス変数の名前と指定されたデータ型の名前を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeVariableDeclarationStatement (Type type, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeVariableDeclarationStatement.#ctor(System.Type,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type">データは、変数を型します。</param>
+        <param name="name">変数の名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeVariableDeclarationStatement" />クラスの指定されたデータ型と変数名を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeVariableDeclarationStatement (System.CodeDom.CodeTypeReference type, string name, System.CodeDom.CodeExpression initExpression);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeTypeReference type, string name, class System.CodeDom.CodeExpression initExpression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeVariableDeclarationStatement.#ctor(System.CodeDom.CodeTypeReference,System.String,System.CodeDom.CodeExpression)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.CodeDom.CodeTypeReference" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="initExpression" Type="System.CodeDom.CodeExpression" />
+      </Parameters>
+      <Docs>
+        <param name="type">A<see cref="T:System.CodeDom.CodeTypeReference" />変数の種類を示すです。</param>
+        <param name="name">変数の名前。</param>
+        <param name="initExpression">A<see cref="T:System.CodeDom.CodeExpression" />変数の初期化式を示すです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeVariableDeclarationStatement" />クラスの指定されたデータ型、変数名、および初期化子式を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeVariableDeclarationStatement (string type, string name, System.CodeDom.CodeExpression initExpression);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string type, string name, class System.CodeDom.CodeExpression initExpression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeVariableDeclarationStatement.#ctor(System.String,System.String,System.CodeDom.CodeExpression)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.String" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="initExpression" Type="System.CodeDom.CodeExpression" />
+      </Parameters>
+      <Docs>
+        <param name="type">変数のデータ型の名前。</param>
+        <param name="name">変数の名前。</param>
+        <param name="initExpression">A<see cref="T:System.CodeDom.CodeExpression" />変数の初期化式を示すです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeVariableDeclarationStatement" />クラスの指定されたデータ型、変数名、および初期化子式を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeVariableDeclarationStatement (Type type, string name, System.CodeDom.CodeExpression initExpression);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type, string name, class System.CodeDom.CodeExpression initExpression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeVariableDeclarationStatement.#ctor(System.Type,System.String,System.CodeDom.CodeExpression)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="initExpression" Type="System.CodeDom.CodeExpression" />
+      </Parameters>
+      <Docs>
+        <param name="type">変数のデータ型。</param>
+        <param name="name">変数の名前。</param>
+        <param name="initExpression">A<see cref="T:System.CodeDom.CodeExpression" />変数の初期化式を示すです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeVariableDeclarationStatement" />クラスの指定されたデータ型、変数名、および初期化子式を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitExpression">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeExpression InitExpression { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeExpression InitExpression" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeVariableDeclarationStatement.InitExpression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeExpression</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または変数の初期化式を設定します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeExpression" />変数の初期化式を示すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeVariableDeclarationStatement.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または変数の名前を設定します。</summary>
+        <value>変数の名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeTypeReference Type { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeTypeReference Type" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeVariableDeclarationStatement.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeTypeReference</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または変数のデータ型を設定します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeTypeReference" />変数のデータ型を示すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,117 @@
+<Type Name="MdbDataFileEditor" FullName="System.Web.UI.Design.MdbDataFileEditor">
+  <TypeSignature Language="C#" Value="public class MdbDataFileEditor : System.Web.UI.Design.UrlEditor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MdbDataFileEditor extends System.Web.UI.Design.UrlEditor" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.MdbDataFileEditor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.UrlEditor</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Microsoft Access データベース ファイルを選択するためには、デザイン時のユーザー インターフェイスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.MdbDataFileEditor>を選択して Microsoft Access データベース ファイル (.mdb) の URL を編集し、コントロール プロパティへの URL を割り当てるデザイン時にオブジェクトを使用します。 たとえば、<xref:System.Web.UI.WebControls.AccessDataSource>コントロール、<xref:System.Web.UI.Design.MdbDataFileEditor>デザイン時の値を設定するクラス、<xref:System.Web.UI.WebControls.AccessDataSource.DataFile%2A>プロパティです。  
+  
+ 使用して、<xref:System.ComponentModel.EditorAttribute>属性に関連付けるには、<xref:System.Web.UI.Design.MdbDataFileEditor>プロパティを設定します。 デザイン サーフェイスに関連付けられたプロパティを編集すると、デザイナー ホスト呼び出し、<xref:System.Web.UI.Design.UrlEditor.EditValue%2A>メソッドです。 <xref:System.Web.UI.Design.UrlEditor.EditValue%2A>メソッドを使用、<xref:System.Web.UI.Design.UrlBuilder.BuildUrl%2A>メソッドは、さらに、URL を選択するためのユーザー インターフェイスを表示し、ユーザーが選択されている URL を返します。 <xref:System.Web.UI.Design.UrlEditor.GetEditStyle%2A>メソッドは、ユーザー インターフェイスの表示スタイルを示します。  
+  
+ クラスを派生、 <xref:System.Web.UI.Design.MdbDataFileEditor> Access データベース URL プロパティ用のカスタム エディターを定義します。 たとえば、派生クラスをオーバーライドできます、<xref:System.Web.UI.Design.UrlEditor.EditValue%2A>メソッド、および、呼び出し、<xref:System.Web.UI.Design.UrlBuilder.BuildUrl%2A>メソッドをカスタム<xref:System.Web.UI.Design.MdbDataFileEditor.Filter%2A>または<xref:System.Web.UI.Design.MdbDataFileEditor.Caption%2A>値。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のインスタンスに関連付ける方法を示します、<xref:System.Web.UI.Design.MdbDataFileEditor>カスタム コントロール内に含まれるプロパティを持つクラス。 デザイン サーフェイスにコントロール プロパティを編集するときに、<xref:System.Web.UI.Design.MdbDataFileEditor>クラスを選択し、Access データベース ファイル名プロパティの値を編集するユーザー インターフェイスを提供します。  
+  
+ [!code-csharp[WebDesigner.MdbDataFileEditor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebDesigner.MdbDataFileEditor/CS/simplecontrolwithfilename.cs#1)]
+ [!code-vb[WebDesigner.MdbDataFileEditor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebDesigner.MdbDataFileEditor/VB/simplecontrolwithfilename.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MdbDataFileEditor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.MdbDataFileEditor.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.MdbDataFileEditor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Caption">
+      <MemberSignature Language="C#" Value="protected override string Caption { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Caption" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.MdbDataFileEditor.Caption" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[選択] ダイアログ ボックスを表示するキャプションを取得します。</summary>
+        <value>[選択] ダイアログ ボックスを表示するキャプション テキストです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.MdbDataFileEditor.Caption%2A>では、文字列を使用してください。、<xref:System.Web.UI.Design.UrlEditor.EditValue%2A>メソッドを呼び出すときに、<xref:System.Web.UI.Design.UrlBuilder.BuildUrl%2A>メソッドで、デザイン時にユーザーに、URL の選択 ダイアログ ボックスが表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filter">
+      <MemberSignature Language="C#" Value="protected override string Filter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Filter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.MdbDataFileEditor.Filter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>URL の選択 ダイアログ ボックスに表示される項目をフィルター処理に使用されると、エディターの URL のフィルター オプションを取得します。</summary>
+        <value>1 つまたは複数の URL を表す文字列は、ダイアログ ボックスのオプションをフィルター処理します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.MdbDataFileEditor.Filter%2A>プロパティを使って、<xref:System.Web.UI.Design.UrlEditor.EditValue%2A>メソッドを呼び出すときに、<xref:System.Web.UI.Design.UrlBuilder.BuildUrl%2A>メソッドで、デザイン時にユーザーに、URL の選択 ダイアログ ボックスが表示されます。  
+  
+ <xref:System.Web.UI.Design.MdbDataFileEditor.Filter%2A>プロパティの既定値は、ダイアログ ボックスの 2 つの URL のフィルターを示します: Microsoft Access データベース ファイル (*.mdb) およびすべてのファイル用に別の 1 つ (\*.\*)。  
+  
+ カスタム フィルター文字列を指定する派生クラスを<xref:System.Web.UI.Design.MdbDataFileEditor>クラスし、オーバーライド、<xref:System.Web.UI.Design.MdbDataFileEditor.Filter%2A>プロパティをカスタム フィルター文字列を返します。  
+  
+ フィルター文字列には、1 つまたは複数のフィルター オプションが含まれています。 各フィルター オプションには、垂直バー (&#124;) を続けて、フィルターの説明が含まれています。 およびフィルター パターン。 異なるフィルター オプションの文字列は、縦棒で区切られます。  
+  
+ 2 つのフィルター オプションを含むフィルター文字列の例を次に示します。  
+  
+ "`Microsoft Access Databases (*.mdb)|*.mdb|All Files (*.*)|*.*`".  
+  
+ フィルタ パターンをセミコロンで区切りますフィルター オプションで複数のフィルター パターンを指定できます。 最初のフィルター オプションが 2 つのフィルター パターンを指定するフィルター文字列の例を次に示します。  
+  
+ "`Custom Database Files (*.db1; *.db2)|*.db1;*.db2|All Files (*.*)|*.*`".  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

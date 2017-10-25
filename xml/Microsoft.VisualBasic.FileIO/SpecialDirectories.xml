@@ -1,0 +1,382 @@
+<Type Name="SpecialDirectories" FullName="Microsoft.VisualBasic.FileIO.SpecialDirectories">
+  <TypeSignature Language="C#" Value="public class SpecialDirectories" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi SpecialDirectories extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.FileIO.SpecialDirectories" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>一般的に参照されるディレクトリにアクセスするためのプロパティを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照先のディレクトリのパスが空の場合、通常、オペレーティング システム、ディレクトリをサポートしていないため、<xref:System.IO.DirectoryNotFoundException>例外がスローされます。  
+  
+ バック スラッシュは (\\) のパスの最後に表示されます。  
+  
+ 次の表に、関連するタスクの例については、`My.Computer.FileSystem.SpecialDirectories`オブジェクト。  
+  
+|目的|参照トピック|  
+|-|-|  
+|マイ ドキュメント ディレクトリからの読み取り|[方法: My Documents ディレクトリの内容を取得する](~/docs/visual-basic/developing-apps/programming/drives-directories-files/how-to-retrieve-the-contents-of-the-my-documents-directory.md)|  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|**はい**|  
+|Windows サービス|**はい**|  
+|Web サイト|**はい**|  
+  
+   
+  
+## Examples  
+ この例を返します、`filePath`のユーザーのデスクトップ ディレクトリとそれを表示します。  
+  
+ [!code-vb[VbVbcnMyFileSystem#80](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#80)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SpecialDirectories ();" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.FileIO.SpecialDirectories.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>インスタンスを返します、<see cref="P:Microsoft.VisualBasic.MyServices.FileSystemProxy.SpecialDirectories" />クラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllUsersApplicationData">
+      <MemberSignature Language="C#" Value="public static string AllUsersApplicationData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string AllUsersApplicationData" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.FileIO.SpecialDirectories.AllUsersApplicationData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのユーザーのアプリケーション データ ディレクトリを指すパス名を取得します。</summary>
+        <value>すべてのユーザーのアプリケーション データ ディレクトリへのパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `SpecialDirectories`オブジェクトには、頻繁に参照されるディレクトリへのパスが含まれています。  
+  
+   
+  
+## Examples  
+ この例のパスのすべてのユーザーのアプリケーション データ ディレクトリを表示、<xref:System.Windows.Forms.MessageBox>です。  
+  
+ [!code-vb[VbVbcnMyFileSystem#79](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#79)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Permissions.EnvironmentPermission">システム環境変数、およびユーザー環境変数へのアクセスを制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">パスが空、通常、オペレーティング システムは、ディレクトリをサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentUserApplicationData">
+      <MemberSignature Language="C#" Value="public static string CurrentUserApplicationData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string CurrentUserApplicationData" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.FileIO.SpecialDirectories.CurrentUserApplicationData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のユーザーのアプリケーション データ ディレクトリを指すパス名を取得します。</summary>
+        <value>現在のユーザーのアプリケーション データ フォルダーへのパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SpecialDirectories オブジェクトには、頻繁に参照されるディレクトリへのパスが含まれています。  
+  
+   
+  
+## Examples  
+ この例のパスの現在のユーザーのアプリケーション データ ディレクトリを表示、<xref:System.Windows.Forms.MessageBox>です。  
+  
+ [!code-vb[VbVbcnMyFileSystem#48](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#48)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.DirectoryNotFoundException">パスが空、通常、オペレーティング システムは、ディレクトリをサポートしていません。</exception>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">システム環境変数、およびユーザー環境変数へのアクセスを制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Desktop">
+      <MemberSignature Language="C#" Value="public static string Desktop { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string Desktop" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.FileIO.SpecialDirectories.Desktop" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デスクトップのディレクトリを指すパス名を取得します。</summary>
+        <value>デスクトップのディレクトリへのパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SpecialDirectories オブジェクトには、頻繁に参照されるディレクトリへのパスが含まれています。  
+  
+   
+  
+## Examples  
+ この例には、デスクトップのディレクトリのパスが表示されます、<xref:System.Windows.Forms.MessageBox>です。  
+  
+ [!code-vb[VbVbcnMyFileSystem#60](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#60)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.DirectoryNotFoundException">パスが空、通常、オペレーティング システムは、ディレクトリをサポートしていません。</exception>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">システム環境変数、およびユーザー環境変数へのアクセスを制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="MyDocuments">
+      <MemberSignature Language="C#" Value="public static string MyDocuments { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string MyDocuments" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.FileIO.SpecialDirectories.MyDocuments" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>My Documents ディレクトリを指すパス名を取得します。</summary>
+        <value>My Documents ディレクトリへのパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `SpecialDirectories`オブジェクトには、頻繁に参照されるディレクトリへのパスが含まれています。  
+  
+   
+  
+## Examples  
+ この例での My Documents ディレクトリのパスを表示する、<xref:System.Windows.Forms.MessageBox>です。  
+  
+ [!code-vb[VbVbcnMyFileSystem#53](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#53)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.DirectoryNotFoundException">パスが空、通常、オペレーティング システムは、ディレクトリをサポートしていません。</exception>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">システム環境変数、およびユーザー環境変数へのアクセスを制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="MyMusic">
+      <MemberSignature Language="C#" Value="public static string MyMusic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string MyMusic" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.FileIO.SpecialDirectories.MyMusic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マイ ミュージック ディレクトリを指すパス名を取得します。</summary>
+        <value>マイ ミュージック ディレクトリへのパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `SpecialDirectories`オブジェクトには、頻繁に参照されるディレクトリへのパスが含まれています。  
+  
+   
+  
+## Examples  
+ この例には、マイ ミュージック ディレクトリのパスが表示されます、<xref:System.Windows.Forms.MessageBox>です。  
+  
+ [!code-vb[VbVbcnMyFileSystem#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#26)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.DirectoryNotFoundException">パスが空、通常、オペレーティング システムは、ディレクトリをサポートしていません。</exception>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">システム環境変数、およびユーザー環境変数へのアクセスを制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="MyPictures">
+      <MemberSignature Language="C#" Value="public static string MyPictures { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string MyPictures" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.FileIO.SpecialDirectories.MyPictures" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マイ ピクチャ ディレクトリを指すパス名を取得します。</summary>
+        <value>マイ ピクチャ ディレクトリへのパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `SpecialDirectories`オブジェクトには、頻繁に参照されるディレクトリへのパスが含まれています。  
+  
+   
+  
+## Examples  
+ この例には、マイ ピクチャ ディレクトリのパスが表示されます、<xref:System.Windows.Forms.MessageBox>です。  
+  
+ [!code-vb[VbVbcnMyFileSystem#77](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#77)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.DirectoryNotFoundException">パスが空、通常、オペレーティング システムは、ディレクトリをサポートしていません。</exception>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">システム環境変数、およびユーザー環境変数へのアクセスを制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ProgramFiles">
+      <MemberSignature Language="C#" Value="public static string ProgramFiles { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string ProgramFiles" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.FileIO.SpecialDirectories.ProgramFiles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指すパスを取得、 **Program Files**ディレクトリ。</summary>
+        <value>パス、 **Program Files**ディレクトリ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `SpecialDirectories`オブジェクトには、頻繁に参照されるディレクトリへのパスが含まれています。 **Program Files**ディレクトリには、コンピューターのプログラム ファイルが含まれています。  
+  
+   
+  
+## Examples  
+ この例のパスを表示する、 **Program Files**ディレクトリで、<xref:System.Windows.Forms.MessageBox>です。  
+  
+ [!code-vb[VbVbcnMyFileSystem#90](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#90)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.DirectoryNotFoundException">パスが空、通常、オペレーティング システムは、ディレクトリをサポートしていません。</exception>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">システム環境変数、およびユーザー環境変数へのアクセスを制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Programs">
+      <MemberSignature Language="C#" Value="public static string Programs { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string Programs" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.FileIO.SpecialDirectories.Programs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーション ディレクトリを指すパス名を取得します。</summary>
+        <value>プログラム ディレクトリへのパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `SpecialDirectories`オブジェクトには、頻繁に参照されるディレクトリへのパスが含まれています。 プログラム ディレクトリには、ユーザーのプログラム グループが含まれています。  
+  
+   
+  
+## Examples  
+ この例でのプログラム ディレクトリのパスを表示する、<xref:System.Windows.Forms.MessageBox>です。  
+  
+ [!code-vb[VbVbcnMyFileSystem#61](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#61)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.DirectoryNotFoundException">パスが空、通常、オペレーティング システムは、ディレクトリをサポートしていません。</exception>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">システム環境変数、およびユーザー環境変数へのアクセスを制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Temp">
+      <MemberSignature Language="C#" Value="public static string Temp { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string Temp" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.FileIO.SpecialDirectories.Temp" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Temp ディレクトリへのパス名を取得します。</summary>
+        <value>Temp ディレクトリへのパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `SpecialDirectories`オブジェクトには、頻繁に参照されるディレクトリへのパスが含まれています。  
+  
+   
+  
+## Examples  
+ この例には、Temp ディレクトリのパスが表示されます、<xref:System.Windows.Forms.MessageBox>です。  
+  
+ [!code-vb[VbVbcnMyFileSystem#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#31)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.DirectoryNotFoundException">パスが空、通常、オペレーティング システムは、ディレクトリをサポートしていません。</exception>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">システム環境変数、およびユーザー環境変数へのアクセスを制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

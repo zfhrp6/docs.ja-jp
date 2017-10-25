@@ -1,0 +1,305 @@
+<Type Name="XpsSignatureDefinition" FullName="System.Windows.Xps.Packaging.XpsSignatureDefinition">
+  <TypeSignature Language="C#" Value="public class XpsSignatureDefinition" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XpsSignatureDefinition extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Xps.Packaging.XpsSignatureDefinition" />
+  <AssemblyInfo>
+    <AssemblyName>ReachFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>表す、<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />デジタル署名します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 署名の定義の詳細については[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]パッケージ、10 の章で、XPS XML Paper Specification () からダウンロードを参照してください[http://go.microsoft.com/fwlink/?LinkID=65761](http://go.microsoft.com/fwlink/?LinkID=65761)です。  
+  
+ について<xref:System.IO.Packaging.Package>デジタル署名は、記事を参照して、MSDN デジタル署名のフレームワークで使用可能な Open Packaging Conventions の[http://go.microsoft.com/fwlink/?LinkId=74494](http://go.microsoft.com/fwlink/?LinkId=74494)です。  
+  
+ について[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]、XPS XML Paper Specification () からダウンロードを参照してください[http://go.microsoft.com/fwlink/?LinkID=65761](http://go.microsoft.com/fwlink/?LinkID=65761)です。  
+  
+   
+  
+## Examples  
+ 次の例を作成しのプロパティを設定する方法を示しています、<xref:System.Windows.Xps.Packaging.XpsSignatureDefinition>です。  
+  
+ [!code-csharp[XpsReadWriteSign#SignatureDefinitionCommandHandler](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsReadWriteSign/CSharp/SignatureDialog.xaml.cs#signaturedefinitioncommandhandler)]
+ [!code-vb[XpsReadWriteSign#SignatureDefinitionCommandHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsReadWriteSign/visualbasic/signaturedialog.xaml.vb#signaturedefinitioncommandhandler)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XpsSignatureDefinition ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.XpsSignatureDefinition.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Xps.Packaging.XpsSignatureDefinition" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、このコンストラクターを使用する方法を示しています。  
+  
+ [!code-csharp[XpsReadWriteSign#SignatureDefinitionCommandHandler](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsReadWriteSign/CSharp/SignatureDialog.xaml.cs#signaturedefinitioncommandhandler)]
+ [!code-vb[XpsReadWriteSign#SignatureDefinitionCommandHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsReadWriteSign/visualbasic/signaturedialog.xaml.vb#signaturedefinitioncommandhandler)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Culture">
+      <MemberSignature Language="C#" Value="public System.Globalization.CultureInfo Culture { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.CultureInfo Culture" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.XpsSignatureDefinition.Culture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Globalization.CultureInfo" />の署名。</summary>
+        <value>署名のカルチャ情報。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.Packaging.XpsSignatureDefinition.Culture%2A>プロパティはオプションです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasBeenModified">
+      <MemberSignature Language="C#" Value="public bool HasBeenModified { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasBeenModified" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.XpsSignatureDefinition.HasBeenModified" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に書き込まれていないプロパティの変更が存在するかどうかを示す値、<see cref="T:System.Windows.Xps.Packaging.XpsSignatureDefinition" />クラスし、パッケージのストリームに書き込む必要があります。</summary>
+        <value>
+          <see langword="true" />場合はコミットされていない変更が存在します。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Intent">
+      <MemberSignature Language="C#" Value="public string Intent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Intent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.XpsSignatureDefinition.Intent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または署名者が署名の署名の目的の同意の文字列値を設定します。</summary>
+        <value>A<see cref="T:System.String" />目的の同意を表すですたとえば、"読み、同意します。"。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、`Intent`で署名の定義の要素[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]パッケージ、10 の章を参照してください、[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]で入手可能仕様[XPS: 仕様とライセンスのダウンロード](http://www.microsoft.com/whdc/xps/downloads.mspx)です。  
+  
+   
+  
+## Examples  
+ このプロパティを設定する方法を次の例に示します。  
+  
+ [!code-csharp[XpsReadWriteSign#SignatureDefinitionCommandHandler](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsReadWriteSign/CSharp/SignatureDialog.xaml.cs#signaturedefinitioncommandhandler)]
+ [!code-vb[XpsReadWriteSign#SignatureDefinitionCommandHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsReadWriteSign/visualbasic/signaturedialog.xaml.vb#signaturedefinitioncommandhandler)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestedSigner">
+      <MemberSignature Language="C#" Value="public string RequestedSigner { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RequestedSigner" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.XpsSignatureDefinition.RequestedSigner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはパッケージの署名が要求される (または署名が) したユーザーの id を設定します。</summary>
+        <value>A<see cref="T:System.String" />を表す署名者、たとえば、"Mary Jones、マーケティング部署" 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに対応、`SignerName`の属性、`SignatureDefinition`内の要素、[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]パッケージです。 名前の違いに注意してください。  
+  
+ 詳細については、`SignerName`属性の 10 の章を参照してください、[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]で入手可能仕様[XPS: 仕様とライセンス ダウンロード](http://www.microsoft.com/whdc/xps/downloads.mspx)です。  
+  
+   
+  
+## Examples  
+ このプロパティを設定する方法を次の例に示します。  
+  
+ [!code-csharp[XpsReadWriteSign#SignatureDefinitionCommandHandler](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsReadWriteSign/CSharp/SignatureDialog.xaml.cs#signaturedefinitioncommandhandler)]
+ [!code-vb[XpsReadWriteSign#SignatureDefinitionCommandHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsReadWriteSign/visualbasic/signaturedialog.xaml.vb#signaturedefinitioncommandhandler)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignBy">
+      <MemberSignature Language="C#" Value="public Nullable&lt;DateTime&gt; SignBy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; SignBy" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.XpsSignatureDefinition.SignBy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTime&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の日付と時刻の指定されたドキュメントの部分を要求された署名者からサインインする必要があります。</summary>
+        <value>A (<see cref="T:System.Nullable" />)<see cref="T:System.DateTime" />を表す、期限、署名者をパッケージに署名する必要があります。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、`SignBy`で署名の定義の要素[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]、パッケージを参照してください、[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]で入手可能仕様[XPS: 仕様とライセンスのダウンロード](http://www.microsoft.com/whdc/xps/downloads.mspx)です。  
+  
+   
+  
+## Examples  
+ このプロパティを設定する方法を次の例に示します。  
+  
+ [!code-csharp[XpsReadWriteSign#SignatureDefinitionCommandHandler](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsReadWriteSign/CSharp/SignatureDialog.xaml.cs#signaturedefinitioncommandhandler)]
+ [!code-vb[XpsReadWriteSign#SignatureDefinitionCommandHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsReadWriteSign/visualbasic/signaturedialog.xaml.vb#signaturedefinitioncommandhandler)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SigningLocale">
+      <MemberSignature Language="C#" Value="public string SigningLocale { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SigningLocale" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.XpsSignatureDefinition.SigningLocale" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはパッケージが署名されて法を設定します。</summary>
+        <value>A<see cref="T:System.String" />を表す管轄、たとえば、「状態のユタ、アメリカ合衆国」。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに対応、`SigningLocation`で署名の定義の要素[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]パッケージです。 名前の違いに注意してください。  
+  
+ 元のプロデューサー、[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]パッケージは、このプロパティを設定できます。 必要に応じて、署名者は、他のユーザーが既に署名されている場合、パッケージの署名時に、プロパティを設定できます。  
+  
+ 詳細については、`SigningLocation`要素を参照してください章 10 で、[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]で入手可能仕様[XPS: 仕様とライセンスのダウンロード](http://www.microsoft.com/whdc/xps/downloads.mspx)です。  
+  
+   
+  
+## Examples  
+ このプロパティを設定する方法を次の例に示します。  
+  
+ [!code-csharp[XpsReadWriteSign#SignatureDefinitionCommandHandler](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsReadWriteSign/CSharp/SignatureDialog.xaml.cs#signaturedefinitioncommandhandler)]
+ [!code-vb[XpsReadWriteSign#SignatureDefinitionCommandHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsReadWriteSign/visualbasic/signaturedialog.xaml.vb#signaturedefinitioncommandhandler)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SpotId">
+      <MemberSignature Language="C#" Value="public Nullable&lt;Guid&gt; SpotId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.Guid&gt; SpotId" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.XpsSignatureDefinition.SpotId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Guid&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一意の識別子を設定を取得または<see cref="T:System.Windows.Xps.Packaging.XpsSignatureDefinition" />です。</summary>
+        <value>A (<see cref="T:System.Nullable" />)<see cref="T:System.Guid" />を表す、[!INCLUDE[TLA2#tla_id](~/includes/tla2sharptla-id-md.md)]のシグネチャ定義します。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リンクする、`Signature`要素をこの<xref:System.Windows.Xps.Packaging.XpsSignatureDefinition>、設定する必要があります、`Id`の属性、`Signature`の値に、<xref:System.Windows.Xps.Packaging.XpsSignatureDefinition.SpotId%2A>プロパティです。 詳細については`Signature`要素を参照してください、 [Open Packaging Conventions](http://www.microsoft.com/whdc/xps/xpspkg.mspx)スキーマです。  
+  
+ 詳細については、`SpotID`の属性、`SignatureDefinition`内の要素、[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]パッケージ、10 の章を参照してください、[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]で入手可能仕様[XPS: 仕様とライセンスのダウンロード](http://www.microsoft.com/whdc/xps/downloads.mspx)です。  
+  
+   
+  
+## Examples  
+ このプロパティを設定する方法を次の例に示します。  
+  
+ [!code-csharp[XpsReadWriteSign#SignatureDefinitionCommandHandler](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsReadWriteSign/CSharp/SignatureDialog.xaml.cs#signaturedefinitioncommandhandler)]
+ [!code-vb[XpsReadWriteSign#SignatureDefinitionCommandHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsReadWriteSign/visualbasic/signaturedialog.xaml.vb#signaturedefinitioncommandhandler)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SpotLocation">
+      <MemberSignature Language="C#" Value="public System.Windows.Xps.Packaging.SpotLocation SpotLocation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Xps.Packaging.SpotLocation SpotLocation" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.XpsSignatureDefinition.SpotLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.SpotLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定で表示されるデジタル署名を表示する場所を指定する場所、[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]ドキュメント。</summary>
+        <value>A<see cref="T:System.Windows.Xps.Packaging.SpotLocation" />を表す、パッケージ内の場所、署名の表示要求が表示されます。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、`SpotLocation`で署名の定義の要素[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]パッケージ、10 の章を参照してください、[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]で入手可能仕様[XPS: 仕様とライセンスのダウンロード](http://www.microsoft.com/whdc/xps/downloads.mspx)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

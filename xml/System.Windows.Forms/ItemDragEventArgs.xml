@@ -1,0 +1,159 @@
+<Type Name="ItemDragEventArgs" FullName="System.Windows.Forms.ItemDragEventArgs">
+  <TypeSignature Language="C#" Value="public class ItemDragEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ItemDragEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ItemDragEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Windows.Forms.ListView.ItemDrag" />のイベント、<see cref="T:System.Windows.Forms.ListView" />と<see cref="T:System.Windows.Forms.TreeView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ListView.ItemDrag>イベント、ユーザーが項目のドラッグを始めたときに発生します。 <xref:System.Windows.Forms.ItemDragEventArgs>オブジェクトは、押されたマウス ボタンを指定します。  
+  
+   
+  
+## Examples  
+ 次の例は、の使用を示しています。<xref:System.Windows.Forms.ItemDragEventArgs>内でドラッグ アンド ドロップ操作を有効にする場合、<xref:System.Windows.Forms.TreeView>です。 <xref:System.Windows.Forms.ItemDragEventArgs.Button%2A>プロパティは、ドラッグしたノードを移動またはそのコピー先にコピーするかどうかを決定します。 によって表される、ノード、<xref:System.Windows.Forms.ItemDragEventArgs.Item%2A>プロパティに渡され、<xref:System.Windows.Forms.TreeView>コントロールの<xref:System.Windows.Forms.Control.DoDragDrop%2A>メソッドと目的の効果を示す値。  
+  
+ 完全な例については、<xref:System.Windows.Forms.TreeView.ItemDrag?displayProperty=nameWithType>リファレンス トピックを参照します。  
+  
+ [!code-cpp[TreeViewDragDrop#2](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeViewDragDrop/CPP/treeviewdragdrop.cpp#2)]
+ [!code-csharp[TreeViewDragDrop#2](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeViewDragDrop/CS/treeviewdragdrop.cs#2)]
+ [!code-vb[TreeViewDragDrop#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeViewDragDrop/VB/treeviewdragdrop.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ItemDragEventArgs (System.Windows.Forms.MouseButtons button);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Forms.MouseButtons button) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ItemDragEventArgs.#ctor(System.Windows.Forms.MouseButtons)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="button" Type="System.Windows.Forms.MouseButtons" />
+      </Parameters>
+      <Docs>
+        <param name="button">ビットごとの組み合わせ<see cref="T:System.Windows.Forms.MouseButtons" />押されたマウス ボタンを示す値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ItemDragEventArgs" />指定されたマウス ボタンを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバージョンのコンス トラクターを使用する場合、値の<xref:System.Windows.Forms.ItemDragEventArgs.Item%2A>プロパティに設定されて自動的に`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ItemDragEventArgs (System.Windows.Forms.MouseButtons button, object item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Forms.MouseButtons button, object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ItemDragEventArgs.#ctor(System.Windows.Forms.MouseButtons,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="button" Type="System.Windows.Forms.MouseButtons" />
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="button">ビットごとの組み合わせ<see cref="T:System.Windows.Forms.MouseButtons" />押されたマウス ボタンを示す値。</param>
+        <param name="item">ドラッグされている項目。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ItemDragEventArgs" />指定されたマウス ボタンをクリックし、ドラッグされている項目を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Button">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.MouseButtons Button { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.MouseButtons Button" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ItemDragEventArgs.Button" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MouseButtons</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドラッグ操作中にマウス ボタンが押されたかを示す値を取得します。</summary>
+        <value>ビットごとの組み合わせ<see cref="T:System.Windows.Forms.MouseButtons" />値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、ドラッグ アンド ドロップ操作中にマウス ボタンが押されたかを判断することができます。 このプロパティの値を正しく判断に使用できる方法、ドラッグ、ドロップ操作を実行する必要があります。 たとえばにマウスの左ボタンが押されたときに、項目を新しい場所に移動し、マウスの右ボタンが押されたときに、新しい場所にコピーする場合があります。  
+  
+   
+  
+## Examples  
+ 次の例では、使用、<xref:System.Windows.Forms.ItemDragEventArgs>クラス内でドラッグ アンド ドロップ操作を有効にすると、<xref:System.Windows.Forms.TreeView>コントロール。 <xref:System.Windows.Forms.ItemDragEventArgs.Button%2A>プロパティは、ドラッグしたノードを移動またはそのコピー先にコピーするかどうかを決定します。 によって表される、ノード、<xref:System.Windows.Forms.ItemDragEventArgs.Item%2A>プロパティに渡され、<xref:System.Windows.Forms.TreeView>コントロールの<xref:System.Windows.Forms.Control.DoDragDrop%2A>メソッド、ドラッグ アンド ドロップ操作の目的の効果を示す値とします。  
+  
+ 完全な例については、<xref:System.Windows.Forms.TreeView.ItemDrag?displayProperty=nameWithType>リファレンス トピックを参照します。  
+  
+ [!code-cpp[TreeViewDragDrop#2](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeViewDragDrop/CPP/treeviewdragdrop.cpp#2)]
+ [!code-csharp[TreeViewDragDrop#2](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeViewDragDrop/CS/treeviewdragdrop.cs#2)]
+ [!code-vb[TreeViewDragDrop#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeViewDragDrop/VB/treeviewdragdrop.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object Item { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ItemDragEventArgs.Item" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドラッグされている項目を取得します。</summary>
+        <value>ドラッグされている項目を表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 項目を決定する、このプロパティを使用することができます、<xref:System.Windows.Forms.TreeView>または<xref:System.Windows.Forms.ListView>コントロールがコントロールからドラッグされています。  
+  
+   
+  
+## Examples  
+ 次の例は、の使用を示しています。<xref:System.Windows.Forms.ItemDragEventArgs>内でドラッグ アンド ドロップ操作を有効にする場合、<xref:System.Windows.Forms.TreeView>コントロール。 <xref:System.Windows.Forms.ItemDragEventArgs.Button%2A>プロパティは、ドラッグしたノードを移動またはそのコピー先にコピーするかどうかを決定します。 によって表される、ノード、<xref:System.Windows.Forms.ItemDragEventArgs.Item%2A>プロパティに渡され、<xref:System.Windows.Forms.TreeView>コントロールの<xref:System.Windows.Forms.Control.DoDragDrop%2A>メソッドをドラッグ アンド ドロップ操作の目的の効果を示す値とします。  
+  
+ 完全な例については、<xref:System.Windows.Forms.TreeView.ItemDrag?displayProperty=nameWithType>リファレンス トピックを参照します。  
+  
+ [!code-cpp[TreeViewDragDrop#2](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeViewDragDrop/CPP/treeviewdragdrop.cpp#2)]
+ [!code-csharp[TreeViewDragDrop#2](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeViewDragDrop/CS/treeviewdragdrop.cs#2)]
+ [!code-vb[TreeViewDragDrop#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeViewDragDrop/VB/treeviewdragdrop.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

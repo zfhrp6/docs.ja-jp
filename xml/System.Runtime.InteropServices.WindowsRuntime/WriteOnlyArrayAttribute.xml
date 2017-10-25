@@ -1,0 +1,71 @@
+<Type Name="WriteOnlyArrayAttribute" FullName="System.Runtime.InteropServices.WindowsRuntime.WriteOnlyArrayAttribute">
+  <TypeSignature Language="C#" Value="public sealed class WriteOnlyArrayAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WriteOnlyArrayAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.WindowsRuntime.WriteOnlyArrayAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices.WindowsRuntime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Parameter, AllowMultiple=false, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Windows ランタイム コンポーネントの配列パラメーターに適用する場合は、そのパラメーターに渡される配列の内容が出力に対してのみ使用されることを指定します。 呼び出し元はコンテンツが初期化されることを保証せず、呼び出されたメソッドはコンテンツを読み取りません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配列パラメーターの場合、[!INCLUDE[wrt](~/includes/wrt-md.md)]コンポーネントは、値によって渡される (`ByVal` Visual Basic で) に、次の属性のいずれかを適用する必要があります。  
+  
+-   適用、<xref:System.Runtime.InteropServices.WindowsRuntime.ReadOnlyArrayAttribute>する場合は入力のみに使用する配列の内容の属性です。  
+  
+-   適用、<xref:System.Runtime.InteropServices.WindowsRuntime.WriteOnlyArrayAttribute>属性出力のみに使用する配列の内容を予定する場合 (つまり、メソッドの配列の内容を設定に読み取られない)。  
+  
+ パラメーターに両方の属性を適用すると、エラーが発生します。 詳細については、配列への変更に関する標準的なパターンを参照してください。[を Windows ランタイム コンポーネントの配列の引き渡し](http://go.microsoft.com/fwlink/?LinkId=251026)Windows デベロッパー センター内です。  
+  
+> [!IMPORTANT]
+>  持つパラメーター、<xref:System.Runtime.InteropServices.WindowsRuntime.WriteOnlyArrayAttribute>属性の動作、呼び出し元がネイティブ コードまたはマネージ コードで記述されたかどうかによって異なります。 呼び出し元がネイティブ コードである場合 (JavaScript または[!INCLUDE[cppwrt](~/includes/cppwrt-md.md)])、呼び出されたメソッドは、元の配列の内容に関する想定を行うことはできません。 たとえば、メソッドが受け取る配列が初期化されていなかったり、既定の値が入っていたりする可能性があります。 メソッドには、配列内のすべての要素の値を設定することが期待されます。  
+>   
+>  場合は、呼び出し元がマネージ コード、呼び出し元の元の配列が、呼び出されたメソッドに渡される .NET Framework でのメソッド呼び出しであるようです。 メソッドが読み取る選択的に、およびそれらの値を変更できるよう、配列の内容は、マネージ コードの変更可能です。 これは、用に記述された単体テストの影響を与えるので注意してください、[!INCLUDE[wrt](~/includes/wrt-md.md)]コンポーネントです。 場合は、テストは、マネージ コードで記述されたは、テスト中に、変更可能である配列の内容が表示され、結果は、メソッドがネイティブ コードから後で呼び出されるとは異なる可能性が高い。  
+  
+ この属性を適用する、`out`パラメーターまたはパラメーターを持つ、<xref:System.Runtime.InteropServices.InAttribute>属性とモジュールがエクスポートするときにエラーが発生します。 パラメーターに属性を適用する、<xref:System.Runtime.InteropServices.OutAttribute>属性パラメーターは、Visual Basic もがあるない限り、エラーが発生`ByRef`修飾子です。 その場合は、属性は、冗長ですが許可されています。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WriteOnlyArrayAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.WindowsRuntime.WriteOnlyArrayAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices.WindowsRuntime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.InteropServices.WindowsRuntime.WriteOnlyArrayAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

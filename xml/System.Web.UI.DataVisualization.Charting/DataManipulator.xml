@@ -1,0 +1,1398 @@
+<Type Name="DataManipulator" FullName="System.Web.UI.DataVisualization.Charting.DataManipulator">
+  <TypeSignature Language="C#" Value="public class DataManipulator : System.Web.UI.DataVisualization.Charting.DataFormula" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataManipulator extends System.Web.UI.DataVisualization.Charting.DataFormula" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.DataVisualization.Charting.DataManipulator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DataVisualization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.DataVisualization.Charting.DataFormula</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>実行時にデータの操作を実行します。 このクラスは、によって公開される、<see cref="P:System.Web.UI.DataVisualization.Charting.Chart.DataManipulator" />ルートのプロパティ<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" />オブジェクト。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataManipulator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.DataVisualization.Charting.DataManipulator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExportSeriesValues">
+      <MemberSignature Language="C#" Value="public System.Data.DataSet ExportSeriesValues ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataSet ExportSeriesValues() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.ExportSeriesValues" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataSet</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>格納されているすべての系列のデータをエクスポート、<see cref="T:System.Web.UI.DataVisualization.Charting.SeriesCollection" />を<see cref="T:System.Data.DataSet" />オブジェクト。</summary>
+        <returns>A<see cref="T:System.Data.DataSet" />系列データを格納しているオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExportSeriesValues">
+      <MemberSignature Language="C#" Value="public System.Data.DataSet ExportSeriesValues (string seriesNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataSet ExportSeriesValues(string seriesNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.ExportSeriesValues(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataSet</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="seriesNames" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="seriesNames">名前のコンマ区切りのリスト、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />をエクスポートします。</param>
+        <summary>1 つまたは複数の系列からデータをエクスポート、<see cref="T:System.Data.DataSet" />オブジェクト。</summary>
+        <returns>A<see cref="T:System.Data.DataSet" />系列データを格納しているオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExportSeriesValues">
+      <MemberSignature Language="C#" Value="public System.Data.DataSet ExportSeriesValues (System.Web.UI.DataVisualization.Charting.Series series);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataSet ExportSeriesValues(class System.Web.UI.DataVisualization.Charting.Series series) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.ExportSeriesValues(System.Web.UI.DataVisualization.Charting.Series)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataSet</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="series" Type="System.Web.UI.DataVisualization.Charting.Series" />
+      </Parameters>
+      <Docs>
+        <param name="series">エクスポートする系列です。</param>
+        <summary>指定した系列からデータをエクスポート、<see cref="T:System.Data.DataSet" />オブジェクト。</summary>
+        <returns>A<see cref="T:System.Data.DataSet" />系列データを格納しているオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filter">
+      <MemberSignature Language="C#" Value="public void Filter (System.Web.UI.DataVisualization.Charting.IDataPointFilter filterInterface, string inputSeriesNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Filter(class System.Web.UI.DataVisualization.Charting.IDataPointFilter filterInterface, string inputSeriesNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.Filter(System.Web.UI.DataVisualization.Charting.IDataPointFilter,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filterInterface" Type="System.Web.UI.DataVisualization.Charting.IDataPointFilter" />
+        <Parameter Name="inputSeriesNames" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="filterInterface"><see cref="T:System.Web.UI.DataVisualization.Charting.IDataPointFilter" /> インターフェイスを実装するオブジェクト。</param>
+        <param name="inputSeriesNames">名前のコンマ区切りのリスト、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルター選択します。</param>
+        <summary>1 つまたは複数のデータ ポイントでカスタム フィルター処理を実行<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />最初の系列のポイントに基づきます。 フィルター選択された<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />オブジェクトも変更されたデータを格納します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filter">
+      <MemberSignature Language="C#" Value="public void Filter (System.Web.UI.DataVisualization.Charting.IDataPointFilter filterInterface, System.Web.UI.DataVisualization.Charting.Series inputSeries);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Filter(class System.Web.UI.DataVisualization.Charting.IDataPointFilter filterInterface, class System.Web.UI.DataVisualization.Charting.Series inputSeries) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.Filter(System.Web.UI.DataVisualization.Charting.IDataPointFilter,System.Web.UI.DataVisualization.Charting.Series)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filterInterface" Type="System.Web.UI.DataVisualization.Charting.IDataPointFilter" />
+        <Parameter Name="inputSeries" Type="System.Web.UI.DataVisualization.Charting.Series" />
+      </Parameters>
+      <Docs>
+        <param name="filterInterface"><see cref="T:System.Web.UI.DataVisualization.Charting.IDataPointFilter" /> インターフェイスを実装するオブジェクト。</param>
+        <param name="inputSeries"><see cref="T:System.Web.UI.DataVisualization.Charting.Series" />はフィルター処理するオブジェクト。</param>
+        <summary>系列内のデータ ポイントにカスタムのフィルタ リングを実行します。 <see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルターは、そのオブジェクトも変更されたデータを格納します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filter">
+      <MemberSignature Language="C#" Value="public void Filter (System.Web.UI.DataVisualization.Charting.CompareMethod compareMethod, double compareValue, string inputSeriesNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Filter(valuetype System.Web.UI.DataVisualization.Charting.CompareMethod compareMethod, float64 compareValue, string inputSeriesNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.Filter(System.Web.UI.DataVisualization.Charting.CompareMethod,System.Double,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="compareMethod" Type="System.Web.UI.DataVisualization.Charting.CompareMethod" />
+        <Parameter Name="compareValue" Type="System.Double" />
+        <Parameter Name="inputSeriesNames" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="compareMethod">A<see cref="T:System.Web.UI.DataVisualization.Charting.CompareMethod" />フィルタ リング規則の比較方法を決定する列挙値。 指定できます<see cref="F:System.Web.UI.DataVisualization.Charting.CompareMethod.LessThan" />、<see cref="F:System.Web.UI.DataVisualization.Charting.CompareMethod.EqualTo" />などのようにします。</param>
+        <param name="compareValue">データ ポイントの最初の Y 値に適用されているフィルタ リング規則の値部分。 たとえば、フィルタ リング規則で"&lt;6"、6 は、値。</param>
+        <param name="inputSeriesNames">名前のコンマ区切りのリスト、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルター選択します。</param>
+        <summary>最初の系列のデータ ポイントの最初の Y 値をフィルタ リング規則を適用することで、1 つまたは複数の系列をフィルター処理します。 フィルター選択された<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />変更されたデータを格納するオブジェクトが使用されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filter">
+      <MemberSignature Language="C#" Value="public void Filter (System.Web.UI.DataVisualization.Charting.CompareMethod compareMethod, double compareValue, System.Web.UI.DataVisualization.Charting.Series inputSeries);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Filter(valuetype System.Web.UI.DataVisualization.Charting.CompareMethod compareMethod, float64 compareValue, class System.Web.UI.DataVisualization.Charting.Series inputSeries) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.Filter(System.Web.UI.DataVisualization.Charting.CompareMethod,System.Double,System.Web.UI.DataVisualization.Charting.Series)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="compareMethod" Type="System.Web.UI.DataVisualization.Charting.CompareMethod" />
+        <Parameter Name="compareValue" Type="System.Double" />
+        <Parameter Name="inputSeries" Type="System.Web.UI.DataVisualization.Charting.Series" />
+      </Parameters>
+      <Docs>
+        <param name="compareMethod">A<see cref="T:System.Web.UI.DataVisualization.Charting.CompareMethod" />フィルタ リング規則の比較方法を決定する列挙値。 指定できます<see cref="F:System.Web.UI.DataVisualization.Charting.CompareMethod.LessThan" />、<see cref="F:System.Web.UI.DataVisualization.Charting.CompareMethod.EqualTo" />などのようにします。</param>
+        <param name="compareValue">データ ポイントの最初の Y 値に適用されているフィルタ リング規則の値部分。 たとえば、フィルタ リング規則で"&lt;6"、6 は、値。</param>
+        <param name="inputSeries"><see cref="T:System.Web.UI.DataVisualization.Charting.Series" />はフィルター処理するオブジェクト。</param>
+        <summary>各データ ポイントの最初の Y 値をフィルタ リング規則を適用することにより、系列のデータ ポイントをフィルター処理します。 <see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルターは、そのオブジェクトも変更されたデータを格納します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filter">
+      <MemberSignature Language="C#" Value="public void Filter (System.Web.UI.DataVisualization.Charting.DateRangeType dateRange, string rangeElements, string inputSeriesNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Filter(valuetype System.Web.UI.DataVisualization.Charting.DateRangeType dateRange, string rangeElements, string inputSeriesNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.Filter(System.Web.UI.DataVisualization.Charting.DateRangeType,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dateRange" Type="System.Web.UI.DataVisualization.Charting.DateRangeType" />
+        <Parameter Name="rangeElements" Type="System.String" />
+        <Parameter Name="inputSeriesNames" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dateRange">A<see cref="T:System.Web.UI.DataVisualization.Charting.DateRangeType" />曜日、月、およびなどの日数などの日付/時間間隔を表す列挙値。 指定した要素のフィルター処理する範囲を決定します。</param>
+        <param name="rangeElements">指定された日付/時刻の範囲内の要素を指定します、 <c>dateRange</c>はフィルター処理するパラメーターです。 たとえば、「7」とは、単一の値を指定できます。コンマ区切り値、たとえば、「5,6」です。「9-11」などの値の範囲またはその「5,6,9 11」など、すべてのバリエーション。</param>
+        <param name="inputSeriesNames">名前のコンマ区切りのリスト、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルター選択します。</param>
+        <summary>指定したポイントを削除するか特定の日付/時刻の範囲は、空としてマークして 1 つまたは複数の系列のデータ ポイントをフィルター処理します。 フィルター選択された<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />変更されたデータを格納するオブジェクトが使用されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filter">
+      <MemberSignature Language="C#" Value="public void Filter (System.Web.UI.DataVisualization.Charting.DateRangeType dateRange, string rangeElements, System.Web.UI.DataVisualization.Charting.Series inputSeries);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Filter(valuetype System.Web.UI.DataVisualization.Charting.DateRangeType dateRange, string rangeElements, class System.Web.UI.DataVisualization.Charting.Series inputSeries) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.Filter(System.Web.UI.DataVisualization.Charting.DateRangeType,System.String,System.Web.UI.DataVisualization.Charting.Series)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dateRange" Type="System.Web.UI.DataVisualization.Charting.DateRangeType" />
+        <Parameter Name="rangeElements" Type="System.String" />
+        <Parameter Name="inputSeries" Type="System.Web.UI.DataVisualization.Charting.Series" />
+      </Parameters>
+      <Docs>
+        <param name="dateRange">A<see cref="T:System.Web.UI.DataVisualization.Charting.DateRangeType" />曜日、月、およびなどの日数などの日付/時間間隔を表す列挙値。 指定した要素のフィルター処理する範囲を決定します。</param>
+        <param name="rangeElements">指定された日付/時刻の範囲内の要素を指定します、 <c>dateRange</c>はフィルター処理するパラメーターです。 たとえば、「7」とは、単一の値を指定できます。コンマ区切り値、たとえば、「5,6」です。「9-11」などの値の範囲またはその「5,6,9 11」など、すべてのバリエーション。</param>
+        <param name="inputSeries"><see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルター選択するオブジェクト。</param>
+        <summary>指定したポイントを削除するか指定した日付/時刻の範囲は、空としてマークして、系列内のデータ ポイントをフィルター処理します。 <see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルターは、そのオブジェクトが変更されたデータの格納に使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filter">
+      <MemberSignature Language="C#" Value="public void Filter (System.Web.UI.DataVisualization.Charting.IDataPointFilter filterInterface, string inputSeriesNames, string outputSeriesNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Filter(class System.Web.UI.DataVisualization.Charting.IDataPointFilter filterInterface, string inputSeriesNames, string outputSeriesNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.Filter(System.Web.UI.DataVisualization.Charting.IDataPointFilter,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filterInterface" Type="System.Web.UI.DataVisualization.Charting.IDataPointFilter" />
+        <Parameter Name="inputSeriesNames" Type="System.String" />
+        <Parameter Name="outputSeriesNames" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="filterInterface"><see cref="T:System.Web.UI.DataVisualization.Charting.IDataPointFilter" /> インターフェイスを実装するオブジェクト。</param>
+        <param name="inputSeriesNames">名前のコンマ区切りのリスト、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルター選択します。</param>
+        <param name="outputSeriesNames">名前のコンマ区切りのリスト、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルター選択されたデータを格納します。 出力系列の数が入力系列の数と一致するそれ以外の場合、例外がスローされることを確認してください。</param>
+        <summary>最初の系列のポイントに基づき、1 つまたは複数の系列のデータ ポイントに対してカスタム フィルター処理を実行します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filter">
+      <MemberSignature Language="C#" Value="public void Filter (System.Web.UI.DataVisualization.Charting.IDataPointFilter filterInterface, System.Web.UI.DataVisualization.Charting.Series inputSeries, System.Web.UI.DataVisualization.Charting.Series outputSeries);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Filter(class System.Web.UI.DataVisualization.Charting.IDataPointFilter filterInterface, class System.Web.UI.DataVisualization.Charting.Series inputSeries, class System.Web.UI.DataVisualization.Charting.Series outputSeries) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.Filter(System.Web.UI.DataVisualization.Charting.IDataPointFilter,System.Web.UI.DataVisualization.Charting.Series,System.Web.UI.DataVisualization.Charting.Series)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filterInterface" Type="System.Web.UI.DataVisualization.Charting.IDataPointFilter" />
+        <Parameter Name="inputSeries" Type="System.Web.UI.DataVisualization.Charting.Series" />
+        <Parameter Name="outputSeries" Type="System.Web.UI.DataVisualization.Charting.Series" />
+      </Parameters>
+      <Docs>
+        <param name="filterInterface"><see cref="T:System.Web.UI.DataVisualization.Charting.IDataPointFilter" /> インターフェイスを実装するオブジェクト。</param>
+        <param name="inputSeries"><see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルター選択するオブジェクト。</param>
+        <param name="outputSeries">A<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルター選択されたデータを格納するオブジェクト。 系列が存在しない場合、例外がスローされます。</param>
+        <summary>系列内のデータ ポイントにカスタムのフィルタ リングを実行します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filter">
+      <MemberSignature Language="C#" Value="public void Filter (System.Web.UI.DataVisualization.Charting.CompareMethod compareMethod, double compareValue, string inputSeriesNames, string outputSeriesNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Filter(valuetype System.Web.UI.DataVisualization.Charting.CompareMethod compareMethod, float64 compareValue, string inputSeriesNames, string outputSeriesNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.Filter(System.Web.UI.DataVisualization.Charting.CompareMethod,System.Double,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="compareMethod" Type="System.Web.UI.DataVisualization.Charting.CompareMethod" />
+        <Parameter Name="compareValue" Type="System.Double" />
+        <Parameter Name="inputSeriesNames" Type="System.String" />
+        <Parameter Name="outputSeriesNames" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="compareMethod">A<see cref="T:System.Web.UI.DataVisualization.Charting.CompareMethod" />フィルタ リング規則の比較方法を決定する列挙値。 指定できます<see cref="F:System.Web.UI.DataVisualization.Charting.CompareMethod.LessThan" />、<see cref="F:System.Web.UI.DataVisualization.Charting.CompareMethod.EqualTo" />などのようにします。</param>
+        <param name="compareValue">データ ポイントの最初の Y 値に適用されているフィルタ リング規則の値部分。 たとえば、フィルタ リング規則で"&lt;6"、6 は、値。</param>
+        <param name="inputSeriesNames">名前のコンマ区切りのリスト、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルター選択します。</param>
+        <param name="outputSeriesNames">名前のコンマ区切りのリスト、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルター選択されたデータを格納します。 出力系列の数は入力系列の数と一致する必要があります、それ以外の場合、例外がスローされます。</param>
+        <summary>最初の系列のデータ ポイントの各の最初の Y 値をフィルタ リング規則を適用することで、1 つまたは複数の系列をフィルター処理します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filter">
+      <MemberSignature Language="C#" Value="public void Filter (System.Web.UI.DataVisualization.Charting.CompareMethod compareMethod, double compareValue, System.Web.UI.DataVisualization.Charting.Series inputSeries, System.Web.UI.DataVisualization.Charting.Series outputSeries);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Filter(valuetype System.Web.UI.DataVisualization.Charting.CompareMethod compareMethod, float64 compareValue, class System.Web.UI.DataVisualization.Charting.Series inputSeries, class System.Web.UI.DataVisualization.Charting.Series outputSeries) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.Filter(System.Web.UI.DataVisualization.Charting.CompareMethod,System.Double,System.Web.UI.DataVisualization.Charting.Series,System.Web.UI.DataVisualization.Charting.Series)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="compareMethod" Type="System.Web.UI.DataVisualization.Charting.CompareMethod" />
+        <Parameter Name="compareValue" Type="System.Double" />
+        <Parameter Name="inputSeries" Type="System.Web.UI.DataVisualization.Charting.Series" />
+        <Parameter Name="outputSeries" Type="System.Web.UI.DataVisualization.Charting.Series" />
+      </Parameters>
+      <Docs>
+        <param name="compareMethod">A<see cref="T:System.Web.UI.DataVisualization.Charting.CompareMethod" />フィルタ リング規則の比較方法を決定する列挙値。 指定できます<see cref="F:System.Web.UI.DataVisualization.Charting.CompareMethod.LessThan" />、<see cref="F:System.Web.UI.DataVisualization.Charting.CompareMethod.EqualTo" />などのようにします。</param>
+        <param name="compareValue">データ ポイントの最初の Y 値に適用されているフィルタ リング規則の値部分。 たとえば、フィルタ リング規則で"&lt;6"、6 は、値。</param>
+        <param name="inputSeries"><see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルター選択するオブジェクト。</param>
+        <param name="outputSeries">A<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルター選択されたデータを格納するオブジェクト。 系列が存在しない場合、例外がスローされます。</param>
+        <summary>各データ ポイントの最初の Y 値をフィルタ リング規則を適用することにより、系列内データ ポイントをフィルター処理します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filter">
+      <MemberSignature Language="C#" Value="public void Filter (System.Web.UI.DataVisualization.Charting.DateRangeType dateRange, string rangeElements, string inputSeriesNames, string outputSeriesNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Filter(valuetype System.Web.UI.DataVisualization.Charting.DateRangeType dateRange, string rangeElements, string inputSeriesNames, string outputSeriesNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.Filter(System.Web.UI.DataVisualization.Charting.DateRangeType,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dateRange" Type="System.Web.UI.DataVisualization.Charting.DateRangeType" />
+        <Parameter Name="rangeElements" Type="System.String" />
+        <Parameter Name="inputSeriesNames" Type="System.String" />
+        <Parameter Name="outputSeriesNames" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dateRange">A<see cref="T:System.Web.UI.DataVisualization.Charting.DateRangeType" />曜日、月、およびなどの日数などの日付/時間間隔を表す列挙値。 指定した要素のフィルター処理する範囲を決定します。</param>
+        <param name="rangeElements">指定された日付/時刻の範囲内の要素を指定します、 <c>dateRange</c>はフィルター処理するパラメーターです。 たとえば、「7」とは、単一の値を指定できます。コンマ区切り値、たとえば、「5,6」です。「9-11」などの値の範囲またはその「5,6,9 11」など、すべてのバリエーション。</param>
+        <param name="inputSeriesNames">名前のコンマ区切りのリスト、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルター選択します。</param>
+        <param name="outputSeriesNames">名前のコンマ区切りのリスト、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルター選択されたデータを格納します。 出力系列の数が入力系列の数と一致するそれ以外の場合、例外がスローされることを確認してください。</param>
+        <summary>指定された日付/時刻の範囲は、空の指定した点を削除するか、またはとしてマークして、1 つまたは複数の系列のデータ ポイントをフィルターします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filter">
+      <MemberSignature Language="C#" Value="public void Filter (System.Web.UI.DataVisualization.Charting.DateRangeType dateRange, string rangeElements, System.Web.UI.DataVisualization.Charting.Series inputSeries, System.Web.UI.DataVisualization.Charting.Series outputSeries);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Filter(valuetype System.Web.UI.DataVisualization.Charting.DateRangeType dateRange, string rangeElements, class System.Web.UI.DataVisualization.Charting.Series inputSeries, class System.Web.UI.DataVisualization.Charting.Series outputSeries) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.Filter(System.Web.UI.DataVisualization.Charting.DateRangeType,System.String,System.Web.UI.DataVisualization.Charting.Series,System.Web.UI.DataVisualization.Charting.Series)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dateRange" Type="System.Web.UI.DataVisualization.Charting.DateRangeType" />
+        <Parameter Name="rangeElements" Type="System.String" />
+        <Parameter Name="inputSeries" Type="System.Web.UI.DataVisualization.Charting.Series" />
+        <Parameter Name="outputSeries" Type="System.Web.UI.DataVisualization.Charting.Series" />
+      </Parameters>
+      <Docs>
+        <param name="dateRange">A<see cref="T:System.Web.UI.DataVisualization.Charting.DateRangeType" />曜日、月、およびなどの日数などの日付/時間間隔を表す列挙値。 指定した要素のフィルター処理する範囲を決定します。</param>
+        <param name="rangeElements">指定された日付/時刻の範囲内の要素を指定します、 <c>dateRange</c>はフィルター処理するパラメーターです。 たとえば、「7」とは、単一の値を指定できます。コンマ区切り値、たとえば、「5,6」です。「9-11」などの値の範囲またはその「5,6,9 11」など、すべてのバリエーション。</param>
+        <param name="inputSeries"><see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルター選択するオブジェクト。</param>
+        <param name="outputSeries">A<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルター選択されたデータを格納するオブジェクト。 系列が存在しない場合、例外がスローされます。</param>
+        <summary>指定した点を削除することで、または指定された日付/時刻の範囲は、空としてマークして、一連のデータ ポイントをフィルター処理します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filter">
+      <MemberSignature Language="C#" Value="public void Filter (System.Web.UI.DataVisualization.Charting.CompareMethod compareMethod, double compareValue, string inputSeriesNames, string outputSeriesNames, string usingValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Filter(valuetype System.Web.UI.DataVisualization.Charting.CompareMethod compareMethod, float64 compareValue, string inputSeriesNames, string outputSeriesNames, string usingValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.Filter(System.Web.UI.DataVisualization.Charting.CompareMethod,System.Double,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="compareMethod" Type="System.Web.UI.DataVisualization.Charting.CompareMethod" />
+        <Parameter Name="compareValue" Type="System.Double" />
+        <Parameter Name="inputSeriesNames" Type="System.String" />
+        <Parameter Name="outputSeriesNames" Type="System.String" />
+        <Parameter Name="usingValue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="compareMethod">A<see cref="T:System.Web.UI.DataVisualization.Charting.CompareMethod" />フィルタ リング規則の比較方法を決定する列挙値。 指定できます<see cref="F:System.Web.UI.DataVisualization.Charting.CompareMethod.LessThan" />、<see cref="F:System.Web.UI.DataVisualization.Charting.CompareMethod.EqualTo" />などのようにします。</param>
+        <param name="compareValue">データ ポイントの最初の Y 値に適用されているフィルタ リング規則の値部分。 たとえば、フィルタ リング規則で"&lt;6"、6 は、値。</param>
+        <param name="inputSeriesNames">名前のコンマ区切りのリスト、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルター選択します。</param>
+        <param name="outputSeriesNames">名前のコンマ区切りのリスト、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルター選択されたデータを格納します。 出力系列の数が、入力系列の数に一致する必要があります、それ以外の場合、例外がスローされます。</param>
+        <param name="usingValue">データ ポイントのフィルタ リング規則を適用する値。 X は、Y、Y2、Y3 などです。</param>
+        <summary>最初の系列で指定されたデータ ポイント値にフィルタ リング規則を適用することで、1 つまたは複数の系列をフィルター処理します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filter">
+      <MemberSignature Language="C#" Value="public void Filter (System.Web.UI.DataVisualization.Charting.CompareMethod compareMethod, double compareValue, System.Web.UI.DataVisualization.Charting.Series inputSeries, System.Web.UI.DataVisualization.Charting.Series outputSeries, string usingValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Filter(valuetype System.Web.UI.DataVisualization.Charting.CompareMethod compareMethod, float64 compareValue, class System.Web.UI.DataVisualization.Charting.Series inputSeries, class System.Web.UI.DataVisualization.Charting.Series outputSeries, string usingValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.Filter(System.Web.UI.DataVisualization.Charting.CompareMethod,System.Double,System.Web.UI.DataVisualization.Charting.Series,System.Web.UI.DataVisualization.Charting.Series,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="compareMethod" Type="System.Web.UI.DataVisualization.Charting.CompareMethod" />
+        <Parameter Name="compareValue" Type="System.Double" />
+        <Parameter Name="inputSeries" Type="System.Web.UI.DataVisualization.Charting.Series" />
+        <Parameter Name="outputSeries" Type="System.Web.UI.DataVisualization.Charting.Series" />
+        <Parameter Name="usingValue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="compareMethod">A<see cref="T:System.Web.UI.DataVisualization.Charting.CompareMethod" />フィルタ リング規則の比較方法を決定する列挙値。 指定できます<see cref="F:System.Web.UI.DataVisualization.Charting.CompareMethod.LessThan" />、<see cref="F:System.Web.UI.DataVisualization.Charting.CompareMethod.EqualTo" />などのようにします。</param>
+        <param name="compareValue">データ ポイントの最初の Y 値に適用されているフィルタ リング規則の値部分。 たとえば、フィルタ リング規則で"&lt;6"、6 は、値。</param>
+        <param name="inputSeries"><see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルター選択するオブジェクト。</param>
+        <param name="outputSeries">A<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルター選択されたデータを格納するオブジェクト。 系列が存在しない場合、例外がスローされます。</param>
+        <param name="usingValue">データ ポイントのフィルタ リング規則を適用する値。 X は、Y、Y2、Y3 などです。</param>
+        <summary>指定されたデータをフィルタ リング規則を適用することにより、系列内データ ポイントをフィルターでは、比較の値をポイントします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterMatchedPoints">
+      <MemberSignature Language="C#" Value="public bool FilterMatchedPoints { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool FilterMatchedPoints" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.DataManipulator.FilterMatchedPoints" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または引数に指定された条件に一致する場合、ポイントがフィルター処理するかどうかを決定する値を設定、<c>フィルター</c>このクラスのメソッドです。</summary>
+        <value>
+          <see langword="true" />ポイントに一致する場合は、指定した条件がフィルター処理です。<see langword="false" />場合は、条件に一致しないポイントがフィルター処理します。 既定値は <see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterSetEmptyPoints">
+      <MemberSignature Language="C#" Value="public bool FilterSetEmptyPoints { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool FilterSetEmptyPoints" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.DataManipulator.FilterSetEmptyPoints" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定によってポイントがフィルター処理するかどうかを示すフラグ、<c>フィルター</c>または<c>FilterTopN</c>メソッドを削除または空としてマークされます。</summary>
+        <value>
+          <see langword="true" />フィルター選択された点は、; 空としてマークされる場合<see langword="false" />場合は削除される予定です。 既定値は <see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterTopN">
+      <MemberSignature Language="C#" Value="public void FilterTopN (int pointCount, string inputSeriesNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void FilterTopN(int32 pointCount, string inputSeriesNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.FilterTopN(System.Int32,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pointCount" Type="System.Int32" />
+        <Parameter Name="inputSeriesNames" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="pointCount">フィルター処理操作は削除されませんデータ ポイントの数。</param>
+        <param name="inputSeriesNames">名前のコンマ区切りのリスト、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルター選択します。</param>
+        <summary>指定された数のポイントを除く 1 つまたは複数の系列内のすべてのデータ ポイントをフィルター処理します。 フィルター選択されていない点は、最大 1 番目の Y 値を持つ最初の系列のポイントに対応します。 <see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルター処理されているオブジェクトが変更されたデータの格納に使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterTopN">
+      <MemberSignature Language="C#" Value="public void FilterTopN (int pointCount, System.Web.UI.DataVisualization.Charting.Series inputSeries);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void FilterTopN(int32 pointCount, class System.Web.UI.DataVisualization.Charting.Series inputSeries) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.FilterTopN(System.Int32,System.Web.UI.DataVisualization.Charting.Series)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pointCount" Type="System.Int32" />
+        <Parameter Name="inputSeries" Type="System.Web.UI.DataVisualization.Charting.Series" />
+      </Parameters>
+      <Docs>
+        <param name="pointCount">フィルター処理操作は削除されませんデータ ポイントの数。</param>
+        <param name="inputSeries"><see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルター選択するオブジェクト。</param>
+        <summary>指定された数の最も大きい最初の Y 値を持つポイントを除き、系列内のすべてのデータ ポイントが除外されます。 <see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルターは、そのオブジェクトが変更されたデータの格納に使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterTopN">
+      <MemberSignature Language="C#" Value="public void FilterTopN (int pointCount, string inputSeriesNames, string outputSeriesNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void FilterTopN(int32 pointCount, string inputSeriesNames, string outputSeriesNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.FilterTopN(System.Int32,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pointCount" Type="System.Int32" />
+        <Parameter Name="inputSeriesNames" Type="System.String" />
+        <Parameter Name="outputSeriesNames" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="pointCount">フィルター処理操作は削除されませんデータ ポイントの数。</param>
+        <param name="inputSeriesNames">名前のコンマ区切りのリスト、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルター選択します。</param>
+        <param name="outputSeriesNames">名前のコンマ区切りのリスト、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルター選択されたデータを格納します。 出力系列の数が入力系列の数と一致するそれ以外の場合、例外がスローされることを確認してください。</param>
+        <summary>指定された数のポイントを除く 1 つまたは複数の系列のデータ ポイントが除外されます。 フィルター処理されないポイントは、最大 1 番目の Y 値を持つ最初の系列のポイントに対応します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterTopN">
+      <MemberSignature Language="C#" Value="public void FilterTopN (int pointCount, System.Web.UI.DataVisualization.Charting.Series inputSeries, System.Web.UI.DataVisualization.Charting.Series outputSeries);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void FilterTopN(int32 pointCount, class System.Web.UI.DataVisualization.Charting.Series inputSeries, class System.Web.UI.DataVisualization.Charting.Series outputSeries) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.FilterTopN(System.Int32,System.Web.UI.DataVisualization.Charting.Series,System.Web.UI.DataVisualization.Charting.Series)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pointCount" Type="System.Int32" />
+        <Parameter Name="inputSeries" Type="System.Web.UI.DataVisualization.Charting.Series" />
+        <Parameter Name="outputSeries" Type="System.Web.UI.DataVisualization.Charting.Series" />
+      </Parameters>
+      <Docs>
+        <param name="pointCount">フィルター処理操作は削除されませんデータ ポイントの数。</param>
+        <param name="inputSeries"><see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルター選択するオブジェクト。</param>
+        <param name="outputSeries">A<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルター選択されたデータを格納するオブジェクト。 系列が存在しない場合、例外がスローされます。</param>
+        <summary>指定された数の最も大きい最初の Y 値を持つポイントを除き、系列内のすべてのデータ ポイントをフィルター処理します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterTopN">
+      <MemberSignature Language="C#" Value="public void FilterTopN (int pointCount, string inputSeriesNames, string outputSeriesNames, string usingValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void FilterTopN(int32 pointCount, string inputSeriesNames, string outputSeriesNames, string usingValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.FilterTopN(System.Int32,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pointCount" Type="System.Int32" />
+        <Parameter Name="inputSeriesNames" Type="System.String" />
+        <Parameter Name="outputSeriesNames" Type="System.String" />
+        <Parameter Name="usingValue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="pointCount">フィルター処理操作は削除されませんデータ ポイントの数。</param>
+        <param name="inputSeriesNames">名前のコンマ区切りのリスト、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルター選択します。</param>
+        <param name="outputSeriesNames">名前のコンマ区切りのリスト、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルター選択されたデータを格納します。 出力系列の数が入力系列の数と一致するそれ以外の場合、例外がスローされることを確認してください。</param>
+        <param name="usingValue">データ ポイントのフィルタ リング規則を適用する値。 X は、Y、Y2、Y3 などです。</param>
+        <summary>指定したデータ ポイント数を除く 1 つまたは複数の系列内のすべてのデータ ポイントをフィルター処理します。 フィルター選択されていない点は、最大値を持つ最初の系列のポイントに対応しています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterTopN">
+      <MemberSignature Language="C#" Value="public void FilterTopN (int pointCount, System.Web.UI.DataVisualization.Charting.Series inputSeries, System.Web.UI.DataVisualization.Charting.Series outputSeries, string usingValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void FilterTopN(int32 pointCount, class System.Web.UI.DataVisualization.Charting.Series inputSeries, class System.Web.UI.DataVisualization.Charting.Series outputSeries, string usingValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.FilterTopN(System.Int32,System.Web.UI.DataVisualization.Charting.Series,System.Web.UI.DataVisualization.Charting.Series,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pointCount" Type="System.Int32" />
+        <Parameter Name="inputSeries" Type="System.Web.UI.DataVisualization.Charting.Series" />
+        <Parameter Name="outputSeries" Type="System.Web.UI.DataVisualization.Charting.Series" />
+        <Parameter Name="usingValue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="pointCount">フィルター処理操作は削除されませんデータ ポイントの数。</param>
+        <param name="inputSeries"><see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルター選択するオブジェクト。</param>
+        <param name="outputSeries">A<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルター選択されたデータを格納するオブジェクト。 系列が存在しない場合、例外がスローされます。</param>
+        <param name="usingValue">データ ポイントのフィルタ リング規則を適用する値。 X は、Y、Y2、Y3 などです。</param>
+        <summary>指定した数の最大の値を持つデータ ポイントを除き、系列内のすべてのデータ ポイントをフィルター処理します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterTopN">
+      <MemberSignature Language="C#" Value="public void FilterTopN (int pointCount, string inputSeriesNames, string outputSeriesNames, string usingValue, bool getTopValues);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void FilterTopN(int32 pointCount, string inputSeriesNames, string outputSeriesNames, string usingValue, bool getTopValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.FilterTopN(System.Int32,System.String,System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pointCount" Type="System.Int32" />
+        <Parameter Name="inputSeriesNames" Type="System.String" />
+        <Parameter Name="outputSeriesNames" Type="System.String" />
+        <Parameter Name="usingValue" Type="System.String" />
+        <Parameter Name="getTopValues" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="pointCount">フィルター処理操作は削除されませんデータ ポイントの数。</param>
+        <param name="inputSeriesNames">名前のコンマ区切りのリスト、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルター選択します。</param>
+        <param name="outputSeriesNames">名前のコンマ区切りのリスト、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルター選択されたデータを格納します。 出力系列の数が入力系列の数と一致するそれ以外の場合、例外がスローされることを確認してください。</param>
+        <param name="usingValue">データ ポイントのフィルタ リング規則を適用する値。 X は、Y、Y2、Y3 などです。</param>
+        <param name="getTopValues">
+          <see langword="true" />最大値を保持すると場合、<see langword="false" />場合は、最小値が保持されます。</param>
+        <summary>指定された数のポイントを除く 1 つまたは複数の系列内のすべてのデータ ポイントをフィルター処理します。 フィルター選択されていない点は、最大値または最小値を持つ最初の入力系列のポイントに対応しています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterTopN">
+      <MemberSignature Language="C#" Value="public void FilterTopN (int pointCount, System.Web.UI.DataVisualization.Charting.Series inputSeries, System.Web.UI.DataVisualization.Charting.Series outputSeries, string usingValue, bool getTopValues);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void FilterTopN(int32 pointCount, class System.Web.UI.DataVisualization.Charting.Series inputSeries, class System.Web.UI.DataVisualization.Charting.Series outputSeries, string usingValue, bool getTopValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.FilterTopN(System.Int32,System.Web.UI.DataVisualization.Charting.Series,System.Web.UI.DataVisualization.Charting.Series,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pointCount" Type="System.Int32" />
+        <Parameter Name="inputSeries" Type="System.Web.UI.DataVisualization.Charting.Series" />
+        <Parameter Name="outputSeries" Type="System.Web.UI.DataVisualization.Charting.Series" />
+        <Parameter Name="usingValue" Type="System.String" />
+        <Parameter Name="getTopValues" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="pointCount">フィルター処理操作は削除されませんデータ ポイントの数。</param>
+        <param name="inputSeries"><see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルター選択するオブジェクト。</param>
+        <param name="outputSeries">A<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />フィルター選択されたデータを格納するオブジェクト。 系列が存在しない場合、例外がスローされます。</param>
+        <param name="usingValue">データ ポイントのフィルタ リング規則を適用する値。 X は、Y、Y2、Y3 などです。</param>
+        <param name="getTopValues">
+          <see langword="true" />最大値を保持すると場合、<see langword="false" />場合は、最小値が保持されます。</param>
+        <summary>指定された数の最小値または最大値を持つポイントを除き、系列内のすべてのデータ ポイントをフィルター処理します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Group">
+      <MemberSignature Language="C#" Value="public void Group (string formula, double interval, System.Web.UI.DataVisualization.Charting.IntervalType intervalType, string inputSeriesName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Group(string formula, float64 interval, valuetype System.Web.UI.DataVisualization.Charting.IntervalType intervalType, string inputSeriesName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.Group(System.String,System.Double,System.Web.UI.DataVisualization.Charting.IntervalType,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formula" Type="System.String" />
+        <Parameter Name="interval" Type="System.Double" />
+        <Parameter Name="intervalType" Type="System.Web.UI.DataVisualization.Charting.IntervalType" />
+        <Parameter Name="inputSeriesName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="formula">グループ化されたデータを計算するために使用する 1 つまたは複数の式のコンマ区切りの一覧は、値をポイントします。</param>
+        <param name="interval">欠落したデータ ポイントの確認間隔のサイズ。</param>
+        <param name="intervalType">測定単位、<c>間隔</c>パラメーター。</param>
+        <param name="inputSeriesName">名前のコンマ区切りのリスト、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />をグループ化します。</param>
+        <summary>1 つまたは複数の系列、1 つまたは複数の数式を使用してデータをグループ化します。 系列は、元のデータの消去し、新しいデータ ポイントを格納するために使用されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Group">
+      <MemberSignature Language="C#" Value="public void Group (string formula, double interval, System.Web.UI.DataVisualization.Charting.IntervalType intervalType, System.Web.UI.DataVisualization.Charting.Series inputSeries);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Group(string formula, float64 interval, valuetype System.Web.UI.DataVisualization.Charting.IntervalType intervalType, class System.Web.UI.DataVisualization.Charting.Series inputSeries) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.Group(System.String,System.Double,System.Web.UI.DataVisualization.Charting.IntervalType,System.Web.UI.DataVisualization.Charting.Series)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formula" Type="System.String" />
+        <Parameter Name="interval" Type="System.Double" />
+        <Parameter Name="intervalType" Type="System.Web.UI.DataVisualization.Charting.IntervalType" />
+        <Parameter Name="inputSeries" Type="System.Web.UI.DataVisualization.Charting.Series" />
+      </Parameters>
+      <Docs>
+        <param name="formula">グループ化されたデータを計算するために使用する 1 つまたは複数の式のコンマ区切りの一覧は、値をポイントします。</param>
+        <param name="interval">欠落したデータ ポイントの確認間隔のサイズ。</param>
+        <param name="intervalType">測定単位、<c>間隔</c>パラメーター。</param>
+        <param name="inputSeries"><see cref="T:System.Web.UI.DataVisualization.Charting.Series" />グループ化するオブジェクト。</param>
+        <summary>1 つまたは複数の式を使用してデータをグループ化します。 グループ化されている系列では、元のデータのクリアされ、新しいデータ ポイントを格納するために使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Group">
+      <MemberSignature Language="C#" Value="public void Group (string formula, double interval, System.Web.UI.DataVisualization.Charting.IntervalType intervalType, string inputSeriesName, string outputSeriesName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Group(string formula, float64 interval, valuetype System.Web.UI.DataVisualization.Charting.IntervalType intervalType, string inputSeriesName, string outputSeriesName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.Group(System.String,System.Double,System.Web.UI.DataVisualization.Charting.IntervalType,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formula" Type="System.String" />
+        <Parameter Name="interval" Type="System.Double" />
+        <Parameter Name="intervalType" Type="System.Web.UI.DataVisualization.Charting.IntervalType" />
+        <Parameter Name="inputSeriesName" Type="System.String" />
+        <Parameter Name="outputSeriesName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="formula">グループ化されたデータを計算するために使用する 1 つまたは複数の式のコンマ区切りの一覧は、値をポイントします。</param>
+        <param name="interval">欠落したデータ ポイントの確認間隔のサイズ。</param>
+        <param name="intervalType">測定単位、<c>間隔</c>パラメーター。</param>
+        <param name="inputSeriesName">名前のコンマ区切りのリスト、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />をグループ化します。</param>
+        <param name="outputSeriesName">名前のコンマ区切りのリスト、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />グループ化されたデータ ポイントを格納します。 系列が存在しない場合は作成されます。存在する場合は最初にオフにするすべてのデータのグループ化されたデータ ポイントを格納する前にします。 出力系列の数が、入力系列の数に一致する必要がありますか、例外がスローされます。</param>
+        <summary>1 つまたは複数の式を使用して、1 つまたは複数の系列のデータをグループ化します。 出力系列は、グループ化されたデータ ポイントの格納に使用されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Group">
+      <MemberSignature Language="C#" Value="public void Group (string formula, double interval, System.Web.UI.DataVisualization.Charting.IntervalType intervalType, System.Web.UI.DataVisualization.Charting.Series inputSeries, System.Web.UI.DataVisualization.Charting.Series outputSeries);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Group(string formula, float64 interval, valuetype System.Web.UI.DataVisualization.Charting.IntervalType intervalType, class System.Web.UI.DataVisualization.Charting.Series inputSeries, class System.Web.UI.DataVisualization.Charting.Series outputSeries) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.Group(System.String,System.Double,System.Web.UI.DataVisualization.Charting.IntervalType,System.Web.UI.DataVisualization.Charting.Series,System.Web.UI.DataVisualization.Charting.Series)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formula" Type="System.String" />
+        <Parameter Name="interval" Type="System.Double" />
+        <Parameter Name="intervalType" Type="System.Web.UI.DataVisualization.Charting.IntervalType" />
+        <Parameter Name="inputSeries" Type="System.Web.UI.DataVisualization.Charting.Series" />
+        <Parameter Name="outputSeries" Type="System.Web.UI.DataVisualization.Charting.Series" />
+      </Parameters>
+      <Docs>
+        <param name="formula">グループ化されたデータを計算するために使用する 1 つまたは複数の式のコンマ区切りの一覧は、値をポイントします。</param>
+        <param name="interval">欠落したデータ ポイントの確認間隔のサイズ。</param>
+        <param name="intervalType">測定単位、<c>間隔</c>パラメーター。</param>
+        <param name="inputSeries"><see cref="T:System.Web.UI.DataVisualization.Charting.Series" />グループ化するオブジェクト。</param>
+        <param name="outputSeries"><see cref="T:System.Web.UI.DataVisualization.Charting.Series" />グループ化操作によって作成された新しいデータ ポイントを格納します。 存在しない場合、例外がスローされます。</param>
+        <summary>1 つまたは複数の式を使用してデータをグループ化します。 出力系列を使用して、グループ化されたデータ ポイントを格納します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Group">
+      <MemberSignature Language="C#" Value="public void Group (string formula, double interval, System.Web.UI.DataVisualization.Charting.IntervalType intervalType, double intervalOffset, System.Web.UI.DataVisualization.Charting.IntervalType intervalOffsetType, string inputSeriesName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Group(string formula, float64 interval, valuetype System.Web.UI.DataVisualization.Charting.IntervalType intervalType, float64 intervalOffset, valuetype System.Web.UI.DataVisualization.Charting.IntervalType intervalOffsetType, string inputSeriesName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.Group(System.String,System.Double,System.Web.UI.DataVisualization.Charting.IntervalType,System.Double,System.Web.UI.DataVisualization.Charting.IntervalType,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formula" Type="System.String" />
+        <Parameter Name="interval" Type="System.Double" />
+        <Parameter Name="intervalType" Type="System.Web.UI.DataVisualization.Charting.IntervalType" />
+        <Parameter Name="intervalOffset" Type="System.Double" />
+        <Parameter Name="intervalOffsetType" Type="System.Web.UI.DataVisualization.Charting.IntervalType" />
+        <Parameter Name="inputSeriesName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="formula">グループ化されたデータを計算するために使用する 1 つまたは複数の式のコンマ区切りの一覧は、値をポイントします。</param>
+        <param name="interval">欠落したデータ ポイントの確認間隔のサイズ。</param>
+        <param name="intervalType">測定単位、<c>間隔</c>パラメーター。</param>
+        <param name="intervalOffset">サイズ、間隔のオフセット。</param>
+        <param name="intervalOffsetType">間隔のオフセットの測定単位。</param>
+        <param name="inputSeriesName">名前のコンマ区切りのリスト、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />をグループ化します。</param>
+        <summary>1 つまたは複数の式を使用して、1 つまたは複数の系列のデータをグループ化します。 系列は、元のデータの消去し、新しいデータ ポイントを格納するために使用されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Group">
+      <MemberSignature Language="C#" Value="public void Group (string formula, double interval, System.Web.UI.DataVisualization.Charting.IntervalType intervalType, double intervalOffset, System.Web.UI.DataVisualization.Charting.IntervalType intervalOffsetType, System.Web.UI.DataVisualization.Charting.Series inputSeries);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Group(string formula, float64 interval, valuetype System.Web.UI.DataVisualization.Charting.IntervalType intervalType, float64 intervalOffset, valuetype System.Web.UI.DataVisualization.Charting.IntervalType intervalOffsetType, class System.Web.UI.DataVisualization.Charting.Series inputSeries) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.Group(System.String,System.Double,System.Web.UI.DataVisualization.Charting.IntervalType,System.Double,System.Web.UI.DataVisualization.Charting.IntervalType,System.Web.UI.DataVisualization.Charting.Series)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formula" Type="System.String" />
+        <Parameter Name="interval" Type="System.Double" />
+        <Parameter Name="intervalType" Type="System.Web.UI.DataVisualization.Charting.IntervalType" />
+        <Parameter Name="intervalOffset" Type="System.Double" />
+        <Parameter Name="intervalOffsetType" Type="System.Web.UI.DataVisualization.Charting.IntervalType" />
+        <Parameter Name="inputSeries" Type="System.Web.UI.DataVisualization.Charting.Series" />
+      </Parameters>
+      <Docs>
+        <param name="formula">グループ化されたデータを計算するために使用する 1 つまたは複数の式のコンマ区切りの一覧は、値をポイントします。</param>
+        <param name="interval">欠落したデータ ポイントの確認間隔のサイズ。</param>
+        <param name="intervalType">測定単位、<c>間隔</c>パラメーター。</param>
+        <param name="intervalOffset">サイズ、間隔のオフセット。</param>
+        <param name="intervalOffsetType">間隔のオフセットの測定単位。</param>
+        <param name="inputSeries"><see cref="T:System.Web.UI.DataVisualization.Charting.Series" />グループ化するオブジェクト。</param>
+        <summary>1 つまたは複数の式を使用してデータをグループ化します。 グループ化されている系列では、元のデータのクリアされ、新しいデータ ポイントを格納するために使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Group">
+      <MemberSignature Language="C#" Value="public void Group (string formula, double interval, System.Web.UI.DataVisualization.Charting.IntervalType intervalType, double intervalOffset, System.Web.UI.DataVisualization.Charting.IntervalType intervalOffsetType, string inputSeriesName, string outputSeriesName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Group(string formula, float64 interval, valuetype System.Web.UI.DataVisualization.Charting.IntervalType intervalType, float64 intervalOffset, valuetype System.Web.UI.DataVisualization.Charting.IntervalType intervalOffsetType, string inputSeriesName, string outputSeriesName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.Group(System.String,System.Double,System.Web.UI.DataVisualization.Charting.IntervalType,System.Double,System.Web.UI.DataVisualization.Charting.IntervalType,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formula" Type="System.String" />
+        <Parameter Name="interval" Type="System.Double" />
+        <Parameter Name="intervalType" Type="System.Web.UI.DataVisualization.Charting.IntervalType" />
+        <Parameter Name="intervalOffset" Type="System.Double" />
+        <Parameter Name="intervalOffsetType" Type="System.Web.UI.DataVisualization.Charting.IntervalType" />
+        <Parameter Name="inputSeriesName" Type="System.String" />
+        <Parameter Name="outputSeriesName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="formula">グループ化されたデータを計算するために使用する 1 つまたは複数の式のコンマ区切りの一覧は、値をポイントします。</param>
+        <param name="interval">欠落したデータ ポイントの確認間隔のサイズ。</param>
+        <param name="intervalType">測定単位、<c>間隔</c>パラメーター。</param>
+        <param name="intervalOffset">サイズ、間隔のオフセット。</param>
+        <param name="intervalOffsetType">間隔のオフセットの測定単位。</param>
+        <param name="inputSeriesName">名前のコンマ区切りのリスト、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />をグループ化します。</param>
+        <param name="outputSeriesName">名前のコンマ区切りのリスト、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />グループ化されたデータ ポイントを格納します。 系列が存在しない場合は作成されます。存在する場合は最初にオフにするすべてのデータのグループ化されたデータ ポイントを格納する前にします。 出力系列の数が、入力系列の数に一致する必要がありますか、例外がスローされます。</param>
+        <summary>1 つまたは複数の式を使用して、1 つまたは複数の系列をグループ化します。 出力系列がグループ化されたデータ ポイントの格納に使用して、間隔のオフセットを使用できます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Group">
+      <MemberSignature Language="C#" Value="public void Group (string formula, double interval, System.Web.UI.DataVisualization.Charting.IntervalType intervalType, double intervalOffset, System.Web.UI.DataVisualization.Charting.IntervalType intervalOffsetType, System.Web.UI.DataVisualization.Charting.Series inputSeries, System.Web.UI.DataVisualization.Charting.Series outputSeries);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Group(string formula, float64 interval, valuetype System.Web.UI.DataVisualization.Charting.IntervalType intervalType, float64 intervalOffset, valuetype System.Web.UI.DataVisualization.Charting.IntervalType intervalOffsetType, class System.Web.UI.DataVisualization.Charting.Series inputSeries, class System.Web.UI.DataVisualization.Charting.Series outputSeries) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.Group(System.String,System.Double,System.Web.UI.DataVisualization.Charting.IntervalType,System.Double,System.Web.UI.DataVisualization.Charting.IntervalType,System.Web.UI.DataVisualization.Charting.Series,System.Web.UI.DataVisualization.Charting.Series)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formula" Type="System.String" />
+        <Parameter Name="interval" Type="System.Double" />
+        <Parameter Name="intervalType" Type="System.Web.UI.DataVisualization.Charting.IntervalType" />
+        <Parameter Name="intervalOffset" Type="System.Double" />
+        <Parameter Name="intervalOffsetType" Type="System.Web.UI.DataVisualization.Charting.IntervalType" />
+        <Parameter Name="inputSeries" Type="System.Web.UI.DataVisualization.Charting.Series" />
+        <Parameter Name="outputSeries" Type="System.Web.UI.DataVisualization.Charting.Series" />
+      </Parameters>
+      <Docs>
+        <param name="formula">グループ化されたデータを計算するために使用する 1 つまたは複数の式のコンマ区切りの一覧は、値をポイントします。</param>
+        <param name="interval">欠落したデータ ポイントの確認間隔のサイズ。</param>
+        <param name="intervalType">測定単位、<c>間隔</c>パラメーター。</param>
+        <param name="intervalOffset">サイズ、間隔のオフセット。</param>
+        <param name="intervalOffsetType">間隔のオフセットの測定単位。</param>
+        <param name="inputSeries"><see cref="T:System.Web.UI.DataVisualization.Charting.Series" />グループ化するオブジェクト。</param>
+        <param name="outputSeries"><see cref="T:System.Web.UI.DataVisualization.Charting.Series" />グループ化操作によって作成された新しいデータ ポイントを格納します。 存在しない場合、例外がスローされます。</param>
+        <summary>1 つまたは複数の式を使用して、系列をグループ化します。 グループ化されたデータ ポイントを格納する出力系列が使用され、間隔のオフセットを使用できます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GroupByAxisLabel">
+      <MemberSignature Language="C#" Value="public void GroupByAxisLabel (string formula, string inputSeriesName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void GroupByAxisLabel(string formula, string inputSeriesName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.GroupByAxisLabel(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formula" Type="System.String" />
+        <Parameter Name="inputSeriesName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="formula">グループ化されたデータを計算するために使用する 1 つまたは複数の式のコンマ区切りの一覧は、値をポイントします。</param>
+        <param name="inputSeriesName">入力の名前をコンマで区切って<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />です。</param>
+        <summary>データをグループ化は、1 つまたは複数の式を使用して、軸ラベルを 1 つまたは複数の系列のポイントします。 元のデータ ポイント値がクリアされ、その新しいグループ化されたデータ ポイントが系列の各に格納されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GroupByAxisLabel">
+      <MemberSignature Language="C#" Value="public void GroupByAxisLabel (string formula, System.Web.UI.DataVisualization.Charting.Series inputSeries);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void GroupByAxisLabel(string formula, class System.Web.UI.DataVisualization.Charting.Series inputSeries) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.GroupByAxisLabel(System.String,System.Web.UI.DataVisualization.Charting.Series)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formula" Type="System.String" />
+        <Parameter Name="inputSeries" Type="System.Web.UI.DataVisualization.Charting.Series" />
+      </Parameters>
+      <Docs>
+        <param name="formula">グループ化されたデータを計算するために使用する 1 つまたは複数の式のコンマ区切りの一覧は、値をポイントします。</param>
+        <param name="inputSeries">入力<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />です。</param>
+        <summary>1 つまたは複数の式を使用して、軸ラベルによって、一連のデータ ポイントをグループ化します。 元のデータ ポイント値がクリアされ、系列の新しいグループ化されたデータ ポイントに格納されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GroupByAxisLabel">
+      <MemberSignature Language="C#" Value="public void GroupByAxisLabel (string formula, string inputSeriesName, string outputSeriesName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void GroupByAxisLabel(string formula, string inputSeriesName, string outputSeriesName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.GroupByAxisLabel(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formula" Type="System.String" />
+        <Parameter Name="inputSeriesName" Type="System.String" />
+        <Parameter Name="outputSeriesName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="formula">グループ化されたデータを計算するために使用する 1 つまたは複数の式のコンマ区切りの一覧は、値をポイントします。</param>
+        <param name="inputSeriesName">入力の名前をコンマで区切って<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />です。</param>
+        <param name="outputSeriesName">名前のコンマ区切りのリスト、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />グループ化されたデータ ポイントを格納します。 系列が存在しない場合は作成されます。存在する場合は最初にオフにするすべてのデータのグループ化されたデータ ポイントを格納する前にします。 出力系列の数が、入力系列の数に一致する必要がありますか、例外がスローされます。</param>
+        <summary>1 つまたは複数の式を使用して、軸ラベルによって、1 つまたは複数の系列のデータ ポイントをグループ。 出力系列は、グループ化されたデータ ポイントの格納に使用されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GroupByAxisLabel">
+      <MemberSignature Language="C#" Value="public void GroupByAxisLabel (string formula, System.Web.UI.DataVisualization.Charting.Series inputSeries, System.Web.UI.DataVisualization.Charting.Series outputSeries);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void GroupByAxisLabel(string formula, class System.Web.UI.DataVisualization.Charting.Series inputSeries, class System.Web.UI.DataVisualization.Charting.Series outputSeries) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.GroupByAxisLabel(System.String,System.Web.UI.DataVisualization.Charting.Series,System.Web.UI.DataVisualization.Charting.Series)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formula" Type="System.String" />
+        <Parameter Name="inputSeries" Type="System.Web.UI.DataVisualization.Charting.Series" />
+        <Parameter Name="outputSeries" Type="System.Web.UI.DataVisualization.Charting.Series" />
+      </Parameters>
+      <Docs>
+        <param name="formula">グループ化されたデータを計算するために使用する 1 つまたは複数の式のコンマ区切りの一覧は、値をポイントします。</param>
+        <param name="inputSeries">入力<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />をグループ化します。</param>
+        <param name="outputSeries"><see cref="T:System.Web.UI.DataVisualization.Charting.Series" />グループ化操作によって作成された新しいデータ ポイントを格納します。 存在しない場合、例外がスローされます。</param>
+        <summary>1 つまたは複数の式を使用して、軸ラベルによって、一連のデータ ポイントをグループ化します。 出力系列を使用して、グループ化されたデータ ポイントを格納します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertEmptyPoints">
+      <MemberSignature Language="C#" Value="public void InsertEmptyPoints (double interval, System.Web.UI.DataVisualization.Charting.IntervalType intervalType, string seriesName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InsertEmptyPoints(float64 interval, valuetype System.Web.UI.DataVisualization.Charting.IntervalType intervalType, string seriesName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.InsertEmptyPoints(System.Double,System.Web.UI.DataVisualization.Charting.IntervalType,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="interval" Type="System.Double" />
+        <Parameter Name="intervalType" Type="System.Web.UI.DataVisualization.Charting.IntervalType" />
+        <Parameter Name="seriesName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="interval">欠落したデータ ポイントの確認間隔のサイズ。</param>
+        <param name="intervalType">測定単位、<c>間隔</c>パラメーター。</param>
+        <param name="seriesName">名前のコンマ区切りのリスト、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />チェックします。</param>
+        <summary>1 つまたは複数の系列にデータ消失点を空のポイントに置き換えます。 各系列がによって決定される一定の間隔のチェック、<paramref name="interval" />と<paramref name="intervalType" />引数。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertEmptyPoints">
+      <MemberSignature Language="C#" Value="public void InsertEmptyPoints (double interval, System.Web.UI.DataVisualization.Charting.IntervalType intervalType, System.Web.UI.DataVisualization.Charting.Series series);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InsertEmptyPoints(float64 interval, valuetype System.Web.UI.DataVisualization.Charting.IntervalType intervalType, class System.Web.UI.DataVisualization.Charting.Series series) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.InsertEmptyPoints(System.Double,System.Web.UI.DataVisualization.Charting.IntervalType,System.Web.UI.DataVisualization.Charting.Series)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="interval" Type="System.Double" />
+        <Parameter Name="intervalType" Type="System.Web.UI.DataVisualization.Charting.IntervalType" />
+        <Parameter Name="series" Type="System.Web.UI.DataVisualization.Charting.Series" />
+      </Parameters>
+      <Docs>
+        <param name="interval">欠落したデータ ポイントの確認間隔のサイズ。</param>
+        <param name="intervalType">測定単位、<c>間隔</c>パラメーター。</param>
+        <param name="series"><see cref="T:System.Web.UI.DataVisualization.Charting.Series" />オブジェクトをチェックします。</param>
+        <summary>系列内データ消失点を空のポイントに置き換えます。 一定期間によって決定される、系列がオンになって、<paramref name="interval" />と<paramref name="intervalType" />引数。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertEmptyPoints">
+      <MemberSignature Language="C#" Value="public void InsertEmptyPoints (double interval, System.Web.UI.DataVisualization.Charting.IntervalType intervalType, double intervalOffset, System.Web.UI.DataVisualization.Charting.IntervalType intervalOffsetType, string seriesName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InsertEmptyPoints(float64 interval, valuetype System.Web.UI.DataVisualization.Charting.IntervalType intervalType, float64 intervalOffset, valuetype System.Web.UI.DataVisualization.Charting.IntervalType intervalOffsetType, string seriesName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.InsertEmptyPoints(System.Double,System.Web.UI.DataVisualization.Charting.IntervalType,System.Double,System.Web.UI.DataVisualization.Charting.IntervalType,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="interval" Type="System.Double" />
+        <Parameter Name="intervalType" Type="System.Web.UI.DataVisualization.Charting.IntervalType" />
+        <Parameter Name="intervalOffset" Type="System.Double" />
+        <Parameter Name="intervalOffsetType" Type="System.Web.UI.DataVisualization.Charting.IntervalType" />
+        <Parameter Name="seriesName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="interval">欠落したデータ ポイントの確認間隔のサイズ。</param>
+        <param name="intervalType">測定単位、<c>間隔</c>パラメーター。</param>
+        <param name="intervalOffset">サイズ、間隔のオフセット。</param>
+        <param name="intervalOffsetType">間隔のオフセットの測定単位。</param>
+        <param name="seriesName">名前のコンマ区切りのリスト、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />チェックします。</param>
+        <summary>1 つまたは複数の系列にデータ消失点を空のポイントに置き換えます。 各系列がによって決定される一定の間隔のチェック、 <paramref name="interval" />、 <paramref name="intervalOffset" />、<paramref name="intervalOffsetType" />と<paramref name="intervalType" />引数。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertEmptyPoints">
+      <MemberSignature Language="C#" Value="public void InsertEmptyPoints (double interval, System.Web.UI.DataVisualization.Charting.IntervalType intervalType, double intervalOffset, System.Web.UI.DataVisualization.Charting.IntervalType intervalOffsetType, System.Web.UI.DataVisualization.Charting.Series series);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InsertEmptyPoints(float64 interval, valuetype System.Web.UI.DataVisualization.Charting.IntervalType intervalType, float64 intervalOffset, valuetype System.Web.UI.DataVisualization.Charting.IntervalType intervalOffsetType, class System.Web.UI.DataVisualization.Charting.Series series) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.InsertEmptyPoints(System.Double,System.Web.UI.DataVisualization.Charting.IntervalType,System.Double,System.Web.UI.DataVisualization.Charting.IntervalType,System.Web.UI.DataVisualization.Charting.Series)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="interval" Type="System.Double" />
+        <Parameter Name="intervalType" Type="System.Web.UI.DataVisualization.Charting.IntervalType" />
+        <Parameter Name="intervalOffset" Type="System.Double" />
+        <Parameter Name="intervalOffsetType" Type="System.Web.UI.DataVisualization.Charting.IntervalType" />
+        <Parameter Name="series" Type="System.Web.UI.DataVisualization.Charting.Series" />
+      </Parameters>
+      <Docs>
+        <param name="interval">欠落したデータ ポイントの確認間隔のサイズ。</param>
+        <param name="intervalType">測定単位、<c>間隔</c>パラメーター。</param>
+        <param name="intervalOffset">サイズ、間隔のオフセット。</param>
+        <param name="intervalOffsetType">間隔のオフセットの測定単位。</param>
+        <param name="series"><see cref="T:System.Web.UI.DataVisualization.Charting.Series" />を空のポイントを挿入するオブジェクト。</param>
+        <summary>系列内データ消失点を空のポイントに置き換えます。 一定期間によって決定される、系列がオンになって、 <paramref name="interval" />、 <paramref name="intervalOffset" />、<paramref name="intervalOffsetType" />と<paramref name="intervalType" />引数。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertEmptyPoints">
+      <MemberSignature Language="C#" Value="public void InsertEmptyPoints (double interval, System.Web.UI.DataVisualization.Charting.IntervalType intervalType, double intervalOffset, System.Web.UI.DataVisualization.Charting.IntervalType intervalOffsetType, double fromXValue, double toXValue, string seriesName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InsertEmptyPoints(float64 interval, valuetype System.Web.UI.DataVisualization.Charting.IntervalType intervalType, float64 intervalOffset, valuetype System.Web.UI.DataVisualization.Charting.IntervalType intervalOffsetType, float64 fromXValue, float64 toXValue, string seriesName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.InsertEmptyPoints(System.Double,System.Web.UI.DataVisualization.Charting.IntervalType,System.Double,System.Web.UI.DataVisualization.Charting.IntervalType,System.Double,System.Double,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="interval" Type="System.Double" />
+        <Parameter Name="intervalType" Type="System.Web.UI.DataVisualization.Charting.IntervalType" />
+        <Parameter Name="intervalOffset" Type="System.Double" />
+        <Parameter Name="intervalOffsetType" Type="System.Web.UI.DataVisualization.Charting.IntervalType" />
+        <Parameter Name="fromXValue" Type="System.Double" />
+        <Parameter Name="toXValue" Type="System.Double" />
+        <Parameter Name="seriesName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="interval">欠落したデータ ポイントの確認間隔のサイズ。</param>
+        <param name="intervalType">測定単位、<c>間隔</c>パラメーター。</param>
+        <param name="intervalOffset">サイズ、間隔のオフセット。</param>
+        <param name="intervalOffsetType">間隔のオフセットの測定単位。</param>
+        <param name="fromXValue">チェックするシリーズの範囲の開始位置。 データ ポイントの X 値を使用します。</param>
+        <param name="toXValue">チェックするシリーズの範囲の終点。 データ ポイントの X 値を使用します。</param>
+        <param name="seriesName">名前のコンマ区切りのリスト、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />チェックします。</param>
+        <summary>1 つまたは複数の系列にデータ消失点を空のポイントに置き換えます。 各系列がによって決定される一定の間隔のチェック、 <paramref name="interval" />、 <paramref name="intervalOffset" />、<paramref name="intervalOffsetType" />と<paramref name="intervalType" />引数。 チェックインされている系列範囲はによって決まります、<paramref name="toXValue" />と<paramref name="fromXValue" />引数。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertEmptyPoints">
+      <MemberSignature Language="C#" Value="public void InsertEmptyPoints (double interval, System.Web.UI.DataVisualization.Charting.IntervalType intervalType, double intervalOffset, System.Web.UI.DataVisualization.Charting.IntervalType intervalOffsetType, double fromXValue, double toXValue, System.Web.UI.DataVisualization.Charting.Series series);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InsertEmptyPoints(float64 interval, valuetype System.Web.UI.DataVisualization.Charting.IntervalType intervalType, float64 intervalOffset, valuetype System.Web.UI.DataVisualization.Charting.IntervalType intervalOffsetType, float64 fromXValue, float64 toXValue, class System.Web.UI.DataVisualization.Charting.Series series) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.InsertEmptyPoints(System.Double,System.Web.UI.DataVisualization.Charting.IntervalType,System.Double,System.Web.UI.DataVisualization.Charting.IntervalType,System.Double,System.Double,System.Web.UI.DataVisualization.Charting.Series)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="interval" Type="System.Double" />
+        <Parameter Name="intervalType" Type="System.Web.UI.DataVisualization.Charting.IntervalType" />
+        <Parameter Name="intervalOffset" Type="System.Double" />
+        <Parameter Name="intervalOffsetType" Type="System.Web.UI.DataVisualization.Charting.IntervalType" />
+        <Parameter Name="fromXValue" Type="System.Double" />
+        <Parameter Name="toXValue" Type="System.Double" />
+        <Parameter Name="series" Type="System.Web.UI.DataVisualization.Charting.Series" />
+      </Parameters>
+      <Docs>
+        <param name="interval">欠落したデータ ポイントの確認間隔のサイズ。</param>
+        <param name="intervalType">測定単位、<c>間隔</c>パラメーター。</param>
+        <param name="intervalOffset">サイズ、間隔のオフセット。</param>
+        <param name="intervalOffsetType">間隔のオフセットの測定単位。</param>
+        <param name="fromXValue">チェックするシリーズの範囲の開始位置。 データ ポイントの X 値を使用します。</param>
+        <param name="toXValue">チェックするシリーズの範囲の終点。 データ ポイントの X 値を使用します。</param>
+        <param name="series"><see cref="T:System.Web.UI.DataVisualization.Charting.Series" />を空のポイントを挿入します。</param>
+        <summary>系列内データ消失点を空のポイントに置き換えます。 一定期間によって決定される、系列がオンになって、 <paramref name="interval" />、 <paramref name="intervalOffset" />、<paramref name="intervalOffsetType" />と<paramref name="intervalType" />引数。 チェックインされている系列範囲はによって決まります、<paramref name="toXValue" />と<paramref name="fromXValue" />引数。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Sort">
+      <MemberSignature Language="C#" Value="public void Sort (System.Collections.Generic.IComparer&lt;System.Web.UI.DataVisualization.Charting.DataPoint&gt; comparer, string seriesName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Sort(class System.Collections.Generic.IComparer`1&lt;class System.Web.UI.DataVisualization.Charting.DataPoint&gt; comparer, string seriesName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.Sort(System.Collections.Generic.IComparer{System.Web.UI.DataVisualization.Charting.DataPoint},System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="comparer" Type="System.Collections.Generic.IComparer&lt;System.Web.UI.DataVisualization.Charting.DataPoint&gt;" />
+        <Parameter Name="seriesName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="comparer">実装するオブジェクト、<see cref="T:System.Collections.IComparer" />インターフェイスし、カスタムの並べ替えのロジックを提供します。</param>
+        <param name="seriesName">名前のコンマ区切りのリスト、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />並べ替えられます。</param>
+        <summary>1 つまたは複数の系列では、カスタムの並べ替えを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、1 つまたは複数の系列のデータ ポイントにカスタムの並べ替えを実行します。並べ替えのロジックがによって定義された、`comparer`パラメーター。 オーバーライドおよび実装、<xref:System.Collections.IComparer.Compare%2A>のメソッド、<xref:System.Collections.IComparer>インターフェイス、comparison(s) を実行して返す`true`または`false`です。 並べ替え順序は、戻り値によって決まります。  
+  
+ 複数の系列を並べ替える場合は、系列は整列する必要があります、それ以外の場合、例外がスローされることに注意します。  
+  
+ 2 つのオブジェクトのパラメーター、<xref:System.Collections.IComparer.Compare%2A>型のメソッドが必ず<xref:System.Web.UI.DataVisualization.Charting.DataPoint>です。  
+  
+> [!IMPORTANT]
+>  所属する、系列に関係なく、すべてのデータ ポイントは最初の系列に基づいて並べ替えられます最初の系列内のデータ ポイントの位置が変更された場合、その他の系列内のすべての対応するポイントはも変わります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Sort">
+      <MemberSignature Language="C#" Value="public void Sort (System.Collections.Generic.IComparer&lt;System.Web.UI.DataVisualization.Charting.DataPoint&gt; comparer, System.Web.UI.DataVisualization.Charting.Series series);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Sort(class System.Collections.Generic.IComparer`1&lt;class System.Web.UI.DataVisualization.Charting.DataPoint&gt; comparer, class System.Web.UI.DataVisualization.Charting.Series series) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.Sort(System.Collections.Generic.IComparer{System.Web.UI.DataVisualization.Charting.DataPoint},System.Web.UI.DataVisualization.Charting.Series)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="comparer" Type="System.Collections.Generic.IComparer&lt;System.Web.UI.DataVisualization.Charting.DataPoint&gt;" />
+        <Parameter Name="series" Type="System.Web.UI.DataVisualization.Charting.Series" />
+      </Parameters>
+      <Docs>
+        <param name="comparer">実装するオブジェクト、<see cref="T:System.Collections.IComparer" />インターフェイスし、カスタムの並べ替えのロジックを提供します。</param>
+        <param name="series"><see cref="T:System.Web.UI.DataVisualization.Charting.Series" />に並べ替えられるオブジェクトです。</param>
+        <summary>系列内のデータ ポイントにカスタムの並べ替えを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、系列内のデータ ポイントにカスタムの並べ替えを実行します。並べ替えのロジックがによって定義された、`comparer`パラメーター。 オーバーライドおよび実装、<xref:System.Collections.IComparer.Compare%2A>のメソッド、<xref:System.Collections.IComparer>インターフェイス、comparison(s) を実行して返す`true`または`false`です。 並べ替え順序は、戻り値によって決まります。  
+  
+ 2 つのオブジェクトのパラメーター、<xref:System.Collections.IComparer.Compare%2A>型のメソッドが必ず<xref:System.Web.UI.DataVisualization.Charting.DataPoint>です。  
+  
+ 関数呼び出しごとに複数の系列のカスタムの並べ替えを実行するには、<xref:System.Web.UI.DataVisualization.Charting.DataManipulator.Sort%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Sort">
+      <MemberSignature Language="C#" Value="public void Sort (System.Web.UI.DataVisualization.Charting.PointSortOrder pointSortOrder, string seriesName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Sort(valuetype System.Web.UI.DataVisualization.Charting.PointSortOrder pointSortOrder, string seriesName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.Sort(System.Web.UI.DataVisualization.Charting.PointSortOrder,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pointSortOrder" Type="System.Web.UI.DataVisualization.Charting.PointSortOrder" />
+        <Parameter Name="seriesName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="pointSortOrder">A<see cref="T:System.Web.UI.DataVisualization.Charting.PointSortOrder" />並べ替えが昇順または降順のかどうかを決定する列挙値。</param>
+        <param name="seriesName">名前のコンマ区切りのリスト、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />並べ替えられます。</param>
+        <summary>指定した順序を使用して、1 つまたは複数の系列のデータ ポイントに対して、並べ替えを実行します。 並べ替えは、各データ ポイントの最初の Y 値に基づきます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Sort">
+      <MemberSignature Language="C#" Value="public void Sort (System.Web.UI.DataVisualization.Charting.PointSortOrder pointSortOrder, System.Web.UI.DataVisualization.Charting.Series series);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Sort(valuetype System.Web.UI.DataVisualization.Charting.PointSortOrder pointSortOrder, class System.Web.UI.DataVisualization.Charting.Series series) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.Sort(System.Web.UI.DataVisualization.Charting.PointSortOrder,System.Web.UI.DataVisualization.Charting.Series)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pointSortOrder" Type="System.Web.UI.DataVisualization.Charting.PointSortOrder" />
+        <Parameter Name="series" Type="System.Web.UI.DataVisualization.Charting.Series" />
+      </Parameters>
+      <Docs>
+        <param name="pointSortOrder">A<see cref="T:System.Web.UI.DataVisualization.Charting.PointSortOrder" />並べ替えが昇順または降順のかどうかを決定する列挙値。</param>
+        <param name="series"><see cref="T:System.Web.UI.DataVisualization.Charting.Series" />に並べ替えられるオブジェクトです。</param>
+        <summary>指定した順序を使用して、系列のデータ ポイントに対して、並べ替えを実行します。 並べ替えは、各データ ポイントの最初の Y 値に基づきます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Sort">
+      <MemberSignature Language="C#" Value="public void Sort (System.Web.UI.DataVisualization.Charting.PointSortOrder pointSortOrder, string sortBy, string seriesName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Sort(valuetype System.Web.UI.DataVisualization.Charting.PointSortOrder pointSortOrder, string sortBy, string seriesName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.Sort(System.Web.UI.DataVisualization.Charting.PointSortOrder,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pointSortOrder" Type="System.Web.UI.DataVisualization.Charting.PointSortOrder" />
+        <Parameter Name="sortBy" Type="System.String" />
+        <Parameter Name="seriesName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="pointSortOrder">A<see cref="T:System.Web.UI.DataVisualization.Charting.PointSortOrder" />並べ替えが昇順または降順のかどうかを決定する列挙値。</param>
+        <param name="sortBy">A<see langword="string" />に並べ替えられるデータ ポイント値を表す値です。 値:"X"、"Y"、"Y2"、"Y3"、"AxisLabel"などです。</param>
+        <param name="seriesName">名前のコンマ区切りのリスト、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />並べ替えられます。</param>
+        <summary>指定した順序で 1 つまたは複数の系列のデータ要素を並べ替えます。 並べ替えは、任意の利用可能なデータ ポイント値に基づくことができます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、昇順を実行するか、データを降順に並べ替え、系列のポイントしで設定されている値に基づいて、`sortBy`などのパラメーター"の X"、"AxisLabel"、"Y"、"Y1"などです。  
+  
+ 複数の系列を並べ替える場合は、系列は整列する必要があります、それ以外の場合、例外がスローされることに注意します。  
+  
+> [!IMPORTANT]
+>  すべての系列が並べ替えられる指定して、最初の Y 値が系列を一覧表示つまり、所属する、系列に関係なく、すべてのデータ ポイントは、最初の系列に基づいて並べ替えられます。  
+  
+ カスタムの並べ替えルーチンを使用してポイントを並べ替えるには、このオーバー ロードされたメソッドの別の定義を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Sort">
+      <MemberSignature Language="C#" Value="public void Sort (System.Web.UI.DataVisualization.Charting.PointSortOrder pointSortOrder, string sortBy, System.Web.UI.DataVisualization.Charting.Series series);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Sort(valuetype System.Web.UI.DataVisualization.Charting.PointSortOrder pointSortOrder, string sortBy, class System.Web.UI.DataVisualization.Charting.Series series) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataManipulator.Sort(System.Web.UI.DataVisualization.Charting.PointSortOrder,System.String,System.Web.UI.DataVisualization.Charting.Series)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pointSortOrder" Type="System.Web.UI.DataVisualization.Charting.PointSortOrder" />
+        <Parameter Name="sortBy" Type="System.String" />
+        <Parameter Name="series" Type="System.Web.UI.DataVisualization.Charting.Series" />
+      </Parameters>
+      <Docs>
+        <param name="pointSortOrder">A<see cref="T:System.Web.UI.DataVisualization.Charting.PointSortOrder" />並べ替えが昇順または降順のかどうかを決定する列挙値</param>
+        <param name="sortBy">A<see langword="string" />に並べ替えられるデータ ポイント値を表す値です。 値:"X"、"Y"、"Y2"、"Y3"、"AxisLabel"などです。</param>
+        <param name="series"><see cref="T:System.Web.UI.DataVisualization.Charting.Series" />に並べ替えられるオブジェクトです。</param>
+        <summary>指定した順序を使用して、系列のデータ ポイントに対して、並べ替えを実行します。 並べ替えは、任意の利用可能なデータ ポイント値に基づくことができます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

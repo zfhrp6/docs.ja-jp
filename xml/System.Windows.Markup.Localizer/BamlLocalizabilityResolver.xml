@@ -1,0 +1,158 @@
+<Type Name="BamlLocalizabilityResolver" FullName="System.Windows.Markup.Localizer.BamlLocalizabilityResolver">
+  <TypeSignature Language="C#" Value="public abstract class BamlLocalizabilityResolver" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit BamlLocalizabilityResolver extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.Localizer.BamlLocalizabilityResolver" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>クラスとプロパティ バイナリ XAML (BAML) でのローカライズ可能な設定を解決します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Markup.Localizer.BamlLocalizabilityResolver>によって使用される、<xref:System.Windows.Markup.Localizer.BamlLocalizer>のクラスおよびプロパティのローカライズ設定を解決するために[!INCLUDE[TLA2#tla_baml](~/includes/tla2sharptla-baml-md.md)]です。 両方リソースが抽出、およびローカライズされた時点で、競合回避モジュールが呼び出されます[!INCLUDE[TLA2#tla_baml](~/includes/tla2sharptla-baml-md.md)]が更新されます。  
+  
+ リソースが抽出時に (<xref:System.Windows.Markup.Localizer.BamlLocalizer.ExtractResources%2A>)、競合回避モジュール。  
+  
+-   提供<xref:System.Windows.LocalizabilityAttribute>のクラスおよびプロパティの[!INCLUDE[TLA2#tla_baml](~/includes/tla2sharptla-baml-md.md)]ときに、<xref:System.Windows.Markup.Localizer.BamlLocalizer>はローカライズ可能なリソースの構築します。  
+  
+-   内の要素の書式設定を提供[!INCLUDE[TLA2#tla_baml](~/includes/tla2sharptla-baml-md.md)]のため、要素がインライン タグとして書式設定します。  
+  
+ どの時点に合わせてローカライズ at[!INCLUDE[TLA2#tla_baml](~/includes/tla2sharptla-baml-md.md)]更新 (<xref:System.Windows.Markup.Localizer.BamlLocalizer.UpdateBaml%2A>)、競合回避モジュール。  
+  
+-   クラスに書式設定タグを解決します。  
+  
+-   クラス定義を含むアセンブリの名前を解決します。  
+  
+-   <xref:System.Windows.Markup.Localizer.BamlLocalizabilityResolver>クラスの関数の実際の方法を実行する内部クラスをサブクラス化<xref:System.Windows.Markup.Localizer.BamlLocalizer>です。  
+  
+<a name="xamlTextUsage_BamlLocalizabilityResolver"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected BamlLocalizabilityResolver ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.Localizer.BamlLocalizabilityResolver.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Markup.Localizer.BamlLocalizabilityResolver" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetElementLocalizability">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.Markup.Localizer.ElementLocalizability GetElementLocalizability (string assembly, string className);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Markup.Localizer.ElementLocalizability GetElementLocalizability(string assembly, string className) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.Localizer.BamlLocalizabilityResolver.GetElementLocalizability(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Markup.Localizer.ElementLocalizability</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assembly" Type="System.String" />
+        <Parameter Name="className" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="assembly">含むアセンブリの完全名[!INCLUDE[TLA2#tla_baml](~/includes/tla2sharptla-baml-md.md)]ローカライズします。</param>
+        <param name="className">ローカライズ情報を取得する要素の完全クラス名。</param>
+        <summary>ローカライズできる要素の種類を指定あり場合は、かどうかになりますインラインの書式設定するかどうかを示す値を返します。</summary>
+        <returns>指定したアセンブリおよび要素のローカライズ情報を格納するオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertyLocalizability">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.LocalizabilityAttribute GetPropertyLocalizability (string assembly, string className, string property);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.LocalizabilityAttribute GetPropertyLocalizability(string assembly, string className, string property) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.Localizer.BamlLocalizabilityResolver.GetPropertyLocalizability(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.LocalizabilityAttribute</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assembly" Type="System.String" />
+        <Parameter Name="className" Type="System.String" />
+        <Parameter Name="property" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="assembly">含むアセンブリの完全名[!INCLUDE[TLA2#tla_baml](~/includes/tla2sharptla-baml-md.md)]ローカライズします。</param>
+        <param name="className">ローカライズ情報を取得する要素の完全クラス名。</param>
+        <param name="property">ローカライズ情報を取得するプロパティの名前。</param>
+        <summary>指定した要素の型の指定したプロパティがローカライズできるかどうかを示す値を返します。</summary>
+        <returns>プロパティがローカライズできるかどうかおよびその方法を指定するオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveAssemblyFromClass">
+      <MemberSignature Language="C#" Value="public abstract string ResolveAssemblyFromClass (string className);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string ResolveAssemblyFromClass(string className) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.Localizer.BamlLocalizabilityResolver.ResolveAssemblyFromClass(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="className" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="className">完全なクラス名。</param>
+        <summary>指定したクラスが含まれているアセンブリの完全名を返します。</summary>
+        <returns>クラスを含むアセンブリの完全名。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveFormattingTagToClass">
+      <MemberSignature Language="C#" Value="public abstract string ResolveFormattingTagToClass (string formattingTag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string ResolveFormattingTagToClass(string formattingTag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.Localizer.BamlLocalizabilityResolver.ResolveFormattingTagToClass(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formattingTag" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="formattingTag">タグの名前です。</param>
+        <summary>完全クラス名を返します、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]がで検出されていないタグ[!INCLUDE[TLA2#tla_baml](~/includes/tla2sharptla-baml-md.md)]です。</summary>
+        <returns>タグに関連付けられた完全クラス名。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが呼び出されます、<xref:System.Windows.Markup.Localizer.BamlLocalizer>同等が代替文字列をローカライズ可能なリソースに適用したりします。 代替ので、書式設定タグが検出した場合は、クラス名に書式設定タグを解決するのにはこのメソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,171 @@
+<Type Name="NamespaceMapEntry" FullName="System.Windows.Markup.NamespaceMapEntry">
+  <TypeSignature Language="C#" Value="public class NamespaceMapEntry" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NamespaceMapEntry extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.NamespaceMapEntry" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("'{_xmlNamespace}'={_clrNamespace}:{_assemblyName}")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>情報を提供する、 <see cref="T:System.Windows.Markup.XamlTypeMapper" /> XML 名前空間、CLR 名前空間、およびその CLR 名前空間に関連する型を含むアセンブリ間のマッピングを使用します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この型は、XAML の WPF 実装に固有です。 XAML の一般的な実装で使用する場合は、WPF アセンブリを含める必要があります。  
+  
+ WPF アセンブリを含むを必要としない別の方法には、XAML スキーマ コンテキストの参照が含まれます (からサービス プロバイダーのコンテキストで使用できる<xref:System.Xaml.IXamlSchemaContextProvider>、またはから<xref:System.Xaml.XamlObjectWriter.SchemaContext%2A?displayProperty=nameWithType>から XAML ノード ループまたは一般的な XAML ライターの基準枠)。XAML スキーマ コンテキストには、そのアセンブリ、推奨されるプレフィックスのマッピング、および XAML 名前空間情報を返すための API が含まれます。  
+  
+<a name="xamlTextUsage_NamespaceMapEntry"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NamespaceMapEntry ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.NamespaceMapEntry.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Markup.NamespaceMapEntry" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NamespaceMapEntry (string xmlNamespace, string assemblyName, string clrNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string xmlNamespace, string assemblyName, string clrNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.NamespaceMapEntry.#ctor(System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="xmlNamespace" Type="System.String" />
+        <Parameter Name="assemblyName" Type="System.String" />
+        <Parameter Name="clrNamespace" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="xmlNamespace">XML 名前空間のマッピング プレフィックス。</param>
+        <param name="assemblyName">CLR 名前空間と XML 名前空間にマップする型を含むアセンブリです。</param>
+        <param name="clrNamespace">関連する型を含むアセンブリの CLR 名前空間。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Markup.NamespaceMapEntry" />クラス、指定された XML 名前空間、CLR 名前空間、およびアセンブリ情報を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 「簡易名」のフォームを使用して`assemblyName`です。 具体的には、パスを指定しないし、ファイルの拡張子を含めないでください。 これは、報告される可能性がありますのあるフォームに似ています<xref:System.Reflection.AssemblyName.Name%2A?displayProperty=nameWithType>です。 パスが個別に指定されてsee <xref:System.Windows.Markup.XamlTypeMapper.SetAssemblyPath%2A?displayProperty=nameWithType>.  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="xmlNamespace" /> は <see langword="null" /> です  
+  
+ または  
+  
+ <paramref name="assemblyName" /> は <see langword="null" /> です  
+  
+ または  
+  
+ <paramref name="clrNamespace" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AssemblyName">
+      <MemberSignature Language="C#" Value="public string AssemblyName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AssemblyName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.NamespaceMapEntry.AssemblyName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の型は CLR 名前空間を格納するアセンブリ名。</summary>
+        <value>アセンブリ名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 「簡易名」のフォームを使用して<xref:System.Windows.Markup.NamespaceMapEntry.AssemblyName%2A>です。 具体的には、完全なパスを指定しないし、ファイルの拡張子を含めないでください。 これは、報告される可能性がありますのあるフォームに似ています<xref:System.Reflection.AssemblyName.Name%2A?displayProperty=nameWithType>です。  
+  
+<a name="xamlTextUsage_AssemblyName"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">値<see cref="P:System.Windows.Markup.NamespaceMapEntry.AssemblyName" />が設定されているが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ClrNamespace">
+      <MemberSignature Language="C#" Value="public string ClrNamespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ClrNamespace" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.NamespaceMapEntry.ClrNamespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはマップされている型を含む CLR 名前空間を設定します。</summary>
+        <value>CLR 名前空間。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlTextUsage_ClrNamespace"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">値<see cref="P:System.Windows.Markup.NamespaceMapEntry.ClrNamespace" />が設定されているが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlNamespace">
+      <MemberSignature Language="C#" Value="public string XmlNamespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string XmlNamespace" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.NamespaceMapEntry.XmlNamespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定にマップされている XML 名前空間のマッピング プレフィックス。</summary>
+        <value>XML 名前空間のマッピング プレフィックス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlTextUsage_XmlNamespace"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">値<see cref="P:System.Windows.Markup.NamespaceMapEntry.XmlNamespace" />が設定されているが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

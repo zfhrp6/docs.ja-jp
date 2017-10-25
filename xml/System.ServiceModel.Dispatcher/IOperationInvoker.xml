@@ -1,0 +1,156 @@
+<Type Name="IOperationInvoker" FullName="System.ServiceModel.Dispatcher.IOperationInvoker">
+  <TypeSignature Language="C#" Value="public interface IOperationInvoker" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IOperationInvoker" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.IOperationInvoker" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>オブジェクトおよびメッセージから抽出されたパラメーターの配列を受け取り、これらのパラメーターを使用してそのオブジェクトでメソッドを呼び出して、メソッドの戻り値と出力パラメーターを返す機能を備えたメソッドを宣言します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.IOperationInvoker> インターフェイスを実装し、型指定のないオブジェクトとパラメーターの配列から、そのオブジェクトでの厳密に型指定されたメソッド呼び出しへの変換を制御します。 このインターフェイスには同期 <xref:System.ServiceModel.Dispatcher.IOperationInvoker.Invoke%2A> メソッドがあり、このメソッドはインスタンスと型オブジェクトの入力セットを受け取り、オブジェクトと型オブジェクトの出力セットを返します。 このインターフェイスには、<xref:System.ServiceModel.Dispatcher.IOperationInvoker.InvokeBegin%2A> および <xref:System.ServiceModel.Dispatcher.IOperationInvoker.InvokeEnd%2A> というバリエーションもあります。  <xref:System.ServiceModel.Dispatcher.IOperationInvoker.IsSynchronous%2A> プロパティは、同期メソッドと非同期メソッドのどちらを使用する必要があるかを指定します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AllocateInputs">
+      <MemberSignature Language="C#" Value="public object[] AllocateInputs ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object[] AllocateInputs() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IOperationInvoker.AllocateInputs" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>パラメーター オブジェクトの <see cref="T:System.Array" /> を返します。</summary>
+        <returns>操作の引数として使用されるパラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 操作に対してパラメーターの配列を返すには、これを実装します。 この配列はフォーマッタによって設定され、<xref:System.ServiceModel.Dispatcher.IOperationInvoker.Invoke%2A> が呼び出されると、呼び出し元に戻されます。  
+  
+ ]]></format>
+        </remarks>
+        <threadsafe>このメソッドの実装では、すべての呼び出しで、入力配列を割り当てる必要があります。 複数の呼び出しに同じ配列を返すと、予期しない動作があります。</threadsafe>
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke">
+      <MemberSignature Language="C#" Value="public object Invoke (object instance, object[] inputs, out object[] outputs);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Invoke(object instance, object[] inputs, [out] object[]&amp; outputs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IOperationInvoker.Invoke(System.Object,System.Object[],System.Object[]@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="inputs" Type="System.Object[]" />
+        <Parameter Name="outputs" Type="System.Object[]&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="instance">呼び出すオブジェクト。</param>
+        <param name="inputs">メソッドへの入力。</param>
+        <param name="outputs">メソッドからの出力。</param>
+        <summary>インスタンスと一連の入力オブジェクトから、オブジェクトと一連の出力オブジェクトを返します。</summary>
+        <returns>戻り値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeBegin">
+      <MemberSignature Language="C#" Value="public IAsyncResult InvokeBegin (object instance, object[] inputs, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult InvokeBegin(object instance, object[] inputs, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IOperationInvoker.InvokeBegin(System.Object,System.Object[],System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="inputs" Type="System.Object[]" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance">呼び出すオブジェクト。</param>
+        <param name="inputs">メソッドへの入力。</param>
+        <param name="callback">非同期のコールバック オブジェクト。</param>
+        <param name="state">関連付けられた状態データ。</param>
+        <summary><see cref="M:System.ServiceModel.Dispatcher.IOperationInvoker.Invoke(System.Object,System.Object[],System.Object[]@)" /> メソッドの非同期実装。</summary>
+        <returns>非同期呼び出しを完了するために使用する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeEnd">
+      <MemberSignature Language="C#" Value="public object InvokeEnd (object instance, out object[] outputs, IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object InvokeEnd(object instance, [out] object[]&amp; outputs, class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IOperationInvoker.InvokeEnd(System.Object,System.Object[]@,System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="outputs" Type="System.Object[]&amp;" RefType="out" />
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="instance">呼び出すオブジェクト。</param>
+        <param name="outputs">メソッドからの出力。</param>
+        <param name="result"><see cref="T:System.IAsyncResult" /> オブジェクト。</param>
+        <summary>非同期の終了メソッド。</summary>
+        <returns>戻り値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronous">
+      <MemberSignature Language="C#" Value="public bool IsSynchronous { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronous" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.IOperationInvoker.IsSynchronous" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="M:System.ServiceModel.Dispatcher.IOperationInvoker.Invoke(System.Object,System.Object[],System.Object[]@)" /> メソッドまたは <see cref="M:System.ServiceModel.Dispatcher.IOperationInvoker.InvokeBegin(System.Object,System.Object[],System.AsyncCallback,System.Object)" /> メソッドのどちらをディスパッチャーが呼び出すかを指定する値を取得します。</summary>
+        <value>
+          ディスパッチャーが同期操作を呼び出す場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の呼び出し元は、既定で同期操作にメッセージをディスパッチします。 この値は、ディスパッチャーによってキャッシュされるため、<xref:System.ServiceModel.Dispatcher.IOperationInvoker> を実装するオブジェクトの有効期間を通して変更することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

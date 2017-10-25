@@ -1,0 +1,352 @@
+<Type Name="XmlResolver" FullName="System.Xml.XmlResolver">
+  <TypeSignature Language="C#" Value="public abstract class XmlResolver" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit XmlResolver extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.XmlResolver" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>URI (Uniform Resource Identifier) で名前が指定された外部 XML リソースを解決します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.XmlResolver>エンティティ、ドキュメント型定義 (Dtd) またはスキーマなどの外部の XML リソースを解決するのには型を使用します。 使用されてもプロセスを含めるし、拡張スタイル シート言語 (XSL) スタイル シートまたは XML スキーマ定義言語 (XSD) スキーマで検出された要素をインポートします。  
+  
+ <xref:System.Xml.XmlResolver>セキュリティ資格情報の処理、データ ソースへの接続を開く、ストリームまたはその他のオブジェクトの種類のフォーム内のリソースを返すなどのリソースに接続のネゴシエートのすべての側面を処理します。 呼び出すオブジェクト<xref:System.Xml.XmlResolver>仕事はストリームを解釈します。  
+  
+ <xref:System.Xml>名前空間には 2 つの具象実装が含まれています、<xref:System.Xml.XmlResolver>クラス。  
+  
+-   <xref:System.Xml.XmlUrlResolver>既定の競合回避モジュールのすべてのクラス、<xref:System.Xml>名前空間。 これは、`file://` および `http://` プロトコルをサポートし、<xref:System.Net.WebRequest?displayProperty=nameWithType> クラスからの要求をサポートします。 パフォーマンスを向上させるためにクラスを拡張する例については、次を参照してください。、<xref:System.Xml.XmlUrlResolver>リファレンス ページ。  
+  
+-   <xref:System.Xml.XmlSecureResolver>保護別<xref:System.Xml.XmlResolver>オブジェクトのオブジェクトをラップし、リソースにアクセスできることを制限することによりオブジェクト。 たとえば、<xref:System.Xml.XmlSecureResolver>特定のインターネット サイトやゾーンへのアクセスを禁止することができます。  
+  
+ 作成し、独自のリゾルバーを指定できます。 リーダーが、既定値を使用して、競合回避モジュールを指定しない場合<xref:System.Xml.XmlUrlResolver>ユーザー資格情報を持たない。  
+  
+ <xref:System.Xml.XmlResolver> プロパティを設定して <xref:System.Xml.XmlReaderSettings.XmlResolver%2A?displayProperty=nameWithType> オブジェクトを <xref:System.Xml.XmlReaderSettings> メソッドに渡すことにより、使用する <xref:System.Xml.XmlReader.Create%2A> を指定します。  
+  
+ 使用するリソースが認証を必要とするシステムに格納されている場合、<xref:System.Xml.XmlResolver.Credentials%2A?displayProperty=nameWithType>プロパティを必要な資格情報を指定します。  
+  
+## <a name="supplying-authentication-credentials"></a>認証の資格情報を指定します。  
+ 読み取る XML データを格納しているファイルは、制限付きアクセス ポリシーがあります。 ネットワーク リソースにアクセスするために認証が必要な場合は、<xref:System.Xml.XmlResolver.Credentials%2A> プロパティを使用して必要な資格情報を指定します。 場合、<xref:System.Xml.XmlResolver.Credentials%2A>プロパティが設定されていない、資格情報に設定されます`null`です。  
+  
+ たとえば、認証の目的で、web からデータを要求するときに、資格情報が必要なことを想定しています。 設定する必要があります、web 仮想ディレクトリが匿名アクセスを許可しない限り、<xref:System.Xml.XmlResolver.Credentials%2A>資格情報を指定するプロパティです。 次の例を作成、<xref:System.Xml.XmlReader>を使用するオブジェクト、 <xref:System.Xml.XmlUrlResolver> http://localhost/bookstore/inventory.xml サイトにアクセスする既定の資格情報を使用します。  
+  
+ [!code-cpp[XmlReaderSettings.cctor#2](~/samples/snippets/cpp/VS_Snippets_Data/XmlReaderSettings.cctor/CPP/XmlReaderSettings.cctor.cpp#2)]
+ [!code-csharp[XmlReaderSettings.cctor#2](~/samples/snippets/csharp/VS_Snippets_Data/XmlReaderSettings.cctor/CS/factory_rdr_cctor2.cs#2)]
+ [!code-vb[XmlReaderSettings.cctor#2](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlReaderSettings.cctor/VB/factory_rdr_cctor2.vb#2)]  
+  
+ Uri ごとに別の資格情報を指定し、それらをキャッシュに追加できます。 これらの資格情報は、XML の出所には関係なく、異なる URI について認証をチェックするために使用されます。 次の例では、資格情報をキャッシュに追加する方法を示します。  
+  
+ [!code-csharp[XslCompiledTransform.Load#11](~/samples/snippets/csharp/VS_Snippets_Data/XslCompiledTransform.Load/CS/Xslt_Load_v2.cs#11)]
+ [!code-vb[XslCompiledTransform.Load#11](~/samples/snippets/visualbasic/VS_Snippets_Data/XslCompiledTransform.Load/VB/Xslt_Load_v2.vb#11)]  
+  
+## <a name="security-considerations"></a>セキュリティの考慮事項  
+ 使用する場合は、次の項目を検討してください、<xref:System.Xml.XmlResolver>クラスです。  
+  
+-   <xref:System.Xml.XmlResolver> オブジェクトはユーザー資格情報など、重要な情報を含むことがあります。 キャッシュする場合は注意が必要<xref:System.Xml.XmlResolver>オブジェクトおよび渡さないでください、<xref:System.Xml.XmlResolver>信頼できないコンポーネントへのオブジェクト。  
+  
+-   <xref:System.Xml.XmlResolver> クラスを使用したクラス プロパティを設計する場合は、そのプロパティは書き込み専用として定義する必要があります。 使用する <xref:System.Xml.XmlResolver> を指定するためにそのプロパティを使用できますが、<xref:System.Xml.XmlResolver> オブジェクトを返すためには使用できません。  
+  
+-   アプリケーションが受け入れる場合<xref:System.Xml.XmlResolver>、信頼されていないコードからオブジェクトに渡された URI 想定できない、<xref:System.Xml.XmlResolver.GetEntity%2A>メソッドは、同じであるによって返された、<xref:System.Xml.XmlResolver.ResolveUri%2A>メソッドです。 <xref:System.Xml.XmlResolver> クラスから派生したクラスは、<xref:System.Xml.XmlResolver.GetEntity%2A> メソッドをオーバーライドすることができ、元の URI に含まれていたデータと異なるデータを返すことができます。  
+  
+-   アプリケーションはメモリ サービス拒否の脅威を緩和できます、<xref:System.Xml.XmlResolver.GetEntity%2A>メソッドを実装することによって、<xref:System.Runtime.InteropServices.ComTypes.IStream>読み取られたバイト数を制限します。 これにより、悪意のあるコードが、無限にバイト ストリームを渡すしようとした位置の状況を防ぐ、<xref:System.Xml.XmlResolver.GetEntity%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Xml.XmlUrlResolver>既定の資格情報を使用します。 A<xref:System.Xml.XmlReader>を読み取り、結果のデータ ストリームを表示するために使用します。  
+  
+ [!code-csharp[XmlResolver_ex#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlResolver_ex/CS/XmlResolver_ex.cs#1)]
+ [!code-vb[XmlResolver_ex#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlResolver_ex/VB/XmlResolver_ex.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected XmlResolver ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlResolver.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.XmlResolver" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、この型の状態を初期化するために、派生クラスのコンス トラクターによって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Credentials">
+      <MemberSignature Language="C#" Value="public virtual System.Net.ICredentials Credentials { set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.ICredentials Credentials" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlResolver.Credentials" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.ICredentials</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、Web 要求を認証するために使用する資格情報を設定します。</summary>
+        <value>Web 要求を認証するために使用する資格情報。 このプロパティが設定されていない場合、既定値は <see langword="null" /> です。つまり、<see langword="XmlResolver" /> にはユーザーの資格情報がありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 仮想ディレクトリに認証が必要としない場合は、このプロパティが設定するがありません。 それ以外の場合、ユーザーの資格情報を指定する必要があります。  
+  
+ 次の c# コードでの資格情報の設定、<xref:System.Xml.XmlResolver>オブジェクト。  
+  
+```  
+NetworkCredential nc = new NetWorkCredential(UserName,SecurelyStoredPassword,Domain);  
+XmlUrlResolver resolver = new XmlUrlResolver();  
+resolver.Credentials = nc;  
+```  
+  
+ 別の Uri を持つ別の資格情報を関連付けるでき、それらをキャッシュに追加できます。 資格情報を使用して、XML の送信元に関係なく別の Uri に対する認証を確認できます。  
+  
+```  
+NetworkCredential myCred = new NetworkCredential(UserName,SecurelyStoredPassword,Domain);   
+CredentialCache myCache = new CredentialCache();   
+myCache.Add(new Uri("http://www.contoso.com/"), "Basic", myCred);   
+myCache.Add(new Uri("http://app.contoso.com/"), "Basic", myCred);  
+XmlUrlResolver resolver = new XmlUrlResolver();  
+resolver.Credentials = myCache;  
+```  
+  
+   
+  
+## Examples  
+ 参照してください<xref:System.Xml.XmlUrlResolver.Credentials%2A?displayProperty=nameWithType>このプロパティを使用する例についてはします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEntity">
+      <MemberSignature Language="C#" Value="public abstract object GetEntity (Uri absoluteUri, string role, Type ofObjectToReturn);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetEntity(class System.Uri absoluteUri, string role, class System.Type ofObjectToReturn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlResolver.GetEntity(System.Uri,System.String,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="absoluteUri" Type="System.Uri" />
+        <Parameter Name="role" Type="System.String" />
+        <Parameter Name="ofObjectToReturn" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="absoluteUri"><see cref="M:System.Xml.XmlResolver.ResolveUri(System.Uri,System.String)" /> から返された URI。</param>
+        <param name="role">現在は使用されていません。</param>
+        <param name="ofObjectToReturn">返すオブジェクトの型。 現在のバージョンでは、System.IO.Stream オブジェクトだけを返します。</param>
+        <summary>派生クラスでオーバーライドされると、URI を実際のリソースを格納しているオブジェクトに割り当てます。</summary>
+        <returns>ストリーム オブジェクト。ストリーム以外の型が指定された場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、呼び出し元が、URI を表す実際のリソースを格納するオブジェクトに指定された URI にマップするときに使用されます。 返されるオブジェクトの種類はネゴシエートできます。ただし、実装では、常にサポートする必要あります<xref:System.IO.Stream?displayProperty=nameWithType>です。  
+  
+ このメソッドの非同期バージョンは、<xref:System.Xml.XmlResolver.GetEntityAsync%2A>です。  
+  
+> [!IMPORTANT]
+>  アプリケーションはメモリ サービス拒否の脅威を緩和できます、<xref:System.Xml.XmlResolver.GetEntity%2A>メソッドを実装することによって、<xref:System.Runtime.InteropServices.ComTypes.IStream>読み取られたバイト数を制限します。 これにより、悪意のあるコードが、無限にバイト ストリームを渡すしようとした位置の状況を防ぐ、<xref:System.Xml.XmlResolver.GetEntity%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 参照してください<xref:System.Xml.XmlUrlResolver.GetEntity%2A?displayProperty=nameWithType>たとえば、このメソッドを使用しています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.XmlException">
+          <paramref name="ofObjectToReturn" /><see langword="Stream" />型です。</exception>
+        <exception cref="T:System.UriFormatException">指定された URI は絶対 URI ではないです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="absoluteUri" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Exception">ランタイム エラー (たとえば、中断されたサーバー接続) があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEntityAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;object&gt; GetEntityAsync (Uri absoluteUri, string role, Type ofObjectToReturn);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;object&gt; GetEntityAsync(class System.Uri absoluteUri, string role, class System.Type ofObjectToReturn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlResolver.GetEntityAsync(System.Uri,System.String,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="absoluteUri" Type="System.Uri" />
+        <Parameter Name="role" Type="System.String" />
+        <Parameter Name="ofObjectToReturn" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="absoluteUri"><see cref="M:System.Xml.XmlResolver.ResolveUri(System.Uri,System.String)" /> から返された URI。</param>
+        <param name="role">現在は使用されていません。</param>
+        <param name="ofObjectToReturn">返すオブジェクトの型。 現在のバージョンだけが、<see cref="T:System.IO.Stream" /> オブジェクトを返します。</param>
+        <summary>URI を実際のリソースを格納しているオブジェクトに非同期にマップします。</summary>
+        <returns>ストリーム オブジェクト。ストリーム以外の型が指定された場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、非同期バージョンの<xref:System.Xml.XmlResolver.GetEntity%2A>、同じ機能を使用します。 このメソッドを使用するに設定する必要があります、<xref:System.Xml.XmlReaderSettings.Async%2A>フラグを`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveUri">
+      <MemberSignature Language="C#" Value="public virtual Uri ResolveUri (Uri baseUri, string relativeUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Uri ResolveUri(class System.Uri baseUri, string relativeUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlResolver.ResolveUri(System.Uri,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseUri" Type="System.Uri" />
+        <Parameter Name="relativeUri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="baseUri">相対 URI の解決に使用するベース URI。</param>
+        <param name="relativeUri">解決対象の URI。 URI は絶対 URI でも相対 URI でもかまいません。 かどうか絶対で、この値は効果的に置き換え、 <c>baseUri</c>値。 かどうか、相対それを組み合わせて、 <c>baseUri</c>絶対 URI を作成します。</param>
+        <summary>派生クラスでオーバーライドされると、ベース URI および相対 URI から絶対 URI を解決します。</summary>
+        <returns>絶対 URI または<see langword="null" />相対 URI を解決できない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 絶対 URI は、この URI に対する相対されているエンティティの後続の要求のベース URI として使用可能性があります。  
+  
+   
+  
+## Examples  
+ 参照してください<xref:System.Xml.XmlUrlResolver.GetEntity%2A?displayProperty=nameWithType>はこのメソッドを使用する例についてはします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="relativeUri" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsType">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsType (Uri absoluteUri, Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SupportsType(class System.Uri absoluteUri, class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlResolver.SupportsType(System.Uri,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="absoluteUri" Type="System.Uri" />
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="absoluteUri">URI。</param>
+        <param name="type">返す型。</param>
+        <summary>以外の型を返すに競合回避モジュールを有効に<see cref="T:System.IO.Stream" />です。</summary>
+        <returns>
+          <see langword="true" />場合、<paramref name="type" />はサポートされている、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

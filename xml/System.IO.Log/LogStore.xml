@@ -1,0 +1,734 @@
+<Type Name="LogStore" FullName="System.IO.Log.LogStore">
+  <TypeSignature Language="C#" Value="public sealed class LogStore : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit LogStore extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.IO.Log.LogStore" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.Log</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>ログ構造化ストレージを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Log.LogRecordSequence> クラスは、Common Log File System (CLFS) ログ上でレコード シーケンス インターフェイスの実装を提供します。 CLFS ログ ファイルを直接操作および管理するためのインターフェイスを提供する <xref:System.IO.Log.LogStore> クラスと共に動作します。 ログ ストアは、一連のディスク エクステントで使用される追加専用ストレージです。 <xref:System.IO.Log.LogStore> クラスはこのストレージを表し、コンテナーの追加および削除、ポリシーの追加、アーカイブの作成を行うメソッドを提供します。 記憶域の読み書き用のメソッドは提供しません。これらのメソッドは、<xref:System.IO.Log.LogRecordSequence> クラスで提供されます。  
+  
+ <xref:System.IO.Log.LogStore> クラスと <xref:System.IO.Log.LogRecordSequence> クラスの関係は、ディスク ファイルと <xref:System.IO.FileStream> オブジェクトの関係に似ています。 ディスク ファイルは記憶域を提供し、長さや最終アクセス日時などの属性を持つのに対して、<xref:System.IO.FileStream> オブジェクトはファイルに対する読み書きで使用できるファイルに関するビューを提供します。 同様に、<xref:System.IO.Log.LogStore> クラスはポリシーやディスク エクステントのコレクションなどの属性を持つのに対して、<xref:System.IO.Log.LogRecordSequence> クラスはデータを読み書きするためのレコード指向の機構を提供します。  
+  
+ <xref:System.IO.Log.FileRecordSequence> クラスにより表されるファイル レコード シーケンスとは異なり、<xref:System.IO.Log.LogStore> インスタンスは <xref:System.IO.Log.LogExtent> インスタンスにより表されるディスク エクステントのコレクションにデータを保存します。 指定の <xref:System.IO.Log.LogStore> インスタンス内のエクステントはすべて、均一のサイズを持ちます。また、エクステントの増加分について、<xref:System.IO.Log.LogStore> インスタンスに対して領域の追加と削除が行われます。 ログ エクステントを追加および削除するには、<xref:System.IO.Log.LogExtentCollection.Add%2A> プロパティで返される <xref:System.IO.Log.LogExtentCollection.Remove%2A> オブジェクトの <xref:System.IO.Log.LogExtentCollection> メソッドおよび <xref:System.IO.Log.LogStore.Extents%2A> メソッドを使用します。  
+  
+ <xref:System.IO.Log.LogStore> インスタンスには、ポリシーを関連付けることができます。 これらのポリシーは、<xref:System.IO.Log.LogPolicy> プロパティで返される <xref:System.IO.Log.LogStore.Policy%2A> インスタンスで表されます。 ポリシーは、エクステントの最大数と最小サイズなど、ログで準拠を試みる規則と、一定条件下での <xref:System.IO.Log.LogStore> の拡大および縮小の手順を決定します。 また、<xref:System.IO.Log.LogStore> インスタンスをアーカイブ可能にするかどうかを指定することもできます。 ポリシーはログごとに設定され、揮発性を有します。つまり、ログへの各ハンドルを閉じると、ポリシーは存在しなくなります。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.IO.Log.LogStore> を XML ドキュメントにアーカイブする方法を示します。  
+  
+ [!code-csharp[logarchievesnapshot#0](~/samples/snippets/csharp/VS_Snippets_CFX/logarchievesnapshot/cs/logarchievesnapshot.cs#0)]
+ [!code-vb[logarchievesnapshot#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/logarchievesnapshot/vb/logarchievesnapshot.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LogStore (Microsoft.Win32.SafeHandles.SafeFileHandle handle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Win32.SafeHandles.SafeFileHandle handle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogStore.#ctor(Microsoft.Win32.SafeHandles.SafeFileHandle)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="handle" Type="Microsoft.Win32.SafeHandles.SafeFileHandle" />
+      </Parameters>
+      <Docs>
+        <param name="handle">現在の <see cref="T:System.IO.Log.LogStore" /> オブジェクトによってカプセル化されるログ ファイルのファイル ハンドル。</param>
+        <summary>ハンドルを指定して <see cref="T:System.IO.Log.LogStore" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="handle" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.IOException">ログ ハンドルをスレッド プールにバインドできませんでした。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ ストアへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LogStore (string path, System.IO.FileMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.IO.FileMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogStore.#ctor(System.String,System.IO.FileMode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+      </Parameters>
+      <Docs>
+        <param name="path">開くログ ストアの基本ファイルの相対パスまたは絶対パス。</param>
+        <param name="mode">ストアを開くか作成する方法を決定する <see cref="T:System.IO.FileMode" /> 値の 1 つ。</param>
+        <summary>パスとモードを指定して、<see cref="T:System.IO.Log.LogStore" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターを使用して、指定されたパスおよびモードでログ ストアを開きます。 ストアは読み取り/書き込みアクセスで開かれ、読み取りアクセスを共有します。  
+  
+ `path` パラメーターでは、次の構文を使用する必要があります。  
+  
+ `log:<physical log name>[::<log client name>]`  
+  
+ `<physical log name>` はログ ファイルへの有効なパス、`<log client name>` は一意のクライアント識別子です。 ログ ストアは、物理ログ ストアまたは仮想ログ ストアであることが必要です。ただし、両方である必要はありません。 ログ ストアが物理的または仮想的に作成されると、有効期間にわたり維持されます。 物理ログ ストアは、物理ログ名を指定することでのみ作成されます。 仮想ログ ストアは、物理ログの名前とログ クライアントの名前の両方を指定することにより作成されます。  
+  
+ 同じ物理ログ名を共有するクライアントは、同じエクステント コレクションとポリシーを共有します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> が空の文字列 ("") です。  
+  
+ または  
+  
+ <paramref name="path" /> には、空白のみが含まれます。  
+  
+ または  
+  
+ <paramref name="path" /> には 1 つ以上の無効な文字が含まれます。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="mode" /> に無効な値が含まれています。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが見つかりません。</exception>
+        <exception cref="T:System.IO.IOException">ログ ストアを開くときに、I/O エラーが発生しました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ ストアへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">
+          必要な Common Log File System (CLFS) コンポーネントがインストールされていないため、<see cref="T:System.IO.Log.LogStore" /> を使用できません。 使用しているプラットフォームで CLFS コンポーネントを使用可能な場合はインストールしてください。または、代わりに <see cref="T:System.IO.Log.FileRecordSequence" /> クラスを使用してください。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LogStore (string path, System.IO.FileMode mode, System.IO.FileAccess access);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.IO.FileMode mode, valuetype System.IO.FileAccess access) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogStore.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+      </Parameters>
+      <Docs>
+        <param name="path">開くログ ストアの基本ファイルの相対パスまたは絶対パス。</param>
+        <param name="mode">ストアを開くか作成する方法を決定する <see cref="T:System.IO.FileMode" /> 値の 1 つ。</param>
+        <param name="access"><see cref="T:System.IO.FileAccess" /> によりこのファイルにアクセスできる方法を決定する <see cref="T:System.IO.Log.LogStore" /> 値の 1 つ。</param>
+        <summary>パス、モード、およびアクセスを指定して、<see cref="T:System.IO.Log.LogStore" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターを使用して、指定されたパス、モード、およびアクセスで新しいログ ストアを開きます。 このストアが開き、アクセスを共有します。  
+  
+ `path` パラメーターでは、次の構文を使用する必要があります。  
+  
+ `log:<physical log name>[::<log client name>]`  
+  
+ `<physical log name>` はログ ファイルへの有効なパス、`<log client name>` は一意のクライアント識別子です。 ログ ストアは、物理ログ ストアまたは仮想ログ ストアであることが必要です。ただし、両方である必要はありません。 ログ ストアが物理的または仮想的に作成されると、有効期間にわたり維持されます。 物理ログ ストアは、物理ログ名を指定することでのみ作成されます。 仮想ログ ストアは、物理ログの名前とログ クライアントの名前の両方を指定することにより作成されます。  
+  
+ 同じ物理ログ名を共有するクライアントは、同じエクステント コレクションとポリシーを共有します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> が空の文字列 ("") です。  
+  
+ または  
+  
+ <paramref name="path" /> には、空白のみが含まれます。  
+  
+ または  
+  
+ <paramref name="path" /> には 1 つ以上の無効な文字が含まれます。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="mode" /> に無効な値が含まれています。  
+  
+ または  
+  
+ <paramref name="access" /> に無効な値が含まれています。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが見つかりません。</exception>
+        <exception cref="T:System.IO.IOException">ログ ストアを開くときに、I/O エラーが発生しました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ ストアへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">
+          必要な Common Log File System (CLFS) コンポーネントがインストールされていないため、<see cref="T:System.IO.Log.LogStore" /> を使用できません。 使用しているプラットフォームで CLFS コンポーネントを使用可能な場合はインストールしてください。または、代わりに <see cref="T:System.IO.Log.FileRecordSequence" /> クラスを使用してください。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LogStore (string path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.IO.FileMode mode, valuetype System.IO.FileAccess access, valuetype System.IO.FileShare share) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogStore.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+        <Parameter Name="share" Type="System.IO.FileShare" />
+      </Parameters>
+      <Docs>
+        <param name="path">開くログ ストアの基本ファイルの相対パスまたは絶対パス。</param>
+        <param name="mode">ストアを開くか作成する方法を決定する <see cref="T:System.IO.FileMode" /> 値の 1 つ。</param>
+        <param name="access"><see cref="T:System.IO.FileAccess" /> によりこのファイルにアクセスできる方法を決定する <see cref="T:System.IO.Log.LogStore" /> 値の 1 つ。</param>
+        <param name="share">ログ ストアが処理中に共有される方法を指定する <see cref="T:System.IO.FileShare" /> 値の 1 つ。</param>
+        <summary><see cref="T:System.IO.Log.LogStore" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、新しい <xref:System.IO.Log.LogStore> オブジェクトを初期化し、指定のパス、モード、およびアクセスと共に開きます。 このストアが開き、指定のアクセスを共有します。  
+  
+ `path` パラメーターでは、次の構文を使用する必要があります。  
+  
+ `log:<physical log name>[::<log client name>]`  
+  
+ `<physical log name>` はログ ファイルへの有効なパス、`<log client name>` は一意のクライアント識別子です。 ログ ストアは、物理ログ ストアまたは仮想ログ ストアであることが必要です。ただし、両方である必要はありません。 ログ ストアが物理的または仮想的に作成されると、有効期間にわたり維持されます。 物理ログ ストアは、物理ログ名を指定することでのみ作成されます。 仮想ログ ストアは、物理ログの名前とログ クライアントの名前の両方を指定することにより作成されます。  
+  
+ 同じ物理ログ名を共有するクライアントは、同じエクステント コレクションとポリシーを共有します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> が空の文字列 ("") です。  
+  
+ または  
+  
+ <paramref name="path" /> には、空白のみが含まれます。  
+  
+ または  
+  
+ <paramref name="path" /> には 1 つ以上の無効な文字が含まれます。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="mode" /> に無効な値が含まれています。  
+  
+ または  
+  
+ <paramref name="access" /> に無効な値が含まれています。  
+  
+ または  
+  
+ <paramref name="share" /> に無効な値が含まれています。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが見つかりません。</exception>
+        <exception cref="T:System.IO.IOException">ログ ストアを開くときに、I/O エラーが発生しました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ ストアへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">
+          必要な Common Log File System (CLFS) コンポーネントがインストールされていないため、<see cref="T:System.IO.Log.LogStore" /> を使用できません。 使用しているプラットフォームで CLFS コンポーネントを使用可能な場合はインストールしてください。または、代わりに <see cref="T:System.IO.Log.FileRecordSequence" /> クラスを使用してください。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LogStore (string path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Security.AccessControl.FileSecurity fileSecurity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.IO.FileMode mode, valuetype System.IO.FileAccess access, valuetype System.IO.FileShare share, class System.Security.AccessControl.FileSecurity fileSecurity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogStore.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,System.Security.AccessControl.FileSecurity)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+        <Parameter Name="share" Type="System.IO.FileShare" />
+        <Parameter Name="fileSecurity" Type="System.Security.AccessControl.FileSecurity" />
+      </Parameters>
+      <Docs>
+        <param name="path">開くログ ストアの基本ファイルの相対パスまたは絶対パス。</param>
+        <param name="mode">ストアを開くか作成する方法を決定する <see cref="T:System.IO.FileMode" /> 値の 1 つ。</param>
+        <param name="access"><see cref="T:System.IO.FileAccess" /> によりこのファイルにアクセスできる方法を決定する <see cref="T:System.IO.Log.LogStore" /> 値の 1 つ。</param>
+        <param name="share">ログ ストアが処理中に共有される方法を指定する <see cref="T:System.IO.FileShare" /> 値の 1 つ。</param>
+        <param name="fileSecurity">ストアを作成する必要がある場合に、新しく作成したストアに設定するセキュリティを指定する <see cref="T:System.Security.AccessControl.FileSecurity" /> の値の 1 つ。</param>
+        <summary><see cref="T:System.IO.Log.LogStore" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、新しい <xref:System.IO.Log.LogStore> オブジェクトを初期化し、指定のパス、モード、およびアクセスと共に開きます。 このストアが開き、指定のアクセスを共有します。 `path` パラメーターでは、次の構文を使用する必要があります。  
+  
+ `log:<physical log name>[::<log client name>]`  
+  
+ `<physical log name>` はログ ファイルへの有効なパス、`<log client name>` は一意のクライアント識別子です。 ログ ストアは、物理ログ ストアまたは仮想ログ ストアであることが必要です。ただし、両方である必要はありません。 ログ ストアが物理的または仮想的に作成されると、有効期間にわたり維持されます。 物理ログ ストアは、物理ログ名を指定することでのみ作成されます。 仮想ログ ストアは、物理ログの名前とログ クライアントの名前の両方を指定することにより作成されます。  
+  
+ 同じ物理ログ名を共有するクライアントは、同じエクステント コレクションとポリシーを共有します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="path" /> で指定されたログ ストア ファイル名が無効です。  
+  
+ または  
+  
+ <paramref name="Mode" /> が <see langword="CreateNew" /> であるため、書き込みアクセスがなければ使用できません。  
+  
+ または  
+  
+ <paramref name="Mode" /> が <see langword="OpenOrCreate" /> であるため、書き込みアクセスがなければ使用できません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="mode" /> に無効な値が含まれています。  
+  
+ または  
+  
+ <paramref name="access" /> に無効な値が含まれています。  
+  
+ または  
+  
+ <paramref name="share" /> に無効な値が含まれています。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが見つかりません。</exception>
+        <exception cref="T:System.IO.IOException">ログ ストアを開くときに、I/O エラーが発生しました。  
+  
+ <paramref name="path" /> で指定されたファイルは他のプロセスで使用中のため、アクセスできません。  
+  
+ または  
+  
+ ファイルまたはディレクトリが既に存在するため、<paramref name="path" /> で指定されたファイルを作成できません。  
+  
+ または  
+  
+ ログ ハンドルをスレッド プールにバインドできませんでした。  
+  
+ または  
+  
+ 指定されたログ ファイルの形式またはバージョンが無効です。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">
+          必要な Common Log File System (CLFS) コンポーネントがインストールされていないため、<see cref="T:System.IO.Log.LogStore" /> を使用できません。 使用しているプラットフォームで CLFS コンポーネントを使用可能な場合はインストールしてください。または、代わりに <see cref="T:System.IO.Log.FileRecordSequence" /> クラスを使用してください。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスがいっぱいです。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ ストアへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Archivable">
+      <MemberSignature Language="C#" Value="public bool Archivable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Archivable" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.LogStore.Archivable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.IO.Log.LogStore" /> インスタンスがアーカイブ可能であるかどうかを示す値を取得します。</summary>
+        <value>
+          この <see langword="true" /> インスタンスがアーカイブ可能である場合は <see cref="T:System.IO.Log.LogStore" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Log.LogStore> がアーカイブ可能でない場合、<xref:System.IO.Log.LogStore.CreateLogArchiveSnapshot%2A> メソッドおよび <xref:System.IO.Log.LogStore.SetArchiveTail%2A> メソッドを呼び出すと、<xref:System.NotSupportedException> がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にプロパティがアクセスされました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseSequenceNumber">
+      <MemberSignature Language="C#" Value="public System.IO.Log.SequenceNumber BaseSequenceNumber { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.IO.Log.SequenceNumber BaseSequenceNumber" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.LogStore.BaseSequenceNumber" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.SequenceNumber</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.IO.Log.LogStore" /> インスタンス内の有効なレコードに対応する下限のシーケンス番号を取得します。</summary>
+        <value>この <see cref="T:System.IO.Log.LogStore" /> インスタンス内の有効なレコードに対応する下限のシーケンス番号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 有効なシーケンス番号は、<xref:System.IO.Log.LogStore.BaseSequenceNumber%2A> 以上、<xref:System.IO.Log.LogStore.LastSequenceNumber%2A> 未満です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にプロパティがアクセスされました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateLogArchiveSnapshot">
+      <MemberSignature Language="C#" Value="public System.IO.Log.LogArchiveSnapshot CreateLogArchiveSnapshot ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Log.LogArchiveSnapshot CreateLogArchiveSnapshot() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogStore.CreateLogArchiveSnapshot" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.LogArchiveSnapshot</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>バックアップを作成するために、ログ ストア状態のスナップショットを取得します。</summary>
+        <returns>アーカイブを作成するのに必要な状態を格納する <see cref="T:System.IO.Log.LogArchiveSnapshot" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.IO.Log.LogStore> を XML ドキュメントにアーカイブする方法を示します。  
+  
+ [!code-csharp[logarchievesnapshot#0](~/samples/snippets/csharp/VS_Snippets_CFX/logarchievesnapshot/cs/logarchievesnapshot.cs#0)]
+ [!code-vb[logarchievesnapshot#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/logarchievesnapshot/vb/logarchievesnapshot.vb#0)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">ログ ストアはアーカイブできません。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.IO.IOException">アーカイブ スナップショットの作成時に I/O エラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentException">引数が有効ではありません。</exception>
+        <exception cref="T:System.InvalidOperationException">無効な操作が実行されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスがいっぱいです。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ ストアへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateLogArchiveSnapshot">
+      <MemberSignature Language="C#" Value="public System.IO.Log.LogArchiveSnapshot CreateLogArchiveSnapshot (System.IO.Log.SequenceNumber first, System.IO.Log.SequenceNumber last);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Log.LogArchiveSnapshot CreateLogArchiveSnapshot(valuetype System.IO.Log.SequenceNumber first, valuetype System.IO.Log.SequenceNumber last) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogStore.CreateLogArchiveSnapshot(System.IO.Log.SequenceNumber,System.IO.Log.SequenceNumber)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.LogArchiveSnapshot</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="first" Type="System.IO.Log.SequenceNumber" />
+        <Parameter Name="last" Type="System.IO.Log.SequenceNumber" />
+      </Parameters>
+      <Docs>
+        <param name="first">アーカイブする範囲の開始シーケンス番号。</param>
+        <param name="last">アーカイブする範囲の終了シーケンス番号。</param>
+        <summary>バックアップを作成するために、指定されたシーケンス番号範囲のログ ストア状態のスナップショットを取得します。</summary>
+        <returns>アーカイブを作成するのに必要な状態を格納する <see cref="T:System.IO.Log.LogArchiveSnapshot" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドから返されるアーカイブ スナップショットには、基本シーケンス番号またはアーカイブ シーケンス番号のどちらか小さい方から最後のシーケンス番号までの情報が含まれます。 ただし、アーカイブのレコードには、最後のシーケンス番号は含まれません。 また、このメソッドを使用する場合、アーカイブの一貫性を保つには、開始 SequenceNumber を BaseSequenceNumber と同じ値にする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="first" /> または <paramref name="last" /> が、このシーケンスの基本シーケンス番号と最後のシーケンス番号との間にありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="first" /> が <paramref name="last" /> を超えています。</exception>
+        <exception cref="T:System.InvalidOperationException">無効な操作が実行されました。</exception>
+        <exception cref="T:System.IO.IOException">アーカイブ スナップショットの作成時に I/O エラーが発生しました。</exception>
+        <exception cref="T:System.NotSupportedException">ログ ストアはアーカイブできません。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスがいっぱいです。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ ストアへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Delete">
+      <MemberSignature Language="C#" Value="public static void Delete (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Delete(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogStore.Delete(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">削除するログ ストアの基本ファイルの相対パスまたは絶対パス。</param>
+        <summary>ログ ストアを削除します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> が空の文字列 ("") です。  
+  
+ または  
+  
+ <paramref name="path" /> には、空白のみが含まれます。  
+  
+ または  
+  
+ <paramref name="path" /> には 1 つ以上の無効な文字が含まれます。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが見つかりません。</exception>
+        <exception cref="T:System.IO.IOException">ログ ストアを開くときに、I/O エラーが発生しました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ ストアへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogStore.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.IO.Log.LogStore" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Log.LogStore.Dispose%2A> は、<xref:System.IO.Log.LogStore> の使用が完了したときに呼び出します。 <xref:System.IO.Log.LogStore.Dispose%2A> メソッドによって、<xref:System.IO.Log.LogStore> は使用不可の状態になります。 <xref:System.IO.Log.LogStore.Dispose%2A> を呼び出した後で、<xref:System.IO.Log.LogStore> へのすべての参照を解放し、<xref:System.IO.Log.LogStore> によって占有されていたメモリをガベージ コレクターがクリアできるようにする必要があります。  
+  
+> [!NOTE]
+>  <xref:System.IO.Log.LogStore.Dispose%2A> への最後の参照を解放する前に、必ず <xref:System.IO.Log.LogStore> を呼び出してください。 そうしないと、ガベージ コレクターが <xref:System.IO.Log.LogStore> オブジェクトの `Finalize` メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Extents">
+      <MemberSignature Language="C#" Value="public System.IO.Log.LogExtentCollection Extents { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IO.Log.LogExtentCollection Extents" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.LogStore.Extents" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.LogExtentCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このログ ストアのデータを格納しているログ エクステントのコレクションを取得します。</summary>
+        <value>このログ ストアのデータをカプセル化したログ エクステントのコレクションを格納している <see cref="T:System.IO.Log.LogExtentCollection" /> インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Log.LogStore> インスタンスは、<xref:System.IO.Log.LogExtent> により表されるディスク エクステントのコレクションにデータを保存します。 指定の <xref:System.IO.Log.LogStore> インスタンス内のエクステントはすべて、均一のサイズを持ちます。また、エクステントの増加分について、<xref:System.IO.Log.LogStore> インスタンスに対して領域の追加と削除が行われます。 ログ エクステントを追加および削除するには、このプロパティで返される <xref:System.IO.Log.LogExtentCollection.Add%2A> オブジェクトの <xref:System.IO.Log.LogExtentCollection.Remove%2A> メソッドおよび <xref:System.IO.Log.LogExtentCollection> メソッドを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FreeBytes">
+      <MemberSignature Language="C#" Value="public long FreeBytes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 FreeBytes" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.LogStore.FreeBytes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ログ ストアで使用可能なバイト数を取得します。</summary>
+        <value>ログ ストアで使用可能なバイト数。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にプロパティがアクセスされました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Handle">
+      <MemberSignature Language="C#" Value="public Microsoft.Win32.SafeHandles.SafeFileHandle Handle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Win32.SafeHandles.SafeFileHandle Handle" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.LogStore.Handle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.SafeHandles.SafeFileHandle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.IO.Log.LogStore" /> インスタンスによってカプセル化されるログ ファイルのオペレーティング システム ファイル ハンドルを取得します。</summary>
+        <value>現在の <see cref="T:System.IO.Log.LogStore" /> インスタンスによってカプセル化されるログ ファイルのオペレーティング システム ファイル ハンドル。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastSequenceNumber">
+      <MemberSignature Language="C#" Value="public System.IO.Log.SequenceNumber LastSequenceNumber { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.IO.Log.SequenceNumber LastSequenceNumber" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.LogStore.LastSequenceNumber" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.SequenceNumber</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ログ ストアに追加される次のレコードのシーケンス番号を取得します。</summary>
+        <value>ログ ストアに追加される次のレコードのシーケンス番号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 有効なシーケンス番号は、<xref:System.IO.Log.LogStore.BaseSequenceNumber%2A> 以上、<xref:System.IO.Log.LogStore.LastSequenceNumber%2A> 未満です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にプロパティがアクセスされました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Length">
+      <MemberSignature Language="C#" Value="public long Length { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 Length" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.LogStore.Length" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ログ ストアのサイズをバイト単位で取得します。</summary>
+        <value>ログ ストアのサイズ (バイト単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ログ ストアのサイズは、ログ エクステントのサイズの合計です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にプロパティがアクセスされました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Policy">
+      <MemberSignature Language="C#" Value="public System.IO.Log.LogPolicy Policy { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IO.Log.LogPolicy Policy" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.LogStore.Policy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.LogPolicy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このログ ストアに関連付けられたポリシーを取得します。</summary>
+        <value>このログ ストアに関連付けられたポリシーを表す <see cref="T:System.IO.Log.LogPolicy" /> インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティによって返される <xref:System.IO.Log.LogPolicy> インスタンスを使用して、<xref:System.IO.Log.LogStore> に関連付けられたログ ポリシーを確認および操作できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetArchiveTail">
+      <MemberSignature Language="C#" Value="public void SetArchiveTail (System.IO.Log.SequenceNumber archiveTail);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetArchiveTail(valuetype System.IO.Log.SequenceNumber archiveTail) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogStore.SetArchiveTail(System.IO.Log.SequenceNumber)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="archiveTail" Type="System.IO.Log.SequenceNumber" />
+      </Parameters>
+      <Docs>
+        <param name="archiveTail">アーカイブ末尾のシーケンス番号。</param>
+        <summary>アーカイブ末尾のシーケンス番号を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基本シーケンス番号とアーカイブ末尾のどちらか小さい方によってログの末尾が決まります。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.IO.Log.LogStore> を XML ドキュメントにアーカイブする方法を示します。  
+  
+ [!code-csharp[logarchievesnapshot#0](~/samples/snippets/csharp/VS_Snippets_CFX/logarchievesnapshot/cs/logarchievesnapshot.cs#0)]
+ [!code-vb[logarchievesnapshot#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/logarchievesnapshot/vb/logarchievesnapshot.vb#0)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="archiveTail" /> が、このシーケンスの基本シーケンス番号と最後のシーケンス番号との間にありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          このシーケンスの <paramref name="archiveTail" /> が有効ではありません。</exception>
+        <exception cref="T:System.InvalidOperationException">無効な操作が実行されました。</exception>
+        <exception cref="T:System.IO.IOException">アーカイブ スナップショットの作成時に I/O エラーが発生しました。</exception>
+        <exception cref="T:System.NotSupportedException">ログ ストアはアーカイブできません。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ ストアへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StreamCount">
+      <MemberSignature Language="C#" Value="public int StreamCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 StreamCount" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.LogStore.StreamCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このログ ストアのログ ストリームの数を取得します。</summary>
+        <value>このログ ストアのログ ストリームの数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,96 @@
+<Type Name="TypeFilterProviderAttribute" FullName="System.Workflow.ComponentModel.Design.TypeFilterProviderAttribute">
+  <TypeSignature Language="C#" Value="public sealed class TypeFilterProviderAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TypeFilterProviderAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Design.TypeFilterProviderAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method | System.AttributeTargets.Property, AllowMultiple=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>クラス ブラウザー ダイアログ ボックスに表示される型をフィルター処理するのに型またはメンバーが使用するクラスを指定します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ クラス ブラウザー ダイアログ ボックスに表示する型をフィルター処理するのに使用するクラスは、<xref:System.Workflow.ComponentModel.Design.ITypeFilterProvider> を実装している必要があります。  
+  
+ フィルター クラスの名前を確認するには、<xref:System.Workflow.ComponentModel.Design.TypeFilterProviderAttribute.TypeFilterProviderTypeName%2A> プロパティを使用します。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TypeFilterProviderAttribute (string typeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string typeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.TypeFilterProviderAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="typeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="typeName">クラスまたはメンバーに適用する <see cref="T:System.Workflow.ComponentModel.Design.ITypeFilterProvider" /> を実装している型の名前を含む文字列。</param>
+        <summary>指定した型名を使用して、<see cref="T:System.Workflow.ComponentModel.Design.TypeFilterProviderAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TypeFilterProviderAttribute (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.TypeFilterProviderAttribute.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">クラスまたはメンバーに適用する <see cref="T:System.Type" /> を実装している <see cref="T:System.Workflow.ComponentModel.Design.ITypeFilterProvider" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.TypeFilterProviderAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeFilterProviderTypeName">
+      <MemberSignature Language="C#" Value="public string TypeFilterProviderTypeName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TypeFilterProviderTypeName" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.TypeFilterProviderAttribute.TypeFilterProviderTypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.ITypeFilterProvider" /> を実装している型の名前を取得します。</summary>
+        <value><see cref="T:System.Workflow.ComponentModel.Design.ITypeFilterProvider" /> を実装している型の名前を含む文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

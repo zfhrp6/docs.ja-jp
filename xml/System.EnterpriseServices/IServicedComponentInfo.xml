@@ -1,0 +1,66 @@
+<Type Name="IServicedComponentInfo" FullName="System.EnterpriseServices.IServicedComponentInfo">
+  <TypeSignature Language="C#" Value="public interface IServicedComponentInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IServicedComponentInfo" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.IServicedComponentInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("8165B19E-8D3A-4d0b-80C8-97DE310DB583")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>によって実装される、<see cref="T:System.EnterpriseServices.ServicedComponent" />クラスを使用して、コンポーネントに関する情報を取得、<see cref="M:System.EnterpriseServices.IServicedComponentInfo.GetComponentInfo(System.Int32@,System.String[]@)" />メソッドです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.IServicedComponentInfo>インターフェイスは、コードで直接実装する必要はありません。 .NET Framework インフラストラクチャによって内部的に使用されます。  
+  
+ <xref:System.EnterpriseServices.IServicedComponentInfo.GetComponentInfo%2A>メソッドがない、<xref:System.EnterpriseServices.ServicedComponent>クラス インターフェイスです。 代わりに、<xref:System.EnterpriseServices.ServicedComponent>を明示的に実装<xref:System.EnterpriseServices.IServicedComponentInfo>です。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+    <altmember cref="T:System.EnterpriseServices.ServicedComponent" />
+  </Docs>
+  <Members>
+    <Member MemberName="GetComponentInfo">
+      <MemberSignature Language="C#" Value="public void GetComponentInfo (ref int infoMask, out string[] infoArray);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetComponentInfo(int32&amp; infoMask, [out] string[]&amp; infoArray) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.IServicedComponentInfo.GetComponentInfo(System.Int32@,System.String[]@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="infoMask" Type="System.Int32&amp;" RefType="ref" />
+        <Parameter Name="infoArray" Type="System.String[]&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="infoMask">ビットマスクが 0x00000001 サービス コンポーネントのプロセス ID のキー、0x00000002 はアプリケーション ドメイン ID のキーであり 0x00000004 がサービス コンポーネントのリモートの URI のキー。</param>
+        <param name="infoArray">文字列配列の順序で、次の一部または全部を含む可能性があります: サービス コンポーネントの ID、アプリケーション ドメインの ID、およびサービスのコンポーネントのリモートの URI を処理します。</param>
+        <summary>に関する特定の情報を取得、<see cref="T:System.EnterpriseServices.ServicedComponent" />クラスのインスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.IServicedComponentInfo.GetComponentInfo%2A>の公開されたインターフェイスにメソッドが属していない、<xref:System.EnterpriseServices.ServicedComponent>クラスし、他の場所で実装する必要はありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

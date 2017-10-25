@@ -1,0 +1,92 @@
+<Type Name="DebuggerStepThroughAttribute" FullName="System.Diagnostics.DebuggerStepThroughAttribute">
+  <TypeSignature Language="C#" Value="public sealed class DebuggerStepThroughAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit DebuggerStepThroughAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.DebuggerStepThroughAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Diagnostics.Debug</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Struct | System.AttributeTargets.Constructor | System.AttributeTargets.Method, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>デバッガーに対してコードのステップ インではなくステップ実行を指示します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性で使用するを指定ソース コードのデバッガーです。これによって、共通言語ランタイムは影響はありません。 たとえば、Visual Studio デバッガーは、メソッドにブレークポイントが設定されている場合でも、この属性でマークされているメソッドでは停止されません。  
+  
+ <xref:System.Diagnostics.DebuggerStepThroughAttribute>属性の影響、[マイ コードのみ](http://msdn.microsoft.com/library/0f0df097-bbaf-46ad-9ad1-ef5f40435079)次のように Visual Studio の機能を (のみ JMC)。  
+  
+-   JMC を有効にすると、Visual Studio デバッガーは停止されませんとマークされたメソッドのブレークポイントで、<xref:System.Diagnostics.DebuggerStepThroughAttribute>属性。  
+  
+-   メソッドが付いている場合でも、デバッガーがブレークポイントで停止 JMC を無効にした場合、<xref:System.Diagnostics.DebuggerStepThroughAttribute>です。  
+  
+ 次のコードでは、Visual Basic コンパイラで属性を使用する方法を示します。  
+  
+```  
+<System.Diagnostics.DebuggerStepThrough()> _  
+    Private Sub InitializeComponent()  
+        components = New System.ComponentModel.Container()  
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font  
+        Me.Text = "Form1"  
+    End Sub  
+```  
+  
+ この属性はなくなりますコンパイラに用意されているコードと開発者のコードにステップ インのみにステップ インします。 たとえば、次のコードを使用して、ステップ実行、 **F11**キー (ステップ イン) は、属性のように動作する手順が発生、 **F10** (ステップ オーバー) のキーをコンパイラに用意されているコード。 メソッドにステップ インではありませんが、アクティビティが実行されます。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DebuggerStepThroughAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.DebuggerStepThroughAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Debug</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Diagnostics.DebuggerStepThroughAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

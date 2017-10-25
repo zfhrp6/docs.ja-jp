@@ -1,0 +1,193 @@
+<Type Name="ExponentialEase" FullName="System.Windows.Media.Animation.ExponentialEase">
+  <TypeSignature Language="C#" Value="public class ExponentialEase : System.Windows.Media.Animation.EasingFunctionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ExponentialEase extends System.Windows.Media.Animation.EasingFunctionBase" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.ExponentialEase" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Animation.EasingFunctionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>加速または減速指数の式を使用するアニメーションを作成するイージング関数を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 制御することができます、アニメーションが迅速化するかどうかが減速またはその両方を指定して、<xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A>です。 次のグラフのさまざまな値を示します<xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A>場所*f*(*t*)、アニメーションの進行状況を表すと*t*時間を表します。  
+  
+ ![異なる easingmode の ExponentialEase のグラフ。](~/add/media/exponentialease-graph.png "異なる easingmode の ExponentialEase のグラフ。")  
+  
+ この関数で使用される数式は次のです。  
+  
+ ![ExponentialEase の数式](~/add/media/exponentialease-formula.png "ExponentialEase の数式")  
+  
+ 上の式を使用して、次のグラフを示していますの複数の値の影響、<xref:System.Windows.Media.Animation.ExponentialEase.Exponent%2A>プロパティ。  
+  
+ ![次の 3 つの指数値の指数関数緩和](~/add/media/expo-easeproperty.png "3 つの指数値の指数関数緩和")  
+  
+ だけでなく他のいくつかのイージング関数は<xref:System.Windows.Media.Animation.ExponentialEase>Silverlight の次のサンプルを使用してを調べることができます。  
+  
+ [このサンプルを実行する](http://go.microsoft.com/fwlink/?LinkId=139798&sref=easing_functions_gallery)  
+  
+ 継承することで、独自のカスタム イージング関数を作成するだけでなく、実行時に含まれるイージング関数を使用して、<xref:System.Windows.Media.Animation.EasingFunctionBase>です。  
+  
+<a name="xamlObjectElementUsage_ExponentialEase"></a>   
+## <a name="xaml-object-element-usage"></a>XAML オブジェクト要素の使用方法  
+  
+```  
+<ExponentialEase .../>  
+```  
+  
+   
+  
+## Examples  
+ 次の例に適用されます、<xref:System.Windows.Media.Animation.ExponentialEase>イージング関数を<xref:System.Windows.Media.Animation.DoubleAnimation>decelerating アニメーションを作成します。  
+  
+ [!code-xaml[ExponentialEase#ExponentialEase](~/samples/snippets/csharp/VS_Snippets_Wpf/exponentialease/CS/window1.xaml#exponentialease)]   
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExponentialEase ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.ExponentialEase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Animation.ExponentialEase" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.ExponentialEase.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Freezable" /> 派生クラスの新しいインスタンスを作成します。 派生クラスを作成するときには、このメソッドをオーバーライドする必要があります。</summary>
+        <returns>新しいインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アニメーションのクラスに継承直接から<xref:System.Windows.Freezable>です。 このため、オーバーライドする必要があります、<xref:System.Windows.Media.Animation.BackEase.CreateInstanceCore%2A>アニメーション オブジェクトを構築するメソッド。  
+  
+   
+  
+## Examples  
+ 次の例は、の一般的な実装を示しています。<xref:System.Windows.Freezable.CreateInstanceCore%2A>です。  
+  
+ [!code-csharp[freezablesample_procedural#CreateInstanceCoreExample](~/samples/snippets/csharp/VS_Snippets_Wpf/freezablesample_procedural/CSharp/freezablesample.cs#createinstancecoreexample)]
+ [!code-vb[freezablesample_procedural#CreateInstanceCoreExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/freezablesample_procedural/visualbasic/freezablesample.vb#createinstancecoreexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EaseInCore">
+      <MemberSignature Language="C#" Value="protected override double EaseInCore (double normalizedTime);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance float64 EaseInCore(float64 normalizedTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.ExponentialEase.EaseInCore(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="normalizedTime" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="normalizedTime">アニメーションの正規化された時間 (進行状況)。</param>
+        <summary>カスタム イージング関数の <see cref="F:System.Windows.Media.Animation.EasingMode.EaseIn" /> モードを生成するためにオーバーライドできるイージング関数のロジック部分を提供します。</summary>
+        <returns>変換された進行状況を表す double 値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは変換のアニメーションの速度を制御する正規化された時間、<xref:System.Windows.Media.Animation.EasingMode.EaseIn>の case<xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A>です。  
+  
+ のみのイージング関数を指定する必要が、<xref:System.Windows.Media.Animation.EasingMode.EaseIn>ためにのケースの実装、<xref:System.Windows.Media.Animation.EasingFunctionBase.Ease%2A>メソッド変換`normalizedTime`の<xref:System.Windows.Media.Animation.EasingMode.EaseOut>と<xref:System.Windows.Media.Animation.EasingMode.EaseInOut>場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Exponent">
+      <MemberSignature Language="C#" Value="public double Exponent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Exponent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.ExponentialEase.Exponent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアニメーションの補間を決定するために使用する指数を設定します。</summary>
+        <value>アニメーションの補間を決定するために使用する指数。 既定値は 2 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[DP_ID_field_label](~/includes/dp-id-field-label-md.md)] <xref:System.Windows.Media.Animation.ExponentialEase.ExponentProperty>  
+  
+ によって使用される数式<xref:System.Windows.Media.Animation.ExponentialEase>です。  
+  
+ ![ExponentialEase の数式](~/add/media/exponentialease-formula.png "ExponentialEase の数式")  
+  
+ 前の式を使用して、次のグラフを示していますの複数の値の影響、<xref:System.Windows.Media.Animation.ExponentialEase.Exponent%2A>プロパティ。  
+  
+ ![次の 3 つの指数値の指数関数緩和](~/add/media/expo-easeproperty.png "3 つの指数値の指数関数緩和")  
+  
+<a name="xamlAttributeUsage_Exponent"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object Exponent="double" .../>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExponentProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ExponentProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ExponentProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.ExponentialEase.ExponentProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Animation.ExponentialEase.Exponent" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,879 @@
+<Type Name="DrawingContext" FullName="System.Windows.Media.DrawingContext">
+  <TypeSignature Language="C#" Value="public abstract class DrawingContext : System.Windows.Threading.DispatcherObject, IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DrawingContext extends System.Windows.Threading.DispatcherObject implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.DrawingContext" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Threading.DispatcherObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>描画、プッシュ、およびポップ コマンドを使用してビジュアル コンテンツを記述します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Media.DrawingContext>を設定する、<xref:System.Windows.Media.Visual>または<xref:System.Windows.Media.Drawing>visual のコンテンツを持つ。  
+  
+ <xref:System.Windows.Media.DrawingContext>描画メソッド表示の描画メソッドに似ています、<xref:System.Drawing.Graphics?displayProperty=nameWithType>型、その動作まったく違う方法で:<xref:System.Windows.Media.DrawingContext>は保持モードのグラフィックス システムで使用すると、ときに、<xref:System.Drawing.Graphics?displayProperty=nameWithType>イミディ エイト モード グラフィックス システムでタイプを使用します。 使用すると、<xref:System.Windows.Media.DrawingContext>オブジェクトの描画コマンド、レンダリング命令のセットを格納する実際には (正確なストレージ メカニズムを提供するオブジェクトの種類によって異なりますが、 <xref:System.Windows.Media.DrawingContext>) 後で、グラフィックス システムで使用される; がリアルタイムで画面に描画します。 方法の詳細については[!INCLUDE[TLA#tla_wpf](~/includes/tlasharptla-wpf-md.md)]、グラフィックスのシステム動作を参照してください[WPF グラフィックス レンダリングの概要](~/docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)です。  
+  
+ 決して直接インスタンス化する、 <xref:System.Windows.Media.DrawingContext>; など、特定のメソッドから描画コンテキストを取得すること、ただし、<xref:System.Windows.Media.DrawingGroup.Open%2A?displayProperty=nameWithType>と<xref:System.Windows.Media.DrawingVisual.RenderOpen%2A?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次の例では取得、<xref:System.Windows.Media.DrawingContext>から、<xref:System.Windows.Media.DrawingVisual>四角形の描画を使用しています。  
+  
+ [!code-csharp[drawingvisualsample#101](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingVisualSample/CSharp/Window1.xaml.cs#101)]
+ [!code-vb[drawingvisualsample#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DrawingVisualSample/visualbasic/window1.xaml.vb#101)]  
+  
+ 次の例を示しています、 <xref:System.Windows.Media.DrawingContext.PushOpacity%2A>、 <xref:System.Windows.Media.DrawingContext.PushEffect%2A>、および<xref:System.Windows.Media.DrawingContext.Pop%2A>コマンド。 <xref:System.Windows.Media.DrawingContext>から取得した、<xref:System.Windows.Media.DrawingGroup>を使用して表示し、<xref:System.Windows.Controls.Image>コントロール。  
+  
+ [!code-csharp[DrawingContext_procedural_snip#PushEffectExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingContext_procedural_snip/CSharp/PushEffectExample.cs#pusheffectexamplewholepage)]
+ [!code-vb[DrawingContext_procedural_snip#PushEffectExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DrawingContext_procedural_snip/visualbasic/pusheffectexample.vb#pusheffectexamplewholepage)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public abstract void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingContext.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>閉じる、<see cref="T:System.Windows.Media.DrawingContext" />し、コンテンツをフラッシュします。 その後、<see cref="T:System.Windows.Media.DrawingContext" />は変更できません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Media.DrawingContext>そのコンテンツを表示することができますが、これが閉じられた後は変更できません前に閉じる必要があります。 この呼び出しには、ポップされているすべてのプッシュの呼び出しは不要です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは既に終了または破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DisposeCore">
+      <MemberSignature Language="C#" Value="protected abstract void DisposeCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void DisposeCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingContext.DisposeCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Windows.Media.DrawingContext" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドをコードから直接呼び出さないでください。使用して、<xref:System.Windows.Media.DrawingContext.System%23IDisposable%23Dispose%2A>メソッド代わりにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは、既に閉じられているか破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawDrawing">
+      <MemberSignature Language="C#" Value="public abstract void DrawDrawing (System.Windows.Media.Drawing drawing);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DrawDrawing(class System.Windows.Media.Drawing drawing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingContext.DrawDrawing(System.Windows.Media.Drawing)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="drawing" Type="System.Windows.Media.Drawing" />
+      </Parameters>
+      <Docs>
+        <param name="drawing">追加する描画します。</param>
+        <summary>指定された描画<see cref="T:System.Windows.Media.Drawing" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawEllipse">
+      <MemberSignature Language="C#" Value="public abstract void DrawEllipse (System.Windows.Media.Brush brush, System.Windows.Media.Pen pen, System.Windows.Point center, double radiusX, double radiusY);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DrawEllipse(class System.Windows.Media.Brush brush, class System.Windows.Media.Pen pen, valuetype System.Windows.Point center, float64 radiusX, float64 radiusY) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingContext.DrawEllipse(System.Windows.Media.Brush,System.Windows.Media.Pen,System.Windows.Point,System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="brush" Type="System.Windows.Media.Brush" />
+        <Parameter Name="pen" Type="System.Windows.Media.Pen" />
+        <Parameter Name="center" Type="System.Windows.Point" />
+        <Parameter Name="radiusX" Type="System.Double" />
+        <Parameter Name="radiusY" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="brush">楕円の塗りつぶしに使用するブラシ。  これは省略可能で、<see langword="null" /> にすることができます。 ブラシが <see langword="null" /> の場合、塗りつぶしは描画されません。</param>
+        <param name="pen">省略記号の境界線の描画に使用するペン。  これは省略可能で、<see langword="null" /> にすることができます。 ペンが <see langword="null" /> の場合、線は描画されません。</param>
+        <param name="center">楕円の中央の場所です。</param>
+        <param name="radiusX">楕円の水平方向の半径。</param>
+        <param name="radiusY">楕円の垂直方向の半径。</param>
+        <summary>指定された楕円を描画<see cref="T:System.Windows.Media.Brush" />と<see cref="T:System.Windows.Media.Pen" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ブラシ、ペンは両方とも`null`します。  ブラシが場合`null`塗りつぶしは実行されません。  ペンが場合`null`、ストロークの描画が実行されません。  ペンとブラシの両方がある場合`null`、描画は表示されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawEllipse">
+      <MemberSignature Language="C#" Value="public abstract void DrawEllipse (System.Windows.Media.Brush brush, System.Windows.Media.Pen pen, System.Windows.Point center, System.Windows.Media.Animation.AnimationClock centerAnimations, double radiusX, System.Windows.Media.Animation.AnimationClock radiusXAnimations, double radiusY, System.Windows.Media.Animation.AnimationClock radiusYAnimations);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DrawEllipse(class System.Windows.Media.Brush brush, class System.Windows.Media.Pen pen, valuetype System.Windows.Point center, class System.Windows.Media.Animation.AnimationClock centerAnimations, float64 radiusX, class System.Windows.Media.Animation.AnimationClock radiusXAnimations, float64 radiusY, class System.Windows.Media.Animation.AnimationClock radiusYAnimations) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingContext.DrawEllipse(System.Windows.Media.Brush,System.Windows.Media.Pen,System.Windows.Point,System.Windows.Media.Animation.AnimationClock,System.Double,System.Windows.Media.Animation.AnimationClock,System.Double,System.Windows.Media.Animation.AnimationClock)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="brush" Type="System.Windows.Media.Brush" />
+        <Parameter Name="pen" Type="System.Windows.Media.Pen" />
+        <Parameter Name="center" Type="System.Windows.Point" />
+        <Parameter Name="centerAnimations" Type="System.Windows.Media.Animation.AnimationClock" />
+        <Parameter Name="radiusX" Type="System.Double" />
+        <Parameter Name="radiusXAnimations" Type="System.Windows.Media.Animation.AnimationClock" />
+        <Parameter Name="radiusY" Type="System.Double" />
+        <Parameter Name="radiusYAnimations" Type="System.Windows.Media.Animation.AnimationClock" />
+      </Parameters>
+      <Docs>
+        <param name="brush">楕円の塗りつぶしに使用するブラシ。  これは省略可能で、<see langword="null" /> にすることができます。 ブラシが <see langword="null" /> の場合、塗りつぶしは描画されません。</param>
+        <param name="pen">省略記号の境界線の描画に使用するペン。  これは省略可能で、<see langword="null" /> にすることができます。 ペンが <see langword="null" /> の場合、線は描画されません。</param>
+        <param name="center">楕円の中央の場所です。</param>
+        <param name="centerAnimations">楕円の中央の位置をアニメーション化に使用するクロックまたは<see langword="null" />ないアニメーションを実行します。 この時計を作成する必要があります、<see cref="T:System.Windows.Media.Animation.AnimationTimeline" />をアニメーション化できる<see cref="T:System.Windows.Point" />オブジェクト。</param>
+        <param name="radiusX">楕円の水平方向の半径。</param>
+        <param name="radiusXAnimations">楕円の x 半径をアニメーション化に使用するクロックまたは<see langword="null" />ないアニメーションを実行します。 この時計を作成する必要があります、<see cref="T:System.Windows.Media.Animation.AnimationTimeline" />をアニメーション化できる<see cref="T:System.Double" />オブジェクト。</param>
+        <param name="radiusY">楕円の垂直方向の半径。</param>
+        <param name="radiusYAnimations">楕円の y 半径をアニメーション化に使用するクロックまたは<see langword="null" />ないアニメーションを実行します。 この時計を作成する必要があります、<see cref="T:System.Windows.Media.Animation.AnimationTimeline" />をアニメーション化できる<see cref="T:System.Double" />オブジェクト。</param>
+        <summary>指定された楕円を描画<see cref="T:System.Windows.Media.Brush" />と<see cref="T:System.Windows.Media.Pen" />し、指定したアニメーション クロックを適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ブラシ、ペンは両方とも`null`します。  ブラシが場合`null`塗りつぶしは実行されません。  ペンが場合`null`、ストロークの描画が実行されません。  ペンとブラシの両方がある場合`null`、描画は表示されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawGeometry">
+      <MemberSignature Language="C#" Value="public abstract void DrawGeometry (System.Windows.Media.Brush brush, System.Windows.Media.Pen pen, System.Windows.Media.Geometry geometry);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DrawGeometry(class System.Windows.Media.Brush brush, class System.Windows.Media.Pen pen, class System.Windows.Media.Geometry geometry) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingContext.DrawGeometry(System.Windows.Media.Brush,System.Windows.Media.Pen,System.Windows.Media.Geometry)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="brush" Type="System.Windows.Media.Brush" />
+        <Parameter Name="pen" Type="System.Windows.Media.Pen" />
+        <Parameter Name="geometry" Type="System.Windows.Media.Geometry" />
+      </Parameters>
+      <Docs>
+        <param name="brush"><see cref="T:System.Windows.Media.Geometry" /> の塗りつぶしに使用する <see cref="T:System.Windows.Media.Brush" />。 これは省略可能で、<see langword="null" /> にすることができます。 ブラシが <see langword="null" /> の場合、塗りつぶしは描画されません。</param>
+        <param name="pen"><see cref="T:System.Windows.Media.Geometry" /> を描くときに使う <see cref="T:System.Windows.Media.Pen" />。 これは省略可能で、<see langword="null" /> にすることができます。 ペンが <see langword="null" /> の場合、線は描画されません。</param>
+        <param name="geometry">描画する <see cref="T:System.Windows.Media.Geometry" />。</param>
+        <summary>指定された <see cref="T:System.Windows.Media.Brush" /> と <see cref="T:System.Windows.Media.Pen" /> を使用して、指定された <see cref="T:System.Windows.Media.Geometry" /> を描画します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawGlyphRun">
+      <MemberSignature Language="C#" Value="public abstract void DrawGlyphRun (System.Windows.Media.Brush foregroundBrush, System.Windows.Media.GlyphRun glyphRun);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DrawGlyphRun(class System.Windows.Media.Brush foregroundBrush, class System.Windows.Media.GlyphRun glyphRun) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingContext.DrawGlyphRun(System.Windows.Media.Brush,System.Windows.Media.GlyphRun)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="foregroundBrush" Type="System.Windows.Media.Brush" />
+        <Parameter Name="glyphRun" Type="System.Windows.Media.GlyphRun" />
+      </Parameters>
+      <Docs>
+        <param name="foregroundBrush">テキストの描画に使用するブラシ。</param>
+        <param name="glyphRun">描画するテキスト。</param>
+        <summary>指定したテキストを描画します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawImage">
+      <MemberSignature Language="C#" Value="public abstract void DrawImage (System.Windows.Media.ImageSource imageSource, System.Windows.Rect rectangle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DrawImage(class System.Windows.Media.ImageSource imageSource, valuetype System.Windows.Rect rectangle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingContext.DrawImage(System.Windows.Media.ImageSource,System.Windows.Rect)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="imageSource" Type="System.Windows.Media.ImageSource" />
+        <Parameter Name="rectangle" Type="System.Windows.Rect" />
+      </Parameters>
+      <Docs>
+        <param name="imageSource">描画するイメージ。</param>
+        <param name="rectangle">描画するための地域<c>bitmapSource</c>です。</param>
+        <summary>指定したによって定義される領域内にイメージを描画<see cref="T:System.Windows.Rect" />です。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.MediaPermission">画像がないを表示する<see cref="T:System.Net.WebPermission" />または<see cref="T:System.Security.Permissions.FileIOPermission" />にアクセスします。 関連する列挙値:<see cref="F:System.Security.Permissions.MediaPermissionImage.SafeImage" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawImage">
+      <MemberSignature Language="C#" Value="public abstract void DrawImage (System.Windows.Media.ImageSource imageSource, System.Windows.Rect rectangle, System.Windows.Media.Animation.AnimationClock rectangleAnimations);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DrawImage(class System.Windows.Media.ImageSource imageSource, valuetype System.Windows.Rect rectangle, class System.Windows.Media.Animation.AnimationClock rectangleAnimations) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingContext.DrawImage(System.Windows.Media.ImageSource,System.Windows.Rect,System.Windows.Media.Animation.AnimationClock)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="imageSource" Type="System.Windows.Media.ImageSource" />
+        <Parameter Name="rectangle" Type="System.Windows.Rect" />
+        <Parameter Name="rectangleAnimations" Type="System.Windows.Media.Animation.AnimationClock" />
+      </Parameters>
+      <Docs>
+        <param name="imageSource">描画するイメージ。</param>
+        <param name="rectangle">描画するための地域<c>bitmapSource</c>です。</param>
+        <param name="rectangleAnimations">四角形のサイズと表示サイズをアニメーション化に使用するクロックまたは<see langword="null" />ないアニメーションを実行します。 この時計を作成する必要があります、<see cref="T:System.Windows.Media.Animation.AnimationTimeline" />をアニメーション化できる<see cref="T:System.Windows.Rect" />オブジェクト。</param>
+        <summary>指定したによって定義される領域内にイメージを描画<see cref="T:System.Windows.Rect" />し、指定したアニメーション クロックを適用します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.MediaPermission">画像がないを表示する<see cref="T:System.Net.WebPermission" />または<see cref="T:System.Security.Permissions.FileIOPermission" />にアクセスします。 関連する列挙値:<see cref="F:System.Security.Permissions.MediaPermissionImage.SafeImage" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawLine">
+      <MemberSignature Language="C#" Value="public abstract void DrawLine (System.Windows.Media.Pen pen, System.Windows.Point point0, System.Windows.Point point1);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DrawLine(class System.Windows.Media.Pen pen, valuetype System.Windows.Point point0, valuetype System.Windows.Point point1) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingContext.DrawLine(System.Windows.Media.Pen,System.Windows.Point,System.Windows.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pen" Type="System.Windows.Media.Pen" />
+        <Parameter Name="point0" Type="System.Windows.Point" />
+        <Parameter Name="point1" Type="System.Windows.Point" />
+      </Parameters>
+      <Docs>
+        <param name="pen">行の境界線の描画に使用するペン。</param>
+        <param name="point0">線の開始点。</param>
+        <param name="point1">線の終点。</param>
+        <summary>指定して指定した点の間の線の描画<see cref="T:System.Windows.Media.Pen" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawLine">
+      <MemberSignature Language="C#" Value="public abstract void DrawLine (System.Windows.Media.Pen pen, System.Windows.Point point0, System.Windows.Media.Animation.AnimationClock point0Animations, System.Windows.Point point1, System.Windows.Media.Animation.AnimationClock point1Animations);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DrawLine(class System.Windows.Media.Pen pen, valuetype System.Windows.Point point0, class System.Windows.Media.Animation.AnimationClock point0Animations, valuetype System.Windows.Point point1, class System.Windows.Media.Animation.AnimationClock point1Animations) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingContext.DrawLine(System.Windows.Media.Pen,System.Windows.Point,System.Windows.Media.Animation.AnimationClock,System.Windows.Point,System.Windows.Media.Animation.AnimationClock)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pen" Type="System.Windows.Media.Pen" />
+        <Parameter Name="point0" Type="System.Windows.Point" />
+        <Parameter Name="point0Animations" Type="System.Windows.Media.Animation.AnimationClock" />
+        <Parameter Name="point1" Type="System.Windows.Point" />
+        <Parameter Name="point1Animations" Type="System.Windows.Media.Animation.AnimationClock" />
+      </Parameters>
+      <Docs>
+        <param name="pen">行のストロークを描画するペン。</param>
+        <param name="point0">線の開始点。</param>
+        <param name="point0Animations">直線の始点をアニメーション化に使用するクロックまたは<see langword="null" />ないアニメーションを実行します。 この時計を作成する必要があります、<see cref="T:System.Windows.Media.Animation.AnimationTimeline" />をアニメーション化できる<see cref="T:System.Windows.Point" />オブジェクト。</param>
+        <param name="point1">線の終点。</param>
+        <param name="point1Animations">直線の終点をアニメーション化に使用するクロックまたは<see langword="null" />ないアニメーションを実行します。 この時計を作成する必要があります、<see cref="T:System.Windows.Media.Animation.AnimationTimeline" />をアニメーション化できる<see cref="T:System.Windows.Point" />オブジェクト。</param>
+        <summary>指定して指定した点の間の線の描画<see cref="T:System.Windows.Media.Pen" />し、指定したアニメーション クロックを適用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawRectangle">
+      <MemberSignature Language="C#" Value="public abstract void DrawRectangle (System.Windows.Media.Brush brush, System.Windows.Media.Pen pen, System.Windows.Rect rectangle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DrawRectangle(class System.Windows.Media.Brush brush, class System.Windows.Media.Pen pen, valuetype System.Windows.Rect rectangle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingContext.DrawRectangle(System.Windows.Media.Brush,System.Windows.Media.Pen,System.Windows.Rect)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="brush" Type="System.Windows.Media.Brush" />
+        <Parameter Name="pen" Type="System.Windows.Media.Pen" />
+        <Parameter Name="rectangle" Type="System.Windows.Rect" />
+      </Parameters>
+      <Docs>
+        <param name="brush">四角形の塗りつぶしに使用するブラシ。  これは省略可能で、<see langword="null" /> にすることができます。 ブラシが <see langword="null" /> の場合、塗りつぶしは描画されません。</param>
+        <param name="pen">四角形の境界線の描画に使用するペン。  これは省略可能で、<see langword="null" /> にすることができます。 ペンが <see langword="null" /> の場合、線は描画されません。</param>
+        <param name="rectangle">描画する四角形。</param>
+        <summary>指定した四角形を描画<see cref="T:System.Windows.Media.Brush" />と<see cref="T:System.Windows.Media.Pen" />です。 ペンとブラシできます<see langword="null" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ブラシ、ペンは両方とも`null`します。  ブラシが場合`null`塗りつぶしは実行されません。  ペンが場合`null`、ストロークの描画が実行されません。  ペンとブラシの両方がある場合`null`、描画は表示されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawRectangle">
+      <MemberSignature Language="C#" Value="public abstract void DrawRectangle (System.Windows.Media.Brush brush, System.Windows.Media.Pen pen, System.Windows.Rect rectangle, System.Windows.Media.Animation.AnimationClock rectangleAnimations);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DrawRectangle(class System.Windows.Media.Brush brush, class System.Windows.Media.Pen pen, valuetype System.Windows.Rect rectangle, class System.Windows.Media.Animation.AnimationClock rectangleAnimations) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingContext.DrawRectangle(System.Windows.Media.Brush,System.Windows.Media.Pen,System.Windows.Rect,System.Windows.Media.Animation.AnimationClock)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="brush" Type="System.Windows.Media.Brush" />
+        <Parameter Name="pen" Type="System.Windows.Media.Pen" />
+        <Parameter Name="rectangle" Type="System.Windows.Rect" />
+        <Parameter Name="rectangleAnimations" Type="System.Windows.Media.Animation.AnimationClock" />
+      </Parameters>
+      <Docs>
+        <param name="brush">四角形の塗りつぶしに使用するブラシ。  これは省略可能で、<see langword="null" /> にすることができます。 ブラシが <see langword="null" /> の場合、塗りつぶしは描画されません。</param>
+        <param name="pen">四角形の境界線の描画に使用するペン。  これは省略可能で、<see langword="null" /> にすることができます。 ペンが <see langword="null" /> の場合、線は描画されません。</param>
+        <param name="rectangle">描画する四角形。</param>
+        <param name="rectangleAnimations">四角形のサイズと表示サイズをアニメーション化に使用するクロックまたは<see langword="null" />ないアニメーションを実行します。 この時計を作成する必要があります、<see cref="T:System.Windows.Media.Animation.AnimationTimeline" />をアニメーション化できる<see cref="T:System.Windows.Rect" />オブジェクト。</param>
+        <summary>指定した四角形を描画<see cref="T:System.Windows.Media.Brush" />と<see cref="T:System.Windows.Media.Pen" />し、指定したアニメーション クロックを適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ブラシ、ペンは両方とも`null`します。  ブラシが場合`null`塗りつぶしは実行されません。  ペンが場合`null`、ストロークの描画が実行されません。  ペンとブラシの両方がある場合`null`、描画は表示されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawRoundedRectangle">
+      <MemberSignature Language="C#" Value="public abstract void DrawRoundedRectangle (System.Windows.Media.Brush brush, System.Windows.Media.Pen pen, System.Windows.Rect rectangle, double radiusX, double radiusY);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DrawRoundedRectangle(class System.Windows.Media.Brush brush, class System.Windows.Media.Pen pen, valuetype System.Windows.Rect rectangle, float64 radiusX, float64 radiusY) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingContext.DrawRoundedRectangle(System.Windows.Media.Brush,System.Windows.Media.Pen,System.Windows.Rect,System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="brush" Type="System.Windows.Media.Brush" />
+        <Parameter Name="pen" Type="System.Windows.Media.Pen" />
+        <Parameter Name="rectangle" Type="System.Windows.Rect" />
+        <Parameter Name="radiusX" Type="System.Double" />
+        <Parameter Name="radiusY" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="brush">四角形の塗りつぶしに使用するブラシ。</param>
+        <param name="pen">四角形の境界線の描画に使用されるペン。</param>
+        <param name="rectangle">描画する四角形。</param>
+        <param name="radiusX">丸い角の X 方向の半径。  この値は 0 の範囲にクランプされます <see cref="P:System.Windows.Rect.Width" /> /2。</param>
+        <param name="radiusY">角が丸いのディメンションの Y 半径。  この値は 0 ~ 間の値に固定される <see cref="P:System.Windows.Rect.Height" /> /2。</param>
+        <summary>指定した丸みのある四角形を描画<see cref="T:System.Windows.Media.Brush" />と<see cref="T:System.Windows.Media.Pen" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ブラシ、ペンは両方とも`null`します。  ブラシが場合`null`塗りつぶしは実行されません。  ペンが場合`null`、ストロークの描画が実行されません。  ペンとブラシの両方がある場合`null`、描画は表示されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawRoundedRectangle">
+      <MemberSignature Language="C#" Value="public abstract void DrawRoundedRectangle (System.Windows.Media.Brush brush, System.Windows.Media.Pen pen, System.Windows.Rect rectangle, System.Windows.Media.Animation.AnimationClock rectangleAnimations, double radiusX, System.Windows.Media.Animation.AnimationClock radiusXAnimations, double radiusY, System.Windows.Media.Animation.AnimationClock radiusYAnimations);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DrawRoundedRectangle(class System.Windows.Media.Brush brush, class System.Windows.Media.Pen pen, valuetype System.Windows.Rect rectangle, class System.Windows.Media.Animation.AnimationClock rectangleAnimations, float64 radiusX, class System.Windows.Media.Animation.AnimationClock radiusXAnimations, float64 radiusY, class System.Windows.Media.Animation.AnimationClock radiusYAnimations) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingContext.DrawRoundedRectangle(System.Windows.Media.Brush,System.Windows.Media.Pen,System.Windows.Rect,System.Windows.Media.Animation.AnimationClock,System.Double,System.Windows.Media.Animation.AnimationClock,System.Double,System.Windows.Media.Animation.AnimationClock)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="brush" Type="System.Windows.Media.Brush" />
+        <Parameter Name="pen" Type="System.Windows.Media.Pen" />
+        <Parameter Name="rectangle" Type="System.Windows.Rect" />
+        <Parameter Name="rectangleAnimations" Type="System.Windows.Media.Animation.AnimationClock" />
+        <Parameter Name="radiusX" Type="System.Double" />
+        <Parameter Name="radiusXAnimations" Type="System.Windows.Media.Animation.AnimationClock" />
+        <Parameter Name="radiusY" Type="System.Double" />
+        <Parameter Name="radiusYAnimations" Type="System.Windows.Media.Animation.AnimationClock" />
+      </Parameters>
+      <Docs>
+        <param name="brush">四角形の塗りつぶしに使用するブラシまたは<see langword="null" />塗りつぶしなしにします。</param>
+        <param name="pen">四角形の境界線の描画に使用されるペンまたは<see langword="null" />線のないのです。</param>
+        <param name="rectangle">描画する四角形。</param>
+        <param name="rectangleAnimations">四角形のサイズと表示サイズをアニメーション化に使用するクロックまたは<see langword="null" />ないアニメーションを実行します。 この時計を作成する必要があります、<see cref="T:System.Windows.Media.Animation.AnimationTimeline" />をアニメーション化できる<see cref="T:System.Windows.Rect" />オブジェクト。</param>
+        <param name="radiusX">丸い角の X 方向の半径。  この値は 0 の範囲にクランプされます <see cref="P:System.Windows.Rect.Width" /> /2</param>
+        <param name="radiusXAnimations">四角形のアニメーション化に使用するクロック<c>四角形</c>値、または<see langword="null" />ないアニメーションを実行します。 この時計を作成する必要があります、<see cref="T:System.Windows.Media.Animation.AnimationTimeline" />をアニメーション化できる<see cref="T:System.Double" />値。</param>
+        <param name="radiusY">角が丸いのディメンションの Y 半径。  この値は 0 ~ 間の値に固定される <see cref="P:System.Windows.Rect.Height" /> /2。</param>
+        <param name="radiusYAnimations">四角形のアニメーション化に使用するクロック<c>radiusY</c>値、または<see langword="null" />ないアニメーションを実行します。 この時計を作成する必要があります、<see cref="T:System.Windows.Media.Animation.AnimationTimeline" />をアニメーション化できる<see cref="T:System.Double" />値。</param>
+        <summary>指定した丸みのある四角形を描画<see cref="T:System.Windows.Media.Brush" />と<see cref="T:System.Windows.Media.Pen" />し、指定したアニメーション クロックを適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ブラシ、ペンは両方とも`null`します。  ブラシが場合`null`塗りつぶしは実行されません。  ペンが場合`null`、ストロークの描画が実行されません。  ペンとブラシの両方がある場合`null`、描画は表示されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawText">
+      <MemberSignature Language="C#" Value="public void DrawText (System.Windows.Media.FormattedText formattedText, System.Windows.Point origin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawText(class System.Windows.Media.FormattedText formattedText, valuetype System.Windows.Point origin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingContext.DrawText(System.Windows.Media.FormattedText,System.Windows.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formattedText" Type="System.Windows.Media.FormattedText" />
+        <Parameter Name="origin" Type="System.Windows.Point" />
+      </Parameters>
+      <Docs>
+        <param name="formattedText">描画する書式設定されたテキスト。</param>
+        <param name="origin">テキストが描画される位置。</param>
+        <summary>書式設定されたテキストを指定した位置に描画します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは、既に閉じられているか破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawVideo">
+      <MemberSignature Language="C#" Value="public abstract void DrawVideo (System.Windows.Media.MediaPlayer player, System.Windows.Rect rectangle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DrawVideo(class System.Windows.Media.MediaPlayer player, valuetype System.Windows.Rect rectangle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingContext.DrawVideo(System.Windows.Media.MediaPlayer,System.Windows.Rect)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="player" Type="System.Windows.Media.MediaPlayer" />
+        <Parameter Name="rectangle" Type="System.Windows.Rect" />
+      </Parameters>
+      <Docs>
+        <param name="player">メディアに描画します。</param>
+        <param name="rectangle">描画するための地域<c>player</c>です。</param>
+        <summary>指定した領域にビデオを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メディアを拡大する四角形のパラメーターで定義される領域内に収まるようことに注意してください。 四角形とメディアは、別の縦横比であるゆがみが発生します。 領域を埋めるにメディアを使用する方法をより細かく制御を使用して、<xref:System.Windows.Media.DrawingContext.DrawRectangle%2A>四角形を描画し、入力でコマンド、<xref:System.Windows.Media.VisualBrush>メディアを格納しています。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.MediaPermission">表示することはありませんメディア<see cref="T:System.Net.WebPermission" />または<see cref="T:System.Security.Permissions.FileIOPermission" />にアクセスします。 関連する列挙値:<see cref="F:System.Security.Permissions.MediaPermissionImage.SafeImage" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawVideo">
+      <MemberSignature Language="C#" Value="public abstract void DrawVideo (System.Windows.Media.MediaPlayer player, System.Windows.Rect rectangle, System.Windows.Media.Animation.AnimationClock rectangleAnimations);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DrawVideo(class System.Windows.Media.MediaPlayer player, valuetype System.Windows.Rect rectangle, class System.Windows.Media.Animation.AnimationClock rectangleAnimations) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingContext.DrawVideo(System.Windows.Media.MediaPlayer,System.Windows.Rect,System.Windows.Media.Animation.AnimationClock)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="player" Type="System.Windows.Media.MediaPlayer" />
+        <Parameter Name="rectangle" Type="System.Windows.Rect" />
+        <Parameter Name="rectangleAnimations" Type="System.Windows.Media.Animation.AnimationClock" />
+      </Parameters>
+      <Docs>
+        <param name="player">メディアに描画します。</param>
+        <param name="rectangle">メディアを描画するための領域です。</param>
+        <param name="rectangleAnimations">四角形のサイズと表示サイズをアニメーション化に使用するクロックまたは<see langword="null" />ないアニメーションを実行します。 この時計を作成する必要があります、<see cref="T:System.Windows.Media.Animation.AnimationTimeline" />をアニメーション化できる<see cref="T:System.Windows.Rect" />オブジェクト。</param>
+        <summary>指定した領域にビデオを描画し、指定したアニメーション クロックを適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メディアを拡大する四角形のパラメーターで定義される領域内に収まるようことに注意してください。 四角形とメディアは、別の縦横比であるゆがみが発生します。 領域を埋めるにメディアを使用する方法をより細かく制御を使用して、<xref:System.Windows.Media.DrawingContext.DrawRectangle%2A>四角形を描画し、入力でコマンド、<xref:System.Windows.Media.VisualBrush>メディアを格納しています。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.MediaPermission">表示することはありませんメディア<see cref="T:System.Net.WebPermission" />または<see cref="T:System.Security.Permissions.FileIOPermission" />にアクセスします。 関連する列挙値:<see cref="F:System.Security.Permissions.MediaPermissionImage.SafeImage" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Pop">
+      <MemberSignature Language="C#" Value="public abstract void Pop ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Pop() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingContext.Pop" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>最後の不透明度マスク、不透明度、クリップ、効果、または描画のコンテキストにプッシュされた変換の処理をポップします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 操作がポップされ、後続の描画コマンドに不要になった適用します。  
+  
+   
+  
+## Examples  
+ 次の例の効果を示しています、<xref:System.Windows.Media.DrawingContext.Pop%2A>コマンド。  
+  
+ [!code-csharp[DrawingContext_procedural_snip#PopExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingContext_procedural_snip/CSharp/PopExample.cs#popexamplewholepage)]
+ [!code-vb[DrawingContext_procedural_snip#PopExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DrawingContext_procedural_snip/visualbasic/popexample.vb#popexamplewholepage)]  
+  
+ 次の図は、この例の出力を示しています。  
+  
+ ![異なる不透明度の値で描画された四角形](~/add/media/graphicsmm-drawingcontextpopexample.gif "異なる不透明度の値で描画された四角形")  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PushClip">
+      <MemberSignature Language="C#" Value="public abstract void PushClip (System.Windows.Media.Geometry clipGeometry);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void PushClip(class System.Windows.Media.Geometry clipGeometry) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingContext.PushClip(System.Windows.Media.Geometry)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clipGeometry" Type="System.Windows.Media.Geometry" />
+      </Parameters>
+      <Docs>
+        <param name="clipGeometry">以降の描画コマンドに適用するクリップ領域。</param>
+        <summary>描画コンテキストに指定したクリップ領域をプッシュします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって削除されるまで、クリップ領域がすべての後続の描画コマンドに適用されます、<xref:System.Windows.Media.DrawingContext.Pop%2A>コマンド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PushEffect">
+      <MemberSignature Language="C#" Value="public abstract void PushEffect (System.Windows.Media.Effects.BitmapEffect effect, System.Windows.Media.Effects.BitmapEffectInput effectInput);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void PushEffect(class System.Windows.Media.Effects.BitmapEffect effect, class System.Windows.Media.Effects.BitmapEffectInput effectInput) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingContext.PushEffect(System.Windows.Media.Effects.BitmapEffect,System.Windows.Media.Effects.BitmapEffectInput)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("BitmapEffects are deprecated and no longer function.  Consider using Effects where appropriate instead.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="effect" Type="System.Windows.Media.Effects.BitmapEffect" />
+        <Parameter Name="effectInput" Type="System.Windows.Media.Effects.BitmapEffectInput" />
+      </Parameters>
+      <Docs>
+        <param name="effect">以降の描画に適用する効果。</param>
+        <param name="effectInput">効果が適用される領域または<see langword="null" />以降の描画の領域全体に適用する効果である場合。</param>
+        <summary>指定されたプッシュ<see cref="T:System.Windows.Media.Effects.BitmapEffect" />描画コンテキストにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 効果は後続のすべての描画操作によって削除されるまで、<xref:System.Windows.Media.DrawingContext.Pop%2A>コマンド。  
+  
+   
+  
+## Examples  
+ 次の例で、 <xref:System.Windows.Media.DrawingContext.PushOpacity%2A>、 <xref:System.Windows.Media.DrawingContext.PushEffect%2A>、および<xref:System.Windows.Media.DrawingContext.Pop%2A>コマンド。  
+  
+ [!code-csharp[DrawingContext_procedural_snip#PushEffectExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingContext_procedural_snip/CSharp/PushEffectExample.cs#pusheffectexamplewholepage)]
+ [!code-vb[DrawingContext_procedural_snip#PushEffectExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DrawingContext_procedural_snip/visualbasic/pusheffectexample.vb#pusheffectexamplewholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PushGuidelineSet">
+      <MemberSignature Language="C#" Value="public abstract void PushGuidelineSet (System.Windows.Media.GuidelineSet guidelines);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void PushGuidelineSet(class System.Windows.Media.GuidelineSet guidelines) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingContext.PushGuidelineSet(System.Windows.Media.GuidelineSet)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="guidelines" Type="System.Windows.Media.GuidelineSet" />
+      </Parameters>
+      <Docs>
+        <param name="guidelines">以降の描画コマンドに適用するガイドライン。</param>
+        <summary>指定されたプッシュ<see cref="T:System.Windows.Media.GuidelineSet" />描画コンテキストにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって削除されるまで、すべての後続の描画コマンドにガイドライン セットが適用されます、<xref:System.Windows.Media.DrawingContext.Pop%2A>操作します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PushOpacity">
+      <MemberSignature Language="C#" Value="public abstract void PushOpacity (double opacity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void PushOpacity(float64 opacity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingContext.PushOpacity(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="opacity" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="opacity">以降の描画コマンドに適用する不透明度率。 この要素は、以前に累積<see cref="M:System.Windows.Media.DrawingContext.PushOpacity(System.Double)" />操作します。</param>
+        <summary>描画コンテキストに指定された不透明度の設定をプッシュします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 不透明度はすべての後続の描画コマンドによって削除されるまで、<xref:System.Windows.Media.DrawingContext.Pop%2A>コマンド。  
+  
+   
+  
+## Examples  
+ 次の例で、 <xref:System.Windows.Media.DrawingContext.PushOpacity%2A>、 <xref:System.Windows.Media.DrawingContext.PushEffect%2A>、および<xref:System.Windows.Media.DrawingContext.Pop%2A>コマンド。  
+  
+ [!code-csharp[DrawingContext_procedural_snip#PushEffectExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingContext_procedural_snip/CSharp/PushEffectExample.cs#pusheffectexamplewholepage)]
+ [!code-vb[DrawingContext_procedural_snip#PushEffectExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DrawingContext_procedural_snip/visualbasic/pusheffectexample.vb#pusheffectexamplewholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PushOpacity">
+      <MemberSignature Language="C#" Value="public abstract void PushOpacity (double opacity, System.Windows.Media.Animation.AnimationClock opacityAnimations);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void PushOpacity(float64 opacity, class System.Windows.Media.Animation.AnimationClock opacityAnimations) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingContext.PushOpacity(System.Double,System.Windows.Media.Animation.AnimationClock)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="opacity" Type="System.Double" />
+        <Parameter Name="opacityAnimations" Type="System.Windows.Media.Animation.AnimationClock" />
+      </Parameters>
+      <Docs>
+        <param name="opacity">以降の描画コマンドに適用する不透明度率。 この要素は、以前に累積<see cref="M:System.Windows.Media.DrawingContext.PushOpacity(System.Double)" />操作します。</param>
+        <param name="opacityAnimations">不透明度の値をアニメーション化に使用するクロックまたは<see langword="null" />ないアニメーションを実行します。 この時計を作成する必要があります、<see cref="T:System.Windows.Media.Animation.AnimationTimeline" />をアニメーション化できる<see cref="T:System.Double" />値。</param>
+        <summary>描画コンテキストに指定された不透明度の設定をプッシュし、指定したアニメーション クロックを適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 不透明度はすべての後続の描画コマンドによって削除されるまで、<xref:System.Windows.Media.DrawingContext.Pop%2A>コマンド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PushOpacityMask">
+      <MemberSignature Language="C#" Value="public abstract void PushOpacityMask (System.Windows.Media.Brush opacityMask);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void PushOpacityMask(class System.Windows.Media.Brush opacityMask) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingContext.PushOpacityMask(System.Windows.Media.Brush)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="opacityMask" Type="System.Windows.Media.Brush" />
+      </Parameters>
+      <Docs>
+        <param name="opacityMask">後続の描画に適用する不透明度マスク。 このブラシのアルファ値は、描画の不透明度を決定が適用されます。</param>
+        <summary>描画コンテキストに指定された不透明度マスクをプッシュします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべての後続の描画コマンドにマスクの適用によって削除されるまで、<xref:System.Windows.Media.DrawingContext.Pop%2A>操作します。  
+  
+ 不透明マスクを作成の詳細については、次を参照してください。[不透明マスクの概要](~/docs/framework/wpf/graphics-multimedia/opacity-masks-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PushTransform">
+      <MemberSignature Language="C#" Value="public abstract void PushTransform (System.Windows.Media.Transform transform);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void PushTransform(class System.Windows.Media.Transform transform) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingContext.PushTransform(System.Windows.Media.Transform)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="transform" Type="System.Windows.Media.Transform" />
+      </Parameters>
+      <Docs>
+        <param name="transform">以降の描画コマンドに適用する変換です。</param>
+        <summary>指定されたプッシュ<see cref="T:System.Windows.Media.Transform" />描画コンテキストにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって削除されるまで、以降のすべての描画コマンドに変換が適用されます、<xref:System.Windows.Media.DrawingContext.Pop%2A>コマンド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IDisposable.Dispose">
+      <MemberSignature Language="C#" Value="void IDisposable.Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.IDisposable.Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingContext.System#IDisposable#Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerifyApiNonstructuralChange">
+      <MemberSignature Language="C#" Value="protected virtual void VerifyApiNonstructuralChange ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void VerifyApiNonstructuralChange() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingContext.VerifyApiNonstructuralChange" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーは、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

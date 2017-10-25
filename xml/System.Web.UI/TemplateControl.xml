@@ -1,0 +1,1404 @@
+<Type Name="TemplateControl" FullName="System.Web.UI.TemplateControl">
+  <TypeSignature Language="C#" Value="public abstract class TemplateControl : System.Web.UI.Control, System.Web.UI.IFilterResolutionService, System.Web.UI.INamingContainer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract TemplateControl extends System.Web.UI.Control implements class System.Web.UI.IFilterResolutionService, class System.Web.UI.INamingContainer" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.TemplateControl" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Control</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.IFilterResolutionService</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.UI.INamingContainer</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>提供、<see cref="T:System.Web.UI.Page" />クラスおよび<see cref="T:System.Web.UI.UserControl" />機能の基本セットを持つクラス。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.TemplateControl>クラスは、共通のプロパティとメソッドを提供する抽象クラス、<xref:System.Web.UI.Page>クラスおよび<xref:System.Web.UI.UserControl>クラスです。 新しいインスタンス、<xref:System.Web.UI.TemplateControl>は直接作成されません。  
+  
+ <xref:System.Web.UI.TemplateControl>クラス宣言のデータ バインディング式をサポートするメソッドを定義します。  
+  
+-   使用して、<xref:System.Web.UI.TemplateControl.Eval%2A>メソッドの単純なプロパティや式などのデータ ソースを含むデータ バインディング式。  
+  
+-   使用して、<xref:System.Web.UI.TemplateControl.XPath%2A>解析および XPath のデータ バインディング式を評価するためのメソッドです。  
+  
+-   使用して、<xref:System.Web.UI.TemplateControl.XPathSelect%2A>を含む XPath 式とデータ バインディングのメソッドがステートメントを選択します。 結果を実装するノードのコレクション、<xref:System.Collections.IEnumerable>インターフェイスです。  
+  
+ データ バインディング式の詳細については、次を参照してください。[データ バインディング式の構文](http://msdn.microsoft.com/en-us/676beb1d-ddfa-4153-bba8-3c86dcb7ceca)と[データベースへのバインド](http://msdn.microsoft.com/en-us/ab7b2846-975b-4057-a948-45527497c742)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、という名前のコントロールを派生させる`MyControl`から、<xref:System.Web.UI.TemplateControl>クラスし、オーバーライド、<xref:System.Web.UI.TemplateControl.Construct%2A>メソッド。  ときに`MyControl`が初期化されている、オーバーライドされた<xref:System.Web.UI.TemplateControl.Construct%2A>メソッドが呼び出されます。  
+  
+ [!code-csharp[TemplateControl_Sample1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TemplateControl_Sample1/CS/tempcontrol_samples1.ascx.cs#1)]
+ [!code-vb[TemplateControl_Sample1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TemplateControl_Sample1/VB/tempcontrol_samples1.ascx.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TemplateControl ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateControl.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.TemplateControl" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.TemplateControl.%23ctor%2A>コンス トラクターは直接呼び出されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AbortTransaction">
+      <MemberSignature Language="C#" Value="public event EventHandler AbortTransaction;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler AbortTransaction" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.TemplateControl.AbortTransaction" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがトランザクションを終了したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、カスタム イベントのハンドラーを登録する方法を示します、<xref:System.Web.UI.TemplateControl.AbortTransaction>イベント。 <xref:System.Web.UI.TemplateControl>抽象クラスでは、このコード例では、<xref:System.Web.UI.Page>から派生するクラス、<xref:System.Web.UI.TemplateControl>クラスです。 `Account`サポートするクラスには、`Debit`操作がトランザクション単位として実行する必要があります。 この操作中に例外が発生する、トランザクションが終了しました。  
+  
+ [!code-csharp[TemplateControl_OnCommitTransaction#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TemplateControl_OnCommitTransaction/CS/templatecontrol_oncommittransaction.cs.aspx#1)]
+ [!code-vb[TemplateControl_OnCommitTransaction#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TemplateControl_OnCommitTransaction/VB/templatecontrol_oncommittransaction.vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppRelativeVirtualPath">
+      <MemberSignature Language="C#" Value="public string AppRelativeVirtualPath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AppRelativeVirtualPath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.TemplateControl.AppRelativeVirtualPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールの解析し、コンパイルされた元のファイルに相対アプリケーションの仮想ディレクトリのパスを設定します。</summary>
+        <value>パスを表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、ファイルを定義する、<xref:System.Web.UI.TemplateControl>コントロールが存在するディレクトリに以外の場合、ページの要求の処理を使用して、 <xref:System.Web.UI.TemplateControl.AppRelativeVirtualPath%2A> 、アプリケーションの相対仮想パスに返されるプロパティを<xref:System.Web.UI.TemplateControl>です。  
+  
+ <xref:System.Web.UI.Control.AppRelativeTemplateSourceDirectory%2A>で設定されている仮想パスのプロパティが設定に基づいて、<xref:System.Web.UI.TemplateControl.AppRelativeVirtualPath%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">設定されているパスが<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentException">設定されているパスにルートがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoHandlers">
+      <MemberSignature Language="C#" Value="protected virtual int AutoHandlers { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 AutoHandlers" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.TemplateControl.AutoHandlers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use of this property is not recommended because it is no longer useful. http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Web.UI.TemplateControl.AutoHandlers" /> ASP.NET NET 2.0 のプロパティは廃止されています。 生成されたクラスによって使用され、コード内で使用するためのものではありません。</summary>
+        <value>常に 0 です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommitTransaction">
+      <MemberSignature Language="C#" Value="public event EventHandler CommitTransaction;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler CommitTransaction" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.TemplateControl.CommitTransaction" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランザクションが完了したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、カスタム イベントのハンドラーを登録する方法を示します、<xref:System.Web.UI.TemplateControl.CommitTransaction>イベント。 <xref:System.Web.UI.TemplateControl>抽象クラスでは、このコード例では、<xref:System.Web.UI.Page>から派生するクラス、<xref:System.Web.UI.TemplateControl>クラスです。 `Account`サポートするクラスには、`Debit`操作がトランザクション単位として実行する必要があります。 この操作中に例外が発生する、トランザクションが終了しました。  
+  
+ [!code-csharp[TemplateControl_OnCommitTransaction#2](~/samples/snippets/csharp/VS_Snippets_WebNet/TemplateControl_OnCommitTransaction/CS/templatecontrol_oncommittransaction.cs.aspx#2)]
+ [!code-vb[TemplateControl_OnCommitTransaction#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TemplateControl_OnCommitTransaction/VB/templatecontrol_oncommittransaction.vb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Construct">
+      <MemberSignature Language="C#" Value="protected virtual void Construct ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Construct() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateControl.Construct" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイン時のロジックを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.TemplateControl.Construct%2A>メソッドにより、デザイン時のコードが実行されるは<xref:System.Web.UI.Page>と<xref:System.Web.UI.UserControl>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.TemplateControl.Construct%2A>から派生したカスタム コントロールのメソッド、<xref:System.Web.UI.TemplateControl>クラスです。  
+  
+ 完全定義の`MyControl`クラスを参照してください<xref:System.Web.UI.TemplateControl>です。  
+  
+ [!code-csharp[TemplateControl_Sample1#2](~/samples/snippets/csharp/VS_Snippets_WebNet/TemplateControl_Sample1/CS/tempcontrol_samples1.ascx.cs#2)]
+ [!code-vb[TemplateControl_Sample1#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TemplateControl_Sample1/VB/tempcontrol_samples1.ascx.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateResourceBasedLiteralControl">
+      <MemberSignature Language="C#" Value="protected System.Web.UI.LiteralControl CreateResourceBasedLiteralControl (int offset, int size, bool fAsciiOnly);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Web.UI.LiteralControl CreateResourceBasedLiteralControl(int32 offset, int32 size, bool fAsciiOnly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateControl.CreateResourceBasedLiteralControl(System.Int32,System.Int32,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.LiteralControl</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="size" Type="System.Int32" />
+        <Parameter Name="fAsciiOnly" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="offset">リソース内の文字列の開始のオフセット。</param>
+        <param name="size">文字列のバイト単位のサイズ。</param>
+        <param name="fAsciiOnly">7 ビットの ASCII 文字のみが、リソースの文字列に含まれるかどうかを示すブール値。</param>
+        <summary>リソースに格納されているリテラルの文字列にアクセスします。 <see cref="M:System.Web.UI.TemplateControl.CreateResourceBasedLiteralControl(System.Int32,System.Int32,System.Boolean)" />メソッドが、コード内から使用するものではありません。</summary>
+        <returns>A<see cref="T:System.Web.UI.LiteralControl" />リソース内のリテラル文字列を表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.TemplateControl.CreateResourceBasedLiteralControl%2A>メソッドがリソースに格納されているリテラルの文字列にアクセスするために使用し、コード内から使用するためのものではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableTheming">
+      <MemberSignature Language="C#" Value="public override bool EnableTheming { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableTheming" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.TemplateControl.EnableTheming" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定から派生したコントロールにテーマを適用するかどうかを示すブール値、<see cref="T:System.Web.UI.TemplateControl" />クラスです。</summary>
+        <value>
+          <see langword="true" />テーマを使用するにはそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.TemplateControl.EnableTheming%2A>プロパティがから派生したコントロールのテーマが有効かどうかを示す、<xref:System.Web.UI.TemplateControl>クラスです。 ときに、<xref:System.Web.UI.TemplateControl.EnableTheming%2A>プロパティは`true`、コントロール スキンを適用するアプリケーションのテーマのディレクトリが検索されます。 テーマのディレクトリ内の特定のコントロール スキンが存在しない場合、スキンは適用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Error">
+      <MemberSignature Language="C#" Value="public event EventHandler Error;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Error" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.TemplateControl.Error" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>未処理の例外がスローされたときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Eval">
+      <MemberSignature Language="C#" Value="protected object Eval (string expression);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance object Eval(string expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateControl.Eval(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="expression" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="expression">ナビゲーションのパスは、コンテナーからバインドされたコントロール プロパティに配置するパブリック プロパティの値。</param>
+        <summary>データ バインディング式を評価します。</summary>
+        <returns>データ バインディング式を評価して得た結果オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値`expression`パブリック プロパティに評価される必要があります。  
+  
+ <xref:System.Web.UI.TemplateControl.Eval%2A>メソッドの呼び出し、<xref:System.Web.UI.DataBinder.Eval%2A?displayProperty=nameWithType>メソッドを使用して、<xref:System.Web.UI.Page.GetDataItem%2A>に対して式が評価されるオブジェクト参照を解決する方法です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">含まれているコントロールでのみ、データ バインディング メソッドを使用することができます、<see cref="T:System.Web.UI.Page" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="expression" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="expression" /> が空の文字列 ("") です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Eval">
+      <MemberSignature Language="C#" Value="protected string Eval (string expression, string format);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance string Eval(string expression, string format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateControl.Eval(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="expression" Type="System.String" />
+        <Parameter Name="format" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="expression">ナビゲーションのパスは、コンテナーからバインドされたコントロール プロパティに配置するパブリック プロパティの値。</param>
+        <param name="format">結果に適用する .NET Framework の書式指定文字列。</param>
+        <summary>結果を表示する、指定した書式指定文字列を使用してデータ バインディング式を評価します。</summary>
+        <returns>データ バインディング式と文字列型への変換の評価の結果を文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値`expression`パブリック プロパティに評価される必要があります。  
+  
+ <xref:System.Web.UI.TemplateControl.Eval%2A>メソッドの呼び出し、<xref:System.Web.UI.DataBinder.Eval%2A>メソッドを使用して、<xref:System.Web.UI.Page.GetDataItem%2A>に対して式が評価されるオブジェクト参照を解決する方法です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">データ バインディングのメソッドに含まれるコントロールにのみ使用できます、<see cref="T:System.Web.UI.Page" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="expression" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="expression" /> が空の文字列 ("") です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FrameworkInitialize">
+      <MemberSignature Language="C#" Value="protected virtual void FrameworkInitialize ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void FrameworkInitialize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateControl.FrameworkInitialize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生したコントロールを初期化、<see cref="T:System.Web.UI.TemplateControl" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバーライドしない場合、<xref:System.Web.UI.TemplateControl.FrameworkInitialize%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetGlobalResourceObject">
+      <MemberSignature Language="C#" Value="protected object GetGlobalResourceObject (string className, string resourceKey);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance object GetGlobalResourceObject(string className, string resourceKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateControl.GetGlobalResourceObject(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="className" Type="System.String" />
+        <Parameter Name="resourceKey" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="className">表す文字列、<see cref="P:System.Web.Compilation.ResourceExpressionFields.ClassKey" />です。</param>
+        <param name="resourceKey">表す文字列、<see cref="P:System.Web.Compilation.ResourceExpressionFields.ResourceKey" />です。</param>
+        <summary>アプリケーション レベル リソース オブジェクトを、指定した <see cref="P:System.Web.Compilation.ResourceExpressionFields.ClassKey" /> プロパティおよび <see cref="P:System.Web.Compilation.ResourceExpressionFields.ResourceKey" /> プロパティに基づいて取得します。</summary>
+        <returns>要求されたリソース オブジェクトを表すオブジェクトそれ以外の場合、<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション レベルのリソースは App_GlobalResources フォルダーに格納されます。 詳細については、次を参照してください。 [ASP.NET アプリケーションのリソース](http://msdn.microsoft.com/en-us/5a29f26b-d94d-48d9-864e-5ee8890dc265)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.TemplateControl.GetGlobalResourceObject%2A>という名前の文字列にアクセスするメソッド`GlobalResourceString1`という名前のグローバル リソースから`MyResource.resx`App_GlobalResources フォルダーにします。 `className`パラメーターは`MyResource`.resx 拡張子が付かないです。  
+  
+ [!code-aspx-csharp[System.Web.UI.TemplateControl_GetResources#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.TemplateControl_GetResources/cs/sourcecs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.TemplateControl_GetResources#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.TemplateControl_GetResources/vb/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetGlobalResourceObject">
+      <MemberSignature Language="C#" Value="protected object GetGlobalResourceObject (string className, string resourceKey, Type objType, string propName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance object GetGlobalResourceObject(string className, string resourceKey, class System.Type objType, string propName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateControl.GetGlobalResourceObject(System.String,System.String,System.Type,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="className" Type="System.String" />
+        <Parameter Name="resourceKey" Type="System.String" />
+        <Parameter Name="objType" Type="System.Type" />
+        <Parameter Name="propName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="className">表す文字列、<see cref="P:System.Web.Compilation.ResourceExpressionFields.ClassKey" />です。</param>
+        <param name="resourceKey">表す文字列、<see cref="P:System.Web.Compilation.ResourceExpressionFields.ResourceKey" />です。</param>
+        <param name="objType">取得するリソース内のオブジェクトの型。</param>
+        <param name="propName">取得するオブジェクトのプロパティ名。</param>
+        <summary>アプリケーション レベル リソース オブジェクトに基づいて、指定された取得<see cref="P:System.Web.Compilation.ResourceExpressionFields.ClassKey" />と<see cref="P:System.Web.Compilation.ResourceExpressionFields.ResourceKey" />プロパティ、オブジェクトの種類、およびリソースのプロパティの名前。</summary>
+        <returns>要求されたリソース オブジェクトを表すオブジェクトそれ以外の場合、<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション レベルのリソースは App_GlobalResources フォルダーに格納されます。 詳細については、次を参照してください。 [ASP.NET アプリケーションのリソース](http://msdn.microsoft.com/en-us/5a29f26b-d94d-48d9-864e-5ee8890dc265)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLocalResourceObject">
+      <MemberSignature Language="C#" Value="protected object GetLocalResourceObject (string resourceKey);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance object GetLocalResourceObject(string resourceKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateControl.GetLocalResourceObject(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resourceKey" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="resourceKey">表す文字列、<see cref="P:System.Web.Compilation.ResourceExpressionFields.ResourceKey" />です。</param>
+        <summary>ページ レベル リソース オブジェクトに基づいて、指定された取得<see cref="P:System.Web.Compilation.ResourceExpressionFields.ResourceKey" />プロパティです。</summary>
+        <returns>要求されたリソース オブジェクトを表すオブジェクトそれ以外の場合、<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ローカル リソース ファイルは、App_LocalResources ディレクトリに格納されます。 詳細については、次を参照してください[ASP.NET アプリケーションのリソース。](http://msdn.microsoft.com/en-us/5a29f26b-d94d-48d9-864e-5ee8890dc265)  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.TemplateControl.GetLocalResourceObject%2A>という名前の文字列にアクセスするメソッド`LocalResourceString1`: App_LocalResources フォルダーに配置されているローカル ページ リソースからです。  
+  
+ [!code-aspx-csharp[System.Web.UI.TemplateControl_GetResources#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.TemplateControl_GetResources/cs/sourcecs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.TemplateControl_GetResources#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.TemplateControl_GetResources/vb/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLocalResourceObject">
+      <MemberSignature Language="C#" Value="protected object GetLocalResourceObject (string resourceKey, Type objType, string propName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance object GetLocalResourceObject(string resourceKey, class System.Type objType, string propName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateControl.GetLocalResourceObject(System.String,System.Type,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resourceKey" Type="System.String" />
+        <Parameter Name="objType" Type="System.Type" />
+        <Parameter Name="propName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="resourceKey">表す文字列、<see cref="P:System.Web.Compilation.ResourceExpressionFields.ResourceKey" />です。</param>
+        <param name="objType">取得するリソース オブジェクトの型。</param>
+        <param name="propName">取得するリソース オブジェクトのプロパティ名。</param>
+        <summary>ページ レベル リソース オブジェクトに基づいて、指定された取得<see cref="P:System.Web.Compilation.ResourceExpressionFields.ResourceKey" />プロパティ、オブジェクトの種類、およびプロパティ名。</summary>
+        <returns>要求されたリソース オブジェクトを表すオブジェクトそれ以外の場合、<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ローカル リソース ファイルは、App_LocalResources ディレクトリに格納されます。 詳細については、次を参照してください[ASP.NET アプリケーションのリソース。](http://msdn.microsoft.com/en-us/5a29f26b-d94d-48d9-864e-5ee8890dc265)  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="LoadControl">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Control" /> を読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテナー コントロールにコントロールを読み込むときに、コンテナーでは、すべての現在のイベントに追いつくことになるまで、追加したコントロールのイベントを発生させます。 ただし、追加されたコントロールがない遅延を解消するポストバック データの処理です。 追加したコントロールの検証を含む、ポストバック データの処理に参加するでコントロールを追加、<xref:System.Web.UI.Control.Init>イベントではなくで、<xref:System.Web.UI.Control.Load>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="LoadControl">
+      <MemberSignature Language="C#" Value="public System.Web.UI.Control LoadControl (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.UI.Control LoadControl(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateControl.LoadControl(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Control</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">コントロールのファイルへの仮想パス。</param>
+        <summary>負荷、<see cref="T:System.Web.UI.Control" />ファイルからオブジェクトが指定された仮想パスに基づいています。</summary>
+        <returns>指定したを返します<see cref="T:System.Web.UI.Control" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されたオブジェクトがコントロールでは、キャッシュをサポートする場合、<xref:System.Web.UI.TemplateControl.LoadControl%2A>メソッドではありませんが、実際に<xref:System.Web.UI.Control>オブジェクトです。 これは、<xref:System.Web.UI.PartialCachingControl>オブジェクト。 場合、`virtualPath`パラメーターが相対で読み込まれたコントロールのパス、パスの相対パスです、<xref:System.Web.UI.TemplateControl>です。  
+  
+ コンテナー コントロールにコントロールを読み込むときに、コンテナーでは、すべての現在のイベントに追いつくことになるまで、追加したコントロールのイベントを発生させます。 ただし、追加されたコントロールがない遅延を解消するポストバック データの処理です。 追加したコントロールの検証を含む、ポストバック データの処理に参加するでコントロールを追加、<xref:System.Web.UI.Control.Init>イベントではなくで、<xref:System.Web.UI.Control.Load>イベント。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Web.UI.TemplateControl.LoadControl%2A> ASP.NET ページにユーザー コントロールを追加します。  
+  
+ `OnInit`イベント メソッドでは、このページを使用して、<xref:System.Web.UI.TemplateControl.LoadControl%2A>ページ上のユーザー コントロールをプログラムで作成するメソッド。 このメソッドを追加するコントロール、<xref:System.Web.UI.Control.Controls%2A>のプロパティ、 <xref:System.Web.UI.WebControls.PlaceHolder> Web サーバー コントロールの名前付き`Placeholder1`します。  
+  
+ 定義については、`MyControl`このコード例で使用されるクラスを参照してください<xref:System.Web.UI.TemplateControl>です。  
+  
+ [!code-csharp[TemplateControl_Sample1#3](~/samples/snippets/csharp/VS_Snippets_WebNet/TemplateControl_Sample1/CS/TempControl_Samples1.aspx#3)]
+ [!code-vb[TemplateControl_Sample1#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TemplateControl_Sample1/VB/tempcontrol_samples1.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">仮想パスが<see langword="null" />または空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadControl">
+      <MemberSignature Language="C#" Value="public System.Web.UI.Control LoadControl (Type t, object[] parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.UI.Control LoadControl(class System.Type t, object[] parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateControl.LoadControl(System.Type,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Control</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="t" Type="System.Type" />
+        <Parameter Name="parameters" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="t">コントロールの型。</param>
+        <param name="parameters">呼び出すコンストラクターのパラメーターと、数、順序、および型が一致する引数の配列。 場合<c>パラメーター</c>は空の配列または<see langword="null" />、(既定のコンス トラクター) のパラメーターをとらないコンス トラクターが呼び出されます。</param>
+        <summary>読み込み、<see cref="T:System.Web.UI.Control" />オブジェクト パラメーターを基に、指定された型とコンス トラクターです。</summary>
+        <returns>指定したを返します<see cref="T:System.Web.UI.UserControl" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されたオブジェクトにユーザー コントロールは、キャッシュをサポートする場合、<xref:System.Web.UI.TemplateControl.LoadControl%2A>メソッドではありませんが、実際に<xref:System.Web.UI.UserControl>オブジェクトです。 これは、<xref:System.Web.UI.PartialCachingControl>オブジェクト。  
+  
+ コンテナー コントロールにコントロールを読み込むときに、コンテナーでは、すべての現在のイベントに追いつくことになるまで、追加したコントロールのイベントを発生させます。 ただし、追加されたコントロールがない遅延を解消するポストバック データの処理です。 追加したコントロールの検証を含む、ポストバック データの処理に参加するでコントロールを追加、<xref:System.Web.UI.Control.Init>イベントではなくで、<xref:System.Web.UI.Control.Load>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadTemplate">
+      <MemberSignature Language="C#" Value="public System.Web.UI.ITemplate LoadTemplate (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.UI.ITemplate LoadTemplate(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateControl.LoadTemplate(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">ユーザー コントロール ファイルへの仮想パス。</param>
+        <summary>インスタンスを取得、<see cref="T:System.Web.UI.ITemplate" />外部ファイルからのインターフェイスです。</summary>
+        <returns>指定されたテンプレートのインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.TemplateControl.LoadTemplate%2A>ユーザー コントロールに交互の項目として追加する方法、 <xref:System.Web.UI.WebControls.DataList> Web サーバー コントロールの名前付き`DataList1`します。 ユーザー コントロールを実装する、<xref:System.Web.UI.ITemplate>インターフェイスし、に含まれます。  
+  
+ [!code-csharp[System.Web.UI.TemplateControl_LoadTemplate#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.TemplateControl_LoadTemplate/CS/loadtemplatecs.aspx#1)]
+ [!code-vb[System.Web.UI.TemplateControl_LoadTemplate#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.TemplateControl_LoadTemplate/VB/loadtemplatevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnAbortTransaction">
+      <MemberSignature Language="C#" Value="protected virtual void OnAbortTransaction (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnAbortTransaction(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateControl.OnAbortTransaction(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Web.UI.TemplateControl.AbortTransaction" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.TemplateControl.OnAbortTransaction%2A>と<xref:System.Web.UI.TemplateControl.OnCommitTransaction%2A>メソッドです。 <xref:System.Web.UI.TemplateControl>抽象クラスでは、このコード例では、<xref:System.Web.UI.Page>から派生するクラス、<xref:System.Web.UI.TemplateControl>クラスです。 `Account`サポートするクラスには、`Debit`操作がトランザクション単位として実行する必要があります。 この操作中に例外が発生する、トランザクションが終了しました。  
+  
+ [!code-csharp[TemplateControl_OnCommitTransaction#3](~/samples/snippets/csharp/VS_Snippets_WebNet/TemplateControl_OnCommitTransaction/CS/templatecontrol_oncommittransaction.cs.aspx#3)]
+ [!code-vb[TemplateControl_OnCommitTransaction#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TemplateControl_OnCommitTransaction/VB/templatecontrol_oncommittransaction.vb.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCommitTransaction">
+      <MemberSignature Language="C#" Value="protected virtual void OnCommitTransaction (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnCommitTransaction(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateControl.OnCommitTransaction(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Web.UI.TemplateControl.CommitTransaction" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Web.UI.TemplateControl.OnCommitTransaction%2A>処理ロジックが、ページやユーザー コントロールが参加するすべてのトランザクションのメソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.TemplateControl.OnAbortTransaction%2A>と<xref:System.Web.UI.TemplateControl.OnCommitTransaction%2A>メソッドです。 <xref:System.Web.UI.TemplateControl>抽象クラスでは、このコード例では、<xref:System.Web.UI.Page>から派生するクラス、<xref:System.Web.UI.TemplateControl>クラスです。 `Account`サポートするクラスには、`Debit`操作がトランザクション単位として実行する必要があります。 この操作中に例外が発生する、トランザクションが終了しました。  
+  
+ [!code-csharp[TemplateControl_OnCommitTransaction#2](~/samples/snippets/csharp/VS_Snippets_WebNet/TemplateControl_OnCommitTransaction/CS/templatecontrol_oncommittransaction.cs.aspx#2)]
+ [!code-vb[TemplateControl_OnCommitTransaction#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TemplateControl_OnCommitTransaction/VB/templatecontrol_oncommittransaction.vb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnError">
+      <MemberSignature Language="C#" Value="protected virtual void OnError (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnError(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateControl.OnError(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Web.UI.TemplateControl.Error" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、考えられるを使用する方法を示します、<xref:System.Web.UI.TemplateControl.OnError%2A>メソッドです。 文字列を作成、無効ないくつかの引数の例外につながります。 <xref:System.Web.UI.TemplateControl>クラスは、抽象クラスは、このコード例に書き込んだを使用して、<xref:System.Web.UI.Page>から派生するクラス、<xref:System.Web.UI.TemplateControl>クラスです。  
+  
+```vb  
+<%@ Page language="VB" %>  
+ <html>  
+  <head>  
+  <script language="VB" runat="server">  
+  Sub Page_Load(sender as object, e as System.EventArgs)  
+  AddHandler Page.Error, AddressOf Error_Handler  
+  try  
+  Dim myString as string = "Hello"  
+  'An exception is raised because the length of 'myString' is less than '6'.  
+  Dim mySubString as string= myString.Substring(0,6)  
+  catch e1 As Exception  
+  OnError (EventArgs.Empty)  
+  End try  
+  End Sub  
+  Sub Error_Handler(sender as object,e as System.EventArgs)  
+  Response.Write("<br><b>An Error was raised</b>")  
+  End Sub  
+  </script>  
+  </head>  
+ </html>  
+```  
+  
+```csharp  
+<%@ Page language="c#" %>  
+ <html>  
+  <head>  
+  <script language="C#" runat="server">  
+  void Page_Load(object sender, System.EventArgs e)  
+  {  
+  Page.Error += new System.EventHandler(Error_Handler);  
+  try  
+  {  
+  string myString = "Hello";  
+  // An exception is raised because the length of 'myString' is less than '6'.  
+  string mySubString = myString.Substring(0,6);  
+  }  
+  catch(Exception)  
+  {  
+  OnError(EventArgs.Empty);  
+  }  
+  }  
+  void Error_Handler(object sender,System.EventArgs e)  
+  {  
+  Response.Write("<br><b>An Error was raised</b>");  
+  }  
+  </script>  
+  </head>  
+ </html>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="ParseControl">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>入力に文字列を解析して、 <see cref="T:System.Web.UI.Control" /> ASP.NET Web ページやユーザー コントロール上のオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.TemplateControl.ParseControl%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="ParseControl">
+      <MemberSignature Language="C#" Value="public System.Web.UI.Control ParseControl (string content);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.UI.Control ParseControl(string content) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateControl.ParseControl(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Control</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="content" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="content">ユーザー コントロールを表す文字列。</param>
+        <summary>入力に文字列を解析して、 <see cref="T:System.Web.UI.Control" /> Web フォーム ページやユーザー コントロール上のオブジェクト。</summary>
+        <returns>解析された<see cref="T:System.Web.UI.Control" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `content` .Ascx ファイルになど、パラメーターには、ユーザー コントロールが含まれます。 この文字列は、コードを含めることはできませんので、<xref:System.Web.UI.TemplateControl.ParseControl%2A>メソッド コンパイルが行われない。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、 <xref:System.Web.UI.WebControls.Button> Web サーバー コントロールを使用して、<xref:System.Web.UI.TemplateControl.ParseControl%2A>メソッドに結果を追加し、<xref:System.Web.UI.ControlCollection>のコレクション、 <xref:System.Web.UI.WebControls.PlaceHolder> Web サーバー コントロールの名前付き`myPlaceholder`します。  
+  
+ [!code-aspx-csharp[System.Web.UI.TemplateControl.ParseControl#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.TemplateControl.ParseControl/CS/templatecontrol_parsecontrolcs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.TemplateControl.ParseControl#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.TemplateControl.ParseControl/VB/templatecontrol_parsecontrolvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseControl">
+      <MemberSignature Language="C#" Value="public System.Web.UI.Control ParseControl (string content, bool ignoreParserFilter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.UI.Control ParseControl(string content, bool ignoreParserFilter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateControl.ParseControl(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Control</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="content" Type="System.String" />
+        <Parameter Name="ignoreParserFilter" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="content">ユーザー コントロールを表す文字列。</param>
+        <param name="ignoreParserFilter">パーサーのフィルターを無視するかどうかを指定する値。</param>
+        <summary>入力に文字列を解析して、 <see cref="T:System.Web.UI.Control" /> ASP.NET Web ページやユーザー コントロール上のオブジェクト。</summary>
+        <returns>解析対象のコントロールです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `content`パラメーターには、ユーザー コントロール (.ascx ファイルの内容) が含まれています。 この文字列は、コードを含めることはできませんので、<xref:System.Web.UI.TemplateControl.ParseControl%2A>メソッド コンパイルが行われない。  
+  
+ `ignoreParserFilter`パラメーターを使用して、<xref:System.Web.UI.PageParserFilter>クラスが無視されます。 <xref:System.Web.UI.PageParserFilter>クラスは、解析時では、ページの項目が使用できるかどうかを決定する ASP.NET パーサーによって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadStringResource">
+      <MemberSignature Language="C#" Value="public object ReadStringResource ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object ReadStringResource() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateControl.ReadStringResource" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>文字列リソースを読み取ります。 <see cref="M:System.Web.UI.TemplateControl.ReadStringResource" />メソッドが、コード内から使用するものではありません。</summary>
+        <returns>リソースを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.TemplateControl.ReadStringResource%2A>メソッドが、コード内から使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><see cref="M:System.Web.UI.TemplateControl.ReadStringResource" />は現在サポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadStringResource">
+      <MemberSignature Language="C#" Value="public static object ReadStringResource (Type t);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object ReadStringResource(class System.Type t) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateControl.ReadStringResource(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="t" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="t"><see cref="T:System.Type" />リソースを読み取るのです。</param>
+        <summary>文字列リソースを読み取ります。 <see cref="M:System.Web.UI.TemplateControl.ReadStringResource(System.Type)" />メソッドが、コード内から使用するものではありません。</summary>
+        <returns>リソースを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.TemplateControl.ReadStringResource%2A>メソッドが、コード内から使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetStringResourcePointer">
+      <MemberSignature Language="C#" Value="protected void SetStringResourcePointer (object stringResourcePointer, int maxResourceOffset);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void SetStringResourcePointer(object stringResourcePointer, int32 maxResourceOffset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateControl.SetStringResourcePointer(System.Object,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stringResourcePointer" Type="System.Object" />
+        <Parameter Name="maxResourceOffset" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="stringResourcePointer">文字列リソースへのポインターを表すオブジェクト。</param>
+        <param name="maxResourceOffset">リソースのサイズ。</param>
+        <summary>文字列リソースへのポインターを設定します。 <see cref="M:System.Web.UI.TemplateControl.SetStringResourcePointer(System.Object,System.Int32)" />メソッドが生成されたクラスによって使用され、コード内から使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportAutoEvents">
+      <MemberSignature Language="C#" Value="protected virtual bool SupportAutoEvents { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportAutoEvents" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.TemplateControl.SupportAutoEvents" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.TemplateControl" />コントロールには、自動イベントがサポートされています。</summary>
+        <value>常に <see langword="true" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.TemplateControl.SupportAutoEvents%2A>プロパティは、自動イベントがサポートされているかどうかを示します。 <xref:System.Web.UI.TemplateControl.SupportAutoEvents%2A>プロパティは読み取り専用であり、`true`すべてのケース。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IFilterResolutionService.CompareFilters">
+      <MemberSignature Language="C#" Value="int IFilterResolutionService.CompareFilters (string filter1, string filter2);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Web.UI.IFilterResolutionService.CompareFilters(string filter1, string filter2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateControl.System#Web#UI#IFilterResolutionService#CompareFilters(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filter1" Type="System.String" />
+        <Parameter Name="filter2" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="filter1">デバイス フィルター名。</param>
+        <param name="filter2">デバイス フィルター名。</param>
+        <summary>2 つの指定したデバイス フィルターの間に親子関係が存在するかどうかを示す値を返します。</summary>
+        <returns><paramref name="filter1" /> が <paramref name="filter2" /> の親である場合は 1。<paramref name="filter2" /> が <paramref name="filter1" /> の親である場合は -1。それ以外の場合は <paramref name="filter1" /> と <paramref name="filter2" /> の間に親子関係が存在しない場合は 0。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.TemplateControl.System%23Web%23UI%23IFilterResolutionService%23CompareFilters%2A>メソッドの一部である、<xref:System.Web.UI.IFilterResolutionService>インターフェイスで、コントロールがデザイナー環境でのデバイス フィルターを使用する方法に固有です。 コントロールが解析またはブラウザーの要求のコンテキスト外のデザイナー環境で保存されるとき、<xref:System.Web.UI.IFilterResolutionService>かどうか、現在のコントロールが影響を受けたフィルターの名前と名前付きフィルターとは、特定のデバイス フィルター階層の一部かどうかを決定する方法を提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IFilterResolutionService.EvaluateFilter">
+      <MemberSignature Language="C#" Value="bool IFilterResolutionService.EvaluateFilter (string filterName);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Web.UI.IFilterResolutionService.EvaluateFilter(string filterName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateControl.System#Web#UI#IFilterResolutionService#EvaluateFilter(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filterName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="filterName">デバイス フィルターの名前。</param>
+        <summary>指定されたフィルターが、現在のフィルターのオブジェクトの型であるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />指定されたフィルターが現在のフィルターのオブジェクトに適用可能な型の場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.TemplateControl.System%23Web%23UI%23IFilterResolutionService%23EvaluateFilter%2A>メソッドの一部である、<xref:System.Web.UI.IFilterResolutionService>インターフェイスで、コントロールがデザイナー環境でのデバイス フィルターを使用する方法に固有です。 コントロールが解析またはブラウザーの要求のコンテキスト外のデザイナー環境で保存されるとき、<xref:System.Web.UI.IFilterResolutionService>かどうか、現在のコントロールが影響を受けたフィルターの名前と名前付きフィルターとは、特定のデバイス フィルター階層の一部かどうかを決定する方法を提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TestDeviceFilter">
+      <MemberSignature Language="C#" Value="public virtual bool TestDeviceFilter (string filterName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TestDeviceFilter(string filterName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateControl.TestDeviceFilter(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filterName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="filterName">テストするブラウザー名。</param>
+        <summary>デバイス フィルターが、HTTP 要求に適用されるかどうかを示すブール値を返します。</summary>
+        <returns>
+          <see langword="true" />クライアントのブラウザーが指定されている場合<paramref name="filterName" />は指定されたブラウザーと同じです。 それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.TemplateControl.TestDeviceFilter%2A>メソッドを呼び出して、<xref:System.Web.Configuration.HttpCapabilitiesBase.IsBrowser%2A>メソッドです。 デバイスのフィルター処理の詳細については、次を参照してください。[デバイス フィルター処理の概要](http://msdn.microsoft.com/library/bdfeaa58-dedd-4c0d-8610-988aac0eff19)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteUTF8ResourceString">
+      <MemberSignature Language="C#" Value="protected void WriteUTF8ResourceString (System.Web.UI.HtmlTextWriter output, int offset, int size, bool fAsciiOnly);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteUTF8ResourceString(class System.Web.UI.HtmlTextWriter output, int32 offset, int32 size, bool fAsciiOnly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateControl.WriteUTF8ResourceString(System.Web.UI.HtmlTextWriter,System.Int32,System.Int32,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="output" Type="System.Web.UI.HtmlTextWriter" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="size" Type="System.Int32" />
+        <Parameter Name="fAsciiOnly" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="output">書き込み先のコントロールです。</param>
+        <param name="offset">内の開始位置<c>値</c>です。</param>
+        <param name="size">内の文字数<c>値</c>を使用します。</param>
+        <param name="fAsciiOnly">
+          <see langword="true" />再エンコード; をバイパスするにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>リソース文字列を<see cref="T:System.Web.UI.HtmlTextWriter" />コントロール。 <see cref="M:System.Web.UI.TemplateControl.WriteUTF8ResourceString(System.Web.UI.HtmlTextWriter,System.Int32,System.Int32,System.Boolean)" />メソッドが生成されたクラスによって使用され、コード内から使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">無効なデータがアクセスしています。<paramref name="offset" />または<paramref name="size" />が 0 未満です。  
+  
+ \- または  
+  
+ 合計<paramref name="offset" />と<paramref name="size" />が、リソースのサイズを超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="XPath">
+      <MemberSignature Language="C#" Value="protected object XPath (string xPathExpression);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance object XPath(string xPathExpression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateControl.XPath(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xPathExpression" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="xPathExpression">評価する XPath 式。 詳細については、「<see cref="T:System.Web.UI.XPathBinder" />」を参照してください。</param>
+        <summary>XPath のデータ バインディング式を評価します。</summary>
+        <returns>データ バインディング式を評価して得た結果オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.TemplateControl.XPath%2A>メソッドの呼び出し、<xref:System.Web.UI.XPathBinder.Eval%2A?displayProperty=nameWithType>メソッドを使用して、<xref:System.Web.UI.Page.GetDataItem%2A>を解決する方法、<xref:System.Xml.XPath.IXPathNavigable>オブジェクト参照に対して評価される式。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.TemplateControl.XPath%2A>メソッドで、<xref:System.Web.UI.WebControls.Repeater>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.TemplateControl_XPath1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.TemplateControl_XPath1/cs/templatecontrolxpathcs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.TemplateControl_XPath1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.TemplateControl_XPath1/vb/templatecontrolxpathvb.aspx#1)]  
+  
+ 前のコード例では、次のテストの XML データを使用できます。  
+  
+```  
+<contacts>  
+   <contact id="1">  
+     <name>contact name 1</name>  
+     <note>contact note 1</note>  
+   </contact>  
+   <contact id="2">  
+     <name>contact name 2</name>  
+     <note>contact note 2</note>  
+   </contact>  
+</contacts>  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">含まれているコントロールでのみ、データ バインディング メソッドを使用することができます、<see cref="T:System.Web.UI.Page" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="XPath">
+      <MemberSignature Language="C#" Value="protected string XPath (string xPathExpression, string format);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance string XPath(string xPathExpression, string format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateControl.XPath(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xPathExpression" Type="System.String" />
+        <Parameter Name="format" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="xPathExpression">評価する XPath 式。 詳細については、「<see cref="T:System.Web.UI.XPathBinder" />」を参照してください。</param>
+        <param name="format">結果に適用する .NET Framework の書式指定文字列。</param>
+        <summary>結果を表示する、指定した書式指定文字列を使用して、XPath のデータ バインディング式を評価します。</summary>
+        <returns>データ バインディング式と文字列型への変換の評価の結果を文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.TemplateControl.XPath%2A>メソッドの呼び出し、<xref:System.Web.UI.XPathBinder.Eval%2A?displayProperty=nameWithType>メソッドを使用して、<xref:System.Web.UI.Page.GetDataItem%2A>を解決する方法、<xref:System.Xml.XPath.IXPathNavigable>オブジェクト参照に対して評価される式。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">含まれているコントロールでのみ、データ バインディング メソッドを使用することができます、<see cref="T:System.Web.UI.Page" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="XPath">
+      <MemberSignature Language="C#" Value="protected object XPath (string xPathExpression, System.Xml.IXmlNamespaceResolver resolver);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance object XPath(string xPathExpression, class System.Xml.IXmlNamespaceResolver resolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateControl.XPath(System.String,System.Xml.IXmlNamespaceResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xPathExpression" Type="System.String" />
+        <Parameter Name="resolver" Type="System.Xml.IXmlNamespaceResolver" />
+      </Parameters>
+      <Docs>
+        <param name="xPathExpression">評価する XPath 式。 詳細については、「<see cref="T:System.Web.UI.XPathBinder" />」を参照してください。</param>
+        <param name="resolver">名前空間の解決に使用されるプレフィックスと名前空間のマッピングのセット。</param>
+        <summary>名前空間の解決、指定したプレフィックスと名前空間のマッピングを使用して、XPath のデータ バインディング式を評価します。</summary>
+        <returns>データ バインディング式を評価して得た結果オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.TemplateControl.XPath%2A>メソッドの呼び出し、<xref:System.Web.UI.XPathBinder.Eval%2A?displayProperty=nameWithType>メソッドを使用して、<xref:System.Web.UI.Page.GetDataItem%2A>を解決する方法、<xref:System.Xml.XPath.IXPathNavigable>オブジェクト参照に対して評価される式。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">含まれているコントロールでのみ、データ バインディング メソッドを使用することができます、<see cref="T:System.Web.UI.Page" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="XPath">
+      <MemberSignature Language="C#" Value="protected string XPath (string xPathExpression, string format, System.Xml.IXmlNamespaceResolver resolver);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance string XPath(string xPathExpression, string format, class System.Xml.IXmlNamespaceResolver resolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateControl.XPath(System.String,System.String,System.Xml.IXmlNamespaceResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xPathExpression" Type="System.String" />
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="resolver" Type="System.Xml.IXmlNamespaceResolver" />
+      </Parameters>
+      <Docs>
+        <param name="xPathExpression">評価する XPath 式。 詳細については、「<see cref="T:System.Web.UI.XPathBinder" />」を参照してください。</param>
+        <param name="format">結果に適用する .NET Framework の書式指定文字列。</param>
+        <param name="resolver">名前空間の解決に使用されるプレフィックスと名前空間のマッピングのセット。</param>
+        <summary>指定したプレフィックスと名前空間の解決の名前空間のマッピングと、指定した書式指定文字列を使用して、結果を表示する XPath のデータ バインディング式を評価します。</summary>
+        <returns>データ バインディング式と文字列型への変換の評価の結果を文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.TemplateControl.XPath%2A>メソッドの呼び出し、<xref:System.Web.UI.XPathBinder.Eval%2A?displayProperty=nameWithType>メソッドを使用して、<xref:System.Web.UI.Page.GetDataItem%2A>を解決する方法、<xref:System.Xml.XPath.IXPathNavigable>オブジェクト参照に対して評価される式。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">含まれているコントロールでのみ、データ バインディング メソッドを使用することができます、<see cref="T:System.Web.UI.Page" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="XPathSelect">
+      <MemberSignature Language="C#" Value="protected System.Collections.IEnumerable XPathSelect (string xPathExpression);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance class System.Collections.IEnumerable XPathSelect(string xPathExpression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateControl.XPathSelect(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xPathExpression" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="xPathExpression">評価する XPath 式。 詳細については、「<see cref="T:System.Web.UI.XPathBinder" />」を参照してください。</param>
+        <summary>XPath のデータ バインディング式を評価しを実装するノードのコレクションを返します、<see cref="T:System.Collections.IEnumerable" />インターフェイスです。</summary>
+        <returns><see cref="T:System.Collections.IEnumerable" />ノードの一覧です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.TemplateControl.XPathSelect%2A>メソッドの呼び出し、<xref:System.Web.UI.XPathBinder.Select%2A?displayProperty=nameWithType>メソッドを使用して、<xref:System.Web.UI.Page.GetDataItem%2A>を解決する方法、<xref:System.Xml.XPath.IXPathNavigable>オブジェクト参照に対して評価される式。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.TemplateControl.XPathSelect%2A>メソッドで、<xref:System.Web.UI.WebControls.Repeater>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.TemplateControl_XPath1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.TemplateControl_XPath1/cs/templatecontrolxpathcs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.TemplateControl_XPath1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.TemplateControl_XPath1/vb/templatecontrolxpathvb.aspx#1)]  
+  
+ 前のコード例では、次のテストの XML データを使用できます。  
+  
+```  
+<contacts>  
+   <contact id="1">  
+     <name>contact name 1</name>  
+     <note>contact note 1</note>  
+   </contact>  
+   <contact id="2">  
+     <name>contact name 2</name>  
+     <note>contact note 2</note>  
+   </contact>  
+</contacts>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XPathSelect">
+      <MemberSignature Language="C#" Value="protected System.Collections.IEnumerable XPathSelect (string xPathExpression, System.Xml.IXmlNamespaceResolver resolver);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance class System.Collections.IEnumerable XPathSelect(string xPathExpression, class System.Xml.IXmlNamespaceResolver resolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateControl.XPathSelect(System.String,System.Xml.IXmlNamespaceResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xPathExpression" Type="System.String" />
+        <Parameter Name="resolver" Type="System.Xml.IXmlNamespaceResolver" />
+      </Parameters>
+      <Docs>
+        <param name="xPathExpression">評価する XPath 式。 詳細については、「<see cref="T:System.Web.UI.XPathBinder" />」を参照してください。</param>
+        <param name="resolver">名前空間の解決に使用されるプレフィックスと名前空間のマッピングのセット。</param>
+        <summary>名前空間の解決の指定したプレフィックスと名前空間のマッピングを使用して、XPath のデータ バインディング式を評価しを実装するノードのコレクションを返します、<see cref="T:System.Collections.IEnumerable" />インターフェイスです。</summary>
+        <returns><see cref="T:System.Collections.IEnumerable" />ノードの一覧です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.TemplateControl.XPathSelect%2A>メソッドの呼び出し、<xref:System.Web.UI.XPathBinder.Select%2A?displayProperty=nameWithType>メソッドを使用して、<xref:System.Web.UI.Page.GetDataItem%2A>を解決する方法、<xref:System.Xml.XPath.IXPathNavigable>オブジェクト参照に対して評価される式。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

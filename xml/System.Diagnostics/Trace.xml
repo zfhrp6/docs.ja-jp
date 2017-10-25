@@ -1,0 +1,2376 @@
+<Type Name="Trace" FullName="System.Diagnostics.Trace">
+  <TypeSignature Language="C#" Value="public sealed class Trace" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Trace extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.Trace" />
+  <AssemblyInfo>
+    <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>メソッドのセットを提供するのに役立つプロパティが、コードの実行をトレースしたりします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティとメソッドを使用することができます、<xref:System.Diagnostics.Trace>インストルメント リリースするクラスを作成します。 インストルメンテーションでは、実際の設定で実行されているアプリケーションのヘルスを監視することができます。 トレースを行う問題を特定し、実行中のシステムに影響を与えずに修正します。  
+  
+ このクラスを表示するメソッドを提供する<xref:System.Diagnostics.Trace.Assert%2A> ダイアログ ボックスとは、常にアサーションを出力する<xref:System.Diagnostics.Trace.Fail%2A>です。 このクラスは、次の種類の書き込みメソッドを提供します。 <xref:System.Diagnostics.Trace.Write%2A>、 <xref:System.Diagnostics.Trace.WriteLine%2A>、 <xref:System.Diagnostics.Trace.WriteIf%2A>、および<xref:System.Diagnostics.Trace.WriteLineIf%2A>です。  
+  
+ <xref:System.Diagnostics.BooleanSwitch>と<xref:System.Diagnostics.TraceSwitch>クラスがトレース出力を動的に制御する手段を提供します。 アプリケーションを再コンパイルしなくても、これらのスイッチの値を変更できます。 構成ファイルを使用して、スイッチを設定する方法については、次を参照してください。、<xref:System.Diagnostics.Switch>クラスおよび[する方法: 作成、初期化とトレース スイッチを設定する](~/docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md)トピックです。  
+  
+ トレース出力のターゲットを追加してカスタマイズできます<xref:System.Diagnostics.TraceListener>インスタンスをまたはからインスタンスを削除するには、<xref:System.Diagnostics.Trace.Listeners%2A>コレクション。 <xref:System.Diagnostics.Trace.Listeners%2A>コレクションの両方によって共有は、<xref:System.Diagnostics.Debug>と<xref:System.Diagnostics.Trace>クラスです。 どちらかのクラスをトレース リスナーをリスナーに追加の両方を追加します。 既定では、トレース出力を使用して、<xref:System.Diagnostics.DefaultTraceListener>クラスです。  
+  
+> [!NOTE]
+>  トレース リスナーを追加する、<xref:System.Diagnostics.Trace.Listeners%2A>トレース リスナーによって使用されるリソースが利用できない場合、コレクションは、トレース中にスローされる例外を発生ことができます。 条件とスローされる例外は、トレース リスナーに依存し、このトピックの内容を列挙できません。 呼び出しを配置することができます、<xref:System.Diagnostics.Trace>メソッド`try` / `catch`を検出し、トレース リスナーから任意の例外処理ブロック。  
+  
+> [!NOTE]
+>  部分的に信頼されたコードにトレース リスナーを追加する場合、<xref:System.Security.SecurityException>例外ためトレース リスナーを追加するに必要があります<xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode>権限です。 Visual Studio でのサンド ボックス内で実行されている部分的に信頼されたコードをトレースするには、トレース リスナーを追加しないでください。 代わりに、表示、<xref:System.Diagnostics.Trace>と<xref:System.Diagnostics.Debug>にメッセージが、**出力**ウィンドウです。  
+  
+ <xref:System.Diagnostics.Trace>クラスを取得または設定のレベルのプロパティを提供<xref:System.Diagnostics.Trace.Indent%2A>、 <xref:System.Diagnostics.Trace.IndentSize%2A>、するかどうかと<xref:System.Diagnostics.Trace.AutoFlush%2A>各書き込みの後にします。  
+  
+ 設定する、<xref:System.Diagnostics.Trace.AutoFlush%2A>と<xref:System.Diagnostics.Trace.IndentSize%2A>の<xref:System.Diagnostics.Trace>アプリケーションの名前に対応する構成ファイルを編集することができます。 構成ファイルは、次の例のようにフォーマットする必要があります。  
+  
+```  
+<configuration>  
+  <system.diagnostics>  
+    <trace autoflush="false" indentsize="3" />  
+  </system.diagnostics>  
+</configuration>  
+```  
+  
+ <xref:System.Diagnostics.ConditionalAttribute>のメソッドに属性が適用される<xref:System.Diagnostics.Trace>です。 サポートされるコンパイラ<xref:System.Diagnostics.ConditionalAttribute>"TRACE"が条件付きコンパイル シンボルとして定義されている限り、これらのメソッドへの呼び出しは無視されます。 コンパイラのドキュメントを参照してくださいかどうか<xref:System.Diagnostics.ConditionalAttribute>はサポートされていると条件付きコンパイル シンボルを定義するための構文。  
+  
+> [!NOTE]
+>  Visual Studio プロジェクトで、既定で、デバッグ ビルドの"DEBUG"条件付きコンパイル シンボルが定義されているし、"TRACE"シンボルを定義してリリース ビルドのどちらの場合。 この動作を無効にする方法については、Visual Studio のマニュアルを参照してください。  
+  
+ C# で"TRACE"条件付きコンパイル シンボルを定義するには、追加、 `/d:TRACE` 、コマンドラインを使用してコードをコンパイルするときに、コンパイラのコマンドラインにオプションまたは追加`#define TRACE`ファイルの先頭にします。 Visual basic では、追加、`/d:TRACE=True`コンパイラ コマンドラインにオプションまたは追加`#Const TRACE=True`ファイルにします。  
+  
+ <xref:System.Diagnostics.ConditionalAttribute>C コンパイラではサポートされていません。 同等の機能を提供するには、メソッドに対する呼び出しを囲む必要があります<xref:System.Diagnostics.Trace>で、`#if defined(TRACE) ... #endif`を追加して、ブロック、`/DTRACE`コンパイラ コマンドラインにオプションまたは追加`#define TRACE`ファイルにします。  
+  
+   
+  
+## Examples  
+ 次の例では<xref:System.Diagnostics.Trace>開始され、プログラムの実行の終了を示します。 また、例では、<xref:System.Diagnostics.Trace.Indent%2A?displayProperty=nameWithType>と<xref:System.Diagnostics.Trace.Unindent%2A?displayProperty=nameWithType>トレース出力を区別するためのメソッドです。 使用のより完全な例については<xref:System.Diagnostics.Trace>を参照してください[する方法: アプリケーション コードにトレース ステートメントを追加](~/docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)です。  
+  
+ [!code-cpp[Classic Trace Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Trace Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Trace Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Trace Example/CS/source.cs#1)]
+ [!code-vb[Classic Trace Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Trace Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを操作します。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+    <threadsafe>この型はスレッド セーフです。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName="Assert">
+      <MemberSignature Language="C#" Value="public static void Assert (bool condition);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Assert(bool condition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.Assert(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="condition" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="condition">評価する条件式。 条件が <see langword="true" /> の場合、エラー メッセージは送信されず、メッセージ ボックスは表示されません。</param>
+        <summary>条件をチェックします。条件が <see langword="false" /> の場合、呼び出し履歴を見せるメッセージ ボックスを表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Diagnostics.Trace.Assert%2A?displayProperty=nameWithType>リリースでのアサーションを実行する場合、メソッドが作成されます。 <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType>方法は、デバッグ ビルドでのみ機能します。 詳細については、次を参照してください。[マネージ コードのアサーション](http://msdn.microsoft.com/library/70ab2522-6486-4076-a1a9-e0f11cd0f3a1)です。  
+  
+ 通常、<xref:System.Diagnostics.Trace.Assert%28System.Boolean%29>プログラム開発中に論理エラーを識別するメソッドを使用します。 <xref:System.Diagnostics.Trace.Assert%28System.Boolean%29>条件を評価します。 結果は場合`false`、エラー メッセージを送信、<xref:System.Diagnostics.Trace.Listeners%2A>コレクション。 追加することでこの動作をカスタマイズすることができます、<xref:System.Diagnostics.TraceListener>から、1 つを削除するか、<xref:System.Diagnostics.Trace.Listeners%2A>コレクション。  
+  
+ アプリケーションのユーザー インターフェイス モードで実行すると、ファイルと行番号とコール スタックを示すメッセージ ボックスが表示されます。 メッセージ ボックスには、3 つのボタンが含まれています。:**中止**、**再試行**、と**無視**です。 クリックすると、**中止**ボタンがアプリケーションを終了します。 クリックすると**再試行**か、アプリケーションが、デバッガーで実行されているされていない場合、デバッガーを開くには、デバッガーでコードを送信します。 クリックすると**無視**コード内の次の命令を続行します。  
+  
+> [!NOTE]
+>  メッセージ ボックスの表示の存在に依存、<xref:System.Diagnostics.DefaultTraceListener>です。 場合、<xref:System.Diagnostics.DefaultTraceListener>に含まれていない、<xref:System.Diagnostics.Trace.Listeners%2A>コレクション、メッセージ ボックスは表示されません。 <xref:System.Diagnostics.DefaultTraceListener>して削除できます、 [&lt;オフ&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/clear-element-for-listeners-for-trace.md)、 [&lt;削除&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/remove-element-for-listeners-for-trace.md)、または呼び出すことによって、 <xref:System.Diagnostics.TraceListenerCollection.Clear%2A> メソッド<xref:System.Diagnostics.Trace.Listeners%2A>プロパティ (`System.Diagnostics.Trace.Listeners.Clear()`)。  
+  
+ 動作を変更することができます、<xref:System.Diagnostics.DefaultTraceListener>アプリケーションの名前に対応する構成ファイルにします。 このファイルでを有効にして assert メッセージ ボックスを無効にしたり設定、<xref:System.Diagnostics.DefaultTraceListener.LogFileName%2A?displayProperty=nameWithType>プロパティです。 構成ファイルに次のようにフォーマットする必要があります。  
+  
+```  
+<configuration>  
+  <system.diagnostics>  
+    <switches>  
+      <add name="mySwitch" value="4"/>  
+    </switches>  
+    <trace autoflush="false" indentsize="4"/>  
+    <assert assertuienabled="true" logfilename=".\TraceLog.txt"/>  
+  </system.diagnostics>  
+</configuration>  
+```  
+  
+   
+  
+## Examples  
+ 次の例では、配列のインデックスを作成します。 何らかのアクションは、インデックスの値を設定するが実行されます。 次に、コードの呼び出し<xref:System.Diagnostics.Trace.Assert%2A>値が有効なインデックスを確認します。 有効でない場合、<xref:System.Diagnostics.Trace.Assert%2A>呼び出し履歴に出力します。  
+  
+ [!code-cpp[Classic Trace.Assert Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Trace.Assert Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Trace.Assert Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Trace.Assert Example/CS/source.cs#1)]
+ [!code-vb[Classic Trace.Assert Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Trace.Assert Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Assert">
+      <MemberSignature Language="C#" Value="public static void Assert (bool condition, string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Assert(bool condition, string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.Assert(System.Boolean,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="condition" Type="System.Boolean" />
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="condition">評価する条件式。 条件が <see langword="true" /> の場合、指定したメッセージは送信されず、メッセージ ボックスは表示されません。</param>
+        <param name="message"><see cref="P:System.Diagnostics.Trace.Listeners" /> コレクションに送信するメッセージ。</param>
+        <summary>条件をチェックします。条件が <see langword="false" /> の場合、指定したメッセージを出力し、コール スタックを示すメッセージ ボックスを表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Diagnostics.Trace.Assert%2A?displayProperty=nameWithType>リリースでのアサーションを実行する場合、メソッドが作成されます。 <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType>方法は、デバッグ ビルドでのみ機能します。 詳細については、次を参照してください。[マネージ コードのアサーション](http://msdn.microsoft.com/library/70ab2522-6486-4076-a1a9-e0f11cd0f3a1)です。  
+  
+ 通常、<xref:System.Diagnostics.Trace.Assert%28System.Boolean%2CSystem.String%29>プログラム開発中に論理エラーを識別するメソッドを使用します。 <xref:System.Diagnostics.Trace.Assert%28System.Boolean%2CSystem.String%29>条件を評価します。 結果は場合`false`、指定された診断メッセージを送信、<xref:System.Diagnostics.Trace.Listeners%2A>コレクション。 追加することでこの動作をカスタマイズすることができます、<xref:System.Diagnostics.TraceListener>から、1 つを削除するか、<xref:System.Diagnostics.Trace.Listeners%2A>コレクション。  
+  
+ アプリケーションのユーザー インターフェイス モードで実行すると、ファイルと行番号とコール スタックを示すメッセージ ボックスが表示されます。 メッセージ ボックスには、3 つのボタンが含まれています。:**中止**、**再試行**、と**無視**です。 クリックすると、**中止**ボタンがアプリケーションを終了します。 クリックすると**再試行**か、アプリケーションが、デバッガーで実行されているされていない場合、デバッガーを開くには、デバッガーでコードを送信します。 クリックすると**無視**コード内の次の命令を続行します。  
+  
+> [!NOTE]
+>  メッセージ ボックスの表示の存在に依存、<xref:System.Diagnostics.DefaultTraceListener>です。 場合、<xref:System.Diagnostics.DefaultTraceListener>に含まれていない、<xref:System.Diagnostics.Trace.Listeners%2A>コレクション、メッセージ ボックスは表示されません。 <xref:System.Diagnostics.DefaultTraceListener>して削除できます、 [&lt;オフ&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/clear-element-for-listeners-for-trace.md)、 [&lt;削除&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/remove-element-for-listeners-for-trace.md)、または呼び出すことによって、 <xref:System.Diagnostics.TraceListenerCollection.Clear%2A> メソッド<xref:System.Diagnostics.Trace.Listeners%2A>プロパティ (`System.Diagnostics.Trace.Listeners.Clear()`)。  
+  
+ 動作を変更することができます、<xref:System.Diagnostics.DefaultTraceListener>アプリケーションの名前に対応する構成ファイルにします。 このファイルでを有効にして assert メッセージ ボックスを無効にしたり設定、<xref:System.Diagnostics.DefaultTraceListener.LogFileName%2A?displayProperty=nameWithType>プロパティです。 構成ファイルに次のようにフォーマットする必要があります。  
+  
+```  
+<configuration>  
+  <system.diagnostics>  
+    <switches>  
+      <add name="mySwitch" value="4"/>  
+    </switches>  
+    <trace autoflush="false" indentsize="4"/>  
+    <assert assertuienabled="true" logfilename=".\TraceLog.txt"/>  
+  </system.diagnostics>  
+</configuration>  
+```  
+  
+   
+  
+## Examples  
+ 次の例が理解することを確認、`type`パラメーターが無効です。 場合、`type`が渡された`null`、<xref:System.Diagnostics.Trace.Assert%2A>メッセージを出力します。  
+  
+ [!code-cpp[Classic Trace.Assert1 Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Trace.Assert1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Trace.Assert1 Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Trace.Assert1 Example/CS/source.cs#1)]
+ [!code-vb[Classic Trace.Assert1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Trace.Assert1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Assert">
+      <MemberSignature Language="C#" Value="public static void Assert (bool condition, string message, string detailMessage);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Assert(bool condition, string message, string detailMessage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.Assert(System.Boolean,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="condition" Type="System.Boolean" />
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="detailMessage" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="condition">評価する条件式。 条件が <see langword="true" /> の場合、指定したメッセージは送信されず、メッセージ ボックスは表示されません。</param>
+        <param name="message"><see cref="P:System.Diagnostics.Trace.Listeners" /> コレクションに送信するメッセージ。</param>
+        <param name="detailMessage"><see cref="P:System.Diagnostics.Trace.Listeners" /> コレクションに送信する詳細なメッセージ。</param>
+        <summary>条件をチェックします。条件が <see langword="false" /> の場合、指定した 2 つのメッセージを出力し、コール スタックを示すメッセージ ボックスを表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Diagnostics.Trace.Assert%2A?displayProperty=nameWithType>リリースでのアサーションを実行する場合、メソッドが作成されます。 <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType>方法は、デバッグ ビルドでのみ機能します。 詳細については、次を参照してください。[マネージ コードのアサーション](http://msdn.microsoft.com/library/70ab2522-6486-4076-a1a9-e0f11cd0f3a1)です。  
+  
+ 通常、<xref:System.Diagnostics.Trace.Assert%28System.Boolean%2CSystem.String%2CSystem.String%29>プログラム開発中に論理エラーを識別するメソッドを使用します。 <xref:System.Diagnostics.Trace.Assert%2A>条件を評価します。 結果は場合`false`、指定された診断メッセージと詳細なメッセージを送信、<xref:System.Diagnostics.Trace.Listeners%2A>コレクション。 追加することでこの動作をカスタマイズすることができます、<xref:System.Diagnostics.TraceListener>から、1 つを削除するか、<xref:System.Diagnostics.Trace.Listeners%2A>コレクション。  
+  
+ アプリケーションのユーザー インターフェイス モードで実行すると、ファイルと行番号とコール スタックを示すメッセージ ボックスが表示されます。 メッセージ ボックスには、3 つのボタンが含まれています。:**中止**、**再試行**、と**無視**です。 クリックすると、**中止**ボタンがアプリケーションを終了します。 クリックすると**再試行**か、アプリケーションが、デバッガーで実行されているされていない場合、デバッガーを開くには、デバッガーでコードを送信します。 クリックすると**無視**コード内の次の命令を続行します。  
+  
+> [!NOTE]
+>  メッセージ ボックスの表示の存在に依存、<xref:System.Diagnostics.DefaultTraceListener>です。 場合、<xref:System.Diagnostics.DefaultTraceListener>に含まれていない、<xref:System.Diagnostics.Trace.Listeners%2A>コレクション、メッセージ ボックスは表示されません。 <xref:System.Diagnostics.DefaultTraceListener>して削除できます、 [&lt;オフ&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/clear-element-for-listeners-for-trace.md)、 [&lt;削除&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/remove-element-for-listeners-for-trace.md)、または呼び出すことによって、 <xref:System.Diagnostics.TraceListenerCollection.Clear%2A> メソッド<xref:System.Diagnostics.Trace.Listeners%2A>プロパティ (`System.Diagnostics.Trace.Listeners.Clear()`)。  
+  
+ 動作を変更することができます、<xref:System.Diagnostics.DefaultTraceListener>アプリケーションの名前に対応する構成ファイルにします。 このファイルでを有効にして assert メッセージ ボックスを無効にしたり設定、<xref:System.Diagnostics.DefaultTraceListener.LogFileName%2A?displayProperty=nameWithType>プロパティです。 構成ファイルに次のようにフォーマットする必要があります。  
+  
+```  
+<configuration>  
+  <system.diagnostics>  
+    <switches>  
+      <add name="mySwitch" value="4"/>  
+    </switches>  
+    <trace autoflush="false" indentsize="4"/>  
+    <assert assertuienabled="true" logfilename=".\TraceLog.txt"/>  
+  </system.diagnostics>  
+</configuration>  
+```  
+  
+   
+  
+## Examples  
+ 次の例が理解することを確認、`type`パラメーターが無効です。 場合、`type`が渡された`null`、<xref:System.Diagnostics.Trace.Assert%2A>メッセージを出力します。  
+  
+ [!code-cpp[Classic Trace.Assert2 Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Trace.Assert2 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Trace.Assert2 Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Trace.Assert2 Example/CS/source.cs#1)]
+ [!code-vb[Classic Trace.Assert2 Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Trace.Assert2 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoFlush">
+      <MemberSignature Language="C#" Value="public static bool AutoFlush { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool AutoFlush" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Trace.AutoFlush" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべての書き込み後に <see cref="P:System.Diagnostics.Trace.Listeners" /> で <see cref="M:System.Diagnostics.Trace.Flush" /> を呼び出すかどうかを取得または設定します。</summary>
+        <value>
+          すべての書き込み後に <see cref="P:System.Diagnostics.Trace.Listeners" /> で <see cref="M:System.Diagnostics.Trace.Flush" /> を呼び出す場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は、`false` です。  
+  
+ 明示的に呼び出す場合を除き、ストリームのフラッシュは、基になるエンコーダー フラッシュされません<xref:System.Diagnostics.Trace.Flush%2A>または<xref:System.Diagnostics.Trace.Close%2A>です。 設定<xref:System.Diagnostics.Trace.AutoFlush%2A>に`true`に、ストリーム バッファーからデータがフラッシュされますが、エンコーダーの状態はフラッシュされないことを意味します。 これにより、次の文字のブロックを正常にエンコードできるように (一部の文字) の状態を保持するエンコーダー。 このシナリオでは、UTF8、UTF7、特定の文字をエンコードするため、エンコーダーは、隣接する文字または文字列を受信した後に影響します。  
+  
+ 設定する、<xref:System.Diagnostics.Trace.AutoFlush%2A>と<xref:System.Diagnostics.Trace.IndentSize%2A>の<xref:System.Diagnostics.Trace>アプリケーションの名前に対応する構成ファイルを編集することもできます。 構成ファイルは、次の例のようにフォーマットする必要があります。  
+  
+```  
+<configuration>  
+  <system.diagnostics>  
+    <trace autoflush="false" indentsize="3" />  
+  </system.diagnostics>  
+</configuration>  
+```  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを操作します。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public static void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>出力バッファーをフラッシュし、<see cref="P:System.Diagnostics.Trace.Listeners" /> を閉じます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 出力するとき、ファイルなどをこのメソッドを使用して、<xref:System.Diagnostics.TextWriterTraceListener>です。  
+  
+ 明示的に呼び出す場合を除き、ストリームのフラッシュは、基になるエンコーダー フラッシュされません<xref:System.Diagnostics.Trace.Flush%2A>または<xref:System.Diagnostics.Trace.Close%2A>です。 設定<xref:System.Diagnostics.Trace.AutoFlush%2A>に`true`に、ストリーム バッファーからデータがフラッシュされますが、エンコーダーの状態はフラッシュされないことを意味します。 これにより、次の文字のブロックを正常にエンコードできるように (一部の文字) の状態を保持するエンコーダー。 このシナリオでは、UTF8、UTF7、特定の文字をエンコードするため、エンコーダーは、隣接する文字または文字列を受信した後に影響します。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Diagnostics.TextWriterTraceListener>という`myTextListener`です。 `myTextListener`使用して、<xref:System.IO.StreamWriter>と呼ばれる`myOutputWriter`という名前のファイルに書き込む`TestFile.txt`です。 例では、ファイル、ストリーム、およびテキスト ライターを作成、ファイルに 1 行のテキストを書き込みますをフラッシュし、出力を閉じます。  
+  
+ [!code-cpp[Classic Trace.Flush Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Trace.Flush Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Trace.Flush Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Trace.Flush Example/CS/source.cs#1)]
+ [!code-vb[Classic Trace.Flush Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Trace.Flush Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを操作します。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CorrelationManager">
+      <MemberSignature Language="C#" Value="public static System.Diagnostics.CorrelationManager CorrelationManager { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Diagnostics.CorrelationManager CorrelationManager" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Trace.CorrelationManager" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.CorrelationManager</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このトレースのスレッドの相関マネージャーを取得します。</summary>
+        <value>このトレースのスレッドに関連付けられた <see cref="T:System.Diagnostics.CorrelationManager" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  これは、ほとんどのアプリケーションが何度で使用する必要がない高度なプロパティです。  
+  
+ <xref:System.Diagnostics.CorrelationManager>クラスはスレッド バインド コンテキストに論理操作の id を格納し、タグ ストアドの id を持つスレッドによって生成される各トレース イベントを自動的に使用されるメソッドを提供します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを操作します。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Fail">
+      <MemberSignature Language="C#" Value="public static void Fail (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Fail(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.Fail(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">出力するメッセージ。</param>
+        <summary>指定されたエラー メッセージを出力します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のトレース リスナーの既定の動作が出力には、`message`アプリケーション モードではユーザー インターフェイス、およびを実行すると、メッセージ ボックスへのパラメーター、<xref:System.Diagnostics.TraceListener>のインスタンスにある、<xref:System.Diagnostics.Trace.Listeners%2A>コレクション。  
+  
+> [!NOTE]
+>  メッセージ ボックスの表示がの存在に依存する、<xref:System.Diagnostics.DefaultTraceListener>です。 場合、<xref:System.Diagnostics.DefaultTraceListener>に含まれていない、<xref:System.Diagnostics.Trace.Listeners%2A>コレクション、メッセージ ボックスは表示されません。 <xref:System.Diagnostics.DefaultTraceListener>して削除できます、 [&lt;オフ&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/clear-element-for-listeners-for-trace.md)、 [&lt;削除&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/remove-element-for-listeners-for-trace.md)、または呼び出すことによって、 <xref:System.Diagnostics.TraceListenerCollection.Clear%2A> メソッド<xref:System.Diagnostics.Trace.Listeners%2A>プロパティ (`System.Diagnostics.Trace.Listeners.Clear()`)。  
+  
+ この動作をカスタマイズするには、追加することによって、 <xref:System.Diagnostics.TraceListener> 、または、1 つを削除することで、<xref:System.Diagnostics.Trace.Listeners%2A>コレクション。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Diagnostics.Trace.Fail%2A>例外処理中にメッセージを印刷する方法です。  
+  
+ [!code-cpp[Classic Trace.Fail Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Trace.Fail Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Trace.Fail Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Trace.Fail Example/CS/source.cs#1)]
+ [!code-vb[Classic Trace.Fail Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Trace.Fail Example/VB/source.vb#1)]  
+  
+ 使用することも、 <xref:System.Diagnostics.Trace.Fail%2A> switch ステートメント内のメソッドです。  
+  
+ [!code-cpp[Classic Trace.Fail Example#2](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Trace.Fail Example/CPP/source.cpp#2)]
+ [!code-csharp[Classic Trace.Fail Example#2](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Trace.Fail Example/CS/source.cs#2)]
+ [!code-vb[Classic Trace.Fail Example#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Trace.Fail Example/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Fail">
+      <MemberSignature Language="C#" Value="public static void Fail (string message, string detailMessage);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Fail(string message, string detailMessage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.Fail(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="detailMessage" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">出力するメッセージ。</param>
+        <param name="detailMessage">出力する詳細メッセージ。</param>
+        <summary>エラー メッセージ、および詳細なエラー メッセージを出力します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の動作が既定のトレース リスナーを出力するは、`message`パラメーターおよび`detailedMessage`アプリケーション モードではユーザー インターフェイス、およびを実行すると、メッセージ ボックスへのパラメーター、<xref:System.Diagnostics.TraceListener>のインスタンスにある、<xref:System.Diagnostics.Trace.Listeners%2A>コレクション。  
+  
+> [!NOTE]
+>  メッセージ ボックスの表示がの存在に依存する、<xref:System.Diagnostics.DefaultTraceListener>です。 場合、<xref:System.Diagnostics.DefaultTraceListener>に含まれていない、<xref:System.Diagnostics.Trace.Listeners%2A>コレクション、メッセージ ボックスは表示されません。 <xref:System.Diagnostics.DefaultTraceListener>して削除できます、 [&lt;オフ&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/clear-element-for-listeners-for-trace.md)、 [&lt;削除&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/remove-element-for-listeners-for-trace.md)、または呼び出すことによって、 <xref:System.Diagnostics.TraceListenerCollection.Clear%2A> メソッド<xref:System.Diagnostics.Trace.Listeners%2A>プロパティ (`System.Diagnostics.Trace.Listeners.Clear()`)。  
+  
+ この動作をカスタマイズするには、追加することによって、 <xref:System.Diagnostics.TraceListener> 、または、1 つを削除することで、<xref:System.Diagnostics.Trace.Listeners%2A>コレクション。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Diagnostics.Trace.Fail%2A>例外処理中にメッセージを印刷する方法です。  
+  
+ [!code-cpp[Classic Trace.Fail1 Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Trace.Fail1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Trace.Fail1 Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Trace.Fail1 Example/CS/source.cs#1)]
+ [!code-vb[Classic Trace.Fail1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Trace.Fail1 Example/VB/source.vb#1)]  
+  
+ 使用することも、 <xref:System.Diagnostics.Trace.Fail%2A> switch ステートメント内のメソッドです。  
+  
+ [!code-cpp[Classic Trace.Fail1 Example#2](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Trace.Fail1 Example/CPP/source.cpp#2)]
+ [!code-csharp[Classic Trace.Fail1 Example#2](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Trace.Fail1 Example/CS/source.cs#2)]
+ [!code-vb[Classic Trace.Fail1 Example#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Trace.Fail1 Example/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Flush">
+      <MemberSignature Language="C#" Value="public static void Flush ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Flush() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.Flush" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>出力バッファーをフラッシュします。また、バッファー内のデータが <see cref="P:System.Diagnostics.Trace.Listeners" /> に書き込まれるようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 明示的に呼び出す場合を除き、ストリームのフラッシュは、基になるエンコーダー フラッシュされません<xref:System.Diagnostics.Trace.Flush%2A>または<xref:System.Diagnostics.Trace.Close%2A>です。 設定<xref:System.Diagnostics.Trace.AutoFlush%2A>に`true`に、ストリーム バッファーからデータがフラッシュされますが、エンコーダーの状態はフラッシュされないことを意味します。 これにより、次の文字のブロックを正常にエンコードできるように (一部の文字) の状態を保持するエンコーダー。 このシナリオでは、UTF8、UTF7、特定の文字をエンコードするため、エンコーダーは、隣接する文字または文字列を受信した後に影響します。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Diagnostics.TextWriterTraceListener>という`myTextListener`です。 `myTextListener`使用して、<xref:System.IO.StreamWriter>と呼ばれる`myOutputWriter`という名前のファイルに書き込む`TestFile.txt`です。 例では、ファイル、ストリーム、およびテキスト ライターを作成、ファイルに 1 行のテキストを書き込みますをフラッシュし、出力を閉じます。  
+  
+ [!code-cpp[Classic Trace.Flush Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Trace.Flush Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Trace.Flush Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Trace.Flush Example/CS/source.cs#1)]
+ [!code-vb[Classic Trace.Flush Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Trace.Flush Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Indent">
+      <MemberSignature Language="C#" Value="public static void Indent ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Indent() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.Indent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="P:System.Diagnostics.Trace.IndentLevel" /> を 1 だけ大きくします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例をインクリメントおよびデクリメント インデント レベルとトレース メッセージを出力します。  
+  
+ [!code-cpp[Classic Trace.IndentLevel Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Trace.IndentLevel Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Trace.IndentLevel Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Trace.IndentLevel Example/CS/source.cs#1)]
+ [!code-vb[Classic Trace.IndentLevel Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Trace.IndentLevel Example/VB/source.vb#1)]  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+List of errors:  
+     Error 1: File not found  
+     Error 2: Directory not found  
+End of list of errors  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndentLevel">
+      <MemberSignature Language="C#" Value="public static int IndentLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 IndentLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Trace.IndentLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インデント レベルを取得または設定します。</summary>
+        <value>インデント レベル。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.Trace.IndentLevel%2A>プロパティを表す回数を超えるサイズのインデント<xref:System.Diagnostics.Trace.IndentSize%2A>を適用します。 このプロパティは、スレッド/あたりの要求ごとに格納されます。  
+  
+   
+  
+## Examples  
+ 次の例をインクリメントおよびデクリメント インデント レベルとトレース メッセージを出力します。  
+  
+ [!code-cpp[Classic Trace.IndentLevel Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Trace.IndentLevel Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Trace.IndentLevel Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Trace.IndentLevel Example/CS/source.cs#1)]
+ [!code-vb[Classic Trace.IndentLevel Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Trace.IndentLevel Example/VB/source.vb#1)]  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+  
+List of errors:  
+     Error 1: File not found  
+     Error 2: Directory not found  
+End of list of errors  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndentSize">
+      <MemberSignature Language="C#" Value="public static int IndentSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 IndentSize" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Trace.IndentSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 つのインデントに含まれるスペースの数を取得または設定します。</summary>
+        <value>インデントに含まれるスペースの数。 既定値は 4 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Diagnostics.TextWriterTraceListener>スペースとしてこの数値を解釈します。 <xref:System.Diagnostics.EventLogTraceListener>はこの値を無視します。  
+  
+ このプロパティは、スレッド/あたりの要求ごとに格納されます。  
+  
+ 設定する、<xref:System.Diagnostics.Trace.AutoFlush%2A>と<xref:System.Diagnostics.Trace.IndentSize%2A>の<xref:System.Diagnostics.Trace>アプリケーションの名前に対応する構成ファイルを編集することもできます。 構成ファイルは、次の例のようにフォーマットする必要があります。  
+  
+```  
+<configuration>  
+  <system.diagnostics>  
+    <trace autoflush="false" indentsize="3" />  
+  </system.diagnostics>  
+</configuration>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Listeners">
+      <MemberSignature Language="C#" Value="public static System.Diagnostics.TraceListenerCollection Listeners { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Diagnostics.TraceListenerCollection Listeners" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Trace.Listeners" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.TraceListenerCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トレース出力を監視しているリスナーのコレクションを取得します。</summary>
+        <value>トレース出力を監視している型 <see cref="T:System.Diagnostics.TraceListener" /> のコレクションを表す <see cref="T:System.Diagnostics.TraceListenerCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リスナーでは、トレース出力の書式設定された出力が生成します。 既定では、コレクションにはインスタンスが含まれています、<xref:System.Diagnostics.DefaultTraceListener>クラスです。 既定のリスナーを削除する場合は、呼び出し、<xref:System.Diagnostics.TraceListenerCollection.Remove%2A>メソッドのインスタンスを渡すと、<xref:System.Diagnostics.DefaultTraceListener>です。 コンソール ウィンドウに出力をリダイレクトするには、インスタンスを追加、<xref:System.Diagnostics.ConsoleTraceListener>クラスです。  
+  
+> [!NOTE]
+>  <xref:System.Diagnostics.Trace.Listeners%2A>コレクションの両方によって共有は、<xref:System.Diagnostics.Debug>と<xref:System.Diagnostics.Trace>クラスです。 どちらかのクラスをトレース リスナーをリスナーに追加の両方を追加します。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Diagnostics.ConsoleTraceListener>コンソール画面に出力します。 コードは、新しいリスナーを追加、<xref:System.Diagnostics.Trace.Listeners%2A>です。  
+  
+ [!code-cpp[Classic Trace.Listeners Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Trace.Listeners Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Trace.Listeners Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Trace.Listeners Example/CS/source.cs#1)]
+ [!code-vb[Classic Trace.Listeners Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Trace.Listeners Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを操作します。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Refresh">
+      <MemberSignature Language="C#" Value="public static void Refresh ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Refresh() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.Refresh" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>トレース構成データを更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションが開始されたときに、トレースの構成データがキャプチャされます。 アプリケーションの開始後に、構成データを変更する場合を呼び出す、<xref:System.Diagnostics.Trace.Refresh%2A>トレース構成データを更新する方法です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceError">
+      <MemberSignature Language="C#" Value="public static void TraceError (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void TraceError(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.TraceError(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">書き込む情報メッセージ。</param>
+        <summary>指定されたメッセージを使用して、エラー メッセージを <see cref="P:System.Diagnostics.Trace.Listeners" /> コレクションのトレース リスナーに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.Trace.TraceError%2A>呼び出し、`TraceEvent`各トレース リスナーと、トレース イベントの種類のメソッド<xref:System.Diagnostics.TraceEventType.Error>、情報メッセージをメッセージの文字列として渡すことです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceError">
+      <MemberSignature Language="C#" Value="public static void TraceError (string format, params object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void TraceError(string format, object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.TraceError(System.String,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="args" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="format">書式指定文字列内のオブジェクトに対応する、0 個以上の書式項目を含む、 <c>args</c>配列。</param>
+        <param name="args">0 個以上の書式設定対象オブジェクトを含んだ <see langword="object" /> 配列。</param>
+        <summary>指定されたオブジェクトの配列および書式設定情報を使用して、<see cref="P:System.Diagnostics.Trace.Listeners" /> コレクションのトレース リスナーにエラー メッセージを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.Trace.TraceError%2A>呼び出し、`TraceEvent`トレース イベントの種類のトレース リスナーにメソッド<xref:System.Diagnostics.TraceEventType.Error>、書式設定情報を含むオブジェクトの配列として、メッセージの内容を渡します。 参照してください、<xref:System.String.Format%2A>メソッドの詳細については、`format`と`args`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceInformation">
+      <MemberSignature Language="C#" Value="public static void TraceInformation (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void TraceInformation(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.TraceInformation(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">書き込む情報メッセージ。</param>
+        <summary>指定されたメッセージを使用して、情報メッセージを <see cref="P:System.Diagnostics.Trace.Listeners" /> コレクションのトレース リスナーに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.Trace.TraceInformation%2A>呼び出し、`TraceEvent`各トレース リスナーと、トレース イベントの種類のメソッド<xref:System.Diagnostics.TraceEventType.Information>、情報メッセージをメッセージの文字列として渡すことです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceInformation">
+      <MemberSignature Language="C#" Value="public static void TraceInformation (string format, params object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void TraceInformation(string format, object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.TraceInformation(System.String,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="args" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="format">書式指定文字列内のオブジェクトに対応する、0 個以上の書式項目を含む、 <c>args</c>配列。</param>
+        <param name="args">0 個以上の書式設定対象オブジェクトを含んだ <see langword="object" /> 配列。</param>
+        <summary>指定されたオブジェクトの配列および書式設定情報を使用して、<see cref="P:System.Diagnostics.Trace.Listeners" /> コレクションのトレース リスナーに情報メッセージを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.Trace.TraceInformation%2A>呼び出し、`TraceEvent`トレース イベントの種類のトレース リスナーにメソッド<xref:System.Diagnostics.TraceEventType.Information>、書式設定情報を含むオブジェクトの配列として、メッセージの内容を渡します。 参照してください、<xref:System.String.Format%2A>メソッドの詳細については、`format`と`args`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceWarning">
+      <MemberSignature Language="C#" Value="public static void TraceWarning (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void TraceWarning(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.TraceWarning(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">書き込む情報メッセージ。</param>
+        <summary>指定されたメッセージを使用して、警告メッセージを <see cref="P:System.Diagnostics.Trace.Listeners" /> コレクションのトレース リスナーに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.Trace.TraceWarning%2A>呼び出し、`TraceEvent`トレース イベントの種類には、各トレース リスナーにメソッド<xref:System.Diagnostics.TraceEventType.Warning>、情報メッセージをメッセージの文字列として渡すことです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceWarning">
+      <MemberSignature Language="C#" Value="public static void TraceWarning (string format, params object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void TraceWarning(string format, object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.TraceWarning(System.String,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="args" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="format">書式指定文字列内のオブジェクトに対応する、0 個以上の書式項目を含む、 <c>args</c>配列。</param>
+        <param name="args">0 個以上の書式設定対象オブジェクトを含んだ <see langword="object" /> 配列。</param>
+        <summary>指定されたオブジェクトの配列および書式設定情報を使用して、<see cref="P:System.Diagnostics.Trace.Listeners" /> コレクションのトレース リスナーに警告メッセージを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.Trace.TraceWarning%2A>呼び出し、`TraceEvent`トレース イベントの種類のトレース リスナーにメソッド<xref:System.Diagnostics.TraceEventType.Warning>、書式設定情報を含むオブジェクトの配列として、メッセージの内容を渡します。 参照してください、<xref:System.String.Format%2A>メソッドの詳細については、`format`と`args`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Unindent">
+      <MemberSignature Language="C#" Value="public static void Unindent ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Unindent() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.Unindent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="P:System.Diagnostics.Trace.IndentLevel" /> を 1 だけ減らします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例をインクリメントおよびデクリメント インデント レベルとトレース メッセージを出力します。  
+  
+ [!code-cpp[Classic Trace.IndentLevel Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Trace.IndentLevel Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Trace.IndentLevel Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Trace.IndentLevel Example/CS/source.cs#1)]
+ [!code-vb[Classic Trace.IndentLevel Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Trace.IndentLevel Example/VB/source.vb#1)]  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+  
+List of errors:  
+     Error 1: File not found  
+     Error 2: Directory not found  
+End of list of errors  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseGlobalLock">
+      <MemberSignature Language="C#" Value="public static bool UseGlobalLock { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool UseGlobalLock" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Trace.UseGlobalLock" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グローバル ロックを使用するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          グローバル ロックを使用する場合、<see langword="true" />。それ以外の場合、<see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ グローバル ロックは常に、トレース リスナーがスレッド セーフであるの値に関係なくでない場合に使用<xref:System.Diagnostics.Trace.UseGlobalLock%2A>です。 <xref:System.Diagnostics.TraceListener.IsThreadSafe%2A>プロパティを使用して、リスナーがスレッド セーフであるかどうかを判断します。 場合にのみ、グローバルのロックは使用されませんの値<xref:System.Diagnostics.Trace.UseGlobalLock%2A>は`false`の値と<xref:System.Diagnostics.TraceListener.IsThreadSafe%2A>は`true`します。 既定の動作では、グローバル ロックを使用します。  
+  
+ 設定する、<xref:System.Diagnostics.Trace.UseGlobalLock%2A>の<xref:System.Diagnostics.Trace>アプリケーションの名前に対応する構成ファイルを編集することもできます。 構成ファイルは、次の例のようにフォーマットする必要があります。  
+  
+```  
+<configuration>  
+  <system.diagnostics>  
+    <trace useGlobalLock="false" />  
+  </system.diagnostics>  
+</configuration>  
+```  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを操作します。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public static void Write (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Write(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.Write(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">名前が <see cref="P:System.Diagnostics.Trace.Listeners" /> に送信される <see cref="T:System.Object" />。</param>
+        <summary>オブジェクトの <see cref="M:System.Object.ToString" /> メソッドの値を <see cref="P:System.Diagnostics.Trace.Listeners" /> コレクションのトレース リスナーに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、出力は、インスタンスに<xref:System.Diagnostics.DefaultTraceListener>です。  
+  
+ このメソッドは、<xref:System.Diagnostics.TraceListener.Write%2A>トレース リスナーのメソッドです。  
+  
+> [!NOTE]
+>  ASP.NET の Web ページに対応したトレース機能を提供します。 ASP.NET ページのトレース メッセージを書き込むには使用、<xref:System.Web.UI.Page.Trace%2A?displayProperty=nameWithType>プロパティです。  
+  
+ 既定では、ASP.NET Web ページで、ステートメントに関連付けられているコードで`Trace.Write("...")`への呼び出し、<xref:System.Web.TraceContext.Write%2A>のメソッド、<xref:System.Web.UI.Page.Trace%2A?displayProperty=nameWithType>プロパティです。 使用する、<xref:System.Diagnostics.Trace?displayProperty=nameWithType>クラス、Web ページにする必要があります、名前空間など、`System.Diagnostics.Trace.Write("...")`です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Diagnostics.TraceSwitch>という`generalSwitch`です。 このスイッチは、コード サンプルの外部に設定されています。  
+  
+ スイッチが に設定されている場合、 <xref:System.Diagnostics.TraceLevel> `Error`以降では、名の出力例では、または、`value`パラメーターを<xref:System.Diagnostics.Trace.Listeners%2A>です。 リスナーを追加する方法について、 <xref:System.Diagnostics.Trace.Listeners%2A> 、コレクションを参照してください、<xref:System.Diagnostics.TraceListenerCollection>クラスです。  
+  
+ その後、if、<xref:System.Diagnostics.TraceLevel>に設定されている`Verbose`例では、最初のメッセージと同じ行にメッセージが出力します。 2 番目のメッセージには、行終端記号が続きます。  
+  
+ [!code-cpp[Classic Trace.Write1 Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Trace.Write1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Trace.Write1 Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Trace.Write1 Example/CS/source.cs#1)]
+ [!code-vb[Classic Trace.Write1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Trace.Write1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public static void Write (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Write(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.Write(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">書き込むメッセージ。</param>
+        <summary><see cref="P:System.Diagnostics.Trace.Listeners" /> コレクションのトレース リスナーにメッセージを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、出力は、インスタンスに<xref:System.Diagnostics.DefaultTraceListener>です。  
+  
+ このメソッドは、<xref:System.Diagnostics.TraceListener.Write%2A>トレース リスナーのメソッドです。  
+  
+> [!NOTE]
+>  ASP.NET の Web ページに対応したトレース機能を提供します。 ASP.NET ページのトレース メッセージを書き込むには使用、<xref:System.Web.UI.Page.Trace%2A?displayProperty=nameWithType>プロパティです。  
+  
+ 既定では、ASP.NET Web ページで、ステートメントに関連付けられているコードで`Trace.Write("...")`への呼び出し、<xref:System.Web.TraceContext.Write%2A>のメソッド、<xref:System.Web.UI.Page.Trace%2A?displayProperty=nameWithType>プロパティです。 使用する、<xref:System.Diagnostics.Trace?displayProperty=nameWithType>クラス、Web ページにする必要があります、名前空間など、`System.Diagnostics.Trace.Write("...")`です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Diagnostics.TraceSwitch>という`generalSwitch`です。 このスイッチは、コード サンプルの外部に設定されています。  
+  
+ スイッチが に設定されている場合、 <xref:System.Diagnostics.TraceLevel> `Error`以降では、最初のエラー メッセージの出力例では、または、<xref:System.Diagnostics.Trace.Listeners%2A>です。 リスナーを追加する方法について、 <xref:System.Diagnostics.Trace.Listeners%2A> 、コレクションを参照してください、<xref:System.Diagnostics.TraceListenerCollection>クラスです。  
+  
+ その後、if、<xref:System.Diagnostics.TraceLevel>に設定されている`Verbose`の例は、最初のメッセージと同じ行に 2 番目のエラー メッセージを出力します。 行終端記号には、2 番目のメッセージが次に示します。  
+  
+ [!code-cpp[Classic Trace.Write Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Trace.Write Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Trace.Write Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Trace.Write Example/CS/source.cs#1)]
+ [!code-vb[Classic Trace.Write Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Trace.Write Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public static void Write (object value, string category);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Write(object value, string category) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.Write(System.Object,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="category" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Object" /> の名前は <see cref="P:System.Diagnostics.Trace.Listeners" /> に送信されます。</param>
+        <param name="category">出力を編成するために使用するカテゴリ名。</param>
+        <summary>カテゴリ名とオブジェクトの <see cref="M:System.Object.ToString" /> メソッドの値を <see cref="P:System.Diagnostics.Trace.Listeners" /> コレクションのトレース リスナーに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、出力は、インスタンスに<xref:System.Diagnostics.DefaultTraceListener>です。  
+  
+ `category`パラメーターは、出力メッセージをグループ化を使用することができます。  
+  
+ このメソッドは、<xref:System.Diagnostics.TraceListener.Write%2A>トレース リスナーのメソッドです。  
+  
+> [!NOTE]
+>  ASP.NET の Web ページに対応したトレース機能を提供します。 ASP.NET ページのトレース メッセージを書き込むには使用、<xref:System.Web.UI.Page.Trace%2A?displayProperty=nameWithType>プロパティです。  
+  
+ 既定では、ASP.NET Web ページで、ステートメントに関連付けられているコードで`Trace.Write("...")`への呼び出し、<xref:System.Web.TraceContext.Write%2A>のメソッド、<xref:System.Web.UI.Page.Trace%2A?displayProperty=nameWithType>プロパティです。 使用する、<xref:System.Diagnostics.Trace?displayProperty=nameWithType>クラス、Web ページにする必要があります、名前空間など、`System.Diagnostics.Trace.Write("...")`です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Diagnostics.TraceSwitch>という`generalSwitch`です。 このスイッチは、コード サンプルの外部に設定されています。  
+  
+ スイッチが に設定されている場合、 <xref:System.Diagnostics.TraceLevel> `Verbose`、例では、出力の名前、`myObject`と`category`を<xref:System.Diagnostics.Trace.Listeners%2A>です。 リスナーを追加する方法について、 <xref:System.Diagnostics.Trace.Listeners%2A> 、コレクションを参照してください、<xref:System.Diagnostics.TraceListenerCollection>クラスです。  
+  
+ その後、if、<xref:System.Diagnostics.TraceLevel>に設定されている`Error`または以降では、最初のメッセージと同じ行に 2 番目のエラー メッセージの出力例では、します。 2 番目のメッセージには、行終端記号が続きます。  
+  
+ [!code-cpp[Classic Trace.Write3 Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Trace.Write3 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Trace.Write3 Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Trace.Write3 Example/CS/source.cs#1)]
+ [!code-vb[Classic Trace.Write3 Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Trace.Write3 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public static void Write (string message, string category);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Write(string message, string category) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.Write(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="category" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">書き込むメッセージ。</param>
+        <param name="category">出力を編成するために使用するカテゴリ名。</param>
+        <summary>カテゴリ名とメッセージを <see cref="P:System.Diagnostics.Trace.Listeners" /> コレクションのトレース リスナーに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、出力は、インスタンスに<xref:System.Diagnostics.DefaultTraceListener>です。  
+  
+ `category`パラメーターは、出力メッセージをグループ化を使用することができます。  
+  
+ このメソッドは、<xref:System.Diagnostics.TraceListener.Write%2A>トレース リスナーのメソッドです。  
+  
+> [!NOTE]
+>  ASP.NET の Web ページに対応したトレース機能を提供します。 ASP.NET ページのトレース メッセージを書き込むには使用、<xref:System.Web.UI.Page.Trace%2A?displayProperty=nameWithType>プロパティです。  
+  
+ 既定では、ASP.NET Web ページで、ステートメントに関連付けられているコードで`Trace.Write("...")`への呼び出し、<xref:System.Web.TraceContext.Write%2A>のメソッド、<xref:System.Web.UI.Page.Trace%2A?displayProperty=nameWithType>プロパティです。 使用する、<xref:System.Diagnostics.Trace?displayProperty=nameWithType>クラス、Web ページにする必要があります、名前空間など、`System.Diagnostics.Trace.Write("...")`です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Diagnostics.TraceSwitch>という`generalSwitch`です。 このスイッチは、コード サンプルの外部に設定されています。  
+  
+ スイッチが に設定されている場合、 <xref:System.Diagnostics.TraceLevel> `Verbose`、例では、出力には、最初のエラー メッセージ、<xref:System.Diagnostics.Trace.Listeners%2A>です。 リスナーを追加する方法について、 <xref:System.Diagnostics.Trace.Listeners%2A> 、コレクションを参照してください、<xref:System.Diagnostics.TraceListenerCollection>クラスです。  
+  
+ その後、if、<xref:System.Diagnostics.TraceLevel>に設定されている`Error`または以降では、最初のメッセージと同じ行に 2 番目のエラー メッセージの出力例では、します。 2 番目のメッセージには、行終端記号が続きます。  
+  
+ [!code-cpp[Classic Trace.Write2 Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Trace.Write2 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Trace.Write2 Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Trace.Write2 Example/CS/source.cs#1)]
+ [!code-vb[Classic Trace.Write2 Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Trace.Write2 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteIf">
+      <MemberSignature Language="C#" Value="public static void WriteIf (bool condition, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteIf(bool condition, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.WriteIf(System.Boolean,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="condition" Type="System.Boolean" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="condition">
+          メッセージが書き込まれるようにするには <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <param name="value">名前が <see cref="P:System.Diagnostics.Trace.Listeners" /> に送信される <see cref="T:System.Object" />。</param>
+        <summary>条件が <see langword="true" /> の場合、オブジェクトの <see cref="M:System.Object.ToString" /> メソッドの値を <see cref="P:System.Diagnostics.Trace.Listeners" /> コレクションのトレース リスナーに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、出力は、インスタンスに<xref:System.Diagnostics.DefaultTraceListener>です。  
+  
+ このメソッドは、<xref:System.Diagnostics.TraceListener.Write%2A>トレース リスナーのメソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Diagnostics.TraceSwitch>という`generalSwitch`です。 このスイッチは、コード サンプルの外部に設定されています。  
+  
+ スイッチが に設定されている場合、 <xref:System.Diagnostics.TraceLevel> `Error`または以降では、value パラメーターの名の出力の例、<xref:System.Diagnostics.Trace.Listeners%2A>です。 リスナーを追加する方法について、 <xref:System.Diagnostics.Trace.Listeners%2A> 、コレクションを参照してください、<xref:System.Diagnostics.TraceListenerCollection>クラスです。  
+  
+ その後、if、<xref:System.Diagnostics.TraceLevel>に設定されている`Verbose`例では、最初のメッセージと同じ行にメッセージが出力します。 2 番目のメッセージには、行終端記号が続きます。  
+  
+ [!code-cpp[Classic Trace.WriteIf1 Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Trace.WriteIf1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Trace.WriteIf1 Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Trace.WriteIf1 Example/CS/source.cs#1)]
+ [!code-vb[Classic Trace.WriteIf1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Trace.WriteIf1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>使用して、アプリケーションをインストルメント化のパフォーマンスの低下を最小限に抑えることができます<see langword="If...Then" />ステートメントを使用せずに<see cref="M:System.Diagnostics.Trace.WriteIf(System.Boolean,System.String)" />ステートメントです。 次の 2 つのコード例では、同じデバッグ メッセージを送信します。 ただし、最初の例でははるかに高速トレースがオフの場合場合、<c>である</c>に評価される<see langword="false" />呼び出さない<see cref="M:System.Diagnostics.Trace.Write(System.String)" />です。 2 番目の例では、常に呼び出します<see cref="M:System.Diagnostics.Trace.WriteIf(System.Boolean,System.String)" />場合でも、<c>である</c>は<see langword="false" />し、トレース出力は生成されません。 これにより、任意の複雑なコードの不要な実行。  
+  
+ **最初の例**  
+  
+```  
+if(mySwitch.TraceError)   
+    Trace.Write("aNumber = " + aNumber + " out of range");  
+```  
+  
+ **2 番目の例**  
+  
+```  
+Trace.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");  
+```</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteIf">
+      <MemberSignature Language="C#" Value="public static void WriteIf (bool condition, string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteIf(bool condition, string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.WriteIf(System.Boolean,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="condition" Type="System.Boolean" />
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="condition">
+          メッセージが書き込まれるようにするには <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <param name="message">書き込むメッセージ。</param>
+        <summary>条件が <see langword="true" /> である場合、メッセージを <see cref="P:System.Diagnostics.Trace.Listeners" /> コレクションのトレース リスナーに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、出力は、インスタンスに<xref:System.Diagnostics.DefaultTraceListener>です。  
+  
+ このメソッドは、<xref:System.Diagnostics.TraceListener.Write%2A>トレース リスナーのメソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Diagnostics.TraceSwitch>という`generalSwitch`です。 このスイッチは、コード サンプルの外部に設定されています。  
+  
+ スイッチが に設定されている場合、 <xref:System.Diagnostics.TraceLevel> `Error`以降では、最初のエラー メッセージの出力例では、または、<xref:System.Diagnostics.Trace.Listeners%2A>です。 リスナーを追加する方法について、 <xref:System.Diagnostics.Trace.Listeners%2A> 、コレクションを参照してください、<xref:System.Diagnostics.TraceListenerCollection>クラスです。  
+  
+ その後、if、<xref:System.Diagnostics.TraceLevel>に設定されている`Verbose`の例は、最初のメッセージと同じ行に 2 番目のエラー メッセージを出力します。 2 番目のメッセージには、行終端記号が続きます。  
+  
+ [!code-cpp[Classic Trace.WriteIf Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Trace.WriteIf Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Trace.WriteIf Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Trace.WriteIf Example/CS/source.cs#1)]
+ [!code-vb[Classic Trace.WriteIf Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Trace.WriteIf Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>使用して、アプリケーションをインストルメント化のパフォーマンスの低下を最小限に抑えることができます<see langword="If...Then" />ステートメントを使用せずに<see cref="M:System.Diagnostics.Trace.WriteIf(System.Boolean,System.String)" />ステートメントです。 次の 2 つのコード例では、同じデバッグ メッセージを送信します。 ただし、最初の例でははるかに高速トレースがオフの場合場合、<c>である</c>に評価される<see langword="false" />呼び出さない<see cref="M:System.Diagnostics.Trace.Write(System.String)" />です。 2 番目の例では、常に呼び出します<see cref="M:System.Diagnostics.Trace.WriteIf(System.Boolean,System.String)" />場合でも、<c>である</c>は<see langword="false" />し、トレース出力は生成されません。 これにより、任意の複雑なコードの不要な実行。  
+  
+ **最初の例**  
+  
+```  
+if(mySwitch.TraceError)   
+    Trace.Write("aNumber = " + aNumber + " out of range");  
+```  
+  
+ **2 番目の例**  
+  
+```  
+Trace.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");  
+```</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteIf">
+      <MemberSignature Language="C#" Value="public static void WriteIf (bool condition, object value, string category);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteIf(bool condition, object value, string category) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.WriteIf(System.Boolean,System.Object,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="condition" Type="System.Boolean" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="category" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="condition">
+          メッセージが書き込まれるようにするには <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <param name="value">名前が <see cref="P:System.Diagnostics.Trace.Listeners" /> に送信される <see cref="T:System.Object" />。</param>
+        <param name="category">出力を編成するために使用するカテゴリ名。</param>
+        <summary>条件が <see langword="true" /> の場合は、カテゴリ名とオブジェクトの <see cref="M:System.Object.ToString" /> メソッドの値を <see cref="P:System.Diagnostics.Trace.Listeners" /> コレクションのトレース リスナーに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、出力は、インスタンスに<xref:System.Diagnostics.DefaultTraceListener>です。  
+  
+ `category`パラメーターは、出力メッセージをグループ化を使用することができます。  
+  
+ このメソッドは、<xref:System.Diagnostics.TraceListener.Write%2A>トレース リスナーのメソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Diagnostics.TraceSwitch>という`generalSwitch`です。 このスイッチは、コード サンプルの外部に設定されています。  
+  
+ スイッチが に設定されている場合、 <xref:System.Diagnostics.TraceLevel> `Verbose`、例では、出力の名前、`myObject`と`category`を<xref:System.Diagnostics.Trace.Listeners%2A>です。 リスナーを追加する方法について、 <xref:System.Diagnostics.Trace.Listeners%2A> 、コレクションを参照してください、<xref:System.Diagnostics.TraceListenerCollection>クラスです。  
+  
+ その後、if、<xref:System.Diagnostics.TraceLevel>に設定されている`Error`または以降では、最初のメッセージと同じ行に 2 番目のエラー メッセージの出力例では、します。 2 番目のメッセージには、行終端記号が続きます。  
+  
+ [!code-cpp[Classic Trace.WriteIf3 Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Trace.WriteIf3 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Trace.WriteIf3 Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Trace.WriteIf3 Example/CS/source.cs#1)]
+ [!code-vb[Classic Trace.WriteIf3 Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Trace.WriteIf3 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>使用して、アプリケーションをインストルメント化のパフォーマンスの低下を最小限に抑えることができます<see langword="If...Then" />ステートメントを使用せずに<see cref="M:System.Diagnostics.Trace.WriteIf(System.Boolean,System.String)" />ステートメントです。 次の 2 つのコード例では、同じデバッグ メッセージを送信します。 ただし、最初の例でははるかに高速トレースがオフの場合場合、<c>である</c>に評価される<see langword="false" />呼び出さない<see cref="M:System.Diagnostics.Trace.Write(System.String)" />です。 2 番目の例では、常に呼び出します<see cref="M:System.Diagnostics.Trace.WriteIf(System.Boolean,System.String)" />場合でも、<c>である</c>は<see langword="false" />し、トレース出力は生成されません。 これにより、任意の複雑なコードの不要な実行。  
+  
+ **最初の例**  
+  
+```  
+if(mySwitch.TraceError)   
+    Trace.Write("aNumber = " + aNumber + " out of range");  
+```  
+  
+ **2 番目の例**  
+  
+```  
+Trace.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");  
+```</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteIf">
+      <MemberSignature Language="C#" Value="public static void WriteIf (bool condition, string message, string category);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteIf(bool condition, string message, string category) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.WriteIf(System.Boolean,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="condition" Type="System.Boolean" />
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="category" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="condition">
+          メッセージが書き込まれるようにするには <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <param name="message">書き込むメッセージ。</param>
+        <param name="category">出力を編成するために使用するカテゴリ名。</param>
+        <summary>条件が <see langword="true" /> である場合、カテゴリ名とメッセージを <see cref="P:System.Diagnostics.Trace.Listeners" /> コレクションのトレース リスナーに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、出力は、インスタンスに<xref:System.Diagnostics.DefaultTraceListener>です。  
+  
+ `category`パラメーターは、出力メッセージをグループ化を使用することができます。  
+  
+ このメソッドは、<xref:System.Diagnostics.TraceListener.Write%2A>トレース リスナーのメソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Diagnostics.TraceSwitch>という`generalSwitch`です。 このスイッチは、コード サンプルの外部に設定されています。  
+  
+ スイッチが に設定されている場合、 <xref:System.Diagnostics.TraceLevel> `Verbose`、例では、出力には、最初のエラー メッセージ、<xref:System.Diagnostics.Trace.Listeners%2A>です。 リスナーを追加する方法について、 <xref:System.Diagnostics.Trace.Listeners%2A> 、コレクションを参照してください、<xref:System.Diagnostics.TraceListenerCollection>クラスです。  
+  
+ その後、if、<xref:System.Diagnostics.TraceLevel>に設定されている`Error`または以降では、最初のメッセージと同じ行に 2 番目のエラー メッセージの出力例では、します。 2 番目のメッセージには、行終端記号が続きます。  
+  
+ [!code-cpp[Classic Trace.WriteIf2 Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Trace.WriteIf2 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Trace.WriteIf2 Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Trace.WriteIf2 Example/CS/source.cs#1)]
+ [!code-vb[Classic Trace.WriteIf2 Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Trace.WriteIf2 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>使用して、アプリケーションをインストルメント化のパフォーマンスの低下を最小限に抑えることができます<see langword="If...Then" />ステートメントを使用せずに<see cref="M:System.Diagnostics.Trace.WriteIf(System.Boolean,System.String)" />ステートメントです。 次の 2 つのコード例では、同じデバッグ メッセージを送信します。 ただし、最初の例でははるかに高速トレースがオフの場合場合、<c>である</c>に評価される<see langword="false" />呼び出さない<see cref="M:System.Diagnostics.Trace.Write(System.String)" />です。 2 番目の例では、常に呼び出します<see cref="M:System.Diagnostics.Trace.WriteIf(System.Boolean,System.String)" />場合でも、<c>である</c>は<see langword="false" />し、トレース出力は生成されません。 これにより、任意の複雑なコードの不要な実行。  
+  
+ **最初の例**  
+  
+```  
+if(mySwitch.TraceError)   
+    Trace.Write("aNumber = " + aNumber + " out of range");  
+```  
+  
+ **2 番目の例**  
+  
+```  
+Trace.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");  
+```</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLine">
+      <MemberSignature Language="C#" Value="public static void WriteLine (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteLine(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.WriteLine(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">名前が <see cref="P:System.Diagnostics.Trace.Listeners" /> に送信される <see cref="T:System.Object" />。</param>
+        <summary>オブジェクトの <see cref="M:System.Object.ToString" /> メソッドの値を <see cref="P:System.Diagnostics.Trace.Listeners" /> コレクションのトレース リスナーに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、出力は、インスタンスに<xref:System.Diagnostics.DefaultTraceListener>です。  
+  
+ このメソッドは、<xref:System.Diagnostics.TraceListener.WriteLine%2A>トレース リスナーのメソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Diagnostics.TraceSwitch>という`generalSwitch`です。 このスイッチは、コード サンプルの外部に設定されています。  
+  
+ スイッチが に設定されている場合、 <xref:System.Diagnostics.TraceLevel> `Error`以降では、最初のエラー メッセージの出力例では、または、<xref:System.Diagnostics.Trace.Listeners%2A>です。 リスナーを追加する方法について、 <xref:System.Diagnostics.Trace.Listeners%2A> 、コレクションを参照してください、<xref:System.Diagnostics.TraceListenerCollection>クラスです。  
+  
+ その後、if、<xref:System.Diagnostics.TraceLevel>に設定されている`Verbose`の例は、最初のメッセージと同じ行にオブジェクトの名前を出力します。 2 番目のメッセージには、行終端記号が続きます。  
+  
+ [!code-cpp[Classic Trace.WriteLine1 Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Trace.WriteLine1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Trace.WriteLine1 Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Trace.WriteLine1 Example/CS/source.cs#1)]
+ [!code-vb[Classic Trace.WriteLine1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Trace.WriteLine1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLine">
+      <MemberSignature Language="C#" Value="public static void WriteLine (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteLine(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.WriteLine(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">書き込むメッセージ。</param>
+        <summary><see cref="P:System.Diagnostics.Trace.Listeners" /> コレクションのトレース リスナーにメッセージを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、出力は、インスタンスに<xref:System.Diagnostics.DefaultTraceListener>です。  
+  
+ このメソッドは、<xref:System.Diagnostics.TraceListener.WriteLine%2A>トレース リスナーのメソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Diagnostics.TraceSwitch>という`generalSwitch`です。 このスイッチは、コード サンプルの外部に設定されています。  
+  
+ スイッチが に設定されている場合、 <xref:System.Diagnostics.TraceLevel> `Error`以降では、最初のエラー メッセージの出力例では、または、<xref:System.Diagnostics.Trace.Listeners%2A>です。 リスナーを追加する方法について、 <xref:System.Diagnostics.Trace.Listeners%2A> 、コレクションを参照してください、<xref:System.Diagnostics.TraceListenerCollection>クラスです。  
+  
+ その後、if、<xref:System.Diagnostics.TraceLevel>に設定されている`Verbose`の例は、最初のメッセージと同じ行に 2 番目のエラー メッセージを出力します。 2 番目のメッセージには、行終端記号が続きます。  
+  
+ [!code-cpp[Classic Trace.Write Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Trace.Write Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Trace.Write Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Trace.Write Example/CS/source.cs#1)]
+ [!code-vb[Classic Trace.Write Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Trace.Write Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLine">
+      <MemberSignature Language="C#" Value="public static void WriteLine (object value, string category);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteLine(object value, string category) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.WriteLine(System.Object,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="category" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">名前が <see cref="P:System.Diagnostics.Trace.Listeners" /> に送信される <see cref="T:System.Object" />。</param>
+        <param name="category">出力を編成するために使用するカテゴリ名。</param>
+        <summary>カテゴリ名とオブジェクトの <see cref="M:System.Object.ToString" /> メソッドの値を <see cref="P:System.Diagnostics.Trace.Listeners" /> コレクションのトレース リスナーに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、出力は、インスタンスに<xref:System.Diagnostics.DefaultTraceListener>です。  
+  
+ `category`パラメーターは、出力メッセージをグループ化を使用することができます。  
+  
+ このメソッドは、<xref:System.Diagnostics.TraceListener.WriteLine%2A>トレース リスナーのメソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Diagnostics.TraceSwitch>という`generalSwitch`です。 このスイッチは、コード サンプルの外部に設定されています。  
+  
+ スイッチが に設定されている場合、 <xref:System.Diagnostics.TraceLevel> `Error`以降では、最初のエラー メッセージの出力例では、または、<xref:System.Diagnostics.Trace.Listeners%2A>です。 リスナーを追加する方法について、 <xref:System.Diagnostics.Trace.Listeners%2A> 、コレクションを参照してください、<xref:System.Diagnostics.TraceListenerCollection>クラスです。  
+  
+ その後、if、<xref:System.Diagnostics.TraceLevel>に設定されている`Verbose`の例は、最初のメッセージと同じ行に 2 番目のエラー メッセージを出力します。 2 番目のメッセージには、行終端記号が続きます。  
+  
+ [!code-cpp[Classic Trace.WriteLine3 Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Trace.WriteLine3 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Trace.WriteLine3 Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Trace.WriteLine3 Example/CS/source.cs#1)]
+ [!code-vb[Classic Trace.WriteLine3 Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Trace.WriteLine3 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLine">
+      <MemberSignature Language="C#" Value="public static void WriteLine (string message, string category);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteLine(string message, string category) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.WriteLine(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="category" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">書き込むメッセージ。</param>
+        <param name="category">出力を編成するために使用するカテゴリ名。</param>
+        <summary>カテゴリ名とメッセージを <see cref="P:System.Diagnostics.Trace.Listeners" /> コレクションのトレース リスナーに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、出力は、インスタンスに<xref:System.Diagnostics.DefaultTraceListener>です。  
+  
+ `category`パラメーターは、出力メッセージをグループ化を使用することができます。  
+  
+ このメソッドは、<xref:System.Diagnostics.TraceListener.WriteLine%2A>トレース リスナーのメソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Diagnostics.TraceSwitch>という`generalSwitch`です。 このスイッチは、コード サンプルの外部に設定されています。  
+  
+ スイッチが に設定されている場合、 <xref:System.Diagnostics.TraceLevel> `Error`以降では、最初のエラー メッセージの出力例では、または、<xref:System.Diagnostics.Trace.Listeners%2A>です。 リスナーを追加する方法について、 <xref:System.Diagnostics.Trace.Listeners%2A> 、コレクションを参照してください、<xref:System.Diagnostics.TraceListenerCollection>クラスです。  
+  
+ 場合はその後、<xref:System.Diagnostics.TraceLevel>に設定されている`Verbose`、例では、2 番目のエラー メッセージを出力して、`category`最初のメッセージと同じ行にします。 2 番目のメッセージには、行終端記号が続きます。  
+  
+ [!code-cpp[Classic Trace.WriteLine2 Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Trace.WriteLine2 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Trace.WriteLine2 Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Trace.WriteLine2 Example/CS/source.cs#1)]
+ [!code-vb[Classic Trace.WriteLine2 Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Trace.WriteLine2 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLineIf">
+      <MemberSignature Language="C#" Value="public static void WriteLineIf (bool condition, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteLineIf(bool condition, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.WriteLineIf(System.Boolean,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="condition" Type="System.Boolean" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="condition">
+          メッセージが書き込まれるようにするには <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <param name="value">名前が <see cref="P:System.Diagnostics.Trace.Listeners" /> に送信される <see cref="T:System.Object" />。</param>
+        <summary>条件が <see langword="true" /> の場合、オブジェクトの <see cref="M:System.Object.ToString" /> メソッドの値を <see cref="P:System.Diagnostics.Trace.Listeners" /> コレクションのトレース リスナーに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、出力は、インスタンスに<xref:System.Diagnostics.DefaultTraceListener>です。  
+  
+ このメソッドは、<xref:System.Diagnostics.TraceListener.WriteLine%2A>トレース リスナーのメソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Diagnostics.TraceSwitch>という`generalSwitch`です。 このスイッチは、コード サンプルの外部に設定されています。  
+  
+ スイッチが に設定されている場合、 <xref:System.Diagnostics.TraceLevel> `Error`以降では、最初のエラー メッセージの出力例では、または、<xref:System.Diagnostics.Trace.Listeners%2A>です。 リスナーを追加する方法について、 <xref:System.Diagnostics.Trace.Listeners%2A> 、コレクションを参照してください、<xref:System.Diagnostics.TraceListenerCollection>クラスです。  
+  
+ その後、if、<xref:System.Diagnostics.TraceLevel>に設定されている`Verbose`の例は、最初のメッセージと同じ行にオブジェクトの名前を出力します。 2 番目のメッセージには、行終端記号が続きます。  
+  
+ [!code-cpp[Classic Trace.WriteLineIf1 Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Trace.WriteLineIf1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Trace.WriteLineIf1 Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Trace.WriteLineIf1 Example/CS/source.cs#1)]
+ [!code-vb[Classic Trace.WriteLineIf1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Trace.WriteLineIf1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>使用して、アプリケーションをインストルメント化のパフォーマンスの低下を最小限に抑えることができます<see langword="If...Then" />ステートメントを使用せずに<see cref="M:System.Diagnostics.Trace.WriteLineIf(System.Boolean,System.String)" />ステートメントです。 次の 2 つのコード例では、同じデバッグ メッセージを送信します。 ただし、最初の例でははるかに高速トレースがオフの場合場合、<c>である</c>に評価される<see langword="false" />呼び出さない<see cref="M:System.Diagnostics.Trace.WriteLine(System.String)" />です。 2 番目の例では、常に呼び出します<see cref="M:System.Diagnostics.Trace.WriteLineIf(System.Boolean,System.String)" />場合でも、<c>である</c>は<see langword="false" />し、トレース出力は生成されません。 これにより、任意の複雑なコードの不要な実行。  
+  
+ **最初の例**  
+  
+```  
+if(mySwitch.TraceError)   
+    Trace.WriteLine("aNumber = " + aNumber + " out of range");  
+```  
+  
+ **2 番目の例**  
+  
+```  
+Trace.WriteLineIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");  
+```</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLineIf">
+      <MemberSignature Language="C#" Value="public static void WriteLineIf (bool condition, string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteLineIf(bool condition, string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.WriteLineIf(System.Boolean,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="condition" Type="System.Boolean" />
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="condition">
+          メッセージが書き込まれるようにするには <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <param name="message">書き込むメッセージ。</param>
+        <summary>条件が <see langword="true" /> である場合、メッセージを <see cref="P:System.Diagnostics.Trace.Listeners" /> コレクションのトレース リスナーに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、出力は、インスタンスに<xref:System.Diagnostics.DefaultTraceListener>です。  
+  
+ このメソッドは、<xref:System.Diagnostics.TraceListener.WriteLine%2A>トレース リスナーのメソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Diagnostics.TraceSwitch>という`generalSwitch`です。 このスイッチは、コード サンプルの外部に設定されています。  
+  
+ スイッチが に設定されている場合、 <xref:System.Diagnostics.TraceLevel> `Error`以降では、最初のエラー メッセージの出力例では、または、<xref:System.Diagnostics.Trace.Listeners%2A>です。 リスナーを追加する方法について、 <xref:System.Diagnostics.Trace.Listeners%2A> 、コレクションを参照してください、<xref:System.Diagnostics.TraceListenerCollection>クラスです。  
+  
+ その後、if、<xref:System.Diagnostics.TraceLevel>に設定されている`Verbose`の例は、最初のメッセージと同じ行に 2 番目のエラー メッセージを出力します。 2 番目のメッセージには、行終端記号が続きます。  
+  
+ [!code-cpp[Classic Trace.WriteIf Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Trace.WriteIf Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Trace.WriteIf Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Trace.WriteIf Example/CS/source.cs#1)]
+ [!code-vb[Classic Trace.WriteIf Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Trace.WriteIf Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>使用して、アプリケーションをインストルメント化のパフォーマンスの低下を最小限に抑えることができます<see langword="If...Then" />ステートメントを使用せずに<see cref="M:System.Diagnostics.Trace.WriteLineIf(System.Boolean,System.String)" />ステートメントです。 次の 2 つのコード例では、同じデバッグ メッセージを送信します。 ただし、最初の例でははるかに高速トレースがオフの場合場合、<c>である</c>に評価される<see langword="false" />呼び出さない<see cref="M:System.Diagnostics.Trace.WriteLine(System.String)" />です。 2 番目の例では、常に呼び出します<see cref="M:System.Diagnostics.Trace.WriteLineIf(System.Boolean,System.String)" />場合でも、<c>である</c>は<see langword="false" />し、トレース出力は生成されません。 これにより、任意の複雑なコードの不要な実行。  
+  
+ **最初の例**  
+  
+```  
+if(mySwitch.TraceError)   
+    Trace.WriteLine("aNumber = " + aNumber + " out of range");  
+```  
+  
+ **2 番目の例**  
+  
+```  
+Trace.WriteLineIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");  
+```</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLineIf">
+      <MemberSignature Language="C#" Value="public static void WriteLineIf (bool condition, object value, string category);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteLineIf(bool condition, object value, string category) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.WriteLineIf(System.Boolean,System.Object,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="condition" Type="System.Boolean" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="category" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="condition">
+          メッセージが書き込まれるようにするには <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <param name="value">名前が <see cref="P:System.Diagnostics.Trace.Listeners" /> に送信される <see cref="T:System.Object" />。</param>
+        <param name="category">出力を編成するために使用するカテゴリ名。</param>
+        <summary>条件が <see langword="true" /> の場合は、カテゴリ名とオブジェクトの <see cref="M:System.Object.ToString" /> メソッドの値を <see cref="P:System.Diagnostics.Trace.Listeners" /> コレクションのトレース リスナーに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、出力は、インスタンスに<xref:System.Diagnostics.DefaultTraceListener>です。  
+  
+ `category`パラメーターは、出力メッセージをグループ化を使用することができます。  
+  
+ このメソッドは、<xref:System.Diagnostics.TraceListener.WriteLine%2A>トレース リスナーのメソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Diagnostics.TraceSwitch>という`generalSwitch`です。 このスイッチは、コード サンプルの外部に設定されています。  
+  
+ スイッチが に設定されている場合、 <xref:System.Diagnostics.TraceLevel> `Error`以降では、最初のエラー メッセージの出力例では、または、<xref:System.Diagnostics.Trace.Listeners%2A>です。 リスナーを追加する方法について、 <xref:System.Diagnostics.Trace.Listeners%2A> 、コレクションを参照してください、<xref:System.Diagnostics.TraceListenerCollection>クラスです。  
+  
+ その後、if、<xref:System.Diagnostics.TraceLevel>に設定されている`Verbose`の例は、最初のメッセージと同じ行に 2 番目のエラー メッセージを出力します。 2 番目のメッセージには、行終端記号が続きます。  
+  
+ [!code-cpp[Classic Trace.WriteLineIf3 Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Trace.WriteLineIf3 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Trace.WriteLineIf3 Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Trace.WriteLineIf3 Example/CS/source.cs#1)]
+ [!code-vb[Classic Trace.WriteLineIf3 Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Trace.WriteLineIf3 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>使用して、アプリケーションをインストルメント化のパフォーマンスの低下を最小限に抑えることができます<see langword="If...Then" />ステートメントを使用せずに<see cref="M:System.Diagnostics.Trace.WriteLineIf(System.Boolean,System.String)" />ステートメントです。 次の 2 つのコード例では、同じデバッグ メッセージを送信します。 ただし、最初の例でははるかに高速トレースがオフの場合場合、<c>である</c>に評価される<see langword="false" />呼び出さない<see cref="M:System.Diagnostics.Trace.WriteLine(System.String)" />です。 2 番目の例では、常に呼び出します<see cref="M:System.Diagnostics.Trace.WriteLineIf(System.Boolean,System.String)" />場合でも、<c>である</c>は<see langword="false" />し、トレース出力は生成されません。 これにより、任意の複雑なコードの不要な実行。  
+  
+ **最初の例**  
+  
+```  
+if(mySwitch.TraceError)   
+    Trace.WriteLine("aNumber = " + aNumber + " out of range");  
+```  
+  
+ **2 番目の例**  
+  
+```  
+Trace.WriteLineIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");  
+```</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLineIf">
+      <MemberSignature Language="C#" Value="public static void WriteLineIf (bool condition, string message, string category);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteLineIf(bool condition, string message, string category) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.WriteLineIf(System.Boolean,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("TRACE")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="condition" Type="System.Boolean" />
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="category" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="condition">
+          メッセージが書き込まれるようにするには <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <param name="message">書き込むメッセージ。</param>
+        <param name="category">出力を編成するために使用するカテゴリ名。</param>
+        <summary>条件が <see langword="true" /> である場合、カテゴリ名とメッセージを <see cref="P:System.Diagnostics.Trace.Listeners" /> コレクションのトレース リスナーに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、出力は、インスタンスに<xref:System.Diagnostics.DefaultTraceListener>です。  
+  
+ `category`パラメーターは、出力メッセージをグループ化を使用することができます。  
+  
+ このメソッドは、<xref:System.Diagnostics.TraceListener.WriteLine%2A>トレース リスナーのメソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Diagnostics.TraceSwitch>という`generalSwitch`です。 このスイッチは、コード サンプルの外部に設定されています。  
+  
+ スイッチが に設定されている場合、 <xref:System.Diagnostics.TraceLevel> `Error`以降では、最初のエラー メッセージの出力例では、または、<xref:System.Diagnostics.Trace.Listeners%2A>です。 リスナーを追加する方法について、 <xref:System.Diagnostics.Trace.Listeners%2A> 、コレクションを参照してください、<xref:System.Diagnostics.TraceListenerCollection>クラスです。  
+  
+ 場合はその後、<xref:System.Diagnostics.TraceLevel>に設定されている`Verbose`、例では、2 番目のエラー メッセージを出力して、`category`最初のメッセージと同じ行にします。 2 番目のメッセージには、行終端記号が続きます。  
+  
+ [!code-cpp[Classic Trace.WriteLineIf2 Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Trace.WriteLineIf2 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Trace.WriteLineIf2 Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Trace.WriteLineIf2 Example/CS/source.cs#1)]
+ [!code-vb[Classic Trace.WriteLineIf2 Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Trace.WriteLineIf2 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>使用して、アプリケーションをインストルメント化のパフォーマンスの低下を最小限に抑えることができます<see langword="If...Then" />ステートメントを使用せずに<see cref="M:System.Diagnostics.Trace.WriteLineIf(System.Boolean,System.String)" />ステートメントです。 次の 2 つのコード例では、同じデバッグ メッセージを送信します。 ただし、最初の例でははるかに高速トレースがオフの場合場合、<c>である</c>に評価される<see langword="false" />呼び出さない<see cref="M:System.Diagnostics.Trace.WriteLine(System.String)" />です。 2 番目の例では、常に呼び出します<see cref="M:System.Diagnostics.Trace.WriteLineIf(System.Boolean,System.String)" />場合でも、<c>である</c>は<see langword="false" />し、トレース出力は生成されません。 これにより、任意の複雑なコードの不要な実行。  
+  
+ **最初の例**  
+  
+```  
+if(mySwitch.TraceError)   
+    Trace.WriteLine("aNumber = " + aNumber + " out of range");  
+```  
+  
+ **2 番目の例**  
+  
+```  
+Trace.WriteLineIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");  
+```</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

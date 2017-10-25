@@ -1,0 +1,272 @@
+<Type Name="StaticPartialCachingControl" FullName="System.Web.UI.StaticPartialCachingControl">
+  <TypeSignature Language="C#" Value="public class StaticPartialCachingControl : System.Web.UI.BasePartialCachingControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StaticPartialCachingControl extends System.Web.UI.BasePartialCachingControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.StaticPartialCachingControl" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.BasePartialCachingControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>インスタンスを表し、<see cref="T:System.Web.UI.UserControl" />が出力キャッシュに指定され、ページまたは別のユーザー コントロールの宣言に含まれているクラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー コントロールを指定すると出力キャッシュの宣言型 .ascx ファイル内か、ディレクティブを使用してこのクラスのインスタンスが作成または<xref:System.Web.UI.PartialCachingAttribute>ユーザー コントロールの分離コード ファイル内のクラスです。 ユーザー コントロールが含まれている場合宣言によって、親ページで (動的にする場合とは異なりを使用して読み込まれた、<xref:System.Web.UI.TemplateControl.LoadControl%2A>メソッドで、<xref:System.Web.UI.TemplateControl>コントロール クラス) では、<xref:System.Web.UI.StaticPartialCachingControl>インスタンスはキャッシュされたユーザー コントロールの親として、ページのコントロールの階層に配置されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StaticPartialCachingControl (string ctrlID, string guid, int duration, string varyByParams, string varyByControls, string varyByCustom, System.Web.UI.BuildMethod buildMethod);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string ctrlID, string guid, int32 duration, string varyByParams, string varyByControls, string varyByCustom, class System.Web.UI.BuildMethod buildMethod) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.StaticPartialCachingControl.#ctor(System.String,System.String,System.Int32,System.String,System.String,System.String,System.Web.UI.BuildMethod)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="ctrlID" Type="System.String" />
+        <Parameter Name="guid" Type="System.String" />
+        <Parameter Name="duration" Type="System.Int32" />
+        <Parameter Name="varyByParams" Type="System.String" />
+        <Parameter Name="varyByControls" Type="System.String" />
+        <Parameter Name="varyByCustom" Type="System.String" />
+        <Parameter Name="buildMethod" Type="System.Web.UI.BuildMethod" />
+      </Parameters>
+      <Docs>
+        <param name="ctrlID">ASP.NET によってサーバー コントロールに割り当てられた識別子。</param>
+        <param name="guid">サーバー コントロールからグローバルに一意の識別子が渡されます。</param>
+        <param name="duration">サーバー コントロールはキャッシュ内に存続する時間の長さ。</param>
+        <param name="varyByParams">キャッシュ内のユーザー コントロールを変更するため、クエリ文字列またはフォーム ポスト パラメーターの文字列です。</param>
+        <param name="varyByControls">キャッシュ内のユーザー コントロールを変更するため、サーバー コントロールのプロパティの文字列。</param>
+        <param name="varyByCustom">カスタム出力キャッシュのパラメーター値を含むユーザー定義の文字列。</param>
+        <param name="buildMethod">メソッドを呼び出して <see cref="T:System.Web.UI.StaticPartialCachingControl" /> を作成するデリゲート。</param>
+        <summary>キャッシュされたサーバー コントロールの内容を格納する <see cref="T:System.Web.UI.StaticPartialCachingControl" /> オブジェクトを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.StaticPartialCachingControl.%23ctor%2A>コンス トラクターは、ASP.NET ページ フレームワークで使用するためし、開発者が直接呼び出すことはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StaticPartialCachingControl (string ctrlID, string guid, int duration, string varyByParams, string varyByControls, string varyByCustom, string sqlDependency, System.Web.UI.BuildMethod buildMethod);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string ctrlID, string guid, int32 duration, string varyByParams, string varyByControls, string varyByCustom, string sqlDependency, class System.Web.UI.BuildMethod buildMethod) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.StaticPartialCachingControl.#ctor(System.String,System.String,System.Int32,System.String,System.String,System.String,System.String,System.Web.UI.BuildMethod)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="ctrlID" Type="System.String" />
+        <Parameter Name="guid" Type="System.String" />
+        <Parameter Name="duration" Type="System.Int32" />
+        <Parameter Name="varyByParams" Type="System.String" />
+        <Parameter Name="varyByControls" Type="System.String" />
+        <Parameter Name="varyByCustom" Type="System.String" />
+        <Parameter Name="sqlDependency" Type="System.String" />
+        <Parameter Name="buildMethod" Type="System.Web.UI.BuildMethod" />
+      </Parameters>
+      <Docs>
+        <param name="ctrlID">ASP.NET によってサーバー コントロールに割り当てられた識別子。</param>
+        <param name="guid">サーバー コントロールからグローバルに一意の識別子が渡されます。</param>
+        <param name="duration">サーバー コントロールはキャッシュ内に存続する時間の長さ。</param>
+        <param name="varyByParams">キャッシュ内のユーザー コントロールを変更するため、クエリ文字列またはフォーム ポスト パラメーターの文字列です。</param>
+        <param name="varyByControls">キャッシュ内のユーザー コントロールを変更するため、サーバー コントロールのプロパティの文字列。</param>
+        <param name="varyByCustom">カスタム出力キャッシュのパラメーター値を含むユーザー定義の文字列。</param>
+        <param name="sqlDependency">対象のデータベースを指定し、Microsoft SQL Server のキャッシュの依存関係を使用するテーブルをセミコロンで区切られた文字列。</param>
+        <param name="buildMethod">メソッドを呼び出して <see cref="T:System.Web.UI.StaticPartialCachingControl" /> を作成するデリゲート。</param>
+        <summary>キャッシュされたサーバー コントロールの内容を格納する <see cref="T:System.Web.UI.StaticPartialCachingControl" /> オブジェクトを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.StaticPartialCachingControl.%23ctor%2A>コンス トラクターは、ASP.NET ページ フレームワークで使用するためし、開発者が直接呼び出すことはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StaticPartialCachingControl (string ctrlID, string guid, int duration, string varyByParams, string varyByControls, string varyByCustom, string sqlDependency, System.Web.UI.BuildMethod buildMethod, string providerName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string ctrlID, string guid, int32 duration, string varyByParams, string varyByControls, string varyByCustom, string sqlDependency, class System.Web.UI.BuildMethod buildMethod, string providerName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.StaticPartialCachingControl.#ctor(System.String,System.String,System.Int32,System.String,System.String,System.String,System.String,System.Web.UI.BuildMethod,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="ctrlID" Type="System.String" />
+        <Parameter Name="guid" Type="System.String" />
+        <Parameter Name="duration" Type="System.Int32" />
+        <Parameter Name="varyByParams" Type="System.String" />
+        <Parameter Name="varyByControls" Type="System.String" />
+        <Parameter Name="varyByCustom" Type="System.String" />
+        <Parameter Name="sqlDependency" Type="System.String" />
+        <Parameter Name="buildMethod" Type="System.Web.UI.BuildMethod" />
+        <Parameter Name="providerName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="ctrlID">ASP.NET によってコントロールに割り当てられている ID です。</param>
+        <param name="guid">キャッシュされたコントロールのグローバル一意識別子 (GUID)。</param>
+        <param name="duration">コントロールの出力時間の長さがキャッシュされます。</param>
+        <param name="varyByParams">キャッシュ内のユーザー コントロールを変更するため、クエリ文字列またはフォーム ポスト パラメーターの文字列です。</param>
+        <param name="varyByControls">キャッシュ内のユーザー コントロールを変更するため、サーバー コントロールのプロパティを一覧表示する文字列。</param>
+        <param name="varyByCustom">カスタム出力キャッシュのパラメーター値を含むユーザー定義の文字列。</param>
+        <param name="sqlDependency">対象のデータベースを指定し、Microsoft SQL Server のキャッシュの依存関係を使用するテーブルをセミコロンで区切られた文字列。</param>
+        <param name="buildMethod">メソッドを呼び出すデリゲートは、コントロールを構築します。</param>
+        <param name="providerName">出力キャッシュ制御の格納に使用されるプロバイダーの名前。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Web.UI.StaticPartialCachingControl" /> .ascx ファイルで定義されているコントロールのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 宣言またはを使用して、コントロール用の出力キャッシュ プロバイダーを指定することができます、<xref:System.Web.UI.PartialCachingAttribute>のコードにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildCachedControl">
+      <MemberSignature Language="C#" Value="public static void BuildCachedControl (System.Web.UI.Control parent, string ctrlID, string guid, int duration, string varyByParams, string varyByControls, string varyByCustom, System.Web.UI.BuildMethod buildMethod);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void BuildCachedControl(class System.Web.UI.Control parent, string ctrlID, string guid, int32 duration, string varyByParams, string varyByControls, string varyByCustom, class System.Web.UI.BuildMethod buildMethod) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.StaticPartialCachingControl.BuildCachedControl(System.Web.UI.Control,System.String,System.String,System.Int32,System.String,System.String,System.String,System.Web.UI.BuildMethod)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parent" Type="System.Web.UI.Control" />
+        <Parameter Name="ctrlID" Type="System.String" />
+        <Parameter Name="guid" Type="System.String" />
+        <Parameter Name="duration" Type="System.Int32" />
+        <Parameter Name="varyByParams" Type="System.String" />
+        <Parameter Name="varyByControls" Type="System.String" />
+        <Parameter Name="varyByCustom" Type="System.String" />
+        <Parameter Name="buildMethod" Type="System.Web.UI.BuildMethod" />
+      </Parameters>
+      <Docs>
+        <param name="parent">サーバー コントロールを含む、<see cref="T:System.Web.UI.StaticPartialCachingControl" />インスタンス。</param>
+        <param name="ctrlID">ASP.NET によってコントロールに割り当てられた識別子。</param>
+        <param name="guid">キャッシュされたコントロールのグローバルに一意の識別子。</param>
+        <param name="duration">コントロールの出力時間の長さがキャッシュされます。</param>
+        <param name="varyByParams">キャッシュ内のサーバー コントロールを変更するため、クエリ文字列またはフォーム ポスト パラメーターの文字列です。</param>
+        <param name="varyByControls">キャッシュ内のユーザー コントロールを変更するため、サーバー コントロールのプロパティを一覧表示する文字列。</param>
+        <param name="varyByCustom">カスタム出力キャッシュのパラメーター値を含むユーザー定義の文字列。</param>
+        <param name="buildMethod">コントロールを作成するメソッドを呼び出すデリゲート。</param>
+        <summary>ビルド、<see cref="T:System.Web.UI.StaticPartialCachingControl" />ユーザー コントロール (.ascx ファイル) で指定されたパラメーターを使用してオブジェクトを格納しているサーバー コントロールに解析済みの下位のオブジェクトとして追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.StaticPartialCachingControl.BuildCachedControl%2A>メソッドは、Microsoft SQL Server データベース テーブルに関係がないキャッシュされたコントロールをビルドします。  
+  
+ <xref:System.Web.UI.StaticPartialCachingControl.BuildCachedControl%2A>メソッドは、ASP.NET ページ フレームワークで使用するためし、開発者が直接呼び出すことはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildCachedControl">
+      <MemberSignature Language="C#" Value="public static void BuildCachedControl (System.Web.UI.Control parent, string ctrlID, string guid, int duration, string varyByParams, string varyByControls, string varyByCustom, string sqlDependency, System.Web.UI.BuildMethod buildMethod);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void BuildCachedControl(class System.Web.UI.Control parent, string ctrlID, string guid, int32 duration, string varyByParams, string varyByControls, string varyByCustom, string sqlDependency, class System.Web.UI.BuildMethod buildMethod) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.StaticPartialCachingControl.BuildCachedControl(System.Web.UI.Control,System.String,System.String,System.Int32,System.String,System.String,System.String,System.String,System.Web.UI.BuildMethod)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parent" Type="System.Web.UI.Control" />
+        <Parameter Name="ctrlID" Type="System.String" />
+        <Parameter Name="guid" Type="System.String" />
+        <Parameter Name="duration" Type="System.Int32" />
+        <Parameter Name="varyByParams" Type="System.String" />
+        <Parameter Name="varyByControls" Type="System.String" />
+        <Parameter Name="varyByCustom" Type="System.String" />
+        <Parameter Name="sqlDependency" Type="System.String" />
+        <Parameter Name="buildMethod" Type="System.Web.UI.BuildMethod" />
+      </Parameters>
+      <Docs>
+        <param name="parent">サーバー コントロールを含む、<see cref="T:System.Web.UI.StaticPartialCachingControl" />インスタンス。</param>
+        <param name="ctrlID">ASP.NET によってコントロールに割り当てられた識別子。</param>
+        <param name="guid">キャッシュされたコントロールのグローバルに一意の識別子。</param>
+        <param name="duration">コントロールの出力時間の長さがキャッシュされます。</param>
+        <param name="varyByParams">キャッシュ内のサーバー コントロールを変更するため、クエリ文字列またはフォーム ポスト パラメーターの文字列です。</param>
+        <param name="varyByControls">キャッシュ内のユーザー コントロールを変更するため、サーバー コントロールのプロパティを一覧表示する文字列。</param>
+        <param name="varyByCustom">カスタム出力キャッシュのパラメーター値を含むユーザー定義の文字列。</param>
+        <param name="sqlDependency">対象のデータベースを指定し、Microsoft SQL Server のキャッシュの依存関係を使用するテーブルをセミコロンで区切られた文字列。</param>
+        <param name="buildMethod">コントロールを作成するメソッドを呼び出すデリゲート。</param>
+        <summary>ビルド、<see cref="T:System.Web.UI.StaticPartialCachingControl" />ユーザー コントロール (.ascx ファイル) で指定されたパラメーターを使用してオブジェクトを格納しているサーバー コントロールに解析済みの下位のオブジェクトとして追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.StaticPartialCachingControl.BuildCachedControl%2A>メソッドで指定された SQL Server データベース テーブルへのリレーションシップでキャッシュされたコントロールが作成、`sqlDependency`パラメーター。  
+  
+ <xref:System.Web.UI.StaticPartialCachingControl.%23ctor%2A>メソッドは、ASP.NET ページ フレームワークで使用するためし、開発者が直接呼び出すことはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildCachedControl">
+      <MemberSignature Language="C#" Value="public static void BuildCachedControl (System.Web.UI.Control parent, string ctrlID, string guid, int duration, string varyByParams, string varyByControls, string varyByCustom, string sqlDependency, System.Web.UI.BuildMethod buildMethod, string providerName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void BuildCachedControl(class System.Web.UI.Control parent, string ctrlID, string guid, int32 duration, string varyByParams, string varyByControls, string varyByCustom, string sqlDependency, class System.Web.UI.BuildMethod buildMethod, string providerName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.StaticPartialCachingControl.BuildCachedControl(System.Web.UI.Control,System.String,System.String,System.Int32,System.String,System.String,System.String,System.String,System.Web.UI.BuildMethod,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parent" Type="System.Web.UI.Control" />
+        <Parameter Name="ctrlID" Type="System.String" />
+        <Parameter Name="guid" Type="System.String" />
+        <Parameter Name="duration" Type="System.Int32" />
+        <Parameter Name="varyByParams" Type="System.String" />
+        <Parameter Name="varyByControls" Type="System.String" />
+        <Parameter Name="varyByCustom" Type="System.String" />
+        <Parameter Name="sqlDependency" Type="System.String" />
+        <Parameter Name="buildMethod" Type="System.Web.UI.BuildMethod" />
+        <Parameter Name="providerName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="parent">サーバー コントロールのコンテナーとして使用される、<see cref="T:System.Web.UI.StaticPartialCachingControl" />インスタンス。</param>
+        <param name="ctrlID">ASP.NET によってコントロールに割り当てられている ID です。</param>
+        <param name="guid">キャッシュされたコントロールのグローバル一意識別子 (GUID)。</param>
+        <param name="duration">コントロールの出力時間の長さがキャッシュされます。</param>
+        <param name="varyByParams">キャッシュ内のユーザー コントロールを変更するため、クエリ文字列またはフォーム ポスト パラメーターの文字列です。</param>
+        <param name="varyByControls">キャッシュ内のユーザー コントロールを変更するため、サーバー コントロールのプロパティを一覧表示する文字列。</param>
+        <param name="varyByCustom">カスタム出力キャッシュのパラメーター値を含むユーザー定義の文字列。</param>
+        <param name="sqlDependency">対象のデータベースを指定し、Microsoft SQL Server のキャッシュの依存関係を使用するテーブルをセミコロンで区切られた文字列。</param>
+        <param name="buildMethod">メソッドを呼び出すデリゲートは、コントロールを構築します。</param>
+        <param name="providerName">出力キャッシュ制御の格納に使用されるプロバイダーの名前。</param>
+        <summary>新しいインスタンスを構築、 <see cref="T:System.Web.UI.StaticPartialCachingControl" /> .ascx ファイルで定義されているコントロールのクラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

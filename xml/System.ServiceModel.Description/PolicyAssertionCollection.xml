@@ -1,0 +1,231 @@
+<Type Name="PolicyAssertionCollection" FullName="System.ServiceModel.Description.PolicyAssertionCollection">
+  <TypeSignature Language="C#" Value="public class PolicyAssertionCollection : System.Collections.ObjectModel.Collection&lt;System.Xml.XmlElement&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PolicyAssertionCollection extends System.Collections.ObjectModel.Collection`1&lt;class System.Xml.XmlElement&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Description.PolicyAssertionCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.ObjectModel.Collection&lt;System.Xml.XmlElement&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="!0">System.Xml.XmlElement</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ポリシー アサーションが含まれます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.PolicyAssertionCollection> クラスを使用して、ポリシー アサーションをグループ化し、アサーションのグループを列挙または変更します。  
+  
+ <xref:System.ServiceModel.Description.PolicyAssertionCollection> は、<xref:System.ServiceModel.Description.PolicyConversionContext> クラスのメソッドの戻り値として最もよく使用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PolicyAssertionCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.PolicyAssertionCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Description.PolicyAssertionCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PolicyAssertionCollection (System.Collections.Generic.IEnumerable&lt;System.Xml.XmlElement&gt; elements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class System.Xml.XmlElement&gt; elements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.PolicyAssertionCollection.#ctor(System.Collections.Generic.IEnumerable{System.Xml.XmlElement})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="elements" Type="System.Collections.Generic.IEnumerable&lt;System.Xml.XmlElement&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="elements">コレクションに含めるポリシー アサーション。</param>
+        <summary>指定した <see cref="T:System.ServiceModel.Description.PolicyAssertionCollection" /> オブジェクトを使用して、<see cref="T:System.Xml.XmlElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (string localName, string namespaceUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(string localName, string namespaceUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.PolicyAssertionCollection.Contains(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="namespaceUri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="localName">ポリシー アサーションの名前。</param>
+        <param name="namespaceUri">ポリシー アサーションの名前空間。</param>
+        <summary>指定したポリシー アサーションがコレクションに含まれているかどうかを示す値を返します。</summary>
+        <returns>
+          指定したポリシー アサーションがコレクションに格納されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Find">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlElement Find (string localName, string namespaceUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XmlElement Find(string localName, string namespaceUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.PolicyAssertionCollection.Find(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="namespaceUri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="localName">ポリシー アサーションのローカル名。</param>
+        <param name="namespaceUri">ポリシー アサーションの名前空間。</param>
+        <summary>指定したポリシー アサーションを返します。</summary>
+        <returns>指定されたポリシー アサーション。ポリシー アサーションが見つからない場合は <see langword="null" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindAll">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.Xml.XmlElement&gt; FindAll (string localName, string namespaceUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.ObjectModel.Collection`1&lt;class System.Xml.XmlElement&gt; FindAll(string localName, string namespaceUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.PolicyAssertionCollection.FindAll(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.Xml.XmlElement&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="namespaceUri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="localName">ポリシー アサーションのローカル名。</param>
+        <param name="namespaceUri">ポリシー アサーションの名前空間。</param>
+        <summary>指定したポリシー アサーションをすべて返します。</summary>
+        <returns>指定に一致するすべてのポリシー アサーションのコレクション。見つからない場合は、空のコレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertItem">
+      <MemberSignature Language="C#" Value="protected override void InsertItem (int index, System.Xml.XmlElement item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InsertItem(int32 index, class System.Xml.XmlElement item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.PolicyAssertionCollection.InsertItem(System.Int32,System.Xml.XmlElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="item" Type="System.Xml.XmlElement" />
+      </Parameters>
+      <Docs>
+        <param name="index">挿入する位置のインデックス<c>項目</c>です。</param>
+        <param name="item">位置に挿入するポリシー アサーション<c>インデックス</c>です。 アサーションには null を指定できません。</param>
+        <summary>コレクション内の指定したインデックスの位置に、指定したポリシー アサーションを挿入します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlElement Remove (string localName, string namespaceUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XmlElement Remove(string localName, string namespaceUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.PolicyAssertionCollection.Remove(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="namespaceUri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="localName">ポリシー アサーションのローカル名。</param>
+        <param name="namespaceUri">ポリシー アサーションの名前空間。</param>
+        <summary>コレクションから指定したポリシー アサーションを削除します。</summary>
+        <returns>コレクションから削除されたポリシー アサーション。指定したポリシー アサーションがコレクションに存在しない場合は <see langword="null" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAll">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.Xml.XmlElement&gt; RemoveAll (string localName, string namespaceUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.ObjectModel.Collection`1&lt;class System.Xml.XmlElement&gt; RemoveAll(string localName, string namespaceUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.PolicyAssertionCollection.RemoveAll(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.Xml.XmlElement&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="namespaceUri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="localName">ポリシー アサーションのローカル名。</param>
+        <param name="namespaceUri">ポリシー アサーションの名前空間。</param>
+        <summary>指定した名前と名前空間に一致するポリシー アサーションをすべて削除します。</summary>
+        <returns>削除されたすべてのポリシー アサーションのコレクション。指定した名前と名前空間に一致するポリシー アサーションが見つからなかった場合は、空のコレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetItem">
+      <MemberSignature Language="C#" Value="protected override void SetItem (int index, System.Xml.XmlElement item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetItem(int32 index, class System.Xml.XmlElement item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.PolicyAssertionCollection.SetItem(System.Int32,System.Xml.XmlElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="item" Type="System.Xml.XmlElement" />
+      </Parameters>
+      <Docs>
+        <param name="index">置き換えるアサーションのインデックス位置。</param>
+        <param name="item">既ににアサーションを置き換えるポリシー アサーション<c>インデックス</c>です。 アサーションには null を指定できません。</param>
+        <summary>指定したインデックス位置にあるポリシー アサーションを、指定したポリシー アサーションで置き換えます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

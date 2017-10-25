@@ -1,0 +1,164 @@
+<Type Name="IRemotePropertyInfoContract" FullName="System.AddIn.Contract.Automation.IRemotePropertyInfoContract">
+  <TypeSignature Language="C#" Value="public interface IRemotePropertyInfoContract : System.AddIn.Contract.IContract" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IRemotePropertyInfoContract implements class System.AddIn.Contract.IContract" />
+  <TypeSignature Language="DocId" Value="T:System.AddIn.Contract.Automation.IRemotePropertyInfoContract" />
+  <AssemblyInfo>
+    <AssemblyName>System.AddIn.Contract</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.AddIn.Contract.IContract</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>コンポーネントがアプリケーション ドメインとプロセス境界を越えてプロパティについての情報にアクセスする際に使用するコントラクトを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.AddIn.Contract.Automation.IRemotePropertyInfoContract>を実装するリモート オブジェクトのプロパティを表す、<xref:System.AddIn.Contract.Automation.IRemoteObjectContract>インターフェイスです。  
+  
+ リモート オブジェクトの 1 つ以上のプロパティにアクセスするには、使用、<xref:System.AddIn.Contract.Automation.IRemoteObjectContract.GetRemoteType%2A>取得するメソッド、<xref:System.AddIn.Contract.Automation.IRemoteTypeContract>リモート オブジェクトの型を表すです。 次に、呼び出し、<xref:System.AddIn.Contract.Automation.IRemoteTypeContract.GetProperty%2A>または<xref:System.AddIn.Contract.Automation.IRemoteTypeContract.GetProperties%2A>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetGetMethod">
+      <MemberSignature Language="C#" Value="public System.AddIn.Contract.Automation.IRemoteMethodInfoContract GetGetMethod ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.AddIn.Contract.Automation.IRemoteMethodInfoContract GetGetMethod() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Automation.IRemotePropertyInfoContract.GetGetMethod" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.Automation.IRemoteMethodInfoContract</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see langword="get" />プロパティのアクセサーこの<see cref="T:System.AddIn.Contract.Automation.IRemotePropertyInfoContract" />を識別します。</summary>
+        <returns><see cref="T:System.AddIn.Contract.Automation.IRemoteMethodInfoContract" />を表す、<see langword="get" />プロパティのアクセサーこの<see cref="T:System.AddIn.Contract.Automation.IRemotePropertyInfoContract" />を識別します。<see langword="null" />プロパティがない場合、<see langword="get" />アクセサー。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertyData">
+      <MemberSignature Language="C#" Value="public System.AddIn.Contract.Automation.RemotePropertyData GetPropertyData ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.AddIn.Contract.Automation.RemotePropertyData GetPropertyData() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Automation.IRemotePropertyInfoContract.GetPropertyData" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.Automation.RemotePropertyData</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プロパティに関する情報を返しますこれ<see cref="T:System.AddIn.Contract.Automation.IRemotePropertyInfoContract" />を識別します。</summary>
+        <returns>A<see cref="T:System.AddIn.Contract.Automation.RemotePropertyData" />プロパティに関する情報を提供するこの<see cref="T:System.AddIn.Contract.Automation.IRemotePropertyInfoContract" />を識別します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって提供される情報、<xref:System.AddIn.Contract.Automation.RemotePropertyData>構造には、プロパティは、読み取り可能または書き込み可能かどうかとプロパティ値の型が含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSetMethod">
+      <MemberSignature Language="C#" Value="public System.AddIn.Contract.Automation.IRemoteMethodInfoContract GetSetMethod ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.AddIn.Contract.Automation.IRemoteMethodInfoContract GetSetMethod() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Automation.IRemotePropertyInfoContract.GetSetMethod" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.Automation.IRemoteMethodInfoContract</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see langword="set" />プロパティのアクセサーこの<see cref="T:System.AddIn.Contract.Automation.IRemotePropertyInfoContract" />を識別します。</summary>
+        <returns><see cref="T:System.AddIn.Contract.Automation.IRemoteMethodInfoContract" />を表す、<see langword="set" />プロパティのアクセサーこの<see cref="T:System.AddIn.Contract.Automation.IRemotePropertyInfoContract" />を識別します。<see langword="null" />プロパティがない場合、<see langword="set" />アクセサー。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="public System.AddIn.Contract.RemoteArgument GetValue (System.AddIn.Contract.Automation.IRemoteObjectContract obj, System.Reflection.BindingFlags bindingFlags, System.AddIn.Contract.Collections.IRemoteArgumentArrayContract index, int localeId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.AddIn.Contract.RemoteArgument GetValue(class System.AddIn.Contract.Automation.IRemoteObjectContract obj, valuetype System.Reflection.BindingFlags bindingFlags, class System.AddIn.Contract.Collections.IRemoteArgumentArrayContract index, int32 localeId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Automation.IRemotePropertyInfoContract.GetValue(System.AddIn.Contract.Automation.IRemoteObjectContract,System.Reflection.BindingFlags,System.AddIn.Contract.Collections.IRemoteArgumentArrayContract,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.RemoteArgument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.AddIn.Contract.Automation.IRemoteObjectContract" />
+        <Parameter Name="bindingFlags" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="index" Type="System.AddIn.Contract.Collections.IRemoteArgumentArrayContract" />
+        <Parameter Name="localeId" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="obj"><see cref="T:System.AddIn.Contract.Automation.IRemoteObjectContract" />プロパティを含むオブジェクトを識別します。</param>
+        <param name="bindingFlags">ビットごとの組み合わせ、<see cref="T:System.Reflection.BindingFlags" />プロパティを呼び出す方法を指定する値。</param>
+        <param name="index"><see cref="T:System.AddIn.Contract.Collections.IRemoteArgumentArrayContract" /> ; インデックス付きプロパティのインデックス値を指定します。<see langword="null" />プロパティがインデックス付けされていない場合。</param>
+        <param name="localeId">プロパティによって実行されるロケール固有の変換に使用するロケール ID。</param>
+        <summary>プロパティの値を返しますこれ<see cref="T:System.AddIn.Contract.Automation.IRemotePropertyInfoContract" />を識別します。</summary>
+        <returns>A<see cref="T:System.AddIn.Contract.RemoteArgument" />プロパティの値を指定します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 推奨<xref:System.AddIn.Contract.Automation.IRemotePropertyInfoContract.GetValue%2A>実装スロー、<xref:System.ArgumentException>プロパティが書き込み専用の場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValue">
+      <MemberSignature Language="C#" Value="public void SetValue (System.AddIn.Contract.Automation.IRemoteObjectContract target, ref System.AddIn.Contract.RemoteArgument value, System.Reflection.BindingFlags bindingFlags, System.AddIn.Contract.Collections.IRemoteArgumentArrayContract index, int localeId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetValue(class System.AddIn.Contract.Automation.IRemoteObjectContract target, valuetype System.AddIn.Contract.RemoteArgument&amp; value, valuetype System.Reflection.BindingFlags bindingFlags, class System.AddIn.Contract.Collections.IRemoteArgumentArrayContract index, int32 localeId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Automation.IRemotePropertyInfoContract.SetValue(System.AddIn.Contract.Automation.IRemoteObjectContract,System.AddIn.Contract.RemoteArgument@,System.Reflection.BindingFlags,System.AddIn.Contract.Collections.IRemoteArgumentArrayContract,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.AddIn.Contract.Automation.IRemoteObjectContract" />
+        <Parameter Name="value" Type="System.AddIn.Contract.RemoteArgument&amp;" RefType="ref" />
+        <Parameter Name="bindingFlags" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="index" Type="System.AddIn.Contract.Collections.IRemoteArgumentArrayContract" />
+        <Parameter Name="localeId" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="target"><see cref="T:System.AddIn.Contract.Automation.IRemoteObjectContract" />プロパティを含むオブジェクトを識別します。</param>
+        <param name="value">A<see cref="T:System.AddIn.Contract.RemoteArgument" />プロパティの値を指定します。</param>
+        <param name="bindingFlags">ビットごとの組み合わせ、<see cref="T:System.Reflection.BindingFlags" />プロパティを呼び出す方法を指定する値。</param>
+        <param name="index"><see cref="T:System.AddIn.Contract.Collections.IRemoteArgumentArrayContract" /> ; インデックス付きプロパティのインデックス値を指定します。<see langword="null" />プロパティがインデックス付けされていない場合。</param>
+        <param name="localeId">すべてのロケール固有の型変換のプロパティを使用するロケール ID です。</param>
+        <summary>プロパティの値の設定この<see cref="T:System.AddIn.Contract.Automation.IRemotePropertyInfoContract" />を識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 推奨<xref:System.AddIn.Contract.Automation.IRemotePropertyInfoContract.SetValue%2A>実装スロー、<xref:System.ArgumentException>プロパティが読み取り専用の場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

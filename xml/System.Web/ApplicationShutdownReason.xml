@@ -1,0 +1,281 @@
+<Type Name="ApplicationShutdownReason" FullName="System.Web.ApplicationShutdownReason">
+  <TypeSignature Language="C#" Value="public enum ApplicationShutdownReason" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ApplicationShutdownReason extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.ApplicationShutdownReason" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>その理由を指定します、<see cref="T:System.AppDomain" />クラスがシャット ダウンします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.ApplicationShutdownReason>可能な値を表す、<xref:System.Web.Hosting.HostingEnvironment.ShutdownReason%2A>のプロパティ、<xref:System.Web.Hosting.HostingEnvironment>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BinDirChangeOrDirectoryRename">
+      <MemberSignature Language="C#" Value="BinDirChangeOrDirectoryRename" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.ApplicationShutdownReason BinDirChangeOrDirectoryRename = int32(6)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.ApplicationShutdownReason.BinDirChangeOrDirectoryRename" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ApplicationShutdownReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変更は、Bin フォルダーまたは内のファイルにしました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="BrowsersDirChangeOrDirectoryRename">
+      <MemberSignature Language="C#" Value="BrowsersDirChangeOrDirectoryRename" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.ApplicationShutdownReason BrowsersDirChangeOrDirectoryRename = int32(7)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.ApplicationShutdownReason.BrowsersDirChangeOrDirectoryRename" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ApplicationShutdownReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変更は、App_Browsers フォルダーまたはファイルにしました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildManagerChange">
+      <MemberSignature Language="C#" Value="BuildManagerChange" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.ApplicationShutdownReason BuildManagerChange = int32(15)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.ApplicationShutdownReason.BuildManagerChange" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ApplicationShutdownReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンパイル システムには、アプリケーション ドメインがシャット ダウンします。 <see cref="F:System.Web.ApplicationShutdownReason.BuildManagerChange" />メンバーは、.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangeInGlobalAsax">
+      <MemberSignature Language="C#" Value="ChangeInGlobalAsax" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.ApplicationShutdownReason ChangeInGlobalAsax = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.ApplicationShutdownReason.ChangeInGlobalAsax" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ApplicationShutdownReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Global.asax ファイルに変更されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangeInSecurityPolicyFile">
+      <MemberSignature Language="C#" Value="ChangeInSecurityPolicyFile" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.ApplicationShutdownReason ChangeInSecurityPolicyFile = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.ApplicationShutdownReason.ChangeInSecurityPolicyFile" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ApplicationShutdownReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コード アクセス セキュリティ ポリシー ファイルで変更されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CodeDirChangeOrDirectoryRename">
+      <MemberSignature Language="C#" Value="CodeDirChangeOrDirectoryRename" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.ApplicationShutdownReason CodeDirChangeOrDirectoryRename = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.ApplicationShutdownReason.CodeDirChangeOrDirectoryRename" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ApplicationShutdownReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>またはを変更されました App_Code フォルダー内のファイルにします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ConfigurationChange">
+      <MemberSignature Language="C#" Value="ConfigurationChange" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.ApplicationShutdownReason ConfigurationChange = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.ApplicationShutdownReason.ConfigurationChange" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ApplicationShutdownReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーション レベルの構成ファイルに変更されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="HostingEnvironment">
+      <MemberSignature Language="C#" Value="HostingEnvironment" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.ApplicationShutdownReason HostingEnvironment = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.ApplicationShutdownReason.HostingEnvironment" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ApplicationShutdownReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホスティング環境は、アプリケーション ドメインがシャット ダウンします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="HttpRuntimeClose">
+      <MemberSignature Language="C#" Value="HttpRuntimeClose" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.ApplicationShutdownReason HttpRuntimeClose = int32(12)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.ApplicationShutdownReason.HttpRuntimeClose" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ApplicationShutdownReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>呼び出されました<see cref="M:System.Web.HttpRuntime.Close" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="IdleTimeout">
+      <MemberSignature Language="C#" Value="IdleTimeout" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.ApplicationShutdownReason IdleTimeout = int32(10)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.ApplicationShutdownReason.IdleTimeout" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ApplicationShutdownReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最大アイドル時間の制限に達しました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializationError">
+      <MemberSignature Language="C#" Value="InitializationError" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.ApplicationShutdownReason InitializationError = int32(13)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.ApplicationShutdownReason.InitializationError" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ApplicationShutdownReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.AppDomain" />初期化エラーが発生しました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxRecompilationsReached">
+      <MemberSignature Language="C#" Value="MaxRecompilationsReached" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.ApplicationShutdownReason MaxRecompilationsReached = int32(14)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.ApplicationShutdownReason.MaxRecompilationsReached" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ApplicationShutdownReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リソースの動的再コンパイルの最大数に達しました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.ApplicationShutdownReason None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.ApplicationShutdownReason.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ApplicationShutdownReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シャット ダウンの理由が指定されていません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PhysicalApplicationPathChanged">
+      <MemberSignature Language="C#" Value="PhysicalApplicationPathChanged" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.ApplicationShutdownReason PhysicalApplicationPathChanged = int32(11)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.ApplicationShutdownReason.PhysicalApplicationPathChanged" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ApplicationShutdownReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションの物理パスに変更されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ResourcesDirChangeOrDirectoryRename">
+      <MemberSignature Language="C#" Value="ResourcesDirChangeOrDirectoryRename" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.ApplicationShutdownReason ResourcesDirChangeOrDirectoryRename = int32(9)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.ApplicationShutdownReason.ResourcesDirChangeOrDirectoryRename" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ApplicationShutdownReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>App_GlobalResources フォルダーにまたは内のファイルが変更されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UnloadAppDomainCalled">
+      <MemberSignature Language="C#" Value="UnloadAppDomainCalled" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.ApplicationShutdownReason UnloadAppDomainCalled = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.ApplicationShutdownReason.UnloadAppDomainCalled" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ApplicationShutdownReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>呼び出されました<see cref="M:System.Web.HttpRuntime.UnloadAppDomain" />です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

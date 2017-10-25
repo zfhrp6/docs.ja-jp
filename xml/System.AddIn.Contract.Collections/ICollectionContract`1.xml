@@ -1,0 +1,222 @@
+<Type Name="ICollectionContract&lt;C&gt;" FullName="System.AddIn.Contract.Collections.ICollectionContract&lt;C&gt;">
+  <TypeSignature Language="C#" Value="public interface ICollectionContract&lt;C&gt; : System.AddIn.Contract.Collections.IEnumerableContract&lt;C&gt; where C : IContract" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ICollectionContract`1&lt;(class System.AddIn.Contract.IContract) C&gt; implements class System.AddIn.Contract.Collections.IEnumerableContract`1&lt;!C&gt;, class System.AddIn.Contract.IContract" />
+  <TypeSignature Language="DocId" Value="T:System.AddIn.Contract.Collections.ICollectionContract`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.AddIn.Contract</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="C">
+      <Constraints>
+        <InterfaceName>System.AddIn.Contract.IContract</InterfaceName>
+      </Constraints>
+    </TypeParameter>
+  </TypeParameters>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.AddIn.Contract.Collections.IEnumerableContract&lt;C&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <typeparam name="C">コレクション内の要素の型。 <c>C</c>実装する必要があります、<see cref="T:System.AddIn.Contract.IContract" />インターフェイスです。</typeparam>
+    <summary>ジェネリック コレクションを表します<see cref="T:System.AddIn.Contract.IContract" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.AddIn.Contract.Collections.ICollectionContract%601>動的にサイズを変更できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (C item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Add(!C item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Collections.ICollectionContract`1.Add(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="C" />
+      </Parameters>
+      <Docs>
+        <param name="item"><see cref="T:System.AddIn.Contract.IContract" /> に追加する <see cref="T:System.AddIn.Contract.Collections.ICollectionContract`1" />。</param>
+        <summary>
+          <see cref="T:System.AddIn.Contract.IContract" /> を <see cref="T:System.AddIn.Contract.Collections.ICollectionContract`1" /> に追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 確認するかどうか、<xref:System.AddIn.Contract.Collections.ICollectionContract%601>は読み取り専用、呼び出し、<xref:System.AddIn.Contract.Collections.ICollectionContract%601.GetIsReadOnly%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.AddIn.Contract.Collections.ICollectionContract`1" /> は読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Collections.ICollectionContract`1.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.AddIn.Contract.Collections.ICollectionContract`1" /> からすべての要素を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 確認するかどうか、<xref:System.AddIn.Contract.Collections.ICollectionContract%601>は読み取り専用、呼び出し、<xref:System.AddIn.Contract.Collections.ICollectionContract%601.GetIsReadOnly%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.AddIn.Contract.Collections.ICollectionContract`1" /> は読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (C item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(!C item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Collections.ICollectionContract`1.Contains(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="C" />
+      </Parameters>
+      <Docs>
+        <param name="item"><see cref="T:System.AddIn.Contract.Collections.ICollectionContract`1" /> 内で検索される <see cref="T:System.AddIn.Contract.IContract" />。</param>
+        <summary>示す値を返すかどうか、指定した<see cref="T:System.AddIn.Contract.IContract" />では、<see cref="T:System.AddIn.Contract.Collections.ICollectionContract`1" />です。</summary>
+        <returns>
+          <see langword="true" />場合、指定した<see cref="T:System.AddIn.Contract.IContract" />では、 <see cref="T:System.AddIn.Contract.Collections.ICollectionContract`1" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (C[] array, int arrayIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(!C[] array, int32 arrayIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Collections.ICollectionContract`1.CopyTo(`0[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="C[]" />
+        <Parameter Name="arrayIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.AddIn.Contract.Collections.ICollectionContract`1" /> から要素がコピーされる先の 1 次元配列。</param>
+        <param name="arrayIndex">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary><see cref="T:System.AddIn.Contract.Collections.ICollectionContract`1" /> 全体を、互換性のある 1 次元配列の、指定したインデックスから始まる位置にコピーします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="arrayIndex" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="array" /> が多次元です。  
+  
+ または  
+  
+ コピー元の <see cref="T:System.AddIn.Contract.Collections.ICollectionContract`1" /> の要素数が、コピー先の配列の <paramref name="arrayIndex" /> から最後までの領域を超えています。  
+  
+ または  
+  
+ 型<paramref name="C" />コピー先の配列の型に自動的にキャストすることはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCount">
+      <MemberSignature Language="C#" Value="public int GetCount ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 GetCount() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Collections.ICollectionContract`1.GetCount" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>含まれる要素の数を返します、<see cref="T:System.AddIn.Contract.Collections.ICollectionContract`1" />です。</summary>
+        <returns><see cref="T:System.AddIn.Contract.Collections.ICollectionContract`1" /> に格納されている要素の数。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIsReadOnly">
+      <MemberSignature Language="C#" Value="public bool GetIsReadOnly ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetIsReadOnly() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Collections.ICollectionContract`1.GetIsReadOnly" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を返すかどうか、<see cref="T:System.AddIn.Contract.Collections.ICollectionContract`1" />は読み取り専用です。</summary>
+        <returns>
+          <see langword="true" /> が読み取り専用である場合は <see cref="T:System.AddIn.Contract.Collections.ICollectionContract`1" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public bool Remove (C item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Remove(!C item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Collections.ICollectionContract`1.Remove(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="C" />
+      </Parameters>
+      <Docs>
+        <param name="item"><see cref="T:System.AddIn.Contract.IContract" /> から削除する <see cref="T:System.AddIn.Contract.Collections.ICollectionContract`1" />。</param>
+        <summary><see cref="T:System.AddIn.Contract.IContract" /> 内で最初に見つかった特定の <see cref="T:System.AddIn.Contract.Collections.ICollectionContract`1" /> を削除します。</summary>
+        <returns>
+          <paramref name="item" /> が正常に削除された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 このメソッドは、<see langword="false" /> が <paramref name="item" /> に見つからなかった場合にも <see cref="T:System.AddIn.Contract.Collections.ICollectionContract`1" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 確認するかどうか、<xref:System.AddIn.Contract.Collections.ICollectionContract%601>は読み取り専用、呼び出し、<xref:System.AddIn.Contract.Collections.ICollectionContract%601.GetIsReadOnly%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.AddIn.Contract.Collections.ICollectionContract`1" /> は読み取り専用です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

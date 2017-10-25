@@ -1,0 +1,1350 @@
+<Type Name="ToolLocationHelper" FullName="Microsoft.Build.Utilities.ToolLocationHelper">
+  <TypeSignature Language="C#" Value="public static class ToolLocationHelper" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ToolLocationHelper extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Utilities.ToolLocationHelper" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>.NET Framework と .NET Framework SDK のファイルとディレクトリを検索するためのユーティリティ メソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:Microsoft.Build.Utilities.ToolTask>実行している[Ilasm.exe (IL アセンブラー)](~/docs/framework/tools/ilasm-exe-il-assembler.md)です。 <xref:Microsoft.Build.Utilities.CommandLineBuilder>、 <xref:Microsoft.Build.Utilities.ToolLocationHelper>、および<xref:Microsoft.Build.Utilities.TaskLoggingHelper>タスクを実行するために必要な情報を生成するクラスが使用されます。  
+  
+ [!code-csharp[msbuild_ToolTask#1](~/samples/snippets/csharp/VS_Snippets_Misc/msbuild_ToolTask/CS/ILAsm.cs#1)]
+ [!code-vb[msbuild_ToolTask#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/msbuild_ToolTask/VB/ILAsm.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ClearSDKStaticCache">
+      <MemberSignature Language="C#" Value="public static void ClearSDKStaticCache ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ClearSDKStaticCache() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.ClearSDKStaticCache" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プラットフォームおよび拡張機能 Sdk の appDomain ワイド キャッシュをクリアします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAssemblyFoldersExInfo">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IList&lt;Microsoft.Build.Utilities.AssemblyFoldersExInfo&gt; GetAssemblyFoldersExInfo (string registryRoot, string targetFrameworkVersion, string registryKeySuffix, string osVersion, string platform, System.Reflection.ProcessorArchitecture targetProcessorArchitecture);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IList`1&lt;class Microsoft.Build.Utilities.AssemblyFoldersExInfo&gt; GetAssemblyFoldersExInfo(string registryRoot, string targetFrameworkVersion, string registryKeySuffix, string osVersion, string platform, valuetype System.Reflection.ProcessorArchitecture targetProcessorArchitecture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetAssemblyFoldersExInfo(System.String,System.String,System.String,System.String,System.String,System.Reflection.ProcessorArchitecture)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;Microsoft.Build.Utilities.AssemblyFoldersExInfo&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="registryRoot" Type="System.String" />
+        <Parameter Name="targetFrameworkVersion" Type="System.String" />
+        <Parameter Name="registryKeySuffix" Type="System.String" />
+        <Parameter Name="osVersion" Type="System.String" />
+        <Parameter Name="platform" Type="System.String" />
+        <Parameter Name="targetProcessorArchitecture" Type="System.Reflection.ProcessorArchitecture" />
+      </Parameters>
+      <Docs>
+        <param name="registryRoot">対象のフレームワークのルート レジストリの場所。 これは、.NET の SOFTWARE\MICROSOFT\\です。NETFramework です。</param>
+        <param name="targetFrameworkVersion">対象とする framework のバージョン (2.0、3.0、3.5、4.0、...)。</param>
+        <param name="registryKeySuffix">(AssemblyFoldersEx)、フォルダーの名前は、PocketPC\AssemblyFoldersEx、またはその他のユーザーにも使用できます。</param>
+        <param name="osVersion">対象となる最小値と最大 OS バージョン レジストリにします。 これらの値は、最小値と最大 OS のバージョン、宣言の間のディレクトリのみを返すに使用されます。 この値が空白または null の場合は、フィルター処理は行われません。</param>
+        <param name="platform">対象のプラットフォームの Guid。 一致するプラットフォームの GUID を持つディレクトリのみを返すために使用します。 この値が空白または null の場合のフィルター処理は行われません。</param>
+        <param name="targetProcessorArchitecture">対象となるプロセッサ アーキテクチャです。 どのレジストリ ハイブを検索するかを決定し、その順序。</param>
+        <summary>並べ替えられた一覧を取得<see cref="T:Microsoft.Build.Utilities.AssemblyFoldersExInfo" />サード パーティ製のアセンブリが登録されているディレクトリに関する情報を含むオブジェクト。 この情報は、ビルドおよびデザイン時に使用されます。</summary>
+        <returns>一覧を返す<see langword="AssemblyFoldersExInfo" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、列挙、`AssemblyFoldersEx`レジストリの場所の一覧が返された`AssemblyFoldersExInfo`デザイン時の参照アセンブリが検索され、ビルド時する同じ順序で。  
+  
+ 64 ビット オペレーティング システムで 64 ビットを対象とする場合、ハイブで追加、64 ビット、32 ビット ハイブです。32 ビットを対象にする場合ハイブで追加、32 ビット、64 ビット hive します。 32 ビット コンピューターのみでは、32 ビット ハイブに追加します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDisplayNameForTargetFrameworkDirectory">
+      <MemberSignature Language="C#" Value="public static string GetDisplayNameForTargetFrameworkDirectory (string targetFrameworkDirectory, System.Runtime.Versioning.FrameworkName frameworkName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetDisplayNameForTargetFrameworkDirectory(string targetFrameworkDirectory, class System.Runtime.Versioning.FrameworkName frameworkName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetDisplayNameForTargetFrameworkDirectory(System.String,System.Runtime.Versioning.FrameworkName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetFrameworkDirectory" Type="System.String" />
+        <Parameter Name="frameworkName" Type="System.Runtime.Versioning.FrameworkName" />
+      </Parameters>
+      <Docs>
+        <param name="targetFrameworkDirectory">対象のフレームワーク ディレクトリ。</param>
+        <param name="frameworkName">フレームワーク名。</param>
+        <summary>ターゲット フレームワークの詳細を指定した表示名を作成します。</summary>
+        <returns>ターゲット フレームワークの詳細を指定した表示名を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、表示用ですが、ターゲット フレームワーク モニカーのそれと同等です。  
+  
+ 1 つが見つからない場合、再頒布リスト ファイルから、合成されたいずれかが返されますのでは常に表示名。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDotNetFrameworkRootRegistryKey">
+      <MemberSignature Language="C#" Value="public static string GetDotNetFrameworkRootRegistryKey (Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetDotNetFrameworkRootRegistryKey(valuetype Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetDotNetFrameworkRootRegistryKey(Microsoft.Build.Utilities.TargetDotNetFrameworkVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="version" Type="Microsoft.Build.Utilities.TargetDotNetFrameworkVersion" />
+      </Parameters>
+      <Docs>
+        <param name="version">バージョン、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]ターゲットにします。</param>
+        <summary>完全な名前を取得、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]ルート レジストリ キー。</summary>
+        <returns>完全な名前を含む文字列、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]ルート レジストリ キー。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDotNetFrameworkSdkInstallKeyValue">
+      <MemberSignature Language="C#" Value="public static string GetDotNetFrameworkSdkInstallKeyValue (Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetDotNetFrameworkSdkInstallKeyValue(valuetype Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetDotNetFrameworkSdkInstallKeyValue(Microsoft.Build.Utilities.TargetDotNetFrameworkVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="version" Type="Microsoft.Build.Utilities.TargetDotNetFrameworkVersion" />
+      </Parameters>
+      <Docs>
+        <param name="version">バージョン、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]ターゲットにします。</param>
+        <summary>値の名前を取得、<see cref="M:Microsoft.Build.Utilities.ToolLocationHelper.GetDotNetFrameworkRootRegistryKey(Microsoft.Build.Utilities.TargetDotNetFrameworkVersion)" />を格納している、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] SDK インストール パス。</summary>
+        <returns>レジストリ キーの値の名前を含む文字列を返します、<see cref="M:Microsoft.Build.Utilities.ToolLocationHelper.GetDotNetFrameworkRootRegistryKey(Microsoft.Build.Utilities.TargetDotNetFrameworkVersion)" />を格納している、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] SDK インストール パス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDotNetFrameworkSdkInstallKeyValue">
+      <MemberSignature Language="C#" Value="public static string GetDotNetFrameworkSdkInstallKeyValue (Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version, Microsoft.Build.Utilities.VisualStudioVersion visualStudioVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetDotNetFrameworkSdkInstallKeyValue(valuetype Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version, valuetype Microsoft.Build.Utilities.VisualStudioVersion visualStudioVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetDotNetFrameworkSdkInstallKeyValue(Microsoft.Build.Utilities.TargetDotNetFrameworkVersion,Microsoft.Build.Utilities.VisualStudioVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="version" Type="Microsoft.Build.Utilities.TargetDotNetFrameworkVersion" />
+        <Parameter Name="visualStudioVersion" Type="Microsoft.Build.Utilities.VisualStudioVersion" />
+      </Parameters>
+      <Docs>
+        <param name="version">対象となる .NET Framework のバージョン</param>
+        <param name="visualStudioVersion">Visual Studio、要求された SDK のバージョンに関連付けられています。</param>
+        <summary>インストール ルート パスを SDK を含む GetDotNetFrameworkRootRegistryKey の値の名前</summary>
+        <returns><see cref="T:System.String" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDotNetFrameworkSdkRootRegistryKey">
+      <MemberSignature Language="C#" Value="public static string GetDotNetFrameworkSdkRootRegistryKey (Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetDotNetFrameworkSdkRootRegistryKey(valuetype Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetDotNetFrameworkSdkRootRegistryKey(Microsoft.Build.Utilities.TargetDotNetFrameworkVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="version" Type="Microsoft.Build.Utilities.TargetDotNetFrameworkVersion" />
+      </Parameters>
+      <Docs>
+        <param name="version">対象となる .NET Framework のバージョン</param>
+        <summary>.NET Framework SDK のルート レジストリ キーの完全名を返します。</summary>
+        <returns>.NET Framework SDK を検索する場所を示すレジストリ キー ルートの文字列表現を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDotNetFrameworkSdkRootRegistryKey">
+      <MemberSignature Language="C#" Value="public static string GetDotNetFrameworkSdkRootRegistryKey (Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version, Microsoft.Build.Utilities.VisualStudioVersion visualStudioVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetDotNetFrameworkSdkRootRegistryKey(valuetype Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version, valuetype Microsoft.Build.Utilities.VisualStudioVersion visualStudioVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetDotNetFrameworkSdkRootRegistryKey(Microsoft.Build.Utilities.TargetDotNetFrameworkVersion,Microsoft.Build.Utilities.VisualStudioVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="version" Type="Microsoft.Build.Utilities.TargetDotNetFrameworkVersion" />
+        <Parameter Name="visualStudioVersion" Type="Microsoft.Build.Utilities.VisualStudioVersion" />
+      </Parameters>
+      <Docs>
+        <param name="version">対象となる .NET Framework のバージョン</param>
+        <param name="visualStudioVersion">Visual Studio、要求された SDK のバージョンに関連付けられています。</param>
+        <summary>.NET Framework SDK のルート レジストリ キーの完全名を返します</summary>
+        <returns><see cref="T:System.String" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDotNetFrameworkVersionFolderPrefix">
+      <MemberSignature Language="C#" Value="public static string GetDotNetFrameworkVersionFolderPrefix (Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetDotNetFrameworkVersionFolderPrefix(valuetype Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetDotNetFrameworkVersionFolderPrefix(Microsoft.Build.Utilities.TargetDotNetFrameworkVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="version" Type="Microsoft.Build.Utilities.TargetDotNetFrameworkVersion" />
+      </Parameters>
+      <Docs>
+        <param name="version">バージョン、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]ターゲットにします。</param>
+        <summary>プレフィックスを取得、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]フォルダーです。</summary>
+        <returns>プレフィックスを返します、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]フォルダーです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される値の例は、文字列"v2.0"です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPathToDotNetFramework">
+      <MemberSignature Language="C#" Value="public static string GetPathToDotNetFramework (Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetPathToDotNetFramework(valuetype Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetPathToDotNetFramework(Microsoft.Build.Utilities.TargetDotNetFrameworkVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="version" Type="Microsoft.Build.Utilities.TargetDotNetFrameworkVersion" />
+      </Parameters>
+      <Docs>
+        <param name="version">バージョン、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]ターゲットにします。</param>
+        <summary>完全修飾パスを取得、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]ルート ディレクトリ。</summary>
+        <returns>完全修飾パスを含む文字列、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]ルート ディレクトリ、または null 参照 (<see langword="Nothing" />で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]) 場合、対象のバージョンの[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]がインストールされていません。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPathToDotNetFramework">
+      <MemberSignature Language="C#" Value="public static string GetPathToDotNetFramework (Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version, Microsoft.Build.Utilities.DotNetFrameworkArchitecture architecture);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetPathToDotNetFramework(valuetype Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version, valuetype Microsoft.Build.Utilities.DotNetFrameworkArchitecture architecture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetPathToDotNetFramework(Microsoft.Build.Utilities.TargetDotNetFrameworkVersion,Microsoft.Build.Utilities.DotNetFrameworkArchitecture)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="version" Type="Microsoft.Build.Utilities.TargetDotNetFrameworkVersion" />
+        <Parameter Name="architecture" Type="Microsoft.Build.Utilities.DotNetFrameworkArchitecture" />
+      </Parameters>
+      <Docs>
+        <param name="version">対象となる .NET Framework のバージョン</param>
+        <param name="architecture">必要なアーキテクチャ、または DotNetFrameworkArchitecture.Current でこのプロセスが実行されている現在のアーキテクチャ用です。</param>
+        <summary>フレームワークのルート ディレクトリへの完全修飾パスを取得します。</summary>
+        <returns>フレームワークのルート ディレクトリへの完全修飾パスを返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPathToDotNetFrameworkFile">
+      <MemberSignature Language="C#" Value="public static string GetPathToDotNetFrameworkFile (string fileName, Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetPathToDotNetFrameworkFile(string fileName, valuetype Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetPathToDotNetFrameworkFile(System.String,Microsoft.Build.Utilities.TargetDotNetFrameworkVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="version" Type="Microsoft.Build.Utilities.TargetDotNetFrameworkVersion" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">内で検索するファイル、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]ディレクトリ。</param>
+        <param name="version">バージョン、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]ターゲットにします。</param>
+        <summary>内のファイルへの完全修飾パスを取得、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]ディレクトリ。</summary>
+        <returns>指定したファイルまたは null 参照に完全修飾パスを含む文字列 (<see langword="Nothing" />で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]) 場合の対象とするバージョン、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]がインストールされていません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:Microsoft.Build.Utilities.ToolTask>実行している[Ilasm.exe (IL アセンブラー)](~/docs/framework/tools/ilasm-exe-il-assembler.md)です。 <xref:Microsoft.Build.Utilities.CommandLineBuilder>、 <xref:Microsoft.Build.Utilities.ToolLocationHelper>、および<xref:Microsoft.Build.Utilities.TaskLoggingHelper>タスクを実行するために必要な情報を生成するクラスが使用されます。  
+  
+ [!code-csharp[msbuild_ToolTask#1](~/samples/snippets/csharp/VS_Snippets_Misc/msbuild_ToolTask/CS/ILAsm.cs#1)]
+ [!code-vb[msbuild_ToolTask#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/msbuild_ToolTask/VB/ILAsm.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPathToDotNetFrameworkFile">
+      <MemberSignature Language="C#" Value="public static string GetPathToDotNetFrameworkFile (string fileName, Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version, Microsoft.Build.Utilities.DotNetFrameworkArchitecture architecture);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetPathToDotNetFrameworkFile(string fileName, valuetype Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version, valuetype Microsoft.Build.Utilities.DotNetFrameworkArchitecture architecture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetPathToDotNetFrameworkFile(System.String,Microsoft.Build.Utilities.TargetDotNetFrameworkVersion,Microsoft.Build.Utilities.DotNetFrameworkArchitecture)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="version" Type="Microsoft.Build.Utilities.TargetDotNetFrameworkVersion" />
+        <Parameter Name="architecture" Type="Microsoft.Build.Utilities.DotNetFrameworkArchitecture" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">.NET Framework ディレクトリ内で検索するファイル名</param>
+        <param name="version">対象となる .NET Framework のバージョン</param>
+        <param name="architecture">必要なアーキテクチャ、または DotNetFrameworkArchitecture.Current でこのプロセスが実行されている現在のアーキテクチャ用です。</param>
+        <summary>指定したアーキテクチャのフレームワークのルート ディレクトリ内のファイルへの完全修飾パスを取得します。</summary>
+        <returns>フレームワークのルート ディレクトリ内のファイルへの完全修飾パスを返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPathToDotNetFrameworkReferenceAssemblies">
+      <MemberSignature Language="C#" Value="public static string GetPathToDotNetFrameworkReferenceAssemblies (Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetPathToDotNetFrameworkReferenceAssemblies(valuetype Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetPathToDotNetFrameworkReferenceAssemblies(Microsoft.Build.Utilities.TargetDotNetFrameworkVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="version" Type="Microsoft.Build.Utilities.TargetDotNetFrameworkVersion" />
+      </Parameters>
+      <Docs>
+        <param name="version">対象となる .NET Framework のバージョン</param>
+        <summary>所定のフレームワーク バージョンの参照アセンブリがある場所のパスを返します。</summary>
+        <returns>参照アセンブリ フォルダーの完全修飾パスを含む文字列、または対象となる .NET Framework バージョンがインストールされていない場合は、null 参照 (Visual Basic の場合 Nothing) を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPathToDotNetFrameworkSdk">
+      <MemberSignature Language="C#" Value="public static string GetPathToDotNetFrameworkSdk (Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetPathToDotNetFrameworkSdk(valuetype Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetPathToDotNetFrameworkSdk(Microsoft.Build.Utilities.TargetDotNetFrameworkVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="version" Type="Microsoft.Build.Utilities.TargetDotNetFrameworkVersion" />
+      </Parameters>
+      <Docs>
+        <param name="version">バージョン、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]ターゲットにします。</param>
+        <summary>\Bin ディレクトリへの完全修飾パスを取得、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] SDK。</summary>
+        <returns>\Bin ディレクトリへの完全修飾パスを含む文字列、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] SDK、または null 参照 (<see langword="Nothing" />で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]) 場合、対象のバージョンの[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]SDK がインストールされていません。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPathToDotNetFrameworkSdk">
+      <MemberSignature Language="C#" Value="public static string GetPathToDotNetFrameworkSdk (Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version, Microsoft.Build.Utilities.VisualStudioVersion visualStudioVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetPathToDotNetFrameworkSdk(valuetype Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version, valuetype Microsoft.Build.Utilities.VisualStudioVersion visualStudioVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetPathToDotNetFrameworkSdk(Microsoft.Build.Utilities.TargetDotNetFrameworkVersion,Microsoft.Build.Utilities.VisualStudioVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="version" Type="Microsoft.Build.Utilities.TargetDotNetFrameworkVersion" />
+        <Parameter Name="visualStudioVersion" Type="Microsoft.Build.Utilities.VisualStudioVersion" />
+      </Parameters>
+      <Docs>
+        <param name="version">対象となる .NET Framework のバージョン</param>
+        <param name="visualStudioVersion">Visual Studio、要求された SDK のバージョンに関連付けられています。</param>
+        <summary>.NET Framework SDK の"bin"ディレクトリへのパスを返します。</summary>
+        <returns>パス文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPathToDotNetFrameworkSdkFile">
+      <MemberSignature Language="C#" Value="public static string GetPathToDotNetFrameworkSdkFile (string fileName, Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetPathToDotNetFrameworkSdkFile(string fileName, valuetype Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetPathToDotNetFrameworkSdkFile(System.String,Microsoft.Build.Utilities.TargetDotNetFrameworkVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="version" Type="Microsoft.Build.Utilities.TargetDotNetFrameworkVersion" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">内で検索するファイル、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] SDK。</param>
+        <param name="version">バージョン、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]ターゲットにします。</param>
+        <summary>内のファイルの完全修飾パスを取得、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] SDK。</summary>
+        <returns>\Bin ディレクトリへの完全修飾パスを含む文字列、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] SDK、または null 参照 (<see langword="Nothing" />で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]) 場合、対象のバージョンの[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]SDK がインストールされていません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SDK のパスは、考慮対象として、呼び出し元プロセスのプロセッサ アーキテクチャ環境情報".../bin/i64"をたとえばされてしまうためです。  
+  
+ 異なり<xref:Microsoft.Build.Utilities.ToolLocationHelper.GetPathToDotNetFrameworkFile%2A>と<xref:Microsoft.Build.Utilities.ToolLocationHelper.GetPathToSystemFile%2A>このメソッドは、ファイルの存在を確認できるように、無効な`fileName`は null を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPathToDotNetFrameworkSdkFile">
+      <MemberSignature Language="C#" Value="public static string GetPathToDotNetFrameworkSdkFile (string fileName, Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version, Microsoft.Build.Utilities.DotNetFrameworkArchitecture architecture);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetPathToDotNetFrameworkSdkFile(string fileName, valuetype Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version, valuetype Microsoft.Build.Utilities.DotNetFrameworkArchitecture architecture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetPathToDotNetFrameworkSdkFile(System.String,Microsoft.Build.Utilities.TargetDotNetFrameworkVersion,Microsoft.Build.Utilities.DotNetFrameworkArchitecture)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="version" Type="Microsoft.Build.Utilities.TargetDotNetFrameworkVersion" />
+        <Parameter Name="architecture" Type="Microsoft.Build.Utilities.DotNetFrameworkArchitecture" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">.NET Framework SDK ディレクトリ内で検索するファイル名</param>
+        <param name="version">対象となる .NET Framework のバージョン</param>
+        <param name="architecture">要求されたファイルに必要なアーキテクチャ。</param>
+        <summary>.NET Framework SDK 内のファイルへの完全修飾パスを取得します。</summary>
+        <returns>.NET Framework SDK のファイルへの完全修飾パスを返します。 .NET Framework SDK が見つからない場合は、エラーをスローします。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPathToDotNetFrameworkSdkFile">
+      <MemberSignature Language="C#" Value="public static string GetPathToDotNetFrameworkSdkFile (string fileName, Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version, Microsoft.Build.Utilities.VisualStudioVersion visualStudioVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetPathToDotNetFrameworkSdkFile(string fileName, valuetype Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version, valuetype Microsoft.Build.Utilities.VisualStudioVersion visualStudioVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetPathToDotNetFrameworkSdkFile(System.String,Microsoft.Build.Utilities.TargetDotNetFrameworkVersion,Microsoft.Build.Utilities.VisualStudioVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="version" Type="Microsoft.Build.Utilities.TargetDotNetFrameworkVersion" />
+        <Parameter Name="visualStudioVersion" Type="Microsoft.Build.Utilities.VisualStudioVersion" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">.NET Framework SDK ディレクトリ内で検索するファイル名</param>
+        <param name="version">対象となる .NET Framework のバージョン</param>
+        <param name="visualStudioVersion">要求された SDK に関連付けられている Visual Studio のバージョンです。</param>
+        <summary>.NET Framework SDK 内のファイルへの完全修飾パスを取得します。 .NET Framework SDK が見つからない場合はエラーです。</summary>
+        <returns>パス文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPathToDotNetFrameworkSdkFile">
+      <MemberSignature Language="C#" Value="public static string GetPathToDotNetFrameworkSdkFile (string fileName, Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version, Microsoft.Build.Utilities.VisualStudioVersion visualStudioVersion, Microsoft.Build.Utilities.DotNetFrameworkArchitecture architecture);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetPathToDotNetFrameworkSdkFile(string fileName, valuetype Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version, valuetype Microsoft.Build.Utilities.VisualStudioVersion visualStudioVersion, valuetype Microsoft.Build.Utilities.DotNetFrameworkArchitecture architecture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetPathToDotNetFrameworkSdkFile(System.String,Microsoft.Build.Utilities.TargetDotNetFrameworkVersion,Microsoft.Build.Utilities.VisualStudioVersion,Microsoft.Build.Utilities.DotNetFrameworkArchitecture)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="version" Type="Microsoft.Build.Utilities.TargetDotNetFrameworkVersion" />
+        <Parameter Name="visualStudioVersion" Type="Microsoft.Build.Utilities.VisualStudioVersion" />
+        <Parameter Name="architecture" Type="Microsoft.Build.Utilities.DotNetFrameworkArchitecture" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">.NET Framework SDK ディレクトリ内で検索するファイル名</param>
+        <param name="version">対象となる .NET Framework のバージョン</param>
+        <param name="visualStudioVersion">要求された SDK に関連付けられている Visual Studio のバージョンです。</param>
+        <param name="architecture">要求されたファイルに必要なアーキテクチャ。</param>
+        <summary>.NET Framework SDK 内のファイルへの完全修飾パスを取得します。 .NET Framework SDK が見つからない場合はエラーです。</summary>
+        <returns>パス文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPathToReferenceAssemblies">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IList&lt;string&gt; GetPathToReferenceAssemblies (System.Runtime.Versioning.FrameworkName frameworkName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IList`1&lt;string&gt; GetPathToReferenceAssemblies(class System.Runtime.Versioning.FrameworkName frameworkName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetPathToReferenceAssemblies(System.Runtime.Versioning.FrameworkName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="frameworkName" Type="System.Runtime.Versioning.FrameworkName" />
+      </Parameters>
+      <Docs>
+        <param name="frameworkName">フレームワーク名。</param>
+        <summary>指定されたターゲット フレームワークの参照アセンブリの場所へのパスを取得します。</summary>
+        <returns>参照アセンブリの場所へのパスを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、要求された ReferenceAssemblyRoot パス Environment.SpecialFolder.ProgramFiles によって指定される %programfiles% ディレクトリとなることを前提としています。 また、ときに、します。NETFramework または .NET Framework の targetFrameworkIdentifiers が認識され、targetFrameworkVersion 2.0、3.0、3.5、または 4 は、従来の .NET Framework のバージョンを正しく連鎖参照アセンブリ パスが返されます。 このチェーンの参照アセンブリ パスの一覧を構築する既存の GetPathToDotNetFrameworkReferenceAssemblies が使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">FrameworkName が null の場合</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPathToReferenceAssemblies">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IList&lt;string&gt; GetPathToReferenceAssemblies (string targetFrameworkRootPath, System.Runtime.Versioning.FrameworkName frameworkName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IList`1&lt;string&gt; GetPathToReferenceAssemblies(string targetFrameworkRootPath, class System.Runtime.Versioning.FrameworkName frameworkName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetPathToReferenceAssemblies(System.String,System.Runtime.Versioning.FrameworkName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetFrameworkRootPath" Type="System.String" />
+        <Parameter Name="frameworkName" Type="System.Runtime.Versioning.FrameworkName" />
+      </Parameters>
+      <Docs>
+        <param name="targetFrameworkRootPath">参照アセンブリのパスを計算するために使用するルート ディレクトリ。 次のよう TargetFrameworkRootPath\TargetFrameworkIdentifier\TargetFrameworkVersion\SubType\TargetFrameworkSubType に参照 assembies が生成されます。</param>
+        <param name="frameworkName">表す、TargetFrameworkMoniker frameworkName クラスです。 これは、null にすることはできません。</param>
+        <summary>指定されたフレームワークのバージョン指定 targetFrameworkRoot 基準とした参照アセンブリの場所へのパスを取得します。</summary>
+        <returns>参照アセンブリの場所へのパスを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パスが存在するかかどうかを参照してくださいチェックはされません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPathToReferenceAssemblies">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IList&lt;string&gt; GetPathToReferenceAssemblies (string targetFrameworkIdentifier, string targetFrameworkVersion, string targetFrameworkProfile);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IList`1&lt;string&gt; GetPathToReferenceAssemblies(string targetFrameworkIdentifier, string targetFrameworkVersion, string targetFrameworkProfile) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetPathToReferenceAssemblies(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetFrameworkIdentifier" Type="System.String" />
+        <Parameter Name="targetFrameworkVersion" Type="System.String" />
+        <Parameter Name="targetFrameworkProfile" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetFrameworkIdentifier">識別子が対象となっています。</param>
+        <param name="targetFrameworkVersion">対象となっているバージョン</param>
+        <param name="targetFrameworkProfile">対象となっているプロファイル</param>
+        <summary>指定されたターゲット フレームワークの参照アセンブリの場所にパスを返します。 このメソッドは、要求された ReferenceAssemblyRoot パス additon Environment.SpecialFolder.ProgramFiles 内で指定された %programfiles% ディレクトリとなる前提としています。 ときに、します。NETFramework または .NET Framework の targetFrameworkIdentifiers が認識され、targetFrameworkVersion は 2.0、3.0、3.5 または 4.0 おは従来の .NET Framework のバージョンを正しく連鎖参照アセンブリのパスを返します。 このチェーンの参照アセンブリ パスの一覧を構築する既存の GetPathToDotNetFrameworkReferenceAssemblies が使用されます。</summary>
+        <returns>参照アセンブリの場所のコレクションです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">FrameworkName が null の場合</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPathToStandardLibraries">
+      <MemberSignature Language="C#" Value="public static string GetPathToStandardLibraries (string targetFrameworkIdentifier, string targetFrameworkVersion, string targetFrameworkProfile);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetPathToStandardLibraries(string targetFrameworkIdentifier, string targetFrameworkVersion, string targetFrameworkProfile) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetPathToStandardLibraries(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetFrameworkIdentifier" Type="System.String" />
+        <Parameter Name="targetFrameworkVersion" Type="System.String" />
+        <Parameter Name="targetFrameworkProfile" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetFrameworkIdentifier">識別子が対象となっています。</param>
+        <param name="targetFrameworkVersion">対象となっているバージョン</param>
+        <param name="targetFrameworkProfile">対象となっているプロファイル</param>
+        <summary>指定されたターゲット フレームワークの標準ライブラリ (つまり mscorlib) の参照アセンブリの場所のパスを返します。 このメソッドは、要求された ReferenceAssemblyRoot パス additon Environment.SpecialFolder.ProgramFiles 内で指定された %programfiles% ディレクトリとなる前提としています。 ときに、します。NETFramework または .NET Framework の targetFrameworkIdentifiers が認識され、targetFrameworkVersion は 2.0、3.0、3.5 または 4.0 おは従来の .NET Framework のバージョンを正しく連鎖参照アセンブリのパスを返します。 このチェーンの参照アセンブリ パスの一覧を構築する既存の GetPathToDotNetFrameworkReferenceAssemblies が使用されます。</summary>
+        <returns>参照アセンブリの場所のコレクションです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">FrameworkName が null の場合</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPathToStandardLibraries">
+      <MemberSignature Language="C#" Value="public static string GetPathToStandardLibraries (string targetFrameworkIdentifier, string targetFrameworkVersion, string targetFrameworkProfile, string platformTarget);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetPathToStandardLibraries(string targetFrameworkIdentifier, string targetFrameworkVersion, string targetFrameworkProfile, string platformTarget) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetPathToStandardLibraries(System.String,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetFrameworkIdentifier" Type="System.String" />
+        <Parameter Name="targetFrameworkVersion" Type="System.String" />
+        <Parameter Name="targetFrameworkProfile" Type="System.String" />
+        <Parameter Name="platformTarget" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetFrameworkIdentifier">識別子が対象となっています。</param>
+        <param name="targetFrameworkVersion">対象となっているバージョン</param>
+        <param name="targetFrameworkProfile">対象となっているプロファイル</param>
+        <param name="platformTarget">標準ライブラリを検索する必要がありますおする場所の決定に使用されます。 このパラメーターが使用される .NET Framework 3.5 用以下のみに注意してください。</param>
+        <summary>Mscorlib や system.dll へのパスを返します</summary>
+        <returns>参照アセンブリの場所のコレクションです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">FrameworkName が null の場合</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPathToSystemFile">
+      <MemberSignature Language="C#" Value="public static string GetPathToSystemFile (string fileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetPathToSystemFile(string fileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetPathToSystemFile(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">System フォルダー内で検索するファイル。</param>
+        <summary>システム ディレクトリ内にあるファイルへの完全修飾パスを取得します。</summary>
+        <returns>システム ディレクトリ内のファイルへの完全修飾パスを格納している文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この API は、完全なパスとファイル システム フォルダー内のファイル名を構築します。 戻る前に、ファイルの存在をチェックしません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPathToWindowsSdk">
+      <MemberSignature Language="C#" Value="public static string GetPathToWindowsSdk (Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version, Microsoft.Build.Utilities.VisualStudioVersion visualStudioVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetPathToWindowsSdk(valuetype Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version, valuetype Microsoft.Build.Utilities.VisualStudioVersion visualStudioVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetPathToWindowsSdk(Microsoft.Build.Utilities.TargetDotNetFrameworkVersion,Microsoft.Build.Utilities.VisualStudioVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="version" Type="Microsoft.Build.Utilities.TargetDotNetFrameworkVersion" />
+        <Parameter Name="visualStudioVersion" Type="Microsoft.Build.Utilities.VisualStudioVersion" />
+      </Parameters>
+      <Docs>
+        <param name="version">ターゲット .NET Framework のバージョン</param>
+        <param name="visualStudioVersion">SDK に関連付けられている Visual Studio のバージョンです。</param>
+        <summary>必要な .NET Framework および Visual Studio のバージョンの Windows SDK へのパスを返します。 これはのみサポートされていることの対象となる .NET Framework バージョン 4.5 以降に注意してください。</summary>
+        <returns>Windows SDK の適切な場所へのパス</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPathToWindowsSdkFile">
+      <MemberSignature Language="C#" Value="public static string GetPathToWindowsSdkFile (string fileName, Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version, Microsoft.Build.Utilities.VisualStudioVersion visualStudioVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetPathToWindowsSdkFile(string fileName, valuetype Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version, valuetype Microsoft.Build.Utilities.VisualStudioVersion visualStudioVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetPathToWindowsSdkFile(System.String,Microsoft.Build.Utilities.TargetDotNetFrameworkVersion,Microsoft.Build.Utilities.VisualStudioVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="version" Type="Microsoft.Build.Utilities.TargetDotNetFrameworkVersion" />
+        <Parameter Name="visualStudioVersion" Type="Microsoft.Build.Utilities.VisualStudioVersion" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">要求されているファイルの名前。</param>
+        <param name="version">ターゲット .NET Framework のバージョンです。</param>
+        <param name="visualStudioVersion">SDK に関連付けられている Visual Studio のバージョンです。</param>
+        <summary>必要な .NET Framework および Visual Studio のバージョンの Windows SDK 内のファイルへのパスを返します。 これはのみサポートされていることの対象となる .NET Framework バージョン 4.5 以降に注意してください。</summary>
+        <returns>適切な Windows SDK ファイルへのパス</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPathToWindowsSdkFile">
+      <MemberSignature Language="C#" Value="public static string GetPathToWindowsSdkFile (string fileName, Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version, Microsoft.Build.Utilities.VisualStudioVersion visualStudioVersion, Microsoft.Build.Utilities.DotNetFrameworkArchitecture architecture);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetPathToWindowsSdkFile(string fileName, valuetype Microsoft.Build.Utilities.TargetDotNetFrameworkVersion version, valuetype Microsoft.Build.Utilities.VisualStudioVersion visualStudioVersion, valuetype Microsoft.Build.Utilities.DotNetFrameworkArchitecture architecture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetPathToWindowsSdkFile(System.String,Microsoft.Build.Utilities.TargetDotNetFrameworkVersion,Microsoft.Build.Utilities.VisualStudioVersion,Microsoft.Build.Utilities.DotNetFrameworkArchitecture)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="version" Type="Microsoft.Build.Utilities.TargetDotNetFrameworkVersion" />
+        <Parameter Name="visualStudioVersion" Type="Microsoft.Build.Utilities.VisualStudioVersion" />
+        <Parameter Name="architecture" Type="Microsoft.Build.Utilities.DotNetFrameworkArchitecture" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">要求されているファイルの名前。</param>
+        <param name="version">ターゲット .NET Framework のバージョンです。</param>
+        <param name="visualStudioVersion">要求された SDK に関連付けられている Visual Studio のバージョンです。</param>
+        <param name="architecture">目的の結果のファイルのアーキテクチャです。</param>
+        <summary>必要な .NET Framework および Visual Studio のバージョンと必要なアーキテクチャの Windows SDK 内のファイルへのパスを返します。 これはのみサポートされていることの対象となる .NET Framework バージョン 4.5 以降に注意してください。</summary>
+        <returns>適切な Windows SDK ファイルへのパス</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPlatformExtensionSDKLocation">
+      <MemberSignature Language="C#" Value="public static string GetPlatformExtensionSDKLocation (string sdkMoniker, string targetPlatformIdentifier, string targetPlatformVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetPlatformExtensionSDKLocation(string sdkMoniker, string targetPlatformIdentifier, string targetPlatformVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetPlatformExtensionSDKLocation(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sdkMoniker" Type="System.String" />
+        <Parameter Name="targetPlatformIdentifier" Type="System.String" />
+        <Parameter Name="targetPlatformVersion" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sdkMoniker">Sdk のモニカー</param>
+        <param name="targetPlatformIdentifier">プラットフォームの識別子</param>
+        <param name="targetPlatformVersion">プラットフォームのバージョン</param>
+        <summary>存在する場合、SDK のルートに SDK モニカーおよび対象のプラットフォーム get パスを指定します。</summary>
+        <returns>Sdk のルートが存在しない場合、sdk が、対象のプラットフォームまたは空の文字列に存在する場合の完全パスです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPlatformExtensionSDKLocation">
+      <MemberSignature Language="C#" Value="public static string GetPlatformExtensionSDKLocation (string sdkMoniker, string targetPlatformIdentifier, Version targetPlatformVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetPlatformExtensionSDKLocation(string sdkMoniker, string targetPlatformIdentifier, class System.Version targetPlatformVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetPlatformExtensionSDKLocation(System.String,System.String,System.Version)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sdkMoniker" Type="System.String" />
+        <Parameter Name="targetPlatformIdentifier" Type="System.String" />
+        <Parameter Name="targetPlatformVersion" Type="System.Version" />
+      </Parameters>
+      <Docs>
+        <param name="sdkMoniker">SDK のインストール場所を特定の名前です。</param>
+        <param name="targetPlatformIdentifier">対象のプラットフォーム向けの Sdk が見つかりません</param>
+        <param name="targetPlatformVersion">対象のプラットフォームのバージョンの Sdk が見つかりません</param>
+        <summary>Sdk 名を指定するには、targetPlatformIdentifier および TargetPlatformVersion 既定 sdk の場所を探す、渡されたの sdk 名でします。  
+  
+ Sdk のモニカーの形式は、sdk 名、Version=X.X です。</summary>
+        <returns>SDK の場所が見つかった場合場合は空の文字列に見つかりませんでした。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPlatformExtensionSDKLocation">
+      <MemberSignature Language="C#" Value="public static string GetPlatformExtensionSDKLocation (string sdkMoniker, string targetPlatformIdentifier, string targetPlatformVersion, string diskRoots, string registryRoot);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetPlatformExtensionSDKLocation(string sdkMoniker, string targetPlatformIdentifier, string targetPlatformVersion, string diskRoots, string registryRoot) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetPlatformExtensionSDKLocation(System.String,System.String,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sdkMoniker" Type="System.String" />
+        <Parameter Name="targetPlatformIdentifier" Type="System.String" />
+        <Parameter Name="targetPlatformVersion" Type="System.String" />
+        <Parameter Name="diskRoots" Type="System.String" />
+        <Parameter Name="registryRoot" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sdkMoniker">SDK のインストール場所を特定の名前です。</param>
+        <param name="targetPlatformIdentifier">対象のプラットフォーム向けの Sdk が見つかりません</param>
+        <param name="targetPlatformVersion">対象のプラットフォームのバージョンの Sdk が見つかりません</param>
+        <param name="diskRoots">Sdk 内で検索するディスクのルートの一覧</param>
+        <param name="registryRoot">Sdk 内で検索するレジストリ ルート</param>
+        <summary>Sdk 名を指定するには、targetPlatformIdentifier および TargetPlatformVersion 既定 sdk の場所を探す、渡されたの sdk 名でします。  
+  
+ Sdk のモニカーの形式は、sdk 名、Version=X.X です。</summary>
+        <returns>SDK の場所が見つかった場合場合は空の文字列に見つかりませんでした。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPlatformExtensionSDKLocation">
+      <MemberSignature Language="C#" Value="public static string GetPlatformExtensionSDKLocation (string sdkMoniker, string targetPlatformIdentifier, Version targetPlatformVersion, string[] diskRoots, string registryRoot);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetPlatformExtensionSDKLocation(string sdkMoniker, string targetPlatformIdentifier, class System.Version targetPlatformVersion, string[] diskRoots, string registryRoot) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetPlatformExtensionSDKLocation(System.String,System.String,System.Version,System.String[],System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sdkMoniker" Type="System.String" />
+        <Parameter Name="targetPlatformIdentifier" Type="System.String" />
+        <Parameter Name="targetPlatformVersion" Type="System.Version" />
+        <Parameter Name="diskRoots" Type="System.String[]" />
+        <Parameter Name="registryRoot" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sdkMoniker">SDK のインストール場所を特定の名前です。</param>
+        <param name="targetPlatformIdentifier">対象のプラットフォーム向けの Sdk が見つかりません</param>
+        <param name="targetPlatformVersion">対象のプラットフォームのバージョンの Sdk が見つかりません</param>
+        <param name="diskRoots">Sdk 内で検索するディスクのルートの一覧</param>
+        <param name="registryRoot">Sdk 内で検索するレジストリ ルート</param>
+        <summary>Sdk 名を指定するには、targetPlatformIdentifier および TargetPlatformVersion 既定 sdk の場所を探す、渡されたの sdk 名でします。  
+  
+ Sdk のモニカーの形式は、sdk 名、Version=X.X です。</summary>
+        <returns>SDK の場所が見つかった場合場合は空の文字列に見つかりませんでした。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPlatformExtensionSDKLocations">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IDictionary&lt;string,string&gt; GetPlatformExtensionSDKLocations (string targetPlatformIdentifier, Version targetPlatformVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IDictionary`2&lt;string, string&gt; GetPlatformExtensionSDKLocations(string targetPlatformIdentifier, class System.Version targetPlatformVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetPlatformExtensionSDKLocations(System.String,System.Version)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetPlatformIdentifier" Type="System.String" />
+        <Parameter Name="targetPlatformVersion" Type="System.Version" />
+      </Parameters>
+      <Docs>
+        <param name="targetPlatformIdentifier">対象のプラットフォーム向けの Sdk が見つかりません</param>
+        <param name="targetPlatformVersion">対象のプラットフォームのバージョンの Sdk が見つかりません</param>
+        <summary>指定されたターゲット プラットフォーム用のコンピューターにインストールされている SDK の一覧を取得します。</summary>
+        <returns>インストールされている SDK とファイルの場所の IDictionary です。 K:SDKName V:SDK インストール場所</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPlatformExtensionSDKLocations">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IDictionary&lt;string,string&gt; GetPlatformExtensionSDKLocations (string[] diskRoots, string registryRoot, string targetPlatformIdentifier, Version targetPlatformVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IDictionary`2&lt;string, string&gt; GetPlatformExtensionSDKLocations(string[] diskRoots, string registryRoot, string targetPlatformIdentifier, class System.Version targetPlatformVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetPlatformExtensionSDKLocations(System.String[],System.String,System.String,System.Version)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="diskRoots" Type="System.String[]" />
+        <Parameter Name="registryRoot" Type="System.String" />
+        <Parameter Name="targetPlatformIdentifier" Type="System.String" />
+        <Parameter Name="targetPlatformVersion" Type="System.Version" />
+      </Parameters>
+      <Docs>
+        <param name="diskRoots">Sdk を検索するディスクの場所の配列</param>
+        <param name="registryRoot">Sdk を検索するルート レジストリの場所</param>
+        <param name="targetPlatformIdentifier">対象のプラットフォーム向けの Sdk が見つかりません</param>
+        <param name="targetPlatformVersion">対象のプラットフォームのバージョンの Sdk が見つかりません</param>
+        <summary>指定されたターゲット プラットフォーム用のコンピューターにインストールされている SDK の一覧を取得します。</summary>
+        <returns>インストールされている SDK とファイルの場所の IDictionary です。 K:SDKName V:SDK インストール場所</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPlatformSDKLocation">
+      <MemberSignature Language="C#" Value="public static string GetPlatformSDKLocation (string targetPlatformIdentifier, string targetPlatformVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetPlatformSDKLocation(string targetPlatformIdentifier, string targetPlatformVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetPlatformSDKLocation(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetPlatformIdentifier" Type="System.String" />
+        <Parameter Name="targetPlatformVersion" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetPlatformIdentifier">対象のプラットフォーム SDK を検索するためです。</param>
+        <param name="targetPlatformVersion">SDK を検索する対象のプラットフォームのバージョンです。</param>
+        <summary>ターゲット プラットフォーム id とターゲット プラットフォーム バージョンを指定するには、そのターゲット プラットフォームのプラットフォーム SDK の既定の SDK の場所を検索します。</summary>
+        <returns>返します、SDK の場所が見つかった場合、それ以外の場合、空の文字列場合は、SDK が見つかりませんでした。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPlatformSDKLocation">
+      <MemberSignature Language="C#" Value="public static string GetPlatformSDKLocation (string targetPlatformIdentifier, Version targetPlatformVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetPlatformSDKLocation(string targetPlatformIdentifier, class System.Version targetPlatformVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetPlatformSDKLocation(System.String,System.Version)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetPlatformIdentifier" Type="System.String" />
+        <Parameter Name="targetPlatformVersion" Type="System.Version" />
+      </Parameters>
+      <Docs>
+        <param name="targetPlatformIdentifier">対象のプラットフォーム SDK を検索するためです。</param>
+        <param name="targetPlatformVersion">SDK を検索する対象のプラットフォームのバージョンです。</param>
+        <summary>ターゲット プラットフォーム id とターゲット プラットフォーム バージョンを指定するには、そのターゲット プラットフォームのプラットフォーム SDK の既定の SDK の場所を検索します。</summary>
+        <returns>返します、SDK の場所が見つかった場合、それ以外の場合、空の文字列場合は、SDK が見つかりませんでした。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPlatformSDKLocation">
+      <MemberSignature Language="C#" Value="public static string GetPlatformSDKLocation (string targetPlatformIdentifier, string targetPlatformVersion, string diskRoots, string registryRoot);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetPlatformSDKLocation(string targetPlatformIdentifier, string targetPlatformVersion, string diskRoots, string registryRoot) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetPlatformSDKLocation(System.String,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetPlatformIdentifier" Type="System.String" />
+        <Parameter Name="targetPlatformVersion" Type="System.String" />
+        <Parameter Name="diskRoots" Type="System.String" />
+        <Parameter Name="registryRoot" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetPlatformIdentifier">対象のプラットフォーム SDK を検索するためです。</param>
+        <param name="targetPlatformVersion">SDK を検索する対象のプラットフォームのバージョンです。</param>
+        <param name="diskRoots">ディスクの配列は、SDK の検索対象のルートします。</param>
+        <param name="registryRoot">内で SDK を検索するレジストリのルート。</param>
+        <summary>ターゲット プラットフォーム id とターゲット プラットフォーム バージョンを指定するには、そのターゲット プラットフォームのプラットフォーム SDK の既定の SDK の場所を検索します。</summary>
+        <returns>返します、SDK の場所が見つかった場合、それ以外の場合、空の文字列場合は、SDK が見つかりませんでした。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPlatformSDKLocation">
+      <MemberSignature Language="C#" Value="public static string GetPlatformSDKLocation (string targetPlatformIdentifier, Version targetPlatformVersion, string[] diskRoots, string registryRoot);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetPlatformSDKLocation(string targetPlatformIdentifier, class System.Version targetPlatformVersion, string[] diskRoots, string registryRoot) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetPlatformSDKLocation(System.String,System.Version,System.String[],System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetPlatformIdentifier" Type="System.String" />
+        <Parameter Name="targetPlatformVersion" Type="System.Version" />
+        <Parameter Name="diskRoots" Type="System.String[]" />
+        <Parameter Name="registryRoot" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetPlatformIdentifier">対象のプラットフォーム SDK を検索するためです。</param>
+        <param name="targetPlatformVersion">SDK を検索する対象のプラットフォームのバージョンです。</param>
+        <param name="diskRoots">ディスクの配列は、SDK の検索対象のルートします。</param>
+        <param name="registryRoot">内で SDK を検索するレジストリのルート。</param>
+        <summary>ターゲット プラットフォーム id とターゲット プラットフォーム バージョンを指定するには、そのターゲット プラットフォームのプラットフォーム SDK の既定の SDK の場所を検索します。</summary>
+        <returns>返します、SDK の場所が見つかった場合、それ以外の場合、空の文字列場合は、SDK が見つかりませんでした。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProgramFilesReferenceAssemblyRoot">
+      <MemberSignature Language="C#" Value="public static string GetProgramFilesReferenceAssemblyRoot ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetProgramFilesReferenceAssemblyRoot() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetProgramFilesReferenceAssemblyRoot" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Program files ディレクトリ下にある参照アセンブリのディレクトリのルートの場所を取得します。</summary>
+        <returns>参照アセンブリのディレクトリのルートの場所を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSDKDesignTimeFolders">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IList&lt;string&gt; GetSDKDesignTimeFolders (string sdkRoot);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IList`1&lt;string&gt; GetSDKDesignTimeFolders(string sdkRoot) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetSDKDesignTimeFolders(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sdkRoot" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sdkRoot">SDK のルート フォルダーには、デザイン時フォルダーが含まれる必要があります。</param>
+        <summary>指定した SDK のルートにある SDK のデザイン時のファイルを含む SDK フォルダーの一覧を取得します。 一覧では、順番は参照の検索で使用する必要があります。</summary>
+        <returns>SDK では、検索に使用する必要がありますの順序でデザイン時のファイルの検索中に使用するフォルダーの一覧を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSDKDesignTimeFolders">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IList&lt;string&gt; GetSDKDesignTimeFolders (string sdkRoot, string targetConfiguration, string targetArchitecture);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IList`1&lt;string&gt; GetSDKDesignTimeFolders(string sdkRoot, string targetConfiguration, string targetArchitecture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetSDKDesignTimeFolders(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sdkRoot" Type="System.String" />
+        <Parameter Name="targetConfiguration" Type="System.String" />
+        <Parameter Name="targetArchitecture" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sdkRoot">SDK のルート フォルダーには、デザイン時フォルダーが含まれる必要があります。</param>
+        <param name="targetConfiguration">SDK が対象とする構成です。 これは、"Debug"または「リテール」です。</param>
+        <param name="targetArchitecture">SDK のアーキテクチャが対象とします。</param>
+        <summary>指定した SDK のルートにある SDK のデザイン時のファイルを含む SDK フォルダーの一覧を取得します。 一覧では、順番は参照の検索で使用する必要があります。</summary>
+        <returns>SDK では、検索に使用する必要がありますの順序でデザイン時のファイルの検索中に使用するフォルダーの一覧を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSDKRedistFolders">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IList&lt;string&gt; GetSDKRedistFolders (string sdkRoot);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IList`1&lt;string&gt; GetSDKRedistFolders(string sdkRoot) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetSDKRedistFolders(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sdkRoot" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sdkRoot">SDK のルート フォルダーには、redist フォルダーを含める必要があります。</param>
+        <summary>指定した SDK のルートにある SDK 用再頒布ファイルを格納されている SDK のフォルダーの一覧を取得します。 一覧では、順番は参照の検索で使用する必要があります。</summary>
+        <returns>SDK では、検索に使用する必要がありますの順序で再頒布可能パッケージ ファイルの検索に使用されるフォルダーの一覧を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSDKRedistFolders">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IList&lt;string&gt; GetSDKRedistFolders (string sdkRoot, string targetConfiguration, string targetArchitecture);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IList`1&lt;string&gt; GetSDKRedistFolders(string sdkRoot, string targetConfiguration, string targetArchitecture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetSDKRedistFolders(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sdkRoot" Type="System.String" />
+        <Parameter Name="targetConfiguration" Type="System.String" />
+        <Parameter Name="targetArchitecture" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sdkRoot">SDK のルート フォルダーには、redist フォルダーを含める必要があります。</param>
+        <param name="targetConfiguration">SDK が対象とする構成です。 これは、"Debug"または「リテール」です。</param>
+        <param name="targetArchitecture">SDK のアーキテクチャが対象とします。</param>
+        <summary>指定した SDK のルートにある SDK 用再頒布ファイルを格納されている SDK のフォルダーの一覧を取得します。 一覧では、順番は参照の検索で使用する必要があります。</summary>
+        <returns>SDK では、検索に使用する必要がありますの順序で再頒布可能パッケージ ファイルの検索に使用されるフォルダーの一覧を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSDKReferenceFolders">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IList&lt;string&gt; GetSDKReferenceFolders (string sdkRoot);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IList`1&lt;string&gt; GetSDKReferenceFolders(string sdkRoot) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetSDKReferenceFolders(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sdkRoot" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sdkRoot">SDK のルート フォルダー。</param>
+        <summary>指定した SDK のルートにある SDK の参照が含まれている SDK のフォルダーの一覧を取得します。 一覧では、順番は参照の検索で使用する必要があります。</summary>
+        <returns>検索に使用する必要がありますの順序で、SDK 内の参照の検索中に使用するフォルダーの一覧を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSDKReferenceFolders">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IList&lt;string&gt; GetSDKReferenceFolders (string sdkRoot, string targetConfiguration, string targetArchitecture);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IList`1&lt;string&gt; GetSDKReferenceFolders(string sdkRoot, string targetConfiguration, string targetArchitecture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetSDKReferenceFolders(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sdkRoot" Type="System.String" />
+        <Parameter Name="targetConfiguration" Type="System.String" />
+        <Parameter Name="targetArchitecture" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sdkRoot">SDK のルート フォルダー。</param>
+        <param name="targetConfiguration">SDK が対象とする構成です。 これは、"Debug"または「リテール」です。</param>
+        <param name="targetArchitecture">SDK のアーキテクチャが対象とします。</param>
+        <summary>指定した SDK のルートにある SDK の参照が含まれている SDK のフォルダーの一覧を取得します。 一覧では、順番は参照の検索で使用する必要があります。</summary>
+        <returns>検索に使用する必要がありますの順序で、SDK 内の参照の検索中に使用するフォルダーの一覧を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSupportedTargetFrameworks">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IList&lt;string&gt; GetSupportedTargetFrameworks ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IList`1&lt;string&gt; GetSupportedTargetFrameworks() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetSupportedTargetFrameworks" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>サポートされているターゲット フレームワーク モニカーの一覧を取得します。</summary>
+        <returns>サポートされているターゲット フレームワーク モニカーの一覧</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTargetPlatformSdks">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IList&lt;Microsoft.Build.Utilities.TargetPlatformSDK&gt; GetTargetPlatformSdks ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IList`1&lt;class Microsoft.Build.Utilities.TargetPlatformSDK&gt; GetTargetPlatformSdks() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetTargetPlatformSdks" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;Microsoft.Build.Utilities.TargetPlatformSDK&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンピューター上のターゲット プラットフォーム Sdk の一覧を取得します。</summary>
+        <returns>ターゲット プラットフォームの Sdk、Item1 のリスト: TargetPlatformName Item2: バージョンの SDK Item3: sdk のルートへのパス</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTargetPlatformSdks">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IList&lt;Microsoft.Build.Utilities.TargetPlatformSDK&gt; GetTargetPlatformSdks (string[] diskRoots, string registryRoot);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IList`1&lt;class Microsoft.Build.Utilities.TargetPlatformSDK&gt; GetTargetPlatformSdks(string[] diskRoots, string registryRoot) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.GetTargetPlatformSdks(System.String[],System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;Microsoft.Build.Utilities.TargetPlatformSDK&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="diskRoots" Type="System.String[]" />
+        <Parameter Name="registryRoot" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="diskRoots">プラットフォーム Sdk を検索するディスクの場所の一覧です。</param>
+        <param name="registryRoot">プラットフォーム Sdk を検索するレジストリ ルート ロケーションです。</param>
+        <summary>コンピューター上のターゲット プラットフォーム Sdk の一覧を取得します。</summary>
+        <returns>ターゲット プラットフォーム Sdk の一覧を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HighestVersionOfTargetFrameworkIdentifier">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Versioning.FrameworkName HighestVersionOfTargetFrameworkIdentifier (string targetFrameworkRootDirectory, string frameworkIdentifier);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Versioning.FrameworkName HighestVersionOfTargetFrameworkIdentifier(string targetFrameworkRootDirectory, string frameworkIdentifier) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.ToolLocationHelper.HighestVersionOfTargetFrameworkIdentifier(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Versioning.FrameworkName</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetFrameworkRootDirectory" Type="System.String" />
+        <Parameter Name="frameworkIdentifier" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetFrameworkRootDirectory">ターゲット フレームワークのルート ディレクトリ。</param>
+        <param name="frameworkIdentifier">フレームワークの識別子です。</param>
+        <summary>識別子に基づいて、ターゲット フレームワーク モニカーの最新バージョンを取得します。</summary>
+        <returns>識別子に基づいて、ターゲット フレームワーク モニカーの最新バージョンを返します。 このメソッドはだけ完全フレームワークを検索します。プロファイルは返されません。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PathToSystem">
+      <MemberSignature Language="C#" Value="public static string PathToSystem { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string PathToSystem" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Utilities.ToolLocationHelper.PathToSystem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システム ディレクトリの絶対パスを取得します。</summary>
+        <value>システム ディレクトリへのディレクトリ パスを含む文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される値の例は、文字列"C:\WinNT\System32"です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

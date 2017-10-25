@@ -1,0 +1,974 @@
+<Type Name="BoundField" FullName="System.Web.UI.WebControls.BoundField">
+  <TypeSignature Language="C#" Value="public class BoundField : System.Web.UI.WebControls.DataControlField" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BoundField extends System.Web.UI.WebControls.DataControlField" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.BoundField" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.DataControlField</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データ バインド コントロール内にテキストとして表示されるフィールドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BoundField>クラスは、データ バインドされたコントロールによって使用 (など<xref:System.Web.UI.WebControls.GridView>と<xref:System.Web.UI.WebControls.DetailsView>) フィールドの値をテキストとして表示します。 <xref:System.Web.UI.WebControls.BoundField>が使用されているデータ バインド コントロールに応じて異なる方法でオブジェクトが表示されます。 たとえば、<xref:System.Web.UI.WebControls.GridView>表示の制御、<xref:System.Web.UI.WebControls.BoundField>を列としてオブジェクト中に、<xref:System.Web.UI.WebControls.DetailsView>コントロールは行として表示します。  
+  
+ 表示するフィールドを指定する、<xref:System.Web.UI.WebControls.BoundField>オブジェクト、設定、<xref:System.Web.UI.WebControls.BoundField.DataField%2A>プロパティ、フィールドの名前にします。 フィールドの値を HTML でエンコードする設定を表示する前に、<xref:System.Web.UI.WebControls.BoundField.HtmlEncode%2A>プロパティを`true`です。 フィールドの値に設定して、カスタム書式指定文字列を適用することができます、<xref:System.Web.UI.WebControls.BoundField.DataFormatString%2A>プロパティです。 ときに、<xref:System.Web.UI.WebControls.BoundField.HtmlEncode%2A>プロパティは`true`フィールドのエンコードされた文字列値は、カスタム書式指定文字列で使用します。 既定では、データ バインド コントロールが読み取り専用モードの場合にのみ、書式指定文字列はフィールド値に適用します。 書式指定文字列をデータ バインド コントロールが編集モードの間に表示される値を適用する設定、<xref:System.Web.UI.WebControls.BoundField.ApplyFormatInEditMode%2A>プロパティを`true`です。 設定してカスタムのキャプションを表示するには、フィールドの値が null の場合、<xref:System.Web.UI.WebControls.BoundField.NullDisplayText%2A>プロパティです。 <xref:System.Web.UI.WebControls.BoundField>オブジェクトは、空の文字列にも自動的に変換できます ("") を設定して値を null 値をフィールド、<xref:System.Web.UI.WebControls.BoundField.ConvertEmptyStringToNull%2A>プロパティを`true`です。  
+  
+ 非表示にすることができます、<xref:System.Web.UI.WebControls.BoundField>を設定してデータ バインド コントロール内のオブジェクト、<xref:System.Web.UI.WebControls.DataControlField.Visible%2A>プロパティを`false`です。 フィールドの値を防ぐため、編集モードでは変更されてから、設定、<xref:System.Web.UI.WebControls.BoundField.ReadOnly%2A>プロパティを`true`です。 データにバインドされたレコードの挿入をサポートするをコントロール (など、<xref:System.Web.UI.WebControls.DetailsView>コントロール)、非表示にすることができます、<xref:System.Web.UI.WebControls.BoundField>オブジェクトを設定して、<xref:System.Web.UI.WebControls.DataControlField.InsertVisible%2A>プロパティを`false`です。 挿入モードでの自動生成されたキー フィールドを非表示にするときにこれが一般的です。  
+  
+ ヘッダーとフッター セクションでは、をカスタマイズすることができます、<xref:System.Web.UI.WebControls.BoundField>オブジェクト。 ヘッダーまたはフッター セクションで、キャプションを表示するには、設定、<xref:System.Web.UI.WebControls.DataControlField.HeaderText%2A>または<xref:System.Web.UI.WebControls.DataControlField.FooterText%2A>プロパティ、それぞれします。 設定して、イメージを表示するテキストを表示する、ヘッダー セクションに、代わりに、<xref:System.Web.UI.WebControls.DataControlField.HeaderImageUrl%2A>プロパティです。 ヘッダー セクションを非表示にすることができます、<xref:System.Web.UI.WebControls.BoundField>オブジェクトを設定して、<xref:System.Web.UI.WebControls.DataControlField.ShowHeader%2A>プロパティを`false`です。  
+  
+> [!NOTE]
+>  一部のデータ バインド コントロール (など、<xref:System.Web.UI.WebControls.GridView>コントロール) を表示またはコントロールのすべてのヘッダー セクションだけを非表示にできます。 これらのデータ バインド コントロールをサポートしていない、<xref:System.Web.UI.WebControls.DataControlField.ShowHeader%2A>個々 のバインドされたフィールドのプロパティです。 表示または (使用可能な場合) は、ヘッダー セクション全体のデータ バインド コントロールを非表示、コントロールの使用`ShowHeader`プロパティです。  
+  
+ 外観をカスタマイズできる、<xref:System.Web.UI.WebControls.BoundField>オブジェクト (フォントの色や背景色、)、フィールドの各部分のスタイル プロパティを設定します。 次の表は、異なるスタイル プロパティを一覧表示します。  
+  
+|スタイル プロパティ|説明|  
+|--------------------|-----------------|  
+|<xref:System.Web.UI.WebControls.DataControlField.ControlStyle%2A>|子の Web サーバー コントロールのスタイルの設定、<xref:System.Web.UI.WebControls.BoundField>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.DataControlField.FooterStyle%2A>|フッター セクションのスタイルの設定、<xref:System.Web.UI.WebControls.BoundField>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.DataControlField.HeaderStyle%2A>|ヘッダー セクションのスタイルの設定、<xref:System.Web.UI.WebControls.BoundField>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.DataControlField.ItemStyle%2A>|データ項目のスタイルの設定、<xref:System.Web.UI.WebControls.BoundField>オブジェクト。|  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.BoundField>内のフィールドの値を表示するオブジェクト、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[BoundField#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BoundField/CS/boundfieldcs.aspx#1)]
+ [!code-aspx-vb[BoundField#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BoundField/VB/boundfieldvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BoundField ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BoundField.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.BoundField" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.BoundField>クラスです。 このコンス トラクターは、フィールドを動的に作成されたデータ バインド コントロールに追加する際に通常使用されます。  
+  
+ 動的に追加する、<xref:System.Web.UI.WebControls.BoundField>データ バインド コントロールにオブジェクトを新規作成<xref:System.Web.UI.WebControls.BoundField>オブジェクト、そのプロパティを設定し、データ バインド コントロールのフィールド コレクションに追加します。 たとえば、使用している場合、<xref:System.Web.UI.WebControls.GridView>コントロールを追加、<xref:System.Web.UI.WebControls.BoundField>オブジェクトを<xref:System.Web.UI.WebControls.GridView.Columns%2A>コレクション。  
+  
+> [!NOTE]
+>  フィールドは、データ バインド コントロールを動的に追加することができます、強くお勧めことフィールド静的に宣言されていると、表示するか非表示に必要に応じて。 すべてのフィールドを静的に宣言すると、親データ バインド コントロールのビュー ステートのサイズが縮小します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、コンス トラクターを使用して動的に追加する方法を示します、<xref:System.Web.UI.WebControls.BoundField>オブジェクトを<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[BoundFieldCtor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BoundFieldCtor/CS/boundfieldctorcs.aspx#1)]
+ [!code-aspx-vb[BoundFieldCtor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BoundFieldCtor/VB/boundfieldctorvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyFormatInEditMode">
+      <MemberSignature Language="C#" Value="public virtual bool ApplyFormatInEditMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ApplyFormatInEditMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BoundField.ApplyFormatInEditMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定によって書式指定文字列を指定するかどうかを示す値、<see cref="P:System.Web.UI.WebControls.BoundField.DataFormatString" />データ バインド コントロールを格納しているときに、フィールドの値にプロパティが適用される、<see cref="T:System.Web.UI.WebControls.BoundField" />オブジェクトが編集モードにします。</summary>
+        <value>
+          <see langword="true" />書式指定文字列を編集モードでのフィールド値に適用するにはそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ バインド コントロール (など<xref:System.Web.UI.WebControls.DetailsView>、 <xref:System.Web.UI.WebControls.FormView>、および<xref:System.Web.UI.WebControls.GridView>) ユーザーが読み取り、編集、またはレコードを挿入できるようにするさまざまな表示モードがあります。 既定では、書式指定文字列を指定して、<xref:System.Web.UI.WebControls.BoundField.DataFormatString%2A>プロパティがフィールドの値、データ バインド コントロールが読み取り専用モードの場合のみに適用します。 書式指定文字列をデータ バインド コントロールが編集モードの間に表示される値を適用する設定、<xref:System.Web.UI.WebControls.BoundField.ApplyFormatInEditMode%2A>プロパティを`true`です。  
+  
+> [!NOTE]
+>  A<xref:System.Web.UI.WebControls.BoundField>オブジェクトは自動的に削除されないデータ ソースのフィールドが更新されたときに書式設定します。 格納されている値の一部として書式設定したくない場合は、書式設定をプログラムで削除する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.BoundField.ApplyFormatInEditMode%2A>中にフィールドの値を文字列の書式を適用するプロパティ、<xref:System.Web.UI.WebControls.GridView>コントロールが編集モードになっています。 書式設定をプログラムで削除データ ソースの値が更新される前にします。  
+  
+ [!code-aspx-csharp[BoundFieldApplyFormatInEditMode#1](~/samples/snippets/csharp/VS_Snippets_WebNet/boundfieldapplyformatineditmode/CS/boundfieldapplyformatineditmodecs.aspx#1)]
+ [!code-aspx-vb[BoundFieldApplyFormatInEditMode#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/boundfieldapplyformatineditmode/VB/boundfieldapplyformatineditmodevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertEmptyStringToNull">
+      <MemberSignature Language="C#" Value="public virtual bool ConvertEmptyStringToNull { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ConvertEmptyStringToNull" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BoundField.ConvertEmptyStringToNull" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値の文字列値を空にするかどうか ("") データ ソースのデータ フィールドが更新されたときに null 値に自動的に変換します。</summary>
+        <value>
+          <see langword="true" />自動的に空の文字列値を null 値に変換するにはそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合がありますユーザーは、フィールドの値を更新またはレコードを挿入するときに、空の文字列を入力する可能性があります。 使用して、<xref:System.Web.UI.WebControls.BoundField.ConvertEmptyStringToNull%2A>プロパティをデータ ソースのデータ フィールドが更新されたときに空の文字列値が自動的に null に変換するかどうかを指定します。  
+  
+> [!NOTE]
+>  既定では、<xref:System.Web.UI.WebControls.BoundField>オブジェクトには、null 値が空の文字列として表示されます。 表示するには、別の値を設定、<xref:System.Web.UI.WebControls.BoundField.NullDisplayText%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.BoundField.ConvertEmptyStringToNull%2A>ことを指定するプロパティ、空の文字列 ("") フィールドの値は null に自動的に変換する必要があります。  
+  
+ [!code-aspx-csharp[BoundFieldConvertEmptyStringToNull#1](~/samples/snippets/csharp/VS_Snippets_WebNet/boundfieldconvertemptystringtonull/CS/boundfieldconvertemptystingtonullcs.aspx#1)]
+ [!code-aspx-vb[BoundFieldConvertEmptyStringToNull#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/boundfieldconvertemptystringtonull/VB/boundfieldconvertemptystingtonullvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyProperties">
+      <MemberSignature Language="C#" Value="protected override void CopyProperties (System.Web.UI.WebControls.DataControlField newField);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CopyProperties(class System.Web.UI.WebControls.DataControlField newField) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BoundField.CopyProperties(System.Web.UI.WebControls.DataControlField)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newField" Type="System.Web.UI.WebControls.DataControlField" />
+      </Parameters>
+      <Docs>
+        <param name="newField"><see cref="T:System.Web.UI.WebControls.DataControlField" /> 、現在のプロパティをコピーする<see cref="T:System.Web.UI.WebControls.BoundField" />にします。</param>
+        <summary>現在のプロパティをコピー<see cref="T:System.Web.UI.WebControls.BoundField" />を指定したオブジェクト<see cref="T:System.Web.UI.WebControls.DataControlField" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BoundField.CopyProperties%2A>メソッドで使用されるヘルパー メソッド、<xref:System.Web.UI.WebControls.DataControlField.CloneField%2A?displayProperty=nameWithType>メソッド、現在のプロパティをコピーする<xref:System.Web.UI.WebControls.BoundField>オブジェクトを<xref:System.Web.UI.WebControls.DataControlField>メソッドによって作成されたオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateField">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.WebControls.DataControlField CreateField ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.WebControls.DataControlField CreateField() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BoundField.CreateField" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataControlField</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>空の <see cref="T:System.Web.UI.WebControls.BoundField" /> オブジェクトを作成します。</summary>
+        <returns>空の <see cref="T:System.Web.UI.WebControls.BoundField" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BoundField.CreateField%2A>メソッドで使用されるヘルパー メソッド、 <xref:System.Web.UI.WebControls.DataControlField.CloneField%2A?displayProperty=nameWithType> 、空を作成するメソッド<xref:System.Web.UI.WebControls.BoundField>オブジェクトが現在のプロパティをコピーする<xref:System.Web.UI.WebControls.BoundField>オブジェクトをします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataField">
+      <MemberSignature Language="C#" Value="public virtual string DataField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BoundField.DataField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Web.UI.Design.DataSourceViewSchemaConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定にバインドするデータ フィールドの名前、<see cref="T:System.Web.UI.WebControls.BoundField" />オブジェクト。</summary>
+        <value>バインドするデータ フィールドの名前、<see cref="T:System.Web.UI.WebControls.BoundField" />です。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BoundField.DataField%2A>プロパティをバインドするデータ フィールドの名前を指定する、<xref:System.Web.UI.WebControls.BoundField>オブジェクト。 指定したフィールドの値に表示されます、<xref:System.Web.UI.WebControls.BoundField>オブジェクトをテキストとして。 設定して、表示されるテキストをフォーマットすることができます必要に応じて、<xref:System.Web.UI.WebControls.BoundField.DataFormatString%2A>プロパティです。  
+  
+> [!NOTE]
+>  フィールドの値が null の場合、空の文字列 ("") が既定では、値の表示されます。 別のキャプションを指定するには、設定、<xref:System.Web.UI.WebControls.BoundField.NullDisplayText%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.BoundField.DataField%2A>プロパティを表示するには、どのフィールドを指定する、<xref:System.Web.UI.WebControls.BoundField>のフィールドの列、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[BoundField#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BoundField/CS/boundfieldcs.aspx#1)]
+ [!code-aspx-vb[BoundField#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BoundField/VB/boundfieldvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataFormatString">
+      <MemberSignature Language="C#" Value="public virtual string DataFormatString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataFormatString" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BoundField.DataFormatString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはフィールドの値の表示形式を指定する文字列を設定します。</summary>
+        <value>フィールドの値の表示形式を指定する書式指定文字列。 既定値は空の文字列 ("") です。この値は、フィールド値に適用される特定の書式が設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BoundField.DataFormatString%2A>に表示される値のカスタム表示形式を指定するプロパティ、<xref:System.Web.UI.WebControls.BoundField>オブジェクト。 場合、<xref:System.Web.UI.WebControls.BoundField.DataFormatString%2A>プロパティが設定されていないと、特別な書式なし、フィールドの値が表示されます。  
+  
+> [!NOTE]
+>  設定する必要があります 3.5 より前のバージョンの ASP.NET、<xref:System.Web.UI.WebControls.BoundField.HtmlEncode%2A>プロパティを`false`書式を設定するためにフィールドはない文字列データ型。 格納されている書式指定文字列の前に既定の変換方法によって、フィールドの値を文字列に変換がそれ以外の場合、<xref:System.Web.UI.WebControls.BoundField.DataFormatString%2A>プロパティを適用します。  
+  
+ 既定では、書式指定文字列が適用されるフィールドの値をデータ バインド コントロールを格納している場合にのみ、<xref:System.Web.UI.WebControls.BoundField>オブジェクトは読み取り専用モードにします。 書式指定文字列を編集モードでのフィールドの値を適用する設定、<xref:System.Web.UI.WebControls.BoundField.ApplyFormatInEditMode%2A>プロパティを`true`です。  
+  
+ 書式指定文字列は、任意のリテラル文字列を指定でき、通常、フィールドの値のプレース ホルダーが含まれます。 たとえば、書式指定文字列で`Item Value: {0}`、フィールドの値が代入される {0} プレース ホルダー文字列が表示されたら、<xref:System.Web.UI.WebControls.BoundField>オブジェクト。 書式指定文字列の残りの部分は、リテラル テキストとして表示されます。  
+  
+ 書式指定文字列にプレース ホルダーが含まれていない場合のみ、書式設定文字列自体がテキストに含まれる、最終的な表示 (データ ソースからのフィールドの値は含まれません)。 プレース ホルダーが前の例で示すように、中かっこで囲まれた 0 (ゼロ) の場合は、既定の方法で、フィールドの値が文字列に変換されます。 0 には、フィールドの値を書式設定する方法を指定する文字列を追加できます。 たとえば、プレース ホルダー`{0:C}`数値フィールドがフィールドの値は通貨形式に変換することを指定します。  
+  
+ 使用して書式設定が適用される、<xref:System.String.Format%2A>メソッドです。 左中かっこに続く番号は、そのメソッドで使用される構文の一部であるし、プレース ホルダーが使用する一連の値のうち、どれを示します。 各セルに 1 つだけのフィールド値があるため、左中かっこに続く数値は 0 にのみ設定できます。  
+  
+ 次の表には、数値フィールドの標準書式指定文字が一覧表示します。 これらの書式指定文字が以外の大文字小文字が区別されない`X`、指定されている場合は、16 進数の文字が表示されます。 表示する数の有効桁数または小数点以下桁数を指定するために、ほとんどの書式指定文字に数値を追加できます。  
+  
+> [!NOTE]
+>  ほとんどの場合、書式設定は、サーバーのカルチャ設定に依存します。 カルチャ設定の例は、`en-US`です。  
+  
+|書式指定文字|説明|例|  
+|----------------------|-----------------|-------------|  
+|`C` または `c`|通貨書式の数値の値を表示します。 小数点以下桁数を指定することができます。|書式: `{0:C}`<br /><br /> 123.456 -> $123.46<br /><br /> 書式: `{0:C3}`<br /><br /> 123.456  -> $123.456|  
+|`D` または `d`|10 進数形式で整数値を表示します。 数字の数を指定することができます。 (種類は"decimal"と呼ばれては数値の書式の整数として。)|書式: `{0:D}`<br /><br /> 1234 -> 1234<br /><br /> 書式: `{0:D6}`<br /><br /> 1234  -> 001234|  
+|`E` または `e`|指数表記の指数の数値を表示します。 小数点以下桁数を指定することができます。|書式: `{0:E}`<br /><br /> 1052.0329112756 は、1.052033E + 003]-> [します。<br /><br /> 書式: `{0:E2}`<br /><br /> -1052.0329112756 -> - 1.05 e + 003|  
+|`F` または `f`|固定形式で数値を表示します。 小数点以下桁数を指定することができます。|書式: `{0:F}`<br /><br /> 1234.567 -> 1234.57<br /><br /> 書式: `{0:F3}`<br /><br /> 1234.567 -> 1234.567|  
+|`G` または `g`|一般的な形式 (最も簡潔な形式の固定小数点または科学的表記法) の数値の値を表示します。 有効桁数の値を指定することができます。|書式: `{0:G}`<br /><br /> -123.456 -> -123.456<br /><br /> 書式: `{0:G2}`<br /><br /> -123.456 -> -120|  
+|`N` または `n`|(桁区切り記号と省略可能なマイナス記号を含む) の数値の形式で数値を表示します。 小数点以下桁数を指定することができます。|書式: `{0:N}`<br /><br /> 1234.567 -> 1,234.57<br /><br /> 書式: `{0:N4}`<br /><br /> 1234.567 -> 1,234.5670|  
+|`P` または `p`|数値をパーセント形式で表示します。 小数点以下桁数を指定することができます。|書式: `{0:P}`<br /><br /> 1 -> 100.00%<br /><br /> 書式: `{0:P1}`<br /><br /> .5 -> 50.0%|  
+|`R` または `r`|表示<xref:System.Single>、 <xref:System.Double>、または`BigInteger`ラウンドトリップ形式内の値。|書式: `{0:R}`<br /><br /> 123456789.12345678 -> 123456789.12345678|  
+|`X` または `x`|16 進形式で整数値を表示します。 数字の数を指定することができます。|書式: `{0:X}`<br /><br /> 255 FF]-> [します。<br /><br /> 書式: `{0:x4}`<br /><br /> 255 00 ff]-> [します。|  
+  
+ 詳細については、およびその他のカルチャ値の書式を示す例を参照して[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)です。 カスタム数値書式指定文字列を作成することもできます。 詳細については、「[カスタム数値書式指定文字列](~/docs/standard/base-types/custom-numeric-format-strings.md)」をご覧ください。  
+  
+ 次の表の形式指定文字<xref:System.DateTime>フィールドです。 これらの書式指定のほとんどは、カルチャ設定によって異なる出力に発生します。 例は、 <xref:System.DateTime> 2009 年 6 月 15 日の値のカルチャ設定と 1時 45分: 30 PM`en-US`です。  
+  
+|書式指定文字|説明|例|  
+|----------------------|-----------------|-------------|  
+|`d`|短い形式の日付パターン。|書式: `{0:d}`<br /><br /> 2009 年 6 月 15 日-> 2009 年 6 月 15 日の午後 1時 45分: 30|  
+|`D`|長い形式の日付パターン。|書式: `{0:D}`<br /><br /> 2009 年 6 月 15 日-> 2009 年 6 月 15 日月曜日の午後 1時 45分: 30|  
+|`f`|完全な日付と時刻のパターン (短い形式の時刻)。|書式: `{0:f}`<br /><br /> 2009 年 6 月 15 日-> 2009 年 6 月 15 日月曜日の午後 1時 45分: 30 1時 45分 PM|  
+|`F`|完全な日付と時刻のパターン (長い形式の時刻)。|書式: `{0:F}`<br /><br /> 2009 年 6 月 15 日-> 2009 年 6 月 15 日月曜日の午後 1時 45分: 30 1時 45分: 30 PM|  
+|`g`|一般の日付と時刻のパターン (短い形式の時刻)。|書式: `{0:g}`<br /><br /> 2009 年 6 月 15 日-> 2009 年 6 月 15 日の午後 1時 45分: 30 1時 45分 PM|  
+|`G`|一般の日付と時刻のパターン (長い形式の時刻)。|書式: `{0:G}`<br /><br /> 2009 年 6 月 15 日-> 2009 年 6 月 15 日の午後 1時 45分: 30 1時 45分: 30 PM|  
+|`M` または `m`|月日パターン。|書式: `{0:M}`<br /><br /> 2009 年 6 月 15 日午後 1時 45分: 30 が 6 月 15 日->|  
+|`O` または `o`|ラウンドトリップする日付と時刻のパターン。|書式: `{0:o}`<br /><br /> 6/15/2009 1:45:30 PM -> 2009-06-15T13:45:30.0900000|  
+|`R` または `r`|RFC1123 パターン (詳細については、次を参照してください。 <xref:System.Globalization.DateTimeFormatInfo.RFC1123Pattern%2A?displayProperty=nameWithType>)。|書式: `{0:R}`<br /><br /> 6/15/2009 1:45:30 PM -> Mon, 15 Jun 2009 20:45:30 GMT|  
+|`s`|並べ替え可能な日付と時刻のパターン。|書式: `{0:s}`<br /><br /> 6/15/2009 1:45:30 PM -> 2009-06-15T13:45:30|  
+|`t`|短い形式の時刻パターン。|書式: `{0:t}`<br /><br /> 2009 年 6 月 15 日午後 1時 45分: 30-1時 45分 PM を >|  
+|`T`|長い形式の時刻パターン。|書式: `{0:T}`<br /><br /> 2009 年 6 月 15 日午後 1時 45分: 30-1時 45分: 30 PM を >|  
+|`u`|並べ替え可能な日付と時刻のパターン (世界時刻)。|書式: `{0:u}`<br /><br /> 6/15/2009 1:45:30 PM -> 2009-06-15 20:45:30Z|  
+|`U`|完全な日付と時刻のパターン (世界時刻)。|書式: `{0:U}`<br /><br /> 2009 年 6 月 15 日-> 2009 年 6 月 15 日月曜日の午後 1時 45分: 30 8時 45分: 30 PM|  
+|`Y` または `y`|年月パターン。|書式: `{0:Y}`<br /><br /> 2009 年 6 月 15 日-> 2009 年 6 月の 1時 45分: 30 PM|  
+  
+ 詳細については、およびその他のカルチャ値の書式を示す例を参照して[標準の日付と時刻の書式指定文字列](~/docs/standard/base-types/standard-date-and-time-format-strings.md)です。 カスタムの日付と時刻の書式指定文字列を作成することもできます。 詳細については、次を参照してください。[カスタムの日付と時刻の書式指定文字列](~/docs/standard/base-types/custom-date-and-time-format-strings.md)です。  
+  
+   
+  
+## Examples  
+ Visual Studio の Web サイト プロジェクトとソース コードは、このトピックで使用可能な:[ダウンロード](http://go.microsoft.com/fwlink/?LinkId=191889)です。  
+  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.BoundField.DataFormatString%2A>プロパティ フィールドの値のカスタムの表示形式を指定します。  
+  
+  
+  
+ 次の例では、この例によって生成される出力の 1 つの行を示します。  
+  
+|ProductID|名前|ProductNumber|ListPrice|[太さ]|ModifiedDate|  
+|---------------|----------|-------------------|---------------|------------|------------------|  
+|`000680`|`HL Road Frame - Black, 58`|`#FR-R92B-58`|`$1,431.50`|`1016.040`|`3/11/2004`|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtractValuesFromCell">
+      <MemberSignature Language="C#" Value="public override void ExtractValuesFromCell (System.Collections.Specialized.IOrderedDictionary dictionary, System.Web.UI.WebControls.DataControlFieldCell cell, System.Web.UI.WebControls.DataControlRowState rowState, bool includeReadOnly);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ExtractValuesFromCell(class System.Collections.Specialized.IOrderedDictionary dictionary, class System.Web.UI.WebControls.DataControlFieldCell cell, valuetype System.Web.UI.WebControls.DataControlRowState rowState, bool includeReadOnly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BoundField.ExtractValuesFromCell(System.Collections.Specialized.IOrderedDictionary,System.Web.UI.WebControls.DataControlFieldCell,System.Web.UI.WebControls.DataControlRowState,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dictionary" Type="System.Collections.Specialized.IOrderedDictionary" />
+        <Parameter Name="cell" Type="System.Web.UI.WebControls.DataControlFieldCell" />
+        <Parameter Name="rowState" Type="System.Web.UI.WebControls.DataControlRowState" />
+        <Parameter Name="includeReadOnly" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="dictionary">A<see cref="T:System.Collections.IDictionary" />指定されたセルの値を格納するために使用します。</param>
+        <param name="cell"><see cref="T:System.Web.UI.WebControls.TableCell" />取得する値を格納しています。</param>
+        <param name="rowState"><see cref="T:System.Web.UI.WebControls.DataControlRowState" /> 値のいずれか。</param>
+        <param name="includeReadOnly">
+          <see langword="true" />読み取り専用のフィールドの値が含まれるそれ以外の場合、<see langword="false" />です。</param>
+        <summary>指定した入力<see cref="T:System.Collections.IDictionary" />から、指定した値を持つオブジェクト<see cref="T:System.Web.UI.WebControls.TableCell" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BoundField.ExtractValuesFromCell%2A>メソッドは、指定された対象から、フィールドの値を取得する便利な手段として提供<xref:System.Web.UI.WebControls.TableCell>内のオブジェクト、<xref:System.Web.UI.WebControls.BoundField>オブジェクト。  
+  
+> [!NOTE]
+>  このメソッドは、主にコントロールの開発者によって使用されます。  
+  
+ このメソッドには、戻り値はありません。 フィールドの値を使って参照によって返される代わりに、<xref:System.Collections.IDictionary?displayProperty=nameWithType>オブジェクトに渡された、`dictionary`パラメーター。 反復処理するメソッドが呼び出された後、<xref:System.Collections.IDictionary?displayProperty=nameWithType>フィールド値にアクセスするオブジェクト。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.UI.WebControls.TableCell>オブジェクトには、読み取り専用フィールドの値が含まれていますで渡す必要があります`true`の`includeReadOnly`パラメーターをそれらの値が含まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatDataValue">
+      <MemberSignature Language="C#" Value="protected virtual string FormatDataValue (object dataValue, bool encode);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string FormatDataValue(object dataValue, bool encode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BoundField.FormatDataValue(System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataValue" Type="System.Object" />
+        <Parameter Name="encode" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="dataValue">書式を設定するフィールドの値。</param>
+        <param name="encode">
+          <see langword="true" />値をエンコードします。それ以外の場合、<see langword="false" />です。</param>
+        <summary>内のセルの指定したフィールドの値を書式設定、<see cref="T:System.Web.UI.WebControls.BoundField" />オブジェクト。</summary>
+        <returns>フィールド値で指定された形式に変換<see cref="P:System.Web.UI.WebControls.BoundField.DataFormatString" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BoundField.FormatDataValue%2A>メソッドは、フィールドの値で指定された形式に変換に使用されるヘルパー メソッド、<xref:System.Web.UI.WebControls.BoundField.DataFormatString%2A>プロパティです。 フィールドの値が null の値、<xref:System.Web.UI.WebControls.BoundField.NullDisplayText%2A>プロパティが返されます。  
+  
+> [!NOTE]
+>  このメソッドは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>拡張するとき、<see cref="T:System.Web.UI.WebControls.BoundField" />クラス、カスタム書式指定ルーチンを実行するには、このメソッドをオーバーライドすることができます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeValue">
+      <MemberSignature Language="C#" Value="protected virtual object GetDesignTimeValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object GetDesignTimeValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BoundField.GetDesignTimeValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>フィールドの値を表示するときに使用する値を取得、<see cref="T:System.Web.UI.WebControls.BoundField" />デザイナー内のオブジェクト。</summary>
+        <returns>フィールドの値としてデザイナーに表示する値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BoundField.GetDesignTimeValue%2A>メソッドはどのような値を表示するときに、フィールドの表示を決定するために使用するヘルパー メソッド、<xref:System.Web.UI.WebControls.BoundField>デザイナー内のオブジェクト。 実際のデータは、デザイン時に、データ ソースから取得できない、このメソッドによって返される値が表示されます。  
+  
+> [!NOTE]
+>  このメソッドは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>拡張するとき、<see cref="T:System.Web.UI.WebControls.BoundField" />クラスをデザイナーでフィールドに表示する別の値を返すには、このメソッドをオーバーライドすることができます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="protected virtual object GetValue (System.Web.UI.Control controlContainer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object GetValue(class System.Web.UI.Control controlContainer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BoundField.GetValue(System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="controlContainer" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="controlContainer">フィールドの値のコンテナーです。</param>
+        <summary>バインドされたフィールドの値を取得、<see cref="T:System.Web.UI.WebControls.BoundField" />オブジェクト。</summary>
+        <returns>バインドされたフィールドの値、<see cref="T:System.Web.UI.WebControls.BoundField" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BoundField.GetValue%2A>メソッドは、ヘルパー メソッド、フィールドの値を決定するために使用します。 場合、<xref:System.Web.UI.WebControls.BoundField>オブジェクトが、デザイナーに表示されていると、フィールドの値は、デザイン時に決定することはできませんから返される値、<xref:System.Web.UI.WebControls.BoundField.GetDesignTimeValue%2A>実際のフィールド値の代わりにメソッドが返されます。  
+  
+> [!NOTE]
+>  このメソッドは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">指定したコンテナー、<paramref name="controlContainer" />パラメーターは<see langword="null" />します。  
+  
+ \- または  
+  
+ 指定したコンテナー、<paramref name="controlContainer" />パラメーターには、データ項目にありません。  
+  
+ \- または  
+  
+ データ フィールドが見つかりませんでした。</exception>
+        <block subset="none" type="overrides">
+          <para>拡張するとき、<see cref="T:System.Web.UI.WebControls.BoundField" />クラス、フィールドの値を決定するカスタム ルーチンを提供するには、このメソッドをオーバーライドすることができます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderText">
+      <MemberSignature Language="C#" Value="public override string HeaderText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HeaderText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BoundField.HeaderText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ コントロールのヘッダーに表示されるテキストを設定します。</summary>
+        <value>データ コントロールのヘッダーに表示されるテキストです。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BoundField.HeaderText%2A>フレンドリ名をデータ コントロール内のフィールドを識別するプロパティです。 最も一般的なアプリケーション、<xref:System.Web.UI.WebControls.BoundField.HeaderText%2A>プロパティがデータ バインドされたフィールドにわかりやすい列名を指定するには、<xref:System.Web.UI.WebControls.GridView>または<xref:System.Web.UI.WebControls.DetailsView>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HtmlEncode">
+      <MemberSignature Language="C#" Value="public virtual bool HtmlEncode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HtmlEncode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BoundField.HtmlEncode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはフィールドの値に表示される前に HTML でエンコードされた、かどうかを示す値を設定、<see cref="T:System.Web.UI.WebControls.BoundField" />オブジェクト。</summary>
+        <value>
+          <see langword="true" />かどうかフィールドの値が HTML でエンコードされたに表示される前に、<see cref="T:System.Web.UI.WebControls.BoundField" />オブジェクト。 それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BoundField.HtmlEncode%2A>フィールドの値に表示される前に、それぞれの文字列表現を HTML エンコードされた、かどうかを指定するプロパティ、<xref:System.Web.UI.WebControls.BoundField>オブジェクト。 たとえば、このプロパティは`true`の文字列値"\<スクリプト >"としてレンダリングされます"&lt;スクリプト&gt;"です。 場合は、このプロパティは`false`文字列を表示するよう変更されていません。  
+  
+> [!NOTE]
+>  HTML エンコードのフィールドの値クロスサイト スクリプト攻撃や悪意のあるコンテンツが表示されないようにするために役立ちます。 可能な限り、このプロパティを有効にする必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.BoundField.HtmlEncode%2A>を HTML エンコードで表示される前にフィールドの値を防ぐためにプロパティ、<xref:System.Web.UI.WebControls.BoundField>オブジェクト。  
+  
+ [!code-aspx-csharp[BoundFieldHtmlEncode#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BoundFieldHtmlEncode/CS/BoundFieldHtmlEncodecs.aspx#1)]
+ [!code-aspx-vb[BoundFieldHtmlEncode#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BoundFieldHtmlEncode/VB/BoundFieldHtmlEncodevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HtmlEncodeFormatString">
+      <MemberSignature Language="C#" Value="public virtual bool HtmlEncodeFormatString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HtmlEncodeFormatString" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BoundField.HtmlEncodeFormatString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するかどうかのテキストであるを示す値を適用して作成された、<see cref="P:System.Web.UI.WebControls.BoundField.DataFormatString" />プロパティを<see cref="T:System.Web.UI.WebControls.BoundField" />値を HTML が表示されたらそれをエンコードする必要があります。</summary>
+        <value>
+          <see langword="true" />場合は、テキストは、HTML エンコードする必要があります。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ HTML エンコーディング値は、クロスサイト スクリプト攻撃や悪意のあるコンテンツが表示されないようにできます。 HTML エンコーディングも便利です、文字列の表示など、ブラウザーで HTML コードを表示するときに"\<br/>"で改行を挿入する代わりに (`<br/>`要素) ページ。  
+  
+> [!NOTE]
+>  このプロパティは、新しい ASP.NET 3.5 です。 このプロパティを設定`false`の既定の動作を復元、 <xref:System.Web.UI.WebControls.BoundField.DataFormatString%2A> 3.5 より前のバージョンの ASP.NET プロパティです。 詳細については、<xref:System.Web.UI.WebControls.BoundField.DataFormatString%2A> プロパティを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override bool Initialize (bool enableSorting, System.Web.UI.Control control);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Initialize(bool enableSorting, class System.Web.UI.Control control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BoundField.Initialize(System.Boolean,System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enableSorting" Type="System.Boolean" />
+        <Parameter Name="control" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="enableSorting">
+          <see langword="true" />並べ替えがサポートされている場合それ以外の場合、<see langword="false" />です。</param>
+        <param name="control">所有するデータ コントロール、<see cref="T:System.Web.UI.WebControls.BoundField" />です。</param>
+        <summary>初期化、<see cref="T:System.Web.UI.WebControls.BoundField" />オブジェクト。</summary>
+        <returns>
+          常に <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BoundField.Initialize%2A>メソッドが使用するデータ コントロールにより呼び出されます、<xref:System.Web.UI.WebControls.BoundField>オブジェクトが関連の基本的なオブジェクトの初期化を実行する前に、行コレクションに、フィールドが追加されることは、フィールドのインスタンス。 などのデータ コントロール<xref:System.Web.UI.WebControls.DetailsView>と<xref:System.Web.UI.WebControls.GridView>を呼び出す、<xref:System.Web.UI.WebControls.DataControlField.Initialize%2A>メソッドで、`CreateChildControls`などの他のメソッドの前にメソッド`CreateRow`データを特定の行を作成すると呼ばれます。  
+  
+ カスタムのデータ バインドを作成している場合は、このメソッドを制御する呼び出しを使用して<xref:System.Web.UI.WebControls.TableCell>の基本的な初期化を実行するオブジェクト、<xref:System.Web.UI.WebControls.BoundField>オブジェクト。 場合は、このメソッドを実装して、 <xref:System.Web.UI.WebControls.BoundField>-派生型を設定する前に、オブジェクトの初期化が必要と<xref:System.Web.UI.WebControls.TableCell>でコントロールのデータをオブジェクトまたは、<xref:System.Web.UI.WebControls.BoundField.InitializeCell%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeCell">
+      <MemberSignature Language="C#" Value="public override void InitializeCell (System.Web.UI.WebControls.DataControlFieldCell cell, System.Web.UI.WebControls.DataControlCellType cellType, System.Web.UI.WebControls.DataControlRowState rowState, int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void InitializeCell(class System.Web.UI.WebControls.DataControlFieldCell cell, valuetype System.Web.UI.WebControls.DataControlCellType cellType, valuetype System.Web.UI.WebControls.DataControlRowState rowState, int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BoundField.InitializeCell(System.Web.UI.WebControls.DataControlFieldCell,System.Web.UI.WebControls.DataControlCellType,System.Web.UI.WebControls.DataControlRowState,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cell" Type="System.Web.UI.WebControls.DataControlFieldCell" />
+        <Parameter Name="cellType" Type="System.Web.UI.WebControls.DataControlCellType" />
+        <Parameter Name="rowState" Type="System.Web.UI.WebControls.DataControlRowState" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="cell">初期化する <see cref="T:System.Web.UI.WebControls.TableCell" />。</param>
+        <param name="cellType"><see cref="T:System.Web.UI.WebControls.DataControlCellType" /> 値のいずれか。</param>
+        <param name="rowState"><see cref="T:System.Web.UI.WebControls.DataControlRowState" /> 値のいずれか。</param>
+        <param name="rowIndex">行の 0 から始まるインデックス。</param>
+        <summary>指定された初期化<see cref="T:System.Web.UI.WebControls.TableCell" />オブジェクトを指定した行の状態にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BoundField.InitializeCell%2A>メソッドはによって実装<xref:System.Web.UI.WebControls.BoundField>-派生型のテキストとコントロールを追加する、<xref:System.Web.UI.WebControls.TableCell>テーブルを使用してユーザー インターフェイス (UI) を表示するデータ コントロールのオブジェクト。 これらのデータ コントロールは、完全なテーブル構造で行を作成するときに、コントロールの`CreateChildControls`メソッドが呼び出されます。 <xref:System.Web.UI.WebControls.BoundField.InitializeCell%2A>メソッドによって呼び出されます、`InitializeRow`データのメソッドなどのコントロール<xref:System.Web.UI.WebControls.DetailsView>と<xref:System.Web.UI.WebControls.GridView>です。  
+  
+ カスタムのデータ バインドを作成している場合は、このメソッドを制御する呼び出しを使用して<xref:System.Web.UI.WebControls.TableCell>コントロールやデータを含むテーブル構造のセルを初期化するためにします。 作成している場合は、このメソッドを実装して、 <xref:System.Web.UI.WebControls.BoundField>-クラスを派生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeDataCell">
+      <MemberSignature Language="C#" Value="protected virtual void InitializeDataCell (System.Web.UI.WebControls.DataControlFieldCell cell, System.Web.UI.WebControls.DataControlRowState rowState);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void InitializeDataCell(class System.Web.UI.WebControls.DataControlFieldCell cell, valuetype System.Web.UI.WebControls.DataControlRowState rowState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BoundField.InitializeDataCell(System.Web.UI.WebControls.DataControlFieldCell,System.Web.UI.WebControls.DataControlRowState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cell" Type="System.Web.UI.WebControls.DataControlFieldCell" />
+        <Parameter Name="rowState" Type="System.Web.UI.WebControls.DataControlRowState" />
+      </Parameters>
+      <Docs>
+        <param name="cell">初期化する <see cref="T:System.Web.UI.WebControls.TableCell" />。</param>
+        <param name="rowState"><see cref="T:System.Web.UI.WebControls.DataControlRowState" /> 値のいずれか。</param>
+        <summary>指定された初期化<see cref="T:System.Web.UI.WebControls.TableCell" />オブジェクトを指定した行の状態にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BoundField.InitializeDataCell%2A>メソッドは、セルの初期化に使用されるヘルパー メソッド、<xref:System.Web.UI.WebControls.BoundField>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>拡張するとき、<see cref="T:System.Web.UI.WebControls.BoundField" />クラス、カスタムの初期化ルーチンを実行するには、このメソッドをオーバーライドすることができます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadViewState">
+      <MemberSignature Language="C#" Value="protected override void LoadViewState (object state);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void LoadViewState(object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BoundField.LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="state">復元するコントロールの状態を表します。</param>
+        <summary>このフィールドに既に保存されているビュー ステート情報を復元します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NullDisplayText">
+      <MemberSignature Language="C#" Value="public virtual string NullDisplayText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NullDisplayText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BoundField.NullDisplayText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはフィールドの値が null の場合、フィールドに表示されるキャプションを設定します。</summary>
+        <value>フィールドの値が null の場合、フィールドに表示されるキャプション。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合によって、フィールドの値は、データ ソースの null として格納されます。 設定して、null 値を持つフィールドを表示するカスタムのキャプションを指定することができます、<xref:System.Web.UI.WebControls.BoundField.NullDisplayText%2A>プロパティです。 Null フィールドの値が空の文字列として表示されるこのプロパティが設定されていない場合 ("") です。 レコードが更新またはユーザーが値を入力した場合、データ バインド コントロールに挿入されたプロパティで指定されたこの (空の文字列) 以外、データ バインド コントロール内のフィールドのデータ ソースの値が自動的に変換を null にします。  
+  
+> [!NOTE]
+>  空の文字列フィールドの値を null 値に変換するには、設定、<xref:System.Web.UI.WebControls.BoundField.ConvertEmptyStringToNull%2A>プロパティを`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.BoundField.NullDisplayText%2A>プロパティ フィールドの null 値を表示するカスタムのキャプションを指定します。  
+  
+ [!code-aspx-csharp[BoundFieldNullDisplayText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BoundFieldNullDisplayText/CS/boundfieldnulldisplaytextcs.aspx#1)]
+ [!code-aspx-vb[BoundFieldNullDisplayText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BoundFieldNullDisplayText/VB/boundfieldnulldisplaytextvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDataBindField">
+      <MemberSignature Language="C#" Value="protected virtual void OnDataBindField (object sender, EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDataBindField(object sender, class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BoundField.OnDataBindField(System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">イベントのソース。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>バインドするためのフィールドの値、<see cref="T:System.Web.UI.WebControls.BoundField" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CheckBoxField.OnDataBindField%2A>メソッドは、対応するセルにデータ ソースのフィールドの値をバインドに使用するヘルパー メソッド、<xref:System.Web.UI.WebControls.BoundField>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">フィールドの値がバインドされているコントロールではありません、<see cref="T:System.Web.UI.WebControls.TextBox" />または<see cref="T:System.Web.UI.WebControls.TableCell" />です。</exception>
+        <block subset="none" type="overrides">
+          <para>拡張するとき、<see cref="T:System.Web.UI.WebControls.BoundField" />クラス、カスタム バインドのルーチンを実行するには、このメソッドをオーバーライドすることができます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadOnly">
+      <MemberSignature Language="C#" Value="public virtual bool ReadOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BoundField.ReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または編集モードで、フィールドの値を変更できるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />フィールドの値が編集モードで変更できないようにするにはそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BoundField.ReadOnly%2A>に表示される値を防ぐためにプロパティ、<xref:System.Web.UI.WebControls.BoundField>から変更されているオブジェクト。 データ バインド コントロールが編集モードでは、ときに読み取り専用フィールドが編集コントロールなしのプレーン テキストとして表示されます。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.BoundField.ReadOnly%2A>プロパティが編集モードにのみ適用されます。 フィールドが挿入モードで表示されるようにするのには、使用、<xref:System.Web.UI.WebControls.DataControlField.InsertVisible%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.BoundField.ReadOnly%2A>に表示されるキー フィールドの値を防ぐためにプロパティ、<xref:System.Web.UI.WebControls.BoundField>編集モードでは変更されてからのオブジェクト。  
+  
+ [!code-aspx-csharp[BoundField#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BoundField/CS/boundfieldcs.aspx#1)]
+ [!code-aspx-vb[BoundField#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BoundField/VB/boundfieldvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsHtmlEncode">
+      <MemberSignature Language="C#" Value="protected virtual bool SupportsHtmlEncode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsHtmlEncode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BoundField.SupportsHtmlEncode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTML エンコーディングをサポートしているかどうかを示す値を取得、<see cref="T:System.Web.UI.WebControls.BoundField" />オブジェクト。</summary>
+        <value>常に返します<see langword="true" />によって HTML エンコーディングがサポートされていることを示すために、<see cref="T:System.Web.UI.WebControls.BoundField" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BoundField.SupportsHtmlEncode%2A>プロパティで使用されるヘルパー プロパティ、<xref:System.Web.UI.WebControls.BoundField>クラスと派生クラスを HTML エンコードはクラスでサポートされているかどうかを判断します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生している場合、<see cref="T:System.Web.UI.WebControls.BoundField" />クラス、クラスによって HTML エンコードはサポートされているかどうかを示すためにこのプロパティをオーバーライドすることができます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ThisExpression">
+      <MemberSignature Language="C#" Value="public static readonly string ThisExpression;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string ThisExpression" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.BoundField.ThisExpression" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>"this" 式を表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドはことを示すために使用、<xref:System.Web.UI.WebControls.BoundField>自体ではなく、データ ソースのフィールド、データ ソースに対してオブジェクトをバインドする必要があります。 ここでは、オブジェクトの`ToString` フィールドに値が表示されます。  
+  
+ このフィールドは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateRequestMode">
+      <MemberSignature Language="C#" Value="public System.Web.UI.ValidateRequestMode ValidateRequestMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.ValidateRequestMode ValidateRequestMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BoundField.ValidateRequestMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ValidateRequestMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはか、コントロールがクライアントの入力を検証するかどうかを決定する値を設定します。</summary>
+        <value>か、コントロールがクライアントの入力を検証するかどうかを決定する値。 既定値は、<see cref="F:System.Web.UI.ValidateRequestMode.Inherit" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateSupportsCallback">
+      <MemberSignature Language="C#" Value="public override void ValidateSupportsCallback ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ValidateSupportsCallback() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BoundField.ValidateSupportsCallback" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールが含まれるかどうかを判断、<see cref="T:System.Web.UI.WebControls.BoundField" />サポート コールバック オブジェクトします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BoundField.ValidateSupportsCallback%2A>メソッドは、コントロールに含まれているかどうかを判断するために使用するヘルパー メソッド、<xref:System.Web.UI.WebControls.BoundField>サポート コールバック オブジェクトします。 このメソッドがコールバックがサポートされていることを示すために、空のメソッド (コードが含まれていないメソッド) として実装されています。  
+  
+> [!NOTE]
+>  このメソッドは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生したクラス、<see cref="T:System.Web.UI.WebControls.BoundField" />クラス フィールド サポート コールバックによって、コントロールが含まれるかどうかを示すためにこのメソッドをオーバーライドします。 コールバックがサポートされていることを示すために、例外をスローしない空のメソッドとしてこのメソッドを実装しますそれ以外の場合、コールバックがサポートされていない理由を説明するメッセージと共に例外をスローします。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,1686 @@
+<Type Name="IInputElement" FullName="System.Windows.IInputElement">
+  <TypeSignature Language="C#" Value="public interface IInputElement" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IInputElement" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.IInputElement" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>一般的なイベントも、イベントに関連するプロパティおよびメソッドの基本的な入力が Windows Presentation Foundation (WPF) 要素の処理を確立します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  このインターフェイスはパブリックですが、アプリケーションまたはフレームワークを構築するシナリオで実装することはありません。 要件のため、継承を接続するため、このインターフェイスはパブリック、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]にコア、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]フレームワークです。 入力イベント、およびプロパティがから取得することかを適用するキャスト メカニズムとしてこのインターフェイスを使用することもできます、<xref:System.Windows.FrameworkElement>または<xref:System.Windows.FrameworkContentElement>、同じ入力モデルでこれを処理できます。 詳細については、次を参照してください。 [WPF アーキテクチャ](~/docs/framework/wpf/advanced/wpf-architecture.md)も参照してください、[ベース要素の概要](~/docs/framework/wpf/advanced/base-elements-overview.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddHandler">
+      <MemberSignature Language="C#" Value="public void AddHandler (System.Windows.RoutedEvent routedEvent, Delegate handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddHandler(class System.Windows.RoutedEvent routedEvent, class System.Delegate handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.IInputElement.AddHandler(System.Windows.RoutedEvent,System.Delegate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="routedEvent" Type="System.Windows.RoutedEvent" />
+        <Parameter Name="handler" Type="System.Delegate" />
+      </Parameters>
+      <Docs>
+        <param name="routedEvent">処理されるルーティング イベントの識別子。</param>
+        <param name="handler">ハンドラーの実装に対する参照。</param>
+        <summary>特定のルーティング イベントのルーティング イベント ハンドラーを要素に追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CaptureMouse">
+      <MemberSignature Language="C#" Value="public bool CaptureMouse ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CaptureMouse() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.IInputElement.CaptureMouse" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この要素にマウスのキャプチャを強制しようとしています。</summary>
+        <returns>
+          <see langword="true" />マウスが正常にキャプチャされた場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CaptureStylus">
+      <MemberSignature Language="C#" Value="public bool CaptureStylus ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CaptureStylus() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.IInputElement.CaptureStylus" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この要素にスタイラスのキャプチャを強制しようとしています。</summary>
+        <returns>
+          <see langword="true" />スタイラスが正常にキャプチャされた場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Focus">
+      <MemberSignature Language="C#" Value="public bool Focus ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Focus() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.IInputElement.Focus" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この要素にキーボード フォーカスを設定しようとしています。</summary>
+        <returns>
+          <see langword="true" />この要素にあるか、既にキーボード フォーカスが移動された場合; この要素がそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Focusable">
+      <MemberSignature Language="C#" Value="public bool Focusable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Focusable" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.IInputElement.Focusable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素にフォーカスを設定できるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />要素がフォーカスを設定するには; を持つことができる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ 既存の実装、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]コア (を参照してください<xref:System.Windows.ContentElement.Focusable%2A?displayProperty=nameWithType>と<xref:System.Windows.UIElement.Focusable%2A?displayProperty=nameWithType>)、依存関係プロパティとしてこのプロパティを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GotKeyboardFocus">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.KeyboardFocusChangedEventHandler GotKeyboardFocus;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.KeyboardFocusChangedEventHandler GotKeyboardFocus" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.GotKeyboardFocus" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.KeyboardFocusChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素にキーボード フォーカスが移動したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GotMouseCapture">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.MouseEventHandler GotMouseCapture;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.MouseEventHandler GotMouseCapture" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.GotMouseCapture" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素がマウスをキャプチャしたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ 要素は、マウスをキャプチャ、カーソルが境界外にある場合でも、その要素はマウス入力を受け取ります。 マウスでは、ドラッグ アンド ドロップ操作中にのみ通常このような方法にキャプチャされ、ドラッグ アンド ドロップ操作の削除アクションが発生するまでにキャプチャを保持します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GotStylusCapture">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.StylusEventHandler GotStylusCapture;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.StylusEventHandler GotStylusCapture" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.GotStylusCapture" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.StylusEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素がスタイラスをキャプチャしたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ 要素がスタイラスをキャプチャ、カーソルが境界外にある場合でも、その要素はスタイラス入力を受け取ります。 スタイラスでは、ドラッグ アンド ドロップ操作中にのみこの方法で通常キャプチャし、ドラッグ アンド ドロップ操作の削除アクションが発生するまでにキャプチャを保持します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEnabled">
+      <MemberSignature Language="C#" Value="public bool IsEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.IInputElement.IsEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素が有効かどうかを示す値を取得、[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]です。</summary>
+        <value>
+          <see langword="true" />要素が有効である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ 既存の実装、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]コア (を参照してください<xref:System.Windows.ContentElement.IsEnabled%2A?displayProperty=nameWithType>と<xref:System.Windows.UIElement.IsEnabled%2A?displayProperty=nameWithType>) ように、このプロパティの読み取り/書き込みと依存関係プロパティとしてこのプロパティを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsKeyboardFocused">
+      <MemberSignature Language="C#" Value="public bool IsKeyboardFocused { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsKeyboardFocused" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.IInputElement.IsKeyboardFocused" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素にキーボード フォーカスがあるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />この要素がキーボード フォーカスがある場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ 既存の実装、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]コア (を参照してください<xref:System.Windows.ContentElement.IsKeyboardFocused%2A?displayProperty=nameWithType>と<xref:System.Windows.UIElement.IsKeyboardFocused%2A?displayProperty=nameWithType>)、依存関係プロパティとしてこのプロパティを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsKeyboardFocusWithin">
+      <MemberSignature Language="C#" Value="public bool IsKeyboardFocusWithin { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsKeyboardFocusWithin" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.IInputElement.IsKeyboardFocusWithin" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーボード フォーカスが子ビジュアル要素の境界内にある場合を含めて、要素の境界内にキーボード フォーカスがあるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />要素またはその子要素にキーボード フォーカスがある場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ 既存の実装、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]コア (を参照してください<xref:System.Windows.ContentElement.IsKeyboardFocusWithin%2A?displayProperty=nameWithType>と<xref:System.Windows.UIElement.IsKeyboardFocusWithin%2A?displayProperty=nameWithType>)、依存関係プロパティとしてこのプロパティを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMouseCaptured">
+      <MemberSignature Language="C#" Value="public bool IsMouseCaptured { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsMouseCaptured" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.IInputElement.IsMouseCaptured" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素にマウスがキャプチャされるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />要素がマウス キャプチャがある場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ 既存の実装、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]コア (を参照してください<xref:System.Windows.ContentElement.IsMouseCaptured%2A?displayProperty=nameWithType>と<xref:System.Windows.UIElement.IsMouseCaptured%2A?displayProperty=nameWithType>)、依存関係プロパティとしてこのプロパティを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMouseDirectlyOver">
+      <MemberSignature Language="C#" Value="public bool IsMouseDirectlyOver { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsMouseDirectlyOver" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.IInputElement.IsMouseDirectlyOver" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最も厳格なヒット テストの検出でマウス ポインターがこの要素の上にあるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />この要素上にマウス ポインターが場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ 既存の実装、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]コア (を参照してください<xref:System.Windows.ContentElement.IsMouseDirectlyOver%2A?displayProperty=nameWithType>と<xref:System.Windows.UIElement.IsMouseDirectlyOver%2A?displayProperty=nameWithType>)、依存関係プロパティとしてこのプロパティを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMouseOver">
+      <MemberSignature Language="C#" Value="public bool IsMouseOver { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsMouseOver" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.IInputElement.IsMouseOver" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウス ポインターがこの要素 (境界内にある子ビジュアル要素を含む) の上にあるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />マウス ポインターが要素またはその子要素の上にある場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ 既存の実装、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]コア (を参照してください<xref:System.Windows.ContentElement.IsMouseOver%2A?displayProperty=nameWithType>と<xref:System.Windows.UIElement.IsMouseOver%2A?displayProperty=nameWithType>)、依存関係プロパティとしてこのプロパティを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsStylusCaptured">
+      <MemberSignature Language="C#" Value="public bool IsStylusCaptured { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsStylusCaptured" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.IInputElement.IsStylusCaptured" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素にスタイラスがキャプチャされるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />要素がスタイラス キャプチャを持つ場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ 既存の実装、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]コア (を参照してください<xref:System.Windows.ContentElement.IsStylusCaptured%2A?displayProperty=nameWithType>と<xref:System.Windows.UIElement.IsStylusCaptured%2A?displayProperty=nameWithType>)、依存関係プロパティとしてこのプロパティを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsStylusDirectlyOver">
+      <MemberSignature Language="C#" Value="public bool IsStylusDirectlyOver { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsStylusDirectlyOver" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.IInputElement.IsStylusDirectlyOver" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スタイラスが最も厳格なヒットテストの意味でこの要素より上にあるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />要素上にスタイラスがある場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ 既存の実装、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]コア (を参照してください<xref:System.Windows.ContentElement.IsStylusDirectlyOver%2A?displayProperty=nameWithType>と<xref:System.Windows.UIElement.IsStylusDirectlyOver%2A?displayProperty=nameWithType>)、依存関係プロパティとしてこのプロパティを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsStylusOver">
+      <MemberSignature Language="C#" Value="public bool IsStylusOver { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsStylusOver" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.IInputElement.IsStylusOver" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スタイラスがこの要素 (または境界内にある子ビジュアル要素) の上にあるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />スタイラスのカーソルが要素またはその子要素の上にある場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ いくつかの主要なクラスを実装する<xref:System.Windows.IInputElement>など<xref:System.Windows.UIElement>もこのプロパティに対する変更を追跡するイベントを実装します。 ただし、このインターフェイスでは、そのコントラクトの一部としてこのようなイベントは含まれません。  
+  
+ 既存の実装、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]コア (を参照してください<xref:System.Windows.ContentElement.IsStylusOver%2A?displayProperty=nameWithType>と<xref:System.Windows.UIElement.IsStylusOver%2A?displayProperty=nameWithType>)、依存関係プロパティとしてこのプロパティを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyDown">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.KeyEventHandler KeyDown;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.KeyEventHandler KeyDown" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.KeyDown" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.KeyEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素にキーボード フォーカスがある状態でいずれかのキーが押されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyUp">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.KeyEventHandler KeyUp;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.KeyEventHandler KeyUp" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.KeyUp" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.KeyEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素にキーボード フォーカスがある状態でキーが離されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LostKeyboardFocus">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.KeyboardFocusChangedEventHandler LostKeyboardFocus;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.KeyboardFocusChangedEventHandler LostKeyboardFocus" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.LostKeyboardFocus" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.KeyboardFocusChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素からキーボード フォーカスが離れたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LostMouseCapture">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.MouseEventHandler LostMouseCapture;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.MouseEventHandler LostMouseCapture" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.LostMouseCapture" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素がマウス キャプチャを失ったときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ 要素は、マウスをキャプチャ、ときに、カーソルが境界外にある場合でも、マウス入力を受け取ります。 マウスは通常、ドラッグ アンド ドロップ操作中にのみキャプチャされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LostStylusCapture">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.StylusEventHandler LostStylusCapture;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.StylusEventHandler LostStylusCapture" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.LostStylusCapture" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.StylusEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素がスタイラス キャプチャを失ったときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ 要素がスタイラスをキャプチャ、ときに、カーソルが境界外にある場合でも、スタイラス入力を受け取ります。 スタイラスは通常、ドラッグ アンド ドロップ操作中にのみキャプチャされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseEnter">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.MouseEventHandler MouseEnter;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.MouseEventHandler MouseEnter" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.MouseEnter" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウス ポインターがこの要素の境界内に入ったときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseLeave">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.MouseEventHandler MouseLeave;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.MouseEventHandler MouseLeave" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.MouseLeave" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウス ポインターがこの要素の境界内から出たときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseLeftButtonDown">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.MouseButtonEventHandler MouseLeftButtonDown;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.MouseButtonEventHandler MouseLeftButtonDown" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.MouseLeftButtonDown" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseButtonEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素の上にマウス ポインターがマウスの左ボタンが押されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseLeftButtonUp">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.MouseButtonEventHandler MouseLeftButtonUp;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.MouseButtonEventHandler MouseLeftButtonUp" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.MouseLeftButtonUp" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseButtonEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素の上にマウス ポインターがマウスの左ボタンが離されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseMove">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.MouseEventHandler MouseMove;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.MouseEventHandler MouseMove" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.MouseMove" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素の上にマウス ポインターがマウス ポインターが移動したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseRightButtonDown">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.MouseButtonEventHandler MouseRightButtonDown;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.MouseButtonEventHandler MouseRightButtonDown" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.MouseRightButtonDown" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseButtonEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素の上にマウス ポインターがマウスの右ボタンが押されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseRightButtonUp">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.MouseButtonEventHandler MouseRightButtonUp;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.MouseButtonEventHandler MouseRightButtonUp" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.MouseRightButtonUp" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseButtonEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素の上にマウス ポインターがマウスの右ボタンが離されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseWheel">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.MouseWheelEventHandler MouseWheel;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.MouseWheelEventHandler MouseWheel" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.MouseWheel" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseWheelEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素の上にマウス ポインターが、マウス ホイールが動くと発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewGotKeyboardFocus">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.KeyboardFocusChangedEventHandler PreviewGotKeyboardFocus;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.KeyboardFocusChangedEventHandler PreviewGotKeyboardFocus" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.PreviewGotKeyboardFocus" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.KeyboardFocusChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素にキーボード フォーカスが移動したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewKeyDown">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.KeyEventHandler PreviewKeyDown;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.KeyEventHandler PreviewKeyDown" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.PreviewKeyDown" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.KeyEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素にキーボード フォーカスがある状態でいずれかのキーが押されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewKeyUp">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.KeyEventHandler PreviewKeyUp;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.KeyEventHandler PreviewKeyUp" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.PreviewKeyUp" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.KeyEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素にキーボード フォーカスがある状態でキーが離されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewLostKeyboardFocus">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.KeyboardFocusChangedEventHandler PreviewLostKeyboardFocus;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.KeyboardFocusChangedEventHandler PreviewLostKeyboardFocus" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.PreviewLostKeyboardFocus" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.KeyboardFocusChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素からキーボード フォーカスが離れたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewMouseLeftButtonDown">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.MouseButtonEventHandler PreviewMouseLeftButtonDown;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.MouseButtonEventHandler PreviewMouseLeftButtonDown" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.PreviewMouseLeftButtonDown" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseButtonEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素の上にマウス ポインターがマウスの左ボタンが押されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewMouseLeftButtonUp">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.MouseButtonEventHandler PreviewMouseLeftButtonUp;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.MouseButtonEventHandler PreviewMouseLeftButtonUp" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.PreviewMouseLeftButtonUp" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseButtonEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素の上にマウス ポインターがマウスの左ボタンが離されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewMouseMove">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.MouseEventHandler PreviewMouseMove;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.MouseEventHandler PreviewMouseMove" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.PreviewMouseMove" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素の上にマウス ポインターがマウス ポインターが移動したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewMouseRightButtonDown">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.MouseButtonEventHandler PreviewMouseRightButtonDown;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.MouseButtonEventHandler PreviewMouseRightButtonDown" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.PreviewMouseRightButtonDown" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseButtonEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素の上にマウス ポインターがマウスの右ボタンが押されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewMouseRightButtonUp">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.MouseButtonEventHandler PreviewMouseRightButtonUp;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.MouseButtonEventHandler PreviewMouseRightButtonUp" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.PreviewMouseRightButtonUp" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseButtonEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素の上にマウス ポインターがマウスの右ボタンが離されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewMouseWheel">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.MouseWheelEventHandler PreviewMouseWheel;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.MouseWheelEventHandler PreviewMouseWheel" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.PreviewMouseWheel" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseWheelEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素の上にマウス ポインターが、マウス ホイールが動くと発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewStylusButtonDown">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.StylusButtonEventHandler PreviewStylusButtonDown;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.StylusButtonEventHandler PreviewStylusButtonDown" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.PreviewStylusButtonDown" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.StylusButtonEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スタイラスがこの要素の上にある状態でスタイラス ボタンが押されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewStylusButtonUp">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.StylusButtonEventHandler PreviewStylusButtonUp;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.StylusButtonEventHandler PreviewStylusButtonUp" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.PreviewStylusButtonUp" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.StylusButtonEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スタイラスがこの要素上でスタイラス ボタンが離されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewStylusDown">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.StylusDownEventHandler PreviewStylusDown;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.StylusDownEventHandler PreviewStylusDown" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.PreviewStylusDown" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.StylusDownEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素上でスタイラスがデジタイザーに触れると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewStylusInAirMove">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.StylusEventHandler PreviewStylusInAirMove;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.StylusEventHandler PreviewStylusInAirMove" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.PreviewStylusInAirMove" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.StylusEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スタイラスがデジタイザーに触れることなく要素上を移動すると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewStylusInRange">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.StylusEventHandler PreviewStylusInRange;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.StylusEventHandler PreviewStylusInRange" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.PreviewStylusInRange" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.StylusEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スタイラスが検出されるのに十分にデジタイザーに近づいているときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewStylusMove">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.StylusEventHandler PreviewStylusMove;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.StylusEventHandler PreviewStylusMove" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.PreviewStylusMove" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.StylusEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スタイラスが要素の上にある状態にスタイラスが移動したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewStylusOutOfRange">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.StylusEventHandler PreviewStylusOutOfRange;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.StylusEventHandler PreviewStylusOutOfRange" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.PreviewStylusOutOfRange" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.StylusEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スタイラスがデジタイザーから離れすぎているために検出されないときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewStylusSystemGesture">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.StylusSystemGestureEventHandler PreviewStylusSystemGesture;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.StylusSystemGestureEventHandler PreviewStylusSystemGesture" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.PreviewStylusSystemGesture" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.StylusSystemGestureEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生するいくつかのスタイラス ジェスチャのいずれかが検出されると、たとえば、<see cref="F:System.Windows.Input.SystemGesture.Tap" />または<see cref="F:System.Windows.Input.SystemGesture.Drag" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewStylusUp">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.StylusEventHandler PreviewStylusUp;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.StylusEventHandler PreviewStylusUp" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.PreviewStylusUp" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.StylusEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素上でスタイラスがデジタイザーから離れたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewTextInput">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.TextCompositionEventHandler PreviewTextInput;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.TextCompositionEventHandler PreviewTextInput" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.PreviewTextInput" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.TextCompositionEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素がデバイスに依存しない方法でテキストを取得したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RaiseEvent">
+      <MemberSignature Language="C#" Value="public void RaiseEvent (System.Windows.RoutedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RaiseEvent(class System.Windows.RoutedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.IInputElement.RaiseEvent(System.Windows.RoutedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.RoutedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">インスタンス、<see cref="T:System.Windows.RoutedEventArgs" />を発生させるイベントの識別子を含むクラスです。</param>
+        <summary>指定されているルーティング イベントを発生させる、<see cref="P:System.Windows.RoutedEventArgs.RoutedEvent" />プロパティ内で指定された<see cref="T:System.Windows.RoutedEventArgs" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReleaseMouseCapture">
+      <MemberSignature Language="C#" Value="public void ReleaseMouseCapture ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ReleaseMouseCapture() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.IInputElement.ReleaseMouseCapture" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この要素は、キャプチャを保持している場合は、マウスのキャプチャを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReleaseStylusCapture">
+      <MemberSignature Language="C#" Value="public void ReleaseStylusCapture ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ReleaseStylusCapture() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.IInputElement.ReleaseStylusCapture" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この要素は、キャプチャを保持している場合は、スタイラスのキャプチャを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveHandler">
+      <MemberSignature Language="C#" Value="public void RemoveHandler (System.Windows.RoutedEvent routedEvent, Delegate handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveHandler(class System.Windows.RoutedEvent routedEvent, class System.Delegate handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.IInputElement.RemoveHandler(System.Windows.RoutedEvent,System.Delegate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="routedEvent" Type="System.Windows.RoutedEvent" />
+        <Parameter Name="handler" Type="System.Delegate" />
+      </Parameters>
+      <Docs>
+        <param name="routedEvent">ハンドラーがアタッチされているルーティング イベントの識別子。</param>
+        <param name="handler">この要素のイベント ハンドラー コレクションから削除する特定のハンドラー実装。</param>
+        <summary>この要素から指定したルーティング イベント ハンドラーのすべてのインスタンスを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylusButtonDown">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.StylusButtonEventHandler StylusButtonDown;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.StylusButtonEventHandler StylusButtonDown" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.StylusButtonDown" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.StylusButtonEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スタイラスがこの要素上でスタイラス ボタンが押されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylusButtonUp">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.StylusButtonEventHandler StylusButtonUp;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.StylusButtonEventHandler StylusButtonUp" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.StylusButtonUp" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.StylusButtonEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スタイラスがこの要素上でスタイラス ボタンが離されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylusDown">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.StylusDownEventHandler StylusDown;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.StylusDownEventHandler StylusDown" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.StylusDown" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.StylusDownEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素上でスタイラスがデジタイザーに触れると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylusEnter">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.StylusEventHandler StylusEnter;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.StylusEventHandler StylusEnter" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.StylusEnter" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.StylusEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スタイラスのカーソルが要素の境界に入ったときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylusInAirMove">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.StylusEventHandler StylusInAirMove;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.StylusEventHandler StylusInAirMove" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.StylusInAirMove" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.StylusEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スタイラスがデジタイザーに触れることなく要素上を移動すると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylusInRange">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.StylusEventHandler StylusInRange;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.StylusEventHandler StylusInRange" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.StylusInRange" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.StylusEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スタイラスが検出されるのに十分にデジタイザーに近づいているときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylusLeave">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.StylusEventHandler StylusLeave;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.StylusEventHandler StylusLeave" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.StylusLeave" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.StylusEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スタイラスのカーソルが要素の境界から出たときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylusMove">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.StylusEventHandler StylusMove;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.StylusEventHandler StylusMove" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.StylusMove" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.StylusEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スタイラスのカーソルが要素の上に移動したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylusOutOfRange">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.StylusEventHandler StylusOutOfRange;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.StylusEventHandler StylusOutOfRange" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.StylusOutOfRange" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.StylusEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スタイラスがデジタイザーから離れすぎているために検出されないときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylusSystemGesture">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.StylusSystemGestureEventHandler StylusSystemGesture;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.StylusSystemGestureEventHandler StylusSystemGesture" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.StylusSystemGesture" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.StylusSystemGestureEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生するいくつかのスタイラス ジェスチャのいずれかが検出されると、たとえば、<see cref="F:System.Windows.Input.SystemGesture.Tap" />または<see cref="F:System.Windows.Input.SystemGesture.Drag" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylusUp">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.StylusEventHandler StylusUp;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.StylusEventHandler StylusUp" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.StylusUp" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.StylusEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素上でスタイラスがデジタイザーから離れたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextInput">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.TextCompositionEventHandler TextInput;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.TextCompositionEventHandler TextInput" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.IInputElement.TextInput" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.TextCompositionEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素がデバイスに依存しない方法でテキストを取得したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、パブリック実装するためのものではありません。 詳細については、「解説」を参照してください、<xref:System.Windows.IInputElement>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

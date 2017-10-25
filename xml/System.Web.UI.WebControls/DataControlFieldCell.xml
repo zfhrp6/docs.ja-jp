@@ -1,0 +1,132 @@
+<Type Name="DataControlFieldCell" FullName="System.Web.UI.WebControls.DataControlFieldCell">
+  <TypeSignature Language="C#" Value="public class DataControlFieldCell : System.Web.UI.WebControls.TableCell" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataControlFieldCell extends System.Web.UI.WebControls.TableCell" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.DataControlFieldCell" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.TableCell</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>表形式の ASP.NET データ バインド コントロール (<see cref="T:System.Web.UI.WebControls.DetailsView" /> や <see cref="T:System.Web.UI.WebControls.GridView" /> など) の、表示されたテーブル内のセルを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataControlFieldCell>クラスは厳密に型指定された<xref:System.Web.UI.WebControls.TableCell>など、表形式のレイアウトでは、その内容を表示する ASP.NET データ バインド コントロール内のセルを表すクラス<xref:System.Web.UI.WebControls.GridView>と<xref:System.Web.UI.WebControls.DetailsView>です。  
+  
+ <xref:System.Web.UI.WebControls.DataControlField>オブジェクトを含む、<xref:System.Web.UI.WebControls.DataControlFieldCell>オブジェクトは、セルにスタイルを適用することで、セルを表示する方法を制御します。 含む、アクセスできる<xref:System.Web.UI.WebControls.DataControlField>オブジェクトを使用して、<xref:System.Web.UI.WebControls.DataControlFieldCell.ContainingField%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を示す方法、<xref:System.Web.UI.WebControls.DataControlFieldCell>オブジェクトを使用しから派生したクラスによって操作<xref:System.Web.UI.WebControls.DataControlField>です。 `RadioButtonField`クラスを追加、<xref:System.Web.UI.WebControls.RadioButton>を各コントロール<xref:System.Web.UI.WebControls.DataControlFieldCell>オブジェクトにその<xref:System.Web.UI.WebControls.DataControlField.InitializeCell%2A>メソッド、後の値を確認し、<xref:System.Web.UI.WebControls.RadioButton>コントロールに、<xref:System.Web.UI.WebControls.DataControlField.ExtractValuesFromCell%2A>メソッドです。 この例に示されている例の一部である、<xref:System.Web.UI.WebControls.DataControlField>クラスです。  
+  
+ [!code-csharp[Samples.AspNet.RadioButtonField#2](~/samples/snippets/csharp/VS_Snippets_WebNet/Samples.AspNet.RadioButtonField/CS/radiobuttonfield.cs#2)]
+ [!code-vb[Samples.AspNet.RadioButtonField#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Samples.AspNet.RadioButtonField/VB/radiobuttonfield.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataControlFieldCell (System.Web.UI.WebControls.DataControlField containingField);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.DataControlField containingField) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataControlFieldCell.#ctor(System.Web.UI.WebControls.DataControlField)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="containingField" Type="System.Web.UI.WebControls.DataControlField" />
+      </Parameters>
+      <Docs>
+        <param name="containingField"><see cref="T:System.Web.UI.WebControls.DataControlField" />現在のセルを格納しています。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.DataControlFieldCell" />クラス、指定した設定<see cref="T:System.Web.UI.WebControls.DataControlField" />オブジェクト セルのコンテナーとして。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して、<xref:System.Web.UI.HtmlTextWriterTag?displayProperty=nameWithType>セルを表示するために、基本クラスで定義された要素。 <xref:System.Web.UI.WebControls.DataControlField>に渡されたオブジェクト、`containingField`とレポートが表示されるセルに適用するスタイル新機能のヘッダーを表示するかどうかを判断するパラメーターを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DataControlFieldCell (System.Web.UI.HtmlTextWriterTag tagKey, System.Web.UI.WebControls.DataControlField containingField);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(valuetype System.Web.UI.HtmlTextWriterTag tagKey, class System.Web.UI.WebControls.DataControlField containingField) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataControlFieldCell.#ctor(System.Web.UI.HtmlTextWriterTag,System.Web.UI.WebControls.DataControlField)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="tagKey" Type="System.Web.UI.HtmlTextWriterTag" />
+        <Parameter Name="containingField" Type="System.Web.UI.WebControls.DataControlField" />
+      </Parameters>
+      <Docs>
+        <param name="tagKey"><see cref="T:System.Web.UI.HtmlTextWriterTag" />セルを表示するために HTML タグを指定します。 によって使用される既定のタグ、<see cref="T:System.Web.UI.WebControls.TableCell" />クラスは<see cref="F:System.Web.UI.HtmlTextWriterTag.Td" />します。</param>
+        <param name="containingField"><see cref="T:System.Web.UI.WebControls.DataControlField" />現在のセルを格納しています。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.DataControlFieldCell" />クラス、指定した設定<see cref="T:System.Web.UI.WebControls.DataControlField" />オブジェクト セルのコンテナーとして。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `tagKey`パラメーターに渡された、<xref:System.Web.UI.WebControls.WebControl>基本クラスのコンス トラクター、およびコントロールによって出力されるコントロールの HTML タグ。 <xref:System.Web.UI.WebControls.DataControlField>に渡された、`containingField`とレポートが表示されるセルに適用するスタイル新機能のヘッダーを表示するかどうかを判断するパラメーターを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainingField">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.DataControlField ContainingField { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.DataControlField ContainingField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataControlFieldCell.ContainingField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataControlField</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.DataControlField" />を現在のセルを含むオブジェクト。</summary>
+        <value>A <see cref="T:System.Web.UI.WebControls.DataControlField" /> 、現在のセルを格納しているまたは<see langword="null" />いない場合、<see cref="T:System.Web.UI.WebControls.DataControlField" />クラスのコンス トラクターに渡されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテンツのレンダリング、<xref:System.Web.UI.WebControls.DataControlFieldCell>オブジェクトの影響を受ける、さまざまな<xref:System.Web.UI.WebControls.DataControlField>を含むのプロパティ フィールドなど<xref:System.Web.UI.WebControls.DataControlField.ItemStyle%2A>、 <xref:System.Web.UI.WebControls.DataControlField.ControlStyle%2A>、および<xref:System.Web.UI.WebControls.DataControlField.ShowHeader%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateRequestMode">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.ValidateRequestMode ValidateRequestMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.ValidateRequestMode ValidateRequestMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataControlFieldCell.ValidateRequestMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ValidateRequestMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールがクライアントの入力を検証するかどうかを指定する値を設定します。</summary>
+        <value>
+          <see langword="true" />コントロールがクライアントの入力を検証する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

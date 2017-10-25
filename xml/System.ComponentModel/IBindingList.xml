@@ -1,0 +1,658 @@
+<Type Name="IBindingList" FullName="System.ComponentModel.IBindingList">
+  <TypeSignature Language="C#" Value="public interface IBindingList : System.Collections.IList" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IBindingList implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Collections.IList" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.IBindingList" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IList</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>データ ソースにバインドするときに、複雑なおよび単純なシナリオの両方をサポートするために必要な機能を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、<xref:System.Data.DataView>クラスです。 メソッドの実装では、そのメソッドの実装と同じ動作が発生する必要があります、<xref:System.Data.DataView>クラスです。  
+  
+ 呼び出すと、<xref:System.ComponentModel.IBindingList.ApplySort%2A>または<xref:System.ComponentModel.IBindingList.RemoveSort%2A>発生させる方法、<xref:System.ComponentModel.IBindingList.ListChanged>イベントと、<xref:System.ComponentModel.ListChangedType.Reset>列挙します。  
+  
+ 呼び出すと、<xref:System.ComponentModel.IBindingList.AddNew%2A>発生させるメソッドを<xref:System.ComponentModel.IBindingList.ListChanged>イベントと、<xref:System.ComponentModel.ListChangedType.ItemAdded>列挙型の適切なインデックスを実行します。 追加された行が、状態場所、ESC キーを押す、<xref:System.Windows.Forms.DataGridView>コントロールは、新しい行を削除することができます。 させると、<xref:System.ComponentModel.IBindingList.ListChanged>イベントと、<xref:System.ComponentModel.ListChangedType.ItemAdded>列挙この行で 2 回目項目を示すようになりました"new"状態ではない行です。  
+  
+ アイテムや呼び出しを削除すると、<xref:System.ComponentModel.IEditableObject.CancelEdit%2A>メソッド、新しい行を (を実装している行のかどうか<xref:System.ComponentModel.IEditableObject>)、発生させる、<xref:System.ComponentModel.IBindingList.ListChanged>を持つイベントを<xref:System.ComponentModel.ListChangedType.ItemDeleted>列挙型の適切なインデックスを実行します。  
+  
+   
+  
+## Examples  
+ 次の例の簡単な実装を提供する、<xref:System.ComponentModel.IBindingList>インターフェイスです。 `CustomerList`クラスは、一覧に顧客情報を格納します。 この例を使用している、`Customer`の例で使用されているクラス、<xref:System.ComponentModel.IEditableObject>クラスです。  
+  
+ [!code-cpp[Binding_Editable#2](~/samples/snippets/cpp/VS_Snippets_Winforms/Binding_Editable/CPP/binding_editable.cpp#2)]
+ [!code-csharp[Binding_Editable#2](~/samples/snippets/csharp/VS_Snippets_Winforms/Binding_Editable/CS/binding_editable.cs#2)]
+ [!code-vb[Binding_Editable#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Binding_Editable/VB/binding_editable.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddIndex">
+      <MemberSignature Language="C#" Value="public void AddIndex (System.ComponentModel.PropertyDescriptor property);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddIndex(class System.ComponentModel.PropertyDescriptor property) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.IBindingList.AddIndex(System.ComponentModel.PropertyDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="property" Type="System.ComponentModel.PropertyDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="property"><see cref="T:System.ComponentModel.PropertyDescriptor" />検索に使用されるインデックスに追加します。</param>
+        <summary>追加、<see cref="T:System.ComponentModel.PropertyDescriptor" />検索に使用されるインデックスにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一覧には、このメソッドをサポートする必要があります。 ただし、このメソッドはしないようにすることができますをサポートします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddNew">
+      <MemberSignature Language="C#" Value="public object AddNew ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object AddNew() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.IBindingList.AddNew" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しい項目を一覧に追加します。</summary>
+        <returns>リストに追加された項目。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合にのみ、このメソッドがサポートされて<xref:System.ComponentModel.IBindingList.AllowNew%2A>は`true`です。 それ以外の場合、<xref:System.NotSupportedException>がスローされます。  
+  
+ このメソッドを実装することを意味、<xref:System.ComponentModel.IBindingList>リストが一覧に追加するオブジェクトの種類を理解する必要があり、その型の新しいインスタンスを作成する方法を理解する必要があります。 コレクションがある場合など、 `myCustomer` 、オブジェクト、<xref:System.ComponentModel.IBindingList.AddNew%2A>メソッドを新規に追加する必要があります`myCustomer`リストにオブジェクト。  
+  
+> [!NOTE]
+>  このリスト内のオブジェクトが実装する場合、<xref:System.ComponentModel.IEditableObject>インターフェイスを呼び出して、<xref:System.ComponentModel.IEditableObject.CancelEdit%2A>メソッド必要がありますオブジェクトを破棄して、そのリストに追加できませんを使用して、オブジェクトの作成時に、<xref:System.ComponentModel.IBindingList.AddNew%2A>メソッドです。 オブジェクトは、一覧にのみ追加する必要があるときに、<xref:System.ComponentModel.IEditableObject.EndEdit%2A?displayProperty=nameWithType>メソッドが呼び出されます。 したがって、する必要があります同期オブジェクトと、リスト慎重にします。  
+  
+ このメソッドが呼び出されたときに発生させる、<xref:System.ComponentModel.IBindingList.ListChanged>イベントと、<xref:System.ComponentModel.ListChangedType.ItemAdded>列挙型の適切なインデックスを実行します。 追加された行が、状態 esc キーを押した場合、<xref:System.Windows.Forms.DataGridView>コントロールは、新しい行を削除することができます。 させると、<xref:System.ComponentModel.IBindingList.ListChanged>イベントと、<xref:System.ComponentModel.ListChangedType.ItemAdded>この行で 2 回目の列挙アイテムを示しましているようになりました (新しい状態) ではなく通常の行。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">
+          <see cref="P:System.ComponentModel.IBindingList.AllowNew" /> は <see langword="false" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowEdit">
+      <MemberSignature Language="C#" Value="public bool AllowEdit { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowEdit" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.IBindingList.AllowEdit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リスト内の項目を更新するかどうかを取得します。</summary>
+        <value>
+          <see langword="true" />一覧にある項目を更新する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowNew">
+      <MemberSignature Language="C#" Value="public bool AllowNew { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowNew" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.IBindingList.AllowNew" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用して、一覧に項目を追加するかどうかを取得<see cref="M:System.ComponentModel.IBindingList.AddNew" />です。</summary>
+        <value>
+          <see langword="true" />使用して、一覧に項目を追加することができる場合<see cref="M:System.ComponentModel.IBindingList.AddNew" />、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Collections.IList.IsFixedSize%2A?displayProperty=nameWithType>または<xref:System.Collections.IList.IsReadOnly%2A?displayProperty=nameWithType>は`true`、このプロパティを返します`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowRemove">
+      <MemberSignature Language="C#" Value="public bool AllowRemove { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowRemove" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.IBindingList.AllowRemove" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リストから、項目を削除するかどうかを取得するを使用して<see cref="M:System.Collections.IList.Remove(System.Object)" />または<see cref="M:System.Collections.IList.RemoveAt(System.Int32)" />です。</summary>
+        <value>
+          <see langword="true" />リストから項目を削除する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Collections.IList.IsFixedSize%2A?displayProperty=nameWithType>または<xref:System.Collections.IList.IsReadOnly%2A?displayProperty=nameWithType>は`true`、このプロパティを返します`false`です。  
+  
+> [!NOTE]
+>  場合<xref:System.ComponentModel.IBindingList.AllowRemove%2A>返します`false`、<xref:System.Collections.IList.Remove%2A?displayProperty=nameWithType>と<xref:System.Collections.IList.RemoveAt%2A?displayProperty=nameWithType>スロー、<xref:System.NotSupportedException>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplySort">
+      <MemberSignature Language="C#" Value="public void ApplySort (System.ComponentModel.PropertyDescriptor property, System.ComponentModel.ListSortDirection direction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ApplySort(class System.ComponentModel.PropertyDescriptor property, valuetype System.ComponentModel.ListSortDirection direction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.IBindingList.ApplySort(System.ComponentModel.PropertyDescriptor,System.ComponentModel.ListSortDirection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="property" Type="System.ComponentModel.PropertyDescriptor" />
+        <Parameter Name="direction" Type="System.ComponentModel.ListSortDirection" />
+      </Parameters>
+      <Docs>
+        <param name="property"><see cref="T:System.ComponentModel.PropertyDescriptor" />で並べ替えを行う。</param>
+        <param name="direction"><see cref="T:System.ComponentModel.ListSortDirection" /> 値のいずれか。</param>
+        <summary>基づくリストを並べ替えます、<see cref="T:System.ComponentModel.PropertyDescriptor" />と<see cref="T:System.ComponentModel.ListSortDirection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 項目を追加または削除された場合、は、これらの項目が並べ替え順序で配置されます。  
+  
+ 場合、このメソッドがサポートされて<xref:System.ComponentModel.IBindingList.SupportsSorting%2A>は`true`以外の場合、このメソッドは、<xref:System.NotSupportedException>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">
+          <see cref="P:System.ComponentModel.IBindingList.SupportsSorting" /> は <see langword="false" /> です。</exception>
+        <block subset="none" type="overrides">
+          <para>このメソッドの実装を発生させる、<see cref="E:System.ComponentModel.IBindingList.ListChanged" />イベントと、<see cref="F:System.ComponentModel.ListChangedType.Reset" />列挙します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Find">
+      <MemberSignature Language="C#" Value="public int Find (System.ComponentModel.PropertyDescriptor property, object key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 Find(class System.ComponentModel.PropertyDescriptor property, object key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.IBindingList.Find(System.ComponentModel.PropertyDescriptor,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="property" Type="System.ComponentModel.PropertyDescriptor" />
+        <Parameter Name="key" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="property"><see cref="T:System.ComponentModel.PropertyDescriptor" />を検索します。</param>
+        <param name="key">値、<c>プロパティ</c>パラメーターを検索します。</param>
+        <summary>持つ行のインデックスを返します、指定された<see cref="T:System.ComponentModel.PropertyDescriptor" />です。</summary>
+        <returns>持つ行のインデックス、指定された<see cref="T:System.ComponentModel.PropertyDescriptor" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは最初の行を選択位置の値、`property`パラメーターの値に等しい、`key`パラメーター。  
+  
+ 場合、このメソッドがサポートされて<xref:System.ComponentModel.IBindingList.SupportsSearching%2A>は`true`、それ以外の場合、このメソッドがスロー、<xref:System.NotSupportedException>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装する方法を示します、<xref:System.ComponentModel.IBindingList.Find%2A>メソッドです。  
+  
+ [!code-csharp[System.Windows.Forms.BindingSourceAndBindingListOfT#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.BindingSourceAndBindingListOfT/CS/Form1.cs#3)]
+ [!code-vb[System.Windows.Forms.BindingSourceAndBindingListOfT#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.BindingSourceAndBindingListOfT/VB/Form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">
+          <see cref="P:System.ComponentModel.IBindingList.SupportsSearching" /> は <see langword="false" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSorted">
+      <MemberSignature Language="C#" Value="public bool IsSorted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSorted" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.IBindingList.IsSorted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リスト内の項目を並べ替えるかどうかを取得します。</summary>
+        <value>
+          <see langword="true" />場合<see cref="M:System.ComponentModel.IBindingList.ApplySort(System.ComponentModel.PropertyDescriptor,System.ComponentModel.ListSortDirection)" />が呼び出されたと<see cref="M:System.ComponentModel.IBindingList.RemoveSort" />が呼び出される、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、このプロパティはサポートされて<xref:System.ComponentModel.IBindingList.SupportsSorting%2A>は`true`以外の場合、このプロパティをスロー、<xref:System.NotSupportedException>です。  
+  
+ 場合<xref:System.ComponentModel.IBindingList.IsSorted%2A>返します`true`項目を追加または削除、並べ替えの順序で。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">
+          <see cref="P:System.ComponentModel.IBindingList.SupportsSorting" /> は <see langword="false" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ListChanged">
+      <MemberSignature Language="C#" Value="public event System.ComponentModel.ListChangedEventHandler ListChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.ListChangedEventHandler ListChanged" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.IBindingList.ListChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.ListChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リストまたはリスト内の項目が変更された場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントは場合にのみ、<xref:System.ComponentModel.IBindingList.SupportsChangeNotification%2A>プロパティは`true`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveIndex">
+      <MemberSignature Language="C#" Value="public void RemoveIndex (System.ComponentModel.PropertyDescriptor property);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveIndex(class System.ComponentModel.PropertyDescriptor property) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.IBindingList.RemoveIndex(System.ComponentModel.PropertyDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="property" Type="System.ComponentModel.PropertyDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="property"><see cref="T:System.ComponentModel.PropertyDescriptor" />検索に使用されるインデックスから削除します。</param>
+        <summary>削除、<see cref="T:System.ComponentModel.PropertyDescriptor" />インデックス検索に使用されるからです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一覧には、このメソッドをサポートする必要があります。 ただし、このメソッドはしないようにすることができますをサポートします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveSort">
+      <MemberSignature Language="C#" Value="public void RemoveSort ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveSort() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.IBindingList.RemoveSort" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>使用して適用するあらゆる種類の削除<see cref="M:System.ComponentModel.IBindingList.ApplySort(System.ComponentModel.PropertyDescriptor,System.ComponentModel.ListSortDirection)" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、このプロパティはサポートされて<xref:System.ComponentModel.IBindingList.SupportsSorting%2A>は`true`以外の場合、このプロパティをスロー、<xref:System.NotSupportedException>です。  
+  
+ このメソッドを呼び出すときに発生させる、<xref:System.ComponentModel.IBindingList.ListChanged>イベントと、<xref:System.ComponentModel.ListChangedType.Reset>列挙します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">
+          <see cref="P:System.ComponentModel.IBindingList.SupportsSorting" /> は <see langword="false" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SortDirection">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.ListSortDirection SortDirection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ComponentModel.ListSortDirection SortDirection" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.IBindingList.SortDirection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.ListSortDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>並べ替えの方向を取得します。</summary>
+        <value><see cref="T:System.ComponentModel.ListSortDirection" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、このプロパティはサポートされて<xref:System.ComponentModel.IBindingList.SupportsSorting%2A>は`true`以外の場合、このプロパティをスロー、<xref:System.NotSupportedException>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">
+          <see cref="P:System.ComponentModel.IBindingList.SupportsSorting" /> は <see langword="false" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SortProperty">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.PropertyDescriptor SortProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.PropertyDescriptor SortProperty" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.IBindingList.SortProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.ComponentModel.PropertyDescriptor" />並べ替えに使用されています。</summary>
+        <value><see cref="T:System.ComponentModel.PropertyDescriptor" />並べ替えに使用されています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、このプロパティはサポートされて<xref:System.ComponentModel.IBindingList.SupportsSorting%2A>は`true`以外の場合、このプロパティをスロー、<xref:System.NotSupportedException>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">
+          <see cref="P:System.ComponentModel.IBindingList.SupportsSorting" /> は <see langword="false" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsChangeNotification">
+      <MemberSignature Language="C#" Value="public bool SupportsChangeNotification { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsChangeNotification" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.IBindingList.SupportsChangeNotification" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得するかどうか、<see cref="E:System.ComponentModel.IBindingList.ListChanged" />リストまたはリスト内の項目が変更されたときにイベントが発生します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="E:System.ComponentModel.IBindingList.ListChanged" />イベントは、一覧が変更されたときに、または項目を変更します。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リスト内のオブジェクト必要があるときに通知する一覧変更することも、リストを発生させることができますので、<xref:System.ComponentModel.IBindingList.ListChanged>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsSearching">
+      <MemberSignature Language="C#" Value="public bool SupportsSearching { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsSearching" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.IBindingList.SupportsSearching" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一覧を使用して検索をサポートしているかどうかを取得、<see cref="M:System.ComponentModel.IBindingList.Find(System.ComponentModel.PropertyDescriptor,System.Object)" />メソッドです。</summary>
+        <value>
+          <see langword="true" />リストが使用した検索をサポートしているか、<see cref="M:System.ComponentModel.IBindingList.Find(System.ComponentModel.PropertyDescriptor,System.Object)" />メソッド以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、実装する方法を示します、<xref:System.ComponentModel.IBindingList.SupportsSearching%2A>プロパティです。  
+  
+ [!code-csharp[System.Windows.Forms.BindingSourceAndBindingListOfT#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.BindingSourceAndBindingListOfT/CS/Form1.cs#3)]
+ [!code-vb[System.Windows.Forms.BindingSourceAndBindingListOfT#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.BindingSourceAndBindingListOfT/VB/Form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsSorting">
+      <MemberSignature Language="C#" Value="public bool SupportsSorting { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsSorting" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.IBindingList.SupportsSorting" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リストが並べ替えをサポートするかどうかを取得します。</summary>
+        <value>
+          <see langword="true" />リストが並べ替えをサポートしている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合は、このプロパティは`true`、し<xref:System.ComponentModel.IBindingList.IsSorted%2A>、 <xref:System.ComponentModel.IBindingList.SortProperty%2A>、 <xref:System.ComponentModel.IBindingList.SortDirection%2A>、 <xref:System.ComponentModel.IBindingList.ApplySort%2A>、および<xref:System.ComponentModel.IBindingList.RemoveSort%2A>はサポートされています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

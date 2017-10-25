@@ -1,0 +1,407 @@
+<Type Name="TypeLoadException" FullName="System.TypeLoadException">
+  <TypeSignature Language="C#" Value="public class TypeLoadException : SystemException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit TypeLoadException extends System.SystemException implements class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.TypeLoadException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Exception</BaseTypeName>
+    <BaseTypeName FrameworkAlternate="netframework-4.5">System.SystemException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>型の読み込みエラーが発生した場合にスローされる例外。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.TypeLoadException>共通言語ランタイムがアセンブリは、アセンブリ内の型が見つからないか、型を読み込むことができないときがスローされます。 <xref:System.TypeLoadException.Message%2A>プロパティには、例外の原因を特定するのに役立つ詳細な情報が含まれています。  
+  
+ <xref:System.TypeLoadException>0x80131522 の値を持つ HRESULT COR_E_TYPELOAD を使用します。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.TypeLoadException>を参照してください、<xref:System.TypeLoadException.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TypeLoadException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.TypeLoadException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.TypeLoadException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、 <xref:System.TypeLoadException.Message%2A> 「エラーが発生しました、型の読み込み中にします」などに、エラーを説明するシステム提供のメッセージの新しいインスタンスのプロパティ。 このメッセージには、現在のシステムのカルチャが考慮されます。  
+  
+ <xref:System.TypeLoadException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|null 参照 (Visual Basic の場合は `Nothing`)。|  
+|<xref:System.TypeLoadException.Message%2A>|ローカライズされたエラー メッセージ文字列。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TypeLoadException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.TypeLoadException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">エラーを説明するメッセージ。</param>
+        <summary>指定したエラー メッセージを使用して、<see cref="T:System.TypeLoadException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内容、`message`パラメーターは、ユーザーが理解できるものにする必要があります。 このコンストラクターの呼び出し元は、この文字列が現在のシステムのカルチャに合わせてローカライズ済みであることを確認しておく必要があります。  
+  
+ <xref:System.TypeLoadException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|null 参照 (Visual Basic の場合は `Nothing`)。|  
+|<xref:System.TypeLoadException.Message%2A>|エラー メッセージ文字列。|  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.TypeLoadException.%23ctor%28System.String%29>コンス トラクターです。 生成するメソッドが含まれている、<xref:System.TypeLoadException>カスタムのメッセージとエラー メッセージはコンソールに表示されます。  
+  
+ [!code-cpp[TypeLoadException_Constructor2#1](~/samples/snippets/cpp/VS_Snippets_CLR/TypeLoadException_Constructor2/CPP/typeloadexception_constructor2.cpp#1)]
+ [!code-csharp[TypeLoadException_Constructor2#1](~/samples/snippets/csharp/VS_Snippets_CLR/TypeLoadException_Constructor2/CS/typeloadexception_constructor2.cs#1)]
+ [!code-vb[TypeLoadException_Constructor2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/TypeLoadException_Constructor2/VB/typeloadexception_constructor2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TypeLoadException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.TypeLoadException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">シリアル化されたオブジェクト データを保持するオブジェクト。</param>
+        <param name="context">転送元または転送先に関する文脈情報。</param>
+        <summary>シリアル化したデータを使用して、<see cref="T:System.TypeLoadException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、逆シリアル化中に、ストリームで送信された例外オブジェクトを再構築するために呼び出されます。 詳細については、次を参照してください。 [XML および SOAP シリアル化](~/docs/standard/serialization/xml-and-soap-serialization.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、例外を生成し、例外データ、ファイルをシリアル化し、例外を再構築し。 このコード例を実行するには、完全修飾アセンブリ名を指定する必要があります。 アセンブリの完全修飾名を取得する方法については、次を参照してください。[アセンブリ名](~/docs/framework/app-domains/assembly-names.md)です。  
+  
+ [!code-cpp[TypeLoadException_GetObjectData#1](~/samples/snippets/cpp/VS_Snippets_CLR/TypeLoadException_GetObjectData/CPP/typeloadexception_getobjectdata.cpp#1)]
+ [!code-csharp[TypeLoadException_GetObjectData#1](~/samples/snippets/csharp/VS_Snippets_CLR/TypeLoadException_GetObjectData/CS/typeloadexception_getobjectdata.cs#1)]
+ [!code-vb[TypeLoadException_GetObjectData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/TypeLoadException_GetObjectData/VB/typeloadexception_getobjectdata.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="info" />オブジェクトが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TypeLoadException (string message, Exception inner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception inner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.TypeLoadException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="inner" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の原因を説明するエラー メッセージ。</param>
+        <param name="inner">現在の例外の原因となった例外。 場合、<c>内部</c>パラメーターではありません<see langword="null" />で現在の例外が発生、<see langword="catch" />ブロックは、内部例外を処理します。</param>
+        <summary>指定したエラー メッセージおよびこの例外の原因となった内部例外への参照を使用して、<see cref="T:System.TypeLoadException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 前の例外の直接の結果としてスローされる例外は、<xref:System.Exception.InnerException%2A> プロパティに前の例外への参照を含んでいる場合があります。 <xref:System.Exception.InnerException%2A> プロパティは、コンストラクターに渡されたものと同じ値を返します。`null` プロパティによって内部例外値がコンストラクターに渡されなかった場合は、<xref:System.Exception.InnerException%2A> を返します。  
+  
+ <xref:System.TypeLoadException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|内部例外の参照。|  
+|<xref:System.TypeLoadException.Message%2A>|エラー メッセージ文字列。|  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.TypeLoadException.%23ctor%28System.String%2CSystem.Exception%29>コンス トラクターです。 生成するメソッドが含まれている、 <xref:System.TypeLoadException>、その例外をキャッチおよびスロー新しい<xref:System.TypeLoadException>されたカスタム メッセージを含む元<xref:System.TypeLoadException>としては、内部例外。  
+  
+ [!code-cpp[TypeLoadException_Constructor3#1](~/samples/snippets/cpp/VS_Snippets_CLR/TypeLoadException_Constructor3/CPP/typeloadexception_constructor3.cpp#1)]
+ [!code-csharp[TypeLoadException_Constructor3#1](~/samples/snippets/csharp/VS_Snippets_CLR/TypeLoadException_Constructor3/CS/typeloadexception_constructor3.cs#1)]
+ [!code-vb[TypeLoadException_Constructor3#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/TypeLoadException_Constructor3/VB/typeloadexception_constructor3.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public override void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.TypeLoadException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">シリアル化されたオブジェクト データを保持するオブジェクト。</param>
+        <param name="context">転送元または転送先に関する文脈情報。</param>
+        <summary>セット、<see cref="T:System.Runtime.Serialization.SerializationInfo" />クラス名、メソッド名、リソース ID、および追加の例外情報を持つオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.TypeLoadException.GetObjectData%2A> は、シリアル化する対象のすべての例外オブジェクト データを使用して、<xref:System.Runtime.Serialization.SerializationInfo> を設定します。 逆シリアル化中に例外オブジェクトを再構成、<xref:System.Runtime.Serialization.SerializationInfo>ストリームで転送します。  
+  
+ 詳細については、次を参照してください。 [XML および SOAP シリアル化](~/docs/standard/serialization/xml-and-soap-serialization.md)です。  
+  
+   
+  
+## Examples  
+ [Visual Basic、C# の場合]  
+  
+ 次の例は、例外を生成し、例外データ、ファイルをシリアル化し、例外を再構築し。 このコード例を実行するには、完全修飾アセンブリ名を指定する必要があります。 アセンブリの完全修飾名を取得する方法については、次を参照してください。[アセンブリ名](~/docs/framework/app-domains/assembly-names.md)です。  
+  
+ [!code-cpp[TypeLoadException_GetObjectData#1](~/samples/snippets/cpp/VS_Snippets_CLR/TypeLoadException_GetObjectData/CPP/typeloadexception_getobjectdata.cpp#1)]
+ [!code-csharp[TypeLoadException_GetObjectData#1](~/samples/snippets/csharp/VS_Snippets_CLR/TypeLoadException_GetObjectData/CS/typeloadexception_getobjectdata.cs#1)]
+ [!code-vb[TypeLoadException_GetObjectData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/TypeLoadException_GetObjectData/VB/typeloadexception_getobjectdata.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="info" />オブジェクトが<see langword="null" />です。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="public override string Message { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Message" />
+      <MemberSignature Language="DocId" Value="P:System.TypeLoadException.Message" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この例外のエラー メッセージを取得します。</summary>
+        <value>エラー メッセージ文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティのオーバーライド<xref:System.Exception.Message%2A>です。 エラー メッセージをローカライズする必要があります。  
+  
+ このプロパティは読み取り専用です。  
+  
+   
+  
+## Examples  
+ 次の例は、mscorlib アセンブリから、存在しない型の読み込みを試みます。 結果として得られる例外がキャッチされ、<xref:System.TypeLoadException.TypeName%2A>と<xref:System.TypeLoadException.Message%2A>値が表示されます。 このコード例を実行するには、完全修飾アセンブリ名を指定する必要があります。 アセンブリの完全修飾名を取得する方法については、次を参照してください。[アセンブリ名](~/docs/framework/app-domains/assembly-names.md)です。  
+  
+ [!code-cpp[TypeLoadException_TypeName#1](~/samples/snippets/cpp/VS_Snippets_CLR/TypeLoadException_TypeName/CPP/typeloadexception_typename.cpp#1)]
+ [!code-csharp[TypeLoadException_TypeName#1](~/samples/snippets/csharp/VS_Snippets_CLR/TypeLoadException_TypeName/CS/typeloadexception_typename.cs#1)]
+ [!code-vb[TypeLoadException_TypeName#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/TypeLoadException_TypeName/VB/typeloadexception_typename.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeName">
+      <MemberSignature Language="C#" Value="public string TypeName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TypeName" />
+      <MemberSignature Language="DocId" Value="P:System.TypeLoadException.TypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>例外を引き起こす型の完全修飾名を取得します。</summary>
+        <value>完全修飾型名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、mscorlib アセンブリから、存在しない型の読み込みを試みます。 結果として得られる例外がキャッチされ、<xref:System.TypeLoadException.TypeName%2A>と<xref:System.TypeLoadException.Message%2A>値が表示されます。 このコード例を実行するには、完全修飾アセンブリ名を指定する必要があります。 アセンブリの完全修飾名を取得する方法については、次を参照してください。[アセンブリ名](~/docs/framework/app-domains/assembly-names.md)です。  
+  
+ [!code-cpp[TypeLoadException_TypeName#1](~/samples/snippets/cpp/VS_Snippets_CLR/TypeLoadException_TypeName/CPP/typeloadexception_typename.cpp#1)]
+ [!code-csharp[TypeLoadException_TypeName#1](~/samples/snippets/csharp/VS_Snippets_CLR/TypeLoadException_TypeName/CS/typeloadexception_typename.cs#1)]
+ [!code-vb[TypeLoadException_TypeName#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/TypeLoadException_TypeName/VB/typeloadexception_typename.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="P:System.TypeLoadException.TypeName" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="P:System.TypeLoadException.TypeName" />プロパティです。  
+  
+ このプロパティは読み取り専用です。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

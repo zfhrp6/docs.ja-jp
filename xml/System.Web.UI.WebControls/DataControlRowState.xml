@@ -1,0 +1,128 @@
+<Type Name="DataControlRowState" FullName="System.Web.UI.WebControls.DataControlRowState">
+  <TypeSignature Language="C#" Value="public enum DataControlRowState" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DataControlRowState extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.DataControlRowState" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>データ コントロール内の行の状態をなどを指定します<see cref="T:System.Web.UI.WebControls.DetailsView" />または<see cref="T:System.Web.UI.WebControls.GridView" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataControlRowState>列挙などのデータ コントロール内の行の状態の識別<xref:System.Web.UI.WebControls.DetailsView>または<xref:System.Web.UI.WebControls.GridView>です。 行の状態に設定できるかの組み合わせ、 <xref:System.Web.UI.WebControls.DataControlRowState> 、値は、行の状態が含まれるかどうかを決定するビットごとの演算を使用するので、<xref:System.Web.UI.WebControls.DataControlRowState>等価テストではなく、値します。 <xref:System.Web.UI.WebControls.DataControlRowState>列挙体を任意の型の行だけでなく使用<xref:System.Web.UI.WebControls.DataControlRowType.DataRow>行 (通常は、行ヘッダーとフッター行の状態が設定 normal)。  
+  
+ 使用することができます、<xref:System.Web.UI.WebControls.DataControlRowState.Normal>の状態を識別する列挙体、<xref:System.Web.UI.WebControls.GridViewRow>または<xref:System.Web.UI.WebControls.DetailsViewRow>オブジェクトを列挙するとき、<xref:System.Web.UI.WebControls.GridViewRowCollection>または<xref:System.Web.UI.WebControls.DetailsViewRowCollection>コレクション、それぞれします。 使用することができます、行を使用するデータ コントロールを作成している場合、<xref:System.Web.UI.WebControls.DataControlRowState>行 (代替値)、またはコントロールを有効または無効 (編集、挿入値) の行を編集するためにさまざまな色を表示するタイミングを識別する列挙です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataControlRowState>ユーザー インターフェイス (UI) を表示するために列挙内の行の状態に基づく、<xref:System.Web.UI.WebControls.GridView>コントロール。 `RadioButtonField`クラスから派生するカスタム フィールドのコントロール、<xref:System.Web.UI.WebControls.CheckBoxField>制御のすべての行のデータ バインドのラジオ ボタンをレンダリング、<xref:System.Web.UI.WebControls.GridView>コントロール。 行は、ユーザーにデータが表示と編集モードではないときに、<xref:System.Web.UI.WebControls.RadioButton>コントロールが無効にします。 ユーザーが内の行を更新したとき<xref:System.Web.UI.WebControls.GridView>行が編集モードにし、<xref:System.Web.UI.WebControls.RadioButton>コントロールを表示するように有効になるため、クリックすることができます。 例では、行の状態は 1 つまたは複数の組み合わせで可能性があるためにビットごとの AND 演算子を使用して<xref:System.Web.UI.WebControls.DataControlRowState>値。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.DataControlField>クラスです。  
+  
+ [!code-csharp[Samples.AspNet.RadioButtonField#3](~/samples/snippets/csharp/VS_Snippets_WebNet/Samples.AspNet.RadioButtonField/CS/radiobuttonfield.cs#3)]
+ [!code-vb[Samples.AspNet.RadioButtonField#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Samples.AspNet.RadioButtonField/VB/radiobuttonfield.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Alternate">
+      <MemberSignature Language="C#" Value="Alternate" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.DataControlRowState Alternate = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.DataControlRowState.Alternate" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataControlRowState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールのデータ行が代替の行であることを示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 代替の状態は、いつでも Normal、編集、または Insert など、他の状態と組み合わせることができます。 これらの行の影響を受ける、`AlternateRowStyle`データのプロパティを制御する場合に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Edit">
+      <MemberSignature Language="C#" Value="Edit" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.DataControlRowState Edit = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.DataControlRowState.Edit" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataControlRowState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行が、編集状態、多くの場合、行の編集 ボタンをクリックすると結果を示します。 通常、<see cref="F:System.Web.UI.WebControls.DataControlRowState.Edit" />と<see cref="F:System.Web.UI.WebControls.DataControlRowState.Insert" />状態は相互に排他的です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="Insert" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.DataControlRowState Insert = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.DataControlRowState.Insert" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataControlRowState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行が新しい行を追加する、[挿入] ボタンをクリックするとの結果では多くの場合、新しい行であることを示します。 通常、<see cref="F:System.Web.UI.WebControls.DataControlRowState.Insert" />と<see cref="F:System.Web.UI.WebControls.DataControlRowState.Edit" />状態は相互に排他的です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Normal">
+      <MemberSignature Language="C#" Value="Normal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.DataControlRowState Normal = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.DataControlRowState.Normal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataControlRowState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールのデータ行が正常な状態であることを示します。 <see cref="F:System.Web.UI.WebControls.DataControlRowState.Normal" />状態と同時に他の状態を除く、<see cref="F:System.Web.UI.WebControls.DataControlRowState.Alternate" />状態です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Selected">
+      <MemberSignature Language="C#" Value="Selected" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.DataControlRowState Selected = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.DataControlRowState.Selected" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataControlRowState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが、行が選択されていることを示します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

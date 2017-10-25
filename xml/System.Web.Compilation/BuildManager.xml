@@ -1,0 +1,667 @@
+<Type Name="BuildManager" FullName="System.Web.Compilation.BuildManager">
+  <TypeSignature Language="C#" Value="public sealed class BuildManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit BuildManager extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Compilation.BuildManager" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET アプリケーションのコンパイルを管理するためにメソッドのセットを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.BuildManager>クラスがアセンブリおよびアプリケーションのページをコンパイルした場合のプロセスを管理します。 シール クラスし、継承できません。  
+  
+ <xref:System.Web.Compilation.BuildManager>コンパイル済みアセンブリに関する情報を提供する静的メンバーが含まれています。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddCompilationDependency">
+      <MemberSignature Language="C#" Value="public static void AddCompilationDependency (string dependency);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddCompilationDependency(string dependency) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.BuildManager.AddCompilationDependency(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dependency" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dependency">依存関係を表す文字列。</param>
+        <summary>クリーン ビルドが必要なかどうかを決定するために、ビルド マネージャーを使用する依存関係を表す文字列を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 中に、メソッドを呼び出す必要があります、`Application_PreStartInit`アプリケーションのステージ。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="dependency" /> パラメーターが <see langword="null" /> または空の文字列です。</exception>
+        <exception cref="T:System.InvalidOperationException">後にメソッドが呼び出された、<see langword="Application_PreStartInit" />アプリケーションのステージ。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddReferencedAssembly">
+      <MemberSignature Language="C#" Value="public static void AddReferencedAssembly (System.Reflection.Assembly assembly);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddReferencedAssembly(class System.Reflection.Assembly assembly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.BuildManager.AddReferencedAssembly(System.Reflection.Assembly)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assembly" Type="System.Reflection.Assembly" />
+      </Parameters>
+      <Docs>
+        <param name="assembly">追加するアセンブリ。</param>
+        <summary>参照されるアセンブリのアプリケーションのセットをアセンブリを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出すことは、アプリケーション レベルの Web.config ファイルにアセンブリを追加すると同じです。 中に、メソッドを呼び出す必要があります、`Application_PreStartInit`アプリケーションのステージ。  
+  
+ <xref:System.Web.Compilation.BuildManager.GetReferencedAssemblies%2A>メソッドには、構成ファイルから決定されるアセンブリと、このメソッドを使用して追加されたすべてのアセンブリのセットが返されます。  
+  
+ 既に追加されているアセンブリを追加しようとすると、重複するエントリが無視されます。  
+  
+ このメソッドは、前に呼び出す必要があります、 `Application_Start` Global.asax ファイル内のイベントが発生します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="assembly" /> パラメーターは <see langword="null" /> または空です。</exception>
+        <exception cref="T:System.InvalidOperationException">前に、メソッドが呼び出されなかった、 <see langword="Application_Start" /> Global.asax ファイル内のイベントが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BatchCompilationEnabled">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;bool&gt; BatchCompilationEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Nullable`1&lt;bool&gt; BatchCompilationEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.BuildManager.BatchCompilationEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはバッチのコンパイルが有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />バッチ コンパイルは常に有効な場合、<see langword="false" />バッチ コンパイルを有効にしない場合または<see langword="null" />場合は、コンパイルの設定は、構成ファイルから決定されます。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、バッチ コンパイルを有効または無効にできます。 プログラムでします。 対応して、`batch`の属性、 `compilation` Web.config ファイル内の要素。 詳細については、次を参照してください。 [compilation 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/7c319582-074a-4d2a-a787-03b9d4541c12)です。  
+  
+ のみ、プロパティを設定することができます、`PreApplicationStart`メソッドです。 `PreApplicationStart` メソッドの詳細については、<xref:System.Web.PreApplicationStartMethodAttribute> を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">プロパティ設定されていない、<see langword="PreApplicationStart" />メソッドです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CodeAssemblies">
+      <MemberSignature Language="C#" Value="public static System.Collections.IList CodeAssemblies { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Collections.IList CodeAssemblies" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.BuildManager.CodeAssemblies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>App_Code ディレクトリからビルドされたアセンブリの一覧を取得します。</summary>
+        <value><see cref="T:System.Collections.IList" /> App_Code ディレクトリからビルドされたアセンブリを含むコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateCachedFile">
+      <MemberSignature Language="C#" Value="public static System.IO.Stream CreateCachedFile (string fileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.Stream CreateCachedFile(string fileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.BuildManager.CreateCachedFile(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">作成するファイルの名前。</param>
+        <summary>キャッシュされたファイルを作成します。</summary>
+        <returns><see cref="T:System.IO.Stream" />新しいファイルのオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドと<xref:System.Web.Compilation.BuildManager.ReadCachedFile%2A>メソッドを使用すると、キャッシュ、部分信頼環境でアプリケーション ドメインが再起動の間で永続化を実行します。 コント ローラーの検索の結果をキャッシュに、MVC フレームワークによって使用されます。  
+  
+ データをキャッシュするへの書き込み、<xref:System.IO.Stream>このメソッドによって返されるオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceFromVirtualPath">
+      <MemberSignature Language="C#" Value="public static object CreateInstanceFromVirtualPath (string virtualPath, Type requiredBaseType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object CreateInstanceFromVirtualPath(string virtualPath, class System.Type requiredBaseType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(System.String,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+        <Parameter Name="requiredBaseType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">インスタンスを作成するファイルの仮想パス。</param>
+        <param name="requiredBaseType">作成するオブジェクトを定義する基本データ型。</param>
+        <summary>指定された仮想パス、ファイルを処理し、結果のインスタンスを作成します。</summary>
+        <returns><see cref="T:System.Object" />処理されたファイルのインスタンスを表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath%2A>方法はコンパイルとコンパイル以外のページで機能します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCachedBuildDependencySet">
+      <MemberSignature Language="C#" Value="public static System.Web.Compilation.BuildDependencySet GetCachedBuildDependencySet (System.Web.HttpContext context, string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Compilation.BuildDependencySet GetCachedBuildDependencySet(class System.Web.HttpContext context, string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.BuildManager.GetCachedBuildDependencySet(System.Web.HttpContext,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Compilation.BuildDependencySet</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="context">要求のコンテキスト。</param>
+        <param name="virtualPath">ビルドの依存関係を決定するための仮想パスを設定します。</param>
+        <summary>ASP.NET キャッシュでパスが存在する場合は、仮想パスの設定、ビルドの依存関係を返します。</summary>
+        <returns>A <see cref="T:System.Web.Compilation.BuildDependencySet" /> 、キャッシュに格納されているオブジェクトまたは<see langword="null" />場合、<see cref="T:System.Web.Compilation.BuildDependencySet" />キャッシュからオブジェクトを取得することはできません。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCachedBuildDependencySet">
+      <MemberSignature Language="C#" Value="public static System.Web.Compilation.BuildDependencySet GetCachedBuildDependencySet (System.Web.HttpContext context, string virtualPath, bool ensureIsUpToDate);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Compilation.BuildDependencySet GetCachedBuildDependencySet(class System.Web.HttpContext context, string virtualPath, bool ensureIsUpToDate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.BuildManager.GetCachedBuildDependencySet(System.Web.HttpContext,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Compilation.BuildDependencySet</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="virtualPath" Type="System.String" />
+        <Parameter Name="ensureIsUpToDate" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="context">要求のコンテキスト。</param>
+        <param name="virtualPath">ビルドの依存関係を決定するための仮想パスを設定します。</param>
+        <param name="ensureIsUpToDate">
+          <see langword="true" />現在のみが依存関係を構築することを指定するセットを返す、または<see langword="false" />が最新でない場合でも、任意の利用可能なビルドの依存関係のセットを返すことを示すためにします。 既定値は、<see langword="true" /> です。</param>
+        <summary>ビルド依存関係のコンテンツは最新ではない場合でも ASP.NET キャッシュでパスが存在する場合の仮想パスのセットを返します。</summary>
+        <returns>A <see cref="T:System.Web.Compilation.BuildDependencySet" /> 、キャッシュに格納されているオブジェクトまたは<see langword="null" />場合、<see cref="T:System.Web.Compilation.BuildDependencySet" />キャッシュからオブジェクトを取得することはできません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`ensureIsUpToDate`パラメーターの値に設定されて`true`、<xref:System.Web.Compilation.BuildManager.GetCachedBuildDependencySet%2A?displayProperty=nameWithType>メソッドのオーバー ロードの動作と同様に、<xref:System.Web.Compilation.BuildManager.GetCachedBuildDependencySet%2A?displayProperty=nameWithType>メソッドのオーバー ロードします。 両方のオーバー ロードは、現在ビルドの依存関係が存在する場合は、設定を返す、それ以外の場合、返す`null`です。  
+  
+ ただし、<xref:System.Web.Compilation.BuildManager.GetCachedBuildDependencySet%2A?displayProperty=nameWithType>メソッドのオーバー ロードには、古い、1 つも、利用可能なビルドの依存関係のセットを取得するオプションが含まれています。 場合、`ensureIsUpToDate`パラメーターの値に設定されて`false`メソッドは、利用可能なビルドの依存関係のセットを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCompiledAssembly">
+      <MemberSignature Language="C#" Value="public static System.Reflection.Assembly GetCompiledAssembly (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Reflection.Assembly GetCompiledAssembly(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.BuildManager.GetCompiledAssembly(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Assembly</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">アセンブリにビルドへの仮想パス。</param>
+        <summary>ファイルを指定した仮想パスを使用してアセンブリにコンパイルします。</summary>
+        <returns><see cref="T:System.Reflection.Assembly" />が指定の仮想パスで、いずれかのメモリまたはディスクにキャッシュからコンパイルされたオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCompiledCustomString">
+      <MemberSignature Language="C#" Value="public static string GetCompiledCustomString (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetCompiledCustomString(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.BuildManager.GetCompiledCustomString(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">ビルド対象のファイルの仮想パス。</param>
+        <summary>仮想パスを指定のファイルをコンパイルし、キャッシュに保持するビルド プロバイダーをカスタム文字列を返します。</summary>
+        <returns>によって返される、文字列、<see cref="M:System.Web.Compilation.BuildProvider.GetCustomString(System.CodeDom.Compiler.CompilerResults)" />ディスクまたはメモリにキャッシュされているメソッド。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCompiledType">
+      <MemberSignature Language="C#" Value="public static Type GetCompiledType (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Type GetCompiledType(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.BuildManager.GetCompiledType(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">型を構築する仮想パス。</param>
+        <summary>指定された仮想パスをファイルをコンパイルし、コンパイルされた型を返します。</summary>
+        <returns>A<see cref="T:System.Type" />仮想パスのコンパイルから生成された型を表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Web.HttpException">仮想パスをコンパイルするときにエラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="virtualPath" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetGlobalAsaxType">
+      <MemberSignature Language="C#" Value="public static Type GetGlobalAsaxType ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Type GetGlobalAsaxType() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.BuildManager.GetGlobalAsaxType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Global.asax ファイルのコンパイル済みの型を表すオブジェクトを取得します。</summary>
+        <returns>Global.asax ファイルのコンパイル済みの型を表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Global.asax ファイルのコンパイル前に、このメソッドが呼び出された場合、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">Global.asax ページをコンパイルする前に、このメソッドを呼び出してしようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectFactory">
+      <MemberSignature Language="C#" Value="public static System.Web.Util.IWebObjectFactory GetObjectFactory (string virtualPath, bool throwIfNotFound);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Util.IWebObjectFactory GetObjectFactory(string virtualPath, bool throwIfNotFound) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.BuildManager.GetObjectFactory(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Util.IWebObjectFactory</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+        <Parameter Name="throwIfNotFound" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">仮想パス。</param>
+        <param name="throwIfNotFound">
+          <see langword="true" />仮想パスが存在しません。 場合、エラーをスローするにはそれ以外の場合、<see langword="false" />です。 仮想パスが存在しない場合および<c>場合</c>は<see langword="false" />、このメソッドが戻る<see langword="null" />です。</param>
+        <summary>指定した仮想パスのオブジェクト ファクトリを取得します。</summary>
+        <returns>オブジェクトのファクトリです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、仮想パスをコンパイルすることで、型の生成を有効にするオブジェクトを返します。 Web サイトをプリコンパイルするかどうかに関係なく、オブジェクトを返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">仮想パスが存在しません。  
+  
+ または  
+  
+ 既に上位レベルの例外は、このメソッドが呼び出されたときに存在します。  
+  
+ または  
+  
+ コンパイル処理された最上位ファイルの構築時に、このメソッドが呼び出されました。  
+  
+ または  
+  
+ これは、プリコンパイル済みアプリケーションであり、キャッシュ内の仮想パスが見つかりません。  
+  
+ または  
+  
+ 循環参照が検出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetReferencedAssemblies">
+      <MemberSignature Language="C#" Value="public static System.Collections.ICollection GetReferencedAssemblies ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.ICollection GetReferencedAssemblies() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.BuildManager.GetReferencedAssemblies" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてのページ コンパイルが参照する必要がありますのあるアセンブリ参照の一覧を返します。</summary>
+        <returns><see cref="T:System.Collections.ICollection" />アセンブリ参照のコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されるアセンブリのコレクション、<xref:System.Web.Compilation.BuildManager.GetReferencedAssemblies%2A>メソッドには、Web.config ファイルの要素で指定されたアセンブリ、App_Code ディレクトリでのカスタム コードからビルドされたアセンブリおよびアセンブリが他の最上位のフォルダーに含まれます。  
+  
+ <xref:System.Web.Compilation.BuildManager.GetReferencedAssemblies%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetType">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>最上位レベル アセンブリまたは内の構成で定義されているアセンブリでは、型を検索します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最上位のアセンブリは、Global.asax ファイルでは、または App_GlobalResources、App_WebReferences、App_Code、または App_Browsers ディレクトリ内にあるファイルを参照します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetType">
+      <MemberSignature Language="C#" Value="public static Type GetType (string typeName, bool throwOnError);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Type GetType(string typeName, bool throwOnError) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.BuildManager.GetType(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="throwOnError" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="typeName">型の名前。</param>
+        <param name="throwOnError">
+          <see langword="true" />場合に例外をスローする、<see cref="T:System.Type" />オブジェクトは、それ以外の型名を生成することはできません<see langword="false" />です。</param>
+        <summary>最上位レベルのアセンブリ内、または構成では、定義されているアセンブリで型を検索し、必要に応じてエラー発生時に例外をスローします。</summary>
+        <returns>A<see cref="T:System.Type" />を表す、要求されたオブジェクト<paramref name="typeName" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最上位のアセンブリは、Global.asax ファイルでは、または App_GlobalResources、App_WebReferences、App_Code、または App_Browsers ディレクトリ内にあるファイルを参照します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">
+          <paramref name="typeName" /> が無効です。  
+  
+ \- または  
+  
+ <paramref name="typeName" />あいまいです。  
+  
+ \- または  
+  
+ <paramref name="typeName" />見つかりませんと<paramref name="throwOnError" />は<see langword="true" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetType">
+      <MemberSignature Language="C#" Value="public static Type GetType (string typeName, bool throwOnError, bool ignoreCase);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Type GetType(string typeName, bool throwOnError, bool ignoreCase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.BuildManager.GetType(System.String,System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="throwOnError" Type="System.Boolean" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="typeName">型の名前。</param>
+        <param name="throwOnError">
+          <see langword="true" />場合に例外をスローする、 <see cref="T:System.Type" /> 、それ以外の型名を生成することはできません<see langword="false" />です。</param>
+        <param name="ignoreCase">
+          <see langword="true" />場合<c>typeName</c> 、それ以外の大文字小文字を区別<see langword="false" />です。</param>
+        <summary>最上位レベルのアセンブリでまたはを使用して、大文字と小文字をエラー発生時に例外をスローさせることも、構成では、定義されているアセンブリでは、型を検索します。</summary>
+        <returns>A<see cref="T:System.Type" />を表す、要求されたオブジェクト<paramref name="typeName" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最上位のアセンブリは、Global.asax ファイルでは、または App_GlobalResources、App_WebReferences、App_Code、または App_Browsers ディレクトリ内にあるファイルを参照します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">
+          <paramref name="typeName" /> が無効です。  
+  
+ \- または  
+  
+ <paramref name="typeName" />あいまいです。  
+  
+ \- または  
+  
+ <paramref name="typeName" />見つかりませんと<paramref name="throwOnError" />は<see langword="true" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetVirtualPathDependencies">
+      <MemberSignature Language="C#" Value="public static System.Collections.ICollection GetVirtualPathDependencies (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.ICollection GetVirtualPathDependencies(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.BuildManager.GetVirtualPathDependencies(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">依存関係を決定するために使用する仮想パス。</param>
+        <summary>指定した仮想パスの仮想パスの依存関係のコレクションを提供します。</summary>
+        <returns><see cref="T:System.Collections.ICollection" />仮想パスの依存関係をキャッシュする仮想パスで表されるファイルのコレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPrecompiledApp">
+      <MemberSignature Language="C#" Value="public static bool IsPrecompiledApp { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsPrecompiledApp" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.BuildManager.IsPrecompiledApp" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションをプリコンパイルするかどうかを指定する値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、アプリケーションがプリコンパイル済みです。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUpdatablePrecompiledApp">
+      <MemberSignature Language="C#" Value="public static bool IsUpdatablePrecompiledApp { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsUpdatablePrecompiledApp" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.BuildManager.IsUpdatablePrecompiledApp" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションが更新可能としてプリコンパイルするかどうかを指定する値を取得します。</summary>
+        <value>
+          <see langword="true" />アプリケーションが更新可能な; としてプリコンパイル済みの場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadCachedFile">
+      <MemberSignature Language="C#" Value="public static System.IO.Stream ReadCachedFile (string fileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.Stream ReadCachedFile(string fileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.BuildManager.ReadCachedFile(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">読み取るファイルの名前です。</param>
+        <summary>キャッシュされたファイルを読み取ります。</summary>
+        <returns><see cref="T:System.IO.Stream" />ファイルは、オブジェクトまたは<see langword="null" />ファイルが存在しない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドと<xref:System.Web.Compilation.BuildManager.CreateCachedFile%2A>メソッドを使用すると、キャッシュ、部分信頼環境でアプリケーション ドメインが再起動の間で永続化を実行します。 コント ローラーの検索の結果をキャッシュに、MVC フレームワークによって使用されます。  
+  
+ 読み取り、キャッシュされたデータを取得する、<xref:System.IO.Stream>このメソッドによって返されるオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetFramework">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Versioning.FrameworkName TargetFramework { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Runtime.Versioning.FrameworkName TargetFramework" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.BuildManager.TargetFramework" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Versioning.FrameworkName</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の Web サイトの .NET Framework のターゲット バージョンを取得します。</summary>
+        <value>現在の Web サイトの .NET Framework のターゲット バージョンです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、ASP.NET のマルチ ターゲット機能の最新バージョンを使用することにより[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]は .NET Framework の以前のバージョンで実行するアプリケーションを開発します。 ビルド プロバイダーは、このプロパティを使用して、プロバイダーが .NET Framework の対象とするバージョンを適切なコードを生成することを確認してください。 Web サイトのターゲットかどうかに応じて異なるコードを生成するなど、[!INCLUDE[net_v35_short](~/includes/net-v35-short-md.md)]または[!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]です。 マルチ ターゲットの詳細については、次を参照してください。 [ASP.NET Web プロジェクト用の .NET Framework のマルチ ターゲット](http://msdn.microsoft.com/library/8b8145a9-62f6-4fc4-8a83-47b0487cbe76)です。  
+  
+ Web サイトには、Web.config ファイルがない、ASP.NET はターゲット フレームワークのバージョンで、サイトが実行されている IIS アプリケーション プールに関連付けられているバージョンであることを想定します。 Visual Studio で実行されているファイル システム Web サイトを既定の framework バージョンは現在のバージョンの[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。  
+  
+ Web サイトは、Web.config ファイルには、ASP.NET は、Web.config ファイルを確認するには、ターゲット フレームワークを決定します。  
+  
+## <a name="web-sites-that-target-the-net-framework-20"></a>.NET Framework 2.0 を対象とする Web サイト  
+ Web アプリケーションを対象とする、[!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)]ターゲットが場合と同様にコンパイル、[!INCLUDE[net_v30_short](~/includes/net-v30-short-md.md)]です。 ビルド プロセスが区別されません、[!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)]と[!INCLUDE[net_v30_short](~/includes/net-v30-short-md.md)]のため、これらのバージョンのいずれかが対象となる場合、Web.config ファイルはコンパイラのバージョンまたはターゲット フレームワークを示しません。 (の[!INCLUDE[net_v35_short](~/includes/net-v35-short-md.md)]、Web.config ファイルで指定して、コンパイラのバージョンとの[!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]、Web.config ファイルがターゲット フレームワークを指定します)。そのための Web アプリケーションを対象とする、 [!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)]、このプロパティはターゲット フレームワーク モニカーを示すを返します、[!INCLUDE[net_v30_short](~/includes/net-v30-short-md.md)]です。  
+  
+ 通常は発生しません問題です。 [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]参照を作成することを防止する[!INCLUDE[net_v30_short](~/includes/net-v30-short-md.md)]の対象となるプロジェクトで機能、[!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)]です。 たとえば、 [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] WCF サービスの対象となるプロジェクトの項目テンプレートを行いません[!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)]WCF がで導入されたため、[!INCLUDE[net_v30_short](~/includes/net-v30-short-md.md)]と互換性がないと、[!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)]です。  
+  
+ Web サイトを展開する場合、[!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)]ランタイム環境とするツールを使用して、以外の[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]のみと互換性がある参照機能を[!INCLUDE[net_v30_short](~/includes/net-v30-short-md.md)]エラーや警告を生成せずにプロジェクトをビルド可能性があります。 ただし、アプリケーションがエラーを生成で実行されると、Web サイト、[!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)]です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

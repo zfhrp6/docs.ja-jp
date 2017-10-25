@@ -1,0 +1,125 @@
+<Type Name="ServiceControllerPermissionEntry" FullName="System.ServiceProcess.ServiceControllerPermissionEntry">
+  <TypeSignature Language="C#" Value="public class ServiceControllerPermissionEntry" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ServiceControllerPermissionEntry extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceProcess.ServiceControllerPermissionEntry" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceProcess</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>設定されているコード アクセス セキュリティのアクセス許可の最小単位を定義、<see cref="T:System.ServiceProcess.ServiceController" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コード アクセス セキュリティの詳細については、次を参照してください。[コード アクセス セキュリティ](~/docs/framework/misc/code-access-security.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceControllerPermissionEntry ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceControllerPermissionEntry.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceProcess.ServiceControllerPermissionEntry" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceControllerPermissionEntry (System.ServiceProcess.ServiceControllerPermissionAccess permissionAccess, string machineName, string serviceName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.ServiceProcess.ServiceControllerPermissionAccess permissionAccess, string machineName, string serviceName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceControllerPermissionEntry.#ctor(System.ServiceProcess.ServiceControllerPermissionAccess,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="permissionAccess" Type="System.ServiceProcess.ServiceControllerPermissionAccess" />
+        <Parameter Name="machineName" Type="System.String" />
+        <Parameter Name="serviceName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="permissionAccess"><see cref="T:System.ServiceProcess.ServiceControllerPermissionAccess" /> 値のいずれか。</param>
+        <param name="machineName">サービスが存在するコンピューターの名前。</param>
+        <param name="serviceName">システムにサービスを識別する短い名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ServiceProcess.ServiceControllerPermissionEntry" />指定したアクセス許可のアクセス レベル、コンピューターの名前、およびサービスを識別する短い名前を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="serviceName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="machineName" /> が無効です。  
+  
+ または  
+  
+ <paramref name="serviceName" /> が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MachineName">
+      <MemberSignature Language="C#" Value="public string MachineName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MachineName" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceProcess.ServiceControllerPermissionEntry.MachineName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスが存在するコンピューターの名前を取得します。</summary>
+        <value>関連付けられているサービスを実行しているコンピューターの名前、<see cref="T:System.ServiceProcess.ServiceController" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PermissionAccess">
+      <MemberSignature Language="C#" Value="public System.ServiceProcess.ServiceControllerPermissionAccess PermissionAccess { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceProcess.ServiceControllerPermissionAccess PermissionAccess" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceProcess.ServiceControllerPermissionEntry.PermissionAccess" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.ServiceControllerPermissionAccess</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセス許可要求で使用されるアクセス レベルを取得します。</summary>
+        <value><see cref="T:System.ServiceProcess.ServiceControllerPermissionAccess" /> 値のビットごとの組み合わせ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceName">
+      <MemberSignature Language="C#" Value="public string ServiceName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ServiceName" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceProcess.ServiceControllerPermissionEntry.ServiceName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システムにサービスを識別する短い名前を取得します。</summary>
+        <value>サービスの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

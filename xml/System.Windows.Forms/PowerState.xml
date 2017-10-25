@@ -1,0 +1,57 @@
+<Type Name="PowerState" FullName="System.Windows.Forms.PowerState">
+  <TypeSignature Language="C#" Value="public enum PowerState" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed PowerState extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.PowerState" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>中断されたシステム電源の動作モードを示す識別子を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体を使って、<xref:System.Windows.Forms.Application.SetSuspendState%2A>のメソッド、<xref:System.Windows.Forms.Application>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Hibernate">
+      <MemberSignature Language="C#" Value="Hibernate" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.PowerState Hibernate = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.PowerState.Hibernate" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.PowerState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システム電源休止を示します。 そのメモリの内容を保存するシステムが休止状態に入るときに、コンピューターが電源オフする前にディスクにします。 システムを再起動すると、デスクトップと前のアクティブなプログラムが復元されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Suspend">
+      <MemberSignature Language="C#" Value="Suspend" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.PowerState Suspend = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.PowerState.Suspend" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.PowerState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システムの省電力モードを示します。 システムが中断されると、コンピューターがスタンバイと呼ばれる省電力状態に切り替わります。 コンピューターがスタンバイ モードと一部のデバイスがオフになっているコンピューターが省電力を使用します。 システムは、復元のハイバネーションよりも短時間に自体できます。 スタンバイ状態がディスクへのメモリの状態を保存されないためスタンバイ中に、電源障害は、情報の失わことができます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

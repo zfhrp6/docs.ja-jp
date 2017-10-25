@@ -1,0 +1,89 @@
+<Type Name="KeyTimeType" FullName="System.Windows.Media.Animation.KeyTimeType">
+  <TypeSignature Language="C#" Value="public enum KeyTimeType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed KeyTimeType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.KeyTimeType" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>表すさまざまな種類を表す、<see cref="T:System.Windows.Media.Animation.KeyTime" />インスタンス。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各キー フレームの<xref:System.Windows.Media.Animation.KeyTime>そのキー フレームの終了を指定します。 キーの時間の再生時間を指定するわけではありません。 キー フレームが再生される時間の長さは、そのキー フレームの終了時刻、前のキー フレームの終了時刻、およびアニメーションの継続時間によって決まります。 参照してください[キー フレーム アニメーションの概要](~/docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)詳細についてはします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Paced">
+      <MemberSignature Language="C#" Value="Paced" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.Animation.KeyTimeType Paced = unsigned int8(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.KeyTimeType.Paced" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.KeyTimeType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>隣接するキー フレームに、フレーム長に比例して時間をそれぞれ割り当てるように指定します。  全体としての目的は、一連のアニメーションの速度が一定になるように、長さの値を生成することです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Percent">
+      <MemberSignature Language="C#" Value="Percent" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.Animation.KeyTimeType Percent = unsigned int8(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.KeyTimeType.Percent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.KeyTimeType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>各指定<see cref="T:System.Windows.Media.Animation.KeyTime" />値が指定したアニメーション シーケンスの割り当てられた合計時間の割合で表されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TimeSpan">
+      <MemberSignature Language="C#" Value="TimeSpan" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.Animation.KeyTimeType TimeSpan = unsigned int8(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.KeyTimeType.TimeSpan" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.KeyTimeType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>それぞれを指定します<see cref="P:System.Windows.Media.Animation.ByteKeyFrame.KeyTime" />として表される、<see cref="P:System.Windows.Media.Animation.KeyTime.TimeSpan" />に対して相対的な値、<see cref="P:System.Windows.Media.Animation.Timeline.BeginTime" />アニメーション シーケンスのです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Uniform">
+      <MemberSignature Language="C#" Value="Uniform" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.Animation.KeyTimeType Uniform = unsigned int8(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.KeyTimeType.Uniform" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.KeyTimeType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一連のアニメーションに割り当てられた合計時間が各キー フレームに均等に分割されるように指定します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

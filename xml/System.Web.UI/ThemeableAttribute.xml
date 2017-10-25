@@ -1,0 +1,297 @@
+<Type Name="ThemeableAttribute" FullName="System.Web.UI.ThemeableAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ThemeableAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ThemeableAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.ThemeableAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Property)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Web サーバー コントロールとそのメンバーは、レンダリングのテーマの影響を受けることができ、コントロール スキンかどうかを示すために使用するメタデータ属性を定義します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 開発者の使用を制御する、<xref:System.Web.UI.ThemeableAttribute>コントロール型とそのメンバーは、ことができ、テーマの影響を受けることはできませんれ、どのコントロール スキンの信号を装飾する属性。 既定では、コントロールによって公開されるすべてのプロパティはテーマを指定されます。 ただし、テーマは、スタイルのプロパティにのみ適用されます通常`Themeable(false)`属性は、すべての非スタイル プロパティに明示的に適用する必要があります。 持つメンバーを修飾すること、`Themeable(false)`属性により、メンバーがないの値に関係なく、テーマ、<xref:System.Web.UI.Control.EnableTheming%2A>プロパティです。 たとえば場合、<xref:System.Web.UI.ThemeableAttribute>属性がコントロールに適用されに設定`false`、テーマ、コントロールは影響しない場合でもその<xref:System.Web.UI.Control.EnableTheming%2A>プロパティに設定されている`true`です。  
+  
+ <xref:System.Web.UI.ThemeableAttribute>クラスは、テーマをサポートするすべての型の静的な一覧を保持し、この一覧を参照するたびに、静的メソッド<xref:System.Web.UI.ThemeableAttribute.IsObjectThemeable%2A>と<xref:System.Web.UI.ThemeableAttribute.IsTypeThemeable%2A>と呼ばれます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、適用する方法を示しています、<xref:System.Web.UI.ThemeableAttribute>属性をコントロールのメンバーにします。 この例では<xref:System.Web.UI.ThemeableAttribute>データ バインド コントロールに適用して`false`に渡される、<xref:System.Web.UI.ThemeableAttribute.%23ctor%2A>コンス トラクター、ことを示す、`DataSourceID`メンバーが適用されているテーマを持つことはできません。 (渡す`false`内コンス トラクターの結果に、<xref:System.Web.UI.ThemeableAttribute>と等価のインスタンス、<xref:System.Web.UI.ThemeableAttribute.No>フィールドです)。  
+  
+ [!code-csharp[System.Web.UI.ThemeableAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ThemeableAttribute/CS/themeableattribute1.cs#1)]
+ [!code-vb[System.Web.UI.ThemeableAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ThemeableAttribute/VB/themeableattribute1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ThemeableAttribute (bool themeable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool themeable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ThemeableAttribute.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="themeable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="themeable">
+          <see langword="true" />初期化するために、<see cref="T:System.Web.UI.ThemeableAttribute" />型または使用可能なテーマの影響を受ける、それ以外のメンバーを表す<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.ThemeableAttribute" />クラス、属性が型またはテーマとコントロール スキンの影響を受けるメンバーを表すかどうかを確認する指定したブール値を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 渡す`true`このコンス トラクターを使用すると、<xref:System.Web.UI.ThemeableAttribute.Yes>フィールドでは、渡す中に`false`を使用すると、<xref:System.Web.UI.ThemeableAttribute.No>フィールドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、適用する方法を示しています、<xref:System.Web.UI.ThemeableAttribute>属性をコントロールのメンバーにします。 この例では<xref:System.Web.UI.ThemeableAttribute>データ バインド コントロールに適用して`false`に渡される、<xref:System.Web.UI.ThemeableAttribute.%23ctor%2A>コンス トラクター、ことを示す、`DataSourceID`メンバーが適用されているテーマを持つことはできません。 (渡す`false`内コンス トラクターの結果に、<xref:System.Web.UI.ThemeableAttribute>と等価のインスタンス、<xref:System.Web.UI.ThemeableAttribute.No>フィールドです)。  
+  
+ [!code-csharp[System.Web.UI.ThemeableAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ThemeableAttribute/CS/themeableattribute1.cs#1)]
+ [!code-vb[System.Web.UI.ThemeableAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ThemeableAttribute/VB/themeableattribute1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.ThemeableAttribute Default;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.ThemeableAttribute Default" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.ThemeableAttribute.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ThemeableAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.ThemeableAttribute" />属性の既定のアプリケーションで定義された値を表すインスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値、<xref:System.Web.UI.ThemeableAttribute>クラスは、<xref:System.Web.UI.ThemeableAttribute.Yes>フィールドです。 これが既定のクラス コンス トラクターを使用して作成されたインスタンスに必ずしも等価ではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ThemeableAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj"><see langword="object" />このインスタンスと比較するか、<see langword="null" />です。</param>
+        <summary>このインスタンスが、指定されたオブジェクトと等価であるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="obj" />は、現在のインスタンスと同じインスタンスのインスタンスが異なる場合、属性値が等価、それ以外の場合、または<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ThemeableAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ハッシュ関数として機能、<see cref="T:System.Web.UI.ThemeableAttribute" />型です。</summary>
+        <returns>現在の <see cref="T:System.Web.UI.ThemeableAttribute" /> のハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ThemeableAttribute.GetHashCode%2A>メソッドは、ハッシュ、ハッシュ テーブルなどのアルゴリズムとデータ構造での使用に適しています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefaultAttribute">
+      <MemberSignature Language="C#" Value="public override bool IsDefaultAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsDefaultAttribute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ThemeableAttribute.IsDefaultAttribute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のインスタンスと等しいかどうかを示す値を取得、<see cref="F:System.Web.UI.ThemeableAttribute.Default" />のインスタンス、<see cref="T:System.Web.UI.ThemeableAttribute" />クラスです。</summary>
+        <returns>
+          <see langword="true" />現在のインスタンスと等しい場合、<see cref="F:System.Web.UI.ThemeableAttribute.Default" />クラスのインスタンスです。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsObjectThemeable">
+      <MemberSignature Language="C#" Value="public static bool IsObjectThemeable (object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsObjectThemeable(object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ThemeableAttribute.IsObjectThemeable(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance">テーマをサポートするをテストするオブジェクト。</param>
+        <summary>メソッドに渡されたオブジェクトでテーマをサポートするかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />オブジェクトには、テーマとコントロール スキン; がサポートされている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="instance" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTypeThemeable">
+      <MemberSignature Language="C#" Value="public static bool IsTypeThemeable (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsTypeThemeable(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ThemeableAttribute.IsTypeThemeable(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Type" />テーマをサポートするをテストします。</param>
+        <summary>示す値を返すかどうか、<see cref="T:System.Type" />メソッド サポート テーマに渡されます。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Type" />テーマとコントロール スキン; をサポートしています。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ThemeableAttribute>クラスは、テーマをサポートする型の静的内部のカタログを保持し、このメソッドを決定するカタログを確認するかどうか、指定した<xref:System.Type>が表されます。 そうでない場合、メソッドは、チェック、<xref:System.ComponentModel.AttributeCollection>オブジェクトに関連付けられている、<xref:System.Type>の<xref:System.Web.UI.ThemeableAttribute>テーマがサポートされているかどうかを決定する属性。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="type" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="No">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.ThemeableAttribute No;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.ThemeableAttribute No" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.ThemeableAttribute.No" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ThemeableAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.ThemeableAttribute" />インスタンスの型またはメンバーをテーマとコントロール スキンによって影響を受けないを装飾するために使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ThemeableAttribute.No>を使用して、インスタンスの作成に対応するフィールドを<xref:System.Web.UI.ThemeableAttribute.%23ctor%28System.Boolean%29>コンス トラクターを渡して`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Themeable">
+      <MemberSignature Language="C#" Value="public bool Themeable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Themeable" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ThemeableAttribute.Themeable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のコントロールまたはコントロールのメンバーのテーマの影響を受けることができ、コントロール スキンの Web アプリケーションに対して定義されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、現在の型またはメンバーが影響を受けるテーマです。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いない場合に、テーマによって、メンバーが影響を受ける<xref:System.Web.UI.ThemeableAttribute>、メンバーの属性が明示的に定義されている、または`Themeable(true)`属性を適用します。 メンバーは、影響を受けませんテーマによって場合、`Themeable(false)`属性が適用される; の既定値は、この<xref:System.Web.UI.ThemeableAttribute>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Yes">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.ThemeableAttribute Yes;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.ThemeableAttribute Yes" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.ThemeableAttribute.Yes" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ThemeableAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.ThemeableAttribute" />インスタンスの型またはメンバーをテーマとコントロール スキンの影響を受けるを装飾するために使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ThemeableAttribute.Yes>を使用して、インスタンスの作成に対応するフィールドを<xref:System.Web.UI.ThemeableAttribute.%23ctor%28System.Boolean%29>コンス トラクターを渡して`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

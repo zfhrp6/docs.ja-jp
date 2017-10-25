@@ -1,0 +1,804 @@
+<Type Name="DataGridViewHeaderCell" FullName="System.Windows.Forms.DataGridViewHeaderCell">
+  <TypeSignature Language="C#" Value="public class DataGridViewHeaderCell : System.Windows.Forms.DataGridViewCell" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridViewHeaderCell extends System.Windows.Forms.DataGridViewCell" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewHeaderCell" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.DataGridViewCell</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>行ヘッダー セルと列ヘッダー セルに共通の機能が含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、他のヘッダー セル クラスの基本クラスなど<xref:System.Windows.Forms.DataGridViewRowHeaderCell>と<xref:System.Windows.Forms.DataGridViewColumnHeaderCell>です。 継承するカスタムの行ヘッダーのアイコンまたは列ヘッダーのグリフを作成する、<xref:System.Windows.Forms.DataGridViewHeaderCell>クラスし、独自のアイコンまたはグリフを描画する機能を追加します。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>派生したときに<see cref="T:System.Windows.Forms.DataGridViewHeaderCell" />、派生クラスに新しいプロパティを追加、上書きすることを確認して、<see cref="M:System.Windows.Forms.DataGridViewHeaderCell.Clone" />複製操作時に新しいプロパティをコピーします。 基本クラスの呼び出す必要もあります<see cref="M:System.Windows.Forms.DataGridViewHeaderCell.Clone" />メソッドの基本クラスのプロパティが新しいセルにコピーされるようにします。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridViewHeaderCell ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewHeaderCell.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DataGridViewHeaderCell" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ButtonState">
+      <MemberSignature Language="C#" Value="protected System.Windows.Forms.ButtonState ButtonState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.ButtonState ButtonState" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewHeaderCell.ButtonState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ButtonState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ヘッダー セルのボタンの表示状態を取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.ButtonState" /> 値の 1 つ。既定値は <see cref="F:System.Windows.Forms.ButtonState.Normal" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Forms.DataGridViewHeaderCell>ボタンのように、クリックすると、並べ替えや、行レベルの選択を行うなどの状態を設定できるという点でします。 <xref:System.Windows.Forms.DataGridViewHeaderCell.ButtonState%2A>プロパティ使用<xref:System.Windows.Forms.ButtonState?displayProperty=nameWithType>ボタンの表示状態を提供する値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public override object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewHeaderCell.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>対象のセルの同一コピーを作成します。</summary>
+        <returns>複製された <see cref="T:System.Windows.Forms.DataGridViewHeaderCell" /> を表す <see cref="T:System.Object" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 上書き、<xref:System.Windows.Forms.DataGridViewHeaderCell.Clone%2A>メソッドから派生するたびに<xref:System.Windows.Forms.DataGridViewHeaderCell>し、派生クラスに新しいプロパティを追加します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.DataGridViewHeaderCell.Clone" />呼び出し、基本クラスの派生クラスで<see cref="M:System.Windows.Forms.DataGridViewHeaderCell.Clone" />メソッドの基本クラスのプロパティが新しいセルにコピーされも、派生クラスに追加されたプロパティの値をコピーすることを確認するようにします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Displayed">
+      <MemberSignature Language="C#" Value="public override bool Displayed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Displayed" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewHeaderCell.Displayed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セルが現在画面上に表示されているかどうかを示す値を取得します。</summary>
+        <value>
+          セルの全部または一部が画面上にある場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewHeaderCell.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Windows.Forms.DataGridViewHeaderCell" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormattedValueType">
+      <MemberSignature Language="C#" Value="public override Type FormattedValueType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type FormattedValueType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewHeaderCell.FormattedValueType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セルの書式設定された値の型を取得します。</summary>
+        <value><see cref="T:System.Type" /> 型を表す <see cref="T:System.String" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewCell.Value%2A>プロパティがありますが、セルに含まれる実際のデータ オブジェクト、<xref:System.Windows.Forms.DataGridViewCell.FormattedValue%2A>プロパティは、データの書式設定された表現です。 <xref:System.Windows.Forms.DataGridViewHeaderCell.ValueType%2A>と<xref:System.Windows.Forms.DataGridViewHeaderCell.FormattedValueType%2A>プロパティはそれぞれこれらの値のデータ型に対応します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Frozen">
+      <MemberSignature Language="C#" Value="public override bool Frozen { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Frozen" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewHeaderCell.Frozen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セルが固定されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />セルが固定されている場合それ以外の場合、<see langword="false" />です。 既定値は<see langword="false" />セルがからデタッチされた場合、<see cref="T:System.Windows.Forms.DataGridView" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewHeaderCell.Frozen%2A>プロパティは`true`固定された行または列にセルが属している場合、または、セルが左上のヘッダー セル。 セル、行、または列が固定されているときにその<xref:System.Windows.Forms.DataGridViewElement.State%2A>プロパティの値を持つ<xref:System.Windows.Forms.DataGridViewElementStates?displayProperty=nameWithType>  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInheritedContextMenuStrip">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.ContextMenuStrip GetInheritedContextMenuStrip (int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Windows.Forms.ContextMenuStrip GetInheritedContextMenuStrip(int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewHeaderCell.GetInheritedContextMenuStrip(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ContextMenuStrip</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="rowIndex">この実装では無視されます。</param>
+        <summary>ヘッダー セルのショートカット メニューを取得します。</summary>
+        <returns>A<see cref="T:System.Windows.Forms.ContextMenuStrip" />場合、<see cref="T:System.Windows.Forms.DataGridViewHeaderCell" />または<see cref="T:System.Windows.Forms.DataGridView" />がショートカット メニューが割り当てられています。 それ以外の場合、<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、 <xref:System.Windows.Forms.DataGridViewHeaderCell> 、ショートカット メニューはありません、<xref:System.Windows.Forms.DataGridViewHeaderCell>でショートカット メニューは、継承、<xref:System.Windows.Forms.DataGridView>です。 場合、<xref:System.Windows.Forms.DataGridView>も、ショートカット メニューはありません、<xref:System.Windows.Forms.DataGridViewHeaderCell.GetInheritedContextMenuStrip%2A>メソッドが返す`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInheritedState">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.DataGridViewElementStates GetInheritedState (int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.Windows.Forms.DataGridViewElementStates GetInheritedState(int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewHeaderCell.GetInheritedState(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewElementStates</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="rowIndex">セル、行ヘッダー セルがあるか含まれていない場合、セルまたは-1 を含む行のインデックス、<see cref="T:System.Windows.Forms.DataGridView" />コントロール。</param>
+        <summary>行または列の状態から継承されたセルの現在の状態を示す値を返します。</summary>
+        <returns>ビットごとの組み合わせ<see cref="T:System.Windows.Forms.DataGridViewElementStates" />セルの現在の状態を表す値です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">セル、行ヘッダー セルは、内でセルが含まれていない、<see cref="T:System.Windows.Forms.DataGridView" />コントロール、および<paramref name="rowIndex" />-1 ではありません。  
+  
+ \- または  
+  
+ セルが、行ヘッダー セル、セルに含まれる、<see cref="T:System.Windows.Forms.DataGridView" />コントロール、および<paramref name="rowIndex" />が 0 から 1 を引いたコントロール内の行の数の有効範囲外です。  
+  
+ \- または  
+  
+ セルが、行ヘッダー セルと<paramref name="rowIndex" />このセルを含む行のインデックスではありません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">セルが列のヘッダー セルまたはコントロールの<see cref="P:System.Windows.Forms.DataGridView.TopLeftHeaderCell" />と<paramref name="rowIndex" />-1 ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSize">
+      <MemberSignature Language="C#" Value="protected override System.Drawing.Size GetSize (int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Drawing.Size GetSize(int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewHeaderCell.GetSize(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="rowIndex">ヘッダー セルの行インデックス。</param>
+        <summary>セルのサイズを取得します。</summary>
+        <returns>A<see cref="T:System.Drawing.Size" />ヘッダー セルのサイズを表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewHeaderCell.GetSize%2A>メソッド ヘッダー セルが列ヘッダーの場合、列見出しの行に収まるように必要なサイズ、またはを返すサイズに合わせて行ヘッダーの列のヘッダー セルが行ヘッダーの場合に必要なサイズにするために必要な<xref:System.Windows.Forms.DataGridViewTopLeftHeaderCell>セルが左上のヘッダー セルである場合。  
+  
+ セルはアタッチされていない場合、 <xref:System.Windows.Forms.DataGridView>、<xref:System.Windows.Forms.DataGridViewCell.Size%2A>のプロパティ、 <xref:System.Windows.Forms.DataGridViewHeaderCell> (-1,-1) の値を返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値、<see cref="P:System.Windows.Forms.DataGridViewElement.DataGridView" />このセルのプロパティは<see langword="null" />と<paramref name="rowIndex" />-1 と等しくないです。  
+  
+ または  
+  
+ 値、<see cref="P:System.Windows.Forms.DataGridViewCell.OwningColumn" />このセルのプロパティは使用されません<see langword="null" />と<paramref name="rowIndex" />-1 と等しくないです。  
+  
+ または  
+  
+ 値、<see cref="P:System.Windows.Forms.DataGridViewCell.OwningRow" />このセルのプロパティは使用されません<see langword="null" />と<paramref name="rowIndex" />がゼロ未満かより大きいか、コントロール内の行の数と同じです。  
+  
+ または  
+  
+ 値、<see cref="P:System.Windows.Forms.DataGridViewCell.OwningColumn" />と<see cref="P:System.Windows.Forms.DataGridViewCell.OwningRow" />このセルのプロパティが両方とも<see langword="null" />と<paramref name="rowIndex" />-1 と等しくないです。</exception>
+        <exception cref="T:System.ArgumentException">値、<see cref="P:System.Windows.Forms.DataGridViewCell.OwningRow" />このセルのプロパティは使用されません<see langword="null" />と<paramref name="rowIndex" />以外の場合、行を示す、<see cref="P:System.Windows.Forms.DataGridViewCell.OwningRow" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="protected override object GetValue (int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object GetValue(int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewHeaderCell.GetValue(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="rowIndex">セルの親行のインデックス。</param>
+        <summary>セルの値を取得します。</summary>
+        <returns>現在の値<see cref="T:System.Windows.Forms.DataGridViewCell" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="rowIndex" />-1 ではないです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseDownUnsharesRow">
+      <MemberSignature Language="C#" Value="protected override bool MouseDownUnsharesRow (System.Windows.Forms.DataGridViewCellMouseEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool MouseDownUnsharesRow(class System.Windows.Forms.DataGridViewCellMouseEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewHeaderCell.MouseDownUnsharesRow(System.Windows.Forms.DataGridViewCellMouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.DataGridViewCellMouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Windows.Forms.DataGridViewCellMouseEventArgs" />マウスの位置に関する情報を格納します。</param>
+        <summary>行のセルにポインターがあるときに、マウス ボタンが押さときに、行の共有を解除するかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />visual スタイルが有効になっている場合は、ユーザーは、マウスの左ボタンをクリックすると、および<see cref="P:System.Windows.Forms.DataGridView.EnableHeadersVisualStyles" />プロパティは<see langword="true" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual スタイルを有効にする方法については、次を参照してください。、<xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType>メソッドです。  
+  
+ <xref:System.Windows.Forms.DataGridViewHeaderCell.MouseDownUnsharesRow%2A>直前に呼び出されますが<xref:System.Windows.Forms.DataGridViewHeaderCell.OnMouseDown%2A>です。 返す必要があります`true`場合への呼び出し<xref:System.Windows.Forms.DataGridViewHeaderCell.OnMouseDown%2A>効果を行を非共有の`rowIndex`します。 返します`false`それ以外の場合。  
+  
+ 行の共有の詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールを拡張するためのベスト プラクティス](~/docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseEnterUnsharesRow">
+      <MemberSignature Language="C#" Value="protected override bool MouseEnterUnsharesRow (int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool MouseEnterUnsharesRow(int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewHeaderCell.MouseEnterUnsharesRow(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="rowIndex">マウス ポインターが入力行のインデックス。</param>
+        <summary>マウス ポインターを行のセル上に移動したときに行の共有を解除するかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />visual スタイルが有効な場合、<see cref="P:System.Windows.Forms.DataGridView.EnableHeadersVisualStyles" />プロパティは<see langword="true" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual スタイルを有効にする方法については、次を参照してください。、<xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType>メソッドです。  
+  
+ <xref:System.Windows.Forms.DataGridViewHeaderCell.MouseEnterUnsharesRow%2A>直前に呼び出されますが<xref:System.Windows.Forms.DataGridViewHeaderCell.OnMouseEnter%2A>です。 返す必要があります`true`場合への呼び出し<xref:System.Windows.Forms.DataGridViewHeaderCell.OnMouseEnter%2A>効果を行を非共有の`rowIndex`します。 返します`false`それ以外の場合。  
+  
+ 行の共有の詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールを拡張するためのベスト プラクティス](~/docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.DataGridViewHeaderCell.MouseEnterUnsharesRow(System.Int32)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.DataGridViewHeaderCell.MouseEnterUnsharesRow(System.Int32)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseLeaveUnsharesRow">
+      <MemberSignature Language="C#" Value="protected override bool MouseLeaveUnsharesRow (int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool MouseLeaveUnsharesRow(int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewHeaderCell.MouseLeaveUnsharesRow(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="rowIndex">マウス ポインターが残っている行のインデックス。</param>
+        <summary>マウス ポインターを行から離したときに行の共有を解除するかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="P:System.Windows.Forms.DataGridViewHeaderCell.ButtonState" />プロパティの値が<see cref="F:System.Windows.Forms.ButtonState.Normal" />、visual スタイルが有効になっている、および<see cref="P:System.Windows.Forms.DataGridView.EnableHeadersVisualStyles" />プロパティは<see langword="true" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual スタイルを有効にする方法については、次を参照してください。、<xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType>メソッドです。  
+  
+ <xref:System.Windows.Forms.DataGridViewHeaderCell.MouseLeaveUnsharesRow%2A>直前に呼び出されますが<xref:System.Windows.Forms.DataGridViewHeaderCell.OnMouseLeave%2A>です。 返す必要があります`true`場合への呼び出し<xref:System.Windows.Forms.DataGridViewHeaderCell.OnMouseLeave%2A>効果を行を非共有の`rowIndex`します。 返します`false`それ以外の場合。  
+  
+ 行の共有の詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールを拡張するためのベスト プラクティス](~/docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseUpUnsharesRow">
+      <MemberSignature Language="C#" Value="protected override bool MouseUpUnsharesRow (System.Windows.Forms.DataGridViewCellMouseEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool MouseUpUnsharesRow(class System.Windows.Forms.DataGridViewCellMouseEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewHeaderCell.MouseUpUnsharesRow(System.Windows.Forms.DataGridViewCellMouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.DataGridViewCellMouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Windows.Forms.DataGridViewCellMouseEventArgs" />マウスの位置に関する情報を格納します。</param>
+        <summary>行のセルにポインターがある状態でマウス ボタンを離したときに、その行を非共有にするかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />visual スタイルが有効な場合、マウスの左ボタンが離された、および<see cref="P:System.Windows.Forms.DataGridView.EnableHeadersVisualStyles" />プロパティは<see langword="true" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual スタイルを有効にする方法については、次を参照してください。、<xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType>メソッドです。  
+  
+ <xref:System.Windows.Forms.DataGridViewHeaderCell.MouseUpUnsharesRow%2A>直前に呼び出されますが<xref:System.Windows.Forms.DataGridViewHeaderCell.OnMouseUp%2A>です。 返す必要があります`true`場合への呼び出し<xref:System.Windows.Forms.DataGridViewHeaderCell.OnMouseUp%2A>効果を行を非共有の`rowIndex`します。 返します`false`それ以外の場合。  
+  
+ 行の共有の詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールを拡張するためのベスト プラクティス](~/docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseDown">
+      <MemberSignature Language="C#" Value="protected override void OnMouseDown (System.Windows.Forms.DataGridViewCellMouseEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseDown(class System.Windows.Forms.DataGridViewCellMouseEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewHeaderCell.OnMouseDown(System.Windows.Forms.DataGridViewCellMouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.DataGridViewCellMouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Windows.Forms.DataGridViewCellMouseEventArgs" />マウスの位置に関する情報を格納します。</param>
+        <summary>ポインターがセル上にあるときでマウス ボタンを押したときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewHeaderCell.OnMouseDown%2A>メソッドのセット、<xref:System.Windows.Forms.DataGridViewHeaderCell.ButtonState%2A>に<xref:System.Windows.Forms.ButtonState.Pushed>セルがマウスの左ボタンでクリックされたヘッダーの visual スタイルが有効になっている場合。 ヘッダーの visual スタイルの詳細については、次を参照してください。、<xref:System.Windows.Forms.DataGridView.EnableHeadersVisualStyles%2A?displayProperty=nameWithType>プロパティです。  
+  
+ このメソッドがに似ていますが、<xref:System.Windows.Forms.DataGridView.OnCellMouseDown%2A?displayProperty=nameWithType>メソッドです。 同じ環境での呼び出し、<xref:System.Windows.Forms.DataGridView.CellMouseDown?displayProperty=nameWithType>イベントが発生しますが、イベントを実際には発生しません。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.DataGridViewHeaderCell.OnMouseDown(System.Windows.Forms.DataGridViewCellMouseEventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.DataGridViewHeaderCell.OnMouseDown(System.Windows.Forms.DataGridViewCellMouseEventArgs)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseEnter">
+      <MemberSignature Language="C#" Value="protected override void OnMouseEnter (int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseEnter(int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewHeaderCell.OnMouseEnter(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="rowIndex">セルを含む行のインデックス。</param>
+        <summary>マウス ポインターがセルに入ったときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewHeaderCell.OnMouseEnter%2A>メソッドのセット、<xref:System.Windows.Forms.DataGridViewHeaderCell.ButtonState%2A>に<xref:System.Windows.Forms.ButtonState.Pushed>ポインターがセルに入るし、ヘッダーの visual スタイルが有効になっているときに、マウスの左ボタンが押されたかどうか。 ヘッダーの visual スタイルの詳細については、次を参照してください。、<xref:System.Windows.Forms.DataGridView.EnableHeadersVisualStyles%2A?displayProperty=nameWithType>プロパティです。  
+  
+ このメソッドがに似ていますが、<xref:System.Windows.Forms.DataGridView.OnCellMouseEnter%2A?displayProperty=nameWithType>メソッドです。 同じ環境での呼び出し、<xref:System.Windows.Forms.DataGridView.CellMouseEnter?displayProperty=nameWithType>イベントが発生しますが、イベントを実際には発生しません。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.DataGridViewHeaderCell.OnMouseEnter(System.Int32)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.DataGridViewHeaderCell.OnMouseEnter(System.Int32)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseLeave">
+      <MemberSignature Language="C#" Value="protected override void OnMouseLeave (int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseLeave(int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewHeaderCell.OnMouseLeave(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="rowIndex">セルを含む行のインデックス。</param>
+        <summary>マウス ポインターをセルから離すと呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewHeaderCell.OnMouseLeave%2A>メソッドのセット、<xref:System.Windows.Forms.DataGridViewHeaderCell.ButtonState%2A>に<xref:System.Windows.Forms.ButtonState.Normal>別の状態になっていたし、ヘッダーの visual スタイルが有効になっている場合。 ヘッダーの visual スタイルの詳細については、次を参照してください。、<xref:System.Windows.Forms.DataGridView.EnableHeadersVisualStyles%2A?displayProperty=nameWithType>プロパティです。  
+  
+ このメソッドがに似ていますが、<xref:System.Windows.Forms.DataGridView.OnCellMouseLeave%2A?displayProperty=nameWithType>メソッドです。 同じ環境での呼び出し、<xref:System.Windows.Forms.DataGridView.CellMouseLeave?displayProperty=nameWithType>イベントが発生しますが、イベントを実際には発生しません。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.DataGridViewHeaderCell.OnMouseLeave(System.Int32)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.DataGridViewHeaderCell.OnMouseLeave(System.Int32)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseUp">
+      <MemberSignature Language="C#" Value="protected override void OnMouseUp (System.Windows.Forms.DataGridViewCellMouseEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseUp(class System.Windows.Forms.DataGridViewCellMouseEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewHeaderCell.OnMouseUp(System.Windows.Forms.DataGridViewCellMouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.DataGridViewCellMouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Windows.Forms.DataGridViewCellMouseEventArgs" />マウスの位置に関する情報を格納します。</param>
+        <summary>ポインターがセルの上にあるとき、マウス ボタンが離されたときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewHeaderCell.OnMouseUp%2A>メソッドのセット、<xref:System.Windows.Forms.DataGridViewHeaderCell.ButtonState%2A>に<xref:System.Windows.Forms.ButtonState.Normal>マウスの左ボタンが離され、ヘッダーの visual スタイルが有効になっている場合。 ヘッダーの visual スタイルの詳細については、次を参照してください。、<xref:System.Windows.Forms.DataGridView.EnableHeadersVisualStyles%2A?displayProperty=nameWithType>プロパティです。  
+  
+ このメソッドがに似ていますが、<xref:System.Windows.Forms.DataGridView.OnCellMouseUp%2A?displayProperty=nameWithType>メソッドです。 同じ環境での呼び出し、<xref:System.Windows.Forms.DataGridView.CellMouseUp?displayProperty=nameWithType>イベントが発生しますが、イベントを実際には発生しません。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.DataGridViewHeaderCell.OnMouseUp(System.Windows.Forms.DataGridViewCellMouseEventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.DataGridViewHeaderCell.OnMouseUp(System.Windows.Forms.DataGridViewCellMouseEventArgs)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Paint">
+      <MemberSignature Language="C#" Value="protected override void Paint (System.Drawing.Graphics graphics, System.Drawing.Rectangle clipBounds, System.Drawing.Rectangle cellBounds, int rowIndex, System.Windows.Forms.DataGridViewElementStates dataGridViewElementState, object value, object formattedValue, string errorText, System.Windows.Forms.DataGridViewCellStyle cellStyle, System.Windows.Forms.DataGridViewAdvancedBorderStyle advancedBorderStyle, System.Windows.Forms.DataGridViewPaintParts paintParts);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Paint(class System.Drawing.Graphics graphics, valuetype System.Drawing.Rectangle clipBounds, valuetype System.Drawing.Rectangle cellBounds, int32 rowIndex, valuetype System.Windows.Forms.DataGridViewElementStates dataGridViewElementState, object value, object formattedValue, string errorText, class System.Windows.Forms.DataGridViewCellStyle cellStyle, class System.Windows.Forms.DataGridViewAdvancedBorderStyle advancedBorderStyle, valuetype System.Windows.Forms.DataGridViewPaintParts paintParts) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewHeaderCell.Paint(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Rectangle,System.Int32,System.Windows.Forms.DataGridViewElementStates,System.Object,System.Object,System.String,System.Windows.Forms.DataGridViewCellStyle,System.Windows.Forms.DataGridViewAdvancedBorderStyle,System.Windows.Forms.DataGridViewPaintParts)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="clipBounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="cellBounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+        <Parameter Name="dataGridViewElementState" Type="System.Windows.Forms.DataGridViewElementStates" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="formattedValue" Type="System.Object" />
+        <Parameter Name="errorText" Type="System.String" />
+        <Parameter Name="cellStyle" Type="System.Windows.Forms.DataGridViewCellStyle" />
+        <Parameter Name="advancedBorderStyle" Type="System.Windows.Forms.DataGridViewAdvancedBorderStyle" />
+        <Parameter Name="paintParts" Type="System.Windows.Forms.DataGridViewPaintParts" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />セルの描画に使用します。</param>
+        <param name="clipBounds">A<see cref="T:System.Drawing.Rectangle" />の領域を表す、<see cref="T:System.Windows.Forms.DataGridView" />再描画する必要があります。</param>
+        <param name="cellBounds">A<see cref="T:System.Drawing.Rectangle" />描画されるセルの境界を格納しています。</param>
+        <param name="rowIndex">描画されるセルの行インデックス。</param>
+        <param name="dataGridViewElementState">ビットごとの組み合わせ<see cref="T:System.Windows.Forms.DataGridViewElementStates" />セルの状態を指定する値。</param>
+        <param name="value">描画されるセルのデータです。</param>
+        <param name="formattedValue">描画されるセルの書式設定されたデータ。</param>
+        <param name="errorText">セルに関連付けられたエラー メッセージ。</param>
+        <param name="cellStyle">A<see cref="T:System.Windows.Forms.DataGridViewCellStyle" />セルに関する書式とスタイル情報を格納します。</param>
+        <param name="advancedBorderStyle">A<see cref="T:System.Windows.Forms.DataGridViewAdvancedBorderStyle" />描画されるセルの境界線スタイルを格納します。</param>
+        <param name="paintParts">ビットごとの組み合わせ、<see cref="T:System.Windows.Forms.DataGridViewPaintParts" />セルのどの部分を描画する必要がありますを指定する値。</param>
+        <summary>現在の描画<see cref="T:System.Windows.Forms.DataGridViewHeaderCell" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadOnly">
+      <MemberSignature Language="C#" Value="public override bool ReadOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewHeaderCell.ReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ヘッダー セルは読み取り専用であるかどうかを示す値を取得します。</summary>
+        <value>
+          常に <see langword="true" />。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">操作は、このプロパティを設定しようとします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Resizable">
+      <MemberSignature Language="C#" Value="public override bool Resizable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Resizable" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewHeaderCell.Resizable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セルのサイズが変更可能であるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />このセルのサイズを変更する場合それ以外の場合、<see langword="false" />です。 既定値は<see langword="false" />にセルがアタッチされていない場合、<see cref="T:System.Windows.Forms.DataGridView" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 行ヘッダー セルの行がサイズ変更可能な場合は、サイズがまたは<xref:System.Windows.Forms.DataGridView.RowHeadersWidthSizeMode%2A>プロパティに設定されている<xref:System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.EnableResizing>です。 列のヘッダー セルがサイズを変更する列のサイズ変更可能な場合、または<xref:System.Windows.Forms.DataGridView.ColumnHeadersHeightSizeMode%2A>プロパティに設定されている<xref:System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Selected">
+      <MemberSignature Language="C#" Value="public override bool Selected { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Selected" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewHeaderCell.Selected" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはセルが選択されているかどうかを示す値を設定します。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、ヘッダー セルの意味がありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewHeaderCell.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のオブジェクトを説明する文字列を返します。</summary>
+        <returns>現在のオブジェクトを表す文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValueType">
+      <MemberSignature Language="C#" Value="public override Type ValueType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ValueType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewHeaderCell.ValueType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セルに格納されている値の型を取得します。</summary>
+        <value><see cref="T:System.Type" /> 型を表す <see cref="T:System.String" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Visible">
+      <MemberSignature Language="C#" Value="public override bool Visible { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Visible" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewHeaderCell.Visible" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セルが表示されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />セルを表示する場合それ以外の場合、<see langword="false" />です。 既定値は<see langword="false" />セルがからデタッチされた場合、<see cref="T:System.Windows.Forms.DataGridView" /></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セル、行ヘッダー セルがかどうかは、その行が表示される場合は表示され、<xref:System.Windows.Forms.DataGridView.RowHeadersVisible%2A>プロパティは`true`します。 セルが列のヘッダー セルとしている場合、その列が表示されている場合は表示され、<xref:System.Windows.Forms.DataGridView.ColumnHeadersVisible%2A>プロパティは`true`します。 可視の場合は、両方のセルが左上のヘッダー セルの場合は、<xref:System.Windows.Forms.DataGridView.RowHeadersVisible%2A>と<xref:System.Windows.Forms.DataGridView.ColumnHeadersVisible%2A>は true です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

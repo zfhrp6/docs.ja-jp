@@ -1,0 +1,535 @@
+<Type Name="Typeface" FullName="System.Windows.Media.Typeface">
+  <TypeSignature Language="C#" Value="public class Typeface" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Typeface extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Typeface" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>組み合わせを表す<see cref="T:System.Windows.Media.FontFamily" />、 <see cref="T:System.Windows.FontWeight" />、 <see cref="T:System.Windows.FontStyle" />、および<see cref="T:System.Windows.FontStretch" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 書体は、同じフォント ファミリ内でのフォントの 1 つのバリエーションです。 フォントの例は、"Times New Roman"フォント ファミリの斜体のバージョンです。 書体の太さ、スタイル、およびフォントの伸縮機能を定義します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[FontSnippets#102](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/Window1.xaml.cs#102)]
+ [!code-vb[FontSnippets#102](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/window1.xaml.vb#102)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Typeface (string typefaceName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string typefaceName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Typeface.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="typefaceName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="typefaceName">指定されたフォント ファミリの書体名。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.Typeface" />クラスの指定されたフォント ファミリの書体名。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[FontSnippets#105](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/Window1.xaml.cs#105)]
+ [!code-vb[FontSnippets#105](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/window1.xaml.vb#105)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Typeface (System.Windows.Media.FontFamily fontFamily, System.Windows.FontStyle style, System.Windows.FontWeight weight, System.Windows.FontStretch stretch);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Media.FontFamily fontFamily, valuetype System.Windows.FontStyle style, valuetype System.Windows.FontWeight weight, valuetype System.Windows.FontStretch stretch) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Typeface.#ctor(System.Windows.Media.FontFamily,System.Windows.FontStyle,System.Windows.FontWeight,System.Windows.FontStretch)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fontFamily" Type="System.Windows.Media.FontFamily" />
+        <Parameter Name="style" Type="System.Windows.FontStyle" />
+        <Parameter Name="weight" Type="System.Windows.FontWeight" />
+        <Parameter Name="stretch" Type="System.Windows.FontStretch" />
+      </Parameters>
+      <Docs>
+        <param name="fontFamily">フォントのフォント ファミリ。</param>
+        <param name="style">フォントのスタイルです。</param>
+        <param name="weight">タイプフェイスの相対的な重み。</param>
+        <param name="stretch">フォントの伸縮する度合い。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.Typeface" />については、指定されたフォント ファミリ名、 <see cref="P:System.Windows.Media.Typeface.Style" />、 <see cref="P:System.Windows.Media.Typeface.Weight" />、および<see cref="P:System.Windows.Media.Typeface.Stretch" />値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[FontSnippets#105](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/Window1.xaml.cs#105)]
+ [!code-vb[FontSnippets#105](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/window1.xaml.vb#105)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Typeface (System.Windows.Media.FontFamily fontFamily, System.Windows.FontStyle style, System.Windows.FontWeight weight, System.Windows.FontStretch stretch, System.Windows.Media.FontFamily fallbackFontFamily);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Media.FontFamily fontFamily, valuetype System.Windows.FontStyle style, valuetype System.Windows.FontWeight weight, valuetype System.Windows.FontStretch stretch, class System.Windows.Media.FontFamily fallbackFontFamily) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Typeface.#ctor(System.Windows.Media.FontFamily,System.Windows.FontStyle,System.Windows.FontWeight,System.Windows.FontStretch,System.Windows.Media.FontFamily)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fontFamily" Type="System.Windows.Media.FontFamily" />
+        <Parameter Name="style" Type="System.Windows.FontStyle" />
+        <Parameter Name="weight" Type="System.Windows.FontWeight" />
+        <Parameter Name="stretch" Type="System.Windows.FontStretch" />
+        <Parameter Name="fallbackFontFamily" Type="System.Windows.Media.FontFamily" />
+      </Parameters>
+      <Docs>
+        <param name="fontFamily">フォントのフォント ファミリ。</param>
+        <param name="style">フォントのスタイルです。</param>
+        <param name="weight">タイプフェイスの相対的な重み。</param>
+        <param name="stretch">フォントの伸縮する度合い。</param>
+        <param name="fallbackFontFamily">文字がときに使用されるフォント ファミリが検出されたプライマリ フォント ファミリ (によって指定された、 <c>fontFamily</c>パラメーター) を表示できません。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.Typeface" />については、指定されたフォント ファミリ名、 <see cref="P:System.Windows.Media.Typeface.Style" />、 <see cref="P:System.Windows.Media.Typeface.Weight" />、および<see cref="P:System.Windows.Media.Typeface.Stretch" />値。 さらに、代替フォント ファミリを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 渡す`null`の`fallbackFontFamily`ボックス文字に表示されるプライマリ フォント ファミリに含まれていない文字を発生させます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[FontSnippets#105](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/Window1.xaml.cs#105)]
+ [!code-vb[FontSnippets#105](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/window1.xaml.vb#105)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CapsHeight">
+      <MemberSignature Language="C#" Value="public double CapsHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 CapsHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Typeface.CapsHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>英語の大文字の書体の最上部に、基準からの距離を取得します。</summary>
+        <value>A<see cref="T:System.Double" />ベースラインから英語の大文字、フォントの em サイズの割合で表したの一番上までの距離を示すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値の`1`英語の大文字の最上部が戻り値の中に、ベースラインを超えた 1 つのフォントの em であることを示します`0.5`フォント em ベースラインの上半分であることを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Typeface.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">比較対象の <see cref="T:System.Windows.Media.Typeface" />。</param>
+        <summary>現在のフォントおよび指定したフォントが同じがあるかどうかを示す値を取得<see cref="P:System.Windows.Media.Typeface.FontFamily" />、 <see cref="P:System.Windows.Media.Typeface.Style" />、 <see cref="P:System.Windows.Media.Typeface.Weight" />、 <see cref="P:System.Windows.Media.Typeface.Stretch" />、および代替フォント値。</summary>
+        <returns>
+          <paramref name="o" /> が現在の <see cref="T:System.Windows.Media.Typeface" /> オブジェクトに等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 場合<paramref name="o" />されませんが、<see cref="T:System.Windows.Media.Typeface" />オブジェクト、<see langword="false" />が返されます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FaceNames">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.LanguageSpecificStringDictionary FaceNames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.LanguageSpecificStringDictionary FaceNames" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Typeface.FaceNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.LanguageSpecificStringDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>名前をカルチャに固有のコレクションを取得、<see cref="T:System.Windows.Media.Typeface" />です。</summary>
+        <value>A<see cref="T:System.Windows.Media.LanguageSpecificStringDictionary" />タイプフェイスのカルチャに固有の名前を表す値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontFamily">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.FontFamily FontFamily { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.FontFamily FontFamily" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Typeface.FontFamily" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.FontFamily</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>書体を構築するためのフォント ファミリの名前を取得します。</summary>
+        <value><see cref="T:System.Windows.Media.FontFamily" />タイプフェイスが構築されたからです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Typeface.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ハッシュ関数として機能<see cref="T:System.Windows.Media.Typeface" />します。 ハッシュ アルゴリズムや、ハッシュ テーブルのようなデータ構造での使用に適しています。</summary>
+        <returns><see cref="T:System.Int32" />を現在のオブジェクトのハッシュ コードを表す値です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBoldSimulated">
+      <MemberSignature Language="C#" Value="public bool IsBoldSimulated { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsBoldSimulated" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Typeface.IsBoldSimulated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>太字で表されるグリフをシミュレートするかどうか、<see cref="T:System.Windows.Media.Typeface" />です。</summary>
+        <value>
+          <see langword="true" />グリフの太字のシミュレーションを使用する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Media.Typeface>グリフを拡大して太字をシミュレートすることができます。 シミュレートされた非太字フォントには、シミュレートされた太字タイプフェイスより見栄えが良くは設計通常です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsObliqueSimulated">
+      <MemberSignature Language="C#" Value="public bool IsObliqueSimulated { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsObliqueSimulated" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Typeface.IsObliqueSimulated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によって表されるグリフの斜体のスタイルをシミュレートするかどうか、<see cref="T:System.Windows.Media.Typeface" />です。</summary>
+        <value>
+          <see langword="true" />グリフの斜体のシミュレーションを使用する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A <xref:System.Windows.Media.Typeface> 、傾斜またはグリフを向いたによって斜体のスタイルをシミュレートすることができます。 シミュレートされていない斜体フォントには、シミュレートされた斜体タイプフェイスより見栄えが良くは設計通常です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Stretch">
+      <MemberSignature Language="C#" Value="public System.Windows.FontStretch Stretch { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FontStretch Stretch" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Typeface.Stretch" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontStretch</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Stretch の値を取得、<see cref="T:System.Windows.Media.Typeface" />です。 Stretch の値は、書体を展開するかが表示されたらそれを圧縮するかどうかを判断します。</summary>
+        <value>A<see cref="T:System.Windows.FontStretch" />タイプフェイスの stretch の値を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フォントの伸縮値は、フォント形式は、伸縮する通常の縦横比から元の幅と高さの比率が指定されたフォントのグリフである程度を記述します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[FontSnippets#108](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/Window1.xaml.cs#108)]
+ [!code-vb[FontSnippets#108](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/window1.xaml.vb#108)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StrikethroughPosition">
+      <MemberSignature Language="C#" Value="public double StrikethroughPosition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 StrikethroughPosition" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Typeface.StrikethroughPosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ベースラインからタイプフェイスの取り消し線までの距離を示す値を取得します。</summary>
+        <value>A<see cref="T:System.Double" />ベースライン測定され、フォントの em サイズの割合で表される、取り消し線の位置を示すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値の`0.1`取り消し線の位置が戻り値の中に、ベースラインを超えたフォントの em の 10 分の 1 つであることを示します`0.25`ことを示します、4 分の 1 のベースラインより上のフォントの em です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StrikethroughThickness">
+      <MemberSignature Language="C#" Value="public double StrikethroughThickness { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 StrikethroughThickness" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Typeface.StrikethroughThickness" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォントの em サイズに相対する取り消し線の太さを示す値を取得します。</summary>
+        <value>フォントの em サイズの割合で表現される、取り消し線の太さを示す <see cref="T:System.Double" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値の`0.05`取り消し線の太さが戻り値の中のフォントの em サイズの 20 分の 1 つであることを示します`0.1`取り消し線の太さがフォントの em サイズの 10 分の 1 つであることを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Style">
+      <MemberSignature Language="C#" Value="public System.Windows.FontStyle Style { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FontStyle Style" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Typeface.Style" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スタイルを取得、<see cref="T:System.Windows.Media.Typeface" />です。</summary>
+        <value>A<see cref="T:System.Windows.FontStyle" />タイプフェイスのスタイル値を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 3 つに分類フォントの傾斜: 標準、斜体、および斜体です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[FontSnippets#109](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/Window1.xaml.cs#109)]
+ [!code-vb[FontSnippets#109](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/window1.xaml.vb#109)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetGlyphTypeface">
+      <MemberSignature Language="C#" Value="public bool TryGetGlyphTypeface (out System.Windows.Media.GlyphTypeface glyphTypeface);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryGetGlyphTypeface([out] class System.Windows.Media.GlyphTypeface&amp; glyphTypeface) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Typeface.TryGetGlyphTypeface(System.Windows.Media.GlyphTypeface@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="glyphTypeface" Type="System.Windows.Media.GlyphTypeface&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="glyphTypeface">
+          <see cref="T:System.Windows.Media.GlyphTypeface" />このタイプフェイスに対応するオブジェクトまたは<see langword="null" />書体をコンポジット フォントから構築した場合。</param>
+        <summary>取得、<see cref="T:System.Windows.Media.GlyphTypeface" />に対応する、<see cref="T:System.Windows.Media.Typeface" />です。</summary>
+        <returns>
+          <see langword="true" />out パラメーターに設定されている場合、<see cref="T:System.Windows.Media.GlyphTypeface" />値。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Media.GlyphTypeface>ディスク上のフォント ファイルに直接対応するフォントのフォント フェイスがします。 A <xref:System.Windows.Media.Typeface>、ただし、フォントのフォント フェイスの表現であります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnderlinePosition">
+      <MemberSignature Language="C#" Value="public double UnderlinePosition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 UnderlinePosition" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Typeface.UnderlinePosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>下線タイプフェイスのベースラインからの距離を示す値を取得します。</summary>
+        <value>A<see cref="T:System.Double" />ベースライン測定され、フォントの em サイズの割合で表される下線の位置を示すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値は通常負の値をベースラインの下に下線を配置します。 たとえば、戻り値`-0.1`下線の位置が戻り値の中に、ベースラインの下のフォントの em の 10 分の 1 つであることを示します`-0.25`ベースラインの下のフォントの em の 4 分の 1 であることを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnderlineThickness">
+      <MemberSignature Language="C#" Value="public double UnderlineThickness { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 UnderlineThickness" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Typeface.UnderlineThickness" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タイプフェイスのフォントの em サイズに対して下線の幅を示す値を取得します。</summary>
+        <value>A<see cref="T:System.Double" />フォントの em サイズの割合で表される、下線の太さを示すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値の`0.05`下線の太さが戻り値の中のフォントの em サイズの 20 分の 1 つであることを示します`0.1`下線の太さがフォントの em サイズの 10 分の 1 つであることを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Weight">
+      <MemberSignature Language="C#" Value="public System.Windows.FontWeight Weight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FontWeight Weight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Typeface.Weight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontWeight</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>書体の相対的な重みを取得します。</summary>
+        <value>A<see cref="T:System.Windows.FontWeight" />タイプフェイスの相対的な重みを表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一般に、太さの違いは増加ストロークまたはその同じタイプフェイスの「通常」の文字と比較して、タイプフェイスの特定の文字に関連付けられている太さによって区別されます。  
+  
+ **注**すべての重量はすべて書体を使用できます。 重み付けが書体を使用できない場合は、最も近い一致する重みが返されます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[FontSnippets#110](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/Window1.xaml.cs#110)]
+ [!code-vb[FontSnippets#110](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/window1.xaml.vb#110)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XHeight">
+      <MemberSignature Language="C#" Value="public double XHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 XHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Typeface.XHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タイプフェイスの英語の小文字の先頭に、基準からの距離を取得します。 距離は、アセンダーを除外します。</summary>
+        <value>A<see cref="T:System.Double" />ベースラインから英語の小文字 (アセンダーを除く)、フォントの em サイズの割合で表したの一番上までの距離を示すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値の`0.25`英語の文字の先頭が戻り値の中に、ベースラインを超えたフォントの em の 4 分の 1 であることを示します`0.75`英語の文字の先頭が、ベースラインを超えたフォントの em の 4 分の 3 つであることを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

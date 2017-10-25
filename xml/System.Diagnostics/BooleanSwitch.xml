@@ -1,0 +1,274 @@
+<Type Name="BooleanSwitch" FullName="System.Diagnostics.BooleanSwitch">
+  <TypeSignature Language="C#" Value="public class BooleanSwitch : System.Diagnostics.Switch" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BooleanSwitch extends System.Diagnostics.Switch" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.BooleanSwitch" />
+  <AssemblyInfo>
+    <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Diagnostics.Switch</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.SwitchLevel(typeof(System.Boolean))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>デバッグとトレースの出力を制御する単純なオン/オフの切り替え機能を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ブール トレース スイッチを使用して、有効にするにまたは重要度に基づいてメッセージを無効にすることができます。 使用して、<xref:System.Diagnostics.BooleanSwitch.Enabled%2A>スイッチの現在の値を取得するプロパティです。  
+  
+ 有効または無効にすることができます、<xref:System.Diagnostics.BooleanSwitch>しを使用して、構成された、アプリケーション構成ファイルを通じて<xref:System.Diagnostics.BooleanSwitch>アプリケーションの値。 また、作成することができます、<xref:System.Diagnostics.BooleanSwitch>コードとセットに、<xref:System.Diagnostics.BooleanSwitch.Enabled%2A>コードの特定のセクションをインストルメント化するには、直接プロパティです。  
+  
+ 構成するのには<xref:System.Diagnostics.BooleanSwitch>アプリケーションの名前に対応する構成ファイルを編集します。 このファイル内でことができますを追加またはスイッチの削除、スイッチの値を設定またはオフにするスイッチは、以前、アプリケーションによって設定されたすべてです。 構成ファイルは、次の例のようにフォーマットされている必要があります。  
+  
+```  
+<configuration>  
+  <system.diagnostics>  
+    <switches>  
+      <add name="mySwitch" value="1"/>  
+    </switches>  
+  </system.diagnostics>  
+</configuration>  
+```  
+  
+ この例の構成セクションを定義、<xref:System.Diagnostics.BooleanSwitch>で、<xref:System.Diagnostics.Switch.DisplayName%2A>プロパティに設定`mySwitch`と<xref:System.Diagnostics.BooleanSwitch.Enabled%2A>値に設定`true`です。 作成することで構成されているスイッチの値を使用する、アプリケーション内で、<xref:System.Diagnostics.BooleanSwitch>次のコード例に示すように、同じ名前のです。  
+  
+ [!code-cpp[Classic BooleanSwitch.BooleanSwitch Example#2](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic BooleanSwitch.BooleanSwitch Example/CPP/remarks.cpp#2)]
+ [!code-csharp[Classic BooleanSwitch.BooleanSwitch Example#2](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic BooleanSwitch.BooleanSwitch Example/CS/remarks.cs#2)]
+ [!code-vb[Classic BooleanSwitch.BooleanSwitch Example#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic BooleanSwitch.BooleanSwitch Example/VB/remarks.vb#2)]  
+  
+ 既定では、<xref:System.Diagnostics.BooleanSwitch.Enabled%2A>構成ファイルで指定された値を使用してプロパティを設定します。 値 0 を設定すると、スイッチを構成、<xref:System.Diagnostics.BooleanSwitch.Enabled%2A>プロパティを`false`; 0 以外の値を設定すると、スイッチを構成、<xref:System.Diagnostics.BooleanSwitch.Enabled%2A>プロパティを`true`です。 場合、<xref:System.Diagnostics.BooleanSwitch>コンス トラクターは、構成ファイルでスイッチの初期設定を見つけることができません、<xref:System.Diagnostics.BooleanSwitch.Enabled%2A>新しいスイッチのプロパティが設定されて`false`既定です。  
+  
+ トレース出力またはスイッチを使用してデバッグを有効にする必要があります。 次の構文は、コンパイラに固有です。 以外は、c# または Visual Basic コンパイラを使用する場合は、コンパイラのドキュメントを参照してください。  
+  
+-   C# でのデバッグを有効にするには追加、`/d:DEBUG`するを追加したり、コードをコンパイルするときに、コンパイラのコマンドラインにフラグ`#define DEBUG`ファイルの先頭にします。 Visual basic では、追加、`/d:DEBUG=True`フラグをコンパイラ コマンドライン。  
+  
+-   C# でのトレースを有効にするには追加、`/d:TRACE`フラグを追加したり、コードをコンパイルすると、コンパイラのコマンドライン`#define TRACE`ファイルの先頭にします。 Visual basic では、追加、`/d:TRACE=True`フラグをコンパイラ コマンドライン。  
+  
+> [!NOTE]
+>  これらのデバッグし、トレース コンパイラ スイッチを使用する場合は必要ありません、<xref:System.Diagnostics.BooleanSwitch>分離内のクラスです。 と共にのみに必要な<xref:System.Diagnostics.Trace>または<xref:System.Diagnostics.Debug>条件付きでコンパイルされるメソッド。  
+  
+ アプリケーションのインストルメント化の詳細については、次を参照してください。<xref:System.Diagnostics.Debug>と<xref:System.Diagnostics.Trace>です。 詳細については、構成して、トレース スイッチを使用して、次を参照してください。[トレース スイッチ](~/docs/framework/debug-trace-profile/trace-switches.md)です。  
+  
+> [!NOTE]
+>  パフォーマンスを向上させることができますを行う<xref:System.Diagnostics.BooleanSwitch>メンバー`static`クラスにします。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Diagnostics.BooleanSwitch>スイッチを使用するエラー メッセージを出力するかどうかを決定します。 クラス レベルでは、スイッチを作成します。 `Main`メソッドは、自身の位置を渡します`MyMethod`、エラー メッセージを出力して、エラーが発生します。  
+  
+ [!code-cpp[Classic BooleanSwitch.BooleanSwitch Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic BooleanSwitch.BooleanSwitch Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BooleanSwitch.BooleanSwitch Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic BooleanSwitch.BooleanSwitch Example/CS/source.cs#1)]
+ [!code-vb[Classic BooleanSwitch.BooleanSwitch Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic BooleanSwitch.BooleanSwitch Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BooleanSwitch (string displayName, string description);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string displayName, string description) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.BooleanSwitch.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="displayName" Type="System.String" />
+        <Parameter Name="description" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="displayName">ユーザー インターフェイスに表示される名前。</param>
+        <param name="description">スイッチの説明。</param>
+        <summary>指定した表示名と説明を使用して、<see cref="T:System.Diagnostics.BooleanSwitch" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成するときに、 <xref:System.Diagnostics.BooleanSwitch>、`displayName`スイッチの初期設定を検索するパラメーターを使用します。 コンス トラクターは、初期設定を見つけられない場合、<xref:System.Diagnostics.BooleanSwitch.Enabled%2A>プロパティに設定されている`false`(無効)。  
+  
+ レベルを設定する、<xref:System.Diagnostics.BooleanSwitch>アプリケーションの名前に対応する構成ファイルを編集します。 このファイル内でことができますスイッチを追加してその値を設定、スイッチの削除またはオフにするすべてのスイッチが、アプリケーションで以前に設定します。 構成ファイルは、次の例のようにフォーマットする必要があります。  
+  
+```  
+<configuration>  
+    <system.diagnostics>  
+       <switches>  
+          <add name="mySwitch" value="10" />  
+          <add name="myNewSwitch" value="20" />  
+          <remove name="mySwitch" />  
+          <clear/>  
+       </switches>  
+    </system.diagnostics>  
+ </configuration>  
+```  
+  
+> [!NOTE]
+>  作成したスイッチにする必要があります`static`です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Diagnostics.BooleanSwitch>スイッチを使用するエラー メッセージを出力するかどうかを決定します。 スイッチは、クラス レベルで作成されます。 `Main`メソッドは、自身の位置を渡します`MyMethod`、エラー メッセージを出力して、エラーが発生します。  
+  
+ [!code-cpp[Classic BooleanSwitch.BooleanSwitch Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic BooleanSwitch.BooleanSwitch Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BooleanSwitch.BooleanSwitch Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic BooleanSwitch.BooleanSwitch Example/CS/source.cs#1)]
+ [!code-vb[Classic BooleanSwitch.BooleanSwitch Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic BooleanSwitch.BooleanSwitch Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BooleanSwitch (string displayName, string description, string defaultSwitchValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string displayName, string description, string defaultSwitchValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.BooleanSwitch.#ctor(System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="displayName" Type="System.String" />
+        <Parameter Name="description" Type="System.String" />
+        <Parameter Name="defaultSwitchValue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="displayName">ユーザー インターフェイスに表示される名前。</param>
+        <param name="description">スイッチの説明。</param>
+        <param name="defaultSwitchValue">スイッチの既定値。</param>
+        <summary>指定した表示名、説明、および既定のスイッチ値を使用して、<see cref="T:System.Diagnostics.BooleanSwitch" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `displayName`パラメーターの値を設定するため、<xref:System.Diagnostics.Switch.DisplayName%2A>プロパティ、および`description`の値を設定するパラメーターを使用して、<xref:System.Diagnostics.Switch.Description%2A>プロパティです。 `defaultSwitchValue`パラメーターがフィールドとして保存され、初期化に使用される、<xref:System.Diagnostics.Switch.Value%2A>最初の参照のプロパティです。 コンス トラクターの使用に関する詳細については、次を参照してください。、<xref:System.Diagnostics.BooleanSwitch.%23ctor%28System.String%2CSystem.String%29>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.BooleanSwitch.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スイッチが有効であるか、または無効であるかを示す値を取得または設定します。</summary>
+        <value>
+          スイッチが有効な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、このフィールドに設定`false`(無効)。 スイッチを有効にするには、このフィールドの値を割り当てます`true`です。 スイッチを無効にする値を割り当てる`false`です。  このプロパティの値は、基本クラスのプロパティの値によって決まります<xref:System.Diagnostics.Switch.SwitchSetting%2A>です。  
+  
+> [!NOTE]
+>  このメソッドを使用して、<xref:System.Security.Permissions.SecurityAction?displayProperty=nameWithType>信頼されていないコードから呼び出されるようにするためのフラグです。 直前の呼び出し元のみする必要がある<xref:System.Security.Permissions.SecurityPermissionAttribute.UnmanagedCode%2A?displayProperty=nameWithType>権限です。 コードは、部分信頼コードから呼び出すことが場合、は、ユーザー入力を渡さない<xref:System.Runtime.InteropServices.Marshal>クラスの検証を伴わないメソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Diagnostics.BooleanSwitch>スイッチを使用するエラー メッセージを出力するかどうかを決定します。 スイッチは、クラス レベルで作成されます。 `Main`メソッドは、自身の位置を渡します`MyMethod`、これは、エラー メッセージとエラーが発生した場所を印刷します。  
+  
+ [!code-cpp[Classic BooleanSwitch.Enabled Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic BooleanSwitch.Enabled Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BooleanSwitch.Enabled Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic BooleanSwitch.Enabled Example/CS/source.cs#1)]
+ [!code-vb[Classic BooleanSwitch.Enabled Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic BooleanSwitch.Enabled Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、正しいアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを操作します。 要求値<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="OnValueChanged">
+      <MemberSignature Language="C#" Value="protected override void OnValueChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnValueChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.BooleanSwitch.OnValueChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.Diagnostics.Switch.Value" /> プロパティの新しい値を、ブール値として解析可能かどうかを判別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.BooleanSwitch.OnValueChanged%2A>メソッドは、新しい値はブール値 ("false"または"true") の有効な文字列形式であるかどうかを判断します。 そのため、メソッドが設定する場合、<xref:System.Diagnostics.Switch.SwitchSetting%2A>プロパティを 0 または 1 です。  それ以外の場合、基本メソッドを呼び出して、設定を使用して、整数値を文字列値に変換する<xref:System.Diagnostics.Switch.SwitchSetting%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

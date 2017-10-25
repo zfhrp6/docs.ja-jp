@@ -1,0 +1,154 @@
+<Type Name="TemplateParser" FullName="System.Web.UI.TemplateParser">
+  <TypeSignature Language="C#" Value="public abstract class TemplateParser : System.Web.UI.BaseParser" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit TemplateParser extends System.Web.UI.BaseParser" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.TemplateParser" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.BaseParser</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET ファイル パーサーの抽象基本クラスとして機能します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.TemplateParser>クラス パーサー クラスの一般的な機能を提供します。 <xref:System.Web.UI.TemplateParser>が抽象クラスで、このクラスのインスタンスが直接作成されません。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="ParseFile">
+      <MemberSignature Language="C#" Value="protected void ParseFile (string physicalPath, string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void ParseFile(string physicalPath, string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateParser.ParseFile(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="physicalPath" Type="System.String" />
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="physicalPath">解析対象のファイルの物理パス。 <c>physicalPath</c>経由での優先順位を持つ<c>virtualPath</c>です。</param>
+        <param name="virtualPath">解析対象のファイルの仮想パス。</param>
+        <summary>その仮想でも物理でもで指定されているファイルの内容を解析パス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 物理パスを指定すると、それが使用仮想パス経由でファイルを検索するためが解析されます。  
+  
+ 解析対象のファイルへのパスが循環参照です。つまり、パーサーの解析は現在、ファイルと同じファイルを参照、<xref:System.Web.HttpException>例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">
+          <paramref name="physicalPath" />または<paramref name="virtualPath" />は現在解析されているファイルを参照します。</exception>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ParseTemplate">
+      <MemberSignature Language="C#" Value="public static System.Web.UI.ITemplate ParseTemplate (string content, string virtualPath, bool ignoreFilter);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.ITemplate ParseTemplate(string content, string virtualPath, bool ignoreFilter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateParser.ParseTemplate(System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="content" Type="System.String" />
+        <Parameter Name="virtualPath" Type="System.String" />
+        <Parameter Name="ignoreFilter" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="content">コンテンツ。</param>
+        <param name="virtualPath">仮想パス。</param>
+        <param name="ignoreFilter">
+          <see langword="true" />フィルターを無視するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>テンプレートを解析します。</summary>
+        <returns>テンプレートを返します。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessError">
+      <MemberSignature Language="C#" Value="protected void ProcessError (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void ProcessError(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateParser.ProcessError(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">新規作成に使用されるエラー メッセージ テキスト<see cref="T:System.Web.ParserError" />です。</param>
+        <summary>新しく作成することで、プロセス エラーを報告します。<see cref="T:System.Web.ParserError" />オブジェクトの指定したメッセージとに追加すること、<see cref="T:System.Web.ParserErrorCollection" />コレクション。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessException">
+      <MemberSignature Language="C#" Value="protected void ProcessException (Exception ex);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void ProcessException(class System.Exception ex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateParser.ProcessException(System.Exception)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ex" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="ex"><see cref="T:System.Exception" />を新規作成するために使用<see cref="T:System.Web.ParserError" />です。</param>
+        <summary>新たに作成することによって、パーサー例外を報告<see cref="T:System.Web.ParserError" />オブジェクトとして指定された<see cref="T:System.Exception" />例外とに追加すること、<see cref="T:System.Web.ParserErrorCollection" />コレクション。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Web.HttpCompileException"><see cref="T:System.Exception" />処理には、コンパイラ エラーが発生します。</exception>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.TemplateParser.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>解析データを格納する文字列を取得します。</summary>
+        <value>解析するデータ。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

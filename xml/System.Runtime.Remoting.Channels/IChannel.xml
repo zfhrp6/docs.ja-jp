@@ -1,0 +1,140 @@
+<Type Name="IChannel" FullName="System.Runtime.Remoting.Channels.IChannel">
+  <TypeSignature Language="C#" Value="public interface IChannel" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IChannel" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Channels.IChannel" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>リモート処理の境界を越えることがメッセージの経路を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リモート処理の境界を指定できます<xref:System.Runtime.Remoting.Contexts.Context>s、 <xref:System.AppDomain>s、プロセス、またはコンピューター。 アプリケーションは、チャネルを使用してのみ、これらの境界を越えることができます。 このような転送は、受信および送信できます。 チャネルが受信メッセージのエンドポイントでリッスン、送信メッセージ、またはその両方のエンドポイントに送信できます。 これにより、チャネルのもう一方の端に、ランタイムが存在しない場合でも、さまざまなプロトコルで接続するランタイムの機能拡張ポイントが提供します。  
+  
+ 全体に適用され、機能豊富な一連のセマンティクスとエンティティを表すため、実行時のオブジェクトを使用できます。 チャネルは、特定のプロトコルとの間、メッセージに変換する機能拡張ポイントを提供します。 チャネルの両端にランタイムがある場合は、境界のいずれかの側のクライアントとサーバーのシンク チェーンを接続するために、2 つの端の間で仮想チャネルが作成されます。  
+  
+ チャネルのクライアント部分は、クライアント コンテキスト シンク チェーンの末尾に配置されます。 チャネルのサーバー部分は、サーバー コンテキスト シンク チェーンの先頭にあります。 メッセージは、チャネルを使用してクライアントに配信される、<xref:System.Runtime.Remoting.Messaging.IMessageSink>インターフェイス、チャネルを経由して送信し、サーバーのチャネルによって受信されます。 サーバー チャネルは、最初のサーバー コンテキスト シンクにメッセージを配信します。  
+  
+ チャネルを公開する必要があります、<xref:System.Runtime.Remoting.Channels.IChannel>などの情報のプロパティを提供するインターフェイス、<xref:System.Runtime.Remoting.Channels.IChannel.ChannelName%2A>と<xref:System.Runtime.Remoting.Channels.IChannel.ChannelPriority%2A>プロパティです。 使用してチャネルを登録することができます、<xref:System.Runtime.Remoting.Channels.ChannelServices.RegisterChannel%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ChannelName">
+      <MemberSignature Language="C#" Value="public string ChannelName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ChannelName" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.IChannel.ChannelName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チャネルの名前を取得します。</summary>
+        <value>チャネルの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[HttpServerChannel_Server_Client#2](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpServerChannel_Server_Client/CPP/httpserverchannel_9_server.cpp#2)]
+ [!code-csharp[HttpServerChannel_Server_Client#2](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpServerChannel_Server_Client/CS/httpserverchannel_9_server.cs#2)]
+ [!code-vb[HttpServerChannel_Server_Client#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpServerChannel_Server_Client/VB/httpserverchannel_9_server.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ChannelPriority">
+      <MemberSignature Language="C#" Value="public int ChannelPriority { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ChannelPriority" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.IChannel.ChannelPriority" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チャネルの優先度を取得します。</summary>
+        <value>チャネルの優先度を示す整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 数値が大きいほど優先順位の高いを示す 50 の優先度のチャンネルがある優先度の 25 チャネルよりも優先します。 クロス アプリケーション ドメインのチャネルは、100 の優先順位を持ちます。  
+  
+ 優先度の高いクライアント チャネルには、URL またはから特定のチャネル データのエントリで指定されたリモート オブジェクトへの接続に最初の機会が与えられます、<xref:System.Runtime.Remoting.ObjRef>です。  
+  
+ サーバー チャネルの優先順位が内のチャネル データが表示されます順序を示す、<xref:System.Runtime.Remoting.ObjRef>クライアントが試みますサーバー オブジェクトに接続する順序が影響を及ぼします。 優先順位が 50 の HTTP チャネルと優先順位が 25 TCP チャネルで、サーバーがリッスンしているクライアントには、HTTP および TCP の両方のチャネルが登録されている場合は、クライアントは使用 HTTP チャネル、サーバーと通信します。  
+  
+   
+  
+## Examples  
+ [!code-cpp[HttpServerChannel_Server_Client#5](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpServerChannel_Server_Client/CPP/httpclientchannel_6_client.cpp#5)]
+ [!code-csharp[HttpServerChannel_Server_Client#5](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpServerChannel_Server_Client/CS/httpclientchannel_6_client.cs#5)]
+ [!code-vb[HttpServerChannel_Server_Client#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpServerChannel_Server_Client/VB/httpclientchannel_6_client.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public string Parse (string url, out string objectURI);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string Parse(string url, [out] string&amp; objectURI) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.IChannel.Parse(System.String,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="objectURI" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="url">オブジェクトの URL です。</param>
+        <param name="objectURI">このメソッドが戻るとき、 <see cref="T:System.String" /> URI オブジェクトを保持します。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>Out パラメーター、および戻り値として現在のチャネルの URI として URI オブジェクトを返します。</summary>
+        <returns>現在のチャネルの URI または<see langword="null" />URI がこのチャネルに属していない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[HttpServerChannel_Server_Client#5](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpServerChannel_Server_Client/CPP/httpclientchannel_6_client.cpp#5)]
+ [!code-csharp[HttpServerChannel_Server_Client#5](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpServerChannel_Server_Client/CS/httpclientchannel_6_client.cs#5)]
+ [!code-vb[HttpServerChannel_Server_Client#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpServerChannel_Server_Client/VB/httpclientchannel_6_client.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

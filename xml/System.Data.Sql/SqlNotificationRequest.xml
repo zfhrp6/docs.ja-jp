@@ -1,0 +1,175 @@
+<Type Name="SqlNotificationRequest" FullName="System.Data.Sql.SqlNotificationRequest">
+  <TypeSignature Language="C#" Value="public sealed class SqlNotificationRequest" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SqlNotificationRequest extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Sql.SqlNotificationRequest" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>指定されたコマンドに対する通知の要求を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、SQL Server 2005 によって公開されているクエリ通知サービスへの低レベルのアクセスを提供します。 ほとんどのアプリケーション、<xref:System.Data.SqlClient.SqlDependency>クラスには、クエリ通知の使用の簡単な方法が用意されています。 ただし、経由でコントロールを微調整する必要がある場合と通知が行われた、または、通知の一部として返されるメッセージ データをカスタマイズする必要があります、<xref:System.Data.Sql.SqlNotificationRequest>クラスは、1 つを使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlNotificationRequest ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Sql.SqlNotificationRequest.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>既定値を使用して <see cref="T:System.Data.Sql.SqlNotificationRequest" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のコンス トラクターを使用して作成する場合、<xref:System.Data.Sql.SqlNotificationRequest>オブジェクト、そのインスタンスが必要、<xref:System.Data.Sql.SqlNotificationRequest.UserData%2A>と<xref:System.Data.Sql.SqlNotificationRequest.Options%2A>オブジェクトを割り当てる前に初期化されるプロパティ、<xref:System.Data.SqlClient.SqlCommand>オブジェクトの<xref:System.Data.SqlClient.SqlCommand.Notification%2A>プロパティです。 コンス トラクターによって使用される既定値は NULL (`Nothing` Visual Basic で) の<xref:System.Data.Sql.SqlNotificationRequest.UserData%2A>、空の文字列の<xref:System.Data.Sql.SqlNotificationRequest.Options%2A>、ゼロをおよび、<xref:System.Data.Sql.SqlNotificationRequest.Timeout%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlNotificationRequest (string userData, string options, int timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string userData, string options, int32 timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Sql.SqlNotificationRequest.#ctor(System.String,System.String,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="userData" Type="System.String" />
+        <Parameter Name="options" Type="System.String" />
+        <Parameter Name="timeout" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="userData">この通知のため、アプリケーション固有の識別子を表す文字列。 通知のインフラストラクチャでは使用されませんに通知をアプリケーションの状態に関連付けることができます。 このパラメーターで示された値は、Service Broker キューのメッセージに含まれています。</param>
+        <param name="options">通知メッセージが送信先、Service Broker サービスの名前を含む文字列とは、データベース名または Service Broker インスタンスを特定のデータベースの名前のサービス参照のスコープを制限する GUID を含める必要があります。  
+  
+ 形式の詳細については、<c>オプション</c>パラメーターを参照してください<see cref="P:System.Data.Sql.SqlNotificationRequest.Options" />です。</param>
+        <param name="timeout">通知メッセージを待機する秒単位の時間。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Data.Sql.SqlNotificationRequest" />を特定の通知の要求では、定義済みの SQL Server 2005 Service Broker サービス名、およびタイムアウト期間の名前を識別するユーザー定義の文字列を持つクラスは、秒単位で計測します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用すると、新しい初期化<xref:System.Data.Sql.SqlNotificationRequest>独自の識別子、SQL Server 2005 Service Broker サービス名、およびタイムアウト値を提供するインスタンス。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">値、<paramref name="options" />パラメーターが NULL です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="options" />または<paramref name="userData" />パラメーターより長い<see langword="uint16.MaxValue" />またはの値、<paramref name="timeout" />パラメーターが 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Options">
+      <MemberSignature Language="C#" Value="public string Options { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Options" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Sql.SqlNotificationRequest.Options" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または通知メッセージの送信先を SQL Server Service Broker サービス名に設定します。</summary>
+        <value>
+          <see langword="string" />通知メッセージの送信先の SQL Server 2005 Service Broker サービス名とデータベースまたはサービスのブローカー インスタンス、サーバーの名前参照のスコープを指定する GUID が含まれます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Data.Sql.SqlNotificationRequest.Options%2A>プロパティには、次の形式。  
+  
+ `service=<service-name>{;(local database=<database>|broker instance=<broker instance>)}`  
+  
+ たとえば、データベース"AdventureWorks"で"myservice"サービスを使用する場合は、形式です。  
+  
+ `service=myservice;local database=AdventureWorks`  
+  
+ SQL Server Service Broker サービスは、サーバーでは事前に構成する必要があります。 さらに、Service Broker サービスとキューを定義する必要があり、として与えられるセキュリティのアクセスが必要です。 詳細については SQL Server 2005 のマニュアルを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">値は NULL です。</exception>
+        <exception cref="T:System.ArgumentException">値がより長い<see langword="uint16.MaxValue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Timeout">
+      <MemberSignature Language="C#" Value="public int Timeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Timeout" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Sql.SqlNotificationRequest.Timeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または操作がタイムアウト前に変更するための SQL Server の待機時間を指定する値を設定します。</summary>
+        <value>SQL Server の操作がタイムアウトする前に発生する変更の待機時間を秒単位で指定する符号付き整数値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タイムアウト期間が過ぎると、場合でも、変更は行われません、通知は送信されます。 <xref:System.Data.Sql.SqlNotificationRequest.Timeout%2A>サーバーで設定された値にプロパティの既定値です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UserData">
+      <MemberSignature Language="C#" Value="public string UserData { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UserData" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Sql.SqlNotificationRequest.UserData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこの通知のため、アプリケーション固有の識別子を設定します。</summary>
+        <value>A<see langword="string" />この通知のアプリケーション固有の識別子の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は、通知のインフラストラクチャでは使用されません。 代わりに、アプリケーションに関連付けるアプリケーションの状態の通知をできる機構を勧めします。 指定された値、<xref:System.Data.Sql.SqlNotificationRequest.UserData%2A>プロパティは、SQL Server 2005 のキューのメッセージに含まれています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">値がより長い<see langword="uint16.MaxValue" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

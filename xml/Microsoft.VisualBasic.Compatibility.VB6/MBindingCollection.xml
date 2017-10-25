@@ -1,0 +1,491 @@
+<Type Name="MBindingCollection" FullName="Microsoft.VisualBasic.Compatibility.VB6.MBindingCollection">
+  <TypeSignature Language="C#" Value="public class MBindingCollection : IDisposable, Microsoft.VisualBasic.Compatibility.VB6.DBindingCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi MBindingCollection extends System.Object implements class Microsoft.VisualBasic.Compatibility.VB6.DBindingCollection, class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Compatibility.VB6.MBindingCollection" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>Microsoft.VisualBasic.Compatibility.VB6.DBindingCollection</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Visual Basic 6.0 からアップグレードしたアプリケーションでの COM ベースのデータ バインディングを置換するインターフェイスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MBindingCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.MBindingCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.VisualBasic.Compatibility.VB6.MBindingCollection" /> のインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public Microsoft.VisualBasic.Compatibility.VB6.DBinding Add (object obj, string propertyName, string dataField, Microsoft.VisualBasic.Compatibility.VB6.IDataFormatDisp dataFormat = null, string key = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Microsoft.VisualBasic.Compatibility.VB6.DBinding Add(object obj, string propertyName, string dataField, class Microsoft.VisualBasic.Compatibility.VB6.IDataFormatDisp dataFormat, string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.MBindingCollection.Add(System.Object,System.String,System.String,Microsoft.VisualBasic.Compatibility.VB6.IDataFormatDisp,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.Compatibility.VB6.DBinding</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="dataField" Type="System.String" />
+        <Parameter Name="dataFormat" Type="Microsoft.VisualBasic.Compatibility.VB6.IDataFormatDisp" />
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="obj"><see cref="T:System.Object" />データが含まれます。</param>
+        <param name="propertyName">A<see langword="String" />プロパティ名を格納しています。</param>
+        <param name="dataField">A<see langword="String" />データ フィールドの名前を格納しています。</param>
+        <param name="dataFormat">省略可能です。 <see cref="T:Microsoft.VisualBasic.Compatibility.VB6.IDataFormatDisp" /> インターフェイス。</param>
+        <param name="key">省略可能です。 A<see langword="String" />キーの値を格納します。</param>
+        <summary>追加、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.MBinding" />を<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.MBindingCollection" />です。</summary>
+        <returns>A<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.MBinding" />インターフェイスです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public Microsoft.VisualBasic.Compatibility.VB6.DBinding Add (object obj, string propertyName, string dataField, Microsoft.VisualBasic.Compatibility.VB6.IDataFormatDisp dataFormat, string key, bool immediateBind);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.VisualBasic.Compatibility.VB6.DBinding Add(object obj, string propertyName, string dataField, class Microsoft.VisualBasic.Compatibility.VB6.IDataFormatDisp dataFormat, string key, bool immediateBind) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.MBindingCollection.Add(System.Object,System.String,System.String,Microsoft.VisualBasic.Compatibility.VB6.IDataFormatDisp,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.Compatibility.VB6.DBinding</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="dataField" Type="System.String" />
+        <Parameter Name="dataFormat" Type="Microsoft.VisualBasic.Compatibility.VB6.IDataFormatDisp" />
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="immediateBind" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="obj"><see cref="T:System.Object" />データが含まれます。</param>
+        <param name="propertyName">A<see langword="String" />プロパティ名を格納しています。</param>
+        <param name="dataField">A<see langword="String" />データ フィールドの名前を格納しています。</param>
+        <param name="dataFormat"><see cref="T:Microsoft.VisualBasic.Compatibility.VB6.IDataFormatDisp" /> インターフェイス。</param>
+        <param name="key">A<see langword="String" />キーの値を格納します。</param>
+        <param name="immediateBind">
+          <see langword="true" />すぐにバインドするにはそれ以外の場合<see langword="false" />です。</param>
+        <summary>追加、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.MBinding" />を<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.MBindingCollection" />です。</summary>
+        <returns>A<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.MBinding" />インターフェイスです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.MBindingCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>バインディング オブジェクトのコレクションを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.MBindingCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内のバインディングの合計数を取得、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.MBindingCollection" />です。</summary>
+        <value><see langword="Integer" />カウントを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataMember">
+      <MemberSignature Language="C#" Value="public string DataMember { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataMember" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.MBindingCollection.DataMember" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ メンバーを取得または設定、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.MBindingCollection" />です。</summary>
+        <value>A<see langword="String" />データ メンバーの名前を格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSource">
+      <MemberSignature Language="C#" Value="public msdatasrc.DataSource DataSource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class msdatasrc.DataSource DataSource" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.MBindingCollection.DataSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>msdatasrc.DataSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のデータ ソース、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.MBindingCollection" />です。</summary>
+        <value>COM ベース<see langword="msdatasrc.DataSource" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="T:System.Windows.Forms.BindingSource" />
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.MBindingCollection.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>によって使用されているアンマネージ リソースを解放する<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.MBindingCollection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック`Dispose()`メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyinstance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.MBindingCollection.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary>によって使用されているアンマネージ リソースを解放する<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.MBindingCollection" />し、必要に応じてマネージ リソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック`Dispose()`メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 `Dispose()`プロテクト呼び出します`Dispose(Boolean)`disposing パラメーター設定したメソッド`true`です。 <xref:System.Object.Finalize%2A>呼び出す`Dispose`disposing パラメーター設定した`false`です。  
+  
+ Disposing パラメーターがの場合`true`、このメソッドは、このコントロールを参照するすべてのマネージ オブジェクトによって保持されているすべてのリソースを解放します。 このメソッドは、参照される各オブジェクトの `Dispose()` メソッドを呼び出します。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.MBindingCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>列挙子を取得、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.MBindingCollection" />です。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />のコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public Microsoft.VisualBasic.Compatibility.VB6.DBinding this[object index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.VisualBasic.Compatibility.VB6.DBinding Item(object)" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.MBindingCollection.Item(System.Object)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.Compatibility.VB6.DBinding</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index"><see cref="T:System.Object" />を表すインデックスです。</param>
+        <summary>指定されたインデックス位置にある <see cref="T:Microsoft.VisualBasic.Compatibility.VB6.MBinding" /> を取得します。</summary>
+        <value>A<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.MBinding" />インターフェイスです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (object index);" />
+      <MemberSignature Language="ILAsm" Value=".method public newslot virtual instance void Remove(object index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.MBindingCollection.Remove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index"><see cref="T:System.Object" />を表すインデックスです。</param>
+        <summary>削除、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.MBinding" />からインターフェイス、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.MBindingCollection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SavePendingChanges">
+      <MemberSignature Language="C#" Value="public void SavePendingChanges ();" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void SavePendingChanges() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.MBindingCollection.SavePendingChanges" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>変更を保存するかどうか、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.MBindingCollection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateControls">
+      <MemberSignature Language="C#" Value="public void UpdateControls ();" />
+      <MemberSignature Language="ILAsm" Value=".method public newslot virtual instance void UpdateControls() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.MBindingCollection.UpdateControls" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ ソースから現在の行を取得、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.MBindingCollection" />オブジェクトおよびオブジェクトによってバインドされたコントロールの内容をリセットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateMode">
+      <MemberSignature Language="C#" Value="public Microsoft.VisualBasic.Compatibility.VB6.UpdateMode UpdateMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Microsoft.VisualBasic.Compatibility.VB6.UpdateMode UpdateMode" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.MBindingCollection.UpdateMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.Compatibility.VB6.UpdateMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="P:Microsoft.VisualBasic.Compatibility.VB6.MBindingCollection.UpdateMode" />の<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.MBindingCollection" />です。</summary>
+        <value>A<see cref="P:Microsoft.VisualBasic.Compatibility.VB6.DBindingCollection.UpdateMode" />列挙します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

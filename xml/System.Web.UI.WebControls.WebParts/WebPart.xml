@@ -1,0 +1,2016 @@
+<Type Name="WebPart" FullName="System.Web.UI.WebControls.WebParts.WebPart">
+  <TypeSignature Language="C#" Value="public abstract class WebPart : System.Web.UI.WebControls.WebParts.Part, System.Web.UI.WebControls.WebParts.IWebActionable, System.Web.UI.WebControls.WebParts.IWebEditable, System.Web.UI.WebControls.WebParts.IWebPart" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit WebPart extends System.Web.UI.WebControls.WebParts.Part implements class System.Web.UI.WebControls.WebParts.IWebActionable, class System.Web.UI.WebControls.WebParts.IWebEditable, class System.Web.UI.WebControls.WebParts.IWebPart" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.WebPart" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.WebParts.Part</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.WebControls.WebParts.IWebActionable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.UI.WebControls.WebParts.IWebEditable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.UI.WebControls.WebParts.IWebPart</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.WebParts.WebPartDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ベースに追加するカスタムの ASP.NET Web パーツ コントロールの基底クラスとして機能<see cref="T:System.Web.UI.WebControls.WebParts.Part" />クラスの機能、追加のユーザー インターフェイス (UI) プロパティ、接続、およびパーソナル化の動作を作成する機能。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web パーツの機能を持つコントロールを作成する場合は、2 つの基本的なオプションがあります。 派生するカスタム コントロールを作成することができます、<xref:System.Web.UI.WebControls.WebParts.WebPart>クラス、または作成したりその他のサーバー コントロールを使用します。 既存の ASP.NET コントロール、カスタム サーバー コントロール、およびユーザー コントロールすべてを指定できますすべての Web パーツ機能内で、これらを宣言することによって (またはそれらをプログラムで追加)、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>でラップされる結果でのコントロールのゾーン<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>実行時にオブジェクトおよび true として扱われます<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 詳細については、ドキュメントを参照して、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>クラスです。 開発の速度とコードの最大の再利用の場合は、既存のサーバー コントロールを使用する適切なオプションです。 動作と Web パーツ コントロールの機能を最大限のプログラムによる制御から継承するカスタム コントロールの作成、<xref:System.Web.UI.WebControls.WebParts.WebPart>クラスは、最適なオプションでは多くの場合。  
+  
+ 抽象<xref:System.Web.UI.WebControls.WebParts.WebPart>クラスは、ベースから継承<xref:System.Web.UI.WebControls.WebParts.Part>を制御し、すべての基本的な要素を提供<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 クラスには、UI の外観に影響を与えるプロパティの共通セットが含まれています。 <xref:System.Web.UI.WebControls.WebParts.WebPart.AllowClose%2A>、 <xref:System.Web.UI.WebControls.WebParts.WebPart.AllowConnect%2A>、 <xref:System.Web.UI.WebControls.WebParts.WebPart.AllowEdit%2A>、 <xref:System.Web.UI.WebControls.WebParts.WebPart.AllowHide%2A>、 <xref:System.Web.UI.WebControls.WebParts.WebPart.AllowMinimize%2A>、および<xref:System.Web.UI.WebControls.WebParts.WebPart.AllowZoneChange%2A>プロパティにはそれぞれが特定のプロパティの名前が示す方法でパーツ コントロールと対話する Web アプリケーションのユーザーが許可されているかどうかを指定します。 <xref:System.Web.UI.WebControls.WebParts.WebPart.CatalogIconImageUrl%2A>、 <xref:System.Web.UI.WebControls.WebParts.WebPart.ChromeState%2A>、 <xref:System.Web.UI.WebControls.WebParts.WebPart.ChromeType%2A>、 <xref:System.Web.UI.WebControls.WebParts.WebPart.Description%2A>、 <xref:System.Web.UI.WebControls.WebParts.WebPart.Height%2A>、 <xref:System.Web.UI.WebControls.WebParts.WebPart.HelpUrl%2A>、 <xref:System.Web.UI.WebControls.WebParts.WebPart.Hidden%2A>、 <xref:System.Web.UI.WebControls.WebParts.WebPart.Title%2A>、 <xref:System.Web.UI.WebControls.WebParts.WebPart.TitleIconImageUrl%2A>、 <xref:System.Web.UI.WebControls.WebParts.WebPart.TitleUrl%2A>、および<xref:System.Web.UI.WebControls.WebParts.WebPart.Width%2A>プロパティのサイズ、可視性、外観、および (タイトル、説明など) のサポートのコンテンツの決定、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+ 関係、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、Web パーツ コントロール セットがなどのプロパティによって決定されます内のコンテキストを<xref:System.Web.UI.WebControls.WebParts.WebPart.WebPartManager%2A>、関連付けられているコントロールへの参照を保持する<xref:System.Web.UI.WebControls.WebParts.WebPartManager>オブジェクト、および<xref:System.Web.UI.WebControls.WebParts.WebPart.Zone%2A>、参照、<xref:System.Web.UI.WebControls.WebParts.WebZone>コントロールを格納しています。 1 つのみできます<xref:System.Web.UI.WebControls.WebParts.WebPartManager>、1 ページあたりのコントロールとの各インスタンス、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールは、1 つだけ内に存在できる<xref:System.Web.UI.WebControls.WebParts.WebZone>一度にです。  
+  
+> [!NOTE]
+>  A<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールは、Web ページ上のゾーンの外側に配置できますが、ここでは、通常のサーバー コントロールとして機能し、ほぼすべての Web パーツの機能は失われます。  
+  
+ その他のいくつかの重要なプロパティの独自の機能に影響を与える<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 <xref:System.Web.UI.WebControls.WebParts.WebPart.AuthorizationFilter%2A>プロパティにより、開発者が使用できるフィルターとして実行時にコントロールをページに追加するかどうかを決定する任意の文字列を設定します。 ロール管理などの機能と共に使用される、<xref:System.Web.UI.WebControls.WebParts.WebPart.AuthorizationFilter%2A>プロパティが定義されているユーザー ロールに基づくビューを作成するために役立ちますメカニズムを提供します。 <xref:System.Web.UI.WebControls.WebParts.WebPart.ExportMode%2A>プロパティ示すかどうかをエクスポート中に、コントロールのすべての使用可能なプロパティ データはエクスポート、または非機密データのみです。 これにより、開発者は機密データとデータがない、セキュリティ上の理由を識別します。 <xref:System.Web.UI.WebControls.WebParts.WebPart.WebBrowsableObject%2A>プロパティを返しますのインスタンスへの参照を<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールできるように、<xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロールを編集できますが、ページが編集モードです。 最後に、ページの残りの部分に相対する、コントロールの状態を示すいくつかのプロパティがあります。 <xref:System.Web.UI.WebControls.WebParts.WebPart.IsClosed%2A>プロパティは、コントロールが閉じているかどうかを示します (ために追加し、<xref:System.Web.UI.WebControls.WebParts.PageCatalogPart>オブジェクト)、または開いていると、ページで使用できる場合です。 <xref:System.Web.UI.WebControls.WebParts.WebPart.IsShared%2A>プロパティは、コントロールは、Web ページのすべてのユーザーに表示されることを意味ではなく、ユーザー固有のコントロール)、共有コントロールかどうかを示します。 <xref:System.Web.UI.WebControls.WebParts.WebPart.IsStandalone%2A>プロパティは、コントロールに現在含まれているかどうかを示す、 <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>-派生したゾーン (など<xref:System.Web.UI.WebControls.WebParts.WebPartZone>)。 値`false`コントロール ゾーン内部にある、つまりすべての Web パーツ機能ことを示します。 <xref:System.Web.UI.WebControls.WebParts.WebPart.IsStatic%2A>プロパティは、コントロールが静的または動的かどうかを示します。 ダイナミック コントロールをプログラムで追加され、スタティック コントロールは、Web ページのマークアップで宣言されます。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPart>クラスには、コントロールのライフ サイクルのさまざまな時点での動作を決定するいくつかのメソッドも用意されています。 たとえば、<xref:System.Web.UI.WebControls.WebParts.WebPart.OnConnectModeChanged%2A>と<xref:System.Web.UI.WebControls.WebParts.WebPart.OnEditModeChanged%2A>メソッドを両方のコントロールの内容の表示の各メソッドの名前に対応するイベントの中のプログラムによる制御を提供する派生クラスでオーバーライドできます。  
+  
+ 派生したクラス<xref:System.Web.UI.WebControls.WebParts.WebPart>追加できる<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>オブジェクトを<xref:System.Web.UI.WebControls.WebParts.WebPart.Verbs%2A>コレクション。 動詞がのタイトル バーに表示される動詞メニューに表示される、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 <xref:System.Web.UI.WebControls.WebParts.WebPartVerb>オブジェクトは、一般的なユーザーなどの操作で非表示にするか、コントロールを最小限にするか、ヘルプを表示する単純な UI 要素を提供します。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPart.CreateEditorParts%2A>メソッドが任意のカスタムのコレクションを作成<xref:System.Web.UI.WebControls.WebParts.EditorPart>に関連付けられているコントロール、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 編集するには、具体的には設計されているカスタム コントロールを作成できるように、開発者はこのメソッドをオーバーライドするその<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 メソッドは、ユーザーが編集動詞をクリックすると、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Web.UI.WebControls.WebParts.WebPart>を制御し、Web ページを参照します。  
+  
+ 例の最初の部分には、カスタム コードが含まれています。<xref:System.Web.UI.WebControls.WebParts.WebPart>という名前のコントロール`TextDisplayWebPart`です。 このコントロールは、単純なカスタムを作成する方法を示します<xref:System.Web.UI.WebControls.WebParts.WebPart>Web パーツの機能にアクセスすることが、設定を制御するコントロール。 コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 このコード例には、ソース コードをアセンブリにコンパイルし、Web アプリケーションの Bin サブフォルダーに配置することでアセンブリを参照することが前提としています、`Register`ディレクティブで、Web ページ。 両方のコンパイル方法を示すチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-csharp[WebParts_General_TextDisplayPart#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_General_TextDisplayPart/CS/textdisplaywebpart.cs#2)]
+ [!code-vb[WebParts_General_TextDisplayPart#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_General_TextDisplayPart/VB/textdisplaywebpart.vb#2)]  
+  
+ 例の 2 番目の部分を参照する方法を示しています、 `TextDisplayWebPart` ASP.NET Web ページにコントロールできます。 多くのさまざまなことを確認<xref:System.Web.UI.WebControls.WebParts.WebPart>プロパティを宣言して、カスタム コントロールに割り当てることができます。  
+  
+ [!code-aspx-csharp[WebParts_General_TextDisplayPart#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_General_TextDisplayPart/CS/textwebpartcs.aspx#1)]
+ [!code-aspx-vb[WebParts_General_TextDisplayPart#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_General_TextDisplayPart/VB/textwebpartvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WebPart ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPart.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>継承クラス インスタンスによって使用されるクラスを初期化します。 このコンストラクターは、継承クラスによってのみ呼び出すことができます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPart.%23ctor%2A>コンス トラクターを含む、さまざまな、いくつかの UI 指向プロパティの既定値を初期化`Allow`コントロールの機能を決定するプロパティです。 これらのプロパティが継承クラス インスタンスに組み込まれています。  
+  
+   
+  
+## Examples  
+ 次のコード例は、方法から派生するコントロールについて説明します。、<xref:System.Web.UI.WebControls.WebParts.WebPart>クラスは、ベースを設定する既定のプロパティ値を継承<xref:System.Web.UI.WebControls.WebParts.WebPart.%23ctor%2A>コンス トラクターが、派生したコントロールのコンス トラクターの 1 つのプロパティの値を変更します。  
+  
+ この例の最初の部分には、カスタム コードが含まれています。<xref:System.Web.UI.WebControls.WebParts.WebPart>という名前のコントロール`TextDisplayWebPart`です。 このコントロールは、単純なカスタムを作成する方法を示します<xref:System.Web.UI.WebControls.WebParts.WebPart>Web パーツの機能にアクセスすることが、設定を制御するコントロール。 カスタム コントロールのコンス トラクターで、`TextDisplayWebPart.AllowClose`プロパティに設定されている`false`、Web ページへのコントロールを閉じてからユーザーを回避するという効果を実行します。 コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 このコード例には、ソース コードをアセンブリにコンパイルし、Web アプリケーションの Bin サブフォルダーに配置することでアセンブリを参照することが前提としています、`Register`ディレクティブで、Web ページ。 両方のコンパイル方法を示すチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-csharp[WebParts_General_TextDisplayPart#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_General_TextDisplayPart/CS/textdisplaywebpart.cs#2)]
+ [!code-vb[WebParts_General_TextDisplayPart#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_General_TextDisplayPart/VB/textdisplaywebpart.vb#2)]  
+  
+ 例の 2 番目の部分を参照する方法を示しています、 `TextDisplayWebPart` ASP.NET Web ページにコントロールできます。 カスタムのタイトル バーの動詞メニューをクリックすると、ブラウザーでページを読み込む<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールを閉じる動詞が無効になった、コントロールを閉じてからユーザーを防ぐことができます。  
+  
+ [!code-aspx-csharp[WebParts_General_TextDisplayPart#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_General_TextDisplayPart/CS/textwebpartcs.aspx#1)]
+ [!code-aspx-vb[WebParts_General_TextDisplayPart#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_General_TextDisplayPart/VB/textwebpartvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowClose">
+      <MemberSignature Language="C#" Value="public virtual bool AllowClose { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowClose" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPart.AllowClose" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.WebControls.WebParts.Personalizable(System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはエンドユーザーが閉じることができるかどうかを示す値を設定、 <see cref="T:System.Web.UI.WebControls.WebParts.WebPart" /> Web ページ上のコントロールです。</summary>
+        <value>
+          <see langword="true" />Web ページで、コントロールを閉じることができる場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーが閉じた後、<xref:System.Web.UI.WebControls.WebParts.WebPart>表示するか、ページで使用できる、Web ページ、コントロール上のコントロールが不要になった。 終了したコントロールは、ページのカタログ、コントロールへの参照を格納する Web パーツのエンティティに追加されます。 開発者に追加する場合、<xref:System.Web.UI.WebControls.WebParts.PageCatalogPart>内のページにコントロール、<xref:System.Web.UI.WebControls.WebParts.CatalogZone>コントロール、ユーザーはカタログの表示モードにページを切り替える、ページ カタログで終了したコントロールを選択し、ページに戻ります追加することができます。  
+  
+> [!NOTE]
+>  閉じた<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールを追加できるページに戻るプログラムによって、またはカタログ内のページがページ カタログから終了したコントロールを選択したユーザーが表示されるかモード。  
+  
+ 閉じる、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールとは異なる削除します。 削除されたコントロールは完全に削除中に、ページに戻る閉じたコントロールを追加できます。 コントロールの削除の詳細については、次を参照してください。、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.DeleteWebPart%2A>メソッドです。 コントロールの終了が非表示に異なるもです。 非表示にされているコントロールは、終了したコントロールもページには表示されませんが、静止に含まれるページにはページ ライフ サイクル イベントに参加しているし、ユーザーのビューから非表示にのみです。  
+  
+ 静的および動的<xref:System.Web.UI.WebControls.WebParts.WebPart>(静的なコントロールは、宣言、ページのマークアップで動的コントロールをプログラムで追加するときに) コントロールを閉じることができます。  
+  
+ 開発者が設定する場合、<xref:System.Web.UI.WebControls.WebParts.WebPart.AllowClose%2A>プロパティを`false`、閉じる動詞は、コントロールに表示されませんし、ユーザー コントロールを閉じることができません。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ このプロパティのパーソナル化スコープに設定されている<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>し、承認されたユーザーによってのみ変更できます。 詳細については、次を参照してください。<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute>と[Web パーツのパーソナル化の概要](http://msdn.microsoft.com/library/7dc34f74-52aa-4082-b98d-2bcf9e07e320)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、既定の設定を変更する方法を示します、<xref:System.Web.UI.WebControls.WebParts.WebPart.AllowClose%2A>のカスタム プロパティ<xref:System.Web.UI.WebControls.WebParts.WebPart>制御、終了できないようにします。  
+  
+ この例の最初の部分には、カスタム コードが含まれています。<xref:System.Web.UI.WebControls.WebParts.WebPart>という名前のコントロール`TextDisplayWebPart`です。 カスタム コントロールのコンス トラクターで、`TextDisplayWebPart.AllowClose`プロパティに設定されている`false`、Web ページへのコントロールを閉じてからユーザーを回避するという効果を実行します。 つまり、ユーザー コントロールの動詞メニューの閉じる動詞を無効にします。 コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 このコード例には、ソース コードをアセンブリにコンパイルし、Web アプリケーションの Bin サブフォルダーに配置することでアセンブリを参照することが前提としています、`Register`ディレクティブで、Web ページ。 両方のコンパイル方法を示すチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-csharp[WebParts_General_TextDisplayPart#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_General_TextDisplayPart/CS/textdisplaywebpart.cs#2)]
+ [!code-vb[WebParts_General_TextDisplayPart#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_General_TextDisplayPart/VB/textdisplaywebpart.vb#2)]  
+  
+ 例の 2 番目の部分を参照する方法を示しています、 `TextDisplayWebPart` ASP.NET Web ページにコントロールできます。 において、`<aspSample:TextDisplayWebPart>`コントロールを参照する要素を変更することも、コントロールのコンス トラクターによって設定されたプロパティの値。 終了するコントロールを許可するには、するには追加、`AllowClose="true"`属性を宣言のマークアップで要素です。  
+  
+ [!code-aspx-csharp[WebParts_General_TextDisplayPart#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_General_TextDisplayPart/CS/textwebpartcs.aspx#1)]
+ [!code-aspx-vb[WebParts_General_TextDisplayPart#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_General_TextDisplayPart/VB/textwebpartvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowConnect">
+      <MemberSignature Language="C#" Value="public virtual bool AllowConnect { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowConnect" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPart.AllowConnect" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.WebControls.WebParts.Personalizable(System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを示す値を設定するかどうか、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロールを使用して接続を作成するには、その他のコントロールです。</summary>
+        <value>コントロールに接続を確立できるかどうかを示すブール値。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ページ マークアップ、またはプログラムによっては、プロパティの値を宣言して設定されることができます。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ このプロパティのパーソナル化スコープに設定されている<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>し、承認されたユーザーによってのみ変更できます。 詳細については、次を参照してください。<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute>と[Web パーツのパーソナル化の概要](http://msdn.microsoft.com/library/7dc34f74-52aa-4082-b98d-2bcf9e07e320)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowEdit">
+      <MemberSignature Language="C#" Value="public virtual bool AllowEdit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowEdit" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPart.AllowEdit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.WebControls.WebParts.Personalizable(System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはエンドユーザーが変更できるかどうかを示す値を設定、 <see cref="T:System.Web.UI.WebControls.WebParts.WebPart" /> 1 つまたは複数によって提供されるユーザー インターフェイス (UI) を使用してコントロール<see cref="T:System.Web.UI.WebControls.WebParts.EditorPart" />コントロール。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />変更後、それ以外のコントロールであることができます<see langword="false" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エンドユーザーが編集を許可する、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、<xref:System.Web.UI.WebControls.WebParts.WebPart.AllowEdit%2A>プロパティに設定する必要があります`true`(既定)、ページの表示モードが編集モードにする必要があります。 表示モードが内のフィールドで表される、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロール。 ここでは、モードは<xref:System.Web.UI.WebControls.WebParts.WebPartManager.EditDisplayMode>します。 ページに関する詳細については、モード、およびそれらを変更する方法を表示を参照してください、<xref:System.Web.UI.WebControls.WebParts.WebPartDisplayMode>クラスの概要です。  
+  
+ ときに、<xref:System.Web.UI.WebControls.WebParts.WebPart.AllowEdit%2A>プロパティに設定されている`false`編集オプションが限られて宣言的またはプログラムでは、いずれか。 可能な編集操作が、ページのレイアウトを変更するとのみを使用して、<xref:System.Web.UI.WebControls.WebParts.LayoutEditorPart>コントロール、または他の基本的な操作を使用して、カスタム<xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロール。  
+  
+ 使用する例については<xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロールが設定され、カスタム Web パーツ コントロールの編集を有効にする方法を示しています。 Web パーツからコントロールを参照してください[チュートリアル: Web パーツ ページを作成する](http://msdn.microsoft.com/library/e05b659c-d6da-46cb-b177-48efe55f2770)です。  
+  
+> [!IMPORTANT]
+>  影響を<xref:System.Web.UI.WebControls.WebParts.WebPart.AllowEdit%2A>プロパティがコントロールの上には動作が、Web ページの現在のパーソナル化スコープによっても影響を受けるし、個々 の Web パーツ コントロールのページにします。 詳細については、次を参照してください。 [Web パーツのパーソナル化の概要](http://msdn.microsoft.com/library/7dc34f74-52aa-4082-b98d-2bcf9e07e320)です。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ このプロパティのパーソナル化スコープに設定されている<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>し、承認されたユーザーによってのみ変更できます。 詳細については、次を参照してください。<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute>と[Web パーツのパーソナル化の概要](http://msdn.microsoft.com/library/7dc34f74-52aa-4082-b98d-2bcf9e07e320)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、既定の設定を変更する方法を示します、<xref:System.Web.UI.WebControls.WebParts.WebPart.AllowEdit%2A>の Web パーツのプロパティを制御するコントロールを編集できないようにします。 この例では、使用、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、`TextDisplayWebPart`の例」のセクションに存在する、<xref:System.Web.UI.WebControls.WebParts.WebPart>クラスの概要です。  
+  
+ コード例では、Web パーツ ページの表示モードを変更できるようにするカスタム ユーザー コントロールを使用します。 ユーザー コントロールがにより参照されている、`Register`ユーザー コントロールをホストする Web ページの上部にあるディレクティブです。 このユーザー コントロールを作成および表示モードを使用する方法の詳細については、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-aspx-csharp[WebParts_WebPart_AllowEdit#5](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPart_AllowEdit/CS/displaymodemenucs.ascx#5)]
+ [!code-aspx-vb[WebParts_WebPart_AllowEdit#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPart_AllowEdit/VB/displaymodemenuvb.ascx#5)]  
+  
+ Web ページの宣言型マークアップ内で、`<aspSample:TextDisplayWebPart>`コントロールを参照する要素メモ、`AllowEdit="false"`属性。 `true` 、既定値は、属性に設定されて`false`この例の目的。 ブラウザーを使用してページを読み込む、**表示モード**ドロップダウン リスト コントロールを編集モードに表示モードを変更します。 次に、 をクリックして、動詞のタイトル バー、<xref:System.Web.UI.WebControls.WebParts.WebPart>制御、およびコントロールでの編集を無効にするために、編集動詞が存在しない場合、注意してください。  
+  
+ [!code-aspx-csharp[WebParts_WebPart_AllowEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPart_AllowEdit/CS/alloweditCS.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPart_AllowEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPart_AllowEdit/VB/alloweditVB.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowHide">
+      <MemberSignature Language="C#" Value="public virtual bool AllowHide { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowHide" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPart.AllowHide" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.WebControls.WebParts.Personalizable(System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはエンドユーザーが非表示にできるかどうかを示す値を設定、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロールは、それ以外の非表示にできる<see langword="false" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPart.AllowHide%2A>プロパティは、ユーザーが変更できるかどうかを決定、<xref:System.Web.UI.WebControls.WebParts.WebPart.Hidden%2A>プロパティです。 既定では、プロパティ値が場合`true`コントロールが編集されているときに、ユーザーが値を変更できます。 既定では、コントロールは非表示され、その<xref:System.Web.UI.WebControls.WebParts.WebPart.Hidden%2A>プロパティの値が`false`です。 ときに、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールが編集されている、ユーザーがコントロールを非表示にする チェック ボックスを選択した場合 (設定する、<xref:System.Web.UI.WebControls.WebParts.WebPart.Hidden%2A>プロパティを`true`)、ブラウズ モードに戻ると、ページに、コントロールを表示されなくなるされます。  
+  
+ 非表示のコントロールは閉じられているコントロールと異なるため、<xref:System.Web.UI.WebControls.WebParts.WebPart.Hidden%2A>プロパティが Web パーツ コントロール セット内で異なる意味を持ちます。 閉じたコントロールは、ページでは、レンダリングされずと、ページ ライフ サイクル イベントに参加していません。 これに対して、非表示中に<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールがユーザーに表示されないは、Web ページ上に描画されるも、ゾーンにまだ含まれる他の接続を保持できます<xref:System.Web.UI.WebControls.WebParts.WebPart>Web パーツ アプリケーションの一部としてコントロール。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ このプロパティのパーソナル化スコープに設定されている<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>し、承認されたユーザーによってのみ変更できます。 詳細については、次を参照してください。<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute>と[Web パーツのパーソナル化の概要](http://msdn.microsoft.com/library/7dc34f74-52aa-4082-b98d-2bcf9e07e320)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、既定の設定を変更する方法を示します、<xref:System.Web.UI.WebControls.WebParts.WebPart.AllowHide%2A>プロパティのカスタム Web パーツ コントロール、こと、ユーザーがカスタム コントロールを非表示にすることはできません。 この例では、カスタムの使用<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、`TextDisplayWebPart`の例」のセクションに存在する、<xref:System.Web.UI.WebControls.WebParts.WebPart>クラスの概要です。  
+  
+ コード例では、Web パーツ ページの表示モードを変更できるようにするカスタム ユーザー コントロールを使用します。 ユーザー コントロールがにより参照されている、`Register`ユーザー コントロールをホストする Web ページの上部にあるディレクティブです。 このユーザー コントロールを作成および表示モードを使用する方法の詳細については、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-aspx-csharp[WebParts_WebPart_AllowHide#5](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPart_AllowHide/CS/displaymodemenucs.ascx#5)]
+ [!code-aspx-vb[WebParts_WebPart_AllowHide#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPart_AllowHide/VB/displaymodemenuvb.ascx#5)]  
+  
+ Web ページの宣言型マークアップでの`<aspSample:TextDisplayWebPart>`コントロールを参照する要素メモ、`AllowHide="false"`属性は、により、ユーザーが編集コントロールを非表示にすることができません。 ブラウザーを使用してページを読み込む、**表示モード**ドロップダウン リスト コントロールを編集モードに表示モードを変更します。 次に、 をクリックして、動詞のタイトル バー、<xref:System.Web.UI.WebControls.WebParts.WebPart>を制御し、編集 をクリックします。 編集のユーザー インターフェイス (UI) が表示されることがわかりますを編集する UI、<xref:System.Web.UI.WebControls.WebParts.WebPart.Hidden%2A>プロパティが無効になった、設定するために発生しましたが、<xref:System.Web.UI.WebControls.WebParts.WebPart.AllowHide%2A>プロパティの値を`false`です。  
+  
+ [!code-aspx-csharp[WebParts_WebPart_AllowHide#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPart_AllowHide/CS/allowhidecs.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPart_AllowHide#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPart_AllowHide/VB/allowhidevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowMinimize">
+      <MemberSignature Language="C#" Value="public virtual bool AllowMinimize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowMinimize" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPart.AllowMinimize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.WebControls.WebParts.Personalizable(System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはエンドユーザーが最小化できるかどうかを示す値を設定、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロールをそれ以外の最小化できる<see langword="false" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPart.AllowMinimize%2A>プロパティの場合に設定`false`、エンド ユーザーをにより、コントロールを最小限に抑えることがないコントロールのタイトル バーのコントロール、およびユーザー インターフェイス (UI) を最小限に抑えることを防止します。 Web パーツの用語では、ときに、<xref:System.Web.UI.WebControls.WebParts.WebPart.AllowMinimize%2A>プロパティに設定されている`false`、最小化動詞は、コントロールの動詞メニューに表示されません。  
+  
+ ユーザーは、コントロールを最小化、ときに、コントロールのタイトル バー、タイトルの一部のみが表示される最小領域まで、コントロールのサイズを縮小します。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ このプロパティのパーソナル化スコープに設定されている<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>し、承認されたユーザーによってのみ変更できます。 詳細については、次を参照してください。<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute>と[Web パーツのパーソナル化の概要](http://msdn.microsoft.com/library/7dc34f74-52aa-4082-b98d-2bcf9e07e320)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、既定の設定を変更する方法を示します、<xref:System.Web.UI.WebControls.WebParts.WebPart.AllowMinimize%2A>プロパティのカスタム Web パーツ コントロール、こと、コントロールは、ユーザーが最小限に抑えることはできません。 この例では、カスタムの使用<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、`TextDisplayWebPart`の例」のセクションに存在する、<xref:System.Web.UI.WebControls.WebParts.WebPart>クラスの概要です。  
+  
+ Web ページの宣言型マークアップ内で、`<aspSample:TextDisplayWebPart>`コントロールを参照する要素メモ、`AllowMinimize="false"`属性は、最小化動詞には、非表示に、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールの動詞メニュー、およびユーザーの最小化できることを防止、コントロール。 ブラウザーでページを読み込むし、動詞メニューの 、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 コントロールの宣言型マークアップで無効にしたので、動詞メニュー上に存在するは通常、最小の動詞は非表示になります。  
+  
+ [!code-aspx-csharp[WebParts_WebPart_AllowMinimize#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPart_AllowMinimize/CS/allowminimizecs.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPart_AllowMinimize#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPart_AllowMinimize/VB/allowminimizevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowZoneChange">
+      <MemberSignature Language="C#" Value="public virtual bool AllowZoneChange { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowZoneChange" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPart.AllowZoneChange" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.WebControls.WebParts.Personalizable(System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、ユーザーが移動できるかどうかを示す値を設定、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />間制御<see cref="T:System.Web.UI.WebControls.WebParts.WebPartZoneBase" />ゾーンです。</summary>
+        <value>
+          <see langword="true" />場合、 <see cref="T:System.Web.UI.WebControls.WebParts.WebPart" /> ; ゾーン間でコントロールを移動できる場合は、<see langword="false" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.WebParts.WebPart.AllowZoneChange%2A>プロパティは`true`、レイアウトの変更 (編集、デザイン モードなど) を許可する表示モードでは、Web ページと、ユーザーは、別のコントロールを移動することによって、ページ レイアウトを変更できる<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>ページ上の領域。 プロパティ設定されている場合`false`コントロールは、ゾーン間で移動することはできませんが、まだ現在のゾーン内を移動できます。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ このプロパティのパーソナル化スコープに設定されている<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>し、承認されたユーザーによってのみ変更できます。 詳細については、次を参照してください。<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute>と[Web パーツのパーソナル化の概要](http://msdn.microsoft.com/library/7dc34f74-52aa-4082-b98d-2bcf9e07e320)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、既定の設定を変更する方法を示します、<xref:System.Web.UI.WebControls.WebParts.WebPart.AllowZoneChange%2A>のカスタム Web パーツのプロパティを制御できるように、エンドユーザーは別の領域にコントロールを移動することはできません。 この例では、カスタム コントロールの使用`TextDisplayWebPart`の例」のセクションに存在する、<xref:System.Web.UI.WebControls.WebParts.WebPart>クラスの概要です。  
+  
+ コード例では、Web パーツ ページの表示モードを変更できるようにするカスタム ユーザー コントロールを使用します。 ユーザー コントロールがにより参照されている、`Register`ユーザー コントロールをホストする Web ページの上部にあるディレクティブです。 このユーザー コントロールを作成および表示モードを使用する方法の詳細については、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-aspx-csharp[WebParts_WebPart_AllowZoneChange#5](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPart_AllowZoneChange/CS/displaymodemenucs.ascx#5)]
+ [!code-aspx-vb[WebParts_WebPart_AllowZoneChange#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPart_AllowZoneChange/VB/displaymodemenuvb.ascx#5)]  
+  
+ Web ページで、2 番目の宣言型マークアップで`<aspSample:TextDisplayWebPart>`要素では、メモ、`AllowZoneChange="false"`属性。 実行時に、エンドユーザーに最初のコントロールをドラッグできます**WebPartZone2**、2 つ目のコントロールと同じを行えませんでしたが、します。 ブラウザーを使用してページを読み込む、**表示モード**ドロップダウン リスト コントロールをデザイン モードに、表示モードを変更します。 ドラッグしようとしています、<xref:System.Web.UI.WebControls.WebParts.WebPart>に別のコントロールがゾーン、およびの値に基づく動作の違いに注意してください、<xref:System.Web.UI.WebControls.WebParts.WebPart.AllowZoneChange%2A>プロパティです。  
+  
+ [!code-aspx-csharp[WebParts_WebPart_AllowZoneChange#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPart_AllowZoneChange/CS/allowzonechangecs.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPart_AllowZoneChange#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPart_AllowZoneChange/VB/allowzonechangevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthorizationFilter">
+      <MemberSignature Language="C#" Value="public virtual string AuthorizationFilter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AuthorizationFilter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPart.AuthorizationFilter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.WebControls.WebParts.Personalizable(System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を決定する任意の文字列かどうか、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />ページに追加するコントロールを承認します。</summary>
+        <value>Web ページに追加するコントロールを承認する文字列。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web パーツ コントロール セットは、既定の動作を実装していません、<xref:System.Web.UI.WebControls.WebParts.WebPart.AuthorizationFilter%2A>プロパティです。 ただし、提供されるプロパティをカスタムに任意の文字列値を割り当てることができるように<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール; でチェックするこのプロパティは、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>中に制御その<xref:System.Web.UI.WebControls.WebParts.WebPartManager.AuthorizeWebPart>ページにコントロールを追加できるかどうかを決定するイベントです。  
+  
+ 場合によっては、<xref:System.Web.UI.WebControls.WebParts.WebPart.AuthorizationFilter%2A>場合とする場合、ユーザーが特定のロールに、プロパティは、ASP.NET ロール マネージャー機能で使用される場合の文字列値、<xref:System.Web.UI.WebControls.WebParts.WebPart.AuthorizationFilter%2A>プロパティが、開発者によって設定される特定の条件を満たしているし、コントロールを追加することができます。 これにより、開発者のロールとメンバーが指定したその他の承認条件の組み合わせに基づいて、ページのカスタム ビューを作成することができます。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ このプロパティのパーソナル化スコープに設定されている<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>し、承認されたユーザーによってのみ変更できます。 詳細については、次を参照してください。<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute>と[Web パーツのパーソナル化の概要](http://msdn.microsoft.com/library/7dc34f74-52aa-4082-b98d-2bcf9e07e320)です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.WebPart.AuthorizationFilter%2A>プロパティです。 カスタム メソッドのハンドラーを設定する方法を示します、 <xref:System.Web.UI.WebControls.WebParts.WebPartManager.AuthorizeWebPart> 、イベント ハンドラー用のカスタムのフィルタ リング コードを提供できるように、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnAuthorizeWebPart%2A>メソッドです。 この例にはページ開発者がフィルター処理シナリオとの承認を提供するための一般的な方法があります<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールをページに追加します。  
+  
+ Web ページ コードでは、`<asp:webpartmanager>`要素には、`OnAuthorizeWebPart`属性に割り当てられているイベント ハンドラーの名前に置き換えます。 このメソッドは、ページ上のコントロールがあるかどうかを確認します。 その<xref:System.Web.UI.WebControls.WebParts.WebPart.AuthorizationFilter%2A>プロパティ値に設定`admin`、し、必要な場合は、を返します`true`、ことが承認され、ページに追加することを意味します。  
+  
+> [!NOTE]
+>  コントロールをメモに割り当てられている任意の値がない、<xref:System.Web.UI.WebControls.WebParts.WebPart.AuthorizationFilter%2A>と判断されませんフィルター処理の一部であるために、プロパティが同様に、追加します。 フィルター処理シナリオで一般的な方法になります。 いくつかのコントロールは、フィルター処理されると、他のユーザーは、ためできませんのすべてのユーザーに利用できるものとみなされます。  
+  
+ [!code-aspx-csharp[WebParts_WebPartManager_AuthorizeWebPart#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartManager_AuthorizeWebPart/CS/AuthorizeWebPartCS.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPartManager_AuthorizeWebPart#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartManager_AuthorizeWebPart/VB/AuthorizeWebPartVB.aspx#1)]  
+  
+ ロールのユーザーの設定は、このトピックの範囲外ですが、ために、このコード例は、フィルター処理でのユーザー ロールを確認できません。 ただし、ユーザーの役割に基づいてコントロールのフィルター処理シナリオは、このフィルター処理機能の最も一般的な用途の 1 つをする可能性があります。 サイトの役割があるコントロールのフィルター処理するためには、このメソッドのユーザー ロールを確認する場合は、メソッドは次のコード ブロックではなくロールを使用しないの前のコード例では簡単な方法) のようにします。  
+  
+```  
+protected void mgr1_AuthorizeWebPart(object sender,   
+  WebPartAuthorizationEventArgs e)  
+{  
+  if (!String.IsNullOrEmpty(e.AuthorizationFilter))  
+  {  
+    if(Roles.IsUserInRole(Page.User.Identity.Name, e.authorizationFilter))  
+      e.IsAuthorized = true;  
+    else  
+      e.IsAuthorized = false;  
+  }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>このプロパティを使用するのには、カスタムを作成する必要があります<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />制御、およびオーバーライドするか、<see cref="M:System.Web.UI.WebControls.WebParts.WebPartManager.OnAuthorizeWebPart(System.Web.UI.WebControls.WebParts.WebPartAuthorizationEventArgs)" />メソッドまたはその<see cref="M:System.Web.UI.WebControls.WebParts.WebPartManager.IsAuthorized(System.Web.UI.WebControls.WebParts.WebPart)" />のチェックを処理するメソッドを<see cref="P:System.Web.UI.WebControls.WebParts.WebPart.AuthorizationFilter" />プロパティです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CatalogIconImageUrl">
+      <MemberSignature Language="C#" Value="public virtual string CatalogIconImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CatalogIconImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPart.CatalogIconImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.ImageUrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.WebControls.WebParts.Personalizable(System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールのカタログに Web パーツ コントロールを表すイメージ URL を設定します。</summary>
+        <value>カタログ内のコントロールを表すために使用されるイメージの URL を表す文字列。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティのパーソナル化スコープに設定されている<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>し、承認されたユーザーによってのみ変更できます。 詳細については、次を参照してください。<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute>と[Web パーツのパーソナル化の概要](http://msdn.microsoft.com/library/7dc34f74-52aa-4082-b98d-2bcf9e07e320)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、<xref:System.Web.UI.WebControls.WebParts.WebPart.CatalogIconImageUrl%2A>プロパティを<xref:System.Web.UI.WebControls.WebParts.WebPart>を制御するコントロールのカタログでコントロールを備えたイメージが表示されるようにします。 この例では、カスタム コントロールの使用`TextDisplayWebPart`のセクションの例で作成された、<xref:System.Web.UI.WebControls.WebParts.WebPart>クラスの概要です。  
+  
+ コード例では、Web パーツ ページの表示モードを変更できるようにするカスタム ユーザー コントロールを使用します。 ユーザー コントロールがにより参照されている、`Register`ユーザー コントロールをホストする Web ページの上部にあるディレクティブです。 このユーザー コントロールを作成および表示モードを使用する方法の詳細については、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-aspx-csharp[WebParts_WebPart_CatalogIconImageUrl#5](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPart_CatalogIconImageURL/CS/displaymodemenucs.ascx#5)]
+ [!code-aspx-vb[WebParts_WebPart_CatalogIconImageUrl#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPart_CatalogIconImageURL/VB/displaymodemenuvb.ascx#5)]  
+  
+ Web ページの宣言型マークアップで注意してください、`<asp:CatalogZone>`要素。 など、いくつかの要素には内部に入れ子になって、`<aspSample:TextDisplayWebPart>`要素。 この要素のセットにより、カスタム<xref:System.Web.UI.WebControls.WebParts.WebPart>カタログにコントロールを表示します。 マークアップで、`<aspSample:TextDisplayWebPart>`要素ことに注意して、`CatalogIconImageUrl`が割り当てられているイメージ ファイルへの URL を表す文字列。 ブラウザーを使用してページを読み込む、**表示モード**カタログ モードを表示モードを変更するドロップダウン リスト コントロール。 ユーザー設定を追加するカタログ ユーザー インターフェイス (UI) を使用して<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールをページ。  
+  
+ [!code-aspx-csharp[WebParts_WebPart_CatalogIconImageUrl#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPart_CatalogIconImageURL/CS/catalogiconimageurlcs.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPart_CatalogIconImageUrl#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPart_CatalogIconImageURL/VB/catalogiconimageurlvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">内部的な検証システム URL がスクリプト攻撃を含む可能性があると判断しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ChromeState">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.WebParts.PartChromeState ChromeState { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.WebParts.PartChromeState ChromeState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPart.ChromeState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Web.UI.WebControls.WebParts.Personalizable</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PartChromeState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または部分から成るコントロールが最小化または標準状態であるかどうかを設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.WebParts.PartChromeState" /> 値のいずれか。 既定値は、<see cref="F:System.Web.UI.WebControls.WebParts.PartChromeState.Normal" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パーツ コントロールの<xref:System.Web.UI.WebControls.WebParts.WebPart.ChromeState%2A>通常または最小化されたプロパティの値を指定できます。 <xref:System.Web.UI.WebControls.WebParts.WebPart>エンドユーザーがカスタマイズできるように、クラスが基本プロパティをオーバーライドします。  
+  
+ このプロパティを使用するためのコード例では、情報を参照してください。<xref:System.Web.UI.WebControls.WebParts.Part.ChromeState%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定された値は、のいずれかではありません、<see cref="T:System.Web.UI.WebControls.WebParts.PartChromeState" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ChromeType">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.WebParts.PartChromeType ChromeType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.WebParts.PartChromeType ChromeType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPart.ChromeType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Web.UI.WebControls.WebParts.Personalizable</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PartChromeType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Web パーツ コントロールを囲む境界線の種類を設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.WebParts.PartChromeType" /> 値のいずれか。 既定値は、<see cref="F:System.Web.UI.WebControls.WebParts.PartChromeType.Default" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パーツ コントロールの<xref:System.Web.UI.WebControls.WebParts.WebPart.WebPartManager%2A>プロパティは、境界線の種類は、コントロールを囲むを決定します。 オプションがあります。 どちらも、タイトルのみ、境界線のみ、タイトルと枠線を表示または既定のオプションの値を使用してにすぎません、<xref:System.Web.UI.WebControls.WebParts.WebZone.PartChromeType%2A>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPart>エンドユーザーがカスタマイズできるように、クラスが基本プロパティをオーバーライドします。  
+  
+ このプロパティを使用するためのコード例では、情報を参照してください。<xref:System.Web.UI.WebControls.WebParts.Part.ChromeType%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が、<see cref="T:System.Web.UI.WebControls.WebParts.PartChromeType" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectErrorMessage">
+      <MemberSignature Language="C#" Value="public string ConnectErrorMessage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConnectErrorMessage" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPart.ConnectErrorMessage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>接続プロセス中にエラーが発生した場合、ユーザーに表示するエラー メッセージを取得します。</summary>
+        <value>エラー メッセージを含む文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内容、<xref:System.Web.UI.WebControls.WebParts.WebPart.ConnectErrorMessage%2A>プロパティは、Web パーツ コントロール セットによって内部的に提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateEditorParts">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.WebParts.EditorPartCollection CreateEditorParts ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.UI.WebControls.WebParts.EditorPartCollection CreateEditorParts() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPart.CreateEditorParts" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.EditorPartCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>カスタムのコレクションを返します<see cref="T:System.Web.UI.WebControls.WebParts.EditorPart" />を編集するために使用するコントロール、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />で編集モードにある場合を制御します。</summary>
+        <returns><see cref="T:System.Web.UI.WebControls.WebParts.EditorPartCollection" />を含むカスタム<see cref="T:System.Web.UI.WebControls.WebParts.EditorPart" />コントロールに関連付けられている、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 開発者は、このメソッドを使用してカスタムのインスタンスを作成する<xref:System.Web.UI.WebControls.WebParts.EditorPart>関連付けるコントロール、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 メソッドは、ユーザーが編集動詞をクリックすると、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+> [!NOTE]
+>  新しいインスタンス、<xref:System.Web.UI.WebControls.WebParts.EditorPart>このメソッドで作成されるコントロールを追加する前に、ID プロパティに割り当てられている値が必要、<xref:System.Web.UI.WebControls.WebParts.EditorZoneBase.EditorParts%2A>コレクション。  
+  
+ 使用するコード例については、<xref:System.Web.UI.WebControls.WebParts.WebPart.CreateEditorParts%2A>メソッドを参照してください、<xref:System.Web.UI.WebControls.WebParts.EditorPart>クラスの概要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public override string Description { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPart.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Web.UI.WebControls.WebParts.Personalizable(System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはツールヒントや一部のコントロールのカタログで使用する、パーツ コントロールの動作をまとめた簡単な語句を設定します。</summary>
+        <value>文字列は、簡潔にパーツ コントロールの機能をまとめたものです。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPart.Description%2A>プロパティは、通常と一部のコントロールのタイトル バーのツールヒントとして、一部のコントロールのリストを提供するカタログで使用されている文字列。 内容、<xref:System.Web.UI.WebControls.WebParts.WebPart.Description%2A>パーツ コントロールのタイトル バーのタイトル テキストの上にマウス ポインターを配置すると、ツールヒントにプロパティが表示されます。 ツールヒントのテキストがの値から作成された、<xref:System.Web.UI.WebControls.WebParts.WebPart.DisplayTitle%2A>プロパティの後に、ハイフンが続けて、<xref:System.Web.UI.WebControls.WebParts.WebPart.Description%2A>プロパティの値。  
+  
+ このプロパティを使用するためのコード例では、情報を参照してください。<xref:System.Web.UI.WebControls.WebParts.Part.Description%2A>プロパティです。  
+  
+ このプロパティのパーソナル化スコープに設定されている<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>し、承認されたユーザーによってのみ変更できます。 詳細については、次を参照してください。<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute>と[Web パーツのパーソナル化の概要](http://msdn.microsoft.com/library/7dc34f74-52aa-4082-b98d-2bcf9e07e320)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Direction">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.ContentDirection Direction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.ContentDirection Direction" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPart.Direction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Web.UI.WebControls.WebParts.Personalizable</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ContentDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロール内でコンテンツをフローする水平方向を設定します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.ContentDirection" />を示す水平方向のコンテンツが流し込まれます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPart>エンド ユーザーが、プロパティをカスタマイズできるように、クラスが基本プロパティ値を上書きします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayTitle">
+      <MemberSignature Language="C#" Value="public string DisplayTitle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DisplayTitle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPart.DisplayTitle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実際には、タイトル バーに表示のフル タイトル テキストを含む文字列を取得、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロールのインスタンス。</summary>
+        <value>完了したらを表す文字列には、コントロールのタイトルが表示されます。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPart.DisplayTitle%2A>プロパティの現在値を返します、<xref:System.Web.UI.WebControls.WebParts.Part.Title%2A>プロパティまたはコントロールにタイトル、計算値がありません。 計算された値は、無題のコントロールのローカライズ可能なリソースの文字列と数値が、ゾーン内のコントロールのインデックスに基づく (ゾーン内の複数のコントロールがある) 場合。  
+  
+ カスタム<xref:System.Web.UI.WebControls.WebParts.WebPart>where の制御、 <xref:System.Web.UI.WebControls.WebParts.WebPart.Subtitle%2A> 、字幕として使用する文字列値を返すプロパティはオーバーライドされて、<xref:System.Web.UI.WebControls.WebParts.WebPart.DisplayTitle%2A>プロパティは、完全なタイトルを生成するために字幕と連結されします。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPart.DisplayTitle%2A>プロパティの値としても使用すると表示されるツールヒントの一部ユーザー位置マウス ポインター コントロールのタイトル バーの上です。 完全ツールヒントから成る、<xref:System.Web.UI.WebControls.WebParts.WebPart.DisplayTitle%2A>後にハイフン、値がコントロールの値を続けて<xref:System.Web.UI.WebControls.WebParts.WebPart.Description%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExportMode">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.WebParts.WebPartExportMode ExportMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.WebParts.WebPartExportMode ExportMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPart.ExportMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.WebControls.WebParts.Personalizable(System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartExportMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するかどうかすべてでは、一部またはすべての<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロールのプロパティをエクスポートすることができます。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.WebParts.WebPartExportMode" /> 値のいずれか。 既定値は、<see cref="F:System.Web.UI.WebControls.WebParts.WebPartExportMode.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールをエクスポートすることはできませんし、その<xref:System.Web.UI.WebControls.WebParts.WebPart.ExportMode%2A>プロパティに設定されている<xref:System.Web.UI.WebControls.WebParts.WebPartExportMode.None>です。 コントロールのすべてのプロパティをエクスポートするのには、設定、<xref:System.Web.UI.WebControls.WebParts.WebPart.ExportMode%2A>値を<xref:System.Web.UI.WebControls.WebParts.WebPartExportMode.All>です。 機密データが含まれるプロパティのエクスポートを防止しながら、特定のプロパティのみをエクスポートするにはプロパティ値を設定する<xref:System.Web.UI.WebControls.WebParts.WebPartExportMode.NonSensitiveData>です。  
+  
+ プロパティ値の説明をエクスポートする、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール プロパティもと共に設定されなければなりません、`Personalizable`プロパティのソース コードのメタデータ内の属性です。 詳細については、「<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute>」を参照してください。  
+  
+> [!NOTE]
+>  アプリケーションの Web.config ファイルで、Web パーツ コントロールを含む Web アプリケーションのエクスポート機能を有効にするに属性を追加する必要があります、`<webParts>`内の要素、`<system.web>`セクションで、次のマークアップと同様にします。  
+>   
+>  `<webParts  enableExport="true">`  
+>   
+>  `</webParts>`  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ このプロパティのパーソナル化スコープに設定されている<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>し、承認されたユーザーによってのみ変更できます。 詳細については、次を参照してください。<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute>と[Web パーツのパーソナル化の概要](http://msdn.microsoft.com/library/7dc34f74-52aa-4082-b98d-2bcf9e07e320)です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.WebPart.ExportMode%2A>プロパティです。 注のエクスポートのコード例が機能するには、する必要がありますも更新することは、Web.config ファイル属性を追加することによって`enableExport="true"`を`<webParts>`要素は、「解説」セクションに記載されています。  
+  
+ この例の最初の部分には、という名前のコントロールのコードが含まれています。`TextDisplayWebPart`です。 このコントロールは、カスタム コントロールの例」のセクションにあると同じ、<xref:System.Web.UI.WebControls.WebParts.WebPart>クラスの概要については、追加する点を除いて、`Personalizable`属性を`TextDisplayWebPart.ContentText`プロパティ、プロパティをエクスポートできるようにします。 属性の宣言がの値が含まれることに注意してください`true`の`isSensitive`パラメーターであり、プロパティが機微なデータをエクスポート目的でマークされています。 コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 このコード例には、ソース コードをアセンブリにコンパイルし、Web アプリケーションの Bin サブフォルダーに配置することでアセンブリを参照することが前提としています、`Register`ディレクティブで、Web ページ。 両方のコンパイル方法を示すチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-csharp[WebParts_WebPart_ExportMode#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPart_ExportMode/CS/textdisplaywebpart.cs#2)]
+ [!code-vb[WebParts_WebPart_ExportMode#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPart_ExportMode/VB/textdisplaywebpart.vb#2)]  
+  
+ 例の 2 番目の部分を参照する方法を示しています、 `TextDisplayWebPart` ASP.NET Web ページにコントロールできます。 宣言型マークアップで、なお、<xref:System.Web.UI.WebControls.WebParts.WebPart.ExportMode%2A>にプロパティの値が設定されている<xref:System.Web.UI.WebControls.WebParts.WebPartExportMode.All>、機微な値であってもプロパティをエクスポートすることを意味します。  
+  
+ [!code-aspx-csharp[WebParts_WebPart_ExportMode#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPart_ExportMode/CS/exportmodecs.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPart_ExportMode#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPart_ExportMode/VB/exportmodevb.aspx#1)]  
+  
+ ブラウザーとの動詞メニューを開き、Web ページを読み込む、<xref:System.Web.UI.WebControls.WebParts.WebPart>制御、export 動詞をクリックし、コントロールの状態とプロパティのデータを含む説明ファイルをエクスポートする指示に従います。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定された値は、のいずれかではありません、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartExportMode" />値。</exception>
+        <exception cref="T:System.InvalidOperationException">コントロールが既に読み込まれており、コントロールのパーソナル化スコープに設定されている、<see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.User" />スコープ。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HasSharedData">
+      <MemberSignature Language="C#" Value="public bool HasSharedData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasSharedData" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPart.HasSharedData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロールに関連付けられている共有パーソナル化データがあります。</summary>
+        <value>コントロールがパーソナル化データを共有するかどうかを示すブール値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティで設定されているコントロールの共有スコープは、パーソナル化データがすべてのユーザーに表示されることを意味パーソナル化データを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasUserData">
+      <MemberSignature Language="C#" Value="public bool HasUserData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasUserData" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPart.HasUserData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロールに関連付けられているユーザーの個人用設定データがあります。</summary>
+        <value>コントロールにユーザーの個人用設定データがあるかどうかを示すブール値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、そのユーザーにのみ表示されるコントロールでのユーザーが特定の設定はユーザー固有--、つまり、カスタムのパーソナル化データを参照します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Height">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.Unit Height { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.Unit Height" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPart.Height" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Web.UI.WebControls.WebParts.Personalizable</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Unit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはゾーンの高さを設定します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.Unit" />オブジェクトの高さを示す、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartZone" />です。 既定の種類、 <see cref="T:System.Web.UI.WebControls.Unit" /> (ピクセル単位) は、によって示される、<see cref="P:System.Web.UI.WebControls.Unit.Type" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Internet Explorer のレンダリング モードの高さを与えることができます、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールとそれを含むゾーンの高さ。 互換モード (以前のバージョンのブラウザーとの下位互換性) でまたは標準モードで、Internet Explorer は Web ページを表示 (の有無によって決定されます、 `DOCTYPE`  ページで宣言)。 これらのモードについては、DHTML を参照してください。 [compatMode](http://go.microsoft.com/fwlink/?LinkId=57175)プロパティです。  
+  
+ Internet Explorer では、標準モードでページをレンダリングするときに特定の状況でその可能性がありますサイズは変更されません、テーブル内のセル場合でも、セルの HTML マークアップ`<td height="100%">`です。 その結果、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールは、ゾーンの最大の高さに伸縮しませんようにコントロールと、含まれるゾーンが表示されます。  
+  
+ Internet Explorer は、標準モードでは、コントロールが、次の場合に、最大の高さを拡大表示されません。  
+  
+-   ゾーンの<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase.LayoutOrientation%2A>プロパティに設定されている<xref:System.Web.UI.WebControls.Orientation.Vertical>ゾーンの高さを明示的に設定するとします。 コントロールをゾーンの最大の高さを拡大できるように、水平方向のゾーンの高さを指定しません。  
+  
+-   ゾーンの<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase.LayoutOrientation%2A>プロパティに設定されている<xref:System.Web.UI.WebControls.Orientation.Horizontal>ゾーンまたは含まれるコントロールの高さを明示的に設定しないとします。 ゾーンの完全高さに合わせてコントロールを有効にするには、垂直方向のゾーンで、ゾーンまたはコントロールの高さを設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますしてレンダリングの問題の高さに影響を与える<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールで、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>です。  この問題を示すためには、Internet Explorer で、ページを実行する必要があります。  
+  
+ ゾーンの方向が水平方向に設定されていると、ゾーンとその中のコントロールの高さが明示的に設定されていないことに注意してください。  その結果は、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>短くすれば、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールがレンダリング時に、ゾーンの高さに伸縮しません。  ただし、削除する場合、`DOCTYPE`再度の宣言から、ページとページの実行、問題は発生しません、ブラウザーにページを標準モードでは表示されません今すぐためです。  
+  
+ [!code-aspx-csharp[WebParts_WebPart_Height#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPart_Height/CS/Defaultcs.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPart_Height#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPart_Height/VB/Defaultvb.aspx#1)]  
+  
+ (「解説」セクションで説明)、回避策のしくみを表示するには、追加してください、`height`属性を`<asp:webpartzone>`録の保存中に、要素、 `DOCTYPE`  ページで宣言します。  次のコードを使用すると、タグに属性を追加します。  
+  
+ `Height="200px"`  
+  
+ ページ、および両方今すぐ実行<xref:System.Web.UI.WebControls.WebParts.WebPart>明示的に宣言されたゾーンの高さに合わせて拡大を制御します。  
+  
+ 発生したその他のシナリオでの高さに関連するレンダリングの問題を確認するには、このコード例を試すことも時に、ゾーンの<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase.LayoutOrientation%2A>に設定されている<xref:System.Web.UI.WebControls.Orientation.Vertical>です。  既存の削除`LayoutOrientation`属性とその値から、`<asp:webpartzone>`既定の垂直方向に戻すには、ゾーンの向きを原因となる要素。  高さの属性を設定、`<asp:webpartzone>`に 200 ピクセルまで拡大すると要素は、前述したし、ページを実行します。  ゾーンの高さが大きすぎるため、およびコントロールは比例しません、ゾーンの高さにします。  今すぐ高さ属性を削除し、ページを再度実行します。  ゾーンの高さに相対的コントロールが表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HelpMode">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.WebParts.WebPartHelpMode HelpMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.WebParts.WebPartHelpMode HelpMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPart.HelpMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.WebControls.WebParts.Personalizable(System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartHelpMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のヘルプ コンテンツの表示に使用されるユーザー インターフェイス (UI) の種類、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.WebParts.WebPartHelpMode" /> 値のいずれか。 既定値は、<see cref="F:System.Web.UI.WebControls.WebParts.WebPartHelpMode.Modal" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.WebParts.WebPart.HelpMode%2A>ブラウザーがコントロールのヘルプ コンテンツを表示する方法を決定するプロパティです。 次の表に、ブラウザーでのさまざまなヘルプ モードの影響とヘルプ コンテンツを<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールが表示されます。  
+  
+|ヘルプ モード|ブラウザーの動作|  
+|---------------|----------------------|  
+|<xref:System.Web.UI.WebControls.WebParts.WebPartHelpMode.Modal>|この機能がブラウザーには、別のブラウザー ウィンドウを開きます。 ユーザーは、Web パーツ ページに戻る前に、ウィンドウを閉じる必要があります。|  
+|<xref:System.Web.UI.WebControls.WebParts.WebPartHelpMode.Modeless>|この機能がブラウザーには、別のブラウザー ウィンドウを開きます。 ユーザーは、Web ページに戻る前に、ウィンドウを閉じるにはありません。|  
+|<xref:System.Web.UI.WebControls.WebParts.WebPartHelpMode.Navigate>|ブラウザーのウィンドウで Web パーツ ページに置換します。|  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ このプロパティのパーソナル化スコープに設定されている<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>し、承認されたユーザーによってのみ変更できます。 詳細については、次を参照してください。<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute>と[Web パーツのパーソナル化の概要](http://msdn.microsoft.com/library/7dc34f74-52aa-4082-b98d-2bcf9e07e320)です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.WebPart.HelpMode%2A>プロパティを同じブラウザー ウィンドウ内のコントロールのヘルプを表示します。 この例の最初の部分は、カスタム コントロールの使用を想定しています`TextDisplayWebPart`の例」のセクションに存在する、<xref:System.Web.UI.WebControls.WebParts.WebPart>クラスの概要です。  
+  
+ このコード例は、架空のヘルプ コンテンツを格納している HTML ページも含まれています。、`TextDisplayWebPart`コントロール。 この例を実行するの Textwebparthelp.htm をという名前のファイルに次のコードを保存して .aspx ページと、サイトの同じディレクトリに配置します。  
+  
+```  
+<html>  
+<head runat="server">  
+    <title>Text Content WebPart Help</title>  
+</head>  
+<body>  
+  <div>  
+  <h1>Text Content WebPart Help</h1>  
+  To make the WebPart control work...  
+  </div>  
+</body>  
+</html>  
+```  
+  
+ この例の最後の部分は、Web ページを参照する方法を表示、`TextDisplayWebPart`コントロール。 宣言型のマークアップで、<xref:System.Web.UI.WebControls.WebParts.WebPart.HelpMode%2A>プロパティの値に設定されて<xref:System.Web.UI.WebControls.WebParts.WebPartHelpMode.Navigate>、コードの値の設定も、<xref:System.Web.UI.WebControls.WebParts.WebPart.HelpUrl%2A>プロパティをヘルプ コンテンツを含む、HTML ファイルの名前にします。 ブラウザーにページを読み込むしの動詞メニューのヘルプの動詞をクリックして、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+ [!code-aspx-csharp[WebParts_WebPart_HelpMode#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPart_HelpMode/CS/helpmodecs.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPart_HelpMode#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPart_HelpMode/VB/helpmodevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定された値は、のいずれかではありません、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartHelpMode" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HelpUrl">
+      <MemberSignature Language="C#" Value="public virtual string HelpUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HelpUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPart.HelpUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.UrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.WebControls.WebParts.Personalizable(System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、URL のヘルプ ファイル、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</summary>
+        <value>ヘルプ ファイルへの URL を表す文字列。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 動詞メニューの動詞メニューのヘルプの動詞を使用して有効にする、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールの値を指定する必要があります、<xref:System.Web.UI.WebControls.WebParts.WebPart.HelpUrl%2A>プロパティです。 ブラウザーでヘルプ コンテンツを表示する方法は、の値によって決まりますが、<xref:System.Web.UI.WebControls.WebParts.WebPart.HelpMode%2A>プロパティです。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ このプロパティのパーソナル化スコープに設定されている<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>し、承認されたユーザーによってのみ変更できます。 詳細については、次を参照してください。<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute>と[Web パーツのパーソナル化の概要](http://msdn.microsoft.com/library/7dc34f74-52aa-4082-b98d-2bcf9e07e320)です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.WebPart.HelpUrl%2A>プロパティです。 この例では、カスタム コントロールの使用`TextDisplayWebPart`の例」のセクションに存在する、<xref:System.Web.UI.WebControls.WebParts.WebPart>クラスの概要です。  
+  
+ このコード例は、架空のヘルプ コンテンツを格納している HTML ページも含まれています。、`TextDisplayWebPart`コントロール。 この例を実行するの Textwebparthelp.htm をという名前のファイルに次のコードを保存して .aspx ページと、サイトの同じディレクトリに配置します。  
+  
+```  
+<html>  
+<head runat="server">  
+    <title>Text Content WebPart Help</title>  
+</head>  
+<body>  
+  <div>  
+  <h1>Text Content WebPart Help</h1>  
+  To make the WebPart control work...  
+  </div>  
+</body>  
+</html>  
+```  
+  
+ この例の最後の部分は、Web ページを参照する方法を表示、`TextDisplayWebPart`コントロール。 宣言型のマークアップで、<xref:System.Web.UI.WebControls.WebParts.WebPart.HelpMode%2A>プロパティの値に設定されて<xref:System.Web.UI.WebControls.WebParts.WebPartHelpMode.Navigate>、コードの値の設定も、<xref:System.Web.UI.WebControls.WebParts.WebPart.HelpUrl%2A>プロパティをヘルプ コンテンツを含む、HTML ファイルの名前にします。 ブラウザーにページを読み込むしの動詞メニューのヘルプの動詞をクリックして、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+ [!code-aspx-csharp[WebParts_WebPart_HelpMode#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPart_HelpMode/CS/helpmodecs.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPart_HelpMode#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPart_HelpMode/VB/helpmodevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">内部的な検証システム URL がスクリプト攻撃を含む可能性があると判断しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Hidden">
+      <MemberSignature Language="C#" Value="public virtual bool Hidden { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Hidden" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPart.Hidden" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.WebControls.WebParts.Personalizable</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、 <see cref="T:System.Web.UI.WebControls.WebParts.WebPart" /> Web ページにコントロールが表示されます。</summary>
+        <value>
+          <see langword="false" />場合、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロールは、それ以外の Web ページに表示されている<see langword="true" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.UI.WebControls.WebParts.WebPart>そのゾーンの非表示のままであるコントロールがそのページでは、実際に表示され、に参加しているページ ライフ サイクルのフェーズなど、`PreRender`フェーズ、ブラウザーで表示されていない場合でもです。 これは、異なる<xref:System.Web.UI.WebControls.WebParts.WebPart>閉じたコントロール レンダリングされず、ページ上、非表示のコントロールは、レンダリングされ、Web パーツ アプリケーションでアクティブなユーザーに表示されませんがあるため、閉じられているコントロール。 Web パーツ コントロール セットの表示/非表示、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールの値をそのカスケード スタイル シート (CSS) のスタイルを設定して`display:none`です。  
+  
+ 場合でも、<xref:System.Web.UI.WebControls.WebParts.WebPart.Hidden%2A>コントロールのプロパティに設定されて`true`ページ上の現在の表示モードを表示するコントロールを非表示を許可する場合、コントロールは引き続き表示されます。 たとえば、編集モードで表示するには、非表示のコントロールは、ユーザーが編集できるようにします。 非表示のコントロールは、特定の表示モードで表示される、コントロールのタイトルは、コントロールが非表示の状態であることを示す文字列を表示します。  
+  
+ ときに、<xref:System.Web.UI.WebControls.WebParts.WebPart.Hidden%2A>プロパティを<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールに設定されている`false`、既定値は、ページにコントロールを表示します。 されている場合、<xref:System.Web.UI.WebControls.WebParts.WebPart.AllowHide%2A>プロパティに設定されている`false`、エンドユーザーが編集を許可されていません、<xref:System.Web.UI.WebControls.WebParts.WebPart.Hidden%2A>プロパティの値。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、 <xref:System.Web.UI.WebControls.WebParts.WebPart.Hidden%2A> Web パーツ コントロールのカスタム プロパティです。 この例では、カスタム コントロールの使用`TextDisplayWebPart`の例」のセクションに存在する、<xref:System.Web.UI.WebControls.WebParts.WebPart>クラスの概要です。  
+  
+ 宣言型マークアップ内の Web ページのことに注意して、`<aspSample:TextDisplayWebPart>`要素、`Hidden`に属性値が設定されている`true`です。 `TextDisplayWebPart`ページがブラウザーで読み込まれている場合、コントロールは表示されません。 ただし、コントロールがページで、およびそのゾーンにまだ存在し、他の接続にまだ参加でした<xref:System.Web.UI.WebControls.WebParts.WebPart>それらの接続を作成した場合を制御します。  
+  
+ [!code-aspx-csharp[WebParts_WebPart_Hidden#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPart_Hidden/CS/hiddencs.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPart_Hidden#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPart_Hidden/VB/hiddenvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportErrorMessage">
+      <MemberSignature Language="C#" Value="public virtual string ImportErrorMessage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ImportErrorMessage" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPart.ImportErrorMessage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.WebControls.WebParts.Personalizable(System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定エラーが発生した場合に使用されるエラー メッセージと、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロールをインポートします。</summary>
+        <value>エラー メッセージを含む文字列。 既定値は、Web パーツ コントロール セットによって提供される標準的なエラー メッセージです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPart.ImportErrorMessage%2A>プロパティでは、ユーザーが Web パーツ コントロールのカタログにパーツ コントロールの記述ファイルをインポートしようとするときにエラーが発生した場合に表示されるカスタム エラー メッセージを設定することができます。 プロパティを宣言的に設定することができます、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールを追加する、`ImportErrorMessage`コントロールと、エラー メッセージ文字列をそこに割り当てるの開始タグの属性です。 プロパティの値はプログラムによっても設定できます。  
+  
+ 完全なコード例については、両方のエクスポートとインポートを示しています。Web パーツの説明ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>、コントロールの使用を含む、<xref:System.Web.UI.WebControls.WebParts.WebPart.ImportErrorMessage%2A>プロパティを参照してください、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>クラスです。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+ このプロパティのパーソナル化スコープに設定されている<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>し、承認されたユーザーによってのみ変更できます。 詳細については、次を参照してください。<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute>と[Web パーツのパーソナル化の概要](http://msdn.microsoft.com/library/7dc34f74-52aa-4082-b98d-2bcf9e07e320)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsClosed">
+      <MemberSignature Language="C#" Value="public bool IsClosed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsClosed" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPart.IsClosed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロールが現在の Web パーツ ページで閉じられています。</summary>
+        <value>コントロールが閉じられたかどうかを示すブール値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.UI.WebControls.WebParts.WebPart>が閉じられた ページではレンダリングされませんし、ページのイベントに関与しません。 ただし、Web パーツ アプリケーションでページ カタログに保持され、追加できますのページに戻るのユーザーが適切なユーザー インターフェイス (UI) が提供されている場合。 詳細については、「<xref:System.Web.UI.WebControls.WebParts.WebPart.AllowClose%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsShared">
+      <MemberSignature Language="C#" Value="public bool IsShared { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsShared" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPart.IsShared" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />制御を共有すると、Web パーツ ページのすべてのユーザーに表示されることを意味します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロールは、Web ページで、ユーザーの表示状態を共有がそれ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共有 Web パーツ コントロールは、Web ページのすべてのユーザーに表示されます。 共有コントロールの反対は、ユーザー固有であり、そのコントロールをページに追加したユーザーのみに表示される、ユーザー単位コントロールです。  
+  
+ ユーザーが共有パーソナル化スコープでページを表示するときにダイナミック コントロールを追加する場合は、コントロールは共有されます。 ユーザーがユーザー パーソナル化スコープの中に、コントロールが追加された場合、<xref:System.Web.UI.WebControls.WebParts.WebPart.IsShared%2A>そのコントロールのプロパティの値になります`false`です。  
+  
+ 共有の詳細については、ユーザー単位コントロールを参照してください[Web パーツのパーソナル化の概要](http://msdn.microsoft.com/library/7dc34f74-52aa-4082-b98d-2bcf9e07e320)です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、 <xref:System.Web.UI.WebControls.WebParts.WebPart.IsShared%2A> Web パーツ コントロールのカスタム プロパティです。 この例では、カスタム コントロールの使用`TextDisplayWebPart`のセクションの例で作成された、<xref:System.Web.UI.WebControls.WebParts.WebPart>クラスの概要です。  
+  
+ クリックするとブラウザー、Web ページを読み込むと、**共有チェック** ボタン、コードのチェック、<xref:System.Web.UI.WebControls.WebParts.WebPart.IsShared%2A>プロパティを`TextDisplayWebPart`制御、およびプロパティの値は`true`コントロールが参照されているため、ページの宣言型マークアップで、静的なコントロールとして  
+  
+ [!code-aspx-csharp[WebParts_WebPart_IsShared#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPart_IsShared/CS/issharedcs.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPart_IsShared#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPart_IsShared/VB/issharedvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsStandalone">
+      <MemberSignature Language="C#" Value="public bool IsStandalone { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsStandalone" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPart.IsStandalone" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロールは、スタンドアロンの内で含まれていないことを意味する<see cref="T:System.Web.UI.WebControls.WebParts.WebPartZoneBase" />ゾーンです。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />にコントロールが含まれていない、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartZoneBase" />ゾーンです。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsStatic">
+      <MemberSignature Language="C#" Value="public bool IsStatic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsStatic" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPart.IsStatic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロールは、静的なコントロールは、コントロールは、Web パーツ ページのマークアップで宣言されているプログラムで、ページに追加されません。</summary>
+        <value>コントロールが静的かどうかを示すブール値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 静的な<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールは、Web パーツ ページのマークアップで宣言されているいずれか。 これには、動的なとは対照的<xref:System.Web.UI.WebControls.WebParts.WebPart>を制御するかプログラムで追加するか、ユーザーがコントロールの選択コントロールのカタログから実行時にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClosing">
+      <MemberSignature Language="C#" Value="protected virtual void OnClosing (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void OnClosing(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPart.OnClosing(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>により派生したカスタム処理を提供するクラス、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロールが Web パーツ ページで閉じられました。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドで、<xref:System.Web.UI.WebControls.WebParts.WebPart>基底クラスに実装が含まれていません。 派生<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールが閉じられたときに、カスタム処理を提供するために必要な場合、コントロールは、メソッドをオーバーライドできます。 <xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールが自動的に起動、<xref:System.Web.UI.WebControls.WebParts.WebPart.OnClosing%2A>メソッドが派生クラスで実装する場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnConnectModeChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnConnectModeChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void OnConnectModeChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPart.OnConnectModeChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>派生したカスタム処理を提供するクラスを有効にする<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロールを開始またはその他のコントロールへの接続プロセスを終了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドで、<xref:System.Web.UI.WebControls.WebParts.WebPart>基底クラスに実装が含まれていません。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生コントロールをオーバーライドする必要があります、<see cref="M:System.Web.UI.WebControls.WebParts.WebPart.OnConnectModeChanged(System.EventArgs)" />メソッドです。 開発者では、カスタム イベントを発生したり、他の操作を実行することができます。 メソッドを呼び出す、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />タイミングを制御、<see cref="M:System.Web.UI.WebControls.WebParts.WebPartManager.BeginWebPartConnecting(System.Web.UI.WebControls.WebParts.WebPart)" />と<see cref="M:System.Web.UI.WebControls.WebParts.WebPartManager.EndWebPartConnecting" />メソッドは、コントロール間の接続を確立するために呼び出されます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDeleting">
+      <MemberSignature Language="C#" Value="protected virtual void OnDeleting (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void OnDeleting(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPart.OnDeleting(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>派生したカスタム処理を提供するクラスを有効にする<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロールは、Web パーツ ページから完全に削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドで、<xref:System.Web.UI.WebControls.WebParts.WebPart>基底クラスに実装が含まれていません。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生コントロールをオーバーライドする必要があります、<see cref="M:System.Web.UI.WebControls.WebParts.WebPart.OnDeleting(System.EventArgs)" />メソッドです。 開発者では、カスタム イベントを発生したり、他の操作を実行することができます。 ときに、メソッドが呼び出されます、<see cref="M:System.Web.UI.WebControls.WebParts.WebPartManager.DeleteWebPart(System.Web.UI.WebControls.WebParts.WebPart)" />メソッドが呼び出されます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnEditModeChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnEditModeChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void OnEditModeChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPart.OnEditModeChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>派生したカスタム処理を提供するクラスを有効にする<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロールが入力または編集モードを終了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドで、<xref:System.Web.UI.WebControls.WebParts.WebPart>基底クラスに実装が含まれていません。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生コントロールをオーバーライドする必要があります、<see cref="M:System.Web.UI.WebControls.WebParts.WebPart.OnEditModeChanged(System.EventArgs)" />メソッド、およびカスタム イベントの発生のオーバーライドされたメソッドを使用します。 開発者では、カスタム イベントを発生したり、他の操作を実行することができます。 ときに、メソッドが呼び出されます、<see cref="M:System.Web.UI.WebControls.WebParts.WebPartManager.BeginWebPartEditing(System.Web.UI.WebControls.WebParts.WebPart)" />と<see cref="M:System.Web.UI.WebControls.WebParts.WebPartManager.EndWebPartEditing" />メソッドは、編集するときに呼び出されます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="SetPersonalizationDirty">
+      <MemberSignature Language="C#" Value="protected void SetPersonalizationDirty ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void SetPersonalizationDirty() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPart.SetPersonalizationDirty" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のパーソナル化データが変更されたことを示すフラグを設定<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロールのインスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPart.SetPersonalizationDirty%2A>メソッドは、コントロールの状態データが変更されたことで (カスタム) を示すフラグを設定、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、および、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールしたがって長期的な記憶域にパーソナル化データを保持する必要があります。  
+  
+ 通常、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>に個人的な変更が引き続き発生する<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールを呼び出す開発者がなくても、<xref:System.Web.UI.WebControls.WebParts.WebPart.SetPersonalizationDirty%2A>メソッドです。 2 つのケースを開発者がこのメソッドを呼び出す必要は必要です。 最初のケースでは、HTTP の中にコントロールの状態データが変更されたときに`GET`ページへの要求。 既定では、データ変更を加えるコントロール状態中に、 `GET` (セキュリティ上の) 要求は保持されません。 <xref:System.Web.UI.WebControls.WebParts.WebPart.SetPersonalizationDirty%2A>メソッドを正当な個人的な変更を永続化する方法を提供する<xref:System.Web.UI.WebControls.WebParts.WebPart>ここで制御します。  
+  
+ 呼び出す 2 番目の場合、<xref:System.Web.UI.WebControls.WebParts.WebPart.SetPersonalizationDirty%2A>メソッドが HTTP の中に発生した`POST`ページへの要求。 場合、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール複雑なパーソナル化可能なプロパティがあります (を含むプロパティなど、<xref:System.Collections.ArrayList>オブジェクト)、中に個人用に設定されたこれらのプロパティにコントロールの状態データと、`POST`要求と、開発者が呼び出す必要があります、<xref:System.Web.UI.WebControls.WebParts.WebPart.SetPersonalizationDirty%2A>の変更を保存することを確認するメソッド。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.Web.UI.WebControls.WebParts.WebPart.WebPartManager" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetPersonalizationDirty">
+      <MemberSignature Language="C#" Value="public static void SetPersonalizationDirty (System.Web.UI.Control control);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetPersonalizationDirty(class System.Web.UI.Control control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPart.SetPersonalizationDirty(System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="control"><see cref="T:System.Web.UI.Control" />パーソナル化データが変更されたためです。</param>
+        <summary>内にある指定されたサーバー コントロールのパーソナル化データが変更されたことを示すフラグを設定、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartZoneBase" />ゾーンです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPart.SetPersonalizationDirty%2A?displayProperty=nameWithType>メソッドとして同じ目的には、<xref:System.Web.UI.WebControls.WebParts.WebPart.SetPersonalizationDirty?displayProperty=nameWithType>メソッドで、コントロールの状態データが変更されている (パーソナライズ) サーバー コントロールで HTTP 中を示すフラグを設定するには`GET`要求します。 これらのメソッド間で違いは、<xref:System.Web.UI.WebControls.WebParts.WebPart.SetPersonalizationDirty%2A?displayProperty=nameWithType>から継承していないサーバー コントロールのメソッドを使用、<xref:System.Web.UI.WebControls.WebParts.WebPart>クラスしますが、内に配置<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>Web パーツのアプリケーションに参加するゾーンです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">内のオブジェクト、<paramref name="control" />パラメーターは<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentException">派生したコントロール<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />です。 派生したコントロール<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />、保護を使用する必要があります<see cref="M:System.Web.UI.WebControls.WebParts.WebPart.SetPersonalizationDirty" />メソッド代わりにします。</exception>
+        <exception cref="T:System.InvalidOperationException">コントロールに関連付けられているページがない、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Subtitle">
+      <MemberSignature Language="C#" Value="public virtual string Subtitle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Subtitle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPart.Subtitle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>連結した文字列を取得、<see cref="P:System.Web.UI.WebControls.WebParts.WebPart.Title" />の完全なタイトルを形成するプロパティ値、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</summary>
+        <value>コントロールのサブタイトルとして機能する文字列。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.WebParts.WebPart.Subtitle%2A>必要に応じて文字列を返す、字幕標準、カスタム プロパティ<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールをコントロールのタイトルに追加されます。  
+  
+ 値を指定する場合、<xref:System.Web.UI.WebControls.WebParts.WebPart.Subtitle%2A>カスタム プロパティ<xref:System.Web.UI.WebControls.WebParts.WebPart>を制御する設定は自動的にコントロールの値に追加の Web パーツ、<xref:System.Web.UI.WebControls.WebParts.WebPart.Title%2A>コントロールの完全なタイトルを作成するプロパティです。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のサブタイトルを指定する方法を示します、カスタムのインスタンス<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+ この例の最初の部分には、という名前のカスタム コントロールのコードが含まれています。`TextDisplayWebPart`です。 このコントロールは、カスタム コントロールの例」のセクションであると同じ、<xref:System.Web.UI.WebControls.WebParts.WebPart>クラスの概要についてもオーバーライドする点を除いて、<xref:System.Web.UI.WebControls.WebParts.WebPart.Subtitle%2A>の架空の会社名を含む標準サブタイトルを指定するプロパティのインスタンスカスタム コントロールです。 コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 このコード例には、ソース コードをアセンブリにコンパイルし、Web アプリケーションの Bin サブフォルダーに配置することでアセンブリを参照することが前提としています、`Register`ディレクティブで、Web ページ。 両方のコンパイル方法を示すチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-csharp[WebParts_WebPart_Subtitle#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPart_Subtitle/CS/textdisplaywebpart.cs#2)]
+ [!code-vb[WebParts_WebPart_Subtitle#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPart_Subtitle/VB/textdisplaywebpart.vb#2)]  
+  
+ 例の 2 番目の部分は、Web ページを参照する方法を示す、 `TextDisplayWebPart` ASP.NET Web ページにコントロールできます。 コントロールのタイトル バーのテキストに、宣言型マークアップ、ハイフン区切り記号、およびからカスタムの字幕の値のコントロールに割り当てられているタイトルが含まれています、ブラウザーでページを読み込んだ後、`TextDisplayWebPart`コントロール。  
+  
+ [!code-aspx-csharp[WebParts_WebPart_Subtitle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPart_Subtitle/CS/subtitlecs.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPart_Subtitle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPart_Subtitle/VB/subtitlevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>字幕を指定するカスタムのインスタンス<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />オーバーライドする必要があります、コントロール、<see cref="P:System.Web.UI.WebControls.WebParts.WebPart.Subtitle" />プロパティです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Title">
+      <MemberSignature Language="C#" Value="public override string Title { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Title" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPart.Title" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Web.UI.WebControls.WebParts.Personalizable</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはパーツ コントロールのタイトルを設定します。</summary>
+        <value>一部のコントロールのタイトルを表す文字列。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 開発者に値を代入する場合、<xref:System.Web.UI.WebControls.WebParts.WebPart.Title%2A>プロパティ、し、その値を確認 (またはの一部には、少なくとも) コントロールのタイトル バーのテキスト。 タイトルのテキストも表示ツールヒントのテキストの一部としてのタイトル バーの上にマウス ポインターを置くと、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールまたはその他のサーバー コントロールに表示される、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>ゾーンです。  
+  
+ コントロールのタイトル バーに表示される完全なテキストがによっても影響を受ける、<xref:System.Web.UI.WebControls.WebParts.WebPart.Subtitle%2A>プロパティです。 そのプロパティに割り当てられた値がある場合は、タイトルに値が連結されます。 値が割り当てられていない場合、<xref:System.Web.UI.WebControls.WebParts.WebPart.Title%2A>プロパティ、計算のタイトルが表示されます。 任意の時点では、開発者がで表示される実際、合計のテキストを取得できます、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールのタイトル バーの値を取得することによって、<xref:System.Web.UI.WebControls.WebParts.WebPart.DisplayTitle%2A>プロパティです。  
+  
+ タイトルのテキストのスタイルはによって決定されます、<xref:System.Web.UI.WebControls.WebParts.WebZone.PartTitleStyle%2A>パーツ コントロールを含むゾーンのプロパティです。  
+  
+ 基本のプロパティの使用方法を示すコード例は、次を参照してください。、<xref:System.Web.UI.WebControls.WebParts.Part.Title%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TitleIconImageUrl">
+      <MemberSignature Language="C#" Value="public virtual string TitleIconImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TitleIconImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPart.TitleIconImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.ImageUrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.WebControls.WebParts.Personalizable(System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールのタイトル バーに Web パーツ コントロールを表すために使用されるイメージの URL を設定します。</summary>
+        <value>タイトル バーにコントロールを表すために使用されるイメージの URL を表す文字列。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティのパーソナル化スコープに設定されている<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>し、承認されたユーザーによってのみ変更できます。 詳細については、次を参照してください。<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute>と[Web パーツのパーソナル化の概要](http://msdn.microsoft.com/library/7dc34f74-52aa-4082-b98d-2bcf9e07e320)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、<xref:System.Web.UI.WebControls.WebParts.WebPart.TitleIconImageUrl%2A>のカスタム Web パーツ コントロール プロパティ、コントロールがコントロールのカタログ内のイメージに表示されるようにします。 この例では、カスタム コントロールの使用`TextDisplayWebPart`のセクションの例で作成された、<xref:System.Web.UI.WebControls.WebParts.WebPart>クラスの概要です。  
+  
+ Web ページの宣言型マークアップで注意してください、`<aspSample:TextDisplayWebPart>`要素。 その`TitleIconImageUrl`が割り当てられているイメージ ファイルへの URL を表す文字列。 ブラウザーでページを読み込むし、イメージの正当な URL を指定した場合のタイトル バーには、イメージが表示されます、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+ [!code-aspx-csharp[WebParts_WebPart_TitleIconImageUrl#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPart_TitleIconImageUrl/CS/titleiconimageurlcs.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPart_TitleIconImageUrl#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPart_TitleIconImageUrl/VB/titleiconimageurlvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">内部的な検証システム URL がスクリプト攻撃を含む可能性があると判断しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TitleUrl">
+      <MemberSignature Language="C#" Value="public virtual string TitleUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TitleUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPart.TitleUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.UrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.WebControls.WebParts.Personalizable(System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または補足情報への URL を設定、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</summary>
+        <value>についての詳細情報への URL を表す文字列、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ URL を割り当てると、<xref:System.Web.UI.WebControls.WebParts.WebPart.TitleUrl%2A>プロパティ、コントロールのタイトルは、コントロールに関する補足情報へのリンクになります。 ページが設計、編集、またはカタログ モードなど、コントロールをドラッグできる表示モードの場合は、URL はレンダリングされません。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ このプロパティのパーソナル化スコープに設定されている<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>し、承認されたユーザーによってのみ変更できます。 詳細については、次を参照してください。<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute>と[Web パーツのパーソナル化の概要](http://msdn.microsoft.com/library/7dc34f74-52aa-4082-b98d-2bcf9e07e320)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、 <xref:System.Web.UI.WebControls.WebParts.WebPart.TitleUrl%2A> Web パーツ コントロールのカスタム プロパティです。 この例では、カスタム コントロールの使用`TextDisplayWebPart`の例」のセクションに存在する、<xref:System.Web.UI.WebControls.WebParts.WebPart>クラスの概要です。  
+  
+ 注意して、`<aspSample:TextDisplayWebPart>`要素が含まれています、`TitleUrl`架空の URL を持つ属性。 ブラウザーのタイトルでページを読み込むかどうか、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールが指すリソースへのリンクではこれで、<xref:System.Web.UI.WebControls.WebParts.WebPart.TitleUrl%2A>プロパティです。  
+  
+ [!code-aspx-csharp[WebParts_WebPart_TitleUrl#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPart_TitleUrl/CS/titleurlcs.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPart_TitleUrl#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPart_TitleUrl/VB/titleurlvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">内部的な検証システム URL がスクリプト攻撃を含む可能性があると判断しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TrackViewState">
+      <MemberSignature Language="C#" Value="protected override void TrackViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void TrackViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPart.TrackViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>変更を追跡するビュー ステートへのオブジェクトの保存できるように、コントロール<see cref="P:System.Web.UI.Control.ViewState" />プロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Verbs">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.WebParts.WebPartVerbCollection Verbs { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPartVerbCollection Verbs" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPart.Verbs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartVerbCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられているカスタム動詞のコレクションを取得、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.WebParts.WebPartVerbCollection" />を含むカスタム<see cref="T:System.Web.UI.WebControls.WebParts.WebPartVerb" />オブジェクトに関連付けられている、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。 既定値は <see cref="F:System.Web.UI.WebControls.WebParts.WebPartVerbCollection.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生して動詞、<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>クラス、でき、ユーザー インターフェイス (UI) のアクションに対してユーザーが実行される、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 通常の動詞は、ボタン、リンク、またはメニュー項目として、UI に表示されます。 既定では、一般的な Web パーツの動詞は各動詞のドロップダウン メニューに表示されます。<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールのタイトル バー。 標準の動詞を開く、閉じる、編集、およびコントロール、およびコントロールの定義をエクスポートするか、ヘルプ ファイルの読み込みの他の動詞を最小限に抑えることがあります。 これらの動詞は含まれていない、<xref:System.Web.UI.WebControls.WebParts.WebPart.Verbs%2A>コレクション、コレクションには作成し、派生クラスでは、このプロパティをオーバーライドすることでを返すカスタム動詞のみが含まれています。  
+  
+ カスタム動詞を作成しに追加する際、 <xref:System.Web.UI.WebControls.WebParts.WebPart.Verbs%2A> 、コレクションにアクセスできますからプログラムによって動詞、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例は、アクセスする方法を示します、 <xref:System.Web.UI.WebControls.WebParts.WebPart.Verbs%2A> Web パーツ コントロールのカスタム プロパティです。 この例では、カスタム コントロールの使用`TextDisplayWebPart`のセクションの例で作成された、<xref:System.Web.UI.WebControls.WebParts.WebPart>クラスの概要です。  
+  
+ コード例を実行する必要があります設定を追加する Web パーツの記述ファイルをエクスポートできるようにするために Web.config ファイルに注意してください。 このコード例の Web ページと同じディレクトリ内の Web.config ファイルがあることを確認します。 内で、`<system.web>`セクションであることを確認、`<webParts>`を持つ要素が`enableExport`属性に設定`true`マークアップを次のように、します。  
+  
+ `<webParts enableExport="true">`  
+  
+ `...`  
+  
+ `</webParts>`  
+  
+ ブラウザーで Web ページを読み込みます。 クリックすると、**動詞カウントの表示**にアクセスする ボタン、<xref:System.Web.UI.WebControls.WebParts.WebPart.Verbs%2A>にカスタム動詞の数を取得するプロパティ、`TextDisplayWebPart`制御、およびラベルの数が表示されます。 カスタム動詞が追加されていないコントロールをここであるため、カウントは 0 です。  
+  
+ [!code-aspx-csharp[WebParts_WebPart_Verbs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPart_Verbs/CS/verbscs.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPart_Verbs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPart_Verbs/VB/verbsvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでオーバーライドできます、<see cref="P:System.Web.UI.WebControls.WebParts.WebPart.Verbs" />ユーザー設定を追加するユーザーを有効にするプロパティ<see cref="T:System.Web.UI.WebControls.WebParts.WebPartVerb" />動詞のコレクションにオブジェクト、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="WebBrowsableObject">
+      <MemberSignature Language="C#" Value="public virtual object WebBrowsableObject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object WebBrowsableObject" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPart.WebBrowsableObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照を取得、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />カスタム編集して有効にするコントロール<see cref="T:System.Web.UI.WebControls.WebParts.EditorPart" />コントロール。</summary>
+        <value>A<see cref="T:System.Object" />の子コントロールで構成される、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタムを作成する場合<xref:System.Web.UI.WebControls.WebParts.WebPart>を制御して、関連するカスタムの作成も<xref:System.Web.UI.WebControls.WebParts.EditorPart>ユーザーにあるコントロールを編集するコントロールの実行時、実装する必要があります、<xref:System.Web.UI.WebControls.WebParts.IWebEditable>インターフェイスが含まれています、<xref:System.Web.UI.WebControls.WebParts.WebPart.WebBrowsableObject%2A>プロパティです。  
+  
+ ときに、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールが編集モードになる、<xref:System.Web.UI.WebControls.WebParts.WebPart.WebBrowsableObject%2A>プロパティは、によって呼び出されます。、<xref:System.Web.UI.WebControls.WebParts.EditorZone>への参照を取得するコントロール、<xref:System.Web.UI.WebControls.WebParts.WebPart>を制御し、ユーザー設定を有効にする<xref:System.Web.UI.WebControls.WebParts.EditorPart>編集するコントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebPartManager">
+      <MemberSignature Language="C#" Value="protected System.Web.UI.WebControls.WebParts.WebPartManager WebPartManager { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPartManager WebPartManager" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPart.WebPartManager" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartManager</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照を取得、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />コントロールに関連付けられている、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロールのインスタンス。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />と関連付けられている、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web パーツ ページの 1 つのインスタンスが常に、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロール。 <xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールを追跡し、ベースから派生するすべてのゾーンを含め、ページの他のすべての Web パーツ コントロールを管理する<xref:System.Web.UI.WebControls.WebParts.WebZone>クラス、およびベースから派生するすべてのパーツ コントロール<xref:System.Web.UI.WebControls.WebParts.Part>クラスです。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPart.WebPartManager%2A>プロパティが存在するようにすべて<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールが関連付けられることができます、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロール。 <xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールがさらに、すべてのコレクションを保持、<xref:System.Web.UI.WebControls.WebParts.WebPart>でページ上のコントロールの<xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebParts%2A>コレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Width">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.Unit Width { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.Unit Width" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPart.Width" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Web.UI.WebControls.WebParts.Personalizable</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Unit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web サーバー コントロールの幅を取得または設定します。</summary>
+        <value>コントロールの幅を表す <see cref="T:System.Web.UI.WebControls.Unit" />。 既定値は、<see cref="F:System.Web.UI.WebControls.Unit.Empty" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Zone">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.WebPartZoneBase Zone { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPartZoneBase Zone" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPart.Zone" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartZoneBase</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartZoneBase" />現在含まれているゾーン、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.WebParts.WebPartZoneBase" />を現在、Web ページ上の Web パーツ コントロールが含まれています。 Web パーツ コントロールは、現在ページで閉じられていますが場合、戻り値は<see langword="null" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web パーツ コントロール セットのアーキテクチャでは、コントロールが Web パーツ機能の内側で動作する場合にのみ<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>ゾーンです。 標準<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>Web ページで使用するゾーンは、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>コントロール。 エンドユーザーは、Web ページ上の別のゾーン間での Web パーツ コントロールを移動することができます、コントロールの特定のインスタンスが、一度に 1 つだけのゾーンに配置できます。 Web パーツ コントロールとそれに関連する<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールを使用して、<xref:System.Web.UI.WebControls.WebParts.WebPart.Zone%2A>ゾーンがコントロールの現在の追跡にプロパティが存在し、ゾーンの一般的なレイアウトとスタイルの特性の適用に含まれているすべての Web パーツを制御します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、アクセスする方法を示します、<xref:System.Web.UI.WebControls.WebParts.WebPart.Zone%2A>と<xref:System.Web.UI.WebControls.WebParts.WebPart.ZoneIndex%2A>プロパティのカスタム Web パーツを制御します。 この例では、カスタム コントロールの使用`TextDisplayWebPart`のセクションの例で作成された、<xref:System.Web.UI.WebControls.WebParts.WebPart>クラスの概要です。  
+  
+ コード例には、Web パーツ ページの表示モードを変更できるようにするカスタム ユーザー コントロールが含まれます。 ユーザー コントロールがにより参照されている、`Register`ユーザー コントロールをホストする Web ページの上部にあるディレクティブです。 このユーザー コントロールを作成および表示モードを使用する方法の詳細については、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-aspx-csharp[WebParts_WebPart_Zone#5](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPart_Zone/CS/displaymodemenucs.ascx#5)]
+ [!code-aspx-vb[WebParts_WebPart_Zone#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPart_Zone/VB/displaymodemenuvb.ascx#5)]  
+  
+ コード例の 2 番目の部分は、Web ページです。 2 つ`<asp:webpartzone>` ページで、Web パーツ ゾーンを表す要素。 最初にゾーンを含む、標準的な<xref:System.Web.UI.WebControls.Calendar>コントロール、機能する、<xref:System.Web.UI.WebControls.WebParts.WebPart>ゾーンになっているために、実行時に制御します。 2 番目のゾーンが含まれています、`TextDisplayWebPart`コントロール。 ユーザーがクリックしたとき、**ゾーン情報** ボタン、`Label1`コントロールの値を表示する、 <xref:System.Web.UI.WebControls.WebParts.WebPart.ZoneIndex%2A> 、コントロールのプロパティと<xref:System.Web.UI.Control.ID%2A>を現在のコントロールを含むゾーンのプロパティです。  
+  
+ [!code-aspx-csharp[WebParts_WebPart_Zone#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPart_Zone/CS/webpartzoneindexcs.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPart_Zone#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPart_Zone/VB/webpartzoneindexvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ZoneIndex">
+      <MemberSignature Language="C#" Value="public int ZoneIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ZoneIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPart.ZoneIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インデックス位置を取得、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />ゾーン内のコントロールです。</summary>
+        <value>そのゾーン内のコントロールの数値順序。 ゾーン内の最初のコントロールには、0 のインデックス値があります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPart.ZoneIndex%2A>プロパティはゾーン内の他のコントロールを基準とした Web パーツ コントロールの数値順序 (または序数位置)、ゾーン内でを示します。 <xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールでは、このプロパティを使用して、追跡し、その Web ページ上の Web パーツ コントロールのコレクションを管理します。  
+  
+> [!IMPORTANT]
+>  あると想定することはできませんの値、<xref:System.Web.UI.WebControls.WebParts.WebPart.ZoneIndex%2A>コントロールのプロパティには、同じコントロール内のインデックス値が等しくなる、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase.WebParts%2A>コントロールのゾーンのコレクション。 そのゾーンでの相対的な位置は、コントロールの多くの場合、(その<xref:System.Web.UI.WebControls.WebParts.WebPart.ZoneIndex%2A>値)、およびそのインデックス内で、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase.WebParts%2A>コントロールの追加、ゾーンから削除すると、そのゾーンのコレクションは別の値になります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、アクセスする方法を示します、<xref:System.Web.UI.WebControls.WebParts.WebPart.Zone%2A>と<xref:System.Web.UI.WebControls.WebParts.WebPart.ZoneIndex%2A>プロパティのカスタム Web パーツを制御します。 この例では、カスタム コントロールの使用`TextDisplayWebPart`のセクションの例で作成された、<xref:System.Web.UI.WebControls.WebParts.WebPart>クラスの概要です。  
+  
+ コード例には、Web パーツ ページの表示モードを変更できるようにするカスタム ユーザー コントロールが含まれます。 ユーザー コントロールがにより参照されている、`Register`ユーザー コントロールをホストする Web ページの上部にあるディレクティブです。 このユーザー コントロールを作成および表示モードを使用する方法の詳細については、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-aspx-csharp[WebParts_WebPart_Zone#5](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPart_Zone/CS/displaymodemenucs.ascx#5)]
+ [!code-aspx-vb[WebParts_WebPart_Zone#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPart_Zone/VB/displaymodemenuvb.ascx#5)]  
+  
+ コード例の 2 番目の部分は、Web ページです。 2 つ`<asp:webpartzone>` ページで、Web パーツ ゾーンを表す要素。 最初にゾーンを含む、標準的な<xref:System.Web.UI.WebControls.Calendar>コントロール、機能する、<xref:System.Web.UI.WebControls.WebParts.WebPart>ゾーンになっているために、実行時に制御します。 2 番目のゾーンが含まれています、`TextDisplayWebPart`コントロール。 ユーザーがクリックしたとき、**ゾーン情報** ボタン、`Label1`コントロールの値を表示する、 <xref:System.Web.UI.WebControls.WebParts.WebPart.ZoneIndex%2A> 、コントロールのプロパティと<xref:System.Web.UI.Control.ID%2A>を現在のコントロールを含むゾーンのプロパティです。  
+  
+ [!code-aspx-csharp[WebParts_WebPart_Zone#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPart_Zone/CS/webpartzoneindexcs.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPart_Zone#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPart_Zone/VB/webpartzoneindexvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

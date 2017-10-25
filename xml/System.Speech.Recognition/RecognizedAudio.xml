@@ -1,0 +1,551 @@
+<Type Name="RecognizedAudio" FullName="System.Speech.Recognition.RecognizedAudio">
+  <TypeSignature Language="C#" Value="public class RecognizedAudio" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit RecognizedAudio extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Recognition.RecognizedAudio" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>関連付けられている表しますオーディオの入力は、<see cref="T:System.Speech.Recognition.RecognitionResult" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 音声認識エンジンには、認識操作の一環としてオーディオ入力に関する情報が生成されます。 認識されているオーディオにアクセスするには、使用、<xref:System.Speech.Recognition.RecognitionResult.Audio%2A>プロパティまたは<xref:System.Speech.Recognition.RecognitionResult.GetAudioForWordRange%2A>のメソッド、<xref:System.Speech.Recognition.RecognitionResult>です。  
+  
+ 次のイベントとのメソッドによって認識結果を生成することができます、<xref:System.Speech.Recognition.SpeechRecognizer>と<xref:System.Speech.Recognition.SpeechRecognitionEngine>クラス。  
+  
+-   イベント:  
+  
+    -   <xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechHypothesized?displayProperty=nameWithType> および <xref:System.Speech.Recognition.SpeechRecognizer.SpeechHypothesized?displayProperty=nameWithType>  
+  
+    -   <xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognitionRejected?displayProperty=nameWithType> および <xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognitionRejected?displayProperty=nameWithType>  
+  
+    -   <xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognized?displayProperty=nameWithType> および <xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognized?displayProperty=nameWithType>  
+  
+    -   <xref:System.Speech.Recognition.SpeechRecognitionEngine.EmulateRecognizeCompleted?displayProperty=nameWithType> および <xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognizeCompleted?displayProperty=nameWithType>  
+  
+    -   <xref:System.Speech.Recognition.SpeechRecognitionEngine.RecognizeCompleted?displayProperty=nameWithType>  
+  
+-   メソッド:  
+  
+    -   <xref:System.Speech.Recognition.SpeechRecognitionEngine.EmulateRecognize%2A?displayProperty=nameWithType> および <xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognize%2A?displayProperty=nameWithType>  
+  
+    -   <xref:System.Speech.Recognition.SpeechRecognitionEngine.EmulateRecognizeAsync%2A?displayProperty=nameWithType> および <xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognizeAsync%2A?displayProperty=nameWithType>  
+  
+    -   <xref:System.Speech.Recognition.SpeechRecognitionEngine.Recognize%2A?displayProperty=nameWithType>  
+  
+    -   <xref:System.Speech.Recognition.SpeechRecognitionEngine.RecognizeAsync%2A?displayProperty=nameWithType>  
+  
+> [!IMPORTANT]
+>  エミュレートされた音声認識によって生成された認識結果に認識されているオーディオが含まれていません。 このような認識結果では、その<xref:System.Speech.Recognition.RecognitionResult.Audio%2A>プロパティから返される`null`とその<xref:System.Speech.Recognition.RecognitionResult.GetAudioForWordRange%2A>メソッドが例外をスローします。 エミュレートされた音声認識機能の詳細については、次を参照してください。、`EmulateRecognize`と`EmulateRecognizeAsync`のメソッド、<xref:System.Speech.Recognition.SpeechRecognizer>と<xref:System.Speech.Recognition.SpeechRecognitionEngine>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例のハンドル、 <xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognized?displayProperty=nameWithType>、 <xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognized?displayProperty=nameWithType>、または<xref:System.Speech.Recognition.Grammar.SpeechRecognized?displayProperty=nameWithType>イベントと認識されている音声認識の結果に関連付けられている情報をコンソールに出力します。  
+  
+```csharp  
+  
+// Handle the SpeechRecognized event.   
+void SpeechRecognizedHandler(object sender, SpeechRecognizedEventArgs e)  
+{  
+  if (e.Result == null) return;  
+  
+  RecognitionResult result = e.Result;  
+  
+  Console.WriteLine("Grammar({0}): {1}",  
+    result.Grammar.Name, result.Text);  
+  
+  if (e.Result.Audio != null)  
+  {  
+    RecognizedAudio audio = e.Result.Audio;  
+  
+    Console.WriteLine("   start time: {0}", audio.StartTime);  
+    Console.WriteLine("   encoding format: {0}", audio.Format.EncodingFormat);  
+    Console.WriteLine("   position: {0}, duration: {1}",  
+      audio.AudioPosition, audio.Duration);  
+  }  
+  
+  // Add event handler code here.  
+}  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AudioPosition">
+      <MemberSignature Language="C#" Value="public TimeSpan AudioPosition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan AudioPosition" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.RecognizedAudio.AudioPosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>開始時に認識されているオーディオの入力オーディオ ストリーム内の場所を取得します。</summary>
+        <value>認識されているオーディオの開始時に入力オーディオ ストリーム内の位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、認識された語句の入力デバイスの生成されたオーディオ ストリーム内の先頭の位置を参照します。 これに対し、`RecognizerAudioPosition`のプロパティ、<xref:System.Speech.Recognition.SpeechRecognitionEngine>と<xref:System.Speech.Recognition.SpeechRecognizer>クラスは、そのオーディオ入力内の認識エンジンの位置を参照します。 これらの位置は別にすることはできます。 詳細については、次を参照してください。[音声認識イベントを使用した](http://msdn.microsoft.com/en-us/01c598ca-2e0e-4e89-b303-cd1cef9e8482)です。  
+  
+ <xref:System.Speech.Recognition.RecognizedAudio.StartTime%2A>プロパティが認識操作の開始時に、システム時刻を取得します。  
+  
+   
+  
+## Examples  
+ 次の例のハンドル、<xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognized?displayProperty=nameWithType>または<xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognized?displayProperty=nameWithType>イベントと認識されている音声認識の結果に関連付けられている情報をコンソールに出力します。  
+  
+```csharp  
+  
+// Handle the SpeechRecognized event.   
+void SpeechRecognizedHandler(object sender, SpeechRecognizedEventArgs e)  
+{  
+  if (e.Result == null) return;  
+  
+  RecognitionResult result = e.Result;  
+  
+  Console.WriteLine("Grammar({0}): {1}",  
+    result.Grammar.Name, result.Text);  
+  
+  if (e.Result.Audio != null)  
+  {  
+    RecognizedAudio audio = e.Result.Audio;  
+  
+    Console.WriteLine("   start time: {0}", audio.StartTime);  
+    Console.WriteLine("   encoding format: {0}", audio.Format.EncodingFormat);  
+    Console.WriteLine("   position: {0}, duration: {1}",  
+      audio.AudioPosition, audio.Duration);  
+  }  
+  
+  // Add event handler code here.  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Duration">
+      <MemberSignature Language="C#" Value="public TimeSpan Duration { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan Duration" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.RecognizedAudio.Duration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認識されたオーディオ入力オーディオ ストリームの期間を取得します。</summary>
+        <value>入力オーディオ ストリーム内で認識されているオーディオの期間です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のハンドル、<xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognized?displayProperty=nameWithType>または<xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognized?displayProperty=nameWithType>イベントと認識されている音声認識の結果に関連付けられている情報をコンソールに出力します。  
+  
+```csharp  
+  
+// Handle the SpeechRecognized event.   
+void SpeechRecognizedHandler(object sender, SpeechRecognizedEventArgs e)  
+{  
+  if (e.Result == null) return;  
+  
+  RecognitionResult result = e.Result;  
+  
+  Console.WriteLine("Grammar({0}): {1}",  
+    result.Grammar.Name, result.Text);  
+  
+  if (e.Result.Audio != null)  
+  {  
+    RecognizedAudio audio = e.Result.Audio;  
+  
+    Console.WriteLine("   start time: {0}", audio.StartTime);  
+    Console.WriteLine("   encoding format: {0}", audio.Format.EncodingFormat);  
+    Console.WriteLine("   position: {0}, duration: {1}",  
+      audio.AudioPosition, audio.Duration);  
+  }  
+  
+  // Add event handler code here.  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Format">
+      <MemberSignature Language="C#" Value="public System.Speech.AudioFormat.SpeechAudioFormatInfo Format { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Speech.AudioFormat.SpeechAudioFormatInfo Format" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.RecognizedAudio.Format" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.AudioFormat.SpeechAudioFormatInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認識エンジンによって処理されたオーディオの形式を取得します。</summary>
+        <value>音声認識エンジンによって処理されるオーディオの形式です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のハンドル、<xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognized?displayProperty=nameWithType>または<xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognized?displayProperty=nameWithType>イベントと認識されている音声認識の結果に関連付けられている情報をコンソールに出力します。  
+  
+```csharp  
+  
+// Handle the SpeechRecognized event.   
+void SpeechRecognizedHandler(object sender, SpeechRecognizedEventArgs e)  
+{  
+  if (e.Result == null) return;  
+  
+  RecognitionResult result = e.Result;  
+  
+  Console.WriteLine("Grammar({0}): {1}",  
+    result.Grammar.Name, result.Text);  
+  
+  if (e.Result.Audio != null)  
+  {  
+    RecognizedAudio audio = e.Result.Audio;  
+  
+    Console.WriteLine("   start time: {0}", audio.StartTime);  
+    Console.WriteLine("   encoding format: {0}", audio.Format.EncodingFormat);  
+    Console.WriteLine("   position: {0}, duration: {1}",  
+      audio.AudioPosition, audio.Duration);  
+  }  
+  
+  // Add event handler code here.  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRange">
+      <MemberSignature Language="C#" Value="public System.Speech.Recognition.RecognizedAudio GetRange (TimeSpan audioPosition, TimeSpan duration);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Speech.Recognition.RecognizedAudio GetRange(valuetype System.TimeSpan audioPosition, valuetype System.TimeSpan duration) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.RecognizedAudio.GetRange(System.TimeSpan,System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.RecognizedAudio</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="audioPosition" Type="System.TimeSpan" />
+        <Parameter Name="duration" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="audioPosition">返されるオーディオ データの開始点です。</param>
+        <param name="duration">返されるセグメントの長さ。</param>
+        <summary>選択して、認識される現在のセクションのバイナリ データとしてオーディオを返します。</summary>
+        <returns>定義された、認識されているオーディオのサブセクションを返します<paramref name="audioPosition" />と<paramref name="duration" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、名前の入力には、音声認識の文法のハンドラーを追加、<xref:System.Speech.Recognition.Grammar.SpeechRecognized>イベント、し、処理中の音声認識エンジンに文法を読み込みます。 オーディオ ファイルへの入力の名前の部分のオーディオ情報を書き込みます。 オーディオ ファイルへの入力として使用、<xref:System.Speech.Synthesis.SpeechSynthesizer>オブジェクトで、録音されたオーディオを含む語句を話します。  
+  
+```  
+private static void AddNameGrammar(SpeechRecognitionEngine recognizer)  
+{  
+  GrammarBuilder builder = new GrammarBuilder();  
+  builder.Append("My name is");  
+  builder.AppendWildcard();  
+  
+  Grammar nameGrammar = new Grammar(builder);  
+  nameGrammar.Name = "Name Grammar";  
+  nameGrammar.SpeechRecognized +=  
+    new EventHandler<SpeechRecognizedEventArgs>(  
+      NameSpeechRecognized);  
+  
+  recognizer.LoadGrammar(nameGrammar);  
+}  
+  
+// Handle the SpeechRecognized event of the name grammar.  
+private static void NameSpeechRecognized(  
+  object sender, SpeechRecognizedEventArgs e)  
+{  
+  Console.WriteLine("Grammar ({0}) recognized speech: {1}",  
+    e.Result.Grammar.Name, e.Result.Text);  
+  
+  try  
+  {  
+  
+    // The name phrase starts after the first three words.  
+    if (e.Result.Words.Count < 4)  
+    {  
+  
+      // Add code to check for an alternate that contains the wildcard.  
+      return;  
+    }  
+  
+    RecognizedAudio audio = e.Result.Audio;  
+    TimeSpan start = e.Result.Words[3].AudioPosition;  
+    TimeSpan duration = audio.Duration - start;  
+  
+    // Add code to verify and persist the audio.  
+    string path = @"C:\temp\nameAudio.wav";  
+    using (Stream outputStream = new FileStream(path, FileMode.Create))  
+    {  
+      RecognizedAudio nameAudio = audio.GetRange(start, duration);  
+      nameAudio.WriteToWaveStream(outputStream);  
+      outputStream.Close();  
+    }  
+  
+    Thread testThread =  
+      new Thread(new ParameterizedThreadStart(TestAudio));  
+    testThread.Start(path);  
+  }  
+  catch (Exception ex)  
+  {  
+    Console.WriteLine("Exception thrown while processing audio:");  
+    Console.WriteLine(ex.ToString());  
+  }  
+}  
+  
+// Use the speech synthesizer to play back the .wav file  
+// that was created in the SpeechRecognized event handler.  
+  
+private static void TestAudio(object item)  
+{  
+  string path = item as string;  
+  if (path != null && File.Exists(path))  
+  {  
+    SpeechSynthesizer synthesizer = new SpeechSynthesizer();  
+    PromptBuilder builder = new PromptBuilder();  
+    builder.AppendText("Hello");  
+    builder.AppendAudio(path);  
+    synthesizer.Speak(builder);  
+  }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="audioPosition" />および<paramref name="duration" />オーディオが現在のセグメントの範囲外のセグメントを定義します。</exception>
+        <exception cref="T:System.InvalidOperationException">現在は認識オーディオ データは含まれません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StartTime">
+      <MemberSignature Language="C#" Value="public DateTime StartTime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime StartTime" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.RecognizedAudio.StartTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認識操作の開始時に、システム時刻を取得します。</summary>
+        <value>認識操作の開始時のシステム時刻。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Recognition.RecognizedAudio.StartTime%2A>プロパティは、待機時間とパフォーマンスの計算のために役立つ認識操作の開始時にシステム時刻を取得します。  
+  
+ <xref:System.Speech.Recognition.RecognizedAudio.AudioPosition%2A>プロパティは、入力デバイスの生成されたオーディオ ストリーム内の場所を取得します。  
+  
+   
+  
+## Examples  
+ 次の例のハンドル、<xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognized?displayProperty=nameWithType>または<xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognized?displayProperty=nameWithType>イベントと認識されている音声認識の結果に関連付けられている情報をコンソールに出力します。  
+  
+```csharp  
+  
+// Handle the SpeechRecognized event.   
+void SpeechRecognizedHandler(object sender, SpeechRecognizedEventArgs e)  
+{  
+  if (e.Result == null) return;  
+  
+  RecognitionResult result = e.Result;  
+  
+  Console.WriteLine("Grammar({0}): {1}",  
+    result.Grammar.Name, result.Text);  
+  
+  if (e.Result.Audio != null)  
+  {  
+    RecognizedAudio audio = e.Result.Audio;  
+  
+    Console.WriteLine("   start time: {0}", audio.StartTime);  
+    Console.WriteLine("   encoding format: {0}", audio.Format.EncodingFormat);  
+    Console.WriteLine("   position: {0}, duration: {1}",  
+      audio.AudioPosition, audio.Duration);  
+  }  
+  
+  // Add event handler code here.  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteToAudioStream">
+      <MemberSignature Language="C#" Value="public void WriteToAudioStream (System.IO.Stream outputStream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteToAudioStream(class System.IO.Stream outputStream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.RecognizedAudio.WriteToAudioStream(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="outputStream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="outputStream">オーディオのデータを受信するストリーム。</param>
+        <summary>生データとして、全体のオーディオをストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーディオ データを書き込む`outputStream`バイナリ形式にします。 ヘッダー情報が含まれていない場合です。  
+  
+ <xref:System.Speech.Recognition.RecognizedAudio.WriteToAudioStream%2A>メソッドは、Wave 形式を使用しますが、Wave ヘッダーは含まれません。 Wave ヘッダーを含めるを使用して、<xref:System.Speech.Recognition.RecognizedAudio.WriteToWaveStream%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteToWaveStream">
+      <MemberSignature Language="C#" Value="public void WriteToWaveStream (System.IO.Stream outputStream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteToWaveStream(class System.IO.Stream outputStream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.RecognizedAudio.WriteToWaveStream(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="outputStream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="outputStream">オーディオのデータを受信するストリーム。</param>
+        <summary>オーディオを Wave 形式のストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーディオ データを書き込む`outputStream`を Wave 形式でリソース インターチェンジ ファイルの式 (RIFF) ヘッダーが含まれています。  
+  
+ <xref:System.Speech.Recognition.RecognizedAudio.WriteToAudioStream%2A>メソッドは、同じバイナリ形式を使用しますが、Wave ヘッダーは含まれません。  
+  
+   
+  
+## Examples  
+ 次の例では、名前の入力には、音声認識の文法のハンドラーを追加、<xref:System.Speech.Recognition.Grammar.SpeechRecognized>イベント、し、処理中の音声認識エンジンに文法を読み込みます。 オーディオ ファイルへの入力の名前の部分のオーディオ情報を書き込みます。 オーディオ ファイルへの入力として使用、<xref:System.Speech.Synthesis.SpeechSynthesizer>オブジェクトで、録音されたオーディオを含む語句を話します。  
+  
+```  
+private static void AddNameGrammar(SpeechRecognitionEngine recognizer)  
+{  
+  GrammarBuilder builder = new GrammarBuilder();  
+  builder.Append("My name is");  
+  builder.AppendWildcard();  
+  
+  Grammar nameGrammar = new Grammar(builder);  
+  nameGrammar.Name = "Name Grammar";  
+  nameGrammar.SpeechRecognized +=  
+    new EventHandler<SpeechRecognizedEventArgs>(  
+      NameSpeechRecognized);  
+  
+  recognizer.LoadGrammar(nameGrammar);  
+}  
+  
+// Handle the SpeechRecognized event of the name grammar.  
+private static void NameSpeechRecognized(  
+  object sender, SpeechRecognizedEventArgs e)  
+{  
+  Console.WriteLine("Grammar ({0}) recognized speech: {1}",  
+    e.Result.Grammar.Name, e.Result.Text);  
+  
+  try  
+  {  
+    // The name phrase starts after the first three words.  
+    if (e.Result.Words.Count < 4)  
+    {  
+  
+      // Add code to check for an alternate that contains the   
+wildcard.  
+      return;  
+    }  
+  
+    RecognizedAudio audio = e.Result.Audio;  
+    TimeSpan start = e.Result.Words[3].AudioPosition;  
+    TimeSpan duration = audio.Duration - start;  
+  
+    // Add code to verify and persist the audio.  
+    string path = @"C:\temp\nameAudio.wav";  
+    using (Stream outputStream = new FileStream(path, FileMode.Create))  
+    {  
+      RecognizedAudio nameAudio = audio.GetRange(start, duration);  
+      nameAudio.WriteToWaveStream(outputStream);  
+      outputStream.Close();  
+    }  
+  
+    Thread testThread =  
+      new Thread(new ParameterizedThreadStart(TestAudio));  
+    testThread.Start(path);  
+  }  
+  catch (Exception ex)  
+  {  
+    Console.WriteLine("Exception thrown while processing audio:");  
+    Console.WriteLine(ex.ToString());  
+  }  
+}  
+  
+// Use the speech synthesizer to play back the .wav file  
+// that was created in the SpeechRecognized event handler.  
+  
+private static void TestAudio(object item)  
+{  
+  string path = item as string;  
+  if (path != null && File.Exists(path))  
+  {  
+    SpeechSynthesizer synthesizer = new SpeechSynthesizer();  
+    PromptBuilder builder = new PromptBuilder();  
+    builder.AppendText("Hello");  
+    builder.AppendAudio(path);  
+    synthesizer.Speak(builder);  
+  }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

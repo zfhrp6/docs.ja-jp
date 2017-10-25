@@ -1,0 +1,72 @@
+<Type Name="Eval" FullName="Microsoft.JScript.Eval">
+  <TypeSignature Language="C#" Value="public sealed class Eval : Microsoft.JScript.AST" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Eval extends Microsoft.JScript.AST" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.JScript.Eval" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.JScript</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.JScript.AST</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>JScript コードを評価します。 このクラスは、抽象構文ツリーのカテゴリに属しています。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="JScriptEvaluate">
+      <MemberSignature Language="C#" Value="public static object JScriptEvaluate (object source, Microsoft.JScript.Vsa.VsaEngine engine);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object JScriptEvaluate(object source, class Microsoft.JScript.Vsa.VsaEngine engine) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.Eval.JScriptEvaluate(System.Object,Microsoft.JScript.Vsa.VsaEngine)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+        <Parameter Name="engine" Type="Microsoft.JScript.Vsa.VsaEngine" />
+      </Parameters>
+      <Docs>
+        <param name="source">評価するコードです。</param>
+        <param name="engine">評価に使用するスクリプト エンジンへの参照を<c>ソース</c>です。</param>
+        <summary>指定されたエンジンを使用して、指定した JScript コードを評価します。</summary>
+        <returns>評価の結果。 場合<paramref name="source" />が、文字列でない戻り値は<paramref name="source" />します。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="JScriptEvaluate">
+      <MemberSignature Language="C#" Value="public static object JScriptEvaluate (object source, object unsafeOption, Microsoft.JScript.Vsa.VsaEngine engine);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object JScriptEvaluate(object source, object unsafeOption, class Microsoft.JScript.Vsa.VsaEngine engine) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.Eval.JScriptEvaluate(System.Object,System.Object,Microsoft.JScript.Vsa.VsaEngine)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+        <Parameter Name="unsafeOption" Type="System.Object" />
+        <Parameter Name="engine" Type="Microsoft.JScript.Vsa.VsaEngine" />
+      </Parameters>
+      <Docs>
+        <param name="source">評価するコードです。</param>
+        <param name="unsafeOption">文字列リテラル<c>安全でない</c>unsafe の評価を有効にするそれ以外の場合、<see langword="false" />です。</param>
+        <param name="engine">評価に使用するスクリプト エンジンへの参照を<c>ソース</c>です。</param>
+        <summary>指定されたエンジンと安全性のオプションを使用して、指定した JScript コードを評価します。</summary>
+        <returns>評価の結果。 場合<paramref name="source" />が、文字列でない戻り値は<paramref name="source" />します。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

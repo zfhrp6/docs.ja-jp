@@ -1,0 +1,242 @@
+<Type Name="FieldTemplateFactory" FullName="System.Web.DynamicData.FieldTemplateFactory">
+  <TypeSignature Language="C#" Value="public class FieldTemplateFactory : System.Web.DynamicData.IFieldTemplateFactory" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FieldTemplateFactory extends System.Object implements class System.Web.DynamicData.IFieldTemplateFactory" />
+  <TypeSignature Language="DocId" Value="T:System.Web.DynamicData.FieldTemplateFactory" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DynamicData</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.DynamicData.IFieldTemplateFactory</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>フィールド テンプレートを作成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、このクラスを実装する、<xref:System.Web.DynamicData.IFieldTemplateFactory>インターフェイスを使用して、<xref:System.Web.UI.UserControl>フィールド テンプレートを作成するクラス。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FieldTemplateFactory ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.FieldTemplateFactory.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Web.DynamicData.FieldTemplateFactory" /> クラスのインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildVirtualPath">
+      <MemberSignature Language="C#" Value="public virtual string BuildVirtualPath (string templateName, System.Web.DynamicData.MetaColumn column, System.Web.UI.WebControls.DataBoundControlMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string BuildVirtualPath(string templateName, class System.Web.DynamicData.MetaColumn column, valuetype System.Web.UI.WebControls.DataBoundControlMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.FieldTemplateFactory.BuildVirtualPath(System.String,System.Web.DynamicData.MetaColumn,System.Web.UI.WebControls.DataBoundControlMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="templateName" Type="System.String" />
+        <Parameter Name="column" Type="System.Web.DynamicData.MetaColumn" />
+        <Parameter Name="mode" Type="System.Web.UI.WebControls.DataBoundControlMode" />
+      </Parameters>
+      <Docs>
+        <param name="templateName">使用するテンプレートの名前。</param>
+        <param name="column">フィールド テンプレートが適用されるデータ列を指定します。</param>
+        <param name="mode">フィールド テンプレートの表示モードを指定します。</param>
+        <summary>フィールド テンプレートの名前と、モードに基づくフィールド テンプレートへの仮想パスを構築します。</summary>
+        <returns>フィールド テンプレートの仮想パス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、このメソッドは、テンプレート名を使用して、モードを追加し、拡張子が .ascx フィールド テンプレートへの仮想パスを構築します。 たとえば場合、`templateName`は MyFieldTemplate と`mode`仮想パスが MyFieldTemplate_Edit.ascx、テンプレート フォルダーの仮想パスで指定されたフォルダーに保存されますが、編集します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="templateName" /> が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFieldTemplate">
+      <MemberSignature Language="C#" Value="public virtual System.Web.DynamicData.IFieldTemplate CreateFieldTemplate (System.Web.DynamicData.MetaColumn column, System.Web.UI.WebControls.DataBoundControlMode mode, string uiHint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.DynamicData.IFieldTemplate CreateFieldTemplate(class System.Web.DynamicData.MetaColumn column, valuetype System.Web.UI.WebControls.DataBoundControlMode mode, string uiHint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.FieldTemplateFactory.CreateFieldTemplate(System.Web.DynamicData.MetaColumn,System.Web.UI.WebControls.DataBoundControlMode,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.IFieldTemplate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="column" Type="System.Web.DynamicData.MetaColumn" />
+        <Parameter Name="mode" Type="System.Web.UI.WebControls.DataBoundControlMode" />
+        <Parameter Name="uiHint" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="column">フィールド テンプレートが適用されるデータ列を指定します。</param>
+        <param name="mode">フィールド テンプレートの表示モードを指定します。</param>
+        <param name="uiHint">使用するフィールド テンプレートを指定します。</param>
+        <summary><see cref="T:System.Web.DynamicData.MetaColumn" /> クラス、<see cref="T:System.Web.UI.WebControls.DataBoundControlMode" /> クラスおよび <see cref="P:System.Web.DynamicData.MetaColumn.UIHint" /> プロパティを使用して、フィールド テンプレートのインスタンスを作成します。</summary>
+        <returns>インターフェイスのインスタンスを<see cref="T:System.Web.DynamicData.FieldTemplateFactory" />クラスを実装します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFieldTemplateVirtualPath">
+      <MemberSignature Language="C#" Value="public virtual string GetFieldTemplateVirtualPath (System.Web.DynamicData.MetaColumn column, System.Web.UI.WebControls.DataBoundControlMode mode, string uiHint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetFieldTemplateVirtualPath(class System.Web.DynamicData.MetaColumn column, valuetype System.Web.UI.WebControls.DataBoundControlMode mode, string uiHint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.FieldTemplateFactory.GetFieldTemplateVirtualPath(System.Web.DynamicData.MetaColumn,System.Web.UI.WebControls.DataBoundControlMode,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="column" Type="System.Web.DynamicData.MetaColumn" />
+        <Parameter Name="mode" Type="System.Web.UI.WebControls.DataBoundControlMode" />
+        <Parameter Name="uiHint" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="column">フィールド テンプレートが適用されるデータ列を指定します。</param>
+        <param name="mode">フィールド テンプレートの読み取りのみのモードを表示、編集、または挿入を指定します。</param>
+        <param name="uiHint">使用するフィールド テンプレートを指定します。 このパラメーターは、フィールド テンプレートの検索に影響します。</param>
+        <summary>フィールド テンプレートの仮想パスを決定します。</summary>
+        <returns>フィールド テンプレートの仮想パス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ダイナミック/FieldTemplates で動的なデータ フィールドのテンプレートが作成/フォルダーは、フィールド テンプレートの新しいフォルダーを作成できます。 このメソッドは、指定されたパラメーターを使用してフィールド テンプレートが含まれているフォルダーの仮想パスを決定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public virtual void Initialize (System.Web.DynamicData.MetaModel model);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Initialize(class System.Web.DynamicData.MetaModel model) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.FieldTemplateFactory.Initialize(System.Web.DynamicData.MetaModel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="model" Type="System.Web.DynamicData.MetaModel" />
+      </Parameters>
+      <Docs>
+        <param name="model">関連付けるデータ モデルを指定します、<see cref="T:System.Web.DynamicData.FieldTemplateFactory" />です。</param>
+        <summary>関連付けます、<see cref="T:System.Web.DynamicData.MetaModel" />で、<see cref="T:System.Web.DynamicData.FieldTemplateFactory" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Model">
+      <MemberSignature Language="C#" Value="public System.Web.DynamicData.MetaModel Model { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.DynamicData.MetaModel Model" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.FieldTemplateFactory.Model" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.MetaModel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Web.DynamicData.MetaModel" />と関連付けられている、<see cref="T:System.Web.DynamicData.FieldTemplateFactory" />クラス</summary>
+        <value>関連付けられているモデル、<see cref="T:System.Web.DynamicData.FieldTemplateFactory" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.MetaModel>クラスは、データベースとドメインのオブジェクト間のマッピングを表す抽象クラスです。 動的なデータは、モデルを表すクラス (データ モデル) のセットを提供します。 クラスは、オブジェクト リレーショナル デザイナー (O/R デザイナー) を使用して生成されます。 LINQ to SQL クラス テンプレートを使用すると、これらのクラスを生成します。 このプロパティを使用して取得および設定に関連付けられているデータ モデルを<xref:System.Web.DynamicData.FieldTemplateFactory>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreprocessMode">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.DataBoundControlMode PreprocessMode (System.Web.DynamicData.MetaColumn column, System.Web.UI.WebControls.DataBoundControlMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Web.UI.WebControls.DataBoundControlMode PreprocessMode(class System.Web.DynamicData.MetaColumn column, valuetype System.Web.UI.WebControls.DataBoundControlMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.FieldTemplateFactory.PreprocessMode(System.Web.DynamicData.MetaColumn,System.Web.UI.WebControls.DataBoundControlMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataBoundControlMode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="column" Type="System.Web.DynamicData.MetaColumn" />
+        <Parameter Name="mode" Type="System.Web.UI.WebControls.DataBoundControlMode" />
+      </Parameters>
+      <Docs>
+        <param name="column">フィールド テンプレートが必要となる列です。</param>
+        <param name="mode">変更するモード (読み取り専用、編集、または挿入) です。</param>
+        <summary>データ列のモードを変更します。</summary>
+        <returns>列のレンダリング モードです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 動的なデータは読み取り専用、Insert、内のデータを表示または、モードを編集します。 このメソッドは、どちらのモードを列に表示を制御します。 たとえば、列が主キー列の場合、編集モードの要求は読み取り専用に変更します。 主キーの一部では自動的に生成されると、外部キーである列は編集できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TemplateFolderVirtualPath">
+      <MemberSignature Language="C#" Value="public string TemplateFolderVirtualPath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TemplateFolderVirtualPath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.FieldTemplateFactory.TemplateFolderVirtualPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはフィールド テンプレートを作成するフォルダーを設定します。</summary>
+        <value>フィールド テンプレートが含まれているフォルダーへのパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フィールド テンプレートが作成された既定のフォルダーは、/DynamicData FieldTemplates/です。 このフォルダーには、フィールドの既定のテンプレートと作成したカスタム フィールド テンプレートが含まれています。 作成するフィールド テンプレートの別のフォルダーを指定すると、動的なデータは指定したフォルダーに、フィールド テンプレートを作成します。 フィールド テンプレートの詳細については、次を参照してください。 [ASP.NET 動的データ スキャフォールディング](http://msdn.microsoft.com/library/e0166a58-9178-4660-81a6-175994b11b12)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

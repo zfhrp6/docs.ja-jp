@@ -1,0 +1,742 @@
+<Type Name="NumericPagerField" FullName="System.Web.UI.WebControls.NumericPagerField">
+  <TypeSignature Language="C#" Value="public class NumericPagerField : System.Web.UI.WebControls.DataPagerField" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NumericPagerField extends System.Web.UI.WebControls.DataPagerField" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.NumericPagerField" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.DataPagerField</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>表す、<see cref="T:System.Web.UI.WebControls.DataPager" />ページによってページ番号を選択できるようにするフィールドです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.NumericPagerField>クラス内のナビゲーション コントロールの表示、<xref:System.Web.UI.WebControls.DataPager>コントロール。 コントロールを使用するページを実装するコントロールによって表示されるデータを移動する、<xref:System.Web.UI.WebControls.IPageableItemContainer>インターフェイスなど、<xref:System.Web.UI.WebControls.ListView>コントロール。 <xref:System.Web.UI.WebControls.NumericPagerField>オブジェクトは、ユーザーが特定のページに移動するクリックしてボタンとしてページ番号を表示します。 コントロールには、ユーザーがコントロールによって表示されるものよりもデータの複数のページにアクセスできるようにする次のページと前のページのボタンも表示されます。  
+  
+ 外観をカスタマイズすることができます、<xref:System.Web.UI.WebControls.NumericPagerField>次の表に記載されているプロパティを使用してオブジェクト。  
+  
+|プロパティ|説明|  
+|--------------|-----------------|  
+|<xref:System.Web.UI.WebControls.NumericPagerField.CurrentPageLabelCssClass%2A>|現在のページ番号の CSS クラス。|  
+|<xref:System.Web.UI.WebControls.NumericPagerField.NextPreviousButtonCssClass%2A>|次のページと前のページ ボタンの CSS クラス。|  
+|<xref:System.Web.UI.WebControls.NumericPagerField.NumericButtonCssClass%2A>|ページ番号を表すボタンの CSS クラス。|  
+  
+ 使用することができます、<xref:System.Web.UI.WebControls.NumericPagerField.ButtonType%2A>プロパティを表示するボタンの種類を選択します。 次の表は、使用可能なボタンの種類を一覧表示します。  
+  
+|[ボタンの種類]|説明|  
+|-----------------|-----------------|  
+|<xref:System.Web.UI.WebControls.ButtonType?displayProperty=nameWithType>|<xref:System.Web.UI.WebControls.Button> コントロール。|  
+|<xref:System.Web.UI.WebControls.ButtonType?displayProperty=nameWithType>|<xref:System.Web.UI.WebControls.ImageButton> コントロール。|  
+|<xref:System.Web.UI.WebControls.ButtonType?displayProperty=nameWithType>|<xref:System.Web.UI.WebControls.LinkButton> コントロール。|  
+  
+ 内のコントロール、<xref:System.Web.UI.WebControls.NumericPagerField.NumericButtonCssClass%2A>オブジェクトは、それらの間に改行なしスペースで表示します。 この動作をカスタマイズする場合は、使用、<xref:System.Web.UI.WebControls.NumericPagerField.RenderNonBreakingSpacesBetweenControls%2A>プロパティです。  
+  
+ 非表示にすることができます、<xref:System.Web.UI.WebControls.NumericPagerField>内のオブジェクト、<xref:System.Web.UI.WebControls.DataPager>コントロールを設定して、<xref:System.Web.UI.WebControls.DataPagerField.Visible%2A>プロパティを`false`です。 次のページと前のページ ボタンの表示を制御できません。 関連付けられたデータ コントロールに表示できる追加のページがある場合、コントロールによって表示されます。 使用することができます、<xref:System.Web.UI.WebControls.NumericPagerField.ButtonCount%2A>でボタンの数を指定するプロパティを表示、<xref:System.Web.UI.WebControls.NumericPagerField>オブジェクト。 各ボタンは、ページ番号に対応しています。  
+  
+ 設定して、次のページ ボタンのテキストを設定することができます、<xref:System.Web.UI.WebControls.NumericPagerField.NextPageText%2A>プロパティです。 使用して、前のページ ボタンのテキストを設定することができます、<xref:System.Web.UI.WebControls.NumericPagerField.PreviousPageText%2A>プロパティです。  
+  
+ ときに、<xref:System.Web.UI.WebControls.NumericPagerField.ButtonType%2A>プロパティに設定されている<xref:System.Web.UI.WebControls.ButtonType?displayProperty=nameWithType>次のページと前のページ ボタンに表示されるイメージの URL を指定する必要があります。 設定して、これを行う、<xref:System.Web.UI.WebControls.NumericPagerField.NextPageImageUrl%2A>と<xref:System.Web.UI.WebControls.NumericPagerField.PreviousPageImageUrl%2A>プロパティです。 その場合は、対応するテキスト プロパティは、イメージの代替テキストとして使用するは。 たとえば、テキストで指定されている、<xref:System.Web.UI.WebControls.NumericPagerField.NextPageImageUrl%2A>プロパティは、次のページ イメージ ボタンの代替テキストとして表示されます。 ツール ヒントをサポートするブラウザーでは、このテキストは、対応するボタンのツールヒントとしても表示されます。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.NumericPagerField>のページに表示されるデータを移動するオブジェクト、<xref:System.Web.UI.WebControls.ListView>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.NumericPagerField#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.NumericPagerField/CS/NumericPagerFieldCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.NumericPagerField#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.NumericPagerField/VB/NumericPagerFieldVB.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NumericPagerField ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.NumericPagerField.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.NumericPagerField" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターに動的に作成されたフィールドを追加するときに通常使用<xref:System.Web.UI.WebControls.DataPager>コントロール。  
+  
+ 追加する、<xref:System.Web.UI.WebControls.NumericPagerField>に動的にオブジェクト、<xref:System.Web.UI.WebControls.DataPager>コントロールを新規作成<xref:System.Web.UI.WebControls.NumericPagerField>オブジェクト、そのプロパティを設定およびのフィールド コレクションに追加し、<xref:System.Web.UI.WebControls.DataPager>コントロール。  
+  
+   
+  
+## Examples  
+ 次の例は、コンス トラクターを使用して動的に追加する方法を示しています、<xref:System.Web.UI.WebControls.NumericPagerField>オブジェクトを<xref:System.Web.UI.WebControls.DataPager>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.NumericPagerField.Ctor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.NumericPagerField.Ctor/CS/NumericPagerFieldCtorCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.NumericPagerField.Ctor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.NumericPagerField.Ctor/VB/NumericPagerFieldCtorVB.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ButtonCount">
+      <MemberSignature Language="C#" Value="public int ButtonCount { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ButtonCount" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.NumericPagerField.ButtonCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(5)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に表示するボタンの数、<see cref="T:System.Web.UI.WebControls.NumericPagerField" />オブジェクト。</summary>
+        <value>表示するボタンの数、<see cref="T:System.Web.UI.WebControls.NumericPagerField" />オブジェクト。 既定値は 5 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.NumericPagerField.ButtonCount%2A>に表示するボタンの数を指定するプロパティ、<xref:System.Web.UI.WebControls.NumericPagerField>オブジェクト。 各ボタンは、ページ番号に対応しています。 場合、<xref:System.Web.UI.WebControls.NumericPagerField>オブジェクトが指定された数より多いページ<xref:System.Web.UI.WebControls.NumericPagerField.ButtonCount%2A>コントロールは、次のページ セットにアクセスできるように次のページ ボタンを表示します。  
+  
+ <xref:System.Web.UI.WebControls.NumericPagerField>オブジェクトには、既存のページ番号のだけボタンが表示されます。 場合、<xref:System.Web.UI.WebControls.NumericPagerField>オブジェクトが指定された数よりもを表示するページ数は少なく<xref:System.Web.UI.WebControls.NumericPagerField.ButtonCount%2A>コントロールは、このプロパティで指定された数より少ないボタンを示しています。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.NumericPagerField.ButtonCount%2A>に表示されるページ ボタンの既定の数を変更するプロパティ、<xref:System.Web.UI.WebControls.NumericPagerField>のオブジェクト、<xref:System.Web.UI.WebControls.DataPager>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.NumericPagerFieldCss#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.NumericPagerFieldCss/CS/NumericPagerCssCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.NumericPagerFieldCss#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.NumericPagerFieldCss/VB/NumericPagerCssVB.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><see cref="P:System.Web.UI.WebControls.NumericPagerField.ButtonCount" />プロパティが 1 未満の値に設定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ButtonType">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.ButtonType ButtonType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.ButtonType ButtonType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.NumericPagerField.ButtonType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ButtonType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはページャー フィールドに表示するボタンの種類を設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.ButtonType" /> 値のいずれか。 既定値は、<see cref="F:System.Web.UI.WebControls.ButtonType.Link" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、使用可能なボタンの種類を一覧表示します。  
+  
+|ボタンの種類の値|説明|  
+|-----------------------|-----------------|  
+|<xref:System.Web.UI.WebControls.ButtonType?displayProperty=nameWithType>|<xref:System.Web.UI.WebControls.Button> コントロール。|  
+|<xref:System.Web.UI.WebControls.ButtonType?displayProperty=nameWithType>|<xref:System.Web.UI.WebControls.ImageButton> コントロール。|  
+|<xref:System.Web.UI.WebControls.ButtonType?displayProperty=nameWithType>|<xref:System.Web.UI.WebControls.LinkButton> コントロール。|  
+  
+ ときに、<xref:System.Web.UI.WebControls.NumericPagerField.ButtonType%2A>プロパティに設定されている<xref:System.Web.UI.WebControls.ButtonType?displayProperty=nameWithType>次のページと前のページ ボタンの画像の URL を指定する必要があります。 これを行うには、使用することができます、<xref:System.Web.UI.WebControls.NumericPagerField.NextPageImageUrl%2A>と<xref:System.Web.UI.WebControls.NumericPagerField.PreviousPageImageUrl%2A>プロパティです。 対応するテキスト プロパティをイメージの代替テキストとして使用します。 たとえば、テキストで指定されている、<xref:System.Web.UI.WebControls.NumericPagerField.NextPageImageUrl%2A>プロパティは、次のページ イメージ ボタンの代替テキストとして表示されます。 ツール ヒントをサポートするブラウザーでは、このテキストは、対応するボタンのツールヒントとしても表示されます。  
+  
+ 値、<xref:System.Web.UI.WebControls.NumericPagerField.ButtonType%2A>プロパティは viewstate に格納されます。  
+  
+ 場合、<xref:System.Web.UI.WebControls.DataPager.QueryStringField%2A?displayProperty=nameWithType>プロパティが空の文字列または`null`、<xref:System.Web.UI.WebControls.NumericPagerField>オブジェクトの値を無視する、<xref:System.Web.UI.WebControls.NumericPagerField.ButtonCount%2A>プロパティです。 その場合は、<xref:System.Web.UI.WebControls.HyperLink>コントロールは、ボタンを作成するために使用します。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.NumericPagerField.ButtonType%2A>にイメージ ボタンが表示されることを指定するプロパティ、<xref:System.Web.UI.WebControls.NumericPagerField>のオブジェクト、<xref:System.Web.UI.WebControls.DataPager>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.NumericPagerFieldUrl#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.NumericPagerFieldUrl/CS/NumericPagerUrlCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.NumericPagerFieldUrl#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.NumericPagerFieldUrl/VB/NumericPagerUrlVB.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値、<see cref="P:System.Web.UI.WebControls.NumericPagerField.ButtonType" />プロパティは、のいずれかではない、<see cref="T:System.Web.UI.WebControls.ButtonType" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyProperties">
+      <MemberSignature Language="C#" Value="protected override void CopyProperties (System.Web.UI.WebControls.DataPagerField newField);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CopyProperties(class System.Web.UI.WebControls.DataPagerField newField) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.NumericPagerField.CopyProperties(System.Web.UI.WebControls.DataPagerField)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newField" Type="System.Web.UI.WebControls.DataPagerField" />
+      </Parameters>
+      <Docs>
+        <param name="newField"><see cref="T:System.Web.UI.WebControls.DataPagerField" />オブジェクトが現在のプロパティをコピーする<see cref="T:System.Web.UI.WebControls.NumericPagerField" />するオブジェクトします。</param>
+        <summary>現在のプロパティをコピー<see cref="T:System.Web.UI.WebControls.NumericPagerField" />を指定したオブジェクト<see cref="T:System.Web.UI.WebControls.DataPagerField" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.NumericPagerField.CopyProperties%2A>ヘルパー メソッドです。 によって使用されている、<xref:System.Web.UI.WebControls.DataPagerField.CloneField%2A>メソッド、現在のプロパティをコピーする<xref:System.Web.UI.WebControls.NumericPagerField>オブジェクトを<xref:System.Web.UI.WebControls.DataPagerField>で渡されるオブジェクト、`newField`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>上書き、<see cref="M:System.Web.UI.WebControls.NumericPagerField.CopyProperties(System.Web.UI.WebControls.DataPagerField)" />メソッドを派生クラスで作成された新しいプロパティをコピーします。 基本クラスの<see cref="M:System.Web.UI.WebControls.NumericPagerField.CopyProperties(System.Web.UI.WebControls.DataPagerField)" />メソッドようにのプロパティ、<see cref="T:System.Web.UI.WebControls.NumericPagerField" />クラスもコピーします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDataPagers">
+      <MemberSignature Language="C#" Value="public override void CreateDataPagers (System.Web.UI.WebControls.DataPagerFieldItem container, int startRowIndex, int maximumRows, int totalRowCount, int fieldIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void CreateDataPagers(class System.Web.UI.WebControls.DataPagerFieldItem container, int32 startRowIndex, int32 maximumRows, int32 totalRowCount, int32 fieldIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.NumericPagerField.CreateDataPagers(System.Web.UI.WebControls.DataPagerFieldItem,System.Int32,System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="container" Type="System.Web.UI.WebControls.DataPagerFieldItem" />
+        <Parameter Name="startRowIndex" Type="System.Int32" />
+        <Parameter Name="maximumRows" Type="System.Int32" />
+        <Parameter Name="totalRowCount" Type="System.Int32" />
+        <Parameter Name="fieldIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="container">コントロールを格納するために使用されるコンテナー。</param>
+        <param name="startRowIndex">ページの最初のレコードのインデックス。</param>
+        <param name="maximumRows">1 つのページ上の項目の最大数。</param>
+        <param name="totalRowCount">項目の合計数。</param>
+        <param name="fieldIndex">データ ページャー フィールド内のインデックス、<see cref="P:System.Web.UI.WebControls.DataPager.Fields" />コレクション。</param>
+        <summary>ユーザー インターフェイス (UI) コントロールのページャー フィールド オブジェクトを作成し、指定したコンテナーに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.NumericPagerField.CreateDataPagers%2A>ヘルパー メソッドです。 によって使用されている、<xref:System.Web.UI.WebControls.DataPager.CreatePagerFields%2A?displayProperty=nameWithType>数字ボタンなどのページャー フィールドの UI を作成する方法を制御します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateField">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.WebControls.DataPagerField CreateField ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.WebControls.DataPagerField CreateField() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.NumericPagerField.CreateField" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataPagerField</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.NumericPagerField" /> クラスの新しいインスタンスを作成して返します。</summary>
+        <returns><see cref="T:System.Web.UI.WebControls.NumericPagerField" /> クラスの新しいインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.NumericPagerField.CreateField%2A>ヘルパー メソッドです。 によって使用されている、 <xref:System.Web.UI.WebControls.DataPagerField.CloneField%2A> 、空を作成する基本クラスのメソッド<xref:System.Web.UI.WebControls.NumericPagerField>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>上書き、<see cref="M:System.Web.UI.WebControls.NumericPagerField.CreateField" />派生クラスの新しいインスタンスを返すメソッド。 呼び出す必要はありません、<see cref="M:System.Web.UI.WebControls.NumericPagerField.CreateField" />基底クラスのメソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentPageLabelCssClass">
+      <MemberSignature Language="C#" Value="public string CurrentPageLabelCssClass { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CurrentPageLabelCssClass" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.NumericPagerField.CurrentPageLabelCssClass" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.CssClassProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在のページ番号のスタイル設定に使用されるカスケード スタイル シート (CSS) クラスを設定します。</summary>
+        <value>ブラウザーでの現在のページ番号のスタイルを設定するために使用される CSS クラス。 既定値は空の文字列 ("")、ことを示します、<see cref="P:System.Web.UI.WebControls.NumericPagerField.CurrentPageLabelCssClass" />プロパティが設定されていません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.NumericPagerField.CurrentPageLabelCssClass%2A>スタイルに使用される CSS クラスを指定するプロパティ、<xref:System.Web.UI.WebControls.Label>現在選択されているページ数を表すオブジェクト。 <xref:System.Web.UI.WebControls.NumericPagerField.CurrentPageLabelCssClass%2A>プロパティは常として表示、`class`属性に、ブラウザーに関係なく、します。  
+  
+> [!NOTE]
+>  CSS、設定をサポートしていないブラウザーで、<xref:System.Web.UI.WebControls.NumericPagerField.CurrentPageLabelCssClass%2A>プロパティは影響を与えません。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次の例では、現在のページ番号のスタイルを設定する CSS クラスを指定する方法を示しています、<xref:System.Web.UI.WebControls.NumericPagerField>のオブジェクト、<xref:System.Web.UI.WebControls.DataPager>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.NumericPagerFieldCss#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.NumericPagerFieldCss/CS/NumericPagerCssCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.NumericPagerFieldCss#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.NumericPagerFieldCss/VB/NumericPagerCssVB.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.NumericPagerField.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">現在と比較するオブジェクト<see cref="T:System.Web.UI.WebControls.NumericPagerField" />インスタンス。</param>
+        <summary>指定したオブジェクトが、現在の <see cref="T:System.Web.UI.WebControls.NumericPagerField" /> オブジェクトと等しいかどうかを判断します。</summary>
+        <returns>
+          指定したオブジェクトが現在の <see cref="T:System.Web.UI.WebControls.NumericPagerField" /> オブジェクトと等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.NumericPagerField.Equals%2A>返します`true`2 つのオブジェクトがすべてのパブリック プロパティの正確に同じ値を含めるかどうか、<xref:System.Web.UI.WebControls.NumericPagerField>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.NumericPagerField.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ハッシュ関数として機能、<see cref="T:System.Web.UI.WebControls.NumericPagerField" />クラスです。</summary>
+        <returns>現在の <see cref="T:System.Web.UI.WebControls.NumericPagerField" /> オブジェクトのハッシュ コード。 詳細については、<see cref="M:System.Object.GetHashCode" /> クラスを参照してください。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HandleEvent">
+      <MemberSignature Language="C#" Value="public override void HandleEvent (System.Web.UI.WebControls.CommandEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void HandleEvent(class System.Web.UI.WebControls.CommandEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.NumericPagerField.HandleEvent(System.Web.UI.WebControls.CommandEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Web.UI.WebControls.CommandEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary>発生するイベントを処理、<see cref="T:System.Web.UI.WebControls.NumericPagerField" />オブジェクトし、適切なアクションを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.NumericPagerField.HandleEvent%2A>ヘルパー メソッドです。 によって使用されている、<xref:System.Web.UI.WebControls.DataPager.OnBubbleEvent%2A?displayProperty=nameWithType>で発生するイベントを処理するメソッドを<xref:System.Web.UI.WebControls.NumericPagerField>オブジェクトのいずれかのボタン コントロールの内部をクリックするとします。  
+  
+ <xref:System.Web.UI.WebControls.NumericPagerField.HandleEvent%2A>メソッドは、検査、<xref:System.Web.UI.WebControls.CommandEventArgs.CommandName%2A>のプロパティ、<xref:System.Web.UI.WebControls.CommandEventArgs>に含まれているオブジェクト、`e`パラメーター、し、適切な操作を実行します。  
+  
+ 次の表に、によって提供される、ボタン、<xref:System.Web.UI.WebControls.NumericPagerField>オブジェクトとボタンがクリックされたときに実行されるアクションです。  
+  
+|ボタン|CommandName 値|アクション|  
+|------------|-----------------------|------------|  
+|数値|ページ番号|データの対応するページに移動します。|  
+|前のページ|<xref:System.Web.UI.WebControls.DataControlCommands.PreviousPageCommandArgument?displayProperty=nameWithType>|前のページ番号のセットを表示し、そのセット内のデータのページに移動最後です。|  
+|次のページ|<xref:System.Web.UI.WebControls.DataControlCommands.NextPageCommandArgument?displayProperty=nameWithType>|前のページ番号のセットを表示し、そのセット内のデータの最初のページに移動します。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NextPageImageUrl">
+      <MemberSignature Language="C#" Value="public string NextPageImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NextPageImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.NumericPagerField.NextPageImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor(typeof(System.Web.UI.Design.ImageUrlEditor), typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定で、次のページ ボタンに表示されるイメージの URL、<see cref="T:System.Web.UI.WebControls.NumericPagerField" />オブジェクト。</summary>
+        <value>次のページ ボタンの表示されるイメージの URL、<see cref="T:System.Web.UI.WebControls.NumericPagerField" />オブジェクト。 既定値は空の文字列 ("")、ことを示します、<see cref="P:System.Web.UI.WebControls.NumericPagerField.NextPageImageUrl" />プロパティが設定されていません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.NumericPagerField.ButtonType%2A>プロパティに設定されている<xref:System.Web.UI.WebControls.ButtonType?displayProperty=nameWithType>を使用して、<xref:System.Web.UI.WebControls.NumericPagerField.NextPageImageUrl%2A>プロパティを次のページ ボタンに表示されるイメージの URL を指定します。 イメージは、.gif、.jpg、.bmp、および .png などのブラウザーでサポートされているすべてのファイル形式で指定できます。  
+  
+ ときに、<xref:System.Web.UI.WebControls.NumericPagerField.ButtonType%2A>プロパティが以外の値に設定<xref:System.Web.UI.WebControls.ButtonType?displayProperty=nameWithType>、設定、<xref:System.Web.UI.WebControls.NumericPagerField.NextPageImageUrl%2A>プロパティは影響を与えません。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次の例は、次のページ ボタンの画像を表示する方法を示します、<xref:System.Web.UI.WebControls.NumericPagerField>のオブジェクト、<xref:System.Web.UI.WebControls.DataPager>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.NumericPagerFieldUrl#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.NumericPagerFieldUrl/CS/NumericPagerUrlCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.NumericPagerFieldUrl#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.NumericPagerFieldUrl/VB/NumericPagerUrlVB.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NextPageText">
+      <MemberSignature Language="C#" Value="public string NextPageText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NextPageText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.NumericPagerField.NextPageText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または次のページ ボタンに表示されるテキストを設定します。</summary>
+        <value>次のページ ボタンに表示されるテキストです。 既定では「.」です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.NumericPagerField.ButtonType%2A>プロパティに設定されている<xref:System.Web.UI.WebControls.ButtonType?displayProperty=nameWithType>で指定したテキスト、<xref:System.Web.UI.WebControls.NumericPagerField.NextPageText%2A>プロパティは、イメージの代替テキストとして使用します。 ツール ヒントをサポートするブラウザーでは、このテキストは、対応するボタンのツールヒントとしても表示されます。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。 保存できます自動的にリソース ファイルにデザイナーのツールを使用しています。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次の例は、ページャー フィールド内の次のページ ボタンに表示されるテキストをカスタマイズする方法を示しています、<xref:System.Web.UI.WebControls.DataPager>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.NumericPagerFieldText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.NumericPagerFieldText/CS/NumericPagerTextCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.NumericPagerFieldText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.NumericPagerFieldText/VB/NumericPagerTextVB.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NextPreviousButtonCssClass">
+      <MemberSignature Language="C#" Value="public string NextPreviousButtonCssClass { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NextPreviousButtonCssClass" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.NumericPagerField.NextPreviousButtonCssClass" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.CssClassProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、ページャー フィールドのボタンの次のページと前のページ ボタンのスタイル設定に使用されるカスケード スタイル シート (CSS) クラス。</summary>
+        <value>ページャー フィールドの次のページと前のページ ボタンのスタイルを設定するために使用される CSS クラス。 既定値は空の文字列 ("")、ことを示します、<see cref="P:System.Web.UI.WebControls.NumericPagerField.NextPreviousButtonCssClass" />プロパティが設定されていません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次のページと前のページ ボタンが表示されます、<xref:System.Web.UI.WebControls.NumericPagerField>ユーザー ページの合計数がで指定された値よりも大きい場合にデータの他のページにアクセスできるようにするクラス、<xref:System.Web.UI.WebControls.NumericPagerField.ButtonCount%2A>プロパティです。 <xref:System.Web.UI.WebControls.NumericPagerField.NextPreviousButtonCssClass%2A>プロパティは常として表示、`class`属性に、ブラウザーに関係なく、します。  
+  
+> [!NOTE]
+>  CSS、設定をサポートしていないブラウザーで、<xref:System.Web.UI.WebControls.NumericPagerField.NextPreviousButtonCssClass%2A>プロパティは影響を与えません。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次の例は、次のページと前のページ ボタンのスタイルを設定する CSS クラスを指定する方法を示します、<xref:System.Web.UI.WebControls.NumericPagerField>のオブジェクト、<xref:System.Web.UI.WebControls.DataPager>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.NumericPagerFieldCss#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.NumericPagerFieldCss/CS/NumericPagerCssCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.NumericPagerFieldCss#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.NumericPagerFieldCss/VB/NumericPagerCssVB.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NumericButtonCssClass">
+      <MemberSignature Language="C#" Value="public string NumericButtonCssClass { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NumericButtonCssClass" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.NumericPagerField.NumericButtonCssClass" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.CssClassProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはページャー フィールドのページ番号ボタンのスタイル設定に使用されるカスケード スタイル シート (CSS) クラスを設定します。</summary>
+        <value>ページャー フィールドのページ番号ボタンのスタイルを設定するために使用される CSS クラス。 既定値は空の文字列 ("")、ことを示します、<see cref="P:System.Web.UI.WebControls.NumericPagerField.NumericButtonCssClass" />プロパティが設定されていません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ページ番号ボタンが表示されます、<xref:System.Web.UI.WebControls.NumericPagerField>個々 のページに直接移動するユーザーを有効にするクラス。 によって指定された CSS クラス、<xref:System.Web.UI.WebControls.NumericPagerField.NumericButtonCssClass%2A>プロパティが表示されるすべてのページ番号に適用される、<xref:System.Web.UI.WebControls.NumericPagerField>現在選択されているページ以外のオブジェクト。 現在選択されているページで指定されている CSS クラスを使用して、<xref:System.Web.UI.WebControls.NumericPagerField.CurrentPageLabelCssClass%2A>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.NumericPagerField.NumericButtonCssClass%2A>プロパティは常として表示、`class`属性に、ブラウザーに関係なく、します。  
+  
+> [!NOTE]
+>  CSS、設定をサポートしていないブラウザーで、<xref:System.Web.UI.WebControls.NumericPagerField.NumericButtonCssClass%2A>プロパティは影響を与えません。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次の例は、ページ番号ボタンのスタイルを設定する CSS クラスを指定する方法を示します、<xref:System.Web.UI.WebControls.NumericPagerField>のオブジェクト、<xref:System.Web.UI.WebControls.DataPager>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.NumericPagerFieldCss#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.NumericPagerFieldCss/CS/NumericPagerCssCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.NumericPagerFieldCss#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.NumericPagerFieldCss/VB/NumericPagerCssVB.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviousPageImageUrl">
+      <MemberSignature Language="C#" Value="public string PreviousPageImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PreviousPageImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.NumericPagerField.PreviousPageImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor(typeof(System.Web.UI.Design.ImageUrlEditor), typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定で、前のページ ボタンに表示されるイメージの URL、<see cref="T:System.Web.UI.WebControls.NumericPagerField" />オブジェクト。</summary>
+        <value>前のページ ボタンの表示されるイメージの URL、<see cref="T:System.Web.UI.WebControls.NumericPagerField" />オブジェクト。 既定値は空の文字列 ("")、ことを示します、<see cref="P:System.Web.UI.WebControls.NumericPagerField.PreviousPageImageUrl" />プロパティが設定されていません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.NumericPagerField.ButtonType%2A>プロパティに設定されている<xref:System.Web.UI.WebControls.ButtonType?displayProperty=nameWithType>を使用して、<xref:System.Web.UI.WebControls.NumericPagerField.PreviousPageImageUrl%2A>前のページ ボタンに表示されるイメージの URL を指定するプロパティです。 イメージは、.gif、.jpg、.bmp、および .png などのブラウザーでサポートされている任意のファイル形式で指定できます。  
+  
+ ときに、<xref:System.Web.UI.WebControls.NumericPagerField.ButtonType%2A>プロパティが以外の値に設定<xref:System.Web.UI.WebControls.ButtonType?displayProperty=nameWithType>、設定、<xref:System.Web.UI.WebControls.NumericPagerField.PreviousPageImageUrl%2A>プロパティは影響を与えません。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次の例は、前のページ ボタンの画像を表示する方法を示します、<xref:System.Web.UI.WebControls.NumericPagerField>のオブジェクト、<xref:System.Web.UI.WebControls.DataPager>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.NumericPagerFieldUrl#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.NumericPagerFieldUrl/CS/NumericPagerUrlCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.NumericPagerFieldUrl#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.NumericPagerFieldUrl/VB/NumericPagerUrlVB.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviousPageText">
+      <MemberSignature Language="C#" Value="public string PreviousPageText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PreviousPageText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.NumericPagerField.PreviousPageText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または前のページ ボタンに表示されるテキストを設定します。</summary>
+        <value>前のページ ボタンに表示されるテキストです。 既定では「.」です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.NumericPagerField.ButtonType%2A>プロパティに設定されている<xref:System.Web.UI.WebControls.ButtonType?displayProperty=nameWithType>、内のテキスト、<xref:System.Web.UI.WebControls.NumericPagerField.PreviousPageText%2A>プロパティは、イメージの代替テキストとして使用します。 ツール ヒントをサポートするブラウザーでは、このテキストは、対応するボタンのツールヒントとしても表示されます。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。 保存できます自動的にリソース ファイルにデザイナーのツールを使用しています。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次の例は、ページャーのフィールドの前のページ ボタンに表示されるテキストをカスタマイズする方法を示しています、<xref:System.Web.UI.WebControls.DataPager>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.NumericPagerFieldText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.NumericPagerFieldText/CS/NumericPagerTextCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.NumericPagerFieldText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.NumericPagerFieldText/VB/NumericPagerTextVB.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderNonBreakingSpacesBetweenControls">
+      <MemberSignature Language="C#" Value="public bool RenderNonBreakingSpacesBetweenControls { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RenderNonBreakingSpacesBetweenControls" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.NumericPagerField.RenderNonBreakingSpacesBetweenControls" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または改行しないスペースをコントロールの間で表示するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />非区切りスペース表示する場合はコントロールの間それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.NumericPagerField.RenderNonBreakingSpacesBetweenControls%2A>プロパティを指定する重要ではないかどうかスペース (HTML`&nbsp;`文字参照) のコントロール間で表示されます、<xref:System.Web.UI.WebControls.NumericPagerField>ページ ボタンなどのオブジェクト。 カスケード スタイル シート (CSS) クラスを作成しているレイアウトより詳細に制御を必要がある場合は、設定<xref:System.Web.UI.WebControls.NumericPagerField.RenderNonBreakingSpacesBetweenControls%2A>に`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

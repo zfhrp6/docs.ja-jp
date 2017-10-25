@@ -1,0 +1,63 @@
+<Type Name="IExpressionsAccessor" FullName="System.Web.UI.IExpressionsAccessor">
+  <TypeSignature Language="C#" Value="public interface IExpressionsAccessor" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IExpressionsAccessor" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.IExpressionsAccessor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>クラスを実装する必要がありますプロパティの定義を式のコレクションをサポートします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Control> クラスは、このインターフェイスを実装します。 コントロール デザイナーがから派生したクラスのインスタンスをクエリできます<xref:System.Web.UI.Control>式と、コントロールにバインドされているプロパティのコレクションを取得します。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="Expressions">
+      <MemberSignature Language="C#" Value="public System.Web.UI.ExpressionBindingCollection Expressions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ExpressionBindingCollection Expressions" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.IExpressionsAccessor.Expressions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ExpressionBindingCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.ExpressionBinding" /> オブジェクトのコレクションを取得します。</summary>
+        <value><see cref="T:System.Web.UI.ExpressionBindingCollection" />を含む<see cref="T:System.Web.UI.ExpressionBinding" />プロパティとコントロール用の式を表すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="HasExpressions">
+      <MemberSignature Language="C#" Value="public bool HasExpressions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasExpressions" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.IExpressionsAccessor.HasExpressions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインターフェイスを実装するクラスのインスタンスが、式でバインドされたプロパティを持つかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />コントロールに式を介して設定されたプロパティがある場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

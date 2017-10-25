@@ -1,0 +1,271 @@
+<Type Name="ToolStripItemTextRenderEventArgs" FullName="System.Windows.Forms.ToolStripItemTextRenderEventArgs">
+  <TypeSignature Language="C#" Value="public class ToolStripItemTextRenderEventArgs : System.Windows.Forms.ToolStripItemRenderEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ToolStripItemTextRenderEventArgs extends System.Windows.Forms.ToolStripItemRenderEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ToolStripItemTextRenderEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.ToolStripItemRenderEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Forms.ToolStripRenderer.RenderItemText" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、この型の使用を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolStripRenderer.RenderItemText>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolStripRenderer>、ように、<xref:System.Windows.Forms.ToolStripSystemRenderer>または<xref:System.Windows.Forms.ToolStripProfessionalRenderer>です。 インスタンスを名前`ToolStripRenderer1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolStripRenderer.RenderItemText>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#595](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#595)]
+ [!code-vb[System.Windows.Forms.EventExamples#595](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#595)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ToolStripItemTextRenderEventArgs (System.Drawing.Graphics g, System.Windows.Forms.ToolStripItem item, string text, System.Drawing.Rectangle textRectangle, System.Drawing.Color textColor, System.Drawing.Font textFont, System.Drawing.ContentAlignment textAlign);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Graphics g, class System.Windows.Forms.ToolStripItem item, string text, valuetype System.Drawing.Rectangle textRectangle, valuetype System.Drawing.Color textColor, class System.Drawing.Font textFont, valuetype System.Drawing.ContentAlignment textAlign) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripItemTextRenderEventArgs.#ctor(System.Drawing.Graphics,System.Windows.Forms.ToolStripItem,System.String,System.Drawing.Rectangle,System.Drawing.Color,System.Drawing.Font,System.Drawing.ContentAlignment)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="item" Type="System.Windows.Forms.ToolStripItem" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="textRectangle" Type="System.Drawing.Rectangle" />
+        <Parameter Name="textColor" Type="System.Drawing.Color" />
+        <Parameter Name="textFont" Type="System.Drawing.Font" />
+        <Parameter Name="textAlign" Type="System.Drawing.ContentAlignment" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />テキストを描画するために使用します。</param>
+        <param name="item">テキストを描画する <see cref="T:System.Windows.Forms.ToolStripItem" />。</param>
+        <param name="text">描画されるテキスト。</param>
+        <param name="textRectangle"><see cref="T:System.Drawing.Rectangle" />テキストを描画する境界を表すです。</param>
+        <param name="textColor"><see cref="T:System.Drawing.Color" />テキストを描画するために使用します。</param>
+        <param name="textFont"><see cref="T:System.Drawing.Font" />テキストを描画するために使用します。</param>
+        <param name="textAlign"><see cref="T:System.Drawing.ContentAlignment" />境界領域で、テキストの垂直および水平方向の配置を指定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ToolStripItemTextRenderEventArgs" />指定したテキストとテキストのプロパティを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ToolStripItemTextRenderEventArgs (System.Drawing.Graphics g, System.Windows.Forms.ToolStripItem item, string text, System.Drawing.Rectangle textRectangle, System.Drawing.Color textColor, System.Drawing.Font textFont, System.Windows.Forms.TextFormatFlags format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Graphics g, class System.Windows.Forms.ToolStripItem item, string text, valuetype System.Drawing.Rectangle textRectangle, valuetype System.Drawing.Color textColor, class System.Drawing.Font textFont, valuetype System.Windows.Forms.TextFormatFlags format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripItemTextRenderEventArgs.#ctor(System.Drawing.Graphics,System.Windows.Forms.ToolStripItem,System.String,System.Drawing.Rectangle,System.Drawing.Color,System.Drawing.Font,System.Windows.Forms.TextFormatFlags)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="item" Type="System.Windows.Forms.ToolStripItem" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="textRectangle" Type="System.Drawing.Rectangle" />
+        <Parameter Name="textColor" Type="System.Drawing.Color" />
+        <Parameter Name="textFont" Type="System.Drawing.Font" />
+        <Parameter Name="format" Type="System.Windows.Forms.TextFormatFlags" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />テキストを描画するために使用します。</param>
+        <param name="item">テキストを描画する <see cref="T:System.Windows.Forms.ToolStripItem" />。</param>
+        <param name="text">描画されるテキスト。</param>
+        <param name="textRectangle"><see cref="T:System.Drawing.Rectangle" />テキストを描画する境界を表すです。</param>
+        <param name="textColor"><see cref="T:System.Drawing.Color" />テキストを描画するために使用します。</param>
+        <param name="textFont"><see cref="T:System.Drawing.Font" />テキストを描画するために使用します。</param>
+        <param name="format">テキスト文字列の表示およびレイアウト情報です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ToolStripItemTextRenderEventArgs" />クラスを指定したテキストとテキストのプロパティの形式を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ToolStripItemTextRenderEventArgs.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に使用されるテキスト、<see cref="T:System.Windows.Forms.ToolStripItem" />です。</summary>
+        <value>描画するテキストを表す文字列、<see cref="T:System.Windows.Forms.ToolStripItem" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolStripRenderer.RenderItemText?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolStripRenderer>、ように、<xref:System.Windows.Forms.ToolStripSystemRenderer>または<xref:System.Windows.Forms.ToolStripProfessionalRenderer>です。 インスタンスを名前`ToolStripRenderer1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolStripRenderer.RenderItemText?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#595](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#595)]
+ [!code-vb[System.Windows.Forms.EventExamples#595](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#595)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color TextColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color TextColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ToolStripItemTextRenderEventArgs.TextColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の色、<see cref="T:System.Windows.Forms.ToolStripItem" />テキスト。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />の色を表す、<see cref="T:System.Windows.Forms.ToolStripItem" />テキスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolStripRenderer.RenderItemText?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolStripRenderer>、ように、<xref:System.Windows.Forms.ToolStripSystemRenderer>または<xref:System.Windows.Forms.ToolStripProfessionalRenderer>です。 インスタンスを名前`ToolStripRenderer1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolStripRenderer.RenderItemText?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#595](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#595)]
+ [!code-vb[System.Windows.Forms.EventExamples#595](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#595)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextDirection">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ToolStripTextDirection TextDirection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.ToolStripTextDirection TextDirection" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ToolStripItemTextRenderEventArgs.TextDirection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripTextDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または垂直方向または水平方向にテキストを描画するかどうかを設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.ToolStripTextDirection" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolStripRenderer.RenderItemText?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolStripRenderer>、ように、<xref:System.Windows.Forms.ToolStripSystemRenderer>または<xref:System.Windows.Forms.ToolStripProfessionalRenderer>です。 インスタンスを名前`ToolStripRenderer1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolStripRenderer.RenderItemText?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#595](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#595)]
+ [!code-vb[System.Windows.Forms.EventExamples#595](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#595)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextFont">
+      <MemberSignature Language="C#" Value="public System.Drawing.Font TextFont { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Font TextFont" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ToolStripItemTextRenderEventArgs.TextFont" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Font</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に描画されたテキストのフォント、<see cref="T:System.Windows.Forms.ToolStripItem" />です。</summary>
+        <value><see cref="T:System.Drawing.Font" />に描画されたテキストの<see cref="T:System.Windows.Forms.ToolStripItem" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolStripRenderer.RenderItemText?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolStripRenderer>、ように、<xref:System.Windows.Forms.ToolStripSystemRenderer>または<xref:System.Windows.Forms.ToolStripProfessionalRenderer>です。 インスタンスを名前`ToolStripRenderer1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolStripRenderer.RenderItemText?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#595](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#595)]
+ [!code-vb[System.Windows.Forms.EventExamples#595](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#595)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextFormat">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.TextFormatFlags TextFormat { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.TextFormatFlags TextFormat" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ToolStripItemTextRenderEventArgs.TextFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.TextFormatFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に描画されたテキストの表示およびレイアウト情報、<see cref="T:System.Windows.Forms.ToolStripItem" />です。</summary>
+        <value>ビットごとの組み合わせ、<see cref="T:System.Windows.Forms.TextFormatFlags" />描画するテキストの表示およびレイアウト情報を指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolStripRenderer.RenderItemText?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolStripRenderer>、ように、<xref:System.Windows.Forms.ToolStripSystemRenderer>または<xref:System.Windows.Forms.ToolStripProfessionalRenderer>です。 インスタンスを名前`ToolStripRenderer1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolStripRenderer.RenderItemText?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#595](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#595)]
+ [!code-vb[System.Windows.Forms.EventExamples#595](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#595)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextRectangle">
+      <MemberSignature Language="C#" Value="public System.Drawing.Rectangle TextRectangle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Rectangle TextRectangle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ToolStripItemTextRenderEventArgs.TextRectangle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはテキストを描画する境界を表す四角形を設定します。</summary>
+        <value><see cref="T:System.Drawing.Rectangle" />テキストを描画する境界を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolStripRenderer.RenderItemText?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolStripRenderer>、ように、<xref:System.Windows.Forms.ToolStripSystemRenderer>または<xref:System.Windows.Forms.ToolStripProfessionalRenderer>です。 インスタンスを名前`ToolStripRenderer1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolStripRenderer.RenderItemText?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#595](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#595)]
+ [!code-vb[System.Windows.Forms.EventExamples#595](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#595)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

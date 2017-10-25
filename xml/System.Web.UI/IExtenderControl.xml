@@ -1,0 +1,86 @@
+<Type Name="IExtenderControl" FullName="System.Web.UI.IExtenderControl">
+  <TypeSignature Language="C#" Value="public interface IExtenderControl" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IExtenderControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.IExtenderControl" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>エクステンダー コントロールの動作を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エクステンダー コントロールから派生する、<xref:System.Web.UI.ExtenderControl>クラスが必要、<xref:System.Web.UI.ScriptManager>コントロールをページ上に配置します。 <xref:System.Web.UI.ExtenderControl>を実行することを確認して、明示的なテストの基本クラス、<xref:System.Web.UI.ScriptManager>コントロールがページに存在します。  
+  
+ ただし、エクステンダー コントロールと、ページを作成する場合は、<xref:System.Web.UI.ScriptManager>コントロールを実装するクラスを作成することができます、<xref:System.Web.UI.IExtenderControl>インターフェイスを直接です。 さらから派生するクラスを作成する場合は<xref:System.Web.UI.Control>から派生する既存のコントロールを拡張するまたは<xref:System.Web.UI.Control>、実装することができます、<xref:System.Web.UI.IExtenderControl>クライアント機能をサポートするインターフェイスです。  
+  
+ <xref:System.Web.UI.IExtenderControl>インターフェイスは、呼び出すことによって、コントロールのスクリプト ライブラリを登録、<xref:System.Web.UI.IExtenderControl.GetScriptReferences%2A>メソッド、およびその登録<xref:System.Web.UI.ScriptDescriptor>オブジェクトを呼び出して、<xref:System.Web.UI.IExtenderControl.GetScriptDescriptors%2A>メソッドです。 <xref:System.Web.UI.IExtenderControl.GetScriptDescriptors%2A>メソッドを返します、<xref:System.Collections.IEnumerable>の一覧<xref:System.Web.UI.ScriptDescriptor>オブジェクト。  
+  
+> [!NOTE]
+>  派生した既存のコントロール型を拡張するかどうか、<xref:System.Web.UI.WebControls.WebControl>クラスを実装、<xref:System.Web.UI.IScriptControl>インターフェイスです。  
+  
+ 実装することによってエクステンダー コントロールを作成する<xref:System.Web.UI.IExtenderControl>以下を実行できます。  
+  
+-   コントロールのコードを記述`OnInit`イベントを検出しを使用して、 <xref:System.Web.UI.ScriptManager>  ページで使用可能な場合は制御します。  
+  
+-   場合、<xref:System.Web.UI.ScriptManager>ことはできません ページで、代替手段は、の静的メソッドを呼び出すことによって必要なスクリプトを登録する手段を提供、<xref:System.Web.UI.ScriptManager>クラスです。  
+  
+-   プロテクト仮想メンバーを提供<xref:System.Web.UI.IExtenderControl>メンバー。  
+  
+-   登録するスクリプト ブロックとしてインスタンスのスクリプトを提供、<xref:System.Web.UI.ScriptManager>コントロール。 コントロールの中に、これを行う必要があります`PreRender`、 `PreRenderComplete`、または`Render`イベント。  
+  
+-   コントロールの中にスクリプト記述子を登録する`Render`イベント。  
+  
+> [!NOTE]
+>  ページが含まれている場合、<xref:System.Web.UI.UpdatePanel>コントロール、ページを含める必要があります、<xref:System.Web.UI.ScriptManager>コントロール。 実装する必要があります、<xref:System.Web.UI.IExtenderControl>インターフェイスのページが含まれていない場合にのみ、<xref:System.Web.UI.ScriptManager>コントロール。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetScriptDescriptors">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.Web.UI.ScriptDescriptor&gt; GetScriptDescriptors (System.Web.UI.Control targetControl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.Web.UI.ScriptDescriptor&gt; GetScriptDescriptors(class System.Web.UI.Control targetControl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.IExtenderControl.GetScriptDescriptors(System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Web.UI.ScriptDescriptor&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetControl" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="targetControl">サーバー コントロール エクステンダーが関連付けられています。</param>
+        <summary>登録、<see cref="T:System.Web.UI.ScriptDescriptor" />コントロールのオブジェクトし、を含むオブジェクトを返します、<see cref="T:System.Web.UI.ScriptDescriptor" />コントロールのオブジェクト。</summary>
+        <returns><see cref="T:System.Collections.IEnumerable" />を含むコレクション<see cref="T:System.Web.UI.ScriptDescriptor" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetScriptReferences">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.Web.UI.ScriptReference&gt; GetScriptReferences ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.Web.UI.ScriptReference&gt; GetScriptReferences() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.IExtenderControl.GetScriptReferences" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Web.UI.ScriptReference&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールのスクリプト ライブラリを登録し、埋め込みリソースとして登録されているように ECMAScript (JavaScript) ファイルの列挙を返します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerable" />として登録されている JavaScript ファイルを含むコレクションには、リソースが埋め込まれています。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

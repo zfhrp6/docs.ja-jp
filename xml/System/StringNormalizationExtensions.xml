@@ -1,0 +1,183 @@
+<Type Name="StringNormalizationExtensions" FullName="System.StringNormalizationExtensions">
+  <TypeSignature Language="C#" Value="public static class StringNormalizationExtensions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit StringNormalizationExtensions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.StringNormalizationExtensions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Globalization.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>文字列の正規化を使用する拡張メソッドを提供します。</summary>
+    <remarks>
+        <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+
+拡張メソッド、<xref:System.StringNormalizationExtensions>クラスがサポートしていない .NET の実装と共に使用するように設計、<xref:System.String.IsNormalized%2A?displayProperty=nameWithType>と<xref:System.String.Normalize%2A?displayProperty=nameWithType>メソッドです。 ただし、これらのメソッドに含まれて、 <xref:System.String> .NET 標準 2.0 のクラス、つまり標準の .NET 2.0 をサポートするすべての .NET 実装で使用できます。 詳細については、「[.NET Standard](~/docs/standard/net-standard.md)」をご覧ください。
+  
+        ]]></format>
+    
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="IsNormalized">
+      <MemberSignature Language="C#" Value="public static bool IsNormalized (this string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsNormalized(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.StringNormalizationExtensions.IsNormalized(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" RefType="this" />
+      </Parameters>
+      <Docs>
+        <param name="value">文字列。</param>
+        <summary>指定された文字列が、Unicode 正規形 C であるかどうかを示します。</summary>
+        <returns>
+          <paramref name="value" /> が正規形 C である場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="value" /> に無効な Unicode 文字が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNormalized">
+      <MemberSignature Language="C#" Value="public static bool IsNormalized (this string value, System.Text.NormalizationForm normalizationForm);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsNormalized(string value, valuetype System.Text.NormalizationForm normalizationForm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.StringNormalizationExtensions.IsNormalized(System.String,System.Text.NormalizationForm)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" RefType="this" />
+        <Parameter Name="normalizationForm" Type="System.Text.NormalizationForm" />
+      </Parameters>
+      <Docs>
+        <param name="value">文字列。</param>
+        <param name="normalizationForm">Unicode 正規形。</param>
+        <summary>文字列が指定された Unicode 正規形であるかどうかを示します。</summary>
+        <returns>
+          <paramref name="value" /> が正規形 <paramref name="normalizationForm" /> である場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="value" /> に無効な Unicode 文字が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Normalize">
+      <MemberSignature Language="C#" Value="public static string Normalize (this string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string Normalize(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.StringNormalizationExtensions.Normalize(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" RefType="this" />
+      </Parameters>
+      <Docs>
+        <param name="value">正規化する文字列。</param>
+        <summary>文字列を Unicode 正規形 C に正規化します。</summary>
+        <returns><paramref name="value" /> と同じテキスト値を持ち、かつ、バイナリ表現が Unicode 正規形 C である新しい文字列。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="value" /> に無効な Unicode 文字が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Normalize">
+      <MemberSignature Language="C#" Value="public static string Normalize (this string value, System.Text.NormalizationForm normalizationForm);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string Normalize(string value, valuetype System.Text.NormalizationForm normalizationForm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.StringNormalizationExtensions.Normalize(System.String,System.Text.NormalizationForm)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" RefType="this" />
+        <Parameter Name="normalizationForm" Type="System.Text.NormalizationForm" />
+      </Parameters>
+      <Docs>
+        <param name="value">正規化する文字列。</param>
+        <param name="normalizationForm">Unicode 正規形。</param>
+        <summary>文字列を、指定された Unicode 正規形に正規化します。</summary>
+        <returns><paramref name="value" /> と同じテキスト値を持ち、かつ、バイナリ表現が正規形 <paramref name="normalizationForm" /> である新しい文字列。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="value" /> に無効な Unicode 文字が含まれています。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

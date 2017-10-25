@@ -1,0 +1,169 @@
+<Type Name="IClrObjectFactory" FullName="System.EnterpriseServices.Internal.IClrObjectFactory">
+  <TypeSignature Language="C#" Value="public interface IClrObjectFactory" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IClrObjectFactory" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.Internal.IClrObjectFactory" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("ecabafd2-7f19-11d2-978e-0000f8757e2a")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>クライアントから SOAP 対応の COM + アプリケーション プロキシを有効にします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください<xref:System.EnterpriseServices.Internal.ClrObjectFactory>既定の実装です。  
+  
+ <xref:System.EnterpriseServices.Internal.IClrObjectFactory>.NET Framework によって内部的に使用されます。 コード内で直接使用する必要はありません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateFromAssembly">
+      <MemberSignature Language="C#" Value="public object CreateFromAssembly (string assembly, string type, string mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object CreateFromAssembly(string assembly, string type, string mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.IClrObjectFactory.CreateFromAssembly(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assembly" Type="System.String" />
+        <Parameter Name="type" Type="System.String" />
+        <Parameter Name="mode" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="assembly">アクティブ化するアセンブリの名前。</param>
+        <param name="type">アクティブにする型の名前。</param>
+        <param name="mode">使用しません。</param>
+        <summary>アセンブリの構成ファイルを使用してリモートのアセンブリ、.NET リモート処理を有効にします。</summary>
+        <returns>インスタンス、<see cref="T:System.Object" />に設定されたカルチャ、引数、およびバインディングとアクティベーション属性を型を表す<see langword="null" />、または<see langword="null" />場合、<paramref name="type" />パラメーターが見つかりません。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出しチェーン内の呼び出し元には、アンマネージ コードへのアクセス許可がありません。</exception>
+        <exception cref="T:System.Runtime.InteropServices.COMException">クラスが登録されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromMailbox">
+      <MemberSignature Language="C#" Value="public object CreateFromMailbox (string Mailbox, string Mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object CreateFromMailbox(string Mailbox, string Mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.IClrObjectFactory.CreateFromMailbox(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(4)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Mailbox" Type="System.String" />
+        <Parameter Name="Mode" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="Mailbox">Web サービス上のメールボックスです。</param>
+        <param name="Mode">使用しません。</param>
+        <summary>リモート アセンブリのメールボックスを使用してリモートのアセンブリ、.NET リモート処理を有効にします。 現在は実装されていません。スロー、<see cref="T:System.Runtime.InteropServices.COMException" />呼び出された場合。</summary>
+        <returns>このメソッドは、呼び出された場合に例外をスローします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装は、呼び出された場合に例外をスローします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.COMException">簡易メール転送プロトコル (SMTP) が実装されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromVroot">
+      <MemberSignature Language="C#" Value="public object CreateFromVroot (string VrootUrl, string Mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object CreateFromVroot(string VrootUrl, string Mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.IClrObjectFactory.CreateFromVroot(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(2)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="VrootUrl" Type="System.String" />
+        <Parameter Name="Mode" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="VrootUrl">リモート オブジェクトの仮想ルートの URL です。</param>
+        <param name="Mode">使用しません。</param>
+        <summary>リモート アセンブリの仮想ルートの URL を使用してリモートのアセンブリ、.NET リモート処理を有効にします。</summary>
+        <returns>インスタンス、<see cref="T:System.Object" />に設定されたカルチャ、引数、およびバインディングとアクティベーション属性を型を表す<see langword="null" />、または<see langword="null" />でアセンブリが識別される場合、<paramref name="VrootUrl" />パラメーターが見つかりません。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出しチェーン内の呼び出し元には、アンマネージ コードへのアクセス許可がありません。</exception>
+        <exception cref="T:System.Runtime.InteropServices.COMException">スレッド トークンを開くことができませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromWsdl">
+      <MemberSignature Language="C#" Value="public object CreateFromWsdl (string WsdlUrl, string Mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object CreateFromWsdl(string WsdlUrl, string Mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.IClrObjectFactory.CreateFromWsdl(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(3)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="WsdlUrl" Type="System.String" />
+        <Parameter Name="Mode" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="WsdlUrl">Web サービスの WSDL の URL です。</param>
+        <param name="Mode">使用しません。</param>
+        <summary>Web サービス記述言語 (WSDL) の XML Web サービスを使用してリモートのアセンブリ、.NET リモート処理を有効にします。</summary>
+        <returns>インスタンス、<see cref="T:System.Object" />に設定されたカルチャ、引数、およびバインディングとアクティベーション属性を型を表す<see langword="null" />、または<see langword="null" />でアセンブリが識別される場合、<paramref name="WsdlUrl" />パラメーターが見つかりません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 渡された WSDL を処理し、必要に応じて、プロキシを生成する場合、リモート オブジェクトをアクティブになります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出しチェーン内の呼び出し元には、アンマネージ コードへのアクセス許可がありません。</exception>
+        <exception cref="T:System.Runtime.InteropServices.COMException">スレッド トークンを開くことができませんでした。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

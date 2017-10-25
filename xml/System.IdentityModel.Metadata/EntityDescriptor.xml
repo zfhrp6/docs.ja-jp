@@ -1,0 +1,149 @@
+<Type Name="EntityDescriptor" FullName="System.IdentityModel.Metadata.EntityDescriptor">
+  <TypeSignature Language="C#" Value="public class EntityDescriptor : System.IdentityModel.Metadata.MetadataBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EntityDescriptor extends System.IdentityModel.Metadata.MetadataBase" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Metadata.EntityDescriptor" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Metadata.MetadataBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>エンティティ記述子を表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EntityDescriptor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.EntityDescriptor.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Metadata.EntityDescriptor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Metadata.EntityDescriptor.EntityId%2A>プロパティに初期化`null`新しいインスタンス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EntityDescriptor (System.IdentityModel.Metadata.EntityId entityId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Metadata.EntityId entityId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.EntityDescriptor.#ctor(System.IdentityModel.Metadata.EntityId)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="entityId" Type="System.IdentityModel.Metadata.EntityId" />
+      </Parameters>
+      <Docs>
+        <param name="entityId">エンティティ id。 初期化、<see cref="P:System.IdentityModel.Metadata.EntityDescriptor.EntityId" />プロパティです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Metadata.EntityDescriptor" />指定されたエンティティ ID を持つクラス</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contacts">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;System.IdentityModel.Metadata.ContactPerson&gt; Contacts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;class System.IdentityModel.Metadata.ContactPerson&gt; Contacts" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Metadata.EntityDescriptor.Contacts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.IdentityModel.Metadata.ContactPerson&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.IdentityModel.Metadata.ContactPerson" />この記述子のです。</summary>
+        <value>連絡先オブジェクトのコレクション。 既定値は空のコレクションです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EntityId">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Metadata.EntityId EntityId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Metadata.EntityId EntityId" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Metadata.EntityDescriptor.EntityId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Metadata.EntityId</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこの記述子のエンティティの ID を設定します。</summary>
+        <value>エンティティ id。 既定値は、<see langword="null" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FederationId">
+      <MemberSignature Language="C#" Value="public string FederationId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FederationId" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Metadata.EntityDescriptor.FederationId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこの記述子のフェデレーション ID を設定します。</summary>
+        <value>フェデレーション id。 既定値は、<see langword="null" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Organization">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Metadata.Organization Organization { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Metadata.Organization Organization" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Metadata.EntityDescriptor.Organization" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Metadata.Organization</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこの記述子の組織を設定します。</summary>
+        <value>組織。 既定値は、<see langword="null" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RoleDescriptors">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;System.IdentityModel.Metadata.RoleDescriptor&gt; RoleDescriptors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;class System.IdentityModel.Metadata.RoleDescriptor&gt; RoleDescriptors" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Metadata.EntityDescriptor.RoleDescriptors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.IdentityModel.Metadata.RoleDescriptor&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この記述子のロール記述子のコレクションを取得します。</summary>
+        <value>ロール記述子のコレクション。 既定値は空のコレクションです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

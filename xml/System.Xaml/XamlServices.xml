@@ -1,0 +1,494 @@
+<Type Name="XamlServices" FullName="System.Xaml.XamlServices">
+  <TypeSignature Language="C#" Value="public static class XamlServices" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit XamlServices extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xaml.XamlServices" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XAML の読み取りと書き込み、オブジェクト グラフの一般的な XAML タスクを上位レベル サービス (静的メソッド) を提供します。または、オブジェクト グラフに読み取ったり書き込んだりのシリアル化の目的で XAML ファイルを出力します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ モード、<xref:System.Xaml.XamlServices>読み取りと書き込みのシナリオは、XAML リーダーと XAML ライターのインスタンスを作成するのに依存して、最も一般的な XAML で使用されるクラスです。 これらのリーダーとライターなどは、パブリック クラスの特殊化されたが、内部実装<xref:System.Xml.XmlReader>、 <xref:System.Xaml.XamlXmlReader>、および<xref:System.Xaml.XamlObjectWriter>です。 使用する<xref:System.Xaml.XamlServices>ほとんどのシナリオでは、目的の結果を取得する既定の内部実装に依存することができます。 専門的なシナリオでは可能性があります、ユーザー自身で、リーダーとライターを定義しのオーバー ロードの引数として渡したり、<xref:System.Xaml.XamlServices>メソッドです。  
+  
+> [!IMPORTANT]
+>  <xref:System.Xaml.XamlServices>ないことをお勧め XAML の読み取りまたは XAML 書き込んで API の WPF 定義の型を処理している場合は、設定または型が WPF に基づいています。 [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]使用法を使用して<xref:System.Windows.Markup.XamlReader?displayProperty=nameWithType>の読み取りまたは XAML (BAML); の読み込みと<xref:System.Windows.Markup.XamlWriter?displayProperty=nameWithType>XAML の書き戻し用です。 これらのクラス .NET Framework XAML サービス Api と XAML リーダーと XAML ライターで内部的に使用の実装です。ただしも提供のサポートと特殊な XAML スキーマ コンテキストと WPF の既知の型の依存関係プロパティの最適化などの WPF 固有の概念について説明します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public static object Load (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Load(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlServices.Load(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream">入力として読み込むストリーム。</param>
+        <summary>読み込み、 <see cref="T:System.IO.Stream" /> XAML リーダーのソースとして、オブジェクト グラフには、その出力を書き込みます。</summary>
+        <returns>オブジェクト グラフは、出力として書き込まれる。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 別の署名、<xref:System.Xaml.XamlServices.Load%28System.IO.Stream%29>メソッドがソース XAML に対する入力の種類を指定します。 <xref:System.Xaml.XamlServices.Load%28System.IO.Stream%29>内部実装が最初に作成、<xref:System.Xml.XmlReader>を呼び出して<xref:System.Xml.XmlReader.Create%28System.IO.Stream%29>、専用の新しいインスタンスを作成し、<xref:System.Xaml.XamlReader>入力を処理します。  
+  
+ 順序で、<xref:System.Xaml.XamlServices.Load%28System.IO.Stream%29>オブジェクト グラフを正常に作成する呼び出し、次を満たす必要があります。  
+  
+-   ソースが適切な形式と有効な XML です。  
+  
+-   ソースは、言語レベルで有効な XAML です。  
+  
+-   ソースで指定されている XAML 型 XAML は、関連の XAML 名前空間のバッキング型に解決される必要があります。 たとえば、XAML の WPF 名前空間の型は XAML; で指定されている WPF XAML 名前空間に解決します。WPF のアセンブリがプロジェクトに含まれているか、実行時に使用可能にする必要があります。などなど。  
+  
+> [!IMPORTANT]
+>  <xref:System.Xaml.XamlServices>推奨される XAML の読み取り中か、API を記述する XAML を処理する場合の設定[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]型、または型に基づく[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]です。 [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]使用法を使用して<xref:System.Windows.Markup.XamlReader?displayProperty=nameWithType>の読み取りまたは XAML での読み込みと<xref:System.Windows.Markup.XamlWriter?displayProperty=nameWithType>XAML の書き戻し用です。 これらのクラスを使用して<xref:System.Xaml>; の実装で内部的に Api ただしもサポートして、XAML の読み取りと書き込みの依存関係プロパティの最適化などの性質に影響を与える WPF 固有の概念について説明します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stream" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public static object Load (System.IO.TextReader textReader);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Load(class System.IO.TextReader textReader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlServices.Load(System.IO.TextReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textReader" Type="System.IO.TextReader" />
+      </Parameters>
+      <Docs>
+        <param name="textReader"><see cref="T:System.IO.TextReader" />作成の基礎として使用する<see cref="T:System.Xml.XmlReader" />です。</param>
+        <summary>元の XAML リーダーの作成、 <see cref="T:System.IO.TextReader" />、オブジェクト グラフを返します。</summary>
+        <returns>オブジェクト グラフは、返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクト グラフを返すために、`textReader`入力は、関連する入力を使用して構築する必要があります。 たとえば、渡す必要があります、<xref:System.IO.StringReader>の有効な XAML の文字列として入力を使用して構築する、<xref:System.IO.StringReader.%23ctor%28System.String%29>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="textReader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public static object Load (string fileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Load(string fileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlServices.Load(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">読み込むし、ソースとして使用するファイル名。</param>
+        <summary>読み込み、 <see cref="T:System.IO.Stream" /> XAML リーダーのソース オブジェクト グラフを返します。</summary>
+        <returns>オブジェクト グラフは、返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 別の署名、<xref:System.Xaml.XamlServices.Load%2A>メソッドがソース XAML に対する入力の種類を指定します。 <xref:System.Xaml.XamlServices.Load%2A>内部実装が最初に作成、<xref:System.Xml.XmlReader>を呼び出して<xref:System.Xml.XmlReader.Create%28System.String%29>、専用の新しいインスタンスを作成し、<xref:System.Xaml.XamlReader>入力を処理します。  
+  
+ 順序で、<xref:System.Xaml.XamlServices.Load%28System.String%29>オブジェクト グラフを正常に作成する呼び出し、次を満たす必要があります。  
+  
+-   ソースが適切な形式と有効な XML です。  
+  
+-   ソースは、言語レベルで有効な XAML です。  
+  
+-   ソースで指定されている XAML 型 XAML は、関連の XAML 名前空間のバッキング型に解決される必要があります。 たとえば、XAML の WPF 名前空間の型は XAML; で指定されている WPF XAML 名前空間に解決します。wpf アセンブリがプロジェクトに含める必要がありますまたは実行時に使用できます。などなど。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="fileName" />入力が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public static object Load (System.Xaml.XamlReader xamlReader);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Load(class System.Xaml.XamlReader xamlReader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlServices.Load(System.Xaml.XamlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xamlReader" Type="System.Xaml.XamlReader" />
+      </Parameters>
+      <Docs>
+        <param name="xamlReader">このリーダーとして使用する XAML リーダー実装<see langword="Load" />操作します。</param>
+        <summary>特定の XAML リーダー実装をロードし、オブジェクト グラフを返します。</summary>
+        <returns>オブジェクト グラフは、返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、この署名を使用して、次の場合にのみ必要があります。  
+  
+-   独自の実装を定義した、<xref:System.Xaml.XamlReader>です。  
+  
+-   設定を指定した、<xref:System.Xaml.XamlReader>すると、既定の設定は異なります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="xamlReader" />入力が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public static object Load (System.Xml.XmlReader xmlReader);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Load(class System.Xml.XmlReader xmlReader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlServices.Load(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xmlReader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="xmlReader"><see cref="T:System.Xml.XmlReader" />このリーダーとして使用する実装<see langword="Load" />操作します。</param>
+        <summary>特定の XML リーダー実装をロードし、オブジェクト グラフを返します。</summary>
+        <returns>出力されたオブジェクト グラフ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 独自の実装を定義する場合にのみ、通常この署名を使用する必要があります、<xref:System.Xml.XmlReader>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="xamlReader" />入力が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public static object Parse (string xaml);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Parse(string xaml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlServices.Parse(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xaml" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="xaml">解析する XAML の文字列入力です。</param>
+        <summary>文字列の出力としての XAML を読み取り、オブジェクト グラフを返します。</summary>
+        <returns>オブジェクト グラフは、返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 順序で、<xref:System.Xaml.XamlServices.Parse%2A>オブジェクト ツリーを正常に作成する呼び出し、次を満たす必要があります。  
+  
+-   `xaml`入力が適切な形式と有効な XML です。  
+  
+-   `xaml`入力が有効な XAML 言語レベルでします。  
+  
+-   XAML の型で指定されている、`xaml`入力がバックアップする関連の XAML 名前空間の型に解決する必要があります。 たとえば、XAML の WPF 名前空間の型は XAML; で指定されている WPF XAML 名前空間に解決します。wpf アセンブリがプロジェクトに含める必要がありますまたは実行時に使用できます。などなど。  
+  
+> [!IMPORTANT]
+>  <xref:System.Xaml.XamlServices>推奨される XAML の読み取り中か、API を記述する XAML を処理する場合の設定[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]型、または型に基づく[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]です。 [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]使用法]、使用<xref:System.Windows.Markup.XamlReader?displayProperty=nameWithType>の読み取りまたは XAML の読み込みと<xref:System.Windows.Markup.XamlWriter?displayProperty=nameWithType>XAML の書き戻し用です。 これらのクラスを使用して<xref:System.Xaml>; の実装で内部的に Api ただしもサポートして、XAML の読み取りと書き込みの依存関係プロパティの最適化などの性質に影響を与える WPF 固有の概念について説明します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="xaml" />入力が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public static string Save (object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string Save(object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlServices.Save(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance">処理するオブジェクト グラフのルートです。</param>
+        <summary>XAML ノードの表現に提供されたオブジェクト ツリーを処理し、出力の XAML の文字列表現を返します。</summary>
+        <returns>文字列としての XAML マークアップ出力します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドからの出力は、`ToString`の結果、<xref:System.Xml.XmlWriter>メソッドの呼び出しによって作成します。 <xref:System.Xml.XmlWriter>次の設定を使用して作成された:<xref:System.Xml.XmlWriterSettings.Indent%2A?displayProperty=nameWithType>は`true`; と<xref:System.Xml.XmlWriterSettings.OmitXmlDeclaration%2A?displayProperty=nameWithType>は`true`します。  
+  
+ 有効な XML として返される文字列を読み込むことができます、<xref:System.Xml.XmlReader.Create%2A>メソッドに処理して、文字列、ストリーム、またはより具体的には専用のリーダーに XAML の場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public static void Save (System.IO.Stream stream, object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Save(class System.IO.Stream stream, object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlServices.Save(System.IO.Stream,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="stream">コピー先のストリーム。</param>
+        <param name="instance">処理するオブジェクト グラフのルートです。</param>
+        <summary>XAML ノードの表現にした後、シリアル化の出力ストリームには、提供されたオブジェクト グラフを処理します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  <xref:System.Xaml.XamlServices>推奨される XAML の読み取り中か、API を記述する XAML を処理する場合の設定[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]型、または型に基づく[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]です。 [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]使用法を使用して<xref:System.Windows.Markup.XamlReader?displayProperty=nameWithType>の読み取りまたは XAML での読み込みと<xref:System.Windows.Markup.XamlWriter?displayProperty=nameWithType>XAML の書き戻し用です。 これらのクラスを使用して<xref:System.Xaml>; の実装で内部的に Api ただしもサポートして、XAML の読み取りと書き込みの依存関係プロパティの最適化などの性質に影響を与える WPF 固有の概念について説明します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stream" />入力が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public static void Save (System.IO.TextWriter writer, object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Save(class System.IO.TextWriter writer, object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlServices.Save(System.IO.TextWriter,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.IO.TextWriter" />出力を書き込みます。</param>
+        <param name="instance">処理するオブジェクト グラフのルートです。</param>
+        <summary>ノードに XAML 表現し、さらに、指定した出力には、提供されたオブジェクト グラフを処理<see cref="T:System.IO.TextWriter" />です。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" />入力が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public static void Save (string fileName, object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Save(string fileName, object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlServices.Save(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">名前と、出力を書き込むファイルの場所。</param>
+        <param name="instance">処理するオブジェクト グラフのルートです。</param>
+        <summary>XAML ノードの表現に提供されたオブジェクト グラフを処理し、指定された場所に出力ファイルに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `fileName`パラメーター値として使用されます、`outputFileName`への呼び出しの入力を<xref:System.Xml.XmlWriter.Create%2A?displayProperty=nameWithType>、作成する、<xref:System.Xml.XmlWriter>メソッド呼び出しの一部として。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="fileName" /> が空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="fileName" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public static void Save (System.Xaml.XamlWriter writer, object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Save(class System.Xaml.XamlWriter writer, object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlServices.Save(System.Xaml.XamlWriter,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xaml.XamlWriter" />
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xaml.XamlWriter" />使用する実装。</param>
+        <param name="instance">処理するオブジェクト グラフのルートです。</param>
+        <summary>XAML ノードの表現に提供されたオブジェクト グラフを処理し、指定された XAML ライターに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、この署名を使用して、次の場合にのみ必要があります。  
+  
+-   独自の実装を定義した、<xref:System.Xaml.XamlWriter>です。  
+  
+-   設定を指定した、<xref:System.Xaml.XamlWriter>すると、既定の設定は異なります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" />入力が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public static void Save (System.Xml.XmlWriter writer, object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Save(class System.Xml.XmlWriter writer, object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlServices.Save(System.Xml.XmlWriter,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xml.XmlWriter" />使用する実装。</param>
+        <param name="instance">処理するオブジェクト グラフのルートです。</param>
+        <summary>指定されたオブジェクト グラフを XAML ノードの表現に処理し、それを指定されたに書き込みます<see cref="T:System.Xml.XmlWriter" />です。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" />入力が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public static void Transform (System.Xaml.XamlReader xamlReader, System.Xaml.XamlWriter xamlWriter);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Transform(class System.Xaml.XamlReader xamlReader, class System.Xaml.XamlWriter xamlWriter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlServices.Transform(System.Xaml.XamlReader,System.Xaml.XamlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xamlReader" Type="System.Xaml.XamlReader" />
+        <Parameter Name="xamlWriter" Type="System.Xaml.XamlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="xamlReader"><see cref="T:System.Xaml.XamlReader" />使用する実装。</param>
+        <param name="xamlWriter">使用する <see cref="T:System.Xaml.XamlWriter" />。</param>
+        <summary>接続、<see cref="T:System.Xaml.XamlReader" />と<see cref="T:System.Xaml.XamlWriter" />中間設定の一般的な XAML ノードを使用します。 可能性のある提供するリーダーおよびライターの種類に応じて、コンテンツを変換します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ラップするラッパー<xref:System.Xaml.XamlServices.Transform%28System.Xaml.XamlReader%2CSystem.Xaml.XamlWriter%2CSystem.Boolean%29>ここで、`closeWriter`として指定された`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="xamlReader" />または<paramref name="xamlWriter" />入力が<see langword="null" />です。</exception>
+        <exception cref="T:System.Xaml.XamlException">XAML スキーマ コンテキストが一致しない、指定した<paramref name="xamlReader" />と<paramref name="xamlWriter" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public static void Transform (System.Xaml.XamlReader xamlReader, System.Xaml.XamlWriter xamlWriter, bool closeWriter);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Transform(class System.Xaml.XamlReader xamlReader, class System.Xaml.XamlWriter xamlWriter, bool closeWriter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlServices.Transform(System.Xaml.XamlReader,System.Xaml.XamlWriter,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xamlReader" Type="System.Xaml.XamlReader" />
+        <Parameter Name="xamlWriter" Type="System.Xaml.XamlWriter" />
+        <Parameter Name="closeWriter" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="xamlReader"><see cref="T:System.Xaml.XamlReader" />使用する実装。</param>
+        <param name="xamlWriter">使用する <see cref="T:System.Xaml.XamlWriter" />。</param>
+        <param name="closeWriter">
+          <see langword="true" />呼び出しの完了後にライターを終了するには<see langword="false" />ライターを最後に書き込まれる位置にあるアクティブなままにします。</param>
+        <summary>接続、<see cref="T:System.Xaml.XamlReader" />と<see cref="T:System.Xaml.XamlWriter" />中間設定の一般的な XAML ノードを使用します。 可能性のある提供するリーダーおよびライターの種類に応じて、コンテンツを変換します。 呼び出しの完了後にライターを終了するかどうかを指定するためには、パラメーターを提供します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="xamlReader" />または<paramref name="xamlWriter" />入力が<see langword="null" />です。</exception>
+        <exception cref="T:System.Xaml.XamlException">XAML スキーマ コンテキストが一致しない、指定した<paramref name="xamlReader" />と<paramref name="xamlWriter" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,442 @@
+<Type Name="InstallerCollection" FullName="System.Configuration.Install.InstallerCollection">
+  <TypeSignature Language="C#" Value="public class InstallerCollection : System.Collections.CollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit InstallerCollection extends System.Collections.CollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.Install.InstallerCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.Install</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.CollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>インストール中に実行されるインストーラーのコレクションを格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.Install.InstallerCollection>メソッドとプロパティのコレクションを管理する必要がある、アプリケーションを提供<xref:System.Configuration.Install.Installer>オブジェクト。  
+  
+ コレクションへのインストーラーを追加する次の 3 つの方法のいずれかを使用します。  
+  
+-   <xref:System.Configuration.Install.InstallerCollection.Add%2A>メソッドでは、1 つのインストーラーをコレクションに追加します。  
+  
+-   <xref:System.Configuration.Install.InstallerCollection.AddRange%2A>メソッドがコレクションに複数のインストーラーを追加します。  
+  
+-   <xref:System.Configuration.Install.InstallerCollection.Insert%2A>メソッドおよび<xref:System.Configuration.Install.InstallerCollection.Item%2A>プロパティとは、<xref:System.Configuration.Install.InstallerCollection>インデクサー、コレクション内の指定したインデックス位置に 1 つのインストーラーを追加の各します。  
+  
+ インストーラーからの削除、<xref:System.Configuration.Install.InstallerCollection.Remove%2A>メソッドです。 使用してコレクション内のインストーラーがかどうかを確認して、<xref:System.Configuration.Install.InstallerCollection.Contains%2A>メソッドです。 インストーラー内の場所のコレクションを使用して検索、<xref:System.Configuration.Install.InstallerCollection.IndexOf%2A>メソッドです。  
+  
+ ときに、コレクション内のインストーラーが実行を指定して、コレクションを含むインストーラー、<xref:System.Configuration.Install.Installer.Parent%2A?displayProperty=nameWithType>プロパティを呼び出して、 <xref:System.Configuration.Install.Installer.Install%2A>、 <xref:System.Configuration.Install.Installer.Commit%2A>、 <xref:System.Configuration.Install.Installer.Rollback%2A>、または<xref:System.Configuration.Install.Installer.Uninstall%2A>メソッドです。  
+  
+ インストーラー コレクションの使用方法の例については、次を参照してください。、<xref:System.Configuration.Install.AssemblyInstaller>と<xref:System.Configuration.Install.TransactedInstaller>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Configuration.Install.InstallerCollection.Add%2A>のメソッド、<xref:System.Configuration.Install.InstallerCollection>クラスです。 この例のような実装を提供する[Installutil.exe (インストーラー ツール)](~/docs/framework/tools/installutil-exe-installer-tool.md)です。 特定のアセンブリの前に、オプションで、アセンブリをインストールします。 アセンブリのオプションが指定されていない場合、一覧で、前のアセンブリがある場合は、直前のアセンブリのオプションが使用されます。 場合、"/u"または「/アンインストール」オプションを指定すると、アセンブリはアンインストールされます。 場合、「/ですか?」 または"/help"オプションが用意されて、ヘルプ情報がコンソールに表示されます。  
+  
+ [!code-cpp[InstallerCollection_Add#1](~/samples/snippets/cpp/VS_Snippets_CLR/InstallerCollection_Add/CPP/installercollection_add.cpp#1)]
+ [!code-csharp[InstallerCollection_Add#1](~/samples/snippets/csharp/VS_Snippets_CLR/InstallerCollection_Add/CS/installercollection_add.cs#1)]
+ [!code-vb[InstallerCollection_Add#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/InstallerCollection_Add/VB/installercollection_add.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (System.Configuration.Install.Installer value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Add(class System.Configuration.Install.Installer value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Install.InstallerCollection.Add(System.Configuration.Install.Installer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Configuration.Install.Installer" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Configuration.Install.Installer" />を表す、インストーラーをコレクションに追加します。</param>
+        <summary>このインストーラーのコレクションに指定されたインストーラーを追加します。</summary>
+        <returns>追加したインストーラーの 0 から始まるインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.Install.Installer.Parent%2A> 、追加のプロパティ<xref:System.Configuration.Install.Installer>指定に設定されている、<xref:System.Configuration.Install.Installer>このコレクションを含むです。  
+  
+   
+  
+## Examples  
+ 次の例は例では、抜粋、<xref:System.Configuration.Install.InstallerCollection>クラスです。  
+  
+ [!code-cpp[InstallerCollection_Add#1](~/samples/snippets/cpp/VS_Snippets_CLR/InstallerCollection_Add/CPP/installercollection_add.cpp#1)]
+ [!code-csharp[InstallerCollection_Add#1](~/samples/snippets/csharp/VS_Snippets_CLR/InstallerCollection_Add/CS/installercollection_add.cs#1)]
+ [!code-vb[InstallerCollection_Add#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/InstallerCollection_Add/VB/installercollection_add.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (System.Configuration.Install.Installer[] value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(class System.Configuration.Install.Installer[] value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Install.InstallerCollection.AddRange(System.Configuration.Install.Installer[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Configuration.Install.Installer[]" />
+      </Parameters>
+      <Docs>
+        <param name="value">型の配列<see cref="T:System.Configuration.Install.Installer" />を表すのインストーラーをこのコレクションに追加します。</param>
+        <summary>指定されたインストーラーの配列をこのコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.Install.Installer.Parent%2A>プロパティの追加された各<xref:System.Configuration.Install.Installer>に設定されている、<xref:System.Configuration.Install.Installer>このコレクションを含むです。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Configuration.Install.InstallerCollection.AddRange%2A>のメソッド、<xref:System.Configuration.Install.InstallerCollection>クラスです。 作成<xref:System.Configuration.Install.AssemblyInstaller>のインスタンス`MyAssembly1.exe`と`MyAssembly2.exe`です。これらのインスタンスに追加されて、<xref:System.Configuration.Install.TransactedInstaller>です。 インストール プロセスがインストールされます両方`MyAssembly1.exe`と`MyAssembly2.exe`です。  
+  
+ [!code-cpp[InstallerCollection_AddRange1#1](~/samples/snippets/cpp/VS_Snippets_CLR/InstallerCollection_AddRange1/CPP/installercollection_addrange1.cpp#1)]
+ [!code-csharp[InstallerCollection_AddRange1#1](~/samples/snippets/csharp/VS_Snippets_CLR/InstallerCollection_AddRange1/CS/installercollection_addrange1.cs#1)]
+ [!code-vb[InstallerCollection_AddRange1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/InstallerCollection_AddRange1/VB/installercollection_addrange1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (System.Configuration.Install.InstallerCollection value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(class System.Configuration.Install.InstallerCollection value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Install.InstallerCollection.AddRange(System.Configuration.Install.InstallerCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Configuration.Install.InstallerCollection" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Configuration.Install.InstallerCollection" />を表すのインストーラーをこのコレクションに追加します。</param>
+        <summary>このコレクションに指定されたインストーラーのコレクションを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.Install.Installer.Parent%2A>プロパティの追加された各<xref:System.Configuration.Install.Installer>に設定されている、<xref:System.Configuration.Install.Installer>このコレクションを含むです。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Configuration.Install.InstallerCollection.Insert%2A>メソッドおよび<xref:System.Configuration.Install.InstallerCollection.AddRange%2A>のメソッド、<xref:System.Configuration.Install.InstallerCollection>クラスです。 作成<xref:System.Configuration.Install.AssemblyInstaller>のインスタンス`MyAssembly1.exe`と`MyAssembly2.exe`です。 これらのインスタンス<xref:System.Configuration.Install.AssemblyInstaller>に追加されます、<xref:System.Configuration.Install.TransactedInstaller>という`myTransactedInstaller1`です。 内のインストーラー、`myTransactedInstaller1`別のコピーは<xref:System.Configuration.Install.TransactedInstaller>という`myTransactedInstaller2`です。 インストール プロセスがインストールされます両方`MyAssembly1.exe`と`MyAssembly2.exe`です。  
+  
+ [!code-cpp[InstallerCollection_Insert#1](~/samples/snippets/cpp/VS_Snippets_CLR/InstallerCollection_Insert/CPP/installercollection_insert.cpp#1)]
+ [!code-csharp[InstallerCollection_Insert#1](~/samples/snippets/csharp/VS_Snippets_CLR/InstallerCollection_Insert/CS/installercollection_insert.cs#1)]
+ [!code-vb[InstallerCollection_Insert#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/InstallerCollection_Insert/VB/installercollection_insert.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Configuration.Install.Installer value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Configuration.Install.Installer value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Install.InstallerCollection.Contains(System.Configuration.Install.Installer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Configuration.Install.Installer" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Configuration.Install.Installer" />を表す、インストーラーを探します。</param>
+        <summary>指定したインストーラーがコレクションに含まれているかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />指定したインストーラーが; このコレクションにある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.Configuration.Install.InstallerCollection.Remove%2A>メソッド、<xref:System.Configuration.Install.InstallerCollection.Contains%2A>メソッド、および<xref:System.Configuration.Install.InstallerCollection.IndexOf%2A>のメソッド、<xref:System.Configuration.Install.InstallerCollection>クラスです。 作成<xref:System.Configuration.Install.AssemblyInstaller>のインスタンス`MyAssembly1.exe`と`MyAssembly2.exe`です。 これらのインスタンスに追加されて、<xref:System.Configuration.Install.TransactedInstaller>です。 `MyAssembly2.exe`削除し、<xref:System.Configuration.Install.InstallerCollection>の<xref:System.Configuration.Install.TransactedInstaller>です。 インストール プロセスが開始し、インストールでのみ`MyAssembly1.exe`です。  
+  
+ [!code-cpp[InstallerCollection_Remove#1](~/samples/snippets/cpp/VS_Snippets_CLR/InstallerCollection_Remove/CPP/installercollection_remove.cpp#1)]
+ [!code-csharp[InstallerCollection_Remove#1](~/samples/snippets/csharp/VS_Snippets_CLR/InstallerCollection_Remove/CS/installercollection_remove.cs#1)]
+ [!code-vb[InstallerCollection_Remove#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/InstallerCollection_Remove/VB/installercollection_remove.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Configuration.Install.Installer[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Configuration.Install.Installer[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Install.InstallerCollection.CopyTo(System.Configuration.Install.Installer[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Configuration.Install.Installer[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">コピー先の配列。</param>
+        <param name="index">コレクションを貼り付けする位置を示す配列のインデックス。</param>
+        <summary>指定したインデックス位置を開始、配列にコレクションから項目をコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.Configuration.Install.InstallerCollection.CopyTo%2A>のメソッド、<xref:System.Configuration.Install.InstallerCollection>クラスです。 作成<xref:System.Configuration.Install.AssemblyInstaller>のインスタンス`MyAssembly1.exe`と`MyAssembly2.exe`です。 これらのインスタンスに追加されて、<xref:System.Configuration.Install.TransactedInstaller>です。 インストールするアセンブリの名前は、コンソールに表示されます。 インストール プロセスがインストールされます両方`MyAssembly1.exe`と`MyAssembly2.exe`です。  
+  
+ [!code-cpp[InstallerCollection_CopyTo#1](~/samples/snippets/cpp/VS_Snippets_CLR/InstallerCollection_CopyTo/CPP/installercollection_copyto.cpp#1)]
+ [!code-csharp[InstallerCollection_CopyTo#1](~/samples/snippets/csharp/VS_Snippets_CLR/InstallerCollection_CopyTo/CS/installercollection_copyto.cs#1)]
+ [!code-vb[InstallerCollection_CopyTo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/InstallerCollection_CopyTo/VB/installercollection_copyto.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Configuration.Install.Installer value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Configuration.Install.Installer value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Install.InstallerCollection.IndexOf(System.Configuration.Install.Installer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Configuration.Install.Installer" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクション内で検索する <see cref="T:System.Configuration.Install.Installer" />。</param>
+        <summary>コレクション内の指定されたインストーラーのインデックスを決定します。</summary>
+        <returns>インストーラー コレクション内の 0 から始まるインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、の例と同じで、<xref:System.Configuration.Install.InstallerCollection.Contains%2A>メソッドです。 この例の詳細については、の例」のセクションを参照してください、<xref:System.Configuration.Install.InstallerCollection.Contains%2A>メソッドです。  
+  
+ [!code-cpp[InstallerCollection_Remove#1](~/samples/snippets/cpp/VS_Snippets_CLR/InstallerCollection_Remove/CPP/installercollection_remove.cpp#1)]
+ [!code-csharp[InstallerCollection_Remove#1](~/samples/snippets/csharp/VS_Snippets_CLR/InstallerCollection_Remove/CS/installercollection_remove.cs#1)]
+ [!code-vb[InstallerCollection_Remove#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/InstallerCollection_Remove/VB/installercollection_remove.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.Configuration.Install.Installer value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.Configuration.Install.Installer value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Install.InstallerCollection.Insert(System.Int32,System.Configuration.Install.Installer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Configuration.Install.Installer" />
+      </Parameters>
+      <Docs>
+        <param name="index">インストーラーを挿入する位置を示す 0 から始まるインデックス。</param>
+        <param name="value">挿入する <see cref="T:System.Configuration.Install.Installer" />。</param>
+        <summary>指定されたインストーラーをコレクション内の指定したインデックス位置に挿入します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、の例と同じで、<xref:System.Configuration.Install.InstallerCollection.AddRange%2A>メソッドです。 この例の詳細については、の例」のセクションを参照してください、<xref:System.Configuration.Install.InstallerCollection.AddRange%2A>メソッドです。  
+  
+ [!code-cpp[InstallerCollection_Insert#1](~/samples/snippets/cpp/VS_Snippets_CLR/InstallerCollection_Insert/CPP/installercollection_insert.cpp#1)]
+ [!code-csharp[InstallerCollection_Insert#1](~/samples/snippets/csharp/VS_Snippets_CLR/InstallerCollection_Insert/CS/installercollection_insert.cs#1)]
+ [!code-vb[InstallerCollection_Insert#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/InstallerCollection_Insert/VB/installercollection_insert.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Configuration.Install.Installer this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.Install.Installer Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.Install.InstallerCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Install.Installer</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得または設定するインストーラーの 0 から始まるインデックス。</param>
+        <summary>取得または指定したインデックス位置にインストーラーを設定します。</summary>
+        <value><see cref="T:System.Configuration.Install.Installer" />を表す、指定したインデックス位置のインストーラーです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、指定した<xref:System.Configuration.Install.Installer>に配置されて、 <xref:System.Configuration.Install.InstallerCollection>、<xref:System.Configuration.Install.Installer.Parent%2A>のプロパティ、<xref:System.Configuration.Install.Installer>に設定されている、<xref:System.Configuration.Install.Installer>コレクションを格納します。  
+  
+   
+  
+## Examples  
+ 次の例<xref:System.Configuration.Install.AssemblyInstaller>のインスタンス`MyAssembly1.exe`と`MyAssembly2.exe`です。 これらのインスタンスに追加されて、<xref:System.Configuration.Install.TransactedInstaller>です。 インストールするのには、すべてのアセンブリの名前は、コンソールに表示されます。 インストール プロセスがインストールされます両方`MyAssembly1.exe`と`MyAssembly2.exe`です。  
+  
+ [!code-cpp[InstallerCollection_Item#1](~/samples/snippets/cpp/VS_Snippets_CLR/InstallerCollection_Item/CPP/installercollection_item.cpp#1)]
+ [!code-csharp[InstallerCollection_Item#1](~/samples/snippets/csharp/VS_Snippets_CLR/InstallerCollection_Item/CS/installercollection_item.cs#1)]
+ [!code-vb[InstallerCollection_Item#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/InstallerCollection_Item/VB/installercollection_item.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInsert">
+      <MemberSignature Language="C#" Value="protected override void OnInsert (int index, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnInsert(int32 index, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Install.InstallerCollection.OnInsert(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">挿入する位置の 0 から始まるインデックス<c>値</c>です。</param>
+        <param name="value">インストーラーでの新しい値<c>インデックス</c>です。</param>
+        <summary>コレクションに新しいインストーラーを挿入する前に、追加のカスタム処理を実行します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRemove">
+      <MemberSignature Language="C#" Value="protected override void OnRemove (int index, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnRemove(int32 index, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Install.InstallerCollection.OnRemove(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">位置の 0 から始まるインデックス<c>値</c>にあります。</param>
+        <param name="value">削除するインストーラー<c>インデックス</c>です。</param>
+        <summary>インストーラーは、コレクションから削除する前に、追加のカスタム処理を実行します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSet">
+      <MemberSignature Language="C#" Value="protected override void OnSet (int index, object oldValue, object newValue);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnSet(int32 index, object oldValue, object newValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Install.InstallerCollection.OnSet(System.Int32,System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="oldValue" Type="System.Object" />
+        <Parameter Name="newValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">置換する位置を示す 0 から始まるインデックス<c>oldValue</c>です。</param>
+        <param name="oldValue">置き換えられる値<c>newValue です。</c></param>
+        <param name="newValue">インストーラーでの新しい値<c>インデックス</c>です。</param>
+        <summary>既存のインストーラーが、新しい値に設定する前に、追加のカスタム処理を実行します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Configuration.Install.Installer value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Configuration.Install.Installer value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Install.InstallerCollection.Remove(System.Configuration.Install.Installer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Configuration.Install.Installer" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Configuration.Install.Installer" />を表す、インストーラーを削除します。</param>
+        <summary>指定された <see cref="T:System.Configuration.Install.Installer" /> をコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.Install.Installer.Parent%2A>削除されたプロパティ<xref:System.Configuration.Install.Installer>に設定されている`null`です。  
+  
+   
+  
+## Examples  
+ 次の例は、の例と同じで、<xref:System.Configuration.Install.InstallerCollection.Contains%2A>メソッドです。 この例の詳細については、の例」のセクションを参照してください、<xref:System.Configuration.Install.InstallerCollection.Contains%2A>メソッドです。  
+  
+ [!code-cpp[InstallerCollection_Remove#1](~/samples/snippets/cpp/VS_Snippets_CLR/InstallerCollection_Remove/CPP/installercollection_remove.cpp#1)]
+ [!code-csharp[InstallerCollection_Remove#1](~/samples/snippets/csharp/VS_Snippets_CLR/InstallerCollection_Remove/CS/installercollection_remove.cs#1)]
+ [!code-vb[InstallerCollection_Remove#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/InstallerCollection_Remove/VB/installercollection_remove.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

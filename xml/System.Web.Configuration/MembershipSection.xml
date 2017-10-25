@@ -1,0 +1,269 @@
+<Type Name="MembershipSection" FullName="System.Web.Configuration.MembershipSection">
+  <TypeSignature Language="C#" Value="public sealed class MembershipSection : System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed MembershipSection extends System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.MembershipSection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>構成およびメンバーシップの詳細を管理インフラストラクチャをサポートする構成設定を定義します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.MembershipSection>クラスをプログラムでアクセスおよび変更する方法を提供する、`membership`構成ファイル内のセクションです。  
+  
+   
+  
+## Examples  
+ この例は、宣言の複数の属性の値を指定する方法を示します、`membership`セクションでは、のメンバーとしてアクセスすることも、<xref:System.Web.Configuration.MembershipSection>クラスです。  
+  
+ 次の構成ファイルの例は、宣言によっての値を指定する方法を示しています、`membership`セクションです。  
+  
+```  
+<system.web>  
+  <membership   
+    defaultProvider="AspNetSqlMembershipProvider"  
+    userIsOnlineTimeWindow="15">  
+    <providers>  
+      <add   
+        name=" AspNetSqlMembershipProvider"  
+        type="System.Web.Security.SqlMembershipProvider, System.Web,   
+          Version=2.0.3600.0, Culture=neutral,   
+          PublicKeyToken=b03f5f7f11d50a3a"  
+        connectionStringName="LocalSqlServer"  
+        passwordAttemptThreshold="5"  
+        passwordAttemptWindow="10"  
+        enablePasswordRetrieval="false"  
+        enablePasswordReset="true"  
+        requiresQuestionAndAnswer="true"  
+        applicationName="/"  
+        requiresUniqueEmail="false"  
+        passwordFormat="Hashed"  
+        description="Stores and retrieves membership data from   
+          the local Microsoft SQL Server database."  
+      />  
+    </providers>  
+  </membership>  
+</system.web>  
+```  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.MembershipSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.MembershipSection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.MembershipSection/CS/MembershipSection.cs#1)]
+ [!code-vb[System.Web.Configuration.MembershipSection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.MembershipSection/VB/MembershipSection.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MembershipSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.MembershipSection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.MembershipSection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.MembershipSection.%23ctor%2A>コンス トラクターは、コードから直接使用するものではありません。 ASP.NET 構成システムによって呼び出されます。 インスタンスを取得する、<xref:System.Web.Configuration.MembershipSection>クラスを使用して、<xref:System.Configuration.Configuration.GetSection%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultProvider">
+      <MemberSignature Language="C#" Value="public string DefaultProvider { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultProvider" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.MembershipSection.DefaultProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("defaultProvider", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはロールを管理するために使用される既定のプロバイダーの名前を設定します。</summary>
+        <value>プロバイダーの名前<see cref="P:System.Web.Configuration.MembershipSection.Providers" />です。 既定値は、<see langword="AspNetSqlRoleProvider" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.MembershipSection.DefaultProvider%2A>で名前付きの値に一致する必要があります、`providers`のサブセクション、`membership`構成ファイルのセクションです。 空の文字列 (`""`) の有効な値ではありません、<xref:System.Web.Configuration.MembershipSection.DefaultProvider%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.MembershipSection.DefaultProvider%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.MembershipSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.MembershipSection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.MembershipSection/CS/MembershipSection.cs#2)]
+ [!code-vb[System.Web.Configuration.MembershipSection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.MembershipSection/VB/MembershipSection.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HashAlgorithmType">
+      <MemberSignature Language="C#" Value="public string HashAlgorithmType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HashAlgorithmType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.MembershipSection.HashAlgorithmType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("hashAlgorithmType", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または機密性の高いメンバシップ情報に使用される暗号化の種類を設定します。</summary>
+        <value>機密性の高いメンバシップ情報の暗号化に使用される暗号化の種類。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 、実行時に、メンバーシップ システムは、適切なハッシュ アルゴリズムの種類にバインドし、メンバーシップ情報を暗号化するときに、この型を使用しています。 場合、<xref:System.Web.Configuration.MembershipSection.HashAlgorithmType%2A>プロパティに設定されていない、メンバーシップ システムの既定値、<xref:System.Web.Configuration.MachineKeySection.Validation%2A>プロパティ内で、<xref:System.Web.Configuration.MachineKeySection>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.MembershipSection.HashAlgorithmType%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.MembershipSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.MembershipSection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.MembershipSection/CS/MembershipSection.cs#3)]
+ [!code-vb[System.Web.Configuration.MembershipSection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.MembershipSection/VB/MembershipSection.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.MembershipSection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Providers">
+      <MemberSignature Language="C#" Value="public System.Configuration.ProviderSettingsCollection Providers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ProviderSettingsCollection Providers" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.MembershipSection.Providers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("providers")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ProviderSettingsCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Configuration.ProviderSettingsCollection" />のオブジェクト<see cref="T:System.Configuration.ProviderSettings" />オブジェクト。</summary>
+        <value>A<see cref="T:System.Configuration.ProviderSettingsCollection" />内で定義された、プロバイダーの設定を格納している、<see langword="providers" />のサブセクション、<see langword="membership" />構成ファイルのセクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メンバーシップ プロバイダーは、サイトのメンバーシップへのアクセスを提供するコンポーネントです。 内のメンバーシップ プロバイダーを指定することができます、`providers`のサブセクション、`membership`構成ファイルのセクションです。  
+  
+ <xref:System.Web.Configuration.MembershipSection.DefaultProvider%2A>プロパティには、既定で使用されているプロバイダーの名前が含まれています。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.MembershipSection.Providers%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.MembershipSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.MembershipSection#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.MembershipSection/CS/MembershipSection.cs#5)]
+ [!code-vb[System.Web.Configuration.MembershipSection#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.MembershipSection/VB/MembershipSection.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserIsOnlineTimeWindow">
+      <MemberSignature Language="C#" Value="public TimeSpan UserIsOnlineTimeWindow { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan UserIsOnlineTimeWindow" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.MembershipSection.UserIsOnlineTimeWindow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Configuration.TimeSpanMinutesConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("userIsOnlineTimeWindow", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.TimeSpanValidator(MaxValueString="10675199.02:48:05.4775807", MinValueString="00:01:00")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または分単位でユーザーがオンラインであると見なされなく前に、時間の長さを設定します。</summary>
+        <value>分単位の時間の長さ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Web.Configuration.MembershipSection.UserIsOnlineTimeWindow%2A>プロパティが負符号の現在の時刻を比較して計算されます、<xref:System.Web.Configuration.MembershipSection.UserIsOnlineTimeWindow%2A>を持つプロパティ、<xref:System.Web.Security.MembershipUser.LastActivityDate%2A>ユーザーの値。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.MembershipSection.UserIsOnlineTimeWindow%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.MembershipSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.MembershipSection#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.MembershipSection/CS/MembershipSection.cs#4)]
+ [!code-vb[System.Web.Configuration.MembershipSection#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.MembershipSection/VB/MembershipSection.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

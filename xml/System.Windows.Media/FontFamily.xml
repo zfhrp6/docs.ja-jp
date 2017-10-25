@@ -1,0 +1,556 @@
+<Type Name="FontFamily" FullName="System.Windows.Media.FontFamily">
+  <TypeSignature Language="C#" Value="public class FontFamily" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FontFamily extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.FontFamily" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Media.FontFamilyConverter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.Font)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ValueSerializer(typeof(System.Windows.Media.FontFamilyValueSerializer))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>関連するフォントのファミリを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フォント ファミリは、"Times New Roman"など、同じファミリ名を共有するが、機能が異なるタイプフェイスのセットです。 これらの機能の相違点を含める<xref:System.Windows.Media.Typeface.Style%2A>、斜体などと<xref:System.Windows.Media.Typeface.Weight%2A>、太字などです。  
+  
+ ![フォント](~/add/media/fonts.PNG "フォント")  
+"Times New Roman"フォント ファミリのメンバーである書体の例  
+  
+ ほとんど[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]要素など<xref:System.Windows.Controls.Button>と<xref:System.Windows.Controls.TextBlock>、提供、<xref:System.Windows.Controls.Control.FontFamily%2A>コントロールのテキスト コンテンツのフォントを指定するために使用できるプロパティです。 そのプロパティを設定して、フォントを定義する、<xref:System.Windows.Media.FontFamily>値。 次の例で、フォントを参照する方法を示して[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]およびコード。  
+  
+ [!code-csharp[FontSnippets#FontFallbackSnippet3](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontFamilySnippets.xaml.cs#fontfallbacksnippet3)]
+ [!code-vb[FontSnippets#FontFallbackSnippet3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontfamilysnippets.xaml.vb#fontfallbacksnippet3)]
+ [!code-xaml[FontSnippets#FontFallbackSnippet3](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontFamilySnippets.xaml#fontfallbacksnippet3)]  
+  
+ 前の例で参照されているフォント"漫画 San MS"によって参照される、*フレンドリ名*です。 また、この例ではシステム フォントのコレクション内にある、フォントと見なされます。  
+  
+## <a name="specifying-fonts-in-alternate-directories"></a>別のディレクトリでフォントを指定します。  
+ A[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]アプリケーションは、フォントの参照を解決するため、システム フォントのコレクションを格納するディレクトリ以外のディレクトリを指定できます。 フォントのフレンドリ名は、絶対パスを指定できます[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]、次のようにフォントの参照を解決するのには値[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]やコード例です。  
+  
+ [!code-csharp[FontSnippets#FontPackageSnippet6](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontPackageSnippets.xaml.cs#fontpackagesnippet6)]
+ [!code-vb[FontSnippets#FontPackageSnippet6](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontpackagesnippets.xaml.vb#fontpackagesnippet6)]
+ [!code-xaml[FontSnippets#FontPackageSnippet6](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontPackageSnippets.xaml#fontpackagesnippet6)]  
+  
+ フォントのフレンドリ名は、相対パスを指定できますも[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]が必要な基本値[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]フォントの参照を解決するのには。 <xref:System.Windows.Media.FontFamily.BaseUri%2A>のプロパティ、<xref:System.Windows.Media.FontFamily>オブジェクトをベースに対応しています[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]値。 次のコード例は、ベースを構成しているフォントへの参照を作成する方法を示しています。[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]値と相対[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]値。  
+  
+ [!code-csharp[FontSnippets#FontPackageSnippet7](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontPackageSnippets.xaml.cs#fontpackagesnippet7)]
+ [!code-vb[FontSnippets#FontPackageSnippet7](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontpackagesnippets.xaml.vb#fontpackagesnippet7)]  
+  
+ ベースを使用することができます[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]アプリケーションの一部としてパッケージ化されているフォントを参照するときの値します。 たとえば、基本[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]値が"pack://application"を指定できます[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]はアプリケーション リソースとしてパッケージ化されているフォントを参照することができます。 次のコード例は、ベースを構成しているフォントへの参照を示しています。[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]値と相対[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]値。  
+  
+ [!code-csharp[FontSnippets#FontPackageSnippet2](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontPackageSnippets.xaml.cs#fontpackagesnippet2)]
+ [!code-vb[FontSnippets#FontPackageSnippet2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontpackagesnippets.xaml.vb#fontpackagesnippet2)]  
+  
+ ときに、<xref:System.Windows.Media.FontFamily>マークアップでは、基本属性として指定された[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]値は常に暗黙的に-その値は、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]の[!INCLUDE[TLA#tla_titlexaml](~/includes/tlasharptla-titlexaml-md.md)]ページ。 暗黙的なベース[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]値が相対では使用[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]フォントの場所を取得するフレンドリ名の文字列の値。 次に[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]例では、ことに注意して、相対的な[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]値の使用、"./"表記で、"現在のフォルダー"には意味ベースの[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]値。  
+  
+ [!code-xaml[FontSnippets#FontPackageSnippet1](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontPackageSnippets.xaml#fontpackagesnippet1)]  
+  
+ A[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]アプリケーションは、コンテンツ項目、リソース アイテム、または、ライブラリ リソース アイテムのいずれかとしてフォントをパッケージ化できます。 詳細については、「[アプリケーションでのフォントのパッケージング](~/docs/framework/wpf/advanced/packaging-fonts-with-applications.md)」を参照してください。  
+  
+## <a name="font-fallback"></a>フォント フォールバック  
+ フォント フォールバックは、クライアント アプリケーションで選択されているフォント以外のフォントの自動置換を指します。 フォント フォールバックが呼び出される理由 2 つの主な理由があります。  
+  
+-   クライアント アプリケーションで指定されているフォントは、システムではありません。  
+  
+-   クライアント アプリケーションで指定されているフォントにテキストを表示するために必要なグリフが含まれていません。  
+  
+ [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]、フォント フォールバック メカニズムが置換フォントとして既定の代替フォント ファミリ、「グローバル ユーザー インターフェイス」を使用します。 このフォントは、コンポジット フォントで、ファイル名が"GlobalUserInterface.CompositeFont"として定義されます。 コンポジット フォントの詳細については、このトピックの「複合フォント セクションを参照してください。  
+  
+ [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]フォント フォールバック メカニズム置換前[!INCLUDE[TLA#tla_win32](~/includes/tlasharptla-win32-md.md)]フォント代替テクノロジです。  
+  
+## <a name="defining-a-font-fallback-sequence-in-code"></a>コードで、フォント フォールバック シーケンスを定義します。  
+ 代替フォントを定義することができるコードでは、フォント フォールバック シーケンスを定義できます。 作成するときに、<xref:System.Windows.Media.FontFamily>オブジェクト、複数のフォント ファミリ、コンマで区切って、の提供、 <xref:System.String> 「MS、Verdana San 漫画」などのパラメーターです。 この場合、「プレース ホルダー」タイプフェイスのグリフが表示されない場合は、"Verdana"タイプフェイスのグリフが使用されます。 「プレース ホルダー」でも"Verdana"必須のグリフがある、タイプフェイスの代替フォント ファミリは、「グローバル ユーザー インターフェイス」が既定で使用します。  
+  
+ 次の例で、フォント フォールバック シーケンスを定義する方法を示して[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]およびコード。  
+  
+ [!code-csharp[FontSnippets#FontFallbackSnippet1](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontFamilySnippets.xaml.cs#fontfallbacksnippet1)]
+ [!code-vb[FontSnippets#FontFallbackSnippet1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontfamilysnippets.xaml.vb#fontfallbacksnippet1)]
+ [!code-xaml[FontSnippets#FontFallbackSnippet1](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontFamilySnippets.xaml#fontfallbacksnippet1)]  
+  
+ フォールバックのシーケンス内のフォントのいずれかでは、フォントの場所を指定できます。 次の例で、アプリケーションのリソースとして"Pericles Light"が参照されているし、はシステム フォントのコレクションのメンバーとして"Verdana"が参照されています。  
+  
+ [!code-csharp[FontSnippets#FontFallbackSnippet2](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontFamilySnippets.xaml.cs#fontfallbacksnippet2)]
+ [!code-vb[FontSnippets#FontFallbackSnippet2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontfamilysnippets.xaml.vb#fontfallbacksnippet2)]
+ [!code-xaml[FontSnippets#FontFallbackSnippet2](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontFamilySnippets.xaml#fontfallbacksnippet2)]  
+  
+## <a name="composite-fonts"></a>コンポジット フォント  
+ [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]プラットフォームは、多言語のフォントのすべての範囲の構築を可能にし、存在しないグリフが表示されないようにするコンポジット フォントで機能を提供します。 コンポジット フォントを置き換える、[!INCLUDE[TLA2#tla_win32](~/includes/tla2sharptla-win32-md.md)]フォント リンク、フォント フォールバック、バインディングのフォント、フォントの関連付け、および外字 (EUDC) の機能です。  
+  
+ コンポジット フォント ファミリは、アプリケーションで使用可能な<xref:System.Windows.Media.FontFamily>と<xref:System.Windows.Media.Typeface>コンス トラクターと同様に他のフォント ファミリ。 各コンポジット フォント ファミリの名前があり、として他のフォントを指定できます。 複数の言語で名前のローカライズしたバリアント。  
+  
+ 次のマークアップの例では、ディスク ファイルとしてコンポジット フォント ファミリを定義する方法を示します。 このファイルは、既定値に格納できる[!INCLUDE[TLA#tla_mswin](~/includes/tlasharptla-mswin-md.md)]フォント ディレクトリとその他のフォントをインストールまたはを含む任意の場所を参照できます、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]ファミリ名によって参照するときにします。  
+  
+ 次の例は、フォント ファミリのマークアップで、"です。CompositeFont"ファイルです。  
+  
+ [!code-xaml[CompositeFontMarkup#CF](~/samples/snippets/csharp/VS_Snippets_Wpf/CompositeFontMarkup/CS/comp.xaml#cf)]  
+  
+ 既定で次の 4 つの複合フォントが表示される[!INCLUDE[TLA2#tla_win](~/includes/tla2sharptla-win-md.md)]フォント ファイルのディレクトリの一部として、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]インストールします。  
+  
+|フォント|ノート|  
+|----------|-----------|  
+|GlobalMonospace.CompositeFont|たとえば、「ゴシック」固定幅フォントを使用して、ラテン文字のテキストを表示します。|  
+|GlobalSanSerif.CompositeFont|たとえば、Arial ラテン文字の sans serif フォントを使用してテキストを表示します。|  
+|GlobalSerif.CompositeFont|たとえば、"Times New Roman"serif フォントを使用して、ラテン文字のテキストを表示します。|  
+|GlobalUserInterface.CompositeFont|たとえば、"Times New Roman"既定のフォントを使用して、ラテン文字のテキストを表示します。|  
+  
+<a name="xamlAttributeUsage_FontFamily"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object FontFamily="fontFamilyName"/>  
+- or -  
+<object FontFamily="fontFamilyNamesList"/>  
+- or -  
+<object FontFamily="fontFamilyFolderReference"/>  
+- or -  
+<object FontFamily="fontFamilyUriReference"/>  
+```  
+  
+<a name="xamlValues_FontFamily"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *fontFamilyName*  
+ フォント ファミリ名を指定する文字列。  たとえば、`"Arial"` または `"Century Gothic"` のようにします。  
+  
+ *fontFamilyNamesList*  
+ (コンマの後の空白は無視されます)、コンマで区切って複数のフォント ファミリ名を指定する文字列、します。  指定した最初のフォント ファミリを果たすプライマリ フォント ファミリ。以降のフォント ファミリは、プライマリ フォント ファミリが使用または適用できない場合に使用するフォールバック ファミリとして機能します。  たとえば、`"Arial, Century Gothic"`世紀ゴートとして代替フォント ファミリと、プライマリ フォント ファミリと Arial を指定します。  
+  
+ *fontFamilyFolderReference*  
+ フォント ファミリ名と共に、フォントを含むフォルダーを指定する文字列。  フォント ファミリ名とフォルダーは、# 文字で区切られます。  フォルダーの参照は、絶対または相対パスにあります。  たとえば、`"Custom Fonts\#My Custom Font"` のようにします。  
+  
+ *fontFamilyUriReference*  
+ 指定する文字列、[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]のフォント、フォント ファミリ名とします。  [!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]し、フォント ファミリ名は、# 文字で区切られます。  たとえば、`"http://MyFontServer/Fonts/#My Custom Font"` のようにします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FontFamily ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FontFamily.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>匿名の新しいインスタンスを初期化<see cref="T:System.Windows.Media.FontFamily" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンポジット フォントをプログラムで作成する場合は、この既定のコンス トラクターを使用します。 つまり、コンス トラクターのフォント ファミリ名を指定する必要はありませんが、内のコレクションを設定する必要があります、<xref:System.Windows.Media.FontFamily.FamilyMaps%2A>と<xref:System.Windows.Media.FontFamily.FamilyNames%2A>構築済みのインスタンスを使用する前にコレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FontFamily (string familyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string familyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FontFamily.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="familyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="familyName">ファミリの名前や、新しいを構成する名前<see cref="T:System.Windows.Media.FontFamily" />です。 複数のファミリ名は、コンマで区切る必要があります。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.FontFamily" />クラスから指定されたフォント ファミリ名。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定されている各ファミリ名、`familyName`パラメーターの前に、いずれかのディレクトリへの参照を場所または[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]です。 場所の参照が、ファミリ名から、シャープで区切られた (`#`) 文字です。 指定されている複数のファミリ名、`familyName`パラメーターは、コンマで区切る必要があります。  
+  
+ 各ファミリは、同じファミリ名を共有するフォント ファイルのセットを直接表す実際のフォントを指定できますか、コンポジット フォント ファイルで定義されているファミリ名への参照を指定できます。  
+  
+ 複数のファミリを特定すると、2 回目以降のフォント ファミリは、最初のフォント ファミリでサポートされていないコード ポイントの処理の代替ファミリとして機能します。 最初のフォント ファミリでサポートされていないコード ポイントごとに後続の各ファミリが順番に確認します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[FontSnippets#103](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/Window1.xaml.cs#103)]
+ [!code-vb[FontSnippets#103](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/window1.xaml.vb#103)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="familyName" /> として <see langword="null" /> を使用することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FontFamily (Uri baseUri, string familyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri baseUri, string familyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FontFamily.#ctor(System.Uri,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="baseUri" Type="System.Uri" />
+        <Parameter Name="familyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="baseUri">基本型を指定[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]解決に使用される<c>familyName</c>です。</param>
+        <param name="familyName">ファミリの名前や、新しいを構成する名前<see cref="T:System.Windows.Media.FontFamily" />です。 複数のファミリ名は、コンマで区切る必要があります。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.FontFamily" />から指定されたフォント ファミリ名と、省略可能な基底クラスを[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `familyName`値が相対パスを指定できます[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]が必要な基本値[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]フォントの参照を解決するのには。 `baseUri`値を指定できます`null`です。  
+  
+   
+  
+## Examples  
+ 次のコードは、ベースを構成しているフォント参照[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]値と相対[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]値。  
+  
+ [!code-csharp[FontSnippets#FontPackageSnippet2](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontPackageSnippets.xaml.cs#fontpackagesnippet2)]
+ [!code-vb[FontSnippets#FontPackageSnippet2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontpackagesnippets.xaml.vb#fontpackagesnippet2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Baseline">
+      <MemberSignature Language="C#" Value="public double Baseline { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Baseline" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.FontFamily.Baseline" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはベースラインと文字セルの上端の間の距離を設定します。</summary>
+        <value>A<see cref="T:System.Double" />ベースラインと文字セルの上端の間の距離を示す、フォントの em サイズの割合として表されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseUri">
+      <MemberSignature Language="C#" Value="public Uri BaseUri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri BaseUri" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.FontFamily.BaseUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>底を取得します[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]フォント ファミリ名の解決に使用されます。</summary>
+        <value><see cref="T:System.Uri" /> 型の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値は`null`かどうか、フォント ファミリ名に頼りませんベース[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]フォントの参照を解決するためです。 構築するために使用されるフォント ファミリ名を取得する、<xref:System.Windows.Media.FontFamily>オブジェクトを使用して、<xref:System.Windows.Media.FontFamily.Source%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、取得する操作の結果、<xref:System.Windows.Media.FontFamily.BaseUri%2A>プロパティから、<xref:System.Windows.Media.FontFamily>オブジェクト。  
+  
+ [!code-csharp[FontSnippets#FontPackageSnippet9](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontPackageSnippets.xaml.cs#fontpackagesnippet9)]
+ [!code-vb[FontSnippets#FontPackageSnippet9](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontpackagesnippets.xaml.vb#fontpackagesnippet9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FontFamily.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o"><see cref="T:System.Windows.Media.FontFamily" />と比較するオブジェクト。</param>
+        <summary>現在のフォント ファミリ オブジェクトと指定されたフォント ファミリ オブジェクトは、同じであるかどうかを示す値を取得します。</summary>
+        <returns>
+          <paramref name="o" /> が現在の <see cref="T:System.Windows.Media.FontFamily" /> オブジェクトに等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 場合<paramref name="o" />されませんが、<see cref="T:System.Windows.Media.FontFamily" />オブジェクト、<see langword="false" />が返されます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FamilyMaps">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.FontFamilyMapCollection FamilyMaps { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.FontFamilyMapCollection FamilyMaps" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.FontFamily.FamilyMaps" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.FontFamilyMapCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Windows.Media.FontFamilyMap" />オブジェクト。</summary>
+        <value><see cref="T:System.Windows.Media.FontFamilyMapCollection" /> オブジェクトを含む <see cref="T:System.Windows.Media.FontFamilyMap" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.FontFamily>フォント ファミリ名を使用して作成されるオブジェクト、<xref:System.Windows.Media.FontFamily.FamilyMaps%2A>プロパティが空、読み取り専用コレクションを返します。  
+  
+ <xref:System.Windows.Media.FontFamilyMap>オブジェクトは、特定のカルチャの Unicode 文字の指定したセットを表示するために使用するには、どのフォントを定義します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FamilyNames">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.LanguageSpecificStringDictionary FamilyNames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.LanguageSpecificStringDictionary FamilyNames" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.FontFamily.FamilyNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.LanguageSpecificStringDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文字列のコレクションを取得し、<see cref="T:System.Globalization.CultureInfo" />のフォント ファミリ名を表す値、<see cref="T:System.Windows.Media.FontFamily" />オブジェクト。</summary>
+        <value>A<see cref="T:System.Windows.Media.LanguageSpecificStringDictionary" />フォント ファミリ名を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[FontSnippets#106](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/Window1.xaml.cs#106)]
+ [!code-vb[FontSnippets#106](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/window1.xaml.vb#106)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FamilyTypefaces">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.FamilyTypefaceCollection FamilyTypefaces { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.FamilyTypefaceCollection FamilyTypefaces" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.FontFamily.FamilyTypefaces" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.FamilyTypefaceCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォントのコレクションを取得、<see cref="T:System.Windows.Media.FontFamily" />オブジェクト。</summary>
+        <value>A<see cref="T:System.Windows.Media.FamilyTypefaceCollection" />の書体のコレクションを表す、<see cref="T:System.Windows.Media.FontFamily" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlPropertyElementUsage_FamilyTypefaces"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  <object.FamilyTypefaces>  
+    <OneOrMoreFontFamilyTypefaces/>  
+  </object.FamilyTypefaces>  
+</object>  
+```  
+  
+<a name="xamlValues_FamilyTypefaces"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *OneOrMoreFontFamilyTypefaces*  
+ 1 つまたは複数のフォント、<xref:System.Windows.Media.FontFamily>オブジェクト。  
+  
+   
+  
+## Examples  
+ [!code-csharp[FontSnippets#107](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/Window1.xaml.cs#107)]
+ [!code-vb[FontSnippets#107](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/window1.xaml.vb#107)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FontFamily.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ハッシュ関数として機能<see cref="T:System.Windows.Media.FontFamily" />します。 ハッシュ アルゴリズムや、ハッシュ テーブルのようなデータ構造での使用に適しています。</summary>
+        <returns><see cref="T:System.Int32" />を現在のオブジェクトのハッシュ コードを表す値です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTypefaces">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;System.Windows.Media.Typeface&gt; GetTypefaces ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.ICollection`1&lt;class System.Windows.Media.Typeface&gt; GetTypefaces() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FontFamily.GetTypefaces" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.Windows.Media.Typeface&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションを返します<see cref="T:System.Windows.Media.Typeface" />のシステム フォントの既定の場所を表すオブジェクト。</summary>
+        <returns><see cref="T:System.Windows.Media.Typeface" /> オブジェクトの <see cref="T:System.Collections.Generic.ICollection`1" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[FontSnippets#104](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/Window1.xaml.cs#104)]
+ [!code-vb[FontSnippets#104](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/window1.xaml.vb#104)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineSpacing">
+      <MemberSignature Language="C#" Value="public double LineSpacing { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 LineSpacing" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.FontFamily.LineSpacing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の線の間隔、<see cref="T:System.Windows.Media.FontFamily" />オブジェクト。 行間隔は、推奨されるベースラインの距離の em サイズに対してこのフォントのテキストです。</summary>
+        <value>A<see cref="T:System.Double" />の行間を表す、<see cref="T:System.Windows.Media.FontFamily" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Source">
+      <MemberSignature Language="C#" Value="public string Source { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Source" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.FontFamily.Source" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>構築するために使用されるフォント ファミリ名を取得、<see cref="T:System.Windows.Media.FontFamily" />オブジェクト。</summary>
+        <value>フォント ファミリ名、<see cref="T:System.Windows.Media.FontFamily" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基準を返す[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]の値、<xref:System.Windows.Media.FontFamily>オブジェクトを使用して、<xref:System.Windows.Media.FontFamily.BaseUri%2A>です。  
+  
+ 場合、<xref:System.Windows.Media.FontFamily>フォント ファミリ名を指定せずにオブジェクトが作成された、戻り値は<xref:System.String.Empty>します。  
+  
+   
+  
+## Examples  
+ 次の例では、取得する操作の結果、<xref:System.Windows.Media.FontFamily.BaseUri%2A>と<xref:System.Windows.Media.FontFamily.Source%2A>プロパティの値から、<xref:System.Windows.Media.FontFamily>オブジェクト。  
+  
+ [!code-csharp[FontSnippets#FontPackageSnippet10](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontPackageSnippets.xaml.cs#fontpackagesnippet10)]
+ [!code-vb[FontSnippets#FontPackageSnippet10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontpackagesnippets.xaml.vb#fontpackagesnippet10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FontFamily.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>値を返します、<see cref="P:System.Windows.Media.FontFamily.Source" />プロパティです。</summary>
+        <returns>ソースの場所、<see cref="T:System.Windows.Media.FontFamily" />ディレクトリを含む、オブジェクトまたは[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]ロケーションの参照。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Media.FontFamily>フォント ファミリ名を指定せずにオブジェクトが作成された、戻り値は<xref:System.String.Empty>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

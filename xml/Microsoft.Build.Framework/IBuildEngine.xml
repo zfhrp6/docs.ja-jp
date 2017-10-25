@@ -1,0 +1,213 @@
+<Type Name="IBuildEngine" FullName="Microsoft.Build.Framework.IBuildEngine">
+  <TypeSignature Language="C#" Value="public interface IBuildEngine" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IBuildEngine" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Framework.IBuildEngine" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>タスクの作成者、MSBuild エンジンの機能のサブセットを使用するための手段を提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BuildProjectFile">
+      <MemberSignature Language="C#" Value="public bool BuildProjectFile (string projectFileName, string[] targetNames, System.Collections.IDictionary globalProperties, System.Collections.IDictionary targetOutputs);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool BuildProjectFile(string projectFileName, string[] targetNames, class System.Collections.IDictionary globalProperties, class System.Collections.IDictionary targetOutputs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Framework.IBuildEngine.BuildProjectFile(System.String,System.String[],System.Collections.IDictionary,System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="projectFileName" Type="System.String" />
+        <Parameter Name="targetNames" Type="System.String[]" />
+        <Parameter Name="globalProperties" Type="System.Collections.IDictionary" />
+        <Parameter Name="targetOutputs" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="projectFileName">ビルドするプロジェクト ファイルの名前。</param>
+        <param name="targetNames">プロジェクトをビルドするターゲットの名前です。 複数のターゲットをセミコロン (;) で区切ります。</param>
+        <param name="globalProperties"><see cref="T:System.Collections.IDictionary" />プロジェクトに適用する追加のグローバル プロパティ。 キーと値である必要があります<see langword="String" />データ型。</param>
+        <param name="targetOutputs">指定した各ターゲットの出力。</param>
+        <summary>プロジェクト ファイルのビルドを開始します。 ビルドが成功した場合、出力では、存在する場合、指定した対象が返されます。</summary>
+        <returns>
+          <see langword="true" />ビルドが成功した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `targetNames`、 `globalProperties`、および`targetOutputs`パラメーターを指定できます`null`です。  
+  
+ ターゲットが指定されていない場合[!INCLUDE[vstecmsbuild](~/includes/vstecmsbuild-md.md)]プロジェクトの既定のターゲットをビルドします。  
+  
+ ターゲット出力として返されます<xref:Microsoft.Build.Framework.ITaskItem>ターゲットの名前でインデックス付けされた配列。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnNumberOfTaskNode">
+      <MemberSignature Language="C#" Value="public int ColumnNumberOfTaskNode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ColumnNumberOfTaskNode" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.IBuildEngine.ColumnNumberOfTaskNode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>その呼び出し元プロジェクト ファイル内で、[タスク] ノードの行番号を取得します。</summary>
+        <value>その呼び出し元プロジェクト ファイル内のタスクのノードの行番号。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContinueOnError">
+      <MemberSignature Language="C#" Value="public bool ContinueOnError { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ContinueOnError" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.IBuildEngine.ContinueOnError" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>返します<see langword="true" />ContinueOnError フラグに設定された場合<see langword="true" />特定のタスクについて、プロジェクト ファイルにします。</summary>
+        <value>
+          <see langword="true" />ContinueOnError フラグに設定された場合<see langword="true" />特定のタスクについて、プロジェクト ファイルにします。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineNumberOfTaskNode">
+      <MemberSignature Language="C#" Value="public int LineNumberOfTaskNode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 LineNumberOfTaskNode" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.IBuildEngine.LineNumberOfTaskNode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>その呼び出し元プロジェクト ファイル内で、[タスク] ノードの行番号を取得します。</summary>
+        <value>その呼び出し元プロジェクト ファイル内のタスクのノードの行番号。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogCustomEvent">
+      <MemberSignature Language="C#" Value="public void LogCustomEvent (Microsoft.Build.Framework.CustomBuildEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void LogCustomEvent(class Microsoft.Build.Framework.CustomBuildEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Framework.IBuildEngine.LogCustomEvent(Microsoft.Build.Framework.CustomBuildEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="Microsoft.Build.Framework.CustomBuildEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary>登録されているすべてのロガーにカスタム イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogErrorEvent">
+      <MemberSignature Language="C#" Value="public void LogErrorEvent (Microsoft.Build.Framework.BuildErrorEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void LogErrorEvent(class Microsoft.Build.Framework.BuildErrorEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Framework.IBuildEngine.LogErrorEvent(Microsoft.Build.Framework.BuildErrorEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="Microsoft.Build.Framework.BuildErrorEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary>登録されているすべてのロガーにエラー イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogMessageEvent">
+      <MemberSignature Language="C#" Value="public void LogMessageEvent (Microsoft.Build.Framework.BuildMessageEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void LogMessageEvent(class Microsoft.Build.Framework.BuildMessageEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Framework.IBuildEngine.LogMessageEvent(Microsoft.Build.Framework.BuildMessageEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="Microsoft.Build.Framework.BuildMessageEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary>登録されているすべてのロガーへのメッセージ イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogWarningEvent">
+      <MemberSignature Language="C#" Value="public void LogWarningEvent (Microsoft.Build.Framework.BuildWarningEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void LogWarningEvent(class Microsoft.Build.Framework.BuildWarningEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Framework.IBuildEngine.LogWarningEvent(Microsoft.Build.Framework.BuildWarningEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="Microsoft.Build.Framework.BuildWarningEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary>登録されているすべてのロガーに警告イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProjectFileOfTaskNode">
+      <MemberSignature Language="C#" Value="public string ProjectFileOfTaskNode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ProjectFileOfTaskNode" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.IBuildEngine.ProjectFileOfTaskNode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このタスクへの呼び出しを含むプロジェクト ファイルへの完全パスを取得します。</summary>
+        <value>このタスクへの呼び出しを含むプロジェクト ファイルの完全パスです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

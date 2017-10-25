@@ -1,0 +1,135 @@
+<Type Name="WS2007FederationHttpBinding" FullName="System.ServiceModel.WS2007FederationHttpBinding">
+  <TypeSignature Language="C#" Value="public class WS2007FederationHttpBinding : System.ServiceModel.WSFederationHttpBinding" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WS2007FederationHttpBinding extends System.ServiceModel.WSFederationHttpBinding" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.WS2007FederationHttpBinding" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.WSFederationHttpBinding</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.ServiceModel.WS2007HttpBinding" />から派生し、フェデレーション セキュリティをサポートする、セキュリティで保護された相互運用可能なバインディングです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フェデレーションは、複数の企業または信頼するドメインで認証と承認用の ID を共有する機能です。 フェデレーションは、WS-Trust プロトコルを使用して、ID 形式を、ある信頼するドメインから別の信頼するドメインにマップします。 フェデレーション HTTP バインドは、SOAP セキュリティと混合モード セキュリティをサポートしますが、トランスポート セキュリティの単独使用はサポートしません。 このバインディングで構成されたサービスは、HTTP トランスポートを使用する必要があります。 [!INCLUDE[crdefault](~/includes/crabout-md.md)]「<xref:System.ServiceModel.WSFederationHttpBinding>」を参照してください。  
+  
+> [!NOTE]
+>  [!INCLUDE[indigo2](~/includes/indigo2-md.md)] 以前を使用して構築された WCF クライアント アプリケーションから .Net Framework 4 を使用して構築された [!INCLUDE[netfx35_short](~/includes/netfx35-short-md.md)] サービスを呼び出す場合、svcutil.exe を使用することによって、または [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] からのサービス参照を追加することによって生成された構成ファイルのバインド構成には establishSecurityContext 属性が含まれます。 この属性は、[!INCLUDE[netfx35_short](~/includes/netfx35-short-md.md)] ランタイムによって認識されないため、アプリケーションでは <xref:System.Configuration.ConfigurationErrorsException> がスローされ、"認識されない属性 establishSecurityContext" のメッセージが表示されます。 この問題を回避するには、バインド構成から establishSecurityContext 属性を削除します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WS2007FederationHttpBinding ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WS2007FederationHttpBinding.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.WS2007FederationHttpBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ こうした設定の詳細は、<xref:System.ServiceModel.FederatedMessageSecurityOverHttp> プロパティにより返される <xref:System.ServiceModel.WSFederationHttpSecurity.Message%2A> インスタンスから取得できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WS2007FederationHttpBinding (System.ServiceModel.WSFederationHttpSecurityMode securityMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.ServiceModel.WSFederationHttpSecurityMode securityMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WS2007FederationHttpBinding.#ctor(System.ServiceModel.WSFederationHttpSecurityMode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="securityMode" Type="System.ServiceModel.WSFederationHttpSecurityMode" />
+      </Parameters>
+      <Docs>
+        <param name="securityMode">SOAP メッセージと共に、およびクライアントに対して使用されるセキュリティの種類を指定する <see cref="T:System.ServiceModel.WSFederationHttpSecurityMode" /> の値。</param>
+        <summary>バインドで使用されるセキュリティの種類を指定して、<see cref="T:System.ServiceModel.WS2007FederationHttpBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.WSFederationHttpSecurityMode> の既定値は <xref:System.ServiceModel.WSFederationHttpSecurityMode.Message> であり、これは、整合性、機密性、およびサーバーとクライアントの認証は SOAP メッセージ セキュリティを使用して提供されることを指定します。 こうした設定の詳細は、<xref:System.ServiceModel.FederatedMessageSecurityOverHttp> プロパティにより返される <xref:System.ServiceModel.WSFederationHttpSecurity.Message%2A> インスタンスから取得できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WS2007FederationHttpBinding (string configName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string configName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WS2007FederationHttpBinding.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="configName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="configName"><see cref="T:System.ServiceModel.Configuration.WS2007HttpBindingElement" /> のバインディング構成の名前。</param>
+        <summary>構成名で指定されたバインディングを使用して、<see cref="T:System.ServiceModel.WS2007FederationHttpBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">名前 <paramref name="configurationName" /> を持つバインディング要素が見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WS2007FederationHttpBinding (System.ServiceModel.WSFederationHttpSecurityMode securityMode, bool reliableSessionEnabled);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.ServiceModel.WSFederationHttpSecurityMode securityMode, bool reliableSessionEnabled) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WS2007FederationHttpBinding.#ctor(System.ServiceModel.WSFederationHttpSecurityMode,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="securityMode" Type="System.ServiceModel.WSFederationHttpSecurityMode" />
+        <Parameter Name="reliableSessionEnabled" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="securityMode">SOAP メッセージと共に、およびクライアントに対して使用されるセキュリティの種類を指定する <see cref="T:System.ServiceModel.WSFederationHttpSecurityMode" /> の値。</param>
+        <param name="reliableSessionEnabled">
+          信頼できるセッションが有効な場合は <see langword="true" /> を返します。それ以外の場合は <see langword="false" /> を返します。</param>
+        <summary>バインドで使用するセキュリティの種類と、信頼できるセッションを有効にするかどうかを示す値を指定して、<see cref="T:System.ServiceModel.WS2007FederationHttpBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateMessageSecurity">
+      <MemberSignature Language="C#" Value="protected override System.ServiceModel.Channels.SecurityBindingElement CreateMessageSecurity ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.ServiceModel.Channels.SecurityBindingElement CreateMessageSecurity() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WS2007FederationHttpBinding.CreateMessageSecurity" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.SecurityBindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスで指定される設定を使用して、<see cref="T:System.ServiceModel.Channels.SecurityBindingElement" /> を作成します。</summary>
+        <returns>このインスタンスで指定される設定を使用する <see cref="T:System.ServiceModel.Channels.SecurityBindingElement" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

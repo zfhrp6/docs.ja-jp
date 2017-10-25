@@ -1,0 +1,262 @@
+<Type Name="LocalValueEnumerator" FullName="System.Windows.LocalValueEnumerator">
+  <TypeSignature Language="C#" Value="public struct LocalValueEnumerator : System.Collections.IEnumerator" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit LocalValueEnumerator extends System.ValueType implements class System.Collections.IEnumerator" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.LocalValueEnumerator" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IEnumerator</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>ローカルに存在する任意の依存関係プロパティの値の列挙型のサポートを提供する<see cref="T:System.Windows.DependencyObject" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A*ローカル値*、依存関係プロパティを直接呼び出すことによって設定された依存関係プロパティの値は、 <xref:System.Windows.DependencyObject.SetValue%2A>、またはの set アクセサーを使用して、通常、[!INCLUDE[TLA2#tla_clr](~/includes/tla2sharptla-clr-md.md)]を呼び出すプロパティ ラッパー<xref:System.Windows.DependencyObject.SetValue%2A>内部的にします。 ローカルの値ではないを他のプロパティのシステムの行列式には、スタイル、を介して設定された値または依存関係プロパティの既定値があります。 詳細については、「[依存関係プロパティ値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)」を参照してください。  
+  
+ A<xref:System.Windows.LocalValueEnumerator>によって返される、<xref:System.Windows.DependencyObject.GetLocalValueEnumerator%2A>メソッドを実装して、<xref:System.Collections.IEnumerator>インターフェイスです。 パブリック<xref:System.Windows.LocalValueEnumerator>コンス トラクターが存在しません。 そのため、呼び出す必要があります<xref:System.Windows.DependencyObject.GetLocalValueEnumerator%2A>このクラスのインスタンスを取得します。  
+  
+ ローカル値を変更しないでください (を呼び出して<xref:System.Windows.DependencyObject.SetValue%2A>または<xref:System.Windows.DependencyObject.ClearValue%2A>) ローカル値を列挙中にします。 変更するかクリアのプロパティの値は、列挙子から返されるプロパティに基づく変更または消去操作は無効、列挙子のコレクションの多くの場合と同様<xref:System.Collections.IEnumerator>実装します。 また、列挙子ビューは、スナップショットです。 スレッド セーフで、あるコレクションへの変更は保証されませんし、ロックは適用されません。 他のスレッドもアクセス空きローカル値に、列挙子以外のコンテキストからです。  
+  
+ この種類を使用、クラス内の操作がある場合は、ローカルの値からプロパティの値が付属しているかどうかを確認しています。 たとえば、この型に使用して、<xref:System.Windows.DependencyObject.OnPropertyChanged%2A>実装では、ローカルでのすべてのメタデータをクエリするプロパティまたは設定します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.LocalValueEnumerator.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション内で表されている項目の数を取得します。</summary>
+        <value>コレクション内の項目数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、の定義済みのメンバーではない<xref:System.Collections.IEnumerator>便宜のために用意されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="public System.Windows.LocalValueEntry Current { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.LocalValueEntry Current" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.LocalValueEnumerator.Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.LocalValueEntry</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション内の現在の要素を取得します。</summary>
+        <value>現在<see cref="T:System.Windows.LocalValueEntry" />コレクション内で。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この一般にアクセス可能なバージョンのプロパティは、作成時に取得するコレクションのスナップショットに依存します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.LocalValueEnumerator.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在の <see cref="T:System.Windows.LocalValueEnumerator" /> と比較する <see cref="T:System.Windows.LocalValueEnumerator" />。</param>
+        <summary>決定するかどうか、指定した<see cref="T:System.Windows.LocalValueEnumerator" />はこれに相当<see cref="T:System.Windows.LocalValueEnumerator" />です。</summary>
+        <returns>
+          指定した <see langword="true" /> が現在の <see cref="T:System.Windows.LocalValueEnumerator" /> と等しい場合は <see cref="T:System.Windows.LocalValueEnumerator" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装では、参照の等価性のみをサポートします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.LocalValueEnumerator.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Windows.LocalValueEnumerator" /> のハッシュ コードを返します。</summary>
+        <returns>32 ビット整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveNext">
+      <MemberSignature Language="C#" Value="public bool MoveNext ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool MoveNext() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.LocalValueEnumerator.MoveNext" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>列挙子をコレクションの次の要素に進めます。</summary>
+        <returns>
+          列挙子が次の要素に正常に進んだ場合は <see langword="true" />。列挙子がコレクションの末尾を越えた場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Windows.LocalValueEnumerator obj1, System.Windows.LocalValueEnumerator obj2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Windows.LocalValueEnumerator obj1, valuetype System.Windows.LocalValueEnumerator obj2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.LocalValueEnumerator.op_Equality(System.Windows.LocalValueEnumerator,System.Windows.LocalValueEnumerator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj1" Type="System.Windows.LocalValueEnumerator" />
+        <Parameter Name="obj2" Type="System.Windows.LocalValueEnumerator" />
+      </Parameters>
+      <Docs>
+        <param name="obj1">比較する最初のオブジェクト。</param>
+        <param name="obj2">比較する 2 番目のオブジェクト。</param>
+        <summary>指定した 2 つあるかどうかを比較して<see cref="T:System.Windows.LocalValueEnumerator" />オブジェクトが同一です。</summary>
+        <returns>
+          <see langword="true" />場合、 <paramref name="obj1" /> <see cref="T:System.Windows.LocalValueEnumerator" />と等しい、 <paramref name="obj2" /> <see cref="T:System.Windows.LocalValueEnumerator" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装では、参照の等価性のみをサポートします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Windows.LocalValueEnumerator obj1, System.Windows.LocalValueEnumerator obj2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Windows.LocalValueEnumerator obj1, valuetype System.Windows.LocalValueEnumerator obj2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.LocalValueEnumerator.op_Inequality(System.Windows.LocalValueEnumerator,System.Windows.LocalValueEnumerator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj1" Type="System.Windows.LocalValueEnumerator" />
+        <Parameter Name="obj2" Type="System.Windows.LocalValueEnumerator" />
+      </Parameters>
+      <Docs>
+        <param name="obj1">比較する最初のオブジェクト。</param>
+        <param name="obj2">比較する 2 番目のオブジェクト。</param>
+        <summary>指定した 2 つを比較して<see cref="T:System.Windows.LocalValueEnumerator" />を決定するかどうかは、同じオブジェクトです。</summary>
+        <returns>
+          <see langword="true" />インスタンスが等しくない場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装では、参照の等価性のみをサポートします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public void Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.LocalValueEnumerator.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>列挙子を初期位置、つまりコレクションの最初の要素の前に設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerator.Current">
+      <MemberSignature Language="C#" Value="object System.Collections.IEnumerator.Current { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.IEnumerator.Current" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.LocalValueEnumerator.System#Collections#IEnumerator#Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの説明は、次を参照してください。<see cref="P:System.Collections.IEnumerator.Current" />です。</summary>
+        <value>コレクション内の現在の要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.LocalValueEnumerator> のインスタンスが <xref:System.Collections.IEnumerator> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

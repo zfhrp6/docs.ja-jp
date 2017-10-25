@@ -1,0 +1,221 @@
+<Type Name="IWebFormsDocumentService" FullName="System.Web.UI.Design.IWebFormsDocumentService">
+  <TypeSignature Language="C#" Value="public interface IWebFormsDocumentService" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IWebFormsDocumentService" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.IWebFormsDocumentService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The recommended alternative is System.Web.UI.Design.WebFormsRootDesigner. The WebFormsRootDesigner contains additional functionality and allows for more extensibility. To get the WebFormsRootDesigner use the RootDesigner property from your ControlDesigner. http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Web フォームのドキュメントの読み込み中の状態を追跡、読み込み時にイベントを処理、ドキュメントの場所へのアクセス、管理に関するドキュメントの元に戻すサービスでは、ドキュメント内の新しい選択を設定サービスにアクセスするメソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.IWebFormsDocumentService>インターフェイスは今後使用しません。 使用して、<xref:System.Web.UI.Design.WebFormsRootDesigner>デザイナーと同等の機能のクラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateDiscardableUndoUnit">
+      <MemberSignature Language="C#" Value="public object CreateDiscardableUndoUnit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object CreateDiscardableUndoUnit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.IWebFormsDocumentService.CreateDiscardableUndoUnit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>破棄できる取り消し単位を作成します。</summary>
+        <returns>新しい破棄できる元に戻す単位。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは廃止と同等の機能はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DiscardUndoUnit">
+      <MemberSignature Language="C#" Value="public void DiscardUndoUnit (object discardableUndoUnit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DiscardUndoUnit(object discardableUndoUnit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.IWebFormsDocumentService.DiscardUndoUnit(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="discardableUndoUnit" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="discardableUndoUnit">破棄して元に戻す単位。</param>
+        <summary>指定された取り消し単位を破棄します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは廃止と同等の機能はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DocumentUrl">
+      <MemberSignature Language="C#" Value="public string DocumentUrl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DocumentUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.IWebFormsDocumentService.DocumentUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドキュメントがある URL を取得します。</summary>
+        <value>ドキュメントが存在する場所、URL または<see langword="null" />ドキュメントに関連付けられている URL がありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.IWebFormsDocumentService.DocumentUrl%2A>インターフェイスのプロパティは今後使用しません。 使用して、<xref:System.Web.UI.Design.WebFormsRootDesigner.DocumentUrl%2A>プロパティを<xref:System.Web.UI.Design.WebFormsRootDesigner>デザイナーと同等の機能のクラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableUndo">
+      <MemberSignature Language="C#" Value="public void EnableUndo (bool enable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EnableUndo(bool enable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.IWebFormsDocumentService.EnableUndo(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="enable">
+          <see langword="true" />アクションを元に戻すことができない場合それ以外の場合、<see langword="false" />です。</param>
+        <summary>取り消し可能な操作単位内またはトランザクション内で発生するアクションを元に戻す機能を有効にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは廃止と同等の機能はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLoading">
+      <MemberSignature Language="C#" Value="public bool IsLoading { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsLoading" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.IWebFormsDocumentService.IsLoading" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドキュメントのサービスが現在を読み込んでいるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ドキュメントのサービスを読み込んでいる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.IWebFormsDocumentService.IsLoading%2A>インターフェイスのプロパティは今後使用しません。 使用して、<xref:System.Web.UI.Design.WebFormsRootDesigner.IsLoading%2A>プロパティを<xref:System.Web.UI.Design.WebFormsRootDesigner>デザイナーと同等の機能のクラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadComplete">
+      <MemberSignature Language="C#" Value="public event EventHandler LoadComplete;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler LoadComplete" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.Design.IWebFormsDocumentService.LoadComplete" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスの読み込みが完了したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.IWebFormsDocumentService.LoadComplete>インターフェイスのイベントが廃止されています。 使用して、<xref:System.Web.UI.Design.WebFormsRootDesigner.LoadComplete>でイベントを<xref:System.Web.UI.Design.WebFormsRootDesigner>デザイナーと同等の機能のクラスです。  
+  
+ このイベントは、読み込みが完了した後すぐに操作を実行する機会を提供します。 読み込み時に発生するイベントは、このイベントに対するイベント ハンドラーとして登録することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateSelection">
+      <MemberSignature Language="C#" Value="public void UpdateSelection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void UpdateSelection() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.IWebFormsDocumentService.UpdateSelection" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスとして実装された場合は、現在の選択範囲を更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは廃止と同等の機能はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

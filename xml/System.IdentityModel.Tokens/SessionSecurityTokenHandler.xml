@@ -1,0 +1,880 @@
+<Type Name="SessionSecurityTokenHandler" FullName="System.IdentityModel.Tokens.SessionSecurityTokenHandler">
+  <TypeSignature Language="C#" Value="public class SessionSecurityTokenHandler : System.IdentityModel.Tokens.SecurityTokenHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SessionSecurityTokenHandler extends System.IdentityModel.Tokens.SecurityTokenHandler" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.SessionSecurityTokenHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Tokens.SecurityTokenHandler</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>A<see cref="T:System.IdentityModel.Tokens.SecurityTokenHandler" />型のセキュリティ トークンを処理する<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>クラスをシリアル化、逆シリアル化、およびセッション トークンを検証します。 セッション トークンは型のトークン<xref:System.IdentityModel.Tokens.SessionSecurityToken>です。 <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>クラスがクッキー形式との間に、トークンをシリアル化します。 既定では、クラスをシリアル化してトークン Ws-secure Conversation Feb2005 または Ws-secure Conversation 1.3`<wsc:SecurityContextToken>`要素。 セッション トークンがによって使用される、 <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM) および<xref:System.IdentityModel.Services.SessionAuthenticationModule>(SAM)、セッションに関する情報を格納するこれは、主に、<xref:System.Security.Claims.ClaimsPrincipal>認証されたユーザーとセッションの開始と終了時間に関連付けられています。  
+  
+ パッシブのシナリオで、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule>への呼び出し、 <xref:System.IdentityModel.Services.SessionAuthenticationModule> (SAM) からのセッション トークンを作成する認証パイプラインから、<xref:System.Security.Claims.ClaimsPrincipal>認証されたユーザーを表すです。 その構成を使用して、SAM<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>トークンを作成して cookie にシリアル化 (および後続の要求の cookie からのトークンを逆シリアル化する)。 SAM は、その構成済みのインスタンスを使用して<xref:System.IdentityModel.Services.CookieHandler>クッキーを HTTP 応答に書き込むのにクラスです。 この cookie は、クライアントに返されます、後続の要求で、クライアントをセキュリティ トークンを再取得する id プロバイダーに戻るラウンド トリップを加えるのではなく、cookie 提示できます。 WIF のセッションのしくみの詳細については、次を参照してください。 [WIF セッション管理](~/docs/framework/security/wif-session-management.md)です。  
+  
+> [!NOTE]
+>  \<SecurityTokenHandlers > を指定する構成要素を使用することができます、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>アプリケーションのセッションをセキュリティで保護する責任を持ちます。 開発者にアプリケーションのセキュリティ侵害が発生する、正しく構成されていないシステムはこの構成設定を変更するときに注意を使ってください。 たとえば、派生ハイパーリンク"http://msdn.microsoft.com/en-us/library/hh193426%28v=vs.110%29.aspx"\t"_blank"を指定する<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>およびが保護されていないクッキーにシリアル化されるユーザー id をベースには、空の変換 (CookieTransform) コレクションを渡すことになります。 これが攻撃者に id を変更し、そのためのアクセス権限を変更します。  
+  
+ セッション トークン モードの場合の参照、つまり、その<xref:System.IdentityModel.Tokens.SessionSecurityToken.IsReferenceMode%2A?displayProperty=nameWithType>プロパティは`true`, トークン ハンドラーのみでそのキーを再生成するために必要なセッション トークンのプロパティをシリアル化セッション、<xref:System.IdentityModel.Tokens.SessionSecurityTokenCache>です。 既定では、<xref:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey>キャッシュ キーを表すクラスが使用され、トークン ハンドラーは、書き込み、<xref:System.IdentityModel.Tokens.SessionSecurityToken.ContextId%2A?displayProperty=nameWithType>と<xref:System.IdentityModel.Tokens.SessionSecurityToken.KeyGeneration%2A?displayProperty=nameWithType>トークンのプロパティです。 セッション トークンは、つまり、参照モードでない場合、<xref:System.IdentityModel.Tokens.SessionSecurityToken.IsReferenceMode%2A?displayProperty=nameWithType>プロパティは`false`に記載されているプロパティに加えて、ハンドラーが呼び出され、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.ApplyTransforms%2A>バイト配列のメソッドは、トークンからシリアル化し、cookie を同様に、結果の値を格納します。 トークンをシリアル化する方法の詳細については、次を参照してください。、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.WriteToken%28System.Xml.XmlWriter%2CSystem.IdentityModel.Tokens.SecurityToken%29?displayProperty=nameWithType>メソッドです。  
+  
+ <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.Transforms%2A>プロパティがセッションに適用される変換のリストでトークンの取得、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.ApplyTransforms%2A>メソッドです。 すべての変換から派生して、<xref:System.IdentityModel.CookieTransform>クラスです。 既定では、<xref:System.IdentityModel.DeflateCookieTransform>と<xref:System.IdentityModel.ProtectedDataCookieTransform>適用されます。 <xref:System.IdentityModel.ProtectedDataCookieTransform> Cookie 情報を保護するデータ保護 API (DPAPI) を使用します。 DPAPI は、その保護アルゴリズムで実行されているコンピューターに固有であるキーを使用します。 このため、既定のセッション トークン ハンドラーではありません Web ファームのシナリオで使用できる、このようなシナリオでは、トークンが 1 台のコンピューターで記述する必要があります別のコンピューターでは読み込めません。 多くの戦略を使用して、この問題を回避することができます。 たとえば、次のように操作できます。  
+  
+-   既定値を置き換える<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>で、<xref:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler>です。 <xref:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler> 、ASP.NET での署名と暗号化キーを指定することができます`<machineKey>`構成ファイル内の要素。  
+  
+-   ハンドラーを作成して、 <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfigurationCreated?displayProperty=nameWithType> global.asax.cs ファイルと置き換える既定のセッションでイベント ハンドラーのインスタンスでのトークン<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>を含む変換のリストを持つ、<xref:System.IdentityModel.RsaSignatureCookieTransform>と<xref:System.IdentityModel.RsaEncryptionCookieTransform>です。 変換のリストを受け取るコンス トラクターを呼び出すことによって、新しいインスタンスを作成できます。  
+  
+-   派生するカスタムの変換から、<xref:System.IdentityModel.CookieTransform>基底クラスと、適用される変換の一覧に含める上記のメソッドを使用します。  
+  
+-   カスタム トークン ハンドラーからの派生<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>し、独自のメカニズムを実装します。  
+  
+ Web ファームのシナリオにセッションの使用の詳細については、次を参照してください。 [WIF および Web ファーム](~/docs/framework/security/wif-and-web-farms.md)です。  
+  
+ <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>既定トークン ハンドラー コレクションに含まれるただし、置き換えることができますが、カスタムのセッション トークン ハンドラー最初を指定して、 [&lt;削除&gt;](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/remove.md)要素の下、 [ &lt;securityTokenHandlers&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlers.md)コレクションを使用して、カスタム トークン ハンドラーを追加すると、既定のハンドラーを削除する要素、 [&lt;追加&gt;](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/add.md)要素。 既定では、既定のトークン有効期間を指定を含めることによって、 [ &lt;sessionTokenRequirement&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/sessiontokenrequirement.md)要素の下、`<add>`要素。 カスタム構成要素をカスタム トークン ハンドラーを設計することができます、`<add>`要素をオーバーライドすることで、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.LoadCustomConfiguration%2A>それらを処理するロジックを実装するメソッド。  
+  
+   
+  
+## Examples  
+ 次の XML のインスタンスでの既定のセッション セキュリティ トークン ハンドラー トークン ハンドラーのコレクションを置き換える方法を示しています、<xref:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler>構成内のクラスです。  
+  
+```xml  
+<securityTokenHandlers>  
+  <remove type="System.IdentityModel.Tokens.SessionSecurityTokenHandler, System.IdentityModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />  
+  <add type="System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler, System.IdentityModel.Services, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />  
+</securityTokenHandlers>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SessionSecurityTokenHandler ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SessionSecurityTokenHandler.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.IdentityModel.Tokens.SessionSecurityTokenHandler" /> cookie の既定の変換およびトークンの有効期間を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.TokenLifetime%2A>と<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.Transforms%2A>にプロパティが初期化されます<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.DefaultLifetime>と<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.DefaultCookieTransforms>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SessionSecurityTokenHandler (System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.CookieTransform&gt; transforms);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.IdentityModel.CookieTransform&gt; transforms) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SessionSecurityTokenHandler.#ctor(System.Collections.ObjectModel.ReadOnlyCollection{System.IdentityModel.CookieTransform})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="transforms" Type="System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.CookieTransform&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="transforms">エンコードまたはデコード cookie ときに適用する変換です。 <see cref="P:System.IdentityModel.Tokens.SessionSecurityTokenHandler.Transforms" /> プロパティを設定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Tokens.SessionSecurityTokenHandler" />を指定された cookie を使用してクラスを変換します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.TokenLifetime%2A> プロパティは <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.DefaultLifetime> に初期化されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="transforms" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SessionSecurityTokenHandler (System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.CookieTransform&gt; transforms, TimeSpan tokenLifetime);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.IdentityModel.CookieTransform&gt; transforms, valuetype System.TimeSpan tokenLifetime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SessionSecurityTokenHandler.#ctor(System.Collections.ObjectModel.ReadOnlyCollection{System.IdentityModel.CookieTransform},System.TimeSpan)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="transforms" Type="System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.CookieTransform&gt;" />
+        <Parameter Name="tokenLifetime" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="transforms">エンコードまたはデコード cookie ときに適用する変換です。 <see cref="P:System.IdentityModel.Tokens.SessionSecurityTokenHandler.Transforms" /> プロパティを設定します。</param>
+        <param name="tokenLifetime">トークンの既定の有効期間。 <see cref="P:System.IdentityModel.Tokens.SessionSecurityTokenHandler.TokenLifetime" /> プロパティを設定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Tokens.SessionSecurityTokenHandler" />を指定されたクッキーの変換とトークンの有効期間を使用するクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="transforms" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="tokenLifetime" />以下には、<see cref="F:System.TimeSpan.Zero" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyTransforms">
+      <MemberSignature Language="C#" Value="protected virtual byte[] ApplyTransforms (byte[] cookie, bool outbound);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance unsigned int8[] ApplyTransforms(unsigned int8[] cookie, bool outbound) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SessionSecurityTokenHandler.ApplyTransforms(System.Byte[],System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cookie" Type="System.Byte[]" />
+        <Parameter Name="outbound" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="cookie">このクッキーは、変換されます。</param>
+        <param name="outbound">
+          <see langword="true" />場合は、cookie をエンコードする必要があります。<see langword="false" />場合は、cookie をデコードする必要があります。</param>
+        <summary>指定された変換を適用する、<see cref="P:System.IdentityModel.Tokens.SessionSecurityTokenHandler.Transforms" />プロパティをエンコードするか、指定された cookie をデコードします。</summary>
+        <returns>エンコードまたはデコードされたクッキー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 表示される順序で適用されます、cookie をエンコードを変換するときに、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.Transforms%2A>プロパティです。 Cookie をデコードする場合は、逆の順序で適用されます。  
+  
+ 呼び出される、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.WriteToken%2A>としますか? qualifyHint = False & autoUpgrade = True およびメソッドをエンコード、cookie マテリアルをデコードします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.IdentityModel.Tokens.SessionSecurityTokenHandler.Transforms" /> プロパティが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanReadToken">
+      <MemberSignature Language="C#" Value="public override bool CanReadToken (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanReadToken(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SessionSecurityTokenHandler.CanReadToken(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader"><see cref="T:System.Xml.XmlReader" />着信経由で<see cref="T:System.IdentityModel.Tokens.SecurityToken" />です。 リーダーを配置する必要があります、<see langword="&lt;wsc:SecurityContextToken&gt;" />要素。</param>
+        <summary>リーダーが配置されているかどうかを示す値を返します、<see langword="&lt;wsc:SecurityContextToken&gt;" />要素。</summary>
+        <returns>
+          <see langword="true" />リーダーを指している場合、<see langword="&lt;wsc:SecurityContextToken&gt;" />要素、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanValidateToken">
+      <MemberSignature Language="C#" Value="public override bool CanValidateToken { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanValidateToken" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SessionSecurityTokenHandler.CanValidateToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このハンドラーが型のトークンの検証をサポートするかどうかを示す値を取得<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />です。</summary>
+        <value>
+          <see langword="true" />ハンドラーは、型のトークンの検証をサポートしている場合<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />、それ以外の<see langword="false" />します。 常に <see langword="true" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanWriteToken">
+      <MemberSignature Language="C#" Value="public override bool CanWriteToken { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanWriteToken" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SessionSecurityTokenHandler.CanWriteToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このハンドラーが型のトークンを書き込むかどうかを示す値を取得<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />です。</summary>
+        <value>
+          <see langword="true" />ハンドラーは、型のトークンを書き込むことができる場合<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />、それ以外の<see langword="false" />します。 常に <see langword="true" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CookieElementName">
+      <MemberSignature Language="C#" Value="public virtual string CookieElementName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CookieElementName" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SessionSecurityTokenHandler.CookieElementName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クッキー要素の名前を取得します。</summary>
+        <value>クッキー要素の名前。 既定の要素名は、"Cookie"です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは使用、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.WriteToken%2A>と<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.ReadToken%2A>要素をエンコードされたトークン マテリアル必要がある書き込みまたは読み取りを確認する方法です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CookieNamespace">
+      <MemberSignature Language="C#" Value="public virtual string CookieNamespace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CookieNamespace" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SessionSecurityTokenHandler.CookieNamespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クッキー要素の名前空間を取得します。</summary>
+        <value>クッキー要素の名前空間。 既定の名前空間は、"http://schemas.microsoft.com/ws/2006/05/security"です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは使用、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.WriteToken%2A>と<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.ReadToken%2A>する、エンコードされたトークン マテリアル必要がある書き込みまたは読み取りの要素の名前空間を決定するメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSessionSecurityToken">
+      <MemberSignature Language="C#" Value="public virtual System.IdentityModel.Tokens.SessionSecurityToken CreateSessionSecurityToken (System.Security.Claims.ClaimsPrincipal principal, string context, string endpointId, DateTime validFrom, DateTime validTo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IdentityModel.Tokens.SessionSecurityToken CreateSessionSecurityToken(class System.Security.Claims.ClaimsPrincipal principal, string context, string endpointId, valuetype System.DateTime validFrom, valuetype System.DateTime validTo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SessionSecurityTokenHandler.CreateSessionSecurityToken(System.Security.Claims.ClaimsPrincipal,System.String,System.String,System.DateTime,System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SessionSecurityToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="principal" Type="System.Security.Claims.ClaimsPrincipal" />
+        <Parameter Name="context" Type="System.String" />
+        <Parameter Name="endpointId" Type="System.String" />
+        <Parameter Name="validFrom" Type="System.DateTime" />
+        <Parameter Name="validTo" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="principal">要求のプリンシパル。</param>
+        <param name="context">コンテキストの呼び出し元が定義文字列です。</param>
+        <param name="endpointId">トークンのスコープをエンドポイントの識別子。</param>
+        <param name="validFrom">トークンが有効になる時刻インスタント。</param>
+        <param name="validTo">インスタントするまでの時間、トークンが有効ではなくなりました。</param>
+        <summary>作成、<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />トークンが有効である指定したクレーム プリンシパルと時間の範囲に基づきます。</summary>
+        <returns>作成されたセッション セキュリティ トークンです。 新しいセッション トークンのプロパティは、指定されたパラメーターに応じて設定されます。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="principal" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.IdentityModel.Tokens.SecurityTokenHandler.Configuration" /> プロパティが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateToken">
+      <MemberSignature Language="C#" Value="public override System.IdentityModel.Tokens.SecurityToken CreateToken (System.IdentityModel.Tokens.SecurityTokenDescriptor tokenDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IdentityModel.Tokens.SecurityToken CreateToken(class System.IdentityModel.Tokens.SecurityTokenDescriptor tokenDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SessionSecurityTokenHandler.CreateToken(System.IdentityModel.Tokens.SecurityTokenDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tokenDescriptor" Type="System.IdentityModel.Tokens.SecurityTokenDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="tokenDescriptor">トークンの作成元のトークンの記述子。</param>
+        <summary>指定されたトークン記述子に基づいてセキュリティ トークンを作成します。</summary>
+        <returns>作成されたセキュリティ トークンです。 インスタンスになります。 この<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成し、トークンの記述子に、次のプロパティを使用して、セッション セキュリティ トークンを返します: <xref:System.IdentityModel.Tokens.SecurityTokenDescriptor.Subject%2A?displayProperty=nameWithType>、および<xref:System.IdentityModel.Tokens.SecurityTokenDescriptor.Lifetime%2A?displayProperty=nameWithType>です。 場合、<xref:System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration.SaveBootstrapContext%2A?displayProperty=nameWithType>プロパティが設定されて`true`で指定されたトークン ハンドラーの構成で、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.Configuration%2A>プロパティ、ブートス トラップのコンテキストが作成から、<xref:System.IdentityModel.Tokens.SecurityTokenDescriptor.Token%2A?displayProperty=nameWithType>プロパティでは、セッション トークンに保存します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="tokenDescriptor" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.IdentityModel.Tokens.SecurityTokenHandler.Configuration" /> プロパティが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultCookieTransforms">
+      <MemberSignature Language="C#" Value="public static readonly System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.CookieTransform&gt; DefaultCookieTransforms;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.IdentityModel.CookieTransform&gt; DefaultCookieTransforms" />
+      <MemberSignature Language="DocId" Value="F:System.IdentityModel.Tokens.SessionSecurityTokenHandler.DefaultCookieTransforms" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.CookieTransform&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>読み取り専用、cookie に適用される既定の変換の一覧を含むコレクションを A、<see cref="T:System.IdentityModel.DeflateCookieTransform" />と<see cref="T:System.IdentityModel.ProtectedDataCookieTransform" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultLifetime">
+      <MemberSignature Language="C#" Value="public static readonly TimeSpan DefaultLifetime;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.TimeSpan DefaultLifetime" />
+      <MemberSignature Language="DocId" Value="F:System.IdentityModel.Tokens.SessionSecurityTokenHandler.DefaultLifetime" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Cookie の既定の有効期間を 10 時間を指定する定数。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultTokenLifetime">
+      <MemberSignature Language="C#" Value="public static TimeSpan DefaultTokenLifetime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.TimeSpan DefaultTokenLifetime" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SessionSecurityTokenHandler.DefaultTokenLifetime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定のトークン有効期間を取得します。</summary>
+        <value>既定のトークン有効期間。 常に <see cref="F:System.IdentityModel.Tokens.SessionSecurityTokenHandler.DefaultLifetime" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTokenTypeIdentifiers">
+      <MemberSignature Language="C#" Value="public override string[] GetTokenTypeIdentifiers ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string[] GetTokenTypeIdentifiers() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SessionSecurityTokenHandler.GetTokenTypeIdentifiers" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このハンドラーで処理可能なトークンの種類のトークンの種類の Uri を取得します。</summary>
+        <returns>このハンドラーで処理可能なトークンの種類のトークンの型識別子 Uri。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の Uri の種類がサポートされる:"http://schemas.microsoft.com/ws/2006/05/servicemodel/tokens/SecureConversation"、"http://docs.oasis-open.org/ws-sx/ws-secureconversation/200512/sct"および"http://schemas.xmlsoap.org/ws/2005/02/sc/sct"です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadCustomConfiguration">
+      <MemberSignature Language="C#" Value="public override void LoadCustomConfiguration (System.Xml.XmlNodeList customConfigElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void LoadCustomConfiguration(class System.Xml.XmlNodeList customConfigElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SessionSecurityTokenHandler.LoadCustomConfiguration(System.Xml.XmlNodeList)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="customConfigElements" Type="System.Xml.XmlNodeList" />
+      </Parameters>
+      <Docs>
+        <param name="customConfigElements">カスタム構成要素。</param>
+        <summary>XML からカスタム構成を読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 初期化するために、構成のインフラストラクチャによって呼び出される、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>インスタンス。 初期化、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.TokenLifetime%2A>プロパティから、`lifetime`の属性、 [ &lt;sessionTokenRequirement&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/sessiontokenrequirement.md)構成ファイル内の要素。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="customConfigElements" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">によって指定された構成<paramref name="customConfigElements" />が無効です。 などを含まない、<see langword="&lt;sessionTokenRequirement&gt;" />要素が含まれている 2 つ以上<see langword="&lt;sessionTokenRequirement&gt;" />要素では、有効な<see cref="T:System.TimeSpan" />から値を読み取ることはできません、<see langword="lifetime" />属性、または<see langword="lifetime" />属性は、小さい値を指定よりも<see cref="F:System.TimeSpan.Zero" />です。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="ReadToken">
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>読み取り、<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装は、Ws-secure Conversation Feb2005 または Ws-secure Conversation 1.3 からトークンを逆シリアル化`<wsc:SecurityContextToken>`要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="ReadToken">
+      <MemberSignature Language="C#" Value="public override System.IdentityModel.Tokens.SecurityToken ReadToken (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IdentityModel.Tokens.SecurityToken ReadToken(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SessionSecurityTokenHandler.ReadToken(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader"><see cref="T:System.Xml.XmlReader" />着信経由で<see cref="T:System.IdentityModel.Tokens.SecurityToken" />です。</param>
+        <summary>読み取り、<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />指定した XML リーダーを使用します。</summary>
+        <returns>セッション セキュリティ トークンのインスタンス、読み取られた<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リーダーは、Ws-secure Conversation Feb2005 または、Ws-secure Conversation 1.3 のいずれかに配置する必要があります`<wsc:SecurityContextToken>`要素。  
+  
+ 既定の実装を呼び出す、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.ReadToken%28System.Xml.XmlReader%2CSystem.IdentityModel.Selectors.SecurityTokenResolver%29?displayProperty=nameWithType>メソッドの既定のトークン リゾルバーを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IdentityModel.Tokens.SecurityTokenException">リーダーが配置されていません、<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />または<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />読み取ることができません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadToken">
+      <MemberSignature Language="C#" Value="public virtual System.IdentityModel.Tokens.SecurityToken ReadToken (byte[] token, System.IdentityModel.Selectors.SecurityTokenResolver tokenResolver);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IdentityModel.Tokens.SecurityToken ReadToken(unsigned int8[] token, class System.IdentityModel.Selectors.SecurityTokenResolver tokenResolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SessionSecurityTokenHandler.ReadToken(System.Byte[],System.IdentityModel.Selectors.SecurityTokenResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="token" Type="System.Byte[]" />
+        <Parameter Name="tokenResolver" Type="System.IdentityModel.Selectors.SecurityTokenResolver" />
+      </Parameters>
+      <Docs>
+        <param name="token">トークンを格納しているバイト ストリームです。</param>
+        <param name="tokenResolver">使用するトークン リゾルバー。</param>
+        <summary>読み取り、<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />指定のトークン リゾルバーを使用して、バイト ストリームからです。</summary>
+        <returns>読み込まれた <see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装を作成、<xref:System.Xml.XmlDictionaryReader>トークンを呼び出すと、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.ReadToken%28System.Xml.XmlReader%2CSystem.IdentityModel.Selectors.SecurityTokenResolver%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadToken">
+      <MemberSignature Language="C#" Value="public override System.IdentityModel.Tokens.SecurityToken ReadToken (System.Xml.XmlReader reader, System.IdentityModel.Selectors.SecurityTokenResolver tokenResolver);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IdentityModel.Tokens.SecurityToken ReadToken(class System.Xml.XmlReader reader, class System.IdentityModel.Selectors.SecurityTokenResolver tokenResolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SessionSecurityTokenHandler.ReadToken(System.Xml.XmlReader,System.IdentityModel.Selectors.SecurityTokenResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+        <Parameter Name="tokenResolver" Type="System.IdentityModel.Selectors.SecurityTokenResolver" />
+      </Parameters>
+      <Docs>
+        <param name="reader"><see cref="T:System.Xml.XmlReader" />着信経由で<see cref="T:System.IdentityModel.Tokens.SecurityToken" />です。</param>
+        <param name="tokenResolver">A<see cref="T:System.IdentityModel.Selectors.SecurityTokenResolver" />を解決するために使用できる、<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />です。</param>
+        <summary>読み取り、<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />指定した XML リーダーとトークン リゾルバーを使用します。</summary>
+        <returns>セッション セキュリティ トークンのインスタンス、読み取られた<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リーダーは、Ws-secure Conversation Feb2005 または、Ws-secure Conversation 1.3 のいずれかに配置する必要があります`<wsc:SecurityContextToken>`要素。  
+  
+ インスタンスであるトークンのキャッシュから読み取られたトークンの情報がキャッシュされている場合の<xref:System.IdentityModel.Tokens.SessionSecurityTokenCache>クラスです。 子要素から、トークンの情報は読み取りそれ以外の場合、`<wsc:SecurityContextToken>`によって指定された要素を<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.CookieElementName%2A>と<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.CookieNamespace%2A>プロパティおよび<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.ApplyTransforms%2A>cookie をデコードするメソッドが呼び出されます。  
+  
+ セッション トークンをシリアル化する方法の詳細については、`<SecurityContextToken`要素を参照してください、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.WriteToken%28System.Xml.XmlWriter%2CSystem.IdentityModel.Tokens.SecurityToken%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="tokenResolver" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IdentityModel.Tokens.SecurityTokenException">リーダーが配置されていません、<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />または<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />読み取ることができません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetTransforms">
+      <MemberSignature Language="C#" Value="protected void SetTransforms (System.Collections.Generic.IEnumerable&lt;System.IdentityModel.CookieTransform&gt; transforms);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void SetTransforms(class System.Collections.Generic.IEnumerable`1&lt;class System.IdentityModel.CookieTransform&gt; transforms) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SessionSecurityTokenHandler.SetTransforms(System.Collections.Generic.IEnumerable{System.IdentityModel.CookieTransform})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="transforms" Type="System.Collections.Generic.IEnumerable&lt;System.IdentityModel.CookieTransform&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="transforms">使用する変換です。</param>
+        <summary>クッキーに適用される変換を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される変換のリストを設定、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.Transforms%2A>プロパティです。 変換は、表示される、cookie をエンコードする際に、一覧で、逆の順序で cookie をデコードする場合の順序で適用されます。  
+  
+> [!WARNING]
+>  場合、`transforms`パラメーターは`null`から例外がスローされます、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.ApplyTransforms%2A>メソッド エンコードまたはデコード cookie で呼び出された場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TokenLifetime">
+      <MemberSignature Language="C#" Value="public virtual TimeSpan TokenLifetime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan TokenLifetime" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SessionSecurityTokenHandler.TokenLifetime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはトークンの有効期間を設定します。</summary>
+        <value>トークンの有効期間。 既定値は、<see cref="F:System.IdentityModel.Tokens.SessionSecurityTokenHandler.DefaultLifetime" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では場合、 [ &lt;sessionTokenRequirement&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/sessiontokenrequirement.md)要素が、構成ファイルで指定された、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.TokenLifetime%2A>プロパティは、の値に初期化、 `lifetime` によって属性<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.LoadCustomConfiguration%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">0 に等しいまたはそれよりも小さいする時間間隔を設定しようとすると、発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TokenType">
+      <MemberSignature Language="C#" Value="public override Type TokenType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type TokenType" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SessionSecurityTokenHandler.TokenType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このハンドラーが処理されるトークンの種類を取得します。</summary>
+        <value><see cref="T:System.Type" /> の <see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Transforms">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.CookieTransform&gt; Transforms { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.IdentityModel.CookieTransform&gt; Transforms" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SessionSecurityTokenHandler.Transforms" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.CookieTransform&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Cookie に適用される変換を取得します。</summary>
+        <value>Cookie に適用される変換のリスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換が適用されます、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.ApplyTransforms%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateSession">
+      <MemberSignature Language="C#" Value="protected virtual void ValidateSession (System.IdentityModel.Tokens.SessionSecurityToken securityToken);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ValidateSession(class System.IdentityModel.Tokens.SessionSecurityToken securityToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SessionSecurityTokenHandler.ValidateSession(System.IdentityModel.Tokens.SessionSecurityToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="securityToken" Type="System.IdentityModel.Tokens.SessionSecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="securityToken">チェックするトークンです。</param>
+        <summary>指定したトークンに関連付けられたセッションが有効であるかどうかを判断します。 有効性がチェックによって決まりますが、<see cref="P:System.IdentityModel.Tokens.SecurityToken.ValidFrom" />と<see cref="P:System.IdentityModel.Tokens.SecurityToken.ValidTo" />指定されたトークンのプロパティです。 セッションが有効ではなく、例外がスローされます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トークンが無効場合その<xref:System.IdentityModel.Tokens.SecurityToken.ValidFrom%2A>プロパティが後に発生する値に設定よりも<xref:System.DateTime.UtcNow%2A>、場合、またはその<xref:System.IdentityModel.Tokens.SecurityToken.ValidTo%2A>プロパティが出現する値に設定よりも前<xref:System.DateTime.UtcNow%2A>です。  
+  
+ 呼び出される、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.ValidateToken%2A>セッションを検証する方法です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="securityToken" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.IdentityModel.Tokens.SecurityTokenHandler.Configuration" /> プロパティが <see langword="null" /> です。</exception>
+        <exception cref="T:System.IdentityModel.Tokens.SecurityTokenNotYetValidException"><see cref="P:System.IdentityModel.Tokens.SecurityToken.ValidFrom" />トークンのプロパティがよりも後<see cref="P:System.DateTime.UtcNow" />です。</exception>
+        <exception cref="T:System.IdentityModel.Tokens.SecurityTokenExpiredException"><see cref="P:System.IdentityModel.Tokens.SecurityToken.ValidTo" />トークンのプロパティよりも前か<see cref="P:System.DateTime.UtcNow" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateToken">
+      <MemberSignature Language="C#" Value="public override System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Security.Claims.ClaimsIdentity&gt; ValidateToken (System.IdentityModel.Tokens.SecurityToken token);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Security.Claims.ClaimsIdentity&gt; ValidateToken(class System.IdentityModel.Tokens.SecurityToken token) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SessionSecurityTokenHandler.ValidateToken(System.IdentityModel.Tokens.SecurityToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Security.Claims.ClaimsIdentity&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="token" Type="System.IdentityModel.Tokens.SecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="token">検証するトークン。 割り当て可能である必要があります<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />です。</param>
+        <summary>指定されたトークンを検証し、その要求を返します。</summary>
+        <returns>トークンに含まれている識別情報。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.ValidateSession%2A>メソッド トークンを検証します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="token" />
+          <see langword="null" />.</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="token" />割り当てることはできません<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateToken">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Security.Claims.ClaimsIdentity&gt; ValidateToken (System.IdentityModel.Tokens.SessionSecurityToken token, string endpointId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Security.Claims.ClaimsIdentity&gt; ValidateToken(class System.IdentityModel.Tokens.SessionSecurityToken token, string endpointId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SessionSecurityTokenHandler.ValidateToken(System.IdentityModel.Tokens.SessionSecurityToken,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Security.Claims.ClaimsIdentity&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="token" Type="System.IdentityModel.Tokens.SessionSecurityToken" />
+        <Parameter Name="endpointId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="token">検証するトークン。 割り当て可能である必要があります<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />です。</param>
+        <param name="endpointId">トークンのスコープをエンドポイントの識別子。</param>
+        <summary>指定したセッション トークンを検証し、その要求を返します。</summary>
+        <returns>トークンに含まれている識別情報。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チェックを実行する指定したトークン、指定したエンドポイント ID のスコープが設定し場合は、起動かどうかを確認して、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.ValidateToken%28System.IdentityModel.Tokens.SecurityToken%29?displayProperty=nameWithType>メソッドです。 それ以外の場合、スロー、<xref:System.IdentityModel.Tokens.SecurityTokenException>です。  
+  
+> [!IMPORTANT]
+>  セッション トークンを持つ、<xref:System.IdentityModel.Tokens.SessionSecurityToken.EndpointId%2A>であるプロパティ`null`や空では、グローバルにスコープが設定されると見なされます。 これは、潜在的なセキュリティ リスクを表示します。 この理由を確認してくださいを<xref:System.IdentityModel.Tokens.SessionSecurityToken.EndpointId%2A>セッション トークンにプロパティを設定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="token" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="endpointId" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="token" />割り当てることはできません<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />です。</exception>
+        <exception cref="T:System.IdentityModel.Tokens.SecurityTokenException"><see cref="P:System.IdentityModel.Tokens.SessionSecurityToken.EndpointId" /> 、指定されたトークンのプロパティがありません<see langword="null" />か空とその値がで指定されたものとは異なる、<paramref name="endpointId" />パラメーター。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="WriteToken">
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>トークンをシリアル化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装にシリアル化、トークン、Ws-secure Conversation Feb2005 または Ws-secure Conversation 1.3`<wsc:SecurityContextToken>`要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="WriteToken">
+      <MemberSignature Language="C#" Value="public virtual byte[] WriteToken (System.IdentityModel.Tokens.SessionSecurityToken sessionToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance unsigned int8[] WriteToken(class System.IdentityModel.Tokens.SessionSecurityToken sessionToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SessionSecurityTokenHandler.WriteToken(System.IdentityModel.Tokens.SessionSecurityToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sessionToken" Type="System.IdentityModel.Tokens.SessionSecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="sessionToken">書き込むトークンです。</param>
+        <summary>バイト配列に指定したトークンをシリアル化します。</summary>
+        <returns>エンコードされたバイト配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成して XML ライターに、指定されたトークンをシリアル化、<xref:System.IO.MemoryStream>を呼び出すと、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.WriteToken%28System.Xml.XmlWriter%2CSystem.IdentityModel.Tokens.SecurityToken%29?displayProperty=nameWithType>メソッドです。 詳細については、そのオーバー ロードを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="sessiontoken" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteToken">
+      <MemberSignature Language="C#" Value="public override void WriteToken (System.Xml.XmlWriter writer, System.IdentityModel.Tokens.SecurityToken token);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteToken(class System.Xml.XmlWriter writer, class System.IdentityModel.Tokens.SecurityToken token) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SessionSecurityTokenHandler.WriteToken(System.Xml.XmlWriter,System.IdentityModel.Tokens.SecurityToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="token" Type="System.IdentityModel.Tokens.SecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="writer">トークンをシリアル化に使用する XML ライター。</param>
+        <param name="token">シリアル化するトークンです。 <see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" /> のインスタンス。</param>
+        <summary>指定した XML ライターを使用して、指定したトークンをシリアル化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装、Ws-secure Conversation Feb2005 または Ws-secure Conversation 1.3 のいずれかとして指定したトークンをシリアル化`<wsc:SecurityContextToken>`要素の値に応じて、<xref:System.IdentityModel.Tokens.SessionSecurityToken.SecureConversationVersion%2A?displayProperty=nameWithType>プロパティです。 <xref:System.IdentityModel.Tokens.SessionSecurityToken.Id%2A?displayProperty=nameWithType>としてプロパティをシリアル化、`Id`属性。 <xref:System.IdentityModel.Tokens.SessionSecurityToken.ContextId%2A?displayProperty=nameWithType>としてプロパティをシリアル化、`<Identifier>`子要素です。 ない場合`null`、<xref:System.IdentityModel.Tokens.SessionSecurityToken.KeyGeneration%2A?displayProperty=nameWithType>としてプロパティをシリアル化、`<Instance>`要素。 最後に場合、<xref:System.IdentityModel.Tokens.SessionSecurityToken.IsReferenceMode%2A?displayProperty=nameWithType>プロパティは`false`、トークン全体に渡されるバイナリ配列にシリアル化、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.ApplyTransforms%2A>エンコードする方法です。 要素とで指定された名前空間を base64 でエンコードされた値としてエンコードされたトークンが書き込まれます、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.CookieElementName%2A>と<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.CookieNamespace%2A>プロパティです。 場合、<xref:System.IdentityModel.Tokens.SessionSecurityToken.IsReferenceMode%2A?displayProperty=nameWithType>プロパティは`true`トークンがシリアル化されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="token" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="token" />割り当てることはできません<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />です。  
+  
+ または  
+  
+ <see cref="P:System.IdentityModel.Tokens.SessionSecurityToken.SecureConversationVersion" />トークンのハンドラーでサポートされていない Ws-secure Conversation のバージョンを指定します。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

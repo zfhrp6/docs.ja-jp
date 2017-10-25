@@ -1,0 +1,412 @@
+<Type Name="MaskedTextResultHint" FullName="System.ComponentModel.MaskedTextResultHint">
+  <TypeSignature Language="C#" Value="public enum MaskedTextResultHint" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed MaskedTextResultHint extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.MaskedTextResultHint" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>解析操作でマスクされたテキストの結果を簡潔に記述する値を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox>コントロールを入力文字列を解析するための実際の責任を委任する、<xref:System.ComponentModel.MaskedTextProvider>クラスです。 メソッドの多くは<xref:System.ComponentModel.MaskedTextProvider>、返すだけでなく、<xref:System.Boolean>成功結果を型の追加出力パラメーターを提供も<xref:System.ComponentModel.MaskedTextResultHint>します。 この列挙は、メソッドの操作に関する追加情報を提供します。  
+  
+> [!NOTE]
+>  <xref:System.ComponentModel.MaskedTextProvider.GetOperationResultFromHint%2A>メソッドは変換を使用することができます、<xref:System.ComponentModel.MaskedTextResultHint>値に、<xref:System.Boolean>成功値。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AlphanumericCharacterExpected">
+      <MemberSignature Language="C#" Value="AlphanumericCharacterExpected" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.MaskedTextResultHint AlphanumericCharacterExpected = int32(-2)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.MaskedTextResultHint.AlphanumericCharacterExpected" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.MaskedTextResultHint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作は成功しませんでした。入力文字は英数字でなかったが見つかりました。 」を参照してください。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AsciiCharacterExpected">
+      <MemberSignature Language="C#" Value="AsciiCharacterExpected" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.MaskedTextResultHint AsciiCharacterExpected = int32(-1)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.MaskedTextResultHint.AsciiCharacterExpected" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.MaskedTextResultHint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作は成功しませんでした。入力文字が使用されて、ASCII 文字セットのメンバーが見つかりました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CharacterEscaped">
+      <MemberSignature Language="C#" Value="CharacterEscaped" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.MaskedTextResultHint CharacterEscaped = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.MaskedTextResultHint.CharacterEscaped" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.MaskedTextResultHint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>成功。 リテラル、入力を求めるも領域のため、操作が成功した文字がエスケープ文字。 エスケープされた文字の詳細については、次を参照してください。、<see cref="M:System.ComponentModel.MaskedTextProvider.VerifyEscapeChar(System.Char,System.Int32)" />メソッドです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DigitExpected">
+      <MemberSignature Language="C#" Value="DigitExpected" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.MaskedTextResultHint DigitExpected = int32(-3)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.MaskedTextResultHint.DigitExpected" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.MaskedTextResultHint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作は成功しませんでした。 入力文字には、1 桁の数字でなかったが発生しました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="InvalidInput">
+      <MemberSignature Language="C#" Value="InvalidInput" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.MaskedTextResultHint InvalidInput = int32(-51)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.MaskedTextResultHint.InvalidInput" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.MaskedTextResultHint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作は成功しませんでした。 プログラムには、無効な入力文字が発生しました。 無効な文字の詳細については、次を参照してください。、<see cref="M:System.ComponentModel.MaskedTextProvider.IsValidInputChar(System.Char)" />メソッドです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="LetterExpected">
+      <MemberSignature Language="C#" Value="LetterExpected" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.MaskedTextResultHint LetterExpected = int32(-4)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.MaskedTextResultHint.LetterExpected" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.MaskedTextResultHint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作は成功しませんでした。 入力文字が使用されて、文字が見つかりました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NoEffect">
+      <MemberSignature Language="C#" Value="NoEffect" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.MaskedTextResultHint NoEffect = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.MaskedTextResultHint.NoEffect" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.MaskedTextResultHint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>成功。 必要があるために、主要な操作は実行されませんでした。したがって、副作用は発生しませんでした。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NonEditPosition">
+      <MemberSignature Language="C#" Value="NonEditPosition" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.MaskedTextResultHint NonEditPosition = int32(-54)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.MaskedTextResultHint.NonEditPosition" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.MaskedTextResultHint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作は成功しませんでした。 書式指定文字列内の現在の位置は、リテラル文字です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PositionOutOfRange">
+      <MemberSignature Language="C#" Value="PositionOutOfRange" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.MaskedTextResultHint PositionOutOfRange = int32(-55)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.MaskedTextResultHint.PositionOutOfRange" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.MaskedTextResultHint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作は成功しませんでした。 指定した位置がターゲット文字列の範囲外通常、これは 0 より小さいか大きいターゲット文字列の長さ。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PromptCharNotAllowed">
+      <MemberSignature Language="C#" Value="PromptCharNotAllowed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.MaskedTextResultHint PromptCharNotAllowed = int32(-52)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.MaskedTextResultHint.PromptCharNotAllowed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.MaskedTextResultHint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作は成功しませんでした。 プロンプト文字有効ではない入力で、おそらく、<see cref="P:System.ComponentModel.MaskedTextProvider.AllowPromptAsInput" />プロパティに設定されている<see langword="false" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SideEffect">
+      <MemberSignature Language="C#" Value="SideEffect" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.MaskedTextResultHint SideEffect = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.MaskedTextResultHint.SideEffect" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.MaskedTextResultHint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>成功。 必要ありませんでしたが、メソッドに副作用が発生したため、主要な操作は実行されませんでした。 たとえば、<see cref="Overload:System.ComponentModel.MaskedTextProvider.RemoveAt" />メソッドは、割り当てられていない編集位置が、これにより、書式設定された文字列に 2 文字目以降の左にシフトを削除できます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SignedDigitExpected">
+      <MemberSignature Language="C#" Value="SignedDigitExpected" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.MaskedTextResultHint SignedDigitExpected = int32(-5)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.MaskedTextResultHint.SignedDigitExpected" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.MaskedTextResultHint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作は成功しませんでした。 符号付き数値いないの入力文字が見つかりました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Success">
+      <MemberSignature Language="C#" Value="Success" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.MaskedTextResultHint Success = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.MaskedTextResultHint.Success" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.MaskedTextResultHint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>成功。 主要な操作が成功しました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UnavailableEditPosition">
+      <MemberSignature Language="C#" Value="UnavailableEditPosition" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.MaskedTextResultHint UnavailableEditPosition = int32(-53)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.MaskedTextResultHint.UnavailableEditPosition" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.MaskedTextResultHint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作は成功しませんでした。 要求を処理するための十分な編集位置がありませんでした。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Unknown">
+      <MemberSignature Language="C#" Value="Unknown" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.MaskedTextResultHint Unknown = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.MaskedTextResultHint.Unknown" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.MaskedTextResultHint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>不明。 操作の結果を判別できませんでした。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

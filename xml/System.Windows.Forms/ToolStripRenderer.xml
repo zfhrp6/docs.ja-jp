@@ -1,0 +1,2142 @@
+<Type Name="ToolStripRenderer" FullName="System.Windows.Forms.ToolStripRenderer">
+  <TypeSignature Language="C#" Value="public abstract class ToolStripRenderer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ToolStripRenderer extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ToolStripRenderer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>描画機能を処理<see cref="T:System.Windows.Forms.ToolStrip" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.ToolStripRenderer>特定のスタイルやテーマを適用するクラス、<xref:System.Windows.Forms.ToolStrip>です。 カスタム描画ではなく、<xref:System.Windows.Forms.ToolStrip>と<xref:System.Windows.Forms.ToolStripItem>が含まれているオブジェクトを設定する、<xref:System.Windows.Forms.ToolStrip.Renderer%2A?displayProperty=nameWithType>プロパティから継承されるオブジェクトを<xref:System.Windows.Forms.ToolStripRenderer>です。 指定された描画、<xref:System.Windows.Forms.ToolStripRenderer>に適用される、 <xref:System.Windows.Forms.ToolStrip>、だけでなく、項目が含まれています。  
+  
+ カスタム描画を行うことができます<xref:System.Windows.Forms.ToolStrip>いくつかの方法で制御します。 その他の Windows フォーム コントロールと同様、<xref:System.Windows.Forms.ToolStrip>と<xref:System.Windows.Forms.ToolStripItem>両方がオーバーライドできる`OnPaint`メソッドおよび`Paint`イベント。 コントロールのクライアント領域と相対的座標系は、通常の描画としてつまり、コントロールの左上隅には 0、0 です。 `Paint`イベントと`OnPaint`のメソッド、<xref:System.Windows.Forms.ToolStripItem>他のコントロールの描画イベントと同様に動作します。  
+  
+ <xref:System.Windows.Forms.ToolStripRenderer>クラスの背景、項目の背景、項目のイメージ、項目 の矢印、項目のテキスト、およびの枠線を描画オーバーライド可能なメソッドには、<xref:System.Windows.Forms.ToolStrip>です。 これらのメソッドのイベント引数は、四角形、色、および必要に応じて調整できるテキスト形式などのいくつかのプロパティを公開します。  
+  
+ オーバーライドする通常の項目を描画する方法のいくつかの側面を調整する、<xref:System.Windows.Forms.ToolStripRenderer>です。  
+  
+ 新しい項目を作成して、描画のすべての側面を制御する場合は、上書き、`OnPaint`メソッドです。 内から`OnPaint`からメソッドを使用することができます、<xref:System.Windows.Forms.ToolStripRenderer>です。  
+  
+ 既定では、<xref:System.Windows.Forms.ToolStrip>はダブル バッファー内の活用、<xref:System.Windows.Forms.ControlStyles.OptimizedDoubleBuffer>設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、カスタムの <xref:System.Windows.Forms.ToolStripRenderer> クラスを実装する方法を示しています `GridStripRenderer`クラスの 3 つの側面をカスタマイズする、`GridStrip`コントロールの外観:`GridStrip`境界線<xref:System.Windows.Forms.ToolStripButton>罫線、および<xref:System.Windows.Forms.ToolStripButton>イメージ。 完全なコードの一覧については、次を参照してください。[する方法: カスタム ToolStripRenderer を実装する](~/docs/framework/winforms/controls/how-to-implement-a-custom-toolstriprenderer.md)です。  
+  
+ [!code-csharp[System.Windows.Forms.ToolStrip.GridStrip#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.GridStrip/CS/GridStrip.cs#10)]
+ [!code-vb[System.Windows.Forms.ToolStrip.GridStrip#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.GridStrip/VB/GridStrip.vb#10)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ToolStripRenderer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.ToolStripRenderer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ToolStripRenderer>抽象クラスでは、のでコンス トラクターのみですから派生したクラスを使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDisabledImage">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Image CreateDisabledImage (System.Drawing.Image normalImage);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Drawing.Image CreateDisabledImage(class System.Drawing.Image normalImage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.CreateDisabledImage(System.Drawing.Image)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Image</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="normalImage" Type="System.Drawing.Image" />
+      </Parameters>
+      <Docs>
+        <param name="normalImage">コピーするイメージ。</param>
+        <summary>指定したイメージのグレースケールのコピーを作成します。</summary>
+        <returns><see cref="T:System.Drawing.Image" />はグレースケール カラー行列を指定されたイメージのコピーであります。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawArrow">
+      <MemberSignature Language="C#" Value="public void DrawArrow (System.Windows.Forms.ToolStripArrowRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawArrow(class System.Windows.Forms.ToolStripArrowRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawArrow(System.Windows.Forms.ToolStripArrowRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripArrowRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Windows.Forms.ToolStripArrowRenderEventArgs" />矢印の描画にデータを格納します。</param>
+        <summary>上の矢印の描画、<see cref="T:System.Windows.Forms.ToolStripItem" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ToolStripRenderer.DrawArrow%2A>メソッドは、矢印レンダリング コードへのエントリ ポイントを提供します。 このメソッドをオーバーライドする場合は、矢印を描画を使用して、<xref:System.Windows.Forms.ToolStripItem.OnPaint%2A?displayProperty=nameWithType>メソッド、または強制的に、カスタムで描画する矢印<xref:System.Windows.Forms.ToolStripRenderer>です。 矢印の表示方法を変更するには、上書き、<xref:System.Windows.Forms.ToolStripRenderer.OnRenderArrow%2A>から派生したクラスのメソッド<xref:System.Windows.Forms.ToolStripRenderer>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawButtonBackground">
+      <MemberSignature Language="C#" Value="public void DrawButtonBackground (System.Windows.Forms.ToolStripItemRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawButtonBackground(class System.Windows.Forms.ToolStripItemRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawButtonBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripItemRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e"><see cref="T:System.Windows.Forms.ToolStripItemRenderEventArgs" />ボタンの背景を描画するデータを格納します。</param>
+        <summary>背景を描画する<see cref="T:System.Windows.Forms.ToolStripButton" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ToolStripRenderer.DrawButtonBackground%2A>メソッドの背景のレンダリング コードへのエントリ ポイントを提供する、<xref:System.Windows.Forms.ToolStripButton>です。 このメソッドをオーバーライドする場合は、ボタンの背景を描画を使用して、<xref:System.Windows.Forms.ToolStripItem.OnPaint%2A?displayProperty=nameWithType>メソッド、またはカスタムに描画されるボタンの背景を強制的に<xref:System.Windows.Forms.ToolStripRenderer>です。 バック グラウンドの表示方法を変更するには、上書き、<xref:System.Windows.Forms.ToolStripRenderer.OnRenderButtonBackground%2A>から派生したクラスのメソッド<xref:System.Windows.Forms.ToolStripRenderer>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawDropDownButtonBackground">
+      <MemberSignature Language="C#" Value="public void DrawDropDownButtonBackground (System.Windows.Forms.ToolStripItemRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawDropDownButtonBackground(class System.Windows.Forms.ToolStripItemRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawDropDownButtonBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripItemRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Windows.Forms.ToolStripItemRenderEventArgs" />ドロップダウン ボタンの背景を描画するデータを格納します。</param>
+        <summary>背景を描画する<see cref="T:System.Windows.Forms.ToolStripDropDownButton" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ToolStripRenderer.DrawDropDownButtonBackground%2A>メソッドの背景のレンダリング コードへのエントリ ポイントを提供する、<xref:System.Windows.Forms.ToolStripDropDownButton>です。 このメソッドをオーバーライドする場合は、ドロップダウン ボタンの背景を描画を使用して、<xref:System.Windows.Forms.ToolStripDropDownButton.OnPaint%2A?displayProperty=nameWithType>メソッド、またはカスタムに描画されるドロップダウン ボタンの背景を強制的に<xref:System.Windows.Forms.ToolStripRenderer>です。 バック グラウンドの表示方法を変更するには、上書き、<xref:System.Windows.Forms.ToolStripRenderer.OnRenderDropDownButtonBackground%2A>から派生したクラスのメソッド<xref:System.Windows.Forms.ToolStripRenderer>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawGrip">
+      <MemberSignature Language="C#" Value="public void DrawGrip (System.Windows.Forms.ToolStripGripRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawGrip(class System.Windows.Forms.ToolStripGripRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawGrip(System.Windows.Forms.ToolStripGripRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripGripRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Windows.Forms.ToolStripGripRenderEventArgs" />移動ハンドルを描画するデータを格納します。</param>
+        <summary>上移動ハンドルを描画する<see cref="T:System.Windows.Forms.ToolStrip" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ToolStripRenderer.DrawGrip%2A>メソッドでは、上にある移動ハンドルのレンダリング コードへのエントリ ポイント、<xref:System.Windows.Forms.ToolStrip>です。 オーバーライドする場合は、このメソッドを使用して、<xref:System.Windows.Forms.ToolStrip.OnPaintGrip%2A?displayProperty=nameWithType>メソッド、またはカスタムに描画される移動ハンドルを強制する<xref:System.Windows.Forms.ToolStripRenderer>です。 移動ハンドルの表示方法を変更するには、上書き、<xref:System.Windows.Forms.ToolStripRenderer.OnRenderGrip%2A>から派生したクラスのメソッド<xref:System.Windows.Forms.ToolStripRenderer>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawImageMargin">
+      <MemberSignature Language="C#" Value="public void DrawImageMargin (System.Windows.Forms.ToolStripRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawImageMargin(class System.Windows.Forms.ToolStripRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawImageMargin(System.Windows.Forms.ToolStripRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Windows.Forms.ToolStripRenderEventArgs" />イメージの周囲のスペースを描画するデータを格納します。</param>
+        <summary>イメージの周囲のスペースを描画する<see cref="T:System.Windows.Forms.ToolStrip" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ToolStripRenderer.DrawImageMargin%2A>メソッドは、イメージのレンダリング コードへのエントリ ポイントを提供します。 このメソッドをオーバーライドする場合、イメージの余白の描画を使用して、<xref:System.Windows.Forms.ToolStripItem.OnPaint%2A?displayProperty=nameWithType>メソッド、またはカスタムに描画されるイメージの余白を強制的に<xref:System.Windows.Forms.ToolStripRenderer>です。 イメージの余白の表示方法を変更するには、上書き、<xref:System.Windows.Forms.ToolStripRenderer.OnRenderImageMargin%2A>から派生したクラスのメソッド<xref:System.Windows.Forms.ToolStripRenderer>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawItemBackground">
+      <MemberSignature Language="C#" Value="public void DrawItemBackground (System.Windows.Forms.ToolStripItemRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawItemBackground(class System.Windows.Forms.ToolStripItemRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawItemBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripItemRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Windows.Forms.ToolStripItemRenderEventArgs" />アイテムの背景を描画するデータを格納します。</param>
+        <summary>背景を描画する<see cref="T:System.Windows.Forms.ToolStripItem" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ToolStripRenderer.DrawItemBackground%2A>メソッドは、項目の背景のレンダリング コードへのエントリ ポイントを提供します。 このメソッドをオーバーライドする場合は、項目の背景を描画を使用して、<xref:System.Windows.Forms.ToolStripItem.OnPaint%2A?displayProperty=nameWithType>メソッド、またはカスタムに描画される項目の背景を強制的に<xref:System.Windows.Forms.ToolStripRenderer>です。 項目の背景のレンダリング方法を変更するには、上書き、<xref:System.Windows.Forms.ToolStripRenderer.OnRenderItemBackground%2A>から派生したクラスのメソッド<xref:System.Windows.Forms.ToolStripRenderer>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawItemCheck">
+      <MemberSignature Language="C#" Value="public void DrawItemCheck (System.Windows.Forms.ToolStripItemImageRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawItemCheck(class System.Windows.Forms.ToolStripItemImageRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawItemCheck(System.Windows.Forms.ToolStripItemImageRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripItemImageRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Windows.Forms.ToolStripItemImageRenderEventArgs" />を選択したイメージを描画するデータを格納します。</param>
+        <summary>イメージを描画する<see cref="T:System.Windows.Forms.ToolStripItem" />項目が選択されている状態を示すです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ToolStripRenderer.DrawItemCheck%2A>メソッドは、選択した状態で画像のレンダリング コードへのエントリ ポイントを提供します。 このメソッドをオーバーライドする場合、選択したイメージの描画を使用して、<xref:System.Windows.Forms.ToolStripItem.OnPaint%2A?displayProperty=nameWithType>メソッド、または強制的に選択したイメージをカスタムに描画される<xref:System.Windows.Forms.ToolStripRenderer>です。 選択したイメージの表示方法を変更する、<xref:System.Windows.Forms.ToolStripRenderer.OnRenderItemCheck%2A>から派生したクラスのメソッド<xref:System.Windows.Forms.ToolStripRenderer>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawItemImage">
+      <MemberSignature Language="C#" Value="public void DrawItemImage (System.Windows.Forms.ToolStripItemImageRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawItemImage(class System.Windows.Forms.ToolStripItemImageRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawItemImage(System.Windows.Forms.ToolStripItemImageRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripItemImageRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Windows.Forms.ToolStripItemImageRenderEventArgs" />イメージを描画するデータを格納します。</param>
+        <summary>イメージを描画する<see cref="T:System.Windows.Forms.ToolStripItem" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ToolStripRenderer.DrawItemImage%2A>メソッドは、イメージのレンダリング コードへのエントリ ポイントを提供します。 このメソッドをオーバーライドする場合は、イメージを描画を使用して、<xref:System.Windows.Forms.ToolStripItem.OnPaint%2A?displayProperty=nameWithType>メソッドまたはカスタムに描画されるイメージを強制的に<xref:System.Windows.Forms.ToolStripRenderer>です。 イメージの表示方法を変更するには、上書き、`OnDrawItem`から派生したクラスのメソッド<xref:System.Windows.Forms.ToolStripRenderer>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawItemText">
+      <MemberSignature Language="C#" Value="public void DrawItemText (System.Windows.Forms.ToolStripItemTextRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawItemText(class System.Windows.Forms.ToolStripItemTextRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawItemText(System.Windows.Forms.ToolStripItemTextRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripItemTextRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Windows.Forms.ToolStripItemTextRenderEventArgs" />テキストを描画するデータを格納します。</param>
+        <summary>テキストを描画する<see cref="T:System.Windows.Forms.ToolStripItem" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ToolStripRenderer.DrawItemText%2A>メソッドのテキストでレンダリング コードへのエントリ ポイントを提供する、<xref:System.Windows.Forms.ToolStripItem>です。 このメソッドをオーバーライドする場合、項目のテキストの描画を使用して、<xref:System.Windows.Forms.ToolStripItem.OnPaint%2A?displayProperty=nameWithType>メソッド、またはカスタムに描画される項目のテキストを強制的に<xref:System.Windows.Forms.ToolStripRenderer>です。 項目のテキストの表示方法を変更するには、上書き、<xref:System.Windows.Forms.ToolStripRenderer.OnRenderItemText%2A>から派生したクラスのメソッド<xref:System.Windows.Forms.ToolStripRenderer>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawLabelBackground">
+      <MemberSignature Language="C#" Value="public void DrawLabelBackground (System.Windows.Forms.ToolStripItemRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawLabelBackground(class System.Windows.Forms.ToolStripItemRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawLabelBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripItemRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Windows.Forms.ToolStripItemRenderEventArgs" />ラベルの背景を描画するデータを格納します。</param>
+        <summary>背景を描画する<see cref="T:System.Windows.Forms.ToolStripLabel" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ToolStripRenderer.DrawLabelBackground%2A>メソッドの背景のレンダリング コードへのエントリ ポイントを提供する、<xref:System.Windows.Forms.ToolStripLabel>です。 背景を描画するには、このメソッドを使用して、<xref:System.Windows.Forms.ToolStripLabel>をオーバーライドする場合、<xref:System.Windows.Forms.ToolStripLabel.OnPaint%2A?displayProperty=nameWithType>メソッド、または強制的の背景、<xref:System.Windows.Forms.ToolStripLabel>カスタムに描画される<xref:System.Windows.Forms.ToolStripRenderer>です。 バック グラウンドの方法を変更するの<xref:System.Windows.Forms.ToolStripLabel>がレンダリングされると、オーバーライド、<xref:System.Windows.Forms.ToolStripRenderer.OnRenderLabelBackground%2A>から派生したクラスのメソッド<xref:System.Windows.Forms.ToolStripRenderer>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawMenuItemBackground">
+      <MemberSignature Language="C#" Value="public void DrawMenuItemBackground (System.Windows.Forms.ToolStripItemRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawMenuItemBackground(class System.Windows.Forms.ToolStripItemRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawMenuItemBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripItemRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Windows.Forms.ToolStripItemRenderEventArgs" />メニュー項目の背景を描画するデータを格納します。</param>
+        <summary>背景を描画する<see cref="T:System.Windows.Forms.ToolStripMenuItem" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ToolStripRenderer.DrawMenuItemBackground%2A>メソッドの背景のレンダリング コードへのエントリ ポイントを提供する、<xref:System.Windows.Forms.ToolStripMenuItem>です。 背景を描画するには、このメソッドを使用して、<xref:System.Windows.Forms.ToolStripMenuItem>をオーバーライドする場合、<xref:System.Windows.Forms.ToolStripMenuItem.OnPaint%2A?displayProperty=nameWithType>メソッド、または強制的の背景、<xref:System.Windows.Forms.ToolStripMenuItem>カスタムに描画される<xref:System.Windows.Forms.ToolStripRenderer>です。 バック グラウンドの方法を変更するの<xref:System.Windows.Forms.ToolStripMenuItem>がレンダリングされると、オーバーライド、<xref:System.Windows.Forms.ToolStripRenderer.OnRenderMenuItemBackground%2A>から派生したクラスのメソッド<xref:System.Windows.Forms.ToolStripRenderer>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawOverflowButtonBackground">
+      <MemberSignature Language="C#" Value="public void DrawOverflowButtonBackground (System.Windows.Forms.ToolStripItemRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawOverflowButtonBackground(class System.Windows.Forms.ToolStripItemRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawOverflowButtonBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripItemRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.ToolStripItemRenderEventArgs" />。</param>
+        <summary>オーバーフロー ボタンの背景を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ToolStripRenderer.DrawOverflowButtonBackground%2A>メソッドは、オーバーフロー ボタンの背景のレンダリング コードへのエントリ ポイントを提供します。 このメソッドをオーバーライドする場合は、オーバーフロー ボタンの背景を描画を使用して、<xref:System.Windows.Forms.ToolStripItem.OnPaint%2A?displayProperty=nameWithType>メソッド、またはカスタムに描画されるオーバーフロー ボタンの背景を強制的に<xref:System.Windows.Forms.ToolStripRenderer>です。 オーバーフロー ボタンが表示されるは、バック グラウンドの方法を変更するには、上書き、<xref:System.Windows.Forms.ToolStripRenderer.OnRenderOverflowButtonBackground%2A>から派生したクラスのメソッド<xref:System.Windows.Forms.ToolStripRenderer>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawSeparator">
+      <MemberSignature Language="C#" Value="public void DrawSeparator (System.Windows.Forms.ToolStripSeparatorRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawSeparator(class System.Windows.Forms.ToolStripSeparatorRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawSeparator(System.Windows.Forms.ToolStripSeparatorRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripSeparatorRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Windows.Forms.ToolStripSeparatorRenderEventArgs" />を描画するデータを含む、<see cref="T:System.Windows.Forms.ToolStripSeparator" />です。</param>
+        <summary><see cref="T:System.Windows.Forms.ToolStripSeparator" /> を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ToolStripRenderer.DrawSeparator%2A>メソッドの表示コードへのエントリ ポイントを提供する、<xref:System.Windows.Forms.ToolStripSeparator>です。 このメソッドを使用して、描画、<xref:System.Windows.Forms.ToolStripSeparator>をオーバーライドする場合、<xref:System.Windows.Forms.ToolStrip.OnPaint%2A?displayProperty=nameWithType>メソッド、または強制的に、<xref:System.Windows.Forms.ToolStripSeparator>カスタムに描画される<xref:System.Windows.Forms.ToolStripRenderer>です。 方法を変更する、<xref:System.Windows.Forms.ToolStripSeparator>がレンダリングされると、オーバーライド、<xref:System.Windows.Forms.ToolStripRenderer.OnRenderSeparator%2A>から派生したクラスのメソッド<xref:System.Windows.Forms.ToolStripRenderer>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawSplitButton">
+      <MemberSignature Language="C#" Value="public void DrawSplitButton (System.Windows.Forms.ToolStripItemRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawSplitButton(class System.Windows.Forms.ToolStripItemRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawSplitButton(System.Windows.Forms.ToolStripItemRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripItemRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.ToolStripItemRenderEventArgs" />。</param>
+        <summary><see cref="T:System.Windows.Forms.ToolStripSplitButton" /> を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ToolStripRenderer.DrawSplitButton%2A>メソッドの表示コードへのエントリ ポイントを提供する、<xref:System.Windows.Forms.ToolStripSplitButton>です。 このメソッドを使用して、描画、<xref:System.Windows.Forms.ToolStripSplitButton>をオーバーライドする場合、<xref:System.Windows.Forms.ToolStripSplitButton.OnPaint%2A?displayProperty=nameWithType>メソッド、または強制的に、<xref:System.Windows.Forms.ToolStripSplitButton>カスタムに描画される<xref:System.Windows.Forms.ToolStripRenderer>です。 方法を変更する、<xref:System.Windows.Forms.ToolStripSplitButton>がレンダリングされると、オーバーライド、<xref:System.Windows.Forms.ToolStripSystemRenderer.OnRenderSplitButtonBackground%2A>から派生したクラスのメソッド<xref:System.Windows.Forms.ToolStripRenderer>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawStatusStripSizingGrip">
+      <MemberSignature Language="C#" Value="public void DrawStatusStripSizingGrip (System.Windows.Forms.ToolStripRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawStatusStripSizingGrip(class System.Windows.Forms.ToolStripRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawStatusStripSizingGrip(System.Windows.Forms.ToolStripRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.ToolStripRenderEventArgs" />。</param>
+        <summary>サイズ変更グリップを描画します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawToolStripBackground">
+      <MemberSignature Language="C#" Value="public void DrawToolStripBackground (System.Windows.Forms.ToolStripRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawToolStripBackground(class System.Windows.Forms.ToolStripRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawToolStripBackground(System.Windows.Forms.ToolStripRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Windows.Forms.ToolStripRenderEventArgs" />の背景を描画するデータを含む、<see cref="T:System.Windows.Forms.ToolStrip" />です。</param>
+        <summary>背景を描画する<see cref="T:System.Windows.Forms.ToolStrip" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ToolStripRenderer.DrawToolStripBackground%2A>メソッドの背景のレンダリング コードへのエントリ ポイントを提供する、<xref:System.Windows.Forms.ToolStrip>です。 背景を描画するには、このメソッドを使用して、<xref:System.Windows.Forms.ToolStrip>をオーバーライドする場合、<xref:System.Windows.Forms.ToolStrip.OnPaintBackground%2A?displayProperty=nameWithType>メソッド、または強制的の背景、<xref:System.Windows.Forms.ToolStrip>カスタムに描画される<xref:System.Windows.Forms.ToolStripRenderer>です。 バック グラウンドの方法を変更するの<xref:System.Windows.Forms.ToolStrip>がレンダリングされると、オーバーライド、<xref:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripBackground%2A>から派生したクラスのメソッド<xref:System.Windows.Forms.ToolStripRenderer>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawToolStripBorder">
+      <MemberSignature Language="C#" Value="public void DrawToolStripBorder (System.Windows.Forms.ToolStripRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawToolStripBorder(class System.Windows.Forms.ToolStripRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawToolStripBorder(System.Windows.Forms.ToolStripRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Windows.Forms.ToolStripRenderEventArgs" />の境界線を描画するデータを含む、<see cref="T:System.Windows.Forms.ToolStrip" />です。</param>
+        <summary>境界線を描画する<see cref="T:System.Windows.Forms.ToolStrip" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ToolStripRenderer.DrawToolStripBorder%2A>メソッドの枠線の表示コードへのエントリ ポイントを提供する、<xref:System.Windows.Forms.ToolStrip>です。 境界線を描画するには、このメソッドを使用して、<xref:System.Windows.Forms.ToolStrip>をオーバーライドする場合、<xref:System.Windows.Forms.ToolStrip.OnPaint%2A?displayProperty=nameWithType>メソッド、または強制的の枠線、<xref:System.Windows.Forms.ToolStrip>カスタムに描画される<xref:System.Windows.Forms.ToolStripRenderer>です。 方法を境界線を変更するの<xref:System.Windows.Forms.ToolStrip>がレンダリングされると、オーバーライド、<xref:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripBorder%2A>から派生したクラスのメソッド<xref:System.Windows.Forms.ToolStripRenderer>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawToolStripContentPanelBackground">
+      <MemberSignature Language="C#" Value="public void DrawToolStripContentPanelBackground (System.Windows.Forms.ToolStripContentPanelRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawToolStripContentPanelBackground(class System.Windows.Forms.ToolStripContentPanelRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawToolStripContentPanelBackground(System.Windows.Forms.ToolStripContentPanelRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripContentPanelRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.ToolStripContentPanelRenderEventArgs" />。</param>
+        <summary>背景を描画、<see cref="T:System.Windows.Forms.ToolStripContentPanel" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawToolStripPanelBackground">
+      <MemberSignature Language="C#" Value="public void DrawToolStripPanelBackground (System.Windows.Forms.ToolStripPanelRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawToolStripPanelBackground(class System.Windows.Forms.ToolStripPanelRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawToolStripPanelBackground(System.Windows.Forms.ToolStripPanelRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripPanelRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.ToolStripPanelRenderEventArgs" />。</param>
+        <summary>背景を描画、<see cref="T:System.Windows.Forms.ToolStripPanel" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawToolStripStatusLabelBackground">
+      <MemberSignature Language="C#" Value="public void DrawToolStripStatusLabelBackground (System.Windows.Forms.ToolStripItemRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawToolStripStatusLabelBackground(class System.Windows.Forms.ToolStripItemRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawToolStripStatusLabelBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripItemRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.ToolStripItemRenderEventArgs" />。</param>
+        <summary>背景を描画、<see cref="T:System.Windows.Forms.ToolStripStatusLabel" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="protected virtual void Initialize (System.Windows.Forms.ToolStrip toolStrip);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void Initialize(class System.Windows.Forms.ToolStrip toolStrip) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.Initialize(System.Windows.Forms.ToolStrip)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="toolStrip" Type="System.Windows.Forms.ToolStrip" />
+      </Parameters>
+      <Docs>
+        <param name="toolStrip">初期化する <see cref="T:System.Windows.Forms.ToolStrip" />。</param>
+        <summary>カスタムの初期化の派生クラスでオーバーライドされると、説明、指定された<see cref="T:System.Windows.Forms.ToolStrip" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.ToolStripRenderer.Initialize%2A>プロパティを設定するなどのメソッド、<xref:System.Windows.Forms.ToolStrip.BackColor%2A?displayProperty=nameWithType>または<xref:System.Windows.Forms.ToolStrip.Font%2A?displayProperty=nameWithType>ときに、<xref:System.Windows.Forms.ToolStrip>が表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeContentPanel">
+      <MemberSignature Language="C#" Value="protected virtual void InitializeContentPanel (System.Windows.Forms.ToolStripContentPanel contentPanel);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void InitializeContentPanel(class System.Windows.Forms.ToolStripContentPanel contentPanel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.InitializeContentPanel(System.Windows.Forms.ToolStripContentPanel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contentPanel" Type="System.Windows.Forms.ToolStripContentPanel" />
+      </Parameters>
+      <Docs>
+        <param name="contentPanel"><see cref="T:System.Windows.Forms.ToolStripContentPanel" />。</param>
+        <summary>指定された初期化<see cref="T:System.Windows.Forms.ToolStripContentPanel" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeItem">
+      <MemberSignature Language="C#" Value="protected virtual void InitializeItem (System.Windows.Forms.ToolStripItem item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void InitializeItem(class System.Windows.Forms.ToolStripItem item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.InitializeItem(System.Windows.Forms.ToolStripItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Windows.Forms.ToolStripItem" />
+      </Parameters>
+      <Docs>
+        <param name="item">初期化する <see cref="T:System.Windows.Forms.ToolStripItem" />。</param>
+        <summary>カスタムの初期化の派生クラスでオーバーライドされると、説明、指定された<see cref="T:System.Windows.Forms.ToolStripItem" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.ToolStripRenderer.InitializeItem%2A>プロパティを設定するなどのメソッド、<xref:System.Windows.Forms.ToolStripItem.BackColor%2A?displayProperty=nameWithType>または<xref:System.Windows.Forms.ToolStripItem.Font%2A?displayProperty=nameWithType>ときに、<xref:System.Windows.Forms.ToolStripItem>が表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を個別に初期化する方法を示しています<xref:System.Windows.Forms.ToolStripItem>コントロール。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.ToolStripRenderer>クラスです。  
+  
+ [!code-csharp[System.Windows.Forms.ToolStrip.GridStrip#11](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.GridStrip/CS/GridStrip.cs#11)]
+ [!code-vb[System.Windows.Forms.ToolStrip.GridStrip#11](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.GridStrip/VB/GridStrip.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializePanel">
+      <MemberSignature Language="C#" Value="protected virtual void InitializePanel (System.Windows.Forms.ToolStripPanel toolStripPanel);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void InitializePanel(class System.Windows.Forms.ToolStripPanel toolStripPanel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.InitializePanel(System.Windows.Forms.ToolStripPanel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="toolStripPanel" Type="System.Windows.Forms.ToolStripPanel" />
+      </Parameters>
+      <Docs>
+        <param name="toolStripPanel"><see cref="T:System.Windows.Forms.ToolStripPanel" />。</param>
+        <summary>指定された初期化<see cref="T:System.Windows.Forms.ToolStripPanel" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Offset2X">
+      <MemberSignature Language="C#" Value="protected static int Offset2X;" />
+      <MemberSignature Language="ILAsm" Value=".field family static int32 Offset2X" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ToolStripRenderer.Offset2X" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>x 軸に沿ってオフセットを 2 倍にするためのオフセット乗数を取得または設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Offset2Y">
+      <MemberSignature Language="C#" Value="protected static int Offset2Y;" />
+      <MemberSignature Language="ILAsm" Value=".field family static int32 Offset2Y" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ToolStripRenderer.Offset2Y" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>y 軸に沿ってオフセットを 2 倍にするためのオフセット乗数を取得または設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRenderArrow">
+      <MemberSignature Language="C#" Value="protected virtual void OnRenderArrow (System.Windows.Forms.ToolStripArrowRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderArrow(class System.Windows.Forms.ToolStripArrowRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderArrow(System.Windows.Forms.ToolStripArrowRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripArrowRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.ToolStripArrowRenderEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ToolStripRenderer.RenderArrow" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.ToolStripRenderer.OnRenderArrow%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderArrow(System.Windows.Forms.ToolStripArrowRenderEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderArrow(System.Windows.Forms.ToolStripArrowRenderEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRenderButtonBackground">
+      <MemberSignature Language="C#" Value="protected virtual void OnRenderButtonBackground (System.Windows.Forms.ToolStripItemRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderButtonBackground(class System.Windows.Forms.ToolStripItemRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderButtonBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripItemRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.ToolStripRenderEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ToolStripRenderer.RenderButtonBackground" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.ToolStripRenderer.OnRenderButtonBackground%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Windows.Forms.ToolStripRenderer.OnRenderButtonBackground%2A>の周囲に罫線を描画するメソッド、<xref:System.Windows.Forms.ToolStripButton>コントロールの<xref:System.Windows.Forms.ToolStripItem.Image%2A>します。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.ToolStripRenderer>クラスです。  
+  
+ [!code-csharp[System.Windows.Forms.ToolStrip.GridStrip#14](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.GridStrip/CS/GridStrip.cs#14)]
+ [!code-vb[System.Windows.Forms.ToolStrip.GridStrip#14](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.GridStrip/VB/GridStrip.vb#14)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderButtonBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderButtonBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRenderDropDownButtonBackground">
+      <MemberSignature Language="C#" Value="protected virtual void OnRenderDropDownButtonBackground (System.Windows.Forms.ToolStripItemRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderDropDownButtonBackground(class System.Windows.Forms.ToolStripItemRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderDropDownButtonBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripItemRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.ToolStripItemRenderEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ToolStripRenderer.RenderDropDownButtonBackground" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.ToolStripRenderer.OnRenderDropDownButtonBackground%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderDropDownButtonBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderDropDownButtonBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRenderGrip">
+      <MemberSignature Language="C#" Value="protected virtual void OnRenderGrip (System.Windows.Forms.ToolStripGripRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderGrip(class System.Windows.Forms.ToolStripGripRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderGrip(System.Windows.Forms.ToolStripGripRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripGripRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.ToolStripGripRenderEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ToolStripRenderer.RenderGrip" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.ToolStripRenderer.OnRenderGrip%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderGrip(System.Windows.Forms.ToolStripGripRenderEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderGrip(System.Windows.Forms.ToolStripGripRenderEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRenderImageMargin">
+      <MemberSignature Language="C#" Value="protected virtual void OnRenderImageMargin (System.Windows.Forms.ToolStripRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderImageMargin(class System.Windows.Forms.ToolStripRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderImageMargin(System.Windows.Forms.ToolStripRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.ToolStripRenderEventArgs" />。</param>
+        <summary>項目の背景を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.ToolStripRenderer.OnRenderImageMargin%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderImageMargin(System.Windows.Forms.ToolStripRenderEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderImageMargin(System.Windows.Forms.ToolStripRenderEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRenderItemBackground">
+      <MemberSignature Language="C#" Value="protected virtual void OnRenderItemBackground (System.Windows.Forms.ToolStripItemRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderItemBackground(class System.Windows.Forms.ToolStripItemRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderItemBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripItemRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.ToolStripItemRenderEventArgs" />。</param>
+        <summary><see cref="M:System.Windows.Forms.ToolStripSystemRenderer.OnRenderItemBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.ToolStripRenderer.OnRenderItemBackground%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderItemBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderItemBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRenderItemCheck">
+      <MemberSignature Language="C#" Value="protected virtual void OnRenderItemCheck (System.Windows.Forms.ToolStripItemImageRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderItemCheck(class System.Windows.Forms.ToolStripItemImageRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderItemCheck(System.Windows.Forms.ToolStripItemImageRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripItemImageRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.ToolStripItemImageRenderEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ToolStripRenderer.RenderItemCheck" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.ToolStripRenderer.OnRenderItemCheck%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderItemCheck(System.Windows.Forms.ToolStripItemImageRenderEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderItemCheck(System.Windows.Forms.ToolStripItemImageRenderEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRenderItemImage">
+      <MemberSignature Language="C#" Value="protected virtual void OnRenderItemImage (System.Windows.Forms.ToolStripItemImageRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderItemImage(class System.Windows.Forms.ToolStripItemImageRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderItemImage(System.Windows.Forms.ToolStripItemImageRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripItemImageRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.ToolStripItemImageRenderEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ToolStripRenderer.RenderItemImage" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.ToolStripRenderer.OnRenderItemImage%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderItemImage(System.Windows.Forms.ToolStripItemImageRenderEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderItemImage(System.Windows.Forms.ToolStripItemImageRenderEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRenderItemText">
+      <MemberSignature Language="C#" Value="protected virtual void OnRenderItemText (System.Windows.Forms.ToolStripItemTextRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderItemText(class System.Windows.Forms.ToolStripItemTextRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderItemText(System.Windows.Forms.ToolStripItemTextRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripItemTextRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.ToolStripItemTextRenderEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ToolStripRenderer.RenderItemText" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.ToolStripRenderer.OnRenderItemText%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderItemText(System.Windows.Forms.ToolStripItemTextRenderEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderItemText(System.Windows.Forms.ToolStripItemTextRenderEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRenderLabelBackground">
+      <MemberSignature Language="C#" Value="protected virtual void OnRenderLabelBackground (System.Windows.Forms.ToolStripItemRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderLabelBackground(class System.Windows.Forms.ToolStripItemRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderLabelBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripItemRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.ToolStripItemRenderEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ToolStripRenderer.RenderLabelBackground" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.ToolStripRenderer.OnRenderLabelBackground%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderLabelBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderLabelBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRenderMenuItemBackground">
+      <MemberSignature Language="C#" Value="protected virtual void OnRenderMenuItemBackground (System.Windows.Forms.ToolStripItemRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderMenuItemBackground(class System.Windows.Forms.ToolStripItemRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderMenuItemBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripItemRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.ToolStripItemRenderEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ToolStripRenderer.RenderMenuItemBackground" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.ToolStripRenderer.OnRenderMenuItemBackground%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderMenuItemBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderMenuItemBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRenderOverflowButtonBackground">
+      <MemberSignature Language="C#" Value="protected virtual void OnRenderOverflowButtonBackground (System.Windows.Forms.ToolStripItemRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderOverflowButtonBackground(class System.Windows.Forms.ToolStripItemRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderOverflowButtonBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripItemRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.ToolStripItemRenderEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ToolStripRenderer.RenderOverflowButtonBackground" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.ToolStripRenderer.OnRenderOverflowButtonBackground%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderOverflowButtonBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderOverflowButtonBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRenderSeparator">
+      <MemberSignature Language="C#" Value="protected virtual void OnRenderSeparator (System.Windows.Forms.ToolStripSeparatorRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderSeparator(class System.Windows.Forms.ToolStripSeparatorRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderSeparator(System.Windows.Forms.ToolStripSeparatorRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripSeparatorRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.ToolStripSeparatorRenderEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ToolStripRenderer.RenderSeparator" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.ToolStripRenderer.OnRenderSeparator%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderSeparator(System.Windows.Forms.ToolStripSeparatorRenderEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderSeparator(System.Windows.Forms.ToolStripSeparatorRenderEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRenderSplitButtonBackground">
+      <MemberSignature Language="C#" Value="protected virtual void OnRenderSplitButtonBackground (System.Windows.Forms.ToolStripItemRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderSplitButtonBackground(class System.Windows.Forms.ToolStripItemRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderSplitButtonBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripItemRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.ToolStripItemRenderEventArgs" />。</param>
+        <summary><see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderSplitButtonBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.ToolStripRenderer.OnRenderSplitButtonBackground%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderSplitButtonBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderSplitButtonBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRenderStatusStripSizingGrip">
+      <MemberSignature Language="C#" Value="protected virtual void OnRenderStatusStripSizingGrip (System.Windows.Forms.ToolStripRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderStatusStripSizingGrip(class System.Windows.Forms.ToolStripRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderStatusStripSizingGrip(System.Windows.Forms.ToolStripRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.ToolStripRenderEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ToolStripRenderer.RenderStatusStripSizingGrip" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.ToolStripRenderer.OnRenderStatusStripSizingGrip%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderStatusStripSizingGrip(System.Windows.Forms.ToolStripRenderEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderStatusStripSizingGrip(System.Windows.Forms.ToolStripRenderEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRenderToolStripBackground">
+      <MemberSignature Language="C#" Value="protected virtual void OnRenderToolStripBackground (System.Windows.Forms.ToolStripRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderToolStripBackground(class System.Windows.Forms.ToolStripRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripBackground(System.Windows.Forms.ToolStripRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.ToolStripRenderEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ToolStripRenderer.RenderToolStripBackground" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripBackground%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripBackground%2A>の背景のグラデーションを描画する方法、<xref:System.Windows.Forms.ToolStrip>コントロール。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.ToolStripRenderer>クラスです。  
+  
+ [!code-csharp[System.Windows.Forms.ToolStrip.GridStrip#13](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.GridStrip/CS/GridStrip.cs#13)]
+ [!code-vb[System.Windows.Forms.ToolStrip.GridStrip#13](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.GridStrip/VB/GridStrip.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripBackground(System.Windows.Forms.ToolStripRenderEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripBackground(System.Windows.Forms.ToolStripRenderEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRenderToolStripBorder">
+      <MemberSignature Language="C#" Value="protected virtual void OnRenderToolStripBorder (System.Windows.Forms.ToolStripRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderToolStripBorder(class System.Windows.Forms.ToolStripRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripBorder(System.Windows.Forms.ToolStripRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.ToolStripRenderEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ToolStripRenderer.RenderToolStripBorder" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripBorder%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripBorder%2A>カスタム境界線を描画するメソッド、<xref:System.Windows.Forms.ToolStrip>コントロール。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.ToolStripRenderer>クラスです。  
+  
+ [!code-csharp[System.Windows.Forms.ToolStrip.GridStrip#12](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.GridStrip/CS/GridStrip.cs#12)]
+ [!code-vb[System.Windows.Forms.ToolStrip.GridStrip#12](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.GridStrip/VB/GridStrip.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripBorder(System.Windows.Forms.ToolStripRenderEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripBorder(System.Windows.Forms.ToolStripRenderEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRenderToolStripContentPanelBackground">
+      <MemberSignature Language="C#" Value="protected virtual void OnRenderToolStripContentPanelBackground (System.Windows.Forms.ToolStripContentPanelRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderToolStripContentPanelBackground(class System.Windows.Forms.ToolStripContentPanelRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripContentPanelBackground(System.Windows.Forms.ToolStripContentPanelRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripContentPanelRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.ToolStripContentPanelRenderEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ToolStripRenderer.RenderToolStripContentPanelBackground" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripContentPanelBackground%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripContentPanelBackground(System.Windows.Forms.ToolStripContentPanelRenderEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripContentPanelBackground(System.Windows.Forms.ToolStripContentPanelRenderEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRenderToolStripPanelBackground">
+      <MemberSignature Language="C#" Value="protected virtual void OnRenderToolStripPanelBackground (System.Windows.Forms.ToolStripPanelRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderToolStripPanelBackground(class System.Windows.Forms.ToolStripPanelRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripPanelBackground(System.Windows.Forms.ToolStripPanelRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripPanelRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.ToolStripPanelRenderEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ToolStripRenderer.RenderToolStripPanelBackground" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripPanelBackground%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripPanelBackground(System.Windows.Forms.ToolStripPanelRenderEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripPanelBackground(System.Windows.Forms.ToolStripPanelRenderEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRenderToolStripStatusLabelBackground">
+      <MemberSignature Language="C#" Value="protected virtual void OnRenderToolStripStatusLabelBackground (System.Windows.Forms.ToolStripItemRenderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderToolStripStatusLabelBackground(class System.Windows.Forms.ToolStripItemRenderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripStatusLabelBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ToolStripItemRenderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.ToolStripItemRenderEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ToolStripRenderer.RenderToolStripStatusLabelBackground" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripStatusLabelBackground%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripStatusLabelBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripStatusLabelBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderArrow">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripArrowRenderEventHandler RenderArrow;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripArrowRenderEventHandler RenderArrow" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderArrow" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripArrowRenderEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>上の矢印のときに発生する<see cref="T:System.Windows.Forms.ToolStripItem" />が表示されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolStripRenderer.RenderArrow>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolStripRenderer>、ように、<xref:System.Windows.Forms.ToolStripSystemRenderer>または<xref:System.Windows.Forms.ToolStripProfessionalRenderer>です。 インスタンスを名前`ToolStripRenderer1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolStripRenderer.RenderArrow>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#583](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#583)]
+ [!code-vb[System.Windows.Forms.EventExamples#583](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#583)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderButtonBackground">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripItemRenderEventHandler RenderButtonBackground;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripItemRenderEventHandler RenderButtonBackground" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderButtonBackground" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripItemRenderEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときの背景、<see cref="T:System.Windows.Forms.ToolStripButton" />が表示されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolStripRenderer.RenderButtonBackground>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolStripRenderer>、ように、<xref:System.Windows.Forms.ToolStripSystemRenderer>または<xref:System.Windows.Forms.ToolStripProfessionalRenderer>です。 インスタンスを名前`ToolStripRenderer1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolStripRenderer.RenderButtonBackground>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#588](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#588)]
+ [!code-vb[System.Windows.Forms.EventExamples#588](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#588)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderDropDownButtonBackground">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripItemRenderEventHandler RenderDropDownButtonBackground;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripItemRenderEventHandler RenderDropDownButtonBackground" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderDropDownButtonBackground" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripItemRenderEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときの背景、<see cref="T:System.Windows.Forms.ToolStripDropDownButton" />が表示されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolStripRenderer.RenderDropDownButtonBackground>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolStripRenderer>、ように、<xref:System.Windows.Forms.ToolStripSystemRenderer>または<xref:System.Windows.Forms.ToolStripProfessionalRenderer>です。 インスタンスを名前`ToolStripRenderer1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolStripRenderer.RenderDropDownButtonBackground>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#589](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#589)]
+ [!code-vb[System.Windows.Forms.EventExamples#589](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#589)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderGrip">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripGripRenderEventHandler RenderGrip;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripGripRenderEventHandler RenderGrip" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderGrip" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripGripRenderEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生の移動を処理するときに、<see cref="T:System.Windows.Forms.ToolStrip" />が表示されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolStripRenderer.RenderGrip>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolStripRenderer>、ように、<xref:System.Windows.Forms.ToolStripSystemRenderer>または<xref:System.Windows.Forms.ToolStripProfessionalRenderer>です。 インスタンスを名前`ToolStripRenderer1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolStripRenderer.RenderGrip>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#591](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#591)]
+ [!code-vb[System.Windows.Forms.EventExamples#591](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#591)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderImageMargin">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripRenderEventHandler RenderImageMargin;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripRenderEventHandler RenderImageMargin" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderImageMargin" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripRenderEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イメージとそのコンテナーとの間にマージンを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolStripRenderer.RenderImageMargin>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolStripRenderer>、ように、<xref:System.Windows.Forms.ToolStripSystemRenderer>または<xref:System.Windows.Forms.ToolStripProfessionalRenderer>です。 インスタンスを名前`ToolStripRenderer1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolStripRenderer.RenderImageMargin>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#596](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#596)]
+ [!code-vb[System.Windows.Forms.EventExamples#596](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#596)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderItemBackground">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripItemRenderEventHandler RenderItemBackground;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripItemRenderEventHandler RenderItemBackground" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderItemBackground" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripItemRenderEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときの背景、<see cref="T:System.Windows.Forms.ToolStripItem" />が表示されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolStripRenderer.RenderItemBackground>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolStripRenderer>、ように、<xref:System.Windows.Forms.ToolStripSystemRenderer>または<xref:System.Windows.Forms.ToolStripProfessionalRenderer>です。 インスタンスを名前`ToolStripRenderer1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolStripRenderer.RenderItemBackground>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#592](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#592)]
+ [!code-vb[System.Windows.Forms.EventExamples#592](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#592)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderItemCheck">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripItemImageRenderEventHandler RenderItemCheck;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripItemImageRenderEventHandler RenderItemCheck" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderItemCheck" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripItemImageRenderEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、選択した画像<see cref="T:System.Windows.Forms.ToolStripItem" />が表示されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolStripRenderer.RenderItemCheck>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolStripRenderer>、ように、<xref:System.Windows.Forms.ToolStripSystemRenderer>または<xref:System.Windows.Forms.ToolStripProfessionalRenderer>です。 インスタンスを名前`ToolStripRenderer1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolStripRenderer.RenderItemCheck>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#594](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#594)]
+ [!code-vb[System.Windows.Forms.EventExamples#594](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#594)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderItemImage">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripItemImageRenderEventHandler RenderItemImage;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripItemImageRenderEventHandler RenderItemImage" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderItemImage" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripItemImageRenderEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに画像を<see cref="T:System.Windows.Forms.ToolStripItem" />が表示されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolStripRenderer.RenderItemImage>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolStripRenderer>、ように、<xref:System.Windows.Forms.ToolStripSystemRenderer>または<xref:System.Windows.Forms.ToolStripProfessionalRenderer>です。 インスタンスを名前`ToolStripRenderer1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolStripRenderer.RenderItemImage>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#593](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#593)]
+ [!code-vb[System.Windows.Forms.EventExamples#593](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#593)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderItemText">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripItemTextRenderEventHandler RenderItemText;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripItemTextRenderEventHandler RenderItemText" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderItemText" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripItemTextRenderEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときのテキスト、<see cref="T:System.Windows.Forms.ToolStripItem" />が表示されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolStripRenderer.RenderItemText>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolStripRenderer>、ように、<xref:System.Windows.Forms.ToolStripSystemRenderer>または<xref:System.Windows.Forms.ToolStripProfessionalRenderer>です。 インスタンスを名前`ToolStripRenderer1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolStripRenderer.RenderItemText>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#595](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#595)]
+ [!code-vb[System.Windows.Forms.EventExamples#595](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#595)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderLabelBackground">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripItemRenderEventHandler RenderLabelBackground;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripItemRenderEventHandler RenderLabelBackground" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderLabelBackground" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripItemRenderEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときの背景、<see cref="T:System.Windows.Forms.ToolStripLabel" />が表示されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolStripRenderer.RenderLabelBackground>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolStripRenderer>、ように、<xref:System.Windows.Forms.ToolStripSystemRenderer>または<xref:System.Windows.Forms.ToolStripProfessionalRenderer>です。 インスタンスを名前`ToolStripRenderer1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolStripRenderer.RenderLabelBackground>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#597](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#597)]
+ [!code-vb[System.Windows.Forms.EventExamples#597](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#597)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderMenuItemBackground">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripItemRenderEventHandler RenderMenuItemBackground;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripItemRenderEventHandler RenderMenuItemBackground" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderMenuItemBackground" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripItemRenderEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときの背景、<see cref="T:System.Windows.Forms.ToolStripMenuItem" />が表示されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolStripRenderer.RenderMenuItemBackground>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolStripRenderer>、ように、<xref:System.Windows.Forms.ToolStripSystemRenderer>または<xref:System.Windows.Forms.ToolStripProfessionalRenderer>です。 インスタンスを名前`ToolStripRenderer1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolStripRenderer.RenderMenuItemBackground>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#598](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#598)]
+ [!code-vb[System.Windows.Forms.EventExamples#598](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#598)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderOverflowButtonBackground">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripItemRenderEventHandler RenderOverflowButtonBackground;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripItemRenderEventHandler RenderOverflowButtonBackground" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderOverflowButtonBackground" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripItemRenderEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オーバーフロー ボタンの背景が描画されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolStripRenderer.RenderOverflowButtonBackground>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolStripRenderer>、ように、<xref:System.Windows.Forms.ToolStripSystemRenderer>または<xref:System.Windows.Forms.ToolStripProfessionalRenderer>です。 インスタンスを名前`ToolStripRenderer1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolStripRenderer.RenderOverflowButtonBackground>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#590](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#590)]
+ [!code-vb[System.Windows.Forms.EventExamples#590](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#590)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderSeparator">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripSeparatorRenderEventHandler RenderSeparator;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripSeparatorRenderEventHandler RenderSeparator" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderSeparator" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripSeparatorRenderEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="T:System.Windows.Forms.ToolStripSeparator" />が表示されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolStripRenderer.RenderSeparator>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolStripRenderer>、ように、<xref:System.Windows.Forms.ToolStripSystemRenderer>または<xref:System.Windows.Forms.ToolStripProfessionalRenderer>です。 インスタンスを名前`ToolStripRenderer1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolStripRenderer.RenderSeparator>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#602](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#602)]
+ [!code-vb[System.Windows.Forms.EventExamples#602](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#602)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderSplitButtonBackground">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripItemRenderEventHandler RenderSplitButtonBackground;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripItemRenderEventHandler RenderSplitButtonBackground" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderSplitButtonBackground" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripItemRenderEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときの背景、<see cref="T:System.Windows.Forms.ToolStripSplitButton" />が表示されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolStripRenderer.RenderSplitButtonBackground>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolStripRenderer>、ように、<xref:System.Windows.Forms.ToolStripSystemRenderer>または<xref:System.Windows.Forms.ToolStripProfessionalRenderer>です。 インスタンスを名前`ToolStripRenderer1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolStripRenderer.RenderSplitButtonBackground>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#601](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#601)]
+ [!code-vb[System.Windows.Forms.EventExamples#601](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#601)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderStatusStripSizingGrip">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripRenderEventHandler RenderStatusStripSizingGrip;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripRenderEventHandler RenderStatusStripSizingGrip" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderStatusStripSizingGrip" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripRenderEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表示スタイルが変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolStripRenderer.RenderStatusStripSizingGrip>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolStripRenderer>、ように、<xref:System.Windows.Forms.ToolStripSystemRenderer>または<xref:System.Windows.Forms.ToolStripProfessionalRenderer>です。 インスタンスを名前`ToolStripRenderer1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolStripRenderer.RenderStatusStripSizingGrip>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#600](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#600)]
+ [!code-vb[System.Windows.Forms.EventExamples#600](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#600)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderToolStripBackground">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripRenderEventHandler RenderToolStripBackground;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripRenderEventHandler RenderToolStripBackground" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderToolStripBackground" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripRenderEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときの背景、<see cref="T:System.Windows.Forms.ToolStrip" />が表示されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolStripRenderer.RenderToolStripBackground>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolStripRenderer>、ように、<xref:System.Windows.Forms.ToolStripSystemRenderer>または<xref:System.Windows.Forms.ToolStripProfessionalRenderer>です。 インスタンスを名前`ToolStripRenderer1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolStripRenderer.RenderToolStripBackground>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#584](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#584)]
+ [!code-vb[System.Windows.Forms.EventExamples#584](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#584)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderToolStripBorder">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripRenderEventHandler RenderToolStripBorder;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripRenderEventHandler RenderToolStripBorder" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderToolStripBorder" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripRenderEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときの枠線、<see cref="T:System.Windows.Forms.ToolStrip" />が表示されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolStripRenderer.RenderToolStripBorder>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolStripRenderer>、ように、<xref:System.Windows.Forms.ToolStripSystemRenderer>または<xref:System.Windows.Forms.ToolStripProfessionalRenderer>です。 インスタンスを名前`ToolStripRenderer1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolStripRenderer.RenderToolStripBorder>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#587](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#587)]
+ [!code-vb[System.Windows.Forms.EventExamples#587](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#587)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderToolStripContentPanelBackground">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripContentPanelRenderEventHandler RenderToolStripContentPanelBackground;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripContentPanelRenderEventHandler RenderToolStripContentPanelBackground" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderToolStripContentPanelBackground" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripContentPanelRenderEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>背景を描画する<see cref="T:System.Windows.Forms.ToolStripContentPanel" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolStripRenderer.RenderToolStripContentPanelBackground>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolStripRenderer>、ように、<xref:System.Windows.Forms.ToolStripSystemRenderer>または<xref:System.Windows.Forms.ToolStripProfessionalRenderer>です。 インスタンスを名前`ToolStripRenderer1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolStripRenderer.RenderToolStripContentPanelBackground>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#586](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#586)]
+ [!code-vb[System.Windows.Forms.EventExamples#586](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#586)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderToolStripPanelBackground">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripPanelRenderEventHandler RenderToolStripPanelBackground;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripPanelRenderEventHandler RenderToolStripPanelBackground" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderToolStripPanelBackground" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripPanelRenderEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>背景を描画する<see cref="T:System.Windows.Forms.ToolStripPanel" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolStripRenderer.RenderToolStripPanelBackground>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolStripRenderer>、ように、<xref:System.Windows.Forms.ToolStripSystemRenderer>または<xref:System.Windows.Forms.ToolStripProfessionalRenderer>です。 インスタンスを名前`ToolStripRenderer1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolStripRenderer.RenderToolStripPanelBackground>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#585](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#585)]
+ [!code-vb[System.Windows.Forms.EventExamples#585](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#585)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderToolStripStatusLabelBackground">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripItemRenderEventHandler RenderToolStripStatusLabelBackground;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripItemRenderEventHandler RenderToolStripStatusLabelBackground" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderToolStripStatusLabelBackground" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripItemRenderEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>背景を描画する<see cref="T:System.Windows.Forms.ToolStripStatusLabel" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolStripRenderer.RenderToolStripStatusLabelBackground>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolStripRenderer>、ように、<xref:System.Windows.Forms.ToolStripSystemRenderer>または<xref:System.Windows.Forms.ToolStripProfessionalRenderer>です。 インスタンスを名前`ToolStripRenderer1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolStripRenderer.RenderToolStripStatusLabelBackground>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#599](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#599)]
+ [!code-vb[System.Windows.Forms.EventExamples#599](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#599)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScaleArrowOffsetsIfNeeded">
+      <MemberSignature Language="C#" Value="protected static void ScaleArrowOffsetsIfNeeded ();" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig void ScaleArrowOffsetsIfNeeded() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.ScaleArrowOffsetsIfNeeded" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンピューターの DPI 設定でスケーリングが必要な場合は、矢印アイコンをスケーリングするために、指定されている F:System.Windows.Forms.ToolStripRenderer.Offset2X および F:System.Windows.Forms.ToolStripRenderer.Offset2Y を適用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

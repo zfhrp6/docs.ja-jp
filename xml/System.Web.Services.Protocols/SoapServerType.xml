@@ -1,0 +1,139 @@
+<Type Name="SoapServerType" FullName="System.Web.Services.Protocols.SoapServerType">
+  <TypeSignature Language="C#" Value="public sealed class SoapServerType : System.Web.Services.Protocols.ServerType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SoapServerType extends System.Web.Services.Protocols.ServerType" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.SoapServerType" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Services.Protocols.ServerType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Web.Services.Protocols.SoapServerType" />クラスは、XML Web サービスの基になる型を表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapServerType (Type type, System.Web.Services.Configuration.WebServiceProtocols protocolsSupported);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type, valuetype System.Web.Services.Configuration.WebServiceProtocols protocolsSupported) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapServerType.#ctor(System.Type,System.Web.Services.Configuration.WebServiceProtocols)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="protocolsSupported" Type="System.Web.Services.Configuration.WebServiceProtocols" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Type" />をこの XML Web サービスをベースにします。</param>
+        <param name="protocolsSupported">A <see cref="T:System.Web.Services.Configuration.WebServiceProtocols" /> XML Web サービス要求で送信されるデータを復号化に使用される転送プロトコルを指定する値。</param>
+        <summary><see cref="T:System.Web.Services.Protocols.SoapServerType" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDuplicateMethod">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Protocols.SoapServerMethod GetDuplicateMethod (object key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.Services.Protocols.SoapServerMethod GetDuplicateMethod(object key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapServerType.GetDuplicateMethod(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Protocols.SoapServerMethod</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">目的の複製に関連付けられたキー<see cref="T:System.Web.Services.Protocols.SoapServerMethod" />です。</param>
+        <summary>複製を返します<see cref="T:System.Web.Services.Protocols.SoapServerMethod" />指定したキーに関連付けられています。</summary>
+        <returns>重複した<see cref="T:System.Web.Services.Protocols.SoapServerMethod" />指定したキーに関連付けられています。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMethod">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Protocols.SoapServerMethod GetMethod (object key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.Services.Protocols.SoapServerMethod GetMethod(object key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapServerType.GetMethod(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Protocols.SoapServerMethod</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">目的に関連付けられたキー<see cref="T:System.Web.Services.Protocols.SoapServerMethod" />です。</param>
+        <summary>返します、<see cref="T:System.Web.Services.Protocols.SoapServerMethod" />指定したキーに関連付けられています。</summary>
+        <returns><see cref="T:System.Web.Services.Protocols.SoapServerMethod" />指定したキーに関連付けられています。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceDefaultIsEncoded">
+      <MemberSignature Language="C#" Value="public bool ServiceDefaultIsEncoded { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ServiceDefaultIsEncoded" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapServerType.ServiceDefaultIsEncoded" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>返します、<see cref="T:System.Boolean" />におよび、この XML Web サービスから送信される SOAP のデータの送信は既定でエンコードされているかどうかを示すです。</summary>
+        <value>
+          <see langword="true" />既定ではこの XML Web サービスとの間に送信される SOAP のデータの送信がエンコードされている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceNamespace">
+      <MemberSignature Language="C#" Value="public string ServiceNamespace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ServiceNamespace" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapServerType.ServiceNamespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.String" />この XML Web サービスが属する名前空間を格納しています。</summary>
+        <value>A<see cref="T:System.String" />この XML Web サービスが属する名前空間を格納しています。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceRoutingOnSoapAction">
+      <MemberSignature Language="C#" Value="public bool ServiceRoutingOnSoapAction { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ServiceRoutingOnSoapAction" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapServerType.ServiceRoutingOnSoapAction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>返します、<see cref="T:System.Boolean" />に基づいてこの XML Web サービスにルーティングされる SOAP メッセージをルーティングするかどうかを示す、 <see langword="SOAPAction" /> HTTP ヘッダー。</summary>
+        <value>
+          <see langword="true" />この XML Web サービスにルーティングされる SOAP メッセージがルーティングされる場合に基づく、 <see langword="SOAPAction" /> HTTP ヘッダー、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

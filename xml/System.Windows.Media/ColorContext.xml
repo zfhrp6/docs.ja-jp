@@ -1,0 +1,246 @@
+<Type Name="ColorContext" FullName="System.Windows.Media.ColorContext">
+  <TypeSignature Language="C#" Value="public class ColorContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ColorContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.ColorContext" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ビットマップ イメージに関連付けられているカラー プロファイル International Color Consortium (ICC) またはイメージ カラーの管理 (ICM) を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サポートされている標準のカラー スペースは sRGB、ScRGB、RGB、CMYK、灰色、マルチ チャネル、および unknown です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ビットマップ イメージに関連付けられているカラー プロファイルを取得する方法を示します。  
+  
+ [!code-csharp[bitmapimageprops#3](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapImageProps/CSharp/BitmapImageProps.cs#3)]
+ [!code-vb[bitmapimageprops#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapImageProps/VB/BitmapImageProps.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ColorContext (Uri profileUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri profileUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.ColorContext.#ctor(System.Uri)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="profileUri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="profileUri">目的のカラー プロファイルの場所を識別する <see cref="T:System.Uri" />。</param>
+        <summary>指定した <see cref="T:System.Uri" /> にある [!INCLUDE[TLA#tla_icc](~/includes/tlasharptla-icc-md.md)] または [!INCLUDE[TLA#tla_icm](~/includes/tlasharptla-icm-md.md)] のカラー プロファイルを使用して、<see cref="T:System.Windows.Media.ColorContext" /> の新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サポートされていないカラー プロファイルを使用するには、1 つをインストールして初期化するためにその URI を使用する必要があります、<xref:System.Windows.Media.ColorContext>を使用して、<xref:System.Windows.Media.ColorContext.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ColorContext (System.Windows.Media.PixelFormat pixelFormat);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Media.PixelFormat pixelFormat) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.ColorContext.#ctor(System.Windows.Media.PixelFormat)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="pixelFormat" Type="System.Windows.Media.PixelFormat" />
+      </Parameters>
+      <Docs>
+        <param name="pixelFormat"><see cref="T:System.Windows.Media.ColorContext" /> の派生元の <see cref="T:System.Windows.Media.PixelFormat" />。</param>
+        <summary>指定された <see cref="T:System.Windows.Media.PixelFormat" /> に最も近い標準カラー プロファイル (sRGB または RGB) を使用して、<see cref="T:System.Windows.Media.ColorContext" /> の新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、の新しいインスタンスを構築する方法を示します<xref:System.Windows.Media.ColorContext>です。  
+  
+ [!code-csharp[bitmapimageprops#3](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapImageProps/CSharp/BitmapImageProps.cs#3)]
+ [!code-vb[bitmapimageprops#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapImageProps/VB/BitmapImageProps.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.ColorContext.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">等価であるかどうかを比較する <see cref="T:System.Object" /> を識別します。</param>
+        <summary><see cref="T:System.Object" /> が <see cref="T:System.Windows.Media.ColorContext" /> のインスタンスと等価であるかどうかを判断します。</summary>
+        <returns>
+          指定された <see cref="T:System.Object" /> が <see cref="T:System.Windows.Media.ColorContext" /> のインスタンスと等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.ColorContext.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを取得<see cref="T:System.Windows.Media.ColorContext" />です。</summary>
+        <returns><see cref="T:System.Int32" />を表すオブジェクトのハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Windows.Media.ColorContext context1, System.Windows.Media.ColorContext context2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(class System.Windows.Media.ColorContext context1, class System.Windows.Media.ColorContext context2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.ColorContext.op_Equality(System.Windows.Media.ColorContext,System.Windows.Media.ColorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context1" Type="System.Windows.Media.ColorContext" />
+        <Parameter Name="context2" Type="System.Windows.Media.ColorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context1">比較対象の <see cref="T:System.Windows.Media.ColorContext" /> の第 1 インスタンス。</param>
+        <param name="context2">比較対象の <see cref="T:System.Windows.Media.ColorContext" /> の第 2 インスタンス。</param>
+        <summary><see cref="T:System.Windows.Media.ColorContext" /> の 2 つのインスタンスを操作し、等価であるかどうかを確認します。</summary>
+        <returns>
+          <see cref="T:System.Windows.Media.ColorContext" /> のインスタンスが等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Windows.Media.ColorContext context1, System.Windows.Media.ColorContext context2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(class System.Windows.Media.ColorContext context1, class System.Windows.Media.ColorContext context2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.ColorContext.op_Inequality(System.Windows.Media.ColorContext,System.Windows.Media.ColorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context1" Type="System.Windows.Media.ColorContext" />
+        <Parameter Name="context2" Type="System.Windows.Media.ColorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context1">比較対象の <see cref="T:System.Windows.Media.ColorContext" /> の第 1 インスタンス。</param>
+        <param name="context2">比較対象の <see cref="T:System.Windows.Media.ColorContext" /> の第 2 インスタンス。</param>
+        <summary><see cref="T:System.Windows.Media.ColorContext" /> の 2 つのインスタンスを操作し、等価でないかどうかを確認します。</summary>
+        <returns>
+          <see cref="T:System.Windows.Media.ColorContext" /> のインスタンスが等しくない場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenProfileStream">
+      <MemberSignature Language="C#" Value="public System.IO.Stream OpenProfileStream ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Stream OpenProfileStream() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.ColorContext.OpenProfileStream" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>カラー プロファイルの未処理データの読み取り可能な <see cref="T:System.IO.Stream" /> を返します。</summary>
+        <returns>カラー プロファイルの未処理データの読み取り可能な <see cref="T:System.IO.Stream" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProfileUri">
+      <MemberSignature Language="C#" Value="public Uri ProfileUri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri ProfileUri" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.ColorContext.ProfileUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Uri" /> または [!INCLUDE[TLA#tla_icc](~/includes/tlasharptla-icc-md.md)] のカラー プロファイルの場所を表す [!INCLUDE[TLA#tla_icm](~/includes/tlasharptla-icm-md.md)] を取得します。</summary>
+        <value>[!INCLUDE[TLA#tla_icc](~/includes/tlasharptla-icc-md.md)] または [!INCLUDE[TLA#tla_icm](~/includes/tlasharptla-icm-md.md)] のカラー プロファイルの場所を表す <see cref="T:System.Uri" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

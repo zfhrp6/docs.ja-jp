@@ -1,0 +1,254 @@
+<Type Name="TraceOptions" FullName="System.Diagnostics.TraceOptions">
+  <TypeSignature Language="C#" Value="public enum TraceOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed TraceOptions extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.TraceOptions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>トレース出力に書き込まれるトレース データのオプションを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙はトレースに出力するオプション、または、要素を含める必要がありますを決定するトレース リスナーによって使用されます。 トレース リスナーがトレースのオプションを格納、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>プロパティです。  
+  
+ 次の例では、使用、`traceOutputOptions`トレース出力のオプションを指定する属性、<xref:System.Diagnostics.ConsoleTraceListener>構成ファイルの使用を有効になっているがします。  
+  
+```  
+<configuration>  
+  <system.diagnostics>  
+    <trace autoflush="false" indentsize="4">  
+      <listeners>  
+        <add name="consoleListener"  
+          type="System.Diagnostics.ConsoleTraceListener"   
+          traceOutputOptions="ProcessId, DateTime" />  
+      </listeners>  
+    </trace>  
+  </system.diagnostics>  
+</configuration>  
+```  
+  
+ アプリケーション構成ファイルにトレース リスナーを追加する方法の詳細については、「 [&lt;リスナー&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/listeners-element-for-trace.md)です。  
+  
+ <xref:System.Diagnostics.TraceOptions>列挙体は、次のクラスやメソッドでは使用されません。  
+  
+-   <xref:System.Diagnostics.EventLogTraceListener>クラス、大量のログに書き込まれるデータを引き起こす可能性があるためです。  
+  
+-   `Write`と`WriteLine`のメソッド、 <xref:System.Diagnostics.ConsoleTraceListener>、 <xref:System.Diagnostics.DefaultTraceListener>、および<xref:System.Diagnostics.TextWriterTraceListener>クラスです。  
+  
+-   <xref:System.Diagnostics.TraceListener.Write%2A>と<xref:System.Diagnostics.TraceListener.WriteLine%2A>のメソッド、<xref:System.Diagnostics.TraceListener>クラスの派生クラスでオーバーライドされないときです。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Diagnostics.TraceOptions>列挙型をプログラムで設定を<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>コンソール トレース リスナーのプロパティです。 列挙されたリスナーのいずれかのコンソール トレース リスナーは、<xref:System.Diagnostics.TraceSource.Listeners%2A>トレース ソースのプロパティです。 このコード例に示されている例の一部である、<xref:System.Diagnostics.TraceSource>クラスです。  
+  
+ [!code-csharp[System.Diagnostics.TraceSource2#16](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.TraceSource2/CS/program.cs#16)]
+ [!code-vb[System.Diagnostics.TraceSource2#16](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.TraceSource2/VB/program.vb#16)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Callstack">
+      <MemberSignature Language="C#" Value="Callstack" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.TraceOptions Callstack = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.TraceOptions.Callstack" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.TraceOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>戻り値で表されるコール スタックを書き込み、<see cref="P:System.Environment.StackTrace" />プロパティです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DateTime">
+      <MemberSignature Language="C#" Value="DateTime" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.TraceOptions DateTime = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.TraceOptions.DateTime" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.TraceOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>日付と時刻を記述します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="LogicalOperationStack">
+      <MemberSignature Language="C#" Value="LogicalOperationStack" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.TraceOptions LogicalOperationStack = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.TraceOptions.LogicalOperationStack" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.TraceOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>戻り値で表される、論理操作スタックを書き込み、<see cref="P:System.Diagnostics.CorrelationManager.LogicalOperationStack" />プロパティです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.TraceOptions None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.TraceOptions.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.TraceOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべての要素は書き込まれません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessId">
+      <MemberSignature Language="C#" Value="ProcessId" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.TraceOptions ProcessId = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.TraceOptions.ProcessId" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.TraceOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>戻り値で表されるプロセス id を書き込み、<see cref="P:System.Diagnostics.Process.Id" />プロパティです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ThreadId">
+      <MemberSignature Language="C#" Value="ThreadId" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.TraceOptions ThreadId = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.TraceOptions.ThreadId" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.TraceOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>戻り値で表されるスレッド id、<see cref="P:System.Threading.Thread.ManagedThreadId" />現在のスレッドのプロパティです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Timestamp">
+      <MemberSignature Language="C#" Value="Timestamp" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.TraceOptions Timestamp = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.TraceOptions.Timestamp" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.TraceOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>戻り値で表されると、タイムスタンプを書き込み、<see cref="M:System.Diagnostics.Stopwatch.GetTimestamp" />メソッドです。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

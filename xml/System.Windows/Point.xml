@@ -1,0 +1,840 @@
+<Type Name="Point" FullName="System.Windows.Point">
+  <TypeSignature Language="C#" Value="public struct Point : IFormattable" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit Point extends System.ValueType implements class System.IFormattable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Point" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IFormattable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.PointConverter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ValueSerializer(typeof(System.Windows.Converters.PointValueSerializer))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>2 次元空間における、x 座標と y 座標の組を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XAML では、間の区切り文字、<xref:System.Windows.Point.X%2A>と<xref:System.Windows.Point.Y%2A>の値、<xref:System.Windows.Point>コンマまたは空白にすることができます。  
+  
+ 一部のカルチャは、ピリオドではなく 10 進区切り記号としてコンマ文字を使用する可能性があります。 インバリアント カルチャの XAML 処理では、既定値のほとんどの XAML プロセッサの実装では、EN-US あり、小数点区切り文字にピリオドが必要です。 指定する場合、10 進区切り記号としてコンマ文字の使用を避ける必要があります、 <xref:System.Windows.Point> 、XAML での文字列型の変換に競合が発生するため、<xref:System.Windows.Point>属性の値に、<xref:System.Windows.Point.X%2A>と<xref:System.Windows.Point.Y%2A>コンポーネントです。  
+  
+<a name="xamlAttributeUsage_Duration"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="x,y"/>  
+-or-  
+<object property="x y"/>  
+```  
+  
+<a name="xamlValues_MinWidth"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *x*  
+ これの x 座標<xref:System.Windows.Point>です。  
+  
+ *y*  
+ これの y 座標<xref:System.Windows.Point>です。  
+  
+   
+  
+## Examples  
+ 次の例は、次の 2 つの場合にチェックする方法を示します<xref:System.Windows.Point>構造が等しくないです。  値を割り当てる方法も示しています、<xref:System.Windows.Point>構造体、構造体が宣言されているとき、および構造体は宣言されています。  
+  
+ [!code-csharp[PointExamples_snip#PointInequalityExample](~/samples/snippets/csharp/VS_Snippets_Wpf/PointExamples_snip/CSharp/PointExample.cs#pointinequalityexample)]
+ [!code-vb[PointExamples_snip#PointInequalityExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PointExamples_snip/visualbasic/pointexample.vb#pointinequalityexample)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Point (double x, double y);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 x, float64 y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Point.#ctor(System.Double,System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="x" Type="System.Double" />
+        <Parameter Name="y" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="x">新しいの x 座標<see cref="T:System.Windows.Point" />構造体。</param>
+        <param name="y">新しいの y 座標<see cref="T:System.Windows.Point" />構造体。</param>
+        <summary>新たに作成<see cref="T:System.Windows.Point" />指定された座標を格納する構造体。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public static System.Windows.Point Add (System.Windows.Point point, System.Windows.Vector vector);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Point Add(valuetype System.Windows.Point point, valuetype System.Windows.Vector vector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Point.Add(System.Windows.Point,System.Windows.Vector)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Windows.Point" />
+        <Parameter Name="vector" Type="System.Windows.Vector" />
+      </Parameters>
+      <Docs>
+        <param name="point"><see cref="T:System.Windows.Point" />構造を追加します。</param>
+        <param name="vector"><see cref="T:System.Windows.Vector" />構造を追加します。</param>
+        <summary>追加、<see cref="T:System.Windows.Vector" />を<see cref="T:System.Windows.Point" />として結果を返す、<see cref="T:System.Windows.Point" />構造体。</summary>
+        <returns>合計を返して<paramref name="point" />と<paramref name="vector" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加する、<xref:System.Windows.Point>に構造体、<xref:System.Windows.Point>構造は禁止されています。  
+  
+   
+  
+## Examples  
+ この例では追加、<xref:System.Windows.Point>を<xref:System.Windows.Vector>として結果を返す、<xref:System.Windows.Vector>構造体。  
+  
+ [!code-csharp[PointExamples_snip#AddPointAndVectorExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/PointExamples_snip/CSharp/PointExample.cs#addpointandvectorexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Point.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">比較対象の <see cref="T:System.Object" />。</param>
+        <summary>決定するかどうか、指定した<see cref="T:System.Object" />は、<see cref="T:System.Windows.Point" />これと同じ座標が含まれているかどうかと<see cref="T:System.Windows.Point" />です。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="o" />は、<see cref="T:System.Windows.Point" />同じが含まれています<see cref="P:System.Windows.Point.X" />と<see cref="P:System.Windows.Point.Y" />値としてこの<see cref="T:System.Windows.Point" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Point>座標を使用して記述<xref:System.Double>値。 の値、<xref:System.Double>操作、2 つの間で比較したときに、有効桁数が失われる可能性が<xref:System.Windows.Point>が論理的に等しい値が失敗する可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例は、次の 2 つの場合にチェックする方法を示します<xref:System.Windows.Point>構造が等しく、静的でないを使用して<xref:System.Windows.Point.Equals%2A>メソッドです。  
+  
+ [!code-csharp[PointExamples_snip#NonStaticEqualsExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/PointExamples_snip/CSharp/PointExample.cs#nonstaticequalsexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Windows.Point value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Equals(valuetype System.Windows.Point value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Point.Equals(System.Windows.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Windows.Point" />
+      </Parameters>
+      <Docs>
+        <param name="value">このインスタンスと比較するポイント。</param>
+        <summary>比較する 2 つ<see cref="T:System.Windows.Point" />構造が等しいかどうか。</summary>
+        <returns>
+          <see langword="true" />両方<see cref="T:System.Windows.Point" />構造体に含める同じ<see cref="P:System.Windows.Point.X" />と<see cref="P:System.Windows.Point.Y" />値です。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Point>座標は、使用して表されます<xref:System.Double>値。 の値、 <xref:System.Double> 、2 つの比較に操作したときに、有効桁数が失われる可能性が<xref:System.Windows.Point>が論理的に等しい値が失敗する可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public static bool Equals (System.Windows.Point point1, System.Windows.Point point2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Equals(valuetype System.Windows.Point point1, valuetype System.Windows.Point point2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Point.Equals(System.Windows.Point,System.Windows.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point1" Type="System.Windows.Point" />
+        <Parameter Name="point2" Type="System.Windows.Point" />
+      </Parameters>
+      <Docs>
+        <param name="point1">比較する最初のポイント。</param>
+        <param name="point2">比較する 2 番目のポイント。</param>
+        <summary>比較する 2 つ<see cref="T:System.Windows.Point" />構造が等しいかどうか。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="point1" />と<paramref name="point2" />同じを含む<see cref="P:System.Windows.Point.X" />と<see cref="P:System.Windows.Point.Y" />値です。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用してポイント座標が記述した<xref:System.Double>値。 の値、<xref:System.Double>操作、2 つの間で比較したときに、有効桁数が失われる可能性が<xref:System.Windows.Point>が論理的に等しい値が失敗する可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例は、次の 2 つの場合にチェックする方法を示します<xref:System.Windows.Point>構造が等しく、静的なを使用して<xref:System.Windows.Point.Equals%2A>メソッドです。  
+  
+ [!code-csharp[PointExamples_snip#StaticEqualsExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/PointExamples_snip/CSharp/PointExample.cs#staticequalsexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Point.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Point" /> のハッシュ コードを返します。</summary>
+        <returns>ハッシュ コードをこの<see cref="T:System.Windows.Point" />構造体。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のハッシュ コードを取得する方法を示しています、<xref:System.Windows.Point>構造体。  
+  
+ [!code-csharp[PointExamples_snip#GetHashCodeExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/PointExamples_snip/CSharp/PointExample.cs#gethashcodeexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Multiply">
+      <MemberSignature Language="C#" Value="public static System.Windows.Point Multiply (System.Windows.Point point, System.Windows.Media.Matrix matrix);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Point Multiply(valuetype System.Windows.Point point, valuetype System.Windows.Media.Matrix matrix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Point.Multiply(System.Windows.Point,System.Windows.Media.Matrix)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Windows.Point" />
+        <Parameter Name="matrix" Type="System.Windows.Media.Matrix" />
+      </Parameters>
+      <Docs>
+        <param name="point">変換対象のポイント。</param>
+        <param name="matrix">変換行列。</param>
+        <summary>指定された変換<see cref="T:System.Windows.Point" />構造体を指定した<see cref="T:System.Windows.Media.Matrix" />構造体。</summary>
+        <returns>変換されたポイント。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を乗算する方法を示しています、<xref:System.Windows.Point>で構造体、<xref:System.Windows.Media.Matrix>構造体を使用して、<xref:System.Windows.Point.Multiply%2A>メソッドです。  
+  
+ [!code-csharp[PointExamples_snip#MultiplyPointByMatrixExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/PointExamples_snip/CSharp/PointExample.cs#multiplypointbymatrixexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Offset">
+      <MemberSignature Language="C#" Value="public void Offset (double offsetX, double offsetY);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Offset(float64 offsetX, float64 offsetY) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Point.Offset(System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="offsetX" Type="System.Double" />
+        <Parameter Name="offsetY" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="offsetX">点のオフセットの量  
+  
+ <see cref="P:System.Windows.Point.X" />座標。</param>
+        <param name="offsetY">オフセットの量、  
+  
+ ポイントの<see cref="P:System.Windows.Point.Y" />を調整します。</param>
+        <summary>点のオフセット<see cref="P:System.Windows.Point.X" />と<see cref="P:System.Windows.Point.Y" />座標、指定した量だけです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作を追加するのには、<xref:System.Windows.Point>を<xref:System.Windows.Vector>です。  
+  
+ 呼び出して、<xref:System.Windows.Point.Offset%2A>メソッドのみが、特殊効果を変更できる場合、<xref:System.Windows.Point.X%2A>と<xref:System.Windows.Point.Y%2A>プロパティに直接できます。 <xref:System.Windows.Point>値の型を参照する場合は、<xref:System.Windows.Point>オブジェクト プロパティまたはインデクサーを使用すると、オブジェクトへの参照ではなく、オブジェクトのコピーを取得します。 変更しようとする場合<xref:System.Windows.Point.X%2A>または<xref:System.Windows.Point.Y%2A>プロパティまたはインデクサーの参照、コンパイラ エラーが発生します。 同様に、呼び出す<xref:System.Windows.Point.Offset%2A>プロパティまたはインデクサーには変更されません、基になるオブジェクト。  値を変更する場合、<xref:System.Windows.Point>プロパティまたはインデクサーとして参照される、新規作成<xref:System.Windows.Point>、そのフィールドを変更し、割り当てます、<xref:System.Windows.Point>プロパティまたはインデクサーに戻します。  
+  
+   
+  
+## Examples  
+ 次の例のオフセットでは、<xref:System.Windows.Point.X%2A>と<xref:System.Windows.Point.Y%2A>の値、<xref:System.Windows.Point>構造体。  
+  
+ [!code-csharp[PointExamples_snip#OffsetExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/PointExamples_snip/CSharp/PointExample.cs#offsetexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Addition">
+      <MemberSignature Language="C#" Value="public static System.Windows.Point operator + (System.Windows.Point point, System.Windows.Vector vector);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Windows.Point op_Addition(valuetype System.Windows.Point point, valuetype System.Windows.Vector vector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Point.op_Addition(System.Windows.Point,System.Windows.Vector)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Windows.Point" />
+        <Parameter Name="vector" Type="System.Windows.Vector" />
+      </Parameters>
+      <Docs>
+        <param name="point">変換対象のポイント。</param>
+        <param name="vector">平行移動する量<c>ポイント</c>です。</param>
+        <summary>指定された変換<see cref="T:System.Windows.Point" />において指定した<see cref="T:System.Windows.Vector" />結果を返します。</summary>
+        <returns>指定したベクトルを指定したポイントに変換する結果。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、追加する方法を示します、<xref:System.Windows.Point>を<xref:System.Windows.Vector>オーバー ロードされたプラス (+) を使用する演算子です。  
+  
+ [!code-csharp[PointExamples_snip#OverloadedAdditionOperatorExample](~/samples/snippets/csharp/VS_Snippets_Wpf/PointExamples_snip/CSharp/PointExample.cs#overloadedadditionoperatorexample)]
+ [!code-vb[PointExamples_snip#OverloadedAdditionOperatorExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PointExamples_snip/visualbasic/pointexample.vb#overloadedadditionoperatorexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Windows.Point point1, System.Windows.Point point2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Windows.Point point1, valuetype System.Windows.Point point2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Point.op_Equality(System.Windows.Point,System.Windows.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point1" Type="System.Windows.Point" />
+        <Parameter Name="point2" Type="System.Windows.Point" />
+      </Parameters>
+      <Docs>
+        <param name="point1">比較する最初の <see cref="T:System.Windows.Point" /> 構造体。</param>
+        <param name="point2">比較する 2 番目の <see cref="T:System.Windows.Point" /> 構造体。</param>
+        <summary>比較する 2 つ<see cref="T:System.Windows.Point" />構造が等しいかどうか。</summary>
+        <returns>
+          <see langword="true" />両方の<see cref="P:System.Windows.Point.X" />と<see cref="P:System.Windows.Point.Y" />の座標<paramref name="point1" />と<paramref name="point2" />が等しい。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、点の座標が記述した<xref:System.Double>値。 の値<xref:System.Double>算術演算子は、2 つの比較を実行時に、有効桁数を失うことができます<xref:System.Windows.Point>が論理的に等しい値が失敗する可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例は、次の 2 つの場合にチェックする方法を示します<xref:System.Windows.Point>構造体が等しい (= =) をオーバー ロードされた演算子を使用します。  
+  
+ [!code-csharp[PointExamples_snip#OverloadedEqualityOperatorExample](~/samples/snippets/csharp/VS_Snippets_Wpf/PointExamples_snip/CSharp/PointExample.cs#overloadedequalityoperatorexample)]
+ [!code-vb[PointExamples_snip#OverloadedEqualityOperatorExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PointExamples_snip/visualbasic/pointexample.vb#overloadedequalityoperatorexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator System.Windows.Size (System.Windows.Point point);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Windows.Size op_Explicit(valuetype System.Windows.Point point) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Point.op_Explicit(System.Windows.Point)~System.Windows.Size" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Windows.Point" />
+      </Parameters>
+      <Docs>
+        <param name="point">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator System.Windows.Vector (System.Windows.Point point);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Windows.Vector op_Explicit(valuetype System.Windows.Point point) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Point.op_Explicit(System.Windows.Point)~System.Windows.Vector" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Vector</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Windows.Point" />
+      </Parameters>
+      <Docs>
+        <param name="point">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Windows.Point point1, System.Windows.Point point2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Windows.Point point1, valuetype System.Windows.Point point2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Point.op_Inequality(System.Windows.Point,System.Windows.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point1" Type="System.Windows.Point" />
+        <Parameter Name="point2" Type="System.Windows.Point" />
+      </Parameters>
+      <Docs>
+        <param name="point1">比較する最初のポイント。</param>
+        <param name="point2">比較する 2 番目のポイント。</param>
+        <summary>比較する 2 つ<see cref="T:System.Windows.Point" />非等値の構造体。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="point1" />と<paramref name="point2" />が異なる<see cref="P:System.Windows.Point.X" />または<see cref="P:System.Windows.Point.Y" />座標です。<see langword="false" />場合<paramref name="point1" />と<paramref name="point2" />が同じである<see cref="P:System.Windows.Point.X" />と<see cref="P:System.Windows.Point.Y" />座標。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ポイントの<xref:System.Windows.Point.X%2A>と<xref:System.Windows.Point.Y%2A>座標を使用して記述<xref:System.Double>値。 <xref:System.Double>値には、2 つの比較に操作したときに、有効桁数が失われる可能性が<xref:System.Windows.Point>が論理的に等しい値が失敗する可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例は、次の 2 つあるかどうかをチェックする方法を示します<xref:System.Windows.Point>構造が、オーバー ロードを使用して、等しくない (! =) 演算子。  
+  
+ [!code-csharp[PointExamples_snip#OverloadedInequalityOperatorExample](~/samples/snippets/csharp/VS_Snippets_Wpf/PointExamples_snip/CSharp/PointExample.cs#overloadedinequalityoperatorexample)]
+ [!code-vb[PointExamples_snip#OverloadedInequalityOperatorExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PointExamples_snip/visualbasic/pointexample.vb#overloadedinequalityoperatorexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Multiply">
+      <MemberSignature Language="C#" Value="public static System.Windows.Point operator * (System.Windows.Point point, System.Windows.Media.Matrix matrix);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Windows.Point op_Multiply(valuetype System.Windows.Point point, valuetype System.Windows.Media.Matrix matrix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Point.op_Multiply(System.Windows.Point,System.Windows.Media.Matrix)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Windows.Point" />
+        <Parameter Name="matrix" Type="System.Windows.Media.Matrix" />
+      </Parameters>
+      <Docs>
+        <param name="point">変換対象のポイント。</param>
+        <param name="matrix">変換行列。</param>
+        <summary>指定された変換<see cref="T:System.Windows.Point" />において指定した<see cref="T:System.Windows.Media.Matrix" />です。</summary>
+        <returns>指定した行列を使用して、指定したポイントを変換した結果。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を乗算する方法を示しています、<xref:System.Windows.Point>によって、<xref:System.Windows.Media.Matrix>オーバー ロードされた (*) 演算子を使用します。  
+  
+ [!code-csharp[PointExamples_snip#OverloadedMultiplyPointByMatrixOperatorExample](~/samples/snippets/csharp/VS_Snippets_Wpf/PointExamples_snip/CSharp/PointExample.cs#overloadedmultiplypointbymatrixoperatorexample)]
+ [!code-vb[PointExamples_snip#OverloadedMultiplyPointByMatrixOperatorExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PointExamples_snip/visualbasic/pointexample.vb#overloadedmultiplypointbymatrixoperatorexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Subtraction">
+      <MemberSignature Language="C#" Value="public static System.Windows.Vector operator - (System.Windows.Point point1, System.Windows.Point point2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Windows.Vector op_Subtraction(valuetype System.Windows.Point point1, valuetype System.Windows.Point point2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Point.op_Subtraction(System.Windows.Point,System.Windows.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Vector</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point1" Type="System.Windows.Point" />
+        <Parameter Name="point2" Type="System.Windows.Point" />
+      </Parameters>
+      <Docs>
+        <param name="point1">元となるポイント<c>point2</c>差し引かれます。</param>
+        <param name="point2">1 から減算するポイント<c>point1</c>です。</param>
+        <summary>指定した減算<see cref="T:System.Windows.Point" />から指定した別<see cref="T:System.Windows.Point" />として差を返します、<see cref="T:System.Windows.Vector" />です。</summary>
+        <returns>違い<paramref name="point1" />と<paramref name="point2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、減算する方法を示しています、<xref:System.Windows.Point>別の<xref:System.Windows.Point>を返すと、<xref:System.Windows.Vector>オーバー ロードされた (-) 演算子を使用します。  
+  
+ [!code-csharp[PointExamples_snip#OverloadedSubtractionOperatorExample2](~/samples/snippets/csharp/VS_Snippets_Wpf/PointExamples_snip/CSharp/PointExample.cs#overloadedsubtractionoperatorexample2)]
+ [!code-vb[PointExamples_snip#OverloadedSubtractionOperatorExample2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PointExamples_snip/visualbasic/pointexample.vb#overloadedsubtractionoperatorexample2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Subtraction">
+      <MemberSignature Language="C#" Value="public static System.Windows.Point operator - (System.Windows.Point point, System.Windows.Vector vector);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Windows.Point op_Subtraction(valuetype System.Windows.Point point, valuetype System.Windows.Vector vector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Point.op_Subtraction(System.Windows.Point,System.Windows.Vector)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Windows.Point" />
+        <Parameter Name="vector" Type="System.Windows.Vector" />
+      </Parameters>
+      <Docs>
+        <param name="point">元となるポイント<c>ベクター</c>差し引かれます。</param>
+        <param name="vector">1 から減算するベクター <c>point1</c></param>
+        <summary>指定した減算<see cref="T:System.Windows.Vector" />から、指定した<see cref="T:System.Windows.Point" />し、その結果を返します<see cref="T:System.Windows.Point" />です。</summary>
+        <returns>違い<paramref name="point" />と<paramref name="vector" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、減算する方法を示しています、<xref:System.Windows.Vector>から、<xref:System.Windows.Point>オーバー ロードされた (-) 演算子を使用します。  
+  
+ [!code-csharp[PointExamples_snip#OverloadedSubtractionOperatorExample1](~/samples/snippets/csharp/VS_Snippets_Wpf/PointExamples_snip/CSharp/PointExample.cs#overloadedsubtractionoperatorexample1)]
+ [!code-vb[PointExamples_snip#OverloadedSubtractionOperatorExample1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PointExamples_snip/visualbasic/pointexample.vb#overloadedsubtractionoperatorexample1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public static System.Windows.Point Parse (string source);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Point Parse(string source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Point.Parse(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="source">ポイントの文字列形式。</param>
+        <summary>構築、<see cref="T:System.Windows.Point" />から、指定した<see cref="T:System.String" />です。</summary>
+        <returns>該当するショートカットは、<see cref="T:System.Windows.Point" />構造体。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Point.Parse%2A>に変換する方法、<xref:System.String>へのポイントの表現、<xref:System.Windows.Point>構造体。  
+  
+ [!code-csharp[PointExamples_snip#ParseExample](~/samples/snippets/csharp/VS_Snippets_Wpf/PointExamples_snip/CSharp/PointExample.cs#parseexample)]
+ [!code-vb[PointExamples_snip#ParseExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PointExamples_snip/visualbasic/pointexample.vb#parseexample)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.FormatException">
+          <paramref name="source" />コンマまたはスペースで区切られた 2 つの double 値で構成ではありません。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="source" />2 つの数値は含まれません。  
+  
+ または  
+  
+ <paramref name="source" />多くの区切り記号が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Subtract">
+      <MemberSignature Language="C#" Value="public static System.Windows.Vector Subtract (System.Windows.Point point1, System.Windows.Point point2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Vector Subtract(valuetype System.Windows.Point point1, valuetype System.Windows.Point point2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Point.Subtract(System.Windows.Point,System.Windows.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Vector</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point1" Type="System.Windows.Point" />
+        <Parameter Name="point2" Type="System.Windows.Point" />
+      </Parameters>
+      <Docs>
+        <param name="point1">元となるポイント<c>point2</c>差し引かれます。</param>
+        <param name="point2">1 から減算するポイント<c>point1</c>です。</param>
+        <summary>指定した減算<see cref="T:System.Windows.Point" />から指定した別<see cref="T:System.Windows.Point" />として差を返します、<see cref="T:System.Windows.Vector" />です。</summary>
+        <returns>違い<paramref name="point1" />と<paramref name="point2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、減算する方法を示しています、<xref:System.Windows.Point>別の<xref:System.Windows.Point>静的<xref:System.Windows.Point.Subtract%2A>メソッドです。  
+  
+ [!code-csharp[PointExamples_snip#SubtractExample2](~/samples/snippets/csharp/VS_Snippets_Wpf/PointExamples_snip/CSharp/PointExample.cs#subtractexample2)]
+ [!code-vb[PointExamples_snip#SubtractExample2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PointExamples_snip/visualbasic/pointexample.vb#subtractexample2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Subtract">
+      <MemberSignature Language="C#" Value="public static System.Windows.Point Subtract (System.Windows.Point point, System.Windows.Vector vector);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Point Subtract(valuetype System.Windows.Point point, valuetype System.Windows.Vector vector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Point.Subtract(System.Windows.Point,System.Windows.Vector)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Windows.Point" />
+        <Parameter Name="vector" Type="System.Windows.Vector" />
+      </Parameters>
+      <Docs>
+        <param name="point">元となるポイント<c>ベクター</c>差し引かれます。</param>
+        <param name="vector"><c>ベクター</c>から減算する<c>ポイント</c>です。</param>
+        <summary>指定した減算<see cref="T:System.Windows.Vector" />から、指定した<see cref="T:System.Windows.Point" />し、その結果を返します<see cref="T:System.Windows.Point" />です。</summary>
+        <returns>違い<paramref name="point" />と<paramref name="vector" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、減算する方法を示しています、<xref:System.Windows.Vector>から、<xref:System.Windows.Point>静的<xref:System.Windows.Point.Subtract%2A>メソッドです。  
+  
+ [!code-csharp[PointExamples_snip#SubtractExample1](~/samples/snippets/csharp/VS_Snippets_Wpf/PointExamples_snip/CSharp/PointExample.cs#subtractexample1)]
+ [!code-vb[PointExamples_snip#SubtractExample1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PointExamples_snip/visualbasic/pointexample.vb#subtractexample1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IFormattable.ToString">
+      <MemberSignature Language="C#" Value="string IFormattable.ToString (string format, IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance string System.IFormattable.ToString(string format, class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Point.System#IFormattable#ToString(System.String,System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="format">使用する形式を指定する文字列。  
+  
+ または  
+  
+ <see langword="null" />型に対して定義されている既定の形式を使用する、<see cref="T:System.IFormattable" />実装します。</param>
+        <param name="provider"><see langword="IFormatProvider" />を使用して値の書式設定します。  
+  
+ または  
+  
+ <see langword="null" />オペレーティング システムの現在のロケール設定から数値の書式情報を取得できます。</param>
+        <summary>このメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。 このメンバーの詳細については、「<see cref="M:System.IFormattable.ToString(System.String,System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns>指定された形式で現在のインスタンスの値を含む文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Point.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成、<see cref="T:System.String" />表現<see cref="T:System.Windows.Point" />です。</summary>
+        <returns>A<see cref="T:System.String" />を含む、<see cref="P:System.Windows.Point.X" />と<see cref="P:System.Windows.Point.Y" />この値<see cref="T:System.Windows.Point" />構造体。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Point.ToString%2A>取得するメソッド、<xref:System.String>の表現、<xref:System.Windows.Point>構造体。  
+  
+ [!code-csharp[PointExamples_snip#ToStringExample](~/samples/snippets/csharp/VS_Snippets_Wpf/PointExamples_snip/CSharp/PointExample.cs#tostringexample)]
+ [!code-vb[PointExamples_snip#ToStringExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PointExamples_snip/visualbasic/pointexample.vb#tostringexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ToString(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Point.ToString(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">カルチャに固有の書式設定情報。</param>
+        <summary>作成、<see cref="T:System.String" />表現<see cref="T:System.Windows.Point" />です。</summary>
+        <returns>A<see cref="T:System.String" />を含む、<see cref="P:System.Windows.Point.X" />と<see cref="P:System.Windows.Point.Y" />この値<see cref="T:System.Windows.Point" />構造体。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="X">
+      <MemberSignature Language="C#" Value="public double X { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 X" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Point.X" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、 <see cref="P:System.Windows.Point.X" />-の値を調整<see cref="T:System.Windows.Point" />構造体。</summary>
+        <value><see cref="P:System.Windows.Point.X" />-の値を調整<see cref="T:System.Windows.Point" />構造体。  既定値は<c>0</c>します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、次の 2 つの場合にチェックする方法を示します<xref:System.Windows.Point>構造が等しくないです。  値を割り当てる方法も示しています、<xref:System.Windows.Point>構造体、構造体が宣言されているとき、および構造体は宣言されています。  
+  
+ [!code-csharp[PointExamples_snip#PointInequalityExample](~/samples/snippets/csharp/VS_Snippets_Wpf/PointExamples_snip/CSharp/PointExample.cs#pointinequalityexample)]
+ [!code-vb[PointExamples_snip#PointInequalityExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PointExamples_snip/visualbasic/pointexample.vb#pointinequalityexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Y">
+      <MemberSignature Language="C#" Value="public double Y { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Y" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Point.Y" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、 <see cref="P:System.Windows.Point.Y" />-の値を調整<see cref="T:System.Windows.Point" />です。</summary>
+        <value><see cref="P:System.Windows.Point.Y" />-の値を調整<see cref="T:System.Windows.Point" />構造体。  既定値は<c>0</c>します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、次の 2 つの場合にチェックする方法を示します<xref:System.Windows.Point>構造が等しくないです。  値を割り当てる方法も示しています、<xref:System.Windows.Point>構造体、構造体が宣言されているとき、および構造体は宣言されています。  
+  
+ [!code-csharp[PointExamples_snip#PointInequalityExample](~/samples/snippets/csharp/VS_Snippets_Wpf/PointExamples_snip/CSharp/PointExample.cs#pointinequalityexample)]
+ [!code-vb[PointExamples_snip#PointInequalityExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PointExamples_snip/visualbasic/pointexample.vb#pointinequalityexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

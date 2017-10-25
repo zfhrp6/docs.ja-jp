@@ -1,0 +1,292 @@
+<Type Name="MulticastOption" FullName="System.Net.Sockets.MulticastOption">
+  <TypeSignature Language="C#" Value="public class MulticastOption" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MulticastOption extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Sockets.MulticastOption" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Sockets</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>含む<see cref="T:System.Net.IPAddress" />に参加し、マルチキャスト グループの削除に使用する値。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Net.Sockets.MulticastOption>を格納する、<xref:System.Net.IPAddress>マルチキャスト グループに参加または削除するのです。 使用して、<xref:System.Net.Sockets.Socket.SetSocketOption%2A?displayProperty=nameWithType>マルチキャスト グループに参加する、次のパラメーターを持つメソッドです。  
+  
+|パラメーター|値|  
+|---------------|-----------|  
+|socketOptionLevel|<xref:System.Net.Sockets.SocketOptionLevel?displayProperty=nameWithType>|  
+|socketOptionName|<xref:System.Net.Sockets.SocketOptionName.AddMembership>|  
+|object|<xref:System.Net.Sockets.MulticastOption>|  
+  
+ 使用して<xref:System.Net.Sockets.SocketOptionName.DropMembership>マルチキャスト グループを削除します。  
+  
+   
+  
+## Examples  
+ 次の例では、既定の IP インターフェイスを IP マルチキャスト グループに参加させます。 IP マルチキャスト前提 224.0.0.0 ~ 239.255.255.255 の範囲内のアドレスをグループ化します。  
+  
+ [!code-cpp[System.Net.Sockets.MulticastOptionListener#1](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Sockets.MulticastOptionListener/CPP/listener.cpp#1)]
+ [!code-csharp[System.Net.Sockets.MulticastOptionListener#1](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Sockets.MulticastOptionListener/CS/listener.cs#1)]
+ [!code-vb[System.Net.Sockets.MulticastOptionListener#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Sockets.MulticastOptionListener/VB/listener.vb#1)]  
+  
+ [!code-cpp[System.Net.Sockets.MulticastOptionSender#1](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Sockets.MulticastOptionSender/CPP/sender.cpp#1)]
+ [!code-csharp[System.Net.Sockets.MulticastOptionSender#1](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Sockets.MulticastOptionSender/CS/sender.cs#1)]
+ [!code-vb[System.Net.Sockets.MulticastOptionSender#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Sockets.MulticastOptionSender/VB/sender.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MulticastOption (System.Net.IPAddress group);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Net.IPAddress group) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.MulticastOption.#ctor(System.Net.IPAddress)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="group" Type="System.Net.IPAddress" />
+      </Parameters>
+      <Docs>
+        <param name="group"><see cref="T:System.Net.IPAddress" />マルチキャスト グループのです。</param>
+        <summary>新しいバージョンの初期化、<see cref="T:System.Net.Sockets.MulticastOption" />指定された IP マルチキャスト グループのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数のネットワーク カードがあるマシンの場合このコンス トラクターは使用しないでください。 グループとローカル IP アドレスを受け取るコンス トラクターを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="group" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MulticastOption (System.Net.IPAddress group, int interfaceIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Net.IPAddress group, int32 interfaceIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.MulticastOption.#ctor(System.Net.IPAddress,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="group" Type="System.Net.IPAddress" />
+        <Parameter Name="interfaceIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="group"><see cref="T:System.Net.IPAddress" />マルチキャスト グループのです。</param>
+        <param name="interfaceIndex">マルチキャスト パケットの送受信に使用されるインターフェイスのインデックス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Sockets.MulticastOption" />指定の IP マルチキャスト グループ アドレスとインターフェイス インデックスを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MulticastOption (System.Net.IPAddress group, System.Net.IPAddress mcint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Net.IPAddress group, class System.Net.IPAddress mcint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.MulticastOption.#ctor(System.Net.IPAddress,System.Net.IPAddress)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="group" Type="System.Net.IPAddress" />
+        <Parameter Name="mcint" Type="System.Net.IPAddress" />
+      </Parameters>
+      <Docs>
+        <param name="group">グループ<see cref="T:System.Net.IPAddress" />です。</param>
+        <param name="mcint">ローカル<see cref="T:System.Net.IPAddress" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Sockets.MulticastOption" />クラスで指定された IP マルチキャスト アドレスとネットワーク インターフェイスに関連付けられているローカルの IP アドレスをグループ化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数のネットワーク カードがあるマシンの場合は、作成するこのコンス トラクターを使用する必要があります<xref:System.Net.Sockets.MulticastOption>インスタンス。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Net.Sockets.MulticastOption>オブジェクト。  
+  
+ [!code-cpp[System.Net.Sockets.MulticastOptionListener#2](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Sockets.MulticastOptionListener/CPP/listener.cpp#2)]
+ [!code-csharp[System.Net.Sockets.MulticastOptionListener#2](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Sockets.MulticastOptionListener/CS/listener.cs#2)]
+ [!code-vb[System.Net.Sockets.MulticastOptionListener#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Sockets.MulticastOptionListener/VB/listener.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="group" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="mcint" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Group">
+      <MemberSignature Language="C#" Value="public System.Net.IPAddress Group { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.IPAddress Group" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.MulticastOption.Group" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.IPAddress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはマルチキャスト グループの IP アドレスを設定します。</summary>
+        <value><see cref="T:System.Net.IPAddress" />マルチキャスト グループのインターネット アドレスを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マルチキャスト パケットの有効な IP アドレスは、224.0.0.0 ~ 239.255.255.255 の範囲内でです。  
+  
+   
+  
+## Examples  
+ 次の例では、このプロパティの値を表示します。  
+  
+ [!code-cpp[System.Net.Sockets.MulticastOptionListener#3](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Sockets.MulticastOptionListener/CPP/listener.cpp#3)]
+ [!code-csharp[System.Net.Sockets.MulticastOptionListener#3](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Sockets.MulticastOptionListener/CS/listener.cs#3)]
+ [!code-vb[System.Net.Sockets.MulticastOptionListener#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Sockets.MulticastOptionListener/VB/listener.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InterfaceIndex">
+      <MemberSignature Language="C#" Value="public int InterfaceIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 InterfaceIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.MulticastOption.InterfaceIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはマルチキャスト パケットの送受信に使用されるインターフェイスのインデックスを設定します。</summary>
+        <value>整数のインデックスを表す、<see cref="T:System.Net.NetworkInformation.NetworkInterface" />配列の要素。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalAddress">
+      <MemberSignature Language="C#" Value="public System.Net.IPAddress LocalAddress { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.IPAddress LocalAddress" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.MulticastOption.LocalAddress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.IPAddress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはマルチキャスト グループに関連付けられているローカル アドレスを設定します。</summary>
+        <value><see cref="T:System.Net.IPAddress" />マルチキャスト グループに関連付けられているローカル アドレスを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Sockets.MulticastOption.LocalAddress%2A>プロパティには、マルチキャスト グループのメンバーシップに関連付けられているインターフェイスの IP アドレスが含まれています。 場合<xref:System.Net.Sockets.MulticastOption.LocalAddress%2A>に設定されている<xref:System.Net.IPAddress.Any>既定のインターフェイスを使用します。  
+  
+   
+  
+## Examples  
+ 次の例では、このプロパティの値を表示します。  
+  
+ [!code-cpp[System.Net.Sockets.MulticastOptionListener#3](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Sockets.MulticastOptionListener/CPP/listener.cpp#3)]
+ [!code-csharp[System.Net.Sockets.MulticastOptionListener#3](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Sockets.MulticastOptionListener/CS/listener.cs#3)]
+ [!code-vb[System.Net.Sockets.MulticastOptionListener#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Sockets.MulticastOptionListener/VB/listener.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

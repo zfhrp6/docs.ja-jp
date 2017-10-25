@@ -1,0 +1,367 @@
+<Type Name="DataGridItem" FullName="System.Web.UI.WebControls.DataGridItem">
+  <TypeSignature Language="C#" Value="public class DataGridItem : System.Web.UI.WebControls.TableRow, System.Web.UI.IDataItemContainer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridItem extends System.Web.UI.WebControls.TableRow implements class System.Web.UI.IDataItemContainer, class System.Web.UI.INamingContainer" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.DataGridItem" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.TableRow</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.IDataItemContainer</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary><see cref="T:System.Web.UI.WebControls.DataGrid" /> コントロールの項目 (行) を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.UI.WebControls.DataGridItem>オブジェクトで項目 (行) を表す、<xref:System.Web.UI.WebControls.DataGrid>に見出しセクション、フッター セクションでは、データ行などのコントロールです。  
+  
+ データ項目、<xref:System.Web.UI.WebControls.DataGrid>にコントロールが格納されている、<xref:System.Web.UI.WebControls.DataGridItemCollection>コレクションを使用してアクセスできる、<xref:System.Web.UI.WebControls.DataGrid.Items%2A>のプロパティ、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ 使用することができます、<xref:System.Web.UI.WebControls.DataGridItem>オブジェクト内の項目のプロパティにプログラムでアクセスを<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGridItem>内の各データ項目の内容を表示するオブジェクト、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+> [!NOTE]
+>  次のコード例では、単一ファイルのコード モデルを使用しが正しく動作しない場合は、分離コード ファイルに直接コピーします。 このコード例は、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+ [!code-aspx-csharp[DataGridItemDataBound#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridItemDataBound/CS/datagriditemdataboundcs.aspx#1)]
+ [!code-aspx-vb[DataGridItemDataBound#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridItemDataBound/VB/datagriditemdataboundvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridItem (int itemIndex, int dataSetIndex, System.Web.UI.WebControls.ListItemType itemType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 itemIndex, int32 dataSetIndex, valuetype System.Web.UI.WebControls.ListItemType itemType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGridItem.#ctor(System.Int32,System.Int32,System.Web.UI.WebControls.ListItemType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="itemIndex" Type="System.Int32" />
+        <Parameter Name="dataSetIndex" Type="System.Int32" />
+        <Parameter Name="itemType" Type="System.Web.UI.WebControls.ListItemType" />
+      </Parameters>
+      <Docs>
+        <param name="itemIndex">項目のインデックス、<see cref="P:System.Web.UI.WebControls.DataGrid.Items" />内のコレクション、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</param>
+        <param name="dataSetIndex">表示される、バインドされたデータ ソースから、項目のインデックス番号、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</param>
+        <param name="itemType"><see cref="T:System.Web.UI.WebControls.ListItemType" /> 値のいずれか。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.DataGridItem" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.DataGridItem>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成しの新しいインスタンスを初期化する方法を示しています、<xref:System.Web.UI.WebControls.DataGridItem>クラスです。  
+  
+ [!code-csharp[Classic DataGridItem.DataGridItem Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataGridItem.DataGridItem Example/CS/source.cs#1)]
+ [!code-vb[Classic DataGridItem.DataGridItem Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataGridItem.DataGridItem Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataItem">
+      <MemberSignature Language="C#" Value="public virtual object DataItem { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DataItem" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGridItem.DataItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定項目によって表されるデータ、<see cref="T:System.Web.UI.WebControls.DataGridItem" />内のオブジェクト、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</summary>
+        <value>A<see cref="T:System.Object" />内のデータ項目を表す、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGridItem.DataItem%2A>を指定するか、項目によって表されるデータのプロパティを決定するプロパティ、<xref:System.Web.UI.WebControls.DataGridItem>内のオブジェクト、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+> [!NOTE]
+>  このプロパティのデータ項目にのみ適用されます、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 <xref:System.Web.UI.WebControls.DataGridItem.ItemType%2A>プロパティに設定する必要があります`ListItemType.Item`、 `ListItemType.AlternatingItem`、 `ListItemType.SelectedItem`、または`ListItemType.EditItem`です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGridItem.DataItem%2A>内のデータ項目の内容を表示するプロパティを<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+> [!NOTE]
+>  次のコード例では、単一ファイルのコード モデルを使用しが正しく動作しない場合は、分離コード ファイルに直接コピーします。 このコード例は、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。  
+  
+ [!code-aspx-csharp[Classic DataGridItem.DataItem Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataGridItem.DataItem Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic DataGridItem.DataItem Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataGridItem.DataItem Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSetIndex">
+      <MemberSignature Language="C#" Value="public virtual int DataSetIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DataSetIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGridItem.DataSetIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インデックスを取得、<see cref="T:System.Web.UI.WebControls.DataGridItem" />バインド データ ソースからのオブジェクト。</summary>
+        <value>インデックス、<see cref="T:System.Web.UI.WebControls.DataGridItem" />バインド データ ソースからです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGridItem.DataSetIndex%2A>のインデックスを取得するプロパティ、<xref:System.Web.UI.WebControls.DataGridItem>バインド データ ソースからのオブジェクト。  
+  
+> [!NOTE]
+>  このプロパティのデータ項目にのみ適用されます、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 <xref:System.Web.UI.WebControls.DataGridItem.ItemType%2A>のプロパティ、<xref:System.Web.UI.WebControls.DataGridItem>にオブジェクトを設定する必要があります`ListItemType.Item`、 `ListItemType.AlternatingItem`、 `ListItemType.SelectedItem`、または`ListItemType.EditItem`です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGridItem.DataSetIndex%2A>のインデックスを表示するプロパティを<xref:System.Web.UI.WebControls.DataGridItem>バインド データ ソースからのオブジェクト。  
+  
+> [!NOTE]
+>  次のコード例では、単一ファイルのコード モデルを使用しが正しく動作しない場合は、分離コード ファイルに直接コピーします。 このコード例は、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。  
+  
+ [!code-aspx-csharp[Classic DataGridItem.DataSetIndex Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataGridItem.DataSetIndex Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic DataGridItem.DataSetIndex Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataGridItem.DataSetIndex Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemIndex">
+      <MemberSignature Language="C#" Value="public virtual int ItemIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ItemIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGridItem.ItemIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インデックスを取得、<see cref="T:System.Web.UI.WebControls.DataGridItem" />オブジェクトから、<see cref="P:System.Web.UI.WebControls.DataGrid.Items" />のコレクション、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</summary>
+        <value>インデックス、<see cref="T:System.Web.UI.WebControls.DataGridItem" />から、<see cref="P:System.Web.UI.WebControls.DataGrid.Items" />のコレクション、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGridItem.ItemIndex%2A>のインデックスを決定するプロパティ、<xref:System.Web.UI.WebControls.DataGridItem>オブジェクトから、<xref:System.Web.UI.WebControls.DataGrid.Items%2A>のコレクション、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+> [!NOTE]
+>  このプロパティのデータ項目にのみ適用されます、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 <xref:System.Web.UI.WebControls.DataGridItem.ItemType%2A>のプロパティ、<xref:System.Web.UI.WebControls.DataGridItem>にオブジェクトを設定する必要があります`ListItemType.Item`、 `ListItemType.AlternatingItem`、 `ListItemType.SelectedItem`、または`ListItemType.EditItem`です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGridItem.ItemIndex%2A>のインデックスを表示するプロパティを<xref:System.Web.UI.WebControls.DataGridItem>オブジェクトから、<xref:System.Web.UI.WebControls.DataGrid.Items%2A>のコレクション、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+> [!NOTE]
+>  次のコード例では、単一ファイルのコード モデルを使用しが正しく動作しない場合は、分離コード ファイルに直接コピーします。 このコード例は、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+ [!code-aspx-csharp[Classic DataGridItem.ItemIndex Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataGridItem.ItemIndex Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic DataGridItem.ItemIndex Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataGridItem.ItemIndex Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemType">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.ListItemType ItemType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.ListItemType ItemType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGridItem.ItemType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ListItemType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によって表される項目の種類を取得、<see cref="T:System.Web.UI.WebControls.DataGridItem" />内のオブジェクト、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.ListItemType" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGridItem.ItemType%2A>内の項目の種類を決定するプロパティ、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 次の表は、さまざまな項目の種類を一覧表示します。  
+  
+|項目の種類|説明|  
+|---------------|-----------------|  
+|`Header`|ヘッダー セクション、<xref:System.Web.UI.WebControls.DataGrid>コントロール。|  
+|`Footer`|フッター セクション、<xref:System.Web.UI.WebControls.DataGrid>コントロール。|  
+|`Item`|内の項目、<xref:System.Web.UI.WebControls.DataGrid>コントロール。|  
+|`AlternatingItem`|交互のアイテム、<xref:System.Web.UI.WebControls.DataGrid>コントロール。|  
+|`SelectedItem`|内の選択項目、<xref:System.Web.UI.WebControls.DataGrid>コントロール。|  
+|`EditItem`|編集用に選択された項目、<xref:System.Web.UI.WebControls.DataGrid>コントロール。|  
+|`Separator`|項目間の区切り記号、<xref:System.Web.UI.WebControls.DataGrid>コントロール。|  
+|`Pager`|ページの選択 セクションの<xref:System.Web.UI.WebControls.DataGrid>コントロール。|  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataGridItem.ItemType%2A>内の項目の種類を決定するプロパティ、<xref:System.Web.UI.WebControls.DataGrid>コントロール。 項目を作成する、順序、<xref:System.Web.UI.WebControls.DataGrid>項目の種類とコントロールが表示されます。  
+  
+> [!NOTE]
+>  次のコード例では、単一ファイルのコード モデルを使用しが正しく動作しない場合は、分離コード ファイルに直接コピーします。 このコード例は、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+ [!code-aspx-csharp[DataGridItemDataBound#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridItemDataBound/CS/datagriditemdataboundcs.aspx#1)]
+ [!code-aspx-vb[DataGridItemDataBound#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridItemDataBound/VB/datagriditemdataboundvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBubbleEvent">
+      <MemberSignature Language="C#" Value="protected override bool OnBubbleEvent (object source, EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool OnBubbleEvent(object source, class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGridItem.OnBubbleEvent(System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="source">イベントのソース。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" /> オブジェクト。</param>
+        <summary>によって内部的に使用される、<see cref="T:System.Web.UI.WebControls.DataGridItem" />クラスです。</summary>
+        <returns>
+          イベントがキャンセルされた場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetItemType">
+      <MemberSignature Language="C#" Value="protected virtual void SetItemType (System.Web.UI.WebControls.ListItemType itemType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void SetItemType(valuetype System.Web.UI.WebControls.ListItemType itemType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGridItem.SetItemType(System.Web.UI.WebControls.ListItemType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="itemType" Type="System.Web.UI.WebControls.ListItemType" />
+      </Parameters>
+      <Docs>
+        <param name="itemType"><see cref="T:System.Web.UI.WebControls.ListItemType" /> 値のいずれか。</param>
+        <summary>によって内部的に使用される、<see cref="T:System.Web.UI.WebControls.DataGridItem" />クラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IDataItemContainer.DataItem">
+      <MemberSignature Language="C#" Value="object System.Web.UI.IDataItemContainer.DataItem { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Web.UI.IDataItemContainer.DataItem" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGridItem.System#Web#UI#IDataItemContainer#DataItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Web.UI.IDataItemContainer.DataItem" />」をご覧ください。</summary>
+        <value>内のデータ項目を表すオブジェクト、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.WebControls.DataGridItem> のインスタンスが <xref:System.Web.UI.IDataItemContainer> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IDataItemContainer.DataItemIndex">
+      <MemberSignature Language="C#" Value="int System.Web.UI.IDataItemContainer.DataItemIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 System.Web.UI.IDataItemContainer.DataItemIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGridItem.System#Web#UI#IDataItemContainer#DataItemIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Web.UI.IDataItemContainer.DataItemIndex" />」を参照してください。</summary>
+        <value>インデックス、<see cref="T:System.Web.UI.WebControls.DataGridItem" />バインド データ ソースからです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.WebControls.DataGridItem> のインスタンスが <xref:System.Web.UI.IDataItemContainer> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IDataItemContainer.DisplayIndex">
+      <MemberSignature Language="C#" Value="int System.Web.UI.IDataItemContainer.DisplayIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 System.Web.UI.IDataItemContainer.DisplayIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGridItem.System#Web#UI#IDataItemContainer#DisplayIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Web.UI.IDataItemContainer.DisplayIndex" />」を参照してください。</summary>
+        <value>インデックス、<see cref="T:System.Web.UI.WebControls.DataGridItem" />から、<see cref="P:System.Web.UI.WebControls.DataGrid.Items" />のコレクション、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.WebControls.DataGridItem> のインスタンスが <xref:System.Web.UI.IDataItemContainer> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

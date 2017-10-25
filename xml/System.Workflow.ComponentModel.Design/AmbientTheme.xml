@@ -1,0 +1,1440 @@
+<Type Name="AmbientTheme" FullName="System.Workflow.ComponentModel.Design.AmbientTheme">
+  <TypeSignature Language="C#" Value="public class AmbientTheme : System.Workflow.ComponentModel.Design.DesignerTheme" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AmbientTheme extends System.Workflow.ComponentModel.Design.DesignerTheme" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Design.AmbientTheme" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.ComponentModel.Design.DesignerTheme</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>デザイン時環境でトップレベル ワークフローの外観プロパティの設定を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ ワークフロー テーマは、ワークフロー デザイン サーフェイスの外観を定義します。 これには、ワークフロー デザイン サーフェイスに定義される背景スタイル、前景スタイル、フォント、およびアイコンが含まれます。 アンビエント テーマには、ワークフロー デザイン サーフェイスの既定の表示プロパティが含まれます。 アンビエント テーマは、デザイン サーフェイス全体にわたって使用される設定 (たとえば、グリッド、背景色と前景色、読み取り専用デザイナー色など) を提供します。 ユーザーが選択した値またはオペレーティング システムの値のどちらかを使用できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AmbientTheme (System.Workflow.ComponentModel.Design.WorkflowTheme theme);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Workflow.ComponentModel.Design.WorkflowTheme theme) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.AmbientTheme.#ctor(System.Workflow.ComponentModel.Design.WorkflowTheme)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="theme" Type="System.Workflow.ComponentModel.Design.WorkflowTheme" />
+      </Parameters>
+      <Docs>
+        <param name="theme">アンビエント テーマを関連付ける <see cref="T:System.Workflow.ComponentModel.Design.WorkflowTheme" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.AmbientTheme" /> を使用して、<see cref="T:System.Workflow.ComponentModel.Design.WorkflowTheme" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackColor">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Color BackColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color BackColor" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.BackColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor(typeof(System.Workflow.ComponentModel.Design.ColorPickerEditor), typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Workflow.ComponentModel.Design.ColorPickerConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(13)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスでのアンビエント背景色を取得または設定します。</summary>
+        <value>アンビエント背景色を表す <see cref="T:System.Drawing.Color" /> の値。 既定の色は白です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.AmbientTheme.BackColor%2A> プロパティを設定すると、<xref:System.Workflow.ComponentModel.Design.AmbientTheme.BackgroundBrush%2A> プロパティ値は無効化されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundBrush">
+      <MemberSignature Language="C#" Value="public System.Drawing.Brush BackgroundBrush { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Brush BackgroundBrush" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.BackgroundBrush" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスに表示されるグラフィカル形状を塗りつぶすのに使用されるアンビエント ブラシを取得します。</summary>
+        <value>ワークフロー デザイン サーフェイスの背景ブラシを表す <see cref="T:System.Drawing.Brush" /> の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに null 参照 (Visual Basic の場合は `Nothing`) が含まれている場合は、既定では色が現在の <xref:System.Drawing.SolidBrush> プロパティ値に設定された <xref:System.Workflow.ComponentModel.Design.AmbientTheme.BackColor%2A> が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BoldFont">
+      <MemberSignature Language="C#" Value="public System.Drawing.Font BoldFont { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Font BoldFont" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.BoldFont" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Font</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスでのアンビエント太字フォント設定を取得します。</summary>
+        <value>ワークフロー デザイン サーフェイスでのテキストが太字かどうかを決定する <see cref="T:System.Drawing.Font" /> の値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderWidth">
+      <MemberSignature Language="C#" Value="public virtual int BorderWidth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 BorderWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.BorderWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスに配置されるオブジェクトのアンビエント境界線幅を取得します。</summary>
+        <value>ワークフロー デザイン サーフェイスに配置されるオブジェクトの境界線幅を表す整数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommentIndicatorBrush">
+      <MemberSignature Language="C#" Value="public System.Drawing.Brush CommentIndicatorBrush { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Brush CommentIndicatorBrush" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.CommentIndicatorBrush" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスのコメントが付けられたデザイナーに関連付けられているアンビエント ブラシを取得します。</summary>
+        <value>ワークフロー デザイン サーフェイスのコメントが付けられたデザイナーに関連付けられている <see cref="T:System.Drawing.Brush" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに null 参照 (Visual Basic の場合は `Nothing`) が含まれている場合は、既定では色が現在の <xref:System.Drawing.SolidBrush> プロパティ値に設定された <xref:System.Workflow.ComponentModel.Design.AmbientTheme.CommentIndicatorColor%2A> が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommentIndicatorColor">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Color CommentIndicatorColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color CommentIndicatorColor" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.CommentIndicatorColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor(typeof(System.Workflow.ComponentModel.Design.ColorPickerEditor), typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Workflow.ComponentModel.Design.ColorPickerConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(11)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスのコメントが付けられたデザイナーに関連付けられているアンビエント色を取得または設定します。</summary>
+        <value>ワークフロー デザイン サーフェイスのコメントが付けられたデザイナーに関連付けられている <see cref="T:System.Drawing.Color" /> の値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommentIndicatorPen">
+      <MemberSignature Language="C#" Value="public System.Drawing.Pen CommentIndicatorPen { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Pen CommentIndicatorPen" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.CommentIndicatorPen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Pen</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスのコメントが付けられたデザイナーに関連付けられているアンビエント ペンを取得します。</summary>
+        <value>ワークフロー デザイン サーフェイスのコメントが付けられたデザイナーに関連付けられている <see cref="T:System.Drawing.Pen" /> の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに null 参照 (Visual Basic の場合は `Nothing`) が含まれている場合は、既定では色が現在の <xref:System.Drawing.Pen> プロパティ値、幅が 1 に設定された <xref:System.Workflow.ComponentModel.Design.AmbientTheme.CommentIndicatorColor%2A> が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesignerSize">
+      <MemberSignature Language="C#" Value="public virtual System.Workflow.ComponentModel.Design.DesignerSize DesignerSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Workflow.ComponentModel.Design.DesignerSize DesignerSize" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.DesignerSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(20)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.DesignerSize</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスでのアクティビティ デザイナーのアンビエント サイズ設定を取得または設定します。</summary>
+        <value>ワークフロー デザイン サーフェイスでのアクティビティ デザイナーのサイズを決定する <see cref="T:System.Workflow.ComponentModel.Design.DesignerSize" /> 列挙値。 既定値は <see cref="F:System.Workflow.ComponentModel.Design.DesignerSize.Medium" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.AmbientTheme.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.AmbientTheme" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawGrayscale">
+      <MemberSignature Language="C#" Value="public virtual bool DrawGrayscale { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DrawGrayscale" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.DrawGrayscale" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(6)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスに関連付けられたアンビエント テーマがグレースケールを描画するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          ワークフローに関連付けられたアンビエント テーマがグレースケールを描画する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawRounded">
+      <MemberSignature Language="C#" Value="public virtual bool DrawRounded { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DrawRounded" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.DrawRounded" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(21)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスに関連付けられたアンビエント テーマが丸みのある形状を描画するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          ワークフローに関連付けられたアンビエント テーマが丸みのある形状を描画する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawShadow">
+      <MemberSignature Language="C#" Value="public virtual bool DrawShadow { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DrawShadow" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.DrawShadow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(14)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスに関連付けられたアンビエント テーマが影を描画するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          ワークフローに関連付けられたアンビエント テーマが影を描画する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DropIndicatorBrush">
+      <MemberSignature Language="C#" Value="public System.Drawing.Brush DropIndicatorBrush { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Brush DropIndicatorBrush" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.DropIndicatorBrush" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスにドラッグしたオブジェクトに関連付けられているアンビエント ブラシを取得します。</summary>
+        <value>ワークフロー デザイン サーフェイスにドラッグしたオブジェクトに関連付けられている <see cref="T:System.Drawing.Brush" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに null 参照 (Visual Basic の場合は `Nothing`) が含まれている場合は、既定では色が現在の <xref:System.Drawing.SolidBrush> プロパティ値に設定された <xref:System.Workflow.ComponentModel.Design.AmbientTheme.DropIndicatorColor%2A> が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DropIndicatorColor">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Color DropIndicatorColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color DropIndicatorColor" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.DropIndicatorColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor(typeof(System.Workflow.ComponentModel.Design.ColorPickerEditor), typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Workflow.ComponentModel.Design.ColorPickerConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(7)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスにドラッグしたオブジェクトに関連付けられているアンビエント色を取得または設定します。</summary>
+        <value>ワークフロー デザイン サーフェイスにドラッグしたオブジェクトに関連付けられている <see cref="T:System.Drawing.Color" /> の値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DropIndicatorPen">
+      <MemberSignature Language="C#" Value="public System.Drawing.Pen DropIndicatorPen { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Pen DropIndicatorPen" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.DropIndicatorPen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Pen</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスにドラッグしたオブジェクトに関連付けられているアンビエント ペンを取得します。</summary>
+        <value>ワークフロー デザイン サーフェイスにドラッグしたオブジェクトに関連付けられている <see cref="T:System.Drawing.Pen" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに null 参照 (Visual Basic の場合は `Nothing`) が含まれている場合は、既定では色が現在の <xref:System.Drawing.Pen> プロパティ値、幅が <xref:System.Workflow.ComponentModel.Design.AmbientTheme.DropIndicatorColor%2A> プロパティに設定された <xref:System.Workflow.ComponentModel.Design.AmbientTheme.BorderWidth%2A> が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Font">
+      <MemberSignature Language="C#" Value="public System.Drawing.Font Font { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Font Font" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.Font" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Font</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスでのアンビエント フォント設定を取得します。</summary>
+        <value>ワークフロー デザイン サーフェイスでのアンビエント フォント設定を表す <see cref="T:System.Drawing.Font" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontName">
+      <MemberSignature Language="C#" Value="public virtual string FontName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FontName" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.FontName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Workflow.ComponentModel.Design.FontFamilyConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスでのアンビエント フォント名を取得または設定します。</summary>
+        <value>ワークフロー デザイン サーフェイスでのアンビエント フォント名を表す文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForeColor">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Color ForeColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color ForeColor" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.ForeColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor(typeof(System.Workflow.ComponentModel.Design.ColorPickerEditor), typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Workflow.ComponentModel.Design.ColorPickerConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(10)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスでのアンビエント前景色プロパティを取得または設定します。</summary>
+        <value>ワークフロー デザイン サーフェイスでのアンビエント前景色を表す <see cref="T:System.Drawing.Color" /> の値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForegroundBrush">
+      <MemberSignature Language="C#" Value="public System.Drawing.Brush ForegroundBrush { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Brush ForegroundBrush" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.ForegroundBrush" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスでのアンビエント前景ブラシを取得します。</summary>
+        <value>アンビエント前景ブラシを表す <see cref="T:System.Drawing.Brush" /> の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに null 参照 (Visual Basic の場合は `Nothing`) が含まれている場合は、既定では色が現在の <xref:System.Drawing.SolidBrush> プロパティ値に設定された <xref:System.Workflow.ComponentModel.Design.AmbientTheme.ForeColor%2A> が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForegroundPen">
+      <MemberSignature Language="C#" Value="public System.Drawing.Pen ForegroundPen { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Pen ForegroundPen" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.ForegroundPen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Pen</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスでのアンビエント前景ペンを取得します。</summary>
+        <value>アンビエント前景ペンを表す <see cref="T:System.Drawing.Pen" /> の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに null 参照 (Visual Basic の場合は `Nothing`) が含まれている場合は、既定では色が現在の <xref:System.Drawing.Pen> プロパティ値、幅が 1、<xref:System.Workflow.ComponentModel.Design.AmbientTheme.DropIndicatorColor%2A> が <xref:System.Drawing.Pen.DashStyle%2A> に設定された <xref:System.Drawing.Drawing2D.DashStyle?displayProperty=nameWithType> が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GlyphSize">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Size GlyphSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size GlyphSize" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.GlyphSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスでのグリフのアンビエント高さおよび幅を取得します。</summary>
+        <value>ワークフロー デザイン サーフェイスでのグリフのアンビエント高さおよび幅を表す <see cref="T:System.Drawing.Size" /> の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.AmbientTheme.GlyphSize%2A> クラスから派生したクラスから <xref:System.Workflow.ComponentModel.Design.DesignerGlyph> プロパティにアクセスするための一般的な方法のコード例を、次に示します。  
+  
+ 次のコード例は、DatabaseService.cs ファイルに含まれているワークフロー モニターの SDK サンプルの一部です。 詳細については、次を参照してください。[ワークフロー モニター](http://msdn.microsoft.com/en-us/4f70c1c5-f82d-4d5f-8b7d-943b9f99f8e2)です。  
+  
+ [!code-csharp[WF_Samples#133](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#133)]
+ [!code-vb[WF_Samples#133](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#133)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GridColor">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Color GridColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color GridColor" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.GridColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor(typeof(System.Workflow.ComponentModel.Design.ColorPickerEditor), typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Workflow.ComponentModel.Design.ColorPickerConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(19)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスでのアンビエント グリッド色を取得または設定します。</summary>
+        <value>ワークフロー デザイン サーフェイスでのグリッド色を表す <see cref="T:System.Drawing.Color" /> の値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GridSize">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Size GridSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size GridSize" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.GridSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスに表示するグリッドのアンビエント サイズを取得します。</summary>
+        <value>ワークフロー デザイン サーフェイスに表示するグリッドの高さと幅を表す <see cref="T:System.Drawing.Size" /> の値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GridStyle">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Drawing2D.DashStyle GridStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Drawing2D.DashStyle GridStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.GridStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(18)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.DashStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスでのアンビエント グリッド スタイルを取得または設定します。</summary>
+        <value>グリッドの破線スタイルを表す <see cref="T:System.Drawing.Drawing2D.DashStyle" /> の値。 既定値は <see cref="F:System.Drawing.Drawing2D.DashStyle.Dash" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.AmbientTheme.Initialize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.AmbientTheme" /> によって実行されない <see cref="M:System.Workflow.ComponentModel.Design.AmbientTheme.#ctor(System.Workflow.ComponentModel.Design.WorkflowTheme)" /> クラスの追加の初期化タスクを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.AmbientTheme.UseOperatingSystemSettings%2A> が `true` を返した場合、<xref:System.Workflow.ComponentModel.Design.AmbientTheme.Initialize%2A> は <xref:System.Workflow.ComponentModel.Design.AmbientTheme> のすべてのプロパティをオペレーティング システムで定義された値に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MajorGridBrush">
+      <MemberSignature Language="C#" Value="public System.Drawing.Brush MajorGridBrush { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Brush MajorGridBrush" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.MajorGridBrush" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスでの主要グリッドのアンビエント ブラシ設定を取得します。</summary>
+        <value>ワークフロー デザイン サーフェイスの主要グリッドに関連付けられている <see cref="T:System.Drawing.Brush" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに null 参照 (Visual Basic の場合は `Nothing`) が含まれている場合は、既定では色が現在の <xref:System.Drawing.SolidBrush> プロパティ値に設定された <xref:System.Workflow.ComponentModel.Design.AmbientTheme.GridColor%2A> が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MajorGridPen">
+      <MemberSignature Language="C#" Value="public System.Drawing.Pen MajorGridPen { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Pen MajorGridPen" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.MajorGridPen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Pen</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスでの主要グリッドのアンビエント ペン設定を取得します。</summary>
+        <value>ワークフロー デザイン サーフェイスの主要グリッドに関連付けられている <see cref="T:System.Drawing.Pen" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに null 参照 (Visual Basic の場合は `Nothing`) が含まれている場合は、既定では色が現在の <xref:System.Drawing.Pen> プロパティ値、幅が 1、<xref:System.Workflow.ComponentModel.Design.AmbientTheme.GridColor%2A> が <xref:System.Drawing.Pen.DashStyle%2A> に設定された <xref:System.Drawing.Drawing2D.DashStyle.Dash> が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Margin">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Size Margin { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size Margin" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.Margin" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスでのアンビエント マージン設定を取得します。</summary>
+        <value>ワークフロー デザイン サーフェイスでのマージン設定を表す <see cref="T:System.Drawing.Size" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinorGridPen">
+      <MemberSignature Language="C#" Value="public System.Drawing.Pen MinorGridPen { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Pen MinorGridPen" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.MinorGridPen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Pen</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスでの小グリッドのアンビエント ペン設定を取得します。</summary>
+        <value>ワークフロー デザイン サーフェイスの小グリッドに関連付けられている <see cref="T:System.Drawing.Pen" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに null 参照 (Visual Basic の場合は `Nothing`) が含まれている場合は、既定では色が現在の <xref:System.Drawing.Pen> プロパティ値に基づいて計算された値、幅が 1、<xref:System.Workflow.ComponentModel.Design.AmbientTheme.GridColor%2A> が <xref:System.Drawing.Pen.DashStyle%2A> に設定された <xref:System.Drawing.Drawing2D.DashStyle?displayProperty=nameWithType> が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnAmbientPropertyChanged">
+      <MemberSignature Language="C#" Value="public override void OnAmbientPropertyChanged (System.Workflow.ComponentModel.Design.AmbientProperty ambientProperty);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void OnAmbientPropertyChanged(valuetype System.Workflow.ComponentModel.Design.AmbientProperty ambientProperty) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.AmbientTheme.OnAmbientPropertyChanged(System.Workflow.ComponentModel.Design.AmbientProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ambientProperty" Type="System.Workflow.ComponentModel.Design.AmbientProperty" />
+      </Parameters>
+      <Docs>
+        <param name="ambientProperty">設定変更後の <see cref="T:System.Workflow.ComponentModel.Design.AmbientProperty" /> 列挙値。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.AmbientTheme" /> 列挙体の値が変更されると、<see cref="T:System.Workflow.ComponentModel.Design.AmbientProperty" /> に通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.AmbientProperty> は、<xref:System.Workflow.ComponentModel.Design.DesignerTheme> クラスから継承するクラスのアンビエント テーマ プロパティのソースを指定します。  可能なソースは、オペレーティング システムとデザイナーが指定した設定の 2 つです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadonlyIndicatorBrush">
+      <MemberSignature Language="C#" Value="public System.Drawing.Brush ReadonlyIndicatorBrush { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Brush ReadonlyIndicatorBrush" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.ReadonlyIndicatorBrush" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスに表示される読み取り専用項目に関連付けられたグラフィカル形状を塗りつぶすのに使用されるアンビエント ブラシを取得します。</summary>
+        <value>ワークフロー デザイン サーフェイスの読み取り専用項目に関連付けられているブラシを表す <see cref="T:System.Drawing.Brush" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに null 参照 (Visual Basic の場合は `Nothing`) が含まれている場合は、既定では色が現在の <xref:System.Drawing.SolidBrush> プロパティ値に設定された <xref:System.Workflow.ComponentModel.Design.AmbientTheme.ReadonlyIndicatorColor%2A> オブジェクトが返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadonlyIndicatorColor">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Color ReadonlyIndicatorColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color ReadonlyIndicatorColor" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.ReadonlyIndicatorColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor(typeof(System.Workflow.ComponentModel.Design.ColorPickerEditor), typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Workflow.ComponentModel.Design.ColorPickerConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(12)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスの読み取り専用項目のアンビエント色を取得または設定します。</summary>
+        <value>ワークフロー デザイン サーフェイスの読み取り専用項目のアンビエント色を表す <see cref="T:System.Drawing.Color" /> の値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionForeColor">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Color SelectionForeColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color SelectionForeColor" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.SelectionForeColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor(typeof(System.Workflow.ComponentModel.Design.ColorPickerEditor), typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Workflow.ComponentModel.Design.ColorPickerConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(8)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイス上の選択された項目のアンビエント色を取得または設定します。</summary>
+        <value>ワークフロー デザイン サーフェイスの読み取り専用項目のアンビエント色を表す <see cref="T:System.Drawing.Color" /> の値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionForegroundBrush">
+      <MemberSignature Language="C#" Value="public System.Drawing.Brush SelectionForegroundBrush { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Brush SelectionForegroundBrush" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.SelectionForegroundBrush" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスに表示される選択された項目に関連付けられたグラフィカル形状を塗りつぶすのに使用されるアンビエント前景ブラシを取得します。</summary>
+        <value>ワークフロー デザイン サーフェイスの読み取り専用項目に関連付けられているブラシを表す <see cref="T:System.Drawing.Brush" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに null 参照 (Visual Basic の場合は `Nothing`) が含まれている場合は、既定では色が現在の <xref:System.Drawing.SolidBrush> プロパティ値に設定された <xref:System.Workflow.ComponentModel.Design.AmbientTheme.SelectionForeColor%2A> オブジェクトが返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionForegroundPen">
+      <MemberSignature Language="C#" Value="public System.Drawing.Pen SelectionForegroundPen { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Pen SelectionForegroundPen" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.SelectionForegroundPen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Pen</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイス上の選択された項目のアンビエント前景ペン設定を取得します。</summary>
+        <value>ワークフロー デザイン サーフェイス上の選択された項目の前景に関連付けられた <see cref="T:System.Drawing.Pen" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに null 参照 (Visual Basic の場合は `Nothing`) が含まれている場合は、既定では色が現在の `Pen` プロパティ値、幅が 1 に設定された <xref:System.Workflow.ComponentModel.Design.AmbientTheme.SelectionForeColor%2A> が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionPatternColor">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Color SelectionPatternColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color SelectionPatternColor" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.SelectionPatternColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor(typeof(System.Workflow.ComponentModel.Design.ColorPickerEditor), typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Workflow.ComponentModel.Design.ColorPickerConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(9)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイス上の選択項目のアンビエント パターン色を取得または設定します。</summary>
+        <value>ワークフロー デザイン サーフェイス上の選択項目のアンビエント パターン色を表す <see cref="T:System.Drawing.Color" /> の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.AmbientTheme.SelectionPatternPen%2A> を設定するときに `Nothing` が null 参照 (Visual Basic の場合は <xref:System.Workflow.ComponentModel.Design.AmbientTheme.SelectionPatternColor%2A>) でない場合は、<xref:System.Workflow.ComponentModel.Design.AmbientTheme.SelectionPatternColor%2A> は <xref:System.Workflow.ComponentModel.Design.AmbientTheme.SelectionPatternPen%2A> で使用されているリソースを破棄し、それを `null` (`Nothing`) に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionPatternPen">
+      <MemberSignature Language="C#" Value="public System.Drawing.Pen SelectionPatternPen { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Pen SelectionPatternPen" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.SelectionPatternPen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Pen</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイス上の選択された項目に関連付けられているパターンのアンビエント ペン設定を取得します。</summary>
+        <value>ワークフロー デザイン サーフェイス上の選択された項目のパターンに関連付けられた <see cref="T:System.Drawing.Pen" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに null 参照 (Visual Basic の場合は `Nothing`) が含まれている場合は、既定では色が現在の <xref:System.Drawing.Pen> プロパティ値、幅が 1、<xref:System.Workflow.ComponentModel.Design.AmbientTheme.SelectionPatternColor%2A> が <xref:System.Drawing.Pen.DashStyle%2A> に設定された <xref:System.Drawing.Drawing2D.DashStyle?displayProperty=nameWithType> が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionSize">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Size SelectionSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size SelectionSize" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.SelectionSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイス上の選択された項目のアンビエント サイズを取得します。</summary>
+        <value>ワークフロー デザイン サーフェイス上の選択された項目のアンビエント プロパティ設定を表す <see cref="T:System.Drawing.Size" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowConfigErrors">
+      <MemberSignature Language="C#" Value="public virtual bool ShowConfigErrors { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowConfigErrors" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.ShowConfigErrors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(3)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスに構成エラーが表示されるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          ワークフロー デザイン サーフェイスに構成エラーが表示される場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.AmbientTheme.ShowConfigErrors%2A> を false に設定する方法のコード例を次に示します。 ワークフロー デザイン サーフェイスに対してこれを実行すると、デザイン サーフェイスに表示される <xref:System.Workflow.ComponentModel.Design.ActivityDesigner> オブジェクトは、それぞれの関連した <xref:System.Workflow.ComponentModel.Design.DesignerAction> オブジェクトを表示しなくなることになります。  
+  
+ このコード例は、WorkflowDesignerControl.cs ファイルから抜粋した追跡プロファイル デザイナーの SDK サンプルの一部です。 詳細については、次を参照してください。[追跡プロファイル デザイナーのサンプル](http://msdn.microsoft.com/en-us/a280199c-3000-4148-ac63-cb5aaeac07c8)です。  
+  
+ [!code-csharp[WF_Samples#125](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#125)]
+ [!code-vb[WF_Samples#125](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#125)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowDesignerBorder">
+      <MemberSignature Language="C#" Value="public virtual bool ShowDesignerBorder { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowDesignerBorder" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.ShowDesignerBorder" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(24)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスにデザイナーの境界線が表示されるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          ワークフロー デザイン サーフェイスにデザイナーの境界線が表示される場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowGrid">
+      <MemberSignature Language="C#" Value="public virtual bool ShowGrid { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowGrid" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.ShowGrid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(17)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスにグリッドが表示されるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          ワークフロー デザイン サーフェイスにグリッドが表示される場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextQuality">
+      <MemberSignature Language="C#" Value="public virtual System.Workflow.ComponentModel.Design.TextQuality TextQuality { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Workflow.ComponentModel.Design.TextQuality TextQuality" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.TextQuality" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(2)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.TextQuality</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスに表示するテキスト品質を取得または設定します。</summary>
+        <value>ワークフロー デザイン サーフェイスで使用されるテキスト品質の設定を指定する <see cref="T:System.Workflow.ComponentModel.Design.TextQuality" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.AmbientTheme.TextQuality%2A> を使用することによって、ワークフロー デザイン サーフェイスおよびそのすべての子デザイナーに表示されるテキストがアンチエイリアス化されるかまたはエイリアス化されるかを判断できます。 アンチエイリアス化テキストの場合はテキスト表示品質が高くなり、エイリアス化テキストの場合は維持するために必要なリソースが少なくなります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseOperatingSystemSettings">
+      <MemberSignature Language="C#" Value="public virtual bool UseOperatingSystemSettings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseOperatingSystemSettings" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.UseOperatingSystemSettings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.AmbientTheme" /> がオペレーティング システムのテーマ設定を使用するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" /> がオペレーティング システムのテーマ設定を使用する場合は <see cref="T:System.Workflow.ComponentModel.Design.AmbientTheme" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WatermarkAlignment">
+      <MemberSignature Language="C#" Value="public virtual System.Workflow.ComponentModel.Design.DesignerContentAlignment WatermarkAlignment { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Workflow.ComponentModel.Design.DesignerContentAlignment WatermarkAlignment" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.WatermarkAlignment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(16)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.DesignerContentAlignment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスでのウォーターマーク イメージのアンビエント配置設定を取得または設定します。</summary>
+        <value>ワークフロー デザイン サーフェイスでのウォーターマーク イメージのアンビエント配置設定を指定する <see cref="T:System.Workflow.ComponentModel.Design.DesignerContentAlignment" />。 既定値は、<see cref="F:System.Workflow.ComponentModel.Design.DesignerContentAlignment.BottomRight" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WatermarkImagePath">
+      <MemberSignature Language="C#" Value="public virtual string WatermarkImagePath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string WatermarkImagePath" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.WatermarkImagePath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor(typeof(System.Workflow.ComponentModel.Design.ImageBrowserEditor), typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(15)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスにウォーターマークとして表示されるイメージのアンビエント パスを取得または設定します。</summary>
+        <value>ワークフロー デザイン サーフェイスにウォーターマークとして表示されるイメージへのアンビエント パスを格納する文字列。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イメージをワークフロー デザイン サーフェイスのウォーターマーク イメージとして関連付けるには、<xref:System.Workflow.ComponentModel.Design.AmbientTheme.WatermarkImagePath%2A> を使用します。 <xref:System.Workflow.ComponentModel.Design.AmbientTheme.WatermarkImagePath%2A> を設定するときに `null` が `Nothing` (Visual Basic の場合は <xref:System.Workflow.ComponentModel.Design.AmbientTheme.WatermarkImagePath%2A>) でない場合は、<xref:System.Workflow.ComponentModel.Design.AmbientTheme.WatermarkImagePath%2A> は <xref:System.Workflow.ComponentModel.Design.AmbientTheme.WatermarkImagePath%2A> で使用されているリソースを破棄し、その値を `null` (`Nothing`) に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkflowWatermarkImage">
+      <MemberSignature Language="C#" Value="public System.Drawing.Image WorkflowWatermarkImage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Image WorkflowWatermarkImage" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.AmbientTheme.WorkflowWatermarkImage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Image</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスにウォーターマークとして関連付けるアンビエント イメージを取得します。</summary>
+        <value>ワークフロー デザイン サーフェイスでウォーターマークとして使用する <see cref="T:System.Drawing.Image" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イメージをワークフロー デザイン サーフェイスのウォーターマーク イメージとして関連付けるには、<xref:System.Workflow.ComponentModel.Design.AmbientTheme.WatermarkImagePath%2A> を使用します。 <xref:System.Workflow.ComponentModel.Design.AmbientTheme.WatermarkImagePath%2A> を設定するときに `null` が `Nothing` (Visual Basic の場合は <xref:System.Workflow.ComponentModel.Design.AmbientTheme.WatermarkImagePath%2A>) でない場合は、<xref:System.Workflow.ComponentModel.Design.AmbientTheme.WatermarkImagePath%2A> は <xref:System.Workflow.ComponentModel.Design.AmbientTheme.WatermarkImagePath%2A> で使用されているリソースを破棄し、その値を `null` (`Nothing`) に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

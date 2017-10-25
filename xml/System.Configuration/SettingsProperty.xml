@@ -1,0 +1,357 @@
+<Type Name="SettingsProperty" FullName="System.Configuration.SettingsProperty">
+  <TypeSignature Language="C#" Value="public class SettingsProperty" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SettingsProperty extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.SettingsProperty" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>個々 の構成プロパティに関するメタデータを表すクラスとして内部的に使用します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.SettingsProperty>派生したクラスの設定のプロパティの記述に使用される<xref:System.Configuration.SettingsBase>です。 設定 API は、共通言語ランタイム クラスにグループ化する設定のプロパティのコレクションを使用します。  
+  
+ 設定、永続化時に、<xref:System.Configuration.SettingsBase>基底クラスのコレクションの生成を求めます。<xref:System.Configuration.SettingsProperty>型のコレクションにグループ化されたオブジェクト<xref:System.Configuration.SettingsPropertyCollection>です。 これは、独自のプロパティのメンバーを呼び出すことによって実行します。 継承されたクラスには、永続化するプロパティのコレクションを返す必要があります。  
+  
+ 各<xref:System.Configuration.SettingsProperty>オブジェクトには、次を含む、プロパティに関するメタデータが含まれています。  
+  
+-   名前。  
+  
+-   既定値です。  
+  
+-   プロパティの型。  
+  
+-   シリアル化メソッドです。  
+  
+-   永続化に使用するプロバイダーです。  
+  
+-   その他の任意の属性は、コンテキストおよびプロバイダー固有です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SettingsProperty (System.Configuration.SettingsProperty propertyToCopy);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Configuration.SettingsProperty propertyToCopy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.SettingsProperty.#ctor(System.Configuration.SettingsProperty)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="propertyToCopy" Type="System.Configuration.SettingsProperty" />
+      </Parameters>
+      <Docs>
+        <param name="propertyToCopy">既存のコピーを指定<see cref="T:System.Configuration.SettingsProperty" />オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Configuration.SettingsProperty" />クラス、指定されたパラメーターに基づいて。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SettingsProperty (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.SettingsProperty.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">既存の名前を指定<see cref="T:System.Configuration.SettingsProperty" />オブジェクト。</param>
+        <summary><see cref="T:System.Configuration.SettingsProperty" /> クラスの新しいインスタンスを初期化します。 指定したパラメーターに基づいています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SettingsProperty (string name, Type propertyType, System.Configuration.SettingsProvider provider, bool isReadOnly, object defaultValue, System.Configuration.SettingsSerializeAs serializeAs, System.Configuration.SettingsAttributeDictionary attributes, bool throwOnErrorDeserializing, bool throwOnErrorSerializing);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, class System.Type propertyType, class System.Configuration.SettingsProvider provider, bool isReadOnly, object defaultValue, valuetype System.Configuration.SettingsSerializeAs serializeAs, class System.Configuration.SettingsAttributeDictionary attributes, bool throwOnErrorDeserializing, bool throwOnErrorSerializing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.SettingsProperty.#ctor(System.String,System.Type,System.Configuration.SettingsProvider,System.Boolean,System.Object,System.Configuration.SettingsSerializeAs,System.Configuration.SettingsAttributeDictionary,System.Boolean,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="propertyType" Type="System.Type" />
+        <Parameter Name="provider" Type="System.Configuration.SettingsProvider" />
+        <Parameter Name="isReadOnly" Type="System.Boolean" />
+        <Parameter Name="defaultValue" Type="System.Object" />
+        <Parameter Name="serializeAs" Type="System.Configuration.SettingsSerializeAs" />
+        <Parameter Name="attributes" Type="System.Configuration.SettingsAttributeDictionary" />
+        <Parameter Name="throwOnErrorDeserializing" Type="System.Boolean" />
+        <Parameter Name="throwOnErrorSerializing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name"><see cref="T:System.Configuration.SettingsProperty" /> オブジェクトの名前。</param>
+        <param name="propertyType">型<see cref="T:System.Configuration.SettingsProperty" />オブジェクト。</param>
+        <param name="provider">A<see cref="T:System.Configuration.SettingsProvider" />永続化に使用するオブジェクト。</param>
+        <param name="isReadOnly">A<see cref="T:System.Boolean" />値を指定するかどうか、<see cref="T:System.Configuration.SettingsProperty" />オブジェクトは読み取り専用です。</param>
+        <param name="defaultValue">既定値、<see cref="T:System.Configuration.SettingsProperty" />オブジェクト。</param>
+        <param name="serializeAs"><see cref="T:System.Configuration.SettingsSerializeAs" /> オブジェクト。 このオブジェクトは、アプリケーションの設定を格納するためのシリアル化方式を設定するための列挙です。</param>
+        <param name="attributes"><see cref="T:System.Configuration.SettingsAttributeDictionary" /> オブジェクト。</param>
+        <param name="throwOnErrorDeserializing">プロパティが正しく逆シリアル化されたときにエラーがスローするかどうかを指定するブール値。</param>
+        <param name="throwOnErrorSerializing">プロパティが正常にシリアル化時にエラーがスローするかどうかを指定するブール値。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Configuration.SettingsProperty" />クラスが、指定されたパラメーターに基づいています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Attributes">
+      <MemberSignature Language="C#" Value="public virtual System.Configuration.SettingsAttributeDictionary Attributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.SettingsAttributeDictionary Attributes" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SettingsProperty.Attributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.SettingsAttributeDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Configuration.SettingsAttributeDictionary" />オブジェクトの属性を含む、<see cref="T:System.Configuration.SettingsProperty" />オブジェクト。</summary>
+        <value><see cref="T:System.Configuration.SettingsAttributeDictionary" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 記述に使用される属性のコレクションを返します、<xref:System.Configuration.SettingsProperty>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultValue">
+      <MemberSignature Language="C#" Value="public virtual object DefaultValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DefaultValue" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SettingsProperty.DefaultValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の既定値、<see cref="T:System.Configuration.SettingsProperty" />オブジェクト。</summary>
+        <value>既定値を格納するオブジェクト、<see cref="T:System.Configuration.SettingsProperty" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public virtual bool IsReadOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SettingsProperty.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を指定する値かどうか、<see cref="T:System.Configuration.SettingsProperty" />オブジェクトは読み取り専用です。</summary>
+        <value>
+          <see cref="T:System.Configuration.SettingsProperty" /> が読み取り専用である場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は、`false` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public virtual string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SettingsProperty.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Configuration.SettingsProperty" /> の名前を取得または設定します。</summary>
+        <value><see cref="T:System.Configuration.SettingsProperty" /> の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.SettingsProperty.Name%2A> 、空の文字列にすることはできませんまたは`null`です。 場合、<xref:System.Configuration.SettingsProperty>存在しないデータ プロバイダーで何も返すことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyType">
+      <MemberSignature Language="C#" Value="public virtual Type PropertyType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type PropertyType" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SettingsProperty.PropertyType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の種類、<see cref="T:System.Configuration.SettingsProperty" />です。</summary>
+        <value><see cref="T:System.Configuration.SettingsProperty" /> の型。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Provider">
+      <MemberSignature Language="C#" Value="public virtual System.Configuration.SettingsProvider Provider { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.SettingsProvider Provider" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SettingsProperty.Provider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.SettingsProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロバイダーを取得または設定、<see cref="T:System.Configuration.SettingsProperty" />です。</summary>
+        <value><see cref="T:System.Configuration.SettingsProvider" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SerializeAs">
+      <MemberSignature Language="C#" Value="public virtual System.Configuration.SettingsSerializeAs SerializeAs { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Configuration.SettingsSerializeAs SerializeAs" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SettingsProperty.SerializeAs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.SettingsSerializeAs</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Configuration.SettingsSerializeAs" />オブジェクトに対して、<see cref="T:System.Configuration.SettingsProperty" />です。</summary>
+        <value><see cref="T:System.Configuration.SettingsSerializeAs" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.SettingsSerializeAs>オブジェクトは、アプリケーション設定を保存するシリアル化プロトコルとして使用する列挙体です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThrowOnErrorDeserializing">
+      <MemberSignature Language="C#" Value="public bool ThrowOnErrorDeserializing { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ThrowOnErrorDeserializing" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SettingsProperty.ThrowOnErrorDeserializing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロパティが正しく逆シリアル化されたときにエラーがスローするかどうかを指定する値を設定します。</summary>
+        <value>
+          <see langword="true" />プロパティが正しく逆シリアル化時にエラーがスローされる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThrowOnErrorSerializing">
+      <MemberSignature Language="C#" Value="public bool ThrowOnErrorSerializing { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ThrowOnErrorSerializing" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SettingsProperty.ThrowOnErrorSerializing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロパティが正常にシリアル化時にエラーがスローするかどうかを指定する値を設定します。</summary>
+        <value>
+          <see langword="true" />プロパティをシリアル化が失敗したときにエラーがスローされる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

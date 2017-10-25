@@ -1,0 +1,420 @@
+<Type Name="HttpHandlerActionCollection" FullName="System.Web.Configuration.HttpHandlerActionCollection">
+  <TypeSignature Language="C#" Value="public sealed class HttpHandlerActionCollection : System.Configuration.ConfigurationElementCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed HttpHandlerActionCollection extends System.Configuration.ConfigurationElementCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.HttpHandlerActionCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElementCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Configuration.ConfigurationCollection(typeof(System.Web.Configuration.HttpHandlerAction), CollectionType=System.Configuration.ConfigurationElementCollectionType.AddRemoveClearMapAlternate)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Web.Configuration.HttpHandlerAction" /> 要素のコレクションを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpHandlerActionCollection>コレクション型へのアクセスを許可する、<xref:System.Web.Configuration.HttpHandlerAction>構成の構成セクションの要素。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.HttpHandlerActionCollection>に含まれる情報にアクセスするコレクション、`httpHandlers`構成ファイルのセクションです。  
+  
+ [!code-csharp[System.Web.Configuration.HttpHandlers#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HttpHandlers/CS/httphandlers.cs#2)]
+ [!code-vb[System.Web.Configuration.HttpHandlers#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HttpHandlers/VB/httphandlers.vb#2)]  
+  
+ 次の構成の抜粋は、宣言によっての値を指定する方法を示します、`httpHandlers`セクションです。  
+  
+```  
+<httpHandlers>  
+  <add path="Calculator.custom"  
+    type="Samples.AspNet.SystemWebConfiguration.Calculator, CalculatorHandler"  
+    verb="GET" validate="false" />  
+</httpHandlers>   
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpHandlerActionCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpHandlerActionCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.HttpHandlerActionCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpHandlerActionCollection.%23ctor%2A>コンス トラクターは、コードから直接使用するものではありません。 ASP.NET 構成システムによって呼び出されます。 インスタンスを取得する、<xref:System.Web.Configuration.HttpHandlerActionCollection>クラスを使用して、<xref:System.Web.Configuration.HttpHandlersSection.Handlers%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Web.Configuration.HttpHandlerAction httpHandlerAction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Web.Configuration.HttpHandlerAction httpHandlerAction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpHandlerActionCollection.Add(System.Web.Configuration.HttpHandlerAction)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="httpHandlerAction" Type="System.Web.Configuration.HttpHandlerAction" />
+      </Parameters>
+      <Docs>
+        <param name="httpHandlerAction">コレクションに追加する <see cref="T:System.Web.Configuration.HttpHandlerAction" /> オブジェクト。</param>
+        <summary>コレクションに <see cref="T:System.Web.Configuration.HttpHandlerAction" /> オブジェクトを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用する前に作成する必要があります、<xref:System.Web.Configuration.HttpHandlerAction>オブジェクトを型と適切な名前で初期化します。 その後、作成したコレクションにオブジェクトを追加できます。  
+  
+> [!NOTE]
+>  ASP.NET 検索ハンドラー アセンブリ DLL をアプリケーションのプライベート Bin ディレクトリ最初に、し、システム アセンブリ キャッシュ内を検索し。  
+  
+ コレクションが既に含める必要がありますいない、<xref:System.Web.Configuration.HttpHandlerAction>が同じオブジェクト<xref:System.Web.Configuration.HttpHandlerAction.Verb%2A>と<xref:System.Web.Configuration.HttpHandlerAction.Path%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Web.Configuration.HttpHandlerAction>オブジェクトをコレクションに追加します。  
+  
+ [!code-csharp[System.Web.Configuration.HttpHandlers#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HttpHandlers/CS/httphandlers.cs#3)]
+ [!code-vb[System.Web.Configuration.HttpHandlers#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HttpHandlers/VB/httphandlers.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationException"><see cref="T:System.Web.Configuration.HttpHandlerAction" />コレクションに既に追加するオブジェクトが存在するか、コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpHandlerActionCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションからすべての <see cref="T:System.Web.Configuration.HttpHandlerAction" /> オブジェクトを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは挿入、`clear`ディレクティブを適切なファイルのセクションに、構成、上位の構成ファイルで定義されている要素へのすべての参照をクリアします。 現在の構成ファイルの適切なセクションで定義されたすべての要素が削除されます。  
+  
+   
+  
+## Examples  
+ 次のコード例をクリアする方法を示しています、<xref:System.Web.Configuration.HttpHandlerAction>コレクションに含まれるオブジェクト。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HttpHandlerActionCollection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HttpHandlers#12](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HttpHandlers/CS/httphandlers.cs#12)]
+ [!code-vb[System.Web.Configuration.HttpHandlers#12](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HttpHandlers/VB/httphandlers.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CollectionType">
+      <MemberSignature Language="C#" Value="public override System.Configuration.ConfigurationElementCollectionType CollectionType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Configuration.ConfigurationElementCollectionType CollectionType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpHandlerActionCollection.CollectionType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationElementCollectionType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型を取得<see cref="T:System.Web.Configuration.HttpHandlerActionCollection" />です。</summary>
+        <value><see cref="T:System.Configuration.ConfigurationElementCollectionType" />このコレクションのです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateNewElement">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationElement CreateNewElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Configuration.ConfigurationElement CreateNewElement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpHandlerActionCollection.CreateNewElement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetElementKey">
+      <MemberSignature Language="C#" Value="protected override object GetElementKey (System.Configuration.ConfigurationElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object GetElementKey(class System.Configuration.ConfigurationElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpHandlerActionCollection.GetElementKey(System.Configuration.ConfigurationElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Configuration.ConfigurationElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Web.Configuration.HttpHandlerAction action);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Web.Configuration.HttpHandlerAction action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpHandlerActionCollection.IndexOf(System.Web.Configuration.HttpHandlerAction)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.Web.Configuration.HttpHandlerAction" />
+      </Parameters>
+      <Docs>
+        <param name="action"><see cref="T:System.Web.Configuration.HttpHandlerAction" />コレクションのインデックスを取得する対象のオブジェクト。</param>
+        <summary>指定したコレクションのインデックスを取得<see cref="T:System.Web.Configuration.HttpHandlerAction" />オブジェクト。</summary>
+        <returns>コレクションのインデックス値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用する前に指定する必要があります、<xref:System.Web.Configuration.HttpHandlerAction>適切な名前と型を持つオブジェクト。 このオブジェクトを使用して、そのコレクションのインデックスを取得することができますし、します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Web.Configuration.HttpHandlerAction>オブジェクト コレクションのインデックス。  
+  
+ [!code-csharp[System.Web.Configuration.HttpHandlers#9](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HttpHandlers/CS/httphandlers.cs#9)]
+ [!code-vb[System.Web.Configuration.HttpHandlers#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HttpHandlers/VB/httphandlers.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.HttpHandlerAction this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.HttpHandlerAction Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpHandlerActionCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.HttpHandlerAction</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">項目のインデックス。</param>
+        <summary>取得または、このコレクション内の項目を設定します。</summary>
+        <value>選択されている <see cref="T:System.Web.Configuration.HttpHandlerAction" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内部使用のみ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpHandlerActionCollection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Web.Configuration.HttpHandlerAction action);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Web.Configuration.HttpHandlerAction action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpHandlerActionCollection.Remove(System.Web.Configuration.HttpHandlerAction)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.Web.Configuration.HttpHandlerAction" />
+      </Parameters>
+      <Docs>
+        <param name="action">削除する <see cref="T:System.Web.Configuration.HttpHandlerAction" /> オブジェクト。</param>
+        <summary>削除、<see cref="T:System.Web.Configuration.HttpHandlerAction" />オブジェクトをコレクションからです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは挿入、`remove`要素を上位の構成ファイルで定義されているいずれかの要素の構成ファイルの該当セクションにします。 要素が現在の構成ファイルの該当セクションに定義されている場合、対応するエントリは、構成ファイルから削除します。 削除するオブジェクトは、コレクションに存在する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、削除する方法を示します、<xref:System.Web.Configuration.HttpHandlerAction>オブジェクトをコレクションからです。  
+  
+ [!code-csharp[System.Web.Configuration.HttpHandlers#10](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HttpHandlers/CS/httphandlers.cs#10)]
+ [!code-vb[System.Web.Configuration.HttpHandlers#10](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HttpHandlers/VB/httphandlers.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationException">渡された<see cref="T:System.Web.Configuration.HttpHandlerAction" />オブジェクトがコレクションに存在しません、要素は既に削除されて、またはコレクションが読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (string verb, string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(string verb, string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpHandlerActionCollection.Remove(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="verb" Type="System.String" />
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="verb"><see cref="P:System.Web.Configuration.HttpHandlerAction.Verb" />プロパティの値を削除するハンドラーが属しています。</param>
+        <param name="path"><see cref="P:System.Web.Configuration.HttpHandlerAction.Path" />プロパティの値を削除するハンドラーが属しています。</param>
+        <summary>削除、<see cref="T:System.Web.Configuration.HttpHandlerAction" />指定したオブジェクト<see cref="P:System.Web.Configuration.HttpHandlerAction.Verb" />と<see cref="P:System.Web.Configuration.HttpHandlerAction.Path" />コレクションからのプロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは挿入、`remove`要素を上位の構成ファイルで定義されているいずれかの要素の構成ファイルの該当セクションにします。 要素が現在の構成ファイルの該当セクションに定義されている場合、対応するエントリは、構成ファイルから削除します。 削除するオブジェクトは、コレクションに存在する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、削除する方法を示します、<xref:System.Web.Configuration.HttpHandlerAction>オブジェクトをコレクションからです。  
+  
+ [!code-csharp[System.Web.Configuration.HttpHandlers#13](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HttpHandlers/CS/httphandlers.cs#13)]
+ [!code-vb[System.Web.Configuration.HttpHandlers#13](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HttpHandlers/VB/httphandlers.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationException">ない<see cref="T:System.Web.Configuration.HttpHandlerAction" />オブジェクト、コレクション内の指定されたキーに、要素は既に削除されて、コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpHandlerActionCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除するオブジェクトのコレクションのインデックス。</param>
+        <summary>削除、<see cref="T:System.Web.Configuration.HttpHandlerAction" />コレクションから指定したインデックス位置にあるオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは挿入、`remove`要素を上位の構成ファイルで定義されているいずれかの要素の構成ファイルの該当セクションにします。 要素が現在の構成ファイルの該当セクションに定義されている場合、対応するエントリは、構成ファイルから削除します。 削除するオブジェクトは、コレクションに存在する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、削除する方法を示します、<xref:System.Web.Configuration.HttpHandlerAction>オブジェクトをコレクションからです。  
+  
+ [!code-csharp[System.Web.Configuration.HttpHandlers#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HttpHandlers/CS/httphandlers.cs#11)]
+ [!code-vb[System.Web.Configuration.HttpHandlers#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HttpHandlers/VB/httphandlers.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationException">ない<see cref="T:System.Web.Configuration.HttpHandlerAction" />オブジェクト、コレクション内の指定したインデックス位置の要素は既に削除されて、またはコレクションが読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ThrowOnDuplicate">
+      <MemberSignature Language="C#" Value="protected override bool ThrowOnDuplicate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ThrowOnDuplicate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpHandlerActionCollection.ThrowOnDuplicate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

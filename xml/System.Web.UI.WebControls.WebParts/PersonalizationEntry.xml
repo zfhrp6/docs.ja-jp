@@ -1,0 +1,164 @@
+<Type Name="PersonalizationEntry" FullName="System.Web.UI.WebControls.WebParts.PersonalizationEntry">
+  <TypeSignature Language="C#" Value="public sealed class PersonalizationEntry" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PersonalizationEntry extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.PersonalizationEntry" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>表すコアのカスタムのパーソナル化状態の情報に含まれている、<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationDictionary" />オブジェクト。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスに含まれているカスタム状態情報を表します、<xref:System.Web.UI.WebControls.WebParts.PersonalizationDictionary>で使用できるオブジェクト、<xref:System.Web.UI.WebControls.WebParts.IPersonalizable>インターフェイスです。 この情報は、その他のクラスとインターフェイス、パーソナル化インフラストラクチャで使用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PersonalizationEntry (object value, System.Web.UI.WebControls.WebParts.PersonalizationScope scope);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object value, valuetype System.Web.UI.WebControls.WebParts.PersonalizationScope scope) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationEntry.#ctor(System.Object,System.Web.UI.WebControls.WebParts.PersonalizationScope)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="scope" Type="System.Web.UI.WebControls.WebParts.PersonalizationScope" />
+      </Parameters>
+      <Docs>
+        <param name="value">パーソナル化データでは、パーソナル化スコープに関連付けられているオブジェクト、<c>スコープ</c>パラメーター。</param>
+        <param name="scope"><see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" />カスタム パーソナル化情報を適用します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationEntry" />クラスの指定した値とスコープを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタム状態情報が含まれていることに注意してください、`value`パラメーターには、関連するスコープで指定されている必要があります、`scope`パラメーター。 内のエントリ、<xref:System.Web.UI.WebControls.WebParts.PersonalizationDictionary>かどうかカスタム データの一部と見なされますでパーソナライズできるを明示的に示す必要があります<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User>または<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>スコープ。  
+  
+ このコンス トラクターの値で、<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.IsSensitive%2A>プロパティの既定値`false`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="scope" />有効なメンバーではない値に設定されている<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PersonalizationEntry (object value, System.Web.UI.WebControls.WebParts.PersonalizationScope scope, bool isSensitive);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object value, valuetype System.Web.UI.WebControls.WebParts.PersonalizationScope scope, bool isSensitive) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationEntry.#ctor(System.Object,System.Web.UI.WebControls.WebParts.PersonalizationScope,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="scope" Type="System.Web.UI.WebControls.WebParts.PersonalizationScope" />
+        <Parameter Name="isSensitive" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="value">パーソナル化データでは、パーソナル化スコープに関連付けられているオブジェクト、<c>スコープ</c>パラメーター。</param>
+        <param name="scope"><see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" />カスタム パーソナル化情報を適用します。</param>
+        <param name="isSensitive">カスタム状態情報は機密性の高いであり、エクスポートしないでかどうかことを示すブール値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationEntry" />クラスに指定されたパラメーターを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターでは、作成することができます、 <xref:System.Web.UI.WebControls.WebParts.PersonalizationEntry> Web パーツのエクスポート先の形式でシリアル化する必要がありますいないデータが含まれます。 値を設定した場合`isSensitive`に`true`、Web パーツのエクスポート ハンドラーはエクスポートのデータをシリアル化できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSensitive">
+      <MemberSignature Language="C#" Value="public bool IsSensitive { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSensitive" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.PersonalizationEntry.IsSensitive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得かどうかを示すブール値を設定、<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationEntry" />機密情報が含まれています。</summary>
+        <value>
+          <see langword="true" />属性の機密設定が設定されている場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web パーツのパーソナル化情報は、他のコントロールにエクスポートしないでいる機微なデータを含めることができます。 このプロパティは使用して Web パーツのインポートし、エクスポート プロセスです。 設定<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.IsSensitive%2A>に`true`により、Web パーツのエクスポートにハンドラー Web パーツのエクスポート先の形式でデータをシリアル化できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scope">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.PersonalizationScope Scope { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.WebParts.PersonalizationScope Scope" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.PersonalizationEntry.Scope" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PersonalizationScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのパーソナル化データ エントリに関連付けられたパーソナル化スコープを設定します。</summary>
+        <value>このパーソナル化データ エントリに関連付けられたパーソナル化スコープです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの効果を使用して、パブリック プロパティに関連付けられたスコープを指定することに似ています、<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute>クラスです。 このプロパティを使用するには、パーソナル化情報を構成するのパーソナル化スコープを設定する、<xref:System.Web.UI.WebControls.WebParts.PersonalizationEntry>インスタンス。 すべてのエントリには、関連付けられているスコープが必要です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="scope" />有効なメンバーではない値に設定されている<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public object Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Value" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.PersonalizationEntry.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、このエントリのパーソナル化状態情報を設定します。</summary>
+        <value>パーソナル化状態情報を表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに含まれるカスタム状態情報が必要なことで指定された、関連するスコープに注意してください、<xref:System.Web.UI.WebControls.WebParts.PersonalizationEntry.Scope%2A>プロパティです。 このプロパティに設定することができます`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

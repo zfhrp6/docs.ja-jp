@@ -1,0 +1,485 @@
+<Type Name="WindowPattern" FullName="System.Windows.Automation.WindowPattern">
+  <TypeSignature Language="C#" Value="public class WindowPattern : System.Windows.Automation.BasePattern" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WindowPattern extends System.Windows.Automation.BasePattern" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.WindowPattern" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Automation.BasePattern</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>従来のグラフィカル ユーザー インターフェイス (GUI) 内で、ウィンドウ ベースの基本的な機能を提供するコントロールを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコントロール パターンをサポートするコントロールの例として、最上位のアプリケーション ウィンドウ、[!INCLUDE[TLA#tla_mdi](~/includes/tlasharptla-mdi-md.md)]子ウィンドウ、モーダル ダイアログ ボックス、バルーン ヘルプ ウィンドウです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Cached">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.WindowPattern.WindowPatternInformation Cached { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Automation.WindowPattern/WindowPatternInformation Cached" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.WindowPattern.Cached" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.WindowPattern+WindowPatternInformation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Automation.WindowPattern" /> のキャッシュされた [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)] プロパティ値を取得します。</summary>
+        <value>コントロール パターンのキャッシュされた [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)] プロパティ値を格納する構造体。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キャッシュされたプロパティ値必要がありますが要求されていない以前を使用して、<xref:System.Windows.Automation.CacheRequest>です。 使用して<xref:System.Windows.Automation.WindowPattern.Current%2A>プロパティの現在の値を取得します。  
+  
+ 使用可能なプロパティおよびその使用方法については、次を参照してください。<xref:System.Windows.Automation.WindowPattern.WindowPatternInformation>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">要求されたプロパティがキャッシュ内にありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanMaximizeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationProperty CanMaximizeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationProperty CanMaximizeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.WindowPattern.CanMaximizeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Automation.WindowPattern.WindowPatternInformation.CanMaximize" /> プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.WindowPatternIdentifiers>です。  
+  
+   
+  
+## Examples  
+ 次の例では、ルート要素は、ルートの子孫であり、一連のプロパティの条件を満たすオートメーション要素のコレクションを返す関数に渡されます。  
+  
+ [!code-csharp[UIAWindowPattern_snip#100](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAWindowPattern_snip/CSharp/UIAWindowPattern_snippets.cs#100)]
+ [!code-vb[UIAWindowPattern_snip#100](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAWindowPattern_snip/VisualBasic/UIAWindowPattern_snippets.vb#100)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanMinimizeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationProperty CanMinimizeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationProperty CanMinimizeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.WindowPattern.CanMinimizeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Automation.WindowPattern.WindowPatternInformation.CanMinimize" /> プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.WindowPatternIdentifiers>です。  
+  
+   
+  
+## Examples  
+ 次の例では、ルート要素は、ルートの子孫であり、一連のプロパティの条件を満たすオートメーション要素のコレクションを返す関数に渡されます。  
+  
+ [!code-csharp[UIAWindowPattern_snip#100](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAWindowPattern_snip/CSharp/UIAWindowPattern_snippets.cs#100)]
+ [!code-vb[UIAWindowPattern_snip#100](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAWindowPattern_snip/VisualBasic/UIAWindowPattern_snippets.vb#100)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.WindowPattern.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のウィンドウを閉じることを試みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 分割ウィンドウ コントロールで呼び出されると、このメソッドは、ウィンドウを閉じるし、関連付けられている分割の削除します。 このメソッドは、実装に応じてその他のすべてのウィンドウを閉じることがあります。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.WindowPattern>からコントロール パターンを取得、<xref:System.Windows.Automation.AutomationElement>を閉じるには、使用し、<xref:System.Windows.Automation.AutomationElement>です。  
+  
+ [!code-csharp[UIAWindowPattern_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAWindowPattern_snip/CSharp/UIAWindowPattern_snippets.cs#101)]
+ [!code-vb[UIAWindowPattern_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAWindowPattern_snip/VisualBasic/UIAWindowPattern_snippets.vb#101)]  
+[!code-csharp[UIAWindowPattern_snip#102](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAWindowPattern_snip/CSharp/UIAWindowPattern_snippets.cs#102)]
+[!code-vb[UIAWindowPattern_snip#102](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAWindowPattern_snip/VisualBasic/UIAWindowPattern_snippets.vb#102)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">コントロールは、要求されたアクションを実行できません。</exception>
+        <exception cref="T:System.Windows.Automation.ElementNotAvailableException">コントロールを使用できなくなった場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.WindowPattern.WindowPatternInformation Current { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Automation.WindowPattern/WindowPatternInformation Current" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.WindowPattern.Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.WindowPattern+WindowPatternInformation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Automation.WindowPattern" /> の現在の [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)] プロパティ値を取得します。</summary>
+        <value>コントロール パターンの現在の [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)] プロパティ値を格納する構造体。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このパターンがあります、<xref:System.Windows.Automation.AutomationElement>で、<xref:System.Windows.Automation.AutomationElementMode.Full>の現在の値を取得するために参照します。 場合、<xref:System.Windows.Automation.AutomationElement>を使用して取得された<xref:System.Windows.Automation.AutomationElementMode.None>キャッシュされたデータのみが含まれている、および任意のプロパティの現在の値を取得しようとして例外を発生させます。 使用して<xref:System.Windows.Automation.WindowPattern.Cached%2A>を使用してあらかじめ指定されているプロパティのキャッシュされた値を取得する、<xref:System.Windows.Automation.CacheRequest>です。  
+  
+ 使用可能なプロパティおよびその使用方法については、次を参照してください。<xref:System.Windows.Automation.WindowPattern.WindowPatternInformation>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsModalProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationProperty IsModalProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationProperty IsModalProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.WindowPattern.IsModalProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Automation.WindowPattern.WindowPatternInformation.IsModal" /> プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.WindowPatternIdentifiers>です。  
+  
+   
+  
+## Examples  
+ 次の例では、ルート要素は、ルートの子孫であり、一連のプロパティの条件を満たすオートメーション要素のコレクションを返す関数に渡されます。  
+  
+ [!code-csharp[UIAWindowPattern_snip#100](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAWindowPattern_snip/CSharp/UIAWindowPattern_snippets.cs#100)]
+ [!code-vb[UIAWindowPattern_snip#100](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAWindowPattern_snip/VisualBasic/UIAWindowPattern_snippets.vb#100)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTopmostProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationProperty IsTopmostProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationProperty IsTopmostProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.WindowPattern.IsTopmostProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Automation.WindowPattern.WindowPatternInformation.IsTopmost" /> プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.WindowPatternIdentifiers>です。  
+  
+   
+  
+## Examples  
+ 次の例では、ルート要素は、ルートの子孫であり、一連のプロパティの条件を満たすオートメーション要素のコレクションを返す関数に渡されます。  
+  
+ [!code-csharp[UIAWindowPattern_snip#100](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAWindowPattern_snip/CSharp/UIAWindowPattern_snippets.cs#100)]
+ [!code-vb[UIAWindowPattern_snip#100](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAWindowPattern_snip/VisualBasic/UIAWindowPattern_snippets.vb#100)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pattern">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationPattern Pattern;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationPattern Pattern" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.WindowPattern.Pattern" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationPattern</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Automation.WindowPattern" /> コントロール パターンを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.WindowPatternIdentifiers>です。  
+  
+ パターン識別子がなどのメソッドに渡された<xref:System.Windows.Automation.AutomationElement.GetCurrentPattern%2A>から、指定した目的のコントロール パターンを取得する<xref:System.Windows.Automation.AutomationElement>です。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.WindowPattern>からコントロール パターンを取得、<xref:System.Windows.Automation.AutomationElement>です。  
+  
+ [!code-csharp[UIAWindowPattern_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAWindowPattern_snip/CSharp/UIAWindowPattern_snippets.cs#101)]
+ [!code-vb[UIAWindowPattern_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAWindowPattern_snip/VisualBasic/UIAWindowPattern_snippets.vb#101)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetWindowVisualState">
+      <MemberSignature Language="C#" Value="public void SetWindowVisualState (System.Windows.Automation.WindowVisualState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetWindowVisualState(valuetype System.Windows.Automation.WindowVisualState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.WindowPattern.SetWindowVisualState(System.Windows.Automation.WindowVisualState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="state" Type="System.Windows.Automation.WindowVisualState" />
+      </Parameters>
+      <Docs>
+        <param name="state">要求された<see cref="T:System.Windows.Automation.WindowVisualState" />ウィンドウのです。</param>
+        <summary>変更、<see cref="T:System.Windows.Automation.WindowVisualState" />ウィンドウのです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.WindowPattern>からコントロール パターンを取得、<xref:System.Windows.Automation.AutomationElement>の表示状態を指定するために使用が、その後、<xref:System.Windows.Automation.AutomationElement>です。  
+  
+ [!code-csharp[UIAWindowPattern_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAWindowPattern_snip/CSharp/UIAWindowPattern_snippets.cs#101)]
+ [!code-vb[UIAWindowPattern_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAWindowPattern_snip/VisualBasic/UIAWindowPattern_snippets.vb#101)]  
+[!code-csharp[UIAWindowPattern_snip#103](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAWindowPattern_snip/CSharp/UIAWindowPattern_snippets.cs#103)]
+[!code-vb[UIAWindowPattern_snip#103](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAWindowPattern_snip/VisualBasic/UIAWindowPattern_snippets.vb#103)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">要求された動作をコントロールがサポートしない場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WaitForInputIdle">
+      <MemberSignature Language="C#" Value="public bool WaitForInputIdle (int milliseconds);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool WaitForInputIdle(int32 milliseconds) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.WindowPattern.WaitForInputIdle(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="milliseconds" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="milliseconds">関連付けられたプロセスがアイドル状態になるまで待機する時間。単位はミリ秒です。 最大値は<see cref="F:System.Int32.MaxValue" />します。</param>
+        <summary>呼び出し元のコードは、指定された時間、または関連付けられたプロセスがアイドル状態に入るまでブロックされます。どちらが最初に完了するかは関係ありません。</summary>
+        <returns>
+          <see langword="true" />ウィンドウがアイドル状態に入った場合<see langword="false" />場合は、タイムアウトが発生しました。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは通常の処理と組み合わせて使用する<xref:System.Windows.Automation.WindowPatternIdentifiers.WindowOpenedEvent>です。  
+  
+ 実装は基になるアプリケーション フレームワークに依存します。そのためこのメソッドは、ウィンドウがユーザー入力の準備が整ってからしばらくの間を返す可能性があります。 このメソッドから、ウィンドウがアイドル状態になった場合に正確に確認するためには、呼び出し元のコードは保証はありません。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.WindowPattern>からコントロール パターンを取得、<xref:System.Windows.Automation.AutomationElement>を使用して<xref:System.Windows.Automation.WindowPattern.WaitForInputIdle%2A>要素が一定の時間内でユーザーとの対話の準備が整ってことを確認します。  
+  
+ [!code-csharp[UIAWindowPattern_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAWindowPattern_snip/CSharp/UIAWindowPattern_snippets.cs#101)]
+ [!code-vb[UIAWindowPattern_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAWindowPattern_snip/VisualBasic/UIAWindowPattern_snippets.vb#101)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">渡されたパラメーターは有効な数ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WindowClosedEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationEvent WindowClosedEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationEvent WindowClosedEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.WindowPattern.WindowClosedEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウを閉じたときに発生するイベントを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアント アプリケーションがリッスンする必要があります<xref:System.Windows.Automation.WindowPattern.WindowClosedEvent>からキャッシュされたオブジェクトから、ウィンドウが削除されるので、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]閉じられるとすぐにデータ構造の表示を制御します。  
+  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.WindowPatternIdentifiers>です。  
+  
+   
+  
+## Examples  
+ 次の例では、イベント リスナーを宣言して、<xref:System.Windows.Automation.AutomationEventHandler>デリゲートが指定されて<xref:System.Windows.Automation.WindowPattern.WindowOpenedEvent>と<xref:System.Windows.Automation.WindowPattern.WindowClosedEvent>イベント。  
+  
+ [!code-csharp[UIAWindowPattern_snip#104](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAWindowPattern_snip/CSharp/UIAWindowPattern_snippets.cs#104)]
+ [!code-vb[UIAWindowPattern_snip#104](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAWindowPattern_snip/VisualBasic/UIAWindowPattern_snippets.vb#104)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WindowInteractionStateProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationProperty WindowInteractionStateProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationProperty WindowInteractionStateProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.WindowPattern.WindowInteractionStateProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Automation.WindowPattern.WindowPatternInformation.WindowInteractionState" /> プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.WindowPatternIdentifiers>です。  
+  
+   
+  
+## Examples  
+ 次の例では、ルート要素は、ルートの子孫であり、一連のプロパティの条件を満たすオートメーション要素のコレクションを返す関数に渡されます。  
+  
+ [!code-csharp[UIAWindowPattern_snip#100](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAWindowPattern_snip/CSharp/UIAWindowPattern_snippets.cs#100)]
+ [!code-vb[UIAWindowPattern_snip#100](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAWindowPattern_snip/VisualBasic/UIAWindowPattern_snippets.vb#100)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WindowOpenedEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationEvent WindowOpenedEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationEvent WindowOpenedEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.WindowPattern.WindowOpenedEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウを開いたときに発生するイベントを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.WindowPatternIdentifiers>です。  
+  
+   
+  
+## Examples  
+ 次の例では、イベント リスナーを宣言して、<xref:System.Windows.Automation.AutomationEventHandler>デリゲートが指定されて<xref:System.Windows.Automation.WindowPattern.WindowOpenedEvent>と<xref:System.Windows.Automation.WindowPattern.WindowClosedEvent>イベント。  
+  
+ [!code-csharp[UIAWindowPattern_snip#104](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAWindowPattern_snip/CSharp/UIAWindowPattern_snippets.cs#104)]
+ [!code-vb[UIAWindowPattern_snip#104](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAWindowPattern_snip/VisualBasic/UIAWindowPattern_snippets.vb#104)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WindowVisualStateProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationProperty WindowVisualStateProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationProperty WindowVisualStateProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.WindowPattern.WindowVisualStateProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Automation.WindowPattern.WindowPatternInformation.WindowVisualState" /> プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.WindowPatternIdentifiers>です。  
+  
+   
+  
+## Examples  
+ 次の例では、ルート要素は、ルートの子孫であり、一連のプロパティの条件を満たすオートメーション要素のコレクションを返す関数に渡されます。  
+  
+ [!code-csharp[UIAWindowPattern_snip#100](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAWindowPattern_snip/CSharp/UIAWindowPattern_snippets.cs#100)]
+ [!code-vb[UIAWindowPattern_snip#100](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAWindowPattern_snip/VisualBasic/UIAWindowPattern_snippets.vb#100)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

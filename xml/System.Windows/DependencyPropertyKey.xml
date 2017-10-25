@@ -1,0 +1,125 @@
+<Type Name="DependencyPropertyKey" FullName="System.Windows.DependencyPropertyKey">
+  <TypeSignature Language="C#" Value="public sealed class DependencyPropertyKey" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DependencyPropertyKey extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.DependencyPropertyKey" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>読み取り専用の依存関係プロパティへの書き込みアクセスの制限の依存関係プロパティの識別子を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DependencyPropertyKey>インスタンスがメソッドを使用して、依存関係プロパティの登録呼び出しの戻り値として取得された<xref:System.Windows.DependencyProperty.RegisterReadOnly%2A>または<xref:System.Windows.DependencyProperty.RegisterAttachedReadOnly%2A>です。  
+  
+ 依存関係プロパティを登録する型が使用できる、<xref:System.Windows.DependencyPropertyKey>への呼び出しで<xref:System.Windows.DependencyObject.SetValue%2A>と<xref:System.Windows.DependencyObject.ClearValue%2A>クラス ロジックの一部として、プロパティの値を調整します。 場合は、キーのアクセス レベルで許可されている、関連するクラスも使用できます、キーと依存関係プロパティ。 たとえば、internal としてキーを宣言することができ、同じアセンブリ内の他の型は、その依存関係プロパティを設定できます。  
+  
+ <xref:System.Windows.DependencyPropertyKey>返される読み取り専用の依存関係によってプロパティの登録ができるようにしないパブリック、プロパティを設定可能なしたがって読み取り専用の依存関係プロパティとして登録ポイントを無駄には、キーを公開するためです。 また、キーを公開する不一致が発生間利用可能な依存関係プロパティの動作とその[!INCLUDE[TLA#tla_clr](~/includes/tlasharptla-clr-md.md)]は無効なクラス デザインのプロパティのラッパー実装します。  
+  
+ キー自体を公開すると、代わりに公開すべきで代わりに、<xref:System.Windows.DependencyPropertyKey.DependencyProperty%2A>の値、<xref:System.Windows.DependencyPropertyKey>として、 `public static readonly` <xref:System.Windows.DependencyProperty>クラスにします。 これにより、特定のローカル設定値を列挙するなどのシステム操作のプロパティの有効な依存関係プロパティの識別子を取得するプロパティです。 ただし、識別子を取得したためにはのすべての機能はありません、<xref:System.Windows.DependencyProperty>の多くのプロパティのシステム操作します。  
+  
+   
+  
+## Examples  
+ 次の例は、読み取り専用の依存関係プロパティを登録し、他のクラス メンバーに 2 つの目的のキーを使用しても: get の「ラッパー」を実装して、計算に基づいて、値を設定する保護された特定の操作の識別子としてその他のプロパティ値。  
+  
+ [!code-csharp[WPFAquariumSln#RODP](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAquariumSln/CSharp/WPFAquariumObjects/Class1.cs#rodp)]
+ [!code-vb[WPFAquariumSln#RODP](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAquariumSln/visualbasic/wpfaquariumobjects/class1.vb#rodp)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DependencyProperty">
+      <MemberSignature Language="C#" Value="public System.Windows.DependencyProperty DependencyProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.DependencyProperty DependencyProperty" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.DependencyPropertyKey.DependencyProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この特殊な読み取り専用の依存関係プロパティの識別子に関連付けられている依存関係プロパティの識別子を取得します。</summary>
+        <value>関連する依存関係プロパティの識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DependencyPropertyKey.DependencyProperty%2A>値には、同じインターフェイスの一部として使用されるプロパティを使って読み取り/書き込みの依存関係プロパティ システム操作で参加に共通する読み取り専用プロパティの識別子が有効になります。  
+  
+ 読み取り専用の依存関係プロパティの get プロパティ アクセサーを実装するために作成し、公開する必要があります、<xref:System.Windows.DependencyProperty>クラスの識別子。 これには 2 つの目的があります。  
+  
+-   クラスの独自のニーズ、<xref:System.Windows.DependencyProperty>プロパティ ラッパーの get アクセサーを実装するために識別子。 使用する、<xref:System.Windows.DependencyProperty>のパラメーターとして、 <xref:System.Windows.DependencyObject.GetValue%2A> get アクセサーを実装するための呼び出しです。  
+  
+-   <xref:System.Windows.DependencyProperty>識別子は、メタデータに依存するその他のメソッドを使用すると標準のフォームにアクセスできるように、プロパティ システムに、依存関係プロパティを公開します。 インスタンスを呼び出した場合<xref:System.Windows.DependencyObject.GetLocalValueEnumerator%2A>の一部で<xref:System.Windows.DependencyObject>ローカル プロパティの設定 (値と識別子) の列挙体識別子を取得および返される読み取り専用の依存関係プロパティになります、<xref:System.Windows.DependencyProperty>キーではなく値します。 公開する、<xref:System.Windows.DependencyProperty>識別子が任意の方法で、読み取り専用の依存関係プロパティのセキュリティを強化していない、後続の派生クラスとクラスのインスタンスの両方ににくいプロパティに関連する操作で、します。  
+  
+ 公開するために、<xref:System.Windows.DependencyProperty>クラスの識別子を呼び出す<xref:System.Windows.DependencyPropertyKey.DependencyProperty%2A>キーで直接です。 この値を使用して、作成、 `public static readonly` <xref:System.Windows.DependencyProperty>と類似している、クラスの識別子、<xref:System.Windows.DependencyPropertyKey>です。  
+  
+   
+  
+## Examples  
+ 次の例では<xref:System.Windows.DependencyPropertyKey.DependencyProperty%2A>を公開する、<xref:System.Windows.DependencyProperty>識別子 (`AquariumGraphicProperty`) の`AquariumGraphic`クラスでの読み取り専用の依存関係プロパティです。 この例も示します、 <xref:System.Windows.DependencyPropertyKey> (として内部のメンバー) の作成と get アクセサーを`AquariumGraphic`です。  
+  
+ [!code-csharp[WPFAquariumSln#RODP](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAquariumSln/CSharp/WPFAquariumObjects/Class1.cs#rodp)]
+ [!code-vb[WPFAquariumSln#RODP](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAquariumSln/visualbasic/wpfaquariumobjects/class1.vb#rodp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OverrideMetadata">
+      <MemberSignature Language="C#" Value="public void OverrideMetadata (Type forType, System.Windows.PropertyMetadata typeMetadata);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void OverrideMetadata(class System.Type forType, class System.Windows.PropertyMetadata typeMetadata) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DependencyPropertyKey.OverrideMetadata(System.Type,System.Windows.PropertyMetadata)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="forType" Type="System.Type" />
+        <Parameter Name="typeMetadata" Type="System.Windows.PropertyMetadata" />
+      </Parameters>
+      <Docs>
+        <param name="forType">型をこの依存関係プロパティが存在して、メタデータをオーバーライドする必要があります。</param>
+        <param name="typeMetadata">この型に供給されるメタデータ。</param>
+        <summary>この依存関係プロパティの識別子によって表される読み取り専用の依存関係プロパティのメタデータをオーバーライドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り専用の依存関係プロパティのメタデータのオーバーライドは読み取り/書き込みの依存関係プロパティのメタデータをオーバーライドすることと同様の理由で実行され、メタデータに指定された動作は、セットの動作を変更できるので、キーのレベルのアクセスに制限されます (既定値のインスタンス)。  
+  
+ として読み取り/書き込みの依存関係プロパティを持つ、読み取り専用の依存関係プロパティのメタデータのオーバーライドにのみ行ってください (これは特定のプロパティを登録するオブジェクトのインスタンスがインスタンス化される時間に相当) プロパティのシステムによって使用されるプロパティの前にします。 呼び出す<xref:System.Windows.DependencyPropertyKey.OverrideMetadata%2A>としてそれ自体を提供する型の静的コンス トラクター内でのみ実行する必要があります、`forType`メソッド、またはそのクラスの初期化を同等のパラメーターです。  
+  
+ このメソッドを効率的に転送、<xref:System.Windows.DependencyProperty.OverrideMetadata%2A>渡して、メソッド、<xref:System.Windows.DependencyPropertyKey>キー パラメーターとインスタンス。  
+  
+   
+  
+## Examples  
+ 次の例では、クラスを継承する既存の読み取り専用の依存関係プロパティのメタデータをオーバーライドします。 この場合、シナリオの目的は、基本プロパティのメタデータが含まれていない強制値のコールバックを追加するでした。 メタデータのオーバーライドは、通常、その他の理由のいずれか適切向けに、メタデータを上書きすることも可能性があります (既定値の変更を追加する<xref:System.Windows.FrameworkPropertyMetadataOptions>値などです)。  
+  
+ [!code-csharp[WPFAquariumSln#RODPOverride](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAquariumSln/CSharp/WPFAquariumObjects/Class1.cs#rodpoverride)]
+ [!code-vb[WPFAquariumSln#RODPOverride](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAquariumSln/visualbasic/wpfaquariumobjects/class1.vb#rodpoverride)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">実行しようとしたメタデータの読み取り/書き込みの依存関係プロパティのオーバーライド (を実行できませんこの署名を使用して)。</exception>
+        <exception cref="T:System.ArgumentException">指定した型に存在する場合、プロパティのメタデータが確立既にされました。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

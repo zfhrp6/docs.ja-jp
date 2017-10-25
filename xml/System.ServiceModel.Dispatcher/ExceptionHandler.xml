@@ -1,0 +1,175 @@
+<Type Name="ExceptionHandler" FullName="System.ServiceModel.Dispatcher.ExceptionHandler">
+  <TypeSignature Language="C#" Value="public abstract class ExceptionHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ExceptionHandler extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.ExceptionHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>拡張、 <see cref="T:System.ServiceModel.Dispatcher.ExceptionHandler" /> Windows Communication Foundation (WCF) ランタイム内で発生する未処理の例外の例外ハンドラーを作成するクラス。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.ExceptionHandler> クラスを拡張し、<xref:System.ServiceModel.Dispatcher.ExceptionHandler.HandleException%2A> メソッドをオーバーライドして、例外によりアプリケーションを修了する必要があるかどうかを判定します。 その後、<xref:System.ServiceModel.Dispatcher.ExceptionHandler> クライアントまたはサービスを作成する前に、カスタム <xref:System.ServiceModel.Dispatcher.ExceptionHandler.AsynchronousThreadExceptionHandler%2A> クラスの新しいインスタンスを作成して、静的な <xref:System.ServiceModel.Dispatcher.ExceptionHandler.TransportExceptionHandler%2A> プロパティまたは [!INCLUDE[indigo2](~/includes/indigo2-md.md)] プロパティに割り当てます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.ServiceModel.Dispatcher.ExceptionHandler> メソッドをオーバーライドする <xref:System.ServiceModel.Dispatcher.ExceptionHandler.HandleException%2A> 抽象クラスを実装しています。  
+  
+ [!code-csharp[S_UEExceptionHandler#0](~/samples/snippets/csharp/VS_Snippets_CFX/s_ueexceptionhandler/cs/program.cs#0)]
+ [!code-vb[S_UEExceptionHandler#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ueexceptionhandler/vb/module1.vb#0)]  
+  
+ 次のコード例では、`MyExceptionHandler` ランタイム内で発生する未処理の例外を処理するカスタムの [!INCLUDE[indigo2](~/includes/indigo2-md.md)] を有効化する方法を示します。  
+  
+ [!code-csharp[S_UEExceptionHandler#1](~/samples/snippets/csharp/VS_Snippets_CFX/s_ueexceptionhandler/cs/program.cs#1)]
+ [!code-vb[S_UEExceptionHandler#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ueexceptionhandler/vb/module1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ExceptionHandler ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.ExceptionHandler.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Dispatcher.ExceptionHandler" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlwaysHandle">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Dispatcher.ExceptionHandler AlwaysHandle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.Dispatcher.ExceptionHandler AlwaysHandle" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ExceptionHandler.AlwaysHandle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Dispatcher.ExceptionHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべての例外を処理する <see cref="T:System.ServiceModel.Dispatcher.ExceptionHandler" /> のインスタンスを取得します。</summary>
+        <value>すべての例外に <see cref="T:System.ServiceModel.Dispatcher.ExceptionHandler" /> を返す <see langword="true" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AsynchronousThreadExceptionHandler">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Dispatcher.ExceptionHandler AsynchronousThreadExceptionHandler { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.Dispatcher.ExceptionHandler AsynchronousThreadExceptionHandler" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ExceptionHandler.AsynchronousThreadExceptionHandler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Dispatcher.ExceptionHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーション ドメインの現在の <see cref="T:System.ServiceModel.Dispatcher.ExceptionHandler" /> の実装を取得または設定します。</summary>
+        <value>非同期 <see cref="T:System.ServiceModel.Dispatcher.ExceptionHandler" /> スレッドで発生する未処理の例外を受け取るカスタム [!INCLUDE[indigo1](~/includes/indigo1-md.md)] オブジェクトを割り当てます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.ServiceModel.Dispatcher.ExceptionHandler.AsynchronousThreadExceptionHandler%2A> プロパティは `null` で、非同期 [!INCLUDE[indigo2](~/includes/indigo2-md.md)] スレッドで未処理の例外が発生すると、アプリケーションが終了します。  このような例外を受け取って対応するには、このプロパティに <xref:System.ServiceModel.Dispatcher.ExceptionHandler> オブジェクトを設定します。  
+  
+ 非同期 [!INCLUDE[indigo2](~/includes/indigo2-md.md)] スレッドでハンドルされない例外が発生し、このハンドラーに到達した場合、アプリケーション ドメインの状態が損なわれる可能性があります。  <xref:System.ServiceModel.Dispatcher.ExceptionHandler.HandleException%2A>返されません`true`で例外をします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HandleException">
+      <MemberSignature Language="C#" Value="public abstract bool HandleException (Exception exception);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool HandleException(class System.Exception exception) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.ExceptionHandler.HandleException(System.Exception)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="exception" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="exception">[!INCLUDE[indigo1](~/includes/indigo1-md.md)] ランタイム内で発生し、アプリケーションを終了させる可能性のある例外。</param>
+        <summary>派生クラスでオーバーライドされると、例外が処理された場合は <see langword="true" /> を返し、例外を再スローしてアプリケーションを終了する必要がある場合は <see langword="false" /> を返します。</summary>
+        <returns>
+          例外が処理された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 例外が処理された場合、<xref:System.ServiceModel.Dispatcher.ExceptionHandler.HandleException%2A> プロパティは `true` を返します。 このプロパティが `false` を返す場合、または別の例外をスローする場合は、元の例外が再スローされます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.ServiceModel.Dispatcher.ExceptionHandler> メソッドをオーバーライドする <xref:System.ServiceModel.Dispatcher.ExceptionHandler.HandleException%2A> 抽象クラスを実装しています。  
+  
+  
+  
+ 次のコード例では、`MyExceptionHandler` ランタイム内で発生する未処理の例外を処理するカスタムの [!INCLUDE[indigo2](~/includes/indigo2-md.md)] を有効化する方法を示します。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransportExceptionHandler">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Dispatcher.ExceptionHandler TransportExceptionHandler { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.Dispatcher.ExceptionHandler TransportExceptionHandler" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ExceptionHandler.TransportExceptionHandler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Dispatcher.ExceptionHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーション ドメインの現在のトランスポート <see cref="T:System.ServiceModel.Dispatcher.ExceptionHandler" /> の実装を取得または設定します。</summary>
+        <value>グローバル <see cref="T:System.ServiceModel.Dispatcher.ExceptionHandler" /> トランスポート内で発生する未処理の例外を受け取るカスタム [!INCLUDE[indigo1](~/includes/indigo1-md.md)] オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.ServiceModel.Dispatcher.ExceptionHandler.TransportExceptionHandler%2A> プロパティが値 <xref:System.ServiceModel.Dispatcher.ExceptionHandler.AlwaysHandle%2A> に設定されており、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] トランスポート内の未処理の例外は無視されます。  このような例外を受け取って対応するには、このプロパティに <xref:System.ServiceModel.Dispatcher.ExceptionHandler> のインスタンスを設定します。  
+  
+ グローバル [!INCLUDE[indigo2](~/includes/indigo2-md.md)] トランスポート内でハンドルされない例外が発生し、このハンドラーに到達した場合、アプリケーション ドメインの状態が損なわれる可能性があります。 <xref:System.ServiceModel.Dispatcher.ExceptionHandler.HandleException%2A>返すことができる`false`で、アプリケーションが終了する例外をします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

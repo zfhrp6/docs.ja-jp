@@ -1,0 +1,72 @@
+<Type Name="ISessionChannel&lt;TSession&gt;" FullName="System.ServiceModel.Channels.ISessionChannel&lt;TSession&gt;">
+  <TypeSignature Language="C#" Value="public interface ISessionChannel&lt;TSession&gt; where TSession : ISession" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ISessionChannel`1&lt;(class System.ServiceModel.Channels.ISession) TSession&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.ISessionChannel`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TSession">
+      <Constraints>
+        <InterfaceName>System.ServiceModel.Channels.ISession</InterfaceName>
+      </Constraints>
+    </TypeParameter>
+  </TypeParameters>
+  <Interfaces />
+  <Docs>
+    <typeparam name="TSession">チャネルと関連付ける <see cref="T:System.ServiceModel.Channels.ISession" /> の型。</typeparam>
+    <summary>チャネルと特定の型のセッションを関連付けるインターフェイスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.ISessionChannel%601> インターフェイスは、セッション ベースのチャネルの基本インターフェイスです。 メッセージ交換でのインターフェイスのロールを反映するように、ジェネリック型パラメーター `TSession` を、<xref:System.ServiceModel.Channels.ISession> インターフェイスを実装する型に設定して、セッションの型とチャネルを関連付けます。 たとえば、`TSession` は、一方向通信の受信側の受信セッションの場合は <xref:System.ServiceModel.Channels.IInputSession> に設定され、一方向通信の送信側の送信セッションの場合は <xref:System.ServiceModel.Channels.IOutputSession> に設定され、双方向通信パターンの二重セッションの場合は <xref:System.ServiceModel.Channels.IDuplexSession> に設定されます。  
+  
+ <xref:System.ServiceModel.Channels.ISessionChannel%601> インターフェイスでは、チャネルが関連付けられているセッションを取得するための <xref:System.ServiceModel.Channels.ISessionChannel%601.Session%2A> プロパティが提供されています。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Session">
+      <MemberSignature Language="C#" Value="public TSession Session { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance !TSession Session" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.ISessionChannel`1.Session" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TSession</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このチャネルに関連付けられているセッションの型を取得します。</summary>
+        <value>このチャネルに関連付けられている <see cref="T:System.ServiceModel.Channels.ISession" /> の型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インターフェイスの定義に使用されたジェネリック パラメーター `TSession` を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

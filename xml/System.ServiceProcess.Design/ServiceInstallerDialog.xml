@@ -1,0 +1,170 @@
+<Type Name="ServiceInstallerDialog" FullName="System.ServiceProcess.Design.ServiceInstallerDialog">
+  <TypeSignature Language="C#" Value="public class ServiceInstallerDialog : System.Windows.Forms.Form" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ServiceInstallerDialog extends System.Windows.Forms.Form" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceProcess.Design.ServiceInstallerDialog" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceProcess</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.Form</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Windows サービス アプリケーションのアカウント情報の入力を求めるダイアログ ボックスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、使用しない、<xref:System.ServiceProcess.Design.ServiceInstallerDialog>コード内で直接クラスです。 このダイアログ ボックスは通常、使用インストール ユーティリティによって、Windows サービス アプリケーション。  
+  
+ 場合、<xref:System.ServiceProcess.ServiceProcessInstaller>オブジェクトには、<xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A>に設定`User`、いずれかと、<xref:System.ServiceProcess.ServiceProcessInstaller.Username%2A>または<xref:System.ServiceProcess.ServiceProcessInstaller.Password%2A>空の文字列 ("")、インストール ユーティリティを使用して、<xref:System.ServiceProcess.Design.ServiceInstallerDialog>これらの値を要求します。  
+  
+ <xref:System.ServiceProcess.Design.ServiceInstallerDialog>派生した<xref:System.Windows.Forms.Form>; を使用して、<xref:System.Windows.Forms.Form>クラスのメソッドとプロパティを表示およびダイアログ ボックスを操作します。 たとえば、使用して<xref:System.Windows.Forms.Form.ShowDialog%2A>をフォームを表示し、チェックイン、<xref:System.ServiceProcess.Design.ServiceInstallerDialog.Result%2A>の入力テキストを検証する前に、<xref:System.ServiceProcess.Design.ServiceInstallerDialog.Username%2A>と<xref:System.ServiceProcess.Design.ServiceInstallerDialog.Password%2A>プロパティです。  
+  
+> [!NOTE]
+>  <xref:System.ServiceProcess.Design.ServiceInstallerDialog>資格情報と、指定されたアカウントの権限はチェックされません。 たとえば、ユーザー、コンピューターの無効なアカウント名とパスワードの入力可能性があります。 またはアカウントをサービスとして実行する適切な特権がないです。 ユーザーがインストールされているサービスが正常に実行されることを確認入力を検証します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.ServiceProcess.Design.ServiceInstallerDialog>サービスのインストール アカウントのユーザーに確認します。  
+  
+ [!code-cpp[ServiceInstallConfig#1](~/samples/snippets/cpp/VS_Snippets_CLR/ServiceInstallConfig/CPP/source.cpp#1)]
+ [!code-csharp[ServiceInstallConfig#1](~/samples/snippets/csharp/VS_Snippets_CLR/ServiceInstallConfig/CS/source.cs#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceInstallerDialog ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.Design.ServiceInstallerDialog.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>サービス アカウント フォームの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しい<xref:System.ServiceProcess.Design.ServiceInstallerDialog>フォームがその<xref:System.ServiceProcess.Design.ServiceInstallerDialog.Result%2A>に設定<xref:System.ServiceProcess.Design.ServiceInstallerDialogResult.OK>、 <xref:System.ServiceProcess.Design.ServiceInstallerDialog.Username%2A> 、空の文字列に設定 ("")、および<xref:System.ServiceProcess.Design.ServiceInstallerDialog.Password%2A>空の文字列に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Main">
+      <MemberSignature Language="C#" Value="public static void Main ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Main() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.Design.ServiceInstallerDialog.Main" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.STAThread</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>標準のアプリケーション メッセージ ループの実行を開始し、サービス アカウント フォームを表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出すことと同じ<xref:System.Windows.Forms.Application.Run%2A?displayProperty=nameWithType>上の新しい<xref:System.ServiceProcess.Design.ServiceInstallerDialog>フォームです。 これは、テスト目的では使用されません。  
+  
+ 呼び出す<xref:System.Windows.Forms.Form.ShowDialog%2A>上、<xref:System.ServiceProcess.Design.ServiceInstallerDialog>アプリケーションで、ダイアログ ボックスを表示するフォーム。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Password">
+      <MemberSignature Language="C#" Value="public string Password { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Password" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceProcess.Design.ServiceInstallerDialog.Password" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス アカウント フォームのパスワードを取得または設定します。</summary>
+        <value>サービス アカウント フォームのパスワードを表す文字列。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceProcess.Design.ServiceInstallerDialog>は検証されません、<xref:System.ServiceProcess.Design.ServiceInstallerDialog.Username%2A>と<xref:System.ServiceProcess.Design.ServiceInstallerDialog.Password%2A>値。 ダイアログ ボックスでは、ユーザーによるパスワードの確認が、コンピューターのアカウントの資格情報は認証しないことを確認します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Result">
+      <MemberSignature Language="C#" Value="public System.ServiceProcess.Design.ServiceInstallerDialogResult Result { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceProcess.Design.ServiceInstallerDialogResult Result" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceProcess.Design.ServiceInstallerDialog.Result" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.Design.ServiceInstallerDialogResult</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス アカウント フォームのダイアログの結果を取得します。</summary>
+        <value>A <see cref="T:System.ServiceProcess.Design.ServiceInstallerDialogResult" />  ダイアログ ボックスにユーザーの応答を示すです。 既定値は、<see langword="OK" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Windows.Forms.Form.ShowDialog%2A>、アカウントのユーザーをサービスのインストールを促すを確認し、<xref:System.ServiceProcess.Design.ServiceInstallerDialog.Result%2A>値。 値が場合<xref:System.ServiceProcess.Design.ServiceInstallerDialogResult.OK>、いることを確認入力<xref:System.ServiceProcess.Design.ServiceInstallerDialog.Username%2A>と<xref:System.ServiceProcess.Design.ServiceInstallerDialog.Password%2A>が有効です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Username">
+      <MemberSignature Language="C#" Value="public string Username { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Username" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceProcess.Design.ServiceInstallerDialog.Username" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス アカウント フォームのユーザー名を取得または設定します。</summary>
+        <value>サービス アカウント フォームのユーザー名を表す文字列。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceProcess.Design.ServiceInstallerDialog>は検証されません、<xref:System.ServiceProcess.Design.ServiceInstallerDialog.Username%2A>または<xref:System.ServiceProcess.Design.ServiceInstallerDialog.Password%2A>値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

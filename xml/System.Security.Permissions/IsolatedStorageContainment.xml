@@ -1,0 +1,316 @@
+<Type Name="IsolatedStorageContainment" FullName="System.Security.Permissions.IsolatedStorageContainment">
+  <TypeSignature Language="C#" Value="public enum IsolatedStorageContainment" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed IsolatedStorageContainment extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Permissions.IsolatedStorageContainment" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>許可されている分離ストレージの使用を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 分離ストレージでは、証拠を使用して、アプリケーションまたはコンポーネントで使用するための一意のストレージ領域を判断します。 アセンブリの id は、そのアセンブリで使用するための仮想ファイル システムのルートを一意に決定します。 したがって、多くのアプリケーションとファイル システムまたはレジストリなどの一般的なリソースの共有コンポーネントではなくを本質的に割り当てられている独自のファイル領域があります。  
+  
+ 次の 4 つの基本的な分離スコープは、分離ストレージを割り当てるときに使用されます。  
+  
+-   `User`に従って、現在のユーザーは、コードのスコープが常に設定します。 別のユーザーが実行しているときに、同じアセンブリは別のストアを受け取ります。  
+  
+-   `Machine`コードは常に、マシンに従ってスコープ設定されます。 同じコンピューター上の異なるユーザーが実行されているときに、同じアセンブリは同じストアを受け取ります。  
+  
+-   `Assembly`コードでは、サイト、またはゾーンで厳密な名前 (たとえば、Microsoft.Office.* または Microsoft.Office.Word)、url (たとえば、http://www.fourthcoffee.com/process/grind.htm) (公開キーに基づく)、発行元によってによってが暗号的に識別されます。  
+  
+-   `Domain`コードを識別するには、アプリケーション ドメインに関連付けられている証拠に基づいて決定されます。 サイトの URL から、または Web ページの URL、サイト、またはゾーンにより、web アプリケーションの id が派生します。 ローカル コード id は、アプリケーションのディレクトリ パスに基づいています。  
+  
+ URL、サイト、およびゾーンの定義は、次を参照してください。 <xref:System.Security.Permissions.UrlIdentityPermission>、 <xref:System.Security.Permissions.SiteIdentityPermission>、および<xref:System.Security.Permissions.ZoneIdentityPermission>です。  
+  
+ これらの id はグループ化いる場合、id は、1 つずつまで適用目的の分離ストレージを作成します。 有効なグループ化は、ユーザー アセンブリ + ユーザー + アセンブリ + ドメインです。 このユーザーのグループ化は、多数の異なるアプリケーションに役立ちます。  
+  
+ データがドメイン、ユーザー、およびアセンブリが格納されている場合、データの値はデータにアクセスできるアセンブリにコードだけでプライベートです。 アセンブリが他のアプリケーションにデータを公開することでリークの可能性を表さないようにが実行される、アプリケーションによってデータ ストアも分離されます。  
+  
+ 複数のアプリケーションに適用されるユーザー データのアセンブリとユーザー別の分離を使用でした。たとえば、情報、またはユーザーの個人情報 (名前や認証の資格情報) とは別のアプリケーションのライセンスを取得します。  
+  
+ <xref:System.Security.Permissions.IsolatedStorageContainment>アプリケーションが分離ストレージを使用できるかどうかを決定するフラグを公開して、そのため、identity 組み合わせを使用できることです。 また、アプリケーションでの位置に移動する (Windows 移動ユーザー プロファイルまたはフォルダー リダイレクトを構成する必要があります)、ユーザー情報を格納できるかどうかも決定します。  
+  
+   
+  
+## Examples  
+ この例は、このアセンブリ内のコードが必要である、CLR に通知する方法を示しています、<xref:System.Security.Permissions.IsolatedStoragePermission>と分離ストレージからの読み取りし、書き込みをする方法を示しています。  
+  
+ [!code-cpp[IsolatedStoragePermissionAttribute#1](~/samples/snippets/cpp/VS_Snippets_CLR/IsolatedStoragePermissionAttribute/cpp/IsolatedStoragePermissionAttribute.cpp#1)]
+ [!code-csharp[IsolatedStoragePermissionAttribute#1](~/samples/snippets/csharp/VS_Snippets_CLR/IsolatedStoragePermissionAttribute/CS/IsolatedStoragePermissionAttribute.cs#1)]
+ [!code-vb[IsolatedStoragePermissionAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/IsolatedStoragePermissionAttribute/VB/program.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AdministerIsolatedStorageByUser">
+      <MemberSignature Language="C#" Value="AdministerIsolatedStorageByUser" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.IsolatedStorageContainment AdministerIsolatedStorageByUser = int32(112)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.IsolatedStorageContainment.AdministerIsolatedStorageByUser" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.IsolatedStorageContainment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー ストアの無制限の管理権限です。 参照と全体のユーザー ストアには、ユーザー独自のドメインとアセンブリ id 以外いない読み取りアクセスの削除を許可します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationIsolationByMachine">
+      <MemberSignature Language="C#" Value="ApplicationIsolationByMachine" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.IsolatedStorageContainment ApplicationIsolationByMachine = int32(69)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.IsolatedStorageContainment.ApplicationIsolationByMachine" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.IsolatedStorageContainment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>記憶域は、まずコンピューターし、により、アプリケーション分離されます。 これは、任意のドメイン コンテキストでアクセスできるアプリケーションのデータ ストアを提供します。 アプリケーションごとのデータ コンパートメントには、可能性のある特定の Web サイトのアプリケーションのデータの分離を損なうおそれのあるアプリケーション間で、「トンネル」を提供するための追加の信頼が必要です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationIsolationByRoamingUser">
+      <MemberSignature Language="C#" Value="ApplicationIsolationByRoamingUser" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.IsolatedStorageContainment ApplicationIsolationByRoamingUser = int32(101)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.IsolatedStorageContainment.ApplicationIsolationByRoamingUser" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.IsolatedStorageContainment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>記憶域は、最初はユーザーによってとし、アプリケーションの証拠によって分離されます。 Windows のユーザー データのローミングが有効になっている場合、記憶域を移動します。 これは、任意のドメイン コンテキストでアクセスできるアプリケーションのデータ ストアを提供します。 アプリケーションごとのデータ コンパートメントには、可能性のある特定の Web サイトのアプリケーションのデータの分離を損なうおそれのあるアプリケーション間で、「トンネル」を提供するための追加の信頼が必要です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationIsolationByUser">
+      <MemberSignature Language="C#" Value="ApplicationIsolationByUser" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.IsolatedStorageContainment ApplicationIsolationByUser = int32(21)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.IsolatedStorageContainment.ApplicationIsolationByUser" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.IsolatedStorageContainment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>記憶域は、最初はユーザーによってとし、アプリケーションが分離されます。 記憶域はコンピューターによっても分離されます。 これは、任意のドメイン コンテキストでアクセスできるアプリケーションのデータ ストアを提供します。 アプリケーションごとのデータ コンパートメントには、可能性のある特定の Web サイトのアプリケーションのデータの分離を損なうおそれのあるアプリケーション間で、「トンネル」を提供するための追加の信頼が必要です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AssemblyIsolationByMachine">
+      <MemberSignature Language="C#" Value="AssemblyIsolationByMachine" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.IsolatedStorageContainment AssemblyIsolationByMachine = int32(64)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.IsolatedStorageContainment.AssemblyIsolationByMachine" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.IsolatedStorageContainment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>記憶域は、まずコンピューターられ、続いてコード アセンブリに分離されます。 これは、任意のドメイン コンテキストでアクセスできるアセンブリのデータ ストアを提供します。 アセンブリごとのデータ コンパートメントには、可能性のある特定の Web サイトのアプリケーションのデータの分離を損なうおそれのあるアプリケーション間で、「トンネル」を提供するための追加の信頼が必要です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AssemblyIsolationByRoamingUser">
+      <MemberSignature Language="C#" Value="AssemblyIsolationByRoamingUser" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.IsolatedStorageContainment AssemblyIsolationByRoamingUser = int32(96)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.IsolatedStorageContainment.AssemblyIsolationByRoamingUser" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.IsolatedStorageContainment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>記憶域は、最初はユーザーによってとし、アセンブリの証拠が分離されます。 Windows のユーザー データのローミングが有効になっている場合、記憶域を移動します。 これは、任意のドメイン コンテキストでアクセスできるアセンブリのデータ ストアを提供します。 アセンブリごとのデータ コンパートメントには、可能性のある特定の Web サイトのアプリケーションのデータの分離を損なうおそれのあるアプリケーション間で、「トンネル」を提供するための追加の信頼が必要です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AssemblyIsolationByUser">
+      <MemberSignature Language="C#" Value="AssemblyIsolationByUser" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.IsolatedStorageContainment AssemblyIsolationByUser = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.IsolatedStorageContainment.AssemblyIsolationByUser" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.IsolatedStorageContainment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>記憶域は、まずユーザーられ、続いてコード アセンブリに分離されます。 記憶域はコンピューターによっても分離されます。 これは、任意のドメイン コンテキストでアクセスできるアセンブリのデータ ストアを提供します。 アセンブリごとのデータ コンパートメントには、可能性のある特定の Web サイトのアプリケーションのデータの分離を損なうおそれのあるアプリケーション間で、「トンネル」を提供するための追加の信頼が必要です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DomainIsolationByMachine">
+      <MemberSignature Language="C#" Value="DomainIsolationByMachine" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.IsolatedStorageContainment DomainIsolationByMachine = int32(48)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.IsolatedStorageContainment.DomainIsolationByMachine" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.IsolatedStorageContainment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>記憶域は、まずコンピューターしでドメインとアセンブリ別に分離されます。 データは、同じアプリケーションのと同じコンピューターで実行する場合にのみのコンテキスト内でのみアクセスできます。 これは、機能は、サード パーティ製のアセンブリがプライベート データ ストアを維持したい場合に便利です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DomainIsolationByRoamingUser">
+      <MemberSignature Language="C#" Value="DomainIsolationByRoamingUser" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.IsolatedStorageContainment DomainIsolationByRoamingUser = int32(80)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.IsolatedStorageContainment.DomainIsolationByRoamingUser" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.IsolatedStorageContainment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>記憶域は、最初はユーザーによってとし、ドメインおよびアセンブリ別に分離されます。 Windows のユーザー データのローミングが有効になっている場合、記憶域を移動します。 データは、同じアプリケーションのと同じユーザーが実行した場合にのみのコンテキスト内でのみアクセスできます。 これは、機能は、サード パーティ製のアセンブリがプライベート データ ストアを維持したい場合に便利です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DomainIsolationByUser">
+      <MemberSignature Language="C#" Value="DomainIsolationByUser" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.IsolatedStorageContainment DomainIsolationByUser = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.IsolatedStorageContainment.DomainIsolationByUser" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.IsolatedStorageContainment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>記憶域は、最初はユーザーによってとし、ドメインおよびアセンブリ別に分離されます。 記憶域はコンピューターによっても分離されます。 データは、同じアプリケーションのと同じユーザーが実行した場合にのみのコンテキスト内でのみアクセスできます。 これは、機能は、サード パーティ製のアセンブリがプライベート データ ストアを維持したい場合に便利です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.IsolatedStorageContainment None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.IsolatedStorageContainment.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.IsolatedStorageContainment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>分離ストレージの使用は許可されません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UnrestrictedIsolatedStorage">
+      <MemberSignature Language="C#" Value="UnrestrictedIsolatedStorage" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.IsolatedStorageContainment UnrestrictedIsolatedStorage = int32(240)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.IsolatedStorageContainment.UnrestrictedIsolatedStorage" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.IsolatedStorageContainment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>分離ストレージの使用制限なしで許可します。 コードでは、ドメインまたはアセンブリの id に関係なく、ユーザー ストアの任意の部分に対するフル アクセス権を持っています。 この分離ストレージの使用には、分離ストレージのデータ ストアの内容を列挙する機能が含まれています。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

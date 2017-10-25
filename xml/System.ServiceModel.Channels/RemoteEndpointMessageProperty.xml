@@ -1,0 +1,118 @@
+<Type Name="RemoteEndpointMessageProperty" FullName="System.ServiceModel.Channels.RemoteEndpointMessageProperty">
+  <TypeSignature Language="C#" Value="public sealed class RemoteEndpointMessageProperty" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit RemoteEndpointMessageProperty extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.RemoteEndpointMessageProperty" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>メッセージの送信元であるリモート エンドポイントと関連付けられているクライアント IP アドレスとポート番号を使用可能にします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、HTTP および TCP トランスポートの両方を通じて、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] サービス宛ての個々の受信メッセージに追加されます。  
+  
+ このプロパティは、名前付きパイプまたは MSMQ トランスポートのどちらかを通じて受信されたメッセージにはありません。  
+  
+ IIS でホストされている HTTP を使用している場合にプロパティを使用できるかどうかは、現在アクティブになっている要求があるかどうかによって決まります。  したがって、このプロパティは、一方向の受信の実行時など、要求が完了した後では使用できません。  
+  
+ IP アドレスとポート番号は、メッセージの受信に使用されたノードのアドレスと番号です。 メッセージがリレーまたはプロキシを通過する場合、個々のリレーやプロキシの IP アドレスとポート番号は、このプロパティによりメッセージに割り当てられたものになります。  
+  
+ IP アドレスとポートは、攻撃者によって悪用されるおそれがあるため、アプリケーション固有のロジックを追加しない場合は、セキュリティに関連する認証や承認の際に依存しないようにする必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RemoteEndpointMessageProperty (string address, int port);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string address, int32 port) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.RemoteEndpointMessageProperty.#ctor(System.String,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="address" Type="System.String" />
+        <Parameter Name="port" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="address">メッセージに関連付けられているリモート エンドポイントの IP アドレス。</param>
+        <param name="port">メッセージに関連付けられているリモート エンドポイントのポート番号。</param>
+        <summary>メッセージの送信元クライアントを識別する、指定の IP アドレスとポートの <see cref="T:System.ServiceModel.Channels.RemoteEndpointMessageProperty" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ IP アドレスとポートは、攻撃者によって悪用されるおそれがあるため、アプリケーション固有のロジックを追加しない場合は、セキュリティに関連する認証や承認の際に依存しないようにする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="address" /> が <see langword="null" /> または空です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">ポート番号が 0 未満、または 65535 (0xffff) を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Address">
+      <MemberSignature Language="C#" Value="public string Address { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Address" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.RemoteEndpointMessageProperty.Address" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージの送信元クライアントの IP アドレスを取得します。</summary>
+        <value>メッセージの送信元クライアントの IP アドレス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public static string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string Name" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.RemoteEndpointMessageProperty.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文字列 "System.ServiceModel.Channels.RemoteEndpointMessageProperty" を返します。</summary>
+        <value>"System.ServiceModel.Channels.RemoteEndpointMessageProperty"</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Port">
+      <MemberSignature Language="C#" Value="public int Port { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Port" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.RemoteEndpointMessageProperty.Port" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージの送信元クライアントのポート番号を取得します。</summary>
+        <value>メッセージの送信元クライアントのポート番号。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

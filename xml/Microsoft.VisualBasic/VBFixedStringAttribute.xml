@@ -1,0 +1,89 @@
+<Type Name="VBFixedStringAttribute" FullName="Microsoft.VisualBasic.VBFixedStringAttribute">
+  <TypeSignature Language="C#" Value="public sealed class VBFixedStringAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed VBFixedStringAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.VBFixedStringAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Field, AllowMultiple=false, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>固定長かのように文字列を扱うことを示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic の文字列では、既定では可変長です。 この属性は、Visual Basic ファイルを使用して、入力し、出力関数をなどに役立ちます`FileGet`と`FilePut`を必要とする固定長文字列。  
+  
+   
+  
+## Examples  
+ [!code-vb[VbCnAttributes#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbCnAttributes/VB/Class2.vb#23)]  
+  
+> [!NOTE]
+>  `VBFixedStringAttribute`情報は、可変長の文字列を固定文字列に変換するのには使用できません。 この属性の目的は、メソッドまたは認識される API 呼び出しで構造体と非ローカル変数の文字列を使用する方法を変更する、`VBFixedStringAttribute`です。 この属性は、文字列自体の実際の長さを変更されないことに注意してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public VBFixedStringAttribute (int Length);" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor(int32 Length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.VBFixedStringAttribute.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="Length" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="Length">固定長文字列の長さ。</param>
+        <summary>値を初期化、<see langword="SizeConst" />フィールドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンス トラクターは、実行時に、`VBFixedStringAttribute`属性は、文字列に適用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Length">
+      <MemberSignature Language="C#" Value="public int Length { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Length" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.VBFixedStringAttribute.Length" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文字列の長さを取得します。</summary>
+        <value>文字列の長さを返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性のコンス トラクターは、このプロパティを設定するときに、`VBFixedStringAttribute`文字列に適用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

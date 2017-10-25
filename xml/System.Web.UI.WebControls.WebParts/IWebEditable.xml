@@ -1,0 +1,146 @@
+<Type Name="IWebEditable" FullName="System.Web.UI.WebControls.WebParts.IWebEditable">
+  <TypeSignature Language="C#" Value="public interface IWebEditable" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IWebEditable" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.IWebEditable" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>開発者がカスタムの編集コントロールに関連付けられているを指定するためのインターフェイスを提供する<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.IWebEditable>インターフェイスを使用すると、カスタム関連付ける<xref:System.Web.UI.WebControls.WebParts.EditorPart>などのサーバー コントロール--コントロール、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、ユーザー コントロール、またはカスタム サーバー コントロールです。 <xref:System.Web.UI.WebControls.WebParts.EditorPart>に含まれているコントロール、<xref:System.Web.UI.WebControls.WebParts.EditorZone>制御、およびこのゾーンの編集コントロールには、プロパティ、外観、および、関連する動作を変更するためユーザー インターフェイス (UI) を持つエンドユーザーを提供<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.IWebEditable>インターフェイスには、次の 2 つ公開されるメンバーが含まれています。 <xref:System.Web.UI.WebControls.WebParts.IWebEditable.WebBrowsableObject%2A>プロパティを提供するため<xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロールに関連付けられているサーバーのコントロールへの参照を取得します。 <xref:System.Web.UI.WebControls.WebParts.IWebEditable.CreateEditorParts%2A>各カスタムのインスタンスを作成するメソッドが使用される<xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロールは、サーバー コントロールに関連付けられているし、コレクションとして返すことです。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.IWebEditable>ベースのインターフェイスを既に実装されて<xref:System.Web.UI.WebControls.WebParts.WebPart>クラスを既定ではこの実装は関連付けません任意のカスタム<xref:System.Web.UI.WebControls.WebParts.EditorPart>と制御、<xref:System.Web.UI.WebControls.WebParts.WebPart>クラスです。 関連付ける派生<xref:System.Web.UI.WebControls.WebParts.WebPart>カスタム コントロール<xref:System.Web.UI.WebControls.WebParts.EditorPart>オーバーライドすることができます、コントロール、<xref:System.Web.UI.WebControls.WebParts.IWebEditable.CreateEditorParts%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のメソッドをオーバーライドする方法を示します、<xref:System.Web.UI.WebControls.WebParts.IWebEditable>カスタム インターフェイス<xref:System.Web.UI.WebControls.WebParts.WebPart>、カスタムのインスタンスを作成するコントロールを<xref:System.Web.UI.WebControls.WebParts.EditorPart>タイミングを制御、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールが編集モードになります。  
+  
+ この例では、4 つの部分があります。  
+  
+-   カスタム クラスのコードです。  
+  
+-   カスタム コントロールをホストする Web ページ。  
+  
+-   ユーザー コントロールをページを編集モードに切り替わります。  
+  
+-   ブラウザーでの例の動作についての説明です。  
+  
+ このコード例の最初の部分は、カスタム`TextDisplayWebPart`クラスです。 クラスの派生元に注意してください、<xref:System.Web.UI.WebControls.WebParts.WebPart>クラスと実装、<xref:System.Web.UI.WebControls.WebParts.IWebEditable>の特定の実装を提供するインターフェイス、<xref:System.Web.UI.WebControls.WebParts.IWebEditable.CreateEditorParts%2A>メソッドおよび<xref:System.Web.UI.WebControls.WebParts.IWebEditable.WebBrowsableObject%2A>プロパティです。 また内で入れ子になったことを確認、`TextDisplayWebPart`クラスは、プライベート、カスタム`TextDisplayEditorPart`ベースから派生するクラスを<xref:System.Web.UI.WebControls.WebParts.EditorPart>クラスです。 コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 両方のコンパイル方法を示すチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-csharp[WebParts_IWebEditable_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IWebEditable_Overview/CS/textdisplaywebpart.cs#1)]
+ [!code-vb[WebParts_IWebEditable_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IWebEditable_Overview/VB/textdisplaywebpart.vb#1)]  
+  
+ コード例の 2 番目の部分は、カスタム コントロールをホストする Web ページです。 あることを確認、<xref:System.Web.UI.WebControls.WebParts.EditorZone>コントロールがページでは、カスタムのマークアップで宣言されている<xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロール必要があるため、参照できませんが、実行時にプログラムで追加できるためです。  
+  
+ [!code-aspx-csharp[WebParts_IWebEditable_Overview#7](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IWebEditable_Overview/CS/editorpart_overview_cs.aspx#7)]
+ [!code-aspx-vb[WebParts_IWebEditable_Overview#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IWebEditable_Overview/VB/editorpart_overview_vb.aspx#7)]  
+  
+ コード例の 3 番目の部分にページを切り替えるには、ユーザーを有効にするユーザー コントロールが編集モードです。 ユーザー コントロールがホストする Web ページで参照されていることに注意してください。 このユーザー コントロールを作成する方法の詳細について、次を参照してください。[チュートリアル: Web パーツ ページの表示モードを変更する](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0)です。  
+  
+ [!code-aspx-csharp[WebParts_IWebEditable_Overview#8](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IWebEditable_Overview/CS/displaymodeuccs.ascx#8)]
+ [!code-aspx-vb[WebParts_IWebEditable_Overview#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IWebEditable_Overview/VB/displaymodeucvb.ascx#8)]  
+  
+ コード例を実行するブラウザーでホストする Web ページを読み込む、テキスト ボックスにテキストを追加し、をクリックして、**セット ラベルのコンテンツを**をコントロールにラベルを更新するボタンをクリックします。 ページを編集モードに切り替えるには、次のように選択します。**編集**表示モードを含むドロップダウン リストからです。 カスタムの UI を表示する`TextDisplayEditorPart`制御、動詞メニューのドロップダウン矢印をクリックして、`TextDisplayWebPart`制御、および選択**編集**です。 UI では、編集、ラベルのテキストのスタイルを更新するフォント スタイルを含むドロップダウン リストを使用することができます、`TextDisplayWebPart`コントロール。 クリックする必要があります**Browse Mode**にページを通常のビューに戻って、ラベルのテキストは、フォント スタイルを今すぐが確認できる表示モードのドロップダウン リストで編集モードで選択しました。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>ないサーバー コントロールを使用するかどうか<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />Web パーツ アプリケーションでのコントロール (これらのコントロールを追加する場合は、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartZoneBase" />ゾーン)、およびする場合に関連付けるカスタム<see cref="T:System.Web.UI.WebControls.WebParts.EditorPart" />、このようなサーバー コントロールをコントロールする必要があります実装、<see cref="T:System.Web.UI.WebControls.WebParts.IWebEditable" />インターフェイスです。 派生<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />ので、コントロールは、インターフェイスを実装しないでください、ベース<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />クラス既にようにします。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateEditorParts">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.EditorPartCollection CreateEditorParts ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.UI.WebControls.WebParts.EditorPartCollection CreateEditorParts() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.IWebEditable.CreateEditorParts" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.EditorPartCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>カスタムのコレクションを返します<see cref="T:System.Web.UI.WebControls.WebParts.EditorPart" />を実装するサーバー コントロールに関連付けられているコントロール、<see cref="T:System.Web.UI.WebControls.WebParts.IWebEditable" />インターフェイスです。</summary>
+        <returns><see cref="T:System.Web.UI.WebControls.WebParts.EditorPartCollection" />ユーザー設定のコレクションを含む<see cref="T:System.Web.UI.WebControls.WebParts.EditorPart" />サーバー コントロールに関連付けられているコントロール。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.IWebEditable.CreateEditorParts%2A>メソッドでは、すべてのユーザー設定のコレクションを作成することができます<xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロール、カスタム コントロールに関連付けられている<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、またはユーザーを制御して、そのまま返します、<xref:System.Web.UI.WebControls.WebParts.EditorPartCollection>オブジェクト。 <xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールは、コレクションを受け取るし、すべてのインスタンスを作成、<xref:System.Web.UI.WebControls.WebParts.EditorPart>サーバー コントロールが入力したときにコントロールの編集モードです。  
+  
+ このメソッドを実装するカスタム通常<xref:System.Web.UI.WebControls.WebParts.WebPart>オーバーライドすることでコントロール、<xref:System.Web.UI.WebControls.WebParts.WebPart.CreateEditorParts%2A>メソッドです。 カスタムのインスタンスを作成する方法で<xref:System.Web.UI.WebControls.WebParts.EditorPart>に追加する目的のコントロールをコントロールに関連付けること、<xref:System.Web.UI.WebControls.WebParts.EditorPartCollection>オブジェクト、およびそのオブジェクトを返します。 コレクション<xref:System.Web.UI.WebControls.WebParts.EditorPart>にコントロールが割り当てられます、<xref:System.Web.UI.WebControls.WebParts.EditorZoneBase.EditorParts%2A>のプロパティ、<xref:System.Web.UI.WebControls.WebParts.EditorZoneBase>ゾーンです。  
+  
+> [!NOTE]
+>  どの<xref:System.Web.UI.WebControls.WebParts.EditorPart>のコレクションに追加されている<xref:System.Web.UI.WebControls.WebParts.EditorPart>の実装内のコントロール、<xref:System.Web.UI.WebControls.WebParts.IWebEditable.CreateEditorParts%2A>メソッドは、ID プロパティに割り当てられている値を持つ必要があります、例外がスローする、コレクションに割り当てるときにそれ以外の場合、<xref:System.Web.UI.WebControls.WebParts.EditorZoneBase.EditorParts%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますのオーバーライド、<xref:System.Web.UI.WebControls.WebParts.IWebEditable.CreateEditorParts%2A>カスタム メソッド<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 使用例」のサンプルを実行するために必要な完全なソース コードが検出された、<xref:System.Web.UI.WebControls.WebParts.IWebEditable>クラスの概要に関するトピック。  
+  
+ このコード例には両方のメンバーが含まれています、<xref:System.Web.UI.WebControls.WebParts.IWebEditable>インターフェイスです。 なおのオーバーライド、<xref:System.Web.UI.WebControls.WebParts.IWebEditable.CreateEditorParts%2A>メソッドを作成、<xref:System.Collections.ArrayList>を 1 つまたは複数のユーザー設定を収集する<xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロール、および一覧を使用して、作成、<xref:System.Web.UI.WebControls.WebParts.EditorPartCollection>オブジェクト。  
+  
+ [!code-csharp[WebParts_IWebEditable_Overview#4](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IWebEditable_Overview/CS/textdisplaywebpart.cs#4)]
+ [!code-vb[WebParts_IWebEditable_Overview#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IWebEditable_Overview/VB/textdisplaywebpart.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para><see cref="T:System.Web.UI.WebControls.WebParts.EditorPartCollection" />オブジェクトを<see cref="M:System.Web.UI.WebControls.WebParts.IWebEditable.CreateEditorParts" />は読み取り専用と、個々 のコントロールを追加するアクセス可能なメソッドがないが返されます。 ただし、上書きまたはメソッドの実装で、作成別の種類<see cref="T:System.Collections.ICollection" />などのオブジェクト、 <see cref="T:System.Collections.ArrayList" />、すべてのユーザー設定を格納する<see cref="T:System.Web.UI.WebControls.WebParts.EditorPart" />コントロール、および新規に作成するときに、コンス トラクターに渡す<see cref="T:System.Web.UI.WebControls.WebParts.EditorPartCollection" />オブジェクト. コード例は、例」のセクションを参照してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="WebBrowsableObject">
+      <MemberSignature Language="C#" Value="public object WebBrowsableObject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object WebBrowsableObject" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.IWebEditable.WebBrowsableObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照を取得、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール、ユーザー コントロール、またはカスタム コントロールが編集されます<see cref="T:System.Web.UI.WebControls.WebParts.EditorPart" />コントロール。</summary>
+        <value>オブジェクト参照に関連付けられたコントロールを<see cref="T:System.Web.UI.WebControls.WebParts.EditorPart" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.IWebEditable.WebBrowsableObject%2A>プロパティを提供するため<xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロールに関連付けられているサーバーのコントロールへの参照を取得します。  
+  
+ 返されるオブジェクトの参照を有効に、プロパティ自体は、読み取り専用では、<xref:System.Web.UI.WebControls.WebParts.EditorPart>サーバー コントロールに値を変更するコントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しますが、どのように<xref:System.Web.UI.WebControls.WebParts.IWebEditable.WebBrowsableObject%2A>カスタム プロパティをオーバーライドすることができます<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 使用例」の例を実行するために必要な完全なソース コードが検出された、<xref:System.Web.UI.WebControls.WebParts.IWebEditable>クラスの概要に関するトピック。  
+  
+ 両方のメンバーをオーバーライドするコード例、<xref:System.Web.UI.WebControls.WebParts.IWebEditable>インターフェイスです。  
+  
+ [!code-csharp[WebParts_IWebEditable_Overview#4](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IWebEditable_Overview/CS/textdisplaywebpart.cs#4)]
+ [!code-vb[WebParts_IWebEditable_Overview#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IWebEditable_Overview/VB/textdisplaywebpart.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>通常、実装、<see cref="P:System.Web.UI.WebControls.WebParts.IWebEditable.WebBrowsableObject" />サーバー コントロールのプロパティ、単に戻ったら、サーバー コントロール自体への参照。 場合、<see cref="T:System.Web.UI.WebControls.WebParts.GenericWebPart" />クラス、これを有効にする子コントロールをラップするため、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />の実装を制御する、<see cref="P:System.Web.UI.WebControls.WebParts.IWebEditable.WebBrowsableObject" />プロパティを子コントロールへの参照を返します。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

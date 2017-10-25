@@ -1,0 +1,608 @@
+<Type Name="AnnotationService" FullName="System.Windows.Annotations.AnnotationService">
+  <TypeSignature Language="C#" Value="public sealed class AnnotationService : System.Windows.Threading.DispatcherObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed AnnotationService extends System.Windows.Threading.DispatcherObject" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Annotations.AnnotationService" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Threading.DispatcherObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>管理およびユーザーの注釈を表示するために Microsoft 注釈フレームワークのコア サービスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成および開始する方法を示しています、<xref:System.Windows.Annotations.AnnotationService>です。  
+  
+ [!code-csharp[DocViewerAnnotationsXml#DocViewXmlStartAnnotations](~/samples/snippets/csharp/VS_Snippets_Wpf/DocViewerAnnotationsXml/CSharp/Window1.xaml.cs#docviewxmlstartannotations)]
+ [!code-vb[DocViewerAnnotationsXml#DocViewXmlStartAnnotations](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DocViewerAnnotationsXml/visualbasic/window1.xaml.vb#docviewxmlstartannotations)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Annotations.AnnotationService" />コントロールを表示する、指定されたドキュメントで使用するためのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Annotations.AnnotationService>コントロールを表示する次のドキュメントで使用できます。  
+  
+-   <xref:System.Windows.Controls.FlowDocumentReader>  
+  
+-   <xref:System.Windows.Controls.FlowDocumentScrollViewer>  
+  
+-   <xref:System.Windows.Controls.Primitives.DocumentViewerBase>派生サブクラス  
+  
+    -   <xref:System.Windows.Controls.DocumentViewer>  
+  
+    -   <xref:System.Windows.Controls.FlowDocumentPageViewer>  
+  
+   
+  
+## Examples  
+ 次の例では、使用、<xref:System.Windows.Annotations.AnnotationService.%23ctor%2A>コンス トラクターです。  
+  
+ [!code-csharp[DocViewerAnnotationsXml#DocViewXmlStartAnnotations](~/samples/snippets/csharp/VS_Snippets_Wpf/DocViewerAnnotationsXml/CSharp/Window1.xaml.cs#docviewxmlstartannotations)]
+ [!code-vb[DocViewerAnnotationsXml#DocViewXmlStartAnnotations](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DocViewerAnnotationsXml/visualbasic/window1.xaml.vb#docviewxmlstartannotations)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AnnotationService (System.Windows.Controls.FlowDocumentReader viewer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Controls.FlowDocumentReader viewer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.AnnotationService.#ctor(System.Windows.Controls.FlowDocumentReader)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="viewer" Type="System.Windows.Controls.FlowDocumentReader" />
+      </Parameters>
+      <Docs>
+        <param name="viewer">関連付けられたコントロールを読み取り、ドキュメント、<see cref="T:System.Windows.Annotations.AnnotationService" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Annotations.AnnotationService" />と指定した使用クラスを<see cref="T:System.Windows.Controls.FlowDocumentReader" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、使用、<xref:System.Windows.Annotations.AnnotationService.%23ctor%2A>コンス トラクターです。  
+  
+ [!code-csharp[DocViewerAnnotationsXml#DocViewXmlStartAnnotations](~/samples/snippets/csharp/VS_Snippets_Wpf/DocViewerAnnotationsXml/CSharp/Window1.xaml.cs#docviewxmlstartannotations)]
+ [!code-vb[DocViewerAnnotationsXml#DocViewXmlStartAnnotations](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DocViewerAnnotationsXml/visualbasic/window1.xaml.vb#docviewxmlstartannotations)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AnnotationService (System.Windows.Controls.FlowDocumentScrollViewer viewer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Controls.FlowDocumentScrollViewer viewer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.AnnotationService.#ctor(System.Windows.Controls.FlowDocumentScrollViewer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="viewer" Type="System.Windows.Controls.FlowDocumentScrollViewer" />
+      </Parameters>
+      <Docs>
+        <param name="viewer">関連付けられたコントロールを表示するドキュメント、<see cref="T:System.Windows.Annotations.AnnotationService" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Annotations.AnnotationService" />と指定した使用クラスを<see cref="T:System.Windows.Controls.FlowDocumentScrollViewer" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、使用、<xref:System.Windows.Annotations.AnnotationService.%23ctor%2A>コンス トラクターです。  
+  
+ [!code-csharp[DocViewerAnnotationsXml#DocViewXmlStartAnnotations](~/samples/snippets/csharp/VS_Snippets_Wpf/DocViewerAnnotationsXml/CSharp/Window1.xaml.cs#docviewxmlstartannotations)]
+ [!code-vb[DocViewerAnnotationsXml#DocViewXmlStartAnnotations](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DocViewerAnnotationsXml/visualbasic/window1.xaml.vb#docviewxmlstartannotations)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="viewer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AnnotationService (System.Windows.Controls.Primitives.DocumentViewerBase viewer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Controls.Primitives.DocumentViewerBase viewer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.AnnotationService.#ctor(System.Windows.Controls.Primitives.DocumentViewerBase)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="viewer" Type="System.Windows.Controls.Primitives.DocumentViewerBase" />
+      </Parameters>
+      <Docs>
+        <param name="viewer">関連付けられたコントロールを表示するドキュメント、<see cref="T:System.Windows.Annotations.AnnotationService" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Annotations.AnnotationService" />と指定した使用クラスを<see cref="T:System.Windows.Controls.DocumentViewer" />または<see cref="T:System.Windows.Controls.FlowDocumentPageViewer" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターで使用できる<xref:System.Windows.Controls.Primitives.DocumentViewerBase>コントロールを派生します。  
+  
+-   <xref:System.Windows.Controls.DocumentViewer>  
+  
+-   <xref:System.Windows.Controls.FlowDocumentPageViewer>  
+  
+   
+  
+## Examples  
+ 次の例では、使用、<xref:System.Windows.Annotations.AnnotationService.%23ctor%2A>コンス トラクターです。  
+  
+ [!code-csharp[DocViewerAnnotationsXml#DocViewXmlStartAnnotations](~/samples/snippets/csharp/VS_Snippets_Wpf/DocViewerAnnotationsXml/CSharp/Window1.xaml.cs#docviewxmlstartannotations)]
+ [!code-vb[DocViewerAnnotationsXml#DocViewXmlStartAnnotations](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DocViewerAnnotationsXml/visualbasic/window1.xaml.vb#docviewxmlstartannotations)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="viewer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearHighlightsCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.RoutedUICommand ClearHighlightsCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.RoutedUICommand ClearHighlightsCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Annotations.AnnotationService.ClearHighlightsCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クリア、現在の選択範囲からコメントを強調表示するコマンドを表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、ルーティング コマンドをメニュー項目に割り当てる方法を示しています。[!INCLUDE[TLA#tla_titlexaml](~/includes/tlasharptla-titlexaml-md.md)]です。  
+  
+ [!code-xaml[DocViewerAnnotationsXps#CreateDeleteAnnotations](~/samples/snippets/csharp/VS_Snippets_Wpf/DocViewerAnnotationsXps/CSharp/Window1.xaml#createdeleteannotations)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateHighlightCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.RoutedUICommand CreateHighlightCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.RoutedUICommand CreateHighlightCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Annotations.AnnotationService.CreateHighlightCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の選択範囲で強調表示の注釈を作成するコマンドを表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、ルーティング コマンドをメニュー項目に割り当てる方法を示しています。[!INCLUDE[TLA#tla_titlexaml](~/includes/tlasharptla-titlexaml-md.md)]です。  
+  
+ [!code-xaml[DocViewerAnnotationsXps#CreateDeleteAnnotations](~/samples/snippets/csharp/VS_Snippets_Wpf/DocViewerAnnotationsXps/CSharp/Window1.xaml#createdeleteannotations)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInkStickyNoteCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.RoutedUICommand CreateInkStickyNoteCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.RoutedUICommand CreateInkStickyNoteCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Annotations.AnnotationService.CreateInkStickyNoteCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の選択範囲でインク注釈を作成するコマンドを表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、どのようにルーティングされるコマンドのメニュー項目に割り当てられた[!INCLUDE[TLA#tla_titlexaml](~/includes/tlasharptla-titlexaml-md.md)]です。  
+  
+ [!code-xaml[DocViewerAnnotationsXps#CreateDeleteAnnotations](~/samples/snippets/csharp/VS_Snippets_Wpf/DocViewerAnnotationsXps/CSharp/Window1.xaml#createdeleteannotations)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateTextStickyNoteCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.RoutedUICommand CreateTextStickyNoteCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.RoutedUICommand CreateTextStickyNoteCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Annotations.AnnotationService.CreateTextStickyNoteCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の選択項目テキスト注釈を作成するコマンドを表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、どのようにルーティングされるコマンドのメニュー項目に割り当てられた[!INCLUDE[TLA#tla_titlexaml](~/includes/tlasharptla-titlexaml-md.md)]です。  
+  
+ [!code-xaml[DocViewerAnnotationsXps#CreateDeleteAnnotations](~/samples/snippets/csharp/VS_Snippets_Wpf/DocViewerAnnotationsXps/CSharp/Window1.xaml#createdeleteannotations)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteAnnotationsCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.RoutedUICommand DeleteAnnotationsCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.RoutedUICommand DeleteAnnotationsCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Annotations.AnnotationService.DeleteAnnotationsCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのインク、テキスト注釈、および強調表示を削除するコマンドを表す現在の選択範囲内の注釈。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、ルーティング コマンドをメニュー項目に割り当てる方法を示しています。[!INCLUDE[TLA#tla_titlexaml](~/includes/tlasharptla-titlexaml-md.md)]です。  
+  
+ [!code-xaml[DocViewerAnnotationsXps#CreateDeleteAnnotations](~/samples/snippets/csharp/VS_Snippets_Wpf/DocViewerAnnotationsXps/CSharp/Window1.xaml#createdeleteannotations)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteStickyNotesCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.RoutedUICommand DeleteStickyNotesCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.RoutedUICommand DeleteStickyNotesCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Annotations.AnnotationService.DeleteStickyNotesCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の選択範囲にインクおよびテキスト注釈の注釈をすべて削除するコマンドを表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、どのようにルーティングされるコマンドのメニュー項目に割り当てられた[!INCLUDE[TLA#tla_titlexaml](~/includes/tlasharptla-titlexaml-md.md)]です。  
+  
+ [!code-xaml[DocViewerAnnotationsXps#CreateDeleteAnnotations](~/samples/snippets/csharp/VS_Snippets_Wpf/DocViewerAnnotationsXps/CSharp/Window1.xaml#createdeleteannotations)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Disable">
+      <MemberSignature Language="C#" Value="public void Disable ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Disable() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.AnnotationService.Disable" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>注釈の処理を無効にし、表示されているすべてのコメントを非表示にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Windows.Annotations.AnnotationService.Disable%2A>すべてと呼ばれる注釈を非表示になります。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Annotations.AnnotationService.Disable%2A>メソッドを停止すると、<xref:System.Windows.Annotations.AnnotationService>です。  
+  
+ [!code-csharp[DocViewerAnnotationsXml#DocViewXmlStopAnnotations](~/samples/snippets/csharp/VS_Snippets_Wpf/DocViewerAnnotationsXml/CSharp/Window1.xaml.cs#docviewxmlstopannotations)]
+ [!code-vb[DocViewerAnnotationsXml#DocViewXmlStopAnnotations](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DocViewerAnnotationsXml/visualbasic/window1.xaml.vb#docviewxmlstopannotations)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enable">
+      <MemberSignature Language="C#" Value="public void Enable (System.Windows.Annotations.Storage.AnnotationStore annotationStore);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Enable(class System.Windows.Annotations.Storage.AnnotationStore annotationStore) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.AnnotationService.Enable(System.Windows.Annotations.Storage.AnnotationStore)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="annotationStore" Type="System.Windows.Annotations.Storage.AnnotationStore" />
+      </Parameters>
+      <Docs>
+        <param name="annotationStore">読み取り、書き込み、および注釈を表示するのに使用する注釈のストア。</param>
+        <summary>により、<see cref="T:System.Windows.Annotations.AnnotationService" />で使用するため、指定された<see cref="T:System.Windows.Annotations.Storage.AnnotationStore" />し、表示されているすべてのコメントを表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Windows.Annotations.AnnotationService.Enable%2A>すべてと呼ばれる、ビューアー コントロール ウィンドウで注釈が表示されます。  (注釈サービスに関連付けられているビューアー コントロールがパラメーターで指定された、<xref:System.Windows.Annotations.AnnotationService.%23ctor%2A>コンス トラクターです)。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Annotations.AnnotationService.Enable%2A>メソッドを起動するときに、<xref:System.Windows.Annotations.AnnotationService>です。  
+  
+ [!code-csharp[DocViewerAnnotationsXml#DocViewXmlStartAnnotations](~/samples/snippets/csharp/VS_Snippets_Wpf/DocViewerAnnotationsXml/CSharp/Window1.xaml.cs#docviewxmlstartannotations)]
+ [!code-vb[DocViewerAnnotationsXml#DocViewXmlStartAnnotations](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DocViewerAnnotationsXml/visualbasic/window1.xaml.vb#docviewxmlstartannotations)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="annotationStore" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetService">
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>返します、<see cref="T:System.Windows.Annotations.AnnotationService" />コントロールを表示する、指定されたドキュメントに関連付けられています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Annotations.AnnotationService.GetService%2A>を返すメソッドを使用することができます、<xref:System.Windows.Annotations.AnnotationService>コントロールを表示する次のドキュメントに関連付けられています。  
+  
+-   <xref:System.Windows.Controls.FlowDocumentReader>  
+  
+-   <xref:System.Windows.Controls.FlowDocumentScrollViewer>  
+  
+-   <xref:System.Windows.Controls.Primitives.DocumentViewerBase>派生サブクラス  
+  
+    -   <xref:System.Windows.Controls.DocumentViewer>  
+  
+    -   <xref:System.Windows.Controls.FlowDocumentPageViewer>  
+  
+ 注釈サービスに関連付けられているビューアー コントロールがパラメーターで指定された、<xref:System.Windows.Annotations.AnnotationService.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetService">
+      <MemberSignature Language="C#" Value="public static System.Windows.Annotations.AnnotationService GetService (System.Windows.Controls.FlowDocumentReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Annotations.AnnotationService GetService(class System.Windows.Controls.FlowDocumentReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.AnnotationService.GetService(System.Windows.Controls.FlowDocumentReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Annotations.AnnotationService</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Windows.Controls.FlowDocumentReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">返されるドキュメント リーダー コントロール、<see cref="T:System.Windows.Annotations.AnnotationService" />インスタンスの場合。</param>
+        <summary>返します、<see cref="T:System.Windows.Annotations.AnnotationService" />に指定された関連付けられている<see cref="T:System.Windows.Controls.FlowDocumentReader" />です。</summary>
+        <returns><see cref="T:System.Windows.Annotations.AnnotationService" />コントロールに関連付けられた、特定のドキュメント リーダー; または<see langword="null" />場合は、指定されたドキュメントのリーダーを持たない<see cref="T:System.Windows.Annotations.AnnotationService" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Annotations.AnnotationService.GetService%2A>を返すメソッドを使用することができます、<xref:System.Windows.Annotations.AnnotationService>コントロールを表示する次のドキュメントに関連付けられています。  
+  
+-   <xref:System.Windows.Controls.FlowDocumentReader>  
+  
+-   <xref:System.Windows.Controls.FlowDocumentScrollViewer>  
+  
+-   <xref:System.Windows.Controls.Primitives.DocumentViewerBase>派生サブクラス  
+  
+    -   <xref:System.Windows.Controls.DocumentViewer>  
+  
+    -   <xref:System.Windows.Controls.FlowDocumentPageViewer>  
+  
+ 注釈サービスに関連付けられているビューアー コントロールがパラメーターで指定された、<xref:System.Windows.Annotations.AnnotationService.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetService">
+      <MemberSignature Language="C#" Value="public static System.Windows.Annotations.AnnotationService GetService (System.Windows.Controls.FlowDocumentScrollViewer viewer);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Annotations.AnnotationService GetService(class System.Windows.Controls.FlowDocumentScrollViewer viewer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.AnnotationService.GetService(System.Windows.Controls.FlowDocumentScrollViewer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Annotations.AnnotationService</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="viewer" Type="System.Windows.Controls.FlowDocumentScrollViewer" />
+      </Parameters>
+      <Docs>
+        <param name="viewer">ドキュメントのビューアー コントロールを返す、<see cref="T:System.Windows.Annotations.AnnotationService" />インスタンスの場合。</param>
+        <summary>返します、<see cref="T:System.Windows.Annotations.AnnotationService" />に指定された関連付けられている<see cref="T:System.Windows.Controls.FlowDocumentScrollViewer" />です。</summary>
+        <returns><see cref="T:System.Windows.Annotations.AnnotationService" />特定のドキュメント ビューアー コントロールに関連付けられているまたは<see langword="null" />場合は、指定されたビューアー コントロールを持たない<see cref="T:System.Windows.Annotations.AnnotationService" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Annotations.AnnotationService.GetService%2A>を返すメソッドを使用することができます、<xref:System.Windows.Annotations.AnnotationService>コントロールを表示する次のドキュメントに関連付けられています。  
+  
+-   <xref:System.Windows.Controls.FlowDocumentReader>  
+  
+-   <xref:System.Windows.Controls.FlowDocumentScrollViewer>  
+  
+-   <xref:System.Windows.Controls.Primitives.DocumentViewerBase>派生サブクラス  
+  
+    -   <xref:System.Windows.Controls.DocumentViewer>  
+  
+    -   <xref:System.Windows.Controls.FlowDocumentPageViewer>  
+  
+ 注釈サービスに関連付けられているビューアー コントロールがパラメーターで指定された、<xref:System.Windows.Annotations.AnnotationService.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="viewer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetService">
+      <MemberSignature Language="C#" Value="public static System.Windows.Annotations.AnnotationService GetService (System.Windows.Controls.Primitives.DocumentViewerBase viewer);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Annotations.AnnotationService GetService(class System.Windows.Controls.Primitives.DocumentViewerBase viewer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.AnnotationService.GetService(System.Windows.Controls.Primitives.DocumentViewerBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Annotations.AnnotationService</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="viewer" Type="System.Windows.Controls.Primitives.DocumentViewerBase" />
+      </Parameters>
+      <Docs>
+        <param name="viewer">返されるコントロールを表示するドキュメント、<see cref="T:System.Windows.Annotations.AnnotationService" />インスタンスの場合。</param>
+        <summary>返します、<see cref="T:System.Windows.Annotations.AnnotationService" />コントロールを表示する、指定されたドキュメントに関連付けられているインスタンス。</summary>
+        <returns><see cref="T:System.Windows.Annotations.AnnotationService" />コントロールを表示する特定のドキュメントに関連付けられているまたは<see langword="null" />コントロールを表示する、指定されたドキュメントを持たない場合<see cref="T:System.Windows.Annotations.AnnotationService" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Annotations.AnnotationService.GetService%2A>を返すメソッドを使用することができます、<xref:System.Windows.Annotations.AnnotationService>コントロールを表示する次のドキュメントに関連付けられています。  
+  
+-   <xref:System.Windows.Controls.FlowDocumentReader>  
+  
+-   <xref:System.Windows.Controls.FlowDocumentScrollViewer>  
+  
+-   <xref:System.Windows.Controls.Primitives.DocumentViewerBase>派生サブクラス  
+  
+    -   <xref:System.Windows.Controls.DocumentViewer>  
+  
+    -   <xref:System.Windows.Controls.FlowDocumentPageViewer>  
+  
+ 注釈サービスに関連付けられているビューアー コントロールがパラメーターで指定された、<xref:System.Windows.Annotations.AnnotationService.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="viewer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEnabled">
+      <MemberSignature Language="C#" Value="public bool IsEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Annotations.AnnotationService.IsEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.Annotations.AnnotationService" />を有効にします。</summary>
+        <value>
+          <see cref="T:System.Windows.Annotations.AnnotationService" /> が有効な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Annotations.AnnotationService.IsEnabled%2A>プロパティを作成し、開始するときに、<xref:System.Windows.Annotations.AnnotationService>です。  また、ユーザーは、ビューアー コントロールで、新しいドキュメントを開くことが選択した場合、<xref:System.Windows.Annotations.AnnotationService>古いドキュメントに対して無効にして新しいドキュメントに有効にする必要があります。  
+  
+ [!code-csharp[DocViewerAnnotationsXml#DocViewXmlStartAnnotations](~/samples/snippets/csharp/VS_Snippets_Wpf/DocViewerAnnotationsXml/CSharp/Window1.xaml.cs#docviewxmlstartannotations)]
+ [!code-vb[DocViewerAnnotationsXml#DocViewXmlStartAnnotations](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DocViewerAnnotationsXml/visualbasic/window1.xaml.vb#docviewxmlstartannotations)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Store">
+      <MemberSignature Language="C#" Value="public System.Windows.Annotations.Storage.AnnotationStore Store { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Annotations.Storage.AnnotationStore Store" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Annotations.AnnotationService.Store" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Annotations.Storage.AnnotationStore</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Annotations.Storage.AnnotationStore" />で使用される<see cref="T:System.Windows.Annotations.AnnotationService" />です。</summary>
+        <value>この <see cref="T:System.Windows.Annotations.Storage.AnnotationStore" /> で使用される <see cref="T:System.Windows.Annotations.AnnotationService" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Annotations.Storage.AnnotationStore>によって使用される、<xref:System.Windows.Annotations.AnnotationService>はそのサービスのパラメーターとして指定<xref:System.Windows.Annotations.AnnotationService.Enable%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Annotations.AnnotationService.Store%2A>プロパティの開始および停止するときに、<xref:System.Windows.Annotations.AnnotationService>です。  
+  
+ [!code-csharp[DocViewerAnnotationsXml#DocViewXmlStartStopAnnotat](~/samples/snippets/csharp/VS_Snippets_Wpf/DocViewerAnnotationsXml/CSharp/Window1.xaml.cs#docviewxmlstartstopannotat)]
+ [!code-vb[DocViewerAnnotationsXml#DocViewXmlStartStopAnnotat](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DocViewerAnnotationsXml/visualbasic/window1.xaml.vb#docviewxmlstartstopannotat)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

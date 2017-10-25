@@ -1,0 +1,739 @@
+<Type Name="TreeNodeCollection" FullName="System.Web.UI.WebControls.TreeNodeCollection">
+  <TypeSignature Language="C#" Value="public sealed class TreeNodeCollection : System.Collections.ICollection, System.Web.UI.IStateManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TreeNodeCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Web.UI.IStateManager" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.TreeNodeCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.UI.IStateManager</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>コレクションを表します<see cref="T:System.Web.UI.WebControls.TreeNode" />内のオブジェクト、<see cref="T:System.Web.UI.WebControls.TreeView" />コントロール。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.TreeNodeCollection>を格納および管理のコレクション クラスが使用される<xref:System.Web.UI.WebControls.TreeNode>内のオブジェクト、<xref:System.Web.UI.WebControls.TreeView>コントロール。 <xref:System.Web.UI.WebControls.TreeView>コントロール、<xref:System.Web.UI.WebControls.TreeNodeCollection>をそのプロパティの 2 つのクラスです。 場合は、そのルート ノードを格納して、<xref:System.Web.UI.WebControls.TreeView.Nodes%2A>プロパティとその選択したノードで、<xref:System.Web.UI.WebControls.TreeView.CheckedNodes%2A>プロパティです。 <xref:System.Web.UI.WebControls.TreeNodeCollection>のコレクションを使用しても、 <xref:System.Web.UI.WebControls.TreeNode.ChildNodes%2A> (存在する場合)、子ノードを格納するプロパティです。  
+  
+ <xref:System.Web.UI.WebControls.TreeNodeCollection>クラスは、コレクション内の項目にアクセスするいくつかの方法をサポートします。  
+  
+-   使用して、<xref:System.Web.UI.WebControls.TreeNodeCollection.Item%2A>を取得するためのインデクサー、<xref:System.Web.UI.WebControls.TreeNode>オブジェクトを直接特定の 0 から始まるインデックス。  
+  
+-   使用して、<xref:System.Web.UI.WebControls.TreeNodeCollection.GetEnumerator%2A>メソッドをコレクションを反復処理に使用できる列挙子を作成します。  
+  
+-   使用して`foreach`(c#) または`For Each`コレクションを反復処理する (Visual Basic)。  
+  
+-   使用して、<xref:System.Web.UI.WebControls.TreeNodeCollection.CopyTo%2A>にコレクションの内容をコピーする方法、<xref:System.Array>オブジェクト。  
+  
+ プログラムで管理することができます、<xref:System.Web.UI.WebControls.TreeNodeCollection>の追加と削除によって<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。 コレクションにノードを追加するには、使用、<xref:System.Web.UI.WebControls.TreeNodeCollection.Add%2A>または<xref:System.Web.UI.WebControls.TreeNodeCollection.AddAt%2A>メソッドです。 コレクションからノードを削除するには、使用、 <xref:System.Web.UI.WebControls.TreeNodeCollection.Remove%2A>、 <xref:System.Web.UI.WebControls.TreeNodeCollection.RemoveAt%2A>、または<xref:System.Web.UI.WebControls.TreeNodeCollection.Clear%2A>メソッドです。  
+  
+> [!NOTE]
+>  ときに、<xref:System.Web.UI.WebControls.TreeView>コントロールがデータ ソースにバインドされている、<xref:System.Web.UI.WebControls.TreeView.Nodes%2A>と<xref:System.Web.UI.WebControls.TreeNode.ChildNodes%2A>コレクションがバインドが発生するたびに自動的に設定されます。 バインディング コレクションへの変更はすべて失われます。 これらの変更を保持するには、データ ソースを更新するかをバインドするたびに、コレクションを手動で再構築します。  
+  
+ <xref:System.Web.UI.WebControls.TreeNodeCollection>プロパティおよびコレクション自体に関する情報を取得できるようにするメソッドが含まれています。 コレクション内の項目の数が、使用、<xref:System.Web.UI.WebControls.TreeNodeCollection.Count%2A>プロパティです。 特定コレクションに含まれているかどうかを判断する場合<xref:System.Web.UI.WebControls.TreeNode>オブジェクトを使用して、<xref:System.Web.UI.WebControls.TreeNodeCollection.Contains%2A>メソッドです。 インデックスを取得する、<xref:System.Web.UI.WebControls.TreeNode>を使用して、コレクション内のオブジェクト、<xref:System.Web.UI.WebControls.TreeNodeCollection.IndexOf%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、プログラムでノードを追加してからそれらを削除する方法、<xref:System.Web.UI.WebControls.TreeNodeCollection>です。 注意して、<xref:System.Web.UI.WebControls.TreeView.Nodes%2A>と<xref:System.Web.UI.WebControls.TreeNode.ChildNodes%2A>プロパティの戻り値、<xref:System.Web.UI.WebControls.TreeNodeCollection>オブジェクト。  
+  
+ [!code-aspx-csharp[TreeNodeCollectionAdd#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeCollectionAdd/CS/treenodecollectionaddcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeCollectionAdd#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeCollectionAdd/VB/treenodecollectionaddvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TreeNodeCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.TreeNodeCollection" />クラスの既定値を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.TreeNodeCollection>クラスの既定値を使用します。 このコンス トラクターがよく使用ルート ノードのコレクションを作成するときに、親ノード (または所有者) は必要ありません。  
+  
+> [!NOTE]
+>  受け取るオーバー ロードされたコンス トラクターを使用する必要があります: 非ルート ノードのコレクションを作成するときに、`owner`親ノードを指定するこのコンス トラクターではなく、パラメーター。  
+  
+ このコンス トラクターは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TreeNodeCollection (System.Web.UI.WebControls.TreeNode owner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.TreeNode owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeCollection.#ctor(System.Web.UI.WebControls.TreeNode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Web.UI.WebControls.TreeNode" />
+      </Parameters>
+      <Docs>
+        <param name="owner"><see cref="T:System.Web.UI.WebControls.TreeNode" />コレクションの親ノードを表すオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.TreeNodeCollection" />クラスの指定した親ノード (または所有者) を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.TreeNodeCollection>クラスの指定した親ノード (または所有者) を使用します。 このコンス トラクターは、よく使用: 非ルート ノードのコレクションを作成するときに親ノードを指定する必要があります。  
+  
+> [!NOTE]
+>  ルート ノードのコレクションを作成する場合は、ルート ノードに親ノードがあるないために、既定のコンス トラクターを使用して検討してください。  
+  
+ このコンス トラクターは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Web.UI.WebControls.TreeNode child);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Web.UI.WebControls.TreeNode child) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeCollection.Add(System.Web.UI.WebControls.TreeNode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="child" Type="System.Web.UI.WebControls.TreeNode" />
+      </Parameters>
+      <Docs>
+        <param name="child"><see cref="T:System.Web.UI.WebControls.TreeNode" />追加するオブジェクト。</param>
+        <summary>指定した追加<see cref="T:System.Web.UI.WebControls.TreeNode" />の末尾にオブジェクト、<see cref="T:System.Web.UI.WebControls.TreeNodeCollection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNodeCollection.Add%2A>メソッドを指定した追加<xref:System.Web.UI.WebControls.TreeNode>の末尾にオブジェクト、<xref:System.Web.UI.WebControls.TreeNodeCollection>です。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.TreeNodeCollection>複製および使用すると、null 参照 (Visual Basic の場合) の場合は Nothing を追加<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。  
+  
+ 代わりに、挿入することができます、<xref:System.Web.UI.WebControls.TreeNode>内のオブジェクト、<xref:System.Web.UI.WebControls.TreeNodeCollection>特定のインデックスを使用して、<xref:System.Web.UI.WebControls.TreeNodeCollection.AddAt%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.TreeNodeCollection.Add%2A>プログラムでノードを追加する方法、<xref:System.Web.UI.WebControls.TreeNodeCollection>です。 注意して、<xref:System.Web.UI.WebControls.TreeView.Nodes%2A>と<xref:System.Web.UI.WebControls.TreeNode.ChildNodes%2A>各プロパティを返す、<xref:System.Web.UI.WebControls.TreeNodeCollection>オブジェクト。  
+  
+ [!code-aspx-csharp[TreeNodeCollectionAdd#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeCollectionAdd/CS/treenodecollectionaddcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeCollectionAdd#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeCollectionAdd/VB/treenodecollectionaddvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAt">
+      <MemberSignature Language="C#" Value="public void AddAt (int index, System.Web.UI.WebControls.TreeNode child);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddAt(int32 index, class System.Web.UI.WebControls.TreeNode child) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeCollection.AddAt(System.Int32,System.Web.UI.WebControls.TreeNode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="child" Type="System.Web.UI.WebControls.TreeNode" />
+      </Parameters>
+      <Docs>
+        <param name="index">挿入する位置を示す 0 から始まるインデックス位置、<see cref="T:System.Web.UI.WebControls.TreeNode" />オブジェクト。</param>
+        <param name="child">追加する <see cref="T:System.Web.UI.WebControls.TreeNode" /> オブジェクト。</param>
+        <summary>指定した挿入<see cref="T:System.Web.UI.WebControls.TreeNode" />内のオブジェクト、<see cref="T:System.Web.UI.WebControls.TreeNodeCollection" />指定したインデックス位置にあるオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNodeCollection.AddAt%2A>メソッドを指定された挿入<xref:System.Web.UI.WebControls.TreeNode>内のオブジェクト、<xref:System.Web.UI.WebControls.TreeNodeCollection>指定した 0 から始まるインデックス位置。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.TreeNodeCollection>複製および使用すると、null 参照 (Visual Basic の場合) の場合は Nothing を挿入<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。  
+  
+ 代わりに、追加することができます、<xref:System.Web.UI.WebControls.TreeNode>の末尾にオブジェクト、<xref:System.Web.UI.WebControls.TreeNodeCollection>を使用して、<xref:System.Web.UI.WebControls.TreeNodeCollection.Add%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.TreeNodeCollection.AddAt%2A>プログラムでノードを追加する方法、<xref:System.Web.UI.WebControls.TreeNodeCollection>です。 注意して、<xref:System.Web.UI.WebControls.TreeView.Nodes%2A>と<xref:System.Web.UI.WebControls.TreeNode.ChildNodes%2A>各プロパティを返す、<xref:System.Web.UI.WebControls.TreeNodeCollection>オブジェクト。  
+  
+ [!code-aspx-csharp[TreeNodeCollectionAdd#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeCollectionAdd/CS/treenodecollectionaddcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeCollectionAdd#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeCollectionAdd/VB/treenodecollectionaddvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="child" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>空にして、<see cref="T:System.Web.UI.WebControls.TreeNodeCollection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNodeCollection.Clear%2A>を削除する各<xref:System.Web.UI.WebControls.TreeNode>オブジェクトから、<xref:System.Web.UI.WebControls.TreeNodeCollection>です。  
+  
+> [!NOTE]
+>  コレクションから個々 のノードを削除するには、使用、<xref:System.Web.UI.WebControls.TreeNodeCollection.Remove%2A>または<xref:System.Web.UI.WebControls.TreeNodeCollection.RemoveAt%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.TreeNodeCollection.Clear%2A>をプログラムで空のメソッド、<xref:System.Web.UI.WebControls.TreeNodeCollection>です。 注意して、<xref:System.Web.UI.WebControls.TreeView.Nodes%2A>と<xref:System.Web.UI.WebControls.TreeNode.ChildNodes%2A>プロパティの戻り値、<xref:System.Web.UI.WebControls.TreeNodeCollection>オブジェクト。  
+  
+ [!code-aspx-csharp[TreeNodeCollectionAdd#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeCollectionAdd/CS/treenodecollectionaddcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeCollectionAdd#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeCollectionAdd/VB/treenodecollectionaddvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Web.UI.WebControls.TreeNode c);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Web.UI.WebControls.TreeNode c) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeCollection.Contains(System.Web.UI.WebControls.TreeNode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="c" Type="System.Web.UI.WebControls.TreeNode" />
+      </Parameters>
+      <Docs>
+        <param name="c">検索する <see cref="T:System.Web.UI.WebControls.TreeNode" /> オブジェクト。</param>
+        <summary>決定するかどうか、指定した<see cref="T:System.Web.UI.WebControls.TreeNode" />オブジェクトがコレクション内にします。</summary>
+        <returns>
+          <see langword="true" />場合、指定した<see cref="T:System.Web.UI.WebControls.TreeNode" />オブジェクトがコレクションに含まれている、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNodeCollection.Contains%2A>メソッドを呼び出せば確認するかどうか、<xref:System.Web.UI.WebControls.TreeNode>にオブジェクトが含まれている、<xref:System.Web.UI.WebControls.TreeNodeCollection>です。 このメソッドは通常の存在をテストする使用、<xref:System.Web.UI.WebControls.TreeNode>オブジェクトを追加またはコレクションから、ノードを削除するなどのタスクを実行する前にします。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、 <xref:System.Web.UI.WebControls.TreeNodeCollection.Contains%2A> 、選択したノードがかどうかを決定するメソッド、<xref:System.Web.UI.WebControls.TreeView.Nodes%2A>コレクション。 注意して、<xref:System.Web.UI.WebControls.TreeView.Nodes%2A>プロパティから返される、<xref:System.Web.UI.WebControls.TreeNodeCollection>オブジェクト。  
+  
+ [!code-aspx-csharp[TreeNodeCollectionIndexOf#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeCollectionIndexOf/CS/treenodecollectionindexofcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeCollectionIndexOf#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeCollectionIndexOf/VB/treenodecollectionindexofvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Web.UI.WebControls.TreeNode[] nodeArray, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Web.UI.WebControls.TreeNode[] nodeArray, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeCollection.CopyTo(System.Web.UI.WebControls.TreeNode[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nodeArray" Type="System.Web.UI.WebControls.TreeNode[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="nodeArray">0 から始まる配列<see cref="T:System.Web.UI.WebControls.TreeNode" />オブジェクトからコピーされた項目を受信する、<see cref="T:System.Web.UI.WebControls.TreeNodeCollection" />です。</param>
+        <param name="index">コピーされた内容の受信を開始する位置を示す、ターゲット配列内の位置。</param>
+        <summary>すべての項目をコピー、<see cref="T:System.Web.UI.WebControls.TreeNodeCollection" />オブジェクトの場合は、互換性のある 1 次元配列を<see cref="T:System.Web.UI.WebControls.TreeNode" />オブジェクト、ターゲット配列の指定したインデックスから始まります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNodeCollection.CopyTo%2A>の内容をコピーする方法、<xref:System.Web.UI.WebControls.TreeNodeCollection>に指定した 0 から始まる<xref:System.Array?displayProperty=nameWithType>オブジェクト。 項目をコピーするには、対象となる配列の指定したインデックスから始まります。 <xref:System.Array?displayProperty=nameWithType>オブジェクト内の項目にアクセスする配列の構文を使用することができますし、<xref:System.Web.UI.WebControls.TreeNodeCollection>です。  
+  
+ 代わりに、使用することも、<xref:System.Web.UI.WebControls.TreeNodeCollection.GetEnumerator%2A>メソッドをコレクション内の項目へのアクセスに使用できる列挙子を作成します。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.TreeNodeCollection.CopyTo%2A>の値をコピーする方法、<xref:System.Web.UI.WebControls.TreeNodeCollection>を配列にします。 注意して、<xref:System.Web.UI.WebControls.TreeView.Nodes%2A>プロパティから返される、<xref:System.Web.UI.WebControls.TreeNodeCollection>オブジェクト。  
+  
+ [!code-aspx-csharp[TreeNodeCollectionCopyTo#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeCollectionCopyTo/CS/treenodecollectioncopytocs.aspx#1)]
+ [!code-aspx-vb[TreeNodeCollectionCopyTo#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeCollectionCopyTo/VB/treenodecollectioncopytovb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNodeCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内の項目の数を取得、<see cref="T:System.Web.UI.WebControls.TreeNodeCollection" />オブジェクト。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.TreeNodeCollection" /> 内の項目数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNodeCollection.Count%2A>内の項目の数を決定するプロパティ、<xref:System.Web.UI.WebControls.TreeNodeCollection>です。 コレクションの上限を確認するのには、このプロパティは、コレクションを反復処理するときに使用して一般的です。 <xref:System.Web.UI.WebControls.TreeNodeCollection.Count%2A>も通常、プロパティはコレクションが空かどうかを使用します。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.TreeNodeCollection.Count%2A>内の項目の数を決定するプロパティ、<xref:System.Web.UI.WebControls.TreeNodeCollection>です。 これは、後をたどってを実行、<xref:System.Web.UI.WebControls.TreeView>各ノードのテキストを表示するコントロール。  
+  
+ [!code-aspx-csharp[TreeNodeCollectionCount#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeCollectionCount/CS/treenodecollectioncountcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeCollectionCount#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeCollectionCount/VB/treenodecollectioncountvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>反復処理に使用できる列挙子を返します、<see cref="T:System.Web.UI.WebControls.TreeNodeCollection" />オブジェクト。</summary>
+        <returns>反復処理に使用できる列挙子、<see cref="T:System.Web.UI.WebControls.TreeNodeCollection" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNodeCollection.GetEnumerator%2A>ことが簡単に反復各項目を取得する列挙子を作成する方法、<xref:System.Web.UI.WebControls.TreeNodeCollection>です。 列挙子で示される現在の項目を取得する、<xref:System.Collections.IEnumerator.Current%2A?displayProperty=nameWithType>プロパティです。 使用して、<xref:System.Collections.IEnumerator.MoveNext%2A?displayProperty=nameWithType>メソッドに次の項目に移動します。 列挙子をコレクションの先頭に移動する必要がある場合、<xref:System.Collections.IEnumerator.Reset%2A?displayProperty=nameWithType>メソッドです。  
+  
+> [!NOTE]
+>  列挙子を作成または使用した後、<xref:System.Collections.IEnumerator.Reset%2A?displayProperty=nameWithType>メソッドを呼び出す必要があります、<xref:System.Collections.IEnumerator.MoveNext%2A?displayProperty=nameWithType>メソッドです。 によって表される項目のそれ以外の場合、<xref:System.Collections.IEnumerator.Current%2A?displayProperty=nameWithType>プロパティが定義されていません。  
+  
+ 代わりに、使用することも、<xref:System.Web.UI.WebControls.TreeNodeCollection.CopyTo%2A>メソッドを作成、<xref:System.Array?displayProperty=nameWithType>コレクション内の項目にアクセスするために使用できるオブジェクト。 別の方法としては、使用する、`foreach`または`For Each`構造、コレクションを反復処理します。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.TreeNodeCollection.GetEnumerator%2A>のルート ノードを格納する列挙子を作成する方法、<xref:System.Web.UI.WebControls.TreeView>コントロール。  
+  
+ [!code-aspx-csharp[TreeNodeCollectionGetEnumerator#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeCollectionGetEnumerator/CS/treenodecollectiongetenumeratorcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeCollectionGetEnumerator#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeCollectionGetEnumerator/VB/treenodecollectiongetenumeratorvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Web.UI.WebControls.TreeNode value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Web.UI.WebControls.TreeNode value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeCollection.IndexOf(System.Web.UI.WebControls.TreeNode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Web.UI.WebControls.TreeNode" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Web.UI.WebControls.TreeNode" />検索するオブジェクト。</param>
+        <summary>指定したインデックスを決定<see cref="T:System.Web.UI.WebControls.TreeNode" />オブジェクト。</summary>
+        <returns>最初に見つかった位置の 0 から始まるインデックス<paramref name="value" />内で、 <see cref="T:System.Web.UI.WebControls.TreeNodeCollection" />、それ以外の場合は、-1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNodeCollection.IndexOf%2A>メソッドの指定した 0 から始まるインデックスを確認する<xref:System.Web.UI.WebControls.TreeNode>内のオブジェクト、<xref:System.Web.UI.WebControls.TreeNodeCollection>オブジェクト。 コレクション内のノードは、このメソッドは-1 を返します。  
+  
+> [!NOTE]
+>  指定したノードには、コレクションに複数回が表示されたら、最初に見つかった位置のインデックスが返されます。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.TreeNodeCollection.IndexOf%2A>メソッドのルート ノードのインデックスを確認します。 注意して、<xref:System.Web.UI.WebControls.TreeView.Nodes%2A>プロパティから返される、<xref:System.Web.UI.WebControls.TreeNodeCollection>オブジェクト。  
+  
+ [!code-aspx-csharp[TreeNodeCollectionIndexOf#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeCollectionIndexOf/CS/treenodecollectionindexofcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeCollectionIndexOf#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeCollectionIndexOf/VB/treenodecollectionindexofvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNodeCollection.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.TreeNodeCollection" /> へのアクセスが同期されている (スレッド セーフである) かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.TreeNodeCollection.IsSynchronized%2A>プロパティを示すために使用へのアクセスをするかどうか、<xref:System.Web.UI.WebControls.TreeNodeCollection>が同期されている (スレッド セーフである)。 このプロパティはから派生した、<xref:System.Collections.ICollection?displayProperty=nameWithType>クラスし、常にオーバーライド`false`です。  
+  
+ 詳細については、<xref:System.Web.UI.WebControls.TreeNodeCollection.IsSynchronized%2A>プロパティを参照してください、<xref:System.Collections.ICollection.IsSynchronized%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Collections.ICollection?displayProperty=nameWithType>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.TreeNode this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.TreeNode Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNodeCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TreeNode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得する <see cref="T:System.Web.UI.WebControls.TreeNode" /> オブジェクトの 0 から始まるインデックス番号。</param>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.TreeNode" />で指定したインデックス位置にオブジェクト、<see cref="T:System.Web.UI.WebControls.TreeNodeCollection" />オブジェクト。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.TreeNode" />で指定したインデックス位置にオブジェクト、<see cref="T:System.Web.UI.WebControls.TreeNodeCollection" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインデクサーへのアクセスを使用して、<xref:System.Web.UI.WebControls.TreeNode>オブジェクトから、<xref:System.Web.UI.WebControls.TreeNodeCollection>配列表記を使用して指定したインデックス位置。 インデクサーを使用すると、変更または置換、<xref:System.Web.UI.WebControls.TreeNode>直接コレクション内のオブジェクト。 コレクションは、0 から始まる。  
+  
+   
+  
+## Examples  
+ 次の例では、インデクサーを使用して、要素にアクセスする方法、<xref:System.Web.UI.WebControls.TreeNodeCollection>です。 注意して、<xref:System.Web.UI.WebControls.TreeView.Nodes%2A>と<xref:System.Web.UI.WebControls.TreeNode.ChildNodes%2A>プロパティの戻り値、<xref:System.Web.UI.WebControls.TreeNodeCollection>オブジェクト。  
+  
+ [!code-aspx-csharp[TreeNodeCollectionAdd#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeCollectionAdd/CS/treenodecollectionaddcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeCollectionAdd#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeCollectionAdd/VB/treenodecollectionaddvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Web.UI.WebControls.TreeNode value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Web.UI.WebControls.TreeNode value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeCollection.Remove(System.Web.UI.WebControls.TreeNode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Web.UI.WebControls.TreeNode" />
+      </Parameters>
+      <Docs>
+        <param name="value">削除する <see cref="T:System.Web.UI.WebControls.TreeNode" /> オブジェクト。</param>
+        <summary>指定された削除<see cref="T:System.Web.UI.WebControls.TreeNode" />オブジェクトから、<see cref="T:System.Web.UI.WebControls.TreeNodeCollection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNodeCollection.Remove%2A>コレクションから指定されたノードを削除する方法です。 そのノードに続くすべての項目は、空いた位置を埋めるため移動されます。 移動した項目のインデックスも更新します。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.TreeNodeCollection>できます (Visual Basic では Nothing)、null 参照を含むだけでなく複製<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。  
+  
+ 代わりを使用して、特定のインデックス位置にあるノードを削除することができます、<xref:System.Web.UI.WebControls.TreeNodeCollection.RemoveAt%2A>メソッドです。 使用して、コレクション内のすべてのノードを削除することも、<xref:System.Web.UI.WebControls.TreeNodeCollection.Clear%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.TreeNodeCollection.Remove%2A>プログラムからノードを削除する方法、<xref:System.Web.UI.WebControls.TreeNodeCollection>です。 注意して、<xref:System.Web.UI.WebControls.TreeView.Nodes%2A>と<xref:System.Web.UI.WebControls.TreeNode.ChildNodes%2A>各プロパティを返す、<xref:System.Web.UI.WebControls.TreeNodeCollection>オブジェクト。  
+  
+ [!code-aspx-csharp[TreeNodeCollectionAdd#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeCollectionAdd/CS/treenodecollectionaddcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeCollectionAdd#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeCollectionAdd/VB/treenodecollectionaddvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除するノードの 0 から始まるインデックス位置。</param>
+        <summary>削除、<see cref="T:System.Web.UI.WebControls.TreeNode" />オブジェクトから指定したインデックス位置にある、<see cref="T:System.Web.UI.WebControls.TreeNodeCollection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNodeCollection.RemoveAt%2A>を削除する方法、<xref:System.Web.UI.WebControls.TreeNode>オブジェクトから指定した 0 から始まるインデックス位置にある、<xref:System.Web.UI.WebControls.TreeNodeCollection>です。 そのノードに続くすべての項目は、空いた位置を埋めるため移動されます。 移動した項目のインデックスも更新します。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.TreeNodeCollection>できます (Visual Basic では Nothing)、null 参照を含むだけでなく複製<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。  
+  
+ 代わりに、特定を削除することができます<xref:System.Web.UI.WebControls.TreeNode>オブジェクトを使用して、<xref:System.Web.UI.WebControls.TreeNodeCollection.Remove%2A>メソッドです。 使用して、コレクション内のすべてのノードを削除することも、<xref:System.Web.UI.WebControls.TreeNodeCollection.Clear%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.TreeNodeCollection.RemoveAt%2A>プログラムからノードを削除する方法、<xref:System.Web.UI.WebControls.TreeNodeCollection>です。 注意して、<xref:System.Web.UI.WebControls.TreeView.Nodes%2A>と<xref:System.Web.UI.WebControls.TreeNode.ChildNodes%2A>各プロパティを返す、<xref:System.Web.UI.WebControls.TreeNodeCollection>オブジェクト。  
+  
+ [!code-aspx-csharp[TreeNodeCollectionAdd#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeCollectionAdd/CS/treenodecollectionaddcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeCollectionAdd#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeCollectionAdd/VB/treenodecollectionaddvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNodeCollection.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.TreeNodeCollection" /> オブジェクトへのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value>A<see cref="T:System.Object" />へのアクセスを同期するために使用できる、<see cref="T:System.Web.UI.WebControls.TreeNodeCollection" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.TreeNodeCollection.SyncRoot%2A>プロパティの同期されたバージョンの提供、<xref:System.Web.UI.WebControls.TreeNodeCollection>その同期 (スレッド) コードで使用できます。  
+  
+> [!CAUTION]
+>  <xref:System.Web.UI.WebControls.TreeNodeCollection.IsSynchronized%2A>このプロパティはクラスを返しますでは常に`false`、ことを示します、<xref:System.Web.UI.WebControls.TreeNodeCollection>クラスでは (いないスレッド セーフである) は同期されません。  
+  
+ コードの同期に対して操作を実行する必要があります、<xref:System.Web.UI.WebControls.TreeNodeCollection.SyncRoot%2A>のオブジェクト、 <xref:System.Web.UI.WebControls.TreeNodeCollection>、上で直接、<xref:System.Web.UI.WebControls.TreeNodeCollection>自体です。 これにより、他のオブジェクトから派生したコレクションを適切に操作できるようになります。 具体的には、同時に変更する可能性がある別スレッドとの適切な同期を維持、<xref:System.Web.UI.WebControls.TreeNodeCollection>オブジェクト。  
+  
+> [!NOTE]
+>  この実装で返されるオブジェクトは、<xref:System.Collections.ArrayList?displayProperty=nameWithType>オブジェクトの格納に使用される、<xref:System.Web.UI.WebControls.TreeNode>コレクション内のオブジェクト。  
+  
+ コレクションの列挙は、本質的にスレッド セーフなプロシージャではありません。 コレクションが同期されている場合でも、他のスレッドがコレクションを変更する、これにより、列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。  
+  
+ 詳細については、<xref:System.Web.UI.WebControls.DataGridColumnCollection.SyncRoot%2A>プロパティを参照してください、<xref:System.Collections.ICollection.SyncRoot%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Collections.ICollection?displayProperty=nameWithType>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.CopyTo">
+      <MemberSignature Language="C#" Value="void ICollection.CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.ICollection.CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">0 から始まる<see cref="T:System.Array" />オブジェクトからコピーされた項目を受信する、<see cref="T:System.Web.UI.WebControls.TreeNodeCollection" />です。</param>
+        <param name="index">コピーされた内容の受信を開始する位置を示す、ターゲット配列内の位置。</param>
+        <summary>すべての項目をコピー、<see cref="T:System.Web.UI.WebControls.TreeNodeCollection" />を互換性のある 1 次元オブジェクト<see cref="T:System.Array" />対象となる配列の指定したインデックスから始まります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNodeCollection.CopyTo%2A>の内容をコピーする方法、<xref:System.Web.UI.WebControls.TreeNodeCollection>に指定した 0 から始まる<xref:System.Array?displayProperty=nameWithType>オブジェクト。 項目をコピーするには、対象となる配列の指定したインデックスから始まります。 <xref:System.Array?displayProperty=nameWithType>オブジェクト内の項目にアクセスする配列の構文を使用することができますし、<xref:System.Web.UI.WebControls.TreeNodeCollection>です。  
+  
+ 代わりに、使用することも、<xref:System.Web.UI.WebControls.TreeNodeCollection.GetEnumerator%2A>メソッドをコレクション内の項目へのアクセスに使用できる列挙子を作成します。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.TreeNodeCollection.CopyTo%2A>の値をコピーする方法、<xref:System.Web.UI.WebControls.TreeNodeCollection>を配列にします。 注意して、<xref:System.Web.UI.WebControls.TreeView.Nodes%2A>プロパティから返される、<xref:System.Web.UI.WebControls.TreeNodeCollection>オブジェクト。  
+  
+ [!code-aspx-csharp[TreeNodeCollectionCopyTo#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeCollectionCopyTo/CS/treenodecollectioncopytocs.aspx#1)]
+ [!code-aspx-vb[TreeNodeCollectionCopyTo#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeCollectionCopyTo/VB/treenodecollectioncopytovb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="array" />配列ではありません<see cref="T:System.Web.UI.WebControls.TreeNode" />オブジェクト。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.IsTrackingViewState">
+      <MemberSignature Language="C#" Value="bool System.Web.UI.IStateManager.IsTrackingViewState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Web.UI.IStateManager.IsTrackingViewState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNodeCollection.System#Web#UI#IStateManager#IsTrackingViewState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.WebControls.TreeNodeCollection" />オブジェクトのビューステートへ変更を保存します。</summary>
+        <value>
+          <see langword="true" />コントロールがその状態を保存するマークされている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.LoadViewState">
+      <MemberSignature Language="C#" Value="void IStateManager.LoadViewState (object state);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IStateManager.LoadViewState(object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeCollection.System#Web#UI#IStateManager#LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="state">A<see cref="T:System.Object" />保存されているビュー ステートの値を格納しています。</param>
+        <summary>読み込み、<see cref="T:System.Web.UI.WebControls.TreeNodeCollection" />オブジェクトのビューステートを保存された以前です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.SaveViewState">
+      <MemberSignature Language="C#" Value="object IStateManager.SaveViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.Web.UI.IStateManager.SaveViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeCollection.System#Web#UI#IStateManager#SaveViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ビューステートへの変更を保存、<see cref="T:System.Object" />です。</summary>
+        <returns>ビュー ステートの変化を格納している <see cref="T:System.Object" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.TrackViewState">
+      <MemberSignature Language="C#" Value="void IStateManager.TrackViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IStateManager.TrackViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeCollection.System#Web#UI#IStateManager#TrackViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>指示、<see cref="T:System.Web.UI.WebControls.TreeNodeCollection" />ビューステートへの変更を追跡するためにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サーバー コントロールでは、このメソッドが呼び出された後、<xref:System.Web.UI.Control.IsTrackingViewState%2A>が返される`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

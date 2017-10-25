@@ -1,0 +1,1941 @@
+<Type Name="Application" FullName="System.Windows.Application">
+  <TypeSignature Language="C#" Value="public class Application : System.Windows.Threading.DispatcherObject, System.Windows.Markup.IQueryAmbient" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi Application extends System.Windows.Threading.DispatcherObject implements class System.Windows.Markup.IQueryAmbient" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Application" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Threading.DispatcherObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.IQueryAmbient</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>Windows Presentation Foundation (WPF) アプリケーションをカプセル化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Application>カプセル化するクラスは、[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]次を含む、アプリケーション固有の機能。  
+  
+-   **アプリケーションの有効期間**: <xref:System.Windows.Application.Activated>、 <xref:System.Windows.Application.Current%2A>、 <xref:System.Windows.Application.Deactivated>、 <xref:System.Windows.Application.DispatcherUnhandledException>、 <xref:System.Windows.Application.Exit>、 <xref:System.Windows.Application.Run%2A>、 <xref:System.Windows.Application.SessionEnding>、 <xref:System.Windows.Application.Shutdown%2A>、 <xref:System.Windows.Application.ShutdownMode%2A>、<xref:System.Windows.Application.Startup>です。  
+  
+-   **アプリケーション スコープ ウィンドウ、プロパティ、およびリソース管理**: <xref:System.Windows.Application.FindResource%2A>、 <xref:System.Windows.Application.GetContentStream%2A>、 <xref:System.Windows.Application.GetResourceStream%2A>、 <xref:System.Windows.Application.LoadComponent%2A>、 <xref:System.Windows.Application.MainWindow%2A>、 <xref:System.Windows.Application.Properties%2A>、 <xref:System.Windows.Application.Resources%2A>、 <xref:System.Windows.Application.StartupUri%2A>、<xref:System.Windows.Application.Windows%2A>です。  
+  
+-   **コマンド ライン パラメーターおよび終了コード処理**: <xref:System.Windows.Application.Startup?displayProperty=nameWithType>、 <xref:System.Windows.Application.Exit?displayProperty=nameWithType>、<xref:System.Windows.Application.Shutdown%2A?displayProperty=nameWithType>です。  
+  
+-   **ナビゲーション**: <xref:System.Windows.Application.FragmentNavigation>、 <xref:System.Windows.Application.LoadCompleted>、 <xref:System.Windows.Application.Navigated>、 <xref:System.Windows.Application.Navigating>、 <xref:System.Windows.Application.NavigationProgress>、 <xref:System.Windows.Application.NavigationStopped>、 <xref:System.Windows.Application.NavigationFailed>、 <xref:System.Windows.Application.SetCookie%2A>、<xref:System.Windows.Application.GetCookie%2A>です。  
+  
+ <xref:System.Windows.Application>そのウィンドウ、プロパティ、およびリソースのスコープのサービスへの共有アクセスを提供するシングルトン パターンを実装します。 その結果、1 つだけの<xref:System.Windows.Application>あたりクラスを作成することができます<xref:System.AppDomain>です。  
+  
+ 実装することができます、<xref:System.Windows.Application>マークアップ、マークアップと分離コード、またはコードを使用します。 場合<xref:System.Windows.Application>が、マークアップまたはマークアップと分離コードでは、マークアップ ファイルとして構成されているかどうか、マークアップで実装される、 [!INCLUDE[TLA#tla_msbuild](~/includes/tlasharptla-msbuild-md.md)] `ApplicationDefinition`項目。  
+  
+> [!NOTE]
+>  スタンドアロン アプリケーションに必要ありません、<xref:System.Windows.Application>オブジェクトです。 カスタムを実装することは`static`エントリ ポイント メソッド (`Main`) のインスタンスを作成せずにウィンドウを開く<xref:System.Windows.Application>です。 ただし、[!INCLUDE[TLA#tla_xbap#plural](~/includes/tlasharptla-xbapsharpplural-md.md)]を必要とする<xref:System.Windows.Application>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例は、標準的なアプリケーションは、どのようにマークアップのみを使用して定義します。  
+  
+ [!code-xaml[ApplicationSnippets#ApplicationMARKUP](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationSnippets/CSharp/AppMarkup.xaml#applicationmarkup)]  
+  
+ コードのみを使用する標準的なアプリケーションを定義する方法を例を示します。  
+  
+ [!code-csharp[ApplicationSnippets#ApplicationCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationSnippets/CSharp/AppCode.cs#applicationcode)]
+ [!code-vb[ApplicationSnippets#ApplicationCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ApplicationSnippets/visualbasic/appcode.vb#applicationcode)]  
+  
+ 次の例は、標準的なアプリケーションのマークアップと分離コードとの組み合わせを使用して定義します。  
+  
+ [!code-xaml[ApplicationSnippets#ApplicationXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationSnippets/CSharp/App.xaml#applicationxaml)]  
+  
+ [!code-csharp[ApplicationSnippets#ApplicationCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationSnippets/CSharp/App.xaml.cs#applicationcodebehind)]
+ [!code-vb[ApplicationSnippets#ApplicationCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ApplicationSnippets/visualbasic/application.xaml.vb#applicationcodebehind)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>パブリック<see langword="static" />(<see langword="Shared" /> Visual Basic で) この型のメンバーは、スレッド セーフであります。 さらに、<see cref="M:System.Windows.Application.FindResource(System.Object)" />と<see cref="M:System.Windows.Application.TryFindResource(System.Object)" />メソッドおよび<see cref="P:System.Windows.Application.Properties" />と<see cref="P:System.Windows.Application.Resources" />プロパティは、スレッド セーフであります。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Application ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Application.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Application" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスを 1 つだけ、<xref:System.Windows.Application>あたりクラスを作成することができます<xref:System.AppDomain>アプリケーション スコープ ウィンドウ、プロパティ、およびリソース データの単一のセットを共有のアクセスを確実にします。 したがって、既定のコンス トラクターの<xref:System.Windows.Application>クラスを検出したかどうか、インスタンスを初期化中に最初のインスタンス、<xref:System.AppDomain>以外の場合、それ以外は、<xref:System.InvalidOperationException>がスローされます。  
+  
+ <xref:System.Windows.Application>現在のオブジェクト<xref:System.AppDomain>静的から公開される<xref:System.Windows.Application.Current%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">2 つ以上のインスタンス、<see cref="T:System.Windows.Application" />ごとに、クラスが作成された<see cref="T:System.AppDomain" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Activated">
+      <MemberSignature Language="C#" Value="public event EventHandler Activated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Activated" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Application.Activated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションがフォア グラウンド アプリケーションになったときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A[!INCLUDE[TLA#tla_wpf](~/includes/tlasharptla-wpf-md.md)]を 1 つ以上の開いているウィンドウを持つアプリケーションをアクティブ化 (フォア グラウンド アプリケーションになります)、windows のいずれかが有効な場合、最初にアプリケーションが起動されるため、または、windows のいずれかが有効な場合、アプリケーションがアクティブな間。 具体的には、アクティブ化を行うときに。  
+  
+-   アプリケーションでは、最初のウィンドウが開きます。  
+  
+-   ユーザーは、ALT + TAB キーを使用して、またはタスク マネージャーを使用して、アプリケーションに切り替えます。  
+  
+-   ユーザーは、アプリケーションで windows のいずれかのタスク バー ボタンをクリックします。  
+  
+ アクティブ化するときを検出するために必要とするアプリケーションが処理できる、<xref:System.Windows.Application.Activated>イベント。  
+  
+ アプリケーションが最初に有効化した後を非アクティブ化され、その有効期間中に何度も再アクティブ化する可能性があります。 依存する場合、アプリケーションの動作または状態のアクティブ化状態で、両方を処理できる<xref:System.Windows.Application.Activated>と<xref:System.Windows.Application.Deactivated>のイベントがアクティブ化の状態を確認します。  
+  
+ アプリケーションが、アクティブになった時点<xref:System.Windows.Application.Activated>は発生しません。 もう一度、アプリケーションがアクティブなときに、アプリケーション内でウィンドウの数がアクティブ化に関係なく、アプリケーションが非アクティブ化までです。  
+  
+ <xref:System.Windows.Application.Activated>発生しません[!INCLUDE[TLA#tla_xbap#plural](~/includes/tlasharptla-xbapsharpplural-md.md)]です。  
+  
+   
+  
+## Examples  
+ 次の例では、スタンドアロンのアプリケーションがアクティブにし、非アクティブ化を検出する方法を示します。  
+  
+ [!code-xaml[ApplicationActivationSnippets#DetectActivationStateXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationActivationSnippets/CSharp/App.xaml#detectactivationstatexaml)]  
+  
+ [!code-csharp[ApplicationActivationSnippets#DetectActivationStateCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationActivationSnippets/CSharp/App.xaml.cs#detectactivationstatecodebehind)]
+ [!code-vb[ApplicationActivationSnippets#DetectActivationStateCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ApplicationActivationSnippets/visualbasic/application.xaml.vb#detectactivationstatecodebehind)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="public static System.Windows.Application Current { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Application Current" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Application.Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Application</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Application" />現在のオブジェクト<see cref="T:System.AppDomain" />です。</summary>
+        <value><see cref="T:System.Windows.Application" />現在のオブジェクト<see cref="T:System.AppDomain" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Application>あたり-<xref:System.AppDomain> 、静的なを実装するシングルトン型<xref:System.Windows.Application.Current%2A>共有のアクセスを提供するプロパティ、<xref:System.Windows.Application>現在のインスタンス<xref:System.AppDomain>です。 この設計によって管理されるその状態を保証する<xref:System.Windows.Application>、共有リソースや状態は、単一の共有の場所から入手できます。  
+  
+ このプロパティは、スレッド セーフであるは任意のスレッドから使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Deactivated">
+      <MemberSignature Language="C#" Value="public event EventHandler Deactivated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Deactivated" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Application.Deactivated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションでは、フォア グラウンド アプリケーションが停止したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A[!INCLUDE[TLA#tla_wpf](~/includes/tlasharptla-wpf-md.md)]を 1 つ以上の開いているウィンドウを持つアプリケーションは、(前面のアプリケーションを停止) を非アクティブ化ユーザーが、次を実行します。  
+  
+-   ALT + タブを使用して、またはタスク マネージャーを使用して別のアプリケーションに切り替えます。  
+  
+-   別のアプリケーションでのウィンドウのタスク バー ボタンをクリックします。  
+  
+ 非アクティブ化を処理できるを検出するために必要とするアプリケーション、<xref:System.Windows.Application.Deactivated>イベント。  
+  
+ アプリケーションが最初に有効化した後を非アクティブ化され、その有効期間中に何度も再アクティブ化する可能性があります。 依存する場合、アプリケーションの動作または状態のアクティブ化状態で、両方を処理できる<xref:System.Windows.Application.Deactivated>と<xref:System.Windows.Application.Activated>のイベントがどのような状態を確認します。  
+  
+ <xref:System.Windows.Application.Deactivated>発生しません[!INCLUDE[TLA#tla_xbap#plural](~/includes/tlasharptla-xbapsharpplural-md.md)]です。  
+  
+   
+  
+## Examples  
+ 次の例では、スタンドアロンのアプリケーションが非アクティブ化し、アクティブ化を検出する方法を示します。  
+  
+ [!code-xaml[ApplicationActivationSnippets#DetectActivationStateXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationActivationSnippets/CSharp/App.xaml#detectactivationstatexaml)]  
+  
+ [!code-csharp[ApplicationActivationSnippets#DetectActivationStateCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationActivationSnippets/CSharp/App.xaml.cs#detectactivationstatecodebehind)]
+ [!code-vb[ApplicationActivationSnippets#DetectActivationStateCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ApplicationActivationSnippets/visualbasic/application.xaml.vb#detectactivationstatecodebehind)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DispatcherUnhandledException">
+      <MemberSignature Language="C#" Value="public event System.Windows.Threading.DispatcherUnhandledExceptionEventHandler DispatcherUnhandledException;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Threading.DispatcherUnhandledExceptionEventHandler DispatcherUnhandledException" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Application.DispatcherUnhandledException" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherUnhandledExceptionEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>例外がアプリケーションによってスローされたが、処理されないときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、[!INCLUDE[TLA#tla_wpf](~/includes/tlasharptla-wpf-md.md)]未処理の例外をキャッチ、(元の報告できる例外) ダイアログ ボックスで、例外のユーザーに通知し、アプリケーションを自動的にシャット ダウンします。  
+  
+ ただし、処理、アプリケーションを一元化された場所からカスタムのハンドルされない例外の処理を実行する場合は、<xref:System.Windows.Application.DispatcherUnhandledException>です。  
+  
+ <xref:System.Windows.Application.DispatcherUnhandledException>によって発生した、<xref:System.Windows.Application>メイン UI スレッドで実行されているコードによってハンドルされない例外ごとにします。  
+  
+ 例外が処理されない場合に、バック グラウンド[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]スレッド (独自のスレッド<xref:System.Windows.Threading.Dispatcher>) またはバック グラウンド ワーカー スレッド (せず、スレッド、 <xref:System.Windows.Threading.Dispatcher>)、例外が、主に転送されません[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]スレッドです。 その結果、<xref:System.Windows.Application.DispatcherUnhandledException>は発生しません。 このような場合は、以下を行うコードを記述する必要があります。  
+  
+1.  バック グラウンド スレッドで例外を処理します。  
+  
+2.  これらの例外、メインのディスパッチ[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]スレッドです。  
+  
+3.  メインでそれらを再スロー[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]を許可するための処理なくスレッド<xref:System.Windows.Application.DispatcherUnhandledException>が発生します。  
+  
+ 詳細については、次を参照してください。、[スレッド モデル](~/docs/framework/wpf/advanced/threading-model.md)の概要です。  
+  
+ <xref:System.Windows.Application.DispatcherUnhandledException>渡されるイベント ハンドラー、<xref:System.Windows.Threading.DispatcherUnhandledExceptionEventArgs>例外に関するコンテキスト情報を含む引数を含みます。  
+  
+-   例外 (<xref:System.Windows.Threading.DispatcherUnhandledExceptionEventArgs.Exception%2A>)。  
+  
+-   <xref:System.Windows.Threading.Dispatcher>出所から (<xref:System.Windows.Threading.DispatcherEventArgs.Dispatcher%2A>)。  
+  
+ この情報を使用するには、例外が回復可能かどうかどうかを判別します。 回復可能な例外があります、<xref:System.IO.FileNotFoundException>など、回復不能な例外があります、 <xref:System.StackOverflowException>、例を示します。  
+  
+ 未処理の例外を処理すると<xref:System.Windows.Application.DispatcherUnhandledException>、たく[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]処理を続行するには、設定する必要があります、<xref:System.Windows.Threading.DispatcherUnhandledExceptionEventArgs.Handled%2A>プロパティを`true`です。  
+  
+ 他のイベントとは異なりを<xref:System.Windows.Application>発生すると、<xref:System.Windows.Application.DispatcherUnhandledException>しませんが、対応する保護されていない (OnDispatcherUnhandledException) の仮想実装します。 そのため、クラスから派生した<xref:System.Windows.Application>を持つイベント ハンドラーは常に登録する必要があります<xref:System.Windows.Application.DispatcherUnhandledException>未処理の例外を処理します。  
+  
+   
+  
+## Examples  
+ 次の例を処理することにより、未処理の例外を処理する方法を示しています、<xref:System.Windows.Application.DispatcherUnhandledException>イベント。  
+  
+ [!code-csharp[ApplicationDispatcherUnhandledExceptionSnippets#HandleDispatcherUnhandledExceptionCODEBEHIND1](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationDispatcherUnhandledExceptionSnippets/CSharp/App.xaml.cs#handledispatcherunhandledexceptioncodebehind1)]
+ [!code-vb[ApplicationDispatcherUnhandledExceptionSnippets#HandleDispatcherUnhandledExceptionCODEBEHIND1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ApplicationDispatcherUnhandledExceptionSnippets/visualbasic/application.xaml.vb#handledispatcherunhandledexceptioncodebehind1)]  
+[!code-csharp[ApplicationDispatcherUnhandledExceptionSnippets#HandleDispatcherUnhandledExceptionCODEBEHIND2](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationDispatcherUnhandledExceptionSnippets/CSharp/App.xaml.cs#handledispatcherunhandledexceptioncodebehind2)]
+[!code-vb[ApplicationDispatcherUnhandledExceptionSnippets#HandleDispatcherUnhandledExceptionCODEBEHIND2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ApplicationDispatcherUnhandledExceptionSnippets/visualbasic/application.xaml.vb#handledispatcherunhandledexceptioncodebehind2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Exit">
+      <MemberSignature Language="C#" Value="public event System.Windows.ExitEventHandler Exit;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.ExitEventHandler Exit" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Application.Exit" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.ExitEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションがシャット ダウンし、キャンセルできません直前に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションは、次の理由のいずれかのシャット ダウンをできます。  
+  
+-   <xref:System.Windows.Application.Shutdown%2A>のメソッド、<xref:System.Windows.Application>オブジェクトが呼び出されると、によって明示的にまたは決定される、<xref:System.Windows.Application.ShutdownMode%2A>プロパティです。  
+  
+-   ユーザーは、ログオフまたはシャット ダウンによって、セッションを終了します。  
+  
+ 処理することにより、アプリケーションのシャット ダウンが発生したときに検出することができます、<xref:System.Windows.Application.Exit>イベント、および必要に応じて、追加の処理を実行します。  
+  
+ 処理することも<xref:System.Windows.Application.Exit>を検査またはアプリケーションの終了コードを変更するときに呼び出す必要はありません<xref:System.Windows.Application.Shutdown%2A>明示的にします。 終了コードの公開元である、<xref:System.Windows.ExitEventArgs.ApplicationExitCode%2A>のプロパティ、<xref:System.Windows.ExitEventArgs>に渡される引数、<xref:System.Windows.Application.Exit>イベント ハンドラー。 アプリケーションの実行が停止、終了コードは後続の処理のオペレーティング システムに渡されます。  
+  
+ アプリケーションが処理する場合、<xref:System.Windows.Application.SessionEnding>イベントし、後で、キャンセル<xref:System.Windows.Application.Exit>は発生しませんしによって配布されたシャット ダウン モードで実行されているアプリケーションを続行します。  
+  
+ 終了コードから設定できる、[!INCLUDE[TLA#tla_xbap](~/includes/tlasharptla-xbap-md.md)]値は無視されますが、します。  
+  
+ [!INCLUDE[TLA2#tla_xbap#plural](~/includes/tla2sharptla-xbapsharpplural-md.md)]、<xref:System.Windows.Application.Exit>は次のような状況で発生します。  
+  
+-   [!INCLUDE[TLA2#tla_xbap](~/includes/tla2sharptla-xbap-md.md)]から移動します。  
+  
+-   [!INCLUDE[TLA2#tla_ie7](~/includes/tla2sharptla-ie7-md.md)]、ときに、タブをホストしている、[!INCLUDE[TLA2#tla_xbap](~/includes/tla2sharptla-xbap-md.md)]が閉じられます。  
+  
+-   ブラウザーが閉じられた。  
+  
+ 値の場合、<xref:System.Windows.ExitEventArgs.ApplicationExitCode%2A>プロパティは無視されます。  
+  
+   
+  
+## Examples  
+ 次の例について説明する方法。  
+  
+-   処理、<xref:System.Windows.Application.Exit>イベント。  
+  
+-   更新を行い、<xref:System.Windows.ExitEventArgs.ApplicationExitCode%2A>のプロパティ、<xref:System.Windows.ExitEventArgs>です。  
+  
+-   分離ストレージでのアプリケーション ログにエントリを記述します。  
+  
+-   分離ストレージへのアプリケーション状態を維持します。  
+  
+ [!code-xaml[ApplicationExitSnippets#HandleExitXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationExitSnippets/CSharp/App.xaml#handleexitxaml)]  
+  
+ [!code-csharp[ApplicationExitSnippets#HandleExitCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationExitSnippets/CSharp/App.xaml.cs#handleexitcodebehind)]
+ [!code-vb[ApplicationExitSnippets#HandleExitCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ApplicationExitSnippets/visualbasic/application.xaml.vb#handleexitcodebehind)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindResource">
+      <MemberSignature Language="C#" Value="public object FindResource (object resourceKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object FindResource(object resourceKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Application.FindResource(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resourceKey" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="resourceKey">検索するリソースの名前。</param>
+        <summary>検索、[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]リソースなど、<see cref="T:System.Windows.Style" />または<see cref="T:System.Windows.Media.Brush" />では、指定したキーとがスローされます、要求されたリソースが見つからない場合に例外 (を参照してください[XAML リソース](~/docs/framework/wpf/advanced/xaml-resources.md))。</summary>
+        <returns>要求されたリソース オブジェクト。 要求されたリソースが見つからない場合、<see cref="T:System.Windows.ResourceReferenceKeyNotFoundException" />がスローされます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Application.FindResource%2A>アプリケーション スコープの指定されたリソースのリソースでは、まずします。 アプリケーション スコープのリソースで管理されて<xref:System.Windows.Application>から公開されると、<xref:System.Windows.Application.Resources%2A>プロパティです。 アプリケーション スコープのリソースのセットに指定されたリソースが見つからない場合<xref:System.Windows.Application.FindResource%2A>次へは、システム リソースを検索します。 システム リソースは、シェル リソースが、ユーザーが定義されているし、色、フォント、およびシェル構成が含まれます。 これらは、 <xref:System.Windows.SystemColors>、 <xref:System.Windows.SystemFonts>、および<xref:System.Windows.SystemParameters>型をそれぞれ、静的なプロパティです。 使用する<xref:System.Windows.Application.FindResource%2A>を取得するには、これらの型もリソース キー プロパティを公開に渡されるように設計された<xref:System.Windows.Application.FindResource%2A>。 たとえば、<xref:System.Windows.SystemParameters.IconWidthKey%2A>です。  
+  
+ <xref:System.Windows.Application.FindResource%2A>オブジェクトを返しますリソースが見つかった場合は適切な型に返される値をキャストする必要があります。  
+  
+> [!IMPORTANT]
+>  見つからないキーのこのメソッドを呼び出すと、例外がスローされます。 呼び出し元に起因する例外を処理しないかどうかは<xref:System.Windows.Application.FindResource%2A>、呼び出す<xref:System.Windows.Application.TryFindResource%2A>代わりにします。<xref:System.Windows.Application.TryFindResource%2A>を返します、`null`要求されたリソースが見つからないし、例外をスローしないときに参照します。  
+  
+ このメソッドはスレッド セーフであるため、任意のスレッドから呼び出すことができます。  
+  
+   
+  
+## Examples  
+ 次の例は、使用する方法を示しています。<xref:System.Windows.Application.FindResource%2A>のリソースを見つけると、処理する<xref:System.Windows.ResourceReferenceKeyNotFoundException>リソースが見つからない場合。  
+  
+ [!code-csharp[ApplicationFindResourceSnippets#ApplicationCallFindResourceCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationFindResourceSnippets/CSharp/MainWindow.xaml.cs#applicationcallfindresourcecodebehind)]
+ [!code-vb[ApplicationFindResourceSnippets#ApplicationCallFindResourceCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ApplicationFindResourceSnippets/visualbasic/mainwindow.xaml.vb#applicationcallfindresourcecodebehind)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Windows.ResourceReferenceKeyNotFoundException">リソースが見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FragmentNavigation">
+      <MemberSignature Language="C#" Value="public event System.Windows.Navigation.FragmentNavigationEventHandler FragmentNavigation;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.FragmentNavigationEventHandler FragmentNavigation" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Application.FragmentNavigation" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.FragmentNavigationEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションのナビゲーターは、コンテンツ フラグメントへのナビゲーションを開始すると発生ナビゲーションがすぐに発生した理由は、目的のフラグメントは、現在のコンテンツまたはソースの後に場合[!INCLUDE[TLA2#tla_titlexaml](~/includes/tla2sharptla-titlexaml-md.md)]目的のフラグメントが別のコンテンツがある場合、コンテンツが読み込まれました。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ナビゲーターは、<xref:System.Windows.Navigation.NavigationWindow>または<xref:System.Windows.Controls.Frame>です。  
+  
+ 「<xref:System.Windows.Navigation.NavigationService.FragmentNavigation?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetContentStream">
+      <MemberSignature Language="C#" Value="public static System.Windows.Resources.StreamResourceInfo GetContentStream (Uri uriContent);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Resources.StreamResourceInfo GetContentStream(class System.Uri uriContent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Application.GetContentStream(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Resources.StreamResourceInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uriContent" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="uriContent">相対<see cref="T:System.Uri" />厳密でないリソースにマップされます。</param>
+        <summary>指定した位置にあるコンテンツのデータ ファイルのリソース ストリームを返す<see cref="T:System.Uri" />(を参照してください[WPF アプリケーションのリソース、コンテンツ、およびデータ ファイル](~/docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md))。</summary>
+        <returns>A <see cref="T:System.Windows.Resources.StreamResourceInfo" /> 、指定した位置にあるコンテンツのデータ ファイルを格納している<see cref="T:System.Uri" />です。 厳密でないリソースが見つからない場合は、null が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはスレッド セーフではありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Uri" />に渡される<see cref="M:System.Windows.Application.GetContentStream(System.Uri)" />が null です。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.Uri" />に渡される<see cref="M:System.Windows.Application.GetContentStream(System.Uri)" />は絶対<see cref="T:System.Uri" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCookie">
+      <MemberSignature Language="C#" Value="public static string GetCookie (Uri uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetCookie(class System.Uri uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Application.GetCookie(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="uri"><see cref="T:System.Uri" /> Cookie の作成対象の場所を指定します。</param>
+        <summary>指定された場所の cookie を取得、<see cref="T:System.Uri" />です。</summary>
+        <returns>A <see cref="T:System.String" /> cookie が存在する場合は値。 それ以外の場合、<see cref="T:System.ComponentModel.Win32Exception" />がスローされます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Application.GetCookie%2A>指定された cookie を取得<xref:System.Uri>です。 Cookie を取得できない場合、<xref:System.ComponentModel.Win32Exception>がスローされます。 名前/値ペアの一覧に、cookie の文字列を解析するコードを記述する必要があります。  
+  
+ クッキーの概要については[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]を参照してください[ナビゲーション概要](~/docs/framework/wpf/app-development/navigation-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.Win32Exception">A[!INCLUDE[TLA#tla_win32](~/includes/tlasharptla-win32-md.md)]によってエラーが発生しました、<see langword="InternetGetCookie" />関数 (によって呼び出されます<see cref="M:System.Windows.Application.GetCookie(System.Uri)" />)、指定された cookie を取得しようとするときに問題が発生した場合。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイル ベースの cookie を取得する<see cref="T:System.Uri" />です。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+        <permission cref="T:System.Net.WebPermission">以外のファイル ベースの cookie を取得する<see cref="T:System.Uri" />です。 関連する列挙。<see cref="P:System.Net.WebPermission.ConnectList" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRemoteStream">
+      <MemberSignature Language="C#" Value="public static System.Windows.Resources.StreamResourceInfo GetRemoteStream (Uri uriRemote);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Resources.StreamResourceInfo GetRemoteStream(class System.Uri uriRemote) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Application.GetRemoteStream(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Resources.StreamResourceInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uriRemote" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="uriRemote"><see cref="T:System.Uri" />元のサイトでの厳密でないリソースにマップされます。</param>
+        <summary>指定した位置にあるサイトの発信元のデータ ファイルのリソース ストリームを返す<see cref="T:System.Uri" />(を参照してください[WPF アプリケーションのリソース、コンテンツ、およびデータ ファイル](~/docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md))。</summary>
+        <returns>A<see cref="T:System.Windows.Resources.StreamResourceInfo" />サイト-元のデータ ファイルの指定した位置にあるリソース ストリームを格納している<see cref="T:System.Uri" />です。 厳密でないリソースが見つからない場合<see langword="null" />が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはスレッド セーフではありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Uri" />に渡される<see cref="M:System.Windows.Application.GetRemoteStream(System.Uri)" />が null です。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.Uri" />に渡される<see cref="M:System.Windows.Application.GetRemoteStream(System.Uri)" />がないか、相対パスは絶対値ではなく、または、 <c>pack://siteoforigin:,,,/</c>フォーム。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetResourceStream">
+      <MemberSignature Language="C#" Value="public static System.Windows.Resources.StreamResourceInfo GetResourceStream (Uri uriResource);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Resources.StreamResourceInfo GetResourceStream(class System.Uri uriResource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Application.GetResourceStream(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Resources.StreamResourceInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uriResource" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="uriResource"><see cref="T:System.Uri" />埋め込みリソースにマップされます。</param>
+        <summary>指定した位置にあるリソースのデータ ファイルのリソース ストリームを返す<see cref="T:System.Uri" />(を参照してください[WPF アプリケーションのリソース、コンテンツ、およびデータ ファイル](~/docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md))。</summary>
+        <returns>A<see cref="T:System.Windows.Resources.StreamResourceInfo" />リソース ストリームを指定した位置にあるリソースのデータ ファイルを格納<see cref="T:System.Uri" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはスレッド セーフではありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Uri" />に渡される<see cref="M:System.Windows.Application.GetResourceStream(System.Uri)" />が null です。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.Uri" />に渡される<see cref="M:System.Windows.Application.GetResourceStream(System.Uri)" />がないか、相対パスは絶対値ではなく、または、 <c>pack://application:,,,/</c>フォーム。</exception>
+        <exception cref="T:System.IO.IOException"><see cref="T:System.Uri" />に渡される<see cref="M:System.Windows.Application.GetResourceStream(System.Uri)" />が見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadCompleted">
+      <MemberSignature Language="C#" Value="public event System.Windows.Navigation.LoadCompletedEventHandler LoadCompleted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.LoadCompletedEventHandler LoadCompleted" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Application.LoadCompleted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.LoadCompletedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>移動先アプリケーション内のナビゲーターによってコンテンツが読み込まれ、解析されて、レンダリングが開始されると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ナビゲーターは、<xref:System.Windows.Navigation.NavigationWindow>または<xref:System.Windows.Controls.Frame>です。  
+  
+ 「<xref:System.Windows.Navigation.NavigationService.LoadCompleted?displayProperty=nameWithType>」を参照してください。  
+  
+> [!NOTE]
+>  などの移動、コンテンツに対するイベントのリッスン、<xref:System.Windows.FrameworkElement.Loaded>でイベントを<xref:System.Windows.Controls.Page>移動のコンテンツのプロパティにアクセスする前にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="LoadComponent">
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>読み込み、 [!INCLUDE[TLA#tla_titlexaml](~/includes/tlasharptla-titlexaml-md.md)] 、指定した位置にあるファイル[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA2#tla_titlexaml](~/includes/tla2sharptla-titlexaml-md.md)]ファイルは、アプリケーション コード ファイルを使用できます (として構成されている、[!INCLUDE[TLA#tla_msbuild](~/includes/tlasharptla-msbuild-md.md)]ページ アイテム) やアプリケーション データ ファイル (リソース ファイル、コンテンツ ファイルは、またはサイトの元のファイルは、参照してください[WPF アプリケーションのリソース、コンテンツ、およびデータ ファイル](~/docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md))。  
+  
+> [!NOTE]
+>  このメソッドはスレッド セーフではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="LoadComponent">
+      <MemberSignature Language="C#" Value="public static object LoadComponent (Uri resourceLocator);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object LoadComponent(class System.Uri resourceLocator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Application.LoadComponent(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resourceLocator" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="resourceLocator">相対 [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)] ファイルにマップする <see cref="T:System.Uri" />。</param>
+        <summary>読み込み、 [!INCLUDE[TLA#tla_titlexaml](~/includes/tlasharptla-titlexaml-md.md)] 、指定した位置にあるファイル[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]のルート要素で指定されているオブジェクトのインスタンスに変換し、[!INCLUDE[TLA#tla_titlexaml](~/includes/tlasharptla-titlexaml-md.md)]ファイル。</summary>
+        <returns>XAML ファイルによって指定されるルート要素のインスタンスが読み込まれます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルート要素と同じ型を戻り値を明示的に変換する必要があります、[!INCLUDE[TLA#tla_titlexaml](~/includes/tlasharptla-titlexaml-md.md)]ファイル。  
+  
+ [!INCLUDE[TLA2#tla_titlexaml](~/includes/tla2sharptla-titlexaml-md.md)]ファイルは、アプリケーション コード ファイルを使用できます (として構成されている、[!INCLUDE[TLA#tla_msbuild](~/includes/tlasharptla-msbuild-md.md)]ページ アイテム) やアプリケーション データ ファイル (リソース ファイル、コンテンツ ファイルは、またはサイトの元のファイルは、参照してください[WPF アプリケーションのリソース、コンテンツ、およびデータ ファイル](~/docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md))。  
+  
+> [!NOTE]
+>  このメソッドはスレッド セーフではありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="resourceLocator" /> が null です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="resourceLocator" /> は絶対 [!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)] です。</exception>
+        <exception cref="T:System.Exception">ファイルがない、[!INCLUDE[TLA2#tla_titlexaml](~/includes/tla2sharptla-titlexaml-md.md)]ファイル。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadComponent">
+      <MemberSignature Language="C#" Value="public static void LoadComponent (object component, Uri resourceLocator);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void LoadComponent(object component, class System.Uri resourceLocator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Application.LoadComponent(System.Object,System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+        <Parameter Name="resourceLocator" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="component">[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)] ファイルのルート要素と同じ型のオブジェクト。</param>
+        <param name="resourceLocator">相対 [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)] ファイルにマップする <see cref="T:System.Uri" />。</param>
+        <summary>指定した [!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)] にある [!INCLUDE[TLA#tla_titlexaml](~/includes/tlasharptla-titlexaml-md.md)] ファイルを読み込んで、[!INCLUDE[TLA#tla_titlexaml](~/includes/tlasharptla-titlexaml-md.md)] ファイルのルート要素で指定したオブジェクトのインスタンスに変換します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA2#tla_titlexaml](~/includes/tla2sharptla-titlexaml-md.md)]ファイルは、アプリケーション コード ファイルを使用できます (として構成されている、[!INCLUDE[TLA#tla_msbuild](~/includes/tlasharptla-msbuild-md.md)]ページ アイテム) やアプリケーション データ ファイル (リソース ファイル、コンテンツ ファイルは、またはサイトの元のファイルは、参照してください[WPF アプリケーションのリソース、コンテンツ、およびデータ ファイル](~/docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md))。  
+  
+> [!NOTE]
+>  このメソッドはスレッド セーフではありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="resourceLocator" /> が null です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="resourceLocator" /> は絶対 [!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)] です。</exception>
+        <exception cref="T:System.Exception">
+          <paramref name="component" /> は、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)] ファイルのルート要素に一致しない型です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MainWindow">
+      <MemberSignature Language="C#" Value="public System.Windows.Window MainWindow { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Window MainWindow" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Application.MainWindow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Window</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアプリケーションのメイン ウィンドウを設定します。</summary>
+        <value>A<see cref="T:System.Windows.Window" />アプリケーションのメイン ウィンドウとして指定されています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Application.MainWindow%2A>最初への参照で自動的に設定されている<xref:System.Windows.Window>でインスタンス化するオブジェクト、<xref:System.AppDomain>です。  
+  
+ 設定して、別のメイン ウィンドウを指定できます<xref:System.Windows.Application.MainWindow%2A>別の割り当て<xref:System.Windows.Application.Windows%2A>オブジェクトを<xref:System.Windows.Application.MainWindow%2A>プロパティです。  
+  
+ 場合、<xref:System.Windows.Application.ShutdownMode%2A>のプロパティ、<xref:System.Windows.Application>にオブジェクトが設定されている<xref:System.Windows.ShutdownMode.OnMainWindowClose>、メイン ウィンドウを閉じると、アプリケーションをシャット ダウンします。  
+  
+ 設定することは、<xref:System.Windows.Application.MainWindow%2A>プロパティから[!INCLUDE[TLA#tla_titlexaml](~/includes/tlasharptla-titlexaml-md.md)]、アプリケーションのメイン ウィンドウは、設定によって生成されるウィンドウではない場合、<xref:System.Windows.Application.StartupUri%2A>プロパティに[!INCLUDE[TLA2#tla_titlexaml](~/includes/tla2sharptla-titlexaml-md.md)]です。 2 つの制限、[!INCLUDE[TLA2#tla_titlexaml](~/includes/tla2sharptla-titlexaml-md.md)]アプローチは。  
+  
+-   どちらかを指定することができます、 [!INCLUDE[TLA2#tla_titlexaml](~/includes/tla2sharptla-titlexaml-md.md)]-のみ<xref:System.Windows.Window>または[!INCLUDE[TLA2#tla_titlexaml](~/includes/tla2sharptla-titlexaml-md.md)]-のみ<xref:System.Windows.Navigation.NavigationWindow>メイン ウィンドウとします。  
+  
+-   設定する必要があります、<xref:System.Windows.UIElement.Visibility%2A>ウィンドウのプロパティを指定して、それ以外の場合に表示されません。  
+  
+ 最初に参照<xref:System.Windows.Window>インスタンス化されるオブジェクトが最初の項目としても追加、<xref:System.Windows.Application.Windows%2A>コレクション。 場合<xref:System.Windows.Application.MainWindow%2A>を別の参照に設定した場合は、 <xref:System.Windows.Window>、内の項目の順序の中に、メイン ウィンドウへの参照を持つ項目の位置が変更される<xref:System.Windows.Application.Windows%2A>は変わりません。 そのため、常に使用<xref:System.Windows.Application.MainWindow%2A>の最初の項目ではなくメイン ウィンドウを参照する<xref:System.Windows.Application.Windows%2A>です。  
+  
+> [!NOTE]
+>  メイン ウィンドウがある場合、<xref:System.Windows.Navigation.NavigationWindow>へのアクセスを必要と<xref:System.Windows.Navigation.NavigationWindow>、メンバーの値をキャストする必要が<xref:System.Windows.Application.MainWindow%2A>に<xref:System.Windows.Navigation.NavigationWindow>です。  
+>   
+>  このプロパティは、作成したスレッドからのみ使用可能な<xref:System.Windows.Application>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例では、アプリケーションのメイン ウィンドウを見つける方法を示します。  
+  
+ [!code-csharp[ApplicationMainWindowSnippets#GetApplicationMainWindowCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationMainWindowSnippets/CSharp/App.xaml.cs#getapplicationmainwindowcode)]
+ [!code-vb[ApplicationMainWindowSnippets#GetApplicationMainWindowCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ApplicationMainWindowSnippets/visualbasic/application.xaml.vb#getapplicationmainwindowcode)]  
+  
+ 次の例は、設定する方法を示します<xref:System.Windows.Application.MainWindow%2A>を使用して[!INCLUDE[TLA2#tla_titlexaml](~/includes/tla2sharptla-titlexaml-md.md)]です。  
+  
+ [!code-xaml[ApplicationMainWindowSnippets#SetApplicationMainWindowXAML](~/samples/snippets/xaml/VS_Snippets_Wpf/ApplicationMainWindowSnippets/XAML/App.xaml#setapplicationmainwindowxaml)]  
+  
+ 次の例を示しています、<xref:System.Windows.Application.MainWindow%2A>のアプリケーションの起動中にコードにします。  
+  
+ [!code-csharp[HOWTOWindowManagementSnippets#FirstWindowUsingCodeCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/HOWTOWindowManagementSnippets/CSharp/App.xaml.cs#firstwindowusingcodecodebehind)]
+ [!code-vb[HOWTOWindowManagementSnippets#FirstWindowUsingCodeCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HOWTOWindowManagementSnippets/visualbasic/application.xaml.vb#firstwindowusingcodecodebehind)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.Windows.Application.MainWindow" />など、ブラウザーでホストされているアプリケーションから設定されている、[!INCLUDE[TLA#tla_xbap#plural](~/includes/tlasharptla-xbapsharpplural-md.md)]です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Navigated">
+      <MemberSignature Language="C#" Value="public event System.Windows.Navigation.NavigatedEventHandler Navigated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.NavigatedEventHandler Navigated" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Application.Navigated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.NavigatedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>可能性がありますが、完了していない読み込みは、アプリケーションのナビゲーターを移動先のコンテンツが見つかるとときに、発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ナビゲーターは、<xref:System.Windows.Navigation.NavigationWindow>または<xref:System.Windows.Controls.Frame>です。  
+  
+ 「<xref:System.Windows.Navigation.NavigationService.NavigationFailed?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Navigating">
+      <MemberSignature Language="C#" Value="public event System.Windows.Navigation.NavigatingCancelEventHandler Navigating;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.NavigatingCancelEventHandler Navigating" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Application.Navigating" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.NavigatingCancelEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しいナビゲーションは、アプリケーション内のナビゲーターによって要求されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ナビゲーターは、<xref:System.Windows.Navigation.NavigationWindow>または<xref:System.Windows.Controls.Frame>です。  
+  
+ 「<xref:System.Windows.Navigation.NavigationService.Navigating?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NavigationFailed">
+      <MemberSignature Language="C#" Value="public event System.Windows.Navigation.NavigationFailedEventHandler NavigationFailed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.NavigationFailedEventHandler NavigationFailed" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Application.NavigationFailed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.NavigationFailedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションのナビゲーターは、要求されたコンテンツに移動するときにエラーが発生したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ナビゲーターは、<xref:System.Windows.Navigation.NavigationWindow>または<xref:System.Windows.Controls.Frame>です。  
+  
+ 「<xref:System.Windows.Navigation.NavigationService.NavigationFailed?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NavigationProgress">
+      <MemberSignature Language="C#" Value="public event System.Windows.Navigation.NavigationProgressEventHandler NavigationProgress;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.NavigationProgressEventHandler NavigationProgress" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Application.NavigationProgress" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.NavigationProgressEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ナビゲーション進行状況に関する情報を提供するアプリケーションでナビゲーターによって管理されているダウンロード中に定期的に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ナビゲーターは、<xref:System.Windows.Navigation.NavigationWindow>または<xref:System.Windows.Controls.Frame>です。  
+  
+ 「<xref:System.Windows.Navigation.NavigationService.NavigationProgress?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NavigationStopped">
+      <MemberSignature Language="C#" Value="public event System.Windows.Navigation.NavigationStoppedEventHandler NavigationStopped;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.NavigationStoppedEventHandler NavigationStopped" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Application.NavigationStopped" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.NavigationStoppedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see langword="StopLoading" />アプリケーションのナビゲーターのメソッドが呼び出されて、または新しいナビゲーションがナビゲーターによって要求された実行中は現在のナビゲーションとします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ナビゲーターは、<xref:System.Windows.Navigation.NavigationWindow>または<xref:System.Windows.Controls.Frame>です。  
+  
+ 「<xref:System.Windows.Navigation.NavigationService.NavigationStopped?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnActivated">
+      <MemberSignature Language="C#" Value="protected virtual void OnActivated (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnActivated(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Application.OnActivated(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Application.Activated" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Application.OnActivated%2A> は、<xref:System.Windows.Application.Activated> イベントを発生させます。  
+  
+ 派生する型<xref:System.Windows.Application>よりも優先<xref:System.Windows.Application.OnActivated%2A>です。 オーバーライドされたメソッドを呼び出す必要があります<xref:System.Windows.Application.OnActivated%2A>基本クラスの場合は<xref:System.Windows.Application.Activated>を発生させる必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDeactivated">
+      <MemberSignature Language="C#" Value="protected virtual void OnDeactivated (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDeactivated(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Application.OnDeactivated(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Application.Deactivated" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Application.OnDeactivated%2A> は、<xref:System.Windows.Application.Deactivated> イベントを発生させます。  
+  
+ 派生する型<xref:System.Windows.Application>よりも優先<xref:System.Windows.Application.OnDeactivated%2A>です。 オーバーライドされたメソッドを呼び出す必要があります<xref:System.Windows.Application.OnDeactivated%2A>基本クラスの場合は<xref:System.Windows.Application.Deactivated>を発生させる必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnExit">
+      <MemberSignature Language="C#" Value="protected virtual void OnExit (System.Windows.ExitEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnExit(class System.Windows.ExitEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Application.OnExit(System.Windows.ExitEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.ExitEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.ExitEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Application.Exit" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Application.OnExit%2A> は、<xref:System.Windows.Application.Exit> イベントを発生させます。  
+  
+ 派生する型<xref:System.Windows.Application>よりも優先、<xref:System.Windows.Application.OnExit%2A>メソッドです。 オーバーライドされたメソッドを呼び出す必要があります<xref:System.Windows.Application.OnExit%2A>基本クラスの場合は<xref:System.Windows.Application.Exit>を発生させる必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnFragmentNavigation">
+      <MemberSignature Language="C#" Value="protected virtual void OnFragmentNavigation (System.Windows.Navigation.FragmentNavigationEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnFragmentNavigation(class System.Windows.Navigation.FragmentNavigationEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Application.OnFragmentNavigation(System.Windows.Navigation.FragmentNavigationEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Navigation.FragmentNavigationEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Navigation.FragmentNavigationEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Application.FragmentNavigation" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Application.OnFragmentNavigation%2A> は、<xref:System.Windows.Application.FragmentNavigation> イベントを発生させます。  
+  
+ 派生する型<xref:System.Windows.Application>よりも優先<xref:System.Windows.Application.OnFragmentNavigation%2A>です。 オーバーライドされたメソッドを呼び出す必要があります<xref:System.Windows.Application.OnFragmentNavigation%2A>基本クラスの場合は<xref:System.Windows.Application.FragmentNavigation>を発生させる必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLoadCompleted">
+      <MemberSignature Language="C#" Value="protected virtual void OnLoadCompleted (System.Windows.Navigation.NavigationEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnLoadCompleted(class System.Windows.Navigation.NavigationEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Application.OnLoadCompleted(System.Windows.Navigation.NavigationEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Navigation.NavigationEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Navigation.NavigationEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Application.LoadCompleted" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Application.OnLoadCompleted%2A> は、<xref:System.Windows.Application.LoadCompleted> イベントを発生させます。  
+  
+ 派生する型<xref:System.Windows.Application>よりも優先<xref:System.Windows.Application.OnLoadCompleted%2A>です。 オーバーライドされたメソッドを呼び出す必要があります<xref:System.Windows.Application.OnLoadCompleted%2A>基本クラスの場合は<xref:System.Windows.Application.LoadCompleted>を発生させる必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnNavigated">
+      <MemberSignature Language="C#" Value="protected virtual void OnNavigated (System.Windows.Navigation.NavigationEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnNavigated(class System.Windows.Navigation.NavigationEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Application.OnNavigated(System.Windows.Navigation.NavigationEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Navigation.NavigationEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Navigation.NavigationEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Application.Navigated" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Application.OnNavigated%2A> は、<xref:System.Windows.Application.Navigated> イベントを発生させます。  
+  
+ 派生する型<xref:System.Windows.Application>よりも優先<xref:System.Windows.Application.OnNavigated%2A>です。 オーバーライドされたメソッドを呼び出す必要があります<xref:System.Windows.Application.OnNavigated%2A>基本クラスの場合は<xref:System.Windows.Application.Navigated>を発生させる必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnNavigating">
+      <MemberSignature Language="C#" Value="protected virtual void OnNavigating (System.Windows.Navigation.NavigatingCancelEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnNavigating(class System.Windows.Navigation.NavigatingCancelEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Application.OnNavigating(System.Windows.Navigation.NavigatingCancelEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Navigation.NavigatingCancelEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Navigation.NavigatingCancelEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Application.Navigating" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Application.OnNavigating%2A> は、<xref:System.Windows.Application.Navigating> イベントを発生させます。  
+  
+ 派生する型<xref:System.Windows.Application>よりも優先<xref:System.Windows.Application.OnNavigating%2A>です。 オーバーライドされたメソッドを呼び出す必要があります<xref:System.Windows.Application.OnNavigating%2A>基本クラスの場合は<xref:System.Windows.Application.Navigating>を発生させる必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnNavigationFailed">
+      <MemberSignature Language="C#" Value="protected virtual void OnNavigationFailed (System.Windows.Navigation.NavigationFailedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnNavigationFailed(class System.Windows.Navigation.NavigationFailedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Application.OnNavigationFailed(System.Windows.Navigation.NavigationFailedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Navigation.NavigationFailedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Navigation.NavigationFailedEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Application.NavigationFailed" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Application.OnNavigationFailed%2A> は、<xref:System.Windows.Application.NavigationFailed> イベントを発生させます。  
+  
+ 派生する型<xref:System.Windows.Application>よりも優先<xref:System.Windows.Application.OnNavigationFailed%2A>です。 オーバーライドされたメソッドを呼び出す必要があります<xref:System.Windows.Application.OnNavigationFailed%2A>基本クラスの場合は<xref:System.Windows.Application.NavigationFailed>を発生させる必要があります。  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Application.OnFragmentNavigation%2A>  
+  
+ <xref:System.Windows.Application.OnLoadCompleted%2A>  
+  
+ <xref:System.Windows.Application.OnNavigating%2A>  
+  
+ <xref:System.Windows.Application.OnNavigated%2A>  
+  
+ <xref:System.Windows.Application.OnNavigationProgress%2A>  
+  
+ <xref:System.Windows.Application.OnNavigationStopped%2A>  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnNavigationProgress">
+      <MemberSignature Language="C#" Value="protected virtual void OnNavigationProgress (System.Windows.Navigation.NavigationProgressEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnNavigationProgress(class System.Windows.Navigation.NavigationProgressEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Application.OnNavigationProgress(System.Windows.Navigation.NavigationProgressEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Navigation.NavigationProgressEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Navigation.NavigationProgressEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Application.NavigationProgress" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Application.OnNavigationProgress%2A> は、<xref:System.Windows.Application.NavigationProgress> イベントを発生させます。  
+  
+ 派生する型<xref:System.Windows.Application>よりも優先<xref:System.Windows.Application.OnNavigationProgress%2A>です。 オーバーライドされたメソッドを明示的に呼び出す必要があります<xref:System.Windows.Application.OnNavigationProgress%2A>基本クラスの場合は<xref:System.Windows.Application.NavigationProgress>を発生させる必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnNavigationStopped">
+      <MemberSignature Language="C#" Value="protected virtual void OnNavigationStopped (System.Windows.Navigation.NavigationEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnNavigationStopped(class System.Windows.Navigation.NavigationEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Application.OnNavigationStopped(System.Windows.Navigation.NavigationEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Navigation.NavigationEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Navigation.NavigationEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Application.NavigationStopped" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Application.OnNavigationStopped%2A> は、<xref:System.Windows.Application.NavigationStopped> イベントを発生させます。  
+  
+ 派生する型<xref:System.Windows.Application>よりも優先<xref:System.Windows.Application.OnNavigationStopped%2A>です。 オーバーライドされたメソッドを呼び出す必要があります<xref:System.Windows.Application.OnNavigationStopped%2A>基本クラスの場合は<xref:System.Windows.Application.NavigationStopped>を発生させる必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSessionEnding">
+      <MemberSignature Language="C#" Value="protected virtual void OnSessionEnding (System.Windows.SessionEndingCancelEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnSessionEnding(class System.Windows.SessionEndingCancelEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Application.OnSessionEnding(System.Windows.SessionEndingCancelEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.SessionEndingCancelEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.SessionEndingCancelEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Application.SessionEnding" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Application.OnSessionEnding%2A> は、<xref:System.Windows.Application.SessionEnding> イベントを発生させます。  
+  
+ 派生する型<xref:System.Windows.Application>よりも優先<xref:System.Windows.Application.OnSessionEnding%2A>です。 オーバーライドされたメソッドを呼び出す必要があります<xref:System.Windows.Application.OnSessionEnding%2A>基本クラスの場合は<xref:System.Windows.Application.SessionEnding>を発生させる必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStartup">
+      <MemberSignature Language="C#" Value="protected virtual void OnStartup (System.Windows.StartupEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnStartup(class System.Windows.StartupEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Application.OnStartup(System.Windows.StartupEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.StartupEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.StartupEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Application.Startup" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Application.OnStartup%2A> は、<xref:System.Windows.Application.Startup> イベントを発生させます。  
+  
+ 派生する型<xref:System.Windows.Application>よりも優先<xref:System.Windows.Application.OnStartup%2A>です。 オーバーライドされたメソッドを呼び出す必要があります<xref:System.Windows.Application.OnStartup%2A>基本クラスの場合、<xref:System.Windows.Application.Startup>イベントを発生させる必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="public System.Collections.IDictionary Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IDictionary Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Application.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーション スコープのプロパティのコレクションを取得します。</summary>
+        <value><see cref="T:System.Collections.IDictionary" />アプリケーション スコープのプロパティを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Application>使用してディクショナリを公開する<xref:System.Windows.Application.Properties%2A>アプリケーション スコープのプロパティの保存に使用できます。 これによりのすべてのコードの間で状態を共有する、<xref:System.AppDomain>スレッド セーフである的に、状態コードを記述する必要はありません。  
+  
+ 格納されているプロパティ<xref:System.Windows.Application.Properties%2A>返される適切な型に変換する必要があります。  
+  
+ <xref:System.Windows.Application.Properties%2A>プロパティは、スレッド セーフであるとはどのスレッドから使用できます。  
+  
+   
+  
+## Examples  
+ 作成およびアプリケーション スコープのプロパティを使用して、使用する方法の例を次に<xref:System.Windows.Application.Properties%2A>です。  
+  
+ [!code-xaml[ApplicationPropertiesSnippets#HandleStartupXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationPropertiesSnippets/CSharp/App.xaml#handlestartupxaml)]  
+  
+ [!code-csharp[ApplicationPropertiesSnippets#HandleStartupCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationPropertiesSnippets/CSharp/App.xaml.cs#handlestartupcodebehind)]
+ [!code-vb[ApplicationPropertiesSnippets#HandleStartupCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ApplicationPropertiesSnippets/visualbasic/application.xaml.vb#handlestartupcodebehind)]  
+  
+ [!code-xaml[ApplicationPropertiesSnippets#MainWindowGetPropertyXAML1](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationPropertiesSnippets/CSharp/MainWindow.xaml#mainwindowgetpropertyxaml1)]  
+[!code-xaml[ApplicationPropertiesSnippets#MainWindowGetPropertyXAML2](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationPropertiesSnippets/CSharp/MainWindow.xaml#mainwindowgetpropertyxaml2)]  
+  
+ [!code-csharp[ApplicationPropertiesSnippets#MainWindowGetPropertyCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationPropertiesSnippets/CSharp/MainWindow.xaml.cs#mainwindowgetpropertycodebehind)]
+ [!code-vb[ApplicationPropertiesSnippets#MainWindowGetPropertyCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ApplicationPropertiesSnippets/visualbasic/mainwindow.xaml.vb#mainwindowgetpropertycodebehind)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResourceAssembly">
+      <MemberSignature Language="C#" Value="public static System.Reflection.Assembly ResourceAssembly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Reflection.Assembly ResourceAssembly" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Application.ResourceAssembly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Assembly</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、 <see cref="T:System.Reflection.Assembly" /> 、パックを提供する[!INCLUDE[TLA#tla_uri#plural](~/includes/tlasharptla-urisharpplural-md.md)]内のリソースに対して、[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]アプリケーションです。</summary>
+        <value>参照、 <see cref="T:System.Reflection.Assembly" /> 、パックを提供する[!INCLUDE[TLA#tla_uri#plural](~/includes/tlasharptla-urisharpplural-md.md)]内のリソースに対して、[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]アプリケーションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]から返される値によって識別されるエントリのアセンブリに対して実行時にリソースが解決される、<xref:System.Reflection.Assembly.GetEntryAssembly%2A>メソッドです。  
+  
+ 入力アセンブリがによって返されるアセンブリ<xref:System.Reflection.Assembly.GetEntryAssembly%2A>し、次にある可能性があります。  
+  
+-   既定のアプリケーション ドメインで実行可能アセンブリ。  
+  
+-   呼び出すことによって実行される最初のアセンブリ<xref:System.AppDomain.ExecuteAssembly%2A>です。  
+  
+ 次の場合、ただし、[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]アセンブリは、入力アセンブリへの参照を取得できません。  
+  
+-   アンマネージ (ネイティブ) アプリケーション ホスト、[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]アセンブリ。  
+  
+-   マネージ アプリケーションのホスト、[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]以外のメソッドを使用して、新しいアプリケーション ドメインに読み込むことによってアセンブリ<xref:System.AppDomain.ExecuteAssembly%2A>です。  
+  
+ このような場合の両方で<xref:System.Reflection.Assembly.GetEntryAssembly%2A>を返します`null`、および[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]アセンブリのリソースを解決することはできません。 このような場合は、 <xref:System.Windows.Application.ResourceAssembly%2A> 1 度だけ、リソースの解決に使用するアセンブリへの参照で設定できます。  
+  
+ <xref:System.Windows.Application.ResourceAssembly%2A>のみ設定できます 1 回の後に、リソース アセンブリが変更されること可能性は高くありませんので、[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]アセンブリが読み込まれています。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Application.ResourceAssembly%2A>場合を設定することはできません、[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]アセンブリは、入力アセンブリを検出できる — されているときに、<xref:System.Reflection.Assembly.GetEntryAssembly%2A>アセンブリへの参照を返しますのではなく`null`です。  
+  
+ このプロパティは、スレッド セーフであるは任意のスレッドから使用できます。  
+  
+ <xref:System.Windows.Application.ResourceAssembly%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">A[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]アプリケーションには、入力アセンブリまたは<see cref="P:System.Windows.Application.ResourceAssembly" />は既に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Resources">
+      <MemberSignature Language="C#" Value="public System.Windows.ResourceDictionary Resources { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.ResourceDictionary Resources" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Application.Resources" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.Markup.Ambient</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.ResourceDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはスタイルとブラシなどのアプリケーション スコープのリソースのコレクションを設定します。</summary>
+        <value>A <see cref="T:System.Windows.ResourceDictionary" /> 0 個以上のアプリケーション スコープのリソースを含むオブジェクトです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Application.Resources%2A> Windows およびアプリケーションの要素の間でリソースを共有するプロパティを使用できます。 さらに、<xref:System.Windows.Application.Resources%2A>は次の順序で走査リソース参照パスのプロパティが含まれています。  
+  
+1.  Elements  
+  
+2.  Windows  
+  
+3.  <xref:System.Windows.Application.Resources%2A?displayProperty=nameWithType>  
+  
+4.  システム  
+  
+ その結果、[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]要素は、アプリケーション スコープのリソースにバインドできます。 さらに、リソースが変更された場合、リソース システムにより、その要素の変更を反映するようにそれらのリソースにバインドされているプロパティが自動的に更新します。  
+  
+ アプリケーション スコープのリソースは、アプリケーション間で一貫性のあるテーマをサポートする簡単な方法を提供します。 テーマを簡単に作成できます[!INCLUDE[TLA#tla_titlexaml](~/includes/tlasharptla-titlexaml-md.md)]を使用して、`Application.Resources`タグ。 ただし、アプリケーションは、多数のテーマの要素を含むことが、複数のテーマをサポートしている場合ありますいずれかを使用してそれらを管理しやすい<xref:System.Windows.ResourceDictionary>各テーマのインスタンス。 これにより、新しいテーマを適用して適切なリソースのプロパティを設定して<xref:System.Windows.ResourceDictionary>です。  
+  
+ 2 つの考慮事項を使用する場合がある<xref:System.Windows.Application.Resources%2A>です。 まず、ディクショナリ*キー*が、オブジェクトを設定およびプロパティの値 (文字列を使用するときに、キーが大文字小文字を区別であることに注意してください) を取得するときに正確に同じオブジェクト インスタンスを使用する必要があるためです。 2 番目、ディクショナリ*値*オブジェクトはプロパティの値を取得するときに、目的の型に値を変換する必要があります。  
+  
+ <xref:System.Windows.Application.Resources%2A>スレッド セーフであるは、任意のスレッドから使用します。  
+  
+   
+  
+## Examples  
+ この例は、使用する方法を示しています。[!INCLUDE[TLA#tla_titlexaml](~/includes/tlasharptla-titlexaml-md.md)]アプリケーション スコープのリソースを一貫した外観を作成するとします。  
+  
+ [!code-xaml[ApplicationResourcesSnippets#ResourcesPropertyXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationResourcesSnippets/CS/App.xaml#resourcespropertyxaml)]  
+  
+ [!code-xaml[ApplicationResourcesSnippets#WindowBackgroundPropertyXAML1](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationResourcesSnippets/CS/MainWindow.xaml#windowbackgroundpropertyxaml1)]  
+[!code-xaml[ApplicationResourcesSnippets#WindowBackgroundPropertyXAML2](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationResourcesSnippets/CS/MainWindow.xaml#windowbackgroundpropertyxaml2)]  
+  
+ 次の例では、コードと XAML でアプリケーションのリソースを設定する方法を示します。  
+  
+ [!code-csharp[HOWTOApplicationModelSnippets#SetApplicationScopeResourceCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/HOWTOApplicationModelSnippets/CSharp/ApplicationPropertiesSnippet.xaml.cs#setapplicationscoperesourcecode)]
+ [!code-vb[HOWTOApplicationModelSnippets#SetApplicationScopeResourceCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HOWTOApplicationModelSnippets/visualbasic/applicationpropertiessnippet.xaml.vb#setapplicationscoperesourcecode)]  
+  
+ [!code-xaml[HOWTOApplicationModelSnippets#SetApplicationScopeResourceXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/HOWTOApplicationModelSnippets/CSharp/App.xaml#setapplicationscoperesourcexaml)]  
+  
+ 次の例では、コードで、アプリケーションのリソースを取得する方法を示します。  
+  
+ [!code-csharp[HOWTOApplicationModelSnippets#GetApplicationScopeResourceCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/HOWTOApplicationModelSnippets/CSharp/ApplicationPropertiesSnippet.xaml.cs#getapplicationscoperesourcecode)]
+ [!code-vb[HOWTOApplicationModelSnippets#GetApplicationScopeResourceCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HOWTOApplicationModelSnippets/visualbasic/applicationpropertiessnippet.xaml.vb#getapplicationscoperesourcecode)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Run">
+      <MemberSignature Language="C#" Value="public int Run ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Run() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Application.Run" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>開始、[!INCLUDE[TLA#tla_wpf](~/includes/tlasharptla-wpf-md.md)]アプリケーションです。</summary>
+        <returns><see cref="T:System.Int32" />アプリケーションのシャット ダウン時に、オペレーティング システムに返されるアプリケーションの終了コード。 既定では、終了コード値は 0 です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Application.Run%2A>開始するために呼び出される、[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]アプリケーションです。 定義した場合、<xref:System.Windows.Application>マークアップ、またはマークアップと分離コードを使用して<xref:System.Windows.Application.Run%2A>が暗黙的に呼び出されます。 ただし、定義した場合、<xref:System.Windows.Application>コードを使用して、次のように明示的に呼び出す必要がある<xref:System.Windows.Application.Run%2A>です。  
+  
+ ときに<xref:System.Windows.Application.Run%2A>が呼び出されると、<xref:System.Windows.Application>新しいアタッチ<xref:System.Windows.Threading.Dispatcher>インスタンスを[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]スレッドです。 次に、<xref:System.Windows.Threading.Dispatcher>オブジェクトの<xref:System.Windows.Threading.Dispatcher.Run%2A>メソッドは、windows メッセージを処理するメッセージ ポンプを開始します。 最後に、<xref:System.Windows.Threading.Dispatcher>オブジェクトの呼び出し、<xref:System.Windows.Application>オブジェクトの<xref:System.Windows.Application.OnStartup%2A>メソッドを<xref:System.Windows.Application.Startup>イベント。 その結果、アプリケーションの実行モデルが確立されたらを処理する時間<xref:System.Windows.Application.Startup>アプリケーションが実行されている時点です。  
+  
+ アプリケーションの停止時に実行して<xref:System.Windows.Application.Shutdown%2A>が呼び出されます。 の値、<xref:System.Windows.Application.ShutdownMode%2A>タイミングを決定するプロパティ<xref:System.Windows.Application.Shutdown%2A>が呼び出され、自動的に行われますか、明示的にする必要があるかどうかを呼び出すことです。  
+  
+ <xref:System.Windows.Application.Run%2A>作成したスレッドからのみ呼び出すことができます、<xref:System.Windows.Application>オブジェクト。 また、<xref:System.Windows.Application.Run%2A>から呼び出すことはできません、[!INCLUDE[TLA2#tla_xbap](~/includes/tla2sharptla-xbap-md.md)]です。  
+  
+   
+  
+## Examples  
+ 次の例は、ユーザー設定を使用するアプリケーションを<xref:System.Windows.Application>明示的に呼び出す必要がありますので、<xref:System.Windows.Application.Run%2A>です。  
+  
+ [!code-csharp[ApplicationRunSnippets#CustomEntryPointAndRunCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationRunSnippets/CSharp/App.cs#customentrypointandruncode)]
+ [!code-vb[ApplicationRunSnippets#CustomEntryPointAndRunCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ApplicationRunSnippets/visualbasic/app.vb#customentrypointandruncode)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="M:System.Windows.Application.Run" />ブラウザーによってホストされるアプリケーションから呼び出されます (たとえば、 [!INCLUDE[TLA#tla_xbap](~/includes/tlasharptla-xbap-md.md)])。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Run">
+      <MemberSignature Language="C#" Value="public int Run (System.Windows.Window window);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Run(class System.Windows.Window window) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Application.Run(System.Windows.Window)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="window" Type="System.Windows.Window" />
+      </Parameters>
+      <Docs>
+        <param name="window">A<see cref="T:System.Windows.Window" />は、アプリケーションの起動時に自動的と開きます。</param>
+        <summary>開始、[!INCLUDE[TLA#tla_wpf](~/includes/tlasharptla-wpf-md.md)]アプリケーションし、指定されたウィンドウを開きます。</summary>
+        <returns><see cref="T:System.Int32" />アプリケーションのシャット ダウン時に、オペレーティング システムに返されるアプリケーションの終了コード。 既定では、終了コード値は 0 です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードを拡張、<xref:System.Windows.Application.Run%2A>をアプリケーションの実行が開始した後に指定されたウィンドウを開くメソッドです。  
+  
+ コードを定義する場合<xref:System.Windows.Application>ウィンドウが開きを実行開始時に、明示的に呼び出す<xref:System.Windows.Application.Run%2A>です。  
+  
+ 作成する場合、<xref:System.Windows.Application>マークアップ、またはマークアップと分離コードを使用して、自動的にウィンドウを開き、次の手法のいずれかを使用中には。  
+  
+-   設定することによって宣言によって、<xref:System.Windows.Application.StartupUri%2A>です。  
+  
+-   処理することにより、プログラムによって<xref:System.Windows.Application.Startup>です。  
+  
+   
+  
+## Examples  
+ 次の例は、インスタンス化する手動で作成された静的エントリ ポイント メソッドを使用してアプリケーションを示します<xref:System.Windows.Application>を呼び出す前に<xref:System.Windows.Application.Run%2A>です。  
+  
+ [!code-csharp[ApplicationRunOL1Snippets#CustomEntryPointAndRunOL1CODE](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationRunOL1Snippets/CSharp/App.cs#customentrypointandrunol1code)]
+ [!code-vb[ApplicationRunOL1Snippets#CustomEntryPointAndRunOL1CODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ApplicationRunOL1Snippets/visualbasic/app.vb#customentrypointandrunol1code)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="M:System.Windows.Application.Run" />ブラウザーによってホストされるアプリケーションから呼び出されます (たとえば、 [!INCLUDE[TLA#tla_xbap](~/includes/tlasharptla-xbap-md.md)])。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SessionEnding">
+      <MemberSignature Language="C#" Value="public event System.Windows.SessionEndingCancelEventHandler SessionEnding;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.SessionEndingCancelEventHandler SessionEnding" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Application.SessionEnding" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.SessionEndingCancelEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが終了したときに発生、[!INCLUDE[TLA#tla_mswin](~/includes/tlasharptla-mswin-md.md)]セッションをログオフするか、オペレーティング システムのシャット ダウンします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、アプリケーションのシャット ダウン、[!INCLUDE[TLA#tla_mswin](~/includes/tlasharptla-mswin-md.md)]セッション終了すると、ユーザーがログオフまたはシャット ダウン時に発生します。 この場合、[!INCLUDE[TLA2#tla_mswin](~/includes/tla2sharptla-mswin-md.md)]各アプリケーションをシャット ダウンを要求します。 ただしは、アプリケーションがシャット ダウンこのエラーが発生する準備ができていない可能性があります。 たとえば、アプリケーションには、実行時間の長い操作中または不整合な状態であるデータがあります。 これらの状況で、セッションの終了を防ぐことが望ましい場合がありますしてセッションを終了させるかどうかを決定するオプションをユーザーに許可するが望ましい場合があります。  
+  
+ 処理することにより、セッションが終了したときに検出することができます、<xref:System.Windows.Application.SessionEnding>イベント。 アプリケーションは、セッションの終了を防ぐ必要がある場合、<xref:System.Windows.SessionEndingCancelEventArgs>イベント ハンドラーに渡される引数を公開、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>設定した`true`(既定値は`false`)。  
+  
+ 場合<xref:System.Windows.Application.SessionEnding>が、処理されないか、取り消されてなしで処理される<xref:System.Windows.Application.Shutdown%2A>が呼び出されたと<xref:System.Windows.Application.Exit>イベントが発生します。  
+  
+ 詳細については、セッションが終了する理由を取得するアプリケーションを調査できます<xref:System.Windows.SessionEndingCancelEventArgs.ReasonSessionEnding%2A>の 1 つである、<xref:System.Windows.ReasonSessionEnding>値 (<xref:System.Windows.ReasonSessionEnding.Logoff>と<xref:System.Windows.ReasonSessionEnding.Shutdown>)。  
+  
+ <xref:System.Windows.Application.SessionEnding>コンソール アプリケーションでは発生しません。  
+  
+ <xref:System.Windows.Application.SessionEnding>作成したスレッドでのみが発生した、<xref:System.Windows.Application>オブジェクト。  
+  
+ <xref:System.Windows.Application.SessionEnding>発生しません[!INCLUDE[TLA#tla_xbap#plural](~/includes/tlasharptla-xbapsharpplural-md.md)]です。  
+  
+   
+  
+## Examples  
+ 次の例は、処理する方法を示します、<xref:System.Windows.Application.SessionEnding>イベントと、ユーザーがそれをキャンセルできるようにします。  
+  
+ [!code-xaml[ApplicationSessionEndingSnippets#HandlingSessionEndingXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationSessionEndingSnippets/CSharp/App.xaml#handlingsessionendingxaml)]  
+  
+ [!code-csharp[ApplicationSessionEndingSnippets#HandlingSessionEndingCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationSessionEndingSnippets/CSharp/App.xaml.cs#handlingsessionendingcodebehind)]
+ [!code-vb[ApplicationSessionEndingSnippets#HandlingSessionEndingCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ApplicationSessionEndingSnippets/visualbasic/application.xaml.vb#handlingsessionendingcodebehind)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCookie">
+      <MemberSignature Language="C#" Value="public static void SetCookie (Uri uri, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetCookie(class System.Uri uri, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Application.SetCookie(System.Uri,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="uri"><see cref="T:System.Uri" /> Cookie の作成対象となる場所を指定します。</param>
+        <param name="value"><see cref="T:System.String" /> Cookie のデータを格納しています。</param>
+        <summary>指定された場所のクッキーを作成、<see cref="T:System.Uri" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Cookie とは、アプリケーションのセッション (セッション cookie) 中、またはアプリケーション セッション (永続的な cookie) 間でクライアント コンピューターで、アプリケーションで格納できるデータの任意の部分です。 両方の種類の cookie を作成するには呼び出すことによって<xref:System.Windows.Application.SetCookie%2A>です。  
+  
+ 通常、cookie のデータは、次の形式で名前/値ペアの形式をとります。  
+  
+ `Name=Value`  
+  
+ この形式の文字列を渡す<xref:System.Windows.Application.SetCookie%2A>、と共に、<xref:System.Uri>の cookie を設定する場所 (通常は、アプリケーション ドメイン)。  
+  
+ Cookie とは、セッションの cookie、または永続的な cookie が cookie の文字列をするかどうかに依存するかどうかに渡す<xref:System.Windows.Application.SetCookie%2A>有効期限日が含まれています。 セッション cookie の文字列では、有効期限日は含まれません。 永続的な cookie の文字列は、次の形式にする必要があります。  
+  
+ `NAME=VALUE; expires=DAY, DD-MMM-YYYY HH:MM:SS GMT`  
+  
+ 現在の永続的な cookie が格納されている[!INCLUDE[TLA#tla_mswin](~/includes/tlasharptla-mswin-md.md)]期限が切れるまで、削除された場合に、インストールのインターネット一時ファイル フォルダーです。 アプリケーションから永続的な cookie を削除するには、過去の日付/時刻値に、有効期限を設定します。  
+  
+ クッキーの概要については[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]を参照してください[ナビゲーション概要](~/docs/framework/wpf/app-development/navigation-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.Win32Exception">A[!INCLUDE[TLA#tla_win32](~/includes/tlasharptla-win32-md.md)]によってエラーが発生しました、<see langword="InternetSetCookie" />関数 (によって呼び出されます<see cref="M:System.Windows.Application.SetCookie(System.Uri,System.String)" />)、指定された cookie を作成する際に問題が発生した場合。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイル ベースの cookie を取得する<see cref="T:System.Uri" />です。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+        <permission cref="T:System.Net.WebPermission">以外のファイル ベースの cookie を取得する<see cref="T:System.Uri" />です。 関連する列挙。<see cref="F:System.Net.NetworkAccess.Connect" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Shutdown">
+      <MemberSignature Language="C#" Value="public void Shutdown ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Shutdown() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Application.Shutdown" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アプリケーションを終了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Windows.Application.Shutdown%2A>が呼び出されると、アプリケーションの実行を停止します。 処理することができます、<xref:System.Windows.Application.Exit>イベント、アプリケーションが実行を停止しようとする、適切な処理を実行するタイミングを検出します。  
+  
+ <xref:System.Windows.Application.Shutdown%2A>によって暗黙的に呼び出される[!INCLUDE[TLA#tla_wpf](~/includes/tlasharptla-wpf-md.md)]次の状況で。  
+  
+-   ときに<xref:System.Windows.Application.ShutdownMode%2A>に設定されている<xref:System.Windows.ShutdownMode.OnLastWindowClose>です。  
+  
+-   ときに、<xref:System.Windows.Application.ShutdownMode%2A>に設定されている<xref:System.Windows.ShutdownMode.OnMainWindowClose>です。  
+  
+-   ユーザーがセッションを終了して、<xref:System.Windows.Application.SessionEnding>イベントがハンドルされていないとき、またはキャンセルせずに、処理します。  
+  
+ 呼び出す<xref:System.Windows.Application.Shutdown%2A>シャット ダウン、アプリケーションを明示的にによりに関係なく、<xref:System.Windows.Application.ShutdownMode%2A>設定します。 ただし場合、<xref:System.Windows.Application.ShutdownMode%2A>に設定されている<xref:System.Windows.ShutdownMode.OnExplicitShutdown>、呼び出す必要があります<xref:System.Windows.Application.Shutdown%2A>アプリケーションをシャット ダウンします。  
+  
+> [!IMPORTANT]
+>  ときに<xref:System.Windows.Application.Shutdown%2A>が呼び出されると、アプリケーションが停止したかどうかに関係なく、<xref:System.Windows.Window.Closing>開いているウィンドウのイベントが取り消されました。  
+  
+ このメソッドは、作成したスレッドからのみ呼び出すことが、<xref:System.Windows.Application>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">すべての windows とユーザー入力イベントを制限なく使用する権限です。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Shutdown">
+      <MemberSignature Language="C#" Value="public void Shutdown (int exitCode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Shutdown(int32 exitCode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Application.Shutdown(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="exitCode" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="exitCode">アプリケーションの整数の終了コード。 既定の終了コードは 0 です。</param>
+        <summary>オペレーティング システムに指定した終了コードを返すアプリケーションを終了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理することができます、<xref:System.Windows.Application.Exit>終了コードを設定するイベントです。 ただし、明示的に呼び出す場合<xref:System.Windows.Application.Shutdown%2A>、および処理する<xref:System.Windows.Application.Exit>だけで、終了コードを設定するに呼び出せる<xref:System.Windows.Application.Shutdown%2A>代わりにします。  
+  
+ このメソッドは、作成したスレッドからのみ呼び出すことが、<xref:System.Windows.Application>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">すべての windows とユーザー入力イベントを制限なく使用する権限です。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ShutdownMode">
+      <MemberSignature Language="C#" Value="public System.Windows.ShutdownMode ShutdownMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.ShutdownMode ShutdownMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Application.ShutdownMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.ShutdownMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の原因となる条件、<see cref="M:System.Windows.Application.Shutdown" />に呼び出されるメソッド。</summary>
+        <value><see cref="T:System.Windows.ShutdownMode" /> 列挙値。 既定値は <see cref="F:System.Windows.ShutdownMode.OnLastWindowClose" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションが停止される場合にのみを実行している、<xref:System.Windows.Application.Shutdown%2A>アプリケーションのメソッドが呼び出されます。 暗黙的または明示的の値を指定して、シャット ダウンが発生することが、<xref:System.Windows.Application.ShutdownMode%2A>プロパティです。  
+  
+ 設定した場合<xref:System.Windows.Application.ShutdownMode%2A>に<xref:System.Windows.ShutdownMode.OnLastWindowClose>、[!INCLUDE[TLA#tla_wpf](~/includes/tlasharptla-wpf-md.md)]暗黙的に呼び出す<xref:System.Windows.Application.Shutdown%2A>アプリケーションの最後のウィンドウが閉じたときに、メイン ウィンドウとして、現在インスタンス化されたウィンドウが設定されている場合でも (を参照してください<xref:System.Windows.Application.MainWindow%2A>)。  
+  
+ A<xref:System.Windows.Application.ShutdownMode%2A>の<xref:System.Windows.ShutdownMode.OnMainWindowClose>により[!INCLUDE[TLA#tla_wpf](~/includes/tlasharptla-wpf-md.md)]を暗黙的に呼び出す<xref:System.Windows.Application.Shutdown%2A>ときに、<xref:System.Windows.Application.MainWindow%2A>閉じると、その他のウィンドウが現在開いている場合でもです。  
+  
+ 一部のアプリケーションの有効期間は、メイン ウィンドウまたは最後のウィンドウが閉じるか、またはできない可能性があります windows に依存するすべての場合に依存できない可能性があります。 このようなシナリオを設定する必要があります、<xref:System.Windows.Application.ShutdownMode%2A>プロパティを<xref:System.Windows.ShutdownMode.OnExplicitShutdown>がありますが、明示的な<xref:System.Windows.Application.Shutdown%2A>メソッドの呼び出し、アプリケーションを停止します。 それ以外の場合、アプリケーションは引き続きバック グラウンドで実行されます。  
+  
+ <xref:System.Windows.Application.ShutdownMode%2A>宣言によって構成できます[!INCLUDE[TLA#tla_titlexaml](~/includes/tlasharptla-titlexaml-md.md)]またはプログラムによってコード。  
+  
+ このプロパティは、作成したスレッドからのみ使用可能な<xref:System.Windows.Application>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例は、構成する方法を示しています。<xref:System.Windows.Application.ShutdownMode%2A>アプリケーションを明示的に閉じる必要がありますを指定します。  
+  
+ [!code-xaml[ApplicationShutdownModeSnippets#SetShutdownModeXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationShutdownModeSnippets/CS/App.xaml#setshutdownmodexaml)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Startup">
+      <MemberSignature Language="C#" Value="public event System.Windows.StartupEventHandler Startup;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.StartupEventHandler Startup" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Application.Startup" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.StartupEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="M:System.Windows.Application.Run" />のメソッド、<see cref="T:System.Windows.Application" />オブジェクトが呼び出されるとします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一般的な[!INCLUDE[TLA#tla_wpf](~/includes/tlasharptla-wpf-md.md)]など、開始時に、アプリケーションは、さまざまな初期化タスクを実行可能性があります。  
+  
+-   コマンド ライン パラメーターを処理しています。  
+  
+-   メイン ウィンドウを開いています。  
+  
+-   アプリケーション スコープのリソースを初期化します。  
+  
+-   アプリケーション スコープのプロパティを初期化します。  
+  
+ メイン ウィンドウとアプリケーション スコープのリソースを使用して宣言によって指定できます[!INCLUDE[TLA#tla_titlexaml](~/includes/tlasharptla-titlexaml-md.md)](<xref:System.Windows.Application.StartupUri%2A>と<xref:System.Windows.Application.Resources%2A>、それぞれ)。 場合によっては、ただし、リソースや、アプリケーションのメイン ウィンドウできますのみするプログラムで実行時に決定します。 さらに、アプリケーション スコープのプロパティとコマンド ライン パラメーターのみするプログラムにより使用できます。 プログラムによる初期化を処理することにより実行できます、<xref:System.Windows.Application.Startup>次を含むイベント。  
+  
+-   使用できるコマンド ライン パラメーターを取得および処理、<xref:System.Windows.StartupEventArgs.Args%2A>のプロパティ、<xref:System.Windows.StartupEventArgs>クラスに渡される、<xref:System.Windows.Application.Startup>イベント ハンドラー。  
+  
+-   使用してアプリケーション スコープのリソースを初期化、<xref:System.Windows.Application.Resources%2A>プロパティです。  
+  
+-   使用してアプリケーション スコープのプロパティを初期化、<xref:System.Windows.Application.Properties%2A>プロパティです。  
+  
+-   インスタンスを作成し、1 つ (以上) のウィンドウを表示します。  
+  
+> [!NOTE]
+>  コマンド ライン パラメーターは、静的なを呼び出すことによって取得することも<xref:System.Environment.GetCommandLineArgs%2A>のメソッド、<xref:System.Environment>オブジェクト。 ただし、<xref:System.Environment.GetCommandLineArgs%2A>を実行する完全な信頼が必要です。  
+  
+ 設定した場合<xref:System.Windows.Application.StartupUri%2A>を使用して[!INCLUDE[TLA2#tla_titlexaml](~/includes/tla2sharptla-titlexaml-md.md)]、作成されるメイン ウィンドウからは使用できないか、<xref:System.Windows.Application.MainWindow%2A>プロパティまたは<xref:System.Windows.Application.Windows%2A>のプロパティ、<xref:System.Windows.Application>後まで、オブジェクト、<xref:System.Windows.Application.Startup>イベントを処理します。 起動中にメイン ウィンドウへのアクセスを必要がある場合は新しいウィンドウのオブジェクトを手動で作成する必要があります、<xref:System.Windows.Application.Startup>イベント ハンドラー。  
+  
+> [!NOTE]
+>  アプリケーションで使用する場合<xref:System.Net.AuthenticationManager.CredentialPolicy%2A>資格情報のポリシーを指定するには、設定する必要があります<xref:System.Net.AuthenticationManager.CredentialPolicy%2A>後<xref:System.Windows.Application.Startup>が発生した場合[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]既定内部ポリシーに直接後設定、<xref:System.Windows.Application.Startup>イベントが発生しました。  
+  
+ 渡されるコマンドライン引数、<xref:System.Windows.Application.Startup>イベント ハンドラーと同じではない、[!INCLUDE[TLA#tla_url](~/includes/tlasharptla-url-md.md)]クエリ文字列パラメーターに渡される、[!INCLUDE[TLA#tla_xbap](~/includes/tlasharptla-xbap-md.md)]です。  
+  
+   
+  
+## Examples  
+ 次の例では、取得およびスタンドアロン アプリケーションからコマンド ライン オプションを処理する方法を示します。 場合、 **/StartMinimized**コマンド ライン パラメーターが指定されて、最小化された状態で、アプリケーションが、メイン ウィンドウを開きます。  
+  
+ [!code-xaml[ApplicationStartupSnippets#HandleStartupXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationStartupSnippets/CSharp/App.xaml#handlestartupxaml)]  
+  
+ [!code-csharp[ApplicationStartupSnippets#HandleStartupCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationStartupSnippets/CSharp/App.xaml.cs#handlestartupcodebehind)]
+ [!code-vb[ApplicationStartupSnippets#HandleStartupCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ApplicationStartupSnippets/visualbasic/application.xaml.vb#handlestartupcodebehind)]  
+  
+ [!INCLUDE[TLA#tla_xbap#plural](~/includes/tlasharptla-xbapsharpplural-md.md)]取得しを起動するためにコマンドライン引数を処理できません[!INCLUDE[TLA#tla_clickonce](~/includes/tlasharptla-clickonce-md.md)]展開 (を参照してください[WPF アプリケーション (WPF) を展開する](~/docs/framework/wpf/app-development/deploying-a-wpf-application-wpf.md))。 ただし、起動に使用される URL のクエリ文字列パラメーターを取得して処理することはできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartupUri">
+      <MemberSignature Language="C#" Value="public Uri StartupUri { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri StartupUri" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Application.StartupUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]をアプリケーションの起動時に自動的に表示します。</summary>
+        <value>A<see cref="T:System.Uri" />を参照する、[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]は、アプリケーションの起動時に自動的に開きます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます<xref:System.Windows.Application.StartupUri%2A>を自動的に読み込む、[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]リソース アプリケーションの起動時にします。  
+  
+ 次の表は、種類の[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]読み込むことができるリソースには、開かれたウィンドウの種類およびとして設定できます。 これらのリソース アプリケーションの種類、<xref:System.Windows.Application.StartupUri%2A>です。  
+  
+|型|ウィンドウ|アプリケーションの種類|  
+|----------|------------|----------------------|  
+|<xref:System.Windows.Window>|<xref:System.Windows.Window>|スタンドアロンのみ|  
+|<xref:System.Windows.Navigation.NavigationWindow>|<xref:System.Windows.Navigation.NavigationWindow>|スタンドアロンのみ|  
+|<xref:System.Windows.Controls.Page>|<xref:System.Windows.Navigation.NavigationWindow>|スタンドアロン/ブラウザーでホストされます。|  
+|<xref:System.Windows.Controls.UserControl>|<xref:System.Windows.Navigation.NavigationWindow>|スタンドアロン/ブラウザーでホストされます。|  
+|<xref:System.Windows.Documents.FlowDocument>|<xref:System.Windows.Navigation.NavigationWindow>|スタンドアロン/ブラウザーでホストされます。|  
+|<xref:System.Windows.Navigation.PageFunction%601>|<xref:System.Windows.Navigation.NavigationWindow>|スタンドアロン/ブラウザーでホストされます。|  
+  
+ 通常、設定、<xref:System.Windows.Application.StartupUri%2A>プロパティ宣言で[!INCLUDE[TLA#tla_titlexaml](~/includes/tlasharptla-titlexaml-md.md)]です。 ただし、設定することができます<xref:System.Windows.Application.StartupUri%2A>プログラムからこのような<xref:System.Windows.Application.Startup>のみの読み込みを行える、必要なアプリケーションの場合に便利ですが、イベント ハンドラー[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]実行時にリソース。 たとえば、アプリケーションは場合、そのリソースを読み込むために実行時まで待機可能性がありますの名前、[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]リソースが構成ファイルに格納されています。  
+  
+ かどうかを設定する<xref:System.Windows.Application.StartupUri%2A>宣言またはプログラムによって、対応する[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]までリソースが読み込まれていない後、<xref:System.Windows.Application.Startup>イベントを処理します。 その結果、する必要はありませんアクセスされたウィンドウから、<xref:System.Windows.Application.Windows%2A>プロパティまたは<xref:System.Windows.Application.MainWindow%2A>プロパティを処理するとき<xref:System.Windows.Application.Startup>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <see cref="P:System.Windows.Application.StartupUri" />値は null に設定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IQueryAmbient.IsAmbientPropertyAvailable">
+      <MemberSignature Language="C#" Value="bool IQueryAmbient.IsAmbientPropertyAvailable (string propertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Windows.Markup.IQueryAmbient.IsAmbientPropertyAvailable(string propertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Application.System#Windows#Markup#IQueryAmbient#IsAmbientPropertyAvailable(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">要求されたアンビエント プロパティの名前。</param>
+        <summary>かどうか、指定したアンビエント プロパティが使用可能な現在のスコープを照会します。</summary>
+        <returns>
+          <see langword="true" />要求されたアンビエント プロパティがある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Application> のインスタンスが <xref:System.Windows.Markup.IQueryAmbient> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryFindResource">
+      <MemberSignature Language="C#" Value="public object TryFindResource (object resourceKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object TryFindResource(object resourceKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Application.TryFindResource(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resourceKey" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="resourceKey">検索するリソースの名前。</param>
+        <summary>指定したリソースを検索します。</summary>
+        <returns>要求されたリソース オブジェクト。 要求されたリソースが見つからない場合は null 参照が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Application.TryFindResource%2A>アプリケーション スコープの指定されたリソースのリソースでは、まずします。 アプリケーション スコープのリソースで管理されて<xref:System.Windows.Application>から公開されると、<xref:System.Windows.Application.Resources%2A>プロパティです。 アプリケーション スコープのリソースのセットに指定されたリソースが見つからない場合<xref:System.Windows.Application.TryFindResource%2A>次へは、システム リソースを検索します。 システム リソースは、シェル リソースが、ユーザーが定義されているし、色、フォント、およびシェル構成が含まれます。 これらは、 <xref:System.Windows.SystemColors>、 <xref:System.Windows.SystemFonts>、および<xref:System.Windows.SystemParameters>型をそれぞれ、静的なプロパティです。 使用する<xref:System.Windows.Application.TryFindResource%2A>を取得するには、これらの型もリソース キー プロパティを公開に渡されるように設計された<xref:System.Windows.Application.TryFindResource%2A>。 たとえば、<xref:System.Windows.SystemParameters.IconWidthKey%2A>です。  
+  
+ <xref:System.Windows.Application.TryFindResource%2A>オブジェクトを返しますリソースが見つかった場合は適切な型に返される値をキャストする必要があります。  
+  
+ このメソッドはスレッド セーフであるため、任意のスレッドから呼び出すことができます。  
+  
+   
+  
+## Examples  
+ 次の例は、使用する方法を示しています。<xref:System.Windows.Application.TryFindResource%2A>リソースを取得します。  
+  
+ [!code-xaml[ApplicationTryFindResourceSnippets#ApplicationCallTryFindResourceXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationTryFindResourceSnippets/CSharp/App.xaml#applicationcalltryfindresourcexaml)]  
+  
+ [!code-csharp[ApplicationTryFindResourceSnippets#ApplicationCallTryFindResourceCODEBEHIND1](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationTryFindResourceSnippets/CSharp/MainWindow.xaml.cs#applicationcalltryfindresourcecodebehind1)]
+ [!code-vb[ApplicationTryFindResourceSnippets#ApplicationCallTryFindResourceCODEBEHIND1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ApplicationTryFindResourceSnippets/visualbasic/mainwindow.xaml.vb#applicationcalltryfindresourcecodebehind1)]  
+[!code-csharp[ApplicationTryFindResourceSnippets#ApplicationCallTryFindResourceCODEBEHIND2](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationTryFindResourceSnippets/CSharp/MainWindow.xaml.cs#applicationcalltryfindresourcecodebehind2)]
+[!code-vb[ApplicationTryFindResourceSnippets#ApplicationCallTryFindResourceCODEBEHIND2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ApplicationTryFindResourceSnippets/visualbasic/mainwindow.xaml.vb#applicationcalltryfindresourcecodebehind2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Windows">
+      <MemberSignature Language="C#" Value="public System.Windows.WindowCollection Windows { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.WindowCollection Windows" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Application.Windows" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.WindowCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションでインスタンス化されたウィンドウを取得します。</summary>
+        <value>A <see cref="T:System.Windows.WindowCollection" /> 、現在のすべてのウィンドウ オブジェクトへの参照を格納している<see cref="T:System.AppDomain" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Window>に参照が自動的に追加<xref:System.Windows.Application.Windows%2A>でウィンドウがインスタンス化するとすぐに、[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]スレッド以外のスレッドが追加されませんワーカーによって作成されたウィンドウです。 A<xref:System.Windows.Window>参照が自動的に削除後、<xref:System.Windows.Window.Closing>イベントが処理されたとする前にその<xref:System.Windows.Window.Closed>イベントが発生します。  
+  
+ 既定では、最初の項目を追加する、<xref:System.Windows.Application.Windows%2A>プロパティになります、<xref:System.Windows.Application.MainWindow%2A>です。  
+  
+ このプロパティは、作成したスレッドからのみ使用可能な<xref:System.Windows.Application>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例では、列挙、<xref:System.Windows.Application.Windows%2A>に共通する最上位レベルの Windows メニューをビルド プロパティ[!INCLUDE[TLA#tla_mdi](~/includes/tlasharptla-mdi-md.md)]のようなアプリケーション[!INCLUDE[TLA#tla_xl](~/includes/tlasharptla-xl-md.md)]などの複数インスタンスのシングル ドキュメント インターフェイス (SDI) アプリケーションまたは[!INCLUDE[TLA#tla_word](~/includes/tlasharptla-word-md.md)].  
+  
+ [!code-csharp[ApplicationWindowsSnippets#WindowMenuItemCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationWindowsSnippets/CSharp/WindowMenuItem.cs#windowmenuitemcode)]
+ [!code-vb[ApplicationWindowsSnippets#WindowMenuItemCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ApplicationWindowsSnippets/visualbasic/windowmenuitem.vb#windowmenuitemcode)]  
+  
+ [!code-xaml[ApplicationWindowsSnippets#MainWindowSetWindowsXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationWindowsSnippets/CSharp/MainWindow.xaml#mainwindowsetwindowsxaml)]  
+  
+ [!code-csharp[ApplicationWindowsSnippets#MainWindowSetWindowsCODEBEHIND1](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationWindowsSnippets/CSharp/MainWindow.xaml.cs#mainwindowsetwindowscodebehind1)]
+ [!code-vb[ApplicationWindowsSnippets#MainWindowSetWindowsCODEBEHIND1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ApplicationWindowsSnippets/visualbasic/mainwindow.xaml.vb#mainwindowsetwindowscodebehind1)]  
+[!code-csharp[ApplicationWindowsSnippets#MainWindowSetWindowsCODEBEHIND2](~/samples/snippets/csharp/VS_Snippets_Wpf/ApplicationWindowsSnippets/CSharp/MainWindow.xaml.cs#mainwindowsetwindowscodebehind2)]
+[!code-vb[ApplicationWindowsSnippets#MainWindowSetWindowsCODEBEHIND2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ApplicationWindowsSnippets/visualbasic/mainwindow.xaml.vb#mainwindowsetwindowscodebehind2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

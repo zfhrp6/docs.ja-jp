@@ -1,0 +1,681 @@
+<Type Name="BaseProperty" FullName="Microsoft.Build.Framework.XamlTypes.BaseProperty">
+  <TypeSignature Language="C#" Value="public abstract class BaseProperty : System.ComponentModel.ISupportInitialize" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit BaseProperty extends System.Object implements class System.ComponentModel.ISupportInitialize" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Framework.XamlTypes.BaseProperty" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.ISupportInitialize</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Arguments")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>表す、<see cref="T:Microsoft.Build.Framework.XamlTypes.Rule" />プロパティです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これはスキーマの情報を表します (名前、許可されている値、およびなど)、<xref:Microsoft.Build.Framework.XamlTypes.Rule>プロパティです。 これはスキーマ情報だけであるため、このプロパティの値を取得または設定するには、「値」などのフィールドはありません。 このクラスを手動でインスタンス化する場合は、呼び出し<xref:Microsoft.Build.Framework.XamlTypes.BaseProperty.BeginInit%2A>オブジェクトの最初のプロパティを設定する前に、<xref:Microsoft.Build.Framework.XamlTypes.BaseProperty.EndInit%2A>の最後のプロパティを設定した後です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected BaseProperty ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Framework.XamlTypes.BaseProperty.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>既定のコンストラクター 永続化された形式から逆シリアル化に必要です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Arguments">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.List&lt;Microsoft.Build.Framework.XamlTypes.Argument&gt; Arguments { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.List`1&lt;class Microsoft.Build.Framework.XamlTypes.Argument&gt; Arguments" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.XamlTypes.BaseProperty.Arguments" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.List&lt;Microsoft.Build.Framework.XamlTypes.Argument&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのプロパティの引数のリストを設定します。</summary>
+        <value>このプロパティの引数の一覧を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドは省略できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginInit">
+      <MemberSignature Language="C#" Value="public virtual void BeginInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void BeginInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Framework.XamlTypes.BaseProperty.BeginInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>「<see cref="M:System.ComponentModel.ISupportInitialize.BeginInit" />」を参照してください。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Category">
+      <MemberSignature Language="C#" Value="public string Category { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Category" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.XamlTypes.BaseProperty.Category" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのプロパティが属しているカテゴリの名前を設定します。</summary>
+        <value>このプロパティが属しているカテゴリの名前を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドの値に対応していないかどうか、`Name`のプロパティ、<xref:Microsoft.Build.Framework.XamlTypes.BaseProperty.Category%2A>要素を含むに定義されている<xref:Microsoft.Build.Framework.XamlTypes.Rule>クラスで、既定値<xref:Microsoft.Build.Framework.XamlTypes.BaseProperty.Category%2A>がこの名前は自動生成されたを含むを追加<xref:Microsoft.Build.Framework.XamlTypes.Rule>クラスです。  
+  
+ このフィールドは省略可能なカルチャに依存しないです。 このフィールドが指定されていない場合、このプロパティは [全般] (ローカライズ) という名前の自動生成されたカテゴリに追加します。 このフィールドは、空の文字列に設定できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainingRule">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.XamlTypes.Rule ContainingRule { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.XamlTypes.Rule ContainingRule" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.XamlTypes.BaseProperty.ContainingRule" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.XamlTypes.Rule</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:Microsoft.Build.Framework.XamlTypes.Rule" />を格納している<see cref="T:Microsoft.Build.Framework.XamlTypes.BaseProperty" />です。</summary>
+        <value>これを含むルールを返す<see cref="T:Microsoft.Build.Framework.XamlTypes.BaseProperty" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSource">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.XamlTypes.DataSource DataSource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.XamlTypes.DataSource DataSource" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.XamlTypes.BaseProperty.DataSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.XamlTypes.DataSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのプロパティの現在の値が格納されているデータ ソースを設定します。</summary>
+        <value>このプロパティの現在の値が格納されているデータ ソースを返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバーライドし、データ ソースが定義されている場合、<xref:Microsoft.Build.Framework.XamlTypes.Rule.DataSource%2A>プロパティに含まれている<xref:Microsoft.Build.Framework.XamlTypes.Rule>です。  
+  
+ このフィールドは必須では場合にのみ、親<xref:Microsoft.Build.Framework.XamlTypes.Rule>初期化データ ソースがありません。 このプロパティの get アクセス操作子がだけを返す、<xref:Microsoft.Build.Framework.XamlTypes.BaseProperty.DataSource%2A>これで直接設定されている<xref:Microsoft.Build.Framework.XamlTypes.BaseProperty>インスタンス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public string Default { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Default" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.XamlTypes.BaseProperty.Default" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのプロパティの既定値を設定します。</summary>
+        <value>このプロパティの既定値を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドは省略できます。 値の場合、<xref:Microsoft.Build.Framework.XamlTypes.StringProperty>セマンティクスは、このフィールドは、カルチャに依存するかどうかを判断します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public string Description { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.XamlTypes.BaseProperty.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の説明<see cref="T:Microsoft.Build.Framework.XamlTypes.BaseProperty" />見込み UI クライアントで使用します。</summary>
+        <value>この説明を返します<see cref="T:Microsoft.Build.Framework.XamlTypes.BaseProperty" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドは省略可能なカルチャです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayName">
+      <MemberSignature Language="C#" Value="public string DisplayName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DisplayName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.XamlTypes.BaseProperty.DisplayName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これを表示する見込み UI クライアントで使用できる名前を取得または<see cref="T:Microsoft.Build.Framework.XamlTypes.BaseProperty" />です。</summary>
+        <value>この表示名を返します<see cref="T:Microsoft.Build.Framework.XamlTypes.BaseProperty" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドは省略可能なカルチャです。 このプロパティが設定されていない場合と同じ値を割り当てられているが、<xref:Microsoft.Build.Framework.XamlTypes.BaseProperty.Name%2A>プロパティ (および、そのためがローカライズされないこと)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndInit">
+      <MemberSignature Language="C#" Value="public virtual void EndInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Framework.XamlTypes.BaseProperty.EndInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>「<see cref="M:System.ComponentModel.ISupportInitialize.EndInit" />」を参照してください。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="F1Keyword">
+      <MemberSignature Language="C#" Value="public string F1Keyword { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string F1Keyword" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.XamlTypes.BaseProperty.F1Keyword" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのプロパティのヘルプ ページを開くために使用されるキーワードを設定します。</summary>
+        <value>このプロパティのヘルプ ページを開くために使用されるキーワードを返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この形式のヘルプを指定するよりも優先<xref:Microsoft.Build.Framework.XamlTypes.BaseProperty.HelpUrl%2A>と<xref:Microsoft.Build.Framework.XamlTypes.BaseProperty.HelpFile%2A>  + <xref:Microsoft.Build.Framework.XamlTypes.BaseProperty.HelpContext%2A>です。  
+  
+ このフィールドは省略可能なカルチャに依存しませんです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HelpContext">
+      <MemberSignature Language="C#" Value="public int HelpContext { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 HelpContext" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.XamlTypes.BaseProperty.HelpContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはユーザーが f1 キーを押したときに使用するヘルプ コンテキストを設定します。</summary>
+        <value>ユーザーが f1 キーを押したときに使用するヘルプ コンテキストを返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、<xref:Microsoft.Build.Framework.XamlTypes.BaseProperty.HelpFile%2A>プロパティを指定したヘルプ ファイルのヘルプ コンテキストを表示します。  
+  
+ このフィールドは省略できます。 場合と連携して、このプロパティ<xref:Microsoft.Build.Framework.XamlTypes.BaseProperty.HelpFile%2A>、指定すると、次の値<xref:Microsoft.Build.Framework.XamlTypes.BaseProperty.HelpUrl%2A>は無視されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HelpFile">
+      <MemberSignature Language="C#" Value="public string HelpFile { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HelpFile" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.XamlTypes.BaseProperty.HelpFile" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはユーザーが f1 キーを押したときに使用するヘルプ ファイルを設定します。</summary>
+        <value>ユーザーが f1 キーを押したときに使用するヘルプ ファイルを返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、「<xref:Microsoft.Build.Framework.XamlTypes.BaseProperty.HelpContext%2A>」を参照してください。  
+  
+ このフィールドは、省略可能で、カルチャに依存しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HelpUrl">
+      <MemberSignature Language="C#" Value="public string HelpUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HelpUrl" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.XamlTypes.BaseProperty.HelpUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのプロパティのヘルプ ページの URL を設定します。 ユーザーが f1 キーを押したときに、ページが開きます。</summary>
+        <value>このプロパティのヘルプ ページの URL を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティより高い優先度、 <xref:Microsoft.Build.Framework.XamlTypes.BaseProperty.HelpContext%2A> + <xref:Microsoft.Build.Framework.XamlTypes.BaseProperty.HelpFile%2A>プロパティです。 つまり、これらのプロパティは無視されます<xref:Microsoft.Build.Framework.XamlTypes.BaseProperty.HelpUrl%2A>が設定されています。  
+  
+ このフィールドは、省略可能で、カルチャに依存しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncludeInCommandLine">
+      <MemberSignature Language="C#" Value="public bool IncludeInCommandLine { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IncludeInCommandLine" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.XamlTypes.BaseProperty.IncludeInCommandLine" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のヒント コマンド ラインのコンス トラクターは、コマンドラインでこのプロパティを含めるかどうか。</summary>
+        <value>コマンド ライン コンス トラクターにヒントを返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いくつかのプロパティは、ターゲットでのみ使用され、コマンドラインの対象にしないです。 生成するスイッチと値の形式でコマンド ラインでは、その他のプロパティでは、タスクのパラメーターなどが含まれています。 このフィールドは省略可能、既定では、値を保持して`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsRequired">
+      <MemberSignature Language="C#" Value="public bool IsRequired { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsRequired" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.XamlTypes.BaseProperty.IsRequired" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定値がこのプロパティが必要かどうかを示すフラグを設定します。</summary>
+        <value>このプロパティが設定値が必要かどうかを示すフラグを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Metadata">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.List&lt;Microsoft.Build.Framework.XamlTypes.NameValuePair&gt; Metadata { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.List`1&lt;class Microsoft.Build.Framework.XamlTypes.NameValuePair&gt; Metadata" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.XamlTypes.BaseProperty.Metadata" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.List&lt;Microsoft.Build.Framework.XamlTypes.NameValuePair&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この属性を追加設定を取得または<see cref="T:Microsoft.Build.Framework.XamlTypes.BaseProperty" />です。</summary>
+        <value>この追加の属性を返します<see cref="T:Microsoft.Build.Framework.XamlTypes.BaseProperty" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、プライマリのフィールドではキャプチャされませんこのプロパティの追加のメタデータのグラブ バッグとして使用できます。 カスタム UI を使用すると、出荷された UI 形式がこれらの属性に対応していないために、追加のメタデータを解釈できます。  
+  
+ このフィールドは省略できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MultipleValuesAllowed">
+      <MemberSignature Language="C#" Value="public bool MultipleValuesAllowed { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool MultipleValuesAllowed" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.XamlTypes.BaseProperty.MultipleValuesAllowed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのプロパティが同時に指定/選択に複数の値を許容するかどうかを指定するスイッチを設定します。</summary>
+        <value>このプロパティが同時に指定/選択に複数の値を許容するかどうかを指定するスイッチを返します。 True の場合、複数の値を選択することがあります。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.XamlTypes.BaseProperty.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これの名前を取得または<see cref="T:Microsoft.Build.Framework.XamlTypes.BaseProperty" />です。</summary>
+        <value>この <see cref="T:Microsoft.Build.Framework.XamlTypes.BaseProperty" /> の名前を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドは、必須で、カルチャに依存しません。 このフィールドの値は、空の文字列に設定できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadOnly">
+      <MemberSignature Language="C#" Value="public bool ReadOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReadOnly" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.XamlTypes.BaseProperty.ReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのプロパティは読み取り専用であるかどうかを示すフラグを設定します。</summary>
+        <value>返します<see langword="true" />場合、このプロパティは読み取り専用プロパティです。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドは省略可能なとその既定値は`false`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Separator">
+      <MemberSignature Language="C#" Value="public string Separator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Separator" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.XamlTypes.BaseProperty.Separator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の値からスイッチを区切るために使用されるトークン。</summary>
+        <value>値からスイッチを区切るために使用するトークンを返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ここで指定された値は、親のルールの区切り記号に指定された値をオーバーライドします。  
+  
+ このフィールドは、オプションであり、カルチャに依存しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Subcategory">
+      <MemberSignature Language="C#" Value="public string Subcategory { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Subcategory" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.XamlTypes.BaseProperty.Subcategory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのプロパティが属するサブカテゴリを設定します。</summary>
+        <value>このプロパティが属するサブカテゴリを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Switch">
+      <MemberSignature Language="C#" Value="public string Switch { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Switch" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.XamlTypes.BaseProperty.Switch" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、プロパティは、ツールのパラメーターを表すスイッチ形式をこのプロパティを設定します。</summary>
+        <value>このプロパティのスイッチの表現を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドは、オプションであり、カルチャに依存しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SwitchPrefix">
+      <MemberSignature Language="C#" Value="public string SwitchPrefix { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SwitchPrefix" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.XamlTypes.BaseProperty.SwitchPrefix" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、このプロパティは、ツールのパラメーターを表している場合は、このプロパティのスイッチ表現のプレフィックスを設定します。</summary>
+        <value>このプロパティのスイッチ表現のプレフィックスを返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ここで指定した値に指定された値より優先、<xref:Microsoft.Build.Framework.XamlTypes.Rule.SwitchPrefix%2A>親の<xref:Microsoft.Build.Framework.XamlTypes.Rule>します。  
+  
+ このフィールドは、オプションであり、カルチャに依存しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValueEditors">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.List&lt;Microsoft.Build.Framework.XamlTypes.ValueEditor&gt; ValueEditors { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.List`1&lt;class Microsoft.Build.Framework.XamlTypes.ValueEditor&gt; ValueEditors" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.XamlTypes.BaseProperty.ValueEditors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.List&lt;Microsoft.Build.Framework.XamlTypes.ValueEditor&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのプロパティの値エディターの一覧を設定します。</summary>
+        <value>このプロパティの値エディターの一覧を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドは省略できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Visible">
+      <MemberSignature Language="C#" Value="public bool Visible { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Visible" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.XamlTypes.BaseProperty.Visible" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのプロパティを表示するかどうかを指定した UI クライアントにヒントを設定します。</summary>
+        <value>ヒントは、このプロパティを表示するかどうかを指定した UI クライアントに返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドは省略可能で、既定値`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

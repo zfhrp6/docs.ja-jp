@@ -1,0 +1,438 @@
+<Type Name="ManagementObjectSearcher" FullName="System.Management.ManagementObjectSearcher">
+  <TypeSignature Language="C#" Value="public class ManagementObjectSearcher : System.ComponentModel.Component" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ManagementObjectSearcher extends System.ComponentModel.Component" />
+  <TypeSignature Language="DocId" Value="T:System.Management.ManagementObjectSearcher" />
+  <AssemblyInfo>
+    <AssemblyName>System.Management</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Component</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>指定されたクエリに基づいた管理オブジェクトのコレクションを取得します。 このクラスは、管理情報の取得を頻繁に使用するエントリ ポイントのいずれかです。 たとえば、すべてのディスク ドライブ、ネットワーク アダプター、プロセス、およびシステムでは、多くの管理オブジェクトを列挙するために使用できるまたはサービスを使用して、一時停止中、すべてのネットワーク接続、クエリを実行するのには。  このクラスのインスタンスは、WMI クエリで表現される入力としてインスタンス化する場合、<see cref="T:System.Management.ObjectQuery" />またはその派生し、必要に応じて、<see cref="T:System.Management.ManagementScope" />でクエリを実行する WMI 名前空間を表すです。 かかる場合がその他の高度なオプション、<see cref="T:System.Management.EnumerationOptions" />です。 ときに、<see cref="M:System.Management.ManagementObjectSearcher.Get" />このオブジェクトのメソッドが呼び出される、 <see cref="T:System.Management.ManagementObjectSearcher" /> 、指定されたスコープで、指定したクエリを実行しでクエリに一致する管理オブジェクトのコレクションを返します、<see cref="T:System.Management.ManagementObjectCollection" />です。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManagementObjectSearcher ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObjectSearcher.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Management.ManagementObjectSearcher" /> クラスの新しいインスタンスを初期化します。 このオブジェクトの一部のプロパティを設定した後は、管理情報に対するクエリを呼び出すオブジェクトを使用できます。 これは、既定のコンス トラクターです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManagementObjectSearcher (System.Management.ObjectQuery query);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Management.ObjectQuery query) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObjectSearcher.#ctor(System.Management.ObjectQuery)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="query" Type="System.Management.ObjectQuery" />
+      </Parameters>
+      <Docs>
+        <param name="query"><see cref="T:System.Management.ObjectQuery" />で呼び出されるクエリを表すです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.ManagementObjectSearcher" />クラスが管理情報の指定されたクエリを呼び出すために使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、の新しいインスタンスを初期化、<xref:System.Management.ManagementObjectSearcher>特定のクエリを持つクラス。  
+  
+ [!code-csharp[wminet_ManagementObjectSearcher-O#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementObjectSearcher-O/cs/ManagementObjectSearcher-O.cs#1)]
+ [!code-vb[wminet_ManagementObjectSearcher-O#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementObjectSearcher-O/vb/ManagementObjectSearcher-O.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManagementObjectSearcher (string queryString);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string queryString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObjectSearcher.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="queryString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="queryString">オブジェクトによって呼び出される WMI クエリ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.ManagementObjectSearcher" />クラスが管理情報の指定されたクエリを呼び出すために使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、の新しいインスタンスを初期化、<xref:System.Management.ManagementObjectSearcher>特定のクエリを持つクラス。  
+  
+ [!code-csharp[wminet_ManagementObjectSearcher-S#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementObjectSearcher-S/cs/ManagementObjectSearcher-S.cs#1)]
+ [!code-vb[wminet_ManagementObjectSearcher-S#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementObjectSearcher-S/vb/ManagementObjectSearcher-S.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManagementObjectSearcher (System.Management.ManagementScope scope, System.Management.ObjectQuery query);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Management.ManagementScope scope, class System.Management.ObjectQuery query) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObjectSearcher.#ctor(System.Management.ManagementScope,System.Management.ObjectQuery)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="scope" Type="System.Management.ManagementScope" />
+        <Parameter Name="query" Type="System.Management.ObjectQuery" />
+      </Parameters>
+      <Docs>
+        <param name="scope">A<see cref="T:System.Management.ManagementScope" />でクエリを呼び出す対象となるスコープを表すです。</param>
+        <param name="query"><see cref="T:System.Management.ObjectQuery" />呼び出されるクエリを表すです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.ManagementObjectSearcher" />クラスの指定されたスコープ内の指定したクエリを呼び出すために使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スコープが指定されていない場合、既定のスコープ (<xref:System.Management.ManagementPath.DefaultPath%2A>) を使用します。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、の新しいインスタンスを初期化、<xref:System.Management.ManagementObjectSearcher>特定のクエリとスコープを持つクラス。  
+  
+ [!code-csharp[wminet_ManagementObjectSearcher-M_O#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementObjectSearcher-M_O/cs/ManagementObjectSearcher-M_O.cs#1)]
+ [!code-vb[wminet_ManagementObjectSearcher-M_O#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementObjectSearcher-M_O/vb/ManagementObjectSearcher-M_O.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManagementObjectSearcher (string scope, string queryString);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string scope, string queryString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObjectSearcher.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="scope" Type="System.String" />
+        <Parameter Name="queryString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="scope">スコープのクエリにします。</param>
+        <param name="queryString">呼び出されるクエリ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.ManagementObjectSearcher" />クラスの指定されたスコープ内の指定したクエリを呼び出すために使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スコープが指定されていない場合、既定のスコープ (<xref:System.Management.ManagementPath.DefaultPath%2A>) を使用します。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、の新しいインスタンスを初期化、<xref:System.Management.ManagementObjectSearcher>特定のクエリとスコープを持つクラス。  
+  
+ [!code-csharp[wminet_ManagementObjectSearcher-S_S#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementObjectSearcher-S_S/cs/ManagementObjectSearcher-S_S.cs#1)]
+ [!code-vb[wminet_ManagementObjectSearcher-S_S#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementObjectSearcher-S_S/vb/ManagementObjectSearcher-S_S.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManagementObjectSearcher (System.Management.ManagementScope scope, System.Management.ObjectQuery query, System.Management.EnumerationOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Management.ManagementScope scope, class System.Management.ObjectQuery query, class System.Management.EnumerationOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObjectSearcher.#ctor(System.Management.ManagementScope,System.Management.ObjectQuery,System.Management.EnumerationOptions)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="scope" Type="System.Management.ManagementScope" />
+        <Parameter Name="query" Type="System.Management.ObjectQuery" />
+        <Parameter Name="options" Type="System.Management.EnumerationOptions" />
+      </Parameters>
+      <Docs>
+        <param name="scope">A<see cref="T:System.Management.ManagementScope" />クエリのスコープを指定します。</param>
+        <param name="query"><see cref="T:System.Management.ObjectQuery" />呼び出されるクエリを指定します。</param>
+        <param name="options"><see cref="T:System.Management.EnumerationOptions" />クエリに使用する追加のオプションを指定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.ManagementObjectSearcher" />クラスを指定したオプションで、指定されたスコープで指定されたクエリを呼び出すために使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、の新しいインスタンスを初期化、<xref:System.Management.ManagementObjectSearcher>特定のクエリ、スコープ、および列挙オプションを持つクラス。  
+  
+ [!code-csharp[wminet_ManagementObjectSearcher-M_O_E#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementObjectSearcher-M_O_E/cs/ManagementObjectSearcher-M_O_E.cs#1)]
+ [!code-vb[wminet_ManagementObjectSearcher-M_O_E#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementObjectSearcher-M_O_E/vb/ManagementObjectSearcher-M_O_E.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManagementObjectSearcher (string scope, string queryString, System.Management.EnumerationOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string scope, string queryString, class System.Management.EnumerationOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObjectSearcher.#ctor(System.String,System.String,System.Management.EnumerationOptions)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="scope" Type="System.String" />
+        <Parameter Name="queryString" Type="System.String" />
+        <Parameter Name="options" Type="System.Management.EnumerationOptions" />
+      </Parameters>
+      <Docs>
+        <param name="scope">クエリを呼び出すことができるスコープです。</param>
+        <param name="queryString">呼び出されるクエリ。</param>
+        <param name="options"><see cref="T:System.Management.EnumerationOptions" />クエリの追加オプションを指定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.ManagementObjectSearcher" />クラスと、指定したオプションで指定されたスコープ内の指定のクエリを呼び出すために使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、の新しいインスタンスを初期化、<xref:System.Management.ManagementObjectSearcher>特定のクエリ、スコープ、および列挙オプションを持つクラス。  
+  
+ [!code-csharp[wminet_ManagementObjectSearcher-S_S_E#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementObjectSearcher-S_S_E/cs/ManagementObjectSearcher-S_S_E.cs#1)]
+ [!code-vb[wminet_ManagementObjectSearcher-S_S_E#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementObjectSearcher-S_S_E/vb/ManagementObjectSearcher-S_S_E.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Get">
+      <MemberSignature Language="C#" Value="public System.Management.ManagementObjectCollection Get ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Management.ManagementObjectCollection Get() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObjectSearcher.Get" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ManagementObjectCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>指定した WMI クエリを呼び出し、結果のコレクションを返します。</summary>
+        <returns>A<see cref="T:System.Management.ManagementObjectCollection" />指定のクエリに一致するオブジェクトを格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、の新しいインスタンスを初期化、<xref:System.Management.ManagementObjectSearcher>特定のクエリ、スコープ、および列挙オプションを持つクラス。  
+  
+ [!code-csharp[wminet_ManagementObjectSearcher_Get#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementObjectSearcher_Get/cs/ManagementObjectSearcher_Get.cs#1)]
+ [!code-vb[wminet_ManagementObjectSearcher_Get#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementObjectSearcher_Get/vb/ManagementObjectSearcher_Get.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Get">
+      <MemberSignature Language="C#" Value="public void Get (System.Management.ManagementOperationObserver watcher);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Get(class System.Management.ManagementOperationObserver watcher) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementObjectSearcher.Get(System.Management.ManagementOperationObserver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="watcher" Type="System.Management.ManagementOperationObserver" />
+      </Parameters>
+      <Docs>
+        <param name="watcher">操作によってトリガーされるイベントを発生させる監視します。</param>
+        <summary>WMI クエリを非同期的に起動し、結果を実現するウォッチャーにバインドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Options">
+      <MemberSignature Language="C#" Value="public System.Management.EnumerationOptions Options { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Management.EnumerationOptions Options" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ManagementObjectSearcher.Options" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.EnumerationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはオブジェクトを検索する方法のオプションを設定します。</summary>
+        <value>返します、 <see cref="T:System.Management.EnumerationOptions" /> WMI オブジェクトを検索するためのオプションを含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ オブジェクトを検索する方法のオプションです。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Query">
+      <MemberSignature Language="C#" Value="public System.Management.ObjectQuery Query { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Management.ObjectQuery Query" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ManagementObjectSearcher.Query" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ObjectQuery</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサーチャー (つまり、管理オブジェクトの検索に適用する条件) で呼び出されるクエリを設定します。</summary>
+        <value>返します、<see cref="T:System.Management.ObjectQuery" />サーチャーで呼び出されるクエリを含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値が変更されたときに、<xref:System.Management.ManagementObjectSearcher>が新しいクエリを使用してリセットします。  
+  
+## <a name="property-value"></a>プロパティ値  
+ クエリに適用する条件。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scope">
+      <MemberSignature Language="C#" Value="public System.Management.ManagementScope Scope { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Management.ManagementScope Scope" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ManagementObjectSearcher.Scope" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ManagementScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または (スコープは、WMI 名前空間を表します) オブジェクトを検索するスコープを設定します。</summary>
+        <value>返します、 <see cref="T:System.Management.ManagementScope" /> WMI オブジェクトを検索するためのスコープ (名前空間) が格納されています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値が変更されたときに、<xref:System.Management.ManagementObjectSearcher>は、新しいスコープに再バインドします。  
+  
+## <a name="property-value"></a>プロパティ値  
+ オブジェクトを検索するスコープ (名前空間) です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、の新しいインスタンスを初期化、<xref:System.Management.ManagementObjectSearcher>特定のクエリを持つクラスを作成し、インスタンスのスコープを変更します。  
+  
+ [!code-csharp[wminet_ManagementObjectSearcher_Scope#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementObjectSearcher_Scope/cs/ManagementObjectSearcher_Scope.cs#1)]
+ [!code-vb[wminet_ManagementObjectSearcher_Scope#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementObjectSearcher_Scope/vb/ManagementObjectSearcher_Scope.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

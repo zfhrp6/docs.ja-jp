@@ -1,0 +1,66 @@
+<Type Name="MachineKeyProtection" FullName="System.Web.Security.MachineKeyProtection">
+  <TypeSignature Language="C#" Value="public enum MachineKeyProtection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed MachineKeyProtection extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Security.MachineKeyProtection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>データを暗号化または復号化するかどうか、ハッシュ ベース メッセージ認証コード (HMAC) を追加または検証するかどうかまたはその両方を示す値を指定します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="All">
+      <MemberSignature Language="C#" Value="All" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Security.MachineKeyProtection All = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Security.MachineKeyProtection.All" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MachineKeyProtection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ハッシュ ベース メッセージ認証コード (HMAC) のデータに追加することと、データを暗号化することを指定します (用、<see cref="M:System.Web.Security.Encode" />メソッド) の暗号化解除され、検証、または両方をデータである必要があります (の<see cref="M:System.Web.Security.Decode" />メソッド)。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Encryption">
+      <MemberSignature Language="C#" Value="Encryption" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Security.MachineKeyProtection Encryption = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Security.MachineKeyProtection.Encryption" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MachineKeyProtection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データを暗号化することを指定します (用、<see cref="M:System.Web.Security.Encode" />メソッド) または復号化 (用、<see cref="M:System.Web.Security.Decode" />メソッド)。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Validation">
+      <MemberSignature Language="C#" Value="Validation" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Security.MachineKeyProtection Validation = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Security.MachineKeyProtection.Validation" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MachineKeyProtection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ハッシュ ベース メッセージ認証コード (HMAC) がデータに追加されることを指定します (用、<see cref="M:System.Web.Security.Encode" />メソッド) または検証に失敗 (用、<see cref="M:System.Web.Security.Decode" />メソッド)。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

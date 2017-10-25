@@ -1,0 +1,275 @@
+<Type Name="Fonts" FullName="System.Windows.Media.Fonts">
+  <TypeSignature Language="C#" Value="public static class Fonts" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Fonts extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Fonts" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>列挙型のサポートを提供<see cref="T:System.Windows.Media.FontFamily" />と<see cref="T:System.Windows.Media.Typeface" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フォント ファミリは、Arial など、同じ書体であっても、機能が異なるフォントのセットです。 これらの機能の相違点を含める<xref:System.Windows.Media.Typeface.Style%2A>、斜体などと<xref:System.Windows.Media.Typeface.Weight%2A>、太字などです。  
+  
+ ![フォント](~/add/media/fonts.PNG "フォント")  
+"Times New Roman"のフォント ファミリのメンバーである書体の例  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetFontFamilies">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.ICollection&lt;System.Windows.Media.FontFamily&gt; GetFontFamilies (string location);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.ICollection`1&lt;class System.Windows.Media.FontFamily&gt; GetFontFamilies(string location) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Fonts.GetFontFamilies(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.Windows.Media.FontFamily&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="location" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="location">フォントが含まれている場所です。</param>
+        <summary>コレクションを返します<see cref="T:System.Windows.Media.FontFamily" />フォントの場所を表す文字列値からのオブジェクト。</summary>
+        <returns><see cref="T:System.Collections.Generic.ICollection`1" />の<see cref="T:System.Windows.Media.FontFamily" />内のフォントを表すオブジェクト<paramref name="location" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、このメソッドを使用して、コレクションを取得する方法を示しています。<xref:System.Windows.Media.FontFamily>フォントの場所からのオブジェクト。  
+  
+ [!code-csharp[FontSnippets#100](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/Window1.xaml.cs#100)]
+ [!code-vb[FontSnippets#100](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/window1.xaml.vb#100)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="location" /> が <see langword="null" /> です。 渡すことはできません<see langword="null" />このパラメーターは、パスとして扱われるため、または[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFontFamilies">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.ICollection&lt;System.Windows.Media.FontFamily&gt; GetFontFamilies (Uri baseUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.ICollection`1&lt;class System.Windows.Media.FontFamily&gt; GetFontFamilies(class System.Uri baseUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Fonts.GetFontFamilies(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.Windows.Media.FontFamily&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseUri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="baseUri">基本[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]フォントの場所の値。</param>
+        <summary>コレクションを返します<see cref="T:System.Windows.Media.FontFamily" />オブジェクトから、[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]フォントの場所を表す値です。</summary>
+        <returns><see cref="T:System.Collections.Generic.ICollection`1" />の<see cref="T:System.Windows.Media.FontFamily" />内のフォントを表すオブジェクト<paramref name="baseUri" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、このメソッドを使用して、コレクションを取得する方法を示しています。<xref:System.Windows.Media.FontFamily>ベース オブジェクト[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]場所。  
+  
+ [!code-csharp[FontSnippets#FontsSnippet1](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontFamilySnippets.xaml.cs#fontssnippet1)]
+ [!code-vb[FontSnippets#FontsSnippet1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontfamilysnippets.xaml.vb#fontssnippet1)]  
+  
+ コレクションを取得する<xref:System.Windows.Media.FontFamily>アプリケーションのリソース内のオブジェクトを使用"pack://application"[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]表記法を次の例に示すようにします。  
+  
+ [!code-csharp[FontSnippets#FontsSnippet2](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontFamilySnippets.xaml.cs#fontssnippet2)]
+ [!code-vb[FontSnippets#FontsSnippet2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontfamilysnippets.xaml.vb#fontssnippet2)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">指定した内容を読み取るため<paramref name="baseUri" />です。 関連する列挙:<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFontFamilies">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.ICollection&lt;System.Windows.Media.FontFamily&gt; GetFontFamilies (Uri baseUri, string location);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.ICollection`1&lt;class System.Windows.Media.FontFamily&gt; GetFontFamilies(class System.Uri baseUri, string location) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Fonts.GetFontFamilies(System.Uri,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.Windows.Media.FontFamily&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseUri" Type="System.Uri" />
+        <Parameter Name="location" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="baseUri">基本[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]フォントの場所の値。</param>
+        <param name="location">フォントが含まれている場所です。</param>
+        <summary>コレクションを返します<see cref="T:System.Windows.Media.FontFamily" />、ベースを使用してオブジェクト[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]フォントの場所を解決するのには値です。</summary>
+        <returns><see cref="T:System.Collections.Generic.ICollection`1" />の<see cref="T:System.Windows.Media.FontFamily" />解決フォントの場所でのフォントを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、このメソッドを使用して、コレクションを取得する方法を示しています。<xref:System.Windows.Media.FontFamily>解決フォントの場所からのオブジェクト。 ここでは、アプリケーションに "resources" という名前のサブディレクトリが含まれています。  
+  
+ [!code-csharp[FontSnippets#FontsSnippet3](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontFamilySnippets.xaml.cs#fontssnippet3)]
+ [!code-vb[FontSnippets#FontsSnippet3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontfamilysnippets.xaml.vb#fontssnippet3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTypefaces">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.ICollection&lt;System.Windows.Media.Typeface&gt; GetTypefaces (string location);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.ICollection`1&lt;class System.Windows.Media.Typeface&gt; GetTypefaces(string location) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Fonts.GetTypefaces(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.Windows.Media.Typeface&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="location" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="location">フォントが含まれている場所です。</param>
+        <summary>コレクションを返します<see cref="T:System.Windows.Media.Typeface" />フォント ディレクトリの場所を表す文字列値からのオブジェクト。</summary>
+        <returns><see cref="T:System.Collections.Generic.ICollection`1" />の<see cref="T:System.Windows.Media.Typeface" />内のフォントを表すオブジェクト<paramref name="location" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、このメソッドを使用して、コレクションを取得する方法を示しています。<xref:System.Windows.Media.Typeface>フォントの場所からのオブジェクト。  
+  
+ [!code-csharp[FontSnippets#FontsSnippet4](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontFamilySnippets.xaml.cs#fontssnippet4)]
+ [!code-vb[FontSnippets#FontsSnippet4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontfamilysnippets.xaml.vb#fontssnippet4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="location" /> が <see langword="null" /> です。 渡すことはできません<see langword="null" />このパラメーターは、パスとして扱われるため、または[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTypefaces">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.ICollection&lt;System.Windows.Media.Typeface&gt; GetTypefaces (Uri baseUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.ICollection`1&lt;class System.Windows.Media.Typeface&gt; GetTypefaces(class System.Uri baseUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Fonts.GetTypefaces(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.Windows.Media.Typeface&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseUri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="baseUri">基本[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]フォントの場所の値。</param>
+        <summary>コレクションを返します<see cref="T:System.Windows.Media.Typeface" />オブジェクトから、[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]フォントの場所を表す値です。</summary>
+        <returns><see cref="T:System.Collections.Generic.ICollection`1" />の<see cref="T:System.Windows.Media.Typeface" />内のフォントを表すオブジェクト<paramref name="baseUri" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、このメソッドを使用して、コレクションを取得する方法を示しています。<xref:System.Windows.Media.Typeface>ベース オブジェクト[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]場所。  
+  
+ [!code-csharp[FontSnippets#FontsSnippet5](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontFamilySnippets.xaml.cs#fontssnippet5)]
+ [!code-vb[FontSnippets#FontsSnippet5](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontfamilysnippets.xaml.vb#fontssnippet5)]  
+  
+ コレクションを取得する<xref:System.Windows.Media.Typeface>アプリケーションのリソース内のオブジェクトを使用"pack://application"[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]表記法を次の例に示すようにします。  
+  
+ [!code-csharp[FontSnippets#FontsSnippet6](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontFamilySnippets.xaml.cs#fontssnippet6)]
+ [!code-vb[FontSnippets#FontsSnippet6](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontfamilysnippets.xaml.vb#fontssnippet6)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">指定した内容を読み取るため<paramref name="baseUri" />です。 関連する列挙:<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTypefaces">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.ICollection&lt;System.Windows.Media.Typeface&gt; GetTypefaces (Uri baseUri, string location);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.ICollection`1&lt;class System.Windows.Media.Typeface&gt; GetTypefaces(class System.Uri baseUri, string location) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Fonts.GetTypefaces(System.Uri,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.Windows.Media.Typeface&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseUri" Type="System.Uri" />
+        <Parameter Name="location" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="baseUri">基本[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]フォントの場所の値。</param>
+        <param name="location">フォントが含まれている場所です。</param>
+        <summary>コレクションを返します<see cref="T:System.Windows.Media.Typeface" />、ベースを使用してオブジェクト[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]フォントの場所を解決するのには値です。</summary>
+        <returns><see cref="T:System.Collections.Generic.ICollection`1" />の<see cref="T:System.Windows.Media.Typeface" />解決フォントの場所でのフォントを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、このメソッドを使用して、コレクションを取得する方法を示しています。<xref:System.Windows.Media.Typeface>解決フォントの場所からのオブジェクト。 ここでは、アプリケーションに "resources" という名前のサブディレクトリが含まれています。  
+  
+ [!code-csharp[FontSnippets#FontsSnippet7](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontFamilySnippets.xaml.cs#fontssnippet7)]
+ [!code-vb[FontSnippets#FontsSnippet7](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontfamilysnippets.xaml.vb#fontssnippet7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemFontFamilies">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.ICollection&lt;System.Windows.Media.FontFamily&gt; SystemFontFamilies { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Collections.Generic.ICollection`1&lt;class System.Windows.Media.FontFamily&gt; SystemFontFamilies" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Fonts.SystemFontFamilies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.Windows.Media.FontFamily&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Windows.Media.FontFamily" />システム フォントの既定の場所からのオブジェクト。</summary>
+        <value><see cref="T:System.Collections.Generic.ICollection`1" />の<see cref="T:System.Windows.Media.FontFamily" />システム フォントのコレクション内のフォントを表すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemTypefaces">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.ICollection&lt;System.Windows.Media.Typeface&gt; SystemTypefaces { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Collections.Generic.ICollection`1&lt;class System.Windows.Media.Typeface&gt; SystemTypefaces" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Fonts.SystemTypefaces" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.Windows.Media.Typeface&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Windows.Media.Typeface" />システム フォントの既定の場所からのオブジェクト。</summary>
+        <value><see cref="T:System.Collections.Generic.ICollection`1" />の<see cref="T:System.Windows.Media.Typeface" />システム フォントのコレクション内のフォントを表すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

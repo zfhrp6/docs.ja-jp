@@ -1,0 +1,99 @@
+<Type Name="DiagnosticsConfigurationHandler" FullName="System.Diagnostics.DiagnosticsConfigurationHandler">
+  <TypeSignature Language="C#" Value="public class DiagnosticsConfigurationHandler : System.Configuration.IConfigurationSectionHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DiagnosticsConfigurationHandler extends System.Object implements class System.Configuration.IConfigurationSectionHandler" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.DiagnosticsConfigurationHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Configuration.IConfigurationSectionHandler</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("This class is obsoleted")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>構成ファイルの診断セクションを処理します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.DiagnosticsConfigurationHandler>メソッド セクション ハンドラーの構成設定の解像度に参加しているは、 [ &lt;system.diagnostics&gt; ](~/docs/framework/configure-apps/file-schema/trace-debug/system-diagnostics-element.md)構成ファイルの一部です。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DiagnosticsConfigurationHandler ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.DiagnosticsConfigurationHandler.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Diagnostics.DiagnosticsConfigurationHandler" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public virtual object Create (object parent, object configContext, System.Xml.XmlNode section);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Create(object parent, object configContext, class System.Xml.XmlNode section) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.DiagnosticsConfigurationHandler.Create(System.Object,System.Object,System.Xml.XmlNode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parent" Type="System.Object" />
+        <Parameter Name="configContext" Type="System.Object" />
+        <Parameter Name="section" Type="System.Xml.XmlNode" />
+      </Parameters>
+      <Docs>
+        <param name="parent">親パスからの継承オブジェクト</param>
+        <param name="configContext">予約済み。 評価されている構成の仮想パスを伝えるために、ASP.NET で使用します。</param>
+        <param name="section">処理するセクションのルート XML ノードです。</param>
+        <summary>構成設定を解析して、 [ &lt;system.diagnostics&gt; ](~/docs/framework/configure-apps/file-schema/trace-debug/system-diagnostics-element.md)構成ファイルのセクションでします。</summary>
+        <returns>形式で、新しい構成オブジェクト、<see cref="T:System.Collections.Hashtable" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.DiagnosticsConfigurationHandler.Create%2A>メソッド、<xref:System.Collections.Hashtable>から取得した値を持つ、 [ &lt;system.diagnostics&gt; ](~/docs/framework/configure-apps/file-schema/trace-debug/system-diagnostics-element.md)構成ファイルのセクションをハッシュ テーブルを返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">スイッチが見つかりませんでした。  
+  
+ または  
+  
+ Assert に見つかりませんでした。  
+  
+ または  
+  
+ トレースが見つかりませんでした。  
+  
+ または  
+  
+ パフォーマンス カウンターが見つかりませんでした。</exception>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,97 @@
+<Type Name="GridPattern+GridPatternInformation" FullName="System.Windows.Automation.GridPattern+GridPatternInformation">
+  <TypeSignature Language="C#" Value="public struct GridPattern.GridPatternInformation" />
+  <TypeSignature Language="ILAsm" Value=".class nested public sequential ansi sealed beforefieldinit GridPattern/GridPatternInformation extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.GridPattern.GridPatternInformation" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プロパティの値にアクセスできるように、<see cref="T:System.Windows.Automation.GridPattern" />オブジェクトを使用してその<see cref="P:System.Windows.Automation.GridPattern.Current" />または<see cref="P:System.Windows.Automation.GridPattern.Cached" />アクセサー。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ColumnCount">
+      <MemberSignature Language="C#" Value="public int ColumnCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ColumnCount" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.GridPattern.GridPatternInformation.ColumnCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グリッド内の列数を取得します。</summary>
+        <value>グリッド内の列の合計数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 非表示の行と列、プロバイダーの実装によってで読み込むことができます、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]ツリーおよびに反映されますので、<xref:System.Windows.Automation.GridPattern.GridPatternInformation.RowCount%2A>と<xref:System.Windows.Automation.GridPattern.GridPatternInformation.ColumnCount%2A>プロパティです。 読み込まれていない場合は、非表示の行および列はカウントされません。  
+  
+ 既定値は 0 です。  
+  
+   
+  
+## Examples  
+ 次の例では、イベント リスナーを設定しますグリッド構造などの変更、行または列グリッド項目の追加またはグリッドから削除します。  
+  
+ [!code-csharp[UIAGridPattern_snip#102](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAGridPattern_snip/CSharp/UIAGridPattern_snippets.cs#102)]
+ [!code-vb[UIAGridPattern_snip#102](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAGridPattern_snip/VisualBasic/UIAGridPattern_snippets.vb#102)]  
+[!code-csharp[UIAGridPattern_snip#103](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAGridPattern_snip/CSharp/UIAGridPattern_snippets.cs#103)]
+[!code-vb[UIAGridPattern_snip#103](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAGridPattern_snip/VisualBasic/UIAGridPattern_snippets.vb#103)]  
+[!code-csharp[UIAGridPattern_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAGridPattern_snip/CSharp/UIAGridPattern_snippets.cs#101)]
+[!code-vb[UIAGridPattern_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAGridPattern_snip/VisualBasic/UIAGridPattern_snippets.vb#101)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowCount">
+      <MemberSignature Language="C#" Value="public int RowCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RowCount" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.GridPattern.GridPatternInformation.RowCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グリッド内の行の合計数を取得します。</summary>
+        <value>グリッド内の行の合計数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 非表示の行と列、プロバイダーの実装によってで読み込むことができます、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]ツリーおよびに反映されますので、<xref:System.Windows.Automation.GridPattern.GridPatternInformation.RowCount%2A>と<xref:System.Windows.Automation.GridPattern.GridPatternInformation.ColumnCount%2A>プロパティです。 非表示の行と列がまだ読み込まれていない場合はカウントされません。  
+  
+ 既定値は 0 です。  
+  
+   
+  
+## Examples  
+ 次の例では、イベント リスナーを設定しますグリッド構造などの変更、行または列グリッド項目の追加またはグリッドから削除します。  
+  
+ [!code-csharp[UIAGridPattern_snip#102](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAGridPattern_snip/CSharp/UIAGridPattern_snippets.cs#102)]
+ [!code-vb[UIAGridPattern_snip#102](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAGridPattern_snip/VisualBasic/UIAGridPattern_snippets.vb#102)]  
+[!code-csharp[UIAGridPattern_snip#103](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAGridPattern_snip/CSharp/UIAGridPattern_snippets.cs#103)]
+[!code-vb[UIAGridPattern_snip#103](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAGridPattern_snip/VisualBasic/UIAGridPattern_snippets.vb#103)]  
+[!code-csharp[UIAGridPattern_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAGridPattern_snip/CSharp/UIAGridPattern_snippets.cs#101)]
+[!code-vb[UIAGridPattern_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAGridPattern_snip/VisualBasic/UIAGridPattern_snippets.vb#101)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

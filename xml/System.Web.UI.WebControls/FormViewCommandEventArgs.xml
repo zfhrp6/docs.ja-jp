@@ -1,0 +1,157 @@
+<Type Name="FormViewCommandEventArgs" FullName="System.Web.UI.WebControls.FormViewCommandEventArgs">
+  <TypeSignature Language="C#" Value="public class FormViewCommandEventArgs : System.Web.UI.WebControls.CommandEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FormViewCommandEventArgs extends System.Web.UI.WebControls.CommandEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.FormViewCommandEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.CommandEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.UI.WebControls.FormView.ItemCommand" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.FormView.ItemCommand>イベントは内でのボタン、<xref:System.Web.UI.WebControls.FormView>コントロールをクリックします。 これにより、このイベントが発生するたびに、カスタム ルーチンを実行するイベント処理メソッドを提供できます。  
+  
+ 内の各ボタン、<xref:System.Web.UI.WebControls.FormView>コントロールは、コントロールの組み込み機能の一部を呼び出すもことができます。 これらの操作のいずれかを実行するのには、設定、`CommandName`に次の表に、値のいずれかのボタンのプロパティです。  
+  
+|CommandName 値|説明|  
+|-----------------------|-----------------|  
+|[キャンセル]|編集または挿入操作をキャンセルしを返します、<xref:System.Web.UI.WebControls.FormView>コントロールによって指定されたモードを<xref:System.Web.UI.WebControls.FormView.DefaultMode%2A>プロパティです。 発生させる、<xref:System.Web.UI.WebControls.FormView.ModeChanged>と<xref:System.Web.UI.WebControls.FormView.ModeChanging>イベント。|  
+|"削除"|現在のレコードを削除します。 発生させる、<xref:System.Web.UI.WebControls.FormView.ItemDeleted>と<xref:System.Web.UI.WebControls.FormView.ItemDeleting>イベント。|  
+|"Edit"|配置、<xref:System.Web.UI.WebControls.FormView>編集モードで制御します。 発生させる、<xref:System.Web.UI.WebControls.FormView.ModeChanged>と<xref:System.Web.UI.WebControls.FormView.ModeChanging>イベント。|  
+|"Insert"|データ ソースの現在のレコードを挿入します。 発生させる、<xref:System.Web.UI.WebControls.FormView.ItemInserted>と<xref:System.Web.UI.WebControls.FormView.ItemInserting>イベント。|  
+|"New"|配置、<xref:System.Web.UI.WebControls.FormView>挿入モードで制御します。 発生させる、<xref:System.Web.UI.WebControls.FormView.ModeChanged>と<xref:System.Web.UI.WebControls.FormView.ModeChanging>イベント。|  
+|"Page"|ページング操作を実行します。 設定、 `CommandArgument` "First「、"最後」にあるボタン、[次へ]、「前」、またはを実行するページング操作の種類を指定するページ番号のプロパティです。 発生させる、<xref:System.Web.UI.WebControls.FormView.PageIndexChanged>と<xref:System.Web.UI.WebControls.FormView.PageIndexChanging>イベント。|  
+|[更新]|データ ソースの現在のレコードを更新します。 発生させる、<xref:System.Web.UI.WebControls.FormView.ItemUpdated>と<xref:System.Web.UI.WebControls.FormView.ItemUpdating>イベント。|  
+  
+ ただし、<xref:System.Web.UI.WebControls.FormView.ItemCommand>イベントは、前の表に一覧表示 ボタンがクリックされたときに、操作の表に示されているイベントを使用することをお勧めします。  
+  
+ A<xref:System.Web.UI.WebControls.FormViewCommandEventArgs>オブジェクトがクリックされたボタンのコマンドの引数とコマンドの名前を決定することができるイベント処理メソッドに渡されます。 コマンドの引数とコマンドの名前を確認するには<xref:System.Web.UI.WebControls.CommandEventArgs.CommandName%2A>と<xref:System.Web.UI.WebControls.CommandEventArgs.CommandArgument%2A>プロパティ、それぞれします。 使用してイベントを発生させたボタン コントロールにアクセスすることも、<xref:System.Web.UI.WebControls.DetailsViewCommandEventArgs.CommandSource%2A>プロパティです。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ <xref:System.Web.UI.WebControls.FormViewCommandEventArgs> クラスのインスタンスの初期プロパティ値一覧については、<xref:System.Web.UI.WebControls.FormViewCommandEventArgs.%23ctor%2A> コンストラクターに関するトピックを参照してください。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.FormViewCommandEventArgs>オブジェクトのイベント処理メソッドに渡される、<xref:System.Web.UI.WebControls.DetailsView.ItemCommand>内でボタンを決定するイベント、<xref:System.Web.UI.WebControls.FormView>コントロールは、ユーザーがクリックしてされました。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[FormViewItemCommandEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FormViewItemCommandEventArgs/CS/formviewcommandeventargscs.aspx#1)]
+ [!code-aspx-vb[FormViewItemCommandEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FormViewItemCommandEventArgs/VB/formviewcommandeventargsvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FormViewCommandEventArgs (object commandSource, System.Web.UI.WebControls.CommandEventArgs originalArgs);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object commandSource, class System.Web.UI.WebControls.CommandEventArgs originalArgs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FormViewCommandEventArgs.#ctor(System.Object,System.Web.UI.WebControls.CommandEventArgs)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="commandSource" Type="System.Object" />
+        <Parameter Name="originalArgs" Type="System.Web.UI.WebControls.CommandEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="commandSource">コマンドのソース。</param>
+        <param name="originalArgs">A<see cref="T:System.Web.UI.WebControls.CommandEventArgs" />イベント データを格納します。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.FormViewCommandEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.FormViewCommandEventArgs>クラスです。  
+  
+ <xref:System.Web.UI.WebControls.FormViewCommandEventArgs> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.CommandEventArgs.CommandArgument%2A>|値、<xref:System.Web.UI.WebControls.CommandEventArgs.CommandArgument%2A>のプロパティ、<xref:System.Web.UI.WebControls.CommandEventArgs>に含まれている、`originalArgs`パラメーター。|  
+|<xref:System.Web.UI.WebControls.CommandEventArgs.CommandName%2A>|値、<xref:System.Web.UI.WebControls.CommandEventArgs.CommandName%2A>のプロパティ、<xref:System.Web.UI.WebControls.CommandEventArgs>に含まれている、`originalArgs`パラメーター。|  
+|<xref:System.Web.UI.WebControls.FormViewCommandEventArgs.CommandSource%2A>|含まれているオブジェクト、`commandSource`パラメーター。|  
+  
+> [!NOTE]
+>  このコンス トラクターは、イベントを発生させる場合、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandSource">
+      <MemberSignature Language="C#" Value="public object CommandSource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object CommandSource" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.FormViewCommandEventArgs.CommandSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントを発生させたコントロールを取得します。</summary>
+        <value>イベントを発生させたコントロールを表す <see cref="T:System.Object" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.FormViewCommandEventArgs.CommandSource%2A>イベントを発生させたコントロールのプロパティにアクセスするプロパティです。 場合、<xref:System.Web.UI.WebControls.FormViewCommandEventArgs>オブジェクト、コントロールが、ユーザーがクリックされたボタンをクリックします。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.FormViewCommandEventArgs.CommandSource%2A>を発生させたボタン コントロールのプロパティにアクセスするプロパティ、<xref:System.Web.UI.WebControls.FormView.ItemCommand>イベント。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[FormViewItemCommandEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FormViewItemCommandEventArgs/CS/formviewcommandeventargscs.aspx#1)]
+ [!code-aspx-vb[FormViewItemCommandEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FormViewItemCommandEventArgs/VB/formviewcommandeventargsvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Handled">
+      <MemberSignature Language="C#" Value="public bool Handled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Handled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.FormViewCommandEventArgs.Handled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールがイベントを処理するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />データ バインドされたイベントのコードがスキップされましたまたは終了それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定`true`ことを指定するイベント ハンドラーで、<xref:System.Web.UI.WebControls.FormView>コードで処理するため、コントロールはイベントを処理しない必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

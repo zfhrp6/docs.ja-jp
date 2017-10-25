@@ -1,0 +1,325 @@
+<Type Name="MissingSatelliteAssemblyException" FullName="System.Resources.MissingSatelliteAssemblyException">
+  <TypeSignature Language="C#" Value="public class MissingSatelliteAssemblyException : SystemException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit MissingSatelliteAssemblyException extends System.SystemException" />
+  <TypeSignature Language="DocId" Value="T:System.Resources.MissingSatelliteAssemblyException" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.SystemException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>既定のカルチャのリソースのサテライト アセンブリが見つからない場合にスローされる例外。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のカルチャは、カルチャのリソースが読み込まれるは、適切なカルチャに固有のリソースが見つからない場合です。 既定では、既定のカルチャのリソースがメインのアセンブリ内にある、<xref:System.Resources.MissingManifestResourceException>が、リソース マネージャーを取得しようとは、既定のカルチャのリソースが見つからない場合にスローされます。 ただし、.NET Framework アプリの既定のカルチャのリソースから読み込むサテライト アセンブリ場合、<xref:System.Resources.NeutralResourcesLanguageAttribute>属性の値を指定する<xref:System.Resources.UltimateResourceFallbackLocation?displayProperty=nameWithType>位置パラメーターです。 このようなときに、<xref:System.Resources.MissingSatelliteAssemblyException>リソース マネージャーが既定のカルチャとで指定されたカルチャ設定のサテライト アセンブリのリソースを取得しようとするときに例外がスローされます、<xref:System.Resources.NeutralResourcesLanguageAttribute>属性がありません。 例外がなどのリソースの取得メソッドによってスローされることに注意してください<xref:System.Resources.ResourceManager.GetString%2A?displayProperty=nameWithType>または<xref:System.Resources.ResourceManager.GetObject%2A?displayProperty=nameWithType>、時、<xref:System.Resources.ResourceManager>オブジェクトをインスタンス化します。  
+  
+ <xref:System.Resources.MissingSatelliteAssemblyException>値は 0x80131536 HRESULT COR_E_MISSINGSATELLITEASSEMBLY を使用します。  
+  
+ <xref:System.Resources.MissingSatelliteAssemblyException>既定値を使用して<xref:System.Object.Equals%2A>参照の等価性をサポートする実装。  
+  
+ インスタンスの初期プロパティ値の一覧については、<xref:System.Resources.MissingSatelliteAssemblyException>クラスを参照してください、<xref:System.Resources.MissingSatelliteAssemblyException.%23ctor%2A>コンス トラクターです。  
+  
+> [!NOTE]
+>  常に使用する必要があります、<xref:System.Resources.NeutralResourcesLanguageAttribute>をアプリケーションが許容可能な動作を表示、特定カルチャのリソースが使用できない場合に、アプリの既定のカルチャを定義する属性。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Resources.NeutralResourcesLanguageAttribute>英語がアプリの既定のカルチャであること、およびそのリソースがサテライト アセンブリに格納されていることを示す属性です。 自体の例には、次の表に示すよう、英語とフランス語のカルチャの .txt ファイルにリソースが含まれます。  
+  
+|カルチャ|リソースの名前と値|ファイル名|  
+|-------------|--------------------------|---------------|  
+|英語|送られますこんにちはを =|Greet.en.txt|  
+|フランス語|送られます Bonjour を =|Greet.fr.txt|  
+  
+ 次のソース コードでは、フランス語 (フランス)、ロシア語 (ロシア) は、現在の UI カルチャを最初に変更し、どちらの場合も、適切なカルチャ固有のリソースを表示するアプリをビルドします。  
+  
+ [!code-csharp[System.Resources.MissingSatelliteAssemblyException#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.resources.missingsatelliteassemblyexception/cs/helloworld.cs#1)]
+ [!code-vb[System.Resources.MissingSatelliteAssemblyException#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.resources.missingsatelliteassemblyexception/vb/helloworld.vb#1)]  
+  
+ 次のバッチ ファイルを使用して、構築し、c# バージョンの例を実行することができます。 Visual Basic を使用している場合は、`csc` を `vbc` に置換し、`.cs` 拡張子を `.vb` に置換します。 この例を実行すると、そのフランス語の文字列を表示がスローされます、<xref:System.Resources.MissingSatelliteAssemblyException>現在のカルチャはロシア語 (ロシア) に例外が発生します。 これは、既定のカルチャのリソースを含むサテライト アセンブリ en\HelloWorld.dll が存在しないためです。  
+  
+```  
+  
+vbc HelloWorld.vb  
+  
+md fr  
+resgen Greet.fr.txt  
+al /out:fr\HelloWorld.resources.dll /culture:fr /embed:GreetResources.fr.resources  
+  
+HelloWorld  
+  
+```  
+  
+ 次のバッチ ファイルを使用して、ビルドおよび Visual Basic バージョンの例を実行することができます。 C# を使用している場合は置き換えます`vbc`で`csc`、および置換、`.vb`拡張機能を`.cs`です。 この例を実行すると、現在の UI カルチャがフランス語 (フランス) の場合、フランス語の文字列が表示されます。 現在の UI カルチャはロシア (ロシア語) は、ロシア語の言語リソースが存在しないが、リソース マネージャーは、既定のカルチャのリソースをサテライト アセンブリ en\HelloWorld2.dll から読み込めませんでしたので、英語の言語の文字列が表示されます。  
+  
+```  
+  
+vbc HelloWorld.vb /out:HelloWorld2.exe  
+  
+md fr  
+resgen GreetResources.fr.txt  
+al /out:fr\HelloWorld2.resources.dll /culture:fr /embed:GreetResources.fr.resources  
+  
+md en  
+resgen GreetResources.en.txt  
+al /out:en\HelloWorld2.resources.dll /culture:en /embed:GreetResources.en.resources  
+  
+HelloWorld2  
+  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MissingSatelliteAssemblyException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.MissingSatelliteAssemblyException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Resources.MissingSatelliteAssemblyException" /> クラスの新しいインスタンスを、既定のプロパティを使用して初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Resources.MissingSatelliteAssemblyException> クラスのインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|`null`。|  
+|<xref:System.Exception.Message%2A>|ローカライズされたエラー メッセージ<xref:System.Resources.MissingSatelliteAssemblyException>です。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MissingSatelliteAssemblyException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.MissingSatelliteAssemblyException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の原因を説明するエラー メッセージ。</param>
+        <summary>指定されたエラー メッセージで <see cref="T:System.Resources.MissingSatelliteAssemblyException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Resources.MissingSatelliteAssemblyException> クラスのインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|`null`。|  
+|<xref:System.Exception.Message%2A>|`message`文字列。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected MissingSatelliteAssemblyException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.MissingSatelliteAssemblyException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">シリアル化されたオブジェクト データを保持するオブジェクト。</param>
+        <param name="context">ソースまたは例外の転送先に関する文脈情報。</param>
+        <summary>シリアル化したデータから、<see cref="T:System.Resources.MissingSatelliteAssemblyException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、逆シリアル化中に、ストリームで送信された例外オブジェクトを再構築するために呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MissingSatelliteAssemblyException (string message, Exception inner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception inner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.MissingSatelliteAssemblyException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="inner" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の原因を説明するエラー メッセージ。</param>
+        <param name="inner">現在の例外の原因となった例外。 場合、<c>内部</c>パラメーターではありません<see langword="null" />で現在の例外が発生、<see langword="catch" />ブロックは、内部例外を処理します。</param>
+        <summary>指定したエラー メッセージおよびこの例外の原因となった内部例外への参照を使用して、<see cref="T:System.Resources.MissingSatelliteAssemblyException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 前の例外の直接の結果としてスローされる例外については、<xref:System.Exception.InnerException%2A> プロパティに、前の例外への参照が格納されます。 <xref:System.Exception.InnerException%2A> プロパティは、コンストラクターに渡されたものと同じ値を返します。`null` プロパティによって内部例外値がコンストラクターに渡されなかった場合は、<xref:System.Exception.InnerException%2A> を返します。  
+  
+ <xref:System.Resources.MissingSatelliteAssemblyException> クラスのインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|内部例外の参照。|  
+|<xref:System.Exception.Message%2A>|エラー メッセージ文字列。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MissingSatelliteAssemblyException (string message, string cultureName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, string cultureName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.MissingSatelliteAssemblyException.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="cultureName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の原因を説明するエラー メッセージ。</param>
+        <param name="cultureName">ニュートラル カルチャの名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Resources.MissingSatelliteAssemblyException" />指定したエラー メッセージとがニュートラル カルチャの名前を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Resources.MissingSatelliteAssemblyException> クラスのインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|内部例外の参照。|  
+|<xref:System.Exception.Message%2A>|エラー メッセージ文字列。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CultureName">
+      <MemberSignature Language="C#" Value="public string CultureName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CultureName" />
+      <MemberSignature Language="DocId" Value="P:System.Resources.MissingSatelliteAssemblyException.CultureName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定のカルチャの名前を取得します。</summary>
+        <value>既定のカルチャの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリの既定のカルチャがによって定義された、<xref:System.Resources.NeutralResourcesLanguageAttribute>属性。 カルチャ名の一覧は、次を参照してください。、 [National 言語サポート (NLS) API リファレンス](http://go.microsoft.com/fwlink/?LinkId=200048)Go Global Developer Center にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>
